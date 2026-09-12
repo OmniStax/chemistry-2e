@@ -1,0 +1,439 @@
+{
+ "id": "1",
+ "dir": "ch01",
+ "title": "Essential Ideas",
+ "intro": {
+  "module": "m68663",
+  "slug": "1-introduction"
+ },
+ "sections": [
+  {
+   "id": "1.1",
+   "module": "m68664",
+   "title": "Chemistry in Context",
+   "slug": "1-1-chemistry-in-context"
+  },
+  {
+   "id": "1.2",
+   "module": "m68667",
+   "title": "Phases and Classification of Matter",
+   "slug": "1-2-phases-and-classification-of-matter"
+  },
+  {
+   "id": "1.3",
+   "module": "m68670",
+   "title": "Physical and Chemical Properties",
+   "slug": "1-3-physical-and-chemical-properties"
+  },
+  {
+   "id": "1.4",
+   "module": "m68674",
+   "title": "Measurements",
+   "slug": "1-4-measurements"
+  },
+  {
+   "id": "1.5",
+   "module": "m68690",
+   "title": "Measurement Uncertainty, Accuracy, and Precision",
+   "slug": "1-5-measurement-uncertainty-accuracy-and-precision"
+  },
+  {
+   "id": "1.6",
+   "module": "m68683",
+   "title": "Mathematical Treatment of Measurement Results",
+   "slug": "1-6-mathematical-treatment-of-measurement-results"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "m",
+   "type": "mass",
+   "meaning": "the mass of a sample, the measure of the amount of matter in it",
+   "unit": "g",
+   "section": "1.4"
+  },
+  {
+   "sym": "V",
+   "type": "volume",
+   "meaning": "the volume of a sample, the amount of space it occupies",
+   "unit": "cm³",
+   "section": "1.4"
+  },
+  {
+   "sym": "d",
+   "meaning": "the density of a substance, the ratio of the mass of a sample to its volume",
+   "unit": "g/cm³",
+   "section": "1.4"
+  },
+  {
+   "sym": "t",
+   "type": "time",
+   "meaning": "an interval of time, measured in the SI base unit of time",
+   "unit": "s",
+   "section": "1.4"
+  },
+  {
+   "sym": "T",
+   "type": "temperature",
+   "meaning": "the temperature of a sample, measured in the SI base unit of temperature",
+   "unit": "K",
+   "section": "1.4"
+  },
+  {
+   "sym": "T_C",
+   "type": "temperature",
+   "meaning": "a temperature read on the Celsius scale, on which water freezes at 0 °C and boils at 100 °C",
+   "unit": "°C",
+   "section": "1.6"
+  },
+  {
+   "sym": "T_F",
+   "type": "temperature",
+   "meaning": "a temperature read on the Fahrenheit scale, on which water freezes at 32 °F and boils at 212 °F",
+   "unit": "°F",
+   "section": "1.6"
+  },
+  {
+   "sym": "T_K",
+   "type": "temperature",
+   "meaning": "a temperature read on the kelvin scale, an absolute scale whose zero is the lowest temperature that can theoretically be achieved",
+   "unit": "K",
+   "section": "1.6"
+  }
+ ],
+ "equations": [
+  {
+   "id": "eq-density",
+   "concept": "density",
+   "section": "1.4",
+   "latex": "\\text{density}=\\frac{\\text{mass}}{\\text{volume}}",
+   "important": true
+  },
+  {
+   "id": "eq-speed",
+   "section": "1.6",
+   "latex": "\\text{speed}=\\frac{\\text{distance}}{\\text{time}}",
+   "condition": "an average speed, computed from a measured distance and the time taken to cover it",
+   "important": false
+  },
+  {
+   "id": "eq-fahrenheit-from-celsius",
+   "concept": "celsius-fahrenheit-conversion",
+   "section": "1.6",
+   "latex": "T_{\\text{°F}}=\\left(\\frac{9}{5}\\times T_{\\text{°C}}\\right)+32",
+   "ktex": "\\kTF=\\left(\\frac{9}{5}\\times \\kTC\\right)+32",
+   "important": true
+  },
+  {
+   "id": "eq-celsius-from-fahrenheit",
+   "concept": "celsius-fahrenheit-conversion",
+   "section": "1.6",
+   "latex": "T_{\\text{°C}}=\\frac{5}{9}\\times \\left(T_{\\text{°F}}-32\\right)",
+   "ktex": "\\kTC=\\frac{5}{9}\\times \\left(\\kTF-32\\right)",
+   "important": true
+  },
+  {
+   "id": "eq-kelvin-from-celsius",
+   "concept": "celsius-kelvin-conversion",
+   "section": "1.6",
+   "latex": "T_{\\text{K}}=T_{\\text{°C}}+273.15",
+   "ktex": "\\kTK=\\kTC+273.15",
+   "important": true
+  },
+  {
+   "id": "eq-celsius-from-kelvin",
+   "concept": "celsius-kelvin-conversion",
+   "section": "1.6",
+   "latex": "T_{\\text{°C}}=T_{\\text{K}}-273.15",
+   "ktex": "\\kTC=\\kTK-273.15",
+   "important": true
+  }
+ ],
+ "glossary": [
+  {
+   "section": "1.1",
+   "term": "chemistry",
+   "definition": "study of the composition, properties, and interactions of matter"
+  },
+  {
+   "section": "1.1",
+   "term": "hypothesis",
+   "definition": "tentative explanation of observations that acts as a guide for gathering and checking information"
+  },
+  {
+   "section": "1.1",
+   "term": "law",
+   "definition": "statement that summarizes a vast number of experimental observations, and describes or predicts some aspect of the natural world"
+  },
+  {
+   "section": "1.1",
+   "term": "macroscopic domain",
+   "definition": "realm of everyday things that are large enough to sense directly by human sight and touch"
+  },
+  {
+   "section": "1.1",
+   "term": "microscopic domain",
+   "definition": "realm of things that are much too small to be sensed directly"
+  },
+  {
+   "section": "1.1",
+   "term": "scientific method",
+   "definition": "path of discovery that leads from question and observation to law or hypothesis to theory, combined with experimental verification of the hypothesis and any necessary modification of the theory"
+  },
+  {
+   "section": "1.1",
+   "term": "symbolic domain",
+   "definition": "specialized language used to represent components of the macroscopic and microscopic domains, such as chemical symbols, chemical formulas, chemical equations, graphs, drawings, and calculations"
+  },
+  {
+   "section": "1.1",
+   "term": "theory",
+   "definition": "well-substantiated, comprehensive, testable explanation of a particular aspect of nature"
+  },
+  {
+   "section": "1.2",
+   "term": "atom",
+   "definition": "smallest particle of an element that can enter into a chemical combination"
+  },
+  {
+   "section": "1.2",
+   "term": "compound",
+   "definition": "pure substance that can be decomposed into two or more elements"
+  },
+  {
+   "section": "1.2",
+   "term": "element",
+   "definition": "substance that is composed of a single type of atom; a substance that cannot be decomposed by a chemical change"
+  },
+  {
+   "section": "1.2",
+   "term": "gas",
+   "definition": "state in which matter has neither definite volume nor shape"
+  },
+  {
+   "section": "1.2",
+   "term": "heterogeneous mixture",
+   "definition": "combination of substances with a composition that varies from point to point"
+  },
+  {
+   "section": "1.2",
+   "term": "homogeneous mixture",
+   "definition": "(also, solution) combination of substances with a composition that is uniform throughout"
+  },
+  {
+   "section": "1.2",
+   "term": "liquid",
+   "definition": "state of matter that has a definite volume but indefinite shape"
+  },
+  {
+   "section": "1.2",
+   "term": "law of conservation of matter",
+   "definition": "when matter converts from one type to another or changes form, there is no detectable change in the total amount of matter present"
+  },
+  {
+   "section": "1.2",
+   "term": "mass",
+   "definition": "fundamental property indicating amount of matter"
+  },
+  {
+   "section": "1.2",
+   "term": "matter",
+   "definition": "anything that occupies space and has mass"
+  },
+  {
+   "section": "1.2",
+   "term": "mixture",
+   "definition": "matter that can be separated into its components by physical means"
+  },
+  {
+   "section": "1.2",
+   "term": "molecule",
+   "definition": "bonded collection of two or more atoms of the same or different elements"
+  },
+  {
+   "section": "1.2",
+   "term": "plasma",
+   "definition": "gaseous state of matter containing a large number of electrically charged atoms and/or molecules"
+  },
+  {
+   "section": "1.2",
+   "term": "pure substance",
+   "definition": "homogeneous substance that has a constant composition"
+  },
+  {
+   "section": "1.2",
+   "term": "solid",
+   "definition": "state of matter that is rigid, has a definite shape, and has a fairly constant volume"
+  },
+  {
+   "section": "1.2",
+   "term": "solution",
+   "definition": "(also, homogeneous mixture) combination of substances with a composition that is uniform throughout"
+  },
+  {
+   "section": "1.2",
+   "term": "weight",
+   "definition": "force that gravity exerts on an object"
+  },
+  {
+   "section": "1.3",
+   "term": "chemical change",
+   "definition": "change producing a different kind of matter from the original kind of matter"
+  },
+  {
+   "section": "1.3",
+   "term": "chemical property",
+   "definition": "behavior that is related to the change of one kind of matter into another kind of matter"
+  },
+  {
+   "section": "1.3",
+   "term": "extensive property",
+   "definition": "property of a substance that depends on the amount of the substance"
+  },
+  {
+   "section": "1.3",
+   "term": "intensive property",
+   "definition": "property of a substance that is independent of the amount of the substance"
+  },
+  {
+   "section": "1.3",
+   "term": "physical change",
+   "definition": "change in the state or properties of matter that does not involve a change in its chemical composition"
+  },
+  {
+   "section": "1.3",
+   "term": "physical property",
+   "definition": "characteristic of matter that is not associated with any change in its chemical composition"
+  },
+  {
+   "section": "1.4",
+   "term": "Celsius (°C)",
+   "definition": "unit of temperature; water freezes at 0 °C and boils at 100 °C on this scale"
+  },
+  {
+   "section": "1.4",
+   "term": "cubic centimeter (cm³ or cc)",
+   "definition": "volume of a cube with an edge length of exactly 1 cm"
+  },
+  {
+   "section": "1.4",
+   "term": "cubic meter (m³)",
+   "definition": "SI unit of volume"
+  },
+  {
+   "section": "1.4",
+   "term": "density",
+   "definition": "ratio of mass to volume for a substance or object"
+  },
+  {
+   "section": "1.4",
+   "term": "kelvin (K)",
+   "definition": "SI unit of temperature; 273.15 K = 0 °C"
+  },
+  {
+   "section": "1.4",
+   "term": "kilogram (kg)",
+   "definition": "standard SI unit of mass"
+  },
+  {
+   "section": "1.4",
+   "term": "length",
+   "definition": "measure of one dimension of an object"
+  },
+  {
+   "section": "1.4",
+   "term": "liter (L)",
+   "definition": "(also, cubic decimeter) unit of volume; 1 L = 1,000 cm³"
+  },
+  {
+   "section": "1.4",
+   "term": "meter (m)",
+   "definition": "standard metric and SI unit of length; 1 m = approximately 1.094 yards"
+  },
+  {
+   "section": "1.4",
+   "term": "milliliter (mL)",
+   "definition": "1/1,000 of a liter; equal to 1 cm³"
+  },
+  {
+   "section": "1.4",
+   "term": "second (s)",
+   "definition": "SI unit of time"
+  },
+  {
+   "section": "1.4",
+   "term": "SI units (International System of Units)",
+   "definition": "standards fixed by international agreement in the International System of Units (Le Système International d’Unités)"
+  },
+  {
+   "section": "1.4",
+   "term": "unit",
+   "definition": "standard of comparison for measurements"
+  },
+  {
+   "section": "1.4",
+   "term": "volume",
+   "definition": "amount of space occupied by an object"
+  },
+  {
+   "section": "1.5",
+   "term": "accuracy",
+   "definition": "how closely a measurement aligns with a correct value"
+  },
+  {
+   "section": "1.5",
+   "term": "exact number",
+   "definition": "number derived by counting or by definition"
+  },
+  {
+   "section": "1.5",
+   "term": "precision",
+   "definition": "how closely a measurement matches the same measurement when repeated"
+  },
+  {
+   "section": "1.5",
+   "term": "rounding",
+   "definition": "procedure used to ensure that calculated results properly reflect the uncertainty in the measurements used in the calculation"
+  },
+  {
+   "section": "1.5",
+   "term": "significant digits",
+   "definition": "(also, significant figures) all of the measured digits in a determination, including the uncertain last digit"
+  },
+  {
+   "section": "1.5",
+   "term": "significant figures",
+   "definition": "(also, significant digits) all of the measured digits in a determination, including the uncertain last digit"
+  },
+  {
+   "section": "1.5",
+   "term": "uncertainty",
+   "definition": "estimate of amount by which measurement differs from true value"
+  },
+  {
+   "section": "1.6",
+   "term": "dimensional analysis",
+   "definition": "(also, factor-label method) versatile mathematical strategy for calculations involving quantities that subjects the quantities’ units to the same mathematical operations as their numbers"
+  },
+  {
+   "section": "1.6",
+   "term": "factor-label method",
+   "definition": "(also, dimensional analysis) versatile mathematical strategy for calculations involving quantities that subjects the quantities’ units to the same mathematical operations as their numbers"
+  },
+  {
+   "section": "1.6",
+   "term": "Fahrenheit",
+   "definition": "unit of temperature; water freezes at 32 °F and boils at 212 °F on this scale"
+  },
+  {
+   "section": "1.6",
+   "term": "temperature",
+   "definition": "intensive property representing the hotness or coldness of matter"
+  },
+  {
+   "section": "1.6",
+   "term": "unit conversion factor",
+   "definition": "ratio of equivalent quantities expressed with different units; used to convert from one unit to a different unit"
+  }
+ ]
+}

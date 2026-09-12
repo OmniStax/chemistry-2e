@@ -55,12 +55,16 @@ The element palette carries what the scheme would otherwise carry. An atom is
 always a filled disc in its element colour, from the fixed map the book's
 `COLOR.md` describes (carbon black, hydrogen white, oxygen red, nitrogen blue,
 chlorine green, sulfur yellow, fluorine and xenon from the rest of the CPK
-table), reached through `F.el(symbol)` and never as a hex literal; until
-`figlib` has that map, the atoms are drawn in ink and told apart by size and
-by fill, hollow for the lighter atom and filled for the heavier, with the
-element's symbol set beside each, and the section plan says so. They do not
-switch off with colour coding, because they are the book's own drawing
-convention rather than a signal the app adds.
+table), reached through `F.el(symbol)` and never as a hex literal. That map
+now exists, as `omnistax-web/src/lib/fig/elements.ts`, so the fallback this
+plan first described, atoms in ink told apart by size and by fill, is not
+used: every atom of 7.6, on a `figlib` canvas and in a three-dimensional
+scene alike, takes its element's colour, and hydrogen is a light fill with an
+ink outline so that it reads on a light page. A generic central atom E and a
+generic terminal atom X are not elements and take the panel's own grey with
+the letter set beside them. Element colours do not switch off with colour
+coding, because they are the book's own drawing convention rather than a
+signal the app adds.
 
 Everything that is not an atom is ink, and the drawings separate by weight and
 by shape rather than by hue:
@@ -76,12 +80,19 @@ by shape rather than by hue:
 - **A bond moment is an arrow and its length is its magnitude.** The length of
   the arrow follows the electronegativity difference, as the book's Figure
   7.26 draws it, and a small plus sign marks the partially positive end.
-- **A face of a projected solid is shaded, not coloured.** `figlib`'s `face()`
-  fills with the panel colour and lays ink over it for the shading, so the
-  tetrahedron and the octahedron read as solids in both themes without any
-  hue at all.
-- **The two projection sliders are ink.** A yaw and a pitch are a viewpoint,
-  not a quantity of the book's, and a slider with no type carries no hue.
+- **A solid is lit, not coloured.** On Chen's decision of 2026-09-12 every
+  figure of this section that shows a molecule's shape is a three-dimensional
+  scene on the global `THREE` rather than a `figlib` projection, and the
+  tetrahedron, the trigonal bipyramid and the octahedron read as solids
+  because one fixed lamp shades them, not because any hue was added. The
+  scene's clear colour is transparent, so the page's own panel shows through
+  in both themes, and every colour in it is read from `PAL` and `F.el()` on
+  each draw, so a change of theme redraws the scene with the page.
+- **A viewpoint is not a slider.** The reader turns a molecule by dragging it,
+  so the yaw and pitch sliders this plan first proposed are gone; the sliders
+  that remain carry chemical quantities of the section's own, the number of
+  regions, the number of lone pairs and the choice of molecule, and none of
+  them is a type of the book's, so each is drawn in ink.
 
 ## What stays in ink
 
@@ -90,8 +101,9 @@ length, a bond angle and every arc, bracket or rule that measures one; a
 partial charge, a bond moment, a molecular dipole and the electronegativity
 difference that sets them; the plates and the field lines of Figure 7.28; the
 names of the five electron-pair geometries and of the molecular structures
-that follow from them; the yaw and the pitch of the projection; and every
-label, axis rule and arrow that is not an atom.
+that follow from them; the number of regions, the number of lone pairs and the
+choice of molecule that the sliders carry; and every label, axis rule and
+arrow that is not an atom.
 
 Nothing in this chapter is coerced into a neighbouring type to save a colour.
 A shape is not a quantity, a partial charge is not the charge of Faraday's

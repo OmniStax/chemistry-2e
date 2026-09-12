@@ -349,3 +349,26 @@ balloons of Figure 9.18, as said above.
 - `ch09/config.md`, Sims row: the gas box's volume slider runs 1.0 to
   30.0 L (not 0.5 to 10 L as `exploration.md` proposed), so that the
   default state is the standard molar volume, 1.00 mol at 273 K in 22.4 L.
+
+### What the chapter pass did with them (2026-09-12)
+
+Every item above was applied. The thirteen variable rows and the six
+equation rows of `ch09/chapter.json` now carry the anchors this list asks
+for, each law landing on the header that states it. `ch09/COLOR.md` says
+that the molecules inside the three balloons of Figure 9.18 take their
+atoms' colours from the element palette, now that `F.el` exists, while the
+balloons themselves stay in the volume hue and their labels in ink, and
+that the particles of the gas box remain generic and stay in ink; the
+Colour coding line of `ch09/config.md` says the same. The Sims line of
+that file now records the gas box's volume slider as running from 1.0 to
+30.0 L, so that its default state is the standard molar volume. The
+Formulas line corrects its count of the variable rows from nine to
+thirteen and records that the anchors are written.
+
+Two figure rows of `section.json` were corrected in the same pass, since a
+page colours every type its figures draw or its readouts state: Figure
+9.10 draws the sealed sphere's volume in the volume hue and so gains
+`volume` to its `draws`, and Figure 9.18's readout states the pressure and
+the temperature of standard conditions in their own hues and so gains
+`pressure` and `temperature`. The page still binds exactly the four types
+of the ideal gas law.

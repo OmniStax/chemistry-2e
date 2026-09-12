@@ -50,90 +50,103 @@
       "type": "pressure",
       "meaning": "the pressure of a gas, measured on a gauge attached to the vessel that holds it",
       "unit": "atm (also kPa, torr, psi and bar, as the measurement is reported)",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-amontons"
     },
     {
       "sym": "V",
       "type": "volume",
       "meaning": "the volume of the gas, which is the volume of the vessel that confines it",
       "unit": "L",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-charles"
     },
     {
       "sym": "n",
       "type": "amount",
       "meaning": "the amount of gas in the vessel, counted in moles",
       "unit": "mol",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-avogadro"
     },
     {
       "sym": "T",
       "type": "temperature",
       "meaning": "the temperature of the gas on the kelvin scale, which every gas law calculation requires",
       "unit": "K",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-amontons"
     },
     {
       "sym": "R",
       "meaning": "the ideal gas constant, also called the universal gas constant, whose value follows from the units the pressure, volume and temperature are written in",
       "unit": "0.08206 L atm mol⁻¹ K⁻¹, or 8.314 kPa L mol⁻¹ K⁻¹",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-ideal-gas-law"
     },
     {
       "sym": "P_1",
       "type": "pressure",
       "meaning": "the pressure of a confined gas in its first condition, before the change the problem describes",
       "unit": "atm",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-amontons"
     },
     {
       "sym": "P_2",
       "type": "pressure",
       "meaning": "the pressure of the same gas in its second condition, after the change",
       "unit": "atm",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-amontons"
     },
     {
       "sym": "V_1",
       "type": "volume",
       "meaning": "the volume of a confined gas in its first condition",
       "unit": "L",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-charles"
     },
     {
       "sym": "V_2",
       "type": "volume",
       "meaning": "the volume of the same gas in its second condition",
       "unit": "L",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-charles"
     },
     {
       "sym": "T_1",
       "type": "temperature",
       "meaning": "the kelvin temperature of a confined gas in its first condition",
       "unit": "K",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-amontons"
     },
     {
       "sym": "T_2",
       "type": "temperature",
       "meaning": "the kelvin temperature of the same gas in its second condition",
       "unit": "K",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-amontons"
     },
     {
       "sym": "n_1",
       "type": "amount",
       "meaning": "the amount of a confined gas in its first condition, counted in moles",
       "unit": "mol",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-avogadro"
     },
     {
       "sym": "n_2",
       "type": "amount",
       "meaning": "the amount of the same gas in its second condition",
       "unit": "mol",
-      "section": "9.2"
+      "section": "9.2",
+      "anchor": "9.2-avogadro"
     }
   ],
   "equations": [
@@ -144,7 +157,8 @@
       "latex": "\\frac{P_1}{T_1}=\\frac{P_2}{T_2}",
       "ktex": "\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}",
       "condition": "a fixed amount of gas held at constant volume, with both temperatures on the kelvin scale",
-      "important": true
+      "important": true,
+      "anchor": "9.2-amontons"
     },
     {
       "id": "eq-charles",
@@ -153,7 +167,8 @@
       "latex": "\\frac{V_1}{T_1}=\\frac{V_2}{T_2}",
       "ktex": "\\frac{\\kVone}{\\kTone}=\\frac{\\kVtwo}{\\kTtwo}",
       "condition": "a fixed amount of gas held at constant pressure, with both temperatures on the kelvin scale",
-      "important": true
+      "important": true,
+      "anchor": "9.2-charles"
     },
     {
       "id": "eq-boyle",
@@ -162,7 +177,8 @@
       "latex": "P_1V_1=P_2V_2",
       "ktex": "\\kPone\\kVone=\\kPtwo\\kVtwo",
       "condition": "a fixed amount of gas held at constant temperature",
-      "important": true
+      "important": true,
+      "anchor": "9.2-boyle"
     },
     {
       "id": "eq-avogadro",
@@ -171,7 +187,8 @@
       "latex": "\\frac{V_1}{n_1}=\\frac{V_2}{n_2}",
       "ktex": "\\frac{\\kVone}{\\knone}=\\frac{\\kVtwo}{\\kntwo}",
       "condition": "a confined gas held at constant pressure and constant temperature",
-      "important": true
+      "important": true,
+      "anchor": "9.2-avogadro"
     },
     {
       "id": "eq-ideal-gas",
@@ -180,7 +197,8 @@
       "latex": "PV=nRT",
       "ktex": "\\kP\\kV=\\kn R\\kT",
       "condition": "a gas behaving ideally, which is a good approximation at relatively low pressures and high temperatures",
-      "important": true
+      "important": true,
+      "anchor": "9.2-ideal-gas-law"
     },
     {
       "id": "eq-combined-gas",
@@ -189,7 +207,8 @@
       "latex": "\\frac{P_1V_1}{T_1}=\\frac{P_2V_2}{T_2}",
       "ktex": "\\frac{\\kPone\\kVone}{\\kTone}=\\frac{\\kPtwo\\kVtwo}{\\kTtwo}",
       "condition": "a fixed amount of an ideal gas under two different sets of conditions",
-      "important": true
+      "important": true,
+      "anchor": "9.2-combined-gas-law"
     }
   ],
   "glossary": [

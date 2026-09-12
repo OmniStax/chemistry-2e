@@ -44,88 +44,102 @@
       "type": "energy",
       "meaning": "the energy of an electron in the Bohr orbit with quantum number n, measured from the ionization limit and so always negative",
       "unit": "J",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
     },
     {
       "sym": "ΔE",
       "type": "energy",
       "meaning": "the difference between the orbital energies an electron moves between, which is the energy of the photon emitted or absorbed",
       "unit": "J",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
     },
     {
       "sym": "n_quantum",
       "meaning": "the quantum number of a Bohr orbit, a positive integer that labels one of the allowed orbits and takes no value between them",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
     },
     {
       "sym": "Z",
       "meaning": "the nuclear charge, which is +1 for hydrogen, +2 for He⁺, +3 for Li²⁺ and so on",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-hydrogen-like"
     },
     {
       "sym": "k",
       "meaning": "a constant comprising fundamental constants such as the electron mass and charge and Planck's constant, with a value of 2.179 × 10⁻¹⁸ J",
       "unit": "J",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-rydberg-recovered"
     },
     {
       "sym": "r",
       "meaning": "the radius of the circular orbit an electron is allowed to move in",
       "unit": "m",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-orbit-radius"
     },
     {
       "sym": "a_0",
       "meaning": "the Bohr radius, the radius of the ground-state orbit of hydrogen, with a value of 5.292 × 10⁻¹¹ m",
       "unit": "m",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-orbit-radius"
     },
     {
       "sym": "E_i",
       "type": "energy",
       "meaning": "the energy of the orbit the electron starts in",
       "unit": "J",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
     },
     {
       "sym": "E_f",
       "type": "energy",
       "meaning": "the energy of the orbit the electron ends in",
       "unit": "J",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
     },
     {
       "sym": "λ",
       "type": "wavelength",
       "meaning": "the wavelength of the photon emitted or absorbed when an electron moves between two orbits",
       "unit": "m",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
     },
     {
       "sym": "ν",
       "type": "frequency",
       "meaning": "the frequency of that photon, to which its energy is proportional",
       "unit": "Hz",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
     },
     {
       "sym": "h",
       "meaning": "Planck's constant, 6.626 × 10⁻³⁴ J s, which ties a photon's energy to its frequency",
       "unit": "J s",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
     },
     {
       "sym": "c",
       "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s",
       "unit": "m/s",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-stationary-states"
     },
     {
       "sym": "R_inf",
       "meaning": "the Rydberg constant, which Bohr's model recovers as the quotient k/hc",
       "unit": "m⁻¹",
-      "section": "6.2"
+      "section": "6.2",
+      "anchor": "6.2-rydberg-recovered"
     }
   ],
   "equations": [
@@ -136,7 +150,8 @@
       "latex": "|\\Delta E|=|E_{\\text{f}}-E_{\\text{i}}|=h\\nu=\\frac{hc}{\\lambda}",
       "ktex": "|\\kdE|=|\\kEf-\\kEi|=h\\knu=\\frac{hc}{\\klam}",
       "condition": "the electron moves between two allowed orbits, so that one photon carries the whole difference",
-      "important": true
+      "important": true,
+      "anchor": "6.2-stationary-states"
     },
     {
       "id": "eq-bohr-energy-hydrogen",
@@ -144,7 +159,8 @@
       "latex": "E_n=-\\frac{k}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
       "ktex": "\\kEn=-\\frac{k}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
       "condition": "hydrogen, for which the nuclear charge is +1",
-      "important": false
+      "important": false,
+      "anchor": "6.2-stationary-states"
     },
     {
       "id": "eq-bohr-energy",
@@ -153,7 +169,8 @@
       "latex": "E_n=-\\frac{kZ^2}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
       "ktex": "\\kEn=-\\frac{kZ^2}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
       "condition": "a one-electron atom or ion of nuclear charge Z",
-      "important": true
+      "important": true,
+      "anchor": "6.2-hydrogen-like"
     },
     {
       "id": "eq-bohr-transition",
@@ -162,7 +179,8 @@
       "latex": "\\Delta E=kZ^2\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
       "ktex": "\\kdE=kZ^2\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
       "condition": "a one-electron atom or ion, the electron moving between the orbits n₁ and n₂",
-      "important": true
+      "important": true,
+      "anchor": "6.2-rydberg-recovered"
     },
     {
       "id": "eq-rydberg-from-bohr",
@@ -171,7 +189,8 @@
       "latex": "\\frac{1}{\\lambda}=\\frac{k}{hc}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
       "ktex": "\\frac{1}{\\klam}=\\frac{k}{hc}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
       "condition": "hydrogen, and the quotient k/hc is the Rydberg constant",
-      "important": false
+      "important": false,
+      "anchor": "6.2-rydberg-recovered"
     },
     {
       "id": "eq-bohr-radius",
@@ -179,15 +198,18 @@
       "section": "6.2",
       "latex": "r=\\frac{n^2}{Z}\\,a_0",
       "condition": "a one-electron atom or ion of nuclear charge Z",
-      "important": true
+      "important": true,
+      "anchor": "6.2-orbit-radius"
     },
     {
       "id": "eq-ionization-limit",
       "concept": "bohr-energy-levels",
       "section": "6.2",
       "latex": "\\Delta E=E_{n\\;\\longrightarrow\\;\\infty}-E_1=0+k=k",
+      "ktex": "\\kdE=\\kE_{n\\;\\longrightarrow\\;\\infty}-\\kE_{1}=0+k=k",
       "condition": "hydrogen in its ground state, the electron removed to an infinite distance",
-      "important": false
+      "important": false,
+      "anchor": "6.2-orbit-radius"
     }
   ],
   "glossary": [

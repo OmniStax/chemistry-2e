@@ -103,11 +103,16 @@ at absolute zero itself** is drawn in ink, since a named point on an axis is a
 label rather than a reading. The book's own data points are drawn in the hue of
 the quantity on the vertical axis, and the fitted line with them.
 
-The element palette is not used in this section. Figure 9.18's three balloons
-hold helium, ammonia and oxygen, and a reader might expect three colours; the
-figure's whole argument is that the gas does not matter, so the three balloons
-are drawn alike in the volume hue and named in ink, and the one thing that
-differs between them, the mass on the label, is ink as well.
+The element palette reaches one figure of this section. Figure 9.18's three
+balloons hold whichever gases the reader chooses, and the figure's whole
+argument is that the gas does not matter, so the three balloons themselves are
+drawn alike in the volume hue, named in ink, and the one thing that differs
+between them, the mass on the label, is ink as well. The molecules drawn inside
+them are another matter: the app now provides the element palette as
+`F.el(symbol)`, so each atom takes its element's colour, hydrogen as a light
+fill with an ink outline, which is the book's own drawing convention and not a
+signal about any quantity. The particles of the gas box remain generic gas
+particles with no element behind them and stay in ink.
 
 Nothing in this section is coerced into a neighbouring type to save a colour. A
 pressure is not a force, an amount is not a mass, a volume is not a length, and

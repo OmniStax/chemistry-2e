@@ -1,606 +1,1021 @@
 {
- "id": "9.2",
- "module": "m68751",
- "chapter": "9",
- "title": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law",
- "short": "The Ideal Gas Law",
- "lead": "Four properties describe a sample of gas, its pressure, its volume, its temperature and the amount of it, and the scientists of the balloon age found how each pair of them is related when the other two are held still. This section states those four laws, Amontons’s, Charles’s, Boyle’s and Avogadro’s, combines them into the ideal gas law, PV = nRT, and uses that one equation and the combined gas law to compute any one property of a gas from the others.",
- "objectives": [
-  "Identify the mathematical relationships between the various properties of gases",
-  "Use the ideal gas law, and related gas laws, to compute the values of various gas properties under specified conditions"
- ],
- "summary_html": "<p>The behavior of gases can be described by several laws based on experimental observations of their properties. The pressure of a given amount of gas is directly proportional to its absolute temperature, provided that the volume does not change (Amontons’s law). The volume of a given gas sample is directly proportional to its absolute temperature at constant pressure (Charles’s law). The volume of a given amount of gas is inversely proportional to its pressure when temperature is held constant (Boyle’s law). Under the same conditions of temperature and pressure, equal volumes of all gases contain the same number of molecules (Avogadro’s law).</p><p>The equations describing these laws are special cases of the ideal gas law, <em>PV</em> = <em>nRT</em>, where <em>P</em> is the pressure of the gas, <em>V</em> is its volume, <em>n</em> is the number of moles of the gas, <em>T</em> is its kelvin temperature, and <em>R</em> is the ideal (universal) gas constant.</p>",
- "notes": "The two Link to Learning notes are left out: a video of a gas shrinking as it is cooled and expanding as it is warmed, and the PhET simulation of pressure, volume, temperature and amount, whose place the gas box of this page takes. Figure 9.17, a photograph of coral at the Great Barrier Reef beside the scuba diving note, is left out as a stock scene, and the photograph of a weather balloon beside exercise 31 of the chapter is left out with it; exercises 26, 28, 30, 32, 34, 36, 38, 40 and 44 of the chapter have no answer in the book’s key and are left out.",
- "ai": {
-  "text": "Claude Fable 5.1",
-  "figures": "Claude Fable 5.1"
- },
- "built": "2026-09-12",
- "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The six Check Your Learning items are set inline after their examples; the book keys the syringe item of Example 9.8 as (a) about 17–18 mL, (b) ~18 mL and (c) 17.7 mL, so the number checked is part (c) and the whole answer is the solution. The unkeyed numerical exercises fs-idm179450656 (the syringe at 12.5 mL), fs-idm244984432 (the temperature of the carbon monoxide), fs-idm179333888 (the balloon with five more breaths), fs-idm207691136 (the air bag in kPa), fs-idm171506192 (the iodine vapor), fs-idm87206720 (the high altitude balloon), fs-idm131888352 (the scuba tank filled to capacity), fs-idp25823920 (the oxygen consumed in an hour) and fs-idm26646416 (the helium from radium) are left out, and no answer is computed for them. The six unkeyed conceptual exercises are kept with a suggested approach marked as OmniStax’s own. The keyed exercise fs-idm188679440 asks for four graphs and the book answers it with a drawing; the solution here describes that drawing in the book’s words from its own description of the figure and names the Sim of the page that draws the four graphs live. Numeric answers accept 2% tolerance.",
- "figures": [
-  {
-   "id": "fig-ballooning",
-   "kind": "photo",
-   "number": "9.9",
-   "draws": []
+  "id": "9.2",
+  "module": "m68751",
+  "chapter": "9",
+  "title": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law",
+  "short": "The Ideal Gas Law",
+  "lead": "Four properties describe a sample of gas, its pressure, its volume, its temperature and the amount of it, and the scientists of the balloon age found how each pair of them is related when the other two are held still. This section states those four laws, Amontons’s, Charles’s, Boyle’s and Avogadro’s, combines them into the ideal gas law, PV = nRT, and uses that one equation and the combined gas law to compute any one property of a gas from the others.",
+  "objectives": [
+    "Identify the mathematical relationships between the various properties of gases",
+    "Use the ideal gas law, and related gas laws, to compute the values of various gas properties under specified conditions"
+  ],
+  "summary_html": "<p>The behavior of gases can be described by several laws based on experimental observations of their properties. The pressure of a given amount of gas is directly proportional to its absolute temperature, provided that the volume does not change (Amontons’s law). The volume of a given gas sample is directly proportional to its absolute temperature at constant pressure (Charles’s law). The volume of a given amount of gas is inversely proportional to its pressure when temperature is held constant (Boyle’s law). Under the same conditions of temperature and pressure, equal volumes of all gases contain the same number of molecules (Avogadro’s law).</p><p>The equations describing these laws are special cases of the ideal gas law, <em>PV</em> = <em>nRT</em>, where <em>P</em> is the pressure of the gas, <em>V</em> is its volume, <em>n</em> is the number of moles of the gas, <em>T</em> is its kelvin temperature, and <em>R</em> is the ideal (universal) gas constant.</p>",
+  "notes": "The two Link to Learning notes are left out: a video of a gas shrinking as it is cooled and expanding as it is warmed, and the PhET simulation of pressure, volume, temperature and amount, whose place the gas box of this page takes. Figure 9.17, a photograph of coral at the Great Barrier Reef beside the scuba diving note, is left out as a stock scene, and the photograph of a weather balloon beside exercise 31 of the chapter is left out with it; exercises 26, 28, 30, 32, 34, 36, 38, 40 and 44 of the chapter have no answer in the book’s key and are left out.",
+  "ai": {
+    "text": "Claude Fable 5.1",
+    "figures": "Claude Fable 5.1"
   },
-  {
-   "id": "sim-amontons-sphere",
-   "kind": "sim",
-   "number": "9.10",
-   "originals": ["/media/ch09/CNX_Chem_09_01_Amontons1.jpg"],
-   "original_caption": "The effect of temperature on gas pressure: When the hot plate is off, the pressure of the gas in the sphere is relatively low. As the gas is heated, the pressure of the gas in the sphere increases.",
-   "draws": ["pressure", "temperature", "amount"]
-  },
-  {
-   "id": "sim-amontons-graph",
-   "kind": "sim",
-   "number": "9.11",
-   "originals": ["/media/ch09/CNX_Chem_09_02_Amontons2.jpg"],
-   "original_caption": "For a constant volume and amount of air, the pressure and temperature are directly proportional, provided the temperature is in kelvin. (Measurements cannot be made at lower temperatures because of the condensation of the gas.) When this line is extrapolated to lower pressures, it reaches a pressure of 0 at –273 °C, which is 0 on the kelvin scale and the lowest possible temperature, called absolute zero.",
-   "draws": ["pressure", "temperature"]
-  },
-  {
-   "id": "sim-charles-graph",
-   "kind": "sim",
-   "number": "9.12",
-   "originals": ["/media/ch09/CNX_Chem_09_02_Charles2.jpg"],
-   "original_caption": "The volume and temperature are linearly related for 1 mole of methane gas at a constant pressure of 1 atm. If the temperature is in kelvin, volume and temperature are directly proportional. The line stops at 111 K because methane liquefies at this temperature; when extrapolated, it intersects the graph’s origin, representing a temperature of absolute zero.",
-   "draws": ["volume", "temperature"]
-  },
-  {
-   "id": "sim-boyle",
-   "kind": "sim",
-   "number": "9.13",
-   "folds": ["9.14"],
-   "originals": ["/media/ch09/CNX_Chem_09_03_BoylesLaw1.jpg", "/media/ch09/CNX_Chem_09_02_Boyleslaw2.jpg"],
-   "original_caption": "When a gas occupies a smaller volume, it exerts a higher pressure; when it occupies a larger volume, it exerts a lower pressure (assuming the amount of gas and the temperature do not change). Since P and V are inversely proportional, a graph of 1/P vs. V is linear.",
-   "draws": ["pressure", "volume"]
-  },
-  {
-   "id": "sim-breathing",
-   "kind": "sim",
-   "number": "9.15",
-   "originals": ["/media/ch09/CNX_Chem_09_02_BoylesLaw4.jpg"],
-   "original_caption": "Breathing occurs because expanding and contracting lung volume creates small pressure differences between your lungs and your surroundings, causing air to be drawn into and forced out of your lungs.",
-   "draws": ["volume", "pressure"]
-  },
-  {
-   "id": "fig-scuba",
-   "kind": "photo",
-   "number": "9.16",
-   "draws": []
-  },
-  {
-   "id": "sim-gas-box",
-   "kind": "sim",
-   "draws": ["pressure", "volume", "temperature", "amount"]
-  },
-  {
-   "id": "sim-four-graphs",
-   "kind": "sim",
-   "draws": ["pressure", "volume", "temperature", "amount"]
-  },
-  {
-   "id": "sim-balloons",
-   "kind": "sim",
-   "number": "9.18",
-   "originals": ["/media/ch09/CNX_Chem_09_02_HENH3O2.jpg"],
-   "original_caption": "Regardless of its chemical identity, one mole of gas behaving ideally occupies a volume of ~22.4 L at STP.",
-   "draws": ["volume", "amount"]
-  }
- ],
- "coverage": [
-  { "span": "history", "concept": "gas-pressure", "verb": "uses" },
-  { "span": "amontons", "concept": "amontons-law", "verb": "introduces" },
-  { "span": "amontons", "concept": "absolute-zero", "verb": "introduces" },
-  { "span": "amontons", "concept": "gas-pressure", "verb": "uses" },
-  { "span": "amontons", "concept": "celsius-kelvin-conversion", "verb": "uses" },
-  { "span": "ex-hair-spray", "concept": "amontons-law", "verb": "uses" },
-  { "span": "ex-hair-spray", "concept": "celsius-kelvin-conversion", "verb": "uses" },
-  { "span": "charles", "concept": "charles-law", "verb": "introduces" },
-  { "span": "charles", "concept": "absolute-zero", "verb": "reinforces" },
-  { "span": "charles", "concept": "volume", "verb": "uses" },
-  { "span": "charles", "concept": "celsius-kelvin-conversion", "verb": "uses" },
-  { "span": "ex-co2", "concept": "charles-law", "verb": "uses" },
-  { "span": "ex-gas-thermometer", "concept": "charles-law", "verb": "uses" },
-  { "span": "ex-gas-thermometer", "concept": "celsius-kelvin-conversion", "verb": "uses" },
-  { "span": "boyle", "concept": "boyles-law", "verb": "introduces" },
-  { "span": "boyle", "concept": "gas-pressure", "verb": "uses" },
-  { "span": "boyle", "concept": "volume", "verb": "uses" },
-  { "span": "ex-syringe", "concept": "boyles-law", "verb": "uses" },
-  { "span": "breathing", "concept": "boyles-law", "verb": "reinforces" },
-  { "span": "avogadro", "concept": "avogadro-law", "verb": "introduces" },
-  { "span": "avogadro", "concept": "volume", "verb": "uses" },
-  { "span": "avogadro", "concept": "atoms-and-molecules", "verb": "uses" },
-  { "span": "ideal-gas-law", "concept": "ideal-gas-law", "verb": "introduces" },
-  { "span": "ideal-gas-law", "concept": "ideal-gas", "verb": "introduces" },
-  { "span": "ideal-gas-law", "concept": "amontons-law", "verb": "reinforces" },
-  { "span": "ideal-gas-law", "concept": "charles-law", "verb": "reinforces" },
-  { "span": "ideal-gas-law", "concept": "boyles-law", "verb": "reinforces" },
-  { "span": "ideal-gas-law", "concept": "avogadro-law", "verb": "reinforces" },
-  { "span": "ideal-gas-law", "concept": "convert-units", "verb": "uses" },
-  { "span": "ex-methane", "concept": "ideal-gas-law", "verb": "uses" },
-  { "span": "ex-methane", "concept": "convert-units", "verb": "uses" },
-  { "span": "combined-gas-law", "concept": "combined-gas-law", "verb": "introduces" },
-  { "span": "combined-gas-law", "concept": "ideal-gas-law", "verb": "uses" },
-  { "span": "ex-scuba", "concept": "combined-gas-law", "verb": "uses" },
-  { "span": "ex-scuba", "concept": "ideal-gas", "verb": "uses" },
-  { "span": "diving", "concept": "boyles-law", "verb": "reinforces" },
-  { "span": "diving", "concept": "gas-pressure", "verb": "uses" },
-  { "span": "stp", "concept": "standard-temperature-and-pressure", "verb": "introduces" },
-  { "span": "stp", "concept": "ideal-gas-law", "verb": "uses" },
-  { "span": "stp", "concept": "avogadro-law", "verb": "uses" }
- ],
- "exercises": [
-  {
-   "id": "cyl1",
-   "source_id": "fs-idm66260928",
-   "kind": "check-your-learning",
-   "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-hair-spray" },
-   "cite": "amontons",
-   "prompt": "A sample of nitrogen, N<sub>2</sub>, occupies 45.0 mL at 27 °C and 600 torr. What pressure will it have if cooled to –73 °C while the volume remains constant?",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 400,
-    "unit": "torr",
-    "hint": "Convert both temperatures to kelvin and use P₁/T₁ = P₂/T₂; the volume does not change.",
-    "solution": "400 torr"
-   }
-  },
-  {
-   "id": "cyl2",
-   "source_id": "fs-idm45782128",
-   "kind": "check-your-learning",
-   "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-co2" },
-   "cite": "charles",
-   "prompt": "A sample of oxygen, O<sub>2</sub>, occupies 32.2 mL at 30 °C and 452 torr. What volume will it occupy at –70 °C and the same pressure?",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 21.6,
-    "unit": "mL",
-    "hint": "The pressure is held, so V₁/T₁ = V₂/T₂ with both temperatures in kelvin.",
-    "solution": "21.6 mL"
-   }
-  },
-  {
-   "id": "cyl3",
-   "source_id": "fs-idm51209248",
-   "kind": "check-your-learning",
-   "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-gas-thermometer" },
-   "cite": "charles",
-   "prompt": "What is the volume of a sample of ethane at 467 K and 1.1 atm if it occupies 405 mL at 298 K and 1.1 atm?",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 635,
-    "unit": "mL",
-    "hint": "The pressure is the same in both states, so the volume scales with the kelvin temperature.",
-    "solution": "635 mL"
-   }
-  },
-  {
-   "id": "cyl4",
-   "source_id": "fs-idp10418864",
-   "kind": "check-your-learning",
-   "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-syringe" },
-   "cite": "boyle",
-   "prompt": "The sample of gas in Figure 9.13 has a volume of 30.0 mL at a pressure of 6.5 psi. Determine the volume of the gas at a pressure of 11.0 psi, using: (a) the <em>P</em>-<em>V</em> graph in Figure 9.13 (b) the 1/<em>P</em> vs. <em>V</em> graph in Figure 9.13 (c) the Boyle’s law equation. Comment on the likely accuracy of each method.",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 17.7,
-    "unit": "mL",
-    "part": "(c)",
-    "hint": "For part (c), P₁V₁ = P₂V₂ with the temperature and the amount of gas unchanged.",
-    "solution": "(a) about 17–18 mL; (b) ~18 mL; (c) 17.7 mL; it was more difficult to estimate well from the <em>P</em>-<em>V</em> graph, so (a) is likely more inaccurate than (b); the calculation will be as accurate as the equation and measurements allow"
-   }
-  },
-  {
-   "id": "cyl5",
-   "source_id": "fs-idm72969744",
-   "kind": "check-your-learning",
-   "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-methane" },
-   "cite": "ideal-gas-law",
-   "prompt": "Calculate the pressure in bar of 2520 moles of hydrogen gas stored at 27 °C in the 180-L storage tank of a modern hydrogen-powered car.",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 350,
-    "unit": "bar",
-    "hint": "Solve PV = nRT for P with the temperature in kelvin, then convert the pressure to bar.",
-    "solution": "350 bar"
-   }
-  },
-  {
-   "id": "cyl6",
-   "source_id": "fs-idp23616944",
-   "kind": "check-your-learning",
-   "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-scuba" },
-   "cite": "combined-gas-law",
-   "prompt": "A sample of ammonia is found to occupy 0.250 L under laboratory conditions of 27 °C and 0.850 atm. Find the volume of this sample at 0 °C and 1.00 atm.",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 0.193,
-    "unit": "L",
-    "hint": "The amount of ammonia does not change, so P₁V₁/T₁ = P₂V₂/T₂.",
-    "solution": "0.193 L"
-   }
-  },
-  {
-   "id": "e1",
-   "source_id": "fs-idm6254784",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": { "at": "end" },
-   "cite": "amontons",
-   "prompt": "Sometimes leaving a bicycle in the sun on a hot day will cause a blowout. Why?",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "Suggested approach: the air in the tire is a fixed amount of gas in a nearly fixed volume, so Amontons’s law applies. As the sun raises the temperature of the air in the tire, its pressure rises in proportion to its kelvin temperature; if the pressure climbs past what the tire can hold, the tire bursts. Compare the hair spray can of Example 9.5."
-   }
-  },
-  {
-   "id": "e2",
-   "source_id": "fs-idp16137760",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": { "at": "end" },
-   "cite": "boyle",
-   "prompt": "Explain how the volume of the bubbles exhausted by a scuba diver (Figure 9.16) change as they rise to the surface, assuming that they remain intact.",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "As the bubbles rise, the pressure decreases, so their volume increases as suggested by Boyle’s law."
-   }
-  },
-  {
-   "id": "e3",
-   "source_id": "fs-idm228222512",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": { "at": "end" },
-   "cite": "boyle",
-   "prompt": "One way to state Boyle’s law is “All other things being equal, the pressure of a gas is inversely proportional to its volume.” (a) What is the meaning of the term “inversely proportional?” (b) What are the “other things” that must be equal?",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "Suggested approach: (a) two quantities are inversely proportional when one rises by the same factor that the other falls, so that their product stays constant; halving the volume doubles the pressure, and PV = k. (b) The temperature and the amount of gas must not change, as the section says when it states the law for a given amount of gas held at constant temperature."
-   }
-  },
-  {
-   "id": "e4",
-   "source_id": "fs-idm153017968",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": { "at": "end" },
-   "cite": "avogadro",
-   "prompt": "An alternate way to state Avogadro’s law is “All other things being equal, the number of molecules in a gas is directly proportional to the volume of the gas.” (a) What is the meaning of the term “directly proportional?” (b) What are the “other things” that must be equal?",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "(a) The number of particles in the gas increases as the volume increases. (b) temperature, pressure"
-   }
-  },
-  {
-   "id": "e5",
-   "source_id": "fs-idm119503088",
-   "kind": "exercise",
-   "bloom": "Analyze",
-   "place": { "at": "end" },
-   "cite": "charles",
-   "prompt": "How would the graph in Figure 9.12 change if the number of moles of gas in the sample used to determine the curve were doubled?",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "Suggested approach: the graph plots the volume of one mole of methane against its kelvin temperature at 1 atm, a straight line through the origin. By Avogadro’s law, twice the moles occupy twice the volume at every temperature and pressure, so every point of the line would sit twice as high and the line would be twice as steep, still passing through the origin at absolute zero."
-   }
-  },
-  {
-   "id": "e6",
-   "source_id": "fs-idm150329120",
-   "kind": "exercise",
-   "bloom": "Analyze",
-   "place": { "at": "end" },
-   "cite": "boyle",
-   "prompt": "How would the graph in Figure 9.13 change if the number of moles of gas in the sample used to determine the curve were doubled?",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "The curve would be farther to the right and higher up, but the same basic shape."
-   }
-  },
-  {
-   "id": "e7",
-   "source_id": "fs-idm221266736",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": { "at": "end" },
-   "cite": "ideal-gas-law",
-   "prompt": "In addition to the data found in Figure 9.13, what other information do we need to find the mass of the sample of air used to determine the graph?",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "Suggested approach: the figure gives pressures and volumes at room temperature. The ideal gas law, PV = nRT, turns a pressure, a volume and a temperature into an amount in moles, so the temperature of the sample is needed; and turning that amount into a mass needs the molar mass of air, since a mass is the amount multiplied by the mass of one mole."
-   }
-  },
-  {
-   "id": "e8",
-   "source_id": "fs-idm162722032",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "charles",
-   "prompt": "Determine the volume of 1 mol of CH<sub>4</sub> gas at 150 K and 1 atm, using Figure 9.12.",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 12.5,
-    "unit": "L",
-    "hint": "Read the volume off the line of Figure 9.12 at 150 K, or use V/T = k with one of the tabulated points.",
-    "solution": "About 12.5 L"
-   }
-  },
-  {
-   "id": "e10",
-   "source_id": "fs-idm211017328",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "amontons",
-   "prompt": "A spray can is used until it is empty except for the propellant gas, which has a pressure of 1344 torr at 23 °C. If the can is thrown into a fire (T = 475 °C), what will be the pressure in the hot can?",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 3400,
-    "unit": "torr",
-    "hint": "The can is rigid, so P₁/T₁ = P₂/T₂ with both temperatures in kelvin.",
-    "solution": "3.40 $\\times$ 10<sup>3</sup> torr"
-   }
-  },
-  {
-   "id": "e12",
-   "source_id": "fs-idm221278704",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "charles",
-   "prompt": "A 2.50-L volume of hydrogen measured at –196 °C is warmed to 100 °C. Calculate the volume of the gas at the higher temperature, assuming no change in pressure.",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 12.1,
-    "unit": "L",
-    "hint": "Charles’s law: V₁/T₁ = V₂/T₂, with –196 °C and 100 °C converted to kelvin.",
-    "solution": "12.1 L"
-   }
-  },
-  {
-   "id": "e14",
-   "source_id": "fs-idm24946256",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "ideal-gas-law",
-   "prompt": "A weather balloon contains 8.80 moles of helium at a pressure of 0.992 atm and a temperature of 25 °C at ground level. What is the volume of the balloon under these conditions?",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 217,
-    "unit": "L",
-    "hint": "Solve PV = nRT for V with R = 0.08206 L atm mol⁻¹ K⁻¹ and T in kelvin.",
-    "solution": "217 L"
-   }
-  },
-  {
-   "id": "e16",
-   "source_id": "fs-idm95690800",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "ideal-gas-law",
-   "prompt": "How many moles of gaseous boron trifluoride, BF<sub>3</sub>, are contained in a 4.3410-L bulb at 788.0 K if the pressure is 1.220 atm? How many grams of BF<sub>3</sub>?",
-   "answer": {
-    "type": "multi",
-    "generated_by": "source",
-    "parts": [
-     { "part": "moles", "value": 0.0819, "unit": "mol", "hint": "Solve PV = nRT for n." },
-     { "part": "grams", "value": 5.553, "unit": "g", "hint": "Multiply the amount by the molar mass of BF₃." }
-    ],
-    "solution": "8.190 $\\times$ 10<sup>–2</sup> mol; 5.553 g"
-   }
-  },
-  {
-   "id": "e18",
-   "source_id": "fs-idm192798240",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "ideal-gas-law",
-   "prompt": "How many grams of gas are present in each of the following cases? (a) 0.100 L of CO<sub>2</sub> at 307 torr and 26 °C (b) 8.75 L of C<sub>2</sub>H<sub>4</sub>, at 378.3 kPa and 483 K (c) 221 mL of Ar at 0.23 torr and –54 °C",
-   "answer": {
-    "type": "multi",
-    "generated_by": "source",
-    "parts": [
-     { "part": "(a)", "value": 0.0724, "unit": "g", "hint": "Find n from PV = nRT with the pressure in atm, then multiply by the molar mass of CO₂." },
-     { "part": "(b)", "value": 23.1, "unit": "g", "hint": "With the pressure in kPa, use R = 8.314 kPa L mol⁻¹ K⁻¹." },
-     { "part": "(c)", "value": 0.00015, "unit": "g", "hint": "Convert 221 mL to litres and –54 °C to kelvin before solving for n." }
-    ],
-    "solution": "(a) 7.24 $\\times$ 10<sup>–2</sup> g; (b) 23.1 g; (c) 1.5 $\\times$ 10<sup>–4</sup> g"
-   }
-  },
-  {
-   "id": "e20",
-   "source_id": "fs-idm71892416",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "combined-gas-law",
-   "prompt": "A cylinder of medical oxygen has a volume of 35.4 L, and contains O<sub>2</sub> at a pressure of 151 atm and a temperature of 25 °C. What volume of O<sub>2</sub> does this correspond to at normal body conditions, that is, 1 atm and 37 °C?",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 5561,
-    "unit": "L",
-    "hint": "The amount of oxygen is fixed, so P₁V₁/T₁ = P₂V₂/T₂.",
-    "solution": "5561 L"
-   }
-  },
-  {
-   "id": "e22",
-   "source_id": "fs-idm247077296",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "ideal-gas-law",
-   "prompt": "A 20.0-L cylinder containing 11.34 kg of butane, C<sub>4</sub>H<sub>10</sub>, was opened to the atmosphere. Calculate the mass of the gas remaining in the cylinder if it were opened and the gas escaped until the pressure in the cylinder was equal to the atmospheric pressure, 0.983 atm, and a temperature of 27 °C.",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 46.4,
-    "unit": "g",
-    "hint": "The gas left fills 20.0 L at 0.983 atm and 300 K; find its amount from PV = nRT and convert to a mass with the molar mass of butane.",
-    "solution": "46.4 g"
-   }
-  },
-  {
-   "id": "e24",
-   "source_id": "fs-idm188679440",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": { "at": "end" },
-   "cite": "ideal-gas-law",
-   "prompt": "For a given amount of gas showing ideal behavior, draw labeled graphs of: (a) the variation of <em>P</em> with <em>V</em> (b) the variation of <em>V</em> with <em>T</em> (c) the variation of <em>P</em> with <em>T</em> (d) the variation of $\\frac{1}{P}$ with <em>V</em>",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "For a gas exhibiting ideal behavior: (a) with volume on the horizontal axis and pressure on the vertical, a curved line falling with a decreasing rate of change, labeled n, T constant; (b) with temperature on the horizontal axis and volume on the vertical, a rising straight line, labeled n, P constant; (c) with temperature on the horizontal axis and pressure on the vertical, a rising straight line, labeled n, V constant; (d) with volume on the horizontal axis and 1/P on the vertical, a rising straight line, labeled n, T constant. The second Sim of the section draws all four from one state of the gas."
-   }
-  },
-  {
-   "id": "e25",
-   "source_id": "fs-idm259995696",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": { "at": "end" },
-   "cite": "stp",
-   "prompt": "A liter of methane gas, CH<sub>4</sub>, at STP contains more atoms of hydrogen than does a liter of pure hydrogen gas, H<sub>2</sub>, at STP. Using Avogadro’s law as a starting point, explain why.",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "Suggested approach: by Avogadro’s law, equal volumes of gases at the same temperature and pressure contain the same number of molecules, so a liter of methane and a liter of hydrogen at STP hold the same number of molecules. Each methane molecule carries four hydrogen atoms and each hydrogen molecule carries two, so the liter of methane holds twice as many hydrogen atoms."
-   }
-  },
-  {
-   "id": "e26",
-   "source_id": "fs-idp25675936",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "stp",
-   "prompt": "The effect of chlorofluorocarbons (such as CCl<sub>2</sub>F<sub>2</sub>) on the depletion of the ozone layer is well known. The use of substitutes, such as CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>), for the chlorofluorocarbons, has largely corrected the problem. Calculate the volume occupied by 10.0 g of each of these compounds at STP: (a) CCl<sub>2</sub>F<sub>2</sub>(<em>g</em>) (b) CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>)",
-   "answer": {
-    "type": "multi",
-    "generated_by": "source",
-    "parts": [
-     { "part": "(a)", "value": 1.85, "unit": "L", "hint": "Convert 10.0 g to moles with the molar mass, then multiply by the standard molar volume, 22.4 L/mol." },
-     { "part": "(b)", "value": 4.66, "unit": "L", "hint": "The same steps with the molar mass of CH₃CH₂F." }
-    ],
-    "solution": "(a) 1.85 L CCl<sub>2</sub>F<sub>2</sub>; (b) 4.66 L CH<sub>3</sub>CH<sub>2</sub>F"
-   }
-  },
-  {
-   "id": "e28",
-   "source_id": "fs-idm23005472",
-   "kind": "exercise",
-   "bloom": "Apply",
-   "place": { "at": "end" },
-   "cite": "combined-gas-law",
-   "prompt": "A balloon with a volume of 100.21 L at 21 °C and 0.981 atm is released and just barely clears the top of Mount Crumpit in British Columbia. If the final volume of the balloon is 144.53 L at a temperature of 5.24 °C, what is the pressure experienced by the balloon as it clears Mount Crumpit?",
-   "answer": {
-    "type": "number",
-    "generated_by": "source",
-    "value": 0.644,
-    "unit": "atm",
-    "hint": "The combined gas law with both temperatures in kelvin, solved for P₂.",
-    "solution": "0.644 atm"
-   }
-  },
-  {
-   "id": "e29",
-   "source_id": "fs-idm189510384",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": { "at": "end" },
-   "cite": "amontons",
-   "prompt": "If the temperature of a fixed amount of a gas is doubled at constant volume, what happens to the pressure?",
-   "answer": {
-    "type": "open",
-    "generated_by": "ai",
-    "solution": "Suggested approach: at constant volume and amount, Amontons’s law makes the pressure directly proportional to the kelvin temperature, so doubling the kelvin temperature doubles the pressure. Note that the doubling must be on the kelvin scale; doubling a Celsius reading is not a doubling of the temperature."
-   }
-  },
-  {
-   "id": "e30",
-   "source_id": "fs-idm136587680",
-   "kind": "exercise",
-   "bloom": "Understand",
-   "place": { "at": "end" },
-   "cite": "boyle",
-   "prompt": "If the volume of a fixed amount of a gas is tripled at constant temperature, what happens to the pressure?",
-   "answer": {
-    "type": "open",
-    "generated_by": "source",
-    "solution": "The pressure decreases by a factor of 3."
-   }
-  }
- ],
- "exercise_concepts": [
-  { "exercise": "cyl1", "concept": "amontons-law" },
-  { "exercise": "cyl2", "concept": "charles-law" },
-  { "exercise": "cyl3", "concept": "charles-law" },
-  { "exercise": "cyl4", "concept": "boyles-law" },
-  { "exercise": "cyl5", "concept": "ideal-gas-law" },
-  { "exercise": "cyl6", "concept": "combined-gas-law" },
-  { "exercise": "e1", "concept": "amontons-law" },
-  { "exercise": "e2", "concept": "boyles-law" },
-  { "exercise": "e3", "concept": "boyles-law" },
-  { "exercise": "e4", "concept": "avogadro-law" },
-  { "exercise": "e5", "concept": "charles-law" },
-  { "exercise": "e5", "concept": "avogadro-law", "weight": 2 },
-  { "exercise": "e6", "concept": "boyles-law" },
-  { "exercise": "e6", "concept": "avogadro-law", "weight": 2 },
-  { "exercise": "e7", "concept": "ideal-gas-law" },
-  { "exercise": "e7", "concept": "boyles-law", "weight": 2 },
-  { "exercise": "e8", "concept": "charles-law" },
-  { "exercise": "e10", "concept": "amontons-law" },
-  { "exercise": "e12", "concept": "charles-law" },
-  { "exercise": "e14", "concept": "ideal-gas-law" },
-  { "exercise": "e16", "concept": "ideal-gas-law" },
-  { "exercise": "e18", "concept": "ideal-gas-law" },
-  { "exercise": "e20", "concept": "combined-gas-law" },
-  { "exercise": "e22", "concept": "ideal-gas-law" },
-  { "exercise": "e24", "concept": "ideal-gas-law" },
-  { "exercise": "e24", "concept": "boyles-law", "weight": 2 },
-  { "exercise": "e24", "concept": "charles-law", "weight": 2 },
-  { "exercise": "e24", "concept": "amontons-law", "weight": 2 },
-  { "exercise": "e25", "concept": "avogadro-law" },
-  { "exercise": "e25", "concept": "standard-temperature-and-pressure", "weight": 2 },
-  { "exercise": "e26", "concept": "standard-temperature-and-pressure" },
-  { "exercise": "e26", "concept": "ideal-gas-law", "weight": 2 },
-  { "exercise": "e28", "concept": "combined-gas-law" },
-  { "exercise": "e29", "concept": "amontons-law" },
-  { "exercise": "e30", "concept": "boyles-law" }
- ]
+  "built": "2026-09-12",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The six Check Your Learning items are set inline after their examples; the book keys the syringe item of Example 9.8 as (a) about 17–18 mL, (b) ~18 mL and (c) 17.7 mL, so the number checked is part (c) and the whole answer is the solution. The unkeyed numerical exercises fs-idm179450656 (the syringe at 12.5 mL), fs-idm244984432 (the temperature of the carbon monoxide), fs-idm179333888 (the balloon with five more breaths), fs-idm207691136 (the air bag in kPa), fs-idm171506192 (the iodine vapor), fs-idm87206720 (the high altitude balloon), fs-idm131888352 (the scuba tank filled to capacity), fs-idp25823920 (the oxygen consumed in an hour) and fs-idm26646416 (the helium from radium) are left out, and no answer is computed for them. The six unkeyed conceptual exercises are kept with a suggested approach marked as OmniStax’s own. The keyed exercise fs-idm188679440 asks for four graphs and the book answers it with a drawing; the solution here describes that drawing in the book’s words from its own description of the figure and names the Sim of the page that draws the four graphs live. Numeric answers accept 2% tolerance.",
+  "figures": [
+    {
+      "id": "fig-ballooning",
+      "kind": "photo",
+      "number": "9.9",
+      "draws": []
+    },
+    {
+      "id": "sim-amontons-sphere",
+      "kind": "sim",
+      "number": "9.10",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_01_Amontons1.jpg"
+      ],
+      "original_caption": "The effect of temperature on gas pressure: When the hot plate is off, the pressure of the gas in the sphere is relatively low. As the gas is heated, the pressure of the gas in the sphere increases.",
+      "draws": [
+        "pressure",
+        "temperature",
+        "amount",
+        "volume"
+      ]
+    },
+    {
+      "id": "sim-amontons-graph",
+      "kind": "sim",
+      "number": "9.11",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_02_Amontons2.jpg"
+      ],
+      "original_caption": "For a constant volume and amount of air, the pressure and temperature are directly proportional, provided the temperature is in kelvin. (Measurements cannot be made at lower temperatures because of the condensation of the gas.) When this line is extrapolated to lower pressures, it reaches a pressure of 0 at –273 °C, which is 0 on the kelvin scale and the lowest possible temperature, called absolute zero.",
+      "draws": [
+        "pressure",
+        "temperature"
+      ]
+    },
+    {
+      "id": "sim-charles-graph",
+      "kind": "sim",
+      "number": "9.12",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_02_Charles2.jpg"
+      ],
+      "original_caption": "The volume and temperature are linearly related for 1 mole of methane gas at a constant pressure of 1 atm. If the temperature is in kelvin, volume and temperature are directly proportional. The line stops at 111 K because methane liquefies at this temperature; when extrapolated, it intersects the graph’s origin, representing a temperature of absolute zero.",
+      "draws": [
+        "volume",
+        "temperature"
+      ]
+    },
+    {
+      "id": "sim-boyle",
+      "kind": "sim",
+      "number": "9.13",
+      "folds": [
+        "9.14"
+      ],
+      "originals": [
+        "/media/ch09/CNX_Chem_09_03_BoylesLaw1.jpg",
+        "/media/ch09/CNX_Chem_09_02_Boyleslaw2.jpg"
+      ],
+      "original_caption": "When a gas occupies a smaller volume, it exerts a higher pressure; when it occupies a larger volume, it exerts a lower pressure (assuming the amount of gas and the temperature do not change). Since P and V are inversely proportional, a graph of 1/P vs. V is linear.",
+      "draws": [
+        "pressure",
+        "volume"
+      ]
+    },
+    {
+      "id": "sim-breathing",
+      "kind": "sim",
+      "number": "9.15",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_02_BoylesLaw4.jpg"
+      ],
+      "original_caption": "Breathing occurs because expanding and contracting lung volume creates small pressure differences between your lungs and your surroundings, causing air to be drawn into and forced out of your lungs.",
+      "draws": [
+        "volume",
+        "pressure"
+      ]
+    },
+    {
+      "id": "fig-scuba",
+      "kind": "photo",
+      "number": "9.16",
+      "draws": []
+    },
+    {
+      "id": "sim-gas-box",
+      "kind": "sim",
+      "draws": [
+        "pressure",
+        "volume",
+        "temperature",
+        "amount"
+      ]
+    },
+    {
+      "id": "sim-four-graphs",
+      "kind": "sim",
+      "draws": [
+        "pressure",
+        "volume",
+        "temperature",
+        "amount"
+      ]
+    },
+    {
+      "id": "sim-balloons",
+      "kind": "sim",
+      "number": "9.18",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_02_HENH3O2.jpg"
+      ],
+      "original_caption": "Regardless of its chemical identity, one mole of gas behaving ideally occupies a volume of ~22.4 L at STP.",
+      "draws": [
+        "volume",
+        "amount",
+        "pressure",
+        "temperature"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "history",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "amontons",
+      "concept": "amontons-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "amontons",
+      "concept": "absolute-zero",
+      "verb": "introduces"
+    },
+    {
+      "span": "amontons",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "amontons",
+      "concept": "celsius-kelvin-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hair-spray",
+      "concept": "amontons-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hair-spray",
+      "concept": "celsius-kelvin-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "charles",
+      "concept": "charles-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "charles",
+      "concept": "absolute-zero",
+      "verb": "reinforces"
+    },
+    {
+      "span": "charles",
+      "concept": "volume",
+      "verb": "uses"
+    },
+    {
+      "span": "charles",
+      "concept": "celsius-kelvin-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-co2",
+      "concept": "charles-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-gas-thermometer",
+      "concept": "charles-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-gas-thermometer",
+      "concept": "celsius-kelvin-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "boyle",
+      "concept": "boyles-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "boyle",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "boyle",
+      "concept": "volume",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-syringe",
+      "concept": "boyles-law",
+      "verb": "uses"
+    },
+    {
+      "span": "breathing",
+      "concept": "boyles-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "avogadro",
+      "concept": "avogadro-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "avogadro",
+      "concept": "volume",
+      "verb": "uses"
+    },
+    {
+      "span": "avogadro",
+      "concept": "atoms-and-molecules",
+      "verb": "uses"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "ideal-gas-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "ideal-gas",
+      "verb": "introduces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "amontons-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "charles-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "boyles-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "avogadro-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ideal-gas-law",
+      "concept": "convert-units",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-methane",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-methane",
+      "concept": "convert-units",
+      "verb": "uses"
+    },
+    {
+      "span": "combined-gas-law",
+      "concept": "combined-gas-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "combined-gas-law",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-scuba",
+      "concept": "combined-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-scuba",
+      "concept": "ideal-gas",
+      "verb": "uses"
+    },
+    {
+      "span": "diving",
+      "concept": "boyles-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "diving",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "stp",
+      "concept": "standard-temperature-and-pressure",
+      "verb": "introduces"
+    },
+    {
+      "span": "stp",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "stp",
+      "concept": "avogadro-law",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm66260928",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-hair-spray"
+      },
+      "cite": "amontons",
+      "prompt": "A sample of nitrogen, N<sub>2</sub>, occupies 45.0 mL at 27 °C and 600 torr. What pressure will it have if cooled to –73 °C while the volume remains constant?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 400,
+        "unit": "torr",
+        "hint": "Convert both temperatures to kelvin and use P₁/T₁ = P₂/T₂; the volume does not change.",
+        "solution": "400 torr"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm45782128",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-co2"
+      },
+      "cite": "charles",
+      "prompt": "A sample of oxygen, O<sub>2</sub>, occupies 32.2 mL at 30 °C and 452 torr. What volume will it occupy at –70 °C and the same pressure?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 21.6,
+        "unit": "mL",
+        "hint": "The pressure is held, so V₁/T₁ = V₂/T₂ with both temperatures in kelvin.",
+        "solution": "21.6 mL"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm51209248",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-gas-thermometer"
+      },
+      "cite": "charles",
+      "prompt": "What is the volume of a sample of ethane at 467 K and 1.1 atm if it occupies 405 mL at 298 K and 1.1 atm?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 635,
+        "unit": "mL",
+        "hint": "The pressure is the same in both states, so the volume scales with the kelvin temperature.",
+        "solution": "635 mL"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp10418864",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-syringe"
+      },
+      "cite": "boyle",
+      "prompt": "The sample of gas in Figure 9.13 has a volume of 30.0 mL at a pressure of 6.5 psi. Determine the volume of the gas at a pressure of 11.0 psi, using: (a) the <em>P</em>-<em>V</em> graph in Figure 9.13 (b) the 1/<em>P</em> vs. <em>V</em> graph in Figure 9.13 (c) the Boyle’s law equation. Comment on the likely accuracy of each method.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 17.7,
+        "unit": "mL",
+        "part": "(c)",
+        "hint": "For part (c), P₁V₁ = P₂V₂ with the temperature and the amount of gas unchanged.",
+        "solution": "(a) about 17–18 mL; (b) ~18 mL; (c) 17.7 mL; it was more difficult to estimate well from the <em>P</em>-<em>V</em> graph, so (a) is likely more inaccurate than (b); the calculation will be as accurate as the equation and measurements allow"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idm72969744",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-methane"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "Calculate the pressure in bar of 2520 moles of hydrogen gas stored at 27 °C in the 180-L storage tank of a modern hydrogen-powered car.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 350,
+        "unit": "bar",
+        "hint": "Solve PV = nRT for P with the temperature in kelvin, then convert the pressure to bar.",
+        "solution": "350 bar"
+      }
+    },
+    {
+      "id": "cyl6",
+      "source_id": "fs-idp23616944",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-scuba"
+      },
+      "cite": "combined-gas-law",
+      "prompt": "A sample of ammonia is found to occupy 0.250 L under laboratory conditions of 27 °C and 0.850 atm. Find the volume of this sample at 0 °C and 1.00 atm.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.193,
+        "unit": "L",
+        "hint": "The amount of ammonia does not change, so P₁V₁/T₁ = P₂V₂/T₂.",
+        "solution": "0.193 L"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm6254784",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "amontons",
+      "prompt": "Sometimes leaving a bicycle in the sun on a hot day will cause a blowout. Why?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: the air in the tire is a fixed amount of gas in a nearly fixed volume, so Amontons’s law applies. As the sun raises the temperature of the air in the tire, its pressure rises in proportion to its kelvin temperature; if the pressure climbs past what the tire can hold, the tire bursts. Compare the hair spray can of Example 9.5."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp16137760",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boyle",
+      "prompt": "Explain how the volume of the bubbles exhausted by a scuba diver (Figure 9.16) change as they rise to the surface, assuming that they remain intact.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "As the bubbles rise, the pressure decreases, so their volume increases as suggested by Boyle’s law."
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm228222512",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boyle",
+      "prompt": "One way to state Boyle’s law is “All other things being equal, the pressure of a gas is inversely proportional to its volume.” (a) What is the meaning of the term “inversely proportional?” (b) What are the “other things” that must be equal?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: (a) two quantities are inversely proportional when one rises by the same factor that the other falls, so that their product stays constant; halving the volume doubles the pressure, and PV = k. (b) The temperature and the amount of gas must not change, as the section says when it states the law for a given amount of gas held at constant temperature."
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm153017968",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "avogadro",
+      "prompt": "An alternate way to state Avogadro’s law is “All other things being equal, the number of molecules in a gas is directly proportional to the volume of the gas.” (a) What is the meaning of the term “directly proportional?” (b) What are the “other things” that must be equal?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) The number of particles in the gas increases as the volume increases. (b) temperature, pressure"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm119503088",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "charles",
+      "prompt": "How would the graph in Figure 9.12 change if the number of moles of gas in the sample used to determine the curve were doubled?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: the graph plots the volume of one mole of methane against its kelvin temperature at 1 atm, a straight line through the origin. By Avogadro’s law, twice the moles occupy twice the volume at every temperature and pressure, so every point of the line would sit twice as high and the line would be twice as steep, still passing through the origin at absolute zero."
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm150329120",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boyle",
+      "prompt": "How would the graph in Figure 9.13 change if the number of moles of gas in the sample used to determine the curve were doubled?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The curve would be farther to the right and higher up, but the same basic shape."
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm221266736",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "In addition to the data found in Figure 9.13, what other information do we need to find the mass of the sample of air used to determine the graph?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: the figure gives pressures and volumes at room temperature. The ideal gas law, PV = nRT, turns a pressure, a volume and a temperature into an amount in moles, so the temperature of the sample is needed; and turning that amount into a mass needs the molar mass of air, since a mass is the amount multiplied by the mass of one mole."
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idm162722032",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "charles",
+      "prompt": "Determine the volume of 1 mol of CH<sub>4</sub> gas at 150 K and 1 atm, using Figure 9.12.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 12.5,
+        "unit": "L",
+        "hint": "Read the volume off the line of Figure 9.12 at 150 K, or use V/T = k with one of the tabulated points.",
+        "solution": "About 12.5 L"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idm211017328",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "amontons",
+      "prompt": "A spray can is used until it is empty except for the propellant gas, which has a pressure of 1344 torr at 23 °C. If the can is thrown into a fire (T = 475 °C), what will be the pressure in the hot can?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 3400,
+        "unit": "torr",
+        "hint": "The can is rigid, so P₁/T₁ = P₂/T₂ with both temperatures in kelvin.",
+        "solution": "3.40 $\\times$ 10<sup>3</sup> torr"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idm221278704",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "charles",
+      "prompt": "A 2.50-L volume of hydrogen measured at –196 °C is warmed to 100 °C. Calculate the volume of the gas at the higher temperature, assuming no change in pressure.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 12.1,
+        "unit": "L",
+        "hint": "Charles’s law: V₁/T₁ = V₂/T₂, with –196 °C and 100 °C converted to kelvin.",
+        "solution": "12.1 L"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idm24946256",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "A weather balloon contains 8.80 moles of helium at a pressure of 0.992 atm and a temperature of 25 °C at ground level. What is the volume of the balloon under these conditions?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 217,
+        "unit": "L",
+        "hint": "Solve PV = nRT for V with R = 0.08206 L atm mol⁻¹ K⁻¹ and T in kelvin.",
+        "solution": "217 L"
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idm95690800",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "How many moles of gaseous boron trifluoride, BF<sub>3</sub>, are contained in a 4.3410-L bulb at 788.0 K if the pressure is 1.220 atm? How many grams of BF<sub>3</sub>?",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "moles",
+            "value": 0.0819,
+            "unit": "mol",
+            "hint": "Solve PV = nRT for n."
+          },
+          {
+            "part": "grams",
+            "value": 5.553,
+            "unit": "g",
+            "hint": "Multiply the amount by the molar mass of BF₃."
+          }
+        ],
+        "solution": "8.190 $\\times$ 10<sup>–2</sup> mol; 5.553 g"
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idm192798240",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "How many grams of gas are present in each of the following cases? (a) 0.100 L of CO<sub>2</sub> at 307 torr and 26 °C (b) 8.75 L of C<sub>2</sub>H<sub>4</sub>, at 378.3 kPa and 483 K (c) 221 mL of Ar at 0.23 torr and –54 °C",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 0.0724,
+            "unit": "g",
+            "hint": "Find n from PV = nRT with the pressure in atm, then multiply by the molar mass of CO₂."
+          },
+          {
+            "part": "(b)",
+            "value": 23.1,
+            "unit": "g",
+            "hint": "With the pressure in kPa, use R = 8.314 kPa L mol⁻¹ K⁻¹."
+          },
+          {
+            "part": "(c)",
+            "value": 0.00015,
+            "unit": "g",
+            "hint": "Convert 221 mL to litres and –54 °C to kelvin before solving for n."
+          }
+        ],
+        "solution": "(a) 7.24 $\\times$ 10<sup>–2</sup> g; (b) 23.1 g; (c) 1.5 $\\times$ 10<sup>–4</sup> g"
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idm71892416",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combined-gas-law",
+      "prompt": "A cylinder of medical oxygen has a volume of 35.4 L, and contains O<sub>2</sub> at a pressure of 151 atm and a temperature of 25 °C. What volume of O<sub>2</sub> does this correspond to at normal body conditions, that is, 1 atm and 37 °C?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 5561,
+        "unit": "L",
+        "hint": "The amount of oxygen is fixed, so P₁V₁/T₁ = P₂V₂/T₂.",
+        "solution": "5561 L"
+      }
+    },
+    {
+      "id": "e22",
+      "source_id": "fs-idm247077296",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "A 20.0-L cylinder containing 11.34 kg of butane, C<sub>4</sub>H<sub>10</sub>, was opened to the atmosphere. Calculate the mass of the gas remaining in the cylinder if it were opened and the gas escaped until the pressure in the cylinder was equal to the atmospheric pressure, 0.983 atm, and a temperature of 27 °C.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 46.4,
+        "unit": "g",
+        "hint": "The gas left fills 20.0 L at 0.983 atm and 300 K; find its amount from PV = nRT and convert to a mass with the molar mass of butane.",
+        "solution": "46.4 g"
+      }
+    },
+    {
+      "id": "e24",
+      "source_id": "fs-idm188679440",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ideal-gas-law",
+      "prompt": "For a given amount of gas showing ideal behavior, draw labeled graphs of: (a) the variation of <em>P</em> with <em>V</em> (b) the variation of <em>V</em> with <em>T</em> (c) the variation of <em>P</em> with <em>T</em> (d) the variation of $\\frac{1}{P}$ with <em>V</em>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "For a gas exhibiting ideal behavior: (a) with volume on the horizontal axis and pressure on the vertical, a curved line falling with a decreasing rate of change, labeled n, T constant; (b) with temperature on the horizontal axis and volume on the vertical, a rising straight line, labeled n, P constant; (c) with temperature on the horizontal axis and pressure on the vertical, a rising straight line, labeled n, V constant; (d) with volume on the horizontal axis and 1/P on the vertical, a rising straight line, labeled n, T constant. The second Sim of the section draws all four from one state of the gas."
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idm259995696",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "stp",
+      "prompt": "A liter of methane gas, CH<sub>4</sub>, at STP contains more atoms of hydrogen than does a liter of pure hydrogen gas, H<sub>2</sub>, at STP. Using Avogadro’s law as a starting point, explain why.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: by Avogadro’s law, equal volumes of gases at the same temperature and pressure contain the same number of molecules, so a liter of methane and a liter of hydrogen at STP hold the same number of molecules. Each methane molecule carries four hydrogen atoms and each hydrogen molecule carries two, so the liter of methane holds twice as many hydrogen atoms."
+      }
+    },
+    {
+      "id": "e26",
+      "source_id": "fs-idp25675936",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "stp",
+      "prompt": "The effect of chlorofluorocarbons (such as CCl<sub>2</sub>F<sub>2</sub>) on the depletion of the ozone layer is well known. The use of substitutes, such as CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>), for the chlorofluorocarbons, has largely corrected the problem. Calculate the volume occupied by 10.0 g of each of these compounds at STP: (a) CCl<sub>2</sub>F<sub>2</sub>(<em>g</em>) (b) CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>)",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 1.85,
+            "unit": "L",
+            "hint": "Convert 10.0 g to moles with the molar mass, then multiply by the standard molar volume, 22.4 L/mol."
+          },
+          {
+            "part": "(b)",
+            "value": 4.66,
+            "unit": "L",
+            "hint": "The same steps with the molar mass of CH₃CH₂F."
+          }
+        ],
+        "solution": "(a) 1.85 L CCl<sub>2</sub>F<sub>2</sub>; (b) 4.66 L CH<sub>3</sub>CH<sub>2</sub>F"
+      }
+    },
+    {
+      "id": "e28",
+      "source_id": "fs-idm23005472",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combined-gas-law",
+      "prompt": "A balloon with a volume of 100.21 L at 21 °C and 0.981 atm is released and just barely clears the top of Mount Crumpit in British Columbia. If the final volume of the balloon is 144.53 L at a temperature of 5.24 °C, what is the pressure experienced by the balloon as it clears Mount Crumpit?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.644,
+        "unit": "atm",
+        "hint": "The combined gas law with both temperatures in kelvin, solved for P₂.",
+        "solution": "0.644 atm"
+      }
+    },
+    {
+      "id": "e29",
+      "source_id": "fs-idm189510384",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "amontons",
+      "prompt": "If the temperature of a fixed amount of a gas is doubled at constant volume, what happens to the pressure?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: at constant volume and amount, Amontons’s law makes the pressure directly proportional to the kelvin temperature, so doubling the kelvin temperature doubles the pressure. Note that the doubling must be on the kelvin scale; doubling a Celsius reading is not a doubling of the temperature."
+      }
+    },
+    {
+      "id": "e30",
+      "source_id": "fs-idm136587680",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boyle",
+      "prompt": "If the volume of a fixed amount of a gas is tripled at constant temperature, what happens to the pressure?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The pressure decreases by a factor of 3."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "amontons-law"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "boyles-law"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "combined-gas-law"
+    },
+    {
+      "exercise": "e1",
+      "concept": "amontons-law"
+    },
+    {
+      "exercise": "e2",
+      "concept": "boyles-law"
+    },
+    {
+      "exercise": "e3",
+      "concept": "boyles-law"
+    },
+    {
+      "exercise": "e4",
+      "concept": "avogadro-law"
+    },
+    {
+      "exercise": "e5",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "e5",
+      "concept": "avogadro-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e6",
+      "concept": "boyles-law"
+    },
+    {
+      "exercise": "e6",
+      "concept": "avogadro-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e7",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e7",
+      "concept": "boyles-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e8",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "e10",
+      "concept": "amontons-law"
+    },
+    {
+      "exercise": "e12",
+      "concept": "charles-law"
+    },
+    {
+      "exercise": "e14",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e16",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e18",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e20",
+      "concept": "combined-gas-law"
+    },
+    {
+      "exercise": "e22",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e24",
+      "concept": "ideal-gas-law"
+    },
+    {
+      "exercise": "e24",
+      "concept": "boyles-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e24",
+      "concept": "charles-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e24",
+      "concept": "amontons-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e25",
+      "concept": "avogadro-law"
+    },
+    {
+      "exercise": "e25",
+      "concept": "standard-temperature-and-pressure",
+      "weight": 2
+    },
+    {
+      "exercise": "e26",
+      "concept": "standard-temperature-and-pressure"
+    },
+    {
+      "exercise": "e26",
+      "concept": "ideal-gas-law",
+      "weight": 2
+    },
+    {
+      "exercise": "e28",
+      "concept": "combined-gas-law"
+    },
+    {
+      "exercise": "e29",
+      "concept": "amontons-law"
+    },
+    {
+      "exercise": "e30",
+      "concept": "boyles-law"
+    }
+  ]
 }

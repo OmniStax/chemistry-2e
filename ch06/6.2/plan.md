@@ -337,3 +337,17 @@ once and draws no frequency.
   the page writes it as an energy; a `ktex` of
   `\kdE=\kE_{n\;\longrightarrow\;\infty}-\kE_{1}=0+k=k` would colour it on
   the sheet as the page does.
+
+### What the chapter pass did with them (2026-09-12)
+
+Every item above was applied. The fourteen variable rows and the seven
+equation rows of `ch06/chapter.json` now carry the anchors this list asks
+for, so that the formula sheet and the definitions view jump into the
+header that states each one. The `eq-bohr-transition` row keeps the
+general form with Z², as the plan says it should, and its anchor lands on
+`6.2-rydberg-recovered`, where the page writes the hydrogen form. The
+`eq-ionization-limit` row gained the `ktex` the plan proposed,
+`\kdE=\kE_{n\;\longrightarrow\;\infty}-\kE_{1}=0+k=k`, so the sheet
+colours its energies as the page does. The Formulas line of
+`ch06/config.md` records that the anchors are written and corrects its
+count of the variable rows from twelve to fourteen.

@@ -271,7 +271,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     const y = -0.5 * A, b1 = [P.C[0], y, 0], b2 = [P.O[0], y, 0];
     polyline(g, [[P.C[0], y + 0.14 * A, 0], b1, b2, [P.O[0], y + 0.14 * A, 0]]);
     v.label('1.21 Å, centre to centre', [(P.C[0] + P.O[0]) / 2, y - 0.16 * A, 0], g, -14);
-    v.label('C', P.C, g, -52); v.label('O', P.O, g, -52); v.label('H', V.mul(dirH1, 1.5 * A), g, 0); v.label('H', V.mul(dirH2, 1.5 * A), g, 0);
+    v.label('C', P.C, g, 62); v.label('O', P.O, g, 62); v.label('H', V.mul(dirH1, 1.3 * A), g, -14); v.label('H', V.mul(dirH2, 1.3 * A), g, -14);
   }
   function draw2d() {
     const { ctx } = begin(c2);

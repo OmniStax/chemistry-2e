@@ -1,172 +1,178 @@
 {
- "id": "7",
- "dir": "ch07",
- "title": "Chemical Bonding and Molecular Geometry",
- "intro": {
-  "module": "m68736",
-  "slug": "7-introduction"
- },
- "sections": [
-  {
-   "id": "7.1",
-   "module": "m68737",
-   "title": "Ionic Bonding",
-   "slug": "7-1-ionic-bonding"
+  "id": "7",
+  "dir": "ch07",
+  "title": "Chemical Bonding and Molecular Geometry",
+  "intro": {
+    "module": "m68736",
+    "slug": "7-introduction"
   },
-  {
-   "id": "7.2",
-   "module": "m68738",
-   "title": "Covalent Bonding",
-   "slug": "7-2-covalent-bonding"
-  },
-  {
-   "id": "7.3",
-   "module": "m68739",
-   "title": "Lewis Symbols and Structures",
-   "slug": "7-3-lewis-symbols-and-structures"
-  },
-  {
-   "id": "7.4",
-   "module": "m68740",
-   "title": "Formal Charges and Resonance",
-   "slug": "7-4-formal-charges-and-resonance"
-  },
-  {
-   "id": "7.5",
-   "module": "m68741",
-   "title": "Strengths of Ionic and Covalent Bonds",
-   "slug": "7-5-strengths-of-ionic-and-covalent-bonds"
-  },
-  {
-   "id": "7.6",
-   "module": "m68742",
-   "title": "Molecular Structure and Polarity",
-   "slug": "7-6-molecular-structure-and-polarity"
-  }
- ],
- "variables": [
-  {
-   "sym": "μ",
-   "meaning": "the bond dipole moment, the magnitude of the separation of charge in a bond",
-   "unit": "C·m",
-   "section": "7.6"
-  },
-  {
-   "sym": "Q_partial",
-   "meaning": "the magnitude of the partial charges at the two ends of a bond, determined by the electronegativity difference between the bonded atoms",
-   "unit": "C",
-   "section": "7.6"
-  },
-  {
-   "sym": "r_bond",
-   "meaning": "the distance between the two partial charges, which is the distance between the nuclei of the bonded atoms",
-   "unit": "Å (1 Å = 10⁻¹⁰ m, 100 pm = 1 Å)",
-   "section": "7.6"
-  }
- ],
- "equations": [
-  {
-   "id": "eq-dipole-moment",
-   "concept": "bond-dipole-moment",
-   "section": "7.6",
-   "latex": "\\mu = Qr",
-   "important": true
-  },
-  {
-   "id": "eq-repulsion-order",
-   "concept": "electron-pair-repulsion-order",
-   "section": "7.6",
-   "latex": "\\text{lone pair-lone pair}>\\text{lone pair-bonding pair}>\\text{bonding pair-bonding pair}",
-   "important": false
-  },
-  {
-   "id": "eq-domain-size-order",
-   "concept": "electron-pair-repulsion-order",
-   "section": "7.6",
-   "latex": "\\text{lone pair}>\\text{triple bond}>\\text{double bond}>\\text{single bond}",
-   "important": false
-  }
- ],
- "glossary": [
-  {
-   "section": "7.6",
-   "term": "axial position",
-   "definition": "location in a trigonal bipyramidal geometry in which there is another atom at a 180° angle and the equatorial positions are at a 90° angle"
-  },
-  {
-   "section": "7.6",
-   "term": "bond angle",
-   "definition": "angle between any two covalent bonds that share a common atom"
-  },
-  {
-   "section": "7.6",
-   "term": "bond distance",
-   "definition": "(also, bond length) distance between the nuclei of two bonded atoms"
-  },
-  {
-   "section": "7.6",
-   "term": "bond dipole moment",
-   "definition": "separation of charge in a bond that depends on the difference in electronegativity and the bond distance represented by partial charges or a vector"
-  },
-  {
-   "section": "7.6",
-   "term": "dipole moment",
-   "definition": "property of a molecule that describes the separation of charge determined by the sum of the individual bond moments based on the molecular structure"
-  },
-  {
-   "section": "7.6",
-   "term": "electron-pair geometry",
-   "definition": "arrangement around a central atom of all regions of electron density (bonds, lone pairs, or unpaired electrons)"
-  },
-  {
-   "section": "7.6",
-   "term": "equatorial position",
-   "definition": "one of the three positions in a trigonal bipyramidal geometry with 120° angles between them; the axial positions are located at a 90° angle"
-  },
-  {
-   "section": "7.6",
-   "term": "linear",
-   "definition": "shape in which two outside groups are placed on opposite sides of a central atom"
-  },
-  {
-   "section": "7.6",
-   "term": "molecular structure",
-   "definition": "structure that includes only the placement of the atoms in the molecule"
-  },
-  {
-   "section": "7.6",
-   "term": "octahedral",
-   "definition": "shape in which six outside groups are placed around a central atom such that a three-dimensional shape is generated with four groups forming a square and the other two forming the apex of two pyramids, one above and one below the square plane"
-  },
-  {
-   "section": "7.6",
-   "term": "polar molecule",
-   "definition": "(also, dipole) molecule with an overall dipole moment"
-  },
-  {
-   "section": "7.6",
-   "term": "tetrahedral",
-   "definition": "shape in which four outside groups are placed around a central atom such that a three-dimensional shape is generated with four corners and 109.5° angles between each pair and the central atom"
-  },
-  {
-   "section": "7.6",
-   "term": "trigonal bipyramidal",
-   "definition": "shape in which five outside groups are placed around a central atom such that three form a flat triangle with 120° angles between each pair and the central atom, and the other two form the apex of two pyramids, one above and one below the triangular plane"
-  },
-  {
-   "section": "7.6",
-   "term": "trigonal planar",
-   "definition": "shape in which three outside groups are placed in a flat triangle around a central atom with 120° angles between each pair and the central atom"
-  },
-  {
-   "section": "7.6",
-   "term": "valence shell electron-pair repulsion theory (VSEPR)",
-   "definition": "theory used to predict the bond angles in a molecule based on positioning regions of high electron density as far apart as possible to minimize electrostatic repulsion"
-  },
-  {
-   "section": "7.6",
-   "term": "vector",
-   "definition": "quantity having magnitude and direction"
-  }
- ]
+  "sections": [
+    {
+      "id": "7.1",
+      "module": "m68737",
+      "title": "Ionic Bonding",
+      "slug": "7-1-ionic-bonding"
+    },
+    {
+      "id": "7.2",
+      "module": "m68738",
+      "title": "Covalent Bonding",
+      "slug": "7-2-covalent-bonding"
+    },
+    {
+      "id": "7.3",
+      "module": "m68739",
+      "title": "Lewis Symbols and Structures",
+      "slug": "7-3-lewis-symbols-and-structures"
+    },
+    {
+      "id": "7.4",
+      "module": "m68740",
+      "title": "Formal Charges and Resonance",
+      "slug": "7-4-formal-charges-and-resonance"
+    },
+    {
+      "id": "7.5",
+      "module": "m68741",
+      "title": "Strengths of Ionic and Covalent Bonds",
+      "slug": "7-5-strengths-of-ionic-and-covalent-bonds"
+    },
+    {
+      "id": "7.6",
+      "module": "m68742",
+      "title": "Molecular Structure and Polarity",
+      "slug": "7-6-molecular-structure-and-polarity"
+    }
+  ],
+  "variables": [
+    {
+      "sym": "μ",
+      "meaning": "the bond dipole moment, the magnitude of the separation of charge in a bond",
+      "unit": "C·m",
+      "section": "7.6",
+      "anchor": "7.6-bond-dipole"
+    },
+    {
+      "sym": "Q_partial",
+      "meaning": "the magnitude of the partial charges at the two ends of a bond, determined by the electronegativity difference between the bonded atoms",
+      "unit": "C",
+      "section": "7.6",
+      "anchor": "7.6-bond-dipole"
+    },
+    {
+      "sym": "r_bond",
+      "meaning": "the distance between the two partial charges, which is the distance between the nuclei of the bonded atoms",
+      "unit": "Å (1 Å = 10⁻¹⁰ m, 100 pm = 1 Å)",
+      "section": "7.6",
+      "anchor": "7.6-bond-dipole"
+    }
+  ],
+  "equations": [
+    {
+      "id": "eq-dipole-moment",
+      "concept": "bond-dipole-moment",
+      "section": "7.6",
+      "latex": "\\mu = Qr",
+      "important": true,
+      "anchor": "7.6-bond-dipole"
+    },
+    {
+      "id": "eq-repulsion-order",
+      "concept": "electron-pair-repulsion-order",
+      "section": "7.6",
+      "latex": "\\text{lone pair-lone pair}>\\text{lone pair-bonding pair}>\\text{bonding pair-bonding pair}",
+      "important": false,
+      "anchor": "7.6-repulsion-order"
+    },
+    {
+      "id": "eq-domain-size-order",
+      "concept": "electron-pair-repulsion-order",
+      "section": "7.6",
+      "latex": "\\text{lone pair}>\\text{triple bond}>\\text{double bond}>\\text{single bond}",
+      "important": false,
+      "anchor": "7.6-repulsion-order"
+    }
+  ],
+  "glossary": [
+    {
+      "section": "7.6",
+      "term": "axial position",
+      "definition": "location in a trigonal bipyramidal geometry in which there is another atom at a 180° angle and the equatorial positions are at a 90° angle"
+    },
+    {
+      "section": "7.6",
+      "term": "bond angle",
+      "definition": "angle between any two covalent bonds that share a common atom"
+    },
+    {
+      "section": "7.6",
+      "term": "bond distance",
+      "definition": "(also, bond length) distance between the nuclei of two bonded atoms"
+    },
+    {
+      "section": "7.6",
+      "term": "bond dipole moment",
+      "definition": "separation of charge in a bond that depends on the difference in electronegativity and the bond distance represented by partial charges or a vector"
+    },
+    {
+      "section": "7.6",
+      "term": "dipole moment",
+      "definition": "property of a molecule that describes the separation of charge determined by the sum of the individual bond moments based on the molecular structure"
+    },
+    {
+      "section": "7.6",
+      "term": "electron-pair geometry",
+      "definition": "arrangement around a central atom of all regions of electron density (bonds, lone pairs, or unpaired electrons)"
+    },
+    {
+      "section": "7.6",
+      "term": "equatorial position",
+      "definition": "one of the three positions in a trigonal bipyramidal geometry with 120° angles between them; the axial positions are located at a 90° angle"
+    },
+    {
+      "section": "7.6",
+      "term": "linear",
+      "definition": "shape in which two outside groups are placed on opposite sides of a central atom"
+    },
+    {
+      "section": "7.6",
+      "term": "molecular structure",
+      "definition": "structure that includes only the placement of the atoms in the molecule"
+    },
+    {
+      "section": "7.6",
+      "term": "octahedral",
+      "definition": "shape in which six outside groups are placed around a central atom such that a three-dimensional shape is generated with four groups forming a square and the other two forming the apex of two pyramids, one above and one below the square plane"
+    },
+    {
+      "section": "7.6",
+      "term": "polar molecule",
+      "definition": "(also, dipole) molecule with an overall dipole moment"
+    },
+    {
+      "section": "7.6",
+      "term": "tetrahedral",
+      "definition": "shape in which four outside groups are placed around a central atom such that a three-dimensional shape is generated with four corners and 109.5° angles between each pair and the central atom"
+    },
+    {
+      "section": "7.6",
+      "term": "trigonal bipyramidal",
+      "definition": "shape in which five outside groups are placed around a central atom such that three form a flat triangle with 120° angles between each pair and the central atom, and the other two form the apex of two pyramids, one above and one below the triangular plane"
+    },
+    {
+      "section": "7.6",
+      "term": "trigonal planar",
+      "definition": "shape in which three outside groups are placed in a flat triangle around a central atom with 120° angles between each pair and the central atom"
+    },
+    {
+      "section": "7.6",
+      "term": "valence shell electron-pair repulsion theory (VSEPR)",
+      "definition": "theory used to predict the bond angles in a molecule based on positioning regions of high electron density as far apart as possible to minimize electrostatic repulsion"
+    },
+    {
+      "section": "7.6",
+      "term": "vector",
+      "definition": "quantity having magnitude and direction"
+    }
+  ]
 }

@@ -434,3 +434,25 @@ plates and the field lines are ink. No
   items, four are carried (fs-idp56829344, fs-idp46580240,
   fs-idp17379424, fs-idp37961056) and fs-idp67065360 is left out and
   named in `exercise_notes`.
+
+### What the chapter pass did with them (2026-09-12)
+
+Every item above was applied. The three variable rows and
+`eq-dipole-moment` of `ch07/chapter.json` anchor on `7.6-bond-dipole`, and
+the two orders, of repulsion and of the space a region takes, anchor on
+`7.6-repulsion-order`. `ch07/COLOR.md` no longer describes the fallback of
+ink discs told apart by size: it says that the element palette exists as
+`omnistax-web/src/lib/fig/elements.ts`, that every atom of the section
+takes its element's colour through `F.el(symbol)` with hydrogen as a light
+fill and an ink outline, and that a generic central atom E or terminal
+atom X takes the panel's own grey. The same file's paragraphs on the
+projection were rewritten for Chen's decision of 2026-09-12: a solid is
+lit by one fixed lamp in a three-dimensional scene rather than shaded by
+`figlib`'s `face()`, the scene's clear colour is transparent so the page's
+panel shows through in both themes, and the yaw and pitch sliders are gone,
+the reader turning a molecule by dragging it. `ch07/config.md` records
+that decision in its Three dimensions line, with how the section's
+`viewer()` helper mounts the scene and where to find what `figlib` should
+gain before the next such figure, and its Simulation exercises line now
+names the four PhET items the figures carry and the one, fs-idp67065360,
+that is left out.

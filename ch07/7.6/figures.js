@@ -8,12 +8,14 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const RAD = Math.PI / 180, TAU = 2 * Math.PI;
 const DEG = '°';
-/* a slider whose value is a name rather than a number: the name replaces the printed value */
-function named(controls, o, names) {
-  const c = ctl(controls, { ...o, unit: '', dec: 0, onInput: () => { show(); o.onInput?.(); } });
-  const val = controls.lastElementChild.querySelector('.ctl-val');
-  const show = () => { val.textContent = names[c.v]; };
-  show(); return c;
+/* a state the figure switches between rather than slides through (rule 26.1): a
+   row of buttons with the current one marked, or a dropdown where the list of
+   states is long enough that a row of buttons would wrap. The figure still reads
+   it as the index it always read. */
+function pick(controls, o, names) {
+  const make = names.length > 4 ? F.select : F.choice;
+  const c = make(controls, { label: o.label, aria: o.aria, options: names.map((n, i) => ({ value: String(i), label: n })), value: String(o.value ?? 0), onInput: () => o.onInput?.() });
+  return { get v() { return +c.value; }, set(x) { c.set(String(x)); } };
 }
 
 /* ---------- vectors ---------- */
@@ -139,103 +141,31 @@ function moment(ctx, x1, y1, x2, y2, w = 4) {
   line(ctx, x1 + px * s, y1 + py * s, x1 - px * s, y1 - py * s, PAL.ink, w * 0.75);
 }
 
-/* ---------- three dimensions: a molecule the reader turns by dragging ----------
-   The shell loads THREE (r128) on every page as a global. A viewer mounts a WebGL
-   renderer with a transparent clear colour inside the figure's stage, so the page's
-   own panel shows through in both themes, and every colour of the scene is read from
-   PAL and the element palette on each draw, so a theme change redraws it. The reader
-   turns the molecule by dragging the pointer; until the first drag it turns slowly on
-   its own. The renderer draws only when something changed and only while the figure
-   is on screen, follows the container's size and the device pixel ratio, and disposes
-   itself when the figure leaves the document. Labels are HTML (.lab3d) laid over the
-   canvas at the projected point, so they set in the page's face and colour. */
-const T3D = window.THREE;
-const hex = (c) => new T3D.Color(c);
-const GEO = { sphere: new T3D.SphereGeometry(1, 28, 20), cyl: new T3D.CylinderGeometry(1, 1, 1, 14, 1, true), cone: new T3D.ConeGeometry(1, 1, 18) };
-const UP = new T3D.Vector3(0, 1, 0);
-const vec = (p) => new T3D.Vector3(p[0], p[1], p[2]);
-function viewer(stage, opts = {}) {
-  const tilt = opts.tilt ?? 0.32;
-  const wrap = el('div', 'three-wrap'); wrap.style.aspectRatio = `1400 / ${opts.h ?? 480}`; wrap.style.touchAction = 'none'; wrap.style.cursor = 'grab'; wrap.style.background = 'transparent'; stage.appendChild(wrap);
-  let renderer = null;
-  try { renderer = new T3D.WebGLRenderer({ antialias: true, alpha: true }); } catch (e) { wrap.appendChild(el('p', 'lab3d', 'This figure needs WebGL, which this browser does not provide.')); }
-  const scene = new T3D.Scene();
-  const camera = new T3D.PerspectiveCamera(30, 2, 0.1, 100); camera.position.set(0, 0, opts.dist ?? 7); camera.lookAt(0, 0, 0);
-  const lamp = new T3D.DirectionalLight(0xffffff, 0.8); lamp.position.set(-3, 5, 7); scene.add(lamp); scene.add(new T3D.AmbientLight(0xffffff, 0.62));
-  const parts = [], labels = [];
-  let spinning = !F.REDUCED && opts.spin !== false, dragging = false, last = null, need = true, alive = true, seen = true, turned = false;
-  const v = {
-    wrap, scene, camera,
-    /* a group the drag turns about its own centre, placed at x; a figure with panels has several */
-    part(x = 0) { const g = new T3D.Group(); g.position.set(x, 0, 0); g.quaternion.setFromAxisAngle(new T3D.Vector3(1, 0, 0), tilt); scene.add(g); parts.push(g); return g; },
-    /* the label s at point p of group g, in the page's face, kept dy pixels above the point */
-    label(s, p, g, dy = 0, cls = '') { const e = el('div', 'lab3d' + (cls ? ' ' + cls : ''), s); wrap.appendChild(e); labels.push({ el: e, p: vec(p), g, dy }); return e; },
-    clear() { parts.forEach((g) => { g.traverse((o) => { if (o.material) o.material.dispose(); if (o.geometry && !Object.values(GEO).includes(o.geometry)) o.geometry.dispose(); }); g.clear(); }); labels.forEach((l) => l.el.remove()); labels.length = 0; need = true; },
-    /* the point p of group g on the canvas, in canvas pixels */
-    project(p, g) { const w = vec(p); g.localToWorld(w); w.project(camera); return [(w.x + 1) / 2 * wrap.clientWidth, (1 - w.y) / 2 * wrap.clientHeight]; },
-    move(e, p) { const l = labels.find((x) => x.el === e); if (l) l.p.set(p[0], p[1], p[2]); need = true; },
-    invalidate() { need = true; },
-    get turned() { return turned; },
-    dispose,
-  };
-  if (renderer) { renderer.setClearColor(0x000000, 0); wrap.appendChild(renderer.domElement); }
-  function size() { const w = wrap.clientWidth || 800, h = wrap.clientHeight || Math.round(w * (opts.h ?? 480) / 1400); if (renderer) { renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2)); renderer.setSize(w, h, false); } camera.aspect = w / h; camera.updateProjectionMatrix(); need = true; }
-  const ro = typeof ResizeObserver === 'function' ? new ResizeObserver(size) : null; ro?.observe(wrap); size();
-  const io = typeof IntersectionObserver === 'function' ? new IntersectionObserver((es) => es.forEach((e) => { seen = e.isIntersecting; if (seen) need = true; }), { rootMargin: '120px' }) : null; io?.observe(wrap);
-  /* the orbit: a drag turns every part about the screen's vertical and horizontal axes */
-  const AX = new T3D.Vector3(1, 0, 0), q = new T3D.Quaternion();
-  const turn = (dx, dy) => { parts.forEach((g) => { g.quaternion.premultiply(q.setFromAxisAngle(UP, dx)).premultiply(q.setFromAxisAngle(AX, dy)); }); need = true; turned = true; };
-  wrap.addEventListener('pointerdown', (e) => { dragging = true; spinning = false; last = [e.clientX, e.clientY]; wrap.setPointerCapture(e.pointerId); wrap.style.cursor = 'grabbing'; e.preventDefault(); });
-  wrap.addEventListener('pointermove', (e) => { if (!dragging) return; turn((e.clientX - last[0]) * 0.009, (e.clientY - last[1]) * 0.009); last = [e.clientX, e.clientY]; });
-  const up = () => { dragging = false; wrap.style.cursor = 'grab'; }; wrap.addEventListener('pointerup', up); wrap.addEventListener('pointercancel', up);
-  function place() { const w = wrap.clientWidth, h = wrap.clientHeight, t = new T3D.Vector3(); labels.forEach((l) => { t.copy(l.p); l.g.localToWorld(t); t.project(camera); l.el.style.left = ((t.x + 1) / 2 * w) + 'px'; l.el.style.top = ((1 - t.y) / 2 * h - l.dy) + 'px'; }); }
-  function dispose() { if (!alive) return; alive = false; ro?.disconnect(); io?.disconnect(); v.clear(); renderer?.dispose(); }
-  let prev = performance.now(), gone = 0;
-  function frame(now) {
-    if (!alive) return;
-    if (!wrap.isConnected && ++gone > 300) { dispose(); return; }   /* torn down: five seconds out of the document */
-    const dt = Math.min(0.05, (now - prev) / 1000); prev = now;
-    if (spinning && seen && !F.paused) turn(0.22 * dt, 0);
-    if (need && seen && renderer) { renderer.render(scene, camera); place(); need = false; opts.onRender?.(); }
-    requestAnimationFrame(frame);
-  }
-  requestAnimationFrame(frame);
-  return v;
-}
+/* ---------- three dimensions ----------
+   The viewer, the meshes and the navigation buttons all come from the library:
+   F.view3d mounts the transparent WebGL scene inside the figure's stage and
+   carries auto-rotate, the snap-to-view buttons and zoom, and F.mesh draws the
+   balls, sticks, lobes, arrows and arcs a molecule is built from. A molecule
+   turns freely: there is no up to keep, and every viewpoint of it is a real
+   one, so the only bounds here are the pitch that keeps the turntable upright.
+   What stays in this file is what is about chemistry rather than about three
+   dimensions: which colour an atom takes and how a molecule record is built. */
+const { vec, sphere, stick, setStick, setLobe, lobe: lobe3, bond: bond3, arrow: arrow3, polyline, arc: arc3d } = F.mesh;
+/* every molecule turns freely and spins until the reader takes hold of it */
+const FREE = { spin: 'idle', views: [{ label: 'axis', yaw: 0, pitch: 0 }, { label: 'face-on', yaw: Math.PI / 2, pitch: 0.32 }] };
+
 /* atoms as spheres in the element palette, bonds as cylinders and lone pairs as lobes in ink;
    `mol` is the same record the sketches read, with p in logical units (a bond about 150) */
 const SCALE = 1 / 150;
-const matOf = (c, extra = {}) => new T3D.MeshPhongMaterial({ color: hex(c), shininess: 24, ...extra });
 const darkPanel = () => parseInt(PAL.panel.slice(1, 3), 16) < 128;
 const atomColor = (sym) => (sym === 'E' || sym === 'X' ? (darkPanel() ? PAL.muted : PAL.soft2) : F.el(sym));
-function sphere(g, p, r, c, extra) { const m = new T3D.Mesh(GEO.sphere, matOf(c, extra)); m.position.copy(vec(p)); m.scale.setScalar(r); g.add(m); return m; }
-function setStick(m, a, b) { const A = vec(a), B = vec(b), d = B.clone().sub(A), L = d.length() || 1e-6; m.position.copy(A).add(B).multiplyScalar(0.5); m.quaternion.setFromUnitVectors(UP, d.normalize()); m.scale.y = L; }
-function stick(g, a, b, r, c) { const m = new T3D.Mesh(GEO.cyl, matOf(c)); m.scale.set(r, 1, r); setStick(m, a, b); g.add(m); return m; }
-function setLobe(m, from, dir, len) { const d = vec(dir).normalize(); m.position.copy(vec(from)).add(d.clone().multiplyScalar(len * 0.6)); m.quaternion.setFromUnitVectors(UP, d); m.scale.set(len * 0.3, len * 0.56, len * 0.3); }
-function lobe3(g, from, dir, len) { const m = new T3D.Mesh(GEO.sphere, matOf(PAL.ink, { transparent: true, opacity: 0.5 })); setLobe(m, from, dir, len); g.add(m); return m; }
-function bond3(g, a, b, order = 1, r = 0.07) {
-  const A = vec(a), B = vec(b), d = B.clone().sub(A).normalize(), side = Math.abs(d.y) < 0.9 ? new T3D.Vector3().crossVectors(d, UP).normalize() : new T3D.Vector3(1, 0, 0);
-  const offs = order === 1 ? [0] : order === 2 ? [-1.6, 1.6] : [-2.2, 0, 2.2];
-  return offs.map((o) => stick(g, A.clone().add(side.clone().multiplyScalar(o * r)).toArray(), B.clone().add(side.clone().multiplyScalar(o * r)).toArray(), order === 1 ? r : r * 0.75, PAL.ink));
-}
-/* an arrow from a to b of shaft radius r, in ink; the head is a cone */
-function arrow3(g, a, b, r = 0.045, c = PAL.ink) {
-  const A = vec(a), B = vec(b), d = B.clone().sub(A), L = d.length(), hl = Math.min(0.32, L * 0.45), u = d.clone().normalize(), tip = B, base = B.clone().sub(u.clone().multiplyScalar(hl));
-  stick(g, A.toArray(), base.toArray(), r, c);
-  const cone = new T3D.Mesh(GEO.cone, matOf(c)); cone.position.copy(base).add(u.clone().multiplyScalar(hl / 2)); cone.quaternion.setFromUnitVectors(UP, u); cone.scale.set(r * 3.2, hl, r * 3.2); g.add(cone);
-  return tip;
-}
-/* a line of points in ink, for an arc or a bracket */
-function polyline(g, pts, c = PAL.ink) { const geo = new T3D.BufferGeometry().setFromPoints(pts.map(vec)); const l = new T3D.Line(geo, new T3D.LineBasicMaterial({ color: hex(c) })); g.add(l); return l; }
-/* the arc of the angle between unit directions a and b about centre c at radius R, and its midpoint pushed out for a label */
-function arc3d(g, a, b, R, c = [0, 0, 0]) {
-  const ua = V.unit(a), ub = V.unit(b), pts = []; for (let i = 0; i <= 24; i++) pts.push(V.add(c, V.mul(slerp(ua, ub, i / 24), R)));
-  polyline(g, pts); return V.add(c, V.mul(V.unit(slerp(ua, ub, 0.5)), R + 0.18));
-}
-function molecule3(g, mol, k = SCALE) {
+/* the name of every symbol these figures draw, so no atom is an unnamed coloured ball */
+const NAMES = { H: 'hydrogen', C: 'carbon', N: 'nitrogen', O: 'oxygen', F: 'fluorine', Cl: 'chlorine', S: 'sulfur', B: 'boron', P: 'phosphorus', Be: 'beryllium', Xe: 'xenon', E: 'the central atom', X: 'a bonded atom' };
+const nameOf = (sym) => (NAMES[sym] ? `${NAMES[sym]} (${sym})` : sym);
+function molecule3(g, mol, k = SCALE, v = null) {
   const P = (p) => V.mul(p, k);
   const out = { atoms: [], bonds: [], lones: [] };
-  mol.atoms.forEach((a) => out.atoms.push(sphere(g, P(a.p), rOf(a.sym) / 62, atomColor(a.sym))));
+  mol.atoms.forEach((a) => { const m = sphere(g, P(a.p), rOf(a.sym) / 62, atomColor(a.sym)); v?.pickable(m, nameOf(a.sym)); out.atoms.push(m); });
   mol.bonds.forEach(([i, j, order]) => out.bonds.push(bond3(g, P(mol.atoms[i].p), P(mol.atoms[j].p), order ?? 1)));
   (mol.lones ?? []).forEach((l) => out.lones.push(lobe3(g, P(mol.atoms[l.a].p), l.dir, (l.len ?? 150) * k)));
   return out;
@@ -252,7 +182,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
 (function () {
   const d = sim('sim-formaldehyde');
   let shown = 118;
-  const v = viewer(d.stage, { h: 440, dist: 5.8, onRender: () => { if (Math.round(flat()) !== shown) draw2d(); } });
+  const v = F.view3d(d.stage, { ...FREE, h: 440, dist: 5.8, onRender: () => { if (Math.round(flat()) !== shown) draw2d(); } });
   const g = v.part(0), c2 = strip(d, 190);
   const A = 1.15;   /* scene units per Ångstrom */
   const dirH1 = [Math.cos(121 * RAD), Math.sin(121 * RAD), 0], dirH2 = [Math.cos(-121 * RAD), Math.sin(-121 * RAD), 0];
@@ -265,7 +195,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
   }
   function build() {
     v.clear();
-    molecule3(g, mol, 1);
+    molecule3(g, mol, 1, v);
     const m = arc3d(g, dirH1, dirH2, 0.62); v.label('118°', m, g, 0);
     /* the bracket beside the C=O bond, in the molecule's own plane */
     const y = -0.5 * A, b1 = [P.C[0], y, 0], b2 = [P.O[0], y, 0];
@@ -311,16 +241,16 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
 ===================================================================== */
 (function () {
   const d = sim('sim-vsepr');
-  const v = viewer(d.stage, { h: 460, dist: 5 });
+  const v = F.view3d(d.stage, { ...FREE, h: 460, dist: 5 });
   const g = v.part(0), c2 = strip(d, 330);
   const N = ctl(d.controls, { label: '\\text{regions}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: 'regions of electron density' });
-  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 4, step: 1, value: 1, unit: '', dec: 0, aria: 'lone pairs among the regions' });
+  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 4, step: 1, value: 1, unit: '', dec: 0, aria: 'lone pairs among the regions', detents: [0, 1, 2, 3, 4] });
   function draw() {
     const { ctx } = begin(c2);
     const n = N.v, lone = Math.min(LP.v, MAX_LONE[n]); if (LP.v !== lone) LP.set(lone);
     const mol = generic(n, lone), bonds = n - lone, L = 170 * SCALE;
     v.clear();
-    molecule3(g, mol);
+    molecule3(g, mol, SCALE, v);
     ARCS[n].forEach(([i, j, label]) => { const m = arc3d(g, mol.sites[i], mol.sites[j], L * 0.5); v.label(label, m, g, 0); });
     v.label('E', [0, 0, 0], g, -54); mol.atoms.slice(1).forEach((a) => v.label('X', V.mul(a.p, SCALE * 1.3), g, 0));
     if (n === 5) { v.label('axial', V.mul(mol.sites[0], L + 0.4), g, 0); v.label('axial', V.mul(mol.sites[1], L + 0.4), g, 0); v.label('equatorial', V.mul(mol.sites[2], L + 0.55), g, 0); }
@@ -354,10 +284,10 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
 ===================================================================== */
 (function () {
   const d = sim('sim-domains');
-  const v = viewer(d.stage, { h: 420, dist: 4.6 });
+  const v = F.view3d(d.stage, { ...FREE, h: 420, dist: 4.6 });
   const g = v.part(0), c2 = strip(d, 400);
   const N = ctl(d.controls, { label: '\\text{regions}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: 'regions of electron density', onInput: reset });
-  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 3, step: 1, value: 0, unit: '', dec: 0, aria: 'lone pairs among the regions', onInput: reset });
+  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 3, step: 1, value: 0, unit: '', dec: 0, aria: 'lone pairs among the regions', detents: [0, 1, 2, 3], onInput: reset });
   const T = 5, cy = cycle(() => T, 1.4), L = 1.15;
   /* a repulsion alone cannot tell an axial site from an equatorial one, so the lone pairs of five and six regions are the bench's to place, not this figure's */
   const simLone = (n, want) => (n >= 5 ? 0 : Math.min(want, n - 2));
@@ -398,9 +328,9 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
   /* the scene is built once per run and its regions moved every frame; the arc of the smallest angle is redrawn */
   function build() {
     v.clear();
-    sphere(g, [0, 0, 0], rOf('E') / 62, atomColor('E')); v.label('E', [0, 0, 0], g, -54);
+    v.pickable(sphere(g, [0, 0, 0], rOf('E') / 62, atomColor('E')), nameOf('E')); v.label('E', [0, 0, 0], g, -54);
     sphere(g, [0, 0, 0], L, PAL.ink, { transparent: true, opacity: 0.07, depthWrite: false });
-    st.meshes = st.p.map((u, i) => (st.q[i] > 1 ? { lobe: lobe3(g, [0, 0, 0], u, L * 0.8) } : { atom: sphere(g, V.mul(u, L), rOf('X') / 62, atomColor('X')), bond: stick(g, [0, 0, 0], V.mul(u, L), 0.07, PAL.ink) }));
+    st.meshes = st.p.map((u, i) => (st.q[i] > 1 ? { lobe: v.pickable(lobe3(g, [0, 0, 0], u, L * 0.8), 'a lone pair') } : { atom: v.pickable(sphere(g, V.mul(u, L), rOf('X') / 62, atomColor('X')), nameOf('X')), bond: stick(g, [0, 0, 0], V.mul(u, L), 0.07, PAL.ink) }));
     st.arc = null; st.arcLabel = null; st.built = true;
   }
   function draw() {
@@ -461,7 +391,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
 ===================================================================== */
 (function () {
   const d = sim('fig-ammonia');
-  const v = viewer(d.stage, { h: 400, dist: 7 });
+  const v = F.view3d(d.stage, { ...FREE, h: 400, dist: 7 });
   const parts = [-2.7, 0, 2.7].map((x) => v.part(x)), c2 = strip(d, 70);
   /* the real H–N–H angle of 106.8°: three bonds at one polar angle a from the axis of the lone pair */
   const cosA = Math.sqrt((1 + 2 * Math.cos(106.8 * RAD)) / 3), a = Math.acos(cosA), sinA = Math.sin(a);
@@ -474,7 +404,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     v.clear();
     [[nh3, '(a) electron-pair geometry: tetrahedral'], [noLone, '(b) molecular structure: trigonal pyramidal'], [noLone, '(c) the H–N–H angles: 106.8°']].forEach(([mol, cap], k) => {
       const g = parts[k];
-      molecule3(g, mol);
+      molecule3(g, mol, SCALE, v);
       if (k === 0) { v.label('N', [0, 0, 0], g, -52); v.label('lone pair', [0, L * 0.85 * SCALE + 0.25, 0], g, 0); }
       if (k === 2) { [[0, 1], [1, 2], [0, 2]].forEach(([i, j]) => arc3d(g, hs[i], hs[j], 0.5)); v.label('106.8°', arc3d(g, hs[0], hs[1], 0.5), g, -18); }
       text(ctx, cap, 233 + 467 * k, 36, PAL.ink, { size: 19, weight: 600, align: 'center' });
@@ -519,13 +449,13 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
 ===================================================================== */
 function twoPanels(id, molA, molB, capA, capB, small, formula) {
   const d = sim(id);
-  const v = viewer(d.stage, { h: 400, dist: 6.4 });
+  const v = F.view3d(d.stage, { ...FREE, h: 400, dist: 6.4 });
   const parts = [-2.1, 2.1].map((x) => v.part(x)), c2 = strip(d, 70);
   function draw() {
     const { ctx } = begin(c2);
     v.clear();
     [[molA, capA], [molB, capB]].forEach(([mol, cap], k) => {
-      const g = parts[k]; molecule3(g, mol);
+      const g = parts[k]; molecule3(g, mol, SCALE, v);
       v.label(mol.atoms[0].sym, [0, 0, 0], g, -56);
       text(ctx, cap, 350 + 700 * k, 36, PAL.ink, { size: 19, weight: 600, align: 'center' });
     });
@@ -652,7 +582,7 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
 ===================================================================== */
 (function () {
   const d = sim('sim-bond-moments');
-  const v = viewer(d.stage, { h: 440, dist: 6 });
+  const v = F.view3d(d.stage, { ...FREE, h: 440, dist: 6 });
   const g = v.part(0), c2 = strip(d, 250);
   const EN = { H: 2.20, B: 2.04, C: 2.55, N: 3.04, O: 3.44, F: 3.98, P: 2.19, S: 2.58, Cl: 3.16 };
   const L = 150;
@@ -674,13 +604,13 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
     mk('PF₅', '\\text{PF}_5', 'P', SITES[5].map((q) => ['F', q]), 'trigonal bipyramidal'),
     mk('SF₆', '\\text{SF}_6', 'S', SITES[6].map((q) => ['F', q]), 'octahedral'),
   ];
-  const M = named(d.controls, { label: '\\text{molecule}', cls: '', min: 0, max: MOLS.length - 1, step: 1, value: 6, aria: 'the molecule' }, MOLS.map((m) => m.name));
+  const M = pick(d.controls, { label: '\\text{molecule}', value: 6, aria: 'the molecule' }, MOLS.map((m) => m.name));
   const K = 0.62;   /* scene units of arrow per unit of electronegativity difference */
   function draw() {
     const { ctx } = begin(c2);
     const mol = MOLS[M.v];
     v.clear();
-    molecule3(g, mol);
+    molecule3(g, mol, SCALE, v);
     /* the bond moments: from the less electronegative atom toward the more, beside the bond */
     let sum = [0, 0, 0]; const rows = [];
     mol.bonds.forEach(([i, j]) => {
@@ -722,7 +652,7 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
 (function () {
   const d = sim('sim-field', 560);
   const MOLS = [['HF', 'H', 'F', true], ['F₂', 'F', 'F', false]];
-  const M = named(d.controls, { label: '\\text{molecule}', cls: '', min: 0, max: 1, step: 1, value: 0, aria: 'the molecule between the plates', onInput: reset }, MOLS.map((m) => m[0]));
+  const M = pick(d.controls, { label: '\\text{molecule}', value: 0, aria: 'the molecule between the plates', onInput: reset }, MOLS.map((m) => m[0]));
   const N = ctl(d.controls, { label: '\\text{molecules}', cls: '', min: 6, max: 20, step: 1, value: 12, unit: '', dec: 0, aria: 'number of molecules', onInput: reset });
   const T = 6, ON = 3, cy = cycle(() => T, 1.5);
   function reset() { cy.reset(); }

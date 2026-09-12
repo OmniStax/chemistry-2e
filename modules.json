@@ -1,0 +1,1009 @@
+{
+ "book": "Chemistry 2e",
+ "collection": "collections/chemistry-2e.collection.xml",
+ "slug_rule": "the module's md:slug where the metadata carries one (no module of this bundle does); otherwise the address openstax.org gives the page: preface, N-introduction, N-M-title-kebab, and a letter-title-kebab for an appendix",
+ "front_matter": [
+  {
+   "module": "m68662",
+   "title": "Preface",
+   "slug": "preface"
+  }
+ ],
+ "chapters": [
+  {
+   "number": 1,
+   "dir": "ch01",
+   "title": "Essential Ideas",
+   "intro": {
+    "module": "m68663",
+    "slug": "1-introduction"
+   },
+   "sections": [
+    {
+     "id": "1.1",
+     "module": "m68664",
+     "title": "Chemistry in Context",
+     "slug": "1-1-chemistry-in-context"
+    },
+    {
+     "id": "1.2",
+     "module": "m68667",
+     "title": "Phases and Classification of Matter",
+     "slug": "1-2-phases-and-classification-of-matter"
+    },
+    {
+     "id": "1.3",
+     "module": "m68670",
+     "title": "Physical and Chemical Properties",
+     "slug": "1-3-physical-and-chemical-properties"
+    },
+    {
+     "id": "1.4",
+     "module": "m68674",
+     "title": "Measurements",
+     "slug": "1-4-measurements"
+    },
+    {
+     "id": "1.5",
+     "module": "m68690",
+     "title": "Measurement Uncertainty, Accuracy, and Precision",
+     "slug": "1-5-measurement-uncertainty-accuracy-and-precision"
+    },
+    {
+     "id": "1.6",
+     "module": "m68683",
+     "title": "Mathematical Treatment of Measurement Results",
+     "slug": "1-6-mathematical-treatment-of-measurement-results"
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "dir": "ch02",
+   "title": "Atoms, Molecules, and Ions",
+   "intro": {
+    "module": "m68684",
+    "slug": "2-introduction"
+   },
+   "sections": [
+    {
+     "id": "2.1",
+     "module": "m68685",
+     "title": "Early Ideas in Atomic Theory",
+     "slug": "2-1-early-ideas-in-atomic-theory"
+    },
+    {
+     "id": "2.2",
+     "module": "m68687",
+     "title": "Evolution of Atomic Theory",
+     "slug": "2-2-evolution-of-atomic-theory"
+    },
+    {
+     "id": "2.3",
+     "module": "m68692",
+     "title": "Atomic Structure and Symbolism",
+     "slug": "2-3-atomic-structure-and-symbolism"
+    },
+    {
+     "id": "2.4",
+     "module": "m68693",
+     "title": "Chemical Formulas",
+     "slug": "2-4-chemical-formulas"
+    },
+    {
+     "id": "2.5",
+     "module": "m68695",
+     "title": "The Periodic Table",
+     "slug": "2-5-the-periodic-table"
+    },
+    {
+     "id": "2.6",
+     "module": "m68696",
+     "title": "Ionic and Molecular Compounds",
+     "slug": "2-6-ionic-and-molecular-compounds"
+    },
+    {
+     "id": "2.7",
+     "module": "m68698",
+     "title": "Chemical Nomenclature",
+     "slug": "2-7-chemical-nomenclature"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "dir": "ch03",
+   "title": "Composition of Substances and Solutions",
+   "intro": {
+    "module": "m68699",
+    "slug": "3-introduction"
+   },
+   "sections": [
+    {
+     "id": "3.1",
+     "module": "m68700",
+     "title": "Formula Mass and the Mole Concept",
+     "slug": "3-1-formula-mass-and-the-mole-concept"
+    },
+    {
+     "id": "3.2",
+     "module": "m68702",
+     "title": "Determining Empirical and Molecular Formulas",
+     "slug": "3-2-determining-empirical-and-molecular-formulas"
+    },
+    {
+     "id": "3.3",
+     "module": "m68703",
+     "title": "Molarity",
+     "slug": "3-3-molarity"
+    },
+    {
+     "id": "3.4",
+     "module": "m68704",
+     "title": "Other Units for Solution Concentrations",
+     "slug": "3-4-other-units-for-solution-concentrations"
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "dir": "ch04",
+   "title": "Stoichiometry of Chemical Reactions",
+   "intro": {
+    "module": "m68730",
+    "slug": "4-introduction"
+   },
+   "sections": [
+    {
+     "id": "4.1",
+     "module": "m68709",
+     "title": "Writing and Balancing Chemical Equations",
+     "slug": "4-1-writing-and-balancing-chemical-equations"
+    },
+    {
+     "id": "4.2",
+     "module": "m68710",
+     "title": "Classifying Chemical Reactions",
+     "slug": "4-2-classifying-chemical-reactions"
+    },
+    {
+     "id": "4.3",
+     "module": "m68713",
+     "title": "Reaction Stoichiometry",
+     "slug": "4-3-reaction-stoichiometry"
+    },
+    {
+     "id": "4.4",
+     "module": "m68714",
+     "title": "Reaction Yields",
+     "slug": "4-4-reaction-yields"
+    },
+    {
+     "id": "4.5",
+     "module": "m68716",
+     "title": "Quantitative Chemical Analysis",
+     "slug": "4-5-quantitative-chemical-analysis"
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "dir": "ch05",
+   "title": "Thermochemistry",
+   "intro": {
+    "module": "m68723",
+    "slug": "5-introduction"
+   },
+   "sections": [
+    {
+     "id": "5.1",
+     "module": "m68724",
+     "title": "Energy Basics",
+     "slug": "5-1-energy-basics"
+    },
+    {
+     "id": "5.2",
+     "module": "m68726",
+     "title": "Calorimetry",
+     "slug": "5-2-calorimetry"
+    },
+    {
+     "id": "5.3",
+     "module": "m68727",
+     "title": "Enthalpy",
+     "slug": "5-3-enthalpy"
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "dir": "ch06",
+   "title": "Electronic Structure and Periodic Properties of Elements",
+   "intro": {
+    "module": "m68728",
+    "slug": "6-introduction"
+   },
+   "sections": [
+    {
+     "id": "6.1",
+     "module": "m68729",
+     "title": "Electromagnetic Energy",
+     "slug": "6-1-electromagnetic-energy"
+    },
+    {
+     "id": "6.2",
+     "module": "m68732",
+     "title": "The Bohr Model",
+     "slug": "6-2-the-bohr-model"
+    },
+    {
+     "id": "6.3",
+     "module": "m68733",
+     "title": "Development of Quantum Theory",
+     "slug": "6-3-development-of-quantum-theory"
+    },
+    {
+     "id": "6.4",
+     "module": "m68734",
+     "title": "Electronic Structure of Atoms (Electron Configurations)",
+     "slug": "6-4-electronic-structure-of-atoms-electron-configurations"
+    },
+    {
+     "id": "6.5",
+     "module": "m68735",
+     "title": "Periodic Variations in Element Properties",
+     "slug": "6-5-periodic-variations-in-element-properties"
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "dir": "ch07",
+   "title": "Chemical Bonding and Molecular Geometry",
+   "intro": {
+    "module": "m68736",
+    "slug": "7-introduction"
+   },
+   "sections": [
+    {
+     "id": "7.1",
+     "module": "m68737",
+     "title": "Ionic Bonding",
+     "slug": "7-1-ionic-bonding"
+    },
+    {
+     "id": "7.2",
+     "module": "m68738",
+     "title": "Covalent Bonding",
+     "slug": "7-2-covalent-bonding"
+    },
+    {
+     "id": "7.3",
+     "module": "m68739",
+     "title": "Lewis Symbols and Structures",
+     "slug": "7-3-lewis-symbols-and-structures"
+    },
+    {
+     "id": "7.4",
+     "module": "m68740",
+     "title": "Formal Charges and Resonance",
+     "slug": "7-4-formal-charges-and-resonance"
+    },
+    {
+     "id": "7.5",
+     "module": "m68741",
+     "title": "Strengths of Ionic and Covalent Bonds",
+     "slug": "7-5-strengths-of-ionic-and-covalent-bonds"
+    },
+    {
+     "id": "7.6",
+     "module": "m68742",
+     "title": "Molecular Structure and Polarity",
+     "slug": "7-6-molecular-structure-and-polarity"
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "dir": "ch08",
+   "title": "Advanced Theories of Covalent Bonding",
+   "intro": {
+    "module": "m68743",
+    "slug": "8-introduction"
+   },
+   "sections": [
+    {
+     "id": "8.1",
+     "module": "m68744",
+     "title": "Valence Bond Theory",
+     "slug": "8-1-valence-bond-theory"
+    },
+    {
+     "id": "8.2",
+     "module": "m68745",
+     "title": "Hybrid Atomic Orbitals",
+     "slug": "8-2-hybrid-atomic-orbitals"
+    },
+    {
+     "id": "8.3",
+     "module": "m68746",
+     "title": "Multiple Bonds",
+     "slug": "8-3-multiple-bonds"
+    },
+    {
+     "id": "8.4",
+     "module": "m68747",
+     "title": "Molecular Orbital Theory",
+     "slug": "8-4-molecular-orbital-theory"
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "dir": "ch09",
+   "title": "Gases",
+   "intro": {
+    "module": "m68748",
+    "slug": "9-introduction"
+   },
+   "sections": [
+    {
+     "id": "9.1",
+     "module": "m68750",
+     "title": "Gas Pressure",
+     "slug": "9-1-gas-pressure"
+    },
+    {
+     "id": "9.2",
+     "module": "m68751",
+     "title": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law",
+     "slug": "9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law"
+    },
+    {
+     "id": "9.3",
+     "module": "m68752",
+     "title": "Stoichiometry of Gaseous Substances, Mixtures, and Reactions",
+     "slug": "9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions"
+    },
+    {
+     "id": "9.4",
+     "module": "m68754",
+     "title": "Effusion and Diffusion of Gases",
+     "slug": "9-4-effusion-and-diffusion-of-gases"
+    },
+    {
+     "id": "9.5",
+     "module": "m68758",
+     "title": "The Kinetic-Molecular Theory",
+     "slug": "9-5-the-kinetic-molecular-theory"
+    },
+    {
+     "id": "9.6",
+     "module": "m68759",
+     "title": "Non-Ideal Gas Behavior",
+     "slug": "9-6-non-ideal-gas-behavior"
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "dir": "ch10",
+   "title": "Liquids and Solids",
+   "intro": {
+    "module": "m68760",
+    "slug": "10-introduction"
+   },
+   "sections": [
+    {
+     "id": "10.1",
+     "module": "m68761",
+     "title": "Intermolecular Forces",
+     "slug": "10-1-intermolecular-forces"
+    },
+    {
+     "id": "10.2",
+     "module": "m68764",
+     "title": "Properties of Liquids",
+     "slug": "10-2-properties-of-liquids"
+    },
+    {
+     "id": "10.3",
+     "module": "m68768",
+     "title": "Phase Transitions",
+     "slug": "10-3-phase-transitions"
+    },
+    {
+     "id": "10.4",
+     "module": "m68769",
+     "title": "Phase Diagrams",
+     "slug": "10-4-phase-diagrams"
+    },
+    {
+     "id": "10.5",
+     "module": "m68770",
+     "title": "The Solid State of Matter",
+     "slug": "10-5-the-solid-state-of-matter"
+    },
+    {
+     "id": "10.6",
+     "module": "m68773",
+     "title": "Lattice Structures in Crystalline Solids",
+     "slug": "10-6-lattice-structures-in-crystalline-solids"
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "dir": "ch11",
+   "title": "Solutions and Colloids",
+   "intro": {
+    "module": "m68776",
+    "slug": "11-introduction"
+   },
+   "sections": [
+    {
+     "id": "11.1",
+     "module": "m68778",
+     "title": "The Dissolution Process",
+     "slug": "11-1-the-dissolution-process"
+    },
+    {
+     "id": "11.2",
+     "module": "m68781",
+     "title": "Electrolytes",
+     "slug": "11-2-electrolytes"
+    },
+    {
+     "id": "11.3",
+     "module": "m68782",
+     "title": "Solubility",
+     "slug": "11-3-solubility"
+    },
+    {
+     "id": "11.4",
+     "module": "m68783",
+     "title": "Colligative Properties",
+     "slug": "11-4-colligative-properties"
+    },
+    {
+     "id": "11.5",
+     "module": "m68784",
+     "title": "Colloids",
+     "slug": "11-5-colloids"
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "dir": "ch12",
+   "title": "Kinetics",
+   "intro": {
+    "module": "m68785",
+    "slug": "12-introduction"
+   },
+   "sections": [
+    {
+     "id": "12.1",
+     "module": "m68786",
+     "title": "Chemical Reaction Rates",
+     "slug": "12-1-chemical-reaction-rates"
+    },
+    {
+     "id": "12.2",
+     "module": "m68787",
+     "title": "Factors Affecting Reaction Rates",
+     "slug": "12-2-factors-affecting-reaction-rates"
+    },
+    {
+     "id": "12.3",
+     "module": "m68789",
+     "title": "Rate Laws",
+     "slug": "12-3-rate-laws"
+    },
+    {
+     "id": "12.4",
+     "module": "m68791",
+     "title": "Integrated Rate Laws",
+     "slug": "12-4-integrated-rate-laws"
+    },
+    {
+     "id": "12.5",
+     "module": "m68793",
+     "title": "Collision Theory",
+     "slug": "12-5-collision-theory"
+    },
+    {
+     "id": "12.6",
+     "module": "m68794",
+     "title": "Reaction Mechanisms",
+     "slug": "12-6-reaction-mechanisms"
+    },
+    {
+     "id": "12.7",
+     "module": "m68795",
+     "title": "Catalysis",
+     "slug": "12-7-catalysis"
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "dir": "ch13",
+   "title": "Fundamental Equilibrium Concepts",
+   "intro": {
+    "module": "m68796",
+    "slug": "13-introduction"
+   },
+   "sections": [
+    {
+     "id": "13.1",
+     "module": "m68797",
+     "title": "Chemical Equilibria",
+     "slug": "13-1-chemical-equilibria"
+    },
+    {
+     "id": "13.2",
+     "module": "m68798",
+     "title": "Equilibrium Constants",
+     "slug": "13-2-equilibrium-constants"
+    },
+    {
+     "id": "13.3",
+     "module": "m68799",
+     "title": "Shifting Equilibria: Le Châtelier’s Principle",
+     "slug": "13-3-shifting-equilibria-le-ch-teliers-principle"
+    },
+    {
+     "id": "13.4",
+     "module": "m68801",
+     "title": "Equilibrium Calculations",
+     "slug": "13-4-equilibrium-calculations"
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "dir": "ch14",
+   "title": "Acid-Base Equilibria",
+   "intro": {
+    "module": "m68802",
+    "slug": "14-introduction"
+   },
+   "sections": [
+    {
+     "id": "14.1",
+     "module": "m68803",
+     "title": "Brønsted-Lowry Acids and Bases",
+     "slug": "14-1-br-nsted-lowry-acids-and-bases"
+    },
+    {
+     "id": "14.2",
+     "module": "m68804",
+     "title": "pH and pOH",
+     "slug": "14-2-ph-and-poh"
+    },
+    {
+     "id": "14.3",
+     "module": "m68805",
+     "title": "Relative Strengths of Acids and Bases",
+     "slug": "14-3-relative-strengths-of-acids-and-bases"
+    },
+    {
+     "id": "14.4",
+     "module": "m68806",
+     "title": "Hydrolysis of Salts",
+     "slug": "14-4-hydrolysis-of-salts"
+    },
+    {
+     "id": "14.5",
+     "module": "m68807",
+     "title": "Polyprotic Acids",
+     "slug": "14-5-polyprotic-acids"
+    },
+    {
+     "id": "14.6",
+     "module": "m68808",
+     "title": "Buffers",
+     "slug": "14-6-buffers"
+    },
+    {
+     "id": "14.7",
+     "module": "m68809",
+     "title": "Acid-Base Titrations",
+     "slug": "14-7-acid-base-titrations"
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "dir": "ch15",
+   "title": "Equilibria of Other Reaction Classes",
+   "intro": {
+    "module": "m68810",
+    "slug": "15-introduction"
+   },
+   "sections": [
+    {
+     "id": "15.1",
+     "module": "m68811",
+     "title": "Precipitation and Dissolution",
+     "slug": "15-1-precipitation-and-dissolution"
+    },
+    {
+     "id": "15.2",
+     "module": "m68813",
+     "title": "Lewis Acids and Bases",
+     "slug": "15-2-lewis-acids-and-bases"
+    },
+    {
+     "id": "15.3",
+     "module": "m68814",
+     "title": "Coupled Equilibria",
+     "slug": "15-3-coupled-equilibria"
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "dir": "ch16",
+   "title": "Thermodynamics",
+   "intro": {
+    "module": "m68815",
+    "slug": "16-introduction"
+   },
+   "sections": [
+    {
+     "id": "16.1",
+     "module": "m68816",
+     "title": "Spontaneity",
+     "slug": "16-1-spontaneity"
+    },
+    {
+     "id": "16.2",
+     "module": "m68817",
+     "title": "Entropy",
+     "slug": "16-2-entropy"
+    },
+    {
+     "id": "16.3",
+     "module": "m68818",
+     "title": "The Second and Third Laws of Thermodynamics",
+     "slug": "16-3-the-second-and-third-laws-of-thermodynamics"
+    },
+    {
+     "id": "16.4",
+     "module": "m68819",
+     "title": "Free Energy",
+     "slug": "16-4-free-energy"
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "dir": "ch17",
+   "title": "Electrochemistry",
+   "intro": {
+    "module": "m68820",
+    "slug": "17-introduction"
+   },
+   "sections": [
+    {
+     "id": "17.1",
+     "module": "m68821",
+     "title": "Review of Redox Chemistry",
+     "slug": "17-1-review-of-redox-chemistry"
+    },
+    {
+     "id": "17.2",
+     "module": "m68822",
+     "title": "Galvanic Cells",
+     "slug": "17-2-galvanic-cells"
+    },
+    {
+     "id": "17.3",
+     "module": "m68823",
+     "title": "Electrode and Cell Potentials",
+     "slug": "17-3-electrode-and-cell-potentials"
+    },
+    {
+     "id": "17.4",
+     "module": "m68824",
+     "title": "Potential, Free Energy, and Equilibrium",
+     "slug": "17-4-potential-free-energy-and-equilibrium"
+    },
+    {
+     "id": "17.5",
+     "module": "m68825",
+     "title": "Batteries and Fuel Cells",
+     "slug": "17-5-batteries-and-fuel-cells"
+    },
+    {
+     "id": "17.6",
+     "module": "m68826",
+     "title": "Corrosion",
+     "slug": "17-6-corrosion"
+    },
+    {
+     "id": "17.7",
+     "module": "m68827",
+     "title": "Electrolysis",
+     "slug": "17-7-electrolysis"
+    }
+   ]
+  },
+  {
+   "number": 18,
+   "dir": "ch18",
+   "title": "Representative Metals, Metalloids, and Nonmetals",
+   "intro": {
+    "module": "m68828",
+    "slug": "18-introduction"
+   },
+   "sections": [
+    {
+     "id": "18.1",
+     "module": "m68829",
+     "title": "Periodicity",
+     "slug": "18-1-periodicity"
+    },
+    {
+     "id": "18.2",
+     "module": "m68830",
+     "title": "Occurrence and Preparation of the Representative Metals",
+     "slug": "18-2-occurrence-and-preparation-of-the-representative-metals"
+    },
+    {
+     "id": "18.3",
+     "module": "m68831",
+     "title": "Structure and General Properties of the Metalloids",
+     "slug": "18-3-structure-and-general-properties-of-the-metalloids"
+    },
+    {
+     "id": "18.4",
+     "module": "m68832",
+     "title": "Structure and General Properties of the Nonmetals",
+     "slug": "18-4-structure-and-general-properties-of-the-nonmetals"
+    },
+    {
+     "id": "18.5",
+     "module": "m68833",
+     "title": "Occurrence, Preparation, and Compounds of Hydrogen",
+     "slug": "18-5-occurrence-preparation-and-compounds-of-hydrogen"
+    },
+    {
+     "id": "18.6",
+     "module": "m68834",
+     "title": "Occurrence, Preparation, and Properties of Carbonates",
+     "slug": "18-6-occurrence-preparation-and-properties-of-carbonates"
+    },
+    {
+     "id": "18.7",
+     "module": "m68835",
+     "title": "Occurrence, Preparation, and Properties of Nitrogen",
+     "slug": "18-7-occurrence-preparation-and-properties-of-nitrogen"
+    },
+    {
+     "id": "18.8",
+     "module": "m68836",
+     "title": "Occurrence, Preparation, and Properties of Phosphorus",
+     "slug": "18-8-occurrence-preparation-and-properties-of-phosphorus"
+    },
+    {
+     "id": "18.9",
+     "module": "m68837",
+     "title": "Occurrence, Preparation, and Compounds of Oxygen",
+     "slug": "18-9-occurrence-preparation-and-compounds-of-oxygen"
+    },
+    {
+     "id": "18.10",
+     "module": "m68838",
+     "title": "Occurrence, Preparation, and Properties of Sulfur",
+     "slug": "18-10-occurrence-preparation-and-properties-of-sulfur"
+    },
+    {
+     "id": "18.11",
+     "module": "m68839",
+     "title": "Occurrence, Preparation, and Properties of Halogens",
+     "slug": "18-11-occurrence-preparation-and-properties-of-halogens"
+    },
+    {
+     "id": "18.12",
+     "module": "m68840",
+     "title": "Occurrence, Preparation, and Properties of the Noble Gases",
+     "slug": "18-12-occurrence-preparation-and-properties-of-the-noble-gases"
+    }
+   ]
+  },
+  {
+   "number": 19,
+   "dir": "ch19",
+   "title": "Transition Metals and Coordination Chemistry",
+   "intro": {
+    "module": "m68841",
+    "slug": "19-introduction"
+   },
+   "sections": [
+    {
+     "id": "19.1",
+     "module": "m68842",
+     "title": "Occurrence, Preparation, and Properties of Transition Metals and Their Compounds",
+     "slug": "19-1-occurrence-preparation-and-properties-of-transition-metals-and-their-compounds"
+    },
+    {
+     "id": "19.2",
+     "module": "m68843",
+     "title": "Coordination Chemistry of Transition Metals",
+     "slug": "19-2-coordination-chemistry-of-transition-metals"
+    },
+    {
+     "id": "19.3",
+     "module": "m68844",
+     "title": "Spectroscopic and Magnetic Properties of Coordination Compounds",
+     "slug": "19-3-spectroscopic-and-magnetic-properties-of-coordination-compounds"
+    }
+   ]
+  },
+  {
+   "number": 20,
+   "dir": "ch20",
+   "title": "Organic Chemistry",
+   "intro": {
+    "module": "m68845",
+    "slug": "20-introduction"
+   },
+   "sections": [
+    {
+     "id": "20.1",
+     "module": "m68846",
+     "title": "Hydrocarbons",
+     "slug": "20-1-hydrocarbons"
+    },
+    {
+     "id": "20.2",
+     "module": "m68847",
+     "title": "Alcohols and Ethers",
+     "slug": "20-2-alcohols-and-ethers"
+    },
+    {
+     "id": "20.3",
+     "module": "m68848",
+     "title": "Aldehydes, Ketones, Carboxylic Acids, and Esters",
+     "slug": "20-3-aldehydes-ketones-carboxylic-acids-and-esters"
+    },
+    {
+     "id": "20.4",
+     "module": "m68849",
+     "title": "Amines and Amides",
+     "slug": "20-4-amines-and-amides"
+    }
+   ]
+  },
+  {
+   "number": 21,
+   "dir": "ch21",
+   "title": "Nuclear Chemistry",
+   "intro": {
+    "module": "m68850",
+    "slug": "21-introduction"
+   },
+   "sections": [
+    {
+     "id": "21.1",
+     "module": "m68851",
+     "title": "Nuclear Structure and Stability",
+     "slug": "21-1-nuclear-structure-and-stability"
+    },
+    {
+     "id": "21.2",
+     "module": "m68852",
+     "title": "Nuclear Equations",
+     "slug": "21-2-nuclear-equations"
+    },
+    {
+     "id": "21.3",
+     "module": "m68854",
+     "title": "Radioactive Decay",
+     "slug": "21-3-radioactive-decay"
+    },
+    {
+     "id": "21.4",
+     "module": "m68856",
+     "title": "Transmutation and Nuclear Energy",
+     "slug": "21-4-transmutation-and-nuclear-energy"
+    },
+    {
+     "id": "21.5",
+     "module": "m68857",
+     "title": "Uses of Radioisotopes",
+     "slug": "21-5-uses-of-radioisotopes"
+    },
+    {
+     "id": "21.6",
+     "module": "m68858",
+     "title": "Biological Effects of Radiation",
+     "slug": "21-6-biological-effects-of-radiation"
+    }
+   ]
+  }
+ ],
+ "appendices": [
+  {
+   "id": "A",
+   "module": "m68859",
+   "title": "The Periodic Table",
+   "slug": "a-the-periodic-table"
+  },
+  {
+   "id": "B",
+   "module": "m68860",
+   "title": "Essential Mathematics",
+   "slug": "b-essential-mathematics"
+  },
+  {
+   "id": "C",
+   "module": "m68861",
+   "title": "Units and Conversion Factors",
+   "slug": "c-units-and-conversion-factors"
+  },
+  {
+   "id": "D",
+   "module": "m68862",
+   "title": "Fundamental Physical Constants",
+   "slug": "d-fundamental-physical-constants"
+  },
+  {
+   "id": "E",
+   "module": "m68863",
+   "title": "Water Properties",
+   "slug": "e-water-properties"
+  },
+  {
+   "id": "F",
+   "module": "m68864",
+   "title": "Composition of Commercial Acids and Bases",
+   "slug": "f-composition-of-commercial-acids-and-bases"
+  },
+  {
+   "id": "G",
+   "module": "m68865",
+   "title": "Standard Thermodynamic Properties for Selected Substances",
+   "slug": "g-standard-thermodynamic-properties-for-selected-substances"
+  },
+  {
+   "id": "H",
+   "module": "m68866",
+   "title": "Ionization Constants of Weak Acids",
+   "slug": "h-ionization-constants-of-weak-acids"
+  },
+  {
+   "id": "I",
+   "module": "m68867",
+   "title": "Ionization Constants of Weak Bases",
+   "slug": "i-ionization-constants-of-weak-bases"
+  },
+  {
+   "id": "J",
+   "module": "m68868",
+   "title": "Solubility Products",
+   "slug": "j-solubility-products"
+  },
+  {
+   "id": "K",
+   "module": "m68869",
+   "title": "Formation Constants for Complex Ions",
+   "slug": "k-formation-constants-for-complex-ions"
+  },
+  {
+   "id": "L",
+   "module": "m68870",
+   "title": "Standard Electrode (Half-Cell) Potentials",
+   "slug": "l-standard-electrode-half-cell-potentials"
+  },
+  {
+   "id": "M",
+   "module": "m68871",
+   "title": "Half-Lives for Several Radioactive Isotopes",
+   "slug": "m-half-lives-for-several-radioactive-isotopes"
+  }
+ ]
+}

@@ -1,0 +1,261 @@
+# Chemistry 2e (OpenStax) table of contents
+
+The order of the collection `collections/chemistry-2e.collection.xml` in the CNXML bundle, with the module that carries each page. There is no PDF of this book, so there are no page numbers. Each section module ends with its own Key Concepts and Summary, Key Equations where the section has any, and Chemistry End of Chapter Exercises, which openstax.org gathers at the end of the chapter; those are listed once per chapter here, as the book prints them.
+
+- Preface (m68662)
+- Chapter 1 Essential Ideas
+  - Introduction (m68663)
+  - 1.1 Chemistry in Context (m68664)
+  - 1.2 Phases and Classification of Matter (m68667)
+  - 1.3 Physical and Chemical Properties (m68670)
+  - 1.4 Measurements (m68674)
+  - 1.5 Measurement Uncertainty, Accuracy, and Precision (m68690)
+  - 1.6 Mathematical Treatment of Measurement Results (m68683)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 2 Atoms, Molecules, and Ions
+  - Introduction (m68684)
+  - 2.1 Early Ideas in Atomic Theory (m68685)
+  - 2.2 Evolution of Atomic Theory (m68687)
+  - 2.3 Atomic Structure and Symbolism (m68692)
+  - 2.4 Chemical Formulas (m68693)
+  - 2.5 The Periodic Table (m68695)
+  - 2.6 Ionic and Molecular Compounds (m68696)
+  - 2.7 Chemical Nomenclature (m68698)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 3 Composition of Substances and Solutions
+  - Introduction (m68699)
+  - 3.1 Formula Mass and the Mole Concept (m68700)
+  - 3.2 Determining Empirical and Molecular Formulas (m68702)
+  - 3.3 Molarity (m68703)
+  - 3.4 Other Units for Solution Concentrations (m68704)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 4 Stoichiometry of Chemical Reactions
+  - Introduction (m68730)
+  - 4.1 Writing and Balancing Chemical Equations (m68709)
+  - 4.2 Classifying Chemical Reactions (m68710)
+  - 4.3 Reaction Stoichiometry (m68713)
+  - 4.4 Reaction Yields (m68714)
+  - 4.5 Quantitative Chemical Analysis (m68716)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 5 Thermochemistry
+  - Introduction (m68723)
+  - 5.1 Energy Basics (m68724)
+  - 5.2 Calorimetry (m68726)
+  - 5.3 Enthalpy (m68727)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 6 Electronic Structure and Periodic Properties of Elements
+  - Introduction (m68728)
+  - 6.1 Electromagnetic Energy (m68729)
+  - 6.2 The Bohr Model (m68732)
+  - 6.3 Development of Quantum Theory (m68733)
+  - 6.4 Electronic Structure of Atoms (Electron Configurations) (m68734)
+  - 6.5 Periodic Variations in Element Properties (m68735)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 7 Chemical Bonding and Molecular Geometry
+  - Introduction (m68736)
+  - 7.1 Ionic Bonding (m68737)
+  - 7.2 Covalent Bonding (m68738)
+  - 7.3 Lewis Symbols and Structures (m68739)
+  - 7.4 Formal Charges and Resonance (m68740)
+  - 7.5 Strengths of Ionic and Covalent Bonds (m68741)
+  - 7.6 Molecular Structure and Polarity (m68742)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 8 Advanced Theories of Covalent Bonding
+  - Introduction (m68743)
+  - 8.1 Valence Bond Theory (m68744)
+  - 8.2 Hybrid Atomic Orbitals (m68745)
+  - 8.3 Multiple Bonds (m68746)
+  - 8.4 Molecular Orbital Theory (m68747)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 9 Gases
+  - Introduction (m68748)
+  - 9.1 Gas Pressure (m68750)
+  - 9.2 Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law (m68751)
+  - 9.3 Stoichiometry of Gaseous Substances, Mixtures, and Reactions (m68752)
+  - 9.4 Effusion and Diffusion of Gases (m68754)
+  - 9.5 The Kinetic-Molecular Theory (m68758)
+  - 9.6 Non-Ideal Gas Behavior (m68759)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 10 Liquids and Solids
+  - Introduction (m68760)
+  - 10.1 Intermolecular Forces (m68761)
+  - 10.2 Properties of Liquids (m68764)
+  - 10.3 Phase Transitions (m68768)
+  - 10.4 Phase Diagrams (m68769)
+  - 10.5 The Solid State of Matter (m68770)
+  - 10.6 Lattice Structures in Crystalline Solids (m68773)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 11 Solutions and Colloids
+  - Introduction (m68776)
+  - 11.1 The Dissolution Process (m68778)
+  - 11.2 Electrolytes (m68781)
+  - 11.3 Solubility (m68782)
+  - 11.4 Colligative Properties (m68783)
+  - 11.5 Colloids (m68784)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 12 Kinetics
+  - Introduction (m68785)
+  - 12.1 Chemical Reaction Rates (m68786)
+  - 12.2 Factors Affecting Reaction Rates (m68787)
+  - 12.3 Rate Laws (m68789)
+  - 12.4 Integrated Rate Laws (m68791)
+  - 12.5 Collision Theory (m68793)
+  - 12.6 Reaction Mechanisms (m68794)
+  - 12.7 Catalysis (m68795)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 13 Fundamental Equilibrium Concepts
+  - Introduction (m68796)
+  - 13.1 Chemical Equilibria (m68797)
+  - 13.2 Equilibrium Constants (m68798)
+  - 13.3 Shifting Equilibria: Le Châtelier’s Principle (m68799)
+  - 13.4 Equilibrium Calculations (m68801)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 14 Acid-Base Equilibria
+  - Introduction (m68802)
+  - 14.1 Brønsted-Lowry Acids and Bases (m68803)
+  - 14.2 pH and pOH (m68804)
+  - 14.3 Relative Strengths of Acids and Bases (m68805)
+  - 14.4 Hydrolysis of Salts (m68806)
+  - 14.5 Polyprotic Acids (m68807)
+  - 14.6 Buffers (m68808)
+  - 14.7 Acid-Base Titrations (m68809)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 15 Equilibria of Other Reaction Classes
+  - Introduction (m68810)
+  - 15.1 Precipitation and Dissolution (m68811)
+  - 15.2 Lewis Acids and Bases (m68813)
+  - 15.3 Coupled Equilibria (m68814)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 16 Thermodynamics
+  - Introduction (m68815)
+  - 16.1 Spontaneity (m68816)
+  - 16.2 Entropy (m68817)
+  - 16.3 The Second and Third Laws of Thermodynamics (m68818)
+  - 16.4 Free Energy (m68819)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 17 Electrochemistry
+  - Introduction (m68820)
+  - 17.1 Review of Redox Chemistry (m68821)
+  - 17.2 Galvanic Cells (m68822)
+  - 17.3 Electrode and Cell Potentials (m68823)
+  - 17.4 Potential, Free Energy, and Equilibrium (m68824)
+  - 17.5 Batteries and Fuel Cells (m68825)
+  - 17.6 Corrosion (m68826)
+  - 17.7 Electrolysis (m68827)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 18 Representative Metals, Metalloids, and Nonmetals
+  - Introduction (m68828)
+  - 18.1 Periodicity (m68829)
+  - 18.2 Occurrence and Preparation of the Representative Metals (m68830)
+  - 18.3 Structure and General Properties of the Metalloids (m68831)
+  - 18.4 Structure and General Properties of the Nonmetals (m68832)
+  - 18.5 Occurrence, Preparation, and Compounds of Hydrogen (m68833)
+  - 18.6 Occurrence, Preparation, and Properties of Carbonates (m68834)
+  - 18.7 Occurrence, Preparation, and Properties of Nitrogen (m68835)
+  - 18.8 Occurrence, Preparation, and Properties of Phosphorus (m68836)
+  - 18.9 Occurrence, Preparation, and Compounds of Oxygen (m68837)
+  - 18.10 Occurrence, Preparation, and Properties of Sulfur (m68838)
+  - 18.11 Occurrence, Preparation, and Properties of Halogens (m68839)
+  - 18.12 Occurrence, Preparation, and Properties of the Noble Gases (m68840)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 19 Transition Metals and Coordination Chemistry
+  - Introduction (m68841)
+  - 19.1 Occurrence, Preparation, and Properties of Transition Metals and Their Compounds (m68842)
+  - 19.2 Coordination Chemistry of Transition Metals (m68843)
+  - 19.3 Spectroscopic and Magnetic Properties of Coordination Compounds (m68844)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 20 Organic Chemistry
+  - Introduction (m68845)
+  - 20.1 Hydrocarbons (m68846)
+  - 20.2 Alcohols and Ethers (m68847)
+  - 20.3 Aldehydes, Ketones, Carboxylic Acids, and Esters (m68848)
+  - 20.4 Amines and Amides (m68849)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Chapter 21 Nuclear Chemistry
+  - Introduction (m68850)
+  - 21.1 Nuclear Structure and Stability (m68851)
+  - 21.2 Nuclear Equations (m68852)
+  - 21.3 Radioactive Decay (m68854)
+  - 21.4 Transmutation and Nuclear Energy (m68856)
+  - 21.5 Uses of Radioisotopes (m68857)
+  - 21.6 Biological Effects of Radiation (m68858)
+  - Key Terms
+  - Key Equations
+  - Summary
+  - Exercises
+- Appendices
+  - A The Periodic Table (m68859)
+  - B Essential Mathematics (m68860)
+  - C Units and Conversion Factors (m68861)
+  - D Fundamental Physical Constants (m68862)
+  - E Water Properties (m68863)
+  - F Composition of Commercial Acids and Bases (m68864)
+  - G Standard Thermodynamic Properties for Selected Substances (m68865)
+  - H Ionization Constants of Weak Acids (m68866)
+  - I Ionization Constants of Weak Bases (m68867)
+  - J Solubility Products (m68868)
+  - K Formation Constants for Complex Ions (m68869)
+  - L Standard Electrode (Half-Cell) Potentials (m68870)
+  - M Half-Lives for Several Radioactive Isotopes (m68871)
+- Answer Key (the keyed solutions sit inside each exercise in its module)
+- Index

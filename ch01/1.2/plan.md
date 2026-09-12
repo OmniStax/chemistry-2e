@@ -250,3 +250,29 @@ coloured throughout rather than half coloured. Every atom, ion,
 electron, tube and battery names itself under the pointer through
 `F.hover` (rule 26.6). The page still binds `volume` and `mass`. The
 captions of 1.6 and 1.15 say to choose the state and name the colours.
+
+## Two dimensions or three, 2026-09-12
+
+Brought up to the book's rule on dimension (Chemistry 2e `RULES.md`, Figures,
+root rule 24.8 and 26) by Claude Fable 5.1. A particle picture is 3D, an
+experiment is a bench with a bounded orbit, a faithful copy stays flat.
+
+- `sim-states` (Figure 1.6): two glass containers on a ground on `F.view3d`,
+  the water inside each as spheres, a lattice of 27 in the solid's cube, 27
+  in disorder in the liquid's slab, a few far apart through the gas; the
+  headline, the words on packing and the readout on a flat strip beneath.
+  Orbit: pitch 0 to 1.25 rad (level to 72° above), since the containers stand
+  on a ground and are never seen from beneath; yaw free; idle spin on, since
+  the figure is still; front and above views; zoom; hover names on every
+  atom, sample and container.
+- `sim-electrolysis` (Figure 1.15): a bench scene on `F.view3d`, the beaker,
+  the battery with its terminals, the two inverted tubes with their water
+  and the gas collected, the molecules formed drawn in the gas of each tube
+  and the water remaining in the beaker, all named under the pointer; the
+  percentages, the counts and the equation on a flat strip beneath. Orbit:
+  pitch 0.04 to 0.95 rad (2° to 54° above the bench top), yaw −π/2 to π/2
+  (the front half), so the bench is never seen from beneath or behind; no
+  idle spin, since a bench has a front (rule 26.2 allows the omission);
+  front and above views; zoom.
+- `fig-fuel-cell` (Figure 1.16) stays a flat faithful copy: a faithful copy
+  is not a simulation. `draws` unchanged.

@@ -392,3 +392,30 @@ of the section lays more than one gas on one graph. The page still
 binds `pressure`, `volume`, `temperature` and `amount`; the element
 colours are not a binding. The captions of 9.10, the gas box and 9.18
 say which gas is drawn and how to choose it.
+
+## Two dimensions or three, 2026-09-12
+
+Brought up to the book's rule on dimension (Chemistry 2e `RULES.md`, Figures,
+root rule 24.8 and 26) by Claude Fable 5.1. Particle pictures are 3D, an inset
+molecule is built both ways.
+
+- `sim-gas-box`: a glass box closed by a piston on `F.view3d`, the molecules
+  of the chosen gas as spheres in the element palette (up to forty, ten per
+  mole), moved every frame by the same wall-strike engine in three
+  dimensions; the gauge, the readings and the law held on a flat strip
+  beneath; the four-law lock and the gas choice kept. Orbit free (a box of
+  gas has no up), idle spin off since the molecules already move, auto-rotate
+  button present, front and corner views, zoom. Every sphere and the piston
+  carry a hover name.
+- `sim-amontons-sphere` (Figure 9.10): a glass sphere of air in a water bath
+  on a hot plate, twelve molecules per mole; gauge and readings on the strip
+  beneath. Orbit: pitch 0.02 to 1.25 rad (1° to 72° above level), since the
+  plate is a ground and the scene is never seen from beneath; yaw free; spin
+  off; front and above views.
+- `sim-balloons` (Figure 9.18): a view choice, 2D and 3D, 2D the default. The
+  2D stage is what stood before; the 3D stage mounts on the first switch,
+  three translucent spheres in the volume hue with their knots, strings and
+  molecules, sharing the dropdowns, the amount slider and the readout. Orbit
+  free (hanging balloons have no ground); spin off; front and corner views.
+- The flat particle engine, `speedOf` and `hotplate` are gone from the file;
+  `draws` lists unchanged.

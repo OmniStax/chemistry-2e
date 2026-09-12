@@ -184,3 +184,19 @@ atom and the thermometer name themselves under the pointer through
 `F.hover` (rule 26.6). The page still binds `temperature` alone; the
 element colours are not a binding. The caption says to choose a state
 and to rest the pointer on an atom.
+
+## Two dimensions or three, 2026-09-12
+
+Brought up to the book's rule on dimension (Chemistry 2e `RULES.md`, Figures,
+root rule 24.8 and 26) by Claude Fable 5.1. Figure 1.5 is a molecule inset in
+an otherwise flat figure, so it is built both ways.
+
+- `sim-water` (Figure 1.5): a view choice, 2D and 3D, 2D the default. The 2D
+  stage is what stood before; the 3D stage mounts on the first switch and
+  shows the microscopic domain as a cluster on `F.view3d`, ice as two
+  honeycomb layers of water molecules with hydrogen bonds between them, the
+  liquid thirty molecules in disorder, the gas seven far apart, inside a
+  faint sphere that stands for the book's circle; it shares the temperature
+  slider, the state buttons and the readout. Orbit free (a cluster has no
+  ground); idle spin on, since the figure is still; front and above views;
+  zoom; every atom carries a hover name. `draws` unchanged.

@@ -1,7 +1,7 @@
 /* Figures for section 1.1 Chemistry in Context. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['1.1'] = function (root, F) {
-const { el, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, headline, FONT } = F;
+const { el, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, headline, topline, FONT } = F;
 const sim = (id, H) => F.sim(root, id, H);
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const TAU = 2 * Math.PI;
@@ -128,14 +128,55 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   register(d.fig, { update: () => {}, draw });
 })();
 
+/* ---------- three dimensions ----------
+   The book's rule for this chapter (Chemistry 2e RULES.md, Figures): a
+   molecule inset in an otherwise flat figure is built both ways behind a
+   view choice, 2D and 3D, defaulting to 2D, because the flat diagram is
+   itself something the book teaches; the 3D stage mounts on the first
+   switch. The viewer, the meshes and the buttons come from the library
+   (F.view3d, F.mesh); what stays here is how a water molecule is built. */
+const T3D = window.THREE;
+const { sphere: sphere3, stick: stick3 } = F.mesh;
+/* the signature of everything a scene's colours are read from, so a theme change rebuilds it */
+const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, F.CC, F.el('O'), F.el('H')].join('|');
+/* a figlib canvas beneath the viewer for the headline */
+const strip = (d, H) => F.makeCanvas(d.stage, H);
+const V3 = {
+  add: (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]],
+  mul: (a, k) => [a[0] * k, a[1] * k, a[2] * k],
+  cross: (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]],
+  unit: (a) => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; },
+};
+/* one water molecule in the scene: an oxygen at p, two hydrogens 104.5° apart at bond length b in the plane spanned by the
+   unit vectors u and w, every sphere named for the pointer (rule 26.6) */
+function water3(v, g, p, u, w, b = 0.26) {
+  const h = 0.912;
+  v.pickable(sphere3(g, p, 0.13, F.el('O')), NAME.O + ' atom of a water molecule');
+  [-h, h].forEach((q) => {
+    const hp = V3.add(p, V3.mul(V3.add(V3.mul(u, Math.cos(q)), V3.mul(w, Math.sin(q))), b));
+    stick3(g, p, hp, 0.035, PAL.ink); v.pickable(sphere3(g, hp, 0.08, F.el('H')), NAME.H + ' atom of a water molecule');
+  });
+}
+/* a seeded frame of two perpendicular unit vectors, so a molecule is turned the same way on every rebuild */
+function frame(r) {
+  const a = V3.unit([r() - 0.5, r() - 0.5, r() - 0.5]), t = Math.abs(a[1]) < 0.9 ? [0, 1, 0] : [1, 0, 0];
+  const u = V3.unit(V3.cross(a, t)); return [u, V3.cross(a, u)];
+}
+
 /* =====================================================================
    Figure 1.5: water in the three domains. A beaker with a thermometer,
    the formula with its state letter, and the molecules in a circle, all
    answering one temperature slider. Still: a state at a temperature has
-   no clock in it.
+   no clock in it. The microscopic domain is built both ways behind a
+   view choice: the flat circle the book draws, and the same molecules
+   as a cluster in three dimensions the reader turns, mounted on the
+   first switch, sharing the slider, the state buttons and the readout;
+   the cluster turns freely, since a cluster of molecules has no ground.
    ===================================================================== */
 (function () {
   const d = sim('sim-water', 560);
+  /* the view is a state (rule 26.1): the flat drawing, which the book teaches, or the molecules turned in three dimensions */
+  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: show });
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: -40, max: 140, step: 1, value: 25, unit: '°C', dec: 0, aria: 'temperature' });
   const stateOf = (t) => (t < 0 ? 's' : t < 100 ? 'l' : 'g');
   /* the state is a thing the reader chooses as well as a thing the temperature decides (rule 26.1): three buttons, the one the
@@ -144,6 +185,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   const S = F.choice(d.controls, { label: '\\text{state}', options: [{ value: 's', label: 'solid' }, { value: 'l', label: 'liquid' }, { value: 'g', label: 'gas' }], value: stateOf(T.v), aria: 'state of the water', onInput: (v) => T.set(PRESET[v]) });
   const WORD = { s: 'a solid', l: 'a liquid', g: 'a gas' };
   const MICRO = { s: 'close together and organized', l: 'close together and disordered', g: 'far apart and disorganized' };
+  const headOf = (t, s) => `At ${t} °C the water in the beaker is ${WORD[s]}, H₂O(${s}), and its molecules are ${MICRO[s]}.`;
   /* the atoms drawn this frame, handed to the hover tooltip so that every disc has a name (rule 26.6) */
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -172,12 +214,12 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     [0, 100].forEach((v) => { line(ctx, x + 9, Y(v), x + 22, Y(v), PAL.muted, 2); text(ctx, v + ' °C', x + 28, Y(v), PAL.muted, { size: 17 }); });
     text(ctx, t + ' °C', x, top - 26, col, { size: 24, weight: 600, align: 'center' });
   }
-  function draw() {
+  /* the flat drawing: the three domains side by side */
+  function draw2d() {
     const { ctx } = begin(d.c);
     ctx0 = ctx; hits = [];
     const t = T.v, s = stateOf(t);
-    S.set(s);
-    headline(ctx, `At ${t} °C the water in the beaker is ${WORD[s]}, H₂O(${s}), and its molecules are ${MICRO[s]}.`);
+    headline(ctx, headOf(t, s));
     /* (a) the macroscopic domain: the beaker and what is in it */
     const bx0 = 150, bx1 = 410, by0 = 120, by1 = 470, lvl = 250;
     if (s === 'l') { ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(bx0, lvl, bx1 - bx0, by1 - lvl - 2); ctx.restore(); line(ctx, bx0, lvl, bx1, lvl, PAL.muted, 3); }
@@ -239,6 +281,67 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     ctx.restore();
     ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.stroke(); ctx.restore();
     text(ctx, 'microscopic domain', cx, 530, PAL.muted, { size: 19, align: 'center' });
+  }
+  /* the scene: the same molecules as a cluster the reader turns, an ice lattice of two honeycomb layers, a crowded disorder,
+     or a few far apart, inside a faint sphere that stands for the circle of the flat drawing; mounted on the first switch */
+  let v = null, grp = null, cnv = null, sig = '';
+  function mount() {
+    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.2 }], h: 440, dist: 8 });
+    grp = v.part(0); cnv = strip(d, 90);
+  }
+  function build() {
+    const s = stateOf(T.v), key = [s, palSig()].join('|'); if (key === sig) return; sig = key;
+    v.clear();
+    const RW = 1.75;
+    const window3 = new T3D.Mesh(new T3D.SphereGeometry(RW, 36, 24), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.06, depthWrite: false, side: T3D.DoubleSide })); window3.renderOrder = 2; grp.add(window3);
+    if (s === 's') {
+      /* two honeycomb layers, the oxygens at the corners, each bonded to two of its three neighbours in the layer and hydrogen-bonded to the layer above */
+      const b = 0.42, layers = [-0.45, 0.45];
+      layers.forEach((z, li) => {
+        const O = [], seen = new Set();
+        for (let j = -2; j <= 2; j++) for (let i = -2; i <= 2; i++) {
+          const hx = (i + (j & 1 ? 0.5 : 0)) * b * Math.sqrt(3), hy = j * 1.5 * b;
+          for (let k = 0; k < 6; k++) { const a = Math.PI / 6 + k * Math.PI / 3, p = [+(hx + b * Math.cos(a)).toFixed(3), +(hy + b * Math.sin(a)).toFixed(3)]; const kk = p.join(','); if (!seen.has(kk) && Math.hypot(p[0], p[1]) < RW - 0.35) { seen.add(kk); O.push(p); } }
+        }
+        const near = (p, q) => Math.abs(Math.hypot(p[0] - q[0], p[1] - q[1]) - b) < 0.02;
+        O.forEach((p, n) => { O.slice(n + 1).forEach((q) => { if (near(p, q)) stick3(grp, [p[0], p[1], z], [q[0], q[1], z], 0.012, PAL.muted, { transparent: true, opacity: 0.5 }); }); });
+        O.forEach((p, n) => {
+          const nb = O.filter((q) => near(p, q)).slice(n % 2, n % 2 + 2), P = [p[0], p[1], z];
+          v.pickable(sphere3(grp, P, 0.13, F.el('O')), NAME.O + ' atom of a water molecule');
+          nb.forEach((q) => { const H = [p[0] + (q[0] - p[0]) * 0.4, p[1] + (q[1] - p[1]) * 0.4, z]; stick3(grp, P, H, 0.035, PAL.ink); v.pickable(sphere3(grp, H, 0.08, F.el('H')), NAME.H + ' atom of a water molecule'); });
+          if (li === 0 && n % 2 === 0) stick3(grp, P, [p[0], p[1], layers[1]], 0.012, PAL.muted, { transparent: true, opacity: 0.5 });
+        });
+      });
+    } else if (s === 'l') {
+      const r = rng(11), pts = [];
+      while (pts.length < 30) {
+        const p = [(r() - 0.5) * 2 * (RW - 0.3), (r() - 0.5) * 2 * (RW - 0.3), (r() - 0.5) * 2 * (RW - 0.3)];
+        if (Math.hypot(...p) < RW - 0.3 && pts.every((q) => Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]) > 0.5)) pts.push(p);
+      }
+      pts.forEach((p) => { const [u, w] = frame(r); water3(v, grp, p, u, w); });
+    } else {
+      const r = rng(7);
+      [[-0.95, -0.8, 0.3], [0.6, -1.05, -0.5], [-0.2, 0.1, 0.9], [1.1, 0.4, 0.2], [-1.1, 0.7, -0.6], [0.3, 1.2, -0.3], [-0.6, -0.2, -1.1]].forEach((p) => { const [u, w] = frame(r); water3(v, grp, p, u, w); });
+    }
+    v.label('microscopic domain', [0, -RW, 0], grp, 6);   /* over the sphere's lowest point, inside it, so it never leaves the canvas */
+  }
+  function draw3d() {
+    build(); v.invalidate();
+    const { ctx } = begin(cnv);
+    topline(ctx, headOf(T.v, stateOf(T.v)) + ' Drag to turn the molecules.');
+  }
+  /* one stage shows at a time: the canvas, or the scene with its button row and its strip */
+  function show() {
+    const three = VIEW.value === '3d';
+    if (three && !v) mount();
+    d.c.style.display = three ? 'none' : '';
+    if (v) [v.wrap, d.stage.querySelector('.view3d-bar'), cnv].forEach((e) => { if (e) e.style.display = three ? '' : 'none'; });
+    draw();
+  }
+  function draw() {
+    const t = T.v, s = stateOf(t);
+    S.set(s);
+    if (VIEW.value === '3d') draw3d(); else draw2d();
     readout(d.readout, `\\kT = ${t}\\ ^\\circ\\text{C} \\qquad \\text{H}_2\\text{O}(\\mathit{${s}})`,
       'The formula H₂O names both the water in the beaker and the molecule in the circle; only the letter in parentheses changes with the state.');
   }

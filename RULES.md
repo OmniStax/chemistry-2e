@@ -92,7 +92,7 @@ Boxed notes (Chemistry in Everyday Life, How Sciences Interconnect, Portrait of 
 
 Tables stay in the text as `div.book-table` with the publisher's number as eyebrow and the book's title as caption; a spanned header is written from the CNXML by hand. A table is never a `<figure>`. The unnumbered Key Equations table is not printed; it is the chapter's equations table.
 
-Three ideas are spatial and use `F.view3d`: molecular geometry (7.6), hybrid orbitals (8.2), crystal lattices (10.6). Everything else, including particle boxes, cells and titrations, is planar.
+The three-dimensional figures go through `F.view3d`; the paragraph above says which figures are 3D, which are 2D and which carry both views.
 
 ## Files
 

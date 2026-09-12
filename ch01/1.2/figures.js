@@ -1,7 +1,7 @@
 /* Figures for section 1.2 Phases and Classification of Matter. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['1.2'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, dot, text, headline } = F;
+const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, dot, text, headline, topline } = F;
 const sim = (id, H) => F.sim(root, id, H);
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 
@@ -47,57 +47,133 @@ function water(named, ctx, x, y, a = 0, k = 1) {
   named(ctx, x, y, 'O', 10 * k, 'a water molecule, H₂O'); hs.forEach(([hx, hy]) => named(ctx, hx, hy, 'H', 6.5 * k, 'a water molecule, H₂O'));
 }
 
+/* ---------- three dimensions ----------
+   The book's rule for this chapter (Chemistry 2e RULES.md, Figures): a
+   particle picture is three-dimensional, spheres in a vessel the reader
+   turns, its readings on a flat strip beneath; an experiment or apparatus
+   is a bench with a bounded orbit that never shows its underside. The
+   viewer, the meshes and the buttons come from the library (F.view3d,
+   F.mesh); what stays here is how a water, hydrogen or oxygen molecule is
+   built and how a glass vessel is drawn. */
+const T3D = window.THREE;
+const { sphere: sphere3, stick: stick3, box: box3, mat: mat3 } = F.mesh;
+/* the signature of everything a scene's colours are read from, so a theme change rebuilds it */
+const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, F.CC, F.el('O'), F.el('H'), C('volume')].join('|');
+/* a figlib canvas beneath the viewer: the headline and the readings on a flat strip */
+const strip = (d, H) => F.makeCanvas(d.stage, H);
+/* the glass of a vessel: the ink at a tenth, both faces, never hiding what is inside */
+const glass = (extra = {}) => ({ transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide, ...extra });
+/* the edges of a box, in ink, so a transparent vessel keeps its outline */
+function edges3(g, size, at = [0, 0, 0]) {
+  const e = new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(size[0], size[1], size[2])), new T3D.LineBasicMaterial({ color: new T3D.Color(PAL.ink) }));
+  e.position.set(at[0], at[1], at[2]); g.add(e); return e;
+}
+/* an open cylinder of glass standing on its base: a tube or a beaker of radius r and height h whose bottom is at y0 */
+function tube3(g, x, y0, z, r, h, open = 'top') {
+  const m = new T3D.Mesh(new T3D.CylinderGeometry(r, r, h, 28, 1, true), mat3(PAL.ink, glass())); m.position.set(x, y0 + h / 2, z); m.renderOrder = 2; g.add(m);
+  const cap = new T3D.Mesh(new T3D.CircleGeometry(r, 28), mat3(PAL.ink, glass())); cap.rotation.x = open === 'top' ? Math.PI / 2 : -Math.PI / 2; cap.position.set(x, open === 'top' ? y0 : y0 + h, z); cap.renderOrder = 2; g.add(cap);
+  return m;
+}
+/* a column of liquid or gas inside a tube: a solid cylinder of radius r from y0 up h, in a colour at an opacity */
+function column3(g, x, y0, z, r, h, color, opacity) {
+  const m = new T3D.Mesh(new T3D.CylinderGeometry(r, r, Math.max(h, 1e-3), 28), mat3(color, { transparent: true, opacity, depthWrite: false })); m.position.set(x, y0 + h / 2, z); g.add(m); return m;
+}
+const V3 = {
+  add: (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]],
+  mul: (a, k) => [a[0] * k, a[1] * k, a[2] * k],
+  cross: (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]],
+  unit: (a) => { const l = Math.hypot(a[0], a[1], a[2]) || 1; return [a[0] / l, a[1] / l, a[2] / l]; },
+};
+/* a frame of two perpendicular unit vectors from three numbers in 0..1, so a molecule is turned the same way on every rebuild */
+function frame(a0, a1, a2) {
+  const a = V3.unit([a0 - 0.5, a1 - 0.5, a2 - 0.5]), t = Math.abs(a[1]) < 0.9 ? [0, 1, 0] : [1, 0, 0];
+  const u = V3.unit(V3.cross(a, t)); return [u, V3.cross(a, u)];
+}
+/* one water molecule in the scene at p, turned by the frame (u, w), every sphere named for the pointer (rule 26.6); k scales it */
+function water3(v, g, p, u, w, k = 1, of = 'a water molecule, H₂O') {
+  const h = 0.912, b = 0.2 * k;
+  v.pickable(sphere3(g, p, 0.1 * k, F.el('O')), NAME.O + ' atom of ' + of);
+  [-h, h].forEach((q) => {
+    const hp = V3.add(p, V3.mul(V3.add(V3.mul(u, Math.cos(q)), V3.mul(w, Math.sin(q))), b));
+    stick3(g, p, hp, 0.028 * k, PAL.ink); v.pickable(sphere3(g, hp, 0.065 * k, F.el('H')), NAME.H + ' atom of ' + of);
+  });
+}
+/* a molecule of two atoms of one element at p along the unit vector u, r the atom radius */
+function diatomic3(v, g, p, u, sym, r) {
+  const of = sym === 'H' ? 'a hydrogen molecule, H₂' : 'an oxygen molecule, O₂', a = V3.add(p, V3.mul(u, -r * 0.9)), b = V3.add(p, V3.mul(u, r * 0.9));
+  stick3(g, a, b, r * 0.3, PAL.ink); v.pickable(sphere3(g, a, r, F.el(sym)), NAME[sym] + ' atom of ' + of); v.pickable(sphere3(g, b, r, F.el(sym)), NAME[sym] + ' atom of ' + of);
+}
+
 /* =====================================================================
-   FIGURE 1.6: one sample in two containers. A state slider moves the
-   sample from solid to liquid to gas, and a volume slider sizes it. The
-   solid keeps its shape in both containers, the liquid keeps its volume
-   at two different heights, the gas fills both. The particle picture
-   beneath each container says why. Still: the idea has no time in it.
+   FIGURE 1.6: one sample in two containers, in three dimensions. A state
+   choice moves the sample from solid to liquid to gas, and a volume
+   slider sizes it. The solid keeps its shape in both containers, the
+   liquid keeps its volume at two different heights, the gas fills both,
+   and the water molecules inside each say why, packed as a lattice, a
+   crowd or a few far apart. Still: the idea has no time in it, so the
+   scene spins idly until taken hold of. The containers stand on a
+   ground, so the pitch is kept between level and 72° above it and the
+   scene is never seen from beneath; the yaw is free.
 ===================================================================== */
 (function () {
-  const d = sim('sim-states', 640);
+  const d = sim('sim-states');
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [0.0, 1.25], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 440, dist: 8, tilt: 0.22 });
+  const grp = v.part(0), cnv = strip(d, 200);
   const NAMES = ['solid', 'liquid', 'gas'];
   /* the state is a thing the reader switches between, never slides through (rule 26.1): three buttons, the current one marked */
   const Sc = F.choice(d.controls, { label: '\\text{state}', options: NAMES.map((n, i) => ({ value: String(i), label: n })), value: '0', aria: 'state of the sample' });
   const S = { get v() { return +Sc.value; } };
   const V = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 50, max: 200, step: 10, value: 100, unit: 'mL', dec: 0, aria: 'volume of the sample' });
+  /* the containers: the narrow one holds 300 mL in its full height, so one mL is its volume over 300 in either; a solid of two thirds of it is a cube narrower than the container, since the height is under one and a half times the width */
+  const HT = 1.4, DP = 1.1, NARROW = { x: -1.55, w: 1.1 }, WIDE = { x: 1.05, w: 2.2 }, FLOOR = -0.75, K = (NARROW.w * DP * HT) / 300;
+  const cap = (c) => (c.w * DP * HT) / K;
   /* the sample is given an identity so that its particles can have one (rule 7.2): it is water, drawn molecule by molecule
-     in the element palette beneath each container, and the phase is told by how the molecules pack, never by a tint */
-  let hits = []; const named = namer(hits);
-  F.hover(d.stage, () => hits);
-  /* the containers: the narrow one holds 300 mL over its 300 units of height, so one mL is 240 square units in either */
-  const A = 240, TOP = 110, BOT = 410, NARROW = { x1: 200, x2: 440 }, WIDE = { x1: 720, x2: 1200 };
-  const cap = (c) => ((c.x2 - c.x1) * (BOT - TOP)) / A;
-  function sample(ctx, c, state, v) {
-    const w = c.x2 - c.x1, cx = (c.x1 + c.x2) / 2, hue = C('volume');
-    if (state === 0) { const s = Math.sqrt(A * v); ctx.save(); ctx.fillStyle = alpha(hue, 0.3); ctx.strokeStyle = hue; ctx.lineWidth = 4; ctx.fillRect(cx - s / 2, BOT - s, s, s); ctx.strokeRect(cx - s / 2, BOT - s, s, s); ctx.restore(); }
-    else if (state === 1) { const h = (A * v) / w; ctx.save(); ctx.fillStyle = alpha(hue, 0.3); ctx.fillRect(c.x1, BOT - h, w, h); ctx.restore(); line(ctx, c.x1, BOT - h, c.x2, BOT - h, hue, 4); }
-    else { ctx.save(); ctx.fillStyle = alpha(hue, 0.14); ctx.fillRect(c.x1, TOP, w, BOT - TOP); ctx.restore(); }
+     in the element palette inside each container, and the phase is told by how the molecules pack, never by a tint alone */
+  function sample(c, state, vol) {
+    const hue = C('volume'), tint = (p, size, op) => box3(grp, p, size, hue, { transparent: true, opacity: op, depthWrite: false });
+    const pts = [];
+    if (state === 0) {
+      const s = Math.cbrt(K * vol), n = 3, sp = s / n;
+      v.pickable(tint([c.x, FLOOR + s / 2, 0], [s, s, s], 0.28), 'the water as a solid, ' + vol + ' mL');
+      edges3(grp, [s, s, s], [c.x, FLOOR + s / 2, 0]);
+      for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) for (let k = 0; k < n; k++) pts.push({ p: [c.x - s / 2 + sp * (i + 0.5), FLOOR + sp * (j + 0.5), -s / 2 + sp * (k + 0.5)], f: frame(0.5, 0.9, (i + j + k) % 2 ? 0.2 : 0.8), k: sp / 0.5 });
+    } else if (state === 1) {
+      const h = (K * vol) / (c.w * DP), n = 27;
+      v.pickable(tint([c.x, FLOOR + h / 2, 0], [c.w - 0.02, h, DP - 0.02], 0.28), 'the water as a liquid, ' + vol + ' mL');
+      for (let i = 0; i < n; i++) pts.push({ p: [c.x - c.w / 2 + 0.12 + rnd(i * 5) * (c.w - 0.24), FLOOR + 0.1 + rnd(i * 5 + 1) * Math.max(0.02, h - 0.2), -DP / 2 + 0.12 + rnd(i * 5 + 2) * (DP - 0.24)], f: frame(rnd(i * 5 + 3), rnd(i * 5 + 4), rnd(i * 5 + 5)), k: Math.min(1, Math.cbrt((c.w * DP * h) / n) / 0.5) });
+    } else {
+      const n = Math.round(c.w * 6);
+      v.pickable(tint([c.x, FLOOR + HT / 2, 0], [c.w - 0.02, HT - 0.02, DP - 0.02], 0.1), 'the water as a gas, ' + fmt(cap(c), 0) + ' mL');
+      for (let i = 0; i < n; i++) pts.push({ p: [c.x - c.w / 2 + 0.15 + rnd(i * 7) * (c.w - 0.3), FLOOR + 0.15 + rnd(i * 7 + 1) * (HT - 0.3), -DP / 2 + 0.15 + rnd(i * 7 + 2) * (DP - 0.3)], f: frame(rnd(i * 7 + 3), rnd(i * 7 + 4), rnd(i * 7 + 5)), k: 1 });
+    }
+    pts.forEach(({ p, f, k }) => water3(v, grp, p, f[0], f[1], Math.max(0.6, Math.min(1.1, k))));
   }
-  /* the water molecules beneath a container: a lattice of rows all turned alike, a crowd turned every way, or a few far apart */
-  function particles(ctx, c, state) {
-    const t = 470, b = 610, w = c.x2 - c.x1;
-    ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 1.5; ctx.strokeRect(c.x1, t, w, b - t); ctx.restore();
-    if (state === 0) { for (let r = 0; r < 4; r++) for (let k = 0; k < Math.floor((w - 20) / 40); k++) water(named, ctx, c.x1 + 30 + k * 40 + (r % 2) * 20, b - 20 - r * 34, r % 2 ? Math.PI : 0); }
-    else if (state === 1) { for (let r = 0; r < 4; r++) for (let k = 0; k < Math.floor((w - 20) / 42) - 1; k++) water(named, ctx, c.x1 + 36 + k * 42 + (rnd(r * 50 + k) - 0.5) * 14, b - 22 - r * 32 + (rnd(r * 50 + k + 7) - 0.5) * 10, rnd(r * 50 + k + 3) * TAU); }
-    else { const n = Math.round(w / 60); for (let k = 0; k < n; k++) { const x = c.x1 + 30 + rnd(k * 3) * (w - 60), y = t + 26 + rnd(k * 3 + 1) * (b - t - 52), a = rnd(k * 3 + 2) * TAU; line(ctx, x + 18 * Math.cos(a), y + 18 * Math.sin(a), x + 38 * Math.cos(a), y + 38 * Math.sin(a), PAL.muted, 2); water(named, ctx, x, y, rnd(k * 3 + 4) * TAU); } }
+  let sig = '';
+  function build() {
+    const key = [S.v, V.v, palSig()].join('|'); if (key === sig) return; sig = key;
+    v.clear();
+    box3(grp, [0, FLOOR - 0.1, 0], [5.2, 0.14, 2.2], PAL.soft);                                    /* the ground the containers stand on */
+    for (const c of [NARROW, WIDE]) {
+      const wallsOf = box3(grp, [c.x, FLOOR + HT / 2, 0], [c.w, HT, DP], PAL.ink, glass()); wallsOf.renderOrder = 2;
+      edges3(grp, [c.w, HT, DP], [c.x, FLOOR + HT / 2, 0]);
+      v.pickable(wallsOf, (c === NARROW ? 'a narrow container, ' : 'a wide container, ') + fmt(cap(c), 0) + ' mL');
+      sample(c, S.v, V.v);
+      v.label((c === NARROW ? 'a narrow container, ' : 'a wide container, ') + fmt(cap(c), 0) + ' mL', [c.x, FLOOR + HT + 0.06, 0], grp, c === NARROW ? 4 : 36);   /* above each container, the wide one's a line higher, so the two never meet as the scene turns */
+    }
   }
   function draw() {
-    const { ctx } = begin(d.c);
-    hits.length = 0;
-    const s = S.v, v = V.v;
-    for (const c of [NARROW, WIDE]) { sample(ctx, c, s, v); beaker(ctx, c.x1, c.x2, TOP, BOT); particles(ctx, c, s); }
-    text(ctx, 'a narrow container, ' + fmt(cap(NARROW), 0) + ' mL', (NARROW.x1 + NARROW.x2) / 2, 440, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'a wide container, ' + fmt(cap(WIDE), 0) + ' mL', (WIDE.x1 + WIDE.x2) / 2, 440, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'the water as a ' + NAMES[s], 580, 540, PAL.ink, { size: 20, weight: 600, align: 'center' });
+    build(); v.invalidate();
+    const { ctx } = begin(cnv);
+    const s = S.v, vol = V.v;
+    text(ctx, 'the water as a ' + NAMES[s], 700, 92, PAL.ink, { size: 20, weight: 600, align: 'center' });
     const rows = [['They are packed in a fixed', 'arrangement and only vibrate,', 'so the sample keeps its shape.'], ['They stay close together but', 'slide past one another, so the', 'sample flows and keeps its volume.'], ['They are far apart and move', 'freely, so the sample spreads', 'to fill whatever holds it.']][s];
-    rows.forEach((r, i) => text(ctx, r, 580, 572 + i * 22, PAL.muted, { size: 17, align: 'center' }));
-    const H = [`A solid keeps its shape and its volume of ${v} mL in either container`,
-      `A liquid takes the shape of each container but keeps its volume of ${v} mL, forming a horizontal surface`,
+    rows.forEach((r, i) => text(ctx, r, 700, 124 + i * 22, PAL.muted, { size: 17, align: 'center' }));
+    const H = [`A solid keeps its shape and its volume of ${vol} mL in either container`,
+      `A liquid takes the shape of each container but keeps its volume of ${vol} mL, forming a horizontal surface`,
       `A gas expands to fill its container, so its volume is ${fmt(cap(NARROW), 0)} mL in one and ${fmt(cap(WIDE), 0)} mL in the other`][s];
-    headline(ctx, H);
-    const R = [`\\kV = ${v}\\ \\text{mL in both containers, with the same shape in both}`,
-      `\\kV = ${v}\\ \\text{mL in both containers, at two heights}`,
+    topline(ctx, H + '. Drag to turn the containers.');
+    const R = [`\\kV = ${vol}\\ \\text{mL in both containers, with the same shape in both}`,
+      `\\kV = ${vol}\\ \\text{mL in both containers, at two heights}`,
       `\\kV = ${fmt(cap(NARROW), 0)}\\ \\text{mL in the narrow container and } ${fmt(cap(WIDE), 0)}\\ \\text{mL in the wide one}`][s];
     readout(d.readout, R, ['A solid is rigid and possesses a definite shape.', 'A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.', 'A gas takes both the shape and volume of its container.'][s]);
   }
@@ -199,54 +275,70 @@ function water(named, ctx, x, y, a = 0, k = 1) {
 })();
 
 /* =====================================================================
-   FIGURE 1.15: the decomposition of water at three levels. A battery in
-   a beaker of water, a test tube over each terminal, hydrogen collecting
-   over the negative one at twice the volume of the oxygen over the
-   positive one; the molecules drawn beneath and the equation counting
-   them. Still: the slider sets how many molecules have decomposed.
+   FIGURE 1.15: the decomposition of water at three levels, on a bench.
+   A battery in a beaker of water, an inverted test tube over each
+   terminal, hydrogen collecting over the negative one at twice the
+   volume of the oxygen over the positive one; the molecules that formed
+   drawn in the gas each tube holds and the water that remains in the
+   beaker, and the equation counting them on the strip beneath. Still:
+   the slider sets how many molecules have decomposed. The apparatus
+   stands on a bench, so the pitch is kept between 2° and 54° above the
+   bench top and the yaw within the front half, a quarter turn each way;
+   the scene is never seen from beneath, and it does not spin on its own,
+   since a bench has a front.
 ===================================================================== */
 (function () {
-  const d = sim('sim-electrolysis', 600);
+  const d = sim('sim-electrolysis');
+  const v = F.view3d(d.stage, { spin: 'none', pitch: [0.04, 0.95], yaw: [-Math.PI / 2, Math.PI / 2], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0, pitch: 0.9 }], h: 460, dist: 7.4, tilt: 0.3 });
+  const grp = v.part(0), cnv = strip(d, 170);
   const N = ctl(d.controls, { label: '\\text{water molecules decomposed}', cls: '', min: 0, max: 12, step: 2, value: 6, unit: '', dec: 0, aria: 'number of water molecules decomposed' });
-  const BX1 = 90, BX2 = 560, BTOP = 150, BBOT = 500, LEVEL = 210;
-  const TUBES = [{ x1: 210, x2: 300, sign: '−' }, { x1: 350, x2: 440, sign: '+' }], TTOP = 100, TBOT = 430;
-  let hits = []; const named = namer(hits);
-  F.hover(d.stage, () => hits);
-  function draw() {
-    const { ctx } = begin(d.c);
-    hits.length = 0;
+  /* the bench, the beaker on it, the battery on its floor and the two tubes over the terminals */
+  const BENCH = -1.3, BR = 1.35, BH = 2.1, LEVEL = BENCH + 1.65, TX = [-0.42, 0.42], TR = 0.2, TB = BENCH + 0.5, TH = 1.55;
+  let sig = '';
+  function build() {
+    const key = [N.v, palSig()].join('|'); if (key === sig) return; sig = key;
+    v.clear();
     const n = N.v, h2 = n, o2 = n / 2, hue = C('volume');
-    /* the water in the beaker */
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(BX1, LEVEL, BX2 - BX1, BBOT - LEVEL); ctx.restore();
-    line(ctx, BX1, LEVEL, BX2, LEVEL, PAL.muted, 2);
-    beaker(ctx, BX1, BX2, BTOP, BBOT);
-    /* the battery, its terminals under the tubes */
-    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.fillRect(230, 440, 190, 50); ctx.strokeRect(230, 440, 190, 50); ctx.restore();
-    text(ctx, 'battery', 325, 465, PAL.ink, { size: 17, align: 'center' });
-    hits.push({ x: 325, y: 465, r: 40, name: 'battery' }, { x: 255, y: 250, r: 45, name: 'test tube over the negative terminal, collecting hydrogen' }, { x: 395, y: 250, r: 45, name: 'test tube over the positive terminal, collecting oxygen' });
-    /* the two tubes, each full of water except for the gas collected at its top */
-    TUBES.forEach((t, i) => {
-      const w = t.x2 - t.x1, full = TBOT - TTOP - 30, gas = (full * (i === 0 ? h2 : o2)) / 12;
-      ctx.save(); ctx.fillStyle = PAL.panel; ctx.fillRect(t.x1, TTOP, w, TBOT - TTOP);
-      ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(t.x1, TTOP + gas, w, TBOT - TTOP - gas);
-      if (gas > 0) { ctx.fillStyle = alpha(hue, 0.3); ctx.fillRect(t.x1, TTOP, w, gas); }
-      ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(t.x1, TBOT); ctx.lineTo(t.x1, TTOP); ctx.lineTo(t.x2, TTOP); ctx.lineTo(t.x2, TBOT); ctx.stroke(); ctx.restore();
-      if (gas > 0) line(ctx, t.x1, TTOP + gas, t.x2, TTOP + gas, hue, 3);
-      text(ctx, t.sign, (t.x1 + t.x2) / 2, 448, PAL.panel, { size: 24, weight: 600, align: 'center' });
-      text(ctx, i === 0 ? 'hydrogen' : 'oxygen', (t.x1 + t.x2) / 2, 78, PAL.ink, { size: 17, align: 'center' });
+    v.pickable(box3(grp, [0, BENCH - 0.09, 0], [6, 0.18, 3.2], PAL.soft), 'the bench');
+    tube3(grp, 0, BENCH, 0, BR, BH, 'top');                                                       /* the beaker */
+    const water = column3(grp, 0, BENCH + 0.02, 0, BR - 0.02, LEVEL - BENCH, PAL.muted, 0.16); v.pickable(water, 'water in the beaker');
+    v.pickable(box3(grp, [0, BENCH + 0.2, 0], [1.5, 0.4, 0.7], PAL.soft), 'battery');            /* the battery on the floor of the beaker */
+    TX.forEach((x, i) => {
+      v.pickable(box3(grp, [x, BENCH + 0.44, 0], [0.16, 0.1, 0.16], PAL.ink), i ? 'positive terminal of the battery' : 'negative terminal of the battery');
+      const full = TH - 0.15, gas = (full * (i === 0 ? h2 : o2)) / 12;
+      tube3(grp, x, TB, 0, TR, TH, 'bottom');                                                       /* an inverted test tube, closed at its top */
+      column3(grp, x, TB, 0, TR - 0.015, TH - gas, PAL.muted, 0.16);                                /* the water still in it */
+      const g = column3(grp, x, TB + TH - gas, 0, TR - 0.015, gas, hue, 0.3);                       /* the gas collected at its top */
+      v.pickable(g, (i ? 'oxygen' : 'hydrogen') + ' collected, ' + fmt((100 * (i === 0 ? h2 : o2)) / 12, 0) + '% of the tube');
+      /* the molecules that formed, drawn in the gas they are: two hydrogens per oxygen */
+      const count = i === 0 ? h2 : o2, r = i === 0 ? 0.045 : 0.06;
+      for (let k = 0; k < count; k++) {
+        const p = [x + (rnd(k * 3 + i * 40) - 0.5) * 0.2, TB + TH - 0.1 - rnd(k * 3 + 1 + i * 40) * Math.max(0.05, gas - 0.2), (rnd(k * 3 + 2 + i * 40) - 0.5) * 0.2];
+        diatomic3(v, grp, p, V3.unit([rnd(k * 7 + i * 40) - 0.5, rnd(k * 7 + 1 + i * 40) - 0.5, rnd(k * 7 + 2 + i * 40) - 0.5]), i ? 'O' : 'H', r);
+      }
+      v.label(i ? 'oxygen, over the + terminal' : 'hydrogen, over the − terminal', [x, TB + TH + 0.08, 0], grp, i ? 4 : 34);   /* the two tubes stand close, so the hydrogen label sits a line above the oxygen one */
     });
-    text(ctx, 'hydrogen collected: ' + fmt((100 * h2) / 12, 0) + '% of its tube', 620, 220, hue, { size: 20, weight: 600 });
-    text(ctx, 'oxygen collected: ' + fmt((100 * o2) / 12, 0) + '% of its tube', 620, 254, hue, { size: 20, weight: 600 });
-    text(ctx, 'the hydrogen tube holds twice the volume of gas the oxygen tube does', 620, 288, PAL.muted, { size: 17 });
-    /* the molecules: what remains and what has formed */
-    const groups = [['water', 12 - n, (x, y) => water(named, ctx, x, y)], ['hydrogen', h2, (x, y) => diatomic(named, ctx, x, y, 8, 'H')], ['oxygen', o2, (x, y) => diatomic(named, ctx, x, y, 11, 'O')]];
-    groups.forEach(([name, count, drawOne], g) => {
-      const x0 = 640 + g * 250, y0 = 350;
-      ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 1.5; ctx.strokeRect(x0 - 10, y0 - 10, 220, 150); ctx.restore();
-      text(ctx, count + ' ' + name + (count === 1 ? ' molecule' : ' molecules'), x0 + 100, y0 + 165, PAL.ink, { size: 17, align: 'center' });
-      for (let k = 0; k < count; k++) drawOne(x0 + 30 + (k % 4) * 50, y0 + 26 + Math.floor(k / 4) * 46);
-    });
-    headline(ctx, n === 0 ? 'No water has been decomposed yet, so both tubes are still full of water and every molecule is a water molecule'
+    /* the water that remains, drawn molecule by molecule in the beaker about the tubes */
+    for (let k = 0; k < 12 - n; k++) {
+      const a = (k / 12) * TAU + 0.4, rr = 0.85 + 0.35 * rnd(k * 11 + 1);
+      const p = [rr * Math.cos(a), BENCH + 0.55 + rnd(k * 11 + 2) * (LEVEL - BENCH - 0.75), rr * Math.sin(a)];
+      water3(v, grp, p, ...frame(rnd(k * 11 + 3), rnd(k * 11 + 4), rnd(k * 11 + 5)), 0.6);
+    }
+    v.label('battery', [0, BENCH + 0.2, 0.36], grp, -22);
+    v.label('water', [-1.05, LEVEL, 0.7], grp, 0);
+  }
+  function draw() {
+    build(); v.invalidate();
+    const n = N.v, h2 = n, o2 = n / 2, hue = C('volume');
+    const { ctx } = begin(cnv);
+    text(ctx, 'hydrogen collected: ' + fmt((100 * h2) / 12, 0) + '% of its tube', 40, 96, hue, { size: 20, weight: 600 });
+    text(ctx, 'oxygen collected: ' + fmt((100 * o2) / 12, 0) + '% of its tube', 40, 128, hue, { size: 20, weight: 600 });
+    text(ctx, 'the hydrogen tube holds twice the volume of gas the oxygen tube does', 40, 158, PAL.muted, { size: 17 });
+    const rx = 760;
+    text(ctx, (12 - n) + ' water molecule' + (12 - n === 1 ? '' : 's') + ' left in the beaker', rx, 96, PAL.ink, { size: 18 });
+    text(ctx, h2 + ' hydrogen molecule' + (h2 === 1 ? '' : 's') + ' in the left tube', rx, 128, PAL.ink, { size: 18 });
+    text(ctx, o2 + ' oxygen molecule' + (o2 === 1 ? '' : 's') + ' in the right tube · drag to turn the bench', rx, 158, PAL.ink, { size: 18 });
+    topline(ctx, n === 0 ? 'No water has been decomposed yet, so both tubes are still full of water and every molecule is a water molecule'
       : `${n} water molecules have become ${h2} hydrogen and ${o2} oxygen molecules, and the hydrogen tube holds twice the gas`);
     readout(d.readout, `${n}\\,\\text{H}_2\\text{O}(l) \\longrightarrow ${h2}\\,\\text{H}_2(g) + ${o2}\\,\\text{O}_2(g) \\qquad \\kV_{\\text{H}_2} = 2\\,\\kV_{\\text{O}_2}`,
       'Every atom is accounted for: the ' + 2 * n + ' hydrogen atoms and ' + n + ' oxygen atoms of the water that decomposed are the atoms of the hydrogen and oxygen molecules that formed.');

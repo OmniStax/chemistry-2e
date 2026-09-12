@@ -12,12 +12,11 @@ const sig = (x, n) => { const s = Math.abs(x).toPrecision(n); return s.includes(
 const sig3 = (x) => sig(x, 3);
 /* the significant figures a decimal string carries, for a reading that limits a result */
 const sigOf = (s) => s.replace('.', '').replace(/^0+/, '').length;
-/* a slider whose value is a name rather than a number: the name replaces the printed value */
-function named(controls, o, names) {
-  const c = ctl(controls, { ...o, unit: '', dec: 0, onInput: () => { show(); o.onInput?.(); } });
-  const val = controls.lastElementChild.querySelector('.ctl-val');
-  const show = () => { val.textContent = names[c.v]; };
-  show(); return c;
+/* the book's listed materials are states the reader picks, not a quantity to slide through (rule 26.1): a dropdown, since a
+   row of seven buttons beside two sliders would wrap; the figure reads the index it always read */
+function pick(controls, o, names) {
+  const c = F.select(controls, { label: o.label, aria: o.aria, options: names.map((n, i) => ({ value: String(i), label: n })), value: String(o.value ?? 0), onInput: () => o.onInput?.() });
+  return { get v() { return +c.value; }, set(x) { c.set(String(x)); } };
 }
 /* an isometric cube of edge e (logical units) whose front bottom vertex is (ox, oy): three faces, the top lightest */
 const ISO = { c: Math.cos(Math.PI / 6), s: Math.sin(Math.PI / 6) };
@@ -180,11 +179,21 @@ function rule(ctx, x1, x2, y, h) {
 (function () {
   const d = sim('sim-density', 540);
   const MATS = [['ice', 0.92], ['oak', 0.75], ['iron', 7.87], ['copper', 8.96], ['silver', 10.5], ['lead', 11.34], ['gold', 19.3]];
-  const M = named(d.controls, { label: '\\text{material}', cls: '', min: 0, max: MATS.length - 1, step: 1, value: 5, aria: 'material of the cube' }, MATS.map((m) => m[0]));
+  const OTHER = MATS.length;                                 /* the eighth entry of the dropdown: a solid of a density between the book's */
+  /* the material is picked from a dropdown, and its density is also a slider with a soft detent at each of the seven solids of
+     Table 1.4 (rule 26.1), so that the reader can slide between the book's values and see the balance answer; the ticks carry no
+     names, since seven names on one track would collide, and the dropdown does the naming. Picking a material moves the slider to
+     its detent; releasing the slider near a detent settles on it and the dropdown follows, and anywhere else the dropdown reads
+     "another solid". */
+  const M = pick(d.controls, { label: '\\text{material}', value: 5, aria: 'material of the cube', onInput: () => { if (M.v < OTHER) RHO.set(MATS[M.v][1]); } }, [...MATS.map((m) => m[0]), 'another solid']);
+  const RHO = ctl(d.controls, { label: '\\text{density}', cls: '', min: 0.5, max: 20, step: 0.01, value: 11.34, unit: 'g/cm³', dec: 2, aria: 'density of the solid', detents: MATS.map((m) => m[1]), snap: true });
   const A = ctl(d.controls, { label: '\\text{edge } a', cls: '', min: 0.5, max: 3, step: 0.01, value: 2, unit: 'cm', dec: 2, aria: 'edge of the cube in centimeters' });
+  const matOf = (rho) => MATS.findIndex((m) => Math.abs(m[1] - rho) < 0.005);
+  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
-    const [name, rho] = MATS[M.v], a = A.v, V = a * a * a, m = rho * V, dens = m / V;
+    const rho = RHO.v, which = matOf(rho); M.set(which < 0 ? OTHER : which);
+    const name = which < 0 ? 'a solid of density ' + fmt(rho, 2) + ' g/cm³' : MATS[which][0], a = A.v, V = a * a * a, m = rho * V, dens = m / V;
     const cm = C('mass'), cvol = C('volume');
     /* the cube on the balance */
     const bx = 330, by = 400, e = a * 60, S = 220;
@@ -194,19 +203,23 @@ function rule(ctx, x1, x2, y, h) {
     const [lx, ly] = iso(cx0, cy0, e, 0, e / 2); text(ctx, 'a = ' + fmt(a, 2) + ' cm', lx + 16, ly, PAL.ink, { size: 20, weight: 600 });
     text(ctx, name, bx, by + 106, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, 'V = a³ = ' + sig3(V) + ' cm³', bx, by + 136, cvol, { size: 20, weight: 600, align: 'center' });
-    /* the seven densities of Table 1.4, the chosen one filled */
+    /* the seven densities of Table 1.4: the samples of a table, told apart by the categorical palette (rule 7.4) with their names
+       in ink beneath, the chosen one outlined in ink; a density off the table is a dashed level across the chart */
     const gl = 760, gr = 1320, gt = 110, gb = 400, Y = (v) => gb - ((gb - gt) * v) / 20, bw = (gr - gl) / MATS.length;
     for (let v = 0; v <= 20; v += 5) { if (v) line(ctx, gl, Y(v), gr, Y(v), PAL.rule, 1.5); text(ctx, String(v), gl - 12, Y(v), PAL.muted, { size: 17, align: 'right' }); }
     line(ctx, gl, gt, gl, gb, PAL.muted, 2); line(ctx, gl, gb, gr, gb, PAL.muted, 2);
     text(ctx, 'density (g/cm³)', gl, gt - 24, PAL.ink, { size: 20, weight: 600 });
     MATS.forEach(([n, r], i) => {
-      const x = gl + bw * (i + 0.5), on = i === M.v;
-      ctx.save(); ctx.fillStyle = on ? PAL.ink : alpha(PAL.ink, 0.18); ctx.fillRect(x - bw * 0.3, Y(r), bw * 0.6, gb - Y(r)); ctx.restore();
-      text(ctx, n, x, gb + 24, on ? PAL.ink : PAL.muted, { size: 17, align: 'center', weight: on ? 600 : 400 });
+      const x = gl + bw * (i + 0.5), on = i === which;
+      ctx.save(); ctx.fillStyle = alpha(F.cat(i), on ? 1 : 0.55); ctx.fillRect(x - bw * 0.3, Y(r), bw * 0.6, gb - Y(r)); if (on) { ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(x - bw * 0.3, Y(r), bw * 0.6, gb - Y(r)); } ctx.restore();
+      text(ctx, n, x, gb + 24, PAL.ink, { size: 17, align: 'center', weight: on ? 600 : 400 });
       text(ctx, sig3(r), x, Y(r) - 16, on ? PAL.ink : PAL.muted, { size: 15, align: 'center' });
     });
+    if (which < 0) { line(ctx, gl, Y(rho), gr, Y(rho), PAL.ink, 2.5, [10, 8]); text(ctx, fmt(rho, 2) + ' g/cm³', gr - 6, Y(rho) - 14, PAL.ink, { size: 15, align: 'right', bg: PAL.panel }); }
     text(ctx, 'the solids of Table 1.4', gr, gb + 52, PAL.muted, { size: 16, align: 'right' });
-    headline(ctx, 'A ' + name + ' cube ' + fmt(a, 2) + ' cm on an edge has a volume of ' + sig3(V) + ' cm³ and a mass of ' + sig3(m) + ' g, so its density is ' + sig3(dens) + ' g/cm³.');
+    const [qx, qy] = iso(cx0, cy0, e / 2, e / 2, e / 2);
+    hits.length = 0; hits.push({ x: qx, y: qy, r: e * 0.9, name: which < 0 ? name : 'a cube of ' + name + ', ' + sig3(m) + ' g' }, { x: bx, y: by + 46, r: 60, name: 'balance, reading ' + sig3(m) + ' g' });
+    headline(ctx, 'A cube of ' + name + ' ' + fmt(a, 2) + ' cm on an edge has a volume of ' + sig3(V) + ' cm³ and a mass of ' + sig3(m) + ' g, so its density is ' + sig3(dens) + ' g/cm³.');
     const gold = 19.3 * V, other = name === 'gold' ? 'A lead cube of the same size would weigh only ' + sig3(11.34 * V) + ' g, which is why a lead-filled brick cannot pass for gold.' : 'A gold cube of the same size would weigh ' + sig3(gold) + ' g, since the volume is the same and the density is ' + sig3(19.3 / rho) + ' times as great.';
     readout(d.readout, `\\text{density} = \\frac{\\km}{\\kV} = \\frac{\\htmlClass{kv-mass}{${sig3(m)}\\ \\text{g}}}{\\htmlClass{kv-volume}{${sig3(V)}\\ \\text{cm}^3}} = ${sig3(dens)}\\ \\text{g/cm}^3`, other);
   }
@@ -222,11 +235,13 @@ function rule(ctx, x1, x2, y, h) {
 (function () {
   const d = sim('sim-displacement', 640);
   const MATS = [['iron', 7.87], ['wood', 0.65], ['foam', 0.230], ['unknown', 3.26], ['copper', 8.96], ['lead', 11.34], ['gold', 19.3]];
-  const M = named(d.controls, { label: '\\text{material}', cls: '', min: 0, max: MATS.length - 1, step: 1, value: 0, aria: 'material of the block' }, MATS.map((m) => m[0]));
+  const M = pick(d.controls, { label: '\\text{material}', value: 0, aria: 'material of the block' }, MATS.map((m) => m[0]));
   const VB = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 1, max: 20, step: 0.1, value: 4, unit: 'mL', dec: 1, aria: 'volume of the block' });
   const V1 = ctl(d.controls, { label: 'V_1', cls: 'volume', min: 10, max: 40, step: 0.1, value: 25.5, unit: 'mL', dec: 1, aria: 'water in the cylinder before the block' });
+  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
+    hits.length = 0;
     const [name, rho] = MATS[M.v], V = VB.v, v1 = V1.v, v2 = v1 + V, m = rho * V, n = sigOf(fmt(V, 1)), dens = sig(m / V, n);
     const cm = C('mass'), cvol = C('volume'), floats = rho < 1;
     /* the block on the balance: a rectangle whose area follows the volume */
@@ -252,6 +267,8 @@ function rule(ctx, x1, x2, y, h) {
     vbracket(ctx, cr + 60, Y(v2), Y(v1), cvol, '', 1);
     text(ctx, 'rise = ' + fmt(V, 1) + ' mL', cr + 60, Y(v2) - (V < 3 ? 48 : 26), cvol, { size: 18, weight: 600, align: 'center' });
     text(ctx, 'then lowered into the cylinder', (cl + cr) / 2 + 60, cb + 40, PAL.muted, { size: 17, align: 'center' });
+    hits.push({ x: bx, y: by - bh / 2, r: Math.max(bw, bh) / 2 + 4, name: 'the ' + name + ' block, ' + fmt(m, 2) + ' g' }, { x: bx, y: by + 40, r: 56, name: 'balance, reading ' + fmt(m, 2) + ' g' },
+      { x: bxx + bw2 / 2, y: byy + bh2 / 2, r: Math.max(bw2, bh2) / 2 + 4, name: 'the ' + name + ' block under the water' }, { x: (cl + cr) / 2, y: (Y(v2) + cb) / 2, r: 40, name: 'water in the graduated cylinder, ' + fmt(v2, 1) + ' mL with the block in' });
     headline(ctx, 'The water rises from ' + fmt(v1, 1) + ' mL to ' + fmt(v2, 1) + ' mL, so the ' + name + ' block has a volume of ' + fmt(V, 1) + ' mL; it weighs ' + fmt(m, 2) + ' g, so its density is ' + dens + ' g/mL.');
     readout(d.readout, `\\kV = ${fmt(v2, 1)}\\ \\text{mL} - ${fmt(v1, 1)}\\ \\text{mL} = \\htmlClass{kv-volume}{${fmt(V, 1)}\\ \\text{mL}} \\qquad \\text{density} = \\frac{\\km}{\\kV} = \\frac{\\htmlClass{kv-mass}{${fmt(m, 2)}\\ \\text{g}}}{\\htmlClass{kv-volume}{${fmt(V, 1)}\\ \\text{mL}}} = ${dens}\\ \\text{g/mL}`,
       floats ? 'A block less dense than water floats, so it is held under the surface until it is fully submerged; the water then rises by its whole volume.' : 'The block sinks, and the water rises by exactly the volume of the block, whatever its shape.');

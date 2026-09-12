@@ -257,3 +257,11 @@ The chapter pass removed the book's own header "Conversion Factors and
 Dimensional Analysis", which stood as an `<h3>` directly under this page's own
 `<h2>` and said the same thing twice; the page's own headers carry the split,
 as root rule 3 asks, and `config.md` records the form.
+
+## Recoloured and re-controlled, 2026-09-12
+
+Reviewed against root rules 7, 25 and 26 by Claude Fable 5.1 and left
+as built: Figure 1.28 draws three thermometers and a graph in the one
+temperature hue and ink, with no atom, particle or instance that a
+categorical hue would tell apart, and its one control is a temperature
+on a slider. Nothing in it is half coloured.

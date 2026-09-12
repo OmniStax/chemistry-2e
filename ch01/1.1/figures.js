@@ -1,9 +1,16 @@
 /* Figures for section 1.1 Chemistry in Context. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['1.1'] = function (root, F) {
-const { el, tex, C, PAL, ctl, register, begin, line, arrow, dot, text, headline, FONT } = F;
+const { el, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, headline, FONT } = F;
 const sim = (id, H) => F.sim(root, id, H);
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
+const TAU = 2 * Math.PI;
+/* an atom as a filled disc in its element's colour (rule 7.2): hydrogen is a light disc and takes an ink outline so that it reads on a light page */
+function atom(ctx, x, y, sym, r) {
+  ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = F.el(sym); ctx.fill();
+  ctx.lineWidth = sym === 'H' ? 2 : 1.2; ctx.strokeStyle = sym === 'H' ? PAL.ink : alpha(PAL.ink, 0.4); ctx.stroke(); ctx.restore();
+}
+const NAME = { H: 'hydrogen', O: 'oxygen' };
 
 /* ---------- small helpers shared by the figures ---------- */
 /* a rounded box centred on (cx, cy) with its label on one or more lines */
@@ -131,13 +138,23 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   const d = sim('sim-water', 560);
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: -40, max: 140, step: 1, value: 25, unit: '°C', dec: 0, aria: 'temperature' });
   const stateOf = (t) => (t < 0 ? 's' : t < 100 ? 'l' : 'g');
+  /* the state is a thing the reader chooses as well as a thing the temperature decides (rule 26.1): three buttons, the one the
+     temperature falls in marked; pressing one sets the temperature to a value inside that state, and the slider is still free */
+  const PRESET = { s: -10, l: 25, g: 110 };
+  const S = F.choice(d.controls, { label: '\\text{state}', options: [{ value: 's', label: 'solid' }, { value: 'l', label: 'liquid' }, { value: 'g', label: 'gas' }], value: stateOf(T.v), aria: 'state of the water', onInput: (v) => T.set(PRESET[v]) });
   const WORD = { s: 'a solid', l: 'a liquid', g: 'a gas' };
   const MICRO = { s: 'close together and organized', l: 'close together and disordered', g: 'far apart and disorganized' };
-  /* one water molecule: a filled disc for the oxygen, two hollow discs for the hydrogens, 104.5° apart */
+  /* the atoms drawn this frame, handed to the hover tooltip so that every disc has a name (rule 26.6) */
+  let hits = [];
+  F.hover(d.stage, () => hits);
+  const named = (x, y, sym, r) => { atom(ctx0, x, y, sym, r); hits.push({ x, y, r: r + 3, name: NAME[sym] + ' atom of a water molecule' }); };
+  let ctx0 = null;
+  /* one water molecule: a red disc for the oxygen, two light discs for the hydrogens, 104.5° apart */
   function molecule(ctx, x, y, a) {
     const b = 21, h = 0.912;                               // bond length on the canvas and half the bond angle in radians
-    [a - h, a + h].forEach((q) => { const hx = x + b * Math.cos(q), hy = y + b * Math.sin(q); line(ctx, x, y, hx, hy, PAL.ink, 3); dot(ctx, hx, hy, PAL.ink, false, 6); });
-    dot(ctx, x, y, PAL.ink, true, 10);
+    [a - h, a + h].forEach((q) => { const hx = x + b * Math.cos(q), hy = y + b * Math.sin(q); line(ctx, x, y, hx, hy, PAL.ink, 3); });
+    named(x, y, 'O', 10);
+    [a - h, a + h].forEach((q) => named(x + b * Math.cos(q), y + b * Math.sin(q), 'H', 6));
   }
   /* the beaker: an open glass with a lip, its inside from (x0, y0) at the top left to (x1, y1) at the bottom right */
   function beaker(ctx, x0, y0, x1, y1) {
@@ -157,7 +174,9 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   }
   function draw() {
     const { ctx } = begin(d.c);
+    ctx0 = ctx; hits = [];
     const t = T.v, s = stateOf(t);
+    S.set(s);
     headline(ctx, `At ${t} °C the water in the beaker is ${WORD[s]}, H₂O(${s}), and its molecules are ${MICRO[s]}.`);
     /* (a) the macroscopic domain: the beaker and what is in it */
     const bx0 = 150, bx1 = 410, by0 = 120, by1 = 470, lvl = 250;
@@ -173,6 +192,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     }
     beaker(ctx, bx0, by0, bx1, by1);
     thermometer(ctx, 200, 100, 415, t);
+    hits.push({ x: 200, y: 415, r: 24, name: 'thermometer, reading ' + t + ' °C' }, { x: 200, y: 250, r: 16, name: 'thermometer, reading ' + t + ' °C' });
     text(ctx, WORD[s], (bx0 + bx1) / 2 + 30, by1 + 30, PAL.ink, { size: 22, align: 'center', weight: 600 });
     text(ctx, 'macroscopic domain', (bx0 + bx1) / 2, 530, PAL.muted, { size: 19, align: 'center' });
     /* (c) the symbolic domain: the formula between the two pictures */
@@ -201,8 +221,10 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
       O.forEach((p, n) => { O.slice(n + 1).forEach((q) => { if (near(p, q)) line(ctx, p[0], p[1], q[0], q[1], PAL.rule, 2); }); });
       O.forEach((p, n) => {
         const nb = O.filter((q) => near(p, q)).slice(n % 2, n % 2 + 2);
-        nb.forEach((q) => { const hx = p[0] + (q[0] - p[0]) * 0.42, hy = p[1] + (q[1] - p[1]) * 0.42; line(ctx, p[0], p[1], hx, hy, PAL.ink, 3); dot(ctx, hx, hy, PAL.ink, false, 6); });
-        dot(ctx, p[0], p[1], PAL.ink, true, 10);
+        const hs = nb.map((q) => [p[0] + (q[0] - p[0]) * 0.42, p[1] + (q[1] - p[1]) * 0.42]);
+        hs.forEach(([hx, hy]) => line(ctx, p[0], p[1], hx, hy, PAL.ink, 3));
+        named(p[0], p[1], 'O', 10);
+        hs.forEach(([hx, hy]) => named(hx, hy, 'H', 6));
       });
     } else if (s === 'l') {
       const r = rng(11), g = 50;

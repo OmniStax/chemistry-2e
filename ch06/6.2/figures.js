@@ -146,8 +146,11 @@ const ease = (t) => (t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t));
   const LAD = { l: 300, r: 700, top: 150, bottom: 610 };
   const STRIP = { l: 300, r: 1300, y: 706 };
   const EX = 380, AX = 520;                      /* the electron's column and the arrow's column on the ladder */
+  /* the electron names itself under the pointer (rule 26.6); it stays ink, since an electron has no element to take a colour from */
+  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
+    hits = [];
     const ni = NI.v, nf = NF.v, Z = ZC.v, tau = cy.now();
     const dE = energy(nf, Z) - energy(ni, Z), emit = dE < 0, same = ni === nf;
     const nm = same ? 0 : lambdaNm(ni, nf, Z), key = `${Z}:${Math.min(ni, nf)}-${Math.max(ni, nf)}`;
@@ -181,7 +184,7 @@ const ease = (t) => (t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t));
         }
       }
       /* the electron on its rung, or between them */
-      dot(ctx, EX, y1 + (y2 - y1) * jump, PAL.ink, true, 9);
+      dot(ctx, EX, y1 + (y2 - y1) * jump, PAL.ink, true, 9); hits.push({ x: EX, y: y1 + (y2 - y1) * jump, r: 13, name: 'the electron' });
       /* the photon on its way, and where it starts and ends */
       const from = emit ? [AX, y2] : [X(nm), STRIP.y - 30], to = emit ? [X(nm), STRIP.y - 30] : [AX, y1];
       if (flight > 0 && flight < 1) {
@@ -191,7 +194,7 @@ const ease = (t) => (t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t));
       }
       text(ctx, emit ? 'the electron falls and a photon leaves' : 'a photon arrives and the electron rises', 1300, 118, PAL.muted, { size: 17, align: 'right' });
     } else {
-      dot(ctx, EX, Y[ni], PAL.ink, true, 9);
+      dot(ctx, EX, Y[ni], PAL.ink, true, 9); hits.push({ x: EX, y: Y[ni], r: 13, name: 'the electron' });
       text(ctx, 'the electron stays on its rung and no photon is emitted or absorbed', 1300, 118, PAL.muted, { size: 17, align: 'right' });
     }
     text(ctx, 'electron', EX - 18, same ? Y[ni] : Y[ni] + (Y[nf] - Y[ni]) * jump, PAL.muted, { size: 16, align: 'right', bg: PAL.panel });
@@ -225,8 +228,10 @@ const ease = (t) => (t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t));
   const ZC = ctl(d.controls, { label: 'Z', cls: '', min: 1, max: 3, step: 1, value: 1, unit: '', dec: 0, aria: 'nuclear charge' });
   const SCALE = 12;                              /* canvas units per Bohr radius; n = 6 in hydrogen already runs off the frame */
   const CX = 360, CY = 400, FR = { l: 40, r: 720, t: 96, b: 690 };
+  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
+    hits = [];
     const n = N.v, Z = ZC.v, ce = C('energy');
     const rA = (n * n) / Z, rM = radiusM(n, Z), E = energy(n, Z), ion = Z === 1 ? 'hydrogen' : Z === 2 ? 'He⁺' : 'Li²⁺';
     /* the orbits, clipped to their frame */
@@ -237,7 +242,7 @@ const ease = (t) => (t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t));
     }
     ctx.restore();
     /* the nucleus and its charge */
-    dot(ctx, CX, CY, PAL.ink, true, 8);
+    dot(ctx, CX, CY, PAL.ink, true, 8); hits.push({ x: CX, y: CY, r: 12, name: 'the nucleus, charge +' + Z });
     text(ctx, '+' + Z, CX + 14, CY - 16, PAL.ink, { size: 17, weight: 600 });
     /* the electron at the first angle that keeps it inside the frame, else a hollow marker at the frame's edge */
     const r = rA * SCALE;
@@ -246,7 +251,7 @@ const ease = (t) => (t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t));
     for (const a of angles) { const x = CX + r * Math.cos(a * Math.PI / 180), y = CY - r * Math.sin(a * Math.PI / 180); if (x > FR.l + 14 && x < FR.r - 14 && y > FR.t + 14 && y < FR.b - 14) { placed = [x, y]; break; } }
     if (placed) {
       line(ctx, CX, CY, placed[0], placed[1], alpha(PAL.ink, 0.4), 2, [4, 8]);
-      dot(ctx, placed[0], placed[1], PAL.ink, true, 9);
+      dot(ctx, placed[0], placed[1], PAL.ink, true, 9); hits.push({ x: placed[0], y: placed[1], r: 13, name: 'the electron, on the n = ' + n + ' orbit' });
       text(ctx, 'r = ' + fmt(rA, rA < 10 ? 2 : 1) + ' a₀ = ' + fmt(rM * 1e10, 2) + ' Å', placed[0] + 16, placed[1] - 18, PAL.ink, { size: 18, weight: 600, bg: PAL.panel });
     } else {
       const ex = FR.r - 20, ey = CY - (FR.r - 20 - CX) * Math.tan(Math.PI / 12);
@@ -263,7 +268,7 @@ const ease = (t) => (t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t));
     const LAD = { l: 960, r: 1120, top: 176, bottom: 650 };
     const Y = ladder(ctx, { ...LAD, nmax: 8, Z, labelX: 1176 });
     line(ctx, LAD.l, Y[n], LAD.r, Y[n], ce, 7);
-    dot(ctx, LAD.l + 30, Y[n], PAL.ink, true, 9);
+    dot(ctx, LAD.l + 30, Y[n], PAL.ink, true, 9); hits.push({ x: LAD.l + 30, y: Y[n], r: 13, name: 'the electron, on the n = ' + n + ' rung' });
     if (Y[n] - LAD.top > 8) vbracket(ctx, LAD.l - 70, LAD.top, Y[n], ce);
     text(ctx, 'to E = 0:', 800, (LAD.top + Y[n]) / 2 - 14, ce, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
     text(ctx, sciU(-E) + ' J', 800, (LAD.top + Y[n]) / 2 + 12, ce, { size: 17, weight: 600, align: 'center', bg: PAL.panel });

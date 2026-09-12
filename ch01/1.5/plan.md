@@ -240,3 +240,18 @@ The chapter pass removed the three of the book's own titled headers that stood
 as an `<h3>` directly under this page's own `<h2>`, since the two said the same
 thing twice and no other page of the chapter prints both; the page's own
 headers carry the split, as root rule 3 asks, and `config.md` records the form.
+
+## Recoloured and re-controlled, 2026-09-12
+
+Brought up to root rules 7, 25 and 26 by Claude Fable 5.1. Figure 1.27's
+four corners are four archers, and they take the categorical palette
+`F.cat(i)` (rule 7.4): each corner's arrows wear one hue, the live
+group on the large target wears the hue of the corner it currently
+falls in, and the label under each corner is the legend, set in ink
+with a swatch of the hue beside it, so the reader sees which archer the
+sliders have made without reading the grid. Every arrow names itself
+and its distance from the bull's eye under the pointer (rule 26.6). The
+arrow count stays a plain integer slider. The page binds nothing new;
+the categorical palette is not a binding. The other figures of the
+section draw no atom, particle or instance to tell apart and are left
+as built.

@@ -351,3 +351,14 @@ general form with Z², as the plan says it should, and its anchor lands on
 colours its energies as the page does. The Formulas line of
 `ch06/config.md` records that the anchors are written and corrects its
 count of the variable rows from twelve to fourteen.
+
+## Recoloured and re-controlled, 2026-09-12
+
+Reviewed against root rules 7, 25 and 26 by Claude Fable 5.1. No colour
+changes: the electron and the nucleus stay ink for the reason
+`ch06/COLOR.md` gives, the energy and wavelength hues stay where they
+are, and the visible band keeps its physical colours. The one addition
+is rule 26.6: the electron of the Bohr ladder and the nucleus and
+electron of the orbit-and-rung Sim name themselves under the pointer
+through `F.hover`, so no disc in the section is unnamed. The quantum
+number sliders are integer quantities and stay sliders.

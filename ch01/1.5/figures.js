@@ -260,26 +260,35 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
   const group = (o, s, k) => PAT.slice(0, k).map(([px, py]) => [o * DIR[0] + s * px, o * DIR[1] + s * py]);
   const meanDist = (pts) => pts.reduce((a, [x, y]) => a + Math.hypot(x, y), 0) / pts.length;
   const spread = (pts) => Math.max(...pts.flatMap((p, i) => pts.slice(i + 1).map((q) => Math.hypot(p[0] - q[0], p[1] - q[1]))));
-  function target(ctx, cx, cy, R, pts, r) {
+  /* the four corners are four archers, told apart by the categorical palette (rule 7.4): each corner's arrows take one hue,
+     the live group takes the hue of the corner it currently falls in, and the label under each corner is the legend, in ink
+     with a swatch of the hue beside it */
+  const cells = [[true, true, '(a) accurate and precise', 0, 1.5], [false, true, '(b) precise but not accurate', 9, 1.5], [true, false, 'accurate but not precise', 0, 8], [false, false, '(c) neither accurate nor precise', 9, 8]];
+  let hits = []; F.hover(d.stage, () => hits);
+  function target(ctx, cx, cy, R, pts, r, color, who) {
     for (let k = 5; k >= 1; k--) { ctx.save(); ctx.fillStyle = k % 2 ? PAL.soft : PAL.panel; ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(cx, cy, (R * k) / 5, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); }
     line(ctx, cx - R, cy, cx + R, cy, PAL.rule, 1.5); line(ctx, cx, cy - R, cx, cy + R, PAL.rule, 1.5);
-    const S = R / RCM; pts.forEach(([x, y]) => dot(ctx, cx + x * S, cy + y * S, PAL.ink, true, r));
+    const S = R / RCM; pts.forEach(([x, y], k) => { dot(ctx, cx + x * S, cy + y * S, color, true, r); hits.push({ x: cx + x * S, y: cy + y * S, r: r + 4, name: who + ': arrow ' + (k + 1) + ', ' + fmt(Math.hypot(x, y), 1) + ' cm from the bull’s eye' }); });
+    hits.push({ x: cx, y: cy, r: R / 5, name: 'bull’s eye' });   /* after the arrows, which the tooltip finds first */
   }
   function draw() {
     const { ctx } = begin(d.c);
+    hits.length = 0;
     const pts = group(off.v, spr.v, n.v), md = meanDist(pts), sp = spread(pts), accurate = md <= LIMIT, precise = sp <= LIMIT;
-    target(ctx, 360, 340, 230, pts, 8);
+    const liveCell = cells.findIndex(([acc, pre]) => acc === accurate && pre === precise);
     text(ctx, 'bull’s eye', 360, 340 + 230 + 32, PAL.muted, { size: 17, align: 'center' });
     /* the four corners */
-    const cells = [[true, true, '(a) accurate and precise', 0, 1.5], [false, true, '(b) precise but not accurate', 9, 1.5], [true, false, 'accurate but not precise', 0, 8], [false, false, '(c) neither accurate nor precise', 9, 8]];
     const L = 720, T = 120, CW = 330, CH = 230;
     text(ctx, 'precise', L + CW / 2, T - 16, PAL.ink, { size: 20, weight: 600, align: 'center' }); text(ctx, 'not precise', L + CW * 1.5, T - 16, PAL.ink, { size: 20, weight: 600, align: 'center' });
     cells.forEach(([acc, pre, label, o, s], i) => {
-      const col = pre ? 0 : 1, row = acc ? 0 : 1, x = L + col * CW, y = T + row * CH, live = acc === accurate && pre === precise;
+      const col = pre ? 0 : 1, row = acc ? 0 : 1, x = L + col * CW, y = T + row * CH, live = i === liveCell, hue = F.cat(i);
       if (live) { ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.12); ctx.fillRect(x, y, CW, CH); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(x, y, CW, CH); ctx.restore(); }
-      target(ctx, x + CW / 2, y + 88, 72, group(o, s, 3), 4);
-      text(ctx, label, x + CW / 2, y + CH - 34, live ? PAL.ink : PAL.muted, { size: 18, weight: live ? 600 : 400, align: 'center' });
+      target(ctx, x + CW / 2, y + 88, 72, group(o, s, 3), 4, hue, ['archer (a)', 'archer (b)', 'the archer of the fourth corner', 'archer (c)'][i]);
+      const lw = widthOf(ctx, label, 18, live ? 600 : 400);
+      dot(ctx, x + CW / 2 - lw / 2 - 12, y + CH - 34, hue, true, 6);
+      text(ctx, label, x + CW / 2 + 8, y + CH - 34, PAL.ink, { size: 18, weight: live ? 600 : 400, align: 'center' });
     });
+    target(ctx, 360, 340, 230, pts, 8, F.cat(liveCell), 'the archer on the sliders');
     headline(ctx, accurate && precise ? 'these arrows are close to both the bull’s eye and one another, so they are both accurate and precise'
       : precise ? 'these arrows are close to one another but not on target, so they are precise but not accurate'
       : accurate ? 'these arrows are scattered about the bull’s eye, so they are accurate on average but not precise'

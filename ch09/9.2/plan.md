@@ -372,3 +372,23 @@ page colours every type its figures draw or its readouts state: Figure
 the temperature of standard conditions in their own hues and so gains
 `pressure` and `temperature`. The page still binds exactly the four types
 of the ideal gas law.
+
+## Recoloured and re-controlled, 2026-09-12
+
+Brought up to root rules 7, 25 and 26 by Claude Fable 5.1. No figure of
+the section draws a grey particle any more. The gas box takes a gas
+chosen from a row of buttons, He, N₂, O₂, Ar and CO₂ with nitrogen the
+default, and every particle in the cylinder is a molecule of that gas
+in its element's colours through `F.el`, with the right atom count and
+a hint of the shape, tumbling along its heading; the law lock, which was
+a slider whose value was a name, is a row of buttons, free and the four
+laws (rule 26.1). Figure 9.10's sphere holds air and draws it as four
+nitrogen molecules to one oxygen. Figure 9.18's three gas pickers are
+dropdowns through `F.select`, eight gases each, and its molecules are
+drawn from the same table as the box. Every molecule, gauge, piston,
+hot plate, bath and balloon names itself under the pointer through
+`F.hover` (rule 26.6). The categorical palette is not needed: no figure
+of the section lays more than one gas on one graph. The page still
+binds `pressure`, `volume`, `temperature` and `amount`; the element
+colours are not a binding. The captions of 9.10, the gas box and 9.18
+say which gas is drawn and how to choose it.

@@ -150,3 +150,13 @@ Checked in the chapter pass, 2026-09-12: nothing was wanted and nothing was
 changed on this page beyond the form of the Hazard Diamond note, whose heading
 is now an eyebrow carrying the book's own heading above the note's title, as
 every note of the chapter is.
+
+## Recoloured and re-controlled, 2026-09-12
+
+Reviewed against root rules 7, 25 and 26 by Claude Fable 5.1 and left
+as built: `sim-extensive` draws no atom, molecule or particle, so the
+element palette has nothing to colour; its milk, jug, balance and
+thermometer wear the mass, volume and temperature hues and ink as the
+chapter's colour plan says, its density bar is ink because density is a
+ratio, and its two controls are quantities on sliders with no discrete
+state among them. Nothing in the figure is half coloured.

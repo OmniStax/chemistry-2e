@@ -168,3 +168,19 @@ Decided in the chapter pass, 2026-09-12: the element palette is a book-level
 want and is not built in this chapter. `sim-water` keeps its ink discs, filled
 for oxygen and hollow for hydrogen, and the want is carried forward in the
 chapter's log entry under what is left for a later pass.
+
+## Recoloured and re-controlled, 2026-09-12
+
+Brought up to root rules 7, 25 and 26 by Claude Fable 5.1. `sim-water` now
+draws every water molecule in the element palette in all three phases,
+oxygen red and hydrogen white with an ink outline through `F.el`, so the
+want carried forward from the chapter pass is met; the phase is still
+told by packing, and the temperature hue stays on the slider, the
+thermometer and the T of the readout. The state is also a segmented
+control beside the slider (rule 26.1): solid, liquid and gas, the one
+the temperature falls in marked, and pressing one moves the temperature
+to a value inside that state, so the slider and the buttons agree. Every
+atom and the thermometer name themselves under the pointer through
+`F.hover` (rule 26.6). The page still binds `temperature` alone; the
+element colours are not a binding. The caption says to choose a state
+and to rest the pointer on an atom.

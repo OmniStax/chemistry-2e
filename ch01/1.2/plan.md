@@ -229,3 +229,24 @@ Decided in the chapter pass, 2026-09-12: `ch01/COLOR.md` now names 1.2 in the
 `mass` row and in the `volume` row, and the section table records that this
 page binds both. Figure 1.14 stays the book's photograph, and the redrawing
 it would allow is carried forward in the log entry with the element palette.
+
+## Recoloured and re-controlled, 2026-09-12
+
+Brought up to root rules 7, 25 and 26 by Claude Fable 5.1. Figure 1.6's
+state slider is a segmented control, solid, liquid, gas (rule 26.1), and
+its sample is given an identity so that its particles can have one
+(rule 7.2): it is water, drawn beneath each container molecule by
+molecule in the element palette, packed as a lattice, a crowd or a few
+far apart. Figure 1.15's water, hydrogen and oxygen molecules and Figure
+1.16's hydrogen, oxygen and water are drawn in element colours through
+`F.el`, hydrogen with an ink outline; the protons of the fuel cell are
+hydrogen ions and keep hydrogen's colour with a plus mark, and the
+electrons stay ink, hollow with a minus, since an electron has no
+element to take a colour from (the same reasoning as `ch06/COLOR.md`
+gives for the Bohr electron). Figure 1.8's bars of matter, which were
+ink at low alpha, are the mass hue: each bar's length is a mass and the
+bars of one balance add up to what that balance reads, so the figure is
+coloured throughout rather than half coloured. Every atom, ion,
+electron, tube and battery names itself under the pointer through
+`F.hover` (rule 26.6). The page still binds `volume` and `mass`. The
+captions of 1.6 and 1.15 say to choose the state and name the colours.

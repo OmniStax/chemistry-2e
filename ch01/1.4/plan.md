@@ -246,3 +246,24 @@ in the figure captions and in the exercise prompts that name them; `config.md`
 records the numbering. Example 1.2's Check Your Learning is kept inline as the
 page built it, and `config.md` now says so. The floating-foam item
 fs-idm160286704 stays held and named in `exercise_notes`.
+
+## Recoloured and re-controlled, 2026-09-12
+
+Brought up to root rules 7, 25 and 26 by Claude Fable 5.1. The material
+pickers of `sim-density` and `sim-displacement`, which were sliders
+whose value was a name, are dropdowns through `F.select` (rule 26.1): a
+dropdown rather than a row of buttons because each list is the seven
+solids of Table 1.4, or the seven samples of the example and the
+exercises, and a row of seven beside two sliders would wrap. In
+`sim-density` the density is also a slider with a soft detent at each
+of the seven densities (rule 26.1, a quantity with the book's preset
+values), so the reader can slide between the book's solids and watch
+the balance answer; the ticks carry no names, since seven names on one
+track would collide, and the dropdown does the naming, following the
+slider onto a detent and reading "another solid" between them. The
+seven density bars, the samples of a table, take the categorical
+palette `F.cat(i)` with their names in ink beneath and the chosen one
+outlined (rule 7.4); the palette skips the mass and volume hues the page
+binds. The cube, the block, the balance and the water name themselves
+under the pointer (rule 26.6). The page still binds `mass` and `volume`.
+The density caption says to choose the material or slide the density.

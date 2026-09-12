@@ -1,0 +1,58 @@
+# Config: Chemistry 2e, Chapter 9
+
+Proposed by the agent after the chapter exploration (2026-09-12). Status:
+applied as proposed on 2026-09-12, on Chen's instruction to build the showcase
+sections in one job without check-ins; the per-section stops of root rule 2, the
+plan review of root rule 5 and the user picks of root rule 15 are replaced by a
+plan file written before the section is built and left for review after. Each
+line is a setting and its value.
+
+**Only 9.2 is built.** Chapter 9 was opened for one section, the one section of
+the book with the richest opportunity for simulation, and the other five
+sections of the chapter are not built in this pass. The chapter has no
+introduction page yet: `chapter.json` records the introduction's module and
+slug so the source can be found again, but `ch09/intro/` does not exist and the
+contents lists no introduction. Every section of the chapter is listed in
+`chapter.json` so the contents reads in the book's order, and the variable,
+equation and glossary rows are 9.2's alone.
+
+| Setting | Value |
+|---|---|
+| Chapter | 9 Gases, modules m68748 (introduction, not built), m68750, m68751, m68752, m68754, m68758, m68759 |
+| Built | 9.2 Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law (m68751) alone; 9.1, 9.3, 9.4, 9.5 and 9.6 are listed and not built |
+| Front matter | none in this pass. The chapter introduction (m68748) is a page of its own in `ch09/intro/` by root rule 21 and is built when the chapter is finished; until then the `intro` record of `chapter.json` names its module and slug and no page stands behind it |
+| Unit of work | one section = one page; sections are never folded (root rule 11) |
+| Loop | prep → plan file → build → validator; review after |
+| Prose | verbatim; the learning objectives, the section summary (to `summary_html`), the key equation and the glossary are pulled into the tables and the views (root rule 4) |
+| Headers | the page's own headers carry the split of root rule 3, one `<h2>` for each sub-concept, written in the book's voice and in sentence case. The book's own titled headers of 9.2 (Pressure and Temperature: Amontons's Law, Volume and Temperature: Charles's Law, Volume and Pressure: Boyle's Law, Moles of Gas and Volume: Avogadro's Law, The Ideal Gas Law, Standard Conditions of Temperature and Pressure) name the section's five sub-concepts exactly, so the page's header stands in the book's place rather than beside it; a worked example's `<h3>` is its number and the book's title for it |
+| Boxed notes | the two `everyday-life` notes of 9.2, Breathing and Boyle's Law and The Interdependence between Ocean Depth and Pressure in Scuba Diving, are kept verbatim in the text as titled asides, a `<div class="note">` whose first child is a `<div class="eyebrow">` carrying the book's own heading, Chemistry in Everyday Life, followed by an `<h3>` carrying the note's own title. The first note's figure keeps its number, 9.15; the second note's photograph, 9.17, is dropped. The section has no `sciences-interconnect` and no `chemist-portrait` note |
+| Link to Learning | both dropped and named in `notes`, one plain sentence each: a video of a gas shrinking as it is cooled, and the PhET simulation of pressure, volume, temperature and amount. The second is the trigger for the section's own gas-box Sim |
+| Tables | none. Section 9.2 prints no numbered table; its one `> TABLE` is the unnumbered Key Equations table, which is the equations row of `chapter.json` and is not printed. The data the book prints beside Figures 9.11 and 9.12 belong to those figures and are drawn with them |
+| Example numbers | the publisher's, chapter-wide as the figures are: Examples 9.5 to 9.10 in 9.2, checked against openstax.org. A heading reads "Example 9.9 · Using the Ideal Gas Law", never a number built from the section |
+| Figure numbers | the publisher's, chapter-wide from the introduction's photograph as Figure 9.1; 9.2 carries Figures 9.9 to 9.18, checked against openstax.org. The list is in `exploration.md` |
+| Figures | the book's sketches and graphs of a quantity become interactive Figures carrying the book's number: the sealed sphere of 9.10, the P–T graph of 9.11, the V–T graph of 9.12, the syringe and its graphs of 9.13, the breathing cycle of 9.15 and the three balloons of 9.18. Figure 9.14 folds into Figure 9.13, since it draws the same two graphs with the instrument removed; the folded figure's eyebrow reads "Figure 9.13 + 9.14" and its `folds` names 9.14 |
+| Kept photographs | a `photo` row with the book's number, the bundle's image copied under its own file name into `media/ch09/`, and the book's caption kept whole including its "(credit: …)" clause. Two are kept: the balloon flights of 9.9, which the opening paragraph is about, and the diver of 9.16, which Example 9.10 and two exercises point at. The coral of 9.17 is a stock scene beside a note and is dropped, and the weather balloon inside an exercise is dropped with it; both are named in `notes`. The bundle's images carry no `width`, so `widths` stays empty and no `data-width` is written |
+| Unnumbered images | the two inline images of 9.2 both sit inside an exercise and neither is kept: fs-idm227684464 is a photograph of the balloon its prompt already names, and fs-idm159072736 is the book's drawn answer to fs-idm188679440, which the Sim of the four graphs draws live |
+| Sims | two, each replacing nothing and so carrying no number and the eyebrow "Sim": the gas box with its four laws, and the one state drawn on four graphs. `exploration.md` says what each shows that print cannot |
+| Sim sliders | volume, temperature and amount, each typed, with pressure read off a gauge as the fourth quantity; the gas box adds a row of four names that lock the pair each law holds constant |
+| Motion | decided per figure in its plan line with the reason (root rule 14). The gas box moves, because its particles travel and the gauge reading is the rate at which they strike the walls; the breathing figure of 9.15 moves, because a breath is a cycle the book's own note counts at twenty a minute; the sealed sphere of 9.10 moves, for the same reason as the gas box. The graphs of 9.11, 9.12, 9.13 and 9.18 and the four-graph Sim are still pictures that answer their sliders: they register `update: () => {}`, register no cycle and get no transport |
+| 3D | none. Nothing in this section is spatial; every figure is planar and drawn through `figlib`, and no figure needs the projection or `THREE` |
+| Colour coding | the section binds all four of `pressure`, `volume`, `temperature` and `amount`, which is the whole of the ideal gas law in colour, and nothing else. Everything else renders in ink: the gas constant R, a molar mass, a proportionality constant k, a count of particles, a unit name and every axis rule, bracket and label. The particles in the box are generic gas particles and are drawn in ink, not in element colours; the three balloons of Figure 9.18 name their gases in ink. Colour reaches the canvas only through `C()` and `PAL`, and a `\k` macro is written only for a symbol with a row in `book.json` `symbols`; `ch09/COLOR.md` holds the detail |
+| Symbols | nine rows added to `book.json` through `tools/mergebook.py merge ch09`: the two-state variants `P_1`, `P_2`, `V_1`, `V_2`, `T_1`, `T_2`, `n_1` and `n_2`, each carrying the type of the quantity it is a state of, and one untyped row, `R`, the ideal gas constant, with its LaTeX and no macro. `P`, `V`, `T` and `n` already have rows; none is restaged. No new type: pressure, volume, temperature and amount are already declared |
+| Inline exercises | every Check Your Learning is a `check-your-learning` item placed inline right after the example it parallels, with the book's own answer from the `[answer]` note: six in 9.2 |
+| Exercises tab | the thirty end-of-chapter items of m68751, kind `exercise`, placed at the end |
+| Exercise placement | an exercise goes with the section that introduces what it tests; every item of this module tests what 9.2 teaches, so nothing is held for a later page and no row carries a `source_section` |
+| Simulation exercises | none. No item of 9.2 is an instruction to open an external simulation; the chapter's PhET material is the dropped Link to Learning note alone |
+| Answers to book problems | the book's key only, never computed. A keyed item carries the book's answer; an unkeyed numerical item is left out and named in `exercise_notes`, while an unkeyed conceptual item is kept with a suggested approach the page marks as OmniStax's own, which is the default root rule 13 sets for an open question |
+| Suggested approaches | generated and marked as generated, for unkeyed conceptual items only; never for a numerical item |
+| Generated questions | none, of any kind; a concept node with no book exercise of its own is named in the plan and no question is written for it |
+| Concept nodes | testable units only, kinds idea/result/skill, canonical book-independent kebab-case ids; nine nodes for 9.2, written into `book.json` before the section is built, with prerequisite edges into Chapter 1's nodes and into one placeholder, `gas-pressure` in 9.1, which stands for what 9.1 teaches about pressure and its units. The molar mass the section uses to turn a mass into moles is a Chapter 3 idea, and `tools/mergebook.py` accepts a placeholder only under a section of the chapter that stages it, so no node stands for it yet; the edge is added when Chapter 3 is built |
+| Formulas | `ch09/chapter.json`: 6 equations, the four laws in their two-state form, the ideal gas law and the combined gas law, with the ideal gas law and the four laws important and the combined gas law important as well, since the book states it as a result the reader uses; 9 variable rows. No row carries an `anchor`, since an anchor into a section that is not built fails the validator and 9.2's own spans are not written yet; the section agent reports the ids it wrote and a later chapter pass sets them |
+| Glossary | the book's own wording, the ten entries of 9.2 |
+| Degrees | the degree sign `°` (U+00B0), never the masculine ordinal `º` (U+00BA), in a unit string, a slider unit, an axis label or prose; inside math, `^\circ` |
+| Dollar signs | `&#36;` in the prose of `text.html`, and the fullwidth `＄` inside a `prompt` or `solution` string and inside `\text{}` of a display equation; 9.2 writes no money and this line is a precaution |
+| Cross references | a reference to a section or a figure of a chapter or section not built is plain text in the book's wording. 9.2 refers to no figure outside itself; it names "a later module of this chapter" and "the final module of this chapter" for kinetic molecular theory and non-ideal behaviour, and those stay in the book's words and are not linked |
+| Voice | root rule 17 and the Voice section of the book's `RULES.md`: full sentences in a plain, measured register, on the formal side of plain, in every lead, caption, headline, readout, suggested approach, concept why and log line |
+| Labels | a figure carrying the book's number is a Figure; one that replaces nothing in the book is a Sim and carries no number. The word "demo" appears nowhere |
+| `ai` and `built` | `ai` names the model that did each half of the work, `{"text": …, "figures": …}`; `built` is `2026-09-12` |
+| Book manifest | `ch09` appended to `book.json` `chapters`, written by `tools/mergebook.py merge ch09` and never by hand |

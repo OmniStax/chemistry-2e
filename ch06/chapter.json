@@ -1,0 +1,215 @@
+{
+  "id": "6",
+  "dir": "ch06",
+  "title": "Electronic Structure and Periodic Properties of Elements",
+  "intro": {
+    "module": "m68728",
+    "slug": "6-introduction"
+  },
+  "sections": [
+    {
+      "id": "6.1",
+      "module": "m68729",
+      "title": "Electromagnetic Energy",
+      "slug": "6-1-electromagnetic-energy"
+    },
+    {
+      "id": "6.2",
+      "module": "m68732",
+      "title": "The Bohr Model",
+      "slug": "6-2-the-bohr-model"
+    },
+    {
+      "id": "6.3",
+      "module": "m68733",
+      "title": "Development of Quantum Theory",
+      "slug": "6-3-development-of-quantum-theory"
+    },
+    {
+      "id": "6.4",
+      "module": "m68734",
+      "title": "Electronic Structure of Atoms (Electron Configurations)",
+      "slug": "6-4-electronic-structure-of-atoms-electron-configurations"
+    },
+    {
+      "id": "6.5",
+      "module": "m68735",
+      "title": "Periodic Variations in Element Properties",
+      "slug": "6-5-periodic-variations-in-element-properties"
+    }
+  ],
+  "variables": [
+    {
+      "sym": "E_n",
+      "type": "energy",
+      "meaning": "the energy of an electron in the Bohr orbit with quantum number n, measured from the ionization limit and so always negative",
+      "unit": "J",
+      "section": "6.2"
+    },
+    {
+      "sym": "ΔE",
+      "type": "energy",
+      "meaning": "the difference between the orbital energies an electron moves between, which is the energy of the photon emitted or absorbed",
+      "unit": "J",
+      "section": "6.2"
+    },
+    {
+      "sym": "n_quantum",
+      "meaning": "the quantum number of a Bohr orbit, a positive integer that labels one of the allowed orbits and takes no value between them",
+      "section": "6.2"
+    },
+    {
+      "sym": "Z",
+      "meaning": "the nuclear charge, which is +1 for hydrogen, +2 for He⁺, +3 for Li²⁺ and so on",
+      "section": "6.2"
+    },
+    {
+      "sym": "k",
+      "meaning": "a constant comprising fundamental constants such as the electron mass and charge and Planck's constant, with a value of 2.179 × 10⁻¹⁸ J",
+      "unit": "J",
+      "section": "6.2"
+    },
+    {
+      "sym": "r",
+      "meaning": "the radius of the circular orbit an electron is allowed to move in",
+      "unit": "m",
+      "section": "6.2"
+    },
+    {
+      "sym": "a_0",
+      "meaning": "the Bohr radius, the radius of the ground-state orbit of hydrogen, with a value of 5.292 × 10⁻¹¹ m",
+      "unit": "m",
+      "section": "6.2"
+    },
+    {
+      "sym": "E_i",
+      "type": "energy",
+      "meaning": "the energy of the orbit the electron starts in",
+      "unit": "J",
+      "section": "6.2"
+    },
+    {
+      "sym": "E_f",
+      "type": "energy",
+      "meaning": "the energy of the orbit the electron ends in",
+      "unit": "J",
+      "section": "6.2"
+    },
+    {
+      "sym": "λ",
+      "type": "wavelength",
+      "meaning": "the wavelength of the photon emitted or absorbed when an electron moves between two orbits",
+      "unit": "m",
+      "section": "6.2"
+    },
+    {
+      "sym": "ν",
+      "type": "frequency",
+      "meaning": "the frequency of that photon, to which its energy is proportional",
+      "unit": "Hz",
+      "section": "6.2"
+    },
+    {
+      "sym": "h",
+      "meaning": "Planck's constant, 6.626 × 10⁻³⁴ J s, which ties a photon's energy to its frequency",
+      "unit": "J s",
+      "section": "6.2"
+    },
+    {
+      "sym": "c",
+      "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s",
+      "unit": "m/s",
+      "section": "6.2"
+    },
+    {
+      "sym": "R_inf",
+      "meaning": "the Rydberg constant, which Bohr's model recovers as the quotient k/hc",
+      "unit": "m⁻¹",
+      "section": "6.2"
+    }
+  ],
+  "equations": [
+    {
+      "id": "eq-photon-energy-difference",
+      "concept": "photon-emission-absorption",
+      "section": "6.2",
+      "latex": "|\\Delta E|=|E_{\\text{f}}-E_{\\text{i}}|=h\\nu=\\frac{hc}{\\lambda}",
+      "ktex": "|\\kdE|=|\\kEf-\\kEi|=h\\knu=\\frac{hc}{\\klam}",
+      "condition": "the electron moves between two allowed orbits, so that one photon carries the whole difference",
+      "important": true
+    },
+    {
+      "id": "eq-bohr-energy-hydrogen",
+      "section": "6.2",
+      "latex": "E_n=-\\frac{k}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
+      "ktex": "\\kEn=-\\frac{k}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
+      "condition": "hydrogen, for which the nuclear charge is +1",
+      "important": false
+    },
+    {
+      "id": "eq-bohr-energy",
+      "concept": "bohr-energy-levels",
+      "section": "6.2",
+      "latex": "E_n=-\\frac{kZ^2}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
+      "ktex": "\\kEn=-\\frac{kZ^2}{n^2}\\,,\\; n=1,\\;2,\\;3,\\;\\ldots",
+      "condition": "a one-electron atom or ion of nuclear charge Z",
+      "important": true
+    },
+    {
+      "id": "eq-bohr-transition",
+      "concept": "calculating-bohr-transition-energies",
+      "section": "6.2",
+      "latex": "\\Delta E=kZ^2\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+      "ktex": "\\kdE=kZ^2\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+      "condition": "a one-electron atom or ion, the electron moving between the orbits n₁ and n₂",
+      "important": true
+    },
+    {
+      "id": "eq-rydberg-from-bohr",
+      "concept": "rydberg-constant-recovered",
+      "section": "6.2",
+      "latex": "\\frac{1}{\\lambda}=\\frac{k}{hc}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+      "ktex": "\\frac{1}{\\klam}=\\frac{k}{hc}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+      "condition": "hydrogen, and the quotient k/hc is the Rydberg constant",
+      "important": false
+    },
+    {
+      "id": "eq-bohr-radius",
+      "concept": "bohr-orbit-radius",
+      "section": "6.2",
+      "latex": "r=\\frac{n^2}{Z}\\,a_0",
+      "condition": "a one-electron atom or ion of nuclear charge Z",
+      "important": true
+    },
+    {
+      "id": "eq-ionization-limit",
+      "concept": "bohr-energy-levels",
+      "section": "6.2",
+      "latex": "\\Delta E=E_{n\\;\\longrightarrow\\;\\infty}-E_1=0+k=k",
+      "condition": "hydrogen in its ground state, the electron removed to an infinite distance",
+      "important": false
+    }
+  ],
+  "glossary": [
+    {
+      "section": "6.2",
+      "term": "Bohr's model of the hydrogen atom",
+      "definition": "structural model in which an electron moves around the nucleus only in circular orbits, each with a specific allowed radius"
+    },
+    {
+      "section": "6.2",
+      "term": "excited state",
+      "definition": "state having an energy greater than the ground-state energy"
+    },
+    {
+      "section": "6.2",
+      "term": "ground state",
+      "definition": "state in which the electrons in an atom, ion, or molecule have the lowest energy possible"
+    },
+    {
+      "section": "6.2",
+      "term": "quantum number",
+      "definition": "number having only specific allowed values and used to characterize the arrangement of electrons in an atom"
+    }
+  ]
+}

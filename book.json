@@ -14,7 +14,10 @@
   "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
   "openstax": "https://openstax.org/books/chemistry-2e/pages/",
   "chapters": [
-    "ch01"
+    "ch01",
+    "ch06",
+    "ch07",
+    "ch09"
   ],
   "intro": {
     "module": "m68662",
@@ -290,6 +293,118 @@
     {
       "sym": "d",
       "latex": "d"
+    },
+    {
+      "sym": "μ",
+      "latex": "\\mu"
+    },
+    {
+      "sym": "Q_partial",
+      "latex": "Q"
+    },
+    {
+      "sym": "r_bond",
+      "latex": "r"
+    },
+    {
+      "sym": "R",
+      "latex": "R"
+    },
+    {
+      "sym": "P_1",
+      "latex": "P_1",
+      "type": "pressure",
+      "macro": "\\kPone"
+    },
+    {
+      "sym": "P_2",
+      "latex": "P_2",
+      "type": "pressure",
+      "macro": "\\kPtwo"
+    },
+    {
+      "sym": "V_1",
+      "latex": "V_1",
+      "type": "volume",
+      "macro": "\\kVone"
+    },
+    {
+      "sym": "V_2",
+      "latex": "V_2",
+      "type": "volume",
+      "macro": "\\kVtwo"
+    },
+    {
+      "sym": "T_1",
+      "latex": "T_1",
+      "type": "temperature",
+      "macro": "\\kTone"
+    },
+    {
+      "sym": "T_2",
+      "latex": "T_2",
+      "type": "temperature",
+      "macro": "\\kTtwo"
+    },
+    {
+      "sym": "n_1",
+      "latex": "n_1",
+      "type": "amount",
+      "macro": "\\knone"
+    },
+    {
+      "sym": "n_2",
+      "latex": "n_2",
+      "type": "amount",
+      "macro": "\\kntwo"
+    },
+    {
+      "sym": "E_n",
+      "latex": "E_{n}",
+      "type": "energy",
+      "macro": "\\kEn"
+    },
+    {
+      "sym": "E_i",
+      "latex": "E_{\\text{i}}",
+      "type": "energy",
+      "macro": "\\kEi"
+    },
+    {
+      "sym": "E_f",
+      "latex": "E_{\\text{f}}",
+      "type": "energy",
+      "macro": "\\kEf"
+    },
+    {
+      "sym": "ΔE",
+      "latex": "\\Delta E",
+      "type": "energy",
+      "macro": "\\kdE"
+    },
+    {
+      "sym": "n_quantum",
+      "latex": "n"
+    },
+    {
+      "sym": "r",
+      "latex": "r"
+    },
+    {
+      "sym": "a_0",
+      "latex": "a_0"
+    },
+    {
+      "sym": "h",
+      "latex": "h"
+    },
+    {
+      "sym": "c",
+      "latex": "c"
+    },
+    {
+      "sym": "R_inf",
+      "latex": "R_{\\infty}"
     }
   ],
   "exercise_kinds": [
@@ -621,6 +736,270 @@
       "why": "A kelvin and a Celsius degree are the same size, so the two scales differ only by where their zeros sit: adding 273.15 to a Celsius temperature gives the kelvin temperature and subtracting it goes back. The 273.15 was determined experimentally and is not exact, which matters when the result is rounded.",
       "evidence": "The section derives both equations after noting that the two scales' reference temperatures differ by the same hundred, prints them among the section's key equations, and the two worked examples and their Check Your Learning items report a kelvin temperature alongside every Celsius and Fahrenheit one.",
       "eq": "eq-kelvin-from-celsius"
+    },
+    {
+      "id": "bond-angle-and-bond-distance",
+      "kind": "idea",
+      "section": "7.6",
+      "name": "Bond angles and bond distances",
+      "why": "A Lewis structure is drawn flat, but a molecule is not: it occupies space, and describing it means giving the distances between the nuclei and the angles between the bonds. A bond angle is the angle between two bonds that share an atom, measured in degrees, and a bond distance is the distance between the nuclei of two bonded atoms, measured in Ångstroms or picometers. These two measurements are what every later statement about a molecule's shape is finally about.",
+      "evidence": "The section opens by defining both terms and Figure 7.14 gives the formaldehyde molecule its measured angle of 118° and its measured C=O distance of 1.21 Å; the bond angles named for every geometry that follows, 180°, 120°, 109.5°, 90°, are the same measurement made on the shapes VSEPR theory predicts."
+    },
+    {
+      "id": "vsepr-theory",
+      "kind": "idea",
+      "section": "7.6",
+      "name": "Valence shell electron-pair repulsion theory",
+      "why": "VSEPR theory predicts the shape of a molecule from one assumption: the regions of high electron density in the valence shell of the central atom, whether they are bonding pairs or lone pairs, repel one another, and they settle into the arrangement that puts them as far apart as possible. It is worth noting that the theory considers electron-pair repulsions alone, and that nuclear-nuclear repulsions and nuclear-electron attractions are also at work in the arrangement a molecule finally adopts.",
+      "evidence": "The section states the assumption and works it through on BeF2, where two bonds and no lone pairs give a bond angle of 180° (Figure 7.15), and the four-step procedure that follows begins with a Lewis structure and ends with a predicted shape."
+    },
+    {
+      "id": "electron-pair-geometry",
+      "kind": "idea",
+      "section": "7.6",
+      "name": "The five electron-pair geometries",
+      "why": "The number of regions of electron density around a central atom decides the arrangement, and there are only five of them: two regions are linear, three are trigonal planar, four are tetrahedral, five are trigonal bipyramidal and six are octahedral. A single, a double and a triple bond each count as one region, so the count is a count of directions rather than of electrons, and the whole of the shape prediction rests on getting it right.",
+      "evidence": "Figure 7.16 draws the five arrangements with their angles, the section names each one as it is defined in the glossary, and the worked examples count the regions of CO2, BCl3, the ammonium ion, water, SF4 and XeF4 before naming any shape."
+    },
+    {
+      "id": "molecular-structure-versus-electron-pair-geometry",
+      "kind": "idea",
+      "section": "7.6",
+      "name": "Molecular structure is not electron-pair geometry",
+      "why": "The electron-pair geometry describes where all the regions of electron density are, bonds and lone pairs together; the molecular structure describes where the atoms are and says nothing about the lone pairs. The two are the same when the central atom carries no lone pair and they differ whenever it carries one, which is why methane is tetrahedral while ammonia, with the same four regions, is trigonal pyramidal and water is bent.",
+      "evidence": "The section defines both terms and contrasts methane (Figure 7.17) with ammonia (Figure 7.18), Figure 7.19 sets out the molecular structures that follow from each electron-pair geometry as lone pairs are added, and Examples 7.13, 7.14 and 7.15 name a different electron-pair geometry and molecular structure for water, SF4 and XeF4."
+    },
+    {
+      "id": "electron-pair-repulsion-order",
+      "kind": "result",
+      "section": "7.6",
+      "name": "The order of repulsions and the space a region occupies",
+      "why": "The ideal angles are only approximate, because the regions of electron density are not all the same size. A lone pair repels more strongly than a bonding pair, and it occupies more space than a triple bond, which occupies more than a double bond, which occupies more than a single bond. That order is what explains the small distortions from the ideal angles, and it is what decides which arrangement is chosen when more than one is possible.",
+      "evidence": "The section states both orders as displayed relations, explains the H–N–H angle of ammonia as slightly smaller than 109.5° because the lone pair-bonding pair repulsion is the greater one (Figure 7.18), and reads the 121° and 118° angles of formaldehyde off the larger space the double bond takes.",
+      "eq": "eq-repulsion-order"
+    },
+    {
+      "id": "axial-and-equatorial-positions",
+      "kind": "idea",
+      "section": "7.6",
+      "name": "Axial and equatorial positions in a trigonal bipyramid",
+      "why": "In the linear, trigonal planar and tetrahedral arrangements every terminal position is equivalent, so it does not matter which one a lone pair takes. A trigonal bipyramid has two kinds of position: an axial position surrounded by 90° angles and an equatorial position with more room because of its 120° angles. A lone pair always takes an equatorial position, and in an octahedron with two lone pairs the two sit 180° apart, which is what makes ClF3 T-shaped and XeF4 square planar.",
+      "evidence": "Figure 7.20 draws the trigonal bipyramid's two kinds of position and the three arrangements possible for ClF3, of which only the T-shaped one is observed; Example 7.14 places the lone pair of SF4 in an equatorial position to give a seesaw, and Example 7.15 puts the two lone pairs of XeF4 on opposite sides of the octahedron."
+    },
+    {
+      "id": "predict-molecular-structure",
+      "kind": "skill",
+      "section": "7.6",
+      "name": "Predicting electron-pair geometry and molecular structure",
+      "why": "The prediction is a four-step procedure and it is the skill the section is written to teach: write the Lewis structure, count the regions of electron density around the central atom, read off the electron-pair geometry, and use the number of lone pairs to name the molecular structure, choosing the arrangement that minimizes repulsion where more than one is possible. A molecule with no single central atom is handled one interior atom at a time, each with a local geometry of its own.",
+      "evidence": "The section sets out the four steps and then applies them in Examples 7.11 to 7.16, to CO2, BCl3, the ammonium ion, water, SF4, XeF4 and the amino acid glycine, and the end-of-chapter exercises ask for the electron-pair geometry and the molecular structure of some forty molecules and ions."
+    },
+    {
+      "id": "bond-dipole-moment",
+      "kind": "result",
+      "section": "7.6",
+      "name": "The bond dipole moment",
+      "why": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge, and the separation of charge is measured by the bond dipole moment, the product of the magnitude of the partial charges and the distance between them. It is drawn as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
+      "evidence": "The section gives the formula and defines the vector that represents it, and Figure 7.26 draws the short vector of a C–H bond beside the much longer vector of a B–F bond.",
+      "eq": "eq-dipole-moment"
+    },
+    {
+      "id": "molecular-polarity",
+      "kind": "skill",
+      "section": "7.6",
+      "name": "Assessing the polarity of a molecule",
+      "why": "A molecule is polar only if it contains at least one polar bond and its bond moments, added as vectors in three dimensions, do not cancel. Geometry is therefore as much of the answer as electronegativity: carbon dioxide has two polar bonds pointing in opposite directions and is nonpolar, while water has the same two bonds bent toward one another and is polar. Molecules of high symmetry such as BF3, CH4, PF5 and SF6 are nonpolar for the same reason, and polar molecules are the ones that align in an electric field and dissolve readily in polar solvents.",
+      "evidence": "The section states the two conditions for polarity, contrasts CO2 with water in Figure 7.27, works through OCS, chloromethane, H2S and ammonia in turn, and Figure 7.28 shows HF molecules lying at random until a field is applied and then lining up with it; nine end-of-chapter exercises ask which molecules of a list have dipole moments."
+    },
+    {
+      "id": "lewis-structure",
+      "kind": "skill",
+      "section": "7.3",
+      "name": "Writing a Lewis structure",
+      "why": "A Lewis structure shows every valence electron of a molecule or polyatomic ion, as a shared pair on a bond or as a lone pair on an atom. It is where a prediction of shape begins, because the count of bonding regions and lone pairs that VSEPR theory needs is read straight off it."
+    },
+    {
+      "id": "bond-polarity",
+      "kind": "idea",
+      "section": "7.2",
+      "name": "Polar covalent bonds and electronegativity",
+      "why": "When two bonded atoms differ in electronegativity the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference is what sets the size of a bond's dipole moment, and a molecule with no polar bond at all can have no dipole moment."
+    },
+    {
+      "id": "gas-pressure",
+      "kind": "idea",
+      "section": "9.1",
+      "name": "Gas pressure",
+      "why": "A gas exerts a pressure on the walls of whatever confines it, and that pressure is what a gauge, a barometer or a manometer reads. Section 9.2 never defines it and never stops to say what a kilopascal or a torr is, because 9.1 has already done so; every law of 9.2 is a statement about how that reading responds when something else about the gas is changed."
+    },
+    {
+      "id": "amontons-law",
+      "kind": "result",
+      "section": "9.2",
+      "name": "Amontons’s law, $P_1/T_1 = P_2/T_2$",
+      "eq": "eq-amontons",
+      "why": "The pressure of a given amount of gas is directly proportional to its temperature on the kelvin scale when the volume is held constant. This is the first of the four relationships the section establishes, and it is the one that explains why a sealed can warns against heat: the gas inside cannot expand, so everything the heating does shows up on the gauge.",
+      "evidence": "The section states the law under both of its names, draws the sealed sphere over a hot plate in Figure 9.10 and the measured pressure-temperature line for air in Figure 9.11, works Example 9.5 on the hair spray can left in a hot car, and sets end-of-chapter items on the spray can thrown into a fire and on what doubling the temperature at constant volume does to the pressure."
+    },
+    {
+      "id": "charles-law",
+      "kind": "result",
+      "section": "9.2",
+      "name": "Charles’s law, $V_1/T_1 = V_2/T_2$",
+      "eq": "eq-charles",
+      "why": "The volume of a given amount of gas is directly proportional to its temperature on the kelvin scale when the pressure is held constant. It is the law a balloon in a refrigerator demonstrates, and it is the one that makes a gas thermometer possible, since a volume read at a known pressure is a temperature.",
+      "evidence": "The section states the law, graphs the volume of one mole of methane against temperature in Figure 9.12, works Example 9.6 on carbon dioxide warmed from 10 °C to 30 °C and Example 9.7 on a hydrogen gas thermometer in boiling ammonia, and sets items on hydrogen warmed from –196 °C and on reading a volume off the figure’s own line."
+    },
+    {
+      "id": "boyles-law",
+      "kind": "result",
+      "section": "9.2",
+      "name": "Boyle’s law, $P_1V_1 = P_2V_2$",
+      "eq": "eq-boyle",
+      "why": "The volume of a given amount of gas held at constant temperature is inversely proportional to the pressure under which it is measured. Unlike the two laws before it this one is not a direct proportionality, and the section uses it to make a second point as well: a curve is hard to read, so plotting the inverse of the pressure against the volume turns the same data into a straight line.",
+      "evidence": "The section states the law, draws the syringe with its gauge and both graphs in Figure 9.13 and the two graphs alone in Figure 9.14, works Example 9.8 by reading a pressure off each graph and then computing it, keeps the Breathing and Boyle’s Law note with Figure 9.15, and sets items on a diver’s bubbles rising, on what tripling the volume does to the pressure, and on reading the syringe at 12.5 mL."
+    },
+    {
+      "id": "avogadro-law",
+      "kind": "result",
+      "section": "9.2",
+      "name": "Avogadro’s law, $V_1/n_1 = V_2/n_2$",
+      "eq": "eq-avogadro",
+      "why": "For a confined gas at constant pressure and temperature, the volume and the number of moles are directly proportional, which is another way of saying that equal volumes of all gases under the same conditions contain the same number of molecules. It is the law that makes the identity of the gas irrelevant, and it is what lets a volume stand in for a count in every gas calculation that follows.",
+      "evidence": "The section states Avogadro’s hypothesis and the law it became, shows one mole each of helium, ammonia and oxygen filling the same volume in Figure 9.18, and sets items on a balloon inflated with more breaths of air, on what directly proportional means and what must be held equal, and on why a litre of methane holds more hydrogen atoms than a litre of hydrogen."
+    },
+    {
+      "id": "absolute-zero",
+      "kind": "idea",
+      "section": "9.2",
+      "name": "Absolute zero",
+      "why": "Both of the section’s direct proportionalities hold only when the temperature is read on the kelvin scale, and the reason is visible on their graphs: extrapolated to lower temperatures, the pressure line and the volume line both reach zero at –273 °C. That temperature is zero on the kelvin scale and the lowest there is, and it is why a gas law calculation in Celsius gives the wrong answer.",
+      "evidence": "The section defines absolute zero in the glossary and in the text, and the captions of Figure 9.11 and Figure 9.12 both follow the extrapolated line to the origin, noting that measurements stop where the gas condenses."
+    },
+    {
+      "id": "ideal-gas",
+      "kind": "idea",
+      "section": "9.2",
+      "name": "The ideal gas",
+      "why": "An ideal gas is a hypothetical construct whose properties are described exactly by the gas laws, and no real gas is one. Saying so is not a technicality: it tells the reader when the equation may be trusted, which is at relatively low pressures and high temperatures, and the book is careful to point out where one of its own examples strains that assumption.",
+      "evidence": "The section defines ideal behavior and the ideal gas, says that the assumption is reasonable only at low pressure and high temperature, and notes in Example 9.10 that a scuba tank at 153 atm is a case where the assumption is not very reasonable and the answer is a ballpark estimate."
+    },
+    {
+      "id": "ideal-gas-law",
+      "kind": "result",
+      "section": "9.2",
+      "name": "The ideal gas law, $PV = nRT$",
+      "eq": "eq-ideal-gas",
+      "why": "Combining the four separate laws yields one equation relating the pressure, volume, amount and temperature of a gas, with the gas constant R carrying the units. It contains five terms, so specifying any four of them gives the fifth, and this single relation replaces the four laws for every calculation the rest of the chapter makes.",
+      "evidence": "The section lists the four laws as constant ratios, combines them into PV = nRT, names the two common values of R and explains that the units chosen decide which is used, and works Example 9.9 on the volume of 655 g of methane at 25 °C and 745 torr; a dozen end-of-chapter items solve for a volume, a pressure, an amount, a temperature or a mass from the other four terms."
+    },
+    {
+      "id": "combined-gas-law",
+      "kind": "result",
+      "section": "9.2",
+      "name": "The combined gas law, $P_1V_1/T_1 = P_2V_2/T_2$",
+      "eq": "eq-combined-gas",
+      "why": "When the amount of gas is the same under two different sets of conditions, both sides of the ideal gas law equal the same product of n and R, so the pressure, volume and temperature of the first condition may be set against those of the second directly. It is the form every two-state gas problem takes, and it contains Amontons’s, Charles’s and Boyle’s laws as the cases where one of the three quantities does not change.",
+      "evidence": "The section derives the relation from the ideal gas law with the moles held constant and works Example 9.10 on a scuba tank emptied into a diver’s lungs at a different pressure and temperature, and items on a high altitude balloon, a cylinder of medical oxygen and a balloon clearing Mount Crumpit are solved the same way."
+    },
+    {
+      "id": "standard-temperature-and-pressure",
+      "kind": "idea",
+      "section": "9.2",
+      "name": "Standard temperature and pressure, and the standard molar volume",
+      "why": "Because the volume of a gas depends on the conditions it is measured under, chemists agree on one set of conditions to report against: 273.15 K and 1 atm. At those conditions one mole of any ideal gas occupies about 22.4 L, which is a number worth carrying, since it turns a volume of gas straight into an amount without the equation.",
+      "evidence": "The section defines standard conditions and the standard molar volume, footnotes the change of the IUPAC standard pressure to 1 bar and says which definition the text uses, draws the three one-mole balloons of Figure 9.18, and sets items on the volumes occupied by 10.0 g of two refrigerants at STP and on the hydrogen atoms in a litre of methane at STP."
+    },
+    {
+      "id": "photon-energy",
+      "kind": "idea",
+      "section": "6.1",
+      "name": "The energy of a photon",
+      "why": "Light is absorbed and emitted in discrete packets called photons, and the energy of one photon is set by the frequency of the radiation, E = hν, or equivalently by its wavelength, E = hc/λ. The Bohr model needs this before it can say anything at all, since the whole of its argument is that one photon carries away the difference between two orbital energies."
+    },
+    {
+      "id": "line-spectra",
+      "kind": "idea",
+      "section": "6.1",
+      "name": "Line spectra",
+      "why": "A gas excited by heat or by an electric current emits light at a few sharp wavelengths rather than over an unbroken band, and each element shows its own set of lines. Classical electromagnetic theory predicts a continuous spectrum and cannot account for this, which is the observation the Bohr model was built to explain."
+    },
+    {
+      "id": "classical-atom-instability",
+      "kind": "idea",
+      "section": "6.2",
+      "name": "Why the planetary atom cannot be stable",
+      "why": "In the planetary picture the electron moves about the nucleus as a planet moves about the sun, and the electrostatic attraction between the two depends only on the distance between them. An electron on such an orbit is always changing direction, and so is always accelerating, and classical electromagnetism says that an accelerating charge must continuously emit radiation. The orbit would then shrink until the electron spiralled into the nucleus, which would make every atom inherently unstable. The paradox is the reason a new postulate was needed.",
+      "evidence": "The section opens by setting out the planetary model and the loss of orbital energy that follows from it, and an end-of-chapter exercise asks the reader to say how the Bohr and the Rutherford models are alike and how they differ, which turns on exactly this point."
+    },
+    {
+      "id": "bohr-stationary-states",
+      "kind": "idea",
+      "section": "6.2",
+      "name": "Bohr's stationary states",
+      "why": "Bohr resolved the paradox by setting aside the classical prediction: an electron on one of the allowed orbits does not radiate at all, and radiation is emitted or absorbed only when the electron moves from one allowed orbit to another. The energies of those orbits are quantized, which is to say that the electron may possess certain discrete energies and no value between them. This is the postulate the rest of the chapter is built on, and it is the one feature of the model that survived into quantum mechanics.",
+      "evidence": "The section states the stationary state hypothesis and the quantization of the orbital energies in the paragraph that introduces the model, and an exercise asks the reader to say what it means for the energy of the electrons in an atom to be quantized, which the book answers in those words."
+    },
+    {
+      "id": "bohr-energy-levels",
+      "kind": "result",
+      "section": "6.2",
+      "name": "The allowed energies, $E_n=-kZ^2/n^2$",
+      "eq": "eq-bohr-energy",
+      "why": "The energy of an electron on the orbit labelled n is the constant k, which gathers the electron mass and charge and Planck's constant together, divided by the square of n and multiplied by the square of the nuclear charge. The energies are negative because they are measured from the state in which the electron has been removed altogether, and they crowd toward zero as n grows, so that the rungs of the ladder are far apart at the bottom and close together at the top. Because they are measured that way, E = 0 is the ionization limit, the state in which the electron has been removed from the nucleus altogether, and the energy needed to take a ground-state hydrogen atom there is the constant k itself.",
+      "evidence": "The section gives the expression twice, first for hydrogen and then for any one-electron atom, Figure 6.14 draws the lowest few levels with their energies, Example 6.4 calculates the energy of an electron with n = 3 in hydrogen, and four end-of-chapter exercises ask for the energy of an electron in a named orbit of hydrogen, He⁺ or Li²⁺. The section works the ionization limit out from the same expression."
+    },
+    {
+      "id": "ground-and-excited-states",
+      "kind": "idea",
+      "section": "6.2",
+      "name": "Ground state and excited state",
+      "why": "Matter is most stable with the lowest possible energy, so the electron in a hydrogen atom usually moves in the n = 1 orbit, and the atom is then said to be in its ground state. Energy from outside can move the electron to an orbit with a higher n, and the atom is then in an excited state. The two words name where the electron is on the ladder, and every transition the section describes runs between two such states.",
+      "evidence": "The section defines both terms where it introduces the energy-level diagram, the glossary carries each of them, and Example 6.4 begins with a spark that promotes the electron of a hydrogen atom into the n = 3 orbit."
+    },
+    {
+      "id": "photon-emission-absorption",
+      "kind": "result",
+      "section": "6.2",
+      "name": "One transition, one photon: $|\\Delta E|=h\\nu=hc/\\lambda$",
+      "eq": "eq-photon-energy-difference",
+      "why": "When an electron moves between two allowed orbits the atom emits or absorbs a single photon whose energy is the whole of the difference between the two orbital energies. Falling to a lower orbit emits the photon, and absorbing one moves the electron up; because energy can be neither created nor destroyed, the energy needed to lift an electron from one level to another is exactly the energy liberated when it returns. The absolute value is used because a frequency and a wavelength are always positive.",
+      "evidence": "The section states the relation as the first equation it writes and returns to it under the law of conservation of energy, Figure 6.15 draws the absorbed photons as upward arrows and the emitted ones as downward arrows, and Example 6.5 finds both the energy and the wavelength of the photon for a named transition."
+    },
+    {
+      "id": "hydrogen-like-ions",
+      "kind": "idea",
+      "section": "6.2",
+      "name": "Hydrogen-like atoms and ions",
+      "why": "Because Bohr's model follows one electron only, it applies just as well to He⁺, Li²⁺, Be³⁺ and the rest of the one-electron ions, which differ from hydrogen only in their nuclear charge. Writing Z into the energy and the radius is the whole of the generalization, and it is also the boundary of the model: helium, with two electrons, is already beyond it, because the model says nothing about how two electrons act on each other.",
+      "evidence": "The section introduces Z with the generalized energy expression and closes by saying that Bohr could not extend the theory to helium, and five end-of-chapter exercises ask for an energy or a photon in He⁺ or Li²⁺."
+    },
+    {
+      "id": "bohr-orbit-radius",
+      "kind": "result",
+      "section": "6.2",
+      "name": "The radius of an allowed orbit, $r=n^2a_0/Z$",
+      "eq": "eq-bohr-radius",
+      "why": "The allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises, measured in units of the Bohr radius, the radius of hydrogen's ground-state orbit. This is the other half of what n says: as the electron's energy increases it is found at greater distances from the nucleus, which is what the inverse dependence of the electrostatic attraction on distance implies, since an electron further out is held less tightly.",
+      "evidence": "The section gives the expression with the value of the Bohr radius and explains what it means for the electron's distance from the nucleus, and two end-of-chapter exercises ask for the radius of a named orbit in angstroms or for the distance at which an electron has a given energy."
+    },
+    {
+      "id": "rydberg-constant-recovered",
+      "kind": "result",
+      "section": "6.2",
+      "name": "The Rydberg equation recovered, $R_{\\infty}=k/hc$",
+      "eq": "eq-rydberg-from-bohr",
+      "why": "Putting the quantized energies into the photon relation gives an expression for one over the wavelength that is identical in form to the Rydberg equation, with the Rydberg constant standing as the quotient of k by hc. When Bohr compared his theoretical value with the experimental one, which was among the most precisely measured constants of the day, the agreement was excellent, and that agreement is why a model resting on so many assumptions was taken seriously at all.",
+      "evidence": "The section derives the expression in two steps and names the quotient as the Rydberg constant, and it closes by saying that the discrete lines in the spectra of the elements result from quantized electronic energies, which an end-of-chapter exercise asks the reader to explain for the spectra of hydrogen and of calcium."
+    },
+    {
+      "id": "calculating-bohr-transition-energies",
+      "kind": "skill",
+      "section": "6.2",
+      "name": "Calculating the energy and wavelength of a transition",
+      "eq": "eq-bohr-transition",
+      "why": "The second objective of the section is a calculation: given the two quantum numbers and the nuclear charge, find the energy difference from kZ²(1/n₁² − 1/n₂²), read its sign to say whether the photon is absorbed or emitted, and divide hc by its magnitude to get the wavelength. Doing it once with care is what turns the model from a picture into something that can be checked against a spectrum.",
+      "evidence": "Example 6.5 works a transition from n = 4 to n = 6 in hydrogen through to a wavelength and names the part of the spectrum it falls in, its Check Your Learning repeats the work for He⁺, and four end-of-chapter exercises ask for the energy of a photon produced by a named transition in hydrogen, He⁺ or Li²⁺."
     }
   ],
   "concept_prereqs": [
@@ -811,6 +1190,218 @@
     {
       "concept": "celsius-kelvin-conversion",
       "prereq": "temperature-scales"
+    },
+    {
+      "concept": "bond-angle-and-bond-distance",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "vsepr-theory",
+      "prereq": "lewis-structure"
+    },
+    {
+      "concept": "vsepr-theory",
+      "prereq": "bond-angle-and-bond-distance"
+    },
+    {
+      "concept": "electron-pair-geometry",
+      "prereq": "vsepr-theory"
+    },
+    {
+      "concept": "molecular-structure-versus-electron-pair-geometry",
+      "prereq": "electron-pair-geometry"
+    },
+    {
+      "concept": "electron-pair-repulsion-order",
+      "prereq": "electron-pair-geometry"
+    },
+    {
+      "concept": "axial-and-equatorial-positions",
+      "prereq": "electron-pair-repulsion-order"
+    },
+    {
+      "concept": "predict-molecular-structure",
+      "prereq": "lewis-structure"
+    },
+    {
+      "concept": "predict-molecular-structure",
+      "prereq": "molecular-structure-versus-electron-pair-geometry"
+    },
+    {
+      "concept": "predict-molecular-structure",
+      "prereq": "axial-and-equatorial-positions"
+    },
+    {
+      "concept": "bond-dipole-moment",
+      "prereq": "bond-polarity"
+    },
+    {
+      "concept": "molecular-polarity",
+      "prereq": "bond-dipole-moment"
+    },
+    {
+      "concept": "molecular-polarity",
+      "prereq": "predict-molecular-structure"
+    },
+    {
+      "concept": "amontons-law",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "amontons-law",
+      "prereq": "celsius-kelvin-conversion"
+    },
+    {
+      "concept": "charles-law",
+      "prereq": "volume"
+    },
+    {
+      "concept": "charles-law",
+      "prereq": "celsius-kelvin-conversion"
+    },
+    {
+      "concept": "boyles-law",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "boyles-law",
+      "prereq": "volume"
+    },
+    {
+      "concept": "avogadro-law",
+      "prereq": "volume"
+    },
+    {
+      "concept": "avogadro-law",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "absolute-zero",
+      "prereq": "amontons-law"
+    },
+    {
+      "concept": "absolute-zero",
+      "prereq": "charles-law"
+    },
+    {
+      "concept": "absolute-zero",
+      "prereq": "temperature-scales"
+    },
+    {
+      "concept": "ideal-gas",
+      "prereq": "states-of-matter"
+    },
+    {
+      "concept": "ideal-gas",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "amontons-law"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "charles-law"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "boyles-law"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "avogadro-law"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "ideal-gas"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "convert-units"
+    },
+    {
+      "concept": "combined-gas-law",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "standard-temperature-and-pressure",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "standard-temperature-and-pressure",
+      "prereq": "avogadro-law"
+    },
+    {
+      "concept": "classical-atom-instability",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "bohr-stationary-states",
+      "prereq": "classical-atom-instability"
+    },
+    {
+      "concept": "bohr-stationary-states",
+      "prereq": "photon-energy"
+    },
+    {
+      "concept": "bohr-energy-levels",
+      "prereq": "bohr-stationary-states"
+    },
+    {
+      "concept": "ground-and-excited-states",
+      "prereq": "bohr-energy-levels"
+    },
+    {
+      "concept": "photon-emission-absorption",
+      "prereq": "photon-energy"
+    },
+    {
+      "concept": "photon-emission-absorption",
+      "prereq": "bohr-energy-levels"
+    },
+    {
+      "concept": "photon-emission-absorption",
+      "prereq": "ground-and-excited-states"
+    },
+    {
+      "concept": "hydrogen-like-ions",
+      "prereq": "bohr-energy-levels"
+    },
+    {
+      "concept": "hydrogen-like-ions",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "bohr-orbit-radius",
+      "prereq": "bohr-stationary-states"
+    },
+    {
+      "concept": "bohr-orbit-radius",
+      "prereq": "hydrogen-like-ions"
+    },
+    {
+      "concept": "rydberg-constant-recovered",
+      "prereq": "photon-emission-absorption"
+    },
+    {
+      "concept": "rydberg-constant-recovered",
+      "prereq": "line-spectra"
+    },
+    {
+      "concept": "calculating-bohr-transition-energies",
+      "prereq": "photon-emission-absorption"
+    },
+    {
+      "concept": "calculating-bohr-transition-energies",
+      "prereq": "hydrogen-like-ions"
+    },
+    {
+      "concept": "calculating-bohr-transition-energies",
+      "prereq": "scientific-notation"
+    },
+    {
+      "concept": "calculating-bohr-transition-energies",
+      "prereq": "convert-units"
     }
   ]
 }

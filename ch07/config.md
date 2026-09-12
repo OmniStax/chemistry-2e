@@ -1,0 +1,46 @@
+# Config: Chemistry 2e, Chapter 7
+
+Proposed by the agent after the chapter exploration (2026-09-12). Status:
+applied as proposed on 2026-09-12, on Chen's instruction to build the showcase
+sections in one job without check-ins; the per-section stops of root rule 2,
+the plan review of root rule 5 and the user picks of root rule 15 are replaced
+by a plan file per section, written before the section is built and left for
+review after. Each line is a setting and its value.
+
+| Setting | Value |
+|---|---|
+| Chapter | 7 Chemical Bonding and Molecular Geometry, modules m68736 (introduction), m68737, m68738, m68739, m68740, m68741, m68742 |
+| Scope of this pass | one section only, 7.6 Molecular Structure and Polarity (m68742), built as a showcase of what an interactive figure can do with a spatial idea. Sections 7.1 to 7.5 are listed in `chapter.json` with their modules, titles and slugs and are not built; the chapter has no introduction page yet, and the `intro` record of `chapter.json` names m68736 and its slug against the day that page is made |
+| Front matter | the chapter introduction (m68736) is a page of its own in `ch07/intro/` by root rule 21 when the chapter is finished; it is not built in this pass |
+| Unit of work | one section = one page; sections are never folded (root rule 11) |
+| Loop | prep → plan file → build → validator, then the chapter pass; review after |
+| Prose | verbatim; the learning objectives, the section summary (to `summary_html`) and the glossary are pulled into the tables and the views (root rule 4). 7.6 prints no Key Equations section, so its three display relations are written into `chapter.json` as the section's equations |
+| Headers | the page's own headers carry the split of root rule 3, one `<h2>` for each sub-concept, written in the book's voice and in sentence case. Where the book prints a titled header of its own over the same material, the page's header stands in its place rather than beside it. The book's own sub-headers of 7.6 (Electron-pair Geometry versus Molecular Structure, Predicting Electron Pair Geometry and Molecular Structure, Molecular Structure for Multicenter Molecules, Properties of Polar Molecules) mark the section's real divisions and the page's headers follow them; a worked example's `<h3>` is its number and the book's title for it |
+| Boxed notes | the chapter prints no `everyday-life`, `sciences-interconnect` or `chemist-portrait` note, so 7.6 carries no titled aside |
+| Link to Learning | both notes of 7.6 are dropped and named in the section's `notes`, one plain sentence each: the PhET molecular shape simulator and the PhET molecule polarity simulation |
+| Tables | the chapter's four numbered tables are all in 7.2 and 7.5; 7.6 prints none, so the page carries no `div.book-table` |
+| Example numbers | the publisher's, chapter-wide as the figures are: Examples 7.11 to 7.18 in 7.6. A heading reads "Example 7.13 · Predicting Electron-pair Geometry and Molecular Structure: Lone Pairs on the Central Atom", never a number built from the section |
+| Figure numbers | the publisher's, chapter-wide from the introduction's photograph as Figure 7.1; 7.6 holds Figures 7.14 to 7.28 and the list is in `exploration.md` |
+| Figures | the spatial figures become interactive Figures carrying the book's numbers: 7.14 measures a bond angle and a bond length, 7.16 + 7.19 + 7.20 fold into one rotatable VSEPR bench, 7.26 + 7.27 fold into one bond-moment bench, and 7.28 turns molecules into an electric field. Figures 7.15, 7.17, 7.18 and 7.21 to 7.25 state fixed arrangements and are redrawn faithfully as still Figures with the book's numbers. The seventeen unnumbered inline images are decided one by one in the section plan by root rule 14: a Lewis structure the passage argues from is redrawn faithfully, and an image an exercise refers to is copied as it is. The section has no photograph |
+| Sims | one, named in `exploration.md`: electron domains finding their places, which shows where the five geometries come from rather than stating them. It replaces nothing, carries no number and its eyebrow reads "Sim" |
+| Motion | decided per figure with its reason in the plan line (root rule 14). Two things in this section have a clock in them and move: the Sim, where the regions travel until they settle, and Figure 7.28, where the molecules turn when the field is switched on. Every other figure answers its sliders and nothing else, registers no cycle and carries no transport |
+| Three dimensions | through `figlib`'s `view()` and `face()`, not through `THREE`. The projection's yaw and pitch are sliders on every figure that draws a solid, so the reader turns the molecule instead of accepting one viewpoint; both are untyped and drawn in ink. `THREE` is loaded on the page and is not used, because nothing here wants a lit, depth-buffered scene and a figure written against `figlib` keeps the label discipline and the palette the rest of the book's figures have |
+| Colour | the section binds none of the book's fourteen types; its molecules are drawn in the element palette and everything else is ink. `ch07/COLOR.md` holds the reasoning, including why the partial charges of a bond dipole are not bound as `charge` |
+| Symbols | three untyped rows added to `book.json` through `tools/mergebook.py`: `μ` for the bond dipole moment, `Q_partial` for the magnitude of the partial charges and `r_bond` for the distance between them, each with its LaTeX and no macro, since the section binds no type and writes its one equation in plain LaTeX. No new type |
+| Inline exercises | every Check Your Learning is a `check-your-learning` item placed inline right after the example it parallels, with the book's own answer from the `[answer]` note: eight in the section |
+| Exercises tab | the thirty-two end-of-chapter items of the module, kind `exercise` except the five that are instructions to run a PhET simulation, which are kind `simulation-exercise` |
+| Exercise placement | an exercise goes with the section that introduces what it tests; every one of the thirty-two tests what 7.6 teaches, so nothing is held for a later page and no row carries a `source_section` |
+| Answers to book problems | the book's key only, never computed. A keyed item carries the book's answer; an unkeyed conceptual item is kept with a suggested approach the page marks as OmniStax's own, and an unkeyed item the page cannot carry is left out and named in `exercise_notes`. "Answers will vary" in the Check Your Learning of Example 7.17 is an open answer the reader compares with, not a graded one |
+| Simulation exercises | the five PhET items are carried by the Sim and by the bond-moment bench where the figure can answer the prompt, with the prompt rewritten against our own figure in the section plan; any the figures cannot carry is left out and named in `exercise_notes` |
+| Suggested approaches | generated and marked as generated, for unkeyed conceptual items only; never for a numerical item |
+| Generated questions | none, of any kind; a concept node with no book exercise of its own is named in the plan and no question is written for it |
+| Concept nodes | eleven rows written into `book.json` before the section is built: nine for 7.6 and two placeholders for the ideas of unbuilt sections that 7.6 leans on, `lewis-structure` in 7.3 and `bond-polarity` in 7.2, each with a `why` and no `evidence`, since their sections are not built. Thirteen prerequisite edges, one of them into Chapter 1 |
+| Formulas | `ch07/chapter.json`: three equations, all in 7.6, with μ = Qr important and the two orders of repulsion and of size not; three variable rows, none of them typed; no row carries an `anchor`, since an anchor is written from the section's own text and the chapter pass writes them from the section plan |
+| Glossary | the book's own wording, sixteen entries, all from 7.6 |
+| Degrees | the degree sign `°` (U+00B0), never the masculine ordinal `º` (U+00BA), in a bond angle, an axis label, a readout or prose; inside math, `^\circ`. The section is full of them |
+| Dollar signs | `&#36;` in the prose of `text.html`, and the fullwidth `＄` inside a `prompt` or `solution` string and inside `\text{}` of a display equation; nothing in this section prints one |
+| Cross references | a reference to a section or a figure of a chapter or section not yet built is plain text in the book's wording. 7.6 refers to no other section by name, and every figure it cites is its own |
+| Voice | root rule 17 and the Voice section of the book's `RULES.md`: full sentences in a plain, measured register, on the formal side of plain, in every lead, caption, headline, readout, suggested approach, concept why and log line |
+| Labels | a figure carrying the book's number is a Figure; one that replaces nothing in the book is a Sim and carries no number. The word "demo" appears nowhere |
+| `ai` and `built` | `ai` names the model that did each half of the work, `{"text": …, "figures": …}`; `built` is `2026-09-12` |
+| Book manifest | `ch07` added to `book.json` `chapters` by `tools/mergebook.py merge ch07` and never by hand |

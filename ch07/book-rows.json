@@ -1,0 +1,161 @@
+{
+ "types": [],
+ "symbols": [
+  {
+   "sym": "μ",
+   "latex": "\\mu"
+  },
+  {
+   "sym": "Q_partial",
+   "latex": "Q"
+  },
+  {
+   "sym": "r_bond",
+   "latex": "r"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "bond-angle-and-bond-distance",
+   "kind": "idea",
+   "section": "7.6",
+   "name": "Bond angles and bond distances",
+   "why": "A Lewis structure is drawn flat, but a molecule is not: it occupies space, and describing it means giving the distances between the nuclei and the angles between the bonds. A bond angle is the angle between two bonds that share an atom, measured in degrees, and a bond distance is the distance between the nuclei of two bonded atoms, measured in Ångstroms or picometers. These two measurements are what every later statement about a molecule's shape is finally about.",
+   "evidence": "The section opens by defining both terms and Figure 7.14 gives the formaldehyde molecule its measured angle of 118° and its measured C=O distance of 1.21 Å; the bond angles named for every geometry that follows, 180°, 120°, 109.5°, 90°, are the same measurement made on the shapes VSEPR theory predicts."
+  },
+  {
+   "id": "vsepr-theory",
+   "kind": "idea",
+   "section": "7.6",
+   "name": "Valence shell electron-pair repulsion theory",
+   "why": "VSEPR theory predicts the shape of a molecule from one assumption: the regions of high electron density in the valence shell of the central atom, whether they are bonding pairs or lone pairs, repel one another, and they settle into the arrangement that puts them as far apart as possible. It is worth noting that the theory considers electron-pair repulsions alone, and that nuclear-nuclear repulsions and nuclear-electron attractions are also at work in the arrangement a molecule finally adopts.",
+   "evidence": "The section states the assumption and works it through on BeF2, where two bonds and no lone pairs give a bond angle of 180° (Figure 7.15), and the four-step procedure that follows begins with a Lewis structure and ends with a predicted shape."
+  },
+  {
+   "id": "electron-pair-geometry",
+   "kind": "idea",
+   "section": "7.6",
+   "name": "The five electron-pair geometries",
+   "why": "The number of regions of electron density around a central atom decides the arrangement, and there are only five of them: two regions are linear, three are trigonal planar, four are tetrahedral, five are trigonal bipyramidal and six are octahedral. A single, a double and a triple bond each count as one region, so the count is a count of directions rather than of electrons, and the whole of the shape prediction rests on getting it right.",
+   "evidence": "Figure 7.16 draws the five arrangements with their angles, the section names each one as it is defined in the glossary, and the worked examples count the regions of CO2, BCl3, the ammonium ion, water, SF4 and XeF4 before naming any shape."
+  },
+  {
+   "id": "molecular-structure-versus-electron-pair-geometry",
+   "kind": "idea",
+   "section": "7.6",
+   "name": "Molecular structure is not electron-pair geometry",
+   "why": "The electron-pair geometry describes where all the regions of electron density are, bonds and lone pairs together; the molecular structure describes where the atoms are and says nothing about the lone pairs. The two are the same when the central atom carries no lone pair and they differ whenever it carries one, which is why methane is tetrahedral while ammonia, with the same four regions, is trigonal pyramidal and water is bent.",
+   "evidence": "The section defines both terms and contrasts methane (Figure 7.17) with ammonia (Figure 7.18), Figure 7.19 sets out the molecular structures that follow from each electron-pair geometry as lone pairs are added, and Examples 7.13, 7.14 and 7.15 name a different electron-pair geometry and molecular structure for water, SF4 and XeF4."
+  },
+  {
+   "id": "electron-pair-repulsion-order",
+   "kind": "result",
+   "section": "7.6",
+   "name": "The order of repulsions and the space a region occupies",
+   "why": "The ideal angles are only approximate, because the regions of electron density are not all the same size. A lone pair repels more strongly than a bonding pair, and it occupies more space than a triple bond, which occupies more than a double bond, which occupies more than a single bond. That order is what explains the small distortions from the ideal angles, and it is what decides which arrangement is chosen when more than one is possible.",
+   "evidence": "The section states both orders as displayed relations, explains the H–N–H angle of ammonia as slightly smaller than 109.5° because the lone pair-bonding pair repulsion is the greater one (Figure 7.18), and reads the 121° and 118° angles of formaldehyde off the larger space the double bond takes.",
+   "eq": "eq-repulsion-order"
+  },
+  {
+   "id": "axial-and-equatorial-positions",
+   "kind": "idea",
+   "section": "7.6",
+   "name": "Axial and equatorial positions in a trigonal bipyramid",
+   "why": "In the linear, trigonal planar and tetrahedral arrangements every terminal position is equivalent, so it does not matter which one a lone pair takes. A trigonal bipyramid has two kinds of position: an axial position surrounded by 90° angles and an equatorial position with more room because of its 120° angles. A lone pair always takes an equatorial position, and in an octahedron with two lone pairs the two sit 180° apart, which is what makes ClF3 T-shaped and XeF4 square planar.",
+   "evidence": "Figure 7.20 draws the trigonal bipyramid's two kinds of position and the three arrangements possible for ClF3, of which only the T-shaped one is observed; Example 7.14 places the lone pair of SF4 in an equatorial position to give a seesaw, and Example 7.15 puts the two lone pairs of XeF4 on opposite sides of the octahedron."
+  },
+  {
+   "id": "predict-molecular-structure",
+   "kind": "skill",
+   "section": "7.6",
+   "name": "Predicting electron-pair geometry and molecular structure",
+   "why": "The prediction is a four-step procedure and it is the skill the section is written to teach: write the Lewis structure, count the regions of electron density around the central atom, read off the electron-pair geometry, and use the number of lone pairs to name the molecular structure, choosing the arrangement that minimizes repulsion where more than one is possible. A molecule with no single central atom is handled one interior atom at a time, each with a local geometry of its own.",
+   "evidence": "The section sets out the four steps and then applies them in Examples 7.11 to 7.16, to CO2, BCl3, the ammonium ion, water, SF4, XeF4 and the amino acid glycine, and the end-of-chapter exercises ask for the electron-pair geometry and the molecular structure of some forty molecules and ions."
+  },
+  {
+   "id": "bond-dipole-moment",
+   "kind": "result",
+   "section": "7.6",
+   "name": "The bond dipole moment",
+   "why": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge, and the separation of charge is measured by the bond dipole moment, the product of the magnitude of the partial charges and the distance between them. It is drawn as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
+   "evidence": "The section gives the formula and defines the vector that represents it, and Figure 7.26 draws the short vector of a C–H bond beside the much longer vector of a B–F bond.",
+   "eq": "eq-dipole-moment"
+  },
+  {
+   "id": "molecular-polarity",
+   "kind": "skill",
+   "section": "7.6",
+   "name": "Assessing the polarity of a molecule",
+   "why": "A molecule is polar only if it contains at least one polar bond and its bond moments, added as vectors in three dimensions, do not cancel. Geometry is therefore as much of the answer as electronegativity: carbon dioxide has two polar bonds pointing in opposite directions and is nonpolar, while water has the same two bonds bent toward one another and is polar. Molecules of high symmetry such as BF3, CH4, PF5 and SF6 are nonpolar for the same reason, and polar molecules are the ones that align in an electric field and dissolve readily in polar solvents.",
+   "evidence": "The section states the two conditions for polarity, contrasts CO2 with water in Figure 7.27, works through OCS, chloromethane, H2S and ammonia in turn, and Figure 7.28 shows HF molecules lying at random until a field is applied and then lining up with it; nine end-of-chapter exercises ask which molecules of a list have dipole moments."
+  },
+  {
+   "id": "lewis-structure",
+   "kind": "skill",
+   "section": "7.3",
+   "name": "Writing a Lewis structure",
+   "why": "A Lewis structure shows every valence electron of a molecule or polyatomic ion, as a shared pair on a bond or as a lone pair on an atom. It is where a prediction of shape begins, because the count of bonding regions and lone pairs that VSEPR theory needs is read straight off it."
+  },
+  {
+   "id": "bond-polarity",
+   "kind": "idea",
+   "section": "7.2",
+   "name": "Polar covalent bonds and electronegativity",
+   "why": "When two bonded atoms differ in electronegativity the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference is what sets the size of a bond's dipole moment, and a molecule with no polar bond at all can have no dipole moment."
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "bond-angle-and-bond-distance",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "vsepr-theory",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "vsepr-theory",
+   "prereq": "bond-angle-and-bond-distance"
+  },
+  {
+   "concept": "electron-pair-geometry",
+   "prereq": "vsepr-theory"
+  },
+  {
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "electron-pair-repulsion-order",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "axial-and-equatorial-positions",
+   "prereq": "electron-pair-repulsion-order"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "axial-and-equatorial-positions"
+  },
+  {
+   "concept": "bond-dipole-moment",
+   "prereq": "bond-polarity"
+  },
+  {
+   "concept": "molecular-polarity",
+   "prereq": "bond-dipole-moment"
+  },
+  {
+   "concept": "molecular-polarity",
+   "prereq": "predict-molecular-structure"
+  }
+ ]
+}

@@ -7,5 +7,42 @@
       "d"
     ],
     "types": []
+  },
+  "ch07": {
+    "symbols": [
+      "\u03bc",
+      "Q_partial",
+      "r_bond"
+    ],
+    "types": []
+  },
+  "ch09": {
+    "symbols": [
+      "R",
+      "P_1",
+      "P_2",
+      "V_1",
+      "V_2",
+      "T_1",
+      "T_2",
+      "n_1",
+      "n_2"
+    ],
+    "types": []
+  },
+  "ch06": {
+    "symbols": [
+      "E_n",
+      "E_i",
+      "E_f",
+      "\u0394E",
+      "n_quantum",
+      "r",
+      "a_0",
+      "h",
+      "c",
+      "R_inf"
+    ],
+    "types": []
   }
 }

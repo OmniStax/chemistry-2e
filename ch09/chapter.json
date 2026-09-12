@@ -1,0 +1,247 @@
+{
+  "id": "9",
+  "dir": "ch09",
+  "title": "Gases",
+  "intro": {
+    "module": "m68748",
+    "slug": "9-introduction"
+  },
+  "sections": [
+    {
+      "id": "9.1",
+      "module": "m68750",
+      "title": "Gas Pressure",
+      "slug": "9-1-gas-pressure"
+    },
+    {
+      "id": "9.2",
+      "module": "m68751",
+      "title": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law",
+      "slug": "9-2-relating-pressure-volume-amount-and-temperature-the-ideal-gas-law"
+    },
+    {
+      "id": "9.3",
+      "module": "m68752",
+      "title": "Stoichiometry of Gaseous Substances, Mixtures, and Reactions",
+      "slug": "9-3-stoichiometry-of-gaseous-substances-mixtures-and-reactions"
+    },
+    {
+      "id": "9.4",
+      "module": "m68754",
+      "title": "Effusion and Diffusion of Gases",
+      "slug": "9-4-effusion-and-diffusion-of-gases"
+    },
+    {
+      "id": "9.5",
+      "module": "m68758",
+      "title": "The Kinetic-Molecular Theory",
+      "slug": "9-5-the-kinetic-molecular-theory"
+    },
+    {
+      "id": "9.6",
+      "module": "m68759",
+      "title": "Non-Ideal Gas Behavior",
+      "slug": "9-6-non-ideal-gas-behavior"
+    }
+  ],
+  "variables": [
+    {
+      "sym": "P",
+      "type": "pressure",
+      "meaning": "the pressure of a gas, measured on a gauge attached to the vessel that holds it",
+      "unit": "atm (also kPa, torr, psi and bar, as the measurement is reported)",
+      "section": "9.2"
+    },
+    {
+      "sym": "V",
+      "type": "volume",
+      "meaning": "the volume of the gas, which is the volume of the vessel that confines it",
+      "unit": "L",
+      "section": "9.2"
+    },
+    {
+      "sym": "n",
+      "type": "amount",
+      "meaning": "the amount of gas in the vessel, counted in moles",
+      "unit": "mol",
+      "section": "9.2"
+    },
+    {
+      "sym": "T",
+      "type": "temperature",
+      "meaning": "the temperature of the gas on the kelvin scale, which every gas law calculation requires",
+      "unit": "K",
+      "section": "9.2"
+    },
+    {
+      "sym": "R",
+      "meaning": "the ideal gas constant, also called the universal gas constant, whose value follows from the units the pressure, volume and temperature are written in",
+      "unit": "0.08206 L atm mol⁻¹ K⁻¹, or 8.314 kPa L mol⁻¹ K⁻¹",
+      "section": "9.2"
+    },
+    {
+      "sym": "P_1",
+      "type": "pressure",
+      "meaning": "the pressure of a confined gas in its first condition, before the change the problem describes",
+      "unit": "atm",
+      "section": "9.2"
+    },
+    {
+      "sym": "P_2",
+      "type": "pressure",
+      "meaning": "the pressure of the same gas in its second condition, after the change",
+      "unit": "atm",
+      "section": "9.2"
+    },
+    {
+      "sym": "V_1",
+      "type": "volume",
+      "meaning": "the volume of a confined gas in its first condition",
+      "unit": "L",
+      "section": "9.2"
+    },
+    {
+      "sym": "V_2",
+      "type": "volume",
+      "meaning": "the volume of the same gas in its second condition",
+      "unit": "L",
+      "section": "9.2"
+    },
+    {
+      "sym": "T_1",
+      "type": "temperature",
+      "meaning": "the kelvin temperature of a confined gas in its first condition",
+      "unit": "K",
+      "section": "9.2"
+    },
+    {
+      "sym": "T_2",
+      "type": "temperature",
+      "meaning": "the kelvin temperature of the same gas in its second condition",
+      "unit": "K",
+      "section": "9.2"
+    },
+    {
+      "sym": "n_1",
+      "type": "amount",
+      "meaning": "the amount of a confined gas in its first condition, counted in moles",
+      "unit": "mol",
+      "section": "9.2"
+    },
+    {
+      "sym": "n_2",
+      "type": "amount",
+      "meaning": "the amount of the same gas in its second condition",
+      "unit": "mol",
+      "section": "9.2"
+    }
+  ],
+  "equations": [
+    {
+      "id": "eq-amontons",
+      "concept": "amontons-law",
+      "section": "9.2",
+      "latex": "\\frac{P_1}{T_1}=\\frac{P_2}{T_2}",
+      "ktex": "\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}",
+      "condition": "a fixed amount of gas held at constant volume, with both temperatures on the kelvin scale",
+      "important": true
+    },
+    {
+      "id": "eq-charles",
+      "concept": "charles-law",
+      "section": "9.2",
+      "latex": "\\frac{V_1}{T_1}=\\frac{V_2}{T_2}",
+      "ktex": "\\frac{\\kVone}{\\kTone}=\\frac{\\kVtwo}{\\kTtwo}",
+      "condition": "a fixed amount of gas held at constant pressure, with both temperatures on the kelvin scale",
+      "important": true
+    },
+    {
+      "id": "eq-boyle",
+      "concept": "boyles-law",
+      "section": "9.2",
+      "latex": "P_1V_1=P_2V_2",
+      "ktex": "\\kPone\\kVone=\\kPtwo\\kVtwo",
+      "condition": "a fixed amount of gas held at constant temperature",
+      "important": true
+    },
+    {
+      "id": "eq-avogadro",
+      "concept": "avogadro-law",
+      "section": "9.2",
+      "latex": "\\frac{V_1}{n_1}=\\frac{V_2}{n_2}",
+      "ktex": "\\frac{\\kVone}{\\knone}=\\frac{\\kVtwo}{\\kntwo}",
+      "condition": "a confined gas held at constant pressure and constant temperature",
+      "important": true
+    },
+    {
+      "id": "eq-ideal-gas",
+      "concept": "ideal-gas-law",
+      "section": "9.2",
+      "latex": "PV=nRT",
+      "ktex": "\\kP\\kV=\\kn R\\kT",
+      "condition": "a gas behaving ideally, which is a good approximation at relatively low pressures and high temperatures",
+      "important": true
+    },
+    {
+      "id": "eq-combined-gas",
+      "concept": "combined-gas-law",
+      "section": "9.2",
+      "latex": "\\frac{P_1V_1}{T_1}=\\frac{P_2V_2}{T_2}",
+      "ktex": "\\frac{\\kPone\\kVone}{\\kTone}=\\frac{\\kPtwo\\kVtwo}{\\kTtwo}",
+      "condition": "a fixed amount of an ideal gas under two different sets of conditions",
+      "important": true
+    }
+  ],
+  "glossary": [
+    {
+      "section": "9.2",
+      "term": "absolute zero",
+      "definition": "temperature at which the volume of a gas would be zero according to Charles’s law."
+    },
+    {
+      "section": "9.2",
+      "term": "Amontons’s law",
+      "definition": "(also, Gay-Lussac’s law) pressure of a given number of moles of gas is directly proportional to its kelvin temperature when the volume is held constant"
+    },
+    {
+      "section": "9.2",
+      "term": "Avogadro’s law",
+      "definition": "volume of a gas at constant temperature and pressure is proportional to the number of gas molecules"
+    },
+    {
+      "section": "9.2",
+      "term": "Boyle’s law",
+      "definition": "volume of a given number of moles of gas held at constant temperature is inversely proportional to the pressure under which it is measured"
+    },
+    {
+      "section": "9.2",
+      "term": "Charles’s law",
+      "definition": "volume of a given number of moles of gas is directly proportional to its kelvin temperature when the pressure is held constant"
+    },
+    {
+      "section": "9.2",
+      "term": "ideal gas",
+      "definition": "hypothetical gas whose physical properties are perfectly described by the gas laws"
+    },
+    {
+      "section": "9.2",
+      "term": "ideal gas constant (R)",
+      "definition": "constant derived from the ideal gas equation R = 0.08206 L atm mol⁻¹ K⁻¹ or 8.314 L kPa mol⁻¹ K⁻¹"
+    },
+    {
+      "section": "9.2",
+      "term": "ideal gas law",
+      "definition": "relation between the pressure, volume, amount, and temperature of a gas under conditions derived by combination of the simple gas laws"
+    },
+    {
+      "section": "9.2",
+      "term": "standard conditions of temperature and pressure (STP)",
+      "definition": "273.15 K (0 °C) and 1 atm (101.325 kPa)"
+    },
+    {
+      "section": "9.2",
+      "term": "standard molar volume",
+      "definition": "volume of 1 mole of gas at STP, approximately 22.4 L for gases behaving ideally"
+    }
+  ]
+}

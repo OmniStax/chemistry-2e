@@ -14,7 +14,7 @@ pass, with `tools/mergebook.py` merging each chapter's book-level rows.
 
 ## Pass 1: the full-book pass (2026-09-12)
 
-Prompted by: a second book, and root rule 18, which says every book
+Prompted by: Chen asking to convert this book, and root rule 18, which says every book
 begins with one pass that leaves its rules and tools behind before a
 section is planned.
 

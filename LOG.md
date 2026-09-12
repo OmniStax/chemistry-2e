@@ -9,8 +9,8 @@ with an introduction each, and 13 appendices. No PDF. The table of
 contents with module ids is `toc.md`.
 
 Workflow: the full-book pass of root rule 18 first, then chapters in
-waves as the physics book was finished, prep / sections / chapter pass,
-with `tools/mergebook.py` merging each chapter's book-level rows.
+waves of three, each chapter going through prep / sections / chapter
+pass, with `tools/mergebook.py` merging each chapter's book-level rows.
 
 ## Pass 1: the full-book pass (2026-09-12)
 
@@ -33,7 +33,7 @@ for Sims), Chemistry in Everyday Life (44), How Sciences Interconnect
 (19) and Portrait of a Chemist (10), the last three kept as titled
 asides. 627 numbered figures and 529 unnumbered inline images, the
 latter mostly Lewis structures and reaction schemes that the page
-cannot do without and that the physics converter drops. The molecular
+cannot do without. The molecular
 drawings use the CPK atom palette, named in the captions. Images carry
 no width. The book links out only through openstax.org redirects.
 
@@ -46,9 +46,10 @@ What was decided, in `RULES.md` and `COLOR.md`:
   later;
 - fourteen types in scheme order (time, amount, mass, volume,
   concentration, pressure, temperature, energy, entropy, rate,
-  wavelength, frequency, potential, charge); mass is typed here though
-  physics leaves it untyped, pH is a variant of concentration, and K, Q,
-  k, Z, A, counts, ratios and percents stay in ink;
+  wavelength, frequency, potential, charge); mass is typed because the
+  mass–mole conversion is the book's central skill, pH is a variant of
+  concentration, and K, Q, k, Z, A, counts, ratios and percents stay in
+  ink;
 - the atom palette is a second, fixed, non-scheme palette that figures
   draw from directly, proposed as `F.el(symbol)` in `figlib`, which does
   not switch off with colour coding and never appears in the colour
@@ -85,13 +86,11 @@ OMNISTAX_BOOK=chemistry-2e`) reads the manifest and reports "0 chapters,
 
 ## Pass 1a: the shared converter, `toc.md` and `modules.json` (2026-09-12)
 
-Root rule 18 says a tool a second book uses moves up, so
-`cnxml2md.py` now lives at `omnistax-content/tools/cnxml2md.py`, and
-the physics copy is a two-line stub that runs it; the physics rules
-name the new path. The converter was extended for what this book uses
-and physics did not, with the markers its docstring lists: the
-learning objectives from `md:abstract` as a headed block (the old
-converter dropped them), the summary, key-equations and exercises
+Root rule 18 says a tool more than one book uses lives above the
+books, so the shared converter is `omnistax-content/tools/cnxml2md.py`.
+For this book it emits, with the markers its docstring lists: the
+learning objectives from `md:abstract` as a headed block, the summary,
+key-equations and exercises
 sections marked on their headers, notes kept with their class and
 title (the "Answer" note after a Check Your Learning as `[answer]`),
 tables as a `> TABLE {tab:id}` block followed by a markdown table, or an
@@ -107,16 +106,12 @@ imports the mhchem extension KaTeX ships; one import in
 `omnistax-web/src/lib/math/prerender.ts` would enable `\ce` later. All
 5369 math snippets of the book parse in the app's KaTeX with no error.
 
-The physics modules all convert differently now, in intended ways
-only: `%`, `$`, `#`, `_` and `&` escaped inside `\text{}` (the old
-converter let a `%` swallow the rest of a text run), the column spec of
-a three-column `array` written out (the old `{l}` was a KaTeX error),
-nested lists no longer printed twice, images outside figures no longer
-dropped. The marker counts (exercises, problems, solutions, examples,
-figures, definitions) are identical old against new for every module.
-The physics `source.md` files already in the repository were not
-regenerated. Still flat: `mmultiscripts` (four physics uses, warned),
-bold and italic `mtext` variants, a unit inside `<mn>`, stepwise lists.
+It also escapes `%`, `$`, `#`, `_` and `&` inside `\text{}` (an
+unescaped `%` would swallow the rest of a text run), writes out the
+column spec of a three-column `array` (a bare `{l}` is a KaTeX error),
+prints a nested list once, and keeps images outside figures. Still flat
+for this book: `mmultiscripts` (warned where it occurs), bold and
+italic `mtext` variants, a unit inside `<mn>`, stepwise lists.
 
 `modules.json` lists every chapter with its introduction module and
 sections, the Preface and the thirteen appendices; no module carries a

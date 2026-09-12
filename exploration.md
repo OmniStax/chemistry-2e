@@ -14,9 +14,9 @@ Chapters 1, 2 and 4; the introduction and two sections each of Chapters 6,
 7, 9, 13, 14, 16, 17, 20 and 21; the introduction of every other chapter;
 and the head of every appendix. The section titles of every chapter were
 read from the collection. The modules were converted for reading with the
-physics book's `cnxml2md.py`, since the shared converter had not yet moved
-to `omnistax-content/tools/` when this pass ran, and the raw CNXML was read
-wherever that converter lost something (the list is at the end).
+shared converter at `omnistax-content/tools/cnxml2md.py` as it stood
+before pass 1a extended it for this book, and the raw CNXML was read
+wherever the converter lost something (the list is at the end).
 
 ## The organising units
 
@@ -75,9 +75,8 @@ Everything is inside the module, in this order:
 
 - **Learning objectives** are the module's `<md:abstract>`: a paragraph
   "By the end of this section, you will be able to:" and a `<list>` of
-  three to five items. The physics converter drops the abstract; the
-  chemistry converter has to read it, since it is the only place the
-  objectives are printed.
+  three to five items. The converter has to read the abstract, since it
+  is the only place the objectives are printed.
 - **The narrative**, with `<term>` for a defined word, `<equation>`
   (MathML, almost all of it `<m:mtext>` chemical formulas rather than
   algebra), `<figure>` with a caption, bare `<media>` for an unnumbered
@@ -90,7 +89,7 @@ Everything is inside the module, in this order:
   working, and a paragraph titled "Check Your Learning" that poses a
   parallel problem, followed by a `<note>` titled "Answer:" that carries
   its answer. Every Check Your Learning carries its answer. There is no
-  "Strategy" or "Discussion" paragraph as in the physics book; a few
+  "Strategy" or "Discussion" paragraph; a few
   examples (1.4's water-displacement one, 2.2's Rutherford ones) are
   instructions to use a PhET simulation rather than problems. The book
   has 301 examples and 293 Check Your Learning items over the 114
@@ -135,7 +134,7 @@ Four classes of `<note>`, counted over the book:
 
 | Class | Count | Shape | What it should become |
 |---|---|---|---|
-| `link-to-learning` | 95 | One or two sentences with a link through openstax.org/l/… to a video, a PhET simulation (28 of the links), an interactive periodic table or a data site | Not a note on the page. Where the link is a simulation of an idea the section teaches, it is the trigger for a Sim of our own and the link is left out and named in `notes`; where it is a video or a data site, the link is left out and named in `notes`, as the physics book does with PhET |
+| `link-to-learning` | 95 | One or two sentences with a link through openstax.org/l/… to a video, a PhET simulation (28 of the links), an interactive periodic table or a data site | Not a note on the page. Where the link is a simulation of an idea the section teaches, it is the trigger for a Sim of our own and the link is left out and named in `notes`; where it is a video or a data site, the link is left out and named in `notes` |
 | `everyday-life` | 44 | A titled box of two to six paragraphs, often with its own figure ("Chemistry in Everyday Life: Hazard Diamond", "Breathing and Boyle's Law") | Kept verbatim in the text as a titled aside (`aside.book-note` with the book's title as its eyebrow), with its figure treated as any figure |
 | `sciences-interconnect` | 19 | The same shape ("How Sciences Interconnect: Green Chemistry and Atom Economy") | Kept verbatim, the same treatment |
 | `chemist-portrait` | 10 | A titled biography with a photograph ("Portrait of a Chemist: Paula Hammond") | Kept verbatim, the same treatment; the portrait photograph is kept, since it is the point of the box |
@@ -152,7 +151,7 @@ Equations table, the atom-count tables in 4.1's balancing walkthrough).
 Chapter 12 has 37, most of them data for the rate-law examples. The
 converter flattens a spanned header; where a table matters (the
 polyatomic ions of 2.6, the solubility rules of 4.2, the pressure units
-of 9.1) it is written from the CNXML by hand, as the physics book does.
+of 9.1) it is written from the CNXML by hand.
 A table stays in the text as a `div.book-table` with the book's number
 as its eyebrow.
 
@@ -161,17 +160,17 @@ as its eyebrow.
 `<footnote>` elements sit inline in the prose and in table cells (the
 kilogram's redefinition in 1.4, the IUPAC definition of group 12 in 2.5,
 the pound as a unit of weight in 1.6's conversion table, the two
-citations at the head of 20.1). The physics converter glues the footnote
-text into the sentence; the chemistry converter has to set it apart.
+citations at the head of 20.1). The converter has to set the footnote
+text apart from the sentence rather than glue it in.
 
 ## Front matter and appendices
 
-The Preface (m68662) is what the physics Preface is: "About OpenStax",
+The Preface (m68662) is the publisher's standard front matter: "About OpenStax",
 the licence, the pedagogical features (Chemistry in Everyday Life, How
 Sciences Interconnect, Portrait of a Chemist, Link to Learning, Examples
 with Check Your Learning), the answer-key policy, and the authors. It is
-the book's `intro/` page by root rule 21 and is built as the physics one
-was. Its one useful fact for the tables is the author list, confirmed
+the book's `intro/` page by root rule 21, keeping the book's words with
+no lead, objectives, summary or exercises. Its one useful fact for the tables is the author list, confirmed
 against openstax.org: senior contributing authors Paul Flowers
 (University of North Carolina at Pembroke), Klaus Theopold (University of
 Delaware), Richard Langley (Stephen F. Austin State University) and
@@ -206,8 +205,7 @@ from the CNXML tables by a tool of this book. The periodic table is the
 first sheet and the one every chapter from 1.3 on refers to. Appendix B
 is prose and is the one exception: it is a page, converted as a section
 is, listed nowhere in the chapters. Until the app has sheets, a
-cross-reference to an appendix points at the publisher's page, as the
-physics book's Appendix C reference does.
+cross-reference to an appendix points at the publisher's page.
 
 ## The figure conventions
 
@@ -221,8 +219,8 @@ targets an exercise refers to, the conjugate-pair diagrams of 14.1. They
 are heaviest where the book draws molecules (131 in Chapter 7, 110 in
 Chapter 20), and they are content, not decoration: 14.1's explanation of
 conjugate pairs and 20.1's naming examples are unreadable without them.
-The physics converter drops every bare `<media>`; the chemistry converter
-must keep them as unnumbered figure blocks, and the section plan must
+The converter must keep every bare `<media>` as an unnumbered figure
+block, and the section plan must
 decide each one (a Lewis structure is redrawn live or copied; an
 exercise's diagram is copied faithfully by root rule 14).
 
@@ -246,8 +244,7 @@ of these has three representations to carry. Chapter 6's spectra and
 blackbody curves use the visible spectrum as their colour, which no
 scheme should override.
 
-Images carry no `width` attribute in this bundle (the physics bundle's
-do), so `widths` stays empty and the app shows each image at its natural
+Images carry no `width` attribute in this bundle, so `widths` stays empty and the app shows each image at its natural
 size, capped by the viewport rule.
 
 ## Outside the book
@@ -270,8 +267,8 @@ as `[ref:id]`.
 
 Root rule 23 asks the question before any rule is written: what would
 make an intuitive and stunning learning experience for this book? The
-honest answer is that chemistry, more than physics, is taught through
-pictures of things that cannot be seen, and print can show only one
+honest answer is that chemistry, more than most subjects, is taught
+through pictures of things that cannot be seen, and print can show only one
 frame of each. The three domains of 1.1 (macroscopic, microscopic,
 symbolic) are the book's own frame for it, and the figures that will
 matter most are the ones that show two domains at once: a beaker and
@@ -285,9 +282,8 @@ move. It can draw a beaker, a particle box, a titration curve, an energy
 ladder, a periodic-table grid, a Lewis structure and a cell with
 electrons running round a wire. It cannot rotate a molecule. The app
 does load three.js on every page (`omnistax.config.ts` names
-`/vendor/three.min.js`, r128, as a global `THREE`, and two physics
-figures use it: the braking car of 2.5 and the gravity figure of 6.5),
-so a 3D figure is possible where the idea is spatial, at the cost of
+`/vendor/three.min.js`, r128, as a global `THREE`, and figures in the
+repository already draw with it), so a 3D figure is possible where the idea is spatial, at the cost of
 writing it against `THREE` directly rather than through `figlib`. The
 list marks which figures need it. They are few: molecular geometry
 (7.6), hybrid orbitals (8.2), and crystal lattices (10.6).
@@ -451,8 +447,8 @@ domain the print cannot (root rule 15).
 
 ## What the converter loses
 
-Read against the raw CNXML, the physics `cnxml2md.py` loses these for
-chemistry, listed for the converter pass:
+Read against the raw CNXML, the shared converter as it stood before
+pass 1a lost these for this book, listed for the converter pass:
 
 - the learning objectives in `<md:abstract>`;
 - every bare `<media>` (529 in the book): the image is dropped and the

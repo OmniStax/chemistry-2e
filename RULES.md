@@ -28,8 +28,8 @@ and `modules.json`. Figures sit beside the modules under the bundle's
 `media/`, and the ones a page keeps are copied to `media/<chapter>/`
 here.
 
-`omnistax-content/tools/cnxml2md.py`, the converter the physics book
-wrote and this book extended, turns one module into `source.md`:
+The shared converter at `omnistax-content/tools/cnxml2md.py` turns one
+module into `source.md`:
 
 ```
 python3 ../tools/cnxml2md.py source/osbooks-chemistry-bundle/modules/m68664/index.cnxml > ch01/1.1/source.md
@@ -41,8 +41,8 @@ It converts MathML to LaTeX and keeps the markers the later steps read:
 the image path, alt text and caption, `:::example {ex:id}` and
 `:::exercise {id}` blocks with `PROBLEM:` and `SOLUTION:` inside them,
 `:::note` blocks with their class, and `- {def}` for a glossary entry.
-What the chemistry extension has to add over the physics converter is
-listed in `exploration.md`: the learning objectives from the module's
+What this book needs of it beyond those markers is listed in
+`exploration.md`: the learning objectives from the module's
 `<md:abstract>`, the unnumbered inline images (bare `<media>`, 529 in
 the book), equations inside notes and list items, footnotes set apart
 from the sentence, and the four note classes as named kinds. The ids
@@ -95,8 +95,7 @@ The chapters and their ids:
 A chapter folder is `ch` followed by the two-digit chapter number. A
 chapter's book-level rows (types, symbols, concepts, prerequisite edges)
 are staged in its `book-rows.json` and merged into `book.json` with
-`tools/mergebook.py merge chNN`, never written by hand, as the physics
-book does it.
+`tools/mergebook.py merge chNN`, never written by hand.
 
 The thirteen appendices (A, the periodic table, to M, half-lives) are
 top-level modules outside any chapter. They are not built as pages.
@@ -111,8 +110,7 @@ Appendix B, Essential Mathematics, is prose with worked examples and is
 the one appendix that becomes a page, converted as a section is and
 listed after the chapters; the app has no place for such a page yet, so
 it waits. Until the app serves sheets, a cross-reference to an appendix
-points at the publisher's page, as the physics book's Appendix C
-reference does.
+points at the publisher's page.
 
 ## Apparatus
 
@@ -168,8 +166,8 @@ this is in `book.json`; this file records where it came from.
 
 ## Voice
 
-Full sentences in a plain, measured register, more formal than the
-physics book: the book says "we" when it works something out and "you"
+Full sentences in a plain, measured register, on the formal side of
+plain: the book says "we" when it works something out and "you"
 when it addresses the reader, prefers "note that" and a parenthetical
 aside to a colon, names a thing by its full name before its symbol, and
 explains a rule before it states it. It is patient with its own
@@ -321,9 +319,8 @@ this book:
   appendix as the Structure section lists them, written by a tool of
   this book and served by the app as sheets; and `COLOR.md`, the book's
   colour plan, beside this file.
-- `figures.js`, `text.html` and the dollar-sign rule are as the physics
-  book's Files section has them: one function per figure through
-  `F.sim(root, id, H)`, every `<figure>` carrying `id`, `class`,
+- `figures.js`, `text.html` and the dollar-sign rule: one function per
+  figure through `F.sim(root, id, H)`, every `<figure>` carrying `id`, `class`,
   `data-figure`, `data-original` and `data-original-caption` in
   agreement with the figures table, and a dollar sign written `&#36;` in
   the prose and as the fullwidth `＄` inside an exercise string. A live

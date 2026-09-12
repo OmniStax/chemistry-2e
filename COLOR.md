@@ -3,13 +3,16 @@
 Prepared 2026-09-12 in the full-book pass (root rule 22). Root rule 7
 holds: a colour belongs to a type, a type is a kind of quantity, the
 book declares its types and says nothing about their hues, and a page
-colours only the types its figures draw. Chemistry brings a second
-family of colour alongside the scheme, the chemist's own habit of
-colouring atoms by element, and this plan says how the two are kept
-apart. A chapter's own `COLOR.md` refines this one for the quantities it
-draws; it may bind fewer types, never invent a hue.
+colours only the types its figures draw. Rule 7 now names four families
+of colour, and chemistry is the book that uses all four: the scheme's
+type hues, the chemist's own habit of colouring every atom by element,
+the colours that are physical facts, and a small categorical palette for
+instances that must be told apart. This plan says what each family is
+for in this book and how they are kept apart. A chapter's own `COLOR.md`
+refines this one for the quantities it draws; it may bind fewer types,
+never invent a hue.
 
-## The two families
+## The four families
 
 **Quantities are coloured by the scheme.** An amount of substance, a
 mass, a volume, a concentration, a pressure, a temperature, an energy
@@ -20,33 +23,58 @@ count of particles in the box are one colour, and the pressure gauge,
 the P and the pressure axis are another. Colour coding can be switched
 off, and then every quantity renders in ink.
 
-**Atoms are coloured by element.** The book draws its molecules in one
-fixed palette, stated in its captions and alt texts (carbon black,
-hydrogen white, oxygen red, nitrogen blue, chlorine green, sulfur
-yellow, phosphorus orange, copper brown, sodium purple, titanium gray),
-which is the conventional CPK colouring. An element is not a quantity
-and has no dimension, so it is not a type and takes nothing from the
-scheme. Element colours are a second, fixed, non-scheme palette that a
-figure draws from directly, the way it draws ink and rules from `PAL`.
-They do not switch off with colour coding, since they are the book's
-own drawing convention rather than a signal the app adds, and they do
-not appear in the colour menu. A figure that draws both families (a
-particle box whose molecules are red and white while its pressure and
-temperature are scheme hues) keeps them apart by what each colour is on:
-atoms are always filled discs in element colours, and quantities are
-always sliders, symbols, arrows, axes and shaded regions in scheme hues.
-
-Where the element palette lives is a proposal, not app code written in
-this pass: a constant map in `omnistax-web/src/lib/fig/elements.ts`,
+**Every atom, ion, molecule and particle with an identity is coloured
+by element, always.** The book draws its molecules in one fixed palette,
+stated in its captions and alt texts (carbon black, hydrogen white,
+oxygen red, nitrogen blue, chlorine green, sulfur yellow, phosphorus
+orange, copper brown, sodium purple, titanium gray), which is the
+conventional CPK colouring. An element is not a quantity and has no
+dimension, so it is not a type and takes nothing from the scheme. The
+palette lives in the app as `omnistax-web/src/lib/fig/elements.ts`,
 keyed by element symbol, with a light and a dark value for each so that
-a white hydrogen reads on a light canvas (an outlined disc) and a black
-carbon reads on a dark one, exposed through `figlib` as `F.el('O')` and
-never as a hex literal in a figure. The map carries the ten elements the
-book names and the rest of the CPK table for the molecules the later
-chapters draw. The periodic table sheet uses a third set of colours,
-the book's own shading of metals, metalloids and nonmetals (yellow,
-purple and peach) and its symbol colours for solids, liquids and gases
-(black, blue, red), which are categorical and belong to the sheet alone.
+a white hydrogen reads on a light canvas (a light disc with an ink
+outline) and a black carbon reads on a dark one, and a figure reaches it
+through `figlib` as `F.el('O')`, never as a hex literal. It is not gated
+on the atoms needing to be told apart, and it is not reserved for the
+molecular drawings of the later chapters: a particle box draws the gas
+the reader chose in that element's colours, never an anonymous grey
+dot, and a figure that would otherwise draw a generic particle gives it
+an identity so that it can have one. An ion keeps its element colour and
+carries its charge as a mark. Element colours do not switch off with
+colour coding, since they are the book's own drawing convention rather
+than a signal the app adds, and they do not appear in the colour menu.
+
+**Colour that is the physical fact is drawn as the fact.** A line at
+656 nm on a spectrum is red because light of that wavelength is red; a
+flame test, an indicator at its endpoint, a copper solution, a complex
+ion and a hazard diamond are their own colours. These are pictures of
+what the reader would see, not statements about a quantity, and they
+stay when colour coding is switched off.
+
+**Instances that must be told apart, and carry no type and no element,
+take the categorical palette.** Three gases plotted on one graph, four
+archers on four targets, three isotopes on one axis, the samples of a
+table: the app provides a small ordinal palette as `F.cat(i)`, and a
+page never draws it in a hue it has bound to a type on that page. The
+periodic table sheet's own shading of metals, metalloids and nonmetals
+and its symbol colours for solids, liquids and gases are categorical in
+this sense and belong to the sheet alone. Like the element and physical
+colours, the categorical palette stays when colour coding is switched
+off.
+
+A figure that draws more than one family keeps them apart by what each
+colour is on: atoms are always filled discs in element colours;
+quantities are always sliders, symbols, arrows, axes and shaded regions
+in scheme hues; a physical colour is on the thing that has it and
+nowhere else; and a categorical colour is on the line or the marker of
+the series it names.
+
+**The test for one figure**: everything in it with an identity is
+coloured, or the whole figure is ink. There is no half-coloured figure,
+no box of grey particles beside a coloured gauge. A phase is told by
+packing, as the book draws it, and not by colour; a temperature is shown
+by its type hue on the symbol and the slider, never as a warm-to-cold
+tint on a body.
 
 ## The types, in scheme order
 
@@ -76,17 +104,24 @@ separated hues.
 
 ## What stays in ink
 
-Length and radius (the bond length of 7.2 is measured along an axis but
-never coloured as a type), density, a count of atoms or molecules (the
-subscripts and coefficients of a formula), a percent (yield, composition,
-abundance), a mole ratio and a stoichiometric factor, an equilibrium
-constant and a reaction quotient (Q, K, K_a, K_sp: dimensionless, and
-derived from concentrations that already carry the hue), a rate constant,
-an oxidation number, a quantum number, an atomic number Z and a mass
-number A, electronegativity, and a formal charge. These are labels,
-ratios and counts, and colouring them would make a page wallpaper. A
-figure that plots Q against time colours the concentrations it is built
-from and draws Q in ink.
+Ink is for the frame and for untyped scalars, and for nothing that has
+an identity. The frame is the axes, rules, tick marks, brackets, arrows
+that measure rather than mean, apparatus outlines (the walls of a vessel,
+a piston rod, a balloon's string, the barrel of a syringe) and the
+labels. The untyped scalars are the quantities the book leaves without a
+type: length and radius (the bond length of 7.2 is measured along an
+axis but never coloured as a type), density, a count of atoms or
+molecules (the subscripts and coefficients of a formula), a percent
+(yield, composition, abundance), a mole ratio and a stoichiometric
+factor, an equilibrium constant and a reaction quotient (Q, K, K_a,
+K_sp: dimensionless, and derived from concentrations that already carry
+the hue), a rate constant, an oxidation number, a quantum number, an
+atomic number Z and a mass number A, electronegativity, and a formal
+charge. These are labels, ratios and counts, and colouring them would
+make a page wallpaper. A figure that plots Q against time colours the
+concentrations it is built from and draws Q in ink. An atom, a molecule
+or a particle is never in this list: it has an element, and it takes
+that element's colour.
 
 Two decisions worth naming. Mass is typed, though in a book of mechanics
 it might pass as a parameter, because chemistry's central skill is turning a mass into an
@@ -114,7 +149,10 @@ and temperature, all four, and the reader sees the whole gas law in
 colour; a Chapter 17 page binds potential and charge, and its
 concentrations only where the Nernst figure has a slider for them. A
 figure of molecules alone (a Lewis structure, a geometry) binds nothing:
-it draws in the element palette and ink. The plan for a section lists
+it draws in the element palette and ink. Binding is a matter of the
+scheme alone; the element, physical and categorical colours are not
+bound, and a page draws them wherever it draws the things that carry
+them. The plan for a section lists
 what it binds, and the chapter's `COLOR.md` says which of the fourteen
 types its pages reach and confirms that nothing is coerced into a
 neighbouring type to save a colour.

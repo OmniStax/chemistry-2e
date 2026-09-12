@@ -51,20 +51,27 @@ readouts.
 
 ## How the figures stay legible without the scheme
 
-The element palette carries what the scheme would otherwise carry. An atom is
-always a filled disc in its element colour, from the fixed map the book's
-`COLOR.md` describes (carbon black, hydrogen white, oxygen red, nitrogen blue,
-chlorine green, sulfur yellow, fluorine and xenon from the rest of the CPK
-table), reached through `F.el(symbol)` and never as a hex literal. That map
-now exists, as `omnistax-web/src/lib/fig/elements.ts`, so the fallback this
-plan first described, atoms in ink told apart by size and by fill, is not
-used: every atom of 7.6, on a `figlib` canvas and in a three-dimensional
-scene alike, takes its element's colour, and hydrogen is a light fill with an
-ink outline so that it reads on a light page. A generic central atom E and a
-generic terminal atom X are not elements and take the panel's own grey with
-the letter set beside them. Element colours do not switch off with colour
-coding, because they are the book's own drawing convention rather than a
-signal the app adds.
+The element palette carries what the scheme would otherwise carry, as root
+rule 7 now says it always does: every atom, ion and molecule with an identity
+takes its element colour. An atom is always a filled disc in its element
+colour, from the fixed map the book's `COLOR.md` describes (carbon black,
+hydrogen white, oxygen red, nitrogen blue, chlorine green, sulfur yellow,
+fluorine and xenon from the rest of the CPK table), reached through
+`F.el(symbol)` and never as a hex literal. Every atom of 7.6, on a `figlib`
+canvas and in a three-dimensional scene alike, takes its element's colour,
+and hydrogen is a light fill with an ink outline so that it reads on a light
+page. A generic central atom E and a generic terminal atom X are the one
+case the rule speaks to directly, by asking that a generic particle be given
+an identity so that it can have a colour: the regions-and-lone-pairs Sim
+carries a choice of molecule for exactly this reason, and once the reader
+picks one its atoms are named and coloured by element. The E and the X of
+the abstract view, before a molecule is chosen, are a sketch of a shape
+rather than atoms with identities, and they take the panel's own grey with
+the letter set beside them, as the book's own Figure 7.19 draws them. Element
+colours do not switch off with colour coding,
+because they are the book's own drawing convention rather than a signal the
+app adds. The section passes the test of rule 7 figure by figure: everything
+in each with an identity is coloured, and the rest is frame.
 
 Everything that is not an atom is ink, and the drawings separate by weight and
 by shape rather than by hue:

@@ -5,7 +5,9 @@ Prepared 2026-09-12, and applied with `config.md`. It refines the book's
 rule 22 hold, and nothing here invents a hue. The app dresses the book's
 fourteen declared types from its own palette in declaration order, and a page
 colours only the types its figures draw, its sliders carry or its readouts
-state. Every other symbol on that page renders in ink.
+state. Every other symbol on that page renders in ink, and every particle
+of gas on it renders in the element colours of the gas it is, which is the
+book's own convention and not a binding.
 
 Only 9.2 is built in this pass, so this file says what 9.2 binds and leaves the
 chapter's other five sections to the pass that builds them.
@@ -58,10 +60,17 @@ each colour is on, not by decoration:
   temperature hue.
 - **Amount is the count of moles.** The slider, the number of moles in the
   readout and the n of the equation are the amount hue. The particles drawn
-  inside the box are **ink**: a particle is a thing, not a quantity, and
-  colouring the discs in the amount hue would say that a drawn particle is a
-  mole. The reader ties the discs to n by watching the count change with the
-  slider, which is what the figure is for.
+  inside the box are **not** in the amount hue: a particle is a thing, not a
+  quantity, and colouring the discs in the amount hue would say that a drawn
+  particle is a mole. Nor are they ink. The gas box draws the gas the reader
+  picks, from a named control in ink over He, N₂, O₂, Ar and CO₂, and every
+  particle is that gas drawn in its element's colours through `F.el`: a
+  single disc for helium and argon, two blue discs for nitrogen, two red for
+  oxygen, a black carbon between two red oxygens for carbon dioxide. The
+  reader ties the discs to n by watching the count change with the slider,
+  which is what the figure is for, and ties them to a substance by their
+  colour. The sealed sphere of Figure 9.10 draws its particles the same way,
+  as the nitrogen and oxygen of the air the book fills it with.
 - **The equation binds all four.** PV = nRT is written with each symbol in the
   hue of its type and R and the equals sign in ink, and the live numbers each in
   the hue of the quantity they belong to, so the reader's eye goes from the
@@ -69,6 +78,15 @@ each colour is on, not by decoration:
   the count to the n without a legend.
 
 ## Initial and final states
+
+Where a graph of the section lays more than one gas on one pair of axes, as
+the tables the book prints beside Figures 9.11 and 9.12 invite and as a Sim
+that compares the gases of the box would, the lines are told apart by the
+categorical palette, `F.cat(i)` in the order the gases are listed, and never
+by a hue the page has bound to `pressure`, `volume`, `temperature` or
+`amount`; the axes keep their type hues, and the legend names each gas in
+ink beside its colour. Nothing in 9.2 draws such a graph yet, and the
+statement is here so that the one that does draws it this way.
 
 Every law of the section is stated twice: once as a proportionality and once as
 an equality between two states, P₁/T₁ = P₂/T₂ and its three companions. The two
@@ -90,7 +108,7 @@ reader sees at a glance that an equation relates one quantity to itself.
 The ideal gas constant R, which is a constant of proportionality and not a
 quantity the reader varies; the proportionality constant k the book writes in
 each of the four laws, for the same reason; a molar mass and every mass in a
-prompt; a count of particles and the discs that draw them; a unit name, whether
+prompt; a count of particles, though never the discs that draw them; a unit name, whether
 kPa, torr, psi, atm, bar or L; the subscripts 1 and 2; the names of the four
 laws and of the chemists they are named for; the walls of a vessel, a piston
 rod, a syringe plunger, a balloon's string; and every axis rule, tick, bracket,
@@ -103,16 +121,22 @@ at absolute zero itself** is drawn in ink, since a named point on an axis is a
 label rather than a reading. The book's own data points are drawn in the hue of
 the quantity on the vertical axis, and the fitted line with them.
 
-The element palette reaches one figure of this section. Figure 9.18's three
-balloons hold whichever gases the reader chooses, and the figure's whole
-argument is that the gas does not matter, so the three balloons themselves are
-drawn alike in the volume hue, named in ink, and the one thing that differs
-between them, the mass on the label, is ink as well. The molecules drawn inside
-them are another matter: the app now provides the element palette as
-`F.el(symbol)`, so each atom takes its element's colour, hydrogen as a light
-fill with an ink outline, which is the book's own drawing convention and not a
-signal about any quantity. The particles of the gas box remain generic gas
-particles with no element behind them and stay in ink.
+The element palette reaches every figure of this section that draws a
+particle, since root rule 7 gives every particle with an identity its element
+colour and gives a generic one an identity so that it can have one. Figure
+9.18's three balloons hold whichever gases the reader chooses, and the
+figure's whole argument is that the gas does not matter, so the three balloons
+themselves are drawn alike in the volume hue, named in ink, and the one thing
+that differs between them, the mass on the label, is ink as well. The
+molecules drawn inside them are each in their element's colours through
+`F.el(symbol)`, hydrogen as a light fill with an ink outline, so that a
+balloon of helium and a balloon of ammonia hold visibly different molecules
+in visibly the same volume, which is the book's own drawing convention and
+not a signal about any quantity. The gas box and the sealed sphere draw their
+particles the same way, as said above, and no figure of the section draws a
+grey particle: each figure is either coloured throughout, its quantities in
+their type hues and its particles in their element colours, or it is ink
+throughout, and the test of rule 7 is met on every canvas.
 
 Nothing in this section is coerced into a neighbouring type to save a colour. A
 pressure is not a force, an amount is not a mass, a volume is not a length, and

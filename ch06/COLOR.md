@@ -25,6 +25,19 @@ no figure of the section gives a frequency a reading, an axis or a slider, and
 a symbol that is only written is not a quantity a page draws. A later section
 that plots a frequency binds it then.
 
+Two families of colour meet on this section's canvas, and neither is the
+element palette. The type hues of `energy` and `wavelength` are the page's
+own statement about two quantities, and the colours of the visible band are
+a physical fact. The electron and the nucleus are the one place a reader
+might expect a third, and they do not take it: the Bohr atom is a hydrogen
+atom, but the section never draws it as an element among others, and the
+disc that moves between the rungs is a particle with no element colour to
+carry, since the element palette colours atoms and not the electron that
+belongs to one. So the electron stays in ink, and the figure passes the
+test of rule 7 by the other route: everything in it with an identity that
+the section gives a colour to, the photon and the energy, is coloured, and
+what remains is the frame and the particle whose energy is being stated.
+
 ## What stays in ink
 
 The principal quantum number n and the two values of it a transition runs
@@ -60,7 +73,7 @@ drawings, and a figure that redraws a spectrum keeps those colours as a
 physical fact rather than as a signal the app adds. They do not switch off
 with colour coding and they do not appear in the colour menu.
 
-The two families are kept apart by what each colour is on. The spectrum's
+The families are kept apart by what each colour is on. The spectrum's
 colours are on the band and on the lines lying in it, and nowhere else; the
 wavelength hue is on the axis, the ticks and the λ of the readout, which are
 the page's statement about a quantity rather than a picture of light. A line
@@ -84,7 +97,12 @@ of light, so the two hues have to meet:
   strip to the λ without a legend.
 - **The electron is ink.** The disc that travels between the rungs is not an
   energy; it is the thing whose energy the rung states, and drawing it in the
-  energy hue would say that the particle is the quantity.
+  energy hue would say that the particle is the quantity. It is not an
+  element either, so it takes nothing from the element palette: the figure's
+  colours are the photon's own colour on the strip and the energy hue on the
+  ladder, and the electron is the ink between them. The nucleus is ink for
+  the same reason: it is drawn as a point the orbits are measured from, not
+  as an atom of hydrogen among other atoms.
 
 ## The other four sections
 

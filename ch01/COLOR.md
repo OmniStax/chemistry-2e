@@ -5,7 +5,9 @@ Prepared 2026-09-12, and applied with `config.md`. It refines the book's
 root rule 22 hold, and nothing here invents a hue. The app dresses the book's
 fourteen declared types from its own palette in declaration order, and a page
 colours only the types its figures draw, its sliders carry or its readouts
-state. Every other symbol on that page renders in ink.
+state. Every other symbol on that page renders in ink, and every atom and
+molecule on it renders in its element's colour, which is the book's own
+convention and not a binding.
 
 ## What the chapter binds
 
@@ -32,11 +34,11 @@ Each section binds only its own share, and its plan lists it:
 | Section | Binds |
 |---|---|
 | `intro` | nothing; the introduction page has one photograph and no figure of its own |
-| 1.1 | `temperature`, where the water figure is warmed and cooled; nothing else |
-| 1.2 | `volume`, for the beaker that keeps or loses its volume and for the gases collected over the electrodes; `mass`, for the balance readings that do not change when matter changes form; the particle pictures are ink |
+| 1.1 | `temperature`, where the water figure is warmed and cooled; nothing else; the water molecules are oxygen red and hydrogen white from the element palette in all three phases, and the phase is told by how they pack |
+| 1.2 | `volume`, for the beaker that keeps or loses its volume and for the gases collected over the electrodes; `mass`, for the balance readings that do not change when matter changes form; every molecule in the particle pictures, the water, the hydrogen and the oxygen over the electrodes, is drawn in its element's colours |
 | 1.3 | `mass`, `volume` and `temperature`, for the extensive-against-intensive figure |
 | 1.4 | `mass` and `volume`, for the cube on the balance and the block measured by displacement; the second is named among the base units and is not drawn, so `time` is left unbound |
-| 1.5 | `volume` for the meniscus and the cylinders, `mass` where a mass is weighed beside them |
+| 1.5 | `volume` for the meniscus and the cylinders, `mass` where a mass is weighed beside them; the target Sim draws one archer's group, so nothing on it is told apart by colour, and were it to draw several archers side by side their groups would take the categorical palette `F.cat(i)` |
 | 1.6 | `temperature` alone |
 
 ## How density's mass and volume are told apart
@@ -69,11 +71,20 @@ decoration:
 Where a figure offers a material (gold, lead, water, ethanol) it names it in
 ink and draws the block in a neutral fill from `PAL`, not in a hue of the
 scheme and not in an element colour: a block of gold is a sample with a
-density, not an atom, and the element palette belongs to the molecular
-drawings of the later chapters. The chapter's one molecular picture, the
-particles in the beaker of 1.1 and 1.2, draws its discs from the element
-palette where a water molecule is drawn as one (oxygen red, hydrogen white)
-and in ink where the particles stand for matter in general.
+density, not an atom, and a block has no atoms drawn on it to colour. The
+chapter's molecular pictures are another matter. The water of 1.1, in the
+beaker and in its three phases, is drawn molecule by molecule from the
+element palette, oxygen red and hydrogen white through `F.el`, and the phase
+is told by how the molecules pack, tight and ordered for ice, tight and
+loose for the liquid, sparse for the vapour, never by a tint; the
+temperature hue is on the slider and the T of the readout, not on the water.
+The molecules of 1.2, the water that boils and freezes, the hydrogen and
+oxygen collected over the electrodes and the pictures that set an element
+beside a compound and a mixture, are each drawn in their element's colours
+as well. No particle in this chapter stands for matter in general: each
+picture names what it draws, and what it draws has an element. This is the
+book's own convention and not a signal the app adds, so it stays when colour
+coding is switched off, and it is not bound by any page.
 
 ## The temperature scales of 1.6
 
@@ -106,8 +117,11 @@ the same quantity.
 Length and the edge of a cube, an area, density, a count of anything, a
 percent, a significant figure and the digits that are dropped, an accuracy
 and a precision, a conversion factor and the units that cancel inside one,
-the names of the elements and of the states of matter, and every label,
-bracket, axis rule and arrow that is not a quantity of a bound type.
+the names of the elements and of the states of matter, the outlines of the
+beaker, the cylinder and the balance, and every label, bracket, axis rule
+and arrow that is not a quantity of a bound type. Not the molecules: a drawn
+atom is never ink in this chapter, since each one has an element and takes
+its colour.
 
 Two symbols of the chapter look like typed ones and are not, and neither may
 be written with a `\k` macro:

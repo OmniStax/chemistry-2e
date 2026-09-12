@@ -9,19 +9,21 @@ state. Every other symbol on that page renders in ink.
 
 ## What the chapter binds
 
-Four of the book's fourteen types, and they are the first four the book
-declares after `amount`, so the hues are well separated.
+Three of the book's fourteen types, and they stand well apart in the order
+the book declares them, so the hues are well separated.
 
 | Type | Where it is bound | What wears it |
 |---|---|---|
-| `mass` | 1.4, 1.5 | the balance reading, the m of the density readout, the mass slider of the cube, the mass axis where one is drawn |
-| `volume` | 1.2, 1.4, 1.5 | the cube and its edge readout, the water level and the displaced volume in the cylinder, the V of the density readout, the litre and millilitre marks of the nested-volumes figure |
+| `mass` | 1.2, 1.3, 1.4, 1.5 | the balance reading, the m of the density readout, the mass slider of the cube, the mass axis where one is drawn |
+| `volume` | 1.2, 1.3, 1.4, 1.5 | the cube and its edge readout, the water level and the displaced volume in the cylinder, the V of the density readout, the litre and millilitre marks of the nested-volumes figure |
 | `temperature` | 1.1, 1.3, 1.6 | the temperature slider of the water beaker, the thermometer columns and their three scales, the T of the conversion readouts, the temperature reading that does not change when the sample is doubled |
-| `time` | 1.4 | the second where the base units are shown; bound only if the 1.4 figure gives the second a reading of its own, and left unbound otherwise |
 
-`amount of substance` is not bound anywhere in the chapter: the mole is named
-in Table 1.2 as a base unit and nowhere counted, and a unit named in a table
-is not a quantity a figure draws. `concentration`, `pressure`, `energy`,
+`time` was prepared as a fourth, and it is not bound: the second is named in
+Table 1.2 as a base unit, and no figure of 1.4 gives it a reading of its own,
+so nothing in the chapter draws a time and the word second stays in ink.
+`amount of substance` is not bound either, for the same reason: the mole is
+named in Table 1.2 as a base unit and nowhere counted, and a unit named in a
+table is not a quantity a figure draws. `concentration`, `pressure`, `energy`,
 `entropy`, `rate`, `wavelength`, `frequency`, `potential` and `charge` are
 untouched; the chapter neither draws nor states them.
 
@@ -31,9 +33,9 @@ Each section binds only its own share, and its plan lists it:
 |---|---|
 | `intro` | nothing; the introduction page has one photograph and no figure of its own |
 | 1.1 | `temperature`, where the water figure is warmed and cooled; nothing else |
-| 1.2 | `volume`, for the beaker that keeps or loses its volume; the particle pictures are ink |
+| 1.2 | `volume`, for the beaker that keeps or loses its volume and for the gases collected over the electrodes; `mass`, for the balance readings that do not change when matter changes form; the particle pictures are ink |
 | 1.3 | `mass`, `volume` and `temperature`, for the extensive-against-intensive figure |
-| 1.4 | `mass`, `volume`, and `time` if the second is given a reading |
+| 1.4 | `mass` and `volume`, for the cube on the balance and the block measured by displacement; the second is named among the base units and is not drawn, so `time` is left unbound |
 | 1.5 | `volume` for the meniscus and the cylinders, `mass` where a mass is weighed beside them |
 | 1.6 | `temperature` alone |
 

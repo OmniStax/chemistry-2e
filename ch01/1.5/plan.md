@@ -225,6 +225,18 @@ bathtub.
 - No variable or equation row of `chapter.json` belongs to 1.5, so there
   is no anchor to write.
 - concepts `rounding-rules`, `significant-figures-in-calculations`
-  (`evidence`): the examples are named "Example 1.5.1" and "Examples
+  (`evidence`): the examples are named "Example 1.3" and "Examples
   1.5.2, 1.5.3 and 1.5.4"; the book numbers them chapter-wide, Example
   1.3 to Example 1.7, and the pages label them so.
+
+Decided in the chapter pass, 2026-09-12: the evidence of `rounding-rules` and
+of `significant-figures-in-calculations` now names the examples as the
+publisher numbers them, Example 1.3 to Example 1.7, and the change is merged
+into `book.json`. The four archers stay on the exercise card's own `figure`,
+which the validator accepts, and the eight unnumbered figures keep their
+"Figure" eyebrow.
+
+The chapter pass removed the three of the book's own titled headers that stood
+as an `<h3>` directly under this page's own `<h2>`, since the two said the same
+thing twice and no other page of the chapter prints both; the page's own
+headers carry the split, as root rule 3 asks, and `config.md` records the form.

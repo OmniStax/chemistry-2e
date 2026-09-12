@@ -140,8 +140,12 @@ Learning carries its answer. Because the key runs by position, a
 conceptual question is keyed as often as a numerical one; a keyed
 "Answers will vary" or a solution that narrates a PhET run is not a
 graded answer and is kept as an open answer the reader compares with.
-Unkeyed exercises are left out and named in the section's
-`exercise_notes`, and no answer is ever generated (root rule 13).
+An unkeyed numerical exercise is left out and named in the section's
+`exercise_notes`, and no answer is ever generated (root rule 13). An
+unkeyed conceptual exercise is kept with a suggested approach that the
+page marks as OmniStax's own, never as a graded answer, which is the
+default root rule 13 sets for open questions. Chapter 1 was built this
+way.
 
 A periodic table sheet, a constants sheet and a units table are wanted
 from Chapter 1 on: 1.3 shows the table, 1.4 and 1.6 convert units, and
@@ -319,6 +323,9 @@ this book:
   appendix as the Structure section lists them, written by a tool of
   this book and served by the app as sheets; and `COLOR.md`, the book's
   colour plan, beside this file.
+- The degree sign in a temperature is `°` (U+00B0) everywhere, in the
+  tables as in the text; the bundle sometimes prints the masculine
+  ordinal `º` in its place, and the conversion normalises it.
 - `figures.js`, `text.html` and the dollar-sign rule: one function per
   figure through `F.sim(root, id, H)`, every `<figure>` carrying `id`, `class`,
   `data-figure`, `data-original` and `data-original-caption` in

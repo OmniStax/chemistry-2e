@@ -489,7 +489,7 @@
       "section": "1.4",
       "name": "Density",
       "why": "The density of a substance is the ratio of the mass of a sample to its volume, and it is the chapter's first derived quantity. It is intensive, so it identifies a substance rather than a sample: lead and gold are both dense, but a brick of gold and a brick of lead of the same size do not weigh the same, which is the whole of the section's opening story.",
-      "evidence": "The section defines density, prints it as the section's one key equation, tabulates the densities of twenty-one common substances in Table 1.4, and Example 1.4.1 computes the density of a lead cube from its edge and its mass while an exercise identifies a piece of jewelry from its measured density.",
+      "evidence": "The section defines density, prints it as the section's one key equation, tabulates the densities of twenty-one common substances in Table 1.4, and Example 1.1 computes the density of a lead cube from its edge and its mass while an exercise identifies a piece of jewelry from its measured density.",
       "eq": "eq-density"
     },
     {
@@ -498,7 +498,7 @@
       "section": "1.4",
       "name": "Measuring a volume by displacement of water",
       "why": "A cube's volume can be calculated from its edge, but most objects are not cubes. Lowering an object into a partly filled graduated cylinder raises the water by exactly the object's volume, which turns an irregular shape into a subtraction and makes the density of anything that sinks measurable with a balance and a cylinder.",
-      "evidence": "Example 1.4.2 works the method through on iron and on wood, reading a rise from 25.5 to 29.5 mL as a volume of 4.0 mL, its Check Your Learning applies it to a foam sample, three end-of-chapter exercises measure blocks the same way, and 1.5 uses the method again on a piece of rebar."
+      "evidence": "Example 1.2 works the method through on iron and on wood, reading a rise from 25.5 to 29.5 mL as a volume of 4.0 mL, its Check Your Learning applies it to a foam sample, three end-of-chapter exercises measure blocks the same way, and 1.5 uses the method again on a piece of rebar."
     },
     {
       "id": "exact-and-uncertain-numbers",
@@ -538,7 +538,7 @@
       "section": "1.5",
       "name": "Rounding a number to a given number of digits",
       "why": "A digit to be dropped that is less than five rounds down and one greater than five rounds up. When the dropped digit is a five with nothing but zeros after it, the retained digit is rounded to whichever value is even, which is a rule from statistics and is there to keep the rounding from leaning one way over many calculations.",
-      "evidence": "The section states the three rounding rules and illustrates them on four numbers, Example 1.5.1 rounds four more with its Check Your Learning rounding four again, and two exercises round twelve numbers to two significant figures."
+      "evidence": "The section states the three rounding rules and illustrates them on four numbers, Example 1.3 rounds four more with its Check Your Learning rounding four again, and two exercises round twelve numbers to two significant figures."
     },
     {
       "id": "significant-figures-in-calculations",
@@ -578,7 +578,7 @@
       "section": "1.6",
       "name": "Converting a quantity from one unit to another",
       "why": "Multiplying by one conversion factor after another, each oriented so that the unwanted unit cancels, converts a measurement through as many steps as it takes. It is the most-used skill of the chapter, and it works the same whether the conversion is between two metric units, between metric and customary units, or between units of an area or a volume.",
-      "evidence": "Example 1.6.1 converts a frisbee's mass from grams to ounces and its Check Your Learning converts quarts to liters, and more than twenty exercises convert lengths, volumes, masses and speeds, including a red blood cell's diameter, a barrel of oil, a weight lifter's mass and the dimensions of a two-by-four."
+      "evidence": "Example 1.8 converts a frisbee's mass from grams to ounces and its Check Your Learning converts quarts to liters, and more than twenty exercises convert lengths, volumes, masses and speeds, including a red blood cell's diameter, a barrel of oil, a weight lifter's mass and the dimensions of a two-by-four."
     },
     {
       "id": "compute-with-units",
@@ -610,7 +610,7 @@
       "section": "1.6",
       "name": "Converting between Celsius and Fahrenheit",
       "why": "The Fahrenheit temperature is nine fifths of the Celsius temperature plus thirty-two, and the relation rearranges to give the Celsius temperature from the Fahrenheit one. Both forms are on the book's key equation list, and they are the conversion a reader meets outside the laboratory more often than any other.",
-      "evidence": "The section derives both forms from the slope and intercept it computes, Example 1.6.4 converts body temperature from Celsius and Example 1.6.5 an oven setting from Fahrenheit, each with a Check Your Learning, and eight exercises convert temperatures from the boiling point of gold to the inside of a freezer.",
+      "evidence": "The section derives both forms from the slope and intercept it computes, Example 1.11 converts body temperature from Celsius and Example 1.12 an oven setting from Fahrenheit, each with a Check Your Learning, and eight exercises convert temperatures from the boiling point of gold to the inside of a freezer.",
       "eq": "eq-fahrenheit-from-celsius"
     },
     {

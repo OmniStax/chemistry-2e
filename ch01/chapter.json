@@ -50,55 +50,63 @@
    "type": "mass",
    "meaning": "the mass of a sample, the measure of the amount of matter in it",
    "unit": "g",
-   "section": "1.4"
+   "section": "1.4",
+   "anchor": "1.4-density"
   },
   {
    "sym": "V",
    "type": "volume",
    "meaning": "the volume of a sample, the amount of space it occupies",
    "unit": "cm³",
-   "section": "1.4"
+   "section": "1.4",
+   "anchor": "1.4-volume"
   },
   {
    "sym": "d",
    "meaning": "the density of a substance, the ratio of the mass of a sample to its volume",
-   "unit": "g/cm³",
-   "section": "1.4"
+   "unit": "g/cm³ (g/mL for liquids and solids, g/L for gases)",
+   "section": "1.4",
+   "anchor": "1.4-density"
   },
   {
    "sym": "t",
    "type": "time",
    "meaning": "an interval of time, measured in the SI base unit of time",
    "unit": "s",
-   "section": "1.4"
+   "section": "1.4",
+   "anchor": "1.4-time"
   },
   {
    "sym": "T",
    "type": "temperature",
    "meaning": "the temperature of a sample, measured in the SI base unit of temperature",
    "unit": "K",
-   "section": "1.4"
+   "section": "1.4",
+   "anchor": "1.4-temperature"
   },
   {
    "sym": "T_C",
    "type": "temperature",
    "meaning": "a temperature read on the Celsius scale, on which water freezes at 0 °C and boils at 100 °C",
    "unit": "°C",
-   "section": "1.6"
+   "section": "1.6",
+   "anchor": "1.6-linear-not-proportional"
   },
   {
    "sym": "T_F",
    "type": "temperature",
    "meaning": "a temperature read on the Fahrenheit scale, on which water freezes at 32 °F and boils at 212 °F",
    "unit": "°F",
-   "section": "1.6"
+   "section": "1.6",
+   "anchor": "1.6-linear-not-proportional"
   },
   {
    "sym": "T_K",
    "type": "temperature",
    "meaning": "a temperature read on the kelvin scale, an absolute scale whose zero is the lowest temperature that can theoretically be achieved",
    "unit": "K",
-   "section": "1.6"
+   "section": "1.6",
+   "anchor": "1.6-kelvin-scale"
   }
  ],
  "equations": [
@@ -107,14 +115,16 @@
    "concept": "density",
    "section": "1.4",
    "latex": "\\text{density}=\\frac{\\text{mass}}{\\text{volume}}",
-   "important": true
+   "important": true,
+   "anchor": "1.4-density"
   },
   {
    "id": "eq-speed",
    "section": "1.6",
    "latex": "\\text{speed}=\\frac{\\text{distance}}{\\text{time}}",
    "condition": "an average speed, computed from a measured distance and the time taken to cover it",
-   "important": false
+   "important": false,
+   "anchor": "1.6-dimensional-analysis"
   },
   {
    "id": "eq-fahrenheit-from-celsius",
@@ -122,7 +132,8 @@
    "section": "1.6",
    "latex": "T_{\\text{°F}}=\\left(\\frac{9}{5}\\times T_{\\text{°C}}\\right)+32",
    "ktex": "\\kTF=\\left(\\frac{9}{5}\\times \\kTC\\right)+32",
-   "important": true
+   "important": true,
+   "anchor": "1.6-linear-not-proportional"
   },
   {
    "id": "eq-celsius-from-fahrenheit",
@@ -130,7 +141,8 @@
    "section": "1.6",
    "latex": "T_{\\text{°C}}=\\frac{5}{9}\\times \\left(T_{\\text{°F}}-32\\right)",
    "ktex": "\\kTC=\\frac{5}{9}\\times \\left(\\kTF-32\\right)",
-   "important": true
+   "important": true,
+   "anchor": "1.6-linear-not-proportional"
   },
   {
    "id": "eq-kelvin-from-celsius",
@@ -138,7 +150,8 @@
    "section": "1.6",
    "latex": "T_{\\text{K}}=T_{\\text{°C}}+273.15",
    "ktex": "\\kTK=\\kTC+273.15",
-   "important": true
+   "important": true,
+   "anchor": "1.6-kelvin-scale"
   },
   {
    "id": "eq-celsius-from-kelvin",
@@ -146,7 +159,8 @@
    "section": "1.6",
    "latex": "T_{\\text{°C}}=T_{\\text{K}}-273.15",
    "ktex": "\\kTC=\\kTK-273.15",
-   "important": true
+   "important": true,
+   "anchor": "1.6-kelvin-scale"
   }
  ],
  "glossary": [

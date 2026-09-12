@@ -246,3 +246,14 @@ graph's axes.
   introduced in `temperature-scales` and reinforced in `kelvin-scale`;
   nothing to change unless the chapter pass prefers the node introduced
   where the figure is.
+
+Decided in the chapter pass, 2026-09-12: every anchor above is written into
+`chapter.json`. The `temperature-scales` node is left where the section puts
+it, introduced where the three scales are compared and reinforced where
+Figure 1.28 is placed, since the book places the figure there and the node's
+evidence reads correctly either way.
+
+The chapter pass removed the book's own header "Conversion Factors and
+Dimensional Analysis", which stood as an `<h3>` directly under this page's own
+`<h2>` and said the same thing twice; the page's own headers carry the split,
+as root rule 3 asks, and `config.md` records the form.

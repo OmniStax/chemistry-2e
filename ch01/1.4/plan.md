@@ -44,18 +44,18 @@ own, so the page divides them. One block per idea:
    1.25). Introduces `volume`; uses `derived-units` and `unit-prefixes`.
 7. `density` **Density** (book's sub-header; the definition, the units,
    the range from gasoline to gold, Table 1.4, the sentence on measuring
-   mass and volume separately, the key equation, Example 1.4.1 as
+   mass and volume separately, the key equation, Example 1.1 as
    `ex-density` with its Check Your Learning inline after it). Introduces
    `density`; uses `derived-units`, `volume` and
    `extensive-and-intensive-properties`.
 8. `displacement` **Measuring a volume by displacement of water** (book:
-   Example 1.4.2 as `ex-displacement`, with its Check Your Learning inline
+   Example 1.2 as `ex-displacement`, with its Check Your Learning inline
    after it). Introduces `measure-volume-by-displacement`; uses `density`
    and `volume`.
 
 The two Link to Learning notes (the scientific-notation refresher and the
 PhET density simulation) are dropped and named in `notes`. The two
-"simulation" links inside Example 1.4.2 are unlinked words, and the
+"simulation" links inside Example 1.2 are unlinked words, and the
 example's own instructions are kept verbatim: the interactive figure that
 stands before the example is the simulator the example's words point at.
 Its note "see end of chapter Exercise 42 and Exercise 43" is written with
@@ -80,8 +80,8 @@ Key Equations table is the chapter's `eq-density`.
 | unit-prefixes | skill | prefixes | Table 1.3; exercise fs-idm344858160 |
 | derived-units | idea | derived | the paragraph under Derived SI Units; exercise fs-idm314038064 (c), (d), (f), (g) |
 | volume | idea | volume | Figure 1.25 and the four glossary terms; no book exercise tests it alone |
-| density | result, eq-density | density | Table 1.4, the key equation, Example 1.4.1 and its Check Your Learning, exercise fs-idm165750544 |
-| measure-volume-by-displacement | skill | displacement | Example 1.4.2 and its Check Your Learning, exercise fs-idm165750544 |
+| density | result, eq-density | density | Table 1.4, the key equation, Example 1.1 and its Check Your Learning, exercise fs-idm165750544 |
+| measure-volume-by-displacement | skill | displacement | Example 1.2 and its Check Your Learning, exercise fs-idm165750544 |
 
 Three nodes (`measurement-parts`, `scientific-notation`, `volume`) have no
 book exercise of their own on this page; no question is generated for
@@ -124,7 +124,7 @@ headline · graph
    graph: the cube in the volume hue sits on a balance whose pan, needle
    and reading are the mass hue · readout density = $\km / \kV$ with the
    live numbers, m in the mass hue, V in the volume hue, density in ink ·
-   reproduces Example 1.4.1 on load (lead at 11.34 g/cm³ gives the book's
+   reproduces Example 1.1 on load (lead at 11.34 g/cm³ gives the book's
    90.7 g; the densities are the book's own to three figures) · draws
    mass, volume.
 5. `sim-displacement` · Sim, replaces nothing · measure-volume-by-
@@ -139,7 +139,7 @@ headline · graph
    reads the block's mass in the mass hue, and a graduated cylinder on the
    right shows the water before and after in the volume hue with the rise
    bracketed · readout $\kV = V_2 - V_1$ and density = $\km / \kV$ with the
-   numbers · reproduces Example 1.4.2 on load (iron at 7.87 g/mL gives the
+   numbers · reproduces Example 1.2 on load (iron at 7.87 g/mL gives the
    book's 31.48 g; wood 0.65, foam 0.230 and the unknown 3.26 g/mL are the
    values the book's simulator uses) and carries the simulation exercises
    below · draws mass, volume.
@@ -147,7 +147,7 @@ headline · graph
 Photographs and unnumbered images: one photograph (Figure 1.24, kept, above);
 no unnumbered image in this section. Every sketch is replaced. Figures that
 serve exercises: `sim-displacement` carries the keyed PhET exercise and
-Example 1.4.2's Check Your Learning.
+Example 1.2's Check Your Learning.
 
 Extra simulations (root rule 15), considered and left:
 
@@ -237,3 +237,12 @@ allows.
 - The `d` row's unit reads g/cm³; the section also writes g/mL and g/L, and
   the row could say "g/cm³ (g/mL for liquids and solids, g/L for gases)"
   in the book's words.
+
+Decided in the chapter pass, 2026-09-12: every anchor above is written into
+`chapter.json`, and the `d` row's unit now reads "g/cm³ (g/mL for liquids and
+solids, g/L for gases)". The page's two worked examples are renumbered to the
+publisher's chapter-wide numbering, Example 1.1 and Example 1.2, in the text,
+in the figure captions and in the exercise prompts that name them; `config.md`
+records the numbering. Example 1.2's Check Your Learning is kept inline as the
+page built it, and `config.md` now says so. The floating-foam item
+fs-idm160286704 stays held and named in `exercise_notes`.

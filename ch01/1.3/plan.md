@@ -145,3 +145,8 @@ so is everything else on the page. The element palette is not used.
 - Nothing: `chapter.json` carries no variable row and no equation row for
   1.3, so there is no anchor to write, and every concept id, glossary term
   and symbol the page needs already exists.
+
+Checked in the chapter pass, 2026-09-12: nothing was wanted and nothing was
+changed on this page beyond the form of the Hazard Diamond note, whose heading
+is now an eyebrow carrying the book's own heading above the note's title, as
+every note of the chapter is.

@@ -224,3 +224,8 @@ cell, the states, the elements. No element palette.
 - When `F.el` (the element palette) exists in `figlib`, Figure 1.14
   (`fig-molecules`) can be redrawn live and its row changed from `photo` to
   `sim`; until then it is the book's image.
+
+Decided in the chapter pass, 2026-09-12: `ch01/COLOR.md` now names 1.2 in the
+`mass` row and in the `volume` row, and the section table records that this
+page binds both. Figure 1.14 stays the book's photograph, and the redrawing
+it would allow is carried forward in the log entry with the element palette.

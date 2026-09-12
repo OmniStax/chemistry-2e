@@ -125,3 +125,78 @@ exercises of which the key covers 873, and 766 glossary entries.
 `mergebook.py` still derives its book from its own location, so a copy
 in this book's `tools/` will serve until it takes the book from an
 argument.
+
+
+## Pass 2 (2026-09-12): Chapter 1, Essential Ideas, is built
+
+Prompted by: Chen asking for the chapter to be built in one job, with no
+per-section check-ins, a plan file written before each page and left for
+review after.
+
+What was built. Eight pages: the book's Preface as its own introduction in
+`intro/`, the chapter introduction in `ch01/intro/`, and the six sections 1.1
+to 1.6, none of them folded. Thirty-eight figure rows across them: fourteen
+photographs of the book kept with their numbers and their credit clauses,
+twelve faithful copies of the book's flowcharts, unnumbered diagrams and
+cylinders, and twelve interactive figures, nine of which carry a number of the
+book (the states of matter of 1.6, the balances of 1.8, the electrolysis cell
+of 1.15, the metre rule of 1.23, the nested volumes of 1.25, the meniscus of
+1.26, the archers of 1.27 and the three thermometers of 1.28) and three of
+which replace nothing and are Sims: the extensive-against-intensive jug of
+1.3, and the density cube and the displacement cylinder of 1.4. Every figure
+of the chapter is still: nothing in this material has a clock in it, so no
+figure registers a cycle and none carries a transport. Seventy-nine exercises,
+twelve of them the Check Your Learning items placed inline after their
+examples; 93 concept coverage rows against 39 concept nodes with 47
+prerequisite edges; 57 glossary entries, 8 variables and 6 equations in
+`chapter.json`; six of the book's tables kept in the running text as
+`div.book-table`, numbered Table 1.1 to Table 1.6 as the publisher numbers
+them.
+
+What the chapter pass changed. The anchors the sections asked for are written
+on all eight variable rows and all six equation rows, each naming an id in the
+section's own text, and the density row's unit now reads as the book writes
+it, "g/cm³ (g/mL for liquids and solids, g/L for gases)". The book numbers its
+worked examples chapter-wide, as it numbers its figures and its tables, so
+1.4's two examples are Example 1.1 and Example 1.2 rather than a number built
+from the section, and the evidence of five concept nodes now names the
+examples the way the pages label them. Three of the book's own titled headers
+in 1.5 and one in 1.6 stood as an `<h3>` directly under the page's own `<h2>`
+and said the same thing twice; the page's header now stands in the book's
+place, as it does on every other page of the chapter. The three Chemistry in
+Everyday Life notes carry the book's heading as a `div.eyebrow` above the
+note's title, which is the form the app's stylesheet sets. `ch01/COLOR.md` and
+`config.md` now say what the pages do rather than what was expected of them:
+the chapter binds `mass`, `volume` and `temperature`, and `time` is not bound,
+since the second is named among the base units of 1.4 and no figure gives it a
+reading.
+
+What was learned about this book's constructs. The publisher's chapter-wide
+numbering reaches further than the figures: a table, a worked example and a
+figure are all numbered from the start of the chapter, and a page that numbers
+an example from its section will disagree with the prose that cites it. The
+`everyday-life` note is the book's own box and the app has a form for it
+already, the eyebrow inside `.note`, so the box needs no new class. An exercise
+placed inline needs its `place.after` to be an id the text carries: the app
+mounts a card host of its own beside that id, and the twelve Check Your
+Learning items of this chapter all land where the book puts them. The bundle's
+images carry no width, so `widths` stays empty throughout and every image is
+served at its natural size.
+
+What is left for a later pass. The element palette of the book's molecular
+drawings has no home in `figlib` yet: `F.el('O')` and `F.el('H')` would let
+1.1's water figure and 1.2's Figure 1.14 draw their molecules live instead of
+in ink and in the book's photograph. The periodic table of 1.3 waits for the
+sheet mechanism, and 1.3 keeps the book's own image and names the deferral. The
+floating-foam exercise of 1.4, fs-idm160286704, waits for a figure that can
+float a block in a fluid whose density the reader sets.
+
+The checks. `npm run check:content` reads the whole book with no error, 11
+checks over 1 chapter, 6 sections and 2 introduction pages; `astro check`
+reports no error across 142 files; the book builds. A headless pass over all
+eight pages in light and in dark found no console error and no page error,
+every image with a natural width, a canvas under every interactive figure, no
+transport anywhere, and the inline exercises mounted at their own hosts.
+Screenshots of all 23 canvases at 1400 wide show no label collision and no
+clipped text. The physics book still checks clean, which this pass touched
+nothing of.

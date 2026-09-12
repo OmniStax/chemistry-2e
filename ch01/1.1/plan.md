@@ -163,3 +163,8 @@ hue, no new macro; `\kT` is the one macro the page writes.
   exist; `sim-water` draws its water molecules in ink (oxygen filled,
   hydrogen hollow) and should take `F.el('O')` and `F.el('H')` once the
   layer has them.
+
+Decided in the chapter pass, 2026-09-12: the element palette is a book-level
+want and is not built in this chapter. `sim-water` keeps its ink discs, filled
+for oxygen and hollow for hydrogen, and the want is carried forward in the
+chapter's log entry under what is left for a later pass.

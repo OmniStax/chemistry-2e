@@ -37,7 +37,7 @@ The log pass:
     python3 tools/mergebook.py log ch04
 
 appends `<chapter dir>/log-pass.md` to LOG.md as the next numbered pass
-(the file's first line is the pass title, without the "### Pass N" prefix)
+(the file's first line is the pass title, without the "## Pass N" prefix)
 and deletes the staged file.
 """
 import fcntl
@@ -182,9 +182,9 @@ def log(ch):
     title = re.sub(r"^Pass \d+ \([^)]*\):\s*", "", title)
     logp = os.path.join(BOOK, "LOG.md")
     existing = open(logp, encoding="utf-8").read()
-    nums = [int(m) for m in re.findall(r"^### Pass (\d+)", existing, re.M)]
+    nums = [int(m) for m in re.findall(r"^#{2,3} Pass (\d+)", existing, re.M)]
     n = (max(nums) if nums else 0) + 1
-    entry = f"\n\n### Pass {n} ({date.today().isoformat()}): {title}\n\n{body.strip()}\n"
+    entry = f"\n\n## Pass {n} ({date.today().isoformat()}): {title}\n\n{body.strip()}\n"
     with open(logp, "a", encoding="utf-8") as f:
         f.write(entry)
     os.remove(staged_path)

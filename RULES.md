@@ -322,7 +322,15 @@ this book:
 - `sheets/`, the reference data of the appendices, one JSON file per
   appendix as the Structure section lists them, written by a tool of
   this book and served by the app as sheets; and `COLOR.md`, the book's
-  colour plan, beside this file.
+  colour plan, beside this file. The first of them is
+  `sheets/elements.json`, Appendix A as data — all 118 elements, which
+  `book.json` declares as the sheet `elements` and which the app draws as
+  the periodic table and reads every chemical formula of the prose
+  against. It is written by `tools/elements.py` and marked
+  `"generated_by": "tool"`: the values in it are standard reference
+  values rather than the book's words, so a later pass may replace any of
+  them with Appendix A's own, and the list of sections that name each
+  element is recomputed by the tool as more of the book is built.
 - The degree sign in a temperature is `°` (U+00B0) everywhere, in the
   tables as in the text; the bundle sometimes prints the masculine
   ordinal `º` in its place, and the conversion normalises it.

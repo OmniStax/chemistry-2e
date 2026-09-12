@@ -1403,5 +1403,13 @@
       "concept": "standard-temperature-and-pressure",
       "prereq": "avogadro-law"
     }
+  ],
+  "sheets": [
+    {
+      "id": "elements",
+      "title": "The Elements",
+      "kind": "elements",
+      "file": "sheets/elements.json"
+    }
   ]
 }

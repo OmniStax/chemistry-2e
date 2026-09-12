@@ -1,0 +1,284 @@
+{
+  "id": "6.2",
+  "module": "m68732",
+  "chapter": "6",
+  "title": "The Bohr Model",
+  "short": "The Bohr Model",
+  "lead": "Bohr kept the planetary picture of the atom but allowed the electron only certain orbits, each with a definite energy, and let the atom emit or absorb light only when the electron moves between two of them. This section sets out that model for hydrogen and the one-electron ions, works out the energy and the radius of each orbit and the photon that a transition between two of them produces, and shows that the Rydberg equation of the line spectrum follows from it.",
+  "objectives": [
+    "Describe the Bohr model of the hydrogen atom",
+    "Use the Rydberg equation to calculate energies of light emitted or absorbed by hydrogen atoms"
+  ],
+  "summary_html": "<p>Bohr incorporated Planck’s and Einstein’s quantization ideas into a model of the hydrogen atom that resolved the paradox of atom stability and discrete spectra. The Bohr model of the hydrogen atom explains the connection between the quantization of photons and the quantized emission from atoms. Bohr described the hydrogen atom in terms of an electron moving in a circular orbit about a nucleus. He postulated that the electron was restricted to certain orbits characterized by discrete energies. Transitions between these allowed orbits result in the absorption or emission of photons. When an electron moves from a higher-energy orbit to a more stable one, energy is emitted in the form of a photon. To move an electron from a stable orbit to a more excited one, a photon of energy must be absorbed. Using the Bohr model, we can calculate the energy of an electron and the radius of its orbit in any one-electron system.</p>",
+  "notes": "The section prints no Link to Learning note and no photograph, so nothing of the text is left out; the six end-of-chapter exercises that have no answer in the book’s key are left out of the problem set.",
+  "ai": {
+    "text": "Claude Fable 5.1",
+    "figures": "Claude Fable 5.1"
+  },
+  "built": "2026-09-12",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Both Check Your Learning items carry the book’s own answer from the note that follows them. Answers to the end-of-chapter exercises come from the book’s key, which covers the odd-numbered items of the chapter’s list; the six unkeyed numerical items, fs-idp5349488 (the ionization energy of ground-state hydrogen), fs-idp205846816 (the lowest energy in Li²⁺), fs-idm55982592 (the electron with n = 6 in hydrogen), fs-idp48379808 (the distance from the nucleus at −8.72 × 10⁻²⁰ J), fs-idp40494944 (the photon from n = 5 to n = 2 in He⁺) and fs-idp165455056 (the wavelengths emitted by atoms spread over n = 1 to 4), are left out and no answer is computed. The two unkeyed conceptual items, on why the n = 3 electron is bound less tightly and on the spectra of hydrogen and calcium, are kept with a suggested approach marked as OmniStax’s own. The comparison of the Bohr and Rutherford models leans on the nuclear atom introduced in Chapter 2, and the spectra question leans on the line spectra introduced in 6.1; both are kept here with this section’s concepts, since neither of those sections is a page to hold them for. Nothing is taken from another section and nothing is held for one. Numeric answers accept 2% tolerance.",
+  "figures": [
+    {
+      "id": "sim-series",
+      "kind": "sim",
+      "draws": ["wavelength"]
+    },
+    {
+      "id": "sim-bohr-ladder",
+      "kind": "sim",
+      "number": "6.14",
+      "folds": ["6.15"],
+      "originals": ["/media/ch06/CNX_Chem_06_02_Hlevels.jpg", "/media/ch06/CNX_Chem_06_02_BohrArrows.jpg"],
+      "original_caption": "(Figure 6.14) Quantum numbers and energy levels in a hydrogen atom. The more negative the calculated value, the lower the energy. (Figure 6.15) The horizontal lines show the relative energy of orbits in the Bohr model of the hydrogen atom, and the vertical arrows depict the energy of photons absorbed (left) or emitted (right) as electrons move between these orbits.",
+      "draws": ["energy", "wavelength"]
+    },
+    {
+      "id": "sim-orbit-rung",
+      "kind": "sim",
+      "draws": ["energy"]
+    },
+    {
+      "id": "fig-spectra",
+      "kind": "figure",
+      "draws": []
+    }
+  ],
+  "coverage": [
+    { "span": "planetary-model", "concept": "classical-atom-instability", "verb": "introduces" },
+    { "span": "planetary-model", "concept": "atoms-and-molecules", "verb": "uses" },
+    { "span": "stationary-states", "concept": "bohr-stationary-states", "verb": "introduces" },
+    { "span": "stationary-states", "concept": "photon-emission-absorption", "verb": "introduces" },
+    { "span": "stationary-states", "concept": "bohr-energy-levels", "verb": "introduces" },
+    { "span": "stationary-states", "concept": "photon-energy", "verb": "uses" },
+    { "span": "stationary-states", "concept": "classical-atom-instability", "verb": "uses" },
+    { "span": "rydberg-recovered", "concept": "rydberg-constant-recovered", "verb": "introduces" },
+    { "span": "rydberg-recovered", "concept": "bohr-energy-levels", "verb": "uses" },
+    { "span": "rydberg-recovered", "concept": "photon-emission-absorption", "verb": "uses" },
+    { "span": "rydberg-recovered", "concept": "line-spectra", "verb": "uses" },
+    { "span": "energy-ladder", "concept": "ground-and-excited-states", "verb": "introduces" },
+    { "span": "energy-ladder", "concept": "photon-emission-absorption", "verb": "reinforces" },
+    { "span": "energy-ladder", "concept": "bohr-energy-levels", "verb": "uses" },
+    { "span": "hydrogen-like", "concept": "hydrogen-like-ions", "verb": "introduces" },
+    { "span": "hydrogen-like", "concept": "bohr-energy-levels", "verb": "reinforces" },
+    { "span": "orbit-radius", "concept": "bohr-orbit-radius", "verb": "introduces" },
+    { "span": "orbit-radius", "concept": "hydrogen-like-ions", "verb": "uses" },
+    { "span": "orbit-radius", "concept": "bohr-energy-levels", "verb": "uses" },
+    { "span": "orbit-radius", "concept": "ground-and-excited-states", "verb": "uses" },
+    { "span": "beyond-bohr", "concept": "bohr-stationary-states", "verb": "reinforces" },
+    { "span": "beyond-bohr", "concept": "hydrogen-like-ions", "verb": "reinforces" },
+    { "span": "ex-bohr-energy", "concept": "bohr-energy-levels", "verb": "uses" },
+    { "span": "ex-bohr-energy", "concept": "hydrogen-like-ions", "verb": "uses" },
+    { "span": "ex-bohr-energy", "concept": "ground-and-excited-states", "verb": "uses" },
+    { "span": "ex-transition", "concept": "calculating-bohr-transition-energies", "verb": "introduces" },
+    { "span": "ex-transition", "concept": "photon-emission-absorption", "verb": "uses" },
+    { "span": "ex-transition", "concept": "bohr-energy-levels", "verb": "uses" },
+    { "span": "features", "concept": "bohr-stationary-states", "verb": "reinforces" },
+    { "span": "features", "concept": "bohr-orbit-radius", "verb": "reinforces" },
+    { "span": "features", "concept": "rydberg-constant-recovered", "verb": "reinforces" }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp247735616",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": { "at": "inline", "after": "ex-bohr-energy" },
+      "cite": "hydrogen-like",
+      "prompt": "The electron in Figure 6.15 is promoted even further to an orbit with <em>n</em> = 6. What is its new energy?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": -6.053e-20,
+        "unit": "J",
+        "hint": "Use E = −kZ²/n² with Z = 1 for hydrogen and n = 6; the energy is negative, since it is measured from the ionization limit.",
+        "solution": "−6.053 $\\times$ 10<sup>–20</sup> J"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp30549440",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": { "at": "inline", "after": "ex-transition" },
+      "cite": "rydberg-recovered",
+      "prompt": "What is the energy in joules and the wavelength in meters of the photon produced when an electron falls from the <em>n</em> = 5 to the <em>n</em> = 3 level in a He<sup>+</sup> ion (<em>Z</em> = 2 for He<sup>+</sup>)?",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          { "part": "energy", "value": 6.198e-19, "unit": "J", "hint": "The photon carries the whole difference kZ²(1/3² − 1/5²), with Z = 2." },
+          { "part": "wavelength", "value": 3.205e-7, "unit": "m", "hint": "Divide hc by the energy of the photon." }
+        ],
+        "solution": "6.198 $\\times$ 10<sup>–19</sup> J; 3.205 $\\times$ 10<sup>−7</sup> m"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp230795648",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": { "at": "end" },
+      "cite": "orbit-radius",
+      "prompt": "Why is the electron in a Bohr hydrogen atom bound less tightly when it has a quantum number of 3 than when it has a quantum number of 1?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "The energy of the electron in the orbit with quantum number <em>n</em> is <em>E<sub>n</sub></em> = −<em>k</em>/<em>n</em><sup>2</sup>, measured from the ionization limit at <em>E</em> = 0, so the electron with <em>n</em> = 3 has an energy of −<em>k</em>/9 while the electron with <em>n</em> = 1 has an energy of −<em>k</em>. Removing the electron altogether takes <em>k</em>/9 in the first case and <em>k</em> in the second, nine times as much, so the electron with the higher quantum number is bound less tightly. The radius of the orbit tells the same story: it is 9<em>a</em><sub>0</sub> for <em>n</em> = 3 and <em>a</em><sub>0</sub> for <em>n</em> = 1, and the electrostatic attraction between the electron and the nucleus decreases as the electron moves away from the nucleus, so an electron further out is held less tightly."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp105537776",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": { "at": "end" },
+      "cite": "stationary-states",
+      "prompt": "What does it mean to say that the energy of the electrons in an atom is quantized?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Quantized energy means that the electrons can possess only certain discrete energy values; values between those quantized values are not permitted."
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp21050416",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": { "at": "end" },
+      "cite": "ex-transition",
+      "prompt": "The electron volt (eV) is a convenient unit of energy for expressing atomic-scale energies. It is the amount of energy that an electron gains when subjected to a potential of 1 volt; 1 eV = 1.602 $\\times$ 10<sup>–19</sup> J. Using the Bohr model, determine the energy, in electron volts, of the photon produced when an electron in a hydrogen atom moves from the orbit with <em>n</em> = 5 to the orbit with <em>n</em> = 2. Show your calculations.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 2.856,
+        "unit": "eV",
+        "hint": "Find the energy difference in joules from kZ²(1/n₁² − 1/n₂²), then divide by the number of joules in one electron volt.",
+        "solution": "2.856 eV"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp171106816",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": { "at": "end" },
+      "cite": "hydrogen-like",
+      "prompt": "Using the Bohr model, determine the lowest possible energy for the electron in the He<sup>+</sup> ion.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": -8.716e-18,
+        "unit": "J",
+        "hint": "The lowest energy is the ground state, n = 1, and the nuclear charge of He⁺ is 2.",
+        "solution": "−8.716 $\\times$ 10<sup>−18</sup> J"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idp44268800",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": { "at": "end" },
+      "cite": "stationary-states",
+      "prompt": "Using the Bohr model, determine the energy of an electron with <em>n</em> = 8 in a hydrogen atom.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": -3.405e-20,
+        "unit": "J",
+        "hint": "Divide k by 8² and keep the sign negative.",
+        "solution": "−3.405 $\\times$ 10<sup>−20</sup> J"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm7154736",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": { "at": "end" },
+      "cite": "orbit-radius",
+      "prompt": "What is the radius, in angstroms, of the orbital of an electron with <em>n</em> = 8 in a hydrogen atom?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 33.9,
+        "unit": "Å",
+        "hint": "The radius is n²a₀/Z, and one angstrom is 10⁻¹⁰ m.",
+        "solution": "33.9 Å"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idp90797744",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": { "at": "end" },
+      "cite": "ex-transition",
+      "prompt": "Using the Bohr model, determine the energy in joules of the photon produced when an electron in a Li<sup>2+</sup> ion moves from the orbit with <em>n</em> = 2 to the orbit with <em>n</em> = 1.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 1.471e-17,
+        "unit": "J",
+        "hint": "The nuclear charge of Li²⁺ is 3, so the energy difference is nine times what it would be in hydrogen.",
+        "solution": "1.471 $\\times$ 10<sup>−17</sup> J"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp24507936",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": { "at": "end" },
+      "cite": "planetary-model",
+      "prompt": "How are the Bohr model and the Rutherford model of the atom similar? How are they different?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Both involve a relatively heavy nucleus with electrons moving around it, although strictly speaking, the Bohr model works only for one-electron atoms or ions. According to classical mechanics, the Rutherford model predicts a miniature “solar system” with electrons moving about the nucleus in circular or elliptical orbits that are confined to planes. If the requirements of classical electromagnetic theory that electrons in such orbits would emit electromagnetic radiation are ignored, such atoms would be stable, having constant energy and angular momentum, but would not emit any visible light (contrary to observation). If classical electromagnetic theory is applied, then the Rutherford atom would emit electromagnetic radiation of continually increasing frequency (contrary to the observed discrete spectra), thereby losing energy until the atom collapsed in an absurdly short time (contrary to the observed long-term stability of atoms). The Bohr model retains the classical mechanics view of circular orbits confined to planes having constant energy and angular momentum, but restricts these to quantized values dependent on a single quantum number, <em>n</em>. The orbiting electron in Bohr’s model is assumed not to emit any electromagnetic radiation while moving about the nucleus in its stationary orbits, but the atom can emit or absorb electromagnetic radiation when the electron changes from one orbit to another. Because of the quantized orbits, such “quantum jumps” will produce discrete spectra, in agreement with observations."
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idp97637648",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": { "at": "end" },
+      "cite": "features",
+      "figure": {
+        "src": "/media/ch06/CNX_Chem_06_01_2spectra.jpg",
+        "alt": "A continuous spectrum of visible light from 4000 to 7400 angstroms above the line spectra of sodium, hydrogen, calcium, and mercury; hydrogen shows four lines, in the violet, indigo, blue, and orange, and calcium shows many more.",
+        "caption": "The spectra of hydrogen and of calcium, with those of sodium and mercury, against a continuous spectrum marked in angstroms."
+      },
+      "prompt": "The spectra of hydrogen and of calcium are shown here. What causes the lines in these spectra? Why are the colors of the lines different? Suggest a reason for the observation that the spectrum of calcium is more complicated than the spectrum of hydrogen.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Each line is the light of one kind of transition: the electron moves from one allowed orbit to another of lower energy, and the atom emits a single photon whose energy is the difference between the two orbital energies, |Δ<em>E</em>| = <em>hc</em>/<em>λ</em>. The colors differ because the energy differences differ, and a larger difference gives a photon of shorter wavelength; the four lines of hydrogen are the transitions that end on the <em>n</em> = 2 orbit, from red at 656 nm for <em>n</em> = 3 to violet at 410 nm for <em>n</em> = 6. Hydrogen has a single electron and its allowed energies are set by one quantum number, so only a few differences fall in the visible. Calcium has twenty electrons, whose interactions with one another and with the nucleus the Bohr model does not describe, and an atom with many electrons has many more allowed energies and so many more differences between them, which is why its spectrum carries so many more lines."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    { "exercise": "cyl1", "concept": "bohr-energy-levels" },
+    { "exercise": "cyl1", "concept": "ground-and-excited-states", "weight": 2 },
+    { "exercise": "cyl2", "concept": "calculating-bohr-transition-energies" },
+    { "exercise": "cyl2", "concept": "hydrogen-like-ions", "weight": 2 },
+    { "exercise": "e1", "concept": "ground-and-excited-states" },
+    { "exercise": "e1", "concept": "bohr-orbit-radius", "weight": 2 },
+    { "exercise": "e2", "concept": "bohr-stationary-states" },
+    { "exercise": "e3", "concept": "calculating-bohr-transition-energies" },
+    { "exercise": "e3", "concept": "photon-emission-absorption", "weight": 2 },
+    { "exercise": "e4", "concept": "bohr-energy-levels" },
+    { "exercise": "e4", "concept": "hydrogen-like-ions", "weight": 2 },
+    { "exercise": "e5", "concept": "bohr-energy-levels" },
+    { "exercise": "e6", "concept": "bohr-orbit-radius" },
+    { "exercise": "e7", "concept": "calculating-bohr-transition-energies" },
+    { "exercise": "e7", "concept": "hydrogen-like-ions", "weight": 2 },
+    { "exercise": "e8", "concept": "classical-atom-instability" },
+    { "exercise": "e8", "concept": "bohr-stationary-states" },
+    { "exercise": "e9", "concept": "rydberg-constant-recovered" },
+    { "exercise": "e9", "concept": "photon-emission-absorption", "weight": 2 }
+  ]
+}

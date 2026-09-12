@@ -1,0 +1,1144 @@
+{
+ "id": "7.6",
+ "module": "m68742",
+ "chapter": "7",
+ "title": "Molecular Structure and Polarity",
+ "short": "Molecular Structure and Polarity",
+ "lead": "A Lewis structure is drawn flat, but a molecule occupies space, and its bonds have measurable distances and angles. This section uses valence shell electron-pair repulsion theory to predict the arrangement of the regions of electron density around a central atom and, from the number of lone pairs among them, the molecular structure that results; it then adds the bond dipole moments of a molecule as vectors in three dimensions to decide whether the molecule as a whole is polar.",
+ "objectives": [
+  "Predict the structures of small molecules using valence shell electron pair repulsion (VSEPR) theory",
+  "Explain the concepts of polar covalent bonds and molecular polarity",
+  "Assess the polarity of a molecule based on its bonding and structure"
+ ],
+ "summary_html": "<p>VSEPR theory predicts the three-dimensional arrangement of atoms in a molecule. It states that valence electrons will assume an electron-pair geometry that minimizes repulsions between areas of high electron density (bonds and/or lone pairs). Molecular structure, which refers only to the placement of atoms in a molecule and not the electrons, is equivalent to electron-pair geometry only when there are no lone electron pairs around the central atom. A dipole moment measures a separation of charge. For one bond, the bond dipole moment is determined by the difference in electronegativity between the two atoms. For a molecule, the overall dipole moment is determined by both the individual bond moments and how these dipoles are arranged in the molecular structure. Polar molecules (those with an appreciable dipole moment) interact with electric fields, whereas nonpolar molecules do not.</p>",
+ "notes": "The two Link to Learning notes are left out: the PhET molecular shape simulator, whose place the bench of Figure 7.16 takes, and the PhET molecule polarity simulation, whose place the bond-moment bench of Figure 7.26 and Figure 7.28 take; Examples 7.17 and 7.18 keep the book’s words about those simulations.",
+ "ai": {
+  "text": "Claude Fable 5.1",
+  "figures": "Claude Fable 5.1"
+ },
+ "built": "2026-09-12",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the unkeyed items fs-idm179024, fs-idm5404912, fs-idp23296480, fs-idp24689744, fs-idm62749296, fs-idp90274464, fs-idp95408832, fs-idp120029040, fs-idp126465632 and fs-idm2150336, each of which asks for a definite prediction the book does not key, are left out, and the unkeyed conceptual items fs-idp281408272, fs-idp134531056 and fs-idm5235936 carry a suggested approach marked as OmniStax’s own. Of the five items that are instructions to run a PhET simulation, four are set against the figures of this page with their prompts rewritten to name them: fs-idp56829344 against the bond-moment bench of Figure 7.26 set to NH₃, with its part (a) on ozone left out since the bench draws no bond moment between two atoms of the same element, and fs-idp46580240, fs-idp17379424 and fs-idp37961056 against the bench of Figure 7.16; the two keyed ones keep the book’s answers and the two unkeyed ones carry a suggested approach marked as OmniStax’s own. The fifth, fs-idp67065360, a two-atom molecule whose electronegativities the reader adjusts, is carried by no figure of the page and is left out. The Check Your Learning of Example 7.17 is set against the bench of Figure 7.16 with its prompt rewritten and the book’s “Answers will vary” kept as an open answer. The two questions that ask which of two atoms or which of two words is right are set as a choice over the book’s own options. The images the book prints inside its answers to fs-idp149682416, fs-idp122940912 and fs-idp73458400 are kept in those answers.",
+ "figures": [
+  {
+   "id": "sim-formaldehyde",
+   "kind": "sim",
+   "number": "7.14",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_CH2O.jpg"
+   ],
+   "original_caption": "Bond distances (lengths) and angles are shown for the formaldehyde molecule, H₂CO.",
+   "draws": []
+  },
+  {
+   "id": "fig-bef2",
+   "kind": "figure",
+   "number": "7.15",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_BeF2.jpg"
+   ],
+   "original_caption": "The BeF₂ molecule adopts a linear structure in which the two bonds are as far apart as possible, on opposite sides of the Be atom.",
+   "draws": []
+  },
+  {
+   "id": "sim-vsepr",
+   "kind": "sim",
+   "number": "7.16",
+   "folds": [
+    "7.19",
+    "7.20"
+   ],
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_Egeom.jpg",
+    "/media/ch07/CNX_Chem_07_06_molgeom.jpg",
+    "/media/ch07/CNX_Chem_07_06_Axeq.jpg"
+   ],
+   "original_caption": "The basic electron-pair geometries predicted by VSEPR theory maximize the space around any region of electron density (bonds or lone pairs).",
+   "draws": []
+  },
+  {
+   "id": "sim-domains",
+   "kind": "sim",
+   "draws": []
+  },
+  {
+   "id": "fig-methane",
+   "kind": "figure",
+   "number": "7.17",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_CH4.jpg"
+   ],
+   "original_caption": "The molecular structure of the methane molecule, CH₄, is shown with a tetrahedral arrangement of the hydrogen atoms. VSEPR structures like this one are often drawn using the wedge and dash notation, in which solid lines represent bonds in the plane of the page, solid wedges represent bonds coming up out of the plane, and dashed lines represent bonds going down into the plane.",
+   "draws": []
+  },
+  {
+   "id": "fig-ammonia",
+   "kind": "figure",
+   "number": "7.18",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_NH3.jpg"
+   ],
+   "original_caption": "(a) The electron-pair geometry for the ammonia molecule is tetrahedral with one lone pair and three single bonds. (b) The trigonal pyramidal molecular structure is determined from the electron-pair geometry. (c) The actual bond angles deviate slightly from the idealized angles because the lone pair takes up a larger region of space than do the single bonds, causing the HNH angle to be slightly smaller than 109.5°.",
+   "draws": []
+  },
+  {
+   "id": "fig-lewis-co2",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_CO2_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-lewis-bcl3",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_BCl3_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-bcl3",
+   "kind": "figure",
+   "number": "7.21",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_BCl3mol.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-lewis-nh4",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_NH4_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-ammonium",
+   "kind": "figure",
+   "number": "7.22",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_NH4mol.jpg"
+   ],
+   "original_caption": "The ammonium ion displays a tetrahedral electron-pair geometry as well as a tetrahedral molecular structure.",
+   "draws": []
+  },
+  {
+   "id": "fig-lewis-h2o",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_H2O_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-water",
+   "kind": "figure",
+   "number": "7.23",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_H2Omol.jpg"
+   ],
+   "original_caption": "(a) H₂O has four regions of electron density around the central atom, so it has a tetrahedral electron-pair geometry. (b) Two of the electron regions are lone pairs, so the molecular structure is bent.",
+   "draws": []
+  },
+  {
+   "id": "fig-lewis-sf4",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_SF4_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-sf4",
+   "kind": "figure",
+   "number": "7.24",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_SF4mol.jpg"
+   ],
+   "original_caption": "(a) SF4 has a trigonal bipyramidal arrangement of the five regions of electron density. (b) One of the regions is a lone pair, which results in a seesaw-shaped molecular structure.",
+   "draws": []
+  },
+  {
+   "id": "fig-lewis-xef4",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_XeF4_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-xef4",
+   "kind": "figure",
+   "number": "7.25",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_XEF4mol.jpg"
+   ],
+   "original_caption": "(a) XeF₄ adopts an octahedral arrangement with two lone pairs (red lines) and four bonds in the electron-pair geometry. (b) The molecular structure is square planar with the lone pairs directly across from one another.",
+   "draws": []
+  },
+  {
+   "id": "fig-lewis-glycine",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_gly_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-glycine-3d",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_gly3D_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "sim-bond-moments",
+   "kind": "sim",
+   "number": "7.26",
+   "folds": [
+    "7.27"
+   ],
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_BondVector.jpg",
+    "/media/ch07/CNX_Chem_07_06_CO2H2Odip.jpg"
+   ],
+   "original_caption": "(a) There is a small difference in electronegativity between C and H, represented as a short vector. (b) The electronegativity difference between B and F is much larger, so the vector representing the bond moment is much longer.",
+   "draws": []
+  },
+  {
+   "id": "fig-ocs",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_OSC_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-chloromethane",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_CHCl3_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-h2s-nh3",
+   "kind": "figure",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_SH2NH3_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "sim-field",
+   "kind": "sim",
+   "number": "7.28",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_06_Dipolfield.jpg"
+   ],
+   "original_caption": "(a) Molecules are always randomly distributed in the liquid state in the absence of an electric field. (b) When an electric field is applied, polar molecules like HF will align to the dipoles with the field direction.",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "bond-angles",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-angles",
+   "concept": "atoms-and-molecules",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-angles",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "vsepr",
+   "concept": "vsepr-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "vsepr",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "vsepr",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "uses"
+  },
+  {
+   "span": "geometries",
+   "concept": "electron-pair-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "structure-versus-geometry",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "structure-versus-geometry",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "repulsion-order",
+   "concept": "electron-pair-repulsion-order",
+   "verb": "introduces"
+  },
+  {
+   "span": "repulsion-order",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "uses"
+  },
+  {
+   "span": "repulsion-order",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "axial-equatorial",
+   "concept": "axial-and-equatorial-positions",
+   "verb": "introduces"
+  },
+  {
+   "span": "axial-equatorial",
+   "concept": "electron-pair-repulsion-order",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting",
+   "concept": "predict-molecular-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting",
+   "concept": "axial-and-equatorial-positions",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-co2-bcl3",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ammonium",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-water",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-water",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-sf4",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-sf4",
+   "concept": "axial-and-equatorial-positions",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-xef4",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-xef4",
+   "concept": "axial-and-equatorial-positions",
+   "verb": "uses"
+  },
+  {
+   "span": "multicenter",
+   "concept": "predict-molecular-structure",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-glycine",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-shape-simulator",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-dipole",
+   "concept": "bond-dipole-moment",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-dipole",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "bond-dipole",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "uses"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "molecular-polarity",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "bond-dipole-moment",
+   "verb": "uses"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "predict-molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "polar-properties",
+   "concept": "molecular-polarity",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-polarity-simulator",
+   "concept": "molecular-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-polarity-simulator",
+   "concept": "bond-dipole-moment",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm2891376",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-co2-bcl3"
+   },
+   "cite": "predicting",
+   "prompt": "Carbonate, ${\\text{CO}}_{3}{}^{\\text{2−}},$ is a common polyatomic ion found in various materials from eggshells to antacids. What are the electron-pair geometry and molecular structure of this polyatomic ion?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The electron-pair geometry is trigonal planar and the molecular structure is trigonal planar. Due to resonance, all three C–O bonds are identical. Whether they are single, double, or an average of the two, each bond counts as one region of electron density."
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp17356704",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ammonium"
+   },
+   "cite": "predicting",
+   "prompt": "Identify a molecule with trigonal bipyramidal molecular structure.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Any molecule with five electron pairs around the central atoms including no lone pairs will be trigonal bipyramidal. PF<sub>5</sub> is a common example."
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm16663792",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-water"
+   },
+   "cite": "predicting",
+   "prompt": "The hydronium ion, H<sub>3</sub>O<sup>+</sup>, forms when acids are dissolved in water. Predict the electron-pair geometry and molecular structure of this cation.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "electron pair geometry: tetrahedral; molecular structure: trigonal pyramidal"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp82124112",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-sf4"
+   },
+   "cite": "predicting",
+   "prompt": "Predict the electron pair geometry and molecular structure for molecules of XeF<sub>2</sub>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The electron-pair geometry is trigonal bipyramidal. The molecular structure is linear."
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp47136656",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-xef4"
+   },
+   "cite": "predicting",
+   "prompt": "In a certain molecule, the central atom has three lone pairs and two bonds. What will the electron pair geometry and molecular structure be?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "electron pair geometry: trigonal bipyramidal; molecular structure: linear"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idp116942080",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-glycine"
+   },
+   "cite": "multicenter",
+   "figure": {
+    "src": "/media/ch07/CNX_Chem_07_06_ala_img.jpg",
+    "alt": "A Lewis structure depicts a nitrogen atom with two lone pairs of electrons that is single bonded to two hydrogen atoms and a carbon atom, which is, in turn, single bonded to a hydrogen atom, a methyl group and another carbon atom. This carbon atom is single bonded to an oxygen atom with two lone pairs of electrons and single bonded to an oxygen that has two lone pairs of electrons and a single bond to a hydrogen atom."
+   },
+   "prompt": "Another amino acid is alanine, which has the Lewis structure shown here. Predict the electron-pair geometry and local structure of the nitrogen atom, the three carbon atoms, and the oxygen atom with hydrogen attached:",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "electron-pair geometries: nitrogen––tetrahedral; carbon (<u>C</u>H)—tetrahedral; carbon (<u>C</u>H<sub>3</sub>)—tetrahedral; carbon (<u>C</u>O<sub>2</sub>)—trigonal planar; oxygen (<u>O</u>H)—tetrahedral; local structures: nitrogen—trigonal pyramidal; carbon (<u>C</u>H)—tetrahedral; carbon (<u>C</u>H<sub>3</sub>)—tetrahedral; carbon (<u>C</u>O<sub>2</sub>)—trigonal planar; oxygen (<u>O</u>H)—bent (109°)"
+   }
+  },
+  {
+   "id": "cyl7",
+   "source_id": "fs-idp54012352",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-shape-simulator"
+   },
+   "cite": "geometries",
+   "prompt": "Build a more complex molecule on the bench of Figure 7.16, setting five or six regions of electron density and one or more lone pairs. Identify the electron-pair geometry, the molecular structure, and the bond angles. Then try to find a chemical formula that would match the structure you have built.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Answers will vary. For example, an atom with four single bonds, a double bond, and a lone pair has an octahedral electron-group geometry and a square pyramidal molecular structure. XeOF<sub>4</sub> is a molecule that adopts this structure."
+   }
+  },
+  {
+   "id": "cyl8",
+   "source_id": "fs-idm708128",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-polarity-simulator"
+   },
+   "cite": "bond-dipole",
+   "prompt": "Determine the partial charges that will give the largest possible bond dipoles.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The largest bond moments will occur with the largest partial charges. The two solutions above represent how unevenly the electrons are shared in the bond. The bond moments will be maximized when the electronegativity difference is greatest. The controls for A and C should be set to one extreme, and B should be set to the opposite extreme. Although the magnitude of the bond moment will not change based on whether B is the most electronegative or the least, the direction of the bond moment will."
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp14744000",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structure-versus-geometry",
+   "prompt": "Explain why the HOH molecule is bent, whereas the HBeH molecule is linear.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The placement of the two sets of unpaired electrons in water forces the bonds to assume a tetrahedral arrangement, and the resulting HOH molecule is bent. The HBeH molecule (in which Be has only two electrons to bond with the two electrons from the hydrogens) must have the electron pairs as far from one another as possible and is therefore linear."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp281408272",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structure-versus-geometry",
+   "prompt": "What feature of a Lewis structure can be used to tell if a molecule’s (or ion’s) electron-pair geometry and molecular structure will be identical?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The passage on electron-pair geometry versus molecular structure answers this directly: the two are the same when there are no lone electron pairs around the central atom, and different when there are. So the feature to look for in the Lewis structure is the central atom itself, and whether every one of its regions of electron density is a bond. Methane in Figure 7.17 and the examples of CO<sub>2</sub>, BCl<sub>3</sub> and the ammonium ion show the case where they agree, and ammonia in Figure 7.18 shows what one lone pair does."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm2043120",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structure-versus-geometry",
+   "prompt": "Explain the difference between electron-pair geometry and molecular structure.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Space must be provided for each pair of electrons whether they are in a bond or are present as lone pairs. Electron-pair geometry considers the placement of all electrons. Molecular structure considers only the bonding-pair geometry."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp134531056",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "repulsion-order",
+   "prompt": "Why is the H–N–H angle in NH<sub>3</sub> smaller than the H–C–H bond angle in CH<sub>4</sub>? Why is the H–N–H angle in ${\\text{NH}}_{4}{}^{+}$ identical to the H–C–H bond angle in CH<sub>4</sub>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Both questions turn on the order of repulsions the section states, lone pair-lone pair, then lone pair-bonding pair, then bonding pair-bonding pair, and on the fact that a lone pair occupies a larger region of space than a single bond. Count the regions of electron density around the nitrogen atom in each ion or molecule and note how many of them are lone pairs; Figure 7.18 shows what the one lone pair of ammonia does to the ideal tetrahedral angle, and Example 7.12 works through the ammonium ion, which has four bonds and no lone pair, as methane does."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp170194320",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "Explain how a molecule that contains polar bonds can be nonpolar.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "As long as the polar bonds are compensated (for example. two identical atoms are found directly across the central atom from one another), the molecule can be nonpolar."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm5235936",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "As a general rule, MX<sub>n</sub> molecules (where M represents a central atom and X represents terminal atoms; n = 2 – 5) are polar if there is one or more lone pairs of electrons on M. NH<sub>3</sub> (M = N, X = H, n = 3) is an example. There are two molecular structures with lone pairs that are exceptions to this rule. What are they?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "A molecule is polar only if the sum of its bond moments does not cancel, so the exceptions are the structures in which the bond moments of identical M–X bonds point in opposite directions in pairs, even though the central atom carries lone pairs. Go down the rows of Figure 7.19 that have lone pairs, and for each molecular structure ask whether every bond has a partner directly across the central atom from it; the passage on axial and equatorial positions and Examples 7.14 and 7.15 describe where the lone pairs sit in the five-region and six-region cases, and the bond-moment bench of Figure 7.26 shows how opposed bond moments cancel."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp57252544",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting",
+   "prompt": "Predict the electron pair geometry and the molecular structure of each of the following molecules or ions:\n(a) SF<sub>6</sub>\n(b) PCl<sub>5</sub>\n(c) BeH<sub>2</sub>\n(d) ${\\text{CH}}_{3}{}^{+}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Both the electron geometry and the molecular structure are octahedral. (b) Both the electron geometry and the molecular structure are trigonal bipyramid. (c) Both the electron geometry and the molecular structure are linear. (d) Both the electron geometry and the molecular structure are trigonal planar."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp67177072",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting",
+   "prompt": "What are the electron-pair geometry and the molecular structure of each of the following molecules or ions?\n(a) ClF<sub>5</sub>\n(b) ${\\text{ClO}}_{2}{}^{\\text{−}}$\n(c) ${\\text{TeCl}}_{4}{}^{\\text{2−}}$\n(d) PCl<sub>3</sub>\n(e) SeF<sub>4</sub>\n(f) ${\\text{PH}}_{2}{}^{\\text{−}}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) electron-pair geometry: octahedral, molecular structure: square pyramidal; (b) electron-pair geometry: tetrahedral, molecular structure: bent; (c) electron-pair geometry: octahedral, molecular structure: square planar; (d) electron-pair geometry: tetrahedral, molecular structure: trigonal pyramidal; (e) electron-pair geometry: trigonal bypyramidal, molecular structure: seesaw; (f) electron-pair geometry: tetrahedral, molecular structure: bent (109°)"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp123628080",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting",
+   "prompt": "Identify the electron pair geometry and the molecular structure of each of the following molecules:\n(a) ClNO (N is the central atom)\n(b) CS<sub>2</sub>\n(c) Cl<sub>2</sub>CO (C is the central atom)\n(d) Cl<sub>2</sub>SO (S is the central atom)\n(e) SO<sub>2</sub>F<sub>2</sub> (S is the central atom)\n(f) XeO<sub>2</sub>F<sub>2</sub> (Xe is the central atom)\n(g) ${\\text{ClOF}}_{2}{}^{+}$ (Cl is the central atom)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) electron-pair geometry: trigonal planar, molecular structure: bent (120°); (b) electron-pair geometry: linear, molecular structure: linear; (c) electron-pair geometry: trigonal planar, molecular structure: trigonal planar; (d) electron-pair geometry: tetrahedral, molecular structure: trigonal pyramidal; (e) electron-pair geometry: tetrahedral, molecular structure: tetrahedral; (f) electron-pair geometry: trigonal bipyramidal, molecular structure: seesaw; (g) electron-pair geometry: tetrahedral, molecular structure: trigonal pyramidal"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp87226080",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "Which of the following molecules and ions contain polar bonds? Which of these molecules and ions have dipole moments?\n(a) ClF<sub>5</sub>\n(b) ${\\text{ClO}}_{2}{}^{\\text{−}}$\n(c) ${\\text{TeCl}}_{4}{}^{\\text{2−}}$\n(d) PCl<sub>3</sub>\n(e) SeF<sub>4</sub>\n(f) ${\\text{PH}}_{2}{}^{\\text{−}}$\n(g) XeF<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "All of these molecules and ions contain polar bonds. Only ClF<sub>5</sub>, ${\\text{ClO}}_{2}{}^{\\text{−}},$ PCl<sub>3</sub>, SeF<sub>4</sub>, and ${\\text{PH}}_{2}{}^{\\text{−}}$ have dipole moments."
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp60611664",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "Which of the following molecules have dipole moments?\n(a) CS<sub>2</sub>\n(b) SeS<sub>2</sub>\n(c) CCl<sub>2</sub>F<sub>2</sub>\n(d) PCl<sub>3</sub> (P is the central atom)\n(e) ClNO (N is the central atom)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "SeS<sub>2</sub>, CCl<sub>2</sub>F<sub>2</sub>, PCl<sub>3</sub>, and ClNO all have dipole moments."
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp32930976",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "The molecule XF<sub>3</sub> has a dipole moment. Is X boron or phosphorus?",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "boron",
+     "phosphorus"
+    ],
+    "correct": 1,
+    "solution": "P"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp164286384",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "Is the Cl<sub>2</sub>BBCl<sub>2</sub> molecule polar or nonpolar?",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "polar",
+     "nonpolar"
+    ],
+    "correct": 1,
+    "solution": "nonpolar"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idp16503888",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multicenter",
+   "prompt": "Describe the molecular structure around the indicated atom or atoms:\n(a) the sulfur atom in sulfuric acid, H<sub>2</sub>SO<sub>4</sub> [(HO)<sub>2</sub>SO<sub>2</sub>]\n(b) the chlorine atom in chloric acid, HClO<sub>3</sub> [HOClO<sub>2</sub>]\n(c) the oxygen atom in hydrogen peroxide, HOOH\n(d) the nitrogen atom in nitric acid, HNO<sub>3</sub> [HONO<sub>2</sub>]\n(e) the oxygen atom in the OH group in nitric acid, HNO<sub>3</sub> [HONO<sub>2</sub>]\n(f) the central oxygen atom in the ozone molecule, O<sub>3</sub>\n(g) each of the carbon atoms in propyne, CH<sub>3</sub>CCH\n(h) the carbon atom in Freon, CCl<sub>2</sub>F<sub>2</sub>\n(i) each of the carbon atoms in allene, H<sub>2</sub>CCCH<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) tetrahedral; (b) trigonal pyramidal; (c) bent (109°); (d) trigonal planar; (e) bent (<120°); (f) bent (109°); (g) <u>C</u>H<sub>3</sub>CCH tetrahedral, CH<sub>3</sub><u>CC</u>H linear; (h) tetrahedral; (i) H<sub>2</sub>C<u>C</u>CH<sub>2</sub> linear; H<sub>2</sub><u>C</u>C<u>C</u>H<sub>2</sub> trigonal planar"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idp149682416",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structure-versus-geometry",
+   "prompt": "A molecule with the formula AB<sub>2</sub>, in which A and B represent different atoms, could have one of three different shapes. Sketch and name the three different shapes that this molecule might have. Give an example of a molecule or ion for each shape.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch07/CNX_Chem_07_06_Ques23ans_img.jpg\" alt=\"Three Lewis diagrams are shown. The first diagram shows the letter A single bonded to the left and right to the letter B. An example, CO2, and the term linear are written beside this diagram. The second diagram shows the letter A with two lone pairs of electrons, single bonded to the left and lower right to the letter B. An example, H2O, and the term bent with an approximately 109 degree angle are written beside this diagram. The third diagram shows the letter A with one lone electron pair, single bonded to the left and lower right to the letter B. An example, SO2, and the term bent with an approximately 120 degree angle are written beside this diagram.\">"
+   }
+  },
+  {
+   "id": "e25",
+   "source_id": "fs-idp122940912",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting",
+   "prompt": "Draw the Lewis electron dot structures for these molecules, including resonance structures where appropriate:\n(a) ${\\text{CS}}_{3}{}^{\\text{2−}}$\n(b) CS<sub>2</sub>\n(c) CS\n(d) predict the molecular shapes for ${\\text{CS}}_{3}{}^{\\text{2−}}$ and CS<sub>2</sub> and explain how you arrived at your predictions",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) <img src=\"/media/ch07/CNX_Chem_07_06_CS3a_img.jpg\" alt=\"Three resonance structures of the CS3 2− ion, each in brackets with a 2− charge and joined by double-headed arrows: a carbon atom single bonded to two sulfur atoms that carry three lone pairs each and double bonded to a third that carries two, the double bond moving to a different sulfur in each structure.\"> (b) <img src=\"/media/ch07/CNX_Chem_07_06_CS3b_img.jpg\" alt=\"The Lewis structure of CS2: a carbon atom double bonded to two sulfur atoms, each of which has two lone pairs of electrons.\"> (c) <img src=\"/media/ch07/CNX_Chem_07_06_CS3c_img.jpg\" alt=\"The Lewis structure of CS: a carbon with one lone electron pair triple bonded to a sulfur with one lone electron pair.\"> (d) ${\\text{CS}}_{3}{}^{\\text{2−}}$ includes three regions of electron density (all are bonds with no lone pairs); the shape is trigonal planar; CS<sub>2</sub> has only two regions of electron density (all bonds with no lone pairs); the shape is linear"
+   }
+  },
+  {
+   "id": "e27",
+   "source_id": "fs-idp73458400",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multicenter",
+   "prompt": "A compound with a molar mass of about 42 g/mol contains 85.7% carbon and 14.3% hydrogen. What is its molecular structure?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The Lewis structure is made from three units, but the atoms must be rearranged: <img src=\"/media/ch07/CNX_Chem_07_06_Ques28ans_img.jpg\" alt=\"A Lewis structure is shown in which a carbon atom is single bonded to three hydrogen atoms and a second carbon atom. The second carbon is single bonded to a hydrogen atom and double bonded to a third carbon atom which is single bonded to two hydrogen atoms.\">"
+   }
+  },
+  {
+   "id": "s29",
+   "source_id": "fs-idp56829344",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molecular-dipole",
+   "prompt": "Set the bond-moment bench of Figure 7.26 to NH<sub>3</sub> and drag the molecule to turn it until you can see all three bond moments. (a) Look at the bond dipoles for NH<sub>3</sub>. Use these dipoles to predict whether N or H is more electronegative. (b) Predict whether there should be a molecular dipole for NH<sub>3</sub> and, if so, in which direction it will point. Compare your prediction with the heavier arrow the bench draws for the dipole moment.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The molecular dipole points away from the hydrogen atoms."
+   }
+  },
+  {
+   "id": "s30",
+   "source_id": "fs-idp46580240",
+   "kind": "simulation-exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "geometries",
+   "prompt": "Build a molecule on the bench of Figure 7.16. Starting with the central atom, count one double bond, one single bond and one lone pair as its regions of electron density, and set the sliders to match. Turn the molecule to observe the complete geometry. Name the electron-pair geometry and molecular structure and predict the bond angle. Then read the two names and the ideal angle beneath the drawing to check your answers.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The second step of the section’s procedure says that a single, double, or triple bond each counts as one region of electron density, so one double bond, one single bond and one lone pair are three regions, one of them a lone pair. Set the bench to three regions and one lone pair and read the electron-pair geometry, the molecular structure and the ideal angle it prints beneath the drawing. For the real angle, recall the order of sizes the section states: a lone pair occupies more space than a double bond, which occupies more than a single bond, so the ideal angle is only approximate."
+   }
+  },
+  {
+   "id": "s31",
+   "source_id": "fs-idp17379424",
+   "kind": "simulation-exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "repulsion-order",
+   "prompt": "Set the bench of Figure 7.16 to four regions of electron density with two lone pairs, which is the water molecule, and note the ideal angle it prints. Then compare it with the bond angle of 104.5° that Example 7.13 gives water, which the bond-moment bench of Figure 7.26 draws when it is set to H<sub>2</sub>O. Explain the difference observed.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The structures are very similar. In the model mode, each electron group occupies the same amount of space, so the bond angle is shown as 109.5°. In the “real” mode, the lone pairs are larger, causing the hydrogens to be compressed. This leads to the smaller angle of 104.5°."
+   }
+  },
+  {
+   "id": "s32",
+   "source_id": "fs-idp37961056",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "repulsion-order",
+   "prompt": "The S<sub>2</sub>O molecule has a central sulfur atom bonded to an oxygen atom and to a second sulfur atom, with one lone pair on the central atom. Set the bench of Figure 7.16 to the regions of electron density around the central sulfur atom and read the ideal angle it prints. Explain whether the real bond angle should be larger or smaller than this ideal angle.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the Lewis structure of S<sub>2</sub>O first, as the section’s procedure asks, and count the regions of electron density around the central sulfur atom: two bonds and one lone pair make three, so the bench at three regions and one lone pair gives the electron-pair geometry, the molecular structure and the ideal angle. Whether the real angle is larger or smaller is decided by the order of repulsions the section states, in which lone pair-bonding pair repulsion is greater than bonding pair-bonding pair repulsion; Figure 7.18 shows what that does to the angles of ammonia, and the sim beneath Figure 7.16 shows a lone pair squeezing the bonds toward one another."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "axial-and-equatorial-positions",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "axial-and-equatorial-positions",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl8",
+   "concept": "bond-dipole-moment"
+  },
+  {
+   "exercise": "e1",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e1",
+   "concept": "vsepr-theory",
+   "weight": 2
+  },
+  {
+   "exercise": "e2",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e3",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e3",
+   "concept": "vsepr-theory",
+   "weight": 2
+  },
+  {
+   "exercise": "e4",
+   "concept": "electron-pair-repulsion-order"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e6",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e7",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e7",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "e9",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e9",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "e9",
+   "concept": "axial-and-equatorial-positions",
+   "weight": 2
+  },
+  {
+   "exercise": "e11",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e11",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "e13",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e13",
+   "concept": "bond-dipole-moment",
+   "weight": 2
+  },
+  {
+   "exercise": "e15",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e17",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e19",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e21",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e23",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e23",
+   "concept": "predict-molecular-structure",
+   "weight": 2
+  },
+  {
+   "exercise": "e25",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e27",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "s29",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "s29",
+   "concept": "bond-dipole-moment",
+   "weight": 2
+  },
+  {
+   "exercise": "s30",
+   "concept": "electron-pair-geometry"
+  },
+  {
+   "exercise": "s30",
+   "concept": "predict-molecular-structure",
+   "weight": 2
+  },
+  {
+   "exercise": "s31",
+   "concept": "electron-pair-repulsion-order"
+  },
+  {
+   "exercise": "s31",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "weight": 2
+  },
+  {
+   "exercise": "s32",
+   "concept": "electron-pair-repulsion-order"
+  },
+  {
+   "exercise": "s32",
+   "concept": "electron-pair-geometry",
+   "weight": 2
+  }
+ ]
+}

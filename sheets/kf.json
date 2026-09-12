@@ -1,0 +1,122 @@
+{
+ "id": "kf",
+ "title": "Formation Constants for Complex Ions",
+ "kind": "table",
+ "source": {
+  "module": "m68869",
+  "appendix": "K"
+ },
+ "generated_by": "tool",
+ "tables": [
+  {
+   "id": "formation-constants-for-complex-ions",
+   "title": "Formation Constants for Complex Ions",
+   "columns": [
+    {
+     "id": "equilibrium",
+     "label": "Equilibrium",
+     "kind": "formula"
+    },
+    {
+     "id": "kf",
+     "label": "<em>K</em><sub>f</sub>",
+     "kind": "number"
+    }
+   ],
+   "rows": [
+    [
+     "Al<sup>3+</sup>+6F<sup>−</sup>⇌[AlF<sub>6</sub>]<sup>3−</sup>",
+     "7 × 10<sup>19</sup>"
+    ],
+    [
+     "Cd<sup>2+</sup>+4NH<sub>3</sub>⇌[Cd(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup>",
+     "1.3 × 10<sup>7</sup>"
+    ],
+    [
+     "Cd<sup>2+</sup>+4CN<sup>−</sup>⇌[Cd(CN)<sub>4</sub>]<sup>2−</sup>",
+     "3 × 10<sup>18</sup>"
+    ],
+    [
+     "Co<sup>2+</sup>+6NH<sub>3</sub>⇌[Co(NH<sub>3</sub>)<sub>6</sub>]<sup>2+</sup>",
+     "1.3 × 10<sup>5</sup>"
+    ],
+    [
+     "Co<sup>3+</sup>+6NH<sub>3</sub>⇌[Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup>",
+     "2.3 × 10<sup>33</sup>"
+    ],
+    [
+     "Cu<sup>+</sup>+2CN<sup>–</sup>⇌[Cu(CN)<sub>2</sub>]<sup>−</sup>",
+     "1.0 × 10<sup>16</sup>"
+    ],
+    [
+     "Cu<sup>2+</sup>+4NH<sub>3</sub>⇌[Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup>",
+     "1.7 × 10<sup>13</sup>"
+    ],
+    [
+     "Fe<sup>2+</sup>+6CN<sup>−</sup>⇌[Fe(CN)<sub>6</sub>]<sup>4−</sup>",
+     "1.5 × 10<sup>35</sup>"
+    ],
+    [
+     "Fe<sup>3+</sup>+6CN<sup>−</sup>⇌[Fe(CN)<sub>6</sub>]<sup>3−</sup>",
+     "2 × 10<sup>43</sup>"
+    ],
+    [
+     "Fe<sup>3+</sup>+6SCN<sup>−</sup>⇌[Fe(SCN)<sub>6</sub>]<sup>3−</sup>",
+     "3.2 × 10<sup>3</sup>"
+    ],
+    [
+     "Hg<sup>2+</sup>+4Cl<sup>−</sup>⇌[HgCl<sub>4</sub>]<sup>2−</sup>",
+     "1.1 × 10<sup>16</sup>"
+    ],
+    [
+     "Ni<sup>2+</sup>+6NH<sub>3</sub>⇌[Ni(NH<sub>3</sub>)<sub>6</sub>]<sup>2+</sup>",
+     "2.0 × 10<sup>8</sup>"
+    ],
+    [
+     "Ag<sup>+</sup>+2Cl<sup>−</sup>⇌[AgCl<sub>2</sub>]<sup>−</sup>",
+     "1.8 × 10<sup>5</sup>"
+    ],
+    [
+     "Ag<sup>+</sup>+2CN<sup>−</sup>⇌[Ag(CN)<sub>2</sub>]<sup>−</sup>",
+     "1 × 10<sup>21</sup>"
+    ],
+    [
+     "Ag<sup>+</sup>+2NH<sub>3</sub>⇌[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup>",
+     "1.7 × 10<sup>7</sup>"
+    ],
+    [
+     "Zn<sup>2+</sup>+4CN<sup>−</sup>⇌[Zn(CN)<sub>4</sub>]<sup>2−</sup>",
+     "2.1 × 10<sup>19</sup>"
+    ],
+    [
+     "Zn<sup>2+</sup>+4OH<sup>−</sup>⇌[Zn(OH)<sub>4</sub>]<sup>2−</sup>",
+     "2 × 10<sup>15</sup>"
+    ],
+    [
+     "Fe<sup>3+</sup>+SCN<sup>−</sup>⇌[Fe(SCN)]<sup>2+</sup>",
+     "8.9 × 10<sup>2</sup>"
+    ],
+    [
+     "Ag<sup>+</sup>+4SCN<sup>−</sup>⇌[Ag(SCN)<sub>4</sub>]<sup>3−</sup>",
+     "1.2 × 10<sup>10</sup>"
+    ],
+    [
+     "Pb<sup>2+</sup>+4I<sup>−</sup>⇌[PbI<sub>4</sub>]<sup>2−</sup>",
+     "3.0 × 10<sup>4</sup>"
+    ],
+    [
+     "Pt<sup>2+</sup>+4Cl<sup>−</sup>⇌[PtCl<sub>4</sub>]<sup>2−</sup>",
+     "1 × 10<sup>16</sup>"
+    ],
+    [
+     "Cu<sup>2+</sup>+4CN<sup>–</sup>⇌[Cu(CN)<sub>4</sub>]<sup>2−</sup>",
+     "1.0 × 10<sup>25</sup>"
+    ],
+    [
+     "Co<sup>2+</sup>+4SCN<sup>−</sup>⇌[Co(SCN)<sub>4</sub>]<sup>2−</sup>",
+     "1 × 10<sup>3</sup>"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "kb",
+ "title": "Ionization Constants of Weak Bases",
+ "kind": "table",
+ "source": {
+  "module": "m68867",
+  "appendix": "I"
+ },
+ "generated_by": "tool",
+ "tables": [
+  {
+   "id": "ionization-constants-of-weak-bases",
+   "title": "Ionization Constants of Weak Bases",
+   "columns": [
+    {
+     "id": "base",
+     "label": "Base",
+     "kind": "text"
+    },
+    {
+     "id": "kb-at-25-c",
+     "label": "<em>K</em><sub>b</sub> at 25 °C",
+     "kind": "number"
+    }
+   ],
+   "rows": [
+    [
+     "ammonia",
+     "1.8 × 10<sup>−5</sup>"
+    ],
+    [
+     "dimethylamine",
+     "5.9 × 10<sup>−4</sup>"
+    ],
+    [
+     "methylamine",
+     "4.4 × 10<sup>−4</sup>"
+    ],
+    [
+     "phenylamine (aniline)",
+     "4.3 × 10<sup>−10</sup>"
+    ],
+    [
+     "trimethylamine",
+     "6.3 × 10<sup>−5</sup>"
+    ]
+   ]
+  }
+ ]
+}

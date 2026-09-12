@@ -1,0 +1,200 @@
+{
+ "id": "ka",
+ "title": "Ionization Constants of Weak Acids",
+ "kind": "table",
+ "source": {
+  "module": "m68866",
+  "appendix": "H"
+ },
+ "generated_by": "tool",
+ "tables": [
+  {
+   "id": "ionization-constants-of-weak-acids",
+   "title": "Ionization Constants of Weak Acids",
+   "columns": [
+    {
+     "id": "acid",
+     "label": "Acid",
+     "kind": "text"
+    },
+    {
+     "id": "formula",
+     "label": "Formula",
+     "kind": "formula"
+    },
+    {
+     "id": "ka-at-25-c",
+     "label": "<em>K<sub>a</sub></em> at 25 °C",
+     "kind": "number"
+    }
+   ],
+   "rows": [
+    [
+     "acetic",
+     "CH<sub>3</sub>CO<sub>2</sub><em>H</em>",
+     "1.8 × 10<sup>−5</sup>"
+    ],
+    [
+     "arsenic",
+     "<em>H<sub>3</sub></em>AsO<sub>4</sub>",
+     "5.5 × 10<sup>−3</sup>"
+    ],
+    [
+     "",
+     "1.7 × 10<sup>−7</sup>",
+     ""
+    ],
+    [
+     "",
+     "3.0 × 10<sup>−12</sup>",
+     ""
+    ],
+    [
+     "arsenous",
+     "<em>H<sub>3</sub></em>AsO<sub>3</sub>",
+     "5.1 × 10<sup>−10</sup>"
+    ],
+    [
+     "boric",
+     "<em>H<sub>3</sub></em>BO<sub>3</sub>",
+     "5.4 × 10<sup>−10</sup>"
+    ],
+    [
+     "carbonic",
+     "<em>H<sub>2</sub></em>CO<sub>3</sub>",
+     "4.3 × 10<sup>−7</sup>"
+    ],
+    [
+     "",
+     "4.7 × 10<sup>−11</sup>",
+     ""
+    ],
+    [
+     "formic",
+     "HCO<sub>2</sub><em>H</em>",
+     "1.8 × 10<sup>−4</sup>"
+    ],
+    [
+     "hydrazoic",
+     "<em>H</em>N<sub>3</sub>",
+     "2.5 × 10<sup>−5</sup>"
+    ],
+    [
+     "hydrocyanic",
+     "<em>H</em>CN",
+     "4.9 × 10<sup>−10</sup>"
+    ],
+    [
+     "hydrofluoric",
+     "<em>H</em>F",
+     "6.4 × 10<sup>−4</sup>"
+    ],
+    [
+     "hydrogen peroxide",
+     "<em>H<sub>2</sub></em>O<sub>2</sub>",
+     "2.4 × 10<sup>−12</sup>"
+    ],
+    [
+     "hydrogen selenide",
+     "<em>H<sub>2</sub></em>Se",
+     "1.29 × 10<sup>−4</sup>"
+    ],
+    [
+     "<em>H</em>Se<sup>–</sup>",
+     "1 × 10<sup>−12</sup>",
+     ""
+    ],
+    [
+     "hydrogen sulfate ion",
+     "",
+     "1.2 × 10<sup>−2</sup>"
+    ],
+    [
+     "hydrogen sulfide",
+     "<em>H<sub>2</sub></em>S",
+     "8.9 × 10<sup>−8</sup>"
+    ],
+    [
+     "<em>H</em>S<sup>–</sup>",
+     "1.0 × 10<sup>−19</sup>",
+     ""
+    ],
+    [
+     "hydrogen telluride",
+     "<em>H<sub>2</sub></em>Te",
+     "2.3 × 10<sup>−3</sup>"
+    ],
+    [
+     "<em>H</em>Te<sup>–</sup>",
+     "1.6 × 10<sup>−11</sup>",
+     ""
+    ],
+    [
+     "hypobromous",
+     "<em>H</em>BrO",
+     "2.8 × 10<sup>−9</sup>"
+    ],
+    [
+     "hypochlorous",
+     "<em>H</em>ClO",
+     "2.9 × 10<sup>−8</sup>"
+    ],
+    [
+     "isocyanic",
+     "<em>H</em>CNO",
+     "2 × 10<sup>−4</sup>"
+    ],
+    [
+     "nitrous",
+     "<em>H</em>NO<sub>2</sub>",
+     "4.6 × 10<sup>−4</sup>"
+    ],
+    [
+     "oxalic",
+     "<em>H<sub>2</sub></em>C<sub>2</sub>O<sub>4</sub>",
+     "6.0 × 10<sup>−2</sup>"
+    ],
+    [
+     "",
+     "6.1 × 10<sup>−5</sup>",
+     ""
+    ],
+    [
+     "phosphoric",
+     "<em>H<sub>3</sub></em>PO<sub>4</sub>",
+     "7.5 × 10<sup>−3</sup>"
+    ],
+    [
+     "",
+     "6.2 × 10<sup>−8</sup>",
+     ""
+    ],
+    [
+     "",
+     "4.2 × 10<sup>−13</sup>",
+     ""
+    ],
+    [
+     "phosphorous",
+     "<em>H<sub>3</sub></em>PO<sub>3</sub>",
+     "5 × 10<sup>−2</sup>"
+    ],
+    [
+     "",
+     "2.0 × 10<sup>−7</sup>",
+     ""
+    ],
+    [
+     "sulfurous",
+     "<em>H<sub>2</sub></em>SO<sub>3</sub>",
+     "1.6 × 10<sup>−2</sup>"
+    ],
+    [
+     "",
+     "6.4 × 10<sup>−8</sup>",
+     ""
+    ]
+   ]
+  }
+ ]
+}

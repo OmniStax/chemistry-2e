@@ -1,0 +1,506 @@
+{
+ "id": "ksp",
+ "title": "Solubility Products",
+ "kind": "table",
+ "source": {
+  "module": "m68868",
+  "appendix": "J"
+ },
+ "generated_by": "tool",
+ "tables": [
+  {
+   "id": "solubility-products",
+   "title": "Solubility Products",
+   "columns": [
+    {
+     "id": "substance",
+     "label": "Substance",
+     "kind": "formula"
+    },
+    {
+     "id": "ksp-at-25-c",
+     "label": "<em>K</em><sub>sp</sub> at 25 °C",
+     "kind": "number"
+    }
+   ],
+   "rows": [
+    [
+     "aluminum",
+     ""
+    ],
+    [
+     "Al(OH)<sub>3</sub>",
+     "2 × 10<sup>−32</sup>"
+    ],
+    [
+     "barium",
+     ""
+    ],
+    [
+     "BaCO<sub>3</sub>",
+     "1.6 × 10<sup>−9</sup>"
+    ],
+    [
+     "BaC<sub>2</sub>O<sub>4</sub>·2H<sub>2</sub>O",
+     "1.1 × 10<sup>−7</sup>"
+    ],
+    [
+     "BaSO<sub>4</sub>",
+     "2.3 × 10<sup>−8</sup>"
+    ],
+    [
+     "BaCrO<sub>4</sub>",
+     "8.5 × 10<sup>−11</sup>"
+    ],
+    [
+     "BaF<sub>2</sub>",
+     "2.4 × 10<sup>−5</sup>"
+    ],
+    [
+     "Ba(OH)<sub>2</sub>·8H<sub>2</sub>O",
+     "5.0 × 10<sup>−3</sup>"
+    ],
+    [
+     "Ba<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>",
+     "6 × 10<sup>−39</sup>"
+    ],
+    [
+     "Ba<sub>3</sub>(AsO<sub>4</sub>)<sub>2</sub>",
+     "1.1 × 10<sup>−13</sup>"
+    ],
+    [
+     "bismuth",
+     ""
+    ],
+    [
+     "BiO(OH)",
+     "4 × 10<sup>−10</sup>"
+    ],
+    [
+     "BiOCl",
+     "1.8 × 10<sup>−31</sup>"
+    ],
+    [
+     "Bi<sub>2</sub>S<sub>3</sub>",
+     "1 × 10<sup>−97</sup>"
+    ],
+    [
+     "cadmium",
+     ""
+    ],
+    [
+     "Cd(OH)<sub>2</sub>",
+     "5.9 × 10<sup>−15</sup>"
+    ],
+    [
+     "CdS",
+     "1.0 × 10<sup>−28</sup>"
+    ],
+    [
+     "CdCO<sub>3</sub>",
+     "5.2 × 10<sup>−12</sup>"
+    ],
+    [
+     "calcium",
+     ""
+    ],
+    [
+     "Ca(OH)<sub>2</sub>",
+     "1.3 × 10<sup>−6</sup>"
+    ],
+    [
+     "CaCO<sub>3</sub>",
+     "8.7 × 10<sup>−9</sup>"
+    ],
+    [
+     "CaSO4·2H<sub>2</sub>O",
+     "6.1 × 10<sup>−5</sup>"
+    ],
+    [
+     "CaC<sub>2</sub>O<sub>4</sub>·H<sub>2</sub>O",
+     "1.96 × 10<sup>−9</sup>"
+    ],
+    [
+     "Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>",
+     "1.3 × 10<sup>−32</sup>"
+    ],
+    [
+     "CaHPO<sub>4</sub>",
+     "7 × 10<sup>−7</sup>"
+    ],
+    [
+     "CaF<sub>2</sub>",
+     "4.0 × 10<sup>−11</sup>"
+    ],
+    [
+     "chromium",
+     ""
+    ],
+    [
+     "Cr(OH)<sub>3</sub>",
+     "6.7 × 10<sup>−31</sup>"
+    ],
+    [
+     "cobalt",
+     ""
+    ],
+    [
+     "Co(OH)<sub>2</sub>",
+     "2.5 × 10<sup>−16</sup>"
+    ],
+    [
+     "CoS(<em>α</em>)",
+     "5 × 10<sup>−22</sup>"
+    ],
+    [
+     "CoS(<em>β</em>)",
+     "3 × 10<sup>−26</sup>"
+    ],
+    [
+     "CoCO<sub>3</sub>",
+     "1.4 × 10<sup>−13</sup>"
+    ],
+    [
+     "Co(OH)<sub>3</sub>",
+     "2.5 × 10<sup>−43</sup>"
+    ],
+    [
+     "copper",
+     ""
+    ],
+    [
+     "CuCl",
+     "1.2 × 10<sup>−6</sup>"
+    ],
+    [
+     "CuBr",
+     "6.27 × 10<sup>−9</sup>"
+    ],
+    [
+     "CuI",
+     "1.27 × 10<sup>−12</sup>"
+    ],
+    [
+     "CuSCN",
+     "1.6 × 10<sup>−11</sup>"
+    ],
+    [
+     "Cu<sub>2</sub>S",
+     "2.5 × 10<sup>−48</sup>"
+    ],
+    [
+     "Cu(OH)<sub>2</sub>",
+     "2.2 × 10<sup>−20</sup>"
+    ],
+    [
+     "CuS",
+     "8.5 × 10<sup>−45</sup>"
+    ],
+    [
+     "CuCO<sub>3</sub>",
+     "2.5 × 10<sup>−10</sup>"
+    ],
+    [
+     "iron",
+     ""
+    ],
+    [
+     "Fe(OH)<sub>2</sub>",
+     "1.8 × 10<sup>−15</sup>"
+    ],
+    [
+     "FeCO<sub>3</sub>",
+     "2.1 × 10<sup>−11</sup>"
+    ],
+    [
+     "FeS",
+     "3.7 × 10<sup>−19</sup>"
+    ],
+    [
+     "Fe(OH)<sub>3</sub>",
+     "4 × 10<sup>−38</sup>"
+    ],
+    [
+     "lead",
+     ""
+    ],
+    [
+     "Pb(OH)<sub>2</sub>",
+     "1.2 × 10<sup>−15</sup>"
+    ],
+    [
+     "PbF<sub>2</sub>",
+     "4 × 10<sup>−8</sup>"
+    ],
+    [
+     "PbCl<sub>2</sub>",
+     "1.6 × 10<sup>−5</sup>"
+    ],
+    [
+     "PbBr<sub>2</sub>",
+     "4.6 × 10<sup>−6</sup>"
+    ],
+    [
+     "PbI<sub>2</sub>",
+     "1.4 × 10<sup>−8</sup>"
+    ],
+    [
+     "PbCO<sub>3</sub>",
+     "1.5 × 10<sup>−15</sup>"
+    ],
+    [
+     "PbS",
+     "7 × 10<sup>−29</sup>"
+    ],
+    [
+     "PbCrO<sub>4</sub>",
+     "2 × 10<sup>−16</sup>"
+    ],
+    [
+     "PbSO<sub>4</sub>",
+     "1.3 × 10<sup>−8</sup>"
+    ],
+    [
+     "Pb<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>",
+     "1 × 10<sup>−54</sup>"
+    ],
+    [
+     "magnesium",
+     ""
+    ],
+    [
+     "Mg(OH)<sub>2</sub>",
+     "8.9 × 10<sup>−12</sup>"
+    ],
+    [
+     "MgCO<sub>3</sub>·3H<sub>2</sub>O",
+     "<em>ca</em> 1 × 10<sup>−5</sup>"
+    ],
+    [
+     "MgNH<sub>4</sub>PO<sub>4</sub>",
+     "3 × 10<sup>−13</sup>"
+    ],
+    [
+     "MgF<sub>2</sub>",
+     "6.4 × 10<sup>−9</sup>"
+    ],
+    [
+     "MgC<sub>2</sub>O<sub>4</sub>",
+     "7 × 10<sup>−7</sup>"
+    ],
+    [
+     "manganese",
+     ""
+    ],
+    [
+     "Mn(OH)<sub>2</sub>",
+     "2 × 10<sup>−13</sup>"
+    ],
+    [
+     "MnCO<sub>3</sub>",
+     "8.8 × 10<sup>−11</sup>"
+    ],
+    [
+     "MnS",
+     "2.3 × 10<sup>−13</sup>"
+    ],
+    [
+     "mercury",
+     ""
+    ],
+    [
+     "Hg<sub>2</sub>O·H<sub>2</sub>O",
+     "3.6 × 10<sup>−26</sup>"
+    ],
+    [
+     "Hg<sub>2</sub>Cl<sub>2</sub>",
+     "1.1 × 10<sup>−18</sup>"
+    ],
+    [
+     "Hg<sub>2</sub>Br<sub>2</sub>",
+     "1.3 × 10<sup>−22</sup>"
+    ],
+    [
+     "Hg<sub>2</sub>I<sub>2</sub>",
+     "4.5 × 10<sup>−29</sup>"
+    ],
+    [
+     "Hg<sub>2</sub>CO<sub>3</sub>",
+     "9 × 10<sup>−15</sup>"
+    ],
+    [
+     "Hg<sub>2</sub>SO<sub>4</sub>",
+     "7.4 × 10<sup>−7</sup>"
+    ],
+    [
+     "Hg<sub>2</sub>S",
+     "1.0 × 10<sup>−47</sup>"
+    ],
+    [
+     "Hg<sub>2</sub>CrO<sub>4</sub>",
+     "2 × 10<sup>−9</sup>"
+    ],
+    [
+     "HgS",
+     "1.6 × 10<sup>−54</sup>"
+    ],
+    [
+     "nickel",
+     ""
+    ],
+    [
+     "Ni(OH)<sub>2</sub>",
+     "1.6 × 10<sup>−16</sup>"
+    ],
+    [
+     "NiCO<sub>3</sub>",
+     "1.4 × 10<sup>−7</sup>"
+    ],
+    [
+     "NiS(<em>α</em>)",
+     "4 × 10<sup>−20</sup>"
+    ],
+    [
+     "NiS(<em>β</em>)",
+     "1.3 × 10<sup>−25</sup>"
+    ],
+    [
+     "potassium",
+     ""
+    ],
+    [
+     "KClO<sub>4</sub>",
+     "1.05 × 10<sup>−2</sup>"
+    ],
+    [
+     "K<sub>2</sub>PtCl<sub>6</sub>",
+     "7.48 × 10<sup>−6</sup>"
+    ],
+    [
+     "KHC<sub>4</sub>H<sub>4</sub>O<sub>6</sub>",
+     "3 × 10<sup>−4</sup>"
+    ],
+    [
+     "silver",
+     ""
+    ],
+    [
+     "<sub>2</sub><sup>1</sup>Ag<sub>2</sub>O(Ag<sup>+</sup>+OH<sup>−</sup>)",
+     "2 × 10<sup>−8</sup>"
+    ],
+    [
+     "AgCl",
+     "1.6 × 10<sup>−10</sup>"
+    ],
+    [
+     "AgBr",
+     "5.0 × 10<sup>−13</sup>"
+    ],
+    [
+     "AgI",
+     "1.5 × 10<sup>−16</sup>"
+    ],
+    [
+     "AgCN",
+     "1.2 × 10<sup>−16</sup>"
+    ],
+    [
+     "AgSCN",
+     "1.0 × 10<sup>−12</sup>"
+    ],
+    [
+     "Ag<sub>2</sub>S",
+     "1.6 × 10<sup>−49</sup>"
+    ],
+    [
+     "Ag<sub>2</sub>CO<sub>3</sub>",
+     "8.1 × 10<sup>−12</sup>"
+    ],
+    [
+     "Ag<sub>2</sub>CrO<sub>4</sub>",
+     "9.0 × 10<sup>−12</sup>"
+    ],
+    [
+     "Ag<sub>4</sub>Fe(CN)<sub>6</sub>",
+     "1.55 × 10<sup>−41</sup>"
+    ],
+    [
+     "Ag<sub>2</sub>SO<sub>4</sub>",
+     "1.2 × 10<sup>−5</sup>"
+    ],
+    [
+     "Ag<sub>3</sub>PO<sub>4</sub>",
+     "1.8 × 10<sup>−18</sup>"
+    ],
+    [
+     "strontium",
+     ""
+    ],
+    [
+     "Sr(OH)<sub>2</sub>·8H<sub>2</sub>O",
+     "3.2 × 10<sup>−4</sup>"
+    ],
+    [
+     "SrCO<sub>3</sub>",
+     "7 × 10<sup>−10</sup>"
+    ],
+    [
+     "SrCrO<sub>4</sub>",
+     "3.6 × 10<sup>−5</sup>"
+    ],
+    [
+     "SrSO<sub>4</sub>",
+     "3.2 × 10<sup>−7</sup>"
+    ],
+    [
+     "SrC<sub>2</sub>O<sub>4</sub>·H<sub>2</sub>O",
+     "4 × 10<sup>−7</sup>"
+    ],
+    [
+     "thallium",
+     ""
+    ],
+    [
+     "TlCl",
+     "1.7 × 10<sup>−4</sup>"
+    ],
+    [
+     "TlSCN",
+     "1.6 × 10<sup>−4</sup>"
+    ],
+    [
+     "Tl<sub>2</sub>S",
+     "6 × 10<sup>−22</sup>"
+    ],
+    [
+     "Tl(OH)<sub>3</sub>",
+     "6.3 × 10<sup>−46</sup>"
+    ],
+    [
+     "tin",
+     ""
+    ],
+    [
+     "Sn(OH)<sub>2</sub>",
+     "3 × 10<sup>−27</sup>"
+    ],
+    [
+     "SnS",
+     "1 × 10<sup>−26</sup>"
+    ],
+    [
+     "Sn(OH)<sub>4</sub>",
+     "1.0 × 10<sup>−57</sup>"
+    ],
+    [
+     "zinc",
+     ""
+    ],
+    [
+     "ZnCO<sub>3</sub>",
+     "2 × 10<sup>−10</sup>"
+    ]
+   ]
+  }
+ ]
+}

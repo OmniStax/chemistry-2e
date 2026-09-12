@@ -330,7 +330,15 @@ this book:
   `"generated_by": "tool"`: the values in it are standard reference
   values rather than the book's words, so a later pass may replace any of
   them with Appendix A's own, and the list of sections that name each
-  element is recomputed by the tool as more of the book is built.
+  element is recomputed by the tool as more of the book is built. The
+  eleven data appendices, C and D through M, are the book's `table`
+  sheets, written from the CNXML tables by `tools/appendices.py` and
+  marked `"generated_by": "tool"` with the module each was read from: a
+  cell carries the same HTML the prose does, so a formula in a table
+  opens the same card a formula in a paragraph does. Appendix B is prose
+  and becomes a page of its own rather than a sheet, and the Lewis
+  structures Appendices H and I print beside their constants are images
+  and are not carried into the data.
 - The degree sign in a temperature is `°` (U+00B0) everywhere, in the
   tables as in the text; the bundle sometimes prints the masculine
   ordinal `º` in its place, and the conversion normalises it.

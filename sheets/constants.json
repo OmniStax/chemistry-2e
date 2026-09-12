@@ -1,0 +1,90 @@
+{
+ "id": "constants",
+ "title": "Fundamental Physical Constants",
+ "kind": "table",
+ "source": {
+  "module": "m68862",
+  "appendix": "D"
+ },
+ "generated_by": "tool",
+ "tables": [
+  {
+   "id": "fundamental-physical-constants",
+   "title": "Fundamental Physical Constants",
+   "columns": [
+    {
+     "id": "name-and-symbol",
+     "label": "Name and Symbol",
+     "kind": "text"
+    },
+    {
+     "id": "value",
+     "label": "Value",
+     "kind": "formula"
+    }
+   ],
+   "rows": [
+    [
+     "atomic mass unit (amu)",
+     "1.6605402 × 10<sup>−27</sup> kg"
+    ],
+    [
+     "Avogadro’s number",
+     "6.02214076 × 10<sup>23</sup> mol<sup>−1</sup>"
+    ],
+    [
+     "Boltzmann’s constant (<em>k</em>)",
+     "1.380649 × 10<sup>−23</sup> J K<sup>−1</sup>"
+    ],
+    [
+     "charge-to-mass ratio for electron (<em>e/m<sub>e</sub></em>)",
+     "1.75881962 × 10<sup>11</sup> C kg<sup>−1</sup>"
+    ],
+    [
+     "fundamental unit of charge (<em>e</em>)",
+     "1.602176634 × 10<sup>−19</sup> C"
+    ],
+    [
+     "electron rest mass (<em>m<sub>e</sub></em>)",
+     "9.1093897 × 10<sup>−31</sup> kg"
+    ],
+    [
+     "Faraday’s constant (<em>F</em>)",
+     "9.6485309 × 10<sup>4</sup> C mol<sup>−1</sup>"
+    ],
+    [
+     "gas constant (<em>R</em>)",
+     "8.205784 × 10<sup>−2</sup> L atm mol<sup>−1</sup> K<sup>−1</sup> = 8.314510 J mol<sup>−1</sup> K<sup>−1</sup>"
+    ],
+    [
+     "molar volume of an ideal gas, 1 atm, 0 °C",
+     "22.41409 L mol<sup>–1</sup>"
+    ],
+    [
+     "molar volume of an ideal gas, 1 bar, 0 °C",
+     "22.71108 L mol<sup>–1</sup>"
+    ],
+    [
+     "neutron rest mass (<em>m<sub>n</sub></em>)",
+     "1.6749274 × 10<sup>−27</sup> kg"
+    ],
+    [
+     "Planck’s constant (<em>h</em>)",
+     "6.62607015 × 10<sup>−34</sup> J s"
+    ],
+    [
+     "proton rest mass (<em>m<sub>p</sub></em>)",
+     "1.6726231 × 10<sup>−27</sup> kg"
+    ],
+    [
+     "Rydberg constant (R)",
+     "1.0973731534 × 10<sup>7</sup> m<sup>−1</sup> = 2.1798736 × 10<sup>−18</sup> J"
+    ],
+    [
+     "speed of light (in vacuum) (<em>c</em>)",
+     "2.99792458 × 10<sup>8</sup> m s<sup>−1</sup>"
+    ]
+   ]
+  }
+ ]
+}

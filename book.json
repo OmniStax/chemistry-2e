@@ -1410,6 +1410,72 @@
       "title": "The Elements",
       "kind": "elements",
       "file": "sheets/elements.json"
+    },
+    {
+      "id": "units",
+      "title": "Units and Conversion Factors",
+      "kind": "table",
+      "file": "sheets/units.json"
+    },
+    {
+      "id": "constants",
+      "title": "Fundamental Physical Constants",
+      "kind": "table",
+      "file": "sheets/constants.json"
+    },
+    {
+      "id": "water",
+      "title": "Water Properties",
+      "kind": "table",
+      "file": "sheets/water.json"
+    },
+    {
+      "id": "acids-bases-commercial",
+      "title": "Composition of Commercial Acids and Bases",
+      "kind": "table",
+      "file": "sheets/acids-bases-commercial.json"
+    },
+    {
+      "id": "thermo",
+      "title": "Standard Thermodynamic Properties for Selected Substances",
+      "kind": "table",
+      "file": "sheets/thermo.json"
+    },
+    {
+      "id": "ka",
+      "title": "Ionization Constants of Weak Acids",
+      "kind": "table",
+      "file": "sheets/ka.json"
+    },
+    {
+      "id": "kb",
+      "title": "Ionization Constants of Weak Bases",
+      "kind": "table",
+      "file": "sheets/kb.json"
+    },
+    {
+      "id": "ksp",
+      "title": "Solubility Products",
+      "kind": "table",
+      "file": "sheets/ksp.json"
+    },
+    {
+      "id": "kf",
+      "title": "Formation Constants for Complex Ions",
+      "kind": "table",
+      "file": "sheets/kf.json"
+    },
+    {
+      "id": "potentials",
+      "title": "Standard Electrode (Half-Cell) Potentials",
+      "kind": "table",
+      "file": "sheets/potentials.json"
+    },
+    {
+      "id": "half-lives",
+      "title": "Half-Lives for Several Radioactive Isotopes",
+      "kind": "table",
+      "file": "sheets/half-lives.json"
     }
   ]
 }

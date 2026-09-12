@@ -1,0 +1,286 @@
+{
+ "id": "half-lives",
+ "title": "Half-Lives for Several Radioactive Isotopes",
+ "kind": "table",
+ "source": {
+  "module": "m68871",
+  "appendix": "M"
+ },
+ "generated_by": "tool",
+ "tables": [
+  {
+   "id": "half-lives-for-several-radioactive-isotopes",
+   "title": "Half-Lives for Several Radioactive Isotopes",
+   "columns": [
+    {
+     "id": "isotope",
+     "label": "Isotope",
+     "kind": "formula"
+    },
+    {
+     "id": "half-life",
+     "label": "Half-Life<sup class=\"fn\">1</sup>",
+     "kind": "formula"
+    },
+    {
+     "id": "type-of-emission",
+     "label": "Type of Emission<sup class=\"fn\">2</sup>",
+     "kind": "text"
+    },
+    {
+     "id": "isotope-2",
+     "label": "Isotope",
+     "kind": "formula"
+    },
+    {
+     "id": "half-life-2",
+     "label": "Half-Life<sup class=\"fn\">1</sup>",
+     "kind": "text"
+    },
+    {
+     "id": "type-of-emission-2",
+     "label": "Type of Emission<sup class=\"fn\">2</sup>",
+     "kind": "text"
+    }
+   ],
+   "rows": [
+    [
+     "<sub>6</sub><sup>14</sup>C",
+     "5730 y",
+     "(β<sup>−</sup>)",
+     "<sub>83</sub><sup>210</sup>Bi",
+     "5.01 d",
+     "(β<sup>−</sup>)"
+    ],
+    [
+     "<sub>7</sub><sup>13</sup>N",
+     "9.97 m",
+     "(β<sup>+</sup>)",
+     "<sub>83</sub><sup>212</sup>Bi",
+     "60.55 m",
+     "(αorβ<sup>−</sup>)"
+    ],
+    [
+     "<sub>9</sub><sup>15</sup>F",
+     "4.1 × 10<sup>−22</sup> s",
+     "(p)",
+     "<sub>84</sub><sup>210</sup>Po",
+     "138.4 d",
+     "(α)"
+    ],
+    [
+     "<sub>11</sub><sup>24</sup>Na",
+     "15.00 h",
+     "(β<sup>−</sup>)",
+     "<sub>84</sub><sup>212</sup>Po",
+     "3 × 10<sup>−7</sup> s",
+     "(α)"
+    ],
+    [
+     "<sub>15</sub><sup>32</sup>P",
+     "14.29 d",
+     "(β<sup>−</sup>)",
+     "<sub>84</sub><sup>216</sup>Po",
+     "0.15 s",
+     "(α)"
+    ],
+    [
+     "<sub>19</sub><sup>40</sup>K",
+     "1.27 × 10<sup>9</sup> y",
+     "(βorE.C.)",
+     "<sub>84</sub><sup>218</sup>Po",
+     "3.05 m",
+     "(α)"
+    ],
+    [
+     "<sub>26</sub><sup>49</sup>Fe",
+     "0.08 s",
+     "(β<sup>+</sup>)",
+     "<sub>85</sub><sup>215</sup>At",
+     "1.0 × 10<sup>−4</sup> s",
+     "(α)"
+    ],
+    [
+     "<sub>26</sub><sup>60</sup>Fe",
+     "2.6 × 10<sup>6</sup> y",
+     "(β<sup>−</sup>)",
+     "<sub>85</sub><sup>218</sup>At",
+     "1.6 s",
+     "(α)"
+    ],
+    [
+     "<sub>27</sub><sup>60</sup>Co",
+     "5.27 y",
+     "(β<sup>−</sup>)",
+     "<sub>86</sub><sup>220</sup>Rn",
+     "55.6 s",
+     "(α)"
+    ],
+    [
+     "<sub>37</sub><sup>87</sup>Rb",
+     "4.7 × 10<sup>10</sup> y",
+     "(β<sup>−</sup>)",
+     "<sub>86</sub><sup>222</sup>Rn",
+     "3.82 d",
+     "(α)"
+    ],
+    [
+     "<sub>38</sub><sup>90</sup>Sr",
+     "29 y",
+     "(β<sup>−</sup>)",
+     "<sub>88</sub><sup>224</sup>Ra",
+     "3.66 d",
+     "(α)"
+    ],
+    [
+     "<sub>49</sub><sup>115</sup>In",
+     "5.1 × 10<sup>15</sup> y",
+     "(β<sup>−</sup>)",
+     "<sub>88</sub><sup>226</sup>Ra",
+     "1600 y",
+     "(α)"
+    ],
+    [
+     "<sub>53</sub><sup>131</sup>I",
+     "8.040 d",
+     "(β<sup>−</sup>)",
+     "<sub>88</sub><sup>228</sup>Ra",
+     "5.75 y",
+     "(β<sup>−</sup>)"
+    ],
+    [
+     "<sub>58</sub><sup>142</sup>Ce",
+     "5 × 10<sup>15</sup> y",
+     "(α)",
+     "<sub>89</sub><sup>228</sup>Ac",
+     "6.13 h",
+     "(β<sup>−</sup>)"
+    ],
+    [
+     "<sub>81</sub><sup>208</sup>Tl",
+     "3.07 m",
+     "(β<sup>−</sup>)",
+     "<sub>90</sub><sup>228</sup>Th",
+     "1.913 y",
+     "(α)"
+    ],
+    [
+     "<sub>82</sub><sup>210</sup>Pb",
+     "22.3 y",
+     "(β<sup>−</sup>)",
+     "<sub>90</sub><sup>232</sup>Th",
+     "1.4 × 10<sup>10</sup> y",
+     "(α)"
+    ],
+    [
+     "<sub>82</sub><sup>212</sup>Pb",
+     "10.6 h",
+     "(β<sup>−</sup>)",
+     "<sub>90</sub><sup>233</sup>Th",
+     "22 m",
+     "(β<sup>−</sup>)"
+    ],
+    [
+     "<sub>82</sub><sup>214</sup>Pb",
+     "26.8 m",
+     "(β<sup>−</sup>)",
+     "<sub>90</sub><sup>234</sup>Th",
+     "24.10 d",
+     "(β<sup>−</sup>)"
+    ],
+    [
+     "<sub>83</sub><sup>206</sup>Bi",
+     "6.243 d",
+     "(E.C.)",
+     "<sub>91</sub><sup>233</sup>Pa",
+     "27 d",
+     "(β<sup>−</sup>)"
+    ],
+    [
+     "<sub>92</sub><sup>233</sup>U",
+     "1.59 × 10<sup>5</sup> y",
+     "(α)",
+     "<sub>96</sub><sup>242</sup>Cm",
+     "162.8 d",
+     "(α)"
+    ],
+    [
+     "<sub>92</sub><sup>234</sup>U",
+     "2.45 × 10<sup>5</sup> y",
+     "(α)",
+     "<sub>97</sub><sup>243</sup>Bk",
+     "4.5 h",
+     "(αorE.C.)"
+    ],
+    [
+     "<sub>92</sub><sup>235</sup>U",
+     "7.03 × 10<sup>8</sup> y",
+     "(α)",
+     "<sub>99</sub><sup>253</sup>Es",
+     "20.47 d",
+     "(α)"
+    ],
+    [
+     "<sub>92</sub><sup>238</sup>U",
+     "4.47 × 10<sup>9</sup> y",
+     "(α)",
+     "<sub>100</sub><sup>254</sup>Fm",
+     "3.24 h",
+     "(αorS.F.)"
+    ],
+    [
+     "<sub>92</sub><sup>239</sup>U",
+     "23.54 m",
+     "(β<sup>−</sup>)",
+     "<sub>100</sub><sup>255</sup>Fm",
+     "20.1 h",
+     "(α)"
+    ],
+    [
+     "<sub>93</sub><sup>239</sup>Np",
+     "2.3 d",
+     "(β<sup>−</sup>)",
+     "<sub>101</sub><sup>256</sup>Md",
+     "76 m",
+     "(αorE.C.)"
+    ],
+    [
+     "<sub>94</sub><sup>239</sup>Pu",
+     "2.407 × 10<sup>4</sup> y",
+     "(α)",
+     "<sub>102</sub><sup>254</sup>No",
+     "55 s",
+     "(α)"
+    ],
+    [
+     "<sub>94</sub><sup>239</sup>Pu",
+     "6.54 × 10<sup>3</sup> y",
+     "(α)",
+     "<sub>103</sub><sup>257</sup>Lr",
+     "0.65 s",
+     "(α)"
+    ],
+    [
+     "<sub>94</sub><sup>241</sup>Pu",
+     "14.4 y",
+     "(αorβ<sup>−</sup>)",
+     "<sub>105</sub><sup>260</sup>Ha",
+     "1.5 s",
+     "(αorS.F.)"
+    ],
+    [
+     "<sub>95</sub><sup>241</sup>Am",
+     "432.2 y",
+     "(α)",
+     "<sub>106</sub><sup>263</sup>Sg",
+     "0.8 s",
+     "(αorS.F.)"
+    ]
+   ],
+   "notes": [
+    "y = years, d = days, h = hours, m = minutes, s = seconds",
+    "<em>E.C.</em> = electron capture, <em>S.F.</em> = Spontaneous fission"
+   ]
+  }
+ ]
+}

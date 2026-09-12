@@ -1,0 +1,168 @@
+{
+ "id": "1.3",
+ "module": "m68670",
+ "chapter": "1",
+ "title": "Physical and Chemical Properties",
+ "short": "Physical and chemical properties",
+ "lead": "Every substance has properties that tell it apart from every other, and some of them can be observed without the substance becoming anything else while others show only as it turns into something new. This section sorts properties and changes into physical and chemical, then sorts properties again into those that depend on how much matter is present and those that do not, and closes with the three classes of elements that the periodic table lays out.",
+ "objectives": [
+  "Identify properties of and changes in matter as physical or chemical",
+  "Identify properties of matter as extensive or intensive"
+ ],
+ "summary_html": "<p>All substances have distinct physical and chemical properties, and may undergo physical or chemical changes. Physical properties, such as hardness and boiling point, and physical changes, such as melting or freezing, do not involve a change in the composition of matter. Chemical properties, such flammability and acidity, and chemical changes, such as rusting, involve production of matter that differs from that present beforehand.</p><p>Measurable properties fall into one of two categories. Extensive properties depend on the amount of matter present, for example, the mass of gold. Intensive properties do not depend on the amount of matter present, for example, the density of gold. Heat is an example of an extensive property, and temperature is an example of an intensive property.</p>",
+ "notes": "The periodic table of Figure 1.22 is kept as the book’s own image, and an interactive table the reader can consult beside every page waits until the app can serve one.",
+ "ai": {
+  "text": "Claude Fable 5.1",
+  "figures": "Claude Fable 5.1"
+ },
+ "built": "2026-09-12",
+ "exercises_lead": "Chemistry End of Chapter Exercises",
+ "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key, which covers the second, fourth, sixth and eighth items of the section’s list; the other four are conceptual questions with no keyed answer and are kept with an AI-written suggested approach, marked as such, since no answer is computed. Nothing is left out and nothing is held for or taken from another section.",
+ "figures": [
+  { "id": "fig-physical-change", "kind": "photo", "number": "1.18", "draws": [] },
+  { "id": "fig-rust", "kind": "photo", "number": "1.19", "draws": [] },
+  { "id": "fig-chemical-change", "kind": "photo", "number": "1.20", "draws": [] },
+  { "id": "sim-extensive", "kind": "sim", "draws": ["mass", "volume", "temperature"] },
+  { "id": "fig-hazard-diamond", "kind": "photo", "number": "1.21", "draws": [] },
+  { "id": "fig-periodic-table", "kind": "photo", "number": "1.22", "draws": [] }
+ ],
+ "coverage": [
+  { "span": "physical", "concept": "physical-property", "verb": "introduces" },
+  { "span": "physical", "concept": "physical-and-chemical-change", "verb": "introduces" },
+  { "span": "chemical", "concept": "chemical-property", "verb": "introduces" },
+  { "span": "chemical", "concept": "physical-and-chemical-change", "verb": "reinforces" },
+  { "span": "chemical", "concept": "classify-physical-or-chemical", "verb": "introduces" },
+  { "span": "extensive", "concept": "extensive-and-intensive-properties", "verb": "introduces" },
+  { "span": "hazard", "concept": "chemical-property", "verb": "uses" },
+  { "span": "elements", "concept": "physical-property", "verb": "uses" }
+ ],
+ "exercises": [
+  {
+   "id": "ex1",
+   "source_id": "fs-idp14236032",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "chemical",
+   "prompt": "Classify the six underlined properties in the following paragraph as chemical or physical: Fluorine is a pale yellow <u>gas</u> that <u>reacts with most substances</u>. The free element <u>melts at −220 °C</u> and <u>boils at −188 °C</u>. Finely divided <u>metals burn in fluorine</u> with a bright flame. <u>Nineteen grams of fluorine will react with 1.0 gram of hydrogen</u>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The test is whether the property can be observed without fluorine becoming a different kind of matter. Being a gas, melting at −220 °C and boiling at −188 °C are states and changes of state, and the fluorine stays fluorine through each of them, so these three are physical properties. Reacting with most substances, metals burning in fluorine, and nineteen grams of fluorine combining with 1.0 gram of hydrogen all describe fluorine turning into another kind of matter, so these three are chemical properties."
+   }
+  },
+  {
+   "id": "ex2",
+   "source_id": "fs-idp131775248",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "chemical",
+   "prompt": "Classify each of the following changes as physical or chemical: (a) condensation of steam (b) burning of gasoline (c) souring of milk (d) dissolving of sugar in water (e) melting of gold",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) physical; (b) chemical; (c) chemical; (d) physical; (e) physical"
+   }
+  },
+  {
+   "id": "ex3",
+   "source_id": "fs-idp293285456",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "chemical",
+   "prompt": "Classify each of the following changes as physical or chemical: (a) coal burning (b) ice melting (c) mixing chocolate syrup with milk (d) explosion of a firecracker (e) magnetizing of a screwdriver",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Ask of each change whether the matter left afterward is the same kind of matter as before. Burning coal is combustion, which the text lists among chemical changes, since carbon dioxide and other new substances are formed, and the explosion of a firecracker produces gases that are very different kinds of matter from the original substance, so (a) and (d) are chemical changes. Ice melting is a change of state, mixing chocolate syrup with milk makes a mixture whose parts are still syrup and milk, and magnetizing a metal is named in the text as a physical change, so (b), (c) and (e) are physical changes."
+   }
+  },
+  {
+   "id": "ex4",
+   "source_id": "fs-idm547056",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "physical",
+   "prompt": "The volume of a sample of oxygen gas changed from 10 mL to 11 mL as the temperature changed. Is this a chemical or physical change?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "physical"
+   }
+  },
+  {
+   "id": "ex5",
+   "source_id": "fs-idp144519488",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "chemical",
+   "prompt": "A 2.0-liter volume of hydrogen gas combined with 1.0 liter of oxygen gas to produce 2.0 liters of water vapor. Does oxygen undergo a chemical or physical change?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Look at what is present afterward. Before the change there were two substances, hydrogen and oxygen; afterward there is water vapor, which is a different kind of matter from either of them. Since the oxygen has become part of a new substance rather than merely changing its state or its volume, it has undergone a chemical change."
+   }
+  },
+  {
+   "id": "ex6",
+   "source_id": "fs-idp42952176",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "extensive",
+   "prompt": "Explain the difference between extensive properties and intensive properties.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The value of an extensive property depends upon the amount of matter being considered, whereas the value of an intensive property is the same regardless of the amount of matter being considered."
+   }
+  },
+  {
+   "id": "ex7",
+   "source_id": "fs-idp85586464",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "extensive",
+   "prompt": "Identify the following properties as either extensive or intensive. (a) volume (b) temperature (c) humidity (d) heat (e) boiling point",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Ask of each property whether its value changes when the amount of matter is doubled. The volume of a sample doubles with the sample, and so does the heat it contains, as the drop and the pot of hot oil show, so (a) and (d) are extensive. The temperature of a sample is the same for a cup and a gallon, the boiling point of a substance does not depend on how much of it is boiling, and the humidity of air is a measure of how much water vapor it holds for its size rather than of how much air there is, so (b), (c) and (e) are intensive."
+   }
+  },
+  {
+   "id": "ex8",
+   "source_id": "fs-idp121106016",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "extensive",
+   "prompt": "The density ($d$) of a substance is an intensive property that is defined as the ratio of its mass ($\\km$) to its volume ($\\kV$). $$\\text{density} = \\frac{\\text{mass}}{\\text{volume}} \\hspace{2em} d = \\frac{\\km}{\\kV}$$ Considering that mass and volume are both extensive properties, explain why their ratio, density, is intensive.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Being extensive properties, both mass and volume are directly proportional to the amount of substance under study. Dividing one extensive property by another will in effect “cancel” this dependence on amount, yielding a ratio that is independent of amount (an intensive property)."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "ex1", "concept": "physical-property" },
+  { "exercise": "ex1", "concept": "chemical-property" },
+  { "exercise": "ex2", "concept": "classify-physical-or-chemical" },
+  { "exercise": "ex2", "concept": "physical-and-chemical-change", "weight": 2 },
+  { "exercise": "ex3", "concept": "classify-physical-or-chemical" },
+  { "exercise": "ex3", "concept": "physical-and-chemical-change", "weight": 2 },
+  { "exercise": "ex4", "concept": "classify-physical-or-chemical" },
+  { "exercise": "ex4", "concept": "physical-and-chemical-change", "weight": 2 },
+  { "exercise": "ex5", "concept": "classify-physical-or-chemical" },
+  { "exercise": "ex5", "concept": "physical-and-chemical-change", "weight": 2 },
+  { "exercise": "ex6", "concept": "extensive-and-intensive-properties" },
+  { "exercise": "ex7", "concept": "extensive-and-intensive-properties" },
+  { "exercise": "ex8", "concept": "extensive-and-intensive-properties" }
+ ]
+}

@@ -1,0 +1,1005 @@
+{
+ "id": "1.6",
+ "module": "m68683",
+ "chapter": "1",
+ "title": "Mathematical Treatment of Measurement Results",
+ "short": "Mathematical treatment of measurements",
+ "lead": "A quantity that cannot be measured directly is calculated from ones that can, and the units take part in the arithmetic along with the numbers. This section sets out dimensional analysis, the method that carries a measurement from one unit to another through conversion factors and combines measurements in different units into a single result, and then turns to temperature, whose scales share no zero point and so are related by a line with an intercept rather than by a simple factor.",
+ "objectives": [
+  "Explain the dimensional analysis (factor label) approach to mathematical calculations involving quantities",
+  "Use dimensional analysis to carry out unit conversions for a given property and computations involving two or more properties"
+ ],
+ "summary_html": "<p>Measurements are made using a variety of units. It is often useful or necessary to convert a measured quantity from one unit into another. These conversions are accomplished using unit conversion factors, which are derived by simple applications of a mathematical approach called the factor-label method or dimensional analysis. This strategy is also employed to calculate sought quantities using measured quantities and appropriate mathematical relations.</p>",
+ "notes": "The twenty-one even-numbered exercises of the section have no answer in the book’s key and are left out; the section prints no Link to Learning note and no photograph, so nothing else is omitted.",
+ "ai": {
+  "text": "Claude Fable 5.1",
+  "figures": "Claude Fable 5.1"
+ },
+ "built": "2026-09-12",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Every Check Your Learning carries the book’s own answer from the note that follows it. Answers to the end-of-chapter exercises come from the book’s key, which covers the odd-numbered items; the twenty-one even-numbered items (fs-idm321326256, fs-idm124621456, fs-idm128259568, fs-idm290820272, fs-idp3893440, fs-idm311405440, fs-idm293326720, fs-idm247037968, fs-idm242942368, fs-idm311016240, fs-idm219388000, fs-idm306975136, fs-idm110873792, fs-idm207241008, fs-idm95632784, fs-idm215482272, fs-idm305607360, fs-idm182387776, fs-idm291580080, fs-idm294247168, fs-idm307064960) have no keyed answer and are left out, and since every one is numerical no suggested approach is written. The exercise on the cubit refers the reader to the unkeyed exercise before it, which is left out, so that parenthetical reference is removed from its prompt. The three items that write conversion factors as ratios, derive one from a soft-drink label and give the soccer ball’s specifications as ranges are kept as open answers to compare with. Nothing is taken from another section and nothing is held for one. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "sim-temperature-scales",
+   "kind": "sim",
+   "number": "1.28",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_06_TempScales.jpg"
+   ],
+   "original_caption": "The Fahrenheit, Celsius, and kelvin temperature scales are compared.",
+   "draws": [
+    "temperature"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "dimensional-analysis",
+   "concept": "dimensional-analysis",
+   "verb": "introduces"
+  },
+  {
+   "span": "dimensional-analysis",
+   "concept": "si-base-units",
+   "verb": "uses"
+  },
+  {
+   "span": "dimensional-analysis",
+   "concept": "derived-units",
+   "verb": "uses"
+  },
+  {
+   "span": "conversion-factors",
+   "concept": "unit-conversion-factor",
+   "verb": "introduces"
+  },
+  {
+   "span": "conversion-factors",
+   "concept": "convert-units",
+   "verb": "introduces"
+  },
+  {
+   "span": "conversion-factors",
+   "concept": "dimensional-analysis",
+   "verb": "uses"
+  },
+  {
+   "span": "conversion-factors",
+   "concept": "significant-figures-in-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "computing-quantities",
+   "concept": "compute-with-units",
+   "verb": "introduces"
+  },
+  {
+   "span": "computing-quantities",
+   "concept": "convert-units",
+   "verb": "uses"
+  },
+  {
+   "span": "computing-quantities",
+   "concept": "unit-conversion-factor",
+   "verb": "uses"
+  },
+  {
+   "span": "computing-quantities",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature-scales",
+   "concept": "temperature-scales",
+   "verb": "introduces"
+  },
+  {
+   "span": "linear-not-proportional",
+   "concept": "linear-versus-proportional-scales",
+   "verb": "introduces"
+  },
+  {
+   "span": "linear-not-proportional",
+   "concept": "celsius-fahrenheit-conversion",
+   "verb": "introduces"
+  },
+  {
+   "span": "linear-not-proportional",
+   "concept": "unit-conversion-factor",
+   "verb": "uses"
+  },
+  {
+   "span": "linear-not-proportional",
+   "concept": "temperature-scales",
+   "verb": "uses"
+  },
+  {
+   "span": "kelvin-scale",
+   "concept": "celsius-kelvin-conversion",
+   "verb": "introduces"
+  },
+  {
+   "span": "kelvin-scale",
+   "concept": "temperature-scales",
+   "verb": "reinforces"
+  },
+  {
+   "span": "kelvin-scale",
+   "concept": "si-base-units",
+   "verb": "uses"
+  },
+  {
+   "span": "kelvin-scale",
+   "concept": "linear-versus-proportional-scales",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature-examples",
+   "concept": "celsius-fahrenheit-conversion",
+   "verb": "reinforces"
+  },
+  {
+   "span": "temperature-examples",
+   "concept": "celsius-kelvin-conversion",
+   "verb": "reinforces"
+  },
+  {
+   "span": "temperature-examples",
+   "concept": "significant-figures-in-calculations",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm150235328",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-frisbee"
+   },
+   "prompt": "Convert a volume of 9.345 qt to liters.",
+   "answer": {
+    "type": "number",
+    "value": 8.844,
+    "unit": "L",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm305814320",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-antifreeze"
+   },
+   "prompt": "What is the volume in liters of 1.000 oz, given that 1 L = 1.0567 qt and 1 qt = 32 oz (exactly)?",
+   "answer": {
+    "type": "number",
+    "value": 0.02957,
+    "unit": "L",
+    "generated_by": "source",
+    "solution": "$2.957 \\times 10^{-2}$ L"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm306560960",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-roadster"
+   },
+   "prompt": "A Toyota Prius Hybrid uses 59.7 L gasoline to drive from San Francisco to Seattle, a distance of 1300 km (two significant digits).<br>(a) What (average) fuel economy, in miles per gallon, did the Prius get during this trip?<br>(b) If gasoline costs ＄3.90 per gallon, what was the fuel cost for this trip?",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 51,
+      "unit": "mpg"
+     },
+     {
+      "part": "(b)",
+      "value": 62,
+      "unit": "dollars"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "(a) 51 mpg; (b) ＄62"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm75569040",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-body-temperature"
+   },
+   "prompt": "Convert 80.92 °C to K and °F.",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "K",
+      "value": 354.07,
+      "unit": "K"
+     },
+     {
+      "part": "°F",
+      "value": 177.66,
+      "unit": "°F"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "354.07 K, 177.66 °F"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm309453552",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-oven"
+   },
+   "prompt": "Convert 50 °F to °C and K.",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "°C",
+      "value": 10,
+      "unit": "°C"
+     },
+     {
+      "part": "K",
+      "value": 280,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "10 °C, 280 K"
+   }
+  },
+  {
+   "id": "p1",
+   "source_id": "fs-idm287695728",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversion-factors",
+   "prompt": "Write conversion factors (as ratios) for the number of:<br>(a) yards in 1 meter<br>(b) liters in 1 liquid quart<br>(c) pounds in 1 kilogram",
+   "answer": {
+    "type": "open",
+    "solution": "(a) $\\frac{\\text{1.0936 yd}}{\\text{1 m}}$; (b) $\\frac{\\text{0.94635 L}}{\\text{1 qt}}$; (c) $\\frac{\\text{2.2046 lb}}{\\text{1 kg}}$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p3",
+   "source_id": "fs-idp43396912",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "The label on a soft drink bottle gives the volume in two units: 2.0 L and 67.6 fl oz. Use this information to derive a conversion factor between the English and metric units. How many significant figures can you justify in your conversion factor?",
+   "answer": {
+    "type": "open",
+    "solution": "$\\frac{\\text{2.0 L}}{\\text{67.6 fl oz}}=\\frac{\\text{0.030 L}}{\\text{1 fl oz}}$. Only two significant figures are justified.",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p5",
+   "source_id": "fs-idm125803088",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Soccer is played with a round ball having a circumference between 27 and 28 in. and a weight between 14 and 16 oz. What are these specifications in units of centimeters and grams?",
+   "answer": {
+    "type": "open",
+    "solution": "68–71 cm; 400–450 g",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p7",
+   "source_id": "fs-idm203954352",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "How many milliliters of a soft drink are contained in a 12.0-oz can?",
+   "answer": {
+    "type": "number",
+    "value": 355,
+    "unit": "mL",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p9",
+   "source_id": "fs-idp32978240",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "The diameter of a red blood cell is about 3 $\\times$ 10<sup>−4</sup> in. What is its diameter in centimeters?",
+   "answer": {
+    "type": "number",
+    "value": 0.0008,
+    "unit": "cm",
+    "generated_by": "source",
+    "solution": "8 $\\times$ 10<sup>−4</sup> cm"
+   }
+  },
+  {
+   "id": "p11",
+   "source_id": "fs-idm280166528",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Is a 197-lb weight lifter light enough to compete in a class limited to those weighing 90 kg or less?",
+   "answer": {
+    "type": "number",
+    "value": 89.4,
+    "unit": "kg",
+    "generated_by": "source",
+    "solution": "yes; weight = 89.4 kg"
+   }
+  },
+  {
+   "id": "p13",
+   "source_id": "fs-idm159954784",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Many medical laboratory tests are run using 5.0 μL blood serum. What is this volume in milliliters?",
+   "answer": {
+    "type": "number",
+    "value": 0.005,
+    "unit": "mL",
+    "generated_by": "source",
+    "solution": "5.0 $\\times$ 10<sup>−3</sup> mL"
+   }
+  },
+  {
+   "id": "p15",
+   "source_id": "fs-idm101514016",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Use scientific (exponential) notation to express the following quantities in terms of the SI base units in Table 1.2:<br>(a) 0.13 g<br>(b) 232 Gg<br>(c) 5.23 pm<br>(d) 86.3 mg<br>(e) 37.6 cm<br>(f) 54 μm<br>(g) 1 Ts<br>(h) 27 ps<br>(i) 0.15 mK",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.00013,
+      "unit": "kg"
+     },
+     {
+      "part": "(b)",
+      "value": 232000000.0,
+      "unit": "kg"
+     },
+     {
+      "part": "(c)",
+      "value": 5.23e-12,
+      "unit": "m"
+     },
+     {
+      "part": "(d)",
+      "value": 8.63e-05,
+      "unit": "kg"
+     },
+     {
+      "part": "(e)",
+      "value": 0.376,
+      "unit": "m"
+     },
+     {
+      "part": "(f)",
+      "value": 5.4e-05,
+      "unit": "m"
+     },
+     {
+      "part": "(g)",
+      "value": 1000000000000.0,
+      "unit": "s"
+     },
+     {
+      "part": "(h)",
+      "value": 2.7e-11,
+      "unit": "s"
+     },
+     {
+      "part": "(i)",
+      "value": 0.00015,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "(a) 1.3 $\\times$ 10<sup>−4</sup> kg; (b) 2.32 $\\times$ 10<sup>8</sup> kg; (c) 5.23 $\\times$ 10<sup>−12</sup> m; (d) 8.63 $\\times$ 10<sup>−5</sup> kg; (e) 3.76 $\\times$ 10<sup>−1</sup> m; (f) 5.4 $\\times$ 10<sup>−5</sup> m; (g) 1 $\\times$ 10<sup>12</sup> s; (h) 2.7 $\\times$ 10<sup>−11</sup> s; (i) 1.5 $\\times$ 10<sup>−4</sup> K"
+   }
+  },
+  {
+   "id": "p17",
+   "source_id": "fs-idp54026624",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Gasoline is sold by the liter in many countries. How many liters are required to fill a 12.0-gal gas tank?",
+   "answer": {
+    "type": "number",
+    "value": 45.4,
+    "unit": "L",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "p19",
+   "source_id": "fs-idm186995360",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "A long ton is defined as exactly 2240 lb. What is this mass in kilograms?",
+   "answer": {
+    "type": "number",
+    "value": 1016.0,
+    "unit": "kg",
+    "generated_by": "source",
+    "solution": "1.0160 $\\times$ 10<sup>3</sup> kg"
+   }
+  },
+  {
+   "id": "p21",
+   "source_id": "fs-idm250694352",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Make the conversion indicated in each of the following:<br>(a) the length of a soccer field, 120 m (three significant figures), to feet<br>(b) the height of Mt. Kilimanjaro, at 19,565 ft, the highest mountain in Africa, to kilometers<br>(c) the area of an 8.5- × 11-inch sheet of paper in cm<sup>2</sup><br>(d) the displacement volume of an automobile engine, 161 in.<sup>3</sup>, to liters<br>(e) the estimated mass of the atmosphere, 5.6 × 10<sup>15</sup> tons, to kilograms<br>(f) the mass of a bushel of rye, 32.0 lb, to kilograms<br>(g) the mass of a 5.00-grain aspirin tablet to milligrams (1 grain = 0.00229 oz)",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 394,
+      "unit": "ft"
+     },
+     {
+      "part": "(b)",
+      "value": 5.9634,
+      "unit": "km"
+     },
+     {
+      "part": "(c)",
+      "value": 600,
+      "unit": "cm²"
+     },
+     {
+      "part": "(d)",
+      "value": 2.64,
+      "unit": "L"
+     },
+     {
+      "part": "(e)",
+      "value": 5.1e+18,
+      "unit": "kg"
+     },
+     {
+      "part": "(f)",
+      "value": 14.5,
+      "unit": "kg"
+     },
+     {
+      "part": "(g)",
+      "value": 325,
+      "unit": "mg"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "(a) 394 ft; (b) 5.9634 km; (c) 6.0 $\\times$ 10<sup>2</sup>; (d) 2.64 L; (e) 5.1 $\\times$ 10<sup>18</sup> kg; (f) 14.5 kg; (g) 325 mg"
+   }
+  },
+  {
+   "id": "p23",
+   "source_id": "fs-idm311640624",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "A chemist’s 50-Trillion Angstrom Run would be an archeologist’s 10,900 cubit run. How long is one cubit in meters and in feet? (1 Å = 1 $\\times$ 10<sup>−8</sup> cm)",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "in meters",
+      "value": 0.46,
+      "unit": "m"
+     },
+     {
+      "part": "in feet",
+      "value": 1.5,
+      "unit": "ft"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "0.46 m; 1.5 ft/cubit"
+   }
+  },
+  {
+   "id": "p25",
+   "source_id": "fs-idm244153744",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "As an instructor is preparing for an experiment, he requires 225 g phosphoric acid. The only container readily available is a 150-mL Erlenmeyer flask. Is it large enough to contain the acid, whose density is 1.83 g/mL?",
+   "answer": {
+    "type": "number",
+    "value": 123,
+    "unit": "mL",
+    "generated_by": "source",
+    "solution": "Yes, the acid’s volume is 123 mL."
+   }
+  },
+  {
+   "id": "p27",
+   "source_id": "fs-idp15401744",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "A chemistry student is 159 cm tall and weighs 45.8 kg. What is her height in inches and weight in pounds?",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "height",
+      "value": 62.6,
+      "unit": "in."
+     },
+     {
+      "part": "weight",
+      "value": 101,
+      "unit": "lb"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "62.6 in (about 5 ft 3 in.) and 101 lb"
+   }
+  },
+  {
+   "id": "p29",
+   "source_id": "fs-idm289866560",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Solve these problems about lumber dimensions.<br>(a) To describe to a European how houses are constructed in the US, the dimensions of “two-by-four” lumber must be converted into metric units. The thickness $\\times$ width $\\times$ length dimensions are 1.50 in. $\\times$ 3.50 in. $\\times$ 8.00 ft in the US. What are the dimensions in cm $\\times$ cm $\\times$ m?<br>(b) This lumber can be used as vertical studs, which are typically placed 16.0 in. apart. What is that distance in centimeters?",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a) thickness",
+      "value": 3.81,
+      "unit": "cm"
+     },
+     {
+      "part": "(a) width",
+      "value": 8.89,
+      "unit": "cm"
+     },
+     {
+      "part": "(a) length",
+      "value": 2.44,
+      "unit": "m"
+     },
+     {
+      "part": "(b)",
+      "value": 40.6,
+      "unit": "cm"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "(a) 3.81 cm $\\times$ 8.89 cm $\\times$ 2.44 m; (b) 40.6 cm"
+   }
+  },
+  {
+   "id": "p31",
+   "source_id": "fs-idm215857872",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Calculate the density of aluminum if 27.6 cm<sup>3</sup> has a mass of 74.6 g.",
+   "answer": {
+    "type": "number",
+    "value": 2.7,
+    "unit": "g/cm³",
+    "generated_by": "source",
+    "solution": "2.70 g/cm<sup>3</sup>"
+   }
+  },
+  {
+   "id": "p33",
+   "source_id": "fs-idm361862336",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Calculate these masses.<br>(a) What is the mass of 6.00 cm<sup>3</sup> of mercury, density = 13.5939 g/cm<sup>3</sup>?<br>(b) What is the mass of 25.0 mL octane, density = 0.702 g/cm<sup>3</sup>?",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 81.6,
+      "unit": "g"
+     },
+     {
+      "part": "(b)",
+      "value": 17.6,
+      "unit": "g"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "(a) 81.6 g; (b) 17.6 g"
+   }
+  },
+  {
+   "id": "p35",
+   "source_id": "fs-idm216432832",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Calculate these volumes.<br>(a) What is the volume of 25 g iodine, density = 4.93 g/cm<sup>3</sup>?<br>(b) What is the volume of 3.28 g gaseous hydrogen, density = 0.089 g/L?",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 5.1,
+      "unit": "mL"
+     },
+     {
+      "part": "(b)",
+      "value": 37,
+      "unit": "L"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "(a) 5.1 mL; (b) 37 L"
+   }
+  },
+  {
+   "id": "p37",
+   "source_id": "fs-idm208263472",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Convert the boiling temperature of gold, 2966 °C, into degrees Fahrenheit and kelvin.",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "°F",
+      "value": 5371,
+      "unit": "°F"
+     },
+     {
+      "part": "K",
+      "value": 3239,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "5371 °F, 3239 K"
+   }
+  },
+  {
+   "id": "p39",
+   "source_id": "fs-idm126910176",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Convert the temperature of the coldest area in a freezer, −10 °F, to degrees Celsius and kelvin.",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "°C",
+      "value": -23,
+      "unit": "°C"
+     },
+     {
+      "part": "K",
+      "value": 250,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "−23 °C, 250 K"
+   }
+  },
+  {
+   "id": "p41",
+   "source_id": "fs-idm312310640",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Convert the boiling temperature of liquid ammonia, −28.1 °F, into degrees Celsius and kelvin.",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "°C",
+      "value": -33.4,
+      "unit": "°C"
+     },
+     {
+      "part": "K",
+      "value": 239.8,
+      "unit": "K"
+     }
+    ],
+    "generated_by": "source",
+    "solution": "−33.4 °C, 239.8 K"
+   }
+  },
+  {
+   "id": "p43",
+   "source_id": "fs-idm161487744",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "The weather in Europe was unusually warm during the summer of 1995. The TV news reported temperatures as high as 45 °C. What was the temperature on the Fahrenheit scale?",
+   "answer": {
+    "type": "number",
+    "value": 113,
+    "unit": "°F",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "unit-conversion-factor"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "unit-conversion-factor"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "compute-with-units"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "p1",
+   "concept": "unit-conversion-factor"
+  },
+  {
+   "exercise": "p3",
+   "concept": "unit-conversion-factor"
+  },
+  {
+   "exercise": "p3",
+   "concept": "significant-figures-in-calculations",
+   "weight": 2
+  },
+  {
+   "exercise": "p5",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p7",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p9",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p11",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p13",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p13",
+   "concept": "unit-prefixes",
+   "weight": 2
+  },
+  {
+   "exercise": "p15",
+   "concept": "unit-prefixes"
+  },
+  {
+   "exercise": "p15",
+   "concept": "scientific-notation"
+  },
+  {
+   "exercise": "p15",
+   "concept": "convert-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p17",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p19",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p21",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p21",
+   "concept": "compute-with-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p23",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p25",
+   "concept": "compute-with-units"
+  },
+  {
+   "exercise": "p25",
+   "concept": "density",
+   "weight": 2
+  },
+  {
+   "exercise": "p27",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p29",
+   "concept": "convert-units"
+  },
+  {
+   "exercise": "p31",
+   "concept": "density"
+  },
+  {
+   "exercise": "p31",
+   "concept": "compute-with-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p33",
+   "concept": "density"
+  },
+  {
+   "exercise": "p33",
+   "concept": "compute-with-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p33",
+   "concept": "convert-units",
+   "weight": 1
+  },
+  {
+   "exercise": "p35",
+   "concept": "density"
+  },
+  {
+   "exercise": "p35",
+   "concept": "compute-with-units",
+   "weight": 2
+  },
+  {
+   "exercise": "p35",
+   "concept": "convert-units",
+   "weight": 1
+  },
+  {
+   "exercise": "p37",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "p37",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "p39",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "p39",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "p41",
+   "concept": "celsius-fahrenheit-conversion"
+  },
+  {
+   "exercise": "p41",
+   "concept": "celsius-kelvin-conversion"
+  },
+  {
+   "exercise": "p43",
+   "concept": "celsius-fahrenheit-conversion"
+  }
+ ]
+}

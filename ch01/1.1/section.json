@@ -1,0 +1,179 @@
+{
+ "id": "1.1",
+ "module": "m68664",
+ "chapter": "1",
+ "title": "Chemistry in Context",
+ "short": "Chemistry in context",
+ "lead": "Chemistry is the study of the composition, properties, and interactions of matter, and people practiced it for thousands of years before anyone understood it. This section follows that history from the first pottery and bronze to the alchemists and on to modern drug design, places chemistry among the other sciences, describes the scientific method by which a hypothesis is tested and may become a law or a theory, and introduces the three domains, macroscopic, microscopic, and symbolic, in which chemists think about matter at once.",
+ "objectives": [
+  "Outline the historical development of chemistry",
+  "Provide examples of the importance of chemistry in everyday life",
+  "Describe the scientific method",
+  "Differentiate among hypotheses, theories, and laws",
+  "Provide examples illustrating macroscopic, microscopic, and symbolic domains"
+ ],
+ "summary_html": "<p>Chemistry deals with the composition, structure, and properties of matter, and the ways by which various forms of matter may be interconverted. Thus, it occupies a central place in the study and practice of science and technology. Chemists use the scientific method to perform experiments, pose hypotheses, and formulate laws and develop theories, so that they can better understand the behavior of the natural world. To do so, they operate in the macroscopic, microscopic, and symbolic domains. Chemists measure, analyze, purify, and synthesize a wide variety of substances that are important to our lives.</p>",
+ "notes": "Nothing of the section’s text is left out; the diagrams of Figures 1.3 and 1.4 are redrawn, and Figure 1.5 is drawn live in place of the book’s composite, with the book’s own images kept beside them.",
+ "ai": {
+  "text": "Claude Fable 5.1",
+  "figures": "Claude Fable 5.1"
+ },
+ "built": "2026-09-12",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and the one weight are AI-generated. The answers to exercises q1, q3, q5 and q7 come from the book’s own key. Exercises q2, q4 and q6 have no keyed answer; each is a conceptual question, so it carries an AI-written suggested approach, marked as generated. Nothing is held for a later section and nothing is taken from another.",
+ "figures": [
+  {
+   "id": "fig-alchemist",
+   "kind": "photo",
+   "number": "1.2",
+   "draws": []
+  },
+  {
+   "id": "fig-chemweb",
+   "kind": "figure",
+   "number": "1.3",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_01_ChemWeb.jpg"
+   ],
+   "original_caption": "Knowledge of chemistry is central to understanding a wide range of scientific disciplines. This diagram shows just some of the interrelationships between chemistry and other fields.",
+   "draws": []
+  },
+  {
+   "id": "fig-scimethod",
+   "kind": "figure",
+   "number": "1.4",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_01_SciMethod.jpg"
+   ],
+   "original_caption": "The scientific method follows a process similar to the one shown in this diagram. All the key components are shown, in roughly the right order. Scientific progress is seldom neat and clean: It requires open inquiry and the reworking of questions and ideas in response to findings.",
+   "draws": []
+  },
+  {
+   "id": "sim-water",
+   "kind": "sim",
+   "number": "1.5",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_01_WaterDom.jpg"
+   ],
+   "original_caption": "(a) Humidity in the air, icebergs, and the ocean represent water in the macroscopic domain. (b) At the molecular level (microscopic domain), gas molecules are far apart and disorganized, solid water molecules are close together and organized, and liquid molecules are close together and disorganized. (c) The formula H₂O symbolizes water, and (g), (s), and (l) symbolize its phases. (credit a: modification of work by “Gorkaazk”/Wikimedia Commons)",
+   "draws": [
+    "temperature"
+   ]
+  }
+ ],
+ "coverage": [
+  { "span": "scientific-method", "concept": "scientific-method", "verb": "introduces" },
+  { "span": "scientific-method", "concept": "hypothesis-law-theory", "verb": "introduces" },
+  { "span": "domains", "concept": "domains-of-chemistry", "verb": "introduces" }
+ ],
+ "exercises": [
+  {
+   "id": "q1",
+   "source_id": "fs-idm34987968",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "scientific-method",
+   "prompt": "Explain how you could experimentally determine whether the outside temperature is higher or lower than 0 °C (32 °F) without using a thermometer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Place a glass of water outside. It will freeze if the temperature is below 0 °C."
+   }
+  },
+  {
+   "id": "q2",
+   "source_id": "fs-idp45595424",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "scientific-method",
+   "prompt": "Identify each of the following statements as being most similar to a hypothesis, a law, or a theory. Explain your reasoning.\n(a) Falling barometric pressure precedes the onset of bad weather.\n(b) All life on earth has evolved from a common, primitive organism through the process of natural selection.\n(c) My truck’s gas mileage has dropped significantly, probably because it’s due for a tune-up.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Ask of each statement what kind of claim it makes. Statement (a) summarizes a great many observations and predicts one event from another without explaining why, which is what a law does. Statement (b) is a comprehensive, well-substantiated explanation of a large body of evidence about living things, which is what a theory is. Statement (c) is a tentative explanation of one observation, offered as a guide to what to check next, which is what a hypothesis is; taking the truck for a tune-up would test it."
+   }
+  },
+  {
+   "id": "q3",
+   "source_id": "fs-idp38309200",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "scientific-method",
+   "prompt": "Identify each of the following statements as being most similar to a hypothesis, a law, or a theory. Explain your reasoning.\n(a) The pressure of a sample of gas is directly proportional to the temperature of the gas.\n(b) Matter consists of tiny particles that can combine in specific ratios to form substances with specific properties.\n(c) At a higher temperature, solids (such as salt or sugar) will dissolve better in water.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) law (states a consistently observed phenomenon, can be used for prediction); (b) theory (a widely accepted explanation of the behavior of matter); (c) hypothesis (a tentative explanation, can be investigated by experimentation)"
+   }
+  },
+  {
+   "id": "q4",
+   "source_id": "fs-idm58468592",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "domains",
+   "prompt": "Identify each of the underlined items as a part of either the macroscopic domain, the microscopic domain, or the symbolic domain of chemistry. For any in the symbolic domain, indicate whether they are symbols for a macroscopic or a microscopic feature.\n(a) The mass of a <u>lead pipe</u> is 14 lb.\n(b) The mass of a certain <u>chlorine atom</u> is 35 amu.\n(c) A bottle with a label that reads <u>Al</u> contains aluminum metal.\n(d) <u>Al</u> is the symbol for an aluminum atom.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Ask of each item whether it is a thing large enough to see and touch, a thing too small to see, or a symbol that stands for one of the two. A lead pipe (a) can be picked up and weighed, so it belongs to the macroscopic domain. A single chlorine atom (b) is far too small to be seen and is pictured in the mind, so it belongs to the microscopic domain. The label Al in (c) and the symbol Al in (d) are both chemical symbols and so belong to the symbolic domain; the difference is what each stands for. On the bottle the symbol names the metal in the bottle, a macroscopic feature, whereas in (d) the same symbol stands for one aluminum atom, a microscopic feature. That one symbol can mean either is the point the section makes about the symbolic domain."
+   }
+  },
+  {
+   "id": "q5",
+   "source_id": "fs-idm67489232",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "domains",
+   "prompt": "Identify each of the underlined items as a part of either the macroscopic domain, the microscopic domain, or the symbolic domain of chemistry. For those in the symbolic domain, indicate whether they are symbols for a macroscopic or a microscopic feature.\n(a) A certain molecule contains one <u>H</u> atom and one Cl atom.\n(b) <u>Copper wire</u> has a density of about 8 g/cm<sup>3</sup>.\n(c) The bottle contains 15 grams of <u>Ni powder</u>.\n(d) A <u>sulfur molecule</u> is composed of eight sulfur atoms.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) symbolic, microscopic; (b) macroscopic; (c) symbolic, macroscopic; (d) microscopic"
+   }
+  },
+  {
+   "id": "q6",
+   "source_id": "fs-idp6505632",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "domains",
+   "prompt": "According to one theory, the pressure of a gas increases as its volume decreases because the molecules in the gas have to move a shorter distance to hit the walls of the container. Does this theory follow a macroscopic or microscopic description of chemical behavior? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Look at what the theory talks about. The pressure and the volume of the gas are macroscopic properties, since both can be measured on a sample in the laboratory, but the explanation offered is given in terms of molecules moving and striking the walls of the container, and molecules are far too small to be seen. The theory therefore follows a microscopic description: it explains a behavior that is observed in the macroscopic domain by what is imagined to happen in the microscopic one, which is what the section says a theory in chemistry characteristically does."
+   }
+  },
+  {
+   "id": "q7",
+   "source_id": "fs-idp40361152",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "domains",
+   "prompt": "The amount of heat required to melt 2 lbs of ice is twice the amount of heat required to melt 1 lb of ice. Is this observation a macroscopic or microscopic description of chemical behavior? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Macroscopic. The heat required is determined from macroscopic properties."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "q1", "concept": "scientific-method" },
+  { "exercise": "q2", "concept": "hypothesis-law-theory" },
+  { "exercise": "q3", "concept": "hypothesis-law-theory" },
+  { "exercise": "q4", "concept": "domains-of-chemistry" },
+  { "exercise": "q5", "concept": "domains-of-chemistry" },
+  { "exercise": "q6", "concept": "domains-of-chemistry" },
+  { "exercise": "q6", "concept": "hypothesis-law-theory", "weight": 1 },
+  { "exercise": "q7", "concept": "domains-of-chemistry" }
+ ]
+}

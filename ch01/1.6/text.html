@@ -1,0 +1,148 @@
+<section id="dimensional-analysis">
+<h2>Units follow the same arithmetic as their numbers</h2>
+<p class="cite-target">It is often the case that a quantity of interest may not be easy (or even possible) to measure directly but instead must be calculated from other directly measured properties and appropriate mathematical relationships. For example, consider measuring the average speed of an athlete running sprints. This is typically accomplished by measuring the <em>time</em> required for the athlete to run from the starting line to the finish line, and the <em>distance</em> between these two lines, and then computing <em>speed</em> from the equation that relates these three properties:</p>
+$$\text{speed}=\frac{\text{distance}}{\text{time}}$$
+<p>An Olympic-quality sprinter can run 100 m in approximately 10 s, corresponding to an average speed of</p>
+$$\frac{\text{100 m}}{\text{10 s}}=\text{10 m/s}$$
+<p>(For this and the next calculation, assume the trailing zeros are significant digits.) Note that this simple arithmetic involves dividing the numbers of each measured quantity to yield the number of the computed quantity (100/10 = 10) <em>and likewise</em> dividing the units of each measured quantity to yield the unit of the computed quantity (m/s = m/s). Now, consider using this same relation to predict the time required for a person running at this speed to travel a distance of 25 m. The same relation among the three properties is used, but in this case, the two quantities provided are a speed (10 m/s) and a distance (25 m). To yield the sought property, time, the equation must be rearranged appropriately:</p>
+$$\text{time}=\frac{\text{distance}}{\text{speed}}$$
+<p>The time can then be computed as:</p>
+$$\frac{\text{25 m}}{\text{10 m/s}}=\text{2.5 s}$$
+<p>Again, arithmetic on the numbers (25/10 = 2.5) was accompanied by the same arithmetic on the units (m/(m/s) = s) to yield the number and unit of the result, 2.5 s. Note that, just as for numbers, when a unit is divided by an identical unit (in this case, m/m), the result is “1”—or, as commonly phrased, the units “cancel.”</p>
+<p>These calculations are examples of a versatile mathematical approach known as <strong>dimensional analysis</strong> (or the <strong>factor-label method</strong>). Dimensional analysis is based on this premise: <em>the units of quantities must be subjected to the same mathematical operations as their associated numbers</em>. This method can be applied to computations ranging from simple unit conversions to more complex, multi-step calculations involving several different quantities.</p>
+</section>
+
+<section id="conversion-factors">
+<h2>A conversion factor is a ratio equal to one</h2>
+<h3>Conversion Factors and Dimensional Analysis</h3>
+<p class="cite-target">A ratio of two equivalent quantities expressed with different measurement units can be used as a <strong>unit conversion factor</strong>. For example, the lengths of 2.54 cm and 1 in. are equivalent (by definition), and so a unit conversion factor may be derived from the ratio,</p>
+$$\frac{\text{2.54 cm}}{\text{1 in.}}\;\text{(2.54 cm}=\text{1 in.) or 2.54}\;\frac{\text{cm}}{\text{in.}}$$
+<p>Several other commonly used conversion factors are given in Table 1.6.</p>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">Table 1.6</span><span>Common Conversion Factors</span></div>
+  <table>
+    <thead><tr><th>Length</th><th>Volume</th><th>Mass</th></tr></thead>
+    <tbody>
+      <tr><td>1 m = 1.0936 yd</td><td>1 L = 1.0567 qt</td><td>1 kg = 2.2046 lb</td></tr>
+      <tr><td>1 in. = 2.54 cm (exact)</td><td>1 qt = 0.94635 L</td><td>1 lb = 453.59 g<sup>1</sup></td></tr>
+      <tr><td>1 km = 0.62137 mi</td><td>1 ft<sup>3</sup> = 28.317 L</td><td>1 (avoirdupois) oz = 28.349 g</td></tr>
+      <tr><td>1 mi = 1609.3 m</td><td>1 tbsp = 14.787 mL</td><td>1 (troy) oz = 31.103 g</td></tr>
+    </tbody>
+  </table>
+  <p><small><sup>1</sup>Strictly speaking, the ounce and pound are units of weight, <em>W</em> (a force equal to the product of mass and gravitational acceleration, <em>W</em> = <em>mg</em>). The conversion relations in this table are commonly used to equate masses and weight assuming a nominal value for <em>g</em> at the surface of the earth.</small></p>
+</div>
+<p>When a quantity (such as distance in inches) is multiplied by an appropriate unit conversion factor, the quantity is converted to an equivalent value with different units (such as distance in centimeters). For example, a basketball player’s vertical jump of 34 inches can be converted to centimeters by:</p>
+$$34\;\cancel{\text{in.}}\;\times\;\frac{\text{2.54 cm}}{1\;\cancel{\text{in.}}}\;=\text{86 cm}$$
+<p>Since this simple arithmetic involves <em>quantities</em>, the premise of dimensional analysis requires that we multiply both <em>numbers and units</em>. The numbers of these two quantities are multiplied to yield the number of the product quantity, 86, whereas the units are multiplied to yield $\frac{\text{in.}\;\times\;\text{cm}}{\text{in.}}$. Just as for numbers, a ratio of identical units is also numerically equal to one, $\frac{\text{in.}}{\text{in.}}=\text{1,}$ and the unit product thus simplifies to <em>cm</em>. (When identical units divide to yield a factor of 1, they are said to “cancel.”) Dimensional analysis may be used to confirm the proper application of unit conversion factors as demonstrated in the following example.</p>
+<div class="example" id="ex-frisbee">
+<h3>Example 1.8 · Using a Unit Conversion Factor</h3>
+<p>The mass of a competition frisbee is 125 g. Convert its mass to ounces using the unit conversion factor derived from the relationship 1 oz = 28.349 g (Table 1.6).</p>
+<h4>Solution</h4>
+<p>Given the conversion factor, the mass in ounces may be derived using an equation similar to the one used for converting length from inches to centimeters.</p>
+$$x\;\text{oz}=\text{125 g}\;\times\;\text{unit conversion factor}$$
+<p>The unit conversion factor may be represented as:</p>
+$$\frac{\text{1 oz}}{\text{28.349 g}}\;\text{and}\;\frac{\text{28.349 g}}{\text{1 oz}}$$
+<p>The correct unit conversion factor is the ratio that cancels the units of grams and leaves ounces.</p>
+$$\begin{array}{lll}x\;\text{oz} & = & 125\;\cancel{\text{g}}\;\times\;\frac{\text{1 oz}}{\text{28.349}\;\cancel{\text{g}}} \\ & = & \left(\frac{125}{\text{28.349}}\right)\;\text{oz} \\ & = & \text{4.41 oz (three significant figures)}\end{array}$$
+<div class="exercises" data-place="ex-frisbee"></div>
+</div>
+</section>
+
+<section id="computing-quantities">
+<h2>Computing a quantity from measurements in different units</h2>
+<p class="cite-target">Beyond simple unit conversions, the factor-label method can be used to solve more complex problems involving computations. Regardless of the details, the basic approach is the same—all the <em>factors</em> involved in the calculation must be appropriately oriented to ensure that their <em>labels</em> (units) will appropriately cancel and/or combine to yield the desired unit in the result. As your study of chemistry continues, you will encounter many opportunities to apply this approach.</p>
+<div class="example" id="ex-antifreeze">
+<h3>Example 1.9 · Computing Quantities from Measurement Results and Known Mathematical Relations</h3>
+<p>What is the density of common antifreeze in units of g/mL? A 4.00-qt sample of the antifreeze weighs 9.26 lb.</p>
+<h4>Solution</h4>
+<p>Since $\text{density}=\frac{\text{mass}}{\text{volume}}$, we need to divide the mass in grams by the volume in milliliters. This will require converting the provided volume from quarts to milliliters and converting the provided mass from pounds to grams. The necessary conversion factors are given in Table 1.6: 1 lb = 453.59 g; 1 L = 1.0567 qt; 1 L = 1,000 mL. Mass may be converted from pounds to grams as follows:</p>
+$$\text{9.26}\;\cancel{\text{lb}}\;\times\;\frac{\text{453.59 g}}{1\;\cancel{\text{lb}}}\;=4.20\;\times\;{10}^{3}\;\text{g}$$
+<p>Volume may be converted from quarts to milliliters via two steps:</p>
+<ol>
+<li><p><em>Convert quarts to liters.</em></p>
+$$\text{4.00}\;\cancel{\text{qt}}\;\times\;\frac{\text{1 L}}{\text{1.0567}\;\cancel{\text{qt}}}\;=\text{3.78 L}$$</li>
+<li><p><em>Convert liters to milliliters.</em></p>
+$$\text{3.78}\;\cancel{\text{L}}\;\times\;\frac{\text{1000 mL}}{1\;\cancel{\text{L}}}\;=3.78\;\times\;{10}^{3}\;\text{mL}$$</li>
+</ol>
+<p>Then,</p>
+$$\text{density}=\frac{\text{4.20}\;\times\;{10}^{3}\;\text{g}}{3.78\;\times\;{10}^{3}\;\text{mL}}\;=\text{1.11 g/mL}$$
+<p>Alternatively, the calculation could be set up in a way that uses three unit conversion factors sequentially as follows:</p>
+$$\frac{\text{9.26}\;\cancel{\text{lb}}}{\text{4.00}\;\cancel{\text{qt}}}\;\times\;\frac{\text{453.59 g}}{1\;\cancel{\text{lb}}}\;\times\;\frac{\text{1.0567}\;\cancel{\text{qt}}}{1\;\cancel{\text{L}}}\;\times\;\frac{1\;\cancel{\text{L}}}{\text{1000 mL}}\;=\text{1.11 g/mL}$$
+<div class="exercises" data-place="ex-antifreeze"></div>
+</div>
+<div class="example" id="ex-roadster">
+<h3>Example 1.10 · Computing Quantities from Measurement Results and Known Mathematical Relations</h3>
+<p>While being driven from Philadelphia to Atlanta, a distance of about 1250 km, a 2014 Lamborghini Aventador Roadster uses 213 L gasoline.</p>
+<p>(a) What (average) fuel economy, in miles per gallon, did the Roadster get during this trip?</p>
+<p>(b) If gasoline costs &#36;3.80 per gallon, what was the fuel cost for this trip?</p>
+<h4>Solution</h4>
+<p>(a) First convert distance from kilometers to miles:</p>
+$$1250\;\cancel{\text{km}}\;\times\;\frac{\text{0.62137 mi}}{1\;\cancel{\text{km}}}\;=\text{777 mi}$$
+<p>and then convert volume from liters to gallons:</p>
+$$213\;\cancel{\text{L}}\;\times\;\frac{\text{1.0567}\;\cancel{\text{qt}}}{1\;\cancel{\text{L}}}\;\times\;\frac{\text{1 gal}}{4\;\cancel{\text{qt}}}\;=\text{56.3 gal}$$
+<p>Finally,</p>
+$$\text{(average) mileage}=\frac{\text{777 mi}}{\text{56.3 gal}}\;=\text{13.8 miles/gallon}=\text{13.8 mpg}$$
+<p>Alternatively, the calculation could be set up in a way that uses all the conversion factors sequentially, as follows:</p>
+$$\frac{1250\;\cancel{\text{km}}}{213\;\cancel{\text{L}}}\;\times\;\frac{\text{0.62137 mi}}{1\;\cancel{\text{km}}}\;\times\;\frac{1\;\cancel{\text{L}}}{\text{1.0567}\;\cancel{\text{qt}}}\;\times\;\frac{4\;\cancel{\text{qt}}}{\text{1 gal}}=\text{13.8 mpg}$$
+<p>(b) Using the previously calculated volume in gallons, we find:</p>
+$$56.3\;\cancel{\text{gal}}\;\times\;\frac{\text{＄3.80}}{1\;\cancel{\text{gal}}}=\text{＄214}$$
+<div class="exercises" data-place="ex-roadster"></div>
+</div>
+</section>
+
+<section id="temperature-scales">
+<h2>Temperature and how a scale is fixed</h2>
+<h3>Conversion of Temperature Units</h3>
+<p class="cite-target">We use the word <strong>temperature</strong> to refer to the hotness or coldness of a substance. One way we measure a change in temperature is to use the fact that most substances expand when their temperature increases and contract when their temperature decreases. The liquid in a common glass thermometer changes its volume as the temperature changes, and the position of the trapped liquid's surface along a printed scale may be used as a measure of temperature.</p>
+<p>Temperature scales are defined relative to selected reference temperatures: Two of the most commonly used are the freezing and boiling temperatures of water at a specified atmospheric pressure. On the Celsius scale, 0 °C is defined as the freezing temperature of water and 100 °C as the boiling temperature of water. The space between the two temperatures is divided into 100 equal intervals, which we call degrees. On the <strong>Fahrenheit</strong> scale, the freezing point of water is defined as 32 °F and the boiling temperature as 212 °F. The space between these two points on a Fahrenheit thermometer is divided into 180 equal parts (degrees).</p>
+</section>
+
+<section id="linear-not-proportional">
+<h2>Why the Celsius and Fahrenheit scales are related by a line, not a proportion</h2>
+<p class="cite-target">Defining the Celsius and Fahrenheit temperature scales as described in the previous paragraph results in a slightly more complex relationship between temperature values on these two scales than for different units of measure for other properties. Most measurement units for a given property are directly proportional to one another (<em>y</em> = <em>mx</em>). Using familiar length units as one example:</p>
+$$\text{length in feet}=\left(\frac{\text{1 ft}}{\text{12 in.}}\right)\;\times\;\text{length in inches}$$
+<p>where <em>y</em> = length in feet, <em>x</em> = length in inches, and the proportionality constant, <em>m</em>, is the conversion factor. The Celsius and Fahrenheit temperature scales, however, do not share a common zero point, and so the relationship between these two scales is a linear one rather than a proportional one (<em>y</em> = <em>mx</em> + <em>b</em>). Consequently, converting a temperature from one of these scales into the other requires more than simple multiplication by a conversion factor, <em>m</em>; it also must take into account differences in the scales’ zero points (<em>b</em>).</p>
+<p>The linear equation relating Celsius and Fahrenheit temperatures is easily derived from the two temperatures used to define each scale. Representing the Celsius temperature as <em>x</em> and the Fahrenheit temperature as <em>y</em>, the slope, <em>m</em>, is computed to be:</p>
+$$m=\frac{\Delta y}{\Delta x}=\frac{\text{212 °F}-\text{32 °F}}{\text{100 °C}-\text{0 °C}}=\frac{\text{180 °F}}{\text{100 °C}}=\frac{\text{9 °F}}{\text{5 °C}}$$
+<p>The <em>y</em>-intercept of the equation, <em>b</em>, is then calculated using either of the equivalent temperature pairs, (100 °C, 212 °F) or (0 °C, 32 °F), as:</p>
+$$b=y-mx=\text{32 °F}-\frac{\text{9 °F}}{\text{5 °C}}\;\times\;\text{0 °C}=\text{32 °F}$$
+<p>The equation relating the temperature (<em>T</em>) scales is then:</p>
+$$\kTF=\left(\frac{\text{9 °F}}{\text{5 °C}}\;\times\;\kTC\right)+\text{32 °F}$$
+<p>An abbreviated form of this equation that omits the measurement units is:</p>
+$$\kTF=\left(\frac{9}{5}\;\times\;\kTC\right)+32$$
+<p>Rearrangement of this equation yields the form useful for converting from Fahrenheit to Celsius:</p>
+$$\kTC=\frac{5}{9}\left(\kTF-32\right)$$
+</section>
+
+<section id="kelvin-scale">
+<h2>The kelvin scale and the three scales compared</h2>
+<p class="cite-target">As mentioned earlier in this chapter, the SI unit of temperature is the kelvin (K). Unlike the Celsius and Fahrenheit scales, the kelvin scale is an absolute temperature scale in which 0 (zero) K corresponds to the lowest temperature that can theoretically be achieved. Since the kelvin temperature scale is absolute, a degree symbol is not included in the unit abbreviation, K. The early 19th-century discovery of the relationship between a gas’s volume and temperature suggested that the volume of a gas would be zero at −273.15 °C. In 1848, British physicist William Thompson, who later adopted the title of Lord Kelvin, proposed an absolute temperature scale based on this concept (further treatment of this topic is provided in this text’s chapter on gases).</p>
+<p>The freezing temperature of water on this scale is 273.15 K and its boiling temperature is 373.15 K. Notice the numerical difference in these two reference temperatures is 100, the same as for the Celsius scale, and so the linear relation between these two temperature scales will exhibit a slope of $1\;\frac{\text{K}}{\text{°C}}$. Following the same approach, the equations for converting between the kelvin and Celsius temperature scales are derived to be:</p>
+$$\kTK=\kTC+\text{273.15}$$
+$$\kTC=\kTK-\text{273.15}$$
+<p>The 273.15 in these equations has been determined experimentally, so it is not exact. Figure 1.28 shows the relationship among the three temperature scales.</p>
+<figure class="sim" id="sim-temperature-scales" data-figure="1.28" data-original="/media/ch01/CNX_Chem_01_06_TempScales.jpg" data-original-caption="The Fahrenheit, Celsius, and kelvin temperature scales are compared.">
+  <div class="sim-head"><span class="eyebrow">Figure 1.28</span><span>One temperature is read on three thermometers at once, the Fahrenheit, the Celsius and the kelvin, with the freezing and boiling temperatures of water marked across all three. Drag the temperature and watch the three readings change together: the Celsius and kelvin readings always differ by 273.15, since their degrees are the same size, while the Fahrenheit reading climbs nine degrees for every five on the Celsius scale. The graph beside the thermometers plots the Fahrenheit and kelvin readings against the Celsius temperature, and neither line passes through the origin, which is why converting a temperature takes an intercept as well as a slope.</span></div>
+</figure>
+<p>Although the kelvin (absolute) temperature scale is the official SI temperature scale, Celsius is commonly used in many scientific contexts and is the scale of choice for nonscience contexts in almost all areas of the world. Very few countries (the U.S. and its territories, the Bahamas, Belize, Cayman Islands, and Palau) still use Fahrenheit for weather, medicine, and cooking.</p>
+</section>
+
+<section id="temperature-examples">
+<h2>Converting a temperature</h2>
+<div class="example" id="ex-body-temperature">
+<h3>Example 1.11 · Conversion from Celsius</h3>
+<p>Normal body temperature has been commonly accepted as 37.0 °C (although it varies depending on time of day and method of measurement, as well as among individuals). What is this temperature on the kelvin scale and on the Fahrenheit scale?</p>
+<h4>Solution</h4>
+$$\text{K}=\text{°C}+273.15=37.0+273.2=\text{310.2 K}$$
+$$\text{°F}=\frac{9}{5}\text{°C}+32.0=\left(\frac{9}{5}\;\times\;37.0\right)+32.0=66.6+32.0=\text{98.6 °F}$$
+<div class="exercises" data-place="ex-body-temperature"></div>
+</div>
+<div class="example" id="ex-oven">
+<h3>Example 1.12 · Conversion from Fahrenheit</h3>
+<p>Baking a ready-made pizza calls for an oven temperature of 450 °F. If you are in Europe, and your oven thermometer uses the Celsius scale, what is the setting? What is the kelvin temperature?</p>
+<h4>Solution</h4>
+$$\begin{aligned}\text{°C}&=\frac{5}{9}\text{(°F}-\text{32)}=\frac{5}{9}(450-32)=\frac{5}{9}\;\times\;418=\text{232 °C}\\&\longrightarrow\;\text{set oven to 230 °C}\hspace{2em}(\text{two significant figures})\end{aligned}$$
+$$\begin{aligned}\text{K}&=\text{°C}+273.15=\frac{5}{9}\text{(°F}-\text{32)}+273.15\\&=\frac{5}{9}(450-32)+273.15=505.4\;\text{K}\;\longrightarrow 5.1\times{10}^{2}\;\text{K}\end{aligned}$$
+<div class="exercises" data-place="ex-oven"></div>
+</div>
+</section>

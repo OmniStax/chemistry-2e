@@ -1,0 +1,550 @@
+{
+ "id": "1.5",
+ "module": "m68690",
+ "chapter": "1",
+ "title": "Measurement Uncertainty, Accuracy, and Precision",
+ "short": "Uncertainty, accuracy, and precision",
+ "lead": "Counting is the one kind of measurement that is exact; every other measurement carries an uncertainty, and its last digit is where that uncertainty lives. This section shows how an instrument is read to one estimated digit, how the significant figures of a reported value are counted, how a calculated result is rounded so that it claims no more certainty than the measurements behind it, and how the precision of repeated measurements differs from their accuracy.",
+ "objectives": [
+  "Define accuracy and precision",
+  "Distinguish exact and uncertain numbers",
+  "Correctly represent uncertainty in quantities using significant figures",
+  "Apply proper rounding rules to computed quantities"
+ ],
+ "summary_html": "<p>Quantities can be defined or measured. Measured quantities have an associated uncertainty that is represented by the number of significant figures in the quantity’s number. The uncertainty of a calculated quantity depends on the uncertainties in the quantities used in the calculation and is reflected in how the value is rounded. Quantities are characterized with regard to accuracy (closeness to a true or accepted value) and precision (variation among replicate measurement results).</p>",
+ "notes": "The five end-of-chapter exercises without an answer in the book’s key are left out, and the reference to Appendix B points at the publisher’s page until the app has that page.",
+ "ai": {
+  "text": "Claude Fable 5.1",
+  "figures": "Claude Fable 5.1"
+ },
+ "built": "2026-09-12",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s own key: every Check Your Learning carries the answer of its example’s Answer note, and the six keyed end-of-chapter items carry their printed solutions. The items whose whole point is the number of digits kept (the rounding, the calculations with significant figures and the exponential forms) are open answers the reader compares with the book’s, since a tolerance check cannot tell 0.42 from 0.424; the two density items and the count of significant figures are checked as numbers. Two unkeyed conceptual items, the six quantities to judge exact or uncertain and the three sets of measurements to classify as accurate, precise, both or neither, are kept with an AI-written suggested approach marked as such; the five unkeyed numerical items (scientific notation, two significant-figure counts, a rounding list and eight calculations) are left out. The archery-contest item and the Check Your Learning of Example 1.7 carry the book’s own diagram on their cards. Nothing is taken from or held for another section. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "sim-meniscus",
+   "kind": "sim",
+   "number": "1.26",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_05_Measure.jpg"
+   ],
+   "original_caption": "To measure the volume of liquid in this graduated cylinder, you must mentally subdivide the distance between the 21 and 22 mL marks into tenths of a milliliter, and then make a reading (estimate) at the bottom of the meniscus.",
+   "draws": [
+    "volume"
+   ]
+  },
+  {
+   "id": "fig-zeros",
+   "kind": "figure",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_05_SigDigits5_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-count-digits",
+   "kind": "figure",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_05_SigDigits1_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-captive-leading",
+   "kind": "figure",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_05_SigDigits2_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-trailing",
+   "kind": "figure",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_05_SigDigits3_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-column-sums",
+   "kind": "figure",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_05_SigDigits4_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-rebar",
+   "kind": "figure",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_04_CylRebar.jpg"
+   ],
+   "draws": [
+    "volume",
+    "mass"
+   ]
+  },
+  {
+   "id": "fig-gold",
+   "kind": "figure",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_04_CylGold.jpg"
+   ],
+   "draws": [
+    "volume",
+    "mass"
+   ]
+  },
+  {
+   "id": "sim-targets",
+   "kind": "sim",
+   "number": "1.27",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_05_Archery.jpg"
+   ],
+   "original_caption": "(a) These arrows are close to both the bull’s eye and one another, so they are both accurate and precise. (b) These arrows are close to one another but not on target, so they are precise but not accurate. (c) These arrows are neither on target nor close to one another, so they are neither accurate nor precise.",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "exact-numbers",
+   "concept": "exact-and-uncertain-numbers",
+   "verb": "introduces"
+  },
+  {
+   "span": "exact-numbers",
+   "concept": "measurement-parts",
+   "verb": "uses"
+  },
+  {
+   "span": "uncertainty",
+   "concept": "measurement-uncertainty",
+   "verb": "introduces"
+  },
+  {
+   "span": "uncertainty",
+   "concept": "significant-figures",
+   "verb": "introduces"
+  },
+  {
+   "span": "uncertainty",
+   "concept": "measurement-parts",
+   "verb": "uses"
+  },
+  {
+   "span": "counting-digits",
+   "concept": "count-significant-figures",
+   "verb": "introduces"
+  },
+  {
+   "span": "counting-digits",
+   "concept": "significant-figures",
+   "verb": "uses"
+  },
+  {
+   "span": "counting-digits",
+   "concept": "scientific-notation",
+   "verb": "uses"
+  },
+  {
+   "span": "rounding",
+   "concept": "rounding-rules",
+   "verb": "introduces"
+  },
+  {
+   "span": "rounding",
+   "concept": "measurement-uncertainty",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "significant-figures-in-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "calculations",
+   "concept": "rounding-rules",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "count-significant-figures",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "measure-volume-by-displacement",
+   "verb": "uses"
+  },
+  {
+   "span": "accuracy-precision",
+   "concept": "accuracy-and-precision",
+   "verb": "introduces"
+  },
+  {
+   "span": "accuracy-precision",
+   "concept": "measurement-uncertainty",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp40552528",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-rounding"
+   },
+   "cite": "rounding",
+   "prompt": "Round the following to the indicated number of significant figures: (a) 0.424 (to two significant figures); (b) 0.0038661 (to three significant figures); (c) 421.25 (to four significant figures); (d) 28,683.5 (to five significant figures).",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 0.42; (b) 0.00387; (c) 421.2; (d) 28,684"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp61408240",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-add-subtract"
+   },
+   "cite": "ex-add-subtract",
+   "prompt": "(a) Add 2.334 mL and 0.31 mL. (b) Subtract 55.8752 m from 56.533 m.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 2.64 mL; (b) 0.658 m"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp34148976",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-multiply-divide"
+   },
+   "cite": "ex-multiply-divide",
+   "prompt": "(a) Multiply 2.334 cm and 0.320 cm. (b) Divide 55.8752 m by 56.53 s.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 0.747 cm<sup>2</sup>; (b) 0.9884 m/s"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp40680240",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-bathtub"
+   },
+   "cite": "ex-bathtub",
+   "prompt": "What is the density of a liquid with a mass of 31.1415 g and a volume of 30.13 cm<sup>3</sup>?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.034,
+    "unit": "g/mL",
+    "hint": "Divide the mass by the volume, and keep as many significant figures as the less certain of the two, the volume.",
+    "solution": "1.034 g/mL"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm148976192",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-rebar"
+   },
+   "cite": "ex-rebar",
+   "figure": {
+    "src": "/media/ch01/CNX_Chem_01_04_CylGold.jpg",
+    "alt": "This diagram shows the initial volume of water in a graduated cylinder as 17.1 milliliters. A 51.842 gram gold colored rock is added to the graduated cylinder, causing the water to reach a final volume of 19.8 milliliters"
+   },
+   "prompt": "An irregularly shaped piece of a shiny yellowish material is weighed and then submerged in a graduated cylinder, with results as shown. (a) Use these values to determine the density of this material. (b) Do you have any reasonable guesses as to the identity of this material? Explain your reasoning.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "part": "(a)",
+    "value": 19,
+    "unit": "g/cm³",
+    "hint": "The rise of the water is the volume of the piece, read to the nearest 0.1 mL; the difference has two significant figures, and so does the density.",
+    "solution": "(a) 19 g/cm<sup>3</sup>; (b) It is likely gold; the right appearance for gold and very close to the density given for gold in Table 1.4."
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp24074624",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "counting-digits",
+   "prompt": "Express each of the following numbers in exponential notation with correct significant figures: (a) 704; (b) 0.03344; (c) 547.9; (d) 22086; (e) 1000.00; (f) 0.0000000651; (g) 0.007157.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 7.04 $\\times$ 10<sup>2</sup>; (b) 3.344 $\\times$ 10<sup>−2</sup>; (c) 5.479 $\\times$ 10<sup>2</sup>; (d) 2.2086 $\\times$ 10<sup>4</sup>; (e) 1.00000 $\\times$ 10<sup>3</sup>; (f) 6.51 $\\times$ 10<sup>−8</sup>; (g) 7.157 $\\times$ 10<sup>−3</sup>"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp30473840",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "exact-numbers",
+   "prompt": "Indicate whether each of the following can be determined exactly or must be measured with some degree of uncertainty: (a) the number of seconds in an hour; (b) the number of pages in this book; (c) the number of grams in your weight; (d) the number of grams in 3 kilograms; (e) the volume of water you drink in one day; (f) the distance from San Francisco to Kansas City.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) exact; (b) exact; (c) uncertain; (d) exact; (e) uncertain; (f) uncertain"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp16088144",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "counting-digits",
+   "prompt": "How many significant figures are contained in each of the following measurements? (a) 53 cm; (b) 2.05 $\\times$ 10<sup>8</sup> m; (c) 86,002 J; (d) 9.740 $\\times$ 10<sup>4</sup> m/s; (e) 10.0613 m<sup>3</sup>; (f) 0.17 g/mL; (g) 0.88400 s.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 2
+     },
+     {
+      "part": "(b)",
+      "value": 3
+     },
+     {
+      "part": "(c)",
+      "value": 5
+     },
+     {
+      "part": "(d)",
+      "value": 4
+     },
+     {
+      "part": "(e)",
+      "value": 6
+     },
+     {
+      "part": "(f)",
+      "value": 2
+     },
+     {
+      "part": "(g)",
+      "value": 5
+     }
+    ],
+    "solution": "(a) two; (b) three; (c) five; (d) four; (e) six; (f) two; (g) five"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp15391168",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rounding",
+   "prompt": "Round off each of the following numbers to two significant figures: (a) 0.436; (b) 9.000; (c) 27.2; (d) 135; (e) 1.497 $\\times$ 10<sup>−3</sup>; (f) 0.445.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 0.44; (b) 9.0; (c) 27; (d) 140; (e) 1.5 $\\times$ 10<sup>−3</sup>; (f) 0.44"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp358584288",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "Perform the following calculations and report each answer with the correct number of significant figures. (a) 628 $\\times$ 342; (b) (5.63 $\\times$ 10<sup>2</sup>) $\\times$ (7.4 $\\times$ 10<sup>3</sup>); (c) $\\frac{28.0}{13.483}$; (d) 8119 $\\times$ 0.000023; (e) 14.98 + 27,340 + 84.7593; (f) 42.7 + 0.259.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 2.15 $\\times$ 10<sup>5</sup>; (b) 4.2 $\\times$ 10<sup>6</sup>; (c) 2.08; (d) 0.19; (e) 27,440; (f) 43.0"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp30946992",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "accuracy-precision",
+   "figure": {
+    "src": "/media/ch01/CNX_Chem_01_05_Archer2_img.jpg",
+    "alt": "4 targets are shown each with 4 holes indicating where the arrows hit the targets. Archer W put all 4 arrows closely around the center of the target. Archer X put all 4 arrows in a tight cluster but far to the lower right of the target. Archer Y put all 4 arrows at different corners of the target. All 4 arrows are very far from the center of the target. Archer Z put 2 arrows close to the target and 2 other arrows far outside of the target."
+   },
+   "prompt": "Consider the results of the archery contest shown in this figure. (a) Which archer is most precise? (b) Which archer is most accurate? (c) Who is both least precise and least accurate?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Archer X; (b) Archer W; (c) Archer Y"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp26053648",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "exact-numbers",
+   "prompt": "Indicate whether each of the following can be determined exactly or must be measured with some degree of uncertainty: (a) the number of eggs in a basket; (b) the mass of a dozen eggs; (c) the number of gallons of gasoline necessary to fill an automobile gas tank; (d) the number of cm in 2 m; (e) the mass of a textbook; (f) the time required to drive from San Francisco to Kansas City at an average speed of 53 mi/h.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Ask of each quantity whether it comes from counting or from a definition, or from a measurement. A number of objects that does not change while they are counted, such as eggs in a basket, is exact, and so is a quantity fixed by definition, such as the number of centimeters in a meter and therefore in 2 m. A mass, a volume, a distance or a time has to be measured with an instrument, and every such measurement is uncertain to the extent of its last digit: the mass of a dozen eggs, the gasoline that fills a tank, the mass of a textbook and the time of a drive are all of this kind, and the last of them rests on a measured distance and a measured speed besides."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp33718320",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "accuracy-precision",
+   "prompt": "Classify the following sets of measurements as accurate, precise, both, or neither. (a) Checking for consistency in the weight of chocolate chip cookies: 17.27 g, 13.05 g, 19.46 g, 16.92 g. (b) Testing the volume of a batch of 25-mL pipettes: 27.02 mL, 26.99 mL, 26.97 mL, 27.01 mL. (c) Determining the purity of gold: 99.9999%, 99.9998%, 99.9998%, 99.9999%.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Judge the two qualities separately, as the section does for the three dispensers. Precision is how closely the repeated values agree with one another, so look at how far apart the largest and smallest values in each set lie against the size of the values. Accuracy is how closely the values agree with a true or accepted value, so look for the target the set is being checked against: a pipette is meant to deliver its nominal volume, and a purity is compared with what the gold is supposed to be, while a set that is only being checked for consistency names no true value, and its accuracy cannot be judged from the values alone. A set can be tight and far from its target, scattered and centred on it, both, or neither."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "rounding-rules"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "significant-figures-in-calculations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "rounding-rules",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "significant-figures-in-calculations"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "rounding-rules",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "significant-figures-in-calculations"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "density",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "significant-figures-in-calculations"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "measure-volume-by-displacement",
+   "weight": 2
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "density",
+   "weight": 2
+  },
+  {
+   "exercise": "e1",
+   "concept": "count-significant-figures"
+  },
+  {
+   "exercise": "e1",
+   "concept": "scientific-notation",
+   "weight": 2
+  },
+  {
+   "exercise": "e2",
+   "concept": "exact-and-uncertain-numbers"
+  },
+  {
+   "exercise": "e3",
+   "concept": "count-significant-figures"
+  },
+  {
+   "exercise": "e4",
+   "concept": "rounding-rules"
+  },
+  {
+   "exercise": "e5",
+   "concept": "significant-figures-in-calculations"
+  },
+  {
+   "exercise": "e5",
+   "concept": "rounding-rules",
+   "weight": 2
+  },
+  {
+   "exercise": "e6",
+   "concept": "accuracy-and-precision"
+  },
+  {
+   "exercise": "e7",
+   "concept": "exact-and-uncertain-numbers"
+  },
+  {
+   "exercise": "e8",
+   "concept": "accuracy-and-precision"
+  }
+ ]
+}

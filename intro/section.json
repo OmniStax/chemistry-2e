@@ -1,0 +1,29 @@
+{
+ "id": "intro",
+ "module": "m68662",
+ "title": "Preface",
+ "short": "Preface",
+ "lead": "",
+ "notes": "Nothing of the Preface’s text is left out; the errata form, the instructor and student resources and the technology partners are named in the book’s words without a link, since the book itself reaches them only through the book page on OpenStax.org, and the one link the book writes, to the Community Hubs, is kept.",
+ "ai": {
+  "text": "Claude Fable 5.1",
+  "figures": "Claude Fable 5.1"
+ },
+ "built": "2026-09-12",
+ "figures": [
+  {
+   "id": "fig-art-program",
+   "kind": "figure",
+   "originals": [
+    "/media/intro/CNX_Chem_01_02_Cellulose.jpg",
+    "/media/intro/CNX_Chem_02_02_Rutherford.jpg",
+    "/media/intro/CNX_Chem_04_02_HClsoln.jpg",
+    "/media/intro/CNX_Chem_06_03_3dOrbitals.jpg",
+    "/media/intro/CNX_Chem_20_01_alkanes.jpg",
+    "/media/intro/CNX_Chem_10_06_FcCntrdCb.jpg",
+    "/media/intro/CNX_Chem_21_03_Reaction1.jpg"
+   ],
+   "draws": []
+  }
+ ]
+}

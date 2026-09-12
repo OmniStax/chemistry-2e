@@ -1,0 +1,22 @@
+{
+ "id": "intro",
+ "module": "m68663",
+ "chapter": "1",
+ "title": "Introduction",
+ "short": "Introduction",
+ "lead": "",
+ "notes": "The list of the chapter’s section titles that the module carries in place of learning objectives is left out, since the contents view lists them.",
+ "ai": {
+  "text": "Claude Fable 5.1",
+  "figures": "Claude Fable 5.1"
+ },
+ "built": "2026-09-12",
+ "figures": [
+  {
+   "id": "fig-daily-chem",
+   "kind": "photo",
+   "number": "1.1",
+   "draws": []
+  }
+ ]
+}

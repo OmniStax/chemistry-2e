@@ -1,0 +1,208 @@
+{
+ "id": "1.4",
+ "module": "m68674",
+ "chapter": "1",
+ "title": "Measurements",
+ "short": "Measurements",
+ "lead": "Every measurement carries a number, a unit and an uncertainty, and a number without its unit can be meaningless or dangerous. This section sets out the seven base units of the International System and the prefixes that scale them, introduces the meter, the kilogram, the kelvin and the second, and derives from them the units of volume and of density, which is measured here with a balance and a graduated cylinder.",
+ "objectives": [
+  "Explain the process of measurement",
+  "Identify the three basic parts of a quantity",
+  "Describe the properties and units of length, mass, volume, density, temperature, and time",
+  "Perform basic unit calculations and conversions in the metric and other unit systems"
+ ],
+ "summary_html": "<p>Measurements provide quantitative information that is critical in studying and practicing chemistry. Each measurement has an amount, a unit for comparison, and an uncertainty. Measurements can be represented in either decimal or scientific notation. Scientists primarily use SI (International System) units such as meters, seconds, and kilograms, as well as derived units, such as liters (for volume) and g/cm<sup>3</sup> (for density). In many cases, it is convenient to use prefixes that yield fractional and multiple units, such as microseconds (10<sup>−6</sup> seconds) and megahertz (10<sup>6</sup> hertz), respectively.</p>",
+ "notes": "The two Link to Learning notes are left out: a refresher on scientific notation and the PhET density simulation, whose place the two interactive figures of the page take. Exercises 34, 36, 38, 40 and 42 of the chapter have no answer in the book’s key and are left out, and exercise 43, on the floating foam block, waits for a figure that can float a block.",
+ "ai": {
+  "text": "Claude Fable 5.1",
+  "figures": "Claude Fable 5.1"
+ },
+ "built": "2026-09-12",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the unkeyed exercises fs-idm230641408 (is a liter an ounce, a pint, a quart or a gallon), fs-idm147829600 (SI units for seven measurements), fs-idm323234992 (prefixes for six factors), fs-idm239239696 (the 132.6 g piece of jewelry) and fs-idm307823136 (the red block against fluids of several densities) are left out. The book’s Example 1.4.2, its Check Your Learning and the exercise fs-idm165750544 are instructions for the PhET density simulation; the interactive figure before Example 1.4.2 weighs a block and reads its volume by displacement with the same samples and the same numbers, so the Check Your Learning and that exercise are set against it, with their prompts rewritten to name the figure and the gemstone density guide named in words, and the book’s answers kept. The keyed exercise fs-idm160286704, on the floating foam block and Archimedes’ principle, needs a block that floats in a fluid whose density the reader sets, which the figure does not draw, so it is held and left out. The exercise on the meter is set as a choice over the book’s four options. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "sim-length",
+   "kind": "sim",
+   "number": "1.23",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_04_MYdCmIn.jpg"
+   ],
+   "original_caption": "The relative lengths of 1 m, 1 yd, 1 cm, and 1 in. are shown (not actual size), as well as comparisons of 2.54 cm and 1 in., and of 1 m and 1.094 yd.",
+   "draws": []
+  },
+  {
+   "id": "fig-kilogram",
+   "kind": "photo",
+   "number": "1.24",
+   "draws": []
+  },
+  {
+   "id": "sim-volume",
+   "kind": "sim",
+   "number": "1.25",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_04_Volume.jpg"
+   ],
+   "original_caption": "(a) The relative volumes are shown for cubes of 1 m³, 1 dm³ (1 L), and 1 cm³ (1 mL) (not to scale). (b) The diameter of a dime is compared relative to the edge length of a 1-cm³ (1-mL) cube.",
+   "draws": [
+    "volume"
+   ]
+  },
+  {
+   "id": "sim-density",
+   "kind": "sim",
+   "draws": [
+    "mass",
+    "volume"
+   ]
+  },
+  {
+   "id": "sim-displacement",
+   "kind": "sim",
+   "draws": [
+    "mass",
+    "volume"
+   ]
+  }
+ ],
+ "coverage": [
+  { "span": "three-parts", "concept": "measurement-parts", "verb": "introduces" },
+  { "span": "three-parts", "concept": "scientific-notation", "verb": "introduces" },
+  { "span": "si-units", "concept": "si-base-units", "verb": "introduces" },
+  { "span": "si-units", "concept": "measurement-parts", "verb": "uses" },
+  { "span": "prefixes", "concept": "unit-prefixes", "verb": "introduces" },
+  { "span": "prefixes", "concept": "scientific-notation", "verb": "uses" },
+  { "span": "base-units", "concept": "si-base-units", "verb": "reinforces" },
+  { "span": "base-units", "concept": "unit-prefixes", "verb": "uses" },
+  { "span": "base-units", "concept": "extensive-and-intensive-properties", "verb": "uses" },
+  { "span": "derived", "concept": "derived-units", "verb": "introduces" },
+  { "span": "derived", "concept": "si-base-units", "verb": "uses" },
+  { "span": "volume", "concept": "volume", "verb": "introduces" },
+  { "span": "volume", "concept": "derived-units", "verb": "uses" },
+  { "span": "volume", "concept": "unit-prefixes", "verb": "uses" },
+  { "span": "density", "concept": "density", "verb": "introduces" },
+  { "span": "density", "concept": "derived-units", "verb": "uses" },
+  { "span": "density", "concept": "volume", "verb": "uses" },
+  { "span": "density", "concept": "extensive-and-intensive-properties", "verb": "uses" },
+  { "span": "ex-density", "concept": "density", "verb": "uses" },
+  { "span": "ex-density", "concept": "volume", "verb": "uses" },
+  { "span": "displacement", "concept": "measure-volume-by-displacement", "verb": "introduces" },
+  { "span": "displacement", "concept": "density", "verb": "uses" },
+  { "span": "displacement", "concept": "volume", "verb": "uses" },
+  { "span": "ex-displacement", "concept": "measure-volume-by-displacement", "verb": "uses" },
+  { "span": "ex-displacement", "concept": "density", "verb": "uses" }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "Example_01_04_01",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-density" },
+   "cite": "density",
+   "prompt": "(a) To three decimal places, what is the volume of a cube (cm<sup>3</sup>) with an edge length of 0.843 cm? (b) If the cube in part (a) is copper and has a mass of 5.34 g, what is the density of copper to two decimal places?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     { "part": "(a)", "value": 0.599, "unit": "cm³", "hint": "The volume of a cube is its edge length cubed." },
+     { "part": "(b)", "value": 8.91, "unit": "g/cm³", "hint": "Divide the mass by the volume found in part (a)." }
+    ],
+    "solution": "(a) 0.599 cm<sup>3</sup>; (b) 8.91 g/cm<sup>3</sup>"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "Example_01_04_02",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-displacement" },
+   "cite": "displacement",
+   "prompt": "Following the water displacement approach, use the figure above Example 1.4.2 to measure the density of the foam sample: select foam as the material, weigh the block on the balance, and read the water level before and after it is held under the surface.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.230,
+    "unit": "g/mL",
+    "hint": "The volume of the block is the rise in the water level, and the density is the mass divided by that volume.",
+    "solution": "0.230 g/mL"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm323373040",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": { "at": "end" },
+   "cite": "length",
+   "prompt": "Is a meter about an inch, a foot, a yard, or a mile?",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": ["an inch", "a foot", "a yard", "a mile"],
+    "correct": 2,
+    "solution": "about a yard"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm314038064",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "si-units",
+   "prompt": "Indicate the SI base units or derived units that are appropriate for the following measurements: (a) the mass of the moon (b) the distance from Dallas to Oklahoma City (c) the speed of sound (d) the density of air (e) the temperature at which alcohol boils (f) the area of the state of Delaware (g) the volume of a flu shot or a measles vaccination",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) kilograms; (b) meters; (c) meters/second; (d) kilograms/cubic meter; (e) kelvin; (f) square meters; (g) cubic meters"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm344858160",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": { "at": "end" },
+   "cite": "prefixes",
+   "prompt": "Give the name of the prefix and the quantity indicated by the following symbols that are used with SI base units. (a) c (b) d (c) G (d) k (e) m (f) n (g) p (h) T",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) centi-, $\\times$ 10<sup>−2</sup>; (b) deci-, $\\times$ 10<sup>−1</sup>; (c) Giga-, $\\times$ 10<sup>9</sup>; (d) kilo-, $\\times$ 10<sup>3</sup>; (e) milli-, $\\times$ 10<sup>−3</sup>; (f) nano-, $\\times$ 10<sup>−9</sup>; (g) pico-, $\\times$ 10<sup>−12</sup>; (h) tera-, $\\times$ 10<sup>12</sup>"
+   }
+  },
+  {
+   "id": "s1",
+   "source_id": "fs-idm165750544",
+   "kind": "simulation-exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "displacement",
+   "prompt": "Use the displacement figure above Example 1.4.2. Select the unknown material and set the volume of the block to 5.7 mL. (a) Use the water displacement approach to measure the mass and volume of the unknown material. (b) Use the measured mass and volume data from step (a) to calculate the density of the unknown material. (c) Assuming this material is a widely available copper-containing gemstone, what is its likely identity? Compare the measured density to the values tabulated in a guide to gemstone densities. (d) How are mass and density related for blocks of the same volume?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     { "part": "(a) mass", "value": 18.58, "unit": "g", "hint": "Read the balance with the unknown block on it." },
+     { "part": "(a) volume", "value": 5.7, "unit": "mL", "hint": "The volume is the rise in the water level when the block is under the surface." },
+     { "part": "(b) density", "value": 3.3, "unit": "g/mL", "hint": "Divide the mass by the volume." }
+    ],
+    "solution": "(a) m = 18.58 g, V = 5.7 mL; (b) d = 3.3 g/mL; (c) malachite (basic copper carbonate, d = 3.25—4.10 g/mL); (d) Density is directly proportional to mass and inversely proportional to volume. Blocks of the same volume will thus show a directly proportional relation between density and mass."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "cyl1", "concept": "density" },
+  { "exercise": "cyl1", "concept": "volume", "weight": 2 },
+  { "exercise": "cyl2", "concept": "measure-volume-by-displacement" },
+  { "exercise": "cyl2", "concept": "density", "weight": 2 },
+  { "exercise": "e1", "concept": "si-base-units" },
+  { "exercise": "e2", "concept": "si-base-units" },
+  { "exercise": "e2", "concept": "derived-units", "weight": 2 },
+  { "exercise": "e3", "concept": "unit-prefixes" },
+  { "exercise": "s1", "concept": "measure-volume-by-displacement" },
+  { "exercise": "s1", "concept": "density", "weight": 2 }
+ ]
+}

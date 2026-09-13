@@ -64,7 +64,7 @@ id · replaces · concepts · moving or still · sliders · headline · graph
 2. `fig-rust` · keeps Figure 1.19, a `photo` row · chemical-property · a photograph · keep: the text points at it and it shows the thing the passage is about, iron that rusts beside chromium that does not.
 3. `fig-chemical-change` · keeps Figure 1.20, a `photo` row · physical-and-chemical-change · a photograph · keep: the text points at it and its four panels are the four chemical changes the sentence lists (copper in nitric acid, combustion, cooking, rotting).
 4. `sim-extensive` · replaces nothing (a Sim, no number) · extensive-and-intensive-properties · **still**: the figure answers its two sliders and nothing else, no clock is in the idea, so it registers no cycle and gets no transport · the volume of the sample of milk $\kV$ (0.25 to 4.00 L, default 3.79 L, the book's gallon; type volume) and its temperature $\kT$ (0 to 60 °C, default 20 °C, the book's room temperature; type temperature) · "3.79 L of milk at 20 °C has a mass of 3.90 kg and a density of 1.03 g/mL" · no graph: beside the scene stand four bars, mass and volume growing with the slider in their hues, density and temperature standing still · Readout: $\km = d\,\kV$ with the live numbers and $\kT$; small line saying that doubling the sample doubles the first two and leaves the last two. The scene is a jug of milk on a balance with a thermometer in it: the milk and its level are the volume hue, the balance and its reading the mass hue, the thermometer column and its reading the temperature hue, and the density in ink, as the chapter's `COLOR.md` says. The density of milk is taken as 1.03 g/mL, the round figure for whole milk, since the book gives none; it is stated in the caption. Draws mass, volume, temperature.
-5. `fig-hazard-diamond` · keeps Figure 1.21, a `photo` row · chemical-property · the book's own image · the diamond's red, blue, yellow and white are the NFPA's own convention and the substance of the figure (the text says "the top (red) diamond"), not a type of the scheme, and `figlib` has no way to draw them but a hex literal, which the figure prompt forbids; so the book's image is kept rather than redrawn. It is a diagram the book prints as a JPG, and a `photo` row with its number is the row the schema has for a kept book image.
+5. `fig-hazard-diamond` · Figure 1.21, a `figure` row with the book's image as its original · chemical-property · **still**: a sign has nothing to vary and no clock in it · no sliders · flat · labels on, and every quadrant carries a hover name. Redrawn faithfully: the four small diamonds, the scale of 0 to 4 for fire, health and reactivity in the words of the passage, and the abbreviations of the white diamond. The diamond's red, blue, yellow and white are the NFPA's own convention and the substance of the figure (the text says "the top (red) diamond"), not a type of the scheme and not an element, so they are written as their own values in named constants and stand unchanged in both themes, which is the one exception the book's `RULES.md` makes to drawing colour only through `C`, `PAL`, `F.el` and `F.cat`.
 6. `fig-periodic-table` · keeps Figure 1.22, a `photo` row · physical-property (uses) · the book's own image, as `config.md` decides: the periodic table sheet is deferred until the app can serve one, the text keeps the book's words about the table, and the deferral is named in `notes`.
 
 No sketch of a quantity is in the section, so no book figure becomes an
@@ -160,3 +160,15 @@ thermometer wear the mass, volume and temperature hues and ink as the
 chapter's colour plan says, its density bar is ink because density is a
 ratio, and its two controls are quantities on sliders with no discrete
 state among them. Nothing in the figure is half coloured.
+
+## Figure audit pass, 2026-09-12
+
+Brought up to the audit of the book's figures against `RULES.md`. Each line
+below says what the figure now is: its tier, whether it moves, its controls,
+whether it is flat or three-dimensional and with what bound, and whether its
+labels are on.
+
+- `sim-extensive` (Sim): a still simulation, no cycle and no transport.
+  Controls: the volume and temperature sliders. Flat. Labels on, and there
+  are four of them.
+- `fig-hazard-diamond` (Figure 1.21): rebuilt as the line above now says.

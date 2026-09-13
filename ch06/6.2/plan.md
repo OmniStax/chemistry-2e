@@ -362,3 +362,47 @@ is rule 26.6: the electron of the Bohr ladder and the nucleus and
 electron of the orbit-and-rung Sim name themselves under the pointer
 through `F.hover`, so no disc in the section is unnamed. The quantum
 number sliders are integer quantities and stay sliders.
+
+## Figure audit pass, 2026-09-12
+
+Brought up to the audit of the book's figures against `RULES.md`. Each line
+below says what the figure now is: its tier, whether it moves, its controls,
+whether it is flat or three-dimensional and with what bound, and whether its
+labels are on.
+
+- `sim-bohr-ladder` (Figure 6.14 + 6.15): a moving Figure, one five-second
+  cycle with the transport and its scrubber. Controls: the two orbit
+  sliders, and the atom or ion is now a row of buttons, H, He⁺ and Li²⁺,
+  since three named species are states and never a quantity to slide through
+  (rule 26.1). Flat. Three things the audit found are corrected. The rungs
+  from n = 3 up lie within about fifty units of one another on a ladder drawn
+  to scale, so they are drawn again in an inset magnified eight times, with
+  the factor stated and the band it enlarges outlined on the ladder (rule
+  28.4); the jump between two of them is drawn in the inset as well. The
+  transition arrow is notation and now stands still at its full length while
+  only the electron and the photon move (rule 24.1). The word "electron" is
+  set beside the electron with a leader back to it, and never on the rung it
+  sits on. Labels on: the rung names, the two axis names and the inset's are
+  the frame, and the electron carries a hover name.
+- `sim-orbit-rung` (Sim): a still simulation. Controls: the orbit slider,
+  now stopping at n = 6 rather than n = 8, and the same three ion buttons.
+  Flat. The canvas scale is fixed at 7.5 units to the Bohr radius, which is
+  what holds the largest orbit the buttons reach inside the frame; n = 7 and
+  n = 8 were off the frame and told apart by nothing, so they are gone.
+  Labels on, the ladder's names fanned into slots and tied back by leaders,
+  with hover names on the nucleus and the electron.
+- `sim-series` (Sim): a still simulation. Controls: two orbit sliders and the
+  ion buttons. Flat. The highest orbit is now clamped by moving its own
+  control rather than silently overridden when it falls at or below the orbit
+  the electron falls to (rule 24.6), and the ultraviolet count is taken at
+  400 nm, the same boundary the visible band uses, so the three counts add up
+  to the number of lines (rule 24.7). Labels on.
+- `fig-spectra` (Figure): a kept image, not redrawn; a `figure` row with no
+  number whose eyebrow reads "Figure", which is the row this book gives an
+  unnumbered image that is kept rather than redrawn, now recorded in the
+  book's `RULES.md` as well as in `ch06/config.md`. No controls, flat.
+- Colour: the nucleus and the electron stay in ink. A nucleus drawn without
+  its electrons is not yet an atom of any element and an electron belongs to
+  no element at all, so neither can take an element colour; the book's
+  `COLOR.md` now says so in a sentence of its own. The colours of the visible
+  band are the colours of light and stay a physical fact.

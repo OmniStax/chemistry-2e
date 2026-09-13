@@ -255,3 +255,26 @@ arrow count stays a plain integer slider. The page binds nothing new;
 the categorical palette is not a binding. The other figures of the
 section draw no atom, particle or instance to tell apart and are left
 as built.
+
+## Figure audit pass, 2026-09-12
+
+Brought up to the audit of the book's figures against `RULES.md`. Each line
+below says what the figure now is: its tier, whether it moves, its controls,
+whether it is flat or three-dimensional and with what bound, and whether its
+labels are on.
+
+- `sim-meniscus` (Figure 1.26): a still simulation, two sliders, flat,
+  labels on. Its headline is now one capitalised sentence.
+- `fig-zeros`, `fig-count-digits`, `fig-captive-leading`, `fig-trailing`,
+  `fig-column-sums`: faithful copies, still, no controls, flat, labels on.
+  Each headline is now a capitalised full sentence rather than a lowercase
+  fragment or a semicolon chain.
+- `fig-rebar` and `fig-gold`: faithful copies, still, no controls, flat,
+  labels on. The object in the cylinder is now placed by its own half-height
+  so that it stands on the floor of the glass instead of poking through it.
+- `sim-targets` (Figure 1.27): a still simulation, three sliders, flat,
+  labels on, with a hover name on every arrow. Accuracy is now judged by how
+  far the centre of the group falls from the bull's eye and precision by how
+  far the arrows fall from one another, so the corner the book calls accurate
+  but not precise passes its own test, which it did not when accuracy was the
+  mean distance of the arrows.

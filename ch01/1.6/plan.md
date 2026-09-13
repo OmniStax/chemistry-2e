@@ -265,3 +265,16 @@ as built: Figure 1.28 draws three thermometers and a graph in the one
 temperature hue and ink, with no atom, particle or instance that a
 categorical hue would tell apart, and its one control is a temperature
 on a slider. Nothing in it is half coloured.
+
+## Figure audit pass, 2026-09-12
+
+Brought up to the audit of the book's figures against `RULES.md`. Each line
+below says what the figure now is: its tier, whether it moves, its controls,
+whether it is flat or three-dimensional and with what bound, and whether its
+labels are on.
+
+- `sim-temperature-scales` (Figure 1.28): a still simulation, one Celsius
+  slider, flat, labels on. The kelvin reading is now given to a tenth, as the
+  Celsius reading is and as Example 1.11's 310.2 K is, rather than to a
+  hundredth; the two reference sentences still name the exact defining values
+  273.15 K and 373.15 K.

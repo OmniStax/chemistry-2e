@@ -82,8 +82,12 @@
   },
   {
    "id": "fig-molecules",
-   "kind": "photo",
+   "kind": "figure",
    "number": "1.14",
+   "originals": [
+    "/media/ch01/CNX_Chem_01_02_Molecules.jpg"
+   ],
+   "original_caption": "The elements hydrogen, oxygen, phosphorus, and sulfur form molecules consisting of two or more atoms of the same element. The compounds water, carbon dioxide, and glucose consist of combinations of atoms of different elements.",
    "draws": []
   },
   {

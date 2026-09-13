@@ -40,7 +40,13 @@ molecular drawings of the later chapters: a particle box draws the gas
 the reader chose in that element's colours, never an anonymous grey
 dot, and a figure that would otherwise draw a generic particle gives it
 an identity so that it can have one. An ion keeps its element colour and
-carries its charge as a mark. Element colours do not switch off with
+carries its charge as a mark. A bare
+nucleus and a free electron are the two particles this does not reach: a
+nucleus drawn without its electrons is not yet an atom of any element, and
+an electron belongs to no element at all, so both are drawn in ink, the
+nucleus as a filled disc with its charge written beside it and the electron
+as a disc that names itself under the pointer, as the figures of 6.2 draw
+them. Element colours do not switch off with
 colour coding, since they are the book's own drawing convention rather
 than a signal the app adds, and they do not appear in the colour menu.
 

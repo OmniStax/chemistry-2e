@@ -32,7 +32,7 @@ const TAU = 2 * Math.PI;
    Every atom is a filled disc in its element's colour through F.el; hydrogen is a light disc and takes an ink outline so that
    it reads on a light page. Each figure keeps a list of the discs it drew this frame and hands it to F.hover, so that every
    atom names itself under the pointer (rule 26.6). `named` draws one atom and records it. */
-const NAME = { H: 'hydrogen', O: 'oxygen' };
+const NAME = { H: 'hydrogen', O: 'oxygen', C: 'carbon', P: 'phosphorus', S: 'sulfur' };
 function atom(ctx, x, y, sym, r) {
   ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = F.el(sym); ctx.fill();
   ctx.lineWidth = sym === 'H' ? 2 : 1.2; ctx.strokeStyle = sym === 'H' ? PAL.ink : alpha(PAL.ink, 0.4); ctx.stroke(); ctx.restore();
@@ -126,6 +126,7 @@ function diatomic3(v, g, p, u, sym, r) {
   const V = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 50, max: 200, step: 10, value: 100, unit: 'mL', dec: 0, aria: 'volume of the sample' });
   /* the containers: the narrow one holds 300 mL in its full height, so one mL is its volume over 300 in either; a solid of two thirds of it is a cube narrower than the container, since the height is under one and a half times the width */
   const HT = 1.4, DP = 1.1, NARROW = { x: -1.55, w: 1.1 }, WIDE = { x: 1.05, w: 2.2 }, FLOOR = -0.75, K = (NARROW.w * DP * HT) / 300;
+  const ICE = 1.09, NMOL = 27;   /* ice takes about a tenth more room than the water it froze from; the sample is the same 27 molecules in every state */
   const cap = (c) => (c.w * DP * HT) / K;
   /* the sample is given an identity so that its particles can have one (rule 7.2): it is water, drawn molecule by molecule
      in the element palette inside each container, and the phase is told by how the molecules pack, never by a tint alone */
@@ -133,16 +134,18 @@ function diatomic3(v, g, p, u, sym, r) {
     const hue = C('volume'), tint = (p, size, op) => box3(grp, p, size, hue, { transparent: true, opacity: op, depthWrite: false });
     const pts = [];
     if (state === 0) {
-      const s = Math.cbrt(K * vol), n = 3, sp = s / n;
-      v.pickable(tint([c.x, FLOOR + s / 2, 0], [s, s, s], 0.28), 'the water as a solid, ' + vol + ' mL');
+      /* water is one of the few substances that expand on freezing, by about a tenth, so the ice of a sample is larger than the liquid */
+      const s = Math.cbrt(K * vol * ICE), n = 3, sp = s / n;
+      v.pickable(tint([c.x, FLOOR + s / 2, 0], [s, s, s], 0.28), 'the water as a solid, ' + fmt(vol * ICE, 0) + ' mL of ice');
       edges3(grp, [s, s, s], [c.x, FLOOR + s / 2, 0]);
       for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) for (let k = 0; k < n; k++) pts.push({ p: [c.x - s / 2 + sp * (i + 0.5), FLOOR + sp * (j + 0.5), -s / 2 + sp * (k + 0.5)], f: frame(0.5, 0.9, (i + j + k) % 2 ? 0.2 : 0.8), k: sp / 0.5 });
     } else if (state === 1) {
-      const h = (K * vol) / (c.w * DP), n = 27;
+      const h = (K * vol) / (c.w * DP), n = NMOL;
       v.pickable(tint([c.x, FLOOR + h / 2, 0], [c.w - 0.02, h, DP - 0.02], 0.28), 'the water as a liquid, ' + vol + ' mL');
       for (let i = 0; i < n; i++) pts.push({ p: [c.x - c.w / 2 + 0.12 + rnd(i * 5) * (c.w - 0.24), FLOOR + 0.1 + rnd(i * 5 + 1) * Math.max(0.02, h - 0.2), -DP / 2 + 0.12 + rnd(i * 5 + 2) * (DP - 0.24)], f: frame(rnd(i * 5 + 3), rnd(i * 5 + 4), rnd(i * 5 + 5)), k: Math.min(1, Math.cbrt((c.w * DP * h) / n) / 0.5) });
     } else {
-      const n = Math.round(c.w * 6);
+      /* the same sample in both vessels, so the wide one holds the same molecules more sparsely (it is one sample, not two) */
+      const n = NMOL;
       v.pickable(tint([c.x, FLOOR + HT / 2, 0], [c.w - 0.02, HT - 0.02, DP - 0.02], 0.1), 'the water as a gas, ' + fmt(cap(c), 0) + ' mL');
       for (let i = 0; i < n; i++) pts.push({ p: [c.x - c.w / 2 + 0.15 + rnd(i * 7) * (c.w - 0.3), FLOOR + 0.15 + rnd(i * 7 + 1) * (HT - 0.3), -DP / 2 + 0.15 + rnd(i * 7 + 2) * (DP - 0.3)], f: frame(rnd(i * 7 + 3), rnd(i * 7 + 4), rnd(i * 7 + 5)), k: 1 });
     }
@@ -168,11 +171,11 @@ function diatomic3(v, g, p, u, sym, r) {
     text(ctx, 'the water as a ' + NAMES[s], 700, 92, PAL.ink, { size: 20, weight: 600, align: 'center' });
     const rows = [['They are packed in a fixed', 'arrangement and only vibrate,', 'so the sample keeps its shape.'], ['They stay close together but', 'slide past one another, so the', 'sample flows and keeps its volume.'], ['They are far apart and move', 'freely, so the sample spreads', 'to fill whatever holds it.']][s];
     rows.forEach((r, i) => text(ctx, r, 700, 124 + i * 22, PAL.muted, { size: 17, align: 'center' }));
-    const H = [`A solid keeps its shape and its volume of ${vol} mL in either container`,
+    const H = [`A solid keeps its shape and its volume in either container, and the ${fmt(vol * ICE, 0)} mL of ice here is the same sample as the ${vol} mL of liquid, since water expands by about a tenth on freezing`,
       `A liquid takes the shape of each container but keeps its volume of ${vol} mL, forming a horizontal surface`,
-      `A gas expands to fill its container, so its volume is ${fmt(cap(NARROW), 0)} mL in one and ${fmt(cap(WIDE), 0)} mL in the other`][s];
+      `A gas expands to fill its container, so the same ${NMOL} molecules occupy ${fmt(cap(NARROW), 0)} mL in one and ${fmt(cap(WIDE), 0)} mL in the other`][s];
     topline(ctx, H + '. Drag to turn the containers.');
-    const R = [`\\kV = ${vol}\\ \\text{mL in both containers, with the same shape in both}`,
+    const R = [`\\kV = ${fmt(vol * ICE, 0)}\\ \\text{mL of ice in both containers, with the same shape in both}`,
       `\\kV = ${vol}\\ \\text{mL in both containers, at two heights}`,
       `\\kV = ${fmt(cap(NARROW), 0)}\\ \\text{mL in the narrow container and } ${fmt(cap(WIDE), 0)}\\ \\text{mL in the wide one}`][s];
     readout(d.readout, R, ['A solid is rigid and possesses a definite shape.', 'A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.', 'A gas takes both the shape and volume of its container.'][s]);
@@ -208,6 +211,7 @@ function diatomic3(v, g, p, u, sym, r) {
   }
   /* a labelled bar of mass: the name in ink, a bar drawn to scale in the mass hue, since its length is a mass and the bars of
      one balance add up to what that balance reads, and the grams */
+  const BK = 0.22;   /* one scale for every bar of the figure: 0.22 canvas units to the gram, chosen so the longest bar and its number both fit */
   function bar(ctx, x, y, name, g, k) {
     text(ctx, name, x, y, PAL.ink, { size: 17, align: 'right' });
     if (g > 0.05) { ctx.save(); ctx.fillStyle = alpha(C('mass'), 0.35); ctx.fillRect(x + 12, y - 10, g * k, 20); ctx.restore(); }
@@ -220,24 +224,25 @@ function diatomic3(v, g, p, u, sym, r) {
     bottle(ctx, 250, 410, alpha(PAL.ink, 0.06 + 0.08 * f));
     balance(ctx, 250, 412, 200, fmt(WATER + SUGAR, 1) + ' g');
     text(ctx, '(a)', 250, 520, PAL.muted, { size: 20, align: 'center' });
-    bar(ctx, 500, 190, 'water and the rest', WATER, 0.06);
-    bar(ctx, 500, 236, 'sugar', SUGAR * (1 - f), 4);
-    bar(ctx, 500, 282, 'ethanol', SUGAR * f * ETH, 4);
-    bar(ctx, 500, 328, 'carbon dioxide', SUGAR * f * CO2, 4);
+    bar(ctx, 500, 190, 'water and the rest', WATER, BK);
+    bar(ctx, 500, 236, 'sugar', SUGAR * (1 - f), BK);
+    bar(ctx, 500, 282, 'ethanol', SUGAR * f * ETH, BK);
+    bar(ctx, 500, 328, 'carbon dioxide', SUGAR * f * CO2, BK);
     /* (b) the battery */
     battery(ctx, 900, 410);
     balance(ctx, 900, 412, 260, fmt(PB + PBO2 + ACID, 1) + ' g');
     text(ctx, '(b)', 900, 520, PAL.muted, { size: 20, align: 'center' });
-    bar(ctx, 1150, 170, 'lead', PB * (1 - q), 0.32);
-    bar(ctx, 1150, 216, 'lead oxide', PBO2 * (1 - q), 0.32);
-    bar(ctx, 1150, 262, 'sulfuric acid', ACID * (1 - q), 0.32);
-    bar(ctx, 1150, 308, 'lead sulfate', PBSO4 * q, 0.32);
-    bar(ctx, 1150, 354, 'water', H2O * q, 0.32);
+    bar(ctx, 1150, 170, 'lead', PB * (1 - q), BK);
+    bar(ctx, 1150, 216, 'lead oxide', PBO2 * (1 - q), BK);
+    bar(ctx, 1150, 262, 'sulfuric acid', ACID * (1 - q), BK);
+    bar(ctx, 1150, 308, 'lead sulfate', PBSO4 * q, BK);
+    bar(ctx, 1150, 354, 'water', H2O * q, BK);
+    text(ctx, 'every bar of both panels is drawn to one scale', 500, 384, PAL.muted, { size: 16 });
     text(ctx, 'sugar → ethanol + carbon dioxide', 250, 120, PAL.ink, { size: 17, align: 'center' });
     text(ctx, 'lead + lead oxide + sulfuric acid → lead sulfate + water', 900, 120, PAL.ink, { size: 17, align: 'center' });
     const fs = Fm.v, ds = Ds.v;
-    headline(ctx, fs === 0 && ds === 0 ? 'Nothing has changed yet: the bottle weighs 1000.0 g and the battery’s reacting substances 642.6 g'
-      : `${fs}% fermented and ${ds}% discharged: the kinds of matter have changed, and neither balance has moved`);
+    headline(ctx, fs === 0 && ds === 0 ? 'Nothing has changed yet, so the bottle weighs 1000.0 g and the battery’s reacting substances 642.6 g.'
+      : `With the sugar ${fs}% fermented and the battery ${ds}% discharged, the kinds of matter have changed and neither balance has moved.`);
     readout(d.readout, `\\km_{\\text{before}} = \\km_{\\text{after}} = ${fmt(WATER + SUGAR, 1)}\\ \\text{g and } ${fmt(PB + PBO2 + ACID, 1)}\\ \\text{g}`,
       'The bottle is sealed, so the carbon dioxide stays inside and is weighed with the rest; if the bottle were open, the gas would escape and the balance would read less, though no matter would have been destroyed.');
   }
@@ -269,7 +274,129 @@ function diatomic3(v, g, p, u, sym, r) {
     down(ctx, 920, 282, 870, 384, 'No'); down(ctx, 1200, 282, 1250, 384, 'Yes');
     box(ctx, 150, 418, 260, 52, 'Heterogeneous', B, PAL.muted); box(ctx, 530, 418, 260, 52, 'Homogeneous', B, PAL.muted);
     box(ctx, 870, 418, 260, 52, 'Element', B, PAL.muted); box(ctx, 1250, 418, 260, 52, 'Compound', B, PAL.muted);
-    readout(d.readout, '\\text{mixture: heterogeneous or homogeneous} \\qquad \\text{pure substance: element or compound}', 'A sample answers the first question by whether every specimen of it has the same makeup and properties, and the second by whether a drop from one place matches a drop from another, or by whether a chemical change can break it into simpler substances.');
+    readout(d.readout, '\\text{matter} \\longrightarrow \\text{mixture or pure substance}', 'A mixture is heterogeneous or homogeneous, and a pure substance is an element or a compound, so two questions are enough to place any sample.');
+  }
+  register(d.fig, { update: () => {}, draw });
+})();
+
+/* =====================================================================
+   FIGURE 1.14: the molecules the book draws, redrawn live. Two atoms of
+   one element make hydrogen and oxygen, four make a phosphorus molecule
+   and eight a sulfur one; water, carbon dioxide and glucose are made of
+   atoms of different elements. Every atom is a disc in its element's
+   colour through F.el and names itself under the pointer (rule 26.6).
+   The book prints the flat ball-and-stick pictures it teaches from, so
+   the figure is built both ways behind a view choice (Chemistry 2e
+   RULES.md, Figures): the flat drawing is the default, and the scene
+   mounts on the first switch, where the tetrahedron of phosphorus and
+   the crown of sulfur are shapes no flat drawing can hold. Still: a
+   molecule has no clock in it, and the molecules turn freely, since a
+   molecule has no ground to keep.
+===================================================================== */
+/* the radius each element is drawn with, in Ångstroms, in the proportions the book's pictures keep */
+const BALL = { H: 0.30, C: 0.42, O: 0.40, P: 0.52, S: 0.52 };
+/* an open chain of six carbons, each carrying what glucose hangs on it: the aldehyde oxygen on the first,
+   a hydroxyl on every other, and the hydrogens that make up C6H12O6 */
+function glucose() {
+  const A = [], B = [], CX = (i) => [i * 1.26, i % 2 ? 0.43 : -0.43, 0];
+  const U = (v) => { const l = Math.hypot(v[0], v[1], v[2]) || 1; return [v[0] / l, v[1] / l, v[2] / l]; };
+  const add = (sym, from, dir, len) => { const u = U(dir); A.push([sym, from[0] + u[0] * len, from[1] + u[1] * len, from[2] + u[2] * len]); return A.length - 1; };
+  for (let i = 0; i < 6; i++) { A.push(['C', ...CX(i)]); if (i) B.push([i - 1, i, 1]); }
+  for (let i = 0; i < 6; i++) {
+    const c = CX(i), sy = i % 2 ? 1 : -1, d1 = [0, sy * 0.5, 0.85], d2 = [0, sy * 0.5, -0.85];
+    if (i === 0) { B.push([i, add('O', c, d1, 1.21), 2]); B.push([i, add('H', c, d2, 1.09), 1]); continue; }
+    const o = add('O', c, d1, 1.43); B.push([i, o, 1]);
+    B.push([o, add('H', A[o].slice(1), [d1[0] + 0.9, d1[1], d1[2]], 0.96), 1]);
+    B.push([i, add('H', c, d2, 1.09), 1]);
+    if (i === 5) B.push([i, add('H', c, [1, sy * 0.3, 0], 1.09), 1]);
+  }
+  return { atoms: A, bonds: B };
+}
+const TET = 0.781;                                         /* half the body diagonal that gives P4 its 2.21 Å edge */
+const HALF = 0.912;                                        /* half of water's 104.5° bond angle, in radians */
+const GLU = glucose();
+const MOLECULES = [
+  { f: 'H₂', of: 'a hydrogen molecule, H₂', row: 0, atoms: [['H', -0.37, 0, 0], ['H', 0.37, 0, 0]], bonds: [[0, 1, 1]] },
+  { f: 'O₂', of: 'an oxygen molecule, O₂', row: 0, atoms: [['O', -0.6, 0, 0], ['O', 0.6, 0, 0]], bonds: [[0, 1, 2]] },
+  { f: 'P₄', of: 'a phosphorus molecule, P₄', row: 0, atoms: [['P', TET, TET, TET], ['P', TET, -TET, -TET], ['P', -TET, TET, -TET], ['P', -TET, -TET, TET]], bonds: [[0, 1, 1], [0, 2, 1], [0, 3, 1], [1, 2, 1], [1, 3, 1], [2, 3, 1]] },
+  { f: 'S₈', of: 'a sulfur molecule, S₈', row: 0, atoms: Array.from({ length: 8 }, (_, i) => ['S', 2.3 * Math.cos((i * Math.PI) / 4), 2.3 * Math.sin((i * Math.PI) / 4), i % 2 ? 0.49 : -0.49]), bonds: Array.from({ length: 8 }, (_, i) => [i, (i + 1) % 8, 1]) },
+  { f: 'H₂O', of: 'a water molecule, H₂O', row: 1, atoms: [['O', 0, 0, 0], ['H', 0.96 * Math.sin(HALF), -0.96 * Math.cos(HALF), 0], ['H', -0.96 * Math.sin(HALF), -0.96 * Math.cos(HALF), 0]], bonds: [[0, 1, 1], [0, 2, 1]] },
+  { f: 'CO₂', of: 'a carbon dioxide molecule, CO₂', row: 1, atoms: [['C', 0, 0, 0], ['O', -1.16, 0, 0], ['O', 1.16, 0, 0]], bonds: [[0, 1, 2], [0, 2, 2]] },
+  { f: 'C₆H₁₂O₆', of: 'a glucose molecule, C₆H₁₂O₆', row: 1, atoms: GLU.atoms, bonds: GLU.bonds },
+];
+/* the centre of each molecule in Ångstroms, so a drawing can be laid out about it */
+function centre(m) {
+  const ax = m.atoms.map((a) => a[1]), ay = m.atoms.map((a) => a[2]);
+  return [(Math.min(...ax) + Math.max(...ax)) / 2, (Math.min(...ay) + Math.max(...ay)) / 2];
+}
+(function () {
+  const d = sim('fig-molecules', 660);
+  /* the view is a state the reader switches between, never slides through (rule 26.1) */
+  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: show });
+  const K = 50;                                            /* canvas units to the Ångstrom, one scale for every molecule */
+  const SC = 0.34;                                         /* scene units to the Ångstrom */
+  /* where each molecule stands, on the canvas and in the scene; the two rows are the elements and the compounds */
+  const SPOT = [[200, 220, -2.6, 0.95], [400, 220, -1.7, 0.95], [640, 220, -0.6, 0.95], [1010, 220, 1.5, 0.95],
+    [180, 500, -3.1, -0.95], [420, 500, -1.9, -0.95], [950, 500, 1.5, -0.95]];
+  let hits = []; F.hover(d.stage, () => hits);
+  function bond2(ctx, p, q, order) {
+    const dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy) || 1, px = (-dy / L) * K * 0.09, py = (dx / L) * K * 0.09;
+    (order === 2 ? [-1, 1] : [0]).forEach((o) => line(ctx, p[0] + px * o, p[1] + py * o, q[0] + px * o, q[1] + py * o, PAL.ink, order === 2 ? K * 0.07 : K * 0.11));
+  }
+  /* one molecule on the canvas about (cx, cy): the bonds first, then the atoms from the back forward */
+  function flat(ctx, m, cx, cy) {
+    const [mx, my] = centre(m), P = (a) => [cx + (a[1] - mx) * K, cy - (a[2] - my) * K];
+    m.bonds.forEach(([i, j, o]) => bond2(ctx, P(m.atoms[i]), P(m.atoms[j]), o));
+    m.atoms.map((a, i) => i).sort((i, j) => m.atoms[i][3] - m.atoms[j][3]).forEach((i) => {
+      const a = m.atoms[i], [x, y] = P(a), r = BALL[a[0]] * K;
+      atom(ctx, x, y, a[0], r); hits.push({ x, y, r: r + 3, name: NAME[a[0]] + ' atom of ' + m.of });
+    });
+  }
+  function draw2d() {
+    const { ctx } = begin(d.c);
+    hits.length = 0;
+    headline(ctx, 'A molecule is two or more atoms joined by chemical bonds, and it may be built of one element or of several.');
+    MOLECULES.forEach((m, i) => { flat(ctx, m, SPOT[i][0], SPOT[i][1]); text(ctx, m.f, SPOT[i][0], m.row ? 606 : 386, PAL.ink, { size: 24, weight: 600, align: 'center' }); });
+    text(ctx, 'Each of these is a molecule of an element, built of atoms of one kind.', 40, 416, PAL.muted, { size: 18 });
+    text(ctx, 'Each of these is a molecule of a compound, built of atoms of more than one kind.', 40, 636, PAL.muted, { size: 18 });
+  }
+  /* the scene: the same seven molecules as balls and sticks, each turning about its own centre */
+  let v = null, parts = null, cnv = null, sig = '';
+  function mount() {
+    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.2 }], h: 460, dist: 8 });
+    parts = MOLECULES.map((m, i) => { const g = v.part(SPOT[i][2]); g.position.set(SPOT[i][2], SPOT[i][3], 0); return g; });
+    cnv = strip(d, 170);
+  }
+  function build() {
+    const key = palSig(); if (key === sig) return; sig = key;
+    v.clear();
+    MOLECULES.forEach((m, i) => {
+      const g = parts[i], [mx, my] = centre(m), P = (a) => [(a[1] - mx) * SC, (a[2] - my) * SC, a[3] * SC];
+      m.bonds.forEach(([a, b]) => stick3(g, P(m.atoms[a]), P(m.atoms[b]), 0.03, PAL.ink));
+      m.atoms.forEach((a) => v.pickable(sphere3(g, P(a), BALL[a[0]] * SC, F.el(a[0])), NAME[a[0]] + ' atom of ' + m.of));
+    });
+  }
+  function draw3d() {
+    build(); v.invalidate();
+    const { ctx } = begin(cnv);
+    topline(ctx, 'A molecule is two or more atoms joined by chemical bonds, and it may be built of one element or of several. Drag any molecule to turn them all.');
+    const w = v.wrap.clientWidth || 1400;
+    text(ctx, 'elements', 40, 112, PAL.muted, { size: 17 });
+    text(ctx, 'compounds', 40, 146, PAL.muted, { size: 17 });
+    MOLECULES.forEach((m, i) => text(ctx, m.f, (v.project([0, 0, 0], parts[i])[0] / w) * 1400, m.row ? 146 : 112, PAL.ink, { size: 22, weight: 600, align: 'center' }));
+  }
+  /* one stage shows at a time: the canvas, or the scene with its button row and its strip */
+  function show() {
+    const three = VIEW.value === '3d';
+    if (three && !v) mount();
+    d.c.style.display = three ? 'none' : '';
+    if (v) [v.wrap, d.stage.querySelector('.view3d-bar'), cnv].forEach((e) => { if (e) e.style.display = three ? '' : 'none'; });
+    draw();
+  }
+  function draw() {
+    if (VIEW.value === '3d') draw3d(); else draw2d();
+    readout(d.readout, '\\text{H}_2 \\quad \\text{O}_2 \\quad \\text{P}_4 \\quad \\text{S}_8 \\qquad \\text{H}_2\\text{O} \\quad \\text{CO}_2 \\quad \\text{C}_6\\text{H}_{12}\\text{O}_6',
+      'The subscript counts the atoms of each element in one molecule, so a water molecule holds two hydrogen atoms and one oxygen atom, and a glucose molecule holds six carbon atoms, twelve hydrogen atoms and six oxygen atoms.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -337,9 +464,10 @@ function diatomic3(v, g, p, u, sym, r) {
     const rx = 760;
     text(ctx, (12 - n) + ' water molecule' + (12 - n === 1 ? '' : 's') + ' left in the beaker', rx, 96, PAL.ink, { size: 18 });
     text(ctx, h2 + ' hydrogen molecule' + (h2 === 1 ? '' : 's') + ' in the left tube', rx, 128, PAL.ink, { size: 18 });
-    text(ctx, o2 + ' oxygen molecule' + (o2 === 1 ? '' : 's') + ' in the right tube · drag to turn the bench', rx, 158, PAL.ink, { size: 18 });
-    topline(ctx, n === 0 ? 'No water has been decomposed yet, so both tubes are still full of water and every molecule is a water molecule'
-      : `${n} water molecules have become ${h2} hydrogen and ${o2} oxygen molecules, and the hydrogen tube holds twice the gas`);
+    text(ctx, o2 + ' oxygen molecule' + (o2 === 1 ? '' : 's') + ' in the right tube', rx, 158, PAL.ink, { size: 18 });
+    text(ctx, 'Drag the bench to turn it.', rx, 188, PAL.muted, { size: 17 });
+    topline(ctx, n === 0 ? 'No water has been decomposed yet, so both tubes are still full of water and every molecule in the beaker is a water molecule.'
+      : `Of the water, ${n} molecules have become ${h2} hydrogen molecules and ${o2} oxygen molecules, and the hydrogen tube holds twice the gas the oxygen tube does.`);
     readout(d.readout, `${n}\\,\\text{H}_2\\text{O}(l) \\longrightarrow ${h2}\\,\\text{H}_2(g) + ${o2}\\,\\text{O}_2(g) \\qquad \\kV_{\\text{H}_2} = 2\\,\\kV_{\\text{O}_2}`,
       'Every atom is accounted for: the ' + 2 * n + ' hydrogen atoms and ' + n + ' oxygen atoms of the water that decomposed are the atoms of the hydrogen and oxygen molecules that formed.');
   }

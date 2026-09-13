@@ -67,7 +67,7 @@ id · replaces · concepts · moving or still · sliders · headline · graph
 2. `fig-chemweb` · Figure 1.3, a `figure` row with the book's image as its
    original · none · **still**: a diagram of relationships, with nothing
    in it to vary · no sliders · no headline · no graph. Redrawn faithfully:
-   the same twenty boxes and the same twenty-eight links, chemistry at the
+   the same eighteen boxes and the same twenty-eight links, chemistry at the
    centre set in a heavier stroke, in `PAL` neutrals so it reads in both
    themes. Draws nothing.
 3. `fig-scimethod` · Figure 1.4, a `figure` row with the book's image as
@@ -200,3 +200,24 @@ an otherwise flat figure, so it is built both ways.
   slider, the state buttons and the readout. Orbit free (a cluster has no
   ground); idle spin on, since the figure is still; front and above views;
   zoom; every atom carries a hover name. `draws` unchanged.
+
+## Figure audit pass, 2026-09-12
+
+Brought up to the audit of the book's figures against `RULES.md`. Each line
+below says what the figure now is: its tier, whether it moves, its controls,
+whether it is flat or three-dimensional and with what bound, and whether its
+labels are on.
+
+- `fig-chemweb` (Figure 1.3): a faithful copy, still, no controls, flat.
+  The plan line above said twenty boxes where the book and the code both have
+  eighteen, and it now says eighteen. Labels are the boxes themselves and are
+  always on, since they are the figure.
+- `fig-scimethod` (Figure 1.4): unchanged. A faithful copy, still, no
+  controls, flat, every label on and none of them moving.
+- `sim-water` (Figure 1.5): a still simulation, no cycle and no transport.
+  Controls: the temperature slider and the state buttons, and a view choice
+  of 2D and 3D with 2D the default; the scene mounts on the first switch and
+  turns freely, since a cluster of molecules has no ground, with the pitch
+  the library bounds and an idle spin. Labels: the three domain names and the
+  state word are the frame and are always on, and every atom and the
+  thermometer carry hover names, so no Labels button is needed.

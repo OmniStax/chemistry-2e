@@ -52,7 +52,7 @@ function liquid(ctx, cx, base, w, Y, v, color) {
   ctx.strokeStyle = color; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(r, y - lift); ctx.quadraticCurveTo(cx, y + lift, l, y - lift); ctx.stroke(); ctx.restore();
 }
 /* the two-reading scene of a displacement figure: the cylinder before and after an object goes in */
-function displacement(d, before, after, mass, object, what) {
+function displacement(d, before, after, mass, object, what, half) {
   const VMAX = 25, W = 110, BASE = 470, HT = 300;
   function draw() {
     const { ctx } = begin(d.c);
@@ -60,7 +60,7 @@ function displacement(d, before, after, mass, object, what) {
     [[380, before, false], [780, after, true]].forEach(([cx, v, sunk]) => {
       const Y = cylinder(ctx, cx, BASE, W, HT, VMAX);
       liquid(ctx, cx, BASE, W, Y, v, cv);
-      if (sunk) object(ctx, cx, BASE - 40, 1);
+      if (sunk) object(ctx, cx, BASE - 14 - half, 1);   /* the object rests on the floor of the cylinder and never pokes through it */
       line(ctx, cx + W / 2, Y(v), cx + W / 2 + 40, Y(v), cv, 2, [4, 8]);
       text(ctx, fmt(v, 1) + ' mL', cx + W / 2 + 48, Y(v), cv, { size: 24, weight: 600 });
       note(ctx, sunk ? 'after' : 'before', cx, BASE + 44);
@@ -71,7 +71,7 @@ function displacement(d, before, after, mass, object, what) {
     text(ctx, fmt(after, 1) + ' mL − ' + fmt(before, 1) + ' mL = ' + fmt(after - before, 1) + ' mL', 1160, 240, cv, { size: 24, weight: 600, align: 'center' });
     text(ctx, 'mass of the ' + what, 1160, 320, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, fmt(mass, 3) + ' g', 1160, 360, cm, { size: 24, weight: 600, align: 'center' });
-    headline(ctx, 'the water rises from ' + fmt(before, 1) + ' mL to ' + fmt(after, 1) + ' mL when the ' + fmt(mass, 3) + '-g ' + what + ' is submerged');
+    headline(ctx, 'The water rises from ' + fmt(before, 1) + ' mL to ' + fmt(after, 1) + ' mL when the ' + fmt(mass, 3) + '-g ' + what + ' is submerged, and that rise is its volume.');
     readout(d.readout, `\\kV = ${fmt(after, 1)}\\ \\text{mL} - ${fmt(before, 1)}\\ \\text{mL} = ${fmt(after - before, 1)}\\ \\text{mL}`,
       'The rise of the water is the volume of the ' + what + ', read to the nearest 0.1 mL as the rule for subtraction allows; the density is its mass divided by this volume.');
   }
@@ -130,10 +130,10 @@ function nugget(ctx, x, y, s = 1) {
     const ok = Math.abs(digit / 10 - frac) <= 0.15 + 1e-9;
     const near = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].filter((k) => Math.abs(k / 10 - frac) <= 0.15 + 1e-9);
     const list = near.length === 1 ? String(near[0]) : near.slice(0, -1).join(', ') + ' or ' + near[near.length - 1];
-    const between = 'the meniscus lies between the ' + whole + ' and ' + (whole + 1) + ' mL marks';
+    const between = 'The meniscus lies between the ' + whole + ' and ' + (whole + 1) + ' mL marks';
     const where = frac < 0.35 ? ', nearer the ' + whole : frac > 0.65 ? ', nearer the ' + (whole + 1) : ', about midway';
-    headline(ctx, ok ? between + '; a tenths digit of ' + digit + ' is reasonable, so the reading is ' + fmt(reading, 1) + ' mL'
-      : between + where + '; a tenths digit of ' + list + ' would be more reasonable than ' + digit);
+    headline(ctx, ok ? between + ', so a tenths digit of ' + digit + ' is reasonable and the reading is ' + fmt(reading, 1) + ' mL.'
+      : between + where + ', so a tenths digit of ' + list + ' would be more reasonable than ' + digit + '.');
     readout(d.readout, `\\kV = ${fmt(reading, 1)}\\ \\text{mL}`,
       'The ' + s.slice(0, -2).split('').join(' and the ') + (whole >= 10 ? ' are' : ' is') + ' certain, since the meniscus clearly lies between the ' + whole + ' and ' + (whole + 1) + ' mL marks; the ' + digit + ' is an estimate, and the scale permits no digit beyond it.');
   }
@@ -153,7 +153,7 @@ function nugget(ctx, x, y, s = 1) {
     const b = charsCentred(ctx, '0.008020', 1000, 130, 88, () => PAL.ink);
     ubracket(ctx, b[0].l + 6, b[3].r - 6, 190, PAL.ink, 'leading');
     tag(ctx, b[5].x, 178, 236, 'captive', PAL.ink); tag(ctx, b[7].x, 178, 236, 'trailing', PAL.ink);
-    headline(ctx, 'the three kinds of zero: leading, captive and trailing');
+    headline(ctx, 'A zero in a measurement is leading, captive or trailing, and its kind decides whether it counts.');
     readout(d.readout, '3090 \\qquad 0.008020', 'Only the zeros need thought: every nonzero digit is significant.');
   }
   still(d, draw);
@@ -170,7 +170,7 @@ function nugget(ctx, x, y, s = 1) {
     arrow(ctx, b[0].x - 30, 92, b[0].x - 6, 116, PAL.ink, 3); text(ctx, 'first nonzero digit on the left', b[0].x - 40, 74, PAL.ink, { size: 19, weight: 600 });
     ubracket(ctx, b[0].l + 4, b[3].r - 4, 212, PAL.ink, '3 significant figures');
     note(ctx, 'the 0 lies to the right of the decimal point, so it is a measured digit and counts', 1000, 290);
-    headline(ctx, 'count from the first nonzero digit on the left, and count every digit to its right');
+    headline(ctx, 'Count from the first nonzero digit on the left, and count every digit to its right.');
     readout(d.readout, '1267\\ \\text{m}: \\text{four significant figures} \\qquad 55.0\\ \\text{g}: \\text{three significant figures}');
   }
   still(d, draw);
@@ -187,7 +187,7 @@ function nugget(ctx, x, y, s = 1) {
     ubracket(ctx, b[4].l + 4, b[9].r - 4, 210, PAL.ink, '6 significant figures');
     ubracket(ctx, b[0].l + 4, b[3].r - 4, 210, PAL.muted, 'leading zeros');
     note(ctx, 'the leading zeros only locate the decimal point and do not count', 1000, 290);
-    headline(ctx, 'captive zeros are always significant; leading zeros never are');
+    headline(ctx, 'A captive zero is always significant. A leading zero never is, since it only locates the decimal point.');
     readout(d.readout, '70.607\\ \\text{mL}: \\text{five significant figures} \\qquad 0.00832407\\ \\text{mL}: \\text{six significant figures}');
   }
   still(d, draw);
@@ -203,7 +203,7 @@ function nugget(ctx, x, y, s = 1) {
     [['1.3 × 10³', 'two significant figures'], ['1.30 × 10³', 'three, if the tens place was measured'], ['1.300 × 10³', 'four, if the ones place was measured too']].forEach(([f, why], i) => {
       const x = 280 + i * 420; text(ctx, f, x, 300, PAL.ink, { size: 34, weight: 600, align: 'center' }); note(ctx, why, x, 345);
     });
-    headline(ctx, 'trailing zeros left of the decimal point are ambiguous; exponential notation settles them');
+    headline(ctx, 'Trailing zeros to the left of the decimal point are ambiguous, and exponential notation settles them.');
     readout(d.readout, '1300\\ \\text{g}: \\text{two, three or four significant figures}', 'Where only the decimal form is available, it is prudent to assume that the trailing zeros are not significant.');
   }
   still(d, draw);
@@ -231,7 +231,7 @@ function nugget(ctx, x, y, s = 1) {
     column(ctx, 230, ['1.0023', '4.383'], '+', '5.3853', 5, 'g', '5.385 g', '4.383 g stops at the thousandths, so the sum is rounded there');
     text(ctx, '(b)', 760, 110, PAL.muted, { size: 24, weight: 600 });
     column(ctx, 930, ['486', '421.23'], '−', '64.77', 2, 'g', '65 g', '486 g has no decimal places, so the difference is rounded to the ones');
-    headline(ctx, 'a sum or difference is rounded to the decimal place of the least precise term');
+    headline(ctx, 'A sum or a difference is rounded to the decimal place of its least precise term.');
     readout(d.readout, '5.3853\\ \\text{g} \\longrightarrow 5.385\\ \\text{g} \\qquad 64.77\\ \\text{g} \\longrightarrow 65\\ \\text{g}', 'The muted digits are the ones the rule for addition and subtraction drops.');
   }
   still(d, draw);
@@ -241,8 +241,8 @@ function nugget(ctx, x, y, s = 1) {
    The two graduated-cylinder readings of Example 1.7 and its Check Your
    Learning: faithful still redrawings with the book's numbers.
 ===================================================================== */
-displacement(sim('fig-rebar', 520), 13.5, 22.4, 69.658, rebar, 'piece of rebar');
-displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of material');
+displacement(sim('fig-rebar', 520), 13.5, 22.4, 69.658, rebar, 'piece of rebar', 70);
+displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of material', 30);
 
 /* =====================================================================
    FIGURE 1.27: the archery targets. Still: one live target whose group
@@ -258,7 +258,9 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
   const DIR = [Math.cos(-0.9), Math.sin(-0.9)];          /* the group is pushed to the upper right, as the book draws it */
   const RCM = 25, LIMIT = 5;                              /* the target's radius in cm, and the ring inside which a group counts as close */
   const group = (o, s, k) => PAT.slice(0, k).map(([px, py]) => [o * DIR[0] + s * px, o * DIR[1] + s * py]);
-  const meanDist = (pts) => pts.reduce((a, [x, y]) => a + Math.hypot(x, y), 0) / pts.length;
+  /* accuracy is how far the centre of the group falls from the bull's eye and precision how far the arrows fall from one
+     another; a group scattered evenly about the bull's eye is accurate, and judging it by the mean arrow distance would fail it */
+  const centroidDist = (pts) => Math.hypot(pts.reduce((a, [x]) => a + x, 0) / pts.length, pts.reduce((a, [, y]) => a + y, 0) / pts.length);
   const spread = (pts) => Math.max(...pts.flatMap((p, i) => pts.slice(i + 1).map((q) => Math.hypot(p[0] - q[0], p[1] - q[1]))));
   /* the four corners are four archers, told apart by the categorical palette (rule 7.4): each corner's arrows take one hue,
      the live group takes the hue of the corner it currently falls in, and the label under each corner is the legend, in ink
@@ -274,7 +276,7 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
   function draw() {
     const { ctx } = begin(d.c);
     hits.length = 0;
-    const pts = group(off.v, spr.v, n.v), md = meanDist(pts), sp = spread(pts), accurate = md <= LIMIT, precise = sp <= LIMIT;
+    const pts = group(off.v, spr.v, n.v), md = centroidDist(pts), sp = spread(pts), accurate = md <= LIMIT, precise = sp <= LIMIT;
     const liveCell = cells.findIndex(([acc, pre]) => acc === accurate && pre === precise);
     text(ctx, 'bull’s eye', 360, 340 + 230 + 32, PAL.muted, { size: 17, align: 'center' });
     /* the four corners */
@@ -289,12 +291,12 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
       text(ctx, label, x + CW / 2 + 8, y + CH - 34, PAL.ink, { size: 18, weight: live ? 600 : 400, align: 'center' });
     });
     target(ctx, 360, 340, 230, pts, 8, F.cat(liveCell), 'the archer on the sliders');
-    headline(ctx, accurate && precise ? 'these arrows are close to both the bull’s eye and one another, so they are both accurate and precise'
-      : precise ? 'these arrows are close to one another but not on target, so they are precise but not accurate'
-      : accurate ? 'these arrows are scattered about the bull’s eye, so they are accurate on average but not precise'
-      : 'these arrows are neither on target nor close to one another, so they are neither accurate nor precise');
-    readout(d.readout, `\\text{mean distance from the bull's eye} = ${fmt(md, 1)}\\ \\text{cm} \\qquad \\text{greatest distance between two arrows} = ${fmt(sp, 1)}\\ \\text{cm}`,
-      'The offset slider moves the whole group away from the bull’s eye and the spread slider scatters it; accuracy is the first and precision the second, and the two are independent.');
+    headline(ctx, accurate && precise ? 'These arrows are close to both the bull’s eye and one another, so they are accurate and precise.'
+      : precise ? 'These arrows are close to one another but not on target, so they are precise but not accurate.'
+      : accurate ? 'These arrows are scattered about the bull’s eye, so they are accurate on average but not precise.'
+      : 'These arrows are neither on target nor close to one another, so they are neither accurate nor precise.');
+    readout(d.readout, `\\text{distance of the centre of the group from the bull's eye} = ${fmt(md, 1)}\\ \\text{cm} \\qquad \\text{greatest distance between two arrows} = ${fmt(sp, 1)}\\ \\text{cm}`,
+      'The offset slider moves the whole group away from the bull’s eye and the spread slider scatters it. Accuracy is measured by the first distance and precision by the second, and a group may have either without the other.');
   }
   still(d, draw);
 })();

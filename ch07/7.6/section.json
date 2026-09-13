@@ -53,7 +53,7 @@
     "/media/ch07/CNX_Chem_07_06_molgeom.jpg",
     "/media/ch07/CNX_Chem_07_06_Axeq.jpg"
    ],
-   "original_caption": "The basic electron-pair geometries predicted by VSEPR theory maximize the space around any region of electron density (bonds or lone pairs).",
+   "original_caption": "(Figure 7.16) The basic electron-pair geometries predicted by VSEPR theory maximize the space around any region of electron density (bonds or lone pairs). (Figure 7.19) The molecular structures are identical to the electron-pair geometries when there are no lone pairs present (first column). For a particular number of electron pairs (row), the molecular structures for one or more lone pairs are determined based on modifications of the corresponding electron-pair geometry. (Figure 7.20) (a) In a trigonal bipyramid, the two axial positions are located directly across from one another, whereas the three equatorial positions are located in a triangular arrangement. (b–d) The two lone pairs (red lines) in ClF₃ have several possible arrangements, but the T-shaped molecular structure (b) is the one actually observed, consistent with the larger lone pairs both occupying equatorial positions.",
    "draws": []
   },
   {
@@ -205,7 +205,7 @@
     "/media/ch07/CNX_Chem_07_06_BondVector.jpg",
     "/media/ch07/CNX_Chem_07_06_CO2H2Odip.jpg"
    ],
-   "original_caption": "(a) There is a small difference in electronegativity between C and H, represented as a short vector. (b) The electronegativity difference between B and F is much larger, so the vector representing the bond moment is much longer.",
+   "original_caption": "(Figure 7.26) (a) There is a small difference in electronegativity between C and H, represented as a short vector. (b) The electronegativity difference between B and F is much larger, so the vector representing the bond moment is much longer. (Figure 7.27) The overall dipole moment of a molecule depends on the individual bond dipole moments and how they are arranged. (a) Each CO bond has a bond dipole moment, but they point in opposite directions so that the net CO₂ molecule is nonpolar. (b) In contrast, water is polar because the OH bond moments do not cancel out.",
    "draws": []
   },
   {

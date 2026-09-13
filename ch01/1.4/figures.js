@@ -18,22 +18,26 @@ function pick(controls, o, names) {
   const c = F.select(controls, { label: o.label, aria: o.aria, options: names.map((n, i) => ({ value: String(i), label: n })), value: String(o.value ?? 0), onInput: () => o.onInput?.() });
   return { get v() { return +c.value; }, set(x) { c.set(String(x)); } };
 }
-/* an isometric cube of edge e (logical units) whose front bottom vertex is (ox, oy): three faces, the top lightest */
-const ISO = { c: Math.cos(Math.PI / 6), s: Math.sin(Math.PI / 6) };
-const iso = (ox, oy, x, y, z) => [ox + (x - y) * ISO.c, oy - (x + y) * ISO.s - z];
-function cube(ctx, ox, oy, e, color, w = 2.5) {
-  const P = (x, y, z) => iso(ox, oy, x, y, z);
-  const faces = [
-    [[0, 0, 0], [e, 0, 0], [e, 0, e], [0, 0, e]],         /* front right */
-    [[0, 0, 0], [0, e, 0], [0, e, e], [0, 0, e]],         /* front left */
-    [[0, 0, e], [e, 0, e], [e, e, e], [0, e, e]],         /* top */
-  ];
-  const fills = [alpha(color, 0.45), alpha(color, 0.3), alpha(color, 0.16)];
-  ctx.save(); ctx.lineWidth = w; ctx.strokeStyle = color; ctx.lineJoin = 'round';
-  faces.forEach((f, i) => { ctx.fillStyle = fills[i]; ctx.beginPath(); f.forEach(([x, y, z], j) => { const [px, py] = P(x, y, z); if (j) ctx.lineTo(px, py); else ctx.moveTo(px, py); }); ctx.closePath(); ctx.fill(); ctx.stroke(); });
-  ctx.restore();
+/* ---------- a locked view of the solids the book draws in perspective (rule 28.2) ----------
+   The book prints its cubes as solids seen from one corner, so they are projected through the drawing
+   layer's locked view rather than skewed by hand: one fixed viewpoint, one fixed lamp, shaded faces and
+   no orbit, which keeps the figure flat in cost and in chrome. The view is built once and never moves.
+   Coordinates keep the names the figures use: x runs to the right and front, y to the left and front, z
+   up, with (ox, oy) the front bottom vertex on the canvas; the view's own axes are y up and z toward the
+   reader, so the three are handed over as [-y, z, -x]. A body takes no type hue (rule 7): a face is the
+   page colour under the share of ink its angle to the lamp earns it. */
+const LOCKED = F.view({ yaw: Math.PI / 4, pitch: 0.6155, dist: 3000, cx: 0, cy: 0 });
+const iso = (ox, oy, x, y, z) => { const q = LOCKED.P([-y, z, -x]); return [ox + q[0], oy + q[1]]; };
+/* the three faces of a solid of edge e that the view can see, with their outward normals in the view's axes */
+const FACES = [
+  { pts: (e) => [[0, 0, 0], [e, 0, 0], [e, 0, e], [0, 0, e]], n: [1, 0, 0] },     /* front right */
+  { pts: (e) => [[0, 0, 0], [0, e, 0], [0, e, e], [0, 0, e]], n: [0, 0, 1] },     /* front left */
+  { pts: (e) => [[0, 0, e], [e, 0, e], [e, e, e], [0, e, e]], n: [0, 1, 0] },     /* top */
+];
+function cube(ctx, ox, oy, e, w = 2.5) {
+  FACES.forEach((f) => F.face(ctx, f.pts(e).map(([x, y, z]) => iso(ox, oy, x, y, z)), LOCKED.shade(f.n), w));
 }
-/* the twelve edges of a box of edge e, hidden ones dashed */
+/* the twelve edges of a box of edge e in the same locked view, hidden ones dashed */
 function boxOutline(ctx, ox, oy, e, color) {
   const P = (x, y, z) => iso(ox, oy, x, y, z);
   const seg = (a, b, dash) => { const [x1, y1] = P(...a), [x2, y2] = P(...b); line(ctx, x1, y1, x2, y2, color, 1.5, dash); };
@@ -56,10 +60,9 @@ function balance(ctx, x, y, w, reading) {
 /* a balance whose platform is drawn in the same projection as the cube on it: (x, y) is the front vertex of the platform, S its side */
 function isoBalance(ctx, x, y, S, reading) {
   const cm = C('mass'), P = (px, py, pz) => iso(x, y, px, py, pz);
-  const poly = (pts, fill) => { ctx.save(); ctx.fillStyle = fill; ctx.strokeStyle = cm; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath(); pts.forEach(([px, py], i) => (i ? ctx.lineTo(px, py) : ctx.moveTo(px, py))); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore(); };
-  poly([P(0, 0, -14), P(S, 0, -14), P(S, 0, 0), P(0, 0, 0)], alpha(cm, 0.25));
-  poly([P(0, 0, -14), P(0, S, -14), P(0, S, 0), P(0, 0, 0)], alpha(cm, 0.18));
-  poly([P(0, 0, 0), P(S, 0, 0), P(S, S, 0), P(0, S, 0)], PAL.soft);
+  F.face(ctx, [P(0, 0, -14), P(S, 0, -14), P(S, 0, 0), P(0, 0, 0)], LOCKED.shade([1, 0, 0]), 3);
+  F.face(ctx, [P(0, 0, -14), P(0, S, -14), P(0, S, 0), P(0, 0, 0)], LOCKED.shade([0, 0, 1]), 3);
+  F.face(ctx, [P(0, 0, 0), P(S, 0, 0), P(S, S, 0), P(0, S, 0)], LOCKED.shade([0, 1, 0]), 3);
   ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = cm; ctx.lineWidth = 3;
   ctx.fillRect(x - 150, y + 14, 300, 66); ctx.strokeRect(x - 150, y + 14, 300, 66);
   ctx.fillStyle = PAL.panel; ctx.fillRect(x - 90, y + 26, 180, 40); ctx.strokeRect(x - 90, y + 26, 180, 40); ctx.restore();
@@ -118,7 +121,7 @@ function rule(ctx, x1, x2, y, h) {
     /* the comparison the book prints under its rules */
     text(ctx, '1 m = 1.094 yd = 39.37 in.', 1300, iy + 30, PAL.ink, { size: 22, weight: 600, align: 'right' });
     text(ctx, 'A meter is about 3 inches longer than a yard.', 1300, iy + 62, PAL.muted, { size: 17, align: 'right' });
-    headline(ctx, l + ' cm is ' + fmt(l / 100, 2) + ' m, which is ' + fmt(yards, 3) + ' yd or ' + fmt(inches, 2) + ' in.');
+    headline(ctx, 'A length of ' + l + ' cm is ' + fmt(l / 100, 2) + ' m, which is ' + fmt(yards, 3) + ' yd or ' + fmt(inches, 2) + ' in.');
     readout(d.readout, `${l}\\ \\text{cm} = ${fmt(l / 100, 2)}\\ \\text{m} = ${fmt(yards, 3)}\\ \\text{yd} = ${fmt(inches, 2)}\\ \\text{in.}`,
       l === 100 ? 'One meter is about 39.37 inches or 1.094 yards, so a meter is about 3 inches longer than a yard.' : 'Every centimeter is 0.3937 inch, since 2.54 cm is exactly one inch.');
   }
@@ -134,7 +137,6 @@ function rule(ctx, x1, x2, y, h) {
 (function () {
   const d = sim('sim-volume', 640);
   const A = ctl(d.controls, { label: '\\text{edge } a', cls: '', min: 1, max: 100, step: 1, value: 10, unit: 'cm', dec: 0, aria: 'edge of the cube in centimeters' });
-  const cv = () => C('volume');
   function draw() {
     const { ctx } = begin(d.c);
     const a = A.v, V = a * a * a;
@@ -143,21 +145,21 @@ function rule(ctx, x1, x2, y, h) {
     boxOutline(ctx, ox, oy, K, PAL.muted);
     const [bxl, byl] = iso(ox, oy, K, 0, 0); text(ctx, '1 m³', bxl + 8, byl + 26, PAL.muted, { size: 20, weight: 600 });
     const e = (K * a) / 100;
-    if (e >= 4) cube(ctx, ox, oy, e, cv()); else dot(ctx, ox, oy, cv(), true, 5);
-    if (a < 100) { const [lx, ly] = iso(ox, oy, e, 0, e / 2); text(ctx, a + ' cm', lx + 16, ly + 4, cv(), { size: 18, weight: 600, bg: alpha(PAL.panel, 0.85) }); }
+    if (e >= 4) cube(ctx, ox, oy, e); else dot(ctx, ox, oy, PAL.ink, true, 5);
+    if (a < 100) { const [lx, ly] = iso(ox, oy, e, 0, e / 2); text(ctx, a + ' cm', lx + 16, ly + 4, PAL.ink, { size: 18, weight: 600, bg: alpha(PAL.panel, 0.85) }); }
     text(ctx, 'to scale inside the cubic meter', 330, 618, PAL.muted, { size: 16, align: 'center' });
     /* the same cube magnified, with the cubic centimeter and the dime at the same magnification */
     const k = 220 / Math.max(a, 6), E = a * k, mx = 840, my = 430;
-    cube(ctx, mx, my, E, cv());
-    const [ax, ay] = iso(mx, my, E, 0, E / 2); text(ctx, 'a = ' + a + ' cm', ax + 14, ay, cv(), { size: 20, weight: 600 });
+    cube(ctx, mx, my, E);
+    const [ax, ay] = iso(mx, my, E, 0, E / 2); text(ctx, 'a = ' + a + ' cm', ax + 14, ay, PAL.ink, { size: 20, weight: 600 });
     if (a > 1) {
-      const sx = mx + E * ISO.c + 110, sy = my - 30;
-      if (k >= 5) cube(ctx, sx, sy, k, PAL.ink, 2); else dot(ctx, sx, sy, PAL.ink, true, 4);
+      const sx = iso(mx, my, E, 0, 0)[0] + 110, sy = my - 30;
+      if (k >= 5) cube(ctx, sx, sy, k, 2); else dot(ctx, sx, sy, PAL.ink, true, 4);
       text(ctx, '1 cm³ = 1 mL', sx, sy + 40, PAL.ink, { size: 17, align: 'center' });
       const dx = sx + 130, r = (1.8 * k) / 2;
       ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(dx, sy - r, Math.max(r, 3), 0, Math.PI * 2); ctx.fill(); ctx.stroke(); ctx.restore();
       text(ctx, '1.8 cm dime', dx, sy + 40, PAL.ink, { size: 17, align: 'center' });
-    } else text(ctx, 'this is the cubic centimeter', mx + E * ISO.c + 40, my - 60, PAL.ink, { size: 17 });
+    } else text(ctx, 'this is the cubic centimeter', iso(mx, my, E, 0, 0)[0] + 40, my - 60, PAL.ink, { size: 17 });
     text(ctx, 'magnified ' + fmt(k / (K / 100), 1) + ' times', 1000, 618, PAL.muted, { size: 16, align: 'center' });
     /* the volume in the units the book names */
     const L = V / 1000, Ls = fmt(L, L === Math.round(L) ? 0 : 3);
@@ -199,7 +201,7 @@ function rule(ctx, x1, x2, y, h) {
     const bx = 330, by = 400, e = a * 60, S = 220;
     isoBalance(ctx, bx, by, S, sig3(m) + ' g');
     const [cx0, cy0] = iso(bx, by, (S - e) / 2, (S - e) / 2, 0);
-    cube(ctx, cx0, cy0, e, cvol);
+    cube(ctx, cx0, cy0, e);
     const [lx, ly] = iso(cx0, cy0, e, 0, e / 2); text(ctx, 'a = ' + fmt(a, 2) + ' cm', lx + 16, ly, PAL.ink, { size: 20, weight: 600 });
     text(ctx, name, bx, by + 106, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, 'V = a³ = ' + sig3(V) + ' cm³', bx, by + 136, cvol, { size: 20, weight: 600, align: 'center' });
@@ -219,8 +221,8 @@ function rule(ctx, x1, x2, y, h) {
     text(ctx, 'the solids of Table 1.4', gr, gb + 52, PAL.muted, { size: 16, align: 'right' });
     const [qx, qy] = iso(cx0, cy0, e / 2, e / 2, e / 2);
     hits.length = 0; hits.push({ x: qx, y: qy, r: e * 0.9, name: which < 0 ? name : 'a cube of ' + name + ', ' + sig3(m) + ' g' }, { x: bx, y: by + 46, r: 60, name: 'balance, reading ' + sig3(m) + ' g' });
-    headline(ctx, 'A cube of ' + name + ' ' + fmt(a, 2) + ' cm on an edge has a volume of ' + sig3(V) + ' cm³ and a mass of ' + sig3(m) + ' g, so its density is ' + sig3(dens) + ' g/cm³.');
-    const gold = 19.3 * V, other = name === 'gold' ? 'A lead cube of the same size would weigh only ' + sig3(11.34 * V) + ' g, which is why a lead-filled brick cannot pass for gold.' : 'A gold cube of the same size would weigh ' + sig3(gold) + ' g, since the volume is the same and the density is ' + sig3(19.3 / rho) + ' times as great.';
+    headline(ctx, 'A cube of ' + name + ' ' + fmt(a, 2) + ' cm on an edge holds ' + sig3(V) + ' cm³. The balance reads ' + sig3(m) + ' g, so the density of the solid is ' + sig3(dens) + ' g/cm³.');
+    const gold = 19.3 * V, other = name === 'gold' ? 'A lead cube of the same size would weigh ' + sig3(11.34 * V) + ' g, since the volume is the same and lead is ' + sig3(11.34 / 19.3) + ' times as dense as gold.' : 'A gold cube of the same size would weigh ' + sig3(gold) + ' g, since the volume is the same and gold is ' + sig3(19.3 / rho) + ' times as dense.';
     readout(d.readout, `\\text{density} = \\frac{\\km}{\\kV} = \\frac{\\htmlClass{kv-mass}{${sig3(m)}\\ \\text{g}}}{\\htmlClass{kv-volume}{${sig3(V)}\\ \\text{cm}^3}} = ${sig3(dens)}\\ \\text{g/cm}^3`, other);
   }
   register(d.fig, { update: () => {}, draw });

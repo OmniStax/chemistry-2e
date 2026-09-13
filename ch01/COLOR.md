@@ -54,9 +54,13 @@ decoration:
 
 - **Mass is the balance.** The pan, the needle, the number it reads and the
   m of the readout are all the mass hue, and nothing else on the canvas is.
-- **Volume is the solid and the water.** The cube's edges and its shaded
-  faces, the water level in the cylinder, the bracket that measures the rise,
-  and the V of the readout are all the volume hue.
+- **Volume is the water and the reading.** The water level in the cylinder,
+  the bracket that measures the rise, the volume slider and the V of the
+  readout are all the volume hue. The cube itself is not: a body never takes a
+  type hue (root rule 7), so the cubes of 1.4 go through the drawing layer's
+  locked view, their faces the page colour under the share of ink each one's
+  angle to the lamp earns it, and the edge written beside a cube is a length
+  and stays in ink.
 - **The readout binds them.** `density = m ÷ V` is written with the m in the
   mass hue, the V in the volume hue, the word density and the quotient in ink,
   and the live numbers each in the hue of the quantity they belong to, so the

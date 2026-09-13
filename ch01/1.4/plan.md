@@ -267,3 +267,28 @@ outlined (rule 7.4); the palette skips the mass and volume hues the page
 binds. The cube, the block, the balance and the water name themselves
 under the pointer (rule 26.6). The page still binds `mass` and `volume`.
 The density caption says to choose the material or slide the density.
+
+## Figure audit pass, 2026-09-12
+
+Brought up to the audit of the book's figures against `RULES.md`. Each line
+below says what the figure now is: its tier, whether it moves, its controls,
+whether it is flat or three-dimensional and with what bound, and whether its
+labels are on.
+
+- `sim-length` (Figure 1.23): a still simulation, one length slider, flat,
+  labels on. Its headline now opens with a word rather than a number.
+- `sim-volume` (Figure 1.25) and `sim-density` (Sim): still simulations with
+  one and three controls. Both draw the book's own perspective cubes, and
+  both now project them through the drawing layer's locked view, `F.view`
+  and `F.face`, instead of a hand-rolled isometric skew (root rule 28.2):
+  one fixed viewpoint, one fixed lamp, shaded faces and no orbit, so each
+  stays a flat figure in cost and in chrome. A face takes no type hue, as
+  root rule 7 asks of a body, and the edge written beside a cube is a length
+  and stays in ink; `volume` is still bound, through the V of each readout,
+  and `mass` through the balance. Labels on in both, and `sim-density` gives
+  the cube and the balance hover names as well. `sim-density`'s headline is
+  two sentences, one for the volume and one for the mass and the density it
+  gives, and its small line compares the sample with a cube of gold or of
+  lead without editorializing about it.
+- `sim-displacement` (Sim): unchanged. A still simulation, three controls,
+  flat, labels on, with hover names on the block, the balance and the water.

@@ -369,3 +369,209 @@ frame. Screenshots of all thirty-eight figures at 1400 wide are in the
 pass's scratch directory. Finally `npm run check:content` and `npm test`
 with no book chosen pass for every book the content root holds: this one,
 College Physics 2e and the figure sandbox.
+
+## Pass 4 (2026-09-12): the figure audit over every built section
+
+Chapters 1, 6.2, 7.6 and 9.2 were read against the root rules as revised
+through item 28 and fixed in one pass with the physics book (its LOG, pass 34,
+records the kinds of fault and the two library changes). What is this book's
+own: Figure 1.14 and the hazard diamond of 1.21 are drawn live, one through
+`F.el` with a 2D and a 3D view, the other with the four NFPA colours as
+physical fact; the accuracy test of 1.27 judges the centroid; the dipoles of
+7.28 now turn the hydrogen end to the negative plate; the bond moments of 7.26
+use the book's own Figure 7.6 electronegativities; the ladder of 6.14 + 6.15
+has a magnified inset above n = 3; held laws in the gas box disable their
+sliders. The notes follow.
+
+#### Chemistry 2e: the figure audit pass over ch01, 6.2, 7.6 and 9.2
+
+Worked from the audit of 2026-09-12 against the root `RULES.md`, the book's
+own `RULES.md` and `COLOR.md`, and each chapter's `config.md`. Every row of
+Part B that names these chapters was taken, and the patterns of Part A were
+swept over every `figures.js`, `text.html` caption and `plan.md` of them, not
+only over the figures the tables name.
+
+##### 1.1 Chemistry in Context
+
+The plan said Figure 1.3 was redrawn with twenty boxes; the book and the code
+both have eighteen, and the plan now says eighteen. Nothing else in the
+section needed a change: `sim-water` already carried its 2D and 3D views, its
+state buttons and its hover names, and its plan line now states the tier, the
+motion, the controls, the bound on the orbit and the labels in one place.
+
+##### 1.2 Phases and Classification of Matter
+
+Figure 1.14, the molecules of the elements and of the compounds, was still
+the book's photograph because `F.el` did not exist when the section was
+built. It does now, and the book's rule asks a structure the text names to be
+built both ways, so the figure is redrawn live: hydrogen, oxygen, phosphorus
+and sulfur as molecules of one element, water, carbon dioxide and glucose as
+molecules of compounds, every atom a disc in its element's colour, with a
+view choice of 2D and 3D, 2D the default and the scene mounting on the first
+switch. Its row changed from `photo` to `figure` and took the book's image
+and caption into `originals` and `original_caption`, so the reader can still
+call up the book's own picture.
+
+Three smaller faults went with it. The gas of Figure 1.6 drew a different
+number of molecules in each container at the same density, which said it was
+two samples rather than one; it now draws the same twenty-seven molecules in
+both, sparser in the wide vessel. The solid of the same figure was drawn at
+the volume of the liquid, though water is one of the few substances that
+expand on freezing, so the ice is now 1.09 times the liquid's volume and the
+headline says why. Figure 1.8 drew its bars on two scales in one panel, so
+960 g of water came out shorter than 40 g of sugar, and the 606.6 g label of
+the battery panel ran off the canvas; every bar of both panels is now drawn
+to one scale, chosen so the longest bar and its number both fall inside the
+frame, and a line beneath says so. Figure 1.11's readout, a chain of
+fragments, is one sentence.
+
+##### 1.3 Physical and Chemical Properties
+
+Figure 1.21, the NFPA hazard diamond, was kept as the book's JPG because the
+four colours of the sign could only be written as hex literals, which the
+book's `RULES.md` forbade. The rule now makes one exception, for a colour
+that is a physical fact and belongs to none of the four families root rule 7
+names, so the diamond is redrawn: the four quadrants in the NFPA's own red,
+blue, yellow and white, named in constants and standing unchanged in both
+themes, with the 0 to 4 scale in the words of the passage, the abbreviations
+of the white diamond, and a hover name on every quadrant.
+
+##### 1.4 Measurements
+
+The cubes of Figure 1.25 and of the density Sim were projected by a
+hand-rolled isometric skew. They are the book's own perspective drawings, so
+they now go through the drawing layer's locked view, `F.view` and `F.face`:
+one fixed viewpoint, one fixed lamp, shaded faces and no orbit, which keeps
+them flat figures in cost and in chrome. A face takes no type hue, as root
+rule 7 asks of a body, and the edge written beside a cube is a length and
+stays in ink, so `ch01/COLOR.md`'s line about the cube's shaded faces wearing
+the volume hue was corrected. The density headline, which ran the volume and
+the mass together in one clause, is two sentences, and its small line
+compares the sample with a cube of gold or of lead without editorializing
+about lead-filled bricks.
+
+##### 1.5 Measurement Uncertainty, Accuracy, and Precision
+
+Accuracy was judged by the mean distance of the arrows from the bull's eye,
+which is not accuracy but a mixture of accuracy and precision, and it failed
+the book's own "accurate but not precise" corner. Accuracy is now the
+distance of the centre of the group from the bull's eye and precision the
+greatest distance between two arrows, and the corner passes. The rebar stood
+through the floor of its cylinder and now rests on it, each object placed by
+its own half-height. All eight headlines of the section, which were lowercase
+fragments or semicolon chains, are capitalised full sentences.
+
+##### 1.6 Mathematical Treatment of Measurement Results
+
+The kelvin column was read to a hundredth of a kelvin against a Celsius
+reading to a tenth and against Example 1.11's 310.2 K. It is now read to a
+tenth, and the two reference sentences still name the exact defining values,
+273.15 K and 373.15 K.
+
+##### 6.2 The Bohr Model
+
+Three named species, hydrogen, He⁺ and Li²⁺, were a slider called Z in all
+three figures; they are states and are now a row of buttons. On the ladder of
+Figures 6.14 and 6.15 the rungs from n = 3 up lie within about fifty units of
+one another, so a jump between them could not be seen: they are drawn again
+in an inset magnified eight times, with the factor stated and the band it
+enlarges outlined on the ladder. The transition arrow is notation and grew
+with the electron; it now stands still at its full length while only the
+electron and the photon move. The word "electron" sat on the rung and now
+stands beside it with a leader. The orbit Sim ran to n = 8, where the last
+three orbits were off the frame and identical: it stops at n = 6, and the
+canvas scale is fixed at what holds the largest orbit the buttons reach. The
+series Sim counted its ultraviolet lines at 380 nm while its visible band
+began at 400 nm, so the three counts did not add up to the number of lines;
+both boundaries are now 400 nm, and the highest-orbit slider is moved to a
+legal value rather than silently overridden.
+
+The nucleus and the electron stay in ink. A nucleus drawn without its
+electrons is not yet an atom of any element and an electron belongs to no
+element at all, so neither can take an element colour, and the book's
+`COLOR.md` now says so in a sentence of its own. `fig-spectra` stays a kept
+image in a `figure` row with no number, which is what this book gives an
+unnumbered image it keeps rather than redraws; the book's `RULES.md` now
+records that convention, which only `ch01/config.md` and `ch06/config.md`
+carried before.
+
+##### 7.6 Molecular Structure and Polarity
+
+Figure 7.28 had its dipoles backwards: the molecules settled with the
+hydrogen end of HF toward the positive plate while the headline and the
+readout said the negative one. The hydrogen end carries the partial positive
+charge, so the molecules now settle the other way round and the drawing
+agrees with the words. The bond-moment bench of Figures 7.26 and 7.27 drew
+its arrows from modern Pauling values while citing the book's Figure 7.6
+table; it now uses the book's own values, H 2.1, B 2.0, C 2.5, N 3.0, O 3.5,
+F 4.0, P 2.1, S 2.5 and Cl 3.0, printed to one decimal as the book prints
+them. That table gives carbon and sulfur the same value, so OCS draws no
+arrow on its C–S bond, and the readout says so and repeats what the text
+says, that sulfur is in fact very slightly the more electronegative.
+
+The fold of Figure 7.20 claimed the three possible placements of the two lone
+pairs of ClF₃ and only ever drew the observed one; a choice of the three now
+appears where there are five regions and two lone pairs, with the readout
+saying which is observed and why. The lone-pair slider of the settling Sim
+was forced to zero at five and six regions, where a bare repulsion cannot
+tell an axial site from an equatorial one; it is now disabled and greyed
+there through the new `ctl().disable`, and clamped rather than snapped back
+elsewhere. Lone-pair lobes were the one body of the section that could not be
+picked and now name themselves under the pointer. The VSEPR bench and the
+bond-moment bench carried up to thirteen names on an idly spinning molecule;
+each labels a kind once by default and puts the rest behind a Labels button,
+off by default, with hover names throughout. Formaldehyde and the bond-moment
+bench had snap-to-view buttons named for a tetrahedron, which mean nothing
+for a planar molecule, and now have their own. Twelve colon-led captions are
+sentences, the molecule dropdown is called "molecule or bond", since the list
+holds two single bonds beside the molecules, and Figure 7.14's caption ends
+at the observation rather than arguing about what the figure shows. The plan
+described a `viewer()` that no longer exists; it now states the bounds and
+the Labels decision of every scene.
+
+##### 9.2 Relating Pressure, Volume, Amount, and Temperature
+
+The sealed sphere of Figure 9.10 stood in a water bath heated from 150 K to
+600 K, which is neither water nor a bath, and the bath was tinted by the
+temperature, which root rule 7 forbids of a body. The slider now runs from
+273 K to 373 K, the ice point to the boiling point, and the water is drawn in
+ink at a fixed opacity while the temperature hue stays on the slider and the
+readout. The gas box's locked sliders moved and snapped back; they are now
+disabled and greyed through the new `ctl().disable`, and a line on the strip
+says which the law has taken. The breathing figure's rate slider changed only
+the printed numbers, since one breath always took four and a half real
+seconds; the cycle now runs in real time, and the swelling of the lungs,
+which is a few percent of their radius, is exaggerated four times or by as
+much of that as the chest will hold, with the factor drawn beside the lungs
+and in the readout and the true volumes given throughout. The four-graph Sim
+said the P–V graph stands still under the temperature slider, which is not
+true of that graph; it now says what is true of which slider. The two
+pressure labels of Figure 9.11 overprinted where the two states met and now
+take opposite sides, as 9.12's already did; the string of a balloon in Figure
+9.18 crossed the name of its gas at two moles and is now short enough that it
+does not. The fold of Figures 9.13 and 9.14 carried one caption for two
+originals and now prefixes each with its number.
+
+##### Chapter files
+
+`ch01/config.md` and `ch09/config.md` both said "3D: none" while three and
+four of their figures are `F.view3d` scenes; both now say which figures are
+three-dimensional and with what bound. `ch07/config.md` had no 3D row at all
+and now has one. `ch01/config.md`'s colour row said the element palette is
+not used in the chapter, which stopped being true when the water, the gases
+and now the molecules of Figure 1.14 took it; `ch09/config.md`'s said the
+particles in the box are generic and drawn in ink, which stopped being true
+when they became named gases. Both are corrected. Every section's `plan.md`
+carries a dated audit section stating, figure by figure, the tier, the
+motion, the controls, whether the figure is flat or three-dimensional and
+with what bound, and whether its labels are on.
+
+##### Checks
+
+`node --check` passes on all nine `figures.js`. `check:content` with
+`OMNISTAX_BOOK=chemistry-2e` reports four chapters, nine sections, two
+introduction or summary pages, twelve checks, no errors and two warnings,
+both of them pre-existing sheet cells that hold a word beside a number
+(`sheets/water.json` and `sheets/ksp.json`). The same command with
+`OMNISTAX_BOOK=college-physics-2e` reports no errors. No headline of these
+chapters holds a middle-dot join and no caption of them cites its own figure.

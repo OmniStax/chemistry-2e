@@ -77,7 +77,7 @@
         "/media/ch09/CNX_Chem_09_03_BoylesLaw1.jpg",
         "/media/ch09/CNX_Chem_09_02_Boyleslaw2.jpg"
       ],
-      "original_caption": "When a gas occupies a smaller volume, it exerts a higher pressure; when it occupies a larger volume, it exerts a lower pressure (assuming the amount of gas and the temperature do not change). Since P and V are inversely proportional, a graph of 1/P vs. V is linear.",
+      "original_caption": "(Figure 9.13) When a gas occupies a smaller volume, it exerts a higher pressure; when it occupies a larger volume, it exerts a lower pressure (assuming the amount of gas and the temperature do not change). Since P and V are inversely proportional, a graph of 1/P vs. V is linear. (Figure 9.14) The relationship between pressure and volume is inversely proportional. (a) The graph of P vs. V is a hyperbola, whereas (b) the graph of (1/P) vs. V is linear.",
       "draws": [
         "pressure",
         "volume"

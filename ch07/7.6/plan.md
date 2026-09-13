@@ -456,3 +456,79 @@ that decision in its Three dimensions line, with how the section's
 gain before the next such figure, and its Simulation exercises line now
 names the four PhET items the figures carry and the one, fs-idp67065360,
 that is left out.
+
+## Figure audit pass, 2026-09-12
+
+Brought up to the audit of the book's figures against `RULES.md`. Each line
+below says what the figure now is: its tier, whether it moves, its controls,
+whether it is flat or three-dimensional and with what bound, and whether its
+labels are on.
+
+Every three-dimensional figure of this section is an `F.view3d` scene with
+the library's buttons: auto-rotate, the snap-to-view buttons and zoom. A
+molecule has no ground and no up to keep, so the yaw is free and the only
+bound is the pitch that keeps the turntable upright; each scene spins idly
+until the reader takes hold of it. The `viewer()` the earlier plan lines
+described no longer exists and is not what was built.
+
+- `sim-formaldehyde` (Figure 7.14): a still Figure, no cycle. No sliders; it
+  answers a drag. 3D, bound as above. Its snap-to-view buttons are now its
+  own, "in plane" and "edge on", rather than the shared pair, which named
+  viewpoints that mean nothing for a planar molecule (rule 26.2). Labels on:
+  four atom names, the angle and the bond distance, and none of them
+  collides. Its caption ends at the observation rather than arguing about
+  what the figure shows.
+- `sim-vsepr` (Figure 7.16 + 7.19 + 7.20): a still Figure. Controls: the
+  regions slider, the lone-pair slider, a Labels button, and, where there are
+  five regions and two lone pairs, a choice of where the two lone pairs go.
+  That choice is Figure 7.20 (b), (c) and (d): both equatorial, which is what
+  ClF₃ does, one axial, and both axial, with the readout saying which is
+  observed and why. It appears only in that case, since a control with no
+  visible consequence elsewhere would be a control that does nothing (rule
+  24.6). The lone-pair slider is clamped by moving its own control when the
+  number of regions changes, rather than being moved and snapped back. 3D,
+  bound as above, with the wedge-and-dash sketch beside it flat. Labels
+  **off** by default: the central atom, one bonded atom, the marked angles
+  and one axial and one equatorial position are shown, since a kind is
+  labelled once, and the rest wait behind the Labels button, because ten
+  names on a turning molecule collide (rule 26.7); every atom and every lone
+  pair carries a hover name. The fold's `original_caption` now prefixes each
+  of the three book captions with its own number.
+- `sim-domains` (Sim): a moving Sim, a five-second cycle with the transport
+  and its scrubber. Controls: the regions slider and the lone-pair slider,
+  which is now **disabled and greyed at five and six regions**, where a bare
+  repulsion cannot tell an axial site from an equatorial one and the figure
+  has nothing to show; it is no longer moved and snapped back (rule 24.6,
+  `ctl().disable`). It is clamped the same way at three and four regions. 3D,
+  bound as above, with the trace of the smallest angle drawn flat beneath.
+  Labels on: the central atom, the smallest angle and the graph's frame.
+- `fig-methane`, `fig-bef2`, `fig-bcl3`, `fig-ammonium`, the Lewis figures
+  and the vector sketches: faithful copies, still, no controls, flat, labels
+  on. Their colon-led captions are now sentences.
+- `fig-ammonia` (7.18), `fig-water` (7.23), `fig-sf4` (7.24), `fig-xef4`
+  (7.25): faithful copies, still, no controls, 3D, bound as above, panel
+  captions on and now written as sentences. Every lone-pair lobe is pickable
+  and names itself under the pointer (rule 26.6), which it was not.
+- `sim-bond-moments` (Figure 7.26 + 7.27): a still Figure. Controls: a
+  dropdown now labelled "molecule or bond", since the list holds two single
+  bonds beside the molecules, and a Labels button. 3D, bound as above, with
+  its own "front" and "above" buttons rather than the shared pair. Labels
+  **off** by default: the central atom, one bonded atom and the dipole moment
+  are named, and the rest wait behind the button, since thirteen names on a
+  turning molecule collide; the plus mark at an arrow's tail is the book's
+  notation drawn with the arrow rather than a label, so it always shows.
+  The electronegativities are now the book's own, from the Figure 7.6 table
+  this figure cites: H 2.1, B 2.0, C 2.5, N 3.0, O 3.5, F 4.0, P 2.1, S 2.5
+  and Cl 3.0, printed to one decimal as the book prints them (rule 25). That
+  table gives carbon and sulfur the same value, so OCS draws no arrow on its
+  C–S bond, and the readout says so and notes what the text says, that sulfur
+  is in fact very slightly the more electronegative of the two. The fold's
+  `original_caption` prefixes each book caption with its number.
+- `sim-field` (Figure 7.28): a moving Figure, a six-second cycle with the
+  transport and its scrubber. Controls: the molecule buttons and the count
+  slider. Flat. Labels on. **The alignment was backwards** and is fixed: the
+  hydrogen end of HF carries the partial positive charge and is drawn at the
+  left end of each molecule, so the molecules now settle at th = 0, with the
+  hydrogen end toward the negative plate on the left and the fluorine end
+  toward the positive plate on the right, which is what the headline and the
+  readout have always said.

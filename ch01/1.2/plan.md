@@ -276,3 +276,45 @@ experiment is a bench with a bounded orbit, a faithful copy stays flat.
   front and above views; zoom.
 - `fig-fuel-cell` (Figure 1.16) stays a flat faithful copy: a faithful copy
   is not a simulation. `draws` unchanged.
+
+## Figure audit pass, 2026-09-12
+
+Brought up to the audit of the book's figures against `RULES.md`. Each line
+below says what the figure now is: its tier, whether it moves, its controls,
+whether it is flat or three-dimensional and with what bound, and whether its
+labels are on.
+
+- `sim-states` (Figure 1.6): a still `F.view3d` scene, no cycle and no
+  transport. Controls: the state buttons and the volume slider. Bound: the
+  yaw is free and the pitch runs from level to 72° above it, so the
+  containers are never seen from beneath; the scene spins idly. Two things
+  the audit found are corrected: the gas now draws the same twenty-seven
+  molecules in both containers, sparser in the wide one, since it is one
+  sample and not two; and the ice is drawn at 1.09 times the volume of the
+  liquid, with the headline saying that water expands by about a tenth on
+  freezing. Labels: the two container names are the frame, and every molecule
+  answers the pointer.
+- `sim-conservation` (Figure 1.8): a still simulation. Controls: the two
+  extent sliders. Flat. Every bar of both panels is now drawn to one scale,
+  0.22 canvas units to the gram, chosen so that the longest bar and the
+  number beside it both fall inside the canvas; a line under the bars says
+  so. Labels on.
+- `fig-classify` (Figure 1.11): a faithful copy, still, no controls, flat,
+  labels on. Its readout is one sentence rather than a chain of fragments.
+- `fig-molecules` (Figure 1.14): **changed from a kept photograph to a
+  redrawn Figure.** `F.el` now exists, and the book's rule for this chapter
+  asks a structure the text names to be built both ways, so the seven
+  molecules are drawn live: hydrogen, oxygen, phosphorus and sulfur as
+  molecules of one element, water, carbon dioxide and glucose as molecules of
+  compounds, every atom a disc in its element's colour. A still figure: a
+  molecule has no clock in it. Control: a view choice of 2D and 3D, 2D the
+  default, the scene mounting on the first switch, each molecule turning
+  about its own centre with the yaw free and an idle spin, since a molecule
+  has no ground. Labels: the seven formulas, one per molecule, are always on
+  in both views, each naming a kind once and none of them moving or
+  colliding; every atom carries a hover name. The row keeps the number 1.14
+  and the book's image and caption in `originals` and `original_caption`, so
+  the reader can still call up the book's own picture.
+- `sim-electrolysis` (Figure 1.15) and `fig-fuel-cell` (Figure 1.16):
+  unchanged but for the wording of one line, which was a middle-dot join and
+  is now two sentences.

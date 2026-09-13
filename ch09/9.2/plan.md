@@ -419,3 +419,69 @@ molecule is built both ways.
   free (hanging balloons have no ground); spin off; front and corner views.
 - The flat particle engine, `speedOf` and `hotplate` are gone from the file;
   `draws` lists unchanged.
+
+## Figure audit pass, 2026-09-12
+
+Brought up to the audit of the book's figures against `RULES.md`. Each line
+below says what the figure now is: its tier, whether it moves, its controls,
+whether it is flat or three-dimensional and with what bound, and whether its
+labels are on.
+
+- `sim-amontons-sphere` (Figure 9.10): a moving Figure, a continuous cycle
+  with the transport and no scrubber. Controls: the temperature and amount
+  sliders. 3D: the sphere stands in a bath on a hot plate, so the yaw is free
+  and the pitch is held between level and 72° above it, and the scene never
+  spins on its own, since its particles already move. Two things the audit
+  found are corrected. The bath is water, so the temperature slider now runs
+  from 273 K to 373 K, the ice point to the boiling point, instead of 150 K
+  to 600 K. And no body is tinted by the temperature any more (root rule 7):
+  the water is drawn in ink at a fixed opacity and the plate's element in the
+  page colour, while the temperature hue stays on the slider, the reading and
+  the T of the readout. Labels on: the sphere, the bath and the plate, each
+  with a hover name.
+- `sim-amontons-graph` (Figure 9.11): a still Figure, two temperature
+  sliders, flat, labels on. The two pressure labels now take opposite sides
+  of their points where the two states are close or coincide, as 9.12's
+  volume labels already did, so they no longer overprint.
+- `sim-charles-graph` (Figure 9.12): unchanged. A still Figure, two sliders,
+  flat, labels on.
+- `sim-boyle` (Figure 9.13 + 9.14): a still Figure, two volume sliders,
+  flat, labels on. Its `original_caption` now prefixes each of the two book
+  captions with its own number, so the reader who calls up the originals sees
+  which caption belongs to which picture.
+- `sim-breathing` (Figure 9.15): a moving Figure, one breath a cycle, with
+  the transport and its scrubber. Controls: the tidal-volume slider and the
+  rate slider. Flat. Two things are corrected. **The cycle now runs in real
+  time**, so the rate slider really does change how long a breath takes,
+  instead of changing only the printed numbers. And the swelling of the
+  lungs, which is a few percent of their radius and invisible at life size,
+  is exaggerated four times, or by as much of that as the chest will hold at
+  the largest breath, with the factor drawn written beside the lungs and
+  again in the readout, and the true volumes given throughout (rule 28.4).
+  The lungs now grow about a fixed centre, so the diaphragm and its label
+  stay on the canvas at every setting. Labels on.
+- `sim-gas-box` (Sim): a moving Sim, a continuous cycle with the transport
+  and no scrubber. Controls: the gas dropdown, the volume, temperature and
+  amount sliders, and the buttons for the law held. 3D: a box of gas has no
+  up to keep, so the yaw is free, and it does not spin on its own. **A slider
+  a law has taken over is now disabled and greyed** rather than moved and
+  snapped back (rule 24.6, `ctl().disable`): under Amontons's law the volume
+  and the amount are locked, under Charles's law the amount is locked and the
+  volume follows the piston, under Boyle's law the temperature and the amount
+  are locked, and under Avogadro's law the temperature is locked and the
+  volume follows the piston. A line on the strip says so. Labels on, with a
+  hover name on every molecule, the piston and the gas.
+- `sim-four-graphs` (Sim): a still Sim, three sliders, flat, labels on. Its
+  readout said that the P–V graph stands still under the temperature slider,
+  which is not true of that graph. It now says what is true: the volume
+  slider leaves the two curves drawn against V exactly where they are and
+  only slides the marker along them, and the temperature slider does the same
+  to the P against T line, since that graph is drawn at one volume and one
+  amount.
+- `sim-balloons` (Figure 9.18): a still Figure. Controls: a view choice of 2D
+  and 3D with 2D the default, three gas dropdowns and the amount slider; the
+  scene mounts on the first switch and turns freely, since hanging balloons
+  have no ground, and does not spin on its own. The string of each balloon is
+  now short enough that it never reaches the name of the gas beneath it, even
+  at two moles. Labels on, with a hover name on every molecule and every
+  balloon.

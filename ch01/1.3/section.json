@@ -23,7 +23,7 @@
   { "id": "fig-rust", "kind": "photo", "number": "1.19", "draws": [] },
   { "id": "fig-chemical-change", "kind": "photo", "number": "1.20", "draws": [] },
   { "id": "sim-extensive", "kind": "sim", "draws": ["mass", "volume", "temperature"] },
-  { "id": "fig-hazard-diamond", "kind": "photo", "number": "1.21", "draws": [] },
+  { "id": "fig-hazard-diamond", "kind": "figure", "number": "1.21", "originals": ["/media/ch01/CNX_Chem_01_03_HazDiamond.jpg"], "original_caption": "The National Fire Protection Agency (NFPA) hazard diamond summarizes the major hazards of a chemical substance.", "draws": [] },
   { "id": "fig-periodic-table", "kind": "photo", "number": "1.22", "draws": [] }
  ],
  "coverage": [

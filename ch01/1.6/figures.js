@@ -45,7 +45,7 @@ function column(ctx, x, yTop, bottom, r, color, filled) {
   const SCALES = [
     { name: 'Fahrenheit', x: 300, of: toF, back: (f) => ((f - 32) * 5) / 9, step: 20, every: 2, dec: 1, unit: '°F', filled: false },
     { name: 'Celsius', x: 520, of: (tc) => tc, back: (c) => c, step: 20, every: 1, dec: 1, unit: '°C', filled: true },
-    { name: 'Kelvin', x: 740, of: toK, back: (k) => k - 273.15, step: 20, every: 1, dec: 2, unit: 'K', filled: false },
+    { name: 'Kelvin', x: 740, of: toK, back: (k) => k - 273.15, step: 20, every: 1, dec: 1, unit: 'K', filled: false },
   ];
   function draw() {
     const { ctx } = begin(d.c);
@@ -83,13 +83,13 @@ function column(ctx, x, yTop, bottom, r, color, filled) {
     dot(ctx, X(tc), Yg(tf), hue, true, 9);
     dot(ctx, X(tc), Yg(tk), hue, false, 9);
     /* the headline names the reference temperatures and the one temperature at which two of the scales agree */
-    const at = Math.abs(tc) < 0.05 ? 'At 0 °C water freezes, and the thermometers read 0.0 °C, 32.0 °F and 273.15 K'
-      : Math.abs(tc - 100) < 0.05 ? 'At 100 °C water boils, and the thermometers read 100.0 °C, 212.0 °F and 373.15 K'
-      : Math.abs(tc + 40) < 0.05 ? 'At −40 °C the Celsius and Fahrenheit readings agree, both at −40, and the kelvin reading is 233.15 K'
-      : 'At ' + num(tc, 1) + ' °C the three thermometers read ' + num(tc, 1) + ' °C, ' + num(tf, 1) + ' °F and ' + num(tk, 2) + ' K';
+    const at = Math.abs(tc) < 0.05 ? 'At 0 °C water freezes, and the thermometers read 0.0 °C, 32.0 °F and 273.2 K, the freezing point being 273.15 K exactly.'
+      : Math.abs(tc - 100) < 0.05 ? 'At 100 °C water boils, and the thermometers read 100.0 °C, 212.0 °F and 373.2 K, the boiling point being 373.15 K exactly.'
+      : Math.abs(tc + 40) < 0.05 ? 'At −40 °C the Celsius and Fahrenheit readings agree, both at −40, and the kelvin reading is 233.2 K.'
+      : 'At ' + num(tc, 1) + ' °C the three thermometers read ' + num(tc, 1) + ' °C, ' + num(tf, 1) + ' °F and ' + num(tk, 1) + ' K.';
     headline(ctx, at);
     readout(d.readout, `\\kTF=\\left(\\frac{9}{5}\\times\\kTC\\right)+32=\\left(\\frac{9}{5}\\times ${fmt(tc, 1)}\\right)+32=${fmt(tf, 1)}\\ \\text{°F}`,
-      'On the kelvin scale the same temperature is ' + num(tc, 1) + ' + 273.15 = ' + num(tk, 2) + ' K. A kelvin and a Celsius degree are the same size, so the two scales differ only in where their zeros sit, and the Fahrenheit degree is five ninths as large as either.');
+      'On the kelvin scale the same temperature is ' + num(tc, 1) + ' + 273.15 = ' + num(tk, 1) + ' K. A kelvin and a Celsius degree are the same size, so the two scales differ only in where their zeros sit, and the Fahrenheit degree is five ninths as large as either.');
   }
   register(d.fig, { update: () => {}, draw });
 })();

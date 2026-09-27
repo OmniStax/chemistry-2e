@@ -532,3 +532,7 @@ described no longer exists and is not what was built.
   hydrogen end toward the negative plate on the left and the fluorine end
   toward the positive plate on the right, which is what the headline and the
   readout have always said.
+
+## Manim duplicates
+
+- `sim-vsepr-tour` · layer C (tour) after `sim-vsepr` · value add: the move from the book's flat sketch into space and from bonds to lone pairs becomes a story, each change a morph (a bonded atom fades as its bond becomes a lobe; names cross-fade, the one that holds stays) rather than a rebuild · beats: straight on at four regions, the model is the sketch; tilt 35° in pitch and yaw, wedges out and dashes in; orbit about 120° and the 109.5° arc draws in; one lone pair, trigonal pyramidal; a second, bent; a fifth region, trigonal bipyramid with the lone pairs equatorial (T-shaped); the camera settles over the equator and the axial and equatorial names arrive; hold · physical 3D: the positions are where the atoms and the electron density sit in space, and turning the model is looking at a real molecule from another side (root rule 28.3).

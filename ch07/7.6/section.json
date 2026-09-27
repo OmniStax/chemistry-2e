@@ -241,6 +241,11 @@
    ],
    "original_caption": "(a) Molecules are always randomly distributed in the liquid state in the absence of an electric field. (b) When an electric field is applied, polar molecules like HF will align to the dipoles with the field direction.",
    "draws": []
+  },
+  {
+   "id": "sim-vsepr-tour",
+   "kind": "sim",
+   "draws": []
   }
  ],
  "coverage": [

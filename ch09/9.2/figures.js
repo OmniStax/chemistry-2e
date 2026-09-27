@@ -571,10 +571,19 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     if (q.x[2] < b.k) { q.x[2] = b.k; n = [0, 0, 1]; } else if (q.x[2] > b.f) { q.x[2] = b.f; n = [0, 0, -1]; }
     return n;
   };
-  /* the law, set large, morphs by term; the numbers beneath it re-render plainly */
-  const fx = el('div'), nums = el('div'), note = el('small'); d.readout.append(fx, nums, note);
-  fx.style.cssText = 'font-size: 1.6em; text-align: center';
-  let shown = '', shownNums = '';
+  /* the law and its numbers, one line that morphs by meaning; each law's constant has its own key, since each is a different quantity */
+  const fx = el('div'), note = el('small'); d.readout.append(fx, note);
+  let shown = '', form = 'free';
+  const KEY = { 1: 'kA', 2: 'kC', 3: 'kB', 4: 'kAv' }, HELD = { 1: ['n', 'R', 'V'], 2: ['n', 'R', 'P'], 3: ['n', 'R', 'T'], 4: ['P', 'R', 'T'] };
+  /* free to a law: the held terms bend together into its k (and the product PV's value into Boyle's k's); a law back to free: k opens into them; Boyle's or Amontons's k opens into the second state */
+  function keyMap(from, to) {
+    const law = (s) => ({ A: 1, C: 2, B: 3, Av: 4 })[s];
+    if (from === 'free' && law(to)) return { ...Object.fromEntries(HELD[law(to)].map((q) => [q, KEY[law(to)]])), ...(to === 'B' ? { PVval: 'kBval' } : {}) };
+    if (to === 'free' && law(from)) return { [KEY[law(from)]]: HELD[law(from)] };
+    if (from === 'B' && to === 'B2') return { kB: ['P2', 'V2'] };
+    if (from === 'A' && to === 'A2') return { kA: ['P2', 'T2'] };
+    return {};
+  }
   /* the gauge in the Manim look: a round-capped ring over a half-opacity face in the pressure hue, no plate behind it */
   function dial(ctx, x, y, r, value, max, unit) {
     const cp = C('pressure'), a0 = 0.75 * Math.PI, a1 = 2.25 * Math.PI, f = Math.min(1, Math.max(0, value / max));
@@ -625,25 +634,18 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     const stp = Math.abs(V - 22.4) < 0.05 && T === 273 && Math.abs(n - 1) < 0.001;
     topline(ctx, 'A sample of ' + fmt(n, 2) + ' mol of ' + WORD[GASES[Gc.v]] + ' at ' + T + ' K in ' + fmt(V, 1) + ' L presses at ' + fmt(P, 2) + ' atm' + (stp ? '; this is the standard molar volume, one mole at STP, whichever gas it is.' : law === 2 || law === 4 ? '; the piston has moved so that the pressure stays at ' + fmt(snap.P, 2) + ' atm.' : '.'));
     const tag = law === 3 ? 'Boyle' : law === 1 ? 'Amontons' : '', late = tag && performance.now() - since > 1600;
-    const num = (t, x) => hue(t, x);
-    const f = !law ? '\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{n}{\\kn}\\,\\mk{R}{R}\\,\\mk{T}{\\kT}'
-      : law === 3 && late ? '\\mk{P}{\\kP_1}\\mk{V}{\\kV_1} = \\mk{P2}{\\kP_2}\\mk{V2}{\\kV_2}'
-      : law === 3 ? '\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{k}{k}'
-      : law === 1 && late ? '\\frac{\\mk{P}{\\kP_1}}{\\mk{T}{\\kT_1}} = \\frac{\\mk{P2}{\\kP_2}}{\\mk{T2}{\\kT_2}}'
-      : law === 1 ? '\\frac{\\mk{P}{\\kP}}{\\mk{T}{\\kT}} = \\mk{k}{k}'
-      : law === 2 ? '\\frac{\\mk{V}{\\kV}}{\\mk{T}{\\kT}} = \\mk{k}{k}'
-      : '\\frac{\\mk{V}{\\kV}}{\\mk{n}{\\kn}} = \\mk{k}{k}';
-    const Pn = (x) => num('pressure', fmt(x, 2) + '\\ \\text{atm}'), Vn = (x) => num('volume', fmt(x, 1) + '\\ \\text{L}');
-    const Tn = (x) => num('temperature', x + '\\ \\text{K}'), Nn = (x) => num('amount', fmt(x, 2) + '\\ \\text{mol}');
-    const numbers = !law ? `\\kP = \\frac{(${Nn(n)})(${RTEX})(${Tn(T)})}{${Vn(V)}} = ${Pn(P)}`
-      : law === 3 && late ? `(${Pn(snap.P)})(${Vn(snap.V)}) = (${Pn(P)})(${Vn(V)})`
-      : law === 3 ? `k = (${Pn(P)})(${Vn(V)}) = ${fmt(P * V, 1)}\\ \\text{L atm}`
-      : law === 1 && late ? `\\frac{${Pn(snap.P)}}{${Tn(snap.T)}} = \\frac{${Pn(P)}}{${Tn(T)}}`
-      : law === 1 ? `k = \\frac{${Pn(P)}}{${Tn(T)}} = ${fmt(P / T, 4)}\\ \\text{atm/K}`
-      : law === 2 ? `k = \\frac{${Vn(V)}}{${Tn(T)}} = ${fmt(V / T, 4)}\\ \\text{L/K}`
-      : `k = \\frac{${Vn(V)}}{${Nn(n)}} = ${fmt(V / n, 1)}\\ \\text{L/mol}`;
-    if (f !== shown) { shown = f; F.morph(fx, f); }
-    if (numbers !== shownNums) { shownNums = numbers; tex(nums, numbers); }
+    const mk = (k, x) => `\\mk{${k}}{${x}}`;
+    const Pn = (k, x) => mk(k, hue('pressure', fmt(x, 2) + '\\ \\text{atm}')), Vn = (k, x) => mk(k, hue('volume', fmt(x, 1) + '\\ \\text{L}'));
+    const Tn = (k, x) => mk(k, hue('temperature', x + '\\ \\text{K}')), Nn = (k, x) => mk(k, hue('amount', fmt(x, 2) + '\\ \\text{mol}'));
+    const next = !law ? 'free' : law === 3 ? (late ? 'B2' : 'B') : law === 1 ? (late ? 'A2' : 'A') : law === 2 ? 'C' : 'Av';
+    const f = next === 'free' ? `${mk('P', '\\kP')}${mk('V', '\\kV')} = ${mk('n', '\\kn')}\\,${mk('R', 'R')}\\,${mk('T', '\\kT')} = (${Nn('nval', n)})(${mk('Rval', RTEX)})(${Tn('Tval', T)}) = ${mk('PVval', fmt(P * V, 1) + '\\ \\text{L atm}')}`
+      : next === 'B2' ? `${mk('P', '\\kP_1')}${mk('V', '\\kV_1')} = ${mk('P2', '\\kP_2')}${mk('V2', '\\kV_2')} = (${Pn('P1val', snap.P)})(${Vn('V1val', snap.V)}) = (${Pn('Pval', P)})(${Vn('Vval', V)})`
+      : next === 'B' ? `${mk('P', '\\kP')}${mk('V', '\\kV')} = ${mk('kB', 'k')} = (${Pn('Pval', P)})(${Vn('Vval', V)}) = ${mk('kBval', fmt(P * V, 1) + '\\ \\text{L atm}')}`
+      : next === 'A2' ? `\\frac{${mk('P', '\\kP_1')}}{${mk('T', '\\kT_1')}} = \\frac{${mk('P2', '\\kP_2')}}{${mk('T2', '\\kT_2')}} = \\frac{${Pn('P1val', snap.P)}}{${Tn('T1val', snap.T)}} = \\frac{${Pn('Pval', P)}}{${Tn('Tval', T)}}`
+      : next === 'A' ? `\\frac{${mk('P', '\\kP')}}{${mk('T', '\\kT')}} = ${mk('kA', 'k')} = \\frac{${Pn('Pval', P)}}{${Tn('Tval', T)}} = ${mk('kAval', fmt(P / T, 4) + '\\ \\text{atm/K}')}`
+      : next === 'C' ? `\\frac{${mk('V', '\\kV')}}{${mk('T', '\\kT')}} = ${mk('kC', 'k')} = \\frac{${Vn('Vval', V)}}{${Tn('Tval', T)}} = ${mk('kCval', fmt(V / T, 4) + '\\ \\text{L/K}')}`
+      : `\\frac{${mk('V', '\\kV')}}{${mk('n', '\\kn')}} = ${mk('kAv', 'k')} = \\frac{${Vn('Vval', V)}}{${Nn('nval', n)}} = ${mk('kAvval', fmt(V / n, 1) + '\\ \\text{L/mol}')}`;
+    if (f !== shown) { shown = f; F.morph(fx, f, next === form ? {} : { keyMap: keyMap(form, next) }); form = next; }
     note.textContent = law === 1 ? 'With the volume and the amount held, the pressure and the kelvin temperature rise and fall together, which is Amontons’s law.'
       : law === 2 ? 'With the pressure and the amount held, the volume and the kelvin temperature rise and fall together, which is Charles’s law: the piston moves out as the gas warms.'
       : law === 3 ? 'With the temperature and the amount held, the product of pressure and volume does not change, which is Boyle’s law: pushing the piston in raises the gauge.'

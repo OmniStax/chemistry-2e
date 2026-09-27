@@ -318,7 +318,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
   const PL = F.choice(d.controls, { label: '\\text{lone pairs of ClF}_3', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs of ClF3 are placed', onInput: () => shift() });
   const PLBOX = d.controls.lastElementChild;
   function fitLone() { const m = MAX_LONE[N.v]; if (LP.v > m) LP.set(m); }
-  d.readout.style.overflow = 'visible'; d.readout.style.minHeight = '3.2em';
+  d.readout.style.overflow = 'visible';
   const L = 170 * SCALE;
 
   /* a state of the bench: its regions as directions, each a bond or a lone pair, and its two names */
@@ -450,7 +450,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     words(ctx, 620, 240, 'The ideal angles are ' + IDEAL[from.n] + '.', 'The ideal angles are ' + IDEAL[to.n] + '.', q, { size: 20 });
     const lone = s.lone, bonds = s.n - lone, lp = lone === 0 ? 'no lone pair' : lone === 1 ? 'one lone pair' : lone + ' lone pairs';
     topline(ctx, 'With ' + s.n + ' regions of electron density and ' + lp + ', the electron-pair geometry is ' + GEOM[s.n] + ' and the molecular structure is ' + s.struct + '.');
-    F.morph(d.readout, `\\mk{n}{${s.n}\\ \\text{regions}} \\mk{eq}{=} \\mk{b}{${bonds}\\ \\text{bond${bonds === 1 ? '' : 's'}}}` + (lone ? ` \\mk{plus}{+} \\mk{lp}{${lone}\\ \\text{lone pair${lone === 1 ? '' : 's'}}}` : ''));
+    F.morph(d.readout, `\\mk{n}{${s.n}\\ \\text{regions}} = \\mk{b}{${bonds}\\ \\text{bond${bonds === 1 ? '' : 's'}}}` + (lone ? ` + \\mk{lp}{${lone}\\ \\text{lone pair${lone === 1 ? '' : 's'}}}` : ''));
   }
   still(d, draw);
 

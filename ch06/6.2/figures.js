@@ -280,10 +280,9 @@ function ionPick(controls, onInput) {
     text(ctx, 'Eₙ', labelX + 88, top - 36, ce, { size: 19, weight: 600 });
     return { Y: Object.fromEntries(ys.map((q) => [q.n, q.y])), S: Object.fromEntries(slots.map((q) => [q.n, q.sy])) };
   }
-  /* the equation, set large, morphs by term; the numbers beneath it re-render plainly */
-  const fx = el('div'), nums = el('div'), note = el('small'); d.readout.append(fx, nums, note);
-  fx.style.cssText = 'font-size: 1.6em; text-align: center';
-  let shown = '', shownNums = '';
+  /* the equation and its numbers, one line that morphs by meaning: k and Z² move, 1/n₁² bends into the level's n², the rest fades */
+  const fx = el('div'), note = el('small'); d.readout.append(fx, note);
+  let shown = '';
   const NI = ctl(d.controls, { label: 'n_{\\text{i}}', cls: '', min: 1, max: 6, step: 1, value: 3, unit: '', dec: 0, onInput: reset, aria: 'quantum number of the orbit the electron starts in' });
   const NF = ctl(d.controls, { label: 'n_{\\text{f}}', cls: '', min: 1, max: 6, step: 1, value: 2, unit: '', dec: 0, onInput: reset, aria: 'quantum number of the orbit the electron ends in' });
   const ZC = ionPick(d.controls, reset);
@@ -377,14 +376,11 @@ function ionPick(controls, onInput) {
       : emit
         ? 'The electron falls from n = ' + ni + ' to n = ' + nf + ' in ' + ion + ' and the atom emits a photon of ' + nmU(nm) + ', which is ' + region(nm) + '.'
         : 'A photon of ' + nmU(nm) + ', which is ' + region(nm) + ', is absorbed and the electron rises from n = ' + ni + ' to n = ' + nf + ' in ' + ion + '.');
+    const kZ = `\\mk{k}{k}\\mk{Z}{Z^2}`, kZval = `(\\mk{kval}{${sciT(K)}\\ \\text{J}})(\\mk{Zval}{${Z}})^2`;
     const f = same
-      ? '\\mk{En}{\\kEn}=-\\frac{\\mk{k}{kZ^2}}{\\mk{n}{n^2}}'
-      : '\\mk{dE}{\\kdE}=\\mk{k}{kZ^2}\\mk{p}{\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)}';
-    const numbers = same
-      ? `\\kEn=-\\frac{(${sciT(K)}\\ \\text{J})(${Z})^2}{${ni}^2}=${sciT(energy(ni, Z))}\\ \\text{J}`
-      : `\\begin{gathered}\\kdE=(${sciT(K)}\\ \\text{J})(${Z})^2\\left(\\frac{1}{${ni}^2}-\\frac{1}{${nf}^2}\\right)=${sciT(dE)}\\ \\text{J}\\\\ \\klam=\\frac{hc}{|\\kdE|}=${nmU(nm).replace(' nm', '')}\\ \\text{nm}\\end{gathered}`;
-    if (f !== shown) { shown = f; F.morph(fx, f, { keyMap: same ? { dE: 'En', p: 'n' } : { En: 'dE', n: 'p' } }); }
-    if (numbers !== shownNums) { shownNums = numbers; tex(nums, numbers); }
+      ? `\\mk{En}{\\kEn}=-\\frac{${kZ}}{\\mk{n1}{n^2}}=-\\frac{${kZval}}{\\mk{nival}{${ni}}^2}=\\mk{Enval}{${sciT(energy(ni, Z))}\\ \\text{J}}`
+      : `\\mk{dE}{\\kdE}=${kZ}\\left(\\mk{n1}{\\frac{1}{n_1^{2}}}-\\mk{n2}{\\frac{1}{n_2^{2}}}\\right)=${kZval}\\left(\\frac{1}{\\mk{nival}{${ni}}^2}-\\frac{1}{\\mk{nfval}{${nf}}^2}\\right)=\\mk{dEval}{${sciT(dE)}\\ \\text{J}},\\quad \\mk{lam}{\\klam}=\\mk{hc}{\\frac{hc}{|\\kdE|}}=\\mk{lamval}{${nmU(nm).replace(' nm', '')}\\ \\text{nm}}`;
+    if (f !== shown) { shown = f; F.morph(fx, f); }
     note.textContent = same
       ? 'Choose a different orbit for the electron to end in, and a photon carries the difference between the two energies.'
       : emit

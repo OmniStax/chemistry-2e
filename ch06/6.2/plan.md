@@ -126,10 +126,9 @@ headline · graph
 1. `sim-bohr-ladder` · **replaces Figure 6.14 + 6.15** (the hydrogen energy
    levels with their energies, and the same levels with the absorption and
    emission arrows) · bohr-energy-levels, photon-emission-absorption,
-   ground-and-excited-states, hydrogen-like-ions · **moving**: an electron
-   that travels between two rungs and a photon that leaves the atom or
-   arrives at it are an event with a time in it, so the figure registers a
-   cycle of five seconds and gets the app's transport with a scrubber · three
+   ground-and-excited-states, hydrogen-like-ions · **still**: a change of
+   transition eases the electron once to its new rung and draws the line to
+   the strip once, so the figure registers no cycle and has no transport · three
    sliders, all untyped and in ink since a quantum number and a nuclear
    charge are labels rather than quantities: n<sub>i</sub> (1 to 6, default
    3), n<sub>f</sub> (1 to 6, default 2) and Z (1 to 3, default 1) · "The
@@ -139,9 +138,12 @@ headline · graph
    hue with each rung's energy written beside it as Figure 6.14 writes
    them (the labels of the crowded upper rungs fan out on leaders), the
    arrow between the two chosen rungs in the energy hue as Figure 6.15
-   draws it, the electron as an ink disc that slides from one rung to the
-   other, the photon as a wave packet that leaves the ladder for the strip
-   after an emission or arrives from the strip before an absorption; the
+   draws it, the electron as an ink disc that eases once from one rung to the
+   other, and a straight line in the colour of the light that pairs the
+   transition with its place on the strip, drawn once along its length in
+   about half a second after an emission's fall or before an absorption's
+   rise and then held, since it is a correspondence and not a path (rule
+   24.1); the
    graph beneath is a wavelength strip in the wavelength hue, logarithmic
    from 10 nm to 10 000 nm so that the ultraviolet, the visible band and
    the infrared all fit one fixed frame at every Z, with the visible band
@@ -370,8 +372,9 @@ below says what the figure now is: its tier, whether it moves, its controls,
 whether it is flat or three-dimensional and with what bound, and whether its
 labels are on.
 
-- `sim-bohr-ladder` (Figure 6.14 + 6.15): a moving Figure, one five-second
-  cycle with the transport and its scrubber. Controls: the two orbit
+- `sim-bohr-ladder` (Figure 6.14 + 6.15): a still Figure with no transport;
+  a change of transition eases the electron once and draws the line to the
+  strip once (rule 24.1). Controls: the two orbit
   sliders, and the atom or ion is now a row of buttons, H, He⁺ and Li²⁺,
   since three named species are states and never a quantity to slide through
   (rule 26.1). Flat. Three things the audit found are corrected. The rungs
@@ -380,7 +383,7 @@ labels are on.
   the factor stated and the band it enlarges outlined on the ladder (rule
   28.4); the jump between two of them is drawn in the inset as well. The
   transition arrow is notation and now stands still at its full length while
-  only the electron and the photon move (rule 24.1). The word "electron" is
+  only the electron moves (rule 24.1). The word "electron" is
   set beside the electron with a leader back to it, and never on the rung it
   sits on. Labels on: the rung names, the two axis names and the inset's are
   the frame, and the electron carries a hover name.
@@ -409,4 +412,4 @@ labels are on.
 
 ## Manim duplicates
 
-- `sim-bohr-ladder-style` (duplicate of `sim-bohr-ladder`), layer A with two B touches. Value add: the Manim look (round-capped rungs in the energy hue, two thin connectors in place of the dashed frames, a half-opacity energy column for |ΔE|, no label plates, the corner caption line dropped); the photon's path is drawn along its length; the readout morphs by term where ni = nf switches it between ΔE = kZ²(1/n₁² − 1/n₂²) and Eₙ = −kZ²/n² (threshold: ni = nf, integer sliders, no hysteresis needed). Flat.
+- `sim-bohr-ladder-style` (duplicate of `sim-bohr-ladder`), layer A with two B touches. Value add: the Manim look (round-capped rungs in the energy hue, a bracket gathering the labels of the rungs from n = 3 up with two thin connectors to the inset that cross no leader, a half-opacity energy column for |ΔE|, no label plates, the corner caption line dropped); still, with no transport: a change of transition eases the electron once and draws the straight line to the strip once in about 0.5 s, then holds it (rule 24.1). The symbolic equation, set large, morphs by term between ΔE = kZ²(1/n₁² − 1/n₂²) and Eₙ = −kZ²/n² where ni = nf, and the numbers are a second line beneath that re-renders plainly. Special value: ni = nf, a dashed circle on each orbit slider at the other's value. Flat.

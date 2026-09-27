@@ -106,26 +106,29 @@ function ladder(ctx, o) {
     if (Math.abs(q.sy - q.y) > 2) line(ctx, r, q.y, labelX - 12, q.sy, alpha(PAL.ink, 0.35), 1.5);
     else line(ctx, r, q.y, labelX - 12, q.y, alpha(PAL.ink, 0.35), 1.5);
     const name = q.n === Infinity ? 'n → ∞' : 'n = ' + q.n;
-    text(ctx, name, labelX, q.sy, PAL.ink, { size: 19, weight: 600 });
-    text(ctx, (q.n === Infinity ? '0' : sciU(q.E)) + ' J', labelX + 88, q.sy, ce, { size: 18 });
+    text(ctx, name, labelX, q.sy, PAL.ink, { size: 19, weight: 600, bg: o.plate });
+    text(ctx, (q.n === Infinity ? '0' : sciU(q.E)) + ' J', labelX + 88, q.sy, ce, { size: 18, bg: o.plate });
   });
   text(ctx, 'n', labelX, top - 36, PAL.ink, { size: 19, weight: 600 });
   text(ctx, 'Eₙ', labelX + 88, top - 36, ce, { size: 19, weight: 600 });
   return Object.fromEntries(ys.map((q) => [q.n, q.y]));
 }
 
-/* ---------- a photon: a short wave packet travelling along a path ---------- */
-function photon(ctx, x, y, dirx, diry, color) {
-  const L = 84, A = 10, px = -diry, py = dirx;
-  ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 3.5; ctx.beginPath();
-  for (let i = 0; i <= 28; i++) {
-    const s = -L / 2 + (L * i) / 28, env = Math.cos((Math.PI * s) / L), w = A * env * Math.sin((s / L) * 5 * Math.PI);
-    const qx = x + dirx * s + px * w, qy = y + diry * s + py * w;
-    if (i) ctx.lineTo(qx, qy); else ctx.moveTo(qx, qy);
-  }
-  ctx.stroke(); ctx.restore();
+/* ---------- the line pairing a transition with its place on the spectrum ----------
+   A correspondence, not a path (rule 24.1): a straight line drawn along its length once, up to the fraction k, then held. */
+function connector(ctx, from, to, k, color) {
+  const q = F.partial([from, to], k); if (q.length < 2) return;
+  line(ctx, q[0][0], q[0][1], q[q.length - 1][0], q[q.length - 1][1], color, 3);
 }
 const ease = (t) => (t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t));
+/* ---------- a change of transition: the electron eases to its rung and the line is drawn, one after the other ----------
+   An emission falls first and then draws its line; an absorption draws its line first and then rises. */
+const STEP = 1100, SPLIT = 0.55;
+function phases(s, emit) {
+  return emit
+    ? { jump: ease(s / SPLIT), draw: ease((s - SPLIT) / (1 - SPLIT)) }
+    : { draw: ease(s / (1 - SPLIT)), jump: ease((s - (1 - SPLIT)) / SPLIT) };
+}
 
 /* ---------- the one-electron species the model holds for ----------
    Hydrogen, He⁺ and Li²⁺ are three named atoms and ions, not three values of a quantity, so the reader
@@ -140,18 +143,17 @@ function ionPick(controls, onInput) {
    FIGURE 6.14 + 6.15: the Bohr ladder. The levels of a one-electron atom
    to scale with their energies, the electron moving between two rungs, the
    photon leaving for the wavelength strip or arriving from it, and the
-   line it makes. Moving: a jump and a photon are an event with a time in
-   it, so the figure runs a five-second cycle and carries the transport.
+   line it makes. Still: a change of transition eases the electron to its
+   new rung once and draws the line to the spectrum once, then holds.
 ===================================================================== */
 (function () {
   const d = sim('sim-bohr-ladder', 820);
   const NI = ctl(d.controls, { label: 'n_{\\text{i}}', cls: '', min: 1, max: 6, step: 1, value: 3, unit: '', dec: 0, onInput: reset, aria: 'quantum number of the orbit the electron starts in' });
   const NF = ctl(d.controls, { label: 'n_{\\text{f}}', cls: '', min: 1, max: 6, step: 1, value: 2, unit: '', dec: 0, onInput: reset, aria: 'quantum number of the orbit the electron ends in' });
   const ZC = ionPick(d.controls, reset);
-  const T = 5;                                   /* seconds of model time in one cycle */
-  const cy = cycle(() => T, 1.2);
+  const step = F.tween(d, 0);
   const landed = new Set();                      /* the lines the reader has landed, keyed by Z and the two orbits */
-  function reset() { cy.reset(); }
+  function reset() { step.set(0); step.to(1, STEP, F.ease.linear); }
   const LAD = { l: 300, r: 700, top: 150, bottom: 610 };
   const STRIP = { l: 300, r: 1300, y: 706 };
   /* the inset: the band of the ladder from n = 3 to the ionization limit, redrawn at MAG times the height */
@@ -182,18 +184,22 @@ function ionPick(controls, onInput) {
   function draw() {
     const { ctx } = begin(d.c);
     hits = [];
-    const ni = NI.v, nf = NF.v, Z = ZC.v, tau = cy.now();
+    const ni = NI.v, nf = NF.v, Z = ZC.v;
     const dE = energy(nf, Z) - energy(ni, Z), emit = dE < 0, same = ni === nf;
     const nm = same ? 0 : lambdaNm(ni, nf, Z), key = `${Z}:${Math.min(ni, nf)}-${Math.max(ni, nf)}`;
     const ce = C('energy'), cw = C('wavelength'), ion = ZC.name;
-    /* the phases of the cycle: an emission jumps first and the photon leaves; an absorption's photon arrives first */
-    const jump = emit ? ease((tau - 1.0) / 1.0) : ease((tau - 2.2) / 1.0);
-    const flight = emit ? ease((tau - 2.0) / 2.2) : ease(tau / 2.2);
-    const arrived = emit ? tau >= 4.2 : true;    /* the line is on the strip once the emitted photon has landed; an absorbed photon was there from the start */
-    if (!same && (emit ? tau >= 4.2 : tau >= 2.2)) landed.add(key);
+    const { jump, draw: drawn } = phases(step.v, emit);
+    const arrived = emit ? drawn >= 1 : true;    /* an emitted line is on the strip once its connector is drawn; an absorbed one was there from the start */
+    if (!same && drawn >= 1) landed.add(key);
     /* the ladder and the strip */
-    const Y = ladder(ctx, { ...LAD, nmax: 6, Z, labelX: 790 });
     const X = wavelengthAxis(ctx, STRIP, 44, 'wavelength λ (nm), logarithmic scale');
+    /* the line from the transition to its place on the spectrum, drawn from the side that gives the photon, beneath the rung labels */
+    if (!same) {
+      const y1 = ladderY(ni, LAD.top, LAD.bottom), y2 = ladderY(nf, LAD.top, LAD.bottom);
+      const from = emit ? [AX, y2] : [X(nm), STRIP.y - 80], to = emit ? [X(nm), STRIP.y - 80] : [AX, y1];
+      connector(ctx, from, to, drawn, lineColor(nm));
+    }
+    const Y = ladder(ctx, { ...LAD, nmax: 6, Z, labelX: 790, plate: PAL.panel });
     /* every line landed so far for this ion, the current one drawn last */
     landed.forEach((k) => {
       const [z, pair] = k.split(':'); if (+z !== Z) return;
@@ -207,19 +213,12 @@ function ionPick(controls, onInput) {
     /* the transition arrow and the bracket for |ΔE| */
     if (!same) {
       const y1 = Y[ni], y2 = Y[nf];
-      /* the arrow is notation and stands still; only the electron and the photon move (rule 24.1) */
+      /* the arrow is notation and stands still; only the electron moves (rule 24.1) */
       arrow(ctx, AX, y1, AX, y2, ce, 4);
       vbracket(ctx, AX - 50, Math.min(y1, y2), Math.max(y1, y2), ce);
       text(ctx, '|ΔE| = ' + sciU(Math.abs(dE)) + ' J', AX - 68, Math.abs(y1 - y2) < 40 ? Math.max(y1, y2) + 30 : (y1 + y2) / 2, ce, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
       /* the electron on its rung, or between them */
       dot(ctx, EX, y1 + (y2 - y1) * jump, PAL.ink, true, 9); hits.push({ x: EX, y: y1 + (y2 - y1) * jump, r: 13, name: 'the electron' });
-      /* the photon on its way, and where it starts and ends */
-      const from = emit ? [AX, y2] : [X(nm), STRIP.y - 30], to = emit ? [X(nm), STRIP.y - 30] : [AX, y1];
-      if (flight > 0 && flight < 1) {
-        const px = from[0] + (to[0] - from[0]) * flight, py = from[1] + (to[1] - from[1]) * flight;
-        const L = Math.hypot(to[0] - from[0], to[1] - from[1]) || 1;
-        photon(ctx, px, py, (to[0] - from[0]) / L, (to[1] - from[1]) / L, lineColor(nm));
-      }
       text(ctx, emit ? 'the electron falls and a photon leaves' : 'a photon arrives and the electron rises', 1300, 118, PAL.muted, { size: 17, align: 'right' });
     } else {
       dot(ctx, EX, Y[ni], PAL.ink, true, 9); hits.push({ x: EX, y: Y[ni], r: 13, name: 'the electron' });
@@ -246,15 +245,17 @@ function ionPick(controls, onInput) {
         ? 'The energy difference is negative, so the atom emits the photon; the further apart the two rungs, the shorter the wavelength of the line.'
         : 'The energy difference is positive, so a photon of exactly this energy must be absorbed; the same photon is emitted when the electron returns.');
   }
-  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
+  reset();
+  register(d.fig, { update: () => {}, draw });
 })();
 
 /* =====================================================================
    SIM: the Bohr ladder in the Manim look. The same ladder, inset and
    strip, drawn with thicker round-capped rungs, two thin connectors for
    the magnified band, a half-opacity column for |ΔE| and no plates
-   behind the labels; the photon's path is drawn along its length, and
-   the readout morphs by term between the level and the jump.
+   behind the labels. Still: a change of transition eases the electron to
+   its rung and draws the line to the spectrum once; the equation morphs
+   by term between the level and the jump, its numbers on a line beneath.
 ===================================================================== */
 (function () {
   const d = sim('sim-bohr-ladder-style', 820);
@@ -271,41 +272,40 @@ function ionPick(controls, onInput) {
     [...ys].sort((a, b) => a.y - b.y).forEach((q) => { const y = Math.max(q.y, last + 28); slots.push({ ...q, sy: y }); last = y; });
     slots.forEach((q) => {
       line(ctx, r + 8, q.y, labelX - 12, q.sy, alpha(PAL.ink, 0.3), 2);
-      text(ctx, q.n === Infinity ? 'n → ∞' : 'n = ' + q.n, labelX, q.sy, PAL.ink, { size: 19, weight: 600 });
-      text(ctx, (q.n === Infinity ? '0' : sciU(q.E)) + ' J', labelX + 88, q.sy, ce, { size: 18 });
+      /* the panel colour behind a label only hides the line to the spectrum where it passes; no plate shows */
+      text(ctx, q.n === Infinity ? 'n → ∞' : 'n = ' + q.n, labelX, q.sy, PAL.ink, { size: 19, weight: 600, bg: PAL.panel });
+      text(ctx, (q.n === Infinity ? '0' : sciU(q.E)) + ' J', labelX + 88, q.sy, ce, { size: 18, bg: PAL.panel });
     });
     text(ctx, 'n', labelX, top - 36, PAL.ink, { size: 19, weight: 600 });
     text(ctx, 'Eₙ', labelX + 88, top - 36, ce, { size: 19, weight: 600 });
-    return Object.fromEntries(ys.map((q) => [q.n, q.y]));
+    return { Y: Object.fromEntries(ys.map((q) => [q.n, q.y])), S: Object.fromEntries(slots.map((q) => [q.n, q.sy])) };
   }
-  /* the photon's path from `from` to `to` as a wave, drawn along its length up to the fraction k */
-  function photonPath(ctx, from, to, k, color) {
-    const L = Math.hypot(to[0] - from[0], to[1] - from[1]) || 1, ux = (to[0] - from[0]) / L, uy = (to[1] - from[1]) / L, N = Math.ceil(L / 3);
-    const pts = Array.from({ length: N + 1 }, (_, i) => { const s = (L * i) / N, w = 9 * Math.sin(s / 7) * Math.min(1, s / 24, (L - s) / 24); return [from[0] + ux * s - uy * w, from[1] + uy * s + ux * w]; });
-    const q = F.partial(pts, k); if (q.length < 2) return;
-    ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 3.5; ctx.beginPath(); q.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
-  }
-  const fx = el('span'), note = el('small'); d.readout.append(fx, note);
-  let shown = '';
+  /* the equation, set large, morphs by term; the numbers beneath it re-render plainly */
+  const fx = el('div'), nums = el('div'), note = el('small'); d.readout.append(fx, nums, note);
+  fx.style.cssText = 'font-size: 1.6em; text-align: center';
+  let shown = '', shownNums = '';
   const NI = ctl(d.controls, { label: 'n_{\\text{i}}', cls: '', min: 1, max: 6, step: 1, value: 3, unit: '', dec: 0, onInput: reset, aria: 'quantum number of the orbit the electron starts in' });
   const NF = ctl(d.controls, { label: 'n_{\\text{f}}', cls: '', min: 1, max: 6, step: 1, value: 2, unit: '', dec: 0, onInput: reset, aria: 'quantum number of the orbit the electron ends in' });
   const ZC = ionPick(d.controls, reset);
-  const T = 5;                                   /* seconds of model time in one cycle */
-  const cy = cycle(() => T, 1.2);
+  /* ni = nf, the one choice with no photon, is marked on both sliders */
+  NI.mark([{ at: () => NF.v, label: 'the same orbit' }]); NF.mark([{ at: () => NI.v, label: 'the same orbit' }]);
+  const step = F.tween(d, 0);
   const landed = new Set();                      /* the lines the reader has landed, keyed by Z and the two orbits */
-  function reset() { cy.reset(); }
+  function reset() { step.set(0); step.to(1, STEP, F.ease.linear); }
   const LAD = { l: 300, r: 700, top: 150, bottom: 610 };
   const STRIP = { l: 300, r: 1300, y: 706 };
   /* the inset: the band of the ladder from n = 3 to the ionization limit, redrawn at MAG times the height */
-  const INS = { l: 960, r: 1170, top: 170, bottom: 578, from: 3 };
+  const INS = { l: 1110, r: 1250, top: 170, bottom: 578, from: 3 };
+  const BX = 1044;                               /* the bracket that gathers the labels of the magnified rungs */
   const BAND = ladderY(INS.from, LAD.top, LAD.bottom) - LAD.top;
   const MAG = (INS.bottom - INS.top) / BAND;
   const iy = (n) => INS.bottom - (ladderY(INS.from, LAD.top, LAD.bottom) - ladderY(n, LAD.top, LAD.bottom)) * MAG;
-  function magnified(ctx, Z, ni, nf, jump, same, Y) {
-    const ce = C('energy');
-    /* the band on the ladder the inset enlarges, and the frame of the inset itself */
-    line(ctx, LAD.r + 4, LAD.top, INS.l - 14, INS.top, alpha(PAL.ink, 0.3), 1.5);
-    line(ctx, LAD.r + 4, LAD.top + BAND, INS.l - 14, INS.bottom, alpha(PAL.ink, 0.3), 1.5);
+  function magnified(ctx, Z, ni, nf, jump, same, S) {
+    const ce = C('energy'), cl = alpha(PAL.ink, 0.3), t0 = S[Infinity] - 12, t1 = S[INS.from] + 12;
+    /* the labels of the rungs the inset enlarges, gathered by a bracket beyond their energies, and two connectors to the inset; nothing crosses a leader */
+    line(ctx, BX, t0, BX, t1, cl, 1.5); line(ctx, BX - 8, t0, BX, t0, cl, 1.5); line(ctx, BX - 8, t1, BX, t1, cl, 1.5);
+    line(ctx, BX, t0, INS.l - 14, INS.top - 12, cl, 1.5);
+    line(ctx, BX, t1, INS.l - 14, INS.bottom + 12, cl, 1.5);
     for (let n = INS.from; n <= 6; n++) { line(ctx, INS.l, iy(n), INS.r, iy(n), ce, 5); text(ctx, 'n = ' + n, INS.r + 14, iy(n), PAL.ink, { size: 17, weight: 600 }); }
     line(ctx, INS.l, INS.top, INS.r, INS.top, ce, 3, [2, 12]); text(ctx, 'n \u2192 \u221e', INS.r + 14, INS.top, PAL.ink, { size: 17, weight: 600 });
     const inBand = ni >= INS.from && nf >= INS.from;
@@ -313,8 +313,13 @@ function ionPick(controls, onInput) {
       arrow(ctx, INS.l + 110, iy(ni), INS.l + 110, iy(nf), ce, 4);
       dot(ctx, INS.l + 46, iy(ni) + (iy(nf) - iy(ni)) * jump, PAL.ink, true, 8);
     }
-    text(ctx, 'the rungs from n = 3 up, magnified ' + fmt(MAG, 0) + ' times', INS.l - 14, INS.bottom + 40, PAL.muted, { size: 17 });
-    if (!same && !inBand) text(ctx, 'this jump reaches below n = 3, so it is drawn on the ladder alone', INS.l - 14, INS.bottom + 66, PAL.muted, { size: 16 });
+    text(ctx, 'the rungs from n = 3 up,', INS.l - 14, INS.top - 62, PAL.muted, { size: 17 });
+    text(ctx, 'magnified ' + fmt(MAG, 0) + ' times', INS.l - 14, INS.top - 38, PAL.muted, { size: 17 });
+    if (!same && !inBand) {
+      const my = (iy(INS.from) + iy(INS.from + 1)) / 2, mx = (INS.l + INS.r) / 2;
+      text(ctx, 'this jump reaches', mx, my - 12, PAL.muted, { size: 16, align: 'center' });
+      text(ctx, 'below n = 3', mx, my + 12, PAL.muted, { size: 16, align: 'center' });
+    }
   }
   const EX = 380, AX = 520;                      /* the electron's column and the arrow's column on the ladder */
   /* the electron names itself under the pointer (rule 26.6); it stays ink, since an electron has no element to take a colour from */
@@ -322,18 +327,22 @@ function ionPick(controls, onInput) {
   function draw() {
     const { ctx } = begin(d.c);
     hits = [];
-    const ni = NI.v, nf = NF.v, Z = ZC.v, tau = cy.now();
+    const ni = NI.v, nf = NF.v, Z = ZC.v;
     const dE = energy(nf, Z) - energy(ni, Z), emit = dE < 0, same = ni === nf;
     const nm = same ? 0 : lambdaNm(ni, nf, Z), key = `${Z}:${Math.min(ni, nf)}-${Math.max(ni, nf)}`;
     const ce = C('energy'), cw = C('wavelength'), ion = ZC.name;
-    /* the phases of the cycle: an emission jumps first and the photon leaves; an absorption's photon arrives first */
-    const jump = emit ? ease((tau - 1.0) / 1.0) : ease((tau - 2.2) / 1.0);
-    const flight = emit ? ease((tau - 2.0) / 2.2) : ease(tau / 2.2);
-    const arrived = emit ? tau >= 4.2 : true;    /* the line is on the strip once the emitted photon has landed; an absorbed photon was there from the start */
-    if (!same && (emit ? tau >= 4.2 : tau >= 2.2)) landed.add(key);
+    const { jump, draw: drawn } = phases(step.v, emit);
+    const arrived = emit ? drawn >= 1 : true;    /* an emitted line is on the strip once its connector is drawn; an absorbed one was there from the start */
+    if (!same && drawn >= 1) landed.add(key);
     /* the ladder and the strip */
-    const Y = rungs(ctx, { ...LAD, nmax: 6, Z, labelX: 790 });
     const X = wavelengthAxis(ctx, STRIP, 44, 'wavelength λ (nm), logarithmic scale');
+    /* the line from the transition to its place on the spectrum, drawn from the side that gives the photon, beneath the rung labels */
+    if (!same) {
+      const y1 = ladderY(ni, LAD.top, LAD.bottom), y2 = ladderY(nf, LAD.top, LAD.bottom);
+      const from = emit ? [AX, y2] : [X(nm), STRIP.y - 80], to = emit ? [X(nm), STRIP.y - 80] : [AX, y1];
+      connector(ctx, from, to, drawn, lineColor(nm));
+    }
+    const { Y, S } = rungs(ctx, { ...LAD, nmax: 6, Z, labelX: 790 });
     /* every line landed so far for this ion, the current one drawn last */
     landed.forEach((k) => {
       const [z, pair] = k.split(':'); if (+z !== Z) return;
@@ -347,15 +356,12 @@ function ionPick(controls, onInput) {
     /* the transition arrow and the bracket for |ΔE| */
     if (!same) {
       const y1 = Y[ni], y2 = Y[nf];
-      /* the arrow is notation and stands still; only the electron and the photon move (rule 24.1) */
+      /* the arrow is notation and stands still; only the electron moves (rule 24.1) */
       arrow(ctx, AX, y1, AX, y2, ce, 4);
       ctx.save(); ctx.fillStyle = alpha(ce, 0.5); ctx.fillRect(AX - 58, Math.min(y1, y2), 16, Math.abs(y1 - y2)); ctx.restore();
-      text(ctx, '|ΔE| = ' + sciU(Math.abs(dE)) + ' J', AX + 22, Math.abs(y1 - y2) < 40 ? Math.max(y1, y2) + 28 : (y1 + y2) / 2, ce, { size: 18, weight: 600, align: 'left' });
+      text(ctx, '|ΔE| = ' + sciU(Math.abs(dE)) + ' J', AX + 22, Math.abs(y1 - y2) < 40 ? Y[INS.from] + 24 : (y1 + y2) / 2, ce, { size: 18, weight: 600, align: 'left' });
       /* the electron on its rung, or between them */
       dot(ctx, EX, y1 + (y2 - y1) * jump, PAL.ink, true, 9); hits.push({ x: EX, y: y1 + (y2 - y1) * jump, r: 13, name: 'the electron' });
-      /* the photon on its way, and where it starts and ends */
-      const from = emit ? [AX, y2] : [X(nm), STRIP.y - 30], to = emit ? [X(nm), STRIP.y - 30] : [AX, y1];
-      if (flight > 0) photonPath(ctx, from, to, flight, lineColor(nm));
     } else {
       dot(ctx, EX, Y[ni], PAL.ink, true, 9); hits.push({ x: EX, y: Y[ni], r: 13, name: 'the electron' });
     }
@@ -364,7 +370,7 @@ function ionPick(controls, onInput) {
     line(ctx, EX - 12, eY + (lY > eY ? 10 : -10), EX - 26, lY + (lY > eY ? -10 : 10), alpha(PAL.ink, 0.4), 1.5);
     text(ctx, 'electron', EX - 32, lY, PAL.muted, { size: 16, align: 'right' });
     /* the rungs from n = 3 up lie within fifty units of one another, so they are drawn again magnified, with the factor stated (rule 28.4) */
-    magnified(ctx, Z, ni, nf, jump, same, Y);
+    magnified(ctx, Z, ni, nf, jump, same, S);
     /* the headline and the readout */
     topline(ctx, same
       ? 'The starting and the ending orbit are both n = ' + ni + ' in ' + ion + ', so the electron keeps its energy of ' + sciU(energy(ni, Z)) + ' J and nothing is emitted or absorbed.'
@@ -372,16 +378,21 @@ function ionPick(controls, onInput) {
         ? 'The electron falls from n = ' + ni + ' to n = ' + nf + ' in ' + ion + ' and the atom emits a photon of ' + nmU(nm) + ', which is ' + region(nm) + '.'
         : 'A photon of ' + nmU(nm) + ', which is ' + region(nm) + ', is absorbed and the electron rises from n = ' + ni + ' to n = ' + nf + ' in ' + ion + '.');
     const f = same
-      ? `\\mk{En}{\\kEn}=-\\frac{\\mk{k}{kZ^2}}{\\mk{n}{n^2}}=-\\frac{(${sciT(K)}\\ \\text{J})(${Z})^2}{${ni}^2}=${sciT(energy(ni, Z))}\\ \\text{J}`
-      : `\\mk{dE}{\\kdE}=\\mk{k}{kZ^2}\\mk{p}{\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)}=(${sciT(K)}\\ \\text{J})(${Z})^2\\left(\\frac{1}{${ni}^2}-\\frac{1}{${nf}^2}\\right)=${sciT(dE)}\\ \\text{J}\\qquad\\mk{l}{\\klam=\\frac{hc}{|\\kdE|}}=${sciT(nm * 1e-9)}\\ \\text{m}=${nmU(nm).replace(' nm', '')}\\ \\text{nm}`;
-    if (f !== shown) { shown = f; F.morph(fx, f); }
+      ? '\\mk{En}{\\kEn}=-\\frac{\\mk{k}{kZ^2}}{\\mk{n}{n^2}}'
+      : '\\mk{dE}{\\kdE}=\\mk{k}{kZ^2}\\mk{p}{\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)}';
+    const numbers = same
+      ? `\\kEn=-\\frac{(${sciT(K)}\\ \\text{J})(${Z})^2}{${ni}^2}=${sciT(energy(ni, Z))}\\ \\text{J}`
+      : `\\begin{gathered}\\kdE=(${sciT(K)}\\ \\text{J})(${Z})^2\\left(\\frac{1}{${ni}^2}-\\frac{1}{${nf}^2}\\right)=${sciT(dE)}\\ \\text{J}\\\\ \\klam=\\frac{hc}{|\\kdE|}=${nmU(nm).replace(' nm', '')}\\ \\text{nm}\\end{gathered}`;
+    if (f !== shown) { shown = f; F.morph(fx, f, { keyMap: same ? { dE: 'En', p: 'n' } : { En: 'dE', n: 'p' } }); }
+    if (numbers !== shownNums) { shownNums = numbers; tex(nums, numbers); }
     note.textContent = same
       ? 'Choose a different orbit for the electron to end in, and a photon carries the difference between the two energies.'
       : emit
         ? 'The energy difference is negative, so the atom emits the photon; the further apart the two rungs, the shorter the wavelength of the line.'
         : 'The energy difference is positive, so a photon of exactly this energy must be absorbed; the same photon is emitted when the electron returns.';
   }
-  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
+  reset();
+  register(d.fig, { update: () => {}, draw });
 })();
 
 /* =====================================================================

@@ -571,8 +571,10 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     if (q.x[2] < b.k) { q.x[2] = b.k; n = [0, 0, 1]; } else if (q.x[2] > b.f) { q.x[2] = b.f; n = [0, 0, -1]; }
     return n;
   };
-  const fx = el('span'), note = el('small'); d.readout.append(fx, note);
-  let shown = '';
+  /* the law, set large, morphs by term; the numbers beneath it re-render plainly */
+  const fx = el('div'), nums = el('div'), note = el('small'); d.readout.append(fx, nums, note);
+  fx.style.cssText = 'font-size: 1.6em; text-align: center';
+  let shown = '', shownNums = '';
   /* the gauge in the Manim look: a round-capped ring over a half-opacity face in the pressure hue, no plate behind it */
   function dial(ctx, x, y, r, value, max, unit) {
     const cp = C('pressure'), a0 = 0.75 * Math.PI, a1 = 2.25 * Math.PI, f = Math.min(1, Math.max(0, value / max));
@@ -624,14 +626,24 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     topline(ctx, 'A sample of ' + fmt(n, 2) + ' mol of ' + WORD[GASES[Gc.v]] + ' at ' + T + ' K in ' + fmt(V, 1) + ' L presses at ' + fmt(P, 2) + ' atm' + (stp ? '; this is the standard molar volume, one mole at STP, whichever gas it is.' : law === 2 || law === 4 ? '; the piston has moved so that the pressure stays at ' + fmt(snap.P, 2) + ' atm.' : '.'));
     const tag = law === 3 ? 'Boyle' : law === 1 ? 'Amontons' : '', late = tag && performance.now() - since > 1600;
     const num = (t, x) => hue(t, x);
-    const f = !law ? `\\mk{P}{\\kP} = \\frac{\\mk{n}{\\kn}\\,\\mk{R}{R}\\,\\mk{T}{\\kT}}{\\mk{V}{\\kV}} = \\frac{(${num('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${num('temperature', T + '\\ \\text{K}')})}{${num('volume', fmt(V, 1) + '\\ \\text{L}')}} = ${num('pressure', fmt(P, 2) + '\\ \\text{atm}')}`
-      : law === 3 && late ? `\\mk{P}{\\kP_1}\\mk{V}{\\kV_1} = \\mk{P2}{\\kP_2}\\mk{V2}{\\kV_2} \\qquad (${num('pressure', fmt(snap.P, 2) + '\\ \\text{atm}')})(${num('volume', fmt(snap.V, 1) + '\\ \\text{L}')}) = (${num('pressure', fmt(P, 2) + '\\ \\text{atm}')})(${num('volume', fmt(V, 1) + '\\ \\text{L}')})`
-      : law === 3 ? `\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{k}{k} = ${fmt(P * V, 1)}\\ \\text{L atm}`
-      : law === 1 && late ? `\\frac{\\mk{P}{\\kP_1}}{\\mk{T}{\\kT_1}} = \\frac{\\mk{P2}{\\kP_2}}{\\mk{T2}{\\kT_2}} \\qquad \\frac{${num('pressure', fmt(snap.P, 2) + '\\ \\text{atm}')}}{${num('temperature', snap.T + '\\ \\text{K}')}} = \\frac{${num('pressure', fmt(P, 2) + '\\ \\text{atm}')}}{${num('temperature', T + '\\ \\text{K}')}}`
-      : law === 1 ? `\\frac{\\mk{P}{\\kP}}{\\mk{T}{\\kT}} = \\mk{k}{k} = ${fmt(P / T, 4)}\\ \\text{atm/K}`
-      : law === 2 ? `\\frac{\\mk{V}{\\kV}}{\\mk{T}{\\kT}} = \\mk{k}{k} = ${fmt(V / T, 4)}\\ \\text{L/K}`
-      : `\\frac{\\mk{V}{\\kV}}{\\mk{n}{\\kn}} = \\mk{k}{k} = ${fmt(V / n, 1)}\\ \\text{L/mol}`;
+    const f = !law ? '\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{n}{\\kn}\\,\\mk{R}{R}\\,\\mk{T}{\\kT}'
+      : law === 3 && late ? '\\mk{P}{\\kP_1}\\mk{V}{\\kV_1} = \\mk{P2}{\\kP_2}\\mk{V2}{\\kV_2}'
+      : law === 3 ? '\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{k}{k}'
+      : law === 1 && late ? '\\frac{\\mk{P}{\\kP_1}}{\\mk{T}{\\kT_1}} = \\frac{\\mk{P2}{\\kP_2}}{\\mk{T2}{\\kT_2}}'
+      : law === 1 ? '\\frac{\\mk{P}{\\kP}}{\\mk{T}{\\kT}} = \\mk{k}{k}'
+      : law === 2 ? '\\frac{\\mk{V}{\\kV}}{\\mk{T}{\\kT}} = \\mk{k}{k}'
+      : '\\frac{\\mk{V}{\\kV}}{\\mk{n}{\\kn}} = \\mk{k}{k}';
+    const Pn = (x) => num('pressure', fmt(x, 2) + '\\ \\text{atm}'), Vn = (x) => num('volume', fmt(x, 1) + '\\ \\text{L}');
+    const Tn = (x) => num('temperature', x + '\\ \\text{K}'), Nn = (x) => num('amount', fmt(x, 2) + '\\ \\text{mol}');
+    const numbers = !law ? `\\kP = \\frac{(${Nn(n)})(${RTEX})(${Tn(T)})}{${Vn(V)}} = ${Pn(P)}`
+      : law === 3 && late ? `(${Pn(snap.P)})(${Vn(snap.V)}) = (${Pn(P)})(${Vn(V)})`
+      : law === 3 ? `k = (${Pn(P)})(${Vn(V)}) = ${fmt(P * V, 1)}\\ \\text{L atm}`
+      : law === 1 && late ? `\\frac{${Pn(snap.P)}}{${Tn(snap.T)}} = \\frac{${Pn(P)}}{${Tn(T)}}`
+      : law === 1 ? `k = \\frac{${Pn(P)}}{${Tn(T)}} = ${fmt(P / T, 4)}\\ \\text{atm/K}`
+      : law === 2 ? `k = \\frac{${Vn(V)}}{${Tn(T)}} = ${fmt(V / T, 4)}\\ \\text{L/K}`
+      : `k = \\frac{${Vn(V)}}{${Nn(n)}} = ${fmt(V / n, 1)}\\ \\text{L/mol}`;
     if (f !== shown) { shown = f; F.morph(fx, f); }
+    if (numbers !== shownNums) { shownNums = numbers; tex(nums, numbers); }
     note.textContent = law === 1 ? 'With the volume and the amount held, the pressure and the kelvin temperature rise and fall together, which is Amontons’s law.'
       : law === 2 ? 'With the pressure and the amount held, the volume and the kelvin temperature rise and fall together, which is Charles’s law: the piston moves out as the gas warms.'
       : law === 3 ? 'With the temperature and the amount held, the product of pressure and volume does not change, which is Boyle’s law: pushing the piston in raises the gauge.'

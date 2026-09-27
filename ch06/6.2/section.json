@@ -42,6 +42,11 @@
       "id": "fig-spectra",
       "kind": "figure",
       "draws": []
+    },
+    {
+      "id": "sim-bohr-ladder-style",
+      "kind": "sim",
+      "draws": ["energy", "wavelength"]
     }
   ],
   "coverage": [

@@ -406,3 +406,7 @@ labels are on.
   no element at all, so neither can take an element colour; the book's
   `COLOR.md` now says so in a sentence of its own. The colours of the visible
   band are the colours of light and stay a physical fact.
+
+## Manim duplicates
+
+- `sim-bohr-ladder-style` (duplicate of `sim-bohr-ladder`), layer A with two B touches. Value add: the Manim look (round-capped rungs in the energy hue, two thin connectors in place of the dashed frames, a half-opacity energy column for |ΔE|, no label plates, the corner caption line dropped); the photon's path is drawn along its length; the readout morphs by term where ni = nf switches it between ΔE = kZ²(1/n₁² − 1/n₂²) and Eₙ = −kZ²/n² (threshold: ni = nf, integer sliders, no hysteresis needed). Flat.

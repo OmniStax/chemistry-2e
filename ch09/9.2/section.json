@@ -136,6 +136,16 @@
         "pressure",
         "temperature"
       ]
+    },
+    {
+      "id": "sim-gas-box-morph",
+      "kind": "sim",
+      "draws": [
+        "pressure",
+        "volume",
+        "temperature",
+        "amount"
+      ]
     }
   ],
   "coverage": [

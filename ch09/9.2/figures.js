@@ -517,6 +517,129 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); g.step(dt, speed3(Tc.v), inside); }, draw });
 })();
+/* =====================================================================
+   SIM: the gas box, with its equation morphing by term. The same box,
+   sliders and law picker; choosing a law rewrites PV = nRT into the
+   law's own form, the held quantities fading into the constant k and
+   their sliders greying in step, and for Boyle's and Amontons's laws
+   the constant then opens into the two-state form from the snapshot
+   taken when the law was chosen.
+===================================================================== */
+(function () {
+  const d = sim('sim-gas-box-morph');
+  const v = F.view3d(d.stage, { ...PICTURE, h: 440, dist: 7.6, tilt: 0.18 });
+  const grp = v.part(0), cnv = strip(d, 250);
+  const LAWS = ['free', 'Amontons: V and n held', 'Charles: P and n held', 'Boyle: T and n held', 'Avogadro: P and T held'];
+  const GASES = ['He', 'N₂', 'O₂', 'Ar', 'CO₂'];
+  /* the gas is chosen by name (rule 7.2): every molecule in the box is a molecule of that gas in its element's colours */
+  const Gc = pick(d.controls, { label: '\\text{gas}', value: 1, aria: 'the gas in the box', onInput: () => g.retag(() => GASES[Gc.v]) }, GASES);
+  const held = [];
+  const Vc = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 1, max: 30, step: 0.1, value: 22.4, unit: 'L', dec: 1, onInput: () => apply('V'), aria: 'volume of the gas in liters' });
+  held.push(d.controls.lastElementChild);
+  const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 600, step: 1, value: 273, unit: 'K', dec: 0, onInput: () => apply('T'), aria: 'temperature of the gas in kelvin' });
+  held.push(d.controls.lastElementChild);
+  const Nc = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.2, max: 4, step: 0.05, value: 1, unit: 'mol', dec: 2, onInput: () => apply('n'), aria: 'amount of gas in moles' });
+  held.push(d.controls.lastElementChild);
+  held.forEach((l) => { l.style.transition = 'opacity 0.6s cubic-bezier(0.45, 0, 0.55, 1)'; });
+  /* the four laws are states, not a quantity (rule 26.1): a row of buttons, the one held marked */
+  const Lc = pick(d.controls, { label: '\\text{law held}', value: 0, aria: 'the gas law being held', onInput: hold }, LAWS.map((l) => l.split(':')[0]));
+  const pressure = () => (Nc.v * R * Tc.v) / Vc.v;
+  let snap = { V: Vc.v, T: Tc.v, n: Nc.v, P: pressure() };
+  function snapshot() { snap = { V: Vc.v, T: Tc.v, n: Nc.v, P: pressure() }; }
+  const clampV = (x) => Math.min(30, Math.max(1, x));
+  /* A quantity a law holds still, and a quantity the law then decides, are both taken out of the reader's hands: their
+     sliders are disabled and greyed rather than moved and snapped back (rule 24.6). Under Charles's and Avogadro's laws it
+     is the pressure that is held, so the piston finds the volume and the volume slider is one of those the law has taken. */
+  function hold() {
+    const law = Lc.v;
+    Vc.disable(law === 1 || law === 2 || law === 4);
+    Tc.disable(law === 3 || law === 4);
+    Nc.disable(law >= 1 && law <= 3);
+    snapshot(); apply(); since = performance.now();
+  }
+  let since = 0;
+  function apply() { if (Lc.v === 2 || Lc.v === 4) Vc.set(clampV((Nc.v * R * Tc.v) / snap.P)); }
+  /* the box: a fixed height and depth, a width that follows the volume, its left wall fixed and the piston at its right */
+  const HB = 1.6, DB = 1.6, X0 = -1.7, width = (V) => 0.36 + 0.095 * V, RM = 0.1;
+  const walls = (V) => { const w = width(V); return { l: X0 + RM, r: X0 + w - RM, t: HB / 2 - RM, b: -HB / 2 + RM, f: DB / 2 - RM, k: -DB / 2 + RM }; };
+  const g = gas3();
+  const spawn = () => { const b = walls(Vc.v); return { x: [b.l + Math.random() * (b.r - b.l), b.b + Math.random() * (b.t - b.b), b.k + Math.random() * (b.f - b.k)], f: GASES[Gc.v], u: heading3() }; };
+  const inside = (q) => {
+    const b = walls(Vc.v); let n = null;
+    if (q.x[0] < b.l) { q.x[0] = b.l; n = [1, 0, 0]; } else if (q.x[0] > b.r) { q.x[0] = b.r; n = [-1, 0, 0]; }
+    if (q.x[1] < b.b) { q.x[1] = b.b; n = [0, 1, 0]; } else if (q.x[1] > b.t) { q.x[1] = b.t; n = [0, -1, 0]; }
+    if (q.x[2] < b.k) { q.x[2] = b.k; n = [0, 0, 1]; } else if (q.x[2] > b.f) { q.x[2] = b.f; n = [0, 0, -1]; }
+    return n;
+  };
+  const fx = el('span'), note = el('small'); d.readout.append(fx, note);
+  let shown = '';
+  /* the gauge in the Manim look: a round-capped ring over a half-opacity face in the pressure hue, no plate behind it */
+  function dial(ctx, x, y, r, value, max, unit) {
+    const cp = C('pressure'), a0 = 0.75 * Math.PI, a1 = 2.25 * Math.PI, f = Math.min(1, Math.max(0, value / max));
+    ctx.save(); ctx.fillStyle = alpha(cp, 0.12); ctx.strokeStyle = cp; ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
+    for (let i = 0; i <= 10; i++) { const a = a0 + ((a1 - a0) * i) / 10, big = i % 5 === 0; line(ctx, x + (r - (big ? 16 : 9)) * Math.cos(a), y + (r - (big ? 16 : 9)) * Math.sin(a), x + (r - 5) * Math.cos(a), y + (r - 5) * Math.sin(a), cp, big ? 3.5 : 2.5); if (big) text(ctx, String((max * i) / 10), x + (r - 30) * Math.cos(a), y + (r - 30) * Math.sin(a), cp, { size: 14, align: 'center' }); }
+    const a = a0 + (a1 - a0) * f;
+    line(ctx, x, y, x + (r - 14) * Math.cos(a), y + (r - 14) * Math.sin(a), cp, 4.5);
+    text(ctx, unit, x, y + r * 0.55, cp, { size: 14, align: 'center' });
+  }
+  const cy = cycle(() => Infinity, 0);
+  const birds = flock(v, grp, g, 0.012);
+  let sig = '';
+  /* the vessel is rebuilt when the volume or the palette changes; the molecules are moved every frame */
+  function build() {
+    const key = [Vc.v, palSig()].join('|'); if (key === sig) return; sig = key;
+    v.clear(); birds.drop();
+    const w = width(Vc.v), cx = X0 + w / 2;
+    const body = box3(grp, [cx, 0, 0], [w, HB, DB], C('volume'), { transparent: true, opacity: 0.12, depthWrite: false, side: T3D.DoubleSide });
+    v.pickable(body, 'the gas, ' + fmt(Vc.v, 1) + ' L');
+    edges3(grp, [w, HB, DB], [cx, 0, 0]);
+    v.pickable(box3(grp, [X0 + w + 0.05, 0, 0], [0.1, HB + 0.08, DB + 0.08], PAL.muted), 'piston');
+    stick3(grp, [X0 + w + 0.1, 0, 0], [X0 + w + 1.1, 0, 0], 0.05, PAL.ink);
+    v.label('piston', [X0 + w + 0.6, 0.1, 0], grp, 6);
+    const lab = v.label('V = ' + fmt(Vc.v, 1) + ' L', [cx, -HB / 2 - 0.12, DB / 2], grp, -8); lab.style.color = C('volume');
+  }
+  function draw() {
+    build();
+    const V = Vc.v, T = Tc.v, n = Nc.v, P = pressure(), law = Lc.v, cv = C('volume'), ct = C('temperature'), cp = C('pressure'), ca = C('amount');
+    g.fill(Math.round(n * 10), spawn);
+    birds.sync(GASES[Gc.v]);
+    v.invalidate();
+    /* the strip beneath: the gauge, the readings and what is being held */
+    const { ctx } = begin(cnv);
+    dial(ctx, 130, 130, 62, P, 10, 'atm');
+    text(ctx, 'pressure gauge', 130, 214, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, 'P = ' + fmt(P, 2) + ' atm' + (P > 10 ? ', off the dial' : ''), 230, 118, cp, { size: 30, weight: 600 });
+    text(ctx, 'about ' + g.rate + ' strikes on the walls each second', 230, 156, PAL.muted, { size: 17 });
+    const rx = 700;
+    text(ctx, 'V = ' + fmt(V, 1) + ' L', rx, 92, cv, { size: 22, weight: 600 });
+    text(ctx, 'T = ' + T + ' K', rx, 122, ct, { size: 22, weight: 600 });
+    text(ctx, 'n = ' + fmt(n, 2) + ' mol of ' + WORD[GASES[Gc.v]] + ', ' + g.p.length + ' molecules drawn', rx, 152, ca, { size: 22, weight: 600 });
+    if (law) {
+      text(ctx, 'Under ' + LAWS[law].split(':')[0] + '’s law, ' + LAWS[law].split(': ')[1].replace(' held', ' are held') + '.', rx, 192, PAL.ink, { size: 18, weight: 600 });
+      const ratio = law === 1 ? 'P/T = ' + fmt(P / T, 4) + ' atm/K' : law === 2 ? 'V/T = ' + fmt(V / T, 4) + ' L/K' : law === 3 ? 'PV = ' + fmt(P * V, 1) + ' L atm' : 'V/n = ' + fmt(V / n, 1) + ' L/mol';
+      text(ctx, 'What stays constant is ' + ratio + '.', rx, 220, PAL.muted, { size: 17 });
+      text(ctx, 'The sliders the law has taken over are locked, and the one left free shows the law on its own.', rx, 244, PAL.muted, { size: 16 });
+    } else text(ctx, 'All three sliders are free. Drag the box to turn it.', rx, 192, PAL.muted, { size: 17 });
+    const stp = Math.abs(V - 22.4) < 0.05 && T === 273 && Math.abs(n - 1) < 0.001;
+    topline(ctx, 'A sample of ' + fmt(n, 2) + ' mol of ' + WORD[GASES[Gc.v]] + ' at ' + T + ' K in ' + fmt(V, 1) + ' L presses at ' + fmt(P, 2) + ' atm' + (stp ? '; this is the standard molar volume, one mole at STP, whichever gas it is.' : law === 2 || law === 4 ? '; the piston has moved so that the pressure stays at ' + fmt(snap.P, 2) + ' atm.' : '.'));
+    const tag = law === 3 ? 'Boyle' : law === 1 ? 'Amontons' : '', late = tag && performance.now() - since > 1600;
+    const num = (t, x) => hue(t, x);
+    const f = !law ? `\\mk{P}{\\kP} = \\frac{\\mk{n}{\\kn}\\,\\mk{R}{R}\\,\\mk{T}{\\kT}}{\\mk{V}{\\kV}} = \\frac{(${num('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${num('temperature', T + '\\ \\text{K}')})}{${num('volume', fmt(V, 1) + '\\ \\text{L}')}} = ${num('pressure', fmt(P, 2) + '\\ \\text{atm}')}`
+      : law === 3 && late ? `\\mk{P}{\\kP_1}\\mk{V}{\\kV_1} = \\mk{P2}{\\kP_2}\\mk{V2}{\\kV_2} \\qquad (${num('pressure', fmt(snap.P, 2) + '\\ \\text{atm}')})(${num('volume', fmt(snap.V, 1) + '\\ \\text{L}')}) = (${num('pressure', fmt(P, 2) + '\\ \\text{atm}')})(${num('volume', fmt(V, 1) + '\\ \\text{L}')})`
+      : law === 3 ? `\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{k}{k} = ${fmt(P * V, 1)}\\ \\text{L atm}`
+      : law === 1 && late ? `\\frac{\\mk{P}{\\kP_1}}{\\mk{T}{\\kT_1}} = \\frac{\\mk{P2}{\\kP_2}}{\\mk{T2}{\\kT_2}} \\qquad \\frac{${num('pressure', fmt(snap.P, 2) + '\\ \\text{atm}')}}{${num('temperature', snap.T + '\\ \\text{K}')}} = \\frac{${num('pressure', fmt(P, 2) + '\\ \\text{atm}')}}{${num('temperature', T + '\\ \\text{K}')}}`
+      : law === 1 ? `\\frac{\\mk{P}{\\kP}}{\\mk{T}{\\kT}} = \\mk{k}{k} = ${fmt(P / T, 4)}\\ \\text{atm/K}`
+      : law === 2 ? `\\frac{\\mk{V}{\\kV}}{\\mk{T}{\\kT}} = \\mk{k}{k} = ${fmt(V / T, 4)}\\ \\text{L/K}`
+      : `\\frac{\\mk{V}{\\kV}}{\\mk{n}{\\kn}} = \\mk{k}{k} = ${fmt(V / n, 1)}\\ \\text{L/mol}`;
+    if (f !== shown) { shown = f; F.morph(fx, f); }
+    note.textContent = law === 1 ? 'With the volume and the amount held, the pressure and the kelvin temperature rise and fall together, which is Amontons’s law.'
+      : law === 2 ? 'With the pressure and the amount held, the volume and the kelvin temperature rise and fall together, which is Charles’s law: the piston moves out as the gas warms.'
+      : law === 3 ? 'With the temperature and the amount held, the product of pressure and volume does not change, which is Boyle’s law: pushing the piston in raises the gauge.'
+      : law === 4 ? 'With the pressure and the temperature held, the volume follows the amount of gas, which is Avogadro’s law: more particles need more room at the same pressure.'
+      : 'The particles move faster as the temperature rises and there are more of them as the amount rises, so they strike the walls more often; a wider box spreads the same strikes over more wall. That is what the gauge reads.';
+  }
+  register(d.fig, { update: (dt) => { cy.step(dt, () => 1); g.step(dt, speed3(Tc.v), inside); }, draw });
+})();
 
 /* =====================================================================
    SIM: one state on four graphs. The same gas drawn on P against V, V

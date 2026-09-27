@@ -485,3 +485,7 @@ labels are on.
   now short enough that it never reaches the name of the gas beneath it, even
   at two moles. Labels on, with a hover name on every molecule and every
   balloon.
+
+## Manim duplicates
+
+- `sim-gas-box-morph` (duplicate of `sim-gas-box`), layer B. Value add: the four laws are read out of PV = nRT rather than beside it; the held quantities fade into k in the equation while their sliders grey in step. Thresholds: the law picker (a choice, so no hysteresis is needed); free gives P = nRT/V, Boyle PV = k, Amontons P/T = k, Charles V/T = k, Avogadro V/n = k; for Boyle and Amontons 1.6 s later k opens into P₁V₁ = P₂V₂ or P₁/T₁ = P₂/T₂ from the snapshot taken at the switch (source: "P1/T1 = k and P2/T2 = k, which reduces to P1/T1 = P2/T2"). The gauge takes the Manim look. Physical 3D, as the original.

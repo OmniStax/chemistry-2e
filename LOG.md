@@ -577,7 +577,7 @@ both of them pre-existing sheet cells that hold a word beside a number
 chapters holds a middle-dot join and no caption of them cites its own figure.
 
 
-## Pass 5 (2026-09-28): Pass (2026-09-28): Chapter 4, Stoichiometry of Chemical Reactions, is built
+## Pass 5 (2026-09-28): Chapter 4, Stoichiometry of Chemical Reactions, is built
 
 Prompted by: Chen asking for the book to be finished without check-ins, a plan
 file written before each page and left for review after.
@@ -632,7 +632,7 @@ page of the chapter was opened in light and dark with no console error, no
 blank canvas, no KaTeX error, no missing image and every inline card present.
 
 
-## Pass 6 (2026-09-28): Chapter 3 (2026-09-28): Composition of Substances and Solutions is built
+## Pass 6 (2026-09-28): Chapter 3, Composition of Substances and Solutions, is built
 
 Prompted by: Chen asking for the rest of the book to be built in waves,
 with no check-ins. The chapter was prepared in one pass (its

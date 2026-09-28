@@ -22,7 +22,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
   ];
   const ORDER = ['single', 'double', 'triple'];
   /* fixed axes: 1.0 to 1.6 Å holds every length of the table, 0 to 1200 kJ/mol every energy */
-  const box = { l: 170, r: 1060, t: 110, b: 480 };
+  const box = { l: 170, r: 1060, t: 150, b: 490 };
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
@@ -44,7 +44,6 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
       dot(ctx, 1130, ly, col, true, 10);
       text(ctx, `${p.name} bonds`, 1152, ly, PAL.ink, { size: 22, base: 'middle' });
     });
-    text(ctx, 'single → double → triple', 1130, 330, PAL.muted, { size: 17, base: 'middle' });
     headline(ctx, 'Between the same two atoms, the triple bond is the shortest and the strongest, and the single bond the longest and the weakest.');
     F.tex(d.readout, '\\text{C–C}: \\kDbond = 345,\\ 611,\\ 837\\ \\text{kJ/mol at } 1.54,\\ 1.34,\\ 1.20\\ \\text{Å}');
   }
@@ -95,9 +94,10 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
     text(ctx, `${f} kJ`, XF + BW / 2, yf - 18, cE, { size: 22, weight: 600, align: 'center' });
     /* ΔH: the level of the bonds broken carried across, and the gap to the level of the bonds formed */
     const xa = XF + BW + 50;
-    line(ctx, XB + BW, yb, xa + 20, yb, alpha(PAL.ink, 0.4), 2, [10, 10]);
+    line(ctx, XB + BW, yb, XF, yb, alpha(PAL.ink, 0.4), 2, [10, 10]);
+    line(ctx, XF + BW, yb, xa + 20, yb, alpha(PAL.ink, 0.4), 2, [10, 10]);
     line(ctx, XF + BW, yf, xa + 20, yf, alpha(PAL.ink, 0.4), 2, [10, 10]);
-    if (Math.abs(yf - yb) > 8) arrow(ctx, xa, yb, xa, yf, cE, 4);
+    if (Math.abs(yf - yb) > 8) arrow(ctx, xa, yf, xa, yb, cE, 4);
     text(ctx, `ΔH = ${minus(dH)} kJ`, xa + 18, (yb + yf) / 2, cE, { size: 22, weight: 600, base: 'middle' });
     return { b, f, dH };
   }
@@ -122,7 +122,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
    relation answers its controls and has no clock.
 ===================================================================== */
 (function () {
-  const d = sim('sim-lattice', 560);
+  const d = sim('sim-lattice', 640);
   const Z = ['1', '2', '3'].map((v) => ({ value: v, label: v }));
   const zp = F.choice(d.controls, { label: 'Z^{+}', aria: 'the charge of the cation', value: '1', options: Z });
   const zm = F.choice(d.controls, { label: 'Z^{-}', aria: 'the charge of the anion', value: '1', options: Z });
@@ -131,15 +131,15 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
   const CL = 1023 * 201;   /* kJ·pm/mol */
   const LIF = 1023;
   /* the scene: 0.55 units per picometer, the cation taking 40 % of R_o; the bar 0 to 13 000 kJ/mol, which holds 3 × 3 at 150 pm (12 300) */
-  const S = 0.55, CY = 235, CX = 620;
-  const bar = { l: 170, r: 1320, y: 440, h: 44 };
+  const S = 0.7, CY = 280, CX = 620;
+  const bar = { l: 170, r: 1320, y: 530, h: 44 };
   const BX = (v) => bar.l + (v / 13000) * (bar.r - bar.l);
   let hits = []; F.hover(d.stage, () => hits);
   const SUP = { 1: '', 2: '²', 3: '³' };
   function ion(ctx, x, y, r, sym, name) {
     ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.fill();
     ctx.lineWidth = 2; ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.stroke(); ctx.restore();
-    text(ctx, sym, x, y, PAL.ink, { size: 24, weight: 600, align: 'center', base: 'middle' });
+    text(ctx, sym, x, y - r - 18, PAL.ink, { size: 24, weight: 600, align: 'center', base: 'middle' });
     hits.push({ x, y, r, name });
   }
   function draw() {

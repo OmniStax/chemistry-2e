@@ -29,7 +29,7 @@ First proposed after the chapter exploration of 2026-09-12 for the showcase buil
 | Answers to book problems | the book's key only, never computed, read from the CNXML of each item. An unkeyed conceptual item is kept with a suggested approach marked as OmniStax's own; an unkeyed numerical or computational item is left out and named in `exercise_notes` (7.3: 2, 7.5: 4, listed in `exploration.md`); an unkeyed choice item (7.5: 2) is kept as an open item with its options, never graded |
 | Suggested approaches | generated and marked, for unkeyed conceptual items only |
 | Generated questions | none; a concept with no book exercise of its own is named in the plan |
-| Concept nodes | 31 in `book.json`: 7.1 four, 7.2 four (with `bond-polarity`), 7.3 five (with `lewis-structure`), 7.4 three, 7.5 six, 7.6 nine as built. 39 prerequisite edges within the chapter and into Chapter 1; edges into Chapters 2, 5 and 6 wait for the chapter pass |
+| Concept nodes | 31 in `book.json`: 7.1 four, 7.2 four (with `bond-polarity`), 7.3 five (with `lewis-structure`), 7.4 three, 7.5 six, 7.6 nine as built. 56 prerequisite edges, within the chapter and into Chapters 1, 2, 5 and 6 |
 | Formulas | `chapter.json`: six equations of 7.4 and 7.5 from the Key Equations (with `ktex`), and 7.6's three; variables of 7.2 and 7.5, with 7.6's three. Anchors are written by the sections' `Wanted at chapter level` in the chapter pass |
 | Glossary | the book's wording, forty entries: 2, 5, 9, 5, 3 and 16 |
 | Degrees | `°` (U+00B0) outside math, `^\circ` inside, never `º` |
@@ -40,3 +40,9 @@ First proposed after the chapter exploration of 2026-09-12 for the showcase buil
 | Labels | a figure carrying the book's number is a Figure; one that replaces nothing is a Sim. The word "demo" appears nowhere |
 | `ai` and `built` | `{"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"}` and `2026-09-28` for the introduction and 7.1 to 7.5; 7.6 keeps its own |
 | Book manifest | `ch07` merged into `book.json` through `ost merge chemistry-2e 7`, never by hand |
+
+## What the build changed
+
+- Fifteen concept edges were staged and merged in the chapter pass, fourteen of them into Chapters 2, 5 and 6 and one from 7.6 to 7.2, so the chapter now carries 56 prerequisite edges.
+- The symbols IE and EA render upright, `\text{IE}` and `\text{EA}`, as abbreviations rather than products of two variables.
+- The glossary term of 7.5 that carried HTML, "lattice energy (ΔH<sub>lattice</sub>)", is the plain words "lattice energy".

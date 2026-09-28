@@ -45,13 +45,13 @@
   },
   {
    "sym": "IE",
-   "latex": "IE",
+   "latex": "\\text{IE}",
    "type": "energy",
    "macro": "\\kIE"
   },
   {
    "sym": "EA",
-   "latex": "EA",
+   "latex": "\\text{EA}",
    "type": "energy",
    "macro": "\\kEA"
   },
@@ -161,7 +161,7 @@
    "section": "7.3",
    "name": "Writing a Lewis structure",
    "why": "A Lewis structure shows every valence electron of a molecule or polyatomic ion, as a shared pair on a bond or as a lone pair on an atom. It is where a prediction of shape begins, because the count of bonding regions and lone pairs that VSEPR theory needs is read straight off it.",
-   "evidence": "The section sets out the five steps and works them on SiH4, CHO2−, NO+ and OF2, and Examples 7.4 and 7.5 write the structures of HCN, ethane, acetylene, ammonia, XeF2 and XeF6; nine exercises ask for Lewis structures."
+   "evidence": "The section sets out the five steps and works them on SiH4, CHO2−, NO+ and OF2, and Examples 7.4 and 7.5 write the structures of HCN, ethane, acetylene, ammonia, XeF2 and XeF6; nine exercises ask for Lewis structures. A Sim walks the five steps for six molecules and ions."
   },
   {
    "id": "bond-polarity",
@@ -265,7 +265,7 @@
    "section": "7.4",
    "name": "Calculating formal charge",
    "why": "The formal charge of an atom in a Lewis structure is the charge it would have if the electrons of each bond were shared equally: the valence electrons of the free atom, less its lone pair electrons, less half its bonding electrons. The formal charges of a molecule add up to zero and those of an ion add up to its charge, which checks the arithmetic. A formal charge is bookkeeping and not the actual charge on the atom.",
-   "evidence": "The section gives the formula and Examples 7.6 and 7.7 assign the formal charges of ICl4− and BrCl3; four exercises ask for the formal charges of the atoms in lists of molecules and ions.",
+   "evidence": "The section gives the formula and Examples 7.6 and 7.7 assign the formal charges of ICl4− and BrCl3; four exercises ask for the formal charges of the atoms in lists of molecules and ions. A Sim marks the lone pair and bonding electrons of each atom in the eight candidate structures the section compares.",
    "eq": "eq-formal-charge"
   },
   {
@@ -282,7 +282,7 @@
    "section": "7.4",
    "name": "Resonance forms and the resonance hybrid",
    "why": "When two or more Lewis structures with the same arrangement of atoms can be written, none of them alone describes the molecule; the actual distribution of electrons is their average, the resonance hybrid. The molecule never switches between its resonance forms, which is why both N–O bonds of the nitrite ion and all three C–O bonds of the carbonate ion are found to be identical.",
-   "evidence": "The section introduces resonance on the nitrite ion, tells Wheland's analogy of the rhinoceros described as a dragon and a unicorn, and draws the three resonance forms of the carbonate ion; six exercises ask for resonance forms."
+   "evidence": "The section introduces resonance on the nitrite ion, tells Wheland's analogy of the rhinoceros described as a dragon and a unicorn, and draws the three resonance forms of the carbonate ion; six exercises ask for resonance forms. A Sim draws the resonance hybrids of the nitrite and carbonate ions beneath their forms."
   },
   {
    "id": "bond-energy",
@@ -502,6 +502,66 @@
   {
    "concept": "ionic-bond",
    "prereq": "ionic-and-covalent-bonds"
+  },
+  {
+   "concept": "ionic-bond",
+   "prereq": "ionic-compounds"
+  },
+  {
+   "concept": "ion-electron-configuration",
+   "prereq": "ion-configurations"
+  },
+  {
+   "concept": "predict-ion-charge",
+   "prereq": "ionization-energy-trend"
+  },
+  {
+   "concept": "predict-ion-charge",
+   "prereq": "electron-affinity-trend"
+  },
+  {
+   "concept": "electronegativity",
+   "prereq": "electron-affinity-trend"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "hess-law"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "standard-enthalpy-of-formation"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "ionization-energy-trend"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "electron-affinity-trend"
+  },
+  {
+   "concept": "enthalpy-from-bond-energies",
+   "prereq": "thermochemical-equations"
+  },
+  {
+   "concept": "lewis-symbol",
+   "prereq": "valence-and-core-electrons"
+  },
+  {
+   "concept": "lewis-symbol",
+   "prereq": "ion-configurations"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "resonance",
+   "prereq": "multiple-bonds"
+  },
+  {
+   "concept": "bond-angle-and-bond-distance",
+   "prereq": "covalent-bond-formation"
   }
  ]
 }

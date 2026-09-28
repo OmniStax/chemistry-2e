@@ -30,3 +30,7 @@ Inline: `cyl1` (Example 7.6, host `ex-icl4`), `cyl2` (Example 7.7, host `ex-brcl
 - `formal-charge` evidence: add "and a Sim marks the lone pair and bonding electrons of each atom in the eight candidate structures the section compares" (optional).
 - `resonance` evidence: add "and a Sim draws the resonance hybrids of the nitrite and carbonate ions beneath their forms" (optional).
 - Edge `resonance` → `multiple-bonds` (7.3); the edges `formal-charge` → `lewis-structure`, `formal-charge-guidelines` → `formal-charge` and → `electronegativity`, and `resonance` → `lewis-structure` are already in `book.json`.
+
+### Applied by the chapter pass (2026-09-28)
+
+Applied: `eq-formal-charge` anchors on `7.4-calculating-formal-charge`; the `formal-charge` and `resonance` evidence gain their sentences on the Sims; `resonance` → `multiple-bonds` is merged.

@@ -106,3 +106,11 @@ The chapter is the book's turn from atoms to substances, and its hardest ideas a
 ### 7.6, as found in 2026-09-12
 
 Section 7.6 is where the book leaves the flat page: a molecule occupies space, its bond angles are measurable, and whether it is polar depends on how its bond moments add in three dimensions. The pass built a rotatable VSEPR bench (Figure 7.16 + 7.19 + 7.20), a bond-moment bench (Figure 7.26 + 7.27), a moving Figure 7.28 in which molecules align in a field, a measuring Figure 7.14, still redraws of the fixed arrangements, and one Sim of electron domains settling into the five geometries, all through `F.view3d` on Chen's decision of 2026-09-12. It considered and rejected a glycine bench, a Lewis-structure builder (which belongs to 7.3) and a hover electronegativity table (which is Figure 7.6 in 7.2). Everything in 7.6 leaned on 7.2's `bond-polarity` and 7.3's `lewis-structure`, which were placeholders then and are now full concepts of their sections.
+
+## Errata
+
+Carried as printed and named in each section's `notes`:
+
+- 7.3, the Fullerene Chemistry note: "since prehistoric times, ." with nothing between the comma and the period, and the period set inside the subscript of "C<sub>60.</sub>".
+- 7.3, Example 7.5: "the six steps discussed earlier" for the five-step procedure.
+- 7.5, Table 7.4: the CNXML summary of the table describes NaCl while the table prints CsF; the page follows the printed table.

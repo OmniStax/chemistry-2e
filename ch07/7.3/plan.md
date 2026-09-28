@@ -37,3 +37,7 @@ Inline: `cyl1` (Example 7.4, host `ex-titan`) and `cyl2` (Example 7.5, host `ex-
 - Edge `lewis-symbol` → `valence-and-core-electrons` (6.4) and `lewis-symbol` → `ion-configurations` (6.4).
 - Edge `lewis-structure` → `covalent-bond-formation` (7.2).
 - Edge `lewis-structure` → `electronegativity` (7.2): the central atom is the least electronegative.
+
+### Applied by the chapter pass (2026-09-28)
+
+Applied: the `lewis-structure` evidence gains the sentence on the Sim; `lewis-symbol` → `valence-and-core-electrons` and → `ion-configurations` and `lewis-structure` → `electronegativity` are merged; `lewis-structure` → `covalent-bond-formation` was already in `book.json`.

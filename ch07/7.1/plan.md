@@ -42,3 +42,7 @@ Nothing (element palette for Na, Cl and the ions of the Sim; ink elsewhere).
 - edge `predict-ion-charge` → `ionization-energy-trend` (6.5)
 - edge `predict-ion-charge` → `electron-affinity-trend` (6.5)
 - 7.2 `exercise_notes`: a sentence that `fs-idp49074848` moved to 7.1.
+
+### Applied by the chapter pass (2026-09-28)
+
+Applied: the edges `ionic-bond` → `ionic-compounds`, `ion-electron-configuration` → `ion-configurations`, and `predict-ion-charge` → `ionization-energy-trend` and → `electron-affinity-trend` are merged; `predict-ion-charge` → `predict-ion-charge-from-group` was already in `book.json`. `ionic-lattice` evidence stands. The 7.2 `exercise_notes` already named the move of `fs-idp49074848`.

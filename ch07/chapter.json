@@ -48,89 +48,103 @@
     {
       "sym": "EN",
       "meaning": "the electronegativity of an atom, the tendency of the atom to attract the electrons of a bond toward itself, on Pauling's relative scale from 0 to 4",
-      "section": "7.2"
+      "section": "7.2",
+      "anchor": "7.2-electronegativity"
     },
     {
       "sym": "ΔEN",
       "meaning": "the absolute value of the difference in electronegativity between two bonded atoms, a rough measure of the polarity of the bond",
-      "section": "7.2"
+      "section": "7.2",
+      "anchor": "7.2-bond-type"
     },
     {
       "sym": "D_bond",
       "type": "energy",
       "meaning": "the bond energy, the energy required to break one mole of a particular covalent bond in gaseous molecules; always positive",
       "unit": "kJ/mol",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-bond-strength"
     },
     {
       "sym": "ΔH",
       "type": "energy",
       "meaning": "the enthalpy change of a reaction, estimated from the bond energies of the bonds broken and formed",
       "unit": "kJ",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-enthalpy"
     },
     {
       "sym": "ΔH°",
       "type": "energy",
       "meaning": "the standard enthalpy change of a reaction",
       "unit": "kJ",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-bond-strength"
     },
     {
       "sym": "ΔH_lattice",
       "type": "energy",
       "meaning": "the lattice energy, the energy required to separate one mole of an ionic solid into its gaseous ions",
       "unit": "kJ/mol",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-lattice"
     },
     {
       "sym": "C_lattice",
       "meaning": "a constant that depends on the type of crystal structure",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
     },
     {
       "sym": "Z_plus",
       "meaning": "the charge on the cation",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
     },
     {
       "sym": "Z_minus",
       "meaning": "the charge on the anion",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
     },
     {
       "sym": "R_o",
       "meaning": "the interionic distance, the sum of the radii of the positive and negative ions",
       "unit": "pm",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
     },
     {
       "sym": "ΔH_f°",
       "type": "energy",
       "meaning": "the standard enthalpy of formation of the ionic compound from its elements",
       "unit": "kJ/mol",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
     },
     {
       "sym": "ΔH_s°",
       "type": "energy",
       "meaning": "the enthalpy of sublimation of the metal",
       "unit": "kJ/mol",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
     },
     {
       "sym": "IE",
       "type": "energy",
       "meaning": "the ionization energy of the metal atom",
       "unit": "kJ/mol",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
     },
     {
       "sym": "EA",
       "type": "energy",
       "meaning": "the electron affinity of the nonmetal atom, negative when the step releases energy",
       "unit": "kJ/mol",
-      "section": "7.5"
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
     },
     {
       "sym": "μ",
@@ -160,7 +174,8 @@
       "concept": "formal-charge",
       "section": "7.4",
       "latex": "\\text{formal charge}=\\text{\\# valence shell electrons (free atom)}-\\text{\\# lone pair electrons}-\\frac{1}{2}\\,\\text{\\# bonding electrons}",
-      "important": true
+      "important": true,
+      "anchor": "7.4-calculating-formal-charge"
     },
     {
       "id": "eq-bond-energy",
@@ -169,7 +184,8 @@
       "latex": "\\text{XY}(g)\\longrightarrow\\text{X}(g)+\\text{Y}(g)\\qquad D_{\\text{X–Y}}=\\Delta H^{\\circ}",
       "ktex": "\\text{XY}(g)\\longrightarrow\\text{X}(g)+\\text{Y}(g)\\qquad \\kDbond_{\\text{X–Y}}=\\kdHo",
       "condition": "a diatomic molecule XY in the gas phase",
-      "important": true
+      "important": true,
+      "anchor": "7.5-bond-strength"
     },
     {
       "id": "eq-enthalpy-bond-energies",
@@ -178,7 +194,8 @@
       "latex": "\\Delta H=\\sum D_{\\text{bonds broken}}-\\sum D_{\\text{bonds formed}}",
       "ktex": "\\kdH=\\sum \\kDbond_{\\text{bonds broken}}-\\sum \\kDbond_{\\text{bonds formed}}",
       "condition": "an estimate from average bond energies, for a reaction of gases",
-      "important": true
+      "important": true,
+      "anchor": "7.5-enthalpy"
     },
     {
       "id": "eq-lattice-energy-definition",
@@ -186,7 +203,8 @@
       "section": "7.5",
       "latex": "\\text{MX}(s)\\longrightarrow\\text{M}^{n+}(g)+\\text{X}^{n-}(g)\\qquad \\Delta H_{\\text{lattice}}",
       "ktex": "\\text{MX}(s)\\longrightarrow\\text{M}^{n+}(g)+\\text{X}^{n-}(g)\\qquad \\kdHlat",
-      "important": true
+      "important": true,
+      "anchor": "7.5-lattice"
     },
     {
       "id": "eq-lattice-energy-coulomb",
@@ -195,7 +213,8 @@
       "latex": "\\Delta H_{\\text{lattice}}=\\frac{C(Z^{+})(Z^{-})}{R_{\\text{o}}}",
       "ktex": "\\kdHlat=\\frac{C(Z^{+})(Z^{-})}{R_{\\text{o}}}",
       "condition": "an ionic crystal; C depends on the type of crystal structure",
-      "important": true
+      "important": true,
+      "anchor": "7.5-lattice-trends"
     },
     {
       "id": "eq-born-haber",
@@ -204,7 +223,8 @@
       "latex": "\\Delta H_{\\text{f}}^{\\circ}=\\Delta H_{s}^{\\circ}+\\tfrac{1}{2}D+IE+(EA)+(-\\Delta H_{\\text{lattice}})",
       "ktex": "\\kdHf=\\kdHs+\\tfrac{1}{2}\\kDbond+\\kIE+(\\kEA)+(-\\kdHlat)",
       "condition": "the formation of an ionic solid MX from a solid metal and a diatomic gaseous nonmetal, as for CsF",
-      "important": false
+      "important": false,
+      "anchor": "7.5-born-haber"
     },
     {
       "id": "eq-dipole-moment",
@@ -349,7 +369,7 @@
     },
     {
       "section": "7.5",
-      "term": "lattice energy (ΔH<sub>lattice</sub>)",
+      "term": "lattice energy",
       "definition": "energy required to separate one mole of an ionic solid into its component gaseous ions"
     },
     {

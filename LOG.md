@@ -794,3 +794,54 @@ Example 5.9's "perchlorate", Example 5.15's −136.80 and −138.4 kJ; the book'
 Checks: `ost check` and the content check clean for the book, `npm test`,
 `astro check`, a build, and every page of the chapter in a headless browser
 in light and dark.
+
+
+## Pass 9 (2026-09-28): Chapter 7, Chemical Bonding and Molecular Geometry, is built and passed
+
+Prompted by: Chen asking for the book to be finished without check-ins, a plan
+file written before each page and left for review after.
+
+What was built. Six pages today: the chapter introduction in `ch07/intro/`
+with Figure 7.1, and the sections 7.1 to 7.5, none of them folded; 7.6 was
+built on 2026-09-12 and its figures are untouched. Fifty-eight figure rows
+across the five sections, numbered 7.2 to 7.13 as the publisher numbers them:
+the NaCl photographs of Figure 7.2, the lattice of Figure 7.3 in three
+dimensions with its two panels as a choice, the potential energy curve of
+Figure 7.4 as a live graph, Figures 7.5 and 7.8 folded into one polarity
+Figure, Pauling's table of Figure 7.6 redrawn and his portrait kept, the
+Lewis symbols and structures of 7.3 and 7.4 redrawn faithfully or copied, and
+the Born-Haber ladder of Figure 7.13 told step by step. Sims that replace
+nothing: a charge balance for ionic formulas, a Lewis structure walked through
+its five steps, formal charges counted on eight candidate structures, the
+resonance hybrids of nitrite and carbonate drawn beneath their forms and never
+animated between them, a bond length and strength bench, an enthalpy from bond
+energies, and a lattice energy bench after Coulomb. Every figure is still.
+Eighty-five exercises, ten of them the Check Your Learning items placed inline
+after their examples, each with its host. One exercise moved: the molecule of
+solid NaCl, printed in 7.2, is set in 7.1 with its `source_section`. Six
+unkeyed computational items are left out and named, and two unkeyed choice
+items of 7.5 are kept open with their options.
+
+What the chapter pass changed. Every equation and variable row of the chapter
+anchored to the span that introduces it: six equations and fourteen
+variables. Fifteen prerequisite edges staged and merged now that Chapters 2,
+5 and 6 are in the book: ionic bonds rest on ionic compounds, the charge and
+configuration of an ion on the configurations of ions and on the trends in
+ionization energy and electron affinity, electronegativity on electron
+affinity, Lewis symbols on valence electrons, the Born-Haber cycle on Hess's
+law, the enthalpy of formation, ionization energy and electron affinity, and
+enthalpies from bond energies on thermochemical equations; within the
+chapter, resonance on multiple bonds, Lewis structures on electronegativity,
+and 7.6's bond distances on the covalent bond of 7.2. The symbols IE and EA
+render upright. The glossary term that carried HTML, the lattice energy, is
+plain words.
+
+Errata carried as printed and named in `notes`: the Fullerene Chemistry note's
+"since prehistoric times, ." and "C<sub>60.</sub>", Example 7.5's "six steps"
+for five, and Table 7.4, printed for CsF while its description speaks of
+NaCl.
+
+Checks: `ost check` and the content check clean for the book, `npm test`
+(664 passing), `astro check` with no errors, a build, and every page of the
+chapter in light and dark with no console errors, no KaTeX errors, no missing
+images and every exercise card rendered.

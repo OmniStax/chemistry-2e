@@ -7,13 +7,13 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 const TAU = 2 * Math.PI;
 const minus = (s) => s.replace('-', '−');
 
-/* an atom as a filled disc in its element colour, hydrogen's white held by an ink outline */
+/* an atom as a filled disc in its element color, hydrogen's white held by an ink outline */
 function atom(ctx, x, y, sym, r, a = 1) {
   ctx.save(); ctx.globalAlpha *= a; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU);
   ctx.fillStyle = F.el(sym); ctx.fill();
   ctx.lineWidth = sym === 'H' ? 2.5 : 1.5; ctx.strokeStyle = sym === 'H' ? PAL.ink : alpha(PAL.ink, 0.45); ctx.stroke(); ctx.restore();
 }
-/* a soft cloud of electron density: a disc shaded from its centre outward */
+/* a soft cloud of electron density: a disc shaded from its center outward */
 function cloud(ctx, x, y, r, a) {
   if (!(r > 1) || !(a > 0)) return;
   const g = ctx.createRadialGradient(x, y, 0, x, y, r);
@@ -47,7 +47,7 @@ function cloud(ctx, x, y, r, a) {
     curve(ctx, E, 30, 300, X, Y, cE, 5, 160);
     text(ctx, '−7.24 × 10⁻¹⁹ J at 74 pm', X(RE) + 34, Y(-DEPTH) + 4, cE, { size: 18, weight: 600, bg: PAL.panel });
     const p = pinned(ctx, box, X, Y, r, e, cE);
-    /* the pair of atoms, centred over the point where the band allows, a leader down to the point */
+    /* the pair of atoms, centered over the point where the band allows, a leader down to the point */
     const half = (r * S) / 2, cx = Math.min(Math.max(X(r), box.l + half + RA + 10), 1380 - half - RA), cy = 140;
     line(ctx, cx, cy + RA + 6, p.x, p.y - 12, alpha(PAL.ink, 0.35), 2, [4, 8]);
     const over = Math.max(0, 1 - r / (2 * RA / S + 60));
@@ -72,7 +72,7 @@ function cloud(ctx, x, y, r, a) {
 /* =====================================================================
    FIGURE 7.6: Pauling's electronegativities, laid out as the book prints
    them. Still, a faithful copy with no controls: the metals, metalloids
-   and nonmetals tinted as the book tints them, with categorical colours.
+   and nonmetals tinted as the book tints them, with categorical colors.
 ===================================================================== */
 (function () {
   const d = sim('fig-en', 620);

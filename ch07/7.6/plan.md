@@ -546,3 +546,7 @@ Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 - `sim-domains` · readout the smallest angle alone, the ideal in the sentence (manim 12).
 - `sim-bond-moments` · the Labels choice is gone (26.7): the central atom and one bonded atom are named, the rest on hover.
 - `fig-ammonia`, `fig-water`, `fig-sf4`, `fig-xef4`, `fig-glycine-3d`, `sim-formaldehyde`, `sim-domains`, `sim-bond-moments` · no sentence tells the reader to drag (root 17).
+
+### Applied by the chapter pass of 2026-09-28
+
+The optional edge `bond-angle-and-bond-distance` → `covalent-bond-formation` is merged, since a bond distance is the length of the bond 7.2 forms. The figures of 7.6 are untouched.

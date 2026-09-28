@@ -15,7 +15,7 @@ const count = (n, one, many) => `${['', 'One', 'Two', 'Three'][n]} ${n === 1 ? o
 /* =====================================================================
    SIM: the charge balance of a binary ionic compound. A cation and an
    anion are chosen; the smallest numbers of each whose charges cancel
-   are drawn as ions in their element colours, each carrying its charge,
+   are drawn as ions in their element colors, each carrying its charge,
    and the readout writes the book's sum for aluminum oxide with the
    chosen numbers. Still: it answers its choices and has no clock.
 ===================================================================== */
@@ -68,7 +68,7 @@ const count = (n, one, many) => `${['', 'One', 'Two', 'Three'][n]} ${n === 1 ? o
 
 /* =====================================================================
    FIGURE 7.3: the sodium chloride lattice in three dimensions, 27 ions
-   of a 3 × 3 × 3 block, chloride at the corners and face centres and
+   of a 3 × 3 × 3 block, chloride at the corners and face centers and
    sodium between them. Panels (a) packed and (b) expanded are one
    choice, a morph of spacing and size with the rods fading in. Still:
    the viewer's idle spin is not a clock, and there is no transport.

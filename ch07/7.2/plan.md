@@ -39,3 +39,7 @@ Table 7.1 "Bond Polarity and Electronegativity Difference" inside Example 7.3 as
 ## Wanted at chapter level
 
 - none of the symbol, concept or edge rows needs a fix; `electronegativity` → 6.5 electron affinity and the others are listed in the chapter notes already.
+
+### Applied by the chapter pass (2026-09-28)
+
+Applied: `electronegativity` → `electron-affinity-trend` (6.5) is merged. `EN` is anchored on `7.2-electronegativity` and `ΔEN` on `7.2-bond-type`.

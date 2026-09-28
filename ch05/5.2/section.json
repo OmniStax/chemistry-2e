@@ -1,0 +1,828 @@
+{
+ "id": "5.2",
+ "module": "m68726",
+ "chapter": "5",
+ "title": "Calorimetry",
+ "short": "Calorimetry",
+ "lead": "A calorimeter measures a heat by letting it change the temperature of something whose specific heat and mass are known. This section divides the world into a system and its surroundings, balances the heat lost by a hot metal against the heat gained by cool water, finds the heat of a reaction in solution from the temperature change of a coffee cup calorimeter, and adds the heat capacity of the bomb when a combustion is measured at constant volume, as the energy content of foods is.",
+ "objectives": [
+  "Explain the technique of calorimetry",
+  "Calculate and interpret heat and related properties using typical calorimetry data"
+ ],
+ "summary_html": "<p>Calorimetry is used to measure the amount of thermal energy transferred in a chemical or physical process. This requires careful measurement of the temperature change that occurs during the process and the masses of the system and surroundings. These measured quantities are then used to compute the amount of heat produced or consumed in the process using known mathematical relations.</p><p>Calorimeters are designed to minimize energy exchange between their contents and the external environment. They range from simple coffee cup calorimeters used by introductory chemistry students to sophisticated bomb calorimeters used to determine the energy content of food.</p>",
+ "notes": "The four Link to Learning notes (the hand warmer video, the bomb calorimeter video, the calorimetric calculations site and the USDA nutrient database) are left out; Example 5.4 substitutes 4.18 J/g °C and solves with 4.184 J/g °C, the answer to Example 5.5’s Check Your Learning reads “1.34 × 10³ kJ, or 1.34 kJ”, and Example 5.7 computes −48.8 kJ and then states 48.7 kJ, all kept as printed.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercises fs-idm75457248 (coffee diluted with water), fs-idm57057808 (the 70.0-g metal), fs-idm66134336 (KCl in 50.0 g of water), fs-idm54145200 (NaCl and AgNO<sub>3</sub>), fs-idp17899648 (fructose), fs-idp26469408 (a ton of coal), fs-idp47280960 (a teaspoon of sucrose), fs-idm30519744 (a pint of ice cream) and fs-idp47244464 (cereal against isooctane) are left out, and so is part (a) of fs-idm5511248; its part (b) and the unkeyed conceptual exercises fs-idm40469024 and fs-idm15197120 and fs-idp3696624 are kept with a suggested approach marked as OmniStax’s own. The two questions on greater, lesser, or the same are set as choices over the book’s three words. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "fig-calorim2",
+   "kind": "photo",
+   "number": "5.13",
+   "draws": []
+  },
+  {
+   "id": "sim-calorimeter",
+   "kind": "sim",
+   "number": "5.11",
+   "folds": [
+    "5.12",
+    "5.14"
+   ],
+   "originals": [
+    "/media/ch05/CNX_Chem_05_02_HeatMeas.jpg",
+    "/media/ch05/CNX_Chem_05_02_Calorim.jpg",
+    "/media/ch05/CNX_Chem_05_02_HeatTrans2.jpg"
+   ],
+   "original_caption": "In a calorimetric determination, either (a) an exothermic process occurs and heat, q, is negative, indicating that thermal energy is transferred from the system to its surroundings, or (b) an endothermic process occurs and heat, q, is positive, indicating that thermal energy is transferred from the surroundings to the system. A simple calorimeter can be constructed from two polystyrene cups. A thermometer and stirrer extend through the cover into the reaction mixture. In a simple calorimetry process, (a) heat, q, is transferred from the hot metal, M, to the cool water, W, until (b) both are at the same temperature.",
+   "draws": [
+    "energy",
+    "temperature",
+    "mass"
+   ]
+  },
+  {
+   "id": "fig-hand-warmer",
+   "kind": "photo",
+   "number": "5.15",
+   "draws": []
+  },
+  {
+   "id": "fig-ice-pack",
+   "kind": "photo",
+   "number": "5.16",
+   "draws": []
+  },
+  {
+   "id": "fig-bomb",
+   "kind": "photo",
+   "number": "5.17",
+   "draws": []
+  },
+  {
+   "id": "fig-food-label",
+   "kind": "photo",
+   "number": "5.18",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "system",
+   "concept": "system-and-surroundings",
+   "verb": "introduces"
+  },
+  {
+   "span": "system",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "system",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "calorimeters",
+   "concept": "system-and-surroundings",
+   "verb": "uses"
+  },
+  {
+   "span": "heat-balance",
+   "concept": "calorimetry-heat-balance",
+   "verb": "introduces"
+  },
+  {
+   "span": "heat-balance",
+   "concept": "conservation-of-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "heat-balance",
+   "concept": "heat-specific-heat-relation",
+   "verb": "uses"
+  },
+  {
+   "span": "heat-balance",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-rebar",
+   "concept": "calorimetry-heat-balance",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-rebar",
+   "concept": "heat-specific-heat-relation",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-metal",
+   "concept": "calorimetry-heat-balance",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-metal",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "uses"
+  },
+  {
+   "span": "reaction-heat",
+   "concept": "heat-of-reaction-by-calorimetry",
+   "verb": "introduces"
+  },
+  {
+   "span": "reaction-heat",
+   "concept": "coffee-cup-calorimetry",
+   "verb": "introduces"
+  },
+  {
+   "span": "reaction-heat",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "reaction-heat",
+   "concept": "conservation-of-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-exothermic",
+   "concept": "coffee-cup-calorimetry",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-exothermic",
+   "concept": "heat-of-reaction-by-calorimetry",
+   "verb": "uses"
+  },
+  {
+   "span": "hand-warmers",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ice-pack",
+   "concept": "coffee-cup-calorimetry",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ice-pack",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "bomb",
+   "concept": "bomb-calorimetry",
+   "verb": "introduces"
+  },
+  {
+   "span": "bomb",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-bomb",
+   "concept": "bomb-calorimetry",
+   "verb": "uses"
+  },
+  {
+   "span": "nutrition",
+   "concept": "food-calories",
+   "verb": "introduces"
+  },
+  {
+   "span": "nutrition",
+   "concept": "energy-units",
+   "verb": "uses"
+  },
+  {
+   "span": "calories-note",
+   "concept": "food-calories",
+   "verb": "uses"
+  },
+  {
+   "span": "calories-note",
+   "concept": "bomb-calorimetry",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp13199280",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-rebar"
+   },
+   "cite": "heat-balance",
+   "prompt": "A 248-g piece of copper is dropped into 390 mL of water at 22.6 °C. The final temperature of the water was measured as 39.9 °C. Calculate the initial temperature of the piece of copper. Assume that all heat transfer occurs between the copper and the water.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 335.6,
+    "unit": "°C",
+    "hint": "Set the heat lost by the copper equal to the negative of the heat gained by the water, and use the specific heat of copper from Table 5.1.",
+    "solution": "The initial temperature of the copper was 335.6 °C."
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp13199280",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-rebar-2"
+   },
+   "cite": "heat-balance",
+   "prompt": "A 248-g piece of copper initially at 314 °C is dropped into 390 mL of water initially at 22.6 °C. Assuming that all heat transfer occurs between the copper and the water, calculate the final temperature.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 38.7,
+    "unit": "°C",
+    "hint": "The copper and the water end at the same temperature, so write both temperature changes with one unknown final temperature.",
+    "solution": "The final temperature (reached by both copper and water) is 38.7 °C."
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm80667088",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-metal"
+   },
+   "cite": "heat-balance",
+   "prompt": "A 92.9-g piece of a silver/gray metal is heated to 178.0 °C, and then quickly transferred into 75.0 mL of water initially at 24.0 °C. After 5 minutes, both the metal and the water have reached the same temperature: 29.7 °C. Determine the specific heat and the identity of the metal. (Note: You should find that the specific heat is close to that of two different metals. Explain how you can confidently determine the identity of the metal).",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.13,
+    "unit": "J/g °C",
+    "hint": "Solve the heat balance for the specific heat of the metal, then compare it with Table 5.1.",
+    "solution": "<em>c</em><sub>metal</sub>= 0.13 J/g °C. This specific heat is close to that of either gold or lead. It would be difficult to determine which metal this was based solely on the numerical values. However, the observation that the metal is silver/gray in addition to the value for the specific heat indicates that the metal is lead."
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm19242032",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-exothermic"
+   },
+   "cite": "reaction-heat",
+   "prompt": "When 100 mL of 0.200 M NaCl(<em>aq</em>) and 100 mL of 0.200 M AgNO<sub>3</sub>(<em>aq</em>), both at 21.9 °C, are mixed in a coffee cup calorimeter, the temperature increases to 23.5 °C as solid AgCl forms. How much heat is produced by this precipitation reaction? What assumptions did you make to determine your value?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.34,
+    "unit": "kJ",
+    "hint": "Treat the 200 mL of solution as 200 g of water and find the heat it absorbs.",
+    "solution": "1.34 × 10<sup>3</sup> kJ, or 1.34 kJ; assume no heat is absorbed by the calorimeter, no heat is exchanged between the calorimeter and its surroundings, and that the specific heat and density of the solution are the same as those for water"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp325184",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ice-pack"
+   },
+   "cite": "reaction-heat",
+   "prompt": "When a 3.00-g sample of KCl was added to 3.00 × 10<sup>2</sup> g of water in a coffee cup calorimeter, the temperature decreased by 1.05 °C. How much heat is involved in the dissolution of the KCl? What assumptions did you make?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.33,
+    "unit": "kJ",
+    "hint": "The solution holds 303 g, and the heat it loses is the heat the dissolution absorbs.",
+    "solution": "1.33 kJ; assume that the calorimeter prevents heat transfer between the solution and its external environment (including the calorimeter itself) and that the specific heat of the solution is the same as that for water"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idm49773520",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-bomb"
+   },
+   "cite": "bomb",
+   "prompt": "When 0.963 g of benzene, C<sub>6</sub>H<sub>6</sub>, is burned in a bomb calorimeter, the temperature of the calorimeter increases by 8.39 °C. The bomb has a heat capacity of 784 J/°C and is submerged in 925 mL of water. How much heat was produced by the combustion of the benzene sample?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": -39.0,
+    "unit": "kJ",
+    "hint": "Add the heat absorbed by the water to the heat absorbed by the bomb, and give the reaction the opposite sign.",
+    "solution": "q<sub>rx</sub> = –39.0 kJ (the reaction produced 39.0 kJ of heat)"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm40469024",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-balance",
+   "prompt": "A 500-mL bottle of water at room temperature and a 2-L bottle of water at the same temperature were placed in a refrigerator. After 30 minutes, the 500-mL bottle of water had cooled to the temperature of the refrigerator. An hour later, the 2-L of water had cooled to the same temperature. When asked which sample of water lost the most heat, one student replied that both bottles lost the same amount of heat because they started at the same temperature and finished at the same temperature. A second student thought that the 2-L bottle of water lost more heat because there was more water. A third student believed that the 500-mL bottle of water lost more heat because it cooled more quickly. A fourth student thought that it was not possible to tell because we do not know the initial temperature and the final temperature of the water. Indicate which of these answers is correct and describe the error in each of the other answers.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the heat each bottle loses as <em>q</em> = <em>c</em> × <em>m</em> × Δ<em>T</em>. Both bottles hold water, so <em>c</em> is the same, and both cool from the same starting temperature to the same final temperature, so Δ<em>T</em> is the same; the 2-L bottle holds four times the mass, so it loses four times the heat, and the second student is correct. The first student forgets that the heat depends on the mass as well as the temperature change. The third student confuses how fast the heat leaves with how much heat leaves, and the time taken does not appear in the equation. The fourth student is right that the temperatures are unknown, but the comparison needs only that Δ<em>T</em> is the same for both, so the answer can be found without them."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm72048864",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-exothermic",
+   "prompt": "Would the amount of heat measured for the reaction in Example 5.5 be greater, lesser, or remain the same if we used a calorimeter that was a poorer insulator than a coffee cup calorimeter? Explain your answer.",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "greater",
+     "lesser",
+     "remain the same"
+    ],
+    "correct": 1,
+    "solution": "lesser; more heat would be lost to the coffee cup and the environment and so Δ<em>T</em> for the water would be lesser and the calculated <em>q</em> would be lesser"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm15197120",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ice-pack",
+   "prompt": "Would the amount of heat absorbed by the dissolution in Example 5.6 appear greater, lesser, or remain the same if the experimenter used a calorimeter that was a poorer insulator than a coffee cup calorimeter? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Follow the heat that leaks through the poorer insulator. The dissolution cools the solution below the temperature of the room, so heat flows from the outside environment into the solution while the reaction runs. That heat partly makes up for the heat the dissolution takes from the solution, so the temperature falls by less than it would in a well-insulated calorimeter. Since the heat absorbed by the dissolution is calculated from the measured temperature change, it would appear lesser."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm40185072",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bomb",
+   "prompt": "Would the amount of heat absorbed by the dissolution in Example 5.6 appear greater, lesser, or remain the same if the heat capacity of the calorimeter were taken into account? Explain your answer.",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "greater",
+     "lesser",
+     "remain the same"
+    ],
+    "correct": 0,
+    "solution": "greater, since taking the calorimeter’s heat capacity into account will compensate for the thermal energy transferred to the solution from the calorimeter; this approach includes the calorimeter itself, along with the solution, as “surroundings”: <em>q</em><sub>rxn</sub> = −(<em>q</em><sub>solution</sub> + <em>q</em><sub>calorimeter</sub>); since both <em>q</em><sub>solution</sub> and <em>q</em><sub>calorimeter</sub> are negative, including the latter term (<em>q</em><sub>rxn</sub>) will yield a greater value for the heat of the dissolution"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm50720272",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-balance",
+   "prompt": "How much will the temperature of a cup (180 g) of coffee at 95 °C be reduced when a 45 g silver spoon (specific heat 0.24 J/g °C) at 25 °C is placed in the coffee and the two are allowed to reach the same temperature? Assume that the coffee has the same density and specific heat as water.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1,
+    "unit": "°C",
+    "hint": "The heat gained by the spoon equals the heat lost by the coffee, and both end at one temperature.",
+    "solution": "The temperature of the coffee will drop 1 degree."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm5511248",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-balance",
+   "prompt": "A 45-g aluminum spoon (specific heat 0.88 J/g °C) at 24 °C is placed in 180 mL (180 g) of coffee at 85 °C and the temperature of the two become equal. The first time a student solved this problem she got an answer of 88 °C. Explain why this is clearly an incorrect answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Think about which way the heat flows. Heat flows from the hot coffee to the cool spoon until the two reach the same temperature, so the coffee can only cool and the spoon can only warm. The final temperature must therefore lie between 24 °C and 85 °C. An answer of 88 °C is higher than the starting temperature of the hotter substance, which would mean that both the coffee and the spoon gained heat with nothing losing any, and energy cannot be created in this way."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm17023280",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-balance",
+   "prompt": "The temperature of the cooling water as it leaves the hot engine of an automobile is 240 °F. After it passes through the radiator it has a temperature of 175 °F. Calculate the amount of heat transferred from the engine to the surroundings by one gallon of water with a specific heat of 4.184 J/g °C.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 570,
+    "unit": "kJ",
+    "hint": "Convert the gallon to grams and the temperature change from degrees Fahrenheit to degrees Celsius first.",
+    "solution": "5.7 × 10<sup>2</sup> kJ"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm9202400",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reaction-heat",
+   "prompt": "If a reaction produces 1.506 kJ of heat, which is trapped in 30.0 g of water initially at 26.5 °C in a calorimeter like that in Figure 5.12, what is the resulting temperature of the water?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 38.5,
+    "unit": "°C",
+    "hint": "Divide the heat by the specific heat and the mass of the water to find the temperature change.",
+    "solution": "38.5 °C"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm68277040",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-exothermic",
+   "prompt": "Dissolving 3.0 g of CaCl<sub>2</sub>(<em>s</em>) in 150.0 g of water in a calorimeter (Figure 5.12) at 22.4 °C causes the temperature to rise to 25.8 °C. What is the approximate amount of heat involved in the dissolution, assuming the specific heat of the resulting solution is 4.18 J/g °C? Is the reaction exothermic or endothermic?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": -2.2,
+    "unit": "kJ",
+    "hint": "Use the mass of the whole solution, and give the dissolution the opposite sign to the heat the solution gains.",
+    "solution": "−2.2 kJ; The heat produced shows that the reaction is exothermic."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm11354032",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reaction-heat",
+   "prompt": "The addition of 3.15 g of Ba(OH)<sub>2</sub>·8H<sub>2</sub>O to a solution of 1.52 g of NH<sub>4</sub>SCN in 100 g of water in a calorimeter caused the temperature to fall by 3.1 °C. Assuming the specific heat of the solution and products is 4.20 J/g °C, calculate the approximate amount of heat absorbed by the reaction, which can be represented by the following equation: Ba(OH)<sub>2</sub>·8H<sub>2</sub>O(<em>s</em>) + 2NH<sub>4</sub>SCN(<em>aq</em>) ⟶ Ba(SCN)<sub>2</sub>(<em>aq</em>) + 2NH<sub>3</sub>(<em>aq</em>) + 10H<sub>2</sub>O(<em>l</em>)",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.4,
+    "unit": "kJ",
+    "hint": "The mass of the solution includes the two solids as well as the water.",
+    "solution": "1.4 kJ"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp3696624",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-exothermic",
+   "prompt": "The reaction of 50 mL of acid and 50 mL of base described in Example 5.5 increased the temperature of the solution by 6.9 °C. How much would the temperature have increased if 100 mL of acid and 100 mL of base had been used in the same calorimeter starting at the same temperature of 22.0 °C? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Compare how the heat and the mass change together. Doubling both volumes doubles the amounts of acid and base that react, so the reaction produces twice as much heat; it also doubles the mass of the solution that absorbs that heat. In Δ<em>T</em> = <em>q</em>/(<em>c</em> × <em>m</em>) the heat and the mass are both doubled, so the temperature change is the same, an increase of 6.9 °C, to 28.9 °C."
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp22524928",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ice-pack",
+   "prompt": "If the 3.21 g of NH<sub>4</sub>NO<sub>3</sub> in Example 5.6 were dissolved in 100.0 g of water under the same conditions, how much would the temperature change? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "22.6. Since the mass and the heat capacity of the solution is approximately equal to that of the water, the two-fold increase in the amount of water leads to a two-fold decrease of the temperature change."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp40934400",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-bomb",
+   "prompt": "When a 0.740-g sample of trinitrotoluene (TNT), C<sub>7</sub>H<sub>5</sub>N<sub>2</sub>O<sub>6</sub>, is burned in a bomb calorimeter, the temperature increases from 23.4 °C to 26.9 °C. The heat capacity of the calorimeter is 534 J/°C, and it contains 675 mL of water. How much heat was produced by the combustion of the TNT sample?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 11.7,
+    "unit": "kJ",
+    "hint": "Add the heat absorbed by the water to the heat absorbed by the calorimeter.",
+    "solution": "11.7 kJ"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp11692560",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calories-note",
+   "prompt": "The amount of fat recommended for someone with a daily diet of 2000 Calories is 65 g. What percent of the calories in this diet would be supplied by this amount of fat if the average number of Calories for fat is 9.1 Calories/g?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 30,
+    "unit": "%",
+    "hint": "Multiply the grams of fat by the Calories per gram, then compare with 2000 Calories.",
+    "solution": "30%"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp47067840",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calories-note",
+   "prompt": "What is the maximum mass of carbohydrate in a 6-oz serving of diet soda that contains less than 1 Calorie per can if the average number of Calories for carbohydrates is 4.1 Calories/g?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.24,
+    "unit": "g",
+    "hint": "Divide the Calories by the Calories per gram.",
+    "solution": "0.24 g"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idp1428384",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calories-note",
+   "prompt": "A serving of a breakfast cereal contains 3 g of protein, 18 g of carbohydrates, and 6 g of fat. What is the Calorie content of a serving of this cereal if the average number of Calories for fat is 9.1 Calories/g, for carbohydrates is 4.1 Calories/g, and for protein is 4.1 Calories/g?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 140,
+    "unit": "Calories",
+    "hint": "Multiply each mass by its Calories per gram and add the three products.",
+    "solution": "1.4 × 10<sup>2</sup> Calories"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "calorimetry-heat-balance",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "heat-specific-heat-relation",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "calorimetry-heat-balance",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "heat-specific-heat-relation",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "calorimetry-heat-balance",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "heat-capacity-and-specific-heat",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "coffee-cup-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "heat-of-reaction-by-calorimetry",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "coffee-cup-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "heat-of-reaction-by-calorimetry",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "bomb-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "heat-specific-heat-relation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "calorimetry-heat-balance",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "coffee-cup-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "system-and-surroundings",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "coffee-cup-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "system-and-surroundings",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "heat-of-reaction-by-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "system-and-surroundings",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "calorimetry-heat-balance",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "calorimetry-heat-balance",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "heat-flow",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "heat-specific-heat-relation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "heat-of-reaction-by-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "heat-specific-heat-relation",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "coffee-cup-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "exothermic-and-endothermic",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "coffee-cup-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "coffee-cup-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "heat-specific-heat-relation",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "coffee-cup-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "heat-specific-heat-relation",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "bomb-calorimetry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "food-calories",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "food-calories",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "food-calories",
+   "weights_by": "ai"
+  }
+ ]
+}

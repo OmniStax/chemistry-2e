@@ -1,0 +1,232 @@
+{
+ "id": "8",
+ "dir": "ch08",
+ "title": "Advanced Theories of Covalent Bonding",
+ "intro": {
+  "module": "m68743",
+  "slug": "8-introduction"
+ },
+ "sections": [
+  {
+   "id": "8.1",
+   "module": "m68744",
+   "title": "Valence Bond Theory",
+   "slug": "8-1-valence-bond-theory"
+  },
+  {
+   "id": "8.2",
+   "module": "m68745",
+   "title": "Hybrid Atomic Orbitals",
+   "slug": "8-2-hybrid-atomic-orbitals"
+  },
+  {
+   "id": "8.3",
+   "module": "m68746",
+   "title": "Multiple Bonds",
+   "slug": "8-3-multiple-bonds"
+  },
+  {
+   "id": "8.4",
+   "module": "m68747",
+   "title": "Molecular Orbital Theory",
+   "slug": "8-4-molecular-orbital-theory"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "E",
+   "type": "energy",
+   "meaning": "the energy of a system of two atoms, set at zero when the atoms are far apart",
+   "unit": "J",
+   "section": "8.1"
+  },
+  {
+   "sym": "r_bond",
+   "meaning": "the internuclear distance, the distance between the nuclei of the two atoms",
+   "unit": "pm",
+   "section": "8.1"
+  },
+  {
+   "sym": "ψ",
+   "meaning": "the wave function, which contains information about each orbital and the wavelike properties of electrons in an isolated atom",
+   "section": "8.2"
+  },
+  {
+   "sym": "Ψ",
+   "meaning": "the wave function of an electron in a molecule; its square, Ψ², describes a molecular orbital",
+   "section": "8.4"
+  }
+ ],
+ "equations": [
+  {
+   "id": "eq-bond-order",
+   "concept": "bond-order",
+   "section": "8.4",
+   "latex": "\\text{bond order}=\\frac{(\\text{number of bonding electrons})-(\\text{number of antibonding electrons})}{2}",
+   "important": true
+  },
+  {
+   "id": "eq-bond-order-h2",
+   "concept": "bond-order",
+   "section": "8.4",
+   "latex": "\\text{bond order in H}_2=\\frac{(2-0)}{2}=1",
+   "important": false
+  },
+  {
+   "id": "eq-bond-order-he2",
+   "concept": "bond-order",
+   "section": "8.4",
+   "latex": "\\text{bond order in He}_2=\\frac{(2-2)}{2}=0",
+   "important": false
+  },
+  {
+   "id": "eq-bond-order-o2",
+   "concept": "bond-order",
+   "section": "8.4",
+   "latex": "\\text{O}_2=\\frac{(8-4)}{2}=2",
+   "important": false
+  }
+ ],
+ "glossary": [
+  {
+   "section": "8.1",
+   "term": "overlap",
+   "definition": "coexistence of orbitals from two different atoms sharing the same region of space, leading to the formation of a covalent bond"
+  },
+  {
+   "section": "8.1",
+   "term": "node",
+   "definition": "plane separating different lobes of orbitals, where the probability of finding an electron is zero"
+  },
+  {
+   "section": "8.1",
+   "term": "pi bond (π bond)",
+   "definition": "covalent bond formed by side-by-side overlap of atomic orbitals; the electron density is found on opposite sides of the internuclear axis"
+  },
+  {
+   "section": "8.1",
+   "term": "sigma bond (σ bond)",
+   "definition": "covalent bond formed by overlap of atomic orbitals along the internuclear axis"
+  },
+  {
+   "section": "8.1",
+   "term": "valence bond theory",
+   "definition": "description of bonding that involves atomic orbitals overlapping to form σ or π bonds, within which pairs of electrons are shared"
+  },
+  {
+   "section": "8.2",
+   "term": "hybrid orbital",
+   "definition": "orbital created by combining atomic orbitals on a central atom"
+  },
+  {
+   "section": "8.2",
+   "term": "hybridization",
+   "definition": "model that describes the changes in the atomic orbitals of an atom when it forms a covalent compound"
+  },
+  {
+   "section": "8.2",
+   "term": "sp hybrid orbital",
+   "definition": "one of a set of two orbitals with a linear arrangement that results from combining one <em>s</em> and one <em>p</em> orbital"
+  },
+  {
+   "section": "8.2",
+   "term": "sp² hybrid orbital",
+   "definition": "one of a set of three orbitals with a trigonal planar arrangement that results from combining one <em>s</em> and two <em>p</em> orbitals"
+  },
+  {
+   "section": "8.2",
+   "term": "sp³ hybrid orbital",
+   "definition": "one of a set of four orbitals with a tetrahedral arrangement that results from combining one <em>s</em> and three <em>p</em> orbitals"
+  },
+  {
+   "section": "8.2",
+   "term": "sp³d hybrid orbital",
+   "definition": "one of a set of five orbitals with a trigonal bipyramidal arrangement that results from combining one <em>s</em>, three <em>p</em>, and one <em>d</em> orbital"
+  },
+  {
+   "section": "8.2",
+   "term": "sp³d² hybrid orbital",
+   "definition": "one of a set of six orbitals with an octahedral arrangement that results from combining one <em>s</em>, three <em>p</em>, and two <em>d</em> orbitals"
+  },
+  {
+   "section": "8.4",
+   "term": "antibonding orbital",
+   "definition": "molecular orbital located outside of the region between two nuclei; electrons in an antibonding orbital destabilize the molecule"
+  },
+  {
+   "section": "8.4",
+   "term": "bond order",
+   "definition": "number of pairs of electrons between two atoms; it can be found by the number of bonds in a Lewis structure or by the difference between the number of bonding and antibonding electrons divided by two"
+  },
+  {
+   "section": "8.4",
+   "term": "bonding orbital",
+   "definition": "molecular orbital located between two nuclei; electrons in a bonding orbital stabilize a molecule"
+  },
+  {
+   "section": "8.4",
+   "term": "degenerate orbitals",
+   "definition": "orbitals that have the same energy"
+  },
+  {
+   "section": "8.4",
+   "term": "diamagnetism",
+   "definition": "phenomenon in which a material is not magnetic itself but is repelled by a magnetic field; it occurs when there are only paired electrons present"
+  },
+  {
+   "section": "8.4",
+   "term": "homonuclear diatomic molecule",
+   "definition": "molecule consisting of two identical atoms"
+  },
+  {
+   "section": "8.4",
+   "term": "linear combination of atomic orbitals",
+   "definition": "technique for combining atomic orbitals to create molecular orbitals"
+  },
+  {
+   "section": "8.4",
+   "term": "molecular orbital",
+   "definition": "region of space in which an electron has a high probability of being found in a molecule"
+  },
+  {
+   "section": "8.4",
+   "term": "molecular orbital diagram",
+   "definition": "visual representation of the relative energy levels of molecular orbitals"
+  },
+  {
+   "section": "8.4",
+   "term": "molecular orbital theory",
+   "definition": "model that describes the behavior of electrons delocalized throughout a molecule in terms of the combination of atomic wave functions"
+  },
+  {
+   "section": "8.4",
+   "term": "paramagnetism",
+   "definition": "phenomenon in which a material is not magnetic itself but is attracted to a magnetic field; it occurs when there are unpaired electrons present"
+  },
+  {
+   "section": "8.4",
+   "term": "π bonding orbital",
+   "definition": "molecular orbital formed by side-by-side overlap of atomic orbitals, in which the electron density is found on opposite sides of the internuclear axis"
+  },
+  {
+   "section": "8.4",
+   "term": "π* bonding orbital",
+   "definition": "antibonding molecular orbital formed by out of phase side-by-side overlap of atomic orbitals, in which the electron density is found on both sides of the internuclear axis, and there is a node between the nuclei"
+  },
+  {
+   "section": "8.4",
+   "term": "σ bonding orbital",
+   "definition": "molecular orbital in which the electron density is found along the axis of the bond"
+  },
+  {
+   "section": "8.4",
+   "term": "σ* bonding orbital",
+   "definition": "antibonding molecular orbital formed by out-of-phase overlap of atomic orbital along the axis of the bond, generating a node between the nuclei"
+  },
+  {
+   "section": "8.4",
+   "term": "s-p mixing",
+   "definition": "change that causes σ<em><sub>p</sub></em> orbitals to be less stable than π<em><sub>p</sub></em> orbitals due to the mixing of <em>s</em> and <em>p</em>-based molecular orbitals of similar energies."
+  }
+ ]
+}

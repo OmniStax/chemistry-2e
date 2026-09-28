@@ -48,6 +48,62 @@
     {
       "sym": "R_inf",
       "latex": "R_{\\infty}"
+    },
+    {
+      "sym": "λ_max",
+      "latex": "\\lambda_{\\text{max}}",
+      "type": "wavelength",
+      "macro": "\\klammax"
+    },
+    {
+      "sym": "Δt",
+      "latex": "\\Delta t",
+      "type": "time",
+      "macro": "\\kdt"
+    },
+    {
+      "sym": "v",
+      "latex": "v"
+    },
+    {
+      "sym": "p_momentum",
+      "latex": "p"
+    },
+    {
+      "sym": "Δx",
+      "latex": "\\Delta x"
+    },
+    {
+      "sym": "Δp_x",
+      "latex": "\\Delta p_{x}"
+    },
+    {
+      "sym": "hbar",
+      "latex": "\\hbar"
+    },
+    {
+      "sym": "n_i",
+      "latex": "n_{\\text{i}}"
+    },
+    {
+      "sym": "n_f",
+      "latex": "n_{\\text{f}}"
+    },
+    {
+      "sym": "l_quantum",
+      "latex": "l"
+    },
+    {
+      "sym": "m_l",
+      "latex": "m_{l}"
+    },
+    {
+      "sym": "m_s",
+      "latex": "m_{s}"
+    },
+    {
+      "sym": "Z_eff",
+      "latex": "Z_{\\text{eff}}"
     }
   ],
   "concepts": [
@@ -56,14 +112,76 @@
       "kind": "idea",
       "section": "6.1",
       "name": "The energy of a photon",
-      "why": "Light is absorbed and emitted in discrete packets called photons, and the energy of one photon is set by the frequency of the radiation, E = hν, or equivalently by its wavelength, E = hc/λ. The Bohr model needs this before it can say anything at all, since the whole of its argument is that one photon carries away the difference between two orbital energies."
+      "eq": "eq-photon-energy",
+      "why": "Light is absorbed and emitted in discrete packets called photons, and the energy of one photon is set by the frequency of the radiation, E = hν, or equivalently by its wavelength, E = hc/λ. The Bohr model needs this before it can say anything at all, since the whole of its argument is that one photon carries away the difference between two orbital energies.",
+      "evidence": "The section states the relation as a key equation, Example 6.2 calculates the energy of a photon from a neon sign and its Check Your Learning that of a microwave photon, and several end-of-chapter exercises ask for the energy, frequency, or wavelength of a photon."
     },
     {
       "id": "line-spectra",
       "kind": "idea",
       "section": "6.1",
       "name": "Line spectra",
-      "why": "A gas excited by heat or by an electric current emits light at a few sharp wavelengths rather than over an unbroken band, and each element shows its own set of lines. Classical electromagnetic theory predicts a continuous spectrum and cannot account for this, which is the observation the Bohr model was built to explain."
+      "eq": "eq-rydberg",
+      "why": "A gas excited by heat or by an electric current emits light at a few sharp wavelengths rather than over an unbroken band, and each element shows its own set of lines. Classical electromagnetic theory predicts a continuous spectrum and cannot account for this, which is the observation the Bohr model was built to explain.",
+      "evidence": "The section contrasts continuous and line spectra in Figure 6.13, states the Balmer and Rydberg formulas, and the first end-of-chapter exercise asks the reader to describe the spectrum of a neon lamp."
+    },
+    {
+      "id": "wave-properties",
+      "kind": "idea",
+      "section": "6.1",
+      "name": "Wavelength, frequency, and amplitude",
+      "why": "Every wave, electromagnetic radiation included, is characterized by a wavelength, the distance between two consecutive peaks or troughs, a frequency, the number of cycles that pass a point per unit time, and an amplitude, one-half the height from peak to trough. The amplitude is related to the intensity of the wave, which for light is its brightness, and the wavelength and frequency are what the rest of the chapter measures light by.",
+      "evidence": "The section defines the three quantities where it introduces waves, Figure 6.2 draws them on waves of three frequencies, and the glossary carries each of them."
+    },
+    {
+      "id": "wave-speed-relation",
+      "kind": "result",
+      "section": "6.1",
+      "name": "The speed of a wave, $c=\\lambda\\nu$",
+      "eq": "eq-wave-speed",
+      "why": "The product of a wave's wavelength and its frequency is its speed, and for electromagnetic radiation in a vacuum that speed is the constant c. Wavelength and frequency are therefore inversely proportional: as one increases, the other decreases, and either one may be found from the other.",
+      "evidence": "The section states the relation as a key equation, Example 6.1 finds the frequency of the yellow light of a sodium streetlight and its Check Your Learning the wavelength of a cellular signal, and several end-of-chapter exercises ask for a wavelength or a frequency."
+    },
+    {
+      "id": "electromagnetic-spectrum",
+      "kind": "idea",
+      "section": "6.1",
+      "name": "The electromagnetic spectrum",
+      "why": "Electromagnetic radiation spans an enormous range of wavelengths, from gamma rays and X-rays through ultraviolet, visible, and infrared light to microwaves and radio waves, and visible light makes up only a small portion of it. Across the spectrum the energy and frequency increase as the wavelength decreases, and each region is put to its own uses.",
+      "evidence": "Figure 6.3 lays out the spectrum in order of decreasing frequency, the Chemistry in Everyday Life note places radio and cellular signals on it, and several exercises ask the reader to name the region or the color of a given radiation."
+    },
+    {
+      "id": "standing-waves-quantization",
+      "kind": "idea",
+      "section": "6.1",
+      "name": "Standing waves and quantization",
+      "why": "A standing wave is confined to a region of space, and a string held fixed at its two end points can form only those waves that have an integer number of half-wavelengths between them. This is an example of quantization, in which only discrete values of a property are observed, and the points between the ends that do not move are nodes, whose number grows with the energy of the wave.",
+      "evidence": "The section works through the vibrating string of Figure 6.7 and the vibrating drumhead of Figure 6.8, and the glossary defines standing wave, node, and quantization."
+    },
+    {
+      "id": "blackbody-radiation",
+      "kind": "idea",
+      "section": "6.1",
+      "name": "Blackbody radiation and Planck's quantized energies",
+      "eq": "eq-planck-quantization",
+      "why": "A heated object gives off a continuous spectrum whose distribution depends only on its temperature, and the peak of the curve moves to shorter wavelengths as the temperature rises. Classical theory predicted an intensity that grows without limit at short wavelengths, the ultraviolet catastrophe; Planck fitted the observed curves by restricting the vibrational energies to discrete values, E = nhν, which was the first appearance of energy quantization.",
+      "evidence": "The section compares sunlight with a blackbody at 5250 °C in Figure 6.9, draws the blackbody curves for several temperatures in Figure 6.10, and states Planck's quantization and the value of his constant."
+    },
+    {
+      "id": "photoelectric-effect",
+      "kind": "idea",
+      "section": "6.1",
+      "name": "The photoelectric effect",
+      "why": "Light ejects electrons from a clean metal surface only when its frequency is above a threshold, and the kinetic energy of the ejected electrons rises with the frequency and not with the brightness, while the number of electrons rises with the brightness. Einstein explained this by treating light as a stream of photons, each carrying the energy hν, so that only a photon with enough energy can free an electron.",
+      "evidence": "Figure 6.11 draws light of three wavelengths striking a metal, Example 6.3 asks which statements about the effect are true and its Check Your Learning calculates a threshold energy, and an end-of-chapter exercise asks for the threshold frequency of sodium."
+    },
+    {
+      "id": "wave-particle-duality",
+      "kind": "idea",
+      "section": "6.1",
+      "name": "Wave-particle duality",
+      "why": "Some phenomena of light, such as the interference fringes it makes after passing through two narrow slits, can be explained only by waves, while others, such as the photoelectric effect, can be explained only by particles. Light is both wavelike and particle-like, and this is called wave-particle duality; the next sections extend it to matter.",
+      "evidence": "The section describes the interference patterns of Figure 6.6, contrasts them with the photoelectric effect, and names wave-particle duality in its summary and its glossary."
     },
     {
       "id": "classical-atom-instability",
@@ -141,6 +259,206 @@
       "eq": "eq-bohr-transition",
       "why": "The second objective of the section is a calculation: given the two quantum numbers and the nuclear charge, find the energy difference from kZ²(1/n₁² − 1/n₂²), read its sign to say whether the photon is absorbed or emitted, and divide hc by its magnitude to get the wavelength. Doing it once with care is what turns the model from a picture into something that can be checked against a spectrum.",
       "evidence": "Example 6.5 works a transition from n = 4 to n = 6 in hydrogen through to a wavelength and names the part of the spectrum it falls in, its Check Your Learning repeats the work for He⁺, and four end-of-chapter exercises ask for the energy of a photon produced by a named transition in hydrogen, He⁺ or Li²⁺."
+    },
+    {
+      "id": "de-broglie-wavelength",
+      "kind": "result",
+      "section": "6.3",
+      "name": "The de Broglie wavelength, $\\lambda=h/mv$",
+      "eq": "eq-de-broglie",
+      "why": "De Broglie extended wave-particle duality to matter: a particle of mass m moving with velocity v behaves as a wave whose wavelength is Planck's constant divided by its momentum. The wavelength of an electron in an atom is about the size of the atom, so its wavelike behavior is noticeable there, while that of a softball is far too small to detect. Viewed as a circular standing wave, an electron fits an orbit only when a whole number of its wavelengths fits the circumference, which explains Bohr's quantization.",
+      "evidence": "The section states the relation and de Broglie's orbit condition, Figure 6.17 draws the electron wave about the nucleus, Figure 6.18 shows the interference pattern that electrons build up one by one, and Example 6.6 calculates the wavelength of an electron while its Check Your Learning does the same for a softball."
+    },
+    {
+      "id": "heisenberg-uncertainty",
+      "kind": "result",
+      "section": "6.3",
+      "name": "The Heisenberg uncertainty principle",
+      "eq": "eq-uncertainty",
+      "why": "It is fundamentally impossible to determine simultaneously and exactly both the momentum and the position of a particle: the product of the two uncertainties is at least ħ/2. The limit is too small to notice for a baseball, but the mass of an electron is small enough that the uncertainty is large and significant, which is why an electron in an atom cannot be given a precise orbit.",
+      "evidence": "The section states the principle and works the uncertainty in momentum for an electron located to within 1 pm, extends it to energy and time, and an end-of-chapter exercise asks the reader to state the principle and describe what it implies."
+    },
+    {
+      "id": "wavefunction-probability",
+      "kind": "idea",
+      "section": "6.3",
+      "name": "Wavefunctions and orbitals as probability",
+      "eq": "eq-schrodinger",
+      "why": "Schrödinger described electrons as three-dimensional stationary waves, or wavefunctions ψ, and Born interpreted them: the electron is still a particle, and the square of the magnitude of ψ gives the probability of finding it near a point in space. An atomic orbital is the region in which an electron is most probable to reside, so the quantum mechanical model describes where the electron is likely to be rather than a path it follows.",
+      "evidence": "The section introduces the Schrödinger equation and Born's interpretation, Figure 6.20 graphs the probability density of the s orbitals against the distance from the nucleus, and the first end-of-chapter exercise asks how the Bohr and quantum mechanical models of hydrogen are alike and how they differ."
+    },
+    {
+      "id": "principal-quantum-number-shells",
+      "kind": "idea",
+      "section": "6.3",
+      "name": "The principal quantum number and shells",
+      "eq": "eq-hydrogen-transition",
+      "why": "The principal quantum number n = 1, 2, 3, … labels the energy levels of an electron in an atom and is essentially the n of the Bohr atom. Orbitals with the same n form a shell, and the greater n is, the farther the electron is from the nucleus and the greater its energy; a transition between levels absorbs or emits a photon that carries the energy difference.",
+      "evidence": "Figure 6.19 numbers the shells about the nucleus, the section writes the energy change of a transition in hydrogen in terms of the initial and final values of n, and Table 6.1 gives the allowed values and physical meaning of n."
+    },
+    {
+      "id": "angular-momentum-quantum-number",
+      "kind": "idea",
+      "section": "6.3",
+      "name": "The secondary quantum number, subshells, and orbital shapes",
+      "why": "The secondary (angular momentum) quantum number l takes the integer values 0 to n − 1 and specifies the shape of an orbital: l = 0, 1, 2, 3 are the s, p, d, and f orbitals, and orbitals with the same n and l form a subshell. An s orbital is spherical and a p orbital is dumbbell-shaped, and an orbital has n − l − 1 radial nodes, distances at which the probability of finding the electron is zero.",
+      "evidence": "Figure 6.20 counts the radial nodes of the 1s, 2s, and 3s orbitals, Figure 6.21 draws the shapes of the s, p, d, and f orbitals, and Example 6.9 completes a table of orbitals, their quantum numbers, and their radial nodes."
+    },
+    {
+      "id": "magnetic-quantum-number",
+      "kind": "idea",
+      "section": "6.3",
+      "name": "The magnetic quantum number and degenerate orbitals",
+      "why": "The magnetic quantum number m_l takes the values −l to +l and specifies the orientation of an orbital in space, so a subshell holds 2l + 1 orbitals: one s, three p, five d, and seven f. Orbitals of the same subshell have the same energy and are called degenerate; in hydrogen all orbitals of one shell are degenerate, but in atoms with more than one electron the subshells of a shell differ in energy.",
+      "evidence": "The section counts the orbitals of each subshell, Figure 6.22 charts the energies of the subshells in a multi-electron atom, and two end-of-chapter exercises ask which subshells contain degenerate orbitals and how many."
+    },
+    {
+      "id": "spin-quantum-number",
+      "kind": "idea",
+      "section": "6.3",
+      "name": "The spin quantum number",
+      "why": "Each electron has an intrinsic spin, a completely quantum property with no classical analogue, and it can be in only one of two states, m_s = +1/2 or −1/2. An electron acts as a tiny magnet, and in an external magnetic field the two spin states have slightly different energies, which is why some lines of the hydrogen spectrum are closely spaced pairs.",
+      "evidence": "The section introduces spin through the fine structure of the hydrogen spectrum and Figure 6.23 draws the two spin states in a magnetic field."
+    },
+    {
+      "id": "pauli-exclusion-principle",
+      "kind": "result",
+      "section": "6.3",
+      "name": "The Pauli exclusion principle",
+      "why": "No two electrons in the same atom can have the same set of all four quantum numbers. Since the spin quantum number has only two values, an orbital can hold no more than two electrons, and two electrons in the same orbital must have opposite spins; this is the last piece of information needed to understand how electrons fill the orbitals of an atom.",
+      "evidence": "The section states the principle and summarizes the four quantum numbers in Table 6.1, Example 6.8 finds the maximum number of electrons in a shell, and an end-of-chapter exercise asks how many electrons the second shell could hold if the spin quantum number had three values."
+    },
+    {
+      "id": "working-with-quantum-numbers",
+      "kind": "skill",
+      "section": "6.3",
+      "name": "Working with shells, subshells, and quantum numbers",
+      "why": "Given a value of n, the reader lists the allowed values of l and m_l, names the subshells, counts the orbitals in each, and finds that a shell holds n² orbitals and at most 2n² electrons; given a set of quantum numbers, the reader names the subshell. This bookkeeping is what the next section uses to build the electron configurations of the atoms.",
+      "evidence": "Examples 6.7, 6.8, and 6.9 and their Check Your Learning items all ask for it, and several end-of-chapter exercises ask the reader to identify a subshell from n and l or to write a set of quantum numbers for an electron."
+    },
+    {
+      "id": "orbital-energy-order",
+      "kind": "idea",
+      "section": "6.4",
+      "name": "The energy order of atomic orbitals",
+      "why": "In an atom with two or more electrons, the energy of the orbitals increases with n and, within a shell, in the order s < p < d < f, because electrons with larger l penetrate less toward the nucleus and are more shielded by the inner electrons. For larger atoms the two trends overlap, so that the 4s orbital lies below the 3d and the filling order runs 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, and so on.",
+      "evidence": "Figure 6.24 charts the orbital energies of a multi-electron atom, Figure 6.26 gives the traditional way to remember the filling order, and the section explains why potassium adds its last electron to 4s rather than 3d."
+    },
+    {
+      "id": "aufbau-principle",
+      "kind": "result",
+      "section": "6.4",
+      "name": "The Aufbau principle",
+      "why": "The electron configurations of the elements are built by adding one proton to the nucleus and one electron at a time, each electron entering the subshell of lowest energy available, subject to the Pauli exclusion principle. Electrons enter higher-energy subshells only after the lower ones have been filled to capacity, and reading the periodic table in order of increasing Z gives the same order.",
+      "evidence": "The section builds the configurations from hydrogen through neon one electron at a time, Figure 6.27 shows how the periodic table gives the filling order, and Example 6.10 applies the principle to phosphorus."
+    },
+    {
+      "id": "hunds-rule",
+      "kind": "result",
+      "section": "6.4",
+      "name": "Hund's rule",
+      "why": "The lowest-energy configuration of electrons in a set of degenerate orbitals is the one with the maximum number of unpaired electrons: each orbital of a subshell is singly occupied, with all spins alike, before any is doubly occupied. So the two 2p electrons of carbon sit in different p orbitals with the same spin.",
+      "evidence": "The section states the rule at carbon and applies it to nitrogen, oxygen, fluorine, and neon, the glossary defines it, and an end-of-chapter exercise asks which of several atoms has two unpaired electrons."
+    },
+    {
+      "id": "writing-electron-configurations",
+      "kind": "skill",
+      "section": "6.4",
+      "name": "Writing electron configurations and orbital diagrams",
+      "why": "An electron configuration lists each occupied subshell by its n, its letter, and a superscript that counts its electrons, as in 1s²2s²2p⁴, and an orbital diagram draws each orbital as a box and each electron as an arrow. The inner electrons may be abbreviated by the symbol of the noble gas whose configuration they match, as in [Ne]3s¹ for sodium, and the reader writes either form for any atom and identifies an atom from its configuration.",
+      "evidence": "Figure 6.25 labels the parts of the notation, Figure 6.28 abbreviates the core of sodium, Example 6.10 writes the configuration and orbital diagram of phosphorus, and many end-of-chapter exercises ask for a configuration, an orbital diagram, or the atom a configuration belongs to."
+    },
+    {
+      "id": "valence-and-core-electrons",
+      "kind": "idea",
+      "section": "6.4",
+      "name": "Valence electrons and core electrons",
+      "why": "The electrons in the outermost shell are the valence electrons and those in the inner shells are the core electrons. Valence electrons have the highest energy, are the most easily lost or shared, and play the most important role in chemical reactions, and elements with the same number of valence electrons have similar chemical properties.",
+      "evidence": "The section defines both terms at sodium, Figure 6.28 marks the core and the valence electron of sodium, and an end-of-chapter exercise asks which of several atoms has only three valence electrons."
+    },
+    {
+      "id": "configuration-exceptions",
+      "kind": "idea",
+      "section": "6.4",
+      "name": "Exceptions to the predicted configurations",
+      "why": "Some atoms do not follow the predicted filling order because the subshells involved are very close in energy. Half-filled and completely filled subshells represent conditions of preferred stability, so chromium and copper each move an electron from 4s into 3d, and in niobium the repulsion of pairing two 5s electrons outweighs the small gap between 5s and 4d; there is no simple method to predict such exceptions.",
+      "evidence": "The section discusses chromium, copper, and niobium, and Figure 6.29 prints the observed configurations of every element."
+    },
+    {
+      "id": "periodic-table-blocks",
+      "kind": "idea",
+      "section": "6.4",
+      "name": "Electron configurations and the periodic table",
+      "why": "The periodic table puts elements whose atoms have the same number of valence electrons in the same group, which is why the chemical properties recur periodically. The subshell that receives the last electron divides the table into the main group elements (s and p), the transition elements (d), and the inner transition elements (f), and this classification decides which orbitals are counted in the valence shell.",
+      "evidence": "Figure 6.29 shows the configuration of every element in periodic-table form, the section describes the three categories with the valence electrons of each, and end-of-chapter exercises ask which group has a given valence configuration and why aluminum is in group 13 rather than group 3."
+    },
+    {
+      "id": "ion-configurations",
+      "kind": "skill",
+      "section": "6.4",
+      "name": "Electron configurations of ions",
+      "why": "A cation of a main group element loses the electrons that were added last, while a transition or inner transition metal loses its highest ns electrons before its (n − 1)d or (n − 2)f electrons; an anion adds electrons in the order the Aufbau principle predicts. The reader writes the configuration of an ion from that of its parent atom, and names an ion from a configuration and a charge.",
+      "evidence": "Example 6.11 writes the configurations of five ions from Na⁺ to Sm³⁺ and its Check Your Learning names the ions of a given configuration, and several end-of-chapter exercises ask for the configuration of a named ion."
+    },
+    {
+      "id": "effective-nuclear-charge",
+      "kind": "result",
+      "section": "6.5",
+      "name": "Effective nuclear charge, $Z_{\\text{eff}}=Z-\\text{shielding}$",
+      "eq": "eq-effective-nuclear-charge",
+      "why": "The pull the nucleus exerts on one electron is its charge less the shielding of the other electrons. Core electrons shield well, while electrons in the same valence shell shield each other poorly, so each step to the right across a period raises Z by one but the shielding only slightly, and the effective nuclear charge increases across a period.",
+      "evidence": "The section introduces the effective nuclear charge to explain why atoms get smaller across a period, and returns to it for the radii of ions and for electron affinities."
+    },
+    {
+      "id": "covalent-radius-trend",
+      "kind": "idea",
+      "section": "6.5",
+      "name": "The trend in covalent radius",
+      "why": "The covalent radius, one-half the distance between the nuclei of two identical atoms joined by a covalent bond, increases down a group because each step adds a shell farther from the nucleus, and decreases from left to right across a period because the rising effective nuclear charge draws the electrons closer.",
+      "evidence": "Table 6.2 and Figure 6.30 give the radii of the halogens, Figure 6.31 graphs the radius against atomic number, Example 6.12 sorts four atoms by radius, and several end-of-chapter exercises ask which atom is largest or smallest or for an order of increasing radius."
+    },
+    {
+      "id": "ionic-radius-trend",
+      "kind": "idea",
+      "section": "6.5",
+      "name": "The radii of ions and isoelectronic species",
+      "why": "A cation is smaller than its parent atom, since the remaining electrons feel a greater effective nuclear charge, and a cation of higher charge is smaller still; an anion is larger than its parent, since the added electrons repel one another. Atoms and ions with the same electron configuration are isoelectronic, and among them the one with the greater nuclear charge is the smaller.",
+      "evidence": "Figure 6.32 compares Al and S with Al³⁺ and S²⁻, the section lists two isoelectronic series, and several end-of-chapter exercises ask for an order of increasing ionic radius or for the species isoelectronic with a given ion."
+    },
+    {
+      "id": "ionization-energy-trend",
+      "kind": "idea",
+      "section": "6.5",
+      "name": "The trend in first ionization energy",
+      "eq": "eq-first-ionization",
+      "why": "The first ionization energy, the energy required to remove the most loosely bound electron from a gaseous atom, is always positive and generally decreases down a group and increases across a period, the opposite of the trend in size. It dips each time a new subshell begins, as from beryllium to boron, and again where a p subshell becomes more than half-filled, as from nitrogen to oxygen.",
+      "evidence": "Figure 6.33 graphs the first ionization energy against atomic number and Figure 6.34 gives its values in periodic-table form, the section explains the dips at boron and oxygen, and several end-of-chapter exercises ask for the largest or smallest first ionization energy or an order of increasing values."
+    },
+    {
+      "id": "successive-ionization-energies",
+      "kind": "idea",
+      "section": "6.5",
+      "name": "Successive ionization energies",
+      "eq": "eq-second-ionization",
+      "why": "Removing an electron from a cation is harder than removing one from a neutral atom, so the successive ionization energies of an element always increase. There is a large jump when the core electrons begin to be removed, which falls after the last valence electron: after the third ionization for scandium and gallium, for example.",
+      "evidence": "Table 6.3 lists the successive ionization energies of six elements, Example 6.13 ranks ionization processes that include a second and a third ionization, and an end-of-chapter exercise asks which main group atom has the lowest second ionization energy."
+    },
+    {
+      "id": "electron-affinity-trend",
+      "kind": "idea",
+      "section": "6.5",
+      "name": "The trend in electron affinity",
+      "eq": "eq-electron-affinity",
+      "why": "The electron affinity is the energy change when a gaseous atom accepts an electron, and it may be negative (energy released) or positive. Electron affinities tend to become more negative across a period as the effective nuclear charge increases, with exceptions in groups 2, 15, and 18 where a filled or half-filled subshell resists the added electron, and the second element of a group, such as chlorine, often has a more negative value than the first because the small n = 2 shell crowds its electrons.",
+      "evidence": "Figure 6.35 gives electron affinities in periodic-table form, and the section explains the exceptions and why chlorine has the most negative value of any element."
+    },
+    {
+      "id": "predicting-periodic-trends",
+      "kind": "skill",
+      "section": "6.5",
+      "name": "Predicting sizes and energies from the periodic table",
+      "why": "From the positions of elements in the periodic table the reader orders atoms and ions by radius, by ionization energy, or by electron affinity, putting the trend down a group together with the trend across a period and allowing for the exceptions the section explains. Because metallic character follows the same trend as size, the same reading tells which elements lose electrons most easily.",
+      "evidence": "Examples 6.12 and 6.13 and their Check Your Learning items ask for such orders, and most of the end-of-chapter exercises of the section ask the reader to predict which atom is largest, smallest, or hardest to ionize, or to rank several atoms or ions."
     }
   ],
   "concept_prereqs": [
@@ -215,6 +533,282 @@
     {
       "concept": "calculating-bohr-transition-energies",
       "prereq": "convert-units"
+    },
+    {
+      "concept": "wave-speed-relation",
+      "prereq": "wave-properties"
+    },
+    {
+      "concept": "wave-speed-relation",
+      "prereq": "scientific-notation"
+    },
+    {
+      "concept": "wave-speed-relation",
+      "prereq": "convert-units"
+    },
+    {
+      "concept": "electromagnetic-spectrum",
+      "prereq": "wave-speed-relation"
+    },
+    {
+      "concept": "standing-waves-quantization",
+      "prereq": "wave-properties"
+    },
+    {
+      "concept": "blackbody-radiation",
+      "prereq": "electromagnetic-spectrum"
+    },
+    {
+      "concept": "blackbody-radiation",
+      "prereq": "standing-waves-quantization"
+    },
+    {
+      "concept": "blackbody-radiation",
+      "prereq": "temperature-scales"
+    },
+    {
+      "concept": "photon-energy",
+      "prereq": "blackbody-radiation"
+    },
+    {
+      "concept": "photon-energy",
+      "prereq": "wave-speed-relation"
+    },
+    {
+      "concept": "photoelectric-effect",
+      "prereq": "photon-energy"
+    },
+    {
+      "concept": "wave-particle-duality",
+      "prereq": "photoelectric-effect"
+    },
+    {
+      "concept": "wave-particle-duality",
+      "prereq": "wave-properties"
+    },
+    {
+      "concept": "line-spectra",
+      "prereq": "electromagnetic-spectrum"
+    },
+    {
+      "concept": "line-spectra",
+      "prereq": "wave-speed-relation"
+    },
+    {
+      "concept": "de-broglie-wavelength",
+      "prereq": "wave-particle-duality"
+    },
+    {
+      "concept": "de-broglie-wavelength",
+      "prereq": "bohr-stationary-states"
+    },
+    {
+      "concept": "de-broglie-wavelength",
+      "prereq": "standing-waves-quantization"
+    },
+    {
+      "concept": "heisenberg-uncertainty",
+      "prereq": "de-broglie-wavelength"
+    },
+    {
+      "concept": "wavefunction-probability",
+      "prereq": "de-broglie-wavelength"
+    },
+    {
+      "concept": "wavefunction-probability",
+      "prereq": "heisenberg-uncertainty"
+    },
+    {
+      "concept": "principal-quantum-number-shells",
+      "prereq": "wavefunction-probability"
+    },
+    {
+      "concept": "principal-quantum-number-shells",
+      "prereq": "bohr-energy-levels"
+    },
+    {
+      "concept": "principal-quantum-number-shells",
+      "prereq": "photon-emission-absorption"
+    },
+    {
+      "concept": "angular-momentum-quantum-number",
+      "prereq": "principal-quantum-number-shells"
+    },
+    {
+      "concept": "magnetic-quantum-number",
+      "prereq": "angular-momentum-quantum-number"
+    },
+    {
+      "concept": "spin-quantum-number",
+      "prereq": "principal-quantum-number-shells"
+    },
+    {
+      "concept": "spin-quantum-number",
+      "prereq": "line-spectra"
+    },
+    {
+      "concept": "pauli-exclusion-principle",
+      "prereq": "spin-quantum-number"
+    },
+    {
+      "concept": "pauli-exclusion-principle",
+      "prereq": "magnetic-quantum-number"
+    },
+    {
+      "concept": "working-with-quantum-numbers",
+      "prereq": "pauli-exclusion-principle"
+    },
+    {
+      "concept": "working-with-quantum-numbers",
+      "prereq": "magnetic-quantum-number"
+    },
+    {
+      "concept": "orbital-energy-order",
+      "prereq": "angular-momentum-quantum-number"
+    },
+    {
+      "concept": "orbital-energy-order",
+      "prereq": "magnetic-quantum-number"
+    },
+    {
+      "concept": "aufbau-principle",
+      "prereq": "orbital-energy-order"
+    },
+    {
+      "concept": "aufbau-principle",
+      "prereq": "pauli-exclusion-principle"
+    },
+    {
+      "concept": "hunds-rule",
+      "prereq": "magnetic-quantum-number"
+    },
+    {
+      "concept": "hunds-rule",
+      "prereq": "spin-quantum-number"
+    },
+    {
+      "concept": "writing-electron-configurations",
+      "prereq": "aufbau-principle"
+    },
+    {
+      "concept": "writing-electron-configurations",
+      "prereq": "hunds-rule"
+    },
+    {
+      "concept": "writing-electron-configurations",
+      "prereq": "working-with-quantum-numbers"
+    },
+    {
+      "concept": "valence-and-core-electrons",
+      "prereq": "writing-electron-configurations"
+    },
+    {
+      "concept": "configuration-exceptions",
+      "prereq": "writing-electron-configurations"
+    },
+    {
+      "concept": "periodic-table-blocks",
+      "prereq": "valence-and-core-electrons"
+    },
+    {
+      "concept": "ion-configurations",
+      "prereq": "writing-electron-configurations"
+    },
+    {
+      "concept": "effective-nuclear-charge",
+      "prereq": "orbital-energy-order"
+    },
+    {
+      "concept": "effective-nuclear-charge",
+      "prereq": "valence-and-core-electrons"
+    },
+    {
+      "concept": "effective-nuclear-charge",
+      "prereq": "hydrogen-like-ions"
+    },
+    {
+      "concept": "covalent-radius-trend",
+      "prereq": "effective-nuclear-charge"
+    },
+    {
+      "concept": "covalent-radius-trend",
+      "prereq": "principal-quantum-number-shells"
+    },
+    {
+      "concept": "ionic-radius-trend",
+      "prereq": "ion-configurations"
+    },
+    {
+      "concept": "ionic-radius-trend",
+      "prereq": "effective-nuclear-charge"
+    },
+    {
+      "concept": "ionization-energy-trend",
+      "prereq": "covalent-radius-trend"
+    },
+    {
+      "concept": "ionization-energy-trend",
+      "prereq": "orbital-energy-order"
+    },
+    {
+      "concept": "ionization-energy-trend",
+      "prereq": "bohr-energy-levels"
+    },
+    {
+      "concept": "successive-ionization-energies",
+      "prereq": "ionization-energy-trend"
+    },
+    {
+      "concept": "successive-ionization-energies",
+      "prereq": "valence-and-core-electrons"
+    },
+    {
+      "concept": "electron-affinity-trend",
+      "prereq": "effective-nuclear-charge"
+    },
+    {
+      "concept": "electron-affinity-trend",
+      "prereq": "periodic-table-blocks"
+    },
+    {
+      "concept": "predicting-periodic-trends",
+      "prereq": "covalent-radius-trend"
+    },
+    {
+      "concept": "predicting-periodic-trends",
+      "prereq": "ionic-radius-trend"
+    },
+    {
+      "concept": "predicting-periodic-trends",
+      "prereq": "ionization-energy-trend"
+    },
+    {
+      "concept": "predicting-periodic-trends",
+      "prereq": "electron-affinity-trend"
+    },
+    {
+      "concept": "ion-configurations",
+      "prereq": "ions-and-atomic-charge"
+    },
+    {
+      "concept": "periodic-table-blocks",
+      "prereq": "periods-and-groups"
+    },
+    {
+      "concept": "periodic-table-blocks",
+      "prereq": "element-families"
+    },
+    {
+      "concept": "ionization-energy-trend",
+      "prereq": "exothermic-and-endothermic"
+    },
+    {
+      "concept": "covalent-radius-trend",
+      "prereq": "ionic-and-covalent-bonds"
+    },
+    {
+      "concept": "aufbau-principle",
+      "prereq": "atomic-number-and-mass-number"
     }
   ]
 }

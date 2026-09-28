@@ -1,0 +1,328 @@
+{
+ "id": "7.1",
+ "module": "m68737",
+ "chapter": "7",
+ "title": "Ionic Bonding",
+ "short": "Ionic Bonding",
+ "lead": "Sodium, a soft metal, and chlorine, a poisonous gas, combine to form table salt, a compound of ions with properties entirely its own. This section explains how metal atoms lose electrons and nonmetal atoms gain them to form ions, why the formula of an ionic compound describes a lattice rather than a molecule, and how to predict the charges of monatomic ions and write their electron configurations.",
+ "objectives": [
+  "Explain the formation of cations, anions, and ionic compounds",
+  "Predict the charge of common metallic and nonmetallic elements, and write their electron configurations"
+ ],
+ "summary_html": "<p>Atoms gain or lose electrons to form ions with particularly stable electron configurations. The charges of cations formed by the representative metals may be determined readily because, with few exceptions, the electronic structures of these ions have either a noble gas configuration or a completely filled electron shell. The charges of anions formed by the nonmetals may also be readily determined because these ions form when nonmetal atoms gain enough electrons to fill their valence shells.</p>",
+ "notes": "Nothing of the book’s section is left out.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed items fs-idm89581104, fs-idm143212928 and fs-idm58592256, each of which asks for a definite prediction the book does not key, are left out, and the unkeyed conceptual items fs-idp12729440 and fs-idm677136 carry a suggested approach marked as OmniStax’s own. The exercise on a molecule of solid NaCl (fs-idp49074848) is printed in Section 7.2 and is set here, where the lattice it asks about is introduced.",
+ "figures": [
+  {
+   "id": "fig-nacl-photos",
+   "kind": "photo",
+   "number": "7.2",
+   "draws": []
+  },
+  {
+   "id": "sim-charge-balance",
+   "kind": "sim",
+   "draws": []
+  },
+  {
+   "id": "sim-nacl-lattice",
+   "kind": "sim",
+   "number": "7.3",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_01_NaClStruc-1938.jpg"
+   ],
+   "original_caption": "The atoms in sodium chloride (common table salt) are arranged to (a) maximize opposite charges interacting. The smaller spheres represent sodium ions, the larger ones represent chloride ions. In the expanded view (b), the geometry can be seen more clearly. Note that each ion is “bonded” to all of the surrounding ions—six in this case.",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "ionic-compounds",
+   "concept": "ionic-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-compounds",
+   "concept": "ions-and-atomic-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "formation",
+   "concept": "ionic-lattice",
+   "verb": "introduces"
+  },
+  {
+   "span": "formation",
+   "concept": "ionic-bond",
+   "verb": "reinforces"
+  },
+  {
+   "span": "formation",
+   "concept": "ionic-compound-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "formation",
+   "concept": "metals-nonmetals-metalloids",
+   "verb": "uses"
+  },
+  {
+   "span": "cations",
+   "concept": "predict-ion-charge",
+   "verb": "introduces"
+  },
+  {
+   "span": "cations",
+   "concept": "ion-electron-configuration",
+   "verb": "introduces"
+  },
+  {
+   "span": "cations",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "anions",
+   "concept": "predict-ion-charge",
+   "verb": "reinforces"
+  },
+  {
+   "span": "anions",
+   "concept": "ion-electron-configuration",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm91310448",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-cations"
+   },
+   "cite": "cations",
+   "prompt": "Potassium and magnesium are required in our diet. Write the electron configurations of the ions expected from these elements.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "K<sup>+</sup>: [Ar], Mg<sup>2+</sup>: [Ne]"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp63594560",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-anions"
+   },
+   "cite": "anions",
+   "prompt": "Write the electron configurations of a phosphorus atom and its negative ion. Give the charge on the anion.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "P: [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>3</sup>; P<sup>3–</sup>: [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm118463568",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-compounds",
+   "prompt": "Does a cation gain protons to form a positive charge or does it lose electrons?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The protons in the nucleus do not change during normal chemical reactions. Only the outer electrons move. Positive charges form when electrons are lost."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp12729440",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formation",
+   "prompt": "Iron(III) sulfate [Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>] is composed of Fe<sup>3+</sup> and ${\\text{SO}}_{4}{}^{\\text{2−}}$ ions. Explain why a sample of iron(III) sulfate is uncharged.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Count the charges as the section does for aluminum oxide. The formula says how many of each ion the compound contains for every formula unit, so multiply each ion’s charge by its subscript and add the positive and negative totals. Since all substances must be electrically neutral, the formula of an ionic compound is the simplest ratio of ions in which these totals are equal."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp63165504",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formation",
+   "prompt": "Which of the following atoms would be expected to form negative ions in binary ionic compounds and which would be expected to form positive ions: P, I, Mg, Cl, In, Cs, O, Pb, Co?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "P, I, Cl, and O would form anions because they are nonmetals. Mg, In, Cs, Pb, and Co would form cations because they are metals."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm94727984",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cations",
+   "prompt": "Predict the charge on the monatomic ions formed from the following atoms in binary ionic compounds:<br>(a) P<br>(b) Mg<br>(c) Al<br>(d) O<br>(e) Cl<br>(f) Cs",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) P<sup>3–</sup>; (b) Mg<sup>2+</sup>; (c) Al<sup>3+</sup>; (d) O<sup>2–</sup>; (e) Cl<sup>–</sup>; (f) Cs<sup>+</sup>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm69463840",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cations",
+   "prompt": "Write the electron configuration for each of the following ions:<br>(a) As<sup>3–</sup><br>(b) I<sup>–</sup><br>(c) Be<sup>2+</sup><br>(d) Cd<sup>2+</sup><br>(e) O<sup>2–</sup><br>(f) Ga<sup>3+</sup><br>(g) Li<sup>+</sup><br>(h) N<sup>3–</sup><br>(i) Sn<sup>2+</sup><br>(j) Co<sup>2+</sup><br>(k) Fe<sup>2+</sup><br>(l) As<sup>3+</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) [Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>; (b) [Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>6</sup> (c) 1<em>s</em><sup>2</sup> (d) [Kr]4<em>d</em><sup>10</sup>; (e) [He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; (f) [Ar]3<em>d</em><sup>10</sup>; (g) 1<em>s</em><sup>2</sup> (h) [He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup> (i) [Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup> (j) [Ar]3<em>d</em><sup>7</sup> (k) [Ar]3<em>d</em><sup>6</sup>, (l) [Ar]3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm117401984",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "cations",
+   "prompt": "Write out the full electron configuration for each of the following atoms and for the monatomic ion found in binary ionic compounds containing the element:<br>(a) Al<br>(b) Br<br>(c) Sr<br>(d) Li<br>(e) As<br>(f) S",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>; Al<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; (b) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>5</sup>; 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>; (c) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>; Sr<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>; (d) 1<em>s</em><sup>2</sup>2<em>s</em><sup>1</sup>; Li<sup>+</sup>: 1<em>s</em><sup>2</sup>; (e) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>3</sup>; 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>; (f) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>4</sup>; 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm677136",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formation",
+   "prompt": "From the labels of several commercial products, prepare a list of six ionic compounds in the products. For each compound, write the formula. (You may need to look up some formulas in a suitable reference.)",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Look for names that pair a metal with a nonmetal or with a polyatomic ion, such as sodium chloride in table salt, sodium fluoride in toothpaste or calcium carbonate in antacids. For each, write the charges of the two ions and choose the smallest numbers of each whose positive and negative charges cancel, as the section does for Al<sub>2</sub>O<sub>3</sub>; that ratio is the formula."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp49074848",
+   "source_section": "7.2",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formation",
+   "prompt": "Why is it incorrect to speak of a molecule of solid NaCl?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "NaCl consists of discrete ions arranged in a crystal lattice, not covalently bonded molecules."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "ion-electron-configuration"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ion-electron-configuration"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e1",
+   "concept": "ionic-bond"
+  },
+  {
+   "exercise": "e2",
+   "concept": "ionic-lattice"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ionic-bond"
+  },
+  {
+   "exercise": "e3",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e4",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e5",
+   "concept": "ion-electron-configuration"
+  },
+  {
+   "exercise": "e6",
+   "concept": "ion-electron-configuration"
+  },
+  {
+   "exercise": "e6",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e7",
+   "concept": "ionic-lattice"
+  },
+  {
+   "exercise": "e7",
+   "concept": "predict-ion-charge"
+  },
+  {
+   "exercise": "e8",
+   "concept": "ionic-lattice"
+  }
+ ]
+}

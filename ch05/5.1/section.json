@@ -1,0 +1,522 @@
+{
+ "id": "5.1",
+ "module": "m68724",
+ "chapter": "5",
+ "title": "Energy Basics",
+ "short": "Energy Basics",
+ "lead": "Energy is the capacity to supply heat or do work, and every chemical and physical change converts it from one form into another without creating or destroying any. This section distinguishes thermal energy, temperature and heat, follows heat as it flows from a hotter body to a cooler one, and relates the heat a substance gains or loses to its specific heat, its mass and its temperature change.",
+ "objectives": [
+  "Define energy, distinguish types of energy, and describe the nature of energy changes that accompany chemical and physical changes",
+  "Distinguish the related properties of heat, thermal energy, and temperature",
+  "Define and distinguish specific heat and heat capacity, and describe the physical implications of both",
+  "Perform calculations involving heat, specific heat, and temperature change"
+ ],
+ "summary_html": "<p>Energy is the capacity to supply heat or do work (applying a force to move matter). Kinetic energy (KE) is the energy of motion; potential energy is energy due to relative position, composition, or condition. When energy is converted from one form into another, energy is neither created nor destroyed (law of conservation of energy or first law of thermodynamics).</p><p>The thermal energy of matter is due to the kinetic energies of its constituent atoms or molecules. Temperature is an intensive property of matter reflecting hotness or coldness that increases as the average kinetic energy increases. Heat is the transfer of thermal energy between objects at different temperatures. Chemical and physical processes can absorb heat (endothermic) or release heat (exothermic). The SI unit of energy, heat, and work is the joule (J).</p><p>Specific heat and heat capacity are measures of the energy needed to change the temperature of a substance or object. The amount of heat absorbed or released by a substance depends directly on the type of substance, its mass, and the temperature change it undergoes.</p>",
+ "notes": "The three Link to Learning notes are left out: the PhET simulation of the effects of temperature on molecular motion, the demonstration of a coiled bimetallic strip, and the PhET simulation of energy forms and changes; the figure of Figures 5.4 and 5.6 takes the place of the first and the third. Figure 5.2, a collage of a cheeseburger, a highway and a furnace that opens the section, is left out. Table 5.1 lists silicon last, out of its descending order, as the book prints it.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed exercises fs-idm38026992 (the heat capacities of 28.4 g of water and 1.00 oz of lead), fs-idm26658464 (heating a 75.0-g iron block to its melting point), fs-idm42475152 (the temperature rise of 275 g of water given 36.5 kJ), fs-idp43279360 (the 44.7-g unknown substance) and fs-idp36071488 (the aluminum kettle) are left out. The unkeyed exercise fs-idp25217856, on the energy transitions of an automobile, is kept with a suggested approach written by OmniStax. The identity asked for in the second Check Your Learning and in part (b) of fs-idp36064736 is not checked; it is given in the answer. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "fig-waterfall",
+   "kind": "photo",
+   "number": "5.3",
+   "draws": []
+  },
+  {
+   "id": "fig-thermometers",
+   "kind": "photo",
+   "number": "5.5",
+   "draws": []
+  },
+  {
+   "id": "sim-heat-flow",
+   "kind": "sim",
+   "number": "5.4",
+   "folds": [
+    "5.6"
+   ],
+   "originals": [
+    "/media/ch05/CNX_Chem_05_01_HotCold.jpg",
+    "/media/ch05/CNX_Chem_05_01_HeatTrans1.jpg"
+   ],
+   "original_caption": "(Figure 5.4) (a) The molecules in a sample of hot water move more rapidly than (b) those in a sample of cold water. (Figure 5.6) (a) Substances H and L are initially at different temperatures, and their atoms have different average kinetic energies. (b) When they contact each other, collisions between the molecules result in the transfer of kinetic (thermal) energy from the hotter to the cooler matter. (c) The two objects reach “thermal equilibrium” when both substances are at the same temperature and their molecules have the same average kinetic energy.",
+   "draws": [
+    "temperature",
+    "energy"
+   ]
+  },
+  {
+   "id": "fig-torch",
+   "kind": "photo",
+   "number": "5.7",
+   "draws": []
+  },
+  {
+   "id": "fig-pans",
+   "kind": "photo",
+   "number": "5.8",
+   "draws": []
+  },
+  {
+   "id": "sim-heating",
+   "kind": "sim",
+   "draws": [
+    "energy",
+    "temperature",
+    "mass"
+   ]
+  },
+  {
+   "id": "fig-solana",
+   "kind": "photo",
+   "number": "5.9",
+   "draws": []
+  },
+  {
+   "id": "fig-ivanpah",
+   "kind": "photo",
+   "number": "5.10",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "thermochemistry",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "energy",
+   "concept": "energy-and-work",
+   "verb": "introduces"
+  },
+  {
+   "span": "energy",
+   "concept": "potential-and-kinetic-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "conservation",
+   "concept": "conservation-of-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "conservation",
+   "concept": "potential-and-kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "thermal",
+   "concept": "thermal-energy-and-temperature",
+   "verb": "introduces"
+  },
+  {
+   "span": "thermal",
+   "concept": "potential-and-kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "heat",
+   "concept": "heat-flow",
+   "verb": "introduces"
+  },
+  {
+   "span": "heat",
+   "concept": "thermal-energy-and-temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "exo-endo",
+   "concept": "exothermic-and-endothermic",
+   "verb": "introduces"
+  },
+  {
+   "span": "exo-endo",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "energy-units",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "capacity",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "introduces"
+  },
+  {
+   "span": "capacity",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "capacity",
+   "concept": "energy-units",
+   "verb": "uses"
+  },
+  {
+   "span": "heat-equation",
+   "concept": "heat-specific-heat-relation",
+   "verb": "introduces"
+  },
+  {
+   "span": "heat-equation",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-measuring-heat",
+   "concept": "heat-specific-heat-relation",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-other-quantities",
+   "concept": "heat-specific-heat-relation",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-other-quantities",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "uses"
+  },
+  {
+   "span": "solar",
+   "concept": "heat-capacity-and-specific-heat",
+   "verb": "uses"
+  },
+  {
+   "span": "solar",
+   "concept": "conservation-of-energy",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp1783792",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-measuring-heat"
+   },
+   "cite": "heat-equation",
+   "prompt": "How much heat, in joules, must be added to a 502 g iron skillet to increase its temperature from 25 °C to 250 °C? The specific heat of iron is 0.449 J/g °C.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 50700,
+    "unit": "J",
+    "hint": "Multiply the specific heat by the mass and by the temperature change, 250 °C − 25 °C.",
+    "solution": "5.07 $\\times$ 10<sup>4</sup> J"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm41581920",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-other-quantities"
+   },
+   "cite": "heat-equation",
+   "prompt": "A piece of unknown metal weighs 217 g. When the metal piece absorbs 1.43 kJ of heat, its temperature increases from 24.5 °C to 39.1 °C. Determine the specific heat of this metal, and predict its identity.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "specific heat",
+      "value": 0.451,
+      "unit": "J/g °C",
+      "hint": "Divide the heat in joules by the mass times the temperature change."
+     }
+    ],
+    "solution": "<em>c</em> = 0.451 J/g °C; the metal is likely to be iron"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm60138800",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "capacity",
+   "prompt": "A burning match and a bonfire may have the same temperature, yet you would not sit around a burning match on a fall evening to stay warm. Why not?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The temperature of 1 gram of burning wood is approximately the same for both a match and a bonfire. This is an intensive property and depends on the material (wood). However, the overall amount of produced heat depends on the amount of material; this is an extensive property. The amount of wood in a bonfire is much greater than that in a match; the total amount of produced heat is also much greater, which is why we can sit around a bonfire to stay warm, but a match would not provide enough heat to keep us from getting cold."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp25217856",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conservation",
+   "prompt": "Prepare a table identifying several energy transitions that take place during the typical operation of an automobile.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "One way to begin is to follow the energy from the fuel tank to the road. Gasoline stores chemical energy, a type of potential energy, in its molecules. When it is combusted in the cylinders, that chemical energy becomes thermal energy of the hot gaseous products, and the rapidly expanding gases move the pistons, so part of it becomes mechanical (kinetic) energy that turns the crankshaft and the wheels. The alternator converts some of that mechanical energy into electrical energy, which the battery stores as chemical potential energy and which the lights turn into light and heat. The brakes convert the kinetic energy of the moving car into heat by friction, and much of the energy of the fuel leaves as heat in the exhaust and the radiator. A table of these transitions might list, for each, the part of the car, the form of energy before, and the form after."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm60216128",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "capacity",
+   "prompt": "Explain the difference between heat capacity and specific heat of a substance.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Heat capacity refers to the heat required to raise the temperature of the mass of the substance 1 degree; specific heat refers to the heat required to raise the temperature of 1 gram of the substance 1 degree. Thus, heat capacity is an extensive property, and specific heat is an intensive one."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm11773136",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "capacity",
+   "prompt": "Calculate the heat capacity, in joules and in calories per degree, of the following: (a) 45.8 g of nitrogen gas (b) 1.00 pound of aluminum metal",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) in J/°C",
+      "value": 47.6,
+      "unit": "J/°C",
+      "hint": "Multiply the specific heat of nitrogen from Table 5.1 by the mass."
+     },
+     {
+      "part": "(a) in cal/°C",
+      "value": 11.38,
+      "unit": "cal/°C",
+      "hint": "Divide the joules by 4.184 J/cal."
+     },
+     {
+      "part": "(b) in J/°C",
+      "value": 407,
+      "unit": "J/°C",
+      "hint": "One pound is 453.6 g; multiply by the specific heat of aluminum."
+     },
+     {
+      "part": "(b) in cal/°C",
+      "value": 97.3,
+      "unit": "cal/°C",
+      "hint": "Divide the joules by 4.184 J/cal."
+     }
+    ],
+    "solution": "(a) 47.6 J/°C; 11.38 cal °C<sup>−1</sup>; (b) 407 J/°C; 97.3 cal °C<sup>−1</sup>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm34686800",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-equation",
+   "prompt": "How much heat, in joules and in calories, is required to heat a 28.4-g (1-oz) ice cube from −23.0 °C to −1.0 °C?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "in joules",
+      "value": 1310,
+      "unit": "J",
+      "hint": "Use the specific heat of ice from Table 5.1 and a temperature change of 22.0 °C."
+     },
+     {
+      "part": "in calories",
+      "value": 313,
+      "unit": "cal",
+      "hint": "Divide the joules by 4.184 J/cal."
+     }
+    ],
+    "solution": "1310 J; 313 cal"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp13559760",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-equation",
+   "prompt": "If 14.5 kJ of heat were added to 485 g of liquid water, how much would its temperature increase?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 7.15,
+    "unit": "°C",
+    "hint": "Solve q = c × m × ΔT for ΔT, with q in joules and c = 4.184 J/g °C.",
+    "solution": "7.15 °C"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp36064736",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-equation",
+   "prompt": "A piece of unknown solid substance weighs 437.2 g, and requires 8460 J to increase its temperature from 19.3 °C to 68.9 °C. (a) What is the specific heat of the substance? (b) If it is one of the substances found in Table 5.1, what is its likely identity?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.39,
+      "unit": "J/g °C",
+      "hint": "Divide the heat by the mass times the temperature change."
+     }
+    ],
+    "solution": "(a) 0.390 J/g °C; (b) Copper is a likely candidate."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp23764656",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heat-equation",
+   "prompt": "Most people find waterbeds uncomfortable unless the water temperature is maintained at about 85 °F. Unless it is heated, a waterbed that contains 892 L of water cools from 85 °F to 72 °F in 24 hours. Estimate the amount of electrical energy required over 24 hours, in kWh, to keep the bed from cooling. Note that 1 kilowatt-hour (kWh) = 3.6 $\\times$ 10<sup>6</sup> J, and assume that the density of water is 1.0 g/mL (independent of temperature). What other assumptions did you make? How did they affect your calculated result (i.e., were they likely to yield “positive” or “negative” errors)?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "energy",
+      "value": 7.47,
+      "unit": "kWh",
+      "hint": "Convert the temperature change to degrees Celsius, find the heat with q = c × m × ΔT, and divide by 3.6 × 10<sup>6</sup> J/kWh."
+     }
+    ],
+    "solution": "We assume that the density of water is 1.0 g/cm<sup>3</sup>(1 g/mL) and that it takes as much energy to keep the water at 85 °F as to heat it from 72 °F to 85 °F. We also assume that only the water is going to be heated. Energy required = 7.47 kWh"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "heat-capacity-and-specific-heat",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "heat-capacity-and-specific-heat"
+  },
+  {
+   "exercise": "e1",
+   "concept": "thermal-energy-and-temperature",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "conservation-of-energy"
+  },
+  {
+   "exercise": "e2",
+   "concept": "potential-and-kinetic-energy",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "heat-capacity-and-specific-heat"
+  },
+  {
+   "exercise": "e4",
+   "concept": "heat-capacity-and-specific-heat"
+  },
+  {
+   "exercise": "e4",
+   "concept": "energy-units",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "e5",
+   "concept": "energy-units",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "e7",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "e7",
+   "concept": "heat-capacity-and-specific-heat",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "heat-specific-heat-relation"
+  },
+  {
+   "exercise": "e8",
+   "concept": "energy-units",
+   "weight": 2,
+   "weights_by": "ai"
+  }
+ ]
+}

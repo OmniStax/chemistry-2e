@@ -1,0 +1,267 @@
+{
+ "id": "2.1",
+ "module": "m68685",
+ "chapter": "2",
+ "title": "Early Ideas in Atomic Theory",
+ "short": "Early atomic theory",
+ "lead": "The idea that matter is made of atoms is older than chemistry, but it became a scientific theory only when John Dalton used it to explain what could be measured. This section sets out Dalton’s postulates and the two laws of mass they account for: every sample of a compound contains its elements in the same proportion by mass, and when two elements form more than one compound, the masses of one that combine with a fixed mass of the other stand in a ratio of small whole numbers.",
+ "objectives": [
+  "State the postulates of Dalton’s atomic theory",
+  "Use postulates of Dalton’s atomic theory to explain the laws of definite and multiple proportions"
+ ],
+ "summary_html": "<p>The ancient Greeks proposed that matter consists of extremely small particles called atoms. Dalton postulated that each element has a characteristic type of atom that differs in properties from atoms of all other elements, and that atoms of different elements can combine in fixed, small, whole-number ratios to form compounds. Samples of a particular compound all have the same elemental proportions by mass. When two elements form different compounds, a given mass of one element will combine with masses of the other element in a small, whole-number ratio. During any chemical change, atoms are neither created nor destroyed.</p>",
+ "notes": "The section prints no Link to Learning note and no boxed note, and nothing of it is left out.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Both Check Your Learning items carry the book’s own answers, and the two odd-numbered exercises carry the book’s key. The two even-numbered exercises (fs-idp28065472 and fs-idp146757152) have no keyed answer; both ask for a judgment about Dalton’s postulates or the laws of mass rather than a single number, so they are kept with an AI-written suggested approach, marked as generated, that gives the method without standing in for the key. Nothing was left out and nothing was held for another section.",
+ "figures": [
+  {
+   "id": "fig-penny",
+   "kind": "photo",
+   "number": "2.2",
+   "draws": []
+  },
+  {
+   "id": "fig-copper-oxide",
+   "kind": "photo",
+   "number": "2.3",
+   "draws": []
+  },
+  {
+   "id": "sim-copper-oxygen",
+   "kind": "sim",
+   "number": "2.4",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_01_Dalton3.jpg"
+   ],
+   "original_caption": "When the elements copper (a shiny, red-brown solid, shown here as brown spheres) and oxygen (a clear and colorless gas, shown here as red spheres) react, their atoms rearrange to form a compound containing copper and oxygen (a powdery, black solid). (credit copper: modification of work by http://images-of-elements.com/copper.php)",
+   "draws": []
+  },
+  {
+   "id": "fig-dalton-test",
+   "kind": "figure",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_01_Dalton6_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "sim-isooctane",
+   "kind": "sim",
+   "draws": [
+    "mass"
+   ]
+  },
+  {
+   "id": "sim-copper-chlorides",
+   "kind": "sim",
+   "number": "2.5",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_01_MultProp.jpg"
+   ],
+   "original_caption": "Compared to the copper chlorine compound in (a), where copper is represented by brown spheres and chlorine by green spheres, the copper chlorine compound in (b) has twice as many chlorine atoms per copper atom. (credit a: modification of work by “Benjah-bmm27”/Wikimedia Commons; credit b: modification of work by “Walkerma”/Wikimedia Commons)",
+   "draws": [
+    "mass"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "daltons-postulates",
+   "concept": "daltons-atomic-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "daltons-postulates",
+   "concept": "atoms-and-molecules",
+   "verb": "uses"
+  },
+  {
+   "span": "daltons-postulates",
+   "concept": "elements-and-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "daltons-postulates",
+   "concept": "conservation-of-matter",
+   "verb": "uses"
+  },
+  {
+   "span": "definite-proportions",
+   "concept": "law-of-definite-proportions",
+   "verb": "introduces"
+  },
+  {
+   "span": "definite-proportions",
+   "concept": "daltons-atomic-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "multiple-proportions",
+   "concept": "law-of-multiple-proportions",
+   "verb": "introduces"
+  },
+  {
+   "span": "multiple-proportions",
+   "concept": "law-of-definite-proportions",
+   "verb": "uses"
+  },
+  {
+   "span": "multiple-proportions",
+   "concept": "daltons-atomic-theory",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp23171216",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-testing-dalton"
+   },
+   "figure": {
+    "src": "/media/ch02/CNX_Chem_02_01_Dalton8_img.jpg",
+    "alt": "This equation shows that the starting materials of the reaction are two sets of bonded, green spheres which are each being combined with two smaller, bonded blue spheres. The products of the change are two molecules that each contain one blue sphere bonded between two green spheres."
+   },
+   "prompt": "In the following drawing, the green spheres represent atoms of a certain element. The blue spheres represent atoms of another element. If the spheres touch, they are part of a single unit of a compound. Does the following chemical change represented by these symbols violate any of the ideas of Dalton’s atomic theory? If so, which one?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The starting materials consist of four green spheres and two blue spheres. The products consist of four green spheres and two blue spheres. This does not violate any of Dalton’s postulates: Atoms are neither created nor destroyed, but are redistributed in small, whole-number ratios."
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp28025040",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-proportions"
+   },
+   "prompt": "A sample of compound X (a clear, colorless, combustible liquid with a noticeable odor) is analyzed and found to contain 14.13 g carbon and 2.96 g hydrogen. A sample of compound Y (a clear, colorless, combustible liquid with a noticeable odor that is slightly different from X’s odor) is analyzed and found to contain 19.91 g carbon and 3.34 g hydrogen. Are these data an example of the law of definite proportions, the law of multiple proportions, or neither? What do these data tell you about substances X and Y?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "In compound X, the mass ratio of carbon to hydrogen is $\\frac{\\text{14.13 g C}}{\\text{2.96 g H}}.$ In compound Y, the mass ratio of carbon to hydrogen is $\\frac{\\text{19.91 g C}}{\\text{3.34 g H}}.$ The ratio of these ratios is $\\frac{\\frac{\\text{14.13 g C}}{\\text{2.96 g H}}}{\\frac{\\text{19.91 g C}}{\\text{3.34 g H}}}\\;=\\;\\frac{\\text{4.77 g C/g H}}{\\text{5.96 g C/g H}}\\;=0.800=\\;\\frac{4}{5}.$ This small, whole-number ratio supports the law of multiple proportions. This means that X and Y are different compounds."
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp69222896",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "daltons-postulates",
+   "figure": {
+    "src": "/media/ch02/CNX_Chem_02_01_Dalton10_img.jpg",
+    "alt": "This equation contains the starting materials of a single, green sphere plus two smaller, blue spheres bonded together. When the starting materials are added together the products of the change are one blue sphere bonded with one green sphere plus one blue sphere bonded with one green sphere."
+   },
+   "prompt": "In the following drawing, the green spheres represent atoms of a certain element. The blue spheres represent atoms of another element. If the spheres of different elements touch, they are part of a single unit of a compound. The following chemical change represented by these spheres may violate one of the ideas of Dalton’s atomic theory. Which one?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The starting materials consist of one green sphere and two blue spheres. The products consist of two green spheres and two blue spheres. This violates Dalton’s postulate that that atoms are not created during a chemical change, but are merely redistributed."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp28065472",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "daltons-postulates",
+   "prompt": "Which postulate of Dalton’s theory is consistent with the following observation concerning the weights of reactants and products? When 100 grams of solid calcium carbonate is heated, 44 grams of carbon dioxide and 56 grams of calcium oxide are produced.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Compare the total mass before the change with the total mass after it. Ask what must be true of the atoms themselves if the mass of the products adds up to the mass of the calcium carbonate that was heated, and then find the postulate among the five that says the same thing about atoms in a chemical change."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm83132240",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "definite-proportions",
+   "prompt": "Identify the postulate of Dalton’s theory that is violated by the following observations: 59.95% of one sample of titanium dioxide is titanium; 60.10% of a different sample of titanium dioxide is titanium.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "This statement violates Dalton’s fourth postulate: In a given compound, the numbers of atoms of each type (and thus also the percentage) always have the same ratio."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp146757152",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multiple-proportions",
+   "prompt": "Samples of compound X, Y, and Z are analyzed, with results shown here.<table><thead><tr><th>Compound</th><th>Description</th><th>Mass of Carbon</th><th>Mass of Hydrogen</th></tr></thead><tbody><tr><td>X</td><td>clear, colorless, liquid with strong odor</td><td>1.776 g</td><td>0.148 g</td></tr><tr><td>Y</td><td>clear, colorless, liquid with strong odor</td><td>1.974 g</td><td>0.329 g</td></tr><tr><td>Z</td><td>clear, colorless, liquid with strong odor</td><td>7.812 g</td><td>0.651 g</td></tr></tbody></table>Do these data provide example(s) of the law of definite proportions, the law of multiple proportions, neither, or both? What do these data tell you about compounds X, Y, and Z?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Work out the mass of carbon per gram of hydrogen for each compound, as Example 2.2 does. Two compounds with the same ratio are consistent with the law of definite proportions and may be samples of the same substance, although, as the section notes, the same ratio does not prove they are. Two compounds with different ratios are different substances, and if the ratio of their two ratios is a small whole-number ratio, the pair is an example of the law of multiple proportions. Compare all three pairs before deciding whether the data show one law, the other, both, or neither."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "daltons-atomic-theory"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "law-of-multiple-proportions"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "law-of-definite-proportions"
+  },
+  {
+   "exercise": "e1",
+   "concept": "daltons-atomic-theory"
+  },
+  {
+   "exercise": "e2",
+   "concept": "daltons-atomic-theory"
+  },
+  {
+   "exercise": "e2",
+   "concept": "conservation-of-matter"
+  },
+  {
+   "exercise": "e3",
+   "concept": "daltons-atomic-theory"
+  },
+  {
+   "exercise": "e3",
+   "concept": "law-of-definite-proportions"
+  },
+  {
+   "exercise": "e4",
+   "concept": "law-of-definite-proportions"
+  },
+  {
+   "exercise": "e4",
+   "concept": "law-of-multiple-proportions"
+  }
+ ]
+}

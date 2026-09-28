@@ -1,0 +1,153 @@
+{
+ "id": "2.6",
+ "module": "m68696",
+ "chapter": "2",
+ "title": "Ionic and Molecular Compounds",
+ "short": "Ionic and Molecular Compounds",
+ "lead": "Atoms can gain or lose electrons to form ions, and the periodic table predicts which ions many elements form and what charges they carry. This section introduces monatomic and polyatomic ions, distinguishes ionic bonds from covalent bonds, shows how the charges of the ions fix the formula of an ionic compound, and uses the positions of elements in the periodic table to predict whether a compound is ionic or molecular.",
+ "objectives": [
+  "Define ionic and molecular (covalent) compounds",
+  "Predict the type of compound formed from elements based on their location within the periodic table",
+  "Determine formulas for simple ionic compounds"
+ ],
+ "summary_html": "<p>Metals (particularly those in groups 1 and 2) tend to lose the number of electrons that would leave them with the same number of electrons as in the preceding noble gas in the periodic table. By this means, a positively charged ion is formed. Similarly, nonmetals (especially those in groups 16 and 17, and, to a lesser extent, those in Group 15) can gain the number of electrons needed to provide atoms with the same number of electrons as in the next noble gas in the periodic table. Thus, nonmetals tend to form negative ions. Positively charged ions are called cations, and negatively charged ions are called anions. Ions can be either monatomic (containing only one atom) or polyatomic (containing more than one atom).</p><p>Compounds that contain ions are called ionic compounds. Ionic compounds generally form from metals and nonmetals. Compounds that do not contain ions, but instead consist of atoms bonded tightly together in molecules (uncharged groups of atoms that behave as a single unit), are called covalent compounds. Covalent compounds usually form from two nonmetals.</p>",
+ "notes": "The Link to Learning note with a video of a mixture of salts melting and conducting electricity is left out. Table 2.5 is printed with the four columns of its cells, which differ from the three columns of the book’s summary of the table.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed exercises fs-idp44267360 (whether six chlorides are ionic or covalent), fs-idp4856416 (whether six compounds are ionic or covalent, and their ions) and fs-idp286976176 (the formulas of five compounds from pairs of ions) are left out.",
+ "figures": [
+  {
+   "id": "sim-na-cation",
+   "kind": "sim",
+   "number": "2.28",
+   "originals": ["/media/ch02/CNX_Chem_02_06_NaCation.jpg"],
+   "original_caption": "(a) A sodium atom (Na) has equal numbers of protons and electrons (11) and is uncharged. (b) A sodium cation (Na<sup>+</sup>) has lost an electron, so it has one more proton (11) than electrons (10), giving it an overall positive charge, signified by a superscripted plus sign.",
+   "draws": ["charge"]
+  },
+  { "id": "fig-ion-charges", "kind": "photo", "number": "2.29", "draws": [] },
+  { "id": "fig-nacl-molten", "kind": "photo", "number": "2.30", "draws": [] },
+  { "id": "sim-ionic-formula", "kind": "sim", "draws": ["charge"] },
+  { "id": "fig-sapphire", "kind": "photo", "number": "2.31", "draws": [] }
+ ],
+ "coverage": [
+  { "span": "ions", "concept": "predict-ion-charge-from-group", "verb": "introduces" },
+  { "span": "ions", "concept": "ions-and-atomic-charge", "verb": "uses" },
+  { "span": "ions", "concept": "periods-and-groups", "verb": "uses" },
+  { "span": "ex-ion-composition", "concept": "composition-of-an-atom", "verb": "uses" },
+  { "span": "ex-ion-formation", "concept": "predict-ion-charge-from-group", "verb": "reinforces" },
+  { "span": "ex-ion-formation", "concept": "metals-nonmetals-metalloids", "verb": "uses" },
+  { "span": "polyatomic-ions", "concept": "polyatomic-ions", "verb": "introduces" },
+  { "span": "bonds", "concept": "ionic-and-covalent-bonds", "verb": "introduces" },
+  { "span": "ionic-compounds", "concept": "ionic-compounds", "verb": "introduces" },
+  { "span": "ionic-compounds", "concept": "ionic-compound-formula", "verb": "introduces" },
+  { "span": "ionic-compounds", "concept": "ionic-and-covalent-bonds", "verb": "uses" },
+  { "span": "ex-sapphire", "concept": "ionic-compound-formula", "verb": "reinforces" },
+  { "span": "ex-polyatomic-formula", "concept": "ionic-compound-formula", "verb": "reinforces" },
+  { "span": "ex-polyatomic-formula", "concept": "polyatomic-ions", "verb": "uses" },
+  { "span": "molecular-compounds", "concept": "molecular-compounds", "verb": "introduces" },
+  { "span": "molecular-compounds", "concept": "metals-nonmetals-metalloids", "verb": "uses" },
+  { "span": "ex-bond-type", "concept": "predict-bond-type", "verb": "introduces" },
+  { "span": "ex-bond-type", "concept": "ionic-compounds", "verb": "uses" }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm11079584",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-ion-composition" },
+   "cite": "ex-ion-composition",
+   "prompt": "Give the symbol and name for the ion with 34 protons and 36 electrons.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Se<sup>2−</sup>, the selenide ion" }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp51588352",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-ion-formation" },
+   "cite": "ex-ion-formation",
+   "prompt": "Aluminum and carbon react to form an ionic compound. Predict which forms an anion, which forms a cation, and the charges of each ion. Write the symbol for each ion and name them.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Al will form a cation with a charge of 3+: Al<sup>3+</sup>, an aluminum ion. Carbon will form an anion with a charge of 4−: C<sup>4−</sup>, a carbide ion." }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp75448432",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-sapphire" },
+   "cite": "ex-sapphire",
+   "prompt": "Predict the formula of the ionic compound formed between the sodium cation, Na<sup>+</sup>, and the sulfide anion, S<sup>2−</sup>.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Na<sub>2</sub>S" }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp2219712",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-polyatomic-formula" },
+   "cite": "ex-polyatomic-formula",
+   "prompt": "Predict the formula of the ionic compound formed between the lithium ion and the peroxide ion, ${\\text{O}}_{2}{}^{2-}$ (Hint: Use the periodic table to predict the sign and the charge on the lithium ion.)",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Li<sub>2</sub>O<sub>2</sub>" }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp411086368",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-bond-type" },
+   "cite": "ex-bond-type",
+   "prompt": "Using the periodic table, predict whether the following compounds are ionic or covalent: (a) SO<sub>2</sub> (b) CaF<sub>2</sub> (c) N<sub>2</sub>H<sub>4</sub> (d) Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>",
+   "answer": { "type": "open", "generated_by": "source", "solution": "(a) molecular; (b) ionic; (c) molecular; (d) ionic" }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp298677568",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "molecular-compounds",
+   "prompt": "Using the periodic table, predict whether the following chlorides are ionic or covalent: KCl, NCl<sub>3</sub>, ICl, MgCl<sub>2</sub>, PCl<sub>5</sub>, and CCl<sub>4</sub>.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Ionic: KCl, MgCl<sub>2</sub>; Covalent: NCl<sub>3</sub>, ICl, PCl<sub>5</sub>, CCl<sub>4</sub>" }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp221295264",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "ionic-compounds",
+   "prompt": "For each of the following compounds, state whether it is ionic or covalent. If it is ionic, write the symbols for the ions involved: (a) NF<sub>3</sub> (b) BaO (c) (NH<sub>4</sub>)<sub>2</sub>CO<sub>3</sub> (d) Sr(H<sub>2</sub>PO<sub>4</sub>)<sub>2</sub> (e) IBr (f) Na<sub>2</sub>O",
+   "answer": { "type": "open", "generated_by": "source", "solution": "(a) covalent; (b) ionic, Ba<sup>2+</sup>, O<sup>2−</sup>; (c) ionic, ${\\text{NH}}_{4}{}^{+}\\text{,}$ ${\\text{CO}}_{3}{}^{2-};$ (d) ionic, Sr<sup>2+</sup>, ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-};$ (e) covalent; (f) ionic, Na<sup>+</sup>, O<sup>2−</sup>" }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp178456496",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "ionic-compounds",
+   "prompt": "For each of the following pairs of ions, write the formula of the compound they will form: (a) Ca<sup>2+</sup>, S<sup>2−</sup> (b) ${\\text{NH}}_{4}{}^{+}\\text{,}$ ${\\text{SO}}_{4}{}^{2-}$ (c) Al<sup>3+</sup>, Br<sup>−</sup> (d) Na<sup>+</sup>, ${\\text{HPO}}_{4}{}^{2-}$ (e) Mg<sup>2+</sup>, ${\\text{PO}}_{4}{}^{3-}$",
+   "answer": { "type": "open", "generated_by": "source", "solution": "(a) CaS; (b) (NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub>; (c) AlBr<sub>3</sub>; (d) Na<sub>2</sub>HPO<sub>4</sub>; (e) Mg<sub>3</sub> (PO<sub>4</sub>)<sub>2</sub>" }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "cyl1", "concept": "composition-of-an-atom" },
+  { "exercise": "cyl1", "concept": "predict-ion-charge-from-group" },
+  { "exercise": "cyl2", "concept": "predict-ion-charge-from-group" },
+  { "exercise": "cyl3", "concept": "ionic-compound-formula" },
+  { "exercise": "cyl4", "concept": "ionic-compound-formula" },
+  { "exercise": "cyl4", "concept": "polyatomic-ions" },
+  { "exercise": "cyl5", "concept": "predict-bond-type" },
+  { "exercise": "e1", "concept": "predict-bond-type" },
+  { "exercise": "e2", "concept": "predict-bond-type" },
+  { "exercise": "e2", "concept": "polyatomic-ions" },
+  { "exercise": "e2", "concept": "predict-ion-charge-from-group" },
+  { "exercise": "e3", "concept": "ionic-compound-formula" },
+  { "exercise": "e3", "concept": "polyatomic-ions" }
+ ]
+}

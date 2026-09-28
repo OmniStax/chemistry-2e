@@ -46,6 +46,93 @@
   ],
   "variables": [
     {
+      "sym": "EN",
+      "meaning": "the electronegativity of an atom, the tendency of the atom to attract the electrons of a bond toward itself, on Pauling's relative scale from 0 to 4",
+      "section": "7.2"
+    },
+    {
+      "sym": "ΔEN",
+      "meaning": "the absolute value of the difference in electronegativity between two bonded atoms, a rough measure of the polarity of the bond",
+      "section": "7.2"
+    },
+    {
+      "sym": "D_bond",
+      "type": "energy",
+      "meaning": "the bond energy, the energy required to break one mole of a particular covalent bond in gaseous molecules; always positive",
+      "unit": "kJ/mol",
+      "section": "7.5"
+    },
+    {
+      "sym": "ΔH",
+      "type": "energy",
+      "meaning": "the enthalpy change of a reaction, estimated from the bond energies of the bonds broken and formed",
+      "unit": "kJ",
+      "section": "7.5"
+    },
+    {
+      "sym": "ΔH°",
+      "type": "energy",
+      "meaning": "the standard enthalpy change of a reaction",
+      "unit": "kJ",
+      "section": "7.5"
+    },
+    {
+      "sym": "ΔH_lattice",
+      "type": "energy",
+      "meaning": "the lattice energy, the energy required to separate one mole of an ionic solid into its gaseous ions",
+      "unit": "kJ/mol",
+      "section": "7.5"
+    },
+    {
+      "sym": "C_lattice",
+      "meaning": "a constant that depends on the type of crystal structure",
+      "section": "7.5"
+    },
+    {
+      "sym": "Z_plus",
+      "meaning": "the charge on the cation",
+      "section": "7.5"
+    },
+    {
+      "sym": "Z_minus",
+      "meaning": "the charge on the anion",
+      "section": "7.5"
+    },
+    {
+      "sym": "R_o",
+      "meaning": "the interionic distance, the sum of the radii of the positive and negative ions",
+      "unit": "pm",
+      "section": "7.5"
+    },
+    {
+      "sym": "ΔH_f°",
+      "type": "energy",
+      "meaning": "the standard enthalpy of formation of the ionic compound from its elements",
+      "unit": "kJ/mol",
+      "section": "7.5"
+    },
+    {
+      "sym": "ΔH_s°",
+      "type": "energy",
+      "meaning": "the enthalpy of sublimation of the metal",
+      "unit": "kJ/mol",
+      "section": "7.5"
+    },
+    {
+      "sym": "IE",
+      "type": "energy",
+      "meaning": "the ionization energy of the metal atom",
+      "unit": "kJ/mol",
+      "section": "7.5"
+    },
+    {
+      "sym": "EA",
+      "type": "energy",
+      "meaning": "the electron affinity of the nonmetal atom, negative when the step releases energy",
+      "unit": "kJ/mol",
+      "section": "7.5"
+    },
+    {
       "sym": "μ",
       "meaning": "the bond dipole moment, the magnitude of the separation of charge in a bond",
       "unit": "C·m",
@@ -68,6 +155,57 @@
     }
   ],
   "equations": [
+    {
+      "id": "eq-formal-charge",
+      "concept": "formal-charge",
+      "section": "7.4",
+      "latex": "\\text{formal charge}=\\text{\\# valence shell electrons (free atom)}-\\text{\\# lone pair electrons}-\\frac{1}{2}\\,\\text{\\# bonding electrons}",
+      "important": true
+    },
+    {
+      "id": "eq-bond-energy",
+      "concept": "bond-energy",
+      "section": "7.5",
+      "latex": "\\text{XY}(g)\\longrightarrow\\text{X}(g)+\\text{Y}(g)\\qquad D_{\\text{X–Y}}=\\Delta H^{\\circ}",
+      "ktex": "\\text{XY}(g)\\longrightarrow\\text{X}(g)+\\text{Y}(g)\\qquad \\kDbond_{\\text{X–Y}}=\\kdHo",
+      "condition": "a diatomic molecule XY in the gas phase",
+      "important": true
+    },
+    {
+      "id": "eq-enthalpy-bond-energies",
+      "concept": "enthalpy-from-bond-energies",
+      "section": "7.5",
+      "latex": "\\Delta H=\\sum D_{\\text{bonds broken}}-\\sum D_{\\text{bonds formed}}",
+      "ktex": "\\kdH=\\sum \\kDbond_{\\text{bonds broken}}-\\sum \\kDbond_{\\text{bonds formed}}",
+      "condition": "an estimate from average bond energies, for a reaction of gases",
+      "important": true
+    },
+    {
+      "id": "eq-lattice-energy-definition",
+      "concept": "lattice-energy",
+      "section": "7.5",
+      "latex": "\\text{MX}(s)\\longrightarrow\\text{M}^{n+}(g)+\\text{X}^{n-}(g)\\qquad \\Delta H_{\\text{lattice}}",
+      "ktex": "\\text{MX}(s)\\longrightarrow\\text{M}^{n+}(g)+\\text{X}^{n-}(g)\\qquad \\kdHlat",
+      "important": true
+    },
+    {
+      "id": "eq-lattice-energy-coulomb",
+      "concept": "lattice-energy-trends",
+      "section": "7.5",
+      "latex": "\\Delta H_{\\text{lattice}}=\\frac{C(Z^{+})(Z^{-})}{R_{\\text{o}}}",
+      "ktex": "\\kdHlat=\\frac{C(Z^{+})(Z^{-})}{R_{\\text{o}}}",
+      "condition": "an ionic crystal; C depends on the type of crystal structure",
+      "important": true
+    },
+    {
+      "id": "eq-born-haber",
+      "concept": "born-haber-cycle",
+      "section": "7.5",
+      "latex": "\\Delta H_{\\text{f}}^{\\circ}=\\Delta H_{s}^{\\circ}+\\tfrac{1}{2}D+IE+(EA)+(-\\Delta H_{\\text{lattice}})",
+      "ktex": "\\kdHf=\\kdHs+\\tfrac{1}{2}\\kDbond+\\kIE+(\\kEA)+(-\\kdHlat)",
+      "condition": "the formation of an ionic solid MX from a solid metal and a diatomic gaseous nonmetal, as for CsF",
+      "important": false
+    },
     {
       "id": "eq-dipole-moment",
       "concept": "bond-dipole-moment",
@@ -94,6 +232,126 @@
     }
   ],
   "glossary": [
+    {
+      "section": "7.1",
+      "term": "inert pair effect",
+      "definition": "tendency of heavy atoms to form ions in which their valence <em>s</em> electrons are not lost"
+    },
+    {
+      "section": "7.1",
+      "term": "ionic bond",
+      "definition": "strong electrostatic force of attraction between cations and anions in an ionic compound"
+    },
+    {
+      "section": "7.2",
+      "term": "bond length",
+      "definition": "distance between the nuclei of two bonded atoms at which the lowest potential energy is achieved"
+    },
+    {
+      "section": "7.2",
+      "term": "covalent bond",
+      "definition": "bond formed when electrons are shared between atoms"
+    },
+    {
+      "section": "7.2",
+      "term": "electronegativity",
+      "definition": "tendency of an atom to attract electrons in a bond to itself"
+    },
+    {
+      "section": "7.2",
+      "term": "polar covalent bond",
+      "definition": "covalent bond between atoms of different electronegativities; a covalent bond with a positive end and a negative end"
+    },
+    {
+      "section": "7.2",
+      "term": "pure covalent bond",
+      "definition": "(also, nonpolar covalent bond) covalent bond between atoms of identical electronegativities"
+    },
+    {
+      "section": "7.3",
+      "term": "double bond",
+      "definition": "covalent bond in which two pairs of electrons are shared between two atoms"
+    },
+    {
+      "section": "7.3",
+      "term": "free radical",
+      "definition": "molecule that contains an odd number of electrons"
+    },
+    {
+      "section": "7.3",
+      "term": "hypervalent molecule",
+      "definition": "molecule containing at least one main group element that has more than eight electrons in its valence shell"
+    },
+    {
+      "section": "7.3",
+      "term": "Lewis structure",
+      "definition": "diagram showing lone pairs and bonding pairs of electrons in a molecule or an ion"
+    },
+    {
+      "section": "7.3",
+      "term": "Lewis symbol",
+      "definition": "symbol for an element or monatomic ion that uses a dot to represent each valence electron in the element or ion"
+    },
+    {
+      "section": "7.3",
+      "term": "lone pair",
+      "definition": "two (a pair of) valence electrons that are not used to form a covalent bond"
+    },
+    {
+      "section": "7.3",
+      "term": "octet rule",
+      "definition": "guideline that states main group atoms will form structures in which eight valence electrons interact with each nucleus, counting bonding electrons as interacting with both atoms connected by the bond"
+    },
+    {
+      "section": "7.3",
+      "term": "single bond",
+      "definition": "bond in which a single pair of electrons is shared between two atoms"
+    },
+    {
+      "section": "7.3",
+      "term": "triple bond",
+      "definition": "bond in which three pairs of electrons are shared between two atoms"
+    },
+    {
+      "section": "7.4",
+      "term": "formal charge",
+      "definition": "charge that would result on an atom by taking the number of valence electrons on the neutral atom and subtracting the nonbonding electrons and the number of bonds (one-half of the bonding electrons)"
+    },
+    {
+      "section": "7.4",
+      "term": "molecular structure",
+      "definition": "arrangement of atoms in a molecule or ion"
+    },
+    {
+      "section": "7.4",
+      "term": "resonance",
+      "definition": "situation in which one Lewis structure is insufficient to describe the bonding in a molecule and the average of multiple structures is observed"
+    },
+    {
+      "section": "7.4",
+      "term": "resonance forms",
+      "definition": "two or more Lewis structures that have the same arrangement of atoms but different arrangements of electrons"
+    },
+    {
+      "section": "7.4",
+      "term": "resonance hybrid",
+      "definition": "average of the resonance forms shown by the individual Lewis structures"
+    },
+    {
+      "section": "7.5",
+      "term": "bond energy",
+      "definition": "(also, bond dissociation energy) energy required to break a covalent bond in a gaseous substance"
+    },
+    {
+      "section": "7.5",
+      "term": "Born-Haber cycle",
+      "definition": "thermochemical cycle relating the various energetic steps involved in the formation of an ionic solid from the relevant elements"
+    },
+    {
+      "section": "7.5",
+      "term": "lattice energy (ΔH<sub>lattice</sub>)",
+      "definition": "energy required to separate one mole of an ionic solid into its component gaseous ions"
+    },
     {
       "section": "7.6",
       "term": "axial position",

@@ -1,0 +1,885 @@
+{
+ "id": "3.3",
+ "module": "m68703",
+ "chapter": "3",
+ "title": "Molarity",
+ "short": "Molarity",
+ "lead": "Most of the matter we meet is not a pure substance but a mixture, and the properties of a mixture depend on how much of each component it holds. This section describes solutions and their solvents and solutes, defines molarity as the moles of solute in a liter of solution, works with it to find amounts, masses and volumes, and shows how diluting a solution lowers its concentration while leaving the amount of solute unchanged.",
+ "objectives": [
+  "Describe the fundamental properties of solutions",
+  "Calculate solution concentrations using molarity",
+  "Perform dilution calculations using the dilution equation"
+ ],
+ "summary_html": "<p>Solutions are homogeneous mixtures. Many solutions contain one component, called the solvent, in which other components, called solutes, are dissolved. An aqueous solution is one for which the solvent is water. The concentration of a solution is a measure of the relative amount of solute in a given amount of solution. Concentrations may be measured using various units, with one very useful unit being molarity, defined as the number of moles of solute per liter of solution. The solute concentration of a solution may be decreased by adding solvent, a process referred to as dilution. The dilution equation is a simple relation between concentrations and volumes of a solution before and after dilution.</p>",
+ "notes": "The Link to Learning note pointing to the PhET dilution simulation is left out; the interactive figures of the page vary the amount of solute, the volume of solution and the concentration, and dilute a solution, in its place.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The two conceptual exercises fs-idm107608448 (diluting NaCl from 1.00 L to 1.80 L) and fs-idm80527600 (the 200-mL and 400-mL samples) have no keyed answer and carry a suggested approach marked as AI-written. The unkeyed numerical exercises fs-idm78757216, fs-idm26412832, fs-idm26440336, fs-idm27178816, fs-idm27153856, fs-idm27683248, fs-idm27384272, fs-idm27364240 and fs-idm26471216 are left out, and so are fs-idm59335888 and fs-idm3478704, whose outline in part (a) leads to an unkeyed answer in part (b). The keyed outline exercises fs-idm62194192 and fs-idm26500064 are checked on their part (b), with the book’s outline in the solution. Nothing is taken from or held for another section.",
+ "figures": [
+  {
+   "id": "fig-espresso",
+   "kind": "photo",
+   "number": "3.14",
+   "draws": []
+  },
+  {
+   "id": "sim-molarity",
+   "kind": "sim",
+   "draws": [
+    "mass",
+    "amount",
+    "volume",
+    "concentration"
+   ]
+  },
+  {
+   "id": "fig-vinegar",
+   "kind": "photo",
+   "number": "3.15",
+   "draws": []
+  },
+  {
+   "id": "sim-dilution",
+   "kind": "sim",
+   "number": "3.16",
+   "originals": [
+    "/media/ch03/CNX_Chem_03_04_dilution.jpg"
+   ],
+   "original_caption": "Both solutions contain the same mass of copper nitrate. The solution on the right is more dilute because the copper nitrate is dissolved in more solvent. (credit: Mark Ott)",
+   "draws": [
+    "amount",
+    "volume",
+    "concentration"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "mixtures",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "solutions",
+   "concept": "solution-components",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "concentration",
+   "verb": "introduces"
+  },
+  {
+   "span": "molarity",
+   "concept": "molarity",
+   "verb": "introduces"
+  },
+  {
+   "span": "molarity",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "molarity",
+   "concept": "solution-components",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-molar-concentration",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-moles-volumes",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "molarity-calculations",
+   "concept": "molarity-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "molarity-calculations",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-from-mass",
+   "concept": "molarity-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-mass-in-volume",
+   "concept": "molarity-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "guard-digit",
+   "concept": "molarity-calculations",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-volume-for-mass",
+   "concept": "molarity-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "dilution",
+   "concept": "dilution",
+   "verb": "introduces"
+  },
+  {
+   "span": "dilution",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "dilution-equation",
+   "concept": "dilution-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "dilution-equation",
+   "concept": "dilution",
+   "verb": "uses"
+  },
+  {
+   "span": "dilution-equation",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-diluted-concentration",
+   "concept": "dilution-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-diluted-volume",
+   "concept": "dilution-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-stock-volume",
+   "concept": "dilution-equation",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm98982768",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-molar-concentration"
+   },
+   "cite": "molarity",
+   "prompt": "A teaspoon of table sugar contains about 0.01 mol sucrose. What is the molarity of sucrose if a teaspoon of sugar has been dissolved in a cup of tea with a volume of 200 mL?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.05,
+    "unit": "M",
+    "hint": "Convert the volume to liters, then divide the moles of sucrose by it.",
+    "solution": "0.05 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm64107376",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-moles-volumes"
+   },
+   "cite": "molarity",
+   "prompt": "What volume (mL) of the sweetened tea described in Example 3.14 contains the same amount of sugar (mol) as 10 mL of the soft drink in this example?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 80,
+    "unit": "mL",
+    "hint": "Divide the 0.004 mol of sugar in the sip by the molarity of the tea from the Check Your Learning of Example 3.14.",
+    "solution": "80 mL"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm81897840",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-from-mass"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "Calculate the molarity of 6.52 g of CoCl<sub>2</sub> (128.9 g/mol) dissolved in an aqueous solution with a total volume of 75.0 mL.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.674,
+    "unit": "M",
+    "hint": "Convert the mass to moles with the molar mass, and the volume to liters.",
+    "solution": "0.674 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm104693104",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-mass-in-volume"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "How many grams of CaCl<sub>2</sub> (110.98 g/mol) are contained in 250.0 mL of a 0.200-<em>M</em> solution of calcium chloride?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 5.55,
+    "unit": "g",
+    "hint": "Multiply the molarity by the volume in liters to get moles, then multiply by the molar mass.",
+    "solution": "5.55 g CaCl<sub>2</sub>"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm88061984",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-volume-for-mass"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "What volume of a 1.50-<em>M</em> KBr solution contains 66.0 g KBr?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.37,
+    "unit": "L",
+    "hint": "Convert the mass of KBr to moles, then divide by the molarity.",
+    "solution": "0.370 L"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idm81737600",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-diluted-concentration"
+   },
+   "cite": "dilution-equation",
+   "prompt": "What is the concentration of the solution that results from diluting 25.0 mL of a 2.04-<em>M</em> solution of CH<sub>3</sub>OH to 500.0 mL?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.102,
+    "unit": "M",
+    "hint": "Solve C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> for C<sub>2</sub>; the volumes may stay in mL since their units cancel.",
+    "solution": "0.102 <em>M</em> CH<sub>3</sub>OH"
+   }
+  },
+  {
+   "id": "cyl7",
+   "source_id": "fs-idm81033056",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-diluted-volume"
+   },
+   "cite": "dilution-equation",
+   "prompt": "A laboratory experiment calls for 0.125 <em>M</em> HNO<sub>3</sub>. What volume of 0.125 <em>M</em> HNO<sub>3</sub> can be prepared from 0.250 L of 1.88 <em>M</em> HNO<sub>3</sub>?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3.76,
+    "unit": "L",
+    "hint": "Solve the dilution equation for V<sub>2</sub>.",
+    "solution": "3.76 L"
+   }
+  },
+  {
+   "id": "cyl8",
+   "source_id": "fs-idm60422464",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-stock-volume"
+   },
+   "cite": "dilution-equation",
+   "prompt": "What volume of a 0.575-<em>M</em> solution of glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, can be prepared from 50.00 mL of a 3.00-<em>M</em> glucose solution?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.261,
+    "unit": "L",
+    "hint": "Solve the dilution equation for the volume of the diluted solution, and give it in liters.",
+    "solution": "0.261 L"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm107608448",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dilution",
+   "prompt": "Explain what changes and what stays the same when 1.00 L of a solution of NaCl is diluted to 1.80 L.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Think about what is added during a dilution. Only solvent is added, so the amount of NaCl, in moles and in grams, stays the same. The volume of the solution increases from 1.00 L to 1.80 L, so the same amount of solute is spread through more solution and the concentration decreases, to 1.00/1.80 of its original value, as the dilution equation requires."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm66121488",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity",
+   "prompt": "What information is needed to calculate the molarity of a sulfuric acid solution?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "We need to know the number of moles of sulfuric acid dissolved in the solution and the volume of the solution."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm80527600",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "solutions",
+   "prompt": "A 200-mL sample and a 400-mL sample of a solution of salt have the same molarity. In what ways are the two samples identical? In what ways are these two samples different?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Consider which properties depend on the size of a sample and which do not. The two samples are taken from the same solution, so they have the same composition: the same molarity, and the same properties that depend on concentration, such as taste and density. The 400-mL sample has twice the volume, so it contains twice the amount of salt, in moles and in grams, and twice the mass of solution."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm98103760",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "Determine the molarity for each of the following solutions: (a) 0.444 mol of CoCl<sub>2</sub> in 0.654 L of solution (b) 98.0 g of phosphoric acid, H<sub>3</sub>PO<sub>4</sub>, in 1.00 L of solution (c) 0.2074 g of calcium hydroxide, Ca(OH)<sub>2</sub>, in 40.00 mL of solution (d) 10.5 kg of Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O in 18.60 L of solution (e) 7.0 $\\times$ 10<sup>−3</sup> mol of I<sub>2</sub> in 100.0 mL of solution (f) 1.8 $\\times$ 10<sup>4</sup> mg of HCl in 0.075 L of solution",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.679,
+      "unit": "M"
+     },
+     {
+      "part": "(b)",
+      "value": 1.0,
+      "unit": "M"
+     },
+     {
+      "part": "(c)",
+      "value": 0.06998,
+      "unit": "M"
+     },
+     {
+      "part": "(d)",
+      "value": 1.75,
+      "unit": "M"
+     },
+     {
+      "part": "(e)",
+      "value": 0.07,
+      "unit": "M"
+     },
+     {
+      "part": "(f)",
+      "value": 6.6,
+      "unit": "M"
+     }
+    ],
+    "solution": "(a) 0.679 <em>M</em>; (b) 1.00 <em>M</em>; (c) 0.06998 <em>M</em>; (d) 1.75 <em>M</em>; (e) 0.070 <em>M</em>; (f) 6.6 <em>M</em>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm62194192",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "Consider this question: What is the mass of the solute in 0.500 L of 0.30 <em>M</em> glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, used for intravenous injection? (a) Outline the steps necessary to answer the question. (b) Answer the question.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 27,
+    "unit": "g",
+    "part": "(b)",
+    "hint": "Moles from molarity and volume, then grams from the molar mass of glucose.",
+    "solution": "(a) determine the number of moles of glucose in 0.500 L of solution; determine the molar mass of glucose; determine the mass of glucose from the number of moles and its molar mass; (b) 27 g"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm62322112",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "Calculate the number of moles and the mass of the solute in each of the following solutions: (a) 2.00 L of 18.5 <em>M</em> H<sub>2</sub>SO<sub>4</sub>, concentrated sulfuric acid (b) 100.0 mL of 3.8 $\\times$ 10<sup>−6</sup> <em>M</em> NaCN, the minimum lethal concentration of sodium cyanide in blood serum (c) 5.50 L of 13.3 <em>M</em> H<sub>2</sub>CO, the formaldehyde used to “fix” tissue samples (d) 325 mL of 1.8 $\\times$ 10<sup>−6</sup> <em>M</em> FeSO<sub>4</sub>, the minimum concentration of iron sulfate detectable by taste in drinking water",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) moles",
+      "value": 37.0,
+      "unit": "mol"
+     },
+     {
+      "part": "(a) mass",
+      "value": 3630,
+      "unit": "g"
+     },
+     {
+      "part": "(b) moles",
+      "value": 3.8e-07,
+      "unit": "mol"
+     },
+     {
+      "part": "(b) mass",
+      "value": 1.9e-05,
+      "unit": "g"
+     },
+     {
+      "part": "(c) moles",
+      "value": 73.2,
+      "unit": "mol"
+     },
+     {
+      "part": "(c) mass",
+      "value": 2200,
+      "unit": "g"
+     },
+     {
+      "part": "(d) moles",
+      "value": 5.9e-07,
+      "unit": "mol"
+     },
+     {
+      "part": "(d) mass",
+      "value": 8.9e-05,
+      "unit": "g"
+     }
+    ],
+    "solution": "(a) 37.0 mol H<sub>2</sub>SO<sub>4</sub>, 3.63 $\\times$ 10<sup>3</sup> g H<sub>2</sub>SO<sub>4</sub>; (b) 3.8 $\\times$ 10<sup>−7</sup> mol NaCN, 1.9 $\\times$ 10<sup>−5</sup> g NaCN; (c) 73.2 mol H<sub>2</sub>CO, 2.20 kg H<sub>2</sub>CO; (d) 5.9 $\\times$ 10<sup>−7</sup> mol FeSO<sub>4</sub>, 8.9 $\\times$ 10<sup>−5</sup> g FeSO<sub>4</sub>"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm26500064",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "Consider this question: What is the molarity of KMnO<sub>4</sub> in a solution of 0.0908 g of KMnO<sub>4</sub> in 0.500 L of solution? (a) Outline the steps necessary to answer the question. (b) Answer the question.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00115,
+    "unit": "M",
+    "part": "(b)",
+    "hint": "Moles from the mass and the molar mass of KMnO<sub>4</sub>, then divide by the volume.",
+    "solution": "(a) Determine the molar mass of KMnO<sub>4</sub>; determine the number of moles of KMnO<sub>4</sub> in the solution; from the number of moles and the volume of solution, determine the molarity; (b) 1.15 $\\times$ 10<sup>−3</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm26577792",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "Calculate the molarity of each of the following solutions: (a) 0.195 g of cholesterol, C<sub>27</sub>H<sub>46</sub>O, in 0.100 L of serum, the average concentration of cholesterol in human serum (b) 4.25 g of NH<sub>3</sub> in 0.500 L of solution, the concentration of NH<sub>3</sub> in household ammonia (c) 1.49 kg of isopropyl alcohol, C<sub>3</sub>H<sub>7</sub>OH, in 2.50 L of solution, the concentration of isopropyl alcohol in rubbing alcohol (d) 0.029 g of I<sub>2</sub> in 0.100 L of solution, the solubility of I<sub>2</sub> in water at 20 °C",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.00504,
+      "unit": "M"
+     },
+     {
+      "part": "(b)",
+      "value": 0.499,
+      "unit": "M"
+     },
+     {
+      "part": "(c)",
+      "value": 9.92,
+      "unit": "M"
+     },
+     {
+      "part": "(d)",
+      "value": 0.0011,
+      "unit": "M"
+     }
+    ],
+    "solution": "(a) 5.04 $\\times$ 10<sup>−3</sup> <em>M</em>; (b) 0.499 <em>M</em>; (c) 9.92 <em>M</em>; (d) 1.1 $\\times$ 10<sup>−3</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm26521728",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "There is about 1.0 g of calcium, as Ca<sup>2+</sup>, in 1.0 L of milk. What is the molarity of Ca<sup>2+</sup> in milk?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.025,
+    "unit": "M",
+    "hint": "Convert the mass of calcium to moles with its molar mass.",
+    "solution": "0.025 <em>M</em>"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm27167936",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dilution-equation",
+   "prompt": "If 0.1718 L of a 0.3556-<em>M</em> C<sub>3</sub>H<sub>7</sub>OH solution is diluted to a concentration of 0.1222 <em>M</em>, what is the volume of the resulting solution?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.5,
+    "unit": "L",
+    "hint": "Solve C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> for V<sub>2</sub>.",
+    "solution": "0.5000 L"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm27694256",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dilution-equation",
+   "prompt": "What volume of a 0.33-<em>M</em> C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> solution can be diluted to prepare 25 mL of a solution with a concentration of 0.025 <em>M</em>?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.9,
+    "unit": "mL",
+    "hint": "Solve the dilution equation for V<sub>1</sub>; the volume can stay in mL.",
+    "solution": "1.9 mL"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm27672496",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dilution-equation",
+   "prompt": "What is the molarity of the diluted solution when each of the following solutions is diluted to the given final volume? (a) 1.00 L of a 0.250-<em>M</em> solution of Fe(NO<sub>3</sub>)<sub>3</sub> is diluted to a final volume of 2.00 L (b) 0.5000 L of a 0.1222-<em>M</em> solution of C<sub>3</sub>H<sub>7</sub>OH is diluted to a final volume of 1.250 L (c) 2.35 L of a 0.350-<em>M</em> solution of H<sub>3</sub>PO<sub>4</sub> is diluted to a final volume of 4.00 L (d) 22.50 mL of a 0.025-<em>M</em> solution of C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> is diluted to 100.0 mL",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.125,
+      "unit": "M"
+     },
+     {
+      "part": "(b)",
+      "value": 0.04888,
+      "unit": "M"
+     },
+     {
+      "part": "(c)",
+      "value": 0.206,
+      "unit": "M"
+     },
+     {
+      "part": "(d)",
+      "value": 0.0056,
+      "unit": "M"
+     }
+    ],
+    "solution": "(a) 0.125 <em>M</em>; (b) 0.04888 <em>M</em>; (c) 0.206 <em>M</em>; (d) 0.0056 <em>M</em>"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm27373392",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "A 2.00-L bottle of a solution of concentrated HCl was purchased for the general chemistry laboratory. The solution contained 868.8 g of HCl. What is the molarity of the solution?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 11.9,
+    "unit": "M",
+    "hint": "Convert the mass of HCl to moles, then divide by the volume.",
+    "solution": "11.9 <em>M</em>"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm26483264",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molarity-calculations",
+   "prompt": "What volume of a 0.20-<em>M</em> K<sub>2</sub>SO<sub>4</sub> solution contains 57 g of K<sub>2</sub>SO<sub>4</sub>?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.6,
+    "unit": "L",
+    "hint": "Convert the mass to moles, then divide by the molarity.",
+    "solution": "1.6 L"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "molarity"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "molarity"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "cyl8",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "e1",
+   "concept": "dilution"
+  },
+  {
+   "exercise": "e1",
+   "concept": "dilution-equation",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "molarity"
+  },
+  {
+   "exercise": "e3",
+   "concept": "concentration"
+  },
+  {
+   "exercise": "e3",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e4",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e6",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e7",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e8",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e9",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e13",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "molarity-calculations"
+  },
+  {
+   "exercise": "e14",
+   "concept": "molarity",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "e10",
+   "concept": "dilution",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "e11",
+   "concept": "dilution",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "e12",
+   "concept": "dilution",
+   "weight": 2,
+   "weights_by": "ai"
+  }
+ ]
+}

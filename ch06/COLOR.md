@@ -1,14 +1,28 @@
 # Chapter 6 colour plan
 
-Prepared 2026-09-12, and applied with `config.md`. It refines the book's
-`COLOR.md` for the quantities this chapter actually draws; root rule 7 and
-root rule 22 hold, and nothing here invents a hue. The app dresses the book's
-fourteen declared types from its own palette in declaration order, and a page
+Prepared 2026-09-12 for 6.2 and extended on 2026-09-28 to the whole
+chapter, and applied with `config.md`. It refines the book's `COLOR.md` for
+the quantities this chapter actually draws; root rule 7 and root rule 22
+hold, and nothing here invents a hue. The app dresses the book's fourteen
+declared types from its own palette in declaration order, and a page
 colours only the types its figures draw, its sliders carry or its readouts
-state. Every other symbol on that page renders in ink.
+state. Every other symbol on that page renders in ink. The chapter declares
+no new type.
 
-Only 6.2 is built in this pass, so this file says what 6.2 binds and leaves
-the other four sections for the pass that builds them.
+## The chapter at a glance
+
+| Section | Types it may bind | Other families |
+|---|---|---|
+| Intro | none | the photograph |
+| 6.1 | `wavelength`, `frequency`, `energy`, `temperature` | the colours of visible light on spectra, fringes and blackbody bands |
+| 6.2 | `energy`, `wavelength` (as built) | the colours of visible light on the strip |
+| 6.3 | `wavelength`, `mass`, `energy` | `F.cat` for the two signs of a wavefunction's lobes; `F.el` for any named atom |
+| 6.4 | `energy` | `F.el` for every atom and ion; `F.cat` for the s, p, d and f blocks |
+| 6.5 | `energy` | `F.el` for every atom and ion |
+
+A section binds a type only where a figure draws it, a slider carries it or
+a readout states it; the list is a ceiling, and the section's plan says
+what it actually binds.
 
 ## What 6.2 binds
 
@@ -104,11 +118,58 @@ of light, so the two hues have to meet:
   the same reason: it is drawn as a point the orbits are measured from, not
   as an atom of hydrogen among other atoms.
 
-## The other four sections
+## 6.1 Electromagnetic Energy
 
-6.1 will bind `wavelength`, `frequency` and `energy` for its waves, its
-blackbody curves and its photon energies; 6.3 will bind `energy` and
-`wavelength` for the electron waves and the orbital diagrams; 6.4 will bind
-`energy` for the filling order; and 6.5 will bind `energy` for the ionization
-energies and leave the radii in ink, a radius being a length. None of this is
-settled here, and the pass that builds those pages settles it.
+- **`wavelength`** on every λ: the bracket between two peaks of the wave,
+  the wavelength axis of the spectrum and of the blackbody curves, λ_max
+  (`\klammax`, a variant with the same hue, drawn as the marker at the peak
+  of each curve), and the λ of each readout.
+- **`frequency`** on ν: the frequency slider of the wave, the frequency
+  scale of the spectrum and the threshold frequency of the photoelectric
+  effect.
+- **`energy`** on E = hν = hc/λ: the photon energy in readouts, the photon
+  that strikes the metal and the energy scale beside the spectrum.
+- **`temperature`** on the blackbody slider and its T.
+- Ink: c, h, n, the amplitude, the intensity axis, the kinetic energy of an
+  ejected electron only where no readout states it as an energy (if one
+  does, it is `energy`), the Balmer and Rydberg constants and n₁, n₂.
+- Physical fact: the visible band on the spectrum, the fringes, the band
+  under the blackbody curve and the lines of a spectrum wear the colours of
+  visible light, as on 6.2's strip; a line or a curve outside the visible is
+  drawn in the wavelength hue. A metal is an element and takes `F.el`.
+
+## 6.3 Development of Quantum Theory
+
+- **`wavelength`** on the de Broglie λ, on the electron wave about the
+  orbit and on its readout.
+- **`mass`** on the m of λ = h/mv where a slider carries it (an electron to a
+  softball).
+- **`energy`** on the shells and subshell ladder (6.19, 6.22) where a figure
+  draws energies, and on ΔE of the hydrogen transition.
+- Ink: v and p (velocity and momentum are not book types), Δx and Δp, ħ, ψ
+  and |ψ|², the quantum numbers n, l, m_l and m_s, r, the radial-distance
+  axis and the probability-density axis, Δt (written once, not drawn).
+- Categorical: the two signs of an orbital's lobes (the book's red and blue)
+  take `F.cat(0)` and `F.cat(1)`, never a bound hue; spin up and spin down
+  are arrows in ink.
+
+## 6.4 Electronic Structure of Atoms
+
+- **`energy`** on the orbital energy axis and its subshell rungs (6.24) where
+  a figure draws them.
+- `F.el` for every named atom and ion; the element of an orbital diagram is
+  named in its label, its symbol coloured by `F.el`.
+- Categorical: the s, p, d and f blocks of the periodic table (6.26, 6.27,
+  6.29) take `F.cat(0..3)`, one per block, never a bound hue.
+- Ink: the boxes and arrows of orbital diagrams, the configuration text,
+  Z and every quantum number.
+
+## 6.5 Periodic Variations in Element Properties
+
+- **`energy`** on IE (`\kIE`, with IE₁, IE₂ as decoration) and EA (`\kEA`):
+  the ionization and electron-affinity axes, bars and readouts.
+- `F.el` for every atom and ion drawn (6.30, 6.32).
+- Ink: every radius (a length, untyped), Z and Z_eff, the atomic-number
+  axis.
+- No coercion: a radius is not a wavelength, an ionization energy in kJ/mol
+  is an energy (per-mole by its unit), not an amount.

@@ -1,0 +1,252 @@
+{
+  "types": [],
+  "symbols": [
+    { "sym": "N_A", "latex": "N_A" },
+    { "sym": "n_fu", "latex": "n" },
+    { "sym": "L", "latex": "L", "type": "volume", "macro": "\\kL" },
+    { "sym": "L_1", "latex": "L_1", "type": "volume", "macro": "\\kLone" },
+    { "sym": "L_2", "latex": "L_2", "type": "volume", "macro": "\\kLtwo" },
+    { "sym": "M_1", "latex": "M_1", "type": "concentration", "macro": "\\kMone" },
+    { "sym": "M_2", "latex": "M_2", "type": "concentration", "macro": "\\kMtwo" },
+    { "sym": "C_1", "latex": "C_1", "type": "concentration", "macro": "\\kCone" },
+    { "sym": "C_2", "latex": "C_2", "type": "concentration", "macro": "\\kCtwo" }
+  ],
+  "concepts": [
+    {
+      "id": "formula-mass",
+      "kind": "skill",
+      "section": "3.1",
+      "name": "Calculating the formula mass of a compound",
+      "why": "The formula mass of a substance is the sum of the average atomic masses of all the atoms its formula represents. It is the first place where a chemical formula becomes a number, and every later calculation of the chapter, from molar mass to percent composition, begins by adding up the masses a formula names.",
+      "evidence": "The section works chloroform, aspirin and sodium chloride in Figures 3.2 to 3.4, Examples 3.1 and 3.2 compute the masses of ibuprofen and aluminum sulfate, and several exercises ask for the molecular or formula mass of a list of compounds."
+    },
+    {
+      "id": "molecular-versus-formula-mass",
+      "kind": "idea",
+      "section": "3.1",
+      "name": "Molecular mass and the formula mass of an ionic compound",
+      "why": "For a covalent substance the formula describes one molecule, so its formula mass may be called a molecular mass; an ionic compound has no discrete molecule, so its formula mass may not. The masses of neutral atoms are used for ions as well, since the mass of an electron is negligible beside that of an atom.",
+      "evidence": "The section treats covalent substances and ionic compounds under separate headers, explains why the masses of neutral sodium and chlorine atoms serve for NaCl, and Example 3.2 rewrites Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> as Al<sub>2</sub>S<sub>3</sub>O<sub>12</sub> to count its atoms."
+    },
+    {
+      "id": "mole",
+      "kind": "idea",
+      "section": "3.1",
+      "name": "The mole",
+      "why": "The mole is an amount unit like a pair or a dozen, and it links an easily measured property, bulk mass, to a fundamental one, the number of atoms or molecules. Chemists count particles they cannot see by weighing them, and the mole is the unit that makes that possible.",
+      "evidence": "The section defines the mole as the amount containing 6.02214076 × 10<sup>23</sup> entities, Figures 3.5 and 3.6 set out one mole each of several elements and compounds, and an exercise compares 1 mole of H<sub>2</sub>, O<sub>2</sub> and F<sub>2</sub>."
+    },
+    {
+      "id": "avogadro-number",
+      "kind": "result",
+      "section": "3.1",
+      "name": "Avogadro’s number, $N_A = 6.022 \\times 10^{23}$/mol",
+      "why": "One mole of any substance contains the same number of entities, 6.022 × 10<sup>23</sup>, so the number of atoms or molecules in a sample follows from its amount in moles. The size of the number is what lets a drop of water hold more molecules than can be clearly imagined.",
+      "evidence": "The section names the constant and gives its unit of per mole, Figure 3.7 compares the molecules in a droplet with the number of people on earth, and Examples 3.5 and 3.8 multiply an amount by Avogadro’s number to count atoms and molecules."
+    },
+    {
+      "id": "molar-mass",
+      "kind": "idea",
+      "section": "3.1",
+      "name": "Molar mass",
+      "why": "The molar mass of a substance is the mass in grams of 1 mole of it, and it is numerically equal to the formula mass in amu, because the atomic mass unit and the mole are defined from the same reference, carbon-12. That equality turns a formula mass read from the periodic table into a conversion factor between grams and moles.",
+      "evidence": "The section defines molar mass, explains its equality with the formula mass through <sup>12</sup>C, tabulates both for five elements, and exercises ask how molecular mass and molar mass are alike and how they differ and ask for the molar masses of many compounds."
+    },
+    {
+      "id": "mass-mole-conversion",
+      "kind": "skill",
+      "section": "3.1",
+      "name": "Converting between mass and moles",
+      "why": "Dividing a mass by the molar mass gives the amount in moles, and multiplying an amount by the molar mass gives the mass. This is the conversion the rest of the book leans on whenever a quantity weighed on a balance must become a count of particles or the reverse.",
+      "evidence": "Examples 3.3, 3.4, 3.6 and 3.7 convert grams of potassium, argon, glycine and vitamin C to moles and back, each with a ballpark estimate first, and many exercises ask for the moles in a given mass or the mass of a given amount."
+    },
+    {
+      "id": "count-atoms-and-molecules",
+      "kind": "skill",
+      "section": "3.1",
+      "name": "Counting atoms and molecules from a mass",
+      "why": "A mass is converted to moles with the molar mass and then to a number of entities with Avogadro’s number, and the formula then gives the number of each kind of atom. The two-step chain answers questions no balance can answer directly, such as how many carbon atoms a packet of sweetener holds.",
+      "evidence": "Examples 3.5 and 3.8 count the copper atoms in 5.00 g of wire and the saccharin molecules and carbon atoms in 40.0 mg of sweetener, and exercises count the atoms in a diamond and the atoms of each element in a sample of zircon."
+    },
+    {
+      "id": "percent-composition",
+      "kind": "idea",
+      "section": "3.2",
+      "name": "Percent composition",
+      "eq": "eq-percent-composition",
+      "why": "The percent composition of a compound is the percentage by mass of each element in it. Measuring the mass of each element is often the first step in finding an unknown compound’s formula, and the percentages are how that measurement is reported.",
+      "evidence": "The section defines percent composition from the masses of hydrogen and carbon in a 10.0-g sample of gas, Example 3.9 computes it for a compound of carbon, hydrogen and nitrogen, and its Check Your Learning does the same for a compound of carbon, oxygen and chlorine."
+    },
+    {
+      "id": "percent-composition-from-formula",
+      "kind": "skill",
+      "section": "3.2",
+      "name": "Percent composition from a formula",
+      "why": "When the formula is known, the percent composition follows from the atomic or molar masses alone, by taking one mole of the compound as the sample. This is how a fertilizer buyer compares the nitrogen in ammonia, ammonium nitrate and urea.",
+      "evidence": "The section computes the percent composition of ammonia from its formula mass, Example 3.10 does the same for aspirin with molar masses, and exercises ask for the percent composition of ammonia, hypo, hydrazoic acid and TNT and the percent of water in a hydrate."
+    },
+    {
+      "id": "empirical-formula",
+      "kind": "skill",
+      "section": "3.2",
+      "name": "Deriving an empirical formula from the masses of the elements",
+      "why": "A formula states the relative numbers of atoms, not their masses, so each element’s mass is converted to moles, the amounts are divided by the smallest, and the result is multiplied by an integer if needed to reach whole numbers. The procedure turns an analysis on a balance into a chemical formula.",
+      "evidence": "The section derives CH<sub>2</sub> and Cl<sub>2</sub>O<sub>7</sub> from measured masses, Figure 3.11 sets the procedure out as a flowchart, and Example 3.11 finds the formula of hematite, Fe<sub>2</sub>O<sub>3</sub>, from 34.97 g of iron and 15.03 g of oxygen."
+    },
+    {
+      "id": "empirical-formula-from-percent",
+      "kind": "skill",
+      "section": "3.2",
+      "name": "Deriving an empirical formula from percent composition",
+      "why": "When only the percentages are known, a 100-g sample is assumed, so that each element’s mass in grams is numerically its mass percentage, and the usual procedure follows.",
+      "evidence": "Example 3.12 finds that the gas from fermentation, 27.29% C and 72.71% O, is CO<sub>2</sub>, and exercises ask for the empirical formulas of compounds and of five polymers from their percent compositions."
+    },
+    {
+      "id": "molecular-formula-from-empirical",
+      "kind": "skill",
+      "section": "3.2",
+      "name": "Deriving a molecular formula from an empirical formula",
+      "eq": "eq-formula-units-per-molecule",
+      "why": "An empirical formula gives only the relative numbers of atoms. Dividing the molecular or molar mass by the empirical formula mass gives the number of formula units in each molecule, and multiplying every subscript by that number gives the molecular formula.",
+      "evidence": "The section shows that CH<sub>2</sub>O with a molecular mass of 180 amu is C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, Example 3.13 finds nicotine to be C<sub>10</sub>H<sub>14</sub>N<sub>2</sub>, and exercises ask what information is needed and find the formulas of benzene, dichloroethane, chrysotile and a yellow dye."
+    },
+    {
+      "id": "solution-components",
+      "kind": "idea",
+      "section": "3.3",
+      "name": "Solvent, solute, and aqueous solutions",
+      "why": "A solution is a homogeneous mixture, and it usually has one component, the solvent, present at a much greater concentration than the others, the solutes, which are dissolved in it. A solution in water is an aqueous solution, the kind this book meets most often.",
+      "evidence": "The section recalls that solutions are homogeneous mixtures and defines concentration, solvent, dissolved, aqueous solution and solute in turn, and the summary repeats the definitions."
+    },
+    {
+      "id": "concentration",
+      "kind": "idea",
+      "section": "3.3",
+      "name": "Concentration",
+      "why": "The relative amount of a given component of a solution is its concentration, and the properties of a mixture depend on it, as the sweetness of a coffee depends on its sugar. A solution is called dilute or concentrated in words before any unit puts a number on it.",
+      "evidence": "The section opens on the composition of atmospheres, steels, medicines and drinks, Figure 3.14 shows the sugar in a coffee, the terms dilute and concentrated are defined, and exercises ask in what ways two samples of the same solution are identical and how they differ."
+    },
+    {
+      "id": "molarity",
+      "kind": "result",
+      "section": "3.3",
+      "name": "Molarity, $M$ = mol solute / L solution",
+      "eq": "eq-molarity",
+      "why": "Molarity is the number of moles of solute in exactly 1 liter of solution, and it is the concentration unit of most of chemistry. The liter is of the whole solution, not of the solvent that was added.",
+      "evidence": "The section defines molarity with its equation, Example 3.14 finds the molarity of sucrose in a soft drink, and an exercise asks what information is needed to calculate the molarity of a sulfuric acid solution."
+    },
+    {
+      "id": "molarity-calculations",
+      "kind": "skill",
+      "section": "3.3",
+      "name": "Calculating with molarity",
+      "why": "The definition of molarity links three quantities, so any one of the amount of solute, the volume of solution and the molarity follows from the other two, and a molar mass brings in the mass of solute as well. Keeping a guard digit, or working the calculation in one step, keeps the rounding error out of the answer.",
+      "evidence": "Examples 3.15 to 3.18 find the sugar in a sip, the molarity of vinegar from its mass of acetic acid, the mass of NaCl in a volume of solution and the volume of vinegar that holds a mass of acid, the section explains the guard digit with Example 3.17, and many exercises ask for molarities, amounts and masses of solute."
+    },
+    {
+      "id": "dilution",
+      "kind": "idea",
+      "section": "3.3",
+      "name": "Dilution",
+      "why": "Dilution lowers the concentration of a solution by adding solvent, and it leaves the amount of solute unchanged. It is how melting ice weakens iced tea and how a laboratory prepares a working solution from a concentrated stock.",
+      "evidence": "The section defines dilution, Figure 3.16 shows two solutions with the same mass of copper nitrate in different amounts of solvent, and an exercise asks what changes and what stays the same when a solution of NaCl is diluted from 1.00 L to 1.80 L."
+    },
+    {
+      "id": "dilution-equation",
+      "kind": "result",
+      "section": "3.3",
+      "name": "The dilution equation, $C_1V_1 = C_2V_2$",
+      "eq": "eq-dilution",
+      "why": "Since n = ML and the amount of solute does not change on dilution, the product of concentration and volume is the same before and after. The relation works in any units of concentration and volume that cancel, so it is written C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub>.",
+      "evidence": "The section derives the equation from n<sub>1</sub> = n<sub>2</sub>, Examples 3.19 to 3.21 solve it for the diluted concentration, the diluted volume and the stock volume, and exercises dilute and evaporate solutions of iron nitrate, propanol, phosphoric acid, sucrose and NaCl."
+    },
+    {
+      "id": "mass-percentage",
+      "kind": "result",
+      "section": "3.4",
+      "name": "Mass percentage",
+      "eq": "eq-mass-percentage",
+      "why": "The mass percentage of a component is the ratio of its mass to the mass of the solution, expressed as a percentage. It is the unit on the labels of consumer products, and it needs only that both masses be in the same unit.",
+      "evidence": "The section defines mass percentage and its other names, Figure 3.17 shows a bleach bottle labelled 7.4% NaOCl, and Example 3.22 finds the percent by mass of glucose in spinal fluid."
+    },
+    {
+      "id": "volume-percentage",
+      "kind": "result",
+      "section": "3.4",
+      "name": "Volume percentage",
+      "eq": "eq-volume-percentage",
+      "why": "A liquid dissolved in a liquid is conveniently described by the ratio of the volume of solute to the volume of solution, expressed as a percentage, since liquid volumes are easily measured.",
+      "evidence": "The section defines volume percentage, and Example 3.24 finds the mass of isopropyl alcohol in a bottle of 70%vol rubbing alcohol, with a Check Your Learning on the ethanol in a bottle of wine."
+    },
+    {
+      "id": "mass-volume-percent",
+      "kind": "idea",
+      "section": "3.4",
+      "name": "Mass-volume percent",
+      "why": "A mixed unit takes the mass of solute and the volume of solution, as physiological saline is 0.9 g of solute per 100 mL and blood sugar is reported in milligrams per deciliter. Such units are common in biochemical and medical settings.",
+      "evidence": "The section defines mass-volume percent with saline and blood glucose as its examples, Figure 3.18 shows both, and an exercise converts a blood glucose reading between millimoles per liter and milligrams per deciliter."
+    },
+    {
+      "id": "ppm-and-ppb",
+      "kind": "result",
+      "section": "3.4",
+      "name": "Parts per million and parts per billion",
+      "eq": "eq-ppm",
+      "why": "Very low concentrations are expressed as parts per million or parts per billion, the mass ratio multiplied by 10<sup>6</sup> or 10<sup>9</sup>, just as a percentage is a part per hundred. They are the units of trace contaminants in water.",
+      "evidence": "The section gives the mass-based definitions, Figure 3.19 shows tap water and an inline filter, Example 3.25 converts the EPA’s 15 ppb lead limit to ppm and to micrograms in a glass of water, and exercises ask about water hardness and mercury in a stream."
+    },
+    {
+      "id": "concentration-unit-conversions",
+      "kind": "skill",
+      "section": "3.4",
+      "name": "Converting between concentration units with a density",
+      "why": "A solution’s density converts its volume to its mass, and a molar mass converts a mass of solute to moles, so a concentration given in one unit can be expressed in another, from a mass percentage to a mass of solute or to a molarity.",
+      "evidence": "Example 3.23 uses the density of concentrated hydrochloric acid to find the mass of HCl in 0.500 L of it, and exercises find the molarities of a throat spray, a cough syrup, D5W and sulfuric acid from their mass percentages and densities."
+    }
+  ],
+  "concept_prereqs": [
+    { "concept": "molecular-versus-formula-mass", "prereq": "formula-mass" },
+    { "concept": "mole", "prereq": "scientific-notation" },
+    { "concept": "avogadro-number", "prereq": "mole" },
+    { "concept": "molar-mass", "prereq": "mole" },
+    { "concept": "molar-mass", "prereq": "formula-mass" },
+    { "concept": "mass-mole-conversion", "prereq": "molar-mass" },
+    { "concept": "mass-mole-conversion", "prereq": "unit-conversion-factor" },
+    { "concept": "count-atoms-and-molecules", "prereq": "mass-mole-conversion" },
+    { "concept": "count-atoms-and-molecules", "prereq": "avogadro-number" },
+    { "concept": "percent-composition", "prereq": "formula-mass" },
+    { "concept": "percent-composition-from-formula", "prereq": "percent-composition" },
+    { "concept": "percent-composition-from-formula", "prereq": "molar-mass" },
+    { "concept": "empirical-formula", "prereq": "mass-mole-conversion" },
+    { "concept": "empirical-formula-from-percent", "prereq": "empirical-formula" },
+    { "concept": "empirical-formula-from-percent", "prereq": "percent-composition" },
+    { "concept": "molecular-formula-from-empirical", "prereq": "empirical-formula" },
+    { "concept": "molecular-formula-from-empirical", "prereq": "molar-mass" },
+    { "concept": "solution-components", "prereq": "mixtures" },
+    { "concept": "concentration", "prereq": "solution-components" },
+    { "concept": "molarity", "prereq": "concentration" },
+    { "concept": "molarity", "prereq": "mole" },
+    { "concept": "molarity", "prereq": "volume" },
+    { "concept": "molarity-calculations", "prereq": "molarity" },
+    { "concept": "molarity-calculations", "prereq": "mass-mole-conversion" },
+    { "concept": "molarity-calculations", "prereq": "significant-figures-in-calculations" },
+    { "concept": "dilution", "prereq": "concentration" },
+    { "concept": "dilution-equation", "prereq": "dilution" },
+    { "concept": "dilution-equation", "prereq": "molarity" },
+    { "concept": "mass-percentage", "prereq": "concentration" },
+    { "concept": "mass-percentage", "prereq": "percent-composition" },
+    { "concept": "volume-percentage", "prereq": "concentration" },
+    { "concept": "volume-percentage", "prereq": "volume" },
+    { "concept": "mass-volume-percent", "prereq": "mass-percentage" },
+    { "concept": "mass-volume-percent", "prereq": "volume-percentage" },
+    { "concept": "ppm-and-ppb", "prereq": "mass-percentage" },
+    { "concept": "ppm-and-ppb", "prereq": "scientific-notation" },
+    { "concept": "concentration-unit-conversions", "prereq": "mass-percentage" },
+    { "concept": "concentration-unit-conversions", "prereq": "density" },
+    { "concept": "concentration-unit-conversions", "prereq": "molarity-calculations" },
+    { "concept": "empirical-formula", "prereq": "empirical-formula-from-molecular-formula" },
+    { "concept": "formula-mass", "prereq": "average-atomic-mass" },
+    { "concept": "formula-mass", "prereq": "molecular-formula" },
+    { "concept": "molecular-versus-formula-mass", "prereq": "ionic-compounds" }
+  ]
+}

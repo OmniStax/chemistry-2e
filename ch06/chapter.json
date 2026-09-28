@@ -40,6 +40,70 @@
   ],
   "variables": [
     {
+      "sym": "λ",
+      "type": "wavelength",
+      "meaning": "the wavelength of a wave, the distance between two consecutive peaks or troughs",
+      "unit": "m",
+      "section": "6.1"
+    },
+    {
+      "sym": "ν",
+      "type": "frequency",
+      "meaning": "the frequency of a wave, the number of wave cycles that pass a specified point in space per unit time",
+      "unit": "Hz",
+      "section": "6.1"
+    },
+    {
+      "sym": "c",
+      "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s, which is the product of the wavelength and the frequency",
+      "unit": "m/s",
+      "section": "6.1"
+    },
+    {
+      "sym": "E",
+      "type": "energy",
+      "meaning": "the energy of one photon, or the quantized vibrational energy of Planck’s treatment",
+      "unit": "J",
+      "section": "6.1"
+    },
+    {
+      "sym": "h",
+      "meaning": "Planck’s constant, 6.626 × 10⁻³⁴ J s",
+      "unit": "J s",
+      "section": "6.1"
+    },
+    {
+      "sym": "n_quantum",
+      "meaning": "the whole number that counts the half-wavelengths of a standing wave, or the quanta of Planck’s vibrational energies",
+      "section": "6.1"
+    },
+    {
+      "sym": "λ_max",
+      "type": "wavelength",
+      "meaning": "the wavelength at which a blackbody curve has its maximum",
+      "unit": "m",
+      "section": "6.1"
+    },
+    {
+      "sym": "T",
+      "type": "temperature",
+      "meaning": "the temperature of a blackbody, the single parameter on which its distribution depends",
+      "unit": "K",
+      "section": "6.1"
+    },
+    {
+      "sym": "R_inf",
+      "meaning": "the Rydberg constant, 1.097 × 10⁷ m⁻¹",
+      "unit": "m⁻¹",
+      "section": "6.1"
+    },
+    {
+      "sym": "k",
+      "meaning": "the constant of Balmer’s empirical equation for the visible lines of hydrogen",
+      "unit": "m⁻¹",
+      "section": "6.1"
+    },
+    {
       "sym": "E_n",
       "type": "energy",
       "meaning": "the energy of an electron in the Bohr orbit with quantum number n, measured from the ionization limit and so always negative",
@@ -140,9 +204,182 @@
       "unit": "m⁻¹",
       "section": "6.2",
       "anchor": "6.2-rydberg-recovered"
+    },
+    {
+      "sym": "λ",
+      "type": "wavelength",
+      "meaning": "the de Broglie wavelength of a particle of mass m moving with velocity v",
+      "unit": "m",
+      "section": "6.3"
+    },
+    {
+      "sym": "m",
+      "type": "mass",
+      "meaning": "the mass of the particle",
+      "unit": "kg",
+      "section": "6.3"
+    },
+    {
+      "sym": "v",
+      "meaning": "the velocity of the particle, not to be confused with the frequency ν",
+      "unit": "m/s",
+      "section": "6.3"
+    },
+    {
+      "sym": "p_momentum",
+      "meaning": "the linear momentum of the particle, the product of its mass and velocity",
+      "unit": "kg m/s",
+      "section": "6.3"
+    },
+    {
+      "sym": "r",
+      "meaning": "the radius of the circular orbit that the electron wave must fit",
+      "unit": "m",
+      "section": "6.3"
+    },
+    {
+      "sym": "Δx",
+      "meaning": "the uncertainty in the position of a particle",
+      "unit": "m",
+      "section": "6.3"
+    },
+    {
+      "sym": "Δp_x",
+      "meaning": "the uncertainty in the momentum of a particle along x",
+      "unit": "kg m/s",
+      "section": "6.3"
+    },
+    {
+      "sym": "hbar",
+      "meaning": "Planck’s constant divided by 2π, 1.055 × 10⁻³⁴ J s",
+      "unit": "J s",
+      "section": "6.3"
+    },
+    {
+      "sym": "ψ",
+      "meaning": "the wavefunction of an electron, whose squared magnitude gives the probability of finding it near a point in space",
+      "section": "6.3"
+    },
+    {
+      "sym": "E",
+      "type": "energy",
+      "meaning": "the total energy of the quantum particle in the Schrödinger equation",
+      "unit": "J",
+      "section": "6.3"
+    },
+    {
+      "sym": "ΔE",
+      "type": "energy",
+      "meaning": "the energy change of an electronic transition, positive when a photon is absorbed and negative when one is emitted",
+      "unit": "J",
+      "section": "6.3"
+    },
+    {
+      "sym": "n_quantum",
+      "meaning": "the principal quantum number, 1, 2, 3, …, which names the shell",
+      "section": "6.3"
+    },
+    {
+      "sym": "n_i",
+      "meaning": "the principal quantum number of the initial energy state",
+      "section": "6.3"
+    },
+    {
+      "sym": "n_f",
+      "meaning": "the principal quantum number of the final energy state",
+      "section": "6.3"
+    },
+    {
+      "sym": "l_quantum",
+      "meaning": "the secondary (angular momentum) quantum number, 0 to n − 1, which names the subshell and the shape of the orbital",
+      "section": "6.3"
+    },
+    {
+      "sym": "m_l",
+      "meaning": "the magnetic quantum number, −l to +l, which gives the orientation of the orbital",
+      "section": "6.3"
+    },
+    {
+      "sym": "m_s",
+      "meaning": "the spin quantum number, +1/2 or −1/2",
+      "section": "6.3"
+    },
+    {
+      "sym": "Z",
+      "meaning": "the nuclear charge, the number of protons in the nucleus",
+      "section": "6.5"
+    },
+    {
+      "sym": "Z_eff",
+      "meaning": "the effective nuclear charge, the pull the nucleus exerts on one electron once the shielding of the others is taken into account",
+      "section": "6.5"
+    },
+    {
+      "sym": "IE",
+      "type": "energy",
+      "meaning": "an ionization energy, the energy required to remove an electron from a gaseous atom or ion; IE₁ for the first electron, IE₂ for the second",
+      "unit": "kJ/mol",
+      "section": "6.5"
+    },
+    {
+      "sym": "EA",
+      "type": "energy",
+      "meaning": "the electron affinity, the energy change when a gaseous atom accepts an electron",
+      "unit": "kJ/mol",
+      "section": "6.5"
+    },
+    {
+      "sym": "r",
+      "meaning": "the covalent radius of an atom, one-half the distance between the nuclei of two identical atoms joined by a covalent bond",
+      "unit": "pm",
+      "section": "6.5"
     }
   ],
   "equations": [
+    {
+      "id": "eq-wave-speed",
+      "concept": "wave-speed-relation",
+      "section": "6.1",
+      "latex": "c=\\lambda\\nu",
+      "ktex": "c=\\klam\\knu",
+      "condition": "electromagnetic radiation in a vacuum",
+      "important": true
+    },
+    {
+      "id": "eq-planck-quantization",
+      "concept": "blackbody-radiation",
+      "section": "6.1",
+      "latex": "E=nh\\nu,\\; n=1,\\;2,\\;3,\\;\\ldots",
+      "ktex": "\\kE=nh\\knu,\\; n=1,\\;2,\\;3,\\;\\ldots",
+      "condition": "the vibrating atoms of a blackbody, restricted to discrete energies for each frequency",
+      "important": false
+    },
+    {
+      "id": "eq-photon-energy",
+      "concept": "photon-energy",
+      "section": "6.1",
+      "latex": "E=h\\nu=\\frac{hc}{\\lambda}",
+      "ktex": "\\kE=h\\knu=\\frac{hc}{\\klam}",
+      "condition": "one photon of electromagnetic radiation",
+      "important": true
+    },
+    {
+      "id": "eq-balmer",
+      "section": "6.1",
+      "latex": "\\frac{1}{\\lambda}=k\\left(\\frac{1}{4}-\\frac{1}{n^{2}}\\right),\\; n=3,\\;4,\\;5,\\;6",
+      "ktex": "\\frac{1}{\\klam}=k\\left(\\frac{1}{4}-\\frac{1}{n^{2}}\\right),\\; n=3,\\;4,\\;5,\\;6",
+      "condition": "the four visible lines of hydrogen, as Balmer found them empirically",
+      "important": false
+    },
+    {
+      "id": "eq-rydberg",
+      "concept": "line-spectra",
+      "section": "6.1",
+      "latex": "\\frac{1}{\\lambda}=R_{\\infty}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+      "ktex": "\\frac{1}{\\klam}=R_{\\infty}\\left(\\frac{1}{n_1^{\\,2}}-\\frac{1}{n_2^{\\,2}}\\right)",
+      "condition": "every emission line of hydrogen, with n₁ and n₂ integers and n₁ < n₂",
+      "important": true
+    },
     {
       "id": "eq-photon-energy-difference",
       "concept": "photon-emission-absorption",
@@ -210,9 +447,183 @@
       "condition": "hydrogen in its ground state, the electron removed to an infinite distance",
       "important": false,
       "anchor": "6.2-orbit-radius"
+    },
+    {
+      "id": "eq-de-broglie",
+      "concept": "de-broglie-wavelength",
+      "section": "6.3",
+      "latex": "\\lambda=\\frac{h}{mv}=\\frac{h}{p}",
+      "ktex": "\\klam=\\frac{h}{\\km v}=\\frac{h}{p}",
+      "condition": "a particle of mass m moving with velocity v",
+      "important": true
+    },
+    {
+      "id": "eq-de-broglie-orbit",
+      "concept": "de-broglie-wavelength",
+      "section": "6.3",
+      "latex": "2\\pi r=n\\lambda,\\; n=1,\\;2,\\;3,\\;\\ldots",
+      "ktex": "2\\pi r=n\\klam,\\; n=1,\\;2,\\;3,\\;\\ldots",
+      "condition": "an electron viewed as a circular standing wave about the nucleus",
+      "important": false
+    },
+    {
+      "id": "eq-uncertainty",
+      "concept": "heisenberg-uncertainty",
+      "section": "6.3",
+      "latex": "\\Delta x\\times\\Delta p_{x}=(\\Delta x)(m\\Delta v)\\ge\\frac{\\hbar}{2}",
+      "ktex": "\\Delta x\\times\\Delta p_{x}=(\\Delta x)(\\km\\Delta v)\\ge\\frac{\\hbar}{2}",
+      "condition": "a particle of mass m moving along x",
+      "important": true
+    },
+    {
+      "id": "eq-energy-time-uncertainty",
+      "concept": "heisenberg-uncertainty",
+      "section": "6.3",
+      "latex": "\\Delta E\\,\\Delta t\\ge\\frac{\\hbar}{2}",
+      "ktex": "\\kdE\\,\\kdt\\ge\\frac{\\hbar}{2}",
+      "condition": "an atom making a transition from one energy state to another",
+      "important": false
+    },
+    {
+      "id": "eq-schrodinger",
+      "concept": "wavefunction-probability",
+      "section": "6.3",
+      "latex": "\\hat{H}\\psi=E\\psi",
+      "ktex": "\\hat{H}\\psi=\\kE\\psi",
+      "condition": "the Schrödinger equation in its most general form",
+      "important": false
+    },
+    {
+      "id": "eq-hydrogen-transition",
+      "concept": "principal-quantum-number-shells",
+      "section": "6.3",
+      "latex": "\\Delta E=E_{\\text{final}}-E_{\\text{initial}}=-2.18\\times10^{-18}\\left(\\frac{1}{n_{\\text{f}}^{2}}-\\frac{1}{n_{\\text{i}}^{2}}\\right)\\text{ J}",
+      "ktex": "\\kdE=\\kE_{\\text{final}}-\\kE_{\\text{initial}}=-2.18\\times10^{-18}\\left(\\frac{1}{n_{\\text{f}}^{2}}-\\frac{1}{n_{\\text{i}}^{2}}\\right)\\text{ J}",
+      "condition": "the hydrogen atom, the electron moving from the state n_i to the state n_f",
+      "important": false
+    },
+    {
+      "id": "eq-effective-nuclear-charge",
+      "concept": "effective-nuclear-charge",
+      "section": "6.5",
+      "latex": "Z_{\\text{eff}}=Z-\\text{shielding}",
+      "condition": "any atom but hydrogen, whose inner electrons partly shield the outer ones",
+      "important": true
+    },
+    {
+      "id": "eq-first-ionization",
+      "concept": "ionization-energy-trend",
+      "section": "6.5",
+      "latex": "\\text{X}(g)\\longrightarrow\\text{X}^{+}(g)+\\text{e}^{-}\\qquad\\text{IE}_{1}",
+      "ktex": "\\text{X}(g)\\longrightarrow\\text{X}^{+}(g)+\\text{e}^{-}\\qquad\\kIE_{1}",
+      "condition": "a gaseous atom in its ground state losing its most loosely bound electron",
+      "important": false
+    },
+    {
+      "id": "eq-second-ionization",
+      "concept": "successive-ionization-energies",
+      "section": "6.5",
+      "latex": "\\text{X}^{+}(g)\\longrightarrow\\text{X}^{2+}(g)+\\text{e}^{-}\\qquad\\text{IE}_{2}",
+      "ktex": "\\text{X}^{+}(g)\\longrightarrow\\text{X}^{2+}(g)+\\text{e}^{-}\\qquad\\kIE_{2}",
+      "condition": "the cation losing its second most loosely bound electron",
+      "important": false
+    },
+    {
+      "id": "eq-electron-affinity",
+      "concept": "electron-affinity-trend",
+      "section": "6.5",
+      "latex": "\\text{X}(g)+\\text{e}^{-}\\longrightarrow\\text{X}^{-}(g)\\qquad\\text{EA}_{1}",
+      "ktex": "\\text{X}(g)+\\text{e}^{-}\\longrightarrow\\text{X}^{-}(g)\\qquad\\kEA_{1}",
+      "condition": "a gaseous atom accepting an electron to form an anion",
+      "important": false
     }
   ],
   "glossary": [
+    {
+      "section": "6.1",
+      "term": "amplitude",
+      "definition": "extent of the displacement caused by a wave"
+    },
+    {
+      "section": "6.1",
+      "term": "blackbody",
+      "definition": "idealized perfect absorber of all incident electromagnetic radiation; such bodies emit electromagnetic radiation in characteristic continuous spectra called blackbody radiation"
+    },
+    {
+      "section": "6.1",
+      "term": "continuous spectrum",
+      "definition": "electromagnetic radiation given off in an unbroken series of wavelengths (e.g., white light from the sun)"
+    },
+    {
+      "section": "6.1",
+      "term": "electromagnetic radiation",
+      "definition": "energy transmitted by waves that have an electric-field component and a magnetic-field component"
+    },
+    {
+      "section": "6.1",
+      "term": "electromagnetic spectrum",
+      "definition": "range of energies that electromagnetic radiation can comprise, including radio, microwaves, infrared, visible, ultraviolet, X-rays, and gamma rays"
+    },
+    {
+      "section": "6.1",
+      "term": "frequency (<i>ν</i>)",
+      "definition": "number of wave cycles (peaks or troughs) that pass a specified point in space per unit time"
+    },
+    {
+      "section": "6.1",
+      "term": "hertz (Hz)",
+      "definition": "the unit of frequency, which is the number of cycles per second, s<sup>−1</sup>"
+    },
+    {
+      "section": "6.1",
+      "term": "intensity",
+      "definition": "property of wave-propagated energy related to the amplitude of the wave, such as brightness of light or loudness of sound"
+    },
+    {
+      "section": "6.1",
+      "term": "interference pattern",
+      "definition": "pattern typically consisting of alternating bright and dark fringes; it results from constructive and destructive interference of waves"
+    },
+    {
+      "section": "6.1",
+      "term": "line spectrum",
+      "definition": "electromagnetic radiation emitted at discrete wavelengths by a specific atom (or atoms) in an excited state"
+    },
+    {
+      "section": "6.1",
+      "term": "node",
+      "definition": "any point of a standing wave with zero amplitude"
+    },
+    {
+      "section": "6.1",
+      "term": "photon",
+      "definition": "smallest possible packet of electromagnetic radiation, a particle of light"
+    },
+    {
+      "section": "6.1",
+      "term": "quantization",
+      "definition": "limitation of some property to specific discrete values, not continuous"
+    },
+    {
+      "section": "6.1",
+      "term": "standing wave",
+      "definition": "(also, stationary wave) localized wave phenomenon characterized by discrete wavelengths determined by the boundary conditions used to generate the waves; standing waves are inherently quantized"
+    },
+    {
+      "section": "6.1",
+      "term": "wave",
+      "definition": "oscillation of a property over time or space; can transport energy from one point to another"
+    },
+    {
+      "section": "6.1",
+      "term": "wavelength (<i>λ</i>)",
+      "definition": "distance between two consecutive peaks or troughs in a wave"
+    },
+    {
+      "section": "6.1",
+      "term": "wave-particle duality",
+      "definition": "observation that elementary particles can exhibit both wave-like and particle-like properties"
+    },
     {
       "section": "6.2",
       "term": "Bohr's model of the hydrogen atom",
@@ -232,6 +643,151 @@
       "section": "6.2",
       "term": "quantum number",
       "definition": "number having only specific allowed values and used to characterize the arrangement of electrons in an atom"
+    },
+    {
+      "section": "6.3",
+      "term": "secondary (angular momentum) quantum number (<i>l</i>)",
+      "definition": "quantum number distinguishing the different shapes of orbitals; it is also a measure of the orbital angular momentum"
+    },
+    {
+      "section": "6.3",
+      "term": "atomic orbital",
+      "definition": "mathematical function that describes the behavior of an electron in an atom (also called the wavefunction)"
+    },
+    {
+      "section": "6.3",
+      "term": "<i>d</i> orbital",
+      "definition": "region of space with high electron density that is either four lobed or contains a dumbbell and torus shape; describes orbitals with <i>l</i> = 2."
+    },
+    {
+      "section": "6.3",
+      "term": "degenerate orbitals",
+      "definition": "orbitals that have the same energy"
+    },
+    {
+      "section": "6.3",
+      "term": "electron density",
+      "definition": "a measure of the probability of locating an electron in a particular region of space, it is equal to the squared absolute value of the wave function <i>ψ</i>"
+    },
+    {
+      "section": "6.3",
+      "term": "<i>f</i> orbital",
+      "definition": "multilobed region of space with high electron density, describes orbitals with <i>l</i> = 3"
+    },
+    {
+      "section": "6.3",
+      "term": "Heisenberg uncertainty principle",
+      "definition": "rule stating that it is impossible to exactly determine both certain conjugate dynamical properties such as the momentum and the position of a particle at the same time. The uncertainty principle is a consequence of quantum particles exhibiting wave–particle duality"
+    },
+    {
+      "section": "6.3",
+      "term": "magnetic quantum number (<i>m<sub>l</sub></i>)",
+      "definition": "quantum number signifying the orientation of an atomic orbital around the nucleus"
+    },
+    {
+      "section": "6.3",
+      "term": "<i>p</i> orbital",
+      "definition": "dumbbell-shaped region of space with high electron density, describes orbitals with <i>l</i> = 1"
+    },
+    {
+      "section": "6.3",
+      "term": "Pauli exclusion principle",
+      "definition": "specifies that no two electrons in an atom can have the same value for all four quantum numbers"
+    },
+    {
+      "section": "6.3",
+      "term": "principal quantum number (<i>n</i>)",
+      "definition": "quantum number specifying the shell an electron occupies in an atom"
+    },
+    {
+      "section": "6.3",
+      "term": "quantum mechanics",
+      "definition": "field of study that includes quantization of energy, wave-particle duality, and the Heisenberg uncertainty principle to describe matter"
+    },
+    {
+      "section": "6.3",
+      "term": "<i>s</i> orbital",
+      "definition": "spherical region of space with high electron density, describes orbitals with <i>l</i> = 0"
+    },
+    {
+      "section": "6.3",
+      "term": "shell",
+      "definition": "atomic orbitals with the same principal quantum number, <i>n</i>"
+    },
+    {
+      "section": "6.3",
+      "term": "spin quantum number (<i>m<sub>s</sub></i>)",
+      "definition": "number specifying the electron spin direction, either +1/2 or −1/2"
+    },
+    {
+      "section": "6.3",
+      "term": "subshell",
+      "definition": "atomic orbitals with the same values of <i>n</i> and <i>l</i>"
+    },
+    {
+      "section": "6.3",
+      "term": "wavefunction (<i>ψ</i>)",
+      "definition": "mathematical description of an atomic orbital that describes the shape of the orbital; it can be used to calculate the probability of finding the electron at any given location in the orbital, as well as dynamical variables such as the energy and the angular momentum"
+    },
+    {
+      "section": "6.4",
+      "term": "Aufbau principle",
+      "definition": "procedure in which the electron configuration of the elements is determined by “building” them in order of atomic numbers, adding one proton to the nucleus and one electron to the proper subshell at a time"
+    },
+    {
+      "section": "6.4",
+      "term": "core electron",
+      "definition": "electron in an atom that occupies the orbitals of the inner shells"
+    },
+    {
+      "section": "6.4",
+      "term": "electron configuration",
+      "definition": "listing that identifies the electron occupancy of an atom’s shells and subshells"
+    },
+    {
+      "section": "6.4",
+      "term": "Hund’s rule",
+      "definition": "every orbital in a subshell is singly occupied with one electron before any one orbital is doubly occupied, and all electrons in singly occupied orbitals have the same spin"
+    },
+    {
+      "section": "6.4",
+      "term": "orbital diagram",
+      "definition": "pictorial representation of the electron configuration showing each orbital as a box and each electron as an arrow"
+    },
+    {
+      "section": "6.4",
+      "term": "valence electrons",
+      "definition": "electrons in the high energy outer shell(s) of an atom"
+    },
+    {
+      "section": "6.4",
+      "term": "valence shell",
+      "definition": "high energy outer shell(s) of an atom"
+    },
+    {
+      "section": "6.5",
+      "term": "covalent radius",
+      "definition": "one-half the distance between the nuclei of two identical atoms when they are joined by a covalent bond"
+    },
+    {
+      "section": "6.5",
+      "term": "effective nuclear charge",
+      "definition": "charge that leads to the Coulomb force exerted by the nucleus on an electron, calculated as the nuclear charge minus shielding"
+    },
+    {
+      "section": "6.5",
+      "term": "electron affinity",
+      "definition": "energy change associated with addition of an electron to a gaseous atom or ion"
+    },
+    {
+      "section": "6.5",
+      "term": "ionization energy",
+      "definition": "energy required to remove an electron from a gaseous atom or ion"
+    },
+    {
+      "section": "6.5",
+      "term": "isoelectronic",
+      "definition": "group of ions or atoms that have identical electron configurations"
     }
   ]
 }

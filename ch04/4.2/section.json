@@ -1,0 +1,680 @@
+{
+ "id": "4.2",
+ "module": "m68710",
+ "chapter": "4",
+ "title": "Classifying Chemical Reactions",
+ "short": "Classifying Reactions",
+ "lead": "Many chemical reactions fall into one of three common classes. In a precipitation reaction, dissolved ions combine to form an insoluble solid; in an acid-base reaction, a hydrogen ion passes from one species to another; and in an oxidation-reduction reaction, one or more elements change in oxidation number. This section shows how to recognize each class, how to predict a precipitate from the solubility guidelines, and how to balance a redox equation by the half-reaction method.",
+ "objectives": [
+  "Define three common types of chemical reactions (precipitation, acid-base, and oxidation-reduction)",
+  "Classify chemical reactions as one of these three types given appropriate descriptions or chemical equations",
+  "Identify common acids and bases",
+  "Predict the solubility of common inorganic compounds by using solubility rules",
+  "Compute the oxidation states for elements in compounds"
+ ],
+ "summary_html": "<p>Chemical reactions are classified according to similar patterns of behavior. A large number of important reactions are included in three categories: precipitation, acid-base, and oxidation-reduction (redox). Precipitation reactions involve the formation of one or more insoluble products. Acid-base reactions involve the transfer of hydrogen ions between reactants. Redox reactions involve a change in oxidation number for one or more reactant elements. Writing balanced equations for some redox reactions that occur in aqueous solutions is simplified by using a systematic approach called the half-reaction method.</p>",
+ "notes": "The two Link to Learning notes are left out: the microscopic view of strong and weak acids and bases, whose place the choice of gas in Figure 4.5 takes, and a video of a hybrid rocket engine firing; the text of Example 4.7 keeps its printed “(2 × 3+) = 6 +”, and exercises 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38 and 40 of the chapter have no answer in the book’s key and are left out.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the stray “**” after “Sn(s)” in the key of Example 4.6 is dropped. The fifteen unkeyed exercises are classifications, oxidation states or equations to complete and balance, answers that would have to be computed, so they are left out: fs-idp29496096, fs-idp45308224, fs-idm120814704, fs-idp9450288, fs-idp16823936, fs-idp4908480, fs-idp9275200, fs-idm58208656, fs-idm48911936, fs-idm49879312, fs-idp45994720, fs-idp68926672, fs-idp89842528, fs-idp30749376, fs-idp27470448. The exercise on dissolving silver in nitric acid is set as a choice between the two classes it names, and the Check Your Learning of Example 4.5 is checked part by part as four oxidation numbers.",
+ "figures": [
+  {
+   "id": "fig-lead-iodide",
+   "kind": "photo",
+   "number": "4.4",
+   "draws": []
+  },
+  {
+   "id": "sim-precipitation",
+   "kind": "sim",
+   "draws": []
+  },
+  {
+   "id": "sim-hcl",
+   "kind": "sim",
+   "number": "4.5",
+   "originals": [
+    "/media/ch04/CNX_Chem_04_02_HClsoln.jpg"
+   ],
+   "original_caption": "When hydrogen chloride gas dissolves in water, (a) it reacts as an acid, transferring protons to water molecules to yield (b) hydronium ions (and solvated chloride ions).",
+   "draws": []
+  },
+  {
+   "id": "fig-citrus",
+   "kind": "photo",
+   "number": "4.6",
+   "draws": []
+  },
+  {
+   "id": "fig-ammonia",
+   "kind": "photo",
+   "number": "4.7",
+   "draws": []
+  },
+  {
+   "id": "fig-fish-lemon",
+   "kind": "photo",
+   "number": "4.8",
+   "draws": []
+  },
+  {
+   "id": "fig-copper-silver",
+   "kind": "photo",
+   "number": "4.9",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "precipitation",
+   "concept": "precipitation-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "precipitation",
+   "concept": "ionic-equations",
+   "verb": "uses"
+  },
+  {
+   "span": "predict-precipitation",
+   "concept": "predict-precipitation",
+   "verb": "introduces"
+  },
+  {
+   "span": "predict-precipitation",
+   "concept": "precipitation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "predict-precipitation",
+   "concept": "write-net-ionic-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "acid-base",
+   "concept": "acids-and-bases",
+   "verb": "introduces"
+  },
+  {
+   "span": "strong-weak",
+   "concept": "strong-and-weak-acids-bases",
+   "verb": "introduces"
+  },
+  {
+   "span": "strong-weak",
+   "concept": "acids-and-bases",
+   "verb": "uses"
+  },
+  {
+   "span": "neutralization",
+   "concept": "neutralization-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "neutralization",
+   "concept": "acids-and-bases",
+   "verb": "uses"
+  },
+  {
+   "span": "neutralization",
+   "concept": "balanced-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "acids-everyday",
+   "concept": "neutralization-reaction",
+   "verb": "reinforces"
+  },
+  {
+   "span": "acids-everyday",
+   "concept": "acids-and-bases",
+   "verb": "reinforces"
+  },
+  {
+   "span": "redox",
+   "concept": "redox-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxidation-numbers",
+   "concept": "oxidation-numbers",
+   "verb": "introduces"
+  },
+  {
+   "span": "redox-definition",
+   "concept": "redox-reaction",
+   "verb": "reinforces"
+  },
+  {
+   "span": "redox-definition",
+   "concept": "oxidation-numbers",
+   "verb": "uses"
+  },
+  {
+   "span": "redox-kinds",
+   "concept": "classify-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "redox-kinds",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "redox-kinds",
+   "concept": "oxidation-numbers",
+   "verb": "uses"
+  },
+  {
+   "span": "half-reaction",
+   "concept": "half-reaction-method",
+   "verb": "introduces"
+  },
+  {
+   "span": "half-reaction",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "half-reaction",
+   "concept": "balanced-equation",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp3608096",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-precipitation"
+   },
+   "cite": "predict-precipitation",
+   "prompt": "Which solution could be used to precipitate the barium ion, Ba<sup>2+</sup>, in a water sample: sodium chloride, sodium hydroxide, or sodium sulfate? What is the formula for the expected precipitate?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "sodium sulfate, BaSO<sub>4</sub>"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm49295040",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-acid-base"
+   },
+   "cite": "neutralization",
+   "prompt": "Write the net ionic equation representing the neutralization of any strong acid with an ionic hydroxide. (Hint: Consider the ions produced when a strong acid is dissolved in water.)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "${\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(l)$"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm24634320",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-oxidation-numbers"
+   },
+   "cite": "oxidation-numbers",
+   "prompt": "Assign oxidation states to the elements whose atoms are underlined in each of the following compounds or ions:\n(a) K<u>N</u>O<sub>3</sub>\n(b) <u>Al</u>H<sub>3</sub>\n(c) $\\underline{\\text{N}}{\\text{H}}_{4}{}^{+}$\n(d) ${\\text{H}}_{2}\\underline{\\text{P}}{\\text{O}}_{4}{}^{-}$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 5,
+      "hint": "Potassium is +1 and each oxygen is −2, and the sum for the neutral compound is zero."
+     },
+     {
+      "part": "(b)",
+      "value": 3,
+      "hint": "Hydrogen combined with a metal is −1."
+     },
+     {
+      "part": "(c)",
+      "value": -3,
+      "hint": "Hydrogen is +1, and the sum equals the charge of the ion, 1+."
+     },
+     {
+      "part": "(d)",
+      "value": 5,
+      "hint": "Hydrogen is +1, oxygen is −2, and the sum equals the charge of the ion, 1−."
+     }
+    ],
+    "solution": "(a) N, +5; (b) Al, +3; (c) N, −3; (d) P, +5"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp180799104",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-redox"
+   },
+   "cite": "redox-kinds",
+   "prompt": "This equation describes the production of tin(II) chloride:\n$\\text{Sn}(s)+2\\text{HCl}(g)\\;\\longrightarrow \\;{\\text{SnCl}}_{2}(s)+{\\text{H}}_{2}(g)$\nIs this a redox reaction? If so, provide a more specific name for the reaction if appropriate, and identify the oxidant and reductant.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Yes, a single-replacement reaction. Sn(<em>s</em>) is the reductant, HCl(<em>g</em>) is the oxidant."
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm53644080",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-half-reaction"
+   },
+   "cite": "half-reaction",
+   "prompt": "In basic solution, molecular chlorine, Cl<sub>2</sub>, reacts with hydroxide ions, OH<sup>−</sup>, to yield chloride ions, Cl<sup>−</sup>. and chlorate ions, ClO<sub>3</sub><sup>−</sup>.  HINT: This is a <em>disproportionation reaction</em> in which the element chlorine is both oxidized and reduced. Write a balanced equation for this reaction.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$3{\\text{Cl}}_{2}(aq)+6{\\text{OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\;5{\\text{Cl}}^{\\text{−}}(aq)+{\\text{ClO}}_{3}{}^{\\text{−}}(aq)+3{\\text{H}}_{2}\\text{O}(l)$"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp89395536",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "redox-kinds",
+   "prompt": "Indicate what type, or types, of reaction each of the following represents:\n(a) $\\text{Ca}(s)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;{\\text{CaBr}}_{2}(s)$\n(b) $\\text{Ca}\\;{\\text{(OH)}}_{2}(aq)+2\\text{HBr}(aq)\\;\\longrightarrow \\;{\\text{CaBr}}_{2}(aq)+2{\\text{H}}_{2}\\text{O}(l)$\n(c) ${\\text{C}}_{6}{\\text{H}}_{12}(l)+9{\\text{O}}_{2}(g)\\;\\longrightarrow \\;6{\\text{CO}}_{2}(g)+6{\\text{H}}_{2}\\text{O}(g)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) oxidation-reduction (addition); (b) acid-base (neutralization); (c) oxidation-reduction (combustion)"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm49658992",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "redox-definition",
+   "prompt": "Silver can be separated from gold because silver dissolves in nitric acid while gold does not. Is the dissolution of silver in nitric acid an acid-base reaction or an oxidation-reduction reaction? Explain your answer.",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "an acid-base reaction",
+     "an oxidation-reduction reaction"
+    ],
+    "correct": 1,
+    "solution": "It is an oxidation-reduction reaction because the oxidation state of the silver changes during the reaction."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm48178048",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "oxidation-numbers",
+   "prompt": "Determine the oxidation states of the elements in the compounds listed. None of the oxygen-containing compounds are peroxides or superoxides.\n(a) H<sub>3</sub>PO<sub>4</sub>\n(b) Al(OH)<sub>3</sub>\n(c) SeO<sub>2</sub>\n(d) KNO<sub>2</sub>\n(e) In<sub>2</sub>S<sub>3</sub>\n(f) P<sub>4</sub>O<sub>6</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) H +1, P +5, O −2; (b) Al +3, H +1, O −2; (c) Se +4, O −2; (d) K +1, N +3, O −2; (e) In +3, S −2; (f) P +3, O −2"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp153725776",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "redox-definition",
+   "prompt": "Classify the following as acid-base reactions or oxidation-reduction reactions:\n(a) ${\\text{Na}}_{2}\\text{S}(aq)+2\\text{HCl}(aq)\\;\\longrightarrow \\;2\\text{NaCl}(aq)+{\\text{H}}_{2}\\text{S}(g)$\n(b) $2\\text{Na}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;2\\text{NaCl}(aq)+{\\text{H}}_{2}(g)$\n(c) $\\text{Mg}(s)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{MgCl}}_{2}(s)$\n(d) $\\text{MgO}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{MgCl}}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)$\n(e) ${\\text{K}}_{3}\\text{P}(s)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{K}}_{3}{\\text{PO}}_{4}(s)$\n(f) $3\\text{KOH}(aq)+{\\text{H}}_{3}{\\text{PO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{K}}_{3}{\\text{PO}}_{4}(aq)+3{\\text{H}}_{2}\\text{O}(l)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) acid-base; (b) oxidation-reduction: Na is oxidized, H<sup>+</sup> is reduced; (c) oxidation-reduction: Mg is oxidized, Cl<sub>2</sub> is reduced; (d) acid-base; (e) oxidation-reduction: P<sup>3−</sup> is oxidized, O<sub>2</sub> is reduced; (f) acid-base"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm48437584",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "neutralization",
+   "prompt": "Complete and balance the following acid-base equations:\n(a) HCl gas reacts with solid Ca(OH)<sub>2</sub>(<em>s</em>).\n(b) A solution of Sr(OH)<sub>2</sub> is added to a solution of HNO<sub>3</sub>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $2\\text{HCl}(g)+\\text{Ca}{\\text{(OH)}}_{2}(s)\\;\\longrightarrow \\;{\\text{CaCl}}_{2}(s)+2{\\text{H}}_{2}\\text{O}(l);$ (b) $\\text{Sr}{\\text{(OH)}}_{2}(aq)+2{\\text{HNO}}_{3}(aq)\\;\\longrightarrow \\;\\text{Sr}{({\\text{NO}}_{3})}_{2}(aq)+2{\\text{H}}_{2}\\text{O}(l)$"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm6604608",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "redox-kinds",
+   "prompt": "Complete and balance the following oxidation-reduction reactions, which give the highest possible oxidation state for the oxidized atoms.\n(a) $\\text{Al}(s)+{\\text{F}}_{2}(g)\\;\\longrightarrow \\;$\n(b) $\\text{Al}(s)+{\\text{CuBr}}_{2}(aq)\\;\\longrightarrow \\;$ (single displacement)\n(c) ${\\text{P}}_{4}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;$\n(d) $\\text{Ca}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;$ (products are a strong base and a diatomic gas)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $2\\text{Al}(s)+3{\\text{F}}_{2}(g)\\;\\longrightarrow \\;2{\\text{AlF}}_{3}(s);$ (b) $2\\text{Al}(s)+3{\\text{CuBr}}_{2}(aq)\\;\\longrightarrow \\;3\\text{Cu}(s)+2{\\text{AlBr}}_{3}(aq);$ (c) ${\\text{P}}_{4}(s)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s);$ (d) $\\text{Ca}(s)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Ca}{\\text{(OH)}}_{2}(aq)+{\\text{H}}_{2}(g)$"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp105919968",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "neutralization",
+   "prompt": "Complete and balance the equations for the following acid-base neutralization reactions. If water is used as a solvent, write the reactants and products as aqueous ions. In some cases, there may be more than one correct answer, depending on the amounts of reactants used.\n(a) $\\text{Mg}{\\text{(OH)}}_{2}(s)+{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;$\n(b) ${\\text{SO}}_{3}(g)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\;\\text{(assume an excess of water and that the product dissolves)}$\n(c) $\\text{SrO}(s)+{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $\\text{Mg}{\\text{(OH)}}_{2}(s)+2{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{Mg}}^{\\text{2+}}(aq)+2{\\text{ClO}}_{4}{}^{\\text{−}}(aq)+2{\\text{H}}_{2}\\text{O}(l);$ (b) ${\\text{SO}}_{3}(g)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{HSO}}_{4}{}^{\\text{−}}(aq),$ (a solution of H<sub>2</sub>SO<sub>4</sub>); (c) $\\text{SrO}(s)+{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;{\\text{SrSO}}_{4}(s)+{\\text{H}}_{2}\\text{O}$"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm9932800",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "redox-kinds",
+   "prompt": "The military has experimented with lasers that produce very intense light when fluorine combines explosively with hydrogen. What is the balanced equation for this reaction?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "${\\text{H}}_{2}(g)+{\\text{F}}_{2}(g)\\;\\longrightarrow \\;\\text{2HF}(g)$"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp187257568",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "redox-kinds",
+   "prompt": "Great Lakes Chemical Company produces bromine, Br<sub>2</sub>, from bromide salts such as NaBr, in Arkansas brine by treating the brine with chlorine gas. Write a balanced equation for the reaction of NaBr with Cl<sub>2</sub>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\text{2NaBr}(aq)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{NaCl}(aq)+{\\text{Br}}_{2}(l)$"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp89418928",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "neutralization",
+   "prompt": "Lithium hydroxide may be used to absorb carbon dioxide in enclosed environments, such as manned spacecraft and submarines. Write an equation for the reaction that involves 2 mol of LiOH per 1 mol of CO<sub>2</sub>. (Hint: Water is one of the products.)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$2\\text{LiOH}(aq)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Li}}_{2}{\\text{CO}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)$"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp89462576",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "neutralization",
+   "prompt": "Complete and balance the equations of the following reactions, each of which could be used to remove hydrogen sulfide from natural gas:\n(a) $\\text{Ca}{(\\text{OH})}_{2}(s)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;$\n(b) ${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $\\text{Ca}{\\text{(OH)}}_{2}(s)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;\\text{CaS}(s)+2{\\text{H}}_{2}\\text{O}(l);$ (b) ${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;{\\text{Na}}_{2}\\text{S}(aq)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm49311296",
+   "kind": "exercise",
+   "bloom": "Create",
+   "place": {
+    "at": "end"
+   },
+   "cite": "redox-kinds",
+   "prompt": "Write balanced chemical equations for the reactions used to prepare each of the following compounds from the given starting material(s). In some cases, additional reactants may be required.\n(a) solid ammonium nitrate from gaseous molecular nitrogen via a two-step process (first reduce the nitrogen to ammonia, then neutralize the ammonia with an appropriate acid)\n(b) gaseous hydrogen bromide from liquid molecular bromine via a one-step redox reaction\n(c) gaseous H<sub>2</sub>S from solid Zn and S via a two-step process (first a redox reaction between the starting materials, then reaction of the product with a strong acid)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) step 1: ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NH}}_{3}(g\\text{),}$ step 2: ${\\text{NH}}_{3}(g)+{\\text{HNO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{NH}}_{4}{\\text{NO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{NH}}_{4}{\\text{NO}}_{3}(s)\\;\\text{(after drying);}$ (b) ${\\text{H}}_{2}(g)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;2\\text{HBr}(g\\text{);}$ (c) $\\text{Zn}(s)+\\text{S}(s)\\;\\longrightarrow \\;\\text{ZnS}(s)$ and $\\text{ZnS}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{ZnCl}}_{2}(aq)+{\\text{H}}_{2}\\text{S}(g)$"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm11103504",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "half-reaction",
+   "prompt": "Complete and balance each of the following half-reactions (steps 2–5 in half-reaction method):\n(a) ${\\text{Sn}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Sn}}^{2+}(aq)$\n(b) ${[\\text{Ag}{({\\text{NH}}_{3})}_{2}]}^{\\text{+}}(aq)\\;\\longrightarrow \\;\\text{Ag}(s)+{\\text{NH}}_{3}(aq)$\n(c) ${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\;\\longrightarrow \\;\\text{Hg}(l)+{\\text{Cl}}^{\\text{−}}(aq)$\n(d) ${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{O}}_{2}(g)\\;$ (in acidic solution)\n(e) ${\\text{IO}}_{3}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{I}}_{2}(s)$ (in basic solution)\n(f) ${\\text{SO}}_{3}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{SO}}_{4}{}^{2−}(aq)\\;$ (in acidic solution)\n(g) ${\\text{MnO}}_{4}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)\\;$ (in acidic solution)\n(h) ${\\text{Cl}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{ClO}}_{3}{}^{\\text{−}}(aq)\\;$ (in basic solution)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${\\text{Sn}}^{4+}(aq)+{\\text{2e}}^{-}\\;\\longrightarrow \\;{\\text{Sn}}^{2+}(aq),$ (b) ${[\\text{Ag}{({\\text{NH}}_{3})}_{2}]}^{\\text{+}}(aq)+{\\text{e}}^{-}\\;\\longrightarrow \\;\\text{Ag}(s)+2{\\text{NH}}_{3}(aq);$ (c) ${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)+2{\\text{e}}^{-}\\;\\longrightarrow \\;2\\text{Hg}(l)+2{\\text{Cl}}^{\\text{−}}(aq);$ (d) $2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{O}}_{2}(g)+4{\\text{H}}^{\\text{+}}(aq)+4{\\text{e}}^{-};$ (e) $6{\\text{H}}_{2}\\text{O}(l)+2{\\text{IO}}_{3}{}^{\\text{−}}(aq)+10{\\text{e}}^{-}\\;\\longrightarrow \\;{\\text{I}}_{2}(s)+12{\\text{OH}}^{\\text{−}}(aq);$ (f) ${\\text{H}}_{2}\\text{O}(l)+{\\text{SO}}_{3}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{SO}}_{4}{}^{2−}(aq)+2{\\text{H}}^{\\text{+}}(aq)+2{\\text{e}}^{-};$ (g) $8{\\text{H}}^{\\text{+}}(aq)+{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+5{\\text{e}}^{-}\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)+4{\\text{H}}_{2}\\text{O}(l);$ (h) ${\\text{Cl}}^{\\text{−}}(aq)+6{\\text{OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\;\\text{Cl}{\\text{O}}_{3}{}^{\\text{−}}(aq)+3{\\text{H}}_{2}\\text{O}(l)+6{\\text{e}}^{-}$"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm48094672",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "half-reaction",
+   "prompt": "Balance each of the following equations according to the half-reaction method:\n(a) ${\\text{Sn}}^{2+}(aq)+{\\text{Cu}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Sn}}^{4+}(aq)+{\\text{Cu}}^{\\text{+}}(aq)$\n(b) ${\\text{H}}_{2}\\text{S}(g)+{\\text{Hg}}_{2}{}^{2+}(aq)\\;\\longrightarrow \\;\\text{H}g(l)+\\text{S}(s)\\;\\text{(in acid)}$\n(c) ${\\text{CN}}^{\\text{−}}(aq)+{\\text{ClO}}_{2}(aq)\\;\\longrightarrow \\;{\\text{CNO}}^{\\text{−}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)\\;\\text{(in acid)}$\n(d) ${\\text{Fe}}^{2+}(aq)+{\\text{Ce}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{3+}(aq)+{\\text{Ce}}^{3+}(aq)$\n(e) $\\text{HBrO}(aq)\\;\\longrightarrow \\;{\\text{Br}}^{\\text{−}}(aq)+{\\text{O}}_{2}(g)\\;\\text{(in acid)}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${\\text{Sn}}^{2+}(aq)+2{\\text{Cu}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Sn}}^{4+}(aq)+2{\\text{Cu}}^{\\text{+}}(aq);$ (b) ${\\text{H}}_{2}\\text{S}(g)+{\\text{Hg}}_{2}{}^{2+}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2\\text{Hg}(l)+\\text{S}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq);$ (c) $5{\\text{CN}}^{\\text{−}}(aq)+2{\\text{ClO}}_{2}(aq)+3{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;5{\\text{CNO}}^{\\text{−}}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq);$ (d) ${\\text{Fe}}^{2+}(aq)+{\\text{Ce}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{3+}(aq)+{\\text{Ce}}^{3+}(aq);$ (e) $2\\text{HBrO}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+2{\\text{Br}}^{\\text{−}}(aq)+{\\text{O}}_{2}(g)$"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp46083440",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "half-reaction",
+   "prompt": "Balance each of the following equations according to the half-reaction method:\n(a) ${\\text{MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{NO}}_{2}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{MnO}}_{2}(s)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\;\\text{(in base)}$\n(b) ${\\text{MnO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\text{(in base)}$\n(c) ${\\text{Br}}_{2}(l)+{\\text{SO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Br}}^{\\text{−}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\text{(in acid)}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $2{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{3NO}}_{2}{}^{\\text{−}}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{MnO}}_{2}(s)+3{\\text{NO}}_{3}{}^{\\text{−}}(aq)+2{\\text{OH}}^{\\text{−}}(aq);$ (b) $3{\\text{MnO}}_{4}{}^{2−}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+4{\\text{OH}}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\text{(in base)};$ (c) ${\\text{Br}}_{2}(l)+{\\text{SO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;4{\\text{H}}^{\\text{+}}(aq)+2{\\text{Br}}^{\\text{−}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)$"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "predict-precipitation"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "precipitation-reaction"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "neutralization-reaction"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "write-net-ionic-equation"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "classify-reaction"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "half-reaction-method"
+  },
+  {
+   "exercise": "e1",
+   "concept": "classify-reaction"
+  },
+  {
+   "exercise": "e1",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "e1",
+   "concept": "neutralization-reaction"
+  },
+  {
+   "exercise": "e2",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "e2",
+   "concept": "classify-reaction"
+  },
+  {
+   "exercise": "e3",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "e4",
+   "concept": "classify-reaction"
+  },
+  {
+   "exercise": "e4",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "e4",
+   "concept": "acids-and-bases"
+  },
+  {
+   "exercise": "e5",
+   "concept": "neutralization-reaction"
+  },
+  {
+   "exercise": "e6",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "e6",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "e7",
+   "concept": "neutralization-reaction"
+  },
+  {
+   "exercise": "e7",
+   "concept": "acids-and-bases"
+  },
+  {
+   "exercise": "e8",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "e9",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "e10",
+   "concept": "neutralization-reaction"
+  },
+  {
+   "exercise": "e10",
+   "concept": "acids-and-bases"
+  },
+  {
+   "exercise": "e11",
+   "concept": "neutralization-reaction"
+  },
+  {
+   "exercise": "e11",
+   "concept": "acids-and-bases"
+  },
+  {
+   "exercise": "e12",
+   "concept": "classify-reaction"
+  },
+  {
+   "exercise": "e12",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "e12",
+   "concept": "neutralization-reaction"
+  },
+  {
+   "exercise": "e13",
+   "concept": "half-reaction-method"
+  },
+  {
+   "exercise": "e14",
+   "concept": "half-reaction-method"
+  },
+  {
+   "exercise": "e15",
+   "concept": "half-reaction-method"
+  }
+ ]
+}

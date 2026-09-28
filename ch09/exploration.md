@@ -1,6 +1,6 @@
 # Exploration: Chemistry 2e, Chapter 9 Gases
 
-Written 2026-09-12, before section 9.2 was prepared. The source of record is the
+Written 2026-09-12, before section 9.2 was prepared, and extended on 2026-09-28 for the rest of the chapter. The source of record is the
 CNXML bundle at `source/osbooks-chemistry-bundle/`; the seven modules of the
 chapter were converted with `python3 tools/convert.py 9` and read, and 9.2, the
 one section this pass builds, was read in full. The book's organisation, its
@@ -18,10 +18,11 @@ picture with four knobs on it. Section 9.2 is where all four laws are stated and
 combined, and it is the one section of the chapter that a reader can be given
 the knobs for directly.
 
-Only 9.2 is built in this pass. The chapter's other five sections and its
-introduction are not; `chapter.json` lists every section of the chapter so the
-contents reads correctly, and carries variable, equation and glossary rows for
-9.2 alone.
+9.2 was built on 2026-09-12. The rest of the chapter was read in full on
+2026-09-28, when the five other sections and the introduction were prepared;
+what that reading found is in the sections from "The rest of the chapter" on,
+and the tables below now cover every module. The figure numbers of 9.3 were
+checked against the publisher's page and agree.
 
 ## Chapter 9 modules
 
@@ -34,16 +35,16 @@ Keyed = those carrying the book's own solution.
 | Section | Module | Ex. | Fig. | Img. | Tables | Eq. | Defs | CYL | Exer. | Keyed | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | Intro | m68748 | 0 | 1 photo | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
-| 9.1 Gas Pressure | m68750 | 4 | 7 (3 photos, 4 sketches) | 8 | 1 | 8 | 9 | 4 | 17 | 9 | 1 link-to-learning, 1 everyday-life, 1 sciences-interconnect |
+| 9.1 Gas Pressure | m68750 | 4 | 7 (4 photos, 3 sketches) | 8 (4 in examples, 4 in exercises) | 1 | 8 | 9 | 4 | 17 | 9 | 1 link-to-learning, 1 everyday-life, 1 sciences-interconnect |
 | 9.2 Relating Pressure, Volume, Amount, and Temperature | m68751 | 6 | 10 (3 photos, 7 sketches and graphs) | 2 | 0 | 16 | 10 | 6 | 30 | 15 | 2 link-to-learning, 2 everyday-life |
-| 9.3 Stoichiometry of Gaseous Substances, Mixtures, and Reactions | m68752 | 9 | 8 | 0 | 1 | 34 | 4 | 9 | 33 | 16 | 1 link-to-learning, 1 sciences-interconnect, 1 chemist-portrait |
-| 9.4 Effusion and Diffusion of Gases | m68754 | 3 | 4 | 0 | 0 | 13 | 5 | 3 | 9 | 5 | 1 sciences-interconnect |
-| 9.5 The Kinetic-Molecular Theory | m68758 | 1 | 4 | 0 | 0 | 14 | 2 | 1 | 9 | 4 | 1 link-to-learning |
-| 9.6 Non-Ideal Gas Behavior | m68759 | 1 | 2 | 3 | 1 | 4 | 2 | 0 | 7 | 4 | — |
+| 9.3 Stoichiometry of Gaseous Substances, Mixtures, and Reactions | m68752 | 9 | 8 (2 photos, 6 sketches and graphs) | 0 | 1 | 34 | 4 | 9 | 33 | 16 | 1 link-to-learning, 1 sciences-interconnect, 1 chemist-portrait |
+| 9.4 Effusion and Diffusion of Gases | m68754 | 3 | 4 (1 photo, 3 sketches) | 0 | 0 | 13 | 5 | 3 | 9 | 5 | 1 sciences-interconnect |
+| 9.5 The Kinetic-Molecular Theory | m68758 | 1 | 4 (1 sketch, 3 graphs) | 0 | 0 | 14 | 2 | 1 | 9 | 4 | 1 link-to-learning |
+| 9.6 Non-Ideal Gas Behavior | m68759 | 1 | 2 (1 graph, 1 sketch) | 3 (1 in text, 2 in exercises) | 1 | 4 | 2 | 1 | 7 | 4 | — |
 
 One hundred and five end-of-chapter exercises in the chapter, fifty-three of them
 keyed, which is the odd-numbered half of the book's own list as the Preface
-promises. Twenty-three Check Your Learning items, all of them keyed. Thirty-two
+promises. Twenty-four Check Your Learning items (the earlier count missed the one of 9.6, headed "Check your Learning"), all of them keyed. Thirty-two
 glossary entries. Section 9.2 alone carries thirty exercises, fifteen of them
 keyed, six worked examples with six Check Your Learning items, and ten of the
 book's glossary terms.
@@ -77,10 +78,24 @@ every case, Figure 9.9 to Figure 9.18.
 | 9.2 | 9.16 | CNX_Chem_09_02_Scuba | photo: a diver underwater with a tank |
 | 9.2 | 9.17 | CNX_Chem_09_02_GreatBarri | photo in a note: coral at the Great Barrier Reef |
 | 9.2 | 9.18 | CNX_Chem_09_02_HENH3O2 | sketch: three balloons of He, NH₃ and O₂, one mole each |
-| 9.3 | 9.19 to 9.26 | — | not read in detail; this pass does not build 9.3 |
-| 9.4 | 9.27 to 9.30 | — | not read in detail |
-| 9.5 | 9.31 to 9.34 | — | not read in detail |
-| 9.6 | 9.35, 9.36 | — | not read in detail |
+| 9.3 | 9.19 | CNX_Chem_09_03_liquidgas | photos, inside Example 9.13: the four steps of finding a volatile liquid's molar mass |
+| 9.3 | 9.20 | CNX_Chem_09_03_DaltonLaw1-f981 | sketch: three cylinders at 300, 450 and 600 kPa combined into one at 1350 kPa |
+| 9.3 | 9.21 | CNX_Chem_09_03_WaterVapor | sketch: a gas collected over water in an inverted flask |
+| 9.3 | 9.22 | CNX_Chem_09_03_WaterVapor2 | graph: the vapor pressure of water against temperature |
+| 9.3 | 9.23 | CNX_Chem_09_03_Ammonia | sketch: one balloon of N₂ and three of H₂ giving two of NH₃ |
+| 9.3 | 9.24 | CNX_Chem_09_03_GlobalWarming-b740 | sketch in a note: the greenhouse effect |
+| 9.3 | 9.25 | CNX_Chem_09_03_GlobalWarming2 | graphs in a note: atmospheric CO₂ over 700,000 years and since 1960 |
+| 9.3 | 9.26 | CNX_Chem_09_03_SusanSolom | photo in a portrait: Susan Solomon |
+| 9.4 | 9.27 | CNX_Chem_09_04_Diffusion | sketch: H₂ and O₂ bulbs before, just after and long after the stopcock opens |
+| 9.4 | 9.28 | CNX_Chem_09_04_DiffEff | sketch: diffusion against effusion through a barrier |
+| 9.4 | 9.29 | CNX_Chem_09_04_Effusion2 | photos: helium and argon balloons when filled and 12 hours later |
+| 9.4 | 9.30 | CNX_Chem_09_04_GasDiff | sketch in a note: a UF₆ gaseous diffuser |
+| 9.5 | 9.31 | CNX_Chem_09_04_KMT2 (an 09_04 name in 9.5) | sketch: three piston cylinders for Amontons's (captioned Charles's in the image), Boyle's and Avogadro's laws |
+| 9.5 | 9.32 | CNX_Chem_09_05_MolSpeed1 | graph: the speed distribution of O₂ at 300 K with v_p and u_rms |
+| 9.5 | 9.33 | CNX_Chem_09_05_MolSpeed2 | graph: N₂ at 100, 200, 500 and 1000 K |
+| 9.5 | 9.34 | CNX_Chem_09_05_MolSpeed3 | graph: Xe, Ar, Ne and He at one temperature |
+| 9.6 | 9.35 | CNX_Chem_09_06_ZvsPgraph | graph: Z against P for H₂, N₂, O₂, CH₄ and CO₂ |
+| 9.6 | 9.36 | CNX_Chem_09_06_RealGas2 | sketch: ideal against real boxes at constant pressure and at constant volume |
 
 The two unnumbered inline images of 9.2 both sit inside an exercise, which is
 where the book leaves an image unnumbered:
@@ -253,3 +268,70 @@ What should not be built here: an animation of the algebra that rearranges
 PV = nRT, which only redraws a rearrangement the reader can do; and a
 molecular-speed distribution, which is 9.5's figure and not this section's,
 though the gas box's particles quicken as the temperature rises.
+
+## The rest of the chapter (2026-09-28)
+
+Two corrections to the 2026-09-12 figure list for 9.1: Figure 9.3 is a pair of photographs (an elephant and a figure skater), not a sketch, and Figure 9.8, the layers of the atmosphere, is a drawing, not a photograph. The 9.1 unnumbered images are the four manometers inside Examples 9.3 and 9.4 (`CNX_Chem_09_01_Manometer1_img` to `Manometer3_img` and `manometer4_img`, lower-case m) and four inside exercises (`Manometer5_img` to `Manometer8_img`). 9.6's are the van der Waals equation image in the text (`CNX_Chem_09_06_vanderWaals_img`) and two inside exercises (`Exercise1_img`, `RealGases`). Bundle quirks: `DaltonLaw1-f981.jpg`, `GlobalWarming-b740.jpg` carry hash suffixes; Figure 9.31 is `CNX_Chem_09_04_KMT2` though it sits in 9.5; 9.2's Figure 9.10 is `09_01_Amontons1`. No file name has a space.
+
+### Photographs, kept or dropped
+
+| Number | Decision | Why |
+|---|---|---|
+| 9.3 | kept | the elephant and the skater are the text's worked comparison, and it points at them |
+| 9.6 | kept, inside its note | the note describes the cuff and gauge the photograph shows |
+| 9.7 | kept, inside its note | the note points at it and its isobars are what the caption explains |
+| 9.19 | kept, inside Example 9.13 | the four photographs are the procedure the example lists |
+| 9.25 | a graph of data, faithful still copy or the section's call | the note's argument is the data; no slider changes the past |
+| 9.26 | kept | a Portrait of a Chemist |
+| 9.29 | kept | the two balloons are the experiment that shows Graham's law |
+
+### What becomes of each figure (the reading each section's plan starts from)
+
+| Number | Treatment | Class |
+|---|---|---|
+| 9.2 | still Figure: the column of air over a thumbnail with P = F/A, a force and an area slider | flat |
+| 9.4 | Figure: a mercury and a water barometer side by side, an atmospheric-pressure slider raising both columns, the readout p = hρg in each | physical 3D bench, pitch bounded above the bench, or a locked view; 9.1 decides |
+| 9.5 + manometer images of Examples 9.3 and 9.4 | fold candidate: one manometer with a closed or open end chosen (`F.choice`), gas and atmospheric pressure sliders, the book's three equations; the example images as its states | physical 3D bench or locked view; 9.1 decides |
+| 9.8 | still copy of the layers, the book's altitudes | flat |
+| 9.20 | Figure: three cylinders of named gases poured into one, partial pressures stacked to the total | particle picture, 3D |
+| 9.21 + 9.22 + Table 9.2 | fold candidate: the collection flask with a temperature slider, the vapor pressure read off the curve and subtracted from the total | apparatus 3D beside a flat graph |
+| 9.23 | Figure: balloons of N₂, H₂ and NH₃ with a choice of reaction, volumes in the coefficients' ratio | molecule inset, 2D and 3D views behind a choice |
+| 9.24 | faithful still copy, symbolic arrows | flat |
+| 9.27 + 9.28 | moving Figure: two bulbs, a stopcock to open, H₂ and O₂ mixing, the lighter gas crossing first; effusion through a pinhole as a choice | particle picture, 3D, moves (a time is in the idea) |
+| 9.30 | faithful still copy in its note, or a moving diffuser if 9.4 argues it | flat |
+| 9.31 | moving Figure: one piston cylinder, a choice of law, particles striking the walls with collision marks | particle picture, 3D, moves |
+| 9.32 + 9.33 + 9.34 | fold candidate: the Maxwell-Boltzmann curve with a temperature slider and a gas choice, v_p and u_rms marked, the book's curves as states | flat, still; the Sim that replaces the dropped gas simulator |
+| 9.35 | Figure: Z against P for the book's five gases, a pressure slider running a marker along each | flat, still |
+| 9.36 | Figure: ideal and real boxes side by side, attractions drawn as the book's double arrows | particle picture, 3D, moves |
+| vdW image | the equation redrawn in type hues with its two corrections labeled, live with Table 9.3's constants and Example 9.24's defaults | flat |
+
+### Keyed against unkeyed
+
+| Section | Exercises | Keyed | Unkeyed numerical, left out | Unkeyed conceptual, kept with an approach |
+|---|---|---|---|---|
+| 9.1 | 17 | 9 | fs-idp74012224, fs-idp30544832, fs-idp128422496, fs-idm81032176, fs-idp27847856, fs-idm35876656 | fs-idp152253216, fs-idp32052448 |
+| 9.3 | 33 | 16 | fs-idp231956592, fs-idp20795744, fs-idm10841488, fs-idp106657088, fs-idp19919472, fs-idp100299232, fs-idp38931136, fs-idp46179152, fs-idp152416544, fs-idp228232112, fs-idp88428400, fs-idp68901248, fs-idp86448160, fs-idp55931680, fs-idp224745536 | fs-idp50300640, fs-idp39361600 |
+| 9.4 | 9 | 5 | fs-idm54751408, fs-idm82361856, fs-idm32668896 | fs-idm51619904 |
+| 9.5 | 9 | 4 | fs-idp62923856, fs-idm98413904 | fs-idm159823744, fs-idm213877296, fs-idm194405232 (a derivation) |
+| 9.6 | 7 | 4 | fs-idm23432208 | fs-idp200327600, fs-idm58636672 |
+
+Every Check Your Learning is keyed. No item is a simulation-exercise.
+
+### Items that lean on another section and stay
+
+- 9.5's fs-idm150122880 is about the opening photograph's hot-air balloon and uses 9.3's gas density; keyed and kept in 9.5, where the book puts it, since its (a) and (b) are about kinetic-molecular reasoning. Its text "shown at the opening of this chapter" stays plain.
+- 9.5's fs-idp16129152 refers to Figure 9.34, which draws no H₂ or H₂O curve; carried as printed.
+- 9.4's fs-idp44111184 answer derives Graham's law from kinetic energy, a 9.5 idea; kept in 9.4 with its key.
+- 9.3's Example 9.16 cites Appendix E; the water sheet may be linked.
+
+### Errata carried as printed
+
+9.1: "is*twice*" in the source is a converter join of "is *twice*" (write a space); Table 9.1's sentence before it ends without a period. 9.3: Figure 9.20's caption says "gasses" and its image labels the third cylinder 6000 kPa while the caption says 600; Example 9.12's `occupies of volume`. 9.4: the key equation writes √m_B/√m_A beside the molar masses; the uranium note's "only about 0.4% enrichment, is achieved" sentence. 9.5: the section opens Part II with "According to Graham's law" for what is kinetic-molecular reasoning; Figure 9.32's caption writes ν_p for v_p; Figure 9.31's image labels panel (a) "Charles's Law" for a temperature raised at constant volume; Figure 9.34's caption begins with a lower-case "molecular". 9.6: the Figure 9.35 description labels Z in kPa; Example 9.24's constant `L² atm mol²`; fs-idm89275552's "If XX behaved"; the CYL answer's five significant figures.
+
+### Root rule 28 for the rest of the chapter
+
+Physical 3D: the barometer and manometers of 9.1 (a bench, never seen from beneath), Dalton's cylinders and the collection flask of 9.3, the diffusion bulbs of 9.4, the piston cylinders of 9.5, the ideal and real boxes of 9.6. Each may instead be a locked view where the plan argues no turn adds anything; a particle picture is 3D by the book's rules. Mathematical 3D: none. Flat: every graph, the atmosphere's layers, the greenhouse sketch, the van der Waals equation.
+
+### Root rule 23 for the rest of the chapter
+
+9.2 gives the reader the knobs on the gas; the rest of the chapter should let the reader look inside it. The chapter's arc is macroscopic law (9.1–9.3), then molecules in motion that explain it (9.4–9.5), then molecules that are too big and too sticky for it (9.6), and the figures can follow that arc with one gas box that changes what it shows: in 9.1 its walls feel the collisions and a gauge reads them; in 9.3 two gases poured together keep their own pressures; in 9.4 a hole opens and the lighter molecules leave first; in 9.5 a histogram of the same molecules' speeds builds up under the box as they move, and the temperature slider flattens it; in 9.6 the molecules grow and attract until Z leaves 1 on its graph beside them. A reader who has used the gas box of 9.2 should recognise it in every section, and see that the ideal gas law was a statement about these moving particles all along.

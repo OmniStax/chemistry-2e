@@ -1,20 +1,180 @@
 # Exploration: Chemistry 2e, Chapter 6 Electronic Structure and Periodic Properties of Elements
 
-Written 2026-09-12, before the chapter was prepared. The source of record is
-the CNXML bundle at `source/osbooks-chemistry-bundle/`; the six modules of the
-chapter were converted with `python3 tools/convert.py 6` and 6.2 was read in
-full, with the other five read far enough to number the chapter's figures and
-tables and to see what 6.2 leans on. The book's organisation, its apparatus
-and its conventions are as `exploration.md` beside `RULES.md` records them for
-the whole book; nothing in this chapter departs from that account.
+Written 2026-09-12 for 6.2, The Bohr Model, and extended on 2026-09-28 to the
+whole chapter before its other sections were built. The source of record is
+the CNXML bundle at `source/osbooks-chemistry-bundle/`; the six modules were
+converted with `python3 tools/convert.py 6` and every `source.md` was read in
+full. The book's organisation, its apparatus and its conventions are as the
+book's `exploration.md` records them; nothing in this chapter departs from
+that account. What this file says of 6.2 is kept as written on 2026-09-12,
+under "Section 6.2" below.
 
-Only 6.2, The Bohr Model, is built in this pass. Chen asked for the three
-sections of the book with the richest opportunity for interactive simulation
-to be built as showcases in one job, and 6.2 is one of them. The chapter has
-no introduction page yet and the other four sections are not built, so this
-file prepares the whole chapter only as far as 6.2 needs it: the module table
-and the figure and table numbers are for the chapter, and everything after
-them is for the one section.
+## Why this chapter
+
+The chapter walks from light to the periodic table in one argument. 6.1
+shows light behaving as a wave and as a particle, and ends on three
+paradoxes classical physics cannot resolve; 6.2 quantizes the hydrogen atom
+and recovers its spectrum; 6.3 replaces the orbit by a wave and the wave by
+a probability, and names the four quantum numbers; 6.4 fills the orbitals
+atom by atom until the periodic table explains itself; 6.5 reads size and
+energy off that table. Every section rests on the one before, and the
+concept graph says so.
+
+## Chapter 6 modules
+
+Ex. = worked examples, Fig. = numbered figures, Img. = unnumbered images,
+Defs = glossary entries, CYL = Check Your Learning items (every one keyed),
+Exer. = end-of-chapter exercises, Keyed = those carrying the book's own
+solution.
+
+| Section | Module | Ex. | Fig. | Img. | Tables | Defs | CYL | Exer. | Keyed | Notes |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Intro | m68728 | 0 | 1 photo | 0 | 0 | 0 | 0 | 0 | 0 | — |
+| 6.1 Electromagnetic Energy | m68729 | 3 | 12 (5 photos, 7 sketches and graphs) | 0 | Key Equations only | 17 | 3 | 15 | 8 | 1 everyday-life, 1 chemist-portrait, 2 link-to-learning |
+| 6.2 The Bohr Model | m68732 | 2 | 2 sketches | 1 (exercise) | Key Equations only | 4 | 2 | 15 | 7 | — |
+| 6.3 Development of Quantum Theory | m68733 | 4 | 8 (1 photo) | 2 (exercises) | Table 6.1, two unnumbered in Example 6.9, one in a key | 17 | 4 | 15 | 8 | 3 link-to-learning |
+| 6.4 Electronic Structure of Atoms | m68734 | 2 | 6 | 13 (8 in text and Example 6.10, 5 in a key) | 0 | 7 | 2 | 21 | 10 | — |
+| 6.5 Periodic Variations in Element Properties | m68735 | 2 | 6 | 1 (in text) | Tables 6.2 and 6.3 | 5 | 2 | 20 | 10 | 1 link-to-learning |
+
+Eighty-six exercises, forty-three keyed (the odd-numbered half by the
+publisher's chapter-wide numbering, so within a section the parity may
+start on either item). Thirteen Check Your Learning items, all keyed (the
+count of fifteen written on 2026-09-12 was wrong). Fifty glossary entries.
+
+## The figure numbers
+
+Chapter-wide on openstax.org from the opener as Figure 6.1, checked on the
+6.5 page on 2026-09-28:
+
+| Section | Number | Bundle file | What it is | Proposal |
+|---|---|---|---|---|
+| Intro | 6.1 | CNX_Chem_06_00_CrabNeb | the Crab Nebula | kept photograph (built) |
+| 6.1 | 6.2 | _06_01_Frequency | waves of three frequencies, two amplitudes | moving Figure: a travelling wave, ν and amplitude sliders, λ bracket, readout c = λν |
+| 6.1 | 6.3 | _06_01_emspectrum | the electromagnetic spectrum with photos | still Figure: a log wavelength axis with regions, a λ slider across twelve decades, readouts ν and E = hc/λ; the book's photo strip stays in `originals` |
+| 6.1 | 6.4 | _06_01_RadioCell | three radio and cell towers (Everyday Life note) | photograph; a stock scene beside a note, dropped or kept by 6.1's plan |
+| 6.1 | 6.5 | _06_01_AMFM | AM and FM modulation (note) | moving Figure, choice AM / FM, one signal |
+| 6.1 | 6.6 | _06_01_LiteInterf | interference fringes of four colours | kept photograph (the text points at it) |
+| 6.1 | 6.7 | _06_01_Vibrstring | standing waves on a string | moving Figure, choice n = 1 to 4 (or more), nodes marked, readout n − 1 nodes |
+| 6.1 | 6.8 | _06_01_Vibratdrum | Chladni drumhead photos | kept photograph (the text points at it) |
+| 6.1 | 6.9 | _06_01_Solardist | solar spectrum against a 5250 °C blackbody | faithful copy, or folded into 6.10 as its 5250 °C state; measured data the book does not tabulate |
+| 6.1 | 6.10 | _06_01_Blackbody | blackbody curves at four temperatures | still Figure: T slider with the book's four as detents, λ_max marker and its locus, the classical curve as a choice that shows the ultraviolet catastrophe |
+| 6.1 | 6.11 | _06_01_Ephoton | photoelectric effect at 700, 550, 400 nm | moving Figure: λ slider, metal choice, threshold as a special, electrons leave only above it; the PhET link's Sim of our own |
+| 6.1 | 6.12 | _06_01_neon | a neon sign | kept photograph |
+| 6.1 | 6.13 | _06_01_2spectra | continuous spectrum and the lines of Na, H, Ca, Hg | kept as a faithful image (measured spectra); 6.2 already reuses the file unnumbered in an exercise |
+| 6.2 | 6.14, 6.15 | _06_02_Hlevels, _06_02_BohrArrows | hydrogen levels, and with arrows | built: one moving Figure 6.14 + 6.15 |
+| 6.3 | 6.16 | _06_03_waterw | interference of water waves | kept photograph |
+| 6.3 | 6.17 | _06_03_elecw | electron wave about a circular orbit | still Figure: n choice, and a continuous wavelength slider whose non-integer states fail to close the wave |
+| 6.3 | 6.18 | _06_03_Electrnin | (a) electron interference, (b) build-up over time | moving Figure: electrons arrive one at a time and the fringes emerge; a clock is the whole point |
+| 6.3 | 6.19 | _06_03_Qnumbers | shells numbered about a nucleus | faithful copy, or folded with 6.22 as a shell-and-subshell ladder by 6.3's plan |
+| 6.3 | 6.20 | _06_03_sorbit | 1s, 2s, 3s cutaways and their radial graphs | mathematical 3D: n choice, a cutaway density cloud through `F.view3d` above a flat radial graph with its n − l − 1 nodes marked |
+| 6.3 | 6.21 | _06_03_Oshapes | shapes of s, p, d and f orbitals | mathematical 3D: l and m_l choices, lobes signed with `F.cat`, free orbit, auto-rotate |
+| 6.3 | 6.22 | _06_03_subshells | subshell energies of a multi-electron atom | still flat Figure, energy axis, a choice of hydrogen (degenerate) against a many-electron atom |
+| 6.3 | 6.23 | _06_03_spin | spin up and down in a field | locked view of the two spinning spheres, faithful, no sliders |
+| 6.4 | 6.24 | _06_04_eLeveldiag | orbital energy-level diagram | the centre of the section: an Aufbau builder, Z slider, electrons dropping into boxes by the Pauli principle and Hund's rule, configuration readout; the unnumbered orbital diagrams of H to Ne are its states |
+| 6.4 | 6.25 | _06_04_Econfig | parts of the notation 1s¹ | faithful copy |
+| 6.4 | 6.26 | _06_04_Efillorder | diagonal filling-order mnemonic | faithful copy, or a still Figure that lights the diagonal as the builder's Z rises (6.4's plan) |
+| 6.4 | 6.27 | _06_04_Econtable | partial periodic table of filling subshells | fold with 6.29 into one periodic table Figure, blocks by `F.cat`, hover for each element's configuration from the elements sheet |
+| 6.4 | 6.28 | _06_04_Valence | core and valence of sodium | faithful copy |
+| 6.4 | 6.29 | _06_04_Ptableconf | configuration of every element | see 6.27 |
+| 6.5 | 6.30 | _06_05_CovalradiT | (a) halogen radii from bond lengths, (b) radii to scale on the table | (a) locked view of the four molecules with Table 6.2's numbers; (b) a still Figure of circles to scale on the table, `F.el` |
+| 6.5 | 6.31 | _06_05_Radiigraph | radius against Z | still Figure, one trends graph with a property choice (radius, IE₁), hover names; may fold 6.33 |
+| 6.5 | 6.32 | _06_05_Ionradii | Al, S and their ions | locked view with an element choice |
+| 6.5 | 6.33 | _06_05_Firstiongr | IE₁ against Z | see 6.31 |
+| 6.5 | 6.34 | _06_05_Firstionen | IE₁ on a periodic table | still Figure, heat map of the book's printed values |
+| 6.5 | 6.35 | _06_05_Elaffin | electron affinities on a periodic table | still Figure, same frame as 6.34 |
+
+## The tables
+
+| Number | Section | CNXML id | Title |
+|---|---|---|---|
+| Table 6.1 | 6.3 | fs-idm21167392 | Quantum Numbers, Their Properties, and Significance |
+| Table 6.2 | 6.5 | fs-idp28766560 | Covalent Radii of the Halogen Group Elements |
+| Table 6.3 | 6.5 | fs-idp3693744 | Successive Ionization Energies for Selected Elements (kJ/mol) |
+
+The title written for Table 6.3 on 2026-09-12 was wrong and is corrected
+here. Table 6.3 prints K's IE₂, 3051.8, in red, to mark the jump to the core.
+
+## The worked examples
+
+6.1: Examples 6.1 (frequency of a sodium streetlight), 6.2 (energy of a
+neon photon), 6.3 (the photoelectric effect). 6.2: 6.4 and 6.5. 6.3: 6.6
+(wavelength of a particle), 6.7 (shells and subshells), 6.8 (maximum number
+of electrons), 6.9 (completing a table of orbitals). 6.4: 6.10 (quantum
+numbers and configurations, phosphorus), 6.11 (configurations of ions).
+6.5: 6.12 (sorting atomic radii), 6.13 (ranking ionization energies).
+
+## Link to Learning notes and PhET items
+
+Six, all dropped and named in `notes`: 6.1 the kettle-drum radial nodes
+video and the photoelectric-effect simulation (the trigger for 6.1's Sim of
+our own); 6.3 the Dr. Quantum double-slit cartoon, the uncertainty article
+and the Schrödinger's cat story; 6.5 the periodic-trends visualizations (the
+trigger for 6.5's trends Sim). No end-of-chapter item opens a simulation, so
+there is no `simulation-exercise`.
+
+## Exercises per section, keyed and unkeyed
+
+- **6.1**: 15, 8 keyed. The seven unkeyed are all numerical (fs-idm65612800,
+  fs-idp23451200, fs-idp158798576, fs-idm74058400, fs-idp80961152,
+  fs-idp181189472, fs-idp156427216) and are left out.
+- **6.2**: as below, 15 items, 7 keyed, 6 left out.
+- **6.3**: 15, 8 keyed. The seven unkeyed (fs-idm185773696, fs-idp16534928,
+  fs-idm65709728, fs-idm109521552, fs-idm109481472, fs-idm165892704,
+  fs-idm68696640) are conceptual and kept with a suggested approach.
+- **6.4**: 21, 10 keyed, 11 unkeyed, none numerical: configurations, orbital
+  diagrams, "which atom" items and fs-idp42173648 (pick from Li, B, N, F, Ne),
+  kept with a suggested approach or as an open item with its options.
+  fs-idp81167248 counts protons and neutrons (2.3) and stays, since its
+  configurations are 6.4's.
+- **6.5**: 20, 10 keyed, 10 unkeyed, none numerical. Three items belong to
+  6.4, which relates configurations to groups: fs-idm150214960 (keyed,
+  group of ns²np³), fs-idm121823200 (unkeyed, group of ns²) and
+  fs-idp177066416 (unkeyed, why Al is in group 13). They move to 6.4 with
+  `source_section` 6.5, leaving 6.5 with 17 (9 keyed) and 6.4 with 24 (11
+  keyed).
+
+## Errata carried as printed
+
+6.1: Figure 6.9's caption says "the blue curve" where the drawing's curve
+is grey; "Neils Bohr" at the end of Line Spectra. 6.3: "the special
+distribution of the probability" (spatial); Example 6.7 writes "*m* can have
+values" for m_l; the key of fs-idm127368704 writes m₁ for m_l;
+fs-idm68696640 writes E = mν²/2 and λ = h/mν with ν where v is meant. The
+converter's stray `**` in the CYL answer "2**s" (Example 6.7) and in the key
+of fs-idm5890656 is conversion residue, not the book's, and is dropped.
+
+## Depth under root rule 28
+
+Mathematical 3D: the orbitals, 6.20 and 6.21 (the book's rules settle
+orbitals as 3D). Locked views: 6.23, 6.30(a), 6.32. Candidate bench: 6.18
+by the book's apparatus rule, though its lesson is the flat screen. Flat:
+everything else, including every spectrum, graph, ladder, orbital diagram
+and periodic table.
+
+## What a live chapter could show that print cannot (root rule 23)
+
+The chapter's hard idea is that discreteness comes from waves: a string
+that only fits whole half-wavelengths, an electron wave that only closes on
+itself at whole numbers, an orbital that has n − l − 1 nodes. One visual
+thread can run through all of it: in 6.1 the reader plucks the string and
+sees only integers survive; in 6.3 the same reader drags a wavelength
+around an orbit and watches it fail to close except at integers, then sees
+the standing wave become a cloud with the same count of nodes; in 6.4 the
+reader drags Z and watches the table fill box by box, with chromium and
+copper as named specials where an electron jumps; in 6.5 the reader sees
+the same filling as a sawtooth of radius and ionization energy. The
+blackbody curve with its classical twin running off to infinity, and the
+electron double slit whose fringes emerge one dot at a time, are the two
+moments where the reader sees classical physics fail.
+
+The elements sheet (`sheets/elements.json`) carries a configuration,
+first ionization energy and covalent radius for every element, from
+standard reference values; they differ from the book's printed numbers in
+places (Cl radius 102 pm against Table 6.2's 99 pm, F 57 against 64). A
+figure uses the book's numbers wherever the book prints them, and says in
+its caption where a value comes from the sheet.
+
+# Section 6.2, as explored on 2026-09-12
 
 ## Why this section
 
@@ -27,63 +187,6 @@ is allowed only certain energies, and the light an atom gives off is the
 difference between two of them. Everything the reader meets afterwards, the
 quantum numbers of 6.3, the filling order of 6.4 and the periodic trends of
 6.5, rests on the postulate this section makes.
-
-## Chapter 6 modules
-
-Ex. = worked examples, Fig. = numbered figures, Img. = unnumbered inline
-images, Eq. = marked display equations, Defs = glossary entries, CYL = Check
-Your Learning items (every one keyed), Exer. = end-of-chapter exercises,
-Keyed = those carrying the book's own solution.
-
-| Section | Module | Ex. | Fig. | Img. | Tables | Eq. | Defs | CYL | Exer. | Keyed | Notes |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| Intro | m68728 | 0 | 1 photo | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — |
-| 6.1 Electromagnetic Energy | m68729 | 3 | 12 (5 photos, 7 sketches) | 0 | 1 unnumbered | 8 | 17 | 3 | 15 | 8 | 1 everyday-life, 1 chemist-portrait, 2 link-to-learning |
-| 6.2 The Bohr Model | m68732 | 2 | 2 sketches | 1 | 1 unnumbered | 15 | 4 | 2 | 15 | 7 | — |
-| 6.3 Development of Quantum Theory | m68733 | 4 | 8 | 2 | 4 (1 numbered) | 9 | 17 | 4 | 15 | 8 | 3 link-to-learning |
-| 6.4 Electronic Structure of Atoms | m68734 | 2 | 6 | 13 | 0 | 1 | 7 | 2 | 21 | 10 | — |
-| 6.5 Periodic Variations in Element Properties | m68735 | 2 | 6 | 1 | 2 (both numbered) | 4 | 5 | 2 | 20 | 10 | 1 link-to-learning |
-
-Eighty-six exercises in the chapter, forty-three of them keyed, which is the
-odd-numbered half of the book's own list as the Preface promises; the parity
-runs over the publisher's chapter-wide numbering, so within 6.2's own list it
-is the second, fourth, sixth and following items that carry the answer, not
-the first. Fifteen Check Your Learning items, all of them keyed. Fifty
-glossary entries.
-
-## The figure numbers
-
-The book numbers figures chapter-wide on openstax.org, beginning with the
-introduction's splash photograph as Figure 6.1. The chapter's thirty-five
-numbered figures, in book order:
-
-| Section | Numbers | What they are |
-|---|---|---|
-| Intro | 6.1 | photograph: the Crab Nebula |
-| 6.1 | 6.2 to 6.13 | the wave and its wavelength (6.2), the electromagnetic spectrum (6.3), the radio-wave technologies (6.4) and AM and FM (6.5) in the everyday-life note, the interference fringes (6.6), the vibrating string (6.7) and the vibrating drumhead (6.8), the solar distribution (6.9), the blackbody curves (6.10), the photon energies (6.11), the neon sign (6.12), the continuous spectrum beside four line spectra (6.13) |
-| 6.2 | 6.14, 6.15 | the hydrogen energy levels with their energies (CNX_Chem_06_02_Hlevels), and the same levels with the absorption and emission arrows drawn between them (CNX_Chem_06_02_BohrArrows) |
-| 6.3 | 6.16 to 6.23 | water waves, electron waves, the electron-in-a-box, the quantum numbers, the s orbital, the orbital shapes, the subshells, electron spin |
-| 6.4 | 6.24 to 6.29 | the energy-level diagram, the electron configuration notation, the filling order, the configuration table, the valence electrons, the periodic table by configuration |
-| 6.5 | 6.30 to 6.35 | the covalent radii table, the radius graph, the ionic radii, the first ionization energy graph and table, the electron affinities |
-
-The one unnumbered inline image of 6.2 is `fs-exercise`, which prints
-`CNX_Chem_06_01_2spectra.jpg`, the same continuous-and-line-spectra plate the
-book numbers as Figure 6.13 in 6.1, inside the last exercise of the section.
-The book prints it without a number there, so it stays unnumbered on the page.
-
-## The tables
-
-| Number | Section | CNXML id | Title |
-|---|---|---|---|
-| Table 6.1 | 6.3 | fs-idm21167392 | Quantum Numbers, Their Properties, and Significance |
-| Table 6.2 | 6.5 | fs-idp28766560 | Covalent Radii of the Halogen Group Elements |
-| Table 6.3 | 6.5 | fs-idp3693744 | First Ionization Energies of Some Elements |
-
-**Section 6.2 prints no numbered table.** Its one `> TABLE` block is the
-unnumbered one-column Key Equations table, which is the book's own formula
-sheet and goes to `chapter.json`'s equations rather than into the text. Three
-further unnumbered tables sit in 6.3. So no `div.book-table` is written on the
-6.2 page.
 
 ## The worked examples
 
@@ -101,6 +204,7 @@ Energy of an Electron in a Bohr Orbit", never a number built from the section.
 The section's `notes` therefore names no dropped link, and the section carries
 no `simulation-exercise` item: every end-of-chapter exercise of 6.2 is a
 question about the model, not an instruction to open an outside simulation.
+
 
 ## The exercises, and what they lean on
 

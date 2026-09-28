@@ -12,6 +12,72 @@
   {
    "sym": "r_bond",
    "latex": "r"
+  },
+  {
+   "sym": "ΔH°",
+   "latex": "\\Delta H^{\\circ}",
+   "type": "energy",
+   "macro": "\\kdHo"
+  },
+  {
+   "sym": "ΔH_f°",
+   "latex": "\\Delta H_{\\text{f}}^{\\circ}",
+   "type": "energy",
+   "macro": "\\kdHf"
+  },
+  {
+   "sym": "ΔH_s°",
+   "latex": "\\Delta H_{s}^{\\circ}",
+   "type": "energy",
+   "macro": "\\kdHs"
+  },
+  {
+   "sym": "ΔH_lattice",
+   "latex": "\\Delta H_{\\text{lattice}}",
+   "type": "energy",
+   "macro": "\\kdHlat"
+  },
+  {
+   "sym": "D_bond",
+   "latex": "D",
+   "type": "energy",
+   "macro": "\\kDbond"
+  },
+  {
+   "sym": "IE",
+   "latex": "IE",
+   "type": "energy",
+   "macro": "\\kIE"
+  },
+  {
+   "sym": "EA",
+   "latex": "EA",
+   "type": "energy",
+   "macro": "\\kEA"
+  },
+  {
+   "sym": "EN",
+   "latex": "\\text{EN}"
+  },
+  {
+   "sym": "ΔEN",
+   "latex": "\\Delta\\text{EN}"
+  },
+  {
+   "sym": "Z_plus",
+   "latex": "Z^{+}"
+  },
+  {
+   "sym": "Z_minus",
+   "latex": "Z^{-}"
+  },
+  {
+   "sym": "R_o",
+   "latex": "R_{\\text{o}}"
+  },
+  {
+   "sym": "C_lattice",
+   "latex": "C"
   }
  ],
  "concepts": [
@@ -94,14 +160,182 @@
    "kind": "skill",
    "section": "7.3",
    "name": "Writing a Lewis structure",
-   "why": "A Lewis structure shows every valence electron of a molecule or polyatomic ion, as a shared pair on a bond or as a lone pair on an atom. It is where a prediction of shape begins, because the count of bonding regions and lone pairs that VSEPR theory needs is read straight off it."
+   "why": "A Lewis structure shows every valence electron of a molecule or polyatomic ion, as a shared pair on a bond or as a lone pair on an atom. It is where a prediction of shape begins, because the count of bonding regions and lone pairs that VSEPR theory needs is read straight off it.",
+   "evidence": "The section sets out the five steps and works them on SiH4, CHO2−, NO+ and OF2, and Examples 7.4 and 7.5 write the structures of HCN, ethane, acetylene, ammonia, XeF2 and XeF6; nine exercises ask for Lewis structures."
   },
   {
    "id": "bond-polarity",
    "kind": "idea",
    "section": "7.2",
    "name": "Polar covalent bonds and electronegativity",
-   "why": "When two bonded atoms differ in electronegativity the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference is what sets the size of a bond's dipole moment, and a molecule with no polar bond at all can have no dipole moment."
+   "why": "When two bonded atoms differ in electronegativity the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference is what sets the size of a bond's dipole moment, and a molecule with no polar bond at all can have no dipole moment.",
+   "evidence": "The section contrasts the pure covalent bonds of H2 and Cl2 with the polar H–Cl bond of Figure 7.5, with its partial charges marked δ+ and δ−, and Example 7.3 designates the positive and negative atoms of six bonds; exercises ask which atoms give sulfur a positive partial charge and which molecules contain polar bonds."
+  },
+  {
+   "id": "ionic-bond",
+   "kind": "idea",
+   "section": "7.1",
+   "name": "Ionic bonds and the properties of ionic compounds",
+   "why": "An ionic bond is the electrostatic attraction between oppositely charged cations and anions, typically formed when a metal atom transfers electrons to a nonmetal atom. The bond is strong, which is why ionic solids are rigid and brittle with high melting points, and the ions are held in place, which is why the solid conducts poorly while the melt or the solution conducts well.",
+   "evidence": "The section defines the ionic bond, reads its strength off the properties of ionic solids, and contrasts sodium metal and chlorine gas with the salt they form in Figure 7.2; an exercise asks which atoms of a list form cations and which form anions."
+  },
+  {
+   "id": "ionic-lattice",
+   "kind": "idea",
+   "section": "7.1",
+   "name": "An ionic formula describes a lattice, not a molecule",
+   "why": "Because every compound is electrically neutral, the formula of an ionic compound gives the simplest ratio of ions whose charges cancel, as Al2O3 does with two Al3+ ions for every three O2− ions. The formula does not describe a molecule: the attraction between ions is the same in all directions, so each ion is drawn to all its neighbors of opposite charge and the ions build a three-dimensional lattice.",
+   "evidence": "The section works the charge balance of aluminum oxide, explains why it is incorrect to speak of a sodium chloride molecule, and Figure 7.3 draws the sodium chloride lattice with each ion surrounded by six of the other kind; an exercise asks why a molecule of solid NaCl cannot be spoken of."
+  },
+  {
+   "id": "predict-ion-charge",
+   "kind": "skill",
+   "section": "7.1",
+   "name": "Predicting the charge of a monatomic ion",
+   "why": "A main group metal atom tends to lose all its valence electrons and a nonmetal atom tends to gain enough to fill its valence s and p orbitals, so in each case the ion takes the electron configuration of a noble gas and its charge can be read from the group. The heavy elements of groups 13 to 15 may also keep their valence s pair, the inert pair effect, which is why Tl+, Sn2+, Pb2+ and Bi3+ exist beside the expected ions.",
+   "evidence": "The section derives the charges of the group 1, group 2 and group 13 to 17 ions, names the exceptions of the inert pair effect and the mercury(I) ion, and three exercises ask for the charges of the monatomic ions formed from lists of atoms."
+  },
+  {
+   "id": "ion-electron-configuration",
+   "kind": "skill",
+   "section": "7.1",
+   "name": "Writing the electron configuration of an ion",
+   "why": "The configuration of a cation is written by removing electrons from the neutral atom, and the configuration of an anion by adding them. For a transition metal the outermost s electrons are lost first, before any d electron, even though the d orbitals were the last to fill; so iron becomes Fe2+ by losing its 4s pair and Fe3+ by losing one 3d electron as well.",
+   "evidence": "The section works the configurations of Ca2+, Fe2+ and Fe3+, and Examples 7.1 and 7.2 write the configurations of Cr3+, Zn2+, Se2− and I−; four exercises ask for the configurations of ions."
+  },
+  {
+   "id": "covalent-bond-formation",
+   "kind": "idea",
+   "section": "7.2",
+   "name": "How a covalent bond forms, and the bond length",
+   "why": "A covalent bond is formed when two atoms share a pair of electrons that is attracted by both nuclei. As two hydrogen atoms approach, the potential energy falls while each electron is drawn to both nuclei and then rises steeply as the nuclei repel, and the bond length is the distance at which the energy is lowest. Breaking a bond always takes energy and forming one always releases it.",
+   "evidence": "The section explains the formation of H2 against the potential energy curve of Figure 7.4, which marks the bond length of 74 pm, and states that 436 kJ must be added to break the bonds in a mole of hydrogen molecules and is released when they form."
+  },
+  {
+   "id": "electronegativity",
+   "kind": "idea",
+   "section": "7.2",
+   "name": "Electronegativity and its periodic trend",
+   "why": "Electronegativity is the tendency of an atom to attract the electrons of a bond toward itself. On Pauling's scale it increases from left to right across a period and decreases down a group, so the nonmetals of the upper right are the most electronegative, fluorine above all at 4.0, and the group 1 metals are the least. It is a calculated, dimensionless number and should not be confused with electron affinity, which is a measured energy of an isolated atom.",
+   "evidence": "The section defines electronegativity, Figure 7.6 sets out Pauling's values across the periodic table, and a subsection separates it from electron affinity; four exercises ask which atom of a pair is more electronegative or ask for a series in order of increasing electronegativity."
+  },
+  {
+   "id": "bond-type-from-electronegativity",
+   "kind": "skill",
+   "section": "7.2",
+   "name": "Judging bond type from the electronegativity difference",
+   "why": "The absolute difference in electronegativity between two bonded atoms is a rough measure of the bond's character: a small difference gives a pure covalent bond, an intermediate one a polar covalent bond, and a large one an ionic bond. It is only a guide, and the better one is the kind of atoms involved, since bonds between two nonmetals are generally covalent and bonds between a metal and a nonmetal are often ionic.",
+   "evidence": "The section gives the differences for H–H, H–Cl and Na–Cl, Figure 7.8 relates the difference to the bond type, and Example 7.3 orders six bonds of the amino acids by polarity in Table 7.1; exercises ask which compounds are ionic and which bond of each pair is the more polar."
+  },
+  {
+   "id": "lewis-symbol",
+   "kind": "skill",
+   "section": "7.3",
+   "name": "Writing Lewis symbols for atoms and ions",
+   "why": "A Lewis symbol is the symbol of an element surrounded by one dot for each of its valence electrons. The same notation shows a cation forming as dots are lost and an anion forming as dots are gained, and so it shows the transfer of electrons when an ionic compound forms without the total number of electrons changing.",
+   "evidence": "The section defines the Lewis symbol, Figure 7.9 gives the symbols of the third-period elements, and Figure 7.10 draws the formation of sodium chloride, magnesium oxide and calcium fluoride; three exercises ask for the Lewis symbols of ions."
+  },
+  {
+   "id": "octet-rule",
+   "kind": "idea",
+   "section": "7.3",
+   "name": "The octet rule",
+   "why": "Main group atoms tend to form enough bonds to have eight valence electrons around them, counting the shared electrons of each bond as belonging to both atoms. The number of bonds an atom forms can often be predicted from the number of electrons it needs to reach eight, so carbon forms four bonds, nitrogen three, oxygen two and fluorine one; hydrogen, which needs only two, is the exception.",
+   "evidence": "The section states the rule for the halogens and applies it to CCl4, SiH4, NH3, H2O and HF."
+  },
+  {
+   "id": "multiple-bonds",
+   "kind": "idea",
+   "section": "7.3",
+   "name": "Single, double, and triple bonds",
+   "why": "A single bond shares one pair of electrons between two atoms, a double bond shares two pairs and a triple bond shares three. Atoms share more than one pair when that is what it takes to give each of them an octet, as in formaldehyde and ethylene with their double bonds and carbon monoxide and the cyanide ion with their triple bonds.",
+   "evidence": "The section defines all three bonds with the Lewis structures of Cl2, CH2O, C2H4, CO and CN−, and an exercise asks how single, double and triple bonds are similar and how they differ."
+  },
+  {
+   "id": "octet-rule-exceptions",
+   "kind": "idea",
+   "section": "7.3",
+   "name": "Exceptions to the octet rule",
+   "why": "Three kinds of molecule cannot give every atom eight electrons. An odd-electron molecule, or free radical, such as NO, must leave one electron unpaired; an electron-deficient molecule such as BF3 has a central atom with fewer than eight; and a hypervalent molecule such as PCl5 or SF6 has a central atom of the third period or beyond that holds more than eight.",
+   "evidence": "The section works each case in turn, NO, BeH2 and BF3, then PCl5 and SF6 in Figure 7.12 and IF5 and XeF4, and Example 7.5 writes the structures of XeF2 and XeF6; exercises ask for the Lewis structures of ClF3, PCl5, BF3, SeF6 and XeF4."
+  },
+  {
+   "id": "formal-charge",
+   "kind": "skill",
+   "section": "7.4",
+   "name": "Calculating formal charge",
+   "why": "The formal charge of an atom in a Lewis structure is the charge it would have if the electrons of each bond were shared equally: the valence electrons of the free atom, less its lone pair electrons, less half its bonding electrons. The formal charges of a molecule add up to zero and those of an ion add up to its charge, which checks the arithmetic. A formal charge is bookkeeping and not the actual charge on the atom.",
+   "evidence": "The section gives the formula and Examples 7.6 and 7.7 assign the formal charges of ICl4− and BrCl3; four exercises ask for the formal charges of the atoms in lists of molecules and ions.",
+   "eq": "eq-formal-charge"
+  },
+  {
+   "id": "formal-charge-guidelines",
+   "kind": "skill",
+   "section": "7.4",
+   "name": "Choosing the most likely Lewis structure by formal charge",
+   "why": "When more than one Lewis structure can be written, the preferred one has formal charges of zero, or else the smallest nonzero formal charges, with adjacent formal charges zero or of opposite sign, and with any negative formal charge on the more electronegative atom. These guidelines explain why the least electronegative atom usually takes the central position.",
+   "evidence": "The section states the four guidelines and applies them to three structures of CO2 and three arrangements of the thiocyanate ion, and Example 7.8 chooses the structure of nitrous oxide; exercises ask for the likely arrangement of the atoms in nitrosyl chloride, hypochlorous acid and sulfur dioxide."
+  },
+  {
+   "id": "resonance",
+   "kind": "idea",
+   "section": "7.4",
+   "name": "Resonance forms and the resonance hybrid",
+   "why": "When two or more Lewis structures with the same arrangement of atoms can be written, none of them alone describes the molecule; the actual distribution of electrons is their average, the resonance hybrid. The molecule never switches between its resonance forms, which is why both N–O bonds of the nitrite ion and all three C–O bonds of the carbonate ion are found to be identical.",
+   "evidence": "The section introduces resonance on the nitrite ion, tells Wheland's analogy of the rhinoceros described as a dragon and a unicorn, and draws the three resonance forms of the carbonate ion; six exercises ask for resonance forms."
+  },
+  {
+   "id": "bond-energy",
+   "kind": "idea",
+   "section": "7.5",
+   "name": "Bond energy",
+   "why": "The strength of a covalent bond is measured by its bond energy, the energy needed to break one mole of that bond in gaseous molecules, which for a diatomic molecule is the standard enthalpy change of its dissociation. In a molecule with several bonds of one kind the tabulated value is an average, since the first bond broken does not need the same energy as the rest.",
+   "evidence": "The section defines the bond energy by the dissociation of XY and of H2, derives the average C–H bond energy of 415 kJ/mol from the 1660 kJ needed to break all four bonds of methane, and tabulates bond energies in Table 7.2.",
+   "eq": "eq-bond-energy"
+  },
+  {
+   "id": "bond-strength-and-length",
+   "kind": "result",
+   "section": "7.5",
+   "name": "Bond strength, bond order, and bond length",
+   "why": "The more electron pairs two atoms share, the stronger and the shorter their bond, so a triple bond is stronger and shorter than a double bond between the same atoms and a double bond is stronger and shorter than a single one. When one atom bonds to the members of a group, the bond grows weaker going down the group.",
+   "evidence": "The section states both trends and quotes C–F, C–Cl and C–Br, and Table 7.3 sets the lengths and energies of the single, double and triple bonds of carbon to carbon, nitrogen and oxygen side by side; exercises ask which bond of each pair is the strongest and which bond of a structure is the longest."
+  },
+  {
+   "id": "enthalpy-from-bond-energies",
+   "kind": "skill",
+   "section": "7.5",
+   "name": "Estimating an enthalpy of reaction from bond energies",
+   "why": "The enthalpy change of a reaction is approximately the energy needed to break every bond of the reactants less the energy released in forming every bond of the products. The estimate needs the Lewis structures of all the species, to know which bonds are single, double or triple, and it is rough because the bond energies are averages.",
+   "evidence": "The section estimates ΔH for the formation of HCl as −185 kJ against −184.6 kJ from enthalpies of formation, and Example 7.9 estimates −107 kJ for the synthesis of methanol against −90.5 kJ from the tables; exercises ask for the approximate enthalpy changes of several reactions.",
+   "eq": "eq-enthalpy-bond-energies"
+  },
+  {
+   "id": "lattice-energy",
+   "kind": "idea",
+   "section": "7.5",
+   "name": "Lattice energy",
+   "why": "The lattice energy of an ionic compound is the energy needed to separate one mole of the solid into its gaseous ions, a positive quantity under the convention the book uses. It measures the strength of the attraction that holds an ionic solid together, and it is much larger than a covalent bond energy because it sums the interactions of every ion with the whole lattice.",
+   "evidence": "The section defines the lattice energy, gives 769 kJ for sodium chloride, warns that some texts use the opposite sign, and compares the range of lattice energies with that of covalent bond energies; exercises ask which compound of a list needs the least or the most energy to separate into ions.",
+   "eq": "eq-lattice-energy-definition"
+  },
+  {
+   "id": "lattice-energy-trends",
+   "kind": "result",
+   "section": "7.5",
+   "name": "Lattice energy grows with ionic charge and shrinks with ionic size",
+   "why": "Derived from Coulomb's law, the lattice energy is proportional to the product of the ionic charges and inversely proportional to the distance between the ions. Doubling both charges quadruples it, which is why MgO has nearly four times the lattice energy of LiF, and smaller ions give a larger lattice energy, which is why MgF2 exceeds MgI2.",
+   "evidence": "The section gives the relation and compares LiF with MgO and MgF2 with MgI2, and Example 7.10 compares Al2O3 with Al2Se3; five exercises ask which compound of a pair has the larger lattice energy or which value best approximates one.",
+   "eq": "eq-lattice-energy-coulomb"
+  },
+  {
+   "id": "born-haber-cycle",
+   "kind": "skill",
+   "section": "7.5",
+   "name": "Calculating a lattice energy with the Born-Haber cycle",
+   "why": "Lattice energies cannot be measured directly, but the Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: the sublimation of the metal, the dissociation of the nonmetal, the ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess's law the steps add up to the enthalpy of formation, so any one of them can be found from the others.",
+   "evidence": "Figure 7.13 draws the cycle for cesium fluoride, Table 7.4 lists its steps, and the section solves the cycle for a lattice energy of 756.9 kJ/mol.",
+   "eq": "eq-born-haber"
   }
  ],
  "concept_prereqs": [
@@ -156,6 +390,118 @@
   {
    "concept": "molecular-polarity",
    "prereq": "predict-molecular-structure"
+  },
+  {
+   "concept": "ionic-lattice",
+   "prereq": "ionic-bond"
+  },
+  {
+   "concept": "predict-ion-charge",
+   "prereq": "ionic-bond"
+  },
+  {
+   "concept": "ion-electron-configuration",
+   "prereq": "predict-ion-charge"
+  },
+  {
+   "concept": "covalent-bond-formation",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "electronegativity",
+   "prereq": "covalent-bond-formation"
+  },
+  {
+   "concept": "bond-polarity",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "bond-type-from-electronegativity",
+   "prereq": "bond-polarity"
+  },
+  {
+   "concept": "bond-type-from-electronegativity",
+   "prereq": "ionic-bond"
+  },
+  {
+   "concept": "lewis-symbol",
+   "prereq": "ion-electron-configuration"
+  },
+  {
+   "concept": "octet-rule",
+   "prereq": "lewis-symbol"
+  },
+  {
+   "concept": "multiple-bonds",
+   "prereq": "octet-rule"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "multiple-bonds"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "covalent-bond-formation"
+  },
+  {
+   "concept": "octet-rule-exceptions",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "formal-charge",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "formal-charge-guidelines",
+   "prereq": "formal-charge"
+  },
+  {
+   "concept": "formal-charge-guidelines",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "resonance",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "bond-energy",
+   "prereq": "covalent-bond-formation"
+  },
+  {
+   "concept": "bond-strength-and-length",
+   "prereq": "bond-energy"
+  },
+  {
+   "concept": "bond-strength-and-length",
+   "prereq": "multiple-bonds"
+  },
+  {
+   "concept": "enthalpy-from-bond-energies",
+   "prereq": "bond-energy"
+  },
+  {
+   "concept": "enthalpy-from-bond-energies",
+   "prereq": "lewis-structure"
+  },
+  {
+   "concept": "lattice-energy",
+   "prereq": "ionic-lattice"
+  },
+  {
+   "concept": "lattice-energy-trends",
+   "prereq": "lattice-energy"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "lattice-energy"
+  },
+  {
+   "concept": "predict-ion-charge",
+   "prereq": "predict-ion-charge-from-group"
+  },
+  {
+   "concept": "ionic-bond",
+   "prereq": "ionic-and-covalent-bonds"
   }
  ]
 }

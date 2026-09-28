@@ -1,117 +1,37 @@
 # Chapter 7 colour plan
 
-Prepared 2026-09-12, and applied with `config.md`. It refines the book's
-`COLOR.md` for the quantities this chapter actually draws; root rule 7 and
-root rule 22 hold, and nothing here invents a hue. Only 7.6 is built in this
-pass, so only 7.6 is settled below.
+Prepared 2026-09-12 for 7.6 and extended 2026-09-28 to the whole chapter. It refines the book's `COLOR.md` for the quantities this chapter actually draws; root rules 7 and 22 hold, and nothing here invents a hue.
 
-## What the chapter binds
+## What each section binds
 
-None of the book's fourteen types. Section 7.6 is a section about shape, and
-a shape is not a quantity with a dimension. Its figures draw molecules, the
-regions of electron density around a central atom, the angles between them and
-the vectors that stand for their bond moments, and not one of those is a time,
-an amount, a mass, a volume, a concentration, a pressure, a temperature, an
-energy, an entropy, a rate, a wavelength, a frequency, a potential or a
-charge. The book's own `COLOR.md` anticipates this case and says what to do
-with it: a figure of molecules alone draws in the element palette and in ink,
-and binds nothing.
+| Section | Binds | Families of rule 7 |
+|---|---|---|
+| Intro | nothing | a kept photograph |
+| 7.1 | nothing | element palette (Na, Cl and the ions of the lattice); a kept photograph |
+| 7.2 | `energy` (the potential energy of Figure 7.4 and the 436 kJ of breaking H<sub>2</sub>, where a figure draws or reads it out) | element palette (H, Cl and any pair chosen); ink for electronegativity and ΔEN |
+| 7.3 | nothing | element palette for any atom drawn as an atom; Lewis symbols and structures in ink |
+| 7.4 | nothing | ink; categorical `F.cat(i)` only if resonance forms must be told apart, never a type hue |
+| 7.5 | `energy` (bond energies D, ΔH, ΔH°, ΔH<sub>f</sub>°, ΔH<sub>s</sub>°, IE, EA, ΔH<sub>lattice</sub>, the steps of the Born-Haber ladder) | element palette for ions; ink for charges Z, the distance R<sub>o</sub>, the constant C and bond lengths |
+| 7.6 | nothing from the scheme | element palette and ink (as built) |
 
-| Section | Binds |
-|---|---|
-| 7.6 | nothing from the scheme; the element palette and ink |
-| 7.1 to 7.5 | not built in this pass |
+## Energy in 7.2 and 7.5
 
-## The three quantities that look typed and are not
+Every energy of the chapter is one type. A bond energy is an energy per mole, a variant by its unit; the enthalpy of a reaction, its standard value, an enthalpy of formation or sublimation, an ionization energy, an electron affinity and a lattice energy are all energies, told apart by symbol and label and never by hue. In the Born-Haber ladder the arrows are energy and point up or down by their sign; the levels are labelled species in ink. The potential energy axis of Figure 7.4 and its readout are energy; the internuclear distance is length and stays ink.
 
-**The partial charges of a bond, δ+ and δ−, are not bound as `charge`.** The
-book's `COLOR.md` types the charge of Millikan's drops and of the electrons
-counted in electrolysis, both of which a figure gives a reading in coulombs.
-A partial charge is not measured that way here: the section writes it as δ
-with a sign, never as a number with a unit, and what the figures actually draw
-is the electronegativity difference that sets it. Electronegativity is in ink
-by the book's own list. Binding `charge` to colour a symbol the page never
-gives a value to would make the page wallpaper and would tie the partial
-charge of a C–H bond to the coulombs of Faraday's law, which is exactly the
-coercion root rule 7 forbids. The δ+ and δ− of every figure are ink.
+## What stays in ink, and why
 
-**The bond dipole moment μ is not a type and has none.** It is the product of
-a charge and a distance and the book declares no type for it, so the μ of
-μ = Qr, the vectors that represent it and the molecular dipole that sums them
-are all drawn in ink, told apart by what they are drawn as: a bond moment is
-an arrow along its bond with a plus sign at its tail, and the molecular dipole
-is a single heavier arrow from the centre of the molecule.
-
-**A bond length and a bond angle are in ink.** The book's `COLOR.md` puts
-length and radius in ink and names the bond length of 7.2 as the case, and an
-angle in degrees is a geometric measurement rather than a quantity of the
-book's. The bracket that measures 1.21 Å across a C=O bond in Figure 7.14 and
-the arc that measures 118° between two C–H bonds are both ink, as are their
-readouts.
+- **Electronegativity and ΔEN.** A dimensionless relative number, untyped by the book's list.
+- **The partial charges δ+ and δ−.** Not bound as `charge`. The book's `COLOR.md` types the charge of Millikan's drops and of the electrons of electrolysis, which a figure reads in coulombs; a partial charge is written as δ with a sign, never as a number with a unit, and what the figures draw is the electronegativity difference that sets it. Binding `charge` would tie the δ of a C–H bond to the coulombs of Faraday's law, the coercion rule 7 forbids. The same holds for the ionic charges Z<sup>+</sup> and Z<sup>−</sup> of 7.5 and the formal charges of 7.4: small integers of bookkeeping, not quantities in coulombs.
+- **Bond length, interionic distance, bond angle.** Length is untyped by the book's list, and an angle is geometry. The bracket that measures 1.21 Å across C=O in Figure 7.14 and the arc of 118° are ink.
+- **The bond dipole moment μ and the molecular dipole.** The product of a charge and a distance, with no type; drawn as arrows in ink, told apart by weight.
+- **A count of valence electrons, lone pairs and bonds.** Counts are untyped.
 
 ## How the figures stay legible without the scheme
 
-The element palette carries what the scheme would otherwise carry, as root
-rule 7 now says it always does: every atom, ion and molecule with an identity
-takes its element colour. An atom is always a filled disc in its element
-colour, from the fixed map the book's `COLOR.md` describes (carbon black,
-hydrogen white, oxygen red, nitrogen blue, chlorine green, sulfur yellow,
-fluorine and xenon from the rest of the CPK table), reached through
-`F.el(symbol)` and never as a hex literal. Every atom of 7.6, on a `figlib`
-canvas and in a three-dimensional scene alike, takes its element's colour,
-and hydrogen is a light fill with an ink outline so that it reads on a light
-page. A generic central atom E and a generic terminal atom X are the one
-case the rule speaks to directly, by asking that a generic particle be given
-an identity so that it can have a colour: the regions-and-lone-pairs Sim
-carries a choice of molecule for exactly this reason, and once the reader
-picks one its atoms are named and coloured by element. The E and the X of
-the abstract view, before a molecule is chosen, are a sketch of a shape
-rather than atoms with identities, and they take the panel's own grey with
-the letter set beside them, as the book's own Figure 7.19 draws them. Element
-colours do not switch off with colour coding,
-because they are the book's own drawing convention rather than a signal the
-app adds. The section passes the test of rule 7 figure by figure: everything
-in each with an identity is coloured, and the rest is frame.
+The element palette carries what the scheme would otherwise carry: every atom, ion and molecule with an identity takes its element colour through `F.el(symbol)` and never as a hex literal (carbon black, hydrogen white with an ink outline, oxygen red, nitrogen blue, chlorine green, sulfur yellow, sodium purple, and the rest of the CPK table). The Na<sup>+</sup> and Cl<sup>−</sup> of Figure 7.3 are sodium and chlorine in their element colours, the smaller sphere the cation as the book draws them. A generic E or X before a molecule is chosen is a sketch of a shape and takes the panel's grey with its letter, as the book's Figure 7.19 draws it. Element colours do not switch off with colour coding.
 
-Everything that is not an atom is ink, and the drawings separate by weight and
-by shape rather than by hue:
+A Lewis structure is notation, not a picture of atoms: its symbols, dots, dashes, brackets and charges are ink, and the red dots the book uses in Figure 7.10 and in 7.3's inline images to mark transferred or shared electrons are a categorical mark, `F.cat(0)`, not a type. Everything else separates by weight and shape rather than hue: a bond is a line and a lone pair a cloud; a measured angle an arc and a distance a bracket; a bond moment an arrow whose length is its magnitude; a solid is lit, not coloured, with a transparent clear colour so the page shows through in both themes and every colour read from `PAL` and `F.el()` on each draw.
 
-- **A bonding region is a line and a lone pair is a cloud.** A bond is drawn
-  as a rule from the central atom to a terminal atom; a lone pair is drawn as
-  a filled lobe with no atom at its end, larger than a bond's region, as the
-  section's own size order requires. The contrast the section is teaching, the
-  one between electron-pair geometry and molecular structure, is carried by
-  which regions have an atom on them and which do not.
-- **A measured angle is an arc and a measured distance is a bracket.** Both in
-  ink, both labelled beside the mark and inside the canvas.
-- **A bond moment is an arrow and its length is its magnitude.** The length of
-  the arrow follows the electronegativity difference, as the book's Figure
-  7.26 draws it, and a small plus sign marks the partially positive end.
-- **A solid is lit, not coloured.** On Chen's decision of 2026-09-12 every
-  figure of this section that shows a molecule's shape is a three-dimensional
-  scene on the global `THREE` rather than a `figlib` projection, and the
-  tetrahedron, the trigonal bipyramid and the octahedron read as solids
-  because one fixed lamp shades them, not because any hue was added. The
-  scene's clear colour is transparent, so the page's own panel shows through
-  in both themes, and every colour in it is read from `PAL` and `F.el()` on
-  each draw, so a change of theme redraws the scene with the page.
-- **A viewpoint is not a slider.** The reader turns a molecule by dragging it,
-  so the yaw and pitch sliders this plan first proposed are gone; the sliders
-  that remain carry chemical quantities of the section's own, the number of
-  regions, the number of lone pairs and the choice of molecule, and none of
-  them is a type of the book's, so each is drawn in ink.
+A viewpoint is not a slider: a 3D scene is turned by dragging and by its buttons, and the sliders that remain carry chemical quantities.
 
-## What stays in ink
-
-Every region of electron density, every bond and every lone pair; a bond
-length, a bond angle and every arc, bracket or rule that measures one; a
-partial charge, a bond moment, a molecular dipole and the electronegativity
-difference that sets them; the plates and the field lines of Figure 7.28; the
-names of the five electron-pair geometries and of the molecular structures
-that follow from them; the number of regions, the number of lone pairs and the
-choice of molecule that the sliders carry; and every label, axis rule and
-arrow that is not an atom.
-
-Nothing in this chapter is coerced into a neighbouring type to save a colour.
-A shape is not a quantity, a partial charge is not the charge of Faraday's
-law, and a bond angle is not a type.
+Nothing in this chapter is coerced into a neighbouring type to save a colour. A shape is not a quantity, a partial or formal charge is not the charge of Faraday's law, and a bond length is not a type.

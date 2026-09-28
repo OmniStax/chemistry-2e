@@ -1,0 +1,1123 @@
+{
+ "id": "3.1",
+ "module": "m68700",
+ "chapter": "3",
+ "title": "Formula Mass and the Mole Concept",
+ "short": "Formula mass and the mole",
+ "lead": "A chemical formula says which atoms a substance contains and how many of each, and the average masses of those atoms add up to its formula mass. This section computes the formula masses of covalent and ionic compounds, introduces the mole and Avogadro’s number as the chemist’s unit for counting atoms and molecules, and uses the molar mass to convert between the mass of a sample, its amount in moles, and the number of atoms or molecules it contains.",
+ "objectives": [
+  "Calculate formula masses for covalent and ionic compounds",
+  "Define the amount unit mole and the related quantity Avogadro’s number",
+  "Explain the relation between mass, moles, and numbers of atoms or molecules, and perform calculations deriving these quantities from one another"
+ ],
+ "summary_html": "<p>The formula mass of a substance is the sum of the average atomic masses of each atom represented in the chemical formula and is expressed in atomic mass units. The formula mass of a covalent compound is also called the molecular mass. A convenient amount unit for expressing very large numbers of atoms or molecules is the mole. Experimental measurements have determined the number of entities composing 1 mole of substance to be 6.022 × 10<sup>23</sup>, a quantity called Avogadro’s number. The mass in grams of 1 mole of substance is its molar mass. Due to the use of the same reference substance in defining the atomic mass unit and the mole, the formula mass (amu) and molar mass (g/mol) for any substance are numerically equivalent (for example, one H<sub>2</sub>O molecule weighs approximately18 amu and 1 mole of H<sub>2</sub>O molecules weighs approximately 18 g).</p>",
+ "notes": "The Link to Learning note, a video on the size of the mole, is left out. Five of the six boxes-and-arrows diagrams in the solutions of Examples 3.3 to 3.8 are left out, since the interactive figure before the examples draws the same route; Example 3.7 keeps its diagram, which its solution points at.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. The Check Your Learning answers are the book’s own, and the end-of-chapter answers come from the book’s key, which covers the odd-numbered items. The unkeyed numerical exercises 2, 4, 12, 14, 16, 18, 20, 22, 24, 26, 28 and 30 (fs-idp23290000, fs-idp1038448, fs-idp52331008, fs-idp56579584, fs-idp51940080, fs-idp51218400, fs-idp41399808, fs-idp42845584, fs-idp40477040, fs-idp48697456, fs-idp41347136 and fs-idp40440256) are left out. The unkeyed conceptual exercises 8 and 10 (fs-idp25588816 and fs-idp69842848) and the unkeyed exercise 6 (fs-idp50213376), a choice among three drawn molecules, carry a suggested approach marked as OmniStax’s own and are not graded. The structural formulas the book prints in exercises 5 and 6 are kept in their prompts. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "fig-formula-mass",
+   "kind": "sim",
+   "number": "3.2",
+   "folds": [
+    "3.3",
+    "3.4"
+   ],
+   "originals": [
+    "/media/ch03/CNX_Chem_03_01_chloroform.jpg",
+    "/media/ch03/CNX_Chem_03_01_aspirin.jpg",
+    "/media/ch03/CNX_Chem_03_01_saltMass.jpg"
+   ],
+   "original_caption": "(Figure 3.2) The average mass of a chloroform molecule, CHCl₃, is 119.37 amu, which is the sum of the average atomic masses of each of its constituent atoms. The model shows the molecular structure of chloroform. (Figure 3.3) The average mass of an aspirin molecule is 180.15 amu. The model shows the molecular structure of aspirin, C₉H₈O₄. (Figure 3.4) Table salt, NaCl, contains an array of sodium and chloride ions combined in a 1:1 ratio. Its formula mass is 58.44 amu.",
+   "draws": []
+  },
+  {
+   "id": "fig-ibuprofen-table",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "fig-alsulfate-table",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "fig-moles",
+   "kind": "photo",
+   "number": "3.5",
+   "draws": []
+  },
+  {
+   "id": "fig-compounds",
+   "kind": "photo",
+   "number": "3.6",
+   "draws": []
+  },
+  {
+   "id": "fig-water",
+   "kind": "photo",
+   "number": "3.7",
+   "draws": []
+  },
+  {
+   "id": "sim-mole-chain",
+   "kind": "sim",
+   "draws": [
+    "mass",
+    "amount"
+   ]
+  },
+  {
+   "id": "fig-copper",
+   "kind": "photo",
+   "number": "3.8",
+   "draws": []
+  },
+  {
+   "id": "fig-glycine-table",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "fig-vitaminc-route",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "fig-saccharin",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "fig-brain",
+   "kind": "photo",
+   "number": "3.9",
+   "draws": []
+  },
+  {
+   "id": "fig-exocytosis",
+   "kind": "photo",
+   "number": "3.10",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "formula-mass",
+   "concept": "formula-mass",
+   "verb": "introduces"
+  },
+  {
+   "span": "formula-mass",
+   "concept": "molecular-versus-formula-mass",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-ibuprofen",
+   "concept": "formula-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-alsulfate",
+   "concept": "formula-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-alsulfate",
+   "concept": "molecular-versus-formula-mass",
+   "verb": "reinforces"
+  },
+  {
+   "span": "mole",
+   "concept": "mole",
+   "verb": "introduces"
+  },
+  {
+   "span": "mole",
+   "concept": "avogadro-number",
+   "verb": "introduces"
+  },
+  {
+   "span": "molar-mass",
+   "concept": "molar-mass",
+   "verb": "introduces"
+  },
+  {
+   "span": "molar-mass",
+   "concept": "mole",
+   "verb": "uses"
+  },
+  {
+   "span": "molar-mass",
+   "concept": "formula-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "conversions",
+   "concept": "mass-mole-conversion",
+   "verb": "introduces"
+  },
+  {
+   "span": "conversions",
+   "concept": "molar-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "conversions",
+   "concept": "avogadro-number",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-potassium",
+   "concept": "mass-mole-conversion",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-argon",
+   "concept": "mass-mole-conversion",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-copper",
+   "concept": "count-atoms-and-molecules",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-copper",
+   "concept": "avogadro-number",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-glycine",
+   "concept": "mass-mole-conversion",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-glycine",
+   "concept": "molar-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-vitaminc",
+   "concept": "mass-mole-conversion",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-saccharin",
+   "concept": "count-atoms-and-molecules",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp17719968",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ibuprofen"
+   },
+   "cite": "formula-mass",
+   "prompt": "Acetaminophen, C<sub>8</sub>H<sub>9</sub>NO<sub>2</sub>, is a covalent compound and the active ingredient in several popular nonprescription pain medications, such as Tylenol. What is the molecular mass (amu) for this compound?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 151.16,
+    "unit": "amu",
+    "solution": "151.16 amu"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm73270640",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-alsulfate"
+   },
+   "cite": "formula-mass",
+   "prompt": "Calcium phosphate, Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>, is an ionic compound and a common anti-caking agent added to food products. What is the formula mass (amu) of calcium phosphate?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 310.18,
+    "unit": "amu",
+    "solution": "310.18 amu"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp76540048",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-potassium"
+   },
+   "cite": "conversions",
+   "prompt": "Beryllium is a light metal used to fabricate transparent X-ray windows for medical imaging instruments. How many moles of Be are in a thin-foil window weighing 3.24 g?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.36,
+    "unit": "mol",
+    "solution": "0.360 mol"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp15853040",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-argon"
+   },
+   "cite": "conversions",
+   "prompt": "What is the mass of 2.561 mol of gold?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 504.5,
+    "unit": "g",
+    "solution": "504.5 g"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm8741648",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-copper"
+   },
+   "cite": "conversions",
+   "prompt": "A prospector panning for gold in a river collects 15.00 g of pure gold. How many Au atoms are in this quantity of gold?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 4.585e+22,
+    "unit": "Au atoms",
+    "solution": "4.585 × 10<sup>22</sup> Au atoms"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idm1714048",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-glycine"
+   },
+   "cite": "conversions",
+   "prompt": "How many moles of sucrose, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>, are in a 25-g sample of sucrose?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.073,
+    "unit": "mol",
+    "solution": "0.073 mol"
+   }
+  },
+  {
+   "id": "cyl7",
+   "source_id": "fs-idp10913296",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-vitaminc"
+   },
+   "cite": "conversions",
+   "prompt": "What is the mass of 0.443 mol of hydrazine, N<sub>2</sub>H<sub>4</sub>?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 14.2,
+    "unit": "g",
+    "solution": "14.2 g"
+   }
+  },
+  {
+   "id": "cyl8",
+   "source_id": "fs-idp13749376",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-saccharin"
+   },
+   "cite": "conversions",
+   "prompt": "How many C<sub>4</sub>H<sub>10</sub> molecules are contained in 9.213 g of this compound? How many hydrogen atoms?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "molecules",
+      "value": 9.545e+22,
+      "unit": "molecules"
+     },
+     {
+      "part": "hydrogen atoms",
+      "value": 9.545e+23,
+      "unit": "H atoms"
+     }
+    ],
+    "solution": "9.545 × 10<sup>22</sup> molecules C<sub>4</sub>H<sub>10</sub>; 9.545 × 10<sup>23</sup> atoms H"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp14760336",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formula-mass",
+   "prompt": "What is the total mass (amu) of carbon in each of the following molecules?<br>(a) CH<sub>4</sub><br>(b) CHCl<sub>3</sub><br>(c) C<sub>12</sub>H<sub>10</sub>O<sub>6</sub><br>(d) CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub>",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 12.01,
+      "unit": "amu"
+     },
+     {
+      "part": "(b)",
+      "value": 12.01,
+      "unit": "amu"
+     },
+     {
+      "part": "(c)",
+      "value": 144.12,
+      "unit": "amu"
+     },
+     {
+      "part": "(d)",
+      "value": 60.05,
+      "unit": "amu"
+     }
+    ],
+    "solution": "(a) 12.01 amu; (b) 12.01 amu; (c) 144.12 amu; (d) 60.05 amu"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp14091664",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formula-mass",
+   "prompt": "Calculate the molecular or formula mass of each of the following:<br>(a) P<sub>4</sub><br>(b) H<sub>2</sub>O<br>(c) Ca(NO<sub>3</sub>)<sub>2</sub><br>(d) CH<sub>3</sub>CO<sub>2</sub>H (acetic acid)<br>(e) C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> (sucrose, cane sugar)",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 123.896,
+      "unit": "amu"
+     },
+     {
+      "part": "(b)",
+      "value": 18.015,
+      "unit": "amu"
+     },
+     {
+      "part": "(c)",
+      "value": 164.086,
+      "unit": "amu"
+     },
+     {
+      "part": "(d)",
+      "value": 60.052,
+      "unit": "amu"
+     },
+     {
+      "part": "(e)",
+      "value": 342.297,
+      "unit": "amu"
+     }
+    ],
+    "solution": "(a) 123.896 amu; (b) 18.015 amu; (c) 164.086 amu; (d) 60.052 amu; (e) 342.297 amu"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp20009152",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formula-mass",
+   "prompt": "Determine the molecular mass of the following compounds:<br>(a) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06a_img.jpg\" alt=\"A structure is shown. Two C atoms form double bonds with each other. The C atom on the left forms a single bond with two H atoms each. The C atom on the right forms a single bond with an H atom and with a C H subscript 2 C H subscript 3 group.\"><br>(b) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06b_img.jpg\" alt=\"A structure is shown. There is a C atom which forms single bonds with three H atoms each. This C atom is bonded to another C atom. This second C atom forms a triple bond with another C atom which forms a single bond with a fourth C atom. The fourth C atom forms single bonds with three H atoms each.\"><br>(c) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06c_img.jpg\" alt=\"A structure is shown. An S i atom forms a single bond with a C l atom, a single bond with a C l atom, a single bond with an H atom, and a single bond with another S i atom. The second S i atom forms a single bond with a C l atom, a single bond with a C l atom, and a single bond with an H atom.\"><br>(d) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06d_img.jpg\" alt=\"A structure is shown. A P atom forms a double bond with an O atom. It also forms a single bond with an O atom which forms a single bond with an H atom. It also forms a single bond with another O atom which forms a single bond with an H atom. It also forms a single bond with another O atom which forms a single bond with an H atom.\">",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 56.107,
+      "unit": "amu"
+     },
+     {
+      "part": "(b)",
+      "value": 54.091,
+      "unit": "amu"
+     },
+     {
+      "part": "(c)",
+      "value": 199.9976,
+      "unit": "amu"
+     },
+     {
+      "part": "(d)",
+      "value": 97.995,
+      "unit": "amu"
+     }
+    ],
+    "solution": "(a) 56.107 amu; (b) 54.091 amu; (c) 199.9976 amu; (d) 97.9950 amu"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp50213376",
+   "source_number": "6",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "formula-mass",
+   "prompt": "Which molecule has a molecular mass of 28.05 amu?<br>(a) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_07a_img.jpg\" alt=\"A structure is shown. A C atom forms a triple bond with another C atom. Each C atom also forms a single bond with an H atom.\"><br>(b) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_07b_img.jpg\" alt=\"A structure is shown. Two C atoms form a double bond with each other. Each C atom also forms a single bond with two H atoms.\"><br>(c) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_07c_img.jpg\" alt=\"A structure is shown. A C atom forms a single bond with three H atoms each and with another C atom. The second C atom also forms a single bond with three H atoms each.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Count the carbon atoms and the hydrogen atoms that each structural formula shows, and add their average atomic masses as the tables of Figures 3.2 and 3.3 do. The molecule whose sum comes to 28.05 amu is the one asked for; note that all three molecules contain two carbon atoms, so they differ only in their number of hydrogen atoms."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp17737968",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "Write a sentence that describes how to determine the number of moles of a compound in a known mass of the compound using its molecular formula.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Use the molecular formula to find the molar mass; to obtain the number of moles, divide the mass of compound by the molar mass of the compound expressed in grams."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp25588816",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "mole",
+   "prompt": "Compare 1 mole of H<sub>2</sub>, 1 mole of O<sub>2</sub>, and 1 mole of F<sub>2</sub>.<br>(a) Which has the largest number of molecules? Explain why.<br>(b) Which has the greatest mass? Explain why.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "For part (a), recall what the definition of the mole says about the number of entities in 1 mole of any substance, whatever that substance is. For part (b), recall that the mass of 1 mole of a substance is its molar mass, which is numerically equal to its formula mass; compare the formula masses of the three molecules from the average atomic masses of H, O, and F."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp50267072",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "Which contains the greatest mass of oxygen: 0.75 mol of ethanol (C<sub>2</sub>H<sub>5</sub>OH), 0.60 mol of formic acid (HCO<sub>2</sub>H), or 1.0 mol of water (H<sub>2</sub>O)? Explain why.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Formic acid. Its formula has twice as many oxygen atoms as the other two compounds (one each). Therefore, 0.60 mol of formic acid would be equivalent to 1.20 mol of a compound containing a single oxygen atom."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp69842848",
+   "source_number": "10",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "Which contains the greatest number of moles of oxygen atoms: 1 mol of ethanol (C<sub>2</sub>H<sub>5</sub>OH), 1 mol of formic acid (HCO<sub>2</sub>H), or 1 mol of water (H<sub>2</sub>O)? Explain why.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Count the oxygen atoms in one molecule of each compound from its formula. Since 1 mole of a compound contains 1 mole of molecules, it contains as many moles of oxygen atoms as there are oxygen atoms in one molecule, so the three amounts can be compared directly from the formulas."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp23072",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molar-mass",
+   "prompt": "How are the molecular mass and the molar mass of a compound similar and how are they different?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The two masses have the same numerical value, but the units are different: The molecular mass is the mass of 1 molecule while the molar mass is the mass of 6.022 × 10<sup>23</sup> molecules."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp51968592",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molar-mass",
+   "prompt": "Calculate the molar mass of each of the following:<br>(a) S<sub>8</sub><br>(b) C<sub>5</sub>H<sub>12</sub><br>(c) Sc<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub><br>(d) CH<sub>3</sub>COCH<sub>3</sub> (acetone)<br>(e) C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (glucose)",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 256.48,
+      "unit": "g/mol"
+     },
+     {
+      "part": "(b)",
+      "value": 72.15,
+      "unit": "g/mol"
+     },
+     {
+      "part": "(c)",
+      "value": 378.103,
+      "unit": "g/mol"
+     },
+     {
+      "part": "(d)",
+      "value": 58.08,
+      "unit": "g/mol"
+     },
+     {
+      "part": "(e)",
+      "value": 180.158,
+      "unit": "g/mol"
+     }
+    ],
+    "solution": "(a) 256.48 g/mol; (b) 72.150 g mol<sup>−1</sup>; (c) 378.103 g mol<sup>−1</sup>; (d) 58.080 g mol<sup>−1</sup>; (e) 180.158 g mol<sup>−1</sup>"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp56656128",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "molar-mass",
+   "prompt": "Calculate the molar mass of each of the following:<br>(a) the anesthetic halothane, C<sub>2</sub>HBrClF<sub>3</sub><br>(b) the herbicide paraquat, C<sub>12</sub>H<sub>14</sub>N<sub>2</sub>Cl<sub>2</sub><br>(c) caffeine, C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>(d) urea, CO(NH<sub>2</sub>)<sub>2</sub><br>(e) a typical soap, C<sub>17</sub>H<sub>35</sub>CO<sub>2</sub>Na",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 197.382,
+      "unit": "g/mol"
+     },
+     {
+      "part": "(b)",
+      "value": 257.163,
+      "unit": "g/mol"
+     },
+     {
+      "part": "(c)",
+      "value": 194.193,
+      "unit": "g/mol"
+     },
+     {
+      "part": "(d)",
+      "value": 60.056,
+      "unit": "g/mol"
+     },
+     {
+      "part": "(e)",
+      "value": 306.464,
+      "unit": "g/mol"
+     }
+    ],
+    "solution": "(a) 197.382 g mol<sup>−1</sup>; (b) 257.163 g mol<sup>−1</sup>; (c) 194.193 g mol<sup>−1</sup>; (d) 60.056 g mol<sup>−1</sup>; (e) 306.464 g mol<sup>−1</sup>"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp56804240",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "Determine the mass of each of the following:<br>(a) 0.0146 mol KOH<br>(b) 10.2 mol ethane, C<sub>2</sub>H<sub>6</sub><br>(c) 1.6 × 10<sup>−3</sup> mol Na<sub>2</sub>SO<sub>4</sub><br>(d) 6.854 × 10<sup>3</sup> mol glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>(e) 2.86 mol Co(NH<sub>3</sub>)<sub>6</sub>Cl<sub>3</sub>",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 0.819,
+      "unit": "g"
+     },
+     {
+      "part": "(b)",
+      "value": 307,
+      "unit": "g"
+     },
+     {
+      "part": "(c)",
+      "value": 0.23,
+      "unit": "g"
+     },
+     {
+      "part": "(d)",
+      "value": 1235000.0,
+      "unit": "g"
+     },
+     {
+      "part": "(e)",
+      "value": 765,
+      "unit": "g"
+     }
+    ],
+    "solution": "(a) 0.819 g; (b) 307 g; (c) 0.23 g; (d) 1.235 × 10<sup>6</sup> g (1235 kg); (e) 765 g"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp50969136",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "Determine the mass of each of the following:<br>(a) 2.345 mol LiCl<br>(b) 0.0872 mol acetylene, C<sub>2</sub>H<sub>2</sub><br>(c) 3.3 × 10<sup>−2</sup> mol Na<sub>2</sub>CO<sub>3</sub><br>(d) 1.23 × 10<sup>3</sup> mol fructose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>(e) 0.5758 mol FeSO<sub>4</sub>(H<sub>2</sub>O)<sub>7</sub>",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 99.41,
+      "unit": "g"
+     },
+     {
+      "part": "(b)",
+      "value": 2.27,
+      "unit": "g"
+     },
+     {
+      "part": "(c)",
+      "value": 3.5,
+      "unit": "g"
+     },
+     {
+      "part": "(d)",
+      "value": 222,
+      "unit": "kg"
+     },
+     {
+      "part": "(e)",
+      "value": 160.1,
+      "unit": "g"
+     }
+    ],
+    "solution": "(a) 99.41 g; (b) 2.27 g; (c) 3.5 g; (d) 222 kg; (e) 160.1 g"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idp41416224",
+   "source_number": "21",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "Determine the mass in grams of each of the following:<br>(a) 0.600 mol of oxygen atoms<br>(b) 0.600 mol of oxygen molecules, O<sub>2</sub><br>(c) 0.600 mol of ozone molecules, O<sub>3</sub>",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 9.6,
+      "unit": "g"
+     },
+     {
+      "part": "(b)",
+      "value": 19.2,
+      "unit": "g"
+     },
+     {
+      "part": "(c)",
+      "value": 28.8,
+      "unit": "g"
+     }
+    ],
+    "solution": "(a) 9.60 g; (b) 19.2 g; (c) 28.8 g"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idp42864672",
+   "source_number": "23",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "Determine the number of atoms and the mass of zirconium, silicon, and oxygen found in 0.3384 mol of zircon, ZrSiO<sub>4</sub>, a semiprecious stone.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "zirconium atoms",
+      "value": 2.038e+23,
+      "unit": "atoms"
+     },
+     {
+      "part": "zirconium mass",
+      "value": 30.87,
+      "unit": "g"
+     },
+     {
+      "part": "silicon atoms",
+      "value": 2.038e+23,
+      "unit": "atoms"
+     },
+     {
+      "part": "silicon mass",
+      "value": 9.504,
+      "unit": "g"
+     },
+     {
+      "part": "oxygen atoms",
+      "value": 8.151e+23,
+      "unit": "atoms"
+     },
+     {
+      "part": "oxygen mass",
+      "value": 21.66,
+      "unit": "g"
+     }
+    ],
+    "solution": "zirconium: 2.038 × 10<sup>23</sup> atoms; 30.87 g; silicon: 2.038 × 10<sup>23</sup> atoms; 9.504 g; oxygen: 8.151 × 10<sup>23</sup> atoms; 21.66 g"
+   }
+  },
+  {
+   "id": "e25",
+   "source_id": "fs-idp40492096",
+   "source_number": "25",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "Determine which of the following contains the greatest mass of aluminum: 122 g of AlPO<sub>4</sub>, 266 g of Al<sub>2</sub>Cl<sub>6</sub>, or 225 g of Al<sub>2</sub>S<sub>3</sub>.",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "122 g of AlPO<sub>4</sub>",
+     "266 g of Al<sub>2</sub>Cl<sub>6</sub>",
+     "225 g of Al<sub>2</sub>S<sub>3</sub>"
+    ],
+    "correct": 2,
+    "solution": "AlPO<sub>4</sub>: 1.000 mol, or 26.98 g Al; Al<sub>2</sub>Cl<sub>6</sub>: 1.994 mol, or 53.74 g Al; Al<sub>2</sub>S<sub>3</sub>: 3.00 mol, or 80.94 g Al; The Al<sub>2</sub>S<sub>3</sub> sample thus contains the greatest mass of Al."
+   }
+  },
+  {
+   "id": "e27",
+   "source_id": "fs-idp41325184",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "The Cullinan diamond was the largest natural diamond ever found (January 25, 1905). It weighed 3104 carats (1 carat = 200 mg). How many carbon atoms were present in the stone?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3.113e+25,
+    "unit": "C atoms",
+    "solution": "3.113 × 10<sup>25</sup> C atoms"
+   }
+  },
+  {
+   "id": "e29",
+   "source_id": "fs-idp71747216",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "A certain nut crunch cereal contains 11.0 grams of sugar (sucrose, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>) per serving size of 60.0 grams. How many servings of this cereal must be eaten to consume 0.0278 moles of sugar?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.865,
+    "unit": "servings",
+    "solution": "0.865 servings, or about 1 serving."
+   }
+  },
+  {
+   "id": "e31",
+   "source_id": "fs-idp40890272",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conversions",
+   "prompt": "Which of the following represents the least number of molecules?<br>(a) 20.0 g of H<sub>2</sub>O (18.02 g/mol)<br>(b) 77.0 g of CH<sub>4</sub> (16.06 g/mol)<br>(c) 68.0 g of C<sub>3</sub>H<sub>6</sub> (42.08 g/mol)<br>(d) 100.0 g of N<sub>2</sub>O (44.02 g/mol)<br>(e) 84.0 g of HF (20.01 g/mol)",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "20.0 g of H<sub>2</sub>O (18.02 g/mol)",
+     "77.0 g of CH<sub>4</sub> (16.06 g/mol)",
+     "68.0 g of C<sub>3</sub>H<sub>6</sub> (42.08 g/mol)",
+     "100.0 g of N<sub>2</sub>O (44.02 g/mol)",
+     "84.0 g of HF (20.01 g/mol)"
+    ],
+    "correct": 0,
+    "solution": "20.0 g H<sub>2</sub>O represents the least number of molecules since it has the least number of moles."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "formula-mass"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "formula-mass"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "molecular-versus-formula-mass"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "molar-mass"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "molar-mass"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "count-atoms-and-molecules"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "avogadro-number"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "molar-mass"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "molar-mass"
+  },
+  {
+   "exercise": "cyl8",
+   "concept": "count-atoms-and-molecules"
+  },
+  {
+   "exercise": "cyl8",
+   "concept": "avogadro-number"
+  },
+  {
+   "exercise": "e1",
+   "concept": "formula-mass"
+  },
+  {
+   "exercise": "e3",
+   "concept": "formula-mass"
+  },
+  {
+   "exercise": "e3",
+   "concept": "molecular-versus-formula-mass"
+  },
+  {
+   "exercise": "e5",
+   "concept": "formula-mass"
+  },
+  {
+   "exercise": "e6",
+   "concept": "formula-mass"
+  },
+  {
+   "exercise": "e7",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e7",
+   "concept": "molar-mass"
+  },
+  {
+   "exercise": "e8",
+   "concept": "mole"
+  },
+  {
+   "exercise": "e8",
+   "concept": "avogadro-number"
+  },
+  {
+   "exercise": "e8",
+   "concept": "molar-mass"
+  },
+  {
+   "exercise": "e9",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e9",
+   "concept": "count-atoms-and-molecules"
+  },
+  {
+   "exercise": "e10",
+   "concept": "mole"
+  },
+  {
+   "exercise": "e10",
+   "concept": "count-atoms-and-molecules"
+  },
+  {
+   "exercise": "e11",
+   "concept": "molar-mass"
+  },
+  {
+   "exercise": "e11",
+   "concept": "formula-mass"
+  },
+  {
+   "exercise": "e13",
+   "concept": "molar-mass"
+  },
+  {
+   "exercise": "e15",
+   "concept": "molar-mass"
+  },
+  {
+   "exercise": "e17",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e19",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e21",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e23",
+   "concept": "count-atoms-and-molecules"
+  },
+  {
+   "exercise": "e23",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e25",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e27",
+   "concept": "count-atoms-and-molecules"
+  },
+  {
+   "exercise": "e29",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e31",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e31",
+   "concept": "count-atoms-and-molecules"
+  }
+ ]
+}

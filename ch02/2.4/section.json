@@ -1,0 +1,355 @@
+{
+ "id": "2.4",
+ "module": "m68693",
+ "chapter": "2",
+ "title": "Chemical Formulas",
+ "short": "Chemical formulas",
+ "lead": "A chemical formula says which atoms make up a substance and in what numbers, and there is more than one kind. This section sets out the molecular formula, which counts the atoms in one molecule, the structural formula and the ball-and-stick and space-filling models, which show how those atoms are connected and arranged, and the empirical formula, which gives only the simplest whole-number ratio of the atoms; it closes on isomers, compounds that share a formula but differ in structure.",
+ "objectives": [
+  "Symbolize the composition of molecules using molecular formulas and empirical formulas",
+  "Represent the bonding arrangement of atoms within molecules using structural formulas"
+ ],
+ "summary_html": "<p>A molecular formula uses chemical symbols and subscripts to indicate the exact numbers of different atoms in a molecule or compound. An empirical formula gives the simplest, whole-number ratio of atoms in a compound. A structural formula indicates the bonding arrangement of the atoms in the molecule. Ball-and-stick and space-filling models show the geometric arrangement of atoms in a molecule. Isomers are compounds with the same molecular formula but different arrangements of atoms.</p>",
+ "notes": "The two Link to Learning notes are left out: the PhET Build a Molecule simulation and a video on the mirror-image molecules of carvone, whose idea Figure 2.24 carries.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. The Check Your Learning of Example 2.6 carries the book’s own answer, and the end-of-chapter answers come from the book’s key, which covers the odd-numbered items. The unkeyed items fs-idp231487264 and fs-idp33519568, which ask for definite formulas the book does not key, are left out, and the unkeyed conceptual item fs-idm171756048 carries a suggested approach marked as OmniStax’s own. The three items that ask the reader to build molecules in the PhET Build a Molecule simulation (fs-idm75792016, fs-idm57514192 and fs-idm80750976) are held, since no figure of this page builds a molecule. The drawings the book prints inside fs-idm157365408 and fs-idp2601824 are kept in their prompts.",
+ "figures": [
+  {
+   "id": "fig-methane",
+   "kind": "sim",
+   "number": "2.16",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_MethaneRep.jpg"
+   ],
+   "original_caption": "A methane molecule can be represented as (a) a molecular formula, (b) a structural formula, (c) a ball-and-stick model, and (d) a space-filling model. Carbon and hydrogen atoms are represented by black and white spheres, respectively.",
+   "draws": []
+  },
+  {
+   "id": "fig-sulfur",
+   "kind": "sim",
+   "number": "2.17",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Sulfur.jpg"
+   ],
+   "original_caption": "A molecule of sulfur is composed of eight sulfur atoms and is therefore written as S₈. It can be represented as (a) a structural formula, (b) a ball-and-stick model, and (c) a space-filling model. Sulfur atoms are represented by yellow spheres.",
+   "draws": []
+  },
+  {
+   "id": "fig-hydrogen",
+   "kind": "sim",
+   "number": "2.18",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Hydrogen.jpg"
+   ],
+   "original_caption": "The symbols H, 2H, H₂, and 2H₂ represent very different entities.",
+   "draws": []
+  },
+  {
+   "id": "fig-tio2",
+   "kind": "photo",
+   "number": "2.19",
+   "draws": []
+  },
+  {
+   "id": "fig-benzene",
+   "kind": "sim",
+   "number": "2.20",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Benzene.jpg"
+   ],
+   "original_caption": "Benzene, C₆H₆, is produced during oil refining and has many industrial uses. A benzene molecule can be represented as (a) a structural formula, (b) a ball-and-stick model, and (c) a space-filling model. (d) Benzene is a clear liquid. (credit d: modification of work by Sahar Atwa)",
+   "draws": []
+  },
+  {
+   "id": "fig-acetic",
+   "kind": "sim",
+   "number": "2.21",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_AceticAcid.jpg"
+   ],
+   "original_caption": "(a) Vinegar contains acetic acid, C₂H₄O₂, which has an empirical formula of CH₂O. It can be represented as (b) a structural formula and (c) as a ball-and-stick model. (credit a: modification of work by “HomeSpot HQ”/Flickr)",
+   "draws": []
+  },
+  {
+   "id": "sim-empirical",
+   "kind": "sim",
+   "draws": []
+  },
+  {
+   "id": "fig-hammond",
+   "kind": "photo",
+   "number": "2.22",
+   "draws": []
+  },
+  {
+   "id": "fig-isomers",
+   "kind": "sim",
+   "number": "2.23",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Isomers.jpg"
+   ],
+   "original_caption": "Molecules of (a) acetic acid and methyl formate (b) are structural isomers; they have the same formula (C₂H₄O₂) but different structures (and therefore different chemical properties).",
+   "draws": []
+  },
+  {
+   "id": "fig-carvone",
+   "kind": "sim",
+   "number": "2.24",
+   "originals": [
+    "/media/ch02/CNX_Chem_02_04_Isomers2.jpg"
+   ],
+   "original_caption": "Molecules of carvone are spatial isomers; they only differ in the relative orientations of the atoms in space. (credit bottom left: modification of work by “Miansari66”/Wikimedia Commons; credit bottom right: modification of work by Forest & Kim Starr)",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "molecular-formula",
+   "concept": "molecular-formula",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-formula",
+   "concept": "structural-formulas-and-models",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-formula",
+   "concept": "chemical-symbols",
+   "verb": "uses"
+  },
+  {
+   "span": "molecular-formula",
+   "concept": "atoms-and-molecules",
+   "verb": "uses"
+  },
+  {
+   "span": "elemental-molecules",
+   "concept": "molecular-formula",
+   "verb": "reinforces"
+  },
+  {
+   "span": "elemental-molecules",
+   "concept": "structural-formulas-and-models",
+   "verb": "reinforces"
+  },
+  {
+   "span": "subscripts-coefficients",
+   "concept": "subscripts-and-coefficients",
+   "verb": "introduces"
+  },
+  {
+   "span": "subscripts-coefficients",
+   "concept": "molecular-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "empirical-formula",
+   "concept": "empirical-formula-from-molecular-formula",
+   "verb": "introduces"
+  },
+  {
+   "span": "empirical-formula",
+   "concept": "elements-and-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "empirical-formula",
+   "concept": "law-of-definite-proportions",
+   "verb": "uses"
+  },
+  {
+   "span": "empirical-formula",
+   "concept": "molecular-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "empirical-from-molecular",
+   "concept": "empirical-formula-from-molecular-formula",
+   "verb": "reinforces"
+  },
+  {
+   "span": "empirical-from-molecular",
+   "concept": "structural-formulas-and-models",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "isomers",
+   "verb": "introduces"
+  },
+  {
+   "span": "isomers",
+   "concept": "structural-formulas-and-models",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "molecular-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "spatial-isomers",
+   "concept": "isomers",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm100343920",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-glucose"
+   },
+   "prompt": "A molecule of metaldehyde (a pesticide used for snails and slugs) contains 8 carbon atoms, 16 hydrogen atoms, and 4 oxygen atoms. What are the molecular and empirical formulas of metaldehyde?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Molecular formula, C<sub>8</sub>H<sub>16</sub>O<sub>4</sub>; empirical formula, C<sub>2</sub>H<sub>4</sub>O"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm188711792",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "elemental-molecules",
+   "prompt": "Explain why the symbol for an atom of the element oxygen and the formula for a molecule of oxygen differ.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The symbol for the element oxygen, O, represents both the element and one atom of oxygen. A molecule of oxygen, O<sub>2</sub>, contains two oxygen atoms; the subscript 2 in the formula must be used to distinguish the diatomic molecule from two single oxygen atoms."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm171756048",
+   "source_number": "28",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "elemental-molecules",
+   "prompt": "Explain why the symbol for the element sulfur and the formula for a molecule of sulfur differ.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Ask what each piece of notation counts. The symbol S stands for the element sulfur and for a single atom of it. The most common form of sulfur, however, is made of molecules of eight sulfur atoms bonded together in a ring, so the formula of one molecule needs a subscript to say how many atoms it contains, S<sub>8</sub>. Writing 8S instead would mean eight separate atoms that are not bonded as a unit."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm157365408",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "empirical-from-molecular",
+   "prompt": "Write the molecular and empirical formulas of the following compounds:<br>(a) <img src=\"/media/ch02/CNX_Chem_02_04_Question3a_img.jpg\" alt=\"A carbon atom that forms two, separate double bonds with two oxygen atoms.\"><br>(b) <img src=\"/media/ch02/CNX_Chem_02_04_Question3b_img.jpg\" alt=\"A hydrogen atom which forms a single bond with a carbon atom. The carbon atom forms a triple bond with another carbon atom. The second carbon atom forms a single bond with a hydrogen atom.\"><br>(c) <img src=\"/media/ch02/CNX_Chem_02_04_Question3c_img.jpg\" alt=\"A carbon atom double bonded to another carbon atom. Each carbon atom is further single bonded to two hydrogen atoms.\"><br>(d) <img src=\"/media/ch02/CNX_Chem_02_04_Question3d_img.jpg\" alt=\"A sulfur atom forming double bonds with two oxygen atoms and single bonds with two oxygen atoms. Two of the oxygen atoms form a single bond with a hydrogen atom.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) molecular CO<sub>2</sub>, empirical CO<sub>2</sub>; (b) molecular C<sub>2</sub>H<sub>2</sub>, empirical CH; (c) molecular C<sub>2</sub>H<sub>4</sub>, empirical CH<sub>2</sub>; (d) molecular H<sub>2</sub>SO<sub>4</sub>, empirical H<sub>2</sub>SO<sub>4</sub>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm64843712",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "empirical-from-molecular",
+   "prompt": "Determine the empirical formulas for the following compounds:<br>(a) caffeine, C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>(b) sucrose, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub><br>(c) hydrogen peroxide, H<sub>2</sub>O<sub>2</sub><br>(d) glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>(e) ascorbic acid (vitamin C), C<sub>6</sub>H<sub>8</sub>O<sub>6</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) C<sub>4</sub>H<sub>5</sub>N<sub>2</sub>O; (b) C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>; (c) HO; (d) CH<sub>2</sub>O; (e) C<sub>3</sub>H<sub>4</sub>O<sub>3</sub>"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp2601824",
+   "source_number": "33",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "empirical-from-molecular",
+   "prompt": "Write the empirical formulas for the following compounds:<br>(a) <img src=\"/media/ch02/CNX_Chem_02_04_Question7a_img.jpg\" alt=\"Two carbon atoms that form a single bond with each other. The left carbon forms single bonds with three hydrogen atoms. The right carbon forms a double bond to an oxygen atom and a single bond to another oxygen atom. This second oxygen atom also forms a single bond to a hydrogen atom.\"><br>(b) <img src=\"/media/ch02/CNX_Chem_02_04_Question7b_img.jpg\" alt=\"A leftmost carbon that forms single bonds to three hydrogen atoms and to a second carbon atom. The second carbon atom forms a double bond with an oxygen atom and a single bond to a second oxygen atom, which is bonded to a third carbon atom. This third carbon atom forms single bonds with two hydrogen atoms and with a fourth carbon atom, which forms single bonds with three hydrogen atoms.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) CH<sub>2</sub>O; (b) C<sub>2</sub>H<sub>4</sub>O"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "empirical-formula-from-molecular-formula"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "molecular-formula"
+  },
+  {
+   "exercise": "e1",
+   "concept": "molecular-formula"
+  },
+  {
+   "exercise": "e1",
+   "concept": "subscripts-and-coefficients"
+  },
+  {
+   "exercise": "e2",
+   "concept": "molecular-formula"
+  },
+  {
+   "exercise": "e2",
+   "concept": "subscripts-and-coefficients"
+  },
+  {
+   "exercise": "e3",
+   "concept": "structural-formulas-and-models"
+  },
+  {
+   "exercise": "e3",
+   "concept": "molecular-formula"
+  },
+  {
+   "exercise": "e3",
+   "concept": "empirical-formula-from-molecular-formula"
+  },
+  {
+   "exercise": "e5",
+   "concept": "empirical-formula-from-molecular-formula"
+  },
+  {
+   "exercise": "e7",
+   "concept": "structural-formulas-and-models"
+  },
+  {
+   "exercise": "e7",
+   "concept": "empirical-formula-from-molecular-formula"
+  }
+ ]
+}

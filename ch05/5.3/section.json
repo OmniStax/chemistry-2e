@@ -1,0 +1,1196 @@
+{
+  "id": "5.3",
+  "module": "m68727",
+  "chapter": "5",
+  "title": "Enthalpy",
+  "short": "Enthalpy",
+  "lead": "The internal energy of a system changes through heat and work, and at constant pressure the heat of a process is its enthalpy change. This section writes that change into thermochemical equations, tabulates it as enthalpies of combustion and formation, and adds it step by step with Hess’s law.",
+  "objectives": [
+    "State the first law of thermodynamics",
+    "Define enthalpy and explain its classification as a state function",
+    "Write and balance thermochemical equations",
+    "Calculate enthalpy changes for various chemical reactions",
+    "Explain Hess’s law and use it to compute reaction enthalpies"
+  ],
+  "summary_html": "<p>If a chemical change is carried out at constant pressure and the only work done is caused by expansion or contraction, <em>q</em> for the change is called the enthalpy change with the symbol Δ<em>H</em>, or $\\text{Δ}H\\text{°}$ for reactions occurring under standard state conditions at 298 K. The value of Δ<em>H</em> for a reaction in one direction is equal in magnitude, but opposite in sign, to Δ<em>H</em> for the reaction in the opposite direction, and Δ<em>H</em> is directly proportional to the quantity of reactants and products. The standard enthalpy of formation, $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}},$ is the enthalpy change accompanying the formation of 1 mole of a substance from the elements in their most stable states at 1 bar and 298.15 K. If the enthalpies of formation are available for the reactants and products of a reaction, the enthalpy change can be calculated using Hess’s law: If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the various steps.</p>",
+  "notes": "The two Link to Learning notes (the internal combustion engine and the algae biofuel page) are left out, the Key Equations table is carried by the chapter’s equations, and the book’s errata are kept as printed: the ethanol combustion equation drops a parenthesis in “(g+”, Table 5.2 lists isooctane as –5465.5 kJ/mol where the text and Example 5.10 use −5460 kJ/mol, Example 5.9 calls KClO₃ perchlorate, Example 5.15 lists HNO₃ as −207.4 kJ/mol but computes with −206.64 kJ/mol and reaches −136.80 kJ by the equation and −138.4 kJ by the steps, one exercise reads “in Table 5.2 the table”, and one key writes “HCL”.",
+  "ai": {
+    "text": "Claude Opus 5.5",
+    "figures": "Claude Opus 5.5"
+  },
+  "built": "2026-09-28",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. All eight Check Your Learning items carry the book’s own answers. Answers to the end-of-chapter exercises come from the book’s key, which covers twenty-four of the forty-eight items; the twenty unkeyed numerical items (fs-idp167504688, fs-idp140736768, fs-idp103290416, fs-idp169467440, fs-idp155924624, fs-idp25402064, fs-idp165437584, fs-idp161291648, fs-idp173454656, fs-idp204534224, fs-idp149472576, fs-idp161656784, fs-idp173500624, fs-idp214812192, fs-idp195101120, fs-idp43583200, fs-idp208987456, fs-idp124891680, fs-idp149397888, fs-idp165246448) are left out. The four unkeyed conceptual items (fs-idp103276080 on the oxyacetylene torch, fs-idp104124592 on Table 5.2, fs-idp154782528 on graphite and diamond, fs-idp157714624 on OsO₄) are kept with a suggested approach marked as OmniStax’s own. References to Examples 5.5 and 5.6 and to Exercise 5.25 of the preceding section are plain text; nothing is taken from another section and nothing is held for one. The heat-capacity key’s kJ/ºC is written kJ/°C. Numeric answers accept 2% tolerance.",
+  "figures": [
+    {
+      "id": "sim-first-law",
+      "kind": "sim",
+      "number": "5.19",
+      "originals": [
+        "/media/ch05/CNX_Chem_05_03_Systemqw.jpg"
+      ],
+      "original_caption": "The internal energy, U, of a system can be changed by heat flow and work. If heat flows into the system, qin, or work is done on the system, won, its internal energy increases, ΔU > 0. If heat flows out of the system, qout, or work is done by the system, wby, its internal energy decreases, ΔU < 0.",
+      "draws": [
+        "energy"
+      ]
+    },
+    {
+      "id": "fig-summit",
+      "kind": "photo",
+      "number": "5.20",
+      "draws": []
+    },
+    {
+      "id": "fig-gas-burning",
+      "kind": "photo",
+      "number": "5.21",
+      "draws": []
+    },
+    {
+      "id": "fig-algal-fuel",
+      "kind": "photo",
+      "number": "5.22",
+      "draws": []
+    },
+    {
+      "id": "fig-algal-process",
+      "kind": "photo",
+      "number": "5.23",
+      "draws": []
+    },
+    {
+      "id": "sim-hess",
+      "kind": "sim",
+      "number": "5.24",
+      "originals": [
+        "/media/ch05/CNX_Chem_05_03_HessCO2.jpg"
+      ],
+      "original_caption": "The formation of CO2(g) from its elements can be thought of as occurring in two steps, which sum to the overall reaction, as described by Hess’s law. The horizontal blue lines represent enthalpies. For an exothermic process, the products are at lower enthalpy than are the reactants.",
+      "draws": [
+        "energy"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "first-law",
+      "concept": "first-law-of-thermodynamics",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-law",
+      "concept": "system-and-surroundings",
+      "verb": "uses"
+    },
+    {
+      "span": "first-law",
+      "concept": "conservation-of-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "first-law",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "expansion-work",
+      "concept": "first-law-of-thermodynamics",
+      "verb": "reinforces"
+    },
+    {
+      "span": "expansion-work",
+      "concept": "exothermic-and-endothermic",
+      "verb": "uses"
+    },
+    {
+      "span": "state-functions",
+      "concept": "state-function",
+      "verb": "introduces"
+    },
+    {
+      "span": "state-functions",
+      "concept": "first-law-of-thermodynamics",
+      "verb": "uses"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "enthalpy-change-at-constant-pressure",
+      "verb": "introduces"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "state-function",
+      "verb": "uses"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "bomb-calorimetry",
+      "verb": "uses"
+    },
+    {
+      "span": "thermochemical-equations",
+      "concept": "thermochemical-equations",
+      "verb": "introduces"
+    },
+    {
+      "span": "thermochemical-equations",
+      "concept": "exothermic-and-endothermic",
+      "verb": "uses"
+    },
+    {
+      "span": "thermochemical-equations",
+      "concept": "extensive-and-intensive-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hcl-naoh",
+      "concept": "thermochemical-equations",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-gummy-bear",
+      "concept": "thermochemical-equations",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-gummy-bear",
+      "concept": "identify-limiting-reactant",
+      "verb": "uses"
+    },
+    {
+      "span": "standard-state",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "introduces"
+    },
+    {
+      "span": "standard-state",
+      "concept": "extensive-and-intensive-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "combustion",
+      "concept": "enthalpy-of-combustion",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-isooctane",
+      "concept": "enthalpy-of-combustion",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-isooctane",
+      "concept": "density",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-isooctane",
+      "concept": "mass-mole-conversion",
+      "verb": "uses"
+    },
+    {
+      "span": "formation",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-ozone",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-formation-equations",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "hess-law",
+      "concept": "hess-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "hess-law",
+      "concept": "state-function",
+      "verb": "uses"
+    },
+    {
+      "span": "hess-law",
+      "concept": "thermochemical-equations",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-fecl3",
+      "concept": "hess-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-clf3",
+      "concept": "hess-law",
+      "verb": "reinforces"
+    },
+    {
+      "span": "formation-enthalpies",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "verb": "introduces"
+    },
+    {
+      "span": "formation-enthalpies",
+      "concept": "hess-law",
+      "verb": "uses"
+    },
+    {
+      "span": "formation-enthalpies",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hno3",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "verb": "reinforces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm9240992",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-hcl-naoh"
+      },
+      "prompt": "When 1.34 g Zn(<em>s</em>) reacts with 60.0 mL of 0.750 M HCl(<em>aq</em>), 3.14 kJ of heat are produced. Determine the enthalpy change per mole of zinc reacting for the reaction:<br>$\\text{Zn}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{ZnCl}}_{2}(aq)+{\\text{H}}_{2}(g)$",
+      "answer": {
+        "type": "number",
+        "value": -153,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "Δ<em>H</em> = −153 kJ"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp107963312",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-gummy-bear"
+      },
+      "prompt": "When 1.42 g of iron reacts with 1.80 g of chlorine, 3.22 g of FeCl<sub>2</sub>(<em>s</em>) and 8.60 kJ of heat is produced. What is the enthalpy change for the reaction when 1 mole of FeCl<sub>2</sub>(<em>s</em>) is produced?",
+      "answer": {
+        "type": "number",
+        "value": -338,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "Δ<em>H</em> = −338 kJ"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idp90124816",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-isooctane"
+      },
+      "prompt": "How much heat is produced by the combustion of 125 g of acetylene?",
+      "answer": {
+        "type": "number",
+        "value": 6250.0,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "6.25 $\\times$ 10<sup>3</sup> kJ"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp167759616",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-ozone"
+      },
+      "prompt": "Hydrogen gas, H<sub>2</sub>, reacts explosively with gaseous chlorine, Cl<sub>2</sub>, to form hydrogen chloride, HCl(<em>g</em>). What is the enthalpy change for the reaction of 1 mole of H<sub>2</sub>(<em>g</em>) with 1 mole of Cl<sub>2</sub>(<em>g</em>) if both the reactants and products are at standard state conditions? The standard enthalpy of formation of HCl(<em>g</em>) is −92.3 kJ/mol.",
+      "answer": {
+        "type": "number",
+        "value": -184.6,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "For the reaction ${\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{HCl}(g)\\hspace{3em}\\text{Δ}H\\text{°}=−184.6\\;\\text{kJ}$"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idp186597312",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-formation-equations"
+      },
+      "prompt": "Write the heat of formation reaction equations for:<br>(a) C<sub>2</sub>H<sub>5</sub>OC<sub>2</sub>H<sub>5</sub>(<em>l</em>)<br>(b) Na<sub>2</sub>CO<sub>3</sub>(<em>s</em>)",
+      "answer": {
+        "type": "open",
+        "solution": "(a) $4\\text{C}(s,\\;\\text{graphite})+5{\\text{H}}_{2}(g)+\\;\\frac{1}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{5}{\\text{OC}}_{2}{\\text{H}}_{5}(l);$ (b) $2\\text{Na}(s)+\\text{C}(s,\\;\\text{graphite})+\\;\\frac{3}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{Na}}_{2}{\\text{CO}}_{3}(s)$",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "cyl6",
+      "source_id": "fs-idp185548816",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-fecl3"
+      },
+      "prompt": "Calculate Δ<em>H</em> for the process:<br>${\\text{N}}_{2}(g)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)$<br>from the following information:<br>${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2\\text{NO}(g)\\hspace{3em}\\text{Δ}\\text{H}=180.5\\;\\text{kJ}$<br>$\\text{NO}(g)+\\;\\frac{1}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}\\text{H}=−57.06\\;\\text{kJ}$",
+      "answer": {
+        "type": "number",
+        "value": 66.4,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "cyl7",
+      "source_id": "fs-idp146901200",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-clf3"
+      },
+      "prompt": "Aluminum chloride can be formed from its elements:<br><em>(i)</em> $2\\text{Al}(s)+3{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2{\\text{AlCl}}_{3}(s)\\hspace{3em}\\text{Δ}H\\text{°}=?$<br>Use the reactions here to determine the Δ<em>H</em>° for reaction <em>(i)</em>:<br><em>(ii)</em> $\\text{HCl}(g)\\;\\longrightarrow \\;\\text{HCl}(aq)\\hspace{3em}\\text{Δ}{H}_{(ii)}^{{}^{\\circ}}=−74.8\\;\\text{kJ}$<br><em>(iii)</em> ${\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{HCl}(g)\\hspace{3em}\\text{Δ}{H}_{(iii)}^{{}^{\\circ}}=−185\\;\\text{kJ}$<br><em>(iv)</em> ${\\text{AlCl}}_{3}(aq)\\;\\longrightarrow \\;{\\text{AlCl}}_{3}(s)\\hspace{3em}\\text{Δ}{H}_{(iv)}^{{}^{\\circ}}=+323\\;\\text{kJ/mol}$<br><em>(v)</em> $\\text{2Al}(s)+6\\text{HCl}(aq)\\;\\longrightarrow \\;2{\\text{AlCl}}_{3}(aq)+3{\\text{H}}_{2}(g)\\hspace{3em}\\text{Δ}{H}_{(v)}^{{}^{\\circ}}=−1049\\;\\text{kJ}$",
+      "answer": {
+        "type": "number",
+        "value": -1407,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "cyl8",
+      "source_id": "fs-idp120730208",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-hno3"
+      },
+      "prompt": "Calculate the heat of combustion of 1 mole of ethanol, C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>), when H<sub>2</sub>O(<em>l</em>) and CO<sub>2</sub>(<em>g</em>) are formed. Use the following enthalpies of formation: C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>), −278 kJ/mol; H<sub>2</sub>O(<em>l</em>), −286 kJ/mol; and CO<sub>2</sub>(<em>g</em>), −394 kJ/mol.",
+      "answer": {
+        "type": "number",
+        "value": -1368,
+        "unit": "kJ/mol",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp167492016",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "thermochemical-equations",
+      "prompt": "Explain how the heat measured in Example 5.5 differs from the enthalpy change for the exothermic reaction described by the following equation:<br>$\\text{HCl}(aq)+\\text{NaOH}(aq)\\;\\longrightarrow \\;\\text{NaCl}(aq)+{\\text{H}}_{2}\\text{O}(l)$",
+      "answer": {
+        "type": "open",
+        "solution": "The enthalpy change of the indicated reaction is for exactly 1 mol HCL and 1 mol NaOH; the heat in the example is produced by 0.0500 mol HCl and 0.0500 mol NaOH.",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp146867872",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "thermochemical-equations",
+      "prompt": "Calculate the enthalpy of solution (Δ<em>H</em> for the dissolution) per mole of NH<sub>4</sub>NO<sub>3</sub> under the conditions described in Example 5.6.",
+      "answer": {
+        "type": "number",
+        "value": 25,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "25 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp107667280",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "thermochemical-equations",
+      "prompt": "Calculate the enthalpy of solution (Δ<em>H</em> for the dissolution) per mole of CaCl<sub>2</sub> (refer to Exercise 5.25).",
+      "answer": {
+        "type": "number",
+        "value": 81,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "81 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp103276080",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "Although the gas used in an oxyacetylene torch (Figure 5.7) is essentially pure acetylene, the heat produced by combustion of one mole of acetylene in such a torch is likely not equal to the enthalpy of combustion of acetylene listed in Table 5.2. Considering the conditions for which the tabulated data are reported, suggest an explanation.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: the values in Table 5.2 are standard enthalpies of combustion, measured with the reactants and products at 25 °C and 1 atm and for complete combustion. Compare those conditions with a working torch: think about the temperature of the gases leaving the flame, whether the water formed is liquid or gas, and whether every molecule of acetylene burns completely to carbon dioxide."
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idp103280960",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "How much heat is produced by burning 4.00 moles of acetylene under standard state conditions?",
+      "answer": {
+        "type": "number",
+        "value": 5204.4,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp169453984",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "How many moles of isooctane must be burned to produce 100 kJ of heat under standard state conditions?",
+      "answer": {
+        "type": "number",
+        "value": 0.0183,
+        "unit": "mol",
+        "generated_by": "source",
+        "solution": "1.83 $\\times$ 10<sup>−2</sup> mol"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idp155902352",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "When 2.50 g of methane burns in oxygen, 125 kJ of heat is produced. What is the enthalpy of combustion per mole of methane under these conditions?",
+      "answer": {
+        "type": "number",
+        "value": -802,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "–802 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp166201552",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "A sample of 0.562 g of carbon is burned in oxygen in a bomb calorimeter, producing carbon dioxide. Assume both the reactants and products are under standard state conditions, and that the heat released is directly proportional to the enthalpy of combustion of graphite. The temperature of the calorimeter increases from 26.74 °C to 27.93 °C. What is the heat capacity of the calorimeter and its contents?",
+      "answer": {
+        "type": "number",
+        "value": 15.5,
+        "unit": "kJ/°C",
+        "generated_by": "source",
+        "solution": "15.5 kJ/°C"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idp140766896",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "thermochemical-equations",
+      "prompt": "Homes may be heated by pumping hot water through radiators. What mass of water will provide the same amount of heat when cooled from 95.0 to 35.0 °C, as the heat provided when 100 g of steam is cooled from 110 °C to 100 °C?",
+      "answer": {
+        "type": "number",
+        "value": 7.43,
+        "unit": "g",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idp104124592",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation",
+      "prompt": "Which of the enthalpies of combustion in Table 5.2 the table are also standard enthalpies of formation?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: a standard enthalpy of formation belongs to a reaction that forms exactly 1 mole of one compound from its elements in their most stable states. Go down Table 5.2 and, for each combustion reaction, ask whether every reactant is an element in its standard state and whether the only product is 1 mole of a single compound; the reactions that pass both tests have combustion enthalpies that are also formation enthalpies."
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idp165421856",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation",
+      "prompt": "Does the standard enthalpy of formation of H<sub>2</sub>O(<em>g</em>) differ from Δ<em>H</em>° for the reaction ${\\text{2H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(g)?$",
+      "answer": {
+        "type": "open",
+        "solution": "Yes.",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idp161282368",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation",
+      "prompt": "How many kilojoules of heat will be released when exactly 1 mole of manganese, Mn, is burned to form Mn<sub>3</sub>O<sub>4</sub>(<em>s</em>) at standard state conditions?",
+      "answer": {
+        "type": "number",
+        "value": 459.6,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idp184316112",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "The following sequence of reactions occurs in the commercial production of aqueous nitric acid:<br>$4{\\text{NH}}_{3}(g)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;4\\text{NO}(g)+6{\\text{H}}_{2}\\text{O}(l)\\hspace{3em}\\text{Δ}\\text{H}=−907\\;\\text{kJ}$<br>$2\\text{NO}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}\\text{H}=−113\\;\\text{kJ}$<br>$3{\\text{NO}}_{2}+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{HNO}}_{3}(aq)+\\text{NO}(g)\\hspace{3em}\\text{Δ}\\text{H}=−139\\;\\text{kJ}$<br>Determine the total enthalpy change for the production of one mole of aqueous nitric acid by this process. Coproducts of the net reaction include water and nitrogen monoxide.",
+      "answer": {
+        "type": "number",
+        "value": -494,
+        "unit": "kJ/mol",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idp154782528",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "Both graphite and diamond burn.<br>$\\text{C}(s,\\;\\text{diamond})+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)$<br>For the conversion of graphite to diamond:<br>$\\text{C}(s,\\;\\text{graphite})\\;\\longrightarrow \\;\\text{C}(s,\\;\\text{diamond})\\hspace{3em}\\text{Δ}H\\text{°}=1.90\\;\\text{kJ}$<br>Which produces more heat, the combustion of graphite or the combustion of diamond?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: draw an enthalpy diagram with three levels: graphite plus oxygen, diamond plus oxygen, and carbon dioxide. The conversion of graphite to diamond is endothermic, so decide which of the two starting levels lies higher. Both combustions end at the same level, carbon dioxide, so by Hess’s law the one that starts higher has the larger drop in enthalpy and releases more heat."
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idp161090368",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "From the molar heats of formation in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, determine how much heat is required to evaporate one mole of water: ${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{O}(g)$",
+      "answer": {
+        "type": "number",
+        "value": 44.01,
+        "unit": "kJ/mol",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idp157714624",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "Which produces more heat?<br>$\\text{Os}(s)\\;+\\;2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(s)$<br>or<br>$\\text{Os}(s)\\;+\\;2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(g)$<br>for the phase change ${\\text{OsO}}_{4}(s)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(g)\\hspace{3em}\\text{Δ}\\text{H}=56.4\\;\\text{kJ}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: both reactions start from the same level, osmium and oxygen. The phase change from solid to gaseous OsO<sub>4</sub> absorbs heat, so the gaseous product lies higher in enthalpy than the solid. Use Hess’s law to write the formation of the gas as the formation of the solid followed by the phase change, and decide which of the two reactions ends lower and so releases more heat."
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idp155265632",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "Calculate $\\text{Δ}H\\text{°}$ for the process<br>$\\text{Sb}(s)+\\;\\frac{5}{2}{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{5}(s)$<br>from the following information:<br>$\\begin{array}{l}\\text{Sb}(s)+\\;\\frac{3}{2}{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{3}(s)\\hspace{3em}\\text{Δ}H\\text{°}=−314\\;\\text{kJ} \\\\ {\\text{SbCl}}_{3}(s)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{5}(s)\\hspace{3em}\\text{Δ}H\\text{°}=−80\\;\\text{kJ}\\end{array}$",
+      "answer": {
+        "type": "number",
+        "value": -394,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idp128497376",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "Calculate Δ<em>H</em> for the process ${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\;\\longrightarrow \\;2\\text{Hg}(l)+{\\text{Cl}}_{2}(g)$<br>from the following information:<br>$\\begin{array}{l}\\text{Hg}(l)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{HgCl}}_{2}(s)\\hspace{3em}\\text{Δ}H=−224\\;\\text{kJ} \\\\ \\text{Hg}(l)+{\\text{HgCl}}_{2}(s)\\;\\longrightarrow \\;{\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\hspace{3em}\\text{Δ}H=−41.2\\;\\text{kJ}\\end{array}$",
+      "answer": {
+        "type": "number",
+        "value": 265,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idp28899760",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "hess-law",
+      "prompt": "Calculate the standard molar enthalpy of formation of NO(<em>g</em>) from the following data:<br>$\\begin{array}{l}{\\text{N}}_{2}(g)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}H\\text{°}=66.4\\;\\text{kJ} \\\\ \\text{2NO}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}H\\text{°}=−114.1\\;\\text{kJ}\\end{array}$",
+      "answer": {
+        "type": "number",
+        "value": 90.3,
+        "unit": "kJ/mol",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idp126940864",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "Using the data in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, calculate the standard enthalpy change for each of the following reactions:<br>(a) $\\text{Si}(s)+2{\\text{F}}_{2}(g)\\;\\longrightarrow \\;{\\text{SiF}}_{4}(g)$<br>(b) $2\\text{C}(s)+2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(l)$<br>(c) ${\\text{CH}}_{4}(g)+{\\text{N}}_{2}(g)\\;\\longrightarrow \\;\\text{HCN}(g)+{\\text{NH}}_{3}(g)\\text{;}$<br>(d) ${\\text{CS}}_{2}(g)+3{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{CCl}}_{4}(g)+{\\text{S}}_{2}{\\text{Cl}}_{2}(g)$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": -1615.0,
+            "unit": "kJ/mol"
+          },
+          {
+            "part": "(b)",
+            "value": -484.3,
+            "unit": "kJ/mol"
+          },
+          {
+            "part": "(c)",
+            "value": 164.2,
+            "unit": "kJ"
+          },
+          {
+            "part": "(d)",
+            "value": -232.1,
+            "unit": "kJ"
+          }
+        ],
+        "solution": "(a) −1615.0 kJ mol<sup>−1</sup>; (b) −484.3 kJ mol<sup>−1</sup>; (c) 164.2 kJ; (d) −232.1 kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e21",
+      "source_id": "fs-idp184430560",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "The decomposition of hydrogen peroxide, H<sub>2</sub>O<sub>2</sub>, has been used to provide thrust in the control jets of various space vehicles. Using the data in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, determine how much heat is produced by the decomposition of exactly 1 mole of H<sub>2</sub>O<sub>2</sub> under standard conditions.<br>$2{\\text{H}}_{2}{\\text{O}}_{2}(l)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(g)+{\\text{O}}_{2}(g)$",
+      "answer": {
+        "type": "number",
+        "value": -54.04,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "−54.04 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e22",
+      "source_id": "fs-idp86137744",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "Calculate the enthalpy of combustion of butane, C<sub>4</sub>H<sub>10</sub>(<em>g</em>) for the formation of H<sub>2</sub>O(<em>g</em>) and CO<sub>2</sub>(<em>g</em>). The enthalpy of formation of butane is −126 kJ/mol.",
+      "answer": {
+        "type": "number",
+        "value": -2660,
+        "unit": "kJ/mol",
+        "generated_by": "source",
+        "solution": "−2660 kJ mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e23",
+      "source_id": "fs-idp214849200",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "The white pigment TiO<sub>2</sub> is prepared by the reaction of titanium tetrachloride, TiCl<sub>4</sub>, with water vapor in the gas phase: ${\\text{TiCl}}_{4}(g)+2{\\text{H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{TiO}}_{2}(s)+4\\text{HCl}(g).$<br>How much heat is evolved in the production of exactly 1 mole of TiO<sub>2</sub>(<em>s</em>) under standard state conditions?",
+      "answer": {
+        "type": "number",
+        "value": -66.4,
+        "unit": "kJ",
+        "generated_by": "source",
+        "solution": "–66.4 kJ"
+      }
+    },
+    {
+      "id": "e24",
+      "source_id": "fs-idp160735680",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "In the early days of automobiles, illumination at night was provided by burning acetylene, C<sub>2</sub>H<sub>2</sub>. Though no longer used as auto headlamps, acetylene is still used as a source of light by some cave explorers. The acetylene is (was) prepared in the lamp by the reaction of water with calcium carbide, CaC<sub>2</sub>:<br>${\\text{CaC}}_{2}(s)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Ca}{(\\text{OH})}_{2}(s)+{\\text{C}}_{2}{\\text{H}}_{2}(g).$<br>Calculate the standard enthalpy of the reaction. The $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of CaC<sub>2</sub> is −15.14 kcal/mol.",
+      "answer": {
+        "type": "number",
+        "value": -122.8,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idp208963152",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "combustion",
+      "prompt": "The enthalpy of combustion of hard coal averages −35 kJ/g, that of gasoline, 1.28 $\\times$ 10<sup>5</sup> kJ/gal. How many kilograms of hard coal provide the same amount of heat as is available from 1.0 gallon of gasoline? Assume that the density of gasoline is 0.692 g/mL (the same as the density of isooctane).",
+      "answer": {
+        "type": "number",
+        "value": 3.7,
+        "unit": "kg",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e26",
+      "source_id": "fs-idp181957264",
+      "kind": "exercise",
+      "bloom": "Evaluate",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "Among the substances that react with oxygen and that have been considered as potential rocket fuels are diborane [B<sub>2</sub>H<sub>6</sub>, produces B<sub>2</sub>O<sub>3</sub>(<em>s</em>) and H<sub>2</sub>O(<em>g</em>)], methane [CH<sub>4</sub>, produces CO<sub>2</sub>(<em>g</em>) and H<sub>2</sub>O(<em>g</em>)], and hydrazine [N<sub>2</sub>H<sub>4</sub>, produces N<sub>2</sub>(<em>g</em>) and H<sub>2</sub>O(<em>g</em>)]. On the basis of the heat released by 1.00 g of each substance in its reaction with oxygen, which of these compounds offers the best possibility as a rocket fuel? The $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of B<sub>2</sub>H<sub>6</sub>(<em>g</em>), CH<sub>4</sub>(<em>g</em>), and N<sub>2</sub>H<sub>4</sub>(<em>l</em>) may be found in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>.",
+      "answer": {
+        "type": "open",
+        "solution": "On the assumption that the best rocket fuel is the one that gives off the most heat, B<sub>2</sub>H<sub>6</sub> is the prime candidate.",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e27",
+      "source_id": "fs-idp124901952",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "Ethylene, C<sub>2</sub>H<sub>4</sub>, a byproduct from the fractional distillation of petroleum, is fourth among the 50 chemical compounds produced commercially in the largest quantities. About 80% of synthetic ethanol is manufactured from ethylene by its reaction with water in the presence of a suitable catalyst. ${\\text{C}}_{2}{\\text{H}}_{4}(g)+{\\text{H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}(l)$<br>Using the data in the table in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, calculate Δ<em>H</em>° for the reaction.",
+      "answer": {
+        "type": "number",
+        "value": -88.2,
+        "unit": "kJ",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e28",
+      "source_id": "fs-idp211817568",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "formation-enthalpies",
+      "prompt": "Propane, C<sub>3</sub>H<sub>8</sub>, is a hydrocarbon that is commonly used as a fuel.<br>(a) Write a balanced equation for the complete combustion of propane gas.<br>(b) Calculate the volume of air at 25 °C and 1.00 atmosphere that is needed to completely combust 25.0 grams of propane. Assume that air is 21.0 percent O<sub>2</sub> by volume. (Hint: We will see how to do this calculation in a later chapter on gases—for now use the information that 1.00 L of air at 25 °C and 1.00 atm contains 0.275 g of O<sub>2</sub>.)<br>(c) The heat of combustion of propane is −2,219.2 kJ/mol. Calculate the heat of formation, $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of propane given that $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of H<sub>2</sub>O(<em>l</em>) = −285.8 kJ/mol and $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of CO<sub>2</sub>(<em>g</em>) = −393.5 kJ/mol.<br>(d) Assuming that all of the heat released in burning 25.0 grams of propane is transferred to 4.00 kilograms of water, calculate the increase in temperature of the water.",
+      "answer": {
+        "type": "open",
+        "solution": "(a) ${\\text{C}}_{3}{\\text{H}}_{8}(g)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;3{\\text{CO}}_{2}(g)+4{\\text{H}}_{2}\\text{O}(l);$ (b) 330 L air; (c) −104.5 kJ mol<sup>−1</sup>; (d) 75.4 °C",
+        "generated_by": "source"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "identify-limiting-reactant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "mass-mole-conversion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "mass-mole-conversion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "balanced-equation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl8",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl8",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "coffee-cup-calorimetry",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "coffee-cup-calorimetry",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "mass-mole-conversion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e8",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e8",
+      "concept": "bomb-calorimetry",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e9",
+      "concept": "heat-specific-heat-relation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e10",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e10",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e11",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e11",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e12",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e12",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e13",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e14",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e14",
+      "concept": "state-function",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e15",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e16",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e16",
+      "concept": "thermochemical-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e17",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e18",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e19",
+      "concept": "hess-law",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e19",
+      "concept": "standard-enthalpy-of-formation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e20",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e21",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e22",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e22",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e22",
+      "concept": "balanced-equation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e23",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e24",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e24",
+      "concept": "energy-units",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e25",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e25",
+      "concept": "convert-units",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e26",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e26",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e27",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e28",
+      "concept": "enthalpy-from-formation-enthalpies",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e28",
+      "concept": "enthalpy-of-combustion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e28",
+      "concept": "mass-stoichiometry",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e28",
+      "concept": "heat-specific-heat-relation",
+      "weights_by": "ai"
+    }
+  ]
+}

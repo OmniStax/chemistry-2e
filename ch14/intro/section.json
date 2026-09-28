@@ -1,0 +1,22 @@
+{
+ "id": "intro",
+ "module": "m68802",
+ "chapter": "14",
+ "title": "Introduction",
+ "short": "Introduction",
+ "lead": "",
+ "notes": "The list of the chapter’s section titles that the module carries in place of learning objectives is left out, since the contents view lists them. The book prints “H+” once without a superscript in the paragraph, and it is kept as printed.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "figures": [
+  {
+   "id": "fig-sinkhole",
+   "kind": "photo",
+   "number": "14.1",
+   "draws": []
+  }
+ ]
+}

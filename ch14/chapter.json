@@ -1,0 +1,518 @@
+{
+ "id": "14",
+ "dir": "ch14",
+ "title": "Acid-Base Equilibria",
+ "intro": {
+  "module": "m68802",
+  "slug": "14-introduction"
+ },
+ "sections": [
+  {
+   "id": "14.1",
+   "module": "m68803",
+   "title": "Brønsted-Lowry Acids and Bases",
+   "slug": "14-1-br-nsted-lowry-acids-and-bases"
+  },
+  {
+   "id": "14.2",
+   "module": "m68804",
+   "title": "pH and pOH",
+   "slug": "14-2-ph-and-poh"
+  },
+  {
+   "id": "14.3",
+   "module": "m68805",
+   "title": "Relative Strengths of Acids and Bases",
+   "slug": "14-3-relative-strengths-of-acids-and-bases"
+  },
+  {
+   "id": "14.4",
+   "module": "m68806",
+   "title": "Hydrolysis of Salts",
+   "slug": "14-4-hydrolysis-of-salts"
+  },
+  {
+   "id": "14.5",
+   "module": "m68807",
+   "title": "Polyprotic Acids",
+   "slug": "14-5-polyprotic-acids"
+  },
+  {
+   "id": "14.6",
+   "module": "m68808",
+   "title": "Buffers",
+   "slug": "14-6-buffers"
+  },
+  {
+   "id": "14.7",
+   "module": "m68809",
+   "title": "Acid-Base Titrations",
+   "slug": "14-7-acid-base-titrations"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "[H3O+]",
+   "type": "concentration",
+   "meaning": "the molar concentration of hydronium ion",
+   "unit": "mol/L (M)",
+   "section": "14.1"
+  },
+  {
+   "sym": "[OH-]",
+   "type": "concentration",
+   "meaning": "the molar concentration of hydroxide ion",
+   "unit": "mol/L (M)",
+   "section": "14.1"
+  },
+  {
+   "sym": "K_w",
+   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "unit": "none (concentrations in M)",
+   "section": "14.1"
+  },
+  {
+   "sym": "x_ice",
+   "meaning": "the change in concentration defined by the ICE table, equal to [H₃O⁺] = [OH⁻] in pure water",
+   "unit": "mol/L (M)",
+   "section": "14.1"
+  },
+  {
+   "sym": "pH",
+   "type": "concentration",
+   "meaning": "the negative base-10 logarithm of the hydronium ion molarity",
+   "unit": "none",
+   "section": "14.2"
+  },
+  {
+   "sym": "pOH",
+   "type": "concentration",
+   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "unit": "none",
+   "section": "14.2"
+  },
+  {
+   "sym": "pK_w",
+   "meaning": "the negative logarithm of K_w, 14.00 at 25 °C",
+   "unit": "none",
+   "section": "14.2"
+  },
+  {
+   "sym": "K_a",
+   "meaning": "the acid ionization constant of a weak acid HA",
+   "unit": "none (concentrations in M)",
+   "section": "14.3"
+  },
+  {
+   "sym": "K_b_ion",
+   "meaning": "the base ionization constant of a weak base B",
+   "unit": "none (concentrations in M)",
+   "section": "14.3"
+  },
+  {
+   "sym": "[HA]",
+   "type": "concentration",
+   "meaning": "the equilibrium molar concentration of the un-ionized acid HA",
+   "unit": "mol/L (M)",
+   "section": "14.3"
+  },
+  {
+   "sym": "[A-]",
+   "type": "concentration",
+   "meaning": "the equilibrium molar concentration of the conjugate base A⁻",
+   "unit": "mol/L (M)",
+   "section": "14.3"
+  },
+  {
+   "sym": "[B]",
+   "type": "concentration",
+   "meaning": "the equilibrium molar concentration of the un-ionized base B",
+   "unit": "mol/L (M)",
+   "section": "14.3"
+  },
+  {
+   "sym": "[HB+]",
+   "type": "concentration",
+   "meaning": "the equilibrium molar concentration of the conjugate acid HB⁺",
+   "unit": "mol/L (M)",
+   "section": "14.3"
+  },
+  {
+   "sym": "[HA]_0",
+   "type": "concentration",
+   "meaning": "the initial (formal) molar concentration of the acid",
+   "unit": "mol/L (M)",
+   "section": "14.3"
+  },
+  {
+   "sym": "[H3O+]_eq",
+   "type": "concentration",
+   "meaning": "the equilibrium molar concentration of hydronium ion",
+   "unit": "mol/L (M)",
+   "section": "14.3"
+  },
+  {
+   "sym": "x_ice",
+   "meaning": "the change in concentration defined by the ICE table, equal to the equilibrium [H₃O⁺] or [OH⁻]",
+   "unit": "mol/L (M)",
+   "section": "14.3"
+  },
+  {
+   "sym": "K_a1",
+   "meaning": "the ionization constant for the first step of a polyprotic acid",
+   "unit": "none (concentrations in M)",
+   "section": "14.5"
+  },
+  {
+   "sym": "K_a2",
+   "meaning": "the ionization constant for the second step of a polyprotic acid",
+   "unit": "none (concentrations in M)",
+   "section": "14.5"
+  },
+  {
+   "sym": "K_a3",
+   "meaning": "the ionization constant for the third step of a triprotic acid",
+   "unit": "none (concentrations in M)",
+   "section": "14.5"
+  },
+  {
+   "sym": "K_b1",
+   "meaning": "the ionization constant for the first step of a diprotic base",
+   "unit": "none (concentrations in M)",
+   "section": "14.5"
+  },
+  {
+   "sym": "K_b2",
+   "meaning": "the ionization constant for the second step of a diprotic base",
+   "unit": "none (concentrations in M)",
+   "section": "14.5"
+  },
+  {
+   "sym": "pK_a",
+   "meaning": "the negative logarithm of the acid ionization constant",
+   "unit": "none",
+   "section": "14.6"
+  },
+  {
+   "sym": "pK_b",
+   "meaning": "the negative logarithm of the base ionization constant",
+   "unit": "none",
+   "section": "14.6"
+  },
+  {
+   "sym": "pH",
+   "type": "concentration",
+   "meaning": "the pH of the buffer solution",
+   "unit": "none",
+   "section": "14.6"
+  },
+  {
+   "sym": "[HA]",
+   "type": "concentration",
+   "meaning": "the molar concentration of the weak acid of the buffer pair",
+   "unit": "mol/L (M)",
+   "section": "14.6"
+  },
+  {
+   "sym": "[A-]",
+   "type": "concentration",
+   "meaning": "the molar concentration of the conjugate base of the buffer pair",
+   "unit": "mol/L (M)",
+   "section": "14.6"
+  },
+  {
+   "sym": "V",
+   "type": "volume",
+   "meaning": "the volume of titrant added",
+   "unit": "mL",
+   "section": "14.7"
+  },
+  {
+   "sym": "n",
+   "type": "amount",
+   "meaning": "the amount of titrant added",
+   "unit": "mol",
+   "section": "14.7"
+  },
+  {
+   "sym": "pH",
+   "type": "concentration",
+   "meaning": "the pH of the titration solution",
+   "unit": "none",
+   "section": "14.7"
+  },
+  {
+   "sym": "pK_a",
+   "meaning": "the negative logarithm of the acid ionization constant, equal to the pH at the half-equivalence point",
+   "unit": "none",
+   "section": "14.7"
+  }
+ ],
+ "equations": [
+  {
+   "id": "eq-kw",
+   "concept": "water-autoionization",
+   "section": "14.1",
+   "latex": "K_{\\text{w}}=[\\text{H}_{3}\\text{O}^{+}][\\text{OH}^{-}]=1.0\\times10^{-14}",
+   "ktex": "K_{\\text{w}}=\\kconcHyd\\kconcOH=1.0\\times10^{-14}",
+   "condition": "any aqueous solution at 25 °C",
+   "important": true
+  },
+  {
+   "id": "eq-ph",
+   "concept": "ph-and-poh-scales",
+   "section": "14.2",
+   "latex": "\\text{pH}=-\\log[\\text{H}_{3}\\text{O}^{+}]",
+   "ktex": "\\kpH=-\\log\\kconcHyd",
+   "condition": "any aqueous solution",
+   "important": true
+  },
+  {
+   "id": "eq-h3o-from-ph",
+   "concept": "ph-and-poh-scales",
+   "section": "14.2",
+   "latex": "[\\text{H}_{3}\\text{O}^{+}]=10^{-\\text{pH}}",
+   "ktex": "\\kconcHyd=10^{-\\kpH}",
+   "condition": "any aqueous solution"
+  },
+  {
+   "id": "eq-poh",
+   "concept": "ph-and-poh-scales",
+   "section": "14.2",
+   "latex": "\\text{pOH}=-\\log[\\text{OH}^{-}]",
+   "ktex": "\\kpOH=-\\log\\kconcOH",
+   "condition": "any aqueous solution"
+  },
+  {
+   "id": "eq-oh-from-poh",
+   "concept": "ph-and-poh-scales",
+   "section": "14.2",
+   "latex": "[\\text{OH}^{-}]=10^{-\\text{pOH}}",
+   "ktex": "\\kconcOH=10^{-\\kpOH}",
+   "condition": "any aqueous solution"
+  },
+  {
+   "id": "eq-ph-plus-poh",
+   "concept": "ph-plus-poh",
+   "section": "14.2",
+   "latex": "\\text{pH}+\\text{pOH}=\\text{p}K_{\\text{w}}=14.00",
+   "ktex": "\\kpH+\\kpOH=\\text{p}K_{\\text{w}}=14.00",
+   "condition": "any aqueous solution at 25 °C",
+   "important": true
+  },
+  {
+   "id": "eq-ka",
+   "concept": "acid-base-ionization-constants",
+   "section": "14.3",
+   "latex": "K_{\\text{a}}=\\frac{[\\text{H}_{3}\\text{O}^{+}][\\text{A}^{-}]}{[\\text{HA}]}",
+   "ktex": "K_{\\text{a}}=\\frac{\\kconcHyd\\kconcAm}{\\kconcHA}",
+   "condition": "the ionization HA + H₂O ⇌ H₃O⁺ + A⁻ at equilibrium",
+   "important": true
+  },
+  {
+   "id": "eq-kb",
+   "concept": "acid-base-ionization-constants",
+   "section": "14.3",
+   "latex": "K_{\\text{b}}=\\frac{[\\text{HB}^{+}][\\text{OH}^{-}]}{[\\text{B}]}",
+   "ktex": "K_{\\text{b}}=\\frac{\\kconcHBp\\kconcOH}{\\kconcB}",
+   "condition": "the ionization B + H₂O ⇌ HB⁺ + OH⁻ at equilibrium",
+   "important": true
+  },
+  {
+   "id": "eq-ka-kb-kw",
+   "concept": "conjugate-pair-strengths",
+   "section": "14.3",
+   "latex": "K_{\\text{a}}\\times K_{\\text{b}}=1.0\\times10^{-14}=K_{\\text{w}}",
+   "condition": "a conjugate acid-base pair at 25 °C",
+   "important": true
+  },
+  {
+   "id": "eq-percent-ionization",
+   "concept": "percent-ionization",
+   "section": "14.3",
+   "latex": "\\text{Percent ionization}=\\frac{[\\text{H}_{3}\\text{O}^{+}]_{\\text{eq}}}{[\\text{HA}]_{0}}\\times100",
+   "ktex": "\\text{Percent ionization}=\\frac{\\kconcHydeq}{\\kconcHAz}\\times100",
+   "condition": "a weak acid HA"
+  },
+  {
+   "id": "eq-pka",
+   "concept": "henderson-hasselbalch",
+   "section": "14.6",
+   "latex": "\\text{p}K_{\\text{a}}=-\\log K_{\\text{a}}",
+   "condition": "any weak acid"
+  },
+  {
+   "id": "eq-pkb",
+   "concept": "henderson-hasselbalch",
+   "section": "14.6",
+   "latex": "\\text{p}K_{\\text{b}}=-\\log K_{\\text{b}}",
+   "condition": "any weak base"
+  },
+  {
+   "id": "eq-henderson-hasselbalch",
+   "concept": "henderson-hasselbalch",
+   "section": "14.6",
+   "latex": "\\text{pH}=\\text{p}K_{\\text{a}}+\\log\\frac{[\\text{A}^{-}]}{[\\text{HA}]}",
+   "ktex": "\\kpH=\\text{p}K_{\\text{a}}+\\log\\frac{\\kconcAm}{\\kconcHA}",
+   "condition": "a buffer of the weak acid HA and its conjugate base A⁻",
+   "important": true
+  }
+ ],
+ "glossary": [
+  {
+   "section": "14.1",
+   "term": "acid ionization",
+   "definition": "reaction involving the transfer of a proton from an acid to water, yielding hydronium ions and the conjugate base of the acid"
+  },
+  {
+   "section": "14.1",
+   "term": "amphiprotic",
+   "definition": "species that may either donate or accept a proton in a Brønsted-Lowry acid-base reaction"
+  },
+  {
+   "section": "14.1",
+   "term": "amphoteric",
+   "definition": "species that can act as either an acid or a base"
+  },
+  {
+   "section": "14.1",
+   "term": "autoionization",
+   "definition": "reaction between identical species yielding ionic products; for water, this reaction involves transfer of protons to yield hydronium and hydroxide ions"
+  },
+  {
+   "section": "14.1",
+   "term": "base ionization",
+   "definition": "reaction involving the transfer of a proton from water to a base, yielding hydroxide ions and the conjugate acid of the base"
+  },
+  {
+   "section": "14.1",
+   "term": "Brønsted-Lowry acid",
+   "definition": "proton donor"
+  },
+  {
+   "section": "14.1",
+   "term": "Brønsted-Lowry base",
+   "definition": "proton acceptor"
+  },
+  {
+   "section": "14.1",
+   "term": "conjugate acid",
+   "definition": "substance formed when a base gains a proton"
+  },
+  {
+   "section": "14.1",
+   "term": "conjugate base",
+   "definition": "substance formed when an acid loses a proton"
+  },
+  {
+   "section": "14.1",
+   "term": "ion-product constant for water",
+   "definition": "equilibrium constant for the autoionization of water"
+  },
+  {
+   "section": "14.2",
+   "term": "acidic",
+   "definition": "a solution in which [H<sub>3</sub>O<sup>+</sup>] &gt; [OH<sup>−</sup>]"
+  },
+  {
+   "section": "14.2",
+   "term": "basic",
+   "definition": "a solution in which [H<sub>3</sub>O<sup>+</sup>] &lt; [OH<sup>−</sup>]"
+  },
+  {
+   "section": "14.2",
+   "term": "neutral",
+   "definition": "describes a solution in which [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]"
+  },
+  {
+   "section": "14.2",
+   "term": "pH",
+   "definition": "logarithmic measure of the concentration of hydronium ions in a solution"
+  },
+  {
+   "section": "14.2",
+   "term": "pOH",
+   "definition": "logarithmic measure of the concentration of hydroxide ions in a solution"
+  },
+  {
+   "section": "14.3",
+   "term": "acid ionization constant",
+   "definition": "equilibrium constant for an acid ionization reaction"
+  },
+  {
+   "section": "14.3",
+   "term": "base ionization constant",
+   "definition": "equilibrium constant for a base ionization reaction"
+  },
+  {
+   "section": "14.3",
+   "term": "leveling effect",
+   "definition": "observation that acid-base strength of solutes in a given solvent is limited to that of the solvent’s characteristic acid and base species (in water, hydronium and hydroxide ions, respectively)"
+  },
+  {
+   "section": "14.3",
+   "term": "oxyacid",
+   "definition": "ternary compound with acidic properties, molecules of which contain a central nonmetallic atom bonded to one or more O atoms, at least one of which is bonded to an ionizable H atom"
+  },
+  {
+   "section": "14.3",
+   "term": "percent ionization",
+   "definition": "ratio of the concentration of ionized acid to initial acid concentration expressed as a percentage"
+  },
+  {
+   "section": "14.5",
+   "term": "diprotic acid",
+   "definition": "acid containing two ionizable hydrogen atoms per molecule"
+  },
+  {
+   "section": "14.5",
+   "term": "diprotic base",
+   "definition": "base capable of accepting two protons"
+  },
+  {
+   "section": "14.5",
+   "term": "monoprotic acid",
+   "definition": "acid containing one ionizable hydrogen atom per molecule"
+  },
+  {
+   "section": "14.5",
+   "term": "stepwise ionization",
+   "definition": "process in which a polyprotic acid is ionized by losing protons sequentially"
+  },
+  {
+   "section": "14.5",
+   "term": "triprotic acid",
+   "definition": "acid that contains three ionizable hydrogen atoms per molecule"
+  },
+  {
+   "section": "14.6",
+   "term": "buffer capacity",
+   "definition": "amount of an acid or base that can be added to a volume of a buffer solution before its pH changes significantly (usually by one pH unit)"
+  },
+  {
+   "section": "14.6",
+   "term": "buffer",
+   "definition": "mixture of appreciable amounts of a weak acid-base pair. The pH of a buffer resists change when small amounts of acid or base are added"
+  },
+  {
+   "section": "14.6",
+   "term": "Henderson-Hasselbalch equation",
+   "definition": "logarithmic version of the acid ionization constant expression, conveniently formatted for calculating the pH of buffer solutions"
+  },
+  {
+   "section": "14.7",
+   "term": "acid-base indicator",
+   "definition": "weak acid or base whose conjugate partner imparts a different solution color; used in visual assessments of solution pH"
+  },
+  {
+   "section": "14.7",
+   "term": "color-change interval",
+   "definition": "range in pH over which the color change of an indicator is observed"
+  },
+  {
+   "section": "14.7",
+   "term": "titration curve",
+   "definition": "plot of some sample property (such as pH) versus volume of added titrant"
+  }
+ ]
+}

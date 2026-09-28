@@ -1,0 +1,465 @@
+{
+ "id": "12",
+ "dir": "ch12",
+ "title": "Kinetics",
+ "intro": {
+  "module": "m68785",
+  "slug": "12-introduction"
+ },
+ "sections": [
+  {
+   "id": "12.1",
+   "module": "m68786",
+   "title": "Chemical Reaction Rates",
+   "slug": "12-1-chemical-reaction-rates"
+  },
+  {
+   "id": "12.2",
+   "module": "m68787",
+   "title": "Factors Affecting Reaction Rates",
+   "slug": "12-2-factors-affecting-reaction-rates"
+  },
+  {
+   "id": "12.3",
+   "module": "m68789",
+   "title": "Rate Laws",
+   "slug": "12-3-rate-laws"
+  },
+  {
+   "id": "12.4",
+   "module": "m68791",
+   "title": "Integrated Rate Laws",
+   "slug": "12-4-integrated-rate-laws"
+  },
+  {
+   "id": "12.5",
+   "module": "m68793",
+   "title": "Collision Theory",
+   "slug": "12-5-collision-theory"
+  },
+  {
+   "id": "12.6",
+   "module": "m68794",
+   "title": "Reaction Mechanisms",
+   "slug": "12-6-reaction-mechanisms"
+  },
+  {
+   "id": "12.7",
+   "module": "m68795",
+   "title": "Catalysis",
+   "slug": "12-7-catalysis"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "rate",
+   "type": "rate",
+   "meaning": "the rate of the reaction, the change in concentration of a reactant or product per unit time, taken as positive",
+   "unit": "mol L⁻¹ s⁻¹ (M/s)",
+   "section": "12.1"
+  },
+  {
+   "sym": "[A]",
+   "type": "concentration",
+   "meaning": "the molar concentration of reactant A",
+   "unit": "mol/L (M)",
+   "section": "12.1"
+  },
+  {
+   "sym": "[B]",
+   "type": "concentration",
+   "meaning": "the molar concentration of product B (a second reactant in a rate law)",
+   "unit": "mol/L (M)",
+   "section": "12.1"
+  },
+  {
+   "sym": "Δ[A]",
+   "type": "concentration",
+   "meaning": "the change in the molar concentration of A over a time interval",
+   "unit": "mol/L (M)",
+   "section": "12.1"
+  },
+  {
+   "sym": "Δ[B]",
+   "type": "concentration",
+   "meaning": "the change in the molar concentration of B over a time interval",
+   "unit": "mol/L (M)",
+   "section": "12.1"
+  },
+  {
+   "sym": "Δt",
+   "type": "time",
+   "meaning": "the time interval over which the concentration changes",
+   "unit": "s",
+   "section": "12.1"
+  },
+  {
+   "sym": "k",
+   "meaning": "the rate constant, specific to a reaction at a particular temperature",
+   "unit": "depends on the overall order, L^(x−1) mol^(1−x) s⁻¹",
+   "section": "12.3"
+  },
+  {
+   "sym": "m_rxorder",
+   "meaning": "the reaction order with respect to reactant A",
+   "unit": "none",
+   "section": "12.3"
+  },
+  {
+   "sym": "n_rxorder",
+   "meaning": "the reaction order with respect to reactant B",
+   "unit": "none",
+   "section": "12.3"
+  },
+  {
+   "sym": "[A]_0",
+   "type": "concentration",
+   "meaning": "the initial concentration of A",
+   "unit": "mol/L (M)",
+   "section": "12.4"
+  },
+  {
+   "sym": "[A]_t",
+   "type": "concentration",
+   "meaning": "the concentration of A at time t",
+   "unit": "mol/L (M)",
+   "section": "12.4"
+  },
+  {
+   "sym": "t",
+   "type": "time",
+   "meaning": "the time elapsed since the reaction began",
+   "unit": "s",
+   "section": "12.4"
+  },
+  {
+   "sym": "t_half",
+   "type": "time",
+   "meaning": "the half-life, the time for half of the reactant to be consumed",
+   "unit": "s",
+   "section": "12.4"
+  },
+  {
+   "sym": "E_a",
+   "type": "energy",
+   "meaning": "the activation energy, the minimum energy needed to form products in a collision",
+   "unit": "J/mol or kJ/mol",
+   "section": "12.5"
+  },
+  {
+   "sym": "A_freq",
+   "meaning": "the frequency factor, related to the frequency of collisions and the orientation of the reacting molecules",
+   "unit": "the units of k",
+   "section": "12.5"
+  },
+  {
+   "sym": "R",
+   "meaning": "the ideal gas constant, 8.314 J/mol/K",
+   "unit": "J mol⁻¹ K⁻¹",
+   "section": "12.5"
+  },
+  {
+   "sym": "T",
+   "type": "temperature",
+   "meaning": "the temperature on the kelvin scale",
+   "unit": "K",
+   "section": "12.5"
+  },
+  {
+   "sym": "T_1",
+   "type": "temperature",
+   "meaning": "the first of two temperatures",
+   "unit": "K",
+   "section": "12.5"
+  },
+  {
+   "sym": "T_2",
+   "type": "temperature",
+   "meaning": "the second of two temperatures",
+   "unit": "K",
+   "section": "12.5"
+  },
+  {
+   "sym": "k_1",
+   "meaning": "a rate constant labeled 1: at the first temperature, or of the forward reaction of a mechanism’s first step",
+   "unit": "depends on the order",
+   "section": "12.5"
+  },
+  {
+   "sym": "k_2",
+   "meaning": "a rate constant labeled 2: at the second temperature, or of a mechanism’s second step",
+   "unit": "depends on the order",
+   "section": "12.5"
+  },
+  {
+   "sym": "k_m1",
+   "meaning": "the rate constant of the reverse reaction of a mechanism’s first step",
+   "unit": "depends on the order",
+   "section": "12.6"
+  },
+  {
+   "sym": "ΔH",
+   "type": "energy",
+   "meaning": "the enthalpy change of the reaction, the energy difference between reactants and products on a reaction diagram",
+   "unit": "kJ/mol",
+   "section": "12.5"
+  }
+ ],
+ "equations": [
+  {
+   "id": "eq-relative-rates",
+   "concept": "relative-reaction-rates",
+   "section": "12.1",
+   "latex": "\\text{rate}=-\\frac{1}{a}\\frac{\\Delta[\\text{A}]}{\\Delta t}=\\frac{1}{b}\\frac{\\Delta[\\text{B}]}{\\Delta t}",
+   "ktex": "\\krate=-\\frac{1}{a}\\frac{\\kdconcA}{\\kdt}=\\frac{1}{b}\\frac{\\kdconcB}{\\kdt}",
+   "condition": "the reaction aA ⟶ bB",
+   "important": true
+  },
+  {
+   "id": "eq-rate-law",
+   "concept": "rate-law",
+   "section": "12.3",
+   "latex": "\\text{rate}=k[\\text{A}]^{m}[\\text{B}]^{n}",
+   "ktex": "\\krate=k\\kconcA^{m}\\kconcB^{n}",
+   "condition": "the reaction aA + bB ⟶ products, with orders m and n found by experiment",
+   "important": true
+  },
+  {
+   "id": "eq-first-order-integrated",
+   "concept": "first-order-integrated-rate-law",
+   "section": "12.4",
+   "latex": "\\ln[\\text{A}]_{t}=-kt+\\ln[\\text{A}]_{0}",
+   "ktex": "\\ln\\kconcAt=-k\\kt+\\ln\\kconcAz",
+   "condition": "a reaction first order in A",
+   "important": true
+  },
+  {
+   "id": "eq-first-order-exponential",
+   "concept": "first-order-integrated-rate-law",
+   "section": "12.4",
+   "latex": "[\\text{A}]_{t}=[\\text{A}]_{0}e^{-kt}",
+   "ktex": "\\kconcAt=\\kconcAz e^{-k\\kt}",
+   "condition": "a reaction first order in A",
+   "important": false
+  },
+  {
+   "id": "eq-second-order-integrated",
+   "concept": "second-order-integrated-rate-law",
+   "section": "12.4",
+   "latex": "\\frac{1}{[\\text{A}]_{t}}=kt+\\frac{1}{[\\text{A}]_{0}}",
+   "ktex": "\\frac{1}{\\kconcAt}=k\\kt+\\frac{1}{\\kconcAz}",
+   "condition": "a reaction second order in a single reactant A",
+   "important": true
+  },
+  {
+   "id": "eq-zero-order-integrated",
+   "concept": "zero-order-integrated-rate-law",
+   "section": "12.4",
+   "latex": "[\\text{A}]_{t}=-kt+[\\text{A}]_{0}",
+   "ktex": "\\kconcAt=-k\\kt+\\kconcAz",
+   "condition": "a zero-order reaction, under the conditions where it is zero order",
+   "important": true
+  },
+  {
+   "id": "eq-half-life-first",
+   "concept": "half-life-by-order",
+   "section": "12.4",
+   "latex": "t_{1/2}=\\frac{0.693}{k}",
+   "ktex": "\\kthalf=\\frac{0.693}{k}",
+   "condition": "a first-order reaction",
+   "important": true
+  },
+  {
+   "id": "eq-half-life-second",
+   "concept": "half-life-by-order",
+   "section": "12.4",
+   "latex": "t_{1/2}=\\frac{1}{[\\text{A}]_{0}k}",
+   "ktex": "\\kthalf=\\frac{1}{\\kconcAz k}",
+   "condition": "a second-order reaction",
+   "important": true
+  },
+  {
+   "id": "eq-half-life-zero",
+   "concept": "half-life-by-order",
+   "section": "12.4",
+   "latex": "t_{1/2}=\\frac{[\\text{A}]_{0}}{2k}",
+   "ktex": "\\kthalf=\\frac{\\kconcAz}{2k}",
+   "condition": "a zero-order reaction",
+   "important": true
+  },
+  {
+   "id": "eq-arrhenius",
+   "concept": "arrhenius-equation",
+   "section": "12.5",
+   "latex": "k=Ae^{-E_{\\text{a}}/RT}",
+   "ktex": "k=Ae^{-\\kEa/R\\kT}",
+   "condition": "a reaction whose kinetics follow the Arrhenius equation, T in kelvin",
+   "important": true
+  },
+  {
+   "id": "eq-arrhenius-linear",
+   "concept": "activation-energy-from-rate-constants",
+   "section": "12.5",
+   "latex": "\\ln k=\\left(\\frac{-E_{\\text{a}}}{R}\\right)\\left(\\frac{1}{T}\\right)+\\ln A",
+   "ktex": "\\ln k=\\left(\\frac{-\\kEa}{R}\\right)\\left(\\frac{1}{\\kT}\\right)+\\ln A",
+   "condition": "rate constants measured at several temperatures",
+   "important": true
+  },
+  {
+   "id": "eq-arrhenius-two-point",
+   "concept": "activation-energy-from-rate-constants",
+   "section": "12.5",
+   "latex": "\\ln\\frac{k_{1}}{k_{2}}=\\frac{E_{\\text{a}}}{R}\\left(\\frac{1}{T_{2}}-\\frac{1}{T_{1}}\\right)",
+   "ktex": "\\ln\\frac{k_{1}}{k_{2}}=\\frac{\\kEa}{R}\\left(\\frac{1}{\\kTtwo}-\\frac{1}{\\kTone}\\right)",
+   "condition": "rate constants k₁ and k₂ measured at two temperatures T₁ and T₂",
+   "important": true
+  }
+ ],
+ "glossary": [
+  {
+   "section": "12.1",
+   "term": "average rate",
+   "definition": "rate of a chemical reaction computed as the ratio of a measured change in amount or concentration of substance to the time interval over which the change occurred"
+  },
+  {
+   "section": "12.1",
+   "term": "initial rate",
+   "definition": "instantaneous rate of a chemical reaction at t = 0 s (immediately after the reaction has begun)"
+  },
+  {
+   "section": "12.1",
+   "term": "instantaneous rate",
+   "definition": "rate of a chemical reaction at any instant in time, determined by the slope of the line tangential to a graph of concentration as a function of time"
+  },
+  {
+   "section": "12.1",
+   "term": "rate of reaction",
+   "definition": "measure of the speed at which a chemical reaction takes place"
+  },
+  {
+   "section": "12.1",
+   "term": "rate expression",
+   "definition": "mathematical representation defining reaction rate as change in amount, concentration, or pressure of reactant or product species per unit time"
+  },
+  {
+   "section": "12.2",
+   "term": "catalyst",
+   "definition": "substance that increases the rate of a reaction without itself being consumed by the reaction"
+  },
+  {
+   "section": "12.3",
+   "term": "method of initial rates",
+   "definition": "common experimental approach to determining rate laws that involves measuring reaction rates at varying initial reactant concentrations"
+  },
+  {
+   "section": "12.3",
+   "term": "overall reaction order",
+   "definition": "sum of the reaction orders for each substance represented in the rate law"
+  },
+  {
+   "section": "12.3",
+   "term": "rate constant",
+   "definition": "proportionality constant in a rate law"
+  },
+  {
+   "section": "12.3",
+   "term": "rate law",
+   "definition": "(also, rate equation) (also, differential rate laws) mathematical equation showing the dependence of reaction rate on the rate constant and the concentration of one or more reactants"
+  },
+  {
+   "section": "12.3",
+   "term": "reaction order",
+   "definition": "value of an exponent in a rate law (for example, zero order for 0, first order for 1, second order for 2, and so on)"
+  },
+  {
+   "section": "12.4",
+   "term": "half-life of a reaction",
+   "definition": "time required for half of a given amount of reactant to be consumed"
+  },
+  {
+   "section": "12.4",
+   "term": "integrated rate law",
+   "definition": "equation that relates the concentration of a reactant to elapsed time of reaction"
+  },
+  {
+   "section": "12.5",
+   "term": "activated complex",
+   "definition": "(also, transition state) unstable combination of reactant species formed during a chemical reaction"
+  },
+  {
+   "section": "12.5",
+   "term": "activation energy",
+   "definition": "minimum energy necessary in order for a reaction to take place"
+  },
+  {
+   "section": "12.5",
+   "term": "Arrhenius equation",
+   "definition": "mathematical relationship between a reaction’s rate constant, activation energy, and temperature"
+  },
+  {
+   "section": "12.5",
+   "term": "collision theory",
+   "definition": "model that emphasizes the energy and orientation of molecular collisions to explain and predict reaction kinetics"
+  },
+  {
+   "section": "12.5",
+   "term": "frequency factor",
+   "definition": "proportionality constant in the Arrhenius equation, related to the relative number of collisions having an orientation capable of leading to product formation"
+  },
+  {
+   "section": "12.5",
+   "term": "reaction diagram",
+   "definition": "used in chemical kinetics to illustrate various properties of a reaction"
+  },
+  {
+   "section": "12.6",
+   "term": "bimolecular reaction",
+   "definition": "elementary reaction involving two reactant entities"
+  },
+  {
+   "section": "12.6",
+   "term": "elementary reaction",
+   "definition": "reaction that takes place in a single step, precisely as depicted in its chemical equation"
+  },
+  {
+   "section": "12.6",
+   "term": "intermediate",
+   "definition": "entities produced in one step of a reaction mechanism and consumed in a subsequent step"
+  },
+  {
+   "section": "12.6",
+   "term": "molecularity",
+   "definition": "number of reactant entities involved in an elementary reaction"
+  },
+  {
+   "section": "12.6",
+   "term": "rate-determining step",
+   "definition": "(also, rate-limiting step) slowest elementary reaction in a reaction mechanism; determines the rate of the overall reaction"
+  },
+  {
+   "section": "12.6",
+   "term": "reaction mechanism",
+   "definition": "stepwise sequence of elementary reactions by which a chemical change takes place"
+  },
+  {
+   "section": "12.6",
+   "term": "termolecular reaction",
+   "definition": "elementary reaction involving three reactant entities"
+  },
+  {
+   "section": "12.6",
+   "term": "unimolecular reaction",
+   "definition": "elementary reaction involving a single reactant entity"
+  },
+  {
+   "section": "12.7",
+   "term": "heterogeneous catalyst",
+   "definition": "catalyst present in a different phase from the reactants, furnishing a surface at which a reaction can occur"
+  },
+  {
+   "section": "12.7",
+   "term": "homogeneous catalyst",
+   "definition": "catalyst present in the same phase as the reactants"
+  }
+ ]
+}

@@ -1,0 +1,815 @@
+{
+ "types": [],
+ "symbols": [
+  {
+   "sym": "[A]",
+   "latex": "[\\text{A}]",
+   "type": "concentration",
+   "macro": "\\kconcA"
+  },
+  {
+   "sym": "[A]_0",
+   "latex": "[\\text{A}]_{0}",
+   "type": "concentration",
+   "macro": "\\kconcAz"
+  },
+  {
+   "sym": "[A]_t",
+   "latex": "[\\text{A}]_{t}",
+   "type": "concentration",
+   "macro": "\\kconcAt"
+  },
+  {
+   "sym": "[B]",
+   "latex": "[\\text{B}]",
+   "type": "concentration",
+   "macro": "\\kconcB"
+  },
+  {
+   "sym": "Δ[A]",
+   "latex": "\\Delta[\\text{A}]",
+   "type": "concentration",
+   "macro": "\\kdconcA"
+  },
+  {
+   "sym": "Δ[B]",
+   "latex": "\\Delta[\\text{B}]",
+   "type": "concentration",
+   "macro": "\\kdconcB"
+  },
+  {
+   "sym": "E_a",
+   "latex": "E_{\\text{a}}",
+   "type": "energy",
+   "macro": "\\kEa"
+  },
+  {
+   "sym": "A_freq",
+   "latex": "A"
+  },
+  {
+   "sym": "m_rxorder",
+   "latex": "m"
+  },
+  {
+   "sym": "n_rxorder",
+   "latex": "n"
+  },
+  {
+   "sym": "k_1",
+   "latex": "k_{1}"
+  },
+  {
+   "sym": "k_2",
+   "latex": "k_{2}"
+  },
+  {
+   "sym": "k_m1",
+   "latex": "k_{-1}"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "reaction-rate",
+   "kind": "idea",
+   "section": "12.1",
+   "name": "The rate of a reaction",
+   "why": "The rate of a reaction is the change in the amount or concentration of a reactant or product per unit time. Since a reactant’s concentration falls as the reaction proceeds, its change is multiplied by −1 so that the rate is, by convention, a positive quantity.",
+   "evidence": "The decomposition of hydrogen peroxide in Figure 12.2, followed every 6 hours at 40 °C, gives a rate that falls from 0.0833 to 0.010 mol L⁻¹ h⁻¹ over a day."
+  },
+  {
+   "id": "average-instantaneous-initial-rate",
+   "kind": "idea",
+   "section": "12.1",
+   "name": "Average, instantaneous, and initial rates",
+   "why": "A rate computed over a time interval is an average rate; the rate at one instant is the instantaneous rate, the slope of the tangent to the concentration curve at that time, and the instantaneous rate at time zero is the initial rate. Like a car slowing toward a stop sign, a reaction’s average rate falls between its initial and final rates.",
+   "evidence": "Figure 12.3 draws tangents to the hydrogen peroxide curve at t = 0 h and at t = 12 h."
+  },
+  {
+   "id": "rate-from-concentration-data",
+   "kind": "skill",
+   "section": "12.1",
+   "name": "Calculating an average rate from concentration and time data",
+   "why": "Dividing the change in concentration by the time interval over which it occurred, and changing the sign for a reactant, gives the average rate over that interval.",
+   "evidence": "The text computes 0.0833 mol L⁻¹ h⁻¹ for the first 6-hour period of Figure 12.2 and 0.010 mol L⁻¹ h⁻¹ for the last."
+  },
+  {
+   "id": "relative-reaction-rates",
+   "kind": "result",
+   "section": "12.1",
+   "name": "Rates of change are related by the stoichiometry",
+   "why": "For aA ⟶ bB, the rate may be written from either species, and the two expressions agree once each change is divided by its coefficient: $\\text{rate}=-\\frac{1}{a}\\frac{\\Delta[\\text{A}]}{\\Delta t}=\\frac{1}{b}\\frac{\\Delta[\\text{B}]}{\\Delta t}$.",
+   "evidence": "Figure 12.5 shows the tangents at 500 s for the decomposition of ammonia, where hydrogen forms three times as fast as nitrogen.",
+   "eq": "eq-relative-rates"
+  },
+  {
+   "id": "write-relative-rate-expressions",
+   "kind": "skill",
+   "section": "12.1",
+   "name": "Writing the related rate expressions for a reaction",
+   "why": "From a balanced equation, the rates of consumption of reactants and formation of products may be written as equal once each is divided by its coefficient, so a rate measured for one species gives the rate for every other.",
+   "evidence": "Example 12.1 writes the expressions for the combustion of ammonia, and Example 12.2 finds the rates of production of water and oxygen from the rate of decomposition of hydrogen peroxide."
+  },
+  {
+   "id": "chemical-nature-and-rate",
+   "kind": "idea",
+   "section": "12.2",
+   "name": "The nature of the reactants affects the rate",
+   "why": "Reactions that appear similar may proceed at very different rates under the same conditions, depending on the identity of the reactants.",
+   "evidence": "Sodium reacts completely with air overnight while iron is barely affected, and sodium reacts almost explosively with water while calcium reacts at a moderate rate."
+  },
+  {
+   "id": "surface-area-and-rate",
+   "kind": "idea",
+   "section": "12.2",
+   "name": "Subdivision and the physical state of the reactants",
+   "why": "A reaction between reactants in different phases takes place only at the interface between them, so a finely divided solid, with its greater surface area, reacts faster than one large piece.",
+   "evidence": "Figure 12.6 compares iron powder and an iron nail in dilute hydrochloric acid; wood smolders, burns rapidly or burns explosively as it is divided more finely."
+  },
+  {
+   "id": "temperature-and-rate",
+   "kind": "idea",
+   "section": "12.2",
+   "name": "Higher temperatures speed reactions",
+   "why": "Chemical reactions typically occur faster at higher temperatures, and for many processes the rate roughly doubles when the temperature is raised by 10 °C.",
+   "evidence": "Food spoils on the kitchen counter but keeps for days in a refrigerator."
+  },
+  {
+   "id": "concentration-and-rate",
+   "kind": "idea",
+   "section": "12.2",
+   "name": "Higher concentrations usually speed reactions",
+   "why": "The rates of many reactions increase when the concentration of one or more reactants increases.",
+   "evidence": "Figure 12.7 shows a limestone statue weathered by sulfur dioxide, which attacks it faster in polluted air, and phosphorus burns faster in pure oxygen than in air."
+  },
+  {
+   "id": "catalyst",
+   "kind": "idea",
+   "section": "12.2",
+   "name": "A catalyst increases the rate of a reaction",
+   "why": "A catalyst is a substance that increases the rate of a reaction without itself being consumed by it.",
+   "evidence": "Hydrogen peroxide decomposes slowly on the shelf but foams on an open wound, where substances in the tissue accelerate its decomposition."
+  },
+  {
+   "id": "rate-law",
+   "kind": "result",
+   "section": "12.3",
+   "name": "The rate law, $\\text{rate}=k[\\text{A}]^{m}[\\text{B}]^{n}$",
+   "why": "A rate law relates the rate of a reaction to the concentrations of its reactants, each raised to a power called its order, multiplied by a rate constant. The concentration of a reactant whose order is zero does not appear, since any number raised to the zero power is 1.",
+   "evidence": "Example 12.3 writes the rate law for NO₂ with CO, second order in NO₂ and zero order in CO.",
+   "eq": "eq-rate-law"
+  },
+  {
+   "id": "reaction-order",
+   "kind": "idea",
+   "section": "12.3",
+   "name": "Reaction orders and the overall order",
+   "why": "The exponent of a reactant’s concentration in the rate law is the order with respect to that reactant, and the overall order is the sum of these orders. Orders are usually 0, 1 or 2, but they may be fractional or negative.",
+   "evidence": "rate = k[H₂O₂] is first order overall, rate = k[C₄H₆]² second order, and rate = k[H⁺][OH⁻] first order in each ion and second order overall."
+  },
+  {
+   "id": "rate-constant",
+   "kind": "idea",
+   "section": "12.3",
+   "name": "The rate constant",
+   "why": "The rate constant k is specific to a particular reaction at a particular temperature; it does not depend on the reactant concentrations, but it does vary with temperature.",
+   "evidence": "Example 12.4 finds k = 2.20 × 10⁷ L mol⁻¹ s⁻¹ for the reaction of nitric oxide with ozone at 25 °C."
+  },
+  {
+   "id": "rate-laws-are-experimental",
+   "kind": "idea",
+   "section": "12.3",
+   "name": "Rate laws come from experiment, not from the equation",
+   "why": "The orders in a rate law must be found by observing how the rate changes with concentration; they sometimes match the coefficients of the balanced equation, but only by coincidence.",
+   "evidence": "The rate laws listed in the section, among them rate = k[NO₂]² for NO₂ + CO and rate = k[N₂O₅] for the decomposition of 2N₂O₅, do not follow their coefficients."
+  },
+  {
+   "id": "method-of-initial-rates",
+   "kind": "skill",
+   "section": "12.3",
+   "name": "Finding a rate law by the method of initial rates",
+   "why": "Comparing initial rates from trials in which one reactant’s concentration changes while the others are held fixed gives each order, from the ratio of rates or by logarithms; one trial’s data then give the rate constant.",
+   "evidence": "Examples 12.4 and 12.5 derive the rate laws for nitric oxide with ozone and for nitric oxide with chlorine."
+  },
+  {
+   "id": "rate-constant-units",
+   "kind": "skill",
+   "section": "12.3",
+   "name": "The units of a rate constant",
+   "why": "The unit of k is whatever makes the rate come out in mol L⁻¹ s⁻¹, so it depends on the overall order x as L^(x−1) mol^(1−x) s⁻¹.",
+   "evidence": "Table 12.1 lists the units for zero-, first-, second- and third-order reactions."
+  },
+  {
+   "id": "rate-from-rate-law",
+   "kind": "skill",
+   "section": "12.3",
+   "name": "Using a rate law to predict a rate",
+   "why": "With a rate law and its rate constant, the rate at any set of concentrations may be calculated, and the effect of changing one concentration follows from its order.",
+   "evidence": "The end-of-section exercises predict how the rate of CO with NO₂ changes when the concentration of NO₂ is halved and when that of CO is tripled."
+  },
+  {
+   "id": "integrated-rate-laws",
+   "kind": "idea",
+   "section": "12.4",
+   "name": "Integrated rate laws relate concentration to time",
+   "why": "Integrating a differential rate law gives an equation relating the concentration of a reactant to the elapsed time, which tells how much reactant remains after a period or how long a reaction takes to reach a given extent.",
+   "evidence": "The text uses one to find how long a radioactive material must be stored before its radioactivity decays to a safe level."
+  },
+  {
+   "id": "first-order-integrated-rate-law",
+   "kind": "result",
+   "section": "12.4",
+   "name": "The first-order integrated rate law",
+   "why": "For rate = k[A], the concentration falls exponentially, $[\\text{A}]_{t}=[\\text{A}]_{0}e^{-kt}$, so $\\ln[\\text{A}]_{t}=-kt+\\ln[\\text{A}]_{0}$ and a plot of ln[A] against t is a straight line of slope −k.",
+   "evidence": "Example 12.7 plots ln[H₂O₂] against time in Figure 12.9, a straight line whose slope gives k = 0.116 h⁻¹.",
+   "eq": "eq-first-order-integrated"
+  },
+  {
+   "id": "second-order-integrated-rate-law",
+   "kind": "result",
+   "section": "12.4",
+   "name": "The second-order integrated rate law",
+   "why": "For rate = k[A]², $\\frac{1}{[\\text{A}]_{t}}=kt+\\frac{1}{[\\text{A}]_{0}}$, so a plot of 1/[A] against t is a straight line of slope k.",
+   "evidence": "Figure 12.10 plots the dimerization of butadiene both ways; only the plot of 1/[C₄H₆] is linear.",
+   "eq": "eq-second-order-integrated"
+  },
+  {
+   "id": "zero-order-integrated-rate-law",
+   "kind": "result",
+   "section": "12.4",
+   "name": "The zero-order integrated rate law",
+   "why": "For rate = k, the concentration falls linearly, $[\\text{A}]_{t}=-kt+[\\text{A}]_{0}$, and a plot of [A] against t is a straight line of slope −k. Zero-order behavior is seen only under certain conditions.",
+   "evidence": "Figure 12.11 shows ammonia decomposing linearly on tungsten but exponentially on quartz.",
+   "eq": "eq-zero-order-integrated"
+  },
+  {
+   "id": "order-from-linear-plots",
+   "kind": "skill",
+   "section": "12.4",
+   "name": "Finding the order and rate constant from a linear plot",
+   "why": "Plotting [A], ln[A] and 1/[A] against time shows which is a straight line, which gives the order; the rate constant is then the slope or its negative.",
+   "evidence": "Examples 12.7, 12.9 and 12.10 find the orders and rate constants for hydrogen peroxide, butadiene and ammonia on tungsten."
+  },
+  {
+   "id": "half-life",
+   "kind": "idea",
+   "section": "12.4",
+   "name": "The half-life of a reaction",
+   "why": "The half-life is the time required for one-half of a given amount of reactant to be consumed; in each succeeding half-life, half of the remaining reactant is consumed.",
+   "evidence": "Figure 12.12 follows hydrogen peroxide as its concentration halves every 2.16 × 10⁴ s."
+  },
+  {
+   "id": "half-life-by-order",
+   "kind": "result",
+   "section": "12.4",
+   "name": "Half-lives for zero-, first-, and second-order reactions",
+   "why": "The half-life of a first-order reaction, $t_{1/2}=0.693/k$, is independent of concentration; that of a second-order reaction, $1/k[\\text{A}]_{0}$, grows as the reactant is used up, and that of a zero-order reaction, $[\\text{A}]_{0}/2k$, shrinks.",
+   "evidence": "Table 12.2 sets the three side by side, and Examples 12.11 and 12.12 use them for hydrogen peroxide and butadiene.",
+   "eq": "eq-half-life-first"
+  },
+  {
+   "id": "integrated-rate-law-calculations",
+   "kind": "skill",
+   "section": "12.4",
+   "name": "Calculating concentrations, times, and half-lives",
+   "why": "Choosing the integrated rate law of the reaction’s order and solving it for the unknown gives the concentration remaining after a time, the time to reach a concentration, or the half-life.",
+   "evidence": "Example 12.6 finds how long 80.0% of cyclobutane takes to decompose, and Example 12.8 the butadiene remaining after 10.0 min."
+  },
+  {
+   "id": "collision-theory",
+   "kind": "idea",
+   "section": "12.5",
+   "name": "Collision theory",
+   "why": "Reactant species must collide in order to react, so the rate of a reaction is proportional to the rate of collisions, and a collision leads to reaction only when it has a suitable orientation and enough energy. More molecules per unit volume mean more collisions, which is why rates rise with concentration.",
+   "evidence": "The section sets out the three postulates and applies them to carbon monoxide and oxygen."
+  },
+  {
+   "id": "collision-orientation",
+   "kind": "idea",
+   "section": "12.5",
+   "name": "The orientation of a collision",
+   "why": "The colliding species must meet in an orientation that brings together the atoms that will bond in the product.",
+   "evidence": "Figure 12.13 shows carbon monoxide striking oxygen with its oxygen end and with its carbon end; only the second can form O=C=O."
+  },
+  {
+   "id": "activation-energy",
+   "kind": "idea",
+   "section": "12.5",
+   "name": "Activation energy and the transition state",
+   "why": "The activation energy is the minimum energy a collision needs to form products; a collision with enough energy and the proper orientation forms an unstable, short-lived activated complex, or transition state. A reaction is slow when its activation energy is much larger than the average kinetic energy of the molecules.",
+   "evidence": "Figure 12.14 draws the activation energy as the rise from the reactants to the transition state."
+  },
+  {
+   "id": "reaction-diagram",
+   "kind": "skill",
+   "section": "12.5",
+   "name": "Reading a reaction diagram",
+   "why": "A reaction diagram traces the energy of a system from reactants through the transition state to products; the activation energy is the height of the peak above the reactants, and ΔH is the difference between products and reactants.",
+   "evidence": "Figure 12.14 is the diagram for an exothermic reaction A + B ⟶ C + D."
+  },
+  {
+   "id": "energy-distribution-and-rate",
+   "kind": "idea",
+   "section": "12.5",
+   "name": "The fraction of molecules with enough energy",
+   "why": "Of the molecules’ distribution of energies, only those above the activation energy can react; a lower activation energy or a higher temperature increases that fraction and so the rate.",
+   "evidence": "Figure 12.15 shades the molecules above two activation energies at one temperature, and above one activation energy at two temperatures."
+  },
+  {
+   "id": "arrhenius-equation",
+   "kind": "result",
+   "section": "12.5",
+   "name": "The Arrhenius equation, $k=Ae^{-E_{\\text{a}}/RT}$",
+   "why": "The rate constant depends on the frequency factor A, which reflects how often molecules collide in a favorable orientation, and on the exponential term, which is the effect of the activation energy and the temperature.",
+   "evidence": "The section reads each factor of the equation against the postulates of collision theory.",
+   "eq": "eq-arrhenius"
+  },
+  {
+   "id": "activation-energy-from-rate-constants",
+   "kind": "skill",
+   "section": "12.5",
+   "name": "Finding an activation energy from rate constants at different temperatures",
+   "why": "A plot of ln k against 1/T is a straight line of slope −E_a/R, and rate constants at just two temperatures give E_a through the two-point form of the Arrhenius equation.",
+   "evidence": "Example 12.13 finds 180 kJ/mol for the decomposition of hydrogen iodide both ways, from the plot of Figure 12.16 and from two data pairs.",
+   "eq": "eq-arrhenius-two-point"
+  },
+  {
+   "id": "reaction-mechanism",
+   "kind": "idea",
+   "section": "12.6",
+   "name": "Reaction mechanisms, elementary reactions, and intermediates",
+   "why": "A reaction mechanism is the step-by-step sequence of elementary reactions by which a reaction occurs; the steps sum to the overall equation, and an intermediate is produced in one step and consumed in a later one.",
+   "evidence": "Ozone decomposes in two steps whose oxygen atom is an intermediate, so no two ozone molecules ever collide directly."
+  },
+  {
+   "id": "molecularity",
+   "kind": "idea",
+   "section": "12.6",
+   "name": "Molecularity: unimolecular, bimolecular, and termolecular reactions",
+   "why": "The molecularity of an elementary reaction is the number of reactant entities in it; termolecular steps are uncommon because three particles rarely collide at once.",
+   "evidence": "The decomposition of cyclobutane is unimolecular, NO₂ with CO in Figure 12.17 is bimolecular, and 2NO + O₂ appears to be termolecular."
+  },
+  {
+   "id": "elementary-rate-laws",
+   "kind": "result",
+   "section": "12.6",
+   "name": "The rate law of an elementary reaction follows from its equation",
+   "why": "Since an elementary reaction occurs exactly as written, its rate law may be written from its equation: first order for a unimolecular step, rate = k[A][B] or k[A]² for a bimolecular one.",
+   "evidence": "The first-order rate law predicted for the decomposition of cyclobutane agrees with the one measured."
+  },
+  {
+   "id": "rate-determining-step",
+   "kind": "idea",
+   "section": "12.6",
+   "name": "The rate-determining step",
+   "why": "A reaction cannot proceed faster than its slowest step, so that step limits the overall rate; when it is the first step, the overall rate law is its rate law.",
+   "evidence": "Figure 12.18’s cattle chute, and the two-step mechanism for NO₂ with CO below 225 °C, whose slow first step gives rate = k[NO₂]²."
+  },
+  {
+   "id": "mechanism-consistent-with-rate-law",
+   "kind": "idea",
+   "section": "12.6",
+   "name": "Testing a mechanism against the measured rate law",
+   "why": "A rate law is determined by experiment and a mechanism deduced from it; a mechanism whose predicted rate law disagrees with the measured one is incorrect, and one that agrees is plausible.",
+   "evidence": "NO₂ with CO follows a single bimolecular step above 225 °C but not below it, where the rate law changes."
+  },
+  {
+   "id": "rate-law-from-mechanism",
+   "kind": "skill",
+   "section": "12.6",
+   "name": "Deriving a rate law from a mechanism",
+   "why": "The rate law of the rate-determining step is the overall rate law; when it contains an intermediate, a fast, reversible earlier step at equilibrium expresses the intermediate’s concentration in terms of the reactants.",
+   "evidence": "Example 12.14 derives rate = (k₂k₁/k₋₁)[NO]²[Cl₂] for nitrogen monoxide and chlorine."
+  },
+  {
+   "id": "catalysis-lowers-activation-energy",
+   "kind": "idea",
+   "section": "12.7",
+   "name": "A catalyst provides a path of lower activation energy",
+   "why": "A catalyst speeds a reaction by providing a different mechanism whose rate-determining step has a lower activation energy; it takes part in the reaction but is regenerated, so the overall reaction and the energies of reactants and products are unchanged.",
+   "evidence": "Figure 12.19 draws the uncatalyzed one-step path and the catalyzed two-step path for one endothermic reaction; in the NO-catalyzed decomposition of ozone, NO is consumed in the first step and returned in the last."
+  },
+  {
+   "id": "catalyzed-reaction-diagrams",
+   "kind": "skill",
+   "section": "12.7",
+   "name": "Identifying the catalyzed path on reaction diagrams",
+   "why": "Of two reaction diagrams for the same reaction, the one with the lower activation energy for its rate-determining step is the catalyzed one.",
+   "evidence": "Example 12.15 finds 26 kJ and 14 kJ for its two diagrams and names the second as catalyzed."
+  },
+  {
+   "id": "homogeneous-catalysis",
+   "kind": "idea",
+   "section": "12.7",
+   "name": "Homogeneous catalysts",
+   "why": "A homogeneous catalyst is in the same phase as the reactants; it forms an intermediate that reacts further to give product and regenerate the catalyst.",
+   "evidence": "Nitric oxide and chlorine atoms catalyze the decomposition of ozone in the upper atmosphere, the work for which Mario Molina shared the 1995 Nobel Prize."
+  },
+  {
+   "id": "heterogeneous-catalysis",
+   "kind": "idea",
+   "section": "12.7",
+   "name": "Heterogeneous catalysts",
+   "why": "A heterogeneous catalyst is in a different phase, usually a solid, and furnishes a surface on which reactants are adsorbed, activated and react before the products desorb.",
+   "evidence": "Figure 12.23 follows ethylene and hydrogen on nickel, and the automobile catalytic converter of Figure 12.24 uses platinum and rhodium."
+  },
+  {
+   "id": "enzymes",
+   "kind": "idea",
+   "section": "12.7",
+   "name": "Enzymes as biological catalysts",
+   "why": "Enzymes are usually proteins that catalyze specific reactions of cellular metabolism by binding a substrate at an active site, in the lock-and-key or the induced fit model.",
+   "evidence": "Table 12.3 lists the classes of enzymes, Figure 12.25 draws the two models, and G6PD deficiency shows what the lack of one enzyme costs."
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "reaction-rate",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "reaction-rate",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "average-instantaneous-initial-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "rate-from-concentration-data",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "rate-from-concentration-data",
+   "prereq": "average-instantaneous-initial-rate"
+  },
+  {
+   "concept": "relative-reaction-rates",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "relative-reaction-rates",
+   "prereq": "coefficients-as-ratios"
+  },
+  {
+   "concept": "relative-reaction-rates",
+   "prereq": "stoichiometric-factor"
+  },
+  {
+   "concept": "write-relative-rate-expressions",
+   "prereq": "relative-reaction-rates"
+  },
+  {
+   "concept": "write-relative-rate-expressions",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "chemical-nature-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "surface-area-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "surface-area-and-rate",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "temperature-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "temperature-and-rate",
+   "prereq": "thermal-energy-and-temperature"
+  },
+  {
+   "concept": "concentration-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "concentration-and-rate",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "catalyst",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "rate-law",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "rate-law",
+   "prereq": "concentration-and-rate"
+  },
+  {
+   "concept": "rate-law",
+   "prereq": "molarity"
+  },
+  {
+   "concept": "reaction-order",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "rate-constant",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "rate-constant",
+   "prereq": "temperature-and-rate"
+  },
+  {
+   "concept": "rate-laws-are-experimental",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "rate-laws-are-experimental",
+   "prereq": "coefficients-as-ratios"
+  },
+  {
+   "concept": "method-of-initial-rates",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "method-of-initial-rates",
+   "prereq": "rate-constant"
+  },
+  {
+   "concept": "method-of-initial-rates",
+   "prereq": "average-instantaneous-initial-rate"
+  },
+  {
+   "concept": "rate-constant-units",
+   "prereq": "rate-constant"
+  },
+  {
+   "concept": "rate-constant-units",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "rate-constant-units",
+   "prereq": "derived-units"
+  },
+  {
+   "concept": "rate-from-rate-law",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "rate-from-rate-law",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "rate-from-rate-law",
+   "prereq": "relative-reaction-rates"
+  },
+  {
+   "concept": "integrated-rate-laws",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "first-order-integrated-rate-law",
+   "prereq": "integrated-rate-laws"
+  },
+  {
+   "concept": "first-order-integrated-rate-law",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "second-order-integrated-rate-law",
+   "prereq": "integrated-rate-laws"
+  },
+  {
+   "concept": "second-order-integrated-rate-law",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "zero-order-integrated-rate-law",
+   "prereq": "integrated-rate-laws"
+  },
+  {
+   "concept": "zero-order-integrated-rate-law",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "order-from-linear-plots",
+   "prereq": "first-order-integrated-rate-law"
+  },
+  {
+   "concept": "order-from-linear-plots",
+   "prereq": "second-order-integrated-rate-law"
+  },
+  {
+   "concept": "order-from-linear-plots",
+   "prereq": "zero-order-integrated-rate-law"
+  },
+  {
+   "concept": "half-life",
+   "prereq": "integrated-rate-laws"
+  },
+  {
+   "concept": "half-life-by-order",
+   "prereq": "half-life"
+  },
+  {
+   "concept": "half-life-by-order",
+   "prereq": "first-order-integrated-rate-law"
+  },
+  {
+   "concept": "half-life-by-order",
+   "prereq": "second-order-integrated-rate-law"
+  },
+  {
+   "concept": "half-life-by-order",
+   "prereq": "zero-order-integrated-rate-law"
+  },
+  {
+   "concept": "integrated-rate-law-calculations",
+   "prereq": "first-order-integrated-rate-law"
+  },
+  {
+   "concept": "integrated-rate-law-calculations",
+   "prereq": "second-order-integrated-rate-law"
+  },
+  {
+   "concept": "integrated-rate-law-calculations",
+   "prereq": "half-life-by-order"
+  },
+  {
+   "concept": "collision-theory",
+   "prereq": "kinetic-molecular-theory"
+  },
+  {
+   "concept": "collision-theory",
+   "prereq": "concentration-and-rate"
+  },
+  {
+   "concept": "collision-orientation",
+   "prereq": "collision-theory"
+  },
+  {
+   "concept": "collision-orientation",
+   "prereq": "structural-formulas-and-models"
+  },
+  {
+   "concept": "activation-energy",
+   "prereq": "collision-theory"
+  },
+  {
+   "concept": "activation-energy",
+   "prereq": "potential-and-kinetic-energy"
+  },
+  {
+   "concept": "activation-energy",
+   "prereq": "average-kinetic-energy-and-temperature"
+  },
+  {
+   "concept": "reaction-diagram",
+   "prereq": "activation-energy"
+  },
+  {
+   "concept": "reaction-diagram",
+   "prereq": "exothermic-and-endothermic"
+  },
+  {
+   "concept": "reaction-diagram",
+   "prereq": "enthalpy-change-at-constant-pressure"
+  },
+  {
+   "concept": "energy-distribution-and-rate",
+   "prereq": "activation-energy"
+  },
+  {
+   "concept": "energy-distribution-and-rate",
+   "prereq": "maxwell-boltzmann-distribution"
+  },
+  {
+   "concept": "energy-distribution-and-rate",
+   "prereq": "temperature-and-rate"
+  },
+  {
+   "concept": "arrhenius-equation",
+   "prereq": "rate-constant"
+  },
+  {
+   "concept": "arrhenius-equation",
+   "prereq": "energy-distribution-and-rate"
+  },
+  {
+   "concept": "arrhenius-equation",
+   "prereq": "collision-orientation"
+  },
+  {
+   "concept": "arrhenius-equation",
+   "prereq": "celsius-kelvin-conversion"
+  },
+  {
+   "concept": "activation-energy-from-rate-constants",
+   "prereq": "arrhenius-equation"
+  },
+  {
+   "concept": "activation-energy-from-rate-constants",
+   "prereq": "order-from-linear-plots"
+  },
+  {
+   "concept": "reaction-mechanism",
+   "prereq": "chemical-equation"
+  },
+  {
+   "concept": "reaction-mechanism",
+   "prereq": "collision-theory"
+  },
+  {
+   "concept": "molecularity",
+   "prereq": "reaction-mechanism"
+  },
+  {
+   "concept": "elementary-rate-laws",
+   "prereq": "molecularity"
+  },
+  {
+   "concept": "elementary-rate-laws",
+   "prereq": "rate-law"
+  },
+  {
+   "concept": "elementary-rate-laws",
+   "prereq": "rate-laws-are-experimental"
+  },
+  {
+   "concept": "rate-determining-step",
+   "prereq": "reaction-mechanism"
+  },
+  {
+   "concept": "rate-determining-step",
+   "prereq": "elementary-rate-laws"
+  },
+  {
+   "concept": "mechanism-consistent-with-rate-law",
+   "prereq": "rate-determining-step"
+  },
+  {
+   "concept": "mechanism-consistent-with-rate-law",
+   "prereq": "rate-laws-are-experimental"
+  },
+  {
+   "concept": "rate-law-from-mechanism",
+   "prereq": "rate-determining-step"
+  },
+  {
+   "concept": "rate-law-from-mechanism",
+   "prereq": "elementary-rate-laws"
+  },
+  {
+   "concept": "rate-law-from-mechanism",
+   "prereq": "reaction-order"
+  },
+  {
+   "concept": "catalysis-lowers-activation-energy",
+   "prereq": "catalyst"
+  },
+  {
+   "concept": "catalysis-lowers-activation-energy",
+   "prereq": "reaction-diagram"
+  },
+  {
+   "concept": "catalysis-lowers-activation-energy",
+   "prereq": "reaction-mechanism"
+  },
+  {
+   "concept": "catalysis-lowers-activation-energy",
+   "prereq": "rate-determining-step"
+  },
+  {
+   "concept": "catalyzed-reaction-diagrams",
+   "prereq": "catalysis-lowers-activation-energy"
+  },
+  {
+   "concept": "catalyzed-reaction-diagrams",
+   "prereq": "reaction-diagram"
+  },
+  {
+   "concept": "homogeneous-catalysis",
+   "prereq": "catalysis-lowers-activation-energy"
+  },
+  {
+   "concept": "homogeneous-catalysis",
+   "prereq": "reaction-mechanism"
+  },
+  {
+   "concept": "heterogeneous-catalysis",
+   "prereq": "catalysis-lowers-activation-energy"
+  },
+  {
+   "concept": "heterogeneous-catalysis",
+   "prereq": "surface-area-and-rate"
+  },
+  {
+   "concept": "heterogeneous-catalysis",
+   "prereq": "sigma-and-pi-bonds"
+  },
+  {
+   "concept": "enzymes",
+   "prereq": "catalysis-lowers-activation-energy"
+  }
+ ]
+}

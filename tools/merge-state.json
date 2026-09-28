@@ -62,7 +62,9 @@
       "Z_comp",
       "V_m",
       "a_vdw",
-      "b_vdw"
+      "b_vdw",
+      "P_gas",
+      "P_atm"
     ],
     "types": []
   },
@@ -154,6 +156,104 @@
       "n_order",
       "d_plane",
       "\u03b8_bragg"
+    ],
+    "types": []
+  },
+  "ch11": {
+    "symbols": [
+      "C_g",
+      "k_H",
+      "P_g",
+      "m_molal",
+      "P_A*",
+      "P_i",
+      "P_i*",
+      "X_i",
+      "P_solution",
+      "P_solvent*",
+      "X_solvent",
+      "\u0394P_vp",
+      "\u0394T_b",
+      "K_b",
+      "\u0394T_f",
+      "K_f",
+      "\u03a0",
+      "i_vh"
+    ],
+    "types": []
+  },
+  "ch12": {
+    "symbols": [
+      "[A]",
+      "[A]_0",
+      "[A]_t",
+      "[B]",
+      "\u0394[A]",
+      "\u0394[B]",
+      "E_a",
+      "A_freq",
+      "m_rxorder",
+      "n_rxorder",
+      "k_1",
+      "k_2",
+      "k_m1"
+    ],
+    "types": []
+  },
+  "ch13": {
+    "symbols": [
+      "rate_f",
+      "rate_r",
+      "[C]",
+      "[D]",
+      "P_D",
+      "k_f",
+      "k_r",
+      "Q_conc",
+      "Q_P",
+      "K_c",
+      "K_P",
+      "K_c_prime",
+      "K_c1",
+      "K_c2",
+      "\u0394n_gas",
+      "x_ice"
+    ],
+    "types": []
+  },
+  "ch14": {
+    "symbols": [
+      "[H3O+]",
+      "[OH-]",
+      "[HA]",
+      "[A-]",
+      "[HB+]",
+      "[HA]_0",
+      "[H3O+]_eq",
+      "K_w",
+      "K_a",
+      "K_b_ion",
+      "pK_w",
+      "pK_a",
+      "pK_b",
+      "K_a1",
+      "K_a2",
+      "K_a3",
+      "K_b1",
+      "K_b2"
+    ],
+    "types": []
+  },
+  "ch15": {
+    "symbols": [
+      "K_sp",
+      "Q_sp",
+      "K_f_form",
+      "K_d",
+      "[M^m+]",
+      "[X^n-]",
+      "p_stoich",
+      "q_stoich"
     ],
     "types": []
   }

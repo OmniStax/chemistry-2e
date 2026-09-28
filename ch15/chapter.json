@@ -1,0 +1,154 @@
+{
+ "id": "15",
+ "dir": "ch15",
+ "title": "Equilibria of Other Reaction Classes",
+ "intro": {
+  "module": "m68810",
+  "slug": "15-introduction"
+ },
+ "sections": [
+  {
+   "id": "15.1",
+   "module": "m68811",
+   "title": "Precipitation and Dissolution",
+   "slug": "15-1-precipitation-and-dissolution"
+  },
+  {
+   "id": "15.2",
+   "module": "m68813",
+   "title": "Lewis Acids and Bases",
+   "slug": "15-2-lewis-acids-and-bases"
+  },
+  {
+   "id": "15.3",
+   "module": "m68814",
+   "title": "Coupled Equilibria",
+   "slug": "15-3-coupled-equilibria"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "K_sp",
+   "meaning": "the solubility product constant, the equilibrium constant for the dissolution of a slightly soluble ionic compound",
+   "unit": "none (concentrations in M)",
+   "section": "15.1"
+  },
+  {
+   "sym": "Q_sp",
+   "meaning": "the reaction quotient for the dissolution of a slightly soluble ionic compound",
+   "unit": "none (concentrations in M)",
+   "section": "15.1"
+  },
+  {
+   "sym": "[M^m+]",
+   "type": "concentration",
+   "meaning": "the molar concentration of the cation M<sup>m+</sup> in a saturated solution",
+   "unit": "mol/L (M)",
+   "section": "15.1"
+  },
+  {
+   "sym": "[X^n-]",
+   "type": "concentration",
+   "meaning": "the molar concentration of the anion X<sup>n–</sup> in a saturated solution",
+   "unit": "mol/L (M)",
+   "section": "15.1"
+  },
+  {
+   "sym": "p_stoich",
+   "meaning": "the number of cations in the formula M<sub>p</sub>X<sub>q</sub>",
+   "unit": "none",
+   "section": "15.1"
+  },
+  {
+   "sym": "q_stoich",
+   "meaning": "the number of anions in the formula M<sub>p</sub>X<sub>q</sub>",
+   "unit": "none",
+   "section": "15.1"
+  },
+  {
+   "sym": "x_ice",
+   "meaning": "the change in concentration defined by the ICE table; for a simple dissolution, the molar solubility",
+   "unit": "mol/L (M)",
+   "section": "15.1"
+  },
+  {
+   "sym": "K_f_form",
+   "meaning": "the formation constant (stability constant) for a complex ion",
+   "unit": "none (concentrations in M)",
+   "section": "15.2"
+  },
+  {
+   "sym": "K_d",
+   "meaning": "the dissociation constant for a complex ion, the reciprocal of its formation constant",
+   "unit": "none (concentrations in M)",
+   "section": "15.2"
+  },
+  {
+   "sym": "K",
+   "meaning": "the equilibrium constant for the net reaction of two coupled equilibria",
+   "unit": "none (concentrations in M)",
+   "section": "15.3"
+  },
+  {
+   "sym": "K_a2",
+   "meaning": "the second ionization constant of carbonic acid, for bicarbonate ion",
+   "unit": "none (concentrations in M)",
+   "section": "15.3"
+  }
+ ],
+ "equations": [
+  {
+   "id": "eq-ksp",
+   "concept": "solubility-product",
+   "section": "15.1",
+   "latex": "\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)\\qquad K_{\\text{sp}}=[\\text{M}^{m+}]^{p}[\\text{X}^{n-}]^{q}",
+   "ktex": "\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)\\qquad K_{\\text{sp}}=\\kconcMion^{p}\\kconcXion^{q}",
+   "condition": "a slightly soluble ionic solid whose dissolution involves only dissociation and solvation",
+   "important": true
+  },
+  {
+   "id": "eq-kf",
+   "concept": "formation-constant",
+   "section": "15.2",
+   "latex": "K_{\\text{f}}=\\frac{[\\text{Cu(CN)}_{2}{}^{-}]}{[\\text{Cu}^{+}][\\text{CN}^{-}]^{2}}",
+   "condition": "the formation of Cu(CN)<sub>2</sub><sup>–</sup> from Cu<sup>+</sup> and CN<sup>–</sup>"
+  },
+  {
+   "id": "eq-kd",
+   "concept": "formation-constant",
+   "section": "15.2",
+   "latex": "K_{\\text{d}}=K_{\\text{f}}^{-1}",
+   "condition": "a complex ion and the reverse of its formation reaction"
+  },
+  {
+   "id": "eq-k-acid-coupled",
+   "concept": "solubility-in-acid",
+   "section": "15.3",
+   "latex": "\\text{CaCO}_{3}(s)+\\text{H}_{3}\\text{O}^{+}(aq)\\rightleftharpoons\\text{Ca}^{2+}(aq)+\\text{HCO}_{3}{}^{-}(aq)+\\text{H}_{2}\\text{O}(l)\\qquad K=K_{\\text{sp}}/K_{\\text{a2}}=180",
+   "condition": "calcium carbonate dissolution coupled with the reverse of bicarbonate's acid ionization"
+  },
+  {
+   "id": "eq-k-complex-coupled",
+   "concept": "dissolution-by-complex-formation",
+   "section": "15.3",
+   "latex": "\\text{Al(OH)}_{3}(s)+\\text{OH}^{-}(aq)\\rightleftharpoons\\text{Al(OH)}_{4}{}^{-}(aq)\\qquad K=K_{\\text{sp}}K_{\\text{f}}=22",
+   "condition": "aluminum hydroxide dissolution coupled with the formation of Al(OH)<sub>4</sub><sup>–</sup>"
+  }
+ ],
+ "glossary": [
+  {"section": "15.1", "term": "common ion effect", "definition": "effect on equilibrium when a substance with an ion in common with the dissolved species is added to the solution; causes a decrease in the solubility of an ionic species, or a decrease in the ionization of a weak acid or base"},
+  {"section": "15.1", "term": "molar solubility", "definition": "solubility of a compound expressed in units of moles per liter (mol/L)"},
+  {"section": "15.1", "term": "selective precipitation", "definition": "process in which ions are separated using differences in their solubility with a given precipitating reagent"},
+  {"section": "15.1", "term": "solubility product constant", "definition": "equilibrium constant for the dissolution of an ionic compound"},
+  {"section": "15.2", "term": "complex ion", "definition": "ion consisting of a central atom surrounding molecules or ions called ligands via coordinate covalent bonds"},
+  {"section": "15.2", "term": "coordinate covalent bond", "definition": "(also, dative bond) covalent bond in which both electrons originated from the same atom"},
+  {"section": "15.2", "term": "dissociation constant", "definition": "equilibrium constant for the decomposition of a complex ion into its components"},
+  {"section": "15.2", "term": "formation constant", "definition": "(also, stability constant) equilibrium constant for the formation of a complex ion from its components"},
+  {"section": "15.2", "term": "Lewis acid", "definition": "any species that can accept a pair of electrons and form a coordinate covalent bond"},
+  {"section": "15.2", "term": "Lewis acid-base adduct", "definition": "compound or ion that contains a coordinate covalent bond between a Lewis acid and a Lewis base"},
+  {"section": "15.2", "term": "Lewis acid-base chemistry", "definition": "reactions involving the formation of coordinate covalent bonds"},
+  {"section": "15.2", "term": "Lewis base", "definition": "any species that can donate a pair of electrons and form a coordinate covalent bond"},
+  {"section": "15.2", "term": "ligand", "definition": "molecule or ion acting as a Lewis base in complex ion formation; bonds to the central atom of the complex"},
+  {"section": "15.3", "term": "coupled equilibria", "definition": "system characterized the simultaneous establishment of two or more equilibrium reactions sharing one or more reactant or product"}
+ ]
+}

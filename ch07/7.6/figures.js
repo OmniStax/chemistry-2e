@@ -258,7 +258,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
   const PL = F.choice(d.controls, { label: '\\text{lone pairs of ClF}_3', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs of ClF3 are placed', onInput: () => shift() });
   const PLBOX = d.controls.lastElementChild;
   function fitLone() { const m = MAX_LONE[N.v]; if (LP.v > m) LP.set(m); }
-  const fx = el('div'), note = el('small'); d.readout.append(fx, note);
+  const { formula: fx, note } = F.readout(d);
   const L = 170 * SCALE;
 
   /* a state of the bench: its regions as directions, each a bond or a lone pair, and its two names */

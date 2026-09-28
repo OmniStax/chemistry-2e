@@ -483,7 +483,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     return n;
   };
   /* the law and its numbers, one line that morphs by meaning; each law's constant has its own key, since each is a different quantity */
-  const fx = el('div'), note = el('small'); d.readout.append(fx, note);
+  const { formula: fx, note } = F.readout(d);
   let shown = '', form = 'free';
   const KEY = { 1: 'kA', 2: 'kC', 3: 'kB', 4: 'kAv' }, HELD = { 1: ['n', 'R', 'V'], 2: ['n', 'R', 'P'], 3: ['n', 'R', 'T'], 4: ['P', 'R', 'T'] };
   /* free to a law: the held terms bend together into its k (and the product PV's value into Boyle's k's); a law back to free: k opens into them; Boyle's or Amontons's k opens into the second state */

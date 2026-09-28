@@ -172,7 +172,7 @@ function ionPick(controls, onInput) {
     return { Y: Object.fromEntries(ys.map((q) => [q.n, q.y])), S: Object.fromEntries(slots.map((q) => [q.n, q.sy])) };
   }
   /* the equation and its numbers, one line that morphs by meaning: k and Z² move, 1/n₁² bends into the level's n², the rest fades */
-  const fx = el('div'), note = el('small'); d.readout.append(fx, note);
+  const { formula: fx, note } = F.readout(d);
   let shown = '';
   const NI = ctl(d.controls, { label: 'n_{\\text{i}}', cls: '', min: 1, max: 6, step: 1, value: 3, unit: '', dec: 0, onInput: reset, aria: 'quantum number of the orbit the electron starts in' });
   const NF = ctl(d.controls, { label: 'n_{\\text{f}}', cls: '', min: 1, max: 6, step: 1, value: 2, unit: '', dec: 0, onInput: reset, aria: 'quantum number of the orbit the electron ends in' });

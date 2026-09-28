@@ -317,8 +317,10 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       text(ctx, l.id, R.r + 16, Y(l.E), PAL.ink, { size: 22 });
       hits.push({ x: XL, y: Y(l.E), r: 40, name: 'the ' + l.id + ' atomic orbital' + (l.deg > 1 ? 's' : '') + ' of one ' + X + ' atom' }, { x: XR, y: Y(l.E), r: 40, name: 'the ' + l.id + ' atomic orbital' + (l.deg > 1 ? 's' : '') + ' of the other ' + X + ' atom' });
     });
+    let prev = Infinity;
+    const ys = D.mo.map((l) => { const y = Math.min(Y(l.E), prev - 44); prev = y; return y; });
     D.mo.forEach((l, i) => {
-      const y = Y(l.E), a = show(occ[i]);
+      const y = ys[i], a = show(occ[i]);
       const box = level(ctx, XM, y, l.deg, 0, 70);
       const [ar, bl, ay] = atomEnds[l.from];
       line(ctx, ar + 6, ay, box.l - 6, y, alpha(PAL.ink, 0.45), 2, [6, 6]);
@@ -416,9 +418,9 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       hits.push({ x: XM, y, r: 45, name: 'the ' + l.n.replace(/[_{}]/g, '') + ' molecular orbital' });
     });
     const above = 250 + 100 * m > 310;
-    headline(ctx, m === 0 ? 'Without mixing, σp lies below the πp pair, as in O₂, F₂ and Ne₂.'
-      : above ? 'With enough s-p mixing, σp rises above the πp pair, as in Li₂ through N₂.'
-      : m === 0.6 ? 'Here σp and the πp pair have the same energy.' : 'Mixing lowers σs and σ*s and raises σp and σ*p, but σp is still below πp.');
+    headline(ctx, m === 0 ? 'Without mixing, σ_{p} lies below the π_{p} pair, as in O₂, F₂ and Ne₂.'
+      : above ? 'With enough s-p mixing, σ_{p} rises above the π_{p} pair, as in Li₂ through N₂.'
+      : m === 0.6 ? 'Here σ_{p} and the π_{p} pair have the same energy.' : 'Mixing lowers σ_{s} and σ*_{s} and raises σ_{p} and σ*_{p}, but σ_{p} is still below π_{p}.');
     readout(d.readout, above ? '\\sigma_s < \\sigma_s^{*} < \\pi_p < \\sigma_p < \\pi_p^{*} < \\sigma_p^{*}' : '\\sigma_s < \\sigma_s^{*} < \\sigma_p ' + (m === 0.6 ? '=' : '<') + ' \\pi_p < \\pi_p^{*} < \\sigma_p^{*}',
       's-p mixing creates no new orbitals; it only moves the σ orbitals.');
   }
@@ -441,8 +443,8 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
     const g = solid.mix((s) => GAP[s]), mid = 330, W = 150, x0 = 520, x1 = 880;
     const nv = nPick.value === 'many' ? Infinity : +nPick.value, frac = nv === Infinity ? 1 : 1 - 2 / nv;
     const vt = mid + g / 2, vb = vt + W * frac, cb = mid - g / 2, ct = cb - W * frac;
-    eAxis(ctx, 300, 560, 60);
-    const cV = F.cat(3), cC = F.cat(4);
+    eAxis(ctx, 200, 560, 60);
+    const cV = F.cat(2), cC = F.cat(4);
     if (nv === Infinity) {
       ctx.save(); ctx.fillStyle = alpha(cV, 0.45); ctx.fillRect(x0, vt, x1 - x0, vb - vt); ctx.fillStyle = alpha(cC, 0.25); ctx.fillRect(x0, ct, x1 - x0, cb - ct); ctx.restore();
       ctx.save(); ctx.strokeStyle = cV; ctx.lineWidth = 3; ctx.strokeRect(x0, vt, x1 - x0, vb - vt); ctx.strokeStyle = cC; ctx.strokeRect(x0, ct, x1 - x0, cb - ct); ctx.restore();
@@ -456,11 +458,13 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
     }
     text(ctx, 'conduction band (empty)', x1 + 30, (ct + cb) / 2, cC, { size: 22 });
     text(ctx, 'valence band (filled)', x1 + 30, (vt + vb) / 2, cV, { size: 22 });
-    F.vbracket(ctx, x0 - 40, cb, vt, C('energy'), 'band gap', 'left');
+    const cE = C('energy');
+    line(ctx, x0 - 40, cb, x0 - 40, vt, cE, 3); line(ctx, x0 - 52, cb, x0 - 28, cb, cE, 3); line(ctx, x0 - 52, vt, x0 - 28, vt, cE, 3);
+    text(ctx, 'band gap', x0 - 60, mid, cE, { size: 22, weight: 600, align: 'right' });
     hits = [{ x: (x0 + x1) / 2, y: (vt + vb) / 2, r: 60, name: 'the bonding orbitals, the valence band' }, { x: (x0 + x1) / 2, y: (ct + cb) / 2, r: 60, name: 'the antibonding orbitals, the conduction band' }];
     headline(ctx, 'In ' + NAME[solid.value] + ' the band gap is ' + (solid.value === 'ins' ? 'large' : solid.value === 'semi' ? 'moderate' : 'very small') + '.');
-    const nS = nv === Infinity ? '\\text{very many}' : String(nv), hS = nv === Infinity ? '\\text{very many}' : String(nv / 2);
-    readout(d.readout, `N = ${nS}:\\quad N/2 = ${hS}\\ \\text{bonding (filled)},\\quad N/2 = ${hS}\\ \\text{antibonding (empty)}`,
+    const nS = String(nv), hS = String(nv / 2);
+    readout(d.readout, nv === Infinity ? 'N/2\\ \\text{bonding (filled)},\\quad N/2\\ \\text{antibonding (empty)}' : `N = ${nS}:\\quad N/2 = ${hS}\\ \\text{bonding (filled)},\\quad N/2 = ${hS}\\ \\text{antibonding (empty)}`,
       nv === Infinity ? 'So many levels lie so close together that they form bands.' : 'Each bonding and each antibonding orbital has a slightly different energy.');
   }
   still(d, draw);

@@ -365,6 +365,58 @@
   {
    "concept": "diatomic-molecule-configurations",
    "prereq": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "concept": "valence-bond-theory",
+   "prereq": "angular-momentum-quantum-number"
+  },
+  {
+   "concept": "molecular-orbital-theory",
+   "prereq": "wavefunction-probability"
+  },
+  {
+   "concept": "hybridization",
+   "prereq": "wavefunction-probability"
+  },
+  {
+   "concept": "hybridization",
+   "prereq": "writing-electron-configurations"
+  },
+  {
+   "concept": "hybrid-orbital-energy-diagram",
+   "prereq": "hunds-rule"
+  },
+  {
+   "concept": "hybrid-orbital-energy-diagram",
+   "prereq": "aufbau-principle"
+  },
+  {
+   "concept": "molecular-orbital-diagram",
+   "prereq": "writing-electron-configurations"
+  },
+  {
+   "concept": "molecular-orbital-diagram",
+   "prereq": "aufbau-principle"
+  },
+  {
+   "concept": "molecular-orbital-diagram",
+   "prereq": "hunds-rule"
+  },
+  {
+   "concept": "paramagnetism-and-diamagnetism",
+   "prereq": "writing-electron-configurations"
+  },
+  {
+   "concept": "bond-distance-and-bond-energy",
+   "prereq": "bond-energy"
+  },
+  {
+   "concept": "bond-order",
+   "prereq": "bond-strength-and-length"
+  },
+  {
+   "concept": "resonance-and-delocalization",
+   "prereq": "resonance"
   }
  ]
 }

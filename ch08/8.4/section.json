@@ -1,0 +1,685 @@
+{
+ "id": "8.4",
+ "module": "m68747",
+ "chapter": "8",
+ "title": "Molecular Orbital Theory",
+ "short": "Molecular Orbital Theory",
+ "lead": "The Lewis structure of O<sub>2</sub> pairs every electron, yet liquid oxygen is held between the poles of a magnet. Molecular orbital theory combines the atomic orbitals of the atoms into molecular orbitals spread over the whole molecule, bonding orbitals lower in energy and antibonding orbitals higher. This section builds the σ and π molecular orbitals, fills molecular orbital diagrams with electrons, calculates bond orders, and explains the paramagnetism of oxygen and the change of orbital order that s-p mixing causes across the second period.",
+ "objectives": [
+  "Outline the basic quantum-mechanical approach to deriving molecular orbitals from atomic orbitals",
+  "Describe traits of bonding and antibonding molecular orbitals",
+  "Calculate bond orders based on molecular electron configurations",
+  "Write molecular electron configurations for first- and second-row diatomic molecules",
+  "Relate these electron configurations to the molecules’ stabilities and magnetic properties"
+ ],
+ "summary_html": "<p>Molecular orbital (MO) theory describes the behavior of electrons in a molecule in terms of combinations of the atomic wave functions. The resulting molecular orbitals may extend over all the atoms in the molecule. Bonding molecular orbitals are formed by in-phase combinations of atomic wave functions, and electrons in these orbitals stabilize a molecule. Antibonding molecular orbitals result from out-of-phase combinations of atomic wave functions and electrons in these orbitals make a molecule less stable. Molecular orbitals located along an internuclear axis are called σ MOs. They can be formed from <em>s</em> orbitals or from <em>p</em> orbitals oriented in an end-to-end fashion. Molecular orbitals formed from <em>p</em> orbitals oriented in a side-by-side fashion have electron density on opposite sides of the internuclear axis and are called π orbitals.</p><p>We can describe the electronic structure of diatomic molecules by applying molecular orbital theory to the valence electrons of the atoms. Electrons fill molecular orbitals following the same rules that apply to filling atomic orbitals; Hund’s rule and the Aufbau principle tell us that lower-energy orbitals will fill first, electrons will spread out before they pair up, and each orbital can hold a maximum of two electrons with opposite spins. Materials with unpaired electrons are paramagnetic and attracted to a magnetic field, while those with all-paired electrons are diamagnetic and repelled by a magnetic field. Correctly predicting the magnetic properties of molecules is in advantage of molecular orbital theory over Lewis structures and valence bond theory.</p>",
+ "notes": "The three Link to Learning notes (a video of paramagnetic and diamagnetic behavior, the Orbitron animations of molecular orbitals, and drawings of the molecular orbitals of benzene) are left out.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the unkeyed numerical exercises fs-idm138595920 (the number of molecular orbitals from ten atomic orbitals), fs-idm131971232 (the bond order of a given configuration) and fs-idm79754896 (the bond orders of four pairs) are left out. The unkeyed conceptual exercises fs-idp105434592, fs-idm41078784, fs-idm179535904, fs-idm63366704, fs-idp45731680 and fs-idm76713856, and the true-or-false item fs-idm16460880, kept open with its two options, carry a suggested approach marked as OmniStax’s own. The Check Your Learning image of Example 8.5 is on its card and the book’s labeled image is in its answer.",
+ "figures": [
+  {
+   "id": "fig-o2-lewis",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_O2_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "sim-gouy",
+   "kind": "sim",
+   "number": "8.27",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_Gouy.jpg"
+   ],
+   "original_caption": "A Gouy balance compares the mass of a sample in the presence of a magnetic field with the mass with the electromagnet turned off to determine the number of unpaired electrons in a sample.",
+   "draws": []
+  },
+  {
+   "id": "sim-waves",
+   "kind": "sim",
+   "number": "8.28",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_waveadd.jpg"
+   ],
+   "original_caption": "(a) When in-phase waves combine, constructive interference produces a wave with greater amplitude. (b) When out-of-phase waves combine, destructive interference produces a wave with less (or no) amplitude.",
+   "draws": []
+  },
+  {
+   "id": "sim-mo-shapes",
+   "kind": "sim",
+   "number": "8.29",
+   "folds": [
+    "8.30",
+    "8.31"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_ssigma.jpg",
+    "/media/ch08/CNX_Chem_08_04_pMOsigma.jpg",
+    "/media/ch08/CNX_Chem_08_04_pMOpi.jpg"
+   ],
+   "original_caption": "(Figure 8.29) Sigma (σ) and sigma-star (σ*) molecular orbitals are formed by the combination of two <em>s</em> atomic orbitals. The dots (·) indicate the locations of nuclei. (Figure 8.30) Combining wave functions of two <em>p</em> atomic orbitals along the internuclear axis creates two molecular orbitals, σ<sub><em>p</em></sub> and σ*<sub><em>p</em></sub>. (Figure 8.31) Side-by-side overlap of each two <em>p</em> orbitals results in the formation of two π molecular orbitals. Combining the out-of-phase orbitals results in an antibonding molecular orbital with two nodes. One contains the internuclear axis, and one is perpendicular to the axis. Combining the in-phase orbitals results in a bonding orbital. There is a node (blue) containing the internuclear axis with the two lobes of the orbital located above and below this node.",
+   "draws": []
+  },
+  {
+   "id": "fig-ao-types",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_AOtype_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-kohn",
+   "kind": "photo",
+   "number": "8.32",
+   "draws": []
+  },
+  {
+   "id": "fig-hiv",
+   "kind": "photo",
+   "number": "8.33",
+   "draws": []
+  },
+  {
+   "id": "sim-mo-fill",
+   "kind": "sim",
+   "number": "8.34",
+   "folds": [
+    "8.35",
+    "8.36",
+    "8.40"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_FillMo.jpg",
+    "/media/ch08/CNX_Chem_08_04_H2MO-a7a1.jpg",
+    "/media/ch08/CNX_Chem_08_04_He2MO-cf1f.jpg",
+    "/media/ch08/CNX_Chem_08_04_O2MO-912b.jpg"
+   ],
+   "original_caption": "(Figure 8.34) This is the molecular orbital diagram for the homonuclear diatomic Be₂⁺, showing the molecular orbitals of the valence shell only. The molecular orbitals are filled in the same manner as atomic orbitals, using the Aufbau principle and Hund’s rule. (Figure 8.35) The molecular orbital energy diagram predicts that H₂ will be a stable molecule with lower energy than the separated atoms. (Figure 8.36) The molecular orbital energy diagram predicts that He₂ will not be a stable molecule, since it has equal numbers of bonding and antibonding electrons. (Figure 8.40) The molecular orbital energy diagram for O₂ predicts two unpaired electrons.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-period2",
+   "kind": "sim",
+   "number": "8.37",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_X2MOs-bb74.jpg"
+   ],
+   "original_caption": "This shows the MO diagrams for each homonuclear diatomic molecule in the second period. The orbital energies decrease across the period as the effective nuclear charge increases and atomic radius decreases. Between N₂ and O₂, the order of the orbitals changes.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-spmix",
+   "kind": "sim",
+   "number": "8.38",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_spmix-78e6.jpg"
+   ],
+   "original_caption": "Without mixing, the MO pattern occurs as expected, with the σ<sub><em>p</em></sub> orbital lower in energy than the π<sub><em>p</em></sub> orbitals. When s-p mixing occurs, the orbitals shift as shown, with the σ<sub><em>p</em></sub> orbital higher in energy than the π<sub><em>p</em></sub> orbitals.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-bands",
+   "kind": "sim",
+   "number": "8.39",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_04_Band.jpg"
+   ],
+   "original_caption": "Molecular orbitals in solids are so closely spaced that they are described as bands. The valence band is lower in energy and the conduction band is higher in energy. The type of solid is determined by the size of the “band gap” between the valence and conduction bands. Only a very small amount of energy is required to move electrons from the valence band to the conduction band in a conductor, and so they conduct electricity well. In an insulator, the band gap is large, so that very few electrons move, and they are poor conductors of electricity. Semiconductors are in between: they conduct electricity better than insulators, but not as well as conductors.",
+   "draws": [
+    "energy"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "paramagnetism",
+   "concept": "paramagnetism-and-diamagnetism",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-theory",
+   "concept": "molecular-orbital-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "bonding-antibonding",
+   "concept": "bonding-and-antibonding-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "bonding-antibonding",
+   "concept": "molecular-orbital-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "bonding-and-antibonding-orbitals",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-mo-types",
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "verb": "uses"
+  },
+  {
+   "span": "mo-diagram",
+   "concept": "molecular-orbital-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-order",
+   "concept": "bond-order",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-order",
+   "concept": "molecular-orbital-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "diatomic",
+   "concept": "bond-order",
+   "verb": "uses"
+  },
+  {
+   "span": "diatomic",
+   "concept": "molecular-orbital-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "second-period",
+   "concept": "s-p-mixing",
+   "verb": "introduces"
+  },
+  {
+   "span": "second-period",
+   "concept": "diatomic-molecule-configurations",
+   "verb": "introduces"
+  },
+  {
+   "span": "second-period",
+   "concept": "bond-order",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-o2",
+   "concept": "diatomic-molecule-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-o2",
+   "concept": "paramagnetism-and-diamagnetism",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-c2",
+   "concept": "diatomic-molecule-configurations",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm91199824",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-mo-types"
+   },
+   "cite": "sigma-pi-mo",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_04_siganti_img.jpg",
+    "alt": "Two orbitals are shown lying end-to-end. Each has one enlarged and one small side. The small sides are facing one another"
+   },
+   "prompt": "Label the molecular orbital shown as <em>σ</em> or π, bonding or antibonding and indicate where the node occurs.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The orbital is located along the internuclear axis, so it is a σ orbital. There is a node bisecting the internuclear axis, so it is an antibonding orbital. <img src=\"/media/ch08/CNX_Chem_08_04_salabel_img.jpg\" alt=\"Two orbitals are shown lying end-to-end. Each has one enlarged and one small side. The small sides are facing one another and are separated by a vertical dotted line.\">"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm85103616",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-o2"
+   },
+   "cite": "second-period",
+   "prompt": "The main component of air is N<sub>2</sub>. From the molecular orbital diagram of N<sub>2</sub>, predict its bond order and whether it is diamagnetic or paramagnetic.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "N<sub>2</sub> has a bond order of 3 and is diamagnetic."
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm114393376",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-c2"
+   },
+   "cite": "second-period",
+   "prompt": "How many unpaired electrons would be present on a Be<sub>2</sub><sup>2−</sup> ion? Would it be paramagnetic or diamagnetic?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "two, paramagnetic"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp105434592",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sigma-pi-mo",
+   "prompt": "Sketch the distribution of electron density in the bonding and antibonding molecular orbitals formed from two <em>s</em> orbitals and from two <em>p</em> orbitals.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Recall that an in-phase combination builds up electron density between the nuclei and an out-of-phase combination leaves a node between them. For two <em>s</em> orbitals, draw the bonding σ<sub><em>s</em></sub> orbital as one region spread around both nuclei and the antibonding σ*<sub><em>s</em></sub> orbital as two regions with a node between the nuclei. For two <em>p</em> orbitals, draw the end-to-end σ<sub><em>p</em></sub> and σ*<sub><em>p</em></sub> pair and the side-by-side π<sub><em>p</em></sub> and π*<sub><em>p</em></sub> pair, comparing each with Figures 8.29 to 8.31."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm165679168",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "mo-theory",
+   "prompt": "How are the following similar, and how do they differ?\n(a) σ molecular orbitals and π molecular orbitals\n(b) <em>ψ</em> for an atomic orbital and <em>ψ</em> for a molecular orbital\n(c) bonding orbitals and antibonding orbitals",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Similarities: Both are bonding orbitals that can contain a maximum of two electrons. Differences: σ orbitals are end-to-end combinations of atomic orbitals, whereas π orbitals are formed by side-by-side overlap of orbitals. (b) Similarities: Both are quantum-mechanical constructs that represent the probability of finding the electron about the atom or the molecule. Differences: <em>ψ</em> for an atomic orbital describes the behavior of only one electron at a time based on the atom. For a molecule, <em>ψ</em> represents a mathematical combination of atomic orbitals. (c) Similarities: Both are orbitals that can contain two electrons. Differences: Bonding orbitals result in holding two or more atoms together. Antibonding orbitals have the effect of destabilizing any bonding that has occurred."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm177595920",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "paramagnetism",
+   "prompt": "Can a molecule with an odd number of electrons ever be diamagnetic? Explain why or why not.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "An odd number of electrons can never be paired, regardless of the arrangement of the molecular orbitals. It will always be paramagnetic."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm41078784",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "paramagnetism",
+   "prompt": "Can a molecule with an even number of electrons ever be paramagnetic? Explain why or why not.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Think about how Hund’s rule fills a set of degenerate molecular orbitals. Ask whether an even number of electrons could end with two electrons spread singly over two degenerate orbitals rather than paired, and test the idea on O<sub>2</sub>, whose diagram is Figure 8.40."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm100278000",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bonding-antibonding",
+   "prompt": "Why are bonding molecular orbitals lower in energy than the parent atomic orbitals?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Bonding orbitals have electron density in close proximity to more than one nucleus. The interaction between the bonding positively charged nuclei and negatively charged electrons stabilizes the system."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm63124960",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "diatomic",
+   "prompt": "Explain why an electron in the bonding molecular orbital in the H<sub>2</sub> molecule has a lower energy than an electron in the 1<em>s</em> atomic orbital of either of the separated hydrogen atoms.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The pairing of the two bonding electrons lowers the energy of the system relative to the energy of the nonbonded electrons."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm179535904",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "Predict the valence electron molecular orbital configurations for the following, and state whether they will be stable or unstable ions.\n(a) Na<sub>2</sub><sup>2+</sup>\n(b) Mg<sub>2</sub><sup>2+</sup>\n(c) Al<sub>2</sub><sup>2+</sup>\n(d) Si<sub>2</sub><sup>2+</sup>\n(e) P<sub>2</sub><sup>2+</sup>\n(f) S<sub>2</sub><sup>2+</sup>\n(g) F<sub>2</sub><sup>2+</sup>\n(h) Ar<sub>2</sub><sup>2+</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Count the valence electrons of each ion: twice the valence electrons of one atom, less two for the 2+ charge. Fill the valence molecular orbitals in order of energy, using the pattern of the period that the element’s diagram follows, with Hund’s rule for degenerate orbitals, as in Table 8.3. Then find the bond order from the bonding and antibonding electrons; an ion with a bond order greater than zero is predicted to be stable."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm111217280",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-order",
+   "prompt": "Determine the bond order of each member of the following groups, and determine which member of each group is predicted by the molecular orbital model to have the strongest bond.\n(a) H<sub>2</sub>, H<sub>2</sub><sup>+</sup>, H<sub>2</sub><sup>−</sup>\n(b) O<sub>2</sub>, O<sub>2</sub><sup>2+</sup>, O<sub>2</sub><sup>2−</sup>\n(c) Li<sub>2</sub>, Be<sub>2</sub><sup>+</sup>, Be<sub>2</sub>\n(d) F<sub>2</sub>, F<sub>2</sub><sup>+</sup>, F<sub>2</sub><sup>−</sup>\n(e) N<sub>2</sub>, N<sub>2</sub><sup>+</sup>, N<sub>2</sub><sup>−</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) H<sub>2</sub> bond order = 1, H<sub>2</sub><sup>+</sup> bond order = 0.5, H<sub>2</sub><sup>−</sup> bond order = 0.5, strongest bond is H<sub>2</sub>; (b) O<sub>2</sub> bond order = 2, O<sub>2</sub><sup>2+</sup> bond order = 3; O<sub>2</sub><sup>2−</sup> bond order = 1, strongest bond is O<sub>2</sub><sup>2+</sup>; (c) Li<sub>2</sub> bond order = 1, Be<sub>2</sub><sup>+</sup> bond order = 0.5, Be<sub>2</sub> bond order = 0, strongest bond is Li<sub>2</sub>;(d) F<sub>2</sub> bond order = 1, F<sub>2</sub><sup>+</sup> bond order = 1.5, F<sub>2</sub><sup>−</sup> bond order = 0.5, strongest bond is F<sub>2</sub><sup>+</sup>; (e) N<sub>2</sub> bond order = 3, N<sub>2</sub><sup>+</sup> bond order = 2.5, N<sub>2</sub><sup>−</sup> bond order = 2.5, strongest bond is N<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm63366704",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "For the first ionization energy for an N<sub>2</sub> molecule, what molecular orbital is the electron removed from?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The first electron removed is the one of highest energy. Write the valence configuration of N<sub>2</sub> from Table 8.3, remembering that N<sub>2</sub> shows s-p mixing, and find the highest occupied molecular orbital."
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm135320832",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "Compare the atomic and molecular orbital diagrams to identify the member of each of the following pairs that has the highest first ionization energy (the most tightly bound electron) in the gas phase:\n(a) H and H<sub>2</sub>\n(b) N and N<sub>2</sub>\n(c) O and O<sub>2</sub>\n(d) C and C<sub>2</sub>\n(e) B and B<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) H<sub>2</sub>; (b) N<sub>2</sub>; (c) O; (d) C<sub>2</sub>; (e) B<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp45731680",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "Which of the period 2 homonuclear diatomic molecules are predicted to be paramagnetic?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Go through the configurations of Table 8.3 one molecule at a time and look at the last level filled. Where a degenerate pair of π or π* orbitals holds fewer than four electrons and Hund’s rule leaves some unpaired, the molecule is paramagnetic."
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm76747104",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "A friend tells you that the 2<em>s</em> orbital for fluorine starts off at a much lower energy than the 2<em>s</em> orbital for lithium, so the resulting σ<sub>2<em>s</em></sub> molecular orbital in F<sub>2</sub> is more stable than in Li<sub>2</sub>. Do you agree?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Yes, fluorine is a smaller atom than Li, so atoms in the 2<em>s</em> orbital are closer to the nucleus and more stable."
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm16460880",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sigma-pi-mo",
+   "prompt": "True or false: Boron contains 2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup> valence electrons, so only one <em>p</em> orbital is needed to form molecular orbitals.\n(a) true\n(b) false",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Recall that a molecular orbital diagram combines all the valence atomic orbitals of the two atoms, whether or not each holds electrons, and look at where the valence electrons of B<sub>2</sub> go in Table 8.3."
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm16458944",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-order",
+   "prompt": "What charge would be needed on F<sub>2</sub> to generate an ion with a bond order of 2?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "2+"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idm76713856",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "Predict whether the MO diagram for S<sub>2</sub> would show s-p mixing or not.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "s-p mixing occurs when the <em>s</em> and <em>p</em> orbitals have similar energies. Sulfur is in the same group as oxygen; compare the difference between its valence <em>s</em> and <em>p</em> energies with that of oxygen and the elements that do show mixing."
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idm133690944",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "second-period",
+   "prompt": "Explain why N<sub>2</sub><sup>2+</sup> is diamagnetic, while O<sub>2</sub><sup>4+</sup>, which has the same number of valence electrons, is paramagnetic.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "N<sub>2</sub> has s-p mixing, so the π orbitals are the last filled in N<sub>2</sub><sup>2+</sup>. O<sub>2</sub> does not have s-p mixing, so the σ<sub><em>p</em></sub> orbital fills before the π orbitals."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "sigma-and-pi-molecular-orbitals"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "bond-order"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "e1",
+   "concept": "sigma-and-pi-molecular-orbitals"
+  },
+  {
+   "exercise": "e1",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e2",
+   "concept": "molecular-orbital-theory"
+  },
+  {
+   "exercise": "e2",
+   "concept": "sigma-and-pi-molecular-orbitals"
+  },
+  {
+   "exercise": "e2",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e4",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "e5",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molecular-orbital-diagram"
+  },
+  {
+   "exercise": "e6",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e8",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e9",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "e9",
+   "concept": "bond-order"
+  },
+  {
+   "exercise": "e10",
+   "concept": "bond-order"
+  },
+  {
+   "exercise": "e10",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "e11",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "e11",
+   "concept": "s-p-mixing"
+  },
+  {
+   "exercise": "e12",
+   "concept": "molecular-orbital-diagram"
+  },
+  {
+   "exercise": "e12",
+   "concept": "bonding-and-antibonding-orbitals"
+  },
+  {
+   "exercise": "e13",
+   "concept": "paramagnetism-and-diamagnetism"
+  },
+  {
+   "exercise": "e13",
+   "concept": "diatomic-molecule-configurations"
+  },
+  {
+   "exercise": "e14",
+   "concept": "molecular-orbital-diagram"
+  },
+  {
+   "exercise": "e15",
+   "concept": "molecular-orbital-diagram"
+  },
+  {
+   "exercise": "e16",
+   "concept": "bond-order"
+  },
+  {
+   "exercise": "e17",
+   "concept": "s-p-mixing"
+  },
+  {
+   "exercise": "e18",
+   "concept": "s-p-mixing"
+  },
+  {
+   "exercise": "e18",
+   "concept": "paramagnetism-and-diamagnetism"
+  }
+ ]
+}

@@ -57,3 +57,14 @@ The one story is the magnet. The intro shows oxygen held between the poles; 8.4 
 4. **Twisting ethene** (8.23): turn one end of the molecule and watch the π overlap vanish; turn ethane and nothing changes. Restricted rotation becomes something felt.
 5. **Waves that add and cancel** (8.28 to 8.31): slide the phase of one atomic wave function against the other and watch the bonding orbital become the antibonding one, the node appearing between the nuclei.
 6. **The MO diagram as a game** (8.34 to 8.40 + Table 8.3): pick a period-two diatomic molecule and a charge, fill the diagram by Aufbau and Hund, and read the bond order and the unpaired electrons; choose O₂ and a small magnet in the corner starts to pull. s-p mixing is the switch between N₂ and O₂.
+
+## Errata gathered by the chapter pass
+
+Carried as printed:
+
+- 8.2, Figure 8.8: the caption says the hybrid orbitals are "(yellow)" while the image draws them purple.
+- 8.2, fs-idp86297648: the answer has an unclosed parenthesis.
+- 8.4, the key equation reads "number of bonding electron".
+- 8.4, glossary: "π* bonding orbital" and "σ* bonding orbital" name antibonding orbitals.
+- 8.4, fs-idm76747104: the answer says "atoms in the 2s orbital".
+- 8.4, summary: "is in advantage of".

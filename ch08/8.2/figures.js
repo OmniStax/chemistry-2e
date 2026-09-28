@@ -82,8 +82,8 @@ const FREE_PITCH = [-Math.PI / 2, Math.PI / 2];
 ===================================================================== */
 (function () {
   const d = sim('sim-water');
-  const v = F.view3d(d.stage, { h: 440, dist: 8, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'from the side', yaw: -0.9, pitch: 0.5 }] });
-  const g = v.part(0);
+  const v = F.view3d(d.stage, { h: 440, dist: 6.4, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'from the side', yaw: -0.9, pitch: 0.5 }] });
+  const g = v.part(0); g.position.y = -0.35;
   const model = F.choice(d.controls, { label: 'model', aria: 'orbitals on oxygen', options: [{ value: 'p', label: '2<em>p</em> orbitals' }, { value: 'sp3', label: '<em>sp</em><sup>3</sup> hybrids' }], value: 'p' });
   const u = V.unit([1, 1, 0]), w = V.unit([1, -1, 0]), z = [0, 0, 1];
   const half = (a) => [V.add(V.mul(u, Math.cos(a * RAD)), V.mul(w, Math.sin(a * RAD))), V.add(V.mul(u, Math.cos(a * RAD)), V.mul(w, -Math.sin(a * RAD)))];
@@ -125,8 +125,8 @@ const FREE_PITCH = [-Math.PI / 2, Math.PI / 2];
 const AXES = [[1, 0, 0], [0, 1, 0], [0, 0, 1]], AXN = ['x', 'y', 'z'];
 function bench(id, n, stages, opts) {
   const d = sim(id);
-  const v = F.view3d(d.stage, { h: 420, dist: 8.2, spin: 'idle', pitch: FREE_PITCH, views: opts.views });
-  const g = v.part(0);
+  const v = F.view3d(d.stage, { h: 420, dist: 6.6, spin: 'idle', pitch: FREE_PITCH, views: opts.views });
+  const g = v.part(0); g.position.y = -0.35;
   const nP = n - 1;
   const STATE = {
     atomic: { at: 1, hy: 0, minor: 1, thin: 0, mol: 0 },
@@ -155,7 +155,7 @@ function bench(id, n, stages, opts) {
     const sp = st.value;
     if (st.k > 0.98) {
       if (sp === 'atomic') { v.label('<em>s</em>', [0.35, 0.5, 0.2], g, 0); v.label(`<em>p<sub>${AXN[0]}</sub></em>`, [1.95, 0.2, 0], g, 0); if (nP > 1) v.label(`<em>p<sub>y</sub></em>`, [0.2, 1.95, 0], g, 0); if (nP > 2) v.label(`<em>p<sub>z</sub></em>`, [0.2, 0.2, 1.95], g, 0); }
-      if (sp === 'hybrid' || sp === 'thin') v.label(`<em>${hyb}</em>`, V.mul(dirs[0], 1.9), g, 0);
+      if (sp === 'hybrid' || sp === 'thin') v.label(`<em>${hyb}</em>`, V.mul(dirs[0], 1.65), g, 0);
       if (n === 3 && sp !== 'atomic') v.label('<em>p<sub>z</sub></em>', [0.2, 0.2, 1.75], g, 0);
       if (sp !== 'atomic') ARCS[n].forEach(([i, j, t]) => v.label(t, arc3d(g, dirs[i], dirs[j], 0.8), g, 0));
       if (sp === 'mol') { v.label('B', [0, -0.45, 0], g, 0); dirs.forEach((u) => v.label('H', V.mul(u, 2.15), g, 0)); }
@@ -194,9 +194,9 @@ function halfArrow(ctx, x, y, up) {
   line(ctx, x, y0, x, y1, PAL.ink, 3);
   line(ctx, x, y1, x + (up ? -9 : 9), y1 + (up ? 13 : -13), PAL.ink, 3);
 }
-function level(ctx, x, y, lab, electrons) {
+function level(ctx, x, y, lab, electrons, above = false) {
   line(ctx, x - 46, y, x + 46, y, PAL.ink, 5);
-  text(ctx, lab, x, y + 26, PAL.ink, { size: 22, align: 'center' });
+  text(ctx, lab, x, above ? y - 16 : y + 26, PAL.ink, { size: 22, align: 'center' });
   if (electrons === 1) halfArrow(ctx, x, y, true);
   if (electrons === 2) { halfArrow(ctx, x - 9, y, true); halfArrow(ctx, x + 9, y, false); }
 }
@@ -206,7 +206,7 @@ function levels(id, o) {
     const { ctx } = begin(d.c);
     arrow(ctx, 110, 390, 110, 80, C('energy'), 4);
     text(ctx, 'E', 78, 235, C('energy'), { size: 26, weight: 600, align: 'center' });
-    const y2s = 350, y2p = 150, yh = (y2s + o.m * y2p) / (o.m + 1);
+    const y2s = 360, y2p = 120, yh = (y2s + o.m * y2p) / (o.m + 1);
     text(ctx, `Orbitals in an isolated ${o.atom} atom`, 330, 48, PAL.ink, { size: 22, align: 'center' });
     level(ctx, 210, y2s, '2s', 2);
     [0, 1, 2].forEach((i) => level(ctx, 210 + i * 120, y2p, '2p', i < o.p ? 1 : 0));
@@ -216,17 +216,17 @@ function levels(id, o) {
     const nh = o.m + 1, x0 = 1030 - (nh - 1) * 60;
     for (let i = 0; i < nh; i++) level(ctx, x0 + i * 120, yh, o.hyb, i < o.e ? 1 : 0);
     const left = 3 - o.m;
-    for (let j = 0; j < left; j++) level(ctx, x0 + j * 120, y2p, '2p', 0);
-    if (left) text(ctx, 'Unhybridized', x0 + left * 120 - 30, y2p - 4, PAL.ink, { size: 22 });
+    for (let j = 0; j < left; j++) level(ctx, x0 + j * 120, y2p, '2p', 0, true);
+    if (left) text(ctx, 'Unhybridized', x0 + left * 120 - 40, y2p + 6, PAL.ink, { size: 22 });
     readout(d.readout, o.eq, o.note);
   }
   still(d, draw);
 }
 levels('fig-sp-levels', { atom: 'Be', m: 1, p: 0, e: 2, hyb: 'sp', title: 'Orbitals in the sp hybridized Be in BeCl_{2}',
   eq: '\\text{Be: } 2s^2 \\;\\longrightarrow\\; (sp)^1(sp)^1', note: 'Two half-filled sp orbitals, each available to overlap with a Cl 3p orbital.' });
-levels('fig-sp2-levels', { atom: 'B', m: 2, p: 1, e: 3, hyb: 'sp^{2}', title: 'Orbitals in the sp^{2} hybridized B atom in BH_{3}',
+levels('fig-sp2-levels', { atom: 'B', m: 2, p: 1, e: 3, hyb: 'sp²', title: 'Orbitals in the sp² hybridized B atom in BH_{3}',
   eq: '\\text{B: } 2s^2\\,2p^1 \\;\\longrightarrow\\; (sp^2)^1(sp^2)^1(sp^2)^1', note: 'Three half-filled sp² orbitals, one for each B–H σ bond, and one empty 2p orbital.' });
-levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp^{3}', title: 'Orbitals in the sp^{3} hybridized C atom in CH_{4}',
+levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orbitals in the sp³ hybridized C atom in CH_{4}',
   eq: '\\text{C: } 2s^2\\,2p^2 \\;\\longrightarrow\\; (sp^3)^1(sp^3)^1(sp^3)^1(sp^3)^1', note: 'Four half-filled sp³ orbitals, one for each C–H σ bond.' });
 
 /* =====================================================================
@@ -235,8 +235,8 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp^{3}', title: 'O
 ===================================================================== */
 (function () {
   const d = sim('sim-ethane');
-  const v = F.view3d(d.stage, { h: 420, dist: 9, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.35, pitch: 0.3 }, { label: 'along C–C', yaw: -Math.PI / 2, pitch: 0 }] });
-  const g = v.part(0);
+  const v = F.view3d(d.stage, { h: 420, dist: 7.4, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.35, pitch: 0.3 }, { label: 'along C–C', yaw: -Math.PI / 2, pitch: 0 }] });
+  const g = v.part(0); g.position.y = -0.35;
   const view = F.choice(d.controls, { label: 'drawing', aria: 'orbitals or bonds', options: [{ value: 'orb', label: 'orbitals' }, { value: 'bond', label: 'σ bonds' }], value: 'orb' });
   const phi = F.ctl(d.controls, { label: '\\varphi', cls: '', min: 0, max: 120, step: 1, value: 0, unit: '°', dec: 0, aria: 'rotation of the right-hand CH3 group about the C–C bond' });
   const CC = 1.55, CH = 1.1 * 1.15;
@@ -276,8 +276,8 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp^{3}', title: 'O
 ===================================================================== */
 (function () {
   const d = sim('sim-sp3d');
-  const v = F.view3d(d.stage, { h: 440, dist: 8.6, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.45, pitch: 0.3 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] });
-  const g = v.part(0);
+  const v = F.view3d(d.stage, { h: 440, dist: 9.5, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.45, pitch: 0.3 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] });
+  const g = v.part(0); g.position.y = -0.6;
   const MOL = { pcl5: { n: 5, c: 'P', x: 'Cl', rx: 0.3, name: 'PCl<sub>5</sub>' }, sf6: { n: 6, c: 'S', x: 'F', rx: 0.26, name: 'SF<sub>6</sub>' } };
   const mol = F.choice(d.controls, { label: 'molecule', aria: 'molecule', options: [{ value: 'pcl5', label: 'PCl<sub>5</sub>' }, { value: 'sf6', label: 'SF<sub>6</sub>' }], value: 'pcl5' });
   const how = F.choice(d.controls, { label: 'drawing', aria: 'ball-and-stick or hybrid orbitals', options: [{ value: 'mol', label: 'ball and stick' }, { value: 'hyb', label: 'hybrid orbitals' }], value: 'mol' });
@@ -297,13 +297,13 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp^{3}', title: 'O
     const m = MOL[mol.value], dirs = SITES[m.n], hyb = how.value === 'hyb';
     if (mol.k > 0.98 && how.k > 0.98) {
       ARCS[m.n].forEach(([i, j, t]) => v.label(t, arc3d(g, dirs[i], dirs[j], 0.8), g, 0));
-      if (hyb) v.label(`<em>${HYB[m.n]}</em>`, V.mul(dirs[0], 2.0), g, 0);
-      else { v.label(m.c, [0.3, -0.35, 0.3], g, 0); v.label(m.x, V.mul(dirs[0], 2.3), g, 0); }
+      if (hyb) v.label(`<em>${HYB[m.n]}</em>`, V.mul(dirs[2], 1.75), g, 0);
+      else { v.label(m.c, [0.3, -0.35, 0.3], g, 0); v.label(m.x, V.mul(dirs[2], 2.3), g, 0); }
     }
     const five = m.n === 5;
     v.headline(hyb
       ? `${WORDS[m.n]} ${HYB[m.n]} hybrid orbitals of ${five ? 'phosphorus' : 'sulfur'}, one large lobe pointing at each corner of ${five ? 'a trigonal bipyramid' : 'an octahedron'}.`
-      : `${m.name}: ${WORDS[m.n].toLowerCase()} regions of electron density around the ${five ? 'phosphorus' : 'sulfur'} atom, ${five ? 'trigonal bipyramidal' : 'octahedral'}.`);
+      : `${m.name}: ${WORDS[m.n].toLowerCase()} regions of electron density, ${five ? 'trigonal bipyramidal' : 'octahedral'}.`);
     readout(d.readout, five ? '1\\ s + 3\\ p + 1\\ d \\;\\longrightarrow\\; 5\\ sp^3d' : '1\\ s + 3\\ p + 2\\ d \\;\\longrightarrow\\; 6\\ sp^3d^2',
       five ? 'The 3s orbital, the three 3p orbitals and one 3d orbital of phosphorus form the five hybrids of the P–Cl bonds.' : 'The 3s orbital, the three 3p orbitals and two 3d orbitals of sulfur form the six hybrids of the S–F bonds.');
   }
@@ -317,8 +317,8 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp^{3}', title: 'O
 ===================================================================== */
 (function () {
   const d = sim('sim-hybrid-sets');
-  const v = F.view3d(d.stage, { h: 420, dist: 8, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.45, pitch: 0.3 }, { label: 'face on', yaw: 0, pitch: 0 }] });
-  const g = v.part(0);
+  const v = F.view3d(d.stage, { h: 420, dist: 6.4, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.45, pitch: 0.3 }, { label: 'face on', yaw: 0, pitch: 0 }] });
+  const g = v.part(0); g.position.y = -0.35;
   const n = F.choice(d.controls, { label: 'regions of electron density', aria: 'number of regions of electron density', options: [2, 3, 4, 5, 6].map((i) => ({ value: String(i), label: String(i) })), value: '3' });
   function one(i, a) {
     if (a < 0.01) return;

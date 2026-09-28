@@ -38,3 +38,5 @@ Extra simulations: none. A benzene figure that morphs between the two resonance 
 
 - anchor: none; the section has no variable, equation or glossary row.
 - edge: `resonance-and-delocalization` → `resonance` (7.4), as the chapter notes already list.
+
+Applied by the chapter pass: edge resonance-and-delocalization → resonance (7.4) merged.

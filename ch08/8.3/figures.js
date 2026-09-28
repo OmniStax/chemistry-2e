@@ -157,7 +157,7 @@ function resonanceArrow(ctx, x1, x2, y) {
     if (s > 0.01) {
       const up = add(pl, pr), n = Math.hypot(...up) || 1, u = mul(up, 1 / n);
       cloud(u, PLUS(), 0.42 * s, 'the π bond, above the plane'); cloud(neg(u), MINUS(), 0.42 * s, 'the π bond, below the plane');
-      if (s > 0.35) v.label('π bond', mul(u, 1.25), g, 0);
+      if (s > 0.35) v.label('π bond', mul(u, 1.0), g, 0);
     }
     v.label('C', L, g, 30); v.label('H', add(L, mul(hl[0], 1.4)), g, 0);
     return s;
@@ -171,12 +171,12 @@ function resonanceArrow(ctx, x1, x2, y) {
     [[0, 1, 0], [0, 0, 1]].forEach((u) => { pOrbital(L, u); pOrbital(R, u); });
     cloud([0, 1, 0], PLUS(), 0.42, 'one π bond'); cloud([0, -1, 0], MINUS(), 0.42, 'one π bond');
     cloud([0, 0, 1], PLUS(), 0.42, 'the second π bond'); cloud([0, 0, -1], MINUS(), 0.42, 'the second π bond');
-    v.label('π bond', [0, 1.25, 0], g, 0); v.label('second π bond', [0, 0, 1.3], g, 0);
+    v.label('π bond', [0, 1.0, 0], g, 0); v.label('second π bond', [0, 0, 1.3], g, 0);
     v.label('C', L, g, 30); v.label('H', [-a - 1.06, 0, 0], g, 30);
   }
   function legend(ctx, hybName) {
     const items = [[HYB(), `${hybName} hybrid orbital`], [PLUS(), 'p orbital, one phase'], [MINUS(), 'p orbital, the other phase']];
-    const w = items.map(([, s]) => F.measure(ctx, s, { size: 18 }) + 48), total = w.reduce((a, b) => a + b, 0);
+    const w = items.map(([, s]) => F.measure(ctx, s, { size: 18 }) * 1.35 + 60), total = w.reduce((a, b) => a + b, 0);
     let x = 700 - total / 2;
     items.forEach(([c, s], i) => { F.dot(ctx, x + 12, 124, c, true, 10); text(ctx, s, x + 30, 125, PAL.ink, { size: 18, align: 'left' }); x += w[i]; });
   }

@@ -39,3 +39,5 @@ Table 8.1 stays in the text as `div.book-table` with its spanned title written a
 - anchor `r_bond` (8.1 variable) → 8.1-bond-distance
 - edge valence-bond-theory → the 6.3 atomic-orbital-shapes concept (as the chapter notes list)
 - edge bond-distance-and-bond-energy → the 7.5 bond-energy concept (as the chapter notes list)
+
+Applied by the chapter pass: `E` and `r_bond` anchored to 8.1-bond-distance; edges valence-bond-theory → angular-momentum-quantum-number (the 6.3 concept of orbital shapes) and bond-distance-and-bond-energy → bond-energy (7.5) merged.

@@ -845,3 +845,52 @@ Checks: `ost check` and the content check clean for the book, `npm test`
 (664 passing), `astro check` with no errors, a build, and every page of the
 chapter in light and dark with no console errors, no KaTeX errors, no missing
 images and every exercise card rendered.
+
+
+## Pass 10 (2026-09-28): Chapter 8, Advanced Theories of Covalent Bonding, is built and passed
+
+Prompted by: Chen asking for the book to be finished without check-ins, a plan
+file written before each page and left for review after.
+
+What was built. Five pages: the chapter introduction in `ch08/intro/` with the
+liquid oxygen photograph of Figure 8.1 and a still copy of the N₂ and O₂ Lewis
+structures, and the sections 8.1 to 8.4, none of them folded. Thirty-seven
+figure rows, numbered 8.1 to 8.40 as the publisher numbers them, with seven
+folds where one live figure is clearer: the overlap bench of Figures 8.3 to
+8.5, water's orbitals of 8.6 and 8.7, the sp² set of 8.10 to 8.12, the sp³d
+and sp³d² sets of 8.19 and 8.20, the π lobes of 8.23 to 8.25 with a twist
+slider, the σ and π molecular orbitals of 8.29 to 8.31, and one molecular
+orbital diagram for Figures 8.34 to 8.36 and 8.40, where the reader picks a
+molecule and its charge and reads the bond order and the unpaired electrons.
+Orbitals and hybrid orbitals are three-dimensional, lobes in the two phase
+colours; the energy curve of Figure 8.2 is live with the book's 74 pm and
+−7.24 × 10⁻¹⁹ J; the Gouy balance, the adding waves, s-p mixing and the bands
+of a solid are flat benches. Walter Kohn's portrait and the HIV-1 protease
+image are kept. Every figure is still. Fifty-three exercises, seven of them
+the Check Your Learning items placed inline after their examples, each with
+its host. Four unkeyed numerical items are left out and named, and the true or
+false item of 8.4 is kept open with its options.
+
+What the chapter pass changed. Every variable and equation row anchored: four
+variables (E, r_bond, ψ, Ψ) and four equations (the bond order and its three
+worked instances). Thirteen prerequisite edges staged and merged now that
+Chapters 6 and 7 are in the book: valence bond theory on orbital shapes,
+hybridization and molecular orbital theory on wave functions, hybridization
+and the orbital diagrams on electron configurations, the Aufbau principle and
+Hund's rule, paramagnetism on orbital diagrams, bond distance and bond order
+on bond energy and bond length, and delocalization on resonance. The edge
+into wave interference waits, since Chapter 6 has no such concept. Six
+glossary definitions that carried HTML are plain words. The H₂O, H₂S and H₂Te
+image stays the book's. Three figures tidied: the sp³d molecule clears its
+headline, the s-p mixing headline writes σ and π with subscripts, and the
+bands readout reads cleanly for very many atoms.
+
+Errata carried as printed: the "(yellow)" hybrids of Figure 8.8 drawn purple,
+an unclosed parenthesis in an 8.2 answer, the key equation's "number of
+bonding electron", the glossary's "π* bonding orbital" and "σ* bonding
+orbital" for antibonding orbitals, "atoms in the 2s orbital" in an 8.4 answer,
+and the summary's "is in advantage of".
+
+Checks: `ost check` clean for the book, `npm test`, `astro check`, a build,
+and every page of the chapter in light and dark with no console errors, no
+KaTeX errors and no missing images.

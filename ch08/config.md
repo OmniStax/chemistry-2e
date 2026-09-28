@@ -35,3 +35,11 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Labels | Figure for a book number, Sim for an addition; the word "demo" nowhere |
 | `ai` and `built` | `{"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"}`, `2026-09-28` |
 | Book manifest | `ch08` added to `book.json` by `ost merge chemistry-2e 8` |
+
+## What the build changed
+
+- Thirteen concept edges were staged and merged in the chapter pass now that Chapters 6 and 7 are in the book, so the chapter carries 55 prerequisite edges. The edge from bonding and antibonding orbitals to wave interference was not staged: Chapter 6 has no interference concept.
+- Every variable and equation row is anchored: four variables and four equations.
+- The six glossary definitions of 8.2 and 8.4 that carried HTML (the five hybrid orbitals and s-p mixing) are plain words.
+- The H₂O, H₂S and H₂Te image of 8.2 (`fig-hydrides`) is kept as the book's image, an unnumbered `figure` row; the library now has a tellurium colour, but three bent molecules with their angles add nothing drawn live.
+- Figure 8.19 + 8.20 sits farther back so the headline clears the top chlorine atom; the s-p mixing headline writes its orbitals with subscripts; the bands readout no longer prints "very many" three times.

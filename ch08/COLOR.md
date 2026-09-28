@@ -26,3 +26,7 @@ One type, `energy`, and only where an energy is drawn as a quantity.
 ## What stays in ink
 
 Lengths and distances (bond length, internuclear distance), angles, bond order, counts of σ and π bonds and of electrons, the Lewis structures, every axis rule, arrow and label that is not an energy, and the letters of the hybridization names. No symbol is written with a `\k` macro except `E` (`\kE`) where an energy is stated.
+
+## As built
+
+As planned. `energy` is bound on the energy axis of Figure 8.2, on the axes of the live energy-level and MO diagrams of 8.2, 8.3 and 8.4, and on the band gap bracket of Figure 8.39; phases are `F.cat(0)` and `F.cat(1)` throughout, the s, p and hybrid orbitals of the mixing figures `F.cat(0..2)`, the four σ orbitals of Figure 8.38 `F.cat(1)`, and the valence and conduction bands of Figure 8.39 two categorical colours.

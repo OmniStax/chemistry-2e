@@ -58,3 +58,5 @@ Tables 8.2 and 8.3 stay in the text as `div.book-table`. No extra Sims.
 - edge paramagnetism-and-diamagnetism → the 6.4 unpaired-electrons/orbital-diagram concept, as the chapter notes list
 - edge bond-order → the 7.5 bond-energy concept, as the chapter notes list
 - edge bonding-and-antibonding-orbitals → the 6.1 wave-interference concept, if staged
+
+Applied by the chapter pass: `Ψ` anchored to 8.4-mo-theory, eq-bond-order to 8.4-bond-order, eq-bond-order-h2 and -he2 to 8.4-diatomic, eq-bond-order-o2 to 8.4-ex-o2; edges molecular-orbital-theory → wavefunction-probability, molecular-orbital-diagram → writing-electron-configurations, aufbau-principle and hunds-rule, paramagnetism-and-diamagnetism → writing-electron-configurations (the 6.4 orbital diagrams), and bond-order → bond-strength-and-length (7.5, where bond order meets bond energy) merged; bonding-and-antibonding-orbitals → wave interference not staged, since Chapter 6 has no such concept. Glossary definitions plain words. Figure 8.38's headline subscripts and Figure 8.39's readout at "very many" tidied.

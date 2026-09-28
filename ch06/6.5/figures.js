@@ -39,7 +39,7 @@ function sphere(ctx, x, y, r, sym) {
   if (!(r > 0.5)) return;
   const base = F.el(sym);
   const g = ctx.createRadialGradient(x - r * 0.35, y - r * 0.4, r * 0.08, x, y, r);
-  g.addColorStop(0, F.mixColor(base, PAL.soft, 0.5)); g.addColorStop(0.55, base); g.addColorStop(1, F.mixColor(base, PAL.muted, 0.35));
+  g.addColorStop(0, base); g.addColorStop(0.55, base); g.addColorStop(1, alpha(base, 0.75));
   ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = g; ctx.fill();
   ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.stroke(); ctx.restore();
 }
@@ -55,13 +55,13 @@ function disc(ctx, x, y, r, sym) {
    morphs the molecule from one halogen to the next.
 ===================================================================== */
 (function () {
-  const d = sim('sim-halogen-radii', 860);
+  const d = sim('sim-halogen-radii', 940);
   const HAL = { F: { d: 128, r: 64 }, Cl: { d: 198, r: 99 }, Br: { d: 228, r: 114 }, I: { d: 266, r: 133 } };
   const pick = F.choice(d.controls, { label: '\\text{halogen}', options: Object.keys(HAL).map((s) => ({ value: s, label: BY[s].name.toLowerCase() })), value: 'Cl', aria: 'which halogen' });
   const S = 0.9;                                           /* units per picometer in the molecule: iodine's 266 pm spans 240 units */
-  const CX = 700, CY = 230;
+  const CX = 700, CY = 270;
   /* the table: groups 1 to 17 (the book draws no noble gas), periods 1 to 6, 0.1 unit per picometer */
-  const TL = 110, PITCH = 70, TT = 500, ROW = 62, TS = 0.1;
+  const TL = 110, PITCH = 70, TT = 540, ROW = 62, TS = 0.1;
   const cellX = (g) => TL + (g - 0.5) * PITCH, cellY = (p) => TT + (p - 0.5) * ROW;
   let hits = []; F.hover(d.stage, () => hits);
   still(d, () => {
@@ -73,7 +73,7 @@ function disc(ctx, x, y, r, sym) {
     const colour = pick.mixColor((v) => F.el(v));
     [x1, x2].forEach((x) => {
       const g = ctx.createRadialGradient(x - R * 0.35, CY - R * 0.4, R * 0.08, x, CY, R);
-      g.addColorStop(0, F.mixColor(colour, PAL.soft, 0.5)); g.addColorStop(0.55, colour); g.addColorStop(1, F.mixColor(colour, PAL.muted, 0.35));
+      g.addColorStop(0, colour); g.addColorStop(0.55, colour); g.addColorStop(1, alpha(colour, 0.75));
       ctx.save(); ctx.beginPath(); ctx.arc(x, CY, R, 0, TAU); ctx.fillStyle = g; ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.stroke(); ctx.restore();
     });
     dot(ctx, x1, CY, PAL.ink, true, 4); dot(ctx, x2, CY, PAL.ink, true, 4);
@@ -279,7 +279,7 @@ function disc(ctx, x, y, r, sym) {
     /* the jump, from the top of the last valence bar to the top of the first core bar */
     const xa = box.l + slot * (n - 0.5), xb = box.l + slot * (n + 0.5);
     arrow(ctx, xa + BW / 2 + 6, Y(vals[n - 1]) - 6, xb - BW / 2 - 6, Y(vals[n]) + 6, PAL.ink, 3);
-    text(ctx, `× ${fmt(ratio, 2)}`, (xa + xb) / 2 + 14, (Y(vals[n - 1]) + Y(vals[n])) / 2 - 10, PAL.ink, { size: 20, weight: 600, bg: PAL.panel });
+    text(ctx, `× ${fmt(ratio, 2)}`, (xa + xb) / 2, Y(vals[n]) - 44, PAL.ink, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
     text(ctx, 'valence', box.l + slot * n / 2, box.b + 60, PAL.muted, { size: 17, align: 'center' });
     text(ctx, 'core', box.l + slot * (n + (7 - n) / 2), box.b + 60, PAL.muted, { size: 17, align: 'center' });
     line(ctx, box.l + slot * n, box.b + 44, box.l + slot * n, box.b + 76, alpha(PAL.ink, 0.35), 2);

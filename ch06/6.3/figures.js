@@ -48,7 +48,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     ctx.save(); ctx.setLineDash([10, 10]); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(CX, CY, R, 0, TAU); ctx.stroke(); ctx.restore();
     dot(ctx, CX, CY, PAL.ink, true, 9);
     arrow(ctx, CX, CY, CX + R * Math.cos(-2.3), CY + R * Math.sin(-2.3), PAL.ink, 3);
-    text(ctx, 'radius r = 100 pm', CX + 12, CY + 30, PAL.ink, { size: 19 });
+    text(ctx, 'radius r = 100 pm', CX, CY + R + 40, PAL.ink, { size: 19, align: 'center' });
     /* the wave: arc length s = rθ, displacement AMP·sin(2πs/λ) outward from the orbit */
     const lap = (t0, t1, a, w) => {
       ctx.save(); ctx.strokeStyle = cw; ctx.globalAlpha *= a; ctx.lineWidth = w; ctx.beginPath();
@@ -66,8 +66,8 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     line(ctx, SX0, SY, SX1, SY, alpha(PAL.ink, 0.35), 2, [10, 10]);
     [SX0, SX1].forEach((x) => line(ctx, x, SY - SAMP - 18, x, SY + SAMP + 18, PAL.muted, 2));
     text(ctx, 'start', SX0, SY + SAMP + 38, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'once around, 628.3 pm', SX1, SY + SAMP + 38, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'The orbit unrolled', (SX0 + SX1) / 2, SY - SAMP - 50, PAL.ink, { size: 20, weight: 600, align: 'center' });
+    text(ctx, 'once around, 628.3 pm', SX1, SY + SAMP + 38, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, 'The orbit unrolled', (SX0 + SX1) / 2, SY + SAMP + 76, PAL.ink, { size: 20, weight: 600, align: 'center' });
     ctx.save(); ctx.strokeStyle = cw; ctx.lineWidth = 5; ctx.beginPath();
     for (let i = 0; i <= 400; i++) { const s = (CIRC * i) / 400, x = X(s), y = SY - SAMP * Math.sin((TAU * s) / L); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); }
     ctx.stroke(); ctx.restore();
@@ -75,7 +75,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const yEnd = SY - SAMP * Math.sin((TAU * CIRC) / L);
     dot(ctx, SX0, SY, cw, true, 9); dot(ctx, SX1, SY, cw, false, 11);
     if (!whole) dot(ctx, SX1, yEnd, cw, true, 9);
-    if (L <= CIRC) hbracket(ctx, X(0), X(L), SY + SAMP + 70, cw, 'λ = ' + fmt(L, 1) + ' pm');
+    if (L <= CIRC) hbracket(ctx, X(0), X(L), SY - SAMP - 16, cw, 'λ = ' + fmt(L, 1) + ' pm', { side: 'above' });
     readout(d.readout, `2\\pi r = n\\klam:\\quad ${fmt(CIRC, 1)}\\ \\text{pm} = ${fmt(n, 2)}\\times ${fmt(L, 1)}\\ \\text{pm}`,
       whole ? 'n is a whole number, so this wavelength gives an allowed standing wave.' : 'n must be a whole number for the electron wave to stand in the orbit.');
   }
@@ -132,7 +132,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     /* the counts along the screen, and the curve they approach */
     const bins = new Array(NB).fill(0);
     for (let i = 0; i < N; i++) bins[Math.min(NB - 1, Math.floor((hits[i][1] - SCR.t) / BH))]++;
-    const top = Math.max(...expect) * Math.max(N, 1), scale = (HB.r - HB.l) / (top * 1.1 || 1);
+    const top = Math.max(Math.max(...expect) * Math.max(N, 1), ...bins), scale = (HB.r - HB.l) / (top * 1.1 || 1);
     line(ctx, HB.l, SCR.t, HB.l, SCR.b, PAL.ink, 2.5);
     ctx.save(); ctx.fillStyle = alpha(ce, 0.45);
     bins.forEach((b, i) => { if (b) ctx.fillRect(HB.l, SCR.t + i * BH + 0.5, b * scale, BH - 1); });
@@ -141,7 +141,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath();
       expect.forEach((p, i) => { const x = HB.l + p * N * scale, y = SCR.t + (i + 0.5) * BH; if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); });
       ctx.stroke(); ctx.restore();
-      text(ctx, '|ψ|²', HB.l + expect[NB / 2] * N * scale + 14, YC, PAL.ink, { size: 22, weight: 600 });
+      text(ctx, '|ψ|²', HB.r, SCR.t + 10, PAL.ink, { size: 22, weight: 600, align: 'right' });
     }
     text(ctx, 'electrons counted at each height', (HB.l + HB.r) / 2, SCR.b + 24, PAL.ink, { size: 19, align: 'center' });
     const lam = HP / (ME * v.v * 1e6);
@@ -157,7 +157,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
    Still: it answers its choice and its slider.
 ===================================================================== */
 (function () {
-  const d = sim('sim-de-broglie', 330);
+  const d = sim('sim-de-broglie', 360);
   const P = {
     e: { name: 'electron', m: ME, range: { min: 0.1, max: 10, step: 0.01, value: 10, unit: '× 10⁶ m/s', dec: 2 }, k: 1e6 },
     p: { name: 'proton', m: MP, range: { min: 0.1, max: 10, step: 0.01, value: 10, unit: '× 10⁶ m/s', dec: 2 }, k: 1e6 },
@@ -165,7 +165,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   };
   const who = F.choice(d.controls, { label: '\\text{particle}', options: [{ value: 'e', label: 'electron' }, { value: 'p', label: 'proton' }, { value: 'ball', label: 'softball' }], value: 'e', aria: 'the moving particle', onInput: (x) => v.range(P[x].range) });
   const v = ctl(d.controls, { label: 'v', cls: '', ...P.e.range, aria: 'the speed of the particle' });
-  const LO = -36, HI = -6, AX = { l: 90, r: 1310, y: 210 };
+  const LO = -36, HI = -6, AX = { l: 90, r: 1310, y: 270 };
   const X = (lg) => AX.l + ((lg - LO) / (HI - LO)) * (AX.r - AX.l);
   const REFS = [{ lg: -10, name: 'an atom, about 10⁻¹⁰ m' }, { lg: -14.5, name: 'a nucleus, about 10⁻¹⁵ to 10⁻¹⁴ m' }];
   function draw() {
@@ -173,12 +173,12 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const vs = q.k === 1 ? fmt(vel, 1) + ' m/s' : sciU(vel, 2) + ' m/s';
     const r = lam / 1e-10;
     const cmp = r > 3 ? `about ${fmt(r, 0)} times the size of an atom` : r > 0.3 ? 'about the size of an atom' : `about ${sciU(1 / r, 1)} times smaller than an atom`;
-    topline(ctx, `A ${q.name} moving at ${vs} has a de Broglie wavelength of ${sciU(lam, 2)} m, ${cmp}.`);
+    topline(ctx, `${q.name === 'electron' ? 'An' : 'A'} ${q.name} moving at ${vs} has a de Broglie wavelength of ${sciU(lam, 2)} m, ${cmp}.`);
     line(ctx, AX.l, AX.y, AX.r, AX.y, cw, 3);
     for (let e = -35; e <= -5; e += 5) { if (e > HI) break; line(ctx, X(e), AX.y, X(e), AX.y + 10, cw, 2); text(ctx, '10' + sup(e), X(e), AX.y + 32, cw, { size: 17, align: 'center' }); }
     for (let e = LO; e <= HI; e++) line(ctx, X(e), AX.y, X(e), AX.y + 5, cw, 1.5);
     text(ctx, 'wavelength (m)', AX.r, AX.y + 66, cw, { size: 20, weight: 600, align: 'right' });
-    REFS.forEach((f, i) => { const x = X(f.lg); line(ctx, x, AX.y - 8, x, AX.y - 58 - 30 * i, PAL.muted, 2, [4, 8]); text(ctx, f.name, x, AX.y - 70 - 30 * i, PAL.ink, { size: 18, align: 'center' }); });
+    REFS.forEach((f, i) => { const x = X(f.lg); line(ctx, x, AX.y - 8, x, AX.y - 108 - 30 * i, PAL.muted, 2, [4, 8]); text(ctx, f.name, x, AX.y - 120 - 30 * i, PAL.ink, { size: 18, align: 'center' }); });
     const x = X(Math.max(LO, Math.min(HI, lg)));
     arrow(ctx, x, AX.y - 60, x, AX.y - 6, cw, 4); dot(ctx, x, AX.y, cw, true, 9);
     F.label(ctx, `λ of the ${q.name}`, x, AX.y - 60, { side: 'above', color: cw, size: 20 });
@@ -279,7 +279,7 @@ const ANGMAX = [1, 1, 2];
     V.invalidate();
     const { ctx } = begin(c2), nodes = o.n - o.l - 1;
     topline(ctx, `The ${key} orbital has n − l − 1 = ${o.n} − ${o.l} − 1 = ${nodes} radial node${nodes === 1 ? '' : 's'}` + (nodes ? ', at ' + o.nodes.map((r) => fmt(r * A0, 0) + ' pm').join(' and ') + ' from the nucleus.' : ', so its probability never falls to zero between the nucleus and the outside.'));
-    const box = { l: 150, r: 1300, t: 96, b: 262 };
+    const box = { l: 150, r: 1300, t: 120, b: 262 };
     const { X, Y } = axes(ctx, box, [0, 1000], [0, 0.6], { xl: 'distance from nucleus (pm)', yl: 'probability density', nx: 5, ny: 3, fy: () => '' });
     /* the area under the curve in the colour of the sign of ψ there */
     const fill = (k, a) => F.faded(ctx, a, [0, 0], () => {
@@ -292,7 +292,7 @@ const ANGMAX = [1, 1, 2];
     if (orb.from && orb.from !== key) fill(orb.from, 1 - orb.a(key));
     fill(key, orb.a(key));
     orb.curve(ctx, (k) => pOf(k), 0, 1000, X, Y, PAL.ink, 4, 240);
-    o.nodes.forEach((r) => { const x = X(r * A0); line(ctx, x, box.t, x, box.b, PAL.muted, 2, [4, 8]); text(ctx, 'node', x, box.t - 12, PAL.muted, { size: 17, align: 'center' }); });
+    o.nodes.forEach((r) => { const x = X(r * A0); line(ctx, x, box.t, x, box.b, PAL.muted, 2, [4, 8]); text(ctx, 'node', x + 8, box.t + 14, PAL.muted, { size: 17 }); });
     readout(d.readout, `n - l - 1 = ${o.n} - ${o.l} - 1 = ${nodes}`, 'At a radial node ψ is zero, and on either side of it ψ has opposite signs, drawn in the two colors.');
   }
   still(d, draw);
@@ -369,7 +369,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
     }
     const l = LOF[sub.value], name = byV[to].label;
     readout(d.readout, `l = ${l}:\\quad 2l + 1 = 2(${l}) + 1 = ${2 * l + 1}\\ \\text{orbital${l ? 's' : ''}}`,
-      l ? `The ${sub.value} subshell has ${WORDS[2 * l + 1]} orbitals, one for each value of m_l from −${l} to +${l}; they differ in their orientation in space.` : 'The s subshell has one orbital, a sphere, so it has no orientation to choose.');
+      l ? `The ${sub.value} subshell has ${WORDS[2 * l + 1]} orbitals, one for each value of mₗ from −${l} to +${l}; they differ in their orientation in space.` : 'The s subshell has one orbital, a sphere, so it has no orientation to choose.');
     V.headline(l ? `The <em>${name}</em> orbital, one of the ${WORDS[2 * l + 1]} <em>${sub.value}</em> orbitals` : 'The <em>s</em> orbital is a sphere');
   }
   still(d, draw);

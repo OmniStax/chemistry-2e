@@ -173,3 +173,16 @@ of light, so the two hues have to meet:
   axis.
 - No coercion: a radius is not a wavelength, an ionization energy in kJ/mol
   is an energy (per-mole by its unit), not an amount.
+
+## As built, 2026-09-28
+
+- 6.1 binds `wavelength`, `frequency`, `energy` and `temperature` on its
+  canvases, the colours of visible light as fact, and a metal through `F.el`.
+- 6.3 binds `wavelength` and `energy` on its canvases and `mass` in the de
+  Broglie readouts only, through `\km`; the lobe signs take `F.cat`, and the
+  electron of the orbit wave and the double slit takes the electron's entry
+  of `F.el`.
+- 6.4 binds `energy` on the subshell ladder of the Aufbau figure, the blocks
+  through `F.cat`, and its atoms through `F.el`.
+- 6.5 binds `energy` on IE and EA, and every atom and ion through `F.el`;
+  the radii stay in ink.

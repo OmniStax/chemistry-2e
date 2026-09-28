@@ -59,3 +59,7 @@ Three Check Your Learning items inline after their examples (hosts in `ex-freque
 - glossary `photon`, `wave-particle duality` → 6.1-photoelectric
 - glossary `line spectrum` → 6.1-line-spectra
 - The concept `photon-energy`'s evidence names Example 6.2 and its Check Your Learning correctly; nothing to change.
+
+### Applied by the chapter pass (2026-09-28)
+
+Every equation anchor above is written. The variable rows, which the list does not name, are anchored as well: λ, ν and c to `6.1-wave-speed`; E, h, n, λ_max and T to `6.1-blackbody`; R∞ and k to `6.1-rydberg`. Glossary rows carry no anchor field, so the glossary lines are not written; the terms "wavelength (λ)" and "frequency (ν)" are now plain words.

@@ -60,3 +60,7 @@ The Link to Learning note is dropped. Figure 6.34's alt text prints Ru 720 and "
 - glossary 6.5/isoelectronic → 6.5-isoelectronic
 - variables 6.5/Z, 6.5/Z_eff → 6.5-effective-nuclear-charge; 6.5/r → 6.5-covalent-radius; 6.5/IE → 6.5-ionization-energy; 6.5/EA → 6.5-electron-affinity
 - concept edges: `effective-nuclear-charge` → `valence-and-core-electrons`; `covalent-radius-trend` → `effective-nuclear-charge`, `principal-quantum-number-shells`; `ionic-radius-trend` → `ion-configurations`; `ionization-energy-trend` → `covalent-radius-trend`, `orbital-energy-order`, `hunds-rule`; `successive-ionization-energies` → `valence-and-core-electrons`; `electron-affinity-trend` → `effective-nuclear-charge`; `predicting-periodic-trends` → the five trends (only where not already present)
+
+### Applied by the chapter pass (2026-09-28)
+
+Every variable and equation anchor above is written; glossary rows carry no anchor field. Of the edges, only `ionization-energy-trend` → `hunds-rule` was missing and is added; the others were already present. `predicting-periodic-trends` rests on the four trends it predicts (radii, ionic radii, ionization energy, electron affinity) and is left without an edge to `successive-ionization-energies`. Also added in this pass from the chapter's notes: `classical-atom-instability` → `nuclear-model-of-the-atom` and `hydrogen-like-ions` → `subatomic-particles`.

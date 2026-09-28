@@ -404,7 +404,7 @@ function atomTag(ctx, sym, x, y, r, size) {
     });
     const yx = by + 14 + 4 * 32;
     ctx.save(); ctx.setLineDash([5, 4]); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(KX, yx - 11, 30, 22); ctx.restore();
-    text(ctx, 'observed configuration differs from the building-up order', KX + 42, yx, PAL.ink, { size: 17 });
+    text(ctx, 'observed, not as built up', KX + 42, yx, PAL.ink, { size: 17 });
     /* the headline and the readout */
     const where = s0.group ? 'period ' + s0.period + ', group ' + s0.group : (sel < 90 ? 'the lanthanide series' : 'the actinide series');
     const kind = s0.block === 's' || s0.block === 'p' ? 'a main group element' : s0.block === 'd' ? 'a transition element' : 'an inner transition element';
@@ -445,7 +445,7 @@ function atomTag(ctx, sym, x, y, r, size) {
     const SZ = 50, X = 230, Y = 140;
     const { at } = cfgText(ctx, [['1s', 2], ['2s', 2], ['2p', 6], ['3s', 1]], X, Y, PAL.ink, { size: SZ });
     hbracket(ctx, at[0][0], at[8][1], Y + 44, PAL.ink, 'core electrons', { side: 'below' });
-    hbracket(ctx, at[9][0], at[11][1], Y + 44, PAL.ink, 'valence electron', { side: 'below' });
+    hbracket(ctx, at[9][0], at[11][1], Y - 52, PAL.ink, 'valence electron');
     const AX = 900;
     text(ctx, 'Abbreviation', AX, Y - 70, PAL.muted, { size: 22 });
     cfgText(ctx, [['3s', 1]], AX, Y, PAL.ink, { size: SZ, pre: '[Ne]' });

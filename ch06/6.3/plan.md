@@ -127,3 +127,7 @@ r and every radius and distance. `F.cat(0)`/`F.cat(1)` for the two signs of ψ;
 - equations `eq-hydrogen-transition` → 6.3-shells
 - glossary anchors: Heisenberg uncertainty principle → 6.3-uncertainty; wavefunction, quantum mechanics, electron density → 6.3-quantum-model; principal quantum number, shell → 6.3-shells; atomic orbital, secondary (angular momentum) quantum number, subshell, s orbital, p orbital, d orbital, f orbital → 6.3-subshells; magnetic quantum number, degenerate orbitals → 6.3-orientation; spin quantum number → 6.3-spin; Pauli exclusion principle → 6.3-pauli
 - concept `working-with-quantum-numbers`: its evidence is Examples 6.7 to 6.9 and exercises fs-idm226431552, fs-idm5890656, fs-idm139949520, fs-idm24126560; no change needed if already so.
+
+### Applied by the chapter pass (2026-09-28)
+
+Every variable and equation anchor above is written. Glossary rows carry no anchor field, so the glossary line is not written; the seven terms that carried HTML are now plain words. The evidence of `working-with-quantum-numbers` already names Examples 6.7 to 6.9 and the four exercises, and is unchanged.

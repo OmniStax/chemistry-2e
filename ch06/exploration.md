@@ -142,6 +142,10 @@ values" for m_l; the key of fs-idm127368704 writes m₁ for m_l;
 fs-idm68696640 writes E = mν²/2 and λ = h/mν with ν where v is meant. The
 converter's stray `**` in the CYL answer "2**s" (Example 6.7) and in the key
 of fs-idm5890656 is conversion residue, not the book's, and is dropped.
+6.5: the alt text of Figure 6.34 prints Ru 720 and puts "Be 2370" in group
+18, and the alt text of Figure 6.35 prints S −20 and Ne −30, where the
+images print Ru 710, He 2370, S −200 and Ne +30*; the folded figure follows
+the images.
 
 ## Depth under root rule 28
 

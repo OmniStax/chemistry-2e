@@ -85,9 +85,7 @@ id · replaces · concepts · value add · motion · controls · headline · gra
    valence electrons underlined as the book underlines gallium's; the blocks
    by `F.cat(0..3)` (s, p, d, f); exceptions to the building-up order outlined
    dashed, so the reader sees they cluster in the d and f blocks · still ·
-   controls: `F.choice` view ('filling' = 6.27, each cell names the subshell
-   being filled; 'configuration' = 6.29, each cell names its last subshell with
-   its electron count) and `F.select` element (118 options, default Ga, the
+   controls (the two book views differ only in a superscript, so they are one view: each cell names its last subshell with its count): `F.select` element (118 options, default Ga, the
    book's valence example); every cell names itself and its full observed
    configuration under the pointer · headline names the element, its block
    and category · readout the core-abbreviated configuration with valence
@@ -148,3 +146,7 @@ arrows, configuration text, Z and every quantum number.
 - glossary `6.4/valence electrons` → 6.4-valence-core
 - glossary `6.4/valence shell` → 6.4-periodic-table
 - 6.5 `exercise_notes`: name fs-idm150214960, fs-idm121823200 and fs-idp177066416 as moved to 6.4
+
+### Applied by the chapter pass (2026-09-28)
+
+Glossary rows carry no anchor field, so the glossary lines are not written. The `exercise_notes` of 6.5 already name fs-idm150214960, fs-idm121823200 and fs-idp177066416 as set on 6.4 with `source_section` 6.5, and 6.4's notes agree.

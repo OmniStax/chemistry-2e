@@ -809,6 +809,18 @@
     {
       "concept": "aufbau-principle",
       "prereq": "atomic-number-and-mass-number"
+    },
+    {
+      "concept": "ionization-energy-trend",
+      "prereq": "hunds-rule"
+    },
+    {
+      "concept": "classical-atom-instability",
+      "prereq": "nuclear-model-of-the-atom"
+    },
+    {
+      "concept": "hydrogen-like-ions",
+      "prereq": "subatomic-particles"
     }
   ]
 }

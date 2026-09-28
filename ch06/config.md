@@ -47,3 +47,11 @@ Each line is a setting and its value.
 | Labels | a figure carrying the book's number is a Figure; one that replaces nothing in the book is a Sim and carries no number |
 | `ai` and `built` | `{"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"}` and `2026-09-28` on every page of this pass; 6.2 keeps its own of 2026-09-12 |
 | Book manifest | `ch06` in `book.json` `chapters` through `ost merge`, never by hand |
+
+## What the build changed
+
+- 6.4's Aufbau figure sets Z, the number of electrons, as a slider from 1 to 118 rather than a choice of element. The procedure adds one electron at a time, so the ordered count is the idea, and the name of the element rides in the headline.
+- Four figures fold two of the book's: Figure 6.14 + 6.15 (6.2, as before), Figure 6.27 + 6.29 (the blocks of the periodic table), Figure 6.31 + 6.33 (the radius and ionization-energy trends) and Figure 6.34 + 6.35 (the ionization energies and electron affinities on the periodic table). The photograph of radio and cell towers, Figure 6.4, is left out.
+- Every variable and equation row of 6.1, 6.3 and 6.5 carries its anchor; 6.4 writes no variable or equation rows.
+- Three concept edges were staged and merged in the chapter pass: `ionization-energy-trend` rests on `hunds-rule`, `classical-atom-instability` on `nuclear-model-of-the-atom`, and `hydrogen-like-ions` on `subatomic-particles`, so the chapter now carries 90 prerequisite edges.
+- The eleven glossary terms of 6.1 and 6.3 that carried HTML are plain words, such as "wavelength (λ)" and "magnetic quantum number (mₗ)".

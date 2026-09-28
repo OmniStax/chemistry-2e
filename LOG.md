@@ -894,3 +894,66 @@ and the summary's "is in advantage of".
 Checks: `ost check` clean for the book, `npm test`, `astro check`, a build,
 and every page of the chapter in light and dark with no console errors, no
 KaTeX errors and no missing images.
+
+
+## Pass 11 (2026-09-28): Chapter 6, Electronic Structure and Periodic Properties of Elements, is built and passed
+
+Prompted by: Chen asking for the book to be finished without check-ins, a plan
+file written before each page and left for review after.
+
+What was built. Five pages today: the chapter introduction in `ch06/intro/`
+with the Crab Nebula of Figure 6.1, and the sections 6.1, 6.3, 6.4 and 6.5,
+none of them folded; 6.2 was built on 2026-09-12 and its figures are
+untouched. Thirty-nine figure rows across the four sections, numbered 6.2 to
+6.35 as the publisher numbers them. In 6.1 a traveling wave, the
+electromagnetic spectrum, the AM and FM signals, a vibrating string, the
+blackbody curves and the photoelectric effect move or answer their sliders,
+and the fringes, the drumhead, the solar spectrum, the neon sign and the line
+spectra are kept as photographs; the radio towers of Figure 6.4 are left out.
+In 6.3 the electron wave about an orbit, electrons arriving one by one at a
+double slit, the radial distributions, and the s, p and d orbitals in three
+dimensions with their lobes signed, beside a Sim of the de Broglie
+wavelength from an electron to a softball. In 6.4 the Aufbau ladder filled
+one electron at a time, the notation and the filling order, the periodic
+table by blocks with Figures 6.27 and 6.29 folded into one, and the
+unnumbered orbital diagrams of hydrogen to neon and of phosphorus. In 6.5 the
+halogen radii, the trends of radius and ionization energy with Figures 6.31
+and 6.33 folded, the atoms and their ions, the ionization energies and
+electron affinities on the periodic table with Figures 6.34 and 6.35 folded,
+and a Sim of successive ionization energies. Seventy-five exercises, eleven
+of them the Check Your Learning items placed inline after their examples,
+each with its host. Three exercises moved from 6.5 to 6.4, which relates
+configurations to the groups: the group of ns²np³, the group of ns², and why
+aluminum is in group 13 and not group 3, each with its `source_section`.
+Seven unkeyed numerical items of 6.1 are left out and named; the unkeyed
+conceptual items of 6.3, 6.4 and 6.5 carry a suggested approach, and the
+picks among the book's options are kept open with their options.
+
+The build changed one default of the config: 6.4 sets Z, the number of
+electrons, as a slider from 1 to 118 rather than a choice of element, since
+the Aufbau procedure adds one electron at a time and the ordered count is the
+idea.
+
+What the chapter pass changed. Every equation and variable row of 6.1, 6.3
+and 6.5 anchored to the span that introduces it: fifteen equations and
+thirty-two variables. Three prerequisite edges staged and merged: the trend
+in ionization energy rests on Hund's rule, and now that Chapter 2 is in the
+book, the instability of the classical atom rests on the nuclear model and
+the hydrogen-like ions on the subatomic particles. The eleven glossary terms
+that carried HTML are plain words. Two sentences of 6.2's Figure headings
+are now in American spelling. Three figures were set right after the page
+read: the bracket of the valence electron of sodium no longer runs into the
+bracket of the core, the labels of the de Broglie scale no longer run into one
+another, and the radial graph of 6.3 names its axis below the headline.
+
+Errata carried as printed and named in `notes`: Figure 6.9's caption names a
+blue curve that is drawn grey, and "Neils Bohr" in 6.1; "the special
+distribution" for spatial, Example 6.7's "*m*" for m_l, a key's m₁, and ν
+written for velocity in one exercise of 6.3. The alt text of Figures 6.34 and
+6.35 disagrees with the images for ruthenium, helium, sulfur and neon, and
+the folded figure follows the images.
+
+Checks: `ost check` and the content check clean for the book, `npm test`
+(663 of 664 passing; the one failure is a fold in Chapter 9, still being built), `astro check` with no errors, a build, and every page of the
+chapter in light and dark with no console errors, no KaTeX errors, no missing
+images and every exercise card rendered.

@@ -243,7 +243,7 @@ function frame(r) {
     arrow(ctx, bx1 + 40, fy, fx - 120, fy, PAL.muted, 4);
     arrow(ctx, fx + 120, fy, 1110 - 165 - 28, fy, PAL.muted, 4);
     /* the state letter is italic, as the book sets it */
-    const fo = { size: 52, weight: 600 }, wa = F.measure(ctx, 'H_2O(', fo), wb = F.measure(ctx, s, fo), wc = F.measure(ctx, ')', fo), fl = fx - (wa + wb + wc) / 2;
+    const fo = { size: 52, weight: 600 }, wa = F.measure(ctx, 'H_2O(', fo), wb = F.measure(ctx, s, { ...fo, italic: true }), wc = F.measure(ctx, ')', fo), fl = fx - (wa + wb + wc) / 2;
     text(ctx, 'H_2O(', fl, fy, PAL.ink, fo);
     text(ctx, s, fl + wa, fy, PAL.ink, { ...fo, italic: true });
     text(ctx, ')', fl + wa + wb, fy, PAL.ink, fo);

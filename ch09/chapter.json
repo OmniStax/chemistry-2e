@@ -50,44 +50,51 @@
       "type": "pressure",
       "meaning": "the pressure a gas exerts, the force of its molecules’ collisions divided by the area they strike",
       "unit": "Pa (also kPa, bar, psi, atm, torr and mm Hg)",
-      "section": "9.1"
+      "section": "9.1",
+      "anchor": "9.1-pressure"
     },
     {
       "sym": "F_force",
       "meaning": "the force exerted on a surface",
       "unit": "N",
-      "section": "9.1"
+      "section": "9.1",
+      "anchor": "9.1-pressure"
     },
     {
       "sym": "A_area",
       "meaning": "the area over which the force is applied",
       "unit": "m²",
-      "section": "9.1"
+      "section": "9.1",
+      "anchor": "9.1-pressure"
     },
     {
       "sym": "p_hydro",
       "type": "pressure",
       "meaning": "the hydrostatic pressure, the pressure a column of fluid exerts because of gravity",
       "unit": "Pa",
-      "section": "9.1"
+      "section": "9.1",
+      "anchor": "9.1-barometer"
     },
     {
       "sym": "h_col",
       "meaning": "the height of the column of fluid",
       "unit": "m",
-      "section": "9.1"
+      "section": "9.1",
+      "anchor": "9.1-barometer"
     },
     {
       "sym": "ρ",
       "meaning": "the density of the fluid",
       "unit": "kg/m³",
-      "section": "9.1"
+      "section": "9.1",
+      "anchor": "9.1-barometer"
     },
     {
       "sym": "g_grav",
       "meaning": "the acceleration due to gravity",
       "unit": "m/s²",
-      "section": "9.1"
+      "section": "9.1",
+      "anchor": "9.1-barometer"
     },
     {
       "sym": "P",
@@ -196,141 +203,162 @@
       "sym": "d",
       "meaning": "the density of a gas, its mass divided by its volume",
       "unit": "g/L",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-density"
     },
     {
       "sym": "MM",
       "type": "mass",
       "meaning": "the molar mass of the gas, its mass divided by its amount in moles",
       "unit": "g/mol",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-density"
     },
     {
       "sym": "m",
       "type": "mass",
       "meaning": "the mass of the gas sample",
       "unit": "g",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-density"
     },
     {
       "sym": "P_total",
       "type": "pressure",
       "meaning": "the total pressure of a mixture of gases",
       "unit": "atm",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-dalton"
     },
     {
       "sym": "P_A",
       "type": "pressure",
       "meaning": "the partial pressure of gas A, the pressure it would exert alone in the container",
       "unit": "atm",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-dalton"
     },
     {
       "sym": "P_B",
       "type": "pressure",
       "meaning": "the partial pressure of gas B",
       "unit": "atm",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-dalton"
     },
     {
       "sym": "P_C",
       "type": "pressure",
       "meaning": "the partial pressure of gas C",
       "unit": "atm",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-dalton"
     },
     {
       "sym": "X_A",
       "meaning": "the mole fraction of gas A, its moles divided by the total moles of the mixture",
       "unit": "none",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-dalton"
     },
     {
       "sym": "n_A",
       "type": "amount",
       "meaning": "the amount of gas A in the mixture",
       "unit": "mol",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-dalton"
     },
     {
       "sym": "n_total",
       "type": "amount",
       "meaning": "the total amount of all the gases in the mixture",
       "unit": "mol",
-      "section": "9.3"
+      "section": "9.3",
+      "anchor": "9.3-dalton"
     },
     {
       "sym": "MM_A",
       "type": "mass",
       "meaning": "the molar mass of gas A",
       "unit": "g/mol",
-      "section": "9.4"
+      "section": "9.4",
+      "anchor": "9.4-graham"
     },
     {
       "sym": "MM_B",
       "type": "mass",
       "meaning": "the molar mass of gas B",
       "unit": "g/mol",
-      "section": "9.4"
+      "section": "9.4",
+      "anchor": "9.4-graham"
     },
     {
       "sym": "KE",
       "type": "energy",
       "meaning": "the kinetic energy of a particle of mass m moving at speed u",
       "unit": "J",
-      "section": "9.5"
+      "section": "9.5",
+      "anchor": "9.5-speeds"
     },
     {
       "sym": "u",
       "meaning": "the speed of one gas molecule",
       "unit": "m/s",
-      "section": "9.5"
+      "section": "9.5",
+      "anchor": "9.5-speeds"
     },
     {
       "sym": "u_rms",
       "meaning": "the root mean square speed of the molecules of a gas, the square root of the average of their squared speeds",
       "unit": "m/s",
-      "section": "9.5"
+      "section": "9.5",
+      "anchor": "9.5-speeds"
     },
     {
       "sym": "KE_avg",
       "type": "energy",
       "meaning": "the average kinetic energy of a mole of gas molecules",
       "unit": "J/mol",
-      "section": "9.5"
+      "section": "9.5",
+      "anchor": "9.5-speeds"
     },
     {
       "sym": "MM",
       "type": "mass",
       "meaning": "the molar mass of the gas, expressed in kilograms per mole in the speed equation",
       "unit": "kg/mol",
-      "section": "9.5"
+      "section": "9.5",
+      "anchor": "9.5-speeds"
     },
     {
       "sym": "Z_comp",
       "meaning": "the compressibility factor, the measured molar volume of a gas divided by the molar volume of an ideal gas at the same temperature and pressure",
       "unit": "none",
-      "section": "9.6"
+      "section": "9.6",
+      "anchor": "9.6-compressibility"
     },
     {
       "sym": "V_m",
       "type": "volume",
       "meaning": "the molar volume of a gas, the volume of 1 mole of it",
       "unit": "L/mol",
-      "section": "9.6"
+      "section": "9.6",
+      "anchor": "9.6-compressibility"
     },
     {
       "sym": "a_vdw",
       "meaning": "the van der Waals constant for the attraction between the molecules of a particular gas",
       "unit": "L² atm/mol²",
-      "section": "9.6"
+      "section": "9.6",
+      "anchor": "9.6-van-der-waals"
     },
     {
       "sym": "b_vdw",
       "meaning": "the van der Waals constant for the size of the molecules of a particular gas",
       "unit": "L/mol",
-      "section": "9.6"
+      "section": "9.6",
+      "anchor": "9.6-van-der-waals"
     }
   ],
   "equations": [
@@ -341,7 +369,8 @@
       "latex": "P=\\frac{F}{A}",
       "ktex": "\\kP=\\frac{F}{A}",
       "condition": "pressure as the force exerted on a given area",
-      "important": true
+      "important": true,
+      "anchor": "9.1-pressure"
     },
     {
       "id": "eq-hydrostatic",
@@ -350,7 +379,8 @@
       "latex": "p=h\\rho g",
       "ktex": "\\kphyd=h\\rho g",
       "condition": "a column of fluid of height h and density ρ under gravity",
-      "important": true
+      "important": true,
+      "anchor": "9.1-barometer"
     },
     {
       "id": "eq-amontons",
@@ -419,7 +449,8 @@
       "latex": "d=\\frac{\\mathcal{M}P}{RT}",
       "ktex": "d=\\frac{\\kMM\\kP}{R\\kT}",
       "condition": "an ideal gas of known identity",
-      "important": false
+      "important": false,
+      "anchor": "9.3-density"
     },
     {
       "id": "eq-gas-molar-mass",
@@ -428,7 +459,8 @@
       "latex": "\\mathcal{M}=\\frac{mRT}{PV}",
       "ktex": "\\kMM=\\frac{\\km R\\kT}{\\kP\\kV}",
       "condition": "a sample of an ideal gas of measured mass, pressure, volume and temperature",
-      "important": false
+      "important": false,
+      "anchor": "9.3-density"
     },
     {
       "id": "eq-dalton",
@@ -437,7 +469,8 @@
       "latex": "P_{Total}=P_A+P_B+P_C+\\ldots=\\Sigma_i P_i",
       "ktex": "\\kPtot=\\kPA+\\kPB+\\kPC+\\ldots=\\Sigma_i P_i",
       "condition": "a mixture of ideal gases that do not react with one another",
-      "important": true
+      "important": true,
+      "anchor": "9.3-dalton"
     },
     {
       "id": "eq-partial-pressure",
@@ -446,7 +479,8 @@
       "latex": "P_A=X_A P_{Total}",
       "ktex": "\\kPA=X_A\\kPtot",
       "condition": "a component A of a mixture of ideal gases",
-      "important": true
+      "important": true,
+      "anchor": "9.3-dalton"
     },
     {
       "id": "eq-mole-fraction",
@@ -455,7 +489,8 @@
       "latex": "X_A=\\frac{n_A}{n_{Total}}",
       "ktex": "X_A=\\frac{\\knA}{\\kntot}",
       "condition": "the mole fraction of a component A of a mixture",
-      "important": true
+      "important": true,
+      "anchor": "9.3-dalton"
     },
     {
       "id": "eq-rate-of-diffusion",
@@ -463,7 +498,8 @@
       "section": "9.4",
       "latex": "\\text{rate of diffusion}=\\frac{\\text{amount of gas passing through an area}}{\\text{unit of time}}",
       "condition": "the definition of a rate of diffusion",
-      "important": true
+      "important": true,
+      "anchor": "9.4-diffusion"
     },
     {
       "id": "eq-graham",
@@ -472,7 +508,8 @@
       "latex": "\\frac{\\text{rate of effusion of gas A}}{\\text{rate of effusion of gas B}}=\\frac{\\sqrt{\\mathcal{M}_B}}{\\sqrt{\\mathcal{M}_A}}",
       "ktex": "\\frac{\\text{rate of effusion of gas A}}{\\text{rate of effusion of gas B}}=\\frac{\\sqrt{\\kMMB}}{\\sqrt{\\kMMA}}",
       "condition": "two gases at the same temperature and pressure",
-      "important": true
+      "important": true,
+      "anchor": "9.4-graham"
     },
     {
       "id": "eq-kinetic-energy",
@@ -480,7 +517,8 @@
       "latex": "\\text{KE}=\\frac{1}{2}mu^2",
       "ktex": "\\kKE=\\frac{1}{2}\\km u^2",
       "condition": "a particle of mass m moving at speed u",
-      "important": false
+      "important": false,
+      "anchor": "9.5-speeds"
     },
     {
       "id": "eq-u-rms-definition",
@@ -488,7 +526,8 @@
       "section": "9.5",
       "latex": "u_{\\text{rms}}=\\sqrt{\\overline{u^2}}=\\sqrt{\\frac{u_1^2+u_2^2+u_3^2+u_4^2+\\ldots}{n}}",
       "condition": "a sample of n particles",
-      "important": true
+      "important": true,
+      "anchor": "9.5-speeds"
     },
     {
       "id": "eq-ke-avg",
@@ -497,7 +536,8 @@
       "latex": "\\text{KE}_{\\text{avg}}=\\frac{3}{2}RT",
       "ktex": "\\kKEavg=\\frac{3}{2}R\\kT",
       "condition": "a mole of an ideal gas, with R = 8.314 J/mol·K",
-      "important": true
+      "important": true,
+      "anchor": "9.5-speeds"
     },
     {
       "id": "eq-u-rms",
@@ -506,7 +546,8 @@
       "latex": "u_{\\text{rms}}=\\sqrt{\\frac{3RT}{\\mathcal{M}}}",
       "ktex": "u_{\\text{rms}}=\\sqrt{\\frac{3R\\kT}{\\kMM}}",
       "condition": "an ideal gas, with the molar mass in kg/mol and R = 8.314 J/mol·K",
-      "important": true
+      "important": true,
+      "anchor": "9.5-speeds"
     },
     {
       "id": "eq-compressibility",
@@ -515,7 +556,8 @@
       "latex": "Z=\\frac{\\text{molar volume of gas at same }T\\text{ and }P}{\\text{molar volume of ideal gas at same }T\\text{ and }P}=\\left(\\frac{PV_m}{RT}\\right)_{\\text{measured}}",
       "ktex": "Z=\\frac{\\text{molar volume of gas at same }T\\text{ and }P}{\\text{molar volume of ideal gas at same }T\\text{ and }P}=\\left(\\frac{\\kP\\kVm}{R\\kT}\\right)_{\\text{measured}}",
       "condition": "a real gas compared with an ideal gas at the same temperature and pressure",
-      "important": true
+      "important": true,
+      "anchor": "9.6-compressibility"
     },
     {
       "id": "eq-van-der-waals",
@@ -524,7 +566,8 @@
       "latex": "\\left(P+\\frac{n^2a}{V^2}\\right)(V-nb)=nRT",
       "ktex": "\\left(\\kP+\\frac{\\kn^2a}{\\kV^2}\\right)(\\kV-\\kn b)=\\kn R\\kT",
       "condition": "a real gas, with the constants a and b of that gas",
-      "important": true
+      "important": true,
+      "anchor": "9.6-van-der-waals"
     }
   ],
   "glossary": [

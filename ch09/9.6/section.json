@@ -1,0 +1,79 @@
+{
+  "id": "9.6",
+  "module": "m68759",
+  "chapter": "9",
+  "title": "Non-Ideal Gas Behavior",
+  "short": "Non-Ideal Gases",
+  "lead": "Real gas molecules take up some space and attract one another, so no real gas obeys the ideal gas law exactly. This section measures the departure with the compressibility factor, Z, explains why it arises at high pressures and low temperatures, and introduces the van der Waals equation, which corrects the ideal gas law for the volume of the molecules and for the attractions between them.",
+  "objectives": [
+    "Describe the physical factors that lead to deviations from ideal gas behavior",
+    "Explain how these factors are represented in the van der Waals equation",
+    "Define compressibility (Z) and describe how its variation with pressure reflects non-ideal behavior",
+    "Quantify non-ideal behavior by comparing computations of gas properties using the ideal gas law and the van der Waals equation"
+  ],
+  "summary_html": "<p>Gas molecules possess a finite volume and experience forces of attraction for one another. Consequently, gas behavior is not necessarily described well by the ideal gas law. Under conditions of low pressure and high temperature, these factors are negligible, the ideal gas equation is an accurate description of gas behavior, and the gas is said to exhibit ideal behavior. However, at lower temperatures and higher pressures, corrections for molecular volume and molecular attractions are required to account for finite molecular size and attractive forces. The van der Waals equation is a modified version of the ideal gas law that can be used to account for the non-ideal behavior of gases under these conditions.</p>",
+  "notes": "The section prints no Link to Learning note. The book’s image of the van der Waals equation is set as an equation with its two labels. Example 9.24’s unit “L² atm mol²” is kept as printed.",
+  "ai": {
+    "text": "Claude Opus 5.5",
+    "figures": "Claude Opus 5.5"
+  },
+  "built": "2026-09-28",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags, weights, hints and the suggested approaches marked as OmniStax’s own are AI-generated. Answers come from the book’s answer key and from the Check your Learning answer. The Check your Learning item is set inline after Example 9.24, and its answer keeps the book’s five significant figures. The unkeyed numerical exercise fs-idm23432208 (0.467 mol of CO₂ in a 0.245-L flask) is left out, and no answer is computed for it. The two unkeyed conceptual exercises are kept with a suggested approach marked as OmniStax’s own. The item that begins “If XX behaved” is kept as printed. Numeric answers accept 2% tolerance.",
+  "figures": [
+    {
+      "id": "sim-z-graph",
+      "kind": "sim",
+      "number": "9.35",
+      "originals": ["/media/ch09/CNX_Chem_09_06_ZvsPgraph.jpg"],
+      "original_caption": "A graph of the compressibility factor (Z) vs. pressure shows that gases can exhibit significant deviations from the behavior predicted by the ideal gas law.",
+      "draws": ["pressure", "volume", "temperature"]
+    },
+    {
+      "id": "sim-real-boxes",
+      "kind": "sim",
+      "number": "9.36",
+      "originals": ["/media/ch09/CNX_Chem_09_06_RealGas2.jpg"],
+      "original_caption": "(a) Attractions between gas molecules serve to decrease the gas volume at constant pressure compared to an ideal gas whose molecules experience no attractive forces. (b) These attractive forces will decrease the force of collisions between the molecules and container walls, therefore reducing the pressure exerted at constant volume compared to an ideal gas.",
+      "draws": ["pressure", "volume", "temperature", "amount"]
+    }
+  ],
+  "coverage": [
+    {"span": "compressibility", "concept": "compressibility-factor", "verb": "introduces"},
+    {"span": "compressibility", "concept": "ideal-gas-law", "verb": "uses"},
+    {"span": "causes", "concept": "causes-of-non-ideal-behavior", "verb": "introduces"},
+    {"span": "causes", "concept": "compressibility-factor", "verb": "uses"},
+    {"span": "causes", "concept": "boyles-law", "verb": "uses"},
+    {"span": "van-der-waals", "concept": "van-der-waals-equation", "verb": "introduces"},
+    {"span": "van-der-waals", "concept": "causes-of-non-ideal-behavior", "verb": "reinforces"},
+    {"span": "van-der-waals", "concept": "compressibility-factor", "verb": "reinforces"},
+    {"span": "van-der-waals", "concept": "ideal-gas-law", "verb": "uses"},
+    {"span": "ideal-conditions", "concept": "conditions-for-ideal-behavior", "verb": "introduces"},
+    {"span": "ex-co2-flask", "concept": "van-der-waals-equation", "verb": "uses"},
+    {"span": "ex-co2-flask", "concept": "ideal-gas-law", "verb": "uses"}
+  ],
+  "exercises": [
+    {"id": "cyl1", "source_id": "fs-idp133812128", "kind": "check-your-learning", "bloom": "Apply", "place": {"at": "inline", "after": "ex-co2-flask"}, "cite": "ideal-conditions", "prompt": "A 560-mL flask contains 21.3 g N<sub>2</sub> at 145 °C. Calculate the pressure of N<sub>2</sub>:<br>(a) from the ideal gas law<br>(b) from the van der Waals equation<br>(c) Explain the reason(s) for the difference.", "answer": {"type": "multi", "generated_by": "source", "parts": [{"part": "(a) ideal gas law", "value": 46.562, "unit": "atm", "hint": "Convert the mass of nitrogen to moles with its molar mass, the temperature to kelvin and the volume to liters, then use P = nRT/V."}, {"part": "(b) van der Waals equation", "value": 46.594, "unit": "atm", "hint": "Use P = nRT/(V − nb) − n²a/V² with a = 1.39 L² atm/mol² and b = 0.0391 L/mol from Table 9.3."}], "solution": "(a) 46.562 atm; (b) 46.594 atm; (c) The van der Waals equation takes into account the volume of the gas molecules themselves as well as intermolecular attractions."}},
+    {"id": "e1", "source_id": "fs-idm14870688", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "compressibility", "prompt": "Graphs showing the behavior of several different gases follow. Which of these gases exhibit behavior significantly different from that expected for ideal gases?<br><img src=\"/media/ch09/CNX_Chem_09_06_Exercise1_img.jpg\" alt=\"Six graphs. Gas A: volume against temperature at constant n and P, a straight line rising from the lower left. Gas B: PV against P at constant n and T, a horizontal straight line. Gas C: moles against PV/RT, a curve that dips slightly and then rises. Gas D: moles against PV/RT at constant n and P, a horizontal straight line. Gas E: volume against temperature at constant n and P, a curve rising from the lower left. Gas F: pressure against temperature at constant n and V, a curve that rises steeply and then more slowly.\">", "answer": {"type": "open", "generated_by": "source", "solution": "Gases C, E, and F"}},
+    {"id": "e2", "source_id": "fs-idp200327600", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "van-der-waals", "prompt": "Explain why the plot of <em>PV</em> for CO<sub>2</sub> differs from that of an ideal gas.<br><img src=\"/media/ch09/CNX_Chem_09_06_RealGases.jpg\" alt=\"A graph of PV in atm L against P in atm from 0 to 2 atm. The ideal gas is a horizontal line near 22.42 atm L. He rises slightly in a straight line. CH4 dips below the ideal line and then rises to cross it just past 1 atm. CO2 dips below the ideal line and then rises to cross it at about 0.8 atm, reaching nearly 22.62 atm L near 1.2 atm.\">", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: for an ideal gas at constant temperature, PV is the same at every pressure, so its plot is a horizontal line. For CO₂, first think about the attractions between its molecules, which are strong (a = 3.59 L² atm/mol² in Table 9.3); at first they pull the molecules together and make the gas more compressible, so PV falls below the ideal line. Then think about the volume of the molecules themselves (b), which makes the gas less compressible as it is crowded, so PV turns upward and crosses the line. Compare this with Figure 9.35, where Z = PV/nRT dips and rises in the same way."}},
+    {"id": "e3", "source_id": "fs-idm29887312", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "ideal-conditions", "prompt": "Under which of the following sets of conditions does a real gas behave most like an ideal gas, and for which conditions is a real gas expected to deviate from ideal behavior? Explain.<br>(a) high pressure, small volume<br>(b) high temperature, low pressure<br>(c) low temperature, high pressure", "answer": {"type": "open", "generated_by": "source", "solution": "The gas behavior most like an ideal gas will occur under the conditions that minimize the chances of significant interactions between the gaseous atoms/molecules, namely, low pressures (fewer atoms/molecules per unit volume) and high temperatures (greater kinetic energies of atoms/molecules make them less susceptible to attractive forces). The conditions described in (b), high temperature and low pressure, are therefore most likely to yield ideal gas behavior."}},
+    {"id": "e4", "source_id": "fs-idm58636672", "kind": "exercise", "bloom": "Remember", "place": {"at": "end"}, "cite": "causes", "prompt": "Describe the factors responsible for the deviation of the behavior of real gases from that of an ideal gas.", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: start from the two assumptions an ideal gas makes about its particles, that they have no significant volume and that they do not attract or repel each other. Then say what is true of real molecules instead: they occupy some volume of their own, which matters when they are crowded together at high pressure, and they attract one another, which matters when they are close together and moving slowly at low temperature. Say how each changes the pressure or the volume compared with an ideal gas, and name the term of the van der Waals equation that corrects for it."}},
+    {"id": "e5", "source_id": "fs-idp137909616", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "van-der-waals", "prompt": "For which of the following gases should the correction for the molecular volume be largest: CO, CO<sub>2</sub>, H<sub>2</sub>, He, NH<sub>3</sub>, SF<sub>6</sub>?", "answer": {"type": "open", "generated_by": "source", "solution": "SF<sub>6</sub>"}},
+    {"id": "e7", "source_id": "fs-idm89275552", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "van-der-waals", "prompt": "Answer the following questions:<br>(a) If XX behaved as an ideal gas, what would its graph of Z vs. P look like?<br>(b) For most of this chapter, we performed calculations treating gases as ideal. Was this justified?<br>(c) What is the effect of the volume of gas molecules on Z? Under what conditions is this effect small? When is it large? Explain using an appropriate diagram.<br>(d) What is the effect of intermolecular attractions on the value of Z? Under what conditions is this effect small? When is it large? Explain using an appropriate diagram.<br>(e) In general, under what temperature conditions would you expect Z to have the largest deviations from the Z for an ideal gas?", "answer": {"type": "open", "generated_by": "source", "solution": "(a) A straight horizontal line at 1.0; (b) When real gases are at low pressures and high temperatures, they behave close enough to ideal gases that they are approximated as such; however, in some cases, we see that at a high pressure and temperature, the ideal gas approximation breaks down and is significantly different from the pressure calculated by the ideal gas equation. (c) The greater the compressibility, the more the volume matters. At low pressures, the correction factor for intermolecular attractions is more significant, and the effect of the volume of the gas molecules on Z would be a small lowering compressibility. At higher pressures, the effect of the volume of the gas molecules themselves on Z would increase compressibility (see Figure 9.35). (d) Once again, at low pressures, the effect of intermolecular attractions on Z would be more important than the correction factor for the volume of the gas molecules themselves, though perhaps still small. At higher pressures and low temperatures, the effect of intermolecular attractions would be larger. See Figure 9.35. (e) Low temperatures"}}
+  ],
+  "exercise_concepts": [
+    {"exercise": "cyl1", "concept": "van-der-waals-equation", "weight": 2, "weights_by": "ai"},
+    {"exercise": "cyl1", "concept": "ideal-gas-law", "weight": 1, "weights_by": "ai"},
+    {"exercise": "e1", "concept": "compressibility-factor", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e1", "concept": "conditions-for-ideal-behavior", "weight": 1, "weights_by": "ai"},
+    {"exercise": "e2", "concept": "causes-of-non-ideal-behavior", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e2", "concept": "compressibility-factor", "weight": 1, "weights_by": "ai"},
+    {"exercise": "e3", "concept": "conditions-for-ideal-behavior", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e4", "concept": "causes-of-non-ideal-behavior", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e5", "concept": "van-der-waals-equation", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e5", "concept": "causes-of-non-ideal-behavior", "weight": 1, "weights_by": "ai"},
+    {"exercise": "e7", "concept": "compressibility-factor", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e7", "concept": "conditions-for-ideal-behavior", "weight": 1, "weights_by": "ai"},
+    {"exercise": "e7", "concept": "causes-of-non-ideal-behavior", "weight": 1, "weights_by": "ai"}
+  ]
+}

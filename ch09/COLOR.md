@@ -10,8 +10,9 @@ of gas on it renders in the element colours of the gas it is, which is the
 book's own convention and not a binding.
 
 9.2 was built on 2026-09-12 and everything this file says of it stands. The
-rest of the chapter was planned on 2026-09-28, and the section table below
-and the section "The other sections" say what each of them binds.
+rest of the chapter was planned and built on 2026-09-28, and the section table
+below and the section "The other sections" say what each of them binds as
+built.
 
 ## What the chapter binds
 
@@ -43,22 +44,26 @@ Section by section:
 | `intro` | nothing; one photograph |
 | 9.1 | `pressure` |
 | 9.2 | `pressure`, `volume`, `temperature`, `amount` |
-| 9.3 | `pressure`, `volume`, `temperature`, `amount`, `mass` |
-| 9.4 | `mass`, and `time` only if a figure reads an effusion time |
-| 9.5 | `temperature`, `energy`, `mass` |
+| 9.3 | `pressure`, `volume`, `temperature`, `mass` |
+| 9.4 | `mass` |
+| 9.5 | `temperature`, `energy`, `mass`, `pressure`, `volume`, `amount` |
 | 9.6 | `pressure`, `volume`, `temperature`, `amount` |
 
 ## The other sections
 
 - **9.1** binds `pressure` alone: the gauge and the P of P = F/A, the hydrostatic
   pressure p of p = hρg (`\kphyd`), the atmospheric column and the gas in a
-  manometer read as a pressure. Force, area, the height h of a liquid column,
+  manometer read as a pressure. The manometer's two pressures are variants
+  of `pressure` with rows of their own, P_gas (`\kPgas`) and P_atm
+  (`\kPatm`): same hue. Force, area, the height h of a liquid column,
   the density ρ and g are ink: a column height is a length, even when it stands
   for a pressure, and the readout converts it. Mercury and water in a barometer
   or a manometer are drawn as the substances they are (mercury's metal gray,
   water at a fixed ink opacity, as 9.2's bath), never in the pressure hue.
 - **9.3** adds `mass` for the molar mass ℳ (`\kMM`) and a sample's mass m, and
-  keeps the four gas-law hues. Density d and the mole fraction X are ink. The
+  keeps three of the four gas-law hues; `amount` is not bound as built,
+  since no figure draws a count of moles, and n, n_A and n_Total render in
+  ink on this page. Density d and the mole fraction X are ink. The
   partial pressures P_A, P_B, P_C and P_Total are variants of `pressure`
   (`\kPA`, `\kPB`, `\kPC`, `\kPtot`): same hue. Where several gases share one
   canvas (Dalton's cylinders, a mixture's bar), each gas is told apart by its
@@ -68,7 +73,7 @@ Section by section:
   Figure 9.20 become named gases. The vapor-pressure curve of Figure 9.22 is a
   pressure against a temperature, both axes in their hues.
 - **9.4** binds `mass` for the molar masses ℳ_A and ℳ_B (`\kMMA`, `\kMMB`).
-  A rate of effusion is ink: it is not the book's `rate` type, which is the
+  Time is not read by any figure and is not bound. A rate of effusion is ink: it is not the book's `rate` type, which is the
   rate of a reaction, and no rate symbol is staged. Every molecule is `F.el`
   (hydrogen light with an ink outline, oxygen red, helium and argon from the
   palette, the two uranium hexafluorides told apart by a categorical ring,
@@ -79,7 +84,10 @@ Section by section:
   u and u_rms are ink: the book declares no speed type and a type is not
   added for one section. The speed distributions at several temperatures or
   for several gases are instances told apart by `F.cat(i)` with a legend, the
-  axis ink.
+  axis ink. Figure 9.31 also binds `pressure`, `volume` and `amount`: its
+  readout states the two states of each law in their type hues (`\kPone`,
+  `\kPtwo`, `\kVone`, `\kVtwo`, `\knone`, `\kntwo`) and the body of gas in
+  each cylinder is the volume hue.
 - **9.6** binds the four gas-law hues. Z, a and b are untyped and ink; the
   molar volume V_m is a variant of `volume` (`\kVm`). On the Z graph each gas's
   curve takes `F.cat(i)`, the ideal line is ink and dashed. The book's image

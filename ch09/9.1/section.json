@@ -1,0 +1,664 @@
+{
+ "id": "9.1",
+ "module": "m68750",
+ "chapter": "9",
+ "title": "Gas Pressure",
+ "short": "Gas Pressure",
+ "lead": "A gas presses on every surface it touches, because its molecules strike that surface over and over, and the pressure is the force of those collisions divided by the area they act on. This section defines pressure, relates the many units in which it is reported, and shows how a barometer measures the pressure of the atmosphere and a manometer the pressure of a gas in a container, both by the height of a column of liquid.",
+ "objectives": [
+  "Define the property of pressure",
+  "Define and convert among the units of pressure measurements",
+  "Describe the operation of common tools for measuring gas pressure",
+  "Calculate pressure from manometer data"
+ ],
+ "summary_html": "<p>Gases exert pressure, which is force per unit area. The pressure of a gas may be expressed in the SI unit of pascal or kilopascal, as well as in many other units including torr, atmosphere, and bar. Atmospheric pressure is measured using a barometer; other gas pressures can be measured using one of several types of manometers.</p>",
+ "notes": "The Link to Learning note is left out: a video of a railway tanker car imploding when its internal pressure is decreased, and a smaller demonstration of the same effect.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and the suggested approaches marked as OmniStax’s own are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The four Check Your Learning items are set inline after their examples. The unkeyed numerical exercises fs-idp74012224 (Redding), fs-idp30544832 (Kansas City), fs-idp128422496 (Mars), fs-idm81032176 (the gas cylinder at 14.82 MPa), fs-idp27847856 (the open-end manometer at 6.00 in.) and fs-idm35876656 (the open-end manometer at 26.4 cm) are left out, and no answer is computed for them. The two unkeyed conceptual exercises are kept with a suggested approach. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "sim-force-area",
+   "kind": "sim",
+   "number": "9.2",
+   "originals": [
+    "/media/ch09/CNX_Chem_09_01_Pressure1.jpg"
+   ],
+   "original_caption": "The atmosphere above us exerts a large pressure on objects at the surface of the earth, roughly equal to the weight of a bowling ball pressing on an area the size of a human thumbnail.",
+   "draws": [
+    "pressure"
+   ]
+  },
+  {
+   "id": "fig-elephant-skater",
+   "kind": "photo",
+   "number": "9.3",
+   "draws": []
+  },
+  {
+   "id": "sim-barometer",
+   "kind": "sim",
+   "number": "9.4",
+   "originals": [
+    "/media/ch09/CNX_Chem_09_01_Barometer.jpg"
+   ],
+   "original_caption": "In a barometer, the height, h, of the column of liquid is used as a measurement of the air pressure. Using very dense liquid mercury (left) permits the construction of reasonably sized barometers, whereas using water (right) would require a barometer more than 30 feet tall.",
+   "draws": [
+    "pressure"
+   ]
+  },
+  {
+   "id": "sim-manometer",
+   "kind": "sim",
+   "number": "9.5",
+   "originals": [
+    "/media/ch09/CNX_Chem_09_01_Manometer.jpg"
+   ],
+   "original_caption": "A manometer can be used to measure the pressure of a gas. The (difference in) height between the liquid levels (h) is a measure of the pressure. Mercury is usually used because of its large density.",
+   "draws": [
+    "pressure"
+   ]
+  },
+  {
+   "id": "fig-manometer-ex3",
+   "kind": "figure",
+   "originals": [
+    "/media/ch09/CNX_Chem_09_01_Manometer1_img.jpg"
+   ],
+   "draws": [
+    "pressure"
+   ]
+  },
+  {
+   "id": "fig-manometer-cyl3",
+   "kind": "figure",
+   "originals": [
+    "/media/ch09/CNX_Chem_09_01_Manometer2_img.jpg"
+   ],
+   "draws": [
+    "pressure"
+   ]
+  },
+  {
+   "id": "fig-manometer-ex4",
+   "kind": "figure",
+   "originals": [
+    "/media/ch09/CNX_Chem_09_01_Manometer3_img.jpg"
+   ],
+   "draws": [
+    "pressure"
+   ]
+  },
+  {
+   "id": "fig-manometer-cyl4",
+   "kind": "figure",
+   "originals": [
+    "/media/ch09/CNX_Chem_09_01_manometer4_img.jpg"
+   ],
+   "draws": [
+    "pressure"
+   ]
+  },
+  {
+   "id": "fig-sphygmomanometer",
+   "kind": "photo",
+   "number": "9.6",
+   "draws": []
+  },
+  {
+   "id": "fig-weather-map",
+   "kind": "photo",
+   "number": "9.7",
+   "draws": []
+  },
+  {
+   "id": "fig-atmosphere",
+   "kind": "photo",
+   "number": "9.8",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "pressure",
+   "concept": "gas-pressure",
+   "verb": "introduces"
+  },
+  {
+   "span": "pressure",
+   "concept": "states-of-matter",
+   "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "pressure-unit-conversion",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "convert-units",
+   "verb": "uses"
+  },
+  {
+   "span": "barometer",
+   "concept": "atmospheric-pressure-and-barometer",
+   "verb": "introduces"
+  },
+  {
+   "span": "barometer",
+   "concept": "hydrostatic-pressure",
+   "verb": "introduces"
+  },
+  {
+   "span": "barometer",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "manometer",
+   "concept": "manometer-pressure",
+   "verb": "introduces"
+  },
+  {
+   "span": "manometer",
+   "concept": "pressure-unit-conversion",
+   "verb": "reinforces"
+  },
+  {
+   "span": "blood-pressure",
+   "concept": "manometer-pressure",
+   "verb": "reinforces"
+  },
+  {
+   "span": "atmosphere",
+   "concept": "atmospheric-pressure-and-barometer",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp156787120",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-units"
+   },
+   "cite": "units",
+   "prompt": "A typical barometric pressure in Kansas City is 740 torr. What is this pressure in atmospheres, in millimeters of mercury, in kilopascals, and in bar?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "atm",
+      "value": 0.974,
+      "unit": "atm",
+      "hint": "Divide by 760 torr per atm."
+     },
+     {
+      "part": "mm Hg",
+      "value": 740,
+      "unit": "mm Hg",
+      "hint": "One torr is about one millimeter of mercury."
+     },
+     {
+      "part": "kPa",
+      "value": 98.7,
+      "unit": "kPa",
+      "hint": "Use 101.325 kPa = 760 torr."
+     },
+     {
+      "part": "bar",
+      "value": 0.987,
+      "unit": "bar",
+      "hint": "1 bar = 100 kPa."
+     }
+    ],
+    "solution": "0.974 atm; 740 mm Hg; 98.7 kPa; 0.987 bar"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm5509408",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-barometric"
+   },
+   "cite": "barometer",
+   "prompt": "Calculate the height of a column of water at 25 °C that corresponds to normal atmospheric pressure. The density of water at this temperature is 1.0 g/cm<sup>3</sup>.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 10.3,
+    "unit": "m",
+    "hint": "Solve p = hρg for h with p = 101,325 Pa and ρ = 1000 kg/m³.",
+    "solution": "10.3 m"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm31201088",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-closed-manometer"
+   },
+   "cite": "manometer",
+   "prompt": "The pressure of a sample of gas is measured with a closed-end manometer. The liquid in the manometer is mercury. Determine the pressure of the gas in:<br>(a) torr<br>(b) Pa<br>(c) bar",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "torr",
+      "value": 150,
+      "unit": "torr",
+      "hint": "Convert 6.0 in. to millimeters: 1 in. = 25.4 mm, and 1 mm Hg is about 1 torr."
+     },
+     {
+      "part": "Pa",
+      "value": 20000,
+      "unit": "Pa",
+      "hint": "Use 101,325 Pa = 760 torr."
+     },
+     {
+      "part": "bar",
+      "value": 0.2,
+      "unit": "bar",
+      "hint": "1 bar = 100,000 Pa."
+     }
+    ],
+    "solution": "(a) ~150 torr; (b) ~20,000 Pa; (c) ~0.20 bar"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm76587328",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-open-manometer"
+   },
+   "cite": "manometer",
+   "prompt": "The pressure of a sample of gas is measured at sea level with an open-end Hg manometer, as shown to the right. Determine the pressure of the gas in:<br>(a) mm Hg<br>(b) atm<br>(c) kPa",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "mm Hg",
+      "value": 642,
+      "unit": "mm Hg",
+      "hint": "The gas side is higher, so the gas pressure is the atmosphere less the column: 760 mm Hg minus 4.63 in. in millimeters."
+     },
+     {
+      "part": "atm",
+      "value": 0.845,
+      "unit": "atm",
+      "hint": "Divide by 760 mm Hg per atm."
+     },
+     {
+      "part": "kPa",
+      "value": 85.6,
+      "unit": "kPa",
+      "hint": "Multiply by 101.325 kPa per atm."
+     }
+    ],
+    "solution": "(a) 642 mm Hg; (b) 0.845 atm; (c) 85.6 kPa"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm21197344",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pressure",
+   "prompt": "Why are sharp knives more effective than dull knives? (Hint: Think about the definition of pressure.)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The cutting edge of a knife that has been sharpened has a smaller surface area than a dull knife. Since pressure is force per unit area, a sharp knife will exert a higher pressure with the same amount of force and cut through material more effectively."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp152253216",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pressure",
+   "prompt": "Why do some small bridges have weight limits that depend on how many wheels or axles the crossing vehicle has?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: think of the weight of the vehicle as a force and of the wheels as the area it rests on. The same weight carried on more wheels or axles is spread over a larger area and over more places along the bridge, so each part of the deck bears a smaller pressure; with fewer wheels the pressure under each is greater, and the limit on the weight has to be lower."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp44372288",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pressure",
+   "prompt": "Why should you roll or belly-crawl rather than walk across a thinly-frozen pond?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Lying down distributes your weight over a larger surface area, exerting less pressure on the ice compared to standing up. If you exert less pressure, you are less likely to break through thin ice."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm32613120",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "units",
+   "prompt": "A typical barometric pressure in Denver, Colorado, is 615 mm Hg. What is this pressure in atmospheres and kilopascals?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "atm",
+      "value": 0.809,
+      "unit": "atm",
+      "hint": "760 mm Hg = 1 atm."
+     },
+     {
+      "part": "kPa",
+      "value": 82.0,
+      "unit": "kPa",
+      "hint": "1 atm = 101.325 kPa."
+     }
+    ],
+    "solution": "0.809 atm; 82.0 kPa"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm87042080",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "units",
+   "prompt": "Canadian tire pressure gauges are marked in units of kilopascals. What reading on such a gauge corresponds to 32 psi?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 220,
+    "unit": "kPa",
+    "hint": "Go from psi to atm with 14.7 psi = 1 atm, then to kPa.",
+    "solution": "2.2 $\\times$ 10<sup>2</sup> kPa"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm51193840",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "units",
+   "prompt": "The pressure of the atmosphere on the surface of the planet Venus is about 88.8 atm. Compare that pressure in psi to the normal pressure on earth at sea level in psi.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "Earth",
+      "value": 14.7,
+      "unit": "psi",
+      "hint": "Sea-level pressure is about 1 atm."
+     },
+     {
+      "part": "Venus",
+      "value": 1300,
+      "unit": "psi",
+      "hint": "Multiply 88.8 atm by 14.7 psi per atm."
+     }
+    ],
+    "solution": "Earth: 14.7 lb in<sup>–2</sup>; Venus: 1.30 × 10<sup>3</sup> lb in<sup>−2</sup>"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm35019472",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "units",
+   "prompt": "Consider this scenario and answer the following questions: On a mid-August day in the northeastern United States, the following information appeared in the local newspaper: atmospheric pressure at sea level 29.97 in. Hg, 1013.9 mbar.<br>(a) What was the pressure in kPa?<br>(b) The pressure near the seacoast in the northeastern United States is usually reported near 30.0 in. Hg. During a hurricane, the pressure may fall to near 28.0 in. Hg. Calculate the drop in pressure in torr.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 101.5,
+      "unit": "kPa",
+      "hint": "1000 mbar = 1 bar = 100 kPa."
+     },
+     {
+      "part": "(b)",
+      "value": 51,
+      "unit": "torr",
+      "hint": "The drop is 2.0 in. Hg; 1 in. = 25.4 mm."
+     }
+    ],
+    "solution": "(a) 101.5 kPa; (b) 51 torr drop"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp32052448",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "barometer",
+   "prompt": "Why is it necessary to use a nonvolatile liquid in a barometer or manometer?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: consider what fills the space above the column. In a barometer that space must be a vacuum, and in a closed-end manometer too, so that the height of the liquid measures only the pressure pushing on the other surface. A volatile liquid would evaporate into that space, and its vapor would press down on the column and make the height a false measure of the pressure."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm55768576",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "manometer",
+   "prompt": "The pressure of a sample of gas is measured at sea level with a closed-end manometer. The liquid in the manometer is mercury. Determine the pressure of the gas in:<br>(a) torr<br>(b) Pa<br>(c) bar<br><img src=\"/media/ch09/CNX_Chem_09_01_Manometer5_img.jpg\" alt=\"A diagram of a closed-end manometer is shown. The mercury is 26.4 cm higher in the closed arm than in the arm joined to the gas.\">",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "torr",
+      "value": 264,
+      "unit": "torr",
+      "hint": "26.4 cm Hg is 264 mm Hg."
+     },
+     {
+      "part": "Pa",
+      "value": 35200,
+      "unit": "Pa",
+      "hint": "760 torr = 101,325 Pa."
+     },
+     {
+      "part": "bar",
+      "value": 0.352,
+      "unit": "bar",
+      "hint": "1 bar = 100,000 Pa."
+     }
+    ],
+    "solution": "(a) 264 torr; (b) 35,200 Pa; (c) 0.352 bar"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm77194176",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "manometer",
+   "prompt": "The pressure of a sample of gas is measured at sea level with an open-end mercury manometer. Assuming atmospheric pressure is 760.0 mm Hg, determine the pressure of the gas in:<br>(a) mm Hg<br>(b) atm<br>(c) kPa<br><img src=\"/media/ch09/CNX_Chem_09_01_Manometer7_img.jpg\" alt=\"A diagram of an open-end manometer is shown. The mercury is 13.7 cm higher in the arm joined to the gas than in the open arm.\">",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "mm Hg",
+      "value": 623,
+      "unit": "mm Hg",
+      "hint": "The gas side is higher, so subtract the column from the atmosphere."
+     },
+     {
+      "part": "atm",
+      "value": 0.82,
+      "unit": "atm",
+      "hint": "760 mm Hg = 1 atm."
+     },
+     {
+      "part": "kPa",
+      "value": 83.1,
+      "unit": "kPa",
+      "hint": "1 atm = 101.325 kPa."
+     }
+    ],
+    "solution": "(a) 623 mm Hg; (b) 0.820 atm; (c) 83.1 kPa"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm25727664",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "manometer",
+   "prompt": "How would the use of a volatile liquid affect the measurement of a gas using open-ended manometers vs. closed-end manometers?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "With a closed-end manometer, no change would be observed, since the vaporized liquid would contribute equal, opposing pressures in both arms of the manometer tube. However, with an open-ended manometer, a higher pressure reading of the gas would be obtained than expected, since <em>P</em><sub>gas</sub> = <em>P</em><sub>atm</sub> + <em>P</em><sub>vol liquid</sub>."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "pressure-unit-conversion"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "hydrostatic-pressure"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "manometer-pressure"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "pressure-unit-conversion"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "manometer-pressure"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "pressure-unit-conversion"
+  },
+  {
+   "exercise": "e1",
+   "concept": "gas-pressure"
+  },
+  {
+   "exercise": "e2",
+   "concept": "gas-pressure"
+  },
+  {
+   "exercise": "e3",
+   "concept": "gas-pressure"
+  },
+  {
+   "exercise": "e4",
+   "concept": "pressure-unit-conversion"
+  },
+  {
+   "exercise": "e5",
+   "concept": "pressure-unit-conversion"
+  },
+  {
+   "exercise": "e6",
+   "concept": "pressure-unit-conversion"
+  },
+  {
+   "exercise": "e7",
+   "concept": "pressure-unit-conversion"
+  },
+  {
+   "exercise": "e8",
+   "concept": "atmospheric-pressure-and-barometer"
+  },
+  {
+   "exercise": "e8",
+   "concept": "manometer-pressure"
+  },
+  {
+   "exercise": "e9",
+   "concept": "manometer-pressure"
+  },
+  {
+   "exercise": "e9",
+   "concept": "pressure-unit-conversion"
+  },
+  {
+   "exercise": "e10",
+   "concept": "manometer-pressure"
+  },
+  {
+   "exercise": "e10",
+   "concept": "pressure-unit-conversion"
+  },
+  {
+   "exercise": "e11",
+   "concept": "manometer-pressure"
+  }
+ ]
+}

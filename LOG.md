@@ -957,3 +957,57 @@ Checks: `ost check` and the content check clean for the book, `npm test`
 (663 of 664 passing; the one failure is a fold in Chapter 9, still being built), `astro check` with no errors, a build, and every page of the
 chapter in light and dark with no console errors, no KaTeX errors, no missing
 images and every exercise card rendered.
+
+
+## Pass 12 (2026-09-28): Chapter 9, Gases, is built and passed
+
+Prompted by: Chen asking for the book to be finished without check-ins, a plan
+file written before each page and left for review after.
+
+What was built. Six pages today: the chapter introduction in `ch09/intro/`
+with Figure 9.1, and the sections 9.1 and 9.3 to 9.6, none of them folded; 9.2
+was built on 2026-09-12 and its figures are untouched. Twenty-seven figure
+rows across the five sections, numbered 9.2 to 9.36 as the publisher numbers
+them: the force over an area of Figure 9.2, the barometer and the manometer of
+Figures 9.4 and 9.5 as flat side elevations with the four manometers of
+Examples 9.3 and 9.4 drawn beside them as still copies, the photographs of
+9.3, 9.6, 9.7, 9.19, 9.26 and 9.29 kept, Dalton's four cylinders of Figure
+9.20 in three dimensions, the collection over water folded with its
+vapor-pressure curve into Figure 9.21 + 9.22, the combining volumes of Figure
+9.23, the diffusion bulbs folded into Figure 9.27 + 9.28, the diffuser of
+Figure 9.30 as a still copy, the kinetic-molecular cylinders of Figure 9.31
+counting their strikes on the walls, the three speed distributions folded
+into Figure 9.32 + 9.33 + 9.34, the compressibility curves of Figure 9.35
+calculated from the van der Waals equation, and the ideal and real boxes of
+Figure 9.36. Two Sims replace nothing: the one straight line of gas density
+against molar mass, and a gas box that tallies the speeds of its own
+molecules under the Maxwell-Boltzmann curve, which answers the dropped gas
+simulator. Sixty-six exercises, eighteen of them the Check Your Learning
+items placed inline after their examples, each with its host. Nothing moved
+between sections. Twenty-seven unkeyed numerical items are left out and named
+in `exercise_notes`; the unkeyed conceptual items are kept with a suggested
+approach.
+
+What the chapter pass changed. Every equation and variable row of the chapter
+anchored to the span that introduces it: fifteen equations and twenty-eight
+variables of the five new sections, beside 9.2's anchors of 2026-09-12. Two
+symbol rows staged and merged for the manometer, P_gas and P_atm, both
+pressures, and the figures of 9.1 now write them. `sim-over-water` named only
+one of its two originals in the text and failed the fold test; it now names
+both. A caption of 9.5 that spoke of "the book" and of its controls was
+rewritten as a sentence in the book's voice. `COLOR.md` records the bindings
+as built: 9.3 binds pressure, volume, temperature and mass but not amount,
+9.4 mass alone, and 9.5 pressure, volume and amount as well as temperature,
+energy and mass.
+
+Errata carried as printed and named in `exploration.md`: Figure 9.20's
+"gasses" and its 6000 kPa against the caption's 600, Example 9.12's "occupies
+of volume", the uranium note's "only about 0.4% enrichment, is achieved",
+"According to Graham's law" at the head of 9.5's Part II, Figure 9.32's ν_p,
+Figure 9.31's panel labelled "Charles's Law", Figure 9.34's lower-case
+caption, Example 9.24's `L² atm mol²` and "If XX behaved".
+
+Checks: `ost check` and the content check clean for the book, `npm test`
+(664 passing), `astro check` with no errors, a build, and every page of the
+chapter in light and dark with no console errors, no KaTeX errors, no missing
+images, every figure drawn and every exercise card rendered.

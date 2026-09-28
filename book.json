@@ -26,7 +26,8 @@
     "ch10",
     "ch11",
     "ch12",
-    "ch13"
+    "ch13",
+    "ch14"
   ],
   "intro": {
     "module": "m68662",
@@ -1076,6 +1077,92 @@
     {
       "sym": "x_ice",
       "latex": "x"
+    },
+    {
+      "sym": "[H3O+]",
+      "latex": "[\\text{H}_{3}\\text{O}^{+}]",
+      "type": "concentration",
+      "macro": "\\kconcHyd"
+    },
+    {
+      "sym": "[OH-]",
+      "latex": "[\\text{OH}^{-}]",
+      "type": "concentration",
+      "macro": "\\kconcOH"
+    },
+    {
+      "sym": "[HA]",
+      "latex": "[\\text{HA}]",
+      "type": "concentration",
+      "macro": "\\kconcHA"
+    },
+    {
+      "sym": "[A-]",
+      "latex": "[\\text{A}^{-}]",
+      "type": "concentration",
+      "macro": "\\kconcAm"
+    },
+    {
+      "sym": "[HB+]",
+      "latex": "[\\text{HB}^{+}]",
+      "type": "concentration",
+      "macro": "\\kconcHBp"
+    },
+    {
+      "sym": "[HA]_0",
+      "latex": "[\\text{HA}]_{0}",
+      "type": "concentration",
+      "macro": "\\kconcHAz"
+    },
+    {
+      "sym": "[H3O+]_eq",
+      "latex": "[\\text{H}_{3}\\text{O}^{+}]_{\\text{eq}}",
+      "type": "concentration",
+      "macro": "\\kconcHydeq"
+    },
+    {
+      "sym": "K_w",
+      "latex": "K_{\\text{w}}"
+    },
+    {
+      "sym": "K_a",
+      "latex": "K_{\\text{a}}"
+    },
+    {
+      "sym": "K_b_ion",
+      "latex": "K_{\\text{b}}"
+    },
+    {
+      "sym": "pK_w",
+      "latex": "\\text{p}K_{\\text{w}}"
+    },
+    {
+      "sym": "pK_a",
+      "latex": "\\text{p}K_{\\text{a}}"
+    },
+    {
+      "sym": "pK_b",
+      "latex": "\\text{p}K_{\\text{b}}"
+    },
+    {
+      "sym": "K_a1",
+      "latex": "K_{\\text{a1}}"
+    },
+    {
+      "sym": "K_a2",
+      "latex": "K_{\\text{a2}}"
+    },
+    {
+      "sym": "K_a3",
+      "latex": "K_{\\text{a3}}"
+    },
+    {
+      "sym": "K_b1",
+      "latex": "K_{\\text{b1}}"
+    },
+    {
+      "sym": "K_b2",
+      "latex": "K_{\\text{b2}}"
     }
   ],
   "exercise_kinds": [
@@ -4544,6 +4631,301 @@
       "name": "Simplifying the algebra when the change is small",
       "why": "When $K$ is small, the change in concentration may be much less than the initial concentration, so the initial concentration minus $x$ can be approximated by the initial concentration. The result must be checked, and the calculation repeated without the approximation if $x$ is not negligible.",
       "evidence": "Example 13.10 finds $x = 8.6\\times10^{-6}$ M for 0.15 M HCN with $K_{c}=4.9\\times10^{-10}$, which is indeed much less than 0.15 M."
+    },
+    {
+      "id": "bronsted-lowry-acids-bases",
+      "kind": "idea",
+      "section": "14.1",
+      "name": "Brønsted-Lowry acids and bases",
+      "why": "Brønsted and Lowry defined acids and bases in terms of the transfer of hydrogen ions: a compound that donates a proton is a Brønsted-Lowry acid, and a compound that accepts a proton is a Brønsted-Lowry base. An acid-base reaction is, thus, the transfer of a proton from a donor to an acceptor.",
+      "evidence": "When hydrogen fluoride dissolves in water, protons are transferred from HF molecules to water molecules, yielding hydronium ions and fluoride ions."
+    },
+    {
+      "id": "conjugate-acid-base-pairs",
+      "kind": "idea",
+      "section": "14.1",
+      "name": "Conjugate acid-base pairs",
+      "why": "When an acid donates H<sup>+</sup>, the species that remains is its conjugate base, because it reacts as a proton acceptor in the reverse reaction; when a base accepts H<sup>+</sup>, it is converted to its conjugate acid. Every Brønsted-Lowry reaction therefore involves two conjugate pairs.",
+      "evidence": "In the reaction of water with ammonia, water donates a proton and becomes OH<sup>−</sup>, its conjugate base, while ammonia accepts it and becomes NH<sub>4</sub><sup>+</sup>, its conjugate acid."
+    },
+    {
+      "id": "write-ionization-equations",
+      "kind": "skill",
+      "section": "14.1",
+      "name": "Writing acid and base ionization equations",
+      "why": "Acid ionization is the reaction of an acid with water to give hydronium ion and the acid’s conjugate base; base ionization is the reaction of a base with water to give hydroxide ion and the base’s conjugate acid. Writing these equations requires identifying which species donates and which accepts the proton.",
+      "evidence": "Pyridine, C<sub>5</sub>NH<sub>5</sub>, undergoes base ionization in water, yielding hydroxide and pyridinium ions, C<sub>5</sub>NH<sub>6</sub><sup>+</sup>."
+    },
+    {
+      "id": "amphiprotic-species",
+      "kind": "idea",
+      "section": "14.1",
+      "name": "Amphiprotic species",
+      "why": "Species capable of either donating or accepting protons are called amphiprotic. When such a species is added to water, both its acid and its base equilibria are established at the same time.",
+      "evidence": "Bicarbonate ion reacts with water as an acid to give CO<sub>3</sub><sup>2−</sup> and as a base to give H<sub>2</sub>CO<sub>3</sub>, and Example 14.3 writes HSO<sub>3</sub><sup>−</sup> reacting as an acid with OH<sup>−</sup> and as a base with HI."
+    },
+    {
+      "id": "water-autoionization",
+      "kind": "result",
+      "section": "14.1",
+      "name": "The autoionization of water and $K_{\\text{w}}$",
+      "why": "Liquid water undergoes autoionization to a very slight extent, and the equilibrium constant for this reaction is the ion-product constant for water, $K_{\\text{w}}$. The process is endothermic, so the extent of ionization, and with it $K_{\\text{w}}$, increases with temperature.",
+      "evidence": "At 25 °C, $K_{\\text{w}}=1.0\\times10^{-14}$, and approximately two out of every billion water molecules are ionized; at 100 °C, $K_{\\text{w}}$ is about $5.6\\times10^{-13}$, roughly 50 times larger.",
+      "eq": "eq-kw"
+    },
+    {
+      "id": "kw-ion-concentrations",
+      "kind": "skill",
+      "section": "14.1",
+      "name": "Calculating [H<sub>3</sub>O<sup>+</sup>] and [OH<sup>−</sup>] from $K_{\\text{w}}$",
+      "why": "Because the product of the hydronium and hydroxide ion concentrations is fixed by $K_{\\text{w}}$, the two are inversely proportional: knowing one gives the other, and in pure water each is the square root of $K_{\\text{w}}$.",
+      "evidence": "Example 14.1 finds [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>] = 1.0 × 10<sup>−7</sup> <em>M</em> in pure water at 25 °C, and Example 14.2 finds [OH<sup>−</sup>] = 5.0 × 10<sup>−9</sup> <em>M</em> when [H<sub>3</sub>O<sup>+</sup>] = 2.0 × 10<sup>−6</sup> <em>M</em>."
+    },
+    {
+      "id": "acidic-basic-neutral",
+      "kind": "idea",
+      "section": "14.2",
+      "name": "Acidic, basic, and neutral solutions",
+      "why": "A solution is neutral if it contains equal concentrations of hydronium and hydroxide ions, acidic if it contains a greater concentration of hydronium ions than hydroxide ions, and basic if it contains a lesser one. Since $K_{\\text{w}}$ depends on temperature, the pH of a neutral solution does too.",
+      "evidence": "At 25 °C a neutral solution has pH = 7.00, whereas at 80 °C neutral solutions exhibit pH = pOH = 6.31 (Table 14.1)."
+    },
+    {
+      "id": "ph-and-poh-scales",
+      "kind": "result",
+      "section": "14.2",
+      "name": "The pH and pOH scales",
+      "why": "Hydronium and hydroxide ion concentrations span many orders of magnitude, so they are expressed with the p-function, the negative base-10 logarithm: pH = −log[H<sub>3</sub>O<sup>+</sup>] and pOH = −log[OH<sup>−</sup>]. Each unit of pH is a tenfold change in hydronium ion concentration.",
+      "evidence": "Figure 14.2 shows the pH and pOH scales for common substances, from 1 <em>M</em> HCl near pH 0 to 1 <em>M</em> NaOH near pH 14.",
+      "eq": "eq-ph"
+    },
+    {
+      "id": "ph-plus-poh",
+      "kind": "result",
+      "section": "14.2",
+      "name": "pH + pOH = p$K_{\\text{w}}$",
+      "why": "Taking the negative logarithm of the $K_{\\text{w}}$ expression shows that the pH and pOH of any aqueous solution sum to p$K_{\\text{w}}$, which is 14.00 at 25 °C.",
+      "evidence": "Example 14.6 finds the pOH of 0.0125 <em>M</em> KOH to be 1.903 and then its pH as 14.00 − 1.903 = 12.10.",
+      "eq": "eq-ph-plus-poh"
+    },
+    {
+      "id": "ph-calculations",
+      "kind": "skill",
+      "section": "14.2",
+      "name": "Converting between concentrations, pH, and pOH",
+      "why": "The definitions of pH and pOH and their sum let us move among [H<sub>3</sub>O<sup>+</sup>], [OH<sup>−</sup>], pH, and pOH; when taking the log of a value, we keep as many decimal places in the result as there are significant figures in the value.",
+      "evidence": "Example 14.4 finds pH 2.92 for stomach acid with [H<sub>3</sub>O<sup>+</sup>] = 1.2 × 10<sup>−3</sup> <em>M</em>, and Example 14.5 finds [H<sub>3</sub>O<sup>+</sup>] = 5 × 10<sup>−8</sup> <em>M</em> for blood at pH 7.3."
+    },
+    {
+      "id": "measuring-ph",
+      "kind": "idea",
+      "section": "14.2",
+      "name": "Measuring pH with meters and indicators",
+      "why": "The acidity of a solution is typically assessed by measuring its pH, directly with a pH meter or visually with colored indicators; the pOH is not usually measured, as it is easily calculated from the pH.",
+      "evidence": "Figure 14.4 compares a research-grade pH meter with a portable one, and Figure 14.5 shows universal indicator and pH paper taking on different colors at different pH values."
+    },
+    {
+      "id": "acid-base-ionization-constants",
+      "kind": "result",
+      "section": "14.3",
+      "name": "Acid and base ionization constants, $K_{\\text{a}}$ and $K_{\\text{b}}$",
+      "why": "The relative strength of an acid or base is the extent to which it ionizes in water, and it is quantified by the equilibrium constant of its ionization, $K_{\\text{a}}$ or $K_{\\text{b}}$, in which water, being the solvent, does not appear. The larger the constant, the stronger the acid or base.",
+      "evidence": "The six common strong acids and six strong bases of Figure 14.6 ionize essentially completely, whereas the ionization constants of weak acids such as HSO<sub>4</sub><sup>−</sup>, HNO<sub>2</sub> and CH<sub>3</sub>CO<sub>2</sub>H span several powers of ten.",
+      "eq": "eq-ka"
+    },
+    {
+      "id": "percent-ionization",
+      "kind": "result",
+      "section": "14.3",
+      "name": "Percent ionization",
+      "why": "Another measure of the strength of an acid is its percent ionization, the equilibrium hydronium ion concentration divided by the initial acid concentration, times 100. Unlike $K_{\\text{a}}$, the percent ionization of a weak acid varies with its initial concentration, decreasing as the concentration increases.",
+      "evidence": "Example 14.7 finds the percent ionization of 0.125 <em>M</em> nitrous acid at pH 2.09 to be 6.5%.",
+      "eq": "eq-percent-ionization"
+    },
+    {
+      "id": "conjugate-pair-strengths",
+      "kind": "result",
+      "section": "14.3",
+      "name": "$K_{\\text{a}}\\times K_{\\text{b}}=K_{\\text{w}}$ for a conjugate pair",
+      "why": "Adding the acid ionization of HA to the base ionization of A<sup>−</sup> gives the autoionization of water, so the product of their constants is $K_{\\text{w}}$. The stronger an acid or base, the weaker its conjugate partner, and the conjugate of a strong acid or base has negligible strength.",
+      "evidence": "Example 14.8 uses $K_{\\text{b}}=2.17\\times10^{-11}$ for the nitrite ion to find $K_{\\text{a}}=4.6\\times10^{-4}$ for HNO<sub>2</sub>; Figure 14.7 and Figure 14.8 rank several conjugate pairs against water.",
+      "eq": "eq-ka-kb-kw"
+    },
+    {
+      "id": "leveling-effect",
+      "kind": "idea",
+      "section": "14.3",
+      "name": "The leveling effect of water",
+      "why": "Acids stronger than H<sub>3</sub>O<sup>+</sup> react completely with water to give H<sub>3</sub>O<sup>+</sup>, and bases stronger than OH<sup>−</sup> react completely to give OH<sup>−</sup>, so in water all such acids and bases appear equally strong. Their differences show up only in a solvent that is a weaker base or acid than water.",
+      "evidence": "Perchloric, hydrochloric and nitric acids are all completely ionized in water, yet Figure 14.8 lists them in order of strength measured in solvents such as acetic acid."
+    },
+    {
+      "id": "ka-kb-from-equilibrium-data",
+      "kind": "skill",
+      "section": "14.3",
+      "name": "Determining $K_{\\text{a}}$ or $K_{\\text{b}}$ from equilibrium concentrations or pH",
+      "why": "Substituting equilibrium concentrations into the ionization constant expression gives $K_{\\text{a}}$ or $K_{\\text{b}}$ directly; when only the formal concentration and the pH are known, the pH gives the equilibrium [H<sub>3</sub>O<sup>+</sup>] and an ICE table gives the rest.",
+      "evidence": "Example 14.9 calculates $K_{\\text{a}}=1.8\\times10^{-5}$ for acetic acid from its equilibrium concentrations, and Example 14.11 calculates $K_{\\text{a}}$ for nitrous acid from a 0.0516-<em>M</em> solution at pH 2.34."
+    },
+    {
+      "id": "weak-acid-base-equilibrium-concentrations",
+      "kind": "skill",
+      "section": "14.3",
+      "name": "Calculating equilibrium concentrations and pH in a weak acid or base solution",
+      "why": "An ICE table built from the initial concentration and the ionization constant gives the equilibrium concentrations. When the constant is small and the initial concentration large, the change $x$ may be neglected against it, provided $x$ is less than 5% of the initial concentration; otherwise the quadratic equation is solved.",
+      "evidence": "Example 14.12 finds pH 2.01 for 0.534 <em>M</em> formic acid with the assumption, and Example 14.14 solves the quadratic for 0.50 <em>M</em> HSO<sub>4</sub><sup>−</sup>, where $x$ is about 15% of the initial concentration."
+    },
+    {
+      "id": "binary-acid-strength",
+      "kind": "idea",
+      "section": "14.3",
+      "name": "Strengths of binary acids across a period and down a group",
+      "why": "Across a row of the periodic table, the acid strength of binary hydrogen compounds increases with the electronegativity of the nonmetal, because the polarity of the H–A bond increases; down a group, it increases as the H–A bond strength decreases.",
+      "evidence": "Figure 14.11 shows acid strength increasing in the order CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O &lt; HF across a period and HF &lt; HCl &lt; HBr &lt; HI down a group."
+    },
+    {
+      "id": "oxyacid-strength",
+      "kind": "idea",
+      "section": "14.3",
+      "name": "Strengths of oxyacids and hydroxy compounds",
+      "why": "In a ternary compound E–O–H, a central atom of low electronegativity makes the E–O bond ionic and the compound a base; a central atom of high electronegativity or high oxidation number draws electron density from the O–H bond and makes the compound an acid. Elements of intermediate electronegativity give amphoteric hydroxides.",
+      "evidence": "Figure 14.12 shows nitric acid stronger than nitrous acid and sulfuric acid stronger than sulfurous acid, as the oxidation number of the central atom increases, and H<sub>2</sub>SO<sub>4</sub> is a stronger acid than H<sub>2</sub>SeO<sub>4</sub> because sulfur is more electronegative than selenium."
+    },
+    {
+      "id": "salt-ion-acidity",
+      "kind": "idea",
+      "section": "14.4",
+      "name": "Acidic and basic ions in salts",
+      "why": "The ions of a dissolved salt may undergo acid or base ionization with water. Acidic cations are typically the conjugate acids of weak bases, basic anions are the conjugate bases of weak acids, and the conjugates of strong acids and bases, like the group 1 and 2 cations, are inert.",
+      "evidence": "Dissolving ammonium chloride gives weak acid cations (NH<sub>4</sub><sup>+</sup>) and inert anions (Cl<sup>−</sup>), an acidic solution; dissolving sodium acetate gives inert cations and weak base anions (CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>), a basic solution."
+    },
+    {
+      "id": "predict-salt-solution-ph",
+      "kind": "skill",
+      "section": "14.4",
+      "name": "Predicting whether a salt solution is acidic, basic, or neutral",
+      "why": "We consider each ion separately; where a salt contains both an acidic and a basic ion, or a single amphiprotic ion, the solution is acidic or basic according to whether $K_{\\text{a}}$ or $K_{\\text{b}}$ is the larger.",
+      "evidence": "Example 14.17 finds KBr neutral, NaHCO<sub>3</sub> and Na<sub>2</sub>HPO<sub>4</sub> basic because $K_{\\text{b}}\\gg K_{\\text{a}}$ for their anions, and NH<sub>4</sub>F acidic because $K_{\\text{a}}$ for NH<sub>4</sub><sup>+</sup> exceeds $K_{\\text{b}}$ for F<sup>−</sup>."
+    },
+    {
+      "id": "salt-solution-calculations",
+      "kind": "skill",
+      "section": "14.4",
+      "name": "Calculating the pH of a salt solution",
+      "why": "The ionization constant of a salt’s acidic or basic ion is found from that of its conjugate partner through $K_{\\text{a}}\\times K_{\\text{b}}=K_{\\text{w}}$, and the usual ICE approach then gives the equilibrium concentrations and the pH.",
+      "evidence": "Example 14.15 derives $K_{\\text{a}}$ for anilinium ion from $K_{\\text{b}}$ for aniline and finds the pH of a 0.233-<em>M</em> anilinium chloride solution to be 2.64."
+    },
+    {
+      "id": "hydrated-metal-ion-acidity",
+      "kind": "idea",
+      "section": "14.4",
+      "name": "Hydrated metal ions as acids",
+      "why": "Many metal ions bond to water molecules to form complex ions such as [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup>; the metal draws electron density from the bonded water molecules, weakening their O–H bonds so that they can donate protons. Aside from the group 1 and some group 2 ions, most metal ions undergo acid ionization to some extent.",
+      "evidence": "Figure 14.13 shows a hydrated aluminum ion donating a proton to water, and Example 14.18 finds the pH of 0.10 <em>M</em> aluminum chloride to be 2.92."
+    },
+    {
+      "id": "polyprotic-acids",
+      "kind": "idea",
+      "section": "14.5",
+      "name": "Polyprotic acids ionize stepwise",
+      "why": "Acids are classified by the number of protons per molecule they can give up: monoprotic, diprotic, triprotic. A polyprotic acid ionizes in steps, one proton at a time, and each successive ionization is less extensive than the one before, so $K_{\\text{a1}}>K_{\\text{a2}}>K_{\\text{a3}}$.",
+      "evidence": "For carbonic acid, the first ionization constant is larger than the second by a factor of 10<sup>4</sup>, and phosphoric acid’s three stepwise constants decrease in turn."
+    },
+    {
+      "id": "stepwise-ionization-calculations",
+      "kind": "skill",
+      "section": "14.5",
+      "name": "Calculating concentrations in a solution of a polyprotic acid",
+      "why": "If the first ionization constant of a weak diprotic acid is larger than the second by a factor of at least 20, each step may be treated separately: the first gives [H<sub>3</sub>O<sup>+</sup>] and the monoanion, and those concentrations feed the second.",
+      "evidence": "Example 14.19 finds [H<sub>3</sub>O<sup>+</sup>] = [HCO<sub>3</sub><sup>−</sup>] = 1.2 × 10<sup>−4</sup> <em>M</em> and [CO<sub>3</sub><sup>2−</sup>] = 4.7 × 10<sup>−11</sup> <em>M</em> in carbonated water that is 0.033 <em>M</em> in H<sub>2</sub>CO<sub>3</sub>."
+    },
+    {
+      "id": "polyprotic-bases",
+      "kind": "idea",
+      "section": "14.5",
+      "name": "Polyprotic bases",
+      "why": "Polyprotic bases accept more than one proton, in steps, and, as for polyprotic acids, each successive base ionization constant is smaller than the one before.",
+      "evidence": "The carbonate ion is a diprotic base, accepting one proton to form HCO<sub>3</sub><sup>−</sup> and a second to form H<sub>2</sub>CO<sub>3</sub>."
+    },
+    {
+      "id": "buffer-composition",
+      "kind": "idea",
+      "section": "14.6",
+      "name": "What a buffer is",
+      "why": "A solution containing appreciable amounts of a weak conjugate acid-base pair is a buffer, and it resists a change in pH when small amounts of a strong acid or a strong base are added.",
+      "evidence": "In Figure 14.14, 1 mL of 0.01-<em>M</em> HCl turns an unbuffered solution at pH 8 acidic but leaves a pH 8.0 buffer unchanged; acetic acid with sodium acetate and ammonia with ammonium chloride are the book’s two examples."
+    },
+    {
+      "id": "how-buffers-work",
+      "kind": "idea",
+      "section": "14.6",
+      "name": "How a buffer neutralizes added acid or base",
+      "why": "The weak acid of the pair neutralizes added hydroxide, converting it to the conjugate base, and the conjugate base neutralizes added hydronium, converting it to the weak acid. The ratio of the two changes only a little, and so does the pH.",
+      "evidence": "Figure 14.15 shows added NaOH converting some acetic acid to acetate and added HCl converting some acetate to acetic acid, with the pH barely moving."
+    },
+    {
+      "id": "buffer-ph-calculations",
+      "kind": "skill",
+      "section": "14.6",
+      "name": "Calculating the pH of a buffer before and after adding acid or base",
+      "why": "We first let the added strong acid or base react completely with the buffer component that neutralizes it, find the new concentrations of the two components, and then solve the equilibrium as before.",
+      "evidence": "Example 14.20 finds pH 4.74 for an acetate buffer with 0.10 <em>M</em> of each component and pH 4.75 after 1.0 mL of 0.10 <em>M</em> NaOH is added to 100 mL of it, whereas the same addition takes an unbuffered solution from pH 4.74 to 10.99."
+    },
+    {
+      "id": "buffer-capacity",
+      "kind": "idea",
+      "section": "14.6",
+      "name": "Buffer capacity and the choice of buffer",
+      "why": "A buffer can neutralize only as much acid or base as it has of the conjugate partner that consumes it, so its capacity depends on the amounts of both components. A good buffer has about equal concentrations of the two, and weak acids and their salts suit pHs below 7 while weak bases and their salts suit pHs above 7.",
+      "evidence": "Figure 14.16 shows a large amount of acid exhausting a buffer, and Figure 14.17 shows the pH of an acetate buffer changing slowly with added NaOH until one component falls below about 10% of the other."
+    },
+    {
+      "id": "henderson-hasselbalch",
+      "kind": "result",
+      "section": "14.6",
+      "name": "The Henderson-Hasselbalch equation",
+      "why": "Rearranging the acid ionization constant expression and taking the negative logarithm gives pH = p$K_{\\text{a}}$ + log([A<sup>−</sup>]/[HA]), which relates the pH of a buffer to the $K_{\\text{a}}$ of its weak acid and the ratio of the concentrations of the pair; when the two are equal, pH = p$K_{\\text{a}}$.",
+      "evidence": "The book uses it for the carbonate buffer of blood, where [HCO<sub>3</sub><sup>−</sup>] ≈ 0.024 <em>M</em> and [H<sub>2</sub>CO<sub>3</sub>] ≈ 0.0012 <em>M</em> give a pH near 7.4.",
+      "eq": "eq-henderson-hasselbalch"
+    },
+    {
+      "id": "titration-curve",
+      "kind": "idea",
+      "section": "14.7",
+      "name": "Titration curves and their stages",
+      "why": "A titration curve plots the pH of the sample against the volume of added titrant. Its initial point is set by the acid, the pre-equivalence region by the unreacted acid and its conjugate base, the equivalence point by the products alone, with a drastic rise in pH, and the postequivalence region by the excess titrant.",
+      "evidence": "Table 14.2 and Figure 14.18 give the pH of 25.00 mL of 0.100 <em>M</em> HCl and of 0.100 <em>M</em> CH<sub>3</sub>CO<sub>2</sub>H against the volume of 0.100 <em>M</em> NaOH added."
+    },
+    {
+      "id": "strong-acid-titration-ph",
+      "kind": "skill",
+      "section": "14.7",
+      "name": "Calculating pH in a strong acid-strong base titration",
+      "why": "Before the equivalence point the pH is set by the excess strong acid, at the equivalence point only water and a neutral salt remain, so the pH is 7.00 at 25 °C, and beyond it the pH is set by the excess strong base.",
+      "evidence": "Example 14.21 finds pH 1.000, 1.477, 7.00 and 12.30 after 0.00, 12.50, 25.00 and 37.50 mL of 0.100 <em>M</em> NaOH are added to 25.00 mL of 0.100 <em>M</em> HCl."
+    },
+    {
+      "id": "weak-acid-titration-ph",
+      "kind": "skill",
+      "section": "14.7",
+      "name": "Calculating pH in a weak acid-strong base titration",
+      "why": "Before any base is added the pH is that of the weak acid; halfway to equivalence the acid and its conjugate base are equal, so pH = p$K_{\\text{a}}$; at equivalence the conjugate base alone makes the solution basic; beyond it the excess strong base sets the pH.",
+      "evidence": "Example 14.22 finds pH 2.87 initially, 4.74 at the half-equivalence point and 8.72 at the equivalence point in the titration of 0.100 <em>M</em> acetic acid with 0.100 <em>M</em> NaOH."
+    },
+    {
+      "id": "acid-base-indicators",
+      "kind": "idea",
+      "section": "14.7",
+      "name": "How an acid-base indicator works",
+      "why": "An indicator is a weak acid or base whose conjugate forms have different colors, and the perceived color is set by the ratio [In<sup>−</sup>]/[HIn], which the solution pH fixes. The color change is therefore spread over a color-change interval of about two pH units centered near its p$K_{\\text{a}}$.",
+      "evidence": "Methyl orange is red as HIn and yellow as In<sup>−</sup>, and Figure 14.19 charts the color-change intervals of several indicators."
+    },
+    {
+      "id": "choose-indicator",
+      "kind": "skill",
+      "section": "14.7",
+      "name": "Choosing an indicator for a titration",
+      "why": "A suitable indicator has a color-change interval that falls within the steep, nearly vertical part of the titration curve at the equivalence point, so that its color changes sharply as the equivalence point is passed.",
+      "evidence": "Figure 14.20 shows methyl orange, bromthymol blue and phenolphthalein all suiting the strong acid titration, but only phenolphthalein suiting the weak acid titration, whose equivalence point lies above pH 8."
     }
   ],
   "concept_prereqs": [
@@ -7954,6 +8336,322 @@
     {
       "concept": "small-x-approximation",
       "prereq": "magnitude-of-k"
+    },
+    {
+      "concept": "bronsted-lowry-acids-bases",
+      "prereq": "acids-and-bases"
+    },
+    {
+      "concept": "conjugate-acid-base-pairs",
+      "prereq": "bronsted-lowry-acids-bases"
+    },
+    {
+      "concept": "conjugate-acid-base-pairs",
+      "prereq": "reversible-reaction"
+    },
+    {
+      "concept": "write-ionization-equations",
+      "prereq": "conjugate-acid-base-pairs"
+    },
+    {
+      "concept": "write-ionization-equations",
+      "prereq": "strong-and-weak-acids-bases"
+    },
+    {
+      "concept": "amphiprotic-species",
+      "prereq": "bronsted-lowry-acids-bases"
+    },
+    {
+      "concept": "water-autoionization",
+      "prereq": "amphiprotic-species"
+    },
+    {
+      "concept": "water-autoionization",
+      "prereq": "equilibrium-constant"
+    },
+    {
+      "concept": "water-autoionization",
+      "prereq": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "concept": "water-autoionization",
+      "prereq": "temperature-changes-k"
+    },
+    {
+      "concept": "kw-ion-concentrations",
+      "prereq": "water-autoionization"
+    },
+    {
+      "concept": "kw-ion-concentrations",
+      "prereq": "molarity"
+    },
+    {
+      "concept": "acidic-basic-neutral",
+      "prereq": "water-autoionization"
+    },
+    {
+      "concept": "ph-and-poh-scales",
+      "prereq": "kw-ion-concentrations"
+    },
+    {
+      "concept": "ph-plus-poh",
+      "prereq": "ph-and-poh-scales"
+    },
+    {
+      "concept": "ph-plus-poh",
+      "prereq": "water-autoionization"
+    },
+    {
+      "concept": "ph-calculations",
+      "prereq": "ph-plus-poh"
+    },
+    {
+      "concept": "ph-calculations",
+      "prereq": "kw-ion-concentrations"
+    },
+    {
+      "concept": "measuring-ph",
+      "prereq": "ph-and-poh-scales"
+    },
+    {
+      "concept": "measuring-ph",
+      "prereq": "acidic-basic-neutral"
+    },
+    {
+      "concept": "acid-base-ionization-constants",
+      "prereq": "write-ionization-equations"
+    },
+    {
+      "concept": "acid-base-ionization-constants",
+      "prereq": "equilibrium-constant"
+    },
+    {
+      "concept": "acid-base-ionization-constants",
+      "prereq": "magnitude-of-k"
+    },
+    {
+      "concept": "percent-ionization",
+      "prereq": "acid-base-ionization-constants"
+    },
+    {
+      "concept": "percent-ionization",
+      "prereq": "ph-calculations"
+    },
+    {
+      "concept": "conjugate-pair-strengths",
+      "prereq": "acid-base-ionization-constants"
+    },
+    {
+      "concept": "conjugate-pair-strengths",
+      "prereq": "coupled-equilibria"
+    },
+    {
+      "concept": "conjugate-pair-strengths",
+      "prereq": "water-autoionization"
+    },
+    {
+      "concept": "leveling-effect",
+      "prereq": "conjugate-pair-strengths"
+    },
+    {
+      "concept": "ka-kb-from-equilibrium-data",
+      "prereq": "acid-base-ionization-constants"
+    },
+    {
+      "concept": "ka-kb-from-equilibrium-data",
+      "prereq": "k-from-ice-table"
+    },
+    {
+      "concept": "ka-kb-from-equilibrium-data",
+      "prereq": "ph-calculations"
+    },
+    {
+      "concept": "weak-acid-base-equilibrium-concentrations",
+      "prereq": "acid-base-ionization-constants"
+    },
+    {
+      "concept": "weak-acid-base-equilibrium-concentrations",
+      "prereq": "equilibrium-from-initial-concentrations"
+    },
+    {
+      "concept": "weak-acid-base-equilibrium-concentrations",
+      "prereq": "small-x-approximation"
+    },
+    {
+      "concept": "weak-acid-base-equilibrium-concentrations",
+      "prereq": "ph-calculations"
+    },
+    {
+      "concept": "binary-acid-strength",
+      "prereq": "acid-base-ionization-constants"
+    },
+    {
+      "concept": "binary-acid-strength",
+      "prereq": "electronegativity"
+    },
+    {
+      "concept": "binary-acid-strength",
+      "prereq": "bond-strength-and-length"
+    },
+    {
+      "concept": "oxyacid-strength",
+      "prereq": "acid-base-ionization-constants"
+    },
+    {
+      "concept": "oxyacid-strength",
+      "prereq": "electronegativity"
+    },
+    {
+      "concept": "oxyacid-strength",
+      "prereq": "oxidation-numbers"
+    },
+    {
+      "concept": "oxyacid-strength",
+      "prereq": "amphiprotic-species"
+    },
+    {
+      "concept": "salt-ion-acidity",
+      "prereq": "conjugate-pair-strengths"
+    },
+    {
+      "concept": "salt-ion-acidity",
+      "prereq": "dissociation-of-ionic-compounds"
+    },
+    {
+      "concept": "predict-salt-solution-ph",
+      "prereq": "salt-ion-acidity"
+    },
+    {
+      "concept": "predict-salt-solution-ph",
+      "prereq": "amphiprotic-species"
+    },
+    {
+      "concept": "salt-solution-calculations",
+      "prereq": "salt-ion-acidity"
+    },
+    {
+      "concept": "salt-solution-calculations",
+      "prereq": "weak-acid-base-equilibrium-concentrations"
+    },
+    {
+      "concept": "hydrated-metal-ion-acidity",
+      "prereq": "salt-ion-acidity"
+    },
+    {
+      "concept": "hydrated-metal-ion-acidity",
+      "prereq": "bond-polarity"
+    },
+    {
+      "concept": "polyprotic-acids",
+      "prereq": "acid-base-ionization-constants"
+    },
+    {
+      "concept": "polyprotic-acids",
+      "prereq": "write-ionization-equations"
+    },
+    {
+      "concept": "stepwise-ionization-calculations",
+      "prereq": "polyprotic-acids"
+    },
+    {
+      "concept": "stepwise-ionization-calculations",
+      "prereq": "weak-acid-base-equilibrium-concentrations"
+    },
+    {
+      "concept": "polyprotic-bases",
+      "prereq": "polyprotic-acids"
+    },
+    {
+      "concept": "polyprotic-bases",
+      "prereq": "amphiprotic-species"
+    },
+    {
+      "concept": "buffer-composition",
+      "prereq": "conjugate-acid-base-pairs"
+    },
+    {
+      "concept": "buffer-composition",
+      "prereq": "acid-base-ionization-constants"
+    },
+    {
+      "concept": "how-buffers-work",
+      "prereq": "buffer-composition"
+    },
+    {
+      "concept": "how-buffers-work",
+      "prereq": "neutralization-reaction"
+    },
+    {
+      "concept": "how-buffers-work",
+      "prereq": "concentration-stress"
+    },
+    {
+      "concept": "buffer-ph-calculations",
+      "prereq": "how-buffers-work"
+    },
+    {
+      "concept": "buffer-ph-calculations",
+      "prereq": "weak-acid-base-equilibrium-concentrations"
+    },
+    {
+      "concept": "buffer-ph-calculations",
+      "prereq": "molarity-calculations"
+    },
+    {
+      "concept": "buffer-capacity",
+      "prereq": "how-buffers-work"
+    },
+    {
+      "concept": "henderson-hasselbalch",
+      "prereq": "buffer-composition"
+    },
+    {
+      "concept": "henderson-hasselbalch",
+      "prereq": "ph-and-poh-scales"
+    },
+    {
+      "concept": "titration-curve",
+      "prereq": "titration"
+    },
+    {
+      "concept": "titration-curve",
+      "prereq": "ph-calculations"
+    },
+    {
+      "concept": "strong-acid-titration-ph",
+      "prereq": "titration-curve"
+    },
+    {
+      "concept": "strong-acid-titration-ph",
+      "prereq": "titration-calculation"
+    },
+    {
+      "concept": "weak-acid-titration-ph",
+      "prereq": "titration-curve"
+    },
+    {
+      "concept": "weak-acid-titration-ph",
+      "prereq": "henderson-hasselbalch"
+    },
+    {
+      "concept": "weak-acid-titration-ph",
+      "prereq": "salt-solution-calculations"
+    },
+    {
+      "concept": "acid-base-indicators",
+      "prereq": "henderson-hasselbalch"
+    },
+    {
+      "concept": "acid-base-indicators",
+      "prereq": "measuring-ph"
+    },
+    {
+      "concept": "choose-indicator",
+      "prereq": "acid-base-indicators"
+    },
+    {
+      "concept": "choose-indicator",
+      "prereq": "titration-curve"
     }
   ],
   "sheets": [

@@ -1,0 +1,90 @@
+{
+  "id": "9.4",
+  "module": "m68754",
+  "chapter": "9",
+  "title": "Effusion and Diffusion of Gases",
+  "short": "Effusion and Diffusion",
+  "lead": "Gas molecules move at hundreds of meters per second, yet they collide so often that a gas spreads through a room in seconds rather than instantly. This section describes that spreading, diffusion, and the escape of a gas through a tiny hole, effusion, and states Graham’s law: the rate of effusion of a gas is inversely proportional to the square root of its molar mass. The law is then used to compare effusion rates and times and to find the molar mass of an unknown gas.",
+  "objectives": [
+    "Define and explain effusion and diffusion",
+    "State Graham’s law and use it to compute relevant gas properties"
+  ],
+  "summary_html": "<p>Gaseous atoms and molecules move freely and randomly through space. Diffusion is the process whereby gaseous atoms and molecules are transferred from regions of relatively high concentration to regions of relatively low concentration. Effusion is a similar process in which gaseous species pass from a container to a vacuum through very small orifices. The rates of effusion of gases are inversely proportional to the square roots of their densities or to the square roots of their atoms/molecules’ masses (Graham’s law).</p>",
+  "notes": "The section prints no Link to Learning note. Figure 9.28, the book’s drawing of diffusion against effusion, is folded into Figure 9.27 as the effusion state of the same two bulbs. The uranium note’s sentence “The small difference in molecular weights between ²³⁵UF₆ and ²³⁸UF₆ only about 0.4% enrichment, is achieved in one diffuser” and the missing period in the caption of Figure 9.30 are kept as printed.",
+  "ai": {
+    "text": "Claude Opus 5.5",
+    "figures": "Claude Opus 5.5"
+  },
+  "built": "2026-09-28",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The three Check Your Learning items are set inline after their examples. The unkeyed numerical exercises fs-idm54751408 (the relative rates of diffusion of H₂O and D₂O), fs-idm82361856 (the 0.4% claimed for the uranium hexafluorides) and fs-idm32668896 (the molecular mass of the gas that diffuses at 83.3 mL/s) are left out, and no answer is computed for them. The unkeyed conceptual exercise fs-idm51619904 is kept with a suggested approach marked as OmniStax’s own. The keyed exercise fs-idp44111184 derives Graham’s law from kinetic energy, an idea Section 9.5 develops; it stays here with the book’s answer. Numeric answers accept 2% tolerance.",
+  "figures": [
+    {
+      "id": "sim-bulbs",
+      "kind": "sim",
+      "number": "9.27",
+      "folds": ["9.28"],
+      "originals": [
+        "/media/ch09/CNX_Chem_09_04_Diffusion.jpg",
+        "/media/ch09/CNX_Chem_09_04_DiffEff.jpg"
+      ],
+      "original_caption": "(Figure 9.27) (a) Two gases, H2 and O2, are initially separated. (b) When the stopcock is opened, they mix together. The lighter gas, H2, passes through the opening faster than O2, so just after the stopcock is opened, more H2 molecules move to the O2 side than O2 molecules move to the H2 side. (c) After a short time, both the slower-moving O2 molecules and the faster-moving H2 molecules have distributed themselves evenly on both sides of the vessel. (Figure 9.28) Diffusion involves the unrestricted dispersal of molecules throughout space due to their random motion. When this process is restricted to passage of molecules through very small openings in a physical barrier, the process is called effusion.",
+      "draws": ["mass"]
+    },
+    {
+      "id": "fig-balloons",
+      "kind": "photo",
+      "number": "9.29",
+      "draws": []
+    },
+    {
+      "id": "sim-diffuser",
+      "kind": "sim",
+      "number": "9.30",
+      "originals": [
+        "/media/ch09/CNX_Chem_09_04_GasDiff.jpg"
+      ],
+      "original_caption": "In a diffuser, gaseous UF6 is pumped through a porous barrier, which partially separates 235UF6 from 238UF6 The UF6 must pass through many large diffuser units to achieve sufficient enrichment in 235U.",
+      "draws": []
+    }
+  ],
+  "coverage": [
+    {"span": "mean-free-path", "concept": "mean-free-path", "verb": "introduces"},
+    {"span": "diffusion", "concept": "diffusion-and-effusion", "verb": "introduces"},
+    {"span": "diffusion", "concept": "mean-free-path", "verb": "uses"},
+    {"span": "graham", "concept": "grahams-law", "verb": "introduces"},
+    {"span": "graham", "concept": "diffusion-and-effusion", "verb": "uses"},
+    {"span": "graham", "concept": "molar-mass", "verb": "uses"},
+    {"span": "graham-calc", "concept": "grahams-law-calculations", "verb": "introduces"},
+    {"span": "ex-h2-o2", "concept": "grahams-law", "verb": "uses"},
+    {"span": "ex-xe-ne", "concept": "grahams-law-calculations", "verb": "uses"},
+    {"span": "ex-unknown", "concept": "grahams-law-calculations", "verb": "uses"},
+    {"span": "ex-unknown", "concept": "molar-mass", "verb": "uses"},
+    {"span": "uranium", "concept": "grahams-law", "verb": "reinforces"},
+    {"span": "uranium", "concept": "diffusion-and-effusion", "verb": "reinforces"}
+  ],
+  "exercises": [
+    {"id": "cyl1", "source_id": "fs-idp118691776", "kind": "check-your-learning", "bloom": "Apply", "place": {"at": "inline", "after": "ex-h2-o2"}, "cite": "graham", "prompt": "At a particular pressure and temperature, nitrogen gas effuses at the rate of 79 mL/s. Under the same conditions, at what rate will sulfur dioxide effuse?", "answer": {"type": "number", "generated_by": "source", "value": 52, "unit": "mL/s", "hint": "Sulfur dioxide is heavier than nitrogen, so it effuses more slowly; multiply 79 mL/s by the square root of the ratio of the molar masses, the lighter over the heavier.", "solution": "52 mL/s"}},
+    {"id": "cyl2", "source_id": "fs-idm54710976", "kind": "check-your-learning", "bloom": "Apply", "place": {"at": "inline", "after": "ex-xe-ne"}, "cite": "graham-calc", "prompt": "A party balloon filled with helium deflates to $\\frac{2}{3}$ of its original volume in 8.0 hours. How long will it take an identical balloon filled with the same number of moles of air (ℳ = 28.2 g/mol) to deflate to $\\frac{1}{2}$ of its original volume?", "answer": {"type": "number", "generated_by": "source", "value": 32, "unit": "h", "hint": "First find how long the helium balloon takes to lose half its gas, then scale that time by the square root of the ratio of the molar masses, remembering that a heavier gas takes longer.", "solution": "32 h"}},
+    {"id": "cyl3", "source_id": "fs-idp23019808", "kind": "check-your-learning", "bloom": "Apply", "place": {"at": "inline", "after": "ex-unknown"}, "cite": "graham-calc", "prompt": "Hydrogen gas effuses through a porous container 8.97-times faster than an unknown gas. Estimate the molar mass of the unknown gas.", "answer": {"type": "number", "generated_by": "source", "value": 162, "unit": "g/mol", "hint": "The ratio of rates, 8.97, equals the square root of the unknown’s molar mass over that of hydrogen, so square it and multiply by 2.0 g/mol.", "solution": "162 g/mol"}},
+    {"id": "e1", "source_id": "fs-idp190361360", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "graham-calc", "prompt": "A balloon filled with helium gas takes 6 hours to deflate to 50% of its original volume. How long will it take for an identical balloon filled with the same volume of hydrogen gas (instead of helium) to decrease its volume by 50%?", "answer": {"type": "number", "generated_by": "source", "value": 4.2, "unit": "h", "hint": "Hydrogen is lighter than helium and effuses faster, so the time is shorter by the square root of the ratio of their molar masses.", "solution": "4.2 hours"}},
+    {"id": "e2", "source_id": "fs-idm51619904", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "diffusion", "prompt": "Explain why the numbers of molecules are not identical in the left- and right-hand bulbs shown in the center illustration of Figure 9.27.", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: the center illustration shows the bulbs just after the stopcock is opened, before diffusion has had time to even out the concentrations. Hydrogen molecules are lighter than oxygen molecules and move faster, so in that short time more H₂ molecules have passed into the right-hand bulb than O₂ molecules have passed into the left-hand bulb. The right-hand bulb has gained more molecules than it has lost, and the left-hand bulb the reverse. Open the stopcock in Figure 9.27 and compare the counts shortly after."}},
+    {"id": "e3", "source_id": "fs-idp44111184", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "graham", "prompt": "Starting with the definition of rate of effusion and Graham’s finding relating rate and molar mass, show how to derive the Graham’s law equation, relating the relative rates of effusion for two gases to their molecular masses.", "answer": {"type": "open", "generated_by": "source", "solution": "Effusion can be defined as the process by which a gas escapes through a pinhole into a vacuum. Graham’s law states that with a mixture of two gases A and B: $(\\frac{\\text{rate A}}{\\text{rate B}})={(\\frac{\\text{molar mass of B}}{\\text{molar mass of A}})}^{1\\text{/}2}.$ Both A and B are in the same container at the same temperature, and therefore will have the same kinetic energy: ${\\text{KE}}_{\\text{A}}={\\text{KE}}_{\\text{B}}$, $\\text{KE}=\\frac{1}{2}mv^{2}$. Therefore, $\\frac{1}{2}m_{\\text{A}}v_{\\text{A}}^{2}=\\frac{1}{2}m_{\\text{B}}v_{\\text{B}}^{2}$, so $\\frac{v_{\\text{A}}^{2}}{v_{\\text{B}}^{2}}=\\frac{m_{\\text{B}}}{m_{\\text{A}}}$, $(\\frac{v_{\\text{A}}^{2}}{v_{\\text{B}}^{2}})^{1/2}=(\\frac{m_{\\text{B}}}{m_{\\text{A}}})^{1/2}$ and $\\frac{v_{\\text{A}}}{v_{\\text{B}}}=(\\frac{m_{\\text{B}}}{m_{\\text{A}}})^{1/2}$."}},
+    {"id": "e4", "source_id": "fs-idm14659040", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "graham", "prompt": "Which of the following gases diffuse more slowly than oxygen? F<sub>2</sub>, Ne, N<sub>2</sub>O, C<sub>2</sub>H<sub>2</sub>, NO, Cl<sub>2</sub>, H<sub>2</sub>S", "answer": {"type": "open", "generated_by": "source", "solution": "F<sub>2</sub>, N<sub>2</sub>O, Cl<sub>2</sub>, H<sub>2</sub>S"}},
+    {"id": "e5", "source_id": "fs-idm4750352", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "graham", "prompt": "Calculate the relative rate of diffusion of <sup>1</sup>H<sub>2</sub> (molar mass 2.0 g/mol) compared with <sup>2</sup>H<sub>2</sub> (molar mass 4.0 g/mol) and the relative rate of diffusion of O<sub>2</sub> (molar mass 32 g/mol) compared with O<sub>3</sub> (molar mass 48 g/mol).", "answer": {"type": "multi", "generated_by": "source", "parts": [{"part": "¹H₂ to ²H₂", "value": 1.4, "unit": "", "hint": "The lighter molecule diffuses faster by the square root of the heavier molar mass over the lighter."}, {"part": "O₂ to O₃", "value": 1.2, "unit": "", "hint": "Take the square root of 48 over 32."}], "solution": "1.4; 1.2"}},
+    {"id": "e6", "source_id": "fs-idp1096352", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "graham-calc", "prompt": "When two cotton plugs, one moistened with ammonia and the other with hydrochloric acid, are simultaneously inserted into opposite ends of a glass tube that is 87.0 cm long, a white ring of NH<sub>4</sub>Cl forms where gaseous NH<sub>3</sub> and gaseous HCl first come into contact. $\\text{NH}_{3}(g)+\\text{HCl}(g)\\longrightarrow\\text{NH}_{4}\\text{Cl}(s)$ At approximately what distance from the ammonia moistened plug does this occur? (Hint: Calculate the rates of diffusion for both NH<sub>3</sub> and HCl, and find out how much faster NH<sub>3</sub> diffuses than HCl.)", "answer": {"type": "number", "generated_by": "source", "value": 51.7, "unit": "cm", "hint": "In the same time the two gases cover distances in the ratio of their rates, and the two distances add up to 87.0 cm.", "solution": "51.7 cm"}}
+  ],
+  "exercise_concepts": [
+    {"exercise": "cyl1", "concept": "grahams-law", "weight": 2, "weights_by": "ai"},
+    {"exercise": "cyl2", "concept": "grahams-law-calculations", "weight": 2, "weights_by": "ai"},
+    {"exercise": "cyl3", "concept": "grahams-law-calculations", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e1", "concept": "grahams-law-calculations", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e2", "concept": "diffusion-and-effusion", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e2", "concept": "grahams-law", "weight": 1, "weights_by": "ai"},
+    {"exercise": "e3", "concept": "grahams-law", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e4", "concept": "grahams-law", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e5", "concept": "grahams-law", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e6", "concept": "grahams-law-calculations", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e6", "concept": "diffusion-and-effusion", "weight": 1, "weights_by": "ai"}
+  ]
+}

@@ -28,7 +28,7 @@ Proposed by the agent after the chapter exploration (2026-09-12 for 9.2, 2026-09
 | Answers to book problems | the book's key only; unkeyed numerical items left out and named in `exercise_notes`; unkeyed conceptual items kept with an AI-marked suggested approach |
 | Generated questions | none |
 | Concept nodes | 35 in the chapter: 5 (9.1), 9 (9.2, unchanged), 7 (9.3), 4 (9.4), 6 (9.5), 4 (9.6); the Chapter 3 edge `ideal-gas-law` → `molar-mass` added |
-| Formulas | `ch09/chapter.json`: 21 equations, 41 variable rows; 9.2's anchors as the chapter pass of 2026-09-12 wrote them; no anchors on the new sections until the chapter pass |
+| Formulas | `ch09/chapter.json`: 21 equations, 41 variable rows; 9.2's anchors as the chapter pass of 2026-09-12 wrote them, the rest by the chapter pass of 2026-09-28, so every row is anchored |
 | Glossary | the book's wording, 32 entries (9, 10, 4, 5, 2, 2) |
 | Degrees | `°` in prose and `^\circ` in math |
 | Dollar signs | `&#36;` in prose, `＄` inside an exercise string or `\text{}` |
@@ -37,6 +37,16 @@ Proposed by the agent after the chapter exploration (2026-09-12 for 9.2, 2026-09
 | Labels | Figure for a book number, Sim for an addition; the word "demo" nowhere |
 | `ai` and `built` | `{"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"}`, `2026-09-28` for every page this job builds; 9.2 keeps its own |
 | Book manifest | `ch09` in `book.json` by `ost merge chemistry-2e 9` |
+
+## What the build changed (2026-09-28)
+
+| Setting | Value |
+|---|---|
+| 3D | the barometer and the manometer of 9.1 are flat side elevations, the book's own view, since their lesson is two heights on one scale; the collection over water of 9.3 and the diffuser of 9.4 are flat for the same kind of reason. The 3D figures are Dalton's cylinders (9.20), the diffusion bulbs (9.27 + 9.28), the KMT cylinders (9.31), the speed-histogram gas box of 9.5 and the ideal and real boxes (9.36), with 9.23's balloons behind a 2D and 3D choice |
+| Folds | Figure 9.21 + 9.22 (the vapor-pressure curve beside the apparatus), 9.27 + 9.28, 9.32 + 9.33 + 9.34; the four manometer images of Examples 9.3 and 9.4 and their checks are unnumbered still copies drawn with the manometer's painter |
+| Sims | two added on 2026-09-28, the gas-density line of 9.3 and the speed-histogram gas box of 9.5, which answers the dropped gas-simulator Link to Learning; 9.2 keeps its two |
+| Colour | 9.3 binds `pressure`, `volume`, `temperature` and `mass`, not `amount`, since no figure draws a count of moles; 9.4 binds `mass` alone, no figure reading a time; 9.5 binds `pressure`, `volume` and `amount` as well, through Figure 9.31's two-state readout and gas bodies |
+| Symbols | 25 rows added on 2026-09-28: the 23 of the prep and `P_gas` (`\kPgas`) and `P_atm` (`\kPatm`), both `pressure`, staged by the chapter pass for the manometer |
 
 ## Section 9.2 as built (2026-09-12)
 

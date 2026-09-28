@@ -365,7 +365,7 @@ function centre(m) {
   function mount() {
     v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.2 }], h: 460, dist: 8 });
     parts = MOLECULES.map((m, i) => { const g = v.part(SPOT[i][2]); g.position.set(SPOT[i][2], SPOT[i][3], 0); return g; });
-    cnv = strip(d, 170);
+    cnv = strip(d, 200);
   }
   function build() {
     const key = palSig(); if (key === sig) return; sig = key;
@@ -417,7 +417,7 @@ function centre(m) {
 (function () {
   const d = sim('sim-electrolysis');
   const v = F.view3d(d.stage, { spin: 'none', pitch: [0.04, 0.95], yaw: [-Math.PI / 2, Math.PI / 2], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0, pitch: 0.9 }], h: 460, dist: 7.4, tilt: 0.3 });
-  const grp = v.part(0), cnv = strip(d, 170);
+  const grp = v.part(0), cnv = strip(d, 200);
   const N = ctl(d.controls, { label: '\\text{water molecules decomposed}', cls: '', min: 0, max: 12, step: 2, value: 6, unit: '', dec: 0, aria: 'number of water molecules decomposed' });
   /* the bench, the beaker on it, the battery on its floor and the two tubes over the terminals */
   const BENCH = -1.3, BR = 1.35, BH = 2.1, LEVEL = BENCH + 1.65, TX = [-0.42, 0.42], TR = 0.2, TB = BENCH + 0.5, TH = 1.55;

@@ -10,7 +10,7 @@ const TAU = 2 * Math.PI;
 
 /* ---------- lettering helpers ---------- */
 /* the width of a string set at a size and weight */
-function widthOf(ctx, s, size, weight = 600) { ctx.save(); ctx.font = `${weight} ${size}px ${FONT}`; const w = ctx.measureText(s).width; ctx.restore(); return w; }
+function widthOf(ctx, s, size, weight = 600) { ctx.save(); ctx.font = F.shownFont(`${weight} ${size}px ${FONT}`); const w = ctx.measureText(s).width; ctx.restore(); return w; }
 /* a string drawn one character at a time from x, each in the colour colorOf(index, char) gives; returns the centre and edges of every character */
 function chars(ctx, s, x, y, size, colorOf) {
   ctx.save(); ctx.font = `600 ${size}px ${FONT}`; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';

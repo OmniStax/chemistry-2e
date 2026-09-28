@@ -675,7 +675,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     const { ctx } = begin(d.c);
     const V = Vc.v, T = Tc.v, n = Nc.v, P = (n * R * T) / V, cv = C('volume'), ct = C('temperature'), cp = C('pressure');
     /* the four frames, fixed from the slider ranges: V 0 to 30 L, T 0 to 600 K, P 0 to 10 atm (pinned beyond), 1/P 0 to 2 atm⁻¹ */
-    const boxes = [{ l: 130, r: 620, t: 140, b: 360 }, { l: 850, r: 1340, t: 140, b: 360 }, { l: 130, r: 620, t: 450, b: 690 }, { l: 850, r: 1340, t: 450, b: 690 }];
+    const boxes = [{ l: 130, r: 620, t: 140, b: 340 }, { l: 850, r: 1340, t: 140, b: 340 }, { l: 130, r: 620, t: 450, b: 650 }, { l: 850, r: 1340, t: 450, b: 650 }];
     const note = (box, s) => text(ctx, s, box.r - 8, box.t + 18, PAL.muted, { size: 15, align: 'right' });
     /* P against V, at this T and n */
     let g = axes(ctx, boxes[0], [0, 30], [0, 10], { xl: 'V (L)', xc: cv, yl: 'P (atm)', yc: cp, nx: 3, ny: 2 });

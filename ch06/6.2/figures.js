@@ -175,8 +175,8 @@ function ionPick(controls, onInput) {
       arrow(ctx, INS.l + 110, iy(ni), INS.l + 110, iy(nf), ce, 4);
       dot(ctx, INS.l + 46, iy(ni) + (iy(nf) - iy(ni)) * jump, PAL.ink, true, 8);
     }
-    text(ctx, 'the rungs from n = 3 up, magnified ' + fmt(MAG, 0) + ' times', INS.l - 14, INS.bottom + 40, PAL.muted, { size: 17 });
-    if (!same && !inBand) text(ctx, 'this jump reaches below n = 3, so it is drawn on the ladder alone', INS.l - 14, INS.bottom + 66, PAL.muted, { size: 16 });
+    ['the rungs from n = 3 up,', 'magnified ' + fmt(MAG, 0) + ' times'].forEach((l, i) => text(ctx, l, 1386, INS.bottom + 34 + i * 22, PAL.muted, { size: 17, align: 'right' }));
+    if (!same && !inBand) ['this jump reaches', 'below n = 3, so it is drawn', 'on the ladder alone'].forEach((l, i) => text(ctx, l, (INS.l + INS.r) / 2, INS.bottom - 108 + i * 24, PAL.muted, { size: 16, align: 'center' }));
   }
   const EX = 380, AX = 520;                      /* the electron's column and the arrow's column on the ladder */
   /* the electron names itself under the pointer (rule 26.6); it stays ink, since an electron has no element to take a colour from */

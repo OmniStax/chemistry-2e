@@ -663,7 +663,9 @@ function twoPanels(id, molA, molB, capA, capB, small, formula) {
     [[molA, capA], [molB, capB]].forEach(([mol, cap], k) => {
       const g = parts[k]; molecule3(g, mol, SCALE, v);
       v.label(mol.atoms[0].sym, [0, 0, 0], g, -56);
-      text(ctx, cap, 350 + 700 * k, 36, PAL.ink, { size: 19, weight: 600, align: 'center' });
+      /* a caption too long for its half of the strip breaks before its ', so' */
+      const lines = cap.length > 70 ? cap.replace(', so ', ',\nso ').split('\n') : [cap];
+      lines.forEach((l, i) => text(ctx, l, 350 + 700 * k, 36 + (i - (lines.length - 1) / 2) * 26, PAL.ink, { size: 19, weight: 600, align: 'center' }));
     });
     readout(d.readout, formula, small + ' Drag either panel to turn both.');
   }

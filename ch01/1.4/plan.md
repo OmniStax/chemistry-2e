@@ -292,3 +292,10 @@ labels are on.
   lead without editorializing about it.
 - `sim-displacement` (Sim): unchanged. A still simulation, three controls,
   flat, labels on, with hover names on the block, the balance and the water.
+
+## Figure pass, 2026-09-28 (Claude Opus 5.5)
+
+Judged against `docs/prompts/manim-style.md`; only the figures below changed.
+
+- `sim-volume` · dashed circles on the edge at 1 cm, 10 cm and 100 cm: one milliliter, one liter, one cubic meter (manim 8).
+- `sim-displacement` · readout the density equation alone, the rise in the sentence (manim 12); the rod that holds a floating block fades with the material.

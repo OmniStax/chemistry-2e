@@ -130,37 +130,48 @@ function diatomic3(v, g, p, u, sym, r) {
   const cap = (c) => (c.w * DP * HT) / K;
   /* the sample is given an identity so that its particles can have one (rule 7.2): it is water, drawn molecule by molecule
      in the element palette inside each container, and the phase is told by how the molecules pack, never by a tint alone */
-  function sample(c, state, vol) {
-    const hue = C('volume'), tint = (p, size, op) => box3(grp, p, size, hue, { transparent: true, opacity: op, depthWrite: false });
+  function sample(c, state, vol, a) {
+    const hue = C('volume'), tint = (p, size, op) => box3(grp, p, size, hue, { transparent: true, opacity: op * a, depthWrite: false });
     const pts = [];
     if (state === 0) {
       /* water is one of the few substances that expand on freezing, by about a tenth, so the ice of a sample is larger than the liquid */
       const s = Math.cbrt(K * vol * ICE), n = 3, sp = s / n;
-      v.pickable(tint([c.x, FLOOR + s / 2, 0], [s, s, s], 0.28), 'the water as a solid, ' + fmt(vol * ICE, 0) + ' mL of ice');
-      edges3(grp, [s, s, s], [c.x, FLOOR + s / 2, 0]);
+      if (a > 0.01) { v.pickable(tint([c.x, FLOOR + s / 2, 0], [s, s, s], 0.28), 'the water as a solid, ' + fmt(vol * ICE, 0) + ' mL of ice'); const e = edges3(grp, [s, s, s], [c.x, FLOOR + s / 2, 0]); e.material.transparent = a < 1; e.material.opacity = a; }
       for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) for (let k = 0; k < n; k++) pts.push({ p: [c.x - s / 2 + sp * (i + 0.5), FLOOR + sp * (j + 0.5), -s / 2 + sp * (k + 0.5)], f: frame(0.5, 0.9, (i + j + k) % 2 ? 0.2 : 0.8), k: sp / 0.5 });
     } else if (state === 1) {
       const h = (K * vol) / (c.w * DP), n = NMOL;
-      v.pickable(tint([c.x, FLOOR + h / 2, 0], [c.w - 0.02, h, DP - 0.02], 0.28), 'the water as a liquid, ' + vol + ' mL');
+      if (a > 0.01) v.pickable(tint([c.x, FLOOR + h / 2, 0], [c.w - 0.02, h, DP - 0.02], 0.28), 'the water as a liquid, ' + vol + ' mL');
       for (let i = 0; i < n; i++) pts.push({ p: [c.x - c.w / 2 + 0.12 + rnd(i * 5) * (c.w - 0.24), FLOOR + 0.1 + rnd(i * 5 + 1) * Math.max(0.02, h - 0.2), -DP / 2 + 0.12 + rnd(i * 5 + 2) * (DP - 0.24)], f: frame(rnd(i * 5 + 3), rnd(i * 5 + 4), rnd(i * 5 + 5)), k: Math.min(1, Math.cbrt((c.w * DP * h) / n) / 0.5) });
     } else {
       /* the same sample in both vessels, so the wide one holds the same molecules more sparsely (it is one sample, not two) */
       const n = NMOL;
-      v.pickable(tint([c.x, FLOOR + HT / 2, 0], [c.w - 0.02, HT - 0.02, DP - 0.02], 0.1), 'the water as a gas, ' + fmt(cap(c), 0) + ' mL');
+      if (a > 0.01) v.pickable(tint([c.x, FLOOR + HT / 2, 0], [c.w - 0.02, HT - 0.02, DP - 0.02], 0.1), 'the water as a gas, ' + fmt(cap(c), 0) + ' mL');
       for (let i = 0; i < n; i++) pts.push({ p: [c.x - c.w / 2 + 0.15 + rnd(i * 7) * (c.w - 0.3), FLOOR + 0.15 + rnd(i * 7 + 1) * (HT - 0.3), -DP / 2 + 0.15 + rnd(i * 7 + 2) * (DP - 0.3)], f: frame(rnd(i * 7 + 3), rnd(i * 7 + 4), rnd(i * 7 + 5)), k: 1 });
     }
-    pts.forEach(({ p, f, k }) => water3(v, grp, p, f[0], f[1], Math.max(0.6, Math.min(1.1, k))));
+    return pts;
+  }
+  /* a change of state moves each of the 27 molecules from its place in the old packing to its place in the new one,
+     while the old body fades and the new one fills (the same molecules, so every one has a counterpart) */
+  function samples(c, vol) {
+    const from = +Sc.from, to = S.v, q = Sc.k;
+    const b = sample(c, to, vol, from === to ? 1 : Sc.a(String(to)));
+    if (from === to || q >= 1) return b.forEach(({ p, f, k }) => water3(v, grp, p, f[0], f[1], Math.max(0.6, Math.min(1.1, k))));
+    const a = sample(c, from, vol, Sc.a(String(from))), e = q;
+    b.forEach((m, i) => {
+      const o = a[i], p = o.p.map((x, j) => x + (m.p[j] - x) * e), k = o.k + (m.k - o.k) * e, f = e < 0.5 ? o.f : m.f;
+      water3(v, grp, p, f[0], f[1], Math.max(0.6, Math.min(1.1, k)));
+    });
   }
   let sig = '';
   function build() {
-    const key = [S.v, V.v, palSig()].join('|'); if (key === sig) return; sig = key;
+    const key = [S.v, V.v, palSig(), Sc.k < 1 ? Sc.k : 1].join('|'); if (key === sig) return; sig = key;
     v.clear();
     box3(grp, [0, FLOOR - 0.1, 0], [5.2, 0.14, 2.2], PAL.soft);                                    /* the ground the containers stand on */
     for (const c of [NARROW, WIDE]) {
       const wallsOf = box3(grp, [c.x, FLOOR + HT / 2, 0], [c.w, HT, DP], PAL.ink, glass()); wallsOf.renderOrder = 2;
       edges3(grp, [c.w, HT, DP], [c.x, FLOOR + HT / 2, 0]);
       v.pickable(wallsOf, (c === NARROW ? 'a narrow container, ' : 'a wide container, ') + fmt(cap(c), 0) + ' mL');
-      sample(c, S.v, V.v);
+      samples(c, V.v);
       v.label((c === NARROW ? 'a narrow container, ' : 'a wide container, ') + fmt(cap(c), 0) + ' mL', [c.x, FLOOR + HT + 0.06, 0], grp, c === NARROW ? 4 : 36);   /* above each container, the wide one's a line higher, so the two never meet as the scene turns */
     }
   }
@@ -168,13 +179,13 @@ function diatomic3(v, g, p, u, sym, r) {
     build(); v.invalidate();
     const { ctx } = begin(cnv);
     const s = S.v, vol = V.v;
-    text(ctx, 'the water as a ' + NAMES[s], 700, 92, PAL.ink, { size: 20, weight: 600, align: 'center' });
+    text(ctx, 'the water as a ' + NAMES[s], 700, 116, PAL.ink, { size: 20, weight: 600, align: 'center' });
     const rows = [['They are packed in a fixed', 'arrangement and only vibrate,', 'so the sample keeps its shape.'], ['They stay close together but', 'slide past one another, so the', 'sample flows and keeps its volume.'], ['They are far apart and move', 'freely, so the sample spreads', 'to fill whatever holds it.']][s];
-    rows.forEach((r, i) => text(ctx, r, 700, 124 + i * 22, PAL.muted, { size: 17, align: 'center' }));
+    rows.forEach((r, i) => text(ctx, r, 700, 144 + i * 20, PAL.muted, { size: 17, align: 'center' }));
     const H = [`A solid keeps its shape and its volume in either container, and the ${fmt(vol * ICE, 0)} mL of ice here is the same sample as the ${vol} mL of liquid, since water expands by about a tenth on freezing`,
       `A liquid takes the shape of each container but keeps its volume of ${vol} mL, forming a horizontal surface`,
       `A gas expands to fill its container, so the same ${NMOL} molecules occupy ${fmt(cap(NARROW), 0)} mL in one and ${fmt(cap(WIDE), 0)} mL in the other`][s];
-    topline(ctx, H + '. Drag to turn the containers.');
+    topline(ctx, H + '.');
     const R = [`\\kV = ${fmt(vol * ICE, 0)}\\ \\text{mL of ice in both containers, with the same shape in both}`,
       `\\kV = ${vol}\\ \\text{mL in both containers, at two heights}`,
       `\\kV = ${fmt(cap(NARROW), 0)}\\ \\text{mL in the narrow container and } ${fmt(cap(WIDE), 0)}\\ \\text{mL in the wide one}`][s];
@@ -237,14 +248,13 @@ function diatomic3(v, g, p, u, sym, r) {
     bar(ctx, 1150, 262, 'sulfuric acid', ACID * (1 - q), BK);
     bar(ctx, 1150, 308, 'lead sulfate', PBSO4 * q, BK);
     bar(ctx, 1150, 354, 'water', H2O * q, BK);
-    text(ctx, 'every bar of both panels is drawn to one scale', 500, 384, PAL.muted, { size: 16 });
     text(ctx, 'sugar → ethanol + carbon dioxide', 250, 120, PAL.ink, { size: 17, align: 'center' });
     text(ctx, 'lead + lead oxide + sulfuric acid → lead sulfate + water', 900, 120, PAL.ink, { size: 17, align: 'center' });
     const fs = Fm.v, ds = Ds.v;
     headline(ctx, fs === 0 && ds === 0 ? 'Nothing has changed yet, so the bottle weighs 1000.0 g and the battery’s reacting substances 642.6 g.'
       : `With the sugar ${fs}% fermented and the battery ${ds}% discharged, the kinds of matter have changed and neither balance has moved.`);
-    readout(d.readout, `\\km_{\\text{before}} = \\km_{\\text{after}} = ${fmt(WATER + SUGAR, 1)}\\ \\text{g and } ${fmt(PB + PBO2 + ACID, 1)}\\ \\text{g}`,
-      'The bottle is sealed, so the carbon dioxide stays inside and is weighed with the rest; if the bottle were open, the gas would escape and the balance would read less, though no matter would have been destroyed.');
+    readout(d.readout, `\\km_{\\text{before}} = \\km_{\\text{after}} = ${fmt(WATER + SUGAR, 1)}\\ \\text{g}`,
+      'The battery’s reacting substances likewise stay at ' + fmt(PB + PBO2 + ACID, 1) + ' g however far it discharges. The bottle is sealed, so the carbon dioxide stays inside and is weighed with the rest; if the bottle were open, the gas would escape and the balance would read less, though no matter would have been destroyed.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -379,7 +389,7 @@ function centre(m) {
   function draw3d() {
     build(); v.invalidate();
     const { ctx } = begin(cnv);
-    topline(ctx, 'A molecule is two or more atoms joined by chemical bonds, and it may be built of one element or of several. Drag any molecule to turn them all.');
+    topline(ctx, 'A molecule is two or more atoms joined by chemical bonds, and it may be built of one element or of several.');
     const w = v.wrap.clientWidth || 1400;
     text(ctx, 'elements', 40, 112, PAL.muted, { size: 17 });
     text(ctx, 'compounds', 40, 146, PAL.muted, { size: 17 });
@@ -465,11 +475,10 @@ function centre(m) {
     text(ctx, (12 - n) + ' water molecule' + (12 - n === 1 ? '' : 's') + ' left in the beaker', rx, 96, PAL.ink, { size: 18 });
     text(ctx, h2 + ' hydrogen molecule' + (h2 === 1 ? '' : 's') + ' in the left tube', rx, 128, PAL.ink, { size: 18 });
     text(ctx, o2 + ' oxygen molecule' + (o2 === 1 ? '' : 's') + ' in the right tube', rx, 158, PAL.ink, { size: 18 });
-    text(ctx, 'Drag the bench to turn it.', rx, 188, PAL.muted, { size: 17 });
     topline(ctx, n === 0 ? 'No water has been decomposed yet, so both tubes are still full of water and every molecule in the beaker is a water molecule.'
       : `Of the water, ${n} molecules have become ${h2} hydrogen molecules and ${o2} oxygen molecules, and the hydrogen tube holds twice the gas the oxygen tube does.`);
-    readout(d.readout, `${n}\\,\\text{H}_2\\text{O}(l) \\longrightarrow ${h2}\\,\\text{H}_2(g) + ${o2}\\,\\text{O}_2(g) \\qquad \\kV_{\\text{H}_2} = 2\\,\\kV_{\\text{O}_2}`,
-      'Every atom is accounted for: the ' + 2 * n + ' hydrogen atoms and ' + n + ' oxygen atoms of the water that decomposed are the atoms of the hydrogen and oxygen molecules that formed.');
+    readout(d.readout, `${n}\\,\\text{H}_2\\text{O}(l) \\longrightarrow ${h2}\\,\\text{H}_2(g) + ${o2}\\,\\text{O}_2(g)`,
+      'The hydrogen collected has twice the volume of the oxygen. Every atom is accounted for: the ' + 2 * n + ' hydrogen atoms and ' + n + ' oxygen atoms of the water that decomposed are the atoms of the hydrogen and oxygen molecules that formed.');
   }
   register(d.fig, { update: () => {}, draw });
 })();

@@ -13,7 +13,7 @@
   "notes": "The section prints no Link to Learning note and no photograph, so nothing of the text is left out; the six end-of-chapter exercises that have no answer in the book’s key are left out of the problem set.",
   "ai": {
     "text": "Claude Fable 5.1",
-    "figures": "Claude Fable 5.1"
+    "figures": "Claude Fable 5.1, with Claude Opus 5.5"
   },
   "built": "2026-09-12",
   "exercises_lead": "",
@@ -42,11 +42,6 @@
       "id": "fig-spectra",
       "kind": "figure",
       "draws": []
-    },
-    {
-      "id": "sim-bohr-ladder-style",
-      "kind": "sim",
-      "draws": ["energy", "wavelength"]
     }
   ],
   "coverage": [

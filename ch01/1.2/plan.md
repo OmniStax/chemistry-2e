@@ -318,3 +318,11 @@ labels are on.
 - `sim-electrolysis` (Figure 1.15) and `fig-fuel-cell` (Figure 1.16):
   unchanged but for the wording of one line, which was a middle-dot join and
   is now two sentences.
+
+## Figure pass, 2026-09-28 (Claude Opus 5.5)
+
+Judged against `docs/prompts/manim-style.md`; only the figures below changed.
+
+- `sim-states` · a change of state moves each of the 27 molecules from its place in the old packing to its place in the new one over 0.9 s while the old body fades and the new one fills (manim 15/16).
+- `sim-conservation` · readout one equation for the bottle, the battery's mass in the sentence (manim 12).
+- `sim-electrolysis` · readout the reaction alone, V(H₂) = 2V(O₂) in the sentence (manim 12).

@@ -14,7 +14,7 @@
  "notes": "The two Link to Learning notes are left out: the PhET molecular shape simulator, whose place the bench of Figure 7.16 takes, and the PhET molecule polarity simulation, whose place the bond-moment bench of Figure 7.26 and Figure 7.28 take; Examples 7.17 and 7.18 keep the book’s words about those simulations.",
  "ai": {
   "text": "Claude Fable 5.1",
-  "figures": "Claude Fable 5.1"
+  "figures": "Claude Fable 5.1, with Claude Opus 5.5"
  },
  "built": "2026-09-12",
  "exercises_lead": "",
@@ -240,11 +240,6 @@
     "/media/ch07/CNX_Chem_07_06_Dipolfield.jpg"
    ],
    "original_caption": "(a) Molecules are always randomly distributed in the liquid state in the absence of an electric field. (b) When an electric field is applied, polar molecules like HF will align to the dipoles with the field direction.",
-   "draws": []
-  },
-  {
-   "id": "sim-vsepr-tour",
-   "kind": "sim",
    "draws": []
   }
  ],

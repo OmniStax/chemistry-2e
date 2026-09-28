@@ -278,3 +278,9 @@ labels are on.
   Celsius reading is and as Example 1.11's 310.2 K is, rather than to a
   hundredth; the two reference sentences still name the exact defining values
   273.15 K and 373.15 K.
+
+## Figure pass, 2026-09-28 (Claude Opus 5.5)
+
+Judged against `docs/prompts/manim-style.md`; only the figures below changed.
+
+- `sim-temperature-scales` · dashed circles on T at −40 °C, 0 °C and 100 °C (manim 8).

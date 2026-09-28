@@ -535,4 +535,14 @@ described no longer exists and is not what was built.
 
 ## Manim duplicates
 
-- `sim-vsepr-tour` · layer C (tour) after `sim-vsepr` · value add: the move from the book's flat sketch into space and from bonds to lone pairs becomes a story, each change a morph (a bonded atom fades as its bond becomes a lobe; names cross-fade, the one that holds stays) rather than a rebuild · beats: straight on at four regions, the model is the sketch; tilt 35° in pitch and yaw, wedges out and dashes in; orbit about 120° and the 109.5° arc draws in; one lone pair, trigonal pyramidal; a second, bent; a fifth region, trigonal bipyramid with the lone pairs equatorial (T-shaped); the camera settles over the equator and the axial and equatorial names arrive; hold · physical 3D: the positions are where the atoms and the electron density sit in space, and turning the model is looking at a real molecule from another side (root rule 28.3). · readout: one inline line at the book's size, n regions = b bonds + l lone pairs; the region and bond counts bend inside their keys, the lone-pair term fades in (no counterpart), operators untagged
+- Merged, 2026-09-28 (Claude Opus 5.5): `sim-vsepr-tour` is folded into `sim-vsepr`. Its morph engine (regions paired by direction, swinging along great circles, a bond's atom fading as its lobe fills) and its morphing readout now answer the reader's sliders. The tour is not kept: every beat moved one of the reader's sliders, which a story may not do (manim 6), so no story slider can carry it, and its camera beats showed the same molecule from elsewhere (manim 1). The ringed half-opacity balls were restyling; the atoms keep the element palette. The tour's row and figure element are removed.
+
+## Figure pass, 2026-09-28 (Claude Opus 5.5)
+
+Judged against `docs/prompts/manim-style.md`; only the figures below changed.
+
+- `sim-vsepr` · Figure 7.16 + 7.19 + 7.20 · still, 3D, merged with `sim-vsepr-tour` (see the note under Manim duplicates): a change of regions, lone pairs or the ClF₃ placement is one 0.9 s morph, each region swinging along its great circle to its new place and a bond becoming a lobe as its atom fades (manim 16), and the equation n regions = b bonds + l lone pairs morphs with it (manim 11); the Labels choice is gone (26.7): E, one X, the angles and the axial and equatorial names are always drawn, the rest named on hover.
+- `sim-formaldehyde` · readout the angle alone, the distance in the sentence (manim 12).
+- `sim-domains` · readout the smallest angle alone, the ideal in the sentence (manim 12).
+- `sim-bond-moments` · the Labels choice is gone (26.7): the central atom and one bonded atom are named, the rest on hover.
+- `fig-ammonia`, `fig-water`, `fig-sf4`, `fig-xef4`, `fig-glycine-3d`, `sim-formaldehyde`, `sim-domains`, `sim-bond-moments` · no sentence tells the reader to drag (root 17).

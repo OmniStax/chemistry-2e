@@ -13,7 +13,7 @@
   "notes": "The two Link to Learning notes are left out: a video of a gas shrinking as it is cooled and expanding as it is warmed, and the PhET simulation of pressure, volume, temperature and amount, whose place the gas box of this page takes. Figure 9.17, a photograph of coral at the Great Barrier Reef beside the scuba diving note, is left out as a stock scene, and the photograph of a weather balloon beside exercise 31 of the chapter is left out with it; exercises 26, 28, 30, 32, 34, 36, 38, 40 and 44 of the chapter have no answer in the book’s key and are left out.",
   "ai": {
     "text": "Claude Fable 5.1",
-    "figures": "Claude Fable 5.1"
+    "figures": "Claude Fable 5.1, with Claude Opus 5.5"
   },
   "built": "2026-09-12",
   "exercises_lead": "",
@@ -135,16 +135,6 @@
         "amount",
         "pressure",
         "temperature"
-      ]
-    },
-    {
-      "id": "sim-gas-box-morph",
-      "kind": "sim",
-      "draws": [
-        "pressure",
-        "volume",
-        "temperature",
-        "amount"
       ]
     }
   ],

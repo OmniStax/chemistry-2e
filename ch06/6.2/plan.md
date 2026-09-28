@@ -412,4 +412,11 @@ labels are on.
 
 ## Manim duplicates
 
-- `sim-bohr-ladder-style` (duplicate of `sim-bohr-ladder`), layer A with two B touches. Value add: the Manim look (round-capped rungs in the energy hue, a bracket gathering the labels of the rungs from n = 3 up with two thin connectors to the inset that cross no leader, a half-opacity energy column for |ΔE|, no label plates, the corner caption line dropped); still, with no transport: a change of transition eases the electron once and draws the straight line to the strip once in about 0.5 s, then holds it (rule 24.1). One inline line at the book's size, ΔE = kZ²(1/n₁² − 1/n₂²) = … J, λ = hc/|ΔE| = … nm, becoming Eₙ = −kZ²/n² = … J where ni = nf. keyMap by same keys only: k, Z², their values and ni's value move (the same quantities); 1/n₁² bends into n² (key n1: n₁ is that level's n); ΔE and Eₙ have no counterpart (a difference is not a level), so one fades out and the other in; − 1/n₂², nf's value and λ fade (no second level, no photon). Numbers bend as ni, nf or the ion change. Special value: ni = nf, a dashed circle on each orbit slider at the other's value. Flat.
+- Merged, 2026-09-28 (Claude Opus 5.5): `sim-bohr-ladder-style` is folded into `sim-bohr-ladder`, which keeps the book's number. From it the figure takes the equation that morphs by meaning, ΔE = kZ²(1/n₁² − 1/n₂²) = … J becoming Eₙ = −kZ²/n² = … J where n_i = n_f (k, Z² and their values move; 1/n₁² bends into n²; ΔE and Eₙ have no counterpart and cross-fade), the dashed circle on each orbit slider at the other's value (the same orbit: no photon), and the bracket that gathers the labels of the rungs from n = 3 up so no leader is crossed. The wavelength λ = hc/|ΔE| moves to the sentence beneath the equation (one equation). The thicker rungs and plate-less labels were restyling and are not kept. The duplicate's row and figure element are removed.
+
+## Figure pass, 2026-09-28 (Claude Opus 5.5)
+
+Judged against `docs/prompts/manim-style.md`; only the figures below changed.
+
+- `sim-orbit-rung` · readout Eₙ alone, the radius in the sentence (manim 12); the ion choice bends every orbit to its new radius (manim 15/16).
+- `sim-series` · readout one equation, the longest wavelength in the sentence (manim 12); the ion choice slides every line to its new wavelength (manim 16).

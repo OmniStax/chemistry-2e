@@ -75,8 +75,8 @@ function thermometer(ctx, x, y, h, f, color) {
     });
     line(ctx, bx - 60, 110, bx - 60, 500, PAL.rule, 1.5);
     headline(ctx, 'A jug holding ' + fmt(v, 2) + ' L of milk at ' + fmt(t, 0) + ' °C has a mass of ' + fmt(mkg, 2) + ' kg and a density of ' + fmt(DENS, 2) + ' g/mL.');
-    readout(d.readout, `\\km = d\\,\\kV = ${fmt(DENS, 2)}\\ \\text{g/mL} \\times ${fmt(mL, 0)}\\ \\text{mL} = ${fmt(mkg, 2)}\\ \\text{kg} \\qquad \\kT = ${fmt(t, 0)}\\ \\text{°C}`,
-      'Doubling the sample doubles the mass and the volume, and leaves the density and the temperature where they were.');
+    readout(d.readout, `\\km = d\\,\\kV = ${fmt(DENS, 2)}\\ \\text{g/mL} \\times ${fmt(mL, 0)}\\ \\text{mL} = ${fmt(mkg, 2)}\\ \\text{kg}`,
+      'The milk stands at ' + fmt(t, 0) + ' °C whatever its amount. Doubling the sample doubles the mass and the volume, and leaves the density and the temperature where they were.');
   }
   register(d.fig, { update: () => {}, draw });
 })();

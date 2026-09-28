@@ -1,7 +1,7 @@
 /* Figures for section 1.5 Measurement Uncertainty, Accuracy, and Precision. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['1.5'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, dot, text, headline, FONT } = F;
+const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, dot, text, headline } = F;
 const sim = (id, H) => F.sim(root, id, H);
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 /* every figure of this section is a still picture: it answers its sliders, or nothing at all, and has no clock */
@@ -10,13 +10,12 @@ const TAU = 2 * Math.PI;
 
 /* ---------- lettering helpers ---------- */
 /* the width of a string set at a size and weight */
-function widthOf(ctx, s, size, weight = 600) { ctx.save(); ctx.font = F.shownFont(`${weight} ${size}px ${FONT}`); const w = ctx.measureText(s).width; ctx.restore(); return w; }
-/* a string drawn one character at a time from x, each in the colour colorOf(index, char) gives; returns the centre and edges of every character */
+const widthOf = (ctx, s, size, weight = 600) => F.measure(ctx, s, { size, weight });
+/* a string set one character at a time from x through the library's text, each in the colour colorOf(index, char) gives; returns the centre and edges of every character */
 function chars(ctx, s, x, y, size, colorOf) {
-  ctx.save(); ctx.font = `600 ${size}px ${FONT}`; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
   const out = []; let cx = x;
-  for (const ch of s) { ctx.font = F.shownFont(`600 ${size}px ${FONT}`); const w = ctx.measureText(ch).width; text(ctx, ch, cx, y, colorOf(out.length, ch), { size, weight: 600 }); out.push({ ch, x: cx + w / 2, l: cx, r: cx + w }); cx += w; }
-  ctx.restore(); return out;
+  for (const ch of s) { const w = widthOf(ctx, ch, size); text(ctx, ch, cx, y, colorOf(out.length, ch), { size, weight: 600 }); out.push({ ch, x: cx + w / 2, l: cx, r: cx + w }); cx += w; }
+  return out;
 }
 /* the same, centred on cx */
 const charsCentred = (ctx, s, cx, y, size, colorOf) => chars(ctx, s, cx - widthOf(ctx, s, size) / 2, y, size, colorOf);
@@ -295,8 +294,8 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
       : precise ? 'These arrows are close to one another but not on target, so they are precise but not accurate.'
       : accurate ? 'These arrows are scattered about the bull’s eye, so they are accurate on average but not precise.'
       : 'These arrows are neither on target nor close to one another, so they are neither accurate nor precise.');
-    readout(d.readout, `\\text{distance of the centre of the group from the bull's eye} = ${fmt(md, 1)}\\ \\text{cm} \\qquad \\text{greatest distance between two arrows} = ${fmt(sp, 1)}\\ \\text{cm}`,
-      'The offset slider moves the whole group away from the bull’s eye and the spread slider scatters it. Accuracy is measured by the first distance and precision by the second, and a group may have either without the other.');
+    readout(d.readout, `\\text{distance of the centre of the group from the bull's eye} = ${fmt(md, 1)}\\ \\text{cm}`,
+      'The greatest distance between two arrows is ' + fmt(sp, 1) + ' cm. Accuracy is measured by how far the group sits from the bull’s eye and precision by how far the arrows sit from one another, and a group may have either without the other.');
   }
   still(d, draw);
 })();

@@ -210,9 +210,8 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     topline(ctx, 'The H–C–H bond angle is 118° and the C=O bond distance is 1.21 Å; from this viewpoint a flat drawing would show the angle as ' + shown + '°.');
     text(ctx, 'A bond angle is the angle between two bonds that share an atom, and this one is 118°.', 700, 118, PAL.muted, { size: 17, align: 'center' });
     text(ctx, 'A bond distance is the distance between two bonded nuclei, 1.21 Å for the C=O bond here. The C–H bonds are 1.11 Å and the H–C=O angles 121°.', 700, 146, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'Drag the molecule to turn it.', 700, 176, PAL.muted, { size: 16, align: 'center' });
-    readout(d.readout, `\\angle\\text{HCH} = 118^\\circ \\qquad d(\\text{C=O}) = 1.21\\ \\text{Å} = 121\\ \\text{pm}`,
-      Math.abs(shown - 118) < 3 ? 'Seen face on, the drawing shows the angle as it is; a Lewis structure is drawn this way and still says nothing about the angle.' : 'The angle is measured in the plane of the molecule, so turning the molecule changes only what the flat drawing seems to show.');
+    readout(d.readout, `\\angle\\text{HCH} = 118^\\circ`,
+      'The C=O bond distance is 1.21 Å, or 121 pm. ' + (Math.abs(shown - 118) < 3 ? 'Seen face on, the drawing shows the angle as it is; a Lewis structure is drawn this way and still says nothing about the angle.' : 'The angle is measured in the plane of the molecule, so turning the molecule changes only what the flat drawing seems to show.'));
   }
   function draw() { build(); draw2d(); }
   still(d, draw);
@@ -238,87 +237,28 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
    regions in three dimensions, the lone pairs as lobes, the ideal angles
    as arcs, the axial and equatorial positions named at five regions,
    and beneath it the two names and the book's wedge-and-dash sketch of
-   the same case. Still: the arrangement answers its sliders and a drag.
+   the same case. Still: a change of the regions, the lone pairs or the
+   placement of ClF3's two lone pairs is one morph, each region swinging
+   along its great circle to its new place and a bond becoming a lobe as
+   its atom fades, and the equation of the regions morphs with it.
 ===================================================================== */
 (function () {
   const d = sim('sim-vsepr');
   const v = F.view3d(d.stage, { ...FREE, h: 460, dist: 5 });
   const g = v.part(0), c2 = strip(d, 330);
-  const N = ctl(d.controls, { label: '\\text{regions}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: 'regions of electron density', onInput: fitLone });
-  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 4, step: 1, value: 1, unit: '', dec: 0, aria: 'lone pairs among the regions', detents: [0, 1, 2, 3, 4] });
-  /* the labels are tiered (rule 26.7): the central atom, one bonded atom and the marked angles are always shown, and the
-     rest of the names, which would run to ten on a turning molecule, wait behind a button, with hover names all the while */
-  const LAB = F.choice(d.controls, { label: '\\text{Labels}', options: [{ value: 'off', label: 'off' }, { value: 'on', label: 'on' }], value: 'off', aria: 'names on every bonded atom and position' });
+  const N = ctl(d.controls, { label: '\\text{regions}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: 'regions of electron density', onInput: () => { fitLone(); shift(); } });
+  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 4, step: 1, value: 1, unit: '', dec: 0, aria: 'lone pairs among the regions', detents: [0, 1, 2, 3, 4], onInput: () => shift() });
   /* Figure 7.20: the three ways two lone pairs could be placed in a trigonal bipyramid, which only ClF3 needs, so the
      control appears only in that case rather than standing there doing nothing (rule 24.6) */
   const CLF = {
-    eq: { label: 'both equatorial', at: [2, 3], struct: 'T-shaped', why: 'This is the arrangement ClF\u2083 actually takes. Both lone pairs sit in equatorial positions, where the 120\u00b0 angles give them the most room, and the three fluorine atoms make a T.' },
-    one: { label: 'one axial', at: [0, 2], struct: 'neither of the named structures', why: 'One lone pair has been moved to an axial position, where three neighbors stand at 90\u00b0 to it rather than two, so this arrangement is less stable than the one ClF\u2083 takes.' },
-    both: { label: 'both axial', at: [0, 1], struct: 'trigonal planar', why: 'Both lone pairs have been moved to axial positions, where each is crowded by three neighbors at 90\u00b0, so this is the least stable of the three and is not what ClF\u2083 does.' },
-  };
-  const PL = F.choice(d.controls, { label: '\\text{lone pairs of ClF}_3', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs of ClF3 are placed' });
-  const PLBOX = d.controls.lastElementChild;
-  function fitLone() { const m = MAX_LONE[N.v]; if (LP.v > m) LP.set(m); }
-  function draw() {
-    const { ctx } = begin(c2);
-    const n = N.v, lone = Math.min(LP.v, MAX_LONE[n]); if (LP.v !== lone) LP.set(lone);
-    const clf = n === 5 && lone === 2, place = CLF[PL.value], all = LAB.value === 'on';
-    PLBOX.style.display = clf ? '' : 'none';
-    const mol = generic(n, lone, 170, undefined, clf ? place.at : undefined), bonds = n - lone, L = 170 * SCALE;
-    v.clear();
-    molecule3(g, mol, SCALE, v);
-    ARCS[n].forEach(([i, j, label]) => { const m = arc3d(g, mol.sites[i], mol.sites[j], L * 0.5); v.label(label, m, g, 0); });
-    v.label('E', [0, 0, 0], g, -54);
-    mol.atoms.slice(1).forEach((a, i) => { if (i === 0 || all) v.label('X', V.mul(a.p, SCALE * 1.3), g, 0); });
-    if (n === 5) { v.label('axial', V.mul(mol.sites[0], L + 0.4), g, 0); if (all) v.label('axial', V.mul(mol.sites[1], L + 0.4), g, 0); v.label('equatorial', V.mul(mol.sites[2], L + 0.55), g, 0); }
-    /* the sketch, straight on as the book draws it, and the two names */
-    const P = sketch(ctx, 300, 205, mol, 0.6, false);
-    mol.atoms.forEach((a) => { const [x, y] = P(a.p); atom(ctx, x, y, a.sym, a.sym === 'E' ? 20 : 15); });
-    text(ctx, 'in wedge and dash notation', 300, 305, PAL.muted, { size: 17, align: 'center' });
-    const struct = clf ? place.struct : STRUCT[n][lone];
-    /* only the observed placement is a structure a molecule takes, so the other two name no example */
-    const example = clf && PL.value !== 'eq' ? '' : EXAMPLE[n][lone];
-    text(ctx, 'The electron-pair geometry is ' + GEOM[n] + '.', 620, 150, PAL.ink, { size: 22, weight: 600 });
-    text(ctx, 'The molecular structure is ' + struct + '.', 620, 190, PAL.ink, { size: 22, weight: 600 });
-    text(ctx, 'The ideal angles are ' + IDEAL[n] + '.', 620, 240, PAL.ink, { size: 20 });
-    text(ctx, example ? 'A molecule that takes it is ' + example + '.' : 'No common molecule takes this arrangement.', 620, 275, PAL.muted, { size: 18 });
-    text(ctx, 'Drag the molecule to turn it, and rest the pointer on a body to be told what it is.', 620, 305, PAL.muted, { size: 16 });
-    const lp = lone === 0 ? 'no lone pair' : lone === 1 ? 'one lone pair' : lone + ' lone pairs';
-    topline(ctx, 'With ' + n + ' regions of electron density and ' + lp + ', the electron-pair geometry is ' + GEOM[n] + ' and the molecular structure is ' + struct + (example ? ', as in ' + example : '') + '.');
-    readout(d.readout, `${n}\\ \\text{regions} = ${bonds}\\ \\text{bond${bonds === 1 ? '' : 's'}} + ${lone}\\ \\text{lone pair${lone === 1 ? '' : 's'}}`,
-      clf ? place.why
-        : lone === 0 ? 'With no lone pair on the central atom, the molecular structure is the electron-pair geometry itself.'
-        : n === 5 ? 'A lone pair takes an equatorial position, where the 120° angles leave it more room than the 90° angles of an axial position.'
-        : n === 6 && lone === 2 ? 'The two lone pairs sit on opposite sides of the octahedron, 180° apart, which keeps them as far from each other as possible.'
-        : 'The lone pair is a region of electron density but not an atom, so it shapes the molecule without appearing in its structure; the real angles are slightly smaller than the ideal ones.');
-  }
-  still(d, draw);
-})();
-
-/* =====================================================================
-   SIM: the VSEPR bench told as a tour. The same central atom E and its
-   regions, drawn in the Manim look, open straight on as the book's
-   wedge-and-dash sketch, lift into space, and then have their regions
-   turned into lone pairs one by one; each change is a morph in which a
-   bonded atom fades and its bond becomes a lobe. The reader's sliders
-   stay live, and grabbing any of them hands the figure over.
-===================================================================== */
-(function () {
-  const d = sim('sim-vsepr-tour');
-  const v = F.view3d(d.stage, { spin: 'off', tilt: 0, views: FREE.views, h: 460, dist: 8 });
-  const g = v.part(0), c2 = strip(d, 330);
-  const N = ctl(d.controls, { label: '\\text{regions}', cls: '', min: 2, max: 6, step: 1, value: 4, unit: '', dec: 0, aria: 'regions of electron density', onInput: () => { fitLone(); shift(); } });
-  const LP = ctl(d.controls, { label: '\\text{lone pairs}', cls: '', min: 0, max: 4, step: 1, value: 0, unit: '', dec: 0, aria: 'lone pairs among the regions', detents: [0, 1, 2, 3, 4], onInput: () => shift() });
-  const LAB = F.choice(d.controls, { label: '\\text{Labels}', options: [{ value: 'off', label: 'off' }, { value: 'on', label: 'on' }], value: 'off', aria: 'names on every bonded atom and position' });
-  const CLF = {
-    eq: { label: 'both equatorial', at: [2, 3], struct: 'T-shaped' },
-    one: { label: 'one axial', at: [0, 2], struct: 'neither of the named structures' },
-    both: { label: 'both axial', at: [0, 1], struct: 'trigonal planar' },
+    eq: { label: 'both equatorial', at: [2, 3], struct: 'T-shaped', why: 'This is the arrangement ClF₃ actually takes. Both lone pairs sit in equatorial positions, where the 120° angles give them the most room, and the three fluorine atoms make a T.' },
+    one: { label: 'one axial', at: [0, 2], struct: 'neither of the named structures', why: 'One lone pair has been moved to an axial position, where three neighbors stand at 90° to it rather than two, so this arrangement is less stable than the one ClF₃ takes.' },
+    both: { label: 'both axial', at: [0, 1], struct: 'trigonal planar', why: 'Both lone pairs have been moved to axial positions, where each is crowded by three neighbors at 90°, so this is the least stable of the three and is not what ClF₃ does.' },
   };
   const PL = F.choice(d.controls, { label: '\\text{lone pairs of ClF}_3', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'where the two lone pairs of ClF3 are placed', onInput: () => shift() });
   const PLBOX = d.controls.lastElementChild;
   function fitLone() { const m = MAX_LONE[N.v]; if (LP.v > m) LP.set(m); }
-  d.readout.style.overflow = 'visible';
+  const fx = el('div'), note = el('small'); d.readout.append(fx, note);
   const L = 170 * SCALE;
 
   /* a state of the bench: its regions as directions, each a bond or a lone pair, and its two names */
@@ -345,102 +285,68 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     });
   }
 
-  /* the morph the draw shows: from, to and its progress; the reader's change eases over 0.9 s, a tour sets it exactly */
-  let from = state(4, 0, 'eq'), to = from;
+  /* the morph the draw shows: from, to and its progress, eased over 0.9 s */
+  let from = state(N.v, Math.min(LP.v, MAX_LONE[N.v]), 'eq'), to = from;
   const mt = F.tween(d, 1);
-  const now = () => (mt.v >= 1 ? to : null);
   function shift() {
     fitLone();
-    const n = N.v, lone = LP.v, next = state(n, lone, PL.value);
+    const next = state(N.v, LP.v, PL.value);
     if (next.n === to.n && next.lone === to.lone && next.place === to.place) return;
-    from = now() ?? snapshot(); to = next; mt.set(0); mt.to(1, 900);
+    from = mt.v >= 1 ? to : snapshot(); to = next; mt.set(0); mt.to(1, 900);
   }
   /* a morph interrupted part way starts the next one from where it stood */
   function snapshot() {
-    const q = mt.v, s = mt.v < 0.5 ? from : to;
+    const q = mt.v, s = q < 0.5 ? from : to;
     return { ...s, regions: between(from, to, q).filter((r) => r.p > 0.5).map((r) => ({ dir: r.dir, w: r.w > 0.5 ? 1 : 0 })) };
-  }
-  /* story-time reveals: the ideal angle's arc and the axial and equatorial names */
-  const reveal = { arc: 0, axial: 0 };
-
-  /* the Manim look in three dimensions: an atom is a sphere filled at half opacity in its hue with a
-     ring of the same hue around it, turned always to face the reader; bonds are thick round sticks */
-  const ringGeo = [];
-  function ring(r) {
-    const T = window.THREE, key = Math.round(r * 1000);
-    let e = ringGeo.find((x) => x.key === key);
-    if (!e) { e = { key, geo: new T.RingGeometry(r * 0.93, r * 1.05, 48) }; ringGeo.push(e); }
-    return e.geo;
-  }
-  const qa = window.THREE ? new window.THREE.Quaternion() : null;
-  function ball(p, r, color, a = 1) {
-    const T = window.THREE; if (!T || a <= 0.01) return null;
-    const m = sphere(g, p, r, color, { transparent: true, opacity: 0.5 * a, depthWrite: false });
-    const o = new T.Mesh(ring(r), new T.MeshBasicMaterial({ color: new T.Color(color), transparent: true, opacity: a, side: T.DoubleSide }));
-    o.position.set(p[0], p[1], p[2]);
-    o.onBeforeRender = () => { g.getWorldQuaternion(qa); o.quaternion.copy(qa.invert()); o.updateMatrixWorld(); };
-    g.add(o);
-    return m;
   }
   function rod(a, b, r, color, op = 1) {
     if (V.len(V.sub(b, a)) < 1e-3 || op <= 0.01) return;
     stick(g, a, b, r, color, op < 1 ? { transparent: true, opacity: op } : undefined);
-    sphere(g, b, r, color, op < 1 ? { transparent: true, opacity: op } : undefined);
   }
-  /* an arc drawn along its length as a chain of round rods */
-  function arcRods(a, b, R, k, color) {
+  function arcRods(a, b, R) {
     const ua = V.unit(a), ub = V.unit(b), pts = [];
     for (let i = 0; i <= 32; i++) pts.push(V.mul(slerp(ua, ub, i / 32), R));
-    const part = F.partial(pts, k);
-    for (let i = 1; i < part.length; i++) rod(part[i - 1], part[i], 0.022, color);
-    return V.mul(V.unit(slerp(ua, ub, 0.5)), R + 0.4);
+    polyline(g, pts);
+    return V.mul(V.unit(slerp(ua, ub, 0.5)), R + 0.25);
   }
-  const plain = (e, a = 1) => { e.style.background = 'transparent'; e.style.border = '0'; e.style.opacity = String(a); return e; };
-
-  /* the flat sketch of a state in the Manim look: discs half filled in their hue, ringed */
+  const plain = (e, a = 1) => { e.style.opacity = String(a); return e; };
   function flat(ctx, s, a) {
     if (a <= 0.01) return;
     const mol = generic(s.n, s.lone, 170, undefined, s.clf ? CLF[s.place].at : undefined);
     ctx.save(); ctx.globalAlpha = a;
-    const P = sketch(ctx, 300, 190, mol, 0.5, false);
-    mol.atoms.forEach((at) => { const [x, y] = P(at.p), r = at.sym === 'E' ? 20 : 15; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = alpha(PAL.ink, 0.25); ctx.fill(); ctx.lineWidth = 3.5; ctx.strokeStyle = PAL.ink; ctx.stroke(); if (at.sym === 'E') text(ctx, 'E', x, y + 1, PAL.ink, { size: 20, weight: 600, align: 'center' }); });
+    const P = sketch(ctx, 300, 205, mol, 0.6, false);
+    mol.atoms.forEach((at) => { const [x, y] = P(at.p); atom(ctx, x, y, at.sym, at.sym === 'E' ? 20 : 15); });
     ctx.restore();
   }
   function words(ctx, x, y, a, b, q, o) {
-    if (a === b) { text(ctx, a, x, y, PAL.ink, o); return; }
-    ctx.save(); ctx.globalAlpha = 1 - q; text(ctx, a, x, y, PAL.ink, o); ctx.globalAlpha = q; text(ctx, b, x, y, PAL.ink, o); ctx.restore();
+    if (a === b) { text(ctx, a, x, y, o.color ?? PAL.ink, o); return; }
+    ctx.save(); ctx.globalAlpha = 1 - q; text(ctx, a, x, y, o.color ?? PAL.ink, o); ctx.globalAlpha = q; text(ctx, b, x, y, o.color ?? PAL.ink, o); ctx.restore();
   }
 
   function draw() {
     const { ctx } = begin(c2);
-    const q = Math.max(0, Math.min(1, mt.v)), s = q < 0.5 ? from : to, all = LAB.value === 'on';
+    const q = Math.max(0, Math.min(1, mt.v)), s = q < 0.5 ? from : to;
     PLBOX.style.display = to.clf ? '' : 'none';
     v.clear();
-    const X = PAL.muted, rX = rOf('X') / 90;
-    v.pickable(ball([0, 0, 0], rOf('E') / 90, PAL.muted), nameOf('E'));
+    const rX = rOf('X') / 62;
+    v.pickable(sphere(g, [0, 0, 0], rOf('E') / 62, atomColor('E')), nameOf('E'));
     between(from, to, q).forEach((r) => {
       const len = L * r.p, tip = V.mul(r.dir, len), bond = 1 - r.w;
-      rod(V.mul(r.dir, 0.29), V.mul(r.dir, Math.max(0.29, len * (0.25 + 0.75 * bond) - rX * bond)), 0.075, PAL.ink, bond);
-      const m = ball(tip, rX * (0.5 + 0.5 * bond) * Math.min(1, r.p * 1.4), X, bond);
-      if (m) v.pickable(m, nameOf('X'));
-      if (r.w > 0.01) { const lb = lobe3(g, [0, 0, 0], r.dir, len * 0.8 * (0.35 + 0.65 * r.w), PAL.ink); lb.material.opacity = 0.5 * r.w; v.pickable(lb, 'a lone pair'); }
-      if (all && bond > 0.5 && r.p > 0.5) plain(v.label('X', V.mul(r.dir, (len + 0.1) * 1.18), g, 0), bond);
+      rod([0, 0, 0], V.mul(r.dir, len * (0.25 + 0.75 * bond)), 0.05, PAL.ink, bond);
+      if (bond > 0.01) { const m = sphere(g, tip, rX * Math.min(1, r.p * 1.4), atomColor('X'), bond < 1 ? { transparent: true, opacity: bond } : undefined); v.pickable(m, nameOf('X')); }
+      if (r.w > 0.01) { const lb = lobe3(g, [0, 0, 0], r.dir, len * 0.8 * (0.35 + 0.65 * r.w)); lb.material.transparent = true; lb.material.opacity = 0.5 * r.w; v.pickable(lb, 'a lone pair'); }
     });
-    /* E is named on the side its regions leave most open, and one bonded atom is named: a lower axial one at five
-       regions, where the upper takes the name axial, and otherwise the last */
-    const open = [[0, -1, 0], [0, 1, 0], [1, 0, 0], [-1, 0, 0], [0.7, -0.7, 0], [-0.7, -0.7, 0], [0.7, 0.7, 0], [-0.7, 0.7, 0]]
-      .map((c) => [Math.max(...to.regions.map((r) => V.dot(r.dir, c))), c]).sort((a, b) => a[0] - b[0])[0][1];
-    plain(v.label('E', V.mul(open, 0.55), g, -10));
+    v.label('E', [0, 0, 0], g, -54);
+    /* one bonded atom is named, since the rest are of the same kind (rule 26.7): a lower axial one at five regions, where
+       the upper takes the name axial, and otherwise the last */
     const named = to.n === 5 ? to.regions[1] : [...to.regions].reverse().find((r) => r.w < 0.5);
-    if (!all && named && named.w < 0.5) plain(v.label('X', V.mul(named.dir, L + 0.35), g, -10), q);
-    const arcs = ARCS[s.n], ka = reveal.arc * (from.n === to.n ? 1 : q);
-    arcs.forEach(([i, j, lab]) => { if (ka <= 0) return; const mid = arcRods(to.regions[i].dir, to.regions[j].dir, L * 0.62, ka, PAL.ink); plain(v.label(lab, mid, g, 0), ka); });
-    if (to.n === 5 && reveal.axial > 0) {
-      const a = reveal.axial * q;
-      plain(v.label('axial', V.mul(to.regions[0].dir, L + 0.3), g, 0), a);
-      if (all) plain(v.label('axial', V.mul(to.regions[1].dir, L + 0.3), g, 0), a);
+    if (named && named.w < 0.5) plain(v.label('X', V.mul(named.dir, L * 1.3), g, 0), q);
+    if (from.n === to.n || q > 0.5) ARCS[to.n].forEach(([i, j, lab]) => { const mid = arcRods(to.regions[i].dir, to.regions[j].dir, L * 0.5); plain(v.label(lab, mid, g, 0), from.n === to.n ? 1 : 2 * q - 1); });
+    if (to.n === 5) {
+      const a = from.n === 5 ? 1 : q;
+      plain(v.label('axial', V.mul(to.regions[0].dir, L + 0.4), g, 0), a);
       const eq = to.regions.slice(2).find((r) => r.w < 0.5) ?? to.regions[2];
-      plain(v.label('equatorial', V.mul(eq.dir, L + 0.45), g, 0), a);
+      plain(v.label('equatorial', V.mul(eq.dir, L + 0.55), g, 0), a);
     }
     /* beneath: the sketch, straight on as the book draws it, and the two names */
     flat(ctx, from, 1 - q); flat(ctx, to, q);
@@ -448,32 +354,18 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     words(ctx, 620, 150, 'The electron-pair geometry is ' + GEOM[from.n] + '.', 'The electron-pair geometry is ' + GEOM[to.n] + '.', q, { size: 22, weight: 600 });
     words(ctx, 620, 190, 'The molecular structure is ' + from.struct + '.', 'The molecular structure is ' + to.struct + '.', q, { size: 22, weight: 600 });
     words(ctx, 620, 240, 'The ideal angles are ' + IDEAL[from.n] + '.', 'The ideal angles are ' + IDEAL[to.n] + '.', q, { size: 20 });
-    const lone = s.lone, bonds = s.n - lone, lp = lone === 0 ? 'no lone pair' : lone === 1 ? 'one lone pair' : lone + ' lone pairs';
-    topline(ctx, 'With ' + s.n + ' regions of electron density and ' + lp + ', the electron-pair geometry is ' + GEOM[s.n] + ' and the molecular structure is ' + s.struct + '.');
-    F.morph(d.readout, `\\mk{n}{${s.n}\\ \\text{regions}} = \\mk{b}{${bonds}\\ \\text{bond${bonds === 1 ? '' : 's'}}}` + (lone ? ` + \\mk{lp}{${lone}\\ \\text{lone pair${lone === 1 ? '' : 's'}}}` : ''));
+    const t = to, example = t.clf && t.place !== 'eq' ? '' : EXAMPLE[t.n][t.lone];
+    text(ctx, example ? 'A molecule that takes it is ' + example + '.' : 'No common molecule takes this arrangement.', 620, 275, PAL.muted, { size: 18 });
+    const lone = t.lone, bonds = t.n - lone, lp = lone === 0 ? 'no lone pair' : lone === 1 ? 'one lone pair' : lone + ' lone pairs';
+    topline(ctx, 'With ' + t.n + ' regions of electron density and ' + lp + ', the electron-pair geometry is ' + GEOM[t.n] + ' and the molecular structure is ' + t.struct + (example ? ', as in ' + example : '') + '.');
+    F.morph(fx, `\\mk{n}{${t.n}\\ \\text{regions}} = \\mk{b}{${bonds}\\ \\text{bond${bonds === 1 ? '' : 's'}}}` + (lone ? ` + \\mk{lp}{${lone}\\ \\text{lone pair${lone === 1 ? '' : 's'}}}` : ''));
+    note.textContent = t.clf ? CLF[t.place].why
+      : lone === 0 ? 'With no lone pair on the central atom, the molecular structure is the electron-pair geometry itself.'
+      : t.n === 5 ? 'A lone pair takes an equatorial position, where the 120° angles leave it more room than the 90° angles of an axial position.'
+      : t.n === 6 && lone === 2 ? 'The two lone pairs sit on opposite sides of the octahedron, 180° apart, which keeps them as far from each other as possible.'
+      : 'The lone pair is a region of electron density but not an atom, so it shapes the molecule without appearing in its structure; the real angles are slightly smaller than the ideal ones.';
   }
   still(d, draw);
-
-  /* the tour; a transition the story sets exactly, so a seek backward lands where it should */
-  const moves = [];
-  function settle() {
-    const i = moves.reduce((b, m, j) => (m.k > 0 ? j : b), -1);
-    if (i < 0) { from = to = state(4, 0, 'eq'); mt.set(1); return; }
-    const m = moves[i]; from = m.a; to = m.b; mt.set(m.k);
-  }
-  function morphBeat(a, b) { const m = { a, b, k: 0 }; moves.push(m); return (k) => { m.k = k; settle(); }; }
-  const beat = (o) => o;
-  const deg = (x) => x * RAD;
-  F.tour(d, { camera: v, beats: [
-    beat({ name: 'Seen straight on, the model is the book’s wedge-and-dash sketch.', ms: 600, rest: 1400, view: { yaw: 0, pitch: 0 } }),
-    beat({ name: 'Tilted, the wedge bond comes out of the page and the dashed bond goes into it.', ms: 2400, view: { yaw: deg(35), pitch: deg(35), zoom: 1.6 } }),
-    beat({ name: 'Turned further, every angle between two bonds is 109.5°.', ms: 2600, view: { yaw: deg(155), pitch: deg(35), zoom: 1.6 }, run: (k) => { reveal.arc = Math.max(0, (k - 0.5) * 2); } }),
-    beat({ name: 'One region becomes a lone pair, and the structure is trigonal pyramidal.', ms: 1800, knobs: [[LP, 1]], run: morphBeat(state(4, 0, 'eq'), state(4, 1, 'eq')) }),
-    beat({ name: 'A second lone pair leaves the molecule bent.', ms: 1800, knobs: [[LP, 2]], run: morphBeat(state(4, 1, 'eq'), state(4, 2, 'eq')) }),
-    beat({ name: 'A fifth region makes a trigonal bipyramid, and the lone pairs take equatorial places.', ms: 1800, knobs: [[N, 5], [PL, 'eq']], run: morphBeat(state(4, 2, 'eq'), state(5, 2, 'eq')) }),
-    beat({ name: 'Seen from above the equator, three positions are equatorial and two are axial.', ms: 2400, view: { yaw: deg(120), pitch: deg(28), zoom: 1.35 }, run: (k) => { reveal.axial = k; } }),
-    beat({ name: 'The molecule is T-shaped, like ClF₃.', ms: 400, rest: 3500 }),
-  ] });
 })();
 
 /* =====================================================================
@@ -563,14 +455,14 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     const ideal = { 2: 180, 3: 120, 4: 109.5, 5: 90, 6: 90 }[n];
     line(ctx, box.l, Y(ideal), box.r, Y(ideal), alpha(PAL.ink, 0.4), 2, [10, 10]);
     text(ctx, 'ideal ' + ideal + '°', box.r - 6, Y(ideal) - 16, PAL.muted, { size: 17, align: 'right' });
-    text(ctx, n + ' regions on a sphere about E' + (lone ? ', ' + lone + ' of them lone pairs' : '') + '. The smallest angle grows until no region can get farther from the rest. Drag the sphere to turn it.', 700, 372, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, n + ' regions on a sphere about E' + (lone ? ', ' + lone + ' of them lone pairs' : '') + '. The smallest angle grows until no region can get farther from the rest.', 700, 372, PAL.muted, { size: 17, align: 'center' });
     const found = lone ? GEOM[n] + ' electron-pair geometry, ' + STRUCT[n][Math.min(lone, MAX_LONE[n])] + ' molecular structure' : 'a ' + GEOM[n] + ' arrangement';
     topline(ctx, settled ? 'The ' + n + ' regions have settled into ' + found + ', and the smallest angle between two of them is ' + fmt(ang, 0) + '°.'
       : 'At t = ' + fmt(tau, 1) + ' s the regions are still pushing apart, and the smallest angle between two of them has grown to ' + fmt(ang, 0) + '°.');
-    readout(d.readout, `\\text{smallest angle} = ${fmt(ang, 1)}^\\circ \\quad (\\text{ideal } ${ideal}^\\circ)`,
-      lone ? 'A lone pair repels more strongly than a bonding pair, so the bonds are pushed toward one another and their angle settles below the ideal.'
+    readout(d.readout, `\\text{smallest angle} = ${fmt(ang, 1)}^\\circ`,
+      'The ideal angle is ' + ideal + '°. ' + (lone ? 'A lone pair repels more strongly than a bonding pair, so the bonds are pushed toward one another and their angle settles below the ideal.'
         : n >= 5 ? (n === 5 ? 'Five regions cannot all be equivalent: two settle 90° from their neighbors while the other three are 120° apart. ' : 'Six regions square themselves into an octahedron. ') + 'A repulsion alone cannot say which of two unlike positions a lone pair takes; that is decided by the size order, which the bench above applies.'
-        : 'Nothing is placed by hand: every region only moves away from the others, and the geometry the book names is where that ends.');
+        : 'Nothing is placed by hand: every region only moves away from the others, and the geometry the book names is where that ends.'));
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -615,7 +507,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
       if (k === 2) { [[0, 1], [1, 2], [0, 2]].forEach(([i, j]) => arc3d(g, hs[i], hs[j], 0.5)); v.label('106.8°', arc3d(g, hs[0], hs[1], 0.5), g, -18); }
       text(ctx, cap, 233 + 467 * k, 36, PAL.ink, { size: 19, weight: 600, align: 'center' });
     });
-    readout(d.readout, '\\text{NH}_3', 'The lone pair takes up a larger region of space than the single bonds, so the H–N–H angle is slightly smaller than the 109.5° of a regular tetrahedron. Drag any of the three to turn them.');
+    readout(d.readout, '\\text{NH}_3', 'The lone pair takes up a larger region of space than the single bonds, so the H–N–H angle is slightly smaller than the 109.5° of a regular tetrahedron.');
   }
   still(d, draw);
 })();
@@ -667,7 +559,7 @@ function twoPanels(id, molA, molB, capA, capB, small, formula) {
       const lines = cap.length > 70 ? cap.replace(', so ', ',\nso ').split('\n') : [cap];
       lines.forEach((l, i) => text(ctx, l, 350 + 700 * k, 36 + (i - (lines.length - 1) / 2) * 26, PAL.ink, { size: 19, weight: 600, align: 'center' }));
     });
-    readout(d.readout, formula, small + ' Drag either panel to turn both.');
+    readout(d.readout, formula, small);
   }
   still(d, draw);
 }
@@ -719,7 +611,7 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
       if (z[j] === 1) wedge(ctx, ax, ay, bx, by); else if (z[j] === -1) dashes(ctx, ax, ay, bx, by); else bondLine(ctx, ax, ay, bx, by, order, 3.5);
     });
     lewis(ctx, cx, cy, atoms, []);
-    readout(d.readout, '\\text{H}_2\\text{NCH}_2\\text{CO}_2\\text{H}', 'The bonds about the nitrogen and the first carbon are drawn as wedges and dashes, since each of those atoms has four regions of electron density arranged in a tetrahedron; the second carbon has three, in one plane.');
+    readout(d.readout, '\\text{H}_2\\text{NCH}_2\\text{CO}_2\\text{H}', 'The bonds about the nitrogen and the first carbon point out of and into the page, since each of those atoms has four regions of electron density arranged in a tetrahedron; the second carbon has three, in one plane.');
   }
   still(d, draw);
 })();
@@ -816,9 +708,8 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
     mk('SF₆', '\\text{SF}_6', 'S', SITES[6].map((q) => ['F', q]), 'octahedral'),
   ];
   const M = pick(d.controls, { label: '\\text{molecule or bond}', value: 6, aria: 'the molecule or the single bond' }, MOLS.map((m) => m.name));
-  /* the labels are tiered (rule 26.7): the central atom and one bonded atom are named, since the rest are of the same kind,
-     and the whole set of names waits behind a button; every atom answers the pointer either way */
-  const LAB = F.choice(d.controls, { label: '\\text{Labels}', options: [{ value: 'off', label: 'off' }, { value: 'on', label: 'on' }], value: 'off', aria: 'a name on every atom' });
+  /* the labels are tiered (rule 26.7): the central atom and one bonded atom are named, since the rest are of the same kind;
+     every atom answers the pointer */
   const K = 0.62;   /* scene units of arrow per unit of electronegativity difference */
   function draw() {
     const { ctx } = begin(c2);
@@ -838,7 +729,7 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
     });
     const net = V.len(sum), polar = net > 0.05;
     if (polar) { const c = mol.diatomic ? [0, 0, 0] : [0, 0, 0], u = V.unit(sum), tip = V.add(c, V.mul(u, net * K)); arrow3(g, c, tip, 0.06); v.label('dipole moment', V.add(tip, V.mul(u, 0.25)), g, 0); }
-    mol.atoms.forEach((a, i) => { if (i > 1 && LAB.value !== 'on') return; v.label(a.sym, V.mul(a.p, SCALE), g, i === 0 && !mol.diatomic ? -52 : 0); });
+    mol.atoms.forEach((a, i) => { if (i > 1) return; v.label(a.sym, V.mul(a.p, SCALE), g, i === 0 && !mol.diatomic ? -52 : 0); });
     /* the electronegativities the arrows are drawn from */
     const seen = new Set(); let y = 130;
     rows.forEach(({ a, b, dEN }) => { const key = a.sym + b.sym; if (seen.has(key)) return; seen.add(key); text(ctx, a.sym + '–' + b.sym + ': ' + fmt(EN[a.sym], 1) + ' and ' + fmt(EN[b.sym], 1) + ', a difference of ' + fmt(Math.abs(dEN), 1), 1360, y, PAL.ink, { size: 18, align: 'right' }); y += 30; });
@@ -846,13 +737,12 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
     text(ctx, mol.diatomic ? 'This is ' + mol.structure + '.' : 'The molecular structure is ' + mol.structure + '.', 40, 130, PAL.ink, { size: 19 });
     text(ctx, polar ? 'The bond moments do not cancel, so the molecule is polar.' : mol.bonds.every((_, i) => Math.abs(rows[i].dEN) < 0.02) ? 'There is no polar bond here, so the molecule is nonpolar.' : 'The bond moments cancel, so the molecule is nonpolar.', 40, 164, PAL.ink, { size: 19, weight: 600 });
     text(ctx, 'Each arrow points from the less electronegative atom toward the more, with a plus sign at its tail.', 40, 200, PAL.muted, { size: 16 });
-    text(ctx, 'Drag the molecule to turn it, and rest the pointer on an atom to be told which it is.', 40, 226, PAL.muted, { size: 16 });
     const one = rows[0];
     topline(ctx, mol.diatomic ? 'In ' + (mol.whole ? 'the ' + mol.name + ' molecule' : 'the ' + mol.name + ' bond') + ' the electronegativity difference is ' + fmt(Math.abs(one.dEN), 1) + ', so its bond moment is ' + (Math.abs(one.dEN) > 1 ? 'a long' : Math.abs(one.dEN) > 0.5 ? 'a moderate' : 'a short') + ' vector pointing toward the ' + (one.dEN >= 0 ? one.b.sym : one.a.sym) + ' atom.'
       : mol.name + ' is ' + mol.structure.split(',')[0] + ', so its ' + mol.bonds.length + ' bond moments ' + (polar ? 'do not cancel and the molecule is polar' : 'cancel and the molecule is nonpolar') + '.');
     readout(d.readout, mol.diatomic ? `\\mu \\propto |\\Delta\\text{EN}| = ${fmt(Math.abs(one.dEN), 2)}` : `\\left|\\sum \\vec{\\mu}_{\\text{bond}}\\right| \\propto ${fmt(net, 2)}`,
       mol.diatomic ? (mol.whole ? 'For a molecule of two atoms there is only one bond, so its bond dipole moment is the dipole moment of the molecule.' : 'For a single bond there is nothing to add, so the bond moment stands on its own.')
-        : rows.some((r) => Math.abs(r.dEN) < 0.02) ? 'Figure 7.6 gives carbon and sulfur the same electronegativity, so the C–S bond draws no arrow here, and the whole of this dipole moment comes from the C=O bond. The text notes that sulfur is in fact very slightly the more electronegative of the two.'
+        : rows.some((r) => Math.abs(r.dEN) < 0.02) ? 'Figure 7.6 gives carbon and sulfur the same electronegativity, so the C–S bond has no bond moment on that scale, and the whole of this dipole moment comes from the C=O bond. The text notes that sulfur is in fact very slightly the more electronegative of the two.'
         : polar ? 'The dipole moment is the vector sum of the bond moments, taken in three dimensions, and here the sum is not zero.'
         : 'Each bond is polar, but the bonds are arranged so that their moments sum to zero, and the molecule as a whole is nonpolar.');
   }

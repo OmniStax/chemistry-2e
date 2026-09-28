@@ -172,3 +172,9 @@ labels are on.
   Controls: the volume and temperature sliders. Flat. Labels on, and there
   are four of them.
 - `fig-hazard-diamond` (Figure 1.21): rebuilt as the line above now says.
+
+## Figure pass, 2026-09-28 (Claude Opus 5.5)
+
+Judged against `docs/prompts/manim-style.md`; only the figures below changed.
+
+- `sim-extensive` · readout the mass equation alone, the temperature in the sentence (manim 12).

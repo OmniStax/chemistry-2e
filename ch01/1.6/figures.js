@@ -36,7 +36,8 @@ function column(ctx, x, yTop, bottom, r, color, filled) {
 ===================================================================== */
 (function () {
   const d = sim('sim-temperature-scales', 640);
-  const T = ctl(d.controls, { label: '\\kTC', cls: 'temperature', min: -80, max: 120, step: 0.1, value: 37, unit: '°C', dec: 1, aria: 'temperature on the Celsius scale' });
+  const T = ctl(d.controls, { label: '\\kTC', cls: 'temperature', min: -80, max: 120, step: 0.1, value: 37, unit: '°C', dec: 1, aria: 'temperature on the Celsius scale',
+    specials: [{ at: -40, label: '−40' }, { at: 0, label: 'freezing' }, { at: 100, label: 'boiling' }] });
   /* the height axis the three tubes share: −80 °C at the bottom, 120 °C at the top */
   const LO = -80, HI = 120, YB = 540, YT = 130;
   const Y = (tc) => YB - ((tc - LO) / (HI - LO)) * (YB - YT);

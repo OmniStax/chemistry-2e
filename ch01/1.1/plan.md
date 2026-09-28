@@ -221,3 +221,9 @@ labels are on.
   the library bounds and an idle spin. Labels: the three domain names and the
   state word are the frame and are always on, and every atom and the
   thermometer carry hover names, so no Labels button is needed.
+
+## Figure pass, 2026-09-28 (Claude Opus 5.5)
+
+Judged against `docs/prompts/manim-style.md`; only the figures below changed.
+
+- `sim-water` · the formula is set through the library's text (26.8); dashed circles on T at 0 °C and 100 °C (manim 8); readout the formula alone, the temperature in the sentence (manim 12).

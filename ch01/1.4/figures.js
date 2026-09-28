@@ -16,7 +16,7 @@ const sigOf = (s) => s.replace('.', '').replace(/^0+/, '').length;
    row of seven buttons beside two sliders would wrap; the figure reads the index it always read */
 function pick(controls, o, names) {
   const c = F.select(controls, { label: o.label, aria: o.aria, options: names.map((n, i) => ({ value: String(i), label: n })), value: String(o.value ?? 0), onInput: () => o.onInput?.() });
-  return { get v() { return +c.value; }, set(x) { c.set(String(x)); } };
+  return { get v() { return +c.value; }, set(x) { c.set(String(x)); }, mix: (f) => c.mix(f) };
 }
 /* ---------- a locked view of the solids the book draws in perspective (rule 28.2) ----------
    The book prints its cubes as solids seen from one corner, so they are projected through the drawing
@@ -136,7 +136,8 @@ function rule(ctx, x1, x2, y, h) {
 ===================================================================== */
 (function () {
   const d = sim('sim-volume', 640);
-  const A = ctl(d.controls, { label: '\\text{edge } a', cls: '', min: 1, max: 100, step: 1, value: 10, unit: 'cm', dec: 0, aria: 'edge of the cube in centimeters' });
+  const A = ctl(d.controls, { label: '\\text{edge } a', cls: '', min: 1, max: 100, step: 1, value: 10, unit: 'cm', dec: 0, aria: 'edge of the cube in centimeters',
+    specials: [{ at: 1, label: '1 mL' }, { at: 10, label: '1 L' }, { at: 100, label: '1 m³' }] });
   function draw() {
     const { ctx } = begin(d.c);
     const a = A.v, V = a * a * a;
@@ -261,7 +262,8 @@ function rule(ctx, x1, x2, y, h) {
     /* the block under the water, held by a rod when it would float, and the two levels */
     const bw2 = 90, bh2 = ((cb - ct) / 60) * V * 0.72, byy = cb - 10 - bh2, bxx = (cl + cr) / 2 - bw2 / 2;
     ctx.save(); ctx.fillStyle = alpha(cvol, 0.35); ctx.strokeStyle = cvol; ctx.lineWidth = 2.5; ctx.fillRect(bxx, byy, bw2, bh2); ctx.strokeRect(bxx, byy, bw2, bh2); ctx.restore();
-    if (floats) { line(ctx, (cl + cr) / 2, ct - 40, (cl + cr) / 2, byy, PAL.ink, 3); text(ctx, 'held under', (cl + cr) / 2 + 12, ct - 30, PAL.muted, { size: 16 }); }
+    const rod = M.mix((i) => (MATS[+i][1] < 1 ? 1 : 0));
+    if (rod > 0.01) { ctx.save(); ctx.globalAlpha = rod; line(ctx, (cl + cr) / 2, ct - 40, (cl + cr) / 2, byy, PAL.ink, 3); text(ctx, 'held under', (cl + cr) / 2 + 12, ct - 30, PAL.muted, { size: 16 }); ctx.restore(); }
     line(ctx, cl, Y(v1), cr + 40, Y(v1), cvol, 2.5, [10, 10]);
     line(ctx, cl, Y(v2), cr + 40, Y(v2), cvol, 3);
     text(ctx, 'before, V₁ = ' + fmt(v1, 1) + ' mL', cr + 150, Y(v1) + (V < 3 ? 22 : 0), cvol, { size: 18, weight: 600 });
@@ -272,8 +274,8 @@ function rule(ctx, x1, x2, y, h) {
     hits.push({ x: bx, y: by - bh / 2, r: Math.max(bw, bh) / 2 + 4, name: 'the ' + name + ' block, ' + fmt(m, 2) + ' g' }, { x: bx, y: by + 40, r: 56, name: 'balance, reading ' + fmt(m, 2) + ' g' },
       { x: bxx + bw2 / 2, y: byy + bh2 / 2, r: Math.max(bw2, bh2) / 2 + 4, name: 'the ' + name + ' block under the water' }, { x: (cl + cr) / 2, y: (Y(v2) + cb) / 2, r: 40, name: 'water in the graduated cylinder, ' + fmt(v2, 1) + ' mL with the block in' });
     headline(ctx, 'The water rises from ' + fmt(v1, 1) + ' mL to ' + fmt(v2, 1) + ' mL, so the ' + name + ' block has a volume of ' + fmt(V, 1) + ' mL; it weighs ' + fmt(m, 2) + ' g, so its density is ' + dens + ' g/mL.');
-    readout(d.readout, `\\kV = ${fmt(v2, 1)}\\ \\text{mL} - ${fmt(v1, 1)}\\ \\text{mL} = \\htmlClass{kv-volume}{${fmt(V, 1)}\\ \\text{mL}} \\qquad \\text{density} = \\frac{\\km}{\\kV} = \\frac{\\htmlClass{kv-mass}{${fmt(m, 2)}\\ \\text{g}}}{\\htmlClass{kv-volume}{${fmt(V, 1)}\\ \\text{mL}}} = ${dens}\\ \\text{g/mL}`,
-      floats ? 'A block less dense than water floats, so it is held under the surface until it is fully submerged; the water then rises by its whole volume.' : 'The block sinks, and the water rises by exactly the volume of the block, whatever its shape.');
+    readout(d.readout, `\\text{density} = \\frac{\\km}{\\kV} = \\frac{\\htmlClass{kv-mass}{${fmt(m, 2)}\\ \\text{g}}}{\\htmlClass{kv-volume}{${fmt(V, 1)}\\ \\text{mL}}} = ${dens}\\ \\text{g/mL}`,
+      'The block’s volume is the rise, ' + fmt(v2, 1) + ' mL − ' + fmt(v1, 1) + ' mL = ' + fmt(V, 1) + ' mL. ' + (floats ? 'A block less dense than water floats, so it is held under the surface until it is fully submerged; the water then rises by its whole volume.' : 'The block sinks, and the water rises by exactly the volume of the block, whatever its shape.'));
   }
   register(d.fig, { update: () => {}, draw });
 })();

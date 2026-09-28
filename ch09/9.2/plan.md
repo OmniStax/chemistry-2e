@@ -488,4 +488,13 @@ labels are on.
 
 ## Manim duplicates
 
-- `sim-gas-box-morph` (duplicate of `sim-gas-box`), layer B. Value add: the four laws are read out of PV = nRT rather than beside it; the held quantities fade into k in the equation while their sliders grey in step. Thresholds: the law picker (a choice, so no hysteresis is needed); free gives PV = nRT, Boyle PV = k, Amontons P/T = k, Charles V/T = k, Avogadro V/n = k; for Boyle and Amontons 1.6 s later k opens into P₁V₁ = P₂V₂ or P₁/T₁ = P₂/T₂ from the snapshot taken at the switch (source: "P1/T1 = k and P2/T2 = k, which reduces to P1/T1 = P2/T2"). One inline line at the book's size, symbols = numbers = result, each law's k its own key (kA, kC, kB, kAv: different constants). keyMaps: free → law, the held terms (n R T, n R P, n R V, P R T) → that k (many to one: k is their product or ratio held fixed); free → Boyle also PVval → kBval (the value of PV is k); law → free, k → its held terms (one to many, the reverse); Boyle k → P₂, V₂ and Amontons k → P₂, T₂ (k is the same product or ratio at the second state); P → P₁, V → V₁, T → T₁ by same key (the same variable, now the first state); current-state numbers keep their keys and move; law → law maps nothing (the constants differ). Numbers bend as the free slider moves. The gauge takes the Manim look. Physical 3D, as the original.
+- Merged, 2026-09-28 (Claude Opus 5.5): `sim-gas-box-morph` is folded into `sim-gas-box`. Its equation that morphs by meaning (PV = nRT; the held quantities folding into each law's k; k opening into P₁V₁ = P₂V₂ or P₁/T₁ = P₂/T₂) and its greying of the held sliders are kept; its ringed dial was restyling and the original gauge stays. The duplicate's row and figure element are removed.
+
+## Figure pass, 2026-09-28 (Claude Opus 5.5)
+
+Judged against `docs/prompts/manim-style.md`; only the figures below changed.
+
+- `sim-gas-box` · Sim · moving, 3D, merged with `sim-gas-box-morph` (see the note under Manim duplicates): the law choice morphs the readout by meaning into the law's own form and greys the held sliders (manim 11); dashed circles on T at 273 K and on V at the volume the present amount fills at STP (manim 8).
+- `sim-breathing` · readout the volume equation alone, the pressure difference in the sentence (manim 12).
+- `sim-balloons` · a dashed circle on n at 1 mol, the standard molar volume (manim 8).
+- `sim-amontons-sphere`, `sim-balloons`, `sim-four-graphs` · no sentence tells the reader to drag or speaks of the sliders (root 17).

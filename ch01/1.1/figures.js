@@ -1,7 +1,7 @@
 /* Figures for section 1.1 Chemistry in Context. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['1.1'] = function (root, F) {
-const { el, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, headline, topline, FONT } = F;
+const { el, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, headline, topline } = F;
 const sim = (id, H) => F.sim(root, id, H);
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const TAU = 2 * Math.PI;
@@ -177,7 +177,8 @@ function frame(r) {
   const d = sim('sim-water', 560);
   /* the view is a state (rule 26.1): the flat drawing, which the book teaches, or the molecules turned in three dimensions */
   const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: show });
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: -40, max: 140, step: 1, value: 25, unit: '°C', dec: 0, aria: 'temperature' });
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: -40, max: 140, step: 1, value: 25, unit: '°C', dec: 0, aria: 'temperature',
+    specials: [{ at: 0, label: 'melting' }, { at: 100, label: 'boiling' }] });
   const stateOf = (t) => (t < 0 ? 's' : t < 100 ? 'l' : 'g');
   /* the state is a thing the reader chooses as well as a thing the temperature decides (rule 26.1): three buttons, the one the
      temperature falls in marked; pressing one sets the temperature to a value inside that state, and the slider is still free */
@@ -241,13 +242,11 @@ function frame(r) {
     const fx = 700, fy = 300;
     arrow(ctx, bx1 + 40, fy, fx - 120, fy, PAL.muted, 4);
     arrow(ctx, fx + 120, fy, 1110 - 165 - 28, fy, PAL.muted, 4);
-    ctx.save(); ctx.fillStyle = PAL.ink; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
-    const big = `600 52px ${FONT}`, ital = `italic 600 52px ${FONT}`, sub = `600 34px ${FONT}`;
-    const wOf = (f, str) => { ctx.font = f; return ctx.measureText(str).width; };
-    const parts = [[big, 'H', 0], [sub, '2', 16], [big, 'O(', 0], [ital, s, 0], [big, ')', 0]];
-    const total = parts.reduce((a, [f, str]) => a + wOf(f, str), 0); let x = fx - total / 2;
-    parts.forEach(([f, str, dy]) => { text(ctx, str, x, fy + dy, PAL.ink, { size: parseFloat(f.split('px')[0].split(' ').pop()), weight: 600, italic: f.startsWith('italic') }); ctx.font = F.shownFont(f); x += ctx.measureText(str).width; });
-    ctx.restore();
+    /* the state letter is italic, as the book sets it */
+    const fo = { size: 52, weight: 600 }, wa = F.measure(ctx, 'H_2O(', fo), wb = F.measure(ctx, s, fo), wc = F.measure(ctx, ')', fo), fl = fx - (wa + wb + wc) / 2;
+    text(ctx, 'H_2O(', fl, fy, PAL.ink, fo);
+    text(ctx, s, fl + wa, fy, PAL.ink, { ...fo, italic: true });
+    text(ctx, ')', fl + wa + wb, fy, PAL.ink, fo);
     text(ctx, 'symbolic domain', fx, 530, PAL.muted, { size: 19, align: 'center' });
     /* (b) the microscopic domain: the molecules in a circle */
     const cx = 1110, cy = 300, R = 165;
@@ -328,7 +327,7 @@ function frame(r) {
   function draw3d() {
     build(); v.invalidate();
     const { ctx } = begin(cnv);
-    topline(ctx, headOf(T.v, stateOf(T.v)) + ' Drag to turn the molecules.');
+    topline(ctx, headOf(T.v, stateOf(T.v)));
   }
   /* one stage shows at a time: the canvas, or the scene with its button row and its strip */
   function show() {
@@ -342,8 +341,8 @@ function frame(r) {
     const t = T.v, s = stateOf(t);
     S.set(s);
     if (VIEW.value === '3d') draw3d(); else draw2d();
-    readout(d.readout, `\\kT = ${t}\\ ^\\circ\\text{C} \\qquad \\text{H}_2\\text{O}(\\mathit{${s}})`,
-      'The formula H₂O names both the water in the beaker and the molecule in the circle; only the letter in parentheses changes with the state.');
+    readout(d.readout, `\\text{H}_2\\text{O}(\\mathit{${s}})`,
+      `At ${t} °C the formula H₂O names both the water in the beaker and the molecule in the circle; only the letter in parentheses changes with the state.`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

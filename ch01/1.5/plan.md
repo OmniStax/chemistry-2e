@@ -278,3 +278,10 @@ labels are on.
   far the arrows fall from one another, so the corner the book calls accurate
   but not precise passes its own test, which it did not when accuracy was the
   mean distance of the arrows.
+
+## Figure pass, 2026-09-28 (Claude Opus 5.5)
+
+Judged against `docs/prompts/manim-style.md`; only the figures below changed.
+
+- `sim-meniscus`, `fig-zeros`, `fig-count-digits`, `fig-captive-leading`, `fig-trailing`, `fig-column-sums` · the large numbers are set character by character through the library's text and `F.measure` (26.8); nothing else changed.
+- `sim-targets` · as above for the legend widths; readout one distance, the other in the sentence (manim 12).

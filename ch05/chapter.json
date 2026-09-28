@@ -322,12 +322,12 @@
   },
   {
    "section": "5.1",
-   "term": "heat (<em>q</em>)",
+   "term": "heat",
    "definition": "transfer of thermal energy between two bodies"
   },
   {
    "section": "5.1",
-   "term": "heat capacity (<em>C</em>)",
+   "term": "heat capacity",
    "definition": "extensive property of a body of matter that represents the quantity of heat required to increase its temperature by 1 degree Celsius (or 1 kelvin)"
   },
   {
@@ -347,7 +347,7 @@
   },
   {
    "section": "5.1",
-   "term": "specific heat capacity (<em>c</em>)",
+   "term": "specific heat capacity",
    "definition": "intensive property of a substance that represents the quantity of heat required to raise the temperature of 1 gram of the substance by 1 degree Celsius (or 1 kelvin)"
   },
   {
@@ -367,7 +367,7 @@
   },
   {
    "section": "5.1",
-   "term": "work (<em>w</em>)",
+   "term": "work",
    "definition": "energy transfer due to changes in external, macroscopic variables such as pressure and volume; or causing matter to move against an opposing force"
   },
   {
@@ -407,12 +407,12 @@
   },
   {
    "section": "5.3",
-   "term": "enthalpy (<em>H</em>)",
+   "term": "enthalpy",
    "definition": "sum of a system’s internal energy and the mathematical product of its pressure and volume"
   },
   {
    "section": "5.3",
-   "term": "enthalpy change (Δ<em>H</em>)",
+   "term": "enthalpy change",
    "definition": "heat released or absorbed by a system under constant pressure during a chemical or physical process"
   },
   {
@@ -437,17 +437,17 @@
   },
   {
    "section": "5.3",
-   "term": "internal energy (<em>U</em>)",
+   "term": "internal energy",
    "definition": "total of all possible kinds of energy present in a substance or substances"
   },
   {
    "section": "5.3",
-   "term": "standard enthalpy of combustion (Δ<em>H</em><sub>c</sub>°)",
+   "term": "standard enthalpy of combustion",
    "definition": "heat released when one mole of a compound undergoes complete combustion under standard conditions"
   },
   {
    "section": "5.3",
-   "term": "standard enthalpy of formation (Δ<em>H</em><sub>f</sub>°)",
+   "term": "standard enthalpy of formation",
    "definition": "enthalpy change of a chemical reaction in which 1 mole of a pure substance is formed from its elements in their most stable states under standard state conditions"
   },
   {

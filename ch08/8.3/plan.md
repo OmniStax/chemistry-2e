@@ -27,7 +27,7 @@ Extra simulations: none. A benzene figure that morphs between the two resonance 
 
 ## Exercises
 
-- Check Your Learning after Example 8.4 (source id fs-idp41312960, the para of the example; keyed sp², open), host `data-place="ex-so2"`.
+- Check Your Learning after Example 8.4 (source id fs-idp109093216, the para of the example; keyed sp², open), host `data-place="ex-so2"`.
 - Nine end-of-section items, kind `exercise`, none moved and none a simulation-exercise. Keyed (5): fs-idp80061792, fs-idp37364832 (answer image `CNX_Chem_08_03_Acetonitri_img.jpg`), fs-idm15473712, fs-idp118104208, fs-idp47770992 (answer image `CNX_Chem_08_02_CO2Diag.jpg`). Unkeyed conceptual (4), kept with an AI-marked suggested approach: fs-idp200563984, fs-idm1022320, fs-idm16504096, fs-idp140570640 (its three Lewis images in the prompt). No unkeyed numerical item.
 
 ## Types bound

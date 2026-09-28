@@ -1,0 +1,765 @@
+{
+ "id": "8.2",
+ "module": "m68745",
+ "chapter": "8",
+ "title": "Hybrid Atomic Orbitals",
+ "short": "Hybrid Atomic Orbitals",
+ "lead": "The orbitals of an isolated atom cannot explain the bond angles of a molecule such as water. This section combines the valence orbitals of a bonded atom into sets of hybrid orbitals, sp, sp², sp³, sp³d and sp³d², whose arrangements match the electron-pair geometries of VSEPR theory, and uses the number of regions of electron density around an atom to assign its hybridization.",
+ "objectives": [
+  "Explain the concept of atomic orbital hybridization",
+  "Determine the hybrid orbitals associated with various molecular geometries"
+ ],
+ "summary_html": "<p>We can use hybrid orbitals, which are mathematical combinations of some or all of the valence atomic orbitals, to describe the electron density around covalently bonded atoms. These hybrid orbitals either form sigma (σ) bonds directed toward other atoms of the molecule or contain lone pairs of electrons. We can determine the type of hybridization around a central atom from the geometry of the regions of electron density about it. Two such regions imply <em>sp</em> hybridization; three, <em>sp</em><sup>2</sup> hybridization; four, <em>sp</em><sup>3</sup> hybridization; five, <em>sp</em><sup>3</sup><em>d</em> hybridization; and six, <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> hybridization. Pi (π) bonds are formed from unhybridized atomic orbitals (<em>p</em> or <em>d</em> orbitals).</p>",
+ "notes": "The Link to Learning note pointing to a website for visualizing hybrid orbitals in three dimensions is left out, since the three-dimensional figures of this page take its place.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers, and the key to fs-idp86297648 keeps the book’s unclosed parenthesis. The seven unkeyed items (fs-idp3076096, fs-idp25144752, fs-idp180352816, fs-idm2424288, fs-idm10995632, fs-idm71570128 and fs-idp15207648) are kept with a suggested approach marked as an AI suggestion. Nothing is left out and nothing is taken from another section.",
+ "figures": [
+  {
+   "id": "sim-water",
+   "kind": "sim",
+   "number": "8.6",
+   "folds": [
+    "8.7"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_H2Ovb.jpg",
+    "/media/ch08/CNX_Chem_08_02_H2Otet.jpg"
+   ],
+   "original_caption": "(Figure 8.6) The hypothetical overlap of two of the 2p orbitals on an oxygen atom (red) with the 1s orbitals of two hydrogen atoms (blue) would produce a bond angle of 90°. This is not consistent with experimental evidence. (Note that orbitals may sometimes be drawn in an elongated “balloon” shape rather than in a more realistic “plump” shape in order to make the geometry easier to visualize.) (Figure 8.7) (a) A water molecule has four regions of electron density, so VSEPR theory predicts a tetrahedral arrangement of hybrid orbitals. (b) Two of the hybrid orbitals on oxygen contain lone pairs, and the other two overlap with the 1s orbitals of hydrogen atoms to form the O–H bonds in H₂O. This description is more consistent with the experimental structure.",
+   "draws": []
+  },
+  {
+   "id": "sim-sp",
+   "kind": "sim",
+   "number": "8.8",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_spGeom.jpg"
+   ],
+   "original_caption": "Hybridization of an s orbital (blue) and a p orbital (red) of the same atom produces two sp hybrid orbitals (yellow). Each hybrid orbital is oriented primarily in just one direction. Note that each sp orbital contains one lobe that is significantly larger than the other. The set of two sp orbitals are oriented at 180°, which is consistent with the geometry for two domains.",
+   "draws": []
+  },
+  {
+   "id": "fig-sp-levels",
+   "kind": "figure",
+   "number": "8.9",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_spDiag.jpg"
+   ],
+   "original_caption": "This orbital energy-level diagram shows the sp hybridized orbitals on Be in the linear BeCl₂ molecule. Each of the two sp hybrid orbitals holds one electron and is thus half filled and available for bonding via overlap with a Cl 3p orbital.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-sp2",
+   "kind": "sim",
+   "number": "8.10",
+   "folds": [
+    "8.11",
+    "8.12"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp2Geom.jpg",
+    "/media/ch08/CNX_Chem_08_02_sp2Conv.jpg",
+    "/media/ch08/CNX_Chem_08_02_BH3.jpg"
+   ],
+   "original_caption": "(Figure 8.10) The hybridization of an s orbital (blue) and two p orbitals (red) produces three equivalent sp² hybridized orbitals (yellow) oriented at 120° with respect to each other. The remaining unhybridized p orbital is not shown here, but is located along the z axis. (Figure 8.11) This alternate way of drawing the trigonal planar sp² hybrid orbitals is sometimes used in more crowded figures. (Figure 8.12) BH₃ is an electron-deficient molecule with a trigonal planar structure.",
+   "draws": []
+  },
+  {
+   "id": "fig-sp2-levels",
+   "kind": "figure",
+   "number": "8.13",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_BH3Diag.jpg"
+   ],
+   "original_caption": "In an isolated B atom, there are one 2s and three 2p valence orbitals. When boron is in a molecule with three regions of electron density, three of the orbitals hybridize and create a set of three sp² orbitals and one unhybridized 2p orbital. The three half-filled hybrid orbitals each overlap with an orbital from a hydrogen atom to form three σ bonds in BH₃.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "fig-sp2-examples",
+   "kind": "figure",
+   "number": "8.14",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp2Ex.jpg"
+   ],
+   "original_caption": "The central atom(s) in each of the structures shown contain three regions of electron density and are sp² hybridized. As we know from the discussion of VSEPR theory, a region of electron density contains all of the electrons that point in one direction. A lone pair, an unpaired electron, a single bond, or a multiple bond would each count as one region of electron density.",
+   "draws": []
+  },
+  {
+   "id": "sim-sp3",
+   "kind": "sim",
+   "number": "8.15",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp3Geom.jpg"
+   ],
+   "original_caption": "The hybridization of an s orbital (blue) and three p orbitals (red) produces four equivalent sp³ hybridized orbitals (yellow) oriented at 109.5° with respect to each other.",
+   "draws": []
+  },
+  {
+   "id": "fig-sp3-levels",
+   "kind": "figure",
+   "number": "8.16",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp3Diag.jpg"
+   ],
+   "original_caption": "The four valence atomic orbitals from an isolated carbon atom all hybridize when the carbon bonds in a molecule like CH₄ with four regions of electron density. This creates four equivalent sp³ hybridized orbitals. Overlap of each of the hybrid orbitals with a hydrogen orbital creates a C–H σ bond.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-ethane",
+   "kind": "sim",
+   "number": "8.17",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_ethane.jpg"
+   ],
+   "original_caption": "(a) In the ethane molecule, C₂H₆, each carbon has four sp³ orbitals. (b) These four orbitals overlap to form seven σ bonds.",
+   "draws": []
+  },
+  {
+   "id": "fig-sp3d-lewis",
+   "kind": "figure",
+   "number": "8.18",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp3d_img.jpg"
+   ],
+   "original_caption": "The three compounds pictured exhibit sp³d hybridization in the central atom and a trigonal bipyramid form. SF₄ and ClF₄⁺ have one lone pair of electrons on the central atom, and ClF₃ has two lone pairs giving it the T-shape shown.",
+   "draws": []
+  },
+  {
+   "id": "sim-sp3d",
+   "kind": "sim",
+   "number": "8.19",
+   "folds": [
+    "8.20"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sp3d.jpg",
+    "/media/ch08/CNX_Chem_08_02_SF6.jpg"
+   ],
+   "original_caption": "(Figure 8.19) (a) The five regions of electron density around phosphorus in PCl₅ require five hybrid sp³d orbitals. (b) These orbitals combine to form a trigonal bipyramidal structure with each large lobe of the hybrid orbital pointing at a vertex. As before, there are also small lobes pointing in the opposite direction for each orbital (not shown for clarity). (Figure 8.20) (a) Sulfur hexafluoride, SF₆, has an octahedral structure that requires sp³d² hybridization. (b) The six sp³d² orbitals form an octahedral structure around sulfur. Again, the minor lobe of each orbital is not shown for clarity.",
+   "draws": []
+  },
+  {
+   "id": "sim-hybrid-sets",
+   "kind": "sim",
+   "number": "8.21",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_HybrdOrbit.jpg"
+   ],
+   "original_caption": "The shapes of hybridized orbital sets are consistent with the electron-pair geometries. For example, an atom surrounded by three regions of electron density is sp² hybridized, and the three sp² orbitals are arranged in a trigonal planar fashion.",
+   "draws": []
+  },
+  {
+   "id": "fig-hydrides",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "fig-sulfate",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_sulfate_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-urea",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_02_urea_img.jpg"
+   ],
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "water-problem",
+   "concept": "hybridization",
+   "verb": "introduces"
+  },
+  {
+   "span": "water-problem",
+   "concept": "valence-bond-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "water-problem",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "water-problem",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "water-problem",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "water-problem",
+   "concept": "wavefunction-probability",
+   "verb": "uses"
+  },
+  {
+   "span": "hybrid-ideas",
+   "concept": "hybrid-orbital-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "hybrid-ideas",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "hybrid-ideas",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "hybrid-ideas",
+   "concept": "hybridization",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sp",
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp",
+   "concept": "hybrid-orbital-energy-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp",
+   "concept": "hybrid-orbital-properties",
+   "verb": "uses"
+  },
+  {
+   "span": "sp",
+   "concept": "hunds-rule",
+   "verb": "uses"
+  },
+  {
+   "span": "sp",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "sp2",
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sp2",
+   "concept": "hybrid-orbital-energy-diagram",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sp2",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "sp2",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3",
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sp3",
+   "concept": "hybrid-orbital-energy-diagram",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sp3",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3",
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3",
+   "concept": "electron-pair-repulsion-order",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3d",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp3d",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3d",
+   "concept": "octet-rule-exceptions",
+   "verb": "uses"
+  },
+  {
+   "span": "sp3d",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "assignment",
+   "concept": "assign-hybridization",
+   "verb": "introduces"
+  },
+  {
+   "span": "assignment",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "assignment",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "assignment",
+   "concept": "electron-pair-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "limits",
+   "concept": "limits-of-hybridization",
+   "verb": "introduces"
+  },
+  {
+   "span": "limits",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "limits",
+   "concept": "bond-angle-and-bond-distance",
+   "verb": "uses"
+  },
+  {
+   "span": "examples",
+   "concept": "assign-hybridization",
+   "verb": "reinforces"
+  },
+  {
+   "span": "examples",
+   "concept": "lewis-structure",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp175627360",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-sulfate"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_SF4_img.jpg",
+    "alt": "A Lewis structure is shown in which four fluorine atoms are each attached to one sulfur atom. Two of the attached fluorine atoms are vertically attached up and down, while two are attached into and out of the page to the right. The sulfur also has one lone pair of electrons attached to the left of the structure."
+   },
+   "prompt": "What is the hybridization of the selenium atom in SeF<sub>4</sub>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The selenium atom is <em>sp</em><sup>3</sup><em>d</em> hybridized."
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm15564528",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-urea"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_acetic_img.jpg",
+    "alt": "A Lewis structure is shown in which a carbon atom is double bonded to an oxygen atom that has two lone pairs of electrons and single bonded to another oxygen atom that is single boned to a hydrogen atom. This second oxygen atom has two lone pairs of electrons. The carbon is also single bonded to a carbon atom that is single bonded to three hydrogen atoms."
+   },
+   "prompt": "Acetic acid, H<sub>3</sub>CC(O)OH, is the molecule that gives vinegar its odor and sour taste. What is the hybridization of the two carbon atoms in acetic acid?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "H<sub>3</sub><u>C</u>, <em>sp</em><sup>3</sup>; <u>C</u>(O)OH, <em>sp</em><sup>2</sup>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm77916144",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "water-problem",
+   "prompt": "Why is the concept of hybridization required in valence bond theory?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Hybridization is introduced to explain the geometry of bonding orbitals in valence bond theory."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp3076096",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "Give the shape that describes each hybrid orbital set:<br>(a) <em>sp</em><sup>2</sup><br>(b) <em>sp</em><sup>3</sup><em>d</em><br>(c) <em>sp</em><br>(d) <em>sp</em><sup>3</sup><em>d</em><sup>2</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Each set of hybrid orbitals takes the arrangement of the electron-pair geometry for the same number of regions of electron density. Count the hybrid orbitals in each set (one for the <em>s</em> orbital, one for each <em>p</em> orbital and one for each <em>d</em> orbital in its name), and then read the arrangement for that number from Figure 8.21."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp97605024",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sp3d",
+   "prompt": "Explain why a carbon atom cannot form five bonds using <em>sp</em><sup>3</sup><em>d</em> hybrid orbitals.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "There are no <em>d</em> orbitals in the valence shell of carbon."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp25144752",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "What is the hybridization of the central atom in each of the following?<br>(a) BeH<sub>2</sub><br>(b) SF<sub>6</sub><br>(c) ${\\text{PO}}_{4}{}^{\\text{3−}}$<br>(d) PCl<sub>5</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Follow the three guidelines of the section for each species: write its Lewis structure, count the regions of electron density around the central atom (every bond, whether single or multiple, and every lone pair counts as one), and assign the set of hybrid orbitals that has that many members. Several of these molecules appear in the section itself."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp86297648",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "A molecule with the formula AB<sub>3</sub> could have one of four different shapes. Give the shape and the hybridization of the central A atom for each.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "trigonal planar, <em>sp</em><sup>2</sup>; trigonal pyramidal (one lone pair on A) <em>sp</em><sup>3</sup>; T-shaped (two lone pairs on A <em>sp</em><sup>3</sup><em>d</em>, or (three lone pairs on A) <em>sp</em><sup>3</sup><em>d</em><sup>2</sup>"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp180352816",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_methionine_img.jpg",
+    "alt": "A Lewis structure is shown in which a carbon atom is single bonded to three hydrogen atoms and single bonded to a sulfur atom with two lone pairs of electrons. The sulfur atom is attached to a chain of four singly bonded carbon atoms, the first two of which are single bonded to two hydrogen atoms each, and the third of which is single bonded to a hydrogen atom and single bonded to a nitrogen atom which has one lone electron pair. The nitrogen atom is also single bonded to two hydrogen atoms. The fourth and final carbon in the chain is double bonded to an oxygen with two lone pairs of electrons and single bonded to an oxygen atom with two lone pairs of electrons. The second oxygen atom is single bonded to a hydrogen atom."
+   },
+   "prompt": "Methionine, CH<sub>3</sub>SCH<sub>2</sub>CH<sub>2</sub>CH(NH<sub>2</sub>)CO<sub>2</sub>H, is an amino acid found in proteins. The Lewis structure of this compound is shown below. What is the hybridization type of each carbon, oxygen, the nitrogen, and the sulfur?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Treat each atom in turn as a central atom. In the Lewis structure, count the regions of electron density around it, remembering that the lone pairs on sulfur, nitrogen and oxygen count as regions and that a double bond counts as one region, and assign the hybrid set with that many orbitals. The carbon of the C=O group and the oxygen of the O–H group are the two atoms whose counts are easiest to get wrong."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm9916608",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "Sulfuric acid is manufactured by a series of reactions represented by the following equations:<br>${\\text{S}}_{8}(s)+8{\\text{O}}_{2}(g)\\;\\longrightarrow \\;8{\\text{SO}}_{2}(g)$<br>$2\\text{S}{\\text{O}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{SO}}_{3}(g)$<br>${\\text{SO}}_{3}(g)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{2}{\\text{SO}}_{4}(l)$<br>Draw a Lewis structure, predict the molecular geometry by VSEPR, and determine the hybridization of sulfur for the following:<br>(a) circular S<sub>8</sub> molecule<br>(b) SO<sub>2</sub> molecule<br>(c) SO<sub>3</sub> molecule<br>(d) H<sub>2</sub>SO<sub>4</sub> molecule (the hydrogen atoms are bonded to oxygen atoms)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Each S has a bent (109°) geometry, <em>sp</em><sup>3</sup><br><img src=\"/media/ch08/CNX_Chem_08_02_SulfManuf1_img.jpg\" alt=\"A Lewis structure is shown in which eight sulfur atoms, each with two lone pairs of electrons, are single bonded together into an eight-sided ring.\"><br>(b) Bent (120°), <em>sp</em><sup>2</sup><br><img src=\"/media/ch08/CNX_Chem_08_02_SulfManuf2_img.jpg\" alt=\"Two Lewis structures are shown, connected by a double-ended arrow. The left structure shows a sulfur atom with one lone pair of electrons double bonded to an oxygen atom with two lone pairs of electrons on the left and single bonded to an oxygen atom with three lone pairs of electrons on the right. The right structure shows the same molecule, except that the double bonded oxygen is on the right side of the sulfur and the single bonded oxygen is to the left of the sulfur.\"><br>(c) Trigonal planar, <em>sp</em><sup>2</sup><br><img src=\"/media/ch08/CNX_Chem_08_02_SulfManuf3_img.jpg\" alt=\"A Lewis structure of a sulfur atom singly bonded to two oxygen atoms, each with three lone pairs of electrons, and double bonded to a third oxygen atom with two lone pairs of electrons is shown.\"><br>(d) Tetrahedral, <em>sp</em><sup>3</sup><br><img src=\"/media/ch08/CNX_Chem_08_02_SulfManuf4_img.jpg\" alt=\"A Lewis structure is shown in which a sulfur atom is single bonded to four oxygen atoms. Two of the oxygen atoms have three lone pairs of electrons while the other two each have two lone pairs of electrons and are each singly bonded to a hydrogen atom.\">"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm2424288",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "Two important industrial chemicals, ethene, C<sub>2</sub>H<sub>4</sub>, and propene, C<sub>3</sub>H<sub>6</sub>, are produced by the steam (or thermal) cracking process:<br>$$2{\\text{C}}_{3}{\\text{H}}_{8}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{4}(g)+{\\text{C}}_{3}{\\text{H}}_{6}(g)+{\\text{CH}}_{4}(g)+{\\text{H}}_{2}(g)$$For each of the four carbon compounds, do the following:<br>(a) Draw a Lewis structure.<br>(b) Predict the geometry about the carbon atom.<br>(c) Determine the hybridization of each type of carbon atom.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The four carbon compounds are propane, ethene, propene and methane. In each Lewis structure, look at every carbon atom separately: a carbon with four single bonds has four regions of electron density, and a carbon with a double bond and two single bonds has three. The geometry about each carbon is the electron-pair geometry for its number of regions, and the hybridization follows from Figure 8.21. Propene has two kinds of carbon, so it has two answers."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp96568912",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sp3d",
+   "prompt": "Analysis of a compound indicates that it contains 77.55% Xe and 22.45% F by mass.<br>(a) What is the empirical formula for this compound? <em>(Assume this is also the molecular formula in responding to the remaining parts of this exercise)</em>.<br>(b) Write a Lewis structure for the compound.<br>(c) Predict the shape of the molecules of the compound.<br>(d) What hybridization is consistent with the shape you predicted?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) XeF<sub>2</sub><br>(b)<br><img src=\"/media/ch08/CNX_Chem_08_02_xefluoride_img.jpg\" alt=\"A Lewis structure is shown in which a xenon atom that has three lone pairs of electrons is single bonded to two fluorine atoms, each of which has three lone pairs of electrons.\"><br>(c) linear (d) <em>sp</em><sup>3</sup><em>d</em>"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm10995632",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "Consider nitrous acid, HNO<sub>2</sub> (HONO).<br>(a) Write a Lewis structure.<br>(b) What are the electron pair and molecular geometries of the internal oxygen and nitrogen atoms in the HNO<sub>2</sub> molecule?<br>(c) What is the hybridization on the internal oxygen and nitrogen atoms in HNO<sub>2</sub>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the Lewis structure with the atoms in the order H–O–N–O and complete the octets, which puts a double bond between nitrogen and the terminal oxygen. Then treat the internal oxygen and the nitrogen as central atoms: count their bonds and lone pairs as regions of electron density, name the electron-pair geometry, leave out the lone pairs to name the molecular geometry, and assign the hybrid set with as many orbitals as there are regions."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm32929264",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_phsphorus1_img.jpg",
+    "alt": "A Lewis structure is shown in which three phosphorus atoms are single bonded together to form a triangle. Each phosphorus is bonded to a sulfur atom by a vertical single bond and each of those sulfur atoms is then bonded to a single phosphorus atom so that a six-sided ring is created with a sulfur in the middle."
+   },
+   "prompt": "Strike-anywhere matches contain a layer of KClO<sub>3</sub> and a layer of P<sub>4</sub>S<sub>3</sub>. The heat produced by the friction of striking the match causes these two compounds to react vigorously, which sets fire to the wooden stem of the match. KClO<sub>3</sub> contains the ${\\text{ClO}}_{3}{}^{\\text{−}}$ ion. P<sub>4</sub>S<sub>3</sub> is an unusual molecule with the skeletal structure.<br>(a) Write Lewis structures for P<sub>4</sub>S<sub>3</sub> and the ${\\text{ClO}}_{3}{}^{-}$ ion.<br>(b) Describe the geometry about the P atoms, the S atom, and the Cl atom in these species.<br>(c) Assign a hybridization to the P atoms, the S atom, and the Cl atom in these species.<br>(d) Determine the oxidation states and formal charge of the atoms in P<sub>4</sub>S<sub>3</sub> and the ${\\text{ClO}}_{3}{}^{-}$ ion.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a)<br><img src=\"/media/ch08/CNX_Chem_08_02_phsphorus2_img.jpg\" alt=\"Two Lewis structures are shown, the left of which depicts three phosphorus atoms single bonded together to form a triangle. Each phosphorus is bonded to a sulfur atom by a vertical single bond and each of those sulfur atoms is then bonded to a single phosphorus atom so that a six-sided ring is created with a sulfur in the middle. Each sulfur atom in this structure has two lone pairs of electrons while each phosphorus has one lone pair. The second Lewis structure shows a chlorate atom single bonded to two oxygen atoms, each of which has three lone pairs of electrons, and double bonded to an oxygen atom, which has two lone pairs of electrons.\"><br>(b) P atoms, trigonal pyramidal; S atoms, bent, with two lone pairs; Cl atoms, trigonal pyramidal; (c) Hybridization about P, S, and Cl is, in all cases, <em>sp</em><sup>3</sup>; (d) Oxidation states P +1, S $-1\\frac{1}{3},$ Cl +5, O –2. Formal charges: P 0; S 0; Cl +2: O –1"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm71570128",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_02_enyne_img.jpg",
+    "alt": "A Lewis structure is shown that is missing all of its bonds. Six carbon atoms form a chain. There are three hydrogen atoms located around the first carbon, two located around the second, one located near the fifth, and two located around the sixth carbon."
+   },
+   "prompt": "Identify the hybridization of each carbon atom in the following molecule. (The arrangement of atoms is given; you need to determine how many bonds connect each pair of atoms.)",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Start by completing each carbon atom’s four bonds: count the hydrogen atoms already on each carbon, and put the remaining bonds between neighboring carbons as double or triple bonds so that every carbon has exactly four. Then count the regions of electron density around each carbon (a multiple bond counts as one region) and assign <em>sp</em>, <em>sp</em><sup>2</sup> or <em>sp</em><sup>3</sup> by the number of regions."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp29495632",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sp3d",
+   "prompt": "Write Lewis structures for NF<sub>3</sub> and PF<sub>5</sub>. On the basis of hybrid orbitals, explain the fact that NF<sub>3</sub>, PF<sub>3</sub>, and PF<sub>5</sub> are stable molecules, but NF<sub>5</sub> does not exist.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch08/CNX_Chem_08_02_phosnitro_img.jpg\" alt=\"Two Lewis structures are shown. The left structure shows a nitrogen atom with one lone pair of electrons single bonded to three fluorine atoms, each of which has three lone pairs of electrons. The right structure shows a phosphorus atoms single bonded to five fluorine atoms, each of which has three lone pairs of electrons.\"><br>Phosphorus and nitrogen can form <em>sp</em><sup>3</sup> hybrids to form three bonds and hold one lone pair in PF<sub>3</sub> and NF<sub>3</sub>, respectively. However, nitrogen has no valence <em>d</em> orbitals, so it cannot form a set of <em>sp</em><sup>3</sup><em>d</em> hybrid orbitals to bind five fluorine atoms in NF<sub>5</sub>. Phosphorus has <em>d</em> orbitals and can bind five fluorine atoms with <em>sp</em><sup>3</sup><em>d</em> hybrid orbitals in PF<sub>5</sub>."
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp15207648",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "assignment",
+   "prompt": "In addition to NF<sub>3</sub>, two other fluoro derivatives of nitrogen are known: N<sub>2</sub>F<sub>4</sub> and N<sub>2</sub>F<sub>2</sub>. What shapes do you predict for these two molecules? What is the hybridization for the nitrogen in each molecule?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the Lewis structures with the two nitrogen atoms bonded to each other and the fluorine atoms on the outside: in N<sub>2</sub>F<sub>4</sub> each nitrogen carries two fluorine atoms, and in N<sub>2</sub>F<sub>2</sub> each carries one, so the octets require a double bond between the nitrogen atoms. Count the regions of electron density around one nitrogen atom in each molecule, including its lone pair, and use that number for both the geometry about the nitrogen and its hybridization."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "sp-sp2-sp3-hybrid-orbitals"
+  },
+  {
+   "exercise": "e1",
+   "concept": "hybridization"
+  },
+  {
+   "exercise": "e2",
+   "concept": "sp-sp2-sp3-hybrid-orbitals"
+  },
+  {
+   "exercise": "e2",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "e3",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "e4",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e5",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e5",
+   "concept": "molecular-structure-versus-electron-pair-geometry"
+  },
+  {
+   "exercise": "e6",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e7",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e7",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e8",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e8",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e9",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e9",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "e10",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e10",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e11",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e11",
+   "concept": "formal-charge"
+  },
+  {
+   "exercise": "e12",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e12",
+   "concept": "multiple-bonds"
+  },
+  {
+   "exercise": "e13",
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals"
+  },
+  {
+   "exercise": "e13",
+   "concept": "hybrid-orbital-properties"
+  },
+  {
+   "exercise": "e14",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e14",
+   "concept": "lewis-structure"
+  }
+ ]
+}

@@ -1,0 +1,574 @@
+{
+ "id": "7.5",
+ "module": "m68741",
+ "chapter": "7",
+ "title": "Strengths of Ionic and Covalent Bonds",
+ "short": "Bond Strengths",
+ "lead": "Every bond takes energy to break. This section measures the strength of a covalent bond by its bond energy, uses average bond energies to estimate the enthalpy change of a reaction, and then measures the strength of an ionic solid by its lattice energy, which grows with the charges of the ions and shrinks with their distance apart and which the Born-Haber cycle calculates from quantities that can be measured.",
+ "objectives": [
+  "Describe the energetics of covalent and ionic bond formation and breakage",
+  "Use the Born-Haber cycle to compute lattice energies for ionic compounds",
+  "Use average covalent bond energies to estimate enthalpies of reaction"
+ ],
+ "summary_html": "<p>The strength of a covalent bond is measured by its bond dissociation energy, that is, the amount of energy required to break that particular bond in a mole of molecules. Multiple bonds are stronger than single bonds between the same atoms. The enthalpy of a reaction can be estimated based on the energy input required to break bonds and the energy released when new bonds are formed. For ionic bonds, the lattice energy is the energy required to separate one mole of a compound into its gas phase ions. Lattice energy increases for ions with higher charges and shorter distances between ions. Lattice energies are often calculated using the Born-Haber cycle, a thermochemical cycle including all of the energetic steps involved in converting elements into an ionic compound.</p>",
+ "notes": "Nothing of the section is left out. Table 7.4 is printed as the book prints it, for CsF, although the book’s description of that table speaks of NaCl.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed items fs-idp18527664, fs-idp20766256, fs-idm39061296 and fs-idm27862256 carry a suggested approach marked as OmniStax’s own, and the unkeyed choice items fs-idp46666496, fs-idp51586816 and fs-idp15208208 are kept as open questions with the book’s options. The unkeyed calculations fs-idp57429280, fs-idp65498352, fs-idm2894352 and fs-idp57420000 are left out.",
+ "figures": [
+  {
+   "id": "fig-ch4",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "sim-length",
+   "kind": "sim",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-enthalpy",
+   "kind": "sim",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "fig-methanol",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "sim-lattice",
+   "kind": "sim",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-born-haber",
+   "kind": "sim",
+   "number": "7.13",
+   "originals": [
+    "/media/ch07/CNX_Chem_07_05_BornHaber.jpg"
+   ],
+   "original_caption": "The Born-Haber cycle shows the relative energies of each step involved in the formation of an ionic solid from the necessary elements in their reference states.",
+   "draws": [
+    "energy"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "bond-strength",
+   "concept": "bond-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "strength-length",
+   "concept": "bond-strength-and-length",
+   "verb": "introduces"
+  },
+  {
+   "span": "strength-length",
+   "concept": "bond-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "enthalpy",
+   "concept": "enthalpy-from-bond-energies",
+   "verb": "introduces"
+  },
+  {
+   "span": "enthalpy",
+   "concept": "bond-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-methanol",
+   "concept": "enthalpy-from-bond-energies",
+   "verb": "reinforces"
+  },
+  {
+   "span": "lattice",
+   "concept": "lattice-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "lattice-trends",
+   "concept": "lattice-energy-trends",
+   "verb": "introduces"
+  },
+  {
+   "span": "lattice-trends",
+   "concept": "lattice-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-lattice",
+   "concept": "lattice-energy-trends",
+   "verb": "reinforces"
+  },
+  {
+   "span": "born-haber",
+   "concept": "born-haber-cycle",
+   "verb": "introduces"
+  },
+  {
+   "span": "born-haber",
+   "concept": "lattice-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "born-haber",
+   "concept": "bond-energy",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm33428592",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-methanol"
+   },
+   "cite": "enthalpy",
+   "prompt": "Ethyl alcohol, CH<sub>3</sub>CH<sub>2</sub>OH, was one of the first organic chemicals deliberately synthesized by humans. It has many uses in industry, and it is the alcohol contained in alcoholic beverages. It can be obtained by the fermentation of sugar or synthesized by the hydration of ethylene in the following reaction:<br><img src=\"/media/ch07/CNX_Chem_07_05_Ethanol_img.jpg\" alt=\"A set of Lewis structures show a chemical reaction. The first structure shows two carbon atoms that are double bonded together and are each single bonded to two hydrogen atoms. This structure is followed by a plus sign, then an oxygen atom with two lone pairs of electrons single bonded to two hydrogen atoms. A right-facing arrow leads to a carbon atom single bonded to three hydrogen atoms and a second carbon atom. The second carbon atom is single bonded to two hydrogen atoms and an oxygen atom with two lone pairs of electrons. The oxygen atom is single bonded to a hydrogen atom as well.\"><br>Using the bond energies in Table 7.3, calculate an approximate enthalpy change, Δ<em>H</em>, for this reaction.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "–35 kJ"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp16649648",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-lattice"
+   },
+   "cite": "lattice-trends",
+   "prompt": "Zinc oxide, ZnO, is a very effective sunscreen. How would the lattice energy of ZnO compare to that of NaCl?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "ZnO would have the larger lattice energy because the Z values of both the cation and the anion in ZnO are greater, and the interionic distance of ZnO is smaller than that of NaCl."
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp18527664",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "strength-length",
+   "prompt": "Which bond in each of the following pairs of bonds is the strongest?<br>(a) C–C or C=C<br>(b) C–N or C≡N<br>(c) C≡O or C=O<br>(d) H–F or H–Cl<br>(e) C–H or O–H<br>(f) C–N or C–O",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "For a pair between the same two atoms, recall how bond strength changes with the number of electron pairs shared. For every pair, compare the bond energies listed in Table 7.2 and choose the larger."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp16780032",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "enthalpy",
+   "prompt": "Using the bond energies in Table 7.2, determine the approximate enthalpy change for each of the following reactions:<br>(a) $\\text{H}_{2}(g)+\\text{Br}_{2}(g)\\longrightarrow 2\\text{HBr}(g)$<br>(b) $\\text{CH}_{4}(g)+\\text{I}_{2}(g)\\longrightarrow \\text{CH}_{3}\\text{I}(g)+\\text{HI}(g)$<br>(c) $\\text{C}_{2}\\text{H}_{4}(g)+3\\text{O}_{2}(g)\\longrightarrow 2\\text{CO}_{2}(g)+2\\text{H}_{2}\\text{O}(g)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) −114 kJ; (b) 30 kJ; (c) −1055 kJ"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp28520976",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "enthalpy",
+   "prompt": "When a molecule can form two different structures, the structure with the stronger bonds is usually the more stable form. Use bond energies to predict the correct structure of the hydroxylamine molecule:<br><img src=\"/media/ch07/CNX_Chem_07_05_Hydroxya_img.jpg\" alt=\"Two Lewis structures are shows with the word “or” written in between them. The left structure shows a nitrogen atom with one lone pair of electrons single bonded to two hydrogen atoms. It is also bonded to an oxygen atom with two lone pairs of electrons. The oxygen atom is bonded to a hydrogen atom. The right structure shows a nitrogen atom single bonded to three hydrogen atoms and an oxygen atom with three lone pairs of electrons.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The greater bond energy is in the figure on the left. It is the more stable form."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp20766256",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-strength",
+   "prompt": "How does the bond energy of HCl(<em>g</em>) differ from the standard enthalpy of formation of HCl(<em>g</em>)?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the reaction each quantity belongs to. The bond energy is defined by the reaction that breaks one mole of the bond in the gas into separate gaseous atoms; the enthalpy of formation, which you met in the chapter on thermochemistry, belongs to the reaction that forms one mole of the compound from its elements in their standard states. Compare the starting materials and the products of the two reactions."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp19159472",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-strength",
+   "prompt": "Using the standard enthalpy of formation data in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, show how the standard enthalpy of formation of HCl(<em>g</em>) can be used to determine the bond energy.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$$\\begin{array}{ll}\\text{HCl}(g)\\longrightarrow \\tfrac{1}{2}\\text{H}_{2}(g)+\\tfrac{1}{2}\\text{Cl}_{2}(g) & \\Delta H_{1}^{\\circ}=-\\Delta H_{\\text{f}[\\text{HCl}(g)]}^{\\circ} \\\\ \\tfrac{1}{2}\\text{H}_{2}(g)\\longrightarrow \\text{H}(g) & \\Delta H_{2}^{\\circ}=\\Delta H_{\\text{f}[\\text{H}(g)]}^{\\circ} \\\\ \\tfrac{1}{2}\\text{Cl}_{2}(g)\\longrightarrow \\text{Cl}(g) & \\Delta H_{3}^{\\circ}=\\Delta H_{\\text{f}[\\text{Cl}(g)]}^{\\circ} \\\\ \\hline \\text{HCl}(g)\\longrightarrow \\text{H}(g)+\\text{Cl}(g) & \\Delta H^{\\circ}=\\Delta H_{1}^{\\circ}+\\Delta H_{2}^{\\circ}+\\Delta H_{3}^{\\circ}\\end{array}$$$$\\begin{array}{ll}D_{\\text{HCl}}=\\Delta H^{\\circ} & =\\Delta H_{\\text{f}[\\text{HCl}(g)]}^{\\circ}+\\Delta H_{\\text{f}[\\text{H}(g)]}^{\\circ}+\\Delta H_{\\text{f}[\\text{Cl}(g)]}^{\\circ} \\\\ & =-(-92.307\\;\\text{kJ})+217.97\\;\\text{kJ}+121.3\\;\\text{kJ} \\\\ & =431.6\\;\\text{kJ}\\end{array}$$"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp19660960",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-strength",
+   "prompt": "Using the standard enthalpy of formation data in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, determine which bond is stronger: the S–F bond in SF<sub>4</sub>(<em>g</em>) or in SF<sub>6</sub>(<em>g</em>)?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The S–F bond in SF<sub>4</sub> is stronger."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm22310960",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "strength-length",
+   "prompt": "Complete the following Lewis structure by adding bonds (not atoms), and then indicate the longest bond:<br><img src=\"/media/ch07/CNX_Chem_07_05_C6H8Lew_img.jpg\" alt=\"A Lewis structure is shown that is missing its bonds. It shows a horizontal row of six carbon atoms, equally spaced. Three hydrogen atoms are drawn around the first carbon, two around the second, one above the fifth, and two by the sixth.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch07/CNX_Chem_07_05_C6H8ans_img.jpg\" alt=\"A Lewis structure is shown. A carbon atom that is single bonded to three hydrogen atoms is bonded to a second carbon atom. The second carbon atom is single bonded to two hydrogen atoms. The second carbon atom is single bonded to a third carbon atom that is triple bonded to a fourth carbon atom and single bonded to a fifth carbon atom. The fifth carbon atom is single bonded to a hydrogen atom and double bonded to a sixth carbon atom that is single bonded to two hydrogen atoms.\"><br>The C–C single bonds are longest."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp12625232",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "Use principles of atomic structure to answer each of the following:<sup>1</sup><br>(a) The radius of the Ca atom is 197 pm; the radius of the Ca<sup>2+</sup> ion is 99 pm. Account for the difference.<br>(b) The lattice energy of CaO(<em>s</em>) is –3460 kJ/mol; the lattice energy of K<sub>2</sub>O is –2240 kJ/mol. Account for the difference.<br>(c) Given these ionization values, explain the difference between Ca and K with regard to their first and second ionization energies.<br><table><thead><tr><th>Element</th><th>First Ionization Energy (kJ/mol)</th><th>Second Ionization Energy (kJ/mol)</th></tr></thead><tbody><tr><td>K</td><td>419</td><td>3050</td></tr><tr><td>Ca</td><td>590</td><td>1140</td></tr></tbody></table>(d) The first ionization energy of Mg is 738 kJ/mol and that of Al is 578 kJ/mol. Account for this difference.<br><small><sup>1</sup> This question is taken from the Chemistry Advanced Placement Examination and is used with the permission of the Educational Testing Service.</small>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) When two electrons are removed from the valence shell, the Ca radius loses the outermost energy level and reverts to the lower <em>n</em> = 3 level, which is much smaller in radius. (b) The +2 charge on calcium pulls the oxygen much closer compared with K, thereby increasing the lattice energy relative to a less charged ion. (c) Removal of the 4<em>s</em> electron in Ca requires more energy than removal of the 4<em>s</em> electron in K because of the stronger attraction of the nucleus and the extra energy required to break the pairing of the electrons. The second ionization energy for K requires that an electron be removed from a lower energy level, where the attraction is much stronger from the nucleus for the electron. In addition, energy is required to unpair two electrons in a full orbital. For Ca, the second ionization potential requires removing only a lone electron in the exposed outer energy level. (d) In Al, the removed electron is relatively unprotected and unpaired in a <em>p</em> orbital. The higher energy for Mg mainly reflects the unpairing of the 2<em>s</em> electron."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp46666496",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "The lattice energy of LiF is 1023 kJ/mol, and the Li–F distance is 200.8 pm. NaF crystallizes in the same structure as LiF but with a Na–F distance of 231 pm. Which of the following values most closely approximates the lattice energy of NaF: 510, 890, 1023, 1175, or 4090 kJ/mol? Explain your choice.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The two compounds have the same structure and ions of the same charges, so C, Z<sup>+</sup> and Z<sup>–</sup> are the same for both, and the lattice energy is inversely proportional to R<sub>o</sub>. Decide first whether the longer Na–F distance makes the lattice energy larger or smaller than that of LiF, then scale 1023 kJ/mol by the ratio of the two distances and pick the closest of the five values."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp236067168",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "For which of the following substances is the least energy required to convert one mole of the solid into separate ions?<br>(a) MgO<br>(b) SrO<br>(c) KF<br>(d) CsF<br>(e) MgF<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(d)"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm39061296",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "born-haber",
+   "prompt": "The reaction of a metal, M, with a halogen, X<sub>2</sub>, proceeds by an exothermic reaction as indicated by this equation: $\\text{M}(s)+\\text{X}_{2}(g)\\longrightarrow \\text{MX}_{2}(s)$. For each of the following, indicate which option will make the reaction more exothermic. Explain your answers.<br>(a) a large radius vs. a small radius for M<sup>+2</sup><br>(b) a high ionization energy vs. a low ionization energy for M<br>(c) an increasing bond energy for the halogen<br>(d) a decreasing electron affinity for the halogen<br>(e) an increasing size of the anion formed by the halogen",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the enthalpy of formation as the sum of the steps of the Born-Haber cycle, as in Table 7.4, and find the step each option changes. Energy absorbed in a step (sublimation, ionization, breaking the halogen bond) makes the overall change less exothermic as it grows, while energy released (the electron affinity step and the negative of the lattice energy) makes it more exothermic. For the options about ionic size, use the relation between lattice energy and R<sub>o</sub>."
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp55219680",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "The lattice energy of LiF is 1023 kJ/mol, and the Li–F distance is 201 pm. MgO crystallizes in the same structure as LiF but with a Mg–O distance of 205 pm. Which of the following values most closely approximates the lattice energy of MgO: 256 kJ/mol, 512 kJ/mol, 1023 kJ/mol, 2046 kJ/mol, or 4008 kJ/mol? Explain your choice.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "4008 kJ/mol; both ions in MgO have twice the charge of the ions in LiF; the bond length is very similar and both have the same structure; a quadrupling of the energy is expected based on the equation for lattice energy"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm27862256",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "Which compound in each of the following pairs has the larger lattice energy? Note: Mg<sup>2+</sup> and Li<sup>+</sup> have similar radii; O<sup>2–</sup> and F<sup>–</sup> have similar radii. Explain your choices.<br>(a) MgO or MgSe<br>(b) LiF or MgO<br>(c) Li<sub>2</sub>O or LiCl<br>(d) Li<sub>2</sub>Se or MgO",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "For each pair, compare the two factors in the lattice energy equation. First compare the charges Z<sup>+</sup> and Z<sup>–</sup> of the ions, then compare the interionic distances R<sub>o</sub>, using the note on similar radii and the trend of ionic size down a group. A larger product of the charges or a shorter distance gives a larger lattice energy, and a change in charge usually outweighs a change in size."
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp29388832",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "Which compound in each of the following pairs has the larger lattice energy? Note: Ba<sup>2+</sup> and K<sup>+</sup> have similar radii; S<sup>2–</sup> and Cl<sup>–</sup> have similar radii. Explain your choices.<br>(a) K<sub>2</sub>O or Na<sub>2</sub>O<br>(b) K<sub>2</sub>S or BaS<br>(c) KCl or BaS<br>(d) BaS or BaCl<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Na<sub>2</sub>O; Na<sup>+</sup> has a smaller radius than K<sup>+</sup>; (b) BaS; Ba has a larger charge than K; (c) BaS; Ba and S have larger charges; (d) BaS; S has a larger charge"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp51586816",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "Which of the following compounds requires the most energy to convert one mole of the solid into separate ions?<br>(a) MgO<br>(b) SrO<br>(c) KF<br>(d) CsF<br>(e) MgF<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The energy asked for is the lattice energy. Sort the five compounds first by the charges of their ions, since the product Z<sup>+</sup>Z<sup>–</sup> has the larger effect, and then, among compounds with the same charges, by the sizes of the ions, remembering that ions grow larger down a group."
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idp56209472",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "Which of the following compounds requires the most energy to convert one mole of the solid into separate ions?<br>(a) K<sub>2</sub>S<br>(b) K<sub>2</sub>O<br>(c) CaS<br>(d) Cs<sub>2</sub>S<br>(e) CaO",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(e)"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp15208208",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lattice-trends",
+   "prompt": "The lattice energy of KF is 794 kJ/mol, and the interionic distance is 269 pm. The Na–F distance in NaF, which has the same structure as KF, is 231 pm. Which of the following values is the closest approximation of the lattice energy of NaF: 682 kJ/mol, 794 kJ/mol, 924 kJ/mol, 1588 kJ/mol, or 3175 kJ/mol? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "KF and NaF have the same structure and ions of the same charges, so only R<sub>o</sub> differs, and the lattice energy is inversely proportional to it. Decide whether the shorter Na–F distance raises or lowers the lattice energy, then multiply 794 kJ/mol by the ratio of the two distances and choose the closest value."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "enthalpy-from-bond-energies",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "bond-strength-and-length",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "enthalpy-from-bond-energies",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "enthalpy-from-bond-energies",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "bond-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "bond-strength-and-length",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "lattice-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "born-haber-cycle",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "lattice-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "lattice-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "lattice-energy-trends",
+   "weights_by": "ai"
+  }
+ ]
+}

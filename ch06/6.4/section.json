@@ -1,0 +1,944 @@
+{
+ "id": "6.4",
+ "module": "m68734",
+ "chapter": "6",
+ "title": "Electronic Structure of Atoms (Electron Configurations)",
+ "short": "Electron Configurations",
+ "lead": "The orbitals of an atom with two or more electrons are filled in order of increasing energy, and the order is not simply the order of n. This section builds the ground-state configuration of each element one electron at a time by the Aufbau principle, the Pauli exclusion principle and Hund’s rule, writes it as a configuration and as an orbital diagram, separates core electrons from valence electrons, explains the exceptions of chromium and copper, and shows why elements with the same valence configuration fall in the same group of the periodic table and how ions take or lose their electrons.",
+ "objectives": [
+  "Derive the predicted ground-state electron configurations of atoms",
+  "Identify and explain exceptions to predicted electron configurations for atoms and ions",
+  "Relate electron configurations to element classifications in the periodic table"
+ ],
+ "summary_html": "<p>The relative energy of the subshells determine the order in which atomic orbitals are filled (1<em>s</em>, 2<em>s</em>, 2<em>p</em>, 3<em>s</em>, 3<em>p</em>, 4<em>s</em>, 3<em>d</em>, 4<em>p</em>, and so on). Electron configurations and orbital diagrams can be determined by applying the Pauli exclusion principle (no two electrons can have the same set of four quantum numbers) and Hund’s rule (whenever possible, electrons retain unpaired spins in degenerate orbitals).</p><p>Electrons in the outermost orbitals, called valence electrons, are responsible for most of the chemical behavior of elements. In the periodic table, elements with analogous valence electron configurations usually occur within the same group. There are some exceptions to the predicted filling order, particularly when half-filled or completely filled orbitals can be formed. The periodic table can be divided into three categories based on the orbital in which the last electron to be added is placed: main group elements (<em>s</em> and <em>p</em> orbitals), transition elements (<em>d</em> orbitals), and inner transition elements (<em>f</em> orbitals).</p>",
+ "notes": "Nothing of the book’s text is left out; the section prints no Link to Learning note and no boxed feature.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the images the book prints in its answer to fs-idp45725024 are kept in that answer. The eleven unkeyed items fs-idp203800544, fs-idp28734432, fs-idp44567104, fs-idm11516304, fs-idp22673408, fs-idp20553216, fs-idp42173648, fs-idm7500224, fs-idp50820528, fs-idm62612928 and fs-idm9054704 are kept with a suggested approach marked as OmniStax’s own; fs-idp42173648, which asks the reader to pick from Li, B, N, F and Ne, is kept as an open item with its options and is not graded. The question on two unpaired electrons, fs-idp162194832, is set as a choice over the book’s five options. Three items printed with section 6.5 are set here, since they relate electron configurations to the groups of the periodic table: fs-idm150214960 with the book’s answer, and fs-idm121823200 and fs-idp177066416 with a suggested approach.",
+ "figures": [
+  {
+   "id": "sim-aufbau",
+   "kind": "sim",
+   "number": "6.24",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_eLeveldiag.jpg"
+   ],
+   "original_caption": "Generalized energy-level diagram for atomic orbitals in an atom with two or more electrons (not to scale).",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "fig-notation",
+   "kind": "figure",
+   "number": "6.25",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Econfig.jpg"
+   ],
+   "original_caption": "The diagram of an electron configuration specifies the subshell (n and l value, with letter symbol) and superscript number of electrons.",
+   "draws": []
+  },
+  {
+   "id": "fig-fill-order",
+   "kind": "figure",
+   "number": "6.26",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Efillorder.jpg"
+   ],
+   "original_caption": "This diagram depicts the energy order for atomic orbitals and is useful for deriving ground-state electron configurations.",
+   "draws": []
+  },
+  {
+   "id": "sim-periodic",
+   "kind": "sim",
+   "number": "6.27",
+   "folds": [
+    "6.29"
+   ],
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Econtable.jpg",
+    "/media/ch06/CNX_Chem_06_04_Ptableconf.jpg"
+   ],
+   "original_caption": "(Figure 6.27) This partial periodic table shows electron configurations for the valence subshells of atoms. By “building up” from hydrogen, this table can be used to determine the electron configuration for atoms of most elements in the periodic table. (Electron configurations of the lanthanides and actinides are not accurately predicted by this simple approach. See Figure 6.29.) (Figure 6.29) This version of the periodic table shows the outer-shell electron configuration of each element. Note that down each group, the configuration is often similar.",
+   "draws": []
+  },
+  {
+   "id": "fig-valence",
+   "kind": "figure",
+   "number": "6.28",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Valence.jpg"
+   ],
+   "original_caption": "A core-abbreviated electron configuration (right) replaces the core electrons with the noble gas symbol whose configuration matches the core electron configuration of the other element.",
+   "draws": []
+  },
+  {
+   "id": "fig-od-h",
+   "kind": "figure",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Hydrog1_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-od-he",
+   "kind": "figure",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Helium1_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-od-li",
+   "kind": "figure",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Lithium12_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-od-be",
+   "kind": "figure",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Beryll12_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-od-b",
+   "kind": "figure",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Boron122_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-od-c",
+   "kind": "figure",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_Carbon122_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-od-nofne",
+   "kind": "figure",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_NOFNe_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-od-p",
+   "kind": "figure",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_04_PhosphOrb_img.jpg"
+   ],
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "orbital-energies",
+   "concept": "orbital-energy-order",
+   "verb": "introduces"
+  },
+  {
+   "span": "orbital-energies",
+   "concept": "angular-momentum-quantum-number",
+   "verb": "uses"
+  },
+  {
+   "span": "orbital-energies",
+   "concept": "principal-quantum-number-shells",
+   "verb": "uses"
+  },
+  {
+   "span": "notation",
+   "concept": "writing-electron-configurations",
+   "verb": "introduces"
+  },
+  {
+   "span": "notation",
+   "concept": "angular-momentum-quantum-number",
+   "verb": "uses"
+  },
+  {
+   "span": "aufbau",
+   "concept": "aufbau-principle",
+   "verb": "introduces"
+  },
+  {
+   "span": "aufbau",
+   "concept": "orbital-energy-order",
+   "verb": "uses"
+  },
+  {
+   "span": "aufbau",
+   "concept": "pauli-exclusion-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "first-atoms",
+   "concept": "aufbau-principle",
+   "verb": "reinforces"
+  },
+  {
+   "span": "first-atoms",
+   "concept": "pauli-exclusion-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "first-atoms",
+   "concept": "spin-quantum-number",
+   "verb": "uses"
+  },
+  {
+   "span": "first-atoms",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "hunds-rule",
+   "concept": "hunds-rule",
+   "verb": "introduces"
+  },
+  {
+   "span": "hunds-rule",
+   "concept": "magnetic-quantum-number",
+   "verb": "uses"
+  },
+  {
+   "span": "hunds-rule",
+   "concept": "aufbau-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "valence-core",
+   "concept": "valence-and-core-electrons",
+   "verb": "introduces"
+  },
+  {
+   "span": "valence-core",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "after-argon",
+   "concept": "orbital-energy-order",
+   "verb": "reinforces"
+  },
+  {
+   "span": "after-argon",
+   "concept": "aufbau-principle",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-phosphorus",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-phosphorus",
+   "concept": "working-with-quantum-numbers",
+   "verb": "uses"
+  },
+  {
+   "span": "exceptions",
+   "concept": "configuration-exceptions",
+   "verb": "introduces"
+  },
+  {
+   "span": "exceptions",
+   "concept": "orbital-energy-order",
+   "verb": "uses"
+  },
+  {
+   "span": "periodic-table",
+   "concept": "periodic-table-blocks",
+   "verb": "introduces"
+  },
+  {
+   "span": "periodic-table",
+   "concept": "valence-and-core-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "ions",
+   "concept": "ion-configurations",
+   "verb": "introduces"
+  },
+  {
+   "span": "ions",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ions",
+   "concept": "ion-configurations",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp25345424",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-phosphorus"
+   },
+   "cite": "after-argon",
+   "prompt": "Identify the atoms from the electron configurations given: (a) [Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>5</sup> (b) [Kr]5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Mn (b) Xe"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp31411280",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ions"
+   },
+   "cite": "ions",
+   "prompt": "Which ion with a +2 charge has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>4<em>d</em><sup>5</sup>? Which ion with a +3 charge has this configuration?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Tc<sup>2+</sup>, Ru<sup>3+</sup>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp203800544",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ions",
+   "prompt": "Read the labels of several commercial products and identify monatomic ions of at least four transition elements contained in the products. Write the complete electron configurations of these cations.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Look for the names of metals in the ingredient lists of products such as vitamin and mineral supplements, fertilizers and cleaning products, and note which of them lie in the <em>d</em> block of the periodic table and what charge each carries in its compound. For each cation, write the complete configuration of the neutral atom in the order of Figure 6.26 and then remove electrons as Example 6.11 does: for a transition metal the highest <em>ns</em> electrons are lost first, and only then the (<em>n</em> – 1)<em>d</em> electrons."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp32862336",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ions",
+   "prompt": "Read the labels of several commercial products and identify monatomic ions of at least six main group elements contained in the products. Write the complete electron configurations of these cations and anions.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "For example, Na<sup>+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; Ca<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>; Sn<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>; F<sup>–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; O<sup>2–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; Cl<sup>–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp28734432",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aufbau",
+   "prompt": "Using complete subshell notation (not abbreviations, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>, and so forth), predict the electron configuration of each of the following atoms: (a) C (b) P (c) V (d) Sb (e) Sm",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Find the atomic number of each element, which is its number of electrons, and place the electrons one at a time into the subshells in the order of Figure 6.26, filling each subshell to its capacity (2 for <em>s</em>, 6 for <em>p</em>, 10 for <em>d</em>, 14 for <em>f</em>) before the next is begun. Stop when the superscripts add up to the atomic number, and check the last subshell against the square of that element in Figure 6.29."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp165789584",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aufbau",
+   "prompt": "Using complete subshell notation (1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>, and so forth), predict the electron configuration of each of the following atoms: (a) N (b) Si (c) Fe (d) Te (e) Tb",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>3</sup>; (b) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>; (c) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>6</sup>; (d) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>4</sup>; (e) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>9</sup>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp44567104",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "notation",
+   "prompt": "Is 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup> the symbol for a macroscopic property or a microscopic property of an element? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Recall from Chapter 1 that a macroscopic property is one we can observe or measure in a sample large enough to see, while a microscopic property belongs to the individual atoms and molecules. Ask what an electron configuration describes: the occupancy of the orbitals of one atom. Decide which kind of property that is, and explain it in terms of what the symbol tells you about a single atom."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp108900240",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ions",
+   "prompt": "What additional information do we need to answer the question “Which ion has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>”?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The charge on the ion."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm11516304",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "hunds-rule",
+   "prompt": "Draw the orbital diagram for the valence shell of each of the following atoms: (a) C (b) P (c) V (d) Sb (e) Ru",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write each configuration first and pick out the valence subshells: for a main group element, the <em>s</em> and <em>p</em> subshells of the highest <em>n</em>; for a transition metal, the <em>ns</em> and (<em>n</em> – 1)<em>d</em> subshells. Draw one box for each orbital (one for <em>s</em>, three for <em>p</em>, five for <em>d</em>), place one arrow in each box of a subshell before pairing any, as Hund’s rule requires, and give paired arrows opposite directions. Check Figure 6.29 for any element whose observed configuration differs from the predicted one."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp45725024",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "hunds-rule",
+   "prompt": "Use an orbital diagram to describe the electron configuration of the valence shell of each of the following atoms: (a) N (b) Si (c) Fe (d) Te (e) Mo",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2a_img.jpg\" alt=\"A 2s box with a pair of arrows, one up and one down, followed by three connected 2p boxes each with a single upward arrow.\"><br>(b)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2b_img.jpg\" alt=\"An s box with a pair of arrows, followed by three connected p boxes, the first two with a single upward arrow and the third empty.\"><br>(c)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2c_img.jpg\" alt=\"A 4s box with a pair of arrows, followed by five connected 3d boxes, the first with a pair of arrows and the other four with a single upward arrow.\"><br>(d)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2d_img.jpg\" alt=\"A 5s box with a pair of arrows, followed by three connected 5p boxes, the first with a pair of arrows and the other two with a single upward arrow.\"><br>(e)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2e_img.jpg\" alt=\"A 5s box followed by five connected 4d boxes, each of the six boxes with a single upward arrow.\">"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp22673408",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ions",
+   "prompt": "Using complete subshell notation (1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>, and so forth), predict the electron configurations of the following ions. (a) N<sup>3–</sup> (b) Ca<sup>2+</sup> (c) S<sup>–</sup> (d) Cs<sup>2+</sup> (e) Cr<sup>2+</sup> (f) Gd<sup>3+</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the configuration of each neutral atom first. For an anion, add electrons in the order predicted by the Aufbau principle; for a cation of a main group element, remove the electrons that were added last; for a transition or inner transition metal, remove the highest <em>ns</em> electrons first and then the (<em>n</em> – 1)<em>d</em> or (<em>n</em> – 2)<em>f</em> electrons, as Example 6.11 does for Fe<sup>2+</sup> and Sm<sup>3+</sup>. Chromium and gadolinium are among the atoms whose observed configurations differ from the predicted ones, so start them from Figure 6.29."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp203400832",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aufbau",
+   "prompt": "Which atom has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>2</sup>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Zr"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp20553216",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aufbau",
+   "prompt": "Which atom has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>7</sup>4<em>s</em><sup>2</sup>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Add the superscripts to find the number of electrons, which for a neutral atom is its atomic number, and find that element in the periodic table. As a check, the last subshell being filled, and the number of electrons in it, should match that element’s square in Figure 6.29."
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp26092016",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ions",
+   "prompt": "Which ion with a +1 charge has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>? Which ion with a –2 charge has this configuration?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Rb<sup>+</sup>, Se<sup>2−</sup>"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp42173648",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "valence-core",
+   "prompt": "Which of the following atoms contains only three valence electrons: Li, B, N, F, Ne?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the configuration of each of the five atoms and count the electrons in the shell of highest <em>n</em>, which for these main group elements are the valence electrons. Their positions in the periodic table give a quick check, since atoms in one group have the same number of valence electrons."
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp162194832",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "hunds-rule",
+   "prompt": "Which of the following has two unpaired electrons?",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Mg",
+     "Si",
+     "S",
+     "Both Mg and S",
+     "Both Si and S."
+    ],
+    "correct": 4,
+    "hint": "Draw the orbital diagram of the valence shell of each atom and count the boxes that hold a single arrow.",
+    "solution": "Although both (b) and (c) are correct, (e) encompasses both and is the best answer."
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm7500224",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "periodic-table",
+   "prompt": "Which atom would be expected to have a half-filled 6<em>p</em> subshell?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "A <em>p</em> subshell holds six electrons, so it is half-filled with three. Find the element whose last subshell to be filled by the Aufbau principle is 6<em>p</em> and which has three electrons in it: it lies in period 6 of the <em>p</em> block, in the group whose members all end in <em>np</em><sup>3</sup>."
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idp3240128",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "periodic-table",
+   "prompt": "Which atom would be expected to have a half-filled 4<em>s</em> subshell?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "K"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp50820528",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ions",
+   "prompt": "In one area of Australia, the cattle did not thrive despite the presence of suitable forage. An investigation showed the cause to be the absence of sufficient cobalt in the soil. Cobalt forms cations in two oxidation states, Co<sup>2+</sup> and Co<sup>3+</sup>. Write the electron structure of the two cations.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the configuration of the cobalt atom, atomic number 27, from Figure 6.26 or Figure 6.29. Cobalt is a transition metal, so its cations lose the 4<em>s</em> electrons first; the +3 ion then loses one electron from the 3<em>d</em> subshell as well. Check that the number of electrons left is 27 minus the charge."
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idp32131696",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ions",
+   "prompt": "Thallium was used as a poison in the Agatha Christie mystery story “The Pale Horse.” Thallium has two possible cationic forms, +1 and +3. The +1 compounds are the more stable. Write the electron structure of the +1 cation of thallium.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>14</sup>5<em>d</em><sup>10</sup>"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idm62612928",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ions",
+   "prompt": "Write the electron configurations for the following atoms or ions: (a) B<sup>3+</sup> (b) O<sup>–</sup> (c) Cl<sup>3+</sup> (d) Ca<sup>2+</sup> (e) Ti",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Start from the configuration of each neutral atom. The number of electrons in an ion is the atomic number minus the charge, so a positive ion has lost electrons and a negative one has gained them. For the main group ions, remove the electrons added last or add electrons in the Aufbau order; titanium is a neutral atom, and its configuration follows the filling order of Figure 6.26 through the 4<em>s</em> and into the 3<em>d</em>."
+   }
+  },
+  {
+   "id": "e20",
+   "source_id": "fs-idp81167248",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aufbau",
+   "prompt": "Cobalt–60 and iodine–131 are radioactive isotopes commonly used in nuclear medicine. How many protons, neutrons, and electrons are in atoms of these isotopes? Write the complete electron configuration for each isotope.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Co has 27 protons, 27 electrons, and 33 neutrons: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>7</sup>. I has 53 protons, 53 electrons, and 78 neutrons: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>5</sup>."
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idm9054704",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-phosphorus",
+   "prompt": "Write a set of quantum numbers for each of the electrons with an <em>n</em> of 3 in a Sc atom.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the configuration of scandium and pick out the subshells with <em>n</em> = 3: the 3<em>s</em>, the 3<em>p</em> and the 3<em>d</em>. For each electron, <em>l</em> is 0, 1 or 2 by its subshell, <em>m<sub>l</sub></em> runs over the values allowed for that <em>l</em>, one box per value, and <em>m<sub>s</sub></em> is +½ for the first electron in a box and −½ for the second, as in Example 6.10. No two electrons may share all four numbers."
+   }
+  },
+  {
+   "id": "e22",
+   "source_id": "fs-idm150214960",
+   "source_section": "6.5",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "periodic-table",
+   "prompt": "Atoms of which group in the periodic table have a valence shell electron configuration of <em>ns</em><sup>2</sup><em>np</em><sup>3</sup>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "15 (5A)"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idm121823200",
+   "source_section": "6.5",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "periodic-table",
+   "prompt": "Atoms of which group in the periodic table have a valence shell electron configuration of <em>ns</em><sup>2</sup>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Elements in one group have the same number of valence electrons in the same kind of subshell. Find in Figure 6.29 the column whose squares all end in <em>ns</em><sup>2</sup> with nothing added after it, and note the one element outside that column whose configuration has the same form."
+   }
+  },
+  {
+   "id": "e24",
+   "source_id": "fs-idp177066416",
+   "source_section": "6.5",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "periodic-table",
+   "prompt": "Explain why Al is a member of group 13 rather than group 3?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the configuration of aluminum and name the subshell its last electron enters. Compare it with the elements of group 3, such as scandium, whose last electron enters a <em>d</em> subshell, and with boron, above aluminum in group 13. Explain the placement in terms of the valence electrons and the subshell being filled, which is how the periodic table groups the elements."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "writing-electron-configurations"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "aufbau-principle",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ion-configurations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "writing-electron-configurations",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "ion-configurations"
+  },
+  {
+   "exercise": "e1",
+   "concept": "writing-electron-configurations",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "ion-configurations"
+  },
+  {
+   "exercise": "e2",
+   "concept": "writing-electron-configurations",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "writing-electron-configurations"
+  },
+  {
+   "exercise": "e3",
+   "concept": "aufbau-principle",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "writing-electron-configurations"
+  },
+  {
+   "exercise": "e4",
+   "concept": "aufbau-principle",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "writing-electron-configurations"
+  },
+  {
+   "exercise": "e6",
+   "concept": "ion-configurations"
+  },
+  {
+   "exercise": "e7",
+   "concept": "hunds-rule"
+  },
+  {
+   "exercise": "e7",
+   "concept": "valence-and-core-electrons",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "writing-electron-configurations",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "hunds-rule"
+  },
+  {
+   "exercise": "e8",
+   "concept": "valence-and-core-electrons",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "configuration-exceptions",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "ion-configurations"
+  },
+  {
+   "exercise": "e9",
+   "concept": "configuration-exceptions",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "writing-electron-configurations"
+  },
+  {
+   "exercise": "e11",
+   "concept": "writing-electron-configurations"
+  },
+  {
+   "exercise": "e12",
+   "concept": "ion-configurations"
+  },
+  {
+   "exercise": "e12",
+   "concept": "writing-electron-configurations",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "valence-and-core-electrons"
+  },
+  {
+   "exercise": "e14",
+   "concept": "hunds-rule"
+  },
+  {
+   "exercise": "e14",
+   "concept": "writing-electron-configurations",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "periodic-table-blocks"
+  },
+  {
+   "exercise": "e15",
+   "concept": "aufbau-principle",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "aufbau-principle"
+  },
+  {
+   "exercise": "e16",
+   "concept": "orbital-energy-order",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "ion-configurations"
+  },
+  {
+   "exercise": "e18",
+   "concept": "ion-configurations"
+  },
+  {
+   "exercise": "e19",
+   "concept": "ion-configurations"
+  },
+  {
+   "exercise": "e19",
+   "concept": "writing-electron-configurations",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e20",
+   "concept": "writing-electron-configurations"
+  },
+  {
+   "exercise": "e21",
+   "concept": "working-with-quantum-numbers"
+  },
+  {
+   "exercise": "e21",
+   "concept": "writing-electron-configurations",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e22",
+   "concept": "periodic-table-blocks"
+  },
+  {
+   "exercise": "e22",
+   "concept": "valence-and-core-electrons",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "periodic-table-blocks"
+  },
+  {
+   "exercise": "e23",
+   "concept": "valence-and-core-electrons",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e24",
+   "concept": "periodic-table-blocks"
+  },
+  {
+   "exercise": "e24",
+   "concept": "valence-and-core-electrons",
+   "weight": 2,
+   "weights_by": "ai"
+  }
+ ]
+}

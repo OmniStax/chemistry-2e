@@ -1,4 +1,4 @@
-## Pass (2026-09-28): Chapter 5, Thermochemistry, is built
+## Chapter 5, Thermochemistry, is built
 
 Prompted by: Chen asking for the book to be finished without check-ins, a plan
 file written before each page and left for review after.

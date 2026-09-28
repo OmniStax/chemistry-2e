@@ -8,7 +8,7 @@ Three learning objectives, no numbered figure, thirteen unnumbered images in the
 
 1. `calculating-formal-charge` **Calculating formal charge** (the opening paragraph and the book's header; the formula; Example 7.6 `ex-icl4` and Example 7.7 `ex-brcl3`, each with its Check Your Learning). Introduces `formal-charge`; uses `lewis-structure`.
 2. `formal-charge-structure` **Using formal charge to predict molecular structure** (the book's header; the four guidelines, CO<sub>2</sub>, the thiocyanate ion, `sim-formal-charge`, Example 7.8 `ex-n2o` with its Check Your Learning). Introduces `formal-charge-guidelines`; uses `formal-charge`, `electronegativity`, `multiple-bonds`.
-3. `resonance` **Resonance** (the book's header; the nitrite ion, Wheland's rhinoceros, `sim-resonance-hybrid`, the carbonate ion). Introduces `resonance`; uses `lewis-structure`, `multiple-bonds`, `formal-charge`.
+3. `resonance` **Resonance** (the book's header; the nitrite ion, Wheland's rhinoceros, the carbonate ion, `sim-resonance-hybrid`). Introduces `resonance`; uses `lewis-structure`, `multiple-bonds`, `formal-charge`.
 
 Key Concepts and Summary to `summary_html`; objectives, key equation and glossary to the tables.
 

@@ -1,0 +1,299 @@
+{
+ "id": "8.1",
+ "module": "m68744",
+ "chapter": "8",
+ "title": "Valence Bond Theory",
+ "short": "Valence Bond Theory",
+ "lead": "VSEPR theory predicts the shapes of molecules but does not explain the bonds that hold them together. Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms. This section follows the energy of two hydrogen atoms as they approach each other, which sets the bond distance and the bond energy, and then distinguishes the σ bonds formed by end-to-end overlap from the π bonds formed by side-by-side overlap, the two kinds of bond from which single, double, and triple bonds are built.",
+ "objectives": [
+  "Describe the formation of covalent bonds in terms of atomic orbital overlap",
+  "Define and give examples of σ and π bonds"
+ ],
+ "summary_html": "<p>Valence bond theory describes bonding as a consequence of the overlap of two separate atomic orbitals on different atoms that creates a region with one pair of electrons shared between the two atoms. When the orbitals overlap along an axis containing the nuclei, they form a σ bond. When they overlap in a fashion that creates a node along this axis, they form a π bond.</p>",
+ "notes": "",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer; the unkeyed numerical exercise fs-idp204835968 (the energy of one H–Cl bond from Table 8.1 and from an enthalpy of reaction) is left out, and the unkeyed conceptual exercises fs-idp92050208, fs-idp78672368 and fs-idp42077552 carry a suggested approach marked as OmniStax’s own. The images the book prints inside its answers to fs-idp84623072 and fs-idp108425904 are kept in those answers.",
+ "figures": [
+  {
+   "id": "sim-morse",
+   "kind": "sim",
+   "number": "8.2",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_01_Morse-3a8e.jpg"
+   ],
+   "original_caption": "(a) The interaction of two hydrogen atoms changes as a function of distance. (b) The energy of the system changes as the atoms interact. The lowest (most stable) energy occurs at a distance of 74 pm, which is the bond length observed for the H₂ molecule.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-overlap",
+   "kind": "sim",
+   "number": "8.3",
+   "folds": [
+    "8.4",
+    "8.5"
+   ],
+   "originals": [
+    "/media/ch08/CNX_Chem_08_01_overlap.jpg",
+    "/media/ch08/CNX_Chem_08_01_sigma.jpg",
+    "/media/ch08/CNX_Chem_08_01_pi.jpg"
+   ],
+   "original_caption": "(Figure 8.3) (a) The overlap of two p orbitals is greatest when the orbitals are directed end to end. (b) Any other arrangement results in less overlap. The dots indicate the locations of the nuclei. (Figure 8.4) Sigma (σ) bonds form from the overlap of the following: (a) two s orbitals, (b) an s orbital and a p orbital, and (c) two p orbitals. The dots indicate the locations of the nuclei. (Figure 8.5) Pi (π) bonds form from the side-by-side overlap of two p orbitals. The dots indicate the location of the nuclei.",
+   "draws": []
+  },
+  {
+   "id": "fig-bond-types",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_01_bondtype_img.jpg"
+   ],
+   "draws": []
+  },
+  {
+   "id": "fig-butadiene",
+   "kind": "figure",
+   "originals": [
+    "/media/ch08/CNX_Chem_08_01_C4H6_img.jpg"
+   ],
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "valence-bond",
+   "concept": "valence-bond-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-distance",
+   "concept": "bond-distance-and-bond-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "bond-distance",
+   "concept": "valence-bond-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "sigma-pi",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi",
+   "concept": "valence-bond-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "multiple-bonds",
+   "concept": "multiple-bond-composition",
+   "verb": "introduces"
+  },
+  {
+   "span": "multiple-bonds",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-butadiene",
+   "concept": "count-sigma-and-pi-bonds",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-butadiene",
+   "concept": "multiple-bond-composition",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp85049088",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-butadiene"
+   },
+   "cite": "sigma-pi",
+   "figure": {
+    "src": "/media/ch08/CNX_Chem_08_01_Exover_img.jpg",
+    "alt": "Three diagrams are shown and labeled “a,” “b,” and “c.” Diagram a depicts two peanut-shaped orbitals lying vertically side-by-side and overlapping. One orbital is smaller than the other. Diagram b shows two peanut-shaped orbitals lying end-to-end and overlapping. Diagram c shows two unequally sized peanut-shaped orbitals lying end-to-end and overlapping."
+   },
+   "prompt": "Identify each illustration as depicting a σ or π bond:\n(a) side-by-side overlap of a 4<em>p</em> and a 2<em>p</em> orbital\n(b) end-to-end overlap of a 4<em>p</em> and 4<em>p</em> orbital\n(c) end-to-end overlap of a 4<em>p</em> and a 2<em>p</em> orbital",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) is a π bond with a node along the axis connecting the nuclei while (b) and (c) are σ bonds that overlap along the axis."
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp92773152",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sigma-pi",
+   "prompt": "Explain how σ and π bonds are similar and how they are different.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Similarities: Both types of bonds result from overlap of atomic orbitals on adjacent atoms and contain a maximum of two electrons. Differences: σ bonds are stronger and result from end-to-end overlap and all single bonds are σ bonds; π bonds between the same two atoms are weaker because they result from side-by-side overlap, and multiple bonds contain one or more π bonds (in addition to a σ bond)."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm21893728",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bond-distance",
+   "prompt": "Explain why bonds occur at specific average bond distances instead of the atoms approaching each other infinitely close.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The specific average bond distance is the distance with the lowest energy. At distances less than the bond distance, the positive charges on the two nuclei repel each other, and the overall energy increases."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp92050208",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "valence-bond",
+   "prompt": "Use valence bond theory to explain the bonding in F<sub>2</sub>, HF, and ClBr. Sketch the overlap of the atomic orbitals involved in the bonds.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Start from the electron configuration of each atom and find the half-filled orbital in its valence shell, since valence bond theory builds a bond from the overlap of two half-filled orbitals whose single electrons pair up. A hydrogen atom offers its 1<em>s</em> orbital, and each halogen atom offers the one <em>p</em> orbital of its valence shell that holds a single electron. Then decide how each pair of orbitals overlaps, an <em>s</em> orbital with a <em>p</em> orbital or two <em>p</em> orbitals end to end, as the pairs of Figure 8.4 do, and name the kind of bond that end-to-end overlap forms."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp84623072",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multiple-bonds",
+   "prompt": "Use valence bond theory to explain the bonding in O<sub>2</sub>. Sketch the overlap of the atomic orbitals involved in the bonds in O<sub>2</sub>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Bonding: One σ bond and one π bond. The <em>s</em> orbitals are filled and do not overlap. The <em>p</em> orbitals overlap along the axis to form a σ bond and side-by-side to form the π bond. <img src=\"/media/ch08/CNX_Chem_08_01_O2bonds_img.jpg\" alt=\"This figure shows the orbitals of two atoms being added together as they form bonds. The two atoms are shown separately on the right, each having two peanut-shaped orbitals lying perpendicularly to one another. A right-facing arrow shows that the two have moved closer together and now the upper and lower portions of the vertical peanut-shaped orbitals are shown as merging together above and below the plane of the molecule while the horizontal peanut-shaped orbitals are overlapping between the two nuclei.\">"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp78672368",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multiple-bonds",
+   "prompt": "How many σ and π bonds are present in the molecule HCN?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Draw the Lewis structure of HCN first, with carbon as the central atom, and read the order of each of its two bonds. Then apply the rule the section states: every bond between two atoms contains exactly one σ bond, and the second and third lines of a double or triple bond are π bonds. Add up the σ bonds of the two bonds and then the π bonds, as Example 8.1 does for butadiene."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp108425904",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multiple-bonds",
+   "prompt": "A friend tells you N<sub>2</sub> has three π bonds due to overlap of the three <em>p</em>-orbitals on each N atom. Do you agree?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "No, two of the <em>p</em> orbitals (one on each N) will be oriented end-to-end and will form a σ bond. <img src=\"/media/ch08/CNX_Chem_08_01_N2LewStru_img.jpg\" alt=\"Two nitrogen atoms are shown both in a Lewis structure and as a diagram. The Lewis structure depicts the two nitrogen atoms bonded by a triple bond. The diagram shows two nitrogen atoms and their three peanut-shaped p-orbitals. One of the orbitals lies horizontally and overlaps between the two nuclei. It is labeled, “sigma bond.” The other two lie vertically and in the z-plane of the page. They overlap above and below and into and out of the page in relation to the nuclei. They are each labeled, “pi bond.”\">"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp42077552",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "multiple-bonds",
+   "prompt": "Draw the Lewis structures for CO<sub>2</sub> and CO, and predict the number of σ and π bonds for each molecule.\n(a) CO<sub>2</sub>\n(b) CO",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write each Lewis structure by the procedure of Chapter 7, giving every atom an octet, and note the order of each carbon-oxygen bond. Each bond, whatever its order, contains one σ bond, and the remaining lines of a double or triple bond are π bonds, as the Lewis structures of O<sub>2</sub> and N<sub>2</sub> in this section show. Count the σ and π bonds bond by bond for each molecule."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e1",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bond-distance-and-bond-energy"
+  },
+  {
+   "exercise": "e4",
+   "concept": "valence-bond-theory"
+  },
+  {
+   "exercise": "e4",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e5",
+   "concept": "valence-bond-theory"
+  },
+  {
+   "exercise": "e5",
+   "concept": "multiple-bond-composition"
+  },
+  {
+   "exercise": "e6",
+   "concept": "count-sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e6",
+   "concept": "multiple-bond-composition"
+  },
+  {
+   "exercise": "e7",
+   "concept": "multiple-bond-composition"
+  },
+  {
+   "exercise": "e7",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e8",
+   "concept": "count-sigma-and-pi-bonds"
+  }
+ ]
+}

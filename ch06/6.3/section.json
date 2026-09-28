@@ -1,0 +1,848 @@
+{
+ "id": "6.3",
+ "module": "m68733",
+ "chapter": "6",
+ "title": "Development of Quantum Theory",
+ "short": "Development of Quantum Theory",
+ "lead": "Bohr’s model could not say why only certain orbits were allowed, and it failed for every atom with more than one electron. This section follows the ideas that replaced it: de Broglie’s proposal that a particle such as an electron also behaves as a wave, Heisenberg’s limit on how exactly its position and momentum can be known together, and Schrödinger’s wavefunctions, whose squared magnitude gives the probability of finding the electron near a point. It ends with the four quantum numbers that describe an electron in an atom and the Pauli exclusion principle that allows no two electrons to share all four.",
+ "objectives": [
+  "Extend the concept of wave–particle duality that was observed in electromagnetic radiation to matter as well",
+  "Understand the general idea of the quantum mechanical description of electrons in an atom, and that it uses the notion of three-dimensional wave functions, or orbitals, that define the distribution of probability to find an electron in a particular part of space",
+  "List and describe traits of the four quantum numbers that form the basis for completely specifying the state of an electron in an atom"
+ ],
+ "summary_html": "<p>Macroscopic objects act as particles. Microscopic objects (such as electrons) have properties of both a particle and a wave. Their exact trajectories cannot be determined. The quantum mechanical model of atoms describes the three-dimensional position of the electron in a <em>probabilistic</em> manner according to a mathematical function called a wavefunction, often denoted as <em>ψ</em>. Atomic wavefunctions are also called orbitals. The squared magnitude of the wavefunction describes the distribution of the probability of finding the electron in a particular region in space. Therefore, atomic orbitals describe the areas in an atom where electrons are most likely to be found.</p><p>An atomic orbital is characterized by three quantum numbers. The principal quantum number, <em>n</em>, can be any positive integer. The general region for value of energy of the orbital and the average distance of an electron from the nucleus are related to <em>n</em>. Orbitals having the same value of <em>n</em> are said to be in the same shell. The secondary (angular momentum) quantum number, <em>l</em>, can have any integer value from 0 to <em>n</em> – 1. This quantum number describes the shape or type of the orbital. Orbitals with the same principal quantum number and the same <em>l</em> value belong to the same subshell. The magnetic quantum number, <em>m<sub>l</sub></em>, with 2<em>l</em> + 1 values ranging from –<em>l</em> to +<em>l</em>, describes the orientation of the orbital in space. In addition, each electron has a spin quantum number, <em>m<sub>s</sub></em>, that can be equal to ±<sup>1</sup>&frasl;<sub>2</sub>. No two electrons in the same atom can have the same set of values for all the four quantum numbers.</p>",
+ "notes": "The three Link to Learning notes, a cartoon of the double-slit experiment, an article on a macroscopic demonstration of the uncertainty principle and a story about Schrödinger’s cat, are left out. The text keeps four slips as the book prints them: “special distribution” where spatial is meant, “m can have values” in Example 6.7, m₁ for m<sub>l</sub> in the key of the fourth exercise, and ν for the velocity in two equations of the fourteenth.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. The four Check Your Learning items carry the book’s own answers from the notes that follow them. Answers to the end-of-chapter exercises come from the book’s key, which covers eight of this section’s fifteen items. The seven unkeyed items are all conceptual, fs-idm185773696 (the allowed values of the quantum numbers), fs-idp16534928 (shells, subshells and orbitals), fs-idm65709728 and fs-idm109521552 (the degenerate orbitals of the subshells in the question before each), fs-idm109481472 (sketching the p<sub>x</sub> and d<sub>xz</sub> orbitals), fs-idm165892704 (the uncertainty principle) and fs-idm68696640 (particle-like and wavelike equations); each is kept with a suggested approach marked as OmniStax’s own, and no answer is computed. Nothing is taken from another section and nothing is held for one. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "photo-waterw",
+   "kind": "photo",
+   "number": "6.16",
+   "draws": []
+  },
+  {
+   "id": "sim-orbit-wave",
+   "kind": "sim",
+   "number": "6.17",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_03_elecw.jpg"
+   ],
+   "original_caption": "If an electron is viewed as a wave circling around the nucleus, an integer number of wavelengths must fit into the orbit for this standing wave behavior to be possible.",
+   "draws": [
+    "wavelength"
+   ]
+  },
+  {
+   "id": "sim-double-slit",
+   "kind": "sim",
+   "number": "6.18",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_03_Electrnin.jpg"
+   ],
+   "original_caption": "(a) The interference pattern for electrons passing through very closely spaced slits demonstrates that quantum particles such as electrons can exhibit wavelike behavior. (b) The experimental results illustrated here demonstrate the wave–particle duality in electrons.",
+   "draws": [
+    "wavelength",
+    "mass"
+   ]
+  },
+  {
+   "id": "sim-de-broglie",
+   "kind": "sim",
+   "draws": [
+    "wavelength",
+    "mass"
+   ]
+  },
+  {
+   "id": "fig-shells",
+   "kind": "figure",
+   "number": "6.19",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_03_Qnumbers.jpg"
+   ],
+   "original_caption": "Different shells are numbered by principal quantum numbers.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-radial",
+   "kind": "sim",
+   "number": "6.20",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_03_sorbit.jpg"
+   ],
+   "original_caption": "The graphs show the probability (y axis) of finding an electron for the 1s, 2s, 3s orbitals as a function of distance from the nucleus.",
+   "draws": []
+  },
+  {
+   "id": "sim-orbital-shapes",
+   "kind": "sim",
+   "number": "6.21",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_03_Oshapes.jpg"
+   ],
+   "original_caption": "Shapes of s, p, d, and f orbitals.",
+   "draws": []
+  },
+  {
+   "id": "sim-subshell-energies",
+   "kind": "sim",
+   "number": "6.22",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_03_subshells.jpg"
+   ],
+   "original_caption": "The chart shows the energies of electron orbitals in a multi-electron atom.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "fig-spin",
+   "kind": "figure",
+   "number": "6.23",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_03_spin.jpg"
+   ],
+   "original_caption": "Electrons with spin values ±½ in an external magnetic field.",
+   "draws": [
+    "energy"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "open-questions",
+   "concept": "bohr-stationary-states",
+   "verb": "uses"
+  },
+  {
+   "span": "open-questions",
+   "concept": "hydrogen-like-ions",
+   "verb": "uses"
+  },
+  {
+   "span": "microscopic-world",
+   "concept": "wave-particle-duality",
+   "verb": "uses"
+  },
+  {
+   "span": "de-broglie",
+   "concept": "de-broglie-wavelength",
+   "verb": "introduces"
+  },
+  {
+   "span": "de-broglie",
+   "concept": "wave-particle-duality",
+   "verb": "uses"
+  },
+  {
+   "span": "de-broglie",
+   "concept": "bohr-stationary-states",
+   "verb": "uses"
+  },
+  {
+   "span": "de-broglie",
+   "concept": "standing-waves-quantization",
+   "verb": "uses"
+  },
+  {
+   "span": "electron-interference",
+   "concept": "de-broglie-wavelength",
+   "verb": "reinforces"
+  },
+  {
+   "span": "electron-interference",
+   "concept": "wave-particle-duality",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-particle-wavelength",
+   "concept": "de-broglie-wavelength",
+   "verb": "uses"
+  },
+  {
+   "span": "uncertainty",
+   "concept": "heisenberg-uncertainty",
+   "verb": "introduces"
+  },
+  {
+   "span": "uncertainty",
+   "concept": "de-broglie-wavelength",
+   "verb": "uses"
+  },
+  {
+   "span": "quantum-model",
+   "concept": "wavefunction-probability",
+   "verb": "introduces"
+  },
+  {
+   "span": "quantum-model",
+   "concept": "heisenberg-uncertainty",
+   "verb": "uses"
+  },
+  {
+   "span": "shells",
+   "concept": "principal-quantum-number-shells",
+   "verb": "introduces"
+  },
+  {
+   "span": "shells",
+   "concept": "photon-emission-absorption",
+   "verb": "uses"
+  },
+  {
+   "span": "shells",
+   "concept": "bohr-energy-levels",
+   "verb": "uses"
+  },
+  {
+   "span": "subshells",
+   "concept": "angular-momentum-quantum-number",
+   "verb": "introduces"
+  },
+  {
+   "span": "subshells",
+   "concept": "wavefunction-probability",
+   "verb": "uses"
+  },
+  {
+   "span": "subshells",
+   "concept": "principal-quantum-number-shells",
+   "verb": "uses"
+  },
+  {
+   "span": "orientation",
+   "concept": "magnetic-quantum-number",
+   "verb": "introduces"
+  },
+  {
+   "span": "orientation",
+   "concept": "angular-momentum-quantum-number",
+   "verb": "uses"
+  },
+  {
+   "span": "orientation",
+   "concept": "principal-quantum-number-shells",
+   "verb": "reinforces"
+  },
+  {
+   "span": "spin",
+   "concept": "spin-quantum-number",
+   "verb": "introduces"
+  },
+  {
+   "span": "spin",
+   "concept": "line-spectra",
+   "verb": "uses"
+  },
+  {
+   "span": "pauli",
+   "concept": "pauli-exclusion-principle",
+   "verb": "introduces"
+  },
+  {
+   "span": "pauli",
+   "concept": "spin-quantum-number",
+   "verb": "uses"
+  },
+  {
+   "span": "pauli",
+   "concept": "magnetic-quantum-number",
+   "verb": "uses"
+  },
+  {
+   "span": "worked-examples",
+   "concept": "working-with-quantum-numbers",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-shells-subshells",
+   "concept": "angular-momentum-quantum-number",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-shells-subshells",
+   "concept": "magnetic-quantum-number",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-max-electrons",
+   "concept": "pauli-exclusion-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-max-electrons",
+   "concept": "working-with-quantum-numbers",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-orbital-table",
+   "concept": "working-with-quantum-numbers",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-orbital-table",
+   "concept": "angular-momentum-quantum-number",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm90452432",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-particle-wavelength"
+   },
+   "cite": "de-broglie",
+   "prompt": "Calculate the wavelength of a softball with a mass of 100 g traveling at a velocity of 35 m s<sup>–1</sup>, assuming that it can be modeled as a single particle.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.9e-34,
+    "unit": "m",
+    "hint": "Convert the mass to kilograms first, then divide Planck’s constant by the product of mass and velocity.",
+    "solution": "1.9 × 10<sup>–34</sup> m. We never think of a thrown softball having a wavelength, since this wavelength is so small it is impossible for our senses or any known instrument to detect. Since de Broglie wavelength is inversely proportional to both particle mass and velocity, the particle’s momentum (mathematical product of mass and velocity) must be sufficiently small to yield a detectably large wavelength."
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm127242304",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-shells-subshells"
+   },
+   "cite": "subshells",
+   "prompt": "Identify the subshell in which electrons with the following quantum numbers are found: (a) <em>n</em> = 3, <em>l</em> = 1; (b) <em>n</em> = 5, <em>l</em> = 3; (c) <em>n</em> = 2, <em>l</em> = 0.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 3<em>p</em> (b) 5<em>f</em> (c) 2<em>s</em>"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm169030688",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-max-electrons"
+   },
+   "cite": "pauli",
+   "prompt": "If a shell contains a maximum of 32 electrons, what is the principal quantum number, <em>n</em>?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 4,
+    "hint": "A shell with principal quantum number n holds at most 2n² electrons.",
+    "solution": "<em>n</em> = 4"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm161581600",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-orbital-table"
+   },
+   "cite": "orientation",
+   "prompt": "How many orbitals have <em>l</em> = 2 and <em>n</em> = 3?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 5,
+    "hint": "A subshell with secondary quantum number l has 2l + 1 orbitals.",
+    "solution": "The five degenerate 3<em>d</em> orbitals"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp68295120",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "quantum-model",
+   "prompt": "How are the Bohr model and the quantum mechanical model of the hydrogen atom similar? How are they different?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Both models have a central positively charged nucleus with electrons moving about the nucleus in accordance with the Coulomb electrostatic potential. The Bohr model <em>assumes</em> that the electrons move in circular orbits that have quantized energies, angular momentum, and radii that are specified by a single quantum number, <em>n</em> = 1, 2, 3, …, but this quantization is an ad hoc assumption made by Bohr to incorporate quantization into an essentially classical mechanics description of the atom. Bohr also assumed that electrons orbiting the nucleus normally do not emit or absorb electromagnetic radiation, but do so when the electron switches to a different orbit. In the quantum mechanical model, the electrons do not move in precise orbits (such orbits violate the Heisenberg uncertainty principle) and, instead, a probabilistic interpretation of the electron’s position at any given instant is used, with a mathematical function <em>ψ</em> called a wavefunction that can be used to determine the electron’s spatial probability distribution. These wavefunctions, or orbitals, are three-dimensional stationary waves that can be specified by three quantum numbers that arise naturally from their underlying mathematics (no ad hoc assumptions required): the principal quantum number, <em>n</em> (the same one used by Bohr), which specifies shells such that orbitals having the same <em>n</em> all have the same energy and approximately the same spatial extent; the angular momentum quantum number <em>l</em>, which is a measure of the orbital’s angular momentum and corresponds to the orbitals’ general shapes, as well as specifying subshells such that orbitals having the same <em>l</em> (and <em>n</em>) all have the same energy; and the orientation quantum number <em>m</em>, which is a measure of the <em>z</em> component of the angular momentum and corresponds to the orientations of the orbitals. The Bohr model gives the same expression for the energy as the quantum mechanical expression and, hence, both properly account for hydrogen’s discrete spectrum (an example of getting the right answers for the wrong reasons, something that many chemistry students can sympathize with), but gives the wrong expression for the angular momentum (Bohr orbits necessarily all have non-zero angular momentum, but some quantum orbitals [<em>s</em> orbitals] can have zero angular momentum)."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm185773696",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pauli",
+   "prompt": "What are the allowed values for each of the four quantum numbers: <em>n</em>, <em>l</em>, <em>m<sub>l</sub></em>, and <em>m<sub>s</sub></em>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Work down Table 6.1 one row at a time. The principal quantum number <em>n</em> can be any positive integer. The secondary quantum number <em>l</em> depends on <em>n</em>: it takes every integer from 0 up to <em>n</em> – 1. The magnetic quantum number <em>m<sub>l</sub></em> depends on <em>l</em>: it takes every integer from –<em>l</em> to +<em>l</em>, which is 2<em>l</em> + 1 values. The spin quantum number <em>m<sub>s</sub></em> depends on nothing else and has only two values, +<sup>1</sup>&frasl;<sub>2</sub> and –<sup>1</sup>&frasl;<sub>2</sub>."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm127368704",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pauli",
+   "prompt": "Describe the properties of an electron associated with each of the following four quantum numbers: <em>n</em>, <em>l</em>, <em>m<sub>l</sub></em>, and <em>m<sub>s</sub></em>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<em>n</em> determines the general range for the value of energy and the probable distances that the electron can be from the nucleus. <em>l</em> determines the shape of the orbital. <em>m</em><sub>1</sub> determines the orientation of the orbitals of the same <em>l</em> value with respect to one another. <em>m<sub>s</sub></em> determines the spin of an electron."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp16534928",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "subshells",
+   "prompt": "Answer the following questions:<br>(a) Without using quantum numbers, describe the differences between the shells, subshells, and orbitals of an atom.<br>(b) How do the quantum numbers of the shells, subshells, and orbitals of an atom differ?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "(a) Think of the three as nested groups. A shell is the set of orbitals that share one general energy and one general distance from the nucleus; a subshell is the set of orbitals within a shell that share one shape; and an orbital is a single region of space, within a subshell, in which one or two electrons are most likely to be found. (b) Ask how many quantum numbers are needed to name each group. A shell is fixed by <em>n</em> alone, a subshell by <em>n</em> and <em>l</em> together, and an orbital by <em>n</em>, <em>l</em> and <em>m<sub>l</sub></em> together."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm226431552",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "subshells",
+   "prompt": "Identify the subshell in which electrons with the following quantum numbers are found:<br>(a) <em>n</em> = 2, <em>l</em> = 1<br>(b) <em>n</em> = 4, <em>l</em> = 2<br>(c) <em>n</em> = 6, <em>l</em> = 0",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 2<em>p</em>; (b) 4<em>d</em>; (c) 6<em>s</em>"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm65709728",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "Which of the subshells described in the previous question contain degenerate orbitals? How many degenerate orbitals are in each?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Degenerate orbitals are orbitals of the same energy, and the orbitals of one subshell are degenerate with one another. A subshell with secondary quantum number <em>l</em> holds 2<em>l</em> + 1 orbitals, one for each value of <em>m<sub>l</sub></em>, so a subshell contains degenerate orbitals only when 2<em>l</em> + 1 is greater than one. Read <em>l</em> for each of the three subshells and count 2<em>l</em> + 1 for each."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm5890656",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "subshells",
+   "prompt": "Identify the subshell in which electrons with the following quantum numbers are found:<br>(a) <em>n</em> = 3, <em>l</em> = 2<br>(b) <em>n</em> = 1, <em>l</em> = 0<br>(c) <em>n</em> = 4, <em>l</em> = 3",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 3<em>d</em>; (b) 1<em>s</em>; (c) 4<em>f</em>"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm109521552",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "Which of the subshells described in the previous question contain degenerate orbitals? How many degenerate orbitals are in each?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Orbitals in one subshell share one energy, so they are degenerate. Read the value of <em>l</em> from the letter of each subshell (<em>s</em> for 0, <em>p</em> for 1, <em>d</em> for 2, <em>f</em> for 3) and count the 2<em>l</em> + 1 values of <em>m<sub>l</sub></em> that it allows; a subshell with only one orbital has no other orbital to be degenerate with."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm153995968",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "Sketch the boundary surface of a $d_{x^{2}-y^{2}}$ and a <em>p<sub>y</sub></em> orbital. Be sure to show and label the axes.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch06/CNX_Chem_06_03_Ex9soln_img.jpg\" alt=\"This figure contains two diagrams. The first is of a 2 p subscript y orbital. The second is of a d subscript x squared minus y squared orbital. The first diagram has two spherical shapes joined at the origin when oriented along the y axis on an x y and z coordinate plane. The second diagram shows four ellipsoid lobes with ends centered around the origin. Two of these ellipsoid lobes are oriented along the x axis and two are oriented along the y axis on the x y and z coordinate plane.\">"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm109481472",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "Sketch the <em>p<sub>x</sub></em> and <em>d<sub>xz</sub></em> orbitals. Be sure to show and label the coordinates.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Draw the <em>x</em>, <em>y</em> and <em>z</em> axes first, with the nucleus at the origin. A <em>p</em> orbital is a dumbbell of two lobes that lies along the axis named in its subscript, so the <em>p<sub>x</sub></em> orbital has one lobe on each side of the origin along the <em>x</em> axis. A <em>d</em> orbital with two letters in its subscript has four lobes in the plane of those two axes, lying between the axes rather than along them, so the <em>d<sub>xz</sub></em> orbital has four lobes in the <em>xz</em> plane, one in each quarter of it. Figure 6.21 shows both shapes and can be turned to check the sketch."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm139949520",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pauli",
+   "figure": {
+    "src": "/media/ch06/CNX_Chem_06_03_OrbOutline_img.jpg",
+    "alt": "This figure contains three diagrams. In x, a circle is drawn with a dot at the center. In y, two nearly ellipsoid shapes are oriented horizontally with a dot between them. In z, four shapes like those in y are oriented in an x shape with a dot at the center.",
+    "caption": "Three orbitals in outline, labeled (x), (y) and (z)."
+   },
+   "prompt": "Consider the orbitals shown here in outline.<br>(a) What is the maximum number of electrons contained in an orbital of type (x)? Of type (y)? Of type (z)?<br>(b) How many orbitals of type (x) are found in a shell with <em>n</em> = 2? How many of type (y)? How many of type (z)?<br>(c) Write a set of quantum numbers for an electron in an orbital of type (x) in a shell with <em>n</em> = 4. Of an orbital of type (y) in a shell with <em>n</em> = 2. Of an orbital of type (z) in a shell with <em>n</em> = 3.<br>(d) What is the smallest possible <em>n</em> value for an orbital of type (x)? Of type (y)? Of type (z)?<br>(e) What are the possible <em>l</em> and <em>m<sub>l</sub></em> values for an orbital of type (x)? Of type (y)? Of type (z)?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) x. 2, y. 2, z. 2; (b) x. 1, y. 3, z. 0; (c) x. 4 0 0 <sup>1</sup>&frasl;<sub>2</sub>, y. 2 1 0 <sup>1</sup>&frasl;<sub>2</sub>, z. 3 2 0 <sup>1</sup>&frasl;<sub>2</sub>; (d) x. 1, y. 2, z. 3; (e) x. <em>l</em> = 0, <em>m<sub>l</sub></em> = 0, y. <em>l</em> = 1, <em>m<sub>l</sub></em> = –1, 0, or +1, z. <em>l</em> = 2, <em>m<sub>l</sub></em> = –2, –1, 0, +1, +2"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm165892704",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "uncertainty",
+   "prompt": "State the Heisenberg uncertainty principle. Describe briefly what the principle implies.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Start from the principle as the section states it: it is fundamentally impossible to determine simultaneously and exactly both the momentum and the position of a particle, so that the product of the two uncertainties, Δ<em>x</em> × Δ<em>p<sub>x</sub></em>, can be no smaller than <em>ħ</em>/2. Then say what follows. The more exactly the position of a particle is known, the less exactly its momentum can be known, so an electron in an atom cannot be followed along a precise orbit as the Bohr model supposed; its position can only be described by a probability. Because <em>ħ</em> is so small, the limit matters for a particle as light as an electron and is far too small to notice for a macroscopic object such as a baseball."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm130545344",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pauli",
+   "prompt": "How many electrons could be held in the second shell of an atom if the spin quantum number <em>m<sub>s</sub></em> could have three values instead of just two? (Hint: Consider the Pauli exclusion principle.)",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 12,
+    "hint": "Count the orbitals of the second shell, then ask how many electrons one orbital could hold if no two could share all four quantum numbers.",
+    "solution": "12"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm68696640",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "de-broglie",
+   "prompt": "Which of the following equations describe particle-like behavior? Which describe wavelike behavior? Do any involve both types of behavior? Describe the reasons for your choices.<br>(a) <em>c</em> = <em>λν</em><br>(b) $E=\\frac{m{\\nu}^{2}}{2}$<br>(c) $r=\\frac{{n}^{2}{a}_{0}}{Z}$<br>(d) <em>E = hν</em><br>(e) $\\lambda=\\frac{h}{m\\nu}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Sort each equation by the quantities it contains. A wavelength <em>λ</em> or a frequency <em>ν</em> belongs to a wave, while a mass <em>m</em>, a speed or a definite radius belongs to a particle. An equation that holds only wave quantities describes wavelike behavior, one that holds only particle quantities describes particle-like behavior, and one that sets a wave quantity equal to an expression in particle quantities joins the two. Note that in (b) and (e) the book writes the velocity of the particle with the same letter it uses for frequency, so read that symbol as a velocity there, as in de Broglie’s equation."
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm24126560",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "pauli",
+   "prompt": "Write a set of quantum numbers for each of the electrons with an <em>n</em> of 4 in a Se atom.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<table><thead><tr><th><em>n</em></th><th><em>l</em></th><th><em>m<sub>l</sub></em></th><th><em>s</em></th></tr></thead><tbody><tr><td>4</td><td>0</td><td>0</td><td>+<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>0</td><td>0</td><td>−<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>1</td><td>−1</td><td>+<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>1</td><td>0</td><td>+<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>1</td><td>+1</td><td>+<sup>1</sup>&frasl;<sub>2</sub></td></tr><tr><td>4</td><td>1</td><td>−1</td><td>−<sup>1</sup>&frasl;<sub>2</sub></td></tr></tbody></table>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "de-broglie-wavelength"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "working-with-quantum-numbers"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "angular-momentum-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "working-with-quantum-numbers"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "pauli-exclusion-principle",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "working-with-quantum-numbers"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "magnetic-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "wavefunction-probability"
+  },
+  {
+   "exercise": "e1",
+   "concept": "principal-quantum-number-shells",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "heisenberg-uncertainty",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "principal-quantum-number-shells"
+  },
+  {
+   "exercise": "e2",
+   "concept": "angular-momentum-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "magnetic-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "spin-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "principal-quantum-number-shells"
+  },
+  {
+   "exercise": "e3",
+   "concept": "angular-momentum-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "magnetic-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "spin-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "principal-quantum-number-shells"
+  },
+  {
+   "exercise": "e4",
+   "concept": "angular-momentum-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "magnetic-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "working-with-quantum-numbers"
+  },
+  {
+   "exercise": "e5",
+   "concept": "angular-momentum-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "magnetic-quantum-number"
+  },
+  {
+   "exercise": "e6",
+   "concept": "working-with-quantum-numbers",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "working-with-quantum-numbers"
+  },
+  {
+   "exercise": "e7",
+   "concept": "angular-momentum-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "magnetic-quantum-number"
+  },
+  {
+   "exercise": "e8",
+   "concept": "working-with-quantum-numbers",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "magnetic-quantum-number"
+  },
+  {
+   "exercise": "e9",
+   "concept": "angular-momentum-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "magnetic-quantum-number"
+  },
+  {
+   "exercise": "e10",
+   "concept": "angular-momentum-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "working-with-quantum-numbers"
+  },
+  {
+   "exercise": "e11",
+   "concept": "pauli-exclusion-principle",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "magnetic-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "heisenberg-uncertainty"
+  },
+  {
+   "exercise": "e13",
+   "concept": "pauli-exclusion-principle"
+  },
+  {
+   "exercise": "e13",
+   "concept": "working-with-quantum-numbers",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "de-broglie-wavelength"
+  },
+  {
+   "exercise": "e14",
+   "concept": "wave-particle-duality",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "working-with-quantum-numbers"
+  },
+  {
+   "exercise": "e15",
+   "concept": "pauli-exclusion-principle",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "spin-quantum-number",
+   "weight": 2,
+   "weights_by": "ai"
+  }
+ ]
+}

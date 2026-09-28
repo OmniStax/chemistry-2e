@@ -1,0 +1,775 @@
+{
+ "id": "6.5",
+ "module": "m68735",
+ "chapter": "6",
+ "title": "Periodic Variations in Element Properties",
+ "short": "Periodic Variations",
+ "lead": "The size of an atom, the energy needed to remove an electron from it, and the energy change when it accepts one all vary periodically with its electronic structure. This section explains the trends in covalent and ionic radius through the effective nuclear charge, follows the first and successive ionization energies across periods and down groups, and sets out the trend in electron affinity together with its exceptions.",
+ "objectives": [
+  "Describe and explain the observed trends in atomic size, ionization energy, and electron affinity of the elements"
+ ],
+ "summary_html": "<p>Electron configurations allow us to understand many periodic trends. Covalent radius increases as we move down a group because the <em>n</em> level (orbital size) increases. Covalent radius mostly decreases as we move left to right across a period because the effective nuclear charge experienced by the electrons increases, and the electrons are pulled in tighter to the nucleus. Anionic radii are larger than the parent atom, while cationic radii are smaller, because the number of valence electrons has changed while the nuclear charge has remained constant. Ionization energy (the energy associated with forming a cation) decreases down a group and mostly increases across a period because it is easier to remove an electron from a larger, higher energy orbital. Electron affinity (the energy associated with forming an anion) is more favorable (exothermic) when electrons are placed into lower energy orbitals, closer to the nucleus. Therefore, electron affinity becomes increasingly negative as we move left to right across the periodic table and decreases as we move down a group. For both IE and electron affinity data, there are exceptions to the trends when dealing with completely filled or half-filled subshells.</p>",
+ "notes": "The Link to Learning note on visualizations of the periodic trends is left out, and Figures 6.34 and 6.35 keep the values their images print where the book’s descriptions of them differ (710 kJ/mol for ruthenium, −200 kJ/mol for sulfur and +30 kJ/mol for neon).",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Both Check Your Learning items carry the book’s own answer from the note that follows them. Answers to the end-of-chapter exercises come from the book’s key, which covers the odd-numbered items; the keyed single picks are set as choices over the book’s own options. The eight unkeyed items, none of them numerical, are kept with a suggested approach marked as OmniStax’s own and are never graded: the picks fs-idp30124176 (largest radius), fs-idm54929680 (smallest first ionization energy) and fs-idm176990768 (isoelectronic with S²⁺) print their options in the prompt, and the rankings fs-idm147454816, fs-idm116086704 and fs-idm44955136, the reverse ionization of fs-idm2181648 and the isoelectronic radii of fs-idm108984736 carry an approach. Three items the book prints here test the electron configurations of 6.4 and are set on that page with source_section 6.5: fs-idm150214960 (the group of ns²np³), fs-idm121823200 (the group of ns²) and fs-idp177066416 (why Al is in group 13 and not group 3).",
+ "figures": [
+  {
+   "id": "sim-halogen-radii",
+   "kind": "sim",
+   "number": "6.30",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_05_CovalradiT.jpg"
+   ],
+   "original_caption": "(a) The radius of an atom is defined as one-half the distance between the nuclei in a molecule consisting of two identical atoms joined by a covalent bond. The atomic radius for the halogens increases down the group as n increases. (b) Covalent radii of the elements are shown to scale. The general trend is that radii increase down a group and decrease across a period.",
+   "draws": []
+  },
+  {
+   "id": "sim-trends-graph",
+   "kind": "sim",
+   "number": "6.31",
+   "folds": [
+    "6.33"
+   ],
+   "originals": [
+    "/media/ch06/CNX_Chem_06_05_Radiigraph.jpg",
+    "/media/ch06/CNX_Chem_06_05_Firstiongr.jpg"
+   ],
+   "original_caption": "(Figure 6.31) Within each period, the trend in atomic radius decreases as Z increases; for example, from K to Kr. Within each group (e.g., the alkali metals shown in purple), the trend is that atomic radius increases as Z increases. (Figure 6.33) The first ionization energy of the elements in the first six periods are plotted against their atomic number.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-ions",
+   "kind": "sim",
+   "number": "6.32",
+   "originals": [
+    "/media/ch06/CNX_Chem_06_05_Ionradii.jpg"
+   ],
+   "original_caption": "The radius for a cation is smaller than the parent atom (Al), due to the lost electrons; the radius for an anion is larger than the parent (S), due to the gained electrons.",
+   "draws": []
+  },
+  {
+   "id": "sim-ie-table",
+   "kind": "sim",
+   "number": "6.34",
+   "folds": [
+    "6.35"
+   ],
+   "originals": [
+    "/media/ch06/CNX_Chem_06_05_Firstionen.jpg",
+    "/media/ch06/CNX_Chem_06_05_Elaffin.jpg"
+   ],
+   "original_caption": "(Figure 6.34) This version of the periodic table shows the first ionization energy (IE₁), in kJ/mol, of selected elements. (Figure 6.35) This version of the periodic table displays the electron affinity values (in kJ/mol) for selected elements.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "fig-oxygen-orbitals",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "sim-successive",
+   "kind": "sim",
+   "draws": [
+    "energy"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "periodic-properties",
+   "concept": "valence-and-core-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "periodic-properties",
+   "concept": "principal-quantum-number-shells",
+   "verb": "uses"
+  },
+  {
+   "span": "covalent-radius",
+   "concept": "covalent-radius-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "covalent-radius",
+   "concept": "principal-quantum-number-shells",
+   "verb": "uses"
+  },
+  {
+   "span": "effective-nuclear-charge",
+   "concept": "effective-nuclear-charge",
+   "verb": "introduces"
+  },
+  {
+   "span": "effective-nuclear-charge",
+   "concept": "covalent-radius-trend",
+   "verb": "reinforces"
+  },
+  {
+   "span": "effective-nuclear-charge",
+   "concept": "valence-and-core-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "effective-nuclear-charge",
+   "concept": "aufbau-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-radii",
+   "concept": "predicting-periodic-trends",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-radii",
+   "concept": "covalent-radius-trend",
+   "verb": "uses"
+  },
+  {
+   "span": "ionic-radii",
+   "concept": "ionic-radius-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-radii",
+   "concept": "effective-nuclear-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "ionic-radii",
+   "concept": "ion-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "isoelectronic",
+   "concept": "ionic-radius-trend",
+   "verb": "reinforces"
+  },
+  {
+   "span": "isoelectronic",
+   "concept": "writing-electron-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "ionization-energy",
+   "concept": "ionization-energy-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionization-energy",
+   "concept": "covalent-radius-trend",
+   "verb": "uses"
+  },
+  {
+   "span": "ionization-energy",
+   "concept": "orbital-energy-order",
+   "verb": "uses"
+  },
+  {
+   "span": "ie-exceptions",
+   "concept": "ionization-energy-trend",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ie-exceptions",
+   "concept": "hunds-rule",
+   "verb": "uses"
+  },
+  {
+   "span": "successive-ie",
+   "concept": "successive-ionization-energies",
+   "verb": "introduces"
+  },
+  {
+   "span": "successive-ie",
+   "concept": "valence-and-core-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ionization",
+   "concept": "predicting-periodic-trends",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ionization",
+   "concept": "successive-ionization-energies",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-ionization",
+   "concept": "ionization-energy-trend",
+   "verb": "uses"
+  },
+  {
+   "span": "electron-affinity",
+   "concept": "electron-affinity-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "electron-affinity",
+   "concept": "effective-nuclear-charge",
+   "verb": "uses"
+  },
+  {
+   "span": "reactivity",
+   "concept": "predicting-periodic-trends",
+   "verb": "reinforces"
+  },
+  {
+   "span": "reactivity",
+   "concept": "electron-affinity-trend",
+   "verb": "uses"
+  },
+  {
+   "span": "reactivity",
+   "concept": "ionization-energy-trend",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm167417008",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-radii"
+   },
+   "cite": "effective-nuclear-charge",
+   "prompt": "Give an example of an atom whose size is smaller than fluorine.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Ne or He"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm65177120",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ionization"
+   },
+   "cite": "ionization-energy",
+   "prompt": "Which has the lowest value for IE<sub>1</sub>: O, Po, Pb, or Ba?",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "O",
+     "Po",
+     "Pb",
+     "Ba"
+    ],
+    "correct": 3,
+    "solution": "Ba"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp42367872",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "covalent-radius",
+   "prompt": "Based on their positions in the periodic table, predict which has the smallest atomic radius: Mg, Sr, Si, Cl, I.",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Mg",
+     "Sr",
+     "Si",
+     "Cl",
+     "I"
+    ],
+    "correct": 3,
+    "solution": "Cl"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp30124176",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "covalent-radius",
+   "prompt": "Based on their positions in the periodic table, predict which has the largest atomic radius: Li, Rb, N, F, I.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Find each of the five elements in the periodic table. The radius increases as we move down a group, because each step adds a shell farther from the nucleus, and it decreases as we move from left to right across a period, because the effective nuclear charge increases. The largest atom is therefore the one that lies farthest down and farthest to the left of the five."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm155159840",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "Based on their positions in the periodic table, predict which has the largest first ionization energy: Mg, Ba, B, O, Te.",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Mg",
+     "Ba",
+     "B",
+     "O",
+     "Te"
+    ],
+    "correct": 3,
+    "solution": "O"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm54929680",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "Based on their positions in the periodic table, predict which has the smallest first ionization energy: Li, Cs, N, F, I.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The first ionization energy generally decreases down a group, since the most loosely bound electron is farther from the nucleus, and increases across a period, since the effective nuclear charge increases. Look for the element of the five whose valence electron is farthest from the nucleus and least strongly held, which is the one lowest in the table and farthest to the left."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm155125392",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "Based on their positions in the periodic table, rank the following atoms in order of increasing first ionization energy: F, Li, N, Rb",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Rb &lt; Li &lt; N &lt; F"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm147454816",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "Based on their positions in the periodic table, rank the following atoms in order of increasing first ionization energy: Mg, O, S, Si",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Three of these elements, Mg, Si and S, lie in period 3, and the first ionization energy generally increases across a period, so place them in the order in which they stand from left to right. Oxygen lies above sulfur in group 16, and the first ionization energy decreases down a group, so oxygen goes above sulfur. Check the order against the values in Figure 6.34."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm74793552",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "covalent-radius",
+   "prompt": "Based on their positions in the periodic table, list the following atoms in order of increasing radius: Mg, Ca, Rb, Cs.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Mg &lt; Ca &lt; Rb &lt; Cs"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm116086704",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "covalent-radius",
+   "prompt": "Based on their positions in the periodic table, list the following atoms in order of increasing radius: Sr, Ca, Si, Cl.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Compare the elements two at a time. Si and Cl lie in period 3, and the radius decreases across a period, so the one farther to the right is the smaller. Ca and Sr lie in group 2, and the radius increases down a group, so the one lower in the group is the larger. Ca, in period 4, is also larger than Si and Cl in period 3, since it has an additional shell. Putting these comparisons together gives the order."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm107831680",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-radii",
+   "prompt": "Based on their positions in the periodic table, list the following ions in order of increasing radius: K<sup>+</sup>, Ca<sup>2+</sup>, Al<sup>3+</sup>, Si<sup>4+</sup>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Si<sup>4+</sup> &lt; Al<sup>3+</sup> &lt; Ca<sup>2+</sup> &lt; K<sup>+</sup>"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm44955136",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionic-radii",
+   "prompt": "List the following ions in order of increasing radius: Li<sup>+</sup>, Mg<sup>2+</sup>, Br<sup>–</sup>, Te<sup>2–</sup>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Write the electron configuration of each ion to find its outermost shell: an ion whose electrons occupy a higher <em>n</em> level is larger. Cations are smaller than their parent atoms and anions larger. Where two ions have outer electrons in the same shell, or the same number of electrons, the one with the greater nuclear charge draws its electrons in more tightly and is the smaller."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm119922592",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isoelectronic",
+   "prompt": "Which atom and/or ion is (are) isoelectronic with Br<sup>+</sup>: Se<sup>2+</sup>, Se, As<sup>–</sup>, Kr, Ga<sup>3+</sup>, Cl<sup>–</sup>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Se, As<sup>−</sup>"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm176990768",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isoelectronic",
+   "prompt": "Which of the following atoms and ions is (are) isoelectronic with S<sup>2+</sup>: Si<sup>4+</sup>, Cl<sup>3+</sup>, Ar, As<sup>3+</sup>, Si, Al<sup>3+</sup>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Sulfur has 16 electrons, so S<sup>2+</sup> has 14. For each species, take the atomic number of the element and subtract the charge to count its electrons, then pick every species that also has 14 electrons in the same configuration."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm64525920",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isoelectronic",
+   "prompt": "Compare both the numbers of protons and electrons present in each to rank the following ions in order of increasing radius: As<sup>3–</sup>, Br<sup>–</sup>, K<sup>+</sup>, Mg<sup>2+</sup>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Mg<sup>2+</sup> &lt; K<sup>+</sup> &lt; Br<sup>–</sup> &lt; As<sup>3–</sup>"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm2181648",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "Of the five elements Al, Cl, I, Na, Rb, which has the most exothermic reaction? (E represents an atom.) What name is given to the energy for the reaction? (Hint: Note the process depicted does <em>not</em> correspond to electron affinity.) $\\text{E}^{+}(g)+\\text{e}^{-}\\longrightarrow\\text{E}(g)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The reaction is the reverse of the first ionization, X(<em>g</em>) ⟶ X<sup>+</sup>(<em>g</em>) + e<sup>−</sup>, so the energy it releases is equal in size to the first ionization energy of the element, with the opposite sign. The most exothermic reaction therefore belongs to the element of the five with the largest first ionization energy, which you can find from the trends across a period and down a group or from Figure 6.34. Then name the energy of the reverse process in the terms of this section."
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm68979552",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ionization-energy",
+   "prompt": "Of the five elements Sn, Si, Sb, O, Te, which has the most endothermic reaction? (E represents an atom.) What name is given to the energy for the reaction? $\\text{E}(g)\\longrightarrow\\text{E}^{+}(g)+\\text{e}^{-}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "O, IE<sub>1</sub>"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm108984736",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isoelectronic",
+   "prompt": "The ionic radii of the ions S<sup>2–</sup>, Cl<sup>–</sup>, and K<sup>+</sup> are 184, 181, 138 pm respectively. Explain why these ions have different sizes even though they contain the same number of electrons.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The three ions are isoelectronic, each with 18 electrons in the configuration [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>, so the difference lies in the nuclei. Count the protons of each (16 for sulfur, 17 for chlorine and 19 for potassium) and ask how strongly each nucleus pulls on the same set of electrons: the greater the nuclear charge, the greater the effective nuclear charge on the outer electrons, and the closer they are drawn to the nucleus."
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idm177180640",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "successive-ie",
+   "prompt": "Which main group atom would be expected to have the lowest second ionization energy?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Ra"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "covalent-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "effective-nuclear-charge",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "ionization-energy-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "ionic-radius-trend",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "effective-nuclear-charge",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "successive-ionization-energies",
+   "weight": 1,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "predicting-periodic-trends",
+   "weight": 1,
+   "weights_by": "ai"
+  }
+ ]
+}

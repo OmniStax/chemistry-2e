@@ -15,7 +15,7 @@ function widthOf(ctx, s, size, weight = 600) { ctx.save(); ctx.font = `${weight}
 function chars(ctx, s, x, y, size, colorOf) {
   ctx.save(); ctx.font = `600 ${size}px ${FONT}`; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
   const out = []; let cx = x;
-  for (const ch of s) { const w = ctx.measureText(ch).width; ctx.fillStyle = colorOf(out.length, ch); ctx.fillText(ch, cx, y); out.push({ ch, x: cx + w / 2, l: cx, r: cx + w }); cx += w; }
+  for (const ch of s) { ctx.font = F.shownFont(`600 ${size}px ${FONT}`); const w = ctx.measureText(ch).width; text(ctx, ch, cx, y, colorOf(out.length, ch), { size, weight: 600 }); out.push({ ch, x: cx + w / 2, l: cx, r: cx + w }); cx += w; }
   ctx.restore(); return out;
 }
 /* the same, centred on cx */

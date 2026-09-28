@@ -246,7 +246,7 @@ function frame(r) {
     const wOf = (f, str) => { ctx.font = f; return ctx.measureText(str).width; };
     const parts = [[big, 'H', 0], [sub, '2', 16], [big, 'O(', 0], [ital, s, 0], [big, ')', 0]];
     const total = parts.reduce((a, [f, str]) => a + wOf(f, str), 0); let x = fx - total / 2;
-    parts.forEach(([f, str, dy]) => { ctx.font = f; ctx.fillText(str, x, fy + dy); x += ctx.measureText(str).width; });
+    parts.forEach(([f, str, dy]) => { text(ctx, str, x, fy + dy, PAL.ink, { size: parseFloat(f.split('px')[0].split(' ').pop()), weight: 600, italic: f.startsWith('italic') }); ctx.font = F.shownFont(f); x += ctx.measureText(str).width; });
     ctx.restore();
     text(ctx, 'symbolic domain', fx, 530, PAL.muted, { size: 19, align: 'center' });
     /* (b) the microscopic domain: the molecules in a circle */

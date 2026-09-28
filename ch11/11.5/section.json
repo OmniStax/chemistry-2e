@@ -1,0 +1,53 @@
+{
+  "id": "11.5",
+  "module": "m68784",
+  "chapter": "11",
+  "title": "Colloids",
+  "short": "Colloids",
+  "lead": "Some mixtures hold particles too large to be a solution and too small to settle. This section shows how such colloids scatter light, how their dispersed phase and dispersion medium may be any combination of states, how they are prepared and stabilized, how soaps and detergents emulsify oil, and how the charges on colloidal particles keep them dispersed and allow them to be removed from smoke.",
+  "objectives": [
+    "Describe the composition and properties of colloidal dispersions",
+    "List and explain several technological applications of colloids"
+  ],
+  "summary_html": "<p>Colloids are mixtures in which one or more substances are dispersed as relatively large solid particles or liquid droplets throughout a solid, liquid, or gaseous medium. The particles of a colloid remain dispersed and do not settle due to gravity, and they are often electrically charged. Colloids are widespread in nature and are involved in many technological applications.</p>",
+  "notes": "Nothing is left out.",
+  "ai": {"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"},
+  "built": "2026-09-28",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual items fs-idm115359200 and fs-idm26172416 carry a suggested approach marked as OmniStax’s own.",
+  "figures": [
+    {"id": "fig-colloids", "kind": "photo", "number": "11.29", "draws": []},
+    {"id": "fig-searchlight", "kind": "photo", "number": "11.30", "draws": []},
+    {"id": "sim-tyndall", "kind": "sim", "draws": []},
+    {"id": "sim-amphiphile", "kind": "sim", "number": "11.31", "folds": ["11.32"], "originals": ["/media/ch11/CNX_Chem_11_05_soap.jpg", "/media/ch11/CNX_Chem_11_05_detrg.jpg"], "original_caption": "(Figure 11.31) Soaps contain a nonpolar hydrocarbon end (blue) and an ionic end (red). The ionic end is a carboxylate group. The length of the hydrocarbon end can vary from soap to soap. (Figure 11.32) Detergents contain a nonpolar hydrocarbon end (blue) and an ionic end (red). The ionic end can be either a sulfate or a sulfonate. The length of the hydrocarbon end can vary from detergent to detergent.", "draws": []},
+    {"id": "sim-emulsion", "kind": "sim", "number": "11.33", "originals": ["/media/ch11/CNX_Chem_11_05_emulsoil.jpg"], "original_caption": "This diagrammatic cross section of an emulsified drop of oil in water shows how soap or detergent acts as an emulsifier.", "draws": []},
+    {"id": "fig-oil-spill", "kind": "photo", "number": "11.34", "draws": []},
+    {"id": "fig-cottrell", "kind": "photo", "number": "11.35", "draws": []},
+    {"id": "sim-precipitator", "kind": "sim", "number": "11.36", "originals": ["/media/ch11/CNX_Chem_11_05_Cottrellp.jpg"], "original_caption": "In a Cottrell precipitator, positively and negatively charged particles are attracted to highly charged electrodes, where they are neutralized and deposited as dust.", "draws": []},
+    {"id": "fig-gel", "kind": "photo", "number": "11.37", "draws": []}
+  ],
+  "coverage": [
+    {"span": "colloids", "concept": "colloids-solutions-and-suspensions", "verb": "introduces"},
+    {"span": "dispersed", "concept": "dispersed-phase-and-medium", "verb": "introduces"},
+    {"span": "dispersed", "concept": "colloids-solutions-and-suspensions", "verb": "uses"},
+    {"span": "preparation", "concept": "colloid-preparation", "verb": "introduces"},
+    {"span": "soaps", "concept": "soaps-and-detergents", "verb": "introduces"},
+    {"span": "soaps", "concept": "colloid-preparation", "verb": "uses"},
+    {"span": "charged", "concept": "charged-colloidal-particles", "verb": "introduces"},
+    {"span": "gels", "concept": "dispersed-phase-and-medium", "verb": "uses"}
+  ],
+  "exercises": [
+    {"id": "e1", "source_id": "fs-idm110325696", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "dispersed", "prompt": "Identify the dispersed phase and the dispersion medium in each of the following colloidal systems: starch dispersion, smoke, fog, pearl, whipped cream, floating soap, jelly, milk, and ruby.", "answer": {"type": "open", "generated_by": "source", "solution": "<table><thead><tr><th>Colloidal System</th><th>Dispersed Phase</th><th>Dispersion Medium</th></tr></thead><tbody><tr><td>starch dispersion</td><td>starch</td><td>water</td></tr><tr><td>smoke</td><td>solid particles</td><td>air</td></tr><tr><td>fog</td><td>water</td><td>air</td></tr><tr><td>pearl</td><td>water</td><td>calcium carbonate (CaCO<sub>3</sub>)</td></tr><tr><td>whipped cream</td><td>air</td><td>cream</td></tr><tr><td>floating soap</td><td>air</td><td>soap</td></tr><tr><td>jelly</td><td>fruit juice</td><td>pectin gel</td></tr><tr><td>milk</td><td>butterfat</td><td>water</td></tr><tr><td>ruby</td><td>chromium(III) oxide (Cr<sub>2</sub>O<sub>3</sub>)</td><td>aluminum oxide (Al<sub>2</sub>O<sub>3</sub>)</td></tr></tbody></table>"}},
+    {"id": "e2", "source_id": "fs-idm115359200", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "preparation", "prompt": "Distinguish between dispersion methods and condensation methods for preparing colloidal systems.", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: both methods end with particles of colloidal size, so ask where each one starts. Consider whether the method begins with particles that are too large or with units that are too small, what it does to them, and name one example of each from the section, such as the grinding of paint pigments and the formation of clouds."}},
+    {"id": "e3", "source_id": "fs-idm42853312", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "colloids", "prompt": "How do colloids differ from solutions with regard to dispersed particle size and homogeneity?", "answer": {"type": "open", "generated_by": "source", "solution": "Colloidal dispersions consist of particles that are much bigger than the solutes of typical solutions. Colloidal particles are either very large molecules or aggregates of smaller species that usually are big enough to scatter light. Colloids are homogeneous on a macroscopic (visual) scale, while solutions are homogeneous on a microscopic (molecular) scale."}},
+    {"id": "e4", "source_id": "fs-idm26172416", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "soaps", "prompt": "Explain the cleansing action of soap.", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: begin with the two ends of a soap molecule and ask which substances each end is attracted to. Then describe how the molecules arrange themselves at the surface of a particle of oil or grease in water, and what that arrangement does to the particle when the water is rinsed away."}},
+    {"id": "e5", "source_id": "fs-idm167047216", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "charged", "prompt": "How can it be demonstrated that colloidal particles are electrically charged?", "answer": {"type": "open", "generated_by": "source", "solution": "If they are placed in an electrolytic cell, dispersed particles will move toward the electrode that carries a charge opposite to their own charge. At this electrode, the charged particles will be neutralized and will coagulate as a precipitate."}}
+  ],
+  "exercise_concepts": [
+    {"exercise": "e1", "concept": "dispersed-phase-and-medium"},
+    {"exercise": "e2", "concept": "colloid-preparation"},
+    {"exercise": "e3", "concept": "colloids-solutions-and-suspensions"},
+    {"exercise": "e4", "concept": "soaps-and-detergents"},
+    {"exercise": "e5", "concept": "charged-colloidal-particles"}
+  ]
+}

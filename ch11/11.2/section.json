@@ -1,0 +1,53 @@
+{
+  "id": "11.2",
+  "module": "m68781",
+  "chapter": "11",
+  "title": "Electrolytes",
+  "short": "Electrolytes",
+  "lead": "Some substances yield ions when they dissolve in water, and their solutions conduct electricity. This section shows how the brightness of a bulb sorts solutes into strong, weak and nonelectrolytes, how the ion-dipole attractions of water pull an ionic solid apart into hydrated ions, and how some covalent compounds, such as the acids, form ions by reacting with water.",
+  "objectives": [
+    "Define and give examples of electrolytes",
+    "Distinguish between the physical and chemical changes that accompany dissolution of ionic and covalent electrolytes",
+    "Relate electrolyte strength to solute-solvent attractive forces"
+  ],
+  "summary_html": "<p>Substances that dissolve in water to yield ions are called electrolytes. Electrolytes may be covalent compounds that chemically react with water to produce ions (for example, acids and bases), or they may be ionic compounds that dissociate to yield their constituent cations and anions, when dissolved. Dissolution of an ionic compound is facilitated by ion-dipole attractions between the ions of the compound and the polar water molecules. Soluble ionic substances and strong acids ionize completely and are strong electrolytes, while weak acids and bases ionize to only a small extent and are weak electrolytes. Nonelectrolytes are substances that do not produce ions when dissolved in water.</p>",
+  "notes": "Nothing is left out. The book's doubled subscript in the formula of the hydronium ion is a markup slip and is written H<sub>3</sub>O<sup>+</sup>.",
+  "ai": {"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"},
+  "built": "2026-09-28",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual items fs-idm26375616, fs-idm785520 and fs-idm22188736 carry a suggested approach marked as OmniStax’s own.",
+  "figures": [
+    {"id": "sim-conductivity", "kind": "sim", "number": "11.6", "originals": ["/media/ch11/CNX_Chem_11_02_electrolyt.jpg"], "original_caption": "Solutions of nonelectrolytes such as ethanol do not contain dissolved ions and cannot conduct electricity. Solutions of electrolytes contain ions that permit the passage of electricity. The conductivity of an electrolyte solution is related to the strength of the electrolyte.", "draws": []},
+    {"id": "sim-hydration", "kind": "sim", "number": "11.7", "originals": ["/media/ch11/CNX_Chem_11_02_waterions.jpg"], "original_caption": "As potassium chloride (KCl) dissolves in water, the ions are hydrated. The polar water molecules are attracted by the charges on the K<sup>+</sup> and Cl<sup>−</sup> ions. Water molecules in front of and behind the ions are not shown.", "draws": []},
+    {"id": "fig-hcl-water", "kind": "figure", "draws": []}
+  ],
+  "coverage": [
+    {"span": "electrolytes", "concept": "electrolytes-and-nonelectrolytes", "verb": "introduces"},
+    {"span": "electrolytes", "concept": "classify-electrolyte-strength", "verb": "introduces"},
+    {"span": "ionic", "concept": "ion-dipole-attraction", "verb": "introduces"},
+    {"span": "ionic", "concept": "dissociation-of-ionic-compounds", "verb": "introduces"},
+    {"span": "covalent", "concept": "covalent-electrolytes", "verb": "introduces"},
+    {"span": "covalent", "concept": "classify-electrolyte-strength", "verb": "uses"}
+  ],
+  "exercises": [
+    {"id": "e1", "source_id": "fs-idp1366224", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "ionic", "prompt": "Explain why the ions Na<sup>+</sup> and Cl<sup>−</sup> are strongly solvated in water but not in hexane, a solvent composed of nonpolar molecules.", "answer": {"type": "open", "generated_by": "source", "solution": "Crystals of NaCl dissolve in water, a polar liquid with a very large dipole moment, and the individual ions become strongly solvated. Hexane is a nonpolar liquid with a dipole moment of zero and, therefore, does not significantly interact with the ions of the NaCl crystals."}},
+    {"id": "e2", "source_id": "fs-idm26375616", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "covalent", "prompt": "Explain why solutions of HBr in benzene (a nonpolar solvent) are nonconductive, while solutions in water (a polar solvent) are conductive.", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: HBr is a covalent compound, like HCl, so it yields ions only by reacting with its solvent. Ask whether benzene can accept an H<sup>+</sup> ion from HBr and solvate the ions that would result, and compare this with what water does when HCl dissolves in it. Then recall that a solution conducts only if it contains mobile ions."}},
+    {"id": "e3", "source_id": "fs-idp608736", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "ionic", "figure": {"src": "/media/ch11/CNX_Chem_11_02_Fe_NO3_3_img.jpg", "alt": "In this figure, three beakers labeled x, y, and z are shown containing various arrangements of blue and red spheres suspended in solution. In beaker x, three small red spheres surround a single central blue sphere in small clusters which in turn are grouped in threes around a single red sphere, forming four larger clusters. In beaker y, the four large clusters are present without the central red spheres. Four individual red spheres are now present. In beaker z, the large clusters are not present. Twelve of the small clusters of three red and one blue sphere are present along with four single red spheres."}, "prompt": "Consider the solutions presented:<br>(a) Which of the following sketches best represents the ions in a solution of Fe(NO<sub>3</sub>)<sub>3</sub>(<em>aq</em>)?<br>(b) Write a balanced chemical equation showing the products of the dissolution of Fe(NO<sub>3</sub>)<sub>3</sub>.", "answer": {"type": "open", "generated_by": "source", "solution": "(a) Fe(NO<sub>3</sub>)<sub>3</sub> is a strong electrolyte, thus it should completely dissociate into Fe<sup>3+</sup> and NO<sub>3</sub><sup>−</sup> ions. Therefore, (z) best represents the solution. (b) $\\text{Fe}{({\\text{NO}}_{3})}_{3}(s)\\;\\longrightarrow \\;{\\text{Fe}}^{\\text{3+}}(aq)+3{\\text{NO}}_{3}{}^{\\text{−}}(aq)$"}},
+    {"id": "e4", "source_id": "fs-idm785520", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "covalent", "prompt": "Compare the processes that occur when methanol (CH<sub>3</sub>OH), hydrogen chloride (HCl), and sodium hydroxide (NaOH) dissolve in water. Write equations and prepare sketches showing the form in which each of these compounds is present in its respective solution.", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: sort the three solutes first. NaOH is an ionic compound, so its ions separate by dissociation; HCl is a covalent acid, so its molecules react with water; methanol is a covalent compound that is neither an acid nor a base. Write an equation for each that shows what is present in the solution, and in each sketch show which particles are ions surrounded by water molecules and which remain whole molecules."}},
+    {"id": "e5", "source_id": "fs-idp40604768", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "electrolytes", "prompt": "What is the expected electrical conductivity of the following solutions?<br>(a) NaOH(<em>aq</em>)<br>(b) HCl(<em>aq</em>)<br>(c) C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>(<em>aq</em>) (glucose)<br>(d) NH<sub>3</sub>(<em>aq</em>)", "answer": {"type": "open", "generated_by": "source", "solution": "(a) high conductivity (solute is an ionic compound that will dissociate when dissolved); (b) high conductivity (solute is a strong acid and will ionize completely when dissolved); (c) nonconductive (solute is a covalent compound, neither acid nor base, unreactive towards water); (d) low conductivity (solute is a weak base and will partially ionize when dissolved)"}},
+    {"id": "e6", "source_id": "fs-idm22188736", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "electrolytes", "prompt": "Why are most <em>solid</em> ionic compounds electrically nonconductive, whereas aqueous solutions of ionic compounds are good conductors? Would you expect a <em>liquid</em> (molten) ionic compound to be electrically conductive or nonconductive? Explain.", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: recall that a substance conducts electricity only if it contains charged species that are free to move. Ask whether the ions of a solid ionic compound can move from their fixed positions, what happens to them when the compound dissolves, and whether they could move once the solid has melted."}},
+    {"id": "e7", "source_id": "fs-idm39772000", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "ionic", "prompt": "Indicate the most important type of intermolecular attraction responsible for solvation in each of the following solutions:<br>(a) the solutions in Figure 11.7<br>(b) methanol, CH<sub>3</sub>OH, dissolved in ethanol, C<sub>2</sub>H<sub>5</sub>OH<br>(c) methane, CH<sub>4</sub>, dissolved in benzene, C<sub>6</sub>H<sub>6</sub><br>(d) the polar halocarbon CF<sub>2</sub>Cl<sub>2</sub> dissolved in the polar halocarbon CF<sub>2</sub>ClCFCl<sub>2</sub><br>(e) O<sub>2</sub>(<em>l</em>) in N<sub>2</sub>(<em>l</em>)", "answer": {"type": "open", "generated_by": "source", "solution": "(a) ion-dipole; (b) hydrogen bonds; (c) dispersion forces; (d) dipole-dipole attractions; (e) dispersion forces"}}
+  ],
+  "exercise_concepts": [
+    {"exercise": "e1", "concept": "ion-dipole-attraction"},
+    {"exercise": "e2", "concept": "covalent-electrolytes"},
+    {"exercise": "e3", "concept": "dissociation-of-ionic-compounds"},
+    {"exercise": "e3", "concept": "classify-electrolyte-strength"},
+    {"exercise": "e4", "concept": "covalent-electrolytes"},
+    {"exercise": "e4", "concept": "dissociation-of-ionic-compounds"},
+    {"exercise": "e5", "concept": "classify-electrolyte-strength"},
+    {"exercise": "e6", "concept": "electrolytes-and-nonelectrolytes"},
+    {"exercise": "e6", "concept": "dissociation-of-ionic-compounds"},
+    {"exercise": "e7", "concept": "ion-dipole-attraction"}
+  ]
+}

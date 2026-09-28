@@ -1055,3 +1055,46 @@ chapter's), `npm test` (665 passing), `astro check` with no errors, a build,
 and every page of the chapter in light and dark with no console errors, no
 KaTeX errors, every lazy image of 10.1 and 10.6 loaded once scrolled, every
 figure drawn and every exercise card rendered.
+
+
+## Pass 14 (2026-09-28): Chapter 11, Solutions and Colloids, is built and passed
+
+Built: the introduction and five sections, 11.1 to 11.5, in the publisher's
+numbering, Figures 11.1 to 11.37 all shown and linked. Sixteen live figures,
+two of them folds: osmosis and reverse osmosis (11.24 and 11.25), with an
+applied pressure that runs past the osmotic pressure, and one amphiphile
+with a choice of head group (11.31 and 11.32); two are Sims of OmniStax's
+own, the Lake Nyos turnover and the Tyndall glass. The mixing bulbs, the
+hydrating crystal, the conductivity bench, the ion pairs, the osmosis tube
+and the precipitator are physical 3D with bounded orbit; the graphs, the
+phase diagram, the energy steps, the red cells and the emulsified oil drop
+stay flat. The photographs, 11.2's hydronium image, 11.3's ammonia image and
+the six step diagrams of 11.4's examples stay as the book's. Sixty-nine
+exercises, thirteen of them Check Your Learning items placed inline after
+their examples, each with its host. One item moved: 11.4's question on why
+the oil and water of Figure 11.14 stay apart now tests 11.3. Nineteen
+unkeyed numerical items are left out and named in `exercise_notes`; one
+unkeyed choice item is kept open with its options; the unkeyed conceptual
+items are kept with a suggested approach.
+
+What the chapter pass changed. Every equation and variable row of the
+chapter anchored: ten equations and twenty-three variables, Henry's law at
+11.3, and mole fraction, molality, Raoult's law in three forms, the boiling
+and freezing point laws, osmotic pressure and the van't Hoff factor at the
+headings of 11.4 that teach them. Figure 11.3 draws argon with the element
+palette, which now grades the noble gases by period. The Figure 11.6 bench
+is drawn so that it shows in light; Figure 11.7, the osmosis tube and the
+precipitator are framed so that nothing is clipped, and the osmosis tube's
+water and solution labels stand beside it. `config.md` records what the
+build changed and `COLOR.md` the bindings as built.
+
+Errata carried as printed and named in `exploration.md`: Example 11.2's
+"approximately ~1.2 mol/L", Example 11.1's Check Your Learning answer with
+no unit, C₂H₂(OH)₂ once for ethylene glycol in Example 11.3, "electroyte",
+Table 11.3's title "Predicated" and its summary against its HCl row, and the
+key that uses 5.14 °C/m for benzene where Table 11.2 gives 5.12.
+
+Checks: `ost check` clean for the book, `npm test` (665 passing), `astro
+check` with no errors, a build, and every page of the chapter in light and
+dark with no console errors, no KaTeX errors, every figure drawn and every
+exercise card rendered.

@@ -1,0 +1,53 @@
+{
+  "id": "11.1",
+  "module": "m68778",
+  "chapter": "11",
+  "title": "The Dissolution Process",
+  "short": "The Dissolution Process",
+  "lead": "A solution forms when the particles of one substance spread individually among those of another. This section describes the traits every solution shares, shows how the dispersal of matter alone can drive two substances to mix, and weighs the energy spent separating solute and solvent against the energy released by solvation to explain why some solutions warm as they form and others cool.",
+  "objectives": [
+    "Describe the basic properties of solutions and how they form",
+    "Predict whether a given mixture will yield a solution based on molecular properties of its components",
+    "Explain why some solutions either produce or absorb heat when they form"
+  ],
+  "summary_html": "<p>A solution forms when two or more substances combine physically to yield a mixture that is homogeneous at the molecular level. The solvent is the most concentrated component and determines the physical state of the solution. The solutes are the other components typically present at concentrations less than that of the solvent. Solutions may form endothermically or exothermically, depending upon the relative magnitudes of solute and solvent intermolecular attractive forces. Ideal solutions form with no appreciable change in energy.</p>",
+  "notes": "The two Link to Learning notes are left out, the PhET simulation of sugar and salt dissolving in water and a video of endothermic and exothermic dissolution.",
+  "ai": {"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"},
+  "built": "2026-09-28",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual items fs-idm105740080, fs-idm33766240 and fs-idm118513216 carry a suggested approach marked as OmniStax’s own. The unkeyed numerical exercise fs-idm30601328 (the molarity, molality and percent by mass of hydrogen dissolved in palladium) is left out; it also prints the density of the solution as “10.8 g cm3” for 10.8 g cm−3.",
+  "figures": [
+    {"id": "fig-dichromate", "kind": "photo", "number": "11.2", "draws": []},
+    {"id": "sim-he-ar", "kind": "sim", "number": "11.3", "originals": ["/media/ch11/CNX_Chem_11_01_HeArsol.jpg"], "original_caption": "Samples of helium and argon spontaneously mix to give a solution.", "draws": []},
+    {"id": "sim-steps", "kind": "sim", "number": "11.4", "originals": ["/media/ch11/CNX_Chem_11_01_solusolv.jpg"], "original_caption": "This schematic represents the direct formation of a solution as a hypothetical stepwise process. Steps 1 and 2 involve separation/expansion of the solute and solvent molecules, both of which require an input of energy to overcome intermolecular attractions and are thus endothermic. Step 3 involves establishing intermolecular attractive forces between solute and solvent molecules (solvation), and is thus exothermic.", "draws": ["energy"]},
+    {"id": "fig-cold-pack", "kind": "photo", "number": "11.5", "draws": []}
+  ],
+  "coverage": [
+    {"span": "solutions", "concept": "properties-of-solutions", "verb": "introduces"},
+    {"span": "formation", "concept": "properties-of-solutions", "verb": "uses"},
+    {"span": "ideal", "concept": "ideal-solution", "verb": "introduces"},
+    {"span": "steps", "concept": "dissolution-energy-steps", "verb": "introduces"},
+    {"span": "steps", "concept": "predict-solution-formation", "verb": "introduces"},
+    {"span": "heat", "concept": "endothermic-and-exothermic-dissolution", "verb": "introduces"}
+  ],
+  "exercises": [
+    {"id": "e1", "source_id": "fs-idm71361392", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "solutions", "prompt": "How do solutions differ from compounds? From other mixtures?", "answer": {"type": "open", "generated_by": "source", "solution": "A solution can vary in composition, while a compound cannot vary in composition. Solutions are homogeneous at the molecular level, while other mixtures are heterogeneous."}},
+    {"id": "e2", "source_id": "fs-idm105740080", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "solutions", "prompt": "Which of the principal characteristics of solutions are evident in the solutions of K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> shown in Figure 11.2?", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: go through the defining traits of a solution one at a time and ask which of them you can see in the photographs. Note the color of the liquid in the last photograph and whether it is the same at every point, whether any solid has settled to the bottom, and which component sets the physical state of the mixture."}},
+    {"id": "e3", "source_id": "fs-idm84066432", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "heat", "prompt": "When KNO<sub>3</sub> is dissolved in water, the resulting solution is significantly colder than the water was originally.<br>(a) Is the dissolution of KNO<sub>3</sub> an endothermic or an exothermic process?<br>(b) What conclusions can you draw about the intermolecular attractions involved in the process?<br>(c) Is the resulting solution an ideal solution?", "answer": {"type": "open", "generated_by": "source", "solution": "(a) The process is endothermic as the solution is consuming heat. (b) Attraction between the K<sup>+</sup> and NO<sub>3</sub><sup>−</sup> ions is stronger than between the ions and water molecules (the ion-ion interactions have a lower, more negative energy). Therefore, the dissolution process increases the energy of the molecular interactions, and it consumes the thermal energy of the solution to make up for the difference. (c) No, an ideal solution is formed with no appreciable heat release or consumption."}},
+    {"id": "e4", "source_id": "fs-idm33766240", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "solutions", "prompt": "Give an example of each of the following types of solutions:<br>(a) a gas in a liquid<br>(b) a gas in a gas<br>(c) a solid in a solid", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: look through Table 11.1 and the examples in the text for a solution whose solute is in each named phase and whose solvent is in the other. A carbonated drink, the air around you and an alloy such as brass are good places to start."}},
+    {"id": "e5", "source_id": "fs-idm6481344", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "steps", "prompt": "Indicate the most important types of intermolecular attractions in each of the following solutions:<br>(a) The solution in Figure 11.2.<br>(b) NO(<em>l</em>) in CO(<em>l</em>)<br>(c) Cl<sub>2</sub>(<em>g</em>) in Br<sub>2</sub>(<em>l</em>)<br>(d) HCl(<em>g</em>) in benzene C<sub>6</sub>H<sub>6</sub>(<em>l</em>)<br>(e) Methanol CH<sub>3</sub>OH(<em>l</em>) in H<sub>2</sub>O(<em>l</em>)", "answer": {"type": "open", "generated_by": "source", "solution": "(a) ion-dipole forces; (b) dipole-dipole forces; (c) dispersion forces; (d) dispersion forces; (e) hydrogen bonding"}},
+    {"id": "e6", "source_id": "fs-idm118513216", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "steps", "prompt": "Predict whether each of the following substances would be more soluble in water (polar solvent) or in a hydrocarbon such as heptane (C<sub>7</sub>H<sub>16</sub>, nonpolar solvent):<br>(a) vegetable oil (nonpolar)<br>(b) isopropyl alcohol (polar)<br>(c) potassium bromide (ionic)", "answer": {"type": "open", "generated_by": "ai", "solution": "Suggested approach: for each substance, compare the attractions it would form with water and with heptane against the attractions it and each solvent already hold within themselves. A solute dissolves well where the solute-solvent attractions it can form are about as strong as those it must give up, so a nonpolar solute favors a nonpolar solvent, while polar and ionic solutes favor a polar one."}},
+    {"id": "e7", "source_id": "fs-idm95777520", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "heat", "prompt": "Heat is released when some solutions form; heat is absorbed when other solutions form. Provide a molecular explanation for the difference between these two types of spontaneous processes.", "answer": {"type": "open", "generated_by": "source", "solution": "Heat is released when the total intermolecular forces (IMFs) between the solute and solvent molecules are stronger than the total IMFs in the pure solute and in the pure solvent: Breaking weaker IMFs and forming stronger IMFs releases heat. Heat is absorbed when the total IMFs in the solution are weaker than the total of those in the pure solute and in the pure solvent: Breaking stronger IMFs and forming weaker IMFs absorbs heat."}}
+  ],
+  "exercise_concepts": [
+    {"exercise": "e1", "concept": "properties-of-solutions"},
+    {"exercise": "e2", "concept": "properties-of-solutions"},
+    {"exercise": "e3", "concept": "endothermic-and-exothermic-dissolution"},
+    {"exercise": "e3", "concept": "ideal-solution"},
+    {"exercise": "e4", "concept": "properties-of-solutions"},
+    {"exercise": "e5", "concept": "predict-solution-formation"},
+    {"exercise": "e6", "concept": "predict-solution-formation"},
+    {"exercise": "e7", "concept": "dissolution-energy-steps"},
+    {"exercise": "e7", "concept": "endothermic-and-exothermic-dissolution"}
+  ]
+}

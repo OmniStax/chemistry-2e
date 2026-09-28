@@ -1,0 +1,541 @@
+{
+ "id": "11",
+ "dir": "ch11",
+ "title": "Solutions and Colloids",
+ "intro": {
+  "module": "m68776",
+  "slug": "11-introduction"
+ },
+ "sections": [
+  {
+   "id": "11.1",
+   "module": "m68778",
+   "title": "The Dissolution Process",
+   "slug": "11-1-the-dissolution-process"
+  },
+  {
+   "id": "11.2",
+   "module": "m68781",
+   "title": "Electrolytes",
+   "slug": "11-2-electrolytes"
+  },
+  {
+   "id": "11.3",
+   "module": "m68782",
+   "title": "Solubility",
+   "slug": "11-3-solubility"
+  },
+  {
+   "id": "11.4",
+   "module": "m68783",
+   "title": "Colligative Properties",
+   "slug": "11-4-colligative-properties"
+  },
+  {
+   "id": "11.5",
+   "module": "m68784",
+   "title": "Colloids",
+   "slug": "11-5-colloids"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "C_g",
+   "type": "concentration",
+   "meaning": "the solubility of a gas, its concentration in the solution",
+   "unit": "mol/L",
+   "section": "11.3",
+   "anchor": "11.3-henry"
+  },
+  {
+   "sym": "k_H",
+   "meaning": "the Henry’s law constant, which depends on the gaseous solute, the solvent and the temperature",
+   "unit": "mol L⁻¹ kPa⁻¹ or M/atm",
+   "section": "11.3",
+   "anchor": "11.3-henry"
+  },
+  {
+   "sym": "P_g",
+   "type": "pressure",
+   "meaning": "the partial pressure of the gas above the solution",
+   "unit": "kPa or atm",
+   "section": "11.3",
+   "anchor": "11.3-henry"
+  },
+  {
+   "sym": "M",
+   "type": "concentration",
+   "meaning": "the molarity of the solution, moles of solute per liter of solution",
+   "unit": "mol/L",
+   "section": "11.4",
+   "anchor": "11.4-molality"
+  },
+  {
+   "sym": "X_A",
+   "meaning": "the mole fraction of component A, its moles divided by the total moles of all components",
+   "unit": "none",
+   "section": "11.4",
+   "anchor": "11.4-molality"
+  },
+  {
+   "sym": "m_molal",
+   "type": "concentration",
+   "meaning": "the molality of the solution, moles of solute per kilogram of solvent",
+   "unit": "mol/kg (m)",
+   "section": "11.4",
+   "anchor": "11.4-molality"
+  },
+  {
+   "sym": "P_A",
+   "type": "pressure",
+   "meaning": "the partial pressure exerted by component A of the solution",
+   "unit": "atm or torr",
+   "section": "11.4",
+   "anchor": "11.4-vapor"
+  },
+  {
+   "sym": "P_A*",
+   "type": "pressure",
+   "meaning": "the vapor pressure of pure A",
+   "unit": "atm or torr",
+   "section": "11.4",
+   "anchor": "11.4-vapor"
+  },
+  {
+   "sym": "P_i",
+   "type": "pressure",
+   "meaning": "the partial pressure of component i of the solution",
+   "unit": "atm or torr",
+   "section": "11.4",
+   "anchor": "11.4-vapor"
+  },
+  {
+   "sym": "P_i*",
+   "type": "pressure",
+   "meaning": "the vapor pressure of pure component i",
+   "unit": "atm or torr",
+   "section": "11.4",
+   "anchor": "11.4-vapor"
+  },
+  {
+   "sym": "X_i",
+   "meaning": "the mole fraction of component i",
+   "unit": "none",
+   "section": "11.4",
+   "anchor": "11.4-vapor"
+  },
+  {
+   "sym": "P_solution",
+   "type": "pressure",
+   "meaning": "the total vapor pressure above the solution",
+   "unit": "atm or torr",
+   "section": "11.4",
+   "anchor": "11.4-vapor"
+  },
+  {
+   "sym": "P_solvent*",
+   "type": "pressure",
+   "meaning": "the vapor pressure of the pure solvent",
+   "unit": "atm or torr",
+   "section": "11.4",
+   "anchor": "11.4-vapor"
+  },
+  {
+   "sym": "X_solvent",
+   "meaning": "the mole fraction of the solvent",
+   "unit": "none",
+   "section": "11.4",
+   "anchor": "11.4-vapor"
+  },
+  {
+   "sym": "ΔP_vp",
+   "type": "pressure",
+   "meaning": "the vapor pressure lowering, the pure solvent’s vapor pressure less the solution’s",
+   "unit": "atm",
+   "section": "11.4",
+   "anchor": "11.4-phase"
+  },
+  {
+   "sym": "ΔT_b",
+   "type": "temperature",
+   "meaning": "the boiling point elevation",
+   "unit": "°C",
+   "section": "11.4",
+   "anchor": "11.4-boiling"
+  },
+  {
+   "sym": "K_b",
+   "meaning": "the boiling point elevation (ebullioscopic) constant of the solvent",
+   "unit": "°C/m",
+   "section": "11.4",
+   "anchor": "11.4-boiling"
+  },
+  {
+   "sym": "ΔT_f",
+   "type": "temperature",
+   "meaning": "the freezing point depression",
+   "unit": "°C",
+   "section": "11.4",
+   "anchor": "11.4-freezing"
+  },
+  {
+   "sym": "K_f",
+   "meaning": "the freezing point depression (cryoscopic) constant of the solvent",
+   "unit": "°C/m",
+   "section": "11.4",
+   "anchor": "11.4-freezing"
+  },
+  {
+   "sym": "Π",
+   "type": "pressure",
+   "meaning": "the osmotic pressure of the solution",
+   "unit": "atm",
+   "section": "11.4",
+   "anchor": "11.4-osmosis"
+  },
+  {
+   "sym": "R",
+   "meaning": "the gas constant, 0.08206 L atm/mol K",
+   "unit": "L atm/mol K",
+   "section": "11.4",
+   "anchor": "11.4-osmosis"
+  },
+  {
+   "sym": "T",
+   "type": "temperature",
+   "meaning": "the absolute temperature",
+   "unit": "K",
+   "section": "11.4",
+   "anchor": "11.4-osmosis"
+  },
+  {
+   "sym": "i_vh",
+   "meaning": "the van’t Hoff factor, moles of particles in solution per mole of formula units dissolved",
+   "unit": "none",
+   "section": "11.4",
+   "anchor": "11.4-electrolytes"
+  }
+ ],
+ "equations": [
+  {
+   "id": "eq-henrys-law",
+   "concept": "henrys-law",
+   "section": "11.3",
+   "latex": "C_{\\text{g}}=kP_{\\text{g}}",
+   "ktex": "\\kCg=k\\kPg",
+   "condition": "a gas that does not react with the solvent, at a fixed temperature",
+   "important": true,
+   "anchor": "11.3-henry"
+  },
+  {
+   "id": "eq-mole-fraction",
+   "concept": "molality-and-mole-fraction",
+   "section": "11.4",
+   "latex": "X_{\\text{A}}=\\frac{\\text{mol A}}{\\text{total mol of all components}}",
+   "condition": "any component A of a solution",
+   "important": false,
+   "anchor": "11.4-molality"
+  },
+  {
+   "id": "eq-molality",
+   "concept": "molality-and-mole-fraction",
+   "section": "11.4",
+   "latex": "m=\\frac{\\text{mol solute}}{\\text{kg solvent}}",
+   "ktex": "\\kmolal=\\frac{\\text{mol solute}}{\\text{kg solvent}}",
+   "condition": "the molal concentration of a solute",
+   "important": true,
+   "anchor": "11.4-molality"
+  },
+  {
+   "id": "eq-raoults-law",
+   "concept": "raoults-law",
+   "section": "11.4",
+   "latex": "P_{\\text{A}}=X_{\\text{A}}P_{\\text{A}}^{*}",
+   "ktex": "\\kPA=X_{\\text{A}}\\kPAstar",
+   "condition": "component A of an ideal solution",
+   "important": true,
+   "anchor": "11.4-vapor"
+  },
+  {
+   "id": "eq-raoult-total",
+   "concept": "raoults-law",
+   "section": "11.4",
+   "latex": "P_{\\text{solution}}=\\sum_{i}P_{i}=\\sum_{i}X_{i}P_{i}^{*}",
+   "ktex": "\\kPsoln=\\sum_{i}\\kPcomp=\\sum_{i}X_{i}\\kPcompstar",
+   "condition": "an ideal solution of i components",
+   "important": false,
+   "anchor": "11.4-vapor"
+  },
+  {
+   "id": "eq-raoult-nonvolatile",
+   "concept": "raoults-law",
+   "section": "11.4",
+   "latex": "P_{\\text{solution}}=X_{\\text{solvent}}P_{\\text{solvent}}^{*}",
+   "ktex": "\\kPsoln=X_{\\text{solvent}}\\kPsolvstar",
+   "condition": "a solution whose solutes are all nonvolatile",
+   "important": true,
+   "anchor": "11.4-vapor"
+  },
+  {
+   "id": "eq-boiling-point-elevation",
+   "concept": "boiling-point-elevation",
+   "section": "11.4",
+   "latex": "\\Delta T_{\\text{b}}=K_{\\text{b}}m",
+   "ktex": "\\kdTb=K_{\\text{b}}\\kmolal",
+   "condition": "a dilute solution of nonvolatile solute, m counting all solute species",
+   "important": true,
+   "anchor": "11.4-boiling"
+  },
+  {
+   "id": "eq-freezing-point-depression",
+   "concept": "freezing-point-depression",
+   "section": "11.4",
+   "latex": "\\Delta T_{\\text{f}}=K_{\\text{f}}m",
+   "ktex": "\\kdTf=K_{\\text{f}}\\kmolal",
+   "condition": "a dilute solution, m counting all solute species",
+   "important": true,
+   "anchor": "11.4-freezing"
+  },
+  {
+   "id": "eq-osmotic-pressure",
+   "concept": "osmotic-pressure",
+   "section": "11.4",
+   "latex": "\\Pi=MRT",
+   "ktex": "\\kosm=\\kM R\\kT",
+   "condition": "a dilute solution, with T in kelvin",
+   "important": true,
+   "anchor": "11.4-osmosis"
+  },
+  {
+   "id": "eq-vant-hoff-factor",
+   "concept": "vant-hoff-factor",
+   "section": "11.4",
+   "latex": "i=\\frac{\\text{moles of particles in solution}}{\\text{moles of formula units dissolved}}",
+   "condition": "a dissolved electrolyte or nonelectrolyte",
+   "important": false,
+   "anchor": "11.4-electrolytes"
+  }
+ ],
+ "glossary": [
+  {
+   "section": "11.1",
+   "term": "alloy",
+   "definition": "solid mixture of a metallic element and one or more additional elements"
+  },
+  {
+   "section": "11.1",
+   "term": "ideal solution",
+   "definition": "solution that forms with no accompanying energy change"
+  },
+  {
+   "section": "11.1",
+   "term": "solvation",
+   "definition": "exothermic process in which intermolecular attractive forces between the solute and solvent in a solution are established"
+  },
+  {
+   "section": "11.1",
+   "term": "spontaneous process",
+   "definition": "physical or chemical change that occurs without the addition of energy from an external source"
+  },
+  {
+   "section": "11.2",
+   "term": "dissociation",
+   "definition": "physical process accompanying the dissolution of an ionic compound in which the compound’s constituent ions are solvated and dispersed throughout the solution"
+  },
+  {
+   "section": "11.2",
+   "term": "electrolyte",
+   "definition": "substance that produces ions when dissolved in water"
+  },
+  {
+   "section": "11.2",
+   "term": "ion-dipole attraction",
+   "definition": "electrostatic attraction between an ion and a polar molecule"
+  },
+  {
+   "section": "11.2",
+   "term": "nonelectrolyte",
+   "definition": "substance that does not produce ions when dissolved in water"
+  },
+  {
+   "section": "11.2",
+   "term": "strong electrolyte",
+   "definition": "substance that dissociates or ionizes completely when dissolved in water"
+  },
+  {
+   "section": "11.2",
+   "term": "weak electrolyte",
+   "definition": "substance that ionizes only partially when dissolved in water"
+  },
+  {
+   "section": "11.3",
+   "term": "Henry’s law",
+   "definition": "the proportional relationship between the concentration of dissolved gas in a solution and the partial pressure of the gas in contact with the solution"
+  },
+  {
+   "section": "11.3",
+   "term": "immiscible",
+   "definition": "of negligible mutual solubility; typically refers to liquid substances"
+  },
+  {
+   "section": "11.3",
+   "term": "miscible",
+   "definition": "mutually soluble in all proportions; typically refers to liquid substances"
+  },
+  {
+   "section": "11.3",
+   "term": "partially miscible",
+   "definition": "of moderate mutual solubility; typically refers to liquid substances"
+  },
+  {
+   "section": "11.3",
+   "term": "saturated",
+   "definition": "of concentration equal to solubility; containing the maximum concentration of solute possible for a given temperature and pressure"
+  },
+  {
+   "section": "11.3",
+   "term": "solubility",
+   "definition": "extent to which a solute may be dissolved in water, or any solvent"
+  },
+  {
+   "section": "11.3",
+   "term": "supersaturated",
+   "definition": "of concentration that exceeds solubility; a nonequilibrium state"
+  },
+  {
+   "section": "11.3",
+   "term": "unsaturated",
+   "definition": "of concentration less than solubility"
+  },
+  {
+   "section": "11.4",
+   "term": "boiling point elevation",
+   "definition": "elevation of the boiling point of a liquid by addition of a solute"
+  },
+  {
+   "section": "11.4",
+   "term": "boiling point elevation constant",
+   "definition": "the proportionality constant in the equation relating boiling point elevation to solute molality; also known as the ebullioscopic constant"
+  },
+  {
+   "section": "11.4",
+   "term": "colligative property",
+   "definition": "property of a solution that depends only on the concentration of a solute species"
+  },
+  {
+   "section": "11.4",
+   "term": "crenation",
+   "definition": "process whereby biological cells become shriveled due to loss of water by osmosis"
+  },
+  {
+   "section": "11.4",
+   "term": "freezing point depression",
+   "definition": "lowering of the freezing point of a liquid by addition of a solute"
+  },
+  {
+   "section": "11.4",
+   "term": "freezing point depression constant",
+   "definition": "(also, cryoscopic constant) proportionality constant in the equation relating freezing point depression to solute molality"
+  },
+  {
+   "section": "11.4",
+   "term": "hemolysis",
+   "definition": "rupture of red blood cells due to the accumulation of excess water by osmosis"
+  },
+  {
+   "section": "11.4",
+   "term": "hypertonic",
+   "definition": "of greater osmotic pressure"
+  },
+  {
+   "section": "11.4",
+   "term": "hypotonic",
+   "definition": "of less osmotic pressure"
+  },
+  {
+   "section": "11.4",
+   "term": "ion pair",
+   "definition": "solvated anion/cation pair held together by moderate electrostatic attraction"
+  },
+  {
+   "section": "11.4",
+   "term": "isotonic",
+   "definition": "of equal osmotic pressure"
+  },
+  {
+   "section": "11.4",
+   "term": "molality",
+   "definition": "a concentration unit defined as the ratio of the numbers of moles of solute to the mass of the solvent in kilograms"
+  },
+  {
+   "section": "11.4",
+   "term": "osmosis",
+   "definition": "diffusion of solvent molecules through a semipermeable membrane"
+  },
+  {
+   "section": "11.4",
+   "term": "osmotic pressure",
+   "definition": "opposing pressure required to prevent bulk transfer of solvent molecules through a semipermeable membrane"
+  },
+  {
+   "section": "11.4",
+   "term": "Raoult’s law",
+   "definition": "the relationship between a solution’s vapor pressure and the vapor pressures and concentrations of its components"
+  },
+  {
+   "section": "11.4",
+   "term": "semipermeable membrane",
+   "definition": "a membrane that selectively permits passage of certain ions or molecules"
+  },
+  {
+   "section": "11.4",
+   "term": "van’t Hoff factor",
+   "definition": "the ratio of the number of moles of particles in a solution to the number of moles of formula units dissolved in the solution"
+  },
+  {
+   "section": "11.5",
+   "term": "amphiphilic",
+   "definition": "molecules possessing both hydrophobic (nonpolar) and a hydrophilic (polar) parts"
+  },
+  {
+   "section": "11.5",
+   "term": "colloid",
+   "definition": "(also, colloidal dispersion) mixture in which relatively large solid or liquid particles are dispersed uniformly throughout a gas, liquid, or solid"
+  },
+  {
+   "section": "11.5",
+   "term": "dispersion medium",
+   "definition": "solid, liquid, or gas in which colloidal particles are dispersed"
+  },
+  {
+   "section": "11.5",
+   "term": "dispersed phase",
+   "definition": "substance present as relatively large solid or liquid particles in a colloid"
+  },
+  {
+   "section": "11.5",
+   "term": "emulsifying agent",
+   "definition": "amphiphilic substance used to stabilize the particles of some emulsions"
+  },
+  {
+   "section": "11.5",
+   "term": "emulsion",
+   "definition": "colloid formed from immiscible liquids"
+  },
+  {
+   "section": "11.5",
+   "term": "gel",
+   "definition": "colloidal dispersion of a liquid in a solid"
+  },
+  {
+   "section": "11.5",
+   "term": "suspension",
+   "definition": "heterogeneous mixture in which relatively large component particles are temporarily dispersed but settle out over time"
+  },
+  {
+   "section": "11.5",
+   "term": "Tyndall effect",
+   "definition": "scattering of visible light by a colloidal dispersion"
+  }
+ ]
+}

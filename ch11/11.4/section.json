@@ -1,0 +1,1291 @@
+{
+  "id": "11.4",
+  "module": "m68783",
+  "chapter": "11",
+  "title": "Colligative Properties",
+  "short": "Colligative Properties",
+  "lead": "A few properties of a solution depend only on how many solute particles it holds, not on what they are. This section introduces mole fraction and molality, uses Raoult’s law to explain why a nonvolatile solute lowers the vapor pressure of its solvent, raises its boiling point and lowers its freezing point, describes osmosis and osmotic pressure, uses these properties to find molar masses, and shows why an electrolyte’s effect is multiplied by the van’t Hoff factor.",
+  "objectives": [
+    "Express concentrations of solution components using mole fraction and molality",
+    "Describe the effect of solute concentration on various solution properties (vapor pressure, boiling point, freezing point, and osmotic pressure)",
+    "Perform calculations using the mathematical equations that describe these various colligative effects",
+    "Describe the process of distillation and its practical applications",
+    "Explain the process of osmosis and describe how it is applied industrially and in nature"
+  ],
+  "summary_html": "<p>Properties of a solution that depend only on the concentration of solute particles are called colligative properties. They include changes in the vapor pressure, boiling point, and freezing point of the solvent in the solution. The magnitudes of these properties depend only on the total concentration of solute particles in solution, not on the type of particles. The total concentration of solute particles in a solution also determines its osmotic pressure. This is the pressure that must be applied to the solution to prevent diffusion of molecules of pure solvent through a semipermeable membrane into the solution. Ionic compounds may not completely dissociate in solution due to activity effects, in which case observed colligative effects may be less than predicted.</p>",
+  "notes": "Nothing of the section is left out. Example 11.3 keeps the book’s C₂H₂(OH)₂ once for ethylene glycol, the section keeps “electroyte” as printed, Table 11.3 keeps its title’s “Predicated” and its HCl row’s H₃O⁺ where the book’s table summary reads H⁺, and the headers of Table 11.2 are written with the degree sign °.",
+  "ai": {
+    "text": "Claude Opus 5.5",
+    "figures": "Claude Opus 5.5"
+  },
+  "built": "2026-09-28",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The seventeen unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp102879040, fs-idp977216, fs-idp82906048, fs-idp36241264, fs-idp172267408, fs-idm62881312, fs-idp169311680, fs-idp128908704, fs-idp140011408, fs-idp128832096, fs-idm4586416, fs-idp141394336, fs-idp138340304, fs-idp18476208, fs-idm1532816, fs-idp128684672, fs-idp445696. The six unkeyed conceptual exercises (26, 28, 42, 54, 58 and 66 of the chapter) carry a suggested approach marked as OmniStax’s own. The keyed exercise fs-idp128725184 (exercise 27, the oil and water of Figure 11.14) is placed in 11.3, where miscibility is taught. The key to fs-idm4591712 uses K_f = 5.14 °C/m for benzene where Table 11.2 gives 5.12, and is kept as printed. Numeric answers accept 2% tolerance, except where a boiling point near 100 °C, a vapor pressure near that of pure water or a mole fraction near 1 needs a tighter one, and the one-significant-figure molar masses of Example 11.12’s Check Your Learning and exercise 49, which accept 15% and 3%.",
+  "figures": [
+    {
+      "id": "sim-vapor-lowering",
+      "kind": "sim",
+      "number": "11.18",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_RaoultLaw.jpg"
+      ],
+      "original_caption": "The presence of nonvolatile solutes lowers the vapor pressure of a solution by impeding the evaporation of solvent molecules.",
+      "draws": [
+        "pressure"
+      ]
+    },
+    {
+      "id": "fig-lab-distill",
+      "kind": "photo",
+      "number": "11.19",
+      "draws": []
+    },
+    {
+      "id": "fig-refinery",
+      "kind": "photo",
+      "number": "11.20",
+      "draws": []
+    },
+    {
+      "id": "fig-ex-steps-bp",
+      "kind": "figure",
+      "draws": []
+    },
+    {
+      "id": "fig-ex-steps-iodine",
+      "kind": "figure",
+      "draws": []
+    },
+    {
+      "id": "fig-rocksalt",
+      "kind": "photo",
+      "number": "11.21",
+      "draws": []
+    },
+    {
+      "id": "fig-ex-steps-fp",
+      "kind": "figure",
+      "draws": []
+    },
+    {
+      "id": "fig-deice",
+      "kind": "photo",
+      "number": "11.22",
+      "draws": []
+    },
+    {
+      "id": "sim-phase-diagram",
+      "kind": "sim",
+      "number": "11.23",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_phasediag.jpg"
+      ],
+      "original_caption": "Phase diagrams for a pure solvent (solid curves) and a solution formed by dissolving nonvolatile solute in the solvent (dashed curves).",
+      "draws": [
+        "concentration",
+        "pressure",
+        "temperature"
+      ]
+    },
+    {
+      "id": "sim-osmosis",
+      "kind": "sim",
+      "number": "11.24",
+      "folds": [
+        "11.25"
+      ],
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_osmosis.jpg",
+        "/media/ch11/CNX_Chem_11_04_rvosmosis.jpg"
+      ],
+      "original_caption": "(Figure 11.24) (a) A solution and pure solvent are initially separated by an osmotic membrane. (b) Net transfer of solvent molecules to the solution occurs until its osmotic pressure yields equal rates of transfer in both directions. (Figure 11.25) Applying a pressure greater than the osmotic pressure of a solution will reverse osmosis. Solvent molecules from the solution are pushed into the pure solvent.",
+      "draws": [
+        "concentration",
+        "pressure"
+      ]
+    },
+    {
+      "id": "fig-waterpur",
+      "kind": "photo",
+      "number": "11.26",
+      "draws": []
+    },
+    {
+      "id": "sim-red-cells",
+      "kind": "sim",
+      "number": "11.27",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_bloodcell.jpg"
+      ],
+      "original_caption": "Red blood cell membranes are water permeable and will (a) swell and possibly rupture in a hypotonic solution; (b) maintain normal volume and shape in an isotonic solution; and (c) shrivel and possibly die in a hypertonic solution. (credit a/b/c: modifications of work by “LadyofHats”/Wikimedia commons)",
+      "draws": [
+        "pressure"
+      ]
+    },
+    {
+      "id": "fig-ex-steps-mm-fp",
+      "kind": "figure",
+      "draws": []
+    },
+    {
+      "id": "fig-ex-steps-mm-osm",
+      "kind": "figure",
+      "draws": []
+    },
+    {
+      "id": "sim-ion-pairs",
+      "kind": "sim",
+      "number": "11.28",
+      "originals": [
+        "/media/ch11/CNX_Chem_11_04_ionpair.jpg"
+      ],
+      "original_caption": "Dissociation of ionic compounds in water is not always complete due to the formation of ion pairs.",
+      "draws": [
+        "concentration"
+      ]
+    },
+    {
+      "id": "fig-ex-steps-electrolyte",
+      "kind": "figure",
+      "draws": []
+    }
+  ],
+  "coverage": [
+    {
+      "span": "colligative",
+      "concept": "colligative-properties",
+      "verb": "introduces"
+    },
+    {
+      "span": "molality",
+      "concept": "molality-and-mole-fraction",
+      "verb": "introduces"
+    },
+    {
+      "span": "vapor",
+      "concept": "raoults-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "vapor",
+      "concept": "colligative-properties",
+      "verb": "uses"
+    },
+    {
+      "span": "vapor",
+      "concept": "molality-and-mole-fraction",
+      "verb": "uses"
+    },
+    {
+      "span": "distillation",
+      "concept": "distillation",
+      "verb": "introduces"
+    },
+    {
+      "span": "distillation",
+      "concept": "raoults-law",
+      "verb": "uses"
+    },
+    {
+      "span": "boiling",
+      "concept": "boiling-point-elevation",
+      "verb": "introduces"
+    },
+    {
+      "span": "boiling",
+      "concept": "molality-and-mole-fraction",
+      "verb": "uses"
+    },
+    {
+      "span": "freezing",
+      "concept": "freezing-point-depression",
+      "verb": "introduces"
+    },
+    {
+      "span": "phase",
+      "concept": "raoults-law",
+      "verb": "uses"
+    },
+    {
+      "span": "phase",
+      "concept": "boiling-point-elevation",
+      "verb": "uses"
+    },
+    {
+      "span": "phase",
+      "concept": "freezing-point-depression",
+      "verb": "uses"
+    },
+    {
+      "span": "phase",
+      "concept": "colligative-properties",
+      "verb": "reinforces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "osmotic-pressure",
+      "verb": "introduces"
+    },
+    {
+      "span": "molar-mass",
+      "concept": "molar-mass-from-colligative-properties",
+      "verb": "introduces"
+    },
+    {
+      "span": "molar-mass",
+      "concept": "freezing-point-depression",
+      "verb": "uses"
+    },
+    {
+      "span": "molar-mass",
+      "concept": "osmotic-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolytes",
+      "concept": "vant-hoff-factor",
+      "verb": "introduces"
+    },
+    {
+      "span": "electrolytes",
+      "concept": "freezing-point-depression",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp183990080",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-mole-fraction"
+      },
+      "cite": "molality",
+      "prompt": "What are the mole fraction and molality of a solution that contains 0.850 g of ammonia, NH<sub>3</sub>, dissolved in 125 g of water?",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "mole fraction of NH<sub>3</sub>",
+            "value": 0.00714,
+            "hint": "Convert both masses to moles, then divide the moles of ammonia by the total moles."
+          },
+          {
+            "part": "molality",
+            "value": 0.399,
+            "unit": "m",
+            "hint": "Divide the moles of ammonia by the mass of water in kilograms."
+          }
+        ],
+        "solution": "7.14 × 10<sup>−3</sup>; 0.399 <em>m</em>"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp32863264",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-convert"
+      },
+      "cite": "molality",
+      "prompt": "The mole fraction of iodine, I<sub>2</sub>, dissolved in dichloromethane, CH<sub>2</sub>Cl<sub>2</sub>, is 0.115. What is the molal concentration, <em>m</em>, of iodine in this solution?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 1.53,
+        "unit": "m",
+        "hint": "Take 0.115 mol of I<sub>2</sub> and 0.885 mol of CH<sub>2</sub>Cl<sub>2</sub>, find the mass of the dichloromethane in kilograms, and divide.",
+        "solution": "1.53 <em>m</em>"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm370293600",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-molarity"
+      },
+      "cite": "molality",
+      "prompt": "Nitric acid, HNO<sub>3</sub>(<em>aq</em>), is commercially available as a 33.7 <em>m</em> aqueous solution (density = 1.35 g/mL). What is the molarity of this solution?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 14.6,
+        "unit": "M",
+        "hint": "Take 1 kg of water with 33.7 mol of HNO<sub>3</sub>, find the total mass and then the volume of the solution from its density, and divide the moles by the liters.",
+        "solution": "14.6 <em>M</em>"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp189679696",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-vapor"
+      },
+      "cite": "vapor",
+      "prompt": "A solution contains 5.00 g of urea, CO(NH<sub>2</sub>)<sub>2</sub> (a nonvolatile solute) and 0.100 kg of water. If the vapor pressure of pure water at 25 °C is 23.7 torr, what is the vapor pressure of the solution assuming ideal behavior?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 23.4,
+        "unit": "torr",
+        "tol": 0.002,
+        "hint": "Find the mole fraction of water and multiply it by 23.7 torr.",
+        "solution": "23.4 torr"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idp5504000",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-boiling"
+      },
+      "cite": "boiling",
+      "prompt": "Assuming ideal solution behavior, what is the boiling point of the antifreeze described in Example 11.3?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 109.2,
+        "unit": "°C",
+        "tol": 0.001,
+        "hint": "Use the molality found in Example 11.3 and the value of <em>K</em><sub>b</sub> for water in Table 11.2.",
+        "solution": "109.2 °C"
+      }
+    },
+    {
+      "id": "cyl6",
+      "source_id": "fs-idm46335744",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-iodine"
+      },
+      "cite": "boiling",
+      "prompt": "What is the boiling point of a solution of 1.0 g of glycerin, C<sub>3</sub>H<sub>5</sub>(OH)<sub>3</sub>, in 47.8 g of water? Assume an ideal solution.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 100.12,
+        "unit": "°C",
+        "tol": 0.0001,
+        "hint": "Follow the four steps of Example 11.8: moles of glycerin, molality, change in boiling point, new boiling point.",
+        "solution": "100.12 °C"
+      }
+    },
+    {
+      "id": "cyl7",
+      "source_id": "fs-idp14106448",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-freezing"
+      },
+      "cite": "freezing",
+      "prompt": "Assuming ideal solution behavior, what is the freezing point of a 1.85 <em>m</em> solution of a nonvolatile nonelectrolyte solute in nitrobenzene?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": -9.3,
+        "unit": "°C",
+        "hint": "Multiply the molality by <em>K</em><sub>f</sub> for nitrobenzene and subtract the result from its freezing point, both from Table 11.2.",
+        "solution": "−9.3 °C"
+      }
+    },
+    {
+      "id": "cyl8",
+      "source_id": "fs-idp189701856",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-osmotic"
+      },
+      "cite": "osmosis",
+      "prompt": "Assuming ideal solution behavior, what is the osmotic pressure (atm) a solution with a volume of 0.750 L that contains 5.0 g of methanol, CH<sub>3</sub>OH, in water at 37 °C?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 5.3,
+        "unit": "atm",
+        "hint": "Find the molarity of the methanol, then use <em>Π</em> = <em>MRT</em> with <em>T</em> in kelvins.",
+        "solution": "5.3 atm"
+      }
+    },
+    {
+      "id": "cyl9",
+      "source_id": "fs-idp128313856",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-mm-freezing"
+      },
+      "cite": "molar-mass",
+      "prompt": "A solution of 35.7 g of a nonelectrolyte in 220.0 g of chloroform has a boiling point of 64.5 °C. Assuming ideal solution behavior, what is the molar mass of this compound?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 180,
+        "unit": "g/mol",
+        "hint": "Find Δ<em>T</em><sub>b</sub> from the boiling point of chloroform in Table 11.2, divide by <em>K</em><sub>b</sub> for the molality, and then find the moles and the molar mass.",
+        "solution": "1.8 × 10<sup>2</sup> g/mol"
+      }
+    },
+    {
+      "id": "cyl10",
+      "source_id": "fs-idp132624672",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-mm-osmotic"
+      },
+      "cite": "molar-mass",
+      "prompt": "Assuming ideal solution behavior, what is the molar mass of a protein if a solution of 0.02 g of the protein in 25.0 mL of solution has an osmotic pressure of 0.56 torr at 25 °C?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 30000.0,
+        "unit": "g/mol",
+        "tol": 0.15,
+        "hint": "Convert the osmotic pressure to atmospheres, find the molarity from <em>Π</em> = <em>MRT</em>, then the moles in 25.0 mL and the molar mass.",
+        "solution": "3 × 10<sup>4</sup> g/mol"
+      }
+    },
+    {
+      "id": "cyl11",
+      "source_id": "fs-idp86700768",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-electrolyte"
+      },
+      "cite": "electrolytes",
+      "prompt": "Assuming complete dissociation and ideal solution behavior, calculate the freezing point of a solution of 0.724 g of CaCl<sub>2</sub> in 175 g of water.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": -0.208,
+        "unit": "°C",
+        "hint": "Each formula unit of CaCl<sub>2</sub> yields three ions, so the molality of particles is three times the molality of CaCl<sub>2</sub>.",
+        "solution": "−0.208 °C"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp102655040",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "colligative",
+      "prompt": "Which is/are part of the macroscopic domain of solutions and which is/are part of the microscopic domain: boiling point elevation, Henry’s law, hydrogen bond, ion-dipole attraction, molarity, nonelectrolyte, nonstoichiometric compound, osmosis, solvated ion?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: sort each term by asking whether it can be observed or measured in a sample in the laboratory, such as a temperature, a pressure, a concentration or a flow of solvent, or whether it describes what the individual atoms, molecules and ions are doing, such as the attractions between particles and the particles themselves. Boiling point elevation, Henry’s law, molarity and osmosis are measured on the bulk solution; hydrogen bonds, ion-dipole attractions and solvated ions describe particles. Consider for nonelectrolyte and nonstoichiometric compound whether the classification rests on an observation, such as conductivity or composition, or on a picture of the particles."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp134512208",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "vapor",
+      "prompt": "Sketch a qualitative graph of the pressure versus time for water vapor above a sample of pure water and a sugar solution, as the liquids evaporate to half their original volume.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: by Raoult’s law, the vapor pressure depends on the mole fraction of water in the liquid. For pure water the mole fraction stays 1 as it evaporates, so its line stays flat at the vapor pressure of water. The sugar solution starts below it, since the sugar lowers the mole fraction of water, and as water leaves and the sugar stays behind, the solution grows more concentrated, so its line slopes gently downward over time."
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp169338128",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boiling",
+      "prompt": "A solution of potassium nitrate, an electrolyte, and a solution of glycerin (C<sub>3</sub>H<sub>5</sub>(OH)<sub>3</sub>), a nonelectrolyte, both boil at 100.3 °C. What other physical properties of the two solutions are identical?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Both form homogeneous solutions; their boiling point elevations are the same, as are their lowering of vapor pressures. Osmotic pressure and the lowering of the freezing point are also the same for both solutions."
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp169432880",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "What are the mole fractions of HNO<sub>3</sub> and water in a concentrated solution of nitric acid (68.0% HNO<sub>3</sub> by mass)?<br>(a) Outline the steps necessary to answer the question.<br>(b) Answer the question.",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(b) mole fraction of HNO<sub>3</sub>",
+            "value": 0.378
+          },
+          {
+            "part": "(b) mole fraction of H<sub>2</sub>O",
+            "value": 0.622
+          }
+        ],
+        "solution": "(a) Find number of moles of HNO<sub>3</sub> and H<sub>2</sub>O in 100 g of the solution. Find the mole fractions for the components. (b) The mole fraction of HNO<sub>3</sub> is 0.378. The mole fraction of H<sub>2</sub>O is 0.622."
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm61658912",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "Calculate the mole fraction of each solute and solvent:<br>(a) 0.710 kg of sodium carbonate (washing soda), Na<sub>2</sub>CO<sub>3</sub>, in 10.0 kg of water—a saturated solution at 0 °C<br>(b) 125 g of NH<sub>4</sub>NO<sub>3</sub> in 275 g of water—a mixture used to make an instant ice pack<br>(c) 25 g of Cl<sub>2</sub> in 125 g of dichloromethane, CH<sub>2</sub>Cl<sub>2</sub><br>(d) 0.372 g of tetrahydropyridine, C<sub>5</sub>H<sub>9</sub>N, in 125 g of chloroform, CHCl<sub>3</sub>",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) Na<sub>2</sub>CO<sub>3</sub>",
+            "value": 0.0119
+          },
+          {
+            "part": "(a) H<sub>2</sub>O",
+            "value": 0.988,
+            "tol": 0.001
+          },
+          {
+            "part": "(b) NH<sub>4</sub>NO<sub>3</sub>",
+            "value": 0.0928
+          },
+          {
+            "part": "(b) H<sub>2</sub>O",
+            "value": 0.907
+          },
+          {
+            "part": "(c) Cl<sub>2</sub>",
+            "value": 0.192
+          },
+          {
+            "part": "(c) CH<sub>2</sub>Cl<sub>2</sub>",
+            "value": 0.808
+          },
+          {
+            "part": "(d) C<sub>5</sub>H<sub>9</sub>N",
+            "value": 0.00426
+          },
+          {
+            "part": "(d) CHCl<sub>3</sub>",
+            "value": 0.997,
+            "tol": 0.001
+          }
+        ],
+        "solution": "(a) <em>X</em><sub>Na<sub>2</sub>CO<sub>3</sub></sub> = 0.0119; <em>X</em><sub>H<sub>2</sub>O</sub> = 0.988; (b) <em>X</em><sub>NH<sub>4</sub>NO<sub>3</sub></sub> = 0.0928; <em>X</em><sub>H<sub>2</sub>O</sub> = 0.907; (c) <em>X</em><sub>Cl<sub>2</sub></sub> = 0.192; <em>X</em><sub>CH<sub>2</sub>CI<sub>2</sub></sub> = 0.808; (d) <em>X</em><sub>C<sub>5</sub>H<sub>9</sub>N</sub> = 0.00426; <em>X</em><sub>CHCl<sub>3</sub></sub> = 0.997"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp36238320",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "What is the difference between a 1 <em>M</em> solution and a 1 <em>m</em> solution?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "In a 1 <em>M</em> solution, the mole is contained in exactly 1 L of solution. In a 1 <em>m</em> solution, the mole is contained in exactly 1 kg of solvent."
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idp36246800",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "What is the molality of nitric acid in a concentrated solution of nitric acid (68.0% HNO<sub>3</sub> by mass)?<br>(a) Outline the steps necessary to answer the question.<br>(b) Answer the question.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 33.7,
+        "unit": "m",
+        "part": "(b)",
+        "solution": "(a) Determine the molar mass of HNO<sub>3</sub>. Determine the number of moles of acid in the solution. From the number of moles and the mass of solvent, determine the molality. (b) 33.7 <em>m</em>"
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp172276944",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "Calculate the molality of each of the following solutions:<br>(a) 0.710 kg of sodium carbonate (washing soda), Na<sub>2</sub>CO<sub>3</sub>, in 10.0 kg of water—a saturated solution at 0°C<br>(b) 125 g of NH<sub>4</sub>NO<sub>3</sub> in 275 g of water—a mixture used to make an instant ice pack<br>(c) 25 g of Cl<sub>2</sub> in 125 g of dichloromethane, CH<sub>2</sub>Cl<sub>2</sub><br>(d) 0.372 g of tetrahydropyridine, C<sub>5</sub>H<sub>9</sub>N, in 125 g of chloroform, CHCl<sub>3</sub>",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 0.67,
+            "unit": "m"
+          },
+          {
+            "part": "(b)",
+            "value": 5.67,
+            "unit": "m"
+          },
+          {
+            "part": "(c)",
+            "value": 2.8,
+            "unit": "m"
+          },
+          {
+            "part": "(d)",
+            "value": 0.0358,
+            "unit": "m"
+          }
+        ],
+        "solution": "(a) 6.70 × 10<sup>−1</sup> <em>m</em>; (b) 5.67 <em>m</em>; (c) 2.8 <em>m</em>; (d) 0.0358 <em>m</em>"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idm62873376",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molality",
+      "prompt": "A 13.0% solution of K<sub>2</sub>CO<sub>3</sub> by mass has a density of 1.09 g/cm<sup>3</sup>. Calculate the molality of the solution.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 1.08,
+        "unit": "m",
+        "solution": "1.08 <em>m</em>"
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idp135093440",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "Why does 1 mol of sodium chloride depress the freezing point of 1 kg of water almost twice as much as 1 mol of glycerin?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: freezing point depression depends on the number of solute particles per kilogram of solvent, not on their identity. Compare how many particles one formula unit of NaCl gives in water with how many one molecule of glycerin, a nonelectrolyte, gives, and then consider why the measured effect of NaCl falls a little short of twice as large, as the van’t Hoff factors of Table 11.3 show."
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idp40718720",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "boiling",
+      "prompt": "Assuming ideal solution behavior, what is the boiling point of a solution of 115.0 g of nonvolatile sucrose, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>, in 350.0 g of water?<br>(a) Outline the steps necessary to answer the question<br>(b) Answer the question",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 100.5,
+        "unit": "°C",
+        "tol": 0.0005,
+        "part": "(b)",
+        "solution": "(a) Determine the molar mass of sucrose; determine the number of moles of sucrose in the solution; convert the mass of solvent to units of kilograms; from the number of moles and the mass of solvent, determine the molality; determine the difference between the boiling point of water and the boiling point of the solution; determine the new boiling point. (b) 100.5 °C"
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idp140267616",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "freezing",
+      "prompt": "Assuming ideal solution behavior, what is the freezing temperature of a solution of 115.0 g of sucrose, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>, in 350.0 g of water?<br>(a) Outline the steps necessary to answer the question.<br>(b) Answer the question.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": -1.8,
+        "unit": "°C",
+        "part": "(b)",
+        "solution": "(a) Determine the molar mass of sucrose; determine the number of moles of sucrose in the solution; convert the mass of solvent to units of kilograms; from the number of moles and the mass of solvent, determine the molality; determine the difference between the freezing temperature of water and the freezing temperature of the solution; determine the new freezing temperature. (b) −1.8 °C"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idp95687760",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "osmosis",
+      "prompt": "Assuming ideal solution behavior, what is the osmotic pressure of an aqueous solution of 1.64 g of Ca(NO<sub>3</sub>)<sub>2</sub> in water at 25 °C? The volume of the solution is 275 mL.<br>(a) Outline the steps necessary to answer the question.<br>(b) Answer the question.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 2.67,
+        "unit": "atm",
+        "part": "(b)",
+        "solution": "(a) Determine the molar mass of Ca(NO<sub>3</sub>)<sub>2</sub>; determine the number of moles of Ca(NO<sub>3</sub>)<sub>2</sub> in the solution; determine the number of moles of ions in the solution; determine the molarity of ions, then the osmotic pressure. (b) 2.67 atm"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idp133898592",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molar-mass",
+      "prompt": "A solution containing 5.00 g of a compound dissolved in 25.00 g of carbon tetrachloride (bp 76.8 °C; <em>K</em><sub>b</sub> = 5.02 °C/<em>m</em>) exhibits a normal boiling point of 81.5 °C. Assuming ideal solution behavior, what is the molar mass of the compound?<br>(a) Outline the steps necessary to answer the question.<br>(b) Solve the problem.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 210,
+        "unit": "g/mol",
+        "tol": 0.03,
+        "part": "(b)",
+        "solution": "(a) Determine the molal concentration from the change in boiling point and <em>K</em><sub>b</sub>; determine the moles of solute in the solution from the molal concentration and mass of solvent; determine the molar mass from the number of moles and the mass of solute. (b) 2.1 × 10<sup>2</sup> g mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idm4591712",
+      "kind": "exercise",
+      "bloom": "Evaluate",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "A 1.0 <em>m</em> solution of HCl in benzene has a freezing point of 0.4 °C. Is HCl an electrolyte in benzene? Explain.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "No. Pure benzene freezes at 5.5 °C, and so the observed freezing point of this solution is depressed by Δ<em>T</em><sub>f</sub> = 5.5 − 0.4 = 5.1 °C. The value computed, assuming no ionization of HCl, is Δ<em>T</em><sub>f</sub> = (1.0 m)(5.14 °C/<em>m</em>) = 5.1 °C. Agreement of these values supports the assumption that HCl is not ionized."
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idp140038656",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molar-mass",
+      "prompt": "A 12.0-g sample of a nonelectrolyte is dissolved in 80.0 g of water. The solution freezes at −1.94 °C. Assuming ideal solution behavior, calculate the molar mass of the substance.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 144,
+        "unit": "g/mol",
+        "solution": "144 g mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idp189091568",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "Arrange the following solutions in order by their decreasing freezing points: 0.1 <em>m</em> Na<sub>3</sub>PO<sub>4</sub>, 0.1 <em>m</em> C<sub>2</sub>H<sub>5</sub>OH, 0.01 <em>m</em> CO<sub>2</sub>, 0.15 <em>m</em> NaCl, and 0.2 <em>m</em> CaCl<sub>2</sub>.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: the freezing point is lowered in proportion to the molality of all solute particles, so multiply each molality by the number of particles one formula unit gives in water, assuming complete dissociation for the ionic compounds and none for ethanol and carbon dioxide. The solution with the fewest particles per kilogram of water has the highest freezing point, and the one with the most has the lowest."
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idp58483920",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "Calculate the boiling point elevation of 0.100 kg of water containing 0.010 mol of NaCl, 0.020 mol of Na<sub>2</sub>SO<sub>4</sub>, and 0.030 mol of MgCl<sub>2</sub>, assuming complete dissociation of these electrolytes and ideal solution behavior.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.87,
+        "unit": "°C",
+        "solution": "0.870 °C"
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idp70734848",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molar-mass",
+      "prompt": "A sample of sulfur weighing 0.210 g was dissolved in 17.8 g of carbon disulfide, CS<sub>2</sub> (<em>K</em><sub>b</sub> = 2.34 °C/<em>m</em>). If the boiling point elevation was 0.107 °C, what is the formula of a sulfur molecule in carbon disulfide (assuming ideal solution behavior)?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "S<sub>8</sub>"
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idm56693456",
+      "kind": "exercise",
+      "bloom": "Evaluate",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "In a significant experiment performed many years ago, 5.6977 g of cadmium iodide in 44.69 g of water raised the boiling point 0.181 °C. What does this suggest about the nature of a solution of CdI<sub>2</sub>?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: compute the molality of CdI<sub>2</sub> from its mass, its molar mass and the mass of water, and the boiling point elevation it would give as a nonelectrolyte with <em>K</em><sub>b</sub> for water from Table 11.2. Dividing the measured elevation by that value gives an apparent van’t Hoff factor; compare it with the 3 that complete dissociation into Cd<sup>2+</sup> and 2I<sup>−</sup> would give, and consider what a value near 1 says about how far the salt dissociates in water."
+      }
+    },
+    {
+      "id": "e21",
+      "source_id": "fs-idp169417488",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "molar-mass",
+      "prompt": "Lysozyme is an enzyme that cleaves cell walls. A 0.100-L sample of a solution of lysozyme that contains 0.0750 g of the enzyme exhibits an osmotic pressure of 1.32 × 10<sup>−3</sup> atm at 25 °C. Assuming ideal solution behavior, what is the molar mass of lysozyme?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 13900.0,
+        "unit": "g/mol",
+        "solution": "1.39 × 10<sup>4</sup> g mol<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e22",
+      "source_id": "fs-idp135108928",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "osmosis",
+      "prompt": "The osmotic pressure of human blood is 7.6 atm at 37 °C. What mass of glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, is required to make 1.00 L of aqueous solution for intravenous feeding if the solution must have the same osmotic pressure as blood at body temperature, 37 °C (assuming ideal solution behavior)?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 54,
+        "unit": "g",
+        "solution": "54 g"
+      }
+    },
+    {
+      "id": "e23",
+      "source_id": "fs-idp166052128",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "freezing",
+      "prompt": "Assuming ideal solution behavior, what is the boiling point of a solution of NaCl in water if the solution freezes at −0.93 °C?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 100.26,
+        "unit": "°C",
+        "tol": 0.0001,
+        "solution": "100.26 °C"
+      }
+    },
+    {
+      "id": "e24",
+      "source_id": "fs-idp241232",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "distillation",
+      "prompt": "The vapor pressure of methanol, CH<sub>3</sub>OH, is 94 torr at 20 °C. The vapor pressure of ethanol, C<sub>2</sub>H<sub>5</sub>OH, is 44 torr at the same temperature.<br>(a) Calculate the mole fraction of methanol and of ethanol in a solution of 50.0 g of methanol and 50.0 g of ethanol.<br>(b) Ethanol and methanol form a solution that behaves like an ideal solution. Calculate the vapor pressure of methanol and of ethanol above the solution at 20 °C.<br>(c) Calculate the mole fraction of methanol and of ethanol in the vapor above the solution.",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) X of CH<sub>3</sub>OH",
+            "value": 0.59
+          },
+          {
+            "part": "(a) X of C<sub>2</sub>H<sub>5</sub>OH",
+            "value": 0.41
+          },
+          {
+            "part": "(b) CH<sub>3</sub>OH",
+            "value": 55,
+            "unit": "torr"
+          },
+          {
+            "part": "(b) C<sub>2</sub>H<sub>5</sub>OH",
+            "value": 18,
+            "unit": "torr"
+          },
+          {
+            "part": "(c) CH<sub>3</sub>OH",
+            "value": 0.75
+          },
+          {
+            "part": "(c) C<sub>2</sub>H<sub>5</sub>OH",
+            "value": 0.25
+          }
+        ],
+        "solution": "(a) <em>X</em><sub>CH<sub>3</sub>OH</sub> = 0.590; <em>X</em><sub>C<sub>2</sub>H<sub>5</sub>OH</sub> = 0.410; (b) Vapor pressures are: CH<sub>3</sub>OH: 55 torr; C<sub>2</sub>H<sub>5</sub>OH: 18 torr; (c) CH<sub>3</sub>OH: 0.75; C<sub>2</sub>H<sub>5</sub>OH: 0.25"
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idp128680064",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "phase",
+      "prompt": "The triple point of air-free water is defined as 273.16 K. Why is it important that the water be free of air?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: air dissolves in water, and any dissolved substance is a solute. Recall from the phase diagram of a solution how a solute moves the solid–liquid curve and lowers the liquid–vapor curve, and so what it does to the point where the three curves meet."
+      }
+    },
+    {
+      "id": "e26",
+      "source_id": "fs-idp128682240",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "freezing",
+      "prompt": "Meat can be classified as fresh (not frozen) even though it is stored at −1 °C. Why wouldn’t meat freeze at this temperature?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The ions and compounds present in the water in the beef lower the freezing point of the beef below −1 °C."
+      }
+    },
+    {
+      "id": "e27",
+      "source_id": "fs-idp13479328",
+      "kind": "exercise",
+      "bloom": "Evaluate",
+      "place": {
+        "at": "end"
+      },
+      "cite": "electrolytes",
+      "prompt": "A sample of HgCl<sub>2</sub> weighing 9.41 g is dissolved in 32.75 g of ethanol, C<sub>2</sub>H<sub>5</sub>OH (<em>K</em><sub>b</sub> = 1.20 °C/<em>m</em>). The boiling point elevation of the solution is 1.27 °C. Is HgCl<sub>2</sub> an electrolyte in ethanol? Show your calculations.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Δbp = <em>K</em><sub>b</sub><em>m</em> = (1.20 °C/<em>m</em>)((9.41 g × 1 mol HgCl<sub>2</sub>/271.496 g)/0.03275 kg) = 1.27 °C. The observed change equals the theoretical change; therefore, no dissociation occurs."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "raoults-law"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "cyl8",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "cyl9",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "cyl9",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "cyl10",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "cyl10",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "cyl11",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "cyl11",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e1",
+      "concept": "colligative-properties"
+    },
+    {
+      "exercise": "e2",
+      "concept": "raoults-law"
+    },
+    {
+      "exercise": "e3",
+      "concept": "colligative-properties"
+    },
+    {
+      "exercise": "e3",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e4",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e5",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e6",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e7",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e8",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e9",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e10",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e10",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e11",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e11",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e12",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e12",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e13",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "e13",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e14",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "e14",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e15",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e15",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e16",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "e16",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e17",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e17",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e18",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e18",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e19",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "e19",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e20",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e20",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e21",
+      "concept": "molar-mass-from-colligative-properties"
+    },
+    {
+      "exercise": "e21",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "e22",
+      "concept": "osmotic-pressure"
+    },
+    {
+      "exercise": "e23",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e23",
+      "concept": "boiling-point-elevation"
+    },
+    {
+      "exercise": "e24",
+      "concept": "raoults-law"
+    },
+    {
+      "exercise": "e24",
+      "concept": "distillation"
+    },
+    {
+      "exercise": "e24",
+      "concept": "molality-and-mole-fraction"
+    },
+    {
+      "exercise": "e25",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e25",
+      "concept": "colligative-properties"
+    },
+    {
+      "exercise": "e26",
+      "concept": "freezing-point-depression"
+    },
+    {
+      "exercise": "e27",
+      "concept": "vant-hoff-factor"
+    },
+    {
+      "exercise": "e27",
+      "concept": "boiling-point-elevation"
+    }
+  ]
+}

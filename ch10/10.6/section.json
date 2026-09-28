@@ -1,0 +1,355 @@
+{
+ "id": "10.6",
+ "module": "m68773",
+ "chapter": "10",
+ "title": "Lattice Structures in Crystalline Solids",
+ "short": "Lattice Structures",
+ "lead": "Most solids are crystalline, their particles packed in a regular pattern that repeats in three dimensions. This section describes that pattern by its unit cell, beginning with the simple cubic, body-centered cubic, and face-centered cubic cells of metals and the two ways identical spheres pack most closely, then shows how the ions of a salt fill the holes between its larger anions, how a radius and a density follow from the edge length of a cell, and how the diffraction of X-rays, through the Bragg equation, measures the distances between the planes of atoms in a crystal.",
+ "objectives": [
+  "Describe the arrangement of atoms and ions in crystalline structures",
+  "Compute ionic radii using unit cell dimensions",
+  "Explain the use of X-ray diffraction measurements in determining crystalline structures"
+ ],
+ "summary_html": "<p>The structures of crystalline metals and simple ionic compounds can be described in terms of packing of spheres. Metal atoms can pack in hexagonal closest-packed structures, cubic closest-packed structures, body-centered structures, and simple cubic structures. The anions in simple ionic structures commonly adopt one of these structures, and the cations occupy the spaces remaining between the anions. Small cations usually occupy tetrahedral holes in a closest-packed array of anions. Larger cations usually occupy octahedral holes. Still larger cations can occupy cubic holes in a simple cubic array of anions. The structure of a solid can be described by indicating the size and shape of a unit cell and the contents of the cell. The type of structure and dimensions of the unit cell can be determined by X-ray diffraction measurements.</p>",
+ "notes": "The Link to Learning note pointing to a Bragg equation simulator is left out, since Figure 10.63 + 10.64 lets the angle, wavelength, and spacing be varied on the page. The book’s answer for tungsten reads “19.26 g/cm,” Example 10.17’s Check Your Learning asks “What it the formula,” the answer to exercise 91 says “the formula for thallium is TlI,” and exercise 95 speaks of ions that “occupied the same cites”; all four are printed as the book has them.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercises fs-idp53519632 (exercise 82, the edge length and density of platinum), fs-idm25352864 (84, the edge length and density of aluminum), fs-idp21112320 (86, the free space in the three cubic lattices), fs-idp8185568 (98, the radius of H⁻ and the density of NaH), fs-idp64501504 (100, the manganese fluoride cell), fs-idm23848128 (102, the plane spacing at 16.21°) and fs-idp31363760 (104, the density of gold from its diffraction) are left out, and no answer is computed for them. The seven unkeyed conceptual exercises (76, 78, 80, 88, 90, 94 and 96) are kept with a suggested approach marked as OmniStax’s own, and the unkeyed choice exercise 92 is kept as an open question with its options and a suggested approach. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "sim-simple",
+   "kind": "sim",
+   "number": "10.46",
+   "folds": ["10.47", "10.48", "10.49"],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_UnitCell1.jpg",
+    "/media/ch10/CNX_Chem_10_06_SimpleCub1.jpg",
+    "/media/ch10/CNX_Chem_10_06_SimpleCub2.jpg",
+    "/media/ch10/CNX_Chem_10_06_SimpleCub3.jpg"
+   ],
+   "original_caption": "(Figure 10.46) A unit cell shows the locations of lattice points repeating in all directions. (Figure 10.47) When metal atoms are arranged with spheres in one layer directly above or below spheres in another layer, the lattice structure is called simple cubic. Note that the spheres are in contact. (Figure 10.48) An atom in a simple cubic lattice structure contacts six other atoms, so it has a coordination number of six. (Figure 10.49) A simple cubic lattice unit cell contains one-eighth of an atom at each of its eight corners, so it contains one atom total.",
+   "draws": []
+  },
+  { "id": "fig-simpcube", "kind": "figure", "draws": [] },
+  {
+   "id": "sim-cubic",
+   "kind": "sim",
+   "number": "10.50",
+   "folds": ["10.51", "10.52"],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_CubUntCll.jpg",
+    "/media/ch10/CNX_Chem_10_06_BdyCntrdCb.jpg",
+    "/media/ch10/CNX_Chem_10_06_FcCntrdCbc.jpg"
+   ],
+   "original_caption": "(Figure 10.50) Cubic unit cells of metals show (in the upper figures) the locations of lattice points and (in the lower figures) metal atoms located in the unit cell. (Figure 10.51) In a body-centered cubic structure, atoms in a specific layer do not touch each other. Each atom touches four atoms in the layer above it and four atoms in the layer below it. (Figure 10.52) A face-centered cubic solid has atoms at the corners and, as the name implies, at the centers of the faces of its unit cells.",
+   "draws": []
+  },
+  {
+   "id": "sim-packing",
+   "kind": "sim",
+   "number": "10.53",
+   "folds": ["10.54"],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_CbcCltPckd.jpg",
+    "/media/ch10/CNX_Chem_10_06_ClstPckng2.jpg"
+   ],
+   "original_caption": "(Figure 10.53) A CCP arrangement consists of three repeating layers (ABCABC…) of hexagonally arranged atoms. Atoms in a CCP structure have a coordination number of 12 because they contact six atoms in their layer, plus three atoms in the layer above and three atoms in the layer below. By rotating our perspective, we can see that a CCP structure has a unit cell with a face containing an atom from layer A at one corner, atoms from layer B across a diagonal (at two corners and in the middle of the face), and an atom from layer C at the remaining corner. This is the same as a face-centered cubic arrangement. (Figure 10.54) In both types of closest packing, atoms are packed as compactly as possible. Hexagonal closest packing consists of two alternating layers (ABABAB…). Cubic closest packing consists of three alternating layers (ABCABCABC…).",
+   "draws": []
+  },
+  { "id": "fig-ex-ca", "kind": "figure", "draws": [] },
+  { "id": "sim-density", "kind": "sim", "draws": ["mass", "volume"] },
+  {
+   "id": "sim-lattices",
+   "kind": "sim",
+   "number": "10.55",
+   "folds": ["10.56"],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_GenUnitCll.jpg",
+    "/media/ch10/CNX_Chem_10_06_CrystalSys.jpg"
+   ],
+   "original_caption": "(Figure 10.55) A unit cell is defined by the lengths of its three axes (a, b, and c) and the angles (α, β, and γ) between the axes. (Figure 10.56) There are seven different lattice systems and 14 different unit cells.",
+   "draws": []
+  },
+  {
+   "id": "sim-holes",
+   "kind": "sim",
+   "number": "10.57",
+   "folds": ["10.58"],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_TetOctHole.jpg",
+    "/media/ch10/CNX_Chem_10_06_IntIonst.jpg"
+   ],
+   "original_caption": "(Figure 10.57) Cations may occupy two types of holes between anions: octahedral holes or tetrahedral holes. (Figure 10.58) A cation’s size and the shape of the hole occupied by the compound are directly related.",
+   "draws": []
+  },
+  {
+   "id": "sim-ionic",
+   "kind": "sim",
+   "number": "10.59",
+   "folds": ["10.60", "10.61", "10.62"],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_07_CsClStrctr.jpg",
+    "/media/ch10/CNX_Chem_10_07_NaClStrctr.jpg",
+    "/media/ch10/CNX_Chem_10_06_ZnSStrctr.jpg",
+    "/media/ch10/CNX_Chem_10_07_CaF2Strctr.jpg"
+   ],
+   "original_caption": "(Figure 10.59) Ionic compounds with similar-sized cations and anions, such as CsCl, usually form a simple cubic structure. They can be described by unit cells with either cations at the corners or anions at the corners. (Figure 10.60) Ionic compounds with anions that are much larger than cations, such as NaCl, usually form an FCC structure. They can be described by FCC unit cells with cations in the octahedral holes. (Figure 10.61) ZnS, zinc sulfide (or zinc blende) forms an FCC unit cell with sulfide ions at the lattice points and much smaller zinc ions occupying half of the tetrahedral holes in the structure. (Figure 10.62) Calcium fluoride, CaF2, forms an FCC unit cell with calcium ions (green) at the lattice points and fluoride ions (red) occupying all of the tetrahedral sites between them.",
+   "draws": []
+  },
+  { "id": "fig-licl", "kind": "figure", "draws": [] },
+  {
+   "id": "sim-bragg",
+   "kind": "sim",
+   "number": "10.63",
+   "folds": ["10.64"],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_06_ConDec.jpg",
+    "/media/ch10/CNX_Chem_10_06_XRyDiff1.jpg"
+   ],
+   "original_caption": "(Figure 10.63) Light waves occupying the same space experience interference, combining to yield waves of greater (a) or lesser (b) intensity, depending upon the separation of their maxima and minima. (Figure 10.64) The diffraction of X-rays scattered by the atoms within a crystal permits the determination of the distance between the atoms. The top image depicts constructive interference between two scattered waves and a resultant diffracted wave of high intensity. The bottom image depicts destructive interference and a low intensity diffracted wave.",
+   "draws": ["wavelength"]
+  },
+  { "id": "fig-diffractometer", "kind": "photo", "number": "10.65", "draws": [] },
+  { "id": "fig-franklin", "kind": "photo", "number": "10.66", "draws": [] }
+ ],
+ "coverage": [
+  { "span": "crystalline", "concept": "types-of-crystalline-solids", "verb": "uses" },
+  { "span": "metals", "concept": "unit-cell", "verb": "uses" },
+  { "span": "unit-cell", "concept": "unit-cell", "verb": "introduces" },
+  { "span": "simple-cubic", "concept": "cubic-unit-cells", "verb": "introduces" },
+  { "span": "simple-cubic", "concept": "unit-cell", "verb": "uses" },
+  { "span": "ex-po", "concept": "unit-cell-radius-and-density", "verb": "introduces" },
+  { "span": "ex-po", "concept": "density", "verb": "uses" },
+  { "span": "ex-po", "concept": "molar-mass", "verb": "uses" },
+  { "span": "ex-po", "concept": "avogadro-number", "verb": "uses" },
+  { "span": "cubic-cells", "concept": "cubic-unit-cells", "verb": "reinforces" },
+  { "span": "closest-packing", "concept": "closest-packing", "verb": "introduces" },
+  { "span": "closest-packing", "concept": "cubic-unit-cells", "verb": "uses" },
+  { "span": "ex-ca", "concept": "unit-cell-radius-and-density", "verb": "uses" },
+  { "span": "lattice-systems", "concept": "unit-cell", "verb": "reinforces" },
+  { "span": "ionic-crystals", "concept": "holes-in-closest-packed-arrays", "verb": "introduces" },
+  { "span": "ionic-crystals", "concept": "closest-packing", "verb": "uses" },
+  { "span": "ionic-crystals", "concept": "ionic-radius-trend", "verb": "uses" },
+  { "span": "ex-zns", "concept": "formula-from-hole-occupancy", "verb": "introduces" },
+  { "span": "ex-zns", "concept": "empirical-formula", "verb": "uses" },
+  { "span": "octahedral", "concept": "holes-in-closest-packed-arrays", "verb": "reinforces" },
+  { "span": "ex-al2o3", "concept": "formula-from-hole-occupancy", "verb": "uses" },
+  { "span": "cubic-holes", "concept": "holes-in-closest-packed-arrays", "verb": "reinforces" },
+  { "span": "ionic-cells", "concept": "ionic-unit-cells", "verb": "introduces" },
+  { "span": "ionic-cells", "concept": "ionic-compound-formula", "verb": "uses" },
+  { "span": "ionic-radii", "concept": "unit-cell-radius-and-density", "verb": "reinforces" },
+  { "span": "ex-licl", "concept": "ionic-unit-cells", "verb": "uses" },
+  { "span": "ex-licl", "concept": "unit-cell-radius-and-density", "verb": "uses" },
+  { "span": "xray", "concept": "bragg-equation", "verb": "introduces" },
+  { "span": "xray", "concept": "wave-properties", "verb": "uses" },
+  { "span": "ex-bragg", "concept": "bragg-equation", "verb": "uses" },
+  { "span": "franklin", "concept": "bragg-equation", "verb": "reinforces" }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1", "source_id": "fs-idm39353008", "kind": "check-your-learning", "bloom": "Analyze",
+   "place": { "at": "inline", "after": "ex-po" }, "cite": "ex-po",
+   "prompt": "The edge length of the unit cell for nickel is 0.3524 nm. The density of Ni is 8.90 g/cm<sup>3</sup>. Does nickel crystallize in a simple cubic structure? Explain.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "No. If Ni was simple cubic, its density would be given by:<br>1 Ni atom × (1 mol Ni / 6.022 × 10<sup>23</sup> Ni atoms) × (58.693 g / 1 mol Ni) = 9.746 × 10<sup>−23</sup> g<br><em>V</em> = <em>l</em><sup>3</sup> = (3.524 × 10<sup>−8</sup> cm)<sup>3</sup> = 4.376 × 10<sup>−23</sup> cm<sup>3</sup><br>Then the density of Ni would be = (9.746 × 10<sup>−23</sup> g)/(4.376 × 10<sup>−23</sup> cm<sup>3</sup>) = 2.23 g/cm<sup>3</sup><br>Since the actual density of Ni is not close to this, Ni does not form a simple cubic structure." }
+  },
+  {
+   "id": "cyl2", "source_id": "fs-idp79703472", "kind": "check-your-learning", "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-ca" }, "cite": "ex-ca",
+   "prompt": "Silver crystallizes in an FCC structure. The edge length of its unit cell is 409 pm.<br>(a) What is the atomic radius of Ag in this structure?<br>(b) Calculate the density of Ag.",
+   "answer": { "type": "multi", "generated_by": "source", "parts": [ { "part": "(a)", "value": 144, "unit": "pm" }, { "part": "(b)", "value": 10.5, "unit": "g/cm³" } ], "solution": "(a) 144 pm; (b) 10.5 g/cm<sup>3</sup>" }
+  },
+  {
+   "id": "cyl3", "source_id": "fs-idm32665648", "kind": "check-your-learning", "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-zns" }, "cite": "ex-zns",
+   "prompt": "Lithium selenide can be described as a closest-packed array of selenide ions with lithium ions in all of the tetrahedral holes. What it the formula of lithium selenide?",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Li<sub>2</sub>Se" }
+  },
+  {
+   "id": "cyl4", "source_id": "fs-idp118444096", "kind": "check-your-learning", "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-al2o3" }, "cite": "ex-al2o3",
+   "prompt": "The white pigment titanium oxide crystallizes with titanium ions in one-half of the octahedral holes in a closest-packed array of oxide ions. What is the formula of titanium oxide?",
+   "answer": { "type": "open", "generated_by": "source", "solution": "TiO<sub>2</sub>" }
+  },
+  {
+   "id": "cyl5", "source_id": "fs-idp160437296", "kind": "check-your-learning", "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-licl" }, "cite": "ex-licl",
+   "prompt": "The edge length of the unit cell of KCl (NaCl-like structure, FCC) is 6.28 Å. Assuming anion-cation contact along the cell edge, calculate the radius of the potassium ion. The radius of the chloride ion is 1.82 Å.",
+   "answer": { "type": "number", "generated_by": "source", "value": 1.33, "unit": "Å", "solution": "The radius of the potassium ion is 1.33 Å." }
+  },
+  {
+   "id": "cyl6", "source_id": "fs-idp19350688", "kind": "check-your-learning", "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-bragg" }, "cite": "ex-bragg",
+   "prompt": "A crystal with spacing between planes equal to 0.394 nm diffracts X-rays with a wavelength of 0.147 nm. What is the angle for the first order diffraction?",
+   "answer": { "type": "number", "generated_by": "source", "value": 10.8, "unit": "°", "solution": "10.8°" }
+  },
+  {
+   "id": "e1", "source_id": "fs-idp28635312", "kind": "exercise", "bloom": "Understand", "place": { "at": "end" }, "cite": "cubic-cells",
+   "prompt": "Describe the crystal structure of iron, which crystallizes with two equivalent metal atoms in a cubic unit cell.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "The structure of this low-temperature form of iron (below 910 °C) is body-centered cubic. There is one-eighth atom at each of the eight corners of the cube and one atom in the center of the cube." }
+  },
+  {
+   "id": "e2", "source_id": "fs-idp129665808", "kind": "exercise", "bloom": "Understand", "place": { "at": "end" }, "cite": "cubic-cells",
+   "prompt": "Describe the crystal structure of Pt, which crystallizes with four equivalent metal atoms in a cubic unit cell.",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: count the atoms that each of the three cubic unit cells contains, using one-eighth for an atom at a corner, one-half for an atom on a face, and one for an atom wholly inside the cell. Decide which of the simple, body-centered, and face-centered cells contains four atoms, and describe where those atoms sit in the cell." }
+  },
+  {
+   "id": "e3", "source_id": "fs-idp83460192", "kind": "exercise", "bloom": "Remember", "place": { "at": "end" }, "cite": "cubic-cells",
+   "prompt": "What is the coordination number of a chromium atom in the body-centered cubic structure of chromium?",
+   "answer": { "type": "number", "generated_by": "source", "value": 8, "solution": "eight" }
+  },
+  {
+   "id": "e4", "source_id": "fs-idp26737392", "kind": "exercise", "bloom": "Remember", "place": { "at": "end" }, "cite": "closest-packing",
+   "prompt": "What is the coordination number of an aluminum atom in the face-centered cubic structure of aluminum?",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: recall that the face-centered cubic structure is the same as cubic closest packing. Count the atoms that one atom touches in its own close-packed layer, in the layer above, and in the layer below, and add them." }
+  },
+  {
+   "id": "e5", "source_id": "fs-idp101733424", "kind": "exercise", "bloom": "Remember", "place": { "at": "end" }, "cite": "closest-packing",
+   "prompt": "Cobalt metal crystallizes in a hexagonal closest packed structure. What is the coordination number of a cobalt atom?",
+   "answer": { "type": "number", "generated_by": "source", "value": 12, "solution": "12" }
+  },
+  {
+   "id": "e6", "source_id": "fs-idm14554640", "kind": "exercise", "bloom": "Remember", "place": { "at": "end" }, "cite": "closest-packing",
+   "prompt": "Nickel metal crystallizes in a cubic closest packed structure. What is the coordination number of a nickel atom?",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: in either kind of closest packing, each atom touches atoms in its own layer and in the layers directly above and below it. Count the contacts in each of the three layers and add them; the count does not depend on whether the third layer is type A or type C." }
+  },
+  {
+   "id": "e7", "source_id": "fs-idp53261968", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-ca",
+   "prompt": "Tungsten crystallizes in a body-centered cubic unit cell with an edge length of 3.165 Å.<br>(a) What is the atomic radius of tungsten in this structure?<br>(b) Calculate the density of tungsten.",
+   "answer": { "type": "multi", "generated_by": "source", "parts": [ { "part": "(a)", "value": 1.37, "unit": "Å" }, { "part": "(b)", "value": 19.26, "unit": "g/cm³" } ], "solution": "(a) 1.370 Å; (b) 19.26 g/cm" }
+  },
+  {
+   "id": "e8", "source_id": "fs-idp45151232", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-ca",
+   "prompt": "Barium crystallizes in a body-centered cubic unit cell with an edge length of 5.025 Å<br>(a) What is the atomic radius of barium in this structure?<br>(b) Calculate the density of barium.",
+   "answer": { "type": "multi", "generated_by": "source", "parts": [ { "part": "(a)", "value": 2.176, "unit": "Å" }, { "part": "(b)", "value": 3.595, "unit": "g/cm³" } ], "solution": "(a) 2.176 Å; (b) 3.595 g/cm<sup>3</sup>" }
+  },
+  {
+   "id": "e9", "source_id": "fs-idm95309216", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "cubic-cells",
+   "prompt": "The density of aluminum is 2.7 g/cm<sup>3</sup>; that of silicon is 2.3 g/cm<sup>3</sup>. Explain why Si has the lower density even though it has heavier atoms.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "The crystal structure of Si shows that it is less tightly packed (coordination number 4) in the solid than Al (coordination number 12)." }
+  },
+  {
+   "id": "e10", "source_id": "fs-idp171132368", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-zns",
+   "prompt": "Cadmium sulfide, sometimes used as a yellow pigment by artists, crystallizes with cadmium, occupying one-half of the tetrahedral holes in a closest packed array of sulfide ions. What is the formula of cadmium sulfide? Explain your answer.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "In a closest-packed array, two tetrahedral holes exist for each anion. If only half the tetrahedral holes are occupied, the numbers of anions and cations are equal. The formula for cadmium sulfide is CdS." }
+  },
+  {
+   "id": "e11", "source_id": "fs-idp51480864", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-zns",
+   "prompt": "A compound of cadmium, tin, and phosphorus is used in the fabrication of some semiconductors. It crystallizes with cadmium occupying one-fourth of the tetrahedral holes and tin occupying one-fourth of the tetrahedral holes in a closest packed array of phosphide ions. What is the formula of the compound? Explain your answer.",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: a closest-packed array has two tetrahedral holes for each anion. Multiply the fraction of the holes each cation occupies by two to find the number of that cation per phosphide ion, then write the ratio of cadmium to tin to phosphorus in the smallest whole numbers." }
+  },
+  {
+   "id": "e12", "source_id": "fs-idp161152672", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-al2o3",
+   "prompt": "What is the formula of the magnetic oxide of cobalt, used in recording tapes, that crystallizes with cobalt atoms occupying one-eighth of the tetrahedral holes and one-half of the octahedral holes in a closely packed array of oxide ions?",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Co<sub>3</sub>O<sub>4</sub>" }
+  },
+  {
+   "id": "e13", "source_id": "fs-idp78371824", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-al2o3",
+   "prompt": "A compound containing zinc, aluminum, and sulfur crystallizes with a closest-packed array of sulfide ions. Zinc ions are found in one-eighth of the tetrahedral holes and aluminum ions in one-half of the octahedral holes. What is the empirical formula of the compound?",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: for each sulfide ion there are two tetrahedral holes and one octahedral hole. Find the number of zinc ions per sulfide ion from the tetrahedral holes and the number of aluminum ions per sulfide ion from the octahedral holes, then scale the three numbers to the smallest whole-number ratio." }
+  },
+  {
+   "id": "e14", "source_id": "fs-idp122808832", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "cubic-holes",
+   "prompt": "A compound of thallium and iodine crystallizes in a simple cubic array of iodide ions with thallium ions in all of the cubic holes. What is the formula of this iodide? Explain your answer.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "In a simple cubic array, only one cubic hole can be occupied be a cation for each anion in the array. The ratio of thallium to iodide must be 1:1; therefore, the formula for thallium is TlI." }
+  },
+  {
+   "id": "e15", "source_id": "fs-idp80534576", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "octahedral",
+   "prompt": "Which of the following elements reacts with sulfur to form a solid in which the sulfur atoms form a closest-packed array with all of the octahedral holes occupied: Li, Na, Be, Ca, or Al?",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: with all of the octahedral holes occupied, there is one cation for each sulfide ion, so the formula must be a 1:1 ratio. Use the charge of each element’s ion and the 2− charge of the sulfide ion to decide which of the five would form a sulfide with one cation per anion." }
+  },
+  {
+   "id": "e16", "source_id": "fs-idp72582816", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-al2o3",
+   "prompt": "What is the percent by mass of titanium in rutile, a mineral that contains titanium and oxygen, if structure can be described as a closest packed array of oxide ions with titanium ions in one-half of the octahedral holes? What is the oxidation number of titanium?",
+   "answer": { "type": "multi", "generated_by": "source", "parts": [ { "part": "percent by mass of titanium", "value": 59.95, "unit": "%" }, { "part": "oxidation number of titanium", "value": 4 } ], "solution": "59.95%; The oxidation number of titanium is +4." }
+  },
+  {
+   "id": "e17", "source_id": "fs-idp81080000", "kind": "exercise", "bloom": "Evaluate", "place": { "at": "end" }, "cite": "ionic-cells",
+   "prompt": "Explain why the chemically similar alkali metal chlorides NaCl and CsCl have different structures, whereas the chemically different NaCl and MnS have the same structure.",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: the text names the two principal factors that decide an ionic structure, the relative sizes of the ions and the ratio of their numbers. Compare the radius of the cation with the radius of the anion in NaCl and in CsCl, and think about which hole each cation fits. Then ask what NaCl and MnS share in their ratio of ions and in the relative sizes of their ions, whatever their chemistry." }
+  },
+  {
+   "id": "e18", "source_id": "fs-idp80497568", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "ionic-crystals",
+   "prompt": "As minerals were formed from the molten magma, different ions occupied the same cites in the crystals. Lithium often occurs along with magnesium in minerals despite the difference in the charge on their ions. Suggest an explanation.",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Both ions are close in size: Mg, 0.65; Li, 0.60. This similarity allows the two to interchange rather easily. The difference in charge is generally compensated by the switch of Si<sup>4+</sup> for Al<sup>3+</sup>." }
+  },
+  {
+   "id": "e19", "source_id": "fs-idp68651232", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ionic-cells",
+   "prompt": "Rubidium iodide crystallizes with a cubic unit cell that contains iodide ions at the corners and a rubidium ion in the center. What is the formula of the compound?",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: count the share of each ion that lies inside the cell, one-eighth for an ion at a corner and all of an ion at the center, as the text does for cesium chloride. The ratio of the two counts gives the formula." }
+  },
+  {
+   "id": "e20", "source_id": "fs-idp62207184", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ionic-cells",
+   "prompt": "One of the various manganese oxides crystallizes with a cubic unit cell that contains manganese ions at the corners and in the center. Oxide ions are located at the center of each edge of the unit cell. What is the formula of the compound?",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Mn<sub>2</sub>O<sub>3</sub>" }
+  },
+  {
+   "id": "e21", "source_id": "fs-idp178999856", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-licl",
+   "prompt": "At temperatures above ~175 °C, thallium(I) iodide crystallizes with the same structure as CsCl. The edge length of the unit cell of TlI is 4.20 Å. Assuming contact between the body-centered Tl<sup>+</sup> ion and the cube-corner I<sup>−</sup> ions of a unit cell, calculate the ionic radius of TI<sup>+</sup>. (The ionic radius of I<sup>−</sup> is 2.16 Å.)",
+   "answer": { "type": "number", "generated_by": "source", "value": 1.48, "unit": "Å", "solution": "1.48 Å" }
+  },
+  {
+   "id": "e22", "source_id": "fs-idp68785344", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-bragg",
+   "prompt": "What is the spacing between crystal planes that diffract X-rays with a wavelength of 1.541 Å at an angle <em>θ</em> of 15.55° (first order diffraction)?",
+   "answer": { "type": "number", "generated_by": "source", "value": 2.874, "unit": "Å", "solution": "2.874 Å" }
+  },
+  {
+   "id": "e23", "source_id": "fs-idp184563440", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "ex-bragg",
+   "prompt": "A metal with spacing between planes equal to 0.4164 nm diffracts X-rays with a wavelength of 0.2879 nm. What is the diffraction angle for the first order diffraction peak?",
+   "answer": { "type": "number", "generated_by": "source", "value": 20.2, "unit": "°", "solution": "20.2°" }
+  },
+  {
+   "id": "e24", "source_id": "fs-idp20057536", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "xray",
+   "prompt": "When an electron in an excited molybdenum atom falls from the L to the K shell, an X-ray is emitted. These X-rays are diffracted at an angle of 7.75° by planes with a separation of 2.64 Å. What is the difference in energy between the K shell and the L shell in molybdenum assuming a first order diffraction?",
+   "answer": { "type": "number", "generated_by": "source", "value": 17400, "unit": "eV", "solution": "1.74 × 10<sup>4</sup> eV" }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "cyl1", "concept": "unit-cell-radius-and-density" },
+  { "exercise": "cyl1", "concept": "cubic-unit-cells" },
+  { "exercise": "cyl2", "concept": "unit-cell-radius-and-density" },
+  { "exercise": "cyl3", "concept": "formula-from-hole-occupancy" },
+  { "exercise": "cyl4", "concept": "formula-from-hole-occupancy" },
+  { "exercise": "cyl5", "concept": "ionic-unit-cells" },
+  { "exercise": "cyl5", "concept": "unit-cell-radius-and-density" },
+  { "exercise": "cyl6", "concept": "bragg-equation" },
+  { "exercise": "e1", "concept": "cubic-unit-cells" },
+  { "exercise": "e2", "concept": "cubic-unit-cells" },
+  { "exercise": "e3", "concept": "cubic-unit-cells" },
+  { "exercise": "e4", "concept": "closest-packing" },
+  { "exercise": "e4", "concept": "cubic-unit-cells" },
+  { "exercise": "e5", "concept": "closest-packing" },
+  { "exercise": "e6", "concept": "closest-packing" },
+  { "exercise": "e7", "concept": "unit-cell-radius-and-density" },
+  { "exercise": "e8", "concept": "unit-cell-radius-and-density" },
+  { "exercise": "e9", "concept": "cubic-unit-cells" },
+  { "exercise": "e9", "concept": "closest-packing" },
+  { "exercise": "e10", "concept": "formula-from-hole-occupancy" },
+  { "exercise": "e11", "concept": "formula-from-hole-occupancy" },
+  { "exercise": "e12", "concept": "formula-from-hole-occupancy" },
+  { "exercise": "e12", "concept": "holes-in-closest-packed-arrays" },
+  { "exercise": "e13", "concept": "formula-from-hole-occupancy" },
+  { "exercise": "e14", "concept": "formula-from-hole-occupancy" },
+  { "exercise": "e14", "concept": "holes-in-closest-packed-arrays" },
+  { "exercise": "e15", "concept": "formula-from-hole-occupancy" },
+  { "exercise": "e15", "concept": "ionic-compound-formula" },
+  { "exercise": "e16", "concept": "formula-from-hole-occupancy" },
+  { "exercise": "e16", "concept": "percent-composition-from-formula" },
+  { "exercise": "e16", "concept": "oxidation-numbers" },
+  { "exercise": "e17", "concept": "holes-in-closest-packed-arrays" },
+  { "exercise": "e17", "concept": "ionic-unit-cells" },
+  { "exercise": "e18", "concept": "holes-in-closest-packed-arrays" },
+  { "exercise": "e18", "concept": "ionic-radius-trend" },
+  { "exercise": "e19", "concept": "ionic-unit-cells" },
+  { "exercise": "e20", "concept": "ionic-unit-cells" },
+  { "exercise": "e21", "concept": "ionic-unit-cells" },
+  { "exercise": "e21", "concept": "unit-cell-radius-and-density" },
+  { "exercise": "e22", "concept": "bragg-equation" },
+  { "exercise": "e23", "concept": "bragg-equation" },
+  { "exercise": "e24", "concept": "bragg-equation" },
+  { "exercise": "e24", "concept": "photon-energy" }
+ ]
+}

@@ -1,0 +1,391 @@
+{
+ "id": "10.4",
+ "module": "m68769",
+ "chapter": "10",
+ "title": "Phase Diagrams",
+ "short": "Phase Diagrams",
+ "lead": "The melting points, boiling points and vapor pressures of a substance measured over a wide range of pressures can be gathered into one graph. This section shows how a phase diagram maps the solid, liquid and gaseous states of a substance on a plane of pressure and temperature, how its curves give the phase-transition temperatures at any pressure, what happens at the triple point where all three curves meet, and why no liquid exists above the critical point, where a substance becomes a supercritical fluid.",
+ "objectives": [
+  "Explain the construction and use of a typical phase diagram",
+  "Use phase diagrams to identify stable phases at given temperatures and pressures, and to describe phase transitions resulting from changes in these properties",
+  "Describe the supercritical fluid phase of matter"
+ ],
+ "summary_html": "<p>The temperature and pressure conditions at which a substance exists in solid, liquid, and gaseous states are summarized in a phase diagram for that substance. Phase diagrams are combined plots of pressure-temperature equilibrium curves representing the relationships between phase transition temperatures and pressures. The point of intersection of any three curves in a phase diagram represents a substance’s triple point—the temperature and pressure at which three different phases are in equilibrium. At pressures below a solid-liquid-gas triple point, a substance cannot exist in the liquid state, regardless of its temperature. The terminus of the liquid-gas curve represents the substance’s critical point, the pressure and temperature above which a liquid phase cannot exist.</p>",
+ "notes": "The Link to Learning video of carbon dioxide passing into a supercritical fluid is left out. Figures 10.30, 10.31 and 10.34 are one live phase diagram drawn to scale from measured vapor pressures, so the temperatures it gives for the paths of the first two Check Your Learning items differ from the book’s answers, which are printed as the book has them. The critical-point table is printed with its cells in °C and kPa, although the book’s description of it gives K and atm, and the answer images of the carbon exercise label its regions “Water” as the book prints them.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercises fs-idm134300544 (exercise 56, the highest temperature in a pressure cooker) and fs-idm180256816 (exercise 60, the lowest pressure at which solid carbon dioxide melts) are left out, and no answer is computed for them. The three unkeyed conceptual exercises (54, 58 and 62) are kept with a suggested approach marked as OmniStax’s own.",
+ "figures": [
+  {
+   "id": "sim-phase",
+   "kind": "sim",
+   "number": "10.30",
+   "folds": [
+    "10.31",
+    "10.34"
+   ],
+   "originals": [
+    "/media/ch10/CNX_Chem_10_04_PhaseDi.jpg",
+    "/media/ch10/CNX_Chem_10_04_H2OPhasDi2.jpg",
+    "/media/ch10/CNX_Chem_10_04_CO2PhasDi.jpg"
+   ],
+   "original_caption": "(Figure 10.30) The physical state of a substance and its phase-transition temperatures are represented graphically in a phase diagram. (Figure 10.31) The pressure and temperature axes on this phase diagram of water are not drawn to constant scale in order to illustrate several important properties. (Figure 10.34) A phase diagram for carbon dioxide is shown. The pressure axis is plotted on a logarithmic scale to accommodate the large range of values.",
+   "draws": []
+  },
+  {
+   "id": "fig-freezedry",
+   "kind": "photo",
+   "number": "10.32",
+   "draws": []
+  },
+  {
+   "id": "fig-icemelt",
+   "kind": "photo",
+   "number": "10.33",
+   "draws": []
+  },
+  {
+   "id": "fig-critfluid",
+   "kind": "photo",
+   "number": "10.35",
+   "draws": []
+  },
+  {
+   "id": "fig-supcritcof",
+   "kind": "photo",
+   "number": "10.36",
+   "draws": []
+  }
+ ],
+ "coverage": [
+  {
+   "span": "phase-diagram",
+   "concept": "phase-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "phase-diagram",
+   "concept": "vapor-pressure-and-temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "phase-diagram",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "water-diagram",
+   "concept": "read-phase-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "water-diagram",
+   "concept": "solid-liquid-curve-slope",
+   "verb": "introduces"
+  },
+  {
+   "span": "water-diagram",
+   "concept": "phase-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "triple-point",
+   "concept": "triple-point",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-water-state",
+   "concept": "read-phase-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon-dioxide",
+   "concept": "solid-liquid-curve-slope",
+   "verb": "reinforces"
+  },
+  {
+   "span": "carbon-dioxide",
+   "concept": "read-phase-diagram",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-co2-state",
+   "concept": "read-phase-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "supercritical",
+   "concept": "critical-point-and-supercritical-fluid",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-critical-co2",
+   "concept": "critical-point-and-supercritical-fluid",
+   "verb": "uses"
+  },
+  {
+   "span": "decaf",
+   "concept": "critical-point-and-supercritical-fluid",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm211145632",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-water-state"
+   },
+   "cite": "ex-water-state",
+   "prompt": "What phase changes can water undergo as the temperature changes if the pressure is held at 0.3 kPa? If the pressure is held at 50 kPa?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "At 0.3 kPa: s ⟶ g at −58 °C. At 50 kPa: s ⟶ l at 0 °C, l ⟶ g at 78 °C"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm81431296",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-co2-state"
+   },
+   "cite": "ex-co2-state",
+   "prompt": "Identify the phase changes that carbon dioxide will undergo as its temperature is increased from −100 °C while holding its pressure constant at 1500 kPa. At 50 kPa. At what approximate temperatures do these phase changes occur?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "at 1500 kPa: s ⟶ l at −55 °C, l ⟶ g at −10 °C; at 50 kPa: s ⟶ g at −60 °C"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm51838704",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-critical-co2"
+   },
+   "cite": "ex-critical-co2",
+   "prompt": "Ammonia can be liquefied by compression at room temperature; oxygen cannot be liquefied under these conditions. Why do the two gases exhibit different behavior?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The critical temperature of ammonia is 405.5 K, which is higher than room temperature. The critical temperature of oxygen is below room temperature; thus oxygen cannot be liquefied at room temperature."
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm158754672",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "water-diagram",
+   "prompt": "From the phase diagram for water (Figure 10.31), determine the state of water at:<br>(a) 35 °C and 85 kPa<br>(b) −15 °C and 40 kPa<br>(c) −15 °C and 0.1 kPa<br>(d) 75 °C and 3 kPa<br>(e) 40 °C and 0.1 kPa<br>(f) 60 °C and 50 kPa",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: for each pair, find the temperature on the horizontal axis and the pressure on the vertical axis, and read which region of the diagram the point falls in. Compare the pressure with the vapor pressure of the liquid or of ice at that temperature: above the liquid-gas curve and to the right of the solid-liquid curve the water is a liquid, below the liquid-gas or solid-gas curve it is a gas, and to the left of the solid-liquid curve and above the solid-gas curve it is a solid. Remember that below the triple-point pressure of 0.6 kPa there is no liquid region at all."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm163161056",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "triple-point",
+   "prompt": "What phase changes will take place when water is subjected to varying pressure at a constant temperature of 0.005 °C? At 40 °C? At −40 °C?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "At low pressures and 0.005 °C, the water is a gas. As the pressure increases to 4.6 torr, the water becomes a solid; as the pressure increases still more, it becomes a liquid. At 40 °C, water at low pressure is a vapor; at pressures higher than about 75 torr, it converts into a liquid. At −40 °C, water goes from a gas to a solid as the pressure increases above very low values."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm79316176",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "carbon-dioxide",
+   "prompt": "From the phase diagram for carbon dioxide in Figure 10.34, determine the state of CO<sub>2</sub> at:<br>(a) 20 °C and 1000 kPa<br>(b) 10 °C and 2000 kPa<br>(c) 10 °C and 100 kPa<br>(d) −40 °C and 500 kPa<br>(e) −80 °C and 1500 kPa<br>(f) −80 °C and 10 kPa",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) gas; (b) gas; (c) gas; (d) gas; (e) solid; (f) gas"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm31738208",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "carbon-dioxide",
+   "prompt": "Determine the phase changes that carbon dioxide undergoes as pressure is increased at a constant temperature of (a) −50 °C and (b) 50 °C. If the temperature is held at −40 °C? At 20 °C? (See the phase diagram in Figure 10.34.)",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: at each temperature, follow a vertical line upward on the carbon dioxide diagram from the lowest pressure and note every curve it crosses, in order. Crossing the solid-gas curve is deposition, crossing the liquid-gas curve is condensation, and crossing the solid-liquid curve is freezing. Decide first whether the temperature lies below the triple-point temperature of about −57 °C, between the triple point and the critical temperature of 31 °C, or above the critical temperature, where no amount of pressure produces a liquid."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm184592816",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "carbon-dioxide",
+   "prompt": "Consider a cylinder containing a mixture of liquid carbon dioxide in equilibrium with gaseous carbon dioxide at an initial pressure of 65 atm and a temperature of 20 °C. Sketch a plot depicting the change in the cylinder pressure with time as gaseous carbon dioxide is released at constant temperature.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<br><img src=\"/media/ch10/CNX_Chem_10_04_Ex06answer_img.jpg\" alt=\"A plot of pressure P against the amount released, from full to empty. A horizontal line at 65 atm runs about two-thirds of the way across and then slopes downward in a straight line to the empty end.\"><br>"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp24718944",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "water-diagram",
+   "prompt": "If a severe storm results in the loss of electricity, it may be necessary to use a clothesline to dry laundry. In many parts of the country in the dead of winter, the clothes will quickly freeze when they are hung on the line. If it does not snow, will they dry anyway? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Yes, ice will sublime, although it may take it several days. Ice has a small vapor pressure, and some ice molecules form gas and escape from the ice crystals. As time passes, more and more solid converts to gas until eventually the clothes are dry."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm97492688",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "supercritical",
+   "prompt": "Is it possible to liquefy nitrogen at room temperature (about 25 °C)? Is it possible to liquefy sulfur dioxide at room temperature? Explain your answers.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: a gas can be liquefied by pressure only below its critical temperature. Look up the critical temperatures of nitrogen and sulfur dioxide in the table of critical temperatures and pressures in this section, and compare each with 25 °C."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm135170880",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "triple-point",
+   "prompt": "Elemental carbon has one gas phase, one liquid phase, and two different solid phases, as shown in the phase diagram:<br><img src=\"/media/ch10/CNX_Chem_10_04_CPhaseDi_img.jpg\" alt=\"A phase diagram of carbon with temperature in K on the x-axis, marked every 2000 K from 0, and pressure in Pa on a logarithmic y-axis marked at 10 to the 7, 10 to the 9 and 10 to the 11. A slightly negatively sloped line crosses the x-axis near 3800 K; from it a line curves up and then down to the left to meet the y-axis near 10 to the 9, and another line runs up and to the right.\"><br>(a) On the phase diagram, label the gas and liquid regions.<br>(b) Graphite is the most stable phase of carbon at normal conditions. On the phase diagram, label the graphite phase.<br>(c) If graphite at normal conditions is heated to 2500 K while the pressure is increased to 10<sup>10</sup> Pa, it is converted into diamond. Label the diamond phase.<br>(d) Circle each triple point on the phase diagram.<br>(e) In what phase does carbon exist at 5000 K and 10<sup>8</sup> Pa?<br>(f) If the temperature of a sample of carbon increases from 3000 K to 5000 K at a constant pressure of 10<sup>6</sup> Pa, which phase transition occurs, if any?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10a_img.jpg\" alt=\"The carbon phase diagram with the two regions to the right labeled Water (liquid) and Water vapor (gas).\"><br>(b)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10b_img.jpg\" alt=\"The carbon phase diagram with the region to the left labeled Graphite.\"><br>(c)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10c_img.jpg\" alt=\"The carbon phase diagram with the top region labeled Diamond.\"><br>(d)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10d_img.jpg\" alt=\"The carbon phase diagram with its four regions labeled Diamond, Graphite, Water (liquid) and Water vapor (gas), and a red circle where the liquid, gas and graphite lines meet.\"><br>(e) liquid phase (f) sublimation"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "read-phase-diagram"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "triple-point"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "read-phase-diagram"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "critical-point-and-supercritical-fluid"
+  },
+  {
+   "exercise": "e1",
+   "concept": "read-phase-diagram"
+  },
+  {
+   "exercise": "e2",
+   "concept": "read-phase-diagram"
+  },
+  {
+   "exercise": "e2",
+   "concept": "triple-point"
+  },
+  {
+   "exercise": "e3",
+   "concept": "read-phase-diagram"
+  },
+  {
+   "exercise": "e4",
+   "concept": "read-phase-diagram"
+  },
+  {
+   "exercise": "e4",
+   "concept": "critical-point-and-supercritical-fluid"
+  },
+  {
+   "exercise": "e5",
+   "concept": "phase-diagram"
+  },
+  {
+   "exercise": "e5",
+   "concept": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "exercise": "e6",
+   "concept": "read-phase-diagram"
+  },
+  {
+   "exercise": "e6",
+   "concept": "triple-point"
+  },
+  {
+   "exercise": "e7",
+   "concept": "critical-point-and-supercritical-fluid"
+  },
+  {
+   "exercise": "e8",
+   "concept": "phase-diagram"
+  },
+  {
+   "exercise": "e8",
+   "concept": "triple-point"
+  },
+  {
+   "exercise": "e8",
+   "concept": "read-phase-diagram"
+  }
+ ]
+}

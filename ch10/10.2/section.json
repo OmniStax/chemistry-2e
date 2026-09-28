@@ -1,0 +1,189 @@
+{
+ "id": "10.2",
+ "module": "m68764",
+ "chapter": "10",
+ "title": "Properties of Liquids",
+ "short": "Properties of Liquids",
+ "lead": "The attractions between the molecules of a liquid show themselves in how the liquid behaves. This section explains viscosity, a liquid’s resistance to flow, and surface tension, the tough skin of its surface, by the cohesive forces between like molecules, and then sets them against the adhesive forces between a liquid and a surface it touches, which decide whether the liquid wets the surface, which way its meniscus curves, and how high it climbs in a narrow tube.",
+ "objectives": [
+  "Distinguish between adhesive and cohesive forces",
+  "Define viscosity, surface tension, and capillary rise",
+  "Describe the roles of intermolecular attractive forces in each of these properties/phenomena"
+ ],
+ "summary_html": "<p>The intermolecular forces between molecules in the liquid state vary depending upon their chemical identities and result in corresponding variations in various physical properties. Cohesive forces between like molecules are responsible for a liquid’s viscosity (resistance to flow) and surface tension (elasticity of a liquid surface). Adhesive forces between the molecules of a liquid and different molecules composing a surface in contact with the liquid are responsible for phenomena such as surface wetting and capillary rise.</p>",
+ "notes": "The module prints no headers of its own; the page divides it into five blocks by idea. Figures 10.16, 10.17 and 10.19 are each a photograph and a drawing in one image and are kept as the book’s images; Figure 10.20 is redrawn as a live figure. The surface tension, density and contact angle of mercury and the densities of ethanol and ethylene glycol that the live figure uses are handbook values the book does not print.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The unkeyed numerical exercise fs-idp26872272 (exercise 28 of the chapter, water in a tube 0.63 mm across) is left out, and no answer is computed for it. The three unkeyed conceptual exercises (22, 24 and 26) are kept with a suggested approach marked as OmniStax’s own. Numeric answers accept 2% tolerance.",
+ "figures": [
+  { "id": "fig-viscosity", "kind": "photo", "number": "10.15", "draws": [] },
+  { "id": "fig-droplet", "kind": "photo", "number": "10.16", "draws": [] },
+  { "id": "fig-strider", "kind": "photo", "number": "10.17", "draws": [] },
+  { "id": "fig-meniscus", "kind": "photo", "number": "10.18", "draws": [] },
+  { "id": "fig-wicking", "kind": "photo", "number": "10.19", "draws": [] },
+  {
+   "id": "sim-caprise",
+   "kind": "sim",
+   "number": "10.20",
+   "originals": ["/media/ch10/CNX_Chem_10_02_CapRise.jpg"],
+   "original_caption": "Depending upon the relative strengths of adhesive and cohesive forces, a liquid may rise (such as water) or fall (such as mercury) in a glass capillary tube. The extent of the rise (or fall) is directly proportional to the surface tension of the liquid and inversely proportional to the density of the liquid and the radius of the tube.",
+   "draws": []
+  },
+  { "id": "fig-blooddraw", "kind": "photo", "number": "10.21", "draws": [] }
+ ],
+ "coverage": [
+  { "span": "viscosity", "concept": "viscosity", "verb": "introduces" },
+  { "span": "viscosity", "concept": "phase-from-imf-and-kinetic-energy", "verb": "uses" },
+  { "span": "viscosity", "concept": "rank-by-intermolecular-forces", "verb": "uses" },
+  { "span": "surface-tension", "concept": "cohesive-and-adhesive-forces", "verb": "introduces" },
+  { "span": "surface-tension", "concept": "surface-tension", "verb": "introduces" },
+  { "span": "surface-tension", "concept": "hydrogen-bonding", "verb": "uses" },
+  { "span": "adhesion", "concept": "cohesive-and-adhesive-forces", "verb": "reinforces" },
+  { "span": "capillary", "concept": "capillary-action", "verb": "introduces" },
+  { "span": "capillary", "concept": "cohesive-and-adhesive-forces", "verb": "uses" },
+  { "span": "capillary", "concept": "hydrogen-bonding", "verb": "uses" },
+  { "span": "capillary-rise", "concept": "capillary-rise-equation", "verb": "introduces" },
+  { "span": "capillary-rise", "concept": "capillary-action", "verb": "uses" },
+  { "span": "capillary-rise", "concept": "surface-tension", "verb": "uses" },
+  { "span": "ex-capillary-rise", "concept": "capillary-rise-equation", "verb": "uses" }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp7578512",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-capillary-rise" },
+   "cite": "capillary-rise",
+   "prompt": "Water rises in a glass capillary tube to a height of 8.4 cm. What is the diameter of the capillary tube?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.36,
+    "unit": "mm",
+    "hint": "Solve the capillary rise equation for the radius, using the values for water from Example 10.4, and double it.",
+    "solution": "diameter = 0.36 mm"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm178529488",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "viscosity",
+   "prompt": "The test tubes shown here contain equal amounts of the specified motor oils. Identical metal spheres were dropped at the same time into each of the tubes, and a brief moment later, the spheres had fallen to the heights indicated in the illustration.<br><img src=\"/media/ch10/CNX_Chem_10_02_Testtubeoi_img.jpg\" alt=\"Four graduated cylinders labeled with oil viscosity (SAE) 20, 30, 40 and 50. The metal ball is in the lower fifth of the SAE 20 cylinder, about three-fourths of the way down the SAE 30 cylinder, halfway down the SAE 40 cylinder, and near the top of the liquid in the SAE 50 cylinder.\"><br>Rank the motor oils in order of increasing viscosity, and explain your reasoning:",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: the section measures viscosity by the rate at which a metal ball falls through a liquid, and the ball falls more slowly through a more viscous liquid. The spheres were dropped together, so the distance each has fallen in the same moment compares the rates. Order the oils from the sphere that has fallen farthest to the one that has fallen least, and connect the order to the resistance each oil offers to flow."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm82765632",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "surface-tension",
+   "prompt": "Although steel is denser than water, a steel needle or paper clip placed carefully lengthwise on the surface of still water can be made to float. Explain at a molecular level how this is possible.<br><img src=\"/media/ch10/CNX_Chem_10_02_Needlefloa_img.jpg\" alt=\"A photo shows a close-up, above-view, of a needle lying on the surface of a sample of water.\"><br>(credit: Cory Zanker)",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The water molecules have strong intermolecular forces of hydrogen bonding. The water molecules are thus attracted strongly to one another and exhibit a relatively large surface tension, forming a type of “skin” at its surface. This skin can support a bug or paper clip if gently placed on the water."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm187023264",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "surface-tension",
+   "prompt": "The surface tension and viscosity values for diethyl ether, acetone, ethanol, and ethylene glycol are shown here.<br><img src=\"/media/ch10/CNX_Chem_10_02_Question4_img.jpg\" alt=\"A table of four compounds with ball-and-stick models: diethyl ether, surface tension 17 mN/m, viscosity 0.22 mPa·s; acetone, 23 mN/m, 0.31 mPa·s; ethanol, 22 mN/m, 1.07 mPa·s; ethylene glycol, 48 mN/m, 16.1 mPa·s.\"><br>(a) Explain their differences in viscosity in terms of the size and shape of their molecules and their IMFs.<br>(b) Explain their differences in surface tension in terms of the size and shape of their molecules and their IMFs:",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: first decide which IMFs each liquid has. Diethyl ether and acetone have no O–H bond, so they cannot form hydrogen bonds with one another; ethanol has one −OH group per molecule and ethylene glycol two. (a) Viscosity grows with the strength of the IMFs and with how much the molecules tangle as they move past each other, so compare the number of hydrogen-bonding groups and the size of each molecule. (b) Surface tension comes from the cohesive forces at the surface, so compare the same attractions; note where the values of acetone and ethanol sit close together and weigh acetone’s dipole-dipole attractions against ethanol’s single hydrogen bond."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm183311984",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "viscosity",
+   "prompt": "You may have heard someone use the figure of speech “slower than molasses in winter” to describe a process that occurs slowly. Explain why this is an apt idiom, using concepts of molecular size and shape, molecular interactions, and the effect of changing temperature.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Temperature has an effect on intermolecular forces: The higher the temperature, the greater the kinetic energies of the molecules and the greater the extent to which their intermolecular forces are overcome, and so the more fluid (less viscous) the liquid. The lower the temperature, the less the intermolecular forces are overcome, and so the less viscous the liquid."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm91274448",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "viscosity",
+   "prompt": "It is often recommended that you let your car engine run idle to warm up before driving, especially on cold winter days. While the benefit of prolonged idling is dubious, it is certainly true that a warm engine is more fuel efficient than a cold one. Explain the reason for this.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: think about the motor oil that lubricates the engine’s moving parts. The section says that as the temperature of a liquid increases, its molecules move more rapidly and are better able to overcome the forces that hold them together. Ask how the viscosity of the oil differs between a cold engine and a warm one, and what that means for the work the engine must do to move its parts through the oil."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm92213792",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "surface-tension",
+   "prompt": "The surface tension and viscosity of water at several different temperatures are given in this table.<br><table><thead><tr><th>Water</th><th>Surface Tension (mN/m)</th><th>Viscosity (mPa s)</th></tr></thead><tbody><tr><td>0 °C</td><td>75.6</td><td>1.79</td></tr><tr><td>20 °C</td><td>72.8</td><td>1.00</td></tr><tr><td>60 °C</td><td>66.2</td><td>0.47</td></tr><tr><td>100 °C</td><td>58.9</td><td>0.28</td></tr></tbody></table>(a) As temperature increases, what happens to the surface tension of water? Explain why this occurs, in terms of molecular interactions and the effect of changing temperature.<br>(b) As temperature increases, what happens to the viscosity of water? Explain why this occurs, in terms of molecular interactions and the effect of changing temperature.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) As the water reaches higher temperatures, the increased kinetic energies of its molecules are more effective in overcoming hydrogen bonding, and so its surface tension decreases. Surface tension and intermolecular forces are directly related. (b) The same trend in viscosity is seen as in surface tension, and for the same reason."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm169275296",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "capillary-rise",
+   "prompt": "Water rises in a glass capillary tube to a height of 17 cm. What is the diameter of the capillary tube?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.7e-4,
+    "unit": "m",
+    "hint": "Solve the capillary rise equation for the radius with the values for water from Example 10.4, then double the radius.",
+    "solution": "1.7 $\\times$ 10<sup>−4</sup> m"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "cyl1", "concept": "capillary-rise-equation" },
+  { "exercise": "e1", "concept": "viscosity" },
+  { "exercise": "e2", "concept": "surface-tension" },
+  { "exercise": "e2", "concept": "hydrogen-bonding", "weight": 2, "weights_by": "ai" },
+  { "exercise": "e3", "concept": "viscosity" },
+  { "exercise": "e3", "concept": "surface-tension" },
+  { "exercise": "e3", "concept": "rank-by-intermolecular-forces", "weight": 2, "weights_by": "ai" },
+  { "exercise": "e4", "concept": "viscosity" },
+  { "exercise": "e4", "concept": "phase-from-imf-and-kinetic-energy", "weight": 2, "weights_by": "ai" },
+  { "exercise": "e5", "concept": "viscosity" },
+  { "exercise": "e6", "concept": "surface-tension" },
+  { "exercise": "e6", "concept": "viscosity" },
+  { "exercise": "e7", "concept": "capillary-rise-equation" }
+ ]
+}

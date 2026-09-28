@@ -49,148 +49,171 @@
    "sym": "h_cap",
    "meaning": "the height of the liquid inside a capillary tube relative to the surface of the liquid outside the tube",
    "unit": "m",
-   "section": "10.2"
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
   },
   {
    "sym": "T_surf",
    "meaning": "the surface tension of the liquid",
    "unit": "N/m (mN/m in the book's tables)",
-   "section": "10.2"
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
   },
   {
    "sym": "θ_contact",
    "meaning": "the contact angle between the liquid and the tube",
    "unit": "°",
-   "section": "10.2"
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
   },
   {
    "sym": "r_tube",
    "meaning": "the radius of the capillary tube",
    "unit": "m",
-   "section": "10.2"
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
   },
   {
    "sym": "ρ",
    "meaning": "the density of the liquid",
    "unit": "kg/m³",
-   "section": "10.2"
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
   },
   {
    "sym": "g_grav",
    "meaning": "the acceleration due to gravity, 9.8 m/s²",
    "unit": "m/s²",
-   "section": "10.2"
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
   },
   {
    "sym": "P",
    "type": "pressure",
    "meaning": "the vapor pressure of the liquid",
    "unit": "kPa",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-clausius"
   },
   {
    "sym": "T",
    "type": "temperature",
    "meaning": "the temperature, in kelvin",
    "unit": "K",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-clausius"
   },
   {
    "sym": "ΔH_vap",
    "type": "energy",
    "meaning": "the enthalpy of vaporization of the liquid",
    "unit": "kJ/mol",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-clausius"
   },
   {
    "sym": "ΔH_fus",
    "type": "energy",
    "meaning": "the enthalpy of fusion of the solid",
    "unit": "kJ/mol",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-sublimation"
   },
   {
    "sym": "ΔH_sub",
    "type": "energy",
    "meaning": "the enthalpy of sublimation of the solid",
    "unit": "kJ/mol",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-sublimation"
   },
   {
    "sym": "R",
    "meaning": "the gas constant, 8.3145 J/mol·K",
    "unit": "J/mol·K",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-clausius"
   },
   {
    "sym": "A_cc",
    "meaning": "a constant whose value depends on the chemical identity of the substance",
    "unit": "kPa",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-clausius"
   },
   {
    "sym": "P_1",
    "type": "pressure",
    "meaning": "the vapor pressure at the temperature T₁",
    "unit": "kPa",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-clausius"
   },
   {
    "sym": "P_2",
    "type": "pressure",
    "meaning": "the vapor pressure at the temperature T₂",
    "unit": "kPa",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-clausius"
   },
   {
    "sym": "T_1",
    "type": "temperature",
    "meaning": "the first temperature",
    "unit": "K",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-clausius"
   },
   {
    "sym": "T_2",
    "type": "temperature",
    "meaning": "the second temperature",
    "unit": "K",
-   "section": "10.3"
+   "section": "10.3",
+   "anchor": "10.3-clausius"
   },
   {
    "sym": "a_cell",
    "meaning": "the edge length of a cubic unit cell",
    "unit": "pm",
-   "section": "10.6"
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
   },
   {
    "sym": "r_atom",
    "meaning": "the radius of an atom or ion in the unit cell",
    "unit": "pm",
-   "section": "10.6"
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
   },
   {
    "sym": "n_order",
    "meaning": "the order of the diffraction, a whole number",
-   "section": "10.6"
+   "section": "10.6",
+   "anchor": "10.6-xray"
   },
   {
    "sym": "λ",
    "type": "wavelength",
    "meaning": "the wavelength of the X-rays",
    "unit": "nm",
-   "section": "10.6"
+   "section": "10.6",
+   "anchor": "10.6-xray"
   },
   {
    "sym": "d_plane",
    "meaning": "the distance between adjacent crystal planes",
    "unit": "nm",
-   "section": "10.6"
+   "section": "10.6",
+   "anchor": "10.6-xray"
   },
   {
    "sym": "θ_bragg",
    "meaning": "the angle of the diffracted beam",
    "unit": "°",
-   "section": "10.6"
+   "section": "10.6",
+   "anchor": "10.6-xray"
   }
  ],
  "equations": [
@@ -200,7 +223,8 @@
    "section": "10.2",
    "latex": "h=\\frac{2T\\cos\\theta}{r\\rho g}",
    "condition": "a liquid in a capillary tube of radius r",
-   "important": true
+   "important": true,
+   "anchor": "10.2-capillary-rise"
   },
   {
    "id": "eq-clausius-clapeyron",
@@ -209,7 +233,8 @@
    "latex": "P=Ae^{-\\Delta H_{\\text{vap}}/RT}",
    "ktex": "\\kP=Ae^{-\\kdHvap/R\\kT}",
    "condition": "the vapor pressure of a liquid, with T in kelvin",
-   "important": true
+   "important": true,
+   "anchor": "10.3-clausius"
   },
   {
    "id": "eq-clausius-clapeyron-log",
@@ -218,7 +243,8 @@
    "latex": "\\ln P=-\\frac{\\Delta H_{\\text{vap}}}{RT}+\\ln A",
    "ktex": "\\ln \\kP=-\\frac{\\kdHvap}{R\\kT}+\\ln A",
    "condition": "the logarithmic, linear form",
-   "important": true
+   "important": true,
+   "anchor": "10.3-clausius"
   },
   {
    "id": "eq-clausius-clapeyron-two-point",
@@ -227,7 +253,8 @@
    "latex": "\\ln\\left(\\frac{P_2}{P_1}\\right)=\\frac{\\Delta H_{\\text{vap}}}{R}\\left(\\frac{1}{T_1}-\\frac{1}{T_2}\\right)",
    "ktex": "\\ln\\left(\\frac{\\kPtwo}{\\kPone}\\right)=\\frac{\\kdHvap}{R}\\left(\\frac{1}{\\kTone}-\\frac{1}{\\kTtwo}\\right)",
    "condition": "two vapor pressure-temperature pairs of one liquid",
-   "important": true
+   "important": true,
+   "anchor": "10.3-clausius"
   },
   {
    "id": "eq-sublimation-sum",
@@ -236,7 +263,8 @@
    "latex": "\\Delta H_{\\text{sub}}=\\Delta H_{\\text{fus}}+\\Delta H_{\\text{vap}}",
    "ktex": "\\kdHsub=\\kdHfus+\\kdHvap",
    "condition": "sublimation modeled as melting followed by vaporization (Hess's law)",
-   "important": false
+   "important": false,
+   "anchor": "10.3-sublimation"
   },
   {
    "id": "eq-bragg",
@@ -245,7 +273,8 @@
    "latex": "n\\lambda=2d\\sin\\theta",
    "ktex": "n\\klam=2d\\sin\\theta",
    "condition": "constructive interference of X-rays scattered by planes a distance d apart",
-   "important": true
+   "important": true,
+   "anchor": "10.6-xray"
   }
  ],
  "glossary": [

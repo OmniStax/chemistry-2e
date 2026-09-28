@@ -25,3 +25,7 @@ Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what 
 ## What stays in ink
 
 Lengths and radii, density, surface tension, viscosity, the contact angle and the Bragg angle, the order n, the coordination number, counts of atoms per cell, the percent of space filled, K and ratios, every axis rule and label that is not one of the bound types, and the region names on phase diagrams. No `\k` macro appears except for the bound types: `\kP`, `\kT`, `\kPone`, `\kPtwo`, `\kTone`, `\kTtwo`, `\kdHvap`, `\kdHfus`, `\kdHsub`, `\kq`, `\km`, `\kn`, `\kdT`, `\klam`, `\kt`.
+
+## As built
+
+10.1 binds temperature alone; 10.2 nothing; 10.3 pressure, temperature, energy, mass and amount (`\kP`, `\kT`, the two-point forms, `\kdHvap`, `\kdHfus`, `\kdHsub`, `\kq`, `\km`, `\kdT`); 10.4 pressure and temperature; 10.5 temperature on its melting-point readout; 10.6 wavelength, mass and volume (`\klam`, `\km`, `\kV`). Layers A, B, C and the dipole ends take the categorical pair and triple as planned.

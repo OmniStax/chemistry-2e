@@ -1011,3 +1011,47 @@ Checks: `ost check` and the content check clean for the book, `npm test`
 (664 passing), `astro check` with no errors, a build, and every page of the
 chapter in light and dark with no console errors, no KaTeX errors, no missing
 images, every figure drawn and every exercise card rendered.
+
+
+## Pass 13 (2026-09-28): Chapter 10, Liquids and Solids, is built and passed
+
+Built: the introduction and six sections, 10.1 to 10.6, in the publisher's
+numbering, Figures 10.1 to 10.66 all shown and linked. Twenty-three live
+figures, eleven of them folds: the hydride boiling points of 10.11 and 10.12;
+one phase diagram drawn to scale for 10.30, 10.31 and 10.34 with a substance
+choice and a state point; crystalline against amorphous (10.37 and 10.38);
+the four kinds of solid (10.39 to 10.42); the cubic cells (10.46 to 10.49 and
+10.50 to 10.52); the two stackings (10.53 and 10.54); the fourteen lattices
+(10.55 and 10.56); the holes (10.57 and 10.58); the four ionic structures
+(10.59 to 10.62); and the Bragg planes (10.63 and 10.64). Unit cells and
+solids are physical 3D with bounded orbit; the intermolecular-force drawings
+carry the 2D/3D view choice. The DNA images, the three unnumbered example
+images of 10.6 and the photographs stay as the book's. One hundred ten
+exercises, nineteen of them Check Your Learning items placed inline after
+their examples, each with its host. Nothing moved between sections. Thirteen
+unkeyed numerical items are left out and named in `exercise_notes`; four
+unkeyed choice items are kept open with their options; the unkeyed conceptual
+items are kept with a suggested approach.
+
+What the chapter pass changed. Every equation and variable row of the
+chapter anchored: six equations and twenty-three variables, the capillary
+rise equation at 10.2, the three Clausius-Clapeyron forms and the sublimation
+sum at 10.3, the Bragg equation at 10.6, and the edge length and atomic
+radius at Example 10.14. A Sim header of 10.6 that spoke of "the book" was
+rewritten. `config.md` names the three unnumbered images of 10.6 and records
+what the build changed; `COLOR.md` records the bindings as built. Every
+`F.vbracket` call was read and takes its side as a number.
+
+Errata carried as printed and named in `exploration.md`: Example 10.3's
+78.4 and 78.5 °C, "ICI" for ICl, "41.4 kJ/mol**", the critical-point
+table's K and atm description against its °C and kPa cells, the carbon
+answer images labelled "Water", the tungsten "19.26 g/cm", "What it the
+formula", "the formula for thallium is TlI", "the same cites", and 10.4's
+first two Check Your Learning answers, which the to-scale diagram does not
+reproduce.
+
+Checks: `ost check` clean for the chapter (one error in 11.3, not this
+chapter's), `npm test` (665 passing), `astro check` with no errors, a build,
+and every page of the chapter in light and dark with no console errors, no
+KaTeX errors, every lazy image of 10.1 and 10.6 loaded once scrolled, every
+figure drawn and every exercise card rendered.

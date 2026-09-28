@@ -16,7 +16,7 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Example numbers | the publisher's: 10.1–10.3 (10.1), 10.4 (10.2), 10.5–10.10 (10.3), 10.11–10.13 (10.4), 10.14–10.19 (10.6) |
 | Figure numbers | the publisher's, 10.1 to 10.66, listed per section in `exploration.md` and checked on openstax.org |
 | Figures | diagrams and graphs become interactive Figures with the book's numbers where a slider, a choice or a clock teaches; faithful stills where they do not; folds are each section's call, candidates in `exploration.md` |
-| Photographs | Figure 10.1 (intro) and the photographs listed in `exploration.md`, all kept; 10.25 (sweat, inside Example 10.9) is 10.3's call; 10.13, 10.14 and 10.36(a) may stay as the book's images |
+| Photographs | Figure 10.1 (intro) and the photographs listed in `exploration.md`, all kept; 10.25 (sweat, inside Example 10.9) is 10.3's call; 10.13, 10.14 and 10.36(a) may stay as the book's images; the unnumbered images of Examples 10.14, 10.15 and 10.18 (`SimpCube_img`, `Ex100602_img`, `LiClstrctr`) are kept as the book's images in `figure` rows without a number |
 | 3D | unit cells and crystal structures are physical 3D (bounded orbit, snap views along the axes and diagonals the text measures along); particle pictures are 3D boxes with a flat strip of readings; intermolecular-force drawings and named structures carry the 2D/3D view choice, 2D by default; graphs, ladders, phase diagrams and Bragg planes stay flat; the diffractometer is a 3D bench |
 | Motion | per figure in its plan line; clocks are natural for particle boxes (phases, vapor reaching equilibrium, a heating curve drawn as heat is added) and for capillary rise; unit cells are still scenes with no transport |
 | Colour | `temperature`, `pressure`, `energy`, `time` where a clock is drawn, `mass` and `volume` in 10.3's heat and 10.6's density readouts where drawn, `wavelength` for 10.6's X-rays; everything else ink or the element palette; see `COLOR.md` |
@@ -35,3 +35,10 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Labels | Figure for a book number, Sim for an addition; the word "demo" nowhere |
 | `ai` and `built` | `{"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"}`, `2026-09-28` |
 | Book manifest | `ch10` added to `book.json` by `ost merge chemistry-2e 10` |
+
+## What the build changed
+
+- Folds: Figures 10.11 + 10.12; 10.30 + 10.31 + 10.34 (one phase diagram drawn to scale, a substance choice and a state point); 10.37 + 10.38; 10.39 to 10.42; 10.46 to 10.49; 10.50 to 10.52; 10.53 + 10.54; 10.55 + 10.56; 10.57 + 10.58; 10.59 to 10.62; 10.63 + 10.64. Every number from 10.1 to 10.66 is shown and linked.
+- Photographs: 10.13, 10.14 and 10.36 stay as the book's images; the three unnumbered example images of 10.6 are kept.
+- Colour: 10.5 binds `temperature` on its melting-point readout; 10.6 binds `volume` and `mass` in the density readout and `wavelength` in the Bragg figure; 10.2 binds nothing.
+- Anchors, set at the chapter pass: the capillary rise equation to 10.2's capillary-rise heading, the three Clausius-Clapeyron forms to 10.3's clausius heading, the sublimation sum to 10.3's sublimation heading, the Bragg equation to 10.6's xray heading; the variables with their equations, `a_cell` and `r_atom` at Example 10.14.

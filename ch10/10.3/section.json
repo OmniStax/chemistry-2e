@@ -1,0 +1,824 @@
+{
+ "id": "10.3",
+ "module": "m68768",
+ "chapter": "10",
+ "title": "Phase Transitions",
+ "short": "Phase Transitions",
+ "lead": "A substance changes from one state to another when heat is added or removed, and each change is set by the contest between its intermolecular attractions and the kinetic energy of its molecules. This section describes vapor pressure and the dynamic equilibrium behind it, relates vapor pressure to temperature and the boiling point through the Clausius-Clapeyron equation, and follows a substance along its heating curve, computing the heat for each warming step and each change of state.",
+ "objectives": [
+  "Define phase transitions and phase transition temperatures",
+  "Explain the relation between phase transition temperatures and intermolecular attractive forces",
+  "Describe the processes represented by typical heating and cooling curves, and compute heat flows and enthalpy changes accompanying these processes"
+ ],
+ "summary_html": "<p>Phase transitions are processes that convert matter from one physical state into another. There are six phase transitions between the three phases of matter. Melting, vaporization, and sublimation are all endothermic processes, requiring an input of heat to overcome intermolecular attractions. The reciprocal transitions of freezing, condensation, and deposition are all exothermic processes, involving heat as intermolecular attractive forces are established or strengthened. The temperatures at which phase transitions occur are determined by the relative strengths of intermolecular attractions and are, therefore, dependent on the chemical identity of the substance.</p>",
+ "notes": "The opening paragraph and the paragraphs on intermolecular forces, temperature and the Clausius-Clapeyron equation stand under headers of the page’s own; the book’s five headers are kept. The table of Example 10.5’s Check Your Learning is printed with its cells’ 20 °C, although the book’s table summary says 25 °C, and the key to Example 10.7’s Check Your Learning is printed as the book gives it, “41.4 kJ/mol**”. The normal boiling points of diethyl ether, ethanol and ethylene glycol and the enthalpies of vaporization of diethyl ether and ethylene glycol that Figures 10.22 and 10.24 use are handbook values the book does not print, and the vapor pressures those figures draw are computed from the Clausius-Clapeyron equation.",
+ "ai": {
+  "text": "Claude Opus 5.5",
+  "figures": "Claude Opus 5.5"
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercises fs-idm91183360 (exercise 38 of the chapter, the normal boiling point of CCl<sub>4</sub>), fs-idm100561472 (exercise 42, the ether in a syringe) and fs-idm4941728 (exercise 52, the heat to turn a bottle of water into sweat and vapor) are left out, and no answer is computed for them. The unkeyed conceptual exercises (30, 32, 34, 36, 40, 44, 46 and 48) and the unkeyed choice item fs-idm190677696 (exercise 50), kept as an open item with its options and never graded, carry a suggested approach marked as OmniStax’s own. Numeric answers accept 2% tolerance.",
+ "figures": [
+  {
+   "id": "sim-vapor",
+   "kind": "sim",
+   "number": "10.22",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_VapPress1.jpg"
+   ],
+   "original_caption": "In a closed container, dynamic equilibrium is reached when (a) the rate of molecules escaping from the liquid to become the gas (b) increases and eventually (c) equals the rate of gas molecules entering the liquid. When this equilibrium is reached, the vapor pressure of the gas is constant, although the vaporization and condensation processes continue.",
+   "draws": [
+    "pressure",
+    "time"
+   ]
+  },
+  {
+   "id": "fig-structures",
+   "kind": "figure",
+   "draws": []
+  },
+  {
+   "id": "sim-ke",
+   "kind": "sim",
+   "number": "10.23",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_VapPress3.jpg"
+   ],
+   "original_caption": "Temperature affects the distribution of kinetic energies for the molecules in a liquid. At the higher temperature, more molecules have the necessary kinetic energy, KE, to escape from the liquid into the gas phase.",
+   "draws": [
+    "temperature",
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-bp",
+   "kind": "sim",
+   "number": "10.24",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_VapPress2.jpg"
+   ],
+   "original_caption": "The boiling points of liquids are the temperatures at which their equilibrium vapor pressures equal the pressure of the surrounding atmosphere. Normal boiling points are those corresponding to a pressure of 1 atm (101.3 kPa.)",
+   "draws": [
+    "pressure",
+    "temperature",
+    "energy"
+   ]
+  },
+  {
+   "id": "fig-sweat",
+   "kind": "photo",
+   "number": "10.25",
+   "draws": []
+  },
+  {
+   "id": "fig-ice",
+   "kind": "photo",
+   "number": "10.26",
+   "draws": []
+  },
+  {
+   "id": "fig-iodine",
+   "kind": "photo",
+   "number": "10.27",
+   "draws": []
+  },
+  {
+   "id": "fig-ladder",
+   "kind": "figure",
+   "number": "10.28",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_PhaseChng.jpg"
+   ],
+   "original_caption": "For a given substance, the sum of its enthalpy of fusion and enthalpy of vaporization is approximately equal to its enthalpy of sublimation.",
+   "draws": [
+    "energy"
+   ]
+  },
+  {
+   "id": "sim-heat",
+   "kind": "sim",
+   "number": "10.29",
+   "originals": [
+    "/media/ch10/CNX_Chem_10_03_HeatCurve.jpg"
+   ],
+   "original_caption": "A typical heating curve for a substance depicts changes in temperature that result as the substance absorbs increasing amounts of heat. Plateaus in the curve (regions of constant temperature) are exhibited when the substance undergoes phase transitions.",
+   "draws": [
+    "mass",
+    "temperature",
+    "energy"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "changes-of-state",
+   "concept": "phase-from-imf-and-kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "vaporization",
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "vapor-imf",
+   "concept": "vapor-pressure-and-imf",
+   "verb": "introduces"
+  },
+  {
+   "span": "vapor-imf",
+   "concept": "rank-by-intermolecular-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "vapor-imf",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-vapor-imf",
+   "concept": "vapor-pressure-and-imf",
+   "verb": "uses"
+  },
+  {
+   "span": "vapor-temperature",
+   "concept": "vapor-pressure-and-temperature",
+   "verb": "introduces"
+  },
+  {
+   "span": "boiling",
+   "concept": "boiling-point",
+   "verb": "introduces"
+  },
+  {
+   "span": "boiling",
+   "concept": "vapor-pressure-and-temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-leadville",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "clausius",
+   "concept": "clausius-clapeyron-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-isooctane",
+   "concept": "clausius-clapeyron-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-benzene",
+   "concept": "clausius-clapeyron-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "vaporization-enthalpy",
+   "concept": "enthalpies-of-phase-change",
+   "verb": "introduces"
+  },
+  {
+   "span": "melting",
+   "concept": "enthalpies-of-phase-change",
+   "verb": "reinforces"
+  },
+  {
+   "span": "sublimation",
+   "concept": "enthalpies-of-phase-change",
+   "verb": "reinforces"
+  },
+  {
+   "span": "heating-curves",
+   "concept": "heating-curve",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-heat-total",
+   "concept": "heating-curve-calculations",
+   "verb": "introduces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm12389904",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-vapor-imf"
+   },
+   "cite": "vapor-imf",
+   "prompt": "At 20 °C, the vapor pressures of several alcohols are given in this table. Explain these vapor pressures in terms of types and extents of IMFs for these alcohols:<div class=\"book-table\"><table><tbody><tr><th>Compound</th><td>methanol CH<sub>3</sub>OH</td><td>ethanol C<sub>2</sub>H<sub>5</sub>OH</td><td>propanol C<sub>3</sub>H<sub>7</sub>OH</td><td>butanol C<sub>4</sub>H<sub>9</sub>OH</td></tr><tr><th>Vapor Pressure at 20 °C</th><td>11.9 kPa</td><td>5.95 kPa</td><td>2.67 kPa</td><td>0.56 kPa</td></tr></tbody></table></div>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "All these compounds exhibit hydrogen bonding; these strong IMFs are difficult for the molecules to overcome, so the vapor pressures are relatively low. As the size of molecule increases from methanol to butanol, dispersion forces increase, which means that the vapor pressures decrease as observed: P<sub>methanol</sub> &gt; P<sub>ethanol</sub> &gt; P<sub>propanol</sub> &gt; P<sub>butanol</sub>."
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm272706256",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-leadville"
+   },
+   "cite": "boiling",
+   "prompt": "The boiling point of ethyl ether was measured to be 10 °C at a base camp on the slopes of Mount Everest. Use Figure 10.24 to determine the approximate atmospheric pressure at the camp.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 40,
+    "unit": "kPa",
+    "hint": "Find 10 °C on the temperature axis, go up to the ethyl ether curve, and read the pressure there.",
+    "solution": "Approximately 40 kPa (0.4 atm)"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm96861632",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-isooctane"
+   },
+   "cite": "clausius",
+   "prompt": "At 20.0 °C, the vapor pressure of ethanol is 5.95 kPa, and at 63.5 °C, its vapor pressure is 53.3 kPa. Use this information to estimate the enthalpy of vaporization for ethanol.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 41.4,
+    "unit": "kJ/mol",
+    "hint": "Convert both temperatures to kelvin and solve the two-point Clausius-Clapeyron equation for ΔH<sub>vap</sub>, as in Example 10.7.",
+    "solution": "41,360 J/mol or 41.4 kJ/mol**"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm143693744",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-benzene"
+   },
+   "cite": "clausius",
+   "prompt": "For acetone (CH<sub>3</sub>)<sub>2</sub>CO, the normal boiling point is 56.5 °C and the enthalpy of vaporization is 31.3 kJ/mol. What is the vapor pressure of acetone at 25.0 °C?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 30.1,
+    "unit": "kPa",
+    "hint": "The normal boiling point gives one point, 101.3 kPa at 56.5 °C; solve the two-point Clausius-Clapeyron equation for the pressure at 25.0 °C, with both temperatures in kelvin.",
+    "solution": "30.1 kPa"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idm57843872",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-sweat"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "How much heat is required to evaporate 100.0 g of liquid ammonia, NH<sub>3</sub>, at its boiling point if its enthalpy of vaporization is 4.8 kJ/mol?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 28,
+    "unit": "kJ",
+    "hint": "Convert the mass of ammonia to moles with its molar mass, then multiply by the enthalpy of vaporization.",
+    "solution": "28 kJ"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idm143749376",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-heat-total"
+   },
+   "cite": "heating-curves",
+   "prompt": "What is the total amount of heat released when 94.0 g water at 80.0 °C cools to form ice at −30.0 °C?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 68.7,
+    "unit": "kJ",
+    "hint": "Add three steps: cooling the water to 0 °C, freezing it, and cooling the ice to −30.0 °C, using the specific heats and the enthalpy of fusion of Example 10.10.",
+    "solution": "68.7 kJ"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm118197344",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heating-curves",
+   "prompt": "Heat is added to boiling water. Explain why the temperature of the boiling water does not change. What does change?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: the section says that while a substance is changing state, the added heat goes into diminishing intermolecular attractions instead of increasing the kinetic energies of the molecules. Use that to explain the temperature, and then ask what quantity in the pot changes as the heating goes on."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm202797040",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "melting",
+   "prompt": "Heat is added to ice at 0 °C. Explain why the temperature of the ice does not change. What does change?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The heat is absorbed by the ice, providing the energy required to partially overcome intermolecular attractive forces in the solid and causing a phase transition to liquid water. The solution remains at 0 °C until all the ice is melted. Only the amount of water existing as ice changes until the ice disappears. Then the temperature of the water can rise."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm7901664",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization",
+   "prompt": "What feature characterizes the dynamic equilibrium between a liquid and its vapor in a closed container?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: name the two processes that go on in the closed container, and compare their rates once the amount of vapor stops changing. Say what stays constant and what never stops."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm90085344",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization",
+   "prompt": "Identify two common observations indicating some liquids have sufficient vapor pressures to noticeably evaporate?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "We can see the amount of liquid in an open container decrease and we can smell the vapor of some liquids."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm202728384",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sublimation",
+   "prompt": "Identify two common observations indicating some solids, such as dry ice and mothballs, have vapor pressures sufficient to sublime?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: think of the observations that show a liquid evaporating and ask which of them also apply to a solid. What happens over time to a piece of dry ice left in the open, and what can you sense in a closet that holds mothballs?"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm63569328",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vapor-imf",
+   "prompt": "What is the relationship between the intermolecular forces in a liquid and its vapor pressure?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The vapor pressure of a liquid decreases as the strength of its intermolecular forces increases."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm134146112",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "melting",
+   "prompt": "What is the relationship between the intermolecular forces in a solid and its melting temperature?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: the section ties the melting point of a crystalline solid to the attractive forces between the units of the crystal. Decide how stronger attractions change the energy needed to free the units from their fixed positions, and state the relationship in the direction it runs."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm218809584",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vapor-temperature",
+   "prompt": "Why does spilled gasoline evaporate more rapidly on a hot day than on a cold day?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "As the temperature increases, the average kinetic energy of the molecules of gasoline increases and so a greater fraction of molecules have sufficient energy to escape from the liquid than at lower temperatures."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm4937568",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "When is the boiling point of a liquid equal to its normal boiling point?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "They are equal when the pressure of gas above the liquid is exactly 1 atm."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm12425360",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "How does the boiling of a liquid differ from its evaporation?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: compare where and under what condition each happens. Evaporation needs only surface molecules with enough kinetic energy to escape, at any temperature; boiling is defined by a condition on the vapor pressure and the pressure of the surroundings. Use the definition of the boiling point to say what sets boiling apart."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm69160048",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "Use the information in Figure 10.24 to estimate the boiling point of water in Denver when the atmospheric pressure is 83.3 kPa.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 95,
+    "unit": "°C",
+    "hint": "Find 83.3 kPa on the pressure axis, go across to the water curve, and read the temperature below that point.",
+    "solution": "approximately 95 °C"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm215245584",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "Explain the following observations:<br>(a) It takes longer to cook an egg in Ft. Davis, Texas (altitude, 5000 feet above sea level) than it does in Boston (at sea level).<br>(b) Perspiring is a mechanism for cooling the body.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) At 5000 feet, the atmospheric pressure is lower than at sea level, and water will therefore boil at a lower temperature. This lower temperature will cause the physical and chemical changes involved in cooking the egg to proceed more slowly, and a longer time is required to fully cook the egg. (b) As long as the air surrounding the body contains less water vapor than the maximum that air can hold at that temperature, perspiration will evaporate, thereby cooling the body by removing the heat of vaporization required to vaporize the water."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm165702432",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sublimation",
+   "prompt": "The enthalpy of vaporization of water is larger than its enthalpy of fusion. Explain why.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: the section compares how completely the intermolecular attractions must be overcome in melting and in vaporization. Describe each transition in those terms and relate the extent to the energy each requires."
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm224362720",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "Explain why the molar enthalpies of vaporization of the following substances increase in the order CH<sub>4</sub> &lt; C<sub>2</sub>H<sub>6</sub> &lt; C<sub>3</sub>H<sub>8</sub>, even though the type of IMF (dispersion) is the same.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Dispersion forces increase with molecular mass or size. As the number of atoms composing the molecules in this homologous series increases, so does the extent of intermolecular attraction via dispersion forces and, consequently, the energy required to overcome these forces and vaporize the liquids."
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm201825184",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "Explain why the enthalpies of vaporization of the following substances increase in the order CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O, even though all three substances have approximately the same molar mass.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: with nearly equal molar masses, the dispersion forces of the three are similar, so look for a difference in the other attractions. Decide which molecules can form hydrogen bonds and how many each can take part in, and connect the strength of the attractions to the energy needed to vaporize the liquid."
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm43844288",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "The enthalpy of vaporization of CO<sub>2</sub>(<em>l</em>) is 9.8 kJ/mol. Would you expect the enthalpy of vaporization of CS<sub>2</sub>(<em>l</em>) to be 28 kJ/mol, 9.8 kJ/mol, or −8.4 kJ/mol? Discuss the plausibility of each of these answers.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The boiling point of CS<sub>2</sub> is higher than that of CO<sub>2</sub> partially because of the higher molecular weight of CS<sub>2</sub>; consequently, the attractive forces are stronger in CS<sub>2</sub>. It would be expected, therefore, that the heat of vaporization would be greater than that of 9.8 kJ/mol for CO<sub>2</sub>. A value of 28 kJ/mol would seem reasonable. A value of −8.4 kJ/mol would indicate a release of energy upon vaporization, which is clearly implausible."
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp7110192",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "The hydrogen fluoride molecule, HF, is more polar than a water molecule, H<sub>2</sub>O (for example, has a greater dipole moment), yet the molar enthalpy of vaporization for liquid hydrogen fluoride is lesser than that for water. Explain.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: compare not only how strong one hydrogen bond is but how many each molecule can form. Count the hydrogen atoms bonded to F or O and the lone pairs each molecule offers, and consider how extensive the network of hydrogen bonds is in each liquid."
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idp7150208",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "vaporization-enthalpy",
+   "prompt": "Ethyl chloride (boiling point, 13 °C) is used as a local anesthetic. When the liquid is sprayed on the skin, it cools the skin enough to freeze and numb it. Explain the cooling effect of liquid ethyl chloride.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The thermal energy (heat) needed to evaporate the liquid is removed from the skin."
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idm190677696",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boiling",
+   "prompt": "Which contains the compounds listed correctly in order of increasing boiling points?<br>(a) N<sub>2</sub> &lt; CS<sub>2</sub> &lt; H<sub>2</sub>O &lt; KCl<br>(b) H<sub>2</sub>O &lt; N<sub>2</sub> &lt; CS<sub>2</sub> &lt; KCl<br>(c) N<sub>2</sub> &lt; KCl &lt; CS<sub>2</sub> &lt; H<sub>2</sub>O<br>(d) CS<sub>2</sub> &lt; N<sub>2</sub> &lt; KCl &lt; H<sub>2</sub>O<br>(e) KCl &lt; H<sub>2</sub>O &lt; CS<sub>2</sub> &lt; N<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: identify the kind of attraction that holds each substance together in its condensed state: dispersion forces only, hydrogen bonds, or the attractions between ions of an ionic compound. Compare their strengths, and for two substances with the same kind of attraction compare the sizes of their molecules. Then find the option whose order runs from the weakest attractions to the strongest."
+   }
+  },
+  {
+   "id": "e20",
+   "source_id": "fs-idm69576896",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "heating-curves",
+   "prompt": "How much heat is required to convert 422 g of liquid H<sub>2</sub>O at 23.5 °C into steam at 150 °C?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1125,
+    "unit": "kJ",
+    "hint": "Add three steps as in Example 10.10: warming the water to 100 °C, boiling it, and warming the steam to 150 °C.",
+    "solution": "1125 kJ"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idm136735584",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "melting",
+   "prompt": "Titanium tetrachloride, TiCl<sub>4</sub>, has a melting point of −23.2 °C and has a Δ<em>H</em><sub>fusion</sub> = 9.37 kJ/mol.<br>(a) How much energy is required to melt 263.1 g TiCl<sub>4</sub>?<br>(b) For TiCl<sub>4</sub>, which will likely have the larger magnitude: Δ<em>H</em><sub>fusion</sub> or Δ<em>H</em><sub>vaporization</sub>? Explain your reasoning.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 13.0 kJ; (b) It is likely that the heat of vaporization will have a larger magnitude since in the case of vaporization the intermolecular interactions have to be completely overcome, while melting weakens or destroys only some of them."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "vapor-pressure-and-imf"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "rank-by-intermolecular-forces"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "clausius-clapeyron-calculations"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "clausius-clapeyron-calculations"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "heating-curve-calculations"
+  },
+  {
+   "exercise": "e1",
+   "concept": "heating-curve"
+  },
+  {
+   "exercise": "e1",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e2",
+   "concept": "heating-curve"
+  },
+  {
+   "exercise": "e2",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e3",
+   "concept": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "exercise": "e4",
+   "concept": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "exercise": "e5",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e6",
+   "concept": "vapor-pressure-and-imf"
+  },
+  {
+   "exercise": "e7",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e7",
+   "concept": "rank-by-intermolecular-forces"
+  },
+  {
+   "exercise": "e8",
+   "concept": "vapor-pressure-and-temperature"
+  },
+  {
+   "exercise": "e9",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e10",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e10",
+   "concept": "vapor-pressure-and-temperature"
+  },
+  {
+   "exercise": "e11",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e12",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e12",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e13",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e14",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e14",
+   "concept": "polarizability-and-dispersion-strength"
+  },
+  {
+   "exercise": "e15",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e15",
+   "concept": "hydrogen-bonding"
+  },
+  {
+   "exercise": "e16",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e16",
+   "concept": "polarizability-and-dispersion-strength"
+  },
+  {
+   "exercise": "e17",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e17",
+   "concept": "hydrogen-bonding"
+  },
+  {
+   "exercise": "e18",
+   "concept": "enthalpies-of-phase-change"
+  },
+  {
+   "exercise": "e19",
+   "concept": "rank-by-intermolecular-forces"
+  },
+  {
+   "exercise": "e19",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "e20",
+   "concept": "heating-curve-calculations"
+  },
+  {
+   "exercise": "e21",
+   "concept": "enthalpies-of-phase-change"
+  }
+ ]
+}

@@ -698,3 +698,99 @@ key gives 82.24% N for ammonia where the text computes 82.27%; Example
 
 `ost check` clean for the chapter, `npm test`, `astro check`, a build,
 and every page of the chapter in light and dark in a headless browser.
+
+
+## Pass 7 (2026-09-28): Chapter 2, Atoms, Molecules, and Ions, is built and passed
+
+Prompted by: Chen asking for the rest of the book to be built in waves,
+with no check-ins. The chapter was prepared in one pass (its `config.md`,
+`COLOR.md`, `exploration.md`, the introduction page and its rows), its
+seven sections were built in parallel by one agent each, and a chapter
+pass tied them together.
+
+## What was built
+
+Eight pages: the introduction and 2.1 to 2.7. Figures 2.1 to 2.32 in the
+publisher's order, 2.9 and 2.10 folded into one live figure; 21 live
+figures and Sims (the cathode ray, Millikan's drops, the gold foil bench
+in 3D, the ion builder that writes its own symbol, the average-mass
+balance, the mass spectrometer, the 2D and 3D molecules of 2.4 with the
+carvone mirror pair, the ion and formula Sims of 2.6, chromate and
+dichromate), the rest kept as the book's photographs. Tables 2.1 to 2.13,
+Examples 2.1 to 2.14 with 14 inline checks, 51 exercises in all, 40
+concepts, 4 equations and 3 variables (every one anchored), 61 glossary
+entries; no new type or symbol. Only the four experiments have a clock.
+
+## Decisions
+
+- The chapter pass anchored every variable and equation and added the
+  edges empirical-formula → empirical-formula-from-molecular-formula,
+  formula-mass → average-atomic-mass and formula-mass → molecular-formula
+  into Chapter 3, and predict-ion-charge → predict-ion-charge-from-group
+  and ionic-bond → ionic-and-covalent-bonds into Chapter 7.
+- The glossary anchors 2.5 and 2.7 asked for are not written, since a
+  glossary row carries no anchor.
+- The element palette gained Al, Se, Zr, Pb and Cr, so the figures that
+  drew those atoms in the fallback colour now draw them in their own.
+- 2.5 builds no periodic table; it keeps Figures 2.26 and 2.27 and links
+  the elements page. The three Build a Molecule items of 2.4 are held and
+  named, since no figure of the page builds a molecule.
+- Two figure captions that spoke of "the book" were reworded.
+
+## Errata
+
+Figure 2.6's caption says "mass-to-charge"; 2.5's glossary prints
+"hydrate" and "12–18"; 2.7 prints "Some examples demonstrating this Some
+other examples" and the key's "AIF₃·3H₂O"; Table 2.4's summary differs
+from its cells. All kept as printed and named in `notes`.
+
+## Checks
+
+`ost check` clean for the chapter, `npm test` (two failures, both in
+other chapters), `astro check`, a build, and every page of the chapter in
+light and dark in a headless browser with no console error, no blank
+canvas, no KaTeX error, no missing image and every inline card present.
+
+
+## Pass 8 (2026-09-28): Chapter 5, Thermochemistry, is built
+
+Prompted by: Chen asking for the book to be finished without check-ins, a plan
+file written before each page and left for review after.
+
+What was built. Four pages: the chapter introduction in `ch05/intro/` with
+Figure 5.1 and its one footnote, and the three sections 5.1 to 5.3, none of
+them folded. Twenty-one figure rows across them, numbered 5.1 to 5.24 as the
+publisher numbers them, with the collage of Figure 5.2 dropped and the folds
+named on their rows: photographs kept where the text points at them (5.1, 5.3,
+5.5, 5.7 to 5.10, 5.13, 5.15 to 5.18, 5.20 to 5.23), the fast and slow
+molecules of 5.4 and 5.6 folded into one moving Figure in three dimensions,
+the coffee cup calorimeter of 5.11, 5.12 and 5.14 folded into one moving flat
+Figure, the first-law diagram of 5.19 and the Hess ladder of 5.24 redrawn as
+still Figures, and one Sim that replaces nothing, a heating bench over the
+sixteen substances of Table 5.1. Two figures carry a clock, heat flowing to
+equilibrium and a calorimeter settling; every other figure is still.
+Sixty-eight exercises, sixteen of them the Check Your Learning items placed
+inline after their examples, each with its host; the end-of-chapter items are
+the forty-three the key answers plus nine unkeyed conceptual questions, or parts of one, kept
+with a suggested approach. Twenty-three concept nodes with forty-seven
+prerequisite edges; thirty-two glossary entries, twelve equations and twenty
+variables in `chapter.json`; Tables 5.1 and 5.2 kept as `div.book-table`.
+
+What the chapter pass changed. Every equation and variable row anchored to
+the span that introduces it. Eight prerequisite edges staged and merged now
+that Chapters 3 and 4 are in the book: thermochemical equations rest on
+balanced equations, the limiting reactant, mass and mole conversion and molar
+mass; the enthalpy of combustion on mass and mole conversion and molar mass;
+reaction enthalpies from formation enthalpies on balanced equations; coffee
+cup calorimetry on molarity. Section 5.3 binds energy alone, since no figure
+draws PΔV, and `COLOR.md` says so.
+
+Errata carried as printed and named in `notes`: Example 5.4's 4.18 and 4.184,
+Example 5.5's "1.34 × 10³ kJ, or 1.34 kJ", Example 5.7's −48.8 and 48.7 kJ,
+the ethanol equation's "(g+", Table 5.2's isooctane −5465.5 against −5460,
+Example 5.9's "perchlorate", Example 5.15's −136.80 and −138.4 kJ; the book's
+º in two keys is written °.
+
+Checks: `ost check` and the content check clean for the book, `npm test`,
+`astro check`, a build, and every page of the chapter in a headless browser
+in light and dark.

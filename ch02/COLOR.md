@@ -26,3 +26,7 @@ Two of the book's fourteen types, `mass` and `charge`, far apart in the declared
 - The cathode ray is the book's yellow in Figure 2.6(c); a beam of electrons is not a type, so it is drawn in ink or the accent, and the section plan names the choice.
 
 Nothing is coerced into a neighbouring type to save a colour.
+
+## As built
+
+The bindings are as tabled, with one narrowing: 2.2 binds `charge` alone, since no figure reads out a mass. 2.1 and 2.3 bind `mass`; 2.2, 2.3 and 2.6 bind `charge`. The element palette now carries Al, Se, Zr, Pb and Cr, so no atom of the chapter falls back to "other".

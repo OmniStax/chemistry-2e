@@ -78,3 +78,7 @@ Physical 3D (apparatus, a bench with a bounded orbit): the gold foil experiment 
 ## Root rule 23: be inspiring
 
 The chapter's wonder is that the inside of something no one has seen was worked out from where the pieces went: a beam that bent, drops that fell at whole-number charges, and particles that came back off tissue paper. The live figures should let the reader do those experiments, turning the fields on the beam, charging the drops, aiming at the foil, and then turn the same counting into the practical: build an ion by adding and removing particles and watch its symbol write itself, mix isotopes and watch the average mass move between them, read a formula four ways, and see charges balance into a formula.
+
+## Errata found by the sections
+
+- 2.5: the text's "George Hitchens" kept as printed. 2.7: "the principle element" kept as printed.

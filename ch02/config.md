@@ -34,3 +34,10 @@ Proposed by the prep agent after the chapter exploration (2026-09-28). Status: a
 | Cross references | plain text to other sections; the elements page linked where the text points at the periodic table or Appendix A |
 | Labels | an agent-added interactive is a Sim; a transformed book figure keeps "Figure N" |
 | `ai` and `built` | `{"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"}`; `2026-09-28` |
+
+## What the build changed
+
+- Unnumbered images: 2.1's `Dalton8_img` and `Dalton10_img` and all twelve of 2.4's exercise drawings sit in their exercise cards (prompt or solution), not as `figure` rows; only `Dalton6_img` is a `figure` row (`fig-dalton-test`).
+- 2.2 binds `charge` only; no figure reads out the electron's mass.
+- 2.4's three Build a Molecule items are held and named in `exercise_notes`.
+- Anchors set by the chapter pass; glossary rows carry no anchor.

@@ -13,8 +13,18 @@
  "summary_html": "<p>The discovery of the periodic recurrence of similar properties among the elements led to the formulation of the periodic table, in which the elements are arranged in order of increasing atomic number in rows known as periods and columns known as groups. Elements in the same group of the periodic table have similar chemical properties. Elements can be classified as metals, metalloids, and nonmetals, or as a main-group elements, transition metals, and inner transition metals. Groups are numbered 1–18 from left to right. The elements in group 1 are known as the alkali metals; those in group 2 are the alkaline earth metals; those in 15 are the pnictogens; those in 16 are the chalcogens; those in 17 are the halogens; and those in 18 are the noble gases.</p>",
  "notes": "The Link to Learning note pointing to two external interactive periodic tables is left out; the book’s own periodic table of the elements is linked in its place beside Figure 2.26. Figures 2.25, 2.26 and 2.27 are the book’s images, kept. The footnote on group 12 is printed beneath the paragraph that carries it. As printed: the glossary lists “hydrate”, a term defined in the section on chemical nomenclature, and defines a representative element by columns 1, 2, and 12–18 where the text says 13–18; the text names Elion’s colleague “George Hitchens”.",
  "ai": {
-  "text": "Claude Opus 5.5",
-  "figures": "Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-28",
  "exercises_lead": "",

@@ -15,8 +15,18 @@
   "summary_html": "<p>Properties of a solution that depend only on the concentration of solute particles are called colligative properties. They include changes in the vapor pressure, boiling point, and freezing point of the solvent in the solution. The magnitudes of these properties depend only on the total concentration of solute particles in solution, not on the type of particles. The total concentration of solute particles in a solution also determines its osmotic pressure. This is the pressure that must be applied to the solution to prevent diffusion of molecules of pure solvent through a semipermeable membrane into the solution. Ionic compounds may not completely dissociate in solution due to activity effects, in which case observed colligative effects may be less than predicted.</p>",
   "notes": "Nothing of the section is left out. Example 11.3 keeps the book’s C₂H₂(OH)₂ once for ethylene glycol, the section keeps “electroyte” as printed, Table 11.3 keeps its title’s “Predicated” and its HCl row’s H₃O⁺ where the book’s table summary reads H⁺, and the headers of Table 11.2 are written with the degree sign °.",
   "ai": {
-    "text": "Claude Opus 5.5",
-    "figures": "Claude Opus 5.5"
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
   },
   "built": "2026-09-28",
   "exercises_lead": "",

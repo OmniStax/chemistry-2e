@@ -11,7 +11,20 @@
   ],
   "summary_html": "<p>Colloids are mixtures in which one or more substances are dispersed as relatively large solid particles or liquid droplets throughout a solid, liquid, or gaseous medium. The particles of a colloid remain dispersed and do not settle due to gravity, and they are often electrically charged. Colloids are widespread in nature and are involved in many technological applications.</p>",
   "notes": "Nothing is left out.",
-  "ai": {"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"},
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
+  },
   "built": "2026-09-28",
   "exercises_lead": "",
   "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual items fs-idm115359200 and fs-idm26172416 carry a suggested approach marked as OmniStax’s own.",

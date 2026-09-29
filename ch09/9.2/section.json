@@ -12,8 +12,21 @@
   "summary_html": "<p>The behavior of gases can be described by several laws based on experimental observations of their properties. The pressure of a given amount of gas is directly proportional to its absolute temperature, provided that the volume does not change (Amontons’s law). The volume of a given gas sample is directly proportional to its absolute temperature at constant pressure (Charles’s law). The volume of a given amount of gas is inversely proportional to its pressure when temperature is held constant (Boyle’s law). Under the same conditions of temperature and pressure, equal volumes of all gases contain the same number of molecules (Avogadro’s law).</p><p>The equations describing these laws are special cases of the ideal gas law, <em>PV</em> = <em>nRT</em>, where <em>P</em> is the pressure of the gas, <em>V</em> is its volume, <em>n</em> is the number of moles of the gas, <em>T</em> is its kelvin temperature, and <em>R</em> is the ideal (universal) gas constant.</p>",
   "notes": "The two Link to Learning notes are left out: a video of a gas shrinking as it is cooled and expanding as it is warmed, and the PhET simulation of pressure, volume, temperature and amount, whose place the gas box of this page takes. Figure 9.17, a photograph of coral at the Great Barrier Reef beside the scuba diving note, is left out as a stock scene, and the photograph of a weather balloon beside exercise 31 of the chapter is left out with it; exercises 26, 28, 30, 32, 34, 36, 38, 40 and 44 of the chapter have no answer in the book’s key and are left out.",
   "ai": {
-    "text": "Claude Fable 5.1",
-    "figures": "Claude Fable 5.1, with Claude Opus 5.5"
+    "text": [
+      {
+        "model": "claude-fable-5-1"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-fable-5-1",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
   },
   "built": "2026-09-12",
   "exercises_lead": "",

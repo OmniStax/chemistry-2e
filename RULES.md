@@ -64,6 +64,8 @@ Full sentences in a plain, measured register on the formal side of plain: "we" w
 
 No fragment-headed captions, no semicolon chains, no editorial framing.
 
+AI-written text is pedagogical, crisp and active, speaks to the learner, and never narrates its own choices, over-describes or hedges (root rule 17). Check a chapter with `python3 tools/voicelint.py "Chemistry 2e" --list chNN` from `omnistax-content/`.
+
 ## Types
 
 Fourteen types in `book.json`, in scheme order: time, amount of substance, mass, volume, concentration, pressure, temperature, energy, entropy, rate, wavelength, frequency, potential, charge. Untyped and in ink: length, density, a count of particles, a percent, a mole ratio, an equilibrium constant, a reaction quotient, a rate constant. `COLOR.md` says why each type is there and what its variants are.

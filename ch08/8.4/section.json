@@ -15,8 +15,18 @@
  "summary_html": "<p>Molecular orbital (MO) theory describes the behavior of electrons in a molecule in terms of combinations of the atomic wave functions. The resulting molecular orbitals may extend over all the atoms in the molecule. Bonding molecular orbitals are formed by in-phase combinations of atomic wave functions, and electrons in these orbitals stabilize a molecule. Antibonding molecular orbitals result from out-of-phase combinations of atomic wave functions and electrons in these orbitals make a molecule less stable. Molecular orbitals located along an internuclear axis are called σ MOs. They can be formed from <em>s</em> orbitals or from <em>p</em> orbitals oriented in an end-to-end fashion. Molecular orbitals formed from <em>p</em> orbitals oriented in a side-by-side fashion have electron density on opposite sides of the internuclear axis and are called π orbitals.</p><p>We can describe the electronic structure of diatomic molecules by applying molecular orbital theory to the valence electrons of the atoms. Electrons fill molecular orbitals following the same rules that apply to filling atomic orbitals; Hund’s rule and the Aufbau principle tell us that lower-energy orbitals will fill first, electrons will spread out before they pair up, and each orbital can hold a maximum of two electrons with opposite spins. Materials with unpaired electrons are paramagnetic and attracted to a magnetic field, while those with all-paired electrons are diamagnetic and repelled by a magnetic field. Correctly predicting the magnetic properties of molecules is in advantage of molecular orbital theory over Lewis structures and valence bond theory.</p>",
  "notes": "The three Link to Learning notes (a video of paramagnetic and diamagnetic behavior, the Orbitron animations of molecular orbitals, and drawings of the molecular orbitals of benzene) are left out.",
  "ai": {
-  "text": "Claude Opus 5.5",
-  "figures": "Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-28",
  "exercises_lead": "",

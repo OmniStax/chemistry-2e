@@ -13,8 +13,18 @@
  "summary_html": "<p>A balanced chemical equation may be used to describe a reaction’s stoichiometry (the relationships between amounts of reactants and products). Coefficients from the equation are used to derive stoichiometric factors that subsequently may be used for computations relating reactant and product masses, molar amounts, and other quantitative properties.</p>",
  "notes": "The module prints no Link to Learning note. Nine end-of-chapter exercises have no answer in the book’s key and are left out.",
  "ai": {
-  "text": "Claude Opus 5.5",
-  "figures": "Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-28",
  "exercises_lead": "",

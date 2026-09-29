@@ -13,8 +13,18 @@
  "summary_html": "<p>Phase transitions are processes that convert matter from one physical state into another. There are six phase transitions between the three phases of matter. Melting, vaporization, and sublimation are all endothermic processes, requiring an input of heat to overcome intermolecular attractions. The reciprocal transitions of freezing, condensation, and deposition are all exothermic processes, involving heat as intermolecular attractive forces are established or strengthened. The temperatures at which phase transitions occur are determined by the relative strengths of intermolecular attractions and are, therefore, dependent on the chemical identity of the substance.</p>",
  "notes": "The opening paragraph and the paragraphs on intermolecular forces, temperature and the Clausius-Clapeyron equation stand under headers of the page’s own; the book’s five headers are kept. The table of Example 10.5’s Check Your Learning is printed with its cells’ 20 °C, although the book’s table summary says 25 °C, and the key to Example 10.7’s Check Your Learning is printed as the book gives it, “41.4 kJ/mol**”. The normal boiling points of diethyl ether, ethanol and ethylene glycol and the enthalpies of vaporization of diethyl ether and ethylene glycol that Figures 10.22 and 10.24 use are handbook values the book does not print, and the vapor pressures those figures draw are computed from the Clausius-Clapeyron equation.",
  "ai": {
-  "text": "Claude Opus 5.5",
-  "figures": "Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-28",
  "exercises_lead": "",

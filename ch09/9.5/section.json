@@ -12,8 +12,18 @@
   "summary_html": "<p>The kinetic molecular theory is a simple but very effective model that effectively explains ideal gas behavior. The theory assumes that gases consist of widely separated molecules of negligible volume that are in constant motion, colliding elastically with one another and the walls of their container with average speeds determined by their absolute temperatures. The individual molecules of a gas exhibit a range of speeds, the distribution of these speeds being dependent on the temperature of the gas and the mass of its molecules.</p>",
   "notes": "The Link to Learning note pointing to an online gas simulator is left out, and the box of gas with its count of molecular speeds takes its place. Figures 9.33 and 9.34 are folded into Figure 9.32 as its two comparisons. The sentence “According to Graham’s law” that opens Part II, the image label “Charles’s Law” on panel (a) of Figure 9.31, the Greek ν that the caption of Figure 9.32 writes for the most probable speed and the lower-case start of the caption of Figure 9.34 are kept as printed.",
   "ai": {
-    "text": "Claude Opus 5.5",
-    "figures": "Claude Opus 5.5"
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
   },
   "built": "2026-09-28",
   "exercises_lead": "",

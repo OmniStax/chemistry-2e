@@ -14,8 +14,21 @@
  "summary_html": "<p>Measurements provide quantitative information that is critical in studying and practicing chemistry. Each measurement has an amount, a unit for comparison, and an uncertainty. Measurements can be represented in either decimal or scientific notation. Scientists primarily use SI (International System) units such as meters, seconds, and kilograms, as well as derived units, such as liters (for volume) and g/cm<sup>3</sup> (for density). In many cases, it is convenient to use prefixes that yield fractional and multiple units, such as microseconds (10<sup>−6</sup> seconds) and megahertz (10<sup>6</sup> hertz), respectively.</p>",
  "notes": "The two Link to Learning notes are left out: a refresher on scientific notation and the PhET density simulation, whose place the two interactive figures of the page take. Exercises 34, 36, 38, 40 and 42 of the chapter have no answer in the book’s key and are left out, and exercise 43, on the floating foam block, waits for a figure that can float a block.",
  "ai": {
-  "text": "Claude Fable 5.1",
-  "figures": "Claude Fable 5.1, with Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-fable-5-1"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-fable-5-1",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-12",
  "exercises_lead": "",

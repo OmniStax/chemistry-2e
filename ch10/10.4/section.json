@@ -13,8 +13,18 @@
  "summary_html": "<p>The temperature and pressure conditions at which a substance exists in solid, liquid, and gaseous states are summarized in a phase diagram for that substance. Phase diagrams are combined plots of pressure-temperature equilibrium curves representing the relationships between phase transition temperatures and pressures. The point of intersection of any three curves in a phase diagram represents a substance’s triple point—the temperature and pressure at which three different phases are in equilibrium. At pressures below a solid-liquid-gas triple point, a substance cannot exist in the liquid state, regardless of its temperature. The terminus of the liquid-gas curve represents the substance’s critical point, the pressure and temperature above which a liquid phase cannot exist.</p>",
  "notes": "The Link to Learning video of carbon dioxide passing into a supercritical fluid is left out. Figures 10.30, 10.31 and 10.34 are one live phase diagram drawn to scale from measured vapor pressures, so the temperatures it gives for the paths of the first two Check Your Learning items differ from the book’s answers, which are printed as the book has them. The critical-point table is printed with its cells in °C and kPa, although the book’s description of it gives K and atm, and the answer images of the carbon exercise label its regions “Water” as the book prints them.",
  "ai": {
-  "text": "Claude Opus 5.5",
-  "figures": "Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-28",
  "exercises_lead": "",

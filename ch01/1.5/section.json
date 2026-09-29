@@ -14,8 +14,21 @@
  "summary_html": "<p>Quantities can be defined or measured. Measured quantities have an associated uncertainty that is represented by the number of significant figures in the quantity’s number. The uncertainty of a calculated quantity depends on the uncertainties in the quantities used in the calculation and is reflected in how the value is rounded. Quantities are characterized with regard to accuracy (closeness to a true or accepted value) and precision (variation among replicate measurement results).</p>",
  "notes": "The five end-of-chapter exercises without an answer in the book’s key are left out, and the reference to Appendix B points at the publisher’s page until the app has that page.",
  "ai": {
-  "text": "Claude Fable 5.1",
-  "figures": "Claude Fable 5.1, with Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-fable-5-1"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-fable-5-1",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-12",
  "exercises_lead": "",

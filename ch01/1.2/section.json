@@ -15,8 +15,21 @@
  "summary_html": "<p>Matter is anything that occupies space and has mass. The basic building block of matter is the atom, the smallest unit of an element that can enter into combinations with atoms of the same or other elements. In many substances, atoms are combined into molecules. On earth, matter commonly exists in three states: solids, of fixed shape and volume; liquids, of variable shape but fixed volume; and gases, of variable shape and volume. Under high-temperature conditions, matter also can exist as a plasma. Most matter is a mixture: It is composed of two or more types of matter that can be present in varying amounts and can be separated by physical means. Heterogeneous mixtures vary in composition from point to point; homogeneous mixtures have the same composition from point to point. Pure substances consist of only one type of matter. A pure substance can be an element, which consists of only one type of atom and cannot be broken down by a chemical change, or a compound, which consists of two or more types of atoms.</p>",
  "notes": "The two Link to Learning notes, one to a video on plasma and one to sites showing the breakdown of mercury oxide and the photochemical decomposition of silver chloride, are left out, and the photograph of the plasma cutting torch (Figure 1.7) is left out as a stock scene the text names only in passing.",
  "ai": {
-  "text": "Claude Fable 5.1",
-  "figures": "Claude Fable 5.1, with Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-fable-5-1"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-fable-5-1",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-12",
  "exercises_lead": "Chemistry End of Chapter Exercises",

@@ -12,7 +12,20 @@
   ],
   "summary_html": "<p>Substances that dissolve in water to yield ions are called electrolytes. Electrolytes may be covalent compounds that chemically react with water to produce ions (for example, acids and bases), or they may be ionic compounds that dissociate to yield their constituent cations and anions, when dissolved. Dissolution of an ionic compound is facilitated by ion-dipole attractions between the ions of the compound and the polar water molecules. Soluble ionic substances and strong acids ionize completely and are strong electrolytes, while weak acids and bases ionize to only a small extent and are weak electrolytes. Nonelectrolytes are substances that do not produce ions when dissolved in water.</p>",
   "notes": "Nothing is left out. The book's doubled subscript in the formula of the hydronium ion is a markup slip and is written H<sub>3</sub>O<sup>+</sup>.",
-  "ai": {"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"},
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
+  },
   "built": "2026-09-28",
   "exercises_lead": "",
   "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual items fs-idm26375616, fs-idm785520 and fs-idm22188736 carry a suggested approach marked as OmniStax’s own.",

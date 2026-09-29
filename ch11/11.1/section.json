@@ -12,7 +12,20 @@
   ],
   "summary_html": "<p>A solution forms when two or more substances combine physically to yield a mixture that is homogeneous at the molecular level. The solvent is the most concentrated component and determines the physical state of the solution. The solutes are the other components typically present at concentrations less than that of the solvent. Solutions may form endothermically or exothermically, depending upon the relative magnitudes of solute and solvent intermolecular attractive forces. Ideal solutions form with no appreciable change in energy.</p>",
   "notes": "The two Link to Learning notes are left out, the PhET simulation of sugar and salt dissolving in water and a video of endothermic and exothermic dissolution.",
-  "ai": {"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"},
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
+  },
   "built": "2026-09-28",
   "exercises_lead": "",
   "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual items fs-idm105740080, fs-idm33766240 and fs-idm118513216 carry a suggested approach marked as OmniStax’s own. The unkeyed numerical exercise fs-idm30601328 (the molarity, molality and percent by mass of hydrogen dissolved in palladium) is left out; it also prints the density of the solution as “10.8 g cm3” for 10.8 g cm−3.",

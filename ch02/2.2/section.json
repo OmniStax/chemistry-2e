@@ -14,8 +14,18 @@
  "summary_html": "<p>Although no one has actually seen the inside of an atom, experiments have demonstrated much about atomic structure. Thomson’s cathode ray tube showed that atoms contain small, negatively charged particles called electrons. Millikan discovered that there is a fundamental electric charge—the charge of an electron. Rutherford’s gold foil experiment showed that atoms have a small, dense, positively charged nucleus; the positively charged particles within the nucleus are called protons. Chadwick discovered that the nucleus also contains neutral particles called neutrons. Soddy demonstrated that atoms of the same element can differ in mass; these are called isotopes.</p>",
  "notes": "The three Link to Learning notes are left out: a recording of Thomson describing his discovery, a simulation of the gold foil experiment, and the PhET Rutherford Scattering simulation, whose place the interactive Figure 2.9 + 2.10 takes. Figure 2.6’s caption says “mass-to-charge ratio” where the text says “charge-to-mass ratio”; both are printed as the book has them.",
  "ai": {
-  "text": "Claude Opus 5.5",
-  "figures": "Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-28",
  "exercises_lead": "",

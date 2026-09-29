@@ -15,8 +15,18 @@
   "summary_html": "<p>If a chemical change is carried out at constant pressure and the only work done is caused by expansion or contraction, <em>q</em> for the change is called the enthalpy change with the symbol Δ<em>H</em>, or $\\text{Δ}H\\text{°}$ for reactions occurring under standard state conditions at 298 K. The value of Δ<em>H</em> for a reaction in one direction is equal in magnitude, but opposite in sign, to Δ<em>H</em> for the reaction in the opposite direction, and Δ<em>H</em> is directly proportional to the quantity of reactants and products. The standard enthalpy of formation, $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}},$ is the enthalpy change accompanying the formation of 1 mole of a substance from the elements in their most stable states at 1 bar and 298.15 K. If the enthalpies of formation are available for the reactants and products of a reaction, the enthalpy change can be calculated using Hess’s law: If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the various steps.</p>",
   "notes": "The two Link to Learning notes (the internal combustion engine and the algae biofuel page) are left out, the Key Equations table is carried by the chapter’s equations, and the book’s errata are kept as printed: the ethanol combustion equation drops a parenthesis in “(g+”, Table 5.2 lists isooctane as –5465.5 kJ/mol where the text and Example 5.10 use −5460 kJ/mol, Example 5.9 calls KClO₃ perchlorate, Example 5.15 lists HNO₃ as −207.4 kJ/mol but computes with −206.64 kJ/mol and reaches −136.80 kJ by the equation and −138.4 kJ by the steps, one exercise reads “in Table 5.2 the table”, and one key writes “HCL”.",
   "ai": {
-    "text": "Claude Opus 5.5",
-    "figures": "Claude Opus 5.5"
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
   },
   "built": "2026-09-28",
   "exercises_lead": "",

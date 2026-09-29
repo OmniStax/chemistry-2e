@@ -12,8 +12,18 @@
  "summary_html": "<p>Calorimetry is used to measure the amount of thermal energy transferred in a chemical or physical process. This requires careful measurement of the temperature change that occurs during the process and the masses of the system and surroundings. These measured quantities are then used to compute the amount of heat produced or consumed in the process using known mathematical relations.</p><p>Calorimeters are designed to minimize energy exchange between their contents and the external environment. They range from simple coffee cup calorimeters used by introductory chemistry students to sophisticated bomb calorimeters used to determine the energy content of food.</p>",
  "notes": "The four Link to Learning notes (the hand warmer video, the bomb calorimeter video, the calorimetric calculations site and the USDA nutrient database) are left out; Example 5.4 substitutes 4.18 J/g °C and solves with 4.184 J/g °C, the answer to Example 5.5’s Check Your Learning reads “1.34 × 10³ kJ, or 1.34 kJ”, and Example 5.7 computes −48.8 kJ and then states 48.7 kJ, all kept as printed.",
  "ai": {
-  "text": "Claude Opus 5.5",
-  "figures": "Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-28",
  "exercises_lead": "",

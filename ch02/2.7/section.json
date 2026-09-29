@@ -11,8 +11,18 @@
  "summary_html": "<p>Chemists use nomenclature rules to clearly name compounds. Ionic and molecular compounds are named using somewhat-different methods. Binary ionic compounds typically consist of a metal and a nonmetal. The name of the metal is written first, followed by the name of the nonmetal with its ending changed to –<em>ide</em>. For example, K<sub>2</sub>O is called potassium oxide. If the metal can form ions with different charges, a Roman numeral in parentheses follows the name of the metal to specify its charge. Thus, FeCl<sub>2</sub> is iron(II) chloride and FeCl<sub>3</sub> is iron(III) chloride. Some compounds contain polyatomic ions; the names of common polyatomic ions should be memorized. Molecular compounds can form compounds with different ratios of their elements, so prefixes are used to specify the numbers of atoms of each element in a molecule of the compound. Examples include SF<sub>6</sub>, sulfur hexafluoride, and N<sub>2</sub>O<sub>4</sub>, dinitrogen tetroxide. Acids are an important class of compounds containing hydrogen and having special nomenclature rules. Binary acids are named using the prefix <em>hydro-</em>, changing the –<em>ide</em> suffix to –<em>ic</em>, and adding “acid;” HCl is hydrochloric acid. Oxyacids are named by changing the ending of the anion (–<em>ate</em> to –<em>ic</em> and –<em>ite</em> to –<em>ous</em>), and adding “acid;” H<sub>2</sub>CO<sub>3</sub> is carbonic acid.</p>",
  "notes": "The Link to Learning note pointing to an external website for practice in naming compounds is left out. Erin Brockovich’s photograph, part (a) of Figure 2.32, is in the book’s figure. As printed: “the principle element”, the garbled sentence “Some examples demonstrating this Some other examples are shown in Table 2.11”, and the key’s answer “AIF<sub>3</sub>·3H<sub>2</sub>O” for aluminum fluoride trihydrate.",
  "ai": {
-  "text": "Claude Opus 5.5",
-  "figures": "Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-28",
  "exercises_lead": "",

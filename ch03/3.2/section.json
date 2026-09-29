@@ -12,7 +12,20 @@
  ],
  "summary_html": "<p>The chemical identity of a substance is defined by the types and relative numbers of atoms composing its fundamental entities (molecules in the case of covalent compounds, ions in the case of ionic compounds). A compound’s percent composition provides the mass percentage of each element in the compound, and it is often experimentally determined and used to derive the compound’s empirical formula. The empirical formula mass of a covalent compound may be compared to the compound’s molecular or molar mass to derive a molecular formula.</p>",
  "notes": "The Link to Learning note, a video of further worked examples of empirical formulas, is left out. Example 3.13 prints 8.624 in its ratio table where the line above gives 8.641 mol H, and the key gives 82.24% N for ammonia where the text computes 82.27%; both are kept as printed.",
- "ai": {"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"},
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
+ },
  "built": "2026-09-28",
  "exercises_lead": "",
  "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; answers that are formulas are compared by the reader. The unkeyed conceptual exercise fs-idm115920688 carries a suggested approach written by the AI. The unkeyed exercises fs-idm99186192 (percent compositions of HN<sub>3</sub>, TNT and the sulfate in Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>), fs-idm78648848 (the percent water in CuSO<sub>4</sub>∙5H<sub>2</sub>O), fs-idm106900080 (two empirical formulas from percent compositions), fs-idm234233056 (dichloroethane) and fs-idp2230736 (the empirical formulas of five polymers) are left out.",

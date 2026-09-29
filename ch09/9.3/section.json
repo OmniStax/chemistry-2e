@@ -12,7 +12,20 @@
  ],
  "summary_html": "<p>The ideal gas law can be used to derive a number of convenient equations relating directly measured quantities to properties of interest for gaseous substances and mixtures. Appropriate rearrangement of the ideal gas equation may be made to permit the calculation of gas densities and molar masses. Dalton’s law of partial pressures may be used to relate measured gas pressures for gaseous mixtures to their compositions. Avogadro’s law may be used in stoichiometric computations for chemical reactions involving gaseous reactants or products.</p>",
  "notes": "The Link to Learning note with a video on greenhouse gases and global warming is left out, as are the sentence inside the portrait of Susan Solomon that points to a video about her and the footnote citing the source of Lagrange’s quotation.",
- "ai": { "text": "Claude Opus 5.5", "figures": "Claude Opus 5.5" },
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
+ },
  "built": "2026-09-28",
  "exercises_lead": "",
  "exercise_notes": "Bloom levels, concept tags, hints and the suggested approaches marked as OmniStax’s own are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The nine Check Your Learning items are set inline after their examples. Where the key answers an outline item with its steps and a number, the number of part (b) is checked and the whole key is the solution. The unkeyed numerical exercises fs-idp231956592 (the density of laughing gas), fs-idp20795744 (the gas at 307 torr), fs-idm10841488 (the compound of carbon, nitrogen and hydrogen), fs-idp106657088 (the calibration gas at 146 atm), fs-idp19919472 (the mixture at STP), fs-idp100299232 (the mercury vapor analyzer), fs-idp38931136 (the gas collected by a student), fs-idp46179152 (Cavendish’s hydrogen), fs-idp152416544 (the air bag), fs-idp228232112 (the carbide lamp), fs-idp88428400 (the oxidation of NO), fs-idp68901248 (methanol), fs-idp86448160 (the colorless gas), fs-idp55931680 (hemoglobin) and fs-idp224745536 (the van Slyke method) are left out, and no answer is computed for them. The two unkeyed conceptual exercises are kept with a suggested approach marked as OmniStax’s own.",

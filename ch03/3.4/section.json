@@ -11,7 +11,20 @@
  ],
  "summary_html": "<p>In addition to molarity, a number of other solution concentration units are used in various applications. Percentage concentrations based on the solution components’ masses, volumes, or both are useful for expressing relatively high concentrations, whereas lower concentrations are conveniently expressed using ppm or ppb units. These units are popular in environmental, medical, and other fields where mole-based units such as molarity are not as commonly used.</p>",
  "notes": "The module prints no Link to Learning note, and the book’s spelling “alchol” in Example 3.24 is kept as printed. Six end-of-chapter exercises have no answer in the book’s key and are left out.",
- "ai": { "text": "Claude Opus 5.5", "figures": "Claude Opus 5.5" },
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
+ },
  "built": "2026-09-28",
  "exercises_lead": "",
  "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed exercises fs-idp18877920 (the mass of a 4.00% NaOH solution holding 15.0 g of NaOH), fs-idp11082976 (the HCl in 45.0 mL of 37.21% acid), fs-idm1879104 (the molarity of mercury at 0.68 ppb), fs-idm26515200 (the molarity of a 1.40% phenol throat spray), fs-idp22072496 (the molarity of a 5.0% alcohol cough syrup) and fs-idm9484992 (the molarity of 40.0% sulfuric acid) are left out. The first exercise asks for an outline and an answer; the answer is checked and the book’s outline is shown with it.",

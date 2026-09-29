@@ -12,8 +12,18 @@
   "summary_html": "<p>Gaseous atoms and molecules move freely and randomly through space. Diffusion is the process whereby gaseous atoms and molecules are transferred from regions of relatively high concentration to regions of relatively low concentration. Effusion is a similar process in which gaseous species pass from a container to a vacuum through very small orifices. The rates of effusion of gases are inversely proportional to the square roots of their densities or to the square roots of their atoms/molecules’ masses (Graham’s law).</p>",
   "notes": "The section prints no Link to Learning note. Figure 9.28, the book’s drawing of diffusion against effusion, is folded into Figure 9.27 as the effusion state of the same two bulbs. The uranium note’s sentence “The small difference in molecular weights between ²³⁵UF₆ and ²³⁸UF₆ only about 0.4% enrichment, is achieved in one diffuser” and the missing period in the caption of Figure 9.30 are kept as printed.",
   "ai": {
-    "text": "Claude Opus 5.5",
-    "figures": "Claude Opus 5.5"
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
   },
   "built": "2026-09-28",
   "exercises_lead": "",

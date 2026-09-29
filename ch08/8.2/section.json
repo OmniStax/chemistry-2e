@@ -12,8 +12,18 @@
  "summary_html": "<p>We can use hybrid orbitals, which are mathematical combinations of some or all of the valence atomic orbitals, to describe the electron density around covalently bonded atoms. These hybrid orbitals either form sigma (σ) bonds directed toward other atoms of the molecule or contain lone pairs of electrons. We can determine the type of hybridization around a central atom from the geometry of the regions of electron density about it. Two such regions imply <em>sp</em> hybridization; three, <em>sp</em><sup>2</sup> hybridization; four, <em>sp</em><sup>3</sup> hybridization; five, <em>sp</em><sup>3</sup><em>d</em> hybridization; and six, <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> hybridization. Pi (π) bonds are formed from unhybridized atomic orbitals (<em>p</em> or <em>d</em> orbitals).</p>",
  "notes": "The Link to Learning note pointing to a website for visualizing hybrid orbitals in three dimensions is left out, since the three-dimensional figures of this page take its place.",
  "ai": {
-  "text": "Claude Opus 5.5",
-  "figures": "Claude Opus 5.5"
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
  },
  "built": "2026-09-28",
  "exercises_lead": "",

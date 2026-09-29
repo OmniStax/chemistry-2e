@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Chemistry in Context",
  "short": "Chemistry in context",
- "lead": "Chemistry is the study of the composition, properties, and interactions of matter, and people practiced it for thousands of years before anyone understood it. This section follows that history from the first pottery and bronze to the alchemists and on to modern drug design, places chemistry among the other sciences, describes the scientific method by which a hypothesis is tested and may become a law or a theory, and introduces the three domains, macroscopic, microscopic, and symbolic, in which chemists think about matter at once.",
+ "lead": "Chemistry is the study of the composition, properties, and interactions of matter, and people practiced it for thousands of years before anyone understood it. Its history runs from the first pottery and bronze through the alchemists to modern drug design. Chemistry sits among the other sciences, and it tests a hypothesis by the scientific method until it may become a law or a theory. Chemists think about matter in three domains at once: macroscopic, microscopic, and symbolic.",
  "objectives": [
   "Outline the historical development of chemistry",
   "Provide examples of the importance of chemistry in everyday life",
@@ -18,6 +18,10 @@
   "text": [
    {
     "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
    }
   ],
   "figures": [
@@ -133,7 +137,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Ask of each item whether it is a thing large enough to see and touch, a thing too small to see, or a symbol that stands for one of the two. A lead pipe (a) can be picked up and weighed, so it belongs to the macroscopic domain. A single chlorine atom (b) is far too small to be seen and is pictured in the mind, so it belongs to the microscopic domain. The label Al in (c) and the symbol Al in (d) are both chemical symbols and so belong to the symbolic domain; the difference is what each stands for. On the bottle the symbol names the metal in the bottle, a macroscopic feature, whereas in (d) the same symbol stands for one aluminum atom, a microscopic feature. That one symbol can mean either is the point the section makes about the symbolic domain."
+    "solution": "Ask of each item whether it is large enough to see and touch, too small to see, or a symbol that stands for one of the two. You can pick up and weigh a lead pipe (a), so it belongs to the macroscopic domain. A single chlorine atom (b) is far too small to see and exists only as a picture in the mind, so it belongs to the microscopic domain. The label Al in (c) and the symbol Al in (d) are both chemical symbols and so belong to the symbolic domain; they differ in what each stands for. On the bottle, the symbol names the metal inside, a macroscopic feature, whereas in (d) the same symbol stands for one aluminum atom, a microscopic feature. One symbol can mean either, and that is the nature of the symbolic domain."
    }
   },
   {
@@ -161,7 +165,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Look at what the theory talks about. The pressure and the volume of the gas are macroscopic properties, since both can be measured on a sample in the laboratory, but the explanation offered is given in terms of molecules moving and striking the walls of the container, and molecules are far too small to be seen. The theory therefore follows a microscopic description: it explains a behavior that is observed in the macroscopic domain by what is imagined to happen in the microscopic one, which is what the section says a theory in chemistry characteristically does."
+    "solution": "Look at what the theory talks about. The pressure and the volume of the gas are macroscopic properties, since you can measure both on a sample in the laboratory. The explanation, though, speaks of molecules moving and striking the walls of the container, and molecules are far too small to see. The theory therefore follows a microscopic description. It explains a behavior observed in the macroscopic domain by what happens in the microscopic one, which is what a theory in chemistry characteristically does."
    }
   },
   {

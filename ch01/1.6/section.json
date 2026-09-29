@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Mathematical Treatment of Measurement Results",
  "short": "Mathematical treatment of measurements",
- "lead": "A quantity that cannot be measured directly is calculated from ones that can, and the units take part in the arithmetic along with the numbers. This section sets out dimensional analysis, the method that carries a measurement from one unit to another through conversion factors and combines measurements in different units into a single result, and then turns to temperature, whose scales share no zero point and so are related by a line with an intercept rather than by a simple factor.",
+ "lead": "You calculate a quantity you cannot measure directly from ones you can, and the units take part in the arithmetic along with the numbers. Dimensional analysis carries a measurement from one unit to another through conversion factors and combines measurements in different units into a single result. Temperature scales share no zero point, so a line with an intercept relates them rather than a simple factor.",
  "objectives": [
   "Explain the dimensional analysis (factor label) approach to mathematical calculations involving quantities",
   "Use dimensional analysis to carry out unit conversions for a given property and computations involving two or more properties"
@@ -15,6 +15,10 @@
   "text": [
    {
     "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
    }
   ],
   "figures": [

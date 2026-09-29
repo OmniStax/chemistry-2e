@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Measurements",
  "short": "Measurements",
- "lead": "Every measurement carries a number, a unit and an uncertainty, and a number without its unit can be meaningless or dangerous. This section sets out the seven base units of the International System and the prefixes that scale them, introduces the meter, the kilogram, the kelvin and the second, and derives from them the units of volume and of density, which is measured here with a balance and a graduated cylinder.",
+ "lead": "Every measurement carries a number, a unit and an uncertainty, and a number without its unit can be meaningless or dangerous. The International System has seven base units, with prefixes that scale them. From the meter, the kilogram, the kelvin and the second come the units of volume and of density, and you measure density with a balance and a graduated cylinder.",
  "objectives": [
   "Explain the process of measurement",
   "Identify the three basic parts of a quantity",
@@ -17,6 +17,10 @@
   "text": [
    {
     "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
    }
   ],
   "figures": [

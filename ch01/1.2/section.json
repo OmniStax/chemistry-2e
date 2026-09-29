@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Phases and Classification of Matter",
  "short": "Phases and classification of matter",
- "lead": "Matter is anything that occupies space and has mass, and it is met on earth as a solid, a liquid, a gas, or, at high temperatures, a plasma. This section separates mass from weight, states the law that the total quantity of matter does not change when matter changes form, and sorts every sample of matter into an element, a compound, a homogeneous mixture, or a heterogeneous mixture, with the atoms and molecules that all of them are made of.",
+ "lead": "Matter is anything that occupies space and has mass, and on earth it exists as a solid, a liquid, a gas, or, at high temperatures, a plasma. Mass is not the same as weight. The total quantity of matter does not change when matter changes form. Every sample of matter is an element, a compound, a homogeneous mixture, or a heterogeneous mixture, and all of them are made of atoms and molecules.",
  "objectives": [
   "Describe the basic properties of each physical state of matter: solid, liquid, and gas",
   "Distinguish between mass and weight",
@@ -18,6 +18,10 @@
   "text": [
    {
     "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
    }
   ],
   "figures": [
@@ -260,7 +264,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Both are mixtures: each is composed of two or more types of matter that can be present in varying amounts and can be separated by physical changes. They differ in how the composition is distributed. A heterogeneous mixture has a composition that varies from point to point, so one drop of Italian dressing may be mostly vinegar and another mostly oil; a homogeneous mixture, also called a solution, has a uniform composition and appears visually the same throughout, so every drop of a sports drink tastes the same."
+    "solution": "Both are mixtures: each consists of two or more types of matter that can be present in varying amounts, and physical changes can separate them. They differ in how the composition is distributed. A heterogeneous mixture has a composition that varies from point to point, so one drop of Italian dressing may be mostly vinegar and another mostly oil. A homogeneous mixture, also called a solution, has a uniform composition and looks the same throughout, so every drop of a sports drink tastes the same."
    }
   },
   {
@@ -356,7 +360,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Take each substance down the two questions of Figure 1.11. Ask first whether it has a constant composition: a substance that can be made in varying proportions and separated by physical means is a mixture, and the section names air and gasoline among its examples of homogeneous mixtures. A pure substance is an element if it cannot be broken down into simpler substances by chemical changes and consists of one kind of atom, and a compound if it is comprised of two or more elements. Copper, nitrogen, and sulfur appear in the section’s lists of elements, water and sucrose in its discussion of compounds, and a molecule made only of iodine atoms is a molecule of an element, as the hydrogen and oxygen molecules of Figure 1.14 are."
+    "solution": "Take each substance down the two questions of Figure 1.11. First ask whether it has a constant composition. A substance you can make in varying proportions and separate by physical means is a mixture; air and gasoline are homogeneous mixtures. A pure substance is an element if chemical changes cannot break it into simpler substances and it consists of one kind of atom, and a compound if it is comprised of two or more elements. Copper, nitrogen, and sulfur are elements, and water and sucrose are compounds. A molecule made only of iodine atoms is a molecule of an element, like the hydrogen and oxygen molecules of Figure 1.14."
    }
   },
   {
@@ -452,7 +456,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Begin with the states, which are the easiest to see: anything rigid with a definite shape is a solid, anything that flows and takes the shape of its container but keeps its volume is a liquid, and anything that fills whatever holds it is a gas. Then classify each item by composition with the questions of Figure 1.11. A substance of constant composition is a pure substance, and it is an element if it consists of one kind of atom, such as the copper of a wire or the aluminum of a can, and a compound if it is made of two or more elements, such as water or table salt. A substance whose composition can vary is a mixture, homogeneous if it is the same throughout, as air, a sports drink, and maple syrup are, and heterogeneous if it varies from point to point, as salad dressing, granite, and a chocolate chip cookie do. One item can carry more than one label, since water is at once a liquid, a compound, and a pure substance."
+    "solution": "Begin with the states, which are the easiest to see. Anything rigid with a definite shape is a solid. Anything that flows and takes the shape of its container but keeps its volume is a liquid. Anything that fills whatever holds it is a gas. Then classify each item by composition with the questions of Figure 1.11. A substance of constant composition is a pure substance. It is an element if it consists of one kind of atom, such as the copper of a wire or the aluminum of a can, and a compound if it contains two or more elements, such as water or table salt. A substance whose composition can vary is a mixture: homogeneous if it is the same throughout, as air, a sports drink, and maple syrup are, and heterogeneous if it varies from point to point, as salad dressing, granite, and a chocolate chip cookie do. One item can carry more than one label, since water is at once a liquid, a compound, and a pure substance."
    }
   },
   {
@@ -488,7 +492,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The law says that the total quantity of matter does not change when matter converts from one type to another, so in each case ask what was weighed before and what is weighed after, and whether any matter came in or went out between the two weighings. The aroma of baking bread is matter leaving the loaf as gases, along with the water that steams off, and none of it is on the balance afterward. Magnesium burning in air combines with oxygen that was not part of the piece of magnesium, so the ash carries matter that was not weighed at the start. A sealed flask lets nothing in and nothing out, so everything that was weighed before the heating is still inside afterward, whatever it has turned into; that is why Lavoisier’s sealed flask was convincing where an open oven is not."
+    "solution": "The law says that the total quantity of matter does not change when matter converts from one type to another. So in each case ask what you weigh before and after, and whether any matter came in or went out between the two weighings. The aroma of baking bread is matter leaving the loaf as gases, along with the water that steams off, and none of it is on the balance afterward. Magnesium burning in air combines with oxygen from outside the piece of magnesium, so the ash carries matter you did not weigh at the start. A sealed flask lets nothing in and nothing out, so everything you weighed before the heating is still inside afterward, whatever it has turned into. That is why Lavoisier’s sealed flask convinced where an open oven cannot."
    }
   },
   {

@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Measurement Uncertainty, Accuracy, and Precision",
  "short": "Uncertainty, accuracy, and precision",
- "lead": "Counting is the one kind of measurement that is exact; every other measurement carries an uncertainty, and its last digit is where that uncertainty lives. This section shows how an instrument is read to one estimated digit, how the significant figures of a reported value are counted, how a calculated result is rounded so that it claims no more certainty than the measurements behind it, and how the precision of repeated measurements differs from their accuracy.",
+ "lead": "Counting is the one kind of measurement that is exact; every other measurement carries an uncertainty, and its last digit holds that uncertainty. You read an instrument to one estimated digit and count the significant figures of a reported value. A calculated result must be rounded so that it claims no more certainty than the measurements behind it. The precision of repeated measurements differs from their accuracy.",
  "objectives": [
   "Define accuracy and precision",
   "Distinguish exact and uncertain numbers",
@@ -17,6 +17,10 @@
   "text": [
    {
     "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
    }
   ],
   "figures": [
@@ -451,7 +455,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Ask of each quantity whether it comes from counting or from a definition, or from a measurement. A number of objects that does not change while they are counted, such as eggs in a basket, is exact, and so is a quantity fixed by definition, such as the number of centimeters in a meter and therefore in 2 m. A mass, a volume, a distance or a time has to be measured with an instrument, and every such measurement is uncertain to the extent of its last digit: the mass of a dozen eggs, the gasoline that fills a tank, the mass of a textbook and the time of a drive are all of this kind, and the last of them rests on a measured distance and a measured speed besides."
+    "solution": "Ask of each quantity whether it comes from counting, from a definition, or from a measurement. A number of objects that does not change while you count them, such as eggs in a basket, is exact, and so is a quantity fixed by definition, such as the number of centimeters in a meter and therefore in 2 m. You must measure a mass, a volume, a distance or a time with an instrument, and every such measurement is uncertain to the extent of its last digit. The mass of a dozen eggs, the gasoline that fills a tank, the mass of a textbook and the time of a drive are all of this kind, and the last rests on a measured distance and a measured speed besides."
    }
   },
   {
@@ -467,7 +471,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Judge the two qualities separately, as the section does for the three dispensers. Precision is how closely the repeated values agree with one another, so look at how far apart the largest and smallest values in each set lie against the size of the values. Accuracy is how closely the values agree with a true or accepted value, so look for the target the set is being checked against: a pipette is meant to deliver its nominal volume, and a purity is compared with what the gold is supposed to be, while a set that is only being checked for consistency names no true value, and its accuracy cannot be judged from the values alone. A set can be tight and far from its target, scattered and centred on it, both, or neither."
+    "solution": "Judge the two qualities separately, as for the three dispensers. Precision is how closely the repeated values agree with one another, so compare the spread between the largest and smallest values in each set with the size of the values. Accuracy is how closely the values agree with a true or accepted value, so look for the target the set is checked against. A pipette should deliver its nominal volume, and a purity is compared with what the gold should be. A set checked only for consistency names no true value, and you cannot judge its accuracy from the values alone. A set can be tight and far from its target, scattered and centered on it, both, or neither."
    }
   }
  ],

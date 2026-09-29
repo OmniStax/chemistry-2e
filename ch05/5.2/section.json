@@ -4,7 +4,7 @@
  "chapter": "5",
  "title": "Calorimetry",
  "short": "Calorimetry",
- "lead": "A calorimeter measures a heat by letting it change the temperature of something whose specific heat and mass are known. This section divides the world into a system and its surroundings, balances the heat lost by a hot metal against the heat gained by cool water, finds the heat of a reaction in solution from the temperature change of a coffee cup calorimeter, and adds the heat capacity of the bomb when a combustion is measured at constant volume, as the energy content of foods is.",
+ "lead": "A calorimeter measures a heat by letting it change the temperature of something of known specific heat and mass. The measurement divides the world into a system and its surroundings. The heat lost by a hot metal balances the heat gained by cool water, and the temperature change of a coffee cup calorimeter gives the heat of a reaction in solution. A combustion at constant volume, such as one that finds the energy content of a food, also needs the heat capacity of the bomb.",
  "objectives": [
   "Explain the technique of calorimetry",
   "Calculate and interpret heat and related properties using typical calorimetry data"

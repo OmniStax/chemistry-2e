@@ -4,7 +4,7 @@
  "chapter": "3",
  "title": "Molarity",
  "short": "Molarity",
- "lead": "Most of the matter we meet is not a pure substance but a mixture, and the properties of a mixture depend on how much of each component it holds. This section describes solutions and their solvents and solutes, defines molarity as the moles of solute in a liter of solution, works with it to find amounts, masses and volumes, and shows how diluting a solution lowers its concentration while leaving the amount of solute unchanged.",
+ "lead": "Most of the matter we meet is not a pure substance but a mixture, and the properties of a mixture depend on how much of each component it holds. A solution consists of a solvent and one or more solutes. Molarity, the moles of solute in a liter of solution, gives amounts, masses and volumes. Diluting a solution lowers its concentration but leaves the amount of solute unchanged.",
  "objectives": [
   "Describe the fundamental properties of solutions",
   "Calculate solution concentrations using molarity",

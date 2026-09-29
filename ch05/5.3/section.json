@@ -4,7 +4,7 @@
   "chapter": "5",
   "title": "Enthalpy",
   "short": "Enthalpy",
-  "lead": "The internal energy of a system changes through heat and work, and at constant pressure the heat of a process is its enthalpy change. This section writes that change into thermochemical equations, tabulates it as enthalpies of combustion and formation, and adds it step by step with Hess’s law.",
+  "lead": "The internal energy of a system changes through heat and work, and at constant pressure the heat of a process is its enthalpy change. Thermochemical equations carry that change, tables list it as enthalpies of combustion and formation, and Hess’s law adds it step by step.",
   "objectives": [
     "State the first law of thermodynamics",
     "Define enthalpy and explain its classification as a state function",

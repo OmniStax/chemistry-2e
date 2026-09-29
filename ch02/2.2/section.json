@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Evolution of Atomic Theory",
  "short": "Evolution of Atomic Theory",
- "lead": "The atoms of Dalton’s theory turn out to be built from smaller particles, and this section follows the experiments that found them: Thomson’s cathode ray tube, which revealed the electron; Millikan’s oil drops, which measured its charge and so its mass; and Rutherford’s gold foil, whose rare backward bounces showed that an atom is mostly empty space around a small, dense, positive nucleus. It ends with the proton, the neutron, and the isotopes the neutron explains.",
+ "lead": "The atoms of Dalton’s theory turn out to contain smaller particles, and three experiments found them. Thomson’s cathode ray tube revealed the electron. Millikan’s oil drops measured its charge and so its mass. Rutherford’s gold foil, with its rare backward bounces, showed that an atom is mostly empty space around a small, dense, positive nucleus. The proton and the neutron complete the picture, and the neutron explains isotopes.",
  "objectives": [
   "Outline milestones in the development of modern atomic theory",
   "Summarize and interpret the results of the experiments of Thomson, Millikan, and Rutherford",
@@ -139,7 +139,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Start from where the positive charge sits in each model. (a) In a plum pudding atom the positive charge is spread thinly through the whole atom and the electrons are too light to matter, so no small region of concentrated charge can push hard on an α particle. Expect every particle to pass through with at most a slight bend, and none to come back. (b) A faster α particle spends less time inside each atom and is harder to turn, so its paths should be straighter still. (c) The figure shows this: with plum pudding atoms every path through the foil is nearly straight, every flash lands close to straight ahead, and the count of particles turned back stays at zero; at the higher energy the small bends shrink further. The occasional large deflections Geiger and Marsden saw cannot come from such an atom."
+    "solution": "Start from where the positive charge sits in each model. (a) In a plum pudding atom the positive charge is spread thinly through the whole atom and the electrons are too light to matter, so no small region of concentrated charge can push hard on an α particle. Expect every particle to pass through with at most a slight bend, and none to come back. (b) A faster α particle spends less time inside each atom and is harder to turn, so its paths should be straighter still. (c) With plum pudding atoms every path through the foil is nearly straight, every flash lands close to straight ahead, and the count of particles turned back stays at zero; at the higher energy the small bends shrink further. The occasional large deflections Geiger and Marsden saw cannot come from such an atom."
    }
   },
   {

@@ -4,7 +4,7 @@
  "chapter": "3",
  "title": "Other Units for Solution Concentrations",
  "short": "Other Concentration Units",
- "lead": "Molarity is only one way of stating how much solute a solution holds. This section defines the mass percentage, the volume percentage and the mass-volume percentage, which suit concentrated solutions and consumer products, and the parts per million and parts per billion, which suit trace contaminants in water. It then uses a solution’s density to convert between a volume and a mass, so that a concentration in one unit can be turned into a mass or an amount of solute.",
+ "lead": "Molarity is only one way of stating how much solute a solution holds. The mass percentage, the volume percentage and the mass-volume percentage suit concentrated solutions and consumer products. Parts per million and parts per billion suit trace contaminants in water. A solution’s density converts between a volume and a mass, so you can turn a concentration in one unit into a mass or an amount of solute.",
  "objectives": [
   "Define the concentration units of mass percentage, volume percentage, mass-volume percentage, parts-per-million (ppm), and parts-per-billion (ppb)",
   "Perform computations relating a solution’s concentration and its components’ volumes and/or masses using these units"

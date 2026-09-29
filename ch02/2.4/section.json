@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Chemical Formulas",
  "short": "Chemical formulas",
- "lead": "A chemical formula says which atoms make up a substance and in what numbers, and there is more than one kind. This section sets out the molecular formula, which counts the atoms in one molecule, the structural formula and the ball-and-stick and space-filling models, which show how those atoms are connected and arranged, and the empirical formula, which gives only the simplest whole-number ratio of the atoms; it closes on isomers, compounds that share a formula but differ in structure.",
+ "lead": "A chemical formula says which atoms make up a substance and in what numbers, and there is more than one kind. A molecular formula counts the atoms in one molecule. A structural formula, a ball-and-stick model and a space-filling model show how those atoms connect and how they are arranged. An empirical formula gives only the simplest whole-number ratio of the atoms. Isomers are compounds that share a formula but differ in structure.",
  "objectives": [
   "Symbolize the composition of molecules using molecular formulas and empirical formulas",
   "Represent the bonding arrangement of atoms within molecules using structural formulas"

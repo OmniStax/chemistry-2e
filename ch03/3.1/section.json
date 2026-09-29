@@ -4,7 +4,7 @@
  "chapter": "3",
  "title": "Formula Mass and the Mole Concept",
  "short": "Formula mass and the mole",
- "lead": "A chemical formula says which atoms a substance contains and how many of each, and the average masses of those atoms add up to its formula mass. This section computes the formula masses of covalent and ionic compounds, introduces the mole and Avogadro’s number as the chemist’s unit for counting atoms and molecules, and uses the molar mass to convert between the mass of a sample, its amount in moles, and the number of atoms or molecules it contains.",
+ "lead": "A chemical formula says which atoms a substance contains and how many of each, and the average masses of those atoms add up to its formula mass. You can compute the formula masses of covalent and ionic compounds alike. The mole and Avogadro’s number give chemists a unit for counting atoms and molecules, and the molar mass converts between the mass of a sample, its amount in moles, and the number of atoms or molecules it contains.",
  "objectives": [
   "Calculate formula masses for covalent and ionic compounds",
   "Define the amount unit mole and the related quantity Avogadro’s number",

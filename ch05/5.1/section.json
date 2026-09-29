@@ -4,7 +4,7 @@
  "chapter": "5",
  "title": "Energy Basics",
  "short": "Energy Basics",
- "lead": "Energy is the capacity to supply heat or do work, and every chemical and physical change converts it from one form into another without creating or destroying any. This section distinguishes thermal energy, temperature and heat, follows heat as it flows from a hotter body to a cooler one, and relates the heat a substance gains or loses to its specific heat, its mass and its temperature change.",
+ "lead": "Energy is the capacity to supply heat or do work, and every chemical and physical change converts it from one form into another without creating or destroying any. Thermal energy, temperature and heat are three different things. Heat flows from a hotter body to a cooler one, and the heat a substance gains or loses depends on its specific heat, its mass and its temperature change.",
  "objectives": [
   "Define energy, distinguish types of energy, and describe the nature of energy changes that accompany chemical and physical changes",
   "Distinguish the related properties of heat, thermal energy, and temperature",
@@ -286,7 +286,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "One way to begin is to follow the energy from the fuel tank to the road. Gasoline stores chemical energy, a type of potential energy, in its molecules. When it is combusted in the cylinders, that chemical energy becomes thermal energy of the hot gaseous products, and the rapidly expanding gases move the pistons, so part of it becomes mechanical (kinetic) energy that turns the crankshaft and the wheels. The alternator converts some of that mechanical energy into electrical energy, which the battery stores as chemical potential energy and which the lights turn into light and heat. The brakes convert the kinetic energy of the moving car into heat by friction, and much of the energy of the fuel leaves as heat in the exhaust and the radiator. A table of these transitions might list, for each, the part of the car, the form of energy before, and the form after."
+    "solution": "One way to begin is to follow the energy from the fuel tank to the road. Gasoline stores chemical energy, a type of potential energy, in its molecules. When it burns in the cylinders, that chemical energy becomes thermal energy of the hot gaseous products. The rapidly expanding gases move the pistons, so part of it becomes mechanical (kinetic) energy that turns the crankshaft and the wheels. The alternator converts some of that mechanical energy into electrical energy, which the battery stores as chemical potential energy and the lights turn into light and heat. The brakes convert the kinetic energy of the moving car into heat by friction, and much of the energy of the fuel leaves as heat in the exhaust and the radiator. A table of these transitions might list, for each, the part of the car, the form of energy before, and the form after."
    }
   },
   {

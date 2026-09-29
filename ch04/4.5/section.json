@@ -4,7 +4,7 @@
  "chapter": "4",
  "title": "Quantitative Chemical Analysis",
  "short": "Quantitative analysis",
- "lead": "The stoichiometry of a reaction can be turned around to measure how much of a substance a sample holds. This section describes titration, in which the volume of a solution of known concentration needed to react completely with the analyte gives its concentration, and gravimetric analysis, in which the mass of a separated product gives the mass of the analyte, including the combustion analysis that finds the empirical formula of a hydrocarbon.",
+ "lead": "You can turn the stoichiometry of a reaction around to measure how much of a substance a sample holds. In a titration, the volume of a solution of known concentration needed to react completely with the analyte gives its concentration. In gravimetric analysis, the mass of a separated product gives the mass of the analyte. Combustion analysis, one kind of gravimetric analysis, finds the empirical formula of a hydrocarbon.",
  "objectives": [
   "Describe the fundamental aspects of titrations and gravimetric analysis.",
   "Perform stoichiometric calculations using typical titration and gravimetric data."

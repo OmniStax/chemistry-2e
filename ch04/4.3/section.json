@@ -4,7 +4,7 @@
  "chapter": "4",
  "title": "Reaction Stoichiometry",
  "short": "Reaction Stoichiometry",
- "lead": "The coefficients of a balanced equation give the relative amounts of the substances a reaction consumes and produces, much as a recipe gives the amounts of its ingredients. This section derives stoichiometric factors from those coefficients and uses them, with molar masses and Avogadro’s number, to relate the moles, the numbers of molecules and the masses of any two substances in a reaction.",
+ "lead": "The coefficients of a balanced equation give the relative amounts of the substances a reaction consumes and produces, much as a recipe gives the amounts of its ingredients. Stoichiometric factors come from those coefficients. With molar masses and Avogadro’s number, they relate the moles, the numbers of molecules and the masses of any two substances in a reaction.",
  "objectives": [
   "Explain the concept of stoichiometry as it pertains to chemical reactions",
   "Use balanced chemical equations to derive stoichiometric factors relating amounts of reactants and products",

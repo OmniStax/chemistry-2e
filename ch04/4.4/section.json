@@ -4,7 +4,7 @@
  "chapter": "4",
  "title": "Reaction Yields",
  "short": "Reaction yields",
- "lead": "Reactants are rarely mixed in exactly the amounts a balanced equation calls for. This section shows how the reactant that runs out first, the limiting reactant, sets the amount of product that can form, and how the amount of product actually obtained compares with that theoretical yield as a percent yield.",
+ "lead": "Chemists rarely mix reactants in exactly the amounts a balanced equation calls for. The reactant that runs out first, the limiting reactant, sets the amount of product that can form. The amount of product actually obtained, divided by that theoretical yield, gives the percent yield.",
  "objectives": [
   "Explain the concepts of theoretical yield and limiting reactants/reagents.",
   "Derive the theoretical yield for a reaction under specified conditions.",
@@ -208,7 +208,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: a theoretical yield is calculated from the balanced equation, which assumes that no atoms are created or destroyed in the reaction and that the atoms of each compound combine in a fixed whole-number ratio. Recall the postulate of Dalton’s atomic theory that says atoms are neither created nor destroyed in a chemical change, only separated, combined or rearranged, together with the one that says a compound has a constant ratio of its atoms; name the postulate that makes the mass of product predictable from the mass of reactant."
+    "solution": "Suggested approach: you calculate a theoretical yield from the balanced equation, which assumes that the reaction neither creates nor destroys atoms and that the atoms of each compound combine in a fixed whole-number ratio. Recall the postulate of Dalton’s atomic theory that says a chemical change neither creates nor destroys atoms but only separates, combines or rearranges them, together with the one that says a compound has a constant ratio of its atoms. Name the postulate that makes the mass of product predictable from the mass of reactant."
    }
   },
   {

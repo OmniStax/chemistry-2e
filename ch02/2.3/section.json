@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Atomic Structure and Symbolism",
  "short": "Atomic Structure",
- "lead": "An atom is a very small nucleus of protons and neutrons inside a much larger cloud of electrons, and its masses and charges are measured in atomic mass units and in units of the electron’s charge. This section defines the atomic number and the mass number, shows how an atom becomes a cation or an anion, writes the symbols of elements, isotopes and ions, and explains why the atomic mass of an element is a weighted average over its isotopes, as a mass spectrometer measures them.",
+ "lead": "An atom is a very small nucleus of protons and neutrons inside a much larger cloud of electrons. We measure its masses in atomic mass units and its charges in units of the electron’s charge. The atomic number and the mass number identify an atom, and gaining or losing electrons makes it an anion or a cation. Symbols name elements, isotopes and ions, and the atomic mass of an element is a weighted average over its isotopes, as a mass spectrometer measures them.",
  "objectives": [
   "Write and interpret symbols that depict the atomic number, mass number, and charge of an atom or ion",
   "Define the atomic mass unit and average atomic mass",

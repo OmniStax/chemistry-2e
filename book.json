@@ -1230,7 +1230,7 @@
       "kind": "skill",
       "section": "1.1",
       "name": "Telling a hypothesis from a law and from a theory",
-      "why": "These three words are used loosely outside science and precisely inside it. A hypothesis is a tentative explanation that guides the gathering of information, a law summarizes a vast number of observations and predicts, and a theory is a well-substantiated explanation that survived a large body of data. Reading a statement and knowing which of the three it is tells the reader how much weight it carries.",
+      "why": "Outside science these three words are loose; inside it they are precise. A hypothesis is a tentative explanation that guides the gathering of information, a law summarizes a vast number of observations and predicts, and a theory is a well-substantiated explanation that has survived a large body of data. Knowing which of the three a statement is tells you how much weight it carries.",
       "evidence": "The section defines all three in turn and explains how a hypothesis may become a theory, and two exercises give six statements in all and ask the reader to classify each and explain the reasoning."
     },
     {
@@ -1238,7 +1238,7 @@
       "kind": "idea",
       "section": "1.1",
       "name": "The macroscopic, microscopic, and symbolic domains",
-      "why": "Chemists describe matter in three domains at once: the macroscopic, which can be seen and touched; the microscopic, which is mostly imagined; and the symbolic, the formulas and equations that stand for either. One of the challenges of learning chemistry is that the same symbol can stand for a thing in one domain or in the other, and one of the pleasures is explaining what can be observed by what must be imagined.",
+      "why": "Chemists describe matter in three domains at once: the macroscopic, which you can see and touch; the microscopic, which is mostly imagined; and the symbolic, the formulas and equations that stand for either. One challenge of learning chemistry is that the same symbol can stand for a thing in one domain or the other, and one pleasure is explaining what you observe by what you must imagine.",
       "evidence": "The section names and defines the three domains and works them through on water, Figure 1.5 shows an iceberg, the molecules in it and the formula H2O together, and four exercises underline items and ask which domain each belongs to and, for a symbol, which domain it stands for."
     },
     {
@@ -1246,7 +1246,7 @@
       "kind": "idea",
       "section": "1.2",
       "name": "Matter",
-      "why": "Matter is anything that occupies space and has mass, which is the working definition everything else in the book is stated about. It is worth stating carefully because a gas is as much matter as a solid is, even though it can be neither seen nor held.",
+      "why": "Matter is anything that occupies space and has mass, the working definition behind everything else in the book. A gas is as much matter as a solid is, even though you can neither see nor hold it.",
       "evidence": "The section opens by defining matter and argues that a gas is matter because a balloon inflates, and the summary states the definition again."
     },
     {
@@ -1270,7 +1270,7 @@
       "kind": "result",
       "section": "1.2",
       "name": "The law of conservation of matter",
-      "why": "There is no detectable change in the total quantity of matter when matter converts from one type to another or changes among the solid, liquid and gaseous states. It is the law every balanced equation and every mass calculation of the later chapters rests on, and the reason a mass that seems to vanish has gone somewhere that was not weighed.",
+      "why": "There is no detectable change in the total quantity of matter when matter converts from one type to another or changes among the solid, liquid and gaseous states. Every balanced equation and every mass calculation of the later chapters rests on this law, and a mass that seems to vanish has gone somewhere nobody weighed.",
       "evidence": "The section states the law and illustrates it with brewing and with a lead-acid battery in Figure 1.8, and three exercises ask about a rusting nail, a loaf baked in an open oven, magnesium burning in air, a sealed flask of tin, and the masses in a fermentation."
     },
     {
@@ -1294,7 +1294,7 @@
       "kind": "skill",
       "section": "1.2",
       "name": "Classifying a sample of matter",
-      "why": "Given a sample, the reader should be able to place it: constant composition or not, uniform or not, simplifiable by a chemical change or not. Two questions sort every sample into an element, a compound, a homogeneous mixture or a heterogeneous mixture, and the classification decides what can be done with the sample.",
+      "why": "Given a sample, you should be able to place it: constant composition or not, uniform or not, simplifiable by a chemical change or not. Two questions sort every sample into an element, a compound, a homogeneous mixture or a heterogeneous mixture, and the classification decides what you can do with the sample.",
       "evidence": "Figure 1.11 draws the decision as a flowchart, Table 1.1 lists the eleven elements that make up most of the earth's crust, and three exercises give more than sixteen substances between them and ask for the classification of each."
     },
     {
@@ -1334,7 +1334,7 @@
       "kind": "skill",
       "section": "1.3",
       "name": "Classifying a change as physical or chemical",
-      "why": "Deciding which of the two kinds of change has happened is a judgement the reader has to make about a described event, and the judgement comes down to one question: is the matter that is left the same kind of matter as the matter that was there before? A gas that expands has changed physically; a gas that has burned has not.",
+      "why": "To decide which kind of change a described event is, ask one question: is the matter left afterward the same kind of matter as the matter there before? A gas that expands has changed physically; a gas that has burned has not.",
       "evidence": "Three exercises give eleven changes between them, from condensing steam and melting gold to souring milk and an exploding firecracker, and two more ask about a volume of oxygen that changes with temperature and about hydrogen and oxygen combining to make water vapor."
     },
     {
@@ -1350,7 +1350,7 @@
       "kind": "idea",
       "section": "1.4",
       "name": "The three parts of a measured quantity",
-      "why": "Every measurement provides three kinds of information: a number, a unit that says what the number is compared against, and an uncertainty. The number and the unit are written down and the uncertainty is carried implicitly, and a quantity that is missing any of the three is at best confusing; a dose of one hundred without its unit can be a treatment or a lethal amount.",
+      "why": "Every measurement provides three kinds of information: a number, a unit that says what the number is compared against, and an uncertainty. You write down the number and the unit and carry the uncertainty implicitly. A quantity missing any of the three is at best confusing: a dose of one hundred without its unit can be a treatment or a lethal amount.",
       "evidence": "The section opens by naming the three parts, defines unit, argues the point with a soft-drink bottle, a hamburger and a prescription of phenobarbital, and the summary states that each measurement has an amount, a unit and an uncertainty."
     },
     {
@@ -1358,7 +1358,7 @@
       "kind": "skill",
       "section": "1.4",
       "name": "Writing a measurement in scientific notation",
-      "why": "A number in a measurement can be written in decimal form or in scientific notation, and for the very large and the very small the second is the only readable one. The mass of a mosquito is more usefully written as 2.5 x 10 to the minus 6 kilograms than as a string of zeros, and the notation will also be what settles how many digits of a measurement are meant.",
+      "why": "You can write a number in a measurement in decimal form or in scientific notation, and for the very large and the very small only the second is readable. The mass of a mosquito reads better as 2.5 x 10 to the minus 6 kilograms than as a string of zeros, and the notation also settles how many digits of a measurement count.",
       "evidence": "The section introduces exponential notation with the takeoff weight of an airliner and the mass of a mosquito and points the reader at Appendix B for a review, the prefix table of Table 1.3 writes every prefix as a power of ten, and 1.5 asks for seven numbers in scientific notation with the correct significant figures."
     },
     {
@@ -1382,7 +1382,7 @@
       "kind": "idea",
       "section": "1.4",
       "name": "Derived units",
-      "why": "Many units are built out of the base units rather than agreed separately: a volume is a length cubed, and a density is a mass divided by a volume. Seeing a unit as the product and quotient of base units is what lets the reader check that a calculation has produced the kind of quantity it was meant to.",
+      "why": "Many units are built out of the base units rather than agreed separately: a volume is a length cubed, and a density is a mass divided by a volume. Seeing a unit as the product and quotient of base units lets you check that a calculation has produced the right kind of quantity.",
       "evidence": "The section opens its treatment of derived units by saying that the base unit of length defines a unit of volume and that mass and length define a unit of density, and then derives the cubic meter, the liter and the gram per cubic centimeter in turn."
     },
     {
@@ -1423,7 +1423,7 @@
       "kind": "idea",
       "section": "1.5",
       "name": "Every measurement carries an uncertainty",
-      "why": "A measurement is read as far as the instrument allows and then one digit further, and that last digit is an estimate. A scale with one milliliter divisions can be read to a tenth of a milliliter, and a balance that reads 6.72 grams is saying the mass lies between 6.71 and 6.73, so uncertainty is a property of the instrument and the reader together, not a mistake.",
+      "why": "You read a measurement as far as the instrument allows and then one digit further, and that last digit is an estimate. A scale with one milliliter divisions reads to a tenth of a milliliter, and a balance that reads 6.72 grams says the mass lies between 6.71 and 6.73. Uncertainty belongs to the instrument and the person reading it together; it is not a mistake.",
       "evidence": "The section works through the meniscus of Figure 1.26, where the digits 2 and 1 are certain and the 6 is estimated, extends the same argument to a quarter weighed on two balances, and defines uncertainty."
     },
     {
@@ -1447,7 +1447,7 @@
       "kind": "skill",
       "section": "1.5",
       "name": "Rounding a number to a given number of digits",
-      "why": "A digit to be dropped that is less than five rounds down and one greater than five rounds up. When the dropped digit is a five with nothing but zeros after it, the retained digit is rounded to whichever value is even, which is a rule from statistics and is there to keep the rounding from leaning one way over many calculations.",
+      "why": "A digit to be dropped that is less than five rounds down, and one greater than five rounds up. When the dropped digit is a five with nothing but zeros after it, round the retained digit to whichever value is even. This rule from statistics keeps the rounding from leaning one way over many calculations.",
       "evidence": "The section states the three rounding rules and illustrates them on four numbers, Example 1.3 rounds four more with its Check Your Learning rounding four again, and two exercises round twelve numbers to two significant figures."
     },
     {
@@ -1471,7 +1471,7 @@
       "kind": "idea",
       "section": "1.6",
       "name": "Dimensional analysis",
-      "why": "The units of quantities must be subjected to the same mathematical operations as their numbers. That one premise is what lets a reader divide a distance by a time and get a speed, and it is also what lets the reader check a calculation by looking only at the units, since a wrong arrangement of factors gives a unit nobody wanted.",
+      "why": "The units of quantities undergo the same mathematical operations as their numbers. That one premise lets you divide a distance by a time and get a speed. It also lets you check a calculation by looking only at the units, since a wrong arrangement of factors gives a unit nobody wanted.",
       "evidence": "The section derives a sprinter's speed and then rearranges the same relation for time, dividing the units at every step alongside the numbers, defines dimensional analysis and the factor-label method, and the summary names the strategy as what the whole section is about."
     },
     {
@@ -1479,7 +1479,7 @@
       "kind": "idea",
       "section": "1.6",
       "name": "The unit conversion factor",
-      "why": "A ratio of two equivalent quantities written in different units is equal to one, so multiplying by it changes a quantity's units without changing the quantity. Because the ratio can be written either way up, the reader chooses the arrangement that cancels the unit to be got rid of and leaves the one that is wanted.",
+      "why": "A ratio of two equivalent quantities in different units equals one, so multiplying by it changes a quantity's units without changing the quantity. The ratio can go either way up, so you choose the arrangement that cancels the unit you want gone and leaves the one you want.",
       "evidence": "The section derives the factor from 2.54 cm equal to 1 in., shows that the two forms of a factor are both available and that only one cancels correctly, tabulates twelve common factors in Table 1.6, and four exercises ask the reader to write factors as ratios from stated equivalences and from product labels."
     },
     {
@@ -1511,7 +1511,7 @@
       "kind": "idea",
       "section": "1.6",
       "name": "The Celsius, Fahrenheit, and kelvin scales",
-      "why": "A temperature scale is fixed by choosing reference temperatures and dividing the space between them. Celsius puts the freezing and boiling of water at 0 and 100, Fahrenheit at 32 and 212, and kelvin is absolute: its zero is the lowest temperature that can theoretically be achieved, which is why its unit carries no degree symbol.",
+      "why": "You fix a temperature scale by choosing reference temperatures and dividing the space between them. Celsius puts the freezing and boiling of water at 0 and 100, Fahrenheit at 32 and 212. Kelvin is absolute: its zero is the lowest temperature theoretically achievable, and its unit carries no degree symbol.",
       "evidence": "The section defines Fahrenheit and temperature, explains the origin of the absolute scale and the convention about the degree symbol, and Figure 1.28 sets the three thermometers side by side with the freezing and boiling temperatures of water marked on each."
     },
     {
@@ -1537,7 +1537,7 @@
       "kind": "idea",
       "section": "2.1",
       "name": "Dalton’s atomic theory",
-      "why": "Dalton’s postulates say that matter is made of atoms, that the atoms of one element all have the same characteristic mass and differ from the atoms of every other element, that a compound holds atoms of two or more elements in a small, whole-number ratio, and that atoms are neither created nor destroyed in a chemical change but only rearranged. These postulates give a microscopic explanation of the macroscopic behavior of matter the reader has already met, including the conservation of matter, and every later picture of the atom starts from them.",
+      "why": "Dalton’s postulates say that matter consists of atoms, and that the atoms of one element all have the same characteristic mass and differ from the atoms of every other element. A compound holds atoms of two or more elements in a small, whole-number ratio. A chemical change neither creates nor destroys atoms but only rearranges them. These postulates explain at the microscopic level the macroscopic behavior of matter you have already met, including the conservation of matter, and every later picture of the atom starts from them.",
       "evidence": "The section lists the five postulates with Figures 2.2 to 2.4, and Example 2.1, its Check Your Learning and the first exercise ask whether a change drawn in colored spheres violates any of them."
     },
     {
@@ -1561,7 +1561,7 @@
       "kind": "idea",
       "section": "2.2",
       "name": "Thomson’s cathode rays and the electron",
-      "why": "The beam in a cathode ray tube bends toward a positive charge and away from a negative one, is the same whatever metal the electrodes are made of, and has a charge-to-mass ratio showing its particles are far lighter than atoms. Thomson concluded that the particles are negatively charged subatomic constituents of all atoms, which is the first evidence that the atom is not indivisible.",
+      "why": "The beam in a cathode ray tube bends toward a positive charge and away from a negative one. It is the same whatever metal the electrodes contain, and its charge-to-mass ratio shows that its particles are far lighter than atoms. Thomson concluded that the particles are negatively charged subatomic constituents of all atoms, the first evidence that the atom is not indivisible.",
       "evidence": "The section argues from Figure 2.6 to Thomson’s conclusions, and an exercise asks how electrons and protons are alike and how they differ."
     },
     {
@@ -1627,7 +1627,7 @@
       "kind": "skill",
       "section": "2.3",
       "name": "Finding the numbers of protons, neutrons, and electrons in an atom or ion",
-      "why": "Given an element’s atomic number, a mass number and a charge, the reader should be able to count the particles: the protons from the atomic number, the neutrons from the mass number less the atomic number, and the electrons from the protons less the charge. The same reasoning run backward gives the charge from the counts.",
+      "why": "From an element’s atomic number, a mass number and a charge, you can count the particles. The atomic number gives the protons, the mass number less the atomic number gives the neutrons, and the protons less the charge give the electrons. The same reasoning run backward gives the charge from the counts.",
       "evidence": "Example 2.3 counts the particles in an iodine anion, its Check Your Learning finds the charge of a platinum ion, and several exercises ask for the particles in isotopes used in medicine and in the diet."
     },
     {
@@ -1635,7 +1635,7 @@
       "kind": "idea",
       "section": "2.3",
       "name": "Chemical symbols",
-      "why": "A chemical symbol of one, two or three letters stands for an element or for one atom of it, whether the reader means a single atom or a jar full. Only the first letter is capitalized, which is why Co is cobalt and CO is carbon monoxide, and some symbols come from the element’s name in another language.",
+      "why": "A chemical symbol of one, two or three letters stands for an element or for one atom of it, whether you mean a single atom or a jar full. Only the first letter is a capital, which is why Co is cobalt and CO is carbon monoxide, and some symbols come from the element’s name in another language.",
       "evidence": "Figure 2.13 labels a jar of mercury Hg, Table 2.3 lists common elements and their symbols, and the section explains how new elements are named."
     },
     {
@@ -1748,7 +1748,7 @@
       "kind": "skill",
       "section": "2.5",
       "name": "Naming the group an element belongs to",
-      "why": "Given an element, the reader should be able to find it in the periodic table and give the name of its group, and given a group name and a period, find the element. This is the fluency with the table that the next two sections rely on for predicting ions and naming compounds.",
+      "why": "Find any element in the periodic table and give the name of its group, and from a group name and a period, find the element. The next two sections rely on this fluency with the table to predict ions and name compounds.",
       "evidence": "Example 2.7 and its Check Your Learning ask for the group names of eight elements, and exercises ask for the element that is a given kind in a given period."
     },
     {
@@ -1764,7 +1764,7 @@
       "kind": "idea",
       "section": "2.6",
       "name": "Polyatomic ions and oxyanions",
-      "why": "A polyatomic ion is a group of bonded atoms that carries an overall charge and acts as a single unit, and an oxyanion is one that contains oxygen. The book asks the reader to memorize the names, formulas and charges of the common ones, and the suffixes -ate and -ite and prefixes per- and hypo- mark more or fewer oxygen atoms.",
+      "why": "A polyatomic ion is a group of bonded atoms that carries an overall charge and acts as a single unit, and an oxyanion is one that contains oxygen. Memorize the names, formulas and charges of the common ones. The suffixes -ate and -ite and prefixes per- and hypo- mark more or fewer oxygen atoms.",
       "evidence": "Table 2.5 lists the common polyatomic ions with their related acids, and exercises ask the reader to name the ions in compounds such as ammonium carbonate."
     },
     {
@@ -1772,7 +1772,7 @@
       "kind": "idea",
       "section": "2.6",
       "name": "Ionic bonds and covalent bonds",
-      "why": "When electrons are transferred and ions form, the electrostatic attraction between oppositely charged ions is an ionic bond; when electrons are shared and molecules form, the attraction between the nuclei and the shared pairs of electrons is a covalent bond. Compounds are classified as ionic or molecular by the bonds present in them.",
+      "why": "When atoms transfer electrons and form ions, the electrostatic attraction between oppositely charged ions is an ionic bond. When atoms share electrons and form molecules, the attraction between the nuclei and the shared pairs of electrons is a covalent bond. The bonds present in a compound make it ionic or molecular.",
       "evidence": "The section defines both kinds of bond before dividing compounds into the two classes, and Figure 2.28 shows a sodium atom losing an electron to become a cation."
     },
     {
@@ -1804,7 +1804,7 @@
       "kind": "skill",
       "section": "2.6",
       "name": "Predicting whether a compound is ionic or molecular",
-      "why": "Given a formula, the reader should be able to find its elements in the periodic table and predict that a metal with nonmetals, or a compound with a polyatomic ion, is ionic, and that nonmetals alone form a molecular compound. It is the first question asked before naming any compound in the next section.",
+      "why": "Given a formula, find its elements in the periodic table. A metal with nonmetals, or a compound with a polyatomic ion, is ionic, and nonmetals alone form a molecular compound. Ask this question first before you name any compound in the next section.",
       "evidence": "Example 2.12 and its Check Your Learning classify eight compounds, and exercises ask the reader to classify chlorides and other compounds and to write the ions of those that are ionic."
     },
     {
@@ -2072,7 +2072,7 @@
       "kind": "idea",
       "section": "10.4",
       "name": "The critical point and supercritical fluids",
-      "why": "The liquid-gas curve ends at the critical point; above the critical temperature a gas cannot be liquefied however much pressure is applied, and the substance is a supercritical fluid whose properties are intermediate between those of a liquid and a gas.",
+      "why": "The liquid-gas curve ends at the critical point. Above the critical temperature, no amount of pressure can liquefy a gas, and the substance is a supercritical fluid, with properties between those of a liquid and a gas.",
       "evidence": "The section lists critical temperatures and pressures, Figure 10.35 shows CO₂ passing through its critical point, Example 10.13 explains the CO₂ fire extinguisher on a hot day, and the decaffeination feature uses supercritical CO₂."
     },
     {
@@ -2080,7 +2080,7 @@
       "kind": "idea",
       "section": "10.5",
       "name": "Crystalline and amorphous solids",
-      "why": "In a crystalline solid the particles are arranged in a definite repeating pattern, so every particle is held with the same forces and the solid melts at a precise temperature; in an amorphous solid they are arranged randomly, the attractions vary, and the solid softens over a range of temperatures.",
+      "why": "In a crystalline solid, the particles are arranged in a definite repeating pattern. Every particle is held by the same forces, so the solid melts at a precise temperature. In an amorphous solid, the particles are arranged randomly and the attractions vary, so the solid softens over a range of temperatures.",
       "evidence": "Figures 10.37 and 10.38 contrast the two arrangements, including quartz and fused silica, and the text explains why amorphous materials soften gradually."
     },
     {
@@ -2104,7 +2104,7 @@
       "kind": "idea",
       "section": "10.5",
       "name": "Crystal defects",
-      "why": "The repeating pattern of a crystal may contain defects: vacancies where a particle is missing, particles in interstitial sites, and impurities substituted into the lattice. Defects change physical properties, and doping silicon creates them on purpose for semiconductors.",
+      "why": "The repeating pattern of a crystal may contain defects: vacancies where a particle is missing, particles in interstitial sites, and impurities substituted into the lattice. Defects change physical properties, and doping silicon for semiconductors introduces them deliberately.",
       "evidence": "Figure 10.45 draws a vacancy, an interstitial impurity and a substitution impurity, and the glossary defines vacancy and interstitial sites."
     },
     {
@@ -2217,7 +2217,7 @@
       "kind": "skill",
       "section": "4.1",
       "name": "Writing a net ionic equation",
-      "why": "Given a balanced molecular equation, the reader dissociates every dissolved ionic compound into its ions, identifies the spectator ions present in identical form on both sides, removes them, and reduces the coefficients to the smallest whole numbers. The result says, for example, that solid silver chloride forms from dissolved silver and chloride ions whatever their source.",
+      "why": "Start from a balanced molecular equation. Dissociate every dissolved ionic compound into its ions, find the spectator ions present in identical form on both sides, remove them, and reduce the coefficients to the smallest whole numbers. The result says, for example, that solid silver chloride forms from dissolved silver and chloride ions whatever their source.",
       "evidence": "Example 4.2 and its Check Your Learning, on the electrolysis of brine, write all three equations, and two exercises ask for complete and net ionic equations from molecular ones, among them the precipitation of calcium fluoride."
     },
     {
@@ -2249,7 +2249,7 @@
       "kind": "idea",
       "section": "4.2",
       "name": "Strong and weak acids and bases",
-      "why": "A strong acid reacts completely with water, so virtually every dissolved molecule yields a hydronium ion, and a strong base, such as an ionic hydroxide, dissociates completely. A weak acid or weak base reacts only partially, leaving most of its molecules in their original form, which is why its equation is written with a double arrow; only about 1% of acetic acid or of ammonia is ionized under typical conditions.",
+      "why": "A strong acid reacts completely with water, so virtually every dissolved molecule yields a hydronium ion, and a strong base, such as an ionic hydroxide, dissociates completely. A weak acid or weak base reacts only partially and leaves most of its molecules in their original form, which is why its equation carries a double arrow. Under typical conditions only about 1% of acetic acid or of ammonia ionizes.",
       "evidence": "The section defines the four terms, Table 4.2 lists the six common strong acids, Figure 4.6 shows citrus fruits and vinegar as sources of weak acids, and Example 4.4 explains why a double arrow is used for hypochlorous acid."
     },
     {
@@ -2265,7 +2265,7 @@
       "kind": "skill",
       "section": "4.2",
       "name": "Assigning oxidation numbers",
-      "why": "The oxidation number of an element in a compound is the charge its atoms would have if the compound were ionic. It is assigned by four guidelines: zero in an elemental substance, the ion's charge for a monatomic ion, the usual values for hydrogen, oxygen and the halogens, and a sum equal to the charge of the molecule or ion, which fixes the one unknown. Note that an oxidation number is written sign first (+2), a charge number first (2+).",
+      "why": "The oxidation number of an element in a compound is the charge its atoms would have if the compound were ionic. Four guidelines assign it: zero in an elemental substance, the ion's charge for a monatomic ion, the usual values for hydrogen, oxygen and the halogens, and a sum equal to the charge of the molecule or ion, which fixes the one unknown. An oxidation number puts the sign first (+2), and a charge puts the number first (2+).",
       "evidence": "The section states the guidelines, Example 4.5 assigns the oxidation numbers of sulfur in H2S, sulfite and sodium sulfate, its Check Your Learning asks for four more, and three exercises ask for the oxidation states of the elements in nineteen compounds."
     },
     {
@@ -2281,7 +2281,7 @@
       "kind": "skill",
       "section": "4.2",
       "name": "Classifying a reaction",
-      "why": "Given an equation or a description, the reader should be able to say whether it is a precipitation, an acid-base or a redox reaction, or more than one, and name a redox subclass where one fits: combustion, in which a fuel and an oxidant react vigorously to give heat and often light, single displacement, in which an ion in solution is replaced through the oxidation of a metal, or disproportionation, in which one element is both oxidized and reduced.",
+      "why": "From an equation or a description, say whether a reaction is a precipitation, an acid-base or a redox reaction, or more than one. Where a redox subclass fits, name it. In combustion, a fuel and an oxidant react vigorously to give heat and often light. In single displacement, the oxidation of a metal replaces an ion in solution. In disproportionation, one element is both oxidized and reduced.",
       "evidence": "Example 4.6 identifies which of five equations are redox and names them, its Check Your Learning classifies the production of tin(II) chloride, and five exercises ask for the type or types of reaction an equation represents."
     },
     {
@@ -2305,7 +2305,7 @@
       "kind": "result",
       "section": "4.3",
       "name": "Stoichiometric factors",
-      "why": "A stoichiometric factor is a ratio of two coefficients from a balanced equation, such as 2 mol NH3 per 3 mol H2 in the synthesis of ammonia, and it may be written in any amount unit. It is the one step every reaction stoichiometry calculation shares, whatever quantities are given at its start and asked for at its end.",
+      "why": "A stoichiometric factor is a ratio of two coefficients from a balanced equation, such as 2 mol NH3 per 3 mol H2 in the synthesis of ammonia, and you can write it in any amount unit. It is the one step every reaction stoichiometry calculation shares, whatever quantities it starts from and asks for.",
       "evidence": "The section derives the factors relating ammonia to hydrogen in molecules, dozens and moles, every worked example of the section turns on one, and Figure 4.11 places the factor at the center of the flowchart of stoichiometry calculations."
     },
     {
@@ -2329,7 +2329,7 @@
       "kind": "idea",
       "section": "4.4",
       "name": "Limiting and excess reactants",
-      "why": "When reactants are not present in stoichiometric amounts, one is used up first and limits the amount of product; the others are in excess and some of each is left over. Eleven slices of cheese and twenty-eight slices of bread make eleven sandwiches with six slices of bread to spare, and three moles of hydrogen with two of chlorine make four moles of hydrogen chloride with one mole of hydrogen to spare.",
+      "why": "When reactants are not present in stoichiometric amounts, one runs out first and limits the amount of product. The others are in excess, and some of each remains. Eleven slices of cheese and twenty-eight slices of bread make eleven sandwiches with six slices of bread to spare, and three moles of hydrogen with two of chlorine make four moles of hydrogen chloride with one mole of hydrogen to spare.",
       "evidence": "The section introduces the idea with the sandwiches of Figure 4.13, defines limiting and excess reactant, and shows hydrogen in excess and chlorine limiting in Figure 4.14."
     },
     {
@@ -2411,7 +2411,7 @@
       "kind": "idea",
       "section": "5.1",
       "name": "Energy as the capacity to supply heat or do work",
-      "why": "Energy is defined in this book by what it can do, and work is one of the two things it does: matter is moved against an opposing force, as the air in a pump is pushed into a tire. Every later idea of the chapter, heat, internal energy and enthalpy, is a way of keeping account of this capacity.",
+      "why": "This book defines energy by what it can do, and work is one of the two things it does: moving matter against an opposing force, as a pump pushes air into a tire. Every later idea of the chapter, heat, internal energy and enthalpy, keeps account of this capacity.",
       "evidence": "The section opens its account of energy with this definition and the bicycle tire, and the summary repeats it as its first sentence."
     },
     {
@@ -2451,7 +2451,7 @@
       "kind": "idea",
       "section": "5.1",
       "name": "Exothermic and endothermic processes",
-      "why": "A change that releases heat is exothermic and a change that absorbs heat is endothermic. The sign of every heat and every enthalpy change in the rest of the chapter is read against these two words, so the reader must be able to tell which is which from what happens to the temperature of the surroundings.",
+      "why": "A change that releases heat is exothermic and a change that absorbs heat is endothermic. The rest of the chapter reads the sign of every heat and every enthalpy change against these two words. Tell which is which from what happens to the temperature of the surroundings.",
       "evidence": "The section defines both terms with the oxyacetylene torch and the cold pack of Figure 5.7, and calorimetry exercises in 5.2 ask whether each dissolution is exothermic or endothermic."
     },
     {
@@ -2459,7 +2459,7 @@
       "kind": "skill",
       "section": "5.1",
       "name": "Converting between joules, calories, and Calories",
-      "why": "The SI unit of energy is the joule, but the calorie is still frequently used, and food energy is quoted in Calories, each of which is a kilocalorie. Since 1 calorie is defined as exactly 4.184 joules, the reader must move between these units with ease to read a food label or to compare a result given in either.",
+      "why": "The SI unit of energy is the joule, but chemists still frequently use the calorie, and food labels give energy in Calories, each of which is a kilocalorie. One calorie is exactly 4.184 joules. Move between these units with ease to read a food label or to compare results given in either.",
       "evidence": "The section defines the calorie, the Calorie, and the joule and states the conversion, and exercises in 5.1 ask for heat capacities and heats in both joules and calories."
     },
     {
@@ -2485,7 +2485,7 @@
       "kind": "idea",
       "section": "5.2",
       "name": "The system and its surroundings",
-      "why": "Measuring a heat requires dividing the world in two: the system, the substances undergoing the change, and the surroundings, everything else that gives heat to the system or takes it away. The sign of every q in the chapter is stated from the point of view of the system, so the reader must be able to name which is which in each experiment.",
+      "why": "Measuring a heat means dividing the world in two: the system, the substances undergoing the change, and the surroundings, everything else that gives heat to the system or takes it away. The sign of every q in the chapter takes the system's point of view, so name which is which in each experiment.",
       "evidence": "The section defines both terms at its start, Figure 5.11 labels the reaction as system and the solution as surroundings, and Figure 5.14 labels the hot metal and the cool water the same way."
     },
     {
@@ -2511,7 +2511,7 @@
       "kind": "skill",
       "section": "5.2",
       "name": "Calculating a heat from coffee cup calorimetry data",
-      "why": "With a coffee cup calorimeter the reader measures a temperature change and must make and state reasonable assumptions to turn it into a heat: that no heat is exchanged with the outside or absorbed by the cup, and that a dilute solution has the specific heat and density of water. The skill is carrying those assumptions through to a heat with the right sign.",
+      "why": "A coffee cup calorimeter measures a temperature change, and turning it into a heat takes reasonable assumptions, stated openly. No heat passes to the outside or into the cup, and a dilute solution has the specific heat and density of water. Carry those assumptions through to a heat with the right sign.",
       "evidence": "Examples 5.3 to 5.6 and their Check Your Learning items ask for the heat, a temperature, or a specific heat and for the assumptions made, and most of the section's exercises set the same task."
     },
     {
@@ -2527,7 +2527,7 @@
       "kind": "skill",
       "section": "5.2",
       "name": "Counting the Calories in a food",
-      "why": "Food labels give energy in Calories, computed by the Atwater system from the grams of protein, carbohydrate, and fat in a serving and their average Calories per gram, values that were themselves found by bomb calorimetry. The reader who can do this sum can check a label and compare foods.",
+      "why": "Food labels give energy in Calories. The Atwater system computes them from the grams of protein, carbohydrate, and fat in a serving and their average Calories per gram, values that came from bomb calorimetry. With this sum you can check a label and compare foods.",
       "evidence": "The Measuring Nutritional Calories note works the label of Figure 5.18 to 252 Calories, and exercises ask for the Calories in cereal and the mass of fat or carbohydrate for a given Calorie count."
     },
     {
@@ -2535,7 +2535,7 @@
       "kind": "result",
       "section": "5.3",
       "name": "The first law of thermodynamics, $\\Delta U = q + w$",
-      "why": "The internal energy of a system changes only through heat flowing into or out of it and work done on or by it. The signs are fixed from the system's side: q is positive for heat flowing in and w is positive for work done on the system, so a system that loses heat and does work loses internal energy on both counts, as the gases in an engine cylinder do.",
+      "why": "The internal energy of a system changes only through heat flowing into or out of it and work done on or by it. The signs take the system's side: q is positive for heat flowing in and w is positive for work done on the system. A system that loses heat and does work therefore loses internal energy on both counts, as the gases in an engine cylinder do.",
       "evidence": "The section defines internal energy, states the equation, and draws the four arrows into and out of the system in Figure 5.19; the equation is one of the section's key equations.",
       "eq": "eq-first-law"
     },
@@ -2561,7 +2561,7 @@
       "kind": "skill",
       "section": "5.3",
       "name": "Writing and scaling thermochemical equations",
-      "why": "A thermochemical equation gives ΔH after a balanced equation, for the amounts in moles that the equation shows. Since ΔH is extensive, it scales with the coefficients, it changes sign when the equation is reversed, and it depends on the physical states written, so the reader must carry all three rules and account for the limiting reactant when turning a measured heat into ΔH.",
+      "why": "A thermochemical equation gives ΔH after a balanced equation, for the amounts in moles that the equation shows. Since ΔH is extensive, it scales with the coefficients. It changes sign when you reverse the equation, and it depends on the physical states written. Apply all three rules, and account for the limiting reactant when you turn a measured heat into ΔH.",
       "evidence": "The section states the conventions with the formation of liquid and gaseous water, Examples 5.8 and 5.9 write thermochemical equations from measured heats, and several exercises ask for ΔH per mole of a reactant."
     },
     {
@@ -2569,7 +2569,7 @@
       "kind": "skill",
       "section": "5.3",
       "name": "Using a standard enthalpy of combustion",
-      "why": "The standard enthalpy of combustion is the enthalpy change when 1 mole of a substance burns completely under standard state conditions. With it, and with the conversions of earlier chapters, the reader can find the heat given by any amount of a fuel, as the heat of 1.00 L of gasoline is found from the value for isooctane.",
+      "why": "The standard enthalpy of combustion is the enthalpy change when 1 mole of a substance burns completely under standard state conditions. With it, and with the conversions of earlier chapters, you can find the heat given by any amount of a fuel, as the value for isooctane gives the heat of 1.00 L of gasoline.",
       "evidence": "The section defines the quantity, lists values in Table 5.2, works Example 5.10 on gasoline, and sets exercises on acetylene, methanol, isooctane, and carbon monoxide."
     },
     {
@@ -2585,7 +2585,7 @@
       "kind": "result",
       "section": "5.3",
       "name": "Hess’s law",
-      "why": "If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the steps. This lets the reader find the enthalpy change of a reaction that is hard or dangerous to carry out by adding reactions, reversed and scaled as needed, whose values are known.",
+      "why": "If a process is the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the steps. You can then find the enthalpy change of a reaction that is hard or dangerous to carry out by adding reactions of known enthalpy change, reversed and scaled as needed.",
       "evidence": "The section states the law, shows carbon burning to CO<sub>2</sub> in one step or two in Figure 5.24, works Examples 5.13 and 5.14, and sets many exercises that combine given reactions."
     },
     {
@@ -2593,7 +2593,7 @@
       "kind": "skill",
       "section": "5.3",
       "name": "Calculating a reaction enthalpy from enthalpies of formation",
-      "why": "Hess's law applied to decomposing the reactants into their elements and re-forming the products gives the standard enthalpy change of any reaction as the sum of n times the enthalpies of formation of the products minus the same sum for the reactants. With the table of Appendix G the reader can compute ΔH° for reactions that no one has measured directly.",
+      "why": "Apply Hess's law by decomposing the reactants into their elements and re-forming the products. The standard enthalpy change of any reaction is then the sum of n times the enthalpies of formation of the products minus the same sum for the reactants. With the table of Appendix G you can compute ΔH° for reactions that no one has measured directly.",
       "evidence": "The section derives the equation, Example 5.15 uses it both directly and by summing four formation steps, and a large share of the section's exercises ask for ΔH° from the data in Appendix G.",
       "eq": "eq-hess-formation"
     },
@@ -2675,7 +2675,7 @@
       "kind": "skill",
       "section": "3.2",
       "name": "Deriving an empirical formula from the masses of the elements",
-      "why": "A formula states the relative numbers of atoms, not their masses, so each element’s mass is converted to moles, the amounts are divided by the smallest, and the result is multiplied by an integer if needed to reach whole numbers. The procedure turns an analysis on a balance into a chemical formula.",
+      "why": "A formula states the relative numbers of atoms, not their masses. So convert each element’s mass to moles, divide the amounts by the smallest, and multiply by an integer if needed to reach whole numbers. The procedure turns an analysis on a balance into a chemical formula.",
       "evidence": "The section derives CH<sub>2</sub> and Cl<sub>2</sub>O<sub>7</sub> from measured masses, Figure 3.11 sets the procedure out as a flowchart, and Example 3.11 finds the formula of hematite, Fe<sub>2</sub>O<sub>3</sub>, from 34.97 g of iron and 15.03 g of oxygen."
     },
     {
@@ -2801,7 +2801,7 @@
       "kind": "idea",
       "section": "7.6",
       "name": "Valence shell electron-pair repulsion theory",
-      "why": "VSEPR theory predicts the shape of a molecule from one assumption: the regions of high electron density in the valence shell of the central atom, whether they are bonding pairs or lone pairs, repel one another, and they settle into the arrangement that puts them as far apart as possible. It is worth noting that the theory considers electron-pair repulsions alone, and that nuclear-nuclear repulsions and nuclear-electron attractions are also at work in the arrangement a molecule finally adopts.",
+      "why": "VSEPR theory predicts the shape of a molecule from one assumption. The regions of high electron density in the valence shell of the central atom, bonding pairs and lone pairs alike, repel one another and settle into the arrangement that puts them as far apart as possible. The theory considers electron-pair repulsions alone, although nuclear-nuclear repulsions and nuclear-electron attractions also shape the arrangement a molecule finally adopts.",
       "evidence": "The section states the assumption and works it through on BeF2, where two bonds and no lone pairs give a bond angle of 180° (Figure 7.15), and the four-step procedure that follows begins with a Lewis structure and ends with a predicted shape."
     },
     {
@@ -2842,7 +2842,7 @@
       "kind": "skill",
       "section": "7.6",
       "name": "Predicting electron-pair geometry and molecular structure",
-      "why": "The prediction is a four-step procedure and it is the skill the section is written to teach: write the Lewis structure, count the regions of electron density around the central atom, read off the electron-pair geometry, and use the number of lone pairs to name the molecular structure, choosing the arrangement that minimizes repulsion where more than one is possible. A molecule with no single central atom is handled one interior atom at a time, each with a local geometry of its own.",
+      "why": "To predict a molecular structure, write the Lewis structure and count the regions of electron density around the central atom. Read off the electron-pair geometry, and use the number of lone pairs to name the molecular structure. Where more than one arrangement is possible, choose the one that minimizes repulsion. For a molecule with no single central atom, treat each interior atom in turn, each with its own local geometry.",
       "evidence": "The section sets out the four steps and then applies them in Examples 7.11 to 7.16, to CO2, BCl3, the ammonium ion, water, SF4, XeF4 and the amino acid glycine, and the end-of-chapter exercises ask for the electron-pair geometry and the molecular structure of some forty molecules and ions."
     },
     {
@@ -2850,7 +2850,7 @@
       "kind": "result",
       "section": "7.6",
       "name": "The bond dipole moment",
-      "why": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge, and the separation of charge is measured by the bond dipole moment, the product of the magnitude of the partial charges and the distance between them. It is drawn as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
+      "why": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge. The bond dipole moment measures this separation of charge; it is the product of the magnitude of the partial charges and the distance between them. We draw it as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
       "evidence": "The section gives the formula and defines the vector that represents it, and Figure 7.26 draws the short vector of a C–H bond beside the much longer vector of a B–F bond.",
       "eq": "eq-dipole-moment"
     },
@@ -2915,7 +2915,7 @@
       "kind": "idea",
       "section": "7.2",
       "name": "How a covalent bond forms, and the bond length",
-      "why": "A covalent bond is formed when two atoms share a pair of electrons that is attracted by both nuclei. As two hydrogen atoms approach, the potential energy falls while each electron is drawn to both nuclei and then rises steeply as the nuclei repel, and the bond length is the distance at which the energy is lowest. Breaking a bond always takes energy and forming one always releases it.",
+      "why": "A covalent bond forms when two atoms share a pair of electrons that both nuclei attract. As two hydrogen atoms approach, the potential energy falls while each electron is drawn to both nuclei, and then it rises steeply as the nuclei repel. The bond length is the distance at which the energy is lowest. Breaking a bond always takes energy, and forming one always releases it.",
       "evidence": "The section explains the formation of H2 against the potential energy curve of Figure 7.4, which marks the bond length of 74 pm, and states that 436 kJ must be added to break the bonds in a mole of hydrogen molecules and is released when they form."
     },
     {
@@ -2923,7 +2923,7 @@
       "kind": "idea",
       "section": "7.2",
       "name": "Electronegativity and its periodic trend",
-      "why": "Electronegativity is the tendency of an atom to attract the electrons of a bond toward itself. On Pauling's scale it increases from left to right across a period and decreases down a group, so the nonmetals of the upper right are the most electronegative, fluorine above all at 4.0, and the group 1 metals are the least. It is a calculated, dimensionless number and should not be confused with electron affinity, which is a measured energy of an isolated atom.",
+      "why": "Electronegativity is the tendency of an atom to attract the electrons of a bond toward itself. On Pauling’s scale, it increases from left to right across a period and decreases down a group. The nonmetals of the upper right are therefore the most electronegative, fluorine above all at 4.0, and the group 1 metals are the least. Electronegativity is a calculated, dimensionless number; do not confuse it with electron affinity, a measured energy of an isolated atom.",
       "evidence": "The section defines electronegativity, Figure 7.6 sets out Pauling's values across the periodic table, and a subsection separates it from electron affinity; four exercises ask which atom of a pair is more electronegative or ask for a series in order of increasing electronegativity."
     },
     {
@@ -2971,7 +2971,7 @@
       "kind": "skill",
       "section": "7.4",
       "name": "Calculating formal charge",
-      "why": "The formal charge of an atom in a Lewis structure is the charge it would have if the electrons of each bond were shared equally: the valence electrons of the free atom, less its lone pair electrons, less half its bonding electrons. The formal charges of a molecule add up to zero and those of an ion add up to its charge, which checks the arithmetic. A formal charge is bookkeeping and not the actual charge on the atom.",
+      "why": "The formal charge of an atom in a Lewis structure is the charge it would have if the electrons of each bond were shared equally. It equals the valence electrons of the free atom, less its lone pair electrons, less half its bonding electrons. The formal charges of a molecule add up to zero, and those of an ion add up to its charge. A formal charge is bookkeeping, not the actual charge on the atom.",
       "evidence": "The section gives the formula and Examples 7.6 and 7.7 assign the formal charges of ICl4− and BrCl3; four exercises ask for the formal charges of the atoms in lists of molecules and ions. A Sim marks the lone pair and bonding electrons of each atom in the eight candidate structures the section compares.",
       "eq": "eq-formal-charge"
     },
@@ -3040,7 +3040,7 @@
       "kind": "skill",
       "section": "7.5",
       "name": "Calculating a lattice energy with the Born-Haber cycle",
-      "why": "Lattice energies cannot be measured directly, but the Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: the sublimation of the metal, the dissociation of the nonmetal, the ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess's law the steps add up to the enthalpy of formation, so any one of them can be found from the others.",
+      "why": "Lattice energies cannot be measured directly. The Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: sublimation of the metal, dissociation of the nonmetal, ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess’s law, the steps add up to the enthalpy of formation, so any one of them can be found from the others.",
       "evidence": "Figure 7.13 draws the cycle for cesium fluoride, Table 7.4 lists its steps, and the section solves the cycle for a lattice energy of 756.9 kJ/mol.",
       "eq": "eq-born-haber"
     },
@@ -3065,7 +3065,7 @@
       "kind": "idea",
       "section": "8.1",
       "name": "Sigma and pi bonds",
-      "why": "A σ bond forms when orbitals overlap end to end along the internuclear axis, as two s orbitals, an s and a p orbital, or two p orbitals pointed at each other do, so that the electron density is concentrated on the line between the nuclei. A π bond forms from the side-by-side overlap of two p orbitals, with the electron density on opposite sides of the internuclear axis and a node along the axis itself. Greater overlap is possible end to end, so a π bond is generally weaker than a σ bond between the same two atoms.",
+      "why": "A σ bond forms when orbitals overlap end to end along the internuclear axis, as two s orbitals, an s and a p orbital, or two p orbitals pointed at each other do. Its electron density is concentrated on the line between the nuclei. A π bond forms from the side-by-side overlap of two p orbitals. Its electron density lies on opposite sides of the internuclear axis, with a node along the axis itself. End-to-end overlap can be greater, so a π bond is generally weaker than a σ bond between the same two atoms.",
       "evidence": "Figures 8.3, 8.4 and 8.5 draw the end-to-end and side-by-side overlaps, the glossary defines both bonds and the node, and the Check Your Learning of Example 8.1 asks the reader to identify three overlaps as σ or π."
     },
     {
@@ -3081,7 +3081,7 @@
       "kind": "skill",
       "section": "8.1",
       "name": "Counting the σ and π bonds in a molecule",
-      "why": "Given a Lewis structure, we can count the σ and π bonds directly: every bond line contributes one σ bond, and each double bond adds one π bond and each triple bond adds two. The count is the first place the reader applies the valence bond description to a whole molecule.",
+      "why": "Given a Lewis structure, we can count the σ and π bonds directly. Every bond line contributes one σ bond, each double bond adds one π bond, and each triple bond adds two. This count applies the valence bond description to a whole molecule.",
       "evidence": "Example 8.1 counts nine σ bonds and two π bonds in butadiene, and the end-of-section exercises ask for the σ and π bonds in HCN, CO2 and CO and whether N2 has three π bonds."
     },
     {
@@ -3129,7 +3129,7 @@
       "kind": "skill",
       "section": "8.2",
       "name": "Assigning the hybridization of a central atom",
-      "why": "The hybridization of an atom follows from the number of regions of electron density around it: write the Lewis structure, count the regions with single bonds, multiple bonds, radicals and lone pairs each counting as one, and read the matching set from the table of arrangements, two regions sp, three sp², four sp³, five sp³d and six sp³d². VSEPR theory predicts the shape, and the hybrid orbitals explain how that shape is formed.",
+      "why": "The hybridization of an atom follows from the number of regions of electron density around it. Write the Lewis structure and count the regions, with single bonds, multiple bonds, radicals and lone pairs each counting as one. Then read the matching set from the table: two regions give sp, three sp², four sp³, five sp³d and six sp³d². VSEPR theory predicts the shape, and the hybrid orbitals explain how that shape forms.",
       "evidence": "Figure 8.21 sets out the five arrangements with their hybridizations, Examples 8.2 and 8.3 assign sp³ to sulfur in sulfate and sp² to carbon in urea, their Check Your Learning items ask for SeF4 and acetic acid, and most of the section's exercises are this skill applied."
     },
     {
@@ -3226,7 +3226,7 @@
       "kind": "skill",
       "section": "8.4",
       "name": "Predicting the configuration, bond order, and magnetism of a diatomic species",
-      "why": "For a homonuclear diatomic molecule or ion of the first or second period, we choose the diagram with or without s-p mixing, add or remove electrons for the charge, fill it, and read off the configuration, the bond order and the number of unpaired electrons. The result predicts whether the species is stable and whether it is paramagnetic, and it explains the two unpaired electrons of O2 that the Lewis structure missed.",
+      "why": "For a homonuclear diatomic molecule or ion of the first or second period, choose the diagram with or without s-p mixing, add or remove electrons for the charge, and fill it. Read off the configuration, the bond order and the number of unpaired electrons. The result predicts whether the species is stable and whether it is paramagnetic, and it explains the two unpaired electrons of O2 that the Lewis structure missed.",
       "evidence": "Table 8.3 gives the configurations and bond orders of Li2 to Ne2, Example 8.6 explains the paramagnetism of O2 and its Check Your Learning asks for N2, Example 8.7 predicts that C2 2− is stable with a bond order of 3, and a long run of exercises applies the procedure to ions."
     },
     {
@@ -3252,7 +3252,7 @@
       "kind": "idea",
       "section": "6.1",
       "name": "Wavelength, frequency, and amplitude",
-      "why": "Every wave, electromagnetic radiation included, is characterized by a wavelength, the distance between two consecutive peaks or troughs, a frequency, the number of cycles that pass a point per unit time, and an amplitude, one-half the height from peak to trough. The amplitude is related to the intensity of the wave, which for light is its brightness, and the wavelength and frequency are what the rest of the chapter measures light by.",
+      "why": "Every wave, electromagnetic radiation included, has a wavelength, the distance between two consecutive peaks or troughs; a frequency, the number of cycles that pass a point per unit time; and an amplitude, one-half the height from peak to trough. The amplitude is related to the intensity of the wave, which for light is its brightness. We describe light by its wavelength and frequency.",
       "evidence": "The section defines the three quantities where it introduces waves, Figure 6.2 draws them on waves of three frequencies, and the glossary carries each of them."
     },
     {
@@ -3277,7 +3277,7 @@
       "kind": "idea",
       "section": "6.1",
       "name": "Standing waves and quantization",
-      "why": "A standing wave is confined to a region of space, and a string held fixed at its two end points can form only those waves that have an integer number of half-wavelengths between them. This is an example of quantization, in which only discrete values of a property are observed, and the points between the ends that do not move are nodes, whose number grows with the energy of the wave.",
+      "why": "A standing wave is confined to a region of space. A string held fixed at its two ends can form only waves with an integer number of half-wavelengths between them. This is an example of quantization, in which only discrete values of a property are observed. The points between the ends that do not move are nodes, and their number grows with the energy of the wave.",
       "evidence": "The section works through the vibrating string of Figure 6.7 and the vibrating drumhead of Figure 6.8, and the glossary defines standing wave, node, and quantization."
     },
     {
@@ -3302,7 +3302,7 @@
       "kind": "idea",
       "section": "6.1",
       "name": "Wave-particle duality",
-      "why": "Some phenomena of light, such as the interference fringes it makes after passing through two narrow slits, can be explained only by waves, while others, such as the photoelectric effect, can be explained only by particles. Light is both wavelike and particle-like, and this is called wave-particle duality; the next sections extend it to matter.",
+      "why": "Some behavior of light, such as the interference fringes it makes after passing through two narrow slits, can be explained only by waves. Other behavior, such as the photoelectric effect, can be explained only by particles. Light is both wavelike and particle-like, and this is called wave-particle duality. Matter shows the same duality.",
       "evidence": "The section describes the interference patterns of Figure 6.6, contrasts them with the photoelectric effect, and names wave-particle duality in its summary and its glossary."
     },
     {
@@ -3318,7 +3318,7 @@
       "kind": "idea",
       "section": "6.2",
       "name": "Bohr's stationary states",
-      "why": "Bohr resolved the paradox by setting aside the classical prediction: an electron on one of the allowed orbits does not radiate at all, and radiation is emitted or absorbed only when the electron moves from one allowed orbit to another. The energies of those orbits are quantized, which is to say that the electron may possess certain discrete energies and no value between them. This is the postulate the rest of the chapter is built on, and it is the one feature of the model that survived into quantum mechanics.",
+      "why": "Bohr resolved the paradox by setting aside the classical prediction. An electron in one of the allowed orbits does not radiate at all; it emits or absorbs radiation only when it moves from one allowed orbit to another. The energies of those orbits are quantized: the electron may possess certain discrete energies and no value between them. This postulate is the one feature of the model that survived into quantum mechanics.",
       "evidence": "The section states the stationary state hypothesis and the quantization of the orbital energies in the paragraph that introduces the model, and an exercise asks the reader to say what it means for the energy of the electrons in an atom to be quantized, which the book answers in those words."
     },
     {
@@ -3327,7 +3327,7 @@
       "section": "6.2",
       "name": "The allowed energies, $E_n=-kZ^2/n^2$",
       "eq": "eq-bohr-energy",
-      "why": "The energy of an electron on the orbit labelled n is the constant k, which gathers the electron mass and charge and Planck's constant together, divided by the square of n and multiplied by the square of the nuclear charge. The energies are negative because they are measured from the state in which the electron has been removed altogether, and they crowd toward zero as n grows, so that the rungs of the ladder are far apart at the bottom and close together at the top. Because they are measured that way, E = 0 is the ionization limit, the state in which the electron has been removed from the nucleus altogether, and the energy needed to take a ground-state hydrogen atom there is the constant k itself.",
+      "why": "The energy of an electron in the orbit labeled n is −k times the square of the nuclear charge, divided by the square of n. The constant k gathers the electron mass, the electron charge and Planck’s constant. The energies are negative because they are measured from E = 0, the ionization limit, where the electron has been removed from the nucleus altogether. They crowd toward zero as n grows, so the rungs of the ladder are far apart at the bottom and close together at the top. The energy needed to ionize a ground-state hydrogen atom is k itself.",
       "evidence": "The section gives the expression twice, first for hydrogen and then for any one-electron atom, Figure 6.14 draws the lowest few levels with their energies, Example 6.4 calculates the energy of an electron with n = 3 in hydrogen, and four end-of-chapter exercises ask for the energy of an electron in a named orbit of hydrogen, He⁺ or Li²⁺. The section works the ionization limit out from the same expression."
     },
     {
@@ -3344,7 +3344,7 @@
       "section": "6.2",
       "name": "One transition, one photon: $|\\Delta E|=h\\nu=hc/\\lambda$",
       "eq": "eq-photon-energy-difference",
-      "why": "When an electron moves between two allowed orbits the atom emits or absorbs a single photon whose energy is the whole of the difference between the two orbital energies. Falling to a lower orbit emits the photon, and absorbing one moves the electron up; because energy can be neither created nor destroyed, the energy needed to lift an electron from one level to another is exactly the energy liberated when it returns. The absolute value is used because a frequency and a wavelength are always positive.",
+      "why": "When an electron moves between two allowed orbits, the atom emits or absorbs a single photon whose energy equals the difference between the two orbital energies. Falling to a lower orbit emits the photon, and absorbing one moves the electron up. Energy can be neither created nor destroyed, so the energy needed to lift an electron from one level to another equals the energy released when it returns. We use the absolute value of the difference because a frequency and a wavelength are always positive.",
       "evidence": "The section states the relation as the first equation it writes and returns to it under the law of conservation of energy, Figure 6.15 draws the absorbed photons as upward arrows and the emitted ones as downward arrows, and Example 6.5 finds both the energy and the wavelength of the photon for a named transition."
     },
     {
@@ -3361,7 +3361,7 @@
       "section": "6.2",
       "name": "The radius of an allowed orbit, $r=n^2a_0/Z$",
       "eq": "eq-bohr-radius",
-      "why": "The allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises, measured in units of the Bohr radius, the radius of hydrogen's ground-state orbit. This is the other half of what n says: as the electron's energy increases it is found at greater distances from the nucleus, which is what the inverse dependence of the electrostatic attraction on distance implies, since an electron further out is held less tightly.",
+      "why": "The radii of the allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises. They are measured in units of the Bohr radius, the radius of hydrogen’s ground-state orbit. As the electron’s energy increases, it is found farther from the nucleus. The electrostatic attraction weakens with distance, so an electron farther out is held less tightly.",
       "evidence": "The section gives the expression with the value of the Bohr radius and explains what it means for the electron's distance from the nucleus, and two end-of-chapter exercises ask for the radius of a named orbit in angstroms or for the distance at which an electron has a given energy."
     },
     {
@@ -3370,7 +3370,7 @@
       "section": "6.2",
       "name": "The Rydberg equation recovered, $R_{\\infty}=k/hc$",
       "eq": "eq-rydberg-from-bohr",
-      "why": "Putting the quantized energies into the photon relation gives an expression for one over the wavelength that is identical in form to the Rydberg equation, with the Rydberg constant standing as the quotient of k by hc. When Bohr compared his theoretical value with the experimental one, which was among the most precisely measured constants of the day, the agreement was excellent, and that agreement is why a model resting on so many assumptions was taken seriously at all.",
+      "why": "Putting the quantized energies into the photon relation gives an expression for one over the wavelength that has the same form as the Rydberg equation, with the Rydberg constant equal to k divided by hc. Bohr’s theoretical value agreed excellently with the experimental one, among the most precisely measured constants of the day. That agreement is why a model resting on so many assumptions was taken seriously.",
       "evidence": "The section derives the expression in two steps and names the quotient as the Rydberg constant, and it closes by saying that the discrete lines in the spectra of the elements result from quantized electronic energies, which an end-of-chapter exercise asks the reader to explain for the spectra of hydrogen and of calcium."
     },
     {
@@ -3379,7 +3379,7 @@
       "section": "6.2",
       "name": "Calculating the energy and wavelength of a transition",
       "eq": "eq-bohr-transition",
-      "why": "The second objective of the section is a calculation: given the two quantum numbers and the nuclear charge, find the energy difference from kZ²(1/n₁² − 1/n₂²), read its sign to say whether the photon is absorbed or emitted, and divide hc by its magnitude to get the wavelength. Doing it once with care is what turns the model from a picture into something that can be checked against a spectrum.",
+      "why": "Given the two quantum numbers and the nuclear charge, find the energy difference from kZ²(1/n₁² − 1/n₂²). Its sign tells you whether the photon is absorbed or emitted, and dividing hc by its magnitude gives the wavelength. The result can then be checked against a measured spectrum.",
       "evidence": "Example 6.5 works a transition from n = 4 to n = 6 in hydrogen through to a wavelength and names the part of the spectrum it falls in, its Check Your Learning repeats the work for He⁺, and four end-of-chapter exercises ask for the energy of a photon produced by a named transition in hydrogen, He⁺ or Li²⁺."
     },
     {
@@ -3415,7 +3415,7 @@
       "section": "6.3",
       "name": "The principal quantum number and shells",
       "eq": "eq-hydrogen-transition",
-      "why": "The principal quantum number n = 1, 2, 3, … labels the energy levels of an electron in an atom and is essentially the n of the Bohr atom. Orbitals with the same n form a shell, and the greater n is, the farther the electron is from the nucleus and the greater its energy; a transition between levels absorbs or emits a photon that carries the energy difference.",
+      "why": "The principal quantum number n = 1, 2, 3, … labels the energy levels of an electron in an atom and plays the role of the n of the Bohr atom. Orbitals with the same n form a shell. The greater n is, the farther the electron is from the nucleus and the greater its energy. A transition between levels absorbs or emits a photon that carries the energy difference.",
       "evidence": "Figure 6.19 numbers the shells about the nucleus, the section writes the energy change of a transition in hydrogen in terms of the initial and final values of n, and Table 6.1 gives the allowed values and physical meaning of n."
     },
     {
@@ -3455,7 +3455,7 @@
       "kind": "skill",
       "section": "6.3",
       "name": "Working with shells, subshells, and quantum numbers",
-      "why": "Given a value of n, the reader lists the allowed values of l and m_l, names the subshells, counts the orbitals in each, and finds that a shell holds n² orbitals and at most 2n² electrons; given a set of quantum numbers, the reader names the subshell. This bookkeeping is what the next section uses to build the electron configurations of the atoms.",
+      "why": "Given a value of n, list the allowed values of l and m_l, name the subshells, and count the orbitals in each; a shell holds n² orbitals and at most 2n² electrons. Given a set of quantum numbers, name the subshell. This bookkeeping is the basis for writing the electron configurations of the atoms.",
       "evidence": "Examples 6.7, 6.8, and 6.9 and their Check Your Learning items all ask for it, and several end-of-chapter exercises ask the reader to identify a subshell from n and l or to write a set of quantum numbers for an electron."
     },
     {
@@ -3487,7 +3487,7 @@
       "kind": "skill",
       "section": "6.4",
       "name": "Writing electron configurations and orbital diagrams",
-      "why": "An electron configuration lists each occupied subshell by its n, its letter, and a superscript that counts its electrons, as in 1s²2s²2p⁴, and an orbital diagram draws each orbital as a box and each electron as an arrow. The inner electrons may be abbreviated by the symbol of the noble gas whose configuration they match, as in [Ne]3s¹ for sodium, and the reader writes either form for any atom and identifies an atom from its configuration.",
+      "why": "An electron configuration lists each occupied subshell by its n, its letter, and a superscript that counts its electrons, as in 1s²2s²2p⁴. An orbital diagram draws each orbital as a box and each electron as an arrow. The inner electrons may be abbreviated by the symbol of the noble gas whose configuration they match, as in [Ne]3s¹ for sodium. You should be able to write either form for any atom and to identify an atom from its configuration.",
       "evidence": "Figure 6.25 labels the parts of the notation, Figure 6.28 abbreviates the core of sodium, Example 6.10 writes the configuration and orbital diagram of phosphorus, and many end-of-chapter exercises ask for a configuration, an orbital diagram, or the atom a configuration belongs to."
     },
     {
@@ -3519,7 +3519,7 @@
       "kind": "skill",
       "section": "6.4",
       "name": "Electron configurations of ions",
-      "why": "A cation of a main group element loses the electrons that were added last, while a transition or inner transition metal loses its highest ns electrons before its (n − 1)d or (n − 2)f electrons; an anion adds electrons in the order the Aufbau principle predicts. The reader writes the configuration of an ion from that of its parent atom, and names an ion from a configuration and a charge.",
+      "why": "A cation of a main group element loses the electrons that were added last. A transition or inner transition metal loses its highest ns electrons before its (n − 1)d or (n − 2)f electrons. An anion adds electrons in the order the Aufbau principle predicts. From these rules, write the configuration of an ion from that of its parent atom, or name an ion from a configuration and a charge.",
       "evidence": "Example 6.11 writes the configurations of five ions from Na⁺ to Sm³⁺ and its Check Your Learning names the ions of a given configuration, and several end-of-chapter exercises ask for the configuration of a named ion."
     },
     {
@@ -3571,7 +3571,7 @@
       "section": "6.5",
       "name": "The trend in electron affinity",
       "eq": "eq-electron-affinity",
-      "why": "The electron affinity is the energy change when a gaseous atom accepts an electron, and it may be negative (energy released) or positive. Electron affinities tend to become more negative across a period as the effective nuclear charge increases, with exceptions in groups 2, 15, and 18 where a filled or half-filled subshell resists the added electron, and the second element of a group, such as chlorine, often has a more negative value than the first because the small n = 2 shell crowds its electrons.",
+      "why": "The electron affinity is the energy change when a gaseous atom accepts an electron; it is negative when energy is released and positive otherwise. Electron affinities tend to become more negative across a period as the effective nuclear charge increases. Groups 2, 15 and 18 are exceptions, because a filled or half-filled subshell resists the added electron. The second element of a group, such as chlorine, often has a more negative value than the first, because the small n = 2 shell crowds its electrons.",
       "evidence": "Figure 6.35 gives electron affinities in periodic-table form, and the section explains the exceptions and why chlorine has the most negative value of any element."
     },
     {
@@ -3579,7 +3579,7 @@
       "kind": "skill",
       "section": "6.5",
       "name": "Predicting sizes and energies from the periodic table",
-      "why": "From the positions of elements in the periodic table the reader orders atoms and ions by radius, by ionization energy, or by electron affinity, putting the trend down a group together with the trend across a period and allowing for the exceptions the section explains. Because metallic character follows the same trend as size, the same reading tells which elements lose electrons most easily.",
+      "why": "From the positions of elements in the periodic table, order atoms and ions by radius, ionization energy or electron affinity. Combine the trend down a group with the trend across a period, and allow for the known exceptions. Metallic character follows the same trend as size, so the same reading tells which elements lose electrons most easily.",
       "evidence": "Examples 6.12 and 6.13 and their Check Your Learning items ask for such orders, and most of the end-of-chapter exercises of the section ask the reader to predict which atom is largest, smallest, or hardest to ionize, or to rank several atoms or ions."
     },
     {
@@ -3733,7 +3733,7 @@
       "kind": "skill",
       "section": "11.4",
       "name": "Molality and mole fraction",
-      "why": "Mole fraction is a component’s moles divided by the total moles, and molality is moles of solute per kilogram of solvent; both are built from masses and moles, so, unlike molarity, they do not change with temperature, and each can be converted into the others.",
+      "why": "Mole fraction is a component’s moles divided by the total moles, and molality is moles of solute per kilogram of solvent. Both are built from masses and moles, so, unlike molarity, they do not change with temperature. Each can be converted into the others.",
       "evidence": "Examples 11.3 to 11.5 compute the mole fraction and molality of antifreeze, convert molality to mole fraction, and convert molarity to molality through a density.",
       "eq": "eq-molality"
     },
@@ -3843,7 +3843,7 @@
       "kind": "idea",
       "section": "9.1",
       "name": "Gas pressure, $P = F/A$",
-      "why": "A gas exerts a pressure on the walls of whatever confines it, because its molecules collide with those walls, and pressure is the force of those collisions divided by the area they act on. A small force on a small area can therefore give a larger pressure than a large force spread over a large one, and every law of the chapter is a statement about how this reading responds when something else about the gas is changed.",
+      "why": "A gas exerts pressure on the walls of its container because its molecules collide with those walls. Pressure is the force of those collisions divided by the area they act on, so a small force on a small area can give a larger pressure than a large force spread over a large one. Each gas law describes how the pressure responds when some other property of the gas changes.",
       "evidence": "The section defines pressure as force per unit area with the elephant and the figure skater of Figure 9.3, draws the column of air pressing on a thumbnail in Figure 9.2, and sets end-of-chapter items on sharp knives, bridge weight limits and crawling across thin ice.",
       "eq": "eq-pressure"
     },
@@ -3904,7 +3904,7 @@
       "section": "9.2",
       "name": "Boyle’s law, $P_1V_1 = P_2V_2$",
       "eq": "eq-boyle",
-      "why": "The volume of a given amount of gas held at constant temperature is inversely proportional to the pressure under which it is measured. Unlike the two laws before it this one is not a direct proportionality, and the section uses it to make a second point as well: a curve is hard to read, so plotting the inverse of the pressure against the volume turns the same data into a straight line.",
+      "why": "The volume of a given amount of gas held at constant temperature is inversely proportional to its pressure. Unlike the laws of Amontons and Charles, this is not a direct proportionality, and the graph of volume against pressure is a curve. Plotting the inverse of the pressure against the volume turns the same data into a straight line, which is easier to read.",
       "evidence": "The section states the law, draws the syringe with its gauge and both graphs in Figure 9.13 and the two graphs alone in Figure 9.14, works Example 9.8 by reading a pressure off each graph and then computing it, keeps the Breathing and Boyle’s Law note with Figure 9.15, and sets items on a diver’s bubbles rising, on what tripling the volume does to the pressure, and on reading the syringe at 12.5 mL."
     },
     {
@@ -3929,7 +3929,7 @@
       "kind": "idea",
       "section": "9.2",
       "name": "The ideal gas",
-      "why": "An ideal gas is a hypothetical construct whose properties are described exactly by the gas laws, and no real gas is one. Saying so is not a technicality: it tells the reader when the equation may be trusted, which is at relatively low pressures and high temperatures, and the book is careful to point out where one of its own examples strains that assumption.",
+      "why": "An ideal gas is a hypothetical construct whose properties are described exactly by the gas laws; no real gas is ideal. The ideal gas law can therefore be trusted only where real gases come close to ideal behavior, at relatively low pressures and high temperatures.",
       "evidence": "The section defines ideal behavior and the ideal gas, says that the assumption is reasonable only at low pressure and high temperature, and notes in Example 9.10 that a scuba tank at 153 atm is a case where the assumption is not very reasonable and the answer is a ballpark estimate."
     },
     {
@@ -3947,7 +3947,7 @@
       "section": "9.2",
       "name": "The combined gas law, $P_1V_1/T_1 = P_2V_2/T_2$",
       "eq": "eq-combined-gas",
-      "why": "When the amount of gas is the same under two different sets of conditions, both sides of the ideal gas law equal the same product of n and R, so the pressure, volume and temperature of the first condition may be set against those of the second directly. It is the form every two-state gas problem takes, and it contains Amontons’s, Charles’s and Boyle’s laws as the cases where one of the three quantities does not change.",
+      "why": "When the amount of gas is the same under two sets of conditions, PV/T equals the same product nR in both, so we can set the pressure, volume and temperature of the first condition equal to those of the second. Every two-state gas problem takes this form. Amontons’s, Charles’s and Boyle’s laws are the cases in which one of the three quantities does not change.",
       "evidence": "The section derives the relation from the ideal gas law with the moles held constant and works Example 9.10 on a scuba tank emptied into a diver’s lungs at a different pressure and temperature, and items on a high altitude balloon, a cylinder of medical oxygen and a balloon clearing Mount Crumpit are solved the same way."
     },
     {
@@ -4543,7 +4543,7 @@
       "kind": "idea",
       "section": "13.2",
       "name": "What the magnitude of $K$ tells us",
-      "why": "A reaction with a large $K$ reaches equilibrium when most of the reactant has been converted to product, whereas a small $K$ means very little has been converted. The magnitude of $K$ does not indicate how rapidly equilibrium is reached.",
+      "why": "A reaction with a large $K$ reaches equilibrium when most of the reactant has become product, whereas a small $K$ means very little reactant has reacted. The magnitude of $K$ says nothing about how rapidly the reaction reaches equilibrium.",
       "evidence": "The text notes that some equilibria are established nearly instantaneously and others so slowly that no change is observed over days or years, whatever their $K$."
     },
     {
@@ -4698,7 +4698,7 @@
       "kind": "idea",
       "section": "14.1",
       "name": "Amphiprotic species",
-      "why": "Species capable of either donating or accepting protons are called amphiprotic. When such a species is added to water, both its acid and its base equilibria are established at the same time.",
+      "why": "A species that can either donate or accept a proton is amphiprotic. Add one to water and it sets up both its acid and its base equilibria at the same time.",
       "evidence": "Bicarbonate ion reacts with water as an acid to give CO<sub>3</sub><sup>2−</sup> and as a base to give H<sub>2</sub>CO<sub>3</sub>, and Example 14.3 writes HSO<sub>3</sub><sup>−</sup> reacting as an acid with OH<sup>−</sup> and as a base with HI."
     },
     {
@@ -4937,7 +4937,7 @@
       "kind": "skill",
       "section": "14.7",
       "name": "Calculating pH in a strong acid-strong base titration",
-      "why": "Before the equivalence point the pH is set by the excess strong acid, at the equivalence point only water and a neutral salt remain, so the pH is 7.00 at 25 °C, and beyond it the pH is set by the excess strong base.",
+      "why": "Before the equivalence point the excess strong acid sets the pH. At the equivalence point only water and a neutral salt remain, so the pH is 7.00 at 25 °C. Beyond it the excess strong base sets the pH.",
       "evidence": "Example 14.21 finds pH 1.000, 1.477, 7.00 and 12.30 after 0.00, 12.50, 25.00 and 37.50 mL of 0.100 <em>M</em> NaOH are added to 25.00 mL of 0.100 <em>M</em> HCl."
     },
     {

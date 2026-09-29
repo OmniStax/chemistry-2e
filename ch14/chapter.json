@@ -202,7 +202,7 @@
   {
    "sym": "pH",
    "type": "concentration",
-   "meaning": "the pH of the buffer solution",
+   "meaning": "the pH of the buffer solution, the negative base-10 logarithm of its hydronium ion molarity",
    "unit": "none",
    "section": "14.6"
   },
@@ -237,7 +237,7 @@
   {
    "sym": "pH",
    "type": "concentration",
-   "meaning": "the pH of the titration solution",
+   "meaning": "the pH of the titration solution, the negative base-10 logarithm of its hydronium ion molarity",
    "unit": "none",
    "section": "14.7"
   },

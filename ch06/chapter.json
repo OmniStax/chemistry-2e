@@ -132,6 +132,7 @@
     {
       "sym": "n_quantum",
       "meaning": "the quantum number of a Bohr orbit, a positive integer that labels one of the allowed orbits and takes no value between them",
+      "redefines": true,
       "section": "6.2",
       "anchor": "6.2-stationary-states"
     },
@@ -143,7 +144,8 @@
     },
     {
       "sym": "k",
-      "meaning": "a constant comprising fundamental constants such as the electron mass and charge and Planck's constant, with a value of 2.179 × 10⁻¹⁸ J",
+      "meaning": "the constant of Bohr’s equation for the energy of the electron, made of fundamental constants such as the electron mass and charge and Planck's constant, with a value of 2.179 × 10⁻¹⁸ J",
+      "redefines": true,
       "unit": "J",
       "section": "6.2",
       "anchor": "6.2-rydberg-recovered"

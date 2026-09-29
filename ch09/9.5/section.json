@@ -4,7 +4,7 @@
   "chapter": "9",
   "title": "The Kinetic-Molecular Theory",
   "short": "Kinetic-Molecular Theory",
-  "lead": "The gas laws describe how gases behave but do not say why. The kinetic-molecular theory answers that with a simple picture of molecules in constant motion, colliding elastically with one another and with the walls of their container. This section states the theory’s five postulates, uses them to explain the gas laws, and relates the speeds and kinetic energies of gas molecules to their temperature and molar mass, which leads to the root mean square speed and to Graham’s law.",
+  "lead": "The gas laws describe how gases behave but do not say why. The kinetic-molecular theory answers with a simple picture of molecules in constant motion, colliding elastically with one another and with the walls of their container. Its five postulates explain the gas laws and relate the speeds and kinetic energies of gas molecules to their temperature and molar mass. That relation leads to the root mean square speed and to Graham’s law.",
   "objectives": [
     "State the postulates of the kinetic-molecular theory",
     "Use this theory’s postulates to explain the gas laws"

@@ -4,7 +4,7 @@
   "chapter": "11",
   "title": "Solubility",
   "short": "Solubility",
-  "lead": "Every solute has a limit to how much of it a solvent will hold under given conditions. This section describes solutions that are unsaturated, saturated and supersaturated, shows how temperature and the pressure of a gas move that limit, states Henry’s law for the solubility of a gas, and explains why some pairs of liquids mix in all proportions while others separate into layers.",
+  "lead": "Every solute has a limit to how much of it a solvent will hold under given conditions. A solution may be unsaturated, saturated or supersaturated. Temperature, and for a gas its pressure, move that limit, and Henry’s law gives the solubility of a gas. Some pairs of liquids mix in all proportions, while others separate into layers.",
   "objectives": [
     "Describe the effects of temperature and pressure on solubility",
     "State Henry’s law and use it in calculations involving the solubility of a gas in a liquid",

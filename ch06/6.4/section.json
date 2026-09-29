@@ -4,7 +4,7 @@
  "chapter": "6",
  "title": "Electronic Structure of Atoms (Electron Configurations)",
  "short": "Electron Configurations",
- "lead": "The orbitals of an atom with two or more electrons are filled in order of increasing energy, and the order is not simply the order of n. This section builds the ground-state configuration of each element one electron at a time by the Aufbau principle, the Pauli exclusion principle and Hund’s rule, writes it as a configuration and as an orbital diagram, separates core electrons from valence electrons, explains the exceptions of chromium and copper, and shows why elements with the same valence configuration fall in the same group of the periodic table and how ions take or lose their electrons.",
+ "lead": "The orbitals of an atom with two or more electrons fill in order of increasing energy, and that order is not simply the order of n. The Aufbau principle, the Pauli exclusion principle and Hund’s rule build the ground-state configuration of each element one electron at a time. You can write it as a configuration or as an orbital diagram and separate core electrons from valence electrons. Chromium and copper are exceptions. Elements with the same valence configuration share a group, and ions form by gaining or losing electrons in a predictable order.",
  "objectives": [
   "Derive the predicted ground-state electron configurations of atoms",
   "Identify and explain exceptions to predicted electron configurations for atoms and ions",

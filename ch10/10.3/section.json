@@ -4,7 +4,7 @@
  "chapter": "10",
  "title": "Phase Transitions",
  "short": "Phase Transitions",
- "lead": "A substance changes from one state to another when heat is added or removed, and each change is set by the contest between its intermolecular attractions and the kinetic energy of its molecules. This section describes vapor pressure and the dynamic equilibrium behind it, relates vapor pressure to temperature and the boiling point through the Clausius-Clapeyron equation, and follows a substance along its heating curve, computing the heat for each warming step and each change of state.",
+ "lead": "A substance changes from one state to another when heat is added or removed, and each change is set by the contest between its intermolecular attractions and the kinetic energy of its molecules. Vapor pressure arises from a dynamic equilibrium, and the Clausius-Clapeyron equation relates it to temperature and the boiling point. A heating curve gives the heat for each warming step and each change of state.",
  "objectives": [
   "Define phase transitions and phase transition temperatures",
   "Explain the relation between phase transition temperatures and intermolecular attractive forces",

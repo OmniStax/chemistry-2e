@@ -4,7 +4,7 @@
   "chapter": "10",
   "title": "Intermolecular Forces",
   "short": "Intermolecular Forces",
-  "lead": "Whether a substance is a solid, a liquid, or a gas depends on a contest between the attractions its particles feel for one another and the kinetic energy that pulls them apart. This section describes the three kinds of attraction between neutral molecules, dispersion forces, dipole-dipole attractions and hydrogen bonds, and shows how the structure of a molecule tells us which of them it experiences and how high it will melt and boil.",
+  "lead": "Whether a substance is a solid, a liquid or a gas depends on a contest between the attractions its particles feel for one another and the kinetic energy that drives them apart. Three kinds of attraction act between neutral molecules: dispersion forces, dipole-dipole attractions and hydrogen bonds. The structure of a molecule tells us which of them it experiences and how high it will melt and boil.",
   "objectives": [
     "Describe the types of intermolecular forces possible between atoms or molecules in condensed phases (dispersion forces, dipole-dipole attractions, and hydrogen bonding)",
     "Identify the types of intermolecular forces experienced by specific molecules based on their structures",
@@ -79,7 +79,7 @@
       "answer": { "type": "open", "generated_by": "source", "solution": "Liquids and solids are similar in that they are matter composed of atoms, ions, or molecules. They are incompressible and have similar densities that are both much larger than those of gases. They are different in that liquids have no fixed shape, and solids are rigid." } },
     { "id": "e2", "source_id": "fs-idp56789136", "kind": "exercise", "bloom": "Understand", "place": { "at": "end" }, "cite": "kmt",
       "prompt": "In terms of the kinetic molecular theory, in what ways are liquids similar to solids? In what ways are liquids different from solids?",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "Compare the two phases point by point, using the two aspects of the molecular-level environment the section lists. First consider how closely the particles are packed in each phase and whether they are arranged in a regular pattern; then consider how the particles move, whether they vibrate about fixed positions or move past one another while remaining in contact." } },
+      "answer": { "type": "open", "generated_by": "ai", "solution": "Compare the two phases point by point, using the two aspects of the molecular-level environment. First consider how closely the particles are packed in each phase and whether they are arranged in a regular pattern. Then consider how the particles move: whether they vibrate about fixed positions or move past one another while remaining in contact." } },
     { "id": "e3", "source_id": "fs-idm25346224", "kind": "exercise", "bloom": "Understand", "place": { "at": "end" }, "cite": "kmt",
       "prompt": "In terms of the kinetic molecular theory, in what ways are liquids similar to gases? In what ways are liquids different from gases?",
       "answer": { "type": "open", "generated_by": "source", "solution": "They are similar in that the atoms or molecules are free to move from one position to another. They differ in that the particles of a liquid are confined to the shape of the vessel in which they are placed. In contrast, a gas will expand without limit to fill the space into which it is placed." } },

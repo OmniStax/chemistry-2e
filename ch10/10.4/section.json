@@ -4,7 +4,7 @@
  "chapter": "10",
  "title": "Phase Diagrams",
  "short": "Phase Diagrams",
- "lead": "The melting points, boiling points and vapor pressures of a substance measured over a wide range of pressures can be gathered into one graph. This section shows how a phase diagram maps the solid, liquid and gaseous states of a substance on a plane of pressure and temperature, how its curves give the phase-transition temperatures at any pressure, what happens at the triple point where all three curves meet, and why no liquid exists above the critical point, where a substance becomes a supercritical fluid.",
+ "lead": "The melting points, boiling points and vapor pressures of a substance, measured over a wide range of pressures, can be gathered into one graph. A phase diagram maps the solid, liquid and gaseous states of a substance on a plane of pressure and temperature. Its curves give the phase-transition temperatures at any pressure, and all three curves meet at the triple point. Above the critical point, no liquid exists, and the substance becomes a supercritical fluid.",
  "objectives": [
   "Explain the construction and use of a typical phase diagram",
   "Use phase diagrams to identify stable phases at given temperatures and pressures, and to describe phase transitions resulting from changes in these properties",
@@ -304,7 +304,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: a gas can be liquefied by pressure only below its critical temperature. Look up the critical temperatures of nitrogen and sulfur dioxide in the table of critical temperatures and pressures in this section, and compare each with 25 °C."
+    "solution": "Suggested approach: a gas can be liquefied by pressure only below its critical temperature. Look up the critical temperatures of nitrogen and sulfur dioxide in the table of critical temperatures and pressures, and compare each with 25 °C."
    }
   },
   {

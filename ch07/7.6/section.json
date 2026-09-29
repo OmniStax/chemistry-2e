@@ -4,7 +4,7 @@
  "chapter": "7",
  "title": "Molecular Structure and Polarity",
  "short": "Molecular Structure and Polarity",
- "lead": "A Lewis structure is drawn flat, but a molecule occupies space, and its bonds have measurable distances and angles. This section uses valence shell electron-pair repulsion theory to predict the arrangement of the regions of electron density around a central atom and, from the number of lone pairs among them, the molecular structure that results; it then adds the bond dipole moments of a molecule as vectors in three dimensions to decide whether the molecule as a whole is polar.",
+ "lead": "A Lewis structure is drawn flat, but a molecule occupies space, and its bonds have measurable distances and angles. Valence shell electron-pair repulsion theory predicts how the regions of electron density arrange themselves around a central atom. The number of lone pairs among them then gives the molecular structure. Adding the bond dipole moments of a molecule as vectors in three dimensions tells us whether the molecule as a whole is polar.",
  "objectives": [
   "Predict the structures of small molecules using valence shell electron pair repulsion (VSEPR) theory",
   "Explain the concepts of polar covalent bonds and molecular polarity",
@@ -16,6 +16,10 @@
   "text": [
    {
     "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
    }
   ],
   "figures": [
@@ -660,7 +664,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Both questions turn on the order of repulsions the section states, lone pair-lone pair, then lone pair-bonding pair, then bonding pair-bonding pair, and on the fact that a lone pair occupies a larger region of space than a single bond. Count the regions of electron density around the nitrogen atom in each ion or molecule and note how many of them are lone pairs; Figure 7.18 shows what the one lone pair of ammonia does to the ideal tetrahedral angle, and Example 7.12 works through the ammonium ion, which has four bonds and no lone pair, as methane does."
+    "solution": "Both questions turn on the order of repulsions: lone pair-lone pair, then lone pair-bonding pair, then bonding pair-bonding pair. A lone pair also occupies a larger region of space than a single bond. Count the regions of electron density around the nitrogen atom in each ion or molecule, and count how many of them are lone pairs. Figure 7.18 shows what the one lone pair of ammonia does to the ideal tetrahedral angle. Example 7.12 works through the ammonium ion, which has four bonds and no lone pair, like methane."
    }
   },
   {
@@ -942,7 +946,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the Lewis structure of S<sub>2</sub>O first, as the section’s procedure asks, and count the regions of electron density around the central sulfur atom: two bonds and one lone pair make three, so the bench at three regions and one lone pair gives the electron-pair geometry, the molecular structure and the ideal angle. Whether the real angle is larger or smaller is decided by the order of repulsions the section states, in which lone pair-bonding pair repulsion is greater than bonding pair-bonding pair repulsion; Figure 7.18 shows what that does to the angles of ammonia, and the sim beneath Figure 7.16 shows a lone pair squeezing the bonds toward one another."
+    "solution": "Write the Lewis structure of S<sub>2</sub>O first, and count the regions of electron density around the central sulfur atom. Two bonds and one lone pair make three, so the bench at three regions and one lone pair gives the electron-pair geometry, the molecular structure and the ideal angle. Lone pair-bonding pair repulsion is greater than bonding pair-bonding pair repulsion, and this decides whether the real angle is larger or smaller. Figure 7.18 shows the effect on the angles of ammonia, and the sim beneath Figure 7.16 shows a lone pair squeezing the bonds toward one another."
    }
   }
  ],

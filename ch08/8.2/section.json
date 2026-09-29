@@ -4,7 +4,7 @@
  "chapter": "8",
  "title": "Hybrid Atomic Orbitals",
  "short": "Hybrid Atomic Orbitals",
- "lead": "The orbitals of an isolated atom cannot explain the bond angles of a molecule such as water. This section combines the valence orbitals of a bonded atom into sets of hybrid orbitals, sp, sp², sp³, sp³d and sp³d², whose arrangements match the electron-pair geometries of VSEPR theory, and uses the number of regions of electron density around an atom to assign its hybridization.",
+ "lead": "The orbitals of an isolated atom cannot explain the bond angles of a molecule such as water. The valence orbitals of a bonded atom combine into sets of hybrid orbitals, sp, sp², sp³, sp³d and sp³d², whose arrangements match the electron-pair geometries of VSEPR theory. The number of regions of electron density around an atom then gives its hybridization.",
  "objectives": [
   "Explain the concept of atomic orbital hybridization",
   "Determine the hybrid orbitals associated with various molecular geometries"

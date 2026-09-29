@@ -4,7 +4,7 @@
  "chapter": "7",
  "title": "Lewis Symbols and Structures",
  "short": "Lewis Symbols and Structures",
- "lead": "A Lewis symbol shows the valence electrons of an atom or a monatomic ion as dots around its symbol, and a Lewis structure shows how the valence electrons of a molecule or polyatomic ion are shared in bonds or held as lone pairs. This section uses the octet rule to predict how many bonds an atom forms, sets out a five-step procedure for writing Lewis structures, including those with double and triple bonds, and describes the molecules whose central atoms cannot have eight electrons.",
+ "lead": "A Lewis symbol shows the valence electrons of an atom or a monatomic ion as dots around its symbol. A Lewis structure shows how the valence electrons of a molecule or polyatomic ion are shared in bonds or held as lone pairs. The octet rule predicts how many bonds an atom forms, and a five-step procedure writes Lewis structures, including those with double and triple bonds. Some central atoms cannot have eight electrons.",
  "objectives": [
   "Write Lewis symbols for neutral atoms and ions",
   "Draw Lewis structures depicting the bonding in simple molecules"

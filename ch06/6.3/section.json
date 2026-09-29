@@ -4,7 +4,7 @@
  "chapter": "6",
  "title": "Development of Quantum Theory",
  "short": "Development of Quantum Theory",
- "lead": "Bohr’s model could not say why only certain orbits were allowed, and it failed for every atom with more than one electron. This section follows the ideas that replaced it: de Broglie’s proposal that a particle such as an electron also behaves as a wave, Heisenberg’s limit on how exactly its position and momentum can be known together, and Schrödinger’s wavefunctions, whose squared magnitude gives the probability of finding the electron near a point. It ends with the four quantum numbers that describe an electron in an atom and the Pauli exclusion principle that allows no two electrons to share all four.",
+ "lead": "Bohr’s model could not say why only certain orbits were allowed, and it failed for every atom with more than one electron. Three ideas replaced it: de Broglie’s proposal that a particle such as an electron also behaves as a wave, Heisenberg’s limit on how exactly its position and momentum can be known together, and Schrödinger’s wavefunctions, whose squared magnitude gives the probability of finding the electron near a point. Four quantum numbers then describe an electron in an atom, and the Pauli exclusion principle allows no two electrons to share all four.",
  "objectives": [
   "Extend the concept of wave–particle duality that was observed in electromagnetic radiation to matter as well",
   "Understand the general idea of the quantum mechanical description of electrons in an atom, and that it uses the notion of three-dimensional wave functions, or orbitals, that define the distribution of probability to find an electron in a particular part of space",
@@ -440,7 +440,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) Think of the three as nested groups. A shell is the set of orbitals that share one general energy and one general distance from the nucleus; a subshell is the set of orbitals within a shell that share one shape; and an orbital is a single region of space, within a subshell, in which one or two electrons are most likely to be found. (b) Ask how many quantum numbers are needed to name each group. A shell is fixed by <em>n</em> alone, a subshell by <em>n</em> and <em>l</em> together, and an orbital by <em>n</em>, <em>l</em> and <em>m<sub>l</sub></em> together."
+    "solution": "(a) Think of the three as nested groups. A shell is the set of orbitals that share one general energy and one general distance from the nucleus. A subshell is the set of orbitals within a shell that share one shape. An orbital is a single region of space, within a subshell, in which one or two electrons are most likely to be found. (b) Ask how many quantum numbers are needed to name each group. A shell is fixed by <em>n</em> alone, a subshell by <em>n</em> and <em>l</em> together, and an orbital by <em>n</em>, <em>l</em> and <em>m<sub>l</sub></em> together."
    }
   },
   {
@@ -573,7 +573,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Start from the principle as the section states it: it is fundamentally impossible to determine simultaneously and exactly both the momentum and the position of a particle, so that the product of the two uncertainties, Δ<em>x</em> × Δ<em>p<sub>x</sub></em>, can be no smaller than <em>ħ</em>/2. Then say what follows. The more exactly the position of a particle is known, the less exactly its momentum can be known, so an electron in an atom cannot be followed along a precise orbit as the Bohr model supposed; its position can only be described by a probability. Because <em>ħ</em> is so small, the limit matters for a particle as light as an electron and is far too small to notice for a macroscopic object such as a baseball."
+    "solution": "Start from the principle: it is fundamentally impossible to determine simultaneously and exactly both the momentum and the position of a particle. The product of the two uncertainties, Δ<em>x</em> × Δ<em>p<sub>x</sub></em>, can be no smaller than <em>ħ</em>/2. Then say what follows. The more exactly we know the position of a particle, the less exactly we can know its momentum. An electron in an atom therefore cannot be followed along a precise orbit, as the Bohr model supposed, and its position can only be described by a probability. Because <em>ħ</em> is so small, the limit matters for a particle as light as an electron but is far too small to notice for a macroscopic object such as a baseball."
    }
   },
   {

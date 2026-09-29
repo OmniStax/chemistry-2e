@@ -4,7 +4,7 @@
  "chapter": "8",
  "title": "Valence Bond Theory",
  "short": "Valence Bond Theory",
- "lead": "VSEPR theory predicts the shapes of molecules but does not explain the bonds that hold them together. Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms. This section follows the energy of two hydrogen atoms as they approach each other, which sets the bond distance and the bond energy, and then distinguishes the σ bonds formed by end-to-end overlap from the π bonds formed by side-by-side overlap, the two kinds of bond from which single, double, and triple bonds are built.",
+ "lead": "VSEPR theory predicts the shapes of molecules but does not explain the bonds that hold them together. Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms. The energy of two approaching hydrogen atoms sets the bond distance and the bond energy. End-to-end overlap forms σ bonds and side-by-side overlap forms π bonds, and from these two kinds we build single, double and triple bonds.",
  "objectives": [
   "Describe the formation of covalent bonds in terms of atomic orbital overlap",
   "Define and give examples of σ and π bonds"
@@ -252,7 +252,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write each Lewis structure by the procedure of Chapter 7, giving every atom an octet, and note the order of each carbon-oxygen bond. Each bond, whatever its order, contains one σ bond, and the remaining lines of a double or triple bond are π bonds, as the Lewis structures of O<sub>2</sub> and N<sub>2</sub> in this section show. Count the σ and π bonds bond by bond for each molecule."
+    "solution": "Write each Lewis structure by the procedure of Chapter 7, giving every atom an octet, and note the order of each carbon-oxygen bond. Every bond, whatever its order, contains one σ bond, and the remaining lines of a double or triple bond are π bonds, as the Lewis structures of O<sub>2</sub> and N<sub>2</sub> show. Count the σ and π bonds bond by bond for each molecule."
    }
   }
  ],

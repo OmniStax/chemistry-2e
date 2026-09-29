@@ -4,7 +4,7 @@
   "chapter": "9",
   "title": "Non-Ideal Gas Behavior",
   "short": "Non-Ideal Gases",
-  "lead": "Real gas molecules take up some space and attract one another, so no real gas obeys the ideal gas law exactly. This section measures the departure with the compressibility factor, Z, explains why it arises at high pressures and low temperatures, and introduces the van der Waals equation, which corrects the ideal gas law for the volume of the molecules and for the attractions between them.",
+  "lead": "Real gas molecules take up some space and attract one another, so no real gas obeys the ideal gas law exactly. The compressibility factor, Z, measures the departure, which grows at high pressures and low temperatures. The van der Waals equation corrects the ideal gas law for the volume of the molecules and for the attractions between them.",
   "objectives": [
     "Describe the physical factors that lead to deviations from ideal gas behavior",
     "Explain how these factors are represented in the van der Waals equation",

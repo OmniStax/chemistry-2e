@@ -4,7 +4,7 @@
   "chapter": "9",
   "title": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law",
   "short": "The Ideal Gas Law",
-  "lead": "Four properties describe a sample of gas, its pressure, its volume, its temperature and the amount of it, and the scientists of the balloon age found how each pair of them is related when the other two are held still. This section states those four laws, Amontons’s, Charles’s, Boyle’s and Avogadro’s, combines them into the ideal gas law, PV = nRT, and uses that one equation and the combined gas law to compute any one property of a gas from the others.",
+  "lead": "Four properties describe a sample of gas: its pressure, its volume, its temperature and its amount. Scientists of the balloon age found how each pair is related when the other two are held constant. These four laws, Amontons’s, Charles’s, Boyle’s and Avogadro’s, combine into the ideal gas law, PV = nRT. With that one equation and the combined gas law, we can compute any one property of a gas from the others.",
   "objectives": [
     "Identify the mathematical relationships between the various properties of gases",
     "Use the ideal gas law, and related gas laws, to compute the values of various gas properties under specified conditions"
@@ -15,6 +15,10 @@
     "text": [
       {
         "model": "claude-fable-5-1"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
       }
     ],
     "figures": [
@@ -584,7 +588,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: the figure gives pressures and volumes at room temperature. The ideal gas law, PV = nRT, turns a pressure, a volume and a temperature into an amount in moles, so the temperature of the sample is needed; and turning that amount into a mass needs the molar mass of air, since a mass is the amount multiplied by the mass of one mole."
+        "solution": "Suggested approach: the figure gives pressures and volumes at room temperature. The ideal gas law, PV = nRT, turns a pressure, a volume and a temperature into an amount in moles, so you need the temperature of the sample. To turn that amount into a mass, multiply by the molar mass of air."
       }
     },
     {

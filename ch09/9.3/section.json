@@ -4,7 +4,7 @@
  "chapter": "9",
  "title": "Stoichiometry of Gaseous Substances, Mixtures, and Reactions",
  "short": "Gas Stoichiometry and Mixtures",
- "lead": "The ideal gas law turns measurements of pressure, volume and temperature into an amount of gas, and this section puts that to work. It finds the density and the molar mass of a gas, adds the partial pressures of the gases in a mixture by Dalton’s law, corrects a gas collected over water for the water vapor it holds, and uses volumes of gases in the stoichiometry of reactions.",
+ "lead": "The ideal gas law turns measurements of pressure, volume and temperature into an amount of gas. It gives the density and the molar mass of a gas. Dalton’s law adds the partial pressures of the gases in a mixture, and a gas collected over water must be corrected for the water vapor it holds. Volumes of gases also enter the stoichiometry of reactions.",
  "objectives": [
   "Use the ideal gas law to compute gas densities and molar masses",
   "Perform stoichiometric calculations involving gaseous substances",

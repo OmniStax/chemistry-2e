@@ -4,7 +4,7 @@
  "chapter": "6",
  "title": "Periodic Variations in Element Properties",
  "short": "Periodic Variations",
- "lead": "The size of an atom, the energy needed to remove an electron from it, and the energy change when it accepts one all vary periodically with its electronic structure. This section explains the trends in covalent and ionic radius through the effective nuclear charge, follows the first and successive ionization energies across periods and down groups, and sets out the trend in electron affinity together with its exceptions.",
+ "lead": "The size of an atom, the energy needed to remove an electron from it, and the energy change when it accepts one all vary periodically with its electronic structure. The effective nuclear charge explains the trends in covalent and ionic radius. First and successive ionization energies change in regular ways across periods and down groups, and electron affinity follows a trend with a few exceptions.",
  "objectives": [
   "Describe and explain the observed trends in atomic size, ionization energy, and electron affinity of the elements"
  ],
@@ -524,7 +524,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The reaction is the reverse of the first ionization, X(<em>g</em>) ⟶ X<sup>+</sup>(<em>g</em>) + e<sup>−</sup>, so the energy it releases is equal in size to the first ionization energy of the element, with the opposite sign. The most exothermic reaction therefore belongs to the element of the five with the largest first ionization energy, which you can find from the trends across a period and down a group or from Figure 6.34. Then name the energy of the reverse process in the terms of this section."
+    "solution": "The reaction is the reverse of the first ionization, X(<em>g</em>) ⟶ X<sup>+</sup>(<em>g</em>) + e<sup>−</sup>, so the energy it releases equals the first ionization energy of the element in size, with the opposite sign. The most exothermic reaction therefore belongs to the element with the largest first ionization energy of the five. Find it from the trends across a period and down a group, or from Figure 6.34. Then name the energy of the reverse process."
    }
   },
   {

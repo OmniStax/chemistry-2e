@@ -4,7 +4,7 @@
  "chapter": "7",
  "title": "Strengths of Ionic and Covalent Bonds",
  "short": "Bond Strengths",
- "lead": "Every bond takes energy to break. This section measures the strength of a covalent bond by its bond energy, uses average bond energies to estimate the enthalpy change of a reaction, and then measures the strength of an ionic solid by its lattice energy, which grows with the charges of the ions and shrinks with their distance apart and which the Born-Haber cycle calculates from quantities that can be measured.",
+ "lead": "Every bond takes energy to break. The bond energy measures the strength of a covalent bond, and average bond energies let us estimate the enthalpy change of a reaction. The lattice energy measures the strength of an ionic solid. It grows with the charges of the ions and shrinks with their distance apart, and the Born-Haber cycle calculates it from measurable quantities.",
  "objectives": [
   "Describe the energetics of covalent and ionic bond formation and breakage",
   "Use the Born-Haber cycle to compute lattice energies for ionic compounds",

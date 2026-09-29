@@ -193,7 +193,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Begin with the Lewis structure: the carbon atom is bonded to three oxygen atoms, one of them by a double bond, and the double bond can be placed on any of the three, which gives three resonance structures. Since resonance does not influence the assignment of hybridization, either structure shows that carbon has three regions of electron density and no lone pairs, so it is <em>sp</em><sup>2</sup> hybridized. Each C–O σ bond is then the overlap of a carbon <em>sp</em><sup>2</sup> orbital with an orbital on oxygen, and the π bond is the side-by-side overlap of the unhybridized 2<em>p</em> orbital on carbon with a 2<em>p</em> orbital on an oxygen atom. Because the π bond can form with any of the three oxygen atoms, its electrons are delocalized over the ion, as in benzene."
+    "solution": "Begin with the Lewis structure. The carbon atom is bonded to three oxygen atoms, one of them by a double bond, and the double bond can be placed on any of the three, which gives three resonance structures. Resonance does not influence the assignment of hybridization, so any one structure shows that carbon has three regions of electron density and no lone pairs; it is <em>sp</em><sup>2</sup> hybridized. Each C–O σ bond is the overlap of a carbon <em>sp</em><sup>2</sup> orbital with an orbital on oxygen. The π bond is the side-by-side overlap of the unhybridized 2<em>p</em> orbital on carbon with a 2<em>p</em> orbital on an oxygen atom. Because the π bond can form with any of the three oxygen atoms, its electrons are delocalized over the ion, as in benzene."
    }
   },
   {
@@ -289,7 +289,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "For each atom, count the regions of electron density shown in the structure (bonds of any order count as one region, and so does each lone pair) and assign the hybridization that gives that many hybrid orbitals. Then decide whether a resonance form can be drawn in which a π bond sits in a different place: if one can, the π electrons are delocalized over the atoms involved, as they are in benzene and in SO<sub>2</sub> in Example 8.4; if not, they stay between the two atoms of their double bond. In (c), compare the ring with benzene in Figure 8.26, and remember that a lone pair on the nitrogen atom counts as a region of electron density."
+    "solution": "For each atom, count the regions of electron density in the structure and assign the hybridization that gives that many hybrid orbitals. A bond of any order counts as one region, and so does each lone pair. Then decide whether a resonance form can be drawn with a π bond in a different place. If one can, the π electrons are delocalized over the atoms involved, as in benzene and in SO<sub>2</sub> in Example 8.4; if not, they stay between the two atoms of their double bond. In (c), compare the ring with benzene in Figure 8.26, and remember that a lone pair on the nitrogen atom counts as a region of electron density."
    }
   },
   {

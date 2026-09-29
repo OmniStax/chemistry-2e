@@ -4,7 +4,7 @@
  "chapter": "7",
  "title": "Formal Charges and Resonance",
  "short": "Formal Charges and Resonance",
- "lead": "When more than one Lewis structure can be written for a molecule or ion, formal charges help us decide which is the most reasonable. This section shows how to calculate the formal charge of each atom in a Lewis structure, gives four guidelines for choosing among possible structures, and introduces resonance, in which the actual distribution of electrons is an average of two or more Lewis structures.",
+ "lead": "When more than one Lewis structure can be written for a molecule or ion, formal charges help us decide which is the most reasonable. The formal charge of each atom in a Lewis structure is easy to calculate, and four guidelines choose among possible structures. In resonance, the actual distribution of electrons is an average of two or more Lewis structures.",
  "objectives": [
   "Compute formal charges for atoms in any Lewis structure",
   "Use formal charges to identify the most reasonable Lewis structure for a given molecule",
@@ -267,7 +267,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Complete the Lewis structure of each species from its skeleton. In acetic acid, one oxygen atom also carries the hydrogen atom, so only the other oxygen atom can take the double bond, and only one structure can be written: one C–O bond is single and the other double. In the acetate ion, the two oxygen atoms are bonded alike, and the double bond may be drawn to either of them. Ask what the resonance hybrid of those two forms says about the two carbon-oxygen bonds."
+    "solution": "Complete the Lewis structure of each species from its skeleton. In acetic acid, one oxygen atom also carries the hydrogen atom, so only the other oxygen atom can take the double bond. Only one structure can be written, with one single C–O bond and one double bond. In the acetate ion, the two oxygen atoms are bonded alike, and the double bond may go to either of them. Ask what the resonance hybrid of those two forms says about the two carbon-oxygen bonds."
    }
   },
   {

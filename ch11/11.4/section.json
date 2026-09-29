@@ -4,7 +4,7 @@
   "chapter": "11",
   "title": "Colligative Properties",
   "short": "Colligative Properties",
-  "lead": "A few properties of a solution depend only on how many solute particles it holds, not on what they are. This section introduces mole fraction and molality, uses Raoult’s law to explain why a nonvolatile solute lowers the vapor pressure of its solvent, raises its boiling point and lowers its freezing point, describes osmosis and osmotic pressure, uses these properties to find molar masses, and shows why an electrolyte’s effect is multiplied by the van’t Hoff factor.",
+  "lead": "A few properties of a solution depend only on how many solute particles it holds, not on what they are. Mole fraction and molality express that number. Raoult’s law explains why a nonvolatile solute lowers the vapor pressure of its solvent, raises its boiling point and lowers its freezing point. Osmosis and osmotic pressure follow, and all of these properties can be used to find molar masses. An electrolyte’s effect is multiplied by the van’t Hoff factor.",
   "objectives": [
     "Express concentrations of solution components using mole fraction and molality",
     "Describe the effect of solute concentration on various solution properties (vapor pressure, boiling point, freezing point, and osmotic pressure)",
@@ -510,7 +510,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: sort each term by asking whether it can be observed or measured in a sample in the laboratory, such as a temperature, a pressure, a concentration or a flow of solvent, or whether it describes what the individual atoms, molecules and ions are doing, such as the attractions between particles and the particles themselves. Boiling point elevation, Henry’s law, molarity and osmosis are measured on the bulk solution; hydrogen bonds, ion-dipole attractions and solvated ions describe particles. Consider for nonelectrolyte and nonstoichiometric compound whether the classification rests on an observation, such as conductivity or composition, or on a picture of the particles."
+        "solution": "Suggested approach: sort each term by asking whether it can be observed or measured in a laboratory sample, such as a temperature, a pressure, a concentration or a flow of solvent. Otherwise it describes what the individual atoms, molecules and ions are doing, such as the attractions between particles and the particles themselves. Boiling point elevation, Henry’s law, molarity and osmosis are measured on the bulk solution; hydrogen bonds, ion-dipole attractions and solvated ions describe particles. For nonelectrolyte and nonstoichiometric compound, consider whether the classification rests on an observation, such as conductivity or composition, or on a picture of the particles."
       }
     },
     {

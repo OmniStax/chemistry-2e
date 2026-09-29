@@ -4,7 +4,7 @@
  "chapter": "9",
  "title": "Gas Pressure",
  "short": "Gas Pressure",
- "lead": "A gas presses on every surface it touches, because its molecules strike that surface over and over, and the pressure is the force of those collisions divided by the area they act on. This section defines pressure, relates the many units in which it is reported, and shows how a barometer measures the pressure of the atmosphere and a manometer the pressure of a gas in a container, both by the height of a column of liquid.",
+ "lead": "A gas presses on every surface it touches, because its molecules strike that surface over and over. The pressure is the force of those collisions divided by the area they act on, and it is reported in many units. A barometer measures the pressure of the atmosphere, and a manometer the pressure of a gas in a container, both by the height of a column of liquid.",
  "objectives": [
   "Define the property of pressure",
   "Define and convert among the units of pressure measurements",

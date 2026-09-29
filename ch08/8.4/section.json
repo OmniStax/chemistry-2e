@@ -4,7 +4,7 @@
  "chapter": "8",
  "title": "Molecular Orbital Theory",
  "short": "Molecular Orbital Theory",
- "lead": "The Lewis structure of O<sub>2</sub> pairs every electron, yet liquid oxygen is held between the poles of a magnet. Molecular orbital theory combines the atomic orbitals of the atoms into molecular orbitals spread over the whole molecule, bonding orbitals lower in energy and antibonding orbitals higher. This section builds the σ and π molecular orbitals, fills molecular orbital diagrams with electrons, calculates bond orders, and explains the paramagnetism of oxygen and the change of orbital order that s-p mixing causes across the second period.",
+ "lead": "The Lewis structure of O<sub>2</sub> pairs every electron, yet liquid oxygen is held between the poles of a magnet. Molecular orbital theory combines the atomic orbitals of the atoms into molecular orbitals spread over the whole molecule, bonding orbitals lower in energy and antibonding orbitals higher. Filling σ and π molecular orbitals with electrons gives bond orders. The same diagrams explain the paramagnetism of oxygen and how s-p mixing changes the orbital order across the second period.",
  "objectives": [
   "Outline the basic quantum-mechanical approach to deriving molecular orbitals from atomic orbitals",
   "Describe traits of bonding and antibonding molecular orbitals",

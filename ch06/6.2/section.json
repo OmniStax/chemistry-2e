@@ -4,7 +4,7 @@
   "chapter": "6",
   "title": "The Bohr Model",
   "short": "The Bohr Model",
-  "lead": "Bohr kept the planetary picture of the atom but allowed the electron only certain orbits, each with a definite energy, and let the atom emit or absorb light only when the electron moves between two of them. This section sets out that model for hydrogen and the one-electron ions, works out the energy and the radius of each orbit and the photon that a transition between two of them produces, and shows that the Rydberg equation of the line spectrum follows from it.",
+  "lead": "Bohr kept the planetary picture of the atom but allowed the electron only certain orbits, each with a definite energy. The atom emits or absorbs light only when the electron moves between two of them. For hydrogen and the one-electron ions, the model gives the energy and radius of each orbit and the photon a transition produces, and the Rydberg equation follows from it.",
   "objectives": [
     "Describe the Bohr model of the hydrogen atom",
     "Use the Rydberg equation to calculate energies of light emitted or absorbed by hydrogen atoms"
@@ -15,6 +15,10 @@
     "text": [
       {
         "model": "claude-fable-5-1"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
       }
     ],
     "figures": [
@@ -137,7 +141,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The energy of the electron in the orbit with quantum number <em>n</em> is <em>E<sub>n</sub></em> = −<em>k</em>/<em>n</em><sup>2</sup>, measured from the ionization limit at <em>E</em> = 0, so the electron with <em>n</em> = 3 has an energy of −<em>k</em>/9 while the electron with <em>n</em> = 1 has an energy of −<em>k</em>. Removing the electron altogether takes <em>k</em>/9 in the first case and <em>k</em> in the second, nine times as much, so the electron with the higher quantum number is bound less tightly. The radius of the orbit tells the same story: it is 9<em>a</em><sub>0</sub> for <em>n</em> = 3 and <em>a</em><sub>0</sub> for <em>n</em> = 1, and the electrostatic attraction between the electron and the nucleus decreases as the electron moves away from the nucleus, so an electron further out is held less tightly."
+        "solution": "The energy of the electron in the orbit with quantum number <em>n</em> is <em>E<sub>n</sub></em> = −<em>k</em>/<em>n</em><sup>2</sup>, measured from the ionization limit at <em>E</em> = 0. The electron with <em>n</em> = 3 therefore has an energy of −<em>k</em>/9, and the electron with <em>n</em> = 1 has an energy of −<em>k</em>. Removing the electron takes <em>k</em>/9 in the first case and <em>k</em> in the second, nine times as much, so the electron with the higher quantum number is bound less tightly. The radius of the orbit tells the same story. It is 9<em>a</em><sub>0</sub> for <em>n</em> = 3 and <em>a</em><sub>0</sub> for <em>n</em> = 1, and the electrostatic attraction between the electron and the nucleus decreases with distance, so an electron further out is held less tightly."
       }
     },
     {
@@ -269,7 +273,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Each line is the light of one kind of transition: the electron moves from one allowed orbit to another of lower energy, and the atom emits a single photon whose energy is the difference between the two orbital energies, |Δ<em>E</em>| = <em>hc</em>/<em>λ</em>. The colors differ because the energy differences differ, and a larger difference gives a photon of shorter wavelength; the four lines of hydrogen are the transitions that end on the <em>n</em> = 2 orbit, from red at 656 nm for <em>n</em> = 3 to violet at 410 nm for <em>n</em> = 6. Hydrogen has a single electron and its allowed energies are set by one quantum number, so only a few differences fall in the visible. Calcium has twenty electrons, whose interactions with one another and with the nucleus the Bohr model does not describe, and an atom with many electrons has many more allowed energies and so many more differences between them, which is why its spectrum carries so many more lines."
+        "solution": "Each line is the light of one kind of transition. The electron moves from one allowed orbit to another of lower energy, and the atom emits a single photon whose energy is the difference between the two orbital energies, |Δ<em>E</em>| = <em>hc</em>/<em>λ</em>. The colors differ because the energy differences differ, and a larger difference gives a photon of shorter wavelength. The four visible lines of hydrogen are the transitions that end on the <em>n</em> = 2 orbit, from red at 656 nm for <em>n</em> = 3 to violet at 410 nm for <em>n</em> = 6. Hydrogen has a single electron, and one quantum number sets its allowed energies, so only a few differences fall in the visible. Calcium has twenty electrons, and the Bohr model does not describe their interactions with one another and with the nucleus. An atom with many electrons has many more allowed energies, and so many more differences between them, which is why its spectrum carries so many more lines."
       }
     }
   ],

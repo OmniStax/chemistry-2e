@@ -35,6 +35,7 @@
  "variables": [
   {
    "sym": "rate_f",
+   "concept": "reaction-rate",
    "type": "rate",
    "meaning": "the rate of the forward reaction",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
@@ -42,6 +43,7 @@
   },
   {
    "sym": "rate_r",
+   "concept": "reaction-rate",
    "type": "rate",
    "meaning": "the rate of the reverse reaction",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
@@ -49,54 +51,63 @@
   },
   {
    "sym": "k_f",
+   "concept": "rate-constant",
    "meaning": "the rate constant of the forward reaction",
    "unit": "depends on the order of the forward reaction",
    "section": "13.1"
   },
   {
    "sym": "k_r",
+   "concept": "rate-constant",
    "meaning": "the rate constant of the reverse reaction",
    "unit": "depends on the order of the reverse reaction",
    "section": "13.1"
   },
   {
    "sym": "Q_c",
+   "concept": "reaction-quotient",
    "meaning": "the reaction quotient, the function of the concentrations or pressures of reactants and products that describes the status of a reaction mixture",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "Q_conc",
+   "concept": "reaction-quotient",
    "meaning": "the reaction quotient written with molar concentrations",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "Q_P",
+   "concept": "reaction-quotient",
    "meaning": "the reaction quotient written with partial pressures",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "K",
+   "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant, the value of the reaction quotient for a system at equilibrium",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "K_c",
+   "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant written with molar concentrations",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "K_P",
+   "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant written with partial pressures",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "[A]",
+   "concept": "molarity",
    "type": "concentration",
    "meaning": "the molar concentration of reactant A",
    "unit": "mol/L (M)",
@@ -104,6 +115,7 @@
   },
   {
    "sym": "[B]",
+   "concept": "molarity",
    "type": "concentration",
    "meaning": "the molar concentration of reactant B",
    "unit": "mol/L (M)",
@@ -111,6 +123,7 @@
   },
   {
    "sym": "[C]",
+   "concept": "molarity",
    "type": "concentration",
    "meaning": "the molar concentration of product C",
    "unit": "mol/L (M)",
@@ -118,6 +131,7 @@
   },
   {
    "sym": "[D]",
+   "concept": "molarity",
    "type": "concentration",
    "meaning": "the molar concentration of product D",
    "unit": "mol/L (M)",
@@ -125,6 +139,7 @@
   },
   {
    "sym": "P_A",
+   "concept": "partial-pressure",
    "type": "pressure",
    "meaning": "the partial pressure of reactant A",
    "unit": "atm",
@@ -132,6 +147,7 @@
   },
   {
    "sym": "P_B",
+   "concept": "partial-pressure",
    "type": "pressure",
    "meaning": "the partial pressure of reactant B",
    "unit": "atm",
@@ -139,6 +155,7 @@
   },
   {
    "sym": "P_C",
+   "concept": "partial-pressure",
    "type": "pressure",
    "meaning": "the partial pressure of product C",
    "unit": "atm",
@@ -146,6 +163,7 @@
   },
   {
    "sym": "P_D",
+   "concept": "partial-pressure",
    "type": "pressure",
    "meaning": "the partial pressure of product D",
    "unit": "atm",
@@ -153,6 +171,7 @@
   },
   {
    "sym": "P",
+   "concept": "partial-pressure",
    "type": "pressure",
    "meaning": "the partial pressure of a gas",
    "unit": "atm",
@@ -160,6 +179,7 @@
   },
   {
    "sym": "M",
+   "concept": "molarity",
    "type": "concentration",
    "meaning": "the molar concentration of a gas",
    "unit": "mol/L (M)",
@@ -167,12 +187,14 @@
   },
   {
    "sym": "R",
+   "concept": "ideal-gas-law",
    "meaning": "the gas constant, 0.0821 L atm mol⁻¹ K⁻¹",
    "unit": "L atm mol⁻¹ K⁻¹",
    "section": "13.2"
   },
   {
    "sym": "T",
+   "concept": "temperature",
    "type": "temperature",
    "meaning": "the temperature",
    "unit": "K",
@@ -180,30 +202,35 @@
   },
   {
    "sym": "Δn_gas",
+   "concept": "kp-kc-relation",
    "meaning": "the difference in the molar amounts of product and reactant gases in the balanced equation",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "K_c_prime",
+   "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant of an equation reversed, multiplied by a factor, or formed as a sum of equations",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "K_c1",
+   "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant of the first of two coupled reactions",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "K_c2",
+   "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant of the second of two coupled reactions",
    "unit": "none",
    "section": "13.2"
   },
   {
    "sym": "ΔH",
+   "concept": "enthalpy-change-at-constant-pressure",
    "type": "energy",
    "meaning": "the enthalpy change of the reaction, which decides how the equilibrium shifts with temperature",
    "unit": "kJ",
@@ -211,6 +238,7 @@
   },
   {
    "sym": "x_ice",
+   "concept": "ice-change-terms",
    "meaning": "the change in the concentration (or pressure) of a species with coefficient 1, in terms of which the other changes are written",
    "unit": "mol/L (M) or atm",
    "section": "13.4"
@@ -236,7 +264,7 @@
   },
   {
    "id": "eq-reaction-quotient-p",
-   "concept": "write-reaction-quotient",
+   "concept": "reaction-quotient",
    "section": "13.2",
    "latex": "Q_{P}=\\frac{(P_{C})^{x}(P_{D})^{y}}{(P_{A})^{m}(P_{B})^{n}}",
    "ktex": "Q_{P}=\\frac{(\\kPC)^{x}(\\kPD)^{y}}{(\\kPA)^{m}(\\kPB)^{n}}",
@@ -245,7 +273,7 @@
   },
   {
    "id": "eq-p-mrt",
-   "concept": "kp-kc-relation",
+   "concept": "ideal-gas-law",
    "section": "13.2",
    "latex": "P=MRT",
    "ktex": "\\kP=\\kM R\\kT",
@@ -309,41 +337,49 @@
   {
    "section": "13.1",
    "term": "equilibrium",
+   "concept": "chemical-equilibrium",
    "definition": "state of a reversible reaction in which the forward and reverse processes occur at equal rates"
   },
   {
    "section": "13.1",
    "term": "reversible reaction",
+   "concept": "reversible-reaction",
    "definition": "chemical reaction that can proceed in both the forward and reverse directions under given conditions"
   },
   {
    "section": "13.2",
    "term": "equilibrium constant",
+   "concept": "equilibrium-constant",
    "definition": "value of the reaction quotient for a system at equilibrium; may be expressed using concentrations (<em>K</em><sub>c</sub>) or partial pressures (<em>K</em><sub>p</sub>)"
   },
   {
    "section": "13.2",
    "term": "heterogeneous equilibria",
+   "concept": "heterogeneous-equilibrium",
    "definition": "equilibria in which reactants and products occupy two or more different phases"
   },
   {
    "section": "13.2",
    "term": "homogeneous equilibria",
+   "concept": "homogeneous-equilibrium",
    "definition": "equilibria in which all reactants and products occupy the same phase"
   },
   {
    "section": "13.2",
    "term": "law of mass action",
+   "concept": "law-of-mass-action",
    "definition": "when a reversible reaction has attained equilibrium at a given temperature, the reaction quotient remains constant"
   },
   {
    "section": "13.2",
    "term": "reaction quotient",
+   "concept": "reaction-quotient",
    "definition": "mathematical function describing the relative amounts of reactants and products in a reaction mixture; may be expressed in terms of concentrations (<em>Q</em><sub>c</sub>) or pressures (<em>Q</em><sub>p</sub>)"
   },
   {
    "section": "13.3",
    "term": "Le Châtelier’s principle",
+   "concept": "le-chateliers-principle",
    "definition": "an equilibrium subjected to stress will shift in a way to counter the stress and re-establish equilibrium"
   }
  ]

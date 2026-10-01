@@ -1,0 +1,665 @@
+{
+  "chapter": "ch02",
+  "kinds": {
+    "daltons-atomic-theory": "axiom",
+    "law-of-definite-proportions": "axiom",
+    "law-of-multiple-proportions": "axiom",
+    "discovery-of-the-electron": "idea",
+    "fundamental-charge": "axiom",
+    "nuclear-model-of-the-atom": "idea",
+    "subatomic-particles": "definition",
+    "isotopes": "definition",
+    "atomic-mass-unit": "definition",
+    "atomic-number-and-mass-number": "definition",
+    "ions-and-atomic-charge": "definition",
+    "composition-of-an-atom": "skill",
+    "chemical-symbols": "definition",
+    "isotope-symbols": "skill",
+    "average-atomic-mass": "result",
+    "isotopic-abundance-from-average-mass": "skill",
+    "mass-spectrometry": "idea",
+    "molecular-formula": "definition",
+    "subscripts-and-coefficients": "idea",
+    "structural-formulas-and-models": "definition",
+    "empirical-formula-from-molecular-formula": "skill",
+    "isomers": "definition",
+    "periodic-law": "axiom",
+    "periods-and-groups": "definition",
+    "metals-nonmetals-metalloids": "definition",
+    "element-families": "definition",
+    "name-group-of-element": "skill",
+    "predict-ion-charge-from-group": "skill",
+    "polyatomic-ions": "definition",
+    "ionic-and-covalent-bonds": "definition",
+    "ionic-compounds": "definition",
+    "ionic-compound-formula": "skill",
+    "molecular-compounds": "definition",
+    "predict-bond-type": "skill",
+    "name-ionic-compounds": "skill",
+    "name-variable-charge-metal-compounds": "skill",
+    "name-hydrates": "skill",
+    "name-binary-molecular-compounds": "skill",
+    "name-binary-acids": "skill",
+    "name-oxyacids": "skill"
+  },
+  "statements": {},
+  "new": [
+    {
+      "id": "alpha-particle",
+      "kind": "definition",
+      "section": "2.2",
+      "name": "Alpha particle, α",
+      "statement": "An alpha particle is a positively charged particle consisting of two protons and two neutrons.",
+      "introduces": "gold-foil",
+      "prereqs": [
+        "subatomic-particles"
+      ]
+    },
+    {
+      "id": "nucleus",
+      "kind": "definition",
+      "section": "2.2",
+      "name": "Nucleus",
+      "statement": "The nucleus is the massive, positively charged center of an atom, made up of protons and neutrons.",
+      "introduces": "nucleus",
+      "prereqs": [
+        "nuclear-model-of-the-atom",
+        "subatomic-particles"
+      ]
+    },
+    {
+      "id": "periodic-table",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "The periodic table",
+      "statement": "The periodic table is a table of the elements that places elements with similar chemical properties close together.",
+      "introduces": "grouping-elements",
+      "prereqs": [
+        "elements-and-compounds"
+      ]
+    },
+    {
+      "id": "hydrate",
+      "kind": "definition",
+      "section": "2.7",
+      "name": "Hydrate",
+      "statement": "A hydrate is a compound containing one or more water molecules bound within its crystals, written with a dot between the formula of the anhydrous compound and the number of water molecules per formula unit.",
+      "introduces": "hydrates",
+      "prereqs": [
+        "ionic-compounds"
+      ]
+    },
+    {
+      "id": "nomenclature",
+      "kind": "definition",
+      "section": "2.7",
+      "name": "Nomenclature",
+      "statement": "Nomenclature is a system of rules for naming objects of interest, and chemical nomenclature gives every compound a name from which its formula can be written.",
+      "introduces": "nomenclature",
+      "prereqs": []
+    },
+    {
+      "id": "binary-compound",
+      "kind": "definition",
+      "section": "2.7",
+      "name": "Binary compound",
+      "statement": "A binary compound is a compound containing two different elements.",
+      "introduces": "molecular-compounds",
+      "prereqs": [
+        "elements-and-compounds"
+      ]
+    },
+    {
+      "id": "binary-acid",
+      "kind": "definition",
+      "section": "2.7",
+      "name": "Binary acid",
+      "statement": "A binary acid is a compound of hydrogen and one other element, bonded so that it releases H⁺ ions when dissolved in water.",
+      "introduces": "binary-acids",
+      "prereqs": [
+        "binary-compound"
+      ]
+    },
+    {
+      "id": "oxyacid",
+      "kind": "definition",
+      "section": "2.7",
+      "name": "Oxyacid",
+      "statement": "An oxyacid is a compound of hydrogen, oxygen and one other element, bonded so that it releases H⁺ ions when dissolved in water.",
+      "introduces": "oxyacids",
+      "prereqs": [
+        "polyatomic-ions"
+      ]
+    },
+    {
+      "id": "electron",
+      "kind": "definition",
+      "section": "2.2",
+      "name": "Electron",
+      "statement": "An electron is a negatively charged subatomic particle of relatively low mass located outside the nucleus.",
+      "introduces": "cathode-ray",
+      "prereqs": [
+        "subatomic-particles",
+        "discovery-of-the-electron"
+      ]
+    },
+    {
+      "id": "proton",
+      "kind": "definition",
+      "section": "2.2",
+      "name": "Proton",
+      "statement": "A proton is a positively charged subatomic particle located in the nucleus.",
+      "introduces": "nucleus",
+      "prereqs": [
+        "subatomic-particles",
+        "nucleus"
+      ]
+    },
+    {
+      "id": "neutron",
+      "kind": "definition",
+      "section": "2.2",
+      "name": "Neutron",
+      "statement": "A neutron is an uncharged subatomic particle located in the nucleus.",
+      "introduces": "neutron",
+      "prereqs": [
+        "subatomic-particles",
+        "nucleus"
+      ]
+    },
+    {
+      "id": "ion",
+      "kind": "definition",
+      "section": "2.3",
+      "name": "Ion",
+      "statement": "An ion is an electrically charged atom or molecule, one that contains unequal numbers of protons and electrons.",
+      "introduces": "ions",
+      "prereqs": [
+        "ions-and-atomic-charge"
+      ]
+    },
+    {
+      "id": "cation",
+      "kind": "definition",
+      "section": "2.3",
+      "name": "Cation",
+      "statement": "A cation is a positively charged atom or molecule, one that contains fewer electrons than protons.",
+      "introduces": "ions",
+      "prereqs": [
+        "ion"
+      ]
+    },
+    {
+      "id": "anion",
+      "kind": "definition",
+      "section": "2.3",
+      "name": "Anion",
+      "statement": "An anion is a negatively charged atom or molecule, one that contains more electrons than protons.",
+      "introduces": "ions",
+      "prereqs": [
+        "ion"
+      ]
+    },
+    {
+      "id": "atomic-number",
+      "kind": "definition",
+      "section": "2.3",
+      "name": "Atomic number, $Z$",
+      "statement": "The atomic number (Z) of an atom is the number of protons in its nucleus.",
+      "introduces": "atomic-number",
+      "prereqs": [
+        "atomic-number-and-mass-number",
+        "proton"
+      ]
+    },
+    {
+      "id": "mass-number",
+      "kind": "definition",
+      "section": "2.3",
+      "name": "Mass number, $A$",
+      "statement": "The mass number (A) of an atom is the sum of the numbers of neutrons and protons in its nucleus.",
+      "introduces": "atomic-number",
+      "prereqs": [
+        "atomic-number-and-mass-number",
+        "proton",
+        "neutron"
+      ]
+    },
+    {
+      "id": "empirical-formula-of-a-compound",
+      "kind": "definition",
+      "section": "2.4",
+      "name": "Empirical formula",
+      "statement": "An empirical formula shows the composition of a compound as the simplest whole-number ratio of its atoms.",
+      "introduces": "empirical-formula",
+      "prereqs": [
+        "molecular-formula"
+      ]
+    },
+    {
+      "id": "structural-formula",
+      "kind": "definition",
+      "section": "2.4",
+      "name": "Structural formula",
+      "statement": "A structural formula shows the atoms in a molecule and how they are connected.",
+      "introduces": "molecular-formula",
+      "prereqs": [
+        "structural-formulas-and-models"
+      ]
+    },
+    {
+      "id": "structural-isomer",
+      "kind": "definition",
+      "section": "2.4",
+      "name": "Structural isomer",
+      "statement": "Structural isomers are substances that have the same molecular formula but different physical and chemical properties because their atoms are bonded differently.",
+      "introduces": "isomers",
+      "prereqs": [
+        "isomers"
+      ]
+    },
+    {
+      "id": "spatial-isomer",
+      "kind": "definition",
+      "section": "2.4",
+      "name": "Spatial isomers",
+      "statement": "Spatial isomers are compounds in which the relative orientations of the atoms in space differ.",
+      "introduces": "spatial-isomers",
+      "prereqs": [
+        "isomers"
+      ]
+    },
+    {
+      "id": "group-of-the-periodic-table",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Group",
+      "statement": "A group is a vertical column of the periodic table.",
+      "introduces": "modern-table",
+      "prereqs": [
+        "periods-and-groups",
+        "periodic-table"
+      ]
+    },
+    {
+      "id": "period-of-the-periodic-table",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Period",
+      "statement": "A period, also called a series, is a horizontal row of the periodic table.",
+      "introduces": "modern-table",
+      "prereqs": [
+        "periods-and-groups",
+        "periodic-table"
+      ]
+    },
+    {
+      "id": "metal",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Metal",
+      "statement": "A metal is an element that is shiny, malleable, and a good conductor of heat and electricity.",
+      "introduces": "metals-nonmetals",
+      "prereqs": [
+        "metals-nonmetals-metalloids"
+      ]
+    },
+    {
+      "id": "nonmetal",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Nonmetal",
+      "statement": "A nonmetal is an element that appears dull and is a poor conductor of heat and electricity.",
+      "introduces": "metals-nonmetals",
+      "prereqs": [
+        "metals-nonmetals-metalloids"
+      ]
+    },
+    {
+      "id": "metalloid",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Metalloid",
+      "statement": "A metalloid is an element that conducts heat and electricity moderately well and has some properties of metals and some of nonmetals.",
+      "introduces": "metals-nonmetals",
+      "prereqs": [
+        "metals-nonmetals-metalloids"
+      ]
+    },
+    {
+      "id": "main-group-element",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Main-group element",
+      "statement": "A main-group element, also called a representative element, is an element in groups 1, 2, and 13–18.",
+      "introduces": "element-families",
+      "prereqs": [
+        "element-families"
+      ]
+    },
+    {
+      "id": "transition-metal",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Transition metal",
+      "statement": "A transition metal is an element in groups 3–12 (more strictly, 3–11).",
+      "introduces": "element-families",
+      "prereqs": [
+        "element-families"
+      ]
+    },
+    {
+      "id": "inner-transition-metal",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Inner transition metal",
+      "statement": "An inner transition metal is an element in the bottom two rows of the periodic table; those of the first row are lanthanides and those of the second actinides.",
+      "introduces": "element-families",
+      "prereqs": [
+        "element-families"
+      ]
+    },
+    {
+      "id": "lanthanide",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Lanthanide",
+      "statement": "A lanthanide is an inner transition metal in the top of the bottom two rows of the periodic table.",
+      "introduces": "element-families",
+      "prereqs": [
+        "inner-transition-metal"
+      ]
+    },
+    {
+      "id": "actinide",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Actinide",
+      "statement": "An actinide is an inner transition metal in the bottom of the bottom two rows of the periodic table.",
+      "introduces": "element-families",
+      "prereqs": [
+        "inner-transition-metal"
+      ]
+    },
+    {
+      "id": "alkali-metal",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Alkali metal",
+      "statement": "An alkali metal is an element in group 1.",
+      "introduces": "element-families",
+      "prereqs": [
+        "element-families"
+      ]
+    },
+    {
+      "id": "alkaline-earth-metal",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Alkaline earth metal",
+      "statement": "An alkaline earth metal is an element in group 2.",
+      "introduces": "element-families",
+      "prereqs": [
+        "element-families"
+      ]
+    },
+    {
+      "id": "pnictogen",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Pnictogen",
+      "statement": "A pnictogen is an element in group 15.",
+      "introduces": "element-families",
+      "prereqs": [
+        "element-families"
+      ]
+    },
+    {
+      "id": "chalcogen",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Chalcogen",
+      "statement": "A chalcogen is an element in group 16.",
+      "introduces": "element-families",
+      "prereqs": [
+        "element-families"
+      ]
+    },
+    {
+      "id": "halogen",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Halogen",
+      "statement": "A halogen is an element in group 17.",
+      "introduces": "element-families",
+      "prereqs": [
+        "element-families"
+      ]
+    },
+    {
+      "id": "noble-gas",
+      "kind": "definition",
+      "section": "2.5",
+      "name": "Noble gas",
+      "statement": "A noble gas, also called an inert gas, is an element in group 18.",
+      "introduces": "element-families",
+      "prereqs": [
+        "element-families"
+      ]
+    },
+    {
+      "id": "monatomic-ion",
+      "kind": "definition",
+      "section": "2.6",
+      "name": "Monatomic ion",
+      "statement": "A monatomic ion is an ion composed of a single atom.",
+      "introduces": "ions",
+      "prereqs": [
+        "ion"
+      ]
+    },
+    {
+      "id": "oxyanion",
+      "kind": "definition",
+      "section": "2.6",
+      "name": "Oxyanion",
+      "statement": "An oxyanion is a polyatomic anion composed of a central atom bonded to oxygen atoms.",
+      "introduces": "polyatomic-ions",
+      "prereqs": [
+        "polyatomic-ions"
+      ]
+    },
+    {
+      "id": "covalent-bond",
+      "kind": "definition",
+      "section": "2.6",
+      "name": "Covalent bond",
+      "statement": "A covalent bond is a bond formed when electrons are shared between atoms.",
+      "introduces": "bonds",
+      "prereqs": [
+        "ionic-and-covalent-bonds",
+        "electron"
+      ]
+    }
+  ],
+  "glossary": {
+    "2.1/Dalton’s atomic theory": "daltons-atomic-theory",
+    "2.1/law of constant composition": "law-of-definite-proportions",
+    "2.1/law of definite proportions": "law-of-definite-proportions",
+    "2.1/law of multiple proportions": "law-of-multiple-proportions",
+    "2.2/alpha particle (α particle)": "alpha-particle",
+    "2.2/electron": "electron",
+    "2.2/isotopes": "isotopes",
+    "2.2/neutron": "neutron",
+    "2.2/nucleus": "nucleus",
+    "2.2/proton": "proton",
+    "2.3/anion": "anion",
+    "2.3/atomic mass": "average-atomic-mass",
+    "2.3/atomic mass unit (amu)": "atomic-mass-unit",
+    "2.3/atomic number (Z)": "atomic-number",
+    "2.3/cation": "cation",
+    "2.3/chemical symbol": "chemical-symbols",
+    "2.3/Dalton (Da)": "atomic-mass-unit",
+    "2.3/fundamental unit of charge": "fundamental-charge",
+    "2.3/ion": "ion",
+    "2.3/mass number (A)": "mass-number",
+    "2.3/unified atomic mass unit (u)": "atomic-mass-unit",
+    "2.4/empirical formula": "empirical-formula-of-a-compound",
+    "2.4/isomers": "isomers",
+    "2.4/molecular formula": "molecular-formula",
+    "2.4/spatial isomers": "spatial-isomer",
+    "2.4/structural formula": "structural-formula",
+    "2.4/structural isomer": "structural-isomer",
+    "2.5/actinide": "actinide",
+    "2.5/alkali metal": "alkali-metal",
+    "2.5/alkaline earth metal": "alkaline-earth-metal",
+    "2.5/chalcogen": "chalcogen",
+    "2.5/group": "group-of-the-periodic-table",
+    "2.5/halogen": "halogen",
+    "2.5/hydrate": "hydrate",
+    "2.5/inert gas": "noble-gas",
+    "2.5/inner transition metal": "inner-transition-metal",
+    "2.5/lanthanide": "lanthanide",
+    "2.5/main-group element": "main-group-element",
+    "2.5/metal": "metal",
+    "2.5/metalloid": "metalloid",
+    "2.5/noble gas": "noble-gas",
+    "2.5/nonmetal": "nonmetal",
+    "2.5/period": "period-of-the-periodic-table",
+    "2.5/periodic law": "periodic-law",
+    "2.5/periodic table": "periodic-table",
+    "2.5/pnictogen": "pnictogen",
+    "2.5/representative element": "main-group-element",
+    "2.5/series": "period-of-the-periodic-table",
+    "2.5/transition metal": "transition-metal",
+    "2.6/covalent bond": "covalent-bond",
+    "2.6/covalent compound": "molecular-compounds",
+    "2.6/ionic bond": "ionic-bond",
+    "2.6/ionic compound": "ionic-compounds",
+    "2.6/molecular compound": "molecular-compounds",
+    "2.6/monatomic ion": "monatomic-ion",
+    "2.6/oxyanion": "oxyanion",
+    "2.6/polyatomic ion": "polyatomic-ions",
+    "2.7/binary acid": "binary-acid",
+    "2.7/binary compound": "binary-compound",
+    "2.7/nomenclature": "nomenclature",
+    "2.7/oxyacid": "oxyacid"
+  },
+  "variables": {
+    "2.3/Z": "atomic-number",
+    "2.3/A": "mass-number",
+    "2.3/e": "fundamental-charge"
+  },
+  "equations": {
+    "eq-electron-mass": "fundamental-charge",
+    "eq-nucleon-numbers": "atomic-number-and-mass-number",
+    "eq-atomic-charge": "ions-and-atomic-charge",
+    "eq-average-atomic-mass": "average-atomic-mass"
+  },
+  "edges": [
+    [
+      "composition-of-an-atom",
+      "proton"
+    ],
+    [
+      "composition-of-an-atom",
+      "neutron"
+    ],
+    [
+      "composition-of-an-atom",
+      "electron"
+    ],
+    [
+      "composition-of-an-atom",
+      "atomic-number"
+    ],
+    [
+      "composition-of-an-atom",
+      "mass-number"
+    ],
+    [
+      "isotope-symbols",
+      "atomic-number"
+    ],
+    [
+      "isotope-symbols",
+      "mass-number"
+    ],
+    [
+      "predict-ion-charge-from-group",
+      "monatomic-ion"
+    ],
+    [
+      "predict-ion-charge-from-group",
+      "group-of-the-periodic-table"
+    ],
+    [
+      "name-group-of-element",
+      "group-of-the-periodic-table"
+    ],
+    [
+      "empirical-formula-from-molecular-formula",
+      "empirical-formula-of-a-compound"
+    ],
+    [
+      "periodic-law",
+      "periodic-table"
+    ],
+    [
+      "name-hydrates",
+      "hydrate"
+    ],
+    [
+      "name-binary-molecular-compounds",
+      "binary-compound"
+    ],
+    [
+      "name-binary-molecular-compounds",
+      "nomenclature"
+    ],
+    [
+      "name-binary-acids",
+      "binary-acid"
+    ],
+    [
+      "name-oxyacids",
+      "oxyacid"
+    ],
+    [
+      "name-ionic-compounds",
+      "nomenclature"
+    ],
+    [
+      "name-ionic-compounds",
+      "monatomic-ion"
+    ],
+    [
+      "ionic-compound-formula",
+      "cation"
+    ],
+    [
+      "ionic-compound-formula",
+      "anion"
+    ],
+    [
+      "predict-bond-type",
+      "covalent-bond"
+    ],
+    [
+      "predict-bond-type",
+      "metal"
+    ],
+    [
+      "predict-bond-type",
+      "nonmetal"
+    ],
+    [
+      "molecular-compounds",
+      "covalent-bond"
+    ],
+    [
+      "covalent-bond-formation",
+      "covalent-bond"
+    ]
+  ]
+}

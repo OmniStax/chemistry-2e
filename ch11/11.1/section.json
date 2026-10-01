@@ -37,10 +37,13 @@
   ],
   "coverage": [
     {"span": "solutions", "concept": "properties-of-solutions", "verb": "introduces"},
+    {"span": "solutions", "concept": "alloy", "verb": "introduces"},
     {"span": "formation", "concept": "properties-of-solutions", "verb": "uses"},
+    {"span": "formation", "concept": "spontaneous-process", "verb": "introduces"},
     {"span": "ideal", "concept": "ideal-solution", "verb": "introduces"},
     {"span": "steps", "concept": "dissolution-energy-steps", "verb": "introduces"},
     {"span": "steps", "concept": "predict-solution-formation", "verb": "introduces"},
+    {"span": "steps", "concept": "solvation", "verb": "introduces"},
     {"span": "heat", "concept": "endothermic-and-exothermic-dissolution", "verb": "introduces"}
   ],
   "exercises": [

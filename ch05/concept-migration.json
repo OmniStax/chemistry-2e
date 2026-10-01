@@ -1,0 +1,489 @@
+{
+  "chapter": "ch05",
+  "kinds": {
+    "energy-and-work": "definition",
+    "potential-and-kinetic-energy": "idea",
+    "conservation-of-energy": "axiom",
+    "thermal-energy-and-temperature": "idea",
+    "heat-flow": "definition",
+    "exothermic-and-endothermic": "definition",
+    "energy-units": "skill",
+    "heat-capacity-and-specific-heat": "definition",
+    "heat-specific-heat-relation": "result",
+    "system-and-surroundings": "definition",
+    "calorimetry-heat-balance": "result",
+    "heat-of-reaction-by-calorimetry": "result",
+    "coffee-cup-calorimetry": "skill",
+    "bomb-calorimetry": "skill",
+    "food-calories": "skill",
+    "first-law-of-thermodynamics": "axiom",
+    "state-function": "definition",
+    "enthalpy-change-at-constant-pressure": "result",
+    "thermochemical-equations": "skill",
+    "enthalpy-of-combustion": "skill",
+    "standard-enthalpy-of-formation": "definition",
+    "hess-law": "result",
+    "enthalpy-from-formation-enthalpies": "skill"
+  },
+  "statements": {
+    "energy-and-work": "Energy is the capacity to supply heat or do work. Work is one of the two things energy does: moving matter against an opposing force, as a pump does when it pushes air into a tire.",
+    "potential-and-kinetic-energy": "Energy can be sorted into two kinds: potential energy, which an object has because of its position, composition, or condition, and kinetic energy, which it has because of its motion. The chemical energy stored in gasoline is potential energy, and thermal energy is kinetic energy.",
+    "conservation-of-energy": "During a chemical or physical change, energy can be neither created nor destroyed, although it can be changed in form. The heat a reaction gives off must therefore turn up somewhere else.",
+    "heat-flow": "Heat is the transfer of thermal energy between two bodies at different temperatures. It flows spontaneously from the hotter body to the cooler one, lowering the average kinetic energy of the first and raising that of the second, until the two reach thermal equilibrium at one temperature.",
+    "exothermic-and-endothermic": "A chemical reaction or physical change that releases heat is exothermic, and one that absorbs heat is endothermic. An exothermic process warms its surroundings, and an endothermic process cools them.",
+    "heat-capacity-and-specific-heat": "The heat capacity of a body is the heat it absorbs or releases for a temperature change of 1 °C, and it grows with the amount of material, so it is extensive. The specific heat is the heat needed to raise 1 gram of a substance by 1 °C, and it depends only on the kind of substance, so it is intensive.",
+    "system-and-surroundings": "The system is the portion of matter undergoing the chemical or physical change being studied, and the surroundings are everything else that gives heat to the system or takes it away. The sign of a heat is taken from the system's point of view."
+  },
+  "new": [
+    {
+      "id": "thermochemistry",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Thermochemistry",
+      "statement": "Thermochemistry is the study of measuring the amount of heat absorbed or released during a chemical reaction or a physical change.",
+      "introduces": "thermochemistry",
+      "prereqs": [
+        "heat-flow"
+      ]
+    },
+    {
+      "id": "work",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Work",
+      "statement": "Work is the transfer of energy that moves matter against an opposing force, or that changes external, macroscopic variables such as pressure and volume.",
+      "introduces": "energy",
+      "prereqs": [
+        "energy-and-work"
+      ]
+    },
+    {
+      "id": "potential-energy",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Potential energy",
+      "statement": "Potential energy is the energy a particle or a system of particles has because of its relative position, composition, or condition.",
+      "introduces": "energy",
+      "prereqs": [
+        "energy-and-work"
+      ]
+    },
+    {
+      "id": "kinetic-energy",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Kinetic energy, $KE = \\frac{1}{2}mv^2$",
+      "statement": "Kinetic energy is the energy an object has because of its motion, equal to one-half the product of its mass and the square of its velocity.",
+      "introduces": "energy",
+      "prereqs": [
+        "energy-and-work",
+        "mass",
+        "velocity"
+      ]
+    },
+    {
+      "id": "thermal-energy",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Thermal energy",
+      "statement": "Thermal energy is the kinetic energy associated with the random motion of atoms and molecules.",
+      "introduces": "thermal",
+      "prereqs": [
+        "kinetic-energy",
+        "atoms-and-molecules"
+      ]
+    },
+    {
+      "id": "exothermic-process",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Exothermic process",
+      "statement": "An exothermic process is a chemical reaction or physical change that releases heat.",
+      "introduces": "exo-endo",
+      "prereqs": [
+        "heat-flow"
+      ]
+    },
+    {
+      "id": "endothermic-process",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Endothermic process",
+      "statement": "An endothermic process is a chemical reaction or physical change that absorbs heat.",
+      "introduces": "exo-endo",
+      "prereqs": [
+        "heat-flow"
+      ]
+    },
+    {
+      "id": "joule",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "The joule, $1\\ \\text{J} = 1\\ \\text{kg m}^2/\\text{s}^2$",
+      "statement": "The joule is the SI unit of energy, the energy used when a force of 1 newton moves an object 1 meter.",
+      "introduces": "units",
+      "prereqs": [
+        "unit",
+        "energy-and-work"
+      ]
+    },
+    {
+      "id": "calorie",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "The calorie, $1\\ \\text{cal} = 4.184\\ \\text{J}$",
+      "statement": "The calorie is a unit of heat or other energy, the amount of energy required to raise 1 gram of water by 1 degree Celsius. One calorie is exactly 4.184 joules.",
+      "introduces": "units",
+      "prereqs": [
+        "unit",
+        "joule"
+      ]
+    },
+    {
+      "id": "heat-capacity",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Heat capacity, $C = q/\\Delta T$",
+      "statement": "The heat capacity of a body of matter is the quantity of heat required to raise its temperature by 1 degree Celsius. It is an extensive property, growing with the amount of matter in the body.",
+      "introduces": "capacity",
+      "prereqs": [
+        "heat-flow",
+        "temperature",
+        "extensive-and-intensive-properties"
+      ]
+    },
+    {
+      "id": "specific-heat-capacity",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Specific heat capacity, $c = q/(m\\,\\Delta T)$",
+      "statement": "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 gram of it by 1 degree Celsius. It is an intensive property, set by the kind of substance alone.",
+      "introduces": "capacity",
+      "prereqs": [
+        "heat-capacity",
+        "mass",
+        "extensive-and-intensive-properties"
+      ]
+    },
+    {
+      "id": "system",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "System",
+      "statement": "The system is the portion of matter undergoing the chemical or physical change being studied.",
+      "introduces": "system",
+      "prereqs": [
+        "matter"
+      ]
+    },
+    {
+      "id": "surroundings",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "Surroundings",
+      "statement": "The surroundings are all the matter other than the system being studied.",
+      "introduces": "system",
+      "prereqs": [
+        "system"
+      ]
+    },
+    {
+      "id": "calorimetry",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "Calorimetry",
+      "statement": "Calorimetry is the process of measuring the amount of heat involved in a chemical or physical process.",
+      "introduces": "calorimeters",
+      "prereqs": [
+        "heat-flow"
+      ]
+    },
+    {
+      "id": "calorimeter",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "Calorimeter",
+      "statement": "A calorimeter is a device used to measure the amount of heat absorbed or released in a chemical or physical process.",
+      "introduces": "calorimeters",
+      "prereqs": [
+        "calorimetry"
+      ]
+    },
+    {
+      "id": "bomb-calorimeter",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "Bomb calorimeter",
+      "statement": "A bomb calorimeter is a device designed to measure the energy change of a process at constant volume. It is commonly used for reactions, such as combustions, that release large amounts of heat and gaseous products.",
+      "introduces": "bomb",
+      "prereqs": [
+        "calorimeter",
+        "volume"
+      ]
+    },
+    {
+      "id": "nutritional-calorie",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "The nutritional Calorie, $1\\ \\text{Cal} = 1\\ \\text{kcal}$",
+      "statement": "The nutritional Calorie is the unit used for the energy provided by digestion of foods, defined as 1000 calories, or 1 kilocalorie.",
+      "introduces": "nutrition",
+      "prereqs": [
+        "calorie",
+        "unit-prefixes"
+      ]
+    },
+    {
+      "id": "chemical-thermodynamics",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Chemical thermodynamics",
+      "statement": "Chemical thermodynamics is the area of science that deals with the relationships between heat, work, and all forms of energy associated with chemical and physical processes.",
+      "introduces": "first-law",
+      "prereqs": [
+        "heat-flow",
+        "work",
+        "energy-and-work"
+      ]
+    },
+    {
+      "id": "internal-energy",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Internal energy, $U$",
+      "statement": "The internal energy of a system is the total of all possible kinds of energy present in the substances it contains.",
+      "introduces": "first-law",
+      "prereqs": [
+        "energy-and-work",
+        "system"
+      ]
+    },
+    {
+      "id": "expansion-work",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Expansion work, $w = -P\\Delta V$",
+      "statement": "Expansion work, or pressure-volume work, is the work done as a system expands or contracts against an external pressure.",
+      "introduces": "expansion-work",
+      "prereqs": [
+        "work",
+        "gas-pressure",
+        "volume"
+      ]
+    },
+    {
+      "id": "enthalpy",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Enthalpy, $H = U + PV$",
+      "statement": "The enthalpy of a system is the sum of its internal energy and the product of its pressure and volume.",
+      "introduces": "enthalpy",
+      "prereqs": [
+        "internal-energy",
+        "gas-pressure",
+        "volume"
+      ]
+    },
+    {
+      "id": "enthalpy-change",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Enthalpy change, $\\Delta H = \\Delta U + P\\Delta V$",
+      "statement": "The enthalpy change of a process is the change in the enthalpy of the system, equal to the heat it releases or absorbs when the process takes place at constant pressure.",
+      "introduces": "enthalpy",
+      "prereqs": [
+        "enthalpy"
+      ]
+    },
+    {
+      "id": "standard-state",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Standard state",
+      "statement": "A standard state is a set of physical conditions accepted as common reference conditions for reporting thermodynamic properties: 1 bar of pressure and 1 M concentration, with a temperature of 298.15 K assumed. A degree sign on an enthalpy change marks a process under these conditions.",
+      "introduces": "standard-state",
+      "prereqs": [
+        "gas-pressure",
+        "molarity",
+        "temperature"
+      ]
+    },
+    {
+      "id": "hydrocarbon",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Hydrocarbon",
+      "statement": "A hydrocarbon is a compound composed only of hydrogen and carbon, the major component of fossil fuels.",
+      "introduces": "combustion",
+      "prereqs": [
+        "elements-and-compounds"
+      ]
+    },
+    {
+      "id": "standard-enthalpy-of-combustion",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Standard enthalpy of combustion, $\\Delta H_{\\text{c}}^{\\circ}$",
+      "statement": "The standard enthalpy of combustion of a substance is the enthalpy change when 1 mole of it undergoes complete combustion under standard state conditions.",
+      "introduces": "combustion",
+      "prereqs": [
+        "enthalpy-change",
+        "standard-state",
+        "combustion-reaction",
+        "mole"
+      ]
+    }
+  ],
+  "glossary": {
+    "5.1/calorie (cal)": "calorie",
+    "5.1/endothermic process": "endothermic-process",
+    "5.1/energy": "energy-and-work",
+    "5.1/exothermic process": "exothermic-process",
+    "5.1/heat": "heat-flow",
+    "5.1/heat capacity": "heat-capacity",
+    "5.1/joule (J)": "joule",
+    "5.1/kinetic energy": "kinetic-energy",
+    "5.1/potential energy": "potential-energy",
+    "5.1/specific heat capacity": "specific-heat-capacity",
+    "5.1/temperature": "temperature",
+    "5.1/thermal energy": "thermal-energy",
+    "5.1/thermochemistry": "thermochemistry",
+    "5.1/work": "work",
+    "5.2/bomb calorimeter": "bomb-calorimeter",
+    "5.2/calorimeter": "calorimeter",
+    "5.2/calorimetry": "calorimetry",
+    "5.2/nutritional calorie (Calorie)": "nutritional-calorie",
+    "5.2/surroundings": "surroundings",
+    "5.2/system": "system",
+    "5.3/chemical thermodynamics": "chemical-thermodynamics",
+    "5.3/enthalpy": "enthalpy",
+    "5.3/enthalpy change": "enthalpy-change",
+    "5.3/expansion work (pressure-volume work)": "expansion-work",
+    "5.3/first law of thermodynamics": "first-law-of-thermodynamics",
+    "5.3/Hess’s law": "hess-law",
+    "5.3/hydrocarbon": "hydrocarbon",
+    "5.3/internal energy": "internal-energy",
+    "5.3/standard enthalpy of combustion": "standard-enthalpy-of-combustion",
+    "5.3/standard enthalpy of formation": "standard-enthalpy-of-formation",
+    "5.3/standard state": "standard-state",
+    "5.3/state function": "state-function"
+  },
+  "variables": {
+    "5.1/q": "heat-flow",
+    "5.1/C_heat": "heat-capacity",
+    "5.1/c_spec": "specific-heat-capacity",
+    "5.1/m": "mass",
+    "5.1/ΔT": "temperature",
+    "5.1/T_initial": "temperature",
+    "5.1/T_final": "temperature",
+    "5.3/U": "internal-energy",
+    "5.3/ΔU": "internal-energy",
+    "5.3/w": "work",
+    "5.3/H": "enthalpy",
+    "5.3/ΔH": "enthalpy-change",
+    "5.3/P": "gas-pressure",
+    "5.3/V": "volume",
+    "5.3/ΔV": "volume",
+    "5.3/q_p": "heat-flow",
+    "5.3/ΔH°": "enthalpy-change",
+    "5.3/ΔH_c°": "standard-enthalpy-of-combustion",
+    "5.3/ΔH_f°": "standard-enthalpy-of-formation",
+    "5.3/n_coef": "coefficients-as-ratios"
+  },
+  "equations": {
+    "eq-heat-capacity": "heat-capacity",
+    "eq-specific-heat": "specific-heat-capacity",
+    "eq-heat": "heat-specific-heat-relation",
+    "eq-heat-balance": "calorimetry-heat-balance",
+    "eq-heat-reaction": "heat-of-reaction-by-calorimetry",
+    "eq-bomb": "bomb-calorimetry",
+    "eq-first-law": "first-law-of-thermodynamics",
+    "eq-enthalpy": "enthalpy",
+    "eq-enthalpy-change": "enthalpy-change",
+    "eq-expansion-work": "expansion-work",
+    "eq-dh-qp": "enthalpy-change-at-constant-pressure",
+    "eq-hess-formation": "enthalpy-from-formation-enthalpies"
+  },
+  "edges": [
+    [
+      "thermal-energy-and-temperature",
+      "thermal-energy"
+    ],
+    [
+      "heat-flow",
+      "thermal-energy"
+    ],
+    [
+      "energy-units",
+      "joule"
+    ],
+    [
+      "energy-units",
+      "calorie"
+    ],
+    [
+      "heat-specific-heat-relation",
+      "specific-heat-capacity"
+    ],
+    [
+      "calorimetry-heat-balance",
+      "calorimeter"
+    ],
+    [
+      "coffee-cup-calorimetry",
+      "calorimeter"
+    ],
+    [
+      "bomb-calorimetry",
+      "bomb-calorimeter"
+    ],
+    [
+      "food-calories",
+      "nutritional-calorie"
+    ],
+    [
+      "first-law-of-thermodynamics",
+      "internal-energy"
+    ],
+    [
+      "first-law-of-thermodynamics",
+      "work"
+    ],
+    [
+      "enthalpy-change-at-constant-pressure",
+      "enthalpy"
+    ],
+    [
+      "enthalpy-change-at-constant-pressure",
+      "enthalpy-change"
+    ],
+    [
+      "enthalpy-change-at-constant-pressure",
+      "expansion-work"
+    ],
+    [
+      "enthalpy-of-combustion",
+      "standard-enthalpy-of-combustion"
+    ],
+    [
+      "thermochemical-equations",
+      "enthalpy-change"
+    ],
+    [
+      "standard-enthalpy-of-formation",
+      "standard-state"
+    ],
+    [
+      "hess-law",
+      "enthalpy-change"
+    ],
+    [
+      "exothermic-and-endothermic",
+      "exothermic-process"
+    ],
+    [
+      "exothermic-and-endothermic",
+      "endothermic-process"
+    ]
+  ]
+}

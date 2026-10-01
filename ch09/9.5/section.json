@@ -60,6 +60,7 @@
     {"span": "postulates", "concept": "kinetic-molecular-theory", "verb": "introduces"},
     {"span": "kmt-part-1", "concept": "kmt-explains-gas-laws", "verb": "introduces"},
     {"span": "kmt-part-1", "concept": "kinetic-molecular-theory", "verb": "uses"},
+    {"span": "kmt-part-1", "concept": "speed", "verb": "introduces"},
     {"span": "speeds", "concept": "maxwell-boltzmann-distribution", "verb": "introduces"},
     {"span": "speeds", "concept": "average-kinetic-energy-and-temperature", "verb": "introduces"},
     {"span": "speeds", "concept": "root-mean-square-speed", "verb": "introduces"},

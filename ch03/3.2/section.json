@@ -49,89 +49,148 @@
   { "span": "molecular", "concept": "molecular-formula-from-empirical", "verb": "introduces" },
   { "span": "molecular", "concept": "empirical-formula", "verb": "uses" },
   { "span": "molecular", "concept": "molar-mass", "verb": "uses" },
-  { "span": "molecular", "concept": "empirical-formula-from-percent", "verb": "reinforces" }
+  { "span": "molecular", "concept": "empirical-formula-from-percent", "verb": "reinforces" },
+  { "span": "molecular", "concept": "empirical-formula-mass", "verb": "introduces" }
  ],
  "exercises": [
   {
-   "id": "cyl1", "source_id": "fs-idm150394080", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-percent" }, "cite": "percent",
+   "id": "cyl1",
+   "source_id": "fs-idm150394080",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-percent" },
+   "cite": "percent",
    "prompt": "A 24.81-g sample of a gaseous compound containing only carbon, oxygen, and chlorine is determined to contain 3.01 g C, 4.00 g O, and 17.81 g Cl. What is this compound’s percent composition?",
-   "answer": { "type": "multi", "generated_by": "source", "parts": [
-    { "part": "% C", "value": 12.1, "unit": "%" },
-    { "part": "% O", "value": 16.1, "unit": "%" },
-    { "part": "% Cl", "value": 71.79, "unit": "%" }
-   ], "solution": "12.1% C, 16.1% O, 71.79% Cl" }
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     { "part": "% C", "value": 12.1, "unit": "%" },
+     { "part": "% O", "value": 16.1, "unit": "%" },
+     { "part": "% Cl", "value": 71.79, "unit": "%" }
+    ],
+    "solution": "12.1% C, 16.1% O, 71.79% Cl"
+   }
   },
   {
-   "id": "cyl2", "source_id": "fs-idm162294688", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-aspirin" }, "cite": "from-formula",
+   "id": "cyl2",
+   "source_id": "fs-idm162294688",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-aspirin" },
+   "cite": "from-formula",
    "prompt": "To three significant digits, what is the mass percentage of iron in the compound Fe<sub>2</sub>O<sub>3</sub>?",
    "answer": { "type": "number", "generated_by": "source", "value": 69.9, "unit": "% Fe", "hint": "Divide the mass of two moles of iron by the molar mass of Fe<sub>2</sub>O<sub>3</sub>.", "solution": "69.9% Fe" }
   },
   {
-   "id": "cyl3", "source_id": "fs-idp70151968", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-hematite" }, "cite": "empirical",
+   "id": "cyl3",
+   "source_id": "fs-idp70151968",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-hematite" },
+   "cite": "empirical",
    "prompt": "What is the empirical formula of a compound if a sample contains 0.130 g of nitrogen and 0.370 g of oxygen?",
    "answer": { "type": "open", "generated_by": "source", "solution": "N<sub>2</sub>O<sub>5</sub>" }
   },
   {
-   "id": "cyl4", "source_id": "fs-idp11336208", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-co2" }, "cite": "from-percent",
+   "id": "cyl4",
+   "source_id": "fs-idp11336208",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-co2" },
+   "cite": "from-percent",
    "prompt": "What is the empirical formula of a compound containing 40.0% C, 6.71% H, and 53.28% O?",
    "answer": { "type": "open", "generated_by": "source", "solution": "CH<sub>2</sub>O" }
   },
   {
-   "id": "cyl5", "source_id": "fs-idm153155296", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-nicotine" }, "cite": "molecular",
+   "id": "cyl5",
+   "source_id": "fs-idm153155296",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-nicotine" },
+   "cite": "molecular",
    "prompt": "What is the molecular formula of a compound with a percent composition of 49.47% C, 5.201% H, 28.84% N, and 16.48% O, and a molecular mass of 194.2 amu?",
    "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>" }
   },
   {
-   "id": "e1", "source_id": "fs-idm115920688", "kind": "exercise", "bloom": "Understand",
-   "place": { "at": "end" }, "cite": "molecular",
+   "id": "e1",
+   "source_id": "fs-idm115920688",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "molecular",
    "prompt": "What information is needed to determine the molecular formula of a compound from the empirical formula?",
    "answer": { "type": "open", "generated_by": "ai", "solution": "Recall how many empirical formula units a molecule contains and how that number is found. Ask which measured quantity must be divided by the empirical formula mass to give it, and name that quantity." }
   },
   {
-   "id": "e2", "source_id": "fs-idm130496608", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "from-formula",
+   "id": "e2",
+   "source_id": "fs-idm130496608",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "from-formula",
    "prompt": "Calculate the following to four significant figures: (a) the percent composition of ammonia, NH<sub>3</sub> (b) the percent composition of photographic fixer solution (“hypo”), Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> (c) the percent of calcium ion in Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>",
-   "answer": { "type": "multi", "generated_by": "source", "parts": [
-    { "part": "(a) % N", "value": 82.24, "unit": "%" },
-    { "part": "(a) % H", "value": 17.76, "unit": "%" },
-    { "part": "(b) % Na", "value": 29.08, "unit": "%" },
-    { "part": "(b) % S", "value": 40.56, "unit": "%" },
-    { "part": "(b) % O", "value": 30.36, "unit": "%" },
-    { "part": "(c) % Ca²⁺", "value": 38.76, "unit": "%" }
-   ], "solution": "(a) % N = 82.24%, % H = 17.76%; (b) % Na = 29.08%, % S = 40.56%, % O = 30.36%; (c) % Ca<sup>2+</sup> = 38.76%" }
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     { "part": "(a) % N", "value": 82.24, "unit": "%" },
+     { "part": "(a) % H", "value": 17.76, "unit": "%" },
+     { "part": "(b) % Na", "value": 29.08, "unit": "%" },
+     { "part": "(b) % S", "value": 40.56, "unit": "%" },
+     { "part": "(b) % O", "value": 30.36, "unit": "%" },
+     { "part": "(c) % Ca²⁺", "value": 38.76, "unit": "%" }
+    ],
+    "solution": "(a) % N = 82.24%, % H = 17.76%; (b) % Na = 29.08%, % S = 40.56%, % O = 30.36%; (c) % Ca<sup>2+</sup> = 38.76%"
+   }
   },
   {
-   "id": "e3", "source_id": "fs-idp103798128", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "from-formula",
+   "id": "e3",
+   "source_id": "fs-idp103798128",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "from-formula",
    "prompt": "Determine the percent ammonia, NH<sub>3</sub>, in Co(NH<sub>3</sub>)<sub>6</sub>Cl<sub>3</sub>, to three significant figures.",
    "answer": { "type": "number", "generated_by": "source", "value": 38.2, "unit": "% NH₃", "hint": "Divide the mass of six moles of NH<sub>3</sub> by the molar mass of the whole compound.", "solution": "% NH<sub>3</sub> = 38.2%" }
   },
   {
-   "id": "e4", "source_id": "fs-idm2827872", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "from-percent",
+   "id": "e4",
+   "source_id": "fs-idm2827872",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "from-percent",
    "prompt": "Determine the empirical formulas for compounds with the following percent compositions: (a) 15.8% carbon and 84.2% sulfur (b) 40.0% carbon, 6.7% hydrogen, and 53.3% oxygen",
    "answer": { "type": "open", "generated_by": "source", "solution": "(a) CS<sub>2</sub>; (b) CH<sub>2</sub>O" }
   },
   {
-   "id": "e5", "source_id": "fs-idm108358432", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "molecular",
+   "id": "e5",
+   "source_id": "fs-idm108358432",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "molecular",
    "prompt": "A compound of carbon and hydrogen contains 92.3% C and has a molar mass of 78.1 g/mol. What is its molecular formula?",
    "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>6</sub>H<sub>6</sub>" }
   },
   {
-   "id": "e6", "source_id": "fs-idm149528800", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "molecular",
+   "id": "e6",
+   "source_id": "fs-idm149528800",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "molecular",
    "prompt": "Determine the empirical and molecular formula for chrysotile asbestos. Chrysotile has the following percent composition: 28.03% Mg, 21.60% Si, 1.16% H, and 49.21% O. The molar mass for chrysotile is 520.8 g/mol.",
    "answer": { "type": "open", "generated_by": "source", "solution": "Mg<sub>3</sub>Si<sub>2</sub>H<sub>3</sub>O<sub>8</sub> (empirical formula), Mg<sub>6</sub>Si<sub>4</sub>H<sub>6</sub>O<sub>16</sub> (molecular formula)" }
   },
   {
-   "id": "e7", "source_id": "fs-idp63104368", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "molecular",
+   "id": "e7",
+   "source_id": "fs-idp63104368",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "molecular",
    "prompt": "A major textile dye manufacturer developed a new yellow dye. The dye has a percent composition of 75.95% C, 17.72% N, and 6.33% H by mass with a molar mass of about 240 g/mol. Determine the molecular formula of the dye.",
    "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>15</sub>H<sub>15</sub>N<sub>3</sub>" }
   }

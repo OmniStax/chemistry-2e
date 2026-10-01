@@ -64,8 +64,11 @@
  "coverage": [
   { "span": "covalent", "concept": "covalent-bond-formation", "verb": "introduces" },
   { "span": "formation", "concept": "covalent-bond-formation", "verb": "reinforces" },
+  { "span": "formation", "concept": "bond-length", "verb": "introduces" },
   { "span": "pure-polar", "concept": "bond-polarity", "verb": "introduces" },
   { "span": "pure-polar", "concept": "covalent-bond-formation", "verb": "uses" },
+  { "span": "pure-polar", "concept": "pure-covalent-bond", "verb": "introduces" },
+  { "span": "pure-polar", "concept": "polar-covalent-bond", "verb": "introduces" },
   { "span": "electronegativity", "concept": "electronegativity", "verb": "introduces" },
   { "span": "electronegativity", "concept": "bond-polarity", "verb": "uses" },
   { "span": "bond-type", "concept": "bond-type-from-electronegativity", "verb": "introduces" },

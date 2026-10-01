@@ -29,6 +29,7 @@
  "variables": [
   {
    "sym": "q",
+   "concept": "heat-flow",
    "type": "energy",
    "meaning": "the heat absorbed or released by a substance, positive when the substance gains thermal energy and negative when it loses it",
    "unit": "J",
@@ -37,6 +38,7 @@
   },
   {
    "sym": "C_heat",
+   "concept": "heat-capacity",
    "meaning": "the heat capacity of a body of matter, the heat it absorbs or releases for a temperature change of 1 °C; it is extensive",
    "unit": "J/°C",
    "section": "5.1",
@@ -44,6 +46,7 @@
   },
   {
    "sym": "c_spec",
+   "concept": "specific-heat-capacity",
    "meaning": "the specific heat of a substance, the heat needed to raise the temperature of 1 gram of it by 1 °C; it is intensive",
    "unit": "J/g °C",
    "section": "5.1",
@@ -51,6 +54,7 @@
   },
   {
    "sym": "m",
+   "concept": "mass",
    "type": "mass",
    "meaning": "the mass of the substance that absorbs or releases the heat",
    "unit": "g",
@@ -59,6 +63,7 @@
   },
   {
    "sym": "ΔT",
+   "concept": "temperature",
    "type": "temperature",
    "meaning": "the temperature change of the substance, its final temperature minus its initial temperature",
    "unit": "°C",
@@ -67,6 +72,7 @@
   },
   {
    "sym": "T_initial",
+   "concept": "temperature",
    "type": "temperature",
    "meaning": "the temperature of the substance before the heat is gained or lost",
    "unit": "°C",
@@ -75,6 +81,7 @@
   },
   {
    "sym": "T_final",
+   "concept": "temperature",
    "type": "temperature",
    "meaning": "the temperature of the substance after the heat is gained or lost",
    "unit": "°C",
@@ -83,6 +90,7 @@
   },
   {
    "sym": "U",
+   "concept": "internal-energy",
    "type": "energy",
    "meaning": "the internal energy of a system, the total of all possible kinds of energy present in it",
    "unit": "J",
@@ -91,6 +99,7 @@
   },
   {
    "sym": "ΔU",
+   "concept": "internal-energy",
    "type": "energy",
    "meaning": "the change in the internal energy of a system",
    "unit": "J",
@@ -99,6 +108,7 @@
   },
   {
    "sym": "w",
+   "concept": "work",
    "type": "energy",
    "meaning": "the work done on the system, positive when the surroundings do work on the system and negative when the system does work on the surroundings",
    "unit": "J",
@@ -107,6 +117,7 @@
   },
   {
    "sym": "H",
+   "concept": "enthalpy",
    "type": "energy",
    "meaning": "the enthalpy of a system, the sum of its internal energy and the product of its pressure and volume",
    "unit": "J",
@@ -115,6 +126,7 @@
   },
   {
    "sym": "ΔH",
+   "concept": "enthalpy-change",
    "type": "energy",
    "meaning": "the enthalpy change of a process, equal to the heat flow when the process occurs at constant pressure with only expansion work",
    "unit": "kJ",
@@ -123,6 +135,7 @@
   },
   {
    "sym": "P",
+   "concept": "gas-pressure",
    "type": "pressure",
    "meaning": "the pressure of the system, constant for the processes the enthalpy change describes",
    "unit": "atm",
@@ -131,6 +144,7 @@
   },
   {
    "sym": "V",
+   "concept": "volume",
    "type": "volume",
    "meaning": "the volume of the system",
    "unit": "L",
@@ -139,6 +153,7 @@
   },
   {
    "sym": "ΔV",
+   "concept": "volume",
    "type": "volume",
    "meaning": "the change in the volume of the system as it expands or contracts",
    "unit": "L",
@@ -147,6 +162,7 @@
   },
   {
    "sym": "q_p",
+   "concept": "heat-flow",
    "type": "energy",
    "meaning": "the heat of a reaction under conditions of constant pressure",
    "unit": "kJ",
@@ -155,6 +171,7 @@
   },
   {
    "sym": "ΔH°",
+   "concept": "enthalpy-change",
    "type": "energy",
    "meaning": "the standard enthalpy change, the enthalpy change for a process occurring under standard state conditions",
    "unit": "kJ",
@@ -163,6 +180,7 @@
   },
   {
    "sym": "ΔH_c°",
+   "concept": "standard-enthalpy-of-combustion",
    "type": "energy",
    "meaning": "the standard enthalpy of combustion, the enthalpy change when 1 mole of a substance burns completely under standard state conditions",
    "unit": "kJ/mol",
@@ -171,6 +189,7 @@
   },
   {
    "sym": "ΔH_f°",
+   "concept": "standard-enthalpy-of-formation",
    "type": "energy",
    "meaning": "the standard enthalpy of formation, the enthalpy change when exactly 1 mole of a substance forms from its elements in their most stable states under standard state conditions",
    "unit": "kJ/mol",
@@ -179,6 +198,7 @@
   },
   {
    "sym": "n_coef",
+   "concept": "coefficients-as-ratios",
    "meaning": "the stoichiometric coefficient of a product or a reactant in the balanced equation",
    "section": "5.3",
    "anchor": "5.3-formation-enthalpies"
@@ -187,7 +207,7 @@
  "equations": [
   {
    "id": "eq-heat-capacity",
-   "concept": "heat-capacity-and-specific-heat",
+   "concept": "heat-capacity",
    "section": "5.1",
    "latex": "C=\\frac{q}{\\Delta T}",
    "ktex": "C=\\frac{\\kq}{\\kdT}",
@@ -197,6 +217,7 @@
   },
   {
    "id": "eq-specific-heat",
+   "concept": "specific-heat-capacity",
    "section": "5.1",
    "latex": "c=\\frac{q}{m\\,\\Delta T}",
    "ktex": "c=\\frac{\\kq}{\\km\\,\\kdT}",
@@ -236,6 +257,7 @@
   },
   {
    "id": "eq-bomb",
+   "concept": "bomb-calorimetry",
    "section": "5.2",
    "latex": "q_{\\text{rxn}}=-(q_{\\text{water}}+q_{\\text{bomb}})",
    "ktex": "\\kq_{\\text{rxn}}=-(\\kq_{\\text{water}}+\\kq_{\\text{bomb}})",
@@ -254,6 +276,7 @@
   },
   {
    "id": "eq-enthalpy",
+   "concept": "enthalpy",
    "section": "5.3",
    "latex": "H=U+PV",
    "ktex": "\\kH=\\kU+\\kP\\kV",
@@ -262,6 +285,7 @@
   },
   {
    "id": "eq-enthalpy-change",
+   "concept": "enthalpy-change",
    "section": "5.3",
    "latex": "\\Delta H=\\Delta U+P\\Delta V",
    "ktex": "\\kdH=\\kdU+\\kP\\kdV",
@@ -271,6 +295,7 @@
   },
   {
    "id": "eq-expansion-work",
+   "concept": "expansion-work",
    "section": "5.3",
    "latex": "P\\Delta V=-w",
    "ktex": "\\kP\\kdV=-\\kwork",
@@ -303,161 +328,193 @@
   {
    "section": "5.1",
    "term": "calorie (cal)",
+   "concept": "calorie",
    "definition": "unit of heat or other energy; the amount of energy required to raise 1 gram of water by 1 degree Celsius; 1 cal is defined as 4.184 J"
   },
   {
    "section": "5.1",
    "term": "endothermic process",
+   "concept": "endothermic-process",
    "definition": "chemical reaction or physical change that absorbs heat"
   },
   {
    "section": "5.1",
    "term": "energy",
+   "concept": "energy-and-work",
    "definition": "capacity to supply heat or do work"
   },
   {
    "section": "5.1",
    "term": "exothermic process",
+   "concept": "exothermic-process",
    "definition": "chemical reaction or physical change that releases heat"
   },
   {
    "section": "5.1",
    "term": "heat",
+   "concept": "heat-flow",
    "definition": "transfer of thermal energy between two bodies"
   },
   {
    "section": "5.1",
    "term": "heat capacity",
+   "concept": "heat-capacity",
    "definition": "extensive property of a body of matter that represents the quantity of heat required to increase its temperature by 1 degree Celsius (or 1 kelvin)"
   },
   {
    "section": "5.1",
    "term": "joule (J)",
+   "concept": "joule",
    "definition": "SI unit of energy; amount of energy used when a force of 1 newton moves an object 1 meter, 1 J = 1 kg m<sup>2</sup>/s<sup>2</sup> and 4.184 J = 1 cal"
   },
   {
    "section": "5.1",
    "term": "kinetic energy",
+   "concept": "kinetic-energy",
    "definition": "energy associated with an object's motion, equal to one-half the product of the object's mass and the square of its velocity, $\\frac{1}{2}m{v}^{2}$ (where <em>m</em> = mass and <em>v</em> = velocity)"
   },
   {
    "section": "5.1",
    "term": "potential energy",
+   "concept": "potential-energy",
    "definition": "energy of a particle or system of particles derived from relative position, composition, or condition"
   },
   {
    "section": "5.1",
    "term": "specific heat capacity",
+   "concept": "specific-heat-capacity",
    "definition": "intensive property of a substance that represents the quantity of heat required to raise the temperature of 1 gram of the substance by 1 degree Celsius (or 1 kelvin)"
   },
   {
    "section": "5.1",
    "term": "temperature",
+   "concept": "temperature",
    "definition": "intensive property of matter that is a quantitative measure of “hotness” and “coldness”"
   },
   {
    "section": "5.1",
    "term": "thermal energy",
+   "concept": "thermal-energy",
    "definition": "kinetic energy associated with the random motion of atoms and molecules"
   },
   {
    "section": "5.1",
    "term": "thermochemistry",
+   "concept": "thermochemistry",
    "definition": "study of measuring the amount of heat absorbed or released during a chemical reaction or a physical change"
   },
   {
    "section": "5.1",
    "term": "work",
+   "concept": "work",
    "definition": "energy transfer due to changes in external, macroscopic variables such as pressure and volume; or causing matter to move against an opposing force"
   },
   {
    "section": "5.2",
    "term": "bomb calorimeter",
+   "concept": "bomb-calorimeter",
    "definition": "device designed to measure the energy change for processes occurring under conditions of constant volume; commonly used for reactions involving solid and gaseous reactants or products"
   },
   {
    "section": "5.2",
    "term": "calorimeter",
+   "concept": "calorimeter",
    "definition": "device used to measure the amount of heat absorbed or released in a chemical or physical process"
   },
   {
    "section": "5.2",
    "term": "calorimetry",
+   "concept": "calorimetry",
    "definition": "process of measuring the amount of heat involved in a chemical or physical process"
   },
   {
    "section": "5.2",
    "term": "nutritional calorie (Calorie)",
+   "concept": "nutritional-calorie",
    "definition": "unit used for quantifying energy provided by digestion of foods, defined as 1000 cal or 1 kcal"
   },
   {
    "section": "5.2",
    "term": "surroundings",
+   "concept": "surroundings",
    "definition": "all matter other than the system being studied"
   },
   {
    "section": "5.2",
    "term": "system",
+   "concept": "system",
    "definition": "portion of matter undergoing a chemical or physical change being studied"
   },
   {
    "section": "5.3",
    "term": "chemical thermodynamics",
+   "concept": "chemical-thermodynamics",
    "definition": "area of science that deals with the relationships between heat, work, and all forms of energy associated with chemical and physical processes"
   },
   {
    "section": "5.3",
    "term": "enthalpy",
+   "concept": "enthalpy",
    "definition": "sum of a system’s internal energy and the mathematical product of its pressure and volume"
   },
   {
    "section": "5.3",
    "term": "enthalpy change",
+   "concept": "enthalpy-change",
    "definition": "heat released or absorbed by a system under constant pressure during a chemical or physical process"
   },
   {
    "section": "5.3",
    "term": "expansion work (pressure-volume work)",
+   "concept": "expansion-work",
    "definition": "work done as a system expands or contracts against external pressure"
   },
   {
    "section": "5.3",
    "term": "first law of thermodynamics",
+   "concept": "first-law-of-thermodynamics",
    "definition": "internal energy of a system changes due to heat flow in or out of the system or work done on or by the system"
   },
   {
    "section": "5.3",
    "term": "Hess’s law",
+   "concept": "hess-law",
    "definition": "if a process can be represented as the sum of several steps, the enthalpy change of the process equals the sum of the enthalpy changes of the steps"
   },
   {
    "section": "5.3",
    "term": "hydrocarbon",
+   "concept": "hydrocarbon",
    "definition": "compound composed only of hydrogen and carbon; the major component of fossil fuels"
   },
   {
    "section": "5.3",
    "term": "internal energy",
+   "concept": "internal-energy",
    "definition": "total of all possible kinds of energy present in a substance or substances"
   },
   {
    "section": "5.3",
    "term": "standard enthalpy of combustion",
+   "concept": "standard-enthalpy-of-combustion",
    "definition": "heat released when one mole of a compound undergoes complete combustion under standard conditions"
   },
   {
    "section": "5.3",
    "term": "standard enthalpy of formation",
+   "concept": "standard-enthalpy-of-formation",
    "definition": "enthalpy change of a chemical reaction in which 1 mole of a pure substance is formed from its elements in their most stable states under standard state conditions"
   },
   {
    "section": "5.3",
    "term": "standard state",
+   "concept": "standard-state",
    "definition": "set of physical conditions as accepted as common reference conditions for reporting thermodynamic properties; 1 bar of pressure, and solutions at 1 molar concentrations, usually at a temperature of 298.15 K"
   },
   {
    "section": "5.3",
    "term": "state function",
+   "concept": "state-function",
    "definition": "property depending only on the state of a system, and not the path taken to reach that state"
   }
  ]

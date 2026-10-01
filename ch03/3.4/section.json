@@ -49,72 +49,117 @@
   { "span": "mass-volume-percent", "concept": "mass-volume-percent", "verb": "introduces" },
   { "span": "ppm-ppb", "concept": "ppm-and-ppb", "verb": "introduces" },
   { "span": "ppm-ppb", "concept": "mass-percentage", "verb": "uses" },
+  { "span": "ppm-ppb", "concept": "parts-per-million", "verb": "introduces" },
+  { "span": "ppm-ppb", "concept": "parts-per-billion", "verb": "introduces" },
   { "span": "ex-ppb", "concept": "ppm-and-ppb", "verb": "reinforces" },
   { "span": "ex-ppb", "concept": "concentration-unit-conversions", "verb": "reinforces" }
  ],
  "exercises": [
   {
-   "id": "cyl1", "source_id": "fs-idm23566960", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-mass-percent" }, "cite": "mass-percentage",
+   "id": "cyl1",
+   "source_id": "fs-idm23566960",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-mass-percent" },
+   "cite": "mass-percentage",
    "prompt": "A bottle of a tile cleanser contains 135 g of HCl and 775 g of water. What is the percent by mass of HCl in this cleanser?",
    "answer": { "type": "number", "generated_by": "source", "value": 14.8, "unit": "%", "hint": "The mass of the solution is the mass of HCl plus the mass of water.", "solution": "14.8%" }
   },
   {
-   "id": "cyl2", "source_id": "fs-idm27131760", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-hcl-mass" }, "cite": "ex-hcl-mass",
+   "id": "cyl2",
+   "source_id": "fs-idm27131760",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-hcl-mass" },
+   "cite": "ex-hcl-mass",
    "prompt": "What volume of concentrated HCl solution contains 125 g of HCl?",
    "answer": { "type": "number", "generated_by": "source", "value": 282, "unit": "mL", "hint": "Run the flowchart backward: divide the mass of HCl by the mass percentage as a ratio, then divide the mass of solution by its density.", "solution": "282 mL" }
   },
   {
-   "id": "cyl3", "source_id": "fs-idm1441136", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-volume-percent" }, "cite": "volume-percentage",
+   "id": "cyl3",
+   "source_id": "fs-idm1441136",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-volume-percent" },
+   "cite": "volume-percentage",
    "prompt": "Wine is approximately 12% ethanol (CH<sub>3</sub>CH<sub>2</sub>OH) by volume. Ethanol has a molar mass of 46.06 g/mol and a density 0.789 g/mL. How many moles of ethanol are present in a 750-mL bottle of wine?",
    "answer": { "type": "number", "generated_by": "source", "value": 1.5, "unit": "mol", "hint": "Find the volume of ethanol, convert it to a mass with the density, and convert the mass to moles with the molar mass.", "solution": "1.5 mol ethanol" }
   },
   {
-   "id": "cyl4", "source_id": "fs-idm22950992", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-ppb" }, "cite": "ppm-ppb",
+   "id": "cyl4",
+   "source_id": "fs-idm22950992",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-ppb" },
+   "cite": "ppm-ppb",
    "prompt": "A 50.0-g sample of industrial wastewater was determined to contain 0.48 mg of mercury. Express the mercury concentration of the wastewater in ppm and ppb units.",
-   "answer": { "type": "multi", "generated_by": "source",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
     "parts": [
      { "part": "ppm", "value": 9.6, "unit": "ppm", "hint": "Divide the mass of mercury by the mass of the sample in the same unit and multiply by 10<sup>6</sup>." },
      { "part": "ppb", "value": 9600, "unit": "ppb", "hint": "One ppm is 10<sup>3</sup> ppb." }
     ],
-    "solution": "9.6 ppm, 9600 ppb" }
+    "solution": "9.6 ppm, 9600 ppb"
+   }
   },
   {
-   "id": "e1", "source_id": "fs-idp14147136", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "mass-percentage",
+   "id": "e1",
+   "source_id": "fs-idp14147136",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "mass-percentage",
    "prompt": "Consider this question: What mass of a concentrated solution of nitric acid (68.0% HNO<sub>3</sub> by mass) is needed to prepare 400.0 g of a 10.0% solution of HNO<sub>3</sub> by mass? (a) Outline the steps necessary to answer the question. (b) Answer the question.",
    "answer": { "type": "number", "generated_by": "source", "value": 58.8, "unit": "g", "hint": "The mass of HNO<sub>3</sub> is the same before and after the dilution.", "solution": "(a) The dilution equation can be used, appropriately modified to accommodate mass-based concentration units: $\\%{\\text{mass}}_{1}\\;\\times \\;{\\text{mass}}_{1}=\\%{\\text{mass}}_{2}\\;\\times \\;{\\text{mass}}_{2}$. This equation can be rearranged to isolate mass<sub>1</sub> and the given quantities substituted into this equation. (b) 58.8 g" }
   },
   {
-   "id": "e2", "source_id": "fs-idm26523680", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "ex-hcl-mass",
+   "id": "e2",
+   "source_id": "fs-idm26523680",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "ex-hcl-mass",
    "prompt": "What mass of solid NaOH (97.0% NaOH by mass) is required to prepare 1.00 L of a 10.0% solution of NaOH by mass? The density of the 10.0% solution is 1.109 g/mL.",
    "answer": { "type": "number", "generated_by": "source", "value": 114, "unit": "g", "hint": "Find the mass of the solution from its volume and density, then the mass of NaOH it holds, then the mass of the 97.0% solid that supplies it.", "solution": "114 g" }
   },
   {
-   "id": "e3", "source_id": "fs-idm5149536", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "ppm-ppb",
+   "id": "e3",
+   "source_id": "fs-idm5149536",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "ppm-ppb",
    "prompt": "The hardness of water (hardness count) is usually expressed in parts per million (by mass) of CaCO<sub>3</sub>, which is equivalent to milligrams of CaCO<sub>3</sub> per liter of water. What is the molar concentration of Ca<sup>2+</sup> ions in a water sample with a hardness count of 175 mg CaCO<sub>3</sub>/L?",
    "answer": { "type": "number", "generated_by": "source", "value": 1.75e-3, "unit": "M", "hint": "Convert the milligrams of CaCO<sub>3</sub> in one liter to moles; each mole of CaCO<sub>3</sub> gives one mole of Ca<sup>2+</sup>.", "solution": "1.75 $\\times$ 10<sup>−3</sup> <em>M</em>" }
   },
   {
-   "id": "e4", "source_id": "fs-idm39094144", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "mass-volume-percent",
+   "id": "e4",
+   "source_id": "fs-idm39094144",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "mass-volume-percent",
    "prompt": "In Canada and the United Kingdom, devices that measure blood glucose levels provide a reading in millimoles per liter. If a measurement of 5.3 m<em>M</em> is observed, what is the concentration of glucose (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>) in mg/dL?",
    "answer": { "type": "number", "generated_by": "source", "value": 95, "unit": "mg/dL", "hint": "Convert millimoles to milligrams with the molar mass of glucose, and liters to deciliters.", "solution": "95 mg/dL" }
   },
   {
-   "id": "e5", "source_id": "fs-idm39075008", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "mass-percentage",
+   "id": "e5",
+   "source_id": "fs-idm39075008",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "mass-percentage",
    "prompt": "Copper(I) iodide (CuI) is often added to table salt as a dietary source of iodine. How many moles of CuI are contained in 1.00 lb (454 g) of table salt containing 0.0100% CuI by mass?",
    "answer": { "type": "number", "generated_by": "source", "value": 2.38e-4, "unit": "mol", "hint": "Find the mass of CuI from the mass percentage, then convert it to moles with its molar mass.", "solution": "2.38 $\\times$ 10<sup>−4</sup> mol" }
   },
   {
-   "id": "e6", "source_id": "fs-idp67228256", "kind": "exercise", "bloom": "Apply",
-   "place": { "at": "end" }, "cite": "ex-hcl-mass",
+   "id": "e6",
+   "source_id": "fs-idp67228256",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "ex-hcl-mass",
    "prompt": "D5W is a solution used as an intravenous fluid. It is a 5.0% by mass solution of dextrose (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>) in water. If the density of D5W is 1.029 g/mL, calculate the molarity of dextrose in the solution.",
    "answer": { "type": "number", "generated_by": "source", "value": 0.29, "unit": "M", "hint": "Take one liter of solution: its density gives its mass, the mass percentage the mass of dextrose, and the molar mass the moles.", "solution": "0.29 <em>M</em>" }
   }

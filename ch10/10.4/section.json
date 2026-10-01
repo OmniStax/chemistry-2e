@@ -88,6 +88,11 @@
    "verb": "uses"
   },
   {
+   "span": "phase-diagram",
+   "concept": "critical-point",
+   "verb": "introduces"
+  },
+  {
    "span": "water-diagram",
    "concept": "read-phase-diagram",
    "verb": "introduces"
@@ -101,6 +106,11 @@
    "span": "water-diagram",
    "concept": "phase-diagram",
    "verb": "uses"
+  },
+  {
+   "span": "water-diagram",
+   "concept": "supercritical-fluid",
+   "verb": "introduces"
   },
   {
    "span": "triple-point",

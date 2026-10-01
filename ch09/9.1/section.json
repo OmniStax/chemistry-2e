@@ -144,6 +144,16 @@
    "verb": "uses"
   },
   {
+   "span": "pressure",
+   "concept": "force",
+   "verb": "introduces"
+  },
+  {
+   "span": "pressure",
+   "concept": "area",
+   "verb": "introduces"
+  },
+  {
    "span": "units",
    "concept": "pressure-unit-conversion",
    "verb": "introduces"
@@ -152,6 +162,31 @@
    "span": "units",
    "concept": "convert-units",
    "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "pascal",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "bar-unit",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "atmosphere-unit",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "torr",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "pounds-per-square-inch",
+   "verb": "introduces"
   },
   {
    "span": "barometer",
@@ -169,6 +204,16 @@
    "verb": "uses"
   },
   {
+   "span": "barometer",
+   "concept": "acceleration-due-to-gravity",
+   "verb": "introduces"
+  },
+  {
+   "span": "barometer",
+   "concept": "barometer",
+   "verb": "introduces"
+  },
+  {
    "span": "manometer",
    "concept": "manometer-pressure",
    "verb": "introduces"
@@ -177,6 +222,11 @@
    "span": "manometer",
    "concept": "pressure-unit-conversion",
    "verb": "reinforces"
+  },
+  {
+   "span": "manometer",
+   "concept": "manometer",
+   "verb": "introduces"
   },
   {
    "span": "blood-pressure",

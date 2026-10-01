@@ -101,6 +101,11 @@
    "verb": "uses"
   },
   {
+   "span": "thermochemistry",
+   "concept": "thermochemistry",
+   "verb": "introduces"
+  },
+  {
    "span": "energy",
    "concept": "energy-and-work",
    "verb": "introduces"
@@ -108,6 +113,21 @@
   {
    "span": "energy",
    "concept": "potential-and-kinetic-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "energy",
+   "concept": "work",
+   "verb": "introduces"
+  },
+  {
+   "span": "energy",
+   "concept": "potential-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "energy",
+   "concept": "kinetic-energy",
    "verb": "introduces"
   },
   {
@@ -131,6 +151,11 @@
    "verb": "uses"
   },
   {
+   "span": "thermal",
+   "concept": "thermal-energy",
+   "verb": "introduces"
+  },
+  {
    "span": "heat",
    "concept": "heat-flow",
    "verb": "introduces"
@@ -151,6 +176,16 @@
    "verb": "uses"
   },
   {
+   "span": "exo-endo",
+   "concept": "exothermic-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "exo-endo",
+   "concept": "endothermic-process",
+   "verb": "introduces"
+  },
+  {
    "span": "units",
    "concept": "energy-units",
    "verb": "introduces"
@@ -159,6 +194,16 @@
    "span": "units",
    "concept": "energy-and-work",
    "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "joule",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "calorie",
+   "verb": "introduces"
   },
   {
    "span": "capacity",
@@ -174,6 +219,16 @@
    "span": "capacity",
    "concept": "energy-units",
    "verb": "uses"
+  },
+  {
+   "span": "capacity",
+   "concept": "heat-capacity",
+   "verb": "introduces"
+  },
+  {
+   "span": "capacity",
+   "concept": "specific-heat-capacity",
+   "verb": "introduces"
   },
   {
    "span": "heat-equation",

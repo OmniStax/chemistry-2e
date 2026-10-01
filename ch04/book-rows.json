@@ -4,220 +4,403 @@
   "concepts": [
     {
       "id": "chemical-equation",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.1",
       "name": "Chemical equations",
-      "why": "A chemical equation represents a reaction symbolically: the formulas of the reactants on the left, the formulas of the products on the right, plus signs between formulas and an arrow between the two sides. Parenthetical abbreviations give the physical state of each substance (s, l, g, aq), and a word or symbol over the arrow, such as Δ for heating, names a special condition. It is the language every later chapter writes its reactions in.",
-      "evidence": "The section opens with the combustion of methane written as an equation and drawn in space-filling models in Figure 4.2, lists the fundamental aspects of any chemical equation, and illustrates state notation with sodium in water and a condition over the arrow with the decomposition of calcium carbonate."
+      "statement": "A chemical equation represents a reaction symbolically: the formulas of the reactants on the left, the formulas of the products on the right, plus signs between formulas and an arrow between the two sides. Parenthetical abbreviations give the physical state of each substance (s, l, g, aq), and a word or symbol over the arrow, such as Δ for heating, names a special condition."
     },
     {
       "id": "coefficients-as-ratios",
       "kind": "idea",
       "section": "4.1",
       "name": "Coefficients give relative numbers",
-      "why": "The coefficients of a balanced equation state the relative numbers of reactant and product species, so they may be read as ratios in any amount unit: one molecule of methane and two of oxygen, one dozen and two dozen, or one mole and two moles. Note that the convention is to use the smallest whole-number coefficients, and that this reading is what makes an equation a statement about amounts rather than only about identities.",
-      "evidence": "The section reads the methane equation three ways, Figure 4.3 shows that the 1:2:1:2 ratio holds whatever the absolute numbers of molecules, and the ammonia equation 3N2 + 9H2 ⟶ 6NH3 is reduced to its smallest whole-number coefficients by dividing by 3."
+      "statement": "The coefficients of a balanced equation state the relative numbers of reactant and product species, so they may be read as ratios in any amount unit: one molecule of methane and two of oxygen, one dozen and two dozen, or one mole and two moles. Note that the convention is to use the smallest whole-number coefficients, and that this reading is what makes an equation a statement about amounts rather than only about identities."
     },
     {
       "id": "balanced-equation",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.1",
       "name": "A balanced equation conserves atoms",
-      "why": "An equation is balanced when equal numbers of atoms of each element are represented on the reactant and product sides, which is what the law of conservation of matter requires. The number of atoms of an element is the coefficient of each formula containing it multiplied by the element's subscript in that formula, added over every formula on that side.",
-      "evidence": "The section defines a balanced equation, counts the oxygen atoms on the product side of the methane equation and tabulates element by element that it is balanced, and an exercise asks what it means for an equation to be balanced and why it matters."
+      "statement": "An equation is balanced when equal numbers of atoms of each element are represented on the reactant and product sides, which is what the law of conservation of matter requires. The number of atoms of an element is the coefficient of each formula containing it multiplied by the element's subscript in that formula, added over every formula on that side."
     },
     {
       "id": "balance-by-inspection",
       "kind": "skill",
       "section": "4.1",
       "name": "Balancing an equation by inspection",
-      "why": "Balancing by inspection changes coefficients, never subscripts, one element at a time until every element balances; changing a subscript would change the identity of a substance, as turning H2O into H2O2 turns water into hydrogen peroxide. A fractional coefficient may be used along the way and then cleared by multiplying through by a whole number.",
-      "evidence": "The section balances the decomposition of water step by step with a counting table after each change, Example 4.1 balances the formation of dinitrogen pentoxide, the ethane combustion is balanced through a coefficient of 7/2, and five exercises ask for balanced equations from unbalanced ones or from narrative descriptions."
+      "statement": "Balancing by inspection changes coefficients, never subscripts, one element at a time until every element balances; changing a subscript would change the identity of a substance, as turning H2O into H2O2 turns water into hydrogen peroxide. A fractional coefficient may be used along the way and then cleared by multiplying through by a whole number."
     },
     {
       "id": "ionic-equations",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.1",
       "name": "Molecular, complete ionic, and net ionic equations",
-      "why": "A reaction between ionic compounds in water may be written with different levels of detail. A molecular equation writes every substance as a neutral formula; a complete ionic equation writes the dissolved ionic compounds as their dissociated ions; and a net ionic equation leaves out the spectator ions, which appear unchanged on both sides, so that it shows only the species that actually change.",
-      "evidence": "The section works the reaction of calcium chloride with silver nitrate through all three forms and cancels the spectator ions, Example 4.2 does the same for carbon dioxide in sodium hydroxide, and an exercise asks how the three kinds of equation differ and when the complete and net ionic equations are identical."
+      "statement": "A reaction between ionic compounds in water may be written with different levels of detail. A molecular equation writes every substance as a neutral formula; a complete ionic equation writes the dissolved ionic compounds as their dissociated ions; and a net ionic equation leaves out the spectator ions, which appear unchanged on both sides, so that it shows only the species that actually change."
     },
     {
       "id": "write-net-ionic-equation",
       "kind": "skill",
       "section": "4.1",
       "name": "Writing a net ionic equation",
-      "why": "Given a balanced molecular equation, the reader dissociates every dissolved ionic compound into its ions, identifies the spectator ions present in identical form on both sides, removes them, and reduces the coefficients to the smallest whole numbers. The result says, for example, that solid silver chloride forms from dissolved silver and chloride ions whatever their source.",
-      "evidence": "Example 4.2 and its Check Your Learning, on the electrolysis of brine, write all three equations, and two exercises ask for complete and net ionic equations from molecular ones, among them the precipitation of calcium fluoride."
+      "statement": "Given a balanced molecular equation, the reader dissociates every dissolved ionic compound into its ions, identifies the spectator ions present in identical form on both sides, removes them, and reduces the coefficients to the smallest whole numbers. The result says, for example, that solid silver chloride forms from dissolved silver and chloride ions whatever their source."
+    },
+    {
+      "id": "reactant",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Reactant",
+      "statement": "A reactant is a substance undergoing a chemical or physical change, shown on the left side of the arrow in a chemical equation."
+    },
+    {
+      "id": "product",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Product",
+      "statement": "A product is a substance formed by a chemical or physical change, shown on the right side of the arrow in a chemical equation."
+    },
+    {
+      "id": "coefficient",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Coefficient",
+      "statement": "A coefficient is a number placed in front of a symbol or formula in a chemical equation to indicate its relative amount."
+    },
+    {
+      "id": "molecular-equation",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Molecular equation",
+      "statement": "A molecular equation is a chemical equation in which all reactants and products are represented as neutral substances."
+    },
+    {
+      "id": "complete-ionic-equation",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Complete ionic equation",
+      "statement": "A complete ionic equation is a chemical equation in which all dissolved ionic reactants and products, including spectator ions, are explicitly represented by formulas for their dissociated ions."
+    },
+    {
+      "id": "net-ionic-equation",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Net ionic equation",
+      "statement": "A net ionic equation is a chemical equation in which only those dissolved ionic reactants and products that undergo a chemical or physical change are represented, so spectator ions are excluded."
+    },
+    {
+      "id": "spectator-ion",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Spectator ion",
+      "statement": "A spectator ion is an ion that does not undergo a chemical or physical change during a reaction, but its presence is required to maintain charge neutrality."
     },
     {
       "id": "precipitation-reaction",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.2",
       "name": "Precipitation reactions and solubility",
-      "why": "A precipitation reaction is one in which dissolved substances react to form one or more solid products, often by an exchange of ions between ionic compounds. A substance precipitates when its concentration exceeds its solubility, the maximum concentration that can be achieved under specified conditions, so the insoluble compounds are the ones that come out of solution.",
-      "evidence": "The section defines precipitation reaction, solubility, soluble, insoluble and precipitate, and shows yellow lead iodide forming from potassium iodide and lead nitrate in Figure 4.4 with its net ionic equation."
+      "statement": "A precipitation reaction is one in which dissolved substances react to form one or more solid products, often by an exchange of ions between ionic compounds. A substance precipitates when its concentration exceeds its solubility, the maximum concentration that can be achieved under specified conditions, so the insoluble compounds are the ones that come out of solution."
     },
     {
       "id": "predict-precipitation",
       "kind": "skill",
       "section": "4.2",
       "name": "Predicting a precipitate from solubility guidelines",
-      "why": "To predict whether mixing two solutions gives a precipitate, identify every ion present, consider each new cation and anion pairing, and look each up in the solubility guidelines. If one pairing is insoluble, a precipitation reaction is expected and its net ionic equation can be written.",
-      "evidence": "Table 4.1 gives the solubility guidelines, the section predicts silver chloride from silver nitrate and sodium chloride, Example 4.3 predicts three precipitates, and its Check Your Learning asks which sodium salt would precipitate barium ion from a water sample."
+      "statement": "To predict whether mixing two solutions gives a precipitate, identify every ion present, consider each new cation and anion pairing, and look each up in the solubility guidelines. If one pairing is insoluble, a precipitation reaction is expected and its net ionic equation can be written."
     },
     {
       "id": "acids-and-bases",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.2",
       "name": "Acids, bases, and acid-base reactions",
-      "why": "An acid-base reaction is one in which a hydrogen ion is transferred from one species to another. In water, an acid is a substance that yields hydronium ions, as hydrogen chloride does by transferring H+ to water molecules, and a base is one that yields hydroxide ions, either by dissociating, as ionic hydroxides do, or by reacting with water, as ammonia does.",
-      "evidence": "The section defines acid-base reaction, acid and base, shows hydrogen chloride transferring protons to water in Figure 4.5 and ammonia's uses in Figure 4.7, and Example 4.4 writes the reaction of the weak acid hypochlorous acid with water."
+      "statement": "An acid-base reaction is one in which a hydrogen ion is transferred from one species to another. In water, an acid is a substance that yields hydronium ions, as hydrogen chloride does by transferring H+ to water molecules, and a base is one that yields hydroxide ions, either by dissociating, as ionic hydroxides do, or by reacting with water, as ammonia does."
     },
     {
       "id": "strong-and-weak-acids-bases",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.2",
       "name": "Strong and weak acids and bases",
-      "why": "A strong acid reacts completely with water, so virtually every dissolved molecule yields a hydronium ion, and a strong base, such as an ionic hydroxide, dissociates completely. A weak acid or weak base reacts only partially, leaving most of its molecules in their original form, which is why its equation is written with a double arrow; only about 1% of acetic acid or of ammonia is ionized under typical conditions.",
-      "evidence": "The section defines the four terms, Table 4.2 lists the six common strong acids, Figure 4.6 shows citrus fruits and vinegar as sources of weak acids, and Example 4.4 explains why a double arrow is used for hypochlorous acid."
+      "statement": "A strong acid reacts completely with water, so virtually every dissolved molecule yields a hydronium ion, and a strong base, such as an ionic hydroxide, dissociates completely. A weak acid or weak base reacts only partially, leaving most of its molecules in their original form, which is why its equation is written with a double arrow; only about 1% of acetic acid or of ammonia is ionized under typical conditions."
     },
     {
       "id": "neutralization-reaction",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.2",
       "name": "Neutralization reactions",
-      "why": "A neutralization reaction is an acid-base reaction whose reactants are an acid and a base (but not water), and whose products are often a salt and water. The net ionic equation for the neutralization of any strong acid by an ionic hydroxide is the same, hydronium ion and hydroxide ion giving water.",
-      "evidence": "The section defines neutralization and salt, writes the reaction of milk of magnesia with stomach acid, Example 4.4 neutralizes barium hydroxide with nitric acid and its Check Your Learning asks for the general net ionic equation, the Stomach Antacids and Culinary Aspects of Chemistry notes and Figure 4.8 give everyday cases, and several exercises ask the reader to complete and balance neutralizations."
+      "statement": "A neutralization reaction is an acid-base reaction whose reactants are an acid and a base (but not water), and whose products are often a salt and water. The net ionic equation for the neutralization of any strong acid by an ionic hydroxide is the same, hydronium ion and hydroxide ion giving water."
     },
     {
       "id": "oxidation-numbers",
       "kind": "skill",
       "section": "4.2",
       "name": "Assigning oxidation numbers",
-      "why": "The oxidation number of an element in a compound is the charge its atoms would have if the compound were ionic. It is assigned by four guidelines: zero in an elemental substance, the ion's charge for a monatomic ion, the usual values for hydrogen, oxygen and the halogens, and a sum equal to the charge of the molecule or ion, which fixes the one unknown. Note that an oxidation number is written sign first (+2), a charge number first (2+).",
-      "evidence": "The section states the guidelines, Example 4.5 assigns the oxidation numbers of sulfur in H2S, sulfite and sodium sulfate, its Check Your Learning asks for four more, and three exercises ask for the oxidation states of the elements in nineteen compounds."
+      "statement": "The oxidation number of an element in a compound is the charge its atoms would have if the compound were ionic. It is assigned by four guidelines: zero in an elemental substance, the ion's charge for a monatomic ion, the usual values for hydrogen, oxygen and the halogens, and a sum equal to the charge of the molecule or ion, which fixes the one unknown. Note that an oxidation number is written sign first (+2), a charge number first (2+)."
     },
     {
       "id": "redox-reaction",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.2",
       "name": "Oxidation-reduction reactions",
-      "why": "An oxidation-reduction (redox) reaction is one in which one or more elements undergo a change in oxidation number. Oxidation is an increase in oxidation number, or a loss of electrons, and reduction a decrease, or a gain; the reducing agent is the species oxidized and the oxidizing agent the species reduced. Defined this way, the class includes reactions such as hydrogen with chlorine in which no electrons are transferred outright.",
-      "evidence": "The section develops the definitions from sodium and chlorine through half-reactions and extends them to hydrogen and chlorine through oxidation numbers, Figure 4.9 shows copper displacing silver from solution, and exercises ask which atoms are oxidized and reduced and which species are the oxidizing and reducing agents."
+      "statement": "An oxidation-reduction (redox) reaction is one in which one or more elements undergo a change in oxidation number. Oxidation is an increase in oxidation number, or a loss of electrons, and reduction a decrease, or a gain; the reducing agent is the species oxidized and the oxidizing agent the species reduced. Defined this way, the class includes reactions such as hydrogen with chlorine in which no electrons are transferred outright."
     },
     {
       "id": "classify-reaction",
       "kind": "skill",
       "section": "4.2",
       "name": "Classifying a reaction",
-      "why": "Given an equation or a description, the reader should be able to say whether it is a precipitation, an acid-base or a redox reaction, or more than one, and name a redox subclass where one fits: combustion, in which a fuel and an oxidant react vigorously to give heat and often light, single displacement, in which an ion in solution is replaced through the oxidation of a metal, or disproportionation, in which one element is both oxidized and reduced.",
-      "evidence": "Example 4.6 identifies which of five equations are redox and names them, its Check Your Learning classifies the production of tin(II) chloride, and five exercises ask for the type or types of reaction an equation represents."
+      "statement": "Given an equation or a description, the reader should be able to say whether it is a precipitation, an acid-base or a redox reaction, or more than one, and name a redox subclass where one fits: combustion, in which a fuel and an oxidant react vigorously to give heat and often light, single displacement, in which an ion in solution is replaced through the oxidation of a metal, or disproportionation, in which one element is both oxidized and reduced."
     },
     {
       "id": "half-reaction-method",
       "kind": "skill",
       "section": "4.2",
       "name": "Balancing redox equations by half-reactions",
-      "why": "A redox equation in aqueous solution can be hard to balance by inspection because water, hydronium ions and hydroxide ions take part. The half-reaction method writes the oxidation and the reduction separately, balances each for atoms (oxygen with water, hydrogen with H+) and then for charge with electrons, scales them to equal numbers of electrons and adds them, with extra steps that convert H+ to water in basic solution. Both atoms and charge must balance at the end.",
-      "evidence": "The section lists the nine steps, Example 4.7 balances dichromate with iron(II) in acidic solution step by step and checks atoms and charge in a table, its Check Your Learning balances the disproportionation of chlorine in basic solution, and five exercises complete half-reactions or balance whole equations by the method."
+      "statement": "A redox equation in aqueous solution can be hard to balance by inspection because water, hydronium ions and hydroxide ions take part. The half-reaction method writes the oxidation and the reduction separately, balances each for atoms (oxygen with water, hydrogen with H+) and then for charge with electrons, scales them to equal numbers of electrons and adds them, with extra steps that convert H+ to water in basic solution. Both atoms and charge must balance at the end."
+    },
+    {
+      "id": "solubility",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Solubility",
+      "statement": "The solubility of a substance is the extent to which it dissolves in water or any other solvent. A substance of relatively high solubility is soluble, and one that dissolves only to a slight extent is insoluble."
+    },
+    {
+      "id": "salt",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Salt",
+      "statement": "A salt is an ionic compound that can be formed by the reaction of an acid with a base, containing a cation and an anion other than hydroxide or oxide."
+    },
+    {
+      "id": "combustion-reaction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Combustion reaction",
+      "statement": "A combustion reaction is a vigorous redox reaction producing significant amounts of energy in the form of heat and, sometimes, light."
+    },
+    {
+      "id": "single-displacement-reaction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Single-displacement reaction",
+      "statement": "A single-displacement (replacement) reaction is a redox reaction in which an elemental substance is oxidized by an ionic species."
+    },
+    {
+      "id": "half-reaction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Half-reaction",
+      "statement": "A half-reaction is an equation that shows either the oxidation or the reduction of a redox reaction alone, with the electrons each reactant loses or gains."
+    },
+    {
+      "id": "soluble",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Soluble",
+      "statement": "A soluble substance is one of relatively high solubility, dissolving to a relatively large extent."
+    },
+    {
+      "id": "insoluble",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Insoluble",
+      "statement": "An insoluble substance is one of relatively low solubility, dissolving only to a slight extent."
+    },
+    {
+      "id": "precipitate",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Precipitate",
+      "statement": "A precipitate is an insoluble product that forms from the reaction of soluble reactants."
+    },
+    {
+      "id": "acid",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Acid",
+      "statement": "An acid is a substance that produces H₃O⁺ when dissolved in water."
+    },
+    {
+      "id": "base",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Base",
+      "statement": "A base is a substance that produces OH⁻ when dissolved in water."
+    },
+    {
+      "id": "acid-base-reaction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Acid-base reaction",
+      "statement": "An acid-base reaction is a reaction involving the transfer of a hydrogen ion between reactant species."
+    },
+    {
+      "id": "strong-acid",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Strong acid",
+      "statement": "A strong acid is an acid that reacts completely when dissolved in water to yield hydronium ions."
+    },
+    {
+      "id": "weak-acid",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Weak acid",
+      "statement": "A weak acid is an acid that reacts only to a slight extent when dissolved in water to yield hydronium ions."
+    },
+    {
+      "id": "strong-base",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Strong base",
+      "statement": "A strong base is a base that reacts completely when dissolved in water to yield hydroxide ions."
+    },
+    {
+      "id": "weak-base",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Weak base",
+      "statement": "A weak base is a base that reacts only to a slight extent when dissolved in water to yield hydroxide ions."
+    },
+    {
+      "id": "oxidation-number",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Oxidation number",
+      "statement": "The oxidation number, or oxidation state, of an element in a compound is the charge each of its atoms would have if the compound were ionic."
+    },
+    {
+      "id": "oxidation",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Oxidation",
+      "statement": "Oxidation is the process in which an element’s oxidation number is increased by loss of electrons."
+    },
+    {
+      "id": "reduction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Reduction",
+      "statement": "Reduction is the process in which an element’s oxidation number is decreased by gain of electrons."
+    },
+    {
+      "id": "oxidizing-agent",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Oxidizing agent",
+      "statement": "An oxidizing agent, or oxidant, is a substance that brings about the oxidation of another substance and in the process becomes reduced."
+    },
+    {
+      "id": "reducing-agent",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Reducing agent",
+      "statement": "A reducing agent, or reductant, is a substance that brings about the reduction of another substance and in the process becomes oxidized."
     },
     {
       "id": "stoichiometry",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.3",
       "name": "Reaction stoichiometry",
-      "why": "The stoichiometry of a reaction is the set of quantitative relationships between the amounts of the substances it consumes and produces, and the balanced equation states it. As a recipe for eight pancakes scales to twenty-four, the coefficients scale to any amount of any reactant or product.",
-      "evidence": "The section defines stoichiometry, makes the pancake analogy, and states in its summary that coefficients are used for computations relating masses, molar amounts and other quantities."
+      "statement": "The stoichiometry of a reaction is the set of quantitative relationships between the amounts of the substances it consumes and produces, and the balanced equation states it. As a recipe for eight pancakes scales to twenty-four, the coefficients scale to any amount of any reactant or product."
     },
     {
       "id": "stoichiometric-factor",
-      "kind": "result",
+      "kind": "definition",
       "section": "4.3",
       "name": "Stoichiometric factors",
-      "why": "A stoichiometric factor is a ratio of two coefficients from a balanced equation, such as 2 mol NH3 per 3 mol H2 in the synthesis of ammonia, and it may be written in any amount unit. It is the one step every reaction stoichiometry calculation shares, whatever quantities are given at its start and asked for at its end.",
-      "evidence": "The section derives the factors relating ammonia to hydrogen in molecules, dozens and moles, every worked example of the section turns on one, and Figure 4.11 places the factor at the center of the flowchart of stoichiometry calculations."
+      "statement": "A stoichiometric factor is a ratio of two coefficients from a balanced equation, such as 2 mol NH3 per 3 mol H2 in the synthesis of ammonia, and it may be written in any amount unit. It is the one step every reaction stoichiometry calculation shares, whatever quantities are given at its start and asked for at its end."
     },
     {
       "id": "mole-stoichiometry",
       "kind": "skill",
       "section": "4.3",
       "name": "Relating moles and numbers of molecules through an equation",
-      "why": "Multiplying a given molar amount of one substance by the stoichiometric factor gives the molar amount of another, and Avogadro's number turns that molar amount into a number of molecules. This is the shortest stoichiometry calculation and the pattern the longer ones extend.",
-      "evidence": "Example 4.8 finds the moles of iodine needed to react with 0.429 mol of aluminum and Example 4.9 the number of carbon dioxide molecules from 0.75 mol of propane, each with a Check Your Learning, and two exercises ask for numbers of molecules produced."
+      "statement": "Multiplying a given molar amount of one substance by the stoichiometric factor gives the molar amount of another, and Avogadro's number turns that molar amount into a number of molecules. This is the shortest stoichiometry calculation and the pattern the longer ones extend."
     },
     {
       "id": "mass-stoichiometry",
       "kind": "skill",
       "section": "4.3",
       "name": "Relating masses and solution volumes through an equation",
-      "why": "Since masses, not numbers of molecules, are what can be measured, a practical stoichiometry calculation converts a given mass (or a volume of a solution of known molarity) to moles, applies the stoichiometric factor, and converts the result back to a mass or a volume. The route is the same whether the two substances are a reactant and a product or two reactants.",
-      "evidence": "Example 4.10 finds the mass of sodium hydroxide needed for 16 g of magnesium hydroxide and Example 4.11 the mass of oxygen consumed by 702 g of octane, each with a Check Your Learning, Figure 4.11 outlines the general route, and most of the section's exercises relate masses, moles and solution volumes."
+      "statement": "Since masses, not numbers of molecules, are what can be measured, a practical stoichiometry calculation converts a given mass (or a volume of a solution of known molarity) to moles, applies the stoichiometric factor, and converts the result back to a mass or a volume. The route is the same whether the two substances are a reactant and a product or two reactants."
     },
     {
       "id": "limiting-reactant",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.4",
       "name": "Limiting and excess reactants",
-      "why": "When reactants are not present in stoichiometric amounts, one is used up first and limits the amount of product; the others are in excess and some of each is left over. Eleven slices of cheese and twenty-eight slices of bread make eleven sandwiches with six slices of bread to spare, and three moles of hydrogen with two of chlorine make four moles of hydrogen chloride with one mole of hydrogen to spare.",
-      "evidence": "The section introduces the idea with the sandwiches of Figure 4.13, defines limiting and excess reactant, and shows hydrogen in excess and chlorine limiting in Figure 4.14."
+      "statement": "When reactants are not present in stoichiometric amounts, one is used up first and limits the amount of product; the others are in excess and some of each is left over. Eleven slices of cheese and twenty-eight slices of bread make eleven sandwiches with six slices of bread to spare, and three moles of hydrogen with two of chlorine make four moles of hydrogen chloride with one mole of hydrogen to spare."
     },
     {
       "id": "identify-limiting-reactant",
       "kind": "skill",
       "section": "4.4",
       "name": "Identifying the limiting reactant",
-      "why": "There are two ways. Compare the molar ratio of the reactants provided with the stoichiometric ratio of the equation, or compute the amount of product each reactant alone would give; the reactant that gives the lesser amount is the limiting one.",
-      "evidence": "The section does both for hydrogen and chlorine, Example 4.12 does both for silicon and nitrogen forming silicon nitride, its Check Your Learning asks about hydrogen and oxygen forming water, and several exercises ask for the limiting reactant from masses, moles or numbers of molecules."
+      "statement": "There are two ways. Compare the molar ratio of the reactants provided with the stoichiometric ratio of the equation, or compute the amount of product each reactant alone would give; the reactant that gives the lesser amount is the limiting one."
     },
     {
       "id": "theoretical-and-actual-yield",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.4",
       "name": "Theoretical and actual yield",
-      "why": "The theoretical yield is the amount of product the stoichiometry of the balanced equation predicts from the limiting reactant; the actual yield is the amount obtained, and it is often less because of side reactions, incomplete reactions and losses in collecting the product.",
-      "evidence": "The section defines both yields and gives the reasons the actual yield falls short, Example 4.13 computes a theoretical yield of copper before comparing it with the amount obtained, and an exercise asks which postulate of Dalton's atomic theory makes a theoretical yield calculable."
+      "statement": "The theoretical yield is the amount of product the stoichiometry of the balanced equation predicts from the limiting reactant; the actual yield is the amount obtained, and it is often less because of side reactions, incomplete reactions and losses in collecting the product."
     },
     {
       "id": "percent-yield",
-      "kind": "result",
+      "kind": "definition",
       "section": "4.4",
       "name": "Percent yield",
-      "why": "Percent yield is the actual yield divided by the theoretical yield, times 100%, and it measures how efficiently a reaction delivered the product the stoichiometry allows. Both yields may be masses, molar amounts or any other measure, so long as they are in the same units, which then cancel.",
-      "evidence": "The section states the definition, which is its one key equation, Example 4.13 finds a 77.3% yield of copper and its Check Your Learning the yield of a Freon, and several exercises ask for percent yields from masses and volumes.",
+      "statement": "Percent yield is the actual yield divided by the theoretical yield, times 100%, and it measures how efficiently a reaction delivered the product the stoichiometry allows. Both yields may be masses, molar amounts or any other measure, so long as they are in the same units, which then cancel.",
       "eq": "eq-percent-yield"
     },
     {
       "id": "atom-economy",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.4",
       "name": "Atom economy",
-      "why": "The atom economy of a process is the mass of the desired product as a percentage of the mass of all the reactants used, a measure of how much of what goes in ends up in the product. It looks like percent yield but compares the theoretical efficiencies of different processes, whereas percent yield compares what one process actually gives with what it could give.",
-      "evidence": "The Green Chemistry and Atom Economy note defines atom economy and contrasts it with percent yield, and Figure 4.15 compares the six-step synthesis of ibuprofen at 40% with the three-step BHC process at about 80%."
+      "statement": "The atom economy of a process is the mass of the desired product as a percentage of the mass of all the reactants used, a measure of how much of what goes in ends up in the product. It looks like percent yield but compares the theoretical efficiencies of different processes, whereas percent yield compares what one process actually gives with what it could give."
+    },
+    {
+      "id": "theoretical-yield",
+      "kind": "definition",
+      "section": "4.4",
+      "name": "Theoretical yield",
+      "statement": "The theoretical yield is the amount of product that may be produced from a given amount of reactant according to the reaction stoichiometry."
+    },
+    {
+      "id": "actual-yield",
+      "kind": "definition",
+      "section": "4.4",
+      "name": "Actual yield",
+      "statement": "The actual yield is the amount of product formed in a reaction."
+    },
+    {
+      "id": "excess-reactant",
+      "kind": "definition",
+      "section": "4.4",
+      "name": "Excess reactant",
+      "statement": "An excess reactant is a reactant present in an amount greater than required by the reaction stoichiometry."
     },
     {
       "id": "quantitative-analysis",
-      "kind": "idea",
+      "kind": "definition",
       "section": "4.5",
       "name": "Quantitative chemical analysis",
-      "why": "Quantitative analysis is the determination of the amount or concentration of a substance in a sample, and reaction stoichiometry is one of its foundations: the amount of a reactant that combines with the analyte, or of a product it gives, measures how much analyte there was.",
-      "evidence": "The section defines quantitative analysis through the eighteenth-century test of vinegar's strength with potassium carbonate, and its summary names titration and gravimetric analysis as two methods built on stoichiometry."
+      "statement": "Quantitative analysis is the determination of the amount or concentration of a substance in a sample, and reaction stoichiometry is one of its foundations: the amount of a reactant that combines with the analyte, or of a product it gives, measures how much analyte there was."
     },
     {
       "id": "titration",
       "kind": "idea",
       "section": "4.5",
       "name": "Titration analysis",
-      "why": "In a titration, a titrant of known concentration is added from a buret to a sample of the analyte until the reaction between them is complete. The volume of titrant needed to reach this equivalence point, detected as an end point by a change such as an indicator's color, measures the amount of analyte through the reaction's stoichiometry.",
-      "evidence": "The section defines titration analysis, buret, titrant, analyte, equivalence point, end point and indicator, and Figure 4.16 shows a buret being filled and read to the nearest 0.01 mL."
+      "statement": "In a titration, a titrant of known concentration is added from a buret to a sample of the analyte until the reaction between them is complete. The volume of titrant needed to reach this equivalence point, detected as an end point by a change such as an indicator's color, measures the amount of analyte through the reaction's stoichiometry."
     },
     {
       "id": "titration-calculation",
       "kind": "skill",
       "section": "4.5",
       "name": "Calculating a concentration from titration data",
-      "why": "The volume and molarity of the titrant give its molar amount, the stoichiometric factor gives the molar amount of analyte, and dividing by the sample volume gives the analyte's molarity. Since molarity is also millimoles per milliliter, the calculation can be done in milliliters throughout.",
-      "evidence": "Example 4.14 finds the molarity of hydrochloric acid titrated with sodium hydroxide both ways, its Check Your Learning titrates oxalic acid with permanganate, and most of the section's exercises ask for a volume or a concentration from titration data.",
+      "statement": "The volume and molarity of the titrant give its molar amount, the stoichiometric factor gives the molar amount of analyte, and dividing by the sample volume gives the analyte's molarity. Since molarity is also millimoles per milliliter, the calculation can be done in milliliters throughout.",
       "eq": "eq-molarity-mmol"
     },
     {
@@ -225,16 +408,56 @@
       "kind": "skill",
       "section": "4.5",
       "name": "Gravimetric analysis",
-      "why": "In a gravimetric analysis the analyte is separated from the sample by a change of state, often by precipitation and filtration, and weighed; the mass of the isolated substance, carried through the stoichiometry, gives the mass of the analyte and its percent of the sample.",
-      "evidence": "The section defines gravimetric analysis and shows a precipitate being filtered in Figure 4.17, Example 4.15 finds the percent of magnesium sulfate in a mixture from the mass of barium sulfate it precipitates, its Check Your Learning finds a percent of chloride, and an exercise computes the percent of gallium in gallium bromide."
+      "statement": "In a gravimetric analysis the analyte is separated from the sample by a change of state, often by precipitation and filtration, and weighed; the mass of the isolated substance, carried through the stoichiometry, gives the mass of the analyte and its percent of the sample."
     },
     {
       "id": "combustion-analysis",
       "kind": "skill",
       "section": "4.5",
       "name": "Combustion analysis",
-      "why": "A weighed sample of a compound of carbon and hydrogen is burned completely in oxygen, and the carbon dioxide and water it gives are collected in separate preweighed absorbers. The mass of each product gives the moles of carbon and of hydrogen in the sample, and their smallest whole-number ratio gives the empirical formula.",
-      "evidence": "The section describes the method and draws the apparatus in Figure 4.18, Example 4.16 finds the empirical formula of polyethylene and its Check Your Learning that of polystyrene, and exercises find the formulas of a boron hydride and a tungsten chloride."
+      "statement": "A weighed sample of a compound of carbon and hydrogen is burned completely in oxygen, and the carbon dioxide and water it gives are collected in separate preweighed absorbers. The mass of each product gives the moles of carbon and of hydrogen in the sample, and their smallest whole-number ratio gives the empirical formula."
+    },
+    {
+      "id": "analyte",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Analyte",
+      "statement": "An analyte is the chemical species of interest in an analysis."
+    },
+    {
+      "id": "titrant",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Titrant",
+      "statement": "A titrant is a solution containing a known concentration of a substance that will react with the analyte in a titration analysis."
+    },
+    {
+      "id": "buret",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Buret",
+      "statement": "A buret is a device used for the precise delivery of variable liquid volumes, as in a titration analysis."
+    },
+    {
+      "id": "equivalence-point",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Equivalence point",
+      "statement": "The equivalence point is the volume of titrant solution required to react completely with the analyte in a titration analysis, a stoichiometric amount of titrant for the sample’s analyte."
+    },
+    {
+      "id": "end-point",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "End point",
+      "statement": "The end point is the measured volume of titrant solution that yields the change in the sample’s appearance or other property expected for stoichiometric equivalence."
+    },
+    {
+      "id": "indicator",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Indicator",
+      "statement": "An indicator is a substance added to the sample in a titration analysis to permit visual detection of the end point."
     }
   ],
   "concept_prereqs": [
@@ -465,6 +688,298 @@
     {
       "concept": "limiting-reactant",
       "prereq": "coefficients-as-ratios"
+    },
+    {
+      "concept": "solubility",
+      "prereq": "solution-components"
+    },
+    {
+      "concept": "solubility",
+      "prereq": "concentration"
+    },
+    {
+      "concept": "salt",
+      "prereq": "ionic-compounds"
+    },
+    {
+      "concept": "salt",
+      "prereq": "acids-and-bases"
+    },
+    {
+      "concept": "combustion-reaction",
+      "prereq": "redox-reaction"
+    },
+    {
+      "concept": "single-displacement-reaction",
+      "prereq": "redox-reaction"
+    },
+    {
+      "concept": "half-reaction",
+      "prereq": "redox-reaction"
+    },
+    {
+      "concept": "reactant",
+      "prereq": "chemical-equation"
+    },
+    {
+      "concept": "product",
+      "prereq": "chemical-equation"
+    },
+    {
+      "concept": "coefficient",
+      "prereq": "chemical-equation"
+    },
+    {
+      "concept": "molecular-equation",
+      "prereq": "ionic-equations"
+    },
+    {
+      "concept": "complete-ionic-equation",
+      "prereq": "ionic-equations"
+    },
+    {
+      "concept": "complete-ionic-equation",
+      "prereq": "spectator-ion"
+    },
+    {
+      "concept": "net-ionic-equation",
+      "prereq": "ionic-equations"
+    },
+    {
+      "concept": "net-ionic-equation",
+      "prereq": "spectator-ion"
+    },
+    {
+      "concept": "spectator-ion",
+      "prereq": "ionic-equations"
+    },
+    {
+      "concept": "spectator-ion",
+      "prereq": "ion"
+    },
+    {
+      "concept": "soluble",
+      "prereq": "solubility"
+    },
+    {
+      "concept": "insoluble",
+      "prereq": "solubility"
+    },
+    {
+      "concept": "precipitate",
+      "prereq": "precipitation-reaction"
+    },
+    {
+      "concept": "precipitate",
+      "prereq": "insoluble"
+    },
+    {
+      "concept": "acid",
+      "prereq": "acids-and-bases"
+    },
+    {
+      "concept": "base",
+      "prereq": "acids-and-bases"
+    },
+    {
+      "concept": "acid-base-reaction",
+      "prereq": "acids-and-bases"
+    },
+    {
+      "concept": "strong-acid",
+      "prereq": "strong-and-weak-acids-bases"
+    },
+    {
+      "concept": "strong-acid",
+      "prereq": "acid"
+    },
+    {
+      "concept": "weak-acid",
+      "prereq": "strong-and-weak-acids-bases"
+    },
+    {
+      "concept": "weak-acid",
+      "prereq": "acid"
+    },
+    {
+      "concept": "strong-base",
+      "prereq": "strong-and-weak-acids-bases"
+    },
+    {
+      "concept": "strong-base",
+      "prereq": "base"
+    },
+    {
+      "concept": "weak-base",
+      "prereq": "strong-and-weak-acids-bases"
+    },
+    {
+      "concept": "weak-base",
+      "prereq": "base"
+    },
+    {
+      "concept": "oxidation-number",
+      "prereq": "ions-and-atomic-charge"
+    },
+    {
+      "concept": "oxidation",
+      "prereq": "redox-reaction"
+    },
+    {
+      "concept": "oxidation",
+      "prereq": "oxidation-number"
+    },
+    {
+      "concept": "reduction",
+      "prereq": "redox-reaction"
+    },
+    {
+      "concept": "reduction",
+      "prereq": "oxidation-number"
+    },
+    {
+      "concept": "oxidizing-agent",
+      "prereq": "oxidation"
+    },
+    {
+      "concept": "oxidizing-agent",
+      "prereq": "reduction"
+    },
+    {
+      "concept": "reducing-agent",
+      "prereq": "oxidation"
+    },
+    {
+      "concept": "reducing-agent",
+      "prereq": "reduction"
+    },
+    {
+      "concept": "theoretical-yield",
+      "prereq": "theoretical-and-actual-yield"
+    },
+    {
+      "concept": "theoretical-yield",
+      "prereq": "limiting-reactant"
+    },
+    {
+      "concept": "actual-yield",
+      "prereq": "theoretical-and-actual-yield"
+    },
+    {
+      "concept": "excess-reactant",
+      "prereq": "limiting-reactant"
+    },
+    {
+      "concept": "analyte",
+      "prereq": "quantitative-analysis"
+    },
+    {
+      "concept": "titrant",
+      "prereq": "titration"
+    },
+    {
+      "concept": "titrant",
+      "prereq": "molarity"
+    },
+    {
+      "concept": "buret",
+      "prereq": "titration"
+    },
+    {
+      "concept": "equivalence-point",
+      "prereq": "titration"
+    },
+    {
+      "concept": "equivalence-point",
+      "prereq": "titrant"
+    },
+    {
+      "concept": "equivalence-point",
+      "prereq": "analyte"
+    },
+    {
+      "concept": "end-point",
+      "prereq": "equivalence-point"
+    },
+    {
+      "concept": "indicator",
+      "prereq": "end-point"
+    },
+    {
+      "concept": "predict-precipitation",
+      "prereq": "soluble"
+    },
+    {
+      "concept": "predict-precipitation",
+      "prereq": "insoluble"
+    },
+    {
+      "concept": "predict-precipitation",
+      "prereq": "precipitate"
+    },
+    {
+      "concept": "write-net-ionic-equation",
+      "prereq": "net-ionic-equation"
+    },
+    {
+      "concept": "write-net-ionic-equation",
+      "prereq": "spectator-ion"
+    },
+    {
+      "concept": "write-net-ionic-equation",
+      "prereq": "complete-ionic-equation"
+    },
+    {
+      "concept": "balance-by-inspection",
+      "prereq": "coefficient"
+    },
+    {
+      "concept": "oxidation-numbers",
+      "prereq": "oxidation-number"
+    },
+    {
+      "concept": "half-reaction-method",
+      "prereq": "half-reaction"
+    },
+    {
+      "concept": "classify-reaction",
+      "prereq": "combustion-reaction"
+    },
+    {
+      "concept": "classify-reaction",
+      "prereq": "single-displacement-reaction"
+    },
+    {
+      "concept": "classify-reaction",
+      "prereq": "acid-base-reaction"
+    },
+    {
+      "concept": "neutralization-reaction",
+      "prereq": "salt"
+    },
+    {
+      "concept": "percent-yield",
+      "prereq": "theoretical-yield"
+    },
+    {
+      "concept": "percent-yield",
+      "prereq": "actual-yield"
+    },
+    {
+      "concept": "identify-limiting-reactant",
+      "prereq": "excess-reactant"
+    },
+    {
+      "concept": "titration-calculation",
+      "prereq": "equivalence-point"
+    },
+    {
+      "concept": "titration-calculation",
+      "prereq": "titrant"
+    },
+    {
+      "concept": "titration-calculation",
+      "prereq": "analyte"
     }
   ]
 }

@@ -45,6 +45,8 @@
   ],
   "coverage": [
     {"span": "solubility", "concept": "solubility-and-saturation", "verb": "introduces"},
+    {"span": "solubility", "concept": "saturated-solution", "verb": "introduces"},
+    {"span": "solubility", "concept": "unsaturated-solution", "verb": "introduces"},
     {"span": "supersaturated", "concept": "supersaturated-solutions", "verb": "introduces"},
     {"span": "gases", "concept": "gas-solubility-and-temperature", "verb": "introduces"},
     {"span": "henry", "concept": "henrys-law", "verb": "introduces"},
@@ -53,6 +55,9 @@
     {"span": "nyos", "concept": "supersaturated-solutions", "verb": "uses"},
     {"span": "nyos", "concept": "henrys-law", "verb": "uses"},
     {"span": "liquids", "concept": "miscibility", "verb": "introduces"},
+    {"span": "liquids", "concept": "miscible", "verb": "introduces"},
+    {"span": "liquids", "concept": "immiscible", "verb": "introduces"},
+    {"span": "liquids", "concept": "partially-miscible", "verb": "introduces"},
     {"span": "solids", "concept": "solid-solubility-and-temperature", "verb": "introduces"},
     {"span": "solids", "concept": "solubility-and-saturation", "verb": "uses"},
     {"span": "solids", "concept": "supersaturated-solutions", "verb": "uses"}

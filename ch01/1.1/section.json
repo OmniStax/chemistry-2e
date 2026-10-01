@@ -81,7 +81,14 @@
  "coverage": [
   { "span": "scientific-method", "concept": "scientific-method", "verb": "introduces" },
   { "span": "scientific-method", "concept": "hypothesis-law-theory", "verb": "introduces" },
-  { "span": "domains", "concept": "domains-of-chemistry", "verb": "introduces" }
+  { "span": "scientific-method", "concept": "hypothesis", "verb": "introduces" },
+  { "span": "scientific-method", "concept": "scientific-law", "verb": "introduces" },
+  { "span": "scientific-method", "concept": "scientific-theory", "verb": "introduces" },
+  { "span": "domains", "concept": "domains-of-chemistry", "verb": "introduces" },
+  { "span": "domains", "concept": "macroscopic-domain", "verb": "introduces" },
+  { "span": "domains", "concept": "microscopic-domain", "verb": "introduces" },
+  { "span": "domains", "concept": "symbolic-domain", "verb": "introduces" },
+  { "span": "central-science", "concept": "chemistry", "verb": "introduces" }
  ],
  "exercises": [
   {

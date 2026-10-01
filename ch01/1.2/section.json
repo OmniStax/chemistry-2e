@@ -148,6 +148,26 @@
    "verb": "introduces"
   },
   {
+   "span": "matter",
+   "concept": "gas",
+   "verb": "introduces"
+  },
+  {
+   "span": "matter",
+   "concept": "liquid",
+   "verb": "introduces"
+  },
+  {
+   "span": "matter",
+   "concept": "solid",
+   "verb": "introduces"
+  },
+  {
+   "span": "matter",
+   "concept": "plasma",
+   "verb": "introduces"
+  },
+  {
    "span": "mass-weight",
    "concept": "mass-versus-weight",
    "verb": "introduces"
@@ -156,6 +176,16 @@
    "span": "mass-weight",
    "concept": "matter",
    "verb": "uses"
+  },
+  {
+   "span": "mass-weight",
+   "concept": "mass",
+   "verb": "introduces"
+  },
+  {
+   "span": "mass-weight",
+   "concept": "weight",
+   "verb": "introduces"
   },
   {
    "span": "conservation",
@@ -173,8 +203,38 @@
    "verb": "introduces"
   },
   {
+   "span": "pure-substances",
+   "concept": "pure-substance",
+   "verb": "introduces"
+  },
+  {
+   "span": "pure-substances",
+   "concept": "element",
+   "verb": "introduces"
+  },
+  {
+   "span": "pure-substances",
+   "concept": "compound",
+   "verb": "introduces"
+  },
+  {
    "span": "mixtures",
    "concept": "mixtures",
+   "verb": "introduces"
+  },
+  {
+   "span": "mixtures",
+   "concept": "mixture",
+   "verb": "introduces"
+  },
+  {
+   "span": "mixtures",
+   "concept": "heterogeneous-mixture",
+   "verb": "introduces"
+  },
+  {
+   "span": "mixtures",
+   "concept": "homogeneous-mixture",
    "verb": "introduces"
   },
   {
@@ -201,6 +261,16 @@
    "span": "atoms-molecules",
    "concept": "elements-and-compounds",
    "verb": "uses"
+  },
+  {
+   "span": "atoms-molecules",
+   "concept": "atom",
+   "verb": "introduces"
+  },
+  {
+   "span": "atoms-molecules",
+   "concept": "molecule",
+   "verb": "introduces"
   },
   {
    "span": "everyday-life",

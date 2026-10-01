@@ -16,168 +16,210 @@
    "kind": "idea",
    "section": "8.1",
    "name": "Valence bond theory",
-   "why": "Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms, so that the single electrons in each orbital combine to form a pair shared between the two nuclei. The mutual attraction between this electron pair and the two positively charged nuclei is what holds the atoms together, and the strength of the bond depends on how much the orbitals overlap.",
-   "evidence": "The section states the two conditions for a covalent bond, an overlap of orbitals and the pairing of their single electrons, and the glossary defines valence bond theory and overlap in the same terms; every bond described in the rest of the chapter until molecular orbital theory is described this way."
+   "statement": "Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms, so that the single electrons in each orbital combine to form a pair shared between the two nuclei. The mutual attraction between this electron pair and the two positively charged nuclei is what holds the atoms together, and the strength of the bond depends on how much the orbitals overlap."
   },
   {
    "id": "bond-distance-and-bond-energy",
    "kind": "result",
    "section": "8.1",
    "name": "Bond distance and bond energy from the energy of two atoms",
-   "why": "As two atoms approach, the energy of the system first falls, because each electron feels the attraction of the other nucleus, and then rises steeply, because the repulsions between the nuclei and between the electrons grow stronger than the attractions. The bond distance is the distance at which the energy is lowest, and the bond energy is the difference between that minimum and the energy of the separated atoms, which is the energy released when the bond forms and needed to break it.",
-   "evidence": "Figure 8.2 follows two hydrogen atoms to the minimum at 74 pm, 7.24 × 10⁻¹⁹ J below the separated atoms, which the text converts to 4.36 × 10⁵ J for a mole of H–H bonds; Table 8.1 lists average bond lengths and energies, and exercises ask why atoms stop at a specific average distance."
+   "statement": "As two atoms approach, the energy of the system first falls, because each electron feels the attraction of the other nucleus, and then rises steeply, because the repulsions between the nuclei and between the electrons grow stronger than the attractions. The bond distance is the distance at which the energy is lowest, and the bond energy is the difference between that minimum and the energy of the separated atoms, which is the energy released when the bond forms and needed to break it."
   },
   {
    "id": "sigma-and-pi-bonds",
-   "kind": "idea",
+   "kind": "definition",
    "section": "8.1",
    "name": "Sigma and pi bonds",
-   "why": "A σ bond forms when orbitals overlap end to end along the internuclear axis, as two s orbitals, an s and a p orbital, or two p orbitals pointed at each other do, so that the electron density is concentrated on the line between the nuclei. A π bond forms from the side-by-side overlap of two p orbitals, with the electron density on opposite sides of the internuclear axis and a node along the axis itself. Greater overlap is possible end to end, so a π bond is generally weaker than a σ bond between the same two atoms.",
-   "evidence": "Figures 8.3, 8.4 and 8.5 draw the end-to-end and side-by-side overlaps, the glossary defines both bonds and the node, and the Check Your Learning of Example 8.1 asks the reader to identify three overlaps as σ or π."
+   "statement": "A σ bond forms when orbitals overlap end to end along the internuclear axis, as two s orbitals, an s and a p orbital, or two p orbitals pointed at each other do, so that the electron density is concentrated on the line between the nuclei. A π bond forms from the side-by-side overlap of two p orbitals, with the electron density on opposite sides of the internuclear axis and a node along the axis itself. Greater overlap is possible end to end, so a π bond is generally weaker than a σ bond between the same two atoms."
   },
   {
    "id": "multiple-bond-composition",
    "kind": "result",
    "section": "8.1",
    "name": "What single, double, and triple bonds are made of",
-   "why": "Between any two atoms the first bond formed is always a σ bond, and there can be only one σ bond in any one location. A single bond is therefore one σ bond, a double bond is one σ bond and one π bond, and a triple bond is one σ bond and two π bonds, which is why a carbon-carbon double bond is stronger than a single bond but not twice as strong.",
-   "evidence": "The section reads the Lewis structures of HCl, O2 and N2 in these terms and uses Table 8.1 to show that each π bond adds less than the σ bond does (347, 614 and 839 kJ/mol for C–C, C=C and C≡C); the 8.3 exercise on the C≡C bond asks for the same explanation."
+   "statement": "Between any two atoms the first bond formed is always a σ bond, and there can be only one σ bond in any one location. A single bond is therefore one σ bond, a double bond is one σ bond and one π bond, and a triple bond is one σ bond and two π bonds, which is why a carbon-carbon double bond is stronger than a single bond but not twice as strong."
   },
   {
    "id": "count-sigma-and-pi-bonds",
    "kind": "skill",
    "section": "8.1",
    "name": "Counting the σ and π bonds in a molecule",
-   "why": "Given a Lewis structure, we can count the σ and π bonds directly: every bond line contributes one σ bond, and each double bond adds one π bond and each triple bond adds two. The count is the first place the reader applies the valence bond description to a whole molecule.",
-   "evidence": "Example 8.1 counts nine σ bonds and two π bonds in butadiene, and the end-of-section exercises ask for the σ and π bonds in HCN, CO2 and CO and whether N2 has three π bonds."
+   "statement": "Count the σ and π bonds of a molecule from its Lewis structure: every bond line contributes one σ bond, each double bond adds one π bond, and each triple bond adds two."
+  },
+  {
+   "id": "orbital-overlap",
+   "kind": "definition",
+   "section": "8.1",
+   "name": "Overlap",
+   "statement": "Overlap is the coexistence of orbitals from two different atoms in the same region of space, which leads to the formation of a covalent bond."
+  },
+  {
+   "id": "sigma-bond",
+   "kind": "definition",
+   "section": "8.1",
+   "name": "Sigma bond (σ bond)",
+   "statement": "A sigma bond is a covalent bond formed by the overlap of atomic orbitals along the internuclear axis."
+  },
+  {
+   "id": "pi-bond",
+   "kind": "definition",
+   "section": "8.1",
+   "name": "Pi bond (π bond)",
+   "statement": "A pi bond is a covalent bond formed by the side-by-side overlap of atomic orbitals, with its electron density on opposite sides of the internuclear axis and a node along the axis itself."
   },
   {
    "id": "hybridization",
    "kind": "idea",
    "section": "8.2",
    "name": "Hybridization of atomic orbitals",
-   "why": "The overlap of unmodified atomic orbitals predicts the wrong shapes: two O–H bonds made from oxygen's perpendicular 2p orbitals would meet at 90°, while the observed angle in water is 104.5°. Hybridization combines the wave functions of an atom's valence orbitals by the linear combination of atomic orbitals into a new set of hybrid orbitals whose directions match the observed geometry, so valence bond theory must include it to give accurate predictions.",
-   "evidence": "The section opens with the 90° prediction of Figure 8.6 against the observed 104.5°, then describes the four tetrahedral hybrid orbitals of oxygen in Figure 8.7; the first exercise asks why the concept of hybridization is required in valence bond theory."
+   "statement": "Hybridization is a model of the changes in the atomic orbitals of an atom when it forms a covalent compound. It combines the wave functions of the atom's valence orbitals into a new set of hybrid orbitals whose directions match the observed geometry, as the 104.5° angle of water requires and unmodified 2p orbitals at 90° do not."
   },
   {
    "id": "hybrid-orbital-properties",
    "kind": "idea",
    "section": "8.2",
    "name": "The properties of a set of hybrid orbitals",
-   "why": "Hybrid orbitals exist only in covalently bonded atoms, they have shapes and orientations very different from those of the atomic orbitals they come from, and a set contains as many hybrid orbitals as atomic orbitals were combined to make it. All the orbitals of a set are equivalent in shape and energy, the kind of set depends on the atom's electron-pair geometry, and hybrid orbitals form σ bonds while unhybridized orbitals form π bonds.",
-   "evidence": "The section lists these six ideas before the first kind of hybridization is described, and each later subsection checks them: the sp set of Figure 8.8 is two orbitals from two, and the orbital energy-level diagrams of Figures 8.9, 8.13 and 8.16 show every hybrid of a set at one energy."
+   "statement": "Hybrid orbitals exist only in covalently bonded atoms, they have shapes and orientations very different from those of the atomic orbitals they come from, and a set contains as many hybrid orbitals as atomic orbitals were combined to make it. All the orbitals of a set are equivalent in shape and energy, the kind of set depends on the atom's electron-pair geometry, and hybrid orbitals form σ bonds while unhybridized orbitals form π bonds."
   },
   {
    "id": "sp-sp2-sp3-hybrid-orbitals",
    "kind": "idea",
    "section": "8.2",
    "name": "The sp, sp², and sp³ hybrid orbitals",
-   "why": "Mixing the valence s orbital with one p orbital gives two sp hybrids pointing 180° apart; with two p orbitals, three sp² hybrids at 120° in a plane, leaving one unhybridized p orbital perpendicular to it; with all three p orbitals, four sp³ hybrids pointing to the corners of a tetrahedron at 109.5°. Each hybrid holds a bonding pair or a lone pair, so the linear BeCl2, the trigonal planar BH3 and the tetrahedral CH4, NH3 and H2O are all described this way.",
-   "evidence": "Figures 8.8, 8.10 and 8.15 build the three sets from their atomic orbitals, Figures 8.12 and 8.17 show them bonding in BH3 and ethane, and the glossary defines each set by its arrangement; the text names HgCl2, CO2, ClNO, CH2O, CCl4 and NCl3 as further examples."
+   "statement": "Mixing the valence s orbital with one p orbital gives two sp hybrids pointing 180° apart; with two p orbitals, three sp² hybrids at 120° in a plane, leaving one unhybridized p orbital perpendicular to it; with all three p orbitals, four sp³ hybrids pointing to the corners of a tetrahedron at 109.5°. Each hybrid holds a bonding pair or a lone pair, so the linear BeCl2, the trigonal planar BH3 and the tetrahedral CH4, NH3 and H2O are all described this way."
   },
   {
    "id": "sp3d-and-sp3d2-hybrid-orbitals",
    "kind": "idea",
    "section": "8.2",
    "name": "The sp³d and sp³d² hybrid orbitals",
-   "why": "Five hybrid orbitals directed to the corners of a trigonal bipyramid need one d orbital as well as the s and three p orbitals, and six directed to the corners of an octahedron need two d orbitals. These hybridizations are possible only for atoms with d orbitals in their valence subshells, which rules out every atom of the first and second periods.",
-   "evidence": "The section describes PCl5 with sp³d hybrids (Figure 8.19) and SF6 with sp³d² hybrids (Figure 8.20), names SF4, ClF3, XeF4 and the interhalogens as further examples, and the exercises ask why carbon cannot form five bonds and why NF5 does not exist while PF5 does."
+   "statement": "Five hybrid orbitals directed to the corners of a trigonal bipyramid need one d orbital as well as the s and three p orbitals, and six directed to the corners of an octahedron need two d orbitals. These hybridizations are possible only for atoms with d orbitals in their valence subshells, which rules out every atom of the first and second periods."
   },
   {
    "id": "hybrid-orbital-energy-diagram",
    "kind": "skill",
    "section": "8.2",
    "name": "Showing hybridization on an orbital energy-level diagram",
-   "why": "An orbital energy-level diagram draws each orbital as a horizontal line at its energy and each electron as an arrow, and setting the isolated atom beside the bonded one shows the valence electrons redistributed into the hybrid set. The diagram makes plain which hybrids are half filled and ready to pair with an electron from another atom, and which orbitals stay unhybridized.",
-   "evidence": "Figures 8.9, 8.13 and 8.16 draw the diagrams for beryllium in BeCl2, boron in BH3 and carbon in CH4, Figure 8.22 draws carbon in ethene, and the exercise on CO2 asks the reader to draw the diagram for its carbon."
+   "statement": "Draw an orbital energy-level diagram with each orbital as a horizontal line at its energy and each electron as an arrow, setting the isolated atom beside the bonded one to show the valence electrons redistributed into the hybrid set. The diagram shows which hybrids are half filled and ready to pair with an electron from another atom, and which orbitals stay unhybridized."
   },
   {
    "id": "assign-hybridization",
    "kind": "skill",
    "section": "8.2",
    "name": "Assigning the hybridization of a central atom",
-   "why": "The hybridization of an atom follows from the number of regions of electron density around it: write the Lewis structure, count the regions with single bonds, multiple bonds, radicals and lone pairs each counting as one, and read the matching set from the table of arrangements, two regions sp, three sp², four sp³, five sp³d and six sp³d². VSEPR theory predicts the shape, and the hybrid orbitals explain how that shape is formed.",
-   "evidence": "Figure 8.21 sets out the five arrangements with their hybridizations, Examples 8.2 and 8.3 assign sp³ to sulfur in sulfate and sp² to carbon in urea, their Check Your Learning items ask for SeF4 and acetic acid, and most of the section's exercises are this skill applied."
+   "statement": "The hybridization of an atom follows from the number of regions of electron density around it: write the Lewis structure, count the regions with single bonds, multiple bonds, radicals and lone pairs each counting as one, and read the matching set from the table of arrangements, two regions sp, three sp², four sp³, five sp³d and six sp³d². VSEPR theory predicts the shape, and the hybrid orbitals explain how that shape is formed."
   },
   {
    "id": "limits-of-hybridization",
    "kind": "idea",
    "section": "8.2",
    "name": "Where hybridization is needed and where it is not",
-   "why": "Hybridization was devised to rationalize observed geometries, and it works well for small central atoms whose valence pairs are close together. For larger central atoms the pairs are farther from the nucleus and repel less, and the observed angles approach those of unhybridized p orbitals, so we invoke hybridization only where it is needed to explain the structure.",
-   "evidence": "The section compares the H–O–H angle of 104.5° in water with 92.1° in H2S and 90° in H2Te, reading the last as the overlap of 5p orbitals without hybridization."
+   "statement": "Hybridization was devised to rationalize observed geometries, and it works well for small central atoms whose valence pairs are close together. For larger central atoms the pairs are farther from the nucleus and repel less, and the observed angles approach those of unhybridized p orbitals, so we invoke hybridization only where it is needed to explain the structure."
+  },
+  {
+   "id": "hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "Hybrid orbital",
+   "statement": "A hybrid orbital is an orbital created by combining atomic orbitals on a central atom."
+  },
+  {
+   "id": "sp-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp hybrid orbital",
+   "statement": "An sp hybrid orbital is one of a set of two orbitals with a linear arrangement that results from combining one s and one p orbital."
+  },
+  {
+   "id": "sp2-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp² hybrid orbital",
+   "statement": "An sp² hybrid orbital is one of a set of three orbitals with a trigonal planar arrangement that results from combining one s and two p orbitals."
+  },
+  {
+   "id": "sp3-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp³ hybrid orbital",
+   "statement": "An sp³ hybrid orbital is one of a set of four orbitals with a tetrahedral arrangement that results from combining one s and three p orbitals."
+  },
+  {
+   "id": "sp3d-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp³d hybrid orbital",
+   "statement": "An sp³d hybrid orbital is one of a set of five orbitals with a trigonal bipyramidal arrangement that results from combining one s, three p, and one d orbital."
+  },
+  {
+   "id": "sp3d2-hybrid-orbital",
+   "kind": "definition",
+   "section": "8.2",
+   "name": "sp³d² hybrid orbital",
+   "statement": "An sp³d² hybrid orbital is one of a set of six orbitals with an octahedral arrangement that results from combining one s, three p, and two d orbitals."
   },
   {
    "id": "pi-bonds-from-unhybridized-orbitals",
    "kind": "idea",
    "section": "8.3",
    "name": "Multiple bonds from hybrid and unhybridized orbitals",
-   "why": "In a molecule with a double or a triple bond, the hybrid orbitals of each atom form the σ framework and the unhybridized p orbitals left over overlap side by side to form the π bonds. Each carbon of ethene uses three sp² hybrids for its σ bonds and one p orbital, perpendicular to the plane, for its π bond; each carbon of acetylene uses two sp hybrids for σ bonds and two perpendicular p orbitals for two π bonds.",
-   "evidence": "Figures 8.22 and 8.23 draw ethene's sp² hybrids and its π bond above and below the plane, Figures 8.24 and 8.25 draw acetylene's two π bonds around the C–C axis, and the exercises on acetonitrile and allene ask which orbitals form each σ and π bond."
+   "statement": "In a molecule with a double or a triple bond, the hybrid orbitals of each atom form the σ framework and the unhybridized p orbitals left over overlap side by side to form the π bonds. Each carbon of ethene uses three sp² hybrids for its σ bonds and one p orbital, perpendicular to the plane, for its π bond; each carbon of acetylene uses two sp hybrids for σ bonds and two perpendicular p orbitals for two π bonds."
   },
   {
    "id": "restricted-rotation-about-pi-bonds",
    "kind": "result",
    "section": "8.3",
    "name": "Rotation about a double bond is restricted",
-   "why": "Rotation about a single bond occurs easily, because the end-to-end overlap of a σ bond is symmetric about the internuclear axis and does not change as the atoms turn. Rotation about a double bond would twist the two p orbitals out of line and destroy their side-by-side overlap, essentially breaking the π bond, which is why all six atoms of ethene lie in one plane.",
-   "evidence": "The section derives the planarity of ethene from the overlap of its p orbitals and contrasts it with the free rotation of the two CH3 groups of ethane described in 8.2; the allene exercise asks whether its hydrogen atoms lie in the same plane or in perpendicular planes."
+   "statement": "Rotation about a single bond occurs easily, because the end-to-end overlap of a σ bond is symmetric about the internuclear axis and does not change as the atoms turn. Rotation about a double bond would twist the two p orbitals out of line and destroy their side-by-side overlap, essentially breaking the π bond, which is why all six atoms of ethene lie in one plane."
   },
   {
    "id": "resonance-and-delocalization",
    "kind": "result",
    "section": "8.3",
    "name": "Resonance, hybridization, and delocalized π electrons",
-   "why": "Hybridization involves only σ bonds, lone pairs and single unpaired electrons, and resonance forms differ only in the arrangement of π bonds, which uses the unhybridized orbitals. Resonance therefore does not change the hybridization we assign, and either resonance form gives the same answer. The π electrons themselves are not located in one form or the other but are delocalized over the molecule, which valence bond theory does not easily describe.",
-   "evidence": "The section assigns sp² to every carbon of benzene from either resonance form (Figure 8.26) and says its π electrons are delocalized throughout the ring; Example 8.4 assigns sp² to sulfur in SO2 from its resonance structures, and exercises ask whether the electrons of O3, CO2, NO2 and phosphate are delocalized."
+   "statement": "Hybridization involves only σ bonds, lone pairs and single unpaired electrons, and resonance forms differ only in the arrangement of π bonds, which uses the unhybridized orbitals. Resonance therefore does not change the hybridization we assign, and either resonance form gives the same answer. The π electrons themselves are not located in one form or the other but are delocalized over the molecule, which valence bond theory does not easily describe."
   },
   {
    "id": "paramagnetism-and-diamagnetism",
-   "kind": "idea",
+   "kind": "definition",
    "section": "8.4",
    "name": "Paramagnetism and diamagnetism",
-   "why": "A substance whose molecules have unpaired electrons is paramagnetic and is attracted into a magnetic field, while one whose electrons are all paired is diamagnetic and is weakly repelled; neither is a permanent magnet. Liquid oxygen collects between the poles of a magnet, which shows that the O2 molecule has two unpaired electrons although its Lewis structure pairs every electron.",
-   "evidence": "The section defines both terms, describes the Gouy balance of Figure 8.27 that measures the number of unpaired electrons, and returns to the liquid oxygen of Figure 8.1; the exercises ask whether a molecule with an odd or an even number of electrons can be diamagnetic or paramagnetic."
+   "statement": "A substance whose molecules have unpaired electrons is paramagnetic and is attracted into a magnetic field, while one whose electrons are all paired is diamagnetic and is weakly repelled; neither is a permanent magnet. Liquid oxygen collects between the poles of a magnet, which shows that the O2 molecule has two unpaired electrons although its Lewis structure pairs every electron."
   },
   {
    "id": "molecular-orbital-theory",
    "kind": "idea",
    "section": "8.4",
    "name": "Molecular orbital theory",
-   "why": "Molecular orbital theory describes the electrons of a molecule by molecular orbitals, formed by the linear combination of atomic orbitals, that extend over the whole molecule rather than belonging to one atom. Like an atomic orbital, a molecular orbital has a quantized energy and holds at most two electrons of opposite spin. The theory accounts for things valence bond theory cannot, among them the paramagnetism of oxygen and bonding described by several resonance forms.",
-   "evidence": "The section introduces the theory against the problem of O2, compares it with valence bond theory in Table 8.2, and defines the molecular orbital, the homonuclear diatomic molecule and the linear combination of atomic orbitals in the glossary."
+   "statement": "Molecular orbital theory describes the electrons of a molecule by molecular orbitals, formed by the linear combination of atomic orbitals, that extend over the whole molecule rather than belonging to one atom. Like an atomic orbital, a molecular orbital has a quantized energy and holds at most two electrons of opposite spin. The theory accounts for things valence bond theory cannot, among them the paramagnetism of oxygen and bonding described by several resonance forms."
   },
   {
    "id": "bonding-and-antibonding-orbitals",
    "kind": "idea",
    "section": "8.4",
    "name": "Bonding and antibonding molecular orbitals",
-   "why": "Combining two atomic wave functions in phase is constructive interference and gives a bonding orbital, lower in energy than the atomic orbitals, with its electron density between the nuclei. Combining them out of phase is destructive interference and gives an antibonding orbital, higher in energy, with a node between the nuclei. Two atomic orbitals always give two molecular orbitals, one of each kind, and an asterisk marks the antibonding one.",
-   "evidence": "Figure 8.28 shows constructive and destructive interference of waves, Figure 8.29 draws the σs and σs* orbitals from two s orbitals, and the exercises ask why a bonding orbital is lower in energy than its parent atomic orbitals and how many molecular orbitals five pairs of atomic orbitals give."
+   "statement": "Combining two atomic wave functions in phase is constructive interference and gives a bonding orbital, lower in energy than the atomic orbitals, with its electron density between the nuclei. Combining them out of phase is destructive interference and gives an antibonding orbital, higher in energy, with a node between the nuclei. Two atomic orbitals always give two molecular orbitals, one of each kind, and an asterisk marks the antibonding one."
   },
   {
    "id": "sigma-and-pi-molecular-orbitals",
    "kind": "idea",
    "section": "8.4",
    "name": "σ and π molecular orbitals",
-   "why": "Molecular orbitals along the internuclear axis are σ orbitals, formed from s orbitals or from p orbitals overlapping end to end; those formed from p orbitals side by side, with electron density on opposite sides of the axis, are π orbitals. With the atoms on the x-axis, the six p orbitals of two atoms give σpx and σpx*, and two degenerate pairs of π and π* orbitals from the py and pz orbitals.",
-   "evidence": "Figures 8.30 and 8.31 draw the σp, σp*, πp and πp* orbitals with their nodes, the text defines degenerate orbitals on the πpy and πpz pair, and Example 8.5 and its Check Your Learning ask the reader to name the orbital that a pair of overlapping lobes would give."
+   "statement": "Molecular orbitals along the internuclear axis are σ orbitals, formed from s orbitals or from p orbitals overlapping end to end; those formed from p orbitals side by side, with electron density on opposite sides of the axis, are π orbitals. With the atoms on the x-axis, the six p orbitals of two atoms give σpx and σpx*, and two degenerate pairs of π and π* orbitals from the py and pz orbitals."
   },
   {
    "id": "molecular-orbital-diagram",
    "kind": "skill",
    "section": "8.4",
    "name": "Filling a molecular orbital diagram",
-   "why": "A molecular orbital diagram sets the atomic orbitals of the two atoms at the sides and the molecular orbitals they form in the center, each as a line at its energy. Electrons fill it as they fill an atom: lower-energy orbitals first by the Aufbau principle, singly across degenerate orbitals before pairing by Hund's rule, two to an orbital with opposite spins. The filled diagram gives the molecular electron configuration, written with superscripts and with degenerate orbitals in parentheses.",
-   "evidence": "Figure 8.34 fills the diagram for Be2+ and writes its configuration, Figures 8.35 and 8.36 fill it for H2 and He2, and Example 8.6 draws it for O2; exercises ask for the valence configurations of a series of diatomic ions."
+   "statement": "A molecular orbital diagram sets the atomic orbitals of the two atoms at the sides and the molecular orbitals they form in the center, each as a line at its energy. Electrons fill it as they fill an atom: lower-energy orbitals first by the Aufbau principle, singly across degenerate orbitals before pairing by Hund's rule, two to an orbital with opposite spins. The filled diagram gives the molecular electron configuration, written with superscripts and with degenerate orbitals in parentheses."
   },
   {
    "id": "bond-order",
-   "kind": "result",
+   "kind": "definition",
    "section": "8.4",
    "name": "Bond order from a molecular orbital diagram",
-   "why": "In molecular orbital theory the bond order is the number of bonding electrons minus the number of antibonding electrons, divided by two, since a bond consists of two electrons. It usually agrees with the count of bonds in a Lewis structure, it is a guide to the strength of a bond between two given atoms, and a bond order of zero means that no stable bond forms.",
-   "evidence": "The section states the equation and applies it to H2 (bond order 1), He2 (0) and O2 (2), and Table 8.3 lists the bond orders of the period-two diatomic molecules; exercises ask for the bond orders of groups of ions and which member has the strongest bond.",
+   "statement": "In molecular orbital theory the bond order is the number of bonding electrons minus the number of antibonding electrons, divided by two, since a bond consists of two electrons. It usually agrees with the count of bonds in a Lewis structure, it is a guide to the strength of a bond between two given atoms, and a bond order of zero means that no stable bond forms.",
    "eq": "eq-bond-order"
   },
   {
@@ -185,16 +227,98 @@
    "kind": "idea",
    "section": "8.4",
    "name": "s-p mixing and the order of the molecular orbitals",
-   "why": "When the 2s and 2p orbitals of an atom are close in energy, the σs and σp wave functions combine, lowering the σs orbital and raising the σp orbital above the πp pair. The energy gap is small from lithium to nitrogen, so their diatomic molecules have the σp orbital above the π orbitals, and large for oxygen, fluorine and neon, whose diagrams keep the expected order. s-p mixing creates no new orbitals; it only shifts the energies of the existing ones.",
-   "evidence": "Figure 8.37 draws the diagrams of every period-two diatomic molecule with the change of order between N2 and O2, and Figure 8.38 shows the orbitals shifting with and without mixing; exercises ask whether S2 shows s-p mixing and why N2 2+ is diamagnetic while O2 4+ is paramagnetic."
+   "statement": "When the 2s and 2p orbitals of an atom are close in energy, the σs and σp wave functions combine, lowering the σs orbital and raising the σp orbital above the πp pair. The energy gap is small from lithium to nitrogen, so their diatomic molecules have the σp orbital above the π orbitals, and large for oxygen, fluorine and neon, whose diagrams keep the expected order. s-p mixing creates no new orbitals; it only shifts the energies of the existing ones."
   },
   {
    "id": "diatomic-molecule-configurations",
    "kind": "skill",
    "section": "8.4",
    "name": "Predicting the configuration, bond order, and magnetism of a diatomic species",
-   "why": "For a homonuclear diatomic molecule or ion of the first or second period, we choose the diagram with or without s-p mixing, add or remove electrons for the charge, fill it, and read off the configuration, the bond order and the number of unpaired electrons. The result predicts whether the species is stable and whether it is paramagnetic, and it explains the two unpaired electrons of O2 that the Lewis structure missed.",
-   "evidence": "Table 8.3 gives the configurations and bond orders of Li2 to Ne2, Example 8.6 explains the paramagnetism of O2 and its Check Your Learning asks for N2, Example 8.7 predicts that C2 2− is stable with a bond order of 3, and a long run of exercises applies the procedure to ions."
+   "statement": "For a homonuclear diatomic molecule or ion of the first or second period, we choose the diagram with or without s-p mixing, add or remove electrons for the charge, fill it, and read off the configuration, the bond order and the number of unpaired electrons. The result predicts whether the species is stable and whether it is paramagnetic, and it explains the two unpaired electrons of O2 that the Lewis structure missed."
+  },
+  {
+   "id": "paramagnetism",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "Paramagnetism",
+   "statement": "Paramagnetism is the phenomenon in which a material that is not magnetic itself is attracted to a magnetic field. It occurs when the material contains unpaired electrons."
+  },
+  {
+   "id": "diamagnetism",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "Diamagnetism",
+   "statement": "Diamagnetism is the phenomenon in which a material that is not magnetic itself is repelled by a magnetic field. It occurs when all the electrons of the material are paired."
+  },
+  {
+   "id": "molecular-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "Molecular orbital",
+   "statement": "A molecular orbital is a region of space in a molecule in which an electron has a high probability of being found. It extends over the whole molecule and holds at most two electrons of opposite spin."
+  },
+  {
+   "id": "linear-combination-of-atomic-orbitals",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "Linear combination of atomic orbitals",
+   "statement": "The linear combination of atomic orbitals is the technique of combining the wave functions of atomic orbitals, by adding or subtracting them, to create molecular orbitals."
+  },
+  {
+   "id": "homonuclear-diatomic-molecule",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "Homonuclear diatomic molecule",
+   "statement": "A homonuclear diatomic molecule is a molecule consisting of two identical atoms."
+  },
+  {
+   "id": "bonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "Bonding orbital",
+   "statement": "A bonding orbital is a molecular orbital located between two nuclei. Electrons in a bonding orbital stabilize a molecule."
+  },
+  {
+   "id": "antibonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "Antibonding orbital",
+   "statement": "An antibonding orbital is a molecular orbital located outside the region between two nuclei, with a node between them. Electrons in an antibonding orbital destabilize a molecule."
+  },
+  {
+   "id": "sigma-bonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "σ bonding orbital",
+   "statement": "A σ bonding orbital is a molecular orbital in which the electron density is found along the axis of the bond."
+  },
+  {
+   "id": "sigma-antibonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "σ* antibonding orbital",
+   "statement": "A σ* orbital is an antibonding molecular orbital formed by the out-of-phase overlap of atomic orbitals along the axis of the bond, which creates a node between the nuclei."
+  },
+  {
+   "id": "pi-bonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "π bonding orbital",
+   "statement": "A π bonding orbital is a molecular orbital formed by the side-by-side overlap of atomic orbitals, in which the electron density is found on opposite sides of the internuclear axis."
+  },
+  {
+   "id": "pi-antibonding-orbital",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "π* antibonding orbital",
+   "statement": "A π* orbital is an antibonding molecular orbital formed by the out-of-phase side-by-side overlap of atomic orbitals, in which the electron density is found on opposite sides of the internuclear axis and there is a node between the nuclei."
+  },
+  {
+   "id": "molecular-orbital-energy-diagram",
+   "kind": "definition",
+   "section": "8.4",
+   "name": "Molecular orbital diagram",
+   "statement": "A molecular orbital diagram is a visual representation of the relative energy levels of the molecular orbitals of a molecule, set between the atomic orbitals they are formed from."
   }
  ],
  "concept_prereqs": [
@@ -417,6 +541,330 @@
   {
    "concept": "resonance-and-delocalization",
    "prereq": "resonance"
+  },
+  {
+   "concept": "orbital-overlap",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "orbital-overlap",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "sigma-bond",
+   "prereq": "orbital-overlap"
+  },
+  {
+   "concept": "pi-bond",
+   "prereq": "orbital-overlap"
+  },
+  {
+   "concept": "pi-bond",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "pi-bond",
+   "prereq": "node"
+  },
+  {
+   "concept": "hybrid-orbital",
+   "prereq": "hybridization"
+  },
+  {
+   "concept": "hybrid-orbital",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "sp-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp-hybrid-orbital",
+   "prereq": "linear-geometry"
+  },
+  {
+   "concept": "sp2-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp2-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp2-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp2-hybrid-orbital",
+   "prereq": "trigonal-planar-geometry"
+  },
+  {
+   "concept": "sp3-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp3-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp3-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp3-hybrid-orbital",
+   "prereq": "tetrahedral-geometry"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "d-orbital"
+  },
+  {
+   "concept": "sp3d-hybrid-orbital",
+   "prereq": "trigonal-bipyramidal-geometry"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "s-orbital"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "d-orbital"
+  },
+  {
+   "concept": "sp3d2-hybrid-orbital",
+   "prereq": "octahedral-geometry"
+  },
+  {
+   "concept": "paramagnetism",
+   "prereq": "spin-quantum-number"
+  },
+  {
+   "concept": "diamagnetism",
+   "prereq": "spin-quantum-number"
+  },
+  {
+   "concept": "molecular-orbital",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "molecular-orbital",
+   "prereq": "electron-density"
+  },
+  {
+   "concept": "linear-combination-of-atomic-orbitals",
+   "prereq": "wavefunction"
+  },
+  {
+   "concept": "linear-combination-of-atomic-orbitals",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "homonuclear-diatomic-molecule",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "bonding-orbital",
+   "prereq": "molecular-orbital"
+  },
+  {
+   "concept": "antibonding-orbital",
+   "prereq": "molecular-orbital"
+  },
+  {
+   "concept": "antibonding-orbital",
+   "prereq": "node"
+  },
+  {
+   "concept": "sigma-bonding-orbital",
+   "prereq": "bonding-orbital"
+  },
+  {
+   "concept": "sigma-antibonding-orbital",
+   "prereq": "antibonding-orbital"
+  },
+  {
+   "concept": "pi-bonding-orbital",
+   "prereq": "bonding-orbital"
+  },
+  {
+   "concept": "pi-bonding-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "pi-antibonding-orbital",
+   "prereq": "antibonding-orbital"
+  },
+  {
+   "concept": "pi-antibonding-orbital",
+   "prereq": "p-orbital"
+  },
+  {
+   "concept": "molecular-orbital-energy-diagram",
+   "prereq": "molecular-orbital"
+  },
+  {
+   "concept": "molecular-orbital-energy-diagram",
+   "prereq": "atomic-orbital"
+  },
+  {
+   "concept": "valence-bond-theory",
+   "prereq": "orbital-overlap"
+  },
+  {
+   "concept": "sigma-and-pi-bonds",
+   "prereq": "sigma-bond"
+  },
+  {
+   "concept": "sigma-and-pi-bonds",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "multiple-bond-composition",
+   "prereq": "sigma-bond"
+  },
+  {
+   "concept": "multiple-bond-composition",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "count-sigma-and-pi-bonds",
+   "prereq": "sigma-bond"
+  },
+  {
+   "concept": "count-sigma-and-pi-bonds",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "prereq": "sp-hybrid-orbital"
+  },
+  {
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "prereq": "sp2-hybrid-orbital"
+  },
+  {
+   "concept": "sp-sp2-sp3-hybrid-orbitals",
+   "prereq": "sp3-hybrid-orbital"
+  },
+  {
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals",
+   "prereq": "sp3d-hybrid-orbital"
+  },
+  {
+   "concept": "sp3d-and-sp3d2-hybrid-orbitals",
+   "prereq": "sp3d2-hybrid-orbital"
+  },
+  {
+   "concept": "assign-hybridization",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "hybrid-orbital-properties",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "pi-bonds-from-unhybridized-orbitals",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "pi-bonds-from-unhybridized-orbitals",
+   "prereq": "hybrid-orbital"
+  },
+  {
+   "concept": "restricted-rotation-about-pi-bonds",
+   "prereq": "pi-bond"
+  },
+  {
+   "concept": "paramagnetism-and-diamagnetism",
+   "prereq": "paramagnetism"
+  },
+  {
+   "concept": "paramagnetism-and-diamagnetism",
+   "prereq": "diamagnetism"
+  },
+  {
+   "concept": "molecular-orbital-theory",
+   "prereq": "molecular-orbital"
+  },
+  {
+   "concept": "molecular-orbital-theory",
+   "prereq": "linear-combination-of-atomic-orbitals"
+  },
+  {
+   "concept": "bonding-and-antibonding-orbitals",
+   "prereq": "bonding-orbital"
+  },
+  {
+   "concept": "bonding-and-antibonding-orbitals",
+   "prereq": "antibonding-orbital"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "sigma-bonding-orbital"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "sigma-antibonding-orbital"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "pi-bonding-orbital"
+  },
+  {
+   "concept": "sigma-and-pi-molecular-orbitals",
+   "prereq": "pi-antibonding-orbital"
+  },
+  {
+   "concept": "molecular-orbital-diagram",
+   "prereq": "molecular-orbital-energy-diagram"
+  },
+  {
+   "concept": "bond-order",
+   "prereq": "bonding-orbital"
+  },
+  {
+   "concept": "bond-order",
+   "prereq": "antibonding-orbital"
+  },
+  {
+   "concept": "diatomic-molecule-configurations",
+   "prereq": "homonuclear-diatomic-molecule"
+  },
+  {
+   "concept": "diatomic-molecule-configurations",
+   "prereq": "paramagnetism"
+  },
+  {
+   "concept": "diatomic-molecule-configurations",
+   "prereq": "diamagnetism"
   }
  ]
 }

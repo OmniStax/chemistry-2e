@@ -103,6 +103,11 @@
    "verb": "uses"
   },
   {
+   "span": "calculating-formal-charge",
+   "concept": "formal-charge-of-atom",
+   "verb": "introduces"
+  },
+  {
    "span": "formal-charge-structure",
    "concept": "formal-charge-guidelines",
    "verb": "introduces"
@@ -123,6 +128,11 @@
    "verb": "uses"
   },
   {
+   "span": "formal-charge-structure",
+   "concept": "molecular-structure",
+   "verb": "introduces"
+  },
+  {
    "span": "resonance",
    "concept": "resonance",
    "verb": "introduces"
@@ -136,6 +146,16 @@
    "span": "resonance",
    "concept": "multiple-bonds",
    "verb": "uses"
+  },
+  {
+   "span": "resonance",
+   "concept": "resonance-forms",
+   "verb": "introduces"
+  },
+  {
+   "span": "resonance",
+   "concept": "resonance-hybrid",
+   "verb": "introduces"
   }
  ],
  "exercises": [

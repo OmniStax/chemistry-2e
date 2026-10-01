@@ -13,11 +13,10 @@
  "concepts": [
   {
    "id": "solubility-product",
-   "kind": "idea",
+   "kind": "definition",
    "section": "15.1",
    "name": "The solubility product constant, $K_{\\text{sp}}$",
-   "why": "A saturated solution of a sparingly soluble ionic solid is an equilibrium in which the solid dissolves and its ions precipitate at equal rates. Its equilibrium constant is the solubility product, which, because only gases and solutes appear in an equilibrium constant expression, includes no term for the undissolved solid.",
-   "evidence": "For silver chloride, AgCl(<i>s</i>) ⇌ Ag<sup>+</sup>(<i>aq</i>) + Cl<sup>–</sup>(<i>aq</i>) and <i>K</i><sub>sp</sub> = [Ag<sup>+</sup>][Cl<sup>–</sup>].",
+   "statement": "A saturated solution of a sparingly soluble ionic solid is an equilibrium in which the solid dissolves and its ions precipitate at equal rates. Its equilibrium constant is the solubility product, which, because only gases and solutes appear in an equilibrium constant expression, includes no term for the undissolved solid.",
    "eq": "eq-ksp"
   },
   {
@@ -25,88 +24,84 @@
    "kind": "skill",
    "section": "15.1",
    "name": "Writing dissolution equations and solubility product expressions",
-   "why": "The dissolution equation shows the ions a compound yields and their coefficients, and each coefficient becomes the exponent of that ion's concentration in the solubility product expression.",
-   "evidence": "Magnesium hydroxide dissolves as Mg(OH)<sub>2</sub>(<i>s</i>) ⇌ Mg<sup>2+</sup>(<i>aq</i>) + 2OH<sup>–</sup>(<i>aq</i>), so <i>K</i><sub>sp</sub> = [Mg<sup>2+</sup>][OH<sup>–</sup>]<sup>2</sup> (Example 15.1)."
+   "statement": "The dissolution equation shows the ions a compound yields and their coefficients, and each coefficient becomes the exponent of that ion's concentration in the solubility product expression."
   },
   {
    "id": "ksp-from-solubility",
    "kind": "skill",
    "section": "15.1",
    "name": "Calculating $K_{\\text{sp}}$ from a measured solubility",
-   "why": "When dissolution involves only dissociation and solvation, a measured solubility, converted to molar solubility where it is given in grams per liter, fixes every ion concentration through the dissolution stoichiometry, and the solubility product follows.",
-   "evidence": "A saturated fluorite solution has [Ca<sup>2+</sup>] = 2.15 × 10<sup>–4</sup> <i>M</i> and so [F<sup>–</sup>] = 4.30 × 10<sup>–4</sup> <i>M</i>, giving <i>K</i><sub>sp</sub> = 3.98 × 10<sup>–11</sup> (Example 15.2)."
+   "statement": "When dissolution involves only dissociation and solvation, a measured solubility, converted to molar solubility where it is given in grams per liter, fixes every ion concentration through the dissolution stoichiometry, and the solubility product follows."
   },
   {
    "id": "molar-solubility-from-ksp",
    "kind": "skill",
    "section": "15.1",
    "name": "Calculating a molar solubility from $K_{\\text{sp}}$",
-   "why": "Writing the equilibrium concentrations of an ICE table in terms of the molar solubility <i>x</i> and substituting them into the solubility product expression gives an equation in <i>x</i> alone, whose root is the molar solubility.",
-   "evidence": "For Ca(OH)<sub>2</sub>, 1.3 × 10<sup>–6</sup> = (<i>x</i>)(2<i>x</i>)<sup>2</sup> = 4<i>x</i><sup>3</sup>, so the molar solubility is 6.9 × 10<sup>–3</sup> <i>M</i> (Example 15.4)."
+   "statement": "Writing the equilibrium concentrations of an ICE table in terms of the molar solubility <i>x</i> and substituting them into the solubility product expression gives an equation in <i>x</i> alone, whose root is the molar solubility."
   },
   {
    "id": "qsp-versus-ksp",
    "kind": "result",
    "section": "15.1",
    "name": "Predicting precipitation by comparing $Q_{\\text{sp}}$ with $K_{\\text{sp}}$",
-   "why": "The dissolution equilibrium is established in any solution containing the ions, whatever their source. If the ion concentrations give a reaction quotient greater than the solubility product, the solution is supersaturated and precipitation occurs until the quotient equals the solubility product; if the quotient is smaller, no precipitate forms.",
-   "evidence": "Mixing equal volumes of 2.0 × 10<sup>–4</sup> <i>M</i> AgNO<sub>3</sub> and NaCl gives <i>Q</i> = 1.0 × 10<sup>–8</sup>, greater than <i>K</i><sub>sp</sub> = 1.6 × 10<sup>–10</sup>, so AgCl precipitates (Example 15.8)."
+   "statement": "The dissolution equilibrium is established in any solution containing the ions, whatever their source. If the ion concentrations give a reaction quotient greater than the solubility product, the solution is supersaturated and precipitation occurs until the quotient equals the solubility product; if the quotient is smaller, no precipitate forms."
   },
   {
    "id": "precipitation-concentration",
    "kind": "skill",
    "section": "15.1",
    "name": "Calculating the ion concentration at which precipitation begins",
-   "why": "Setting the reaction quotient equal to the solubility product and substituting the known ion concentration gives the concentration of the counter ion at which a precipitate first forms, or the concentration needed to lower a dissolved ion to a chosen level.",
-   "evidence": "With [Ca<sup>2+</sup>] = 2.2 × 10<sup>–3</sup> <i>M</i> in blood serum, CaC<sub>2</sub>O<sub>4</sub> begins to precipitate when the oxalate concentration reaches 8.9 × 10<sup>–7</sup> <i>M</i> (Example 15.9)."
+   "statement": "Setting the reaction quotient equal to the solubility product and substituting the known ion concentration gives the concentration of the counter ion at which a precipitate first forms, or the concentration needed to lower a dissolved ion to a chosen level."
   },
   {
    "id": "selective-precipitation",
    "kind": "idea",
    "section": "15.1",
    "name": "Selective precipitation",
-   "why": "When two ions form insoluble compounds with the same counter ion, raising the counter ion concentration slowly precipitates first the ion whose compound reaches its solubility product at the lower counter ion concentration, which depends on both the solubility products and the ion concentrations.",
-   "evidence": "In a solution 0.00010 <i>M</i> in Br<sup>–</sup> and 0.10 <i>M</i> in Cl<sup>–</sup>, AgCl begins to precipitate at [Ag<sup>+</sup>] = 1.6 × 10<sup>–9</sup> <i>M</i>, before AgBr, despite its larger <i>K</i><sub>sp</sub> (Example 15.11)."
+   "statement": "When two ions form insoluble compounds with the same counter ion, raising the counter ion concentration slowly precipitates first the ion whose compound reaches its solubility product at the lower counter ion concentration, which depends on both the solubility products and the ion concentrations."
   },
   {
    "id": "common-ion-effect",
    "kind": "result",
    "section": "15.1",
    "name": "The common ion effect on solubility",
-   "why": "Because the product of the ion concentrations is constant at equilibrium regardless of the source of the ions, adding one of the ions shifts the dissolution equilibrium to the left, and an ionic compound is less soluble in a solution that already contains a common ion than in pure water.",
-   "evidence": "The molar solubility of CdS is only 1.0 × 10<sup>–26</sup> <i>M</i> in a 0.010-<i>M</i> solution of CdBr<sub>2</sub> (Example 15.13)."
+   "statement": "Because the product of the ion concentrations is constant at equilibrium regardless of the source of the ions, adding one of the ions shifts the dissolution equilibrium to the left, and an ionic compound is less soluble in a solution that already contains a common ion than in pure water."
+  },
+  {
+   "id": "molar-solubility",
+   "kind": "definition",
+   "section": "15.1",
+   "name": "Molar solubility",
+   "statement": "The molar solubility of a compound is its solubility expressed in moles of solute per liter of saturated solution."
   },
   {
    "id": "coordinate-covalent-bond",
-   "kind": "idea",
+   "kind": "definition",
    "section": "15.2",
    "name": "Coordinate covalent bonds",
-   "why": "A coordinate covalent bond, or dative bond, occurs when one of the atoms in the bond provides both bonding electrons.",
-   "evidence": "When a water molecule combines with a hydrogen ion to form a hydronium ion, the oxygen atom provides both electrons of the new O–H bond."
+   "statement": "A coordinate covalent bond, or dative bond, occurs when one of the atoms in the bond provides both bonding electrons."
   },
   {
    "id": "lewis-acids-and-bases",
-   "kind": "idea",
+   "kind": "definition",
    "section": "15.2",
    "name": "Lewis acids, Lewis bases, and adducts",
-   "why": "In Lewis's definition, a base donates an electron pair and an acid accepts one, forming a coordinate covalent bond in a product called an adduct. Brønsted-Lowry acid-base reactions are the subcategory in which the acid is H<sup>+</sup>.",
-   "evidence": "Boron trifluoride, with only six valence electrons on boron, accepts a lone pair from fluoride ion to form the adduct BF<sub>4</sub><sup>–</sup>."
+   "statement": "In Lewis's definition, a base donates an electron pair and an acid accepts one, forming a coordinate covalent bond in a product called an adduct. Brønsted-Lowry acid-base reactions are the subcategory in which the acid is H<sup>+</sup>."
   },
   {
    "id": "complex-ions-and-ligands",
-   "kind": "idea",
+   "kind": "definition",
    "section": "15.2",
    "name": "Complex ions and ligands",
-   "why": "A complex ion comprises a central atom, typically a transition metal cation acting as a Lewis acid, surrounded by ligands, molecules or ions that each donate an electron pair as Lewis bases.",
-   "evidence": "Each of two ammonia molecules donates a pair of electrons to a silver ion to form Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>."
+   "statement": "A complex ion comprises a central atom, typically a transition metal cation acting as a Lewis acid, surrounded by ligands, molecules or ions that each donate an electron pair as Lewis bases."
   },
   {
    "id": "formation-constant",
-   "kind": "result",
+   "kind": "definition",
    "section": "15.2",
    "name": "Formation and dissociation constants of complex ions",
-   "why": "The equilibrium constant for the reaction of a metal ion with ligands to form a complex ion is its formation constant, and the constant for the reverse reaction is the dissociation constant, its reciprocal. A large formation constant lowers the free metal ion concentration enough to dissolve a sparingly soluble salt of the metal.",
-   "evidence": "With <i>K</i><sub>f</sub> = 1.7 × 10<sup>7</sup> for Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>, ammonia lowers [Ag<sup>+</sup>] until [Ag<sup>+</sup>][Cl<sup>–</sup>] falls below the <i>K</i><sub>sp</sub> of AgCl, and more silver chloride dissolves.",
+   "statement": "The equilibrium constant for the reaction of a metal ion with ligands to form a complex ion is its formation constant, and the constant for the reverse reaction is the dissociation constant, its reciprocal. A large formation constant lowers the free metal ion concentration enough to dissolve a sparingly soluble salt of the metal.",
    "eq": "eq-kf"
   },
   {
@@ -114,16 +109,56 @@
    "kind": "skill",
    "section": "15.2",
    "name": "Calculating concentrations in a complex ion equilibrium",
-   "why": "An ICE table for the dissociation of a complex ion, with the small-<i>x</i> assumption that a very large formation constant justifies, gives the concentrations of the free metal ion and ligand.",
-   "evidence": "A solution initially 0.10 <i>M</i> in Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup> contains 1.1 × 10<sup>–3</sup> <i>M</i> free silver ion (Example 15.14)."
+   "statement": "An ICE table for the dissociation of a complex ion, with the small-<i>x</i> assumption that a very large formation constant justifies, gives the concentrations of the free metal ion and ligand."
+  },
+  {
+   "id": "complex-ion",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "Complex ion",
+   "statement": "A complex ion is an ion consisting of a central atom, typically a transition metal cation, surrounded by molecules or ions called ligands."
+  },
+  {
+   "id": "ligand",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "Ligand",
+   "statement": "A ligand is a molecule or ion that surrounds the central atom of a complex ion, bonding to it by donating an electron pair as a Lewis base."
+  },
+  {
+   "id": "dissociation-constant",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "Dissociation constant, $K_{\\text{d}}$",
+   "statement": "The dissociation constant, $K_{\\text{d}}$, is the equilibrium constant for the decomposition of a complex ion into its components in solution; it is the reciprocal of the formation constant."
+  },
+  {
+   "id": "lewis-acid",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "Lewis acid",
+   "statement": "A Lewis acid is any species that can accept a pair of electrons and form a coordinate covalent bond."
+  },
+  {
+   "id": "lewis-base",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "Lewis base",
+   "statement": "A Lewis base is any species that can donate a pair of electrons and form a coordinate covalent bond."
+  },
+  {
+   "id": "lewis-acid-base-adduct",
+   "kind": "definition",
+   "section": "15.2",
+   "name": "Lewis acid-base adduct",
+   "statement": "A Lewis acid-base adduct is the compound or ion that contains the coordinate covalent bond formed between a Lewis acid and a Lewis base."
   },
   {
    "id": "solubility-in-acid",
    "kind": "result",
    "section": "15.3",
    "name": "Salts of basic anions are more soluble in acid",
-   "why": "When a salt's anion is a base, its dissolution is coupled with the anion's reaction with hydronium ion, which removes the anion and shifts the dissolution equilibrium to the right. The net reaction's constant is the solubility product divided by the conjugate acid's ionization constant.",
-   "evidence": "For calcium carbonate in acid, <i>K</i> = <i>K</i><sub>sp</sub>/<i>K</i><sub>a2</sub> = 180, much greater than <i>K</i><sub>sp</sub>, which is why ocean acidification threatens coral reefs.",
+   "statement": "When a salt's anion is a base, its dissolution is coupled with the anion's reaction with hydronium ion, which removes the anion and shifts the dissolution equilibrium to the right. The net reaction's constant is the solubility product divided by the conjugate acid's ionization constant.",
    "eq": "eq-k-acid-coupled"
   },
   {
@@ -131,8 +166,7 @@
    "kind": "result",
    "section": "15.3",
    "name": "Complex formation increases solubility",
-   "why": "When dissolution is coupled with the formation of a complex ion of the dissolved metal, the constant for the net reaction is the product of the solubility product and the formation constant, and it can be large even when the solubility product is tiny.",
-   "evidence": "Aluminum hydroxide dissolves in strong base as Al(OH)<sub>4</sub><sup>–</sup>, with <i>K</i> = <i>K</i><sub>sp</sub><i>K</i><sub>f</sub> = (2 × 10<sup>–32</sup>)(1.1 × 10<sup>33</sup>) = 22.",
+   "statement": "When dissolution is coupled with the formation of a complex ion of the dissolved metal, the constant for the net reaction is the product of the solubility product and the formation constant, and it can be large even when the solubility product is tiny.",
    "eq": "eq-k-complex-coupled"
   },
   {
@@ -140,8 +174,7 @@
    "kind": "skill",
    "section": "15.3",
    "name": "Calculating solubilities in coupled equilibria",
-   "why": "The concentrations in a coupled system follow from one equilibrium at a time, such as the hydroxide ion concentration of a buffer and then the solubility product, or from the constant of the combined net reaction.",
-   "evidence": "In a buffer of 0.100 <i>M</i> acetic acid and 0.100 <i>M</i> sodium acetate, [OH<sup>–</sup>] = 5.5 × 10<sup>–10</sup> <i>M</i> and the molar solubility of Al(OH)<sub>3</sub> is 1.2 × 10<sup>–4</sup> <i>M</i>, about ten million times that in pure water (Example 15.15)."
+   "statement": "The concentrations in a coupled system follow from one equilibrium at a time, such as the hydroxide ion concentration of a buffer and then the solubility product, or from the constant of the combined net reaction."
   }
  ],
  "concept_prereqs": [
@@ -185,6 +218,27 @@
   {"concept": "coupled-equilibrium-calculations", "prereq": "solubility-in-acid"},
   {"concept": "coupled-equilibrium-calculations", "prereq": "dissolution-by-complex-formation"},
   {"concept": "coupled-equilibrium-calculations", "prereq": "molar-solubility-from-ksp"},
-  {"concept": "coupled-equilibrium-calculations", "prereq": "henderson-hasselbalch"}
+  {"concept": "coupled-equilibrium-calculations", "prereq": "henderson-hasselbalch"},
+  {"concept": "coupled-equilibrium-calculations", "prereq": "coupled-equilibrium"},
+  {"concept": "molar-solubility", "prereq": "solubility"},
+  {"concept": "molar-solubility", "prereq": "molarity"},
+  {"concept": "complex-ion", "prereq": "complex-ions-and-ligands"},
+  {"concept": "complex-ion", "prereq": "lewis-acid"},
+  {"concept": "ligand", "prereq": "complex-ions-and-ligands"},
+  {"concept": "ligand", "prereq": "lewis-base"},
+  {"concept": "dissociation-constant", "prereq": "formation-constant"},
+  {"concept": "dissociation-constant", "prereq": "equilibrium-constant"},
+  {"concept": "lewis-acid", "prereq": "lewis-acids-and-bases"},
+  {"concept": "lewis-acid", "prereq": "coordinate-covalent-bond"},
+  {"concept": "lewis-base", "prereq": "lewis-acids-and-bases"},
+  {"concept": "lewis-base", "prereq": "coordinate-covalent-bond"},
+  {"concept": "lewis-acid-base-adduct", "prereq": "lewis-acid"},
+  {"concept": "lewis-acid-base-adduct", "prereq": "lewis-base"},
+  {"concept": "molar-solubility-from-ksp", "prereq": "molar-solubility"},
+  {"concept": "ksp-from-solubility", "prereq": "molar-solubility"},
+  {"concept": "common-ion-effect", "prereq": "molar-solubility"},
+  {"concept": "complex-ion-calculations", "prereq": "complex-ion"},
+  {"concept": "complex-ion-calculations", "prereq": "dissociation-constant"},
+  {"concept": "dissolution-by-complex-formation", "prereq": "complex-ion"}
  ]
 }

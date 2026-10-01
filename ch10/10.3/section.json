@@ -127,8 +127,38 @@
    "verb": "uses"
   },
   {
+   "span": "changes-of-state",
+   "concept": "condensation",
+   "verb": "introduces"
+  },
+  {
+   "span": "changes-of-state",
+   "concept": "melting",
+   "verb": "introduces"
+  },
+  {
+   "span": "changes-of-state",
+   "concept": "freezing",
+   "verb": "introduces"
+  },
+  {
    "span": "vaporization",
    "concept": "vapor-pressure-dynamic-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "vaporization",
+   "concept": "vaporization",
+   "verb": "introduces"
+  },
+  {
+   "span": "vaporization",
+   "concept": "dynamic-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "vaporization",
+   "concept": "vapor-pressure",
    "verb": "introduces"
   },
   {
@@ -167,6 +197,11 @@
    "verb": "uses"
   },
   {
+   "span": "boiling",
+   "concept": "normal-boiling-point",
+   "verb": "introduces"
+  },
+  {
    "span": "ex-leadville",
    "concept": "boiling-point",
    "verb": "uses"
@@ -197,9 +232,24 @@
    "verb": "reinforces"
   },
   {
+   "span": "melting",
+   "concept": "melting-point",
+   "verb": "introduces"
+  },
+  {
    "span": "sublimation",
    "concept": "enthalpies-of-phase-change",
    "verb": "reinforces"
+  },
+  {
+   "span": "sublimation",
+   "concept": "sublimation",
+   "verb": "introduces"
+  },
+  {
+   "span": "sublimation",
+   "concept": "deposition",
+   "verb": "introduces"
   },
   {
    "span": "heating-curves",

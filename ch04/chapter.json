@@ -41,6 +41,7 @@
   "variables": [
     {
       "sym": "M",
+      "concept": "molarity",
       "type": "concentration",
       "meaning": "the molarity of a solution, the moles of solute per liter of solution (equally, millimoles per milliliter)",
       "unit": "M (mol/L)",
@@ -59,6 +60,7 @@
     },
     {
       "id": "eq-atom-economy",
+      "concept": "atom-economy",
       "section": "4.4",
       "latex": "\\text{atom economy}=\\frac{\\text{mass of product}}{\\text{mass of reactants}}\\times 100\\%",
       "condition": "the theoretical efficiency of a synthesis, the mass of the desired product as a percentage of the mass of all the reactants used",
@@ -67,7 +69,7 @@
     },
     {
       "id": "eq-molarity-mmol",
-      "concept": "titration-calculation",
+      "concept": "molarity",
       "section": "4.5",
       "latex": "M=\\frac{\\text{mol solute}}{\\text{L solution}}=\\frac{\\text{mmol solute}}{\\text{mL solution}}",
       "ktex": "\\kM=\\frac{\\text{mol solute}}{\\text{L solution}}=\\frac{\\text{mmol solute}}{\\text{mL solution}}",
@@ -80,246 +82,295 @@
     {
       "section": "4.1",
       "term": "balanced equation",
+      "concept": "balanced-equation",
       "definition": "chemical equation with equal numbers of atoms for each element in the reactant and product"
     },
     {
       "section": "4.1",
       "term": "chemical equation",
+      "concept": "chemical-equation",
       "definition": "symbolic representation of a chemical reaction"
     },
     {
       "section": "4.1",
       "term": "coefficient",
+      "concept": "coefficient",
       "definition": "number placed in front of symbols or formulas in a chemical equation to indicate their relative amount"
     },
     {
       "section": "4.1",
       "term": "complete ionic equation",
+      "concept": "complete-ionic-equation",
       "definition": "chemical equation in which all dissolved ionic reactants and products, including spectator ions, are explicitly represented by formulas for their dissociated ions"
     },
     {
       "section": "4.1",
       "term": "molecular equation",
+      "concept": "molecular-equation",
       "definition": "chemical equation in which all reactants and products are represented as neutral substances"
     },
     {
       "section": "4.1",
       "term": "net ionic equation",
+      "concept": "net-ionic-equation",
       "definition": "chemical equation in which only those dissolved ionic reactants and products that undergo a chemical or physical change are represented (excludes spectator ions)"
     },
     {
       "section": "4.1",
       "term": "product",
+      "concept": "product",
       "definition": "substance formed by a chemical or physical change; shown on the right side of the arrow in a chemical equation"
     },
     {
       "section": "4.1",
       "term": "reactant",
+      "concept": "reactant",
       "definition": "substance undergoing a chemical or physical change; shown on the left side of the arrow in a chemical equation"
     },
     {
       "section": "4.1",
       "term": "spectator ion",
+      "concept": "spectator-ion",
       "definition": "ion that does not undergo a chemical or physical change during a reaction, but its presence is required to maintain charge neutrality"
     },
     {
       "section": "4.2",
       "term": "acid",
+      "concept": "acid",
       "definition": "substance that produces H<sub>3</sub>O<sup>+</sup> when dissolved in water"
     },
     {
       "section": "4.2",
       "term": "acid-base reaction",
+      "concept": "acid-base-reaction",
       "definition": "reaction involving the transfer of a hydrogen ion between reactant species"
     },
     {
       "section": "4.2",
       "term": "base",
+      "concept": "base",
       "definition": "substance that produces OH<sup>−</sup> when dissolved in water"
     },
     {
       "section": "4.2",
       "term": "combustion reaction",
+      "concept": "combustion-reaction",
       "definition": "vigorous redox reaction producing significant amounts of energy in the form of heat and, sometimes, light"
     },
     {
       "section": "4.2",
       "term": "half-reaction",
+      "concept": "half-reaction",
       "definition": "an equation that shows whether each reactant loses or gains electrons in a reaction."
     },
     {
       "section": "4.2",
       "term": "insoluble",
+      "concept": "insoluble",
       "definition": "of relatively low solubility; dissolving only to a slight extent"
     },
     {
       "section": "4.2",
       "term": "neutralization reaction",
+      "concept": "neutralization-reaction",
       "definition": "reaction between an acid and a base to produce salt and water"
     },
     {
       "section": "4.2",
       "term": "oxidation",
+      "concept": "oxidation",
       "definition": "process in which an element’s oxidation number is increased by loss of electrons"
     },
     {
       "section": "4.2",
       "term": "oxidation-reduction reaction",
+      "concept": "redox-reaction",
       "definition": "(also, redox reaction) reaction involving a change in oxidation number for one or more reactant elements"
     },
     {
       "section": "4.2",
       "term": "oxidation number",
+      "concept": "oxidation-number",
       "definition": "(also, oxidation state) the charge each atom of an element would have in a compound if the compound were ionic"
     },
     {
       "section": "4.2",
       "term": "oxidizing agent",
+      "concept": "oxidizing-agent",
       "definition": "(also, oxidant) substance that brings about the oxidation of another substance, and in the process becomes reduced"
     },
     {
       "section": "4.2",
       "term": "precipitate",
+      "concept": "precipitate",
       "definition": "insoluble product that forms from reaction of soluble reactants"
     },
     {
       "section": "4.2",
       "term": "precipitation reaction",
+      "concept": "precipitation-reaction",
       "definition": "reaction that produces one or more insoluble products; when reactants are ionic compounds, sometimes called double-displacement or metathesis"
     },
     {
       "section": "4.2",
       "term": "reduction",
+      "concept": "reduction",
       "definition": "process in which an element’s oxidation number is decreased by gain of electrons"
     },
     {
       "section": "4.2",
       "term": "reducing agent",
+      "concept": "reducing-agent",
       "definition": "(also, reductant) substance that brings about the reduction of another substance, and in the process becomes oxidized"
     },
     {
       "section": "4.2",
       "term": "salt",
+      "concept": "salt",
       "definition": "ionic compound that can be formed by the reaction of an acid with a base that contains a cation and an anion other than hydroxide or oxide"
     },
     {
       "section": "4.2",
       "term": "single-displacement reaction",
+      "concept": "single-displacement-reaction",
       "definition": "(also, replacement) redox reaction involving the oxidation of an elemental substance by an ionic species"
     },
     {
       "section": "4.2",
       "term": "soluble",
+      "concept": "soluble",
       "definition": "of relatively high solubility; dissolving to a relatively large extent"
     },
     {
       "section": "4.2",
       "term": "solubility",
+      "concept": "solubility",
       "definition": "the extent to which a substance may be dissolved in water, or any solvent"
     },
     {
       "section": "4.2",
       "term": "strong acid",
+      "concept": "strong-acid",
       "definition": "acid that reacts completely when dissolved in water to yield hydronium ions"
     },
     {
       "section": "4.2",
       "term": "strong base",
+      "concept": "strong-base",
       "definition": "base that reacts completely when dissolved in water to yield hydroxide ions"
     },
     {
       "section": "4.2",
       "term": "weak acid",
+      "concept": "weak-acid",
       "definition": "acid that reacts only to a slight extent when dissolved in water to yield hydronium ions"
     },
     {
       "section": "4.2",
       "term": "weak base",
+      "concept": "weak-base",
       "definition": "base that reacts only to a slight extent when dissolved in water to yield hydroxide ions"
     },
     {
       "section": "4.3",
       "term": "stoichiometric factor",
+      "concept": "stoichiometric-factor",
       "definition": "ratio of coefficients in a balanced chemical equation, used in computations relating amounts of reactants and products"
     },
     {
       "section": "4.3",
       "term": "stoichiometry",
+      "concept": "stoichiometry",
       "definition": "relationships between the amounts of reactants and products of a chemical reaction"
     },
     {
       "section": "4.4",
       "term": "actual yield",
+      "concept": "actual-yield",
       "definition": "amount of product formed in a reaction"
     },
     {
       "section": "4.4",
       "term": "excess reactant",
+      "concept": "excess-reactant",
       "definition": "reactant present in an amount greater than required by the reaction stoichiometry"
     },
     {
       "section": "4.4",
       "term": "limiting reactant",
+      "concept": "limiting-reactant",
       "definition": "reactant present in an amount lower than required by the reaction stoichiometry, thus limiting the amount of product generated"
     },
     {
       "section": "4.4",
       "term": "percent yield",
+      "concept": "percent-yield",
       "definition": "measure of the efficiency of a reaction, expressed as a percentage of the theoretical yield"
     },
     {
       "section": "4.4",
       "term": "theoretical yield",
+      "concept": "theoretical-yield",
       "definition": "amount of product that may be produced from a given amount of reactant(s) according to the reaction stoichiometry"
     },
     {
       "section": "4.5",
       "term": "analyte",
+      "concept": "analyte",
       "definition": "chemical species of interest"
     },
     {
       "section": "4.5",
       "term": "buret",
+      "concept": "buret",
       "definition": "device used for the precise delivery of variable liquid volumes, such as in a titration analysis"
     },
     {
       "section": "4.5",
       "term": "combustion analysis",
+      "concept": "combustion-analysis",
       "definition": "gravimetric technique used to determine the elemental composition of a compound via the collection and weighing of its gaseous combustion products"
     },
     {
       "section": "4.5",
       "term": "end point",
+      "concept": "end-point",
       "definition": "measured volume of titrant solution that yields the change in sample solution appearance or other property expected for stoichiometric equivalence (see *equivalence point*)"
     },
     {
       "section": "4.5",
       "term": "equivalence point",
+      "concept": "equivalence-point",
       "definition": "volume of titrant solution required to react completely with the analyte in a titration analysis; provides a stoichiometric amount of titrant for the sample’s analyte according to the titration reaction"
     },
     {
       "section": "4.5",
       "term": "gravimetric analysis",
+      "concept": "gravimetric-analysis",
       "definition": "quantitative chemical analysis method involving the separation of an analyte from a sample by a physical or chemical process and subsequent mass measurements of the analyte, reaction product, and/or sample"
     },
     {
       "section": "4.5",
       "term": "indicator",
+      "concept": "indicator",
       "definition": "substance added to the sample in a titration analysis to permit visual detection of the end point"
     },
     {
       "section": "4.5",
       "term": "quantitative analysis",
+      "concept": "quantitative-analysis",
       "definition": "the determination of the amount or concentration of a substance in a sample"
     },
     {
       "section": "4.5",
       "term": "titrant",
+      "concept": "titrant",
       "definition": "solution containing a known concentration of substance that will react with the analyte in a titration analysis"
     },
     {
       "section": "4.5",
       "term": "titration analysis",
+      "concept": "titration",
       "definition": "quantitative chemical analysis method that involves measuring the volume of a reactant solution required to completely react with the analyte in a sample"
     }
   ]

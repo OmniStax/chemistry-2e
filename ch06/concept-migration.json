@@ -1,0 +1,857 @@
+{
+  "chapter": "ch06",
+  "kinds": {
+    "photon-energy": "axiom",
+    "line-spectra": "idea",
+    "wave-properties": "definition",
+    "wave-speed-relation": "result",
+    "electromagnetic-spectrum": "idea",
+    "standing-waves-quantization": "idea",
+    "blackbody-radiation": "idea",
+    "photoelectric-effect": "idea",
+    "wave-particle-duality": "idea",
+    "classical-atom-instability": "idea",
+    "bohr-stationary-states": "axiom",
+    "bohr-energy-levels": "result",
+    "ground-and-excited-states": "definition",
+    "photon-emission-absorption": "result",
+    "hydrogen-like-ions": "idea",
+    "bohr-orbit-radius": "result",
+    "rydberg-constant-recovered": "result",
+    "calculating-bohr-transition-energies": "skill",
+    "de-broglie-wavelength": "axiom",
+    "heisenberg-uncertainty": "axiom",
+    "wavefunction-probability": "idea",
+    "principal-quantum-number-shells": "definition",
+    "angular-momentum-quantum-number": "definition",
+    "magnetic-quantum-number": "definition",
+    "spin-quantum-number": "definition",
+    "pauli-exclusion-principle": "axiom",
+    "working-with-quantum-numbers": "skill",
+    "orbital-energy-order": "idea",
+    "aufbau-principle": "result",
+    "hunds-rule": "axiom",
+    "writing-electron-configurations": "skill",
+    "valence-and-core-electrons": "definition",
+    "configuration-exceptions": "idea",
+    "periodic-table-blocks": "idea",
+    "ion-configurations": "skill",
+    "effective-nuclear-charge": "definition",
+    "covalent-radius-trend": "idea",
+    "ionic-radius-trend": "idea",
+    "ionization-energy-trend": "idea",
+    "successive-ionization-energies": "idea",
+    "electron-affinity-trend": "idea",
+    "predicting-periodic-trends": "skill"
+  },
+  "statements": {
+    "photon-energy": "Light is absorbed and emitted in discrete packets called photons, and the energy of one photon is set by the frequency of the radiation, E = hν, or equivalently by its wavelength, E = hc/λ.",
+    "line-spectra": "A gas excited by heat or by an electric current emits light at a few sharp wavelengths rather than over an unbroken band, and each element shows its own set of lines. Classical electromagnetic theory predicts a continuous spectrum and cannot account for this.",
+    "classical-atom-instability": "In the planetary picture the electron moves about the nucleus as a planet moves about the sun. An electron on such an orbit is always changing direction, and so is always accelerating, and classical electromagnetism says that an accelerating charge must continuously emit radiation. The orbit would then shrink until the electron spiraled into the nucleus, which would make every atom inherently unstable.",
+    "bohr-stationary-states": "An electron in one of the allowed orbits of an atom does not radiate at all; it emits or absorbs radiation only when it moves from one allowed orbit to another. The energies of those orbits are quantized: the electron may possess certain discrete energies and no value between them.",
+    "ground-and-excited-states": "An atom whose electrons have the lowest energy possible is in its ground state, as a hydrogen atom is with its electron in the n = 1 orbit. Energy from outside can move the electron to an orbit with a higher n, and the atom is then in an excited state.",
+    "rydberg-constant-recovered": "Putting the quantized energies of the Bohr model into the photon relation gives an expression for one over the wavelength that has the same form as the Rydberg equation, with the Rydberg constant equal to k divided by hc. Bohr’s theoretical value agreed excellently with the experimental one.",
+    "hydrogen-like-ions": "Because Bohr's model follows one electron only, it applies just as well to He⁺, Li²⁺, Be³⁺ and the rest of the one-electron ions, which differ from hydrogen only in their nuclear charge. Helium, with two electrons, is already beyond the model, because it says nothing about how two electrons act on each other.",
+    "pauli-exclusion-principle": "No two electrons in the same atom can have the same set of all four quantum numbers. Since the spin quantum number has only two values, an orbital can hold no more than two electrons, and two electrons in the same orbital must have opposite spins.",
+    "working-with-quantum-numbers": "Given a value of n, list the allowed values of l and m_l, name the subshells, and count the orbitals in each; a shell holds n² orbitals and at most 2n² electrons. Given a set of quantum numbers, name the subshell."
+  },
+  "new": [
+    {
+      "id": "wave",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Wave",
+      "statement": "A wave is an oscillation of a property over time or space, and it can transport energy from one point to another.",
+      "introduces": "waves",
+      "prereqs": [
+        "energy-and-work"
+      ]
+    },
+    {
+      "id": "wavelength",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Wavelength, $\\lambda$",
+      "statement": "The wavelength of a wave is the distance between two consecutive peaks or troughs.",
+      "introduces": "waves",
+      "prereqs": [
+        "wave",
+        "length"
+      ]
+    },
+    {
+      "id": "frequency",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Frequency, $\\nu$",
+      "statement": "The frequency of a wave is the number of wave cycles, peaks or troughs, that pass a specified point in space per unit time.",
+      "introduces": "waves",
+      "prereqs": [
+        "wave",
+        "time"
+      ]
+    },
+    {
+      "id": "hertz",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "The hertz, $1\\ \\text{Hz} = 1\\ \\text{s}^{-1}$",
+      "statement": "The hertz is the unit of frequency, one cycle per second.",
+      "introduces": "waves",
+      "prereqs": [
+        "frequency",
+        "unit"
+      ]
+    },
+    {
+      "id": "amplitude",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Amplitude",
+      "statement": "The amplitude of a wave is the extent of the displacement it causes, one-half the height from peak to trough.",
+      "introduces": "waves",
+      "prereqs": [
+        "wave"
+      ]
+    },
+    {
+      "id": "intensity",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Intensity",
+      "statement": "Intensity is the property of the energy a wave carries that is related to its amplitude, such as the brightness of light or the loudness of sound.",
+      "introduces": "waves",
+      "prereqs": [
+        "amplitude"
+      ]
+    },
+    {
+      "id": "electromagnetic-radiation",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Electromagnetic radiation",
+      "statement": "Electromagnetic radiation is energy transmitted by waves that have an electric-field component and a magnetic-field component.",
+      "introduces": "light",
+      "prereqs": [
+        "wave",
+        "energy-and-work"
+      ]
+    },
+    {
+      "id": "interference-pattern",
+      "kind": "idea",
+      "section": "6.1",
+      "name": "Interference pattern",
+      "statement": "An interference pattern is a pattern of alternating bright and dark fringes that results from the constructive and destructive interference of waves.",
+      "introduces": "interference",
+      "prereqs": [
+        "wave",
+        "amplitude"
+      ]
+    },
+    {
+      "id": "standing-wave",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Standing wave",
+      "statement": "A standing wave, or stationary wave, is a wave localized in a region of space, with discrete wavelengths determined by the boundaries of that region.",
+      "introduces": "standing-waves",
+      "prereqs": [
+        "wave",
+        "wavelength"
+      ]
+    },
+    {
+      "id": "node",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Node",
+      "statement": "A node is any point of a standing wave with zero amplitude. In an orbital, a node is a place where the probability of finding the electron is zero.",
+      "introduces": "standing-waves",
+      "prereqs": [
+        "standing-wave",
+        "amplitude"
+      ]
+    },
+    {
+      "id": "quantization",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Quantization",
+      "statement": "Quantization is the limitation of some property to specific discrete values rather than a continuous range.",
+      "introduces": "standing-waves",
+      "prereqs": []
+    },
+    {
+      "id": "blackbody",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Blackbody",
+      "statement": "A blackbody is an idealized perfect absorber of all incident electromagnetic radiation. When heated, it emits radiation in a characteristic continuous distribution of wavelengths.",
+      "introduces": "blackbody",
+      "prereqs": [
+        "electromagnetic-radiation"
+      ]
+    },
+    {
+      "id": "continuous-spectrum",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Continuous spectrum",
+      "statement": "A continuous spectrum is electromagnetic radiation given off in an unbroken series of wavelengths, as white light from the sun is.",
+      "introduces": "blackbody",
+      "prereqs": [
+        "electromagnetic-radiation",
+        "wavelength"
+      ]
+    },
+    {
+      "id": "photon",
+      "kind": "definition",
+      "section": "6.1",
+      "name": "Photon",
+      "statement": "A photon is the smallest possible packet of electromagnetic radiation, a particle of light.",
+      "introduces": "photoelectric",
+      "prereqs": [
+        "electromagnetic-radiation",
+        "quantization"
+      ]
+    },
+    {
+      "id": "rydberg-equation",
+      "kind": "axiom",
+      "section": "6.1",
+      "name": "The Rydberg equation, $\\frac{1}{\\lambda}=R_{\\infty}\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)$",
+      "statement": "The wavelengths of all the lines in the spectrum of hydrogen fit one empirical equation: one over the wavelength is the Rydberg constant times the difference of the reciprocal squares of two integers, n₁ less than n₂. Balmer's equation for the four visible lines is the case n₁ = 2.",
+      "introduces": "rydberg",
+      "prereqs": [
+        "line-spectra",
+        "wavelength"
+      ]
+    },
+    {
+      "id": "bohr-model",
+      "kind": "idea",
+      "section": "6.2",
+      "name": "Bohr's model of the hydrogen atom",
+      "statement": "Bohr's model of the hydrogen atom is a structural model in which the electron moves around the nucleus only in circular orbits, each with a specific allowed radius and energy.",
+      "introduces": "stationary-states",
+      "prereqs": [
+        "bohr-stationary-states",
+        "nuclear-model-of-the-atom"
+      ]
+    },
+    {
+      "id": "quantum-number",
+      "kind": "definition",
+      "section": "6.2",
+      "name": "Quantum number",
+      "statement": "A quantum number is a number having only specific allowed values, used to characterize the arrangement of electrons in an atom.",
+      "introduces": "stationary-states",
+      "prereqs": [
+        "quantization"
+      ]
+    },
+    {
+      "id": "ground-state",
+      "kind": "definition",
+      "section": "6.2",
+      "name": "Ground state",
+      "statement": "The ground state is the state in which the electrons in an atom, ion, or molecule have the lowest energy possible.",
+      "introduces": "energy-ladder",
+      "prereqs": [
+        "bohr-energy-levels"
+      ]
+    },
+    {
+      "id": "excited-state",
+      "kind": "definition",
+      "section": "6.2",
+      "name": "Excited state",
+      "statement": "An excited state is a state having an energy greater than the ground-state energy.",
+      "introduces": "energy-ladder",
+      "prereqs": [
+        "ground-state"
+      ]
+    },
+    {
+      "id": "velocity",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "Velocity, $v$",
+      "statement": "The velocity of a particle is the rate at which its position changes, the distance it travels per unit time in a given direction.",
+      "introduces": "de-broglie",
+      "prereqs": [
+        "length",
+        "time"
+      ]
+    },
+    {
+      "id": "momentum",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "Momentum, $p = mv$",
+      "statement": "The linear momentum of a particle is the product of its mass and its velocity.",
+      "introduces": "de-broglie",
+      "prereqs": [
+        "mass",
+        "velocity"
+      ]
+    },
+    {
+      "id": "quantum-mechanics",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "Quantum mechanics",
+      "statement": "Quantum mechanics is the field of study that includes the quantization of energy, wave-particle duality, and the Heisenberg uncertainty principle to describe matter.",
+      "introduces": "quantum-model",
+      "prereqs": [
+        "quantization",
+        "wave-particle-duality",
+        "heisenberg-uncertainty"
+      ]
+    },
+    {
+      "id": "wavefunction",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "Wavefunction, $\\psi$",
+      "statement": "A wavefunction is the mathematical description of an atomic orbital. It describes the shape of the orbital, and it can be used to calculate the probability of finding the electron at any given location and the electron's energy.",
+      "introduces": "quantum-model",
+      "prereqs": [
+        "wave",
+        "quantum-mechanics"
+      ]
+    },
+    {
+      "id": "electron-density",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "Electron density, $|\\psi|^2$",
+      "statement": "Electron density is a measure of the probability of locating an electron in a particular region of space, equal to the squared magnitude of the wavefunction.",
+      "introduces": "quantum-model",
+      "prereqs": [
+        "wavefunction"
+      ]
+    },
+    {
+      "id": "atomic-orbital",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "Atomic orbital",
+      "statement": "An atomic orbital is the mathematical function, the wavefunction, that describes the behavior of an electron in an atom; it is pictured as the region of space in which the electron is most probably found.",
+      "introduces": "quantum-model",
+      "prereqs": [
+        "wavefunction",
+        "electron-density"
+      ]
+    },
+    {
+      "id": "shell",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "Shell",
+      "statement": "A shell is the set of atomic orbitals with the same principal quantum number, n.",
+      "introduces": "shells",
+      "prereqs": [
+        "atomic-orbital",
+        "principal-quantum-number-shells"
+      ]
+    },
+    {
+      "id": "subshell",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "Subshell",
+      "statement": "A subshell is the set of atomic orbitals with the same values of n and l.",
+      "introduces": "subshells",
+      "prereqs": [
+        "shell",
+        "angular-momentum-quantum-number"
+      ]
+    },
+    {
+      "id": "s-orbital",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "s orbital",
+      "statement": "An s orbital is a spherical region of space with high electron density, the orbital with l = 0.",
+      "introduces": "subshells",
+      "prereqs": [
+        "atomic-orbital",
+        "angular-momentum-quantum-number"
+      ]
+    },
+    {
+      "id": "p-orbital",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "p orbital",
+      "statement": "A p orbital is a dumbbell-shaped region of space with high electron density, an orbital with l = 1.",
+      "introduces": "subshells",
+      "prereqs": [
+        "atomic-orbital",
+        "angular-momentum-quantum-number"
+      ]
+    },
+    {
+      "id": "d-orbital",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "d orbital",
+      "statement": "A d orbital is a region of space with high electron density that is either four-lobed or contains a dumbbell and a torus, an orbital with l = 2.",
+      "introduces": "subshells",
+      "prereqs": [
+        "atomic-orbital",
+        "angular-momentum-quantum-number"
+      ]
+    },
+    {
+      "id": "f-orbital",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "f orbital",
+      "statement": "An f orbital is a multilobed region of space with high electron density, an orbital with l = 3.",
+      "introduces": "subshells",
+      "prereqs": [
+        "atomic-orbital",
+        "angular-momentum-quantum-number"
+      ]
+    },
+    {
+      "id": "degenerate-orbitals",
+      "kind": "definition",
+      "section": "6.3",
+      "name": "Degenerate orbitals",
+      "statement": "Degenerate orbitals are orbitals that have the same energy.",
+      "introduces": "orientation",
+      "prereqs": [
+        "atomic-orbital"
+      ]
+    },
+    {
+      "id": "electron-configuration",
+      "kind": "definition",
+      "section": "6.4",
+      "name": "Electron configuration",
+      "statement": "An electron configuration is a listing that identifies the electron occupancy of an atom’s shells and subshells, as in 1s²2s²2p⁴.",
+      "introduces": "notation",
+      "prereqs": [
+        "shell",
+        "subshell"
+      ]
+    },
+    {
+      "id": "orbital-diagram",
+      "kind": "definition",
+      "section": "6.4",
+      "name": "Orbital diagram",
+      "statement": "An orbital diagram is a pictorial representation of the electron configuration that shows each orbital as a box and each electron as an arrow.",
+      "introduces": "first-atoms",
+      "prereqs": [
+        "electron-configuration",
+        "spin-quantum-number"
+      ]
+    },
+    {
+      "id": "valence-shell",
+      "kind": "definition",
+      "section": "6.4",
+      "name": "Valence shell",
+      "statement": "The valence shell of an atom is its high-energy outer shell or shells.",
+      "introduces": "valence-core",
+      "prereqs": [
+        "shell"
+      ]
+    },
+    {
+      "id": "valence-electrons",
+      "kind": "definition",
+      "section": "6.4",
+      "name": "Valence electrons",
+      "statement": "Valence electrons are the electrons in the high-energy outer shell or shells of an atom.",
+      "introduces": "valence-core",
+      "prereqs": [
+        "valence-shell"
+      ]
+    },
+    {
+      "id": "core-electrons",
+      "kind": "definition",
+      "section": "6.4",
+      "name": "Core electrons",
+      "statement": "Core electrons are the electrons of an atom that occupy the orbitals of its inner shells.",
+      "introduces": "valence-core",
+      "prereqs": [
+        "shell",
+        "valence-shell"
+      ]
+    },
+    {
+      "id": "covalent-radius",
+      "kind": "definition",
+      "section": "6.5",
+      "name": "Covalent radius",
+      "statement": "The covalent radius of an atom is one-half the distance between the nuclei of two identical atoms when they are joined by a covalent bond.",
+      "introduces": "covalent-radius",
+      "prereqs": [
+        "ionic-and-covalent-bonds",
+        "nucleus"
+      ]
+    },
+    {
+      "id": "isoelectronic",
+      "kind": "definition",
+      "section": "6.5",
+      "name": "Isoelectronic species",
+      "statement": "Atoms or ions that have identical electron configurations are isoelectronic.",
+      "introduces": "isoelectronic",
+      "prereqs": [
+        "electron-configuration",
+        "ions-and-atomic-charge"
+      ]
+    },
+    {
+      "id": "ionization-energy",
+      "kind": "definition",
+      "section": "6.5",
+      "name": "Ionization energy, $\\text{IE}$",
+      "statement": "The ionization energy is the energy required to remove an electron from a gaseous atom or ion. The first ionization energy, IE₁, removes the most loosely bound electron of the neutral atom.",
+      "introduces": "ionization-energy",
+      "prereqs": [
+        "ions-and-atomic-charge",
+        "energy-and-work"
+      ]
+    },
+    {
+      "id": "electron-affinity",
+      "kind": "definition",
+      "section": "6.5",
+      "name": "Electron affinity, $\\text{EA}$",
+      "statement": "The electron affinity is the energy change associated with the addition of an electron to a gaseous atom or ion. It is negative when energy is released.",
+      "introduces": "electron-affinity",
+      "prereqs": [
+        "ions-and-atomic-charge",
+        "energy-and-work"
+      ]
+    }
+  ],
+  "glossary": {
+    "6.1/amplitude": "amplitude",
+    "6.1/blackbody": "blackbody",
+    "6.1/continuous spectrum": "continuous-spectrum",
+    "6.1/electromagnetic radiation": "electromagnetic-radiation",
+    "6.1/electromagnetic spectrum": "electromagnetic-spectrum",
+    "6.1/frequency (ν)": "frequency",
+    "6.1/hertz (Hz)": "hertz",
+    "6.1/intensity": "intensity",
+    "6.1/interference pattern": "interference-pattern",
+    "6.1/line spectrum": "line-spectra",
+    "6.1/node": "node",
+    "6.1/photon": "photon",
+    "6.1/quantization": "quantization",
+    "6.1/standing wave": "standing-wave",
+    "6.1/wave": "wave",
+    "6.1/wavelength (λ)": "wavelength",
+    "6.1/wave-particle duality": "wave-particle-duality",
+    "6.2/Bohr's model of the hydrogen atom": "bohr-model",
+    "6.2/excited state": "excited-state",
+    "6.2/ground state": "ground-state",
+    "6.2/quantum number": "quantum-number",
+    "6.3/secondary (angular momentum) quantum number (l)": "angular-momentum-quantum-number",
+    "6.3/atomic orbital": "atomic-orbital",
+    "6.3/d orbital": "d-orbital",
+    "6.3/degenerate orbitals": "degenerate-orbitals",
+    "6.3/electron density": "electron-density",
+    "6.3/f orbital": "f-orbital",
+    "6.3/Heisenberg uncertainty principle": "heisenberg-uncertainty",
+    "6.3/magnetic quantum number (mₗ)": "magnetic-quantum-number",
+    "6.3/p orbital": "p-orbital",
+    "6.3/Pauli exclusion principle": "pauli-exclusion-principle",
+    "6.3/principal quantum number (n)": "principal-quantum-number-shells",
+    "6.3/quantum mechanics": "quantum-mechanics",
+    "6.3/s orbital": "s-orbital",
+    "6.3/shell": "shell",
+    "6.3/spin quantum number (mₛ)": "spin-quantum-number",
+    "6.3/subshell": "subshell",
+    "6.3/wavefunction (ψ)": "wavefunction",
+    "6.4/Aufbau principle": "aufbau-principle",
+    "6.4/core electron": "core-electrons",
+    "6.4/electron configuration": "electron-configuration",
+    "6.4/Hund’s rule": "hunds-rule",
+    "6.4/orbital diagram": "orbital-diagram",
+    "6.4/valence electrons": "valence-electrons",
+    "6.4/valence shell": "valence-shell",
+    "6.5/covalent radius": "covalent-radius",
+    "6.5/effective nuclear charge": "effective-nuclear-charge",
+    "6.5/electron affinity": "electron-affinity",
+    "6.5/ionization energy": "ionization-energy",
+    "6.5/isoelectronic": "isoelectronic"
+  },
+  "variables": {
+    "6.1/λ": "wavelength",
+    "6.1/ν": "frequency",
+    "6.1/c": "wave-speed-relation",
+    "6.1/E": "photon-energy",
+    "6.1/h": "blackbody-radiation",
+    "6.1/n_quantum": "quantization",
+    "6.1/λ_max": "blackbody-radiation",
+    "6.1/T": "temperature",
+    "6.1/R_inf": "rydberg-equation",
+    "6.1/k": "rydberg-equation",
+    "6.2/E_n": "bohr-energy-levels",
+    "6.2/ΔE": "photon-emission-absorption",
+    "6.2/n_quantum": "quantum-number",
+    "6.2/Z": "atomic-number-and-mass-number",
+    "6.2/k": "bohr-energy-levels",
+    "6.2/r": "bohr-orbit-radius",
+    "6.2/a_0": "bohr-orbit-radius",
+    "6.2/E_i": "bohr-energy-levels",
+    "6.2/E_f": "bohr-energy-levels",
+    "6.2/λ": "wavelength",
+    "6.2/ν": "frequency",
+    "6.2/h": "blackbody-radiation",
+    "6.2/c": "wave-speed-relation",
+    "6.2/R_inf": "rydberg-equation",
+    "6.3/λ": "de-broglie-wavelength",
+    "6.3/m": "mass",
+    "6.3/v": "velocity",
+    "6.3/p_momentum": "momentum",
+    "6.3/r": "bohr-orbit-radius",
+    "6.3/Δx": "heisenberg-uncertainty",
+    "6.3/Δp_x": "heisenberg-uncertainty",
+    "6.3/hbar": "blackbody-radiation",
+    "6.3/ψ": "wavefunction",
+    "6.3/E": "energy-and-work",
+    "6.3/ΔE": "photon-emission-absorption",
+    "6.3/n_quantum": "principal-quantum-number-shells",
+    "6.3/n_i": "principal-quantum-number-shells",
+    "6.3/n_f": "principal-quantum-number-shells",
+    "6.3/l_quantum": "angular-momentum-quantum-number",
+    "6.3/m_l": "magnetic-quantum-number",
+    "6.3/m_s": "spin-quantum-number",
+    "6.5/Z": "atomic-number-and-mass-number",
+    "6.5/Z_eff": "effective-nuclear-charge",
+    "6.5/IE": "ionization-energy",
+    "6.5/EA": "electron-affinity",
+    "6.5/r": "covalent-radius"
+  },
+  "equations": {
+    "eq-wave-speed": "wave-speed-relation",
+    "eq-planck-quantization": "blackbody-radiation",
+    "eq-photon-energy": "photon-energy",
+    "eq-balmer": "rydberg-equation",
+    "eq-rydberg": "rydberg-equation",
+    "eq-photon-energy-difference": "photon-emission-absorption",
+    "eq-bohr-energy-hydrogen": "bohr-energy-levels",
+    "eq-bohr-energy": "bohr-energy-levels",
+    "eq-bohr-transition": "calculating-bohr-transition-energies",
+    "eq-rydberg-from-bohr": "rydberg-constant-recovered",
+    "eq-bohr-radius": "bohr-orbit-radius",
+    "eq-ionization-limit": "bohr-energy-levels",
+    "eq-de-broglie": "de-broglie-wavelength",
+    "eq-de-broglie-orbit": "de-broglie-wavelength",
+    "eq-uncertainty": "heisenberg-uncertainty",
+    "eq-energy-time-uncertainty": "heisenberg-uncertainty",
+    "eq-schrodinger": "wavefunction-probability",
+    "eq-hydrogen-transition": "calculating-bohr-transition-energies",
+    "eq-effective-nuclear-charge": "effective-nuclear-charge",
+    "eq-first-ionization": "ionization-energy",
+    "eq-second-ionization": "successive-ionization-energies",
+    "eq-electron-affinity": "electron-affinity"
+  },
+  "edges": [
+    [
+      "wave-properties",
+      "wavelength"
+    ],
+    [
+      "wave-properties",
+      "frequency"
+    ],
+    [
+      "wave-properties",
+      "amplitude"
+    ],
+    [
+      "wave-speed-relation",
+      "wavelength"
+    ],
+    [
+      "wave-speed-relation",
+      "frequency"
+    ],
+    [
+      "photon-energy",
+      "photon"
+    ],
+    [
+      "photon-energy",
+      "frequency"
+    ],
+    [
+      "standing-waves-quantization",
+      "standing-wave"
+    ],
+    [
+      "standing-waves-quantization",
+      "node"
+    ],
+    [
+      "standing-waves-quantization",
+      "quantization"
+    ],
+    [
+      "blackbody-radiation",
+      "blackbody"
+    ],
+    [
+      "blackbody-radiation",
+      "continuous-spectrum"
+    ],
+    [
+      "electromagnetic-spectrum",
+      "electromagnetic-radiation"
+    ],
+    [
+      "photoelectric-effect",
+      "photon"
+    ],
+    [
+      "bohr-energy-levels",
+      "quantum-number"
+    ],
+    [
+      "ground-and-excited-states",
+      "ground-state"
+    ],
+    [
+      "ground-and-excited-states",
+      "excited-state"
+    ],
+    [
+      "photon-emission-absorption",
+      "excited-state"
+    ],
+    [
+      "calculating-bohr-transition-energies",
+      "rydberg-equation"
+    ],
+    [
+      "de-broglie-wavelength",
+      "momentum"
+    ],
+    [
+      "de-broglie-wavelength",
+      "velocity"
+    ],
+    [
+      "heisenberg-uncertainty",
+      "momentum"
+    ],
+    [
+      "wavefunction-probability",
+      "wavefunction"
+    ],
+    [
+      "wavefunction-probability",
+      "electron-density"
+    ],
+    [
+      "magnetic-quantum-number",
+      "degenerate-orbitals"
+    ],
+    [
+      "pauli-exclusion-principle",
+      "atomic-orbital"
+    ],
+    [
+      "working-with-quantum-numbers",
+      "shell"
+    ],
+    [
+      "working-with-quantum-numbers",
+      "subshell"
+    ],
+    [
+      "aufbau-principle",
+      "electron-configuration"
+    ],
+    [
+      "hunds-rule",
+      "degenerate-orbitals"
+    ],
+    [
+      "hunds-rule",
+      "orbital-diagram"
+    ],
+    [
+      "writing-electron-configurations",
+      "electron-configuration"
+    ],
+    [
+      "writing-electron-configurations",
+      "orbital-diagram"
+    ],
+    [
+      "valence-and-core-electrons",
+      "valence-electrons"
+    ],
+    [
+      "valence-and-core-electrons",
+      "core-electrons"
+    ],
+    [
+      "periodic-table-blocks",
+      "electron-configuration"
+    ],
+    [
+      "ion-configurations",
+      "electron-configuration"
+    ],
+    [
+      "configuration-exceptions",
+      "electron-configuration"
+    ],
+    [
+      "effective-nuclear-charge",
+      "core-electrons"
+    ],
+    [
+      "covalent-radius-trend",
+      "covalent-radius"
+    ],
+    [
+      "ionic-radius-trend",
+      "isoelectronic"
+    ],
+    [
+      "ionization-energy-trend",
+      "ionization-energy"
+    ],
+    [
+      "successive-ionization-energies",
+      "ionization-energy"
+    ],
+    [
+      "electron-affinity-trend",
+      "electron-affinity"
+    ],
+    [
+      "predicting-periodic-trends",
+      "covalent-radius"
+    ],
+    [
+      "predicting-periodic-trends",
+      "ionization-energy"
+    ],
+    [
+      "predicting-periodic-trends",
+      "electron-affinity"
+    ],
+    [
+      "ion-electron-configuration",
+      "electron-configuration"
+    ]
+  ]
+}

@@ -1,0 +1,590 @@
+{
+  "chapter": "ch04",
+  "kinds": {
+    "chemical-equation": "definition",
+    "coefficients-as-ratios": "idea",
+    "balanced-equation": "definition",
+    "balance-by-inspection": "skill",
+    "ionic-equations": "definition",
+    "write-net-ionic-equation": "skill",
+    "precipitation-reaction": "definition",
+    "predict-precipitation": "skill",
+    "acids-and-bases": "definition",
+    "strong-and-weak-acids-bases": "definition",
+    "neutralization-reaction": "definition",
+    "oxidation-numbers": "skill",
+    "redox-reaction": "definition",
+    "classify-reaction": "skill",
+    "half-reaction-method": "skill",
+    "stoichiometry": "definition",
+    "stoichiometric-factor": "definition",
+    "mole-stoichiometry": "skill",
+    "mass-stoichiometry": "skill",
+    "limiting-reactant": "definition",
+    "identify-limiting-reactant": "skill",
+    "theoretical-and-actual-yield": "definition",
+    "percent-yield": "definition",
+    "atom-economy": "definition",
+    "quantitative-analysis": "definition",
+    "titration": "idea",
+    "titration-calculation": "skill",
+    "gravimetric-analysis": "skill",
+    "combustion-analysis": "skill"
+  },
+  "statements": {
+    "chemical-equation": "A chemical equation represents a reaction symbolically: the formulas of the reactants on the left, the formulas of the products on the right, plus signs between formulas and an arrow between the two sides. Parenthetical abbreviations give the physical state of each substance (s, l, g, aq), and a word or symbol over the arrow, such as Δ for heating, names a special condition."
+  },
+  "new": [
+    {
+      "id": "solubility",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Solubility",
+      "statement": "The solubility of a substance is the extent to which it dissolves in water or any other solvent. A substance of relatively high solubility is soluble, and one that dissolves only to a slight extent is insoluble.",
+      "introduces": "precipitation",
+      "prereqs": [
+        "solution-components",
+        "concentration"
+      ]
+    },
+    {
+      "id": "salt",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Salt",
+      "statement": "A salt is an ionic compound that can be formed by the reaction of an acid with a base, containing a cation and an anion other than hydroxide or oxide.",
+      "introduces": "neutralization",
+      "prereqs": [
+        "ionic-compounds",
+        "acids-and-bases"
+      ]
+    },
+    {
+      "id": "combustion-reaction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Combustion reaction",
+      "statement": "A combustion reaction is a vigorous redox reaction producing significant amounts of energy in the form of heat and, sometimes, light.",
+      "introduces": "redox-kinds",
+      "prereqs": [
+        "redox-reaction"
+      ]
+    },
+    {
+      "id": "single-displacement-reaction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Single-displacement reaction",
+      "statement": "A single-displacement (replacement) reaction is a redox reaction in which an elemental substance is oxidized by an ionic species.",
+      "introduces": "redox-kinds",
+      "prereqs": [
+        "redox-reaction"
+      ]
+    },
+    {
+      "id": "half-reaction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Half-reaction",
+      "statement": "A half-reaction is an equation that shows either the oxidation or the reduction of a redox reaction alone, with the electrons each reactant loses or gains.",
+      "introduces": "half-reaction",
+      "prereqs": [
+        "redox-reaction"
+      ]
+    },
+    {
+      "id": "reactant",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Reactant",
+      "statement": "A reactant is a substance undergoing a chemical or physical change, shown on the left side of the arrow in a chemical equation.",
+      "introduces": "chemical-equations",
+      "prereqs": [
+        "chemical-equation"
+      ]
+    },
+    {
+      "id": "product",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Product",
+      "statement": "A product is a substance formed by a chemical or physical change, shown on the right side of the arrow in a chemical equation.",
+      "introduces": "chemical-equations",
+      "prereqs": [
+        "chemical-equation"
+      ]
+    },
+    {
+      "id": "coefficient",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Coefficient",
+      "statement": "A coefficient is a number placed in front of a symbol or formula in a chemical equation to indicate its relative amount.",
+      "introduces": "chemical-equations",
+      "prereqs": [
+        "chemical-equation"
+      ]
+    },
+    {
+      "id": "molecular-equation",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Molecular equation",
+      "statement": "A molecular equation is a chemical equation in which all reactants and products are represented as neutral substances.",
+      "introduces": "ionic-equations",
+      "prereqs": [
+        "ionic-equations"
+      ]
+    },
+    {
+      "id": "complete-ionic-equation",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Complete ionic equation",
+      "statement": "A complete ionic equation is a chemical equation in which all dissolved ionic reactants and products, including spectator ions, are explicitly represented by formulas for their dissociated ions.",
+      "introduces": "ionic-equations",
+      "prereqs": [
+        "ionic-equations",
+        "spectator-ion"
+      ]
+    },
+    {
+      "id": "net-ionic-equation",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Net ionic equation",
+      "statement": "A net ionic equation is a chemical equation in which only those dissolved ionic reactants and products that undergo a chemical or physical change are represented, so spectator ions are excluded.",
+      "introduces": "ionic-equations",
+      "prereqs": [
+        "ionic-equations",
+        "spectator-ion"
+      ]
+    },
+    {
+      "id": "spectator-ion",
+      "kind": "definition",
+      "section": "4.1",
+      "name": "Spectator ion",
+      "statement": "A spectator ion is an ion that does not undergo a chemical or physical change during a reaction, but its presence is required to maintain charge neutrality.",
+      "introduces": "ionic-equations",
+      "prereqs": [
+        "ionic-equations",
+        "ion"
+      ]
+    },
+    {
+      "id": "soluble",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Soluble",
+      "statement": "A soluble substance is one of relatively high solubility, dissolving to a relatively large extent.",
+      "introduces": "precipitation",
+      "prereqs": [
+        "solubility"
+      ]
+    },
+    {
+      "id": "insoluble",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Insoluble",
+      "statement": "An insoluble substance is one of relatively low solubility, dissolving only to a slight extent.",
+      "introduces": "precipitation",
+      "prereqs": [
+        "solubility"
+      ]
+    },
+    {
+      "id": "precipitate",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Precipitate",
+      "statement": "A precipitate is an insoluble product that forms from the reaction of soluble reactants.",
+      "introduces": "precipitation",
+      "prereqs": [
+        "precipitation-reaction",
+        "insoluble"
+      ]
+    },
+    {
+      "id": "acid",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Acid",
+      "statement": "An acid is a substance that produces H₃O⁺ when dissolved in water.",
+      "introduces": "acid-base",
+      "prereqs": [
+        "acids-and-bases"
+      ]
+    },
+    {
+      "id": "base",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Base",
+      "statement": "A base is a substance that produces OH⁻ when dissolved in water.",
+      "introduces": "acid-base",
+      "prereqs": [
+        "acids-and-bases"
+      ]
+    },
+    {
+      "id": "acid-base-reaction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Acid-base reaction",
+      "statement": "An acid-base reaction is a reaction involving the transfer of a hydrogen ion between reactant species.",
+      "introduces": "acid-base",
+      "prereqs": [
+        "acids-and-bases"
+      ]
+    },
+    {
+      "id": "strong-acid",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Strong acid",
+      "statement": "A strong acid is an acid that reacts completely when dissolved in water to yield hydronium ions.",
+      "introduces": "strong-weak",
+      "prereqs": [
+        "strong-and-weak-acids-bases",
+        "acid"
+      ]
+    },
+    {
+      "id": "weak-acid",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Weak acid",
+      "statement": "A weak acid is an acid that reacts only to a slight extent when dissolved in water to yield hydronium ions.",
+      "introduces": "strong-weak",
+      "prereqs": [
+        "strong-and-weak-acids-bases",
+        "acid"
+      ]
+    },
+    {
+      "id": "strong-base",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Strong base",
+      "statement": "A strong base is a base that reacts completely when dissolved in water to yield hydroxide ions.",
+      "introduces": "strong-weak",
+      "prereqs": [
+        "strong-and-weak-acids-bases",
+        "base"
+      ]
+    },
+    {
+      "id": "weak-base",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Weak base",
+      "statement": "A weak base is a base that reacts only to a slight extent when dissolved in water to yield hydroxide ions.",
+      "introduces": "strong-weak",
+      "prereqs": [
+        "strong-and-weak-acids-bases",
+        "base"
+      ]
+    },
+    {
+      "id": "oxidation-number",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Oxidation number",
+      "statement": "The oxidation number, or oxidation state, of an element in a compound is the charge each of its atoms would have if the compound were ionic.",
+      "introduces": "oxidation-numbers",
+      "prereqs": [
+        "ions-and-atomic-charge"
+      ]
+    },
+    {
+      "id": "oxidation",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Oxidation",
+      "statement": "Oxidation is the process in which an element’s oxidation number is increased by loss of electrons.",
+      "introduces": "redox-definition",
+      "prereqs": [
+        "redox-reaction",
+        "oxidation-number"
+      ]
+    },
+    {
+      "id": "reduction",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Reduction",
+      "statement": "Reduction is the process in which an element’s oxidation number is decreased by gain of electrons.",
+      "introduces": "redox-definition",
+      "prereqs": [
+        "redox-reaction",
+        "oxidation-number"
+      ]
+    },
+    {
+      "id": "oxidizing-agent",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Oxidizing agent",
+      "statement": "An oxidizing agent, or oxidant, is a substance that brings about the oxidation of another substance and in the process becomes reduced.",
+      "introduces": "redox-definition",
+      "prereqs": [
+        "oxidation",
+        "reduction"
+      ]
+    },
+    {
+      "id": "reducing-agent",
+      "kind": "definition",
+      "section": "4.2",
+      "name": "Reducing agent",
+      "statement": "A reducing agent, or reductant, is a substance that brings about the reduction of another substance and in the process becomes oxidized.",
+      "introduces": "redox-definition",
+      "prereqs": [
+        "oxidation",
+        "reduction"
+      ]
+    },
+    {
+      "id": "theoretical-yield",
+      "kind": "definition",
+      "section": "4.4",
+      "name": "Theoretical yield",
+      "statement": "The theoretical yield is the amount of product that may be produced from a given amount of reactant according to the reaction stoichiometry.",
+      "introduces": "percent-yield",
+      "prereqs": [
+        "theoretical-and-actual-yield",
+        "limiting-reactant"
+      ]
+    },
+    {
+      "id": "actual-yield",
+      "kind": "definition",
+      "section": "4.4",
+      "name": "Actual yield",
+      "statement": "The actual yield is the amount of product formed in a reaction.",
+      "introduces": "percent-yield",
+      "prereqs": [
+        "theoretical-and-actual-yield"
+      ]
+    },
+    {
+      "id": "excess-reactant",
+      "kind": "definition",
+      "section": "4.4",
+      "name": "Excess reactant",
+      "statement": "An excess reactant is a reactant present in an amount greater than required by the reaction stoichiometry.",
+      "introduces": "limiting-reactant",
+      "prereqs": [
+        "limiting-reactant"
+      ]
+    },
+    {
+      "id": "analyte",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Analyte",
+      "statement": "An analyte is the chemical species of interest in an analysis.",
+      "introduces": "quantitative",
+      "prereqs": [
+        "quantitative-analysis"
+      ]
+    },
+    {
+      "id": "titrant",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Titrant",
+      "statement": "A titrant is a solution containing a known concentration of a substance that will react with the analyte in a titration analysis.",
+      "introduces": "titration",
+      "prereqs": [
+        "titration",
+        "molarity"
+      ]
+    },
+    {
+      "id": "buret",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Buret",
+      "statement": "A buret is a device used for the precise delivery of variable liquid volumes, as in a titration analysis.",
+      "introduces": "titration",
+      "prereqs": [
+        "titration"
+      ]
+    },
+    {
+      "id": "equivalence-point",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Equivalence point",
+      "statement": "The equivalence point is the volume of titrant solution required to react completely with the analyte in a titration analysis, a stoichiometric amount of titrant for the sample’s analyte.",
+      "introduces": "titration",
+      "prereqs": [
+        "titration",
+        "titrant",
+        "analyte"
+      ]
+    },
+    {
+      "id": "end-point",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "End point",
+      "statement": "The end point is the measured volume of titrant solution that yields the change in the sample’s appearance or other property expected for stoichiometric equivalence.",
+      "introduces": "titration",
+      "prereqs": [
+        "equivalence-point"
+      ]
+    },
+    {
+      "id": "indicator",
+      "kind": "definition",
+      "section": "4.5",
+      "name": "Indicator",
+      "statement": "An indicator is a substance added to the sample in a titration analysis to permit visual detection of the end point.",
+      "introduces": "titration",
+      "prereqs": [
+        "end-point"
+      ]
+    }
+  ],
+  "glossary": {
+    "4.1/balanced equation": "balanced-equation",
+    "4.1/chemical equation": "chemical-equation",
+    "4.1/coefficient": "coefficient",
+    "4.1/complete ionic equation": "complete-ionic-equation",
+    "4.1/molecular equation": "molecular-equation",
+    "4.1/net ionic equation": "net-ionic-equation",
+    "4.1/product": "product",
+    "4.1/reactant": "reactant",
+    "4.1/spectator ion": "spectator-ion",
+    "4.2/acid": "acid",
+    "4.2/acid-base reaction": "acid-base-reaction",
+    "4.2/base": "base",
+    "4.2/combustion reaction": "combustion-reaction",
+    "4.2/half-reaction": "half-reaction",
+    "4.2/insoluble": "insoluble",
+    "4.2/neutralization reaction": "neutralization-reaction",
+    "4.2/oxidation": "oxidation",
+    "4.2/oxidation-reduction reaction": "redox-reaction",
+    "4.2/oxidation number": "oxidation-number",
+    "4.2/oxidizing agent": "oxidizing-agent",
+    "4.2/precipitate": "precipitate",
+    "4.2/precipitation reaction": "precipitation-reaction",
+    "4.2/reduction": "reduction",
+    "4.2/reducing agent": "reducing-agent",
+    "4.2/salt": "salt",
+    "4.2/single-displacement reaction": "single-displacement-reaction",
+    "4.2/soluble": "soluble",
+    "4.2/solubility": "solubility",
+    "4.2/strong acid": "strong-acid",
+    "4.2/strong base": "strong-base",
+    "4.2/weak acid": "weak-acid",
+    "4.2/weak base": "weak-base",
+    "4.3/stoichiometric factor": "stoichiometric-factor",
+    "4.3/stoichiometry": "stoichiometry",
+    "4.4/actual yield": "actual-yield",
+    "4.4/excess reactant": "excess-reactant",
+    "4.4/limiting reactant": "limiting-reactant",
+    "4.4/percent yield": "percent-yield",
+    "4.4/theoretical yield": "theoretical-yield",
+    "4.5/analyte": "analyte",
+    "4.5/buret": "buret",
+    "4.5/combustion analysis": "combustion-analysis",
+    "4.5/end point": "end-point",
+    "4.5/equivalence point": "equivalence-point",
+    "4.5/gravimetric analysis": "gravimetric-analysis",
+    "4.5/indicator": "indicator",
+    "4.5/quantitative analysis": "quantitative-analysis",
+    "4.5/titrant": "titrant",
+    "4.5/titration analysis": "titration"
+  },
+  "variables": {
+    "4.5/M": "molarity"
+  },
+  "equations": {
+    "eq-percent-yield": "percent-yield",
+    "eq-atom-economy": "atom-economy",
+    "eq-molarity-mmol": "molarity"
+  },
+  "edges": [
+    [
+      "predict-precipitation",
+      "soluble"
+    ],
+    [
+      "predict-precipitation",
+      "insoluble"
+    ],
+    [
+      "predict-precipitation",
+      "precipitate"
+    ],
+    [
+      "write-net-ionic-equation",
+      "net-ionic-equation"
+    ],
+    [
+      "write-net-ionic-equation",
+      "spectator-ion"
+    ],
+    [
+      "write-net-ionic-equation",
+      "complete-ionic-equation"
+    ],
+    [
+      "balance-by-inspection",
+      "coefficient"
+    ],
+    [
+      "oxidation-numbers",
+      "oxidation-number"
+    ],
+    [
+      "half-reaction-method",
+      "half-reaction"
+    ],
+    [
+      "classify-reaction",
+      "combustion-reaction"
+    ],
+    [
+      "classify-reaction",
+      "single-displacement-reaction"
+    ],
+    [
+      "classify-reaction",
+      "acid-base-reaction"
+    ],
+    [
+      "neutralization-reaction",
+      "salt"
+    ],
+    [
+      "percent-yield",
+      "theoretical-yield"
+    ],
+    [
+      "percent-yield",
+      "actual-yield"
+    ],
+    [
+      "identify-limiting-reactant",
+      "excess-reactant"
+    ],
+    [
+      "titration-calculation",
+      "equivalence-point"
+    ],
+    [
+      "titration-calculation",
+      "titrant"
+    ],
+    [
+      "titration-calculation",
+      "analyte"
+    ]
+  ]
+}

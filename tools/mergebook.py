@@ -8,7 +8,7 @@ level into `<chapter dir>/book-rows.json`:
     {
       "types":           [ {id, label, dimension}, ... ],       # new types only, in hue order
       "symbols":         [ {sym, latex, type?, macro?}, ... ],  # new symbols only
-      "concepts":        [ {id, kind, section, name, why?, evidence?, eq?}, ... ],
+      "concepts":        [ {id, kind, section, name, statement?, eq?}, ... ],
       "concept_prereqs": [ {concept, prereq}, ... ]
     }
 

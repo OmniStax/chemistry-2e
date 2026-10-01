@@ -178,6 +178,11 @@
    "verb": "uses"
   },
   {
+   "span": "notation",
+   "concept": "electron-configuration",
+   "verb": "introduces"
+  },
+  {
    "span": "aufbau",
    "concept": "aufbau-principle",
    "verb": "introduces"
@@ -213,6 +218,11 @@
    "verb": "uses"
   },
   {
+   "span": "first-atoms",
+   "concept": "orbital-diagram",
+   "verb": "introduces"
+  },
+  {
    "span": "hunds-rule",
    "concept": "hunds-rule",
    "verb": "introduces"
@@ -236,6 +246,21 @@
    "span": "valence-core",
    "concept": "writing-electron-configurations",
    "verb": "uses"
+  },
+  {
+   "span": "valence-core",
+   "concept": "valence-shell",
+   "verb": "introduces"
+  },
+  {
+   "span": "valence-core",
+   "concept": "valence-electrons",
+   "verb": "introduces"
+  },
+  {
+   "span": "valence-core",
+   "concept": "core-electrons",
+   "verb": "introduces"
   },
   {
    "span": "after-argon",

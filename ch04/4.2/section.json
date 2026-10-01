@@ -90,6 +90,26 @@
    "verb": "uses"
   },
   {
+   "span": "precipitation",
+   "concept": "solubility",
+   "verb": "introduces"
+  },
+  {
+   "span": "precipitation",
+   "concept": "soluble",
+   "verb": "introduces"
+  },
+  {
+   "span": "precipitation",
+   "concept": "insoluble",
+   "verb": "introduces"
+  },
+  {
+   "span": "precipitation",
+   "concept": "precipitate",
+   "verb": "introduces"
+  },
+  {
    "span": "predict-precipitation",
    "concept": "predict-precipitation",
    "verb": "introduces"
@@ -110,6 +130,21 @@
    "verb": "introduces"
   },
   {
+   "span": "acid-base",
+   "concept": "acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "acid-base",
+   "concept": "base",
+   "verb": "introduces"
+  },
+  {
+   "span": "acid-base",
+   "concept": "acid-base-reaction",
+   "verb": "introduces"
+  },
+  {
    "span": "strong-weak",
    "concept": "strong-and-weak-acids-bases",
    "verb": "introduces"
@@ -118,6 +153,26 @@
    "span": "strong-weak",
    "concept": "acids-and-bases",
    "verb": "uses"
+  },
+  {
+   "span": "strong-weak",
+   "concept": "strong-acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "strong-weak",
+   "concept": "weak-acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "strong-weak",
+   "concept": "strong-base",
+   "verb": "introduces"
+  },
+  {
+   "span": "strong-weak",
+   "concept": "weak-base",
+   "verb": "introduces"
   },
   {
    "span": "neutralization",
@@ -133,6 +188,11 @@
    "span": "neutralization",
    "concept": "balanced-equation",
    "verb": "uses"
+  },
+  {
+   "span": "neutralization",
+   "concept": "salt",
+   "verb": "introduces"
   },
   {
    "span": "acids-everyday",
@@ -155,6 +215,11 @@
    "verb": "introduces"
   },
   {
+   "span": "oxidation-numbers",
+   "concept": "oxidation-number",
+   "verb": "introduces"
+  },
+  {
    "span": "redox-definition",
    "concept": "redox-reaction",
    "verb": "reinforces"
@@ -163,6 +228,26 @@
    "span": "redox-definition",
    "concept": "oxidation-numbers",
    "verb": "uses"
+  },
+  {
+   "span": "redox-definition",
+   "concept": "oxidation",
+   "verb": "introduces"
+  },
+  {
+   "span": "redox-definition",
+   "concept": "reduction",
+   "verb": "introduces"
+  },
+  {
+   "span": "redox-definition",
+   "concept": "oxidizing-agent",
+   "verb": "introduces"
+  },
+  {
+   "span": "redox-definition",
+   "concept": "reducing-agent",
+   "verb": "introduces"
   },
   {
    "span": "redox-kinds",
@@ -180,6 +265,16 @@
    "verb": "uses"
   },
   {
+   "span": "redox-kinds",
+   "concept": "combustion-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "redox-kinds",
+   "concept": "single-displacement-reaction",
+   "verb": "introduces"
+  },
+  {
    "span": "half-reaction",
    "concept": "half-reaction-method",
    "verb": "introduces"
@@ -193,6 +288,11 @@
    "span": "half-reaction",
    "concept": "balanced-equation",
    "verb": "uses"
+  },
+  {
+   "span": "half-reaction",
+   "concept": "half-reaction",
+   "verb": "introduces"
   }
  ],
  "exercises": [

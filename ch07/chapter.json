@@ -47,18 +47,21 @@
   "variables": [
     {
       "sym": "EN",
+      "concept": "electronegativity",
       "meaning": "the electronegativity of an atom, the tendency of the atom to attract the electrons of a bond toward itself, on Pauling's relative scale from 0 to 4",
       "section": "7.2",
       "anchor": "7.2-electronegativity"
     },
     {
       "sym": "ΔEN",
+      "concept": "electronegativity",
       "meaning": "the absolute value of the difference in electronegativity between two bonded atoms, a rough measure of the polarity of the bond",
       "section": "7.2",
       "anchor": "7.2-bond-type"
     },
     {
       "sym": "D_bond",
+      "concept": "bond-energy",
       "type": "energy",
       "meaning": "the bond energy, the energy required to break one mole of a particular covalent bond in gaseous molecules; always positive",
       "unit": "kJ/mol",
@@ -67,6 +70,7 @@
     },
     {
       "sym": "ΔH",
+      "concept": "enthalpy-change",
       "type": "energy",
       "meaning": "the enthalpy change of a reaction, estimated from the bond energies of the bonds broken and formed",
       "unit": "kJ",
@@ -75,6 +79,7 @@
     },
     {
       "sym": "ΔH°",
+      "concept": "enthalpy-change",
       "type": "energy",
       "meaning": "the standard enthalpy change of a reaction",
       "unit": "kJ",
@@ -83,6 +88,7 @@
     },
     {
       "sym": "ΔH_lattice",
+      "concept": "lattice-energy",
       "type": "energy",
       "meaning": "the lattice energy, the energy required to separate one mole of an ionic solid into its gaseous ions",
       "unit": "kJ/mol",
@@ -91,24 +97,28 @@
     },
     {
       "sym": "C_lattice",
+      "concept": "lattice-energy-trends",
       "meaning": "a constant that depends on the type of crystal structure",
       "section": "7.5",
       "anchor": "7.5-lattice-trends"
     },
     {
       "sym": "Z_plus",
+      "concept": "ions-and-atomic-charge",
       "meaning": "the charge on the cation",
       "section": "7.5",
       "anchor": "7.5-lattice-trends"
     },
     {
       "sym": "Z_minus",
+      "concept": "ions-and-atomic-charge",
       "meaning": "the charge on the anion",
       "section": "7.5",
       "anchor": "7.5-lattice-trends"
     },
     {
       "sym": "R_o",
+      "concept": "lattice-energy-trends",
       "meaning": "the interionic distance, the sum of the radii of the positive and negative ions",
       "unit": "pm",
       "section": "7.5",
@@ -116,6 +126,7 @@
     },
     {
       "sym": "ΔH_f°",
+      "concept": "standard-enthalpy-of-formation",
       "type": "energy",
       "meaning": "the standard enthalpy of formation of the ionic compound from its elements",
       "unit": "kJ/mol",
@@ -124,6 +135,7 @@
     },
     {
       "sym": "ΔH_s°",
+      "concept": "enthalpies-of-phase-change",
       "type": "energy",
       "meaning": "the enthalpy of sublimation of the metal",
       "unit": "kJ/mol",
@@ -132,6 +144,7 @@
     },
     {
       "sym": "IE",
+      "concept": "ionization-energy",
       "type": "energy",
       "meaning": "the ionization energy of the metal atom",
       "unit": "kJ/mol",
@@ -140,6 +153,7 @@
     },
     {
       "sym": "EA",
+      "concept": "electron-affinity",
       "type": "energy",
       "meaning": "the electron affinity of the nonmetal atom, negative when the step releases energy",
       "unit": "kJ/mol",
@@ -148,6 +162,7 @@
     },
     {
       "sym": "μ",
+      "concept": "bond-dipole-moment",
       "meaning": "the bond dipole moment, the magnitude of the separation of charge in a bond",
       "unit": "C·m",
       "section": "7.6",
@@ -155,6 +170,7 @@
     },
     {
       "sym": "Q_partial",
+      "concept": "bond-polarity",
       "meaning": "the magnitude of the partial charges at the two ends of a bond, determined by the electronegativity difference between the bonded atoms",
       "unit": "C",
       "section": "7.6",
@@ -162,6 +178,7 @@
     },
     {
       "sym": "r_bond",
+      "concept": "bond-length",
       "meaning": "the distance between the two partial charges, which is the distance between the nuclei of the bonded atoms",
       "unit": "Å (1 Å = 10⁻¹⁰ m, 100 pm = 1 Å)",
       "section": "7.6",
@@ -171,7 +188,7 @@
   "equations": [
     {
       "id": "eq-formal-charge",
-      "concept": "formal-charge",
+      "concept": "formal-charge-of-atom",
       "section": "7.4",
       "latex": "\\text{formal charge}=\\text{\\# valence shell electrons (free atom)}-\\text{\\# lone pair electrons}-\\frac{1}{2}\\,\\text{\\# bonding electrons}",
       "important": true,
@@ -218,7 +235,7 @@
     },
     {
       "id": "eq-born-haber",
-      "concept": "born-haber-cycle",
+      "concept": "born-haber-thermochemical-cycle",
       "section": "7.5",
       "latex": "\\Delta H_{\\text{f}}^{\\circ}=\\Delta H_{s}^{\\circ}+\\tfrac{1}{2}D+IE+(EA)+(-\\Delta H_{\\text{lattice}})",
       "ktex": "\\kdHf=\\kdHs+\\tfrac{1}{2}\\kDbond+\\kIE+(\\kEA)+(-\\kdHlat)",
@@ -255,201 +272,241 @@
     {
       "section": "7.1",
       "term": "inert pair effect",
+      "concept": "inert-pair-effect",
       "definition": "tendency of heavy atoms to form ions in which their valence <em>s</em> electrons are not lost"
     },
     {
       "section": "7.1",
       "term": "ionic bond",
+      "concept": "ionic-bond",
       "definition": "strong electrostatic force of attraction between cations and anions in an ionic compound"
     },
     {
       "section": "7.2",
       "term": "bond length",
+      "concept": "bond-length",
       "definition": "distance between the nuclei of two bonded atoms at which the lowest potential energy is achieved"
     },
     {
       "section": "7.2",
       "term": "covalent bond",
+      "concept": "covalent-bond",
       "definition": "bond formed when electrons are shared between atoms"
     },
     {
       "section": "7.2",
       "term": "electronegativity",
+      "concept": "electronegativity",
       "definition": "tendency of an atom to attract electrons in a bond to itself"
     },
     {
       "section": "7.2",
       "term": "polar covalent bond",
+      "concept": "polar-covalent-bond",
       "definition": "covalent bond between atoms of different electronegativities; a covalent bond with a positive end and a negative end"
     },
     {
       "section": "7.2",
       "term": "pure covalent bond",
+      "concept": "pure-covalent-bond",
       "definition": "(also, nonpolar covalent bond) covalent bond between atoms of identical electronegativities"
     },
     {
       "section": "7.3",
       "term": "double bond",
+      "concept": "double-bond",
       "definition": "covalent bond in which two pairs of electrons are shared between two atoms"
     },
     {
       "section": "7.3",
       "term": "free radical",
+      "concept": "free-radical",
       "definition": "molecule that contains an odd number of electrons"
     },
     {
       "section": "7.3",
       "term": "hypervalent molecule",
+      "concept": "hypervalent-molecule",
       "definition": "molecule containing at least one main group element that has more than eight electrons in its valence shell"
     },
     {
       "section": "7.3",
       "term": "Lewis structure",
+      "concept": "lewis-structure-diagram",
       "definition": "diagram showing lone pairs and bonding pairs of electrons in a molecule or an ion"
     },
     {
       "section": "7.3",
       "term": "Lewis symbol",
+      "concept": "lewis-dot-symbol",
       "definition": "symbol for an element or monatomic ion that uses a dot to represent each valence electron in the element or ion"
     },
     {
       "section": "7.3",
       "term": "lone pair",
+      "concept": "lone-pair",
       "definition": "two (a pair of) valence electrons that are not used to form a covalent bond"
     },
     {
       "section": "7.3",
       "term": "octet rule",
+      "concept": "octet-rule",
       "definition": "guideline that states main group atoms will form structures in which eight valence electrons interact with each nucleus, counting bonding electrons as interacting with both atoms connected by the bond"
     },
     {
       "section": "7.3",
       "term": "single bond",
+      "concept": "single-bond",
       "definition": "bond in which a single pair of electrons is shared between two atoms"
     },
     {
       "section": "7.3",
       "term": "triple bond",
+      "concept": "triple-bond",
       "definition": "bond in which three pairs of electrons are shared between two atoms"
     },
     {
       "section": "7.4",
       "term": "formal charge",
+      "concept": "formal-charge-of-atom",
       "definition": "charge that would result on an atom by taking the number of valence electrons on the neutral atom and subtracting the nonbonding electrons and the number of bonds (one-half of the bonding electrons)"
     },
     {
       "section": "7.4",
       "term": "molecular structure",
+      "concept": "molecular-structure",
       "definition": "arrangement of atoms in a molecule or ion"
     },
     {
       "section": "7.4",
       "term": "resonance",
+      "concept": "resonance",
       "definition": "situation in which one Lewis structure is insufficient to describe the bonding in a molecule and the average of multiple structures is observed"
     },
     {
       "section": "7.4",
       "term": "resonance forms",
+      "concept": "resonance-forms",
       "definition": "two or more Lewis structures that have the same arrangement of atoms but different arrangements of electrons"
     },
     {
       "section": "7.4",
       "term": "resonance hybrid",
+      "concept": "resonance-hybrid",
       "definition": "average of the resonance forms shown by the individual Lewis structures"
     },
     {
       "section": "7.5",
       "term": "bond energy",
+      "concept": "bond-energy",
       "definition": "(also, bond dissociation energy) energy required to break a covalent bond in a gaseous substance"
     },
     {
       "section": "7.5",
       "term": "Born-Haber cycle",
+      "concept": "born-haber-thermochemical-cycle",
       "definition": "thermochemical cycle relating the various energetic steps involved in the formation of an ionic solid from the relevant elements"
     },
     {
       "section": "7.5",
       "term": "lattice energy",
+      "concept": "lattice-energy",
       "definition": "energy required to separate one mole of an ionic solid into its component gaseous ions"
     },
     {
       "section": "7.6",
       "term": "axial position",
+      "concept": "axial-position",
       "definition": "location in a trigonal bipyramidal geometry in which there is another atom at a 180° angle and the equatorial positions are at a 90° angle"
     },
     {
       "section": "7.6",
       "term": "bond angle",
+      "concept": "bond-angle",
       "definition": "angle between any two covalent bonds that share a common atom"
     },
     {
       "section": "7.6",
       "term": "bond distance",
+      "concept": "bond-length",
       "definition": "(also, bond length) distance between the nuclei of two bonded atoms"
     },
     {
       "section": "7.6",
       "term": "bond dipole moment",
+      "concept": "bond-dipole-moment",
       "definition": "separation of charge in a bond that depends on the difference in electronegativity and the bond distance represented by partial charges or a vector"
     },
     {
       "section": "7.6",
       "term": "dipole moment",
+      "concept": "dipole-moment",
       "definition": "property of a molecule that describes the separation of charge determined by the sum of the individual bond moments based on the molecular structure"
     },
     {
       "section": "7.6",
       "term": "electron-pair geometry",
+      "concept": "electron-pair-geometry",
       "definition": "arrangement around a central atom of all regions of electron density (bonds, lone pairs, or unpaired electrons)"
     },
     {
       "section": "7.6",
       "term": "equatorial position",
+      "concept": "equatorial-position",
       "definition": "one of the three positions in a trigonal bipyramidal geometry with 120° angles between them; the axial positions are located at a 90° angle"
     },
     {
       "section": "7.6",
       "term": "linear",
+      "concept": "linear-geometry",
       "definition": "shape in which two outside groups are placed on opposite sides of a central atom"
     },
     {
       "section": "7.6",
       "term": "molecular structure",
+      "concept": "molecular-structure",
       "definition": "structure that includes only the placement of the atoms in the molecule"
     },
     {
       "section": "7.6",
       "term": "octahedral",
+      "concept": "octahedral-geometry",
       "definition": "shape in which six outside groups are placed around a central atom such that a three-dimensional shape is generated with four groups forming a square and the other two forming the apex of two pyramids, one above and one below the square plane"
     },
     {
       "section": "7.6",
       "term": "polar molecule",
+      "concept": "polar-molecule",
       "definition": "(also, dipole) molecule with an overall dipole moment"
     },
     {
       "section": "7.6",
       "term": "tetrahedral",
+      "concept": "tetrahedral-geometry",
       "definition": "shape in which four outside groups are placed around a central atom such that a three-dimensional shape is generated with four corners and 109.5° angles between each pair and the central atom"
     },
     {
       "section": "7.6",
       "term": "trigonal bipyramidal",
+      "concept": "trigonal-bipyramidal-geometry",
       "definition": "shape in which five outside groups are placed around a central atom such that three form a flat triangle with 120° angles between each pair and the central atom, and the other two form the apex of two pyramids, one above and one below the triangular plane"
     },
     {
       "section": "7.6",
       "term": "trigonal planar",
+      "concept": "trigonal-planar-geometry",
       "definition": "shape in which three outside groups are placed in a flat triangle around a central atom with 120° angles between each pair and the central atom"
     },
     {
       "section": "7.6",
       "term": "valence shell electron-pair repulsion theory (VSEPR)",
+      "concept": "vsepr-theory",
       "definition": "theory used to predict the bond angles in a molecule based on positioning regions of high electron density as far apart as possible to minimize electrostatic repulsion"
     },
     {
       "section": "7.6",
       "term": "vector",
+      "concept": "vector",
       "definition": "quantity having magnitude and direction"
     }
   ]

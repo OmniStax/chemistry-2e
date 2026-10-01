@@ -1,0 +1,618 @@
+{
+  "chapter": "ch11",
+  "kinds": {
+    "properties-of-solutions": "definition",
+    "ideal-solution": "definition",
+    "dissolution-energy-steps": "idea",
+    "endothermic-and-exothermic-dissolution": "result",
+    "predict-solution-formation": "skill",
+    "electrolytes-and-nonelectrolytes": "definition",
+    "ion-dipole-attraction": "definition",
+    "dissociation-of-ionic-compounds": "definition",
+    "covalent-electrolytes": "idea",
+    "classify-electrolyte-strength": "skill",
+    "solubility-and-saturation": "definition",
+    "supersaturated-solutions": "definition",
+    "gas-solubility-and-temperature": "result",
+    "henrys-law": "axiom",
+    "henrys-law-calculations": "skill",
+    "miscibility": "definition",
+    "solid-solubility-and-temperature": "idea",
+    "colligative-properties": "definition",
+    "molality-and-mole-fraction": "skill",
+    "raoults-law": "axiom",
+    "distillation": "idea",
+    "boiling-point-elevation": "result",
+    "freezing-point-depression": "result",
+    "osmotic-pressure": "result",
+    "molar-mass-from-colligative-properties": "skill",
+    "vant-hoff-factor": "result",
+    "colloids-solutions-and-suspensions": "idea",
+    "dispersed-phase-and-medium": "definition",
+    "colloid-preparation": "idea",
+    "soaps-and-detergents": "idea",
+    "charged-colloidal-particles": "idea"
+  },
+  "statements": {
+    "molality-and-mole-fraction": "Because mole fraction and molality are built from masses and moles, either can be converted into the other, or into molarity or mass percentage, with the molar masses of the components and, for molarity, the density of the solution. Unlike molarity, neither changes with temperature."
+  },
+  "new": [
+    {
+      "id": "alloy",
+      "kind": "definition",
+      "section": "11.1",
+      "name": "Alloy",
+      "statement": "An alloy is a solid mixture of a metallic element and one or more additional elements.",
+      "introduces": "solutions",
+      "prereqs": [
+        "mixture",
+        "metal"
+      ]
+    },
+    {
+      "id": "spontaneous-process",
+      "kind": "definition",
+      "section": "11.1",
+      "name": "Spontaneous process",
+      "statement": "A spontaneous process is a physical or chemical change that occurs without the addition of energy from an external source.",
+      "introduces": "formation",
+      "prereqs": [
+        "physical-change",
+        "chemical-change"
+      ]
+    },
+    {
+      "id": "solvation",
+      "kind": "definition",
+      "section": "11.1",
+      "name": "Solvation",
+      "statement": "Solvation is the exothermic process in which intermolecular attractions between solute and solvent form as the solute particles are surrounded by solvent particles.",
+      "introduces": "steps",
+      "prereqs": [
+        "solute",
+        "solvent",
+        "intermolecular-force",
+        "exothermic-process"
+      ]
+    },
+    {
+      "id": "electrolyte",
+      "kind": "definition",
+      "section": "11.2",
+      "name": "Electrolyte",
+      "statement": "An electrolyte is a substance that produces ions when dissolved in water, so that its solution conducts electricity.",
+      "introduces": "electrolytes",
+      "prereqs": [
+        "ion",
+        "aqueous-solution"
+      ]
+    },
+    {
+      "id": "nonelectrolyte",
+      "kind": "definition",
+      "section": "11.2",
+      "name": "Nonelectrolyte",
+      "statement": "A nonelectrolyte is a substance that does not produce ions when dissolved in water.",
+      "introduces": "electrolytes",
+      "prereqs": [
+        "electrolyte"
+      ]
+    },
+    {
+      "id": "strong-electrolyte",
+      "kind": "definition",
+      "section": "11.2",
+      "name": "Strong electrolyte",
+      "statement": "A strong electrolyte is a substance that dissociates or ionizes completely when dissolved in water.",
+      "introduces": "electrolytes",
+      "prereqs": [
+        "electrolyte"
+      ]
+    },
+    {
+      "id": "weak-electrolyte",
+      "kind": "definition",
+      "section": "11.2",
+      "name": "Weak electrolyte",
+      "statement": "A weak electrolyte is a substance that ionizes only partially when dissolved in water.",
+      "introduces": "electrolytes",
+      "prereqs": [
+        "electrolyte"
+      ]
+    },
+    {
+      "id": "saturated-solution",
+      "kind": "definition",
+      "section": "11.3",
+      "name": "Saturated solution",
+      "statement": "A saturated solution has a concentration equal to the solubility of its solute, the maximum concentration possible at that temperature and pressure.",
+      "introduces": "solubility",
+      "prereqs": [
+        "solubility",
+        "concentration"
+      ]
+    },
+    {
+      "id": "unsaturated-solution",
+      "kind": "definition",
+      "section": "11.3",
+      "name": "Unsaturated solution",
+      "statement": "An unsaturated solution has a concentration less than the solubility of its solute.",
+      "introduces": "solubility",
+      "prereqs": [
+        "saturated-solution"
+      ]
+    },
+    {
+      "id": "miscible",
+      "kind": "definition",
+      "section": "11.3",
+      "name": "Miscible",
+      "statement": "Liquids are miscible when they are mutually soluble in all proportions.",
+      "introduces": "liquids",
+      "prereqs": [
+        "solubility"
+      ]
+    },
+    {
+      "id": "immiscible",
+      "kind": "definition",
+      "section": "11.3",
+      "name": "Immiscible",
+      "statement": "Liquids are immiscible when their mutual solubility is negligible.",
+      "introduces": "liquids",
+      "prereqs": [
+        "solubility"
+      ]
+    },
+    {
+      "id": "partially-miscible",
+      "kind": "definition",
+      "section": "11.3",
+      "name": "Partially miscible",
+      "statement": "Liquids are partially miscible when they are of moderate mutual solubility.",
+      "introduces": "liquids",
+      "prereqs": [
+        "solubility"
+      ]
+    },
+    {
+      "id": "molality",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Molality, $m = \\text{mol solute}/\\text{kg solvent}$",
+      "statement": "Molality is a concentration unit defined as the number of moles of solute divided by the mass of the solvent in kilograms. Since it is built from moles and masses, it does not change with temperature.",
+      "introduces": "molality",
+      "prereqs": [
+        "concentration",
+        "mole",
+        "kilogram",
+        "solvent",
+        "solute"
+      ]
+    },
+    {
+      "id": "boiling-point-elevation-constant",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Boiling point elevation constant, $K_b$",
+      "statement": "The boiling point elevation constant, or ebullioscopic constant, of a solvent is the proportionality constant relating the boiling point elevation of its solutions to the molality of solute.",
+      "introduces": "boiling",
+      "prereqs": [
+        "boiling-point-elevation",
+        "molality"
+      ]
+    },
+    {
+      "id": "freezing-point-depression-constant",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Freezing point depression constant, $K_f$",
+      "statement": "The freezing point depression constant, or cryoscopic constant, of a solvent is the proportionality constant relating the freezing point depression of its solutions to the molality of solute.",
+      "introduces": "freezing",
+      "prereqs": [
+        "freezing-point-depression",
+        "molality"
+      ]
+    },
+    {
+      "id": "semipermeable-membrane",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Semipermeable membrane",
+      "statement": "A semipermeable membrane is a membrane that selectively permits the passage of certain ions or molecules.",
+      "introduces": "osmosis",
+      "prereqs": [
+        "ion",
+        "molecule"
+      ]
+    },
+    {
+      "id": "osmosis",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Osmosis",
+      "statement": "Osmosis is the diffusion of solvent molecules through a semipermeable membrane.",
+      "introduces": "osmosis",
+      "prereqs": [
+        "diffusion",
+        "semipermeable-membrane",
+        "solvent"
+      ]
+    },
+    {
+      "id": "isotonic",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Isotonic",
+      "statement": "Two solutions are isotonic when they have equal osmotic pressures.",
+      "introduces": "osmosis",
+      "prereqs": [
+        "osmotic-pressure"
+      ]
+    },
+    {
+      "id": "hypertonic",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Hypertonic",
+      "statement": "A solution is hypertonic to another when its osmotic pressure is greater.",
+      "introduces": "osmosis",
+      "prereqs": [
+        "osmotic-pressure"
+      ]
+    },
+    {
+      "id": "hypotonic",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Hypotonic",
+      "statement": "A solution is hypotonic to another when its osmotic pressure is less.",
+      "introduces": "osmosis",
+      "prereqs": [
+        "osmotic-pressure"
+      ]
+    },
+    {
+      "id": "crenation",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Crenation",
+      "statement": "Crenation is the shriveling of biological cells as they lose water by osmosis, as red blood cells do in a hypertonic solution.",
+      "introduces": "osmosis",
+      "prereqs": [
+        "osmosis",
+        "hypertonic"
+      ]
+    },
+    {
+      "id": "hemolysis",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Hemolysis",
+      "statement": "Hemolysis is the rupture of red blood cells as they take up excess water by osmosis, as they do in a hypotonic solution.",
+      "introduces": "osmosis",
+      "prereqs": [
+        "osmosis",
+        "hypotonic"
+      ]
+    },
+    {
+      "id": "ion-pair",
+      "kind": "definition",
+      "section": "11.4",
+      "name": "Ion pair",
+      "statement": "An ion pair is a solvated cation and anion held together by moderate electrostatic attraction, which lowers the number of independent particles in a solution of an electrolyte.",
+      "introduces": "electrolytes",
+      "prereqs": [
+        "cation",
+        "anion",
+        "solvation"
+      ]
+    },
+    {
+      "id": "colloid",
+      "kind": "definition",
+      "section": "11.5",
+      "name": "Colloid",
+      "statement": "A colloid, or colloidal dispersion, is a mixture in which relatively large solid or liquid particles are dispersed uniformly throughout a gas, liquid or solid and do not settle.",
+      "introduces": "colloids",
+      "prereqs": [
+        "mixture",
+        "properties-of-solutions"
+      ]
+    },
+    {
+      "id": "suspension",
+      "kind": "definition",
+      "section": "11.5",
+      "name": "Suspension",
+      "statement": "A suspension is a heterogeneous mixture in which relatively large particles are temporarily dispersed but settle out over time.",
+      "introduces": "colloids",
+      "prereqs": [
+        "heterogeneous-mixture"
+      ]
+    },
+    {
+      "id": "tyndall-effect",
+      "kind": "idea",
+      "section": "11.5",
+      "name": "The Tyndall effect",
+      "statement": "The Tyndall effect is the scattering of visible light by a colloidal dispersion, which makes the path of a beam visible through it.",
+      "introduces": "colloids",
+      "prereqs": [
+        "colloid"
+      ]
+    },
+    {
+      "id": "dispersed-phase",
+      "kind": "definition",
+      "section": "11.5",
+      "name": "Dispersed phase",
+      "statement": "The dispersed phase of a colloid is the substance present as relatively large solid or liquid particles.",
+      "introduces": "dispersed",
+      "prereqs": [
+        "colloid"
+      ]
+    },
+    {
+      "id": "dispersion-medium",
+      "kind": "definition",
+      "section": "11.5",
+      "name": "Dispersion medium",
+      "statement": "The dispersion medium of a colloid is the solid, liquid or gas in which the colloidal particles are dispersed.",
+      "introduces": "dispersed",
+      "prereqs": [
+        "colloid"
+      ]
+    },
+    {
+      "id": "emulsion",
+      "kind": "definition",
+      "section": "11.5",
+      "name": "Emulsion",
+      "statement": "An emulsion is a colloid formed from immiscible liquids.",
+      "introduces": "dispersed",
+      "prereqs": [
+        "colloid",
+        "immiscible"
+      ]
+    },
+    {
+      "id": "gel",
+      "kind": "definition",
+      "section": "11.5",
+      "name": "Gel",
+      "statement": "A gel is a colloidal dispersion of a liquid in a solid.",
+      "introduces": "dispersed",
+      "prereqs": [
+        "dispersed-phase",
+        "dispersion-medium"
+      ]
+    },
+    {
+      "id": "amphiphilic",
+      "kind": "definition",
+      "section": "11.5",
+      "name": "Amphiphilic",
+      "statement": "A molecule is amphiphilic when it has both a hydrophobic, nonpolar part and a hydrophilic, polar part.",
+      "introduces": "soaps",
+      "prereqs": [
+        "polar-molecule"
+      ]
+    },
+    {
+      "id": "emulsifying-agent",
+      "kind": "definition",
+      "section": "11.5",
+      "name": "Emulsifying agent",
+      "statement": "An emulsifying agent is an amphiphilic substance used to stabilize the particles of an emulsion.",
+      "introduces": "preparation",
+      "prereqs": [
+        "amphiphilic",
+        "emulsion"
+      ]
+    }
+  ],
+  "glossary": {
+    "11.1/alloy": "alloy",
+    "11.1/ideal solution": "ideal-solution",
+    "11.1/solvation": "solvation",
+    "11.1/spontaneous process": "spontaneous-process",
+    "11.2/dissociation": "dissociation-of-ionic-compounds",
+    "11.2/electrolyte": "electrolyte",
+    "11.2/ion-dipole attraction": "ion-dipole-attraction",
+    "11.2/nonelectrolyte": "nonelectrolyte",
+    "11.2/strong electrolyte": "strong-electrolyte",
+    "11.2/weak electrolyte": "weak-electrolyte",
+    "11.3/Henry’s law": "henrys-law",
+    "11.3/immiscible": "immiscible",
+    "11.3/miscible": "miscible",
+    "11.3/partially miscible": "partially-miscible",
+    "11.3/saturated": "saturated-solution",
+    "11.3/solubility": "solubility",
+    "11.3/supersaturated": "supersaturated-solutions",
+    "11.3/unsaturated": "unsaturated-solution",
+    "11.4/boiling point elevation": "boiling-point-elevation",
+    "11.4/boiling point elevation constant": "boiling-point-elevation-constant",
+    "11.4/colligative property": "colligative-properties",
+    "11.4/crenation": "crenation",
+    "11.4/freezing point depression": "freezing-point-depression",
+    "11.4/freezing point depression constant": "freezing-point-depression-constant",
+    "11.4/hemolysis": "hemolysis",
+    "11.4/hypertonic": "hypertonic",
+    "11.4/hypotonic": "hypotonic",
+    "11.4/ion pair": "ion-pair",
+    "11.4/isotonic": "isotonic",
+    "11.4/molality": "molality",
+    "11.4/osmosis": "osmosis",
+    "11.4/osmotic pressure": "osmotic-pressure",
+    "11.4/Raoult’s law": "raoults-law",
+    "11.4/semipermeable membrane": "semipermeable-membrane",
+    "11.4/van’t Hoff factor": "vant-hoff-factor",
+    "11.5/amphiphilic": "amphiphilic",
+    "11.5/colloid": "colloid",
+    "11.5/dispersion medium": "dispersion-medium",
+    "11.5/dispersed phase": "dispersed-phase",
+    "11.5/emulsifying agent": "emulsifying-agent",
+    "11.5/emulsion": "emulsion",
+    "11.5/gel": "gel",
+    "11.5/suspension": "suspension",
+    "11.5/Tyndall effect": "tyndall-effect"
+  },
+  "variables": {
+    "11.3/C_g": "solubility",
+    "11.3/k_H": "henrys-law",
+    "11.3/P_g": "partial-pressure",
+    "11.4/M": "molarity",
+    "11.4/X_A": "mole-fraction",
+    "11.4/m_molal": "molality",
+    "11.4/P_A": "partial-pressure",
+    "11.4/P_A*": "vapor-pressure",
+    "11.4/P_i": "partial-pressure",
+    "11.4/P_i*": "vapor-pressure",
+    "11.4/X_i": "mole-fraction",
+    "11.4/P_solution": "vapor-pressure",
+    "11.4/P_solvent*": "vapor-pressure",
+    "11.4/X_solvent": "mole-fraction",
+    "11.4/ΔP_vp": "raoults-law",
+    "11.4/ΔT_b": "boiling-point-elevation",
+    "11.4/K_b": "boiling-point-elevation-constant",
+    "11.4/ΔT_f": "freezing-point-depression",
+    "11.4/K_f": "freezing-point-depression-constant",
+    "11.4/Π": "osmotic-pressure",
+    "11.4/R": "ideal-gas-constant",
+    "11.4/T": "temperature",
+    "11.4/i_vh": "vant-hoff-factor"
+  },
+  "equations": {
+    "eq-henrys-law": "henrys-law",
+    "eq-mole-fraction": "mole-fraction",
+    "eq-molality": "molality",
+    "eq-raoults-law": "raoults-law",
+    "eq-raoult-total": "raoults-law",
+    "eq-raoult-nonvolatile": "raoults-law",
+    "eq-boiling-point-elevation": "boiling-point-elevation",
+    "eq-freezing-point-depression": "freezing-point-depression",
+    "eq-osmotic-pressure": "osmotic-pressure",
+    "eq-vant-hoff-factor": "vant-hoff-factor"
+  },
+  "edges": [
+    [
+      "dissolution-energy-steps",
+      "solvation"
+    ],
+    [
+      "electrolytes-and-nonelectrolytes",
+      "electrolyte"
+    ],
+    [
+      "electrolytes-and-nonelectrolytes",
+      "nonelectrolyte"
+    ],
+    [
+      "electrolytes-and-nonelectrolytes",
+      "strong-electrolyte"
+    ],
+    [
+      "electrolytes-and-nonelectrolytes",
+      "weak-electrolyte"
+    ],
+    [
+      "classify-electrolyte-strength",
+      "strong-electrolyte"
+    ],
+    [
+      "classify-electrolyte-strength",
+      "weak-electrolyte"
+    ],
+    [
+      "classify-electrolyte-strength",
+      "nonelectrolyte"
+    ],
+    [
+      "solubility-and-saturation",
+      "saturated-solution"
+    ],
+    [
+      "solubility-and-saturation",
+      "unsaturated-solution"
+    ],
+    [
+      "supersaturated-solutions",
+      "saturated-solution"
+    ],
+    [
+      "miscibility",
+      "miscible"
+    ],
+    [
+      "miscibility",
+      "immiscible"
+    ],
+    [
+      "miscibility",
+      "partially-miscible"
+    ],
+    [
+      "molality-and-mole-fraction",
+      "molality"
+    ],
+    [
+      "boiling-point-elevation",
+      "molality"
+    ],
+    [
+      "freezing-point-depression",
+      "molality"
+    ],
+    [
+      "osmotic-pressure",
+      "osmosis"
+    ],
+    [
+      "osmotic-pressure",
+      "semipermeable-membrane"
+    ],
+    [
+      "vant-hoff-factor",
+      "ion-pair"
+    ],
+    [
+      "molar-mass-from-colligative-properties",
+      "molality"
+    ],
+    [
+      "colloids-solutions-and-suspensions",
+      "colloid"
+    ],
+    [
+      "colloids-solutions-and-suspensions",
+      "suspension"
+    ],
+    [
+      "dispersed-phase-and-medium",
+      "dispersed-phase"
+    ],
+    [
+      "dispersed-phase-and-medium",
+      "dispersion-medium"
+    ],
+    [
+      "colloid-preparation",
+      "emulsion"
+    ],
+    [
+      "colloid-preparation",
+      "emulsifying-agent"
+    ],
+    [
+      "soaps-and-detergents",
+      "amphiphilic"
+    ],
+    [
+      "soaps-and-detergents",
+      "emulsifying-agent"
+    ]
+  ]
+}

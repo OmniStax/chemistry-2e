@@ -128,6 +128,11 @@
    "verb": "introduces"
   },
   {
+   "span": "formula-mass",
+   "concept": "formula-mass-of-a-substance",
+   "verb": "introduces"
+  },
+  {
    "span": "ex-ibuprofen",
    "concept": "formula-mass",
    "verb": "uses"

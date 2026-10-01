@@ -115,6 +115,11 @@
    "verb": "uses"
   },
   {
+   "span": "covalent-radius",
+   "concept": "covalent-radius",
+   "verb": "introduces"
+  },
+  {
    "span": "effective-nuclear-charge",
    "concept": "effective-nuclear-charge",
    "verb": "introduces"
@@ -170,6 +175,11 @@
    "verb": "uses"
   },
   {
+   "span": "isoelectronic",
+   "concept": "isoelectronic",
+   "verb": "introduces"
+  },
+  {
    "span": "ionization-energy",
    "concept": "ionization-energy-trend",
    "verb": "introduces"
@@ -183,6 +193,11 @@
    "span": "ionization-energy",
    "concept": "orbital-energy-order",
    "verb": "uses"
+  },
+  {
+   "span": "ionization-energy",
+   "concept": "ionization-energy",
+   "verb": "introduces"
   },
   {
    "span": "ie-exceptions",
@@ -228,6 +243,11 @@
    "span": "electron-affinity",
    "concept": "effective-nuclear-charge",
    "verb": "uses"
+  },
+  {
+   "span": "electron-affinity",
+   "concept": "electron-affinity",
+   "verb": "introduces"
   },
   {
    "span": "reactivity",

@@ -21,19 +21,17 @@
  "concepts": [
   {
    "id": "reversible-reaction",
-   "kind": "idea",
+   "kind": "definition",
    "section": "13.1",
    "name": "Reversible reactions",
-   "why": "A reversible reaction may proceed in both the forward (left to right) and reverse (right to left) directions, and a special double arrow is used in its equation to emphasize this.",
-   "evidence": "Colorless dinitrogen tetroxide decomposes to brown nitrogen dioxide, and nitrogen dioxide combines to form dinitrogen tetroxide, in the sealed tube of Figure 13.2: N<sub>2</sub>O<sub>4</sub>(<em>g</em>) ⇌ 2NO<sub>2</sub>(<em>g</em>)."
+   "statement": "A reversible reaction may proceed in both the forward (left to right) and reverse (right to left) directions, and a special double arrow is used in its equation to emphasize this."
   },
   {
    "id": "chemical-equilibrium",
-   "kind": "idea",
+   "kind": "definition",
    "section": "13.1",
    "name": "Equilibrium is reached when the forward and reverse rates are equal",
-   "why": "As a reversible reaction proceeds, the falling reactant concentration slows the forward reaction and the rising product concentration speeds the reverse reaction. When the two rates become equal, the concentrations of reactants and products remain constant and the system is at equilibrium.",
-   "evidence": "Figure 13.2 plots the concentrations and the two rates, $\\text{rate}_{f}=k_{f}[\\text{N}_{2}\\text{O}_{4}]$ and $\\text{rate}_{r}=k_{r}[\\text{NO}_{2}]^{2}$, against time until they level off.",
+   "statement": "As a reversible reaction proceeds, the falling reactant concentration slows the forward reaction and the rising product concentration speeds the reverse reaction. When the two rates become equal, the concentrations of reactants and products remain constant and the system is at equilibrium.",
    "eq": "eq-equal-rates"
   },
   {
@@ -41,16 +39,14 @@
    "kind": "idea",
    "section": "13.1",
    "name": "Equilibria are dynamic",
-   "why": "A reaction at equilibrium has not stopped; it is proceeding in the forward and reverse directions at the same rate. Physical changes such as phase transitions establish such equilibria too, and the concentrations at equilibrium need not be equal, only constant.",
-   "evidence": "The two jugglers of Figure 13.3 throw and catch clubs at the same rate, and the sealed tube of Figure 13.4 holds liquid and gaseous bromine vaporizing and condensing at equal rates."
+   "statement": "A reaction at equilibrium has not stopped; it is proceeding in the forward and reverse directions at the same rate. Physical changes such as phase transitions establish such equilibria too, and the concentrations at equilibrium need not be equal, only constant."
   },
   {
    "id": "reaction-quotient",
-   "kind": "result",
+   "kind": "definition",
    "section": "13.2",
    "name": "The reaction quotient, $Q$",
-   "why": "The reaction quotient is derived directly from the stoichiometry of the balanced equation: product concentrations raised to their coefficients, divided by reactant concentrations raised to theirs. Its value changes as the reaction proceeds, so it serves as an indicator of the reaction’s status.",
-   "evidence": "For 2SO<sub>2</sub> + O<sub>2</sub> ⇌ 2SO<sub>3</sub>, Figure 13.5 shows $Q_{c}$ rising from zero when the reaction starts from reactants and falling from an undefined value when it starts from product.",
+   "statement": "The reaction quotient, $Q$, is the product of the product concentrations, each raised to the power of its coefficient in the balanced equation, divided by the product of the reactant concentrations raised to theirs. Its value changes as the reaction proceeds, so it serves as an indicator of the reaction’s status.",
    "eq": "eq-reaction-quotient"
   },
   {
@@ -58,17 +54,15 @@
    "kind": "skill",
    "section": "13.2",
    "name": "Writing reaction quotient expressions",
-   "why": "From a balanced equation we can write $Q_{c}$ using molar concentrations or, for gases, $Q_{P}$ using partial pressures, including terms only for gaseous and solute species.",
-   "evidence": "Example 13.1 writes the concentration-based reaction quotients for the formation of ozone, the synthesis of ammonia and the oxidation of ammonia.",
+   "statement": "From a balanced equation we can write $Q_{c}$ using molar concentrations or, for gases, $Q_{P}$ using partial pressures, including terms only for gaseous and solute species.",
    "eq": "eq-reaction-quotient-p"
   },
   {
    "id": "equilibrium-constant",
-   "kind": "result",
+   "kind": "definition",
    "section": "13.2",
    "name": "The equilibrium constant and the law of mass action",
-   "why": "The constant value of $Q$ exhibited by a system at equilibrium is the equilibrium constant, $K$. At a given temperature it has the same value whichever way the equilibrium is approached, which is the law of mass action.",
-   "evidence": "Both scenarios of Figure 13.5 end at the same $K_{c}$, and Example 13.2 evaluates $K_{c}=0.042/0.016^{2}=1.6\\times10^{2}$ for the dimerization of NO<sub>2</sub>.",
+   "statement": "The equilibrium constant, $K$, is the constant value of the reaction quotient exhibited by a system at equilibrium; $K_{c}$ is written with molar concentrations and $K_{P}$ with partial pressures.",
    "eq": "eq-k-equals-q"
   },
   {
@@ -76,24 +70,21 @@
    "kind": "idea",
    "section": "13.2",
    "name": "What the magnitude of $K$ tells us",
-   "why": "A reaction with a large $K$ reaches equilibrium when most of the reactant has been converted to product, whereas a small $K$ means very little has been converted. The magnitude of $K$ does not indicate how rapidly equilibrium is reached.",
-   "evidence": "The text notes that some equilibria are established nearly instantaneously and others so slowly that no change is observed over days or years, whatever their $K$."
+   "statement": "A reaction with a large $K$ reaches equilibrium when most of the reactant has been converted to product, whereas a small $K$ means very little has been converted. The magnitude of $K$ does not indicate how rapidly equilibrium is reached."
   },
   {
    "id": "predict-direction-q-versus-k",
    "kind": "skill",
    "section": "13.2",
    "name": "Predicting the direction of reaction by comparing $Q$ with $K$",
-   "why": "A reaction proceeds in whatever direction is necessary to achieve equilibrium: forward when $Q < K$, in reverse when $Q > K$, and not at all when $Q = K$.",
-   "evidence": "Figure 13.6 shows three mixtures of CO, H<sub>2</sub>O, CO<sub>2</sub> and H<sub>2</sub> at 800 °C with $K_{c}=0.640$, and Example 13.3 finds $Q_{c}$ = 0.040, 140 and 0.48 for three experiments."
+   "statement": "A reaction proceeds in whatever direction is necessary to achieve equilibrium: forward when $Q < K$, in reverse when $Q > K$, and not at all when $Q = K$."
   },
   {
    "id": "kp-kc-relation",
    "kind": "result",
    "section": "13.2",
    "name": "Relating $K_{P}$ and $K_{c}$, $K_{P}=K_{c}(RT)^{\\Delta n}$",
-   "why": "Since the partial pressure of an ideal gas is $P = MRT$, each pressure in $K_{P}$ is a concentration times $RT$, and the factors collect into $(RT)^{\\Delta n}$, where $\\Delta n$ is the difference in the molar amounts of product and reactant gases.",
-   "evidence": "Example 13.4 finds $K_{P}=K_{c}$ when $\\Delta n = 0$, and $K_{P}=3.0\\times10^{-5}$ from $K_{c}=0.28$ at 900 °C for CS<sub>2</sub> + 4H<sub>2</sub> ⇌ CH<sub>4</sub> + 2H<sub>2</sub>S.",
+   "statement": "Since the partial pressure of an ideal gas is $P = MRT$, each pressure in $K_{P}$ is a concentration times $RT$, and the factors collect into $(RT)^{\\Delta n}$, where $\\Delta n$ is the difference in the molar amounts of product and reactant gases.",
    "eq": "eq-kp-kc"
   },
   {
@@ -101,106 +92,121 @@
    "kind": "idea",
    "section": "13.2",
    "name": "Homogeneous and heterogeneous equilibria",
-   "why": "In a homogeneous equilibrium all reactants and products are in the same phase; in a heterogeneous equilibrium they occupy two or more phases. Because the relative concentrations of pure liquids and solids equal 1, they do not appear in $Q$ or $K$.",
-   "evidence": "For PbCl<sub>2</sub>(<em>s</em>) ⇌ Pb<sup>2+</sup>(<em>aq</em>) + 2Cl<sup>−</sup>(<em>aq</em>), $K_{c}=[\\text{Pb}^{2+}][\\text{Cl}^{-}]^{2}$, and water as a solvent is left out of the expressions for HF and NH<sub>3</sub> in water."
+   "statement": "In a homogeneous equilibrium all reactants and products are in the same phase; in a heterogeneous equilibrium they occupy two or more phases. Because the relative concentrations of pure liquids and solids equal 1, they do not appear in $Q$ or $K$."
   },
   {
    "id": "coupled-equilibria",
    "kind": "skill",
    "section": "13.2",
    "name": "Equilibrium constants of coupled equilibria",
-   "why": "Reversing an equation inverts its $K$, multiplying its coefficients by $x$ raises $K$ to the power $x$, and adding equations multiplies their $K$ values, so the $K$ of a net reaction follows from the $K$ values of the reactions that sum to it.",
-   "evidence": "Example 13.5 reverses the ammonia synthesis and triples the formation of HI to find $K_{c}=(2.0)(1.2\\times10^{5})=2.4\\times10^{5}$ for 2NH<sub>3</sub> + 3I<sub>2</sub> ⇌ N<sub>2</sub> + 6HI at 400 °C.",
+   "statement": "Reversing an equation inverts its $K$, multiplying its coefficients by $x$ raises $K$ to the power $x$, and adding equations multiplies their $K$ values, so the $K$ of a net reaction follows from the $K$ values of the reactions that sum to it.",
    "eq": "eq-coupled-k"
   },
   {
+   "id": "law-of-mass-action",
+   "kind": "axiom",
+   "section": "13.2",
+   "name": "The law of mass action",
+   "statement": "At a given temperature, the reaction quotient for a system at equilibrium is constant, whatever the initial concentrations from which equilibrium was approached."
+  },
+  {
+   "id": "homogeneous-equilibrium",
+   "kind": "definition",
+   "section": "13.2",
+   "name": "Homogeneous equilibrium",
+   "statement": "A homogeneous equilibrium is one in which all reactants and products, and any catalysts, are present in the same phase."
+  },
+  {
+   "id": "heterogeneous-equilibrium",
+   "kind": "definition",
+   "section": "13.2",
+   "name": "Heterogeneous equilibrium",
+   "statement": "A heterogeneous equilibrium involves reactants and products in two or more different phases."
+  },
+  {
+   "id": "coupled-equilibrium",
+   "kind": "definition",
+   "section": "13.2",
+   "name": "Coupled equilibria",
+   "statement": "Coupled equilibria are two or more equilibrium reactions that have in common one or more reactant or product species."
+  },
+  {
    "id": "le-chateliers-principle",
-   "kind": "idea",
+   "kind": "axiom",
    "section": "13.3",
    "name": "Le Châtelier’s principle",
-   "why": "A change in conditions that affects the forward and reverse rates differently (a stress) leaves the rates unequal, and the system experiences a net reaction in the direction of greater rate (a shift) that re-establishes equilibrium.",
-   "evidence": "Changes in concentration and temperature are the two stresses that can shift an equilibrium, since they are what the rate law and the Arrhenius equation say affect rates."
+   "statement": "A change in conditions that affects the forward and reverse rates differently (a stress) leaves the rates unequal, and the system experiences a net reaction in the direction of greater rate (a shift) that re-establishes equilibrium."
   },
   {
    "id": "concentration-stress",
-   "kind": "idea",
+   "kind": "result",
    "section": "13.3",
    "name": "A change in concentration shifts an equilibrium without changing $K$",
-   "why": "Adding reactant or removing product makes $Q_{c} < K_{c}$ and the equilibrium shifts right; removing reactant or adding product makes $Q_{c} > K_{c}$ and it shifts left. The new composition differs, but the value of the equilibrium constant is the same after the stress as before.",
-   "evidence": "For H<sub>2</sub> + I<sub>2</sub> ⇌ 2HI with $K_{c}=50.0$ at 400 °C, adding H<sub>2</sub> consumes I<sub>2</sub> and produces HI as equilibrium is re-established."
+   "statement": "Adding reactant or removing product makes $Q_{c} < K_{c}$ and the equilibrium shifts right; removing reactant or adding product makes $Q_{c} > K_{c}$ and it shifts left. The new composition differs, but the value of the equilibrium constant is the same after the stress as before."
   },
   {
    "id": "volume-stress",
-   "kind": "idea",
+   "kind": "result",
    "section": "13.3",
    "name": "A change in volume shifts a gas equilibrium toward fewer or more moles of gas",
-   "why": "Changing the volume changes every partial pressure by the same factor. If the reactant and product gases have equal total molar amounts, $Q_{P}$ is unchanged and there is no shift; otherwise decreasing the volume shifts the equilibrium toward the side with fewer moles of gas.",
-   "evidence": "Compressing by a factor of 3 leaves $Q_{P}$ unchanged for H<sub>2</sub> + I<sub>2</sub> ⇌ 2HI but makes $Q_{P}{}'=3Q_{P}>K_{P}$ for 2NO<sub>2</sub> ⇌ 2NO + O<sub>2</sub>, which shifts left."
+   "statement": "Changing the volume changes every partial pressure by the same factor. If the reactant and product gases have equal total molar amounts, $Q_{P}$ is unchanged and there is no shift; otherwise decreasing the volume shifts the equilibrium toward the side with fewer moles of gas."
   },
   {
    "id": "temperature-changes-k",
-   "kind": "idea",
+   "kind": "result",
    "section": "13.3",
    "name": "A change in temperature changes $K$",
-   "why": "For an elementary reaction $K_{c}=k_{f}/k_{r}$, and the rate constants vary with temperature, so $K$ varies too. Treating heat as a reactant of an endothermic reaction and a product of an exothermic one predicts the shift: heating shifts an endothermic equilibrium right and an exothermic one left.",
-   "evidence": "For N<sub>2</sub>O<sub>4</sub> ⇌ 2NO<sub>2</sub> with Δ<em>H</em> = +57.20 kJ, raising the temperature shifts the equilibrium to the right.",
+   "statement": "For an elementary reaction $K_{c}=k_{f}/k_{r}$, and the rate constants vary with temperature, so $K$ varies too. Treating heat as a reactant of an endothermic reaction and a product of an exothermic one predicts the shift: heating shifts an endothermic equilibrium right and an exothermic one left.",
    "eq": "eq-k-from-rate-constants"
   },
   {
    "id": "catalyst-and-equilibrium",
-   "kind": "idea",
+   "kind": "result",
    "section": "13.3",
    "name": "A catalyst does not change the equilibrium constant",
-   "why": "A catalyst lowers the activation energies of both the forward and the reverse reactions, so both are accelerated and equilibrium is reached more quickly, but without a change in the equilibrium constant.",
-   "evidence": "The reaction diagrams of Figure 13.8 show the lowered transition state of the catalyzed path above unchanged reactant and product energies."
+   "statement": "A catalyst lowers the activation energies of both the forward and the reverse reactions, so both are accelerated and equilibrium is reached more quickly, but without a change in the equilibrium constant."
   },
   {
    "id": "predict-equilibrium-shift",
    "kind": "skill",
    "section": "13.3",
    "name": "Predicting the shift of a stressed equilibrium",
-   "why": "Given a stress (a species added or removed, a change in volume or temperature, a catalyst), Le Châtelier’s principle predicts the direction of the shift and how each concentration changes as equilibrium is re-established.",
-   "evidence": "The Haber-Bosch process of Figure 13.9 uses high pressures, continual removal of ammonia and a catalyst at 400–500 °C to favor the exothermic formation of NH<sub>3</sub>."
+   "statement": "Given a stress (a species added or removed, a change in volume or temperature, a catalyst), Le Châtelier’s principle predicts the direction of the shift and how each concentration changes as equilibrium is re-established."
   },
   {
    "id": "ice-change-terms",
    "kind": "skill",
    "section": "13.4",
    "name": "Relating the changes in concentration by the stoichiometry",
-   "why": "Whatever the initial composition, the changes in the concentrations of the species in an equilibrium are related by the reaction stoichiometry, so all of them can be written as multiples of one unknown, $x$.",
-   "evidence": "For 2NH<sub>3</sub> ⇌ N<sub>2</sub> + 3H<sub>2</sub>, if [N<sub>2</sub>] increases by $x$, then [H<sub>2</sub>] increases by $3x$ and [NH<sub>3</sub>] decreases by $2x$; Example 13.6 completes the change terms for three reactions."
+   "statement": "Whatever the initial composition, the changes in the concentrations of the species in an equilibrium are related by the reaction stoichiometry, so all of them can be written as multiples of one unknown, $x$."
   },
   {
    "id": "k-from-ice-table",
    "kind": "skill",
    "section": "13.4",
    "name": "Calculating an equilibrium constant with an ICE table",
-   "why": "Collecting the initial concentrations, their changes and the equilibrium concentrations in an ICE table derives every equilibrium concentration from the data given, and substituting them into the $K$ expression gives the equilibrium constant.",
-   "evidence": "Example 13.7 finds $x = 3.39\\times10^{-4}$ M from the equilibrium concentration of I<sub>2</sub> and $K_{c}=776$ for I<sub>2</sub> + I<sup>−</sup> ⇌ I<sub>3</sub><sup>−</sup>."
+   "statement": "Collecting the initial concentrations, their changes and the equilibrium concentrations in an ICE table derives every equilibrium concentration from the data given, and substituting them into the $K$ expression gives the equilibrium constant."
   },
   {
    "id": "missing-equilibrium-concentration",
    "kind": "skill",
    "section": "13.4",
    "name": "Calculating a missing equilibrium concentration",
-   "why": "When the equilibrium constant and all but one equilibrium concentration are known, the $K$ expression can be rearranged and solved for the missing concentration.",
-   "evidence": "Example 13.8 finds [NO] = 3.6 × 10<sup>−4</sup> M in air at 2000 °C from $K_{c}=4.1\\times10^{-4}$, [N<sub>2</sub>] = 0.036 M and [O<sub>2</sub>] = 0.0089 M."
+   "statement": "When the equilibrium constant and all but one equilibrium concentration are known, the $K$ expression can be rearranged and solved for the missing concentration."
   },
   {
    "id": "equilibrium-from-initial-concentrations",
    "kind": "skill",
    "section": "13.4",
    "name": "Calculating equilibrium concentrations from initial concentrations",
-   "why": "Four steps find the equilibrium composition from initial concentrations and $K$: identify the direction of reaction, develop an ICE table, solve for the change (by the quadratic formula where needed, keeping the physically meaningful root), and confirm the result by recalculating $K$.",
-   "evidence": "Example 13.9 solves $x^{2}+0.0211x-0.0211=0$ for PCl<sub>5</sub> ⇌ PCl<sub>3</sub> + Cl<sub>2</sub> starting from 1.00 M PCl<sub>5</sub>, giving $x$ = 0.135 M."
+   "statement": "Four steps find the equilibrium composition from initial concentrations and $K$: identify the direction of reaction, develop an ICE table, solve for the change (by the quadratic formula where needed, keeping the physically meaningful root), and confirm the result by recalculating $K$."
   },
   {
    "id": "small-x-approximation",
    "kind": "skill",
    "section": "13.4",
    "name": "Simplifying the algebra when the change is small",
-   "why": "When $K$ is small, the change in concentration may be much less than the initial concentration, so the initial concentration minus $x$ can be approximated by the initial concentration. The result must be checked, and the calculation repeated without the approximation if $x$ is not negligible.",
-   "evidence": "Example 13.10 finds $x = 8.6\\times10^{-6}$ M for 0.15 M HCN with $K_{c}=4.9\\times10^{-10}$, which is indeed much less than 0.15 M."
+   "statement": "When $K$ is small, the change in concentration may be much less than the initial concentration, so the initial concentration minus $x$ can be approximated by the initial concentration. The result must be checked, and the calculation repeated without the approximation if $x$ is not negligible."
   }
  ],
  "concept_prereqs": [
@@ -256,6 +262,15 @@
   {"concept": "equilibrium-from-initial-concentrations", "prereq": "predict-direction-q-versus-k"},
   {"concept": "equilibrium-from-initial-concentrations", "prereq": "missing-equilibrium-concentration"},
   {"concept": "small-x-approximation", "prereq": "equilibrium-from-initial-concentrations"},
-  {"concept": "small-x-approximation", "prereq": "magnitude-of-k"}
+  {"concept": "small-x-approximation", "prereq": "magnitude-of-k"},
+  {"concept": "law-of-mass-action", "prereq": "reaction-quotient"},
+  {"concept": "law-of-mass-action", "prereq": "chemical-equilibrium"},
+  {"concept": "homogeneous-equilibrium", "prereq": "chemical-equilibrium"},
+  {"concept": "heterogeneous-equilibrium", "prereq": "chemical-equilibrium"},
+  {"concept": "coupled-equilibrium", "prereq": "chemical-equilibrium"},
+  {"concept": "equilibrium-constant", "prereq": "law-of-mass-action"},
+  {"concept": "homogeneous-and-heterogeneous-equilibria", "prereq": "homogeneous-equilibrium"},
+  {"concept": "homogeneous-and-heterogeneous-equilibria", "prereq": "heterogeneous-equilibrium"},
+  {"concept": "coupled-equilibria", "prereq": "coupled-equilibrium"}
  ]
 }

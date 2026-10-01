@@ -52,6 +52,8 @@
   { "span": "surface-tension", "concept": "cohesive-and-adhesive-forces", "verb": "introduces" },
   { "span": "surface-tension", "concept": "surface-tension", "verb": "introduces" },
   { "span": "surface-tension", "concept": "hydrogen-bonding", "verb": "uses" },
+  { "span": "surface-tension", "concept": "cohesive-force", "verb": "introduces" },
+  { "span": "surface-tension", "concept": "adhesive-force", "verb": "introduces" },
   { "span": "adhesion", "concept": "cohesive-and-adhesive-forces", "verb": "reinforces" },
   { "span": "capillary", "concept": "capillary-action", "verb": "introduces" },
   { "span": "capillary", "concept": "cohesive-and-adhesive-forces", "verb": "uses" },

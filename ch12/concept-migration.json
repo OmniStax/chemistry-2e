@@ -1,0 +1,342 @@
+{
+  "chapter": "ch12",
+  "kinds": {
+    "reaction-rate": "definition",
+    "average-instantaneous-initial-rate": "definition",
+    "rate-from-concentration-data": "skill",
+    "relative-reaction-rates": "result",
+    "write-relative-rate-expressions": "skill",
+    "chemical-nature-and-rate": "idea",
+    "surface-area-and-rate": "idea",
+    "temperature-and-rate": "idea",
+    "concentration-and-rate": "idea",
+    "catalyst": "definition",
+    "rate-law": "definition",
+    "reaction-order": "definition",
+    "rate-constant": "definition",
+    "rate-laws-are-experimental": "idea",
+    "method-of-initial-rates": "skill",
+    "rate-constant-units": "result",
+    "rate-from-rate-law": "skill",
+    "integrated-rate-laws": "definition",
+    "first-order-integrated-rate-law": "result",
+    "second-order-integrated-rate-law": "result",
+    "zero-order-integrated-rate-law": "result",
+    "order-from-linear-plots": "skill",
+    "half-life": "definition",
+    "half-life-by-order": "result",
+    "integrated-rate-law-calculations": "skill",
+    "collision-theory": "idea",
+    "collision-orientation": "idea",
+    "activation-energy": "definition",
+    "reaction-diagram": "skill",
+    "energy-distribution-and-rate": "idea",
+    "arrhenius-equation": "axiom",
+    "activation-energy-from-rate-constants": "skill",
+    "reaction-mechanism": "definition",
+    "molecularity": "definition",
+    "elementary-rate-laws": "result",
+    "rate-determining-step": "definition",
+    "mechanism-consistent-with-rate-law": "idea",
+    "rate-law-from-mechanism": "skill",
+    "catalysis-lowers-activation-energy": "idea",
+    "catalyzed-reaction-diagrams": "skill",
+    "homogeneous-catalysis": "definition",
+    "heterogeneous-catalysis": "definition",
+    "enzymes": "idea"
+  },
+  "statements": {
+    "catalyst": "A catalyst is a substance that increases the rate of a reaction without itself being consumed by the reaction."
+  },
+  "new": [
+    {
+      "id": "average-rate",
+      "kind": "definition",
+      "section": "12.1",
+      "name": "Average rate",
+      "statement": "The average rate of a reaction is the change in the amount or concentration of a reactant or product divided by the time interval over which it was measured.",
+      "introduces": null,
+      "prereqs": [
+        "reaction-rate",
+        "time"
+      ]
+    },
+    {
+      "id": "instantaneous-rate",
+      "kind": "definition",
+      "section": "12.1",
+      "name": "Instantaneous rate",
+      "statement": "The instantaneous rate of a reaction is its rate at one instant, the slope of the line tangent to the graph of concentration against time at that instant.",
+      "introduces": null,
+      "prereqs": [
+        "average-rate"
+      ]
+    },
+    {
+      "id": "initial-rate",
+      "kind": "definition",
+      "section": "12.1",
+      "name": "Initial rate",
+      "statement": "The initial rate of a reaction is its instantaneous rate at t = 0 s, immediately after the reaction has begun.",
+      "introduces": null,
+      "prereqs": [
+        "instantaneous-rate"
+      ]
+    },
+    {
+      "id": "rate-expression",
+      "kind": "definition",
+      "section": "12.1",
+      "name": "Rate expression",
+      "statement": "A rate expression is a mathematical representation that defines the rate of a reaction as the change in the amount, concentration or pressure of a reactant or product per unit time.",
+      "introduces": null,
+      "prereqs": [
+        "reaction-rate"
+      ]
+    },
+    {
+      "id": "overall-reaction-order",
+      "kind": "definition",
+      "section": "12.3",
+      "name": "Overall reaction order",
+      "statement": "The overall reaction order is the sum of the reaction orders of all the substances that appear in the rate law.",
+      "introduces": null,
+      "prereqs": [
+        "reaction-order"
+      ]
+    },
+    {
+      "id": "initial-rates-method",
+      "kind": "idea",
+      "section": "12.3",
+      "name": "The method of initial rates",
+      "statement": "The method of initial rates is a common experimental approach to determining a rate law: the initial rate of a reaction is measured in trials with varying initial concentrations of its reactants.",
+      "introduces": null,
+      "prereqs": [
+        "initial-rate",
+        "rate-law"
+      ]
+    },
+    {
+      "id": "activated-complex",
+      "kind": "definition",
+      "section": "12.5",
+      "name": "Activated complex",
+      "statement": "An activated complex, or transition state, is the unstable combination of reactant species formed during a reaction at the highest energy along its path.",
+      "introduces": null,
+      "prereqs": [
+        "collision-theory"
+      ]
+    },
+    {
+      "id": "frequency-factor",
+      "kind": "definition",
+      "section": "12.5",
+      "name": "Frequency factor, $A$",
+      "statement": "The frequency factor is the proportionality constant in the Arrhenius equation, related to the relative number of collisions that have an orientation capable of leading to product formation.",
+      "introduces": null,
+      "prereqs": [
+        "collision-orientation"
+      ]
+    },
+    {
+      "id": "reaction-energy-diagram",
+      "kind": "definition",
+      "section": "12.5",
+      "name": "Reaction diagram",
+      "statement": "A reaction diagram is a graph used in chemical kinetics to show how the energy of a reacting system changes as the reaction proceeds from reactants to products.",
+      "introduces": null,
+      "prereqs": [
+        "activation-energy",
+        "enthalpy-change"
+      ]
+    },
+    {
+      "id": "elementary-reaction",
+      "kind": "definition",
+      "section": "12.6",
+      "name": "Elementary reaction",
+      "statement": "An elementary reaction is a reaction that takes place in a single step, precisely as depicted in its chemical equation.",
+      "introduces": null,
+      "prereqs": [
+        "chemical-equation"
+      ]
+    },
+    {
+      "id": "reaction-intermediate",
+      "kind": "definition",
+      "section": "12.6",
+      "name": "Intermediate",
+      "statement": "An intermediate is a species produced in one step of a reaction mechanism and consumed in a later step.",
+      "introduces": null,
+      "prereqs": [
+        "reaction-mechanism"
+      ]
+    },
+    {
+      "id": "unimolecular-reaction",
+      "kind": "definition",
+      "section": "12.6",
+      "name": "Unimolecular reaction",
+      "statement": "A unimolecular reaction is an elementary reaction involving a single reactant entity.",
+      "introduces": null,
+      "prereqs": [
+        "molecularity"
+      ]
+    },
+    {
+      "id": "bimolecular-reaction",
+      "kind": "definition",
+      "section": "12.6",
+      "name": "Bimolecular reaction",
+      "statement": "A bimolecular reaction is an elementary reaction involving two reactant entities.",
+      "introduces": null,
+      "prereqs": [
+        "molecularity"
+      ]
+    },
+    {
+      "id": "termolecular-reaction",
+      "kind": "definition",
+      "section": "12.6",
+      "name": "Termolecular reaction",
+      "statement": "A termolecular reaction is an elementary reaction involving three reactant entities.",
+      "introduces": null,
+      "prereqs": [
+        "molecularity"
+      ]
+    }
+  ],
+  "glossary": {
+    "12.1/average rate": "average-rate",
+    "12.1/initial rate": "initial-rate",
+    "12.1/instantaneous rate": "instantaneous-rate",
+    "12.1/rate of reaction": "reaction-rate",
+    "12.1/rate expression": "rate-expression",
+    "12.2/catalyst": "catalyst",
+    "12.3/method of initial rates": "initial-rates-method",
+    "12.3/overall reaction order": "overall-reaction-order",
+    "12.3/rate constant": "rate-constant",
+    "12.3/rate law": "rate-law",
+    "12.3/reaction order": "reaction-order",
+    "12.4/half-life of a reaction": "half-life",
+    "12.4/integrated rate law": "integrated-rate-laws",
+    "12.5/activated complex": "activated-complex",
+    "12.5/activation energy": "activation-energy",
+    "12.5/Arrhenius equation": "arrhenius-equation",
+    "12.5/collision theory": "collision-theory",
+    "12.5/frequency factor": "frequency-factor",
+    "12.5/reaction diagram": "reaction-energy-diagram",
+    "12.6/bimolecular reaction": "bimolecular-reaction",
+    "12.6/elementary reaction": "elementary-reaction",
+    "12.6/intermediate": "reaction-intermediate",
+    "12.6/molecularity": "molecularity",
+    "12.6/rate-determining step": "rate-determining-step",
+    "12.6/reaction mechanism": "reaction-mechanism",
+    "12.6/termolecular reaction": "termolecular-reaction",
+    "12.6/unimolecular reaction": "unimolecular-reaction",
+    "12.7/heterogeneous catalyst": "heterogeneous-catalysis",
+    "12.7/homogeneous catalyst": "homogeneous-catalysis"
+  },
+  "variables": {
+    "12.1/rate": "reaction-rate",
+    "12.1/[A]": "molarity",
+    "12.1/[B]": "molarity",
+    "12.1/Δ[A]": "molarity",
+    "12.1/Δ[B]": "molarity",
+    "12.1/Δt": "time",
+    "12.3/k": "rate-constant",
+    "12.3/m_rxorder": "reaction-order",
+    "12.3/n_rxorder": "reaction-order",
+    "12.4/[A]_0": "molarity",
+    "12.4/[A]_t": "molarity",
+    "12.4/t": "time",
+    "12.4/t_half": "half-life",
+    "12.5/E_a": "activation-energy",
+    "12.5/A_freq": "frequency-factor",
+    "12.5/R": "ideal-gas-constant",
+    "12.5/T": "temperature",
+    "12.5/T_1": "temperature",
+    "12.5/T_2": "temperature",
+    "12.5/k_1": "rate-constant",
+    "12.5/k_2": "rate-constant",
+    "12.6/k_m1": "rate-constant",
+    "12.5/ΔH": "enthalpy-change"
+  },
+  "equations": {
+    "eq-relative-rates": "relative-reaction-rates",
+    "eq-rate-law": "rate-law",
+    "eq-first-order-integrated": "first-order-integrated-rate-law",
+    "eq-first-order-exponential": "first-order-integrated-rate-law",
+    "eq-second-order-integrated": "second-order-integrated-rate-law",
+    "eq-zero-order-integrated": "zero-order-integrated-rate-law",
+    "eq-half-life-first": "half-life-by-order",
+    "eq-half-life-second": "half-life-by-order",
+    "eq-half-life-zero": "half-life-by-order",
+    "eq-arrhenius": "arrhenius-equation",
+    "eq-arrhenius-linear": "arrhenius-equation",
+    "eq-arrhenius-two-point": "activation-energy-from-rate-constants"
+  },
+  "edges": [
+    [
+      "average-instantaneous-initial-rate",
+      "average-rate"
+    ],
+    [
+      "average-instantaneous-initial-rate",
+      "instantaneous-rate"
+    ],
+    [
+      "average-instantaneous-initial-rate",
+      "initial-rate"
+    ],
+    [
+      "rate-from-concentration-data",
+      "average-rate"
+    ],
+    [
+      "relative-reaction-rates",
+      "rate-expression"
+    ],
+    [
+      "write-relative-rate-expressions",
+      "rate-expression"
+    ],
+    [
+      "method-of-initial-rates",
+      "initial-rates-method"
+    ],
+    [
+      "activation-energy",
+      "activated-complex"
+    ],
+    [
+      "arrhenius-equation",
+      "frequency-factor"
+    ],
+    [
+      "reaction-diagram",
+      "reaction-energy-diagram"
+    ],
+    [
+      "catalyzed-reaction-diagrams",
+      "reaction-energy-diagram"
+    ],
+    [
+      "reaction-mechanism",
+      "elementary-reaction"
+    ],
+    [
+      "molecularity",
+      "elementary-reaction"
+    ],
+    [
+      "elementary-rate-laws",
+      "elementary-reaction"
+    ],
+    [
+      "rate-law-from-mechanism",
+      "reaction-intermediate"
+    ]
+  ]
+}

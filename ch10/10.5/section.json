@@ -38,68 +38,131 @@
  ],
  "coverage": [
   { "span": "crystalline-amorphous", "concept": "crystalline-and-amorphous-solids", "verb": "introduces" },
+  { "span": "crystalline-amorphous", "concept": "crystalline-solid", "verb": "introduces" },
+  { "span": "crystalline-amorphous", "concept": "amorphous-solid", "verb": "introduces" },
   { "span": "ionic-solids", "concept": "types-of-crystalline-solids", "verb": "introduces" },
+  { "span": "ionic-solids", "concept": "ionic-solid", "verb": "introduces" },
   { "span": "metallic-solids", "concept": "types-of-crystalline-solids", "verb": "uses" },
+  { "span": "metallic-solids", "concept": "metallic-solid", "verb": "introduces" },
   { "span": "network-solids", "concept": "types-of-crystalline-solids", "verb": "uses" },
+  { "span": "network-solids", "concept": "covalent-network-solid", "verb": "introduces" },
   { "span": "molecular-solids", "concept": "types-of-crystalline-solids", "verb": "uses" },
+  { "span": "molecular-solids", "concept": "molecular-solid", "verb": "introduces" },
   { "span": "properties", "concept": "classify-crystalline-solid", "verb": "introduces" },
   { "span": "properties", "concept": "crystalline-and-amorphous-solids", "verb": "reinforces" },
   { "span": "properties", "concept": "types-of-crystalline-solids", "verb": "reinforces" },
-  { "span": "defects", "concept": "crystal-defects", "verb": "introduces" }
+  { "span": "defects", "concept": "crystal-defects", "verb": "introduces" },
+  { "span": "defects", "concept": "vacancy", "verb": "introduces" },
+  { "span": "defects", "concept": "interstitial-sites", "verb": "introduces" }
  ],
  "exercises": [
   {
-   "id": "e1", "source_id": "fs-idp61090560", "kind": "exercise", "bloom": "Understand", "place": { "at": "end" }, "cite": "crystalline-amorphous",
+   "id": "e1",
+   "source_id": "fs-idp61090560",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "crystalline-amorphous",
    "prompt": "What types of liquids typically form amorphous solids?",
    "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: reread the paragraph after Figure 10.37 + 10.38. An amorphous solid forms when a liquid freezes before its particles can arrange themselves in an orderly pattern, so ask which kinds of liquid have particles that cannot easily move into place as they cool, and look for the example of candle wax." }
   },
   {
-   "id": "e2", "source_id": "fs-idm10952384", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "molecular-solids",
+   "id": "e2",
+   "source_id": "fs-idm10952384",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "molecular-solids",
    "prompt": "At very low temperatures oxygen, O<sub>2</sub>, freezes and forms a crystalline solid. Which best describes these crystals?",
    "answer": { "type": "choice", "generated_by": "source", "options": ["ionic", "covalent network", "metallic", "amorphous", "molecular crystals"], "correct": 4, "hint": "Decide what particles solid oxygen is built from: ions, metal atoms, a network of bonded atoms, or separate molecules.", "solution": "(e) molecular crystals" }
   },
   {
-   "id": "e3", "source_id": "fs-idp95742064", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "properties",
+   "id": "e3",
+   "source_id": "fs-idp95742064",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "properties",
    "prompt": "As it cools, olive oil slowly solidifies and forms a solid over a range of temperatures. Which best describes the solid?<br>(a) ionic<br>(b) covalent network<br>(c) metallic<br>(d) amorphous<br>(e) molecular crystals",
    "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: the section contrasts the precise melting temperature of a crystalline solid with the gradual softening of an amorphous one. Ask which behavior olive oil shows as it solidifies over a range of temperatures, and which of the five choices that behavior points to." }
   },
   {
-   "id": "e4", "source_id": "fs-idp91522240", "kind": "exercise", "bloom": "Understand", "place": { "at": "end" }, "cite": "properties",
+   "id": "e4",
+   "source_id": "fs-idp91522240",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "properties",
    "prompt": "Explain why ice, which is a crystalline solid, has a melting temperature of 0 °C, whereas butter, which is an amorphous solid, softens over a range of temperatures.",
    "answer": { "type": "open", "generated_by": "source", "solution": "Ice has a crystalline structure stabilized by hydrogen bonding. These intermolecular forces are of comparable strength and thus require the same amount of energy to overcome. As a result, ice melts at a single temperature and not over a range of temperatures. The various, very large molecules that compose butter experience varied van der Waals attractions of various strengths that are overcome at various temperatures, and so the melting process occurs over a wide temperature range." }
   },
   {
-   "id": "e5", "source_id": "fs-idm41685552", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "properties",
+   "id": "e5",
+   "source_id": "fs-idm41685552",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "properties",
    "prompt": "Identify the type of crystalline solid (metallic, network covalent, ionic, or molecular) formed by each of the following substances:<br>(a) SiO<sub>2</sub><br>(b) KCl<br>(c) Cu<br>(d) CO<sub>2</sub><br>(e) C (diamond)<br>(f) BaSO<sub>4</sub><br>(g) NH<sub>3</sub><br>(h) NH<sub>4</sub>F<br>(i) C<sub>2</sub>H<sub>5</sub>OH",
    "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: for each formula, decide what particles the solid is built from, using Table 10.4. A metal alone gives metal atoms; a metal with a nonmetal, or a compound containing a polyatomic ion such as ammonium or sulfate, gives ions; a small set of nonmetal atoms joined into discrete molecules gives molecules; and a few nonmetals and compounds (the section names diamond, silicon dioxide and silicon carbide) form an unbroken network of covalent bonds." }
   },
   {
-   "id": "e6", "source_id": "fs-idp150351456", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "properties",
+   "id": "e6",
+   "source_id": "fs-idp150351456",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "properties",
    "prompt": "Identify the type of crystalline solid (metallic, network covalent, ionic, or molecular) formed by each of the following substances:<br>(a) CaCl<sub>2</sub><br>(b) SiC<br>(c) N<sub>2</sub><br>(d) Fe<br>(e) C (graphite)<br>(f) CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub><br>(g) HCl<br>(h) NH<sub>4</sub>NO<sub>3</sub><br>(i) K<sub>3</sub>PO<sub>4</sub>",
    "answer": { "type": "open", "generated_by": "source", "solution": "(a) ionic; (b) covalent network; (c) molecular; (d) metallic; (e) covalent network; (f) molecular; (g) molecular; (h) ionic; (i) ionic" }
   },
   {
-   "id": "e7", "source_id": "fs-idm128882560", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "properties",
+   "id": "e7",
+   "source_id": "fs-idm128882560",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "properties",
    "prompt": "Classify each substance in the table as either a metallic, ionic, molecular, or covalent network solid:<br><table><thead><tr><th>Substance</th><th>Appearance</th><th>Melting Point</th><th>Electrical Conductivity</th><th>Solubility in Water</th></tr></thead><tbody><tr><td>X</td><td>lustrous, malleable</td><td>1500 °C</td><td>high</td><td>insoluble</td></tr><tr><td>Y</td><td>soft, yellow</td><td>113 °C</td><td>none</td><td>insoluble</td></tr><tr><td>Z</td><td>hard, white</td><td>800 °C</td><td>only if melted/dissolved</td><td>soluble</td></tr></tbody></table>",
    "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: match each row against the Properties column of Table 10.4. Luster, malleability and high conductivity point to one kind of solid; softness, a low melting point and no conductivity to another; and hardness with conduction only when melted or dissolved to a third." }
   },
   {
-   "id": "e8", "source_id": "fs-idm39063008", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "properties",
+   "id": "e8",
+   "source_id": "fs-idm39063008",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "properties",
    "prompt": "Classify each substance in the table as either a metallic, ionic, molecular, or covalent network solid:<br><table><thead><tr><th>Substance</th><th>Appearance</th><th>Melting Point</th><th>Electrical Conductivity</th><th>Solubility in Water</th></tr></thead><tbody><tr><td>X</td><td>brittle, white</td><td>800 °C</td><td>only if melted/dissolved</td><td>soluble</td></tr><tr><td>Y</td><td>shiny, malleable</td><td>1100 °C</td><td>high</td><td>insoluble</td></tr><tr><td>Z</td><td>hard, colorless</td><td>3550 °C</td><td>none</td><td>insoluble</td></tr></tbody></table>",
    "answer": { "type": "open", "generated_by": "source", "solution": "X = ionic; Y = metallic; Z = covalent network" }
   },
   {
-   "id": "e9", "source_id": "fs-idm126229856", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "properties",
+   "id": "e9",
+   "source_id": "fs-idm126229856",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "properties",
    "prompt": "Identify the following substances as ionic, metallic, covalent network, or molecular solids:<br>Substance A is malleable, ductile, conducts electricity well, and has a melting point of 1135 °C. Substance B is brittle, does not conduct electricity as a solid but does when molten, and has a melting point of 2072 °C. Substance C is very hard, does not conduct electricity, and has a melting point of 3440 °C. Substance D is soft, does not conduct electricity, and has a melting point of 185 °C.",
    "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: take each property in turn and find the row of Table 10.4 that shares it. Malleability and good conductivity belong to one kind of solid, conduction only when molten to another, great hardness with no conduction and a very high melting point to a third, and softness with a low melting point to the fourth." }
   },
   {
-   "id": "e10", "source_id": "fs-idp33413008", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "properties",
+   "id": "e10",
+   "source_id": "fs-idp33413008",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "properties",
    "prompt": "Substance A is shiny, conducts electricity well, and melts at 975 °C. Substance A is likely a(n):",
    "answer": { "type": "choice", "generated_by": "source", "options": ["ionic solid", "metallic solid", "molecular solid", "covalent network solid"], "correct": 1, "hint": "Find the row of Table 10.4 whose properties include luster and good electrical conductivity.", "solution": "(b) metallic solid" }
   },
   {
-   "id": "e11", "source_id": "fs-idp12717008", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "properties",
+   "id": "e11",
+   "source_id": "fs-idp12717008",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "properties",
    "prompt": "Substance B is hard, does not conduct electricity, and melts at 1200 °C. Substance B is likely a(n):<br>(a) ionic solid<br>(b) metallic solid<br>(c) molecular solid<br>(d) covalent network solid",
    "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: compare the three properties with the Properties column of Table 10.4. A metallic solid conducts well and a molecular solid has a low melting point, so weigh the two kinds that remain. Note that an ionic solid does not conduct as a solid either, so ask what the problem would need to say to tell the two apart, and whether a melting point of 1200 °C is high or very high." }
   }

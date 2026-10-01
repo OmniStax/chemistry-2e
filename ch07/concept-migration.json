@@ -1,0 +1,568 @@
+{
+  "chapter": "ch07",
+  "kinds": {
+    "bond-angle-and-bond-distance": "definition",
+    "vsepr-theory": "idea",
+    "electron-pair-geometry": "definition",
+    "molecular-structure-versus-electron-pair-geometry": "idea",
+    "electron-pair-repulsion-order": "result",
+    "axial-and-equatorial-positions": "definition",
+    "predict-molecular-structure": "skill",
+    "bond-dipole-moment": "definition",
+    "molecular-polarity": "skill",
+    "lewis-structure": "skill",
+    "bond-polarity": "idea",
+    "ionic-bond": "definition",
+    "ionic-lattice": "idea",
+    "predict-ion-charge": "skill",
+    "ion-electron-configuration": "skill",
+    "covalent-bond-formation": "idea",
+    "electronegativity": "definition",
+    "bond-type-from-electronegativity": "skill",
+    "lewis-symbol": "skill",
+    "octet-rule": "axiom",
+    "multiple-bonds": "definition",
+    "octet-rule-exceptions": "idea",
+    "formal-charge": "skill",
+    "formal-charge-guidelines": "skill",
+    "resonance": "idea",
+    "bond-energy": "definition",
+    "bond-strength-and-length": "result",
+    "enthalpy-from-bond-energies": "skill",
+    "lattice-energy": "definition",
+    "lattice-energy-trends": "result",
+    "born-haber-cycle": "skill"
+  },
+  "statements": {
+    "bond-angle-and-bond-distance": "The shape of a molecule is described by the distances between its nuclei and the angles between its bonds. A bond angle is the angle between two bonds that share an atom, measured in degrees, and a bond distance is the distance between the nuclei of two bonded atoms, measured in ångstroms or picometers.",
+    "electron-pair-geometry": "The electron-pair geometry is the arrangement around a central atom of all its regions of electron density, and there are only five: two regions are linear, three are trigonal planar, four are tetrahedral, five are trigonal bipyramidal and six are octahedral. A single, a double and a triple bond each count as one region.",
+    "lewis-structure": "To write a Lewis structure, count the valence electrons of the molecule or ion, draw a skeleton with single bonds, complete the octets of the outer atoms with lone pairs, place the remaining electrons on the central atom, and form multiple bonds where the central atom still lacks an octet.",
+    "lewis-symbol": "Write a Lewis symbol by surrounding the symbol of the element with one dot for each of its valence electrons. Remove dots to show a cation forming and add them to show an anion forming, so that the transfer of electrons in an ionic compound keeps the total number of electrons the same.",
+    "formal-charge": "Calculate the formal charge of an atom in a Lewis structure as the valence electrons of the free atom, less its lone pair electrons, less half its bonding electrons. The formal charges of a molecule add up to zero, and those of an ion add up to its charge.",
+    "bond-polarity": "When two bonded atoms differ in electronegativity, the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference sets the size of the bond's dipole moment."
+  },
+  "new": [
+    {
+      "id": "inert-pair-effect",
+      "kind": "idea",
+      "section": "7.1",
+      "name": "The inert pair effect",
+      "statement": "Heavy atoms of groups 13 to 15 tend to form ions in which their valence s electrons are not lost, as in Tl⁺, Sn²⁺, Pb²⁺ and Bi³⁺.",
+      "introduces": "cations",
+      "prereqs": [
+        "valence-electrons",
+        "ions-and-atomic-charge"
+      ]
+    },
+    {
+      "id": "bond-length",
+      "kind": "definition",
+      "section": "7.2",
+      "name": "Bond length",
+      "statement": "The bond length, or bond distance, is the distance between the nuclei of two bonded atoms at which the lowest potential energy is achieved.",
+      "introduces": "formation",
+      "prereqs": [
+        "covalent-bond",
+        "potential-energy",
+        "nucleus"
+      ]
+    },
+    {
+      "id": "pure-covalent-bond",
+      "kind": "definition",
+      "section": "7.2",
+      "name": "Pure covalent bond",
+      "statement": "A pure covalent bond, or nonpolar covalent bond, is a covalent bond between atoms of identical electronegativities.",
+      "introduces": "pure-polar",
+      "prereqs": [
+        "covalent-bond",
+        "electronegativity"
+      ]
+    },
+    {
+      "id": "polar-covalent-bond",
+      "kind": "definition",
+      "section": "7.2",
+      "name": "Polar covalent bond",
+      "statement": "A polar covalent bond is a covalent bond between atoms of different electronegativities, with a positive end and a negative end.",
+      "introduces": "pure-polar",
+      "prereqs": [
+        "covalent-bond",
+        "electronegativity"
+      ]
+    },
+    {
+      "id": "lewis-dot-symbol",
+      "kind": "definition",
+      "section": "7.3",
+      "name": "Lewis symbol",
+      "statement": "A Lewis symbol is the symbol for an element or monatomic ion with a dot for each of its valence electrons.",
+      "introduces": "lewis-symbols",
+      "prereqs": [
+        "valence-electrons",
+        "chemical-symbols"
+      ]
+    },
+    {
+      "id": "lewis-structure-diagram",
+      "kind": "definition",
+      "section": "7.3",
+      "name": "Lewis structure",
+      "statement": "A Lewis structure is a diagram showing the lone pairs and the bonding pairs of electrons in a molecule or an ion.",
+      "introduces": "lewis-structures",
+      "prereqs": [
+        "lewis-dot-symbol",
+        "covalent-bond",
+        "lone-pair"
+      ]
+    },
+    {
+      "id": "lone-pair",
+      "kind": "definition",
+      "section": "7.3",
+      "name": "Lone pair",
+      "statement": "A lone pair is a pair of valence electrons that is not used to form a covalent bond.",
+      "introduces": "lewis-structures",
+      "prereqs": [
+        "valence-electrons",
+        "covalent-bond"
+      ]
+    },
+    {
+      "id": "single-bond",
+      "kind": "definition",
+      "section": "7.3",
+      "name": "Single bond",
+      "statement": "A single bond is a bond in which a single pair of electrons is shared between two atoms.",
+      "introduces": "lewis-structures",
+      "prereqs": [
+        "covalent-bond"
+      ]
+    },
+    {
+      "id": "double-bond",
+      "kind": "definition",
+      "section": "7.3",
+      "name": "Double bond",
+      "statement": "A double bond is a covalent bond in which two pairs of electrons are shared between two atoms.",
+      "introduces": "multiple-bonds",
+      "prereqs": [
+        "covalent-bond"
+      ]
+    },
+    {
+      "id": "triple-bond",
+      "kind": "definition",
+      "section": "7.3",
+      "name": "Triple bond",
+      "statement": "A triple bond is a covalent bond in which three pairs of electrons are shared between two atoms.",
+      "introduces": "multiple-bonds",
+      "prereqs": [
+        "covalent-bond"
+      ]
+    },
+    {
+      "id": "free-radical",
+      "kind": "definition",
+      "section": "7.3",
+      "name": "Free radical",
+      "statement": "A free radical is a molecule that contains an odd number of electrons.",
+      "introduces": "octet-exceptions",
+      "prereqs": [
+        "valence-electrons"
+      ]
+    },
+    {
+      "id": "hypervalent-molecule",
+      "kind": "definition",
+      "section": "7.3",
+      "name": "Hypervalent molecule",
+      "statement": "A hypervalent molecule contains at least one main group element that has more than eight electrons in its valence shell.",
+      "introduces": "octet-exceptions",
+      "prereqs": [
+        "valence-shell",
+        "octet-rule"
+      ]
+    },
+    {
+      "id": "formal-charge-of-atom",
+      "kind": "definition",
+      "section": "7.4",
+      "name": "Formal charge",
+      "statement": "The formal charge of an atom is the charge it would have if the electrons of each bond were shared equally: the number of valence electrons of the neutral atom, less its lone pair electrons, less half its bonding electrons.",
+      "introduces": "calculating-formal-charge",
+      "prereqs": [
+        "lewis-structure-diagram",
+        "lone-pair",
+        "valence-electrons"
+      ]
+    },
+    {
+      "id": "molecular-structure",
+      "kind": "definition",
+      "section": "7.4",
+      "name": "Molecular structure",
+      "statement": "The molecular structure of a molecule or ion is the arrangement of its atoms, without regard to its lone pairs.",
+      "introduces": "formal-charge-structure",
+      "prereqs": [
+        "atoms-and-molecules"
+      ]
+    },
+    {
+      "id": "resonance-forms",
+      "kind": "definition",
+      "section": "7.4",
+      "name": "Resonance forms",
+      "statement": "Resonance forms are two or more Lewis structures that have the same arrangement of atoms but different arrangements of electrons.",
+      "introduces": "resonance",
+      "prereqs": [
+        "lewis-structure-diagram"
+      ]
+    },
+    {
+      "id": "resonance-hybrid",
+      "kind": "definition",
+      "section": "7.4",
+      "name": "Resonance hybrid",
+      "statement": "The resonance hybrid is the average of the resonance forms shown by the individual Lewis structures, and it is the actual distribution of electrons in the molecule.",
+      "introduces": "resonance",
+      "prereqs": [
+        "resonance-forms"
+      ]
+    },
+    {
+      "id": "born-haber-thermochemical-cycle",
+      "kind": "definition",
+      "section": "7.5",
+      "name": "Born-Haber cycle",
+      "statement": "The Born-Haber cycle is a thermochemical cycle relating the energetic steps of forming an ionic solid from its elements: sublimation of the metal, dissociation of the nonmetal, ionization of the metal atom, the electron affinity of the nonmetal atom, and the formation of the lattice.",
+      "introduces": "born-haber",
+      "prereqs": [
+        "hess-law",
+        "lattice-energy",
+        "ionization-energy",
+        "electron-affinity"
+      ]
+    },
+    {
+      "id": "bond-angle",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Bond angle",
+      "statement": "A bond angle is the angle between any two covalent bonds that share a common atom.",
+      "introduces": "bond-angles",
+      "prereqs": [
+        "covalent-bond"
+      ]
+    },
+    {
+      "id": "linear-geometry",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Linear",
+      "statement": "A linear shape has two outside groups placed on opposite sides of a central atom, 180° apart.",
+      "introduces": "geometries",
+      "prereqs": [
+        "electron-pair-geometry",
+        "bond-angle"
+      ]
+    },
+    {
+      "id": "trigonal-planar-geometry",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Trigonal planar",
+      "statement": "A trigonal planar shape has three outside groups placed in a flat triangle around a central atom, with 120° angles between them.",
+      "introduces": "geometries",
+      "prereqs": [
+        "electron-pair-geometry",
+        "bond-angle"
+      ]
+    },
+    {
+      "id": "tetrahedral-geometry",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Tetrahedral",
+      "statement": "A tetrahedral shape has four outside groups placed around a central atom at the corners of a tetrahedron, with 109.5° angles between them.",
+      "introduces": "geometries",
+      "prereqs": [
+        "electron-pair-geometry",
+        "bond-angle"
+      ]
+    },
+    {
+      "id": "trigonal-bipyramidal-geometry",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Trigonal bipyramidal",
+      "statement": "A trigonal bipyramidal shape has five outside groups placed around a central atom: three form a flat triangle with 120° angles between them, and the other two lie above and below the plane, at 90° to it.",
+      "introduces": "geometries",
+      "prereqs": [
+        "electron-pair-geometry",
+        "bond-angle"
+      ]
+    },
+    {
+      "id": "octahedral-geometry",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Octahedral",
+      "statement": "An octahedral shape has six outside groups placed around a central atom at the corners of an octahedron, with 90° angles between adjacent groups.",
+      "introduces": "geometries",
+      "prereqs": [
+        "electron-pair-geometry",
+        "bond-angle"
+      ]
+    },
+    {
+      "id": "axial-position",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Axial position",
+      "statement": "An axial position is a location in a trigonal bipyramidal geometry with another atom at a 180° angle and the equatorial positions at 90° angles.",
+      "introduces": "axial-equatorial",
+      "prereqs": [
+        "trigonal-bipyramidal-geometry"
+      ]
+    },
+    {
+      "id": "equatorial-position",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Equatorial position",
+      "statement": "An equatorial position is one of the three positions in a trigonal bipyramidal geometry with 120° angles between them; the axial positions lie 90° from them.",
+      "introduces": "axial-equatorial",
+      "prereqs": [
+        "trigonal-bipyramidal-geometry"
+      ]
+    },
+    {
+      "id": "vector",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Vector",
+      "statement": "A vector is a quantity having both magnitude and direction.",
+      "introduces": "bond-dipole",
+      "prereqs": []
+    },
+    {
+      "id": "dipole-moment",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Dipole moment",
+      "statement": "The dipole moment of a molecule describes its separation of charge, determined by the vector sum of its individual bond moments, which depends on its molecular structure.",
+      "introduces": "molecular-dipole",
+      "prereqs": [
+        "bond-dipole-moment",
+        "vector",
+        "molecular-structure"
+      ]
+    },
+    {
+      "id": "polar-molecule",
+      "kind": "definition",
+      "section": "7.6",
+      "name": "Polar molecule",
+      "statement": "A polar molecule, or dipole, is a molecule with an overall dipole moment.",
+      "introduces": "molecular-dipole",
+      "prereqs": [
+        "dipole-moment"
+      ]
+    }
+  ],
+  "glossary": {
+    "7.1/inert pair effect": "inert-pair-effect",
+    "7.1/ionic bond": "ionic-bond",
+    "7.2/bond length": "bond-length",
+    "7.2/covalent bond": "covalent-bond",
+    "7.2/electronegativity": "electronegativity",
+    "7.2/polar covalent bond": "polar-covalent-bond",
+    "7.2/pure covalent bond": "pure-covalent-bond",
+    "7.3/double bond": "double-bond",
+    "7.3/free radical": "free-radical",
+    "7.3/hypervalent molecule": "hypervalent-molecule",
+    "7.3/Lewis structure": "lewis-structure-diagram",
+    "7.3/Lewis symbol": "lewis-dot-symbol",
+    "7.3/lone pair": "lone-pair",
+    "7.3/octet rule": "octet-rule",
+    "7.3/single bond": "single-bond",
+    "7.3/triple bond": "triple-bond",
+    "7.4/formal charge": "formal-charge-of-atom",
+    "7.4/molecular structure": "molecular-structure",
+    "7.4/resonance": "resonance",
+    "7.4/resonance forms": "resonance-forms",
+    "7.4/resonance hybrid": "resonance-hybrid",
+    "7.5/bond energy": "bond-energy",
+    "7.5/Born-Haber cycle": "born-haber-thermochemical-cycle",
+    "7.5/lattice energy": "lattice-energy",
+    "7.6/axial position": "axial-position",
+    "7.6/bond angle": "bond-angle",
+    "7.6/bond distance": "bond-length",
+    "7.6/bond dipole moment": "bond-dipole-moment",
+    "7.6/dipole moment": "dipole-moment",
+    "7.6/electron-pair geometry": "electron-pair-geometry",
+    "7.6/equatorial position": "equatorial-position",
+    "7.6/linear": "linear-geometry",
+    "7.6/molecular structure": "molecular-structure",
+    "7.6/octahedral": "octahedral-geometry",
+    "7.6/polar molecule": "polar-molecule",
+    "7.6/tetrahedral": "tetrahedral-geometry",
+    "7.6/trigonal bipyramidal": "trigonal-bipyramidal-geometry",
+    "7.6/trigonal planar": "trigonal-planar-geometry",
+    "7.6/valence shell electron-pair repulsion theory (VSEPR)": "vsepr-theory",
+    "7.6/vector": "vector"
+  },
+  "variables": {
+    "7.2/EN": "electronegativity",
+    "7.2/ΔEN": "electronegativity",
+    "7.5/D_bond": "bond-energy",
+    "7.5/ΔH": "enthalpy-change",
+    "7.5/ΔH°": "enthalpy-change",
+    "7.5/ΔH_lattice": "lattice-energy",
+    "7.5/C_lattice": "lattice-energy-trends",
+    "7.5/Z_plus": "ions-and-atomic-charge",
+    "7.5/Z_minus": "ions-and-atomic-charge",
+    "7.5/R_o": "lattice-energy-trends",
+    "7.5/ΔH_f°": "standard-enthalpy-of-formation",
+    "7.5/ΔH_s°": "enthalpies-of-phase-change",
+    "7.5/IE": "ionization-energy",
+    "7.5/EA": "electron-affinity",
+    "7.6/μ": "bond-dipole-moment",
+    "7.6/Q_partial": "bond-polarity",
+    "7.6/r_bond": "bond-length"
+  },
+  "equations": {
+    "eq-formal-charge": "formal-charge-of-atom",
+    "eq-bond-energy": "bond-energy",
+    "eq-enthalpy-bond-energies": "enthalpy-from-bond-energies",
+    "eq-lattice-energy-definition": "lattice-energy",
+    "eq-lattice-energy-coulomb": "lattice-energy-trends",
+    "eq-born-haber": "born-haber-thermochemical-cycle",
+    "eq-dipole-moment": "bond-dipole-moment",
+    "eq-repulsion-order": "electron-pair-repulsion-order",
+    "eq-domain-size-order": "electron-pair-repulsion-order"
+  },
+  "edges": [
+    [
+      "covalent-bond-formation",
+      "bond-length"
+    ],
+    [
+      "bond-polarity",
+      "polar-covalent-bond"
+    ],
+    [
+      "bond-polarity",
+      "pure-covalent-bond"
+    ],
+    [
+      "bond-type-from-electronegativity",
+      "polar-covalent-bond"
+    ],
+    [
+      "bond-type-from-electronegativity",
+      "pure-covalent-bond"
+    ],
+    [
+      "lewis-symbol",
+      "lewis-dot-symbol"
+    ],
+    [
+      "lewis-structure",
+      "lewis-structure-diagram"
+    ],
+    [
+      "lewis-structure",
+      "lone-pair"
+    ],
+    [
+      "multiple-bonds",
+      "single-bond"
+    ],
+    [
+      "multiple-bonds",
+      "double-bond"
+    ],
+    [
+      "multiple-bonds",
+      "triple-bond"
+    ],
+    [
+      "octet-rule-exceptions",
+      "free-radical"
+    ],
+    [
+      "octet-rule-exceptions",
+      "hypervalent-molecule"
+    ],
+    [
+      "formal-charge",
+      "formal-charge-of-atom"
+    ],
+    [
+      "formal-charge-guidelines",
+      "formal-charge-of-atom"
+    ],
+    [
+      "resonance",
+      "resonance-forms"
+    ],
+    [
+      "resonance",
+      "resonance-hybrid"
+    ],
+    [
+      "born-haber-cycle",
+      "born-haber-thermochemical-cycle"
+    ],
+    [
+      "bond-strength-and-length",
+      "bond-length"
+    ],
+    [
+      "bond-angle-and-bond-distance",
+      "bond-angle"
+    ],
+    [
+      "bond-angle-and-bond-distance",
+      "bond-length"
+    ],
+    [
+      "axial-and-equatorial-positions",
+      "axial-position"
+    ],
+    [
+      "axial-and-equatorial-positions",
+      "equatorial-position"
+    ],
+    [
+      "predict-molecular-structure",
+      "molecular-structure"
+    ],
+    [
+      "predict-molecular-structure",
+      "lone-pair"
+    ],
+    [
+      "molecular-structure-versus-electron-pair-geometry",
+      "molecular-structure"
+    ],
+    [
+      "bond-dipole-moment",
+      "polar-covalent-bond"
+    ],
+    [
+      "bond-dipole-moment",
+      "vector"
+    ],
+    [
+      "molecular-polarity",
+      "dipole-moment"
+    ],
+    [
+      "molecular-polarity",
+      "polar-molecule"
+    ]
+  ]
+}

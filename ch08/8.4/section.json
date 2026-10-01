@@ -160,8 +160,33 @@
    "verb": "introduces"
   },
   {
+   "span": "paramagnetism",
+   "concept": "paramagnetism",
+   "verb": "introduces"
+  },
+  {
+   "span": "paramagnetism",
+   "concept": "diamagnetism",
+   "verb": "introduces"
+  },
+  {
    "span": "mo-theory",
    "concept": "molecular-orbital-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-theory",
+   "concept": "molecular-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-theory",
+   "concept": "linear-combination-of-atomic-orbitals",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-theory",
+   "concept": "homonuclear-diatomic-molecule",
    "verb": "introduces"
   },
   {
@@ -173,6 +198,16 @@
    "span": "bonding-antibonding",
    "concept": "molecular-orbital-theory",
    "verb": "uses"
+  },
+  {
+   "span": "bonding-antibonding",
+   "concept": "bonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "bonding-antibonding",
+   "concept": "antibonding-orbital",
+   "verb": "introduces"
   },
   {
    "span": "sigma-pi-mo",
@@ -183,6 +218,26 @@
    "span": "sigma-pi-mo",
    "concept": "bonding-and-antibonding-orbitals",
    "verb": "uses"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "sigma-bonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "sigma-antibonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "pi-bonding-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi-mo",
+   "concept": "pi-antibonding-orbital",
+   "verb": "introduces"
   },
   {
    "span": "ex-mo-types",
@@ -192,6 +247,11 @@
   {
    "span": "mo-diagram",
    "concept": "molecular-orbital-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "mo-diagram",
+   "concept": "molecular-orbital-energy-diagram",
    "verb": "introduces"
   },
   {

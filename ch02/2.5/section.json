@@ -56,9 +56,14 @@
    "verb": "introduces"
   },
   {
+   "span": "grouping-elements",
+   "concept": "periodic-table",
+   "verb": "introduces"
+  },
+  {
    "span": "modern-table",
    "concept": "periodic-law",
-   "verb": "introduces"
+   "verb": "reinforces"
   },
   {
    "span": "modern-table",
@@ -76,8 +81,33 @@
    "verb": "uses"
   },
   {
+   "span": "modern-table",
+   "concept": "group-of-the-periodic-table",
+   "verb": "introduces"
+  },
+  {
+   "span": "modern-table",
+   "concept": "period-of-the-periodic-table",
+   "verb": "introduces"
+  },
+  {
    "span": "metals-nonmetals",
    "concept": "metals-nonmetals-metalloids",
+   "verb": "introduces"
+  },
+  {
+   "span": "metals-nonmetals",
+   "concept": "metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "metals-nonmetals",
+   "concept": "nonmetal",
+   "verb": "introduces"
+  },
+  {
+   "span": "metals-nonmetals",
+   "concept": "metalloid",
    "verb": "introduces"
   },
   {
@@ -94,6 +124,61 @@
    "span": "element-families",
    "concept": "periods-and-groups",
    "verb": "uses"
+  },
+  {
+   "span": "element-families",
+   "concept": "main-group-element",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "transition-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "inner-transition-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "lanthanide",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "actinide",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "alkali-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "alkaline-earth-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "pnictogen",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "chalcogen",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "halogen",
+   "verb": "introduces"
+  },
+  {
+   "span": "element-families",
+   "concept": "noble-gas",
+   "verb": "introduces"
   },
   {
    "span": "bracketed-masses",

@@ -1,0 +1,466 @@
+{
+  "chapter": "ch09",
+  "kinds": {
+    "gas-pressure": "definition",
+    "pressure-unit-conversion": "skill",
+    "atmospheric-pressure-and-barometer": "idea",
+    "hydrostatic-pressure": "result",
+    "manometer-pressure": "skill",
+    "amontons-law": "axiom",
+    "charles-law": "axiom",
+    "boyles-law": "axiom",
+    "avogadro-law": "axiom",
+    "absolute-zero": "idea",
+    "ideal-gas": "idea",
+    "ideal-gas-law": "result",
+    "combined-gas-law": "result",
+    "standard-temperature-and-pressure": "definition",
+    "gas-density": "result",
+    "molar-mass-of-a-gas": "skill",
+    "daltons-law-of-partial-pressures": "axiom",
+    "mole-fraction-and-partial-pressure": "result",
+    "gas-collected-over-water": "skill",
+    "combining-volumes-of-gases": "result",
+    "gas-stoichiometry": "skill",
+    "mean-free-path": "definition",
+    "diffusion-and-effusion": "idea",
+    "grahams-law": "axiom",
+    "grahams-law-calculations": "skill",
+    "kinetic-molecular-theory": "axiom",
+    "kmt-explains-gas-laws": "idea",
+    "maxwell-boltzmann-distribution": "idea",
+    "average-kinetic-energy-and-temperature": "result",
+    "root-mean-square-speed": "result",
+    "grahams-law-from-kmt": "result",
+    "compressibility-factor": "definition",
+    "causes-of-non-ideal-behavior": "idea",
+    "conditions-for-ideal-behavior": "idea",
+    "van-der-waals-equation": "axiom"
+  },
+  "statements": {
+    "gas-pressure": "Pressure is the force exerted per unit area, P = F/A. A gas exerts pressure on the walls of its container because its molecules collide with those walls, so a small force on a small area can give a larger pressure than a large force spread over a large one.",
+    "mean-free-path": "The mean free path is the average distance a molecule travels between collisions. Gas molecules travel at hundreds of meters per second but collide billions of times a second, so the mean free path is short, and it grows as the pressure falls.",
+    "standard-temperature-and-pressure": "Standard conditions of temperature and pressure, STP, are 273.15 K (0 °C) and 1 atm (101.325 kPa), the conditions chemists agree to report the volume of a gas against. At STP one mole of any ideal gas occupies about 22.4 L.",
+    "mole-fraction-and-partial-pressure": "The partial pressure of a gas in a mixture is its mole fraction times the total pressure. The relation lets us move between the composition of a mixture and the pressures of its components without computing each pressure from the ideal gas law."
+  },
+  "new": [
+    {
+      "id": "force",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Force, $F$",
+      "statement": "A force is a push or a pull on an object. A gas pushes on the walls of its container with a force that comes from the collisions of its molecules with those walls.",
+      "introduces": "pressure",
+      "prereqs": [
+        "mass"
+      ]
+    },
+    {
+      "id": "area",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Area, $A$",
+      "statement": "The area of a surface is its extent, measured in square units such as square meters. A force spread over a larger area gives a smaller pressure.",
+      "introduces": "pressure",
+      "prereqs": [
+        "length",
+        "derived-units"
+      ]
+    },
+    {
+      "id": "acceleration-due-to-gravity",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Acceleration due to gravity, $g$",
+      "statement": "The acceleration due to gravity is the rate at which the speed of a falling object increases near the surface of the earth, about 9.8 m/s². It turns the mass of a column of fluid into the weight that presses on what lies beneath it.",
+      "introduces": "barometer",
+      "prereqs": [
+        "length",
+        "time",
+        "weight"
+      ]
+    },
+    {
+      "id": "pascal",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Pascal (Pa)",
+      "statement": "The pascal is the SI unit of pressure, a force of one newton on an area of one square meter: 1 Pa = 1 N/m².",
+      "introduces": "units",
+      "prereqs": [
+        "gas-pressure",
+        "unit",
+        "derived-units"
+      ]
+    },
+    {
+      "id": "bar-unit",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Bar",
+      "statement": "The bar is a unit of pressure equal to 100,000 Pa, close to the pressure of the atmosphere at sea level.",
+      "introduces": "units",
+      "prereqs": [
+        "pascal"
+      ]
+    },
+    {
+      "id": "atmosphere-unit",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Atmosphere (atm)",
+      "statement": "The standard atmosphere is a unit of pressure equal to 101,325 Pa, the average pressure of the atmosphere at sea level.",
+      "introduces": "units",
+      "prereqs": [
+        "pascal"
+      ]
+    },
+    {
+      "id": "torr",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Torr",
+      "statement": "The torr is a unit of pressure equal to 1/760 atm, almost exactly the pressure that supports a column of mercury 1 millimeter high.",
+      "introduces": "units",
+      "prereqs": [
+        "atmosphere-unit"
+      ]
+    },
+    {
+      "id": "pounds-per-square-inch",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Pounds per square inch (psi)",
+      "statement": "Pounds per square inch is a unit of pressure common in the United States; 1 atm is 14.7 psi.",
+      "introduces": "units",
+      "prereqs": [
+        "atmosphere-unit"
+      ]
+    },
+    {
+      "id": "barometer",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Barometer",
+      "statement": "A barometer is a device used to measure atmospheric pressure, usually by the height of the column of liquid the atmosphere supports in an inverted tube.",
+      "introduces": "barometer",
+      "prereqs": [
+        "gas-pressure",
+        "hydrostatic-pressure"
+      ]
+    },
+    {
+      "id": "manometer",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Manometer",
+      "statement": "A manometer is a device used to measure the pressure of a gas trapped in a container: a U-shaped tube of liquid whose difference in levels gives the pressure.",
+      "introduces": "manometer",
+      "prereqs": [
+        "gas-pressure",
+        "hydrostatic-pressure"
+      ]
+    },
+    {
+      "id": "ideal-gas-constant",
+      "kind": "definition",
+      "section": "9.2",
+      "name": "The ideal gas constant, $R$",
+      "statement": "The ideal gas constant R is the constant of proportionality in the ideal gas law, the same for every gas. Its value depends on the units of pressure and volume: 0.08206 L atm mol⁻¹ K⁻¹ or 8.314 L kPa mol⁻¹ K⁻¹.",
+      "introduces": "ideal-gas-law",
+      "prereqs": [
+        "ideal-gas-law"
+      ]
+    },
+    {
+      "id": "molar-volume",
+      "kind": "definition",
+      "section": "9.2",
+      "name": "Molar volume, $V_m$",
+      "statement": "The molar volume of a gas is the volume occupied by 1 mole of it at a given temperature and pressure.",
+      "introduces": "stp",
+      "prereqs": [
+        "volume",
+        "mole"
+      ]
+    },
+    {
+      "id": "standard-molar-volume",
+      "kind": "definition",
+      "section": "9.2",
+      "name": "Standard molar volume",
+      "statement": "The standard molar volume is the volume of 1 mole of gas at STP, about 22.4 L for any gas behaving ideally.",
+      "introduces": "stp",
+      "prereqs": [
+        "molar-volume",
+        "standard-temperature-and-pressure",
+        "ideal-gas-law"
+      ]
+    },
+    {
+      "id": "partial-pressure",
+      "kind": "definition",
+      "section": "9.3",
+      "name": "Partial pressure, $P_A$",
+      "statement": "The partial pressure of a gas in a mixture is the pressure that gas exerts, the pressure it would exert if it alone occupied the container.",
+      "introduces": "dalton",
+      "prereqs": [
+        "gas-pressure",
+        "mixtures"
+      ]
+    },
+    {
+      "id": "mole-fraction",
+      "kind": "definition",
+      "section": "9.3",
+      "name": "Mole fraction, $X_A = n_A/n_{Total}$",
+      "statement": "The mole fraction of a component of a mixture is its amount in moles divided by the total amount of all the components, a concentration unit that carries no units of its own.",
+      "introduces": "dalton",
+      "prereqs": [
+        "mole",
+        "mixtures",
+        "concentration"
+      ]
+    },
+    {
+      "id": "vapor-pressure-of-water",
+      "kind": "definition",
+      "section": "9.3",
+      "name": "Vapor pressure of water",
+      "statement": "The vapor pressure of water is the pressure exerted by water vapor in equilibrium with liquid water in a closed container at a specific temperature. It rises with the temperature.",
+      "introduces": "over-water",
+      "prereqs": [
+        "partial-pressure",
+        "temperature"
+      ]
+    },
+    {
+      "id": "diffusion",
+      "kind": "definition",
+      "section": "9.4",
+      "name": "Diffusion",
+      "statement": "Diffusion is the movement of atoms or molecules from a region of relatively high concentration to one of relatively low concentration, caused by their random motion.",
+      "introduces": "diffusion",
+      "prereqs": [
+        "concentration",
+        "atoms-and-molecules"
+      ]
+    },
+    {
+      "id": "effusion",
+      "kind": "definition",
+      "section": "9.4",
+      "name": "Effusion",
+      "statement": "Effusion is the escape of gaseous atoms or molecules from a container into a vacuum through very small openings.",
+      "introduces": "diffusion",
+      "prereqs": [
+        "atoms-and-molecules",
+        "gas-pressure"
+      ]
+    },
+    {
+      "id": "rate-of-diffusion",
+      "kind": "definition",
+      "section": "9.4",
+      "name": "Rate of diffusion",
+      "statement": "The rate of diffusion is the amount of gas passing through a given area in a unit of time.",
+      "introduces": "diffusion",
+      "prereqs": [
+        "diffusion",
+        "area",
+        "time"
+      ]
+    },
+    {
+      "id": "speed",
+      "kind": "definition",
+      "section": "9.5",
+      "name": "Speed, $u$",
+      "statement": "The speed of a particle is the distance it travels divided by the time it takes. The molecules of a gas move at a wide range of speeds.",
+      "introduces": "kmt-part-1",
+      "prereqs": [
+        "length",
+        "time",
+        "velocity"
+      ]
+    }
+  ],
+  "glossary": {
+    "9.1/atmosphere (atm)": "atmosphere-unit",
+    "9.1/bar": "bar-unit",
+    "9.1/barometer": "barometer",
+    "9.1/hydrostatic pressure": "hydrostatic-pressure",
+    "9.1/manometer": "manometer",
+    "9.1/pascal (Pa)": "pascal",
+    "9.1/pounds per square inch (psi)": "pounds-per-square-inch",
+    "9.1/pressure": "gas-pressure",
+    "9.1/torr": "torr",
+    "9.2/absolute zero": "absolute-zero",
+    "9.2/Amontons’s law": "amontons-law",
+    "9.2/Avogadro’s law": "avogadro-law",
+    "9.2/Boyle’s law": "boyles-law",
+    "9.2/Charles’s law": "charles-law",
+    "9.2/ideal gas": "ideal-gas",
+    "9.2/ideal gas constant (R)": "ideal-gas-constant",
+    "9.2/ideal gas law": "ideal-gas-law",
+    "9.2/standard conditions of temperature and pressure (STP)": "standard-temperature-and-pressure",
+    "9.2/standard molar volume": "standard-molar-volume",
+    "9.3/Dalton’s law of partial pressures": "daltons-law-of-partial-pressures",
+    "9.3/mole fraction (X)": "mole-fraction",
+    "9.3/partial pressure": "partial-pressure",
+    "9.3/vapor pressure of water": "vapor-pressure-of-water",
+    "9.4/diffusion": "diffusion",
+    "9.4/effusion": "effusion",
+    "9.4/Graham’s law of effusion": "grahams-law",
+    "9.4/mean free path": "mean-free-path",
+    "9.4/rate of diffusion": "rate-of-diffusion",
+    "9.5/kinetic molecular theory": "kinetic-molecular-theory",
+    "9.5/root mean square speed (u_rms)": "root-mean-square-speed",
+    "9.6/compressibility factor (Z)": "compressibility-factor",
+    "9.6/van der Waals equation": "van-der-waals-equation"
+  },
+  "variables": {
+    "9.1/P": "gas-pressure",
+    "9.1/F_force": "force",
+    "9.1/A_area": "area",
+    "9.1/p_hydro": "hydrostatic-pressure",
+    "9.1/h_col": "length",
+    "9.1/ρ": "density",
+    "9.1/g_grav": "acceleration-due-to-gravity",
+    "9.2/P": "gas-pressure",
+    "9.2/P_1": "gas-pressure",
+    "9.2/P_2": "gas-pressure",
+    "9.2/V": "volume",
+    "9.2/V_1": "volume",
+    "9.2/V_2": "volume",
+    "9.2/n": "mole",
+    "9.2/n_1": "mole",
+    "9.2/n_2": "mole",
+    "9.2/T": "temperature",
+    "9.2/T_1": "temperature",
+    "9.2/T_2": "temperature",
+    "9.2/R": "ideal-gas-constant",
+    "9.3/d": "density",
+    "9.3/MM": "molar-mass",
+    "9.3/m": "mass",
+    "9.3/P_total": "gas-pressure",
+    "9.3/P_A": "partial-pressure",
+    "9.3/P_B": "partial-pressure",
+    "9.3/P_C": "partial-pressure",
+    "9.3/X_A": "mole-fraction",
+    "9.3/n_A": "mole",
+    "9.3/n_total": "mole",
+    "9.4/MM_A": "molar-mass",
+    "9.4/MM_B": "molar-mass",
+    "9.5/KE": "kinetic-energy",
+    "9.5/u": "speed",
+    "9.5/u_rms": "root-mean-square-speed",
+    "9.5/KE_avg": "kinetic-energy",
+    "9.5/MM": "molar-mass",
+    "9.6/Z_comp": "compressibility-factor",
+    "9.6/V_m": "molar-volume",
+    "9.6/a_vdw": "van-der-waals-equation",
+    "9.6/b_vdw": "van-der-waals-equation"
+  },
+  "equations": {
+    "eq-pressure": "gas-pressure",
+    "eq-hydrostatic": "hydrostatic-pressure",
+    "eq-amontons": "amontons-law",
+    "eq-charles": "charles-law",
+    "eq-boyle": "boyles-law",
+    "eq-avogadro": "avogadro-law",
+    "eq-ideal-gas": "ideal-gas-law",
+    "eq-combined-gas": "combined-gas-law",
+    "eq-gas-density": "gas-density",
+    "eq-gas-molar-mass": "molar-mass-of-a-gas",
+    "eq-dalton": "daltons-law-of-partial-pressures",
+    "eq-partial-pressure": "mole-fraction-and-partial-pressure",
+    "eq-mole-fraction": "mole-fraction",
+    "eq-rate-of-diffusion": "rate-of-diffusion",
+    "eq-graham": "grahams-law",
+    "eq-kinetic-energy": "kinetic-energy",
+    "eq-u-rms-definition": "root-mean-square-speed",
+    "eq-ke-avg": "average-kinetic-energy-and-temperature",
+    "eq-u-rms": "root-mean-square-speed",
+    "eq-compressibility": "compressibility-factor",
+    "eq-van-der-waals": "van-der-waals-equation"
+  },
+  "edges": [
+    [
+      "gas-pressure",
+      "force"
+    ],
+    [
+      "gas-pressure",
+      "area"
+    ],
+    [
+      "pressure-unit-conversion",
+      "pascal"
+    ],
+    [
+      "pressure-unit-conversion",
+      "bar-unit"
+    ],
+    [
+      "pressure-unit-conversion",
+      "atmosphere-unit"
+    ],
+    [
+      "pressure-unit-conversion",
+      "torr"
+    ],
+    [
+      "pressure-unit-conversion",
+      "pounds-per-square-inch"
+    ],
+    [
+      "hydrostatic-pressure",
+      "acceleration-due-to-gravity"
+    ],
+    [
+      "manometer-pressure",
+      "manometer"
+    ],
+    [
+      "daltons-law-of-partial-pressures",
+      "partial-pressure"
+    ],
+    [
+      "mole-fraction-and-partial-pressure",
+      "mole-fraction"
+    ],
+    [
+      "mole-fraction-and-partial-pressure",
+      "partial-pressure"
+    ],
+    [
+      "gas-collected-over-water",
+      "vapor-pressure-of-water"
+    ],
+    [
+      "diffusion-and-effusion",
+      "diffusion"
+    ],
+    [
+      "diffusion-and-effusion",
+      "effusion"
+    ],
+    [
+      "grahams-law",
+      "effusion"
+    ],
+    [
+      "grahams-law-calculations",
+      "effusion"
+    ],
+    [
+      "maxwell-boltzmann-distribution",
+      "speed"
+    ],
+    [
+      "root-mean-square-speed",
+      "speed"
+    ]
+  ]
+}

@@ -277,6 +277,11 @@
    "verb": "uses"
   },
   {
+   "span": "bond-angles",
+   "concept": "bond-angle",
+   "verb": "introduces"
+  },
+  {
    "span": "vsepr",
    "concept": "vsepr-theory",
    "verb": "introduces"
@@ -300,6 +305,31 @@
    "span": "geometries",
    "concept": "vsepr-theory",
    "verb": "uses"
+  },
+  {
+   "span": "geometries",
+   "concept": "linear-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "trigonal-planar-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "tetrahedral-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "trigonal-bipyramidal-geometry",
+   "verb": "introduces"
+  },
+  {
+   "span": "geometries",
+   "concept": "octahedral-geometry",
+   "verb": "introduces"
   },
   {
    "span": "structure-versus-geometry",
@@ -335,6 +365,16 @@
    "span": "axial-equatorial",
    "concept": "electron-pair-repulsion-order",
    "verb": "uses"
+  },
+  {
+   "span": "axial-equatorial",
+   "concept": "axial-position",
+   "verb": "introduces"
+  },
+  {
+   "span": "axial-equatorial",
+   "concept": "equatorial-position",
+   "verb": "introduces"
   },
   {
    "span": "predicting",
@@ -432,6 +472,11 @@
    "verb": "uses"
   },
   {
+   "span": "bond-dipole",
+   "concept": "vector",
+   "verb": "introduces"
+  },
+  {
    "span": "molecular-dipole",
    "concept": "molecular-polarity",
    "verb": "introduces"
@@ -445,6 +490,16 @@
    "span": "molecular-dipole",
    "concept": "predict-molecular-structure",
    "verb": "uses"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "dipole-moment",
+   "verb": "introduces"
+  },
+  {
+   "span": "molecular-dipole",
+   "concept": "polar-molecule",
+   "verb": "introduces"
   },
   {
    "span": "polar-properties",

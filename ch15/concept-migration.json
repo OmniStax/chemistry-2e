@@ -1,0 +1,170 @@
+{
+  "chapter": "ch15",
+  "kinds": {
+    "solubility-product": "definition",
+    "write-ksp-expression": "skill",
+    "ksp-from-solubility": "skill",
+    "molar-solubility-from-ksp": "skill",
+    "qsp-versus-ksp": "result",
+    "precipitation-concentration": "skill",
+    "selective-precipitation": "idea",
+    "common-ion-effect": "result",
+    "coordinate-covalent-bond": "definition",
+    "lewis-acids-and-bases": "definition",
+    "complex-ions-and-ligands": "definition",
+    "formation-constant": "definition",
+    "complex-ion-calculations": "skill",
+    "solubility-in-acid": "result",
+    "dissolution-by-complex-formation": "result",
+    "coupled-equilibrium-calculations": "skill"
+  },
+  "statements": {},
+  "new": [
+    {
+      "id": "molar-solubility",
+      "kind": "definition",
+      "section": "15.1",
+      "name": "Molar solubility",
+      "statement": "The molar solubility of a compound is its solubility expressed in moles of solute per liter of saturated solution.",
+      "introduces": null,
+      "prereqs": [
+        "solubility",
+        "molarity"
+      ]
+    },
+    {
+      "id": "complex-ion",
+      "kind": "definition",
+      "section": "15.2",
+      "name": "Complex ion",
+      "statement": "A complex ion is an ion consisting of a central atom, typically a transition metal cation, surrounded by molecules or ions called ligands.",
+      "introduces": null,
+      "prereqs": [
+        "complex-ions-and-ligands",
+        "lewis-acid"
+      ]
+    },
+    {
+      "id": "ligand",
+      "kind": "definition",
+      "section": "15.2",
+      "name": "Ligand",
+      "statement": "A ligand is a molecule or ion that surrounds the central atom of a complex ion, bonding to it by donating an electron pair as a Lewis base.",
+      "introduces": null,
+      "prereqs": [
+        "complex-ions-and-ligands",
+        "lewis-base"
+      ]
+    },
+    {
+      "id": "dissociation-constant",
+      "kind": "definition",
+      "section": "15.2",
+      "name": "Dissociation constant, $K_{\\text{d}}$",
+      "statement": "The dissociation constant, $K_{\\text{d}}$, is the equilibrium constant for the decomposition of a complex ion into its components in solution; it is the reciprocal of the formation constant.",
+      "introduces": null,
+      "prereqs": [
+        "formation-constant",
+        "equilibrium-constant"
+      ]
+    },
+    {
+      "id": "lewis-acid",
+      "kind": "definition",
+      "section": "15.2",
+      "name": "Lewis acid",
+      "statement": "A Lewis acid is any species that can accept a pair of electrons and form a coordinate covalent bond.",
+      "introduces": null,
+      "prereqs": [
+        "lewis-acids-and-bases",
+        "coordinate-covalent-bond"
+      ]
+    },
+    {
+      "id": "lewis-base",
+      "kind": "definition",
+      "section": "15.2",
+      "name": "Lewis base",
+      "statement": "A Lewis base is any species that can donate a pair of electrons and form a coordinate covalent bond.",
+      "introduces": null,
+      "prereqs": [
+        "lewis-acids-and-bases",
+        "coordinate-covalent-bond"
+      ]
+    },
+    {
+      "id": "lewis-acid-base-adduct",
+      "kind": "definition",
+      "section": "15.2",
+      "name": "Lewis acid-base adduct",
+      "statement": "A Lewis acid-base adduct is the compound or ion that contains the coordinate covalent bond formed between a Lewis acid and a Lewis base.",
+      "introduces": null,
+      "prereqs": [
+        "lewis-acid",
+        "lewis-base"
+      ]
+    }
+  ],
+  "glossary": {
+    "15.1/common ion effect": "common-ion-effect",
+    "15.1/molar solubility": "molar-solubility",
+    "15.1/selective precipitation": "selective-precipitation",
+    "15.1/solubility product constant": "solubility-product",
+    "15.2/complex ion": "complex-ion",
+    "15.2/coordinate covalent bond": "coordinate-covalent-bond",
+    "15.2/dissociation constant": "dissociation-constant",
+    "15.2/formation constant": "formation-constant",
+    "15.2/Lewis acid": "lewis-acid",
+    "15.2/Lewis acid-base adduct": "lewis-acid-base-adduct",
+    "15.2/Lewis acid-base chemistry": "lewis-acids-and-bases",
+    "15.2/Lewis base": "lewis-base",
+    "15.2/ligand": "ligand",
+    "15.3/coupled equilibria": "coupled-equilibrium"
+  },
+  "variables": {
+    "15.1/K_sp": "solubility-product",
+    "15.1/Q_sp": "reaction-quotient",
+    "15.1/[M^m+]": "molarity",
+    "15.1/[X^n-]": "molarity",
+    "15.1/p_stoich": "solubility-product",
+    "15.1/q_stoich": "solubility-product",
+    "15.1/x_ice": "ice-change-terms",
+    "15.2/K_f_form": "formation-constant",
+    "15.2/K_d": "dissociation-constant",
+    "15.3/K": "equilibrium-constant",
+    "15.3/K_a2": "acid-ionization-constant"
+  },
+  "equations": {
+    "eq-ksp": "solubility-product",
+    "eq-kf": "formation-constant",
+    "eq-kd": "dissociation-constant",
+    "eq-k-acid-coupled": "solubility-in-acid",
+    "eq-k-complex-coupled": "dissolution-by-complex-formation"
+  },
+  "edges": [
+    [
+      "molar-solubility-from-ksp",
+      "molar-solubility"
+    ],
+    [
+      "ksp-from-solubility",
+      "molar-solubility"
+    ],
+    [
+      "common-ion-effect",
+      "molar-solubility"
+    ],
+    [
+      "complex-ion-calculations",
+      "complex-ion"
+    ],
+    [
+      "complex-ion-calculations",
+      "dissociation-constant"
+    ],
+    [
+      "dissolution-by-complex-formation",
+      "complex-ion"
+    ]
+  ]
+}

@@ -226,6 +226,11 @@
    "verb": "uses"
   },
   {
+   "span": "lewis-symbols",
+   "concept": "lewis-dot-symbol",
+   "verb": "introduces"
+  },
+  {
    "span": "lewis-structures",
    "concept": "lewis-structure",
    "verb": "introduces"
@@ -239,6 +244,21 @@
    "span": "lewis-structures",
    "concept": "covalent-bond-formation",
    "verb": "uses"
+  },
+  {
+   "span": "lewis-structures",
+   "concept": "lewis-structure-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "lewis-structures",
+   "concept": "lone-pair",
+   "verb": "introduces"
+  },
+  {
+   "span": "lewis-structures",
+   "concept": "single-bond",
+   "verb": "introduces"
   },
   {
    "span": "octet-rule",
@@ -259,6 +279,16 @@
    "span": "multiple-bonds",
    "concept": "octet-rule",
    "verb": "uses"
+  },
+  {
+   "span": "multiple-bonds",
+   "concept": "double-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "multiple-bonds",
+   "concept": "triple-bond",
+   "verb": "introduces"
   },
   {
    "span": "writing-lewis",
@@ -294,6 +324,16 @@
    "span": "octet-exceptions",
    "concept": "octet-rule",
    "verb": "uses"
+  },
+  {
+   "span": "octet-exceptions",
+   "concept": "free-radical",
+   "verb": "introduces"
+  },
+  {
+   "span": "octet-exceptions",
+   "concept": "hypervalent-molecule",
+   "verb": "introduces"
   }
  ],
  "exercises": [

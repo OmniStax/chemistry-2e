@@ -63,148 +63,179 @@
  "concepts": [
   {
    "id": "intermolecular-versus-intramolecular-forces",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.1",
    "name": "Intermolecular and intramolecular forces",
-   "why": "Intramolecular forces are the bonds within a molecule that keep it together; intermolecular forces are the attractions between molecules, and they decide many of a substance’s physical properties. The intermolecular forces between small molecules are usually weak compared to the bonds within them.",
-   "evidence": "Figure 10.5 draws the two kinds of force between HCl molecules, and the text compares about 17 kJ to vaporize a mole of liquid HCl with about 430 kJ to break its H–Cl bonds."
+   "statement": "Intramolecular forces are the bonds within a molecule that keep it together; intermolecular forces are the attractions between molecules, and they decide many of a substance’s physical properties. The intermolecular forces between small molecules are usually weak compared to the bonds within them."
   },
   {
    "id": "phase-from-imf-and-kinetic-energy",
    "kind": "idea",
    "section": "10.1",
    "name": "The phase of a substance depends on its intermolecular forces and kinetic energy",
-   "why": "Intermolecular forces hold particles close together, whereas the particles’ kinetic energy works to separate them, so the phase of a substance depends on the balance between the two. Cooling a gas or compressing it lets the attractions win and it condenses; cooling a liquid far enough lets it freeze.",
-   "evidence": "Figure 10.2 sets a crystalline solid, a liquid and a gas side by side along arrows of increasing kinetic energy and increasing intermolecular forces, and the condensation on a cold glass and the liquid butane in a lighter are the book’s examples."
+   "statement": "Intermolecular forces hold particles close together, whereas the particles’ kinetic energy works to separate them, so the phase of a substance depends on the balance between the two. Cooling a gas or compressing it lets the attractions win and it condenses; cooling a liquid far enough lets it freeze."
   },
   {
    "id": "dispersion-forces",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.1",
    "name": "London dispersion forces",
-   "why": "Because the electrons of an atom or molecule are in constant motion, it can develop an instantaneous dipole, which in turn induces a dipole in a neighbor; the two temporary dipoles attract. This dispersion force is present in all condensed phases, whatever the atoms or molecules.",
-   "evidence": "Figure 10.6 illustrates the temporary dipoles of two nonpolar diatomic molecules, and the glossary defines the dispersion force, the instantaneous dipole and the induced dipole."
+   "statement": "Because the electrons of an atom or molecule are in constant motion, it can develop an instantaneous dipole, which in turn induces a dipole in a neighbor; the two temporary dipoles attract. This dispersion force is present in all condensed phases, whatever the atoms or molecules."
   },
   {
    "id": "polarizability-and-dispersion-strength",
    "kind": "result",
    "section": "10.1",
    "name": "Larger, more polarizable particles have stronger dispersion forces",
-   "why": "In a larger atom the valence electrons are farther from the nucleus and less tightly held, so the electron cloud is more easily distorted; a more polarizable particle has larger dispersion forces and a higher melting and boiling point.",
-   "evidence": "Table 10.1 lists the melting and boiling points of the halogens rising with molar mass and atomic radius, and Example 10.1 orders CH₄, SiH₄, GeH₄ and SnH₄ by boiling point."
+   "statement": "In a larger atom the valence electrons are farther from the nucleus and less tightly held, so the electron cloud is more easily distorted; a more polarizable particle has larger dispersion forces and a higher melting and boiling point."
   },
   {
    "id": "shape-and-dispersion-strength",
    "kind": "result",
    "section": "10.1",
    "name": "Molecular shape and contact area affect dispersion forces",
-   "why": "Molecules with the same formula can have different dispersion forces: an elongated molecule offers more surface area for contact with its neighbors than a compact one, and so it is held more strongly.",
-   "evidence": "Figure 10.7 compares the pentane isomers, whose boiling points fall from 36 °C for n-pentane to 9.5 °C for neopentane as the molecule becomes more compact."
+   "statement": "Molecules with the same formula can have different dispersion forces: an elongated molecule offers more surface area for contact with its neighbors than a compact one, and so it is held more strongly."
   },
   {
    "id": "dipole-dipole-attraction",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.1",
    "name": "Dipole-dipole attractions",
-   "why": "A polar molecule has a partial positive end and a partial negative end, and the positive end of one polar molecule attracts the negative end of another. These attractions add to the dispersion forces, so a polar substance boils higher than a nonpolar one of similar mass.",
-   "evidence": "Figure 10.9 shows two arrangements of HCl molecules; the text compares HCl (188 K) with F₂ (85 K), and Example 10.2 predicts that CO boils higher than N₂."
+   "statement": "A polar molecule has a partial positive end and a partial negative end, and the positive end of one polar molecule attracts the negative end of another. These attractions add to the dispersion forces, so a polar substance boils higher than a nonpolar one of similar mass."
   },
   {
    "id": "hydrogen-bonding",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.1",
    "name": "Hydrogen bonding",
-   "why": "When hydrogen is bonded to fluorine, oxygen or nitrogen, the large difference in electronegativity and the small sizes of the atoms concentrate the partial charges, and the attraction to a similar group in a nearby molecule is a particularly strong dipole-dipole attraction called a hydrogen bond. It is much weaker than a covalent bond but stronger than other intermolecular attractions.",
-   "evidence": "Figure 10.10 draws hydrogen bonds between water molecules, Figures 10.11 and 10.12 show the anomalously high boiling points of NH₃, H₂O and HF, and the DNA feature shows base pairs held by hydrogen bonds."
+   "statement": "When hydrogen is bonded to fluorine, oxygen or nitrogen, the large difference in electronegativity and the small sizes of the atoms concentrate the partial charges, and the attraction to a similar group in a nearby molecule is a particularly strong dipole-dipole attraction called a hydrogen bond. It is much weaker than a covalent bond but stronger than other intermolecular attractions."
   },
   {
    "id": "rank-by-intermolecular-forces",
    "kind": "skill",
    "section": "10.1",
    "name": "Identifying the intermolecular forces in a substance and ranking boiling points",
-   "why": "To compare substances, we identify the forces each can have from its structure: dispersion forces always, dipole-dipole attractions if the molecule is polar, and hydrogen bonding if it has an H–F, H–O or H–N group. With similar sizes, the substance with the stronger forces has the higher boiling point; with the same kind of force, the larger molecule does.",
-   "evidence": "Examples 10.1, 10.2 and 10.3 and most of the end-of-section exercises ask the reader to identify the forces present and to order compounds by boiling or melting point."
+   "statement": "To compare substances, we identify the forces each can have from its structure: dispersion forces always, dipole-dipole attractions if the molecule is polar, and hydrogen bonding if it has an H–F, H–O or H–N group. With similar sizes, the substance with the stronger forces has the higher boiling point; with the same kind of force, the larger molecule does."
+  },
+  {
+   "id": "intermolecular-force",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "Intermolecular force",
+   "statement": "An intermolecular force is a noncovalent attractive force between atoms, molecules or ions. Intermolecular forces are much weaker than the bonds within molecules, yet they decide many physical properties."
+  },
+  {
+   "id": "van-der-waals-force",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "Van der Waals force",
+   "statement": "A van der Waals force is an attractive or repulsive force between molecules, a name that covers dipole-dipole attractions, dipole-induced dipole attractions and London dispersion forces."
+  },
+  {
+   "id": "instantaneous-dipole",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "Instantaneous dipole",
+   "statement": "An instantaneous dipole is a temporary dipole that exists for a brief moment when the electrons of an atom or molecule happen to be distributed unevenly."
+  },
+  {
+   "id": "induced-dipole",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "Induced dipole",
+   "statement": "An induced dipole is a temporary dipole formed when the electrons of an atom or molecule are distorted by the instantaneous dipole of a neighboring atom or molecule."
+  },
+  {
+   "id": "polarizability",
+   "kind": "definition",
+   "section": "10.1",
+   "name": "Polarizability",
+   "statement": "Polarizability is a measure of how easily a charge can distort the electron cloud of an atom or molecule. Larger atoms and molecules, whose valence electrons are held less tightly, are more polarizable."
   },
   {
    "id": "viscosity",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.2",
    "name": "Viscosity",
-   "why": "The viscosity of a liquid is its resistance to flow. It is greater for liquids of structurally complex molecules with strong intermolecular forces, and it decreases as the temperature rises and the molecules move more rapidly.",
-   "evidence": "Table 10.2 lists viscosities from octane to honey, and the exercises ask about motor oils, molasses in winter and a warm engine."
+   "statement": "The viscosity of a liquid is its resistance to flow. It is greater for liquids of structurally complex molecules with strong intermolecular forces, and it decreases as the temperature rises and the molecules move more rapidly."
   },
   {
    "id": "cohesive-and-adhesive-forces",
    "kind": "idea",
    "section": "10.2",
    "name": "Cohesive and adhesive forces",
-   "why": "Cohesive forces are the attractions between identical molecules of a liquid; adhesive forces are the attractions between the liquid and different molecules, such as those of a surface. Their relative strength decides whether a liquid wets a surface and which way its meniscus curves.",
-   "evidence": "The text contrasts water, which wets glass and forms a concave meniscus, with mercury, which forms a convex one (Figure 10.18), and Figure 10.16 names both forces on a drop of water on a spider’s web."
+   "statement": "Cohesive forces are the attractions between identical molecules of a liquid; adhesive forces are the attractions between the liquid and different molecules, such as those of a surface. Their relative strength decides whether a liquid wets a surface and which way its meniscus curves."
   },
   {
    "id": "surface-tension",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.2",
    "name": "Surface tension",
-   "why": "Molecules at the surface of a liquid are attracted by only about half as many neighbors as molecules within it, so the liquid contracts to the smallest surface. Surface tension is the energy required to increase the surface area of a liquid; it makes a small drop spherical and lets a water strider stand on water.",
-   "evidence": "Table 10.3 lists surface tensions, with water high because of hydrogen bonding, and Figures 10.16 and 10.17 draw the unbalanced forces on surface molecules."
+   "statement": "Molecules at the surface of a liquid are attracted by only about half as many neighbors as molecules within it, so the liquid contracts to the smallest surface. Surface tension is the energy required to increase the surface area of a liquid; it makes a small drop spherical and lets a water strider stand on water."
   },
   {
    "id": "capillary-action",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.2",
    "name": "Capillary action",
-   "why": "When the adhesive forces between a liquid and a narrow tube or porous material are strong, combined with the cohesive forces within the liquid, the liquid flows upward against gravity until its weight balances the attraction. The narrower the tube, the higher the liquid climbs.",
-   "evidence": "Figures 10.19 and 10.20 show wine wicking up a paper towel and water rising and mercury falling in capillary tubes, and the feature on drawing blood relies on it."
+   "statement": "When the adhesive forces between a liquid and a narrow tube or porous material are strong, combined with the cohesive forces within the liquid, the liquid flows upward against gravity until its weight balances the attraction. The narrower the tube, the higher the liquid climbs."
   },
   {
    "id": "capillary-rise-equation",
    "kind": "result",
    "section": "10.2",
    "name": "The height of capillary rise, $h = 2T\\cos\\theta / r\\rho g$",
-   "why": "The height to which a liquid rises in a capillary tube is directly proportional to its surface tension and to the cosine of the contact angle, and inversely proportional to the radius of the tube and the density of the liquid. For water in glass the contact angle is 0°.",
-   "evidence": "The section states the equation and Example 10.4 computes a rise of 12 cm for water in a tube of 0.25 mm diameter.",
+   "statement": "The height to which a liquid rises in a capillary tube is directly proportional to its surface tension and to the cosine of the contact angle, and inversely proportional to the radius of the tube and the density of the liquid. For water in glass the contact angle is 0°.",
    "eq": "eq-capillary-rise"
+  },
+  {
+   "id": "cohesive-force",
+   "kind": "definition",
+   "section": "10.2",
+   "name": "Cohesive force",
+   "statement": "A cohesive force is a force of attraction between identical molecules, such as the molecules of a liquid."
+  },
+  {
+   "id": "adhesive-force",
+   "kind": "definition",
+   "section": "10.2",
+   "name": "Adhesive force",
+   "statement": "An adhesive force is a force of attraction between molecules of different chemical identities, such as a liquid and the surface it touches."
   },
   {
    "id": "vapor-pressure-dynamic-equilibrium",
    "kind": "idea",
    "section": "10.3",
    "name": "Vapor pressure and dynamic equilibrium",
-   "why": "In a closed container, a liquid vaporizes until the rate of condensation equals the rate of vaporization; the amounts of liquid and vapor then stop changing, though molecules continue to be exchanged. The pressure of the vapor in this dynamic equilibrium is the liquid’s vapor pressure, and it does not depend on the surface area or the size of the vessel.",
-   "evidence": "Figure 10.22 follows a manometer as the equilibrium is reached, and the glossary defines dynamic equilibrium and vapor pressure."
+   "statement": "In a closed container, a liquid vaporizes until the rate of condensation equals the rate of vaporization; the amounts of liquid and vapor then stop changing, though molecules continue to be exchanged. The pressure of the vapor in this dynamic equilibrium is the liquid’s vapor pressure, and it does not depend on the surface area or the size of the vessel."
   },
   {
    "id": "vapor-pressure-and-imf",
    "kind": "result",
    "section": "10.3",
    "name": "Stronger intermolecular forces mean a lower vapor pressure",
-   "why": "Strong intermolecular attractions impede vaporization and favor the recapture of gas molecules, so a liquid with stronger forces has a lower vapor pressure.",
-   "evidence": "Example 10.5 orders diethyl ether, ethanol, water and ethylene glycol by vapor pressure, and its Check Your Learning explains the vapor pressures of four alcohols."
+   "statement": "Strong intermolecular attractions impede vaporization and favor the recapture of gas molecules, so a liquid with stronger forces has a lower vapor pressure."
   },
   {
    "id": "vapor-pressure-and-temperature",
    "kind": "result",
    "section": "10.3",
    "name": "Vapor pressure rises with temperature",
-   "why": "At a higher temperature a greater fraction of the molecules have enough kinetic energy to escape the liquid, and those that escape move faster, so the vapor pressure increases.",
-   "evidence": "Figure 10.23 shows the distribution of kinetic energies at two temperatures against the minimum needed to escape, and Figure 10.24 plots vapor pressure against temperature for four liquids."
+   "statement": "At a higher temperature a greater fraction of the molecules have enough kinetic energy to escape the liquid, and those that escape move faster, so the vapor pressure increases."
   },
   {
    "id": "boiling-point",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.3",
    "name": "Boiling point and normal boiling point",
-   "why": "A liquid boils when its vapor pressure equals the pressure of the gas above it, so its boiling point depends on the surrounding pressure; the normal boiling point is the boiling point at 1 atm (101.3 kPa). A vapor pressure curve can be read as the boiling point at each pressure.",
-   "evidence": "Example 10.6 reads the boiling point of water in Leadville, Colorado, from Figure 10.24, and the exercises ask about cooking an egg at altitude."
+   "statement": "A liquid boils when its vapor pressure equals the pressure of the gas above it, so its boiling point depends on the surrounding pressure; the normal boiling point is the boiling point at 1 atm (101.3 kPa). A vapor pressure curve can be read as the boiling point at each pressure."
   },
   {
    "id": "clausius-clapeyron-equation",
    "kind": "result",
    "section": "10.3",
    "name": "The Clausius-Clapeyron equation",
-   "why": "The vapor pressure of a liquid depends exponentially on temperature, $P = Ae^{-\\Delta H_{\\text{vap}}/RT}$, so a plot of ln P against 1/T is a straight line whose slope is −ΔH<sub>vap</sub>/R. Temperature must be in kelvin.",
-   "evidence": "The section derives the logarithmic and two-point forms from the exponential equation, and all three are the section’s key equations.",
+   "statement": "The vapor pressure of a liquid depends exponentially on temperature, $P = Ae^{-\\Delta H_{\\text{vap}}/RT}$, so a plot of ln P against 1/T is a straight line whose slope is −ΔH<sub>vap</sub>/R. Temperature must be in kelvin.",
    "eq": "eq-clausius-clapeyron"
   },
   {
@@ -212,17 +243,15 @@
    "kind": "skill",
    "section": "10.3",
    "name": "Using the two-point Clausius-Clapeyron equation",
-   "why": "Given the vapor pressure at two temperatures, we can solve the two-point form for the enthalpy of vaporization; given one pair and the enthalpy of vaporization, we can find the vapor pressure at another temperature or the boiling point at another pressure.",
-   "evidence": "Examples 10.7 and 10.8 estimate the enthalpy of vaporization of isooctane and the boiling point of benzene in Denver, and an exercise estimates the normal boiling point of CCl₄.",
+   "statement": "Given the vapor pressure at two temperatures, we can solve the two-point form for the enthalpy of vaporization; given one pair and the enthalpy of vaporization, we can find the vapor pressure at another temperature or the boiling point at another pressure.",
    "eq": "eq-clausius-clapeyron-two-point"
   },
   {
    "id": "enthalpies-of-phase-change",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.3",
    "name": "Enthalpies of vaporization, fusion, and sublimation",
-   "why": "Melting, vaporization and sublimation are endothermic, and freezing, condensation and deposition release the same heat with the opposite sign. Melting only partly overcomes the intermolecular attractions while vaporization overcomes them completely, so ΔH<sub>fus</sub> is less than ΔH<sub>vap</sub>, and by Hess’s law ΔH<sub>sub</sub> is about their sum.",
-   "evidence": "The section gives ΔH<sub>vap</sub> = 44.01 kJ/mol and ΔH<sub>fus</sub> = 6.01 kJ/mol for water and ΔH<sub>sub</sub> = 26.1 kJ/mol for CO₂, Figure 10.28 draws the three enthalpies on one energy diagram, and Example 10.9 computes the heat carried off by sweat.",
+   "statement": "Melting, vaporization and sublimation are endothermic, and freezing, condensation and deposition release the same heat with the opposite sign. Melting only partly overcomes the intermolecular attractions while vaporization overcomes them completely, so ΔH<sub>fus</sub> is less than ΔH<sub>vap</sub>, and by Hess’s law ΔH<sub>sub</sub> is about their sum.",
    "eq": "eq-sublimation-sum"
   },
   {
@@ -230,153 +259,386 @@
    "kind": "idea",
    "section": "10.3",
    "name": "Heating and cooling curves",
-   "why": "As a substance is heated at a steady rate, its temperature rises within each phase, as q = mcΔT describes, and stays constant at each phase transition while the heat goes into overcoming intermolecular attractions. The plateaus of a heating curve are its phase transitions.",
-   "evidence": "Figure 10.26 photographs ice held at 0 °C while it melts, and Figure 10.29 draws the heating curve of water with its melting and boiling plateaus."
+   "statement": "As a substance is heated at a steady rate, its temperature rises within each phase, as q = mcΔT describes, and stays constant at each phase transition while the heat goes into overcoming intermolecular attractions. The plateaus of a heating curve are its phase transitions."
   },
   {
    "id": "heating-curve-calculations",
    "kind": "skill",
    "section": "10.3",
    "name": "Calculating the total heat to change temperature and phase",
-   "why": "The heat for a change through several phases is the sum of the steps: q = mcΔT for each warming or cooling within a phase, with the specific heat of that phase, and q = nΔH for each transition.",
-   "evidence": "Example 10.10 sums five steps to find 416 kJ to turn 135 g of ice at −15 °C into steam at 120 °C, and exercises ask the same for water and TiCl₄."
+   "statement": "The heat for a change through several phases is the sum of the steps: q = mcΔT for each warming or cooling within a phase, with the specific heat of that phase, and q = nΔH for each transition."
+  },
+  {
+   "id": "vaporization",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Vaporization",
+   "statement": "Vaporization is the change from the liquid state to the gaseous state."
+  },
+  {
+   "id": "condensation",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Condensation",
+   "statement": "Condensation is the change from the gaseous state to the liquid state."
+  },
+  {
+   "id": "melting",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Melting",
+   "statement": "Melting is the change from the solid state to the liquid state."
+  },
+  {
+   "id": "freezing",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Freezing",
+   "statement": "Freezing is the change from the liquid state to the solid state."
+  },
+  {
+   "id": "sublimation",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Sublimation",
+   "statement": "Sublimation is the change from the solid state directly to the gaseous state."
+  },
+  {
+   "id": "deposition",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Deposition",
+   "statement": "Deposition is the change from the gaseous state directly to the solid state."
+  },
+  {
+   "id": "dynamic-equilibrium",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Dynamic equilibrium",
+   "statement": "A dynamic equilibrium is the state of a system in which reciprocal processes occur at equal rates, so that nothing changes overall although both processes continue."
+  },
+  {
+   "id": "vapor-pressure",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Vapor pressure, $P$",
+   "statement": "The vapor pressure, or equilibrium vapor pressure, of a liquid or solid is the pressure exerted by its vapor in equilibrium with it at a given temperature."
+  },
+  {
+   "id": "normal-boiling-point",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Normal boiling point",
+   "statement": "The normal boiling point of a liquid is the temperature at which its vapor pressure equals 1 atm (760 torr)."
+  },
+  {
+   "id": "melting-point",
+   "kind": "definition",
+   "section": "10.3",
+   "name": "Melting point and freezing point",
+   "statement": "The melting point of a substance is the temperature at which its solid and liquid phases are in equilibrium. The same temperature is called the freezing point when it is reached by cooling the liquid."
   },
   {
    "id": "phase-diagram",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.4",
    "name": "Phase diagrams",
-   "why": "A phase diagram combines the pressure-temperature curves of the liquid-gas, solid-liquid and solid-gas equilibria of a substance. Each region is the phase that is stable under those conditions, and each curve gives a transition temperature as a function of pressure.",
-   "evidence": "Figure 10.30 labels the regions, curves and transitions of a typical phase diagram, and Figures 10.31 and 10.34 are the diagrams of water and carbon dioxide."
+   "statement": "A phase diagram combines the pressure-temperature curves of the liquid-gas, solid-liquid and solid-gas equilibria of a substance. Each region is the phase that is stable under those conditions, and each curve gives a transition temperature as a function of pressure."
   },
   {
    "id": "read-phase-diagram",
    "kind": "skill",
    "section": "10.4",
    "name": "Reading states and phase changes from a phase diagram",
-   "why": "To find the state of a substance, we locate the temperature and pressure on its phase diagram and read the region; to find the phase changes on heating at constant pressure, or on compression at constant temperature, we follow a horizontal or vertical line and note the curves it crosses.",
-   "evidence": "Examples 10.11 and 10.12 and their Check Your Learning items read the diagrams of water and CO₂, and several exercises do the same."
+   "statement": "To find the state of a substance, we locate the temperature and pressure on its phase diagram and read the region; to find the phase changes on heating at constant pressure, or on compression at constant temperature, we follow a horizontal or vertical line and note the curves it crosses."
   },
   {
    "id": "triple-point",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.4",
    "name": "The triple point",
-   "why": "The triple point is the temperature and pressure at which the solid, liquid and gas phases are in equilibrium. Below the triple-point pressure a substance cannot exist as a liquid, so it sublimes; freeze-drying and dry ice depend on this.",
-   "evidence": "Point B of Figure 10.31 is water’s triple point at 0.01 °C and 0.6 kPa, Figure 10.32 shows freeze-dried ice cream, and the text notes that CO₂’s triple point lies well above 1 atm."
+   "statement": "The triple point is the temperature and pressure at which the solid, liquid and gas phases are in equilibrium. Below the triple-point pressure a substance cannot exist as a liquid, so it sublimes; freeze-drying and dry ice depend on this."
   },
   {
    "id": "solid-liquid-curve-slope",
-   "kind": "result",
+   "kind": "idea",
    "section": "10.4",
    "name": "The slope of the solid-liquid curve",
-   "why": "For most substances the solid-liquid curve has a positive slope, so the melting point rises with pressure; for water it has a slight negative slope, so pressure lowers the melting point of ice.",
-   "evidence": "The text contrasts curve BD of water’s diagram with the positive slope for CO₂ and connects water’s behavior to the movement of glaciers (Figure 10.33)."
+   "statement": "For most substances the solid-liquid curve has a positive slope, so the melting point rises with pressure; for water it has a slight negative slope, so pressure lowers the melting point of ice."
   },
   {
    "id": "critical-point-and-supercritical-fluid",
    "kind": "idea",
    "section": "10.4",
    "name": "The critical point and supercritical fluids",
-   "why": "The liquid-gas curve ends at the critical point; above the critical temperature a gas cannot be liquefied however much pressure is applied, and the substance is a supercritical fluid whose properties are intermediate between those of a liquid and a gas.",
-   "evidence": "The section lists critical temperatures and pressures, Figure 10.35 shows CO₂ passing through its critical point, Example 10.13 explains the CO₂ fire extinguisher on a hot day, and the decaffeination feature uses supercritical CO₂."
+   "statement": "The liquid-gas curve ends at the critical point; above the critical temperature a gas cannot be liquefied however much pressure is applied, and the substance is a supercritical fluid whose properties are intermediate between those of a liquid and a gas."
+  },
+  {
+   "id": "critical-point",
+   "kind": "definition",
+   "section": "10.4",
+   "name": "Critical point",
+   "statement": "The critical point of a substance is the temperature and pressure above which its gas cannot be condensed into a liquid, the point at which its liquid-gas curve ends."
+  },
+  {
+   "id": "supercritical-fluid",
+   "kind": "definition",
+   "section": "10.4",
+   "name": "Supercritical fluid",
+   "statement": "A supercritical fluid is a substance at a temperature and pressure higher than its critical point, with properties between those of a gas and a liquid."
   },
   {
    "id": "crystalline-and-amorphous-solids",
    "kind": "idea",
    "section": "10.5",
    "name": "Crystalline and amorphous solids",
-   "why": "In a crystalline solid the particles are arranged in a definite repeating pattern, so every particle is held with the same forces and the solid melts at a precise temperature; in an amorphous solid they are arranged randomly, the attractions vary, and the solid softens over a range of temperatures.",
-   "evidence": "Figures 10.37 and 10.38 contrast the two arrangements, including quartz and fused silica, and the text explains why amorphous materials soften gradually."
+   "statement": "In a crystalline solid the particles are arranged in a definite repeating pattern, so every particle is held with the same forces and the solid melts at a precise temperature; in an amorphous solid they are arranged randomly, the attractions vary, and the solid softens over a range of temperatures."
   },
   {
    "id": "types-of-crystalline-solids",
    "kind": "idea",
    "section": "10.5",
    "name": "Ionic, metallic, covalent network, and molecular solids",
-   "why": "Crystalline solids are classified by the forces between their particles, and these forces explain their properties: ionic solids are hard, brittle and conduct only when molten; metallic solids are malleable conductors; covalent network solids are very hard with very high melting points; molecular solids are soft with low melting points.",
-   "evidence": "Figures 10.39 to 10.42 show an example of each type, and Table 10.4 summarizes their particles, attractions, properties and examples."
+   "statement": "Crystalline solids are classified by the forces between their particles, and these forces explain their properties: ionic solids are hard, brittle and conduct only when molten; metallic solids are malleable conductors; covalent network solids are very hard with very high melting points; molecular solids are soft with low melting points."
   },
   {
    "id": "classify-crystalline-solid",
    "kind": "skill",
    "section": "10.5",
    "name": "Classifying a crystalline solid",
-   "why": "From a formula we identify the particles (ions, metal atoms, network-forming atoms or molecules) and so the type of solid; from observed properties such as hardness, conductivity and melting point we reason back to the type.",
-   "evidence": "Most of the section’s exercises ask the reader to classify substances by formula or by a table of properties."
+   "statement": "From a formula we identify the particles (ions, metal atoms, network-forming atoms or molecules) and so the type of solid; from observed properties such as hardness, conductivity and melting point we reason back to the type."
   },
   {
    "id": "crystal-defects",
    "kind": "idea",
    "section": "10.5",
    "name": "Crystal defects",
-   "why": "The repeating pattern of a crystal may contain defects: vacancies where a particle is missing, particles in interstitial sites, and impurities substituted into the lattice. Defects change physical properties, and doping silicon creates them on purpose for semiconductors.",
-   "evidence": "Figure 10.45 draws a vacancy, an interstitial impurity and a substitution impurity, and the glossary defines vacancy and interstitial sites."
+   "statement": "The repeating pattern of a crystal may contain defects: vacancies where a particle is missing, particles in interstitial sites, and impurities substituted into the lattice. Defects change physical properties, and doping silicon creates them on purpose for semiconductors."
+  },
+  {
+   "id": "crystalline-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "Crystalline solid",
+   "statement": "A crystalline solid is a solid in which the particles are arranged in a definite repeating pattern."
+  },
+  {
+   "id": "amorphous-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "Amorphous solid",
+   "statement": "An amorphous solid, or noncrystalline solid, is a solid in which the particles lack an ordered internal structure."
+  },
+  {
+   "id": "ionic-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "Ionic solid",
+   "statement": "An ionic solid is a crystalline solid composed of positive and negative ions held together by strong electrostatic attractions."
+  },
+  {
+   "id": "metallic-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "Metallic solid",
+   "statement": "A metallic solid is a crystalline solid composed of metal atoms."
+  },
+  {
+   "id": "covalent-network-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "Covalent network solid",
+   "statement": "A covalent network solid is a crystalline solid whose particles are held together by covalent bonds."
+  },
+  {
+   "id": "molecular-solid",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "Molecular solid",
+   "statement": "A molecular solid is a crystalline solid composed of neutral molecules held together by intermolecular forces of attraction."
+  },
+  {
+   "id": "vacancy",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "Vacancy",
+   "statement": "A vacancy is a defect in a crystal where a position that should contain an atom or ion is empty."
+  },
+  {
+   "id": "interstitial-sites",
+   "kind": "definition",
+   "section": "10.5",
+   "name": "Interstitial sites",
+   "statement": "Interstitial sites are the spaces between the regular particle positions in an array of atoms or ions."
   },
   {
    "id": "unit-cell",
-   "kind": "idea",
+   "kind": "definition",
    "section": "10.6",
    "name": "The unit cell and the lattice systems",
-   "why": "The structure of a crystal is described by its unit cell, its simplest repeating unit, whose lattice points mark the locations of atoms or ions and which repeats in three dimensions. A unit cell is defined by three edge lengths and three angles, giving seven lattice systems and fourteen unit cells.",
-   "evidence": "Figure 10.46 repeats a cubic unit cell, and Figures 10.55 and 10.56 show the axes and angles and the fourteen unit cells."
+   "statement": "The structure of a crystal is described by its unit cell, its simplest repeating unit, whose lattice points mark the locations of atoms or ions and which repeats in three dimensions. A unit cell is defined by three edge lengths and three angles, giving seven lattice systems and fourteen unit cells."
   },
   {
    "id": "cubic-unit-cells",
-   "kind": "idea",
+   "kind": "result",
    "section": "10.6",
    "name": "Simple, body-centered, and face-centered cubic unit cells",
-   "why": "Counting one-eighth of each corner atom, one-half of each face atom and all of a body-center atom, a simple cubic cell contains one atom, a body-centered cubic cell two and a face-centered cubic cell four. Their coordination numbers are 6, 8 and 12, and they fill about 52%, 68% and 74% of the space.",
-   "evidence": "Figures 10.47 to 10.52 build the three cubic cells, count their atoms and their neighbors, and the glossary defines the coordination number."
+   "statement": "Counting one-eighth of each corner atom, one-half of each face atom and all of a body-center atom, a simple cubic cell contains one atom, a body-centered cubic cell two and a face-centered cubic cell four. Their coordination numbers are 6, 8 and 12, and they fill about 52%, 68% and 74% of the space."
   },
   {
    "id": "closest-packing",
    "kind": "idea",
    "section": "10.6",
    "name": "Hexagonal and cubic closest packing",
-   "why": "Identical spheres pack most closely in hexagonal layers, each layer sitting in the hollows of the one below. Stacking ABAB… gives hexagonal closest packing and ABCABC… gives cubic closest packing, which is the face-centered cubic structure; both have a coordination number of 12, and about two-thirds of metals crystallize this way.",
-   "evidence": "Figure 10.53 shows why cubic closest packing is face-centered cubic, and Figure 10.54 compares the two stackings."
+   "statement": "Identical spheres pack most closely in hexagonal layers, each layer sitting in the hollows of the one below. Stacking ABAB… gives hexagonal closest packing and ABCABC… gives cubic closest packing, which is the face-centered cubic structure; both have a coordination number of 12, and about two-thirds of metals crystallize this way."
   },
   {
    "id": "unit-cell-radius-and-density",
    "kind": "skill",
    "section": "10.6",
    "name": "Calculating a radius and a density from a unit cell",
-   "why": "Where the atoms touch (along an edge in a simple cubic cell, along a face diagonal in a face-centered cubic cell, along a body diagonal in a body-centered one) the edge length gives the radius; the atoms per cell times the mass of an atom, divided by the cell’s volume, gives the density. The same geometry gives ionic radii from the edge length of an ionic crystal.",
-   "evidence": "Examples 10.14 and 10.15 find the radius and density of polonium and calcium, Example 10.18 finds the radius of the chloride ion in LiCl, and several exercises ask the same for other metals and salts."
+   "statement": "Where the atoms touch (along an edge in a simple cubic cell, along a face diagonal in a face-centered cubic cell, along a body diagonal in a body-centered one) the edge length gives the radius; the atoms per cell times the mass of an atom, divided by the cell’s volume, gives the density. The same geometry gives ionic radii from the edge length of an ionic crystal."
   },
   {
    "id": "holes-in-closest-packed-arrays",
    "kind": "idea",
    "section": "10.6",
    "name": "Tetrahedral, octahedral, and cubic holes",
-   "why": "In simple ionic structures the larger anions usually form a closest-packed array and the smaller cations occupy the holes between them: tetrahedral holes, two per anion, for small cations; octahedral holes, one per anion, for larger ones; and cubic holes in a simple cubic array for the largest.",
-   "evidence": "Figures 10.57 and 10.58 show the holes and the ranges of cation-to-anion radius ratio that fill each."
+   "statement": "In simple ionic structures the larger anions usually form a closest-packed array and the smaller cations occupy the holes between them: tetrahedral holes, two per anion, for small cations; octahedral holes, one per anion, for larger ones; and cubic holes in a simple cubic array for the largest."
   },
   {
    "id": "formula-from-hole-occupancy",
    "kind": "skill",
    "section": "10.6",
    "name": "Finding a formula from the holes occupied",
-   "why": "Knowing the number of holes of each kind per anion, the fraction of them the cations occupy gives the ratio of cations to anions, and so the formula of the compound.",
-   "evidence": "Examples 10.16 and 10.17 find the formulas of zinc sulfide and aluminum oxide, and several exercises ask the same for other compounds."
+   "statement": "Knowing the number of holes of each kind per anion, the fraction of them the cations occupy gives the ratio of cations to anions, and so the formula of the compound."
   },
   {
    "id": "ionic-unit-cells",
    "kind": "idea",
    "section": "10.6",
    "name": "Unit cells of ionic compounds",
-   "why": "Ionic compounds with ions of similar size in a 1:1 ratio, such as CsCl, form a simple cubic structure; those whose ions differ more in size, such as NaCl and ZnS, form a face-centered cubic cell with the cations in octahedral or tetrahedral holes; CaF₂ is face-centered cubic with fluoride ions in all the tetrahedral holes. The contents of the cell give the formula.",
-   "evidence": "Figures 10.59 to 10.62 show the CsCl, NaCl, ZnS and CaF₂ cells and count the ions in each."
+   "statement": "Ionic compounds with ions of similar size in a 1:1 ratio, such as CsCl, form a simple cubic structure; those whose ions differ more in size, such as NaCl and ZnS, form a face-centered cubic cell with the cations in octahedral or tetrahedral holes; CaF₂ is face-centered cubic with fluoride ions in all the tetrahedral holes. The contents of the cell give the formula."
   },
   {
    "id": "bragg-equation",
    "kind": "result",
    "section": "10.6",
    "name": "X-ray diffraction and the Bragg equation, $n\\lambda = 2d\\sin\\theta$",
-   "why": "X-rays scattered by atoms in adjacent crystal planes interfere constructively only when the extra distance traveled is a whole number of wavelengths, which happens at the angle given by the Bragg equation; measuring the diffraction angles gives the spacing of the planes.",
-   "evidence": "Figures 10.63 to 10.65 show constructive and destructive interference and a diffractometer, and Example 10.19 finds the plane spacing in copper.",
+   "statement": "X-rays scattered by atoms in adjacent crystal planes interfere constructively only when the extra distance traveled is a whole number of wavelengths, which happens at the angle given by the Bragg equation; measuring the diffraction angles gives the spacing of the planes.",
    "eq": "eq-bragg"
+  },
+  {
+   "id": "space-lattice",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Space lattice",
+   "statement": "The space lattice of a crystal is the set of all points within it that have identical environments."
+  },
+  {
+   "id": "coordination-number",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Coordination number",
+   "statement": "The coordination number of an atom in a crystal is the number of atoms closest to it; in a complex, it is the number of atoms bonded to the central metal atom."
+  },
+  {
+   "id": "simple-cubic-unit-cell",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Simple cubic unit cell",
+   "statement": "A simple cubic unit cell, or primitive cubic unit cell, is a cube with lattice points only at its corners, the unit cell of the simple cubic structure."
+  },
+  {
+   "id": "simple-cubic-structure",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Simple cubic structure",
+   "statement": "The simple cubic structure is a crystalline structure whose cubic unit cell has lattice points only at the corners."
+  },
+  {
+   "id": "body-centered-cubic-unit-cell",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Body-centered cubic unit cell",
+   "statement": "A body-centered cubic unit cell is the simplest repeating unit of a body-centered cubic crystal, a cube with lattice points at each corner and at its center."
+  },
+  {
+   "id": "body-centered-cubic-solid",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Body-centered cubic (BCC) solid",
+   "statement": "A body-centered cubic solid is a crystalline structure whose cubic unit cell has lattice points at the corners and in the center of the cell."
+  },
+  {
+   "id": "face-centered-cubic-unit-cell",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Face-centered cubic unit cell",
+   "statement": "A face-centered cubic unit cell is the simplest repeating unit of a face-centered cubic crystal, a cube with lattice points at each corner and at the center of each face."
+  },
+  {
+   "id": "face-centered-cubic-solid",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Face-centered cubic (FCC) solid",
+   "statement": "A face-centered cubic solid is a crystalline structure whose cubic unit cell has lattice points on the corners and in the center of each face."
+  },
+  {
+   "id": "isomorphous",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Isomorphous",
+   "statement": "Substances are isomorphous when they possess the same crystalline structure."
+  },
+  {
+   "id": "hexagonal-closest-packing",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Hexagonal closest packing (HCP)",
+   "statement": "Hexagonal closest packing is a crystalline structure in which closely packed layers of atoms or ions are stacked in two alternating layers, ABAB…."
+  },
+  {
+   "id": "cubic-closest-packing",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Cubic closest packing (CCP)",
+   "statement": "Cubic closest packing is a crystalline structure in which closely packed layers of atoms or ions are stacked in three alternating layers, ABCABC…; its unit cell is face-centered cubic."
+  },
+  {
+   "id": "crystal-hole",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Hole",
+   "statement": "A hole, or interstice, is a space between the atoms or ions of a crystal."
+  },
+  {
+   "id": "tetrahedral-hole",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Tetrahedral hole",
+   "statement": "A tetrahedral hole is the space formed by four atoms or ions of a crystal at the corners of a tetrahedron."
+  },
+  {
+   "id": "octahedral-hole",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Octahedral hole",
+   "statement": "An octahedral hole is the open space in a crystal at the center of six particles located at the corners of an octahedron."
+  },
+  {
+   "id": "diffraction",
+   "kind": "definition",
+   "section": "10.6",
+   "name": "Diffraction",
+   "statement": "Diffraction is the redirection of electromagnetic radiation when it encounters a physical barrier of dimensions similar to its wavelength."
+  },
+  {
+   "id": "x-ray-crystallography",
+   "kind": "idea",
+   "section": "10.6",
+   "name": "X-ray crystallography",
+   "statement": "X-ray crystallography is the experimental technique that finds the distances between the atoms of a crystal by measuring the angles at which X-rays are diffracted as they pass through it."
   }
  ],
  "concept_prereqs": [
@@ -695,6 +957,454 @@
   {
    "concept": "bragg-equation",
    "prereq": "unit-cell"
+  },
+  {
+   "concept": "intermolecular-force",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "intermolecular-force",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "van-der-waals-force",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "instantaneous-dipole",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "instantaneous-dipole",
+   "prereq": "dipole-moment"
+  },
+  {
+   "concept": "induced-dipole",
+   "prereq": "instantaneous-dipole"
+  },
+  {
+   "concept": "polarizability",
+   "prereq": "induced-dipole"
+  },
+  {
+   "concept": "cohesive-force",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "adhesive-force",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "vaporization",
+   "prereq": "liquid"
+  },
+  {
+   "concept": "vaporization",
+   "prereq": "gas"
+  },
+  {
+   "concept": "condensation",
+   "prereq": "gas"
+  },
+  {
+   "concept": "condensation",
+   "prereq": "liquid"
+  },
+  {
+   "concept": "melting",
+   "prereq": "solid"
+  },
+  {
+   "concept": "melting",
+   "prereq": "liquid"
+  },
+  {
+   "concept": "freezing",
+   "prereq": "liquid"
+  },
+  {
+   "concept": "freezing",
+   "prereq": "solid"
+  },
+  {
+   "concept": "sublimation",
+   "prereq": "solid"
+  },
+  {
+   "concept": "sublimation",
+   "prereq": "gas"
+  },
+  {
+   "concept": "deposition",
+   "prereq": "gas"
+  },
+  {
+   "concept": "deposition",
+   "prereq": "solid"
+  },
+  {
+   "concept": "dynamic-equilibrium",
+   "prereq": "vaporization"
+  },
+  {
+   "concept": "dynamic-equilibrium",
+   "prereq": "condensation"
+  },
+  {
+   "concept": "vapor-pressure",
+   "prereq": "dynamic-equilibrium"
+  },
+  {
+   "concept": "vapor-pressure",
+   "prereq": "gas-pressure"
+  },
+  {
+   "concept": "normal-boiling-point",
+   "prereq": "boiling-point"
+  },
+  {
+   "concept": "normal-boiling-point",
+   "prereq": "atmosphere-unit"
+  },
+  {
+   "concept": "melting-point",
+   "prereq": "melting"
+  },
+  {
+   "concept": "melting-point",
+   "prereq": "freezing"
+  },
+  {
+   "concept": "melting-point",
+   "prereq": "dynamic-equilibrium"
+  },
+  {
+   "concept": "critical-point",
+   "prereq": "phase-diagram"
+  },
+  {
+   "concept": "critical-point",
+   "prereq": "condensation"
+  },
+  {
+   "concept": "supercritical-fluid",
+   "prereq": "critical-point"
+  },
+  {
+   "concept": "crystalline-solid",
+   "prereq": "solid"
+  },
+  {
+   "concept": "amorphous-solid",
+   "prereq": "solid"
+  },
+  {
+   "concept": "ionic-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "ionic-solid",
+   "prereq": "ion"
+  },
+  {
+   "concept": "ionic-solid",
+   "prereq": "ionic-bond"
+  },
+  {
+   "concept": "metallic-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "metallic-solid",
+   "prereq": "metals-nonmetals-metalloids"
+  },
+  {
+   "concept": "covalent-network-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "covalent-network-solid",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "molecular-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "molecular-solid",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "vacancy",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "interstitial-sites",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "space-lattice",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "coordination-number",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "simple-cubic-unit-cell",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "simple-cubic-structure",
+   "prereq": "simple-cubic-unit-cell"
+  },
+  {
+   "concept": "simple-cubic-structure",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "body-centered-cubic-unit-cell",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "body-centered-cubic-solid",
+   "prereq": "body-centered-cubic-unit-cell"
+  },
+  {
+   "concept": "body-centered-cubic-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "face-centered-cubic-unit-cell",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "face-centered-cubic-solid",
+   "prereq": "face-centered-cubic-unit-cell"
+  },
+  {
+   "concept": "face-centered-cubic-solid",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "isomorphous",
+   "prereq": "unit-cell"
+  },
+  {
+   "concept": "hexagonal-closest-packing",
+   "prereq": "closest-packing"
+  },
+  {
+   "concept": "cubic-closest-packing",
+   "prereq": "closest-packing"
+  },
+  {
+   "concept": "cubic-closest-packing",
+   "prereq": "face-centered-cubic-unit-cell"
+  },
+  {
+   "concept": "crystal-hole",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "tetrahedral-hole",
+   "prereq": "crystal-hole"
+  },
+  {
+   "concept": "octahedral-hole",
+   "prereq": "crystal-hole"
+  },
+  {
+   "concept": "diffraction",
+   "prereq": "wavelength"
+  },
+  {
+   "concept": "diffraction",
+   "prereq": "electromagnetic-radiation"
+  },
+  {
+   "concept": "x-ray-crystallography",
+   "prereq": "diffraction"
+  },
+  {
+   "concept": "x-ray-crystallography",
+   "prereq": "bragg-equation"
+  },
+  {
+   "concept": "intermolecular-versus-intramolecular-forces",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "dispersion-forces",
+   "prereq": "instantaneous-dipole"
+  },
+  {
+   "concept": "dispersion-forces",
+   "prereq": "induced-dipole"
+  },
+  {
+   "concept": "polarizability-and-dispersion-strength",
+   "prereq": "polarizability"
+  },
+  {
+   "concept": "rank-by-intermolecular-forces",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "cohesive-and-adhesive-forces",
+   "prereq": "cohesive-force"
+  },
+  {
+   "concept": "cohesive-and-adhesive-forces",
+   "prereq": "adhesive-force"
+  },
+  {
+   "concept": "capillary-action",
+   "prereq": "cohesive-force"
+  },
+  {
+   "concept": "capillary-action",
+   "prereq": "adhesive-force"
+  },
+  {
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "prereq": "dynamic-equilibrium"
+  },
+  {
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "prereq": "vapor-pressure"
+  },
+  {
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "prereq": "vaporization"
+  },
+  {
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "prereq": "condensation"
+  },
+  {
+   "concept": "vapor-pressure-and-imf",
+   "prereq": "vapor-pressure"
+  },
+  {
+   "concept": "vapor-pressure-and-temperature",
+   "prereq": "vapor-pressure"
+  },
+  {
+   "concept": "boiling-point",
+   "prereq": "vapor-pressure"
+  },
+  {
+   "concept": "clausius-clapeyron-equation",
+   "prereq": "vapor-pressure"
+  },
+  {
+   "concept": "enthalpies-of-phase-change",
+   "prereq": "vaporization"
+  },
+  {
+   "concept": "enthalpies-of-phase-change",
+   "prereq": "melting"
+  },
+  {
+   "concept": "enthalpies-of-phase-change",
+   "prereq": "sublimation"
+  },
+  {
+   "concept": "heating-curve",
+   "prereq": "melting-point"
+  },
+  {
+   "concept": "critical-point-and-supercritical-fluid",
+   "prereq": "critical-point"
+  },
+  {
+   "concept": "critical-point-and-supercritical-fluid",
+   "prereq": "supercritical-fluid"
+  },
+  {
+   "concept": "crystalline-and-amorphous-solids",
+   "prereq": "crystalline-solid"
+  },
+  {
+   "concept": "crystalline-and-amorphous-solids",
+   "prereq": "amorphous-solid"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "ionic-solid"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "metallic-solid"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "covalent-network-solid"
+  },
+  {
+   "concept": "types-of-crystalline-solids",
+   "prereq": "molecular-solid"
+  },
+  {
+   "concept": "classify-crystalline-solid",
+   "prereq": "ionic-solid"
+  },
+  {
+   "concept": "classify-crystalline-solid",
+   "prereq": "metallic-solid"
+  },
+  {
+   "concept": "classify-crystalline-solid",
+   "prereq": "covalent-network-solid"
+  },
+  {
+   "concept": "classify-crystalline-solid",
+   "prereq": "molecular-solid"
+  },
+  {
+   "concept": "crystal-defects",
+   "prereq": "vacancy"
+  },
+  {
+   "concept": "crystal-defects",
+   "prereq": "interstitial-sites"
+  },
+  {
+   "concept": "unit-cell",
+   "prereq": "space-lattice"
+  },
+  {
+   "concept": "cubic-unit-cells",
+   "prereq": "simple-cubic-unit-cell"
+  },
+  {
+   "concept": "cubic-unit-cells",
+   "prereq": "body-centered-cubic-unit-cell"
+  },
+  {
+   "concept": "cubic-unit-cells",
+   "prereq": "face-centered-cubic-unit-cell"
+  },
+  {
+   "concept": "holes-in-closest-packed-arrays",
+   "prereq": "tetrahedral-hole"
+  },
+  {
+   "concept": "holes-in-closest-packed-arrays",
+   "prereq": "octahedral-hole"
+  },
+  {
+   "concept": "formula-from-hole-occupancy",
+   "prereq": "tetrahedral-hole"
+  },
+  {
+   "concept": "formula-from-hole-occupancy",
+   "prereq": "octahedral-hole"
+  },
+  {
+   "concept": "bragg-equation",
+   "prereq": "diffraction"
   }
  ]
 }

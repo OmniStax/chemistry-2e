@@ -81,6 +81,11 @@
    "verb": "introduces"
   },
   {
+   "span": "valence-bond",
+   "concept": "orbital-overlap",
+   "verb": "introduces"
+  },
+  {
    "span": "bond-distance",
    "concept": "bond-distance-and-bond-energy",
    "verb": "introduces"
@@ -99,6 +104,16 @@
    "span": "sigma-pi",
    "concept": "valence-bond-theory",
    "verb": "uses"
+  },
+  {
+   "span": "sigma-pi",
+   "concept": "sigma-bond",
+   "verb": "introduces"
+  },
+  {
+   "span": "sigma-pi",
+   "concept": "pi-bond",
+   "verb": "introduces"
   },
   {
    "span": "multiple-bonds",

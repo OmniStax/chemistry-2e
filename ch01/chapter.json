@@ -47,6 +47,7 @@
  "variables": [
   {
    "sym": "m",
+   "concept": "mass",
    "type": "mass",
    "meaning": "the mass of a sample, the measure of the amount of matter in it",
    "unit": "g",
@@ -55,6 +56,7 @@
   },
   {
    "sym": "V",
+   "concept": "volume",
    "type": "volume",
    "meaning": "the volume of a sample, the amount of space it occupies",
    "unit": "cm³",
@@ -63,6 +65,7 @@
   },
   {
    "sym": "d",
+   "concept": "density",
    "meaning": "the density of a substance, the ratio of the mass of a sample to its volume",
    "unit": "g/cm³ (g/mL for liquids and solids, g/L for gases)",
    "section": "1.4",
@@ -70,6 +73,7 @@
   },
   {
    "sym": "t",
+   "concept": "time",
    "type": "time",
    "meaning": "an interval of time, measured in the SI base unit of time",
    "unit": "s",
@@ -78,6 +82,7 @@
   },
   {
    "sym": "T",
+   "concept": "temperature",
    "type": "temperature",
    "meaning": "the temperature of a sample, measured in the SI base unit of temperature",
    "unit": "K",
@@ -86,6 +91,7 @@
   },
   {
    "sym": "T_C",
+   "concept": "temperature",
    "type": "temperature",
    "meaning": "a temperature read on the Celsius scale, on which water freezes at 0 °C and boils at 100 °C",
    "unit": "°C",
@@ -94,6 +100,7 @@
   },
   {
    "sym": "T_F",
+   "concept": "temperature",
    "type": "temperature",
    "meaning": "a temperature read on the Fahrenheit scale, on which water freezes at 32 °F and boils at 212 °F",
    "unit": "°F",
@@ -102,6 +109,7 @@
   },
   {
    "sym": "T_K",
+   "concept": "temperature",
    "type": "temperature",
    "meaning": "a temperature read on the kelvin scale, an absolute scale whose zero is the lowest temperature that can theoretically be achieved",
    "unit": "K",
@@ -120,6 +128,7 @@
   },
   {
    "id": "eq-speed",
+   "concept": "dimensional-analysis",
    "section": "1.6",
    "latex": "\\text{speed}=\\frac{\\text{distance}}{\\text{time}}",
    "condition": "an average speed, computed from a measured distance and the time taken to cover it",
@@ -167,286 +176,343 @@
   {
    "section": "1.1",
    "term": "chemistry",
+   "concept": "chemistry",
    "definition": "study of the composition, properties, and interactions of matter"
   },
   {
    "section": "1.1",
    "term": "hypothesis",
+   "concept": "hypothesis",
    "definition": "tentative explanation of observations that acts as a guide for gathering and checking information"
   },
   {
    "section": "1.1",
    "term": "law",
+   "concept": "scientific-law",
    "definition": "statement that summarizes a vast number of experimental observations, and describes or predicts some aspect of the natural world"
   },
   {
    "section": "1.1",
    "term": "macroscopic domain",
+   "concept": "macroscopic-domain",
    "definition": "realm of everyday things that are large enough to sense directly by human sight and touch"
   },
   {
    "section": "1.1",
    "term": "microscopic domain",
+   "concept": "microscopic-domain",
    "definition": "realm of things that are much too small to be sensed directly"
   },
   {
    "section": "1.1",
    "term": "scientific method",
+   "concept": "scientific-method",
    "definition": "path of discovery that leads from question and observation to law or hypothesis to theory, combined with experimental verification of the hypothesis and any necessary modification of the theory"
   },
   {
    "section": "1.1",
    "term": "symbolic domain",
+   "concept": "symbolic-domain",
    "definition": "specialized language used to represent components of the macroscopic and microscopic domains, such as chemical symbols, chemical formulas, chemical equations, graphs, drawings, and calculations"
   },
   {
    "section": "1.1",
    "term": "theory",
+   "concept": "scientific-theory",
    "definition": "well-substantiated, comprehensive, testable explanation of a particular aspect of nature"
   },
   {
    "section": "1.2",
    "term": "atom",
+   "concept": "atom",
    "definition": "smallest particle of an element that can enter into a chemical combination"
   },
   {
    "section": "1.2",
    "term": "compound",
+   "concept": "compound",
    "definition": "pure substance that can be decomposed into two or more elements"
   },
   {
    "section": "1.2",
    "term": "element",
+   "concept": "element",
    "definition": "substance that is composed of a single type of atom; a substance that cannot be decomposed by a chemical change"
   },
   {
    "section": "1.2",
    "term": "gas",
+   "concept": "gas",
    "definition": "state in which matter has neither definite volume nor shape"
   },
   {
    "section": "1.2",
    "term": "heterogeneous mixture",
+   "concept": "heterogeneous-mixture",
    "definition": "combination of substances with a composition that varies from point to point"
   },
   {
    "section": "1.2",
    "term": "homogeneous mixture",
+   "concept": "homogeneous-mixture",
    "definition": "(also, solution) combination of substances with a composition that is uniform throughout"
   },
   {
    "section": "1.2",
    "term": "liquid",
+   "concept": "liquid",
    "definition": "state of matter that has a definite volume but indefinite shape"
   },
   {
    "section": "1.2",
    "term": "law of conservation of matter",
+   "concept": "conservation-of-matter",
    "definition": "when matter converts from one type to another or changes form, there is no detectable change in the total amount of matter present"
   },
   {
    "section": "1.2",
    "term": "mass",
+   "concept": "mass",
    "definition": "fundamental property indicating amount of matter"
   },
   {
    "section": "1.2",
    "term": "matter",
+   "concept": "matter",
    "definition": "anything that occupies space and has mass"
   },
   {
    "section": "1.2",
    "term": "mixture",
+   "concept": "mixture",
    "definition": "matter that can be separated into its components by physical means"
   },
   {
    "section": "1.2",
    "term": "molecule",
+   "concept": "molecule",
    "definition": "bonded collection of two or more atoms of the same or different elements"
   },
   {
    "section": "1.2",
    "term": "plasma",
+   "concept": "plasma",
    "definition": "gaseous state of matter containing a large number of electrically charged atoms and/or molecules"
   },
   {
    "section": "1.2",
    "term": "pure substance",
+   "concept": "pure-substance",
    "definition": "homogeneous substance that has a constant composition"
   },
   {
    "section": "1.2",
    "term": "solid",
+   "concept": "solid",
    "definition": "state of matter that is rigid, has a definite shape, and has a fairly constant volume"
   },
   {
    "section": "1.2",
    "term": "solution",
+   "concept": "mixtures",
    "definition": "(also, homogeneous mixture) combination of substances with a composition that is uniform throughout"
   },
   {
    "section": "1.2",
    "term": "weight",
+   "concept": "weight",
    "definition": "force that gravity exerts on an object"
   },
   {
    "section": "1.3",
    "term": "chemical change",
+   "concept": "chemical-change",
    "definition": "change producing a different kind of matter from the original kind of matter"
   },
   {
    "section": "1.3",
    "term": "chemical property",
+   "concept": "chemical-property",
    "definition": "behavior that is related to the change of one kind of matter into another kind of matter"
   },
   {
    "section": "1.3",
    "term": "extensive property",
+   "concept": "extensive-property",
    "definition": "property of a substance that depends on the amount of the substance"
   },
   {
    "section": "1.3",
    "term": "intensive property",
+   "concept": "intensive-property",
    "definition": "property of a substance that is independent of the amount of the substance"
   },
   {
    "section": "1.3",
    "term": "physical change",
+   "concept": "physical-change",
    "definition": "change in the state or properties of matter that does not involve a change in its chemical composition"
   },
   {
    "section": "1.3",
    "term": "physical property",
+   "concept": "physical-property",
    "definition": "characteristic of matter that is not associated with any change in its chemical composition"
   },
   {
    "section": "1.4",
    "term": "Celsius (°C)",
+   "concept": "celsius",
    "definition": "unit of temperature; water freezes at 0 °C and boils at 100 °C on this scale"
   },
   {
    "section": "1.4",
    "term": "cubic centimeter (cm³ or cc)",
+   "concept": "cubic-centimeter",
    "definition": "volume of a cube with an edge length of exactly 1 cm"
   },
   {
    "section": "1.4",
    "term": "cubic meter (m³)",
+   "concept": "cubic-meter",
    "definition": "SI unit of volume"
   },
   {
    "section": "1.4",
    "term": "density",
+   "concept": "density",
    "definition": "ratio of mass to volume for a substance or object"
   },
   {
    "section": "1.4",
    "term": "kelvin (K)",
+   "concept": "kelvin",
    "definition": "SI unit of temperature; 273.15 K = 0 °C"
   },
   {
    "section": "1.4",
    "term": "kilogram (kg)",
+   "concept": "kilogram",
    "definition": "standard SI unit of mass"
   },
   {
    "section": "1.4",
    "term": "length",
+   "concept": "length",
    "definition": "measure of one dimension of an object"
   },
   {
    "section": "1.4",
    "term": "liter (L)",
+   "concept": "liter",
    "definition": "(also, cubic decimeter) unit of volume; 1 L = 1,000 cm³"
   },
   {
    "section": "1.4",
    "term": "meter (m)",
+   "concept": "meter",
    "definition": "standard metric and SI unit of length; 1 m = approximately 1.094 yards"
   },
   {
    "section": "1.4",
    "term": "milliliter (mL)",
+   "concept": "milliliter",
    "definition": "1/1,000 of a liter; equal to 1 cm³"
   },
   {
    "section": "1.4",
    "term": "second (s)",
+   "concept": "second",
    "definition": "SI unit of time"
   },
   {
    "section": "1.4",
    "term": "SI units (International System of Units)",
+   "concept": "si-units",
    "definition": "standards fixed by international agreement in the International System of Units (Le Système International d’Unités)"
   },
   {
    "section": "1.4",
    "term": "unit",
+   "concept": "unit",
    "definition": "standard of comparison for measurements"
   },
   {
    "section": "1.4",
    "term": "volume",
+   "concept": "volume",
    "definition": "amount of space occupied by an object"
   },
   {
    "section": "1.5",
    "term": "accuracy",
+   "concept": "accuracy",
    "definition": "how closely a measurement aligns with a correct value"
   },
   {
    "section": "1.5",
    "term": "exact number",
+   "concept": "exact-number",
    "definition": "number derived by counting or by definition"
   },
   {
    "section": "1.5",
    "term": "precision",
+   "concept": "precision",
    "definition": "how closely a measurement matches the same measurement when repeated"
   },
   {
    "section": "1.5",
    "term": "rounding",
+   "concept": "rounding",
    "definition": "procedure used to ensure that calculated results properly reflect the uncertainty in the measurements used in the calculation"
   },
   {
    "section": "1.5",
    "term": "significant digits",
+   "concept": "significant-figures",
    "definition": "(also, significant figures) all of the measured digits in a determination, including the uncertain last digit"
   },
   {
    "section": "1.5",
    "term": "significant figures",
+   "concept": "significant-figures",
    "definition": "(also, significant digits) all of the measured digits in a determination, including the uncertain last digit"
   },
   {
    "section": "1.5",
    "term": "uncertainty",
+   "concept": "uncertainty",
    "definition": "estimate of amount by which measurement differs from true value"
   },
   {
    "section": "1.6",
    "term": "dimensional analysis",
+   "concept": "dimensional-analysis",
    "definition": "(also, factor-label method) versatile mathematical strategy for calculations involving quantities that subjects the quantities’ units to the same mathematical operations as their numbers"
   },
   {
    "section": "1.6",
    "term": "factor-label method",
+   "concept": "dimensional-analysis",
    "definition": "(also, dimensional analysis) versatile mathematical strategy for calculations involving quantities that subjects the quantities’ units to the same mathematical operations as their numbers"
   },
   {
    "section": "1.6",
    "term": "Fahrenheit",
+   "concept": "fahrenheit",
    "definition": "unit of temperature; water freezes at 32 °F and boils at 212 °F on this scale"
   },
   {
    "section": "1.6",
    "term": "temperature",
+   "concept": "temperature",
    "definition": "intensive property representing the hotness or coldness of matter"
   },
   {
    "section": "1.6",
    "term": "unit conversion factor",
+   "concept": "unit-conversion-factor",
    "definition": "ratio of equivalent quantities expressed with different units; used to convert from one unit to a different unit"
   }
  ]

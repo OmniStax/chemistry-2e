@@ -103,6 +103,16 @@
       "verb": "uses"
     },
     {
+      "span": "first-law",
+      "concept": "chemical-thermodynamics",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-law",
+      "concept": "internal-energy",
+      "verb": "introduces"
+    },
+    {
       "span": "expansion-work",
       "concept": "first-law-of-thermodynamics",
       "verb": "reinforces"
@@ -111,6 +121,11 @@
       "span": "expansion-work",
       "concept": "exothermic-and-endothermic",
       "verb": "uses"
+    },
+    {
+      "span": "expansion-work",
+      "concept": "expansion-work",
+      "verb": "introduces"
     },
     {
       "span": "state-functions",
@@ -136,6 +151,16 @@
       "span": "enthalpy",
       "concept": "bomb-calorimetry",
       "verb": "uses"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "enthalpy",
+      "verb": "introduces"
+    },
+    {
+      "span": "enthalpy",
+      "concept": "enthalpy-change",
+      "verb": "introduces"
     },
     {
       "span": "thermochemical-equations",
@@ -178,8 +203,23 @@
       "verb": "uses"
     },
     {
+      "span": "standard-state",
+      "concept": "standard-state",
+      "verb": "introduces"
+    },
+    {
       "span": "combustion",
       "concept": "enthalpy-of-combustion",
+      "verb": "introduces"
+    },
+    {
+      "span": "combustion",
+      "concept": "hydrocarbon",
+      "verb": "introduces"
+    },
+    {
+      "span": "combustion",
+      "concept": "standard-enthalpy-of-combustion",
       "verb": "introduces"
     },
     {

@@ -111,6 +111,11 @@
    "verb": "introduces"
   },
   {
+   "span": "temperature-scales",
+   "concept": "fahrenheit",
+   "verb": "introduces"
+  },
+  {
    "span": "linear-not-proportional",
    "concept": "linear-versus-proportional-scales",
    "verb": "introduces"

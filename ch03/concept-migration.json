@@ -1,0 +1,223 @@
+{
+  "chapter": "ch03",
+  "kinds": {
+    "formula-mass": "skill",
+    "molecular-versus-formula-mass": "idea",
+    "mole": "definition",
+    "avogadro-number": "axiom",
+    "molar-mass": "definition",
+    "mass-mole-conversion": "skill",
+    "count-atoms-and-molecules": "skill",
+    "percent-composition": "definition",
+    "percent-composition-from-formula": "skill",
+    "empirical-formula": "skill",
+    "empirical-formula-from-percent": "skill",
+    "molecular-formula-from-empirical": "skill",
+    "solution-components": "definition",
+    "concentration": "definition",
+    "molarity": "definition",
+    "molarity-calculations": "skill",
+    "dilution": "definition",
+    "dilution-equation": "result",
+    "mass-percentage": "definition",
+    "volume-percentage": "definition",
+    "mass-volume-percent": "definition",
+    "ppm-and-ppb": "definition",
+    "concentration-unit-conversions": "skill"
+  },
+  "statements": {
+    "formula-mass": "You calculate the formula mass of a substance by multiplying each element’s average atomic mass by its subscript and adding the products."
+  },
+  "new": [
+    {
+      "id": "empirical-formula-mass",
+      "kind": "definition",
+      "section": "3.2",
+      "name": "Empirical formula mass",
+      "statement": "The empirical formula mass of a compound is the sum of the average atomic masses of all the atoms its empirical formula represents.",
+      "introduces": "molecular",
+      "prereqs": [
+        "formula-mass-of-a-substance",
+        "empirical-formula-of-a-compound"
+      ]
+    },
+    {
+      "id": "formula-mass-of-a-substance",
+      "kind": "definition",
+      "section": "3.1",
+      "name": "Formula mass",
+      "statement": "The formula mass of a substance is the sum of the average masses of all the atoms represented in its chemical formula; for a covalent compound it is also the molecular mass.",
+      "introduces": "formula-mass",
+      "prereqs": [
+        "average-atomic-mass",
+        "molecular-formula"
+      ]
+    },
+    {
+      "id": "solvent",
+      "kind": "definition",
+      "section": "3.3",
+      "name": "Solvent",
+      "statement": "The solvent is the component of a solution present at a concentration higher than that of the other components.",
+      "introduces": "solutions",
+      "prereqs": [
+        "solution-components",
+        "homogeneous-mixture"
+      ]
+    },
+    {
+      "id": "solute",
+      "kind": "definition",
+      "section": "3.3",
+      "name": "Solute",
+      "statement": "A solute is a component of a solution present at a concentration less than that of the solvent.",
+      "introduces": "solutions",
+      "prereqs": [
+        "solvent"
+      ]
+    },
+    {
+      "id": "aqueous-solution",
+      "kind": "definition",
+      "section": "3.3",
+      "name": "Aqueous solution",
+      "statement": "An aqueous solution is a solution for which water is the solvent.",
+      "introduces": "solutions",
+      "prereqs": [
+        "solvent"
+      ]
+    },
+    {
+      "id": "dissolved",
+      "kind": "definition",
+      "section": "3.3",
+      "name": "Dissolved",
+      "statement": "A solute is dissolved when its components are dispersed in a solvent.",
+      "introduces": "solutions",
+      "prereqs": [
+        "solute",
+        "solvent"
+      ]
+    },
+    {
+      "id": "concentrated",
+      "kind": "definition",
+      "section": "3.3",
+      "name": "Concentrated",
+      "statement": "A concentrated solution is one containing solute at a relatively high concentration; the term is qualitative.",
+      "introduces": "solutions",
+      "prereqs": [
+        "concentration"
+      ]
+    },
+    {
+      "id": "dilute",
+      "kind": "definition",
+      "section": "3.3",
+      "name": "Dilute",
+      "statement": "A dilute solution is one containing solute at a relatively low concentration; the term is qualitative.",
+      "introduces": "solutions",
+      "prereqs": [
+        "concentration"
+      ]
+    },
+    {
+      "id": "parts-per-million",
+      "kind": "definition",
+      "section": "3.4",
+      "name": "Parts per million, ppm",
+      "statement": "Parts per million (ppm) is the ratio of solute-to-solution mass multiplied by 10⁶.",
+      "introduces": "ppm-ppb",
+      "prereqs": [
+        "ppm-and-ppb"
+      ]
+    },
+    {
+      "id": "parts-per-billion",
+      "kind": "definition",
+      "section": "3.4",
+      "name": "Parts per billion, ppb",
+      "statement": "Parts per billion (ppb) is the ratio of solute-to-solution mass multiplied by 10⁹.",
+      "introduces": "ppm-ppb",
+      "prereqs": [
+        "ppm-and-ppb"
+      ]
+    }
+  ],
+  "glossary": {
+    "3.1/Avogadro’s number": "avogadro-number",
+    "3.1/formula mass": "formula-mass-of-a-substance",
+    "3.1/molar mass": "molar-mass",
+    "3.1/mole": "mole",
+    "3.2/empirical formula mass": "empirical-formula-mass",
+    "3.2/percent composition": "percent-composition",
+    "3.3/aqueous solution": "aqueous-solution",
+    "3.3/concentrated": "concentrated",
+    "3.3/concentration": "concentration",
+    "3.3/dilute": "dilute",
+    "3.3/dilution": "dilution",
+    "3.3/dissolved": "dissolved",
+    "3.3/molarity (M)": "molarity",
+    "3.3/solute": "solute",
+    "3.3/solvent": "solvent",
+    "3.4/mass percentage": "mass-percentage",
+    "3.4/mass-volume percent": "mass-volume-percent",
+    "3.4/parts per billion (ppb)": "parts-per-billion",
+    "3.4/parts per million (ppm)": "parts-per-million",
+    "3.4/volume percentage": "volume-percentage"
+  },
+  "variables": {
+    "3.1/m": "mass",
+    "3.1/MM": "molar-mass",
+    "3.1/n": "mole",
+    "3.1/N_A": "avogadro-number",
+    "3.2/n_fu": "molecular-formula-from-empirical",
+    "3.3/M": "molarity",
+    "3.3/L": "volume",
+    "3.3/M_1": "molarity",
+    "3.3/M_2": "molarity",
+    "3.3/L_1": "volume",
+    "3.3/L_2": "volume",
+    "3.3/C_1": "concentration",
+    "3.3/C_2": "concentration",
+    "3.3/V_1": "volume",
+    "3.3/V_2": "volume",
+    "3.3/n_1": "mole",
+    "3.3/n_2": "mole"
+  },
+  "equations": {
+    "eq-percent-composition": "percent-composition",
+    "eq-formula-units-per-molecule": "molecular-formula-from-empirical",
+    "eq-molecular-formula": "molecular-formula-from-empirical",
+    "eq-molarity": "molarity",
+    "eq-moles-from-molarity": "molarity",
+    "eq-dilution-molarity": "dilution-equation",
+    "eq-dilution": "dilution-equation",
+    "eq-mass-percentage": "mass-percentage",
+    "eq-volume-percentage": "volume-percentage",
+    "eq-ppm": "parts-per-million",
+    "eq-ppb": "parts-per-billion"
+  },
+  "edges": [
+    [
+      "formula-mass",
+      "formula-mass-of-a-substance"
+    ],
+    [
+      "molecular-versus-formula-mass",
+      "formula-mass-of-a-substance"
+    ],
+    [
+      "molecular-formula-from-empirical",
+      "empirical-formula-mass"
+    ],
+    [
+      "molarity",
+      "solute"
+    ],
+    [
+      "concentration",
+      "solute"
+    ]
+  ]
+}

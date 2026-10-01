@@ -35,6 +35,7 @@
  "variables": [
   {
    "sym": "m",
+   "concept": "mass",
    "type": "mass",
    "meaning": "the mass of a sample, weighed on a balance",
    "unit": "g",
@@ -43,6 +44,7 @@
   },
   {
    "sym": "MM",
+   "concept": "molar-mass",
    "type": "mass",
    "meaning": "the molar mass of a substance, the mass in grams of 1 mole of it",
    "unit": "g/mol",
@@ -51,6 +53,7 @@
   },
   {
    "sym": "n",
+   "concept": "mole",
    "type": "amount",
    "meaning": "the amount of a substance, counted in moles",
    "unit": "mol",
@@ -59,6 +62,7 @@
   },
   {
    "sym": "N_A",
+   "concept": "avogadro-number",
    "meaning": "Avogadro’s number, the number of entities in 1 mole of substance",
    "unit": "mol⁻¹",
    "section": "3.1",
@@ -66,6 +70,7 @@
   },
   {
    "sym": "n_fu",
+   "concept": "molecular-formula-from-empirical",
    "meaning": "the number of empirical formula units in one molecule of a compound",
    "unit": "formula units/molecule",
    "section": "3.2",
@@ -73,6 +78,7 @@
   },
   {
    "sym": "M",
+   "concept": "molarity",
    "type": "concentration",
    "meaning": "the molarity of a solution, the moles of solute per liter of solution",
    "unit": "M (mol/L)",
@@ -81,6 +87,7 @@
   },
   {
    "sym": "L",
+   "concept": "volume",
    "type": "volume",
    "meaning": "the volume of a solution in liters, as the book writes it in n = ML",
    "unit": "L",
@@ -89,6 +96,7 @@
   },
   {
    "sym": "M_1",
+   "concept": "molarity",
    "type": "concentration",
    "meaning": "the molarity of a solution before it is diluted",
    "unit": "M",
@@ -97,6 +105,7 @@
   },
   {
    "sym": "M_2",
+   "concept": "molarity",
    "type": "concentration",
    "meaning": "the molarity of the solution after it is diluted",
    "unit": "M",
@@ -105,6 +114,7 @@
   },
   {
    "sym": "L_1",
+   "concept": "volume",
    "type": "volume",
    "meaning": "the volume of a solution in liters before it is diluted",
    "unit": "L",
@@ -113,6 +123,7 @@
   },
   {
    "sym": "L_2",
+   "concept": "volume",
    "type": "volume",
    "meaning": "the volume of the solution in liters after it is diluted",
    "unit": "L",
@@ -121,6 +132,7 @@
   },
   {
    "sym": "C_1",
+   "concept": "concentration",
    "type": "concentration",
    "meaning": "the concentration of a solution before it is diluted, in any unit",
    "unit": "M, or any concentration unit",
@@ -129,6 +141,7 @@
   },
   {
    "sym": "C_2",
+   "concept": "concentration",
    "type": "concentration",
    "meaning": "the concentration of the solution after it is diluted, in any unit",
    "unit": "M, or any concentration unit",
@@ -137,6 +150,7 @@
   },
   {
    "sym": "V_1",
+   "concept": "volume",
    "type": "volume",
    "meaning": "the volume of a solution before it is diluted",
    "unit": "L, or any volume unit",
@@ -145,6 +159,7 @@
   },
   {
    "sym": "V_2",
+   "concept": "volume",
    "type": "volume",
    "meaning": "the volume of the solution after it is diluted",
    "unit": "L, or any volume unit",
@@ -153,6 +168,7 @@
   },
   {
    "sym": "n_1",
+   "concept": "mole",
    "type": "amount",
    "meaning": "the amount of solute in the solution before it is diluted",
    "unit": "mol",
@@ -161,6 +177,7 @@
   },
   {
    "sym": "n_2",
+   "concept": "mole",
    "type": "amount",
    "meaning": "the amount of solute in the solution after it is diluted, equal to n₁",
    "unit": "mol",
@@ -208,7 +225,7 @@
   },
   {
    "id": "eq-moles-from-molarity",
-   "concept": "dilution-equation",
+   "concept": "molarity",
    "section": "3.3",
    "latex": "n=ML",
    "ktex": "\\kn=\\kM\\kL",
@@ -256,7 +273,7 @@
   },
   {
    "id": "eq-ppm",
-   "concept": "ppm-and-ppb",
+   "concept": "parts-per-million",
    "section": "3.4",
    "latex": "\\text{ppm}=\\frac{\\text{mass solute}}{\\text{mass solution}}\\times 10^{6}\\;\\text{ppm}",
    "condition": "the mass-based definition",
@@ -265,7 +282,7 @@
   },
   {
    "id": "eq-ppb",
-   "concept": "ppm-and-ppb",
+   "concept": "parts-per-billion",
    "section": "3.4",
    "latex": "\\text{ppb}=\\frac{\\text{mass solute}}{\\text{mass solution}}\\times 10^{9}\\;\\text{ppb}",
    "condition": "the mass-based definition",
@@ -277,101 +294,121 @@
   {
    "section": "3.1",
    "term": "Avogadro’s number",
+   "concept": "avogadro-number",
    "definition": "experimentally determined value of the number of entities comprising 1 mole of substance, equal to 6.022 × 10<sup>23</sup> mol<sup>−1</sup>"
   },
   {
    "section": "3.1",
    "term": "formula mass",
+   "concept": "formula-mass-of-a-substance",
    "definition": "sum of the average masses for all atoms represented in a chemical formula; for covalent compounds, this is also the molecular mass"
   },
   {
    "section": "3.1",
    "term": "molar mass",
+   "concept": "molar-mass",
    "definition": "mass in grams of 1 mole of a substance"
   },
   {
    "section": "3.1",
    "term": "mole",
+   "concept": "mole",
    "definition": "amount of substance containing the same number of atoms, molecules, ions, or other entities as the number of atoms in exactly 12 grams of <sup>12</sup>C"
   },
   {
    "section": "3.2",
    "term": "empirical formula mass",
+   "concept": "empirical-formula-mass",
    "definition": "sum of average atomic masses for all atoms represented in an empirical formula"
   },
   {
    "section": "3.2",
    "term": "percent composition",
+   "concept": "percent-composition",
    "definition": "percentage by mass of the various elements in a compound"
   },
   {
    "section": "3.3",
    "term": "aqueous solution",
+   "concept": "aqueous-solution",
    "definition": "solution for which water is the solvent"
   },
   {
    "section": "3.3",
    "term": "concentrated",
+   "concept": "concentrated",
    "definition": "qualitative term for a solution containing solute at a relatively high concentration"
   },
   {
    "section": "3.3",
    "term": "concentration",
+   "concept": "concentration",
    "definition": "quantitative measure of the relative amounts of solute and solvent present in a solution"
   },
   {
    "section": "3.3",
    "term": "dilute",
+   "concept": "dilute",
    "definition": "qualitative term for a solution containing solute at a relatively low concentration"
   },
   {
    "section": "3.3",
    "term": "dilution",
+   "concept": "dilution",
    "definition": "process of adding solvent to a solution in order to lower the concentration of solutes"
   },
   {
    "section": "3.3",
    "term": "dissolved",
+   "concept": "dissolved",
    "definition": "describes the process by which solute components are dispersed in a solvent"
   },
   {
    "section": "3.3",
    "term": "molarity (M)",
+   "concept": "molarity",
    "definition": "unit of concentration, defined as the number of moles of solute dissolved in 1 liter of solution"
   },
   {
    "section": "3.3",
    "term": "solute",
+   "concept": "solute",
    "definition": "solution component present in a concentration less than that of the solvent"
   },
   {
    "section": "3.3",
    "term": "solvent",
+   "concept": "solvent",
    "definition": "solution component present in a concentration that is higher relative to other components"
   },
   {
    "section": "3.4",
    "term": "mass percentage",
+   "concept": "mass-percentage",
    "definition": "ratio of solute-to-solution mass expressed as a percentage"
   },
   {
    "section": "3.4",
    "term": "mass-volume percent",
+   "concept": "mass-volume-percent",
    "definition": "ratio of solute mass to solution volume, expressed as a percentage"
   },
   {
    "section": "3.4",
    "term": "parts per billion (ppb)",
+   "concept": "parts-per-billion",
    "definition": "ratio of solute-to-solution mass multiplied by 10<sup>9</sup>"
   },
   {
    "section": "3.4",
    "term": "parts per million (ppm)",
+   "concept": "parts-per-million",
    "definition": "ratio of solute-to-solution mass multiplied by 10<sup>6</sup>"
   },
   {
    "section": "3.4",
    "term": "volume percentage",
+   "concept": "volume-percentage",
    "definition": "ratio of solute-to-solution volume expressed as a percentage"
   }
  ]

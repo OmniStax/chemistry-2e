@@ -1,0 +1,469 @@
+{
+  "chapter": "ch08",
+  "kinds": {
+    "valence-bond-theory": "idea",
+    "bond-distance-and-bond-energy": "result",
+    "sigma-and-pi-bonds": "definition",
+    "multiple-bond-composition": "result",
+    "count-sigma-and-pi-bonds": "skill",
+    "hybridization": "idea",
+    "hybrid-orbital-properties": "idea",
+    "sp-sp2-sp3-hybrid-orbitals": "idea",
+    "sp3d-and-sp3d2-hybrid-orbitals": "idea",
+    "hybrid-orbital-energy-diagram": "skill",
+    "assign-hybridization": "skill",
+    "limits-of-hybridization": "idea",
+    "pi-bonds-from-unhybridized-orbitals": "idea",
+    "restricted-rotation-about-pi-bonds": "result",
+    "resonance-and-delocalization": "result",
+    "paramagnetism-and-diamagnetism": "definition",
+    "molecular-orbital-theory": "idea",
+    "bonding-and-antibonding-orbitals": "idea",
+    "sigma-and-pi-molecular-orbitals": "idea",
+    "molecular-orbital-diagram": "skill",
+    "bond-order": "definition",
+    "s-p-mixing": "idea",
+    "diatomic-molecule-configurations": "skill"
+  },
+  "statements": {
+    "hybridization": "Hybridization is a model of the changes in the atomic orbitals of an atom when it forms a covalent compound. It combines the wave functions of the atom's valence orbitals into a new set of hybrid orbitals whose directions match the observed geometry, as the 104.5° angle of water requires and unmodified 2p orbitals at 90° do not.",
+    "count-sigma-and-pi-bonds": "Count the σ and π bonds of a molecule from its Lewis structure: every bond line contributes one σ bond, each double bond adds one π bond, and each triple bond adds two.",
+    "hybrid-orbital-energy-diagram": "Draw an orbital energy-level diagram with each orbital as a horizontal line at its energy and each electron as an arrow, setting the isolated atom beside the bonded one to show the valence electrons redistributed into the hybrid set. The diagram shows which hybrids are half filled and ready to pair with an electron from another atom, and which orbitals stay unhybridized."
+  },
+  "new": [
+    {
+      "id": "orbital-overlap",
+      "kind": "definition",
+      "section": "8.1",
+      "name": "Overlap",
+      "statement": "Overlap is the coexistence of orbitals from two different atoms in the same region of space, which leads to the formation of a covalent bond.",
+      "introduces": "valence-bond",
+      "prereqs": [
+        "atomic-orbital",
+        "covalent-bond"
+      ]
+    },
+    {
+      "id": "sigma-bond",
+      "kind": "definition",
+      "section": "8.1",
+      "name": "Sigma bond (σ bond)",
+      "statement": "A sigma bond is a covalent bond formed by the overlap of atomic orbitals along the internuclear axis.",
+      "introduces": "sigma-pi",
+      "prereqs": [
+        "orbital-overlap"
+      ]
+    },
+    {
+      "id": "pi-bond",
+      "kind": "definition",
+      "section": "8.1",
+      "name": "Pi bond (π bond)",
+      "statement": "A pi bond is a covalent bond formed by the side-by-side overlap of atomic orbitals, with its electron density on opposite sides of the internuclear axis and a node along the axis itself.",
+      "introduces": "sigma-pi",
+      "prereqs": [
+        "orbital-overlap",
+        "p-orbital",
+        "node"
+      ]
+    },
+    {
+      "id": "hybrid-orbital",
+      "kind": "definition",
+      "section": "8.2",
+      "name": "Hybrid orbital",
+      "statement": "A hybrid orbital is an orbital created by combining atomic orbitals on a central atom.",
+      "introduces": "hybrid-ideas",
+      "prereqs": [
+        "hybridization",
+        "atomic-orbital"
+      ]
+    },
+    {
+      "id": "sp-hybrid-orbital",
+      "kind": "definition",
+      "section": "8.2",
+      "name": "sp hybrid orbital",
+      "statement": "An sp hybrid orbital is one of a set of two orbitals with a linear arrangement that results from combining one s and one p orbital.",
+      "introduces": "sp",
+      "prereqs": [
+        "hybrid-orbital",
+        "s-orbital",
+        "p-orbital",
+        "linear-geometry"
+      ]
+    },
+    {
+      "id": "sp2-hybrid-orbital",
+      "kind": "definition",
+      "section": "8.2",
+      "name": "sp² hybrid orbital",
+      "statement": "An sp² hybrid orbital is one of a set of three orbitals with a trigonal planar arrangement that results from combining one s and two p orbitals.",
+      "introduces": "sp2",
+      "prereqs": [
+        "hybrid-orbital",
+        "s-orbital",
+        "p-orbital",
+        "trigonal-planar-geometry"
+      ]
+    },
+    {
+      "id": "sp3-hybrid-orbital",
+      "kind": "definition",
+      "section": "8.2",
+      "name": "sp³ hybrid orbital",
+      "statement": "An sp³ hybrid orbital is one of a set of four orbitals with a tetrahedral arrangement that results from combining one s and three p orbitals.",
+      "introduces": "sp3",
+      "prereqs": [
+        "hybrid-orbital",
+        "s-orbital",
+        "p-orbital",
+        "tetrahedral-geometry"
+      ]
+    },
+    {
+      "id": "sp3d-hybrid-orbital",
+      "kind": "definition",
+      "section": "8.2",
+      "name": "sp³d hybrid orbital",
+      "statement": "An sp³d hybrid orbital is one of a set of five orbitals with a trigonal bipyramidal arrangement that results from combining one s, three p, and one d orbital.",
+      "introduces": "sp3d",
+      "prereqs": [
+        "hybrid-orbital",
+        "s-orbital",
+        "p-orbital",
+        "d-orbital",
+        "trigonal-bipyramidal-geometry"
+      ]
+    },
+    {
+      "id": "sp3d2-hybrid-orbital",
+      "kind": "definition",
+      "section": "8.2",
+      "name": "sp³d² hybrid orbital",
+      "statement": "An sp³d² hybrid orbital is one of a set of six orbitals with an octahedral arrangement that results from combining one s, three p, and two d orbitals.",
+      "introduces": "sp3d",
+      "prereqs": [
+        "hybrid-orbital",
+        "s-orbital",
+        "p-orbital",
+        "d-orbital",
+        "octahedral-geometry"
+      ]
+    },
+    {
+      "id": "paramagnetism",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "Paramagnetism",
+      "statement": "Paramagnetism is the phenomenon in which a material that is not magnetic itself is attracted to a magnetic field. It occurs when the material contains unpaired electrons.",
+      "introduces": "paramagnetism",
+      "prereqs": [
+        "spin-quantum-number"
+      ]
+    },
+    {
+      "id": "diamagnetism",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "Diamagnetism",
+      "statement": "Diamagnetism is the phenomenon in which a material that is not magnetic itself is repelled by a magnetic field. It occurs when all the electrons of the material are paired.",
+      "introduces": "paramagnetism",
+      "prereqs": [
+        "spin-quantum-number"
+      ]
+    },
+    {
+      "id": "molecular-orbital",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "Molecular orbital",
+      "statement": "A molecular orbital is a region of space in a molecule in which an electron has a high probability of being found. It extends over the whole molecule and holds at most two electrons of opposite spin.",
+      "introduces": "mo-theory",
+      "prereqs": [
+        "atomic-orbital",
+        "electron-density"
+      ]
+    },
+    {
+      "id": "linear-combination-of-atomic-orbitals",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "Linear combination of atomic orbitals",
+      "statement": "The linear combination of atomic orbitals is the technique of combining the wave functions of atomic orbitals, by adding or subtracting them, to create molecular orbitals.",
+      "introduces": "mo-theory",
+      "prereqs": [
+        "wavefunction",
+        "atomic-orbital"
+      ]
+    },
+    {
+      "id": "homonuclear-diatomic-molecule",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "Homonuclear diatomic molecule",
+      "statement": "A homonuclear diatomic molecule is a molecule consisting of two identical atoms.",
+      "introduces": "mo-theory",
+      "prereqs": [
+        "atoms-and-molecules"
+      ]
+    },
+    {
+      "id": "bonding-orbital",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "Bonding orbital",
+      "statement": "A bonding orbital is a molecular orbital located between two nuclei. Electrons in a bonding orbital stabilize a molecule.",
+      "introduces": "bonding-antibonding",
+      "prereqs": [
+        "molecular-orbital"
+      ]
+    },
+    {
+      "id": "antibonding-orbital",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "Antibonding orbital",
+      "statement": "An antibonding orbital is a molecular orbital located outside the region between two nuclei, with a node between them. Electrons in an antibonding orbital destabilize a molecule.",
+      "introduces": "bonding-antibonding",
+      "prereqs": [
+        "molecular-orbital",
+        "node"
+      ]
+    },
+    {
+      "id": "sigma-bonding-orbital",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "σ bonding orbital",
+      "statement": "A σ bonding orbital is a molecular orbital in which the electron density is found along the axis of the bond.",
+      "introduces": "sigma-pi-mo",
+      "prereqs": [
+        "bonding-orbital"
+      ]
+    },
+    {
+      "id": "sigma-antibonding-orbital",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "σ* antibonding orbital",
+      "statement": "A σ* orbital is an antibonding molecular orbital formed by the out-of-phase overlap of atomic orbitals along the axis of the bond, which creates a node between the nuclei.",
+      "introduces": "sigma-pi-mo",
+      "prereqs": [
+        "antibonding-orbital"
+      ]
+    },
+    {
+      "id": "pi-bonding-orbital",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "π bonding orbital",
+      "statement": "A π bonding orbital is a molecular orbital formed by the side-by-side overlap of atomic orbitals, in which the electron density is found on opposite sides of the internuclear axis.",
+      "introduces": "sigma-pi-mo",
+      "prereqs": [
+        "bonding-orbital",
+        "p-orbital"
+      ]
+    },
+    {
+      "id": "pi-antibonding-orbital",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "π* antibonding orbital",
+      "statement": "A π* orbital is an antibonding molecular orbital formed by the out-of-phase side-by-side overlap of atomic orbitals, in which the electron density is found on opposite sides of the internuclear axis and there is a node between the nuclei.",
+      "introduces": "sigma-pi-mo",
+      "prereqs": [
+        "antibonding-orbital",
+        "p-orbital"
+      ]
+    },
+    {
+      "id": "molecular-orbital-energy-diagram",
+      "kind": "definition",
+      "section": "8.4",
+      "name": "Molecular orbital diagram",
+      "statement": "A molecular orbital diagram is a visual representation of the relative energy levels of the molecular orbitals of a molecule, set between the atomic orbitals they are formed from.",
+      "introduces": "mo-diagram",
+      "prereqs": [
+        "molecular-orbital",
+        "atomic-orbital"
+      ]
+    }
+  ],
+  "glossary": {
+    "8.1/overlap": "orbital-overlap",
+    "8.1/node": "node",
+    "8.1/pi bond (π bond)": "pi-bond",
+    "8.1/sigma bond (σ bond)": "sigma-bond",
+    "8.1/valence bond theory": "valence-bond-theory",
+    "8.2/hybrid orbital": "hybrid-orbital",
+    "8.2/hybridization": "hybridization",
+    "8.2/sp hybrid orbital": "sp-hybrid-orbital",
+    "8.2/sp² hybrid orbital": "sp2-hybrid-orbital",
+    "8.2/sp³ hybrid orbital": "sp3-hybrid-orbital",
+    "8.2/sp³d hybrid orbital": "sp3d-hybrid-orbital",
+    "8.2/sp³d² hybrid orbital": "sp3d2-hybrid-orbital",
+    "8.4/antibonding orbital": "antibonding-orbital",
+    "8.4/bond order": "bond-order",
+    "8.4/bonding orbital": "bonding-orbital",
+    "8.4/degenerate orbitals": "degenerate-orbitals",
+    "8.4/diamagnetism": "diamagnetism",
+    "8.4/homonuclear diatomic molecule": "homonuclear-diatomic-molecule",
+    "8.4/linear combination of atomic orbitals": "linear-combination-of-atomic-orbitals",
+    "8.4/molecular orbital": "molecular-orbital",
+    "8.4/molecular orbital diagram": "molecular-orbital-energy-diagram",
+    "8.4/molecular orbital theory": "molecular-orbital-theory",
+    "8.4/paramagnetism": "paramagnetism",
+    "8.4/π bonding orbital": "pi-bonding-orbital",
+    "8.4/π* bonding orbital": "pi-antibonding-orbital",
+    "8.4/σ bonding orbital": "sigma-bonding-orbital",
+    "8.4/σ* bonding orbital": "sigma-antibonding-orbital",
+    "8.4/s-p mixing": "s-p-mixing"
+  },
+  "variables": {
+    "8.1/E": "energy-and-work",
+    "8.1/r_bond": "bond-length",
+    "8.2/ψ": "wavefunction",
+    "8.4/Ψ": "wavefunction"
+  },
+  "equations": {
+    "eq-bond-order": "bond-order",
+    "eq-bond-order-h2": "bond-order",
+    "eq-bond-order-he2": "bond-order",
+    "eq-bond-order-o2": "bond-order"
+  },
+  "edges": [
+    [
+      "valence-bond-theory",
+      "orbital-overlap"
+    ],
+    [
+      "sigma-and-pi-bonds",
+      "sigma-bond"
+    ],
+    [
+      "sigma-and-pi-bonds",
+      "pi-bond"
+    ],
+    [
+      "multiple-bond-composition",
+      "sigma-bond"
+    ],
+    [
+      "multiple-bond-composition",
+      "pi-bond"
+    ],
+    [
+      "count-sigma-and-pi-bonds",
+      "sigma-bond"
+    ],
+    [
+      "count-sigma-and-pi-bonds",
+      "pi-bond"
+    ],
+    [
+      "sp-sp2-sp3-hybrid-orbitals",
+      "sp-hybrid-orbital"
+    ],
+    [
+      "sp-sp2-sp3-hybrid-orbitals",
+      "sp2-hybrid-orbital"
+    ],
+    [
+      "sp-sp2-sp3-hybrid-orbitals",
+      "sp3-hybrid-orbital"
+    ],
+    [
+      "sp3d-and-sp3d2-hybrid-orbitals",
+      "sp3d-hybrid-orbital"
+    ],
+    [
+      "sp3d-and-sp3d2-hybrid-orbitals",
+      "sp3d2-hybrid-orbital"
+    ],
+    [
+      "assign-hybridization",
+      "hybrid-orbital"
+    ],
+    [
+      "hybrid-orbital-properties",
+      "hybrid-orbital"
+    ],
+    [
+      "pi-bonds-from-unhybridized-orbitals",
+      "pi-bond"
+    ],
+    [
+      "pi-bonds-from-unhybridized-orbitals",
+      "hybrid-orbital"
+    ],
+    [
+      "restricted-rotation-about-pi-bonds",
+      "pi-bond"
+    ],
+    [
+      "paramagnetism-and-diamagnetism",
+      "paramagnetism"
+    ],
+    [
+      "paramagnetism-and-diamagnetism",
+      "diamagnetism"
+    ],
+    [
+      "molecular-orbital-theory",
+      "molecular-orbital"
+    ],
+    [
+      "molecular-orbital-theory",
+      "linear-combination-of-atomic-orbitals"
+    ],
+    [
+      "bonding-and-antibonding-orbitals",
+      "bonding-orbital"
+    ],
+    [
+      "bonding-and-antibonding-orbitals",
+      "antibonding-orbital"
+    ],
+    [
+      "sigma-and-pi-molecular-orbitals",
+      "sigma-bonding-orbital"
+    ],
+    [
+      "sigma-and-pi-molecular-orbitals",
+      "sigma-antibonding-orbital"
+    ],
+    [
+      "sigma-and-pi-molecular-orbitals",
+      "pi-bonding-orbital"
+    ],
+    [
+      "sigma-and-pi-molecular-orbitals",
+      "pi-antibonding-orbital"
+    ],
+    [
+      "molecular-orbital-diagram",
+      "molecular-orbital-energy-diagram"
+    ],
+    [
+      "bond-order",
+      "bonding-orbital"
+    ],
+    [
+      "bond-order",
+      "antibonding-orbital"
+    ],
+    [
+      "diatomic-molecule-configurations",
+      "homonuclear-diatomic-molecule"
+    ],
+    [
+      "diatomic-molecule-configurations",
+      "paramagnetism"
+    ],
+    [
+      "diatomic-molecule-configurations",
+      "diamagnetism"
+    ]
+  ]
+}

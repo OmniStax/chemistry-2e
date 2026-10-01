@@ -1,0 +1,814 @@
+{
+  "chapter": "ch10",
+  "kinds": {
+    "intermolecular-versus-intramolecular-forces": "definition",
+    "phase-from-imf-and-kinetic-energy": "idea",
+    "dispersion-forces": "definition",
+    "polarizability-and-dispersion-strength": "result",
+    "shape-and-dispersion-strength": "result",
+    "dipole-dipole-attraction": "definition",
+    "hydrogen-bonding": "definition",
+    "rank-by-intermolecular-forces": "skill",
+    "viscosity": "definition",
+    "cohesive-and-adhesive-forces": "idea",
+    "surface-tension": "definition",
+    "capillary-action": "definition",
+    "capillary-rise-equation": "result",
+    "vapor-pressure-dynamic-equilibrium": "idea",
+    "vapor-pressure-and-imf": "result",
+    "vapor-pressure-and-temperature": "result",
+    "boiling-point": "definition",
+    "clausius-clapeyron-equation": "result",
+    "clausius-clapeyron-calculations": "skill",
+    "enthalpies-of-phase-change": "definition",
+    "heating-curve": "idea",
+    "heating-curve-calculations": "skill",
+    "phase-diagram": "definition",
+    "read-phase-diagram": "skill",
+    "triple-point": "definition",
+    "solid-liquid-curve-slope": "idea",
+    "critical-point-and-supercritical-fluid": "idea",
+    "crystalline-and-amorphous-solids": "idea",
+    "types-of-crystalline-solids": "idea",
+    "classify-crystalline-solid": "skill",
+    "crystal-defects": "idea",
+    "unit-cell": "definition",
+    "cubic-unit-cells": "result",
+    "closest-packing": "idea",
+    "unit-cell-radius-and-density": "skill",
+    "holes-in-closest-packed-arrays": "idea",
+    "formula-from-hole-occupancy": "skill",
+    "ionic-unit-cells": "idea",
+    "bragg-equation": "result"
+  },
+  "statements": {},
+  "new": [
+    {
+      "id": "intermolecular-force",
+      "kind": "definition",
+      "section": "10.1",
+      "name": "Intermolecular force",
+      "statement": "An intermolecular force is a noncovalent attractive force between atoms, molecules or ions. Intermolecular forces are much weaker than the bonds within molecules, yet they decide many physical properties.",
+      "introduces": "kmt",
+      "prereqs": [
+        "covalent-bond",
+        "atoms-and-molecules"
+      ]
+    },
+    {
+      "id": "van-der-waals-force",
+      "kind": "definition",
+      "section": "10.1",
+      "name": "Van der Waals force",
+      "statement": "A van der Waals force is an attractive or repulsive force between molecules, a name that covers dipole-dipole attractions, dipole-induced dipole attractions and London dispersion forces.",
+      "introduces": "forces",
+      "prereqs": [
+        "intermolecular-force"
+      ]
+    },
+    {
+      "id": "instantaneous-dipole",
+      "kind": "definition",
+      "section": "10.1",
+      "name": "Instantaneous dipole",
+      "statement": "An instantaneous dipole is a temporary dipole that exists for a brief moment when the electrons of an atom or molecule happen to be distributed unevenly.",
+      "introduces": "dispersion",
+      "prereqs": [
+        "intermolecular-force",
+        "dipole-moment"
+      ]
+    },
+    {
+      "id": "induced-dipole",
+      "kind": "definition",
+      "section": "10.1",
+      "name": "Induced dipole",
+      "statement": "An induced dipole is a temporary dipole formed when the electrons of an atom or molecule are distorted by the instantaneous dipole of a neighboring atom or molecule.",
+      "introduces": "dispersion",
+      "prereqs": [
+        "instantaneous-dipole"
+      ]
+    },
+    {
+      "id": "polarizability",
+      "kind": "definition",
+      "section": "10.1",
+      "name": "Polarizability",
+      "statement": "Polarizability is a measure of how easily a charge can distort the electron cloud of an atom or molecule. Larger atoms and molecules, whose valence electrons are held less tightly, are more polarizable.",
+      "introduces": "polarizability",
+      "prereqs": [
+        "induced-dipole"
+      ]
+    },
+    {
+      "id": "cohesive-force",
+      "kind": "definition",
+      "section": "10.2",
+      "name": "Cohesive force",
+      "statement": "A cohesive force is a force of attraction between identical molecules, such as the molecules of a liquid.",
+      "introduces": "surface-tension",
+      "prereqs": [
+        "intermolecular-force"
+      ]
+    },
+    {
+      "id": "adhesive-force",
+      "kind": "definition",
+      "section": "10.2",
+      "name": "Adhesive force",
+      "statement": "An adhesive force is a force of attraction between molecules of different chemical identities, such as a liquid and the surface it touches.",
+      "introduces": "surface-tension",
+      "prereqs": [
+        "intermolecular-force"
+      ]
+    },
+    {
+      "id": "vaporization",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Vaporization",
+      "statement": "Vaporization is the change from the liquid state to the gaseous state.",
+      "introduces": "vaporization",
+      "prereqs": [
+        "liquid",
+        "gas"
+      ]
+    },
+    {
+      "id": "condensation",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Condensation",
+      "statement": "Condensation is the change from the gaseous state to the liquid state.",
+      "introduces": "changes-of-state",
+      "prereqs": [
+        "gas",
+        "liquid"
+      ]
+    },
+    {
+      "id": "melting",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Melting",
+      "statement": "Melting is the change from the solid state to the liquid state.",
+      "introduces": "changes-of-state",
+      "prereqs": [
+        "solid",
+        "liquid"
+      ]
+    },
+    {
+      "id": "freezing",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Freezing",
+      "statement": "Freezing is the change from the liquid state to the solid state.",
+      "introduces": "changes-of-state",
+      "prereqs": [
+        "liquid",
+        "solid"
+      ]
+    },
+    {
+      "id": "sublimation",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Sublimation",
+      "statement": "Sublimation is the change from the solid state directly to the gaseous state.",
+      "introduces": "sublimation",
+      "prereqs": [
+        "solid",
+        "gas"
+      ]
+    },
+    {
+      "id": "deposition",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Deposition",
+      "statement": "Deposition is the change from the gaseous state directly to the solid state.",
+      "introduces": "sublimation",
+      "prereqs": [
+        "gas",
+        "solid"
+      ]
+    },
+    {
+      "id": "dynamic-equilibrium",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Dynamic equilibrium",
+      "statement": "A dynamic equilibrium is the state of a system in which reciprocal processes occur at equal rates, so that nothing changes overall although both processes continue.",
+      "introduces": "vaporization",
+      "prereqs": [
+        "vaporization",
+        "condensation"
+      ]
+    },
+    {
+      "id": "vapor-pressure",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Vapor pressure, $P$",
+      "statement": "The vapor pressure, or equilibrium vapor pressure, of a liquid or solid is the pressure exerted by its vapor in equilibrium with it at a given temperature.",
+      "introduces": "vaporization",
+      "prereqs": [
+        "dynamic-equilibrium",
+        "gas-pressure"
+      ]
+    },
+    {
+      "id": "normal-boiling-point",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Normal boiling point",
+      "statement": "The normal boiling point of a liquid is the temperature at which its vapor pressure equals 1 atm (760 torr).",
+      "introduces": "boiling",
+      "prereqs": [
+        "boiling-point",
+        "atmosphere-unit"
+      ]
+    },
+    {
+      "id": "melting-point",
+      "kind": "definition",
+      "section": "10.3",
+      "name": "Melting point and freezing point",
+      "statement": "The melting point of a substance is the temperature at which its solid and liquid phases are in equilibrium. The same temperature is called the freezing point when it is reached by cooling the liquid.",
+      "introduces": "melting",
+      "prereqs": [
+        "melting",
+        "freezing",
+        "dynamic-equilibrium"
+      ]
+    },
+    {
+      "id": "critical-point",
+      "kind": "definition",
+      "section": "10.4",
+      "name": "Critical point",
+      "statement": "The critical point of a substance is the temperature and pressure above which its gas cannot be condensed into a liquid, the point at which its liquid-gas curve ends.",
+      "introduces": "phase-diagram",
+      "prereqs": [
+        "phase-diagram",
+        "condensation"
+      ]
+    },
+    {
+      "id": "supercritical-fluid",
+      "kind": "definition",
+      "section": "10.4",
+      "name": "Supercritical fluid",
+      "statement": "A supercritical fluid is a substance at a temperature and pressure higher than its critical point, with properties between those of a gas and a liquid.",
+      "introduces": "water-diagram",
+      "prereqs": [
+        "critical-point"
+      ]
+    },
+    {
+      "id": "crystalline-solid",
+      "kind": "definition",
+      "section": "10.5",
+      "name": "Crystalline solid",
+      "statement": "A crystalline solid is a solid in which the particles are arranged in a definite repeating pattern.",
+      "introduces": "crystalline-amorphous",
+      "prereqs": [
+        "solid"
+      ]
+    },
+    {
+      "id": "amorphous-solid",
+      "kind": "definition",
+      "section": "10.5",
+      "name": "Amorphous solid",
+      "statement": "An amorphous solid, or noncrystalline solid, is a solid in which the particles lack an ordered internal structure.",
+      "introduces": "crystalline-amorphous",
+      "prereqs": [
+        "solid"
+      ]
+    },
+    {
+      "id": "ionic-solid",
+      "kind": "definition",
+      "section": "10.5",
+      "name": "Ionic solid",
+      "statement": "An ionic solid is a crystalline solid composed of positive and negative ions held together by strong electrostatic attractions.",
+      "introduces": "ionic-solids",
+      "prereqs": [
+        "crystalline-solid",
+        "ion",
+        "ionic-bond"
+      ]
+    },
+    {
+      "id": "metallic-solid",
+      "kind": "definition",
+      "section": "10.5",
+      "name": "Metallic solid",
+      "statement": "A metallic solid is a crystalline solid composed of metal atoms.",
+      "introduces": "metallic-solids",
+      "prereqs": [
+        "crystalline-solid",
+        "metals-nonmetals-metalloids"
+      ]
+    },
+    {
+      "id": "covalent-network-solid",
+      "kind": "definition",
+      "section": "10.5",
+      "name": "Covalent network solid",
+      "statement": "A covalent network solid is a crystalline solid whose particles are held together by covalent bonds.",
+      "introduces": "network-solids",
+      "prereqs": [
+        "crystalline-solid",
+        "covalent-bond"
+      ]
+    },
+    {
+      "id": "molecular-solid",
+      "kind": "definition",
+      "section": "10.5",
+      "name": "Molecular solid",
+      "statement": "A molecular solid is a crystalline solid composed of neutral molecules held together by intermolecular forces of attraction.",
+      "introduces": "molecular-solids",
+      "prereqs": [
+        "crystalline-solid",
+        "intermolecular-force"
+      ]
+    },
+    {
+      "id": "vacancy",
+      "kind": "definition",
+      "section": "10.5",
+      "name": "Vacancy",
+      "statement": "A vacancy is a defect in a crystal where a position that should contain an atom or ion is empty.",
+      "introduces": "defects",
+      "prereqs": [
+        "crystalline-solid"
+      ]
+    },
+    {
+      "id": "interstitial-sites",
+      "kind": "definition",
+      "section": "10.5",
+      "name": "Interstitial sites",
+      "statement": "Interstitial sites are the spaces between the regular particle positions in an array of atoms or ions.",
+      "introduces": "defects",
+      "prereqs": [
+        "crystalline-solid"
+      ]
+    },
+    {
+      "id": "space-lattice",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Space lattice",
+      "statement": "The space lattice of a crystal is the set of all points within it that have identical environments.",
+      "introduces": "lattice-systems",
+      "prereqs": [
+        "crystalline-solid"
+      ]
+    },
+    {
+      "id": "coordination-number",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Coordination number",
+      "statement": "The coordination number of an atom in a crystal is the number of atoms closest to it; in a complex, it is the number of atoms bonded to the central metal atom.",
+      "introduces": "unit-cell",
+      "prereqs": [
+        "unit-cell"
+      ]
+    },
+    {
+      "id": "simple-cubic-unit-cell",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Simple cubic unit cell",
+      "statement": "A simple cubic unit cell, or primitive cubic unit cell, is a cube with lattice points only at its corners, the unit cell of the simple cubic structure.",
+      "introduces": "simple-cubic",
+      "prereqs": [
+        "unit-cell"
+      ]
+    },
+    {
+      "id": "simple-cubic-structure",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Simple cubic structure",
+      "statement": "The simple cubic structure is a crystalline structure whose cubic unit cell has lattice points only at the corners.",
+      "introduces": "unit-cell",
+      "prereqs": [
+        "simple-cubic-unit-cell",
+        "crystalline-solid"
+      ]
+    },
+    {
+      "id": "body-centered-cubic-unit-cell",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Body-centered cubic unit cell",
+      "statement": "A body-centered cubic unit cell is the simplest repeating unit of a body-centered cubic crystal, a cube with lattice points at each corner and at its center.",
+      "introduces": "cubic-cells",
+      "prereqs": [
+        "unit-cell"
+      ]
+    },
+    {
+      "id": "body-centered-cubic-solid",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Body-centered cubic (BCC) solid",
+      "statement": "A body-centered cubic solid is a crystalline structure whose cubic unit cell has lattice points at the corners and in the center of the cell.",
+      "introduces": "cubic-cells",
+      "prereqs": [
+        "body-centered-cubic-unit-cell",
+        "crystalline-solid"
+      ]
+    },
+    {
+      "id": "face-centered-cubic-unit-cell",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Face-centered cubic unit cell",
+      "statement": "A face-centered cubic unit cell is the simplest repeating unit of a face-centered cubic crystal, a cube with lattice points at each corner and at the center of each face.",
+      "introduces": "cubic-cells",
+      "prereqs": [
+        "unit-cell"
+      ]
+    },
+    {
+      "id": "face-centered-cubic-solid",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Face-centered cubic (FCC) solid",
+      "statement": "A face-centered cubic solid is a crystalline structure whose cubic unit cell has lattice points on the corners and in the center of each face.",
+      "introduces": "cubic-cells",
+      "prereqs": [
+        "face-centered-cubic-unit-cell",
+        "crystalline-solid"
+      ]
+    },
+    {
+      "id": "isomorphous",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Isomorphous",
+      "statement": "Substances are isomorphous when they possess the same crystalline structure.",
+      "introduces": "cubic-cells",
+      "prereqs": [
+        "unit-cell"
+      ]
+    },
+    {
+      "id": "hexagonal-closest-packing",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Hexagonal closest packing (HCP)",
+      "statement": "Hexagonal closest packing is a crystalline structure in which closely packed layers of atoms or ions are stacked in two alternating layers, ABAB….",
+      "introduces": "closest-packing",
+      "prereqs": [
+        "closest-packing"
+      ]
+    },
+    {
+      "id": "cubic-closest-packing",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Cubic closest packing (CCP)",
+      "statement": "Cubic closest packing is a crystalline structure in which closely packed layers of atoms or ions are stacked in three alternating layers, ABCABC…; its unit cell is face-centered cubic.",
+      "introduces": "closest-packing",
+      "prereqs": [
+        "closest-packing",
+        "face-centered-cubic-unit-cell"
+      ]
+    },
+    {
+      "id": "crystal-hole",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Hole",
+      "statement": "A hole, or interstice, is a space between the atoms or ions of a crystal.",
+      "introduces": "ionic-crystals",
+      "prereqs": [
+        "crystalline-solid"
+      ]
+    },
+    {
+      "id": "tetrahedral-hole",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Tetrahedral hole",
+      "statement": "A tetrahedral hole is the space formed by four atoms or ions of a crystal at the corners of a tetrahedron.",
+      "introduces": "ionic-crystals",
+      "prereqs": [
+        "crystal-hole"
+      ]
+    },
+    {
+      "id": "octahedral-hole",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Octahedral hole",
+      "statement": "An octahedral hole is the open space in a crystal at the center of six particles located at the corners of an octahedron.",
+      "introduces": "ionic-crystals",
+      "prereqs": [
+        "crystal-hole"
+      ]
+    },
+    {
+      "id": "diffraction",
+      "kind": "definition",
+      "section": "10.6",
+      "name": "Diffraction",
+      "statement": "Diffraction is the redirection of electromagnetic radiation when it encounters a physical barrier of dimensions similar to its wavelength.",
+      "introduces": "xray",
+      "prereqs": [
+        "wavelength",
+        "electromagnetic-radiation"
+      ]
+    },
+    {
+      "id": "x-ray-crystallography",
+      "kind": "idea",
+      "section": "10.6",
+      "name": "X-ray crystallography",
+      "statement": "X-ray crystallography is the experimental technique that finds the distances between the atoms of a crystal by measuring the angles at which X-rays are diffracted as they pass through it.",
+      "introduces": "xray",
+      "prereqs": [
+        "diffraction",
+        "bragg-equation"
+      ]
+    }
+  ],
+  "glossary": {
+    "10.1/dipole-dipole attraction": "dipole-dipole-attraction",
+    "10.1/dispersion force": "dispersion-forces",
+    "10.1/hydrogen bonding": "hydrogen-bonding",
+    "10.1/induced dipole": "induced-dipole",
+    "10.1/instantaneous dipole": "instantaneous-dipole",
+    "10.1/intermolecular force": "intermolecular-force",
+    "10.1/polarizability": "polarizability",
+    "10.1/van der Waals force": "van-der-waals-force",
+    "10.2/adhesive force": "adhesive-force",
+    "10.2/capillary action": "capillary-action",
+    "10.2/cohesive force": "cohesive-force",
+    "10.2/surface tension": "surface-tension",
+    "10.2/viscosity": "viscosity",
+    "10.3/boiling point": "boiling-point",
+    "10.3/Clausius-Clapeyron equation": "clausius-clapeyron-equation",
+    "10.3/condensation": "condensation",
+    "10.3/deposition": "deposition",
+    "10.3/dynamic equilibrium": "dynamic-equilibrium",
+    "10.3/freezing": "freezing",
+    "10.3/freezing point": "melting-point",
+    "10.3/melting": "melting",
+    "10.3/melting point": "melting-point",
+    "10.3/normal boiling point": "normal-boiling-point",
+    "10.3/sublimation": "sublimation",
+    "10.3/vapor pressure": "vapor-pressure",
+    "10.3/vaporization": "vaporization",
+    "10.4/critical point": "critical-point",
+    "10.4/phase diagram": "phase-diagram",
+    "10.4/supercritical fluid": "supercritical-fluid",
+    "10.4/triple point": "triple-point",
+    "10.5/amorphous solid": "amorphous-solid",
+    "10.5/covalent network solid": "covalent-network-solid",
+    "10.5/crystalline solid": "crystalline-solid",
+    "10.5/interstitial sites": "interstitial-sites",
+    "10.5/ionic solid": "ionic-solid",
+    "10.5/metallic solid": "metallic-solid",
+    "10.5/molecular solid": "molecular-solid",
+    "10.5/vacancy": "vacancy",
+    "10.6/body-centered cubic (BCC) solid": "body-centered-cubic-solid",
+    "10.6/body-centered cubic unit cell": "body-centered-cubic-unit-cell",
+    "10.6/Bragg equation": "bragg-equation",
+    "10.6/coordination number": "coordination-number",
+    "10.6/cubic closest packing (CCP)": "cubic-closest-packing",
+    "10.6/diffraction": "diffraction",
+    "10.6/face-centered cubic (FCC) solid": "face-centered-cubic-solid",
+    "10.6/face-centered cubic unit cell": "face-centered-cubic-unit-cell",
+    "10.6/hexagonal closest packing (HCP)": "hexagonal-closest-packing",
+    "10.6/hole": "crystal-hole",
+    "10.6/isomorphous": "isomorphous",
+    "10.6/octahedral hole": "octahedral-hole",
+    "10.6/simple cubic unit cell": "simple-cubic-unit-cell",
+    "10.6/simple cubic structure": "simple-cubic-structure",
+    "10.6/space lattice": "space-lattice",
+    "10.6/tetrahedral hole": "tetrahedral-hole",
+    "10.6/unit cell": "unit-cell",
+    "10.6/X-ray crystallography": "x-ray-crystallography"
+  },
+  "variables": {
+    "10.2/h_cap": "length",
+    "10.2/T_surf": "surface-tension",
+    "10.2/θ_contact": "capillary-rise-equation",
+    "10.2/r_tube": "length",
+    "10.2/ρ": "density",
+    "10.2/g_grav": "acceleration-due-to-gravity",
+    "10.3/P": "vapor-pressure",
+    "10.3/T": "temperature",
+    "10.3/ΔH_vap": "enthalpies-of-phase-change",
+    "10.3/ΔH_fus": "enthalpies-of-phase-change",
+    "10.3/ΔH_sub": "enthalpies-of-phase-change",
+    "10.3/R": "ideal-gas-constant",
+    "10.3/A_cc": "clausius-clapeyron-equation",
+    "10.3/P_1": "vapor-pressure",
+    "10.3/P_2": "vapor-pressure",
+    "10.3/T_1": "temperature",
+    "10.3/T_2": "temperature",
+    "10.6/a_cell": "length",
+    "10.6/r_atom": "length",
+    "10.6/n_order": "bragg-equation",
+    "10.6/λ": "wavelength",
+    "10.6/d_plane": "length",
+    "10.6/θ_bragg": "bragg-equation"
+  },
+  "equations": {
+    "eq-capillary-rise": "capillary-rise-equation",
+    "eq-clausius-clapeyron": "clausius-clapeyron-equation",
+    "eq-clausius-clapeyron-log": "clausius-clapeyron-equation",
+    "eq-clausius-clapeyron-two-point": "clausius-clapeyron-calculations",
+    "eq-sublimation-sum": "enthalpies-of-phase-change",
+    "eq-bragg": "bragg-equation"
+  },
+  "edges": [
+    [
+      "intermolecular-versus-intramolecular-forces",
+      "intermolecular-force"
+    ],
+    [
+      "dispersion-forces",
+      "instantaneous-dipole"
+    ],
+    [
+      "dispersion-forces",
+      "induced-dipole"
+    ],
+    [
+      "polarizability-and-dispersion-strength",
+      "polarizability"
+    ],
+    [
+      "rank-by-intermolecular-forces",
+      "intermolecular-force"
+    ],
+    [
+      "cohesive-and-adhesive-forces",
+      "cohesive-force"
+    ],
+    [
+      "cohesive-and-adhesive-forces",
+      "adhesive-force"
+    ],
+    [
+      "capillary-action",
+      "cohesive-force"
+    ],
+    [
+      "capillary-action",
+      "adhesive-force"
+    ],
+    [
+      "vapor-pressure-dynamic-equilibrium",
+      "dynamic-equilibrium"
+    ],
+    [
+      "vapor-pressure-dynamic-equilibrium",
+      "vapor-pressure"
+    ],
+    [
+      "vapor-pressure-dynamic-equilibrium",
+      "vaporization"
+    ],
+    [
+      "vapor-pressure-dynamic-equilibrium",
+      "condensation"
+    ],
+    [
+      "vapor-pressure-and-imf",
+      "vapor-pressure"
+    ],
+    [
+      "vapor-pressure-and-temperature",
+      "vapor-pressure"
+    ],
+    [
+      "boiling-point",
+      "vapor-pressure"
+    ],
+    [
+      "clausius-clapeyron-equation",
+      "vapor-pressure"
+    ],
+    [
+      "enthalpies-of-phase-change",
+      "vaporization"
+    ],
+    [
+      "enthalpies-of-phase-change",
+      "melting"
+    ],
+    [
+      "enthalpies-of-phase-change",
+      "sublimation"
+    ],
+    [
+      "heating-curve",
+      "melting-point"
+    ],
+    [
+      "critical-point-and-supercritical-fluid",
+      "critical-point"
+    ],
+    [
+      "critical-point-and-supercritical-fluid",
+      "supercritical-fluid"
+    ],
+    [
+      "crystalline-and-amorphous-solids",
+      "crystalline-solid"
+    ],
+    [
+      "crystalline-and-amorphous-solids",
+      "amorphous-solid"
+    ],
+    [
+      "types-of-crystalline-solids",
+      "ionic-solid"
+    ],
+    [
+      "types-of-crystalline-solids",
+      "metallic-solid"
+    ],
+    [
+      "types-of-crystalline-solids",
+      "covalent-network-solid"
+    ],
+    [
+      "types-of-crystalline-solids",
+      "molecular-solid"
+    ],
+    [
+      "classify-crystalline-solid",
+      "ionic-solid"
+    ],
+    [
+      "classify-crystalline-solid",
+      "metallic-solid"
+    ],
+    [
+      "classify-crystalline-solid",
+      "covalent-network-solid"
+    ],
+    [
+      "classify-crystalline-solid",
+      "molecular-solid"
+    ],
+    [
+      "crystal-defects",
+      "vacancy"
+    ],
+    [
+      "crystal-defects",
+      "interstitial-sites"
+    ],
+    [
+      "unit-cell",
+      "space-lattice"
+    ],
+    [
+      "cubic-unit-cells",
+      "simple-cubic-unit-cell"
+    ],
+    [
+      "cubic-unit-cells",
+      "body-centered-cubic-unit-cell"
+    ],
+    [
+      "cubic-unit-cells",
+      "face-centered-cubic-unit-cell"
+    ],
+    [
+      "holes-in-closest-packed-arrays",
+      "tetrahedral-hole"
+    ],
+    [
+      "holes-in-closest-packed-arrays",
+      "octahedral-hole"
+    ],
+    [
+      "formula-from-hole-occupancy",
+      "tetrahedral-hole"
+    ],
+    [
+      "formula-from-hole-occupancy",
+      "octahedral-hole"
+    ],
+    [
+      "bragg-equation",
+      "diffraction"
+    ]
+  ]
+}

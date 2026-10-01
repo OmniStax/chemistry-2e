@@ -47,6 +47,7 @@
   "variables": [
     {
       "sym": "P",
+      "concept": "gas-pressure",
       "type": "pressure",
       "meaning": "the pressure a gas exerts, the force of its molecules’ collisions divided by the area they strike",
       "unit": "Pa (also kPa, bar, psi, atm, torr and mm Hg)",
@@ -55,6 +56,7 @@
     },
     {
       "sym": "F_force",
+      "concept": "force",
       "meaning": "the force exerted on a surface",
       "unit": "N",
       "section": "9.1",
@@ -62,6 +64,7 @@
     },
     {
       "sym": "A_area",
+      "concept": "area",
       "meaning": "the area over which the force is applied",
       "unit": "m²",
       "section": "9.1",
@@ -69,6 +72,7 @@
     },
     {
       "sym": "p_hydro",
+      "concept": "hydrostatic-pressure",
       "type": "pressure",
       "meaning": "the hydrostatic pressure, the pressure a column of fluid exerts because of gravity",
       "unit": "Pa",
@@ -77,6 +81,7 @@
     },
     {
       "sym": "h_col",
+      "concept": "length",
       "meaning": "the height of the column of fluid",
       "unit": "m",
       "section": "9.1",
@@ -84,6 +89,7 @@
     },
     {
       "sym": "ρ",
+      "concept": "density",
       "meaning": "the density of the fluid",
       "unit": "kg/m³",
       "section": "9.1",
@@ -91,6 +97,7 @@
     },
     {
       "sym": "g_grav",
+      "concept": "acceleration-due-to-gravity",
       "meaning": "the acceleration due to gravity",
       "unit": "m/s²",
       "section": "9.1",
@@ -98,6 +105,7 @@
     },
     {
       "sym": "P",
+      "concept": "gas-pressure",
       "type": "pressure",
       "meaning": "the pressure of a gas, measured on a gauge attached to the vessel that holds it",
       "unit": "atm (also kPa, torr, psi and bar, as the measurement is reported)",
@@ -106,6 +114,7 @@
     },
     {
       "sym": "V",
+      "concept": "volume",
       "type": "volume",
       "meaning": "the volume of the gas, which is the volume of the vessel that confines it",
       "unit": "L",
@@ -114,6 +123,7 @@
     },
     {
       "sym": "n",
+      "concept": "mole",
       "type": "amount",
       "meaning": "the amount of gas in the vessel, counted in moles",
       "unit": "mol",
@@ -122,6 +132,7 @@
     },
     {
       "sym": "T",
+      "concept": "temperature",
       "type": "temperature",
       "meaning": "the temperature of the gas on the kelvin scale, which every gas law calculation requires",
       "unit": "K",
@@ -130,6 +141,7 @@
     },
     {
       "sym": "R",
+      "concept": "ideal-gas-constant",
       "meaning": "the ideal gas constant, also called the universal gas constant, whose value follows from the units the pressure, volume and temperature are written in",
       "unit": "0.08206 L atm mol⁻¹ K⁻¹, or 8.314 kPa L mol⁻¹ K⁻¹",
       "section": "9.2",
@@ -137,6 +149,7 @@
     },
     {
       "sym": "P_1",
+      "concept": "gas-pressure",
       "type": "pressure",
       "meaning": "the pressure of a confined gas in its first condition, before the change the problem describes",
       "unit": "atm",
@@ -145,6 +158,7 @@
     },
     {
       "sym": "P_2",
+      "concept": "gas-pressure",
       "type": "pressure",
       "meaning": "the pressure of the same gas in its second condition, after the change",
       "unit": "atm",
@@ -153,6 +167,7 @@
     },
     {
       "sym": "V_1",
+      "concept": "volume",
       "type": "volume",
       "meaning": "the volume of a confined gas in its first condition",
       "unit": "L",
@@ -161,6 +176,7 @@
     },
     {
       "sym": "V_2",
+      "concept": "volume",
       "type": "volume",
       "meaning": "the volume of the same gas in its second condition",
       "unit": "L",
@@ -169,6 +185,7 @@
     },
     {
       "sym": "T_1",
+      "concept": "temperature",
       "type": "temperature",
       "meaning": "the kelvin temperature of a confined gas in its first condition",
       "unit": "K",
@@ -177,6 +194,7 @@
     },
     {
       "sym": "T_2",
+      "concept": "temperature",
       "type": "temperature",
       "meaning": "the kelvin temperature of the same gas in its second condition",
       "unit": "K",
@@ -185,6 +203,7 @@
     },
     {
       "sym": "n_1",
+      "concept": "mole",
       "type": "amount",
       "meaning": "the amount of a confined gas in its first condition, counted in moles",
       "unit": "mol",
@@ -193,6 +212,7 @@
     },
     {
       "sym": "n_2",
+      "concept": "mole",
       "type": "amount",
       "meaning": "the amount of the same gas in its second condition",
       "unit": "mol",
@@ -201,6 +221,7 @@
     },
     {
       "sym": "d",
+      "concept": "density",
       "meaning": "the density of a gas, its mass divided by its volume",
       "unit": "g/L",
       "section": "9.3",
@@ -208,6 +229,7 @@
     },
     {
       "sym": "MM",
+      "concept": "molar-mass",
       "type": "mass",
       "meaning": "the molar mass of the gas, its mass divided by its amount in moles",
       "unit": "g/mol",
@@ -216,6 +238,7 @@
     },
     {
       "sym": "m",
+      "concept": "mass",
       "type": "mass",
       "meaning": "the mass of the gas sample",
       "unit": "g",
@@ -224,6 +247,7 @@
     },
     {
       "sym": "P_total",
+      "concept": "gas-pressure",
       "type": "pressure",
       "meaning": "the total pressure of a mixture of gases",
       "unit": "atm",
@@ -232,6 +256,7 @@
     },
     {
       "sym": "P_A",
+      "concept": "partial-pressure",
       "type": "pressure",
       "meaning": "the partial pressure of gas A, the pressure it would exert alone in the container",
       "unit": "atm",
@@ -240,6 +265,7 @@
     },
     {
       "sym": "P_B",
+      "concept": "partial-pressure",
       "type": "pressure",
       "meaning": "the partial pressure of gas B",
       "unit": "atm",
@@ -248,6 +274,7 @@
     },
     {
       "sym": "P_C",
+      "concept": "partial-pressure",
       "type": "pressure",
       "meaning": "the partial pressure of gas C",
       "unit": "atm",
@@ -256,6 +283,7 @@
     },
     {
       "sym": "X_A",
+      "concept": "mole-fraction",
       "meaning": "the mole fraction of gas A, its moles divided by the total moles of the mixture",
       "unit": "none",
       "section": "9.3",
@@ -263,6 +291,7 @@
     },
     {
       "sym": "n_A",
+      "concept": "mole",
       "type": "amount",
       "meaning": "the amount of gas A in the mixture",
       "unit": "mol",
@@ -271,6 +300,7 @@
     },
     {
       "sym": "n_total",
+      "concept": "mole",
       "type": "amount",
       "meaning": "the total amount of all the gases in the mixture",
       "unit": "mol",
@@ -279,6 +309,7 @@
     },
     {
       "sym": "MM_A",
+      "concept": "molar-mass",
       "type": "mass",
       "meaning": "the molar mass of gas A",
       "unit": "g/mol",
@@ -287,6 +318,7 @@
     },
     {
       "sym": "MM_B",
+      "concept": "molar-mass",
       "type": "mass",
       "meaning": "the molar mass of gas B",
       "unit": "g/mol",
@@ -295,6 +327,7 @@
     },
     {
       "sym": "KE",
+      "concept": "kinetic-energy",
       "type": "energy",
       "meaning": "the kinetic energy of a particle of mass m moving at speed u",
       "unit": "J",
@@ -303,6 +336,7 @@
     },
     {
       "sym": "u",
+      "concept": "speed",
       "meaning": "the speed of one gas molecule",
       "unit": "m/s",
       "section": "9.5",
@@ -310,6 +344,7 @@
     },
     {
       "sym": "u_rms",
+      "concept": "root-mean-square-speed",
       "meaning": "the root mean square speed of the molecules of a gas, the square root of the average of their squared speeds",
       "unit": "m/s",
       "section": "9.5",
@@ -317,6 +352,7 @@
     },
     {
       "sym": "KE_avg",
+      "concept": "kinetic-energy",
       "type": "energy",
       "meaning": "the average kinetic energy of a mole of gas molecules",
       "unit": "J/mol",
@@ -325,6 +361,7 @@
     },
     {
       "sym": "MM",
+      "concept": "molar-mass",
       "type": "mass",
       "meaning": "the molar mass of the gas, expressed in kilograms per mole in the speed equation",
       "unit": "kg/mol",
@@ -333,6 +370,7 @@
     },
     {
       "sym": "Z_comp",
+      "concept": "compressibility-factor",
       "meaning": "the compressibility factor, the measured molar volume of a gas divided by the molar volume of an ideal gas at the same temperature and pressure",
       "unit": "none",
       "section": "9.6",
@@ -340,6 +378,7 @@
     },
     {
       "sym": "V_m",
+      "concept": "molar-volume",
       "type": "volume",
       "meaning": "the molar volume of a gas, the volume of 1 mole of it",
       "unit": "L/mol",
@@ -348,6 +387,7 @@
     },
     {
       "sym": "a_vdw",
+      "concept": "van-der-waals-equation",
       "meaning": "the van der Waals constant for the attraction between the molecules of a particular gas",
       "unit": "L² atm/mol²",
       "section": "9.6",
@@ -355,6 +395,7 @@
     },
     {
       "sym": "b_vdw",
+      "concept": "van-der-waals-equation",
       "meaning": "the van der Waals constant for the size of the molecules of a particular gas",
       "unit": "L/mol",
       "section": "9.6",
@@ -484,7 +525,7 @@
     },
     {
       "id": "eq-mole-fraction",
-      "concept": "mole-fraction-and-partial-pressure",
+      "concept": "mole-fraction",
       "section": "9.3",
       "latex": "X_A=\\frac{n_A}{n_{Total}}",
       "ktex": "X_A=\\frac{\\knA}{\\kntot}",
@@ -494,7 +535,7 @@
     },
     {
       "id": "eq-rate-of-diffusion",
-      "concept": "diffusion-and-effusion",
+      "concept": "rate-of-diffusion",
       "section": "9.4",
       "latex": "\\text{rate of diffusion}=\\frac{\\text{amount of gas passing through an area}}{\\text{unit of time}}",
       "condition": "the definition of a rate of diffusion",
@@ -513,6 +554,7 @@
     },
     {
       "id": "eq-kinetic-energy",
+      "concept": "kinetic-energy",
       "section": "9.5",
       "latex": "\\text{KE}=\\frac{1}{2}mu^2",
       "ktex": "\\kKE=\\frac{1}{2}\\km u^2",
@@ -574,161 +616,193 @@
     {
       "section": "9.1",
       "term": "atmosphere (atm)",
+      "concept": "atmosphere-unit",
       "definition": "unit of pressure; 1 atm = 101,325 Pa"
     },
     {
       "section": "9.1",
       "term": "bar",
+      "concept": "bar-unit",
       "definition": "(bar or b) unit of pressure; 1 bar = 100,000 Pa"
     },
     {
       "section": "9.1",
       "term": "barometer",
+      "concept": "barometer",
       "definition": "device used to measure atmospheric pressure"
     },
     {
       "section": "9.1",
       "term": "hydrostatic pressure",
+      "concept": "hydrostatic-pressure",
       "definition": "pressure exerted by a fluid due to gravity"
     },
     {
       "section": "9.1",
       "term": "manometer",
+      "concept": "manometer",
       "definition": "device used to measure the pressure of a gas trapped in a container"
     },
     {
       "section": "9.1",
       "term": "pascal (Pa)",
+      "concept": "pascal",
       "definition": "SI unit of pressure; 1 Pa = 1 N/m²"
     },
     {
       "section": "9.1",
       "term": "pounds per square inch (psi)",
+      "concept": "pounds-per-square-inch",
       "definition": "unit of pressure common in the US"
     },
     {
       "section": "9.1",
       "term": "pressure",
+      "concept": "gas-pressure",
       "definition": "force exerted per unit area"
     },
     {
       "section": "9.1",
       "term": "torr",
+      "concept": "torr",
       "definition": "unit of pressure; 1 torr = 1/760 atm"
     },
     {
       "section": "9.2",
       "term": "absolute zero",
+      "concept": "absolute-zero",
       "definition": "temperature at which the volume of a gas would be zero according to Charles’s law."
     },
     {
       "section": "9.2",
       "term": "Amontons’s law",
+      "concept": "amontons-law",
       "definition": "(also, Gay-Lussac’s law) pressure of a given number of moles of gas is directly proportional to its kelvin temperature when the volume is held constant"
     },
     {
       "section": "9.2",
       "term": "Avogadro’s law",
+      "concept": "avogadro-law",
       "definition": "volume of a gas at constant temperature and pressure is proportional to the number of gas molecules"
     },
     {
       "section": "9.2",
       "term": "Boyle’s law",
+      "concept": "boyles-law",
       "definition": "volume of a given number of moles of gas held at constant temperature is inversely proportional to the pressure under which it is measured"
     },
     {
       "section": "9.2",
       "term": "Charles’s law",
+      "concept": "charles-law",
       "definition": "volume of a given number of moles of gas is directly proportional to its kelvin temperature when the pressure is held constant"
     },
     {
       "section": "9.2",
       "term": "ideal gas",
+      "concept": "ideal-gas",
       "definition": "hypothetical gas whose physical properties are perfectly described by the gas laws"
     },
     {
       "section": "9.2",
       "term": "ideal gas constant (R)",
+      "concept": "ideal-gas-constant",
       "definition": "constant derived from the ideal gas equation R = 0.08206 L atm mol⁻¹ K⁻¹ or 8.314 L kPa mol⁻¹ K⁻¹"
     },
     {
       "section": "9.2",
       "term": "ideal gas law",
+      "concept": "ideal-gas-law",
       "definition": "relation between the pressure, volume, amount, and temperature of a gas under conditions derived by combination of the simple gas laws"
     },
     {
       "section": "9.2",
       "term": "standard conditions of temperature and pressure (STP)",
+      "concept": "standard-temperature-and-pressure",
       "definition": "273.15 K (0 °C) and 1 atm (101.325 kPa)"
     },
     {
       "section": "9.2",
       "term": "standard molar volume",
+      "concept": "standard-molar-volume",
       "definition": "volume of 1 mole of gas at STP, approximately 22.4 L for gases behaving ideally"
     },
     {
       "section": "9.3",
       "term": "Dalton’s law of partial pressures",
+      "concept": "daltons-law-of-partial-pressures",
       "definition": "total pressure of a mixture of ideal gases is equal to the sum of the partial pressures of the component gases"
     },
     {
       "section": "9.3",
       "term": "mole fraction (X)",
+      "concept": "mole-fraction",
       "definition": "concentration unit defined as the ratio of the molar amount of a mixture component to the total number of moles of all mixture components"
     },
     {
       "section": "9.3",
       "term": "partial pressure",
+      "concept": "partial-pressure",
       "definition": "pressure exerted by an individual gas in a mixture"
     },
     {
       "section": "9.3",
       "term": "vapor pressure of water",
+      "concept": "vapor-pressure-of-water",
       "definition": "pressure exerted by water vapor in equilibrium with liquid water in a closed container at a specific temperature"
     },
     {
       "section": "9.4",
       "term": "diffusion",
+      "concept": "diffusion",
       "definition": "movement of an atom or molecule from a region of relatively high concentration to one of relatively low concentration (discussed in this chapter with regard to gaseous species, but applicable to species in any phase)"
     },
     {
       "section": "9.4",
       "term": "effusion",
+      "concept": "effusion",
       "definition": "transfer of gaseous atoms or molecules from a container to a vacuum through very small openings"
     },
     {
       "section": "9.4",
       "term": "Graham’s law of effusion",
+      "concept": "grahams-law",
       "definition": "rates of diffusion and effusion of gases are inversely proportional to the square roots of their molecular masses"
     },
     {
       "section": "9.4",
       "term": "mean free path",
+      "concept": "mean-free-path",
       "definition": "average distance a molecule travels between collisions"
     },
     {
       "section": "9.4",
       "term": "rate of diffusion",
+      "concept": "rate-of-diffusion",
       "definition": "amount of gas diffusing through a given area over a given time"
     },
     {
       "section": "9.5",
       "term": "kinetic molecular theory",
+      "concept": "kinetic-molecular-theory",
       "definition": "theory based on simple principles and assumptions that effectively explains ideal gas behavior"
     },
     {
       "section": "9.5",
       "term": "root mean square speed (u_rms)",
+      "concept": "root-mean-square-speed",
       "definition": "measure of average speed for a group of particles calculated as the square root of the average squared speed"
     },
     {
       "section": "9.6",
       "term": "compressibility factor (Z)",
+      "concept": "compressibility-factor",
       "definition": "ratio of the experimentally measured molar volume for a gas to its molar volume as computed from the ideal gas equation"
     },
     {
       "section": "9.6",
       "term": "van der Waals equation",
+      "concept": "van-der-waals-equation",
       "definition": "modified version of the ideal gas equation containing additional terms to account for non-ideal gas behavior"
     }
   ]

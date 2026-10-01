@@ -46,10 +46,14 @@
  "coverage": [
   { "span": "physical", "concept": "physical-property", "verb": "introduces" },
   { "span": "physical", "concept": "physical-and-chemical-change", "verb": "introduces" },
+  { "span": "physical", "concept": "physical-change", "verb": "introduces" },
   { "span": "chemical", "concept": "chemical-property", "verb": "introduces" },
   { "span": "chemical", "concept": "physical-and-chemical-change", "verb": "reinforces" },
   { "span": "chemical", "concept": "classify-physical-or-chemical", "verb": "introduces" },
+  { "span": "chemical", "concept": "chemical-change", "verb": "introduces" },
   { "span": "extensive", "concept": "extensive-and-intensive-properties", "verb": "introduces" },
+  { "span": "extensive", "concept": "extensive-property", "verb": "introduces" },
+  { "span": "extensive", "concept": "intensive-property", "verb": "introduces" },
   { "span": "hazard", "concept": "chemical-property", "verb": "uses" },
   { "span": "elements", "concept": "physical-property", "verb": "uses" }
  ],

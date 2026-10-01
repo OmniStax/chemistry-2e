@@ -53,18 +53,21 @@
  "variables": [
   {
    "sym": "Z",
+   "concept": "atomic-number",
    "meaning": "the atomic number of an atom, the number of protons in its nucleus, which fixes the identity of the element",
    "section": "2.3",
    "anchor": "2.3-atomic-number"
   },
   {
    "sym": "A",
+   "concept": "mass-number",
    "meaning": "the mass number of an atom, the total number of protons and neutrons in its nucleus",
    "section": "2.3",
    "anchor": "2.3-atomic-number"
   },
   {
    "sym": "e",
+   "concept": "fundamental-charge",
    "type": "charge",
    "meaning": "the fundamental unit of charge, the magnitude of the charge of one electron",
    "unit": "C",
@@ -75,6 +78,7 @@
  "equations": [
   {
    "id": "eq-electron-mass",
+   "concept": "fundamental-charge",
    "section": "2.2",
    "latex": "\\text{Mass of electron}=1.602\\times10^{-19}\\;\\text{C}\\times\\frac{1\\;\\text{kg}}{1.759\\times10^{11}\\;\\text{C}}=9.107\\times10^{-31}\\;\\text{kg}",
    "condition": "Millikan's charge of the electron divided by Thomson's charge-to-mass ratio",
@@ -111,306 +115,367 @@
   {
    "section": "2.1",
    "term": "Dalton’s atomic theory",
+   "concept": "daltons-atomic-theory",
    "definition": "set of postulates that established the fundamental properties of atoms"
   },
   {
    "section": "2.1",
    "term": "law of constant composition",
+   "concept": "law-of-definite-proportions",
    "definition": "(also, law of definite proportions) all samples of a pure compound contain the same elements in the same proportions by mass"
   },
   {
    "section": "2.1",
    "term": "law of definite proportions",
+   "concept": "law-of-definite-proportions",
    "definition": "(also, law of constant composition) all samples of a pure compound contain the same elements in the same proportions by mass"
   },
   {
    "section": "2.1",
    "term": "law of multiple proportions",
+   "concept": "law-of-multiple-proportions",
    "definition": "when two elements react to form more than one compound, a fixed mass of one element will react with masses of the other element in a ratio of small whole numbers"
   },
   {
    "section": "2.2",
    "term": "alpha particle (α particle)",
+   "concept": "alpha-particle",
    "definition": "positively charged particle consisting of two protons and two neutrons"
   },
   {
    "section": "2.2",
    "term": "electron",
+   "concept": "electron",
    "definition": "negatively charged, subatomic particle of relatively low mass located outside the nucleus"
   },
   {
    "section": "2.2",
    "term": "isotopes",
+   "concept": "isotopes",
    "definition": "atoms that contain the same number of protons but different numbers of neutrons"
   },
   {
    "section": "2.2",
    "term": "neutron",
+   "concept": "neutron",
    "definition": "uncharged, subatomic particle located in the nucleus"
   },
   {
    "section": "2.2",
    "term": "nucleus",
+   "concept": "nucleus",
    "definition": "massive, positively charged center of an atom made up of protons and neutrons"
   },
   {
    "section": "2.2",
    "term": "proton",
+   "concept": "proton",
    "definition": "positively charged, subatomic particle located in the nucleus"
   },
   {
    "section": "2.3",
    "term": "anion",
+   "concept": "anion",
    "definition": "negatively charged atom or molecule (contains more electrons than protons)"
   },
   {
    "section": "2.3",
    "term": "atomic mass",
+   "concept": "average-atomic-mass",
    "definition": "average mass of atoms of an element, expressed in amu"
   },
   {
    "section": "2.3",
    "term": "atomic mass unit (amu)",
+   "concept": "atomic-mass-unit",
    "definition": "(also, unified atomic mass unit, u, or Dalton, Da) unit of mass equal to $\\frac{1}{12}$ of the mass of a <sup>12</sup>C atom"
   },
   {
    "section": "2.3",
    "term": "atomic number (Z)",
+   "concept": "atomic-number",
    "definition": "number of protons in the nucleus of an atom"
   },
   {
    "section": "2.3",
    "term": "cation",
+   "concept": "cation",
    "definition": "positively charged atom or molecule (contains fewer electrons than protons)"
   },
   {
    "section": "2.3",
    "term": "chemical symbol",
+   "concept": "chemical-symbols",
    "definition": "one-, two-, or three-letter abbreviation used to represent an element or its atoms"
   },
   {
    "section": "2.3",
    "term": "Dalton (Da)",
+   "concept": "atomic-mass-unit",
    "definition": "alternative unit equivalent to the atomic mass unit"
   },
   {
    "section": "2.3",
    "term": "fundamental unit of charge",
+   "concept": "fundamental-charge",
    "definition": "(also called the elementary charge) equals the magnitude of the charge of an electron (e) with e = 1.602 $\\times$ 10<sup>−19</sup> C"
   },
   {
    "section": "2.3",
    "term": "ion",
+   "concept": "ion",
    "definition": "electrically charged atom or molecule (contains unequal numbers of protons and electrons)"
   },
   {
    "section": "2.3",
    "term": "mass number (A)",
+   "concept": "mass-number",
    "definition": "sum of the numbers of neutrons and protons in the nucleus of an atom"
   },
   {
    "section": "2.3",
    "term": "unified atomic mass unit (u)",
+   "concept": "atomic-mass-unit",
    "definition": "alternative unit equivalent to the atomic mass unit"
   },
   {
    "section": "2.4",
    "term": "empirical formula",
+   "concept": "empirical-formula-of-a-compound",
    "definition": "formula showing the composition of a compound given as the simplest whole-number ratio of atoms"
   },
   {
    "section": "2.4",
    "term": "isomers",
+   "concept": "isomers",
    "definition": "compounds with the same chemical formula but different structures"
   },
   {
    "section": "2.4",
    "term": "molecular formula",
+   "concept": "molecular-formula",
    "definition": "formula indicating the composition of a molecule of a compound and giving the actual number of atoms of each element in a molecule of the compound."
   },
   {
    "section": "2.4",
    "term": "spatial isomers",
+   "concept": "spatial-isomer",
    "definition": "compounds in which the relative orientations of the atoms in space differ"
   },
   {
    "section": "2.4",
    "term": "structural formula",
+   "concept": "structural-formula",
    "definition": "shows the atoms in a molecule and how they are connected"
   },
   {
    "section": "2.4",
    "term": "structural isomer",
+   "concept": "structural-isomer",
    "definition": "one of two substances that have the same molecular formula but different physical and chemical properties because their atoms are bonded differently"
   },
   {
    "section": "2.5",
    "term": "actinide",
+   "concept": "actinide",
    "definition": "inner transition metal in the bottom of the bottom two rows of the periodic table"
   },
   {
    "section": "2.5",
    "term": "alkali metal",
+   "concept": "alkali-metal",
    "definition": "element in group 1"
   },
   {
    "section": "2.5",
    "term": "alkaline earth metal",
+   "concept": "alkaline-earth-metal",
    "definition": "element in group 2"
   },
   {
    "section": "2.5",
    "term": "chalcogen",
+   "concept": "chalcogen",
    "definition": "element in group 16"
   },
   {
    "section": "2.5",
    "term": "group",
+   "concept": "group-of-the-periodic-table",
    "definition": "vertical column of the periodic table"
   },
   {
    "section": "2.5",
    "term": "halogen",
+   "concept": "halogen",
    "definition": "element in group 17"
   },
   {
    "section": "2.5",
    "term": "hydrate",
+   "concept": "hydrate",
    "definition": "compound containing one or more water molecules bound within its crystals"
   },
   {
    "section": "2.5",
    "term": "inert gas",
+   "concept": "noble-gas",
    "definition": "(also, noble gas) element in group 18"
   },
   {
    "section": "2.5",
    "term": "inner transition metal",
+   "concept": "inner-transition-metal",
    "definition": "(also, lanthanide or actinide) element in the bottom two rows; if in the first row, also called lanthanide, or if in the second row, also called actinide"
   },
   {
    "section": "2.5",
    "term": "lanthanide",
+   "concept": "lanthanide",
    "definition": "inner transition metal in the top of the bottom two rows of the periodic table"
   },
   {
    "section": "2.5",
    "term": "main-group element",
+   "concept": "main-group-element",
    "definition": "(also, representative element) element in groups 1, 2, and 13–18"
   },
   {
    "section": "2.5",
    "term": "metal",
+   "concept": "metal",
    "definition": "element that is shiny, malleable, good conductor of heat and electricity"
   },
   {
    "section": "2.5",
    "term": "metalloid",
+   "concept": "metalloid",
    "definition": "element that conducts heat and electricity moderately well, and possesses some properties of metals and some properties of nonmetals"
   },
   {
    "section": "2.5",
    "term": "noble gas",
+   "concept": "noble-gas",
    "definition": "(also, inert gas) element in group 18"
   },
   {
    "section": "2.5",
    "term": "nonmetal",
+   "concept": "nonmetal",
    "definition": "element that appears dull, poor conductor of heat and electricity"
   },
   {
    "section": "2.5",
    "term": "period",
+   "concept": "period-of-the-periodic-table",
    "definition": "(also, series) horizontal row of the periodic table"
   },
   {
    "section": "2.5",
    "term": "periodic law",
+   "concept": "periodic-law",
    "definition": "properties of the elements are periodic function of their atomic numbers."
   },
   {
    "section": "2.5",
    "term": "periodic table",
+   "concept": "periodic-table",
    "definition": "table of the elements that places elements with similar chemical properties close together"
   },
   {
    "section": "2.5",
    "term": "pnictogen",
+   "concept": "pnictogen",
    "definition": "element in group 15"
   },
   {
    "section": "2.5",
    "term": "representative element",
+   "concept": "main-group-element",
    "definition": "(also, main-group element) element in columns 1, 2, and 12–18"
   },
   {
    "section": "2.5",
    "term": "series",
+   "concept": "period-of-the-periodic-table",
    "definition": "(also, period) horizontal row of the period table"
   },
   {
    "section": "2.5",
    "term": "transition metal",
+   "concept": "transition-metal",
    "definition": "element in groups 3–12 (more strictly defined, 3–11; see chapter on transition metals and coordination chemistry)"
   },
   {
    "section": "2.6",
    "term": "covalent bond",
+   "concept": "covalent-bond",
    "definition": "attractive force between the nuclei of a molecule’s atoms and pairs of electrons between the atoms"
   },
   {
    "section": "2.6",
    "term": "covalent compound",
+   "concept": "molecular-compounds",
    "definition": "(also, molecular compound) composed of molecules formed by atoms of two or more different elements"
   },
   {
    "section": "2.6",
    "term": "ionic bond",
+   "concept": "ionic-bond",
    "definition": "electrostatic forces of attraction between the oppositely charged ions of an ionic compound"
   },
   {
    "section": "2.6",
    "term": "ionic compound",
+   "concept": "ionic-compounds",
    "definition": "compound composed of cations and anions combined in ratios, yielding an electrically neutral substance"
   },
   {
    "section": "2.6",
    "term": "molecular compound",
+   "concept": "molecular-compounds",
    "definition": "(also, covalent compound) composed of molecules formed by atoms of two or more different elements"
   },
   {
    "section": "2.6",
    "term": "monatomic ion",
+   "concept": "monatomic-ion",
    "definition": "ion composed of a single atom"
   },
   {
    "section": "2.6",
    "term": "oxyanion",
+   "concept": "oxyanion",
    "definition": "polyatomic anion composed of a central atom bonded to oxygen atoms"
   },
   {
    "section": "2.6",
    "term": "polyatomic ion",
+   "concept": "polyatomic-ions",
    "definition": "ion composed of more than one atom"
   },
   {
    "section": "2.7",
    "term": "binary acid",
+   "concept": "binary-acid",
    "definition": "compound that contains hydrogen and one other element, bonded in a way that imparts acidic properties to the compound (ability to release H<sup>+</sup> ions when dissolved in water)"
   },
   {
    "section": "2.7",
    "term": "binary compound",
+   "concept": "binary-compound",
    "definition": "compound containing two different elements."
   },
   {
    "section": "2.7",
    "term": "nomenclature",
+   "concept": "nomenclature",
    "definition": "system of rules for naming objects of interest"
   },
   {
    "section": "2.7",
    "term": "oxyacid",
+   "concept": "oxyacid",
    "definition": "compound that contains hydrogen, oxygen, and one other element, bonded in a way that imparts acidic properties to the compound (ability to release H<sup>+</sup> ions when dissolved in water)"
   }
  ]

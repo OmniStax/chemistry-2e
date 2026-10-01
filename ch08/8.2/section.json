@@ -243,6 +243,11 @@
    "verb": "reinforces"
   },
   {
+   "span": "hybrid-ideas",
+   "concept": "hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
    "span": "sp",
    "concept": "sp-sp2-sp3-hybrid-orbitals",
    "verb": "introduces"
@@ -268,6 +273,11 @@
    "verb": "uses"
   },
   {
+   "span": "sp",
+   "concept": "sp-hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
    "span": "sp2",
    "concept": "sp-sp2-sp3-hybrid-orbitals",
    "verb": "reinforces"
@@ -286,6 +296,11 @@
    "span": "sp2",
    "concept": "electron-pair-geometry",
    "verb": "uses"
+  },
+  {
+   "span": "sp2",
+   "concept": "sp2-hybrid-orbital",
+   "verb": "introduces"
   },
   {
    "span": "sp3",
@@ -313,6 +328,11 @@
    "verb": "uses"
   },
   {
+   "span": "sp3",
+   "concept": "sp3-hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
    "span": "sp3d",
    "concept": "sp3d-and-sp3d2-hybrid-orbitals",
    "verb": "introduces"
@@ -331,6 +351,16 @@
    "span": "sp3d",
    "concept": "lewis-structure",
    "verb": "uses"
+  },
+  {
+   "span": "sp3d",
+   "concept": "sp3d-hybrid-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "sp3d",
+   "concept": "sp3d2-hybrid-orbital",
+   "verb": "introduces"
   },
   {
    "span": "assignment",

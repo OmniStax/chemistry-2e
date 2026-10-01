@@ -86,8 +86,10 @@
  "coverage": [
   { "span": "three-parts", "concept": "measurement-parts", "verb": "introduces" },
   { "span": "three-parts", "concept": "scientific-notation", "verb": "introduces" },
+  { "span": "three-parts", "concept": "unit", "verb": "introduces" },
   { "span": "si-units", "concept": "si-base-units", "verb": "introduces" },
   { "span": "si-units", "concept": "measurement-parts", "verb": "uses" },
+  { "span": "si-units", "concept": "si-units", "verb": "introduces" },
   { "span": "prefixes", "concept": "unit-prefixes", "verb": "introduces" },
   { "span": "prefixes", "concept": "scientific-notation", "verb": "uses" },
   { "span": "base-units", "concept": "si-base-units", "verb": "reinforces" },
@@ -98,6 +100,10 @@
   { "span": "volume", "concept": "volume", "verb": "introduces" },
   { "span": "volume", "concept": "derived-units", "verb": "uses" },
   { "span": "volume", "concept": "unit-prefixes", "verb": "uses" },
+  { "span": "volume", "concept": "cubic-meter", "verb": "introduces" },
+  { "span": "volume", "concept": "cubic-centimeter", "verb": "introduces" },
+  { "span": "volume", "concept": "liter", "verb": "introduces" },
+  { "span": "volume", "concept": "milliliter", "verb": "introduces" },
   { "span": "density", "concept": "density", "verb": "introduces" },
   { "span": "density", "concept": "derived-units", "verb": "uses" },
   { "span": "density", "concept": "volume", "verb": "uses" },
@@ -108,7 +114,15 @@
   { "span": "displacement", "concept": "density", "verb": "uses" },
   { "span": "displacement", "concept": "volume", "verb": "uses" },
   { "span": "ex-displacement", "concept": "measure-volume-by-displacement", "verb": "uses" },
-  { "span": "ex-displacement", "concept": "density", "verb": "uses" }
+  { "span": "ex-displacement", "concept": "density", "verb": "uses" },
+  { "span": "length", "concept": "length", "verb": "introduces" },
+  { "span": "length", "concept": "meter", "verb": "introduces" },
+  { "span": "time", "concept": "time", "verb": "introduces" },
+  { "span": "time", "concept": "second", "verb": "introduces" },
+  { "span": "temperature", "concept": "temperature", "verb": "introduces" },
+  { "span": "temperature", "concept": "kelvin", "verb": "introduces" },
+  { "span": "temperature", "concept": "celsius", "verb": "introduces" },
+  { "span": "mass", "concept": "kilogram", "verb": "introduces" }
  ],
  "exercises": [
   {

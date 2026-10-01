@@ -139,6 +139,11 @@
    "span": "born-haber",
    "concept": "bond-energy",
    "verb": "uses"
+  },
+  {
+   "span": "born-haber",
+   "concept": "born-haber-thermochemical-cycle",
+   "verb": "introduces"
   }
  ],
  "exercises": [

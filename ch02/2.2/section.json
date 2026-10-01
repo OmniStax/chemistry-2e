@@ -73,17 +73,22 @@
  "coverage": [
   { "span": "cathode-ray", "concept": "discovery-of-the-electron", "verb": "introduces" },
   { "span": "cathode-ray", "concept": "daltons-atomic-theory", "verb": "uses" },
+  { "span": "cathode-ray", "concept": "electron", "verb": "introduces" },
   { "span": "oil-drop", "concept": "fundamental-charge", "verb": "introduces" },
   { "span": "oil-drop", "concept": "discovery-of-the-electron", "verb": "uses" },
   { "span": "atom-models", "concept": "discovery-of-the-electron", "verb": "uses" },
   { "span": "atom-models", "concept": "daltons-atomic-theory", "verb": "uses" },
   { "span": "gold-foil", "concept": "nuclear-model-of-the-atom", "verb": "introduces" },
+  { "span": "gold-foil", "concept": "alpha-particle", "verb": "introduces" },
   { "span": "nucleus", "concept": "nuclear-model-of-the-atom", "verb": "reinforces" },
+  { "span": "nucleus", "concept": "nucleus", "verb": "introduces" },
+  { "span": "nucleus", "concept": "proton", "verb": "introduces" },
   { "span": "isotopes", "concept": "isotopes", "verb": "introduces" },
   { "span": "isotopes", "concept": "daltons-atomic-theory", "verb": "uses" },
   { "span": "neutron", "concept": "subatomic-particles", "verb": "introduces" },
   { "span": "neutron", "concept": "isotopes", "verb": "reinforces" },
-  { "span": "neutron", "concept": "nuclear-model-of-the-atom", "verb": "uses" }
+  { "span": "neutron", "concept": "nuclear-model-of-the-atom", "verb": "uses" },
+  { "span": "neutron", "concept": "neutron", "verb": "introduces" }
  ],
  "exercises": [
   {

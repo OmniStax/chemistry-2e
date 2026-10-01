@@ -97,9 +97,29 @@
    "verb": "uses"
   },
   {
+   "span": "system",
+   "concept": "system",
+   "verb": "introduces"
+  },
+  {
+   "span": "system",
+   "concept": "surroundings",
+   "verb": "introduces"
+  },
+  {
    "span": "calorimeters",
    "concept": "system-and-surroundings",
    "verb": "uses"
+  },
+  {
+   "span": "calorimeters",
+   "concept": "calorimetry",
+   "verb": "introduces"
+  },
+  {
+   "span": "calorimeters",
+   "concept": "calorimeter",
+   "verb": "introduces"
   },
   {
    "span": "heat-balance",
@@ -197,6 +217,11 @@
    "verb": "uses"
   },
   {
+   "span": "bomb",
+   "concept": "bomb-calorimeter",
+   "verb": "introduces"
+  },
+  {
    "span": "ex-bomb",
    "concept": "bomb-calorimetry",
    "verb": "uses"
@@ -210,6 +235,11 @@
    "span": "nutrition",
    "concept": "energy-units",
    "verb": "uses"
+  },
+  {
+   "span": "nutrition",
+   "concept": "nutritional-calorie",
+   "verb": "introduces"
   },
   {
    "span": "calories-note",

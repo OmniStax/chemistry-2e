@@ -83,68 +83,60 @@
  "concepts": [
   {
    "id": "bond-angle-and-bond-distance",
-   "kind": "idea",
+   "kind": "definition",
    "section": "7.6",
    "name": "Bond angles and bond distances",
-   "why": "A Lewis structure is drawn flat, but a molecule is not: it occupies space, and describing it means giving the distances between the nuclei and the angles between the bonds. A bond angle is the angle between two bonds that share an atom, measured in degrees, and a bond distance is the distance between the nuclei of two bonded atoms, measured in Ångstroms or picometers. These two measurements are what every later statement about a molecule's shape is finally about.",
-   "evidence": "The section opens by defining both terms and Figure 7.14 gives the formaldehyde molecule its measured angle of 118° and its measured C=O distance of 1.21 Å; the bond angles named for every geometry that follows, 180°, 120°, 109.5°, 90°, are the same measurement made on the shapes VSEPR theory predicts."
+   "statement": "The shape of a molecule is described by the distances between its nuclei and the angles between its bonds. A bond angle is the angle between two bonds that share an atom, measured in degrees, and a bond distance is the distance between the nuclei of two bonded atoms, measured in ångstroms or picometers."
   },
   {
    "id": "vsepr-theory",
    "kind": "idea",
    "section": "7.6",
    "name": "Valence shell electron-pair repulsion theory",
-   "why": "VSEPR theory predicts the shape of a molecule from one assumption: the regions of high electron density in the valence shell of the central atom, whether they are bonding pairs or lone pairs, repel one another, and they settle into the arrangement that puts them as far apart as possible. It is worth noting that the theory considers electron-pair repulsions alone, and that nuclear-nuclear repulsions and nuclear-electron attractions are also at work in the arrangement a molecule finally adopts.",
-   "evidence": "The section states the assumption and works it through on BeF2, where two bonds and no lone pairs give a bond angle of 180° (Figure 7.15), and the four-step procedure that follows begins with a Lewis structure and ends with a predicted shape."
+   "statement": "VSEPR theory predicts the shape of a molecule from one assumption: the regions of high electron density in the valence shell of the central atom, whether they are bonding pairs or lone pairs, repel one another, and they settle into the arrangement that puts them as far apart as possible. It is worth noting that the theory considers electron-pair repulsions alone, and that nuclear-nuclear repulsions and nuclear-electron attractions are also at work in the arrangement a molecule finally adopts."
   },
   {
    "id": "electron-pair-geometry",
-   "kind": "idea",
+   "kind": "definition",
    "section": "7.6",
    "name": "The five electron-pair geometries",
-   "why": "The number of regions of electron density around a central atom decides the arrangement, and there are only five of them: two regions are linear, three are trigonal planar, four are tetrahedral, five are trigonal bipyramidal and six are octahedral. A single, a double and a triple bond each count as one region, so the count is a count of directions rather than of electrons, and the whole of the shape prediction rests on getting it right.",
-   "evidence": "Figure 7.16 draws the five arrangements with their angles, the section names each one as it is defined in the glossary, and the worked examples count the regions of CO2, BCl3, the ammonium ion, water, SF4 and XeF4 before naming any shape."
+   "statement": "The electron-pair geometry is the arrangement around a central atom of all its regions of electron density, and there are only five: two regions are linear, three are trigonal planar, four are tetrahedral, five are trigonal bipyramidal and six are octahedral. A single, a double and a triple bond each count as one region."
   },
   {
    "id": "molecular-structure-versus-electron-pair-geometry",
    "kind": "idea",
    "section": "7.6",
    "name": "Molecular structure is not electron-pair geometry",
-   "why": "The electron-pair geometry describes where all the regions of electron density are, bonds and lone pairs together; the molecular structure describes where the atoms are and says nothing about the lone pairs. The two are the same when the central atom carries no lone pair and they differ whenever it carries one, which is why methane is tetrahedral while ammonia, with the same four regions, is trigonal pyramidal and water is bent.",
-   "evidence": "The section defines both terms and contrasts methane (Figure 7.17) with ammonia (Figure 7.18), Figure 7.19 sets out the molecular structures that follow from each electron-pair geometry as lone pairs are added, and Examples 7.13, 7.14 and 7.15 name a different electron-pair geometry and molecular structure for water, SF4 and XeF4."
+   "statement": "The electron-pair geometry describes where all the regions of electron density are, bonds and lone pairs together; the molecular structure describes where the atoms are and says nothing about the lone pairs. The two are the same when the central atom carries no lone pair and they differ whenever it carries one, which is why methane is tetrahedral while ammonia, with the same four regions, is trigonal pyramidal and water is bent."
   },
   {
    "id": "electron-pair-repulsion-order",
    "kind": "result",
    "section": "7.6",
    "name": "The order of repulsions and the space a region occupies",
-   "why": "The ideal angles are only approximate, because the regions of electron density are not all the same size. A lone pair repels more strongly than a bonding pair, and it occupies more space than a triple bond, which occupies more than a double bond, which occupies more than a single bond. That order is what explains the small distortions from the ideal angles, and it is what decides which arrangement is chosen when more than one is possible.",
-   "evidence": "The section states both orders as displayed relations, explains the H–N–H angle of ammonia as slightly smaller than 109.5° because the lone pair-bonding pair repulsion is the greater one (Figure 7.18), and reads the 121° and 118° angles of formaldehyde off the larger space the double bond takes.",
+   "statement": "The ideal angles are only approximate, because the regions of electron density are not all the same size. A lone pair repels more strongly than a bonding pair, and it occupies more space than a triple bond, which occupies more than a double bond, which occupies more than a single bond. That order is what explains the small distortions from the ideal angles, and it is what decides which arrangement is chosen when more than one is possible.",
    "eq": "eq-repulsion-order"
   },
   {
    "id": "axial-and-equatorial-positions",
-   "kind": "idea",
+   "kind": "definition",
    "section": "7.6",
    "name": "Axial and equatorial positions in a trigonal bipyramid",
-   "why": "In the linear, trigonal planar and tetrahedral arrangements every terminal position is equivalent, so it does not matter which one a lone pair takes. A trigonal bipyramid has two kinds of position: an axial position surrounded by 90° angles and an equatorial position with more room because of its 120° angles. A lone pair always takes an equatorial position, and in an octahedron with two lone pairs the two sit 180° apart, which is what makes ClF3 T-shaped and XeF4 square planar.",
-   "evidence": "Figure 7.20 draws the trigonal bipyramid's two kinds of position and the three arrangements possible for ClF3, of which only the T-shaped one is observed; Example 7.14 places the lone pair of SF4 in an equatorial position to give a seesaw, and Example 7.15 puts the two lone pairs of XeF4 on opposite sides of the octahedron."
+   "statement": "In the linear, trigonal planar and tetrahedral arrangements every terminal position is equivalent, so it does not matter which one a lone pair takes. A trigonal bipyramid has two kinds of position: an axial position surrounded by 90° angles and an equatorial position with more room because of its 120° angles. A lone pair always takes an equatorial position, and in an octahedron with two lone pairs the two sit 180° apart, which is what makes ClF3 T-shaped and XeF4 square planar."
   },
   {
    "id": "predict-molecular-structure",
    "kind": "skill",
    "section": "7.6",
    "name": "Predicting electron-pair geometry and molecular structure",
-   "why": "The prediction is a four-step procedure and it is the skill the section is written to teach: write the Lewis structure, count the regions of electron density around the central atom, read off the electron-pair geometry, and use the number of lone pairs to name the molecular structure, choosing the arrangement that minimizes repulsion where more than one is possible. A molecule with no single central atom is handled one interior atom at a time, each with a local geometry of its own.",
-   "evidence": "The section sets out the four steps and then applies them in Examples 7.11 to 7.16, to CO2, BCl3, the ammonium ion, water, SF4, XeF4 and the amino acid glycine, and the end-of-chapter exercises ask for the electron-pair geometry and the molecular structure of some forty molecules and ions."
+   "statement": "The prediction is a four-step procedure and it is the skill the section is written to teach: write the Lewis structure, count the regions of electron density around the central atom, read off the electron-pair geometry, and use the number of lone pairs to name the molecular structure, choosing the arrangement that minimizes repulsion where more than one is possible. A molecule with no single central atom is handled one interior atom at a time, each with a local geometry of its own."
   },
   {
    "id": "bond-dipole-moment",
-   "kind": "result",
+   "kind": "definition",
    "section": "7.6",
    "name": "The bond dipole moment",
-   "why": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge, and the separation of charge is measured by the bond dipole moment, the product of the magnitude of the partial charges and the distance between them. It is drawn as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
-   "evidence": "The section gives the formula and defines the vector that represents it, and Figure 7.26 draws the short vector of a C–H bond beside the much longer vector of a B–F bond.",
+   "statement": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge, and the separation of charge is measured by the bond dipole moment, the product of the magnitude of the partial charges and the distance between them. It is drawn as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
    "eq": "eq-dipole-moment"
   },
   {
@@ -152,120 +144,266 @@
    "kind": "skill",
    "section": "7.6",
    "name": "Assessing the polarity of a molecule",
-   "why": "A molecule is polar only if it contains at least one polar bond and its bond moments, added as vectors in three dimensions, do not cancel. Geometry is therefore as much of the answer as electronegativity: carbon dioxide has two polar bonds pointing in opposite directions and is nonpolar, while water has the same two bonds bent toward one another and is polar. Molecules of high symmetry such as BF3, CH4, PF5 and SF6 are nonpolar for the same reason, and polar molecules are the ones that align in an electric field and dissolve readily in polar solvents.",
-   "evidence": "The section states the two conditions for polarity, contrasts CO2 with water in Figure 7.27, works through OCS, chloromethane, H2S and ammonia in turn, and Figure 7.28 shows HF molecules lying at random until a field is applied and then lining up with it; nine end-of-chapter exercises ask which molecules of a list have dipole moments."
+   "statement": "A molecule is polar only if it contains at least one polar bond and its bond moments, added as vectors in three dimensions, do not cancel. Geometry is therefore as much of the answer as electronegativity: carbon dioxide has two polar bonds pointing in opposite directions and is nonpolar, while water has the same two bonds bent toward one another and is polar. Molecules of high symmetry such as BF3, CH4, PF5 and SF6 are nonpolar for the same reason, and polar molecules are the ones that align in an electric field and dissolve readily in polar solvents."
+  },
+  {
+   "id": "bond-angle",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Bond angle",
+   "statement": "A bond angle is the angle between any two covalent bonds that share a common atom."
+  },
+  {
+   "id": "linear-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Linear",
+   "statement": "A linear shape has two outside groups placed on opposite sides of a central atom, 180° apart."
+  },
+  {
+   "id": "trigonal-planar-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Trigonal planar",
+   "statement": "A trigonal planar shape has three outside groups placed in a flat triangle around a central atom, with 120° angles between them."
+  },
+  {
+   "id": "tetrahedral-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Tetrahedral",
+   "statement": "A tetrahedral shape has four outside groups placed around a central atom at the corners of a tetrahedron, with 109.5° angles between them."
+  },
+  {
+   "id": "trigonal-bipyramidal-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Trigonal bipyramidal",
+   "statement": "A trigonal bipyramidal shape has five outside groups placed around a central atom: three form a flat triangle with 120° angles between them, and the other two lie above and below the plane, at 90° to it."
+  },
+  {
+   "id": "octahedral-geometry",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Octahedral",
+   "statement": "An octahedral shape has six outside groups placed around a central atom at the corners of an octahedron, with 90° angles between adjacent groups."
+  },
+  {
+   "id": "axial-position",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Axial position",
+   "statement": "An axial position is a location in a trigonal bipyramidal geometry with another atom at a 180° angle and the equatorial positions at 90° angles."
+  },
+  {
+   "id": "equatorial-position",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Equatorial position",
+   "statement": "An equatorial position is one of the three positions in a trigonal bipyramidal geometry with 120° angles between them; the axial positions lie 90° from them."
+  },
+  {
+   "id": "vector",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Vector",
+   "statement": "A vector is a quantity having both magnitude and direction."
+  },
+  {
+   "id": "dipole-moment",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Dipole moment",
+   "statement": "The dipole moment of a molecule describes its separation of charge, determined by the vector sum of its individual bond moments, which depends on its molecular structure."
+  },
+  {
+   "id": "polar-molecule",
+   "kind": "definition",
+   "section": "7.6",
+   "name": "Polar molecule",
+   "statement": "A polar molecule, or dipole, is a molecule with an overall dipole moment."
   },
   {
    "id": "lewis-structure",
    "kind": "skill",
    "section": "7.3",
    "name": "Writing a Lewis structure",
-   "why": "A Lewis structure shows every valence electron of a molecule or polyatomic ion, as a shared pair on a bond or as a lone pair on an atom. It is where a prediction of shape begins, because the count of bonding regions and lone pairs that VSEPR theory needs is read straight off it.",
-   "evidence": "The section sets out the five steps and works them on SiH4, CHO2−, NO+ and OF2, and Examples 7.4 and 7.5 write the structures of HCN, ethane, acetylene, ammonia, XeF2 and XeF6; nine exercises ask for Lewis structures. A Sim walks the five steps for six molecules and ions."
+   "statement": "To write a Lewis structure, count the valence electrons of the molecule or ion, draw a skeleton with single bonds, complete the octets of the outer atoms with lone pairs, place the remaining electrons on the central atom, and form multiple bonds where the central atom still lacks an octet."
   },
   {
    "id": "bond-polarity",
    "kind": "idea",
    "section": "7.2",
    "name": "Polar covalent bonds and electronegativity",
-   "why": "When two bonded atoms differ in electronegativity the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference is what sets the size of a bond's dipole moment, and a molecule with no polar bond at all can have no dipole moment.",
-   "evidence": "The section contrasts the pure covalent bonds of H2 and Cl2 with the polar H–Cl bond of Figure 7.5, with its partial charges marked δ+ and δ−, and Example 7.3 designates the positive and negative atoms of six bonds; exercises ask which atoms give sulfur a positive partial charge and which molecules contain polar bonds."
+   "statement": "When two bonded atoms differ in electronegativity, the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference sets the size of the bond's dipole moment."
   },
   {
    "id": "ionic-bond",
-   "kind": "idea",
+   "kind": "definition",
    "section": "7.1",
    "name": "Ionic bonds and the properties of ionic compounds",
-   "why": "An ionic bond is the electrostatic attraction between oppositely charged cations and anions, typically formed when a metal atom transfers electrons to a nonmetal atom. The bond is strong, which is why ionic solids are rigid and brittle with high melting points, and the ions are held in place, which is why the solid conducts poorly while the melt or the solution conducts well.",
-   "evidence": "The section defines the ionic bond, reads its strength off the properties of ionic solids, and contrasts sodium metal and chlorine gas with the salt they form in Figure 7.2; an exercise asks which atoms of a list form cations and which form anions."
+   "statement": "An ionic bond is the electrostatic attraction between oppositely charged cations and anions, typically formed when a metal atom transfers electrons to a nonmetal atom. The bond is strong, which is why ionic solids are rigid and brittle with high melting points, and the ions are held in place, which is why the solid conducts poorly while the melt or the solution conducts well."
   },
   {
    "id": "ionic-lattice",
    "kind": "idea",
    "section": "7.1",
    "name": "An ionic formula describes a lattice, not a molecule",
-   "why": "Because every compound is electrically neutral, the formula of an ionic compound gives the simplest ratio of ions whose charges cancel, as Al2O3 does with two Al3+ ions for every three O2− ions. The formula does not describe a molecule: the attraction between ions is the same in all directions, so each ion is drawn to all its neighbors of opposite charge and the ions build a three-dimensional lattice.",
-   "evidence": "The section works the charge balance of aluminum oxide, explains why it is incorrect to speak of a sodium chloride molecule, and Figure 7.3 draws the sodium chloride lattice with each ion surrounded by six of the other kind; an exercise asks why a molecule of solid NaCl cannot be spoken of."
+   "statement": "Because every compound is electrically neutral, the formula of an ionic compound gives the simplest ratio of ions whose charges cancel, as Al2O3 does with two Al3+ ions for every three O2− ions. The formula does not describe a molecule: the attraction between ions is the same in all directions, so each ion is drawn to all its neighbors of opposite charge and the ions build a three-dimensional lattice."
   },
   {
    "id": "predict-ion-charge",
    "kind": "skill",
    "section": "7.1",
    "name": "Predicting the charge of a monatomic ion",
-   "why": "A main group metal atom tends to lose all its valence electrons and a nonmetal atom tends to gain enough to fill its valence s and p orbitals, so in each case the ion takes the electron configuration of a noble gas and its charge can be read from the group. The heavy elements of groups 13 to 15 may also keep their valence s pair, the inert pair effect, which is why Tl+, Sn2+, Pb2+ and Bi3+ exist beside the expected ions.",
-   "evidence": "The section derives the charges of the group 1, group 2 and group 13 to 17 ions, names the exceptions of the inert pair effect and the mercury(I) ion, and three exercises ask for the charges of the monatomic ions formed from lists of atoms."
+   "statement": "A main group metal atom tends to lose all its valence electrons and a nonmetal atom tends to gain enough to fill its valence s and p orbitals, so in each case the ion takes the electron configuration of a noble gas and its charge can be read from the group. The heavy elements of groups 13 to 15 may also keep their valence s pair, the inert pair effect, which is why Tl+, Sn2+, Pb2+ and Bi3+ exist beside the expected ions."
   },
   {
    "id": "ion-electron-configuration",
    "kind": "skill",
    "section": "7.1",
    "name": "Writing the electron configuration of an ion",
-   "why": "The configuration of a cation is written by removing electrons from the neutral atom, and the configuration of an anion by adding them. For a transition metal the outermost s electrons are lost first, before any d electron, even though the d orbitals were the last to fill; so iron becomes Fe2+ by losing its 4s pair and Fe3+ by losing one 3d electron as well.",
-   "evidence": "The section works the configurations of Ca2+, Fe2+ and Fe3+, and Examples 7.1 and 7.2 write the configurations of Cr3+, Zn2+, Se2− and I−; four exercises ask for the configurations of ions."
+   "statement": "The configuration of a cation is written by removing electrons from the neutral atom, and the configuration of an anion by adding them. For a transition metal the outermost s electrons are lost first, before any d electron, even though the d orbitals were the last to fill; so iron becomes Fe2+ by losing its 4s pair and Fe3+ by losing one 3d electron as well."
+  },
+  {
+   "id": "inert-pair-effect",
+   "kind": "idea",
+   "section": "7.1",
+   "name": "The inert pair effect",
+   "statement": "Heavy atoms of groups 13 to 15 tend to form ions in which their valence s electrons are not lost, as in Tl⁺, Sn²⁺, Pb²⁺ and Bi³⁺."
   },
   {
    "id": "covalent-bond-formation",
    "kind": "idea",
    "section": "7.2",
    "name": "How a covalent bond forms, and the bond length",
-   "why": "A covalent bond is formed when two atoms share a pair of electrons that is attracted by both nuclei. As two hydrogen atoms approach, the potential energy falls while each electron is drawn to both nuclei and then rises steeply as the nuclei repel, and the bond length is the distance at which the energy is lowest. Breaking a bond always takes energy and forming one always releases it.",
-   "evidence": "The section explains the formation of H2 against the potential energy curve of Figure 7.4, which marks the bond length of 74 pm, and states that 436 kJ must be added to break the bonds in a mole of hydrogen molecules and is released when they form."
+   "statement": "A covalent bond is formed when two atoms share a pair of electrons that is attracted by both nuclei. As two hydrogen atoms approach, the potential energy falls while each electron is drawn to both nuclei and then rises steeply as the nuclei repel, and the bond length is the distance at which the energy is lowest. Breaking a bond always takes energy and forming one always releases it."
   },
   {
    "id": "electronegativity",
-   "kind": "idea",
+   "kind": "definition",
    "section": "7.2",
    "name": "Electronegativity and its periodic trend",
-   "why": "Electronegativity is the tendency of an atom to attract the electrons of a bond toward itself. On Pauling's scale it increases from left to right across a period and decreases down a group, so the nonmetals of the upper right are the most electronegative, fluorine above all at 4.0, and the group 1 metals are the least. It is a calculated, dimensionless number and should not be confused with electron affinity, which is a measured energy of an isolated atom.",
-   "evidence": "The section defines electronegativity, Figure 7.6 sets out Pauling's values across the periodic table, and a subsection separates it from electron affinity; four exercises ask which atom of a pair is more electronegative or ask for a series in order of increasing electronegativity."
+   "statement": "Electronegativity is the tendency of an atom to attract the electrons of a bond toward itself. On Pauling's scale it increases from left to right across a period and decreases down a group, so the nonmetals of the upper right are the most electronegative, fluorine above all at 4.0, and the group 1 metals are the least. It is a calculated, dimensionless number and should not be confused with electron affinity, which is a measured energy of an isolated atom."
   },
   {
    "id": "bond-type-from-electronegativity",
    "kind": "skill",
    "section": "7.2",
    "name": "Judging bond type from the electronegativity difference",
-   "why": "The absolute difference in electronegativity between two bonded atoms is a rough measure of the bond's character: a small difference gives a pure covalent bond, an intermediate one a polar covalent bond, and a large one an ionic bond. It is only a guide, and the better one is the kind of atoms involved, since bonds between two nonmetals are generally covalent and bonds between a metal and a nonmetal are often ionic.",
-   "evidence": "The section gives the differences for H–H, H–Cl and Na–Cl, Figure 7.8 relates the difference to the bond type, and Example 7.3 orders six bonds of the amino acids by polarity in Table 7.1; exercises ask which compounds are ionic and which bond of each pair is the more polar."
+   "statement": "The absolute difference in electronegativity between two bonded atoms is a rough measure of the bond's character: a small difference gives a pure covalent bond, an intermediate one a polar covalent bond, and a large one an ionic bond. It is only a guide, and the better one is the kind of atoms involved, since bonds between two nonmetals are generally covalent and bonds between a metal and a nonmetal are often ionic."
+  },
+  {
+   "id": "bond-length",
+   "kind": "definition",
+   "section": "7.2",
+   "name": "Bond length",
+   "statement": "The bond length, or bond distance, is the distance between the nuclei of two bonded atoms at which the lowest potential energy is achieved."
+  },
+  {
+   "id": "pure-covalent-bond",
+   "kind": "definition",
+   "section": "7.2",
+   "name": "Pure covalent bond",
+   "statement": "A pure covalent bond, or nonpolar covalent bond, is a covalent bond between atoms of identical electronegativities."
+  },
+  {
+   "id": "polar-covalent-bond",
+   "kind": "definition",
+   "section": "7.2",
+   "name": "Polar covalent bond",
+   "statement": "A polar covalent bond is a covalent bond between atoms of different electronegativities, with a positive end and a negative end."
   },
   {
    "id": "lewis-symbol",
    "kind": "skill",
    "section": "7.3",
    "name": "Writing Lewis symbols for atoms and ions",
-   "why": "A Lewis symbol is the symbol of an element surrounded by one dot for each of its valence electrons. The same notation shows a cation forming as dots are lost and an anion forming as dots are gained, and so it shows the transfer of electrons when an ionic compound forms without the total number of electrons changing.",
-   "evidence": "The section defines the Lewis symbol, Figure 7.9 gives the symbols of the third-period elements, and Figure 7.10 draws the formation of sodium chloride, magnesium oxide and calcium fluoride; three exercises ask for the Lewis symbols of ions."
+   "statement": "Write a Lewis symbol by surrounding the symbol of the element with one dot for each of its valence electrons. Remove dots to show a cation forming and add them to show an anion forming, so that the transfer of electrons in an ionic compound keeps the total number of electrons the same."
   },
   {
    "id": "octet-rule",
-   "kind": "idea",
+   "kind": "axiom",
    "section": "7.3",
    "name": "The octet rule",
-   "why": "Main group atoms tend to form enough bonds to have eight valence electrons around them, counting the shared electrons of each bond as belonging to both atoms. The number of bonds an atom forms can often be predicted from the number of electrons it needs to reach eight, so carbon forms four bonds, nitrogen three, oxygen two and fluorine one; hydrogen, which needs only two, is the exception.",
-   "evidence": "The section states the rule for the halogens and applies it to CCl4, SiH4, NH3, H2O and HF."
+   "statement": "Main group atoms tend to form enough bonds to have eight valence electrons around them, counting the shared electrons of each bond as belonging to both atoms. The number of bonds an atom forms can often be predicted from the number of electrons it needs to reach eight, so carbon forms four bonds, nitrogen three, oxygen two and fluorine one; hydrogen, which needs only two, is the exception."
   },
   {
    "id": "multiple-bonds",
-   "kind": "idea",
+   "kind": "definition",
    "section": "7.3",
    "name": "Single, double, and triple bonds",
-   "why": "A single bond shares one pair of electrons between two atoms, a double bond shares two pairs and a triple bond shares three. Atoms share more than one pair when that is what it takes to give each of them an octet, as in formaldehyde and ethylene with their double bonds and carbon monoxide and the cyanide ion with their triple bonds.",
-   "evidence": "The section defines all three bonds with the Lewis structures of Cl2, CH2O, C2H4, CO and CN−, and an exercise asks how single, double and triple bonds are similar and how they differ."
+   "statement": "A single bond shares one pair of electrons between two atoms, a double bond shares two pairs and a triple bond shares three. Atoms share more than one pair when that is what it takes to give each of them an octet, as in formaldehyde and ethylene with their double bonds and carbon monoxide and the cyanide ion with their triple bonds."
   },
   {
    "id": "octet-rule-exceptions",
    "kind": "idea",
    "section": "7.3",
    "name": "Exceptions to the octet rule",
-   "why": "Three kinds of molecule cannot give every atom eight electrons. An odd-electron molecule, or free radical, such as NO, must leave one electron unpaired; an electron-deficient molecule such as BF3 has a central atom with fewer than eight; and a hypervalent molecule such as PCl5 or SF6 has a central atom of the third period or beyond that holds more than eight.",
-   "evidence": "The section works each case in turn, NO, BeH2 and BF3, then PCl5 and SF6 in Figure 7.12 and IF5 and XeF4, and Example 7.5 writes the structures of XeF2 and XeF6; exercises ask for the Lewis structures of ClF3, PCl5, BF3, SeF6 and XeF4."
+   "statement": "Three kinds of molecule cannot give every atom eight electrons. An odd-electron molecule, or free radical, such as NO, must leave one electron unpaired; an electron-deficient molecule such as BF3 has a central atom with fewer than eight; and a hypervalent molecule such as PCl5 or SF6 has a central atom of the third period or beyond that holds more than eight."
+  },
+  {
+   "id": "lewis-dot-symbol",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "Lewis symbol",
+   "statement": "A Lewis symbol is the symbol for an element or monatomic ion with a dot for each of its valence electrons."
+  },
+  {
+   "id": "lewis-structure-diagram",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "Lewis structure",
+   "statement": "A Lewis structure is a diagram showing the lone pairs and the bonding pairs of electrons in a molecule or an ion."
+  },
+  {
+   "id": "lone-pair",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "Lone pair",
+   "statement": "A lone pair is a pair of valence electrons that is not used to form a covalent bond."
+  },
+  {
+   "id": "single-bond",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "Single bond",
+   "statement": "A single bond is a bond in which a single pair of electrons is shared between two atoms."
+  },
+  {
+   "id": "double-bond",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "Double bond",
+   "statement": "A double bond is a covalent bond in which two pairs of electrons are shared between two atoms."
+  },
+  {
+   "id": "triple-bond",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "Triple bond",
+   "statement": "A triple bond is a covalent bond in which three pairs of electrons are shared between two atoms."
+  },
+  {
+   "id": "free-radical",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "Free radical",
+   "statement": "A free radical is a molecule that contains an odd number of electrons."
+  },
+  {
+   "id": "hypervalent-molecule",
+   "kind": "definition",
+   "section": "7.3",
+   "name": "Hypervalent molecule",
+   "statement": "A hypervalent molecule contains at least one main group element that has more than eight electrons in its valence shell."
   },
   {
    "id": "formal-charge",
    "kind": "skill",
    "section": "7.4",
    "name": "Calculating formal charge",
-   "why": "The formal charge of an atom in a Lewis structure is the charge it would have if the electrons of each bond were shared equally: the valence electrons of the free atom, less its lone pair electrons, less half its bonding electrons. The formal charges of a molecule add up to zero and those of an ion add up to its charge, which checks the arithmetic. A formal charge is bookkeeping and not the actual charge on the atom.",
-   "evidence": "The section gives the formula and Examples 7.6 and 7.7 assign the formal charges of ICl4− and BrCl3; four exercises ask for the formal charges of the atoms in lists of molecules and ions. A Sim marks the lone pair and bonding electrons of each atom in the eight candidate structures the section compares.",
+   "statement": "Calculate the formal charge of an atom in a Lewis structure as the valence electrons of the free atom, less its lone pair electrons, less half its bonding electrons. The formal charges of a molecule add up to zero, and those of an ion add up to its charge.",
    "eq": "eq-formal-charge"
   },
   {
@@ -273,24 +411,49 @@
    "kind": "skill",
    "section": "7.4",
    "name": "Choosing the most likely Lewis structure by formal charge",
-   "why": "When more than one Lewis structure can be written, the preferred one has formal charges of zero, or else the smallest nonzero formal charges, with adjacent formal charges zero or of opposite sign, and with any negative formal charge on the more electronegative atom. These guidelines explain why the least electronegative atom usually takes the central position.",
-   "evidence": "The section states the four guidelines and applies them to three structures of CO2 and three arrangements of the thiocyanate ion, and Example 7.8 chooses the structure of nitrous oxide; exercises ask for the likely arrangement of the atoms in nitrosyl chloride, hypochlorous acid and sulfur dioxide."
+   "statement": "When more than one Lewis structure can be written, the preferred one has formal charges of zero, or else the smallest nonzero formal charges, with adjacent formal charges zero or of opposite sign, and with any negative formal charge on the more electronegative atom. These guidelines explain why the least electronegative atom usually takes the central position."
   },
   {
    "id": "resonance",
    "kind": "idea",
    "section": "7.4",
    "name": "Resonance forms and the resonance hybrid",
-   "why": "When two or more Lewis structures with the same arrangement of atoms can be written, none of them alone describes the molecule; the actual distribution of electrons is their average, the resonance hybrid. The molecule never switches between its resonance forms, which is why both N–O bonds of the nitrite ion and all three C–O bonds of the carbonate ion are found to be identical.",
-   "evidence": "The section introduces resonance on the nitrite ion, tells Wheland's analogy of the rhinoceros described as a dragon and a unicorn, and draws the three resonance forms of the carbonate ion; six exercises ask for resonance forms. A Sim draws the resonance hybrids of the nitrite and carbonate ions beneath their forms."
+   "statement": "When two or more Lewis structures with the same arrangement of atoms can be written, none of them alone describes the molecule; the actual distribution of electrons is their average, the resonance hybrid. The molecule never switches between its resonance forms, which is why both N–O bonds of the nitrite ion and all three C–O bonds of the carbonate ion are found to be identical."
+  },
+  {
+   "id": "formal-charge-of-atom",
+   "kind": "definition",
+   "section": "7.4",
+   "name": "Formal charge",
+   "statement": "The formal charge of an atom is the charge it would have if the electrons of each bond were shared equally: the number of valence electrons of the neutral atom, less its lone pair electrons, less half its bonding electrons."
+  },
+  {
+   "id": "molecular-structure",
+   "kind": "definition",
+   "section": "7.4",
+   "name": "Molecular structure",
+   "statement": "The molecular structure of a molecule or ion is the arrangement of its atoms, without regard to its lone pairs."
+  },
+  {
+   "id": "resonance-forms",
+   "kind": "definition",
+   "section": "7.4",
+   "name": "Resonance forms",
+   "statement": "Resonance forms are two or more Lewis structures that have the same arrangement of atoms but different arrangements of electrons."
+  },
+  {
+   "id": "resonance-hybrid",
+   "kind": "definition",
+   "section": "7.4",
+   "name": "Resonance hybrid",
+   "statement": "The resonance hybrid is the average of the resonance forms shown by the individual Lewis structures, and it is the actual distribution of electrons in the molecule."
   },
   {
    "id": "bond-energy",
-   "kind": "idea",
+   "kind": "definition",
    "section": "7.5",
    "name": "Bond energy",
-   "why": "The strength of a covalent bond is measured by its bond energy, the energy needed to break one mole of that bond in gaseous molecules, which for a diatomic molecule is the standard enthalpy change of its dissociation. In a molecule with several bonds of one kind the tabulated value is an average, since the first bond broken does not need the same energy as the rest.",
-   "evidence": "The section defines the bond energy by the dissociation of XY and of H2, derives the average C–H bond energy of 415 kJ/mol from the 1660 kJ needed to break all four bonds of methane, and tabulates bond energies in Table 7.2.",
+   "statement": "The strength of a covalent bond is measured by its bond energy, the energy needed to break one mole of that bond in gaseous molecules, which for a diatomic molecule is the standard enthalpy change of its dissociation. In a molecule with several bonds of one kind the tabulated value is an average, since the first bond broken does not need the same energy as the rest.",
    "eq": "eq-bond-energy"
   },
   {
@@ -298,25 +461,22 @@
    "kind": "result",
    "section": "7.5",
    "name": "Bond strength, bond order, and bond length",
-   "why": "The more electron pairs two atoms share, the stronger and the shorter their bond, so a triple bond is stronger and shorter than a double bond between the same atoms and a double bond is stronger and shorter than a single one. When one atom bonds to the members of a group, the bond grows weaker going down the group.",
-   "evidence": "The section states both trends and quotes C–F, C–Cl and C–Br, and Table 7.3 sets the lengths and energies of the single, double and triple bonds of carbon to carbon, nitrogen and oxygen side by side; exercises ask which bond of each pair is the strongest and which bond of a structure is the longest."
+   "statement": "The more electron pairs two atoms share, the stronger and the shorter their bond, so a triple bond is stronger and shorter than a double bond between the same atoms and a double bond is stronger and shorter than a single one. When one atom bonds to the members of a group, the bond grows weaker going down the group."
   },
   {
    "id": "enthalpy-from-bond-energies",
    "kind": "skill",
    "section": "7.5",
    "name": "Estimating an enthalpy of reaction from bond energies",
-   "why": "The enthalpy change of a reaction is approximately the energy needed to break every bond of the reactants less the energy released in forming every bond of the products. The estimate needs the Lewis structures of all the species, to know which bonds are single, double or triple, and it is rough because the bond energies are averages.",
-   "evidence": "The section estimates ΔH for the formation of HCl as −185 kJ against −184.6 kJ from enthalpies of formation, and Example 7.9 estimates −107 kJ for the synthesis of methanol against −90.5 kJ from the tables; exercises ask for the approximate enthalpy changes of several reactions.",
+   "statement": "The enthalpy change of a reaction is approximately the energy needed to break every bond of the reactants less the energy released in forming every bond of the products. The estimate needs the Lewis structures of all the species, to know which bonds are single, double or triple, and it is rough because the bond energies are averages.",
    "eq": "eq-enthalpy-bond-energies"
   },
   {
    "id": "lattice-energy",
-   "kind": "idea",
+   "kind": "definition",
    "section": "7.5",
    "name": "Lattice energy",
-   "why": "The lattice energy of an ionic compound is the energy needed to separate one mole of the solid into its gaseous ions, a positive quantity under the convention the book uses. It measures the strength of the attraction that holds an ionic solid together, and it is much larger than a covalent bond energy because it sums the interactions of every ion with the whole lattice.",
-   "evidence": "The section defines the lattice energy, gives 769 kJ for sodium chloride, warns that some texts use the opposite sign, and compares the range of lattice energies with that of covalent bond energies; exercises ask which compound of a list needs the least or the most energy to separate into ions.",
+   "statement": "The lattice energy of an ionic compound is the energy needed to separate one mole of the solid into its gaseous ions, a positive quantity under the convention the book uses. It measures the strength of the attraction that holds an ionic solid together, and it is much larger than a covalent bond energy because it sums the interactions of every ion with the whole lattice.",
    "eq": "eq-lattice-energy-definition"
   },
   {
@@ -324,8 +484,7 @@
    "kind": "result",
    "section": "7.5",
    "name": "Lattice energy grows with ionic charge and shrinks with ionic size",
-   "why": "Derived from Coulomb's law, the lattice energy is proportional to the product of the ionic charges and inversely proportional to the distance between the ions. Doubling both charges quadruples it, which is why MgO has nearly four times the lattice energy of LiF, and smaller ions give a larger lattice energy, which is why MgF2 exceeds MgI2.",
-   "evidence": "The section gives the relation and compares LiF with MgO and MgF2 with MgI2, and Example 7.10 compares Al2O3 with Al2Se3; five exercises ask which compound of a pair has the larger lattice energy or which value best approximates one.",
+   "statement": "Derived from Coulomb's law, the lattice energy is proportional to the product of the ionic charges and inversely proportional to the distance between the ions. Doubling both charges quadruples it, which is why MgO has nearly four times the lattice energy of LiF, and smaller ions give a larger lattice energy, which is why MgF2 exceeds MgI2.",
    "eq": "eq-lattice-energy-coulomb"
   },
   {
@@ -333,9 +492,15 @@
    "kind": "skill",
    "section": "7.5",
    "name": "Calculating a lattice energy with the Born-Haber cycle",
-   "why": "Lattice energies cannot be measured directly, but the Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: the sublimation of the metal, the dissociation of the nonmetal, the ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess's law the steps add up to the enthalpy of formation, so any one of them can be found from the others.",
-   "evidence": "Figure 7.13 draws the cycle for cesium fluoride, Table 7.4 lists its steps, and the section solves the cycle for a lattice energy of 756.9 kJ/mol.",
+   "statement": "Lattice energies cannot be measured directly, but the Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: the sublimation of the metal, the dissociation of the nonmetal, the ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess's law the steps add up to the enthalpy of formation, so any one of them can be found from the others.",
    "eq": "eq-born-haber"
+  },
+  {
+   "id": "born-haber-thermochemical-cycle",
+   "kind": "definition",
+   "section": "7.5",
+   "name": "Born-Haber cycle",
+   "statement": "The Born-Haber cycle is a thermochemical cycle relating the energetic steps of forming an ionic solid from its elements: sublimation of the metal, dissociation of the nonmetal, ionization of the metal atom, the electron affinity of the nonmetal atom, and the formation of the lattice."
   }
  ],
  "concept_prereqs": [
@@ -562,6 +727,330 @@
   {
    "concept": "bond-angle-and-bond-distance",
    "prereq": "covalent-bond-formation"
+  },
+  {
+   "concept": "covalent-bond-formation",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "ion-electron-configuration",
+   "prereq": "electron-configuration"
+  },
+  {
+   "concept": "inert-pair-effect",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "inert-pair-effect",
+   "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "bond-length",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "bond-length",
+   "prereq": "potential-energy"
+  },
+  {
+   "concept": "bond-length",
+   "prereq": "nucleus"
+  },
+  {
+   "concept": "pure-covalent-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "pure-covalent-bond",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "polar-covalent-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "polar-covalent-bond",
+   "prereq": "electronegativity"
+  },
+  {
+   "concept": "lewis-dot-symbol",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "lewis-dot-symbol",
+   "prereq": "chemical-symbols"
+  },
+  {
+   "concept": "lewis-structure-diagram",
+   "prereq": "lewis-dot-symbol"
+  },
+  {
+   "concept": "lewis-structure-diagram",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "lewis-structure-diagram",
+   "prereq": "lone-pair"
+  },
+  {
+   "concept": "lone-pair",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "lone-pair",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "single-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "double-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "triple-bond",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "free-radical",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "hypervalent-molecule",
+   "prereq": "valence-shell"
+  },
+  {
+   "concept": "hypervalent-molecule",
+   "prereq": "octet-rule"
+  },
+  {
+   "concept": "formal-charge-of-atom",
+   "prereq": "lewis-structure-diagram"
+  },
+  {
+   "concept": "formal-charge-of-atom",
+   "prereq": "lone-pair"
+  },
+  {
+   "concept": "formal-charge-of-atom",
+   "prereq": "valence-electrons"
+  },
+  {
+   "concept": "molecular-structure",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "resonance-forms",
+   "prereq": "lewis-structure-diagram"
+  },
+  {
+   "concept": "resonance-hybrid",
+   "prereq": "resonance-forms"
+  },
+  {
+   "concept": "born-haber-thermochemical-cycle",
+   "prereq": "hess-law"
+  },
+  {
+   "concept": "born-haber-thermochemical-cycle",
+   "prereq": "lattice-energy"
+  },
+  {
+   "concept": "born-haber-thermochemical-cycle",
+   "prereq": "ionization-energy"
+  },
+  {
+   "concept": "born-haber-thermochemical-cycle",
+   "prereq": "electron-affinity"
+  },
+  {
+   "concept": "bond-angle",
+   "prereq": "covalent-bond"
+  },
+  {
+   "concept": "linear-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "linear-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "trigonal-planar-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "trigonal-planar-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "tetrahedral-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "tetrahedral-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "trigonal-bipyramidal-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "trigonal-bipyramidal-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "octahedral-geometry",
+   "prereq": "electron-pair-geometry"
+  },
+  {
+   "concept": "octahedral-geometry",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "axial-position",
+   "prereq": "trigonal-bipyramidal-geometry"
+  },
+  {
+   "concept": "equatorial-position",
+   "prereq": "trigonal-bipyramidal-geometry"
+  },
+  {
+   "concept": "dipole-moment",
+   "prereq": "bond-dipole-moment"
+  },
+  {
+   "concept": "dipole-moment",
+   "prereq": "vector"
+  },
+  {
+   "concept": "dipole-moment",
+   "prereq": "molecular-structure"
+  },
+  {
+   "concept": "polar-molecule",
+   "prereq": "dipole-moment"
+  },
+  {
+   "concept": "covalent-bond-formation",
+   "prereq": "bond-length"
+  },
+  {
+   "concept": "bond-polarity",
+   "prereq": "polar-covalent-bond"
+  },
+  {
+   "concept": "bond-polarity",
+   "prereq": "pure-covalent-bond"
+  },
+  {
+   "concept": "bond-type-from-electronegativity",
+   "prereq": "polar-covalent-bond"
+  },
+  {
+   "concept": "bond-type-from-electronegativity",
+   "prereq": "pure-covalent-bond"
+  },
+  {
+   "concept": "lewis-symbol",
+   "prereq": "lewis-dot-symbol"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "lewis-structure-diagram"
+  },
+  {
+   "concept": "lewis-structure",
+   "prereq": "lone-pair"
+  },
+  {
+   "concept": "multiple-bonds",
+   "prereq": "single-bond"
+  },
+  {
+   "concept": "multiple-bonds",
+   "prereq": "double-bond"
+  },
+  {
+   "concept": "multiple-bonds",
+   "prereq": "triple-bond"
+  },
+  {
+   "concept": "octet-rule-exceptions",
+   "prereq": "free-radical"
+  },
+  {
+   "concept": "octet-rule-exceptions",
+   "prereq": "hypervalent-molecule"
+  },
+  {
+   "concept": "formal-charge",
+   "prereq": "formal-charge-of-atom"
+  },
+  {
+   "concept": "formal-charge-guidelines",
+   "prereq": "formal-charge-of-atom"
+  },
+  {
+   "concept": "resonance",
+   "prereq": "resonance-forms"
+  },
+  {
+   "concept": "resonance",
+   "prereq": "resonance-hybrid"
+  },
+  {
+   "concept": "born-haber-cycle",
+   "prereq": "born-haber-thermochemical-cycle"
+  },
+  {
+   "concept": "bond-strength-and-length",
+   "prereq": "bond-length"
+  },
+  {
+   "concept": "bond-angle-and-bond-distance",
+   "prereq": "bond-angle"
+  },
+  {
+   "concept": "bond-angle-and-bond-distance",
+   "prereq": "bond-length"
+  },
+  {
+   "concept": "axial-and-equatorial-positions",
+   "prereq": "axial-position"
+  },
+  {
+   "concept": "axial-and-equatorial-positions",
+   "prereq": "equatorial-position"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "molecular-structure"
+  },
+  {
+   "concept": "predict-molecular-structure",
+   "prereq": "lone-pair"
+  },
+  {
+   "concept": "molecular-structure-versus-electron-pair-geometry",
+   "prereq": "molecular-structure"
+  },
+  {
+   "concept": "bond-dipole-moment",
+   "prereq": "polar-covalent-bond"
+  },
+  {
+   "concept": "bond-dipole-moment",
+   "prereq": "vector"
+  },
+  {
+   "concept": "molecular-polarity",
+   "prereq": "dipole-moment"
+  },
+  {
+   "concept": "molecular-polarity",
+   "prereq": "polar-molecule"
   }
  ]
 }

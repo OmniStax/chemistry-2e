@@ -98,6 +98,11 @@
    "verb": "uses"
   },
   {
+   "span": "cations",
+   "concept": "inert-pair-effect",
+   "verb": "introduces"
+  },
+  {
    "span": "anions",
    "concept": "predict-ion-charge",
    "verb": "reinforces"

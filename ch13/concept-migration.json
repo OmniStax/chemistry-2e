@@ -1,0 +1,153 @@
+{
+  "chapter": "ch13",
+  "kinds": {
+    "reversible-reaction": "definition",
+    "chemical-equilibrium": "definition",
+    "equilibrium-is-dynamic": "idea",
+    "reaction-quotient": "definition",
+    "write-reaction-quotient": "skill",
+    "equilibrium-constant": "definition",
+    "magnitude-of-k": "idea",
+    "predict-direction-q-versus-k": "skill",
+    "kp-kc-relation": "result",
+    "homogeneous-and-heterogeneous-equilibria": "idea",
+    "coupled-equilibria": "skill",
+    "le-chateliers-principle": "axiom",
+    "concentration-stress": "result",
+    "volume-stress": "result",
+    "temperature-changes-k": "result",
+    "catalyst-and-equilibrium": "result",
+    "predict-equilibrium-shift": "skill",
+    "ice-change-terms": "skill",
+    "k-from-ice-table": "skill",
+    "missing-equilibrium-concentration": "skill",
+    "equilibrium-from-initial-concentrations": "skill",
+    "small-x-approximation": "skill"
+  },
+  "statements": {
+    "reaction-quotient": "The reaction quotient, $Q$, is the product of the product concentrations, each raised to the power of its coefficient in the balanced equation, divided by the product of the reactant concentrations raised to theirs. Its value changes as the reaction proceeds, so it serves as an indicator of the reaction’s status.",
+    "equilibrium-constant": "The equilibrium constant, $K$, is the constant value of the reaction quotient exhibited by a system at equilibrium; $K_{c}$ is written with molar concentrations and $K_{P}$ with partial pressures."
+  },
+  "new": [
+    {
+      "id": "law-of-mass-action",
+      "kind": "axiom",
+      "section": "13.2",
+      "name": "The law of mass action",
+      "statement": "At a given temperature, the reaction quotient for a system at equilibrium is constant, whatever the initial concentrations from which equilibrium was approached.",
+      "introduces": null,
+      "prereqs": [
+        "reaction-quotient",
+        "chemical-equilibrium"
+      ]
+    },
+    {
+      "id": "homogeneous-equilibrium",
+      "kind": "definition",
+      "section": "13.2",
+      "name": "Homogeneous equilibrium",
+      "statement": "A homogeneous equilibrium is one in which all reactants and products, and any catalysts, are present in the same phase.",
+      "introduces": null,
+      "prereqs": [
+        "chemical-equilibrium"
+      ]
+    },
+    {
+      "id": "heterogeneous-equilibrium",
+      "kind": "definition",
+      "section": "13.2",
+      "name": "Heterogeneous equilibrium",
+      "statement": "A heterogeneous equilibrium involves reactants and products in two or more different phases.",
+      "introduces": null,
+      "prereqs": [
+        "chemical-equilibrium"
+      ]
+    },
+    {
+      "id": "coupled-equilibrium",
+      "kind": "definition",
+      "section": "13.2",
+      "name": "Coupled equilibria",
+      "statement": "Coupled equilibria are two or more equilibrium reactions that have in common one or more reactant or product species.",
+      "introduces": null,
+      "prereqs": [
+        "chemical-equilibrium"
+      ]
+    }
+  ],
+  "glossary": {
+    "13.1/equilibrium": "chemical-equilibrium",
+    "13.1/reversible reaction": "reversible-reaction",
+    "13.2/equilibrium constant": "equilibrium-constant",
+    "13.2/heterogeneous equilibria": "heterogeneous-equilibrium",
+    "13.2/homogeneous equilibria": "homogeneous-equilibrium",
+    "13.2/law of mass action": "law-of-mass-action",
+    "13.2/reaction quotient": "reaction-quotient",
+    "13.3/Le Châtelier’s principle": "le-chateliers-principle"
+  },
+  "variables": {
+    "13.1/rate_f": "reaction-rate",
+    "13.1/rate_r": "reaction-rate",
+    "13.1/k_f": "rate-constant",
+    "13.1/k_r": "rate-constant",
+    "13.2/Q_c": "reaction-quotient",
+    "13.2/Q_conc": "reaction-quotient",
+    "13.2/Q_P": "reaction-quotient",
+    "13.2/K": "equilibrium-constant",
+    "13.2/K_c": "equilibrium-constant",
+    "13.2/K_P": "equilibrium-constant",
+    "13.2/[A]": "molarity",
+    "13.2/[B]": "molarity",
+    "13.2/[C]": "molarity",
+    "13.2/[D]": "molarity",
+    "13.2/P_A": "@Partial pressure",
+    "13.2/P_B": "@Partial pressure",
+    "13.2/P_C": "@Partial pressure",
+    "13.2/P_D": "@Partial pressure",
+    "13.2/P": "@Partial pressure",
+    "13.2/M": "molarity",
+    "13.2/R": "ideal-gas-law",
+    "13.2/T": "temperature",
+    "13.2/Δn_gas": "kp-kc-relation",
+    "13.2/K_c_prime": "equilibrium-constant",
+    "13.2/K_c1": "equilibrium-constant",
+    "13.2/K_c2": "equilibrium-constant",
+    "13.3/ΔH": "enthalpy-change-at-constant-pressure",
+    "13.4/x_ice": "ice-change-terms"
+  },
+  "equations": {
+    "eq-equal-rates": "chemical-equilibrium",
+    "eq-reaction-quotient": "reaction-quotient",
+    "eq-reaction-quotient-p": "reaction-quotient",
+    "eq-p-mrt": "ideal-gas-law",
+    "eq-k-equals-q": "equilibrium-constant",
+    "eq-kp-kc": "kp-kc-relation",
+    "eq-delta-n": "kp-kc-relation",
+    "eq-reversed-k": "coupled-equilibria",
+    "eq-scaled-k": "coupled-equilibria",
+    "eq-coupled-k": "coupled-equilibria",
+    "eq-k-from-rate-constants": "temperature-changes-k"
+  },
+  "edges": [
+    [
+      "equilibrium-constant",
+      "law-of-mass-action"
+    ],
+    [
+      "homogeneous-and-heterogeneous-equilibria",
+      "homogeneous-equilibrium"
+    ],
+    [
+      "homogeneous-and-heterogeneous-equilibria",
+      "heterogeneous-equilibrium"
+    ],
+    [
+      "coupled-equilibria",
+      "coupled-equilibrium"
+    ],
+    [
+      "coupled-equilibrium-calculations",
+      "coupled-equilibrium"
+    ]
+  ]
+}

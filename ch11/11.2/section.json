@@ -37,6 +37,10 @@
   "coverage": [
     {"span": "electrolytes", "concept": "electrolytes-and-nonelectrolytes", "verb": "introduces"},
     {"span": "electrolytes", "concept": "classify-electrolyte-strength", "verb": "introduces"},
+    {"span": "electrolytes", "concept": "electrolyte", "verb": "introduces"},
+    {"span": "electrolytes", "concept": "nonelectrolyte", "verb": "introduces"},
+    {"span": "electrolytes", "concept": "strong-electrolyte", "verb": "introduces"},
+    {"span": "electrolytes", "concept": "weak-electrolyte", "verb": "introduces"},
     {"span": "ionic", "concept": "ion-dipole-attraction", "verb": "introduces"},
     {"span": "ionic", "concept": "dissociation-of-ionic-compounds", "verb": "introduces"},
     {"span": "covalent", "concept": "covalent-electrolytes", "verb": "introduces"},

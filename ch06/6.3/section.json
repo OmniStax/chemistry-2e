@@ -163,6 +163,16 @@
    "verb": "uses"
   },
   {
+   "span": "de-broglie",
+   "concept": "velocity",
+   "verb": "introduces"
+  },
+  {
+   "span": "de-broglie",
+   "concept": "momentum",
+   "verb": "introduces"
+  },
+  {
    "span": "electron-interference",
    "concept": "de-broglie-wavelength",
    "verb": "reinforces"
@@ -198,6 +208,26 @@
    "verb": "uses"
   },
   {
+   "span": "quantum-model",
+   "concept": "quantum-mechanics",
+   "verb": "introduces"
+  },
+  {
+   "span": "quantum-model",
+   "concept": "wavefunction",
+   "verb": "introduces"
+  },
+  {
+   "span": "quantum-model",
+   "concept": "electron-density",
+   "verb": "introduces"
+  },
+  {
+   "span": "quantum-model",
+   "concept": "atomic-orbital",
+   "verb": "introduces"
+  },
+  {
    "span": "shells",
    "concept": "principal-quantum-number-shells",
    "verb": "introduces"
@@ -211,6 +241,11 @@
    "span": "shells",
    "concept": "bohr-energy-levels",
    "verb": "uses"
+  },
+  {
+   "span": "shells",
+   "concept": "shell",
+   "verb": "introduces"
   },
   {
    "span": "subshells",
@@ -228,6 +263,31 @@
    "verb": "uses"
   },
   {
+   "span": "subshells",
+   "concept": "subshell",
+   "verb": "introduces"
+  },
+  {
+   "span": "subshells",
+   "concept": "s-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "subshells",
+   "concept": "p-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "subshells",
+   "concept": "d-orbital",
+   "verb": "introduces"
+  },
+  {
+   "span": "subshells",
+   "concept": "f-orbital",
+   "verb": "introduces"
+  },
+  {
    "span": "orientation",
    "concept": "magnetic-quantum-number",
    "verb": "introduces"
@@ -241,6 +301,11 @@
    "span": "orientation",
    "concept": "principal-quantum-number-shells",
    "verb": "reinforces"
+  },
+  {
+   "span": "orientation",
+   "concept": "degenerate-orbitals",
+   "verb": "introduces"
   },
   {
    "span": "spin",

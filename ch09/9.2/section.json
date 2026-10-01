@@ -302,6 +302,11 @@
       "verb": "uses"
     },
     {
+      "span": "ideal-gas-law",
+      "concept": "ideal-gas-constant",
+      "verb": "introduces"
+    },
+    {
       "span": "ex-methane",
       "concept": "ideal-gas-law",
       "verb": "uses"
@@ -355,6 +360,16 @@
       "span": "stp",
       "concept": "avogadro-law",
       "verb": "uses"
+    },
+    {
+      "span": "stp",
+      "concept": "molar-volume",
+      "verb": "introduces"
+    },
+    {
+      "span": "stp",
+      "concept": "standard-molar-volume",
+      "verb": "introduces"
     }
   ],
   "exercises": [

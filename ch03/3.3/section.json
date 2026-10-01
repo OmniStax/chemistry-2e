@@ -84,6 +84,36 @@
    "verb": "introduces"
   },
   {
+   "span": "solutions",
+   "concept": "solvent",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "solute",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "aqueous-solution",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "dissolved",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "concentrated",
+   "verb": "introduces"
+  },
+  {
+   "span": "solutions",
+   "concept": "dilute",
+   "verb": "introduces"
+  },
+  {
    "span": "molarity",
    "concept": "molarity",
    "verb": "introduces"

@@ -172,6 +172,11 @@
       "verb": "introduces"
     },
     {
+      "span": "molality",
+      "concept": "molality",
+      "verb": "introduces"
+    },
+    {
       "span": "vapor",
       "concept": "raoults-law",
       "verb": "introduces"
@@ -207,8 +212,18 @@
       "verb": "uses"
     },
     {
+      "span": "boiling",
+      "concept": "boiling-point-elevation-constant",
+      "verb": "introduces"
+    },
+    {
       "span": "freezing",
       "concept": "freezing-point-depression",
+      "verb": "introduces"
+    },
+    {
+      "span": "freezing",
+      "concept": "freezing-point-depression-constant",
       "verb": "introduces"
     },
     {
@@ -237,6 +252,41 @@
       "verb": "introduces"
     },
     {
+      "span": "osmosis",
+      "concept": "semipermeable-membrane",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "osmosis",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "isotonic",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "hypertonic",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "hypotonic",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "crenation",
+      "verb": "introduces"
+    },
+    {
+      "span": "osmosis",
+      "concept": "hemolysis",
+      "verb": "introduces"
+    },
+    {
       "span": "molar-mass",
       "concept": "molar-mass-from-colligative-properties",
       "verb": "introduces"
@@ -260,6 +310,11 @@
       "span": "electrolytes",
       "concept": "freezing-point-depression",
       "verb": "uses"
+    },
+    {
+      "span": "electrolytes",
+      "concept": "ion-pair",
+      "verb": "introduces"
     }
   ],
   "exercises": [

@@ -56,6 +56,21 @@
    "verb": "introduces"
   },
   {
+   "span": "chemical-equations",
+   "concept": "reactant",
+   "verb": "introduces"
+  },
+  {
+   "span": "chemical-equations",
+   "concept": "product",
+   "verb": "introduces"
+  },
+  {
+   "span": "chemical-equations",
+   "concept": "coefficient",
+   "verb": "introduces"
+  },
+  {
    "span": "coefficient-ratios",
    "concept": "coefficients-as-ratios",
    "verb": "introduces"
@@ -109,6 +124,26 @@
    "span": "ionic-equations",
    "concept": "balance-by-inspection",
    "verb": "uses"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "molecular-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "complete-ionic-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "net-ionic-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionic-equations",
+   "concept": "spectator-ion",
+   "verb": "introduces"
   }
  ],
  "exercises": [

@@ -100,6 +100,11 @@
    "verb": "uses"
   },
   {
+   "span": "limiting-reactant",
+   "concept": "excess-reactant",
+   "verb": "introduces"
+  },
+  {
    "span": "comparing-products",
    "concept": "identify-limiting-reactant",
    "verb": "introduces"
@@ -133,6 +138,16 @@
    "span": "percent-yield",
    "concept": "mass-stoichiometry",
    "verb": "uses"
+  },
+  {
+   "span": "percent-yield",
+   "concept": "theoretical-yield",
+   "verb": "introduces"
+  },
+  {
+   "span": "percent-yield",
+   "concept": "actual-yield",
+   "verb": "introduces"
   },
   {
    "span": "atom-economy",

@@ -1,0 +1,717 @@
+{
+  "chapter": "ch01",
+  "kinds": {
+    "scientific-method": "idea",
+    "hypothesis-law-theory": "skill",
+    "domains-of-chemistry": "idea",
+    "matter": "definition",
+    "states-of-matter": "definition",
+    "mass-versus-weight": "idea",
+    "conservation-of-matter": "axiom",
+    "elements-and-compounds": "definition",
+    "mixtures": "definition",
+    "classification-of-matter": "skill",
+    "atoms-and-molecules": "definition",
+    "physical-property": "definition",
+    "chemical-property": "definition",
+    "physical-and-chemical-change": "definition",
+    "classify-physical-or-chemical": "skill",
+    "extensive-and-intensive-properties": "definition",
+    "measurement-parts": "idea",
+    "scientific-notation": "skill",
+    "si-base-units": "definition",
+    "unit-prefixes": "skill",
+    "derived-units": "definition",
+    "volume": "definition",
+    "density": "definition",
+    "measure-volume-by-displacement": "skill",
+    "exact-and-uncertain-numbers": "idea",
+    "measurement-uncertainty": "idea",
+    "significant-figures": "definition",
+    "count-significant-figures": "skill",
+    "rounding-rules": "skill",
+    "significant-figures-in-calculations": "skill",
+    "accuracy-and-precision": "definition",
+    "dimensional-analysis": "idea",
+    "unit-conversion-factor": "definition",
+    "convert-units": "skill",
+    "compute-with-units": "skill",
+    "linear-versus-proportional-scales": "idea",
+    "temperature-scales": "definition",
+    "celsius-fahrenheit-conversion": "result",
+    "celsius-kelvin-conversion": "result"
+  },
+  "statements": {
+    "matter": "Matter is anything that occupies space and has mass. A gas is as much matter as a solid is, even though you can neither see nor hold it.",
+    "density": "The density of a substance is the ratio of the mass of a sample to its volume. It is an intensive property, so it identifies a substance rather than a sample: a brick of gold and a brick of lead of the same size do not have the same mass."
+  },
+  "new": [
+    {
+      "id": "chemistry",
+      "kind": "definition",
+      "section": "1.1",
+      "name": "Chemistry",
+      "statement": "Chemistry is the study of the composition, properties, and interactions of matter.",
+      "introduces": "central-science",
+      "prereqs": [
+        "matter"
+      ]
+    },
+    {
+      "id": "hypothesis",
+      "kind": "definition",
+      "section": "1.1",
+      "name": "Hypothesis",
+      "statement": "A hypothesis is a tentative explanation of observations that acts as a guide for gathering and checking information.",
+      "introduces": "scientific-method",
+      "prereqs": []
+    },
+    {
+      "id": "scientific-law",
+      "kind": "definition",
+      "section": "1.1",
+      "name": "Law",
+      "statement": "A law is a statement that summarizes a vast number of experimental observations and describes or predicts some aspect of the natural world.",
+      "introduces": "scientific-method",
+      "prereqs": []
+    },
+    {
+      "id": "scientific-theory",
+      "kind": "definition",
+      "section": "1.1",
+      "name": "Theory",
+      "statement": "A theory is a well-substantiated, comprehensive, testable explanation of a particular aspect of nature.",
+      "introduces": "scientific-method",
+      "prereqs": [
+        "hypothesis"
+      ]
+    },
+    {
+      "id": "mass",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Mass, $m$",
+      "statement": "The mass of an object is a measure of the amount of matter in it, and it does not change with where the object is.",
+      "introduces": "mass-weight",
+      "prereqs": [
+        "matter"
+      ]
+    },
+    {
+      "id": "weight",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Weight",
+      "statement": "The weight of an object is the force that gravity exerts on it, so it changes with the gravity the object is in.",
+      "introduces": "mass-weight",
+      "prereqs": [
+        "mass"
+      ]
+    },
+    {
+      "id": "unit",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Unit",
+      "statement": "A unit is a standard of comparison for measurements; the number of a measured quantity says how many of its unit the quantity holds.",
+      "introduces": "three-parts",
+      "prereqs": [
+        "measurement-parts"
+      ]
+    },
+    {
+      "id": "length",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Length",
+      "statement": "Length is the measure of one dimension of an object, and its SI unit is the meter.",
+      "introduces": "length",
+      "prereqs": [
+        "si-base-units"
+      ]
+    },
+    {
+      "id": "time",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Time, $t$",
+      "statement": "Time is measured in the SI base unit of time, the second.",
+      "introduces": "time",
+      "prereqs": [
+        "si-base-units"
+      ]
+    },
+    {
+      "id": "temperature",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Temperature, $T$",
+      "statement": "Temperature is an intensive property representing the hotness or coldness of matter, and its SI unit is the kelvin.",
+      "introduces": "temperature",
+      "prereqs": [
+        "si-base-units",
+        "extensive-and-intensive-properties"
+      ]
+    },
+    {
+      "id": "macroscopic-domain",
+      "kind": "definition",
+      "section": "1.1",
+      "name": "Macroscopic domain",
+      "statement": "The macroscopic domain is the realm of everyday things that are large enough to sense directly by human sight and touch.",
+      "introduces": "domains",
+      "prereqs": [
+        "domains-of-chemistry"
+      ]
+    },
+    {
+      "id": "microscopic-domain",
+      "kind": "definition",
+      "section": "1.1",
+      "name": "Microscopic domain",
+      "statement": "The microscopic domain is the realm of things that are much too small to be sensed directly.",
+      "introduces": "domains",
+      "prereqs": [
+        "domains-of-chemistry"
+      ]
+    },
+    {
+      "id": "symbolic-domain",
+      "kind": "definition",
+      "section": "1.1",
+      "name": "Symbolic domain",
+      "statement": "The symbolic domain is the specialized language used to represent components of the macroscopic and microscopic domains, such as chemical symbols, chemical formulas, chemical equations, graphs, drawings, and calculations.",
+      "introduces": "domains",
+      "prereqs": [
+        "domains-of-chemistry"
+      ]
+    },
+    {
+      "id": "gas",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Gas",
+      "statement": "A gas is a state of matter that has neither definite volume nor shape.",
+      "introduces": "matter",
+      "prereqs": [
+        "states-of-matter"
+      ]
+    },
+    {
+      "id": "liquid",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Liquid",
+      "statement": "A liquid is a state of matter that has a definite volume but indefinite shape.",
+      "introduces": "matter",
+      "prereqs": [
+        "states-of-matter"
+      ]
+    },
+    {
+      "id": "solid",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Solid",
+      "statement": "A solid is a state of matter that is rigid, has a definite shape, and has a fairly constant volume.",
+      "introduces": "matter",
+      "prereqs": [
+        "states-of-matter"
+      ]
+    },
+    {
+      "id": "plasma",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Plasma",
+      "statement": "A plasma is a gaseous state of matter containing a large number of electrically charged atoms and/or molecules.",
+      "introduces": "matter",
+      "prereqs": [
+        "states-of-matter"
+      ]
+    },
+    {
+      "id": "pure-substance",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Pure substance",
+      "statement": "A pure substance is a homogeneous substance that has a constant composition.",
+      "introduces": "pure-substances",
+      "prereqs": [
+        "matter"
+      ]
+    },
+    {
+      "id": "element",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Element",
+      "statement": "An element is a substance composed of a single type of atom, one that cannot be decomposed by a chemical change.",
+      "introduces": "pure-substances",
+      "prereqs": [
+        "pure-substance",
+        "elements-and-compounds"
+      ]
+    },
+    {
+      "id": "compound",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Compound",
+      "statement": "A compound is a pure substance that can be decomposed into two or more elements.",
+      "introduces": "pure-substances",
+      "prereqs": [
+        "pure-substance",
+        "element",
+        "elements-and-compounds"
+      ]
+    },
+    {
+      "id": "mixture",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Mixture",
+      "statement": "A mixture is matter that can be separated into its components by physical means.",
+      "introduces": "mixtures",
+      "prereqs": [
+        "matter"
+      ]
+    },
+    {
+      "id": "heterogeneous-mixture",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Heterogeneous mixture",
+      "statement": "A heterogeneous mixture is a combination of substances with a composition that varies from point to point.",
+      "introduces": "mixtures",
+      "prereqs": [
+        "mixture",
+        "mixtures"
+      ]
+    },
+    {
+      "id": "homogeneous-mixture",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Homogeneous mixture",
+      "statement": "A homogeneous mixture, also called a solution, is a combination of substances with a composition that is uniform throughout.",
+      "introduces": "mixtures",
+      "prereqs": [
+        "mixture",
+        "mixtures"
+      ]
+    },
+    {
+      "id": "atom",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Atom",
+      "statement": "An atom is the smallest particle of an element that can enter into a chemical combination.",
+      "introduces": "atoms-molecules",
+      "prereqs": [
+        "element",
+        "atoms-and-molecules"
+      ]
+    },
+    {
+      "id": "molecule",
+      "kind": "definition",
+      "section": "1.2",
+      "name": "Molecule",
+      "statement": "A molecule is a bonded collection of two or more atoms of the same or different elements.",
+      "introduces": "atoms-molecules",
+      "prereqs": [
+        "atom",
+        "atoms-and-molecules"
+      ]
+    },
+    {
+      "id": "physical-change",
+      "kind": "definition",
+      "section": "1.3",
+      "name": "Physical change",
+      "statement": "A physical change is a change in the state or properties of matter that does not involve a change in its chemical composition.",
+      "introduces": "physical",
+      "prereqs": [
+        "physical-and-chemical-change"
+      ]
+    },
+    {
+      "id": "chemical-change",
+      "kind": "definition",
+      "section": "1.3",
+      "name": "Chemical change",
+      "statement": "A chemical change is a change producing a different kind of matter from the original kind of matter.",
+      "introduces": "chemical",
+      "prereqs": [
+        "physical-and-chemical-change"
+      ]
+    },
+    {
+      "id": "extensive-property",
+      "kind": "definition",
+      "section": "1.3",
+      "name": "Extensive property",
+      "statement": "An extensive property is a property of a substance that depends on the amount of the substance.",
+      "introduces": "extensive",
+      "prereqs": [
+        "extensive-and-intensive-properties"
+      ]
+    },
+    {
+      "id": "intensive-property",
+      "kind": "definition",
+      "section": "1.3",
+      "name": "Intensive property",
+      "statement": "An intensive property is a property of a substance that is independent of the amount of the substance.",
+      "introduces": "extensive",
+      "prereqs": [
+        "extensive-and-intensive-properties"
+      ]
+    },
+    {
+      "id": "si-units",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "SI units",
+      "statement": "SI units are the standards fixed by international agreement in the International System of Units (Le Système International d’Unités).",
+      "introduces": "si-units",
+      "prereqs": [
+        "si-base-units",
+        "unit"
+      ]
+    },
+    {
+      "id": "meter",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Meter, m",
+      "statement": "The meter (m) is the standard metric and SI unit of length; 1 m is approximately 1.094 yards.",
+      "introduces": "length",
+      "prereqs": [
+        "si-base-units",
+        "length"
+      ]
+    },
+    {
+      "id": "kilogram",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Kilogram, kg",
+      "statement": "The kilogram (kg) is the standard SI unit of mass.",
+      "introduces": "mass",
+      "prereqs": [
+        "si-base-units",
+        "mass"
+      ]
+    },
+    {
+      "id": "second",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Second, s",
+      "statement": "The second (s) is the SI unit of time.",
+      "introduces": "time",
+      "prereqs": [
+        "si-base-units",
+        "time"
+      ]
+    },
+    {
+      "id": "kelvin",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Kelvin, K",
+      "statement": "The kelvin (K) is the SI unit of temperature; 273.15 K equals 0 °C.",
+      "introduces": "temperature",
+      "prereqs": [
+        "si-base-units",
+        "temperature"
+      ]
+    },
+    {
+      "id": "celsius",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Celsius, °C",
+      "statement": "The degree Celsius (°C) is a unit of temperature; water freezes at 0 °C and boils at 100 °C on this scale.",
+      "introduces": "temperature",
+      "prereqs": [
+        "temperature"
+      ]
+    },
+    {
+      "id": "fahrenheit",
+      "kind": "definition",
+      "section": "1.6",
+      "name": "Fahrenheit, °F",
+      "statement": "The degree Fahrenheit (°F) is a unit of temperature; water freezes at 32 °F and boils at 212 °F on this scale.",
+      "introduces": "temperature-scales",
+      "prereqs": [
+        "temperature-scales"
+      ]
+    },
+    {
+      "id": "cubic-meter",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Cubic meter, m³",
+      "statement": "The cubic meter (m³) is the SI unit of volume, the volume of a cube with an edge length of exactly 1 m.",
+      "introduces": "volume",
+      "prereqs": [
+        "volume",
+        "meter"
+      ]
+    },
+    {
+      "id": "cubic-centimeter",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Cubic centimeter, cm³",
+      "statement": "The cubic centimeter (cm³ or cc) is the volume of a cube with an edge length of exactly 1 cm.",
+      "introduces": "volume",
+      "prereqs": [
+        "volume",
+        "unit-prefixes"
+      ]
+    },
+    {
+      "id": "liter",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Liter, L",
+      "statement": "The liter (L), also called the cubic decimeter, is a unit of volume; 1 L equals 1,000 cm³.",
+      "introduces": "volume",
+      "prereqs": [
+        "volume",
+        "cubic-centimeter"
+      ]
+    },
+    {
+      "id": "milliliter",
+      "kind": "definition",
+      "section": "1.4",
+      "name": "Milliliter, mL",
+      "statement": "The milliliter (mL) is 1/1,000 of a liter and equals 1 cm³.",
+      "introduces": "volume",
+      "prereqs": [
+        "liter",
+        "unit-prefixes"
+      ]
+    },
+    {
+      "id": "exact-number",
+      "kind": "definition",
+      "section": "1.5",
+      "name": "Exact number",
+      "statement": "An exact number is a number derived by counting or by definition.",
+      "introduces": "exact-numbers",
+      "prereqs": [
+        "exact-and-uncertain-numbers"
+      ]
+    },
+    {
+      "id": "uncertainty",
+      "kind": "definition",
+      "section": "1.5",
+      "name": "Uncertainty",
+      "statement": "The uncertainty of a measurement is an estimate of the amount by which it differs from the true value.",
+      "introduces": "uncertainty",
+      "prereqs": [
+        "measurement-parts"
+      ]
+    },
+    {
+      "id": "rounding",
+      "kind": "definition",
+      "section": "1.5",
+      "name": "Rounding",
+      "statement": "Rounding is the procedure used to ensure that calculated results properly reflect the uncertainty in the measurements used in the calculation.",
+      "introduces": "rounding",
+      "prereqs": [
+        "significant-figures"
+      ]
+    },
+    {
+      "id": "accuracy",
+      "kind": "definition",
+      "section": "1.5",
+      "name": "Accuracy",
+      "statement": "Accuracy is how closely a measurement aligns with a correct value.",
+      "introduces": "accuracy-precision",
+      "prereqs": [
+        "accuracy-and-precision"
+      ]
+    },
+    {
+      "id": "precision",
+      "kind": "definition",
+      "section": "1.5",
+      "name": "Precision",
+      "statement": "Precision is how closely a measurement matches the same measurement when repeated.",
+      "introduces": "accuracy-precision",
+      "prereqs": [
+        "accuracy-and-precision"
+      ]
+    }
+  ],
+  "glossary": {
+    "1.1/chemistry": "chemistry",
+    "1.1/hypothesis": "hypothesis",
+    "1.1/law": "scientific-law",
+    "1.1/macroscopic domain": "macroscopic-domain",
+    "1.1/microscopic domain": "microscopic-domain",
+    "1.1/scientific method": "scientific-method",
+    "1.1/symbolic domain": "symbolic-domain",
+    "1.1/theory": "scientific-theory",
+    "1.2/atom": "atom",
+    "1.2/compound": "compound",
+    "1.2/element": "element",
+    "1.2/gas": "gas",
+    "1.2/heterogeneous mixture": "heterogeneous-mixture",
+    "1.2/homogeneous mixture": "homogeneous-mixture",
+    "1.2/liquid": "liquid",
+    "1.2/law of conservation of matter": "conservation-of-matter",
+    "1.2/mass": "mass",
+    "1.2/matter": "matter",
+    "1.2/mixture": "mixture",
+    "1.2/molecule": "molecule",
+    "1.2/plasma": "plasma",
+    "1.2/pure substance": "pure-substance",
+    "1.2/solid": "solid",
+    "1.2/solution": "mixtures",
+    "1.2/weight": "weight",
+    "1.3/chemical change": "chemical-change",
+    "1.3/chemical property": "chemical-property",
+    "1.3/extensive property": "extensive-property",
+    "1.3/intensive property": "intensive-property",
+    "1.3/physical change": "physical-change",
+    "1.3/physical property": "physical-property",
+    "1.4/Celsius (°C)": "celsius",
+    "1.4/cubic centimeter (cm³ or cc)": "cubic-centimeter",
+    "1.4/cubic meter (m³)": "cubic-meter",
+    "1.4/density": "density",
+    "1.4/kelvin (K)": "kelvin",
+    "1.4/kilogram (kg)": "kilogram",
+    "1.4/length": "length",
+    "1.4/liter (L)": "liter",
+    "1.4/meter (m)": "meter",
+    "1.4/milliliter (mL)": "milliliter",
+    "1.4/second (s)": "second",
+    "1.4/SI units (International System of Units)": "si-units",
+    "1.4/unit": "unit",
+    "1.4/volume": "volume",
+    "1.5/accuracy": "accuracy",
+    "1.5/exact number": "exact-number",
+    "1.5/precision": "precision",
+    "1.5/rounding": "rounding",
+    "1.5/significant digits": "significant-figures",
+    "1.5/significant figures": "significant-figures",
+    "1.5/uncertainty": "uncertainty",
+    "1.6/dimensional analysis": "dimensional-analysis",
+    "1.6/factor-label method": "dimensional-analysis",
+    "1.6/Fahrenheit": "fahrenheit",
+    "1.6/temperature": "temperature",
+    "1.6/unit conversion factor": "unit-conversion-factor"
+  },
+  "variables": {
+    "1.4/m": "mass",
+    "1.4/V": "volume",
+    "1.4/d": "density",
+    "1.4/t": "time",
+    "1.4/T": "temperature",
+    "1.6/T_C": "temperature",
+    "1.6/T_F": "temperature",
+    "1.6/T_K": "temperature"
+  },
+  "equations": {
+    "eq-density": "density",
+    "eq-speed": "dimensional-analysis",
+    "eq-fahrenheit-from-celsius": "celsius-fahrenheit-conversion",
+    "eq-celsius-from-fahrenheit": "celsius-fahrenheit-conversion",
+    "eq-kelvin-from-celsius": "celsius-kelvin-conversion",
+    "eq-celsius-from-kelvin": "celsius-kelvin-conversion"
+  },
+  "edges": [
+    [
+      "hypothesis-law-theory",
+      "hypothesis"
+    ],
+    [
+      "hypothesis-law-theory",
+      "scientific-law"
+    ],
+    [
+      "hypothesis-law-theory",
+      "scientific-theory"
+    ],
+    [
+      "mass-versus-weight",
+      "mass"
+    ],
+    [
+      "mass-versus-weight",
+      "weight"
+    ],
+    [
+      "classification-of-matter",
+      "pure-substance"
+    ],
+    [
+      "classification-of-matter",
+      "mixture"
+    ],
+    [
+      "classification-of-matter",
+      "homogeneous-mixture"
+    ],
+    [
+      "classification-of-matter",
+      "heterogeneous-mixture"
+    ],
+    [
+      "classify-physical-or-chemical",
+      "physical-change"
+    ],
+    [
+      "classify-physical-or-chemical",
+      "chemical-change"
+    ],
+    [
+      "density",
+      "mass"
+    ],
+    [
+      "temperature-scales",
+      "celsius"
+    ],
+    [
+      "temperature-scales",
+      "kelvin"
+    ],
+    [
+      "celsius-kelvin-conversion",
+      "celsius"
+    ],
+    [
+      "celsius-kelvin-conversion",
+      "kelvin"
+    ],
+    [
+      "celsius-fahrenheit-conversion",
+      "celsius"
+    ],
+    [
+      "celsius-fahrenheit-conversion",
+      "fahrenheit"
+    ],
+    [
+      "rounding-rules",
+      "rounding"
+    ],
+    [
+      "convert-units",
+      "unit"
+    ]
+  ]
+}

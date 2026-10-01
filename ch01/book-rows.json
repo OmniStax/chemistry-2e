@@ -30,184 +30,336 @@
    "kind": "idea",
    "section": "1.1",
    "name": "The scientific method",
-   "why": "Chemistry is a science based on observation and experimentation, and there is no single route from a question to an answer. What every route has in common is that it rests on experiments that can be repeated, so the path from question and observation to hypothesis, and from hypothesis through testing to law or theory, is the method the whole of the book argues by.",
-   "evidence": "The section describes the path of discovery and defines the scientific method, Figure 1.4 draws it with its loops back to the hypothesis, and an exercise asks the reader to design a test for whether the outside temperature is below freezing without a thermometer."
+   "statement": "Chemistry is a science based on observation and experimentation, and there is no single route from a question to an answer. What every route has in common is that it rests on experiments that can be repeated, so the path from question and observation to hypothesis, and from hypothesis through testing to law or theory, is the method the whole of the book argues by."
   },
   {
    "id": "hypothesis-law-theory",
    "kind": "skill",
    "section": "1.1",
    "name": "Telling a hypothesis from a law and from a theory",
-   "why": "These three words are used loosely outside science and precisely inside it. A hypothesis is a tentative explanation that guides the gathering of information, a law summarizes a vast number of observations and predicts, and a theory is a well-substantiated explanation that survived a large body of data. Reading a statement and knowing which of the three it is tells the reader how much weight it carries.",
-   "evidence": "The section defines all three in turn and explains how a hypothesis may become a theory, and two exercises give six statements in all and ask the reader to classify each and explain the reasoning."
+   "statement": "These three words are used loosely outside science and precisely inside it. A hypothesis is a tentative explanation that guides the gathering of information, a law summarizes a vast number of observations and predicts, and a theory is a well-substantiated explanation that survived a large body of data. Reading a statement and knowing which of the three it is tells the reader how much weight it carries."
   },
   {
    "id": "domains-of-chemistry",
    "kind": "idea",
    "section": "1.1",
    "name": "The macroscopic, microscopic, and symbolic domains",
-   "why": "Chemists describe matter in three domains at once: the macroscopic, which can be seen and touched; the microscopic, which is mostly imagined; and the symbolic, the formulas and equations that stand for either. One of the challenges of learning chemistry is that the same symbol can stand for a thing in one domain or in the other, and one of the pleasures is explaining what can be observed by what must be imagined.",
-   "evidence": "The section names and defines the three domains and works them through on water, Figure 1.5 shows an iceberg, the molecules in it and the formula H2O together, and four exercises underline items and ask which domain each belongs to and, for a symbol, which domain it stands for."
+   "statement": "Chemists describe matter in three domains at once: the macroscopic, which can be seen and touched; the microscopic, which is mostly imagined; and the symbolic, the formulas and equations that stand for either. One of the challenges of learning chemistry is that the same symbol can stand for a thing in one domain or in the other, and one of the pleasures is explaining what can be observed by what must be imagined."
+  },
+  {
+   "id": "chemistry",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "Chemistry",
+   "statement": "Chemistry is the study of the composition, properties, and interactions of matter."
+  },
+  {
+   "id": "hypothesis",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "Hypothesis",
+   "statement": "A hypothesis is a tentative explanation of observations that acts as a guide for gathering and checking information."
+  },
+  {
+   "id": "scientific-law",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "Law",
+   "statement": "A law is a statement that summarizes a vast number of experimental observations and describes or predicts some aspect of the natural world."
+  },
+  {
+   "id": "scientific-theory",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "Theory",
+   "statement": "A theory is a well-substantiated, comprehensive, testable explanation of a particular aspect of nature."
+  },
+  {
+   "id": "macroscopic-domain",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "Macroscopic domain",
+   "statement": "The macroscopic domain is the realm of everyday things that are large enough to sense directly by human sight and touch."
+  },
+  {
+   "id": "microscopic-domain",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "Microscopic domain",
+   "statement": "The microscopic domain is the realm of things that are much too small to be sensed directly."
+  },
+  {
+   "id": "symbolic-domain",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "Symbolic domain",
+   "statement": "The symbolic domain is the specialized language used to represent components of the macroscopic and microscopic domains, such as chemical symbols, chemical formulas, chemical equations, graphs, drawings, and calculations."
   },
   {
    "id": "matter",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.2",
    "name": "Matter",
-   "why": "Matter is anything that occupies space and has mass, which is the working definition everything else in the book is stated about. It is worth stating carefully because a gas is as much matter as a solid is, even though it can be neither seen nor held.",
-   "evidence": "The section opens by defining matter and argues that a gas is matter because a balloon inflates, and the summary states the definition again."
+   "statement": "Matter is anything that occupies space and has mass. A gas is as much matter as a solid is, even though you can neither see nor hold it."
   },
   {
    "id": "states-of-matter",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.2",
    "name": "Solid, liquid, gas, and plasma",
-   "why": "A solid is rigid and keeps its shape, a liquid flows and keeps its volume, and a gas takes both the shape and the volume of its container; a plasma is a gas carrying enough charged particles to behave unlike one. These are the states the book will move a substance between for the rest of the chapters, so the properties that tell them apart come first.",
-   "evidence": "The section defines all four states, Figure 1.6 shows the three common ones in beakers and Figure 1.7 a plasma torch, and an exercise asks what properties distinguish solids from liquids, liquids from gases, and solids from gases."
+   "statement": "A solid is rigid and keeps its shape, a liquid flows and keeps its volume, and a gas takes both the shape and the volume of its container; a plasma is a gas carrying enough charged particles to behave unlike one. These are the states the book will move a substance between for the rest of the chapters, so the properties that tell them apart come first."
   },
   {
    "id": "mass-versus-weight",
    "kind": "idea",
    "section": "1.2",
    "name": "Mass and weight are not the same",
-   "why": "The mass of an object measures the amount of matter in it and does not change; weight is the force gravity exerts on it and changes with the gravity it sits in. An astronaut's mass is the same on the moon as on the earth while her weight is one sixth of it, so it is mass, not weight, that says how much matter is present.",
-   "evidence": "The section defines mass and weight separately and works the astronaut through, and two exercises ask why mass rather than weight indicates the amount of matter, and why astronauts are called weightless but never massless."
+   "statement": "The mass of an object measures the amount of matter in it and does not change; weight is the force gravity exerts on it and changes with the gravity it sits in. An astronaut's mass is the same on the moon as on the earth while her weight is one sixth of it, so it is mass, not weight, that says how much matter is present."
   },
   {
    "id": "conservation-of-matter",
-   "kind": "result",
+   "kind": "axiom",
    "section": "1.2",
    "name": "The law of conservation of matter",
-   "why": "There is no detectable change in the total quantity of matter when matter converts from one type to another or changes among the solid, liquid and gaseous states. It is the law every balanced equation and every mass calculation of the later chapters rests on, and the reason a mass that seems to vanish has gone somewhere that was not weighed.",
-   "evidence": "The section states the law and illustrates it with brewing and with a lead-acid battery in Figure 1.8, and three exercises ask about a rusting nail, a loaf baked in an open oven, magnesium burning in air, a sealed flask of tin, and the masses in a fermentation."
+   "statement": "There is no detectable change in the total quantity of matter when matter converts from one type to another or changes among the solid, liquid and gaseous states. It is the law every balanced equation and every mass calculation of the later chapters rests on, and the reason a mass that seems to vanish has gone somewhere that was not weighed."
   },
   {
    "id": "elements-and-compounds",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.2",
    "name": "Elements and compounds",
-   "why": "A pure substance has a constant composition. An element cannot be broken down into anything simpler by a chemical change; a compound is made of two or more elements and can be broken down into them. The properties of combined elements are nothing like their properties uncombined, which is why sodium and chlorine make table salt.",
-   "evidence": "The section defines pure substance, element and compound, shows mercury(II) oxide decomposing in Figure 1.9 and gives sodium chloride and sucrose as cases, and an exercise asks how an element differs from a compound and how the two are similar."
+   "statement": "A pure substance has a constant composition. An element cannot be broken down into anything simpler by a chemical change; a compound is made of two or more elements and can be broken down into them. The properties of combined elements are nothing like their properties uncombined, which is why sodium and chlorine make table salt."
   },
   {
    "id": "mixtures",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.2",
    "name": "Homogeneous and heterogeneous mixtures",
-   "why": "A mixture holds two or more kinds of matter in amounts that can vary and can be separated again by physical means. A heterogeneous mixture varies in composition from point to point, as salad dressing does; a homogeneous mixture, also called a solution, is the same throughout, as a sports drink is. The difference is what a sample taken from one place tells about the rest.",
-   "evidence": "The section defines mixture, heterogeneous mixture, homogeneous mixture and solution, contrasts salad dressing with a sports drink in Figure 1.10, and two exercises ask how the two kinds of mixture differ and how a homogeneous mixture differs from a pure substance."
+   "statement": "A mixture holds two or more kinds of matter in amounts that can vary and can be separated again by physical means. A heterogeneous mixture varies in composition from point to point, as salad dressing does; a homogeneous mixture, also called a solution, is the same throughout, as a sports drink is. The difference is what a sample taken from one place tells about the rest."
   },
   {
    "id": "classification-of-matter",
    "kind": "skill",
    "section": "1.2",
    "name": "Classifying a sample of matter",
-   "why": "Given a sample, the reader should be able to place it: constant composition or not, uniform or not, simplifiable by a chemical change or not. Two questions sort every sample into an element, a compound, a homogeneous mixture or a heterogeneous mixture, and the classification decides what can be done with the sample.",
-   "evidence": "Figure 1.11 draws the decision as a flowchart, Table 1.1 lists the eleven elements that make up most of the earth's crust, and three exercises give more than sixteen substances between them and ask for the classification of each."
+   "statement": "Given a sample, the reader should be able to place it: constant composition or not, uniform or not, simplifiable by a chemical change or not. Two questions sort every sample into an element, a compound, a homogeneous mixture or a heterogeneous mixture, and the classification decides what can be done with the sample."
   },
   {
    "id": "atoms-and-molecules",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.2",
    "name": "Atoms and molecules",
-   "why": "An atom is the smallest particle of an element that keeps the properties of that element and can enter into a chemical combination; a molecule is two or more atoms joined by chemical bonds and moving about as a unit. Atoms are far too small and too light to imagine directly, and the whole microscopic domain of the book is built out of them.",
-   "evidence": "The section defines atom and molecule, works through the size and mass of an atom, shows gold atoms in Figure 1.12, cotton down to its molecules in Figure 1.13 and seven molecules in Figure 1.14, and four exercises ask how an atom differs from a molecule, how a sulfur atom differs from a sulfur molecule, and how molecules of elements differ from molecules of compounds."
+   "statement": "An atom is the smallest particle of an element that keeps the properties of that element and can enter into a chemical combination; a molecule is two or more atoms joined by chemical bonds and moving about as a unit. Atoms are far too small and too light to imagine directly, and the whole microscopic domain of the book is built out of them."
+  },
+  {
+   "id": "mass",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Mass, $m$",
+   "statement": "The mass of an object is a measure of the amount of matter in it, and it does not change with where the object is."
+  },
+  {
+   "id": "weight",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Weight",
+   "statement": "The weight of an object is the force that gravity exerts on it, so it changes with the gravity the object is in."
+  },
+  {
+   "id": "gas",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Gas",
+   "statement": "A gas is a state of matter that has neither definite volume nor shape."
+  },
+  {
+   "id": "liquid",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Liquid",
+   "statement": "A liquid is a state of matter that has a definite volume but indefinite shape."
+  },
+  {
+   "id": "solid",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Solid",
+   "statement": "A solid is a state of matter that is rigid, has a definite shape, and has a fairly constant volume."
+  },
+  {
+   "id": "plasma",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Plasma",
+   "statement": "A plasma is a gaseous state of matter containing a large number of electrically charged atoms and/or molecules."
+  },
+  {
+   "id": "pure-substance",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Pure substance",
+   "statement": "A pure substance is a homogeneous substance that has a constant composition."
+  },
+  {
+   "id": "element",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Element",
+   "statement": "An element is a substance composed of a single type of atom, one that cannot be decomposed by a chemical change."
+  },
+  {
+   "id": "compound",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Compound",
+   "statement": "A compound is a pure substance that can be decomposed into two or more elements."
+  },
+  {
+   "id": "mixture",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Mixture",
+   "statement": "A mixture is matter that can be separated into its components by physical means."
+  },
+  {
+   "id": "heterogeneous-mixture",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Heterogeneous mixture",
+   "statement": "A heterogeneous mixture is a combination of substances with a composition that varies from point to point."
+  },
+  {
+   "id": "homogeneous-mixture",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Homogeneous mixture",
+   "statement": "A homogeneous mixture, also called a solution, is a combination of substances with a composition that is uniform throughout."
+  },
+  {
+   "id": "atom",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Atom",
+   "statement": "An atom is the smallest particle of an element that can enter into a chemical combination."
+  },
+  {
+   "id": "molecule",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "Molecule",
+   "statement": "A molecule is a bonded collection of two or more atoms of the same or different elements."
   },
   {
    "id": "physical-property",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.3",
    "name": "Physical properties",
-   "why": "A physical property is a characteristic of matter that is not associated with a change in its chemical composition: density, color, hardness, melting and boiling point, electrical conductivity. Some can be observed without changing the matter at all, and others only while it is changing state, but in neither case does the substance become a different substance.",
-   "evidence": "The section defines physical property and lists familiar examples, and an exercise asks the reader to classify six underlined properties of fluorine as chemical or physical, four of which are physical."
+   "statement": "A physical property is a characteristic of matter that is not associated with a change in its chemical composition: density, color, hardness, melting and boiling point, electrical conductivity. Some can be observed without changing the matter at all, and others only while it is changing state, but in neither case does the substance become a different substance."
   },
   {
    "id": "chemical-property",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.3",
    "name": "Chemical properties",
-   "why": "A chemical property is the ability of a substance to change into another kind of matter, or its inability to do so. Flammability, toxicity, acidity and reactivity are chemical properties, and unlike a physical property, one cannot be observed without the substance in question becoming something else.",
-   "evidence": "The section defines chemical property and contrasts iron, which rusts, with chromium, which does not, in Figure 1.19; nitroglycerin and neon make the same contrast, and the fluorine exercise asks for two chemical properties among its six."
+   "statement": "A chemical property is the ability of a substance to change into another kind of matter, or its inability to do so. Flammability, toxicity, acidity and reactivity are chemical properties, and unlike a physical property, one cannot be observed without the substance in question becoming something else."
   },
   {
    "id": "physical-and-chemical-change",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.3",
    "name": "Physical and chemical change",
-   "why": "A physical change alters the state, form or properties of matter and leaves its chemical identity alone; a chemical change always produces one or more kinds of matter that were not there before. Wax melting and sugar dissolving are the first; rust forming and a match burning are the second, and the test is whether what is left is the same substance.",
-   "evidence": "The section defines both changes, illustrates the physical with melting wax and condensing steam in Figure 1.18 and the chemical with copper in nitric acid, a burning match, cooking meat and a browning banana in Figure 1.20, and the section summary states the contrast again."
+   "statement": "A physical change alters the state, form or properties of matter and leaves its chemical identity alone; a chemical change always produces one or more kinds of matter that were not there before. Wax melting and sugar dissolving are the first; rust forming and a match burning are the second, and the test is whether what is left is the same substance."
   },
   {
    "id": "classify-physical-or-chemical",
    "kind": "skill",
    "section": "1.3",
    "name": "Classifying a change as physical or chemical",
-   "why": "Deciding which of the two kinds of change has happened is a judgement the reader has to make about a described event, and the judgement comes down to one question: is the matter that is left the same kind of matter as the matter that was there before? A gas that expands has changed physically; a gas that has burned has not.",
-   "evidence": "Three exercises give eleven changes between them, from condensing steam and melting gold to souring milk and an exploding firecracker, and two more ask about a volume of oxygen that changes with temperature and about hydrogen and oxygen combining to make water vapor."
+   "statement": "Deciding which of the two kinds of change has happened is a judgement the reader has to make about a described event, and the judgement comes down to one question: is the matter that is left the same kind of matter as the matter that was there before? A gas that expands has changed physically; a gas that has burned has not."
   },
   {
    "id": "extensive-and-intensive-properties",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.3",
    "name": "Extensive and intensive properties",
-   "why": "An extensive property depends on how much matter is present and is directly proportional to it; an intensive property does not. Mass and volume are extensive, temperature and density intensive, and the distinction matters because an intensive property identifies a substance while an extensive one only measures a sample of it.",
-   "evidence": "The section defines both, contrasts a gallon and a cup of milk at the same temperature and a drop against a pot of hot oil, and three exercises ask the reader to explain the difference, to sort five properties, and to explain why density, the ratio of two extensive properties, is intensive."
+   "statement": "An extensive property depends on how much matter is present and is directly proportional to it; an intensive property does not. Mass and volume are extensive, temperature and density intensive, and the distinction matters because an intensive property identifies a substance while an extensive one only measures a sample of it."
+  },
+  {
+   "id": "physical-change",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "Physical change",
+   "statement": "A physical change is a change in the state or properties of matter that does not involve a change in its chemical composition."
+  },
+  {
+   "id": "chemical-change",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "Chemical change",
+   "statement": "A chemical change is a change producing a different kind of matter from the original kind of matter."
+  },
+  {
+   "id": "extensive-property",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "Extensive property",
+   "statement": "An extensive property is a property of a substance that depends on the amount of the substance."
+  },
+  {
+   "id": "intensive-property",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "Intensive property",
+   "statement": "An intensive property is a property of a substance that is independent of the amount of the substance."
   },
   {
    "id": "measurement-parts",
    "kind": "idea",
    "section": "1.4",
    "name": "The three parts of a measured quantity",
-   "why": "Every measurement provides three kinds of information: a number, a unit that says what the number is compared against, and an uncertainty. The number and the unit are written down and the uncertainty is carried implicitly, and a quantity that is missing any of the three is at best confusing; a dose of one hundred without its unit can be a treatment or a lethal amount.",
-   "evidence": "The section opens by naming the three parts, defines unit, argues the point with a soft-drink bottle, a hamburger and a prescription of phenobarbital, and the summary states that each measurement has an amount, a unit and an uncertainty."
+   "statement": "Every measurement provides three kinds of information: a number, a unit that says what the number is compared against, and an uncertainty. The number and the unit are written down and the uncertainty is carried implicitly, and a quantity that is missing any of the three is at best confusing; a dose of one hundred without its unit can be a treatment or a lethal amount."
   },
   {
    "id": "scientific-notation",
    "kind": "skill",
    "section": "1.4",
    "name": "Writing a measurement in scientific notation",
-   "why": "A number in a measurement can be written in decimal form or in scientific notation, and for the very large and the very small the second is the only readable one. The mass of a mosquito is more usefully written as 2.5 x 10 to the minus 6 kilograms than as a string of zeros, and the notation will also be what settles how many digits of a measurement are meant.",
-   "evidence": "The section introduces exponential notation with the takeoff weight of an airliner and the mass of a mosquito and points the reader at Appendix B for a review, the prefix table of Table 1.3 writes every prefix as a power of ten, and 1.5 asks for seven numbers in scientific notation with the correct significant figures."
+   "statement": "A number in a measurement can be written in decimal form or in scientific notation, and for the very large and the very small the second is the only readable one. The mass of a mosquito is more usefully written as 2.5 x 10 to the minus 6 kilograms than as a string of zeros, and the notation will also be what settles how many digits of a measurement are meant."
   },
   {
    "id": "si-base-units",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.4",
    "name": "The SI base units",
-   "why": "Seven fundamental properties have units fixed by international agreement, and every other unit in the book is derived from them. Knowing that the meter, the kilogram, the second, the kelvin, the ampere, the mole and the candela are the base units is what makes a unit conversion a matter of bookkeeping rather than of memory.",
-   "evidence": "Table 1.2 lists the seven base units with their symbols, the section then introduces the meter, the kilogram, the kelvin and the second one at a time with their definitions, and two exercises ask which SI base or derived unit is appropriate for fourteen measurements."
+   "statement": "Seven fundamental properties have units fixed by international agreement, and every other unit in the book is derived from them. Knowing that the meter, the kilogram, the second, the kelvin, the ampere, the mole and the candela are the base units is what makes a unit conversion a matter of bookkeeping rather than of memory."
   },
   {
    "id": "unit-prefixes",
    "kind": "skill",
    "section": "1.4",
    "name": "Using the SI prefixes",
-   "why": "Fractions and multiples of an SI unit are always powers of ten, and each power has a prefix and a symbol. A kilometer is a thousand meters and a microliter is a millionth of a liter, so a reader who knows the prefixes can move a measurement up and down the scale without arithmetic.",
-   "evidence": "Table 1.3 gives eleven prefixes from femto to tera with their factors and a worked example of each, and two exercises ask for the prefix that means a given factor and for the factor a given prefix symbol stands for."
+   "statement": "Fractions and multiples of an SI unit are always powers of ten, and each power has a prefix and a symbol. A kilometer is a thousand meters and a microliter is a millionth of a liter, so a reader who knows the prefixes can move a measurement up and down the scale without arithmetic."
   },
   {
    "id": "derived-units",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.4",
    "name": "Derived units",
-   "why": "Many units are built out of the base units rather than agreed separately: a volume is a length cubed, and a density is a mass divided by a volume. Seeing a unit as the product and quotient of base units is what lets the reader check that a calculation has produced the kind of quantity it was meant to.",
-   "evidence": "The section opens its treatment of derived units by saying that the base unit of length defines a unit of volume and that mass and length define a unit of density, and then derives the cubic meter, the liter and the gram per cubic centimeter in turn."
+   "statement": "Many units are built out of the base units rather than agreed separately: a volume is a length cubed, and a density is a mass divided by a volume. Seeing a unit as the product and quotient of base units is what lets the reader check that a calculation has produced the kind of quantity it was meant to."
   },
   {
    "id": "volume",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.4",
    "name": "Volume and its units",
-   "why": "Volume is the amount of space an object occupies, and its standard unit is the cubic meter, a cube one meter on an edge. The cubic decimeter is a liter and the cubic centimeter is a milliliter, so the units a chemist actually works in are nested inside the standard one by factors of a thousand.",
-   "evidence": "The section defines volume, cubic meter, liter, cubic centimeter and milliliter, and Figure 1.25 nests the cubic meter, the liter and the milliliter inside one another and sets a cubic centimeter beside a dime."
+   "statement": "Volume is the amount of space an object occupies, and its standard unit is the cubic meter, a cube one meter on an edge. The cubic decimeter is a liter and the cubic centimeter is a milliliter, so the units a chemist actually works in are nested inside the standard one by factors of a thousand."
   },
   {
    "id": "density",
-   "kind": "result",
+   "kind": "definition",
    "section": "1.4",
    "name": "Density",
-   "why": "The density of a substance is the ratio of the mass of a sample to its volume, and it is the chapter's first derived quantity. It is intensive, so it identifies a substance rather than a sample: lead and gold are both dense, but a brick of gold and a brick of lead of the same size do not weigh the same, which is the whole of the section's opening story.",
-   "evidence": "The section defines density, prints it as the section's one key equation, tabulates the densities of twenty-one common substances in Table 1.4, and Example 1.1 computes the density of a lead cube from its edge and its mass while an exercise identifies a piece of jewelry from its measured density.",
+   "statement": "The density of a substance is the ratio of the mass of a sample to its volume. It is an intensive property, so it identifies a substance rather than a sample: a brick of gold and a brick of lead of the same size do not have the same mass.",
    "eq": "eq-density"
   },
   {
@@ -215,120 +367,238 @@
    "kind": "skill",
    "section": "1.4",
    "name": "Measuring a volume by displacement of water",
-   "why": "A cube's volume can be calculated from its edge, but most objects are not cubes. Lowering an object into a partly filled graduated cylinder raises the water by exactly the object's volume, which turns an irregular shape into a subtraction and makes the density of anything that sinks measurable with a balance and a cylinder.",
-   "evidence": "Example 1.2 works the method through on iron and on wood, reading a rise from 25.5 to 29.5 mL as a volume of 4.0 mL, its Check Your Learning applies it to a foam sample, three end-of-chapter exercises measure blocks the same way, and 1.5 uses the method again on a piece of rebar."
+   "statement": "A cube's volume can be calculated from its edge, but most objects are not cubes. Lowering an object into a partly filled graduated cylinder raises the water by exactly the object's volume, which turns an irregular shape into a subtraction and makes the density of anything that sinks measurable with a balance and a cylinder."
+  },
+  {
+   "id": "unit",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Unit",
+   "statement": "A unit is a standard of comparison for measurements; the number of a measured quantity says how many of its unit the quantity holds."
+  },
+  {
+   "id": "length",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Length",
+   "statement": "Length is the measure of one dimension of an object, and its SI unit is the meter."
+  },
+  {
+   "id": "time",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Time, $t$",
+   "statement": "Time is measured in the SI base unit of time, the second."
+  },
+  {
+   "id": "temperature",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Temperature, $T$",
+   "statement": "Temperature is an intensive property representing the hotness or coldness of matter, and its SI unit is the kelvin."
+  },
+  {
+   "id": "si-units",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "SI units",
+   "statement": "SI units are the standards fixed by international agreement in the International System of Units (Le Système International d’Unités)."
+  },
+  {
+   "id": "meter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Meter, m",
+   "statement": "The meter (m) is the standard metric and SI unit of length; 1 m is approximately 1.094 yards."
+  },
+  {
+   "id": "kilogram",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Kilogram, kg",
+   "statement": "The kilogram (kg) is the standard SI unit of mass."
+  },
+  {
+   "id": "second",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Second, s",
+   "statement": "The second (s) is the SI unit of time."
+  },
+  {
+   "id": "kelvin",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Kelvin, K",
+   "statement": "The kelvin (K) is the SI unit of temperature; 273.15 K equals 0 °C."
+  },
+  {
+   "id": "celsius",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Celsius, °C",
+   "statement": "The degree Celsius (°C) is a unit of temperature; water freezes at 0 °C and boils at 100 °C on this scale."
+  },
+  {
+   "id": "cubic-meter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Cubic meter, m³",
+   "statement": "The cubic meter (m³) is the SI unit of volume, the volume of a cube with an edge length of exactly 1 m."
+  },
+  {
+   "id": "cubic-centimeter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Cubic centimeter, cm³",
+   "statement": "The cubic centimeter (cm³ or cc) is the volume of a cube with an edge length of exactly 1 cm."
+  },
+  {
+   "id": "liter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Liter, L",
+   "statement": "The liter (L), also called the cubic decimeter, is a unit of volume; 1 L equals 1,000 cm³."
+  },
+  {
+   "id": "milliliter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "Milliliter, mL",
+   "statement": "The milliliter (mL) is 1/1,000 of a liter and equals 1 cm³."
   },
   {
    "id": "exact-and-uncertain-numbers",
    "kind": "idea",
    "section": "1.5",
    "name": "Exact and uncertain numbers",
-   "why": "Counting is the only measurement free of uncertainty, and numbers fixed by definition are exact in the same way: a foot is exactly twelve inches and an inch exactly 2.54 centimeters. Every other quantity is uncertain to some extent, and knowing which numbers in a calculation are exact decides which of them can limit the answer.",
-   "evidence": "The section defines exact number with the eggs in a carton and the defined conversions, and two exercises give twelve quantities between them and ask which can be determined exactly and which must be measured with some uncertainty."
+   "statement": "Counting is the only measurement free of uncertainty, and numbers fixed by definition are exact in the same way: a foot is exactly twelve inches and an inch exactly 2.54 centimeters. Every other quantity is uncertain to some extent, and knowing which numbers in a calculation are exact decides which of them can limit the answer."
   },
   {
    "id": "measurement-uncertainty",
    "kind": "idea",
    "section": "1.5",
    "name": "Every measurement carries an uncertainty",
-   "why": "A measurement is read as far as the instrument allows and then one digit further, and that last digit is an estimate. A scale with one milliliter divisions can be read to a tenth of a milliliter, and a balance that reads 6.72 grams is saying the mass lies between 6.71 and 6.73, so uncertainty is a property of the instrument and the reader together, not a mistake.",
-   "evidence": "The section works through the meniscus of Figure 1.26, where the digits 2 and 1 are certain and the 6 is estimated, extends the same argument to a quarter weighed on two balances, and defines uncertainty."
+   "statement": "A measurement is read as far as the instrument allows and then one digit further, and that last digit is an estimate. A scale with one milliliter divisions can be read to a tenth of a milliliter, and a balance that reads 6.72 grams is saying the mass lies between 6.71 and 6.73, so uncertainty is a property of the instrument and the reader together, not a mistake."
   },
   {
    "id": "significant-figures",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.5",
    "name": "Significant figures",
-   "why": "All of the digits in a measurement, including the uncertain last one, are its significant figures, and their number is how a written quantity says how certain it is. A result is properly reported when its significant digits represent the certainty of the process that produced it, and no better.",
-   "evidence": "The section defines significant figures and significant digits, notes that a measured zero is significant, and the summary states that a measured quantity's uncertainty is represented by the number of significant figures in its number."
+   "statement": "All of the digits in a measurement, including the uncertain last one, are its significant figures, and their number is how a written quantity says how certain it is. A result is properly reported when its significant digits represent the certainty of the process that produced it, and no better."
   },
   {
    "id": "count-significant-figures",
    "kind": "skill",
    "section": "1.5",
    "name": "Counting the significant figures in a number",
-   "why": "The rule is to start at the first nonzero digit on the left and count every digit to its right, and the only difficulty is the zeros. A captive zero results from measurement and is always significant, a leading zero only locates the decimal point and never is, and a trailing zero to the left of the decimal point is ambiguous unless the number is written in scientific notation.",
-   "evidence": "The section names leading, captive and trailing zeros on 3090 and 0.008020 and works through 1267 m, 55.0 g, 70.607 mL, 0.00832407 mL and the ambiguous 1300 g, and three exercises ask for the number of significant figures in twenty-two measurements."
+   "statement": "The rule is to start at the first nonzero digit on the left and count every digit to its right, and the only difficulty is the zeros. A captive zero results from measurement and is always significant, a leading zero only locates the decimal point and never is, and a trailing zero to the left of the decimal point is ambiguous unless the number is written in scientific notation."
   },
   {
    "id": "rounding-rules",
    "kind": "skill",
    "section": "1.5",
    "name": "Rounding a number to a given number of digits",
-   "why": "A digit to be dropped that is less than five rounds down and one greater than five rounds up. When the dropped digit is a five with nothing but zeros after it, the retained digit is rounded to whichever value is even, which is a rule from statistics and is there to keep the rounding from leaning one way over many calculations.",
-   "evidence": "The section states the three rounding rules and illustrates them on four numbers, Example 1.3 rounds four more with its Check Your Learning rounding four again, and two exercises round twelve numbers to two significant figures."
+   "statement": "A digit to be dropped that is less than five rounds down and one greater than five rounds up. When the dropped digit is a five with nothing but zeros after it, the retained digit is rounded to whichever value is even, which is a rule from statistics and is there to keep the rounding from leaning one way over many calculations."
   },
   {
    "id": "significant-figures-in-calculations",
    "kind": "skill",
    "section": "1.5",
    "name": "Carrying significant figures through a calculation",
-   "why": "A result calculated from measurements is at least as uncertain as the measurements it came from, so the answer has to be rounded rather than copied off the calculator. A sum or difference is rounded to the decimal place of the least precise term, and a product or quotient to the number of significant figures of the least certain factor.",
-   "evidence": "Examples 1.5.2, 1.5.3 and 1.5.4 work addition, subtraction, multiplication, division and a three-factor volume through with their Check Your Learning items, and two exercises set fourteen calculations and ask for each answer with the correct number of significant figures."
+   "statement": "A result calculated from measurements is at least as uncertain as the measurements it came from, so the answer has to be rounded rather than copied off the calculator. A sum or difference is rounded to the decimal place of the least precise term, and a product or quotient to the number of significant figures of the least certain factor."
   },
   {
    "id": "accuracy-and-precision",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.5",
    "name": "Accuracy and precision",
-   "why": "Measurements are precise when repeating them gives very similar results and accurate when they fall close to the true or accepted value, and the two are independent. A dispenser can be precise and consistently wrong, or accurate on average and scattered, and only one that is both is working.",
-   "evidence": "The section defines accuracy and precision, draws them on three archery targets in Figure 1.27, tabulates five fills from each of three cough-syrup dispensers in Table 1.5 and reads each one off, and two exercises judge four archers and three sets of repeated measurements."
+   "statement": "Measurements are precise when repeating them gives very similar results and accurate when they fall close to the true or accepted value, and the two are independent. A dispenser can be precise and consistently wrong, or accurate on average and scattered, and only one that is both is working."
+  },
+  {
+   "id": "exact-number",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "Exact number",
+   "statement": "An exact number is a number derived by counting or by definition."
+  },
+  {
+   "id": "uncertainty",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "Uncertainty",
+   "statement": "The uncertainty of a measurement is an estimate of the amount by which it differs from the true value."
+  },
+  {
+   "id": "rounding",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "Rounding",
+   "statement": "Rounding is the procedure used to ensure that calculated results properly reflect the uncertainty in the measurements used in the calculation."
+  },
+  {
+   "id": "accuracy",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "Accuracy",
+   "statement": "Accuracy is how closely a measurement aligns with a correct value."
+  },
+  {
+   "id": "precision",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "Precision",
+   "statement": "Precision is how closely a measurement matches the same measurement when repeated."
   },
   {
    "id": "dimensional-analysis",
    "kind": "idea",
    "section": "1.6",
    "name": "Dimensional analysis",
-   "why": "The units of quantities must be subjected to the same mathematical operations as their numbers. That one premise is what lets a reader divide a distance by a time and get a speed, and it is also what lets the reader check a calculation by looking only at the units, since a wrong arrangement of factors gives a unit nobody wanted.",
-   "evidence": "The section derives a sprinter's speed and then rearranges the same relation for time, dividing the units at every step alongside the numbers, defines dimensional analysis and the factor-label method, and the summary names the strategy as what the whole section is about."
+   "statement": "The units of quantities must be subjected to the same mathematical operations as their numbers. That one premise is what lets a reader divide a distance by a time and get a speed, and it is also what lets the reader check a calculation by looking only at the units, since a wrong arrangement of factors gives a unit nobody wanted."
   },
   {
    "id": "unit-conversion-factor",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.6",
    "name": "The unit conversion factor",
-   "why": "A ratio of two equivalent quantities written in different units is equal to one, so multiplying by it changes a quantity's units without changing the quantity. Because the ratio can be written either way up, the reader chooses the arrangement that cancels the unit to be got rid of and leaves the one that is wanted.",
-   "evidence": "The section derives the factor from 2.54 cm equal to 1 in., shows that the two forms of a factor are both available and that only one cancels correctly, tabulates twelve common factors in Table 1.6, and four exercises ask the reader to write factors as ratios from stated equivalences and from product labels."
+   "statement": "A ratio of two equivalent quantities written in different units is equal to one, so multiplying by it changes a quantity's units without changing the quantity. Because the ratio can be written either way up, the reader chooses the arrangement that cancels the unit to be got rid of and leaves the one that is wanted."
   },
   {
    "id": "convert-units",
    "kind": "skill",
    "section": "1.6",
    "name": "Converting a quantity from one unit to another",
-   "why": "Multiplying by one conversion factor after another, each oriented so that the unwanted unit cancels, converts a measurement through as many steps as it takes. It is the most-used skill of the chapter, and it works the same whether the conversion is between two metric units, between metric and customary units, or between units of an area or a volume.",
-   "evidence": "Example 1.8 converts a frisbee's mass from grams to ounces and its Check Your Learning converts quarts to liters, and more than twenty exercises convert lengths, volumes, masses and speeds, including a red blood cell's diameter, a barrel of oil, a weight lifter's mass and the dimensions of a two-by-four."
+   "statement": "Multiplying by one conversion factor after another, each oriented so that the unwanted unit cancels, converts a measurement through as many steps as it takes. It is the most-used skill of the chapter, and it works the same whether the conversion is between two metric units, between metric and customary units, or between units of an area or a volume."
   },
   {
    "id": "compute-with-units",
    "kind": "skill",
    "section": "1.6",
    "name": "Computing a quantity from measurements in mixed units",
-   "why": "Beyond a simple conversion, the factor-label method solves a problem in which the quantity wanted is computed from two or more measured ones given in the wrong units. All the factors are arranged in one line so that the labels cancel and combine into the unit of the answer, and the arithmetic is done once at the end.",
-   "evidence": "Examples 1.6.2 and 1.6.3 compute the density of antifreeze in grams per milliliter from a volume in quarts and a mass in pounds, and a fuel economy in miles per gallon and its cost from a distance in kilometers and a volume in liters, each set out both step by step and as a single line of factors; ten exercises compute densities, masses and volumes the same way."
+   "statement": "Beyond a simple conversion, the factor-label method solves a problem in which the quantity wanted is computed from two or more measured ones given in the wrong units. All the factors are arranged in one line so that the labels cancel and combine into the unit of the answer, and the arithmetic is done once at the end."
   },
   {
    "id": "linear-versus-proportional-scales",
    "kind": "idea",
    "section": "1.6",
    "name": "Why temperature conversion is linear, not proportional",
-   "why": "Most units of a property are directly proportional to one another and a single conversion factor moves between them. The Celsius and Fahrenheit scales do not share a zero, so the relation between them is a line with an intercept rather than a line through the origin, and converting between them takes both a slope and an offset.",
-   "evidence": "The section sets the proportional case of feet and inches beside the temperature case, derives the slope from the two defining temperatures of water as nine Fahrenheit degrees to five Celsius degrees and the intercept as thirty-two, and explains that this is why temperature needs more than multiplication by a factor."
+   "statement": "Most units of a property are directly proportional to one another and a single conversion factor moves between them. The Celsius and Fahrenheit scales do not share a zero, so the relation between them is a line with an intercept rather than a line through the origin, and converting between them takes both a slope and an offset."
   },
   {
    "id": "temperature-scales",
-   "kind": "idea",
+   "kind": "definition",
    "section": "1.6",
    "name": "The Celsius, Fahrenheit, and kelvin scales",
-   "why": "A temperature scale is fixed by choosing reference temperatures and dividing the space between them. Celsius puts the freezing and boiling of water at 0 and 100, Fahrenheit at 32 and 212, and kelvin is absolute: its zero is the lowest temperature that can theoretically be achieved, which is why its unit carries no degree symbol.",
-   "evidence": "The section defines Fahrenheit and temperature, explains the origin of the absolute scale and the convention about the degree symbol, and Figure 1.28 sets the three thermometers side by side with the freezing and boiling temperatures of water marked on each."
+   "statement": "A temperature scale is fixed by choosing reference temperatures and dividing the space between them. Celsius puts the freezing and boiling of water at 0 and 100, Fahrenheit at 32 and 212, and kelvin is absolute: its zero is the lowest temperature that can theoretically be achieved, which is why its unit carries no degree symbol."
   },
   {
    "id": "celsius-fahrenheit-conversion",
    "kind": "result",
    "section": "1.6",
    "name": "Converting between Celsius and Fahrenheit",
-   "why": "The Fahrenheit temperature is nine fifths of the Celsius temperature plus thirty-two, and the relation rearranges to give the Celsius temperature from the Fahrenheit one. Both forms are on the book's key equation list, and they are the conversion a reader meets outside the laboratory more often than any other.",
-   "evidence": "The section derives both forms from the slope and intercept it computes, Example 1.11 converts body temperature from Celsius and Example 1.12 an oven setting from Fahrenheit, each with a Check Your Learning, and eight exercises convert temperatures from the boiling point of gold to the inside of a freezer.",
+   "statement": "The Fahrenheit temperature is nine fifths of the Celsius temperature plus thirty-two, and the relation rearranges to give the Celsius temperature from the Fahrenheit one. Both forms are on the book's key equation list, and they are the conversion a reader meets outside the laboratory more often than any other.",
    "eq": "eq-fahrenheit-from-celsius"
   },
   {
@@ -336,9 +606,15 @@
    "kind": "result",
    "section": "1.6",
    "name": "Converting between Celsius and kelvin",
-   "why": "A kelvin and a Celsius degree are the same size, so the two scales differ only by where their zeros sit: adding 273.15 to a Celsius temperature gives the kelvin temperature and subtracting it goes back. The 273.15 was determined experimentally and is not exact, which matters when the result is rounded.",
-   "evidence": "The section derives both equations after noting that the two scales' reference temperatures differ by the same hundred, prints them among the section's key equations, and the two worked examples and their Check Your Learning items report a kelvin temperature alongside every Celsius and Fahrenheit one.",
+   "statement": "A kelvin and a Celsius degree are the same size, so the two scales differ only by where their zeros sit: adding 273.15 to a Celsius temperature gives the kelvin temperature and subtracting it goes back. The 273.15 was determined experimentally and is not exact, which matters when the result is rounded.",
    "eq": "eq-kelvin-from-celsius"
+  },
+  {
+   "id": "fahrenheit",
+   "kind": "definition",
+   "section": "1.6",
+   "name": "Fahrenheit, °F",
+   "statement": "The degree Fahrenheit (°F) is a unit of temperature; water freezes at 32 °F and boils at 212 °F on this scale."
   }
  ],
  "concept_prereqs": [
@@ -529,6 +805,326 @@
   {
    "concept": "celsius-kelvin-conversion",
    "prereq": "temperature-scales"
+  },
+  {
+   "concept": "chemistry",
+   "prereq": "matter"
+  },
+  {
+   "concept": "scientific-theory",
+   "prereq": "hypothesis"
+  },
+  {
+   "concept": "mass",
+   "prereq": "matter"
+  },
+  {
+   "concept": "weight",
+   "prereq": "mass"
+  },
+  {
+   "concept": "unit",
+   "prereq": "measurement-parts"
+  },
+  {
+   "concept": "length",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "time",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "temperature",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "temperature",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "macroscopic-domain",
+   "prereq": "domains-of-chemistry"
+  },
+  {
+   "concept": "microscopic-domain",
+   "prereq": "domains-of-chemistry"
+  },
+  {
+   "concept": "symbolic-domain",
+   "prereq": "domains-of-chemistry"
+  },
+  {
+   "concept": "gas",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "liquid",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "solid",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "plasma",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "pure-substance",
+   "prereq": "matter"
+  },
+  {
+   "concept": "element",
+   "prereq": "pure-substance"
+  },
+  {
+   "concept": "element",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "compound",
+   "prereq": "pure-substance"
+  },
+  {
+   "concept": "compound",
+   "prereq": "element"
+  },
+  {
+   "concept": "compound",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "mixture",
+   "prereq": "matter"
+  },
+  {
+   "concept": "heterogeneous-mixture",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "heterogeneous-mixture",
+   "prereq": "mixtures"
+  },
+  {
+   "concept": "homogeneous-mixture",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "homogeneous-mixture",
+   "prereq": "mixtures"
+  },
+  {
+   "concept": "atom",
+   "prereq": "element"
+  },
+  {
+   "concept": "atom",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "molecule",
+   "prereq": "atom"
+  },
+  {
+   "concept": "molecule",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "physical-change",
+   "prereq": "physical-and-chemical-change"
+  },
+  {
+   "concept": "chemical-change",
+   "prereq": "physical-and-chemical-change"
+  },
+  {
+   "concept": "extensive-property",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "intensive-property",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "si-units",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "si-units",
+   "prereq": "unit"
+  },
+  {
+   "concept": "meter",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "meter",
+   "prereq": "length"
+  },
+  {
+   "concept": "kilogram",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "kilogram",
+   "prereq": "mass"
+  },
+  {
+   "concept": "second",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "second",
+   "prereq": "time"
+  },
+  {
+   "concept": "kelvin",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "kelvin",
+   "prereq": "temperature"
+  },
+  {
+   "concept": "celsius",
+   "prereq": "temperature"
+  },
+  {
+   "concept": "fahrenheit",
+   "prereq": "temperature-scales"
+  },
+  {
+   "concept": "cubic-meter",
+   "prereq": "volume"
+  },
+  {
+   "concept": "cubic-meter",
+   "prereq": "meter"
+  },
+  {
+   "concept": "cubic-centimeter",
+   "prereq": "volume"
+  },
+  {
+   "concept": "cubic-centimeter",
+   "prereq": "unit-prefixes"
+  },
+  {
+   "concept": "liter",
+   "prereq": "volume"
+  },
+  {
+   "concept": "liter",
+   "prereq": "cubic-centimeter"
+  },
+  {
+   "concept": "milliliter",
+   "prereq": "liter"
+  },
+  {
+   "concept": "milliliter",
+   "prereq": "unit-prefixes"
+  },
+  {
+   "concept": "exact-number",
+   "prereq": "exact-and-uncertain-numbers"
+  },
+  {
+   "concept": "uncertainty",
+   "prereq": "measurement-parts"
+  },
+  {
+   "concept": "rounding",
+   "prereq": "significant-figures"
+  },
+  {
+   "concept": "accuracy",
+   "prereq": "accuracy-and-precision"
+  },
+  {
+   "concept": "precision",
+   "prereq": "accuracy-and-precision"
+  },
+  {
+   "concept": "hypothesis-law-theory",
+   "prereq": "hypothesis"
+  },
+  {
+   "concept": "hypothesis-law-theory",
+   "prereq": "scientific-law"
+  },
+  {
+   "concept": "hypothesis-law-theory",
+   "prereq": "scientific-theory"
+  },
+  {
+   "concept": "mass-versus-weight",
+   "prereq": "mass"
+  },
+  {
+   "concept": "mass-versus-weight",
+   "prereq": "weight"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "pure-substance"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "homogeneous-mixture"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "heterogeneous-mixture"
+  },
+  {
+   "concept": "classify-physical-or-chemical",
+   "prereq": "physical-change"
+  },
+  {
+   "concept": "classify-physical-or-chemical",
+   "prereq": "chemical-change"
+  },
+  {
+   "concept": "density",
+   "prereq": "mass"
+  },
+  {
+   "concept": "temperature-scales",
+   "prereq": "celsius"
+  },
+  {
+   "concept": "temperature-scales",
+   "prereq": "kelvin"
+  },
+  {
+   "concept": "celsius-kelvin-conversion",
+   "prereq": "celsius"
+  },
+  {
+   "concept": "celsius-kelvin-conversion",
+   "prereq": "kelvin"
+  },
+  {
+   "concept": "celsius-fahrenheit-conversion",
+   "prereq": "celsius"
+  },
+  {
+   "concept": "celsius-fahrenheit-conversion",
+   "prereq": "fahrenheit"
+  },
+  {
+   "concept": "rounding-rules",
+   "prereq": "rounding"
+  },
+  {
+   "concept": "convert-units",
+   "prereq": "unit"
   }
  ]
 }

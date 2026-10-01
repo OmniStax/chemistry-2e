@@ -135,6 +135,11 @@
    "verb": "uses"
   },
   {
+   "span": "exact-numbers",
+   "concept": "exact-number",
+   "verb": "introduces"
+  },
+  {
    "span": "uncertainty",
    "concept": "measurement-uncertainty",
    "verb": "introduces"
@@ -148,6 +153,11 @@
    "span": "uncertainty",
    "concept": "measurement-parts",
    "verb": "uses"
+  },
+  {
+   "span": "uncertainty",
+   "concept": "uncertainty",
+   "verb": "introduces"
   },
   {
    "span": "counting-digits",
@@ -173,6 +183,11 @@
    "span": "rounding",
    "concept": "measurement-uncertainty",
    "verb": "uses"
+  },
+  {
+   "span": "rounding",
+   "concept": "rounding",
+   "verb": "introduces"
   },
   {
    "span": "calculations",
@@ -213,6 +228,16 @@
    "span": "accuracy-precision",
    "concept": "measurement-uncertainty",
    "verb": "reinforces"
+  },
+  {
+   "span": "accuracy-precision",
+   "concept": "accuracy",
+   "verb": "introduces"
+  },
+  {
+   "span": "accuracy-precision",
+   "concept": "precision",
+   "verb": "introduces"
   }
  ],
  "exercises": [

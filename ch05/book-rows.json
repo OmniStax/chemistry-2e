@@ -14,84 +14,349 @@
     {"sym": "n_coef", "latex": "n"}
   ],
   "concepts": [
-    {"id": "energy-and-work", "kind": "idea", "section": "5.1", "name": "Energy as the capacity to supply heat or do work",
-     "why": "Energy is defined in this book by what it can do, and work is one of the two things it does: matter is moved against an opposing force, as the air in a pump is pushed into a tire. Every later idea of the chapter, heat, internal energy and enthalpy, is a way of keeping account of this capacity.",
-     "evidence": "The section opens its account of energy with this definition and the bicycle tire, and the summary repeats it as its first sentence."},
-    {"id": "potential-and-kinetic-energy", "kind": "idea", "section": "5.1", "name": "Potential energy and kinetic energy",
-     "why": "One scheme sorts energy into two kinds: potential energy, which an object has because of its position, composition, or condition, and kinetic energy, which it has because of its motion. The chemical energy stored in gasoline is potential energy, and thermal energy is kinetic, so the distinction is how the chapter says where the energy of a reaction comes from and where it goes.",
-     "evidence": "The section defines both terms, Figure 5.3 shows water at the top of Victoria Falls and flowing through the Hoover Dam, and an exercise asks for a table of the energy transitions in an automobile."},
-    {"id": "conservation-of-energy", "kind": "result", "section": "5.1", "name": "The law of conservation of energy",
-     "why": "During a chemical or physical change, energy can be neither created nor destroyed, although it can be changed in form. This is the rule that makes every calorimetry calculation possible, since the heat a reaction gives off must turn up somewhere else, and it is one version of the first law of thermodynamics that 5.3 states as an equation.",
-     "evidence": "The section states the law and sets it beside the law of conservation of matter, and the summary names it as the first law of thermodynamics."},
-    {"id": "thermal-energy-and-temperature", "kind": "idea", "section": "5.1", "name": "Thermal energy and temperature",
-     "why": "Thermal energy is the kinetic energy of the random motion of atoms and molecules, and temperature is a measure of how hot or cold a sample is, which rises as the average kinetic energy of its particles rises. The two are not the same thing: a bonfire and a match may share a temperature and hold very different amounts of thermal energy.",
-     "evidence": "The section defines both, Figure 5.4 sets the fast molecules of hot water beside the slow ones of cold water, Figure 5.5 shows how thermometers read the change, and the first exercise asks why a match does not warm us as a bonfire does."},
-    {"id": "heat-flow", "kind": "idea", "section": "5.1", "name": "Heat as the transfer of thermal energy",
-     "why": "Heat is the transfer of thermal energy between two bodies at different temperatures. It flows spontaneously from the hotter body to the cooler one, lowering the average kinetic energy of the first and raising that of the second, until the two reach thermal equilibrium at one temperature. Calorimetry in 5.2 is built on exactly this exchange.",
-     "evidence": "The section defines heat and follows substances H and L from contact to thermal equilibrium in Figure 5.6, and 5.2 repeats the argument for a hot metal dropped into cool water."},
-    {"id": "exothermic-and-endothermic", "kind": "idea", "section": "5.1", "name": "Exothermic and endothermic processes",
-     "why": "A change that releases heat is exothermic and a change that absorbs heat is endothermic. The sign of every heat and every enthalpy change in the rest of the chapter is read against these two words, so the reader must be able to tell which is which from what happens to the temperature of the surroundings.",
-     "evidence": "The section defines both terms with the oxyacetylene torch and the cold pack of Figure 5.7, and calorimetry exercises in 5.2 ask whether each dissolution is exothermic or endothermic."},
-    {"id": "energy-units", "kind": "skill", "section": "5.1", "name": "Converting between joules, calories, and Calories",
-     "why": "The SI unit of energy is the joule, but the calorie is still frequently used, and food energy is quoted in Calories, each of which is a kilocalorie. Since 1 calorie is defined as exactly 4.184 joules, the reader must move between these units with ease to read a food label or to compare a result given in either.",
-     "evidence": "The section defines the calorie, the Calorie, and the joule and states the conversion, and exercises in 5.1 ask for heat capacities and heats in both joules and calories."},
-    {"id": "heat-capacity-and-specific-heat", "kind": "idea", "section": "5.1", "name": "Heat capacity and specific heat",
-     "why": "The heat capacity of a body is the heat it absorbs or releases for a temperature change of 1 °C, and it grows with the amount of material, so it is extensive. The specific heat is the heat needed to raise 1 gram of a substance by 1 °C, and it depends only on the kind of substance, so it is intensive. The two frying pans of the text differ fivefold in heat capacity and share one specific heat.",
-     "evidence": "The section defines both with their equations, works through the small and large cast iron pans of Figure 5.8, lists specific heats in Table 5.1, and an exercise asks the reader to explain the difference between the two.",
-     "eq": "eq-heat-capacity"},
-    {"id": "heat-specific-heat-relation", "kind": "result", "section": "5.1", "name": "Heat, specific heat, mass, and temperature change, $q = c \\times m \\times \\Delta T$",
-     "why": "The heat entering or leaving a substance is the product of its specific heat, its mass, and its temperature change, taken as the final temperature minus the initial one. The sign of q follows from that difference, positive when the substance warms and negative when it cools, and any one of the four quantities can be found when the other three are known.",
-     "evidence": "The section derives the relation and uses it in Example 5.1 to find the heat absorbed by water and in Example 5.2 to identify an unknown metal from its specific heat; most of the section's exercises apply it.",
-     "eq": "eq-heat"}
-    ,
-    {"id": "system-and-surroundings", "kind": "idea", "section": "5.2", "name": "The system and its surroundings",
-     "why": "Measuring a heat requires dividing the world in two: the system, the substances undergoing the change, and the surroundings, everything else that gives heat to the system or takes it away. The sign of every q in the chapter is stated from the point of view of the system, so the reader must be able to name which is which in each experiment.",
-     "evidence": "The section defines both terms at its start, Figure 5.11 labels the reaction as system and the solution as surroundings, and Figure 5.14 labels the hot metal and the cool water the same way."},
-    {"id": "calorimetry-heat-balance", "kind": "result", "section": "5.2", "name": "The heats exchanged in a calorimeter sum to zero",
-     "why": "When a hot metal is placed in cool water in an ideal calorimeter, all the heat lost by one is gained by the other, so the two heats add up to zero and one is the negative of the other. The negative sign records the opposite direction of flow and does not by itself give either value its sign.",
-     "evidence": "The section states the balance and its rearrangement, and Examples 5.3 and 5.4 use it to find the initial temperature of a piece of rebar and the specific heat of an unknown metal.",
-     "eq": "eq-heat-balance"},
-    {"id": "heat-of-reaction-by-calorimetry", "kind": "result", "section": "5.2", "name": "The heat of a reaction from the heat of the solution, $q_{\\text{reaction}} = -q_{\\text{solution}}$",
-     "why": "Because energy is neither created nor destroyed, the heat produced or consumed by a reaction in a calorimeter equals the heat absorbed or lost by the solution around it, with the opposite sign. This is the concept that lies at the heart of all calorimetry problems: the temperature change of the solution is measured, and the heat of the reaction is read from it.",
-     "evidence": "The section states it after the metal-and-water examples and applies it in Example 5.5, the neutralization of HCl by NaOH, and Example 5.6, the instant ice pack.",
-     "eq": "eq-heat-reaction"},
-    {"id": "coffee-cup-calorimetry", "kind": "skill", "section": "5.2", "name": "Calculating a heat from coffee cup calorimetry data",
-     "why": "With a coffee cup calorimeter the reader measures a temperature change and must make and state reasonable assumptions to turn it into a heat: that no heat is exchanged with the outside or absorbed by the cup, and that a dilute solution has the specific heat and density of water. The skill is carrying those assumptions through to a heat with the right sign.",
-     "evidence": "Examples 5.3 to 5.6 and their Check Your Learning items ask for the heat, a temperature, or a specific heat and for the assumptions made, and most of the section's exercises set the same task."},
-    {"id": "bomb-calorimetry", "kind": "skill", "section": "5.2", "name": "Calculating a heat of combustion from bomb calorimetry",
-     "why": "A bomb calorimeter works at constant volume and is used for reactions, such as combustions, that give off much heat and gaseous products. The heat of the reaction is shared between the water and the steel bomb, so the calculation adds the heat taken in by the water to the heat capacity of the bomb times the temperature rise.",
-     "evidence": "The section describes the bomb calorimeter and its calibration with Figure 5.17, Example 5.7 finds the heat produced by burning glucose, and exercises burn fructose, TNT, and coal."},
-    {"id": "food-calories", "kind": "skill", "section": "5.2", "name": "Counting the Calories in a food",
-     "why": "Food labels give energy in Calories, computed by the Atwater system from the grams of protein, carbohydrate, and fat in a serving and their average Calories per gram, values that were themselves found by bomb calorimetry. The reader who can do this sum can check a label and compare foods.",
-     "evidence": "The Measuring Nutritional Calories note works the label of Figure 5.18 to 252 Calories, and exercises ask for the Calories in cereal and the mass of fat or carbohydrate for a given Calorie count."}
-    ,
-    {"id": "first-law-of-thermodynamics", "kind": "result", "section": "5.3", "name": "The first law of thermodynamics, $\\Delta U = q + w$",
-     "why": "The internal energy of a system changes only through heat flowing into or out of it and work done on or by it. The signs are fixed from the system's side: q is positive for heat flowing in and w is positive for work done on the system, so a system that loses heat and does work loses internal energy on both counts, as the gases in an engine cylinder do.",
-     "evidence": "The section defines internal energy, states the equation, and draws the four arrows into and out of the system in Figure 5.19; the equation is one of the section's key equations.",
-     "eq": "eq-first-law"},
-    {"id": "state-function", "kind": "idea", "section": "5.3", "name": "State functions",
-     "why": "The value of a state function depends only on the state a system is in, and not on how that state was reached. Internal energy and enthalpy are state functions, while heat and work are not, just as the altitude of a summit does not depend on the route climbed but the distance walked does. Hess's law rests on this property.",
-     "evidence": "The section defines the term with the two paths up Mt. Kilimanjaro in Figure 5.20 and later says Hess's law is valid because enthalpy is a state function."},
-    {"id": "enthalpy-change-at-constant-pressure", "kind": "result", "section": "5.3", "name": "Enthalpy, and $\\Delta H = q_{\\text{p}}$ at constant pressure",
-     "why": "Enthalpy is the sum of a system's internal energy and the product of its pressure and volume. For a process at constant pressure whose only work is expansion work, the enthalpy change equals the heat flow, which is why chemists, who usually work at the constant pressure of the atmosphere, use enthalpy to describe the heat of a reaction. The heat measured in a bomb calorimeter, at constant volume, is not ΔH.",
-     "evidence": "The section defines enthalpy, derives ΔH = q<sub>p</sub> from the first law and the expansion work PΔV = −w, and contrasts the Bunsen burner with the bomb calorimeter.",
-     "eq": "eq-dh-qp"},
-    {"id": "thermochemical-equations", "kind": "skill", "section": "5.3", "name": "Writing and scaling thermochemical equations",
-     "why": "A thermochemical equation gives ΔH after a balanced equation, for the amounts in moles that the equation shows. Since ΔH is extensive, it scales with the coefficients, it changes sign when the equation is reversed, and it depends on the physical states written, so the reader must carry all three rules and account for the limiting reactant when turning a measured heat into ΔH.",
-     "evidence": "The section states the conventions with the formation of liquid and gaseous water, Examples 5.8 and 5.9 write thermochemical equations from measured heats, and several exercises ask for ΔH per mole of a reactant."},
-    {"id": "enthalpy-of-combustion", "kind": "skill", "section": "5.3", "name": "Using a standard enthalpy of combustion",
-     "why": "The standard enthalpy of combustion is the enthalpy change when 1 mole of a substance burns completely under standard state conditions. With it, and with the conversions of earlier chapters, the reader can find the heat given by any amount of a fuel, as the heat of 1.00 L of gasoline is found from the value for isooctane.",
-     "evidence": "The section defines the quantity, lists values in Table 5.2, works Example 5.10 on gasoline, and sets exercises on acetylene, methanol, isooctane, and carbon monoxide."},
-    {"id": "standard-enthalpy-of-formation", "kind": "idea", "section": "5.3", "name": "Standard states and the standard enthalpy of formation",
-     "why": "A standard state is an agreed set of reference conditions, 1 bar and 1 M, with 298.15 K assumed, and ΔH° marks an enthalpy change under them. The standard enthalpy of formation is ΔH° for forming exactly 1 mole of a substance from its elements in their most stable states, so an element in its most stable form has a value of zero and the formation equation often carries fractional coefficients.",
-     "evidence": "The section defines the standard state and the enthalpy of formation, Example 5.11 finds it for ozone and Example 5.12 writes formation equations, and an exercise asks which enthalpies of combustion in Table 5.2 are also enthalpies of formation."},
-    {"id": "hess-law", "kind": "result", "section": "5.3", "name": "Hess’s law",
-     "why": "If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the steps. This lets the reader find the enthalpy change of a reaction that is hard or dangerous to carry out by adding reactions, reversed and scaled as needed, whose values are known.",
-     "evidence": "The section states the law, shows carbon burning to CO<sub>2</sub> in one step or two in Figure 5.24, works Examples 5.13 and 5.14, and sets many exercises that combine given reactions."},
-    {"id": "enthalpy-from-formation-enthalpies", "kind": "skill", "section": "5.3", "name": "Calculating a reaction enthalpy from enthalpies of formation",
-     "why": "Hess's law applied to decomposing the reactants into their elements and re-forming the products gives the standard enthalpy change of any reaction as the sum of n times the enthalpies of formation of the products minus the same sum for the reactants. With the table of Appendix G the reader can compute ΔH° for reactions that no one has measured directly.",
-     "evidence": "The section derives the equation, Example 5.15 uses it both directly and by summing four formation steps, and a large share of the section's exercises ask for ΔH° from the data in Appendix G.",
-     "eq": "eq-hess-formation"}
+    {
+      "id": "energy-and-work",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Energy as the capacity to supply heat or do work",
+      "statement": "Energy is the capacity to supply heat or do work. Work is one of the two things energy does: moving matter against an opposing force, as a pump does when it pushes air into a tire."
+    },
+    {
+      "id": "potential-and-kinetic-energy",
+      "kind": "idea",
+      "section": "5.1",
+      "name": "Potential energy and kinetic energy",
+      "statement": "Energy can be sorted into two kinds: potential energy, which an object has because of its position, composition, or condition, and kinetic energy, which it has because of its motion. The chemical energy stored in gasoline is potential energy, and thermal energy is kinetic energy."
+    },
+    {
+      "id": "conservation-of-energy",
+      "kind": "axiom",
+      "section": "5.1",
+      "name": "The law of conservation of energy",
+      "statement": "During a chemical or physical change, energy can be neither created nor destroyed, although it can be changed in form. The heat a reaction gives off must therefore turn up somewhere else."
+    },
+    {
+      "id": "thermal-energy-and-temperature",
+      "kind": "idea",
+      "section": "5.1",
+      "name": "Thermal energy and temperature",
+      "statement": "Thermal energy is the kinetic energy of the random motion of atoms and molecules, and temperature is a measure of how hot or cold a sample is, which rises as the average kinetic energy of its particles rises. The two are not the same thing: a bonfire and a match may share a temperature and hold very different amounts of thermal energy."
+    },
+    {
+      "id": "heat-flow",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Heat as the transfer of thermal energy",
+      "statement": "Heat is the transfer of thermal energy between two bodies at different temperatures. It flows spontaneously from the hotter body to the cooler one, lowering the average kinetic energy of the first and raising that of the second, until the two reach thermal equilibrium at one temperature."
+    },
+    {
+      "id": "exothermic-and-endothermic",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Exothermic and endothermic processes",
+      "statement": "A chemical reaction or physical change that releases heat is exothermic, and one that absorbs heat is endothermic. An exothermic process warms its surroundings, and an endothermic process cools them."
+    },
+    {
+      "id": "energy-units",
+      "kind": "skill",
+      "section": "5.1",
+      "name": "Converting between joules, calories, and Calories",
+      "statement": "The SI unit of energy is the joule, but the calorie is still frequently used, and food energy is quoted in Calories, each of which is a kilocalorie. Since 1 calorie is defined as exactly 4.184 joules, the reader must move between these units with ease to read a food label or to compare a result given in either."
+    },
+    {
+      "id": "heat-capacity-and-specific-heat",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Heat capacity and specific heat",
+      "statement": "The heat capacity of a body is the heat it absorbs or releases for a temperature change of 1 °C, and it grows with the amount of material, so it is extensive. The specific heat is the heat needed to raise 1 gram of a substance by 1 °C, and it depends only on the kind of substance, so it is intensive.",
+      "eq": "eq-heat-capacity"
+    },
+    {
+      "id": "heat-specific-heat-relation",
+      "kind": "result",
+      "section": "5.1",
+      "name": "Heat, specific heat, mass, and temperature change, $q = c \\times m \\times \\Delta T$",
+      "statement": "The heat entering or leaving a substance is the product of its specific heat, its mass, and its temperature change, taken as the final temperature minus the initial one. The sign of q follows from that difference, positive when the substance warms and negative when it cools, and any one of the four quantities can be found when the other three are known.",
+      "eq": "eq-heat"
+    },
+    {
+      "id": "thermochemistry",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Thermochemistry",
+      "statement": "Thermochemistry is the study of measuring the amount of heat absorbed or released during a chemical reaction or a physical change."
+    },
+    {
+      "id": "work",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Work",
+      "statement": "Work is the transfer of energy that moves matter against an opposing force, or that changes external, macroscopic variables such as pressure and volume."
+    },
+    {
+      "id": "potential-energy",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Potential energy",
+      "statement": "Potential energy is the energy a particle or a system of particles has because of its relative position, composition, or condition."
+    },
+    {
+      "id": "kinetic-energy",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Kinetic energy, $KE = \\frac{1}{2}mv^2$",
+      "statement": "Kinetic energy is the energy an object has because of its motion, equal to one-half the product of its mass and the square of its velocity."
+    },
+    {
+      "id": "thermal-energy",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Thermal energy",
+      "statement": "Thermal energy is the kinetic energy associated with the random motion of atoms and molecules."
+    },
+    {
+      "id": "exothermic-process",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Exothermic process",
+      "statement": "An exothermic process is a chemical reaction or physical change that releases heat."
+    },
+    {
+      "id": "endothermic-process",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Endothermic process",
+      "statement": "An endothermic process is a chemical reaction or physical change that absorbs heat."
+    },
+    {
+      "id": "joule",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "The joule, $1\\ \\text{J} = 1\\ \\text{kg m}^2/\\text{s}^2$",
+      "statement": "The joule is the SI unit of energy, the energy used when a force of 1 newton moves an object 1 meter."
+    },
+    {
+      "id": "calorie",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "The calorie, $1\\ \\text{cal} = 4.184\\ \\text{J}$",
+      "statement": "The calorie is a unit of heat or other energy, the amount of energy required to raise 1 gram of water by 1 degree Celsius. One calorie is exactly 4.184 joules."
+    },
+    {
+      "id": "heat-capacity",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Heat capacity, $C = q/\\Delta T$",
+      "statement": "The heat capacity of a body of matter is the quantity of heat required to raise its temperature by 1 degree Celsius. It is an extensive property, growing with the amount of matter in the body."
+    },
+    {
+      "id": "specific-heat-capacity",
+      "kind": "definition",
+      "section": "5.1",
+      "name": "Specific heat capacity, $c = q/(m\\,\\Delta T)$",
+      "statement": "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 gram of it by 1 degree Celsius. It is an intensive property, set by the kind of substance alone."
+    },
+    {
+      "id": "system-and-surroundings",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "The system and its surroundings",
+      "statement": "The system is the portion of matter undergoing the chemical or physical change being studied, and the surroundings are everything else that gives heat to the system or takes it away. The sign of a heat is taken from the system's point of view."
+    },
+    {
+      "id": "calorimetry-heat-balance",
+      "kind": "result",
+      "section": "5.2",
+      "name": "The heats exchanged in a calorimeter sum to zero",
+      "statement": "When a hot metal is placed in cool water in an ideal calorimeter, all the heat lost by one is gained by the other, so the two heats add up to zero and one is the negative of the other. The negative sign records the opposite direction of flow and does not by itself give either value its sign.",
+      "eq": "eq-heat-balance"
+    },
+    {
+      "id": "heat-of-reaction-by-calorimetry",
+      "kind": "result",
+      "section": "5.2",
+      "name": "The heat of a reaction from the heat of the solution, $q_{\\text{reaction}} = -q_{\\text{solution}}$",
+      "statement": "Because energy is neither created nor destroyed, the heat produced or consumed by a reaction in a calorimeter equals the heat absorbed or lost by the solution around it, with the opposite sign. This is the concept that lies at the heart of all calorimetry problems: the temperature change of the solution is measured, and the heat of the reaction is read from it.",
+      "eq": "eq-heat-reaction"
+    },
+    {
+      "id": "coffee-cup-calorimetry",
+      "kind": "skill",
+      "section": "5.2",
+      "name": "Calculating a heat from coffee cup calorimetry data",
+      "statement": "With a coffee cup calorimeter the reader measures a temperature change and must make and state reasonable assumptions to turn it into a heat: that no heat is exchanged with the outside or absorbed by the cup, and that a dilute solution has the specific heat and density of water. The skill is carrying those assumptions through to a heat with the right sign."
+    },
+    {
+      "id": "bomb-calorimetry",
+      "kind": "skill",
+      "section": "5.2",
+      "name": "Calculating a heat of combustion from bomb calorimetry",
+      "statement": "A bomb calorimeter works at constant volume and is used for reactions, such as combustions, that give off much heat and gaseous products. The heat of the reaction is shared between the water and the steel bomb, so the calculation adds the heat taken in by the water to the heat capacity of the bomb times the temperature rise."
+    },
+    {
+      "id": "food-calories",
+      "kind": "skill",
+      "section": "5.2",
+      "name": "Counting the Calories in a food",
+      "statement": "Food labels give energy in Calories, computed by the Atwater system from the grams of protein, carbohydrate, and fat in a serving and their average Calories per gram, values that were themselves found by bomb calorimetry. The reader who can do this sum can check a label and compare foods."
+    },
+    {
+      "id": "system",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "System",
+      "statement": "The system is the portion of matter undergoing the chemical or physical change being studied."
+    },
+    {
+      "id": "surroundings",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "Surroundings",
+      "statement": "The surroundings are all the matter other than the system being studied."
+    },
+    {
+      "id": "calorimetry",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "Calorimetry",
+      "statement": "Calorimetry is the process of measuring the amount of heat involved in a chemical or physical process."
+    },
+    {
+      "id": "calorimeter",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "Calorimeter",
+      "statement": "A calorimeter is a device used to measure the amount of heat absorbed or released in a chemical or physical process."
+    },
+    {
+      "id": "bomb-calorimeter",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "Bomb calorimeter",
+      "statement": "A bomb calorimeter is a device designed to measure the energy change of a process at constant volume. It is commonly used for reactions, such as combustions, that release large amounts of heat and gaseous products."
+    },
+    {
+      "id": "nutritional-calorie",
+      "kind": "definition",
+      "section": "5.2",
+      "name": "The nutritional Calorie, $1\\ \\text{Cal} = 1\\ \\text{kcal}$",
+      "statement": "The nutritional Calorie is the unit used for the energy provided by digestion of foods, defined as 1000 calories, or 1 kilocalorie."
+    },
+    {
+      "id": "first-law-of-thermodynamics",
+      "kind": "axiom",
+      "section": "5.3",
+      "name": "The first law of thermodynamics, $\\Delta U = q + w$",
+      "statement": "The internal energy of a system changes only through heat flowing into or out of it and work done on or by it. The signs are fixed from the system's side: q is positive for heat flowing in and w is positive for work done on the system, so a system that loses heat and does work loses internal energy on both counts, as the gases in an engine cylinder do.",
+      "eq": "eq-first-law"
+    },
+    {
+      "id": "state-function",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "State functions",
+      "statement": "The value of a state function depends only on the state a system is in, and not on how that state was reached. Internal energy and enthalpy are state functions, while heat and work are not, just as the altitude of a summit does not depend on the route climbed but the distance walked does. Hess's law rests on this property."
+    },
+    {
+      "id": "enthalpy-change-at-constant-pressure",
+      "kind": "result",
+      "section": "5.3",
+      "name": "Enthalpy, and $\\Delta H = q_{\\text{p}}$ at constant pressure",
+      "statement": "Enthalpy is the sum of a system's internal energy and the product of its pressure and volume. For a process at constant pressure whose only work is expansion work, the enthalpy change equals the heat flow, which is why chemists, who usually work at the constant pressure of the atmosphere, use enthalpy to describe the heat of a reaction. The heat measured in a bomb calorimeter, at constant volume, is not ΔH.",
+      "eq": "eq-dh-qp"
+    },
+    {
+      "id": "thermochemical-equations",
+      "kind": "skill",
+      "section": "5.3",
+      "name": "Writing and scaling thermochemical equations",
+      "statement": "A thermochemical equation gives ΔH after a balanced equation, for the amounts in moles that the equation shows. Since ΔH is extensive, it scales with the coefficients, it changes sign when the equation is reversed, and it depends on the physical states written, so the reader must carry all three rules and account for the limiting reactant when turning a measured heat into ΔH."
+    },
+    {
+      "id": "enthalpy-of-combustion",
+      "kind": "skill",
+      "section": "5.3",
+      "name": "Using a standard enthalpy of combustion",
+      "statement": "The standard enthalpy of combustion is the enthalpy change when 1 mole of a substance burns completely under standard state conditions. With it, and with the conversions of earlier chapters, the reader can find the heat given by any amount of a fuel, as the heat of 1.00 L of gasoline is found from the value for isooctane."
+    },
+    {
+      "id": "standard-enthalpy-of-formation",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Standard states and the standard enthalpy of formation",
+      "statement": "A standard state is an agreed set of reference conditions, 1 bar and 1 M, with 298.15 K assumed, and ΔH° marks an enthalpy change under them. The standard enthalpy of formation is ΔH° for forming exactly 1 mole of a substance from its elements in their most stable states, so an element in its most stable form has a value of zero and the formation equation often carries fractional coefficients."
+    },
+    {
+      "id": "hess-law",
+      "kind": "result",
+      "section": "5.3",
+      "name": "Hess’s law",
+      "statement": "If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the steps. This lets the reader find the enthalpy change of a reaction that is hard or dangerous to carry out by adding reactions, reversed and scaled as needed, whose values are known."
+    },
+    {
+      "id": "enthalpy-from-formation-enthalpies",
+      "kind": "skill",
+      "section": "5.3",
+      "name": "Calculating a reaction enthalpy from enthalpies of formation",
+      "statement": "Hess's law applied to decomposing the reactants into their elements and re-forming the products gives the standard enthalpy change of any reaction as the sum of n times the enthalpies of formation of the products minus the same sum for the reactants. With the table of Appendix G the reader can compute ΔH° for reactions that no one has measured directly.",
+      "eq": "eq-hess-formation"
+    },
+    {
+      "id": "chemical-thermodynamics",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Chemical thermodynamics",
+      "statement": "Chemical thermodynamics is the area of science that deals with the relationships between heat, work, and all forms of energy associated with chemical and physical processes."
+    },
+    {
+      "id": "internal-energy",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Internal energy, $U$",
+      "statement": "The internal energy of a system is the total of all possible kinds of energy present in the substances it contains."
+    },
+    {
+      "id": "expansion-work",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Expansion work, $w = -P\\Delta V$",
+      "statement": "Expansion work, or pressure-volume work, is the work done as a system expands or contracts against an external pressure."
+    },
+    {
+      "id": "enthalpy",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Enthalpy, $H = U + PV$",
+      "statement": "The enthalpy of a system is the sum of its internal energy and the product of its pressure and volume."
+    },
+    {
+      "id": "enthalpy-change",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Enthalpy change, $\\Delta H = \\Delta U + P\\Delta V$",
+      "statement": "The enthalpy change of a process is the change in the enthalpy of the system, equal to the heat it releases or absorbs when the process takes place at constant pressure."
+    },
+    {
+      "id": "standard-state",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Standard state",
+      "statement": "A standard state is a set of physical conditions accepted as common reference conditions for reporting thermodynamic properties: 1 bar of pressure and 1 M concentration, with a temperature of 298.15 K assumed. A degree sign on an enthalpy change marks a process under these conditions."
+    },
+    {
+      "id": "hydrocarbon",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Hydrocarbon",
+      "statement": "A hydrocarbon is a compound composed only of hydrogen and carbon, the major component of fossil fuels."
+    },
+    {
+      "id": "standard-enthalpy-of-combustion",
+      "kind": "definition",
+      "section": "5.3",
+      "name": "Standard enthalpy of combustion, $\\Delta H_{\\text{c}}^{\\circ}$",
+      "statement": "The standard enthalpy of combustion of a substance is the enthalpy change when 1 mole of it undergoes complete combustion under standard state conditions."
+    }
   ],
   "concept_prereqs": [
     {"concept": "potential-and-kinetic-energy", "prereq": "energy-and-work"},
@@ -140,6 +405,74 @@
     {"concept": "enthalpy-of-combustion", "prereq": "mass-mole-conversion"},
     {"concept": "enthalpy-of-combustion", "prereq": "molar-mass"},
     {"concept": "enthalpy-from-formation-enthalpies", "prereq": "balanced-equation"},
-    {"concept": "coffee-cup-calorimetry", "prereq": "molarity"}
+    {"concept": "coffee-cup-calorimetry", "prereq": "molarity"},
+    {"concept": "thermochemistry", "prereq": "heat-flow"},
+    {"concept": "work", "prereq": "energy-and-work"},
+    {"concept": "potential-energy", "prereq": "energy-and-work"},
+    {"concept": "kinetic-energy", "prereq": "energy-and-work"},
+    {"concept": "kinetic-energy", "prereq": "mass"},
+    {"concept": "kinetic-energy", "prereq": "velocity"},
+    {"concept": "thermal-energy", "prereq": "kinetic-energy"},
+    {"concept": "thermal-energy", "prereq": "atoms-and-molecules"},
+    {"concept": "exothermic-process", "prereq": "heat-flow"},
+    {"concept": "endothermic-process", "prereq": "heat-flow"},
+    {"concept": "joule", "prereq": "unit"},
+    {"concept": "joule", "prereq": "energy-and-work"},
+    {"concept": "calorie", "prereq": "unit"},
+    {"concept": "calorie", "prereq": "joule"},
+    {"concept": "heat-capacity", "prereq": "heat-flow"},
+    {"concept": "heat-capacity", "prereq": "temperature"},
+    {"concept": "heat-capacity", "prereq": "extensive-and-intensive-properties"},
+    {"concept": "specific-heat-capacity", "prereq": "heat-capacity"},
+    {"concept": "specific-heat-capacity", "prereq": "mass"},
+    {"concept": "specific-heat-capacity", "prereq": "extensive-and-intensive-properties"},
+    {"concept": "system", "prereq": "matter"},
+    {"concept": "surroundings", "prereq": "system"},
+    {"concept": "calorimetry", "prereq": "heat-flow"},
+    {"concept": "calorimeter", "prereq": "calorimetry"},
+    {"concept": "bomb-calorimeter", "prereq": "calorimeter"},
+    {"concept": "bomb-calorimeter", "prereq": "volume"},
+    {"concept": "nutritional-calorie", "prereq": "calorie"},
+    {"concept": "nutritional-calorie", "prereq": "unit-prefixes"},
+    {"concept": "chemical-thermodynamics", "prereq": "heat-flow"},
+    {"concept": "chemical-thermodynamics", "prereq": "work"},
+    {"concept": "chemical-thermodynamics", "prereq": "energy-and-work"},
+    {"concept": "internal-energy", "prereq": "energy-and-work"},
+    {"concept": "internal-energy", "prereq": "system"},
+    {"concept": "expansion-work", "prereq": "work"},
+    {"concept": "expansion-work", "prereq": "gas-pressure"},
+    {"concept": "expansion-work", "prereq": "volume"},
+    {"concept": "enthalpy", "prereq": "internal-energy"},
+    {"concept": "enthalpy", "prereq": "gas-pressure"},
+    {"concept": "enthalpy", "prereq": "volume"},
+    {"concept": "enthalpy-change", "prereq": "enthalpy"},
+    {"concept": "standard-state", "prereq": "gas-pressure"},
+    {"concept": "standard-state", "prereq": "molarity"},
+    {"concept": "standard-state", "prereq": "temperature"},
+    {"concept": "hydrocarbon", "prereq": "elements-and-compounds"},
+    {"concept": "standard-enthalpy-of-combustion", "prereq": "enthalpy-change"},
+    {"concept": "standard-enthalpy-of-combustion", "prereq": "standard-state"},
+    {"concept": "standard-enthalpy-of-combustion", "prereq": "combustion-reaction"},
+    {"concept": "standard-enthalpy-of-combustion", "prereq": "mole"},
+    {"concept": "thermal-energy-and-temperature", "prereq": "thermal-energy"},
+    {"concept": "heat-flow", "prereq": "thermal-energy"},
+    {"concept": "energy-units", "prereq": "joule"},
+    {"concept": "energy-units", "prereq": "calorie"},
+    {"concept": "heat-specific-heat-relation", "prereq": "specific-heat-capacity"},
+    {"concept": "calorimetry-heat-balance", "prereq": "calorimeter"},
+    {"concept": "coffee-cup-calorimetry", "prereq": "calorimeter"},
+    {"concept": "bomb-calorimetry", "prereq": "bomb-calorimeter"},
+    {"concept": "food-calories", "prereq": "nutritional-calorie"},
+    {"concept": "first-law-of-thermodynamics", "prereq": "internal-energy"},
+    {"concept": "first-law-of-thermodynamics", "prereq": "work"},
+    {"concept": "enthalpy-change-at-constant-pressure", "prereq": "enthalpy"},
+    {"concept": "enthalpy-change-at-constant-pressure", "prereq": "enthalpy-change"},
+    {"concept": "enthalpy-change-at-constant-pressure", "prereq": "expansion-work"},
+    {"concept": "enthalpy-of-combustion", "prereq": "standard-enthalpy-of-combustion"},
+    {"concept": "thermochemical-equations", "prereq": "enthalpy-change"},
+    {"concept": "standard-enthalpy-of-formation", "prereq": "standard-state"},
+    {"concept": "hess-law", "prereq": "enthalpy-change"},
+    {"concept": "exothermic-and-endothermic", "prereq": "exothermic-process"},
+    {"concept": "exothermic-and-endothermic", "prereq": "endothermic-process"}
   ]
 }

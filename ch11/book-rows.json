@@ -101,115 +101,150 @@
  "concepts": [
   {
    "id": "properties-of-solutions",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.1",
    "name": "Solutions and their defining traits",
-   "why": "A solution is a homogeneous mixture in which the solute particles are individually dispersed among the solvent’s, so its composition is uniform, its state is usually the solvent’s, and its solute never settles out. Almost any gas, liquid or solid can act as a solvent, so air and brass are solutions just as saltwater is.",
-   "evidence": "Figure 11.2 shows potassium dichromate dispersing into a uniform orange solution, Table 11.1 lists solutions of every phase, and the text sets out the five defining traits."
+   "statement": "A solution is a homogeneous mixture in which the solute particles are individually dispersed among the solvent’s, so its composition is uniform, its state is usually the solvent’s, and its solute never settles out. Almost any gas, liquid or solid can act as a solvent, so air and brass are solutions just as saltwater is."
   },
   {
    "id": "ideal-solution",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.1",
    "name": "Ideal solutions and matter dispersal",
-   "why": "When the attractions between unlike particles are no different from those between like particles, a solution forms with no change in energy, and it forms anyway, driven by the increased dispersal of matter alone.",
-   "evidence": "Figure 11.3 lets helium and argon mix through an opened stopcock, and the text extends the same picture to methanol with ethanol and pentane with hexane."
+   "statement": "When the attractions between unlike particles are no different from those between like particles, a solution forms with no change in energy, and it forms anyway, driven by the increased dispersal of matter alone."
   },
   {
    "id": "dissolution-energy-steps",
    "kind": "idea",
    "section": "11.1",
    "name": "Dissolution as three steps",
-   "why": "The formation of a solution may be viewed as separating the solute particles and the solvent particles, both endothermic, and then letting solute and solvent attract one another (solvation), which is exothermic. The balance of the three steps decides whether dissolving releases or absorbs heat.",
-   "evidence": "Figure 11.4 draws the stepwise path beside the direct formation of the solution, and the text applies it to an ionic compound dissolving in water."
+   "statement": "The formation of a solution may be viewed as separating the solute particles and the solvent particles, both endothermic, and then letting solute and solvent attract one another (solvation), which is exothermic. The balance of the three steps decides whether dissolving releases or absorbs heat."
   },
   {
    "id": "endothermic-and-exothermic-dissolution",
    "kind": "result",
    "section": "11.1",
    "name": "Heat released or absorbed on dissolving",
-   "why": "A solute whose solvation releases more energy than its separation costs dissolves exothermically, as sodium hydroxide does; one whose separation costs more dissolves endothermically, as ammonium nitrate does, and it can still dissolve because of the increase in dispersal.",
-   "evidence": "Figure 11.5’s instant cold pack, and the contrast between calcium carbonate, lye and ammonium nitrate in the text; exercises on KNO<sub>3</sub> growing cold as it dissolves."
+   "statement": "A solute whose solvation releases more energy than its separation costs dissolves exothermically, as sodium hydroxide does; one whose separation costs more dissolves endothermically, as ammonium nitrate does, and it can still dissolve because of the increase in dispersal."
   },
   {
    "id": "predict-solution-formation",
    "kind": "skill",
    "section": "11.1",
    "name": "Predict whether two substances form a solution",
-   "why": "Naming the strongest attractions within the solute, within the solvent and between the two lets us predict whether they will mix and which solvent suits a solute.",
-   "evidence": "End-of-section exercises ask for the most important attractions in several solutions and whether oil, isopropyl alcohol and potassium bromide dissolve better in water or heptane."
+   "statement": "Naming the strongest attractions within the solute, within the solvent and between the two lets us predict whether they will mix and which solvent suits a solute."
+  },
+  {
+   "id": "alloy",
+   "kind": "definition",
+   "section": "11.1",
+   "name": "Alloy",
+   "statement": "An alloy is a solid mixture of a metallic element and one or more additional elements."
+  },
+  {
+   "id": "spontaneous-process",
+   "kind": "definition",
+   "section": "11.1",
+   "name": "Spontaneous process",
+   "statement": "A spontaneous process is a physical or chemical change that occurs without the addition of energy from an external source."
+  },
+  {
+   "id": "solvation",
+   "kind": "definition",
+   "section": "11.1",
+   "name": "Solvation",
+   "statement": "Solvation is the exothermic process in which intermolecular attractions between solute and solvent form as the solute particles are surrounded by solvent particles."
   },
   {
    "id": "electrolytes-and-nonelectrolytes",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.2",
    "name": "Electrolytes and nonelectrolytes",
-   "why": "An electrolyte yields ions when it dissolves, so its solution conducts electricity; a nonelectrolyte yields none. A strong electrolyte yields ions essentially completely, a weak electrolyte only in small part.",
-   "evidence": "Figure 11.6 lights a bulb brightly through KCl solution, dimly through acetic acid and not at all through ethanol."
+   "statement": "An electrolyte yields ions when it dissolves, so its solution conducts electricity; a nonelectrolyte yields none. A strong electrolyte yields ions essentially completely, a weak electrolyte only in small part."
   },
   {
    "id": "ion-dipole-attraction",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.2",
    "name": "Ion-dipole attraction",
-   "why": "The electrostatic attraction between an ion and a polar molecule turns the negative oxygen ends of water molecules toward a cation and the positive hydrogen ends toward an anion, and it is what lets water pull ions out of a solid.",
-   "evidence": "Figure 11.7 draws water molecules oriented around K<sup>+</sup> and Cl<sup>−</sup> ions leaving the surface of solid KCl."
+   "statement": "The electrostatic attraction between an ion and a polar molecule turns the negative oxygen ends of water molecules toward a cation and the positive hydrogen ends toward an anion, and it is what lets water pull ions out of a solid."
   },
   {
    "id": "dissociation-of-ionic-compounds",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.2",
    "name": "Ionic compounds dissociate",
-   "why": "When an ionic compound dissolves, water surrounds and solvates its ions and they disperse through the solution, a physical change called dissociation. Ionic compounds dissociate nearly completely, so even a sparingly soluble one is a strong electrolyte.",
-   "evidence": "The text follows solid KCl in water at the microscopic level, and an exercise asks which beaker best shows the ions of Fe(NO<sub>3</sub>)<sub>3</sub>(aq)."
+   "statement": "When an ionic compound dissolves, water surrounds and solvates its ions and they disperse through the solution, a physical change called dissociation. Ionic compounds dissociate nearly completely, so even a sparingly soluble one is a strong electrolyte."
   },
   {
    "id": "covalent-electrolytes",
    "kind": "idea",
    "section": "11.2",
    "name": "Covalent electrolytes react with water",
-   "why": "Some covalent compounds conduct once dissolved because their molecules react chemically with water to form ions: a strong acid such as HCl ionizes completely and is a strong electrolyte, while weak acids and bases ionize partly and are weak electrolytes.",
-   "evidence": "The ionization of water itself, and HCl transferring H<sup>+</sup> to water to form hydronium and chloride ions, drawn in Lewis structures in the text."
+   "statement": "Some covalent compounds conduct once dissolved because their molecules react chemically with water to form ions: a strong acid such as HCl ionizes completely and is a strong electrolyte, while weak acids and bases ionize partly and are weak electrolytes."
   },
   {
    "id": "classify-electrolyte-strength",
    "kind": "skill",
    "section": "11.2",
    "name": "Classify a solute as a strong, weak or nonelectrolyte",
-   "why": "Whether a solute is ionic, a strong acid, a weak acid or base, or an unreactive covalent compound tells us how well its solution will conduct.",
-   "evidence": "An exercise asks for the expected conductivity of NaOH, HCl, glucose and NH<sub>3</sub> solutions; others contrast water and benzene or hexane as solvents for ions."
+   "statement": "Whether a solute is ionic, a strong acid, a weak acid or base, or an unreactive covalent compound tells us how well its solution will conduct."
+  },
+  {
+   "id": "electrolyte",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "Electrolyte",
+   "statement": "An electrolyte is a substance that produces ions when dissolved in water, so that its solution conducts electricity."
+  },
+  {
+   "id": "nonelectrolyte",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "Nonelectrolyte",
+   "statement": "A nonelectrolyte is a substance that does not produce ions when dissolved in water."
+  },
+  {
+   "id": "strong-electrolyte",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "Strong electrolyte",
+   "statement": "A strong electrolyte is a substance that dissociates or ionizes completely when dissolved in water."
+  },
+  {
+   "id": "weak-electrolyte",
+   "kind": "definition",
+   "section": "11.2",
+   "name": "Weak electrolyte",
+   "statement": "A weak electrolyte is a substance that ionizes only partially when dissolved in water."
   },
   {
    "id": "solubility-and-saturation",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.3",
    "name": "Solubility, saturated and unsaturated solutions",
-   "why": "The solubility of a solute is the maximum concentration it can reach in a solvent under given conditions when dissolution is at equilibrium. A solution at that concentration is saturated, one below it is unsaturated.",
-   "evidence": "The text adds sugar to water until some remains undissolved however long it is stirred."
+   "statement": "The solubility of a solute is the maximum concentration it can reach in a solvent under given conditions when dissolution is at equilibrium. A solution at that concentration is saturated, one below it is unsaturated."
   },
   {
    "id": "supersaturated-solutions",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.3",
    "name": "Supersaturated solutions",
-   "why": "A solution can hold more solute than its solubility, a nonequilibrium state that ends in precipitation or loss of gas when it is disturbed. Cooling a saturated solution of a solid, or warming or depressurizing a solution of a gas, can prepare one.",
-   "evidence": "An opened carbonated beverage going flat (Figure 11.10), the Lake Nyos disaster (Figure 11.12) and the sodium acetate hand warmer (Figure 11.17)."
+   "statement": "A solution can hold more solute than its solubility, a nonequilibrium state that ends in precipitation or loss of gas when it is disturbed. Cooling a saturated solution of a solid, or warming or depressurizing a solution of a gas, can prepare one."
   },
   {
    "id": "gas-solubility-and-temperature",
    "kind": "result",
    "section": "11.3",
    "name": "Gases grow less soluble as temperature rises",
-   "why": "Since a gaseous solute has no solute-solute attraction to overcome, only its attraction to the solvent sets its solubility, and that solubility typically decreases as the temperature increases, which is why thermal pollution starves natural waters of oxygen.",
-   "evidence": "Figure 11.8 plots the solubilities of methane, oxygen, carbon monoxide, nitrogen and helium falling from 0 °C to 30 °C, and Figure 11.9 shows bubbles in warming water and a fish kill."
+   "statement": "Since a gaseous solute has no solute-solute attraction to overcome, only its attraction to the solvent sets its solubility, and that solubility typically decreases as the temperature increases, which is why thermal pollution starves natural waters of oxygen."
   },
   {
    "id": "henrys-law",
-   "kind": "result",
+   "kind": "axiom",
    "section": "11.3",
    "name": "Henry’s law",
-   "why": "The quantity of an ideal gas that dissolves in a definite volume of liquid is directly proportional to the pressure of the gas, $C_{\\text{g}} = kP_{\\text{g}}$, with k set by the gas, the solvent and the temperature. A gas that reacts with the solvent, as ammonia does with water, dissolves more than the law predicts.",
-   "evidence": "The carbonated beverage of Figure 11.10 and the diver’s blood in the note on decompression sickness.",
+   "statement": "The quantity of an ideal gas that dissolves in a definite volume of liquid is directly proportional to the pressure of the gas, $C_{\\text{g}} = kP_{\\text{g}}$, with k set by the gas, the solvent and the temperature. A gas that reacts with the solvent, as ammonia does with water, dissolves more than the law predicts.",
    "eq": "eq-henrys-law"
   },
   {
@@ -217,50 +252,79 @@
    "kind": "skill",
    "section": "11.3",
    "name": "Calculate a gas solubility with Henry’s law",
-   "why": "Finding k from one known solubility and pressure gives the solubility at any other pressure, and a constant read from a solubility graph answers whether a stream holds enough oxygen for its fish.",
-   "evidence": "Examples 11.1 and 11.2 with their Check Your Learning, and the keyed exercises on O<sub>2</sub> and CO<sub>2</sub>.",
+   "statement": "Finding k from one known solubility and pressure gives the solubility at any other pressure, and a constant read from a solubility graph answers whether a stream holds enough oxygen for its fish.",
    "eq": "eq-henrys-law"
   },
   {
    "id": "miscibility",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.3",
    "name": "Miscible, immiscible and partially miscible liquids",
-   "why": "Liquids of similar polarity mix in all proportions because the attractions between unlike molecules are as strong as those between like ones, an illustration of “like dissolves like”; a nonpolar liquid and water form separate layers, and some pairs are only partially miscible.",
-   "evidence": "Antifreeze and water (Figure 11.13), oil floating on water (Figure 11.14), and bromine and water forming two saturated layers (Figure 11.15)."
+   "statement": "Liquids of similar polarity mix in all proportions because the attractions between unlike molecules are as strong as those between like ones, an illustration of “like dissolves like”; a nonpolar liquid and water form separate layers, and some pairs are only partially miscible."
   },
   {
    "id": "solid-solubility-and-temperature",
-   "kind": "result",
+   "kind": "idea",
    "section": "11.3",
    "name": "Solubility curves of solids",
-   "why": "The solubilities of most solids in water increase with temperature, though some, such as cerium sulfate, decrease, and a solubility curve reads off how much of a solid dissolves in 100 g of water at any temperature.",
-   "evidence": "Figure 11.16 plots the solubility curves of sugar and seven salts from 0 °C to 100 °C, and an exercise reads KBr’s solubility at 10 °C from it."
+   "statement": "The solubilities of most solids in water increase with temperature, though some, such as cerium sulfate, decrease, and a solubility curve reads off how much of a solid dissolves in 100 g of water at any temperature."
+  },
+  {
+   "id": "saturated-solution",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "Saturated solution",
+   "statement": "A saturated solution has a concentration equal to the solubility of its solute, the maximum concentration possible at that temperature and pressure."
+  },
+  {
+   "id": "unsaturated-solution",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "Unsaturated solution",
+   "statement": "An unsaturated solution has a concentration less than the solubility of its solute."
+  },
+  {
+   "id": "miscible",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "Miscible",
+   "statement": "Liquids are miscible when they are mutually soluble in all proportions."
+  },
+  {
+   "id": "immiscible",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "Immiscible",
+   "statement": "Liquids are immiscible when their mutual solubility is negligible."
+  },
+  {
+   "id": "partially-miscible",
+   "kind": "definition",
+   "section": "11.3",
+   "name": "Partially miscible",
+   "statement": "Liquids are partially miscible when they are of moderate mutual solubility."
   },
   {
    "id": "colligative-properties",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.4",
    "name": "Colligative properties",
-   "why": "Vapor pressure lowering, boiling point elevation, freezing point depression and osmotic pressure depend only on the total concentration of solute particles, not on their identity, mass or size.",
-   "evidence": "The text compares 1 m solutions of sucrose and ethylene glycol, which boil at the same temperature because each holds one mole of solute particles per kilogram of water."
+   "statement": "Vapor pressure lowering, boiling point elevation, freezing point depression and osmotic pressure depend only on the total concentration of solute particles, not on their identity, mass or size."
   },
   {
    "id": "molality-and-mole-fraction",
    "kind": "skill",
    "section": "11.4",
    "name": "Molality and mole fraction",
-   "why": "Mole fraction is a component’s moles divided by the total moles, and molality is moles of solute per kilogram of solvent; both are built from masses and moles, so, unlike molarity, they do not change with temperature, and each can be converted into the others.",
-   "evidence": "Examples 11.3 to 11.5 compute the mole fraction and molality of antifreeze, convert molality to mole fraction, and convert molarity to molality through a density.",
+   "statement": "Because mole fraction and molality are built from masses and moles, either can be converted into the other, or into molarity or mass percentage, with the molar masses of the components and, for molarity, the density of the solution. Unlike molarity, neither changes with temperature.",
    "eq": "eq-molality"
   },
   {
    "id": "raoults-law",
-   "kind": "result",
+   "kind": "axiom",
    "section": "11.4",
    "name": "Raoult’s law and vapor pressure lowering",
-   "why": "The partial pressure of a component of an ideal solution is its mole fraction times the vapor pressure of the pure component, so a nonvolatile solute lowers the vapor pressure of the solvent in proportion to how much it dilutes the solvent.",
-   "evidence": "Figure 11.18 contrasts evaporation from pure water and from a solution, and Example 11.6 computes the vapor pressure of glycerin in ethanol.",
+   "statement": "The partial pressure of a component of an ideal solution is its mole fraction times the vapor pressure of the pure component, so a nonvolatile solute lowers the vapor pressure of the solvent in proportion to how much it dilutes the solvent.",
    "eq": "eq-raoults-law"
   },
   {
@@ -268,16 +332,14 @@
    "kind": "idea",
    "section": "11.4",
    "name": "Distillation",
-   "why": "The vapor above a mixture of two volatile liquids is richer in the more volatile one, so heating the mixture and condensing the vapor separates them; a fractionating column repeats the separation many times over.",
-   "evidence": "The laboratory still of Figure 11.19 and the crude-oil column of Figure 11.20; Exercise 65 computes the enriched vapor of a methanol-ethanol solution."
+   "statement": "The vapor above a mixture of two volatile liquids is richer in the more volatile one, so heating the mixture and condensing the vapor separates them; a fractionating column repeats the separation many times over."
   },
   {
    "id": "boiling-point-elevation",
    "kind": "result",
    "section": "11.4",
    "name": "Boiling point elevation",
-   "why": "Because a nonvolatile solute lowers the vapor pressure, the solution must be hotter than the pure solvent before its vapor pressure reaches the atmosphere’s, and the elevation is proportional to the molality of all solute species, $\\Delta T_{\\text{b}} = K_{\\text{b}}m$.",
-   "evidence": "Table 11.2 lists K<sub>b</sub> for five solvents, Examples 11.7 and 11.8 compute boiling points, and Figure 11.23 shows the solution’s liquid-vapor curve lying beneath the solvent’s.",
+   "statement": "Because a nonvolatile solute lowers the vapor pressure, the solution must be hotter than the pure solvent before its vapor pressure reaches the atmosphere’s, and the elevation is proportional to the molality of all solute species, $\\Delta T_{\\text{b}} = K_{\\text{b}}m$.",
    "eq": "eq-boiling-point-elevation"
   },
   {
@@ -285,8 +347,7 @@
    "kind": "result",
    "section": "11.4",
    "name": "Freezing point depression",
-   "why": "A solution freezes at a lower temperature than its pure solvent, by an amount proportional to the molality of all solute species, $\\Delta T_{\\text{f}} = K_{\\text{f}}m$, because only the solvent freezes out; salted roads and antifreeze exploit it.",
-   "evidence": "Example 11.9, the note on de-icing (Figures 11.21 and 11.22), and Figure 11.23’s solid-liquid curve displaced to the left.",
+   "statement": "A solution freezes at a lower temperature than its pure solvent, by an amount proportional to the molality of all solute species, $\\Delta T_{\\text{f}} = K_{\\text{f}}m$, because only the solvent freezes out; salted roads and antifreeze exploit it.",
    "eq": "eq-freezing-point-depression"
   },
   {
@@ -294,8 +355,7 @@
    "kind": "result",
    "section": "11.4",
    "name": "Osmosis and osmotic pressure",
-   "why": "Solvent diffuses through a semipermeable membrane into a solution faster than it returns, until the solution’s rising pressure equalizes the rates; that pressure is the osmotic pressure, $\\Pi = MRT$. Applying more pressure reverses osmosis, and a cell swells or shrivels in a hypotonic or hypertonic solution.",
-   "evidence": "The U-tubes of Figures 11.24 and 11.25, reverse osmosis in Figure 11.26, red blood cells in Figure 11.27, and Example 11.10’s glucose infusion.",
+   "statement": "Solvent diffuses through a semipermeable membrane into a solution faster than it returns, until the solution’s rising pressure equalizes the rates; that pressure is the osmotic pressure, $\\Pi = MRT$. Applying more pressure reverses osmosis, and a cell swells or shrivels in a hypotonic or hypertonic solution.",
    "eq": "eq-osmotic-pressure"
   },
   {
@@ -303,57 +363,190 @@
    "kind": "skill",
    "section": "11.4",
    "name": "Determine a molar mass from a colligative property",
-   "why": "A measured freezing point depression, boiling point elevation or osmotic pressure gives the moles of solute in a known mass, and so the solute’s molar mass.",
-   "evidence": "Example 11.11 from a freezing point in benzene and Example 11.12 from the osmotic pressure of hemoglobin, with their Check Your Learning."
+   "statement": "A measured freezing point depression, boiling point elevation or osmotic pressure gives the moles of solute in a known mass, and so the solute’s molar mass."
   },
   {
    "id": "vant-hoff-factor",
    "kind": "result",
    "section": "11.4",
    "name": "Colligative properties of electrolytes and the van’t Hoff factor",
-   "why": "An electrolyte yields more than one particle per formula unit, so its colligative effects are multiplied by the van’t Hoff factor i, the moles of particles per mole of formula units; residual attraction between ions, even ion pairs, makes the measured i smaller than predicted.",
-   "evidence": "Table 11.3 sets predicted beside measured factors for 0.050 m solutions, Figure 11.28 draws ion pairs, and Example 11.13 finds the freezing point of a seawater-like NaCl solution.",
+   "statement": "An electrolyte yields more than one particle per formula unit, so its colligative effects are multiplied by the van’t Hoff factor i, the moles of particles per mole of formula units; residual attraction between ions, even ion pairs, makes the measured i smaller than predicted.",
    "eq": "eq-vant-hoff-factor"
+  },
+  {
+   "id": "molality",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Molality, $m = \\text{mol solute}/\\text{kg solvent}$",
+   "statement": "Molality is a concentration unit defined as the number of moles of solute divided by the mass of the solvent in kilograms. Since it is built from moles and masses, it does not change with temperature."
+  },
+  {
+   "id": "boiling-point-elevation-constant",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Boiling point elevation constant, $K_b$",
+   "statement": "The boiling point elevation constant, or ebullioscopic constant, of a solvent is the proportionality constant relating the boiling point elevation of its solutions to the molality of solute."
+  },
+  {
+   "id": "freezing-point-depression-constant",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Freezing point depression constant, $K_f$",
+   "statement": "The freezing point depression constant, or cryoscopic constant, of a solvent is the proportionality constant relating the freezing point depression of its solutions to the molality of solute."
+  },
+  {
+   "id": "semipermeable-membrane",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Semipermeable membrane",
+   "statement": "A semipermeable membrane is a membrane that selectively permits the passage of certain ions or molecules."
+  },
+  {
+   "id": "osmosis",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Osmosis",
+   "statement": "Osmosis is the diffusion of solvent molecules through a semipermeable membrane."
+  },
+  {
+   "id": "isotonic",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Isotonic",
+   "statement": "Two solutions are isotonic when they have equal osmotic pressures."
+  },
+  {
+   "id": "hypertonic",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Hypertonic",
+   "statement": "A solution is hypertonic to another when its osmotic pressure is greater."
+  },
+  {
+   "id": "hypotonic",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Hypotonic",
+   "statement": "A solution is hypotonic to another when its osmotic pressure is less."
+  },
+  {
+   "id": "crenation",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Crenation",
+   "statement": "Crenation is the shriveling of biological cells as they lose water by osmosis, as red blood cells do in a hypertonic solution."
+  },
+  {
+   "id": "hemolysis",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Hemolysis",
+   "statement": "Hemolysis is the rupture of red blood cells as they take up excess water by osmosis, as they do in a hypotonic solution."
+  },
+  {
+   "id": "ion-pair",
+   "kind": "definition",
+   "section": "11.4",
+   "name": "Ion pair",
+   "statement": "An ion pair is a solvated cation and anion held together by moderate electrostatic attraction, which lowers the number of independent particles in a solution of an electrolyte."
   },
   {
    "id": "colloids-solutions-and-suspensions",
    "kind": "idea",
    "section": "11.5",
    "name": "Colloids between solutions and suspensions",
-   "why": "A colloid’s particles are larger than most molecules yet small enough not to settle, so a colloid is intermediate between a solution, whose particles are molecules or ions, and a suspension, whose particles settle; colloidal particles scatter light, the Tyndall effect.",
-   "evidence": "Figure 11.29 sets saltwater, milk and mud side by side, and Figure 11.30 shows searchlight beams made visible by fog and smoke."
+   "statement": "A colloid’s particles are larger than most molecules yet small enough not to settle, so a colloid is intermediate between a solution, whose particles are molecules or ions, and a suspension, whose particles settle; colloidal particles scatter light, the Tyndall effect."
   },
   {
    "id": "dispersed-phase-and-medium",
-   "kind": "idea",
+   "kind": "definition",
    "section": "11.5",
    "name": "Dispersed phase and dispersion medium",
-   "why": "A colloid’s minor, particulate component is the dispersed phase and the substance it is spread through is the dispersion medium, and nearly every combination of states occurs: sols, aerosols, emulsions, foams and gels.",
-   "evidence": "Table 11.4 names the colloidal systems by their phases, the gelatin dessert of Figure 11.37 is a gel, and an exercise asks for the phases of starch, smoke, fog, pearl and more."
+   "statement": "A colloid’s minor, particulate component is the dispersed phase and the substance it is spread through is the dispersion medium, and nearly every combination of states occurs: sols, aerosols, emulsions, foams and gels."
   },
   {
    "id": "colloid-preparation",
    "kind": "idea",
    "section": "11.5",
    "name": "Preparing colloids and emulsions",
-   "why": "Colloidal particles are made by dispersion, grinding larger particles down, or by condensation, growing them from molecules or ions; an emulsion of two immiscible liquids is kept from separating by an emulsifying agent.",
-   "evidence": "Paint pigments, clouds, the iron(III) hydroxide and gold sols, and milk and mayonnaise with their emulsifying agents, in the text."
+   "statement": "Colloidal particles are made by dispersion, grinding larger particles down, or by condensation, growing them from molecules or ions; an emulsion of two immiscible liquids is kept from separating by an emulsifying agent."
   },
   {
    "id": "soaps-and-detergents",
    "kind": "idea",
    "section": "11.5",
    "name": "How soaps and detergents clean",
-   "why": "Soap and detergent molecules are amphiphilic, a nonpolar hydrocarbon end and an ionic end, so they gather at the boundary between grease and water and suspend the grease as colloidal particles that wash away.",
-   "evidence": "Figures 11.31 and 11.32 draw soap and detergent molecules, Figure 11.33 an emulsified drop of oil, and the Deepwater Horizon note the dispersant sprayed on the spill."
+   "statement": "Soap and detergent molecules are amphiphilic, a nonpolar hydrocarbon end and an ionic end, so they gather at the boundary between grease and water and suspend the grease as colloidal particles that wash away."
   },
   {
    "id": "charged-colloidal-particles",
    "kind": "idea",
    "section": "11.5",
    "name": "Colloidal particles are charged",
-   "why": "The particles of one colloid carry charges of the same sign, which keeps them dispersed by repulsion, and highly charged electrodes attract, neutralize and deposit them, as in the Cottrell precipitator that cleans smoke.",
-   "evidence": "Iron(III) hydroxide particles bearing a positive charge, and Frederick Cottrell’s precipitator in Figures 11.35 and 11.36."
+   "statement": "The particles of one colloid carry charges of the same sign, which keeps them dispersed by repulsion, and highly charged electrodes attract, neutralize and deposit them, as in the Cottrell precipitator that cleans smoke."
+  },
+  {
+   "id": "colloid",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "Colloid",
+   "statement": "A colloid, or colloidal dispersion, is a mixture in which relatively large solid or liquid particles are dispersed uniformly throughout a gas, liquid or solid and do not settle."
+  },
+  {
+   "id": "suspension",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "Suspension",
+   "statement": "A suspension is a heterogeneous mixture in which relatively large particles are temporarily dispersed but settle out over time."
+  },
+  {
+   "id": "tyndall-effect",
+   "kind": "idea",
+   "section": "11.5",
+   "name": "The Tyndall effect",
+   "statement": "The Tyndall effect is the scattering of visible light by a colloidal dispersion, which makes the path of a beam visible through it."
+  },
+  {
+   "id": "dispersed-phase",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "Dispersed phase",
+   "statement": "The dispersed phase of a colloid is the substance present as relatively large solid or liquid particles."
+  },
+  {
+   "id": "dispersion-medium",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "Dispersion medium",
+   "statement": "The dispersion medium of a colloid is the solid, liquid or gas in which the colloidal particles are dispersed."
+  },
+  {
+   "id": "emulsion",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "Emulsion",
+   "statement": "An emulsion is a colloid formed from immiscible liquids."
+  },
+  {
+   "id": "gel",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "Gel",
+   "statement": "A gel is a colloidal dispersion of a liquid in a solid."
+  },
+  {
+   "id": "amphiphilic",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "Amphiphilic",
+   "statement": "A molecule is amphiphilic when it has both a hydrophobic, nonpolar part and a hydrophilic, polar part."
+  },
+  {
+   "id": "emulsifying-agent",
+   "kind": "definition",
+   "section": "11.5",
+   "name": "Emulsifying agent",
+   "statement": "An emulsifying agent is an amphiphilic substance used to stabilize the particles of an emulsion."
   }
  ],
  "concept_prereqs": [
@@ -680,6 +873,346 @@
   {
    "concept": "charged-colloidal-particles",
    "prereq": "ions-and-atomic-charge"
+  },
+  {
+   "concept": "alloy",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "alloy",
+   "prereq": "metal"
+  },
+  {
+   "concept": "spontaneous-process",
+   "prereq": "physical-change"
+  },
+  {
+   "concept": "spontaneous-process",
+   "prereq": "chemical-change"
+  },
+  {
+   "concept": "solvation",
+   "prereq": "solute"
+  },
+  {
+   "concept": "solvation",
+   "prereq": "solvent"
+  },
+  {
+   "concept": "solvation",
+   "prereq": "intermolecular-force"
+  },
+  {
+   "concept": "solvation",
+   "prereq": "exothermic-process"
+  },
+  {
+   "concept": "electrolyte",
+   "prereq": "ion"
+  },
+  {
+   "concept": "electrolyte",
+   "prereq": "aqueous-solution"
+  },
+  {
+   "concept": "nonelectrolyte",
+   "prereq": "electrolyte"
+  },
+  {
+   "concept": "strong-electrolyte",
+   "prereq": "electrolyte"
+  },
+  {
+   "concept": "weak-electrolyte",
+   "prereq": "electrolyte"
+  },
+  {
+   "concept": "saturated-solution",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "saturated-solution",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "unsaturated-solution",
+   "prereq": "saturated-solution"
+  },
+  {
+   "concept": "miscible",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "immiscible",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "partially-miscible",
+   "prereq": "solubility"
+  },
+  {
+   "concept": "molality",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "molality",
+   "prereq": "mole"
+  },
+  {
+   "concept": "molality",
+   "prereq": "kilogram"
+  },
+  {
+   "concept": "molality",
+   "prereq": "solvent"
+  },
+  {
+   "concept": "molality",
+   "prereq": "solute"
+  },
+  {
+   "concept": "boiling-point-elevation-constant",
+   "prereq": "boiling-point-elevation"
+  },
+  {
+   "concept": "boiling-point-elevation-constant",
+   "prereq": "molality"
+  },
+  {
+   "concept": "freezing-point-depression-constant",
+   "prereq": "freezing-point-depression"
+  },
+  {
+   "concept": "freezing-point-depression-constant",
+   "prereq": "molality"
+  },
+  {
+   "concept": "semipermeable-membrane",
+   "prereq": "ion"
+  },
+  {
+   "concept": "semipermeable-membrane",
+   "prereq": "molecule"
+  },
+  {
+   "concept": "osmosis",
+   "prereq": "diffusion"
+  },
+  {
+   "concept": "osmosis",
+   "prereq": "semipermeable-membrane"
+  },
+  {
+   "concept": "osmosis",
+   "prereq": "solvent"
+  },
+  {
+   "concept": "isotonic",
+   "prereq": "osmotic-pressure"
+  },
+  {
+   "concept": "hypertonic",
+   "prereq": "osmotic-pressure"
+  },
+  {
+   "concept": "hypotonic",
+   "prereq": "osmotic-pressure"
+  },
+  {
+   "concept": "crenation",
+   "prereq": "osmosis"
+  },
+  {
+   "concept": "crenation",
+   "prereq": "hypertonic"
+  },
+  {
+   "concept": "hemolysis",
+   "prereq": "osmosis"
+  },
+  {
+   "concept": "hemolysis",
+   "prereq": "hypotonic"
+  },
+  {
+   "concept": "ion-pair",
+   "prereq": "cation"
+  },
+  {
+   "concept": "ion-pair",
+   "prereq": "anion"
+  },
+  {
+   "concept": "ion-pair",
+   "prereq": "solvation"
+  },
+  {
+   "concept": "colloid",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "colloid",
+   "prereq": "properties-of-solutions"
+  },
+  {
+   "concept": "suspension",
+   "prereq": "heterogeneous-mixture"
+  },
+  {
+   "concept": "tyndall-effect",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "dispersed-phase",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "dispersion-medium",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "emulsion",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "emulsion",
+   "prereq": "immiscible"
+  },
+  {
+   "concept": "gel",
+   "prereq": "dispersed-phase"
+  },
+  {
+   "concept": "gel",
+   "prereq": "dispersion-medium"
+  },
+  {
+   "concept": "amphiphilic",
+   "prereq": "polar-molecule"
+  },
+  {
+   "concept": "emulsifying-agent",
+   "prereq": "amphiphilic"
+  },
+  {
+   "concept": "emulsifying-agent",
+   "prereq": "emulsion"
+  },
+  {
+   "concept": "dissolution-energy-steps",
+   "prereq": "solvation"
+  },
+  {
+   "concept": "electrolytes-and-nonelectrolytes",
+   "prereq": "electrolyte"
+  },
+  {
+   "concept": "electrolytes-and-nonelectrolytes",
+   "prereq": "nonelectrolyte"
+  },
+  {
+   "concept": "electrolytes-and-nonelectrolytes",
+   "prereq": "strong-electrolyte"
+  },
+  {
+   "concept": "electrolytes-and-nonelectrolytes",
+   "prereq": "weak-electrolyte"
+  },
+  {
+   "concept": "classify-electrolyte-strength",
+   "prereq": "strong-electrolyte"
+  },
+  {
+   "concept": "classify-electrolyte-strength",
+   "prereq": "weak-electrolyte"
+  },
+  {
+   "concept": "classify-electrolyte-strength",
+   "prereq": "nonelectrolyte"
+  },
+  {
+   "concept": "solubility-and-saturation",
+   "prereq": "saturated-solution"
+  },
+  {
+   "concept": "solubility-and-saturation",
+   "prereq": "unsaturated-solution"
+  },
+  {
+   "concept": "supersaturated-solutions",
+   "prereq": "saturated-solution"
+  },
+  {
+   "concept": "miscibility",
+   "prereq": "miscible"
+  },
+  {
+   "concept": "miscibility",
+   "prereq": "immiscible"
+  },
+  {
+   "concept": "miscibility",
+   "prereq": "partially-miscible"
+  },
+  {
+   "concept": "molality-and-mole-fraction",
+   "prereq": "molality"
+  },
+  {
+   "concept": "boiling-point-elevation",
+   "prereq": "molality"
+  },
+  {
+   "concept": "freezing-point-depression",
+   "prereq": "molality"
+  },
+  {
+   "concept": "osmotic-pressure",
+   "prereq": "osmosis"
+  },
+  {
+   "concept": "osmotic-pressure",
+   "prereq": "semipermeable-membrane"
+  },
+  {
+   "concept": "vant-hoff-factor",
+   "prereq": "ion-pair"
+  },
+  {
+   "concept": "molar-mass-from-colligative-properties",
+   "prereq": "molality"
+  },
+  {
+   "concept": "colloids-solutions-and-suspensions",
+   "prereq": "colloid"
+  },
+  {
+   "concept": "colloids-solutions-and-suspensions",
+   "prereq": "suspension"
+  },
+  {
+   "concept": "dispersed-phase-and-medium",
+   "prereq": "dispersed-phase"
+  },
+  {
+   "concept": "dispersed-phase-and-medium",
+   "prereq": "dispersion-medium"
+  },
+  {
+   "concept": "colloid-preparation",
+   "prereq": "emulsion"
+  },
+  {
+   "concept": "colloid-preparation",
+   "prereq": "emulsifying-agent"
+  },
+  {
+   "concept": "soaps-and-detergents",
+   "prereq": "amphiphilic"
+  },
+  {
+   "concept": "soaps-and-detergents",
+   "prereq": "emulsifying-agent"
   }
  ]
 }

@@ -42,6 +42,7 @@
  "coverage": [
   {"span": "nomenclature", "concept": "name-ionic-compounds", "verb": "uses"},
   {"span": "nomenclature", "concept": "ionic-and-covalent-bonds", "verb": "uses"},
+  {"span": "nomenclature", "concept": "nomenclature", "verb": "introduces"},
   {"span": "ionic-compounds", "concept": "name-ionic-compounds", "verb": "introduces"},
   {"span": "ionic-compounds", "concept": "ionic-compounds", "verb": "uses"},
   {"span": "ionic-compounds", "concept": "polyatomic-ions", "verb": "uses"},
@@ -51,59 +52,93 @@
   {"span": "hydrates", "concept": "name-hydrates", "verb": "introduces"},
   {"span": "hydrates", "concept": "name-variable-charge-metal-compounds", "verb": "uses"},
   {"span": "hydrates", "concept": "polyatomic-ions", "verb": "uses"},
+  {"span": "hydrates", "concept": "hydrate", "verb": "introduces"},
   {"span": "molecular-compounds", "concept": "name-binary-molecular-compounds", "verb": "introduces"},
   {"span": "molecular-compounds", "concept": "molecular-compounds", "verb": "uses"},
+  {"span": "molecular-compounds", "concept": "binary-compound", "verb": "introduces"},
   {"span": "binary-acids", "concept": "name-binary-acids", "verb": "introduces"},
   {"span": "binary-acids", "concept": "name-binary-molecular-compounds", "verb": "uses"},
+  {"span": "binary-acids", "concept": "binary-acid", "verb": "introduces"},
   {"span": "oxyacids", "concept": "name-oxyacids", "verb": "introduces"},
-  {"span": "oxyacids", "concept": "polyatomic-ions", "verb": "uses"}
+  {"span": "oxyacids", "concept": "polyatomic-ions", "verb": "uses"},
+  {"span": "oxyacids", "concept": "oxyacid", "verb": "introduces"}
  ],
  "exercises": [
   {
-   "id": "cyl1", "source_id": "fs-idm194224", "kind": "check-your-learning", "bloom": "Apply",
+   "id": "cyl1",
+   "source_id": "fs-idm194224",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
    "place": {"at": "inline", "after": "ex-naming-ionic"},
    "prompt": "Write the formulas of the following ionic compounds:<br>(a) chromium(III) phosphide<br>(b) mercury(II) sulfide<br>(c) manganese(II) phosphate<br>(d) copper(I) oxide<br>(e) iron(III) chloride dihydrate",
    "answer": {"type": "open", "generated_by": "source", "solution": "(a) CrP; (b) HgS; (c) Mn<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>; (d) Cu<sub>2</sub>O; (e) FeCl<sub>3</sub>·2H<sub>2</sub>O"}
   },
   {
-   "id": "cyl2", "source_id": "fs-idm206240", "kind": "check-your-learning", "bloom": "Apply",
+   "id": "cyl2",
+   "source_id": "fs-idm206240",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
    "place": {"at": "inline", "after": "ex-naming-covalent"},
    "prompt": "Write the formulas for the following compounds:<br>(a) phosphorus pentachloride<br>(b) dinitrogen monoxide<br>(c) iodine heptafluoride<br>(d) carbon tetrachloride",
    "answer": {"type": "open", "generated_by": "source", "solution": "(a) PCl<sub>5</sub>; (b) N<sub>2</sub>O; (c) IF<sub>7</sub>; (d) CCl<sub>4</sub>"}
   },
   {
-   "id": "e1", "source_id": "fs-idp282297472", "kind": "exercise", "bloom": "Apply",
-   "place": {"at": "end"}, "cite": "ionic-compounds",
+   "id": "e1",
+   "source_id": "fs-idp282297472",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {"at": "end"},
+   "cite": "ionic-compounds",
    "prompt": "Name the following compounds:<br>(a) CsCl<br>(b) BaO<br>(c) K<sub>2</sub>S<br>(d) BeCl<sub>2</sub><br>(e) HBr<br>(f) AlF<sub>3</sub>",
    "answer": {"type": "open", "generated_by": "source", "solution": "(a) cesium chloride; (b) barium oxide; (c) potassium sulfide; (d) beryllium chloride; (e) hydrogen bromide; (f) aluminum fluoride"}
   },
   {
-   "id": "e2", "source_id": "fs-idm250352", "kind": "exercise", "bloom": "Apply",
-   "place": {"at": "end"}, "cite": "ionic-compounds",
+   "id": "e2",
+   "source_id": "fs-idm250352",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {"at": "end"},
+   "cite": "ionic-compounds",
    "prompt": "Write the formulas of the following compounds:<br>(a) rubidium bromide<br>(b) magnesium selenide<br>(c) sodium oxide<br>(d) calcium chloride<br>(e) hydrogen fluoride<br>(f) gallium phosphide<br>(g) aluminum bromide<br>(h) ammonium sulfate",
    "answer": {"type": "open", "generated_by": "source", "solution": "(a) RbBr; (b) MgSe; (c) Na<sub>2</sub>O; (d) CaCl<sub>2</sub>; (e) HF; (f) GaP; (g) AlBr<sub>3</sub>; (h) (NH<sub>4</sub>)<sub>2</sub>SO<sub>4</sub>"}
   },
   {
-   "id": "e3", "source_id": "fs-idp268321696", "kind": "exercise", "bloom": "Apply",
-   "place": {"at": "end"}, "cite": "molecular-compounds",
+   "id": "e3",
+   "source_id": "fs-idp268321696",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {"at": "end"},
+   "cite": "molecular-compounds",
    "prompt": "Write the formulas of the following compounds:<br>(a) chlorine dioxide<br>(b) dinitrogen tetraoxide<br>(c) potassium phosphide<br>(d) silver sulfide<br>(e) aluminum fluoride trihydrate<br>(f) silicon dioxide",
    "answer": {"type": "open", "generated_by": "source", "solution": "(a) ClO<sub>2</sub>; (b) N<sub>2</sub>O<sub>4</sub>; (c) K<sub>3</sub>P; (d) Ag<sub>2</sub>S; (e) AIF<sub>3</sub>·3H<sub>2</sub>O; (f) SiO<sub>2</sub>"}
   },
   {
-   "id": "e4", "source_id": "fs-idp279515392", "kind": "exercise", "bloom": "Apply",
-   "place": {"at": "end"}, "cite": "variable-charge",
+   "id": "e4",
+   "source_id": "fs-idp279515392",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {"at": "end"},
+   "cite": "variable-charge",
    "prompt": "Each of the following compounds contains a metal that can exhibit more than one ionic charge. Name these compounds:<br>(a) Cr<sub>2</sub>O<sub>3</sub><br>(b) FeCl<sub>2</sub><br>(c) CrO<sub>3</sub><br>(d) TiCl<sub>4</sub><br>(e) CoCl<sub>2</sub>·6H<sub>2</sub>O<br>(f) MoS<sub>2</sub>",
    "answer": {"type": "open", "generated_by": "source", "solution": "(a) chromium(III) oxide; (b) iron(II) chloride; (c) chromium(VI) oxide; (d) titanium(IV) chloride; (e) cobalt(II) chloride hexahydrate; (f) molybdenum(IV) sulfide"}
   },
   {
-   "id": "e5", "source_id": "fs-idp268365168", "kind": "exercise", "bloom": "Apply",
-   "place": {"at": "end"}, "cite": "ionic-compounds",
+   "id": "e5",
+   "source_id": "fs-idp268365168",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {"at": "end"},
+   "cite": "ionic-compounds",
    "prompt": "The following ionic compounds are found in common household products. Write the formulas for each compound:<br>(a) potassium phosphate<br>(b) copper(II) sulfate<br>(c) calcium chloride<br>(d) titanium(IV) oxide<br>(e) ammonium nitrate<br>(f) sodium bisulfate (the common name for sodium hydrogen sulfate)",
    "answer": {"type": "open", "generated_by": "source", "solution": "(a) K<sub>3</sub>PO<sub>4</sub>; (b) CuSO<sub>4</sub>; (c) CaCl<sub>2</sub>; (d) TiO<sub>2</sub>; (e) NH<sub>4</sub>NO<sub>3</sub>; (f) NaHSO<sub>4</sub>"}
   },
   {
-   "id": "e6", "source_id": "fs-idp268310912", "kind": "exercise", "bloom": "Apply",
-   "place": {"at": "end"}, "cite": "variable-charge",
+   "id": "e6",
+   "source_id": "fs-idp268310912",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {"at": "end"},
+   "cite": "variable-charge",
    "prompt": "What are the IUPAC names of the following compounds?<br>(a) manganese dioxide<br>(b) mercurous chloride (Hg<sub>2</sub>Cl<sub>2</sub>)<br>(c) ferric nitrate [Fe(NO<sub>3</sub>)<sub>3</sub>]<br>(d) titanium tetrachloride<br>(e) cupric bromide (CuBr<sub>2</sub>)",
    "answer": {"type": "open", "generated_by": "source", "solution": "(a) manganese(IV) oxide; (b) mercury(I) chloride; (c) iron(III) nitrate; (d) titanium(IV) chloride; (e) copper(II) bromide"}
   }

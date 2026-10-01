@@ -1,0 +1,490 @@
+{
+  "chapter": "ch14",
+  "kinds": {
+    "bronsted-lowry-acids-bases": "definition",
+    "conjugate-acid-base-pairs": "definition",
+    "write-ionization-equations": "skill",
+    "amphiprotic-species": "definition",
+    "water-autoionization": "idea",
+    "kw-ion-concentrations": "skill",
+    "acidic-basic-neutral": "definition",
+    "ph-and-poh-scales": "definition",
+    "ph-plus-poh": "result",
+    "ph-calculations": "skill",
+    "measuring-ph": "idea",
+    "acid-base-ionization-constants": "definition",
+    "percent-ionization": "definition",
+    "conjugate-pair-strengths": "result",
+    "leveling-effect": "idea",
+    "ka-kb-from-equilibrium-data": "skill",
+    "weak-acid-base-equilibrium-concentrations": "skill",
+    "binary-acid-strength": "result",
+    "oxyacid-strength": "result",
+    "salt-ion-acidity": "result",
+    "predict-salt-solution-ph": "skill",
+    "salt-solution-calculations": "skill",
+    "hydrated-metal-ion-acidity": "idea",
+    "polyprotic-acids": "idea",
+    "stepwise-ionization-calculations": "skill",
+    "polyprotic-bases": "idea",
+    "buffer-composition": "definition",
+    "how-buffers-work": "idea",
+    "buffer-ph-calculations": "skill",
+    "buffer-capacity": "definition",
+    "henderson-hasselbalch": "result",
+    "titration-curve": "idea",
+    "strong-acid-titration-ph": "skill",
+    "weak-acid-titration-ph": "skill",
+    "acid-base-indicators": "idea",
+    "choose-indicator": "skill"
+  },
+  "statements": {
+    "buffer-capacity": "The buffer capacity is the amount of acid or base that can be added to a given volume of a buffer before its pH changes significantly. A buffer can neutralize only as much acid or base as it has of the conjugate partner that consumes it, so its capacity depends on the amounts of both components; weak acids and their salts suit pHs below 7, and weak bases and their salts suit pHs above 7."
+  },
+  "new": [
+    {
+      "id": "bronsted-lowry-acid",
+      "kind": "definition",
+      "section": "14.1",
+      "name": "Brønsted-Lowry acid",
+      "statement": "A Brønsted-Lowry acid is a compound that donates a proton (H<sup>+</sup>) to another compound.",
+      "introduces": null,
+      "prereqs": [
+        "bronsted-lowry-acids-bases"
+      ]
+    },
+    {
+      "id": "bronsted-lowry-base",
+      "kind": "definition",
+      "section": "14.1",
+      "name": "Brønsted-Lowry base",
+      "statement": "A Brønsted-Lowry base is a compound that accepts a proton (H<sup>+</sup>) from another compound.",
+      "introduces": null,
+      "prereqs": [
+        "bronsted-lowry-acids-bases"
+      ]
+    },
+    {
+      "id": "conjugate-acid",
+      "kind": "definition",
+      "section": "14.1",
+      "name": "Conjugate acid",
+      "statement": "The conjugate acid of a base is the species formed when the base accepts a proton.",
+      "introduces": null,
+      "prereqs": [
+        "conjugate-acid-base-pairs",
+        "bronsted-lowry-base"
+      ]
+    },
+    {
+      "id": "conjugate-base",
+      "kind": "definition",
+      "section": "14.1",
+      "name": "Conjugate base",
+      "statement": "The conjugate base of an acid is the species formed when the acid donates a proton.",
+      "introduces": null,
+      "prereqs": [
+        "conjugate-acid-base-pairs",
+        "bronsted-lowry-acid"
+      ]
+    },
+    {
+      "id": "acid-ionization",
+      "kind": "definition",
+      "section": "14.1",
+      "name": "Acid ionization",
+      "statement": "Acid ionization is the reaction of an acid with water, yielding hydronium ion and the conjugate base of the acid.",
+      "introduces": null,
+      "prereqs": [
+        "bronsted-lowry-acid",
+        "conjugate-base"
+      ]
+    },
+    {
+      "id": "base-ionization",
+      "kind": "definition",
+      "section": "14.1",
+      "name": "Base ionization",
+      "statement": "Base ionization is the reaction of a base with water, yielding hydroxide ion and the conjugate acid of the base.",
+      "introduces": null,
+      "prereqs": [
+        "bronsted-lowry-base",
+        "conjugate-acid"
+      ]
+    },
+    {
+      "id": "amphoteric",
+      "kind": "definition",
+      "section": "14.1",
+      "name": "Amphoteric",
+      "statement": "An amphoteric species is one that can act as either an acid or a base.",
+      "introduces": null,
+      "prereqs": [
+        "acids-and-bases"
+      ]
+    },
+    {
+      "id": "autoionization",
+      "kind": "definition",
+      "section": "14.1",
+      "name": "Autoionization",
+      "statement": "Autoionization is a reaction between identical species that yields ionic products; for water, two molecules react to give a hydronium ion and a hydroxide ion.",
+      "introduces": null,
+      "prereqs": [
+        "bronsted-lowry-acids-bases"
+      ]
+    },
+    {
+      "id": "ion-product-constant-for-water",
+      "kind": "definition",
+      "section": "14.1",
+      "name": "The ion-product constant for water, $K_{\\text{w}}$",
+      "statement": "The ion-product constant for water, $K_{\\text{w}}$, is the equilibrium constant for the autoionization of water, the product of the hydronium and hydroxide ion concentrations; it is 1.0 × 10<sup>−14</sup> at 25 °C.",
+      "introduces": null,
+      "prereqs": [
+        "autoionization",
+        "equilibrium-constant",
+        "molarity"
+      ]
+    },
+    {
+      "id": "acidic-solution",
+      "kind": "definition",
+      "section": "14.2",
+      "name": "Acidic solution",
+      "statement": "An acidic solution contains a greater concentration of hydronium ions than hydroxide ions.",
+      "introduces": null,
+      "prereqs": [
+        "acidic-basic-neutral",
+        "molarity"
+      ]
+    },
+    {
+      "id": "basic-solution",
+      "kind": "definition",
+      "section": "14.2",
+      "name": "Basic solution",
+      "statement": "A basic solution contains a lesser concentration of hydronium ions than hydroxide ions.",
+      "introduces": null,
+      "prereqs": [
+        "acidic-basic-neutral",
+        "molarity"
+      ]
+    },
+    {
+      "id": "neutral-solution",
+      "kind": "definition",
+      "section": "14.2",
+      "name": "Neutral solution",
+      "statement": "A neutral solution contains equal concentrations of hydronium and hydroxide ions.",
+      "introduces": null,
+      "prereqs": [
+        "acidic-basic-neutral",
+        "molarity"
+      ]
+    },
+    {
+      "id": "ph",
+      "kind": "definition",
+      "section": "14.2",
+      "name": "pH, $\\text{pH}=-\\log[\\text{H}_3\\text{O}^+]$",
+      "statement": "The pH of a solution is the negative base-10 logarithm of its hydronium ion molarity.",
+      "introduces": null,
+      "prereqs": [
+        "ph-and-poh-scales",
+        "molarity"
+      ]
+    },
+    {
+      "id": "poh",
+      "kind": "definition",
+      "section": "14.2",
+      "name": "pOH, $\\text{pOH}=-\\log[\\text{OH}^-]$",
+      "statement": "The pOH of a solution is the negative base-10 logarithm of its hydroxide ion molarity.",
+      "introduces": null,
+      "prereqs": [
+        "ph-and-poh-scales",
+        "molarity"
+      ]
+    },
+    {
+      "id": "acid-ionization-constant",
+      "kind": "definition",
+      "section": "14.3",
+      "name": "The acid ionization constant, $K_{\\text{a}}$",
+      "statement": "The acid ionization constant, $K_{\\text{a}}$, is the equilibrium constant for the ionization of a weak acid; its negative logarithm is p$K_{\\text{a}}$.",
+      "introduces": null,
+      "prereqs": [
+        "acid-base-ionization-constants",
+        "acid-ionization",
+        "equilibrium-constant"
+      ]
+    },
+    {
+      "id": "base-ionization-constant",
+      "kind": "definition",
+      "section": "14.3",
+      "name": "The base ionization constant, $K_{\\text{b}}$",
+      "statement": "The base ionization constant, $K_{\\text{b}}$, is the equilibrium constant for the ionization of a weak base; its negative logarithm is p$K_{\\text{b}}$.",
+      "introduces": null,
+      "prereqs": [
+        "acid-base-ionization-constants",
+        "base-ionization",
+        "equilibrium-constant"
+      ]
+    },
+    {
+      "id": "monoprotic-acid",
+      "kind": "definition",
+      "section": "14.5",
+      "name": "Monoprotic acid",
+      "statement": "A monoprotic acid is an acid containing one ionizable hydrogen atom per molecule.",
+      "introduces": null,
+      "prereqs": [
+        "bronsted-lowry-acid"
+      ]
+    },
+    {
+      "id": "diprotic-acid",
+      "kind": "definition",
+      "section": "14.5",
+      "name": "Diprotic acid",
+      "statement": "A diprotic acid is an acid containing two ionizable hydrogen atoms per molecule.",
+      "introduces": null,
+      "prereqs": [
+        "bronsted-lowry-acid",
+        "polyprotic-acids"
+      ]
+    },
+    {
+      "id": "triprotic-acid",
+      "kind": "definition",
+      "section": "14.5",
+      "name": "Triprotic acid",
+      "statement": "A triprotic acid is an acid that contains three ionizable hydrogen atoms per molecule.",
+      "introduces": null,
+      "prereqs": [
+        "bronsted-lowry-acid",
+        "polyprotic-acids"
+      ]
+    },
+    {
+      "id": "diprotic-base",
+      "kind": "definition",
+      "section": "14.5",
+      "name": "Diprotic base",
+      "statement": "A diprotic base is a base capable of accepting two protons.",
+      "introduces": null,
+      "prereqs": [
+        "bronsted-lowry-base",
+        "polyprotic-bases"
+      ]
+    },
+    {
+      "id": "stepwise-ionization",
+      "kind": "definition",
+      "section": "14.5",
+      "name": "Stepwise ionization",
+      "statement": "Stepwise ionization is the process in which an acid is ionized by losing protons sequentially, one at a time.",
+      "introduces": null,
+      "prereqs": [
+        "acid-ionization",
+        "polyprotic-acids"
+      ]
+    },
+    {
+      "id": "color-change-interval",
+      "kind": "definition",
+      "section": "14.7",
+      "name": "Color-change interval",
+      "statement": "The color-change interval of an indicator is the range in pH over which its color change occurs.",
+      "introduces": null,
+      "prereqs": [
+        "acid-base-indicators",
+        "ph"
+      ]
+    }
+  ],
+  "glossary": {
+    "14.1/acid ionization": "acid-ionization",
+    "14.1/amphiprotic": "amphiprotic-species",
+    "14.1/amphoteric": "amphoteric",
+    "14.1/autoionization": "autoionization",
+    "14.1/base ionization": "base-ionization",
+    "14.1/Brønsted-Lowry acid": "bronsted-lowry-acid",
+    "14.1/Brønsted-Lowry base": "bronsted-lowry-base",
+    "14.1/conjugate acid": "conjugate-acid",
+    "14.1/conjugate base": "conjugate-base",
+    "14.1/ion-product constant for water": "ion-product-constant-for-water",
+    "14.2/acidic": "acidic-solution",
+    "14.2/basic": "basic-solution",
+    "14.2/neutral": "neutral-solution",
+    "14.2/pH": "ph",
+    "14.2/pOH": "poh",
+    "14.3/acid ionization constant": "acid-ionization-constant",
+    "14.3/base ionization constant": "base-ionization-constant",
+    "14.3/leveling effect": "leveling-effect",
+    "14.3/oxyacid": "oxyacid",
+    "14.3/percent ionization": "percent-ionization",
+    "14.5/diprotic acid": "diprotic-acid",
+    "14.5/diprotic base": "diprotic-base",
+    "14.5/monoprotic acid": "monoprotic-acid",
+    "14.5/stepwise ionization": "stepwise-ionization",
+    "14.5/triprotic acid": "triprotic-acid",
+    "14.6/buffer capacity": "buffer-capacity",
+    "14.6/buffer": "buffer-composition",
+    "14.6/Henderson-Hasselbalch equation": "henderson-hasselbalch",
+    "14.7/acid-base indicator": "acid-base-indicators",
+    "14.7/color-change interval": "color-change-interval",
+    "14.7/titration curve": "titration-curve"
+  },
+  "variables": {
+    "14.1/[H3O+]": "molarity",
+    "14.1/[OH-]": "molarity",
+    "14.1/K_w": "ion-product-constant-for-water",
+    "14.1/x_ice": "ice-change-terms",
+    "14.2/pH": "ph",
+    "14.2/pOH": "poh",
+    "14.2/pK_w": "ion-product-constant-for-water",
+    "14.3/K_a": "acid-ionization-constant",
+    "14.3/K_b_ion": "base-ionization-constant",
+    "14.3/[HA]": "molarity",
+    "14.3/[A-]": "molarity",
+    "14.3/[B]": "molarity",
+    "14.3/[HB+]": "molarity",
+    "14.3/[HA]_0": "molarity",
+    "14.3/[H3O+]_eq": "molarity",
+    "14.3/x_ice": "ice-change-terms",
+    "14.5/K_a1": "acid-ionization-constant",
+    "14.5/K_a2": "acid-ionization-constant",
+    "14.5/K_a3": "acid-ionization-constant",
+    "14.5/K_b1": "base-ionization-constant",
+    "14.5/K_b2": "base-ionization-constant",
+    "14.6/pK_a": "acid-ionization-constant",
+    "14.6/pK_b": "base-ionization-constant",
+    "14.6/pH": "ph",
+    "14.6/[HA]": "molarity",
+    "14.6/[A-]": "molarity",
+    "14.7/V": "volume",
+    "14.7/n": "mole",
+    "14.7/pH": "ph",
+    "14.7/pK_a": "acid-ionization-constant"
+  },
+  "equations": {
+    "eq-kw": "ion-product-constant-for-water",
+    "eq-ph": "ph",
+    "eq-h3o-from-ph": "ph",
+    "eq-poh": "poh",
+    "eq-oh-from-poh": "poh",
+    "eq-ph-plus-poh": "ph-plus-poh",
+    "eq-ka": "acid-ionization-constant",
+    "eq-kb": "base-ionization-constant",
+    "eq-ka-kb-kw": "conjugate-pair-strengths",
+    "eq-percent-ionization": "percent-ionization",
+    "eq-pka": "acid-ionization-constant",
+    "eq-pkb": "base-ionization-constant",
+    "eq-henderson-hasselbalch": "henderson-hasselbalch"
+  },
+  "edges": [
+    [
+      "write-ionization-equations",
+      "acid-ionization"
+    ],
+    [
+      "write-ionization-equations",
+      "base-ionization"
+    ],
+    [
+      "water-autoionization",
+      "autoionization"
+    ],
+    [
+      "water-autoionization",
+      "ion-product-constant-for-water"
+    ],
+    [
+      "kw-ion-concentrations",
+      "ion-product-constant-for-water"
+    ],
+    [
+      "ph-plus-poh",
+      "ph"
+    ],
+    [
+      "ph-plus-poh",
+      "poh"
+    ],
+    [
+      "ph-calculations",
+      "ph"
+    ],
+    [
+      "ph-calculations",
+      "poh"
+    ],
+    [
+      "percent-ionization",
+      "acid-ionization"
+    ],
+    [
+      "conjugate-pair-strengths",
+      "acid-ionization-constant"
+    ],
+    [
+      "conjugate-pair-strengths",
+      "base-ionization-constant"
+    ],
+    [
+      "ka-kb-from-equilibrium-data",
+      "acid-ionization-constant"
+    ],
+    [
+      "ka-kb-from-equilibrium-data",
+      "base-ionization-constant"
+    ],
+    [
+      "weak-acid-base-equilibrium-concentrations",
+      "acid-ionization-constant"
+    ],
+    [
+      "weak-acid-base-equilibrium-concentrations",
+      "base-ionization-constant"
+    ],
+    [
+      "stepwise-ionization-calculations",
+      "stepwise-ionization"
+    ],
+    [
+      "henderson-hasselbalch",
+      "ph"
+    ],
+    [
+      "henderson-hasselbalch",
+      "acid-ionization-constant"
+    ],
+    [
+      "buffer-ph-calculations",
+      "ph"
+    ],
+    [
+      "strong-acid-titration-ph",
+      "ph"
+    ],
+    [
+      "weak-acid-titration-ph",
+      "ph"
+    ],
+    [
+      "weak-acid-titration-ph",
+      "acid-ionization-constant"
+    ],
+    [
+      "titration-curve",
+      "ph"
+    ],
+    [
+      "choose-indicator",
+      "color-change-interval"
+    ]
+  ]
+}

@@ -139,6 +139,11 @@
    "verb": "uses"
   },
   {
+   "span": "molecular-formula",
+   "concept": "structural-formula",
+   "verb": "introduces"
+  },
+  {
    "span": "elemental-molecules",
    "concept": "molecular-formula",
    "verb": "reinforces"
@@ -179,6 +184,11 @@
    "verb": "uses"
   },
   {
+   "span": "empirical-formula",
+   "concept": "empirical-formula-of-a-compound",
+   "verb": "introduces"
+  },
+  {
    "span": "empirical-from-molecular",
    "concept": "empirical-formula-from-molecular-formula",
    "verb": "reinforces"
@@ -204,9 +214,19 @@
    "verb": "uses"
   },
   {
+   "span": "isomers",
+   "concept": "structural-isomer",
+   "verb": "introduces"
+  },
+  {
    "span": "spatial-isomers",
    "concept": "isomers",
    "verb": "reinforces"
+  },
+  {
+   "span": "spatial-isomers",
+   "concept": "spatial-isomer",
+   "verb": "introduces"
   }
  ],
  "exercises": [

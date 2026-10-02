@@ -17,7 +17,6 @@
       "kind": "idea",
       "section": "4.1",
       "name": "Coefficients give relative numbers",
-      "symbol": "n_coef",
       "statement": "The coefficients of a balanced equation state the relative numbers of reactant and product species, so they may be read as ratios in any amount unit: one molecule of methane and two of oxygen, one dozen and two dozen, or one mole and two moles. Note that the convention is to use the smallest whole-number coefficients, and that this reading is what makes an equation a statement about amounts rather than only about identities."
     },
     {

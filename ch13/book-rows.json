@@ -123,7 +123,6 @@
    "kind": "result",
    "section": "13.2",
    "name": "Relating Kp and Kc",
-   "symbol": "Δn_gas",
    "statement": "Since the partial pressure of an ideal gas is $P = MRT$, each pressure in $K_{P}$ is a concentration times $RT$, and the factors collect into $(RT)^{\\Delta n}$, where $\\Delta n$ is the difference in the molar amounts of product and reactant gases.",
    "forms": [
     {
@@ -268,7 +267,6 @@
    "kind": "skill",
    "section": "13.4",
    "name": "Relating concentration changes",
-   "symbol": "x_ice",
    "statement": "Whatever the initial composition, the changes in the concentrations of the species in an equilibrium are related by the reaction stoichiometry, so all of them can be written as multiples of one unknown, $x$."
   },
   {

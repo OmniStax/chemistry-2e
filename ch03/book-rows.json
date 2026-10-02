@@ -133,7 +133,6 @@
       "kind": "skill",
       "section": "3.2",
       "name": "Deriving a molecular formula",
-      "symbol": "n_fu",
       "statement": "An empirical formula gives only the relative numbers of atoms. Dividing the molecular or molar mass by the empirical formula mass gives the number of formula units in each molecule, and multiplying every subscript by that number gives the molecular formula.",
       "forms": [
         {

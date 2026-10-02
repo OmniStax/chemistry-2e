@@ -112,7 +112,6 @@
       "kind": "axiom",
       "section": "6.1",
       "name": "Photon energy",
-      "symbol": "E",
       "statement": "Light is absorbed and emitted in discrete packets called photons, and the energy of one photon is set by the frequency of the radiation, E = hν, or equivalently by its wavelength, E = hc/λ.",
       "forms": [
         {
@@ -146,7 +145,6 @@
       "kind": "result",
       "section": "6.1",
       "name": "Wave speed",
-      "symbol": "c",
       "statement": "The product of a wave's wavelength and its frequency is its speed, and for electromagnetic radiation in a vacuum that speed is the constant c. Wavelength and frequency are therefore inversely proportional: as one increases, the other decreases, and either one may be found from the other.",
       "forms": [
         {
@@ -180,7 +178,6 @@
       "kind": "idea",
       "section": "6.1",
       "name": "Blackbody radiation and Planck’s quantized energies",
-      "symbol": "h",
       "statement": "A heated object gives off a continuous spectrum whose distribution depends only on its temperature, and the peak of the curve moves to shorter wavelengths as the temperature rises. Classical theory predicted an intensity that grows without limit at short wavelengths, the ultraviolet catastrophe; Planck fitted the observed curves by restricting the vibrational energies to discrete values, E = nhν, which was the first appearance of energy quantization.",
       "forms": [
         {
@@ -363,7 +360,6 @@
       "kind": "axiom",
       "section": "6.1",
       "name": "Rydberg equation",
-      "symbol": "R_inf",
       "statement": "The wavelengths of all the lines in the spectrum of hydrogen fit one empirical equation: one over the wavelength is the Rydberg constant times the difference of the reciprocal squares of two integers, n₁ less than n₂. Balmer's equation for the four visible lines is the case n₁ = 2.",
       "forms": [
         {
@@ -438,7 +434,6 @@
       "kind": "result",
       "section": "6.2",
       "name": "Emission and absorption of a photon",
-      "symbol": "ΔE",
       "statement": "When an electron moves between two allowed orbits, the atom emits or absorbs a single photon whose energy equals the difference between the two orbital energies. Falling to a lower orbit emits the photon, and absorbing one moves the electron up. Energy can be neither created nor destroyed, so the energy needed to lift an electron from one level to another equals the energy released when it returns. We use the absolute value of the difference because a frequency and a wavelength are always positive.",
       "forms": [
         {
@@ -462,7 +457,6 @@
       "kind": "result",
       "section": "6.2",
       "name": "Bohr orbit radius",
-      "symbol": "r",
       "statement": "The radii of the allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises. They are measured in units of the Bohr radius, the radius of hydrogen’s ground-state orbit. As the electron’s energy increases, it is found farther from the nucleus. The electrostatic attraction weakens with distance, so an electron farther out is held less tightly.",
       "forms": [
         {
@@ -559,7 +553,6 @@
       "kind": "axiom",
       "section": "6.3",
       "name": "De Broglie wavelength",
-      "symbol": "λ",
       "statement": "De Broglie extended wave-particle duality to matter: a particle of mass m moving with velocity v behaves as a wave whose wavelength is Planck's constant divided by its momentum. The wavelength of an electron in an atom is about the size of the atom, so its wavelike behavior is noticeable there, while that of a softball is far too small to detect. Viewed as a circular standing wave, an electron fits an orbit only when a whole number of its wavelengths fits the circumference, which explains Bohr's quantization.",
       "forms": [
         {

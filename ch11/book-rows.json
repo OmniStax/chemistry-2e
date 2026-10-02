@@ -277,7 +277,6 @@
    "kind": "axiom",
    "section": "11.3",
    "name": "Henry’s law",
-   "symbol": "k_H",
    "terms": [
     "Henry’s law"
    ],
@@ -385,7 +384,6 @@
    "kind": "axiom",
    "section": "11.4",
    "name": "Raoult’s law and vapor pressure lowering",
-   "symbol": "ΔP_vp",
    "terms": [
     "Raoult’s law"
    ],
@@ -466,7 +464,6 @@
    "kind": "result",
    "section": "11.4",
    "name": "Osmosis and osmotic pressure",
-   "symbol": "Π",
    "terms": [
     "osmotic pressure"
    ],

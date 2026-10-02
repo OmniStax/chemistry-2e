@@ -439,7 +439,6 @@
       "kind": "result",
       "section": "9.2",
       "name": "Ideal gas law",
-      "symbol": "R",
       "terms": [
         "ideal gas law"
       ],
@@ -778,7 +777,6 @@
       "kind": "result",
       "section": "9.5",
       "name": "Root mean square speed",
-      "symbol": "u_rms",
       "terms": [
         "root mean square speed (u_rms)"
       ],

@@ -219,7 +219,6 @@
    "kind": "result",
    "section": "10.2",
    "name": "Capillary rise",
-   "symbol": "θ_contact",
    "statement": "The height to which a liquid rises in a capillary tube is directly proportional to its surface tension and to the cosine of the contact angle, and inversely proportional to the radius of the tube and the density of the liquid. For water in glass the contact angle is 0°.",
    "forms": [
     {
@@ -286,7 +285,6 @@
    "kind": "result",
    "section": "10.3",
    "name": "Clausius-Clapeyron equation",
-   "symbol": "A_cc",
    "terms": [
     "Clausius-Clapeyron equation"
    ],

@@ -2064,7 +2064,6 @@
       "kind": "axiom",
       "section": "2.2",
       "name": "Millikan’s fundamental charge",
-      "symbol": "e",
       "terms": [
         "fundamental unit of charge"
       ],
@@ -2943,7 +2942,6 @@
       "kind": "result",
       "section": "10.2",
       "name": "Capillary rise",
-      "symbol": "θ_contact",
       "statement": "The height to which a liquid rises in a capillary tube is directly proportional to its surface tension and to the cosine of the contact angle, and inversely proportional to the radius of the tube and the density of the liquid. For water in glass the contact angle is 0°.",
       "forms": [
         {
@@ -3010,7 +3008,6 @@
       "kind": "result",
       "section": "10.3",
       "name": "Clausius-Clapeyron equation",
-      "symbol": "A_cc",
       "terms": [
         "Clausius-Clapeyron equation"
       ],
@@ -3596,7 +3593,6 @@
       "kind": "idea",
       "section": "4.1",
       "name": "Coefficients give relative numbers",
-      "symbol": "n_coef",
       "statement": "The coefficients of a balanced equation state the relative numbers of reactant and product species, so they may be read as ratios in any amount unit: one molecule of methane and two of oxygen, one dozen and two dozen, or one mole and two moles. Note that the convention is to use the smallest whole-number coefficients, and that this reading is what makes an equation a statement about amounts rather than only about identities."
     },
     {
@@ -4606,7 +4602,6 @@
       "kind": "result",
       "section": "5.3",
       "name": "Enthalpy change at constant pressure",
-      "symbol": "ΔH",
       "statement": "Enthalpy is the sum of a system's internal energy and the product of its pressure and volume. For a process at constant pressure whose only work is expansion work, the enthalpy change equals the heat flow, which is why chemists, who usually work at the constant pressure of the atmosphere, use enthalpy to describe the heat of a reaction. The heat measured in a bomb calorimeter, at constant volume, is not ΔH.",
       "forms": [
         {
@@ -4900,7 +4895,6 @@
       "kind": "skill",
       "section": "3.2",
       "name": "Deriving a molecular formula",
-      "symbol": "n_fu",
       "statement": "An empirical formula gives only the relative numbers of atoms. Dividing the molecular or molar mass by the empirical formula mass gives the number of formula units in each molecule, and multiplying every subscript by that number gives the molecular formula.",
       "forms": [
         {
@@ -5390,7 +5384,6 @@
       "kind": "idea",
       "section": "7.2",
       "name": "Polar covalent bonds and electronegativity",
-      "symbol": "Q_partial",
       "statement": "When two bonded atoms differ in electronegativity, the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference sets the size of the bond's dipole moment."
     },
     {
@@ -6187,7 +6180,6 @@
       "kind": "axiom",
       "section": "6.1",
       "name": "Photon energy",
-      "symbol": "E",
       "statement": "Light is absorbed and emitted in discrete packets called photons, and the energy of one photon is set by the frequency of the radiation, E = hν, or equivalently by its wavelength, E = hc/λ.",
       "forms": [
         {
@@ -6221,7 +6213,6 @@
       "kind": "result",
       "section": "6.1",
       "name": "Wave speed",
-      "symbol": "c",
       "statement": "The product of a wave's wavelength and its frequency is its speed, and for electromagnetic radiation in a vacuum that speed is the constant c. Wavelength and frequency are therefore inversely proportional: as one increases, the other decreases, and either one may be found from the other.",
       "forms": [
         {
@@ -6255,7 +6246,6 @@
       "kind": "idea",
       "section": "6.1",
       "name": "Blackbody radiation and Planck’s quantized energies",
-      "symbol": "h",
       "statement": "A heated object gives off a continuous spectrum whose distribution depends only on its temperature, and the peak of the curve moves to shorter wavelengths as the temperature rises. Classical theory predicted an intensity that grows without limit at short wavelengths, the ultraviolet catastrophe; Planck fitted the observed curves by restricting the vibrational energies to discrete values, E = nhν, which was the first appearance of energy quantization.",
       "forms": [
         {
@@ -6438,7 +6428,6 @@
       "kind": "axiom",
       "section": "6.1",
       "name": "Rydberg equation",
-      "symbol": "R_inf",
       "statement": "The wavelengths of all the lines in the spectrum of hydrogen fit one empirical equation: one over the wavelength is the Rydberg constant times the difference of the reciprocal squares of two integers, n₁ less than n₂. Balmer's equation for the four visible lines is the case n₁ = 2.",
       "forms": [
         {
@@ -6513,7 +6502,6 @@
       "kind": "result",
       "section": "6.2",
       "name": "Emission and absorption of a photon",
-      "symbol": "ΔE",
       "statement": "When an electron moves between two allowed orbits, the atom emits or absorbs a single photon whose energy equals the difference between the two orbital energies. Falling to a lower orbit emits the photon, and absorbing one moves the electron up. Energy can be neither created nor destroyed, so the energy needed to lift an electron from one level to another equals the energy released when it returns. We use the absolute value of the difference because a frequency and a wavelength are always positive.",
       "forms": [
         {
@@ -6537,7 +6525,6 @@
       "kind": "result",
       "section": "6.2",
       "name": "Bohr orbit radius",
-      "symbol": "r",
       "statement": "The radii of the allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises. They are measured in units of the Bohr radius, the radius of hydrogen’s ground-state orbit. As the electron’s energy increases, it is found farther from the nucleus. The electrostatic attraction weakens with distance, so an electron farther out is held less tightly.",
       "forms": [
         {
@@ -6634,7 +6621,6 @@
       "kind": "axiom",
       "section": "6.3",
       "name": "De Broglie wavelength",
-      "symbol": "λ",
       "statement": "De Broglie extended wave-particle duality to matter: a particle of mass m moving with velocity v behaves as a wave whose wavelength is Planck's constant divided by its momentum. The wavelength of an electron in an atom is about the size of the atom, so its wavelike behavior is noticeable there, while that of a softball is far too small to detect. Viewed as a circular standing wave, an electron fits an orbit only when a whole number of its wavelengths fits the circumference, which explains Bohr's quantization.",
       "forms": [
         {
@@ -7310,7 +7296,6 @@
       "kind": "axiom",
       "section": "11.3",
       "name": "Henry’s law",
-      "symbol": "k_H",
       "terms": [
         "Henry’s law"
       ],
@@ -7418,7 +7403,6 @@
       "kind": "axiom",
       "section": "11.4",
       "name": "Raoult’s law and vapor pressure lowering",
-      "symbol": "ΔP_vp",
       "terms": [
         "Raoult’s law"
       ],
@@ -7499,7 +7483,6 @@
       "kind": "result",
       "section": "11.4",
       "name": "Osmosis and osmotic pressure",
-      "symbol": "Π",
       "terms": [
         "osmotic pressure"
       ],
@@ -8043,7 +8026,6 @@
       "kind": "result",
       "section": "9.2",
       "name": "Ideal gas law",
-      "symbol": "R",
       "terms": [
         "ideal gas law"
       ],
@@ -8382,7 +8364,6 @@
       "kind": "result",
       "section": "9.5",
       "name": "Root mean square speed",
-      "symbol": "u_rms",
       "terms": [
         "root mean square speed (u_rms)"
       ],
@@ -9155,7 +9136,6 @@
       "kind": "result",
       "section": "13.2",
       "name": "Relating Kp and Kc",
-      "symbol": "Δn_gas",
       "statement": "Since the partial pressure of an ideal gas is $P = MRT$, each pressure in $K_{P}$ is a concentration times $RT$, and the factors collect into $(RT)^{\\Delta n}$, where $\\Delta n$ is the difference in the molar amounts of product and reactant gases.",
       "forms": [
         {
@@ -9300,7 +9280,6 @@
       "kind": "skill",
       "section": "13.4",
       "name": "Relating concentration changes",
-      "symbol": "x_ice",
       "statement": "Whatever the initial composition, the changes in the concentrations of the species in an equilibrium are related by the reaction stoichiometry, so all of them can be written as multiples of one unknown, $x$."
     },
     {

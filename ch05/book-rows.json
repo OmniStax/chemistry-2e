@@ -18,7 +18,7 @@
       "id": "energy-and-work",
       "kind": "definition",
       "section": "5.1",
-      "name": "Energy as the capacity to supply heat or do work",
+      "name": "Energy",
       "symbol": "E",
       "terms": [
         "energy"
@@ -36,7 +36,7 @@
       "id": "conservation-of-energy",
       "kind": "axiom",
       "section": "5.1",
-      "name": "The law of conservation of energy",
+      "name": "Law of conservation of energy",
       "statement": "During a chemical or physical change, energy can be neither created nor destroyed, although it can be changed in form. The heat a reaction gives off must therefore turn up somewhere else."
     },
     {
@@ -50,7 +50,7 @@
       "id": "heat-flow",
       "kind": "definition",
       "section": "5.1",
-      "name": "Heat as the transfer of thermal energy",
+      "name": "Heat",
       "symbol": "q",
       "terms": [
         "heat"
@@ -68,8 +68,8 @@
       "id": "energy-units",
       "kind": "skill",
       "section": "5.1",
-      "name": "Converting between joules, calories, and Calories",
-      "statement": "The SI unit of energy is the joule, but the calorie is still frequently used, and food energy is quoted in Calories, each of which is a kilocalorie. Since 1 calorie is defined as exactly 4.184 joules, the reader must move between these units with ease to read a food label or to compare a result given in either."
+      "name": "Converting energy units",
+      "statement": "The SI unit of energy is the joule, but chemists still frequently use the calorie, and food labels give energy in Calories, each of which is a kilocalorie. One calorie is exactly 4.184 joules. Move between these units with ease to read a food label or to compare results given in either."
     },
     {
       "id": "heat-capacity-and-specific-heat",
@@ -82,7 +82,7 @@
       "id": "heat-specific-heat-relation",
       "kind": "result",
       "section": "5.1",
-      "name": "Heat, specific heat, mass, and temperature change, $q = c \\times m \\times \\Delta T$",
+      "name": "Heat and specific heat",
       "statement": "The heat entering or leaving a substance is the product of its specific heat, its mass, and its temperature change, taken as the final temperature minus the initial one. The sign of q follows from that difference, positive when the substance warms and negative when it cools, and any one of the four quantities can be found when the other three are known.",
       "forms": [
         {
@@ -129,7 +129,7 @@
       "id": "kinetic-energy",
       "kind": "definition",
       "section": "5.1",
-      "name": "Kinetic energy, $KE = \\frac{1}{2}mv^2$",
+      "name": "Kinetic energy",
       "symbol": "KE",
       "terms": [
         "kinetic energy"
@@ -143,6 +143,10 @@
           "condition": "a particle of mass m moving at speed u",
           "section": "9.5",
           "anchor": "9.5-speeds"
+        },
+        {
+          "id": "eq-kinetic-energy-2",
+          "latex": "KE = \\frac{1}{2}mv^2"
         }
       ]
     },
@@ -180,27 +184,39 @@
       "id": "joule",
       "kind": "definition",
       "section": "5.1",
-      "name": "The joule, $1\\ \\text{J} = 1\\ \\text{kg m}^2/\\text{s}^2$",
+      "name": "Joule",
       "terms": [
         "joule (J)"
       ],
-      "statement": "The joule is the SI unit of energy, the energy used when a force of 1 newton moves an object 1 meter."
+      "statement": "The joule is the SI unit of energy, the energy used when a force of 1 newton moves an object 1 meter.",
+      "forms": [
+        {
+          "id": "eq-joule",
+          "latex": "1\\ \\text{J} = 1\\ \\text{kg m}^2/\\text{s}^2"
+        }
+      ]
     },
     {
       "id": "calorie",
       "kind": "definition",
       "section": "5.1",
-      "name": "The calorie, $1\\ \\text{cal} = 4.184\\ \\text{J}$",
+      "name": "Calorie",
       "terms": [
         "calorie (cal)"
       ],
-      "statement": "The calorie is a unit of heat or other energy, the amount of energy required to raise 1 gram of water by 1 degree Celsius. One calorie is exactly 4.184 joules."
+      "statement": "The calorie is a unit of heat or other energy, the amount of energy required to raise 1 gram of water by 1 degree Celsius. One calorie is exactly 4.184 joules.",
+      "forms": [
+        {
+          "id": "eq-calorie",
+          "latex": "1\\ \\text{cal} = 4.184\\ \\text{J}"
+        }
+      ]
     },
     {
       "id": "heat-capacity",
       "kind": "definition",
       "section": "5.1",
-      "name": "Heat capacity, $C = q/\\Delta T$",
+      "name": "Heat capacity",
       "symbol": "C_heat",
       "terms": [
         "heat capacity"
@@ -220,7 +236,7 @@
       "id": "specific-heat-capacity",
       "kind": "definition",
       "section": "5.1",
-      "name": "Specific heat capacity, $c = q/(m\\,\\Delta T)$",
+      "name": "Specific heat capacity",
       "symbol": "c_spec",
       "terms": [
         "specific heat capacity"
@@ -240,14 +256,14 @@
       "id": "system-and-surroundings",
       "kind": "definition",
       "section": "5.2",
-      "name": "The system and its surroundings",
+      "name": "System and surroundings",
       "statement": "The system is the portion of matter undergoing the chemical or physical change being studied, and the surroundings are everything else that gives heat to the system or takes it away. The sign of a heat is taken from the system's point of view."
     },
     {
       "id": "calorimetry-heat-balance",
       "kind": "result",
       "section": "5.2",
-      "name": "The heats exchanged in a calorimeter sum to zero",
+      "name": "Calorimeter heat balance",
       "statement": "When a hot metal is placed in cool water in an ideal calorimeter, all the heat lost by one is gained by the other, so the two heats add up to zero and one is the negative of the other. The negative sign records the opposite direction of flow and does not by itself give either value its sign.",
       "forms": [
         {
@@ -263,7 +279,7 @@
       "id": "heat-of-reaction-by-calorimetry",
       "kind": "result",
       "section": "5.2",
-      "name": "The heat of a reaction from the heat of the solution, $q_{\\text{reaction}} = -q_{\\text{solution}}$",
+      "name": "Heat of reaction by calorimetry",
       "statement": "Because energy is neither created nor destroyed, the heat produced or consumed by a reaction in a calorimeter equals the heat absorbed or lost by the solution around it, with the opposite sign. This is the concept that lies at the heart of all calorimetry problems: the temperature change of the solution is measured, and the heat of the reaction is read from it.",
       "forms": [
         {
@@ -279,14 +295,14 @@
       "id": "coffee-cup-calorimetry",
       "kind": "skill",
       "section": "5.2",
-      "name": "Calculating a heat from coffee cup calorimetry data",
-      "statement": "With a coffee cup calorimeter the reader measures a temperature change and must make and state reasonable assumptions to turn it into a heat: that no heat is exchanged with the outside or absorbed by the cup, and that a dilute solution has the specific heat and density of water. The skill is carrying those assumptions through to a heat with the right sign."
+      "name": "Coffee cup calorimetry",
+      "statement": "A coffee cup calorimeter measures a temperature change, and turning it into a heat takes reasonable assumptions, stated openly. No heat passes to the outside or into the cup, and a dilute solution has the specific heat and density of water. Carry those assumptions through to a heat with the right sign."
     },
     {
       "id": "bomb-calorimetry",
       "kind": "skill",
       "section": "5.2",
-      "name": "Calculating a heat of combustion from bomb calorimetry",
+      "name": "Bomb calorimetry",
       "statement": "A bomb calorimeter works at constant volume and is used for reactions, such as combustions, that give off much heat and gaseous products. The heat of the reaction is shared between the water and the steel bomb, so the calculation adds the heat taken in by the water to the heat capacity of the bomb times the temperature rise.",
       "forms": [
         {
@@ -359,21 +375,27 @@
       "id": "nutritional-calorie",
       "kind": "definition",
       "section": "5.2",
-      "name": "The nutritional Calorie, $1\\ \\text{Cal} = 1\\ \\text{kcal}$",
+      "name": "Nutritional Calorie",
       "terms": [
         "nutritional calorie (Calorie)"
       ],
-      "statement": "The nutritional Calorie is the unit used for the energy provided by digestion of foods, defined as 1000 calories, or 1 kilocalorie."
+      "statement": "The nutritional Calorie is the unit used for the energy provided by digestion of foods, defined as 1000 calories, or 1 kilocalorie.",
+      "forms": [
+        {
+          "id": "eq-nutritional-calorie",
+          "latex": "1\\ \\text{Cal} = 1\\ \\text{kcal}"
+        }
+      ]
     },
     {
       "id": "first-law-of-thermodynamics",
       "kind": "axiom",
       "section": "5.3",
-      "name": "The first law of thermodynamics, $\\Delta U = q + w$",
+      "name": "First law of thermodynamics",
       "terms": [
         "first law of thermodynamics"
       ],
-      "statement": "The internal energy of a system changes only through heat flowing into or out of it and work done on or by it. The signs are fixed from the system's side: q is positive for heat flowing in and w is positive for work done on the system, so a system that loses heat and does work loses internal energy on both counts, as the gases in an engine cylinder do.",
+      "statement": "The internal energy of a system changes only through heat flowing into or out of it and work done on or by it. The signs take the system's side: q is positive for heat flowing in and w is positive for work done on the system. A system that loses heat and does work therefore loses internal energy on both counts, as the gases in an engine cylinder do.",
       "forms": [
         {
           "id": "eq-first-law",
@@ -397,7 +419,7 @@
       "id": "enthalpy-change-at-constant-pressure",
       "kind": "result",
       "section": "5.3",
-      "name": "Enthalpy, and $\\Delta H = q_{\\text{p}}$ at constant pressure",
+      "name": "Enthalpy change at constant pressure",
       "symbol": "ΔH",
       "statement": "Enthalpy is the sum of a system's internal energy and the product of its pressure and volume. For a process at constant pressure whose only work is expansion work, the enthalpy change equals the heat flow, which is why chemists, who usually work at the constant pressure of the atmosphere, use enthalpy to describe the heat of a reaction. The heat measured in a bomb calorimeter, at constant volume, is not ΔH.",
       "forms": [
@@ -428,7 +450,7 @@
       "id": "standard-enthalpy-of-formation",
       "kind": "definition",
       "section": "5.3",
-      "name": "Standard states and the standard enthalpy of formation",
+      "name": "Standard enthalpy of formation",
       "symbol": "ΔH_f°",
       "terms": [
         "standard enthalpy of formation"
@@ -449,8 +471,8 @@
       "id": "enthalpy-from-formation-enthalpies",
       "kind": "skill",
       "section": "5.3",
-      "name": "Calculating a reaction enthalpy from enthalpies of formation",
-      "statement": "Hess's law applied to decomposing the reactants into their elements and re-forming the products gives the standard enthalpy change of any reaction as the sum of n times the enthalpies of formation of the products minus the same sum for the reactants. With the table of Appendix G the reader can compute ΔH° for reactions that no one has measured directly.",
+      "name": "Finding a reaction enthalpy from formation enthalpies",
+      "statement": "Apply Hess's law by decomposing the reactants into their elements and re-forming the products. The standard enthalpy change of any reaction is then the sum of n times the enthalpies of formation of the products minus the same sum for the reactants. With the table of Appendix G you can compute ΔH° for reactions that no one has measured directly.",
       "forms": [
         {
           "id": "eq-hess-formation",
@@ -475,7 +497,7 @@
       "id": "internal-energy",
       "kind": "definition",
       "section": "5.3",
-      "name": "Internal energy, $U$",
+      "name": "Internal energy",
       "symbol": "U",
       "terms": [
         "internal energy"
@@ -486,7 +508,7 @@
       "id": "expansion-work",
       "kind": "definition",
       "section": "5.3",
-      "name": "Expansion work, $w = -P\\Delta V$",
+      "name": "Expansion work",
       "terms": [
         "expansion work (pressure-volume work)"
       ],
@@ -505,7 +527,7 @@
       "id": "enthalpy",
       "kind": "definition",
       "section": "5.3",
-      "name": "Enthalpy, $H = U + PV$",
+      "name": "Enthalpy",
       "symbol": "H",
       "terms": [
         "enthalpy"
@@ -524,7 +546,7 @@
       "id": "enthalpy-change",
       "kind": "definition",
       "section": "5.3",
-      "name": "Enthalpy change, $\\Delta H = \\Delta U + P\\Delta V$",
+      "name": "Enthalpy change",
       "symbol": "ΔH",
       "terms": [
         "enthalpy change"
@@ -564,7 +586,7 @@
       "id": "standard-enthalpy-of-combustion",
       "kind": "definition",
       "section": "5.3",
-      "name": "Standard enthalpy of combustion, $\\Delta H_{\\text{c}}^{\\circ}$",
+      "name": "Standard enthalpy of combustion",
       "symbol": "ΔH_c°",
       "terms": [
         "standard enthalpy of combustion"

@@ -16,7 +16,7 @@
    "id": "law-of-definite-proportions",
    "kind": "axiom",
    "section": "2.1",
-   "name": "The law of definite proportions",
+   "name": "Law of definite proportions",
    "terms": [
     "law of constant composition",
     "law of definite proportions"
@@ -27,7 +27,7 @@
    "id": "law-of-multiple-proportions",
    "kind": "axiom",
    "section": "2.1",
-   "name": "The law of multiple proportions",
+   "name": "Law of multiple proportions",
    "terms": [
     "law of multiple proportions"
    ],
@@ -70,7 +70,7 @@
    "id": "subatomic-particles",
    "kind": "definition",
    "section": "2.2",
-   "name": "Protons, neutrons, and electrons",
+   "name": "Subatomic particles",
    "statement": "An atom is built from three kinds of subatomic particle: the negatively charged, very light electron outside the nucleus, and the positively charged proton and the uncharged neutron of nearly the same mass inside it. Everything the chapter says about atomic number, mass number, isotopes and ions is counted in these three particles."
   },
   {
@@ -87,7 +87,7 @@
    "id": "alpha-particle",
    "kind": "definition",
    "section": "2.2",
-   "name": "Alpha particle, α",
+   "name": "Alpha particle",
    "terms": [
     "alpha particle (α particle)"
    ],
@@ -137,7 +137,7 @@
    "id": "atomic-mass-unit",
    "kind": "definition",
    "section": "2.3",
-   "name": "The atomic mass unit and the fundamental unit of charge",
+   "name": "Atomic mass unit",
    "terms": [
     "atomic mass unit (amu)",
     "Dalton (Da)",
@@ -164,7 +164,7 @@
    "id": "ions-and-atomic-charge",
    "kind": "definition",
    "section": "2.3",
-   "name": "Ions, cations, and anions",
+   "name": "Ions",
    "symbol": "Z_plus",
    "statement": "When the numbers of protons and electrons in an atom are not equal, it carries a charge equal to the number of protons minus the number of electrons and is called an ion. An atom that gains electrons becomes a negatively charged anion, and one that loses electrons becomes a positively charged cation.",
    "forms": [
@@ -179,8 +179,8 @@
    "id": "composition-of-an-atom",
    "kind": "skill",
    "section": "2.3",
-   "name": "Finding the numbers of protons, neutrons, and electrons in an atom or ion",
-   "statement": "Given an element’s atomic number, a mass number and a charge, the reader should be able to count the particles: the protons from the atomic number, the neutrons from the mass number less the atomic number, and the electrons from the protons less the charge. The same reasoning run backward gives the charge from the counts."
+   "name": "Counting protons, neutrons and electrons",
+   "statement": "From an element’s atomic number, a mass number and a charge, you can count the particles. The atomic number gives the protons, the mass number less the atomic number gives the neutrons, and the protons less the charge give the electrons. The same reasoning run backward gives the charge from the counts."
   },
   {
    "id": "chemical-symbols",
@@ -196,7 +196,7 @@
    "id": "isotope-symbols",
    "kind": "skill",
    "section": "2.3",
-   "name": "Writing and reading the symbol of an isotope or ion",
+   "name": "Writing isotope symbols",
    "statement": "The full symbol of an atom places the mass number as a left superscript, the atomic number as a left subscript (often omitted) and the charge as a right superscript on the element’s symbol. Reading and writing these symbols, and the equivalent names such as magnesium-24 or Mg-24, is how the book refers to a particular isotope or ion from here on."
   },
   {
@@ -221,7 +221,7 @@
    "id": "isotopic-abundance-from-average-mass",
    "kind": "skill",
    "section": "2.3",
-   "name": "Calculating isotopic abundances from an average mass",
+   "name": "Finding isotopic abundances",
    "statement": "For an element with two isotopes, the fraction of one can be written as x and of the other as 1 − x, and the average mass equation then becomes one equation in one unknown. Solving it turns the average atomic mass back into the percent composition by isotope."
   },
   {
@@ -265,7 +265,7 @@
    "id": "atomic-number",
    "kind": "definition",
    "section": "2.3",
-   "name": "Atomic number, $Z$",
+   "name": "Atomic number",
    "symbol": "Z",
    "terms": [
     "atomic number (Z)"
@@ -276,7 +276,7 @@
    "id": "mass-number",
    "kind": "definition",
    "section": "2.3",
-   "name": "Mass number, $A$",
+   "name": "Mass number",
    "symbol": "A",
    "terms": [
     "mass number (A)"
@@ -368,7 +368,7 @@
    "id": "periodic-law",
    "kind": "axiom",
    "section": "2.5",
-   "name": "The periodic law",
+   "name": "Periodic law",
    "terms": [
     "periodic law"
    ],
@@ -392,21 +392,21 @@
    "id": "element-families",
    "kind": "definition",
    "section": "2.5",
-   "name": "Main-group elements, transition metals, and the named groups",
+   "name": "Main groups and transition metals",
    "statement": "The groups 1, 2 and 13 to 18 hold the main-group elements, groups 3 to 12 the transition metals, and the two rows beneath the table the inner transition metals, the lanthanides and actinides. Several groups have names of their own, the alkali metals, alkaline earth metals, pnictogens, chalcogens, halogens and noble gases, and their members have similar chemical properties."
   },
   {
    "id": "name-group-of-element",
    "kind": "skill",
    "section": "2.5",
-   "name": "Naming the group an element belongs to",
-   "statement": "Given an element, the reader should be able to find it in the periodic table and give the name of its group, and given a group name and a period, find the element. This is the fluency with the table that the next two sections rely on for predicting ions and naming compounds."
+   "name": "Naming an element’s group",
+   "statement": "Find any element in the periodic table and give the name of its group, and from a group name and a period, find the element. The next two sections rely on this fluency with the table to predict ions and name compounds."
   },
   {
    "id": "periodic-table",
    "kind": "definition",
    "section": "2.5",
-   "name": "The periodic table",
+   "name": "Periodic table",
    "terms": [
     "periodic table"
    ],
@@ -579,7 +579,7 @@
    "id": "predict-ion-charge-from-group",
    "kind": "skill",
    "section": "2.6",
-   "name": "Predicting the charge of a monatomic ion",
+   "name": "Predicting ion charge from the group",
    "statement": "Main-group metals tend to lose enough electrons to have as many as the preceding noble gas and form cations whose charge equals their group number, and nonmetals tend to gain enough electrons to match the next noble gas and form anions whose charge is the number of groups they lie to the left of the noble gases. The rule weakens toward the middle of the table, where metals such as iron and copper form ions of more than one charge."
   },
   {
@@ -613,7 +613,7 @@
    "id": "ionic-compound-formula",
    "kind": "skill",
    "section": "2.6",
-   "name": "Writing the formula of an ionic compound",
+   "name": "Writing ionic formulas",
    "statement": "An ionic compound is electrically neutral, so its formula takes the ions in the ratio that makes the positive and negative charges equal, with a polyatomic ion treated as a unit in parentheses when more than one is needed. Two Al³⁺ and three O²⁻ give Al₂O₃, and one Ca²⁺ with two H₂PO₄⁻ gives Ca(H₂PO₄)₂."
   },
   {
@@ -631,8 +631,8 @@
    "id": "predict-bond-type",
    "kind": "skill",
    "section": "2.6",
-   "name": "Predicting whether a compound is ionic or molecular",
-   "statement": "Given a formula, the reader should be able to find its elements in the periodic table and predict that a metal with nonmetals, or a compound with a polyatomic ion, is ionic, and that nonmetals alone form a molecular compound. It is the first question asked before naming any compound in the next section."
+   "name": "Predicting ionic or molecular",
+   "statement": "Given a formula, find its elements in the periodic table. A metal with nonmetals, or a compound with a polyatomic ion, is ionic, and nonmetals alone form a molecular compound. Ask this question first before you name any compound in the next section."
   },
   {
    "id": "monatomic-ion",
@@ -685,14 +685,14 @@
    "id": "name-variable-charge-metal-compounds",
    "kind": "skill",
    "section": "2.7",
-   "name": "Naming compounds of metals with variable charge",
+   "name": "Naming variable-charge metal compounds",
    "statement": "When a metal can form ions of more than one charge, the charge of its ion is worked out from the formula and the anion’s fixed charge and written as a Roman numeral in parentheses after the metal’s name, as in iron(II) chloride and iron(III) chloride. The older suffixes -ous and -ic for the lower and higher charges survive in some industries."
   },
   {
    "id": "name-hydrates",
    "kind": "skill",
    "section": "2.7",
-   "name": "Naming and writing formulas of ionic hydrates",
+   "name": "Naming hydrates",
    "statement": "A hydrate is named by adding to the name of the anhydrous compound a Greek prefix for the number of water molecules per formula unit followed by the word hydrate, and its formula appends a centered dot, that number and H₂O. Copper(II) sulfate pentahydrate is CuSO₄·5H₂O."
   },
   {

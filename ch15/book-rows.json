@@ -15,7 +15,7 @@
    "id": "solubility-product",
    "kind": "definition",
    "section": "15.1",
-   "name": "The solubility product constant, $K_{\\text{sp}}$",
+   "name": "Solubility product constant",
    "symbol": "K_sp",
    "terms": [
     "solubility product constant"
@@ -34,35 +34,35 @@
    "id": "write-ksp-expression",
    "kind": "skill",
    "section": "15.1",
-   "name": "Writing dissolution equations and solubility product expressions",
+   "name": "Writing solubility product expressions",
    "statement": "The dissolution equation shows the ions a compound yields and their coefficients, and each coefficient becomes the exponent of that ion's concentration in the solubility product expression."
   },
   {
    "id": "ksp-from-solubility",
    "kind": "skill",
    "section": "15.1",
-   "name": "Calculating $K_{\\text{sp}}$ from a measured solubility",
+   "name": "Calculating Ksp from solubility",
    "statement": "When dissolution involves only dissociation and solvation, a measured solubility, converted to molar solubility where it is given in grams per liter, fixes every ion concentration through the dissolution stoichiometry, and the solubility product follows."
   },
   {
    "id": "molar-solubility-from-ksp",
    "kind": "skill",
    "section": "15.1",
-   "name": "Calculating a molar solubility from $K_{\\text{sp}}$",
+   "name": "Calculating molar solubility",
    "statement": "Writing the equilibrium concentrations of an ICE table in terms of the molar solubility <i>x</i> and substituting them into the solubility product expression gives an equation in <i>x</i> alone, whose root is the molar solubility."
   },
   {
    "id": "qsp-versus-ksp",
    "kind": "result",
    "section": "15.1",
-   "name": "Predicting precipitation by comparing $Q_{\\text{sp}}$ with $K_{\\text{sp}}$",
+   "name": "Predicting precipitation",
    "statement": "The dissolution equilibrium is established in any solution containing the ions, whatever their source. If the ion concentrations give a reaction quotient greater than the solubility product, the solution is supersaturated and precipitation occurs until the quotient equals the solubility product; if the quotient is smaller, no precipitate forms."
   },
   {
    "id": "precipitation-concentration",
    "kind": "skill",
    "section": "15.1",
-   "name": "Calculating the ion concentration at which precipitation begins",
+   "name": "Finding where precipitation begins",
    "statement": "Setting the reaction quotient equal to the solubility product and substituting the known ion concentration gives the concentration of the counter ion at which a precipitate first forms, or the concentration needed to lower a dissolved ion to a chosen level."
   },
   {
@@ -79,7 +79,7 @@
    "id": "common-ion-effect",
    "kind": "result",
    "section": "15.1",
-   "name": "The common ion effect on solubility",
+   "name": "Common ion effect",
    "terms": [
     "common ion effect"
    ],
@@ -109,7 +109,7 @@
    "id": "lewis-acids-and-bases",
    "kind": "definition",
    "section": "15.2",
-   "name": "Lewis acids, Lewis bases, and adducts",
+   "name": "Lewis acids and bases",
    "terms": [
     "Lewis acid-base chemistry"
    ],
@@ -126,7 +126,7 @@
    "id": "formation-constant",
    "kind": "definition",
    "section": "15.2",
-   "name": "Formation and dissociation constants of complex ions",
+   "name": "Formation constant",
    "symbol": "K_f_form",
    "terms": [
     "formation constant"
@@ -144,7 +144,7 @@
    "id": "complex-ion-calculations",
    "kind": "skill",
    "section": "15.2",
-   "name": "Calculating concentrations in a complex ion equilibrium",
+   "name": "Calculating complex ion equilibria",
    "statement": "An ICE table for the dissociation of a complex ion, with the small-<i>x</i> assumption that a very large formation constant justifies, gives the concentrations of the free metal ion and ligand."
   },
   {
@@ -171,7 +171,7 @@
    "id": "dissociation-constant",
    "kind": "definition",
    "section": "15.2",
-   "name": "Dissociation constant, $K_{\\text{d}}$",
+   "name": "Dissociation constant",
    "symbol": "K_d",
    "terms": [
     "dissociation constant"
@@ -219,7 +219,7 @@
    "id": "solubility-in-acid",
    "kind": "result",
    "section": "15.3",
-   "name": "Salts of basic anions are more soluble in acid",
+   "name": "Solubility in acid",
    "statement": "When a salt's anion is a base, its dissolution is coupled with the anion's reaction with hydronium ion, which removes the anion and shifts the dissolution equilibrium to the right. The net reaction's constant is the solubility product divided by the conjugate acid's ionization constant.",
    "forms": [
     {

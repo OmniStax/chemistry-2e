@@ -73,7 +73,7 @@
    "id": "reaction-rate",
    "kind": "definition",
    "section": "12.1",
-   "name": "The rate of a reaction",
+   "name": "Reaction rate",
    "symbol": "rate",
    "terms": [
     "rate of reaction"
@@ -91,14 +91,14 @@
    "id": "rate-from-concentration-data",
    "kind": "skill",
    "section": "12.1",
-   "name": "Calculating an average rate from concentration and time data",
+   "name": "Calculating an average rate",
    "statement": "Dividing the change in concentration by the time interval over which it occurred, and changing the sign for a reactant, gives the average rate over that interval."
   },
   {
    "id": "relative-reaction-rates",
    "kind": "result",
    "section": "12.1",
-   "name": "Rates of change are related by the stoichiometry",
+   "name": "Relative reaction rates",
    "statement": "For aA ⟶ bB, the rate may be written from either species, and the two expressions agree once each change is divided by its coefficient: $\\text{rate}=-\\frac{1}{a}\\frac{\\Delta[\\text{A}]}{\\Delta t}=\\frac{1}{b}\\frac{\\Delta[\\text{B}]}{\\Delta t}$.",
    "forms": [
     {
@@ -113,7 +113,7 @@
    "id": "write-relative-rate-expressions",
    "kind": "skill",
    "section": "12.1",
-   "name": "Writing the related rate expressions for a reaction",
+   "name": "Writing related rate expressions",
    "statement": "From a balanced equation, the rates of consumption of reactants and formation of products may be written as equal once each is divided by its coefficient, so a rate measured for one species gives the rate for every other."
   },
   {
@@ -160,14 +160,14 @@
    "id": "chemical-nature-and-rate",
    "kind": "idea",
    "section": "12.2",
-   "name": "The nature of the reactants affects the rate",
+   "name": "Chemical nature and rate",
    "statement": "Reactions that appear similar may proceed at very different rates under the same conditions, depending on the identity of the reactants."
   },
   {
    "id": "surface-area-and-rate",
    "kind": "idea",
    "section": "12.2",
-   "name": "Subdivision and the physical state of the reactants",
+   "name": "Subdivision and rate",
    "statement": "A reaction between reactants in different phases takes place only at the interface between them, so a finely divided solid, with its greater surface area, reacts faster than one large piece."
   },
   {
@@ -188,7 +188,7 @@
    "id": "catalyst",
    "kind": "definition",
    "section": "12.2",
-   "name": "A catalyst increases the rate of a reaction",
+   "name": "Catalyst",
    "terms": [
     "catalyst"
    ],
@@ -198,7 +198,7 @@
    "id": "rate-law",
    "kind": "definition",
    "section": "12.3",
-   "name": "The rate law, $\\text{rate}=k[\\text{A}]^{m}[\\text{B}]^{n}$",
+   "name": "Rate law",
    "terms": [
     "rate law"
    ],
@@ -227,7 +227,7 @@
    "id": "rate-constant",
    "kind": "definition",
    "section": "12.3",
-   "name": "The rate constant",
+   "name": "Rate constant",
    "symbol": "k",
    "terms": [
     "rate constant"
@@ -238,28 +238,28 @@
    "id": "rate-laws-are-experimental",
    "kind": "idea",
    "section": "12.3",
-   "name": "Rate laws come from experiment, not from the equation",
+   "name": "Rate laws are experimental",
    "statement": "The orders in a rate law must be found by observing how the rate changes with concentration; they sometimes match the coefficients of the balanced equation, but only by coincidence."
   },
   {
    "id": "method-of-initial-rates",
    "kind": "skill",
    "section": "12.3",
-   "name": "Finding a rate law by the method of initial rates",
+   "name": "Finding a rate law by initial rates",
    "statement": "Comparing initial rates from trials in which one reactant’s concentration changes while the others are held fixed gives each order, from the ratio of rates or by logarithms; one trial’s data then give the rate constant."
   },
   {
    "id": "rate-constant-units",
    "kind": "result",
    "section": "12.3",
-   "name": "The units of a rate constant",
+   "name": "Units of a rate constant",
    "statement": "The unit of k is whatever makes the rate come out in mol L⁻¹ s⁻¹, so it depends on the overall order x as L^(x−1) mol^(1−x) s⁻¹."
   },
   {
    "id": "rate-from-rate-law",
    "kind": "skill",
    "section": "12.3",
-   "name": "Using a rate law to predict a rate",
+   "name": "Predicting a rate from a rate law",
    "statement": "With a rate law and its rate constant, the rate at any set of concentrations may be calculated, and the effect of changing one concentration follows from its order."
   },
   {
@@ -276,7 +276,7 @@
    "id": "initial-rates-method",
    "kind": "idea",
    "section": "12.3",
-   "name": "The method of initial rates",
+   "name": "Method of initial rates",
    "terms": [
     "method of initial rates"
    ],
@@ -286,7 +286,7 @@
    "id": "integrated-rate-laws",
    "kind": "definition",
    "section": "12.4",
-   "name": "Integrated rate laws relate concentration to time",
+   "name": "Integrated rate laws",
    "terms": [
     "integrated rate law"
    ],
@@ -296,7 +296,7 @@
    "id": "first-order-integrated-rate-law",
    "kind": "result",
    "section": "12.4",
-   "name": "The first-order integrated rate law",
+   "name": "First-order integrated rate law",
    "statement": "For rate = k[A], the concentration falls exponentially, $[\\text{A}]_{t}=[\\text{A}]_{0}e^{-kt}$, so $\\ln[\\text{A}]_{t}=-kt+\\ln[\\text{A}]_{0}$ and a plot of ln[A] against t is a straight line of slope −k.",
    "forms": [
     {
@@ -317,7 +317,7 @@
    "id": "second-order-integrated-rate-law",
    "kind": "result",
    "section": "12.4",
-   "name": "The second-order integrated rate law",
+   "name": "Second-order integrated rate law",
    "statement": "For rate = k[A]², $\\frac{1}{[\\text{A}]_{t}}=kt+\\frac{1}{[\\text{A}]_{0}}$, so a plot of 1/[A] against t is a straight line of slope k.",
    "forms": [
     {
@@ -332,7 +332,7 @@
    "id": "zero-order-integrated-rate-law",
    "kind": "result",
    "section": "12.4",
-   "name": "The zero-order integrated rate law",
+   "name": "Zero-order integrated rate law",
    "statement": "For rate = k, the concentration falls linearly, $[\\text{A}]_{t}=-kt+[\\text{A}]_{0}$, and a plot of [A] against t is a straight line of slope −k. Zero-order behavior is seen only under certain conditions.",
    "forms": [
     {
@@ -347,14 +347,14 @@
    "id": "order-from-linear-plots",
    "kind": "skill",
    "section": "12.4",
-   "name": "Finding the order and rate constant from a linear plot",
+   "name": "Finding order from a linear plot",
    "statement": "Plotting [A], ln[A] and 1/[A] against time shows which is a straight line, which gives the order; the rate constant is then the slope or its negative."
   },
   {
    "id": "half-life",
    "kind": "definition",
    "section": "12.4",
-   "name": "The half-life of a reaction",
+   "name": "Half-life",
    "symbol": "t_half",
    "terms": [
     "half-life of a reaction"
@@ -365,7 +365,7 @@
    "id": "half-life-by-order",
    "kind": "result",
    "section": "12.4",
-   "name": "Half-lives for zero-, first-, and second-order reactions",
+   "name": "Half-life by reaction order",
    "statement": "The half-life of a first-order reaction, $t_{1/2}=0.693/k$, is independent of concentration; that of a second-order reaction, $1/k[\\text{A}]_{0}$, grows as the reactant is used up, and that of a zero-order reaction, $[\\text{A}]_{0}/2k$, shrinks.",
    "forms": [
     {
@@ -392,7 +392,7 @@
    "id": "integrated-rate-law-calculations",
    "kind": "skill",
    "section": "12.4",
-   "name": "Calculating concentrations, times, and half-lives",
+   "name": "Calculating with integrated rate laws",
    "statement": "Choosing the integrated rate law of the reaction’s order and solving it for the unknown gives the concentration remaining after a time, the time to reach a concentration, or the half-life."
   },
   {
@@ -409,7 +409,7 @@
    "id": "collision-orientation",
    "kind": "idea",
    "section": "12.5",
-   "name": "The orientation of a collision",
+   "name": "Collision orientation",
    "statement": "The colliding species must meet in an orientation that brings together the atoms that will bond in the product."
   },
   {
@@ -434,14 +434,14 @@
    "id": "energy-distribution-and-rate",
    "kind": "idea",
    "section": "12.5",
-   "name": "The fraction of molecules with enough energy",
+   "name": "Fraction of molecules with enough energy",
    "statement": "Of the molecules’ distribution of energies, only those above the activation energy can react; a lower activation energy or a higher temperature increases that fraction and so the rate."
   },
   {
    "id": "arrhenius-equation",
    "kind": "axiom",
    "section": "12.5",
-   "name": "The Arrhenius equation, $k=Ae^{-E_{\\text{a}}/RT}$",
+   "name": "Arrhenius equation",
    "terms": [
     "Arrhenius equation"
    ],
@@ -465,7 +465,7 @@
    "id": "activation-energy-from-rate-constants",
    "kind": "skill",
    "section": "12.5",
-   "name": "Finding an activation energy from rate constants at different temperatures",
+   "name": "Finding an activation energy",
    "statement": "A plot of ln k against 1/T is a straight line of slope −E_a/R, and rate constants at just two temperatures give E_a through the two-point form of the Arrhenius equation.",
    "forms": [
     {
@@ -490,7 +490,7 @@
    "id": "frequency-factor",
    "kind": "definition",
    "section": "12.5",
-   "name": "Frequency factor, $A$",
+   "name": "Frequency factor",
    "symbol": "A_freq",
    "terms": [
     "frequency factor"
@@ -511,7 +511,7 @@
    "id": "reaction-mechanism",
    "kind": "definition",
    "section": "12.6",
-   "name": "Reaction mechanisms, elementary reactions, and intermediates",
+   "name": "Reaction mechanism",
    "terms": [
     "reaction mechanism"
    ],
@@ -521,7 +521,7 @@
    "id": "molecularity",
    "kind": "definition",
    "section": "12.6",
-   "name": "Molecularity: unimolecular, bimolecular, and termolecular reactions",
+   "name": "Molecularity",
    "terms": [
     "molecularity"
    ],
@@ -531,14 +531,14 @@
    "id": "elementary-rate-laws",
    "kind": "result",
    "section": "12.6",
-   "name": "The rate law of an elementary reaction follows from its equation",
+   "name": "Rate law of an elementary reaction",
    "statement": "Since an elementary reaction occurs exactly as written, its rate law may be written from its equation: first order for a unimolecular step, rate = k[A][B] or k[A]² for a bimolecular one."
   },
   {
    "id": "rate-determining-step",
    "kind": "definition",
    "section": "12.6",
-   "name": "The rate-determining step",
+   "name": "Rate-determining step",
    "terms": [
     "rate-determining step"
    ],
@@ -548,7 +548,7 @@
    "id": "mechanism-consistent-with-rate-law",
    "kind": "idea",
    "section": "12.6",
-   "name": "Testing a mechanism against the measured rate law",
+   "name": "Testing a mechanism",
    "statement": "A rate law is determined by experiment and a mechanism deduced from it; a mechanism whose predicted rate law disagrees with the measured one is incorrect, and one that agrees is plausible."
   },
   {
@@ -612,14 +612,14 @@
    "id": "catalysis-lowers-activation-energy",
    "kind": "idea",
    "section": "12.7",
-   "name": "A catalyst provides a path of lower activation energy",
+   "name": "Catalysis and activation energy",
    "statement": "A catalyst speeds a reaction by providing a different mechanism whose rate-determining step has a lower activation energy; it takes part in the reaction but is regenerated, so the overall reaction and the energies of reactants and products are unchanged."
   },
   {
    "id": "catalyzed-reaction-diagrams",
    "kind": "skill",
    "section": "12.7",
-   "name": "Identifying the catalyzed path on reaction diagrams",
+   "name": "Identifying a catalyzed path",
    "statement": "Of two reaction diagrams for the same reaction, the one with the lower activation energy for its rate-determining step is the catalyzed one."
   },
   {

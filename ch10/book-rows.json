@@ -72,7 +72,7 @@
    "id": "phase-from-imf-and-kinetic-energy",
    "kind": "idea",
    "section": "10.1",
-   "name": "The phase of a substance depends on its intermolecular forces and kinetic energy",
+   "name": "Phase and intermolecular forces",
    "statement": "Intermolecular forces hold particles close together, whereas the particles’ kinetic energy works to separate them, so the phase of a substance depends on the balance between the two. Cooling a gas or compressing it lets the attractions win and it condenses; cooling a liquid far enough lets it freeze."
   },
   {
@@ -89,14 +89,14 @@
    "id": "polarizability-and-dispersion-strength",
    "kind": "result",
    "section": "10.1",
-   "name": "Larger, more polarizable particles have stronger dispersion forces",
+   "name": "Polarizability and dispersion forces",
    "statement": "In a larger atom the valence electrons are farther from the nucleus and less tightly held, so the electron cloud is more easily distorted; a more polarizable particle has larger dispersion forces and a higher melting and boiling point."
   },
   {
    "id": "shape-and-dispersion-strength",
    "kind": "result",
    "section": "10.1",
-   "name": "Molecular shape and contact area affect dispersion forces",
+   "name": "Molecular shape and dispersion forces",
    "statement": "Molecules with the same formula can have different dispersion forces: an elongated molecule offers more surface area for contact with its neighbors than a compact one, and so it is held more strongly."
   },
   {
@@ -123,7 +123,7 @@
    "id": "rank-by-intermolecular-forces",
    "kind": "skill",
    "section": "10.1",
-   "name": "Identifying the intermolecular forces in a substance and ranking boiling points",
+   "name": "Ranking boiling points",
    "statement": "To compare substances, we identify the forces each can have from its structure: dispersion forces always, dipole-dipole attractions if the molecule is polar, and hydrogen bonding if it has an H–F, H–O or H–N group. With similar sizes, the substance with the stronger forces has the higher boiling point; with the same kind of force, the larger molecule does."
   },
   {
@@ -218,7 +218,7 @@
    "id": "capillary-rise-equation",
    "kind": "result",
    "section": "10.2",
-   "name": "The height of capillary rise, $h = 2T\\cos\\theta / r\\rho g$",
+   "name": "Capillary rise",
    "symbol": "θ_contact",
    "statement": "The height to which a liquid rises in a capillary tube is directly proportional to its surface tension and to the cosine of the contact angle, and inversely proportional to the radius of the tube and the density of the liquid. For water in glass the contact angle is 0°.",
    "forms": [
@@ -261,7 +261,7 @@
    "id": "vapor-pressure-and-imf",
    "kind": "result",
    "section": "10.3",
-   "name": "Stronger intermolecular forces mean a lower vapor pressure",
+   "name": "Vapor pressure and intermolecular forces",
    "statement": "Strong intermolecular attractions impede vaporization and favor the recapture of gas molecules, so a liquid with stronger forces has a lower vapor pressure."
   },
   {
@@ -285,7 +285,7 @@
    "id": "clausius-clapeyron-equation",
    "kind": "result",
    "section": "10.3",
-   "name": "The Clausius-Clapeyron equation",
+   "name": "Clausius-Clapeyron equation",
    "symbol": "A_cc",
    "terms": [
     "Clausius-Clapeyron equation"
@@ -328,7 +328,7 @@
    "id": "enthalpies-of-phase-change",
    "kind": "definition",
    "section": "10.3",
-   "name": "Enthalpies of vaporization, fusion, and sublimation",
+   "name": "Enthalpies of phase change",
    "symbol": "ΔH_vap",
    "statement": "Melting, vaporization and sublimation are endothermic, and freezing, condensation and deposition release the same heat with the opposite sign. Melting only partly overcomes the intermolecular attractions while vaporization overcomes them completely, so ΔH<sub>fus</sub> is less than ΔH<sub>vap</sub>, and by Hess’s law ΔH<sub>sub</sub> is about their sum.",
    "forms": [
@@ -352,7 +352,7 @@
    "id": "heating-curve-calculations",
    "kind": "skill",
    "section": "10.3",
-   "name": "Calculating the total heat to change temperature and phase",
+   "name": "Calculating heat from a heating curve",
    "statement": "The heat for a change through several phases is the sum of the steps: q = mcΔT for each warming or cooling within a phase, with the specific heat of that phase, and q = nΔH for each transition."
   },
   {
@@ -429,7 +429,7 @@
    "id": "vapor-pressure",
    "kind": "definition",
    "section": "10.3",
-   "name": "Vapor pressure, $P$",
+   "name": "Vapor pressure",
    "symbol": "P",
    "terms": [
     "vapor pressure"
@@ -471,14 +471,14 @@
    "id": "read-phase-diagram",
    "kind": "skill",
    "section": "10.4",
-   "name": "Reading states and phase changes from a phase diagram",
+   "name": "Reading a phase diagram",
    "statement": "To find the state of a substance, we locate the temperature and pressure on its phase diagram and read the region; to find the phase changes on heating at constant pressure, or on compression at constant temperature, we follow a horizontal or vertical line and note the curves it crosses."
   },
   {
    "id": "triple-point",
    "kind": "definition",
    "section": "10.4",
-   "name": "The triple point",
+   "name": "Triple point",
    "terms": [
     "triple point"
    ],
@@ -488,15 +488,15 @@
    "id": "solid-liquid-curve-slope",
    "kind": "idea",
    "section": "10.4",
-   "name": "The slope of the solid-liquid curve",
+   "name": "Slope of the solid-liquid curve",
    "statement": "For most substances the solid-liquid curve has a positive slope, so the melting point rises with pressure; for water it has a slight negative slope, so pressure lowers the melting point of ice."
   },
   {
    "id": "critical-point-and-supercritical-fluid",
    "kind": "idea",
    "section": "10.4",
-   "name": "The critical point and supercritical fluids",
-   "statement": "The liquid-gas curve ends at the critical point; above the critical temperature a gas cannot be liquefied however much pressure is applied, and the substance is a supercritical fluid whose properties are intermediate between those of a liquid and a gas."
+   "name": "Critical point and supercritical fluid",
+   "statement": "The liquid-gas curve ends at the critical point. Above the critical temperature, no amount of pressure can liquefy a gas, and the substance is a supercritical fluid, with properties between those of a liquid and a gas."
   },
   {
    "id": "critical-point",
@@ -529,7 +529,7 @@
    "id": "types-of-crystalline-solids",
    "kind": "idea",
    "section": "10.5",
-   "name": "Ionic, metallic, covalent network, and molecular solids",
+   "name": "Types of crystalline solids",
    "statement": "Crystalline solids are classified by the forces between their particles, and these forces explain their properties: ionic solids are hard, brittle and conduct only when molten; metallic solids are malleable conductors; covalent network solids are very hard with very high melting points; molecular solids are soft with low melting points."
   },
   {
@@ -630,7 +630,7 @@
    "id": "unit-cell",
    "kind": "definition",
    "section": "10.6",
-   "name": "The unit cell and the lattice systems",
+   "name": "Unit cell",
    "terms": [
     "unit cell"
    ],
@@ -640,7 +640,7 @@
    "id": "cubic-unit-cells",
    "kind": "result",
    "section": "10.6",
-   "name": "Simple, body-centered, and face-centered cubic unit cells",
+   "name": "Cubic unit cells",
    "statement": "Counting one-eighth of each corner atom, one-half of each face atom and all of a body-center atom, a simple cubic cell contains one atom, a body-centered cubic cell two and a face-centered cubic cell four. Their coordination numbers are 6, 8 and 12, and they fill about 52%, 68% and 74% of the space."
   },
   {
@@ -654,21 +654,21 @@
    "id": "unit-cell-radius-and-density",
    "kind": "skill",
    "section": "10.6",
-   "name": "Calculating a radius and a density from a unit cell",
+   "name": "Finding radius and density from a unit cell",
    "statement": "Where the atoms touch (along an edge in a simple cubic cell, along a face diagonal in a face-centered cubic cell, along a body diagonal in a body-centered one) the edge length gives the radius; the atoms per cell times the mass of an atom, divided by the cell’s volume, gives the density. The same geometry gives ionic radii from the edge length of an ionic crystal."
   },
   {
    "id": "holes-in-closest-packed-arrays",
    "kind": "idea",
    "section": "10.6",
-   "name": "Tetrahedral, octahedral, and cubic holes",
+   "name": "Holes in closest-packed arrays",
    "statement": "In simple ionic structures the larger anions usually form a closest-packed array and the smaller cations occupy the holes between them: tetrahedral holes, two per anion, for small cations; octahedral holes, one per anion, for larger ones; and cubic holes in a simple cubic array for the largest."
   },
   {
    "id": "formula-from-hole-occupancy",
    "kind": "skill",
    "section": "10.6",
-   "name": "Finding a formula from the holes occupied",
+   "name": "Finding a formula from hole occupancy",
    "statement": "Knowing the number of holes of each kind per anion, the fraction of them the cations occupy gives the ratio of cations to anions, and so the formula of the compound."
   },
   {
@@ -682,7 +682,7 @@
    "id": "bragg-equation",
    "kind": "result",
    "section": "10.6",
-   "name": "X-ray diffraction and the Bragg equation, $n\\lambda = 2d\\sin\\theta$",
+   "name": "Bragg equation",
    "terms": [
     "Bragg equation"
    ],
@@ -751,7 +751,7 @@
    "id": "body-centered-cubic-solid",
    "kind": "definition",
    "section": "10.6",
-   "name": "Body-centered cubic (BCC) solid",
+   "name": "Body-centered cubic solid",
    "terms": [
     "body-centered cubic (BCC) solid"
    ],
@@ -771,7 +771,7 @@
    "id": "face-centered-cubic-solid",
    "kind": "definition",
    "section": "10.6",
-   "name": "Face-centered cubic (FCC) solid",
+   "name": "Face-centered cubic solid",
    "terms": [
     "face-centered cubic (FCC) solid"
    ],
@@ -791,7 +791,7 @@
    "id": "hexagonal-closest-packing",
    "kind": "definition",
    "section": "10.6",
-   "name": "Hexagonal closest packing (HCP)",
+   "name": "Hexagonal closest packing",
    "terms": [
     "hexagonal closest packing (HCP)"
    ],
@@ -801,7 +801,7 @@
    "id": "cubic-closest-packing",
    "kind": "definition",
    "section": "10.6",
-   "name": "Cubic closest packing (CCP)",
+   "name": "Cubic closest packing",
    "terms": [
     "cubic closest packing (CCP)"
    ],

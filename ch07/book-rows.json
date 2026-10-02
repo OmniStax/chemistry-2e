@@ -102,7 +102,7 @@
    "id": "electron-pair-geometry",
    "kind": "definition",
    "section": "7.6",
-   "name": "The five electron-pair geometries",
+   "name": "Electron-pair geometries",
    "terms": [
     "electron-pair geometry"
    ],
@@ -119,7 +119,7 @@
    "id": "electron-pair-repulsion-order",
    "kind": "result",
    "section": "7.6",
-   "name": "The order of repulsions and the space a region occupies",
+   "name": "Order of electron-pair repulsions",
    "statement": "The ideal angles are only approximate, because the regions of electron density are not all the same size. A lone pair repels more strongly than a bonding pair, and it occupies more space than a triple bond, which occupies more than a double bond, which occupies more than a single bond. That order is what explains the small distortions from the ideal angles, and it is what decides which arrangement is chosen when more than one is possible.",
    "forms": [
     {
@@ -138,7 +138,7 @@
    "id": "axial-and-equatorial-positions",
    "kind": "definition",
    "section": "7.6",
-   "name": "Axial and equatorial positions in a trigonal bipyramid",
+   "name": "Axial and equatorial positions",
    "statement": "In the linear, trigonal planar and tetrahedral arrangements every terminal position is equivalent, so it does not matter which one a lone pair takes. A trigonal bipyramid has two kinds of position: an axial position surrounded by 90° angles and an equatorial position with more room because of its 120° angles. A lone pair always takes an equatorial position, and in an octahedron with two lone pairs the two sit 180° apart, which is what makes ClF3 T-shaped and XeF4 square planar."
   },
   {
@@ -152,12 +152,12 @@
    "id": "bond-dipole-moment",
    "kind": "definition",
    "section": "7.6",
-   "name": "The bond dipole moment",
+   "name": "Bond dipole moment",
    "symbol": "μ",
    "terms": [
     "bond dipole moment"
    ],
-   "statement": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge, and the separation of charge is measured by the bond dipole moment, the product of the magnitude of the partial charges and the distance between them. It is drawn as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
+   "statement": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge. The bond dipole moment measures this separation of charge; it is the product of the magnitude of the partial charges and the distance between them. We draw it as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
    "forms": [
     {
      "id": "eq-dipole-moment",
@@ -302,7 +302,7 @@
    "id": "ionic-lattice",
    "kind": "idea",
    "section": "7.1",
-   "name": "An ionic formula describes a lattice, not a molecule",
+   "name": "Ionic lattice",
    "statement": "Because every compound is electrically neutral, the formula of an ionic compound gives the simplest ratio of ions whose charges cancel, as Al2O3 does with two Al3+ ions for every three O2− ions. The formula does not describe a molecule: the attraction between ions is the same in all directions, so each ion is drawn to all its neighbors of opposite charge and the ions build a three-dimensional lattice."
   },
   {
@@ -316,14 +316,14 @@
    "id": "ion-electron-configuration",
    "kind": "skill",
    "section": "7.1",
-   "name": "Writing the electron configuration of an ion",
+   "name": "Writing ion electron configurations",
    "statement": "The configuration of a cation is written by removing electrons from the neutral atom, and the configuration of an anion by adding them. For a transition metal the outermost s electrons are lost first, before any d electron, even though the d orbitals were the last to fill; so iron becomes Fe2+ by losing its 4s pair and Fe3+ by losing one 3d electron as well."
   },
   {
    "id": "inert-pair-effect",
    "kind": "idea",
    "section": "7.1",
-   "name": "The inert pair effect",
+   "name": "Inert pair effect",
    "terms": [
     "inert pair effect"
    ],
@@ -333,15 +333,15 @@
    "id": "ionic-compound-properties",
    "kind": "idea",
    "section": "7.1",
-   "name": "The properties of ionic compounds",
+   "name": "Properties of ionic compounds",
    "statement": "The ionic bond is strong, which is why ionic solids are rigid and brittle with high melting points, and the ions are held in place, which is why the solid conducts poorly while the melt or the solution conducts well."
   },
   {
    "id": "covalent-bond-formation",
    "kind": "idea",
    "section": "7.2",
-   "name": "How a covalent bond forms, and the bond length",
-   "statement": "A covalent bond is formed when two atoms share a pair of electrons that is attracted by both nuclei. As two hydrogen atoms approach, the potential energy falls while each electron is drawn to both nuclei and then rises steeply as the nuclei repel, and the bond length is the distance at which the energy is lowest. Breaking a bond always takes energy and forming one always releases it."
+   "name": "Covalent bond formation",
+   "statement": "A covalent bond forms when two atoms share a pair of electrons that both nuclei attract. As two hydrogen atoms approach, the potential energy falls while each electron is drawn to both nuclei, and then it rises steeply as the nuclei repel. The bond length is the distance at which the energy is lowest. Breaking a bond always takes energy, and forming one always releases it."
   },
   {
    "id": "electronegativity",
@@ -358,7 +358,7 @@
    "id": "bond-type-from-electronegativity",
    "kind": "skill",
    "section": "7.2",
-   "name": "Judging bond type from the electronegativity difference",
+   "name": "Judging bond type by electronegativity",
    "statement": "The absolute difference in electronegativity between two bonded atoms is a rough measure of the bond's character: a small difference gives a pure covalent bond, an intermediate one a polar covalent bond, and a large one an ionic bond. It is only a guide, and the better one is the kind of atoms involved, since bonds between two nonmetals are generally covalent and bonds between a metal and a nonmetal are often ionic."
   },
   {
@@ -397,14 +397,14 @@
    "id": "lewis-symbol",
    "kind": "skill",
    "section": "7.3",
-   "name": "Writing Lewis symbols for atoms and ions",
+   "name": "Writing Lewis symbols",
    "statement": "Write a Lewis symbol by surrounding the symbol of the element with one dot for each of its valence electrons. Remove dots to show a cation forming and add them to show an anion forming, so that the transfer of electrons in an ionic compound keeps the total number of electrons the same."
   },
   {
    "id": "octet-rule",
    "kind": "axiom",
    "section": "7.3",
-   "name": "The octet rule",
+   "name": "Octet rule",
    "terms": [
     "octet rule"
    ],
@@ -515,7 +515,7 @@
    "id": "formal-charge-guidelines",
    "kind": "skill",
    "section": "7.4",
-   "name": "Choosing the most likely Lewis structure by formal charge",
+   "name": "Choosing a Lewis structure by formal charge",
    "statement": "When more than one Lewis structure can be written, the preferred one has formal charges of zero, or else the smallest nonzero formal charges, with adjacent formal charges zero or of opposite sign, and with any negative formal charge on the more electronegative atom. These guidelines explain why the least electronegative atom usually takes the central position."
   },
   {
@@ -599,14 +599,14 @@
    "id": "bond-strength-and-length",
    "kind": "result",
    "section": "7.5",
-   "name": "Bond strength, bond order, and bond length",
+   "name": "Bond strength and bond length",
    "statement": "The more electron pairs two atoms share, the stronger and the shorter their bond, so a triple bond is stronger and shorter than a double bond between the same atoms and a double bond is stronger and shorter than a single one. When one atom bonds to the members of a group, the bond grows weaker going down the group."
   },
   {
    "id": "enthalpy-from-bond-energies",
    "kind": "skill",
    "section": "7.5",
-   "name": "Estimating an enthalpy of reaction from bond energies",
+   "name": "Estimating enthalpy from bond energies",
    "statement": "The enthalpy change of a reaction is approximately the energy needed to break every bond of the reactants less the energy released in forming every bond of the products. The estimate needs the Lewis structures of all the species, to know which bonds are single, double or triple, and it is rough because the bond energies are averages.",
    "forms": [
     {
@@ -641,7 +641,7 @@
    "id": "lattice-energy-trends",
    "kind": "result",
    "section": "7.5",
-   "name": "Lattice energy grows with ionic charge and shrinks with ionic size",
+   "name": "Lattice energy trends",
    "statement": "Derived from Coulomb's law, the lattice energy is proportional to the product of the ionic charges and inversely proportional to the distance between the ions. Doubling both charges quadruples it, which is why MgO has nearly four times the lattice energy of LiF, and smaller ions give a larger lattice energy, which is why MgF2 exceeds MgI2.",
    "forms": [
     {
@@ -657,8 +657,8 @@
    "id": "born-haber-cycle",
    "kind": "skill",
    "section": "7.5",
-   "name": "Calculating a lattice energy with the Born-Haber cycle",
-   "statement": "Lattice energies cannot be measured directly, but the Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: the sublimation of the metal, the dissociation of the nonmetal, the ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess's law the steps add up to the enthalpy of formation, so any one of them can be found from the others."
+   "name": "Using the Born-Haber cycle",
+   "statement": "Lattice energies cannot be measured directly. The Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: sublimation of the metal, dissociation of the nonmetal, ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess’s law, the steps add up to the enthalpy of formation, so any one of them can be found from the others."
   },
   {
    "id": "born-haber-thermochemical-cycle",

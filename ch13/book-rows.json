@@ -33,7 +33,7 @@
    "id": "chemical-equilibrium",
    "kind": "definition",
    "section": "13.1",
-   "name": "Equilibrium is reached when the forward and reverse rates are equal",
+   "name": "Chemical equilibrium",
    "terms": [
     "equilibrium"
    ],
@@ -58,7 +58,7 @@
    "id": "reaction-quotient",
    "kind": "definition",
    "section": "13.2",
-   "name": "The reaction quotient, $Q$",
+   "name": "Reaction quotient",
    "symbol": "Q_c",
    "terms": [
     "reaction quotient"
@@ -90,7 +90,7 @@
    "id": "equilibrium-constant",
    "kind": "definition",
    "section": "13.2",
-   "name": "The equilibrium constant and the law of mass action",
+   "name": "Equilibrium constant",
    "symbol": "K",
    "terms": [
     "equilibrium constant"
@@ -108,21 +108,21 @@
    "id": "magnitude-of-k",
    "kind": "idea",
    "section": "13.2",
-   "name": "What the magnitude of $K$ tells us",
-   "statement": "A reaction with a large $K$ reaches equilibrium when most of the reactant has been converted to product, whereas a small $K$ means very little has been converted. The magnitude of $K$ does not indicate how rapidly equilibrium is reached."
+   "name": "Magnitude of the equilibrium constant",
+   "statement": "A reaction with a large $K$ reaches equilibrium when most of the reactant has become product, whereas a small $K$ means very little reactant has reacted. The magnitude of $K$ says nothing about how rapidly the reaction reaches equilibrium."
   },
   {
    "id": "predict-direction-q-versus-k",
    "kind": "skill",
    "section": "13.2",
-   "name": "Predicting the direction of reaction by comparing $Q$ with $K$",
+   "name": "Predicting the direction of reaction",
    "statement": "A reaction proceeds in whatever direction is necessary to achieve equilibrium: forward when $Q < K$, in reverse when $Q > K$, and not at all when $Q = K$."
   },
   {
    "id": "kp-kc-relation",
    "kind": "result",
    "section": "13.2",
-   "name": "Relating $K_{P}$ and $K_{c}$, $K_{P}=K_{c}(RT)^{\\Delta n}$",
+   "name": "Relating Kp and Kc",
    "symbol": "Δn_gas",
    "statement": "Since the partial pressure of an ideal gas is $P = MRT$, each pressure in $K_{P}$ is a concentration times $RT$, and the factors collect into $(RT)^{\\Delta n}$, where $\\Delta n$ is the difference in the molar amounts of product and reactant gases.",
    "forms": [
@@ -174,7 +174,7 @@
    "id": "law-of-mass-action",
    "kind": "axiom",
    "section": "13.2",
-   "name": "The law of mass action",
+   "name": "Law of mass action",
    "terms": [
     "law of mass action"
    ],
@@ -224,21 +224,21 @@
    "id": "concentration-stress",
    "kind": "result",
    "section": "13.3",
-   "name": "A change in concentration shifts an equilibrium without changing $K$",
+   "name": "Concentration changes and equilibrium",
    "statement": "Adding reactant or removing product makes $Q_{c} < K_{c}$ and the equilibrium shifts right; removing reactant or adding product makes $Q_{c} > K_{c}$ and it shifts left. The new composition differs, but the value of the equilibrium constant is the same after the stress as before."
   },
   {
    "id": "volume-stress",
    "kind": "result",
    "section": "13.3",
-   "name": "A change in volume shifts a gas equilibrium toward fewer or more moles of gas",
+   "name": "Volume changes and equilibrium",
    "statement": "Changing the volume changes every partial pressure by the same factor. If the reactant and product gases have equal total molar amounts, $Q_{P}$ is unchanged and there is no shift; otherwise decreasing the volume shifts the equilibrium toward the side with fewer moles of gas."
   },
   {
    "id": "temperature-changes-k",
    "kind": "result",
    "section": "13.3",
-   "name": "A change in temperature changes $K$",
+   "name": "Temperature changes and equilibrium",
    "statement": "For an elementary reaction $K_{c}=k_{f}/k_{r}$, and the rate constants vary with temperature, so $K$ varies too. Treating heat as a reactant of an endothermic reaction and a product of an exothermic one predicts the shift: heating shifts an endothermic equilibrium right and an exothermic one left.",
    "forms": [
     {
@@ -253,21 +253,21 @@
    "id": "catalyst-and-equilibrium",
    "kind": "result",
    "section": "13.3",
-   "name": "A catalyst does not change the equilibrium constant",
+   "name": "Catalysts and equilibrium",
    "statement": "A catalyst lowers the activation energies of both the forward and the reverse reactions, so both are accelerated and equilibrium is reached more quickly, but without a change in the equilibrium constant."
   },
   {
    "id": "predict-equilibrium-shift",
    "kind": "skill",
    "section": "13.3",
-   "name": "Predicting the shift of a stressed equilibrium",
+   "name": "Predicting an equilibrium shift",
    "statement": "Given a stress (a species added or removed, a change in volume or temperature, a catalyst), Le Châtelier’s principle predicts the direction of the shift and how each concentration changes as equilibrium is re-established."
   },
   {
    "id": "ice-change-terms",
    "kind": "skill",
    "section": "13.4",
-   "name": "Relating the changes in concentration by the stoichiometry",
+   "name": "Relating concentration changes",
    "symbol": "x_ice",
    "statement": "Whatever the initial composition, the changes in the concentrations of the species in an equilibrium are related by the reaction stoichiometry, so all of them can be written as multiples of one unknown, $x$."
   },
@@ -275,7 +275,7 @@
    "id": "k-from-ice-table",
    "kind": "skill",
    "section": "13.4",
-   "name": "Calculating an equilibrium constant with an ICE table",
+   "name": "Calculating K with an ICE table",
    "statement": "Collecting the initial concentrations, their changes and the equilibrium concentrations in an ICE table derives every equilibrium concentration from the data given, and substituting them into the $K$ expression gives the equilibrium constant."
   },
   {
@@ -296,7 +296,7 @@
    "id": "small-x-approximation",
    "kind": "skill",
    "section": "13.4",
-   "name": "Simplifying the algebra when the change is small",
+   "name": "Small-change approximation",
    "statement": "When $K$ is small, the change in concentration may be much less than the initial concentration, so the initial concentration minus $x$ can be approximated by the initial concentration. The result must be checked, and the calculation repeated without the approximation if $x$ is not negligible."
   }
  ],

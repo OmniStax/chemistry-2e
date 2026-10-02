@@ -124,14 +124,14 @@
    "id": "water-autoionization",
    "kind": "idea",
    "section": "14.1",
-   "name": "The autoionization of water and $K_{\\text{w}}$",
+   "name": "Autoionization of water",
    "statement": "Liquid water undergoes autoionization to a very slight extent, and the equilibrium constant for this reaction is the ion-product constant for water, $K_{\\text{w}}$. The process is endothermic, so the extent of ionization, and with it $K_{\\text{w}}$, increases with temperature."
   },
   {
    "id": "kw-ion-concentrations",
    "kind": "skill",
    "section": "14.1",
-   "name": "Calculating [H<sub>3</sub>O<sup>+</sup>] and [OH<sup>−</sup>] from $K_{\\text{w}}$",
+   "name": "Calculating ion concentrations in water",
    "statement": "Because the product of the hydronium and hydroxide ion concentrations is fixed by $K_{\\text{w}}$, the two are inversely proportional: knowing one gives the other, and in pure water each is the square root of $K_{\\text{w}}$."
   },
   {
@@ -218,7 +218,7 @@
    "id": "ion-product-constant-for-water",
    "kind": "definition",
    "section": "14.1",
-   "name": "The ion-product constant for water, $K_{\\text{w}}$",
+   "name": "Ion-product constant for water",
    "symbol": "K_w",
    "terms": [
     "ion-product constant for water"
@@ -244,14 +244,14 @@
    "id": "ph-and-poh-scales",
    "kind": "definition",
    "section": "14.2",
-   "name": "The pH and pOH scales",
+   "name": "pH and pOH scales",
    "statement": "Hydronium and hydroxide ion concentrations span many orders of magnitude, so they are expressed with the p-function, the negative base-10 logarithm: pH = −log[H<sub>3</sub>O<sup>+</sup>] and pOH = −log[OH<sup>−</sup>]. Each unit of pH is a tenfold change in hydronium ion concentration."
   },
   {
    "id": "ph-plus-poh",
    "kind": "result",
    "section": "14.2",
-   "name": "pH + pOH = p$K_{\\text{w}}$",
+   "name": "Sum of pH and pOH",
    "statement": "Taking the negative logarithm of the $K_{\\text{w}}$ expression shows that the pH and pOH of any aqueous solution sum to p$K_{\\text{w}}$, which is 14.00 at 25 °C.",
    "forms": [
     {
@@ -266,7 +266,7 @@
    "id": "ph-calculations",
    "kind": "skill",
    "section": "14.2",
-   "name": "Converting between concentrations, pH, and pOH",
+   "name": "Converting between concentration, pH and pOH",
    "statement": "The definitions of pH and pOH and their sum let us move among [H<sub>3</sub>O<sup>+</sup>], [OH<sup>−</sup>], pH, and pOH; when taking the log of a value, we keep as many decimal places in the result as there are significant figures in the value."
   },
   {
@@ -310,7 +310,7 @@
    "id": "ph",
    "kind": "definition",
    "section": "14.2",
-   "name": "pH, $\\text{pH}=-\\log[\\text{H}_3\\text{O}^+]$",
+   "name": "pH",
    "symbol": "pH",
    "terms": [
     "pH"
@@ -335,7 +335,7 @@
    "id": "poh",
    "kind": "definition",
    "section": "14.2",
-   "name": "pOH, $\\text{pOH}=-\\log[\\text{OH}^-]$",
+   "name": "pOH",
    "symbol": "pOH",
    "terms": [
     "pOH"
@@ -360,7 +360,7 @@
    "id": "acid-base-ionization-constants",
    "kind": "definition",
    "section": "14.3",
-   "name": "Acid and base ionization constants, $K_{\\text{a}}$ and $K_{\\text{b}}$",
+   "name": "Acid and base ionization constants",
    "statement": "The relative strength of an acid or base is the extent to which it ionizes in water, and it is quantified by the equilibrium constant of its ionization, $K_{\\text{a}}$ or $K_{\\text{b}}$, in which water, being the solvent, does not appear. The larger the constant, the stronger the acid or base."
   },
   {
@@ -385,7 +385,7 @@
    "id": "conjugate-pair-strengths",
    "kind": "result",
    "section": "14.3",
-   "name": "$K_{\\text{a}}\\times K_{\\text{b}}=K_{\\text{w}}$ for a conjugate pair",
+   "name": "Conjugate pair strengths",
    "statement": "Adding the acid ionization of HA to the base ionization of A<sup>−</sup> gives the autoionization of water, so the product of their constants is $K_{\\text{w}}$. The stronger an acid or base, the weaker its conjugate partner, and the conjugate of a strong acid or base has negligible strength.",
    "forms": [
     {
@@ -399,7 +399,7 @@
    "id": "leveling-effect",
    "kind": "idea",
    "section": "14.3",
-   "name": "The leveling effect of water",
+   "name": "Leveling effect",
    "terms": [
     "leveling effect"
    ],
@@ -409,21 +409,21 @@
    "id": "ka-kb-from-equilibrium-data",
    "kind": "skill",
    "section": "14.3",
-   "name": "Determining $K_{\\text{a}}$ or $K_{\\text{b}}$ from equilibrium concentrations or pH",
+   "name": "Determining Ka or Kb",
    "statement": "Substituting equilibrium concentrations into the ionization constant expression gives $K_{\\text{a}}$ or $K_{\\text{b}}$ directly; when only the formal concentration and the pH are known, the pH gives the equilibrium [H<sub>3</sub>O<sup>+</sup>] and an ICE table gives the rest."
   },
   {
    "id": "weak-acid-base-equilibrium-concentrations",
    "kind": "skill",
    "section": "14.3",
-   "name": "Calculating equilibrium concentrations and pH in a weak acid or base solution",
+   "name": "Calculating weak acid or base equilibria",
    "statement": "An ICE table built from the initial concentration and the ionization constant gives the equilibrium concentrations. When the constant is small and the initial concentration large, the change $x$ may be neglected against it, provided $x$ is less than 5% of the initial concentration; otherwise the quadratic equation is solved."
   },
   {
    "id": "binary-acid-strength",
    "kind": "result",
    "section": "14.3",
-   "name": "Strengths of binary acids across a period and down a group",
+   "name": "Binary acid strength",
    "statement": "Across a row of the periodic table, the acid strength of binary hydrogen compounds increases with the electronegativity of the nonmetal, because the polarity of the H–A bond increases; down a group, it increases as the H–A bond strength decreases."
   },
   {
@@ -437,7 +437,7 @@
    "id": "acid-ionization-constant",
    "kind": "definition",
    "section": "14.3",
-   "name": "The acid ionization constant, $K_{\\text{a}}$",
+   "name": "Acid ionization constant",
    "symbol": "K_a2",
    "terms": [
     "acid ionization constant"
@@ -462,7 +462,7 @@
    "id": "base-ionization-constant",
    "kind": "definition",
    "section": "14.3",
-   "name": "The base ionization constant, $K_{\\text{b}}$",
+   "name": "Base ionization constant",
    "symbol": "K_b_ion",
    "terms": [
     "base ionization constant"
@@ -494,7 +494,7 @@
    "id": "predict-salt-solution-ph",
    "kind": "skill",
    "section": "14.4",
-   "name": "Predicting whether a salt solution is acidic, basic, or neutral",
+   "name": "Predicting the acidity of a salt solution",
    "statement": "We consider each ion separately; where a salt contains both an acidic and a basic ion, or a single amphiprotic ion, the solution is acidic or basic according to whether $K_{\\text{a}}$ or $K_{\\text{b}}$ is the larger."
   },
   {
@@ -522,7 +522,7 @@
    "id": "stepwise-ionization-calculations",
    "kind": "skill",
    "section": "14.5",
-   "name": "Calculating concentrations in a solution of a polyprotic acid",
+   "name": "Calculating polyprotic acid concentrations",
    "statement": "If the first ionization constant of a weak diprotic acid is larger than the second by a factor of at least 20, each step may be treated separately: the first gives [H<sub>3</sub>O<sup>+</sup>] and the monoanion, and those concentrations feed the second."
   },
   {
@@ -596,21 +596,21 @@
    "id": "how-buffers-work",
    "kind": "idea",
    "section": "14.6",
-   "name": "How a buffer neutralizes added acid or base",
+   "name": "How buffers work",
    "statement": "The weak acid of the pair neutralizes added hydroxide, converting it to the conjugate base, and the conjugate base neutralizes added hydronium, converting it to the weak acid. The ratio of the two changes only a little, and so does the pH."
   },
   {
    "id": "buffer-ph-calculations",
    "kind": "skill",
    "section": "14.6",
-   "name": "Calculating the pH of a buffer before and after adding acid or base",
+   "name": "Calculating buffer pH",
    "statement": "We first let the added strong acid or base react completely with the buffer component that neutralizes it, find the new concentrations of the two components, and then solve the equilibrium as before."
   },
   {
    "id": "buffer-capacity",
    "kind": "definition",
    "section": "14.6",
-   "name": "Buffer capacity and the choice of buffer",
+   "name": "Buffer capacity",
    "terms": [
     "buffer capacity"
    ],
@@ -620,7 +620,7 @@
    "id": "henderson-hasselbalch",
    "kind": "result",
    "section": "14.6",
-   "name": "The Henderson-Hasselbalch equation",
+   "name": "Henderson-Hasselbalch equation",
    "terms": [
     "Henderson-Hasselbalch equation"
    ],
@@ -648,14 +648,14 @@
    "id": "strong-acid-titration-ph",
    "kind": "skill",
    "section": "14.7",
-   "name": "Calculating pH in a strong acid-strong base titration",
-   "statement": "Before the equivalence point the pH is set by the excess strong acid, at the equivalence point only water and a neutral salt remain, so the pH is 7.00 at 25 °C, and beyond it the pH is set by the excess strong base."
+   "name": "Calculating pH in a strong acid titration",
+   "statement": "Before the equivalence point the excess strong acid sets the pH. At the equivalence point only water and a neutral salt remain, so the pH is 7.00 at 25 °C. Beyond it the excess strong base sets the pH."
   },
   {
    "id": "weak-acid-titration-ph",
    "kind": "skill",
    "section": "14.7",
-   "name": "Calculating pH in a weak acid-strong base titration",
+   "name": "Calculating pH in a weak acid titration",
    "statement": "Before any base is added the pH is that of the weak acid; halfway to equivalence the acid and its conjugate base are equal, so pH = p$K_{\\text{a}}$; at equivalence the conjugate base alone makes the solution basic; beyond it the excess strong base sets the pH."
   },
   {

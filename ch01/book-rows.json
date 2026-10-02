@@ -29,7 +29,7 @@
    "id": "scientific-method",
    "kind": "idea",
    "section": "1.1",
-   "name": "The scientific method",
+   "name": "Scientific method",
    "terms": [
     "scientific method"
    ],
@@ -39,15 +39,15 @@
    "id": "hypothesis-law-theory",
    "kind": "skill",
    "section": "1.1",
-   "name": "Telling a hypothesis from a law and from a theory",
-   "statement": "These three words are used loosely outside science and precisely inside it. A hypothesis is a tentative explanation that guides the gathering of information, a law summarizes a vast number of observations and predicts, and a theory is a well-substantiated explanation that survived a large body of data. Reading a statement and knowing which of the three it is tells the reader how much weight it carries."
+   "name": "Telling a hypothesis, law and theory apart",
+   "statement": "Outside science these three words are loose; inside it they are precise. A hypothesis is a tentative explanation that guides the gathering of information, a law summarizes a vast number of observations and predicts, and a theory is a well-substantiated explanation that has survived a large body of data. Knowing which of the three a statement is tells you how much weight it carries."
   },
   {
    "id": "domains-of-chemistry",
    "kind": "idea",
    "section": "1.1",
-   "name": "The macroscopic, microscopic, and symbolic domains",
-   "statement": "Chemists describe matter in three domains at once: the macroscopic, which can be seen and touched; the microscopic, which is mostly imagined; and the symbolic, the formulas and equations that stand for either. One of the challenges of learning chemistry is that the same symbol can stand for a thing in one domain or in the other, and one of the pleasures is explaining what can be observed by what must be imagined."
+   "name": "Domains of chemistry",
+   "statement": "Chemists describe matter in three domains at once: the macroscopic, which you can see and touch; the microscopic, which is mostly imagined; and the symbolic, the formulas and equations that stand for either. One challenge of learning chemistry is that the same symbol can stand for a thing in one domain or the other, and one pleasure is explaining what you observe by what you must imagine."
   },
   {
    "id": "chemistry",
@@ -133,25 +133,25 @@
    "id": "states-of-matter",
    "kind": "definition",
    "section": "1.2",
-   "name": "Solid, liquid, gas, and plasma",
+   "name": "States of matter",
    "statement": "A solid is rigid and keeps its shape, a liquid flows and keeps its volume, and a gas takes both the shape and the volume of its container; a plasma is a gas carrying enough charged particles to behave unlike one. These are the states the book will move a substance between for the rest of the chapters, so the properties that tell them apart come first."
   },
   {
    "id": "mass-versus-weight",
    "kind": "idea",
    "section": "1.2",
-   "name": "Mass and weight are not the same",
+   "name": "Mass versus weight",
    "statement": "The mass of an object measures the amount of matter in it and does not change; weight is the force gravity exerts on it and changes with the gravity it sits in. An astronaut's mass is the same on the moon as on the earth while her weight is one sixth of it, so it is mass, not weight, that says how much matter is present."
   },
   {
    "id": "conservation-of-matter",
    "kind": "axiom",
    "section": "1.2",
-   "name": "The law of conservation of matter",
+   "name": "Law of conservation of matter",
    "terms": [
     "law of conservation of matter"
    ],
-   "statement": "There is no detectable change in the total quantity of matter when matter converts from one type to another or changes among the solid, liquid and gaseous states. It is the law every balanced equation and every mass calculation of the later chapters rests on, and the reason a mass that seems to vanish has gone somewhere that was not weighed."
+   "statement": "There is no detectable change in the total quantity of matter when matter converts from one type to another or changes among the solid, liquid and gaseous states. Every balanced equation and every mass calculation of the later chapters rests on this law, and a mass that seems to vanish has gone somewhere nobody weighed."
   },
   {
    "id": "elements-and-compounds",
@@ -188,7 +188,7 @@
    "id": "mass",
    "kind": "definition",
    "section": "1.2",
-   "name": "Mass, $m$",
+   "name": "Mass",
    "symbol": "m",
    "terms": [
     "mass"
@@ -356,8 +356,8 @@
    "id": "classify-physical-or-chemical",
    "kind": "skill",
    "section": "1.3",
-   "name": "Classifying a change as physical or chemical",
-   "statement": "Deciding which of the two kinds of change has happened is a judgement the reader has to make about a described event, and the judgement comes down to one question: is the matter that is left the same kind of matter as the matter that was there before? A gas that expands has changed physically; a gas that has burned has not."
+   "name": "Classifying a change",
+   "statement": "To decide which kind of change a described event is, ask one question: is the matter left afterward the same kind of matter as the matter there before? A gas that expands has changed physically; a gas that has burned has not."
   },
   {
    "id": "extensive-and-intensive-properties",
@@ -410,8 +410,8 @@
    "id": "measurement-parts",
    "kind": "idea",
    "section": "1.4",
-   "name": "The three parts of a measured quantity",
-   "statement": "Every measurement provides three kinds of information: a number, a unit that says what the number is compared against, and an uncertainty. The number and the unit are written down and the uncertainty is carried implicitly, and a quantity that is missing any of the three is at best confusing; a dose of one hundred without its unit can be a treatment or a lethal amount."
+   "name": "Parts of a measurement",
+   "statement": "Every measurement provides three kinds of information: a number, a unit that says what the number is compared against, and an uncertainty. You write down the number and the unit and carry the uncertainty implicitly. A quantity missing any of the three is at best confusing: a dose of one hundred without its unit can be a treatment or a lethal amount."
   },
   {
    "id": "scientific-notation",
@@ -424,7 +424,7 @@
    "id": "si-base-units",
    "kind": "definition",
    "section": "1.4",
-   "name": "The SI base units",
+   "name": "SI base units",
    "statement": "Seven fundamental properties have units fixed by international agreement, and every other unit in the book is derived from them. Knowing that the meter, the kilogram, the second, the kelvin, the ampere, the mole and the candela are the base units is what makes a unit conversion a matter of bookkeeping rather than of memory."
   },
   {
@@ -474,7 +474,7 @@
    "id": "measure-volume-by-displacement",
    "kind": "skill",
    "section": "1.4",
-   "name": "Measuring a volume by displacement of water",
+   "name": "Measuring volume by displacement",
    "statement": "A cube's volume can be calculated from its edge, but most objects are not cubes. Lowering an object into a partly filled graduated cylinder raises the water by exactly the object's volume, which turns an irregular shape into a subtraction and makes the density of anything that sinks measurable with a balance and a cylinder."
   },
   {
@@ -502,7 +502,7 @@
    "id": "time",
    "kind": "definition",
    "section": "1.4",
-   "name": "Time, $t$",
+   "name": "Time",
    "symbol": "t",
    "statement": "Time is measured in the SI base unit of time, the second."
   },
@@ -510,7 +510,7 @@
    "id": "temperature",
    "kind": "definition",
    "section": "1.4",
-   "name": "Temperature, $T$",
+   "name": "Temperature",
    "symbol": "T",
    "terms": [
     "temperature"
@@ -531,7 +531,7 @@
    "id": "meter",
    "kind": "definition",
    "section": "1.4",
-   "name": "Meter, m",
+   "name": "Meter",
    "terms": [
     "meter (m)"
    ],
@@ -541,7 +541,7 @@
    "id": "kilogram",
    "kind": "definition",
    "section": "1.4",
-   "name": "Kilogram, kg",
+   "name": "Kilogram",
    "terms": [
     "kilogram (kg)"
    ],
@@ -551,7 +551,7 @@
    "id": "second",
    "kind": "definition",
    "section": "1.4",
-   "name": "Second, s",
+   "name": "Second",
    "terms": [
     "second (s)"
    ],
@@ -561,7 +561,7 @@
    "id": "kelvin",
    "kind": "definition",
    "section": "1.4",
-   "name": "Kelvin, K",
+   "name": "Kelvin",
    "terms": [
     "kelvin (K)"
    ],
@@ -571,7 +571,7 @@
    "id": "celsius",
    "kind": "definition",
    "section": "1.4",
-   "name": "Celsius, °C",
+   "name": "Degree Celsius",
    "terms": [
     "Celsius (°C)"
    ],
@@ -581,7 +581,7 @@
    "id": "cubic-meter",
    "kind": "definition",
    "section": "1.4",
-   "name": "Cubic meter, m³",
+   "name": "Cubic meter",
    "terms": [
     "cubic meter (m³)"
    ],
@@ -591,7 +591,7 @@
    "id": "cubic-centimeter",
    "kind": "definition",
    "section": "1.4",
-   "name": "Cubic centimeter, cm³",
+   "name": "Cubic centimeter",
    "terms": [
     "cubic centimeter (cm³ or cc)"
    ],
@@ -601,7 +601,7 @@
    "id": "liter",
    "kind": "definition",
    "section": "1.4",
-   "name": "Liter, L",
+   "name": "Liter",
    "terms": [
     "liter (L)"
    ],
@@ -611,7 +611,7 @@
    "id": "milliliter",
    "kind": "definition",
    "section": "1.4",
-   "name": "Milliliter, mL",
+   "name": "Milliliter",
    "terms": [
     "milliliter (mL)"
    ],
@@ -646,15 +646,15 @@
    "id": "count-significant-figures",
    "kind": "skill",
    "section": "1.5",
-   "name": "Counting the significant figures in a number",
+   "name": "Counting significant figures",
    "statement": "The rule is to start at the first nonzero digit on the left and count every digit to its right, and the only difficulty is the zeros. A captive zero results from measurement and is always significant, a leading zero only locates the decimal point and never is, and a trailing zero to the left of the decimal point is ambiguous unless the number is written in scientific notation."
   },
   {
    "id": "rounding-rules",
    "kind": "skill",
    "section": "1.5",
-   "name": "Rounding a number to a given number of digits",
-   "statement": "A digit to be dropped that is less than five rounds down and one greater than five rounds up. When the dropped digit is a five with nothing but zeros after it, the retained digit is rounded to whichever value is even, which is a rule from statistics and is there to keep the rounding from leaning one way over many calculations."
+   "name": "Rounding to a given number of digits",
+   "statement": "A digit to be dropped that is less than five rounds down, and one greater than five rounds up. When the dropped digit is a five with nothing but zeros after it, round the retained digit to whichever value is even. This rule from statistics keeps the rounding from leaning one way over many calculations."
   },
   {
    "id": "significant-figures-in-calculations",
@@ -743,39 +743,39 @@
    "id": "unit-conversion-factor",
    "kind": "definition",
    "section": "1.6",
-   "name": "The unit conversion factor",
+   "name": "Unit conversion factor",
    "terms": [
     "unit conversion factor"
    ],
-   "statement": "A ratio of two equivalent quantities written in different units is equal to one, so multiplying by it changes a quantity's units without changing the quantity. Because the ratio can be written either way up, the reader chooses the arrangement that cancels the unit to be got rid of and leaves the one that is wanted."
+   "statement": "A ratio of two equivalent quantities in different units equals one, so multiplying by it changes a quantity's units without changing the quantity. The ratio can go either way up, so you choose the arrangement that cancels the unit you want gone and leaves the one you want."
   },
   {
    "id": "convert-units",
    "kind": "skill",
    "section": "1.6",
-   "name": "Converting a quantity from one unit to another",
+   "name": "Converting units",
    "statement": "Multiplying by one conversion factor after another, each oriented so that the unwanted unit cancels, converts a measurement through as many steps as it takes. It is the most-used skill of the chapter, and it works the same whether the conversion is between two metric units, between metric and customary units, or between units of an area or a volume."
   },
   {
    "id": "compute-with-units",
    "kind": "skill",
    "section": "1.6",
-   "name": "Computing a quantity from measurements in mixed units",
+   "name": "Computing with mixed units",
    "statement": "Beyond a simple conversion, the factor-label method solves a problem in which the quantity wanted is computed from two or more measured ones given in the wrong units. All the factors are arranged in one line so that the labels cancel and combine into the unit of the answer, and the arithmetic is done once at the end."
   },
   {
    "id": "linear-versus-proportional-scales",
    "kind": "idea",
    "section": "1.6",
-   "name": "Why temperature conversion is linear, not proportional",
+   "name": "Linear versus proportional scales",
    "statement": "Most units of a property are directly proportional to one another and a single conversion factor moves between them. The Celsius and Fahrenheit scales do not share a zero, so the relation between them is a line with an intercept rather than a line through the origin, and converting between them takes both a slope and an offset."
   },
   {
    "id": "temperature-scales",
    "kind": "definition",
    "section": "1.6",
-   "name": "The Celsius, Fahrenheit, and kelvin scales",
-   "statement": "A temperature scale is fixed by choosing reference temperatures and dividing the space between them. Celsius puts the freezing and boiling of water at 0 and 100, Fahrenheit at 32 and 212, and kelvin is absolute: its zero is the lowest temperature that can theoretically be achieved, which is why its unit carries no degree symbol."
+   "name": "Temperature scales",
+   "statement": "You fix a temperature scale by choosing reference temperatures and dividing the space between them. Celsius puts the freezing and boiling of water at 0 and 100, Fahrenheit at 32 and 212. Kelvin is absolute: its zero is the lowest temperature theoretically achievable, and its unit carries no degree symbol."
   },
   {
    "id": "celsius-fahrenheit-conversion",
@@ -823,7 +823,7 @@
    "id": "fahrenheit",
    "kind": "definition",
    "section": "1.6",
-   "name": "Fahrenheit, °F",
+   "name": "Degree Fahrenheit",
    "terms": [
     "Fahrenheit"
    ],

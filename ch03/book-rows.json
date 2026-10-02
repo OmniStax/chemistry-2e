@@ -16,21 +16,21 @@
       "id": "formula-mass",
       "kind": "skill",
       "section": "3.1",
-      "name": "Calculating the formula mass of a compound",
+      "name": "Calculating formula mass",
       "statement": "You calculate the formula mass of a substance by multiplying each element’s average atomic mass by its subscript and adding the products."
     },
     {
       "id": "molecular-versus-formula-mass",
       "kind": "idea",
       "section": "3.1",
-      "name": "Molecular mass and the formula mass of an ionic compound",
+      "name": "Molecular mass versus formula mass",
       "statement": "For a covalent substance the formula describes one molecule, so its formula mass may be called a molecular mass; an ionic compound has no discrete molecule, so its formula mass may not. The masses of neutral atoms are used for ions as well, since the mass of an electron is negligible beside that of an atom."
     },
     {
       "id": "mole",
       "kind": "definition",
       "section": "3.1",
-      "name": "The mole",
+      "name": "Mole",
       "symbol": "n",
       "terms": [
         "mole"
@@ -41,12 +41,18 @@
       "id": "avogadro-number",
       "kind": "axiom",
       "section": "3.1",
-      "name": "Avogadro’s number, $N_A = 6.022 \\times 10^{23}$/mol",
+      "name": "Avogadro’s number",
       "symbol": "N_A",
       "terms": [
         "Avogadro’s number"
       ],
-      "statement": "One mole of any substance contains the same number of entities, 6.022 × 10<sup>23</sup>, so the number of atoms or molecules in a sample follows from its amount in moles. The size of the number is what lets a drop of water hold more molecules than can be clearly imagined."
+      "statement": "One mole of any substance contains the same number of entities, 6.022 × 10<sup>23</sup>, so the number of atoms or molecules in a sample follows from its amount in moles. The size of the number is what lets a drop of water hold more molecules than can be clearly imagined.",
+      "forms": [
+        {
+          "id": "eq-avogadro-number",
+          "latex": "N_A = 6.022 \\times 10^{23}"
+        }
+      ]
     },
     {
       "id": "molar-mass",
@@ -70,7 +76,7 @@
       "id": "count-atoms-and-molecules",
       "kind": "skill",
       "section": "3.1",
-      "name": "Counting atoms and molecules from a mass",
+      "name": "Counting atoms and molecules",
       "statement": "A mass is converted to moles with the molar mass and then to a number of entities with Avogadro’s number, and the formula then gives the number of each kind of atom. The two-step chain answers questions no balance can answer directly, such as how many carbon atoms a packet of sweetener holds."
     },
     {
@@ -112,8 +118,8 @@
       "id": "empirical-formula",
       "kind": "skill",
       "section": "3.2",
-      "name": "Deriving an empirical formula from the masses of the elements",
-      "statement": "A formula states the relative numbers of atoms, not their masses, so each element’s mass is converted to moles, the amounts are divided by the smallest, and the result is multiplied by an integer if needed to reach whole numbers. The procedure turns an analysis on a balance into a chemical formula."
+      "name": "Deriving an empirical formula",
+      "statement": "A formula states the relative numbers of atoms, not their masses. So convert each element’s mass to moles, divide the amounts by the smallest, and multiply by an integer if needed to reach whole numbers. The procedure turns an analysis on a balance into a chemical formula."
     },
     {
       "id": "empirical-formula-from-percent",
@@ -126,7 +132,7 @@
       "id": "molecular-formula-from-empirical",
       "kind": "skill",
       "section": "3.2",
-      "name": "Deriving a molecular formula from an empirical formula",
+      "name": "Deriving a molecular formula",
       "symbol": "n_fu",
       "statement": "An empirical formula gives only the relative numbers of atoms. Dividing the molecular or molar mass by the empirical formula mass gives the number of formula units in each molecule, and multiplying every subscript by that number gives the molecular formula.",
       "forms": [
@@ -158,7 +164,7 @@
       "id": "solution-components",
       "kind": "definition",
       "section": "3.3",
-      "name": "Solvent, solute, and aqueous solutions",
+      "name": "Solution components",
       "statement": "A solution is a homogeneous mixture, and it usually has one component, the solvent, present at a much greater concentration than the others, the solutes, which are dissolved in it. A solution in water is an aqueous solution, the kind this book meets most often."
     },
     {
@@ -176,7 +182,7 @@
       "id": "molarity",
       "kind": "definition",
       "section": "3.3",
-      "name": "Molarity, $M$ = mol solute / L solution",
+      "name": "Molarity",
       "symbol": "M",
       "terms": [
         "molarity (M)"
@@ -228,7 +234,7 @@
       "id": "dilution-equation",
       "kind": "result",
       "section": "3.3",
-      "name": "The dilution equation, $C_1V_1 = C_2V_2$",
+      "name": "Dilution equation",
       "statement": "Since n = ML and the amount of solute does not change on dilution, the product of concentration and volume is the same before and after. The relation works in any units of concentration and volume that cancel, so it is written C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub>.",
       "forms": [
         {
@@ -364,14 +370,14 @@
       "id": "concentration-unit-conversions",
       "kind": "skill",
       "section": "3.4",
-      "name": "Converting between concentration units with a density",
+      "name": "Converting concentration units",
       "statement": "A solution’s density converts its volume to its mass, and a molar mass converts a mass of solute to moles, so a concentration given in one unit can be expressed in another, from a mass percentage to a mass of solute or to a molarity."
     },
     {
       "id": "parts-per-million",
       "kind": "definition",
       "section": "3.4",
-      "name": "Parts per million, ppm",
+      "name": "Parts per million",
       "terms": [
         "parts per million (ppm)"
       ],
@@ -389,7 +395,7 @@
       "id": "parts-per-billion",
       "kind": "definition",
       "section": "3.4",
-      "name": "Parts per billion, ppb",
+      "name": "Parts per billion",
       "terms": [
         "parts per billion (ppb)"
       ],

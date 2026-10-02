@@ -111,7 +111,7 @@
       "id": "photon-energy",
       "kind": "axiom",
       "section": "6.1",
-      "name": "The energy of a photon",
+      "name": "Photon energy",
       "symbol": "E",
       "statement": "Light is absorbed and emitted in discrete packets called photons, and the energy of one photon is set by the frequency of the radiation, E = hν, or equivalently by its wavelength, E = hc/λ.",
       "forms": [
@@ -138,14 +138,14 @@
       "id": "wave-properties",
       "kind": "definition",
       "section": "6.1",
-      "name": "Wavelength, frequency, and amplitude",
-      "statement": "Every wave, electromagnetic radiation included, is characterized by a wavelength, the distance between two consecutive peaks or troughs, a frequency, the number of cycles that pass a point per unit time, and an amplitude, one-half the height from peak to trough. The amplitude is related to the intensity of the wave, which for light is its brightness, and the wavelength and frequency are what the rest of the chapter measures light by."
+      "name": "Wave properties",
+      "statement": "Every wave, electromagnetic radiation included, has a wavelength, the distance between two consecutive peaks or troughs; a frequency, the number of cycles that pass a point per unit time; and an amplitude, one-half the height from peak to trough. The amplitude is related to the intensity of the wave, which for light is its brightness. We describe light by its wavelength and frequency."
     },
     {
       "id": "wave-speed-relation",
       "kind": "result",
       "section": "6.1",
-      "name": "The speed of a wave, $c=\\lambda\\nu$",
+      "name": "Wave speed",
       "symbol": "c",
       "statement": "The product of a wave's wavelength and its frequency is its speed, and for electromagnetic radiation in a vacuum that speed is the constant c. Wavelength and frequency are therefore inversely proportional: as one increases, the other decreases, and either one may be found from the other.",
       "forms": [
@@ -162,7 +162,7 @@
       "id": "electromagnetic-spectrum",
       "kind": "idea",
       "section": "6.1",
-      "name": "The electromagnetic spectrum",
+      "name": "Electromagnetic spectrum",
       "terms": [
         "electromagnetic spectrum"
       ],
@@ -179,7 +179,7 @@
       "id": "blackbody-radiation",
       "kind": "idea",
       "section": "6.1",
-      "name": "Blackbody radiation and Planck's quantized energies",
+      "name": "Blackbody radiation and Planck’s quantized energies",
       "symbol": "h",
       "statement": "A heated object gives off a continuous spectrum whose distribution depends only on its temperature, and the peak of the curve moves to shorter wavelengths as the temperature rises. Classical theory predicted an intensity that grows without limit at short wavelengths, the ultraviolet catastrophe; Planck fitted the observed curves by restricting the vibrational energies to discrete values, E = nhν, which was the first appearance of energy quantization.",
       "forms": [
@@ -196,7 +196,7 @@
       "id": "photoelectric-effect",
       "kind": "idea",
       "section": "6.1",
-      "name": "The photoelectric effect",
+      "name": "Photoelectric effect",
       "statement": "Light ejects electrons from a clean metal surface only when its frequency is above a threshold, and the kinetic energy of the ejected electrons rises with the frequency and not with the brightness, while the number of electrons rises with the brightness. Einstein explained this by treating light as a stream of photons, each carrying the energy hν, so that only a photon with enough energy can free an electron."
     },
     {
@@ -223,7 +223,7 @@
       "id": "wavelength",
       "kind": "definition",
       "section": "6.1",
-      "name": "Wavelength, $\\lambda$",
+      "name": "Wavelength",
       "symbol": "λ",
       "terms": [
         "wavelength (λ)"
@@ -234,7 +234,7 @@
       "id": "frequency",
       "kind": "definition",
       "section": "6.1",
-      "name": "Frequency, $\\nu$",
+      "name": "Frequency",
       "symbol": "ν",
       "terms": [
         "frequency (ν)"
@@ -245,11 +245,17 @@
       "id": "hertz",
       "kind": "definition",
       "section": "6.1",
-      "name": "The hertz, $1\\ \\text{Hz} = 1\\ \\text{s}^{-1}$",
+      "name": "Hertz",
       "terms": [
         "hertz (Hz)"
       ],
-      "statement": "The hertz is the unit of frequency, one cycle per second."
+      "statement": "The hertz is the unit of frequency, one cycle per second.",
+      "forms": [
+        {
+          "id": "eq-hertz",
+          "latex": "1\\ \\text{Hz} = 1\\ \\text{s}^{-1}"
+        }
+      ]
     },
     {
       "id": "amplitude",
@@ -356,7 +362,7 @@
       "id": "rydberg-equation",
       "kind": "axiom",
       "section": "6.1",
-      "name": "The Rydberg equation, $\\frac{1}{\\lambda}=R_{\\infty}\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)$",
+      "name": "Rydberg equation",
       "symbol": "R_inf",
       "statement": "The wavelengths of all the lines in the spectrum of hydrogen fit one empirical equation: one over the wavelength is the Rydberg constant times the difference of the reciprocal squares of two integers, n₁ less than n₂. Balmer's equation for the four visible lines is the case n₁ = 2.",
       "forms": [
@@ -380,22 +386,22 @@
       "id": "classical-atom-instability",
       "kind": "idea",
       "section": "6.2",
-      "name": "Why the planetary atom cannot be stable",
+      "name": "Instability of the planetary atom",
       "statement": "In the planetary picture the electron moves about the nucleus as a planet moves about the sun. An electron on such an orbit is always changing direction, and so is always accelerating, and classical electromagnetism says that an accelerating charge must continuously emit radiation. The orbit would then shrink until the electron spiraled into the nucleus, which would make every atom inherently unstable."
     },
     {
       "id": "bohr-stationary-states",
       "kind": "axiom",
       "section": "6.2",
-      "name": "Bohr's stationary states",
+      "name": "Bohr’s stationary states",
       "statement": "An electron in one of the allowed orbits of an atom does not radiate at all; it emits or absorbs radiation only when it moves from one allowed orbit to another. The energies of those orbits are quantized: the electron may possess certain discrete energies and no value between them."
     },
     {
       "id": "bohr-energy-levels",
       "kind": "result",
       "section": "6.2",
-      "name": "The allowed energies, $E_n=-kZ^2/n^2$",
-      "statement": "The energy of an electron on the orbit labelled n is the constant k, which gathers the electron mass and charge and Planck's constant together, divided by the square of n and multiplied by the square of the nuclear charge. The energies are negative because they are measured from the state in which the electron has been removed altogether, and they crowd toward zero as n grows, so that the rungs of the ladder are far apart at the bottom and close together at the top. Because they are measured that way, E = 0 is the ionization limit, the state in which the electron has been removed from the nucleus altogether, and the energy needed to take a ground-state hydrogen atom there is the constant k itself.",
+      "name": "Bohr energy levels",
+      "statement": "The energy of an electron in the orbit labeled n is −k times the square of the nuclear charge, divided by the square of n. The constant k gathers the electron mass, the electron charge and Planck’s constant. The energies are negative because they are measured from E = 0, the ionization limit, where the electron has been removed from the nucleus altogether. They crowd toward zero as n grows, so the rungs of the ladder are far apart at the bottom and close together at the top. The energy needed to ionize a ground-state hydrogen atom is k itself.",
       "forms": [
         {
           "id": "eq-bohr-energy",
@@ -431,9 +437,9 @@
       "id": "photon-emission-absorption",
       "kind": "result",
       "section": "6.2",
-      "name": "One transition, one photon: $|\\Delta E|=h\\nu=hc/\\lambda$",
+      "name": "Emission and absorption of a photon",
       "symbol": "ΔE",
-      "statement": "When an electron moves between two allowed orbits the atom emits or absorbs a single photon whose energy is the whole of the difference between the two orbital energies. Falling to a lower orbit emits the photon, and absorbing one moves the electron up; because energy can be neither created nor destroyed, the energy needed to lift an electron from one level to another is exactly the energy liberated when it returns. The absolute value is used because a frequency and a wavelength are always positive.",
+      "statement": "When an electron moves between two allowed orbits, the atom emits or absorbs a single photon whose energy equals the difference between the two orbital energies. Falling to a lower orbit emits the photon, and absorbing one moves the electron up. Energy can be neither created nor destroyed, so the energy needed to lift an electron from one level to another equals the energy released when it returns. We use the absolute value of the difference because a frequency and a wavelength are always positive.",
       "forms": [
         {
           "id": "eq-photon-energy-difference",
@@ -455,9 +461,9 @@
       "id": "bohr-orbit-radius",
       "kind": "result",
       "section": "6.2",
-      "name": "The radius of an allowed orbit, $r=n^2a_0/Z$",
+      "name": "Bohr orbit radius",
       "symbol": "r",
-      "statement": "The allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises, measured in units of the Bohr radius, the radius of hydrogen's ground-state orbit. This is the other half of what n says: as the electron's energy increases it is found at greater distances from the nucleus, which is what the inverse dependence of the electrostatic attraction on distance implies, since an electron further out is held less tightly.",
+      "statement": "The radii of the allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises. They are measured in units of the Bohr radius, the radius of hydrogen’s ground-state orbit. As the electron’s energy increases, it is found farther from the nucleus. The electrostatic attraction weakens with distance, so an electron farther out is held less tightly.",
       "forms": [
         {
           "id": "eq-bohr-radius",
@@ -471,7 +477,7 @@
       "id": "rydberg-constant-recovered",
       "kind": "result",
       "section": "6.2",
-      "name": "The Rydberg equation recovered, $R_{\\infty}=k/hc$",
+      "name": "Rydberg constant from the Bohr model",
       "statement": "Putting the quantized energies of the Bohr model into the photon relation gives an expression for one over the wavelength that has the same form as the Rydberg equation, with the Rydberg constant equal to k divided by hc. Bohr’s theoretical value agreed excellently with the experimental one.",
       "forms": [
         {
@@ -487,8 +493,8 @@
       "id": "calculating-bohr-transition-energies",
       "kind": "skill",
       "section": "6.2",
-      "name": "Calculating the energy and wavelength of a transition",
-      "statement": "The second objective of the section is a calculation: given the two quantum numbers and the nuclear charge, find the energy difference from kZ²(1/n₁² − 1/n₂²), read its sign to say whether the photon is absorbed or emitted, and divide hc by its magnitude to get the wavelength. Doing it once with care is what turns the model from a picture into something that can be checked against a spectrum.",
+      "name": "Calculating transition energies",
+      "statement": "Given the two quantum numbers and the nuclear charge, find the energy difference from kZ²(1/n₁² − 1/n₂²). Its sign tells you whether the photon is absorbed or emitted, and dividing hc by its magnitude gives the wavelength. The result can then be checked against a measured spectrum.",
       "forms": [
         {
           "id": "eq-bohr-transition",
@@ -511,7 +517,7 @@
       "id": "bohr-model",
       "kind": "idea",
       "section": "6.2",
-      "name": "Bohr's model of the hydrogen atom",
+      "name": "Bohr’s model of the hydrogen atom",
       "terms": [
         "Bohr's model of the hydrogen atom"
       ],
@@ -552,7 +558,7 @@
       "id": "de-broglie-wavelength",
       "kind": "axiom",
       "section": "6.3",
-      "name": "The de Broglie wavelength, $\\lambda=h/mv$",
+      "name": "De Broglie wavelength",
       "symbol": "λ",
       "statement": "De Broglie extended wave-particle duality to matter: a particle of mass m moving with velocity v behaves as a wave whose wavelength is Planck's constant divided by its momentum. The wavelength of an electron in an atom is about the size of the atom, so its wavelike behavior is noticeable there, while that of a softball is far too small to detect. Viewed as a circular standing wave, an electron fits an orbit only when a whole number of its wavelengths fits the circumference, which explains Bohr's quantization.",
       "forms": [
@@ -576,7 +582,7 @@
       "id": "heisenberg-uncertainty",
       "kind": "axiom",
       "section": "6.3",
-      "name": "The Heisenberg uncertainty principle",
+      "name": "Heisenberg uncertainty principle",
       "terms": [
         "Heisenberg uncertainty principle"
       ],
@@ -618,18 +624,18 @@
       "id": "principal-quantum-number-shells",
       "kind": "definition",
       "section": "6.3",
-      "name": "The principal quantum number and shells",
+      "name": "Principal quantum number",
       "symbol": "n_quantum",
       "terms": [
         "principal quantum number (n)"
       ],
-      "statement": "The principal quantum number n = 1, 2, 3, … labels the energy levels of an electron in an atom and is essentially the n of the Bohr atom. Orbitals with the same n form a shell, and the greater n is, the farther the electron is from the nucleus and the greater its energy; a transition between levels absorbs or emits a photon that carries the energy difference."
+      "statement": "The principal quantum number n = 1, 2, 3, … labels the energy levels of an electron in an atom and plays the role of the n of the Bohr atom. Orbitals with the same n form a shell. The greater n is, the farther the electron is from the nucleus and the greater its energy. A transition between levels absorbs or emits a photon that carries the energy difference."
     },
     {
       "id": "angular-momentum-quantum-number",
       "kind": "definition",
       "section": "6.3",
-      "name": "The secondary quantum number, subshells, and orbital shapes",
+      "name": "Secondary quantum number",
       "symbol": "l_quantum",
       "terms": [
         "secondary (angular momentum) quantum number (l)"
@@ -640,7 +646,7 @@
       "id": "magnetic-quantum-number",
       "kind": "definition",
       "section": "6.3",
-      "name": "The magnetic quantum number and degenerate orbitals",
+      "name": "Magnetic quantum number",
       "symbol": "m_l",
       "terms": [
         "magnetic quantum number (mₗ)"
@@ -651,7 +657,7 @@
       "id": "spin-quantum-number",
       "kind": "definition",
       "section": "6.3",
-      "name": "The spin quantum number",
+      "name": "Spin quantum number",
       "symbol": "m_s",
       "terms": [
         "spin quantum number (mₛ)"
@@ -662,7 +668,7 @@
       "id": "pauli-exclusion-principle",
       "kind": "axiom",
       "section": "6.3",
-      "name": "The Pauli exclusion principle",
+      "name": "Pauli exclusion principle",
       "terms": [
         "Pauli exclusion principle"
       ],
@@ -672,14 +678,14 @@
       "id": "working-with-quantum-numbers",
       "kind": "skill",
       "section": "6.3",
-      "name": "Working with shells, subshells, and quantum numbers",
+      "name": "Working with quantum numbers",
       "statement": "Given a value of n, list the allowed values of l and m_l, name the subshells, and count the orbitals in each; a shell holds n² orbitals and at most 2n² electrons. Given a set of quantum numbers, name the subshell."
     },
     {
       "id": "velocity",
       "kind": "definition",
       "section": "6.3",
-      "name": "Velocity, $v$",
+      "name": "Velocity",
       "symbol": "v",
       "statement": "The velocity of a particle is the rate at which its position changes, the distance it travels per unit time in a given direction."
     },
@@ -687,9 +693,15 @@
       "id": "momentum",
       "kind": "definition",
       "section": "6.3",
-      "name": "Momentum, $p = mv$",
+      "name": "Momentum",
       "symbol": "p_momentum",
-      "statement": "The linear momentum of a particle is the product of its mass and its velocity."
+      "statement": "The linear momentum of a particle is the product of its mass and its velocity.",
+      "forms": [
+        {
+          "id": "eq-momentum",
+          "latex": "p = mv"
+        }
+      ]
     },
     {
       "id": "quantum-mechanics",
@@ -705,7 +717,7 @@
       "id": "wavefunction",
       "kind": "definition",
       "section": "6.3",
-      "name": "Wavefunction, $\\psi$",
+      "name": "Wavefunction",
       "symbol": "ψ",
       "terms": [
         "wavefunction (ψ)"
@@ -716,7 +728,7 @@
       "id": "electron-density",
       "kind": "definition",
       "section": "6.3",
-      "name": "Electron density, $|\\psi|^2$",
+      "name": "Electron density",
       "terms": [
         "electron density"
       ],
@@ -806,14 +818,14 @@
       "id": "orbital-energy-order",
       "kind": "idea",
       "section": "6.4",
-      "name": "The energy order of atomic orbitals",
+      "name": "Energy order of atomic orbitals",
       "statement": "In an atom with two or more electrons, the energy of the orbitals increases with n and, within a shell, in the order s < p < d < f, because electrons with larger l penetrate less toward the nucleus and are more shielded by the inner electrons. For larger atoms the two trends overlap, so that the 4s orbital lies below the 3d and the filling order runs 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, and so on."
     },
     {
       "id": "aufbau-principle",
       "kind": "result",
       "section": "6.4",
-      "name": "The Aufbau principle",
+      "name": "Aufbau principle",
       "terms": [
         "Aufbau principle"
       ],
@@ -823,7 +835,7 @@
       "id": "hunds-rule",
       "kind": "axiom",
       "section": "6.4",
-      "name": "Hund's rule",
+      "name": "Hund’s rule",
       "terms": [
         "Hund’s rule"
       ],
@@ -918,7 +930,7 @@
       "id": "effective-nuclear-charge",
       "kind": "definition",
       "section": "6.5",
-      "name": "Effective nuclear charge, $Z_{\\text{eff}}=Z-\\text{shielding}$",
+      "name": "Effective nuclear charge",
       "symbol": "Z_eff",
       "terms": [
         "effective nuclear charge"
@@ -937,21 +949,21 @@
       "id": "covalent-radius-trend",
       "kind": "idea",
       "section": "6.5",
-      "name": "The trend in covalent radius",
+      "name": "Covalent radius trend",
       "statement": "The covalent radius, one-half the distance between the nuclei of two identical atoms joined by a covalent bond, increases down a group because each step adds a shell farther from the nucleus, and decreases from left to right across a period because the rising effective nuclear charge draws the electrons closer."
     },
     {
       "id": "ionic-radius-trend",
       "kind": "idea",
       "section": "6.5",
-      "name": "The radii of ions and isoelectronic species",
+      "name": "Ionic radius trend",
       "statement": "A cation is smaller than its parent atom, since the remaining electrons feel a greater effective nuclear charge, and a cation of higher charge is smaller still; an anion is larger than its parent, since the added electrons repel one another. Atoms and ions with the same electron configuration are isoelectronic, and among them the one with the greater nuclear charge is the smaller."
     },
     {
       "id": "ionization-energy-trend",
       "kind": "idea",
       "section": "6.5",
-      "name": "The trend in first ionization energy",
+      "name": "Ionization energy trend",
       "statement": "The first ionization energy, the energy required to remove the most loosely bound electron from a gaseous atom, is always positive and generally decreases down a group and increases across a period, the opposite of the trend in size. It dips each time a new subshell begins, as from beryllium to boron, and again where a p subshell becomes more than half-filled, as from nitrogen to oxygen."
     },
     {
@@ -974,15 +986,15 @@
       "id": "electron-affinity-trend",
       "kind": "idea",
       "section": "6.5",
-      "name": "The trend in electron affinity",
-      "statement": "The electron affinity is the energy change when a gaseous atom accepts an electron, and it may be negative (energy released) or positive. Electron affinities tend to become more negative across a period as the effective nuclear charge increases, with exceptions in groups 2, 15, and 18 where a filled or half-filled subshell resists the added electron, and the second element of a group, such as chlorine, often has a more negative value than the first because the small n = 2 shell crowds its electrons."
+      "name": "Electron affinity trend",
+      "statement": "The electron affinity is the energy change when a gaseous atom accepts an electron; it is negative when energy is released and positive otherwise. Electron affinities tend to become more negative across a period as the effective nuclear charge increases. Groups 2, 15 and 18 are exceptions, because a filled or half-filled subshell resists the added electron. The second element of a group, such as chlorine, often has a more negative value than the first, because the small n = 2 shell crowds its electrons."
     },
     {
       "id": "predicting-periodic-trends",
       "kind": "skill",
       "section": "6.5",
-      "name": "Predicting sizes and energies from the periodic table",
-      "statement": "From the positions of elements in the periodic table the reader orders atoms and ions by radius, by ionization energy, or by electron affinity, putting the trend down a group together with the trend across a period and allowing for the exceptions the section explains. Because metallic character follows the same trend as size, the same reading tells which elements lose electrons most easily."
+      "name": "Predicting periodic trends",
+      "statement": "From the positions of elements in the periodic table, order atoms and ions by radius, ionization energy or electron affinity. Combine the trend down a group with the trend across a period, and allow for the known exceptions. Metallic character follows the same trend as size, so the same reading tells which elements lose electrons most easily."
     },
     {
       "id": "covalent-radius",
@@ -1009,7 +1021,7 @@
       "id": "ionization-energy",
       "kind": "definition",
       "section": "6.5",
-      "name": "Ionization energy, $\\text{IE}$",
+      "name": "Ionization energy",
       "symbol": "IE",
       "terms": [
         "ionization energy"
@@ -1029,7 +1041,7 @@
       "id": "electron-affinity",
       "kind": "definition",
       "section": "6.5",
-      "name": "Electron affinity, $\\text{EA}$",
+      "name": "Electron affinity",
       "symbol": "EA",
       "terms": [
         "electron affinity"

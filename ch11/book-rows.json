@@ -134,7 +134,7 @@
    "id": "predict-solution-formation",
    "kind": "skill",
    "section": "11.1",
-   "name": "Predict whether two substances form a solution",
+   "name": "Predicting solution formation",
    "statement": "Naming the strongest attractions within the solute, within the solvent and between the two lets us predict whether they will mix and which solvent suits a solute."
   },
   {
@@ -205,7 +205,7 @@
    "id": "classify-electrolyte-strength",
    "kind": "skill",
    "section": "11.2",
-   "name": "Classify a solute as a strong, weak or nonelectrolyte",
+   "name": "Classifying electrolytes",
    "statement": "Whether a solute is ionic, a strong acid, a weak acid or base, or an unreactive covalent compound tells us how well its solution will conduct."
   },
   {
@@ -252,7 +252,7 @@
    "id": "solubility-and-saturation",
    "kind": "definition",
    "section": "11.3",
-   "name": "Solubility, saturated and unsaturated solutions",
+   "name": "Solubility and saturation",
    "statement": "The solubility of a solute is the maximum concentration it can reach in a solvent under given conditions when dissolution is at equilibrium. A solution at that concentration is saturated, one below it is unsaturated."
   },
   {
@@ -269,7 +269,7 @@
    "id": "gas-solubility-and-temperature",
    "kind": "result",
    "section": "11.3",
-   "name": "Gases grow less soluble as temperature rises",
+   "name": "Gas solubility and temperature",
    "statement": "Since a gaseous solute has no solute-solute attraction to overcome, only its attraction to the solvent sets its solubility, and that solubility typically decreases as the temperature increases, which is why thermal pollution starves natural waters of oxygen."
   },
   {
@@ -296,14 +296,14 @@
    "id": "henrys-law-calculations",
    "kind": "skill",
    "section": "11.3",
-   "name": "Calculate a gas solubility with Henry’s law",
+   "name": "Using Henry’s law",
    "statement": "Finding k from one known solubility and pressure gives the solubility at any other pressure, and a constant read from a solubility graph answers whether a stream holds enough oxygen for its fish."
   },
   {
    "id": "miscibility",
    "kind": "definition",
    "section": "11.3",
-   "name": "Miscible, immiscible and partially miscible liquids",
+   "name": "Miscibility",
    "statement": "Liquids of similar polarity mix in all proportions because the attractions between unlike molecules are as strong as those between like ones, an illustration of “like dissolves like”; a nonpolar liquid and water form separate layers, and some pairs are only partially miscible."
   },
   {
@@ -485,14 +485,14 @@
    "id": "molar-mass-from-colligative-properties",
    "kind": "skill",
    "section": "11.4",
-   "name": "Determine a molar mass from a colligative property",
+   "name": "Finding molar mass from a colligative property",
    "statement": "A measured freezing point depression, boiling point elevation or osmotic pressure gives the moles of solute in a known mass, and so the solute’s molar mass."
   },
   {
    "id": "vant-hoff-factor",
    "kind": "result",
    "section": "11.4",
-   "name": "Colligative properties of electrolytes and the van’t Hoff factor",
+   "name": "Van’t Hoff factor",
    "symbol": "i_vh",
    "terms": [
     "van’t Hoff factor"
@@ -511,7 +511,7 @@
    "id": "molality",
    "kind": "definition",
    "section": "11.4",
-   "name": "Molality, $m = \\text{mol solute}/\\text{kg solvent}$",
+   "name": "Molality",
    "symbol": "m_molal",
    "terms": [
     "molality"
@@ -531,7 +531,7 @@
    "id": "boiling-point-elevation-constant",
    "kind": "definition",
    "section": "11.4",
-   "name": "Boiling point elevation constant, $K_b$",
+   "name": "Boiling point elevation constant",
    "symbol": "K_b",
    "terms": [
     "boiling point elevation constant"
@@ -542,7 +542,7 @@
    "id": "freezing-point-depression-constant",
    "kind": "definition",
    "section": "11.4",
-   "name": "Freezing point depression constant, $K_f$",
+   "name": "Freezing point depression constant",
    "symbol": "K_f",
    "terms": [
     "freezing point depression constant"
@@ -688,7 +688,7 @@
    "id": "tyndall-effect",
    "kind": "idea",
    "section": "11.5",
-   "name": "The Tyndall effect",
+   "name": "Tyndall effect",
    "terms": [
     "Tyndall effect"
    ],

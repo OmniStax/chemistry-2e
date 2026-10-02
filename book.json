@@ -1221,7 +1221,7 @@
       "id": "scientific-method",
       "kind": "idea",
       "section": "1.1",
-      "name": "The scientific method",
+      "name": "Scientific method",
       "terms": [
         "scientific method"
       ],
@@ -1231,14 +1231,14 @@
       "id": "hypothesis-law-theory",
       "kind": "skill",
       "section": "1.1",
-      "name": "Telling a hypothesis from a law and from a theory",
+      "name": "Telling a hypothesis, law and theory apart",
       "statement": "Outside science these three words are loose; inside it they are precise. A hypothesis is a tentative explanation that guides the gathering of information, a law summarizes a vast number of observations and predicts, and a theory is a well-substantiated explanation that has survived a large body of data. Knowing which of the three a statement is tells you how much weight it carries."
     },
     {
       "id": "domains-of-chemistry",
       "kind": "idea",
       "section": "1.1",
-      "name": "The macroscopic, microscopic, and symbolic domains",
+      "name": "Domains of chemistry",
       "statement": "Chemists describe matter in three domains at once: the macroscopic, which you can see and touch; the microscopic, which is mostly imagined; and the symbolic, the formulas and equations that stand for either. One challenge of learning chemistry is that the same symbol can stand for a thing in one domain or the other, and one pleasure is explaining what you observe by what you must imagine."
     },
     {
@@ -1325,21 +1325,21 @@
       "id": "states-of-matter",
       "kind": "definition",
       "section": "1.2",
-      "name": "Solid, liquid, gas, and plasma",
+      "name": "States of matter",
       "statement": "A solid is rigid and keeps its shape, a liquid flows and keeps its volume, and a gas takes both the shape and the volume of its container; a plasma is a gas carrying enough charged particles to behave unlike one. These are the states the book will move a substance between for the rest of the chapters, so the properties that tell them apart come first."
     },
     {
       "id": "mass-versus-weight",
       "kind": "idea",
       "section": "1.2",
-      "name": "Mass and weight are not the same",
+      "name": "Mass versus weight",
       "statement": "The mass of an object measures the amount of matter in it and does not change; weight is the force gravity exerts on it and changes with the gravity it sits in. An astronaut's mass is the same on the moon as on the earth while her weight is one sixth of it, so it is mass, not weight, that says how much matter is present."
     },
     {
       "id": "conservation-of-matter",
       "kind": "axiom",
       "section": "1.2",
-      "name": "The law of conservation of matter",
+      "name": "Law of conservation of matter",
       "terms": [
         "law of conservation of matter"
       ],
@@ -1380,7 +1380,7 @@
       "id": "mass",
       "kind": "definition",
       "section": "1.2",
-      "name": "Mass, $m$",
+      "name": "Mass",
       "symbol": "m",
       "terms": [
         "mass"
@@ -1548,7 +1548,7 @@
       "id": "classify-physical-or-chemical",
       "kind": "skill",
       "section": "1.3",
-      "name": "Classifying a change as physical or chemical",
+      "name": "Classifying a change",
       "statement": "To decide which kind of change a described event is, ask one question: is the matter left afterward the same kind of matter as the matter there before? A gas that expands has changed physically; a gas that has burned has not."
     },
     {
@@ -1602,7 +1602,7 @@
       "id": "measurement-parts",
       "kind": "idea",
       "section": "1.4",
-      "name": "The three parts of a measured quantity",
+      "name": "Parts of a measurement",
       "statement": "Every measurement provides three kinds of information: a number, a unit that says what the number is compared against, and an uncertainty. You write down the number and the unit and carry the uncertainty implicitly. A quantity missing any of the three is at best confusing: a dose of one hundred without its unit can be a treatment or a lethal amount."
     },
     {
@@ -1616,7 +1616,7 @@
       "id": "si-base-units",
       "kind": "definition",
       "section": "1.4",
-      "name": "The SI base units",
+      "name": "SI base units",
       "statement": "Seven fundamental properties have units fixed by international agreement, and every other unit in the book is derived from them. Knowing that the meter, the kilogram, the second, the kelvin, the ampere, the mole and the candela are the base units is what makes a unit conversion a matter of bookkeeping rather than of memory."
     },
     {
@@ -1666,7 +1666,7 @@
       "id": "measure-volume-by-displacement",
       "kind": "skill",
       "section": "1.4",
-      "name": "Measuring a volume by displacement of water",
+      "name": "Measuring volume by displacement",
       "statement": "A cube's volume can be calculated from its edge, but most objects are not cubes. Lowering an object into a partly filled graduated cylinder raises the water by exactly the object's volume, which turns an irregular shape into a subtraction and makes the density of anything that sinks measurable with a balance and a cylinder."
     },
     {
@@ -1694,7 +1694,7 @@
       "id": "time",
       "kind": "definition",
       "section": "1.4",
-      "name": "Time, $t$",
+      "name": "Time",
       "symbol": "t",
       "statement": "Time is measured in the SI base unit of time, the second."
     },
@@ -1702,7 +1702,7 @@
       "id": "temperature",
       "kind": "definition",
       "section": "1.4",
-      "name": "Temperature, $T$",
+      "name": "Temperature",
       "symbol": "T",
       "terms": [
         "temperature"
@@ -1723,7 +1723,7 @@
       "id": "meter",
       "kind": "definition",
       "section": "1.4",
-      "name": "Meter, m",
+      "name": "Meter",
       "terms": [
         "meter (m)"
       ],
@@ -1733,7 +1733,7 @@
       "id": "kilogram",
       "kind": "definition",
       "section": "1.4",
-      "name": "Kilogram, kg",
+      "name": "Kilogram",
       "terms": [
         "kilogram (kg)"
       ],
@@ -1743,7 +1743,7 @@
       "id": "second",
       "kind": "definition",
       "section": "1.4",
-      "name": "Second, s",
+      "name": "Second",
       "terms": [
         "second (s)"
       ],
@@ -1753,7 +1753,7 @@
       "id": "kelvin",
       "kind": "definition",
       "section": "1.4",
-      "name": "Kelvin, K",
+      "name": "Kelvin",
       "terms": [
         "kelvin (K)"
       ],
@@ -1763,7 +1763,7 @@
       "id": "celsius",
       "kind": "definition",
       "section": "1.4",
-      "name": "Celsius, °C",
+      "name": "Degree Celsius",
       "terms": [
         "Celsius (°C)"
       ],
@@ -1773,7 +1773,7 @@
       "id": "cubic-meter",
       "kind": "definition",
       "section": "1.4",
-      "name": "Cubic meter, m³",
+      "name": "Cubic meter",
       "terms": [
         "cubic meter (m³)"
       ],
@@ -1783,7 +1783,7 @@
       "id": "cubic-centimeter",
       "kind": "definition",
       "section": "1.4",
-      "name": "Cubic centimeter, cm³",
+      "name": "Cubic centimeter",
       "terms": [
         "cubic centimeter (cm³ or cc)"
       ],
@@ -1793,7 +1793,7 @@
       "id": "liter",
       "kind": "definition",
       "section": "1.4",
-      "name": "Liter, L",
+      "name": "Liter",
       "terms": [
         "liter (L)"
       ],
@@ -1803,7 +1803,7 @@
       "id": "milliliter",
       "kind": "definition",
       "section": "1.4",
-      "name": "Milliliter, mL",
+      "name": "Milliliter",
       "terms": [
         "milliliter (mL)"
       ],
@@ -1838,14 +1838,14 @@
       "id": "count-significant-figures",
       "kind": "skill",
       "section": "1.5",
-      "name": "Counting the significant figures in a number",
+      "name": "Counting significant figures",
       "statement": "The rule is to start at the first nonzero digit on the left and count every digit to its right, and the only difficulty is the zeros. A captive zero results from measurement and is always significant, a leading zero only locates the decimal point and never is, and a trailing zero to the left of the decimal point is ambiguous unless the number is written in scientific notation."
     },
     {
       "id": "rounding-rules",
       "kind": "skill",
       "section": "1.5",
-      "name": "Rounding a number to a given number of digits",
+      "name": "Rounding to a given number of digits",
       "statement": "A digit to be dropped that is less than five rounds down, and one greater than five rounds up. When the dropped digit is a five with nothing but zeros after it, round the retained digit to whichever value is even. This rule from statistics keeps the rounding from leaning one way over many calculations."
     },
     {
@@ -1935,7 +1935,7 @@
       "id": "unit-conversion-factor",
       "kind": "definition",
       "section": "1.6",
-      "name": "The unit conversion factor",
+      "name": "Unit conversion factor",
       "terms": [
         "unit conversion factor"
       ],
@@ -1945,28 +1945,28 @@
       "id": "convert-units",
       "kind": "skill",
       "section": "1.6",
-      "name": "Converting a quantity from one unit to another",
+      "name": "Converting units",
       "statement": "Multiplying by one conversion factor after another, each oriented so that the unwanted unit cancels, converts a measurement through as many steps as it takes. It is the most-used skill of the chapter, and it works the same whether the conversion is between two metric units, between metric and customary units, or between units of an area or a volume."
     },
     {
       "id": "compute-with-units",
       "kind": "skill",
       "section": "1.6",
-      "name": "Computing a quantity from measurements in mixed units",
+      "name": "Computing with mixed units",
       "statement": "Beyond a simple conversion, the factor-label method solves a problem in which the quantity wanted is computed from two or more measured ones given in the wrong units. All the factors are arranged in one line so that the labels cancel and combine into the unit of the answer, and the arithmetic is done once at the end."
     },
     {
       "id": "linear-versus-proportional-scales",
       "kind": "idea",
       "section": "1.6",
-      "name": "Why temperature conversion is linear, not proportional",
+      "name": "Linear versus proportional scales",
       "statement": "Most units of a property are directly proportional to one another and a single conversion factor moves between them. The Celsius and Fahrenheit scales do not share a zero, so the relation between them is a line with an intercept rather than a line through the origin, and converting between them takes both a slope and an offset."
     },
     {
       "id": "temperature-scales",
       "kind": "definition",
       "section": "1.6",
-      "name": "The Celsius, Fahrenheit, and kelvin scales",
+      "name": "Temperature scales",
       "statement": "You fix a temperature scale by choosing reference temperatures and dividing the space between them. Celsius puts the freezing and boiling of water at 0 and 100, Fahrenheit at 32 and 212. Kelvin is absolute: its zero is the lowest temperature theoretically achievable, and its unit carries no degree symbol."
     },
     {
@@ -2015,7 +2015,7 @@
       "id": "fahrenheit",
       "kind": "definition",
       "section": "1.6",
-      "name": "Fahrenheit, °F",
+      "name": "Degree Fahrenheit",
       "terms": [
         "Fahrenheit"
       ],
@@ -2035,7 +2035,7 @@
       "id": "law-of-definite-proportions",
       "kind": "axiom",
       "section": "2.1",
-      "name": "The law of definite proportions",
+      "name": "Law of definite proportions",
       "terms": [
         "law of constant composition",
         "law of definite proportions"
@@ -2046,7 +2046,7 @@
       "id": "law-of-multiple-proportions",
       "kind": "axiom",
       "section": "2.1",
-      "name": "The law of multiple proportions",
+      "name": "Law of multiple proportions",
       "terms": [
         "law of multiple proportions"
       ],
@@ -2089,7 +2089,7 @@
       "id": "subatomic-particles",
       "kind": "definition",
       "section": "2.2",
-      "name": "Protons, neutrons, and electrons",
+      "name": "Subatomic particles",
       "statement": "An atom is built from three kinds of subatomic particle: the negatively charged, very light electron outside the nucleus, and the positively charged proton and the uncharged neutron of nearly the same mass inside it. Everything the chapter says about atomic number, mass number, isotopes and ions is counted in these three particles."
     },
     {
@@ -2106,7 +2106,7 @@
       "id": "alpha-particle",
       "kind": "definition",
       "section": "2.2",
-      "name": "Alpha particle, α",
+      "name": "Alpha particle",
       "terms": [
         "alpha particle (α particle)"
       ],
@@ -2156,7 +2156,7 @@
       "id": "atomic-mass-unit",
       "kind": "definition",
       "section": "2.3",
-      "name": "The atomic mass unit and the fundamental unit of charge",
+      "name": "Atomic mass unit",
       "terms": [
         "atomic mass unit (amu)",
         "Dalton (Da)",
@@ -2183,7 +2183,7 @@
       "id": "ions-and-atomic-charge",
       "kind": "definition",
       "section": "2.3",
-      "name": "Ions, cations, and anions",
+      "name": "Ions",
       "symbol": "Z_plus",
       "statement": "When the numbers of protons and electrons in an atom are not equal, it carries a charge equal to the number of protons minus the number of electrons and is called an ion. An atom that gains electrons becomes a negatively charged anion, and one that loses electrons becomes a positively charged cation.",
       "forms": [
@@ -2198,7 +2198,7 @@
       "id": "composition-of-an-atom",
       "kind": "skill",
       "section": "2.3",
-      "name": "Finding the numbers of protons, neutrons, and electrons in an atom or ion",
+      "name": "Counting protons, neutrons and electrons",
       "statement": "From an element’s atomic number, a mass number and a charge, you can count the particles. The atomic number gives the protons, the mass number less the atomic number gives the neutrons, and the protons less the charge give the electrons. The same reasoning run backward gives the charge from the counts."
     },
     {
@@ -2215,7 +2215,7 @@
       "id": "isotope-symbols",
       "kind": "skill",
       "section": "2.3",
-      "name": "Writing and reading the symbol of an isotope or ion",
+      "name": "Writing isotope symbols",
       "statement": "The full symbol of an atom places the mass number as a left superscript, the atomic number as a left subscript (often omitted) and the charge as a right superscript on the element’s symbol. Reading and writing these symbols, and the equivalent names such as magnesium-24 or Mg-24, is how the book refers to a particular isotope or ion from here on."
     },
     {
@@ -2240,7 +2240,7 @@
       "id": "isotopic-abundance-from-average-mass",
       "kind": "skill",
       "section": "2.3",
-      "name": "Calculating isotopic abundances from an average mass",
+      "name": "Finding isotopic abundances",
       "statement": "For an element with two isotopes, the fraction of one can be written as x and of the other as 1 − x, and the average mass equation then becomes one equation in one unknown. Solving it turns the average atomic mass back into the percent composition by isotope."
     },
     {
@@ -2284,7 +2284,7 @@
       "id": "atomic-number",
       "kind": "definition",
       "section": "2.3",
-      "name": "Atomic number, $Z$",
+      "name": "Atomic number",
       "symbol": "Z",
       "terms": [
         "atomic number (Z)"
@@ -2295,7 +2295,7 @@
       "id": "mass-number",
       "kind": "definition",
       "section": "2.3",
-      "name": "Mass number, $A$",
+      "name": "Mass number",
       "symbol": "A",
       "terms": [
         "mass number (A)"
@@ -2387,7 +2387,7 @@
       "id": "periodic-law",
       "kind": "axiom",
       "section": "2.5",
-      "name": "The periodic law",
+      "name": "Periodic law",
       "terms": [
         "periodic law"
       ],
@@ -2411,21 +2411,21 @@
       "id": "element-families",
       "kind": "definition",
       "section": "2.5",
-      "name": "Main-group elements, transition metals, and the named groups",
+      "name": "Main groups and transition metals",
       "statement": "The groups 1, 2 and 13 to 18 hold the main-group elements, groups 3 to 12 the transition metals, and the two rows beneath the table the inner transition metals, the lanthanides and actinides. Several groups have names of their own, the alkali metals, alkaline earth metals, pnictogens, chalcogens, halogens and noble gases, and their members have similar chemical properties."
     },
     {
       "id": "name-group-of-element",
       "kind": "skill",
       "section": "2.5",
-      "name": "Naming the group an element belongs to",
+      "name": "Naming an element’s group",
       "statement": "Find any element in the periodic table and give the name of its group, and from a group name and a period, find the element. The next two sections rely on this fluency with the table to predict ions and name compounds."
     },
     {
       "id": "periodic-table",
       "kind": "definition",
       "section": "2.5",
-      "name": "The periodic table",
+      "name": "Periodic table",
       "terms": [
         "periodic table"
       ],
@@ -2598,7 +2598,7 @@
       "id": "predict-ion-charge-from-group",
       "kind": "skill",
       "section": "2.6",
-      "name": "Predicting the charge of a monatomic ion",
+      "name": "Predicting ion charge from the group",
       "statement": "Main-group metals tend to lose enough electrons to have as many as the preceding noble gas and form cations whose charge equals their group number, and nonmetals tend to gain enough electrons to match the next noble gas and form anions whose charge is the number of groups they lie to the left of the noble gases. The rule weakens toward the middle of the table, where metals such as iron and copper form ions of more than one charge."
     },
     {
@@ -2632,7 +2632,7 @@
       "id": "ionic-compound-formula",
       "kind": "skill",
       "section": "2.6",
-      "name": "Writing the formula of an ionic compound",
+      "name": "Writing ionic formulas",
       "statement": "An ionic compound is electrically neutral, so its formula takes the ions in the ratio that makes the positive and negative charges equal, with a polyatomic ion treated as a unit in parentheses when more than one is needed. Two Al³⁺ and three O²⁻ give Al₂O₃, and one Ca²⁺ with two H₂PO₄⁻ gives Ca(H₂PO₄)₂."
     },
     {
@@ -2650,7 +2650,7 @@
       "id": "predict-bond-type",
       "kind": "skill",
       "section": "2.6",
-      "name": "Predicting whether a compound is ionic or molecular",
+      "name": "Predicting ionic or molecular",
       "statement": "Given a formula, find its elements in the periodic table. A metal with nonmetals, or a compound with a polyatomic ion, is ionic, and nonmetals alone form a molecular compound. Ask this question first before you name any compound in the next section."
     },
     {
@@ -2704,14 +2704,14 @@
       "id": "name-variable-charge-metal-compounds",
       "kind": "skill",
       "section": "2.7",
-      "name": "Naming compounds of metals with variable charge",
+      "name": "Naming variable-charge metal compounds",
       "statement": "When a metal can form ions of more than one charge, the charge of its ion is worked out from the formula and the anion’s fixed charge and written as a Roman numeral in parentheses after the metal’s name, as in iron(II) chloride and iron(III) chloride. The older suffixes -ous and -ic for the lower and higher charges survive in some industries."
     },
     {
       "id": "name-hydrates",
       "kind": "skill",
       "section": "2.7",
-      "name": "Naming and writing formulas of ionic hydrates",
+      "name": "Naming hydrates",
       "statement": "A hydrate is named by adding to the name of the anhydrous compound a Greek prefix for the number of water molecules per formula unit followed by the word hydrate, and its formula appends a centered dot, that number and H₂O. Copper(II) sulfate pentahydrate is CuSO₄·5H₂O."
     },
     {
@@ -2796,7 +2796,7 @@
       "id": "phase-from-imf-and-kinetic-energy",
       "kind": "idea",
       "section": "10.1",
-      "name": "The phase of a substance depends on its intermolecular forces and kinetic energy",
+      "name": "Phase and intermolecular forces",
       "statement": "Intermolecular forces hold particles close together, whereas the particles’ kinetic energy works to separate them, so the phase of a substance depends on the balance between the two. Cooling a gas or compressing it lets the attractions win and it condenses; cooling a liquid far enough lets it freeze."
     },
     {
@@ -2813,14 +2813,14 @@
       "id": "polarizability-and-dispersion-strength",
       "kind": "result",
       "section": "10.1",
-      "name": "Larger, more polarizable particles have stronger dispersion forces",
+      "name": "Polarizability and dispersion forces",
       "statement": "In a larger atom the valence electrons are farther from the nucleus and less tightly held, so the electron cloud is more easily distorted; a more polarizable particle has larger dispersion forces and a higher melting and boiling point."
     },
     {
       "id": "shape-and-dispersion-strength",
       "kind": "result",
       "section": "10.1",
-      "name": "Molecular shape and contact area affect dispersion forces",
+      "name": "Molecular shape and dispersion forces",
       "statement": "Molecules with the same formula can have different dispersion forces: an elongated molecule offers more surface area for contact with its neighbors than a compact one, and so it is held more strongly."
     },
     {
@@ -2847,7 +2847,7 @@
       "id": "rank-by-intermolecular-forces",
       "kind": "skill",
       "section": "10.1",
-      "name": "Identifying the intermolecular forces in a substance and ranking boiling points",
+      "name": "Ranking boiling points",
       "statement": "To compare substances, we identify the forces each can have from its structure: dispersion forces always, dipole-dipole attractions if the molecule is polar, and hydrogen bonding if it has an H–F, H–O or H–N group. With similar sizes, the substance with the stronger forces has the higher boiling point; with the same kind of force, the larger molecule does."
     },
     {
@@ -2942,7 +2942,7 @@
       "id": "capillary-rise-equation",
       "kind": "result",
       "section": "10.2",
-      "name": "The height of capillary rise, $h = 2T\\cos\\theta / r\\rho g$",
+      "name": "Capillary rise",
       "symbol": "θ_contact",
       "statement": "The height to which a liquid rises in a capillary tube is directly proportional to its surface tension and to the cosine of the contact angle, and inversely proportional to the radius of the tube and the density of the liquid. For water in glass the contact angle is 0°.",
       "forms": [
@@ -2985,7 +2985,7 @@
       "id": "vapor-pressure-and-imf",
       "kind": "result",
       "section": "10.3",
-      "name": "Stronger intermolecular forces mean a lower vapor pressure",
+      "name": "Vapor pressure and intermolecular forces",
       "statement": "Strong intermolecular attractions impede vaporization and favor the recapture of gas molecules, so a liquid with stronger forces has a lower vapor pressure."
     },
     {
@@ -3009,7 +3009,7 @@
       "id": "clausius-clapeyron-equation",
       "kind": "result",
       "section": "10.3",
-      "name": "The Clausius-Clapeyron equation",
+      "name": "Clausius-Clapeyron equation",
       "symbol": "A_cc",
       "terms": [
         "Clausius-Clapeyron equation"
@@ -3052,7 +3052,7 @@
       "id": "enthalpies-of-phase-change",
       "kind": "definition",
       "section": "10.3",
-      "name": "Enthalpies of vaporization, fusion, and sublimation",
+      "name": "Enthalpies of phase change",
       "symbol": "ΔH_vap",
       "statement": "Melting, vaporization and sublimation are endothermic, and freezing, condensation and deposition release the same heat with the opposite sign. Melting only partly overcomes the intermolecular attractions while vaporization overcomes them completely, so ΔH<sub>fus</sub> is less than ΔH<sub>vap</sub>, and by Hess’s law ΔH<sub>sub</sub> is about their sum.",
       "forms": [
@@ -3076,7 +3076,7 @@
       "id": "heating-curve-calculations",
       "kind": "skill",
       "section": "10.3",
-      "name": "Calculating the total heat to change temperature and phase",
+      "name": "Calculating heat from a heating curve",
       "statement": "The heat for a change through several phases is the sum of the steps: q = mcΔT for each warming or cooling within a phase, with the specific heat of that phase, and q = nΔH for each transition."
     },
     {
@@ -3153,7 +3153,7 @@
       "id": "vapor-pressure",
       "kind": "definition",
       "section": "10.3",
-      "name": "Vapor pressure, $P$",
+      "name": "Vapor pressure",
       "symbol": "P",
       "terms": [
         "vapor pressure"
@@ -3195,14 +3195,14 @@
       "id": "read-phase-diagram",
       "kind": "skill",
       "section": "10.4",
-      "name": "Reading states and phase changes from a phase diagram",
+      "name": "Reading a phase diagram",
       "statement": "To find the state of a substance, we locate the temperature and pressure on its phase diagram and read the region; to find the phase changes on heating at constant pressure, or on compression at constant temperature, we follow a horizontal or vertical line and note the curves it crosses."
     },
     {
       "id": "triple-point",
       "kind": "definition",
       "section": "10.4",
-      "name": "The triple point",
+      "name": "Triple point",
       "terms": [
         "triple point"
       ],
@@ -3212,14 +3212,14 @@
       "id": "solid-liquid-curve-slope",
       "kind": "idea",
       "section": "10.4",
-      "name": "The slope of the solid-liquid curve",
+      "name": "Slope of the solid-liquid curve",
       "statement": "For most substances the solid-liquid curve has a positive slope, so the melting point rises with pressure; for water it has a slight negative slope, so pressure lowers the melting point of ice."
     },
     {
       "id": "critical-point-and-supercritical-fluid",
       "kind": "idea",
       "section": "10.4",
-      "name": "The critical point and supercritical fluids",
+      "name": "Critical point and supercritical fluid",
       "statement": "The liquid-gas curve ends at the critical point. Above the critical temperature, no amount of pressure can liquefy a gas, and the substance is a supercritical fluid, with properties between those of a liquid and a gas."
     },
     {
@@ -3253,7 +3253,7 @@
       "id": "types-of-crystalline-solids",
       "kind": "idea",
       "section": "10.5",
-      "name": "Ionic, metallic, covalent network, and molecular solids",
+      "name": "Types of crystalline solids",
       "statement": "Crystalline solids are classified by the forces between their particles, and these forces explain their properties: ionic solids are hard, brittle and conduct only when molten; metallic solids are malleable conductors; covalent network solids are very hard with very high melting points; molecular solids are soft with low melting points."
     },
     {
@@ -3354,7 +3354,7 @@
       "id": "unit-cell",
       "kind": "definition",
       "section": "10.6",
-      "name": "The unit cell and the lattice systems",
+      "name": "Unit cell",
       "terms": [
         "unit cell"
       ],
@@ -3364,7 +3364,7 @@
       "id": "cubic-unit-cells",
       "kind": "result",
       "section": "10.6",
-      "name": "Simple, body-centered, and face-centered cubic unit cells",
+      "name": "Cubic unit cells",
       "statement": "Counting one-eighth of each corner atom, one-half of each face atom and all of a body-center atom, a simple cubic cell contains one atom, a body-centered cubic cell two and a face-centered cubic cell four. Their coordination numbers are 6, 8 and 12, and they fill about 52%, 68% and 74% of the space."
     },
     {
@@ -3378,21 +3378,21 @@
       "id": "unit-cell-radius-and-density",
       "kind": "skill",
       "section": "10.6",
-      "name": "Calculating a radius and a density from a unit cell",
+      "name": "Finding radius and density from a unit cell",
       "statement": "Where the atoms touch (along an edge in a simple cubic cell, along a face diagonal in a face-centered cubic cell, along a body diagonal in a body-centered one) the edge length gives the radius; the atoms per cell times the mass of an atom, divided by the cell’s volume, gives the density. The same geometry gives ionic radii from the edge length of an ionic crystal."
     },
     {
       "id": "holes-in-closest-packed-arrays",
       "kind": "idea",
       "section": "10.6",
-      "name": "Tetrahedral, octahedral, and cubic holes",
+      "name": "Holes in closest-packed arrays",
       "statement": "In simple ionic structures the larger anions usually form a closest-packed array and the smaller cations occupy the holes between them: tetrahedral holes, two per anion, for small cations; octahedral holes, one per anion, for larger ones; and cubic holes in a simple cubic array for the largest."
     },
     {
       "id": "formula-from-hole-occupancy",
       "kind": "skill",
       "section": "10.6",
-      "name": "Finding a formula from the holes occupied",
+      "name": "Finding a formula from hole occupancy",
       "statement": "Knowing the number of holes of each kind per anion, the fraction of them the cations occupy gives the ratio of cations to anions, and so the formula of the compound."
     },
     {
@@ -3406,7 +3406,7 @@
       "id": "bragg-equation",
       "kind": "result",
       "section": "10.6",
-      "name": "X-ray diffraction and the Bragg equation, $n\\lambda = 2d\\sin\\theta$",
+      "name": "Bragg equation",
       "terms": [
         "Bragg equation"
       ],
@@ -3475,7 +3475,7 @@
       "id": "body-centered-cubic-solid",
       "kind": "definition",
       "section": "10.6",
-      "name": "Body-centered cubic (BCC) solid",
+      "name": "Body-centered cubic solid",
       "terms": [
         "body-centered cubic (BCC) solid"
       ],
@@ -3495,7 +3495,7 @@
       "id": "face-centered-cubic-solid",
       "kind": "definition",
       "section": "10.6",
-      "name": "Face-centered cubic (FCC) solid",
+      "name": "Face-centered cubic solid",
       "terms": [
         "face-centered cubic (FCC) solid"
       ],
@@ -3515,7 +3515,7 @@
       "id": "hexagonal-closest-packing",
       "kind": "definition",
       "section": "10.6",
-      "name": "Hexagonal closest packing (HCP)",
+      "name": "Hexagonal closest packing",
       "terms": [
         "hexagonal closest packing (HCP)"
       ],
@@ -3525,7 +3525,7 @@
       "id": "cubic-closest-packing",
       "kind": "definition",
       "section": "10.6",
-      "name": "Cubic closest packing (CCP)",
+      "name": "Cubic closest packing",
       "terms": [
         "cubic closest packing (CCP)"
       ],
@@ -3620,7 +3620,7 @@
       "id": "ionic-equations",
       "kind": "definition",
       "section": "4.1",
-      "name": "Molecular, complete ionic, and net ionic equations",
+      "name": "Ionic equations",
       "statement": "A reaction between ionic compounds in water may be written with different levels of detail. A molecular equation writes every substance as a neutral formula; a complete ionic equation writes the dissolved ionic compounds as their dissociated ions; and a net ionic equation leaves out the spectator ions, which appear unchanged on both sides, so that it shows only the species that actually change."
     },
     {
@@ -3721,7 +3721,7 @@
       "id": "acids-and-bases",
       "kind": "definition",
       "section": "4.2",
-      "name": "Acids, bases, and acid-base reactions",
+      "name": "Acids and bases",
       "statement": "An acid-base reaction is one in which a hydrogen ion is transferred from one species to another. In water, an acid is a substance that yields hydronium ions, as hydrogen chloride does by transferring H+ to water molecules, and a base is one that yields hydroxide ions, either by dissociating, as ionic hydroxides do, or by reacting with water, as ammonia does."
     },
     {
@@ -3997,14 +3997,14 @@
       "id": "mole-stoichiometry",
       "kind": "skill",
       "section": "4.3",
-      "name": "Relating moles and numbers of molecules through an equation",
+      "name": "Mole stoichiometry",
       "statement": "Multiplying a given molar amount of one substance by the stoichiometric factor gives the molar amount of another, and Avogadro's number turns that molar amount into a number of molecules. This is the shortest stoichiometry calculation and the pattern the longer ones extend."
     },
     {
       "id": "mass-stoichiometry",
       "kind": "skill",
       "section": "4.3",
-      "name": "Relating masses and solution volumes through an equation",
+      "name": "Mass stoichiometry",
       "statement": "Since masses, not numbers of molecules, are what can be measured, a practical stoichiometry calculation converts a given mass (or a volume of a solution of known molarity) to moles, applies the stoichiometric factor, and converts the result back to a mass or a volume. The route is the same whether the two substances are a reactant and a product or two reactants."
     },
     {
@@ -4204,7 +4204,7 @@
       "id": "energy-and-work",
       "kind": "definition",
       "section": "5.1",
-      "name": "Energy as the capacity to supply heat or do work",
+      "name": "Energy",
       "symbol": "E",
       "terms": [
         "energy"
@@ -4222,7 +4222,7 @@
       "id": "conservation-of-energy",
       "kind": "axiom",
       "section": "5.1",
-      "name": "The law of conservation of energy",
+      "name": "Law of conservation of energy",
       "statement": "During a chemical or physical change, energy can be neither created nor destroyed, although it can be changed in form. The heat a reaction gives off must therefore turn up somewhere else."
     },
     {
@@ -4236,7 +4236,7 @@
       "id": "heat-flow",
       "kind": "definition",
       "section": "5.1",
-      "name": "Heat as the transfer of thermal energy",
+      "name": "Heat",
       "symbol": "q",
       "terms": [
         "heat"
@@ -4254,7 +4254,7 @@
       "id": "energy-units",
       "kind": "skill",
       "section": "5.1",
-      "name": "Converting between joules, calories, and Calories",
+      "name": "Converting energy units",
       "statement": "The SI unit of energy is the joule, but chemists still frequently use the calorie, and food labels give energy in Calories, each of which is a kilocalorie. One calorie is exactly 4.184 joules. Move between these units with ease to read a food label or to compare results given in either."
     },
     {
@@ -4268,7 +4268,7 @@
       "id": "heat-specific-heat-relation",
       "kind": "result",
       "section": "5.1",
-      "name": "Heat, specific heat, mass, and temperature change, $q = c \\times m \\times \\Delta T$",
+      "name": "Heat and specific heat",
       "statement": "The heat entering or leaving a substance is the product of its specific heat, its mass, and its temperature change, taken as the final temperature minus the initial one. The sign of q follows from that difference, positive when the substance warms and negative when it cools, and any one of the four quantities can be found when the other three are known.",
       "forms": [
         {
@@ -4315,7 +4315,7 @@
       "id": "kinetic-energy",
       "kind": "definition",
       "section": "5.1",
-      "name": "Kinetic energy, $KE = \\frac{1}{2}mv^2$",
+      "name": "Kinetic energy",
       "symbol": "KE",
       "terms": [
         "kinetic energy"
@@ -4329,6 +4329,10 @@
           "condition": "a particle of mass m moving at speed u",
           "section": "9.5",
           "anchor": "9.5-speeds"
+        },
+        {
+          "id": "eq-kinetic-energy-2",
+          "latex": "KE = \\frac{1}{2}mv^2"
         }
       ]
     },
@@ -4366,27 +4370,39 @@
       "id": "joule",
       "kind": "definition",
       "section": "5.1",
-      "name": "The joule, $1\\ \\text{J} = 1\\ \\text{kg m}^2/\\text{s}^2$",
+      "name": "Joule",
       "terms": [
         "joule (J)"
       ],
-      "statement": "The joule is the SI unit of energy, the energy used when a force of 1 newton moves an object 1 meter."
+      "statement": "The joule is the SI unit of energy, the energy used when a force of 1 newton moves an object 1 meter.",
+      "forms": [
+        {
+          "id": "eq-joule",
+          "latex": "1\\ \\text{J} = 1\\ \\text{kg m}^2/\\text{s}^2"
+        }
+      ]
     },
     {
       "id": "calorie",
       "kind": "definition",
       "section": "5.1",
-      "name": "The calorie, $1\\ \\text{cal} = 4.184\\ \\text{J}$",
+      "name": "Calorie",
       "terms": [
         "calorie (cal)"
       ],
-      "statement": "The calorie is a unit of heat or other energy, the amount of energy required to raise 1 gram of water by 1 degree Celsius. One calorie is exactly 4.184 joules."
+      "statement": "The calorie is a unit of heat or other energy, the amount of energy required to raise 1 gram of water by 1 degree Celsius. One calorie is exactly 4.184 joules.",
+      "forms": [
+        {
+          "id": "eq-calorie",
+          "latex": "1\\ \\text{cal} = 4.184\\ \\text{J}"
+        }
+      ]
     },
     {
       "id": "heat-capacity",
       "kind": "definition",
       "section": "5.1",
-      "name": "Heat capacity, $C = q/\\Delta T$",
+      "name": "Heat capacity",
       "symbol": "C_heat",
       "terms": [
         "heat capacity"
@@ -4406,7 +4422,7 @@
       "id": "specific-heat-capacity",
       "kind": "definition",
       "section": "5.1",
-      "name": "Specific heat capacity, $c = q/(m\\,\\Delta T)$",
+      "name": "Specific heat capacity",
       "symbol": "c_spec",
       "terms": [
         "specific heat capacity"
@@ -4426,14 +4442,14 @@
       "id": "system-and-surroundings",
       "kind": "definition",
       "section": "5.2",
-      "name": "The system and its surroundings",
+      "name": "System and surroundings",
       "statement": "The system is the portion of matter undergoing the chemical or physical change being studied, and the surroundings are everything else that gives heat to the system or takes it away. The sign of a heat is taken from the system's point of view."
     },
     {
       "id": "calorimetry-heat-balance",
       "kind": "result",
       "section": "5.2",
-      "name": "The heats exchanged in a calorimeter sum to zero",
+      "name": "Calorimeter heat balance",
       "statement": "When a hot metal is placed in cool water in an ideal calorimeter, all the heat lost by one is gained by the other, so the two heats add up to zero and one is the negative of the other. The negative sign records the opposite direction of flow and does not by itself give either value its sign.",
       "forms": [
         {
@@ -4449,7 +4465,7 @@
       "id": "heat-of-reaction-by-calorimetry",
       "kind": "result",
       "section": "5.2",
-      "name": "The heat of a reaction from the heat of the solution, $q_{\\text{reaction}} = -q_{\\text{solution}}$",
+      "name": "Heat of reaction by calorimetry",
       "statement": "Because energy is neither created nor destroyed, the heat produced or consumed by a reaction in a calorimeter equals the heat absorbed or lost by the solution around it, with the opposite sign. This is the concept that lies at the heart of all calorimetry problems: the temperature change of the solution is measured, and the heat of the reaction is read from it.",
       "forms": [
         {
@@ -4465,14 +4481,14 @@
       "id": "coffee-cup-calorimetry",
       "kind": "skill",
       "section": "5.2",
-      "name": "Calculating a heat from coffee cup calorimetry data",
+      "name": "Coffee cup calorimetry",
       "statement": "A coffee cup calorimeter measures a temperature change, and turning it into a heat takes reasonable assumptions, stated openly. No heat passes to the outside or into the cup, and a dilute solution has the specific heat and density of water. Carry those assumptions through to a heat with the right sign."
     },
     {
       "id": "bomb-calorimetry",
       "kind": "skill",
       "section": "5.2",
-      "name": "Calculating a heat of combustion from bomb calorimetry",
+      "name": "Bomb calorimetry",
       "statement": "A bomb calorimeter works at constant volume and is used for reactions, such as combustions, that give off much heat and gaseous products. The heat of the reaction is shared between the water and the steel bomb, so the calculation adds the heat taken in by the water to the heat capacity of the bomb times the temperature rise.",
       "forms": [
         {
@@ -4545,17 +4561,23 @@
       "id": "nutritional-calorie",
       "kind": "definition",
       "section": "5.2",
-      "name": "The nutritional Calorie, $1\\ \\text{Cal} = 1\\ \\text{kcal}$",
+      "name": "Nutritional Calorie",
       "terms": [
         "nutritional calorie (Calorie)"
       ],
-      "statement": "The nutritional Calorie is the unit used for the energy provided by digestion of foods, defined as 1000 calories, or 1 kilocalorie."
+      "statement": "The nutritional Calorie is the unit used for the energy provided by digestion of foods, defined as 1000 calories, or 1 kilocalorie.",
+      "forms": [
+        {
+          "id": "eq-nutritional-calorie",
+          "latex": "1\\ \\text{Cal} = 1\\ \\text{kcal}"
+        }
+      ]
     },
     {
       "id": "first-law-of-thermodynamics",
       "kind": "axiom",
       "section": "5.3",
-      "name": "The first law of thermodynamics, $\\Delta U = q + w$",
+      "name": "First law of thermodynamics",
       "terms": [
         "first law of thermodynamics"
       ],
@@ -4583,7 +4605,7 @@
       "id": "enthalpy-change-at-constant-pressure",
       "kind": "result",
       "section": "5.3",
-      "name": "Enthalpy, and $\\Delta H = q_{\\text{p}}$ at constant pressure",
+      "name": "Enthalpy change at constant pressure",
       "symbol": "ΔH",
       "statement": "Enthalpy is the sum of a system's internal energy and the product of its pressure and volume. For a process at constant pressure whose only work is expansion work, the enthalpy change equals the heat flow, which is why chemists, who usually work at the constant pressure of the atmosphere, use enthalpy to describe the heat of a reaction. The heat measured in a bomb calorimeter, at constant volume, is not ΔH.",
       "forms": [
@@ -4614,7 +4636,7 @@
       "id": "standard-enthalpy-of-formation",
       "kind": "definition",
       "section": "5.3",
-      "name": "Standard states and the standard enthalpy of formation",
+      "name": "Standard enthalpy of formation",
       "symbol": "ΔH_f°",
       "terms": [
         "standard enthalpy of formation"
@@ -4635,7 +4657,7 @@
       "id": "enthalpy-from-formation-enthalpies",
       "kind": "skill",
       "section": "5.3",
-      "name": "Calculating a reaction enthalpy from enthalpies of formation",
+      "name": "Finding a reaction enthalpy from formation enthalpies",
       "statement": "Apply Hess's law by decomposing the reactants into their elements and re-forming the products. The standard enthalpy change of any reaction is then the sum of n times the enthalpies of formation of the products minus the same sum for the reactants. With the table of Appendix G you can compute ΔH° for reactions that no one has measured directly.",
       "forms": [
         {
@@ -4661,7 +4683,7 @@
       "id": "internal-energy",
       "kind": "definition",
       "section": "5.3",
-      "name": "Internal energy, $U$",
+      "name": "Internal energy",
       "symbol": "U",
       "terms": [
         "internal energy"
@@ -4672,7 +4694,7 @@
       "id": "expansion-work",
       "kind": "definition",
       "section": "5.3",
-      "name": "Expansion work, $w = -P\\Delta V$",
+      "name": "Expansion work",
       "terms": [
         "expansion work (pressure-volume work)"
       ],
@@ -4691,7 +4713,7 @@
       "id": "enthalpy",
       "kind": "definition",
       "section": "5.3",
-      "name": "Enthalpy, $H = U + PV$",
+      "name": "Enthalpy",
       "symbol": "H",
       "terms": [
         "enthalpy"
@@ -4710,7 +4732,7 @@
       "id": "enthalpy-change",
       "kind": "definition",
       "section": "5.3",
-      "name": "Enthalpy change, $\\Delta H = \\Delta U + P\\Delta V$",
+      "name": "Enthalpy change",
       "symbol": "ΔH",
       "terms": [
         "enthalpy change"
@@ -4750,7 +4772,7 @@
       "id": "standard-enthalpy-of-combustion",
       "kind": "definition",
       "section": "5.3",
-      "name": "Standard enthalpy of combustion, $\\Delta H_{\\text{c}}^{\\circ}$",
+      "name": "Standard enthalpy of combustion",
       "symbol": "ΔH_c°",
       "terms": [
         "standard enthalpy of combustion"
@@ -4761,21 +4783,21 @@
       "id": "formula-mass",
       "kind": "skill",
       "section": "3.1",
-      "name": "Calculating the formula mass of a compound",
+      "name": "Calculating formula mass",
       "statement": "You calculate the formula mass of a substance by multiplying each element’s average atomic mass by its subscript and adding the products."
     },
     {
       "id": "molecular-versus-formula-mass",
       "kind": "idea",
       "section": "3.1",
-      "name": "Molecular mass and the formula mass of an ionic compound",
+      "name": "Molecular mass versus formula mass",
       "statement": "For a covalent substance the formula describes one molecule, so its formula mass may be called a molecular mass; an ionic compound has no discrete molecule, so its formula mass may not. The masses of neutral atoms are used for ions as well, since the mass of an electron is negligible beside that of an atom."
     },
     {
       "id": "mole",
       "kind": "definition",
       "section": "3.1",
-      "name": "The mole",
+      "name": "Mole",
       "symbol": "n",
       "terms": [
         "mole"
@@ -4786,12 +4808,18 @@
       "id": "avogadro-number",
       "kind": "axiom",
       "section": "3.1",
-      "name": "Avogadro’s number, $N_A = 6.022 \\times 10^{23}$/mol",
+      "name": "Avogadro’s number",
       "symbol": "N_A",
       "terms": [
         "Avogadro’s number"
       ],
-      "statement": "One mole of any substance contains the same number of entities, 6.022 × 10<sup>23</sup>, so the number of atoms or molecules in a sample follows from its amount in moles. The size of the number is what lets a drop of water hold more molecules than can be clearly imagined."
+      "statement": "One mole of any substance contains the same number of entities, 6.022 × 10<sup>23</sup>, so the number of atoms or molecules in a sample follows from its amount in moles. The size of the number is what lets a drop of water hold more molecules than can be clearly imagined.",
+      "forms": [
+        {
+          "id": "eq-avogadro-number",
+          "latex": "N_A = 6.022 \\times 10^{23}"
+        }
+      ]
     },
     {
       "id": "molar-mass",
@@ -4815,7 +4843,7 @@
       "id": "count-atoms-and-molecules",
       "kind": "skill",
       "section": "3.1",
-      "name": "Counting atoms and molecules from a mass",
+      "name": "Counting atoms and molecules",
       "statement": "A mass is converted to moles with the molar mass and then to a number of entities with Avogadro’s number, and the formula then gives the number of each kind of atom. The two-step chain answers questions no balance can answer directly, such as how many carbon atoms a packet of sweetener holds."
     },
     {
@@ -4857,7 +4885,7 @@
       "id": "empirical-formula",
       "kind": "skill",
       "section": "3.2",
-      "name": "Deriving an empirical formula from the masses of the elements",
+      "name": "Deriving an empirical formula",
       "statement": "A formula states the relative numbers of atoms, not their masses. So convert each element’s mass to moles, divide the amounts by the smallest, and multiply by an integer if needed to reach whole numbers. The procedure turns an analysis on a balance into a chemical formula."
     },
     {
@@ -4871,7 +4899,7 @@
       "id": "molecular-formula-from-empirical",
       "kind": "skill",
       "section": "3.2",
-      "name": "Deriving a molecular formula from an empirical formula",
+      "name": "Deriving a molecular formula",
       "symbol": "n_fu",
       "statement": "An empirical formula gives only the relative numbers of atoms. Dividing the molecular or molar mass by the empirical formula mass gives the number of formula units in each molecule, and multiplying every subscript by that number gives the molecular formula.",
       "forms": [
@@ -4903,7 +4931,7 @@
       "id": "solution-components",
       "kind": "definition",
       "section": "3.3",
-      "name": "Solvent, solute, and aqueous solutions",
+      "name": "Solution components",
       "statement": "A solution is a homogeneous mixture, and it usually has one component, the solvent, present at a much greater concentration than the others, the solutes, which are dissolved in it. A solution in water is an aqueous solution, the kind this book meets most often."
     },
     {
@@ -4921,7 +4949,7 @@
       "id": "molarity",
       "kind": "definition",
       "section": "3.3",
-      "name": "Molarity, $M$ = mol solute / L solution",
+      "name": "Molarity",
       "symbol": "M",
       "terms": [
         "molarity (M)"
@@ -4973,7 +5001,7 @@
       "id": "dilution-equation",
       "kind": "result",
       "section": "3.3",
-      "name": "The dilution equation, $C_1V_1 = C_2V_2$",
+      "name": "Dilution equation",
       "statement": "Since n = ML and the amount of solute does not change on dilution, the product of concentration and volume is the same before and after. The relation works in any units of concentration and volume that cancel, so it is written C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub>.",
       "forms": [
         {
@@ -5109,14 +5137,14 @@
       "id": "concentration-unit-conversions",
       "kind": "skill",
       "section": "3.4",
-      "name": "Converting between concentration units with a density",
+      "name": "Converting concentration units",
       "statement": "A solution’s density converts its volume to its mass, and a molar mass converts a mass of solute to moles, so a concentration given in one unit can be expressed in another, from a mass percentage to a mass of solute or to a molarity."
     },
     {
       "id": "parts-per-million",
       "kind": "definition",
       "section": "3.4",
-      "name": "Parts per million, ppm",
+      "name": "Parts per million",
       "terms": [
         "parts per million (ppm)"
       ],
@@ -5134,7 +5162,7 @@
       "id": "parts-per-billion",
       "kind": "definition",
       "section": "3.4",
-      "name": "Parts per billion, ppb",
+      "name": "Parts per billion",
       "terms": [
         "parts per billion (ppb)"
       ],
@@ -5169,7 +5197,7 @@
       "id": "electron-pair-geometry",
       "kind": "definition",
       "section": "7.6",
-      "name": "The five electron-pair geometries",
+      "name": "Electron-pair geometries",
       "terms": [
         "electron-pair geometry"
       ],
@@ -5186,7 +5214,7 @@
       "id": "electron-pair-repulsion-order",
       "kind": "result",
       "section": "7.6",
-      "name": "The order of repulsions and the space a region occupies",
+      "name": "Order of electron-pair repulsions",
       "statement": "The ideal angles are only approximate, because the regions of electron density are not all the same size. A lone pair repels more strongly than a bonding pair, and it occupies more space than a triple bond, which occupies more than a double bond, which occupies more than a single bond. That order is what explains the small distortions from the ideal angles, and it is what decides which arrangement is chosen when more than one is possible.",
       "forms": [
         {
@@ -5205,7 +5233,7 @@
       "id": "axial-and-equatorial-positions",
       "kind": "definition",
       "section": "7.6",
-      "name": "Axial and equatorial positions in a trigonal bipyramid",
+      "name": "Axial and equatorial positions",
       "statement": "In the linear, trigonal planar and tetrahedral arrangements every terminal position is equivalent, so it does not matter which one a lone pair takes. A trigonal bipyramid has two kinds of position: an axial position surrounded by 90° angles and an equatorial position with more room because of its 120° angles. A lone pair always takes an equatorial position, and in an octahedron with two lone pairs the two sit 180° apart, which is what makes ClF3 T-shaped and XeF4 square planar."
     },
     {
@@ -5219,7 +5247,7 @@
       "id": "bond-dipole-moment",
       "kind": "definition",
       "section": "7.6",
-      "name": "The bond dipole moment",
+      "name": "Bond dipole moment",
       "symbol": "μ",
       "terms": [
         "bond dipole moment"
@@ -5369,7 +5397,7 @@
       "id": "ionic-lattice",
       "kind": "idea",
       "section": "7.1",
-      "name": "An ionic formula describes a lattice, not a molecule",
+      "name": "Ionic lattice",
       "statement": "Because every compound is electrically neutral, the formula of an ionic compound gives the simplest ratio of ions whose charges cancel, as Al2O3 does with two Al3+ ions for every three O2− ions. The formula does not describe a molecule: the attraction between ions is the same in all directions, so each ion is drawn to all its neighbors of opposite charge and the ions build a three-dimensional lattice."
     },
     {
@@ -5383,14 +5411,14 @@
       "id": "ion-electron-configuration",
       "kind": "skill",
       "section": "7.1",
-      "name": "Writing the electron configuration of an ion",
+      "name": "Writing ion electron configurations",
       "statement": "The configuration of a cation is written by removing electrons from the neutral atom, and the configuration of an anion by adding them. For a transition metal the outermost s electrons are lost first, before any d electron, even though the d orbitals were the last to fill; so iron becomes Fe2+ by losing its 4s pair and Fe3+ by losing one 3d electron as well."
     },
     {
       "id": "inert-pair-effect",
       "kind": "idea",
       "section": "7.1",
-      "name": "The inert pair effect",
+      "name": "Inert pair effect",
       "terms": [
         "inert pair effect"
       ],
@@ -5400,14 +5428,14 @@
       "id": "ionic-compound-properties",
       "kind": "idea",
       "section": "7.1",
-      "name": "The properties of ionic compounds",
+      "name": "Properties of ionic compounds",
       "statement": "The ionic bond is strong, which is why ionic solids are rigid and brittle with high melting points, and the ions are held in place, which is why the solid conducts poorly while the melt or the solution conducts well."
     },
     {
       "id": "covalent-bond-formation",
       "kind": "idea",
       "section": "7.2",
-      "name": "How a covalent bond forms, and the bond length",
+      "name": "Covalent bond formation",
       "statement": "A covalent bond forms when two atoms share a pair of electrons that both nuclei attract. As two hydrogen atoms approach, the potential energy falls while each electron is drawn to both nuclei, and then it rises steeply as the nuclei repel. The bond length is the distance at which the energy is lowest. Breaking a bond always takes energy, and forming one always releases it."
     },
     {
@@ -5425,7 +5453,7 @@
       "id": "bond-type-from-electronegativity",
       "kind": "skill",
       "section": "7.2",
-      "name": "Judging bond type from the electronegativity difference",
+      "name": "Judging bond type by electronegativity",
       "statement": "The absolute difference in electronegativity between two bonded atoms is a rough measure of the bond's character: a small difference gives a pure covalent bond, an intermediate one a polar covalent bond, and a large one an ionic bond. It is only a guide, and the better one is the kind of atoms involved, since bonds between two nonmetals are generally covalent and bonds between a metal and a nonmetal are often ionic."
     },
     {
@@ -5464,14 +5492,14 @@
       "id": "lewis-symbol",
       "kind": "skill",
       "section": "7.3",
-      "name": "Writing Lewis symbols for atoms and ions",
+      "name": "Writing Lewis symbols",
       "statement": "Write a Lewis symbol by surrounding the symbol of the element with one dot for each of its valence electrons. Remove dots to show a cation forming and add them to show an anion forming, so that the transfer of electrons in an ionic compound keeps the total number of electrons the same."
     },
     {
       "id": "octet-rule",
       "kind": "axiom",
       "section": "7.3",
-      "name": "The octet rule",
+      "name": "Octet rule",
       "terms": [
         "octet rule"
       ],
@@ -5582,7 +5610,7 @@
       "id": "formal-charge-guidelines",
       "kind": "skill",
       "section": "7.4",
-      "name": "Choosing the most likely Lewis structure by formal charge",
+      "name": "Choosing a Lewis structure by formal charge",
       "statement": "When more than one Lewis structure can be written, the preferred one has formal charges of zero, or else the smallest nonzero formal charges, with adjacent formal charges zero or of opposite sign, and with any negative formal charge on the more electronegative atom. These guidelines explain why the least electronegative atom usually takes the central position."
     },
     {
@@ -5666,14 +5694,14 @@
       "id": "bond-strength-and-length",
       "kind": "result",
       "section": "7.5",
-      "name": "Bond strength, bond order, and bond length",
+      "name": "Bond strength and bond length",
       "statement": "The more electron pairs two atoms share, the stronger and the shorter their bond, so a triple bond is stronger and shorter than a double bond between the same atoms and a double bond is stronger and shorter than a single one. When one atom bonds to the members of a group, the bond grows weaker going down the group."
     },
     {
       "id": "enthalpy-from-bond-energies",
       "kind": "skill",
       "section": "7.5",
-      "name": "Estimating an enthalpy of reaction from bond energies",
+      "name": "Estimating enthalpy from bond energies",
       "statement": "The enthalpy change of a reaction is approximately the energy needed to break every bond of the reactants less the energy released in forming every bond of the products. The estimate needs the Lewis structures of all the species, to know which bonds are single, double or triple, and it is rough because the bond energies are averages.",
       "forms": [
         {
@@ -5708,7 +5736,7 @@
       "id": "lattice-energy-trends",
       "kind": "result",
       "section": "7.5",
-      "name": "Lattice energy grows with ionic charge and shrinks with ionic size",
+      "name": "Lattice energy trends",
       "statement": "Derived from Coulomb's law, the lattice energy is proportional to the product of the ionic charges and inversely proportional to the distance between the ions. Doubling both charges quadruples it, which is why MgO has nearly four times the lattice energy of LiF, and smaller ions give a larger lattice energy, which is why MgF2 exceeds MgI2.",
       "forms": [
         {
@@ -5724,7 +5752,7 @@
       "id": "born-haber-cycle",
       "kind": "skill",
       "section": "7.5",
-      "name": "Calculating a lattice energy with the Born-Haber cycle",
+      "name": "Using the Born-Haber cycle",
       "statement": "Lattice energies cannot be measured directly. The Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: sublimation of the metal, dissociation of the nonmetal, ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess’s law, the steps add up to the enthalpy of formation, so any one of them can be found from the others."
     },
     {
@@ -5760,7 +5788,7 @@
       "id": "bond-distance-and-bond-energy",
       "kind": "result",
       "section": "8.1",
-      "name": "Bond distance and bond energy from the energy of two atoms",
+      "name": "Bond distance and bond energy",
       "statement": "As two atoms approach, the energy of the system first falls, because each electron feels the attraction of the other nucleus, and then rises steeply, because the repulsions between the nuclei and between the electrons grow stronger than the attractions. The bond distance is the distance at which the energy is lowest, and the bond energy is the difference between that minimum and the energy of the separated atoms, which is the energy released when the bond forms and needed to break it."
     },
     {
@@ -5774,14 +5802,14 @@
       "id": "multiple-bond-composition",
       "kind": "result",
       "section": "8.1",
-      "name": "What single, double, and triple bonds are made of",
+      "name": "Makeup of multiple bonds",
       "statement": "Between any two atoms the first bond formed is always a σ bond, and there can be only one σ bond in any one location. A single bond is therefore one σ bond, a double bond is one σ bond and one π bond, and a triple bond is one σ bond and two π bonds, which is why a carbon-carbon double bond is stronger than a single bond but not twice as strong."
     },
     {
       "id": "count-sigma-and-pi-bonds",
       "kind": "skill",
       "section": "8.1",
-      "name": "Counting the σ and π bonds in a molecule",
+      "name": "Counting sigma and pi bonds",
       "statement": "Count the σ and π bonds of a molecule from its Lewis structure: every bond line contributes one σ bond, each double bond adds one π bond, and each triple bond adds two."
     },
     {
@@ -5798,7 +5826,7 @@
       "id": "sigma-bond",
       "kind": "definition",
       "section": "8.1",
-      "name": "Sigma bond (σ bond)",
+      "name": "Sigma bond",
       "terms": [
         "sigma bond (σ bond)"
       ],
@@ -5808,7 +5836,7 @@
       "id": "pi-bond",
       "kind": "definition",
       "section": "8.1",
-      "name": "Pi bond (π bond)",
+      "name": "Pi bond",
       "terms": [
         "pi bond (π bond)"
       ],
@@ -5828,42 +5856,42 @@
       "id": "hybrid-orbital-properties",
       "kind": "idea",
       "section": "8.2",
-      "name": "The properties of a set of hybrid orbitals",
+      "name": "Properties of hybrid orbitals",
       "statement": "Hybrid orbitals exist only in covalently bonded atoms, they have shapes and orientations very different from those of the atomic orbitals they come from, and a set contains as many hybrid orbitals as atomic orbitals were combined to make it. All the orbitals of a set are equivalent in shape and energy, the kind of set depends on the atom's electron-pair geometry, and hybrid orbitals form σ bonds while unhybridized orbitals form π bonds."
     },
     {
       "id": "sp-sp2-sp3-hybrid-orbitals",
       "kind": "idea",
       "section": "8.2",
-      "name": "The sp, sp², and sp³ hybrid orbitals",
+      "name": "sp, sp², and sp³ hybrid orbitals",
       "statement": "Mixing the valence s orbital with one p orbital gives two sp hybrids pointing 180° apart; with two p orbitals, three sp² hybrids at 120° in a plane, leaving one unhybridized p orbital perpendicular to it; with all three p orbitals, four sp³ hybrids pointing to the corners of a tetrahedron at 109.5°. Each hybrid holds a bonding pair or a lone pair, so the linear BeCl2, the trigonal planar BH3 and the tetrahedral CH4, NH3 and H2O are all described this way."
     },
     {
       "id": "sp3d-and-sp3d2-hybrid-orbitals",
       "kind": "idea",
       "section": "8.2",
-      "name": "The sp³d and sp³d² hybrid orbitals",
+      "name": "sp³d and sp³d² hybrid orbitals",
       "statement": "Five hybrid orbitals directed to the corners of a trigonal bipyramid need one d orbital as well as the s and three p orbitals, and six directed to the corners of an octahedron need two d orbitals. These hybridizations are possible only for atoms with d orbitals in their valence subshells, which rules out every atom of the first and second periods."
     },
     {
       "id": "hybrid-orbital-energy-diagram",
       "kind": "skill",
       "section": "8.2",
-      "name": "Showing hybridization on an orbital energy-level diagram",
+      "name": "Drawing hybridization on an energy diagram",
       "statement": "Draw an orbital energy-level diagram with each orbital as a horizontal line at its energy and each electron as an arrow, setting the isolated atom beside the bonded one to show the valence electrons redistributed into the hybrid set. The diagram shows which hybrids are half filled and ready to pair with an electron from another atom, and which orbitals stay unhybridized."
     },
     {
       "id": "assign-hybridization",
       "kind": "skill",
       "section": "8.2",
-      "name": "Assigning the hybridization of a central atom",
+      "name": "Assigning hybridization",
       "statement": "The hybridization of an atom follows from the number of regions of electron density around it. Write the Lewis structure and count the regions, with single bonds, multiple bonds, radicals and lone pairs each counting as one. Then read the matching set from the table: two regions give sp, three sp², four sp³, five sp³d and six sp³d². VSEPR theory predicts the shape, and the hybrid orbitals explain how that shape forms."
     },
     {
       "id": "limits-of-hybridization",
       "kind": "idea",
       "section": "8.2",
-      "name": "Where hybridization is needed and where it is not",
+      "name": "Limits of hybridization",
       "statement": "Hybridization was devised to rationalize observed geometries, and it works well for small central atoms whose valence pairs are close together. For larger central atoms the pairs are farther from the nucleus and repel less, and the observed angles approach those of unhybridized p orbitals, so we invoke hybridization only where it is needed to explain the structure."
     },
     {
@@ -5930,21 +5958,21 @@
       "id": "pi-bonds-from-unhybridized-orbitals",
       "kind": "idea",
       "section": "8.3",
-      "name": "Multiple bonds from hybrid and unhybridized orbitals",
+      "name": "Multiple bonds from unhybridized orbitals",
       "statement": "In a molecule with a double or a triple bond, the hybrid orbitals of each atom form the σ framework and the unhybridized p orbitals left over overlap side by side to form the π bonds. Each carbon of ethene uses three sp² hybrids for its σ bonds and one p orbital, perpendicular to the plane, for its π bond; each carbon of acetylene uses two sp hybrids for σ bonds and two perpendicular p orbitals for two π bonds."
     },
     {
       "id": "restricted-rotation-about-pi-bonds",
       "kind": "result",
       "section": "8.3",
-      "name": "Rotation about a double bond is restricted",
+      "name": "Restricted rotation about a double bond",
       "statement": "Rotation about a single bond occurs easily, because the end-to-end overlap of a σ bond is symmetric about the internuclear axis and does not change as the atoms turn. Rotation about a double bond would twist the two p orbitals out of line and destroy their side-by-side overlap, essentially breaking the π bond, which is why all six atoms of ethene lie in one plane."
     },
     {
       "id": "resonance-and-delocalization",
       "kind": "result",
       "section": "8.3",
-      "name": "Resonance, hybridization, and delocalized π electrons",
+      "name": "Resonance and hybridization",
       "statement": "Hybridization involves only σ bonds, lone pairs and single unpaired electrons, and resonance forms differ only in the arrangement of π bonds, which uses the unhybridized orbitals. Resonance therefore does not change the hybridization we assign, and either resonance form gives the same answer. The π electrons themselves are not located in one form or the other but are delocalized over the molecule, which valence bond theory does not easily describe."
     },
     {
@@ -5989,7 +6017,7 @@
       "id": "bond-order",
       "kind": "definition",
       "section": "8.4",
-      "name": "Bond order from a molecular orbital diagram",
+      "name": "Bond order",
       "terms": [
         "bond order"
       ],
@@ -6021,7 +6049,7 @@
       "id": "s-p-mixing",
       "kind": "idea",
       "section": "8.4",
-      "name": "s-p mixing and the order of the molecular orbitals",
+      "name": "s-p mixing",
       "terms": [
         "s-p mixing"
       ],
@@ -6031,7 +6059,7 @@
       "id": "diatomic-molecule-configurations",
       "kind": "skill",
       "section": "8.4",
-      "name": "Predicting the configuration, bond order, and magnetism of a diatomic species",
+      "name": "Predicting diatomic configurations",
       "statement": "For a homonuclear diatomic molecule or ion of the first or second period, choose the diagram with or without s-p mixing, add or remove electrons for the charge, and fill it. Read off the configuration, the bond order and the number of unpaired electrons. The result predicts whether the species is stable and whether it is paramagnetic, and it explains the two unpaired electrons of O2 that the Lewis structure missed."
     },
     {
@@ -6158,7 +6186,7 @@
       "id": "photon-energy",
       "kind": "axiom",
       "section": "6.1",
-      "name": "The energy of a photon",
+      "name": "Photon energy",
       "symbol": "E",
       "statement": "Light is absorbed and emitted in discrete packets called photons, and the energy of one photon is set by the frequency of the radiation, E = hν, or equivalently by its wavelength, E = hc/λ.",
       "forms": [
@@ -6185,14 +6213,14 @@
       "id": "wave-properties",
       "kind": "definition",
       "section": "6.1",
-      "name": "Wavelength, frequency, and amplitude",
+      "name": "Wave properties",
       "statement": "Every wave, electromagnetic radiation included, has a wavelength, the distance between two consecutive peaks or troughs; a frequency, the number of cycles that pass a point per unit time; and an amplitude, one-half the height from peak to trough. The amplitude is related to the intensity of the wave, which for light is its brightness. We describe light by its wavelength and frequency."
     },
     {
       "id": "wave-speed-relation",
       "kind": "result",
       "section": "6.1",
-      "name": "The speed of a wave, $c=\\lambda\\nu$",
+      "name": "Wave speed",
       "symbol": "c",
       "statement": "The product of a wave's wavelength and its frequency is its speed, and for electromagnetic radiation in a vacuum that speed is the constant c. Wavelength and frequency are therefore inversely proportional: as one increases, the other decreases, and either one may be found from the other.",
       "forms": [
@@ -6209,7 +6237,7 @@
       "id": "electromagnetic-spectrum",
       "kind": "idea",
       "section": "6.1",
-      "name": "The electromagnetic spectrum",
+      "name": "Electromagnetic spectrum",
       "terms": [
         "electromagnetic spectrum"
       ],
@@ -6226,7 +6254,7 @@
       "id": "blackbody-radiation",
       "kind": "idea",
       "section": "6.1",
-      "name": "Blackbody radiation and Planck's quantized energies",
+      "name": "Blackbody radiation and Planck’s quantized energies",
       "symbol": "h",
       "statement": "A heated object gives off a continuous spectrum whose distribution depends only on its temperature, and the peak of the curve moves to shorter wavelengths as the temperature rises. Classical theory predicted an intensity that grows without limit at short wavelengths, the ultraviolet catastrophe; Planck fitted the observed curves by restricting the vibrational energies to discrete values, E = nhν, which was the first appearance of energy quantization.",
       "forms": [
@@ -6243,7 +6271,7 @@
       "id": "photoelectric-effect",
       "kind": "idea",
       "section": "6.1",
-      "name": "The photoelectric effect",
+      "name": "Photoelectric effect",
       "statement": "Light ejects electrons from a clean metal surface only when its frequency is above a threshold, and the kinetic energy of the ejected electrons rises with the frequency and not with the brightness, while the number of electrons rises with the brightness. Einstein explained this by treating light as a stream of photons, each carrying the energy hν, so that only a photon with enough energy can free an electron."
     },
     {
@@ -6270,7 +6298,7 @@
       "id": "wavelength",
       "kind": "definition",
       "section": "6.1",
-      "name": "Wavelength, $\\lambda$",
+      "name": "Wavelength",
       "symbol": "λ",
       "terms": [
         "wavelength (λ)"
@@ -6281,7 +6309,7 @@
       "id": "frequency",
       "kind": "definition",
       "section": "6.1",
-      "name": "Frequency, $\\nu$",
+      "name": "Frequency",
       "symbol": "ν",
       "terms": [
         "frequency (ν)"
@@ -6292,11 +6320,17 @@
       "id": "hertz",
       "kind": "definition",
       "section": "6.1",
-      "name": "The hertz, $1\\ \\text{Hz} = 1\\ \\text{s}^{-1}$",
+      "name": "Hertz",
       "terms": [
         "hertz (Hz)"
       ],
-      "statement": "The hertz is the unit of frequency, one cycle per second."
+      "statement": "The hertz is the unit of frequency, one cycle per second.",
+      "forms": [
+        {
+          "id": "eq-hertz",
+          "latex": "1\\ \\text{Hz} = 1\\ \\text{s}^{-1}"
+        }
+      ]
     },
     {
       "id": "amplitude",
@@ -6403,7 +6437,7 @@
       "id": "rydberg-equation",
       "kind": "axiom",
       "section": "6.1",
-      "name": "The Rydberg equation, $\\frac{1}{\\lambda}=R_{\\infty}\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)$",
+      "name": "Rydberg equation",
       "symbol": "R_inf",
       "statement": "The wavelengths of all the lines in the spectrum of hydrogen fit one empirical equation: one over the wavelength is the Rydberg constant times the difference of the reciprocal squares of two integers, n₁ less than n₂. Balmer's equation for the four visible lines is the case n₁ = 2.",
       "forms": [
@@ -6427,21 +6461,21 @@
       "id": "classical-atom-instability",
       "kind": "idea",
       "section": "6.2",
-      "name": "Why the planetary atom cannot be stable",
+      "name": "Instability of the planetary atom",
       "statement": "In the planetary picture the electron moves about the nucleus as a planet moves about the sun. An electron on such an orbit is always changing direction, and so is always accelerating, and classical electromagnetism says that an accelerating charge must continuously emit radiation. The orbit would then shrink until the electron spiraled into the nucleus, which would make every atom inherently unstable."
     },
     {
       "id": "bohr-stationary-states",
       "kind": "axiom",
       "section": "6.2",
-      "name": "Bohr's stationary states",
+      "name": "Bohr’s stationary states",
       "statement": "An electron in one of the allowed orbits of an atom does not radiate at all; it emits or absorbs radiation only when it moves from one allowed orbit to another. The energies of those orbits are quantized: the electron may possess certain discrete energies and no value between them."
     },
     {
       "id": "bohr-energy-levels",
       "kind": "result",
       "section": "6.2",
-      "name": "The allowed energies, $E_n=-kZ^2/n^2$",
+      "name": "Bohr energy levels",
       "statement": "The energy of an electron in the orbit labeled n is −k times the square of the nuclear charge, divided by the square of n. The constant k gathers the electron mass, the electron charge and Planck’s constant. The energies are negative because they are measured from E = 0, the ionization limit, where the electron has been removed from the nucleus altogether. They crowd toward zero as n grows, so the rungs of the ladder are far apart at the bottom and close together at the top. The energy needed to ionize a ground-state hydrogen atom is k itself.",
       "forms": [
         {
@@ -6478,7 +6512,7 @@
       "id": "photon-emission-absorption",
       "kind": "result",
       "section": "6.2",
-      "name": "One transition, one photon: $|\\Delta E|=h\\nu=hc/\\lambda$",
+      "name": "Emission and absorption of a photon",
       "symbol": "ΔE",
       "statement": "When an electron moves between two allowed orbits, the atom emits or absorbs a single photon whose energy equals the difference between the two orbital energies. Falling to a lower orbit emits the photon, and absorbing one moves the electron up. Energy can be neither created nor destroyed, so the energy needed to lift an electron from one level to another equals the energy released when it returns. We use the absolute value of the difference because a frequency and a wavelength are always positive.",
       "forms": [
@@ -6502,7 +6536,7 @@
       "id": "bohr-orbit-radius",
       "kind": "result",
       "section": "6.2",
-      "name": "The radius of an allowed orbit, $r=n^2a_0/Z$",
+      "name": "Bohr orbit radius",
       "symbol": "r",
       "statement": "The radii of the allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises. They are measured in units of the Bohr radius, the radius of hydrogen’s ground-state orbit. As the electron’s energy increases, it is found farther from the nucleus. The electrostatic attraction weakens with distance, so an electron farther out is held less tightly.",
       "forms": [
@@ -6518,7 +6552,7 @@
       "id": "rydberg-constant-recovered",
       "kind": "result",
       "section": "6.2",
-      "name": "The Rydberg equation recovered, $R_{\\infty}=k/hc$",
+      "name": "Rydberg constant from the Bohr model",
       "statement": "Putting the quantized energies of the Bohr model into the photon relation gives an expression for one over the wavelength that has the same form as the Rydberg equation, with the Rydberg constant equal to k divided by hc. Bohr’s theoretical value agreed excellently with the experimental one.",
       "forms": [
         {
@@ -6534,7 +6568,7 @@
       "id": "calculating-bohr-transition-energies",
       "kind": "skill",
       "section": "6.2",
-      "name": "Calculating the energy and wavelength of a transition",
+      "name": "Calculating transition energies",
       "statement": "Given the two quantum numbers and the nuclear charge, find the energy difference from kZ²(1/n₁² − 1/n₂²). Its sign tells you whether the photon is absorbed or emitted, and dividing hc by its magnitude gives the wavelength. The result can then be checked against a measured spectrum.",
       "forms": [
         {
@@ -6558,7 +6592,7 @@
       "id": "bohr-model",
       "kind": "idea",
       "section": "6.2",
-      "name": "Bohr's model of the hydrogen atom",
+      "name": "Bohr’s model of the hydrogen atom",
       "terms": [
         "Bohr's model of the hydrogen atom"
       ],
@@ -6599,7 +6633,7 @@
       "id": "de-broglie-wavelength",
       "kind": "axiom",
       "section": "6.3",
-      "name": "The de Broglie wavelength, $\\lambda=h/mv$",
+      "name": "De Broglie wavelength",
       "symbol": "λ",
       "statement": "De Broglie extended wave-particle duality to matter: a particle of mass m moving with velocity v behaves as a wave whose wavelength is Planck's constant divided by its momentum. The wavelength of an electron in an atom is about the size of the atom, so its wavelike behavior is noticeable there, while that of a softball is far too small to detect. Viewed as a circular standing wave, an electron fits an orbit only when a whole number of its wavelengths fits the circumference, which explains Bohr's quantization.",
       "forms": [
@@ -6623,7 +6657,7 @@
       "id": "heisenberg-uncertainty",
       "kind": "axiom",
       "section": "6.3",
-      "name": "The Heisenberg uncertainty principle",
+      "name": "Heisenberg uncertainty principle",
       "terms": [
         "Heisenberg uncertainty principle"
       ],
@@ -6665,7 +6699,7 @@
       "id": "principal-quantum-number-shells",
       "kind": "definition",
       "section": "6.3",
-      "name": "The principal quantum number and shells",
+      "name": "Principal quantum number",
       "symbol": "n_quantum",
       "terms": [
         "principal quantum number (n)"
@@ -6676,7 +6710,7 @@
       "id": "angular-momentum-quantum-number",
       "kind": "definition",
       "section": "6.3",
-      "name": "The secondary quantum number, subshells, and orbital shapes",
+      "name": "Secondary quantum number",
       "symbol": "l_quantum",
       "terms": [
         "secondary (angular momentum) quantum number (l)"
@@ -6687,7 +6721,7 @@
       "id": "magnetic-quantum-number",
       "kind": "definition",
       "section": "6.3",
-      "name": "The magnetic quantum number and degenerate orbitals",
+      "name": "Magnetic quantum number",
       "symbol": "m_l",
       "terms": [
         "magnetic quantum number (mₗ)"
@@ -6698,7 +6732,7 @@
       "id": "spin-quantum-number",
       "kind": "definition",
       "section": "6.3",
-      "name": "The spin quantum number",
+      "name": "Spin quantum number",
       "symbol": "m_s",
       "terms": [
         "spin quantum number (mₛ)"
@@ -6709,7 +6743,7 @@
       "id": "pauli-exclusion-principle",
       "kind": "axiom",
       "section": "6.3",
-      "name": "The Pauli exclusion principle",
+      "name": "Pauli exclusion principle",
       "terms": [
         "Pauli exclusion principle"
       ],
@@ -6719,14 +6753,14 @@
       "id": "working-with-quantum-numbers",
       "kind": "skill",
       "section": "6.3",
-      "name": "Working with shells, subshells, and quantum numbers",
+      "name": "Working with quantum numbers",
       "statement": "Given a value of n, list the allowed values of l and m_l, name the subshells, and count the orbitals in each; a shell holds n² orbitals and at most 2n² electrons. Given a set of quantum numbers, name the subshell."
     },
     {
       "id": "velocity",
       "kind": "definition",
       "section": "6.3",
-      "name": "Velocity, $v$",
+      "name": "Velocity",
       "symbol": "v",
       "statement": "The velocity of a particle is the rate at which its position changes, the distance it travels per unit time in a given direction."
     },
@@ -6734,9 +6768,15 @@
       "id": "momentum",
       "kind": "definition",
       "section": "6.3",
-      "name": "Momentum, $p = mv$",
+      "name": "Momentum",
       "symbol": "p_momentum",
-      "statement": "The linear momentum of a particle is the product of its mass and its velocity."
+      "statement": "The linear momentum of a particle is the product of its mass and its velocity.",
+      "forms": [
+        {
+          "id": "eq-momentum",
+          "latex": "p = mv"
+        }
+      ]
     },
     {
       "id": "quantum-mechanics",
@@ -6752,7 +6792,7 @@
       "id": "wavefunction",
       "kind": "definition",
       "section": "6.3",
-      "name": "Wavefunction, $\\psi$",
+      "name": "Wavefunction",
       "symbol": "ψ",
       "terms": [
         "wavefunction (ψ)"
@@ -6763,7 +6803,7 @@
       "id": "electron-density",
       "kind": "definition",
       "section": "6.3",
-      "name": "Electron density, $|\\psi|^2$",
+      "name": "Electron density",
       "terms": [
         "electron density"
       ],
@@ -6853,14 +6893,14 @@
       "id": "orbital-energy-order",
       "kind": "idea",
       "section": "6.4",
-      "name": "The energy order of atomic orbitals",
+      "name": "Energy order of atomic orbitals",
       "statement": "In an atom with two or more electrons, the energy of the orbitals increases with n and, within a shell, in the order s < p < d < f, because electrons with larger l penetrate less toward the nucleus and are more shielded by the inner electrons. For larger atoms the two trends overlap, so that the 4s orbital lies below the 3d and the filling order runs 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, and so on."
     },
     {
       "id": "aufbau-principle",
       "kind": "result",
       "section": "6.4",
-      "name": "The Aufbau principle",
+      "name": "Aufbau principle",
       "terms": [
         "Aufbau principle"
       ],
@@ -6870,7 +6910,7 @@
       "id": "hunds-rule",
       "kind": "axiom",
       "section": "6.4",
-      "name": "Hund's rule",
+      "name": "Hund’s rule",
       "terms": [
         "Hund’s rule"
       ],
@@ -6965,7 +7005,7 @@
       "id": "effective-nuclear-charge",
       "kind": "definition",
       "section": "6.5",
-      "name": "Effective nuclear charge, $Z_{\\text{eff}}=Z-\\text{shielding}$",
+      "name": "Effective nuclear charge",
       "symbol": "Z_eff",
       "terms": [
         "effective nuclear charge"
@@ -6984,21 +7024,21 @@
       "id": "covalent-radius-trend",
       "kind": "idea",
       "section": "6.5",
-      "name": "The trend in covalent radius",
+      "name": "Covalent radius trend",
       "statement": "The covalent radius, one-half the distance between the nuclei of two identical atoms joined by a covalent bond, increases down a group because each step adds a shell farther from the nucleus, and decreases from left to right across a period because the rising effective nuclear charge draws the electrons closer."
     },
     {
       "id": "ionic-radius-trend",
       "kind": "idea",
       "section": "6.5",
-      "name": "The radii of ions and isoelectronic species",
+      "name": "Ionic radius trend",
       "statement": "A cation is smaller than its parent atom, since the remaining electrons feel a greater effective nuclear charge, and a cation of higher charge is smaller still; an anion is larger than its parent, since the added electrons repel one another. Atoms and ions with the same electron configuration are isoelectronic, and among them the one with the greater nuclear charge is the smaller."
     },
     {
       "id": "ionization-energy-trend",
       "kind": "idea",
       "section": "6.5",
-      "name": "The trend in first ionization energy",
+      "name": "Ionization energy trend",
       "statement": "The first ionization energy, the energy required to remove the most loosely bound electron from a gaseous atom, is always positive and generally decreases down a group and increases across a period, the opposite of the trend in size. It dips each time a new subshell begins, as from beryllium to boron, and again where a p subshell becomes more than half-filled, as from nitrogen to oxygen."
     },
     {
@@ -7021,14 +7061,14 @@
       "id": "electron-affinity-trend",
       "kind": "idea",
       "section": "6.5",
-      "name": "The trend in electron affinity",
+      "name": "Electron affinity trend",
       "statement": "The electron affinity is the energy change when a gaseous atom accepts an electron; it is negative when energy is released and positive otherwise. Electron affinities tend to become more negative across a period as the effective nuclear charge increases. Groups 2, 15 and 18 are exceptions, because a filled or half-filled subshell resists the added electron. The second element of a group, such as chlorine, often has a more negative value than the first, because the small n = 2 shell crowds its electrons."
     },
     {
       "id": "predicting-periodic-trends",
       "kind": "skill",
       "section": "6.5",
-      "name": "Predicting sizes and energies from the periodic table",
+      "name": "Predicting periodic trends",
       "statement": "From the positions of elements in the periodic table, order atoms and ions by radius, ionization energy or electron affinity. Combine the trend down a group with the trend across a period, and allow for the known exceptions. Metallic character follows the same trend as size, so the same reading tells which elements lose electrons most easily."
     },
     {
@@ -7056,7 +7096,7 @@
       "id": "ionization-energy",
       "kind": "definition",
       "section": "6.5",
-      "name": "Ionization energy, $\\text{IE}$",
+      "name": "Ionization energy",
       "symbol": "IE",
       "terms": [
         "ionization energy"
@@ -7076,7 +7116,7 @@
       "id": "electron-affinity",
       "kind": "definition",
       "section": "6.5",
-      "name": "Electron affinity, $\\text{EA}$",
+      "name": "Electron affinity",
       "symbol": "EA",
       "terms": [
         "electron affinity"
@@ -7127,7 +7167,7 @@
       "id": "predict-solution-formation",
       "kind": "skill",
       "section": "11.1",
-      "name": "Predict whether two substances form a solution",
+      "name": "Predicting solution formation",
       "statement": "Naming the strongest attractions within the solute, within the solvent and between the two lets us predict whether they will mix and which solvent suits a solute."
     },
     {
@@ -7198,7 +7238,7 @@
       "id": "classify-electrolyte-strength",
       "kind": "skill",
       "section": "11.2",
-      "name": "Classify a solute as a strong, weak or nonelectrolyte",
+      "name": "Classifying electrolytes",
       "statement": "Whether a solute is ionic, a strong acid, a weak acid or base, or an unreactive covalent compound tells us how well its solution will conduct."
     },
     {
@@ -7245,7 +7285,7 @@
       "id": "solubility-and-saturation",
       "kind": "definition",
       "section": "11.3",
-      "name": "Solubility, saturated and unsaturated solutions",
+      "name": "Solubility and saturation",
       "statement": "The solubility of a solute is the maximum concentration it can reach in a solvent under given conditions when dissolution is at equilibrium. A solution at that concentration is saturated, one below it is unsaturated."
     },
     {
@@ -7262,7 +7302,7 @@
       "id": "gas-solubility-and-temperature",
       "kind": "result",
       "section": "11.3",
-      "name": "Gases grow less soluble as temperature rises",
+      "name": "Gas solubility and temperature",
       "statement": "Since a gaseous solute has no solute-solute attraction to overcome, only its attraction to the solvent sets its solubility, and that solubility typically decreases as the temperature increases, which is why thermal pollution starves natural waters of oxygen."
     },
     {
@@ -7289,14 +7329,14 @@
       "id": "henrys-law-calculations",
       "kind": "skill",
       "section": "11.3",
-      "name": "Calculate a gas solubility with Henry’s law",
+      "name": "Using Henry’s law",
       "statement": "Finding k from one known solubility and pressure gives the solubility at any other pressure, and a constant read from a solubility graph answers whether a stream holds enough oxygen for its fish."
     },
     {
       "id": "miscibility",
       "kind": "definition",
       "section": "11.3",
-      "name": "Miscible, immiscible and partially miscible liquids",
+      "name": "Miscibility",
       "statement": "Liquids of similar polarity mix in all proportions because the attractions between unlike molecules are as strong as those between like ones, an illustration of “like dissolves like”; a nonpolar liquid and water form separate layers, and some pairs are only partially miscible."
     },
     {
@@ -7478,14 +7518,14 @@
       "id": "molar-mass-from-colligative-properties",
       "kind": "skill",
       "section": "11.4",
-      "name": "Determine a molar mass from a colligative property",
+      "name": "Finding molar mass from a colligative property",
       "statement": "A measured freezing point depression, boiling point elevation or osmotic pressure gives the moles of solute in a known mass, and so the solute’s molar mass."
     },
     {
       "id": "vant-hoff-factor",
       "kind": "result",
       "section": "11.4",
-      "name": "Colligative properties of electrolytes and the van’t Hoff factor",
+      "name": "Van’t Hoff factor",
       "symbol": "i_vh",
       "terms": [
         "van’t Hoff factor"
@@ -7504,7 +7544,7 @@
       "id": "molality",
       "kind": "definition",
       "section": "11.4",
-      "name": "Molality, $m = \\text{mol solute}/\\text{kg solvent}$",
+      "name": "Molality",
       "symbol": "m_molal",
       "terms": [
         "molality"
@@ -7524,7 +7564,7 @@
       "id": "boiling-point-elevation-constant",
       "kind": "definition",
       "section": "11.4",
-      "name": "Boiling point elevation constant, $K_b$",
+      "name": "Boiling point elevation constant",
       "symbol": "K_b",
       "terms": [
         "boiling point elevation constant"
@@ -7535,7 +7575,7 @@
       "id": "freezing-point-depression-constant",
       "kind": "definition",
       "section": "11.4",
-      "name": "Freezing point depression constant, $K_f$",
+      "name": "Freezing point depression constant",
       "symbol": "K_f",
       "terms": [
         "freezing point depression constant"
@@ -7681,7 +7721,7 @@
       "id": "tyndall-effect",
       "kind": "idea",
       "section": "11.5",
-      "name": "The Tyndall effect",
+      "name": "Tyndall effect",
       "terms": [
         "Tyndall effect"
       ],
@@ -7751,7 +7791,7 @@
       "id": "gas-pressure",
       "kind": "definition",
       "section": "9.1",
-      "name": "Gas pressure, $P = F/A$",
+      "name": "Gas pressure",
       "symbol": "P",
       "terms": [
         "pressure"
@@ -7785,7 +7825,7 @@
       "id": "hydrostatic-pressure",
       "kind": "result",
       "section": "9.1",
-      "name": "Hydrostatic pressure, $p = h\\rho g$",
+      "name": "Hydrostatic pressure",
       "symbol": "p_hydro",
       "terms": [
         "hydrostatic pressure"
@@ -7805,14 +7845,14 @@
       "id": "manometer-pressure",
       "kind": "skill",
       "section": "9.1",
-      "name": "Reading a gas pressure from a manometer",
+      "name": "Reading a manometer",
       "statement": "A manometer is a U-shaped tube of liquid connected to a gas. In a closed-end manometer the difference in liquid levels is the pressure of the gas itself; in an open-end manometer it is the difference between the gas pressure and the atmospheric pressure, added when the level is higher on the open side and subtracted when it is higher on the gas side."
     },
     {
       "id": "force",
       "kind": "definition",
       "section": "9.1",
-      "name": "Force, $F$",
+      "name": "Force",
       "symbol": "F_force",
       "statement": "A force is a push or a pull on an object. A gas pushes on the walls of its container with a force that comes from the collisions of its molecules with those walls."
     },
@@ -7820,7 +7860,7 @@
       "id": "area",
       "kind": "definition",
       "section": "9.1",
-      "name": "Area, $A$",
+      "name": "Area",
       "symbol": "A_area",
       "statement": "The area of a surface is its extent, measured in square units such as square meters. A force spread over a larger area gives a smaller pressure."
     },
@@ -7828,7 +7868,7 @@
       "id": "acceleration-due-to-gravity",
       "kind": "definition",
       "section": "9.1",
-      "name": "Acceleration due to gravity, $g$",
+      "name": "Acceleration due to gravity",
       "symbol": "g_grav",
       "statement": "The acceleration due to gravity is the rate at which the speed of a falling object increases near the surface of the earth, about 9.8 m/s². It turns the mass of a column of fluid into the weight that presses on what lies beneath it."
     },
@@ -7836,7 +7876,7 @@
       "id": "pascal",
       "kind": "definition",
       "section": "9.1",
-      "name": "Pascal (Pa)",
+      "name": "Pascal",
       "terms": [
         "pascal (Pa)"
       ],
@@ -7856,7 +7896,7 @@
       "id": "atmosphere-unit",
       "kind": "definition",
       "section": "9.1",
-      "name": "Atmosphere (atm)",
+      "name": "Atmosphere",
       "terms": [
         "atmosphere (atm)"
       ],
@@ -7876,7 +7916,7 @@
       "id": "pounds-per-square-inch",
       "kind": "definition",
       "section": "9.1",
-      "name": "Pounds per square inch (psi)",
+      "name": "Pounds per square inch",
       "terms": [
         "pounds per square inch (psi)"
       ],
@@ -7906,7 +7946,7 @@
       "id": "amontons-law",
       "kind": "axiom",
       "section": "9.2",
-      "name": "Amontons’s law, $P_1/T_1 = P_2/T_2$",
+      "name": "Amontons’s law",
       "terms": [
         "Amontons’s law"
       ],
@@ -7925,7 +7965,7 @@
       "id": "charles-law",
       "kind": "axiom",
       "section": "9.2",
-      "name": "Charles’s law, $V_1/T_1 = V_2/T_2$",
+      "name": "Charles’s law",
       "terms": [
         "Charles’s law"
       ],
@@ -7944,7 +7984,7 @@
       "id": "boyles-law",
       "kind": "axiom",
       "section": "9.2",
-      "name": "Boyle’s law, $P_1V_1 = P_2V_2$",
+      "name": "Boyle’s law",
       "terms": [
         "Boyle’s law"
       ],
@@ -7963,7 +8003,7 @@
       "id": "avogadro-law",
       "kind": "axiom",
       "section": "9.2",
-      "name": "Avogadro’s law, $V_1/n_1 = V_2/n_2$",
+      "name": "Avogadro’s law",
       "terms": [
         "Avogadro’s law"
       ],
@@ -7992,7 +8032,7 @@
       "id": "ideal-gas",
       "kind": "idea",
       "section": "9.2",
-      "name": "The ideal gas",
+      "name": "Ideal gas",
       "terms": [
         "ideal gas"
       ],
@@ -8002,7 +8042,7 @@
       "id": "ideal-gas-law",
       "kind": "result",
       "section": "9.2",
-      "name": "The ideal gas law, $PV = nRT$",
+      "name": "Ideal gas law",
       "symbol": "R",
       "terms": [
         "ideal gas law"
@@ -8029,7 +8069,7 @@
       "id": "combined-gas-law",
       "kind": "result",
       "section": "9.2",
-      "name": "The combined gas law, $P_1V_1/T_1 = P_2V_2/T_2$",
+      "name": "Combined gas law",
       "statement": "When the amount of gas is the same under two sets of conditions, PV/T equals the same product nR in both, so we can set the pressure, volume and temperature of the first condition equal to those of the second. Every two-state gas problem takes this form. Amontons’s, Charles’s and Boyle’s laws are the cases in which one of the three quantities does not change.",
       "forms": [
         {
@@ -8045,7 +8085,7 @@
       "id": "standard-temperature-and-pressure",
       "kind": "definition",
       "section": "9.2",
-      "name": "Standard temperature and pressure, and the standard molar volume",
+      "name": "Standard temperature and pressure",
       "terms": [
         "standard conditions of temperature and pressure (STP)"
       ],
@@ -8055,7 +8095,7 @@
       "id": "ideal-gas-constant",
       "kind": "definition",
       "section": "9.2",
-      "name": "The ideal gas constant, $R$",
+      "name": "Ideal gas constant",
       "symbol": "R",
       "terms": [
         "ideal gas constant (R)"
@@ -8066,7 +8106,7 @@
       "id": "molar-volume",
       "kind": "definition",
       "section": "9.2",
-      "name": "Molar volume, $V_m$",
+      "name": "Molar volume",
       "symbol": "V_m",
       "statement": "The molar volume of a gas is the volume occupied by 1 mole of it at a given temperature and pressure."
     },
@@ -8084,7 +8124,7 @@
       "id": "gas-density",
       "kind": "result",
       "section": "9.3",
-      "name": "The density of a gas, $d = \\mathcal{M}P/RT$",
+      "name": "Gas density",
       "statement": "Substituting the ideal gas law into the definition of density shows that the density of a gas is its molar mass times its pressure divided by RT. Unlike the ideal gas law itself, this relation depends on the identity of the gas, so a density measured at a known temperature and pressure can identify a gas, and a heavier gas is denser than a lighter one under the same conditions.",
       "forms": [
         {
@@ -8100,7 +8140,7 @@
       "id": "molar-mass-of-a-gas",
       "kind": "skill",
       "section": "9.3",
-      "name": "Finding the molar mass of a gas from its mass, pressure, volume, and temperature",
+      "name": "Finding the molar mass of a gas",
       "statement": "When a gas is unknown, measuring the mass, pressure, volume and temperature of a sample gives its molar mass through ℳ = mRT/PV. Compared with the mass of an empirical formula, that molar mass tells how many formula units make up a molecule, and the same measurement made on the vapor of a volatile liquid gives the liquid's molar mass.",
       "forms": [
         {
@@ -8135,7 +8175,7 @@
       "id": "mole-fraction-and-partial-pressure",
       "kind": "result",
       "section": "9.3",
-      "name": "Partial pressure from mole fraction, $P_A = X_A P_{Total}$",
+      "name": "Partial pressure from mole fraction",
       "statement": "The partial pressure of a gas in a mixture is its mole fraction times the total pressure. The relation lets us move between the composition of a mixture and the pressures of its components without computing each pressure from the ideal gas law.",
       "forms": [
         {
@@ -8151,28 +8191,28 @@
       "id": "gas-collected-over-water",
       "kind": "skill",
       "section": "9.3",
-      "name": "The pressure of a gas collected over water",
+      "name": "Finding the pressure of a gas collected over water",
       "statement": "A gas collected in an inverted bottle over water is saturated with water vapor, so the pressure it shows when the water levels are equal is the sum of its own partial pressure and the vapor pressure of water at that temperature. The pressure of the dry gas is the total pressure minus the vapor pressure of water, read from Table 9.2."
     },
     {
       "id": "combining-volumes-of-gases",
       "kind": "result",
       "section": "9.3",
-      "name": "Gases react in simple proportions by volume",
+      "name": "Combining volumes of gases",
       "statement": "Because equal volumes of ideal gases at the same temperature and pressure contain equal numbers of molecules, the volumes of gases that react or form are in the same ratio as the coefficients of the balanced equation. A volume of one gas can then be turned into the volume of another without passing through moles, provided both are measured under the same conditions."
     },
     {
       "id": "gas-stoichiometry",
       "kind": "skill",
       "section": "9.3",
-      "name": "Stoichiometry of reactions that produce or consume gases",
+      "name": "Gas stoichiometry",
       "statement": "When a reaction involves a gas, the ideal gas law turns a measured volume, pressure and temperature into moles, and moles of gas back into a volume under any conditions. With the mole ratios of the balanced equation, this links the mass of a solid or liquid reactant to the volume of a gas produced or consumed."
     },
     {
       "id": "partial-pressure",
       "kind": "definition",
       "section": "9.3",
-      "name": "Partial pressure, $P_A$",
+      "name": "Partial pressure",
       "symbol": "P_A",
       "terms": [
         "partial pressure"
@@ -8183,7 +8223,7 @@
       "id": "mole-fraction",
       "kind": "definition",
       "section": "9.3",
-      "name": "Mole fraction, $X_A = n_A/n_{Total}$",
+      "name": "Mole fraction",
       "symbol": "X_A",
       "terms": [
         "mole fraction (X)"
@@ -8256,7 +8296,7 @@
       "id": "grahams-law-calculations",
       "kind": "skill",
       "section": "9.4",
-      "name": "Using Graham’s law for effusion times and molar masses",
+      "name": "Using Graham’s law",
       "statement": "Since the time for a given amount of gas to effuse is inversely proportional to its rate, the effusion times of two gases are in the direct ratio of the square roots of their molar masses. Graham’s law can then give an unknown effusion time, or a molar mass from a measured ratio of rates, which is a way of identifying a gas."
     },
     {
@@ -8301,7 +8341,7 @@
       "id": "kinetic-molecular-theory",
       "kind": "axiom",
       "section": "9.5",
-      "name": "The postulates of the kinetic-molecular theory",
+      "name": "Kinetic-molecular theory",
       "terms": [
         "kinetic molecular theory"
       ],
@@ -8311,21 +8351,21 @@
       "id": "kmt-explains-gas-laws",
       "kind": "idea",
       "section": "9.5",
-      "name": "How the kinetic-molecular theory explains the gas laws",
+      "name": "Gas laws from the kinetic-molecular theory",
       "statement": "Each gas law follows from the theory when pressure is read as the frequency and force of molecular collisions with the walls. Heating a gas at constant volume makes the collisions faster and more forceful, so the pressure rises; compressing it makes collisions with the smaller wall area more frequent; and adding molecules at constant pressure requires a larger volume to keep the collisions per unit area the same."
     },
     {
       "id": "maxwell-boltzmann-distribution",
       "kind": "idea",
       "section": "9.5",
-      "name": "The distribution of molecular speeds",
+      "name": "Distribution of molecular speeds",
       "statement": "The molecules of a gas move at widely varying speeds, but because there are so many of them the distribution of speeds is constant at a given temperature. It rises to a most probable speed and then falls off, shifts to higher speeds and flattens as the temperature rises, and lies at higher speeds for lighter molecules than for heavier ones at the same temperature."
     },
     {
       "id": "average-kinetic-energy-and-temperature",
       "kind": "result",
       "section": "9.5",
-      "name": "Average kinetic energy and temperature, $\\text{KE}_{\\text{avg}} = \\tfrac{3}{2}RT$",
+      "name": "Average kinetic energy and temperature",
       "statement": "The average kinetic energy of a mole of gas molecules is directly proportional to the kelvin temperature and does not depend on what the gas is. At a given temperature, then, all gases have the same average kinetic energy, and heavier molecules must move more slowly on average to have it.",
       "forms": [
         {
@@ -8341,7 +8381,7 @@
       "id": "root-mean-square-speed",
       "kind": "result",
       "section": "9.5",
-      "name": "The root mean square speed, $u_{\\text{rms}} = \\sqrt{3RT/\\mathcal{M}}$",
+      "name": "Root mean square speed",
       "symbol": "u_rms",
       "terms": [
         "root mean square speed (u_rms)"
@@ -8367,14 +8407,14 @@
       "id": "grahams-law-from-kmt",
       "kind": "result",
       "section": "9.5",
-      "name": "Graham’s law derived from the kinetic-molecular theory",
+      "name": "Graham’s law from the kinetic-molecular theory",
       "statement": "The rate of effusion of a gas depends directly on the average speed of its molecules, and the root mean square speed is inversely proportional to the square root of the molar mass. The ratio of the effusion rates of two gases is therefore the inverse ratio of the square roots of their molar masses, which is Graham’s law obtained from the theory rather than from experiment."
     },
     {
       "id": "speed",
       "kind": "definition",
       "section": "9.5",
-      "name": "Speed, $u$",
+      "name": "Speed",
       "symbol": "u",
       "statement": "The speed of a particle is the distance it travels divided by the time it takes. The molecules of a gas move at a wide range of speeds."
     },
@@ -8382,7 +8422,7 @@
       "id": "compressibility-factor",
       "kind": "definition",
       "section": "9.6",
-      "name": "The compressibility factor, Z",
+      "name": "Compressibility factor",
       "symbol": "Z_comp",
       "terms": [
         "compressibility factor (Z)"
@@ -8402,7 +8442,7 @@
       "id": "causes-of-non-ideal-behavior",
       "kind": "idea",
       "section": "9.6",
-      "name": "Why real gases depart from ideal behavior",
+      "name": "Non-ideal behavior",
       "statement": "Real gas molecules occupy some volume and attract one another. At high pressures the volume of the molecules themselves becomes an appreciable part of the whole, so the gas is less compressible than an ideal gas; at moderate pressures and low temperatures the attractions pull the molecules together, lowering the pressure at constant volume or the volume at constant pressure."
     },
     {
@@ -8416,7 +8456,7 @@
       "id": "van-der-waals-equation",
       "kind": "axiom",
       "section": "9.6",
-      "name": "The van der Waals equation",
+      "name": "Van der Waals equation",
       "terms": [
         "van der Waals equation"
       ],
@@ -8435,7 +8475,7 @@
       "id": "reaction-rate",
       "kind": "definition",
       "section": "12.1",
-      "name": "The rate of a reaction",
+      "name": "Reaction rate",
       "symbol": "rate",
       "terms": [
         "rate of reaction"
@@ -8453,14 +8493,14 @@
       "id": "rate-from-concentration-data",
       "kind": "skill",
       "section": "12.1",
-      "name": "Calculating an average rate from concentration and time data",
+      "name": "Calculating an average rate",
       "statement": "Dividing the change in concentration by the time interval over which it occurred, and changing the sign for a reactant, gives the average rate over that interval."
     },
     {
       "id": "relative-reaction-rates",
       "kind": "result",
       "section": "12.1",
-      "name": "Rates of change are related by the stoichiometry",
+      "name": "Relative reaction rates",
       "statement": "For aA ⟶ bB, the rate may be written from either species, and the two expressions agree once each change is divided by its coefficient: $\\text{rate}=-\\frac{1}{a}\\frac{\\Delta[\\text{A}]}{\\Delta t}=\\frac{1}{b}\\frac{\\Delta[\\text{B}]}{\\Delta t}$.",
       "forms": [
         {
@@ -8475,7 +8515,7 @@
       "id": "write-relative-rate-expressions",
       "kind": "skill",
       "section": "12.1",
-      "name": "Writing the related rate expressions for a reaction",
+      "name": "Writing related rate expressions",
       "statement": "From a balanced equation, the rates of consumption of reactants and formation of products may be written as equal once each is divided by its coefficient, so a rate measured for one species gives the rate for every other."
     },
     {
@@ -8522,14 +8562,14 @@
       "id": "chemical-nature-and-rate",
       "kind": "idea",
       "section": "12.2",
-      "name": "The nature of the reactants affects the rate",
+      "name": "Chemical nature and rate",
       "statement": "Reactions that appear similar may proceed at very different rates under the same conditions, depending on the identity of the reactants."
     },
     {
       "id": "surface-area-and-rate",
       "kind": "idea",
       "section": "12.2",
-      "name": "Subdivision and the physical state of the reactants",
+      "name": "Subdivision and rate",
       "statement": "A reaction between reactants in different phases takes place only at the interface between them, so a finely divided solid, with its greater surface area, reacts faster than one large piece."
     },
     {
@@ -8550,7 +8590,7 @@
       "id": "catalyst",
       "kind": "definition",
       "section": "12.2",
-      "name": "A catalyst increases the rate of a reaction",
+      "name": "Catalyst",
       "terms": [
         "catalyst"
       ],
@@ -8560,7 +8600,7 @@
       "id": "rate-law",
       "kind": "definition",
       "section": "12.3",
-      "name": "The rate law, $\\text{rate}=k[\\text{A}]^{m}[\\text{B}]^{n}$",
+      "name": "Rate law",
       "terms": [
         "rate law"
       ],
@@ -8589,7 +8629,7 @@
       "id": "rate-constant",
       "kind": "definition",
       "section": "12.3",
-      "name": "The rate constant",
+      "name": "Rate constant",
       "symbol": "k",
       "terms": [
         "rate constant"
@@ -8600,28 +8640,28 @@
       "id": "rate-laws-are-experimental",
       "kind": "idea",
       "section": "12.3",
-      "name": "Rate laws come from experiment, not from the equation",
+      "name": "Rate laws are experimental",
       "statement": "The orders in a rate law must be found by observing how the rate changes with concentration; they sometimes match the coefficients of the balanced equation, but only by coincidence."
     },
     {
       "id": "method-of-initial-rates",
       "kind": "skill",
       "section": "12.3",
-      "name": "Finding a rate law by the method of initial rates",
+      "name": "Finding a rate law by initial rates",
       "statement": "Comparing initial rates from trials in which one reactant’s concentration changes while the others are held fixed gives each order, from the ratio of rates or by logarithms; one trial’s data then give the rate constant."
     },
     {
       "id": "rate-constant-units",
       "kind": "result",
       "section": "12.3",
-      "name": "The units of a rate constant",
+      "name": "Units of a rate constant",
       "statement": "The unit of k is whatever makes the rate come out in mol L⁻¹ s⁻¹, so it depends on the overall order x as L^(x−1) mol^(1−x) s⁻¹."
     },
     {
       "id": "rate-from-rate-law",
       "kind": "skill",
       "section": "12.3",
-      "name": "Using a rate law to predict a rate",
+      "name": "Predicting a rate from a rate law",
       "statement": "With a rate law and its rate constant, the rate at any set of concentrations may be calculated, and the effect of changing one concentration follows from its order."
     },
     {
@@ -8638,7 +8678,7 @@
       "id": "initial-rates-method",
       "kind": "idea",
       "section": "12.3",
-      "name": "The method of initial rates",
+      "name": "Method of initial rates",
       "terms": [
         "method of initial rates"
       ],
@@ -8648,7 +8688,7 @@
       "id": "integrated-rate-laws",
       "kind": "definition",
       "section": "12.4",
-      "name": "Integrated rate laws relate concentration to time",
+      "name": "Integrated rate laws",
       "terms": [
         "integrated rate law"
       ],
@@ -8658,7 +8698,7 @@
       "id": "first-order-integrated-rate-law",
       "kind": "result",
       "section": "12.4",
-      "name": "The first-order integrated rate law",
+      "name": "First-order integrated rate law",
       "statement": "For rate = k[A], the concentration falls exponentially, $[\\text{A}]_{t}=[\\text{A}]_{0}e^{-kt}$, so $\\ln[\\text{A}]_{t}=-kt+\\ln[\\text{A}]_{0}$ and a plot of ln[A] against t is a straight line of slope −k.",
       "forms": [
         {
@@ -8679,7 +8719,7 @@
       "id": "second-order-integrated-rate-law",
       "kind": "result",
       "section": "12.4",
-      "name": "The second-order integrated rate law",
+      "name": "Second-order integrated rate law",
       "statement": "For rate = k[A]², $\\frac{1}{[\\text{A}]_{t}}=kt+\\frac{1}{[\\text{A}]_{0}}$, so a plot of 1/[A] against t is a straight line of slope k.",
       "forms": [
         {
@@ -8694,7 +8734,7 @@
       "id": "zero-order-integrated-rate-law",
       "kind": "result",
       "section": "12.4",
-      "name": "The zero-order integrated rate law",
+      "name": "Zero-order integrated rate law",
       "statement": "For rate = k, the concentration falls linearly, $[\\text{A}]_{t}=-kt+[\\text{A}]_{0}$, and a plot of [A] against t is a straight line of slope −k. Zero-order behavior is seen only under certain conditions.",
       "forms": [
         {
@@ -8709,14 +8749,14 @@
       "id": "order-from-linear-plots",
       "kind": "skill",
       "section": "12.4",
-      "name": "Finding the order and rate constant from a linear plot",
+      "name": "Finding order from a linear plot",
       "statement": "Plotting [A], ln[A] and 1/[A] against time shows which is a straight line, which gives the order; the rate constant is then the slope or its negative."
     },
     {
       "id": "half-life",
       "kind": "definition",
       "section": "12.4",
-      "name": "The half-life of a reaction",
+      "name": "Half-life",
       "symbol": "t_half",
       "terms": [
         "half-life of a reaction"
@@ -8727,7 +8767,7 @@
       "id": "half-life-by-order",
       "kind": "result",
       "section": "12.4",
-      "name": "Half-lives for zero-, first-, and second-order reactions",
+      "name": "Half-life by reaction order",
       "statement": "The half-life of a first-order reaction, $t_{1/2}=0.693/k$, is independent of concentration; that of a second-order reaction, $1/k[\\text{A}]_{0}$, grows as the reactant is used up, and that of a zero-order reaction, $[\\text{A}]_{0}/2k$, shrinks.",
       "forms": [
         {
@@ -8754,7 +8794,7 @@
       "id": "integrated-rate-law-calculations",
       "kind": "skill",
       "section": "12.4",
-      "name": "Calculating concentrations, times, and half-lives",
+      "name": "Calculating with integrated rate laws",
       "statement": "Choosing the integrated rate law of the reaction’s order and solving it for the unknown gives the concentration remaining after a time, the time to reach a concentration, or the half-life."
     },
     {
@@ -8771,7 +8811,7 @@
       "id": "collision-orientation",
       "kind": "idea",
       "section": "12.5",
-      "name": "The orientation of a collision",
+      "name": "Collision orientation",
       "statement": "The colliding species must meet in an orientation that brings together the atoms that will bond in the product."
     },
     {
@@ -8796,14 +8836,14 @@
       "id": "energy-distribution-and-rate",
       "kind": "idea",
       "section": "12.5",
-      "name": "The fraction of molecules with enough energy",
+      "name": "Fraction of molecules with enough energy",
       "statement": "Of the molecules’ distribution of energies, only those above the activation energy can react; a lower activation energy or a higher temperature increases that fraction and so the rate."
     },
     {
       "id": "arrhenius-equation",
       "kind": "axiom",
       "section": "12.5",
-      "name": "The Arrhenius equation, $k=Ae^{-E_{\\text{a}}/RT}$",
+      "name": "Arrhenius equation",
       "terms": [
         "Arrhenius equation"
       ],
@@ -8827,7 +8867,7 @@
       "id": "activation-energy-from-rate-constants",
       "kind": "skill",
       "section": "12.5",
-      "name": "Finding an activation energy from rate constants at different temperatures",
+      "name": "Finding an activation energy",
       "statement": "A plot of ln k against 1/T is a straight line of slope −E_a/R, and rate constants at just two temperatures give E_a through the two-point form of the Arrhenius equation.",
       "forms": [
         {
@@ -8852,7 +8892,7 @@
       "id": "frequency-factor",
       "kind": "definition",
       "section": "12.5",
-      "name": "Frequency factor, $A$",
+      "name": "Frequency factor",
       "symbol": "A_freq",
       "terms": [
         "frequency factor"
@@ -8873,7 +8913,7 @@
       "id": "reaction-mechanism",
       "kind": "definition",
       "section": "12.6",
-      "name": "Reaction mechanisms, elementary reactions, and intermediates",
+      "name": "Reaction mechanism",
       "terms": [
         "reaction mechanism"
       ],
@@ -8883,7 +8923,7 @@
       "id": "molecularity",
       "kind": "definition",
       "section": "12.6",
-      "name": "Molecularity: unimolecular, bimolecular, and termolecular reactions",
+      "name": "Molecularity",
       "terms": [
         "molecularity"
       ],
@@ -8893,14 +8933,14 @@
       "id": "elementary-rate-laws",
       "kind": "result",
       "section": "12.6",
-      "name": "The rate law of an elementary reaction follows from its equation",
+      "name": "Rate law of an elementary reaction",
       "statement": "Since an elementary reaction occurs exactly as written, its rate law may be written from its equation: first order for a unimolecular step, rate = k[A][B] or k[A]² for a bimolecular one."
     },
     {
       "id": "rate-determining-step",
       "kind": "definition",
       "section": "12.6",
-      "name": "The rate-determining step",
+      "name": "Rate-determining step",
       "terms": [
         "rate-determining step"
       ],
@@ -8910,7 +8950,7 @@
       "id": "mechanism-consistent-with-rate-law",
       "kind": "idea",
       "section": "12.6",
-      "name": "Testing a mechanism against the measured rate law",
+      "name": "Testing a mechanism",
       "statement": "A rate law is determined by experiment and a mechanism deduced from it; a mechanism whose predicted rate law disagrees with the measured one is incorrect, and one that agrees is plausible."
     },
     {
@@ -8974,14 +9014,14 @@
       "id": "catalysis-lowers-activation-energy",
       "kind": "idea",
       "section": "12.7",
-      "name": "A catalyst provides a path of lower activation energy",
+      "name": "Catalysis and activation energy",
       "statement": "A catalyst speeds a reaction by providing a different mechanism whose rate-determining step has a lower activation energy; it takes part in the reaction but is regenerated, so the overall reaction and the energies of reactants and products are unchanged."
     },
     {
       "id": "catalyzed-reaction-diagrams",
       "kind": "skill",
       "section": "12.7",
-      "name": "Identifying the catalyzed path on reaction diagrams",
+      "name": "Identifying a catalyzed path",
       "statement": "Of two reaction diagrams for the same reaction, the one with the lower activation energy for its rate-determining step is the catalyzed one."
     },
     {
@@ -9025,7 +9065,7 @@
       "id": "chemical-equilibrium",
       "kind": "definition",
       "section": "13.1",
-      "name": "Equilibrium is reached when the forward and reverse rates are equal",
+      "name": "Chemical equilibrium",
       "terms": [
         "equilibrium"
       ],
@@ -9050,7 +9090,7 @@
       "id": "reaction-quotient",
       "kind": "definition",
       "section": "13.2",
-      "name": "The reaction quotient, $Q$",
+      "name": "Reaction quotient",
       "symbol": "Q_c",
       "terms": [
         "reaction quotient"
@@ -9082,7 +9122,7 @@
       "id": "equilibrium-constant",
       "kind": "definition",
       "section": "13.2",
-      "name": "The equilibrium constant and the law of mass action",
+      "name": "Equilibrium constant",
       "symbol": "K",
       "terms": [
         "equilibrium constant"
@@ -9100,21 +9140,21 @@
       "id": "magnitude-of-k",
       "kind": "idea",
       "section": "13.2",
-      "name": "What the magnitude of $K$ tells us",
+      "name": "Magnitude of the equilibrium constant",
       "statement": "A reaction with a large $K$ reaches equilibrium when most of the reactant has become product, whereas a small $K$ means very little reactant has reacted. The magnitude of $K$ says nothing about how rapidly the reaction reaches equilibrium."
     },
     {
       "id": "predict-direction-q-versus-k",
       "kind": "skill",
       "section": "13.2",
-      "name": "Predicting the direction of reaction by comparing $Q$ with $K$",
+      "name": "Predicting the direction of reaction",
       "statement": "A reaction proceeds in whatever direction is necessary to achieve equilibrium: forward when $Q < K$, in reverse when $Q > K$, and not at all when $Q = K$."
     },
     {
       "id": "kp-kc-relation",
       "kind": "result",
       "section": "13.2",
-      "name": "Relating $K_{P}$ and $K_{c}$, $K_{P}=K_{c}(RT)^{\\Delta n}$",
+      "name": "Relating Kp and Kc",
       "symbol": "Δn_gas",
       "statement": "Since the partial pressure of an ideal gas is $P = MRT$, each pressure in $K_{P}$ is a concentration times $RT$, and the factors collect into $(RT)^{\\Delta n}$, where $\\Delta n$ is the difference in the molar amounts of product and reactant gases.",
       "forms": [
@@ -9166,7 +9206,7 @@
       "id": "law-of-mass-action",
       "kind": "axiom",
       "section": "13.2",
-      "name": "The law of mass action",
+      "name": "Law of mass action",
       "terms": [
         "law of mass action"
       ],
@@ -9216,21 +9256,21 @@
       "id": "concentration-stress",
       "kind": "result",
       "section": "13.3",
-      "name": "A change in concentration shifts an equilibrium without changing $K$",
+      "name": "Concentration changes and equilibrium",
       "statement": "Adding reactant or removing product makes $Q_{c} < K_{c}$ and the equilibrium shifts right; removing reactant or adding product makes $Q_{c} > K_{c}$ and it shifts left. The new composition differs, but the value of the equilibrium constant is the same after the stress as before."
     },
     {
       "id": "volume-stress",
       "kind": "result",
       "section": "13.3",
-      "name": "A change in volume shifts a gas equilibrium toward fewer or more moles of gas",
+      "name": "Volume changes and equilibrium",
       "statement": "Changing the volume changes every partial pressure by the same factor. If the reactant and product gases have equal total molar amounts, $Q_{P}$ is unchanged and there is no shift; otherwise decreasing the volume shifts the equilibrium toward the side with fewer moles of gas."
     },
     {
       "id": "temperature-changes-k",
       "kind": "result",
       "section": "13.3",
-      "name": "A change in temperature changes $K$",
+      "name": "Temperature changes and equilibrium",
       "statement": "For an elementary reaction $K_{c}=k_{f}/k_{r}$, and the rate constants vary with temperature, so $K$ varies too. Treating heat as a reactant of an endothermic reaction and a product of an exothermic one predicts the shift: heating shifts an endothermic equilibrium right and an exothermic one left.",
       "forms": [
         {
@@ -9245,21 +9285,21 @@
       "id": "catalyst-and-equilibrium",
       "kind": "result",
       "section": "13.3",
-      "name": "A catalyst does not change the equilibrium constant",
+      "name": "Catalysts and equilibrium",
       "statement": "A catalyst lowers the activation energies of both the forward and the reverse reactions, so both are accelerated and equilibrium is reached more quickly, but without a change in the equilibrium constant."
     },
     {
       "id": "predict-equilibrium-shift",
       "kind": "skill",
       "section": "13.3",
-      "name": "Predicting the shift of a stressed equilibrium",
+      "name": "Predicting an equilibrium shift",
       "statement": "Given a stress (a species added or removed, a change in volume or temperature, a catalyst), Le Châtelier’s principle predicts the direction of the shift and how each concentration changes as equilibrium is re-established."
     },
     {
       "id": "ice-change-terms",
       "kind": "skill",
       "section": "13.4",
-      "name": "Relating the changes in concentration by the stoichiometry",
+      "name": "Relating concentration changes",
       "symbol": "x_ice",
       "statement": "Whatever the initial composition, the changes in the concentrations of the species in an equilibrium are related by the reaction stoichiometry, so all of them can be written as multiples of one unknown, $x$."
     },
@@ -9267,7 +9307,7 @@
       "id": "k-from-ice-table",
       "kind": "skill",
       "section": "13.4",
-      "name": "Calculating an equilibrium constant with an ICE table",
+      "name": "Calculating K with an ICE table",
       "statement": "Collecting the initial concentrations, their changes and the equilibrium concentrations in an ICE table derives every equilibrium concentration from the data given, and substituting them into the $K$ expression gives the equilibrium constant."
     },
     {
@@ -9288,7 +9328,7 @@
       "id": "small-x-approximation",
       "kind": "skill",
       "section": "13.4",
-      "name": "Simplifying the algebra when the change is small",
+      "name": "Small-change approximation",
       "statement": "When $K$ is small, the change in concentration may be much less than the initial concentration, so the initial concentration minus $x$ can be approximated by the initial concentration. The result must be checked, and the calculation repeated without the approximation if $x$ is not negligible."
     },
     {
@@ -9326,14 +9366,14 @@
       "id": "water-autoionization",
       "kind": "idea",
       "section": "14.1",
-      "name": "The autoionization of water and $K_{\\text{w}}$",
+      "name": "Autoionization of water",
       "statement": "Liquid water undergoes autoionization to a very slight extent, and the equilibrium constant for this reaction is the ion-product constant for water, $K_{\\text{w}}$. The process is endothermic, so the extent of ionization, and with it $K_{\\text{w}}$, increases with temperature."
     },
     {
       "id": "kw-ion-concentrations",
       "kind": "skill",
       "section": "14.1",
-      "name": "Calculating [H<sub>3</sub>O<sup>+</sup>] and [OH<sup>−</sup>] from $K_{\\text{w}}$",
+      "name": "Calculating ion concentrations in water",
       "statement": "Because the product of the hydronium and hydroxide ion concentrations is fixed by $K_{\\text{w}}$, the two are inversely proportional: knowing one gives the other, and in pure water each is the square root of $K_{\\text{w}}$."
     },
     {
@@ -9420,7 +9460,7 @@
       "id": "ion-product-constant-for-water",
       "kind": "definition",
       "section": "14.1",
-      "name": "The ion-product constant for water, $K_{\\text{w}}$",
+      "name": "Ion-product constant for water",
       "symbol": "K_w",
       "terms": [
         "ion-product constant for water"
@@ -9446,14 +9486,14 @@
       "id": "ph-and-poh-scales",
       "kind": "definition",
       "section": "14.2",
-      "name": "The pH and pOH scales",
+      "name": "pH and pOH scales",
       "statement": "Hydronium and hydroxide ion concentrations span many orders of magnitude, so they are expressed with the p-function, the negative base-10 logarithm: pH = −log[H<sub>3</sub>O<sup>+</sup>] and pOH = −log[OH<sup>−</sup>]. Each unit of pH is a tenfold change in hydronium ion concentration."
     },
     {
       "id": "ph-plus-poh",
       "kind": "result",
       "section": "14.2",
-      "name": "pH + pOH = p$K_{\\text{w}}$",
+      "name": "Sum of pH and pOH",
       "statement": "Taking the negative logarithm of the $K_{\\text{w}}$ expression shows that the pH and pOH of any aqueous solution sum to p$K_{\\text{w}}$, which is 14.00 at 25 °C.",
       "forms": [
         {
@@ -9468,7 +9508,7 @@
       "id": "ph-calculations",
       "kind": "skill",
       "section": "14.2",
-      "name": "Converting between concentrations, pH, and pOH",
+      "name": "Converting between concentration, pH and pOH",
       "statement": "The definitions of pH and pOH and their sum let us move among [H<sub>3</sub>O<sup>+</sup>], [OH<sup>−</sup>], pH, and pOH; when taking the log of a value, we keep as many decimal places in the result as there are significant figures in the value."
     },
     {
@@ -9512,7 +9552,7 @@
       "id": "ph",
       "kind": "definition",
       "section": "14.2",
-      "name": "pH, $\\text{pH}=-\\log[\\text{H}_3\\text{O}^+]$",
+      "name": "pH",
       "symbol": "pH",
       "terms": [
         "pH"
@@ -9537,7 +9577,7 @@
       "id": "poh",
       "kind": "definition",
       "section": "14.2",
-      "name": "pOH, $\\text{pOH}=-\\log[\\text{OH}^-]$",
+      "name": "pOH",
       "symbol": "pOH",
       "terms": [
         "pOH"
@@ -9562,7 +9602,7 @@
       "id": "acid-base-ionization-constants",
       "kind": "definition",
       "section": "14.3",
-      "name": "Acid and base ionization constants, $K_{\\text{a}}$ and $K_{\\text{b}}$",
+      "name": "Acid and base ionization constants",
       "statement": "The relative strength of an acid or base is the extent to which it ionizes in water, and it is quantified by the equilibrium constant of its ionization, $K_{\\text{a}}$ or $K_{\\text{b}}$, in which water, being the solvent, does not appear. The larger the constant, the stronger the acid or base."
     },
     {
@@ -9587,7 +9627,7 @@
       "id": "conjugate-pair-strengths",
       "kind": "result",
       "section": "14.3",
-      "name": "$K_{\\text{a}}\\times K_{\\text{b}}=K_{\\text{w}}$ for a conjugate pair",
+      "name": "Conjugate pair strengths",
       "statement": "Adding the acid ionization of HA to the base ionization of A<sup>−</sup> gives the autoionization of water, so the product of their constants is $K_{\\text{w}}$. The stronger an acid or base, the weaker its conjugate partner, and the conjugate of a strong acid or base has negligible strength.",
       "forms": [
         {
@@ -9601,7 +9641,7 @@
       "id": "leveling-effect",
       "kind": "idea",
       "section": "14.3",
-      "name": "The leveling effect of water",
+      "name": "Leveling effect",
       "terms": [
         "leveling effect"
       ],
@@ -9611,21 +9651,21 @@
       "id": "ka-kb-from-equilibrium-data",
       "kind": "skill",
       "section": "14.3",
-      "name": "Determining $K_{\\text{a}}$ or $K_{\\text{b}}$ from equilibrium concentrations or pH",
+      "name": "Determining Ka or Kb",
       "statement": "Substituting equilibrium concentrations into the ionization constant expression gives $K_{\\text{a}}$ or $K_{\\text{b}}$ directly; when only the formal concentration and the pH are known, the pH gives the equilibrium [H<sub>3</sub>O<sup>+</sup>] and an ICE table gives the rest."
     },
     {
       "id": "weak-acid-base-equilibrium-concentrations",
       "kind": "skill",
       "section": "14.3",
-      "name": "Calculating equilibrium concentrations and pH in a weak acid or base solution",
+      "name": "Calculating weak acid or base equilibria",
       "statement": "An ICE table built from the initial concentration and the ionization constant gives the equilibrium concentrations. When the constant is small and the initial concentration large, the change $x$ may be neglected against it, provided $x$ is less than 5% of the initial concentration; otherwise the quadratic equation is solved."
     },
     {
       "id": "binary-acid-strength",
       "kind": "result",
       "section": "14.3",
-      "name": "Strengths of binary acids across a period and down a group",
+      "name": "Binary acid strength",
       "statement": "Across a row of the periodic table, the acid strength of binary hydrogen compounds increases with the electronegativity of the nonmetal, because the polarity of the H–A bond increases; down a group, it increases as the H–A bond strength decreases."
     },
     {
@@ -9639,7 +9679,7 @@
       "id": "acid-ionization-constant",
       "kind": "definition",
       "section": "14.3",
-      "name": "The acid ionization constant, $K_{\\text{a}}$",
+      "name": "Acid ionization constant",
       "symbol": "K_a2",
       "terms": [
         "acid ionization constant"
@@ -9664,7 +9704,7 @@
       "id": "base-ionization-constant",
       "kind": "definition",
       "section": "14.3",
-      "name": "The base ionization constant, $K_{\\text{b}}$",
+      "name": "Base ionization constant",
       "symbol": "K_b_ion",
       "terms": [
         "base ionization constant"
@@ -9696,7 +9736,7 @@
       "id": "predict-salt-solution-ph",
       "kind": "skill",
       "section": "14.4",
-      "name": "Predicting whether a salt solution is acidic, basic, or neutral",
+      "name": "Predicting the acidity of a salt solution",
       "statement": "We consider each ion separately; where a salt contains both an acidic and a basic ion, or a single amphiprotic ion, the solution is acidic or basic according to whether $K_{\\text{a}}$ or $K_{\\text{b}}$ is the larger."
     },
     {
@@ -9724,7 +9764,7 @@
       "id": "stepwise-ionization-calculations",
       "kind": "skill",
       "section": "14.5",
-      "name": "Calculating concentrations in a solution of a polyprotic acid",
+      "name": "Calculating polyprotic acid concentrations",
       "statement": "If the first ionization constant of a weak diprotic acid is larger than the second by a factor of at least 20, each step may be treated separately: the first gives [H<sub>3</sub>O<sup>+</sup>] and the monoanion, and those concentrations feed the second."
     },
     {
@@ -9798,21 +9838,21 @@
       "id": "how-buffers-work",
       "kind": "idea",
       "section": "14.6",
-      "name": "How a buffer neutralizes added acid or base",
+      "name": "How buffers work",
       "statement": "The weak acid of the pair neutralizes added hydroxide, converting it to the conjugate base, and the conjugate base neutralizes added hydronium, converting it to the weak acid. The ratio of the two changes only a little, and so does the pH."
     },
     {
       "id": "buffer-ph-calculations",
       "kind": "skill",
       "section": "14.6",
-      "name": "Calculating the pH of a buffer before and after adding acid or base",
+      "name": "Calculating buffer pH",
       "statement": "We first let the added strong acid or base react completely with the buffer component that neutralizes it, find the new concentrations of the two components, and then solve the equilibrium as before."
     },
     {
       "id": "buffer-capacity",
       "kind": "definition",
       "section": "14.6",
-      "name": "Buffer capacity and the choice of buffer",
+      "name": "Buffer capacity",
       "terms": [
         "buffer capacity"
       ],
@@ -9822,7 +9862,7 @@
       "id": "henderson-hasselbalch",
       "kind": "result",
       "section": "14.6",
-      "name": "The Henderson-Hasselbalch equation",
+      "name": "Henderson-Hasselbalch equation",
       "terms": [
         "Henderson-Hasselbalch equation"
       ],
@@ -9850,14 +9890,14 @@
       "id": "strong-acid-titration-ph",
       "kind": "skill",
       "section": "14.7",
-      "name": "Calculating pH in a strong acid-strong base titration",
+      "name": "Calculating pH in a strong acid titration",
       "statement": "Before the equivalence point the excess strong acid sets the pH. At the equivalence point only water and a neutral salt remain, so the pH is 7.00 at 25 °C. Beyond it the excess strong base sets the pH."
     },
     {
       "id": "weak-acid-titration-ph",
       "kind": "skill",
       "section": "14.7",
-      "name": "Calculating pH in a weak acid-strong base titration",
+      "name": "Calculating pH in a weak acid titration",
       "statement": "Before any base is added the pH is that of the weak acid; halfway to equivalence the acid and its conjugate base are equal, so pH = p$K_{\\text{a}}$; at equivalence the conjugate base alone makes the solution basic; beyond it the excess strong base sets the pH."
     },
     {
@@ -9891,7 +9931,7 @@
       "id": "solubility-product",
       "kind": "definition",
       "section": "15.1",
-      "name": "The solubility product constant, $K_{\\text{sp}}$",
+      "name": "Solubility product constant",
       "symbol": "K_sp",
       "terms": [
         "solubility product constant"
@@ -9910,35 +9950,35 @@
       "id": "write-ksp-expression",
       "kind": "skill",
       "section": "15.1",
-      "name": "Writing dissolution equations and solubility product expressions",
+      "name": "Writing solubility product expressions",
       "statement": "The dissolution equation shows the ions a compound yields and their coefficients, and each coefficient becomes the exponent of that ion's concentration in the solubility product expression."
     },
     {
       "id": "ksp-from-solubility",
       "kind": "skill",
       "section": "15.1",
-      "name": "Calculating $K_{\\text{sp}}$ from a measured solubility",
+      "name": "Calculating Ksp from solubility",
       "statement": "When dissolution involves only dissociation and solvation, a measured solubility, converted to molar solubility where it is given in grams per liter, fixes every ion concentration through the dissolution stoichiometry, and the solubility product follows."
     },
     {
       "id": "molar-solubility-from-ksp",
       "kind": "skill",
       "section": "15.1",
-      "name": "Calculating a molar solubility from $K_{\\text{sp}}$",
+      "name": "Calculating molar solubility",
       "statement": "Writing the equilibrium concentrations of an ICE table in terms of the molar solubility <i>x</i> and substituting them into the solubility product expression gives an equation in <i>x</i> alone, whose root is the molar solubility."
     },
     {
       "id": "qsp-versus-ksp",
       "kind": "result",
       "section": "15.1",
-      "name": "Predicting precipitation by comparing $Q_{\\text{sp}}$ with $K_{\\text{sp}}$",
+      "name": "Predicting precipitation",
       "statement": "The dissolution equilibrium is established in any solution containing the ions, whatever their source. If the ion concentrations give a reaction quotient greater than the solubility product, the solution is supersaturated and precipitation occurs until the quotient equals the solubility product; if the quotient is smaller, no precipitate forms."
     },
     {
       "id": "precipitation-concentration",
       "kind": "skill",
       "section": "15.1",
-      "name": "Calculating the ion concentration at which precipitation begins",
+      "name": "Finding where precipitation begins",
       "statement": "Setting the reaction quotient equal to the solubility product and substituting the known ion concentration gives the concentration of the counter ion at which a precipitate first forms, or the concentration needed to lower a dissolved ion to a chosen level."
     },
     {
@@ -9955,7 +9995,7 @@
       "id": "common-ion-effect",
       "kind": "result",
       "section": "15.1",
-      "name": "The common ion effect on solubility",
+      "name": "Common ion effect",
       "terms": [
         "common ion effect"
       ],
@@ -9985,7 +10025,7 @@
       "id": "lewis-acids-and-bases",
       "kind": "definition",
       "section": "15.2",
-      "name": "Lewis acids, Lewis bases, and adducts",
+      "name": "Lewis acids and bases",
       "terms": [
         "Lewis acid-base chemistry"
       ],
@@ -10002,7 +10042,7 @@
       "id": "formation-constant",
       "kind": "definition",
       "section": "15.2",
-      "name": "Formation and dissociation constants of complex ions",
+      "name": "Formation constant",
       "symbol": "K_f_form",
       "terms": [
         "formation constant"
@@ -10020,7 +10060,7 @@
       "id": "complex-ion-calculations",
       "kind": "skill",
       "section": "15.2",
-      "name": "Calculating concentrations in a complex ion equilibrium",
+      "name": "Calculating complex ion equilibria",
       "statement": "An ICE table for the dissociation of a complex ion, with the small-<i>x</i> assumption that a very large formation constant justifies, gives the concentrations of the free metal ion and ligand."
     },
     {
@@ -10047,7 +10087,7 @@
       "id": "dissociation-constant",
       "kind": "definition",
       "section": "15.2",
-      "name": "Dissociation constant, $K_{\\text{d}}$",
+      "name": "Dissociation constant",
       "symbol": "K_d",
       "terms": [
         "dissociation constant"
@@ -10095,7 +10135,7 @@
       "id": "solubility-in-acid",
       "kind": "result",
       "section": "15.3",
-      "name": "Salts of basic anions are more soluble in acid",
+      "name": "Solubility in acid",
       "statement": "When a salt's anion is a base, its dissolution is coupled with the anion's reaction with hydronium ion, which removes the anion and shifts the dissolution equilibrium to the right. The net reaction's constant is the solubility product divided by the conjugate acid's ionization constant.",
       "forms": [
         {

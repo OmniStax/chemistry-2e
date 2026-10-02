@@ -41,7 +41,7 @@
       "id": "ionic-equations",
       "kind": "definition",
       "section": "4.1",
-      "name": "Molecular, complete ionic, and net ionic equations",
+      "name": "Ionic equations",
       "statement": "A reaction between ionic compounds in water may be written with different levels of detail. A molecular equation writes every substance as a neutral formula; a complete ionic equation writes the dissolved ionic compounds as their dissociated ions; and a net ionic equation leaves out the spectator ions, which appear unchanged on both sides, so that it shows only the species that actually change."
     },
     {
@@ -142,7 +142,7 @@
       "id": "acids-and-bases",
       "kind": "definition",
       "section": "4.2",
-      "name": "Acids, bases, and acid-base reactions",
+      "name": "Acids and bases",
       "statement": "An acid-base reaction is one in which a hydrogen ion is transferred from one species to another. In water, an acid is a substance that yields hydronium ions, as hydrogen chloride does by transferring H+ to water molecules, and a base is one that yields hydroxide ions, either by dissociating, as ionic hydroxides do, or by reacting with water, as ammonia does."
     },
     {
@@ -418,14 +418,14 @@
       "id": "mole-stoichiometry",
       "kind": "skill",
       "section": "4.3",
-      "name": "Relating moles and numbers of molecules through an equation",
+      "name": "Mole stoichiometry",
       "statement": "Multiplying a given molar amount of one substance by the stoichiometric factor gives the molar amount of another, and Avogadro's number turns that molar amount into a number of molecules. This is the shortest stoichiometry calculation and the pattern the longer ones extend."
     },
     {
       "id": "mass-stoichiometry",
       "kind": "skill",
       "section": "4.3",
-      "name": "Relating masses and solution volumes through an equation",
+      "name": "Mass stoichiometry",
       "statement": "Since masses, not numbers of molecules, are what can be measured, a practical stoichiometry calculation converts a given mass (or a volume of a solution of known molarity) to moles, applies the stoichiometric factor, and converts the result back to a mass or a volume. The route is the same whether the two substances are a reactant and a product or two reactants."
     },
     {

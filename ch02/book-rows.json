@@ -482,6 +482,13 @@
    "statement": "A covalent bond is a bond formed when electrons are shared between atoms."
   },
   {
+   "id": "ionic-bond",
+   "kind": "definition",
+   "section": "2.6",
+   "name": "Ionic bond",
+   "statement": "An ionic bond is the electrostatic attraction between oppositely charged cations and anions, typically formed when a metal atom transfers electrons to a nonmetal atom."
+  },
+  {
    "id": "name-ionic-compounds",
    "kind": "skill",
    "section": "2.7",
@@ -701,6 +708,8 @@
   {"concept": "predict-bond-type", "prereq": "covalent-bond"},
   {"concept": "predict-bond-type", "prereq": "metal"},
   {"concept": "predict-bond-type", "prereq": "nonmetal"},
-  {"concept": "molecular-compounds", "prereq": "covalent-bond"}
+  {"concept": "molecular-compounds", "prereq": "covalent-bond"},
+  {"concept": "ionic-bond", "prereq": "ionic-and-covalent-bonds"},
+  {"concept": "ionic-bond", "prereq": "ionic-compounds"}
  ]
 }

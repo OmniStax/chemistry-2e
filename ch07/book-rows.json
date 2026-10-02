@@ -238,13 +238,6 @@
    "statement": "When two bonded atoms differ in electronegativity, the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference sets the size of the bond's dipole moment."
   },
   {
-   "id": "ionic-bond",
-   "kind": "definition",
-   "section": "7.1",
-   "name": "Ionic bonds and the properties of ionic compounds",
-   "statement": "An ionic bond is the electrostatic attraction between oppositely charged cations and anions, typically formed when a metal atom transfers electrons to a nonmetal atom. The bond is strong, which is why ionic solids are rigid and brittle with high melting points, and the ions are held in place, which is why the solid conducts poorly while the melt or the solution conducts well."
-  },
-  {
    "id": "ionic-lattice",
    "kind": "idea",
    "section": "7.1",
@@ -271,6 +264,13 @@
    "section": "7.1",
    "name": "The inert pair effect",
    "statement": "Heavy atoms of groups 13 to 15 tend to form ions in which their valence s electrons are not lost, as in Tl⁺, Sn²⁺, Pb²⁺ and Bi³⁺."
+  },
+  {
+   "id": "ionic-compound-properties",
+   "kind": "idea",
+   "section": "7.1",
+   "name": "The properties of ionic compounds",
+   "statement": "The ionic bond is strong, which is why ionic solids are rigid and brittle with high melting points, and the ions are held in place, which is why the solid conducts poorly while the melt or the solution conducts well."
   },
   {
    "id": "covalent-bond-formation",
@@ -665,14 +665,6 @@
    "prereq": "predict-ion-charge-from-group"
   },
   {
-   "concept": "ionic-bond",
-   "prereq": "ionic-and-covalent-bonds"
-  },
-  {
-   "concept": "ionic-bond",
-   "prereq": "ionic-compounds"
-  },
-  {
    "concept": "ion-electron-configuration",
    "prereq": "ion-configurations"
   },
@@ -1051,6 +1043,10 @@
   {
    "concept": "molecular-polarity",
    "prereq": "polar-molecule"
+  },
+  {
+   "concept": "ionic-compound-properties",
+   "prereq": "ionic-bond"
   }
  ]
 }

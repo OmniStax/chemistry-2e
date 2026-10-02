@@ -64,7 +64,8 @@
   { "span": "molecular-compounds", "concept": "molecular-compounds", "verb": "introduces" },
   { "span": "molecular-compounds", "concept": "metals-nonmetals-metalloids", "verb": "uses" },
   { "span": "ex-bond-type", "concept": "predict-bond-type", "verb": "introduces" },
-  { "span": "ex-bond-type", "concept": "ionic-compounds", "verb": "uses" }
+  { "span": "ex-bond-type", "concept": "ionic-compounds", "verb": "uses" },
+  { "span": "bonds", "concept": "ionic-bond", "verb": "introduces" }
  ],
  "exercises": [
   {

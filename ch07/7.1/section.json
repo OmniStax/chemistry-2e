@@ -54,11 +54,6 @@
  "coverage": [
   {
    "span": "ionic-compounds",
-   "concept": "ionic-bond",
-   "verb": "introduces"
-  },
-  {
-   "span": "ionic-compounds",
    "concept": "ions-and-atomic-charge",
    "verb": "uses"
   },
@@ -111,6 +106,16 @@
    "span": "anions",
    "concept": "ion-electron-configuration",
    "verb": "reinforces"
+  },
+  {
+   "span": "ionic-compounds",
+   "concept": "ionic-bond",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ionic-compounds",
+   "concept": "ionic-compound-properties",
+   "verb": "introduces"
   }
  ],
  "exercises": [

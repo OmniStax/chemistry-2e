@@ -16,6 +16,9 @@
    "kind": "idea",
    "section": "8.1",
    "name": "Valence bond theory",
+   "terms": [
+    "valence bond theory"
+   ],
    "statement": "Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms, so that the single electrons in each orbital combine to form a pair shared between the two nuclei. The mutual attraction between this electron pair and the two positively charged nuclei is what holds the atoms together, and the strength of the bond depends on how much the orbitals overlap."
   },
   {
@@ -51,6 +54,9 @@
    "kind": "definition",
    "section": "8.1",
    "name": "Overlap",
+   "terms": [
+    "overlap"
+   ],
    "statement": "Overlap is the coexistence of orbitals from two different atoms in the same region of space, which leads to the formation of a covalent bond."
   },
   {
@@ -58,6 +64,9 @@
    "kind": "definition",
    "section": "8.1",
    "name": "Sigma bond (σ bond)",
+   "terms": [
+    "sigma bond (σ bond)"
+   ],
    "statement": "A sigma bond is a covalent bond formed by the overlap of atomic orbitals along the internuclear axis."
   },
   {
@@ -65,6 +74,9 @@
    "kind": "definition",
    "section": "8.1",
    "name": "Pi bond (π bond)",
+   "terms": [
+    "pi bond (π bond)"
+   ],
    "statement": "A pi bond is a covalent bond formed by the side-by-side overlap of atomic orbitals, with its electron density on opposite sides of the internuclear axis and a node along the axis itself."
   },
   {
@@ -72,6 +84,9 @@
    "kind": "idea",
    "section": "8.2",
    "name": "Hybridization of atomic orbitals",
+   "terms": [
+    "hybridization"
+   ],
    "statement": "Hybridization is a model of the changes in the atomic orbitals of an atom when it forms a covalent compound. It combines the wave functions of the atom's valence orbitals into a new set of hybrid orbitals whose directions match the observed geometry, as the 104.5° angle of water requires and unmodified 2p orbitals at 90° do not."
   },
   {
@@ -121,6 +136,9 @@
    "kind": "definition",
    "section": "8.2",
    "name": "Hybrid orbital",
+   "terms": [
+    "hybrid orbital"
+   ],
    "statement": "A hybrid orbital is an orbital created by combining atomic orbitals on a central atom."
   },
   {
@@ -128,6 +146,9 @@
    "kind": "definition",
    "section": "8.2",
    "name": "sp hybrid orbital",
+   "terms": [
+    "sp hybrid orbital"
+   ],
    "statement": "An sp hybrid orbital is one of a set of two orbitals with a linear arrangement that results from combining one s and one p orbital."
   },
   {
@@ -135,6 +156,9 @@
    "kind": "definition",
    "section": "8.2",
    "name": "sp² hybrid orbital",
+   "terms": [
+    "sp² hybrid orbital"
+   ],
    "statement": "An sp² hybrid orbital is one of a set of three orbitals with a trigonal planar arrangement that results from combining one s and two p orbitals."
   },
   {
@@ -142,6 +166,9 @@
    "kind": "definition",
    "section": "8.2",
    "name": "sp³ hybrid orbital",
+   "terms": [
+    "sp³ hybrid orbital"
+   ],
    "statement": "An sp³ hybrid orbital is one of a set of four orbitals with a tetrahedral arrangement that results from combining one s and three p orbitals."
   },
   {
@@ -149,6 +176,9 @@
    "kind": "definition",
    "section": "8.2",
    "name": "sp³d hybrid orbital",
+   "terms": [
+    "sp³d hybrid orbital"
+   ],
    "statement": "An sp³d hybrid orbital is one of a set of five orbitals with a trigonal bipyramidal arrangement that results from combining one s, three p, and one d orbital."
   },
   {
@@ -156,6 +186,9 @@
    "kind": "definition",
    "section": "8.2",
    "name": "sp³d² hybrid orbital",
+   "terms": [
+    "sp³d² hybrid orbital"
+   ],
    "statement": "An sp³d² hybrid orbital is one of a set of six orbitals with an octahedral arrangement that results from combining one s, three p, and two d orbitals."
   },
   {
@@ -191,6 +224,9 @@
    "kind": "idea",
    "section": "8.4",
    "name": "Molecular orbital theory",
+   "terms": [
+    "molecular orbital theory"
+   ],
    "statement": "Molecular orbital theory describes the electrons of a molecule by molecular orbitals, formed by the linear combination of atomic orbitals, that extend over the whole molecule rather than belonging to one atom. Like an atomic orbital, a molecular orbital has a quantized energy and holds at most two electrons of opposite spin. The theory accounts for things valence bond theory cannot, among them the paramagnetism of oxygen and bonding described by several resonance forms."
   },
   {
@@ -219,14 +255,41 @@
    "kind": "definition",
    "section": "8.4",
    "name": "Bond order from a molecular orbital diagram",
+   "terms": [
+    "bond order"
+   ],
    "statement": "In molecular orbital theory the bond order is the number of bonding electrons minus the number of antibonding electrons, divided by two, since a bond consists of two electrons. It usually agrees with the count of bonds in a Lewis structure, it is a guide to the strength of a bond between two given atoms, and a bond order of zero means that no stable bond forms.",
-   "eq": "eq-bond-order"
+   "forms": [
+    {
+     "id": "eq-bond-order",
+     "latex": "\\text{bond order}=\\frac{(\\text{number of bonding electrons})-(\\text{number of antibonding electrons})}{2}",
+     "anchor": "8.4-bond-order"
+    },
+    {
+     "id": "eq-bond-order-h2",
+     "latex": "\\text{bond order in H}_2=\\frac{(2-0)}{2}=1",
+     "anchor": "8.4-diatomic"
+    },
+    {
+     "id": "eq-bond-order-he2",
+     "latex": "\\text{bond order in He}_2=\\frac{(2-2)}{2}=0",
+     "anchor": "8.4-diatomic"
+    },
+    {
+     "id": "eq-bond-order-o2",
+     "latex": "\\text{O}_2=\\frac{(8-4)}{2}=2",
+     "anchor": "8.4-ex-o2"
+    }
+   ]
   },
   {
    "id": "s-p-mixing",
    "kind": "idea",
    "section": "8.4",
    "name": "s-p mixing and the order of the molecular orbitals",
+   "terms": [
+    "s-p mixing"
+   ],
    "statement": "When the 2s and 2p orbitals of an atom are close in energy, the σs and σp wave functions combine, lowering the σs orbital and raising the σp orbital above the πp pair. The energy gap is small from lithium to nitrogen, so their diatomic molecules have the σp orbital above the π orbitals, and large for oxygen, fluorine and neon, whose diagrams keep the expected order. s-p mixing creates no new orbitals; it only shifts the energies of the existing ones."
   },
   {
@@ -241,6 +304,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "Paramagnetism",
+   "terms": [
+    "paramagnetism"
+   ],
    "statement": "Paramagnetism is the phenomenon in which a material that is not magnetic itself is attracted to a magnetic field. It occurs when the material contains unpaired electrons."
   },
   {
@@ -248,6 +314,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "Diamagnetism",
+   "terms": [
+    "diamagnetism"
+   ],
    "statement": "Diamagnetism is the phenomenon in which a material that is not magnetic itself is repelled by a magnetic field. It occurs when all the electrons of the material are paired."
   },
   {
@@ -255,6 +324,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "Molecular orbital",
+   "terms": [
+    "molecular orbital"
+   ],
    "statement": "A molecular orbital is a region of space in a molecule in which an electron has a high probability of being found. It extends over the whole molecule and holds at most two electrons of opposite spin."
   },
   {
@@ -262,6 +334,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "Linear combination of atomic orbitals",
+   "terms": [
+    "linear combination of atomic orbitals"
+   ],
    "statement": "The linear combination of atomic orbitals is the technique of combining the wave functions of atomic orbitals, by adding or subtracting them, to create molecular orbitals."
   },
   {
@@ -269,6 +344,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "Homonuclear diatomic molecule",
+   "terms": [
+    "homonuclear diatomic molecule"
+   ],
    "statement": "A homonuclear diatomic molecule is a molecule consisting of two identical atoms."
   },
   {
@@ -276,6 +354,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "Bonding orbital",
+   "terms": [
+    "bonding orbital"
+   ],
    "statement": "A bonding orbital is a molecular orbital located between two nuclei. Electrons in a bonding orbital stabilize a molecule."
   },
   {
@@ -283,6 +364,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "Antibonding orbital",
+   "terms": [
+    "antibonding orbital"
+   ],
    "statement": "An antibonding orbital is a molecular orbital located outside the region between two nuclei, with a node between them. Electrons in an antibonding orbital destabilize a molecule."
   },
   {
@@ -290,6 +374,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "σ bonding orbital",
+   "terms": [
+    "σ bonding orbital"
+   ],
    "statement": "A σ bonding orbital is a molecular orbital in which the electron density is found along the axis of the bond."
   },
   {
@@ -297,6 +384,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "σ* antibonding orbital",
+   "terms": [
+    "σ* bonding orbital"
+   ],
    "statement": "A σ* orbital is an antibonding molecular orbital formed by the out-of-phase overlap of atomic orbitals along the axis of the bond, which creates a node between the nuclei."
   },
   {
@@ -304,6 +394,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "π bonding orbital",
+   "terms": [
+    "π bonding orbital"
+   ],
    "statement": "A π bonding orbital is a molecular orbital formed by the side-by-side overlap of atomic orbitals, in which the electron density is found on opposite sides of the internuclear axis."
   },
   {
@@ -311,6 +404,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "π* antibonding orbital",
+   "terms": [
+    "π* bonding orbital"
+   ],
    "statement": "A π* orbital is an antibonding molecular orbital formed by the out-of-phase side-by-side overlap of atomic orbitals, in which the electron density is found on opposite sides of the internuclear axis and there is a node between the nuclei."
   },
   {
@@ -318,6 +414,9 @@
    "kind": "definition",
    "section": "8.4",
    "name": "Molecular orbital diagram",
+   "terms": [
+    "molecular orbital diagram"
+   ],
    "statement": "A molecular orbital diagram is a visual representation of the relative energy levels of the molecular orbitals of a molecule, set between the atomic orbitals they are formed from."
   }
  ],

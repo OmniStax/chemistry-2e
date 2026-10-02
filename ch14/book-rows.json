@@ -115,6 +115,9 @@
    "kind": "definition",
    "section": "14.1",
    "name": "Amphiprotic species",
+   "terms": [
+    "amphiprotic"
+   ],
    "statement": "Species capable of either donating or accepting protons are called amphiprotic. When such a species is added to water, both its acid and its base equilibria are established at the same time."
   },
   {
@@ -122,8 +125,7 @@
    "kind": "idea",
    "section": "14.1",
    "name": "The autoionization of water and $K_{\\text{w}}$",
-   "statement": "Liquid water undergoes autoionization to a very slight extent, and the equilibrium constant for this reaction is the ion-product constant for water, $K_{\\text{w}}$. The process is endothermic, so the extent of ionization, and with it $K_{\\text{w}}$, increases with temperature.",
-   "eq": "eq-kw"
+   "statement": "Liquid water undergoes autoionization to a very slight extent, and the equilibrium constant for this reaction is the ion-product constant for water, $K_{\\text{w}}$. The process is endothermic, so the extent of ionization, and with it $K_{\\text{w}}$, increases with temperature."
   },
   {
    "id": "kw-ion-concentrations",
@@ -137,6 +139,9 @@
    "kind": "definition",
    "section": "14.1",
    "name": "Brønsted-Lowry acid",
+   "terms": [
+    "Brønsted-Lowry acid"
+   ],
    "statement": "A Brønsted-Lowry acid is a compound that donates a proton (H<sup>+</sup>) to another compound."
   },
   {
@@ -144,6 +149,9 @@
    "kind": "definition",
    "section": "14.1",
    "name": "Brønsted-Lowry base",
+   "terms": [
+    "Brønsted-Lowry base"
+   ],
    "statement": "A Brønsted-Lowry base is a compound that accepts a proton (H<sup>+</sup>) from another compound."
   },
   {
@@ -151,6 +159,9 @@
    "kind": "definition",
    "section": "14.1",
    "name": "Conjugate acid",
+   "terms": [
+    "conjugate acid"
+   ],
    "statement": "The conjugate acid of a base is the species formed when the base accepts a proton."
   },
   {
@@ -158,6 +169,9 @@
    "kind": "definition",
    "section": "14.1",
    "name": "Conjugate base",
+   "terms": [
+    "conjugate base"
+   ],
    "statement": "The conjugate base of an acid is the species formed when the acid donates a proton."
   },
   {
@@ -165,6 +179,9 @@
    "kind": "definition",
    "section": "14.1",
    "name": "Acid ionization",
+   "terms": [
+    "acid ionization"
+   ],
    "statement": "Acid ionization is the reaction of an acid with water, yielding hydronium ion and the conjugate base of the acid."
   },
   {
@@ -172,6 +189,9 @@
    "kind": "definition",
    "section": "14.1",
    "name": "Base ionization",
+   "terms": [
+    "base ionization"
+   ],
    "statement": "Base ionization is the reaction of a base with water, yielding hydroxide ion and the conjugate acid of the base."
   },
   {
@@ -179,6 +199,9 @@
    "kind": "definition",
    "section": "14.1",
    "name": "Amphoteric",
+   "terms": [
+    "amphoteric"
+   ],
    "statement": "An amphoteric species is one that can act as either an acid or a base."
   },
   {
@@ -186,6 +209,9 @@
    "kind": "definition",
    "section": "14.1",
    "name": "Autoionization",
+   "terms": [
+    "autoionization"
+   ],
    "statement": "Autoionization is a reaction between identical species that yields ionic products; for water, two molecules react to give a hydronium ion and a hydroxide ion."
   },
   {
@@ -193,7 +219,19 @@
    "kind": "definition",
    "section": "14.1",
    "name": "The ion-product constant for water, $K_{\\text{w}}$",
-   "statement": "The ion-product constant for water, $K_{\\text{w}}$, is the equilibrium constant for the autoionization of water, the product of the hydronium and hydroxide ion concentrations; it is 1.0 × 10<sup>−14</sup> at 25 °C."
+   "symbol": "K_w",
+   "terms": [
+    "ion-product constant for water"
+   ],
+   "statement": "The ion-product constant for water, $K_{\\text{w}}$, is the equilibrium constant for the autoionization of water, the product of the hydronium and hydroxide ion concentrations; it is 1.0 × 10<sup>−14</sup> at 25 °C.",
+   "forms": [
+    {
+     "id": "eq-kw",
+     "latex": "K_{\\text{w}}=[\\text{H}_{3}\\text{O}^{+}][\\text{OH}^{-}]=1.0\\times10^{-14}",
+     "ktex": "K_{\\text{w}}=\\kconcHyd\\kconcOH=1.0\\times10^{-14}",
+     "condition": "any aqueous solution at 25 °C"
+    }
+   ]
   },
   {
    "id": "acidic-basic-neutral",
@@ -207,8 +245,7 @@
    "kind": "definition",
    "section": "14.2",
    "name": "The pH and pOH scales",
-   "statement": "Hydronium and hydroxide ion concentrations span many orders of magnitude, so they are expressed with the p-function, the negative base-10 logarithm: pH = −log[H<sub>3</sub>O<sup>+</sup>] and pOH = −log[OH<sup>−</sup>]. Each unit of pH is a tenfold change in hydronium ion concentration.",
-   "eq": "eq-ph"
+   "statement": "Hydronium and hydroxide ion concentrations span many orders of magnitude, so they are expressed with the p-function, the negative base-10 logarithm: pH = −log[H<sub>3</sub>O<sup>+</sup>] and pOH = −log[OH<sup>−</sup>]. Each unit of pH is a tenfold change in hydronium ion concentration."
   },
   {
    "id": "ph-plus-poh",
@@ -216,7 +253,14 @@
    "section": "14.2",
    "name": "pH + pOH = p$K_{\\text{w}}$",
    "statement": "Taking the negative logarithm of the $K_{\\text{w}}$ expression shows that the pH and pOH of any aqueous solution sum to p$K_{\\text{w}}$, which is 14.00 at 25 °C.",
-   "eq": "eq-ph-plus-poh"
+   "forms": [
+    {
+     "id": "eq-ph-plus-poh",
+     "latex": "\\text{pH}+\\text{pOH}=\\text{p}K_{\\text{w}}=14.00",
+     "ktex": "\\kpH+\\kpOH=\\text{p}K_{\\text{w}}=14.00",
+     "condition": "any aqueous solution at 25 °C"
+    }
+   ]
   },
   {
    "id": "ph-calculations",
@@ -237,6 +281,9 @@
    "kind": "definition",
    "section": "14.2",
    "name": "Acidic solution",
+   "terms": [
+    "acidic"
+   ],
    "statement": "An acidic solution contains a greater concentration of hydronium ions than hydroxide ions."
   },
   {
@@ -244,6 +291,9 @@
    "kind": "definition",
    "section": "14.2",
    "name": "Basic solution",
+   "terms": [
+    "basic"
+   ],
    "statement": "A basic solution contains a lesser concentration of hydronium ions than hydroxide ions."
   },
   {
@@ -251,6 +301,9 @@
    "kind": "definition",
    "section": "14.2",
    "name": "Neutral solution",
+   "terms": [
+    "neutral"
+   ],
    "statement": "A neutral solution contains equal concentrations of hydronium and hydroxide ions."
   },
   {
@@ -258,30 +311,75 @@
    "kind": "definition",
    "section": "14.2",
    "name": "pH, $\\text{pH}=-\\log[\\text{H}_3\\text{O}^+]$",
-   "statement": "The pH of a solution is the negative base-10 logarithm of its hydronium ion molarity."
+   "symbol": "pH",
+   "terms": [
+    "pH"
+   ],
+   "statement": "The pH of a solution is the negative base-10 logarithm of its hydronium ion molarity.",
+   "forms": [
+    {
+     "id": "eq-ph",
+     "latex": "\\text{pH}=-\\log[\\text{H}_{3}\\text{O}^{+}]",
+     "ktex": "\\kpH=-\\log\\kconcHyd",
+     "condition": "any aqueous solution"
+    },
+    {
+     "id": "eq-h3o-from-ph",
+     "latex": "[\\text{H}_{3}\\text{O}^{+}]=10^{-\\text{pH}}",
+     "ktex": "\\kconcHyd=10^{-\\kpH}",
+     "condition": "any aqueous solution"
+    }
+   ]
   },
   {
    "id": "poh",
    "kind": "definition",
    "section": "14.2",
    "name": "pOH, $\\text{pOH}=-\\log[\\text{OH}^-]$",
-   "statement": "The pOH of a solution is the negative base-10 logarithm of its hydroxide ion molarity."
+   "symbol": "pOH",
+   "terms": [
+    "pOH"
+   ],
+   "statement": "The pOH of a solution is the negative base-10 logarithm of its hydroxide ion molarity.",
+   "forms": [
+    {
+     "id": "eq-poh",
+     "latex": "\\text{pOH}=-\\log[\\text{OH}^{-}]",
+     "ktex": "\\kpOH=-\\log\\kconcOH",
+     "condition": "any aqueous solution"
+    },
+    {
+     "id": "eq-oh-from-poh",
+     "latex": "[\\text{OH}^{-}]=10^{-\\text{pOH}}",
+     "ktex": "\\kconcOH=10^{-\\kpOH}",
+     "condition": "any aqueous solution"
+    }
+   ]
   },
   {
    "id": "acid-base-ionization-constants",
    "kind": "definition",
    "section": "14.3",
    "name": "Acid and base ionization constants, $K_{\\text{a}}$ and $K_{\\text{b}}$",
-   "statement": "The relative strength of an acid or base is the extent to which it ionizes in water, and it is quantified by the equilibrium constant of its ionization, $K_{\\text{a}}$ or $K_{\\text{b}}$, in which water, being the solvent, does not appear. The larger the constant, the stronger the acid or base.",
-   "eq": "eq-ka"
+   "statement": "The relative strength of an acid or base is the extent to which it ionizes in water, and it is quantified by the equilibrium constant of its ionization, $K_{\\text{a}}$ or $K_{\\text{b}}$, in which water, being the solvent, does not appear. The larger the constant, the stronger the acid or base."
   },
   {
    "id": "percent-ionization",
    "kind": "definition",
    "section": "14.3",
    "name": "Percent ionization",
+   "terms": [
+    "percent ionization"
+   ],
    "statement": "Another measure of the strength of an acid is its percent ionization, the equilibrium hydronium ion concentration divided by the initial acid concentration, times 100. Unlike $K_{\\text{a}}$, the percent ionization of a weak acid varies with its initial concentration, decreasing as the concentration increases.",
-   "eq": "eq-percent-ionization"
+   "forms": [
+    {
+     "id": "eq-percent-ionization",
+     "latex": "\\text{Percent ionization}=\\frac{[\\text{H}_{3}\\text{O}^{+}]_{\\text{eq}}}{[\\text{HA}]_{0}}\\times100",
+     "ktex": "\\text{Percent ionization}=\\frac{\\kconcHydeq}{\\kconcHAz}\\times100",
+     "condition": "a weak acid HA"
+    }
+   ]
   },
   {
    "id": "conjugate-pair-strengths",
@@ -289,13 +387,22 @@
    "section": "14.3",
    "name": "$K_{\\text{a}}\\times K_{\\text{b}}=K_{\\text{w}}$ for a conjugate pair",
    "statement": "Adding the acid ionization of HA to the base ionization of A<sup>−</sup> gives the autoionization of water, so the product of their constants is $K_{\\text{w}}$. The stronger an acid or base, the weaker its conjugate partner, and the conjugate of a strong acid or base has negligible strength.",
-   "eq": "eq-ka-kb-kw"
+   "forms": [
+    {
+     "id": "eq-ka-kb-kw",
+     "latex": "K_{\\text{a}}\\times K_{\\text{b}}=1.0\\times10^{-14}=K_{\\text{w}}",
+     "condition": "a conjugate acid-base pair at 25 °C"
+    }
+   ]
   },
   {
    "id": "leveling-effect",
    "kind": "idea",
    "section": "14.3",
    "name": "The leveling effect of water",
+   "terms": [
+    "leveling effect"
+   ],
    "statement": "Acids stronger than H<sub>3</sub>O<sup>+</sup> react completely with water to give H<sub>3</sub>O<sup>+</sup>, and bases stronger than OH<sup>−</sup> react completely to give OH<sup>−</sup>, so in water all such acids and bases appear equally strong. Their differences show up only in a solvent that is a weaker base or acid than water."
   },
   {
@@ -331,14 +438,50 @@
    "kind": "definition",
    "section": "14.3",
    "name": "The acid ionization constant, $K_{\\text{a}}$",
-   "statement": "The acid ionization constant, $K_{\\text{a}}$, is the equilibrium constant for the ionization of a weak acid; its negative logarithm is p$K_{\\text{a}}$."
+   "symbol": "K_a2",
+   "terms": [
+    "acid ionization constant"
+   ],
+   "statement": "The acid ionization constant, $K_{\\text{a}}$, is the equilibrium constant for the ionization of a weak acid; its negative logarithm is p$K_{\\text{a}}$.",
+   "forms": [
+    {
+     "id": "eq-ka",
+     "latex": "K_{\\text{a}}=\\frac{[\\text{H}_{3}\\text{O}^{+}][\\text{A}^{-}]}{[\\text{HA}]}",
+     "ktex": "K_{\\text{a}}=\\frac{\\kconcHyd\\kconcAm}{\\kconcHA}",
+     "condition": "the ionization HA + H₂O ⇌ H₃O⁺ + A⁻ at equilibrium"
+    },
+    {
+     "id": "eq-pka",
+     "latex": "\\text{p}K_{\\text{a}}=-\\log K_{\\text{a}}",
+     "condition": "any weak acid",
+     "section": "14.6"
+    }
+   ]
   },
   {
    "id": "base-ionization-constant",
    "kind": "definition",
    "section": "14.3",
    "name": "The base ionization constant, $K_{\\text{b}}$",
-   "statement": "The base ionization constant, $K_{\\text{b}}$, is the equilibrium constant for the ionization of a weak base; its negative logarithm is p$K_{\\text{b}}$."
+   "symbol": "K_b_ion",
+   "terms": [
+    "base ionization constant"
+   ],
+   "statement": "The base ionization constant, $K_{\\text{b}}$, is the equilibrium constant for the ionization of a weak base; its negative logarithm is p$K_{\\text{b}}$.",
+   "forms": [
+    {
+     "id": "eq-kb",
+     "latex": "K_{\\text{b}}=\\frac{[\\text{HB}^{+}][\\text{OH}^{-}]}{[\\text{B}]}",
+     "ktex": "K_{\\text{b}}=\\frac{\\kconcHBp\\kconcOH}{\\kconcB}",
+     "condition": "the ionization B + H₂O ⇌ HB⁺ + OH⁻ at equilibrium"
+    },
+    {
+     "id": "eq-pkb",
+     "latex": "\\text{p}K_{\\text{b}}=-\\log K_{\\text{b}}",
+     "condition": "any weak base",
+     "section": "14.6"
+    }
+   ]
   },
   {
    "id": "salt-ion-acidity",
@@ -394,6 +537,9 @@
    "kind": "definition",
    "section": "14.5",
    "name": "Monoprotic acid",
+   "terms": [
+    "monoprotic acid"
+   ],
    "statement": "A monoprotic acid is an acid containing one ionizable hydrogen atom per molecule."
   },
   {
@@ -401,6 +547,9 @@
    "kind": "definition",
    "section": "14.5",
    "name": "Diprotic acid",
+   "terms": [
+    "diprotic acid"
+   ],
    "statement": "A diprotic acid is an acid containing two ionizable hydrogen atoms per molecule."
   },
   {
@@ -408,6 +557,9 @@
    "kind": "definition",
    "section": "14.5",
    "name": "Triprotic acid",
+   "terms": [
+    "triprotic acid"
+   ],
    "statement": "A triprotic acid is an acid that contains three ionizable hydrogen atoms per molecule."
   },
   {
@@ -415,6 +567,9 @@
    "kind": "definition",
    "section": "14.5",
    "name": "Diprotic base",
+   "terms": [
+    "diprotic base"
+   ],
    "statement": "A diprotic base is a base capable of accepting two protons."
   },
   {
@@ -422,6 +577,9 @@
    "kind": "definition",
    "section": "14.5",
    "name": "Stepwise ionization",
+   "terms": [
+    "stepwise ionization"
+   ],
    "statement": "Stepwise ionization is the process in which an acid is ionized by losing protons sequentially, one at a time."
   },
   {
@@ -429,6 +587,9 @@
    "kind": "definition",
    "section": "14.6",
    "name": "What a buffer is",
+   "terms": [
+    "buffer"
+   ],
    "statement": "A solution containing appreciable amounts of a weak conjugate acid-base pair is a buffer, and it resists a change in pH when small amounts of a strong acid or a strong base are added."
   },
   {
@@ -450,6 +611,9 @@
    "kind": "definition",
    "section": "14.6",
    "name": "Buffer capacity and the choice of buffer",
+   "terms": [
+    "buffer capacity"
+   ],
    "statement": "The buffer capacity is the amount of acid or base that can be added to a given volume of a buffer before its pH changes significantly. A buffer can neutralize only as much acid or base as it has of the conjugate partner that consumes it, so its capacity depends on the amounts of both components; weak acids and their salts suit pHs below 7, and weak bases and their salts suit pHs above 7."
   },
   {
@@ -457,14 +621,27 @@
    "kind": "result",
    "section": "14.6",
    "name": "The Henderson-Hasselbalch equation",
+   "terms": [
+    "Henderson-Hasselbalch equation"
+   ],
    "statement": "Rearranging the acid ionization constant expression and taking the negative logarithm gives pH = p$K_{\\text{a}}$ + log([A<sup>−</sup>]/[HA]), which relates the pH of a buffer to the $K_{\\text{a}}$ of its weak acid and the ratio of the concentrations of the pair; when the two are equal, pH = p$K_{\\text{a}}$.",
-   "eq": "eq-henderson-hasselbalch"
+   "forms": [
+    {
+     "id": "eq-henderson-hasselbalch",
+     "latex": "\\text{pH}=\\text{p}K_{\\text{a}}+\\log\\frac{[\\text{A}^{-}]}{[\\text{HA}]}",
+     "ktex": "\\kpH=\\text{p}K_{\\text{a}}+\\log\\frac{\\kconcAm}{\\kconcHA}",
+     "condition": "a buffer of the weak acid HA and its conjugate base A⁻"
+    }
+   ]
   },
   {
    "id": "titration-curve",
    "kind": "idea",
    "section": "14.7",
    "name": "Titration curves and their stages",
+   "terms": [
+    "titration curve"
+   ],
    "statement": "A titration curve plots the pH of the sample against the volume of added titrant. Its initial point is set by the acid, the pre-equivalence region by the unreacted acid and its conjugate base, the equivalence point by the products alone, with a drastic rise in pH, and the postequivalence region by the excess titrant."
   },
   {
@@ -486,6 +663,9 @@
    "kind": "idea",
    "section": "14.7",
    "name": "How an acid-base indicator works",
+   "terms": [
+    "acid-base indicator"
+   ],
    "statement": "An indicator is a weak acid or base whose conjugate forms have different colors, and the perceived color is set by the ratio [In<sup>−</sup>]/[HIn], which the solution pH fixes. The color change is therefore spread over a color-change interval of about two pH units centered near its p$K_{\\text{a}}$."
   },
   {
@@ -500,6 +680,9 @@
    "kind": "definition",
    "section": "14.7",
    "name": "Color-change interval",
+   "terms": [
+    "color-change interval"
+   ],
    "statement": "The color-change interval of an indicator is the range in pH over which its color change occurs."
   }
  ],

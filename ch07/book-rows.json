@@ -93,6 +93,9 @@
    "kind": "idea",
    "section": "7.6",
    "name": "Valence shell electron-pair repulsion theory",
+   "terms": [
+    "valence shell electron-pair repulsion theory (VSEPR)"
+   ],
    "statement": "VSEPR theory predicts the shape of a molecule from one assumption: the regions of high electron density in the valence shell of the central atom, whether they are bonding pairs or lone pairs, repel one another, and they settle into the arrangement that puts them as far apart as possible. It is worth noting that the theory considers electron-pair repulsions alone, and that nuclear-nuclear repulsions and nuclear-electron attractions are also at work in the arrangement a molecule finally adopts."
   },
   {
@@ -100,6 +103,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "The five electron-pair geometries",
+   "terms": [
+    "electron-pair geometry"
+   ],
    "statement": "The electron-pair geometry is the arrangement around a central atom of all its regions of electron density, and there are only five: two regions are linear, three are trigonal planar, four are tetrahedral, five are trigonal bipyramidal and six are octahedral. A single, a double and a triple bond each count as one region."
   },
   {
@@ -115,7 +121,18 @@
    "section": "7.6",
    "name": "The order of repulsions and the space a region occupies",
    "statement": "The ideal angles are only approximate, because the regions of electron density are not all the same size. A lone pair repels more strongly than a bonding pair, and it occupies more space than a triple bond, which occupies more than a double bond, which occupies more than a single bond. That order is what explains the small distortions from the ideal angles, and it is what decides which arrangement is chosen when more than one is possible.",
-   "eq": "eq-repulsion-order"
+   "forms": [
+    {
+     "id": "eq-repulsion-order",
+     "latex": "\\text{lone pair-lone pair}>\\text{lone pair-bonding pair}>\\text{bonding pair-bonding pair}",
+     "anchor": "7.6-repulsion-order"
+    },
+    {
+     "id": "eq-domain-size-order",
+     "latex": "\\text{lone pair}>\\text{triple bond}>\\text{double bond}>\\text{single bond}",
+     "anchor": "7.6-repulsion-order"
+    }
+   ]
   },
   {
    "id": "axial-and-equatorial-positions",
@@ -136,8 +153,18 @@
    "kind": "definition",
    "section": "7.6",
    "name": "The bond dipole moment",
+   "symbol": "μ",
+   "terms": [
+    "bond dipole moment"
+   ],
    "statement": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge, and the separation of charge is measured by the bond dipole moment, the product of the magnitude of the partial charges and the distance between them. It is drawn as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
-   "eq": "eq-dipole-moment"
+   "forms": [
+    {
+     "id": "eq-dipole-moment",
+     "latex": "\\mu = Qr",
+     "anchor": "7.6-bond-dipole"
+    }
+   ]
   },
   {
    "id": "molecular-polarity",
@@ -151,6 +178,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Bond angle",
+   "terms": [
+    "bond angle"
+   ],
    "statement": "A bond angle is the angle between any two covalent bonds that share a common atom."
   },
   {
@@ -158,6 +188,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Linear",
+   "terms": [
+    "linear"
+   ],
    "statement": "A linear shape has two outside groups placed on opposite sides of a central atom, 180° apart."
   },
   {
@@ -165,6 +198,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Trigonal planar",
+   "terms": [
+    "trigonal planar"
+   ],
    "statement": "A trigonal planar shape has three outside groups placed in a flat triangle around a central atom, with 120° angles between them."
   },
   {
@@ -172,6 +208,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Tetrahedral",
+   "terms": [
+    "tetrahedral"
+   ],
    "statement": "A tetrahedral shape has four outside groups placed around a central atom at the corners of a tetrahedron, with 109.5° angles between them."
   },
   {
@@ -179,6 +218,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Trigonal bipyramidal",
+   "terms": [
+    "trigonal bipyramidal"
+   ],
    "statement": "A trigonal bipyramidal shape has five outside groups placed around a central atom: three form a flat triangle with 120° angles between them, and the other two lie above and below the plane, at 90° to it."
   },
   {
@@ -186,6 +228,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Octahedral",
+   "terms": [
+    "octahedral"
+   ],
    "statement": "An octahedral shape has six outside groups placed around a central atom at the corners of an octahedron, with 90° angles between adjacent groups."
   },
   {
@@ -193,6 +238,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Axial position",
+   "terms": [
+    "axial position"
+   ],
    "statement": "An axial position is a location in a trigonal bipyramidal geometry with another atom at a 180° angle and the equatorial positions at 90° angles."
   },
   {
@@ -200,6 +248,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Equatorial position",
+   "terms": [
+    "equatorial position"
+   ],
    "statement": "An equatorial position is one of the three positions in a trigonal bipyramidal geometry with 120° angles between them; the axial positions lie 90° from them."
   },
   {
@@ -207,6 +258,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Vector",
+   "terms": [
+    "vector"
+   ],
    "statement": "A vector is a quantity having both magnitude and direction."
   },
   {
@@ -214,6 +268,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Dipole moment",
+   "terms": [
+    "dipole moment"
+   ],
    "statement": "The dipole moment of a molecule describes its separation of charge, determined by the vector sum of its individual bond moments, which depends on its molecular structure."
   },
   {
@@ -221,6 +278,9 @@
    "kind": "definition",
    "section": "7.6",
    "name": "Polar molecule",
+   "terms": [
+    "polar molecule"
+   ],
    "statement": "A polar molecule, or dipole, is a molecule with an overall dipole moment."
   },
   {
@@ -235,6 +295,7 @@
    "kind": "idea",
    "section": "7.2",
    "name": "Polar covalent bonds and electronegativity",
+   "symbol": "Q_partial",
    "statement": "When two bonded atoms differ in electronegativity, the shared electrons are pulled toward the more electronegative one, leaving it with a partial negative charge and its partner with a partial positive charge. The size of that difference sets the size of the bond's dipole moment."
   },
   {
@@ -263,6 +324,9 @@
    "kind": "idea",
    "section": "7.1",
    "name": "The inert pair effect",
+   "terms": [
+    "inert pair effect"
+   ],
    "statement": "Heavy atoms of groups 13 to 15 tend to form ions in which their valence s electrons are not lost, as in Tl⁺, Sn²⁺, Pb²⁺ and Bi³⁺."
   },
   {
@@ -284,6 +348,10 @@
    "kind": "definition",
    "section": "7.2",
    "name": "Electronegativity and its periodic trend",
+   "symbol": "EN",
+   "terms": [
+    "electronegativity"
+   ],
    "statement": "Electronegativity is the tendency of an atom to attract the electrons of a bond toward itself. On Pauling's scale it increases from left to right across a period and decreases down a group, so the nonmetals of the upper right are the most electronegative, fluorine above all at 4.0, and the group 1 metals are the least. It is a calculated, dimensionless number and should not be confused with electron affinity, which is a measured energy of an isolated atom."
   },
   {
@@ -298,6 +366,11 @@
    "kind": "definition",
    "section": "7.2",
    "name": "Bond length",
+   "symbol": "r_bond",
+   "terms": [
+    "bond length",
+    "bond distance"
+   ],
    "statement": "The bond length, or bond distance, is the distance between the nuclei of two bonded atoms at which the lowest potential energy is achieved."
   },
   {
@@ -305,6 +378,9 @@
    "kind": "definition",
    "section": "7.2",
    "name": "Pure covalent bond",
+   "terms": [
+    "pure covalent bond"
+   ],
    "statement": "A pure covalent bond, or nonpolar covalent bond, is a covalent bond between atoms of identical electronegativities."
   },
   {
@@ -312,6 +388,9 @@
    "kind": "definition",
    "section": "7.2",
    "name": "Polar covalent bond",
+   "terms": [
+    "polar covalent bond"
+   ],
    "statement": "A polar covalent bond is a covalent bond between atoms of different electronegativities, with a positive end and a negative end."
   },
   {
@@ -326,6 +405,9 @@
    "kind": "axiom",
    "section": "7.3",
    "name": "The octet rule",
+   "terms": [
+    "octet rule"
+   ],
    "statement": "Main group atoms tend to form enough bonds to have eight valence electrons around them, counting the shared electrons of each bond as belonging to both atoms. The number of bonds an atom forms can often be predicted from the number of electrons it needs to reach eight, so carbon forms four bonds, nitrogen three, oxygen two and fluorine one; hydrogen, which needs only two, is the exception."
   },
   {
@@ -347,6 +429,9 @@
    "kind": "definition",
    "section": "7.3",
    "name": "Lewis symbol",
+   "terms": [
+    "Lewis symbol"
+   ],
    "statement": "A Lewis symbol is the symbol for an element or monatomic ion with a dot for each of its valence electrons."
   },
   {
@@ -354,6 +439,9 @@
    "kind": "definition",
    "section": "7.3",
    "name": "Lewis structure",
+   "terms": [
+    "Lewis structure"
+   ],
    "statement": "A Lewis structure is a diagram showing the lone pairs and the bonding pairs of electrons in a molecule or an ion."
   },
   {
@@ -361,6 +449,9 @@
    "kind": "definition",
    "section": "7.3",
    "name": "Lone pair",
+   "terms": [
+    "lone pair"
+   ],
    "statement": "A lone pair is a pair of valence electrons that is not used to form a covalent bond."
   },
   {
@@ -368,6 +459,9 @@
    "kind": "definition",
    "section": "7.3",
    "name": "Single bond",
+   "terms": [
+    "single bond"
+   ],
    "statement": "A single bond is a bond in which a single pair of electrons is shared between two atoms."
   },
   {
@@ -375,6 +469,9 @@
    "kind": "definition",
    "section": "7.3",
    "name": "Double bond",
+   "terms": [
+    "double bond"
+   ],
    "statement": "A double bond is a covalent bond in which two pairs of electrons are shared between two atoms."
   },
   {
@@ -382,6 +479,9 @@
    "kind": "definition",
    "section": "7.3",
    "name": "Triple bond",
+   "terms": [
+    "triple bond"
+   ],
    "statement": "A triple bond is a covalent bond in which three pairs of electrons are shared between two atoms."
   },
   {
@@ -389,6 +489,9 @@
    "kind": "definition",
    "section": "7.3",
    "name": "Free radical",
+   "terms": [
+    "free radical"
+   ],
    "statement": "A free radical is a molecule that contains an odd number of electrons."
   },
   {
@@ -396,6 +499,9 @@
    "kind": "definition",
    "section": "7.3",
    "name": "Hypervalent molecule",
+   "terms": [
+    "hypervalent molecule"
+   ],
    "statement": "A hypervalent molecule contains at least one main group element that has more than eight electrons in its valence shell."
   },
   {
@@ -403,8 +509,7 @@
    "kind": "skill",
    "section": "7.4",
    "name": "Calculating formal charge",
-   "statement": "Calculate the formal charge of an atom in a Lewis structure as the valence electrons of the free atom, less its lone pair electrons, less half its bonding electrons. The formal charges of a molecule add up to zero, and those of an ion add up to its charge.",
-   "eq": "eq-formal-charge"
+   "statement": "Calculate the formal charge of an atom in a Lewis structure as the valence electrons of the free atom, less its lone pair electrons, less half its bonding electrons. The formal charges of a molecule add up to zero, and those of an ion add up to its charge."
   },
   {
    "id": "formal-charge-guidelines",
@@ -418,6 +523,9 @@
    "kind": "idea",
    "section": "7.4",
    "name": "Resonance forms and the resonance hybrid",
+   "terms": [
+    "resonance"
+   ],
    "statement": "When two or more Lewis structures with the same arrangement of atoms can be written, none of them alone describes the molecule; the actual distribution of electrons is their average, the resonance hybrid. The molecule never switches between its resonance forms, which is why both N–O bonds of the nitrite ion and all three C–O bonds of the carbonate ion are found to be identical."
   },
   {
@@ -425,13 +533,26 @@
    "kind": "definition",
    "section": "7.4",
    "name": "Formal charge",
-   "statement": "The formal charge of an atom is the charge it would have if the electrons of each bond were shared equally: the number of valence electrons of the neutral atom, less its lone pair electrons, less half its bonding electrons."
+   "terms": [
+    "formal charge"
+   ],
+   "statement": "The formal charge of an atom is the charge it would have if the electrons of each bond were shared equally: the number of valence electrons of the neutral atom, less its lone pair electrons, less half its bonding electrons.",
+   "forms": [
+    {
+     "id": "eq-formal-charge",
+     "latex": "\\text{formal charge}=\\text{\\# valence shell electrons (free atom)}-\\text{\\# lone pair electrons}-\\frac{1}{2}\\,\\text{\\# bonding electrons}",
+     "anchor": "7.4-calculating-formal-charge"
+    }
+   ]
   },
   {
    "id": "molecular-structure",
    "kind": "definition",
    "section": "7.4",
    "name": "Molecular structure",
+   "terms": [
+    "molecular structure"
+   ],
    "statement": "The molecular structure of a molecule or ion is the arrangement of its atoms, without regard to its lone pairs."
   },
   {
@@ -439,6 +560,9 @@
    "kind": "definition",
    "section": "7.4",
    "name": "Resonance forms",
+   "terms": [
+    "resonance forms"
+   ],
    "statement": "Resonance forms are two or more Lewis structures that have the same arrangement of atoms but different arrangements of electrons."
   },
   {
@@ -446,6 +570,9 @@
    "kind": "definition",
    "section": "7.4",
    "name": "Resonance hybrid",
+   "terms": [
+    "resonance hybrid"
+   ],
    "statement": "The resonance hybrid is the average of the resonance forms shown by the individual Lewis structures, and it is the actual distribution of electrons in the molecule."
   },
   {
@@ -453,8 +580,20 @@
    "kind": "definition",
    "section": "7.5",
    "name": "Bond energy",
+   "symbol": "D_bond",
+   "terms": [
+    "bond energy"
+   ],
    "statement": "The strength of a covalent bond is measured by its bond energy, the energy needed to break one mole of that bond in gaseous molecules, which for a diatomic molecule is the standard enthalpy change of its dissociation. In a molecule with several bonds of one kind the tabulated value is an average, since the first bond broken does not need the same energy as the rest.",
-   "eq": "eq-bond-energy"
+   "forms": [
+    {
+     "id": "eq-bond-energy",
+     "latex": "\\text{XY}(g)\\longrightarrow\\text{X}(g)+\\text{Y}(g)\\qquad D_{\\text{X–Y}}=\\Delta H^{\\circ}",
+     "ktex": "\\text{XY}(g)\\longrightarrow\\text{X}(g)+\\text{Y}(g)\\qquad \\kDbond_{\\text{X–Y}}=\\kdHo",
+     "condition": "a diatomic molecule XY in the gas phase",
+     "anchor": "7.5-bond-strength"
+    }
+   ]
   },
   {
    "id": "bond-strength-and-length",
@@ -469,15 +608,34 @@
    "section": "7.5",
    "name": "Estimating an enthalpy of reaction from bond energies",
    "statement": "The enthalpy change of a reaction is approximately the energy needed to break every bond of the reactants less the energy released in forming every bond of the products. The estimate needs the Lewis structures of all the species, to know which bonds are single, double or triple, and it is rough because the bond energies are averages.",
-   "eq": "eq-enthalpy-bond-energies"
+   "forms": [
+    {
+     "id": "eq-enthalpy-bond-energies",
+     "latex": "\\Delta H=\\sum D_{\\text{bonds broken}}-\\sum D_{\\text{bonds formed}}",
+     "ktex": "\\kdH=\\sum \\kDbond_{\\text{bonds broken}}-\\sum \\kDbond_{\\text{bonds formed}}",
+     "condition": "an estimate from average bond energies, for a reaction of gases",
+     "anchor": "7.5-enthalpy"
+    }
+   ]
   },
   {
    "id": "lattice-energy",
    "kind": "definition",
    "section": "7.5",
    "name": "Lattice energy",
+   "symbol": "ΔH_lattice",
+   "terms": [
+    "lattice energy"
+   ],
    "statement": "The lattice energy of an ionic compound is the energy needed to separate one mole of the solid into its gaseous ions, a positive quantity under the convention the book uses. It measures the strength of the attraction that holds an ionic solid together, and it is much larger than a covalent bond energy because it sums the interactions of every ion with the whole lattice.",
-   "eq": "eq-lattice-energy-definition"
+   "forms": [
+    {
+     "id": "eq-lattice-energy-definition",
+     "latex": "\\text{MX}(s)\\longrightarrow\\text{M}^{n+}(g)+\\text{X}^{n-}(g)\\qquad \\Delta H_{\\text{lattice}}",
+     "ktex": "\\text{MX}(s)\\longrightarrow\\text{M}^{n+}(g)+\\text{X}^{n-}(g)\\qquad \\kdHlat",
+     "anchor": "7.5-lattice"
+    }
+   ]
   },
   {
    "id": "lattice-energy-trends",
@@ -485,22 +643,41 @@
    "section": "7.5",
    "name": "Lattice energy grows with ionic charge and shrinks with ionic size",
    "statement": "Derived from Coulomb's law, the lattice energy is proportional to the product of the ionic charges and inversely proportional to the distance between the ions. Doubling both charges quadruples it, which is why MgO has nearly four times the lattice energy of LiF, and smaller ions give a larger lattice energy, which is why MgF2 exceeds MgI2.",
-   "eq": "eq-lattice-energy-coulomb"
+   "forms": [
+    {
+     "id": "eq-lattice-energy-coulomb",
+     "latex": "\\Delta H_{\\text{lattice}}=\\frac{C(Z^{+})(Z^{-})}{R_{\\text{o}}}",
+     "ktex": "\\kdHlat=\\frac{C(Z^{+})(Z^{-})}{R_{\\text{o}}}",
+     "condition": "an ionic crystal; C depends on the type of crystal structure",
+     "anchor": "7.5-lattice-trends"
+    }
+   ]
   },
   {
    "id": "born-haber-cycle",
    "kind": "skill",
    "section": "7.5",
    "name": "Calculating a lattice energy with the Born-Haber cycle",
-   "statement": "Lattice energies cannot be measured directly, but the Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: the sublimation of the metal, the dissociation of the nonmetal, the ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess's law the steps add up to the enthalpy of formation, so any one of them can be found from the others.",
-   "eq": "eq-born-haber"
+   "statement": "Lattice energies cannot be measured directly, but the Born-Haber cycle breaks the formation of an ionic solid from its elements into steps whose enthalpies are known: the sublimation of the metal, the dissociation of the nonmetal, the ionization of the metal atom, the electron affinity of the nonmetal atom, and the negative of the lattice energy. By Hess's law the steps add up to the enthalpy of formation, so any one of them can be found from the others."
   },
   {
    "id": "born-haber-thermochemical-cycle",
    "kind": "definition",
    "section": "7.5",
    "name": "Born-Haber cycle",
-   "statement": "The Born-Haber cycle is a thermochemical cycle relating the energetic steps of forming an ionic solid from its elements: sublimation of the metal, dissociation of the nonmetal, ionization of the metal atom, the electron affinity of the nonmetal atom, and the formation of the lattice."
+   "terms": [
+    "Born-Haber cycle"
+   ],
+   "statement": "The Born-Haber cycle is a thermochemical cycle relating the energetic steps of forming an ionic solid from its elements: sublimation of the metal, dissociation of the nonmetal, ionization of the metal atom, the electron affinity of the nonmetal atom, and the formation of the lattice.",
+   "forms": [
+    {
+     "id": "eq-born-haber",
+     "latex": "\\Delta H_{\\text{f}}^{\\circ}=\\Delta H_{s}^{\\circ}+\\tfrac{1}{2}D+IE+(EA)+(-\\Delta H_{\\text{lattice}})",
+     "ktex": "\\kdHf=\\kdHs+\\tfrac{1}{2}\\kDbond+\\kIE+(\\kEA)+(-\\kdHlat)",
+     "condition": "the formation of an ionic solid MX from a solid metal and a diatomic gaseous nonmetal, as for CsF",
+     "anchor": "7.5-born-haber"
+    }
+   ]
   }
  ],
  "concept_prereqs": [

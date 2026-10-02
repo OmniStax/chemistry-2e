@@ -74,6 +74,10 @@
    "kind": "definition",
    "section": "12.1",
    "name": "The rate of a reaction",
+   "symbol": "rate",
+   "terms": [
+    "rate of reaction"
+   ],
    "statement": "The rate of a reaction is the change in the amount or concentration of a reactant or product per unit time. Since a reactant’s concentration falls as the reaction proceeds, its change is multiplied by −1 so that the rate is, by convention, a positive quantity."
   },
   {
@@ -96,7 +100,14 @@
    "section": "12.1",
    "name": "Rates of change are related by the stoichiometry",
    "statement": "For aA ⟶ bB, the rate may be written from either species, and the two expressions agree once each change is divided by its coefficient: $\\text{rate}=-\\frac{1}{a}\\frac{\\Delta[\\text{A}]}{\\Delta t}=\\frac{1}{b}\\frac{\\Delta[\\text{B}]}{\\Delta t}$.",
-   "eq": "eq-relative-rates"
+   "forms": [
+    {
+     "id": "eq-relative-rates",
+     "latex": "\\text{rate}=-\\frac{1}{a}\\frac{\\Delta[\\text{A}]}{\\Delta t}=\\frac{1}{b}\\frac{\\Delta[\\text{B}]}{\\Delta t}",
+     "ktex": "\\krate=-\\frac{1}{a}\\frac{\\kdconcA}{\\kdt}=\\frac{1}{b}\\frac{\\kdconcB}{\\kdt}",
+     "condition": "the reaction aA ⟶ bB"
+    }
+   ]
   },
   {
    "id": "write-relative-rate-expressions",
@@ -110,6 +121,9 @@
    "kind": "definition",
    "section": "12.1",
    "name": "Average rate",
+   "terms": [
+    "average rate"
+   ],
    "statement": "The average rate of a reaction is the change in the amount or concentration of a reactant or product divided by the time interval over which it was measured."
   },
   {
@@ -117,6 +131,9 @@
    "kind": "definition",
    "section": "12.1",
    "name": "Instantaneous rate",
+   "terms": [
+    "instantaneous rate"
+   ],
    "statement": "The instantaneous rate of a reaction is its rate at one instant, the slope of the line tangent to the graph of concentration against time at that instant."
   },
   {
@@ -124,6 +141,9 @@
    "kind": "definition",
    "section": "12.1",
    "name": "Initial rate",
+   "terms": [
+    "initial rate"
+   ],
    "statement": "The initial rate of a reaction is its instantaneous rate at t = 0 s, immediately after the reaction has begun."
   },
   {
@@ -131,6 +151,9 @@
    "kind": "definition",
    "section": "12.1",
    "name": "Rate expression",
+   "terms": [
+    "rate expression"
+   ],
    "statement": "A rate expression is a mathematical representation that defines the rate of a reaction as the change in the amount, concentration or pressure of a reactant or product per unit time."
   },
   {
@@ -166,6 +189,9 @@
    "kind": "definition",
    "section": "12.2",
    "name": "A catalyst increases the rate of a reaction",
+   "terms": [
+    "catalyst"
+   ],
    "statement": "A catalyst is a substance that increases the rate of a reaction without itself being consumed by the reaction."
   },
   {
@@ -173,14 +199,28 @@
    "kind": "definition",
    "section": "12.3",
    "name": "The rate law, $\\text{rate}=k[\\text{A}]^{m}[\\text{B}]^{n}$",
+   "terms": [
+    "rate law"
+   ],
    "statement": "A rate law relates the rate of a reaction to the concentrations of its reactants, each raised to a power called its order, multiplied by a rate constant. The concentration of a reactant whose order is zero does not appear, since any number raised to the zero power is 1.",
-   "eq": "eq-rate-law"
+   "forms": [
+    {
+     "id": "eq-rate-law",
+     "latex": "\\text{rate}=k[\\text{A}]^{m}[\\text{B}]^{n}",
+     "ktex": "\\krate=k\\kconcA^{m}\\kconcB^{n}",
+     "condition": "the reaction aA + bB ⟶ products, with orders m and n found by experiment"
+    }
+   ]
   },
   {
    "id": "reaction-order",
    "kind": "definition",
    "section": "12.3",
    "name": "Reaction orders and the overall order",
+   "symbol": "m_rxorder",
+   "terms": [
+    "reaction order"
+   ],
    "statement": "The exponent of a reactant’s concentration in the rate law is the order with respect to that reactant, and the overall order is the sum of these orders. Orders are usually 0, 1 or 2, but they may be fractional or negative."
   },
   {
@@ -188,6 +228,10 @@
    "kind": "definition",
    "section": "12.3",
    "name": "The rate constant",
+   "symbol": "k",
+   "terms": [
+    "rate constant"
+   ],
    "statement": "The rate constant k is specific to a particular reaction at a particular temperature; it does not depend on the reactant concentrations, but it does vary with temperature."
   },
   {
@@ -223,6 +267,9 @@
    "kind": "definition",
    "section": "12.3",
    "name": "Overall reaction order",
+   "terms": [
+    "overall reaction order"
+   ],
    "statement": "The overall reaction order is the sum of the reaction orders of all the substances that appear in the rate law."
   },
   {
@@ -230,6 +277,9 @@
    "kind": "idea",
    "section": "12.3",
    "name": "The method of initial rates",
+   "terms": [
+    "method of initial rates"
+   ],
    "statement": "The method of initial rates is a common experimental approach to determining a rate law: the initial rate of a reaction is measured in trials with varying initial concentrations of its reactants."
   },
   {
@@ -237,6 +287,9 @@
    "kind": "definition",
    "section": "12.4",
    "name": "Integrated rate laws relate concentration to time",
+   "terms": [
+    "integrated rate law"
+   ],
    "statement": "Integrating a differential rate law gives an equation relating the concentration of a reactant to the elapsed time, which tells how much reactant remains after a period or how long a reaction takes to reach a given extent."
   },
   {
@@ -245,7 +298,20 @@
    "section": "12.4",
    "name": "The first-order integrated rate law",
    "statement": "For rate = k[A], the concentration falls exponentially, $[\\text{A}]_{t}=[\\text{A}]_{0}e^{-kt}$, so $\\ln[\\text{A}]_{t}=-kt+\\ln[\\text{A}]_{0}$ and a plot of ln[A] against t is a straight line of slope −k.",
-   "eq": "eq-first-order-integrated"
+   "forms": [
+    {
+     "id": "eq-first-order-integrated",
+     "latex": "\\ln[\\text{A}]_{t}=-kt+\\ln[\\text{A}]_{0}",
+     "ktex": "\\ln\\kconcAt=-k\\kt+\\ln\\kconcAz",
+     "condition": "a reaction first order in A"
+    },
+    {
+     "id": "eq-first-order-exponential",
+     "latex": "[\\text{A}]_{t}=[\\text{A}]_{0}e^{-kt}",
+     "ktex": "\\kconcAt=\\kconcAz e^{-k\\kt}",
+     "condition": "a reaction first order in A"
+    }
+   ]
   },
   {
    "id": "second-order-integrated-rate-law",
@@ -253,7 +319,14 @@
    "section": "12.4",
    "name": "The second-order integrated rate law",
    "statement": "For rate = k[A]², $\\frac{1}{[\\text{A}]_{t}}=kt+\\frac{1}{[\\text{A}]_{0}}$, so a plot of 1/[A] against t is a straight line of slope k.",
-   "eq": "eq-second-order-integrated"
+   "forms": [
+    {
+     "id": "eq-second-order-integrated",
+     "latex": "\\frac{1}{[\\text{A}]_{t}}=kt+\\frac{1}{[\\text{A}]_{0}}",
+     "ktex": "\\frac{1}{\\kconcAt}=k\\kt+\\frac{1}{\\kconcAz}",
+     "condition": "a reaction second order in a single reactant A"
+    }
+   ]
   },
   {
    "id": "zero-order-integrated-rate-law",
@@ -261,7 +334,14 @@
    "section": "12.4",
    "name": "The zero-order integrated rate law",
    "statement": "For rate = k, the concentration falls linearly, $[\\text{A}]_{t}=-kt+[\\text{A}]_{0}$, and a plot of [A] against t is a straight line of slope −k. Zero-order behavior is seen only under certain conditions.",
-   "eq": "eq-zero-order-integrated"
+   "forms": [
+    {
+     "id": "eq-zero-order-integrated",
+     "latex": "[\\text{A}]_{t}=-kt+[\\text{A}]_{0}",
+     "ktex": "\\kconcAt=-k\\kt+\\kconcAz",
+     "condition": "a zero-order reaction, under the conditions where it is zero order"
+    }
+   ]
   },
   {
    "id": "order-from-linear-plots",
@@ -275,6 +355,10 @@
    "kind": "definition",
    "section": "12.4",
    "name": "The half-life of a reaction",
+   "symbol": "t_half",
+   "terms": [
+    "half-life of a reaction"
+   ],
    "statement": "The half-life is the time required for one-half of a given amount of reactant to be consumed; in each succeeding half-life, half of the remaining reactant is consumed."
   },
   {
@@ -283,7 +367,26 @@
    "section": "12.4",
    "name": "Half-lives for zero-, first-, and second-order reactions",
    "statement": "The half-life of a first-order reaction, $t_{1/2}=0.693/k$, is independent of concentration; that of a second-order reaction, $1/k[\\text{A}]_{0}$, grows as the reactant is used up, and that of a zero-order reaction, $[\\text{A}]_{0}/2k$, shrinks.",
-   "eq": "eq-half-life-first"
+   "forms": [
+    {
+     "id": "eq-half-life-first",
+     "latex": "t_{1/2}=\\frac{0.693}{k}",
+     "ktex": "\\kthalf=\\frac{0.693}{k}",
+     "condition": "a first-order reaction"
+    },
+    {
+     "id": "eq-half-life-second",
+     "latex": "t_{1/2}=\\frac{1}{[\\text{A}]_{0}k}",
+     "ktex": "\\kthalf=\\frac{1}{\\kconcAz k}",
+     "condition": "a second-order reaction"
+    },
+    {
+     "id": "eq-half-life-zero",
+     "latex": "t_{1/2}=\\frac{[\\text{A}]_{0}}{2k}",
+     "ktex": "\\kthalf=\\frac{\\kconcAz}{2k}",
+     "condition": "a zero-order reaction"
+    }
+   ]
   },
   {
    "id": "integrated-rate-law-calculations",
@@ -297,6 +400,9 @@
    "kind": "idea",
    "section": "12.5",
    "name": "Collision theory",
+   "terms": [
+    "collision theory"
+   ],
    "statement": "Reactant species must collide in order to react, so the rate of a reaction is proportional to the rate of collisions, and a collision leads to reaction only when it has a suitable orientation and enough energy. More molecules per unit volume mean more collisions, which is why rates rise with concentration."
   },
   {
@@ -311,6 +417,10 @@
    "kind": "definition",
    "section": "12.5",
    "name": "Activation energy and the transition state",
+   "symbol": "E_a",
+   "terms": [
+    "activation energy"
+   ],
    "statement": "The activation energy is the minimum energy a collision needs to form products; a collision with enough energy and the proper orientation forms an unstable, short-lived activated complex, or transition state. A reaction is slow when its activation energy is much larger than the average kinetic energy of the molecules."
   },
   {
@@ -332,8 +442,24 @@
    "kind": "axiom",
    "section": "12.5",
    "name": "The Arrhenius equation, $k=Ae^{-E_{\\text{a}}/RT}$",
+   "terms": [
+    "Arrhenius equation"
+   ],
    "statement": "The rate constant depends on the frequency factor A, which reflects how often molecules collide in a favorable orientation, and on the exponential term, which is the effect of the activation energy and the temperature.",
-   "eq": "eq-arrhenius"
+   "forms": [
+    {
+     "id": "eq-arrhenius",
+     "latex": "k=Ae^{-E_{\\text{a}}/RT}",
+     "ktex": "k=Ae^{-\\kEa/R\\kT}",
+     "condition": "a reaction whose kinetics follow the Arrhenius equation, T in kelvin"
+    },
+    {
+     "id": "eq-arrhenius-linear",
+     "latex": "\\ln k=\\left(\\frac{-E_{\\text{a}}}{R}\\right)\\left(\\frac{1}{T}\\right)+\\ln A",
+     "ktex": "\\ln k=\\left(\\frac{-\\kEa}{R}\\right)\\left(\\frac{1}{\\kT}\\right)+\\ln A",
+     "condition": "rate constants measured at several temperatures"
+    }
+   ]
   },
   {
    "id": "activation-energy-from-rate-constants",
@@ -341,13 +467,23 @@
    "section": "12.5",
    "name": "Finding an activation energy from rate constants at different temperatures",
    "statement": "A plot of ln k against 1/T is a straight line of slope −E_a/R, and rate constants at just two temperatures give E_a through the two-point form of the Arrhenius equation.",
-   "eq": "eq-arrhenius-two-point"
+   "forms": [
+    {
+     "id": "eq-arrhenius-two-point",
+     "latex": "\\ln\\frac{k_{1}}{k_{2}}=\\frac{E_{\\text{a}}}{R}\\left(\\frac{1}{T_{2}}-\\frac{1}{T_{1}}\\right)",
+     "ktex": "\\ln\\frac{k_{1}}{k_{2}}=\\frac{\\kEa}{R}\\left(\\frac{1}{\\kTtwo}-\\frac{1}{\\kTone}\\right)",
+     "condition": "rate constants k₁ and k₂ measured at two temperatures T₁ and T₂"
+    }
+   ]
   },
   {
    "id": "activated-complex",
    "kind": "definition",
    "section": "12.5",
    "name": "Activated complex",
+   "terms": [
+    "activated complex"
+   ],
    "statement": "An activated complex, or transition state, is the unstable combination of reactant species formed during a reaction at the highest energy along its path."
   },
   {
@@ -355,6 +491,10 @@
    "kind": "definition",
    "section": "12.5",
    "name": "Frequency factor, $A$",
+   "symbol": "A_freq",
+   "terms": [
+    "frequency factor"
+   ],
    "statement": "The frequency factor is the proportionality constant in the Arrhenius equation, related to the relative number of collisions that have an orientation capable of leading to product formation."
   },
   {
@@ -362,6 +502,9 @@
    "kind": "definition",
    "section": "12.5",
    "name": "Reaction diagram",
+   "terms": [
+    "reaction diagram"
+   ],
    "statement": "A reaction diagram is a graph used in chemical kinetics to show how the energy of a reacting system changes as the reaction proceeds from reactants to products."
   },
   {
@@ -369,6 +512,9 @@
    "kind": "definition",
    "section": "12.6",
    "name": "Reaction mechanisms, elementary reactions, and intermediates",
+   "terms": [
+    "reaction mechanism"
+   ],
    "statement": "A reaction mechanism is the step-by-step sequence of elementary reactions by which a reaction occurs; the steps sum to the overall equation, and an intermediate is produced in one step and consumed in a later one."
   },
   {
@@ -376,6 +522,9 @@
    "kind": "definition",
    "section": "12.6",
    "name": "Molecularity: unimolecular, bimolecular, and termolecular reactions",
+   "terms": [
+    "molecularity"
+   ],
    "statement": "The molecularity of an elementary reaction is the number of reactant entities in it; termolecular steps are uncommon because three particles rarely collide at once."
   },
   {
@@ -390,6 +539,9 @@
    "kind": "definition",
    "section": "12.6",
    "name": "The rate-determining step",
+   "terms": [
+    "rate-determining step"
+   ],
    "statement": "A reaction cannot proceed faster than its slowest step, so that step limits the overall rate; when it is the first step, the overall rate law is its rate law."
   },
   {
@@ -411,6 +563,9 @@
    "kind": "definition",
    "section": "12.6",
    "name": "Elementary reaction",
+   "terms": [
+    "elementary reaction"
+   ],
    "statement": "An elementary reaction is a reaction that takes place in a single step, precisely as depicted in its chemical equation."
   },
   {
@@ -418,6 +573,9 @@
    "kind": "definition",
    "section": "12.6",
    "name": "Intermediate",
+   "terms": [
+    "intermediate"
+   ],
    "statement": "An intermediate is a species produced in one step of a reaction mechanism and consumed in a later step."
   },
   {
@@ -425,6 +583,9 @@
    "kind": "definition",
    "section": "12.6",
    "name": "Unimolecular reaction",
+   "terms": [
+    "unimolecular reaction"
+   ],
    "statement": "A unimolecular reaction is an elementary reaction involving a single reactant entity."
   },
   {
@@ -432,6 +593,9 @@
    "kind": "definition",
    "section": "12.6",
    "name": "Bimolecular reaction",
+   "terms": [
+    "bimolecular reaction"
+   ],
    "statement": "A bimolecular reaction is an elementary reaction involving two reactant entities."
   },
   {
@@ -439,6 +603,9 @@
    "kind": "definition",
    "section": "12.6",
    "name": "Termolecular reaction",
+   "terms": [
+    "termolecular reaction"
+   ],
    "statement": "A termolecular reaction is an elementary reaction involving three reactant entities."
   },
   {
@@ -460,6 +627,9 @@
    "kind": "definition",
    "section": "12.7",
    "name": "Homogeneous catalysts",
+   "terms": [
+    "homogeneous catalyst"
+   ],
    "statement": "A homogeneous catalyst is in the same phase as the reactants; it forms an intermediate that reacts further to give product and regenerate the catalyst."
   },
   {
@@ -467,6 +637,9 @@
    "kind": "definition",
    "section": "12.7",
    "name": "Heterogeneous catalysts",
+   "terms": [
+    "heterogeneous catalyst"
+   ],
    "statement": "A heterogeneous catalyst is in a different phase, usually a solid, and furnishes a surface on which reactants are adsorbed, activated and react before the products desorb."
   },
   {

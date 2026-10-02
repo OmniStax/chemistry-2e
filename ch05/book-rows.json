@@ -19,6 +19,10 @@
       "kind": "definition",
       "section": "5.1",
       "name": "Energy as the capacity to supply heat or do work",
+      "symbol": "E",
+      "terms": [
+        "energy"
+      ],
       "statement": "Energy is the capacity to supply heat or do work. Work is one of the two things energy does: moving matter against an opposing force, as a pump does when it pushes air into a tire."
     },
     {
@@ -47,6 +51,10 @@
       "kind": "definition",
       "section": "5.1",
       "name": "Heat as the transfer of thermal energy",
+      "symbol": "q",
+      "terms": [
+        "heat"
+      ],
       "statement": "Heat is the transfer of thermal energy between two bodies at different temperatures. It flows spontaneously from the hotter body to the cooler one, lowering the average kinetic energy of the first and raising that of the second, until the two reach thermal equilibrium at one temperature."
     },
     {
@@ -68,8 +76,7 @@
       "kind": "definition",
       "section": "5.1",
       "name": "Heat capacity and specific heat",
-      "statement": "The heat capacity of a body is the heat it absorbs or releases for a temperature change of 1 °C, and it grows with the amount of material, so it is extensive. The specific heat is the heat needed to raise 1 gram of a substance by 1 °C, and it depends only on the kind of substance, so it is intensive.",
-      "eq": "eq-heat-capacity"
+      "statement": "The heat capacity of a body is the heat it absorbs or releases for a temperature change of 1 °C, and it grows with the amount of material, so it is extensive. The specific heat is the heat needed to raise 1 gram of a substance by 1 °C, and it depends only on the kind of substance, so it is intensive."
     },
     {
       "id": "heat-specific-heat-relation",
@@ -77,13 +84,24 @@
       "section": "5.1",
       "name": "Heat, specific heat, mass, and temperature change, $q = c \\times m \\times \\Delta T$",
       "statement": "The heat entering or leaving a substance is the product of its specific heat, its mass, and its temperature change, taken as the final temperature minus the initial one. The sign of q follows from that difference, positive when the substance warms and negative when it cools, and any one of the four quantities can be found when the other three are known.",
-      "eq": "eq-heat"
+      "forms": [
+        {
+          "id": "eq-heat",
+          "latex": "q=c\\times m\\times\\Delta T=c\\times m\\times(T_{\\text{final}}-T_{\\text{initial}})",
+          "ktex": "\\kq=c\\times\\km\\times\\kdT=c\\times\\km\\times(\\kTfin-\\kTinit)",
+          "condition": "no chemical reaction or phase change occurs, and the specific heat is treated as constant over the temperature range",
+          "anchor": "5.1-heat-equation"
+        }
+      ]
     },
     {
       "id": "thermochemistry",
       "kind": "definition",
       "section": "5.1",
       "name": "Thermochemistry",
+      "terms": [
+        "thermochemistry"
+      ],
       "statement": "Thermochemistry is the study of measuring the amount of heat absorbed or released during a chemical reaction or a physical change."
     },
     {
@@ -91,6 +109,10 @@
       "kind": "definition",
       "section": "5.1",
       "name": "Work",
+      "symbol": "w",
+      "terms": [
+        "work"
+      ],
       "statement": "Work is the transfer of energy that moves matter against an opposing force, or that changes external, macroscopic variables such as pressure and volume."
     },
     {
@@ -98,6 +120,9 @@
       "kind": "definition",
       "section": "5.1",
       "name": "Potential energy",
+      "terms": [
+        "potential energy"
+      ],
       "statement": "Potential energy is the energy a particle or a system of particles has because of its relative position, composition, or condition."
     },
     {
@@ -105,13 +130,30 @@
       "kind": "definition",
       "section": "5.1",
       "name": "Kinetic energy, $KE = \\frac{1}{2}mv^2$",
-      "statement": "Kinetic energy is the energy an object has because of its motion, equal to one-half the product of its mass and the square of its velocity."
+      "symbol": "KE",
+      "terms": [
+        "kinetic energy"
+      ],
+      "statement": "Kinetic energy is the energy an object has because of its motion, equal to one-half the product of its mass and the square of its velocity.",
+      "forms": [
+        {
+          "id": "eq-kinetic-energy",
+          "latex": "\\text{KE}=\\frac{1}{2}mu^2",
+          "ktex": "\\kKE=\\frac{1}{2}\\km u^2",
+          "condition": "a particle of mass m moving at speed u",
+          "section": "9.5",
+          "anchor": "9.5-speeds"
+        }
+      ]
     },
     {
       "id": "thermal-energy",
       "kind": "definition",
       "section": "5.1",
       "name": "Thermal energy",
+      "terms": [
+        "thermal energy"
+      ],
       "statement": "Thermal energy is the kinetic energy associated with the random motion of atoms and molecules."
     },
     {
@@ -119,6 +161,9 @@
       "kind": "definition",
       "section": "5.1",
       "name": "Exothermic process",
+      "terms": [
+        "exothermic process"
+      ],
       "statement": "An exothermic process is a chemical reaction or physical change that releases heat."
     },
     {
@@ -126,6 +171,9 @@
       "kind": "definition",
       "section": "5.1",
       "name": "Endothermic process",
+      "terms": [
+        "endothermic process"
+      ],
       "statement": "An endothermic process is a chemical reaction or physical change that absorbs heat."
     },
     {
@@ -133,6 +181,9 @@
       "kind": "definition",
       "section": "5.1",
       "name": "The joule, $1\\ \\text{J} = 1\\ \\text{kg m}^2/\\text{s}^2$",
+      "terms": [
+        "joule (J)"
+      ],
       "statement": "The joule is the SI unit of energy, the energy used when a force of 1 newton moves an object 1 meter."
     },
     {
@@ -140,6 +191,9 @@
       "kind": "definition",
       "section": "5.1",
       "name": "The calorie, $1\\ \\text{cal} = 4.184\\ \\text{J}$",
+      "terms": [
+        "calorie (cal)"
+      ],
       "statement": "The calorie is a unit of heat or other energy, the amount of energy required to raise 1 gram of water by 1 degree Celsius. One calorie is exactly 4.184 joules."
     },
     {
@@ -147,14 +201,40 @@
       "kind": "definition",
       "section": "5.1",
       "name": "Heat capacity, $C = q/\\Delta T$",
-      "statement": "The heat capacity of a body of matter is the quantity of heat required to raise its temperature by 1 degree Celsius. It is an extensive property, growing with the amount of matter in the body."
+      "symbol": "C_heat",
+      "terms": [
+        "heat capacity"
+      ],
+      "statement": "The heat capacity of a body of matter is the quantity of heat required to raise its temperature by 1 degree Celsius. It is an extensive property, growing with the amount of matter in the body.",
+      "forms": [
+        {
+          "id": "eq-heat-capacity",
+          "latex": "C=\\frac{q}{\\Delta T}",
+          "ktex": "C=\\frac{\\kq}{\\kdT}",
+          "condition": "a body of matter that absorbs or releases heat q with no chemical reaction or phase change",
+          "anchor": "5.1-capacity"
+        }
+      ]
     },
     {
       "id": "specific-heat-capacity",
       "kind": "definition",
       "section": "5.1",
       "name": "Specific heat capacity, $c = q/(m\\,\\Delta T)$",
-      "statement": "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 gram of it by 1 degree Celsius. It is an intensive property, set by the kind of substance alone."
+      "symbol": "c_spec",
+      "terms": [
+        "specific heat capacity"
+      ],
+      "statement": "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 gram of it by 1 degree Celsius. It is an intensive property, set by the kind of substance alone.",
+      "forms": [
+        {
+          "id": "eq-specific-heat",
+          "latex": "c=\\frac{q}{m\\,\\Delta T}",
+          "ktex": "c=\\frac{\\kq}{\\km\\,\\kdT}",
+          "condition": "a sample of one substance with no chemical reaction or phase change",
+          "anchor": "5.1-capacity"
+        }
+      ]
     },
     {
       "id": "system-and-surroundings",
@@ -169,7 +249,15 @@
       "section": "5.2",
       "name": "The heats exchanged in a calorimeter sum to zero",
       "statement": "When a hot metal is placed in cool water in an ideal calorimeter, all the heat lost by one is gained by the other, so the two heats add up to zero and one is the negative of the other. The negative sign records the opposite direction of flow and does not by itself give either value its sign.",
-      "eq": "eq-heat-balance"
+      "forms": [
+        {
+          "id": "eq-heat-balance",
+          "latex": "q_{\\text{substance M}}+q_{\\text{substance W}}=0",
+          "ktex": "\\kq_{\\text{substance M}}+\\kq_{\\text{substance W}}=0",
+          "condition": "an ideal calorimeter, in which all the heat transfer occurs between the two substances",
+          "anchor": "5.2-heat-balance"
+        }
+      ]
     },
     {
       "id": "heat-of-reaction-by-calorimetry",
@@ -177,7 +265,15 @@
       "section": "5.2",
       "name": "The heat of a reaction from the heat of the solution, $q_{\\text{reaction}} = -q_{\\text{solution}}$",
       "statement": "Because energy is neither created nor destroyed, the heat produced or consumed by a reaction in a calorimeter equals the heat absorbed or lost by the solution around it, with the opposite sign. This is the concept that lies at the heart of all calorimetry problems: the temperature change of the solution is measured, and the heat of the reaction is read from it.",
-      "eq": "eq-heat-reaction"
+      "forms": [
+        {
+          "id": "eq-heat-reaction",
+          "latex": "q_{\\text{reaction}}=-q_{\\text{solution}}",
+          "ktex": "\\kq_{\\text{reaction}}=-\\kq_{\\text{solution}}",
+          "condition": "the calorimeter absorbs no heat and exchanges none with the outside environment",
+          "anchor": "5.2-reaction-heat"
+        }
+      ]
     },
     {
       "id": "coffee-cup-calorimetry",
@@ -191,7 +287,16 @@
       "kind": "skill",
       "section": "5.2",
       "name": "Calculating a heat of combustion from bomb calorimetry",
-      "statement": "A bomb calorimeter works at constant volume and is used for reactions, such as combustions, that give off much heat and gaseous products. The heat of the reaction is shared between the water and the steel bomb, so the calculation adds the heat taken in by the water to the heat capacity of the bomb times the temperature rise."
+      "statement": "A bomb calorimeter works at constant volume and is used for reactions, such as combustions, that give off much heat and gaseous products. The heat of the reaction is shared between the water and the steel bomb, so the calculation adds the heat taken in by the water to the heat capacity of the bomb times the temperature rise.",
+      "forms": [
+        {
+          "id": "eq-bomb",
+          "latex": "q_{\\text{rxn}}=-(q_{\\text{water}}+q_{\\text{bomb}})",
+          "ktex": "\\kq_{\\text{rxn}}=-(\\kq_{\\text{water}}+\\kq_{\\text{bomb}})",
+          "condition": "a bomb calorimeter, with the heat absorbed by the products and the excess oxygen neglected",
+          "anchor": "5.2-ex-bomb"
+        }
+      ]
     },
     {
       "id": "food-calories",
@@ -205,6 +310,9 @@
       "kind": "definition",
       "section": "5.2",
       "name": "System",
+      "terms": [
+        "system"
+      ],
       "statement": "The system is the portion of matter undergoing the chemical or physical change being studied."
     },
     {
@@ -212,6 +320,9 @@
       "kind": "definition",
       "section": "5.2",
       "name": "Surroundings",
+      "terms": [
+        "surroundings"
+      ],
       "statement": "The surroundings are all the matter other than the system being studied."
     },
     {
@@ -219,6 +330,9 @@
       "kind": "definition",
       "section": "5.2",
       "name": "Calorimetry",
+      "terms": [
+        "calorimetry"
+      ],
       "statement": "Calorimetry is the process of measuring the amount of heat involved in a chemical or physical process."
     },
     {
@@ -226,6 +340,9 @@
       "kind": "definition",
       "section": "5.2",
       "name": "Calorimeter",
+      "terms": [
+        "calorimeter"
+      ],
       "statement": "A calorimeter is a device used to measure the amount of heat absorbed or released in a chemical or physical process."
     },
     {
@@ -233,6 +350,9 @@
       "kind": "definition",
       "section": "5.2",
       "name": "Bomb calorimeter",
+      "terms": [
+        "bomb calorimeter"
+      ],
       "statement": "A bomb calorimeter is a device designed to measure the energy change of a process at constant volume. It is commonly used for reactions, such as combustions, that release large amounts of heat and gaseous products."
     },
     {
@@ -240,6 +360,9 @@
       "kind": "definition",
       "section": "5.2",
       "name": "The nutritional Calorie, $1\\ \\text{Cal} = 1\\ \\text{kcal}$",
+      "terms": [
+        "nutritional calorie (Calorie)"
+      ],
       "statement": "The nutritional Calorie is the unit used for the energy provided by digestion of foods, defined as 1000 calories, or 1 kilocalorie."
     },
     {
@@ -247,14 +370,27 @@
       "kind": "axiom",
       "section": "5.3",
       "name": "The first law of thermodynamics, $\\Delta U = q + w$",
+      "terms": [
+        "first law of thermodynamics"
+      ],
       "statement": "The internal energy of a system changes only through heat flowing into or out of it and work done on or by it. The signs are fixed from the system's side: q is positive for heat flowing in and w is positive for work done on the system, so a system that loses heat and does work loses internal energy on both counts, as the gases in an engine cylinder do.",
-      "eq": "eq-first-law"
+      "forms": [
+        {
+          "id": "eq-first-law",
+          "latex": "\\Delta U=q+w",
+          "ktex": "\\kdU=\\kq+\\kwork",
+          "anchor": "5.3-first-law"
+        }
+      ]
     },
     {
       "id": "state-function",
       "kind": "definition",
       "section": "5.3",
       "name": "State functions",
+      "terms": [
+        "state function"
+      ],
       "statement": "The value of a state function depends only on the state a system is in, and not on how that state was reached. Internal energy and enthalpy are state functions, while heat and work are not, just as the altitude of a summit does not depend on the route climbed but the distance walked does. Hess's law rests on this property."
     },
     {
@@ -262,8 +398,17 @@
       "kind": "result",
       "section": "5.3",
       "name": "Enthalpy, and $\\Delta H = q_{\\text{p}}$ at constant pressure",
+      "symbol": "ΔH",
       "statement": "Enthalpy is the sum of a system's internal energy and the product of its pressure and volume. For a process at constant pressure whose only work is expansion work, the enthalpy change equals the heat flow, which is why chemists, who usually work at the constant pressure of the atmosphere, use enthalpy to describe the heat of a reaction. The heat measured in a bomb calorimeter, at constant volume, is not ΔH.",
-      "eq": "eq-dh-qp"
+      "forms": [
+        {
+          "id": "eq-dh-qp",
+          "latex": "\\Delta H=q_{\\text{p}}",
+          "ktex": "\\kdH=\\kqp",
+          "condition": "a process at constant pressure whose only work is caused by expansion or contraction",
+          "anchor": "5.3-enthalpy"
+        }
+      ]
     },
     {
       "id": "thermochemical-equations",
@@ -284,6 +429,10 @@
       "kind": "definition",
       "section": "5.3",
       "name": "Standard states and the standard enthalpy of formation",
+      "symbol": "ΔH_f°",
+      "terms": [
+        "standard enthalpy of formation"
+      ],
       "statement": "A standard state is an agreed set of reference conditions, 1 bar and 1 M, with 298.15 K assumed, and ΔH° marks an enthalpy change under them. The standard enthalpy of formation is ΔH° for forming exactly 1 mole of a substance from its elements in their most stable states, so an element in its most stable form has a value of zero and the formation equation often carries fractional coefficients."
     },
     {
@@ -291,6 +440,9 @@
       "kind": "result",
       "section": "5.3",
       "name": "Hess’s law",
+      "terms": [
+        "Hess’s law"
+      ],
       "statement": "If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the steps. This lets the reader find the enthalpy change of a reaction that is hard or dangerous to carry out by adding reactions, reversed and scaled as needed, whose values are known."
     },
     {
@@ -299,13 +451,24 @@
       "section": "5.3",
       "name": "Calculating a reaction enthalpy from enthalpies of formation",
       "statement": "Hess's law applied to decomposing the reactants into their elements and re-forming the products gives the standard enthalpy change of any reaction as the sum of n times the enthalpies of formation of the products minus the same sum for the reactants. With the table of Appendix G the reader can compute ΔH° for reactions that no one has measured directly.",
-      "eq": "eq-hess-formation"
+      "forms": [
+        {
+          "id": "eq-hess-formation",
+          "latex": "\\Delta H_{\\text{reaction}}^{\\circ}=\\sum n\\times\\Delta H_{\\text{f}}^{\\circ}(\\text{products})-\\sum n\\times\\Delta H_{\\text{f}}^{\\circ}(\\text{reactants})",
+          "ktex": "\\kdHo_{\\text{reaction}}=\\sum n\\times\\kdHf(\\text{products})-\\sum n\\times\\kdHf(\\text{reactants})",
+          "condition": "standard state conditions, with n the stoichiometric coefficients of the balanced equation",
+          "anchor": "5.3-formation-enthalpies"
+        }
+      ]
     },
     {
       "id": "chemical-thermodynamics",
       "kind": "definition",
       "section": "5.3",
       "name": "Chemical thermodynamics",
+      "terms": [
+        "chemical thermodynamics"
+      ],
       "statement": "Chemical thermodynamics is the area of science that deals with the relationships between heat, work, and all forms of energy associated with chemical and physical processes."
     },
     {
@@ -313,6 +476,10 @@
       "kind": "definition",
       "section": "5.3",
       "name": "Internal energy, $U$",
+      "symbol": "U",
+      "terms": [
+        "internal energy"
+      ],
       "statement": "The internal energy of a system is the total of all possible kinds of energy present in the substances it contains."
     },
     {
@@ -320,27 +487,67 @@
       "kind": "definition",
       "section": "5.3",
       "name": "Expansion work, $w = -P\\Delta V$",
-      "statement": "Expansion work, or pressure-volume work, is the work done as a system expands or contracts against an external pressure."
+      "terms": [
+        "expansion work (pressure-volume work)"
+      ],
+      "statement": "Expansion work, or pressure-volume work, is the work done as a system expands or contracts against an external pressure.",
+      "forms": [
+        {
+          "id": "eq-expansion-work",
+          "latex": "P\\Delta V=-w",
+          "ktex": "\\kP\\kdV=-\\kwork",
+          "condition": "expansion or pressure-volume work",
+          "anchor": "5.3-enthalpy"
+        }
+      ]
     },
     {
       "id": "enthalpy",
       "kind": "definition",
       "section": "5.3",
       "name": "Enthalpy, $H = U + PV$",
-      "statement": "The enthalpy of a system is the sum of its internal energy and the product of its pressure and volume."
+      "symbol": "H",
+      "terms": [
+        "enthalpy"
+      ],
+      "statement": "The enthalpy of a system is the sum of its internal energy and the product of its pressure and volume.",
+      "forms": [
+        {
+          "id": "eq-enthalpy",
+          "latex": "H=U+PV",
+          "ktex": "\\kH=\\kU+\\kP\\kV",
+          "anchor": "5.3-enthalpy"
+        }
+      ]
     },
     {
       "id": "enthalpy-change",
       "kind": "definition",
       "section": "5.3",
       "name": "Enthalpy change, $\\Delta H = \\Delta U + P\\Delta V$",
-      "statement": "The enthalpy change of a process is the change in the enthalpy of the system, equal to the heat it releases or absorbs when the process takes place at constant pressure."
+      "symbol": "ΔH",
+      "terms": [
+        "enthalpy change"
+      ],
+      "statement": "The enthalpy change of a process is the change in the enthalpy of the system, equal to the heat it releases or absorbs when the process takes place at constant pressure.",
+      "forms": [
+        {
+          "id": "eq-enthalpy-change",
+          "latex": "\\Delta H=\\Delta U+P\\Delta V",
+          "ktex": "\\kdH=\\kdU+\\kP\\kdV",
+          "condition": "a process at constant pressure",
+          "anchor": "5.3-enthalpy"
+        }
+      ]
     },
     {
       "id": "standard-state",
       "kind": "definition",
       "section": "5.3",
       "name": "Standard state",
+      "terms": [
+        "standard state"
+      ],
       "statement": "A standard state is a set of physical conditions accepted as common reference conditions for reporting thermodynamic properties: 1 bar of pressure and 1 M concentration, with a temperature of 298.15 K assumed. A degree sign on an enthalpy change marks a process under these conditions."
     },
     {
@@ -348,6 +555,9 @@
       "kind": "definition",
       "section": "5.3",
       "name": "Hydrocarbon",
+      "terms": [
+        "hydrocarbon"
+      ],
       "statement": "A hydrocarbon is a compound composed only of hydrogen and carbon, the major component of fossil fuels."
     },
     {
@@ -355,6 +565,10 @@
       "kind": "definition",
       "section": "5.3",
       "name": "Standard enthalpy of combustion, $\\Delta H_{\\text{c}}^{\\circ}$",
+      "symbol": "ΔH_c°",
+      "terms": [
+        "standard enthalpy of combustion"
+      ],
       "statement": "The standard enthalpy of combustion of a substance is the enthalpy change when 1 mole of it undergoes complete combustion under standard state conditions."
     }
   ],

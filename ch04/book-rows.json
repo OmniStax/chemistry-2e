@@ -7,6 +7,9 @@
       "kind": "definition",
       "section": "4.1",
       "name": "Chemical equations",
+      "terms": [
+        "chemical equation"
+      ],
       "statement": "A chemical equation represents a reaction symbolically: the formulas of the reactants on the left, the formulas of the products on the right, plus signs between formulas and an arrow between the two sides. Parenthetical abbreviations give the physical state of each substance (s, l, g, aq), and a word or symbol over the arrow, such as Δ for heating, names a special condition."
     },
     {
@@ -14,6 +17,7 @@
       "kind": "idea",
       "section": "4.1",
       "name": "Coefficients give relative numbers",
+      "symbol": "n_coef",
       "statement": "The coefficients of a balanced equation state the relative numbers of reactant and product species, so they may be read as ratios in any amount unit: one molecule of methane and two of oxygen, one dozen and two dozen, or one mole and two moles. Note that the convention is to use the smallest whole-number coefficients, and that this reading is what makes an equation a statement about amounts rather than only about identities."
     },
     {
@@ -21,6 +25,9 @@
       "kind": "definition",
       "section": "4.1",
       "name": "A balanced equation conserves atoms",
+      "terms": [
+        "balanced equation"
+      ],
       "statement": "An equation is balanced when equal numbers of atoms of each element are represented on the reactant and product sides, which is what the law of conservation of matter requires. The number of atoms of an element is the coefficient of each formula containing it multiplied by the element's subscript in that formula, added over every formula on that side."
     },
     {
@@ -49,6 +56,9 @@
       "kind": "definition",
       "section": "4.1",
       "name": "Reactant",
+      "terms": [
+        "reactant"
+      ],
       "statement": "A reactant is a substance undergoing a chemical or physical change, shown on the left side of the arrow in a chemical equation."
     },
     {
@@ -56,6 +66,9 @@
       "kind": "definition",
       "section": "4.1",
       "name": "Product",
+      "terms": [
+        "product"
+      ],
       "statement": "A product is a substance formed by a chemical or physical change, shown on the right side of the arrow in a chemical equation."
     },
     {
@@ -63,6 +76,9 @@
       "kind": "definition",
       "section": "4.1",
       "name": "Coefficient",
+      "terms": [
+        "coefficient"
+      ],
       "statement": "A coefficient is a number placed in front of a symbol or formula in a chemical equation to indicate its relative amount."
     },
     {
@@ -70,6 +86,9 @@
       "kind": "definition",
       "section": "4.1",
       "name": "Molecular equation",
+      "terms": [
+        "molecular equation"
+      ],
       "statement": "A molecular equation is a chemical equation in which all reactants and products are represented as neutral substances."
     },
     {
@@ -77,6 +96,9 @@
       "kind": "definition",
       "section": "4.1",
       "name": "Complete ionic equation",
+      "terms": [
+        "complete ionic equation"
+      ],
       "statement": "A complete ionic equation is a chemical equation in which all dissolved ionic reactants and products, including spectator ions, are explicitly represented by formulas for their dissociated ions."
     },
     {
@@ -84,6 +106,9 @@
       "kind": "definition",
       "section": "4.1",
       "name": "Net ionic equation",
+      "terms": [
+        "net ionic equation"
+      ],
       "statement": "A net ionic equation is a chemical equation in which only those dissolved ionic reactants and products that undergo a chemical or physical change are represented, so spectator ions are excluded."
     },
     {
@@ -91,6 +116,9 @@
       "kind": "definition",
       "section": "4.1",
       "name": "Spectator ion",
+      "terms": [
+        "spectator ion"
+      ],
       "statement": "A spectator ion is an ion that does not undergo a chemical or physical change during a reaction, but its presence is required to maintain charge neutrality."
     },
     {
@@ -98,6 +126,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Precipitation reactions and solubility",
+      "terms": [
+        "precipitation reaction"
+      ],
       "statement": "A precipitation reaction is one in which dissolved substances react to form one or more solid products, often by an exchange of ions between ionic compounds. A substance precipitates when its concentration exceeds its solubility, the maximum concentration that can be achieved under specified conditions, so the insoluble compounds are the ones that come out of solution."
     },
     {
@@ -126,6 +157,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Neutralization reactions",
+      "terms": [
+        "neutralization reaction"
+      ],
       "statement": "A neutralization reaction is an acid-base reaction whose reactants are an acid and a base (but not water), and whose products are often a salt and water. The net ionic equation for the neutralization of any strong acid by an ionic hydroxide is the same, hydronium ion and hydroxide ion giving water."
     },
     {
@@ -140,6 +174,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Oxidation-reduction reactions",
+      "terms": [
+        "oxidation-reduction reaction"
+      ],
       "statement": "An oxidation-reduction (redox) reaction is one in which one or more elements undergo a change in oxidation number. Oxidation is an increase in oxidation number, or a loss of electrons, and reduction a decrease, or a gain; the reducing agent is the species oxidized and the oxidizing agent the species reduced. Defined this way, the class includes reactions such as hydrogen with chlorine in which no electrons are transferred outright."
     },
     {
@@ -161,6 +198,10 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Solubility",
+      "symbol": "C_g",
+      "terms": [
+        "solubility"
+      ],
       "statement": "The solubility of a substance is the extent to which it dissolves in water or any other solvent. A substance of relatively high solubility is soluble, and one that dissolves only to a slight extent is insoluble."
     },
     {
@@ -168,6 +209,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Salt",
+      "terms": [
+        "salt"
+      ],
       "statement": "A salt is an ionic compound that can be formed by the reaction of an acid with a base, containing a cation and an anion other than hydroxide or oxide."
     },
     {
@@ -175,6 +219,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Combustion reaction",
+      "terms": [
+        "combustion reaction"
+      ],
       "statement": "A combustion reaction is a vigorous redox reaction producing significant amounts of energy in the form of heat and, sometimes, light."
     },
     {
@@ -182,6 +229,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Single-displacement reaction",
+      "terms": [
+        "single-displacement reaction"
+      ],
       "statement": "A single-displacement (replacement) reaction is a redox reaction in which an elemental substance is oxidized by an ionic species."
     },
     {
@@ -189,6 +239,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Half-reaction",
+      "terms": [
+        "half-reaction"
+      ],
       "statement": "A half-reaction is an equation that shows either the oxidation or the reduction of a redox reaction alone, with the electrons each reactant loses or gains."
     },
     {
@@ -196,6 +249,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Soluble",
+      "terms": [
+        "soluble"
+      ],
       "statement": "A soluble substance is one of relatively high solubility, dissolving to a relatively large extent."
     },
     {
@@ -203,6 +259,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Insoluble",
+      "terms": [
+        "insoluble"
+      ],
       "statement": "An insoluble substance is one of relatively low solubility, dissolving only to a slight extent."
     },
     {
@@ -210,6 +269,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Precipitate",
+      "terms": [
+        "precipitate"
+      ],
       "statement": "A precipitate is an insoluble product that forms from the reaction of soluble reactants."
     },
     {
@@ -217,6 +279,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Acid",
+      "terms": [
+        "acid"
+      ],
       "statement": "An acid is a substance that produces H₃O⁺ when dissolved in water."
     },
     {
@@ -224,6 +289,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Base",
+      "terms": [
+        "base"
+      ],
       "statement": "A base is a substance that produces OH⁻ when dissolved in water."
     },
     {
@@ -231,6 +299,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Acid-base reaction",
+      "terms": [
+        "acid-base reaction"
+      ],
       "statement": "An acid-base reaction is a reaction involving the transfer of a hydrogen ion between reactant species."
     },
     {
@@ -238,6 +309,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Strong acid",
+      "terms": [
+        "strong acid"
+      ],
       "statement": "A strong acid is an acid that reacts completely when dissolved in water to yield hydronium ions."
     },
     {
@@ -245,6 +319,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Weak acid",
+      "terms": [
+        "weak acid"
+      ],
       "statement": "A weak acid is an acid that reacts only to a slight extent when dissolved in water to yield hydronium ions."
     },
     {
@@ -252,6 +329,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Strong base",
+      "terms": [
+        "strong base"
+      ],
       "statement": "A strong base is a base that reacts completely when dissolved in water to yield hydroxide ions."
     },
     {
@@ -259,6 +339,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Weak base",
+      "terms": [
+        "weak base"
+      ],
       "statement": "A weak base is a base that reacts only to a slight extent when dissolved in water to yield hydroxide ions."
     },
     {
@@ -266,6 +349,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Oxidation number",
+      "terms": [
+        "oxidation number"
+      ],
       "statement": "The oxidation number, or oxidation state, of an element in a compound is the charge each of its atoms would have if the compound were ionic."
     },
     {
@@ -273,6 +359,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Oxidation",
+      "terms": [
+        "oxidation"
+      ],
       "statement": "Oxidation is the process in which an element’s oxidation number is increased by loss of electrons."
     },
     {
@@ -280,6 +369,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Reduction",
+      "terms": [
+        "reduction"
+      ],
       "statement": "Reduction is the process in which an element’s oxidation number is decreased by gain of electrons."
     },
     {
@@ -287,6 +379,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Oxidizing agent",
+      "terms": [
+        "oxidizing agent"
+      ],
       "statement": "An oxidizing agent, or oxidant, is a substance that brings about the oxidation of another substance and in the process becomes reduced."
     },
     {
@@ -294,6 +389,9 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Reducing agent",
+      "terms": [
+        "reducing agent"
+      ],
       "statement": "A reducing agent, or reductant, is a substance that brings about the reduction of another substance and in the process becomes oxidized."
     },
     {
@@ -301,6 +399,9 @@
       "kind": "definition",
       "section": "4.3",
       "name": "Reaction stoichiometry",
+      "terms": [
+        "stoichiometry"
+      ],
       "statement": "The stoichiometry of a reaction is the set of quantitative relationships between the amounts of the substances it consumes and produces, and the balanced equation states it. As a recipe for eight pancakes scales to twenty-four, the coefficients scale to any amount of any reactant or product."
     },
     {
@@ -308,6 +409,9 @@
       "kind": "definition",
       "section": "4.3",
       "name": "Stoichiometric factors",
+      "terms": [
+        "stoichiometric factor"
+      ],
       "statement": "A stoichiometric factor is a ratio of two coefficients from a balanced equation, such as 2 mol NH3 per 3 mol H2 in the synthesis of ammonia, and it may be written in any amount unit. It is the one step every reaction stoichiometry calculation shares, whatever quantities are given at its start and asked for at its end."
     },
     {
@@ -329,6 +433,9 @@
       "kind": "definition",
       "section": "4.4",
       "name": "Limiting and excess reactants",
+      "terms": [
+        "limiting reactant"
+      ],
       "statement": "When reactants are not present in stoichiometric amounts, one is used up first and limits the amount of product; the others are in excess and some of each is left over. Eleven slices of cheese and twenty-eight slices of bread make eleven sandwiches with six slices of bread to spare, and three moles of hydrogen with two of chlorine make four moles of hydrogen chloride with one mole of hydrogen to spare."
     },
     {
@@ -350,21 +457,41 @@
       "kind": "definition",
       "section": "4.4",
       "name": "Percent yield",
+      "terms": [
+        "percent yield"
+      ],
       "statement": "Percent yield is the actual yield divided by the theoretical yield, times 100%, and it measures how efficiently a reaction delivered the product the stoichiometry allows. Both yields may be masses, molar amounts or any other measure, so long as they are in the same units, which then cancel.",
-      "eq": "eq-percent-yield"
+      "forms": [
+        {
+          "id": "eq-percent-yield",
+          "latex": "\\text{percent yield}=\\left(\\frac{\\text{actual yield}}{\\text{theoretical yield}}\\right)\\times 100\\%",
+          "anchor": "4.4-percent-yield"
+        }
+      ]
     },
     {
       "id": "atom-economy",
       "kind": "definition",
       "section": "4.4",
       "name": "Atom economy",
-      "statement": "The atom economy of a process is the mass of the desired product as a percentage of the mass of all the reactants used, a measure of how much of what goes in ends up in the product. It looks like percent yield but compares the theoretical efficiencies of different processes, whereas percent yield compares what one process actually gives with what it could give."
+      "statement": "The atom economy of a process is the mass of the desired product as a percentage of the mass of all the reactants used, a measure of how much of what goes in ends up in the product. It looks like percent yield but compares the theoretical efficiencies of different processes, whereas percent yield compares what one process actually gives with what it could give.",
+      "forms": [
+        {
+          "id": "eq-atom-economy",
+          "latex": "\\text{atom economy}=\\frac{\\text{mass of product}}{\\text{mass of reactants}}\\times 100\\%",
+          "condition": "the theoretical efficiency of a synthesis, the mass of the desired product as a percentage of the mass of all the reactants used",
+          "anchor": "4.4-atom-economy"
+        }
+      ]
     },
     {
       "id": "theoretical-yield",
       "kind": "definition",
       "section": "4.4",
       "name": "Theoretical yield",
+      "terms": [
+        "theoretical yield"
+      ],
       "statement": "The theoretical yield is the amount of product that may be produced from a given amount of reactant according to the reaction stoichiometry."
     },
     {
@@ -372,6 +499,9 @@
       "kind": "definition",
       "section": "4.4",
       "name": "Actual yield",
+      "terms": [
+        "actual yield"
+      ],
       "statement": "The actual yield is the amount of product formed in a reaction."
     },
     {
@@ -379,6 +509,9 @@
       "kind": "definition",
       "section": "4.4",
       "name": "Excess reactant",
+      "terms": [
+        "excess reactant"
+      ],
       "statement": "An excess reactant is a reactant present in an amount greater than required by the reaction stoichiometry."
     },
     {
@@ -386,6 +519,9 @@
       "kind": "definition",
       "section": "4.5",
       "name": "Quantitative chemical analysis",
+      "terms": [
+        "quantitative analysis"
+      ],
       "statement": "Quantitative analysis is the determination of the amount or concentration of a substance in a sample, and reaction stoichiometry is one of its foundations: the amount of a reactant that combines with the analyte, or of a product it gives, measures how much analyte there was."
     },
     {
@@ -393,6 +529,9 @@
       "kind": "idea",
       "section": "4.5",
       "name": "Titration analysis",
+      "terms": [
+        "titration analysis"
+      ],
       "statement": "In a titration, a titrant of known concentration is added from a buret to a sample of the analyte until the reaction between them is complete. The volume of titrant needed to reach this equivalence point, detected as an end point by a change such as an indicator's color, measures the amount of analyte through the reaction's stoichiometry."
     },
     {
@@ -400,14 +539,16 @@
       "kind": "skill",
       "section": "4.5",
       "name": "Calculating a concentration from titration data",
-      "statement": "The volume and molarity of the titrant give its molar amount, the stoichiometric factor gives the molar amount of analyte, and dividing by the sample volume gives the analyte's molarity. Since molarity is also millimoles per milliliter, the calculation can be done in milliliters throughout.",
-      "eq": "eq-molarity-mmol"
+      "statement": "The volume and molarity of the titrant give its molar amount, the stoichiometric factor gives the molar amount of analyte, and dividing by the sample volume gives the analyte's molarity. Since molarity is also millimoles per milliliter, the calculation can be done in milliliters throughout."
     },
     {
       "id": "gravimetric-analysis",
       "kind": "skill",
       "section": "4.5",
       "name": "Gravimetric analysis",
+      "terms": [
+        "gravimetric analysis"
+      ],
       "statement": "In a gravimetric analysis the analyte is separated from the sample by a change of state, often by precipitation and filtration, and weighed; the mass of the isolated substance, carried through the stoichiometry, gives the mass of the analyte and its percent of the sample."
     },
     {
@@ -415,6 +556,9 @@
       "kind": "skill",
       "section": "4.5",
       "name": "Combustion analysis",
+      "terms": [
+        "combustion analysis"
+      ],
       "statement": "A weighed sample of a compound of carbon and hydrogen is burned completely in oxygen, and the carbon dioxide and water it gives are collected in separate preweighed absorbers. The mass of each product gives the moles of carbon and of hydrogen in the sample, and their smallest whole-number ratio gives the empirical formula."
     },
     {
@@ -422,6 +566,9 @@
       "kind": "definition",
       "section": "4.5",
       "name": "Analyte",
+      "terms": [
+        "analyte"
+      ],
       "statement": "An analyte is the chemical species of interest in an analysis."
     },
     {
@@ -429,6 +576,9 @@
       "kind": "definition",
       "section": "4.5",
       "name": "Titrant",
+      "terms": [
+        "titrant"
+      ],
       "statement": "A titrant is a solution containing a known concentration of a substance that will react with the analyte in a titration analysis."
     },
     {
@@ -436,6 +586,9 @@
       "kind": "definition",
       "section": "4.5",
       "name": "Buret",
+      "terms": [
+        "buret"
+      ],
       "statement": "A buret is a device used for the precise delivery of variable liquid volumes, as in a titration analysis."
     },
     {
@@ -443,6 +596,9 @@
       "kind": "definition",
       "section": "4.5",
       "name": "Equivalence point",
+      "terms": [
+        "equivalence point"
+      ],
       "statement": "The equivalence point is the volume of titrant solution required to react completely with the analyte in a titration analysis, a stoichiometric amount of titrant for the sample’s analyte."
     },
     {
@@ -450,6 +606,9 @@
       "kind": "definition",
       "section": "4.5",
       "name": "End point",
+      "terms": [
+        "end point"
+      ],
       "statement": "The end point is the measured volume of titrant solution that yields the change in the sample’s appearance or other property expected for stoichiometric equivalence."
     },
     {
@@ -457,6 +616,9 @@
       "kind": "definition",
       "section": "4.5",
       "name": "Indicator",
+      "terms": [
+        "indicator"
+      ],
       "statement": "An indicator is a substance added to the sample in a titration analysis to permit visual detection of the end point."
     }
   ],

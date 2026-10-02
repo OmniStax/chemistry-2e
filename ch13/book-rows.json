@@ -24,6 +24,9 @@
    "kind": "definition",
    "section": "13.1",
    "name": "Reversible reactions",
+   "terms": [
+    "reversible reaction"
+   ],
    "statement": "A reversible reaction may proceed in both the forward (left to right) and reverse (right to left) directions, and a special double arrow is used in its equation to emphasize this."
   },
   {
@@ -31,8 +34,18 @@
    "kind": "definition",
    "section": "13.1",
    "name": "Equilibrium is reached when the forward and reverse rates are equal",
+   "terms": [
+    "equilibrium"
+   ],
    "statement": "As a reversible reaction proceeds, the falling reactant concentration slows the forward reaction and the rising product concentration speeds the reverse reaction. When the two rates become equal, the concentrations of reactants and products remain constant and the system is at equilibrium.",
-   "eq": "eq-equal-rates"
+   "forms": [
+    {
+     "id": "eq-equal-rates",
+     "latex": "\\text{rate}_{f}=\\text{rate}_{r}",
+     "ktex": "\\kratef=\\krater",
+     "condition": "a reversible reaction at equilibrium"
+    }
+   ]
   },
   {
    "id": "equilibrium-is-dynamic",
@@ -46,24 +59,50 @@
    "kind": "definition",
    "section": "13.2",
    "name": "The reaction quotient, $Q$",
+   "symbol": "Q_c",
+   "terms": [
+    "reaction quotient"
+   ],
    "statement": "The reaction quotient, $Q$, is the product of the product concentrations, each raised to the power of its coefficient in the balanced equation, divided by the product of the reactant concentrations raised to theirs. Its value changes as the reaction proceeds, so it serves as an indicator of the reaction’s status.",
-   "eq": "eq-reaction-quotient"
+   "forms": [
+    {
+     "id": "eq-reaction-quotient",
+     "latex": "Q_{c}=\\frac{[\\text{C}]^{x}[\\text{D}]^{y}}{[\\text{A}]^{m}[\\text{B}]^{n}}",
+     "ktex": "Q_{c}=\\frac{\\kconcC^{x}\\kconcD^{y}}{\\kconcA^{m}\\kconcB^{n}}",
+     "condition": "the reaction mA + nB ⇌ xC + yD"
+    },
+    {
+     "id": "eq-reaction-quotient-p",
+     "latex": "Q_{P}=\\frac{(P_{C})^{x}(P_{D})^{y}}{(P_{A})^{m}(P_{B})^{n}}",
+     "ktex": "Q_{P}=\\frac{(\\kPC)^{x}(\\kPD)^{y}}{(\\kPA)^{m}(\\kPB)^{n}}",
+     "condition": "the gas-phase reaction mA + nB ⇌ xC + yD"
+    }
+   ]
   },
   {
    "id": "write-reaction-quotient",
    "kind": "skill",
    "section": "13.2",
    "name": "Writing reaction quotient expressions",
-   "statement": "From a balanced equation we can write $Q_{c}$ using molar concentrations or, for gases, $Q_{P}$ using partial pressures, including terms only for gaseous and solute species.",
-   "eq": "eq-reaction-quotient-p"
+   "statement": "From a balanced equation we can write $Q_{c}$ using molar concentrations or, for gases, $Q_{P}$ using partial pressures, including terms only for gaseous and solute species."
   },
   {
    "id": "equilibrium-constant",
    "kind": "definition",
    "section": "13.2",
    "name": "The equilibrium constant and the law of mass action",
+   "symbol": "K",
+   "terms": [
+    "equilibrium constant"
+   ],
    "statement": "The equilibrium constant, $K$, is the constant value of the reaction quotient exhibited by a system at equilibrium; $K_{c}$ is written with molar concentrations and $K_{P}$ with partial pressures.",
-   "eq": "eq-k-equals-q"
+   "forms": [
+    {
+     "id": "eq-k-equals-q",
+     "latex": "K_{c}=Q_{c}\\ \\text{at equilibrium}",
+     "condition": "a system at equilibrium; likewise K_P = Q_P"
+    }
+   ]
   },
   {
    "id": "magnitude-of-k",
@@ -84,8 +123,21 @@
    "kind": "result",
    "section": "13.2",
    "name": "Relating $K_{P}$ and $K_{c}$, $K_{P}=K_{c}(RT)^{\\Delta n}$",
+   "symbol": "Δn_gas",
    "statement": "Since the partial pressure of an ideal gas is $P = MRT$, each pressure in $K_{P}$ is a concentration times $RT$, and the factors collect into $(RT)^{\\Delta n}$, where $\\Delta n$ is the difference in the molar amounts of product and reactant gases.",
-   "eq": "eq-kp-kc"
+   "forms": [
+    {
+     "id": "eq-kp-kc",
+     "latex": "K_{P}=K_{c}(RT)^{\\Delta n}",
+     "ktex": "K_{P}=K_{c}(R\\kT)^{\\Delta n}",
+     "condition": "a gas-phase equilibrium, with Δn = (c + d) − (a + b) for aA + bB ⇌ cC + dD"
+    },
+    {
+     "id": "eq-delta-n",
+     "latex": "\\Delta n=(c+d)-(a+b)",
+     "condition": "the gas-phase reaction aA + bB ⇌ cC + dD"
+    }
+   ]
   },
   {
    "id": "homogeneous-and-heterogeneous-equilibria",
@@ -100,13 +152,32 @@
    "section": "13.2",
    "name": "Equilibrium constants of coupled equilibria",
    "statement": "Reversing an equation inverts its $K$, multiplying its coefficients by $x$ raises $K$ to the power $x$, and adding equations multiplies their $K$ values, so the $K$ of a net reaction follows from the $K$ values of the reactions that sum to it.",
-   "eq": "eq-coupled-k"
+   "forms": [
+    {
+     "id": "eq-reversed-k",
+     "latex": "K_{c'}=\\frac{1}{K_{c}}",
+     "condition": "the equation written in the reverse direction"
+    },
+    {
+     "id": "eq-scaled-k",
+     "latex": "K_{c'}=K_{c}^{\\,x}",
+     "condition": "the coefficients of the equation multiplied by x"
+    },
+    {
+     "id": "eq-coupled-k",
+     "latex": "K_{c'}=K_{c1}K_{c2}",
+     "condition": "the net equation formed by adding two equations"
+    }
+   ]
   },
   {
    "id": "law-of-mass-action",
    "kind": "axiom",
    "section": "13.2",
    "name": "The law of mass action",
+   "terms": [
+    "law of mass action"
+   ],
    "statement": "At a given temperature, the reaction quotient for a system at equilibrium is constant, whatever the initial concentrations from which equilibrium was approached."
   },
   {
@@ -114,6 +185,9 @@
    "kind": "definition",
    "section": "13.2",
    "name": "Homogeneous equilibrium",
+   "terms": [
+    "homogeneous equilibria"
+   ],
    "statement": "A homogeneous equilibrium is one in which all reactants and products, and any catalysts, are present in the same phase."
   },
   {
@@ -121,6 +195,9 @@
    "kind": "definition",
    "section": "13.2",
    "name": "Heterogeneous equilibrium",
+   "terms": [
+    "heterogeneous equilibria"
+   ],
    "statement": "A heterogeneous equilibrium involves reactants and products in two or more different phases."
   },
   {
@@ -128,6 +205,9 @@
    "kind": "definition",
    "section": "13.2",
    "name": "Coupled equilibria",
+   "terms": [
+    "coupled equilibria"
+   ],
    "statement": "Coupled equilibria are two or more equilibrium reactions that have in common one or more reactant or product species."
   },
   {
@@ -135,6 +215,9 @@
    "kind": "axiom",
    "section": "13.3",
    "name": "Le Châtelier’s principle",
+   "terms": [
+    "Le Châtelier’s principle"
+   ],
    "statement": "A change in conditions that affects the forward and reverse rates differently (a stress) leaves the rates unequal, and the system experiences a net reaction in the direction of greater rate (a shift) that re-establishes equilibrium."
   },
   {
@@ -157,7 +240,14 @@
    "section": "13.3",
    "name": "A change in temperature changes $K$",
    "statement": "For an elementary reaction $K_{c}=k_{f}/k_{r}$, and the rate constants vary with temperature, so $K$ varies too. Treating heat as a reactant of an endothermic reaction and a product of an exothermic one predicts the shift: heating shifts an endothermic equilibrium right and an exothermic one left.",
-   "eq": "eq-k-from-rate-constants"
+   "forms": [
+    {
+     "id": "eq-k-from-rate-constants",
+     "latex": "\\frac{[\\text{B}]}{[\\text{A}]}=\\frac{k_{f}}{k_{r}}=K_{c}",
+     "ktex": "\\frac{\\kconcB}{\\kconcA}=\\frac{k_{f}}{k_{r}}=K_{c}",
+     "condition": "the elementary reaction A ⇌ B at equilibrium"
+    }
+   ]
   },
   {
    "id": "catalyst-and-equilibrium",
@@ -178,6 +268,7 @@
    "kind": "skill",
    "section": "13.4",
    "name": "Relating the changes in concentration by the stoichiometry",
+   "symbol": "x_ice",
    "statement": "Whatever the initial composition, the changes in the concentrations of the species in an equilibrium are related by the reaction stoichiometry, so all of them can be written as multiples of one unknown, $x$."
   },
   {

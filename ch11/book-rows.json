@@ -111,6 +111,9 @@
    "kind": "definition",
    "section": "11.1",
    "name": "Ideal solutions and matter dispersal",
+   "terms": [
+    "ideal solution"
+   ],
    "statement": "When the attractions between unlike particles are no different from those between like particles, a solution forms with no change in energy, and it forms anyway, driven by the increased dispersal of matter alone."
   },
   {
@@ -139,6 +142,9 @@
    "kind": "definition",
    "section": "11.1",
    "name": "Alloy",
+   "terms": [
+    "alloy"
+   ],
    "statement": "An alloy is a solid mixture of a metallic element and one or more additional elements."
   },
   {
@@ -146,6 +152,9 @@
    "kind": "definition",
    "section": "11.1",
    "name": "Spontaneous process",
+   "terms": [
+    "spontaneous process"
+   ],
    "statement": "A spontaneous process is a physical or chemical change that occurs without the addition of energy from an external source."
   },
   {
@@ -153,6 +162,9 @@
    "kind": "definition",
    "section": "11.1",
    "name": "Solvation",
+   "terms": [
+    "solvation"
+   ],
    "statement": "Solvation is the exothermic process in which intermolecular attractions between solute and solvent form as the solute particles are surrounded by solvent particles."
   },
   {
@@ -167,6 +179,9 @@
    "kind": "definition",
    "section": "11.2",
    "name": "Ion-dipole attraction",
+   "terms": [
+    "ion-dipole attraction"
+   ],
    "statement": "The electrostatic attraction between an ion and a polar molecule turns the negative oxygen ends of water molecules toward a cation and the positive hydrogen ends toward an anion, and it is what lets water pull ions out of a solid."
   },
   {
@@ -174,6 +189,9 @@
    "kind": "definition",
    "section": "11.2",
    "name": "Ionic compounds dissociate",
+   "terms": [
+    "dissociation"
+   ],
    "statement": "When an ionic compound dissolves, water surrounds and solvates its ions and they disperse through the solution, a physical change called dissociation. Ionic compounds dissociate nearly completely, so even a sparingly soluble one is a strong electrolyte."
   },
   {
@@ -195,6 +213,9 @@
    "kind": "definition",
    "section": "11.2",
    "name": "Electrolyte",
+   "terms": [
+    "electrolyte"
+   ],
    "statement": "An electrolyte is a substance that produces ions when dissolved in water, so that its solution conducts electricity."
   },
   {
@@ -202,6 +223,9 @@
    "kind": "definition",
    "section": "11.2",
    "name": "Nonelectrolyte",
+   "terms": [
+    "nonelectrolyte"
+   ],
    "statement": "A nonelectrolyte is a substance that does not produce ions when dissolved in water."
   },
   {
@@ -209,6 +233,9 @@
    "kind": "definition",
    "section": "11.2",
    "name": "Strong electrolyte",
+   "terms": [
+    "strong electrolyte"
+   ],
    "statement": "A strong electrolyte is a substance that dissociates or ionizes completely when dissolved in water."
   },
   {
@@ -216,6 +243,9 @@
    "kind": "definition",
    "section": "11.2",
    "name": "Weak electrolyte",
+   "terms": [
+    "weak electrolyte"
+   ],
    "statement": "A weak electrolyte is a substance that ionizes only partially when dissolved in water."
   },
   {
@@ -230,6 +260,9 @@
    "kind": "definition",
    "section": "11.3",
    "name": "Supersaturated solutions",
+   "terms": [
+    "supersaturated"
+   ],
    "statement": "A solution can hold more solute than its solubility, a nonequilibrium state that ends in precipitation or loss of gas when it is disturbed. Cooling a saturated solution of a solid, or warming or depressurizing a solution of a gas, can prepare one."
   },
   {
@@ -244,16 +277,27 @@
    "kind": "axiom",
    "section": "11.3",
    "name": "Henry’s law",
+   "symbol": "k_H",
+   "terms": [
+    "Henry’s law"
+   ],
    "statement": "The quantity of an ideal gas that dissolves in a definite volume of liquid is directly proportional to the pressure of the gas, $C_{\\text{g}} = kP_{\\text{g}}$, with k set by the gas, the solvent and the temperature. A gas that reacts with the solvent, as ammonia does with water, dissolves more than the law predicts.",
-   "eq": "eq-henrys-law"
+   "forms": [
+    {
+     "id": "eq-henrys-law",
+     "latex": "C_{\\text{g}}=kP_{\\text{g}}",
+     "ktex": "\\kCg=k\\kPg",
+     "condition": "a gas that does not react with the solvent, at a fixed temperature",
+     "anchor": "11.3-henry"
+    }
+   ]
   },
   {
    "id": "henrys-law-calculations",
    "kind": "skill",
    "section": "11.3",
    "name": "Calculate a gas solubility with Henry’s law",
-   "statement": "Finding k from one known solubility and pressure gives the solubility at any other pressure, and a constant read from a solubility graph answers whether a stream holds enough oxygen for its fish.",
-   "eq": "eq-henrys-law"
+   "statement": "Finding k from one known solubility and pressure gives the solubility at any other pressure, and a constant read from a solubility graph answers whether a stream holds enough oxygen for its fish."
   },
   {
    "id": "miscibility",
@@ -274,6 +318,9 @@
    "kind": "definition",
    "section": "11.3",
    "name": "Saturated solution",
+   "terms": [
+    "saturated"
+   ],
    "statement": "A saturated solution has a concentration equal to the solubility of its solute, the maximum concentration possible at that temperature and pressure."
   },
   {
@@ -281,6 +328,9 @@
    "kind": "definition",
    "section": "11.3",
    "name": "Unsaturated solution",
+   "terms": [
+    "unsaturated"
+   ],
    "statement": "An unsaturated solution has a concentration less than the solubility of its solute."
   },
   {
@@ -288,6 +338,9 @@
    "kind": "definition",
    "section": "11.3",
    "name": "Miscible",
+   "terms": [
+    "miscible"
+   ],
    "statement": "Liquids are miscible when they are mutually soluble in all proportions."
   },
   {
@@ -295,6 +348,9 @@
    "kind": "definition",
    "section": "11.3",
    "name": "Immiscible",
+   "terms": [
+    "immiscible"
+   ],
    "statement": "Liquids are immiscible when their mutual solubility is negligible."
   },
   {
@@ -302,6 +358,9 @@
    "kind": "definition",
    "section": "11.3",
    "name": "Partially miscible",
+   "terms": [
+    "partially miscible"
+   ],
    "statement": "Liquids are partially miscible when they are of moderate mutual solubility."
   },
   {
@@ -309,6 +368,9 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Colligative properties",
+   "terms": [
+    "colligative property"
+   ],
    "statement": "Vapor pressure lowering, boiling point elevation, freezing point depression and osmotic pressure depend only on the total concentration of solute particles, not on their identity, mass or size."
   },
   {
@@ -316,16 +378,41 @@
    "kind": "skill",
    "section": "11.4",
    "name": "Molality and mole fraction",
-   "statement": "Because mole fraction and molality are built from masses and moles, either can be converted into the other, or into molarity or mass percentage, with the molar masses of the components and, for molarity, the density of the solution. Unlike molarity, neither changes with temperature.",
-   "eq": "eq-molality"
+   "statement": "Because mole fraction and molality are built from masses and moles, either can be converted into the other, or into molarity or mass percentage, with the molar masses of the components and, for molarity, the density of the solution. Unlike molarity, neither changes with temperature."
   },
   {
    "id": "raoults-law",
    "kind": "axiom",
    "section": "11.4",
    "name": "Raoult’s law and vapor pressure lowering",
+   "symbol": "ΔP_vp",
+   "terms": [
+    "Raoult’s law"
+   ],
    "statement": "The partial pressure of a component of an ideal solution is its mole fraction times the vapor pressure of the pure component, so a nonvolatile solute lowers the vapor pressure of the solvent in proportion to how much it dilutes the solvent.",
-   "eq": "eq-raoults-law"
+   "forms": [
+    {
+     "id": "eq-raoults-law",
+     "latex": "P_{\\text{A}}=X_{\\text{A}}P_{\\text{A}}^{*}",
+     "ktex": "\\kPA=X_{\\text{A}}\\kPAstar",
+     "condition": "component A of an ideal solution",
+     "anchor": "11.4-vapor"
+    },
+    {
+     "id": "eq-raoult-total",
+     "latex": "P_{\\text{solution}}=\\sum_{i}P_{i}=\\sum_{i}X_{i}P_{i}^{*}",
+     "ktex": "\\kPsoln=\\sum_{i}\\kPcomp=\\sum_{i}X_{i}\\kPcompstar",
+     "condition": "an ideal solution of i components",
+     "anchor": "11.4-vapor"
+    },
+    {
+     "id": "eq-raoult-nonvolatile",
+     "latex": "P_{\\text{solution}}=X_{\\text{solvent}}P_{\\text{solvent}}^{*}",
+     "ktex": "\\kPsoln=X_{\\text{solvent}}\\kPsolvstar",
+     "condition": "a solution whose solutes are all nonvolatile",
+     "anchor": "11.4-vapor"
+    }
+   ]
   },
   {
    "id": "distillation",
@@ -339,24 +426,60 @@
    "kind": "result",
    "section": "11.4",
    "name": "Boiling point elevation",
+   "symbol": "ΔT_b",
+   "terms": [
+    "boiling point elevation"
+   ],
    "statement": "Because a nonvolatile solute lowers the vapor pressure, the solution must be hotter than the pure solvent before its vapor pressure reaches the atmosphere’s, and the elevation is proportional to the molality of all solute species, $\\Delta T_{\\text{b}} = K_{\\text{b}}m$.",
-   "eq": "eq-boiling-point-elevation"
+   "forms": [
+    {
+     "id": "eq-boiling-point-elevation",
+     "latex": "\\Delta T_{\\text{b}}=K_{\\text{b}}m",
+     "ktex": "\\kdTb=K_{\\text{b}}\\kmolal",
+     "condition": "a dilute solution of nonvolatile solute, m counting all solute species",
+     "anchor": "11.4-boiling"
+    }
+   ]
   },
   {
    "id": "freezing-point-depression",
    "kind": "result",
    "section": "11.4",
    "name": "Freezing point depression",
+   "symbol": "ΔT_f",
+   "terms": [
+    "freezing point depression"
+   ],
    "statement": "A solution freezes at a lower temperature than its pure solvent, by an amount proportional to the molality of all solute species, $\\Delta T_{\\text{f}} = K_{\\text{f}}m$, because only the solvent freezes out; salted roads and antifreeze exploit it.",
-   "eq": "eq-freezing-point-depression"
+   "forms": [
+    {
+     "id": "eq-freezing-point-depression",
+     "latex": "\\Delta T_{\\text{f}}=K_{\\text{f}}m",
+     "ktex": "\\kdTf=K_{\\text{f}}\\kmolal",
+     "condition": "a dilute solution, m counting all solute species",
+     "anchor": "11.4-freezing"
+    }
+   ]
   },
   {
    "id": "osmotic-pressure",
    "kind": "result",
    "section": "11.4",
    "name": "Osmosis and osmotic pressure",
+   "symbol": "Π",
+   "terms": [
+    "osmotic pressure"
+   ],
    "statement": "Solvent diffuses through a semipermeable membrane into a solution faster than it returns, until the solution’s rising pressure equalizes the rates; that pressure is the osmotic pressure, $\\Pi = MRT$. Applying more pressure reverses osmosis, and a cell swells or shrivels in a hypotonic or hypertonic solution.",
-   "eq": "eq-osmotic-pressure"
+   "forms": [
+    {
+     "id": "eq-osmotic-pressure",
+     "latex": "\\Pi=MRT",
+     "ktex": "\\kosm=\\kM R\\kT",
+     "condition": "a dilute solution, with T in kelvin",
+     "anchor": "11.4-osmosis"
+    }
+   ]
   },
   {
    "id": "molar-mass-from-colligative-properties",
@@ -370,21 +493,49 @@
    "kind": "result",
    "section": "11.4",
    "name": "Colligative properties of electrolytes and the van’t Hoff factor",
+   "symbol": "i_vh",
+   "terms": [
+    "van’t Hoff factor"
+   ],
    "statement": "An electrolyte yields more than one particle per formula unit, so its colligative effects are multiplied by the van’t Hoff factor i, the moles of particles per mole of formula units; residual attraction between ions, even ion pairs, makes the measured i smaller than predicted.",
-   "eq": "eq-vant-hoff-factor"
+   "forms": [
+    {
+     "id": "eq-vant-hoff-factor",
+     "latex": "i=\\frac{\\text{moles of particles in solution}}{\\text{moles of formula units dissolved}}",
+     "condition": "a dissolved electrolyte or nonelectrolyte",
+     "anchor": "11.4-electrolytes"
+    }
+   ]
   },
   {
    "id": "molality",
    "kind": "definition",
    "section": "11.4",
    "name": "Molality, $m = \\text{mol solute}/\\text{kg solvent}$",
-   "statement": "Molality is a concentration unit defined as the number of moles of solute divided by the mass of the solvent in kilograms. Since it is built from moles and masses, it does not change with temperature."
+   "symbol": "m_molal",
+   "terms": [
+    "molality"
+   ],
+   "statement": "Molality is a concentration unit defined as the number of moles of solute divided by the mass of the solvent in kilograms. Since it is built from moles and masses, it does not change with temperature.",
+   "forms": [
+    {
+     "id": "eq-molality",
+     "latex": "m=\\frac{\\text{mol solute}}{\\text{kg solvent}}",
+     "ktex": "\\kmolal=\\frac{\\text{mol solute}}{\\text{kg solvent}}",
+     "condition": "the molal concentration of a solute",
+     "anchor": "11.4-molality"
+    }
+   ]
   },
   {
    "id": "boiling-point-elevation-constant",
    "kind": "definition",
    "section": "11.4",
    "name": "Boiling point elevation constant, $K_b$",
+   "symbol": "K_b",
+   "terms": [
+    "boiling point elevation constant"
+   ],
    "statement": "The boiling point elevation constant, or ebullioscopic constant, of a solvent is the proportionality constant relating the boiling point elevation of its solutions to the molality of solute."
   },
   {
@@ -392,6 +543,10 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Freezing point depression constant, $K_f$",
+   "symbol": "K_f",
+   "terms": [
+    "freezing point depression constant"
+   ],
    "statement": "The freezing point depression constant, or cryoscopic constant, of a solvent is the proportionality constant relating the freezing point depression of its solutions to the molality of solute."
   },
   {
@@ -399,6 +554,9 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Semipermeable membrane",
+   "terms": [
+    "semipermeable membrane"
+   ],
    "statement": "A semipermeable membrane is a membrane that selectively permits the passage of certain ions or molecules."
   },
   {
@@ -406,6 +564,9 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Osmosis",
+   "terms": [
+    "osmosis"
+   ],
    "statement": "Osmosis is the diffusion of solvent molecules through a semipermeable membrane."
   },
   {
@@ -413,6 +574,9 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Isotonic",
+   "terms": [
+    "isotonic"
+   ],
    "statement": "Two solutions are isotonic when they have equal osmotic pressures."
   },
   {
@@ -420,6 +584,9 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Hypertonic",
+   "terms": [
+    "hypertonic"
+   ],
    "statement": "A solution is hypertonic to another when its osmotic pressure is greater."
   },
   {
@@ -427,6 +594,9 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Hypotonic",
+   "terms": [
+    "hypotonic"
+   ],
    "statement": "A solution is hypotonic to another when its osmotic pressure is less."
   },
   {
@@ -434,6 +604,9 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Crenation",
+   "terms": [
+    "crenation"
+   ],
    "statement": "Crenation is the shriveling of biological cells as they lose water by osmosis, as red blood cells do in a hypertonic solution."
   },
   {
@@ -441,6 +614,9 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Hemolysis",
+   "terms": [
+    "hemolysis"
+   ],
    "statement": "Hemolysis is the rupture of red blood cells as they take up excess water by osmosis, as they do in a hypotonic solution."
   },
   {
@@ -448,6 +624,9 @@
    "kind": "definition",
    "section": "11.4",
    "name": "Ion pair",
+   "terms": [
+    "ion pair"
+   ],
    "statement": "An ion pair is a solvated cation and anion held together by moderate electrostatic attraction, which lowers the number of independent particles in a solution of an electrolyte."
   },
   {
@@ -490,6 +669,9 @@
    "kind": "definition",
    "section": "11.5",
    "name": "Colloid",
+   "terms": [
+    "colloid"
+   ],
    "statement": "A colloid, or colloidal dispersion, is a mixture in which relatively large solid or liquid particles are dispersed uniformly throughout a gas, liquid or solid and do not settle."
   },
   {
@@ -497,6 +679,9 @@
    "kind": "definition",
    "section": "11.5",
    "name": "Suspension",
+   "terms": [
+    "suspension"
+   ],
    "statement": "A suspension is a heterogeneous mixture in which relatively large particles are temporarily dispersed but settle out over time."
   },
   {
@@ -504,6 +689,9 @@
    "kind": "idea",
    "section": "11.5",
    "name": "The Tyndall effect",
+   "terms": [
+    "Tyndall effect"
+   ],
    "statement": "The Tyndall effect is the scattering of visible light by a colloidal dispersion, which makes the path of a beam visible through it."
   },
   {
@@ -511,6 +699,9 @@
    "kind": "definition",
    "section": "11.5",
    "name": "Dispersed phase",
+   "terms": [
+    "dispersed phase"
+   ],
    "statement": "The dispersed phase of a colloid is the substance present as relatively large solid or liquid particles."
   },
   {
@@ -518,6 +709,9 @@
    "kind": "definition",
    "section": "11.5",
    "name": "Dispersion medium",
+   "terms": [
+    "dispersion medium"
+   ],
    "statement": "The dispersion medium of a colloid is the solid, liquid or gas in which the colloidal particles are dispersed."
   },
   {
@@ -525,6 +719,9 @@
    "kind": "definition",
    "section": "11.5",
    "name": "Emulsion",
+   "terms": [
+    "emulsion"
+   ],
    "statement": "An emulsion is a colloid formed from immiscible liquids."
   },
   {
@@ -532,6 +729,9 @@
    "kind": "definition",
    "section": "11.5",
    "name": "Gel",
+   "terms": [
+    "gel"
+   ],
    "statement": "A gel is a colloidal dispersion of a liquid in a solid."
   },
   {
@@ -539,6 +739,9 @@
    "kind": "definition",
    "section": "11.5",
    "name": "Amphiphilic",
+   "terms": [
+    "amphiphilic"
+   ],
    "statement": "A molecule is amphiphilic when it has both a hydrophobic, nonpolar part and a hydrophilic, polar part."
   },
   {
@@ -546,6 +749,9 @@
    "kind": "definition",
    "section": "11.5",
    "name": "Emulsifying agent",
+   "terms": [
+    "emulsifying agent"
+   ],
    "statement": "An emulsifying agent is an amphiphilic substance used to stabilize the particles of an emulsion."
   }
  ],

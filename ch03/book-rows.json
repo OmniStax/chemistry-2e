@@ -31,6 +31,10 @@
       "kind": "definition",
       "section": "3.1",
       "name": "The mole",
+      "symbol": "n",
+      "terms": [
+        "mole"
+      ],
       "statement": "The mole is an amount unit like a pair or a dozen, and it links an easily measured property, bulk mass, to a fundamental one, the number of atoms or molecules. Chemists count particles they cannot see by weighing them, and the mole is the unit that makes that possible."
     },
     {
@@ -38,6 +42,10 @@
       "kind": "axiom",
       "section": "3.1",
       "name": "Avogadro’s number, $N_A = 6.022 \\times 10^{23}$/mol",
+      "symbol": "N_A",
+      "terms": [
+        "Avogadro’s number"
+      ],
       "statement": "One mole of any substance contains the same number of entities, 6.022 × 10<sup>23</sup>, so the number of atoms or molecules in a sample follows from its amount in moles. The size of the number is what lets a drop of water hold more molecules than can be clearly imagined."
     },
     {
@@ -45,6 +53,10 @@
       "kind": "definition",
       "section": "3.1",
       "name": "Molar mass",
+      "symbol": "MM",
+      "terms": [
+        "molar mass"
+      ],
       "statement": "The molar mass of a substance is the mass in grams of 1 mole of it, and it is numerically equal to the formula mass in amu, because the atomic mass unit and the mole are defined from the same reference, carbon-12. That equality turns a formula mass read from the periodic table into a conversion factor between grams and moles."
     },
     {
@@ -66,6 +78,9 @@
       "kind": "definition",
       "section": "3.1",
       "name": "Formula mass",
+      "terms": [
+        "formula mass"
+      ],
       "statement": "The formula mass of a substance is the sum of the average masses of all the atoms represented in its chemical formula; for a covalent compound it is also the molecular mass."
     },
     {
@@ -73,8 +88,18 @@
       "kind": "definition",
       "section": "3.2",
       "name": "Percent composition",
-      "eq": "eq-percent-composition",
-      "statement": "The percent composition of a compound is the percentage by mass of each element in it. Measuring the mass of each element is often the first step in finding an unknown compound’s formula, and the percentages are how that measurement is reported."
+      "terms": [
+        "percent composition"
+      ],
+      "statement": "The percent composition of a compound is the percentage by mass of each element in it. Measuring the mass of each element is often the first step in finding an unknown compound’s formula, and the percentages are how that measurement is reported.",
+      "forms": [
+        {
+          "id": "eq-percent-composition",
+          "latex": "\\%\\;\\text{X}=\\frac{\\text{mass X}}{\\text{mass compound}}\\times 100\\%",
+          "condition": "X is any one element of the compound",
+          "anchor": "3.2-percent"
+        }
+      ]
     },
     {
       "id": "percent-composition-from-formula",
@@ -102,14 +127,31 @@
       "kind": "skill",
       "section": "3.2",
       "name": "Deriving a molecular formula from an empirical formula",
-      "eq": "eq-formula-units-per-molecule",
-      "statement": "An empirical formula gives only the relative numbers of atoms. Dividing the molecular or molar mass by the empirical formula mass gives the number of formula units in each molecule, and multiplying every subscript by that number gives the molecular formula."
+      "symbol": "n_fu",
+      "statement": "An empirical formula gives only the relative numbers of atoms. Dividing the molecular or molar mass by the empirical formula mass gives the number of formula units in each molecule, and multiplying every subscript by that number gives the molecular formula.",
+      "forms": [
+        {
+          "id": "eq-formula-units-per-molecule",
+          "latex": "\\frac{\\text{molecular or molar mass}}{\\text{empirical formula mass}}=n\\;\\text{formula units/molecule}",
+          "condition": "both masses in amu, or both in g/mol",
+          "anchor": "3.2-molecular"
+        },
+        {
+          "id": "eq-molecular-formula",
+          "latex": "(\\text{A}_x\\text{B}_y)_n=\\text{A}_{nx}\\text{B}_{ny}",
+          "condition": "a compound whose empirical formula is A<sub>x</sub>B<sub>y</sub>, with n empirical formula units in each molecule",
+          "anchor": "3.2-molecular"
+        }
+      ]
     },
     {
       "id": "empirical-formula-mass",
       "kind": "definition",
       "section": "3.2",
       "name": "Empirical formula mass",
+      "terms": [
+        "empirical formula mass"
+      ],
       "statement": "The empirical formula mass of a compound is the sum of the average atomic masses of all the atoms its empirical formula represents."
     },
     {
@@ -124,6 +166,10 @@
       "kind": "definition",
       "section": "3.3",
       "name": "Concentration",
+      "symbol": "C_1",
+      "terms": [
+        "concentration"
+      ],
       "statement": "The relative amount of a given component of a solution is its concentration, and the properties of a mixture depend on it, as the sweetness of a coffee depends on its sugar. A solution is called dilute or concentrated in words before any unit puts a number on it."
     },
     {
@@ -131,8 +177,35 @@
       "kind": "definition",
       "section": "3.3",
       "name": "Molarity, $M$ = mol solute / L solution",
-      "eq": "eq-molarity",
-      "statement": "Molarity is the number of moles of solute in exactly 1 liter of solution, and it is the concentration unit of most of chemistry. The liter is of the whole solution, not of the solvent that was added."
+      "symbol": "M",
+      "terms": [
+        "molarity (M)"
+      ],
+      "statement": "Molarity is the number of moles of solute in exactly 1 liter of solution, and it is the concentration unit of most of chemistry. The liter is of the whole solution, not of the solvent that was added.",
+      "forms": [
+        {
+          "id": "eq-molarity",
+          "latex": "M=\\frac{\\text{mol solute}}{\\text{L solution}}",
+          "ktex": "\\kM=\\frac{\\text{mol solute}}{\\text{L solution}}",
+          "condition": "the volume is that of the whole solution, not of the solvent",
+          "anchor": "3.3-molarity"
+        },
+        {
+          "id": "eq-moles-from-molarity",
+          "latex": "n=ML",
+          "ktex": "\\kn=\\kM\\kL",
+          "condition": "the volume in liters",
+          "anchor": "3.3-dilution-equation"
+        },
+        {
+          "id": "eq-molarity-mmol",
+          "latex": "M=\\frac{\\text{mol solute}}{\\text{L solution}}=\\frac{\\text{mmol solute}}{\\text{mL solution}}",
+          "ktex": "\\kM=\\frac{\\text{mol solute}}{\\text{L solution}}=\\frac{\\text{mmol solute}}{\\text{mL solution}}",
+          "condition": "the molarity of a solution, written in millimoles and milliliters to shorten a titration calculation",
+          "section": "4.5",
+          "anchor": "4.5-titration-calc"
+        }
+      ]
     },
     {
       "id": "molarity-calculations",
@@ -146,6 +219,9 @@
       "kind": "definition",
       "section": "3.3",
       "name": "Dilution",
+      "terms": [
+        "dilution"
+      ],
       "statement": "Dilution lowers the concentration of a solution by adding solvent, and it leaves the amount of solute unchanged. It is how melting ice weakens iced tea and how a laboratory prepares a working solution from a concentrated stock."
     },
     {
@@ -153,14 +229,32 @@
       "kind": "result",
       "section": "3.3",
       "name": "The dilution equation, $C_1V_1 = C_2V_2$",
-      "eq": "eq-dilution",
-      "statement": "Since n = ML and the amount of solute does not change on dilution, the product of concentration and volume is the same before and after. The relation works in any units of concentration and volume that cancel, so it is written C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub>."
+      "statement": "Since n = ML and the amount of solute does not change on dilution, the product of concentration and volume is the same before and after. The relation works in any units of concentration and volume that cancel, so it is written C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub>.",
+      "forms": [
+        {
+          "id": "eq-dilution",
+          "latex": "C_1V_1=C_2V_2",
+          "ktex": "\\kCone\\kVone=\\kCtwo\\kVtwo",
+          "condition": "a solution diluted by adding solvent; any units of concentration and volume that cancel",
+          "anchor": "3.3-dilution-equation"
+        },
+        {
+          "id": "eq-dilution-molarity",
+          "latex": "M_1L_1=M_2L_2",
+          "ktex": "\\kMone\\kLone=\\kMtwo\\kLtwo",
+          "condition": "a solution diluted by adding solvent, so the amount of solute is unchanged",
+          "anchor": "3.3-dilution-equation"
+        }
+      ]
     },
     {
       "id": "solvent",
       "kind": "definition",
       "section": "3.3",
       "name": "Solvent",
+      "terms": [
+        "solvent"
+      ],
       "statement": "The solvent is the component of a solution present at a concentration higher than that of the other components."
     },
     {
@@ -168,6 +262,9 @@
       "kind": "definition",
       "section": "3.3",
       "name": "Solute",
+      "terms": [
+        "solute"
+      ],
       "statement": "A solute is a component of a solution present at a concentration less than that of the solvent."
     },
     {
@@ -175,6 +272,9 @@
       "kind": "definition",
       "section": "3.3",
       "name": "Aqueous solution",
+      "terms": [
+        "aqueous solution"
+      ],
       "statement": "An aqueous solution is a solution for which water is the solvent."
     },
     {
@@ -182,6 +282,9 @@
       "kind": "definition",
       "section": "3.3",
       "name": "Dissolved",
+      "terms": [
+        "dissolved"
+      ],
       "statement": "A solute is dissolved when its components are dispersed in a solvent."
     },
     {
@@ -189,6 +292,9 @@
       "kind": "definition",
       "section": "3.3",
       "name": "Concentrated",
+      "terms": [
+        "concentrated"
+      ],
       "statement": "A concentrated solution is one containing solute at a relatively high concentration; the term is qualitative."
     },
     {
@@ -196,6 +302,9 @@
       "kind": "definition",
       "section": "3.3",
       "name": "Dilute",
+      "terms": [
+        "dilute"
+      ],
       "statement": "A dilute solution is one containing solute at a relatively low concentration; the term is qualitative."
     },
     {
@@ -203,22 +312,45 @@
       "kind": "definition",
       "section": "3.4",
       "name": "Mass percentage",
-      "eq": "eq-mass-percentage",
-      "statement": "The mass percentage of a component is the ratio of its mass to the mass of the solution, expressed as a percentage. It is the unit on the labels of consumer products, and it needs only that both masses be in the same unit."
+      "terms": [
+        "mass percentage"
+      ],
+      "statement": "The mass percentage of a component is the ratio of its mass to the mass of the solution, expressed as a percentage. It is the unit on the labels of consumer products, and it needs only that both masses be in the same unit.",
+      "forms": [
+        {
+          "id": "eq-mass-percentage",
+          "latex": "\\text{mass percentage}=\\frac{\\text{mass of component}}{\\text{mass of solution}}\\times 100\\%",
+          "condition": "both masses in the same unit",
+          "anchor": "3.4-mass-percentage"
+        }
+      ]
     },
     {
       "id": "volume-percentage",
       "kind": "definition",
       "section": "3.4",
       "name": "Volume percentage",
-      "eq": "eq-volume-percentage",
-      "statement": "A liquid dissolved in a liquid is conveniently described by the ratio of the volume of solute to the volume of solution, expressed as a percentage, since liquid volumes are easily measured."
+      "terms": [
+        "volume percentage"
+      ],
+      "statement": "A liquid dissolved in a liquid is conveniently described by the ratio of the volume of solute to the volume of solution, expressed as a percentage, since liquid volumes are easily measured.",
+      "forms": [
+        {
+          "id": "eq-volume-percentage",
+          "latex": "\\text{volume percentage}=\\frac{\\text{volume solute}}{\\text{volume solution}}\\times 100\\%",
+          "condition": "both volumes in the same unit",
+          "anchor": "3.4-volume-percentage"
+        }
+      ]
     },
     {
       "id": "mass-volume-percent",
       "kind": "definition",
       "section": "3.4",
       "name": "Mass-volume percent",
+      "terms": [
+        "mass-volume percent"
+      ],
       "statement": "A mixed unit takes the mass of solute and the volume of solution, as physiological saline is 0.9 g of solute per 100 mL and blood sugar is reported in milligrams per deciliter. Such units are common in biochemical and medical settings."
     },
     {
@@ -226,7 +358,6 @@
       "kind": "definition",
       "section": "3.4",
       "name": "Parts per million and parts per billion",
-      "eq": "eq-ppm",
       "statement": "Very low concentrations are expressed as parts per million or parts per billion, the mass ratio multiplied by 10<sup>6</sup> or 10<sup>9</sup>, just as a percentage is a part per hundred. They are the units of trace contaminants in water."
     },
     {
@@ -241,14 +372,36 @@
       "kind": "definition",
       "section": "3.4",
       "name": "Parts per million, ppm",
-      "statement": "Parts per million (ppm) is the ratio of solute-to-solution mass multiplied by 10⁶."
+      "terms": [
+        "parts per million (ppm)"
+      ],
+      "statement": "Parts per million (ppm) is the ratio of solute-to-solution mass multiplied by 10⁶.",
+      "forms": [
+        {
+          "id": "eq-ppm",
+          "latex": "\\text{ppm}=\\frac{\\text{mass solute}}{\\text{mass solution}}\\times 10^{6}\\;\\text{ppm}",
+          "condition": "the mass-based definition",
+          "anchor": "3.4-ppm-ppb"
+        }
+      ]
     },
     {
       "id": "parts-per-billion",
       "kind": "definition",
       "section": "3.4",
       "name": "Parts per billion, ppb",
-      "statement": "Parts per billion (ppb) is the ratio of solute-to-solution mass multiplied by 10⁹."
+      "terms": [
+        "parts per billion (ppb)"
+      ],
+      "statement": "Parts per billion (ppb) is the ratio of solute-to-solution mass multiplied by 10⁹.",
+      "forms": [
+        {
+          "id": "eq-ppb",
+          "latex": "\\text{ppb}=\\frac{\\text{mass solute}}{\\text{mass solution}}\\times 10^{9}\\;\\text{ppb}",
+          "condition": "the mass-based definition",
+          "anchor": "3.4-ppm-ppb"
+        }
+      ]
     }
   ],
   "concept_prereqs": [

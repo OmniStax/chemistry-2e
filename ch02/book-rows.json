@@ -7,6 +7,9 @@
    "kind": "axiom",
    "section": "2.1",
    "name": "Dalton’s atomic theory",
+   "terms": [
+    "Dalton’s atomic theory"
+   ],
    "statement": "Dalton’s postulates say that matter is made of atoms, that the atoms of one element all have the same characteristic mass and differ from the atoms of every other element, that a compound holds atoms of two or more elements in a small, whole-number ratio, and that atoms are neither created nor destroyed in a chemical change but only rearranged. These postulates give a microscopic explanation of the macroscopic behavior of matter the reader has already met, including the conservation of matter, and every later picture of the atom starts from them."
   },
   {
@@ -14,6 +17,10 @@
    "kind": "axiom",
    "section": "2.1",
    "name": "The law of definite proportions",
+   "terms": [
+    "law of constant composition",
+    "law of definite proportions"
+   ],
    "statement": "All samples of a pure compound contain the same elements in the same proportion by mass, which is what Dalton’s fourth postulate predicts if the numbers of atoms in a compound always stand in the same ratio. Note that the converse is not true: two samples with the same mass ratio are not necessarily the same substance."
   },
   {
@@ -21,6 +28,9 @@
    "kind": "axiom",
    "section": "2.1",
    "name": "The law of multiple proportions",
+   "terms": [
+    "law of multiple proportions"
+   ],
    "statement": "When two elements form more than one compound, a fixed mass of one element reacts with masses of the other in a ratio of small whole numbers. Taking the ratio of the two mass ratios is the step that reveals it, and atomic theory explains it at once, since one compound simply holds more atoms of one element per atom of the other."
   },
   {
@@ -35,7 +45,19 @@
    "kind": "axiom",
    "section": "2.2",
    "name": "Millikan’s fundamental charge",
-   "statement": "The charge on every oil drop Millikan measured is a whole-number multiple of 1.6 × 10⁻¹⁹ C, so that value must be the charge of a single electron. Combined with Thomson’s charge-to-mass ratio, it gives the mass of the electron by a simple calculation."
+   "symbol": "e",
+   "terms": [
+    "fundamental unit of charge"
+   ],
+   "statement": "The charge on every oil drop Millikan measured is a whole-number multiple of 1.6 × 10⁻¹⁹ C, so that value must be the charge of a single electron. Combined with Thomson’s charge-to-mass ratio, it gives the mass of the electron by a simple calculation.",
+   "forms": [
+    {
+     "id": "eq-electron-mass",
+     "latex": "\\text{Mass of electron}=1.602\\times10^{-19}\\;\\text{C}\\times\\frac{1\\;\\text{kg}}{1.759\\times10^{11}\\;\\text{C}}=9.107\\times10^{-31}\\;\\text{kg}",
+     "condition": "Millikan's charge of the electron divided by Thomson's charge-to-mass ratio",
+     "anchor": "2.2-oil-drop"
+    }
+   ]
   },
   {
    "id": "nuclear-model-of-the-atom",
@@ -56,6 +78,9 @@
    "kind": "definition",
    "section": "2.2",
    "name": "Isotopes",
+   "terms": [
+    "isotopes"
+   ],
    "statement": "Atoms of the same element can differ in mass while remaining chemically identical, because they have the same number of protons and different numbers of neutrons. The existence of isotopes is the reason Dalton’s second postulate had to be restated in terms of chemical properties rather than mass."
   },
   {
@@ -63,6 +88,9 @@
    "kind": "definition",
    "section": "2.2",
    "name": "Alpha particle, α",
+   "terms": [
+    "alpha particle (α particle)"
+   ],
    "statement": "An alpha particle is a positively charged particle consisting of two protons and two neutrons."
   },
   {
@@ -70,6 +98,9 @@
    "kind": "definition",
    "section": "2.2",
    "name": "Nucleus",
+   "terms": [
+    "nucleus"
+   ],
    "statement": "The nucleus is the massive, positively charged center of an atom, made up of protons and neutrons."
   },
   {
@@ -77,6 +108,9 @@
    "kind": "definition",
    "section": "2.2",
    "name": "Electron",
+   "terms": [
+    "electron"
+   ],
    "statement": "An electron is a negatively charged subatomic particle of relatively low mass located outside the nucleus."
   },
   {
@@ -84,6 +118,9 @@
    "kind": "definition",
    "section": "2.2",
    "name": "Proton",
+   "terms": [
+    "proton"
+   ],
    "statement": "A proton is a positively charged subatomic particle located in the nucleus."
   },
   {
@@ -91,6 +128,9 @@
    "kind": "definition",
    "section": "2.2",
    "name": "Neutron",
+   "terms": [
+    "neutron"
+   ],
    "statement": "A neutron is an uncharged subatomic particle located in the nucleus."
   },
   {
@@ -98,6 +138,11 @@
    "kind": "definition",
    "section": "2.3",
    "name": "The atomic mass unit and the fundamental unit of charge",
+   "terms": [
+    "atomic mass unit (amu)",
+    "Dalton (Da)",
+    "unified atomic mass unit (u)"
+   ],
    "statement": "Atoms are so small that grams and coulombs are inconvenient, so their masses are given in atomic mass units, exactly one twelfth of the mass of a carbon-12 atom, and their charges in units of the charge of one electron. On these scales a proton and a neutron each weigh about 1 amu and carry charges of 1+ and 0, and an electron weighs about 0.00055 amu and carries 1−."
   },
   {
@@ -105,16 +150,30 @@
    "kind": "definition",
    "section": "2.3",
    "name": "Atomic number and mass number",
-   "eq": "eq-nucleon-numbers",
-   "statement": "The atomic number is the number of protons in the nucleus and is the defining trait of an element; the mass number is the total number of protons and neutrons. Their difference is the number of neutrons, and in a neutral atom the atomic number is also the number of electrons."
+   "symbol": "Z",
+   "statement": "The atomic number is the number of protons in the nucleus and is the defining trait of an element; the mass number is the total number of protons and neutrons. Their difference is the number of neutrons, and in a neutral atom the atomic number is also the number of electrons.",
+   "forms": [
+    {
+     "id": "eq-nucleon-numbers",
+     "latex": "\\begin{array}{rll}\\text{atomic number}\\;(Z) & = & \\text{number of protons} \\\\ \\text{mass number}\\;(A) & = & \\text{number of protons}+\\text{number of neutrons} \\\\ A-Z & = & \\text{number of neutrons}\\end{array}",
+     "anchor": "2.3-atomic-number"
+    }
+   ]
   },
   {
    "id": "ions-and-atomic-charge",
    "kind": "definition",
    "section": "2.3",
    "name": "Ions, cations, and anions",
-   "eq": "eq-atomic-charge",
-   "statement": "When the numbers of protons and electrons in an atom are not equal, it carries a charge equal to the number of protons minus the number of electrons and is called an ion. An atom that gains electrons becomes a negatively charged anion, and one that loses electrons becomes a positively charged cation."
+   "symbol": "Z_plus",
+   "statement": "When the numbers of protons and electrons in an atom are not equal, it carries a charge equal to the number of protons minus the number of electrons and is called an ion. An atom that gains electrons becomes a negatively charged anion, and one that loses electrons becomes a positively charged cation.",
+   "forms": [
+    {
+     "id": "eq-atomic-charge",
+     "latex": "\\text{atomic charge}=\\text{number of protons}-\\text{number of electrons}",
+     "anchor": "2.3-ions"
+    }
+   ]
   },
   {
    "id": "composition-of-an-atom",
@@ -128,6 +187,9 @@
    "kind": "definition",
    "section": "2.3",
    "name": "Chemical symbols",
+   "terms": [
+    "chemical symbol"
+   ],
    "statement": "A chemical symbol of one, two or three letters stands for an element or for one atom of it, whether the reader means a single atom or a jar full. Only the first letter is capitalized, which is why Co is cobalt and CO is carbon monoxide, and some symbols come from the element’s name in another language."
   },
   {
@@ -142,8 +204,18 @@
    "kind": "result",
    "section": "2.3",
    "name": "Average atomic mass",
-   "eq": "eq-average-atomic-mass",
-   "statement": "The mass listed for an element in the periodic table is a weighted average over its naturally occurring isotopes, the sum of each isotope’s mass multiplied by its fractional abundance. That is why most atomic masses are not whole numbers, and it is important to understand that no single atom has the average mass: no boron atom weighs 10.8 amu."
+   "terms": [
+    "atomic mass"
+   ],
+   "statement": "The mass listed for an element in the periodic table is a weighted average over its naturally occurring isotopes, the sum of each isotope’s mass multiplied by its fractional abundance. That is why most atomic masses are not whole numbers, and it is important to understand that no single atom has the average mass: no boron atom weighs 10.8 amu.",
+   "forms": [
+    {
+     "id": "eq-average-atomic-mass",
+     "latex": "\\text{average mass}=\\sum_{i}(\\text{fractional abundance}\\times\\text{isotopic mass})_{i}",
+     "condition": "a naturally occurring sample of an element, whose isotopes' fractional abundances add up to 1",
+     "anchor": "2.3-atomic-mass"
+    }
+   ]
   },
   {
    "id": "isotopic-abundance-from-average-mass",
@@ -164,6 +236,9 @@
    "kind": "definition",
    "section": "2.3",
    "name": "Ion",
+   "terms": [
+    "ion"
+   ],
    "statement": "An ion is an electrically charged atom or molecule, one that contains unequal numbers of protons and electrons."
   },
   {
@@ -171,6 +246,9 @@
    "kind": "definition",
    "section": "2.3",
    "name": "Cation",
+   "terms": [
+    "cation"
+   ],
    "statement": "A cation is a positively charged atom or molecule, one that contains fewer electrons than protons."
   },
   {
@@ -178,6 +256,9 @@
    "kind": "definition",
    "section": "2.3",
    "name": "Anion",
+   "terms": [
+    "anion"
+   ],
    "statement": "An anion is a negatively charged atom or molecule, one that contains more electrons than protons."
   },
   {
@@ -185,6 +266,10 @@
    "kind": "definition",
    "section": "2.3",
    "name": "Atomic number, $Z$",
+   "symbol": "Z",
+   "terms": [
+    "atomic number (Z)"
+   ],
    "statement": "The atomic number (Z) of an atom is the number of protons in its nucleus."
   },
   {
@@ -192,6 +277,10 @@
    "kind": "definition",
    "section": "2.3",
    "name": "Mass number, $A$",
+   "symbol": "A",
+   "terms": [
+    "mass number (A)"
+   ],
    "statement": "The mass number (A) of an atom is the sum of the numbers of neutrons and protons in its nucleus."
   },
   {
@@ -199,6 +288,9 @@
    "kind": "definition",
    "section": "2.4",
    "name": "Molecular formulas",
+   "terms": [
+    "molecular formula"
+   ],
    "statement": "A molecular formula writes the symbols of the atoms in a molecule with subscripts giving how many of each there are. Many elements exist as molecules of their own, such as the diatomic H₂, O₂ and N₂ and the eight-atom S₈, and the formula of such an element differs from its symbol for that reason."
   },
   {
@@ -227,6 +319,9 @@
    "kind": "definition",
    "section": "2.4",
    "name": "Isomers",
+   "terms": [
+    "isomers"
+   ],
    "statement": "The same atoms can be connected in different ways, so compounds with the same molecular formula can have different structures and different properties. Structural isomers differ in how the atoms are connected, as acetic acid and methyl formate do, and spatial isomers differ only in the orientation of the atoms in space, as the two mirror-image forms of carvone do."
   },
   {
@@ -234,6 +329,9 @@
    "kind": "definition",
    "section": "2.4",
    "name": "Empirical formula",
+   "terms": [
+    "empirical formula"
+   ],
    "statement": "An empirical formula shows the composition of a compound as the simplest whole-number ratio of its atoms."
   },
   {
@@ -241,6 +339,9 @@
    "kind": "definition",
    "section": "2.4",
    "name": "Structural formula",
+   "terms": [
+    "structural formula"
+   ],
    "statement": "A structural formula shows the atoms in a molecule and how they are connected."
   },
   {
@@ -248,6 +349,9 @@
    "kind": "definition",
    "section": "2.4",
    "name": "Structural isomer",
+   "terms": [
+    "structural isomer"
+   ],
    "statement": "Structural isomers are substances that have the same molecular formula but different physical and chemical properties because their atoms are bonded differently."
   },
   {
@@ -255,6 +359,9 @@
    "kind": "definition",
    "section": "2.4",
    "name": "Spatial isomers",
+   "terms": [
+    "spatial isomers"
+   ],
    "statement": "Spatial isomers are compounds in which the relative orientations of the atoms in space differ."
   },
   {
@@ -262,6 +369,9 @@
    "kind": "axiom",
    "section": "2.5",
    "name": "The periodic law",
+   "terms": [
+    "periodic law"
+   ],
    "statement": "The properties of the elements are periodic functions of their atomic numbers. Mendeleev arranged the elements by atomic mass and used the pattern to predict elements not yet found, and by the twentieth century it was clear that atomic number, not mass, orders the table."
   },
   {
@@ -297,6 +407,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "The periodic table",
+   "terms": [
+    "periodic table"
+   ],
    "statement": "The periodic table is a table of the elements that places elements with similar chemical properties close together."
   },
   {
@@ -304,6 +417,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Group",
+   "terms": [
+    "group"
+   ],
    "statement": "A group is a vertical column of the periodic table."
   },
   {
@@ -311,6 +427,10 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Period",
+   "terms": [
+    "period",
+    "series"
+   ],
    "statement": "A period, also called a series, is a horizontal row of the periodic table."
   },
   {
@@ -318,6 +438,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Metal",
+   "terms": [
+    "metal"
+   ],
    "statement": "A metal is an element that is shiny, malleable, and a good conductor of heat and electricity."
   },
   {
@@ -325,6 +448,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Nonmetal",
+   "terms": [
+    "nonmetal"
+   ],
    "statement": "A nonmetal is an element that appears dull and is a poor conductor of heat and electricity."
   },
   {
@@ -332,6 +458,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Metalloid",
+   "terms": [
+    "metalloid"
+   ],
    "statement": "A metalloid is an element that conducts heat and electricity moderately well and has some properties of metals and some of nonmetals."
   },
   {
@@ -339,6 +468,10 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Main-group element",
+   "terms": [
+    "main-group element",
+    "representative element"
+   ],
    "statement": "A main-group element, also called a representative element, is an element in groups 1, 2, and 13–18."
   },
   {
@@ -346,6 +479,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Transition metal",
+   "terms": [
+    "transition metal"
+   ],
    "statement": "A transition metal is an element in groups 3–12 (more strictly, 3–11)."
   },
   {
@@ -353,6 +489,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Inner transition metal",
+   "terms": [
+    "inner transition metal"
+   ],
    "statement": "An inner transition metal is an element in the bottom two rows of the periodic table; those of the first row are lanthanides and those of the second actinides."
   },
   {
@@ -360,6 +499,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Lanthanide",
+   "terms": [
+    "lanthanide"
+   ],
    "statement": "A lanthanide is an inner transition metal in the top of the bottom two rows of the periodic table."
   },
   {
@@ -367,6 +509,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Actinide",
+   "terms": [
+    "actinide"
+   ],
    "statement": "An actinide is an inner transition metal in the bottom of the bottom two rows of the periodic table."
   },
   {
@@ -374,6 +519,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Alkali metal",
+   "terms": [
+    "alkali metal"
+   ],
    "statement": "An alkali metal is an element in group 1."
   },
   {
@@ -381,6 +529,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Alkaline earth metal",
+   "terms": [
+    "alkaline earth metal"
+   ],
    "statement": "An alkaline earth metal is an element in group 2."
   },
   {
@@ -388,6 +539,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Pnictogen",
+   "terms": [
+    "pnictogen"
+   ],
    "statement": "A pnictogen is an element in group 15."
   },
   {
@@ -395,6 +549,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Chalcogen",
+   "terms": [
+    "chalcogen"
+   ],
    "statement": "A chalcogen is an element in group 16."
   },
   {
@@ -402,6 +559,9 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Halogen",
+   "terms": [
+    "halogen"
+   ],
    "statement": "A halogen is an element in group 17."
   },
   {
@@ -409,6 +569,10 @@
    "kind": "definition",
    "section": "2.5",
    "name": "Noble gas",
+   "terms": [
+    "inert gas",
+    "noble gas"
+   ],
    "statement": "A noble gas, also called an inert gas, is an element in group 18."
   },
   {
@@ -423,6 +587,9 @@
    "kind": "definition",
    "section": "2.6",
    "name": "Polyatomic ions and oxyanions",
+   "terms": [
+    "polyatomic ion"
+   ],
    "statement": "A polyatomic ion is a group of bonded atoms that carries an overall charge and acts as a single unit, and an oxyanion is one that contains oxygen. The book asks the reader to memorize the names, formulas and charges of the common ones, and the suffixes -ate and -ite and prefixes per- and hypo- mark more or fewer oxygen atoms."
   },
   {
@@ -437,6 +604,9 @@
    "kind": "definition",
    "section": "2.6",
    "name": "Ionic compounds",
+   "terms": [
+    "ionic compound"
+   ],
    "statement": "A metal combined with one or more nonmetals usually forms an ionic compound, a solid held together by ionic bonds that melts at a high temperature and conducts electricity when molten but not when solid. Its formula gives the relative numbers of ions rather than a molecule, since an ionic compound has no discrete molecules."
   },
   {
@@ -451,6 +621,10 @@
    "kind": "definition",
    "section": "2.6",
    "name": "Molecular compounds",
+   "terms": [
+    "covalent compound",
+    "molecular compound"
+   ],
    "statement": "Compounds of nonmetals usually consist of discrete, neutral molecules held together by covalent bonds, and under normal conditions they are often gases, low-boiling liquids or low-melting solids. The book notes that predicting this from positions in the periodic table is a simplistic approach with interesting exceptions."
   },
   {
@@ -465,6 +639,9 @@
    "kind": "definition",
    "section": "2.6",
    "name": "Monatomic ion",
+   "terms": [
+    "monatomic ion"
+   ],
    "statement": "A monatomic ion is an ion composed of a single atom."
   },
   {
@@ -472,6 +649,9 @@
    "kind": "definition",
    "section": "2.6",
    "name": "Oxyanion",
+   "terms": [
+    "oxyanion"
+   ],
    "statement": "An oxyanion is a polyatomic anion composed of a central atom bonded to oxygen atoms."
   },
   {
@@ -479,6 +659,9 @@
    "kind": "definition",
    "section": "2.6",
    "name": "Covalent bond",
+   "terms": [
+    "covalent bond"
+   ],
    "statement": "A covalent bond is a bond formed when electrons are shared between atoms."
   },
   {
@@ -486,6 +669,9 @@
    "kind": "definition",
    "section": "2.6",
    "name": "Ionic bond",
+   "terms": [
+    "ionic bond"
+   ],
    "statement": "An ionic bond is the electrostatic attraction between oppositely charged cations and anions, typically formed when a metal atom transfers electrons to a nonmetal atom."
   },
   {
@@ -535,6 +721,9 @@
    "kind": "definition",
    "section": "2.7",
    "name": "Hydrate",
+   "terms": [
+    "hydrate"
+   ],
    "statement": "A hydrate is a compound containing one or more water molecules bound within its crystals, written with a dot between the formula of the anhydrous compound and the number of water molecules per formula unit."
   },
   {
@@ -542,6 +731,9 @@
    "kind": "definition",
    "section": "2.7",
    "name": "Nomenclature",
+   "terms": [
+    "nomenclature"
+   ],
    "statement": "Nomenclature is a system of rules for naming objects of interest, and chemical nomenclature gives every compound a name from which its formula can be written."
   },
   {
@@ -549,6 +741,9 @@
    "kind": "definition",
    "section": "2.7",
    "name": "Binary compound",
+   "terms": [
+    "binary compound"
+   ],
    "statement": "A binary compound is a compound containing two different elements."
   },
   {
@@ -556,6 +751,9 @@
    "kind": "definition",
    "section": "2.7",
    "name": "Binary acid",
+   "terms": [
+    "binary acid"
+   ],
    "statement": "A binary acid is a compound of hydrogen and one other element, bonded so that it releases H⁺ ions when dissolved in water."
   },
   {
@@ -563,6 +761,9 @@
    "kind": "definition",
    "section": "2.7",
    "name": "Oxyacid",
+   "terms": [
+    "oxyacid"
+   ],
    "statement": "An oxyacid is a compound of hydrogen, oxygen and one other element, bonded so that it releases H⁺ ions when dissolved in water."
   }
  ],

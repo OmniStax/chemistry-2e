@@ -30,6 +30,9 @@
    "kind": "idea",
    "section": "1.1",
    "name": "The scientific method",
+   "terms": [
+    "scientific method"
+   ],
    "statement": "Chemistry is a science based on observation and experimentation, and there is no single route from a question to an answer. What every route has in common is that it rests on experiments that can be repeated, so the path from question and observation to hypothesis, and from hypothesis through testing to law or theory, is the method the whole of the book argues by."
   },
   {
@@ -51,6 +54,9 @@
    "kind": "definition",
    "section": "1.1",
    "name": "Chemistry",
+   "terms": [
+    "chemistry"
+   ],
    "statement": "Chemistry is the study of the composition, properties, and interactions of matter."
   },
   {
@@ -58,6 +64,9 @@
    "kind": "definition",
    "section": "1.1",
    "name": "Hypothesis",
+   "terms": [
+    "hypothesis"
+   ],
    "statement": "A hypothesis is a tentative explanation of observations that acts as a guide for gathering and checking information."
   },
   {
@@ -65,6 +74,9 @@
    "kind": "definition",
    "section": "1.1",
    "name": "Law",
+   "terms": [
+    "law"
+   ],
    "statement": "A law is a statement that summarizes a vast number of experimental observations and describes or predicts some aspect of the natural world."
   },
   {
@@ -72,6 +84,9 @@
    "kind": "definition",
    "section": "1.1",
    "name": "Theory",
+   "terms": [
+    "theory"
+   ],
    "statement": "A theory is a well-substantiated, comprehensive, testable explanation of a particular aspect of nature."
   },
   {
@@ -79,6 +94,9 @@
    "kind": "definition",
    "section": "1.1",
    "name": "Macroscopic domain",
+   "terms": [
+    "macroscopic domain"
+   ],
    "statement": "The macroscopic domain is the realm of everyday things that are large enough to sense directly by human sight and touch."
   },
   {
@@ -86,6 +104,9 @@
    "kind": "definition",
    "section": "1.1",
    "name": "Microscopic domain",
+   "terms": [
+    "microscopic domain"
+   ],
    "statement": "The microscopic domain is the realm of things that are much too small to be sensed directly."
   },
   {
@@ -93,6 +114,9 @@
    "kind": "definition",
    "section": "1.1",
    "name": "Symbolic domain",
+   "terms": [
+    "symbolic domain"
+   ],
    "statement": "The symbolic domain is the specialized language used to represent components of the macroscopic and microscopic domains, such as chemical symbols, chemical formulas, chemical equations, graphs, drawings, and calculations."
   },
   {
@@ -100,6 +124,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Matter",
+   "terms": [
+    "matter"
+   ],
    "statement": "Matter is anything that occupies space and has mass. A gas is as much matter as a solid is, even though you can neither see nor hold it."
   },
   {
@@ -121,6 +148,9 @@
    "kind": "axiom",
    "section": "1.2",
    "name": "The law of conservation of matter",
+   "terms": [
+    "law of conservation of matter"
+   ],
    "statement": "There is no detectable change in the total quantity of matter when matter converts from one type to another or changes among the solid, liquid and gaseous states. It is the law every balanced equation and every mass calculation of the later chapters rests on, and the reason a mass that seems to vanish has gone somewhere that was not weighed."
   },
   {
@@ -135,6 +165,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Homogeneous and heterogeneous mixtures",
+   "terms": [
+    "solution"
+   ],
    "statement": "A mixture holds two or more kinds of matter in amounts that can vary and can be separated again by physical means. A heterogeneous mixture varies in composition from point to point, as salad dressing does; a homogeneous mixture, also called a solution, is the same throughout, as a sports drink is. The difference is what a sample taken from one place tells about the rest."
   },
   {
@@ -156,6 +189,10 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Mass, $m$",
+   "symbol": "m",
+   "terms": [
+    "mass"
+   ],
    "statement": "The mass of an object is a measure of the amount of matter in it, and it does not change with where the object is."
   },
   {
@@ -163,6 +200,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Weight",
+   "terms": [
+    "weight"
+   ],
    "statement": "The weight of an object is the force that gravity exerts on it, so it changes with the gravity the object is in."
   },
   {
@@ -170,6 +210,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Gas",
+   "terms": [
+    "gas"
+   ],
    "statement": "A gas is a state of matter that has neither definite volume nor shape."
   },
   {
@@ -177,6 +220,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Liquid",
+   "terms": [
+    "liquid"
+   ],
    "statement": "A liquid is a state of matter that has a definite volume but indefinite shape."
   },
   {
@@ -184,6 +230,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Solid",
+   "terms": [
+    "solid"
+   ],
    "statement": "A solid is a state of matter that is rigid, has a definite shape, and has a fairly constant volume."
   },
   {
@@ -191,6 +240,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Plasma",
+   "terms": [
+    "plasma"
+   ],
    "statement": "A plasma is a gaseous state of matter containing a large number of electrically charged atoms and/or molecules."
   },
   {
@@ -198,6 +250,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Pure substance",
+   "terms": [
+    "pure substance"
+   ],
    "statement": "A pure substance is a homogeneous substance that has a constant composition."
   },
   {
@@ -205,6 +260,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Element",
+   "terms": [
+    "element"
+   ],
    "statement": "An element is a substance composed of a single type of atom, one that cannot be decomposed by a chemical change."
   },
   {
@@ -212,6 +270,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Compound",
+   "terms": [
+    "compound"
+   ],
    "statement": "A compound is a pure substance that can be decomposed into two or more elements."
   },
   {
@@ -219,6 +280,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Mixture",
+   "terms": [
+    "mixture"
+   ],
    "statement": "A mixture is matter that can be separated into its components by physical means."
   },
   {
@@ -226,6 +290,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Heterogeneous mixture",
+   "terms": [
+    "heterogeneous mixture"
+   ],
    "statement": "A heterogeneous mixture is a combination of substances with a composition that varies from point to point."
   },
   {
@@ -233,6 +300,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Homogeneous mixture",
+   "terms": [
+    "homogeneous mixture"
+   ],
    "statement": "A homogeneous mixture, also called a solution, is a combination of substances with a composition that is uniform throughout."
   },
   {
@@ -240,6 +310,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Atom",
+   "terms": [
+    "atom"
+   ],
    "statement": "An atom is the smallest particle of an element that can enter into a chemical combination."
   },
   {
@@ -247,6 +320,9 @@
    "kind": "definition",
    "section": "1.2",
    "name": "Molecule",
+   "terms": [
+    "molecule"
+   ],
    "statement": "A molecule is a bonded collection of two or more atoms of the same or different elements."
   },
   {
@@ -254,6 +330,9 @@
    "kind": "definition",
    "section": "1.3",
    "name": "Physical properties",
+   "terms": [
+    "physical property"
+   ],
    "statement": "A physical property is a characteristic of matter that is not associated with a change in its chemical composition: density, color, hardness, melting and boiling point, electrical conductivity. Some can be observed without changing the matter at all, and others only while it is changing state, but in neither case does the substance become a different substance."
   },
   {
@@ -261,6 +340,9 @@
    "kind": "definition",
    "section": "1.3",
    "name": "Chemical properties",
+   "terms": [
+    "chemical property"
+   ],
    "statement": "A chemical property is the ability of a substance to change into another kind of matter, or its inability to do so. Flammability, toxicity, acidity and reactivity are chemical properties, and unlike a physical property, one cannot be observed without the substance in question becoming something else."
   },
   {
@@ -289,6 +371,9 @@
    "kind": "definition",
    "section": "1.3",
    "name": "Physical change",
+   "terms": [
+    "physical change"
+   ],
    "statement": "A physical change is a change in the state or properties of matter that does not involve a change in its chemical composition."
   },
   {
@@ -296,6 +381,9 @@
    "kind": "definition",
    "section": "1.3",
    "name": "Chemical change",
+   "terms": [
+    "chemical change"
+   ],
    "statement": "A chemical change is a change producing a different kind of matter from the original kind of matter."
   },
   {
@@ -303,6 +391,9 @@
    "kind": "definition",
    "section": "1.3",
    "name": "Extensive property",
+   "terms": [
+    "extensive property"
+   ],
    "statement": "An extensive property is a property of a substance that depends on the amount of the substance."
   },
   {
@@ -310,6 +401,9 @@
    "kind": "definition",
    "section": "1.3",
    "name": "Intensive property",
+   "terms": [
+    "intensive property"
+   ],
    "statement": "An intensive property is a property of a substance that is independent of the amount of the substance."
   },
   {
@@ -352,6 +446,10 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Volume and its units",
+   "symbol": "V",
+   "terms": [
+    "volume"
+   ],
    "statement": "Volume is the amount of space an object occupies, and its standard unit is the cubic meter, a cube one meter on an edge. The cubic decimeter is a liter and the cubic centimeter is a milliliter, so the units a chemist actually works in are nested inside the standard one by factors of a thousand."
   },
   {
@@ -359,8 +457,18 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Density",
+   "symbol": "d",
+   "terms": [
+    "density"
+   ],
    "statement": "The density of a substance is the ratio of the mass of a sample to its volume. It is an intensive property, so it identifies a substance rather than a sample: a brick of gold and a brick of lead of the same size do not have the same mass.",
-   "eq": "eq-density"
+   "forms": [
+    {
+     "id": "eq-density",
+     "latex": "\\text{density}=\\frac{\\text{mass}}{\\text{volume}}",
+     "anchor": "1.4-density"
+    }
+   ]
   },
   {
    "id": "measure-volume-by-displacement",
@@ -374,6 +482,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Unit",
+   "terms": [
+    "unit"
+   ],
    "statement": "A unit is a standard of comparison for measurements; the number of a measured quantity says how many of its unit the quantity holds."
   },
   {
@@ -381,6 +492,10 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Length",
+   "symbol": "h_col",
+   "terms": [
+    "length"
+   ],
    "statement": "Length is the measure of one dimension of an object, and its SI unit is the meter."
   },
   {
@@ -388,6 +503,7 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Time, $t$",
+   "symbol": "t",
    "statement": "Time is measured in the SI base unit of time, the second."
   },
   {
@@ -395,6 +511,10 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Temperature, $T$",
+   "symbol": "T",
+   "terms": [
+    "temperature"
+   ],
    "statement": "Temperature is an intensive property representing the hotness or coldness of matter, and its SI unit is the kelvin."
   },
   {
@@ -402,6 +522,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "SI units",
+   "terms": [
+    "SI units (International System of Units)"
+   ],
    "statement": "SI units are the standards fixed by international agreement in the International System of Units (Le Système International d’Unités)."
   },
   {
@@ -409,6 +532,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Meter, m",
+   "terms": [
+    "meter (m)"
+   ],
    "statement": "The meter (m) is the standard metric and SI unit of length; 1 m is approximately 1.094 yards."
   },
   {
@@ -416,6 +542,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Kilogram, kg",
+   "terms": [
+    "kilogram (kg)"
+   ],
    "statement": "The kilogram (kg) is the standard SI unit of mass."
   },
   {
@@ -423,6 +552,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Second, s",
+   "terms": [
+    "second (s)"
+   ],
    "statement": "The second (s) is the SI unit of time."
   },
   {
@@ -430,6 +562,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Kelvin, K",
+   "terms": [
+    "kelvin (K)"
+   ],
    "statement": "The kelvin (K) is the SI unit of temperature; 273.15 K equals 0 °C."
   },
   {
@@ -437,6 +572,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Celsius, °C",
+   "terms": [
+    "Celsius (°C)"
+   ],
    "statement": "The degree Celsius (°C) is a unit of temperature; water freezes at 0 °C and boils at 100 °C on this scale."
   },
   {
@@ -444,6 +582,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Cubic meter, m³",
+   "terms": [
+    "cubic meter (m³)"
+   ],
    "statement": "The cubic meter (m³) is the SI unit of volume, the volume of a cube with an edge length of exactly 1 m."
   },
   {
@@ -451,6 +592,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Cubic centimeter, cm³",
+   "terms": [
+    "cubic centimeter (cm³ or cc)"
+   ],
    "statement": "The cubic centimeter (cm³ or cc) is the volume of a cube with an edge length of exactly 1 cm."
   },
   {
@@ -458,6 +602,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Liter, L",
+   "terms": [
+    "liter (L)"
+   ],
    "statement": "The liter (L), also called the cubic decimeter, is a unit of volume; 1 L equals 1,000 cm³."
   },
   {
@@ -465,6 +612,9 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Milliliter, mL",
+   "terms": [
+    "milliliter (mL)"
+   ],
    "statement": "The milliliter (mL) is 1/1,000 of a liter and equals 1 cm³."
   },
   {
@@ -486,6 +636,10 @@
    "kind": "definition",
    "section": "1.5",
    "name": "Significant figures",
+   "terms": [
+    "significant digits",
+    "significant figures"
+   ],
    "statement": "All of the digits in a measurement, including the uncertain last one, are its significant figures, and their number is how a written quantity says how certain it is. A result is properly reported when its significant digits represent the certainty of the process that produced it, and no better."
   },
   {
@@ -521,6 +675,9 @@
    "kind": "definition",
    "section": "1.5",
    "name": "Exact number",
+   "terms": [
+    "exact number"
+   ],
    "statement": "An exact number is a number derived by counting or by definition."
   },
   {
@@ -528,6 +685,9 @@
    "kind": "definition",
    "section": "1.5",
    "name": "Uncertainty",
+   "terms": [
+    "uncertainty"
+   ],
    "statement": "The uncertainty of a measurement is an estimate of the amount by which it differs from the true value."
   },
   {
@@ -535,6 +695,9 @@
    "kind": "definition",
    "section": "1.5",
    "name": "Rounding",
+   "terms": [
+    "rounding"
+   ],
    "statement": "Rounding is the procedure used to ensure that calculated results properly reflect the uncertainty in the measurements used in the calculation."
   },
   {
@@ -542,6 +705,9 @@
    "kind": "definition",
    "section": "1.5",
    "name": "Accuracy",
+   "terms": [
+    "accuracy"
+   ],
    "statement": "Accuracy is how closely a measurement aligns with a correct value."
   },
   {
@@ -549,6 +715,9 @@
    "kind": "definition",
    "section": "1.5",
    "name": "Precision",
+   "terms": [
+    "precision"
+   ],
    "statement": "Precision is how closely a measurement matches the same measurement when repeated."
   },
   {
@@ -556,13 +725,28 @@
    "kind": "idea",
    "section": "1.6",
    "name": "Dimensional analysis",
-   "statement": "The units of quantities must be subjected to the same mathematical operations as their numbers. That one premise is what lets a reader divide a distance by a time and get a speed, and it is also what lets the reader check a calculation by looking only at the units, since a wrong arrangement of factors gives a unit nobody wanted."
+   "terms": [
+    "dimensional analysis",
+    "factor-label method"
+   ],
+   "statement": "The units of quantities must be subjected to the same mathematical operations as their numbers. That one premise is what lets a reader divide a distance by a time and get a speed, and it is also what lets the reader check a calculation by looking only at the units, since a wrong arrangement of factors gives a unit nobody wanted.",
+   "forms": [
+    {
+     "id": "eq-speed",
+     "latex": "\\text{speed}=\\frac{\\text{distance}}{\\text{time}}",
+     "condition": "an average speed, computed from a measured distance and the time taken to cover it",
+     "anchor": "1.6-dimensional-analysis"
+    }
+   ]
   },
   {
    "id": "unit-conversion-factor",
    "kind": "definition",
    "section": "1.6",
    "name": "The unit conversion factor",
+   "terms": [
+    "unit conversion factor"
+   ],
    "statement": "A ratio of two equivalent quantities written in different units is equal to one, so multiplying by it changes a quantity's units without changing the quantity. Because the ratio can be written either way up, the reader chooses the arrangement that cancels the unit to be got rid of and leaves the one that is wanted."
   },
   {
@@ -599,7 +783,20 @@
    "section": "1.6",
    "name": "Converting between Celsius and Fahrenheit",
    "statement": "The Fahrenheit temperature is nine fifths of the Celsius temperature plus thirty-two, and the relation rearranges to give the Celsius temperature from the Fahrenheit one. Both forms are on the book's key equation list, and they are the conversion a reader meets outside the laboratory more often than any other.",
-   "eq": "eq-fahrenheit-from-celsius"
+   "forms": [
+    {
+     "id": "eq-fahrenheit-from-celsius",
+     "latex": "T_{\\text{°F}}=\\left(\\frac{9}{5}\\times T_{\\text{°C}}\\right)+32",
+     "ktex": "\\kTF=\\left(\\frac{9}{5}\\times \\kTC\\right)+32",
+     "anchor": "1.6-linear-not-proportional"
+    },
+    {
+     "id": "eq-celsius-from-fahrenheit",
+     "latex": "T_{\\text{°C}}=\\frac{5}{9}\\times \\left(T_{\\text{°F}}-32\\right)",
+     "ktex": "\\kTC=\\frac{5}{9}\\times \\left(\\kTF-32\\right)",
+     "anchor": "1.6-linear-not-proportional"
+    }
+   ]
   },
   {
    "id": "celsius-kelvin-conversion",
@@ -607,13 +804,29 @@
    "section": "1.6",
    "name": "Converting between Celsius and kelvin",
    "statement": "A kelvin and a Celsius degree are the same size, so the two scales differ only by where their zeros sit: adding 273.15 to a Celsius temperature gives the kelvin temperature and subtracting it goes back. The 273.15 was determined experimentally and is not exact, which matters when the result is rounded.",
-   "eq": "eq-kelvin-from-celsius"
+   "forms": [
+    {
+     "id": "eq-kelvin-from-celsius",
+     "latex": "T_{\\text{K}}=T_{\\text{°C}}+273.15",
+     "ktex": "\\kTK=\\kTC+273.15",
+     "anchor": "1.6-kelvin-scale"
+    },
+    {
+     "id": "eq-celsius-from-kelvin",
+     "latex": "T_{\\text{°C}}=T_{\\text{K}}-273.15",
+     "ktex": "\\kTC=\\kTK-273.15",
+     "anchor": "1.6-kelvin-scale"
+    }
+   ]
   },
   {
    "id": "fahrenheit",
    "kind": "definition",
    "section": "1.6",
    "name": "Fahrenheit, °F",
+   "terms": [
+    "Fahrenheit"
+   ],
    "statement": "The degree Fahrenheit (°F) is a unit of temperature; water freezes at 32 °F and boils at 212 °F on this scale."
   }
  ],

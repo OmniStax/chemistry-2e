@@ -80,6 +80,9 @@
    "kind": "definition",
    "section": "10.1",
    "name": "London dispersion forces",
+   "terms": [
+    "dispersion force"
+   ],
    "statement": "Because the electrons of an atom or molecule are in constant motion, it can develop an instantaneous dipole, which in turn induces a dipole in a neighbor; the two temporary dipoles attract. This dispersion force is present in all condensed phases, whatever the atoms or molecules."
   },
   {
@@ -101,6 +104,9 @@
    "kind": "definition",
    "section": "10.1",
    "name": "Dipole-dipole attractions",
+   "terms": [
+    "dipole-dipole attraction"
+   ],
    "statement": "A polar molecule has a partial positive end and a partial negative end, and the positive end of one polar molecule attracts the negative end of another. These attractions add to the dispersion forces, so a polar substance boils higher than a nonpolar one of similar mass."
   },
   {
@@ -108,6 +114,9 @@
    "kind": "definition",
    "section": "10.1",
    "name": "Hydrogen bonding",
+   "terms": [
+    "hydrogen bonding"
+   ],
    "statement": "When hydrogen is bonded to fluorine, oxygen or nitrogen, the large difference in electronegativity and the small sizes of the atoms concentrate the partial charges, and the attraction to a similar group in a nearby molecule is a particularly strong dipole-dipole attraction called a hydrogen bond. It is much weaker than a covalent bond but stronger than other intermolecular attractions."
   },
   {
@@ -122,6 +131,9 @@
    "kind": "definition",
    "section": "10.1",
    "name": "Intermolecular force",
+   "terms": [
+    "intermolecular force"
+   ],
    "statement": "An intermolecular force is a noncovalent attractive force between atoms, molecules or ions. Intermolecular forces are much weaker than the bonds within molecules, yet they decide many physical properties."
   },
   {
@@ -129,6 +141,9 @@
    "kind": "definition",
    "section": "10.1",
    "name": "Van der Waals force",
+   "terms": [
+    "van der Waals force"
+   ],
    "statement": "A van der Waals force is an attractive or repulsive force between molecules, a name that covers dipole-dipole attractions, dipole-induced dipole attractions and London dispersion forces."
   },
   {
@@ -136,6 +151,9 @@
    "kind": "definition",
    "section": "10.1",
    "name": "Instantaneous dipole",
+   "terms": [
+    "instantaneous dipole"
+   ],
    "statement": "An instantaneous dipole is a temporary dipole that exists for a brief moment when the electrons of an atom or molecule happen to be distributed unevenly."
   },
   {
@@ -143,6 +161,9 @@
    "kind": "definition",
    "section": "10.1",
    "name": "Induced dipole",
+   "terms": [
+    "induced dipole"
+   ],
    "statement": "An induced dipole is a temporary dipole formed when the electrons of an atom or molecule are distorted by the instantaneous dipole of a neighboring atom or molecule."
   },
   {
@@ -150,6 +171,9 @@
    "kind": "definition",
    "section": "10.1",
    "name": "Polarizability",
+   "terms": [
+    "polarizability"
+   ],
    "statement": "Polarizability is a measure of how easily a charge can distort the electron cloud of an atom or molecule. Larger atoms and molecules, whose valence electrons are held less tightly, are more polarizable."
   },
   {
@@ -157,6 +181,9 @@
    "kind": "definition",
    "section": "10.2",
    "name": "Viscosity",
+   "terms": [
+    "viscosity"
+   ],
    "statement": "The viscosity of a liquid is its resistance to flow. It is greater for liquids of structurally complex molecules with strong intermolecular forces, and it decreases as the temperature rises and the molecules move more rapidly."
   },
   {
@@ -171,6 +198,10 @@
    "kind": "definition",
    "section": "10.2",
    "name": "Surface tension",
+   "symbol": "T_surf",
+   "terms": [
+    "surface tension"
+   ],
    "statement": "Molecules at the surface of a liquid are attracted by only about half as many neighbors as molecules within it, so the liquid contracts to the smallest surface. Surface tension is the energy required to increase the surface area of a liquid; it makes a small drop spherical and lets a water strider stand on water."
   },
   {
@@ -178,6 +209,9 @@
    "kind": "definition",
    "section": "10.2",
    "name": "Capillary action",
+   "terms": [
+    "capillary action"
+   ],
    "statement": "When the adhesive forces between a liquid and a narrow tube or porous material are strong, combined with the cohesive forces within the liquid, the liquid flows upward against gravity until its weight balances the attraction. The narrower the tube, the higher the liquid climbs."
   },
   {
@@ -185,14 +219,25 @@
    "kind": "result",
    "section": "10.2",
    "name": "The height of capillary rise, $h = 2T\\cos\\theta / r\\rho g$",
+   "symbol": "θ_contact",
    "statement": "The height to which a liquid rises in a capillary tube is directly proportional to its surface tension and to the cosine of the contact angle, and inversely proportional to the radius of the tube and the density of the liquid. For water in glass the contact angle is 0°.",
-   "eq": "eq-capillary-rise"
+   "forms": [
+    {
+     "id": "eq-capillary-rise",
+     "latex": "h=\\frac{2T\\cos\\theta}{r\\rho g}",
+     "condition": "a liquid in a capillary tube of radius r",
+     "anchor": "10.2-capillary-rise"
+    }
+   ]
   },
   {
    "id": "cohesive-force",
    "kind": "definition",
    "section": "10.2",
    "name": "Cohesive force",
+   "terms": [
+    "cohesive force"
+   ],
    "statement": "A cohesive force is a force of attraction between identical molecules, such as the molecules of a liquid."
   },
   {
@@ -200,6 +245,9 @@
    "kind": "definition",
    "section": "10.2",
    "name": "Adhesive force",
+   "terms": [
+    "adhesive force"
+   ],
    "statement": "An adhesive force is a force of attraction between molecules of different chemical identities, such as a liquid and the surface it touches."
   },
   {
@@ -228,6 +276,9 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Boiling point and normal boiling point",
+   "terms": [
+    "boiling point"
+   ],
    "statement": "A liquid boils when its vapor pressure equals the pressure of the gas above it, so its boiling point depends on the surrounding pressure; the normal boiling point is the boiling point at 1 atm (101.3 kPa). A vapor pressure curve can be read as the boiling point at each pressure."
   },
   {
@@ -235,8 +286,27 @@
    "kind": "result",
    "section": "10.3",
    "name": "The Clausius-Clapeyron equation",
+   "symbol": "A_cc",
+   "terms": [
+    "Clausius-Clapeyron equation"
+   ],
    "statement": "The vapor pressure of a liquid depends exponentially on temperature, $P = Ae^{-\\Delta H_{\\text{vap}}/RT}$, so a plot of ln P against 1/T is a straight line whose slope is −ΔH<sub>vap</sub>/R. Temperature must be in kelvin.",
-   "eq": "eq-clausius-clapeyron"
+   "forms": [
+    {
+     "id": "eq-clausius-clapeyron",
+     "latex": "P=Ae^{-\\Delta H_{\\text{vap}}/RT}",
+     "ktex": "\\kP=Ae^{-\\kdHvap/R\\kT}",
+     "condition": "the vapor pressure of a liquid, with T in kelvin",
+     "anchor": "10.3-clausius"
+    },
+    {
+     "id": "eq-clausius-clapeyron-log",
+     "latex": "\\ln P=-\\frac{\\Delta H_{\\text{vap}}}{RT}+\\ln A",
+     "ktex": "\\ln \\kP=-\\frac{\\kdHvap}{R\\kT}+\\ln A",
+     "condition": "the logarithmic, linear form",
+     "anchor": "10.3-clausius"
+    }
+   ]
   },
   {
    "id": "clausius-clapeyron-calculations",
@@ -244,15 +314,32 @@
    "section": "10.3",
    "name": "Using the two-point Clausius-Clapeyron equation",
    "statement": "Given the vapor pressure at two temperatures, we can solve the two-point form for the enthalpy of vaporization; given one pair and the enthalpy of vaporization, we can find the vapor pressure at another temperature or the boiling point at another pressure.",
-   "eq": "eq-clausius-clapeyron-two-point"
+   "forms": [
+    {
+     "id": "eq-clausius-clapeyron-two-point",
+     "latex": "\\ln\\left(\\frac{P_2}{P_1}\\right)=\\frac{\\Delta H_{\\text{vap}}}{R}\\left(\\frac{1}{T_1}-\\frac{1}{T_2}\\right)",
+     "ktex": "\\ln\\left(\\frac{\\kPtwo}{\\kPone}\\right)=\\frac{\\kdHvap}{R}\\left(\\frac{1}{\\kTone}-\\frac{1}{\\kTtwo}\\right)",
+     "condition": "two vapor pressure-temperature pairs of one liquid",
+     "anchor": "10.3-clausius"
+    }
+   ]
   },
   {
    "id": "enthalpies-of-phase-change",
    "kind": "definition",
    "section": "10.3",
    "name": "Enthalpies of vaporization, fusion, and sublimation",
+   "symbol": "ΔH_vap",
    "statement": "Melting, vaporization and sublimation are endothermic, and freezing, condensation and deposition release the same heat with the opposite sign. Melting only partly overcomes the intermolecular attractions while vaporization overcomes them completely, so ΔH<sub>fus</sub> is less than ΔH<sub>vap</sub>, and by Hess’s law ΔH<sub>sub</sub> is about their sum.",
-   "eq": "eq-sublimation-sum"
+   "forms": [
+    {
+     "id": "eq-sublimation-sum",
+     "latex": "\\Delta H_{\\text{sub}}=\\Delta H_{\\text{fus}}+\\Delta H_{\\text{vap}}",
+     "ktex": "\\kdHsub=\\kdHfus+\\kdHvap",
+     "condition": "sublimation modeled as melting followed by vaporization (Hess's law)",
+     "anchor": "10.3-sublimation"
+    }
+   ]
   },
   {
    "id": "heating-curve",
@@ -273,6 +360,9 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Vaporization",
+   "terms": [
+    "vaporization"
+   ],
    "statement": "Vaporization is the change from the liquid state to the gaseous state."
   },
   {
@@ -280,6 +370,9 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Condensation",
+   "terms": [
+    "condensation"
+   ],
    "statement": "Condensation is the change from the gaseous state to the liquid state."
   },
   {
@@ -287,6 +380,9 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Melting",
+   "terms": [
+    "melting"
+   ],
    "statement": "Melting is the change from the solid state to the liquid state."
   },
   {
@@ -294,6 +390,9 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Freezing",
+   "terms": [
+    "freezing"
+   ],
    "statement": "Freezing is the change from the liquid state to the solid state."
   },
   {
@@ -301,6 +400,9 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Sublimation",
+   "terms": [
+    "sublimation"
+   ],
    "statement": "Sublimation is the change from the solid state directly to the gaseous state."
   },
   {
@@ -308,6 +410,9 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Deposition",
+   "terms": [
+    "deposition"
+   ],
    "statement": "Deposition is the change from the gaseous state directly to the solid state."
   },
   {
@@ -315,6 +420,9 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Dynamic equilibrium",
+   "terms": [
+    "dynamic equilibrium"
+   ],
    "statement": "A dynamic equilibrium is the state of a system in which reciprocal processes occur at equal rates, so that nothing changes overall although both processes continue."
   },
   {
@@ -322,6 +430,10 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Vapor pressure, $P$",
+   "symbol": "P",
+   "terms": [
+    "vapor pressure"
+   ],
    "statement": "The vapor pressure, or equilibrium vapor pressure, of a liquid or solid is the pressure exerted by its vapor in equilibrium with it at a given temperature."
   },
   {
@@ -329,6 +441,9 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Normal boiling point",
+   "terms": [
+    "normal boiling point"
+   ],
    "statement": "The normal boiling point of a liquid is the temperature at which its vapor pressure equals 1 atm (760 torr)."
   },
   {
@@ -336,6 +451,10 @@
    "kind": "definition",
    "section": "10.3",
    "name": "Melting point and freezing point",
+   "terms": [
+    "freezing point",
+    "melting point"
+   ],
    "statement": "The melting point of a substance is the temperature at which its solid and liquid phases are in equilibrium. The same temperature is called the freezing point when it is reached by cooling the liquid."
   },
   {
@@ -343,6 +462,9 @@
    "kind": "definition",
    "section": "10.4",
    "name": "Phase diagrams",
+   "terms": [
+    "phase diagram"
+   ],
    "statement": "A phase diagram combines the pressure-temperature curves of the liquid-gas, solid-liquid and solid-gas equilibria of a substance. Each region is the phase that is stable under those conditions, and each curve gives a transition temperature as a function of pressure."
   },
   {
@@ -357,6 +479,9 @@
    "kind": "definition",
    "section": "10.4",
    "name": "The triple point",
+   "terms": [
+    "triple point"
+   ],
    "statement": "The triple point is the temperature and pressure at which the solid, liquid and gas phases are in equilibrium. Below the triple-point pressure a substance cannot exist as a liquid, so it sublimes; freeze-drying and dry ice depend on this."
   },
   {
@@ -378,6 +503,9 @@
    "kind": "definition",
    "section": "10.4",
    "name": "Critical point",
+   "terms": [
+    "critical point"
+   ],
    "statement": "The critical point of a substance is the temperature and pressure above which its gas cannot be condensed into a liquid, the point at which its liquid-gas curve ends."
   },
   {
@@ -385,6 +513,9 @@
    "kind": "definition",
    "section": "10.4",
    "name": "Supercritical fluid",
+   "terms": [
+    "supercritical fluid"
+   ],
    "statement": "A supercritical fluid is a substance at a temperature and pressure higher than its critical point, with properties between those of a gas and a liquid."
   },
   {
@@ -420,6 +551,9 @@
    "kind": "definition",
    "section": "10.5",
    "name": "Crystalline solid",
+   "terms": [
+    "crystalline solid"
+   ],
    "statement": "A crystalline solid is a solid in which the particles are arranged in a definite repeating pattern."
   },
   {
@@ -427,6 +561,9 @@
    "kind": "definition",
    "section": "10.5",
    "name": "Amorphous solid",
+   "terms": [
+    "amorphous solid"
+   ],
    "statement": "An amorphous solid, or noncrystalline solid, is a solid in which the particles lack an ordered internal structure."
   },
   {
@@ -434,6 +571,9 @@
    "kind": "definition",
    "section": "10.5",
    "name": "Ionic solid",
+   "terms": [
+    "ionic solid"
+   ],
    "statement": "An ionic solid is a crystalline solid composed of positive and negative ions held together by strong electrostatic attractions."
   },
   {
@@ -441,6 +581,9 @@
    "kind": "definition",
    "section": "10.5",
    "name": "Metallic solid",
+   "terms": [
+    "metallic solid"
+   ],
    "statement": "A metallic solid is a crystalline solid composed of metal atoms."
   },
   {
@@ -448,6 +591,9 @@
    "kind": "definition",
    "section": "10.5",
    "name": "Covalent network solid",
+   "terms": [
+    "covalent network solid"
+   ],
    "statement": "A covalent network solid is a crystalline solid whose particles are held together by covalent bonds."
   },
   {
@@ -455,6 +601,9 @@
    "kind": "definition",
    "section": "10.5",
    "name": "Molecular solid",
+   "terms": [
+    "molecular solid"
+   ],
    "statement": "A molecular solid is a crystalline solid composed of neutral molecules held together by intermolecular forces of attraction."
   },
   {
@@ -462,6 +611,9 @@
    "kind": "definition",
    "section": "10.5",
    "name": "Vacancy",
+   "terms": [
+    "vacancy"
+   ],
    "statement": "A vacancy is a defect in a crystal where a position that should contain an atom or ion is empty."
   },
   {
@@ -469,6 +621,9 @@
    "kind": "definition",
    "section": "10.5",
    "name": "Interstitial sites",
+   "terms": [
+    "interstitial sites"
+   ],
    "statement": "Interstitial sites are the spaces between the regular particle positions in an array of atoms or ions."
   },
   {
@@ -476,6 +631,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "The unit cell and the lattice systems",
+   "terms": [
+    "unit cell"
+   ],
    "statement": "The structure of a crystal is described by its unit cell, its simplest repeating unit, whose lattice points mark the locations of atoms or ions and which repeats in three dimensions. A unit cell is defined by three edge lengths and three angles, giving seven lattice systems and fourteen unit cells."
   },
   {
@@ -525,14 +683,28 @@
    "kind": "result",
    "section": "10.6",
    "name": "X-ray diffraction and the Bragg equation, $n\\lambda = 2d\\sin\\theta$",
+   "terms": [
+    "Bragg equation"
+   ],
    "statement": "X-rays scattered by atoms in adjacent crystal planes interfere constructively only when the extra distance traveled is a whole number of wavelengths, which happens at the angle given by the Bragg equation; measuring the diffraction angles gives the spacing of the planes.",
-   "eq": "eq-bragg"
+   "forms": [
+    {
+     "id": "eq-bragg",
+     "latex": "n\\lambda=2d\\sin\\theta",
+     "ktex": "n\\klam=2d\\sin\\theta",
+     "condition": "constructive interference of X-rays scattered by planes a distance d apart",
+     "anchor": "10.6-xray"
+    }
+   ]
   },
   {
    "id": "space-lattice",
    "kind": "definition",
    "section": "10.6",
    "name": "Space lattice",
+   "terms": [
+    "space lattice"
+   ],
    "statement": "The space lattice of a crystal is the set of all points within it that have identical environments."
   },
   {
@@ -540,6 +712,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Coordination number",
+   "terms": [
+    "coordination number"
+   ],
    "statement": "The coordination number of an atom in a crystal is the number of atoms closest to it; in a complex, it is the number of atoms bonded to the central metal atom."
   },
   {
@@ -547,6 +722,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Simple cubic unit cell",
+   "terms": [
+    "simple cubic unit cell"
+   ],
    "statement": "A simple cubic unit cell, or primitive cubic unit cell, is a cube with lattice points only at its corners, the unit cell of the simple cubic structure."
   },
   {
@@ -554,6 +732,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Simple cubic structure",
+   "terms": [
+    "simple cubic structure"
+   ],
    "statement": "The simple cubic structure is a crystalline structure whose cubic unit cell has lattice points only at the corners."
   },
   {
@@ -561,6 +742,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Body-centered cubic unit cell",
+   "terms": [
+    "body-centered cubic unit cell"
+   ],
    "statement": "A body-centered cubic unit cell is the simplest repeating unit of a body-centered cubic crystal, a cube with lattice points at each corner and at its center."
   },
   {
@@ -568,6 +752,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Body-centered cubic (BCC) solid",
+   "terms": [
+    "body-centered cubic (BCC) solid"
+   ],
    "statement": "A body-centered cubic solid is a crystalline structure whose cubic unit cell has lattice points at the corners and in the center of the cell."
   },
   {
@@ -575,6 +762,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Face-centered cubic unit cell",
+   "terms": [
+    "face-centered cubic unit cell"
+   ],
    "statement": "A face-centered cubic unit cell is the simplest repeating unit of a face-centered cubic crystal, a cube with lattice points at each corner and at the center of each face."
   },
   {
@@ -582,6 +772,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Face-centered cubic (FCC) solid",
+   "terms": [
+    "face-centered cubic (FCC) solid"
+   ],
    "statement": "A face-centered cubic solid is a crystalline structure whose cubic unit cell has lattice points on the corners and in the center of each face."
   },
   {
@@ -589,6 +782,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Isomorphous",
+   "terms": [
+    "isomorphous"
+   ],
    "statement": "Substances are isomorphous when they possess the same crystalline structure."
   },
   {
@@ -596,6 +792,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Hexagonal closest packing (HCP)",
+   "terms": [
+    "hexagonal closest packing (HCP)"
+   ],
    "statement": "Hexagonal closest packing is a crystalline structure in which closely packed layers of atoms or ions are stacked in two alternating layers, ABAB…."
   },
   {
@@ -603,6 +802,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Cubic closest packing (CCP)",
+   "terms": [
+    "cubic closest packing (CCP)"
+   ],
    "statement": "Cubic closest packing is a crystalline structure in which closely packed layers of atoms or ions are stacked in three alternating layers, ABCABC…; its unit cell is face-centered cubic."
   },
   {
@@ -610,6 +812,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Hole",
+   "terms": [
+    "hole"
+   ],
    "statement": "A hole, or interstice, is a space between the atoms or ions of a crystal."
   },
   {
@@ -617,6 +822,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Tetrahedral hole",
+   "terms": [
+    "tetrahedral hole"
+   ],
    "statement": "A tetrahedral hole is the space formed by four atoms or ions of a crystal at the corners of a tetrahedron."
   },
   {
@@ -624,6 +832,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Octahedral hole",
+   "terms": [
+    "octahedral hole"
+   ],
    "statement": "An octahedral hole is the open space in a crystal at the center of six particles located at the corners of an octahedron."
   },
   {
@@ -631,6 +842,9 @@
    "kind": "definition",
    "section": "10.6",
    "name": "Diffraction",
+   "terms": [
+    "diffraction"
+   ],
    "statement": "Diffraction is the redirection of electromagnetic radiation when it encounters a physical barrier of dimensions similar to its wavelength."
   },
   {
@@ -638,6 +852,9 @@
    "kind": "idea",
    "section": "10.6",
    "name": "X-ray crystallography",
+   "terms": [
+    "X-ray crystallography"
+   ],
    "statement": "X-ray crystallography is the experimental technique that finds the distances between the atoms of a crystal by measuring the angles at which X-rays are diffracted as they pass through it."
   }
  ],

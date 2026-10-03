@@ -218,7 +218,6 @@
   {
    "sym": "ΔH",
    "concept": "enthalpy-change-at-constant-pressure",
-   "type": "energy",
    "meaning": "the enthalpy change of the reaction, which decides how the equilibrium shifts with temperature",
    "unit": "kJ",
    "section": "13.3"

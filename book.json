@@ -515,19 +515,16 @@
     {
       "sym": "E_n",
       "latex": "E_{n}",
-      "type": "energy",
       "macro": "\\kEn"
     },
     {
       "sym": "E_i",
       "latex": "E_{\\text{i}}",
-      "type": "energy",
       "macro": "\\kEi"
     },
     {
       "sym": "E_f",
       "latex": "E_{\\text{f}}",
-      "type": "energy",
       "macro": "\\kEf"
     },
     {
@@ -694,7 +691,6 @@
     {
       "sym": "Π",
       "latex": "\\Pi",
-      "type": "pressure",
       "macro": "\\kosm"
     },
     {
@@ -4514,6 +4510,7 @@
       "kind": "result",
       "section": "5.3",
       "name": "Enthalpy change at constant pressure",
+      "type": "energy",
       "statement": "Enthalpy is the sum of a system's internal energy and the product of its pressure and volume. For a process at constant pressure whose only work is expansion work, the enthalpy change equals the heat flow, which is why chemists, who usually work at the constant pressure of the atmosphere, use enthalpy to describe the heat of a reaction. The heat measured in a bomb calorimeter, at constant volume, is not ΔH.",
       "forms": [
         {
@@ -6390,6 +6387,7 @@
       "kind": "result",
       "section": "6.2",
       "name": "Bohr energy levels",
+      "type": "energy",
       "statement": "The energy of an electron in the orbit labeled n is −k times the square of the nuclear charge, divided by the square of n. The constant k gathers the electron mass, the electron charge and Planck’s constant. The energies are negative because they are measured from E = 0, the ionization limit, where the electron has been removed from the nucleus altogether. They crowd toward zero as n grows, so the rungs of the ladder are far apart at the bottom and close together at the top. The energy needed to ionize a ground-state hydrogen atom is k itself.",
       "forms": [
         {
@@ -7415,6 +7413,7 @@
       "terms": [
         "osmotic pressure"
       ],
+      "type": "pressure",
       "statement": "Solvent diffuses through a semipermeable membrane into a solution faster than it returns, until the solution’s rising pressure equalizes the rates; that pressure is the osmotic pressure, $\\Pi = MRT$. Applying more pressure reverses osmosis, and a cell swells or shrivels in a hypotonic or hypertonic solution.",
       "forms": [
         {

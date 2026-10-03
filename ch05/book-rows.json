@@ -424,6 +424,7 @@
       "kind": "result",
       "section": "5.3",
       "name": "Enthalpy change at constant pressure",
+      "type": "energy",
       "statement": "Enthalpy is the sum of a system's internal energy and the product of its pressure and volume. For a process at constant pressure whose only work is expansion work, the enthalpy change equals the heat flow, which is why chemists, who usually work at the constant pressure of the atmosphere, use enthalpy to describe the heat of a reaction. The heat measured in a bomb calorimeter, at constant volume, is not ΔH.",
       "forms": [
         {

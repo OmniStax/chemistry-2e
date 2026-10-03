@@ -80,7 +80,6 @@
   {
    "sym": "Π",
    "latex": "\\Pi",
-   "type": "pressure",
    "macro": "\\kosm"
   },
   {
@@ -459,6 +458,7 @@
    "terms": [
     "osmotic pressure"
    ],
+   "type": "pressure",
    "statement": "Solvent diffuses through a semipermeable membrane into a solution faster than it returns, until the solution’s rising pressure equalizes the rates; that pressure is the osmotic pressure, $\\Pi = MRT$. Applying more pressure reverses osmosis, and a cell swells or shrivels in a hypotonic or hypertonic solution.",
    "forms": [
     {

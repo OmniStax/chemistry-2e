@@ -4,19 +4,16 @@
     {
       "sym": "E_n",
       "latex": "E_{n}",
-      "type": "energy",
       "macro": "\\kEn"
     },
     {
       "sym": "E_i",
       "latex": "E_{\\text{i}}",
-      "type": "energy",
       "macro": "\\kEi"
     },
     {
       "sym": "E_f",
       "latex": "E_{\\text{f}}",
-      "type": "energy",
       "macro": "\\kEf"
     },
     {
@@ -398,6 +395,7 @@
       "kind": "result",
       "section": "6.2",
       "name": "Bohr energy levels",
+      "type": "energy",
       "statement": "The energy of an electron in the orbit labeled n is −k times the square of the nuclear charge, divided by the square of n. The constant k gathers the electron mass, the electron charge and Planck’s constant. The energies are negative because they are measured from E = 0, the ionization limit, where the electron has been removed from the nucleus altogether. They crowd toward zero as n grows, so the rungs of the ladder are far apart at the bottom and close together at the top. The energy needed to ionize a ground-state hydrogen atom is k itself.",
       "forms": [
         {

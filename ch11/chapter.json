@@ -195,7 +195,6 @@
   {
    "sym": "Π",
    "concept": "osmotic-pressure",
-   "type": "pressure",
    "meaning": "the osmotic pressure of the solution",
    "unit": "atm",
    "section": "11.4",

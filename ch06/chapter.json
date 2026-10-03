@@ -123,7 +123,6 @@
     {
       "sym": "E_n",
       "concept": "bohr-energy-levels",
-      "type": "energy",
       "meaning": "the energy of an electron in the Bohr orbit with quantum number n, measured from the ionization limit and so always negative",
       "unit": "J",
       "section": "6.2",
@@ -181,7 +180,6 @@
     {
       "sym": "E_i",
       "concept": "bohr-energy-levels",
-      "type": "energy",
       "meaning": "the energy of the orbit the electron starts in",
       "unit": "J",
       "section": "6.2",
@@ -190,7 +188,6 @@
     {
       "sym": "E_f",
       "concept": "bohr-energy-levels",
-      "type": "energy",
       "meaning": "the energy of the orbit the electron ends in",
       "unit": "J",
       "section": "6.2",

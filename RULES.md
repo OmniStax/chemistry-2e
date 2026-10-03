@@ -52,20 +52,6 @@ The key covers the odd-numbered exercises of each section (873 of 1736), inline 
 
 CC BY-NC-SA 4.0, copyright Rice University, published by OpenStax, by Paul Flowers, Klaus Theopold, Richard Langley and William R. Robinson; the contributing authors are not named in the footer. Adapted pages are shared under the same licence. A section's publisher page is the `openstax` prefix of `book.json` followed by the section's `slug` from `chapter.json`. Third-party credits are a "(credit: …)" clause at the end of a caption, sometimes one per panel, and a kept photograph keeps the whole clause. All of this is in `book.json`.
 
-## Voice
-
-Full sentences in a plain, measured register on the formal side of plain: "we" when working something out, "you" when addressing the reader, "note that" and a parenthetical aside rather than a colon, the full name before the symbol, the reason before the rule. Write against these:
-
-> Whether you are aware or not, chemistry is part of your everyday world. In this course, you will learn many of the essential principles underlying the chemistry of modern-day life.
-
-> It is important to understand that no single boron atom weighs exactly 10.8 amu; 10.8 amu is the average mass of all boron atoms, and individual boron atoms weigh either approximately 10 amu or 11 amu.
-
-> The spontaneity of a process is not correlated to the speed of the process. A spontaneous change may be so rapid that it is essentially instantaneous or so slow that it cannot be observed over any practical period of time.
-
-Avoid fragment-headed captions, semicolon chains and editorial framing.
-
-AI-written text is pedagogical, crisp and active, speaks to the learner, and never narrates its own choices, over-describes or hedges (root rule 17). Check a chapter with `python3 tools/voicelint.py "Chemistry 2e" --list chNN` from `omnistax-content/`.
-
 ## Types
 
 Fourteen types in `book.json`, in scheme order: time, amount of substance, mass, volume, concentration, pressure, temperature, energy, entropy, rate, wavelength, frequency, potential, charge. Untyped and in ink: length, density, a count of particles, a percent, a mole ratio, an equilibrium constant, a reaction quotient, a rate constant. `COLOR.md` says why each type is there and what its variants are.
@@ -96,6 +82,8 @@ Tables stay in the text as `div.book-table` with the publisher's number as eyebr
 
 ## Files
 
-The root layout, plus `sheets/`, `COLOR.md`, `modules.json`, `toc.md` and `tools/` (`convert.py`, `mergebook.py`, `elements.py`, `appendices.py`). Template sections: `ch01/1.4` (sliders, `F.select`, detents, `F.hover`, `F.cat`, a photograph, tables in `div.book-table`), `ch01/1.6` (one still Figure, a long exercise list), `ch07/7.6` (3D through `F.view3d`, `F.mesh`, `F.el`, `F.choice`); `ch01/intro/` and `intro/` for introduction pages; `ch01/COLOR.md`, `config.md`, `exploration.md` and `book-rows.json` for the chapter files. `text.html` holds the prose verbatim in `<section id>` blocks with `<h2>` headers in the book's voice, `<h3>` for the book's sub-headers and examples (`<div class="example" id="ex-…">`), `<sub>` and `<sup>` for formulas in prose and LaTeX in math, `\k` macros only for typed symbols, and every `<figure>` carrying `id`, `class`, `data-figure`, `data-original` and `data-original-caption` in agreement with its row. `figures.js` is one function per figure through `F.sim(root, id, H)` with colours only through `C(type)`, `PAL`, `F.el` and `F.cat`, never a hex literal, with one exception: a colour that is a physical fact and belongs to none of those four families, as the four colours of the NFPA hazard diamond of 1.3 do, is written as its own value in a named constant, named as the fact it is in the code and in the plan line, and stands unchanged in both themes.
+The root layout, plus `sheets/`, `COLOR.md`, `modules.json`, `toc.md` and `tools/` (`convert.py`, `mergebook.py`, `elements.py`, `appendices.py`).
 
-The app builds one book by environment: every command from `omnistax-web/` carries `OMNISTAX_BOOKS=chemistry-2e`, with `PATH=/home/flober/.nvm/versions/node/v20.20.2/bin:$PATH`; `astro build` takes `--outDir` outside the repo, never `dist`. Pages serve at `/chemistry-2e/<chapter>/<section>/`.
+## Template sections
+
+`ch01/1.4` (sliders, `F.select`, detents, `F.hover`, `F.cat`, a photograph, tables in `div.book-table`), `ch01/1.6` (one still Figure, a long exercise list), `ch07/7.6` (3D through `F.view3d`, `F.mesh`, `F.el`, `F.choice`); `ch01/intro/` and `intro/` for introduction pages; `ch01/COLOR.md`, `config.md`, `exploration.md` and `book-rows.json` for the chapter files.

@@ -1,16 +1,16 @@
 {
   "types": [],
   "symbols": [
-    {"sym": "ΔT", "latex": "\\Delta T", "type": "temperature", "macro": "\\kdT"},
-    {"sym": "T_initial", "latex": "T_{\\text{initial}}", "type": "temperature", "macro": "\\kTinit"},
-    {"sym": "T_final", "latex": "T_{\\text{final}}", "type": "temperature", "macro": "\\kTfin"},
+    {"sym": "ΔT", "latex": "\\Delta T", "macro": "\\kdT"},
+    {"sym": "T_initial", "latex": "T_{\\text{initial}}", "macro": "\\kTinit"},
+    {"sym": "T_final", "latex": "T_{\\text{final}}", "macro": "\\kTfin"},
     {"sym": "C_heat", "latex": "C"},
     {"sym": "c_spec", "latex": "c"},
-    {"sym": "U", "latex": "U", "type": "energy", "macro": "\\kU"},
-    {"sym": "H", "latex": "H", "type": "energy", "macro": "\\kH"},
-    {"sym": "q_p", "latex": "q_{\\text{p}}", "type": "energy", "macro": "\\kqp"},
-    {"sym": "ΔH_c°", "latex": "\\Delta H_{\\text{c}}^{\\circ}", "type": "energy", "macro": "\\kdHc"},
-    {"sym": "ΔV", "latex": "\\Delta V", "type": "volume", "macro": "\\kdV"},
+    {"sym": "U", "latex": "U", "macro": "\\kU"},
+    {"sym": "H", "latex": "H", "macro": "\\kH"},
+    {"sym": "q_p", "latex": "q_{\\text{p}}", "macro": "\\kqp"},
+    {"sym": "ΔH_c°", "latex": "\\Delta H_{\\text{c}}^{\\circ}", "macro": "\\kdHc"},
+    {"sym": "ΔV", "latex": "\\Delta V", "macro": "\\kdV"},
     {"sym": "n_coef", "latex": "n"}
   ],
   "concepts": [
@@ -23,6 +23,7 @@
       "terms": [
         "energy"
       ],
+      "type": "energy",
       "statement": "Energy is the capacity to supply heat or do work. Work is one of the two things energy does: moving matter against an opposing force, as a pump does when it pushes air into a tire."
     },
     {
@@ -55,6 +56,7 @@
       "terms": [
         "heat"
       ],
+      "type": "energy",
       "statement": "Heat is the transfer of thermal energy between two bodies at different temperatures. It flows spontaneously from the hotter body to the cooler one, lowering the average kinetic energy of the first and raising that of the second, until the two reach thermal equilibrium at one temperature."
     },
     {
@@ -113,6 +115,7 @@
       "terms": [
         "work"
       ],
+      "type": "energy",
       "statement": "Work is the transfer of energy that moves matter against an opposing force, or that changes external, macroscopic variables such as pressure and volume."
     },
     {
@@ -134,6 +137,7 @@
       "terms": [
         "kinetic energy"
       ],
+      "type": "energy",
       "statement": "Kinetic energy is the energy an object has because of its motion, equal to one-half the product of its mass and the square of its velocity.",
       "forms": [
         {
@@ -454,6 +458,7 @@
       "terms": [
         "standard enthalpy of formation"
       ],
+      "type": "energy",
       "statement": "A standard state is an agreed set of reference conditions, 1 bar and 1 M, with 298.15 K assumed, and ΔH° marks an enthalpy change under them. The standard enthalpy of formation is ΔH° for forming exactly 1 mole of a substance from its elements in their most stable states, so an element in its most stable form has a value of zero and the formation equation often carries fractional coefficients."
     },
     {
@@ -501,6 +506,7 @@
       "terms": [
         "internal energy"
       ],
+      "type": "energy",
       "statement": "The internal energy of a system is the total of all possible kinds of energy present in the substances it contains."
     },
     {
@@ -531,6 +537,7 @@
       "terms": [
         "enthalpy"
       ],
+      "type": "energy",
       "statement": "The enthalpy of a system is the sum of its internal energy and the product of its pressure and volume.",
       "forms": [
         {
@@ -550,6 +557,7 @@
       "terms": [
         "enthalpy change"
       ],
+      "type": "energy",
       "statement": "The enthalpy change of a process is the change in the enthalpy of the system, equal to the heat it releases or absorbs when the process takes place at constant pressure.",
       "forms": [
         {
@@ -590,6 +598,7 @@
       "terms": [
         "standard enthalpy of combustion"
       ],
+      "type": "energy",
       "statement": "The standard enthalpy of combustion of a substance is the enthalpy change when 1 mole of it undergoes complete combustion under standard state conditions."
     }
   ],

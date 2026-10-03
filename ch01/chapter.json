@@ -48,7 +48,6 @@
   {
    "sym": "m",
    "concept": "mass",
-   "type": "mass",
    "meaning": "the mass of a sample, the measure of the amount of matter in it",
    "unit": "g",
    "section": "1.4",
@@ -57,7 +56,6 @@
   {
    "sym": "V",
    "concept": "volume",
-   "type": "volume",
    "meaning": "the volume of a sample, the amount of space it occupies",
    "unit": "cm³",
    "section": "1.4",
@@ -74,7 +72,6 @@
   {
    "sym": "t",
    "concept": "time",
-   "type": "time",
    "meaning": "an interval of time, measured in the SI base unit of time",
    "unit": "s",
    "section": "1.4",
@@ -83,7 +80,6 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "the temperature of a sample, measured in the SI base unit of temperature",
    "unit": "K",
    "section": "1.4",
@@ -92,7 +88,6 @@
   {
    "sym": "T_C",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "a temperature read on the Celsius scale, on which water freezes at 0 °C and boils at 100 °C",
    "unit": "°C",
    "section": "1.6",
@@ -101,7 +96,6 @@
   {
    "sym": "T_F",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "a temperature read on the Fahrenheit scale, on which water freezes at 32 °F and boils at 212 °F",
    "unit": "°F",
    "section": "1.6",
@@ -110,7 +104,6 @@
   {
    "sym": "T_K",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "a temperature read on the kelvin scale, an absolute scale whose zero is the lowest temperature that can theoretically be achieved",
    "unit": "K",
    "section": "1.6",

@@ -4,7 +4,6 @@
   {
    "sym": "C_g",
    "latex": "C_{\\text{g}}",
-   "type": "concentration",
    "macro": "\\kCg"
   },
   {
@@ -14,31 +13,26 @@
   {
    "sym": "P_g",
    "latex": "P_{\\text{g}}",
-   "type": "pressure",
    "macro": "\\kPg"
   },
   {
    "sym": "m_molal",
    "latex": "m",
-   "type": "concentration",
    "macro": "\\kmolal"
   },
   {
    "sym": "P_A*",
    "latex": "P_{\\text{A}}^{*}",
-   "type": "pressure",
    "macro": "\\kPAstar"
   },
   {
    "sym": "P_i",
    "latex": "P_{i}",
-   "type": "pressure",
    "macro": "\\kPcomp"
   },
   {
    "sym": "P_i*",
    "latex": "P_{i}^{*}",
-   "type": "pressure",
    "macro": "\\kPcompstar"
   },
   {
@@ -48,13 +42,11 @@
   {
    "sym": "P_solution",
    "latex": "P_{\\text{solution}}",
-   "type": "pressure",
    "macro": "\\kPsoln"
   },
   {
    "sym": "P_solvent*",
    "latex": "P_{\\text{solvent}}^{*}",
-   "type": "pressure",
    "macro": "\\kPsolvstar"
   },
   {
@@ -70,7 +62,6 @@
   {
    "sym": "ΔT_b",
    "latex": "\\Delta T_{\\text{b}}",
-   "type": "temperature",
    "macro": "\\kdTb"
   },
   {
@@ -80,7 +71,6 @@
   {
    "sym": "ΔT_f",
    "latex": "\\Delta T_{\\text{f}}",
-   "type": "temperature",
    "macro": "\\kdTf"
   },
   {
@@ -428,6 +418,7 @@
    "terms": [
     "boiling point elevation"
    ],
+   "type": "temperature",
    "statement": "Because a nonvolatile solute lowers the vapor pressure, the solution must be hotter than the pure solvent before its vapor pressure reaches the atmosphere’s, and the elevation is proportional to the molality of all solute species, $\\Delta T_{\\text{b}} = K_{\\text{b}}m$.",
    "forms": [
     {
@@ -448,6 +439,7 @@
    "terms": [
     "freezing point depression"
    ],
+   "type": "temperature",
    "statement": "A solution freezes at a lower temperature than its pure solvent, by an amount proportional to the molality of all solute species, $\\Delta T_{\\text{f}} = K_{\\text{f}}m$, because only the solvent freezes out; salted roads and antifreeze exploit it.",
    "forms": [
     {
@@ -513,6 +505,7 @@
    "terms": [
     "molality"
    ],
+   "type": "concentration",
    "statement": "Molality is a concentration unit defined as the number of moles of solute divided by the mass of the solvent in kilograms. Since it is built from moles and masses, it does not change with temperature.",
    "forms": [
     {

@@ -42,7 +42,6 @@
     {
       "sym": "λ",
       "concept": "wavelength",
-      "type": "wavelength",
       "meaning": "the wavelength of a wave, the distance between two consecutive peaks or troughs",
       "unit": "m",
       "section": "6.1",
@@ -51,7 +50,6 @@
     {
       "sym": "ν",
       "concept": "frequency",
-      "type": "frequency",
       "meaning": "the frequency of a wave, the number of wave cycles that pass a specified point in space per unit time",
       "unit": "Hz",
       "section": "6.1",
@@ -101,7 +99,6 @@
     {
       "sym": "T",
       "concept": "temperature",
-      "type": "temperature",
       "meaning": "the temperature of a blackbody, the single parameter on which its distribution depends",
       "unit": "K",
       "section": "6.1",
@@ -202,7 +199,6 @@
     {
       "sym": "λ",
       "concept": "wavelength",
-      "type": "wavelength",
       "meaning": "the wavelength of the photon emitted or absorbed when an electron moves between two orbits",
       "unit": "m",
       "section": "6.2",
@@ -211,7 +207,6 @@
     {
       "sym": "ν",
       "concept": "frequency",
-      "type": "frequency",
       "meaning": "the frequency of that photon, to which its energy is proportional",
       "unit": "Hz",
       "section": "6.2",
@@ -253,7 +248,6 @@
     {
       "sym": "m",
       "concept": "mass",
-      "type": "mass",
       "meaning": "the mass of the particle",
       "unit": "kg",
       "section": "6.3",
@@ -317,7 +311,6 @@
     {
       "sym": "E",
       "concept": "energy-and-work",
-      "type": "energy",
       "meaning": "the total energy of the quantum particle in the Schrödinger equation",
       "unit": "J",
       "section": "6.3",
@@ -391,7 +384,6 @@
     {
       "sym": "IE",
       "concept": "ionization-energy",
-      "type": "energy",
       "meaning": "an ionization energy, the energy required to remove an electron from a gaseous atom or ion; IE₁ for the first electron, IE₂ for the second",
       "unit": "kJ/mol",
       "section": "6.5",
@@ -400,7 +392,6 @@
     {
       "sym": "EA",
       "concept": "electron-affinity",
-      "type": "energy",
       "meaning": "the electron affinity, the energy change when a gaseous atom accepts an electron",
       "unit": "kJ/mol",
       "section": "6.5",

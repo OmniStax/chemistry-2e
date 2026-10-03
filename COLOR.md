@@ -3,8 +3,8 @@
 Prepared 2026-09-12 in the full-book pass (root rule 22). Root rule 7
 holds: a colour belongs to a type, a type is a kind of quantity, the
 book declares its types and says nothing about their hues, and a page
-colours only the types its figures draw. Rule 7 now names four families
-of colour, and chemistry is the book that uses all four: the scheme's
+colours only the types its figures draw. Rule 7 names five families
+of colour, and chemistry uses four of them: the scheme's
 type hues, the chemist's own habit of colouring every atom by element,
 the colours that are physical facts, and a small categorical palette for
 instances that must be told apart. This plan says what each family is
@@ -12,7 +12,7 @@ for in this book and how they are kept apart. A chapter's own `COLOR.md`
 refines this one for the quantities it draws; it may bind fewer types,
 never invent a hue.
 
-## The four families
+## Its four families
 
 **Quantities are coloured by the scheme.** An amount of substance, a
 mass, a volume, a concentration, a pressure, a temperature, an energy

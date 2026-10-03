@@ -30,7 +30,6 @@
   {
    "sym": "q",
    "concept": "heat-flow",
-   "type": "energy",
    "meaning": "the heat absorbed or released by a substance, positive when the substance gains thermal energy and negative when it loses it",
    "unit": "J",
    "section": "5.1",
@@ -55,7 +54,6 @@
   {
    "sym": "m",
    "concept": "mass",
-   "type": "mass",
    "meaning": "the mass of the substance that absorbs or releases the heat",
    "unit": "g",
    "section": "5.1",
@@ -64,7 +62,6 @@
   {
    "sym": "ΔT",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "the temperature change of the substance, its final temperature minus its initial temperature",
    "unit": "°C",
    "section": "5.1",
@@ -73,7 +70,6 @@
   {
    "sym": "T_initial",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "the temperature of the substance before the heat is gained or lost",
    "unit": "°C",
    "section": "5.1",
@@ -82,7 +78,6 @@
   {
    "sym": "T_final",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "the temperature of the substance after the heat is gained or lost",
    "unit": "°C",
    "section": "5.1",
@@ -91,7 +86,6 @@
   {
    "sym": "U",
    "concept": "internal-energy",
-   "type": "energy",
    "meaning": "the internal energy of a system, the total of all possible kinds of energy present in it",
    "unit": "J",
    "section": "5.3",
@@ -100,7 +94,6 @@
   {
    "sym": "ΔU",
    "concept": "internal-energy",
-   "type": "energy",
    "meaning": "the change in the internal energy of a system",
    "unit": "J",
    "section": "5.3",
@@ -109,7 +102,6 @@
   {
    "sym": "w",
    "concept": "work",
-   "type": "energy",
    "meaning": "the work done on the system, positive when the surroundings do work on the system and negative when the system does work on the surroundings",
    "unit": "J",
    "section": "5.3",
@@ -118,7 +110,6 @@
   {
    "sym": "H",
    "concept": "enthalpy",
-   "type": "energy",
    "meaning": "the enthalpy of a system, the sum of its internal energy and the product of its pressure and volume",
    "unit": "J",
    "section": "5.3",
@@ -127,7 +118,6 @@
   {
    "sym": "ΔH",
    "concept": "enthalpy-change",
-   "type": "energy",
    "meaning": "the enthalpy change of a process, equal to the heat flow when the process occurs at constant pressure with only expansion work",
    "unit": "kJ",
    "section": "5.3",
@@ -136,7 +126,6 @@
   {
    "sym": "P",
    "concept": "gas-pressure",
-   "type": "pressure",
    "meaning": "the pressure of the system, constant for the processes the enthalpy change describes",
    "unit": "atm",
    "section": "5.3",
@@ -145,7 +134,6 @@
   {
    "sym": "V",
    "concept": "volume",
-   "type": "volume",
    "meaning": "the volume of the system",
    "unit": "L",
    "section": "5.3",
@@ -154,7 +142,6 @@
   {
    "sym": "ΔV",
    "concept": "volume",
-   "type": "volume",
    "meaning": "the change in the volume of the system as it expands or contracts",
    "unit": "L",
    "section": "5.3",
@@ -163,7 +150,6 @@
   {
    "sym": "q_p",
    "concept": "heat-flow",
-   "type": "energy",
    "meaning": "the heat of a reaction under conditions of constant pressure",
    "unit": "kJ",
    "section": "5.3",
@@ -172,7 +158,6 @@
   {
    "sym": "ΔH°",
    "concept": "enthalpy-change",
-   "type": "energy",
    "meaning": "the standard enthalpy change, the enthalpy change for a process occurring under standard state conditions",
    "unit": "kJ",
    "section": "5.3",
@@ -181,7 +166,6 @@
   {
    "sym": "ΔH_c°",
    "concept": "standard-enthalpy-of-combustion",
-   "type": "energy",
    "meaning": "the standard enthalpy of combustion, the enthalpy change when 1 mole of a substance burns completely under standard state conditions",
    "unit": "kJ/mol",
    "section": "5.3",
@@ -190,7 +174,6 @@
   {
    "sym": "ΔH_f°",
    "concept": "standard-enthalpy-of-formation",
-   "type": "energy",
    "meaning": "the standard enthalpy of formation, the enthalpy change when exactly 1 mole of a substance forms from its elements in their most stable states under standard state conditions",
    "unit": "kJ/mol",
    "section": "5.3",

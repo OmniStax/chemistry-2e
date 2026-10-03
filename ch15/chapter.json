@@ -44,7 +44,6 @@
   {
    "sym": "[M^m+]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molar concentration of the cation M<sup>m+</sup> in a saturated solution",
    "unit": "mol/L (M)",
    "section": "15.1"
@@ -52,7 +51,6 @@
   {
    "sym": "[X^n-]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molar concentration of the anion X<sup>n–</sup> in a saturated solution",
    "unit": "mol/L (M)",
    "section": "15.1"

@@ -1,11 +1,11 @@
 {
  "types": [],
  "symbols": [
-  {"sym": "rate_f", "latex": "\\text{rate}_{f}", "type": "rate", "macro": "\\kratef"},
-  {"sym": "rate_r", "latex": "\\text{rate}_{r}", "type": "rate", "macro": "\\krater"},
-  {"sym": "[C]", "latex": "[\\text{C}]", "type": "concentration", "macro": "\\kconcC"},
-  {"sym": "[D]", "latex": "[\\text{D}]", "type": "concentration", "macro": "\\kconcD"},
-  {"sym": "P_D", "latex": "P_D", "type": "pressure", "macro": "\\kPD"},
+  {"sym": "rate_f", "latex": "\\text{rate}_{f}", "macro": "\\kratef"},
+  {"sym": "rate_r", "latex": "\\text{rate}_{r}", "macro": "\\krater"},
+  {"sym": "[C]", "latex": "[\\text{C}]", "macro": "\\kconcC"},
+  {"sym": "[D]", "latex": "[\\text{D}]", "macro": "\\kconcD"},
+  {"sym": "P_D", "latex": "P_D", "macro": "\\kPD"},
   {"sym": "k_f", "latex": "k_{f}"},
   {"sym": "k_r", "latex": "k_{r}"},
   {"sym": "Q_conc", "latex": "Q_{c}"},

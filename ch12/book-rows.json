@@ -4,43 +4,36 @@
   {
    "sym": "[A]",
    "latex": "[\\text{A}]",
-   "type": "concentration",
    "macro": "\\kconcA"
   },
   {
    "sym": "[A]_0",
    "latex": "[\\text{A}]_{0}",
-   "type": "concentration",
    "macro": "\\kconcAz"
   },
   {
    "sym": "[A]_t",
    "latex": "[\\text{A}]_{t}",
-   "type": "concentration",
    "macro": "\\kconcAt"
   },
   {
    "sym": "[B]",
    "latex": "[\\text{B}]",
-   "type": "concentration",
    "macro": "\\kconcB"
   },
   {
    "sym": "Δ[A]",
    "latex": "\\Delta[\\text{A}]",
-   "type": "concentration",
    "macro": "\\kdconcA"
   },
   {
    "sym": "Δ[B]",
    "latex": "\\Delta[\\text{B}]",
-   "type": "concentration",
    "macro": "\\kdconcB"
   },
   {
    "sym": "E_a",
    "latex": "E_{\\text{a}}",
-   "type": "energy",
    "macro": "\\kEa"
   },
   {
@@ -78,6 +71,7 @@
    "terms": [
     "rate of reaction"
    ],
+   "type": "rate",
    "statement": "The rate of a reaction is the change in the amount or concentration of a reactant or product per unit time. Since a reactant’s concentration falls as the reaction proceeds, its change is multiplied by −1 so that the rate is, by convention, a positive quantity."
   },
   {
@@ -359,6 +353,7 @@
    "terms": [
     "half-life of a reaction"
    ],
+   "type": "time",
    "statement": "The half-life is the time required for one-half of a given amount of reactant to be consumed; in each succeeding half-life, half of the remaining reactant is consumed."
   },
   {
@@ -421,6 +416,7 @@
    "terms": [
     "activation energy"
    ],
+   "type": "energy",
    "statement": "The activation energy is the minimum energy a collision needs to form products; a collision with enough energy and the proper orientation forms an unstable, short-lived activated complex, or transition state. A reaction is slow when its activation energy is much larger than the average kinetic energy of the molecules."
   },
   {

@@ -16,43 +16,36 @@
   {
    "sym": "ΔH°",
    "latex": "\\Delta H^{\\circ}",
-   "type": "energy",
    "macro": "\\kdHo"
   },
   {
    "sym": "ΔH_f°",
    "latex": "\\Delta H_{\\text{f}}^{\\circ}",
-   "type": "energy",
    "macro": "\\kdHf"
   },
   {
    "sym": "ΔH_s°",
    "latex": "\\Delta H_{s}^{\\circ}",
-   "type": "energy",
    "macro": "\\kdHs"
   },
   {
    "sym": "ΔH_lattice",
    "latex": "\\Delta H_{\\text{lattice}}",
-   "type": "energy",
    "macro": "\\kdHlat"
   },
   {
    "sym": "D_bond",
    "latex": "D",
-   "type": "energy",
    "macro": "\\kDbond"
   },
   {
    "sym": "IE",
    "latex": "\\text{IE}",
-   "type": "energy",
    "macro": "\\kIE"
   },
   {
    "sym": "EA",
    "latex": "\\text{EA}",
-   "type": "energy",
    "macro": "\\kEA"
   },
   {
@@ -583,6 +576,7 @@
    "terms": [
     "bond energy"
    ],
+   "type": "energy",
    "statement": "The strength of a covalent bond is measured by its bond energy, the energy needed to break one mole of that bond in gaseous molecules, which for a diatomic molecule is the standard enthalpy change of its dissociation. In a molecule with several bonds of one kind the tabulated value is an average, since the first bond broken does not need the same energy as the rest.",
    "forms": [
     {
@@ -626,6 +620,7 @@
    "terms": [
     "lattice energy"
    ],
+   "type": "energy",
    "statement": "The lattice energy of an ionic compound is the energy needed to separate one mole of the solid into its gaseous ions, a positive quantity under the convention the book uses. It measures the strength of the attraction that holds an ionic solid together, and it is much larger than a covalent bond energy because it sums the interactions of every ion with the whole lattice.",
    "forms": [
     {

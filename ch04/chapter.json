@@ -42,7 +42,6 @@
     {
       "sym": "M",
       "concept": "molarity",
-      "type": "concentration",
       "meaning": "the molarity of a solution, the moles of solute per liter of solution (equally, millimoles per milliliter)",
       "unit": "M (mol/L)",
       "section": "4.5",

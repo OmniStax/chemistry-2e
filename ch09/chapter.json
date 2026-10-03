@@ -48,7 +48,6 @@
     {
       "sym": "P",
       "concept": "gas-pressure",
-      "type": "pressure",
       "meaning": "the pressure a gas exerts, the force of its molecules’ collisions divided by the area they strike",
       "unit": "Pa (also kPa, bar, psi, atm, torr and mm Hg)",
       "section": "9.1",
@@ -73,7 +72,6 @@
     {
       "sym": "p_hydro",
       "concept": "hydrostatic-pressure",
-      "type": "pressure",
       "meaning": "the hydrostatic pressure, the pressure a column of fluid exerts because of gravity",
       "unit": "Pa",
       "section": "9.1",
@@ -106,7 +104,6 @@
     {
       "sym": "P",
       "concept": "gas-pressure",
-      "type": "pressure",
       "meaning": "the pressure of a gas, measured on a gauge attached to the vessel that holds it",
       "unit": "atm (also kPa, torr, psi and bar, as the measurement is reported)",
       "section": "9.2",
@@ -115,7 +112,6 @@
     {
       "sym": "V",
       "concept": "volume",
-      "type": "volume",
       "meaning": "the volume of the gas, which is the volume of the vessel that confines it",
       "unit": "L",
       "section": "9.2",
@@ -124,7 +120,6 @@
     {
       "sym": "n",
       "concept": "mole",
-      "type": "amount",
       "meaning": "the amount of gas in the vessel, counted in moles",
       "unit": "mol",
       "section": "9.2",
@@ -133,7 +128,6 @@
     {
       "sym": "T",
       "concept": "temperature",
-      "type": "temperature",
       "meaning": "the temperature of the gas on the kelvin scale, which every gas law calculation requires",
       "unit": "K",
       "section": "9.2",
@@ -150,7 +144,6 @@
     {
       "sym": "P_1",
       "concept": "gas-pressure",
-      "type": "pressure",
       "meaning": "the pressure of a confined gas in its first condition, before the change the problem describes",
       "unit": "atm",
       "section": "9.2",
@@ -159,7 +152,6 @@
     {
       "sym": "P_2",
       "concept": "gas-pressure",
-      "type": "pressure",
       "meaning": "the pressure of the same gas in its second condition, after the change",
       "unit": "atm",
       "section": "9.2",
@@ -168,7 +160,6 @@
     {
       "sym": "V_1",
       "concept": "volume",
-      "type": "volume",
       "meaning": "the volume of a confined gas in its first condition",
       "unit": "L",
       "section": "9.2",
@@ -177,7 +168,6 @@
     {
       "sym": "V_2",
       "concept": "volume",
-      "type": "volume",
       "meaning": "the volume of the same gas in its second condition",
       "unit": "L",
       "section": "9.2",
@@ -186,7 +176,6 @@
     {
       "sym": "T_1",
       "concept": "temperature",
-      "type": "temperature",
       "meaning": "the kelvin temperature of a confined gas in its first condition",
       "unit": "K",
       "section": "9.2",
@@ -195,7 +184,6 @@
     {
       "sym": "T_2",
       "concept": "temperature",
-      "type": "temperature",
       "meaning": "the kelvin temperature of the same gas in its second condition",
       "unit": "K",
       "section": "9.2",
@@ -204,7 +192,6 @@
     {
       "sym": "n_1",
       "concept": "mole",
-      "type": "amount",
       "meaning": "the amount of a confined gas in its first condition, counted in moles",
       "unit": "mol",
       "section": "9.2",
@@ -213,7 +200,6 @@
     {
       "sym": "n_2",
       "concept": "mole",
-      "type": "amount",
       "meaning": "the amount of the same gas in its second condition",
       "unit": "mol",
       "section": "9.2",
@@ -230,7 +216,6 @@
     {
       "sym": "MM",
       "concept": "molar-mass",
-      "type": "mass",
       "meaning": "the molar mass of the gas, its mass divided by its amount in moles",
       "unit": "g/mol",
       "section": "9.3",
@@ -239,7 +224,6 @@
     {
       "sym": "m",
       "concept": "mass",
-      "type": "mass",
       "meaning": "the mass of the gas sample",
       "unit": "g",
       "section": "9.3",
@@ -248,7 +232,6 @@
     {
       "sym": "P_total",
       "concept": "gas-pressure",
-      "type": "pressure",
       "meaning": "the total pressure of a mixture of gases",
       "unit": "atm",
       "section": "9.3",
@@ -257,7 +240,6 @@
     {
       "sym": "P_A",
       "concept": "partial-pressure",
-      "type": "pressure",
       "meaning": "the partial pressure of gas A, the pressure it would exert alone in the container",
       "unit": "atm",
       "section": "9.3",
@@ -266,7 +248,6 @@
     {
       "sym": "P_B",
       "concept": "partial-pressure",
-      "type": "pressure",
       "meaning": "the partial pressure of gas B",
       "unit": "atm",
       "section": "9.3",
@@ -275,7 +256,6 @@
     {
       "sym": "P_C",
       "concept": "partial-pressure",
-      "type": "pressure",
       "meaning": "the partial pressure of gas C",
       "unit": "atm",
       "section": "9.3",
@@ -292,7 +272,6 @@
     {
       "sym": "n_A",
       "concept": "mole",
-      "type": "amount",
       "meaning": "the amount of gas A in the mixture",
       "unit": "mol",
       "section": "9.3",
@@ -301,7 +280,6 @@
     {
       "sym": "n_total",
       "concept": "mole",
-      "type": "amount",
       "meaning": "the total amount of all the gases in the mixture",
       "unit": "mol",
       "section": "9.3",
@@ -310,7 +288,6 @@
     {
       "sym": "MM_A",
       "concept": "molar-mass",
-      "type": "mass",
       "meaning": "the molar mass of gas A",
       "unit": "g/mol",
       "section": "9.4",
@@ -319,7 +296,6 @@
     {
       "sym": "MM_B",
       "concept": "molar-mass",
-      "type": "mass",
       "meaning": "the molar mass of gas B",
       "unit": "g/mol",
       "section": "9.4",
@@ -328,7 +304,6 @@
     {
       "sym": "KE",
       "concept": "kinetic-energy",
-      "type": "energy",
       "meaning": "the kinetic energy of a particle of mass m moving at speed u",
       "unit": "J",
       "section": "9.5",
@@ -353,7 +328,6 @@
     {
       "sym": "KE_avg",
       "concept": "kinetic-energy",
-      "type": "energy",
       "meaning": "the average kinetic energy of a mole of gas molecules",
       "unit": "J/mol",
       "section": "9.5",
@@ -362,7 +336,6 @@
     {
       "sym": "MM",
       "concept": "molar-mass",
-      "type": "mass",
       "meaning": "the molar mass of the gas, expressed in kilograms per mole in the speed equation",
       "unit": "kg/mol",
       "section": "9.5",
@@ -379,7 +352,6 @@
     {
       "sym": "V_m",
       "concept": "molar-volume",
-      "type": "volume",
       "meaning": "the molar volume of a gas, the volume of 1 mole of it",
       "unit": "L/mol",
       "section": "9.6",

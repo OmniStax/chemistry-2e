@@ -110,91 +110,76 @@
     {
       "sym": "t",
       "latex": "t",
-      "type": "time",
       "macro": "\\kt"
     },
     {
       "sym": "t_half",
       "latex": "t_{1/2}",
-      "type": "time",
       "macro": "\\kthalf"
     },
     {
       "sym": "n",
       "latex": "n",
-      "type": "amount",
       "macro": "\\kn"
     },
     {
       "sym": "m",
       "latex": "m",
-      "type": "mass",
       "macro": "\\km"
     },
     {
       "sym": "MM",
       "latex": "\\mathcal{M}",
-      "type": "mass",
       "macro": "\\kMM"
     },
     {
       "sym": "V",
       "latex": "V",
-      "type": "volume",
       "macro": "\\kV"
     },
     {
       "sym": "M",
       "latex": "M",
-      "type": "concentration",
       "macro": "\\kM"
     },
     {
       "sym": "pH",
       "latex": "\\text{pH}",
-      "type": "concentration",
       "macro": "\\kpH"
     },
     {
       "sym": "pOH",
       "latex": "\\text{pOH}",
-      "type": "concentration",
       "macro": "\\kpOH"
     },
     {
       "sym": "P",
       "latex": "P",
-      "type": "pressure",
       "macro": "\\kP"
     },
     {
       "sym": "T",
       "latex": "T",
-      "type": "temperature",
       "macro": "\\kT"
     },
     {
       "sym": "E",
       "latex": "E",
-      "type": "energy",
       "macro": "\\kE"
     },
     {
       "sym": "q",
       "latex": "q",
-      "type": "energy",
       "macro": "\\kq"
     },
     {
       "sym": "w",
       "latex": "w",
-      "type": "energy",
       "macro": "\\kwork"
     },
     {
       "sym": "ΔH",
       "latex": "\\Delta H",
-      "type": "energy",
       "macro": "\\kdH"
     },
     {
@@ -206,7 +191,6 @@
     {
       "sym": "ΔU",
       "latex": "\\Delta U",
-      "type": "energy",
       "macro": "\\kdU"
     },
     {
@@ -224,19 +208,16 @@
     {
       "sym": "rate",
       "latex": "\\text{rate}",
-      "type": "rate",
       "macro": "\\krate"
     },
     {
       "sym": "λ",
       "latex": "\\lambda",
-      "type": "wavelength",
       "macro": "\\klam"
     },
     {
       "sym": "ν",
       "latex": "\\nu",
-      "type": "frequency",
       "macro": "\\knu"
     },
     {
@@ -286,19 +267,16 @@
     {
       "sym": "T_C",
       "latex": "T_{\\text{°C}}",
-      "type": "temperature",
       "macro": "\\kTC"
     },
     {
       "sym": "T_F",
       "latex": "T_{\\text{°F}}",
-      "type": "temperature",
       "macro": "\\kTF"
     },
     {
       "sym": "T_K",
       "latex": "T_{\\text{K}}",
-      "type": "temperature",
       "macro": "\\kTK"
     },
     {
@@ -324,19 +302,16 @@
     {
       "sym": "ΔH_vap",
       "latex": "\\Delta H_{\\text{vap}}",
-      "type": "energy",
       "macro": "\\kdHvap"
     },
     {
       "sym": "ΔH_fus",
       "latex": "\\Delta H_{\\text{fus}}",
-      "type": "energy",
       "macro": "\\kdHfus"
     },
     {
       "sym": "ΔH_sub",
       "latex": "\\Delta H_{\\text{sub}}",
-      "type": "energy",
       "macro": "\\kdHsub"
     },
     {
@@ -366,19 +341,16 @@
     {
       "sym": "ΔT",
       "latex": "\\Delta T",
-      "type": "temperature",
       "macro": "\\kdT"
     },
     {
       "sym": "T_initial",
       "latex": "T_{\\text{initial}}",
-      "type": "temperature",
       "macro": "\\kTinit"
     },
     {
       "sym": "T_final",
       "latex": "T_{\\text{final}}",
-      "type": "temperature",
       "macro": "\\kTfin"
     },
     {
@@ -392,31 +364,26 @@
     {
       "sym": "U",
       "latex": "U",
-      "type": "energy",
       "macro": "\\kU"
     },
     {
       "sym": "H",
       "latex": "H",
-      "type": "energy",
       "macro": "\\kH"
     },
     {
       "sym": "q_p",
       "latex": "q_{\\text{p}}",
-      "type": "energy",
       "macro": "\\kqp"
     },
     {
       "sym": "ΔH_c°",
       "latex": "\\Delta H_{\\text{c}}^{\\circ}",
-      "type": "energy",
       "macro": "\\kdHc"
     },
     {
       "sym": "ΔV",
       "latex": "\\Delta V",
-      "type": "volume",
       "macro": "\\kdV"
     },
     {
@@ -434,43 +401,36 @@
     {
       "sym": "L",
       "latex": "L",
-      "type": "volume",
       "macro": "\\kL"
     },
     {
       "sym": "L_1",
       "latex": "L_1",
-      "type": "volume",
       "macro": "\\kLone"
     },
     {
       "sym": "L_2",
       "latex": "L_2",
-      "type": "volume",
       "macro": "\\kLtwo"
     },
     {
       "sym": "M_1",
       "latex": "M_1",
-      "type": "concentration",
       "macro": "\\kMone"
     },
     {
       "sym": "M_2",
       "latex": "M_2",
-      "type": "concentration",
       "macro": "\\kMtwo"
     },
     {
       "sym": "C_1",
       "latex": "C_1",
-      "type": "concentration",
       "macro": "\\kCone"
     },
     {
       "sym": "C_2",
       "latex": "C_2",
-      "type": "concentration",
       "macro": "\\kCtwo"
     },
     {
@@ -488,43 +448,36 @@
     {
       "sym": "ΔH°",
       "latex": "\\Delta H^{\\circ}",
-      "type": "energy",
       "macro": "\\kdHo"
     },
     {
       "sym": "ΔH_f°",
       "latex": "\\Delta H_{\\text{f}}^{\\circ}",
-      "type": "energy",
       "macro": "\\kdHf"
     },
     {
       "sym": "ΔH_s°",
       "latex": "\\Delta H_{s}^{\\circ}",
-      "type": "energy",
       "macro": "\\kdHs"
     },
     {
       "sym": "ΔH_lattice",
       "latex": "\\Delta H_{\\text{lattice}}",
-      "type": "energy",
       "macro": "\\kdHlat"
     },
     {
       "sym": "D_bond",
       "latex": "D",
-      "type": "energy",
       "macro": "\\kDbond"
     },
     {
       "sym": "IE",
       "latex": "\\text{IE}",
-      "type": "energy",
       "macro": "\\kIE"
     },
     {
       "sym": "EA",
       "latex": "\\text{EA}",
-      "type": "energy",
       "macro": "\\kEA"
     },
     {
@@ -616,7 +569,6 @@
     {
       "sym": "Δt",
       "latex": "\\Delta t",
-      "type": "time",
       "macro": "\\kdt"
     },
     {
@@ -666,7 +618,6 @@
     {
       "sym": "C_g",
       "latex": "C_{\\text{g}}",
-      "type": "concentration",
       "macro": "\\kCg"
     },
     {
@@ -676,31 +627,26 @@
     {
       "sym": "P_g",
       "latex": "P_{\\text{g}}",
-      "type": "pressure",
       "macro": "\\kPg"
     },
     {
       "sym": "m_molal",
       "latex": "m",
-      "type": "concentration",
       "macro": "\\kmolal"
     },
     {
       "sym": "P_A*",
       "latex": "P_{\\text{A}}^{*}",
-      "type": "pressure",
       "macro": "\\kPAstar"
     },
     {
       "sym": "P_i",
       "latex": "P_{i}",
-      "type": "pressure",
       "macro": "\\kPcomp"
     },
     {
       "sym": "P_i*",
       "latex": "P_{i}^{*}",
-      "type": "pressure",
       "macro": "\\kPcompstar"
     },
     {
@@ -710,13 +656,11 @@
     {
       "sym": "P_solution",
       "latex": "P_{\\text{solution}}",
-      "type": "pressure",
       "macro": "\\kPsoln"
     },
     {
       "sym": "P_solvent*",
       "latex": "P_{\\text{solvent}}^{*}",
-      "type": "pressure",
       "macro": "\\kPsolvstar"
     },
     {
@@ -732,7 +676,6 @@
     {
       "sym": "ΔT_b",
       "latex": "\\Delta T_{\\text{b}}",
-      "type": "temperature",
       "macro": "\\kdTb"
     },
     {
@@ -742,7 +685,6 @@
     {
       "sym": "ΔT_f",
       "latex": "\\Delta T_{\\text{f}}",
-      "type": "temperature",
       "macro": "\\kdTf"
     },
     {
@@ -766,49 +708,41 @@
     {
       "sym": "P_1",
       "latex": "P_1",
-      "type": "pressure",
       "macro": "\\kPone"
     },
     {
       "sym": "P_2",
       "latex": "P_2",
-      "type": "pressure",
       "macro": "\\kPtwo"
     },
     {
       "sym": "V_1",
       "latex": "V_1",
-      "type": "volume",
       "macro": "\\kVone"
     },
     {
       "sym": "V_2",
       "latex": "V_2",
-      "type": "volume",
       "macro": "\\kVtwo"
     },
     {
       "sym": "T_1",
       "latex": "T_1",
-      "type": "temperature",
       "macro": "\\kTone"
     },
     {
       "sym": "T_2",
       "latex": "T_2",
-      "type": "temperature",
       "macro": "\\kTtwo"
     },
     {
       "sym": "n_1",
       "latex": "n_1",
-      "type": "amount",
       "macro": "\\knone"
     },
     {
       "sym": "n_2",
       "latex": "n_2",
-      "type": "amount",
       "macro": "\\kntwo"
     },
     {
@@ -822,7 +756,6 @@
     {
       "sym": "p_hydro",
       "latex": "p",
-      "type": "pressure",
       "macro": "\\kphyd"
     },
     {
@@ -840,25 +773,21 @@
     {
       "sym": "P_total",
       "latex": "P_{Total}",
-      "type": "pressure",
       "macro": "\\kPtot"
     },
     {
       "sym": "P_A",
       "latex": "P_A",
-      "type": "pressure",
       "macro": "\\kPA"
     },
     {
       "sym": "P_B",
       "latex": "P_B",
-      "type": "pressure",
       "macro": "\\kPB"
     },
     {
       "sym": "P_C",
       "latex": "P_C",
-      "type": "pressure",
       "macro": "\\kPC"
     },
     {
@@ -868,37 +797,31 @@
     {
       "sym": "n_A",
       "latex": "n_A",
-      "type": "amount",
       "macro": "\\knA"
     },
     {
       "sym": "n_total",
       "latex": "n_{Total}",
-      "type": "amount",
       "macro": "\\kntot"
     },
     {
       "sym": "MM_A",
       "latex": "\\mathcal{M}_A",
-      "type": "mass",
       "macro": "\\kMMA"
     },
     {
       "sym": "MM_B",
       "latex": "\\mathcal{M}_B",
-      "type": "mass",
       "macro": "\\kMMB"
     },
     {
       "sym": "KE",
       "latex": "\\text{KE}",
-      "type": "energy",
       "macro": "\\kKE"
     },
     {
       "sym": "KE_avg",
       "latex": "\\text{KE}_{\\text{avg}}",
-      "type": "energy",
       "macro": "\\kKEavg"
     },
     {
@@ -916,7 +839,6 @@
     {
       "sym": "V_m",
       "latex": "V_m",
-      "type": "volume",
       "macro": "\\kVm"
     },
     {
@@ -942,43 +864,36 @@
     {
       "sym": "[A]",
       "latex": "[\\text{A}]",
-      "type": "concentration",
       "macro": "\\kconcA"
     },
     {
       "sym": "[A]_0",
       "latex": "[\\text{A}]_{0}",
-      "type": "concentration",
       "macro": "\\kconcAz"
     },
     {
       "sym": "[A]_t",
       "latex": "[\\text{A}]_{t}",
-      "type": "concentration",
       "macro": "\\kconcAt"
     },
     {
       "sym": "[B]",
       "latex": "[\\text{B}]",
-      "type": "concentration",
       "macro": "\\kconcB"
     },
     {
       "sym": "Δ[A]",
       "latex": "\\Delta[\\text{A}]",
-      "type": "concentration",
       "macro": "\\kdconcA"
     },
     {
       "sym": "Δ[B]",
       "latex": "\\Delta[\\text{B}]",
-      "type": "concentration",
       "macro": "\\kdconcB"
     },
     {
       "sym": "E_a",
       "latex": "E_{\\text{a}}",
-      "type": "energy",
       "macro": "\\kEa"
     },
     {
@@ -1008,31 +923,26 @@
     {
       "sym": "rate_f",
       "latex": "\\text{rate}_{f}",
-      "type": "rate",
       "macro": "\\kratef"
     },
     {
       "sym": "rate_r",
       "latex": "\\text{rate}_{r}",
-      "type": "rate",
       "macro": "\\krater"
     },
     {
       "sym": "[C]",
       "latex": "[\\text{C}]",
-      "type": "concentration",
       "macro": "\\kconcC"
     },
     {
       "sym": "[D]",
       "latex": "[\\text{D}]",
-      "type": "concentration",
       "macro": "\\kconcD"
     },
     {
       "sym": "P_D",
       "latex": "P_D",
-      "type": "pressure",
       "macro": "\\kPD"
     },
     {
@@ -1082,43 +992,36 @@
     {
       "sym": "[H3O+]",
       "latex": "[\\text{H}_{3}\\text{O}^{+}]",
-      "type": "concentration",
       "macro": "\\kconcHyd"
     },
     {
       "sym": "[OH-]",
       "latex": "[\\text{OH}^{-}]",
-      "type": "concentration",
       "macro": "\\kconcOH"
     },
     {
       "sym": "[HA]",
       "latex": "[\\text{HA}]",
-      "type": "concentration",
       "macro": "\\kconcHA"
     },
     {
       "sym": "[A-]",
       "latex": "[\\text{A}^{-}]",
-      "type": "concentration",
       "macro": "\\kconcAm"
     },
     {
       "sym": "[HB+]",
       "latex": "[\\text{HB}^{+}]",
-      "type": "concentration",
       "macro": "\\kconcHBp"
     },
     {
       "sym": "[HA]_0",
       "latex": "[\\text{HA}]_{0}",
-      "type": "concentration",
       "macro": "\\kconcHAz"
     },
     {
       "sym": "[H3O+]_eq",
       "latex": "[\\text{H}_{3}\\text{O}^{+}]_{\\text{eq}}",
-      "type": "concentration",
       "macro": "\\kconcHydeq"
     },
     {
@@ -1184,13 +1087,11 @@
     {
       "sym": "[M^m+]",
       "latex": "[\\text{M}^{m+}]",
-      "type": "concentration",
       "macro": "\\kconcMion"
     },
     {
       "sym": "[X^n-]",
       "latex": "[\\text{X}^{n-}]",
-      "type": "concentration",
       "macro": "\\kconcXion"
     },
     {
@@ -1385,6 +1286,7 @@
       "terms": [
         "mass"
       ],
+      "type": "mass",
       "statement": "The mass of an object is a measure of the amount of matter in it, and it does not change with where the object is."
     },
     {
@@ -1642,6 +1544,7 @@
       "terms": [
         "volume"
       ],
+      "type": "volume",
       "statement": "Volume is the amount of space an object occupies, and its standard unit is the cubic meter, a cube one meter on an edge. The cubic decimeter is a liter and the cubic centimeter is a milliliter, so the units a chemist actually works in are nested inside the standard one by factors of a thousand."
     },
     {
@@ -1696,6 +1599,7 @@
       "section": "1.4",
       "name": "Time",
       "symbol": "t",
+      "type": "time",
       "statement": "Time is measured in the SI base unit of time, the second."
     },
     {
@@ -1707,6 +1611,7 @@
       "terms": [
         "temperature"
       ],
+      "type": "temperature",
       "statement": "Temperature is an intensive property representing the hotness or coldness of matter, and its SI unit is the kelvin."
     },
     {
@@ -3051,6 +2956,7 @@
       "section": "10.3",
       "name": "Enthalpies of phase change",
       "symbol": "ΔH_vap",
+      "type": "energy",
       "statement": "Melting, vaporization and sublimation are endothermic, and freezing, condensation and deposition release the same heat with the opposite sign. Melting only partly overcomes the intermolecular attractions while vaporization overcomes them completely, so ΔH<sub>fus</sub> is less than ΔH<sub>vap</sub>, and by Hess’s law ΔH<sub>sub</sub> is about their sum.",
       "forms": [
         {
@@ -3155,6 +3061,7 @@
       "terms": [
         "vapor pressure"
       ],
+      "type": "pressure",
       "statement": "The vapor pressure, or equilibrium vapor pressure, of a liquid or solid is the pressure exerted by its vapor in equilibrium with it at a given temperature."
     },
     {
@@ -3777,6 +3684,7 @@
       "terms": [
         "solubility"
       ],
+      "type": "concentration",
       "statement": "The solubility of a substance is the extent to which it dissolves in water or any other solvent. A substance of relatively high solubility is soluble, and one that dissolves only to a slight extent is insoluble."
     },
     {
@@ -4205,6 +4113,7 @@
       "terms": [
         "energy"
       ],
+      "type": "energy",
       "statement": "Energy is the capacity to supply heat or do work. Work is one of the two things energy does: moving matter against an opposing force, as a pump does when it pushes air into a tire."
     },
     {
@@ -4237,6 +4146,7 @@
       "terms": [
         "heat"
       ],
+      "type": "energy",
       "statement": "Heat is the transfer of thermal energy between two bodies at different temperatures. It flows spontaneously from the hotter body to the cooler one, lowering the average kinetic energy of the first and raising that of the second, until the two reach thermal equilibrium at one temperature."
     },
     {
@@ -4295,6 +4205,7 @@
       "terms": [
         "work"
       ],
+      "type": "energy",
       "statement": "Work is the transfer of energy that moves matter against an opposing force, or that changes external, macroscopic variables such as pressure and volume."
     },
     {
@@ -4316,6 +4227,7 @@
       "terms": [
         "kinetic energy"
       ],
+      "type": "energy",
       "statement": "Kinetic energy is the energy an object has because of its motion, equal to one-half the product of its mass and the square of its velocity.",
       "forms": [
         {
@@ -4636,6 +4548,7 @@
       "terms": [
         "standard enthalpy of formation"
       ],
+      "type": "energy",
       "statement": "A standard state is an agreed set of reference conditions, 1 bar and 1 M, with 298.15 K assumed, and ΔH° marks an enthalpy change under them. The standard enthalpy of formation is ΔH° for forming exactly 1 mole of a substance from its elements in their most stable states, so an element in its most stable form has a value of zero and the formation equation often carries fractional coefficients."
     },
     {
@@ -4683,6 +4596,7 @@
       "terms": [
         "internal energy"
       ],
+      "type": "energy",
       "statement": "The internal energy of a system is the total of all possible kinds of energy present in the substances it contains."
     },
     {
@@ -4713,6 +4627,7 @@
       "terms": [
         "enthalpy"
       ],
+      "type": "energy",
       "statement": "The enthalpy of a system is the sum of its internal energy and the product of its pressure and volume.",
       "forms": [
         {
@@ -4732,6 +4647,7 @@
       "terms": [
         "enthalpy change"
       ],
+      "type": "energy",
       "statement": "The enthalpy change of a process is the change in the enthalpy of the system, equal to the heat it releases or absorbs when the process takes place at constant pressure.",
       "forms": [
         {
@@ -4772,6 +4688,7 @@
       "terms": [
         "standard enthalpy of combustion"
       ],
+      "type": "energy",
       "statement": "The standard enthalpy of combustion of a substance is the enthalpy change when 1 mole of it undergoes complete combustion under standard state conditions."
     },
     {
@@ -4797,6 +4714,7 @@
       "terms": [
         "mole"
       ],
+      "type": "amount",
       "statement": "The mole is an amount unit like a pair or a dozen, and it links an easily measured property, bulk mass, to a fundamental one, the number of atoms or molecules. Chemists count particles they cannot see by weighing them, and the mole is the unit that makes that possible."
     },
     {
@@ -4825,6 +4743,7 @@
       "terms": [
         "molar mass"
       ],
+      "type": "mass",
       "statement": "The molar mass of a substance is the mass in grams of 1 mole of it, and it is numerically equal to the formula mass in amu, because the atomic mass unit and the mole are defined from the same reference, carbon-12. That equality turns a formula mass read from the periodic table into a conversion factor between grams and moles."
     },
     {
@@ -4937,6 +4856,7 @@
       "terms": [
         "concentration"
       ],
+      "type": "concentration",
       "statement": "The relative amount of a given component of a solution is its concentration, and the properties of a mixture depend on it, as the sweetness of a coffee depends on its sugar. A solution is called dilute or concentrated in words before any unit puts a number on it."
     },
     {
@@ -4948,6 +4868,7 @@
       "terms": [
         "molarity (M)"
       ],
+      "type": "concentration",
       "statement": "Molarity is the number of moles of solute in exactly 1 liter of solution, and it is the concentration unit of most of chemistry. The liter is of the whole solution, not of the solvent that was added.",
       "forms": [
         {
@@ -5672,6 +5593,7 @@
       "terms": [
         "bond energy"
       ],
+      "type": "energy",
       "statement": "The strength of a covalent bond is measured by its bond energy, the energy needed to break one mole of that bond in gaseous molecules, which for a diatomic molecule is the standard enthalpy change of its dissociation. In a molecule with several bonds of one kind the tabulated value is an average, since the first bond broken does not need the same energy as the rest.",
       "forms": [
         {
@@ -5715,6 +5637,7 @@
       "terms": [
         "lattice energy"
       ],
+      "type": "energy",
       "statement": "The lattice energy of an ionic compound is the energy needed to separate one mole of the solid into its gaseous ions, a positive quantity under the convention the book uses. It measures the strength of the attraction that holds an ionic solid together, and it is much larger than a covalent bond energy because it sums the interactions of every ion with the whole lattice.",
       "forms": [
         {
@@ -6293,6 +6216,7 @@
       "terms": [
         "wavelength (λ)"
       ],
+      "type": "wavelength",
       "statement": "The wavelength of a wave is the distance between two consecutive peaks or troughs."
     },
     {
@@ -6304,6 +6228,7 @@
       "terms": [
         "frequency (ν)"
       ],
+      "type": "frequency",
       "statement": "The frequency of a wave is the number of wave cycles, peaks or troughs, that pass a specified point in space per unit time."
     },
     {
@@ -7087,6 +7012,7 @@
       "terms": [
         "ionization energy"
       ],
+      "type": "energy",
       "statement": "The ionization energy is the energy required to remove an electron from a gaseous atom or ion. The first ionization energy, IE₁, removes the most loosely bound electron of the neutral atom.",
       "forms": [
         {
@@ -7107,6 +7033,7 @@
       "terms": [
         "electron affinity"
       ],
+      "type": "energy",
       "statement": "The electron affinity is the energy change associated with the addition of an electron to a gaseous atom or ion. It is negative when energy is released.",
       "forms": [
         {
@@ -7447,6 +7374,7 @@
       "terms": [
         "boiling point elevation"
       ],
+      "type": "temperature",
       "statement": "Because a nonvolatile solute lowers the vapor pressure, the solution must be hotter than the pure solvent before its vapor pressure reaches the atmosphere’s, and the elevation is proportional to the molality of all solute species, $\\Delta T_{\\text{b}} = K_{\\text{b}}m$.",
       "forms": [
         {
@@ -7467,6 +7395,7 @@
       "terms": [
         "freezing point depression"
       ],
+      "type": "temperature",
       "statement": "A solution freezes at a lower temperature than its pure solvent, by an amount proportional to the molality of all solute species, $\\Delta T_{\\text{f}} = K_{\\text{f}}m$, because only the solvent freezes out; salted roads and antifreeze exploit it.",
       "forms": [
         {
@@ -7532,6 +7461,7 @@
       "terms": [
         "molality"
       ],
+      "type": "concentration",
       "statement": "Molality is a concentration unit defined as the number of moles of solute divided by the mass of the solvent in kilograms. Since it is built from moles and masses, it does not change with temperature.",
       "forms": [
         {
@@ -7779,6 +7709,7 @@
       "terms": [
         "pressure"
       ],
+      "type": "pressure",
       "statement": "Pressure is the force exerted per unit area, P = F/A. A gas exerts pressure on the walls of its container because its molecules collide with those walls, so a small force on a small area can give a larger pressure than a large force spread over a large one.",
       "forms": [
         {
@@ -7813,6 +7744,7 @@
       "terms": [
         "hydrostatic pressure"
       ],
+      "type": "pressure",
       "statement": "The pressure exerted by a column of fluid because of gravity is the product of its height, its density and the acceleration due to gravity. It is why the height of a liquid column can stand for a pressure at all, and it lets us check that 760 mm of mercury does correspond to 101,325 Pa.",
       "forms": [
         {
@@ -8090,6 +8022,7 @@
       "section": "9.2",
       "name": "Molar volume",
       "symbol": "V_m",
+      "type": "volume",
       "statement": "The molar volume of a gas is the volume occupied by 1 mole of it at a given temperature and pressure."
     },
     {
@@ -8199,6 +8132,7 @@
       "terms": [
         "partial pressure"
       ],
+      "type": "pressure",
       "statement": "The partial pressure of a gas in a mixture is the pressure that gas exerts, the pressure it would exert if it alone occupied the container."
     },
     {
@@ -8461,6 +8395,7 @@
       "terms": [
         "rate of reaction"
       ],
+      "type": "rate",
       "statement": "The rate of a reaction is the change in the amount or concentration of a reactant or product per unit time. Since a reactant’s concentration falls as the reaction proceeds, its change is multiplied by −1 so that the rate is, by convention, a positive quantity."
     },
     {
@@ -8742,6 +8677,7 @@
       "terms": [
         "half-life of a reaction"
       ],
+      "type": "time",
       "statement": "The half-life is the time required for one-half of a given amount of reactant to be consumed; in each succeeding half-life, half of the remaining reactant is consumed."
     },
     {
@@ -8804,6 +8740,7 @@
       "terms": [
         "activation energy"
       ],
+      "type": "energy",
       "statement": "The activation energy is the minimum energy a collision needs to form products; a collision with enough energy and the proper orientation forms an unstable, short-lived activated complex, or transition state. A reaction is slow when its activation energy is much larger than the average kinetic energy of the molecules."
     },
     {
@@ -9536,6 +9473,7 @@
       "terms": [
         "pH"
       ],
+      "type": "concentration",
       "statement": "The pH of a solution is the negative base-10 logarithm of its hydronium ion molarity.",
       "forms": [
         {
@@ -9561,6 +9499,7 @@
       "terms": [
         "pOH"
       ],
+      "type": "concentration",
       "statement": "The pOH of a solution is the negative base-10 logarithm of its hydroxide ion molarity.",
       "forms": [
         {

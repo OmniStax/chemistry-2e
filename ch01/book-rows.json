@@ -4,19 +4,16 @@
   {
    "sym": "T_C",
    "latex": "T_{\\text{°C}}",
-   "type": "temperature",
    "macro": "\\kTC"
   },
   {
    "sym": "T_F",
    "latex": "T_{\\text{°F}}",
-   "type": "temperature",
    "macro": "\\kTF"
   },
   {
    "sym": "T_K",
    "latex": "T_{\\text{K}}",
-   "type": "temperature",
    "macro": "\\kTK"
   },
   {
@@ -193,6 +190,7 @@
    "terms": [
     "mass"
    ],
+   "type": "mass",
    "statement": "The mass of an object is a measure of the amount of matter in it, and it does not change with where the object is."
   },
   {
@@ -450,6 +448,7 @@
    "terms": [
     "volume"
    ],
+   "type": "volume",
    "statement": "Volume is the amount of space an object occupies, and its standard unit is the cubic meter, a cube one meter on an edge. The cubic decimeter is a liter and the cubic centimeter is a milliliter, so the units a chemist actually works in are nested inside the standard one by factors of a thousand."
   },
   {
@@ -504,6 +503,7 @@
    "section": "1.4",
    "name": "Time",
    "symbol": "t",
+   "type": "time",
    "statement": "Time is measured in the SI base unit of time, the second."
   },
   {
@@ -515,6 +515,7 @@
    "terms": [
     "temperature"
    ],
+   "type": "temperature",
    "statement": "Temperature is an intensive property representing the hotness or coldness of matter, and its SI unit is the kelvin."
   },
   {

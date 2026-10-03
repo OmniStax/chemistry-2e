@@ -5,8 +5,8 @@
   {"sym": "Q_sp", "latex": "Q_{\\text{sp}}"},
   {"sym": "K_f_form", "latex": "K_{\\text{f}}"},
   {"sym": "K_d", "latex": "K_{\\text{d}}"},
-  {"sym": "[M^m+]", "latex": "[\\text{M}^{m+}]", "type": "concentration", "macro": "\\kconcMion"},
-  {"sym": "[X^n-]", "latex": "[\\text{X}^{n-}]", "type": "concentration", "macro": "\\kconcXion"},
+  {"sym": "[M^m+]", "latex": "[\\text{M}^{m+}]", "macro": "\\kconcMion"},
+  {"sym": "[X^n-]", "latex": "[\\text{X}^{n-}]", "macro": "\\kconcXion"},
   {"sym": "p_stoich", "latex": "p"},
   {"sym": "q_stoich", "latex": "q"}
  ],

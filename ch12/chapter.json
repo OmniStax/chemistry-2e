@@ -54,7 +54,6 @@
   {
    "sym": "rate",
    "concept": "reaction-rate",
-   "type": "rate",
    "meaning": "the rate of the reaction, the change in concentration of a reactant or product per unit time, taken as positive",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
    "section": "12.1"
@@ -62,7 +61,6 @@
   {
    "sym": "[A]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molar concentration of reactant A",
    "unit": "mol/L (M)",
    "section": "12.1"
@@ -70,7 +68,6 @@
   {
    "sym": "[B]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molar concentration of product B (a second reactant in a rate law)",
    "unit": "mol/L (M)",
    "section": "12.1"
@@ -78,7 +75,6 @@
   {
    "sym": "Δ[A]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the change in the molar concentration of A over a time interval",
    "unit": "mol/L (M)",
    "section": "12.1"
@@ -86,7 +82,6 @@
   {
    "sym": "Δ[B]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the change in the molar concentration of B over a time interval",
    "unit": "mol/L (M)",
    "section": "12.1"
@@ -94,7 +89,6 @@
   {
    "sym": "Δt",
    "concept": "time",
-   "type": "time",
    "meaning": "the time interval over which the concentration changes",
    "unit": "s",
    "section": "12.1"
@@ -123,7 +117,6 @@
   {
    "sym": "[A]_0",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the initial concentration of A",
    "unit": "mol/L (M)",
    "section": "12.4"
@@ -131,7 +124,6 @@
   {
    "sym": "[A]_t",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the concentration of A at time t",
    "unit": "mol/L (M)",
    "section": "12.4"
@@ -139,7 +131,6 @@
   {
    "sym": "t",
    "concept": "time",
-   "type": "time",
    "meaning": "the time elapsed since the reaction began",
    "unit": "s",
    "section": "12.4"
@@ -147,7 +138,6 @@
   {
    "sym": "t_half",
    "concept": "half-life",
-   "type": "time",
    "meaning": "the half-life, the time for half of the reactant to be consumed",
    "unit": "s",
    "section": "12.4"
@@ -155,7 +145,6 @@
   {
    "sym": "E_a",
    "concept": "activation-energy",
-   "type": "energy",
    "meaning": "the activation energy, the minimum energy needed to form products in a collision",
    "unit": "J/mol or kJ/mol",
    "section": "12.5"
@@ -177,7 +166,6 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "the temperature on the kelvin scale",
    "unit": "K",
    "section": "12.5"
@@ -185,7 +173,6 @@
   {
    "sym": "T_1",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "the first of two temperatures",
    "unit": "K",
    "section": "12.5"
@@ -193,7 +180,6 @@
   {
    "sym": "T_2",
    "concept": "temperature",
-   "type": "temperature",
    "meaning": "the second of two temperatures",
    "unit": "K",
    "section": "12.5"
@@ -222,7 +208,6 @@
   {
    "sym": "ΔH",
    "concept": "enthalpy-change",
-   "type": "energy",
    "meaning": "the enthalpy change of the reaction, the energy difference between reactants and products on a reaction diagram",
    "unit": "kJ/mol",
    "section": "12.5"

@@ -36,7 +36,6 @@
   {
    "sym": "m",
    "concept": "mass",
-   "type": "mass",
    "meaning": "the mass of a sample, weighed on a balance",
    "unit": "g",
    "section": "3.1",
@@ -45,7 +44,6 @@
   {
    "sym": "MM",
    "concept": "molar-mass",
-   "type": "mass",
    "meaning": "the molar mass of a substance, the mass in grams of 1 mole of it",
    "unit": "g/mol",
    "section": "3.1",
@@ -54,7 +52,6 @@
   {
    "sym": "n",
    "concept": "mole",
-   "type": "amount",
    "meaning": "the amount of a substance, counted in moles",
    "unit": "mol",
    "section": "3.1",
@@ -79,7 +76,6 @@
   {
    "sym": "M",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molarity of a solution, the moles of solute per liter of solution",
    "unit": "M (mol/L)",
    "section": "3.3",
@@ -88,7 +84,6 @@
   {
    "sym": "L",
    "concept": "volume",
-   "type": "volume",
    "meaning": "the volume of a solution in liters, as the book writes it in n = ML",
    "unit": "L",
    "section": "3.3",
@@ -97,7 +92,6 @@
   {
    "sym": "M_1",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molarity of a solution before it is diluted",
    "unit": "M",
    "section": "3.3",
@@ -106,7 +100,6 @@
   {
    "sym": "M_2",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molarity of the solution after it is diluted",
    "unit": "M",
    "section": "3.3",
@@ -115,7 +108,6 @@
   {
    "sym": "L_1",
    "concept": "volume",
-   "type": "volume",
    "meaning": "the volume of a solution in liters before it is diluted",
    "unit": "L",
    "section": "3.3",
@@ -124,7 +116,6 @@
   {
    "sym": "L_2",
    "concept": "volume",
-   "type": "volume",
    "meaning": "the volume of the solution in liters after it is diluted",
    "unit": "L",
    "section": "3.3",
@@ -133,7 +124,6 @@
   {
    "sym": "C_1",
    "concept": "concentration",
-   "type": "concentration",
    "meaning": "the concentration of a solution before it is diluted, in any unit",
    "unit": "M, or any concentration unit",
    "section": "3.3",
@@ -142,7 +132,6 @@
   {
    "sym": "C_2",
    "concept": "concentration",
-   "type": "concentration",
    "meaning": "the concentration of the solution after it is diluted, in any unit",
    "unit": "M, or any concentration unit",
    "section": "3.3",
@@ -151,7 +140,6 @@
   {
    "sym": "V_1",
    "concept": "volume",
-   "type": "volume",
    "meaning": "the volume of a solution before it is diluted",
    "unit": "L, or any volume unit",
    "section": "3.3",
@@ -160,7 +148,6 @@
   {
    "sym": "V_2",
    "concept": "volume",
-   "type": "volume",
    "meaning": "the volume of the solution after it is diluted",
    "unit": "L, or any volume unit",
    "section": "3.3",
@@ -169,7 +156,6 @@
   {
    "sym": "n_1",
    "concept": "mole",
-   "type": "amount",
    "meaning": "the amount of solute in the solution before it is diluted",
    "unit": "mol",
    "section": "3.3",
@@ -178,7 +164,6 @@
   {
    "sym": "n_2",
    "concept": "mole",
-   "type": "amount",
    "meaning": "the amount of solute in the solution after it is diluted, equal to n₁",
    "unit": "mol",
    "section": "3.3",

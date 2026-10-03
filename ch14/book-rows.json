@@ -4,43 +4,36 @@
   {
    "sym": "[H3O+]",
    "latex": "[\\text{H}_{3}\\text{O}^{+}]",
-   "type": "concentration",
    "macro": "\\kconcHyd"
   },
   {
    "sym": "[OH-]",
    "latex": "[\\text{OH}^{-}]",
-   "type": "concentration",
    "macro": "\\kconcOH"
   },
   {
    "sym": "[HA]",
    "latex": "[\\text{HA}]",
-   "type": "concentration",
    "macro": "\\kconcHA"
   },
   {
    "sym": "[A-]",
    "latex": "[\\text{A}^{-}]",
-   "type": "concentration",
    "macro": "\\kconcAm"
   },
   {
    "sym": "[HB+]",
    "latex": "[\\text{HB}^{+}]",
-   "type": "concentration",
    "macro": "\\kconcHBp"
   },
   {
    "sym": "[HA]_0",
    "latex": "[\\text{HA}]_{0}",
-   "type": "concentration",
    "macro": "\\kconcHAz"
   },
   {
    "sym": "[H3O+]_eq",
    "latex": "[\\text{H}_{3}\\text{O}^{+}]_{\\text{eq}}",
-   "type": "concentration",
    "macro": "\\kconcHydeq"
   },
   {
@@ -315,6 +308,7 @@
    "terms": [
     "pH"
    ],
+   "type": "concentration",
    "statement": "The pH of a solution is the negative base-10 logarithm of its hydronium ion molarity.",
    "forms": [
     {
@@ -340,6 +334,7 @@
    "terms": [
     "pOH"
    ],
+   "type": "concentration",
    "statement": "The pOH of a solution is the negative base-10 logarithm of its hydroxide ion molarity.",
    "forms": [
     {

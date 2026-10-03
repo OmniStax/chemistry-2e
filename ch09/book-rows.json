@@ -8,49 +8,41 @@
     {
       "sym": "P_1",
       "latex": "P_1",
-      "type": "pressure",
       "macro": "\\kPone"
     },
     {
       "sym": "P_2",
       "latex": "P_2",
-      "type": "pressure",
       "macro": "\\kPtwo"
     },
     {
       "sym": "V_1",
       "latex": "V_1",
-      "type": "volume",
       "macro": "\\kVone"
     },
     {
       "sym": "V_2",
       "latex": "V_2",
-      "type": "volume",
       "macro": "\\kVtwo"
     },
     {
       "sym": "T_1",
       "latex": "T_1",
-      "type": "temperature",
       "macro": "\\kTone"
     },
     {
       "sym": "T_2",
       "latex": "T_2",
-      "type": "temperature",
       "macro": "\\kTtwo"
     },
     {
       "sym": "n_1",
       "latex": "n_1",
-      "type": "amount",
       "macro": "\\knone"
     },
     {
       "sym": "n_2",
       "latex": "n_2",
-      "type": "amount",
       "macro": "\\kntwo"
     },
     {
@@ -64,7 +56,6 @@
     {
       "sym": "p_hydro",
       "latex": "p",
-      "type": "pressure",
       "macro": "\\kphyd"
     },
     {
@@ -82,25 +73,21 @@
     {
       "sym": "P_total",
       "latex": "P_{Total}",
-      "type": "pressure",
       "macro": "\\kPtot"
     },
     {
       "sym": "P_A",
       "latex": "P_A",
-      "type": "pressure",
       "macro": "\\kPA"
     },
     {
       "sym": "P_B",
       "latex": "P_B",
-      "type": "pressure",
       "macro": "\\kPB"
     },
     {
       "sym": "P_C",
       "latex": "P_C",
-      "type": "pressure",
       "macro": "\\kPC"
     },
     {
@@ -110,37 +97,31 @@
     {
       "sym": "n_A",
       "latex": "n_A",
-      "type": "amount",
       "macro": "\\knA"
     },
     {
       "sym": "n_total",
       "latex": "n_{Total}",
-      "type": "amount",
       "macro": "\\kntot"
     },
     {
       "sym": "MM_A",
       "latex": "\\mathcal{M}_A",
-      "type": "mass",
       "macro": "\\kMMA"
     },
     {
       "sym": "MM_B",
       "latex": "\\mathcal{M}_B",
-      "type": "mass",
       "macro": "\\kMMB"
     },
     {
       "sym": "KE",
       "latex": "\\text{KE}",
-      "type": "energy",
       "macro": "\\kKE"
     },
     {
       "sym": "KE_avg",
       "latex": "\\text{KE}_{\\text{avg}}",
-      "type": "energy",
       "macro": "\\kKEavg"
     },
     {
@@ -158,7 +139,6 @@
     {
       "sym": "V_m",
       "latex": "V_m",
-      "type": "volume",
       "macro": "\\kVm"
     },
     {
@@ -192,6 +172,7 @@
       "terms": [
         "pressure"
       ],
+      "type": "pressure",
       "statement": "Pressure is the force exerted per unit area, P = F/A. A gas exerts pressure on the walls of its container because its molecules collide with those walls, so a small force on a small area can give a larger pressure than a large force spread over a large one.",
       "forms": [
         {
@@ -226,6 +207,7 @@
       "terms": [
         "hydrostatic pressure"
       ],
+      "type": "pressure",
       "statement": "The pressure exerted by a column of fluid because of gravity is the product of its height, its density and the acceleration due to gravity. It is why the height of a liquid column can stand for a pressure at all, and it lets us check that 760 mm of mercury does correspond to 101,325 Pa.",
       "forms": [
         {
@@ -503,6 +485,7 @@
       "section": "9.2",
       "name": "Molar volume",
       "symbol": "V_m",
+      "type": "volume",
       "statement": "The molar volume of a gas is the volume occupied by 1 mole of it at a given temperature and pressure."
     },
     {
@@ -612,6 +595,7 @@
       "terms": [
         "partial pressure"
       ],
+      "type": "pressure",
       "statement": "The partial pressure of a gas in a mixture is the pressure that gas exerts, the pressure it would exert if it alone occupied the container."
     },
     {

@@ -54,7 +54,6 @@
   {
    "sym": "[H3O+]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molar concentration of hydronium ion",
    "unit": "mol/L (M)",
    "section": "14.1"
@@ -62,7 +61,6 @@
   {
    "sym": "[OH-]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molar concentration of hydroxide ion",
    "unit": "mol/L (M)",
    "section": "14.1"
@@ -84,7 +82,6 @@
   {
    "sym": "pH",
    "concept": "ph",
-   "type": "concentration",
    "meaning": "the negative base-10 logarithm of the hydronium ion molarity",
    "unit": "none",
    "section": "14.2"
@@ -92,7 +89,6 @@
   {
    "sym": "pOH",
    "concept": "poh",
-   "type": "concentration",
    "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
    "unit": "none",
    "section": "14.2"
@@ -121,7 +117,6 @@
   {
    "sym": "[HA]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the equilibrium molar concentration of the un-ionized acid HA",
    "unit": "mol/L (M)",
    "section": "14.3"
@@ -129,7 +124,6 @@
   {
    "sym": "[A-]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the equilibrium molar concentration of the conjugate base A⁻",
    "unit": "mol/L (M)",
    "section": "14.3"
@@ -137,7 +131,6 @@
   {
    "sym": "[B]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the equilibrium molar concentration of the un-ionized base B",
    "unit": "mol/L (M)",
    "section": "14.3"
@@ -145,7 +138,6 @@
   {
    "sym": "[HB+]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the equilibrium molar concentration of the conjugate acid HB⁺",
    "unit": "mol/L (M)",
    "section": "14.3"
@@ -153,7 +145,6 @@
   {
    "sym": "[HA]_0",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the initial (formal) molar concentration of the acid",
    "unit": "mol/L (M)",
    "section": "14.3"
@@ -161,7 +152,6 @@
   {
    "sym": "[H3O+]_eq",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the equilibrium molar concentration of hydronium ion",
    "unit": "mol/L (M)",
    "section": "14.3"
@@ -225,7 +215,6 @@
   {
    "sym": "pH",
    "concept": "ph",
-   "type": "concentration",
    "meaning": "the pH of the buffer solution, the negative base-10 logarithm of its hydronium ion molarity",
    "unit": "none",
    "section": "14.6"
@@ -233,7 +222,6 @@
   {
    "sym": "[HA]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molar concentration of the weak acid of the buffer pair",
    "unit": "mol/L (M)",
    "section": "14.6"
@@ -241,7 +229,6 @@
   {
    "sym": "[A-]",
    "concept": "molarity",
-   "type": "concentration",
    "meaning": "the molar concentration of the conjugate base of the buffer pair",
    "unit": "mol/L (M)",
    "section": "14.6"
@@ -249,7 +236,6 @@
   {
    "sym": "V",
    "concept": "volume",
-   "type": "volume",
    "meaning": "the volume of titrant added",
    "unit": "mL",
    "section": "14.7"
@@ -257,7 +243,6 @@
   {
    "sym": "n",
    "concept": "mole",
-   "type": "amount",
    "meaning": "the amount of titrant added",
    "unit": "mol",
    "section": "14.7"
@@ -265,7 +250,6 @@
   {
    "sym": "pH",
    "concept": "ph",
-   "type": "concentration",
    "meaning": "the pH of the titration solution, the negative base-10 logarithm of its hydronium ion molarity",
    "unit": "none",
    "section": "14.7"

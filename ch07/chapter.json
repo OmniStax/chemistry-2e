@@ -62,7 +62,6 @@
     {
       "sym": "D_bond",
       "concept": "bond-energy",
-      "type": "energy",
       "meaning": "the bond energy, the energy required to break one mole of a particular covalent bond in gaseous molecules; always positive",
       "unit": "kJ/mol",
       "section": "7.5",
@@ -71,7 +70,6 @@
     {
       "sym": "ΔH",
       "concept": "enthalpy-change",
-      "type": "energy",
       "meaning": "the enthalpy change of a reaction, estimated from the bond energies of the bonds broken and formed",
       "unit": "kJ",
       "section": "7.5",
@@ -80,7 +78,6 @@
     {
       "sym": "ΔH°",
       "concept": "enthalpy-change",
-      "type": "energy",
       "meaning": "the standard enthalpy change of a reaction",
       "unit": "kJ",
       "section": "7.5",
@@ -89,7 +86,6 @@
     {
       "sym": "ΔH_lattice",
       "concept": "lattice-energy",
-      "type": "energy",
       "meaning": "the lattice energy, the energy required to separate one mole of an ionic solid into its gaseous ions",
       "unit": "kJ/mol",
       "section": "7.5",
@@ -127,7 +123,6 @@
     {
       "sym": "ΔH_f°",
       "concept": "standard-enthalpy-of-formation",
-      "type": "energy",
       "meaning": "the standard enthalpy of formation of the ionic compound from its elements",
       "unit": "kJ/mol",
       "section": "7.5",
@@ -136,7 +131,6 @@
     {
       "sym": "ΔH_s°",
       "concept": "enthalpies-of-phase-change",
-      "type": "energy",
       "meaning": "the enthalpy of sublimation of the metal",
       "unit": "kJ/mol",
       "section": "7.5",
@@ -145,7 +139,6 @@
     {
       "sym": "IE",
       "concept": "ionization-energy",
-      "type": "energy",
       "meaning": "the ionization energy of the metal atom",
       "unit": "kJ/mol",
       "section": "7.5",
@@ -154,7 +147,6 @@
     {
       "sym": "EA",
       "concept": "electron-affinity",
-      "type": "energy",
       "meaning": "the electron affinity of the nonmetal atom, negative when the step releases energy",
       "unit": "kJ/mol",
       "section": "7.5",

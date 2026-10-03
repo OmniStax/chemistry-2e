@@ -58,7 +58,6 @@
     {
       "sym": "Δt",
       "latex": "\\Delta t",
-      "type": "time",
       "macro": "\\kdt"
     },
     {
@@ -225,6 +224,7 @@
       "terms": [
         "wavelength (λ)"
       ],
+      "type": "wavelength",
       "statement": "The wavelength of a wave is the distance between two consecutive peaks or troughs."
     },
     {
@@ -236,6 +236,7 @@
       "terms": [
         "frequency (ν)"
       ],
+      "type": "frequency",
       "statement": "The frequency of a wave is the number of wave cycles, peaks or troughs, that pass a specified point in space per unit time."
     },
     {
@@ -1019,6 +1020,7 @@
       "terms": [
         "ionization energy"
       ],
+      "type": "energy",
       "statement": "The ionization energy is the energy required to remove an electron from a gaseous atom or ion. The first ionization energy, IE₁, removes the most loosely bound electron of the neutral atom.",
       "forms": [
         {
@@ -1039,6 +1041,7 @@
       "terms": [
         "electron affinity"
       ],
+      "type": "energy",
       "statement": "The electron affinity is the energy change associated with the addition of an electron to a gaseous atom or ion. It is negative when energy is released.",
       "forms": [
         {

@@ -3,13 +3,13 @@
   "symbols": [
     { "sym": "N_A", "latex": "N_A" },
     { "sym": "n_fu", "latex": "n" },
-    { "sym": "L", "latex": "L", "type": "volume", "macro": "\\kL" },
-    { "sym": "L_1", "latex": "L_1", "type": "volume", "macro": "\\kLone" },
-    { "sym": "L_2", "latex": "L_2", "type": "volume", "macro": "\\kLtwo" },
-    { "sym": "M_1", "latex": "M_1", "type": "concentration", "macro": "\\kMone" },
-    { "sym": "M_2", "latex": "M_2", "type": "concentration", "macro": "\\kMtwo" },
-    { "sym": "C_1", "latex": "C_1", "type": "concentration", "macro": "\\kCone" },
-    { "sym": "C_2", "latex": "C_2", "type": "concentration", "macro": "\\kCtwo" }
+    { "sym": "L", "latex": "L", "macro": "\\kL" },
+    { "sym": "L_1", "latex": "L_1", "macro": "\\kLone" },
+    { "sym": "L_2", "latex": "L_2", "macro": "\\kLtwo" },
+    { "sym": "M_1", "latex": "M_1", "macro": "\\kMone" },
+    { "sym": "M_2", "latex": "M_2", "macro": "\\kMtwo" },
+    { "sym": "C_1", "latex": "C_1", "macro": "\\kCone" },
+    { "sym": "C_2", "latex": "C_2", "macro": "\\kCtwo" }
   ],
   "concepts": [
     {
@@ -35,6 +35,7 @@
       "terms": [
         "mole"
       ],
+      "type": "amount",
       "statement": "The mole is an amount unit like a pair or a dozen, and it links an easily measured property, bulk mass, to a fundamental one, the number of atoms or molecules. Chemists count particles they cannot see by weighing them, and the mole is the unit that makes that possible."
     },
     {
@@ -63,6 +64,7 @@
       "terms": [
         "molar mass"
       ],
+      "type": "mass",
       "statement": "The molar mass of a substance is the mass in grams of 1 mole of it, and it is numerically equal to the formula mass in amu, because the atomic mass unit and the mole are defined from the same reference, carbon-12. That equality turns a formula mass read from the periodic table into a conversion factor between grams and moles."
     },
     {
@@ -175,6 +177,7 @@
       "terms": [
         "concentration"
       ],
+      "type": "concentration",
       "statement": "The relative amount of a given component of a solution is its concentration, and the properties of a mixture depend on it, as the sweetness of a coffee depends on its sugar. A solution is called dilute or concentrated in words before any unit puts a number on it."
     },
     {
@@ -186,6 +189,7 @@
       "terms": [
         "molarity (M)"
       ],
+      "type": "concentration",
       "statement": "Molarity is the number of moles of solute in exactly 1 liter of solution, and it is the concentration unit of most of chemistry. The liter is of the whole solution, not of the solvent that was added.",
       "forms": [
         {

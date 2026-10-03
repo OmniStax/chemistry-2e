@@ -201,6 +201,7 @@
       "terms": [
         "solubility"
       ],
+      "type": "concentration",
       "statement": "The solubility of a substance is the extent to which it dissolves in water or any other solvent. A substance of relatively high solubility is soluble, and one that dissolves only to a slight extent is insoluble."
     },
     {

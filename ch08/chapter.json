@@ -36,7 +36,6 @@
   {
    "sym": "E",
    "concept": "energy-and-work",
-   "type": "energy",
    "meaning": "the energy of a system of two atoms, set at zero when the atoms are far apart",
    "unit": "J",
    "section": "8.1",

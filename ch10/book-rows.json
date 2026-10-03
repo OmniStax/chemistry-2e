@@ -20,19 +20,16 @@
   {
    "sym": "ΔH_vap",
    "latex": "\\Delta H_{\\text{vap}}",
-   "type": "energy",
    "macro": "\\kdHvap"
   },
   {
    "sym": "ΔH_fus",
    "latex": "\\Delta H_{\\text{fus}}",
-   "type": "energy",
    "macro": "\\kdHfus"
   },
   {
    "sym": "ΔH_sub",
    "latex": "\\Delta H_{\\text{sub}}",
-   "type": "energy",
    "macro": "\\kdHsub"
   },
   {
@@ -328,6 +325,7 @@
    "section": "10.3",
    "name": "Enthalpies of phase change",
    "symbol": "ΔH_vap",
+   "type": "energy",
    "statement": "Melting, vaporization and sublimation are endothermic, and freezing, condensation and deposition release the same heat with the opposite sign. Melting only partly overcomes the intermolecular attractions while vaporization overcomes them completely, so ΔH<sub>fus</sub> is less than ΔH<sub>vap</sub>, and by Hess’s law ΔH<sub>sub</sub> is about their sum.",
    "forms": [
     {
@@ -432,6 +430,7 @@
    "terms": [
     "vapor pressure"
    ],
+   "type": "pressure",
    "statement": "The vapor pressure, or equilibrium vapor pressure, of a liquid or solid is the pressure exerted by its vapor in equilibrium with it at a given temperature."
   },
   {

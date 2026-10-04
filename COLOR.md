@@ -44,9 +44,11 @@ chapters draw last. The fifteen after them were added under the test of root
 `RULES.md` item 7 (2026-10-04), in the order that keeps each apart from the
 quantities it is drawn beside: every such pair stands 60° or more apart.
 
-These are not categories, and stay in ink: a constant of nature (Planck's
-constant, the speed of light, the elementary charge, Avogadro's number, the
-gas constant, the Rydberg constant, the Bohr radius); a count or a label (the
+These are not categories, and stay in ink: a constant of nature whose kind
+nothing else shares (Planck's constant, Avogadro's number, the gas constant,
+the Rydberg constant); a constant that is a value of a category wears it, so
+the speed of light is a velocity, the elementary charge a charge and the Bohr
+radius a length; a count or a label (the
 subscripts and coefficients of a formula, a quantum number, an atomic number
 Z and a mass number A, an effective nuclear charge, an oxidation number, a
 formal charge, a reaction order, a van't Hoff factor, an order of
@@ -93,15 +95,13 @@ molecular drawings of the later chapters: a particle box draws the gas
 the reader chose in that element's colours, never an anonymous grey
 dot, and a figure that would otherwise draw a generic particle gives it
 an identity so that it can have one. An ion keeps its element colour and
-carries its charge as a mark. A bare
-nucleus and a free electron are the two particles this does not reach: a
-nucleus drawn without its electrons is not yet an atom of any element, and
-an electron belongs to no element at all, so both are drawn in ink, the
-nucleus as a filled disc with its charge written beside it and the electron
-as a disc that names itself under the pointer, as the figures of 6.2 draw
-them. Element colours do not switch off with
-colour coding, since they are the book's own drawing convention rather
-than a signal the app adds, and they do not appear in the colour menu.
+carries its charge as a mark. A free
+electron is drawn with `F.el('e-')`, the palette's own colour for it; a bare
+nucleus drawn without its electrons is not yet an atom of any element, and is
+drawn in ink as a filled disc with its charge written beside it. Element
+colours follow the reader's Facts and conventions switch, since they are the
+book's own drawing convention rather than a signal the app adds, and they do
+not appear in the colour menu.
 
 ## Facts
 

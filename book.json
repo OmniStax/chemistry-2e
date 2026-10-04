@@ -18164,124 +18164,130 @@
   ],
   "colours": {
     "palette": "oklab",
-    "vision": "deutan",
+    "vision": "normal",
     "assign": {
       "time": {
-        "light": "#823E5C",
-        "dark": "#DD90AF"
+        "light": "#7E479C",
+        "dark": "#BB83DD"
       },
       "amount": {
-        "light": "#C53764",
-        "dark": "#E1527B"
+        "light": "#A25A78",
+        "dark": "#BC7290"
       },
       "mass": {
-        "light": "#3C2B02",
-        "dark": "#F1DBB1"
+        "light": "#A804CC",
+        "dark": "#D047F6"
       },
       "volume": {
-        "light": "#895FA9",
-        "dark": "#A177C3"
+        "light": "#317D01",
+        "dark": "#62AE45"
       },
       "concentration": {
-        "light": "#7143BB",
-        "dark": "#AC82FF"
+        "light": "#4F3E88",
+        "dark": "#B8A9FE"
       },
       "pressure": {
-        "light": "#8F2D01",
-        "dark": "#FB906C"
+        "light": "#5566DC",
+        "dark": "#6A7FF8"
       },
       "temperature": {
-        "light": "#602171",
-        "dark": "#EAA6FF"
+        "light": "#033816",
+        "dark": "#B9EEC2"
       },
       "energy": {
-        "light": "#6E59E2",
-        "dark": "#8472FE"
+        "light": "#6B116D",
+        "dark": "#FA9DFA"
       },
       "entropy": {
-        "light": "#5F2C5B",
-        "dark": "#E9ADE3"
+        "light": "#5F69A8",
+        "dark": "#818DCF"
       },
       "rate": {
-        "light": "#894ABF",
-        "dark": "#AE6FE8"
+        "light": "#60415D",
+        "dark": "#CEAACA"
       },
       "wavelength": {
-        "light": "#8F5564",
-        "dark": "#C38493"
+        "light": "#064867",
+        "dark": "#92CDF2"
       },
       "frequency": {
-        "light": "#532A2C",
-        "dark": "#F6C2C2"
+        "light": "#D70F36",
+        "dark": "#F53B4E"
       },
       "potential": {
-        "light": "#3F2D5B",
-        "dark": "#D9C6FE"
+        "light": "#90108B",
+        "dark": "#EE75E6"
       },
       "charge": {
-        "light": "#37688D",
-        "dark": "#72A5CD"
+        "light": "#8F2E5D",
+        "dark": "#EE83B1"
       },
       "density": {
-        "light": "#BD4D00",
-        "dark": "#D8662A"
+        "light": "#66302A",
+        "dark": "#F4B1A8"
       },
       "equilibrium-constant": {
-        "light": "#6A2743",
-        "dark": "#F9A9C5"
+        "light": "#AC43A5",
+        "dark": "#C65CBF"
       },
       "momentum": {
-        "light": "#624727",
-        "dark": "#D1B18E"
+        "light": "#4B7C56",
+        "dark": "#6EA078"
       },
       "wavefunction": {
-        "light": "#6D397D",
-        "dark": "#D198E3"
+        "light": "#432E08",
+        "dark": "#EED3AC"
       },
       "dipole-moment": {
+        "light": "#422C58",
+        "dark": "#DEC4FB"
+      },
+      "velocity": {
+        "light": "#854B47",
+        "dark": "#D2918C"
+      },
+      "angle": {
+        "light": "#0B7A9A",
+        "dark": "#419FC0"
+      },
+      "colligative-constant": {
+        "light": "#674E14",
+        "dark": "#C9AD76"
+      },
+      "surface-tension": {
+        "light": "#8649E2",
+        "dark": "#9E64FE"
+      },
+      "rate-constant": {
+        "light": "#314C01",
+        "dark": "#B0D18B"
+      },
+      "force": {
+        "light": "#8C681C",
+        "dark": "#B28B45"
+      },
+      "acceleration": {
         "light": "#AC3225",
         "dark": "#F17260"
       },
-      "velocity": {
-        "light": "#C04444",
-        "dark": "#DC5E5B"
-      },
-      "angle": {
-        "light": "#762494",
-        "dark": "#DB8AFE"
-      },
-      "colligative-constant": {
-        "light": "#80225A",
-        "dark": "#F891C7"
-      },
-      "surface-tension": {
-        "light": "#5C3825",
-        "dark": "#E6B9A3"
-      },
-      "rate-constant": {
-        "light": "#522645",
-        "dark": "#F5BDE2"
-      },
-      "force": {
-        "light": "#A35588",
-        "dark": "#BD6DA1"
-      },
-      "acceleration": {
-        "light": "#B8284D",
-        "dark": "#F15F7A"
-      },
       "heat-capacity": {
-        "light": "#9C1F45",
-        "dark": "#FD7B96"
+        "light": "#075EA9",
+        "dark": "#5EA8F9"
       },
       "area": {
-        "light": "#8925A4",
-        "dark": "#D775F4"
+        "light": "#036946",
+        "dark": "#6CBF97"
       },
       "length": {
-        "light": "#3F1E46",
-        "dark": "#F7CDFF"
+        "light": "#C30B7E",
+        "dark": "#EE46A2"
       }
+    },
+    "dmin": {
+      "normal": 0.04,
+      "protan": 0.01,
+      "deutan": 0.01,
+      "tritan": 0.04
     }
   }
 }

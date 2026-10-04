@@ -190,7 +190,9 @@
   {
    "id": "jug",
    "label": "the jug of milk",
-   "figure": "sim-extensive"
+   "figures": [
+    "sim-extensive"
+   ]
   }
  ]
 }

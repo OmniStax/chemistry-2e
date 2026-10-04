@@ -870,22 +870,30 @@
   {
    "id": "metal",
    "label": "the hot metal, M",
-   "figure": "sim-calorimeter"
+   "figures": [
+    "sim-calorimeter"
+   ]
   },
   {
    "id": "water",
    "label": "the cool water, W",
-   "figure": "sim-calorimeter"
+   "figures": [
+    "sim-calorimeter"
+   ]
   },
   {
    "id": "solution",
    "label": "the solution in the calorimeter",
-   "figure": "sim-calorimeter"
+   "figures": [
+    "sim-calorimeter"
+   ]
   },
   {
    "id": "calorimeter",
    "label": "the coffee cup calorimeter",
-   "figure": "sim-calorimeter"
+   "figures": [
+    "sim-calorimeter"
+   ]
   }
  ]
 }

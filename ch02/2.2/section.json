@@ -175,37 +175,51 @@
   {
    "id": "tube",
    "label": "the cathode ray tube",
-   "figure": "sim-cathode-ray"
+   "figures": [
+    "sim-cathode-ray"
+   ]
   },
   {
    "id": "cathode",
    "label": "the cathode",
-   "figure": "sim-cathode-ray"
+   "figures": [
+    "sim-cathode-ray"
+   ]
   },
   {
    "id": "anode",
    "label": "the anode",
-   "figure": "sim-cathode-ray"
+   "figures": [
+    "sim-cathode-ray"
+   ]
   },
   {
    "id": "drops",
    "label": "the oil drops",
-   "figure": "sim-oil-drop"
+   "figures": [
+    "sim-oil-drop"
+   ]
   },
   {
    "id": "lead-block",
    "label": "the lead block",
-   "figure": "sim-gold-foil"
+   "figures": [
+    "sim-gold-foil"
+   ]
   },
   {
    "id": "foil",
    "label": "the foil",
-   "figure": "sim-gold-foil"
+   "figures": [
+    "sim-gold-foil"
+   ]
   },
   {
    "id": "screen",
    "label": "the luminescent screen",
-   "figure": "sim-gold-foil"
+   "figures": [
+    "sim-gold-foil"
+   ]
   }
  ]
 }

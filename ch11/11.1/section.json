@@ -70,22 +70,30 @@
     {
       "id": "helium-bulb",
       "label": "the bulb that first held helium",
-      "figure": "sim-he-ar"
+      "figures": [
+        "sim-he-ar"
+      ]
     },
     {
       "id": "argon-bulb",
       "label": "the bulb that first held argon",
-      "figure": "sim-he-ar"
+      "figures": [
+        "sim-he-ar"
+      ]
     },
     {
       "id": "solute",
       "label": "the solute, expanded in step 1",
-      "figure": "sim-steps"
+      "figures": [
+        "sim-steps"
+      ]
     },
     {
       "id": "solvent",
       "label": "the solvent, expanded in step 2",
-      "figure": "sim-steps"
+      "figures": [
+        "sim-steps"
+      ]
     }
   ]
 }

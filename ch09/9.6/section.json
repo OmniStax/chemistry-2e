@@ -90,37 +90,51 @@
     {
       "id": "h2",
       "label": "the hydrogen curve",
-      "figure": "sim-z-graph"
+      "figures": [
+        "sim-z-graph"
+      ]
     },
     {
       "id": "n2",
       "label": "the nitrogen curve",
-      "figure": "sim-z-graph"
+      "figures": [
+        "sim-z-graph"
+      ]
     },
     {
       "id": "o2",
       "label": "the oxygen curve",
-      "figure": "sim-z-graph"
+      "figures": [
+        "sim-z-graph"
+      ]
     },
     {
       "id": "ch4",
       "label": "the methane curve",
-      "figure": "sim-z-graph"
+      "figures": [
+        "sim-z-graph"
+      ]
     },
     {
       "id": "co2",
       "label": "the carbon dioxide curve",
-      "figure": "sim-z-graph"
+      "figures": [
+        "sim-z-graph"
+      ]
     },
     {
       "id": "ideal-gas",
       "label": "the ideal gas",
-      "figure": "sim-real-boxes"
+      "figures": [
+        "sim-real-boxes"
+      ]
     },
     {
       "id": "real-gas",
       "label": "the real gas",
-      "figure": "sim-real-boxes"
+      "figures": [
+        "sim-real-boxes"
+      ]
     }
   ]
 }

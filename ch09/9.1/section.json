@@ -737,12 +737,16 @@
   {
    "id": "mercury-barometer",
    "label": "the mercury barometer",
-   "figure": "sim-barometer"
+   "figures": [
+    "sim-barometer"
+   ]
   },
   {
    "id": "water-barometer",
    "label": "the water barometer",
-   "figure": "sim-barometer"
+   "figures": [
+    "sim-barometer"
+   ]
   }
  ]
 }

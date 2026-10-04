@@ -202,17 +202,23 @@
   {
    "id": "narrow-tube",
    "label": "the narrow tube, of diameter d",
-   "figure": "sim-caprise"
+   "figures": [
+    "sim-caprise"
+   ]
   },
   {
    "id": "wide-tube",
    "label": "the wide tube, twice as wide",
-   "figure": "sim-caprise"
+   "figures": [
+    "sim-caprise"
+   ]
   },
   {
    "id": "beaker",
    "label": "the beaker of liquid",
-   "figure": "sim-caprise"
+   "figures": [
+    "sim-caprise"
+   ]
   }
  ]
 }

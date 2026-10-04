@@ -412,27 +412,37 @@
   {
    "id": "sub-curve",
    "label": "the solid-gas curve (AB)",
-   "figure": "sim-phase"
+   "figures": [
+    "sim-phase"
+   ]
   },
   {
    "id": "vap-curve",
    "label": "the liquid-gas curve (BC)",
-   "figure": "sim-phase"
+   "figures": [
+    "sim-phase"
+   ]
   },
   {
    "id": "melt-curve",
    "label": "the solid-liquid curve (BD)",
-   "figure": "sim-phase"
+   "figures": [
+    "sim-phase"
+   ]
   },
   {
    "id": "triple-point",
    "label": "the triple point (B)",
-   "figure": "sim-phase"
+   "figures": [
+    "sim-phase"
+   ]
   },
   {
    "id": "critical-point",
    "label": "the critical point (C)",
-   "figure": "sim-phase"
+   "figures": [
+    "sim-phase"
+   ]
   }
  ]
 }

@@ -71,17 +71,23 @@
     {
       "id": "electrodes",
       "label": "the two electrodes",
-      "figure": "sim-conductivity"
+      "figures": [
+        "sim-conductivity"
+      ]
     },
     {
       "id": "bulb",
       "label": "the light bulb",
-      "figure": "sim-conductivity"
+      "figures": [
+        "sim-conductivity"
+      ]
     },
     {
       "id": "power-supply",
       "label": "the power supply",
-      "figure": "sim-conductivity"
+      "figures": [
+        "sim-conductivity"
+      ]
     }
   ]
 }

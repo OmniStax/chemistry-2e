@@ -204,7 +204,9 @@
   {
    "id": "beaker",
    "label": "the beaker of water",
-   "figure": "sim-water"
+   "figures": [
+    "sim-water"
+   ]
   }
  ]
 }

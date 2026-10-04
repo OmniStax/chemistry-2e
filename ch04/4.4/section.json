@@ -473,12 +473,16 @@
   {
    "id": "bread",
    "label": "the slices of bread",
-   "figure": "sim-sandwich"
+   "figures": [
+    "sim-sandwich"
+   ]
   },
   {
    "id": "cheese",
    "label": "the slices of cheese",
-   "figure": "sim-sandwich"
+   "figures": [
+    "sim-sandwich"
+   ]
   }
  ]
 }

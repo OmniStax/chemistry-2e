@@ -96,37 +96,53 @@
     {
       "id": "baseline",
       "label": "the baseline cylinder",
-      "figure": "sim-kmt"
+      "figures": [
+        "sim-kmt",
+        "sim-gasbox"
+      ]
     },
     {
       "id": "changed",
       "label": "the changed cylinder",
-      "figure": "sim-kmt"
+      "figures": [
+        "sim-kmt",
+        "sim-gasbox"
+      ]
     },
     {
       "id": "xenon",
       "label": "the xenon curve",
-      "figure": "sim-speeds"
+      "figures": [
+        "sim-speeds"
+      ]
     },
     {
       "id": "argon",
       "label": "the argon curve",
-      "figure": "sim-speeds"
+      "figures": [
+        "sim-speeds"
+      ]
     },
     {
       "id": "neon",
       "label": "the neon curve",
-      "figure": "sim-speeds"
+      "figures": [
+        "sim-speeds"
+      ]
     },
     {
       "id": "helium",
       "label": "the helium curve",
-      "figure": "sim-speeds"
+      "figures": [
+        "sim-speeds"
+      ]
     },
     {
       "id": "speed-count",
       "label": "the count of speeds",
-      "figure": "sim-gasbox"
+      "figures": [
+        "sim-gasbox"
+      ]
     }
   ]
 }

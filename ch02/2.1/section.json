@@ -278,17 +278,23 @@
   {
    "id": "sample-a",
    "label": "sample A",
-   "figure": "sim-isooctane"
+   "figures": [
+    "sim-isooctane"
+   ]
   },
   {
    "id": "sample-b",
    "label": "sample B",
-   "figure": "sim-isooctane"
+   "figures": [
+    "sim-isooctane"
+   ]
   },
   {
    "id": "sample-c",
    "label": "sample C",
-   "figure": "sim-isooctane"
+   "figures": [
+    "sim-isooctane"
+   ]
   }
  ]
 }

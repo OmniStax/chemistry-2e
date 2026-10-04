@@ -188,27 +188,37 @@
   {
    "id": "lead-water",
    "label": "the tap water at the lead action level",
-   "figure": "sim-ppm"
+   "figures": [
+    "sim-ppm"
+   ]
   },
   {
    "id": "fluoride-water",
    "label": "the tap water at the fluoride limit",
-   "figure": "sim-ppm"
+   "figures": [
+    "sim-ppm"
+   ]
   },
   {
    "id": "spinal-fluid",
    "label": "the spinal fluid sample",
-   "figure": "sim-ppm"
+   "figures": [
+    "sim-ppm"
+   ]
   },
   {
    "id": "bleach",
    "label": "the liquid bleach",
-   "figure": "sim-ppm"
+   "figures": [
+    "sim-ppm"
+   ]
   },
   {
    "id": "hcl",
    "label": "the concentrated hydrochloric acid",
-   "figure": "sim-ppm"
+   "figures": [
+    "sim-ppm"
+   ]
   }
  ]
 }

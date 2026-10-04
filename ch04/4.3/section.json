@@ -257,12 +257,16 @@
   {
    "id": "substance-a",
    "label": "substance A, the one given",
-   "figure": "sim-flowchart"
+   "figures": [
+    "sim-flowchart"
+   ]
   },
   {
    "id": "substance-b",
    "label": "substance B, the one sought",
-   "figure": "sim-flowchart"
+   "figures": [
+    "sim-flowchart"
+   ]
   }
  ]
 }

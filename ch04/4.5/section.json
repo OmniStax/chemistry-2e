@@ -231,32 +231,44 @@
   {
    "id": "buret",
    "label": "the buret of sodium hydroxide",
-   "figure": "sim-titration"
+   "figures": [
+    "sim-titration"
+   ]
   },
   {
    "id": "sample",
    "label": "the sample of hydrochloric acid in its flask",
-   "figure": "sim-titration"
+   "figures": [
+    "sim-titration"
+   ]
   },
   {
    "id": "furnace",
    "label": "the furnace",
-   "figure": "sim-combustion"
+   "figures": [
+    "sim-combustion"
+   ]
   },
   {
    "id": "combustion-sample",
    "label": "the sample burned",
-   "figure": "sim-combustion"
+   "figures": [
+    "sim-combustion"
+   ]
   },
   {
    "id": "h2o-absorber",
    "label": "the water absorber",
-   "figure": "sim-combustion"
+   "figures": [
+    "sim-combustion"
+   ]
   },
   {
    "id": "co2-absorber",
    "label": "the carbon dioxide absorber",
-   "figure": "sim-combustion"
+   "figures": [
+    "sim-combustion"
+   ]
   }
  ]
 }

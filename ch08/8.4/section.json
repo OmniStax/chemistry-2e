@@ -756,47 +756,65 @@
   {
    "id": "balance",
    "label": "the Gouy balance",
-   "figure": "sim-gouy"
+   "figures": [
+    "sim-gouy"
+   ]
   },
   {
    "id": "sample",
    "label": "the sample in its tube",
-   "figure": "sim-gouy"
+   "figures": [
+    "sim-gouy"
+   ]
   },
   {
    "id": "electromagnets",
    "label": "the electromagnets",
-   "figure": "sim-gouy"
+   "figures": [
+    "sim-gouy"
+   ]
   },
   {
    "id": "weights",
    "label": "the weights on the dish",
-   "figure": "sim-gouy"
+   "figures": [
+    "sim-gouy"
+   ]
   },
   {
    "id": "wave-a",
    "label": "the first wave",
-   "figure": "sim-waves"
+   "figures": [
+    "sim-waves"
+   ]
   },
   {
    "id": "wave-b",
    "label": "the second wave",
-   "figure": "sim-waves"
+   "figures": [
+    "sim-waves"
+   ]
   },
   {
    "id": "wave-sum",
    "label": "the sum of the two waves",
-   "figure": "sim-waves"
+   "figures": [
+    "sim-waves"
+   ]
   },
   {
    "id": "valence-band",
    "label": "the valence band",
-   "figure": "sim-bands"
+   "figures": [
+    "sim-bands"
+   ]
   },
   {
    "id": "conduction-band",
    "label": "the conduction band",
-   "figure": "sim-bands"
+   "figures": [
+    "sim-bands"
+   ]
   }
  ]
 }

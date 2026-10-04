@@ -104,32 +104,44 @@
     {
       "id": "left-bulb",
       "label": "the left bulb",
-      "figure": "sim-bulbs"
+      "figures": [
+        "sim-bulbs"
+      ]
     },
     {
       "id": "right-bulb",
       "label": "the right bulb",
-      "figure": "sim-bulbs"
+      "figures": [
+        "sim-bulbs"
+      ]
     },
     {
       "id": "lighter-gas",
       "label": "the lighter gas",
-      "figure": "sim-bulbs"
+      "figures": [
+        "sim-bulbs"
+      ]
     },
     {
       "id": "heavier-gas",
       "label": "the heavier gas",
-      "figure": "sim-bulbs"
+      "figures": [
+        "sim-bulbs"
+      ]
     },
     {
       "id": "uf6-235",
       "label": "²³⁵UF₆",
-      "figure": "sim-diffuser"
+      "figures": [
+        "sim-diffuser"
+      ]
     },
     {
       "id": "uf6-238",
       "label": "²³⁸UF₆",
-      "figure": "sim-diffuser"
+      "figures": [
+        "sim-diffuser"
+      ]
     }
   ]
 }

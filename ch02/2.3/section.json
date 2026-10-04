@@ -311,47 +311,65 @@
   {
    "id": "b-10",
    "label": "boron-10",
-   "figure": "sim-average-mass"
+   "figures": [
+    "sim-average-mass"
+   ]
   },
   {
    "id": "b-11",
    "label": "boron-11",
-   "figure": "sim-average-mass"
+   "figures": [
+    "sim-average-mass"
+   ]
   },
   {
    "id": "ne-20",
    "label": "neon-20",
-   "figure": "sim-average-mass"
+   "figures": [
+    "sim-average-mass"
+   ]
   },
   {
    "id": "ne-21",
    "label": "neon-21",
-   "figure": "sim-average-mass"
+   "figures": [
+    "sim-average-mass"
+   ]
   },
   {
    "id": "ne-22",
    "label": "neon-22",
-   "figure": "sim-average-mass"
+   "figures": [
+    "sim-average-mass"
+   ]
   },
   {
    "id": "cl-35",
    "label": "chlorine-35",
-   "figure": "sim-average-mass"
+   "figures": [
+    "sim-average-mass"
+   ]
   },
   {
    "id": "cl-37",
    "label": "chlorine-37",
-   "figure": "sim-average-mass"
+   "figures": [
+    "sim-average-mass"
+   ]
   },
   {
    "id": "sample",
    "label": "the sample",
-   "figure": "sim-mass-spec"
+   "figures": [
+    "sim-mass-spec"
+   ]
   },
   {
    "id": "field",
    "label": "the magnetic field",
-   "figure": "sim-mass-spec"
+   "figures": [
+    "sim-mass-spec"
+   ]
   }
  ]
 }

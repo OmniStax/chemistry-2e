@@ -744,32 +744,44 @@
   {
    "id": "narrow",
    "label": "the narrow container",
-   "figure": "sim-states"
+   "figures": [
+    "sim-states"
+   ]
   },
   {
    "id": "wide",
    "label": "the wide container",
-   "figure": "sim-states"
+   "figures": [
+    "sim-states"
+   ]
   },
   {
    "id": "bottle",
    "label": "the sealed bottle of beer precursor",
-   "figure": "sim-conservation"
+   "figures": [
+    "sim-conservation"
+   ]
   },
   {
    "id": "battery",
    "label": "the lead-acid battery",
-   "figure": "sim-conservation"
+   "figures": [
+    "sim-conservation"
+   ]
   },
   {
    "id": "h2-tube",
    "label": "the hydrogen tube",
-   "figure": "sim-electrolysis"
+   "figures": [
+    "sim-electrolysis"
+   ]
   },
   {
    "id": "o2-tube",
    "label": "the oxygen tube",
-   "figure": "sim-electrolysis"
+   "figures": [
+    "sim-electrolysis"
+   ]
   }
  ]
 }

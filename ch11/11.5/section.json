@@ -76,42 +76,58 @@
     {
       "id": "butterfat",
       "label": "the droplets of butterfat in milk",
-      "figure": "sim-tyndall"
+      "figures": [
+        "sim-tyndall"
+      ]
     },
     {
       "id": "mud",
       "label": "the grains of mud",
-      "figure": "sim-tyndall"
+      "figures": [
+        "sim-tyndall"
+      ]
     },
     {
       "id": "glass",
       "label": "the glass",
-      "figure": "sim-tyndall"
+      "figures": [
+        "sim-tyndall"
+      ]
     },
     {
       "id": "tail",
       "label": "the nonpolar hydrocarbon end",
-      "figure": "sim-amphiphile"
+      "figures": [
+        "sim-amphiphile"
+      ]
     },
     {
       "id": "head",
       "label": "the ionic end",
-      "figure": "sim-amphiphile"
+      "figures": [
+        "sim-amphiphile"
+      ]
     },
     {
       "id": "point-electrode",
       "label": "the point electrode",
-      "figure": "sim-precipitator"
+      "figures": [
+        "sim-precipitator"
+      ]
     },
     {
       "id": "plate-electrode",
       "label": "the plate electrode, the chamber wall",
-      "figure": "sim-precipitator"
+      "figures": [
+        "sim-precipitator"
+      ]
     },
     {
       "id": "hopper",
       "label": "the hopper",
-      "figure": "sim-precipitator"
+      "figures": [
+        "sim-precipitator"
+      ]
     }
   ]
 }

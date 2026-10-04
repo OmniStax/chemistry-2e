@@ -885,32 +885,44 @@
   {
    "id": "flask",
    "label": "the sealed flask",
-   "figure": "sim-vapor"
+   "figures": [
+    "sim-vapor"
+   ]
   },
   {
    "id": "manometer",
    "label": "the manometer",
-   "figure": "sim-vapor"
+   "figures": [
+    "sim-vapor"
+   ]
   },
   {
    "id": "diethyl-ether",
    "label": "diethyl ether",
-   "figure": "sim-bp"
+   "figures": [
+    "sim-bp"
+   ]
   },
   {
    "id": "ethanol",
    "label": "ethanol",
-   "figure": "sim-bp"
+   "figures": [
+    "sim-bp"
+   ]
   },
   {
    "id": "water",
    "label": "water",
-   "figure": "sim-bp"
+   "figures": [
+    "sim-bp"
+   ]
   },
   {
    "id": "ethylene-glycol",
    "label": "ethylene glycol",
-   "figure": "sim-bp"
+   "figures": [
+    "sim-bp"
+   ]
   }
  ]
 }

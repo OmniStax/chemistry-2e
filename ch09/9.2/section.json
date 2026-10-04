@@ -1055,22 +1055,30 @@
     {
       "id": "sphere",
       "label": "the sealed sphere",
-      "figure": "sim-amontons-sphere"
+      "figures": [
+        "sim-amontons-sphere"
+      ]
     },
     {
       "id": "syringe",
       "label": "the syringe",
-      "figure": "sim-boyle"
+      "figures": [
+        "sim-boyle"
+      ]
     },
     {
       "id": "lungs",
       "label": "the lungs",
-      "figure": "sim-breathing"
+      "figures": [
+        "sim-breathing"
+      ]
     },
     {
       "id": "diaphragm",
       "label": "the diaphragm",
-      "figure": "sim-breathing"
+      "figures": [
+        "sim-breathing"
+      ]
     }
   ]
 }

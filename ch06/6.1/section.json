@@ -256,32 +256,44 @@
     {
       "id": "rope",
       "label": "the rope the wave runs along",
-      "figure": "sim-wave"
+      "figures": [
+        "sim-wave"
+      ]
     },
     {
       "id": "crest",
       "label": "the marked crest followed across the frame",
-      "figure": "sim-wave"
+      "figures": [
+        "sim-wave"
+      ]
     },
     {
       "id": "signal",
       "label": "the signal the radio wave carries",
-      "figure": "sim-amfm"
+      "figures": [
+        "sim-amfm"
+      ]
     },
     {
       "id": "carrier",
       "label": "the carrier, the radio wave that transmits the signal",
-      "figure": "sim-amfm"
+      "figures": [
+        "sim-amfm"
+      ]
     },
     {
       "id": "string",
       "label": "the vibrating string held fixed at both ends",
-      "figure": "sim-string"
+      "figures": [
+        "sim-string"
+      ]
     },
     {
       "id": "metal",
       "label": "the metal the photons strike",
-      "figure": "sim-photoelectric"
+      "figures": [
+        "sim-photoelectric"
+      ]
     }
   ]
 }

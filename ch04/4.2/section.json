@@ -791,17 +791,23 @@
   {
    "id": "first-solution",
    "label": "the first solution",
-   "figure": "sim-precipitation"
+   "figures": [
+    "sim-precipitation"
+   ]
   },
   {
    "id": "second-solution",
    "label": "the second solution",
-   "figure": "sim-precipitation"
+   "figures": [
+    "sim-precipitation"
+   ]
   },
   {
    "id": "flask",
    "label": "the stoppered flask",
-   "figure": "sim-hcl"
+   "figures": [
+    "sim-hcl"
+   ]
   }
  ]
 }

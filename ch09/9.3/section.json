@@ -383,27 +383,37 @@
   {
    "id": "hydrogen",
    "label": "the cylinder of hydrogen",
-   "figure": "sim-dalton"
+   "figures": [
+    "sim-dalton"
+   ]
   },
   {
    "id": "helium",
    "label": "the cylinder of helium",
-   "figure": "sim-dalton"
+   "figures": [
+    "sim-dalton"
+   ]
   },
   {
    "id": "neon",
    "label": "the cylinder of neon",
-   "figure": "sim-dalton"
+   "figures": [
+    "sim-dalton"
+   ]
   },
   {
    "id": "reaction-flask",
    "label": "the reaction flask",
-   "figure": "sim-over-water"
+   "figures": [
+    "sim-over-water"
+   ]
   },
   {
    "id": "collection-flask",
    "label": "the collection flask",
-   "figure": "sim-over-water"
+   "figures": [
+    "sim-over-water"
+   ]
   }
  ]
 }

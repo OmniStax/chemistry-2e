@@ -244,22 +244,30 @@
   {
    "id": "lead",
    "label": "the cube of lead",
-   "figure": "sim-density"
+   "figures": [
+    "sim-density"
+   ]
   },
   {
    "id": "gold",
    "label": "the cube of gold",
-   "figure": "sim-density"
+   "figures": [
+    "sim-density"
+   ]
   },
   {
    "id": "iron-block",
    "label": "the iron block",
-   "figure": "sim-displacement"
+   "figures": [
+    "sim-displacement"
+   ]
   },
   {
    "id": "wood-block",
    "label": "the wood block",
-   "figure": "sim-displacement"
+   "figures": [
+    "sim-displacement"
+   ]
   }
  ]
 }

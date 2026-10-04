@@ -217,22 +217,30 @@
   {
    "id": "hematite",
    "label": "the hematite sample",
-   "figure": "sim-empirical"
+   "figures": [
+    "sim-empirical"
+   ]
   },
   {
    "id": "ch-sample",
    "label": "the sample of carbon and hydrogen",
-   "figure": "sim-empirical"
+   "figures": [
+    "sim-empirical"
+   ]
   },
   {
    "id": "clo-sample",
    "label": "the sample of chlorine and oxygen",
-   "figure": "sim-empirical"
+   "figures": [
+    "sim-empirical"
+   ]
   },
   {
    "id": "gas",
    "label": "the fermentation gas",
-   "figure": "sim-empirical"
+   "figures": [
+    "sim-empirical"
+   ]
   }
  ]
 }

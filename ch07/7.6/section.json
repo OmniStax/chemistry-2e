@@ -1217,12 +1217,16 @@
   {
    "id": "negative-plate",
    "label": "the negative plate of the electric field",
-   "figure": "sim-field"
+   "figures": [
+    "sim-field"
+   ]
   },
   {
    "id": "positive-plate",
    "label": "the positive plate of the electric field",
-   "figure": "sim-field"
+   "figures": [
+    "sim-field"
+   ]
   }
  ]
 }

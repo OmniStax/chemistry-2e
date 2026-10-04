@@ -526,32 +526,44 @@
   {
    "id": "layer-a",
    "label": "the A positions and their layers",
-   "figure": "sim-packing"
+   "figures": [
+    "sim-packing"
+   ]
   },
   {
    "id": "layer-b",
    "label": "the B positions and their layers",
-   "figure": "sim-packing"
+   "figures": [
+    "sim-packing"
+   ]
   },
   {
    "id": "layer-c",
    "label": "the C positions and their layers",
-   "figure": "sim-packing"
+   "figures": [
+    "sim-packing"
+   ]
   },
   {
    "id": "upper-ray",
    "label": "the ray scattered by the upper plane, and its wave",
-   "figure": "sim-bragg"
+   "figures": [
+    "sim-bragg"
+   ]
   },
   {
    "id": "lower-ray",
    "label": "the ray scattered by the lower plane, and its wave",
-   "figure": "sim-bragg"
+   "figures": [
+    "sim-bragg"
+   ]
   },
   {
    "id": "sum-wave",
    "label": "the sum of the two scattered waves",
-   "figure": "sim-bragg"
+   "figures": [
+    "sim-bragg"
+   ]
   }
  ]
 }

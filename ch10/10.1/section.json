@@ -344,22 +344,30 @@
     {
       "id": "group-14",
       "label": "the carbon family (group 14 hydrides)",
-      "figure": "sim-hydrides"
+      "figures": [
+        "sim-hydrides"
+      ]
     },
     {
       "id": "group-15",
       "label": "the nitrogen family (group 15 hydrides)",
-      "figure": "sim-hydrides"
+      "figures": [
+        "sim-hydrides"
+      ]
     },
     {
       "id": "group-16",
       "label": "the oxygen family (group 16 hydrides)",
-      "figure": "sim-hydrides"
+      "figures": [
+        "sim-hydrides"
+      ]
     },
     {
       "id": "group-17",
       "label": "the halogen family (group 17 hydrides)",
-      "figure": "sim-hydrides"
+      "figures": [
+        "sim-hydrides"
+      ]
     }
   ]
 }

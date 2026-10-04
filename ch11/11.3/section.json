@@ -100,77 +100,107 @@
     {
       "id": "methane",
       "label": "methane dissolved in water",
-      "figure": "sim-gas-solubility"
+      "figures": [
+        "sim-gas-solubility"
+      ]
     },
     {
       "id": "oxygen",
       "label": "oxygen dissolved in water",
-      "figure": "sim-gas-solubility"
+      "figures": [
+        "sim-gas-solubility"
+      ]
     },
     {
       "id": "carbon-monoxide",
       "label": "carbon monoxide dissolved in water",
-      "figure": "sim-gas-solubility"
+      "figures": [
+        "sim-gas-solubility"
+      ]
     },
     {
       "id": "nitrogen",
       "label": "nitrogen dissolved in water",
-      "figure": "sim-gas-solubility"
+      "figures": [
+        "sim-gas-solubility"
+      ]
     },
     {
       "id": "helium",
       "label": "helium dissolved in water",
-      "figure": "sim-gas-solubility"
+      "figures": [
+        "sim-gas-solubility"
+      ]
     },
     {
       "id": "lake",
       "label": "the crater lake",
-      "figure": "sim-nyos"
+      "figures": [
+        "sim-nyos"
+      ]
     },
     {
       "id": "parcel",
       "label": "the parcel of water rising through the lake",
-      "figure": "sim-nyos"
+      "figures": [
+        "sim-nyos"
+      ]
     },
     {
       "id": "sugar",
       "label": "sugar, C₁₂H₂₂O₁₁",
-      "figure": "sim-solid-solubility"
+      "figures": [
+        "sim-solid-solubility"
+      ]
     },
     {
       "id": "kno3",
       "label": "potassium nitrate, KNO₃",
-      "figure": "sim-solid-solubility"
+      "figures": [
+        "sim-solid-solubility"
+      ]
     },
     {
       "id": "nano3",
       "label": "sodium nitrate, NaNO₃",
-      "figure": "sim-solid-solubility"
+      "figures": [
+        "sim-solid-solubility"
+      ]
     },
     {
       "id": "nabr",
       "label": "sodium bromide, NaBr",
-      "figure": "sim-solid-solubility"
+      "figures": [
+        "sim-solid-solubility"
+      ]
     },
     {
       "id": "kbr",
       "label": "potassium bromide, KBr",
-      "figure": "sim-solid-solubility"
+      "figures": [
+        "sim-solid-solubility"
+      ]
     },
     {
       "id": "kcl",
       "label": "potassium chloride, KCl",
-      "figure": "sim-solid-solubility"
+      "figures": [
+        "sim-solid-solubility"
+      ]
     },
     {
       "id": "nacl",
       "label": "sodium chloride, NaCl",
-      "figure": "sim-solid-solubility"
+      "figures": [
+        "sim-solid-solubility"
+      ]
     },
     {
       "id": "cerium-sulfate",
       "label": "cerium sulfate, Ce₂(SO₄)₃",
-      "figure": "sim-solid-solubility"
+      "figures": [
+        "sim-solid-solubility"
+      ]
     }
   ]
 }

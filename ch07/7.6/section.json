@@ -45,7 +45,7 @@
     "/media/ch07/CNX_Chem_07_06_CH2O.jpg"
    ],
    "original_caption": "Bond distances (lengths) and angles are shown for the formaldehyde molecule, H₂CO.",
-   "draws": []
+   "draws": ["angle", "length"]
   },
   {
    "id": "fig-bef2",
@@ -55,7 +55,7 @@
     "/media/ch07/CNX_Chem_07_06_BeF2.jpg"
    ],
    "original_caption": "The BeF₂ molecule adopts a linear structure in which the two bonds are as far apart as possible, on opposite sides of the Be atom.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "sim-vsepr",
@@ -71,12 +71,12 @@
     "/media/ch07/CNX_Chem_07_06_Axeq.jpg"
    ],
    "original_caption": "(Figure 7.16) The basic electron-pair geometries predicted by VSEPR theory maximize the space around any region of electron density (bonds or lone pairs). (Figure 7.19) The molecular structures are identical to the electron-pair geometries when there are no lone pairs present (first column). For a particular number of electron pairs (row), the molecular structures for one or more lone pairs are determined based on modifications of the corresponding electron-pair geometry. (Figure 7.20) (a) In a trigonal bipyramid, the two axial positions are located directly across from one another, whereas the three equatorial positions are located in a triangular arrangement. (b–d) The two lone pairs (red lines) in ClF₃ have several possible arrangements, but the T-shaped molecular structure (b) is the one actually observed, consistent with the larger lone pairs both occupying equatorial positions.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "sim-domains",
    "kind": "sim",
-   "draws": []
+   "draws": ["angle", "time"]
   },
   {
    "id": "fig-methane",
@@ -96,7 +96,7 @@
     "/media/ch07/CNX_Chem_07_06_NH3.jpg"
    ],
    "original_caption": "(a) The electron-pair geometry for the ammonia molecule is tetrahedral with one lone pair and three single bonds. (b) The trigonal pyramidal molecular structure is determined from the electron-pair geometry. (c) The actual bond angles deviate slightly from the idealized angles because the lone pair takes up a larger region of space than do the single bonds, causing the HNH angle to be slightly smaller than 109.5°.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "fig-lewis-co2",
@@ -121,7 +121,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_BCl3mol.jpg"
    ],
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "fig-lewis-nh4",
@@ -223,7 +223,7 @@
     "/media/ch07/CNX_Chem_07_06_CO2H2Odip.jpg"
    ],
    "original_caption": "(Figure 7.26) (a) There is a small difference in electronegativity between C and H, represented as a short vector. (b) The electronegativity difference between B and F is much larger, so the vector representing the bond moment is much longer. (Figure 7.27) The overall dipole moment of a molecule depends on the individual bond dipole moments and how they are arranged. (a) Each CO bond has a bond dipole moment, but they point in opposite directions so that the net CO₂ molecule is nonpolar. (b) In contrast, water is polar because the OH bond moments do not cancel out.",
-   "draws": []
+   "draws": ["dipole-moment"]
   },
   {
    "id": "fig-ocs",
@@ -231,7 +231,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_OSC_img.jpg"
    ],
-   "draws": []
+   "draws": ["dipole-moment"]
   },
   {
    "id": "fig-chloromethane",
@@ -239,7 +239,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_CHCl3_img.jpg"
    ],
-   "draws": []
+   "draws": ["dipole-moment"]
   },
   {
    "id": "fig-h2s-nh3",
@@ -247,7 +247,7 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_SH2NH3_img.jpg"
    ],
-   "draws": []
+   "draws": ["charge"]
   },
   {
    "id": "sim-field",
@@ -257,7 +257,7 @@
     "/media/ch07/CNX_Chem_07_06_Dipolfield.jpg"
    ],
    "original_caption": "(a) Molecules are always randomly distributed in the liquid state in the absence of an electric field. (b) When an electric field is applied, polar molecules like HF will align to the dipoles with the field direction.",
-   "draws": []
+   "draws": ["charge"]
   }
  ],
  "coverage": [
@@ -1211,6 +1211,18 @@
    "exercise": "s32",
    "concept": "electron-pair-geometry",
    "weight": 2
+  }
+ ],
+ "referents": [
+  {
+   "id": "negative-plate",
+   "label": "the negative plate of the electric field",
+   "figure": "sim-field"
+  },
+  {
+   "id": "positive-plate",
+   "label": "the positive plate of the electric field",
+   "figure": "sim-field"
   }
  ]
 }

@@ -39,7 +39,8 @@
    "id": "sim-length",
    "kind": "sim",
    "draws": [
-    "energy"
+    "energy",
+    "length"
    ]
   },
   {
@@ -58,7 +59,8 @@
    "id": "sim-lattice",
    "kind": "sim",
    "draws": [
-    "energy"
+    "energy",
+    "length"
    ]
   },
   {

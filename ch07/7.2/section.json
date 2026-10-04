@@ -4,7 +4,7 @@
  "chapter": "7",
  "title": "Covalent Bonding",
  "short": "Covalent Bonding",
- "lead": "Atoms that attract electrons about equally do not transfer them but share them, and a shared pair of electrons held by both nuclei is a covalent bond. The energy of two approaching hydrogen atoms gives the bond length. Electronegativity is the tendency of a bonded atom to draw the shared electrons toward itself, and the difference in electronegativity between two atoms decides whether a bond is pure covalent, polar covalent or ionic.",
+ "lead": "Atoms that attract electrons about equally do not transfer them but share them, and a shared pair of electrons held by both nuclei is a covalent bond. <span data-type=\"energy\">The energy of two approaching hydrogen atoms</span> gives <span data-type=\"length\">the bond length</span>. Electronegativity is the tendency of a bonded atom to draw the shared electrons toward itself, and the difference in electronegativity between two atoms decides whether a bond is pure covalent, polar covalent or ionic.",
  "objectives": [
   "Describe the formation of covalent bonds",
   "Define electronegativity and assess the polarity of covalent bonds"
@@ -35,7 +35,7 @@
    "number": "7.4",
    "originals": ["/media/ch07/CNX_Chem_07_02_Morse.jpg"],
    "original_caption": "The potential energy of two separate hydrogen atoms (right) decreases as they approach each other, and the single electrons on each atom are shared to form a covalent bond. The bond length is the internuclear distance at which the lowest potential energy is achieved.",
-   "draws": ["energy"]
+   "draws": ["energy", "length"]
   },
   {
    "id": "fig-en",
@@ -58,7 +58,7 @@
    "folds": ["7.8"],
    "originals": ["/media/ch07/CNX_Chem_07_02_HClBond.jpg", "/media/ch07/CNX_Chem_07_02_DeltaEN.jpg"],
    "original_caption": "(Figure 7.5) (a) The distribution of electron density in the HCl molecule is uneven. The electron density is greater around the chlorine nucleus. The small, black dots indicate the location of the hydrogen and chlorine nuclei in the molecule. (b) Symbols δ+ and δ– indicate the polarity of the H–Cl bond. (Figure 7.8) As the electronegativity difference increases between two atoms, the bond becomes more ionic.",
-   "draws": []
+   "draws": ["charge", "dipole-moment"]
   }
  ],
  "coverage": [

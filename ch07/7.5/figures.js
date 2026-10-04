@@ -27,7 +27,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
   function draw() {
     const { ctx } = begin(d.c);
     const cE = C('energy');
-    const { X, Y } = axes(ctx, box, [1.0, 1.6], [0, 1200], { nx: 6, ny: 6, xl: 'bond length (Å)', yl: 'bond energy (kJ/mol)', yc: cE, fx: (v) => fmt(v, 1) });
+    const { X, Y } = axes(ctx, box, [1.0, 1.6], [0, 1200], { nx: 6, ny: 6, xl: 'bond length (Å)', xc: C('length'), yl: 'bond energy (kJ/mol)', yc: cE, fx: (v) => fmt(v, 1) });
     hits = [];
     PAIRS.forEach((p, i) => {
       const col = F.cat(i);
@@ -126,7 +126,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
   const Z = ['1', '2', '3'].map((v) => ({ value: v, label: v }));
   const zp = F.choice(d.controls, { label: 'Z^{+}', aria: 'the charge of the cation', value: '1', options: Z });
   const zm = F.choice(d.controls, { label: 'Z^{-}', aria: 'the charge of the anion', value: '1', options: Z });
-  const Ro = ctl(d.controls, { label: 'R_{\\text{o}}', cls: '', min: 150, max: 400, step: 1, value: 201, unit: 'pm', dec: 0, aria: 'the interionic distance in picometers',
+  const Ro = ctl(d.controls, { label: '\\kRo', cls: 'length', min: 150, max: 400, step: 1, value: 201, unit: 'pm', dec: 0, aria: 'the interionic distance in picometers',
     detents: [{ v: 201, label: 'LiF' }] });
   const CL = 1023 * 201;   /* kJ·pm/mol */
   const LIF = 1023;
@@ -144,7 +144,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
   }
   function draw() {
     const { ctx } = begin(d.c);
-    const cE = C('energy');
+    const cE = C('energy'), cL = C('length');
     const p = +zp.value, m = +zm.value, R = Ro.v, E = (CL * p * m) / R;
     hits = [];
     const rc = 0.4 * R * S, ra = 0.6 * R * S, xc = CX - (rc + ra) / 2, xa = xc + rc + ra;
@@ -154,7 +154,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
     const by = CY + ra + 26;
     line(ctx, xc, CY, xc, by + 6, alpha(PAL.ink, 0.35), 2, [4, 8]);
     line(ctx, xa, CY, xa, by + 6, alpha(PAL.ink, 0.35), 2, [4, 8]);
-    F.hbracket(ctx, xc, xa, by, PAL.ink, `R_{o} = ${R} pm`, { side: 'below' });
+    F.hbracket(ctx, xc, xa, by, cL, `R_{o} = ${R} pm`, { side: 'below' });
     /* the bar of the lattice energy, with LiF's value marked */
     ctx.save(); ctx.fillStyle = alpha(cE, 0.3); ctx.fillRect(bar.l, bar.y, BX(E) - bar.l, bar.h);
     ctx.strokeStyle = cE; ctx.lineWidth = 2; ctx.strokeRect(bar.l, bar.y, BX(E) - bar.l, bar.h); ctx.restore();
@@ -171,7 +171,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
     if (BX(E) - BX(LIF) > 150) text(ctx, `${Es}`, BX(E) + 10, bar.y + bar.h / 2, cE, { size: 20, weight: 600, base: 'middle' });
     const ratio = E / LIF;
     headline(ctx, `With charges of ${p} and ${m} at ${R} pm, the lattice energy is ${Es} kJ/mol, ${fmt(ratio, 1)} times that of LiF.`);
-    F.tex(d.readout, `\\kdHlat = \\frac{C(Z^{+})(Z^{-})}{R_{\\text{o}}} = \\frac{(2.056\\times 10^{5}\\ \\text{kJ pm/mol})(${p})(${m})}{${R}\\ \\text{pm}} = ${Es}\\ \\text{kJ/mol}`);
+    F.tex(d.readout, `\\kdHlat = \\frac{C(Z^{+})(Z^{-})}{\\kRo} = \\frac{(2.056\\times 10^{5}\\ \\text{kJ pm/mol})(${p})(${m})}{${R}\\ \\text{pm}} = ${Es}\\ \\text{kJ/mol}`);
   }
   still(d, draw);
 })();

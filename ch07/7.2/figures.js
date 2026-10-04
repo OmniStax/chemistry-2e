@@ -29,7 +29,7 @@ function cloud(ctx, x, y, r, a) {
 ===================================================================== */
 (function () {
   const d = sim('sim-bond', 640);
-  const R = ctl(d.controls, { label: 'r', cls: '', min: 30, max: 300, step: 1, value: 74, unit: 'pm', dec: 0, aria: 'internuclear distance in picometers',
+  const R = ctl(d.controls, { label: 'r', cls: 'length', min: 30, max: 300, step: 1, value: 74, unit: 'pm', dec: 0, aria: 'internuclear distance in picometers',
     specials: [{ at: 74, label: 'bond length' }] });
   /* a Morse curve with the book's depth, 7.24 × 10⁻¹⁹ J at 74 pm; energies in units of 10⁻¹⁹ J */
   const DEPTH = 7.24, RE = 74, A = 0.0194, NA = 6.022e23;
@@ -40,8 +40,8 @@ function cloud(ctx, x, y, r, a) {
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
-    const r = R.v, e = E(r), cE = C('energy');
-    const { X, Y } = axes(ctx, box, [0, 300], [-8, 6], { nx: 6, ny: 7, xl: 'internuclear distance (pm)', yl: 'energy (10⁻¹⁹ J)', yc: cE, fy: (v) => minus(fmt(v, 0)) });
+    const r = R.v, e = E(r), cE = C('energy'), cL = C('length');
+    const { X, Y } = axes(ctx, box, [0, 300], [-8, 6], { nx: 6, ny: 7, xl: 'internuclear distance (pm)', xc: cL, yl: 'energy (10⁻¹⁹ J)', yc: cE, fy: (v) => minus(fmt(v, 0)) });
     line(ctx, box.l, Y(-DEPTH), X(RE), Y(-DEPTH), alpha(PAL.ink, 0.35), 2, [4, 8]);
     line(ctx, X(RE), Y(-DEPTH), X(RE), box.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
     curve(ctx, E, 30, 300, X, Y, cE, 5, 160);
@@ -158,13 +158,13 @@ function cloud(ctx, x, y, r, a) {
     text(ctx, 'EN = ' + fmt(enB, 1), xB + 130, y + 34, PAL.muted, { size: 17 });
     hits = [{ x: xA, y, r: 60, name: NAMES[a] + ', electronegativity ' + fmt(enA, 1) }, { x: xB, y, r: 60, name: NAMES[b] + ', electronegativity ' + fmt(enB, 1) }];
     if (dEN > 0) {
-      const negB = enB > enA, xn = negB ? xB : xA, xp = negB ? xA : xB;
-      text(ctx, 'δ–', xn, y - 92, PAL.ink, { size: 26, weight: 600, align: 'center' });
-      text(ctx, 'δ+', xp, y - 92, PAL.ink, { size: 26, weight: 600, align: 'center' });
+      const negB = enB > enA, xn = negB ? xB : xA, xp = negB ? xA : xB, cQ = C('charge'), cMu = C('dipole-moment');
+      text(ctx, 'δ–', xn, y - 92, cQ, { size: 26, weight: 600, align: 'center' });
+      text(ctx, 'δ+', xp, y - 92, cQ, { size: 26, weight: 600, align: 'center' });
       /* the book's crossed arrow, pointing from the positive end to the negative end */
       const s = negB ? 1 : -1, x1 = (xA + xB) / 2 - s * 90, x2 = (xA + xB) / 2 + s * 90, ya = y - 88;
-      arrow(ctx, x1, ya, x2, ya, PAL.ink, 3);
-      line(ctx, x1 + s * 22, ya - 12, x1 + s * 22, ya + 12, PAL.ink, 3);
+      arrow(ctx, x1, ya, x2, ya, cMu, 3);
+      line(ctx, x1 + s * 22, ya - 12, x1 + s * 22, ya + 12, cMu, 3);
     }
     /* the scale of Figure 7.8: ΔEN from 0 to 3.5, cut at 0.4 and 1.8 */
     const l = 180, r = 1260, ys = 430, X = (v) => l + ((r - l) * v) / 3.5;

@@ -177,6 +177,22 @@
       "unit": "Å (1 Å = 10⁻¹⁰ m, 100 pm = 1 Å)",
       "section": "7.6",
       "anchor": "7.6-bond-dipole"
+    },
+    {
+      "sym": "ΔH",
+      "concept": "enthalpy-change",
+      "meaning": "the enthalpy change of dissociating one mole of solid NaCl into its gaseous ions",
+      "unit": "kJ",
+      "section": "7.1",
+      "anchor": "7.1-formation"
+    },
+    {
+      "sym": "ΔH",
+      "concept": "enthalpy-change",
+      "meaning": "the enthalpy change of breaking, or of forming, the bonds of one mole of hydrogen molecules",
+      "unit": "kJ",
+      "section": "7.2",
+      "anchor": "7.2-formation"
     }
   ]
 }

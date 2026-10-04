@@ -41,11 +41,11 @@ function spline(xs, ys) {
   const d = sim('sim-gas-solubility', 640);
   /* 10⁻³ mol/L at 0, 10, 20 and 30 °C, from the book's curves */
   const GASES = [
-    { v: 'CH4', name: 'methane', tex: '\\text{methane}', data: [2.40, 1.87, 1.45, 1.21] },
-    { v: 'O2', name: 'oxygen', tex: '\\text{oxygen}', data: [2.12, 1.72, 1.38, 1.14] },
-    { v: 'CO', name: 'carbon monoxide', tex: '\\text{carbon monoxide}', data: [1.55, 1.22, 0.99, 0.85] },
-    { v: 'N2', name: 'nitrogen', tex: '\\text{nitrogen}', data: [0.94, 0.73, 0.56, 0.48] },
-    { v: 'He', name: 'helium', tex: '\\text{helium}', data: [0.42, 0.39, 0.37, 0.36] },
+    { v: 'CH4', ref: 'methane', name: 'methane', tex: '\\text{methane}', data: [2.40, 1.87, 1.45, 1.21] },
+    { v: 'O2', ref: 'oxygen', name: 'oxygen', tex: '\\text{oxygen}', data: [2.12, 1.72, 1.38, 1.14] },
+    { v: 'CO', ref: 'carbon-monoxide', name: 'carbon monoxide', tex: '\\text{carbon monoxide}', data: [1.55, 1.22, 0.99, 0.85] },
+    { v: 'N2', ref: 'nitrogen', name: 'nitrogen', tex: '\\text{nitrogen}', data: [0.94, 0.73, 0.56, 0.48] },
+    { v: 'He', ref: 'helium', name: 'helium', tex: '\\text{helium}', data: [0.42, 0.39, 0.37, 0.36] },
   ].map((g) => ({ ...g, f: spline([0, 10, 20, 30], g.data) }));
   const gas = F.select(d.controls, { label: '\\text{gas}', options: GASES.map((g) => ({ value: g.v, label: g.name })), value: 'O2', aria: 'the dissolved gas', onInput: () => {} });
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 0, max: 30, step: 0.5, value: 20, unit: '°C', dec: 1, aria: 'temperature of the water in degrees Celsius' });
@@ -60,8 +60,8 @@ function spline(xs, ys) {
     const A = axes(ctx, bl, [0, 30], [0, 2.5], { xl: 'Temperature (°C)', xc: ct, yl: 'C_{g} at 101.3 kPa (10⁻³ mol/L)', yc: cc, nx: 3, ny: 5, fy: (v) => fmt(v, 1) });
     GASES.forEach((q, i) => {
       const on = i === gi;
-      curve(ctx, q.f, 0, 30, A.X, A.Y, on ? F.cat(i) : alpha(F.cat(i), 0.55), on ? 6 : 3);
-      text(ctx, q.name, A.X(0.6), A.Y(q.f(0.6)) + 22, F.cat(i), { size: 17, weight: on ? 600 : 400, bg: PAL.panel });
+      curve(ctx, q.f, 0, 30, A.X, A.Y, on ? F.ref(q.ref) : alpha(F.ref(q.ref), 0.55), on ? 6 : 3);
+      text(ctx, q.name, A.X(0.6), A.Y(q.f(0.6)) + 22, F.ref(q.ref), { size: 17, weight: on ? 600 : 400, bg: PAL.panel });
     });
     line(ctx, A.X(t), bl.b, A.X(t), A.Y(c1), ct, 2, [4, 8]);
     line(ctx, bl.l, A.Y(c1), A.X(t), A.Y(c1), cc, 2, [4, 8]);
@@ -71,8 +71,8 @@ function spline(xs, ys) {
     /* right: Henry's law for the chosen gas at T */
     const br = { l: 800, r: 1320, t: 140, b: 530 };
     const B = axes(ctx, br, [0, 200], [0, 5], { xl: 'P_{g} (kPa)', xc: cp, yl: 'C_{g} (10⁻³ mol/L)', yc: cc, nx: 4, ny: 5 });
-    curve(ctx, (x) => k * 1e3 * x, 0, 200, B.X, B.Y, F.cat(gi), 5);
-    text(ctx, g.name + ' at ' + fmt(t, 1) + ' °C', B.X(200) - 6, B.Y(k * 1e3 * 200) + 30, F.cat(gi), { size: 17, weight: 600, align: 'right', bg: PAL.panel });
+    curve(ctx, (x) => k * 1e3 * x, 0, 200, B.X, B.Y, F.ref(g.ref), 5);
+    text(ctx, g.name + ' at ' + fmt(t, 1) + ' °C', B.X(200) - 6, B.Y(k * 1e3 * 200) + 30, F.ref(g.ref), { size: 17, weight: 600, align: 'right', bg: PAL.panel });
     dot(ctx, B.X(101.3), B.Y(c1), cc, false, 8);
     text(ctx, '1 atm', B.X(101.3) + 14, B.Y(c1) + 22, PAL.muted, { size: 16 });
     line(ctx, B.X(p), br.b, B.X(p), B.Y(cg * 1e3), cp, 2, [4, 8]);
@@ -84,7 +84,7 @@ function spline(xs, ys) {
       ? 'At ' + fmt(t, 1) + ' °C, ' + g.name + ' at ' + fmt(p, 1) + ' kPa dissolves in water to a concentration of ' + s.plain + ' mol/L.'
       : 'With no ' + g.name + ' above the water at ' + fmt(t, 1) + ' °C, none of it dissolves.');
     const cgT = p > 0 ? s.tex : '0';
-    readout(d.readout, `\\kCg = k\\kPg = (${sk.tex}\\ \\text{mol L}^{-1}\\,\\text{kPa}^{-1})(${hue('pressure', fmt(p, 1) + '\\ \\text{kPa}')}) = ${hue('concentration', cgT + '\\ \\text{mol L}^{-1}')}`,
+    readout(d.readout, `\\kCg = \\kkH\\kPg = (${hue('equilibrium-constant', sk.tex + '\\ \\text{mol L}^{-1}\\,\\text{kPa}^{-1}')})(${hue('pressure', fmt(p, 1) + '\\ \\text{kPa}')}) = ${hue('concentration', cgT + '\\ \\text{mol L}^{-1}')}`,
       'The Henry’s law constant k is the solubility at ' + fmt(t, 1) + ' °C and 101.3 kPa divided by 101.3 kPa, so it falls as the water warms.');
   }
   register(d.fig, { update: () => {}, draw });
@@ -102,7 +102,7 @@ function spline(xs, ys) {
 (function () {
   const d = sim('sim-nyos', 620);
   const K = 0.034, Pof = (dep) => 1 + dep / 10, Csat = (dep) => K * Pof(dep), RISE = 5;
-  const D0 = ctl(d.controls, { label: 'd_{0}', cls: '', min: 20, max: 200, step: 5, value: 200, unit: 'm', dec: 0, aria: 'starting depth of the parcel in meters', onInput: () => cy.reset() });
+  const D0 = ctl(d.controls, { label: 'd_{0}', cls: 'length', min: 20, max: 200, step: 5, value: 200, unit: 'm', dec: 0, aria: 'starting depth of the parcel in meters', onInput: () => cy.reset() });
   const cy = cycle(() => RISE, 1.5);
   const hits = []; F.hover(d.stage, () => hits);
   /* fixed places for the dissolved molecules inside the parcel, on a sunflower spiral */
@@ -115,7 +115,7 @@ function spline(xs, ys) {
   function draw() {
     const { ctx } = begin(d.c);
     hits.length = 0;
-    const cc = C('concentration'), cp = C('pressure');
+    const cc = C('concentration'), cp = C('pressure'), cl = C('length'), lake = F.ref('lake'), parcel = F.ref('parcel');
     const d0 = D0.v, tau = cy.now(), dep = d0 * (1 - tau / RISE), c0 = Csat(d0), cs = Csat(dep), held = Math.min(c0, cs), out = Math.max(0, c0 - cs);
     /* the lake in section: surface at y 150, 200 m at y 540 */
     const Ys = (m) => 150 + m * 1.95, XC = 340;
@@ -125,7 +125,7 @@ function spline(xs, ys) {
     ctx.beginPath(); ctx.moveTo(100, 150); ctx.lineTo(190, Ys(200)); ctx.lineTo(490, Ys(200)); ctx.lineTo(580, 150); ctx.closePath();
     ctx.fillStyle = PAL.soft; ctx.fill();
     ctx.restore();
-    line(ctx, 30, 110, 100, 150, PAL.muted, 3); line(ctx, 100, 150, 190, Ys(200), PAL.muted, 3); line(ctx, 190, Ys(200), 490, Ys(200), PAL.muted, 3); line(ctx, 490, Ys(200), 580, 150, PAL.muted, 3); line(ctx, 580, 150, 650, 120, PAL.muted, 3);
+    line(ctx, 30, 110, 100, 150, PAL.muted, 3); line(ctx, 100, 150, 190, Ys(200), lake, 3); line(ctx, 190, Ys(200), 490, Ys(200), lake, 3); line(ctx, 490, Ys(200), 580, 150, lake, 3); line(ctx, 580, 150, 650, 120, PAL.muted, 3);
     line(ctx, 100, 150, 580, 150, alpha(PAL.ink, 0.5), 2);
     for (let m = 0; m <= 200; m += 50) { line(ctx, 60, Ys(m), 72, Ys(m), PAL.muted, 2); text(ctx, m + ' m', 50, Ys(m), PAL.muted, { size: 16, align: 'right' }); }
     line(ctx, XC + 60, Ys(d0), XC + 90, Ys(d0), alpha(PAL.ink, 0.4), 2, [4, 8]);
@@ -147,14 +147,14 @@ function spline(xs, ys) {
       text(ctx, 'CO_{2} gas', XC + w * 0.5, 100 - 10 * a, PAL.ink, { size: 17, align: 'center', bg: PAL.panel });
     }
     /* the parcel and its dissolved molecules */
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.setLineDash([6, 5]); ctx.beginPath(); ctx.arc(XC, yp, 40, 0, TAU); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = parcel; ctx.lineWidth = 2.5; ctx.setLineDash([6, 5]); ctx.beginPath(); ctx.arc(XC, yp, 40, 0, TAU); ctx.stroke(); ctx.restore();
     const nm = Math.round(SPOTS.length * held / Csat(200));
     for (let i = 0; i < nm; i++) co2(ctx, XC + SPOTS[i][0], yp + SPOTS[i][1] * 0.9, 0.8);
     hits.push({ x: XC, y: yp, r: 40, name: 'a parcel of lake water with dissolved carbon dioxide' });
-    text(ctx, 'parcel of water', XC - 52, yp, PAL.ink, { size: 17, align: 'right', bg: PAL.panel });
+    text(ctx, 'parcel of water', XC - 52, yp, parcel, { size: 17, align: 'right', bg: PAL.panel });
     /* the graph: depth down, concentration across */
     const box = { l: 800, r: 1320, t: 140, b: 530 };
-    const G = axes(ctx, box, [0, 0.8], [-200, 0], { xl: 'C_{g} of CO_{2} (M)', xc: cc, yl: 'depth (m)', nx: 4, ny: 4, fx: (v) => fmt(v, 1), fy: (v) => fmt(-v, 0) });
+    const G = axes(ctx, box, [0, 0.8], [-200, 0], { xl: 'C_{g} of CO_{2} (M)', xc: cc, yl: 'depth (m)', yc: cl, nx: 4, ny: 4, fx: (v) => fmt(v, 1), fy: (v) => fmt(-v, 0) });
     curve(ctx, (v) => v, -200, 0, (v) => G.X(Csat(-v)), G.Y, cc, 5);
     text(ctx, 'solubility, kP_{g}', G.X(Csat(40)) + 14, G.Y(-40), cc, { size: 17, weight: 600, bg: PAL.panel });
     line(ctx, G.X(c0), G.Y(-d0), G.X(c0), G.Y(-dep), alpha(PAL.ink, 0.35), 2, [4, 8]);
@@ -165,7 +165,7 @@ function spline(xs, ys) {
     topline(ctx, out < 0.005
       ? 'At ' + fmt(dep, 0) + ' m the water holds ' + fmt(held, 2) + ' M of CO₂, all it can keep at ' + fmt(Pof(dep), 1) + ' atm.'
       : 'At ' + fmt(dep, 0) + ' m the water can hold ' + fmt(held, 2) + ' M of CO₂, so ' + fmt(out, 2) + ' M of the ' + fmt(c0, 2) + ' M it carried has come out as gas.');
-    readout(d.readout, `\\kCg = k\\kPg = (0.034\\ M/\\text{atm})(${hue('pressure', fmt(Pof(dep), 1) + '\\ \\text{atm}')}) = ${hue('concentration', fmt(held, 2) + '\\ M')}`,
+    readout(d.readout, `\\kCg = \\kkH\\kPg = (${hue('equilibrium-constant', '0.034\\ M/\\text{atm}')})(${hue('pressure', fmt(Pof(dep), 1) + '\\ \\text{atm}')}) = ${hue('concentration', fmt(held, 2) + '\\ M')}`,
       'The parcel left ' + fmt(d0, 0) + ' m holding ' + fmt(c0, 2) + ' M; at the surface it can keep only ' + fmt(Csat(0), 3) + ' M.');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
@@ -182,19 +182,19 @@ function spline(xs, ys) {
   const d = sim('sim-solid-solubility', 680);
   const TS = [0, 20, 40, 60, 80, 100];
   const SOLIDS = [
-    { v: 'sugar', lab: 'sugar (C_{12}H_{22}O_{11})', plain: 'sugar', tex: '\\text{sugar}', data: [180, 203, 238, 287, 362, 487] },
-    { v: 'KNO3', lab: 'KNO_{3}', plain: 'KNO₃', tex: '\\text{KNO}_{3}', data: [13, 32, 64, 110, 169, 245] },
-    { v: 'NaNO3', lab: 'NaNO_{3}', plain: 'NaNO₃', tex: '\\text{NaNO}_{3}', data: [73, 88, 104, 124, 148, 178] },
-    { v: 'NaBr', lab: 'NaBr', plain: 'NaBr', tex: '\\text{NaBr}', data: [112, 113, 115, 118, 120, 125] },
-    { v: 'KBr', lab: 'KBr', plain: 'KBr', tex: '\\text{KBr}', data: [55, 66, 77, 88, 97, 106] },
-    { v: 'KCl', lab: 'KCl', plain: 'KCl', tex: '\\text{KCl}', data: [28, 34, 40, 45.5, 51, 56] },
-    { v: 'NaCl', lab: 'NaCl', plain: 'NaCl', tex: '\\text{NaCl}', data: [35.7, 36, 36.6, 37.3, 38.4, 39.8] },
-    { v: 'Ce2SO43', lab: 'Ce_{2}(SO_{4})_{3}', plain: 'Ce₂(SO₄)₃', tex: '\\text{Ce}_{2}(\\text{SO}_{4})_{3}', data: [20, 10, 4.5, 2.2, 1.5, 1.5], end: 92 },
+    { v: 'sugar', ref: 'sugar', lab: 'sugar (C_{12}H_{22}O_{11})', plain: 'sugar', tex: '\\text{sugar}', data: [180, 203, 238, 287, 362, 487] },
+    { v: 'KNO3', ref: 'kno3', lab: 'KNO_{3}', plain: 'KNO₃', tex: '\\text{KNO}_{3}', data: [13, 32, 64, 110, 169, 245] },
+    { v: 'NaNO3', ref: 'nano3', lab: 'NaNO_{3}', plain: 'NaNO₃', tex: '\\text{NaNO}_{3}', data: [73, 88, 104, 124, 148, 178] },
+    { v: 'NaBr', ref: 'nabr', lab: 'NaBr', plain: 'NaBr', tex: '\\text{NaBr}', data: [112, 113, 115, 118, 120, 125] },
+    { v: 'KBr', ref: 'kbr', lab: 'KBr', plain: 'KBr', tex: '\\text{KBr}', data: [55, 66, 77, 88, 97, 106] },
+    { v: 'KCl', ref: 'kcl', lab: 'KCl', plain: 'KCl', tex: '\\text{KCl}', data: [28, 34, 40, 45.5, 51, 56] },
+    { v: 'NaCl', ref: 'nacl', lab: 'NaCl', plain: 'NaCl', tex: '\\text{NaCl}', data: [35.7, 36, 36.6, 37.3, 38.4, 39.8] },
+    { v: 'Ce2SO43', ref: 'cerium-sulfate', lab: 'Ce_{2}(SO_{4})_{3}', plain: 'Ce₂(SO₄)₃', tex: '\\text{Ce}_{2}(\\text{SO}_{4})_{3}', data: [20, 10, 4.5, 2.2, 1.5, 1.5], end: 92 },
   ].map((s) => ({ ...s, f: spline(TS, s.data), end: s.end ?? 100 }));
   const pick = F.select(d.controls, { label: '\\text{solute}', options: SOLIDS.map((s) => ({ value: s.v, label: s.plain })), value: 'KNO3', aria: 'the dissolved solid', onInput: () => {} });
   const cur = () => SOLIDS.find((s) => s.v === pick.value) || SOLIDS[1];
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 0, max: 100, step: 1, value: 40, unit: '°C', dec: 0, aria: 'temperature of the water in degrees Celsius' });
-  const M = ctl(d.controls, { label: '\\text{added}', cls: '', min: 0, max: 300, step: 1, value: 50, unit: 'g', dec: 0, aria: 'grams of solute added to 100 grams of water',
+  const M = ctl(d.controls, { label: '\\text{added}', cls: 'mass', min: 0, max: 300, step: 1, value: 50, unit: 'g', dec: 0, aria: 'grams of solute added to 100 grams of water',
     specials: [{ at: () => { const s = cur(); return T.v <= s.end ? Math.round(s.f(T.v)) : null; }, label: 'saturated' }] });
   const round = (x) => (x < 10 ? fmt(x, 1) : fmt(x, 0));
   function draw() {
@@ -204,17 +204,17 @@ function spline(xs, ys) {
     const box = { l: 140, r: 1130, t: 160, b: 580 };
     const A = axes(ctx, box, [0, 100], [0, 300], { xl: 'Temperature (°C)', xc: ct, yl: 'solubility (g solute per 100 g H_{2}O)', nx: 5, ny: 6 });
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t, box.r - box.l, box.b - box.t); ctx.clip();
-    SOLIDS.forEach((q, i) => curve(ctx, q.f, 0, q.end, A.X, A.Y, i === si ? F.cat(i) : alpha(F.cat(i), 0.55), i === si ? 6 : 3));
+    SOLIDS.forEach((q, i) => curve(ctx, q.f, 0, q.end, A.X, A.Y, i === si ? F.ref(q.ref) : alpha(F.ref(q.ref), 0.55), i === si ? 6 : 3));
     ctx.restore();
     SOLIDS.forEach((q, i) => {
       const on = i === si, top = q.f(q.end) > 300;
       const x = top ? A.X(65) + 12 : A.X(q.end) + 10, y = top ? box.t + 14 : A.Y(q.f(q.end)) + (q.v === 'NaCl' ? 10 : q.v === 'KCl' ? -8 : q.v === 'Ce2SO43' ? -16 : 0);
-      text(ctx, q.lab, x, y, F.cat(i), { size: 17, weight: on ? 600 : 400, bg: PAL.panel });
+      text(ctx, q.lab, x, y, F.ref(q.ref), { size: 17, weight: on ? 600 : 400, bg: PAL.panel });
     });
     const inRange = t <= s.end, sol = inRange ? s.f(t) : null;
     line(ctx, A.X(t), box.b, A.X(t), A.Y(Math.min(Math.max(m, sol ?? 0), 300)), ct, 2, [4, 8]);
-    if (sol !== null && sol <= 300) dot(ctx, A.X(t), A.Y(sol), F.cat(si), false, 10);
-    const pt = pinned(ctx, box, A.X, A.Y, t, m, PAL.ink, m + ' g');
+    if (sol !== null && sol <= 300) dot(ctx, A.X(t), A.Y(sol), F.ref(s.ref), false, 10);
+    const pt = pinned(ctx, box, A.X, A.Y, t, m, C('mass'), m + ' g');
     const state = sol === null ? 'none' : Math.abs(m - Math.round(sol)) < 0.5 ? 'saturated' : m < sol ? 'unsaturated' : 'over';
     const word = { saturated: 'saturated', unsaturated: 'unsaturated', over: 'above the solubility', none: '' }[state];
     if (!pt.out && word) text(ctx, m + ' g, ' + word, pt.x + (t > 70 ? -16 : 16), pt.y - 22, PAL.ink, { size: 17, weight: 600, align: t > 70 ? 'right' : 'left', bg: PAL.panel });
@@ -228,7 +228,7 @@ function spline(xs, ys) {
           : 'At ' + t + ' °C, 100 g of water dissolves only about ' + sr + ' g of ' + s.plain + ', so ' + round(m - sol) + ' g of the ' + m + ' g added either stays undissolved or remains in a supersaturated solution.');
     if (state === 'none') { readout(d.readout, `\\text{no data for }${s.tex}\\text{ above }${hue('temperature', s.end + '\\ ^\\circ\\text{C}')}`); return; }
     const rel = state === 'saturated' ? '=' : state === 'unsaturated' ? '<' : '>';
-    readout(d.readout, `${m}\\ \\text{g added} ${rel} ${sr}\\ \\text{g, the solubility of }${s.tex}\\text{ in 100 g of water at }${hue('temperature', t + '\\ ^\\circ\\text{C}')}`,
+    readout(d.readout, `${hue('mass', m + '\\ \\text{g}')}\\ \\text{added} ${rel} ${sr}\\ \\text{g, the solubility of }${s.tex}\\text{ in 100 g of water at }${hue('temperature', t + '\\ ^\\circ\\text{C}')}`,
       state === 'saturated' ? 'The solution is saturated.' : state === 'unsaturated' ? 'The solution is unsaturated and can dissolve more solute.' : 'The water holds more than its solubility: the excess remains undissolved, or the solution is supersaturated.');
   }
   register(d.fig, { update: () => {}, draw });

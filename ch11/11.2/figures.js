@@ -86,7 +86,7 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
   /* an atom's place in a particle, its offset turned into the particle's own frame */
   const place = (p, o) => { const side = cross(p.ax, p.up); return add(p.x, add(add(mul(p.ax, o[0]), mul(p.up, o[1])), mul(side, o[2]))); };
   let sig = '', groups = {}, bulb = null, halo = null;
-  const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, F.el('K'), F.el('Cl'), F.el('C'), F.el('O'), F.el('H')].join('|');
+  const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, F.el('K'), F.el('Cl'), F.el('C'), F.el('O'), F.el('H'), F.fact(BULB_LIGHT), F.ref('electrodes'), F.ref('bulb'), F.ref('power-supply')].join('|');
   const glass = { transparent: true, opacity: 0.12, depthWrite: false, side: T3D.DoubleSide };
   const wire = (pts) => { for (let i = 0; i + 1 < pts.length; i++) F.mesh.stick(scene, pts[i], pts[i + 1], 0.022, PAL.ink); };
   let scene = null;
@@ -100,20 +100,20 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
     const liquid = new T3D.Mesh(new T3D.CylinderGeometry(0.83, 0.83, 1.25, 48), F.mesh.mat(PAL.muted, { transparent: true, opacity: 0.08, depthWrite: false })); liquid.position.set(0, YB + 0.625, 0); scene.add(liquid);
     v.pickable(liquid, 'the solution');
     for (const s of [-1, 1]) {
-      v.pickable(F.mesh.box(scene, [s * XE, YB + 1.0, 0], [0.08, 1.7, 0.5], PAL.muted), s < 0 ? 'the positive electrode' : 'the negative electrode');
+      v.pickable(F.mesh.box(scene, [s * XE, YB + 1.0, 0], [0.08, 1.7, 0.5], F.ref('electrodes')), s < 0 ? 'the positive electrode' : 'the negative electrode');
       v.label(s < 0 ? '+' : '−', [s * XE + s * 0.22, YB + 1.72, 0], scene, 0);
     }
     const top = YB + 1.85;
     wire([[-XE, top], [-XE, 1.35], [-0.95, 1.35]].map(([x, y]) => [x, y, 0]));
     wire([[-1.45, 1.35], [-2.2, 1.35], [-2.2, YB + 0.62]].map(([x, y]) => [x, y, 0]));
     wire([[XE, top], [XE, 1.8], [-2.7, 1.8], [-2.7, YB + 0.62]].map(([x, y]) => [x, y, 0]));
-    v.pickable(F.mesh.box(scene, [-2.45, YB + 0.3, 0], [0.9, 0.6, 0.6], PAL.muted), 'the power supply');
-    v.label('power supply', [-2.45, YB + 0.72, 0], scene, 0);
-    F.mesh.stick(scene, [-1.2, 1.35, 0], [-0.95, 1.35, 0], 0.09, PAL.muted);
-    F.mesh.stick(scene, [-1.2, 1.35, 0], [-1.45, 1.35, 0], 0.09, PAL.muted);
+    v.pickable(F.mesh.box(scene, [-2.45, YB + 0.3, 0], [0.9, 0.6, 0.6], F.ref('power-supply')), 'the power supply');
+    v.label('power supply', [-2.45, YB + 0.72, 0], scene, 0).style.color = F.ref('power-supply');
+    F.mesh.stick(scene, [-1.2, 1.35, 0], [-0.95, 1.35, 0], 0.09, F.ref('bulb'));
+    F.mesh.stick(scene, [-1.2, 1.35, 0], [-1.45, 1.35, 0], 0.09, F.ref('bulb'));
     bulb = F.mesh.sphere(scene, [-1.2, 1.35, 0], 0.24, PAL.soft, { transparent: true, opacity: 0.85 });
     v.pickable(bulb, 'the light bulb');
-    halo = F.mesh.sphere(scene, [-1.2, 1.35, 0], 0.5, BULB_LIGHT, { transparent: true, opacity: 0, depthWrite: false });
+    halo = F.mesh.sphere(scene, [-1.2, 1.35, 0], 0.5, F.fact(BULB_LIGHT), { transparent: true, opacity: 0, depthWrite: false });
     groups = {};
     for (const [key, list] of Object.entries(state)) {
       const g = new T3D.Group(); scene.add(g); groups[key] = { g, meshes: [] };
@@ -132,8 +132,8 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
       list.forEach((p, i) => groups[key].meshes[i].forEach((m, j) => { const q = place(p, MOL[p.kind].atoms[j][1]); m.position.set(q[0], q[1], q[2]); }));
     }
     const b = sol.mix((k) => SOLUTES[k].bright);
-    const lit = new T3D.Color(PAL.soft).lerp(new T3D.Color(BULB_LIGHT), b);
-    bulb.material.color.copy(lit); bulb.material.emissive.copy(new T3D.Color(BULB_LIGHT).multiplyScalar(0.8 * b));
+    const glow = F.fact(BULB_LIGHT), lit = new T3D.Color(PAL.soft).lerp(new T3D.Color(glow), b);
+    bulb.material.color.copy(lit); bulb.material.emissive.copy(new T3D.Color(glow).multiplyScalar(0.8 * b));
     halo.material.opacity = 0.35 * b;
     v.invalidate();
     const s = SOLUTES[sol.value], { ctx } = begin(cnv);
@@ -146,9 +146,9 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
     text(ctx, 'ions', x0 - 20, 120, PAL.ink, { size: 18, align: 'right' });
     bar(ctx, x0, 120, per, s.ions, s.ions || 0.001, PAL.ink);
     text(ctx, s.ions + ' carry charge', x0 + per * Math.max(s.ions, 0) + 14, 120, PAL.ink, { size: 17 });
-    text(ctx, 'bulb', x0 - 20, 172, PAL.ink, { size: 18, align: 'right' });
+    text(ctx, 'bulb', x0 - 20, 172, F.ref('bulb'), { size: 18, align: 'right' });
     ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5; ctx.strokeRect(x0, 160, per * 12, 24);
-    ctx.fillStyle = BULB_LIGHT; ctx.fillRect(x0, 160, per * 12 * b, 24); ctx.restore();
+    ctx.fillStyle = glow; ctx.fillRect(x0, 160, per * 12 * b, 24); ctx.restore();
     text(ctx, b >= 0.99 ? 'bright' : b > 0.01 ? 'dim' : 'dark', x0 + per * 12 + 14, 172, PAL.ink, { size: 17 });
     /* legend of the kinds present */
     const kinds = sol.value === 'ethanol' ? [['C', 'C'], ['O', 'O']] : sol.value === 'KCl' ? [['K', 'K⁺'], ['Cl', 'Cl⁻']] : [['C', 'C'], ['O', 'O'], ['H', 'H']];

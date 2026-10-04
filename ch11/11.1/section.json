@@ -65,5 +65,27 @@
     {"exercise": "e6", "concept": "predict-solution-formation"},
     {"exercise": "e7", "concept": "dissolution-energy-steps"},
     {"exercise": "e7", "concept": "endothermic-and-exothermic-dissolution"}
+  ],
+  "referents": [
+    {
+      "id": "helium-bulb",
+      "label": "the bulb that first held helium",
+      "figure": "sim-he-ar"
+    },
+    {
+      "id": "argon-bulb",
+      "label": "the bulb that first held argon",
+      "figure": "sim-he-ar"
+    },
+    {
+      "id": "solute",
+      "label": "the solute, expanded in step 1",
+      "figure": "sim-steps"
+    },
+    {
+      "id": "solvent",
+      "label": "the solvent, expanded in step 2",
+      "figure": "sim-steps"
+    }
   ]
 }

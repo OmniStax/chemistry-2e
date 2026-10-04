@@ -71,5 +71,47 @@
     {"exercise": "e3", "concept": "colloids-solutions-and-suspensions"},
     {"exercise": "e4", "concept": "soaps-and-detergents"},
     {"exercise": "e5", "concept": "charged-colloidal-particles"}
+  ],
+  "referents": [
+    {
+      "id": "butterfat",
+      "label": "the droplets of butterfat in milk",
+      "figure": "sim-tyndall"
+    },
+    {
+      "id": "mud",
+      "label": "the grains of mud",
+      "figure": "sim-tyndall"
+    },
+    {
+      "id": "glass",
+      "label": "the glass",
+      "figure": "sim-tyndall"
+    },
+    {
+      "id": "tail",
+      "label": "the nonpolar hydrocarbon end",
+      "figure": "sim-amphiphile"
+    },
+    {
+      "id": "head",
+      "label": "the ionic end",
+      "figure": "sim-amphiphile"
+    },
+    {
+      "id": "point-electrode",
+      "label": "the point electrode",
+      "figure": "sim-precipitator"
+    },
+    {
+      "id": "plate-electrode",
+      "label": "the plate electrode, the chamber wall",
+      "figure": "sim-precipitator"
+    },
+    {
+      "id": "hopper",
+      "label": "the hopper",
+      "figure": "sim-precipitator"
+    }
   ]
 }

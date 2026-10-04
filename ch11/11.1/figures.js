@@ -46,17 +46,18 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   }
   const cy = cycle(() => Infinity, 0);
   let sig = '', meshes = [];
-  const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, hueOf('He'), hueOf('Ar')].join('|');
+  const BULB = (s) => F.ref(s < 0 ? 'helium-bulb' : 'argon-bulb');
+  const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, hueOf('He'), hueOf('Ar'), BULB(-1), BULB(1)].join('|');
   const glass = { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide };
   function build() {
     if (palSig() === sig) return; sig = palSig();
     v.clear(); meshes = [];
     v.pickable(F.mesh.box(grp, [0, -RB - 0.26, 0], [4.4, 0.1, 1.6], PAL.soft), 'bench');
     for (const s of [-1, 1]) {
-      const b = new T3D.Mesh(new T3D.SphereGeometry(RB, 40, 24), F.mesh.mat(PAL.ink, glass)); b.position.set(s * XB, 0, 0); grp.add(b);
+      const b = new T3D.Mesh(new T3D.SphereGeometry(RB, 40, 24), F.mesh.mat(BULB(s), { ...glass, opacity: 0.16 })); b.position.set(s * XB, 0, 0); grp.add(b);
       v.pickable(b, s < 0 ? 'the bulb that first held helium' : 'the bulb that first held argon');
       F.mesh.stick(grp, [s * XB, -RB, 0], [s * XB, -RB - 0.21, 0], 0.05, PAL.muted);
-      v.label(s < 0 ? 'He' : 'Ar', [s * XB, -RB - 0.34, 0.85], grp, 16);
+      v.label(s < 0 ? 'He' : 'Ar', [s * XB, -RB - 0.34, 0.85], grp, 16).style.color = BULB(s);
     }
     const tube = new T3D.Mesh(new T3D.CylinderGeometry(RT, RT, 2 * XT, 32, 1, true), F.mesh.mat(PAL.ink, glass)); tube.rotation.z = Math.PI / 2; grp.add(tube);
     v.pickable(tube, 'the tube joining the bulbs');
@@ -71,8 +72,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const { ctx } = begin(cnv);
     const cnt = (f, s) => atoms.filter((q) => q.f === f && (s < 0 ? q.x[0] < 0 : q.x[0] >= 0)).length;
     const X = (n) => 520 + n * 22, rows = [{ f: 'He', y: 120 }, { f: 'Ar', y: 175 }];
-    text(ctx, 'left bulb', 520 - 30, 84, PAL.muted, { size: 17, align: 'right' });
-    text(ctx, 'right bulb', 1210, 84, PAL.muted, { size: 17, align: 'left' });
+    text(ctx, 'left bulb', 520 - 30, 84, BULB(-1), { size: 17, align: 'right' });
+    text(ctx, 'right bulb', 1210, 84, BULB(1), { size: 17, align: 'left' });
     line(ctx, X(N / 2) + 0, 96, X(N / 2), 200, alpha(PAL.ink, 0.35), 2, [10, 10]);
     for (const { f, y } of rows) {
       const l = cnt(f, -1), r = N - l;
@@ -108,7 +109,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   /* particle arrangements in a box 64 tall: packed or expanded, solute (7) and solvent (16) */
   const hex = (n, cols, s, x0, y0) => Array.from({ length: n }, (_, i) => { const r = Math.floor(i / cols), c = i % cols; return [x0 + c * s + (r % 2) * s / 2, y0 - r * s * 0.87]; });
   function particles(ctx, pts, kind) {
-    const col = F.cat(kind === 'solute' ? 0 : 1), rr = kind === 'solute' ? 8 : 6;
+    const col = F.ref(kind), rr = kind === 'solute' ? 8 : 6;
     for (const [x, y] of pts) {
       ctx.save(); ctx.fillStyle = col; ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(x, y, rr, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
       hits.push({ x, y, r: rr + 2, name: 'a ' + kind + ' particle' });

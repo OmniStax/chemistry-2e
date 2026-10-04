@@ -94,7 +94,8 @@
       "draws": [
         "concentration",
         "pressure",
-        "temperature"
+        "temperature",
+        "colligative-constant"
       ]
     },
     {
@@ -111,7 +112,8 @@
       "original_caption": "(Figure 11.24) (a) A solution and pure solvent are initially separated by an osmotic membrane. (b) Net transfer of solvent molecules to the solution occurs until its osmotic pressure yields equal rates of transfer in both directions. (Figure 11.25) Applying a pressure greater than the osmotic pressure of a solution will reverse osmosis. Solvent molecules from the solution are pushed into the pure solvent.",
       "draws": [
         "concentration",
-        "pressure"
+        "pressure",
+        "temperature"
       ]
     },
     {
@@ -1351,6 +1353,58 @@
     {
       "exercise": "e27",
       "concept": "boiling-point-elevation"
+    }
+  ],
+  "referents": [
+    {
+      "id": "pure-tank",
+      "label": "the tank of pure water",
+      "figure": "sim-vapor-lowering"
+    },
+    {
+      "id": "solution-tank",
+      "label": "the tank of urea solution",
+      "figure": "sim-vapor-lowering"
+    },
+    {
+      "id": "vap-curve",
+      "label": "the liquid–vapor curves",
+      "figure": "sim-phase-diagram"
+    },
+    {
+      "id": "melt-curve",
+      "label": "the solid–liquid lines",
+      "figure": "sim-phase-diagram"
+    },
+    {
+      "id": "sub-curve",
+      "label": "the solid–gas curve",
+      "figure": "sim-phase-diagram"
+    },
+    {
+      "id": "water-arm",
+      "label": "the arm of pure water",
+      "figure": "sim-osmosis"
+    },
+    {
+      "id": "solution-arm",
+      "label": "the arm of glucose solution",
+      "figure": "sim-osmosis"
+    },
+    {
+      "id": "membrane",
+      "label": "the semipermeable membrane",
+      "figure": "sim-osmosis"
+    },
+    {
+      "id": "piston",
+      "label": "the piston over the solution",
+      "figure": "sim-osmosis"
+    },
+    {
+      "id": "box",
+      "label": "the box of solution",
+      "figure": "sim-ion-pairs"
     }
   ]
 }

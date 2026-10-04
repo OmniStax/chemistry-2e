@@ -66,5 +66,22 @@
     {"exercise": "e6", "concept": "electrolytes-and-nonelectrolytes"},
     {"exercise": "e6", "concept": "dissociation-of-ionic-compounds"},
     {"exercise": "e7", "concept": "ion-dipole-attraction"}
+  ],
+  "referents": [
+    {
+      "id": "electrodes",
+      "label": "the two electrodes",
+      "figure": "sim-conductivity"
+    },
+    {
+      "id": "bulb",
+      "label": "the light bulb",
+      "figure": "sim-conductivity"
+    },
+    {
+      "id": "power-supply",
+      "label": "the power supply",
+      "figure": "sim-conductivity"
+    }
   ]
 }

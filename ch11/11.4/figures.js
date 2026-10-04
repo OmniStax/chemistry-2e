@@ -79,7 +79,8 @@ function water(g, p, a, s = 1) {
     }
   }
   let sig = '', pools = [];
-  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, F.el('O'), F.el('H'), F.el('C'), F.el('N'), Math.round(nU.v)].join('|');
+  const TANK = (t) => F.ref(t.solute ? 'solution-tank' : 'pure-tank');
+  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, F.el('O'), F.el('H'), F.el('C'), F.el('N'), Math.round(nU.v), ...tanks.map(TANK)].join('|');
   function build() {
     if (palSig() === sig) return; sig = palSig();
     v.clear(); pools = [];
@@ -87,7 +88,7 @@ function water(g, p, a, s = 1) {
     const glass = glassOf(T3D), R = rng(11);
     for (const t of tanks) {
       const tank = new T3D.Group(); tank.position.set(t.x, 0, 0); grp.add(tank);
-      v.pickable(F.mesh.box(tank, [0, (Y0 + YT) / 2, 0], [W + 0.08, YT - Y0 + 0.04, D + 0.08], PAL.ink, glass), t.solute ? 'a closed tank of an aqueous solution of urea' : 'a closed tank of pure water');
+      v.pickable(F.mesh.box(tank, [0, (Y0 + YT) / 2, 0], [W + 0.08, YT - Y0 + 0.04, D + 0.08], TANK(t), { ...glass, opacity: 0.16 }), t.solute ? 'a closed tank of an aqueous solution of urea' : 'a closed tank of pure water');
       F.mesh.box(tank, [0, YS - NY * SP / 2, 0], [W, NY * SP, D], PAL.muted, { transparent: true, opacity: 0.12, depthWrite: false });
       for (let k = 0; k < SITES; k++) {
         const p = siteAt(k);
@@ -102,7 +103,7 @@ function water(g, p, a, s = 1) {
       const pool = [];
       for (let j = 0; j < 40; j++) { const w = water(tank, [0, -9, 0], 0, 0.9); w.parts.forEach((m) => v.pickable(m, 'a water molecule in the vapor')); w.g.visible = false; pool.push(w.g); }
       pools.push(pool);
-      v.label(t.solute ? 'aqueous solution' : 'pure water', [t.x, Y0 - 0.32, D / 2 + 0.3], grp, 16);
+      v.label(t.solute ? 'aqueous solution' : 'pure water', [t.x, Y0 - 0.32, D / 2 + 0.3], grp, 16).style.color = TANK(t);
     }
   }
   function draw() {
@@ -110,12 +111,12 @@ function water(g, p, a, s = 1) {
     tanks.forEach((t, i) => pools[i].forEach((g, j) => { const q = t.vap[j]; g.visible = !!q; if (q) { g.position.set(q.p[0], q.p[1], q.p[2]); g.rotation.y = q.spin; } }));
     v.invalidate();
     const { ctx } = begin(cnv);
-    const n = Math.round(nU.v), X = (SITES - n) / SITES, cp = C('pressure');
+    const n = Math.round(nU.v), X = (SITES - n) / SITES;
     const cnt = tanks.map((t) => Math.round(t.avg ?? t.vap.length)), want = [N_PURE, N_PURE * X];
     const bx = (k) => 420 + k * 40, rows = [{ y: 120, name: 'vapor above pure water' }, { y: 180, name: 'vapor above the solution' }];
     rows.forEach((r, i) => {
       text(ctx, r.name, 395, r.y, PAL.ink, { size: 18, align: 'right' });
-      ctx.save(); ctx.fillStyle = alpha(cp, 0.75); ctx.fillRect(bx(0), r.y - 13, bx(Math.min(cnt[i], 22)) - bx(0), 26); ctx.restore();
+      ctx.save(); ctx.fillStyle = alpha(TANK(tanks[i]), 0.75); ctx.fillRect(bx(0), r.y - 13, bx(Math.min(cnt[i], 22)) - bx(0), 26); ctx.restore();
       line(ctx, bx(want[i]), r.y - 22, bx(want[i]), r.y + 22, PAL.ink, 3, [4, 4]);
       text(ctx, cnt[i] + ' molecules', bx(Math.max(cnt[i], want[i])) + 18, r.y, PAL.ink, { size: 18 });
     });
@@ -173,12 +174,13 @@ function water(g, p, a, s = 1) {
     text(ctx, 'pressure (atm)', 30, box.t - 42, cp, { size: 20, weight: 600 });
     line(ctx, box.l, Y(1), box.r, Y(1), alpha(PAL.ink, 0.35), 2, [10, 10]);
     /* water, solid; the solution, dashed */
-    path(ctx, Psub, -30, 0.01, PAL.ink);
-    path(ctx, Pvap, 0.01, 110, PAL.ink);
-    line(ctx, X(0.01), Y(P3), X(0.01), box.t, PAL.ink, 4);
+    const cSub = F.ref('sub-curve'), cVap = F.ref('vap-curve'), cMelt = F.ref('melt-curve');
+    path(ctx, Psub, -30, 0.01, cSub);
+    path(ctx, Pvap, 0.01, 110, cVap);
+    line(ctx, X(0.01), Y(P3), X(0.01), box.t, cMelt, 4);
     const pT = Psub(tf);
-    path(ctx, (t) => Xs * Pvap(t), tf, 110, PAL.ink, [12, 9]);
-    ctx.save(); ctx.setLineDash([12, 9]); line(ctx, X(tf), Y(pT), X(tf), box.t, PAL.ink, 4); ctx.restore();
+    path(ctx, (t) => Xs * Pvap(t), tf, 110, cVap, [12, 9]);
+    ctx.save(); ctx.setLineDash([12, 9]); line(ctx, X(tf), Y(pT), X(tf), box.t, cMelt, 4); ctx.restore();
     text(ctx, 'solid', X(-22), Y(0.3), PAL.muted, { size: 20, align: 'center' });
     text(ctx, 'liquid', X(45), Y(0.6), PAL.muted, { size: 20, align: 'center' });
     text(ctx, 'gas', X(60), Y(0.004), PAL.muted, { size: 20, align: 'center' });
@@ -196,7 +198,7 @@ function water(g, p, a, s = 1) {
     const fz = minus(fmt(-dTf, 2)), bp = fmt(100 + dTb, 2);
     topline(ctx, m === 0 ? 'With no solute, the solution’s curves lie on those of water.' : 'A ' + fmt(m, 2) + ' m solution of ' + NAME[sol.value] + ' freezes at ' + fz + ' °C and boils at ' + bp + ' °C.');
     const mm = hue('concentration', fmt(m, 2) + '\\ m');
-    readout(d.readout, `\\kdTf = iK_{\\text{f}}\\kmolal = ${ip} \\times 1.86\\ {}^{\\circ}\\text{C}/m \\times ${mm} = ${hue('temperature', fmt(dTf, 2) + '\\ {}^{\\circ}\\text{C}')}`,
+    readout(d.readout, `\\kdTf = i\\kKf\\kmolal = ${ip} \\times ${hue('colligative-constant', '1.86\\ {}^{\\circ}\\text{C}/m')} \\times ${mm} = ${hue('temperature', fmt(dTf, 2) + '\\ {}^{\\circ}\\text{C}')}`,
       'By the same count of particles, the boiling point rises by ' + fmt(dTb, 2) + ' °C, and at 100 °C the vapor pressure is lowered by ' + fmt(dP, 3) + ' atm. For ' + NAME[sol.value] + ', i = ' + ip + (ip > 1 ? ', assuming complete dissociation.' : ', since it does not dissociate.'));
   }
   register(d.fig, { update: () => {}, draw });
@@ -242,25 +244,26 @@ function water(g, p, a, s = 1) {
     }
   }
   let sig = '', liq = [], piston = null, rod = null, meshes = [];
-  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, F.el('O'), F.el('H'), F.el('C')].join('|');
+  const ARM = (s) => F.ref(s < 0 ? 'water-arm' : 'solution-arm');
+  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, F.el('O'), F.el('H'), F.el('C'), ARM(-1), ARM(1), F.ref('membrane'), F.ref('piston')].join('|');
   function build() {
     if (palSig() === sig) return; sig = palSig();
     v.clear(); liq = []; meshes = [];
     const glass = glassOf(T3D), wet = { transparent: true, opacity: 0.22, depthWrite: false };
     v.pickable(F.mesh.box(grp, [0, YB - 0.42, 0], [3.4, 0.1, 1.4], PAL.soft), 'bench');
     for (const s of [-1, 1]) {
-      const arm = new T3D.Mesh(new T3D.CylinderGeometry(RA + 0.03, RA + 0.03, YTOP - YB, 32, 1, true), F.mesh.mat(PAL.ink, glass)); arm.position.set(s * XA, (YTOP + YB) / 2, 0); grp.add(arm);
+      const arm = new T3D.Mesh(new T3D.CylinderGeometry(RA + 0.03, RA + 0.03, YTOP - YB, 32, 1, true), F.mesh.mat(ARM(s), { ...glass, opacity: 0.16 })); arm.position.set(s * XA, (YTOP + YB) / 2, 0); grp.add(arm);
       v.pickable(arm, s < 0 ? 'the arm holding pure water' : 'the arm holding the glucose solution');
       liq.push(column(T3D, grp, s * XA, YB, YL, 0, RA, PAL.muted, wet));
       F.mesh.stick(grp, [s * XA, YB - 0.3, 0.4], [s * XA, YB - 0.37, 0.4], 0.06, PAL.muted);
     }
     const base = new T3D.Mesh(new T3D.CylinderGeometry(RA + 0.03, RA + 0.03, 2 * XA, 32, 1, true), F.mesh.mat(PAL.ink, glass)); base.rotation.z = Math.PI / 2; base.position.set(0, YB, 0); grp.add(base);
     const fill = new T3D.Mesh(new T3D.CylinderGeometry(RA, RA, 2 * XA, 32), F.mesh.mat(PAL.muted, wet)); fill.rotation.z = Math.PI / 2; fill.position.set(0, YB, 0); grp.add(fill);
-    const mem = new T3D.Mesh(new T3D.CylinderGeometry(RA + 0.04, RA + 0.04, 0.03, 32), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.45 })); mem.rotation.z = Math.PI / 2; mem.position.set(0, YB, 0); grp.add(mem);
+    const mem = new T3D.Mesh(new T3D.CylinderGeometry(RA + 0.04, RA + 0.04, 0.03, 32), F.mesh.mat(F.ref('membrane'), { transparent: true, opacity: 0.6 })); mem.rotation.z = Math.PI / 2; mem.position.set(0, YB, 0); grp.add(mem);
     v.pickable(mem, 'the semipermeable membrane, which only water crosses');
-    piston = column(T3D, grp, XA, 0, 0.08, 0, RA - 0.005, PAL.muted);
+    piston = column(T3D, grp, XA, 0, 0.08, 0, RA - 0.005, F.ref('piston'));
     v.pickable(piston, 'the piston pressing on the solution');
-    rod = F.mesh.stick(grp, [XA, 0, 0], [XA, 0.5, 0], 0.04, PAL.muted);
+    rod = F.mesh.stick(grp, [XA, 0, 0], [XA, 0.5, 0], 0.04, F.ref('piston'));
     meshes = mols.map((q) => {
       const g = new T3D.Group(); grp.add(g);
       if (q.glu) {
@@ -270,9 +273,9 @@ function water(g, p, a, s = 1) {
       }
       return g;
     });
-    v.label('membrane', [0, YB - 0.5, 0.3], grp, 15);
-    v.label('water', [-XA - 0.6, YL + 0.3, 0], grp, 15);
-    v.label('solution', [XA + 0.7, YL + 0.3, 0], grp, 15);
+    v.label('membrane', [0, YB - 0.5, 0.3], grp, 15).style.color = F.ref('membrane');
+    v.label('water', [-XA - 0.6, YL + 0.3, 0], grp, 15).style.color = ARM(-1);
+    v.label('solution', [XA + 0.7, YL + 0.3, 0], grp, 15).style.color = ARM(1);
   }
   function draw() {
     build();
@@ -327,21 +330,21 @@ function water(g, p, a, s = 1) {
   const Po = ctl(d.controls, { label: '\\kosm_{\\text{solution}}', cls: 'pressure', min: 0, max: 16, step: 0.1, value: 7.7, unit: 'atm', dec: 1, aria: 'osmotic pressure of the solution around the cell, in atmospheres', specials: [{ at: PI_IN, label: 'isotonic' }] });
   function draw() {
     const { ctx } = begin(d.c);
-    const po = Math.max(Po.v, 0.3), vr = 0.4 + 0.6 * PI_IN / po, burst = vr > 1.6;
+    const cell = F.fact(CELL_RED), po = Math.max(Po.v, 0.3), vr = 0.4 + 0.6 * PI_IN / po, burst = vr > 1.6;
     const cx = 700, cy = 290, R = 110 * Math.cbrt(Math.min(vr, 1.6));
     const dimple = Math.max(0, Math.min(1, (1.35 - vr) / 0.35)), spikes = Math.max(0, Math.min(1, (1 - vr) / 0.3));
-    const rim = F.mixColor(CELL_RED, PAL.ink, 0.35);
+    const rim = F.mixColor(cell, PAL.ink, 0.35);
     ctx.save();
     if (burst) {
-      ctx.fillStyle = alpha(CELL_RED, 0.18);
+      ctx.fillStyle = alpha(cell, 0.18);
       for (let k = 0; k < 9; k++) { const a = k * TAU / 9 + 0.3, r = R * (1.05 + 0.25 * ((k * 7) % 5) / 5); ctx.beginPath(); ctx.arc(cx + r * Math.cos(a), cy + r * Math.sin(a), 16 + (k % 3) * 6, 0, TAU); ctx.fill(); }
-      ctx.strokeStyle = rim; ctx.lineWidth = 4; ctx.fillStyle = alpha(CELL_RED, 0.35);
+      ctx.strokeStyle = rim; ctx.lineWidth = 4; ctx.fillStyle = alpha(cell, 0.35);
       ctx.beginPath(); ctx.arc(cx, cy, R, 0.5, TAU - 0.2); ctx.fill(); ctx.stroke();
     } else {
       ctx.beginPath();
       for (let i = 0; i <= 240; i++) { const a = i * TAU / 240, r = R * (1 + 0.09 * spikes * Math.pow(Math.abs(Math.sin(7 * a)), 3)); const x = cx + r * Math.cos(a), y = cy + r * Math.sin(a); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); }
-      ctx.closePath(); ctx.fillStyle = CELL_RED; ctx.fill(); ctx.strokeStyle = rim; ctx.lineWidth = 4; ctx.stroke();
-      if (dimple > 0) { ctx.fillStyle = alpha(F.mixColor(CELL_RED, PAL.panel, 0.35), dimple); ctx.beginPath(); ctx.arc(cx, cy, R * 0.45, 0, TAU); ctx.fill(); }
+      ctx.closePath(); ctx.fillStyle = cell; ctx.fill(); ctx.strokeStyle = rim; ctx.lineWidth = 4; ctx.stroke();
+      if (dimple > 0) { ctx.fillStyle = alpha(F.mixColor(cell, PAL.panel, 0.35), dimple); ctx.beginPath(); ctx.arc(cx, cy, R * 0.45, 0, TAU); ctx.fill(); }
     }
     ctx.restore();
     const state = Math.abs(po - PI_IN) < 0.05 ? 'isotonic' : po < PI_IN ? 'hypotonic' : 'hypertonic';
@@ -389,14 +392,15 @@ function water(g, p, a, s = 1) {
   const perp = (u) => { const w = Math.abs(u[1]) < 0.9 ? [u[2], 0, -u[0]] : [1, 0, 0], l = Math.hypot(...w); return w.map((c) => c / l); };
   const pairsAt = (m) => Math.round(8 * Math.min(0.5, 0.125 * Math.sqrt(m / 0.05)));
   let sig = '';
-  const palSig = () => [PAL.ink, PAL.muted, F.el('K'), F.el('Cl'), F.el('O'), F.el('H'), fmt(mS.v, 2)].join('|');
+  const palSig = () => [PAL.ink, PAL.muted, F.el('K'), F.el('Cl'), F.el('O'), F.el('H'), fmt(mS.v, 2), F.ref('box')].join('|');
   function build() {
     if (palSig() === sig) return; sig = palSig();
     v.clear();
     const m = mS.v, L = 3.0 * Math.cbrt(0.05 / m), k = 2 * HALF / L, np = pairsAt(m), R = rng(19);
     F.mesh.box(grp, [0, 0, 0], [2 * HALF, 2 * HALF, 2 * HALF], PAL.ink, { transparent: true, opacity: 0.06, depthWrite: false });
     const edges = [[-1, -1], [-1, 1], [1, -1], [1, 1]];
-    for (const [a, b] of edges) { F.mesh.stick(grp, [a * HALF, -HALF, b * HALF], [a * HALF, HALF, b * HALF], 0.008, PAL.muted); F.mesh.stick(grp, [-HALF, a * HALF, b * HALF], [HALF, a * HALF, b * HALF], 0.008, PAL.muted); F.mesh.stick(grp, [a * HALF, b * HALF, -HALF], [a * HALF, b * HALF, HALF], 0.008, PAL.muted); }
+    const boxC = F.ref('box');
+    for (const [a, b] of edges) { F.mesh.stick(grp, [a * HALF, -HALF, b * HALF], [a * HALF, HALF, b * HALF], 0.012, boxC); F.mesh.stick(grp, [-HALF, a * HALF, b * HALF], [HALF, a * HALF, b * HALF], 0.012, boxC); F.mesh.stick(grp, [a * HALF, b * HALF, -HALF], [a * HALF, b * HALF, HALF], 0.012, boxC); }
     /* ion centres in true units inside the box of edge L, kept apart by at least a shell's width */
     const reach = Math.max(L / 2 - 0.35, 0.15), placed = [], ions = [];
     const free = (p, gap) => placed.every((q) => Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]) > gap);

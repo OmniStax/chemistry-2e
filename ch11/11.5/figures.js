@@ -49,7 +49,7 @@ function bar(ctx, x0, y, per, n, total, col) {
   const hits = []; F.hover(d.stage, () => hits);
   let clock = 0;
   const fallen = (p, t) => smooth(clamp01(t / p.fall));
-  const colOf = (key, p) => (key === 'solution' ? F.el(p.el) : F.cat(0));
+  const colOf = (key, p) => (key === 'solution' ? F.el(p.el) : F.ref(key === 'colloid' ? 'butterfat' : 'mud'));
   function where(key, p, t) {
     const a = MIX[key].amp, jx = a * Math.sin(p.w * clock + p.ph), jy = a * Math.cos(1.3 * p.w * clock + p.ph);
     if (key !== 'suspension') return [p.x + jx, p.y + jy];
@@ -57,7 +57,7 @@ function bar(ctx, x0, y, per, n, total, col) {
   }
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
-    const t = cy.now(), v = M.value;
+    const t = cy.now(), v = M.value, laser = F.fact(LASER_GREEN);
     const sus = MIX.suspension.parts, settled = sus.reduce((s, p) => s + fallen(p, t), 0) / sus.length;
     /* how cloudy the water is, how much the beam scatters inside it, and how much reaches the card */
     const cloud = M.mix((k) => (k === 'suspension' ? 1 - settled : 0));
@@ -65,28 +65,28 @@ function bar(ctx, x0, y, per, n, total, col) {
     const reach = M.mix((k) => (k === 'solution' ? 1 : k === 'colloid' ? 0.55 : 0.08 + 0.92 * settled));
     ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.08 + 0.6 * cloud); ctx.fillRect(GL.l, GL.surf, GL.r - GL.l, GL.bot - GL.surf); ctx.restore();
     /* the beam: from the laser to the glass, through the liquid, and on to the card */
-    line(ctx, 330, BY, GL.l, BY, alpha(LASER_GREEN, 0.35 * reach + 0.15), 4);
+    line(ctx, 330, BY, GL.l, BY, alpha(laser, 0.35 * reach + 0.15), 4);
     ctx.save();
     const g = ctx.createLinearGradient(GL.l, 0, GL.r, 0);
-    g.addColorStop(0, alpha(LASER_GREEN, 0.8 * glow)); g.addColorStop(1, alpha(LASER_GREEN, 0.8 * glow * (0.35 + 0.65 * reach)));
+    g.addColorStop(0, alpha(laser, 0.8 * glow)); g.addColorStop(1, alpha(laser, 0.8 * glow * (0.35 + 0.65 * reach)));
     ctx.strokeStyle = g; ctx.lineWidth = 7; ctx.beginPath(); ctx.moveTo(GL.l, BY); ctx.lineTo(GL.r, BY); ctx.stroke();
     ctx.globalAlpha = 0.25 * glow; ctx.lineWidth = 22; ctx.beginPath(); ctx.moveTo(GL.l, BY); ctx.lineTo(GL.r, BY); ctx.stroke();
     ctx.restore();
-    line(ctx, GL.r, BY, CARD, BY, alpha(LASER_GREEN, 0.12 * reach), 3);
-    ctx.save(); ctx.fillStyle = alpha(LASER_GREEN, 0.25 + 0.75 * reach); ctx.beginPath(); ctx.arc(CARD - 2, BY, 6 + 8 * reach, 0, TAU); ctx.fill(); ctx.restore();
+    line(ctx, GL.r, BY, CARD, BY, alpha(laser, 0.12 * reach), 3);
+    ctx.save(); ctx.fillStyle = alpha(laser, 0.25 + 0.75 * reach); ctx.beginPath(); ctx.arc(CARD - 2, BY, 6 + 8 * reach, 0, TAU); ctx.fill(); ctx.restore();
     for (const key of Object.keys(MIX)) {
       const a = M.a(key); if (a <= 0) continue;
       ctx.save(); ctx.globalAlpha = a;
       for (const p of MIX[key].parts) {
         const [x, y] = where(key, p, t), lit = key !== 'solution' && Math.abs(y - BY) < p.r + 8 ? glow : 0;
-        if (lit > 0) { ctx.save(); ctx.fillStyle = alpha(LASER_GREEN, 0.35 * lit); ctx.beginPath(); ctx.arc(x, y, p.r + 6, 0, TAU); ctx.fill(); ctx.restore(); }
+        if (lit > 0) { ctx.save(); ctx.fillStyle = alpha(laser, 0.35 * lit); ctx.beginPath(); ctx.arc(x, y, p.r + 6, 0, TAU); ctx.fill(); ctx.restore(); }
         ball(ctx, x, y, p.r, colOf(key, p), key === 'solution' ? 0.3 : 0.5);
         if (a > 0.5) hits.push({ x, y, r: Math.max(p.r, 7), name: key === 'solution' ? NAMES[p.el] : NAMES[key] });
       }
       ctx.restore();
     }
     /* the glass, the laser and the card */
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(GL.l, GL.top); ctx.lineTo(GL.l, GL.bot); ctx.lineTo(GL.r, GL.bot); ctx.lineTo(GL.r, GL.top); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = F.ref('glass'); ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(GL.l, GL.top); ctx.lineTo(GL.l, GL.bot); ctx.lineTo(GL.r, GL.bot); ctx.lineTo(GL.r, GL.top); ctx.stroke(); ctx.restore();
     line(ctx, GL.l, GL.surf, GL.r, GL.surf, alpha(PAL.ink, 0.4), 2);
     ctx.save(); ctx.fillStyle = PAL.muted; ctx.fillRect(210, BY - 22, 120, 44); ctx.restore();
     text(ctx, 'laser', 270, BY + 50, PAL.ink, { size: 20, align: 'center' });
@@ -94,7 +94,7 @@ function bar(ctx, x0, y, per, n, total, col) {
     text(ctx, 'card', CARD + 8, BY + 118, PAL.ink, { size: 20, align: 'center' });
     hits.push({ x: 270, y: BY, r: 50, name: 'a green laser' }, { x: CARD + 8, y: BY, r: 30, name: 'a card, where the beam that passes through the glass lands' });
     /* legend of the kinds in the glass */
-    const kinds = v === 'solution' ? [[F.el('Na'), 5, 'Na<sup>+</sup> ion'], [F.el('Cl'), 5, 'Cl<sup>−</sup> ion']] : v === 'colloid' ? [[F.cat(0), 11, 'butterfat droplet']] : [[F.cat(0), 16, 'grain of mud']];
+    const kinds = v === 'solution' ? [[F.el('Na'), 5, 'Na<sup>+</sup> ion'], [F.el('Cl'), 5, 'Cl<sup>−</sup> ion']] : v === 'colloid' ? [[F.ref('butterfat'), 11, 'butterfat droplet']] : [[F.ref('mud'), 16, 'grain of mud']];
     kinds.forEach(([c, r, name], i) => { const y = 180 + i * 40; ball(ctx, 1170, y, r, c); text(ctx, name, 1196, y, PAL.ink, { size: 20 }); });
     topline(ctx, v === 'solution'
       ? 'The ions dissolved in saltwater are too small to scatter light, so the beam crosses the glass unseen.'
@@ -262,8 +262,8 @@ function twoWays(d, opts, onShow) {
       const xTailEnd = lerp(P(cpos(nFrom))[0], P(cpos(n))[0], kk) + 14, xTail0 = P(cpos(1))[0] - 10;
       const headXs = at.filter((a) => a.o > 0.5 && (a.key === 'X0' || a.key === 'Na' || /^O/.test(a.key) || a.key === 'S')).map((a) => P(a.p)[0]);
       const xh0 = Math.min(...headXs) - 22, xh1 = Math.max(...headXs) + 10;
-      hbracket(ctx, xTail0, xTailEnd, 150, PAL.ink, 'nonpolar hydrocarbon end', { size: 21 });
-      hbracket(ctx, xh0, Math.min(xh1, xTail0 - 24), 150, PAL.ink, 'ionic end', { size: 21 });
+      hbracket(ctx, xTail0, xTailEnd, 150, F.ref('tail'), 'nonpolar hydrocarbon end', { size: 21 });
+      hbracket(ctx, xh0, Math.min(xh1, xTail0 - 24), 150, F.ref('head'), 'ionic end', { size: 21 });
       const Om = P(pos(MINUS[st])), Na = P(pos('Na'));
       text(ctx, '−', Om[0] + 2, Om[1] + 28, PAL.ink, { size: 26, weight: 600, align: 'center' });
       text(ctx, '+', Na[0] + 30, Na[1] - 18, PAL.ink, { size: 26, weight: 600, align: 'center' });
@@ -325,7 +325,7 @@ function twoWays(d, opts, onShow) {
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
     const t = cy.now();
-    ctx.save(); ctx.fillStyle = alpha(OIL_AMBER, 0.55); ctx.beginPath(); ctx.arc(CX, CY, RD, 0, TAU); ctx.fill(); ctx.restore();
+    ctx.save(); ctx.fillStyle = alpha(F.fact(OIL_AMBER), 0.55); ctx.beginPath(); ctx.arc(CX, CY, RD, 0, TAU); ctx.fill(); ctx.restore();
     const st = anions.map((q) => state(q, t));
     st.forEach((s) => tail(ctx, s.x, s.y, s.a, F.el('C')));
     st.forEach((s) => { ball(ctx, s.x, s.y, 9, F.el('O')); hits.push({ x: s.x, y: s.y, r: 11, name: 'the ionic end of a soap anion, a carboxylate group, CO<sub>2</sub><sup>−</sup>' }); });
@@ -416,7 +416,7 @@ function twoWays(d, opts, onShow) {
   }
   const where = (p) => (p.ph === 'pipe' || p.ph === 'out' ? p.x : polar(p.r, p.phi, p.y));
   let sig = '', meshes = [];
-  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, PAL.panel, F.el('C')].join('|');
+  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, PAL.panel, F.el('C'), F.ref('point-electrode'), F.ref('plate-electrode'), F.ref('hopper')].join('|');
   const tube = (r0, r1, h, y, color, opacity, rotZ = 0, x = 0) => {
     const m = new T3D.Mesh(new T3D.CylinderGeometry(r0, r1, h, 48, 1, true), F.mesh.mat(color, { transparent: true, opacity, depthWrite: false, side: T3D.DoubleSide }));
     m.position.set(x, y, 0); m.rotation.z = rotZ; grp.add(m); return m;
@@ -425,18 +425,18 @@ function twoWays(d, opts, onShow) {
     if (palSig() === sig) return; sig = palSig();
     v.clear(); meshes = [];
     v.pickable(F.mesh.box(grp, [0, FLOOR, 0], [4.4, 0.08, 2.6], PAL.soft), 'the floor');
-    v.pickable(tube(RC, RC, Y1 - Y0, (Y0 + Y1) / 2, PAL.muted, 0.14), 'the plate electrode, the grounded wall of the chamber');
-    v.pickable(tube(RC, 0.2, Y0 - YH, (Y0 + YH) / 2, PAL.muted, 0.12), 'the hopper, where the soot collects as dust');
+    v.pickable(tube(RC, RC, Y1 - Y0, (Y0 + Y1) / 2, F.ref('plate-electrode'), 0.16), 'the plate electrode, the grounded wall of the chamber');
+    v.pickable(tube(RC, 0.2, Y0 - YH, (Y0 + YH) / 2, F.ref('hopper'), 0.16), 'the hopper, where the soot collects as dust');
     v.pickable(tube(0.2, 0.2, YH - YP, (YH + YP) / 2, PAL.muted, 0.22), 'the outlet for the soot removed');
     v.pickable(tube(0.16, 0.16, 0.9, YIN, PAL.muted, 0.25, Math.PI / 2, -RC - 0.4), 'the inlet for soot-laden smoke');
     v.pickable(tube(0.16, 0.16, 0.9, YOUT, PAL.muted, 0.25, Math.PI / 2, RC + 0.4), 'the outlet where soot-free gases escape');
     const cap = new T3D.Mesh(new T3D.CircleGeometry(RC, 48), F.mesh.mat(PAL.muted, { transparent: true, opacity: 0.3, side: T3D.DoubleSide })); cap.rotation.x = -Math.PI / 2; cap.position.y = Y1; grp.add(cap);
     for (const [x, z] of [[-0.7, -0.5], [0.7, -0.5], [0, 0.8]]) F.mesh.stick(grp, [x, YH + 0.1, z], [x, FLOOR, z], 0.03, PAL.muted);
-    v.pickable(F.mesh.stick(grp, [0, 2.35, 0], [0, -0.35, 0], 0.025, PAL.ink), 'the point electrode, at a high DC voltage');
-    for (let y = -0.25; y < 1.5; y += 0.22) for (let m = 0; m < 4; m++) { const a = m * Math.PI / 2 + y; F.mesh.stick(grp, [0, y, 0], [0.16 * Math.cos(a), y + 0.04, 0.16 * Math.sin(a)], 0.012, PAL.ink); }
-    v.label('point electrode', [0, 1.75, 0], grp, 0);
-    v.label('plate electrode', [RC, 0.15, 0], grp, 0);
-    for (const y of [Y0, Y1]) F.mesh.polyline(grp, Array.from({ length: 49 }, (_, i) => polar(RC, (i / 48) * TAU, y)), PAL.ink);
+    v.pickable(F.mesh.stick(grp, [0, 2.35, 0], [0, -0.35, 0], 0.025, F.ref('point-electrode')), 'the point electrode, at a high DC voltage');
+    for (let y = -0.25; y < 1.5; y += 0.22) for (let m = 0; m < 4; m++) { const a = m * Math.PI / 2 + y; F.mesh.stick(grp, [0, y, 0], [0.16 * Math.cos(a), y + 0.04, 0.16 * Math.sin(a)], 0.012, F.ref('point-electrode')); }
+    v.label('point electrode', [0, 1.75, 0], grp, 0).style.color = F.ref('point-electrode');
+    v.label('plate electrode', [RC, 0.15, 0], grp, 0).style.color = F.ref('plate-electrode');
+    for (const y of [Y0, Y1]) F.mesh.polyline(grp, Array.from({ length: 49 }, (_, i) => polar(RC, (i / 48) * TAU, y)), F.ref('plate-electrode'));
     v.label('soot-laden smoke', [-RC - 0.9, YIN - 0.35, 0], grp, 0);
     v.label('soot-free gases escape', [RC + 0.9, YOUT - 0.35, 0], grp, 0);
     v.label('soot removed here', [0, YP - 0.15, 0], grp, 14);

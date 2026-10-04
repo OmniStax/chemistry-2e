@@ -47,7 +47,7 @@ function lightColor(nm) {
   else { r = 1; }
   const f = nm < 430 ? 0.45 + 0.55 * (nm - 400) / 30 : nm > 660 ? 0.45 + 0.55 * (700 - nm) / 40 : 1;
   const ch = (v) => Math.round(255 * Math.pow(v * f, 0.8));
-  return `rgb(${ch(r)},${ch(g)},${ch(b)})`;
+  return F.fact(`rgb(${ch(r)},${ch(g)},${ch(b)})`);
 }
 const visible = (nm) => nm >= 400 && nm <= 700;
 const lineColor = (nm) => (visible(nm) ? lightColor(nm) : C('wavelength'));
@@ -201,7 +201,7 @@ function ionPick(controls, onInput) {
     const inBand = ni >= INS.from && nf >= INS.from;
     if (!same && inBand) {
       arrow(ctx, INS.l + 110, iy(ni), INS.l + 110, iy(nf), ce, 4);
-      dot(ctx, INS.l + 46, iy(ni) + (iy(nf) - iy(ni)) * jump, PAL.ink, true, 8);
+      dot(ctx, INS.l + 46, iy(ni) + (iy(nf) - iy(ni)) * jump, F.el('e-'), true, 8);
     }
     text(ctx, 'the rungs from n = 3 up,', INS.l - 14, INS.top - 62, PAL.muted, { size: 17 });
     text(ctx, 'magnified ' + fmt(MAG, 0) + ' times', INS.l - 14, INS.top - 38, PAL.muted, { size: 17 });
@@ -212,7 +212,7 @@ function ionPick(controls, onInput) {
     }
   }
   const EX = 380, AX = 520;                      /* the electron's column and the arrow's column on the ladder */
-  /* the electron names itself under the pointer (rule 26.6); it stays ink, since an electron has no element to take a colour from */
+  /* the electron names itself under the pointer (rule 26.6) */
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
@@ -251,9 +251,9 @@ function ionPick(controls, onInput) {
       vbracket(ctx, AX - 50, Math.min(y1, y2), Math.max(y1, y2), ce);
       text(ctx, '|ΔE| = ' + sciU(Math.abs(dE)) + ' J', AX + 22, Math.abs(y1 - y2) < 40 ? Y[INS.from] + 24 : (y1 + y2) / 2, ce, { size: 18, weight: 600, align: 'left' });
       /* the electron on its rung, or between them */
-      dot(ctx, EX, y1 + (y2 - y1) * jump, PAL.ink, true, 9); hits.push({ x: EX, y: y1 + (y2 - y1) * jump, r: 13, name: 'the electron' });
+      dot(ctx, EX, y1 + (y2 - y1) * jump, F.el('e-'), true, 9); hits.push({ x: EX, y: y1 + (y2 - y1) * jump, r: 13, name: 'the electron' });
     } else {
-      dot(ctx, EX, Y[ni], PAL.ink, true, 9); hits.push({ x: EX, y: Y[ni], r: 13, name: 'the electron' });
+      dot(ctx, EX, Y[ni], F.el('e-'), true, 9); hits.push({ x: EX, y: Y[ni], r: 13, name: 'the electron' });
     }
     /* the electron is named beside its place and never on the rung it sits on, with a leader back to it */
     const eY = same ? Y[ni] : Y[ni] + (Y[nf] - Y[ni]) * jump, lY = eY < 210 ? eY + 38 : eY - 38;
@@ -267,7 +267,7 @@ function ionPick(controls, onInput) {
       : emit
         ? 'The electron falls from n = ' + ni + ' to n = ' + nf + ' in ' + ion + ' and the atom emits a photon of ' + nmU(nm) + ', which is ' + region(nm) + '.'
         : 'A photon of ' + nmU(nm) + ', which is ' + region(nm) + ', is absorbed and the electron rises from n = ' + ni + ' to n = ' + nf + ' in ' + ion + '.');
-    const kZ = `\\mk{k}{k}\\mk{Z}{Z^2}`, kZval = `(\\mk{kval}{${sciT(K)}\\ \\text{J}})(\\mk{Zval}{${Z}})^2`;
+    const kZ = `\\mk{k}{\\kk}\\mk{Z}{Z^2}`, kZval = `(\\mk{kval}{${sciT(K)}\\ \\text{J}})(\\mk{Zval}{${Z}})^2`;
     const f = same
       ? `\\mk{En}{\\kEn}=-\\frac{${kZ}}{\\mk{n1}{n^2}}=-\\frac{${kZval}}{\\mk{nival}{${ni}}^2}=\\mk{Enval}{${sciT(energy(ni, Z))}\\ \\text{J}}`
       : `\\mk{dE}{\\kdE}=${kZ}\\left(\\mk{n1}{\\frac{1}{n_1^{2}}}-\\mk{n2}{\\frac{1}{n_2^{2}}}\\right)=${kZval}\\left(\\frac{1}{\\mk{nival}{${ni}}^2}-\\frac{1}{\\mk{nfval}{${nf}}^2}\\right)=\\mk{dEval}{${sciT(dE)}\\ \\text{J}}`;
@@ -298,7 +298,7 @@ function ionPick(controls, onInput) {
   function draw() {
     const { ctx } = begin(d.c);
     hits = [];
-    const n = N.v, Z = ZC.v, Zm = ZC.mix((z) => z), ce = C('energy');
+    const n = N.v, Z = ZC.v, Zm = ZC.mix((z) => z), ce = C('energy'), cr = C('length'), cel = F.el('e-');
     const rA = (n * n) / Z, rD = (n * n) / Zm, rM = radiusM(n, Z), E = energy(n, Z), ion = ZC.name;
     /* the orbits, clipped to their frame */
     ctx.save(); ctx.beginPath(); ctx.rect(FR.l, FR.t, FR.r - FR.l, FR.b - FR.t); ctx.clip();
@@ -316,14 +316,14 @@ function ionPick(controls, onInput) {
     let placed = null;
     for (const a of angles) { const x = CX + r * Math.cos(a * Math.PI / 180), y = CY - r * Math.sin(a * Math.PI / 180); if (x > FR.l + 14 && x < FR.r - 14 && y > FR.t + 14 && y < FR.b - 14) { placed = [x, y]; break; } }
     if (placed) {
-      line(ctx, CX, CY, placed[0], placed[1], alpha(PAL.ink, 0.4), 2, [4, 8]);
-      dot(ctx, placed[0], placed[1], PAL.ink, true, 9); hits.push({ x: placed[0], y: placed[1], r: 13, name: 'the electron, on the n = ' + n + ' orbit' });
-      text(ctx, 'r = ' + fmt(rA, rA < 10 ? 2 : 1) + ' a₀ = ' + fmt(rM * 1e10, 2) + ' Å', placed[0] + 16, placed[1] - 18, PAL.ink, { size: 18, weight: 600, bg: PAL.panel });
+      line(ctx, CX, CY, placed[0], placed[1], cr, 2, [4, 8]);
+      dot(ctx, placed[0], placed[1], cel, true, 9); hits.push({ x: placed[0], y: placed[1], r: 13, name: 'the electron, on the n = ' + n + ' orbit' });
+      text(ctx, 'r = ' + fmt(rA, rA < 10 ? 2 : 1) + ' a₀ = ' + fmt(rM * 1e10, 2) + ' Å', placed[0] + 16, placed[1] - 18, cr, { size: 18, weight: 600, bg: PAL.panel });
     } else {
       const ex = FR.r - 20, ey = CY - (FR.r - 20 - CX) * Math.tan(Math.PI / 12);
-      dot(ctx, ex, ey, PAL.ink, false, 9);
+      dot(ctx, ex, ey, cel, false, 9);
       arrow(ctx, ex - 40, ey, ex - 12, ey, PAL.ink, 3);
-      text(ctx, 'r = ' + fmt(rA, 1) + ' a₀ = ' + fmt(rM * 1e10, 1) + ' Å, beyond the frame', ex - 20, ey - 24, PAL.ink, { size: 17, weight: 600, align: 'right', bg: PAL.panel });
+      text(ctx, 'r = ' + fmt(rA, 1) + ' a₀ = ' + fmt(rM * 1e10, 1) + ' Å, beyond the frame', ex - 20, ey - 24, cr, { size: 17, weight: 600, align: 'right', bg: PAL.panel });
     }
     /* the scale bar */
     line(ctx, FR.l + 20, FR.b - 18, FR.l + 20 + 10 * SCALE, FR.b - 18, PAL.ink, 3);
@@ -334,7 +334,7 @@ function ionPick(controls, onInput) {
     const LAD = { l: 960, r: 1120, top: 176, bottom: 650 };
     const Y = ladder(ctx, { ...LAD, nmax: 6, Z, labelX: 1176 });
     line(ctx, LAD.l, Y[n], LAD.r, Y[n], ce, 7);
-    dot(ctx, LAD.l + 30, Y[n], PAL.ink, true, 9); hits.push({ x: LAD.l + 30, y: Y[n], r: 13, name: 'the electron, on the n = ' + n + ' rung' });
+    dot(ctx, LAD.l + 30, Y[n], cel, true, 9); hits.push({ x: LAD.l + 30, y: Y[n], r: 13, name: 'the electron, on the n = ' + n + ' rung' });
     if (Y[n] - LAD.top > 8) vbracket(ctx, LAD.l - 70, LAD.top, Y[n], ce);
     text(ctx, 'to E = 0:', 800, (LAD.top + Y[n]) / 2 - 14, ce, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
     text(ctx, sciU(-E) + ' J', 800, (LAD.top + Y[n]) / 2 + 12, ce, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
@@ -342,7 +342,7 @@ function ionPick(controls, onInput) {
     /* the headline and the readout */
     topline(ctx, 'In ' + ion + ' the n = ' + n + ' orbit has a radius of ' + fmt(rA, rA < 10 ? 2 : 1) + ' a₀, which is ' + fmt(rM * 1e10, 2) + ' Å, and the electron in it has an energy of ' + sciU(E) + ' J.');
     readout(d.readout,
-      `\\kEn=-\\frac{kZ^2}{n^2}=-\\frac{(${sciT(K)}\\ \\text{J})(${Z})^2}{${n}^2}=${sciT(E)}\\ \\text{J}`,
+      `\\kEn=-\\frac{\\kk Z^2}{n^2}=-\\frac{(${sciT(K)}\\ \\text{J})(${Z})^2}{${n}^2}=${sciT(E)}\\ \\text{J}`,
       'The radius is r = (n²/Z)a₀ = ' + sciU(rM) + ' m. ' + (n === 1 && Z === 1
         ? 'This is the ground state of hydrogen, and removing its electron altogether, to n → ∞ where E = 0, takes k itself, 2.179 × 10⁻¹⁸ J.'
         : 'Removing the electron from this orbit altogether, to n → ∞ where E = 0, takes ' + sciU(-E) + ' J; the orbit is ' + fmt(rA, rA < 10 ? 2 : 1) + ' times the Bohr radius, and the rung is ' + fmt(1 / (n * n), 4) + ' of the way from E = 0 to the ground state of ' + ion + '.'));
@@ -385,7 +385,7 @@ function ionPick(controls, onInput) {
     const where = [nVis ? nVis + ' in the visible' : '', nUV ? nUV + ' in the ultraviolet' : '', nIR ? nIR + ' in the infrared' : ''].filter(Boolean).join(', ');
     topline(ctx, 'In ' + ion + ' the transitions from n₂ = ' + (n1 + 1) + ' to ' + hi + ' down to n₁ = ' + n1 + ' give ' + lines.length + ' lines from ' + nmU(first.at) + ' to ' + nmU(last.at) + ' (' + where + '), crowding toward the series limit at ' + nmU(limitAt) + '.');
     readout(d.readout,
-      `\\frac{1}{\\klam}=\\frac{k}{hc}\\,Z^2\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)=(${sciT(RINF)}\\ \\text{m}^{-1})(${Z})^2\\left(\\frac{1}{${n1}^2}-\\frac{1}{n_2^{2}}\\right)`,
+      `\\frac{1}{\\klam}=\\frac{\\kk}{h\\kc}\\,Z^2\\left(\\frac{1}{n_1^{2}}-\\frac{1}{n_2^{2}}\\right)=(${sciT(RINF)}\\ \\text{m}^{-1})(${Z})^2\\left(\\frac{1}{${n1}^2}-\\frac{1}{n_2^{2}}\\right)`,
       'The longest wavelength of the series, from n₂ = ' + (n1 + 1) + ', is ' + nmU(first.at) + '. ' + (n1 === 2 && Z === 1
         ? 'The four visible lines, at 656, 486, 434 and 410 nm, are the ones Balmer fitted to whole numbers; the quotient k/hc is the Rydberg constant, 1.097 × 10⁷ m⁻¹.'
         : 'The quotient k/hc is the Rydberg constant, 1.097 × 10⁷ m⁻¹; the limit is the wavelength of the photon from an electron so far out that its energy is zero, and no line of the series lies beyond it.'));

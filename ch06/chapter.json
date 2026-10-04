@@ -405,6 +405,23 @@
       "unit": "pm",
       "section": "6.5",
       "anchor": "6.5-covalent-radius"
+    },
+    {
+      "sym": "E",
+      "concept": "bohr-energy-levels",
+      "meaning": "the energy of the electron in a Bohr orbit, zero at the ionization limit where the electron is completely removed from the nucleus",
+      "unit": "J",
+      "section": "6.2",
+      "anchor": "6.2-orbit-radius",
+      "redefines": true
+    },
+    {
+      "sym": "ν",
+      "concept": "frequency",
+      "meaning": "the frequency of a wave, written ν, which is not the velocity v",
+      "unit": "Hz",
+      "section": "6.3",
+      "anchor": "6.3-de-broglie"
     }
   ]
 }

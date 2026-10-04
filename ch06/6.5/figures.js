@@ -81,9 +81,9 @@ function disc(ctx, x, y, r, sym) {
     text(ctx, sym, x2 + R + 16, CY, PAL.ink, { size: 24, weight: 600 });
     const top = CY - Math.max(R, 60) - 34, bot = CY + Math.max(R, 60) + 34;
     line(ctx, x1, CY, x1, top, alpha(PAL.ink, 0.35), 2, [4, 8]); line(ctx, x2, CY, x2, top, alpha(PAL.ink, 0.35), 2, [4, 8]);
-    hbracket(ctx, x1, x2, top, PAL.ink, `d = ${HAL[s].d} pm`);
+    hbracket(ctx, x1, x2, top, C('length'), `d = ${HAL[s].d} pm`);
     line(ctx, x1, CY, x1, bot, alpha(PAL.ink, 0.35), 2, [4, 8]); line(ctx, CX, CY, CX, bot, alpha(PAL.ink, 0.35), 2, [4, 8]);
-    hbracket(ctx, x1, CX, bot, PAL.ink, `r = ${HAL[s].r} pm`, { side: 'below' });
+    hbracket(ctx, x1, CX, bot, C('length'), `r = ${HAL[s].r} pm`, { side: 'below' });
     /* the table of radii to scale */
     const h = [];
     for (let g = 1; g <= 17; g++) text(ctx, String(g), cellX(g), TT - 16, PAL.muted, { size: 15, align: 'center' });
@@ -100,7 +100,7 @@ function disc(ctx, x, y, r, sym) {
     ctx.save(); ctx.setLineDash([6, 6]); ctx.lineWidth = 2.5; ctx.strokeStyle = PAL.ink; ctx.beginPath(); ctx.arc(cellX(c.group), cellY(c.period), c.r * TS + 9, 0, TAU); ctx.stroke(); ctx.restore();
     text(ctx, 'covalent radii to scale', W - 70, TT - 44, PAL.muted, { size: 15, align: 'right' });
     hits = [{ x: x1, y: CY, r: R, name: `a ${BY[s].name.toLowerCase()} atom` }, { x: x2, y: CY, r: R, name: `a ${BY[s].name.toLowerCase()} atom` }, ...h];
-    tex(d.readout, `r=\\frac{d}{2}=\\frac{${HAL[s].d}\\ \\text{pm}}{2}=${HAL[s].r}\\ \\text{pm}`);
+    tex(d.readout, `\\kr=\\frac{d}{2}=\\frac{${HAL[s].d}\\ \\text{pm}}{2}=${HAL[s].r}\\ \\text{pm}`);
   });
 })();
 
@@ -131,7 +131,7 @@ function disc(ctx, x, y, r, sym) {
     const cut = z1 < z1raw ? `, where the graph of radius stops at Z = ${q.zmax}` : '';
     headline(ctx, `Across period ${per.value}, from ${a.sym} to ${b.sym}${cut}, ${q.name} ${verb} from ${va} ${q.unit} to ${vb} ${q.unit}.`);
     ['r', 'ie'].forEach((k) => prop.only(ctx, k, () => {
-      const Q = P[k], col = k === 'ie' ? C('energy') : PAL.ink;
+      const Q = P[k], col = k === 'ie' ? C('energy') : C('length');
       const { X, Y } = axes(ctx, box, [0, 90], Q.yr, { nx: 9, ny: Q.ny, xl: 'atomic number, Z', yl: Q.yl, yc: col });
       /* the period picked out, as a band behind the curve */
       ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(X(z0 - 0.5), box.t, X(Math.min(z1raw, Q.zmax) + 0.5) - X(z0 - 0.5), box.b - box.t); ctx.restore();
@@ -150,7 +150,7 @@ function disc(ctx, x, y, r, sym) {
     }, [0, 12]));
     tex(d.readout, pv === 'ie'
       ? `\\kIE_{1}(\\text{${a.sym}})=${va}\\ \\text{kJ/mol}\\qquad\\kIE_{1}(\\text{${b.sym}})=${vb}\\ \\text{kJ/mol}`
-      : `r(\\text{${a.sym}})=${va}\\ \\text{pm}\\qquad r(\\text{${b.sym}})=${vb}\\ \\text{pm}`);
+      : `\\kr(\\text{${a.sym}})=${va}\\ \\text{pm}\\qquad \\kr(\\text{${b.sym}})=${vb}\\ \\text{pm}`);
   });
 })();
 
@@ -179,15 +179,15 @@ function disc(ctx, x, y, r, sym) {
       const r = st.mix((w) => s[w].r), R = r * S, now = s[v];
       sphere(ctx, s.x, CY, R, sym);
       text(ctx, now.name, s.x, CY - R - 30, PAL.ink, { size: 26, weight: 600, align: 'center', bg: PAL.panel });
-      line(ctx, s.x, CY, s.x + R, CY, alpha(PAL.ink, 0.6), 2, [4, 8]);
+      line(ctx, s.x, CY, s.x + R, CY, C('length'), 2, [4, 8]);
       dot(ctx, s.x, CY, PAL.ink, true, 4);
-      hbracket(ctx, s.x, s.x + R, CY + R + 26, PAL.ink, `${now.r} pm`, { side: 'below' });
+      hbracket(ctx, s.x, s.x + R, CY + R + 26, C('length'), `${now.r} pm`, { side: 'below' });
       text(ctx, `${s.Zp} protons, ${now.e} electrons`, s.x, 560, PAL.muted, { size: 19, align: 'center' });
       hits.push({ x: s.x, y: CY, r: R, name: `${v === 'atom' ? 'an atom of ' + s.word : 'the ' + (sym === 'Al' ? 'aluminum ion' : 'sulfide ion')}, ${now.r} pm` });
     });
     tex(d.readout, v === 'atom'
-      ? 'r_{\\text{Al}}=118\\ \\text{pm}\\qquad r_{\\text{S}}=104\\ \\text{pm}'
-      : 'r_{\\text{Al}^{3+}}=68\\ \\text{pm}\\qquad r_{\\text{S}^{2-}}=170\\ \\text{pm}');
+      ? '\\kr_{\\text{Al}}=118\\ \\text{pm}\\qquad \\kr_{\\text{S}}=104\\ \\text{pm}'
+      : '\\kr_{\\text{Al}^{3+}}=68\\ \\text{pm}\\qquad \\kr_{\\text{S}^{2-}}=170\\ \\text{pm}');
   });
 })();
 

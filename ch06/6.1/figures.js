@@ -51,7 +51,7 @@ function lightColor(nm) {
   else { r = 1; }
   const f = nm < 430 ? 0.45 + 0.55 * (nm - 400) / 30 : nm > 660 ? 0.45 + 0.55 * (700 - nm) / 40 : 1;
   const ch = (v) => Math.round(255 * Math.pow(Math.max(0, v * f), 0.8));
-  return `rgb(${ch(r)},${ch(g)},${ch(b)})`;
+  return F.fact(`rgb(${ch(r)},${ch(g)},${ch(b)})`);
 }
 const visible = (nm) => nm >= 400 && nm <= 700;
 const lightOr = (nm) => (visible(nm) ? lightColor(nm) : C('wavelength'));
@@ -104,7 +104,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     text(ctx, 'distance traveled in 1 second, 12 m', (X0 + X1) / 2, 132, PAL.muted, { size: 17, align: 'center', bg: PAL.panel });
     /* the rope, crest at x = X0 + V t, drawn from its held end past the second line */
     const xc = X0 + V * t * PX;
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath();
+    ctx.save(); ctx.strokeStyle = F.ref('rope'); ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath();
     for (let x = 40; x <= 1370; x += 3) {
       const y = Y - a * PX * Math.cos((2 * Math.PI * (x - xc)) / (lam * PX));
       if (x === 40) ctx.moveTo(x, y); else ctx.lineTo(x, y);
@@ -112,7 +112,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     ctx.stroke(); ctx.restore();
     line(ctx, 40, Y, 1370, Y, alpha(PAL.ink, 0.3), 2, [4, 8]);
     /* the crest that is followed, filled while it crosses and hollow once it has arrived */
-    dot(ctx, xc, Y - a * PX, PAL.ink, t < LOOP, 10);
+    dot(ctx, xc, Y - a * PX, F.ref('crest'), t < LOOP, 10);
     hits.push({ x: xc, y: Y - a * PX, r: 14, name: 'the crest followed across the frame' });
     /* the wavelength as a measure fixed above the frame, and the amplitude beside the held end */
     const lw = lam * PX, bx = X0 + Math.max(0, (X1 - X0 - lw) / 2);
@@ -195,7 +195,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     const reg = regionOf(lg);
     topline(ctx, 'Radiation of wavelength ' + lenU(lam) + ' is ' + (reg.name === 'visible' ? colorName(nm) + ' visible light' : reg.name === 'radio' ? 'a radio wave' : reg.name) + ', with a frequency of ' + freqU(nu) + ' and ' + sciU(E) + ' J in each photon.');
     readout(d.readout,
-      `\\knu=\\frac{c}{\\klam}=\\frac{2.998\\times10^{8}\\ \\text{m s}^{-1}}{${sciT(lam)}\\ \\text{m}}=${sciT(nu)}\\ \\text{s}^{-1}`,
+      `\\knu=\\frac{\\kc}{\\klam}=\\frac{2.998\\times10^{8}\\ \\text{m s}^{-1}}{${sciT(lam)}\\ \\text{m}}=${sciT(nu)}\\ \\text{s}^{-1}`,
       'One photon of this radiation carries E = hν = ' + sciU(E) + ' J; the shorter the wavelength, the higher the frequency and the greater the energy.');
   }
   register(d.fig, { update: () => {}, draw });
@@ -217,15 +217,15 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
   const carrier = (m) => (m === 'am' ? (s) => 0.62 * (1 + 0.6 * sig(s)) * Math.sin(2 * Math.PI * K0 * s) : (s) => 0.62 * Math.sin(fmPhase(s)));
   function draw() {
     const { ctx } = begin(d.c);
-    const m = MODE.value, cf = C('frequency');
+    const m = MODE.value, cs = F.ref('signal'), cc = F.ref('carrier');
     const Xs = (s) => L + s * (R - L), Ys = (v) => SY - 60 * v, Yc = (v) => CYc - 100 * v;
     line(ctx, L, SY, R, SY, alpha(PAL.ink, 0.25), 1.5, [4, 8]);
     line(ctx, L, CYc, R, CYc, alpha(PAL.ink, 0.25), 1.5, [4, 8]);
-    F.curve(ctx, sig, 0, 1, Xs, Ys, PAL.ink, 4, 200);
-    text(ctx, 'signal', R + 20, SY, PAL.ink, { size: 20, weight: 600 });
-    MODE.curve(ctx, carrier, 0, 1, Xs, Yc, cf, 3.5, 900);
-    MODE.only(ctx, 'am', () => text(ctx, 'AM', R + 20, CYc, cf, { size: 22, weight: 600 }));
-    MODE.only(ctx, 'fm', () => text(ctx, 'FM', R + 20, CYc, cf, { size: 22, weight: 600 }));
+    F.curve(ctx, sig, 0, 1, Xs, Ys, cs, 4, 200);
+    text(ctx, 'signal', R + 20, SY, cs, { size: 20, weight: 600 });
+    MODE.curve(ctx, carrier, 0, 1, Xs, Yc, cc, 3.5, 900);
+    MODE.only(ctx, 'am', () => text(ctx, 'AM', R + 20, CYc, cc, { size: 22, weight: 600 }));
+    MODE.only(ctx, 'fm', () => text(ctx, 'FM', R + 20, CYc, cc, { size: 22, weight: 600 }));
     /* guide lines from the signal's crests and trough down to the carrier */
     [1 / 3, 2 / 3, 0.985].forEach((s, i) => { line(ctx, Xs(s), Ys(sig(s)) + 12, Xs(s), CYc - 110, alpha(PAL.ink, 0.3), 1.5, [4, 8]); text(ctx, i === 1 ? 'trough' : 'crest', Xs(s), CYc + 116, PAL.muted, { size: 16, align: 'center' }); });
     topline(ctx, m === 'am'
@@ -263,7 +263,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.lineWidth = 2; ctx.setLineDash([10, 10]);
     [1, -1].forEach((sg) => { ctx.beginPath(); for (let i = 0; i <= 200; i++) { const s = i / 200, y = Y - sg * AMP * shape(s); if (i) ctx.lineTo(Xs(s), y); else ctx.moveTo(Xs(s), y); } ctx.stroke(); });
     ctx.restore();
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath();
+    ctx.save(); ctx.strokeStyle = F.ref('string'); ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath();
     for (let i = 0; i <= 240; i++) { const s = i / 240, y = Y - AMP * phase * shape(s); if (i) ctx.lineTo(Xs(s), y); else ctx.moveTo(Xs(s), y); }
     ctx.stroke(); ctx.restore();
     /* the two fixed ends */
@@ -377,11 +377,11 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     hits = [];
     const nm = LAM.v, E = (HP * CL) / (nm * 1e-9), nu = CL / (nm * 1e-9), KE = E - W0, out = KE > 0;
     const v = out ? Math.sqrt((2 * KE) / ME) : 0, t = cy.now();
-    const cw = C('wavelength'), cf = C('frequency'), ce = C('energy'), pc = lightOr(nm);
+    const cw = C('wavelength'), cf = C('frequency'), ce = C('energy'), cv = C('velocity'), cm = F.ref('metal'), cel = F.el('e-'), pc = lightOr(nm);
     /* the metal */
-    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
+    ctx.save(); ctx.fillStyle = alpha(cm, 0.18); ctx.strokeStyle = cm; ctx.lineWidth = 3;
     ctx.fillRect(MT.l, MT.y, MT.r - MT.l, 70); ctx.strokeRect(MT.l, MT.y, MT.r - MT.l, 70); ctx.restore();
-    text(ctx, 'metal', (MT.l + MT.r) / 2, MT.y + 36, PAL.ink, { size: 20, weight: 600, align: 'center' });
+    text(ctx, 'metal', (MT.l + MT.r) / 2, MT.y + 36, cm, { size: 20, weight: 600, align: 'center' });
     hits.push({ x: (MT.l + MT.r) / 2, y: MT.y + 35, r: 60, name: 'the metal, whose electrons are held by 3.21 × 10⁻¹⁹ J' });
     /* photons: short packets of their own wavelength travelling from the source to the surface */
     const n = BR.v * LOOP, pw = 10 + nm / 22;
@@ -397,7 +397,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
         const s = (age - TRAVEL) * (260 * v / 6.2e5), ex = hx + s * 0.62, ey = hy - s * 0.78;
         if (ey > 130 && ex < 1380) {
           line(ctx, hx, hy, ex, ey, alpha(PAL.ink, 0.18), 2);
-          dot(ctx, ex, ey, PAL.ink, true, 8);
+          dot(ctx, ex, ey, cel, true, 8);
           hits.push({ x: ex, y: ey, r: 13, name: 'an ejected electron' });
         }
       } else if (age < TRAVEL + 0.25) {
@@ -408,13 +408,13 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     text(ctx, 'λ = ' + nm + ' nm', 60, 190, cw, { size: 20, weight: 600 });
     text(ctx, 'ν = ' + sciU(nu) + ' Hz', 60, 222, cf, { size: 20, weight: 600 });
     text(ctx, 'E = hν = ' + sciU(E) + ' J', 60, 254, ce, { size: 20, weight: 600 });
-    text(ctx, out ? 'v_{max} = ' + sciU(v) + ' m/s' : 'no electrons ejected', 1360, 330, out ? PAL.ink : PAL.muted, { size: 20, weight: 600, align: 'right' });
+    text(ctx, out ? 'v_{max} = ' + sciU(v) + ' m/s' : 'no electrons ejected', 1360, 330, out ? cv : PAL.muted, { size: 20, weight: 600, align: 'right' });
     topline(ctx, out
       ? 'Each photon of ' + nm + ' nm carries more than the threshold energy, so every one frees an electron, which leaves at up to ' + sciU(v) + ' m/s.'
       : 'Each photon of ' + nm + ' nm carries less than the threshold energy, so no electron leaves the metal however bright the light.');
     readout(d.readout, out
       ? `\\kKE=\\kE-\\kE_{\\text{threshold}}=${sciT(E)}\\ \\text{J}-${sciT(W0)}\\ \\text{J}=${sciT(KE)}\\ \\text{J}`
-      : `\\kE=\\frac{hc}{\\klam}=${sciT(E)}\\ \\text{J}<\\kE_{\\text{threshold}}=${sciT(W0)}\\ \\text{J}`,
+      : `\\kE=\\frac{h\\kc}{\\klam}=${sciT(E)}\\ \\text{J}<\\kE_{\\text{threshold}}=${sciT(W0)}\\ \\text{J}`,
       out
         ? 'The threshold wavelength is ' + fmt(L0, 0) + ' nm; a brighter light sends more photons and frees more electrons, but none of them faster.'
         : 'Light of wavelength longer than ' + fmt(L0, 0) + ' nm, a frequency below ' + sciU(CL / (L0 * 1e-9)) + ' Hz, ejects nothing; only the energy of each photon counts, not how many arrive.');

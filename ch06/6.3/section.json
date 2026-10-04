@@ -45,7 +45,8 @@
    ],
    "original_caption": "If an electron is viewed as a wave circling around the nucleus, an integer number of wavelengths must fit into the orbit for this standing wave behavior to be possible.",
    "draws": [
-    "wavelength"
+    "wavelength",
+    "length"
    ]
   },
   {
@@ -58,7 +59,8 @@
    "original_caption": "(a) The interference pattern for electrons passing through very closely spaced slits demonstrates that quantum particles such as electrons can exhibit wavelike behavior. (b) The experimental results illustrated here demonstrate the wave–particle duality in electrons.",
    "draws": [
     "wavelength",
-    "mass"
+    "mass",
+    "velocity"
    ]
   },
   {
@@ -66,7 +68,9 @@
    "kind": "sim",
    "draws": [
     "wavelength",
-    "mass"
+    "mass",
+    "velocity",
+    "length"
    ]
   },
   {
@@ -89,7 +93,7 @@
     "/media/ch06/CNX_Chem_06_03_sorbit.jpg"
    ],
    "original_caption": "The graphs show the probability (y axis) of finding an electron for the 1s, 2s, 3s orbitals as a function of distance from the nucleus.",
-   "draws": []
+   "draws": ["length"]
   },
   {
    "id": "sim-orbital-shapes",
@@ -918,6 +922,28 @@
    "concept": "spin-quantum-number",
    "weight": 2,
    "weights_by": "ai"
+  }
+ ],
+ "referents": [
+  {
+   "id": "orbit",
+   "label": "the circular orbit of radius 100 pm the electron wave runs around",
+   "figure": "sim-orbit-wave"
+  },
+  {
+   "id": "source",
+   "label": "the electron source",
+   "figure": "sim-double-slit"
+  },
+  {
+   "id": "barrier",
+   "label": "the barrier with its two narrow slits",
+   "figure": "sim-double-slit"
+  },
+  {
+   "id": "screen",
+   "label": "the screen the electrons land on",
+   "figure": "sim-double-slit"
   }
  ]
 }

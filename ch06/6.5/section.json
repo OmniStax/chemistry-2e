@@ -36,7 +36,7 @@
     "/media/ch06/CNX_Chem_06_05_CovalradiT.jpg"
    ],
    "original_caption": "(a) The radius of an atom is defined as one-half the distance between the nuclei in a molecule consisting of two identical atoms joined by a covalent bond. The atomic radius for the halogens increases down the group as n increases. (b) Covalent radii of the elements are shown to scale. The general trend is that radii increase down a group and decrease across a period.",
-   "draws": []
+   "draws": ["length"]
   },
   {
    "id": "sim-trends-graph",
@@ -51,7 +51,8 @@
    ],
    "original_caption": "(Figure 6.31) Within each period, the trend in atomic radius decreases as Z increases; for example, from K to Kr. Within each group (e.g., the alkali metals shown in purple), the trend is that atomic radius increases as Z increases. (Figure 6.33) The first ionization energy of the elements in the first six periods are plotted against their atomic number.",
    "draws": [
-    "energy"
+    "energy",
+    "length"
    ]
   },
   {
@@ -62,7 +63,7 @@
     "/media/ch06/CNX_Chem_06_05_Ionradii.jpg"
    ],
    "original_caption": "The radius for a cation is smaller than the parent atom (Al), due to the lost electrons; the radius for an anion is larger than the parent (S), due to the gained electrons.",
-   "draws": []
+   "draws": ["length"]
   },
   {
    "id": "sim-ie-table",

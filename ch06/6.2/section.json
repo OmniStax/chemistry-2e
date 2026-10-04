@@ -39,7 +39,7 @@
     {
       "id": "sim-series",
       "kind": "sim",
-      "draws": ["wavelength"]
+      "draws": ["wavelength", "energy", "velocity"]
     },
     {
       "id": "sim-bohr-ladder",
@@ -53,7 +53,7 @@
     {
       "id": "sim-orbit-rung",
       "kind": "sim",
-      "draws": ["energy"]
+      "draws": ["energy", "length"]
     },
     {
       "id": "fig-spectra",

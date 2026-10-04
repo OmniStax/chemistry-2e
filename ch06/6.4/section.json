@@ -975,5 +975,27 @@
    "weight": 2,
    "weights_by": "ai"
   }
+ ],
+ "referents": [
+  {
+   "id": "s-block",
+   "label": "the s block, the elements whose last electron enters a s subshell",
+   "figure": "sim-periodic"
+  },
+  {
+   "id": "p-block",
+   "label": "the p block, the elements whose last electron enters a p subshell",
+   "figure": "sim-periodic"
+  },
+  {
+   "id": "d-block",
+   "label": "the d block, the elements whose last electron enters a d subshell",
+   "figure": "sim-periodic"
+  },
+  {
+   "id": "f-block",
+   "label": "the f block, the elements whose last electron enters a f subshell",
+   "figure": "sim-periodic"
+  }
  ]
 }

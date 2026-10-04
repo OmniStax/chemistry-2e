@@ -380,7 +380,7 @@ function atomTag(ctx, sym, x, y, r, size) {
     text(ctx, 'lanthanides', X0 + 3 * CW - 10, FTOP + CH / 2, PAL.muted, { size: 15, align: 'right' });
     text(ctx, 'actinides', X0 + 3 * CW - 10, FTOP + PY + CH / 2, PAL.muted, { size: 15, align: 'right' });
     for (let Z = 1; Z <= 118; Z++) {
-      const q = E(Z), { x, y } = cell(Z), c = F.cat(BLOCK[q.block]), obs = observed(Z), exc = !same(predicted(Z), obs);
+      const q = E(Z), { x, y } = cell(Z), c = F.ref(q.block + '-block'), obs = observed(Z), exc = !same(predicted(Z), obs);
       ctx.save(); ctx.fillStyle = alpha(c, 0.16); ctx.fillRect(x + 1, y, CW - 3, CH); ctx.strokeStyle = c; ctx.lineWidth = 1.5; ctx.strokeRect(x + 1, y, CW - 3, CH); ctx.restore();
       if (exc) { ctx.save(); ctx.setLineDash([5, 4]); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(x + 5, y + 4, CW - 11, CH - 8); ctx.restore(); }
       if (Z === sel) { ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.strokeRect(x - 1, y - 2, CW + 1, CH + 4); ctx.restore(); }
@@ -390,7 +390,7 @@ function atomTag(ctx, sym, x, y, r, size) {
       hits.push({ x: x + CW / 2, y: y + CH / 2, r: 30, name: q.name + ', Z = ' + Z + ': ' + abbr(Z, obs) });
     }
     /* the chosen element, enlarged, and the key to the colours */
-    const bx = X0 + 2 * CW + 16, by = TOP + 4, bw = 150, bh = 150, bc = F.cat(BLOCK[s0.block]), so = observed(sel);
+    const bx = X0 + 2 * CW + 16, by = TOP + 4, bw = 150, bh = 150, bc = F.ref(s0.block + '-block'), so = observed(sel);
     ctx.save(); ctx.fillStyle = alpha(bc, 0.16); ctx.fillRect(bx, by, bw, bh); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(bx, by, bw, bh); ctx.restore();
     text(ctx, String(sel), bx + 12, by + 22, PAL.ink, { size: 22 });
     text(ctx, s0.sym, bx + bw - 12, by + 30, PAL.ink, { size: 40, weight: 600, align: 'right' });
@@ -398,7 +398,7 @@ function atomTag(ctx, sym, x, y, r, size) {
     cfgText(ctx, [lastOf(so)], bx + bw / 2, by + 118, PAL.ink, { size: 30, align: 'center' });
     const KX = bx + bw + 40;
     [['s', 's block'], ['p', 'p block'], ['d', 'd block'], ['f', 'f block']].forEach(([b, name], i) => {
-      const y = by + 14 + i * 32, c = F.cat(BLOCK[b]);
+      const y = by + 14 + i * 32, c = F.ref(b + '-block');
       ctx.save(); ctx.fillStyle = alpha(c, 0.16); ctx.fillRect(KX, y - 11, 30, 22); ctx.strokeStyle = c; ctx.lineWidth = 1.5; ctx.strokeRect(KX, y - 11, 30, 22); ctx.restore();
       text(ctx, name, KX + 42, y, PAL.ink, { size: 17 });
     });

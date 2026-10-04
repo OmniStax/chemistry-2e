@@ -1,5 +1,21 @@
 {
-  "types": [],
+  "types": [
+    {
+      "id": "momentum",
+      "label": "momentum",
+      "dimension": "kg·m/s"
+    },
+    {
+      "id": "wavefunction",
+      "label": "wavefunction",
+      "dimension": "m⁻³ᐟ²"
+    },
+    {
+      "id": "velocity",
+      "label": "velocity, speed",
+      "dimension": "m/s"
+    }
+  ],
   "symbols": [
     {
       "sym": "E_n",
@@ -165,7 +181,7 @@
       "kind": "idea",
       "section": "6.1",
       "name": "Standing waves and quantization",
-      "statement": "A standing wave is confined to a region of space, and a string held fixed at its two end points can form only those waves that have an integer number of half-wavelengths between them. This is an example of quantization, in which only discrete values of a property are observed, and the points between the ends that do not move are nodes, whose number grows with the energy of the wave."
+      "statement": "A standing wave is confined to a region of space. A string held fixed at its two ends can form only waves with an integer number of half-wavelengths between them. This is an example of quantization, in which only discrete values of a property are observed. The points between the ends that do not move are nodes, and their number grows with the energy of the wave."
     },
     {
       "id": "blackbody-radiation",
@@ -198,7 +214,7 @@
       "terms": [
         "wave-particle duality"
       ],
-      "statement": "Some phenomena of light, such as the interference fringes it makes after passing through two narrow slits, can be explained only by waves, while others, such as the photoelectric effect, can be explained only by particles. Light is both wavelike and particle-like, and this is called wave-particle duality; the next sections extend it to matter."
+      "statement": "Some behavior of light, such as the interference fringes it makes after passing through two narrow slits, can be explained only by waves. Other behavior, such as the photoelectric effect, can be explained only by particles. Light is both wavelike and particle-like, and this is called wave-particle duality. Matter shows the same duality."
     },
     {
       "id": "wave",
@@ -454,6 +470,7 @@
       "kind": "result",
       "section": "6.2",
       "name": "Bohr orbit radius",
+      "type": "length",
       "statement": "The radii of the allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises. They are measured in units of the Bohr radius, the radius of hydrogen’s ground-state orbit. As the electron’s energy increases, it is found farther from the nucleus. The electrostatic attraction weakens with distance, so an electron farther out is held less tightly.",
       "forms": [
         {
@@ -677,6 +694,7 @@
       "section": "6.3",
       "name": "Velocity",
       "symbol": "v",
+      "type": "velocity",
       "statement": "The velocity of a particle is the rate at which its position changes, the distance it travels per unit time in a given direction."
     },
     {
@@ -685,6 +703,7 @@
       "section": "6.3",
       "name": "Momentum",
       "symbol": "p_momentum",
+      "type": "momentum",
       "statement": "The linear momentum of a particle is the product of its mass and its velocity.",
       "forms": [
         {
@@ -712,6 +731,7 @@
       "terms": [
         "wavefunction (ψ)"
       ],
+      "type": "wavefunction",
       "statement": "A wavefunction is the mathematical description of an atomic orbital. It describes the shape of the orbital, and it can be used to calculate the probability of finding the electron at any given location and the electron's energy."
     },
     {
@@ -836,7 +856,7 @@
       "kind": "skill",
       "section": "6.4",
       "name": "Writing electron configurations and orbital diagrams",
-      "statement": "An electron configuration lists each occupied subshell by its n, its letter, and a superscript that counts its electrons, as in 1s²2s²2p⁴, and an orbital diagram draws each orbital as a box and each electron as an arrow. The inner electrons may be abbreviated by the symbol of the noble gas whose configuration they match, as in [Ne]3s¹ for sodium, and the reader writes either form for any atom and identifies an atom from its configuration."
+      "statement": "An electron configuration lists each occupied subshell by its n, its letter, and a superscript that counts its electrons, as in 1s²2s²2p⁴. An orbital diagram draws each orbital as a box and each electron as an arrow. The inner electrons may be abbreviated by the symbol of the noble gas whose configuration they match, as in [Ne]3s¹ for sodium. You should be able to write either form for any atom and to identify an atom from its configuration."
     },
     {
       "id": "valence-and-core-electrons",
@@ -864,7 +884,7 @@
       "kind": "skill",
       "section": "6.4",
       "name": "Electron configurations of ions",
-      "statement": "A cation of a main group element loses the electrons that were added last, while a transition or inner transition metal loses its highest ns electrons before its (n − 1)d or (n − 2)f electrons; an anion adds electrons in the order the Aufbau principle predicts. The reader writes the configuration of an ion from that of its parent atom, and names an ion from a configuration and a charge."
+      "statement": "A cation of a main group element loses the electrons that were added last. A transition or inner transition metal loses its highest ns electrons before its (n − 1)d or (n − 2)f electrons. An anion adds electrons in the order the Aufbau principle predicts. From these rules, write the configuration of an ion from that of its parent atom, or name an ion from a configuration and a charge."
     },
     {
       "id": "electron-configuration",
@@ -995,6 +1015,7 @@
       "terms": [
         "covalent radius"
       ],
+      "type": "length",
       "statement": "The covalent radius of an atom is one-half the distance between the nuclei of two identical atoms when they are joined by a covalent bond."
     },
     {

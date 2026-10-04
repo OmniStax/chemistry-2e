@@ -68,11 +68,11 @@
   {
    "sym": "e",
    "concept": "fundamental-charge",
-   "type": "charge",
    "meaning": "the fundamental unit of charge, the magnitude of the charge of one electron",
    "unit": "C",
    "section": "2.3",
-   "anchor": "2.3-units"
+   "anchor": "2.3-units",
+   "type": "charge"
   },
   {
    "sym": "Q_charge",

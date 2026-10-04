@@ -61,7 +61,8 @@
       "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s, which is the product of the wavelength and the frequency",
       "unit": "m/s",
       "section": "6.1",
-      "anchor": "6.1-wave-speed"
+      "anchor": "6.1-wave-speed",
+      "type": "velocity"
     },
     {
       "sym": "E",
@@ -223,7 +224,8 @@
       "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s",
       "unit": "m/s",
       "section": "6.2",
-      "anchor": "6.2-stationary-states"
+      "anchor": "6.2-stationary-states",
+      "type": "velocity"
     },
     {
       "sym": "R_inf",
@@ -277,6 +279,7 @@
     {
       "sym": "Δx",
       "concept": "heisenberg-uncertainty",
+      "type": "length",
       "meaning": "the uncertainty in the position of a particle",
       "unit": "m",
       "section": "6.3",
@@ -285,6 +288,7 @@
     {
       "sym": "Δp_x",
       "concept": "heisenberg-uncertainty",
+      "type": "momentum",
       "meaning": "the uncertainty in the momentum of a particle along x",
       "unit": "kg m/s",
       "section": "6.3",

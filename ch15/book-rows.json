@@ -20,6 +20,7 @@
    "terms": [
     "solubility product constant"
    ],
+   "type": "equilibrium-constant",
    "statement": "A saturated solution of a sparingly soluble ionic solid is an equilibrium in which the solid dissolves and its ions precipitate at equal rates. Its equilibrium constant is the solubility product, which, because only gases and solutes appear in an equilibrium constant expression, includes no term for the undissolved solid.",
    "forms": [
     {
@@ -131,6 +132,7 @@
    "terms": [
     "formation constant"
    ],
+   "type": "equilibrium-constant",
    "statement": "The equilibrium constant for the reaction of a metal ion with ligands to form a complex ion is its formation constant, and the constant for the reverse reaction is the dissociation constant, its reciprocal. A large formation constant lowers the free metal ion concentration enough to dissolve a sparingly soluble salt of the metal.",
    "forms": [
     {
@@ -176,6 +178,7 @@
    "terms": [
     "dissociation constant"
    ],
+   "type": "equilibrium-constant",
    "statement": "The dissociation constant, $K_{\\text{d}}$, is the equilibrium constant for the decomposition of a complex ion into its components in solution; it is the reciprocal of the formation constant.",
    "forms": [
     {

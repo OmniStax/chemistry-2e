@@ -10,7 +10,7 @@
    "terms": [
     "Dalton’s atomic theory"
    ],
-   "statement": "Dalton’s postulates say that matter is made of atoms, that the atoms of one element all have the same characteristic mass and differ from the atoms of every other element, that a compound holds atoms of two or more elements in a small, whole-number ratio, and that atoms are neither created nor destroyed in a chemical change but only rearranged. These postulates give a microscopic explanation of the macroscopic behavior of matter the reader has already met, including the conservation of matter, and every later picture of the atom starts from them."
+   "statement": "Dalton’s postulates say that matter consists of atoms, and that the atoms of one element all have the same characteristic mass and differ from the atoms of every other element. A compound holds atoms of two or more elements in a small, whole-number ratio. A chemical change neither creates nor destroys atoms but only rearranges them. These postulates explain at the microscopic level the macroscopic behavior of matter you have already met, including the conservation of matter, and every later picture of the atom starts from them."
   },
   {
    "id": "law-of-definite-proportions",
@@ -38,7 +38,7 @@
    "kind": "idea",
    "section": "2.2",
    "name": "Thomson’s cathode rays and the electron",
-   "statement": "The beam in a cathode ray tube bends toward a positive charge and away from a negative one, is the same whatever metal the electrodes are made of, and has a charge-to-mass ratio showing its particles are far lighter than atoms. Thomson concluded that the particles are negatively charged subatomic constituents of all atoms, which is the first evidence that the atom is not indivisible."
+   "statement": "The beam in a cathode ray tube bends toward a positive charge and away from a negative one. It is the same whatever metal the electrodes contain, and its charge-to-mass ratio shows that its particles are far lighter than atoms. Thomson concluded that the particles are negatively charged subatomic constituents of all atoms, the first evidence that the atom is not indivisible."
   },
   {
    "id": "fundamental-charge",
@@ -189,7 +189,7 @@
    "terms": [
     "chemical symbol"
    ],
-   "statement": "A chemical symbol of one, two or three letters stands for an element or for one atom of it, whether the reader means a single atom or a jar full. Only the first letter is capitalized, which is why Co is cobalt and CO is carbon monoxide, and some symbols come from the element’s name in another language."
+   "statement": "A chemical symbol of one, two or three letters stands for an element or for one atom of it, whether you mean a single atom or a jar full. Only the first letter is a capital, which is why Co is cobalt and CO is carbon monoxide, and some symbols come from the element’s name in another language."
   },
   {
    "id": "isotope-symbols",
@@ -589,14 +589,14 @@
    "terms": [
     "polyatomic ion"
    ],
-   "statement": "A polyatomic ion is a group of bonded atoms that carries an overall charge and acts as a single unit, and an oxyanion is one that contains oxygen. The book asks the reader to memorize the names, formulas and charges of the common ones, and the suffixes -ate and -ite and prefixes per- and hypo- mark more or fewer oxygen atoms."
+   "statement": "A polyatomic ion is a group of bonded atoms that carries an overall charge and acts as a single unit, and an oxyanion is one that contains oxygen. Memorize the names, formulas and charges of the common ones. The suffixes -ate and -ite and prefixes per- and hypo- mark more or fewer oxygen atoms."
   },
   {
    "id": "ionic-and-covalent-bonds",
    "kind": "definition",
    "section": "2.6",
    "name": "Ionic bonds and covalent bonds",
-   "statement": "When electrons are transferred and ions form, the electrostatic attraction between oppositely charged ions is an ionic bond; when electrons are shared and molecules form, the attraction between the nuclei and the shared pairs of electrons is a covalent bond. Compounds are classified as ionic or molecular by the bonds present in them."
+   "statement": "When atoms transfer electrons and form ions, the electrostatic attraction between oppositely charged ions is an ionic bond. When atoms share electrons and form molecules, the attraction between the nuclei and the shared pairs of electrons is a covalent bond. The bonds present in a compound make it ionic or molecular."
   },
   {
    "id": "ionic-compounds",

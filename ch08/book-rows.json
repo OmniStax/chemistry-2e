@@ -33,7 +33,7 @@
    "kind": "definition",
    "section": "8.1",
    "name": "Sigma and pi bonds",
-   "statement": "A σ bond forms when orbitals overlap end to end along the internuclear axis, as two s orbitals, an s and a p orbital, or two p orbitals pointed at each other do, so that the electron density is concentrated on the line between the nuclei. A π bond forms from the side-by-side overlap of two p orbitals, with the electron density on opposite sides of the internuclear axis and a node along the axis itself. Greater overlap is possible end to end, so a π bond is generally weaker than a σ bond between the same two atoms."
+   "statement": "A σ bond forms when orbitals overlap end to end along the internuclear axis, as two s orbitals, an s and a p orbital, or two p orbitals pointed at each other do. Its electron density is concentrated on the line between the nuclei. A π bond forms from the side-by-side overlap of two p orbitals. Its electron density lies on opposite sides of the internuclear axis, with a node along the axis itself. End-to-end overlap can be greater, so a π bond is generally weaker than a σ bond between the same two atoms."
   },
   {
    "id": "multiple-bond-composition",

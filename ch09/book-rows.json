@@ -1,5 +1,21 @@
 {
-  "types": [],
+  "types": [
+    {
+      "id": "force",
+      "label": "force",
+      "dimension": "N"
+    },
+    {
+      "id": "acceleration",
+      "label": "acceleration",
+      "dimension": "m/s²"
+    },
+    {
+      "id": "area",
+      "label": "area",
+      "dimension": "m²"
+    }
+  ],
   "symbols": [
     {
       "sym": "R",
@@ -230,6 +246,7 @@
       "section": "9.1",
       "name": "Force",
       "symbol": "F_force",
+      "type": "force",
       "statement": "A force is a push or a pull on an object. A gas pushes on the walls of its container with a force that comes from the collisions of its molecules with those walls."
     },
     {
@@ -238,6 +255,7 @@
       "section": "9.1",
       "name": "Area",
       "symbol": "A_area",
+      "type": "area",
       "statement": "The area of a surface is its extent, measured in square units such as square meters. A force spread over a larger area gives a smaller pressure."
     },
     {
@@ -246,6 +264,7 @@
       "section": "9.1",
       "name": "Acceleration due to gravity",
       "symbol": "g_grav",
+      "type": "acceleration",
       "statement": "The acceleration due to gravity is the rate at which the speed of a falling object increases near the surface of the earth, about 9.8 m/s². It turns the mass of a column of fluid into the weight that presses on what lies beneath it."
     },
     {
@@ -792,6 +811,7 @@
       "section": "9.5",
       "name": "Speed",
       "symbol": "u",
+      "type": "velocity",
       "statement": "The speed of a particle is the distance it travels divided by the time it takes. The molecules of a gas move at a wide range of speeds."
     },
     {

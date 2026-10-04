@@ -104,6 +104,81 @@
       "id": "charge",
       "label": "charge",
       "dimension": "C"
+    },
+    {
+      "id": "density",
+      "label": "density",
+      "dimension": "g/mL"
+    },
+    {
+      "id": "equilibrium-constant",
+      "label": "equilibrium constant",
+      "dimension": "none"
+    },
+    {
+      "id": "momentum",
+      "label": "momentum",
+      "dimension": "kg·m/s"
+    },
+    {
+      "id": "wavefunction",
+      "label": "wavefunction",
+      "dimension": "m⁻³ᐟ²"
+    },
+    {
+      "id": "dipole-moment",
+      "label": "dipole moment",
+      "dimension": "C·m"
+    },
+    {
+      "id": "velocity",
+      "label": "velocity, speed",
+      "dimension": "m/s"
+    },
+    {
+      "id": "angle",
+      "label": "angle",
+      "dimension": "°"
+    },
+    {
+      "id": "colligative-constant",
+      "label": "colligative constant",
+      "dimension": "°C/m"
+    },
+    {
+      "id": "surface-tension",
+      "label": "surface tension",
+      "dimension": "N/m"
+    },
+    {
+      "id": "rate-constant",
+      "label": "rate constant",
+      "dimension": "M¹⁻ⁿ/s"
+    },
+    {
+      "id": "force",
+      "label": "force",
+      "dimension": "N"
+    },
+    {
+      "id": "acceleration",
+      "label": "acceleration",
+      "dimension": "m/s²"
+    },
+    {
+      "id": "heat-capacity",
+      "label": "heat capacity",
+      "dimension": "J/°C"
+    },
+    {
+      "id": "area",
+      "label": "area",
+      "dimension": "m²"
+    },
+    {
+      "id": "length",
+      "label": "length",
+      "dimension": "m"
     }
   ],
   "symbols": [
@@ -1540,6 +1615,7 @@
       "terms": [
         "density"
       ],
+      "type": "density",
       "statement": "The density of a substance is the ratio of the mass of a sample to its volume. It is an intensive property, so it identifies a substance rather than a sample: a brick of gold and a brick of lead of the same size do not have the same mass.",
       "forms": [
         {
@@ -1575,6 +1651,7 @@
       "terms": [
         "length"
       ],
+      "type": "length",
       "statement": "Length is the measure of one dimension of an object, and its SI unit is the meter."
     },
     {
@@ -2814,6 +2891,7 @@
       "terms": [
         "surface tension"
       ],
+      "type": "surface-tension",
       "statement": "Molecules at the surface of a liquid are attracted by only about half as many neighbors as molecules within it, so the liquid contracts to the smallest surface. Surface tension is the energy required to increase the surface area of a liquid; it makes a small drop spherical and lets a water strider stand on water."
     },
     {
@@ -4299,6 +4377,7 @@
       "terms": [
         "heat capacity"
       ],
+      "type": "heat-capacity",
       "statement": "The heat capacity of a body of matter is the quantity of heat required to raise its temperature by 1 degree Celsius. It is an extensive property, growing with the amount of matter in the body.",
       "forms": [
         {
@@ -4319,6 +4398,7 @@
       "terms": [
         "specific heat capacity"
       ],
+      "type": "heat-capacity",
       "statement": "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 gram of it by 1 degree Celsius. It is an intensive property, set by the kind of substance alone.",
       "forms": [
         {
@@ -5152,6 +5232,7 @@
       "terms": [
         "bond dipole moment"
       ],
+      "type": "dipole-moment",
       "statement": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge. The bond dipole moment measures this separation of charge; it is the product of the magnitude of the partial charges and the distance between them. We draw it as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
       "forms": [
         {
@@ -5365,6 +5446,7 @@
         "bond length",
         "bond distance"
       ],
+      "type": "length",
       "statement": "The bond length, or bond distance, is the distance between the nuclei of two bonded atoms at which the lowest potential energy is achieved."
     },
     {
@@ -6436,6 +6518,7 @@
       "kind": "result",
       "section": "6.2",
       "name": "Bohr orbit radius",
+      "type": "length",
       "statement": "The radii of the allowed orbits grow as the square of the quantum number and shrink as the nuclear charge rises. They are measured in units of the Bohr radius, the radius of hydrogen’s ground-state orbit. As the electron’s energy increases, it is found farther from the nucleus. The electrostatic attraction weakens with distance, so an electron farther out is held less tightly.",
       "forms": [
         {
@@ -6659,6 +6742,7 @@
       "section": "6.3",
       "name": "Velocity",
       "symbol": "v",
+      "type": "velocity",
       "statement": "The velocity of a particle is the rate at which its position changes, the distance it travels per unit time in a given direction."
     },
     {
@@ -6667,6 +6751,7 @@
       "section": "6.3",
       "name": "Momentum",
       "symbol": "p_momentum",
+      "type": "momentum",
       "statement": "The linear momentum of a particle is the product of its mass and its velocity.",
       "forms": [
         {
@@ -6694,6 +6779,7 @@
       "terms": [
         "wavefunction (ψ)"
       ],
+      "type": "wavefunction",
       "statement": "A wavefunction is the mathematical description of an atomic orbital. It describes the shape of the orbital, and it can be used to calculate the probability of finding the electron at any given location and the electron's energy."
     },
     {
@@ -6977,6 +7063,7 @@
       "terms": [
         "covalent radius"
       ],
+      "type": "length",
       "statement": "The covalent radius of an atom is one-half the distance between the nuclei of two identical atoms when they are joined by a covalent bond."
     },
     {
@@ -7469,6 +7556,7 @@
       "terms": [
         "boiling point elevation constant"
       ],
+      "type": "colligative-constant",
       "statement": "The boiling point elevation constant, or ebullioscopic constant, of a solvent is the proportionality constant relating the boiling point elevation of its solutions to the molality of solute."
     },
     {
@@ -7480,6 +7568,7 @@
       "terms": [
         "freezing point depression constant"
       ],
+      "type": "colligative-constant",
       "statement": "The freezing point depression constant, or cryoscopic constant, of a solvent is the proportionality constant relating the freezing point depression of its solutions to the molality of solute."
     },
     {
@@ -7756,6 +7845,7 @@
       "section": "9.1",
       "name": "Force",
       "symbol": "F_force",
+      "type": "force",
       "statement": "A force is a push or a pull on an object. A gas pushes on the walls of its container with a force that comes from the collisions of its molecules with those walls."
     },
     {
@@ -7764,6 +7854,7 @@
       "section": "9.1",
       "name": "Area",
       "symbol": "A_area",
+      "type": "area",
       "statement": "The area of a surface is its extent, measured in square units such as square meters. A force spread over a larger area gives a smaller pressure."
     },
     {
@@ -7772,6 +7863,7 @@
       "section": "9.1",
       "name": "Acceleration due to gravity",
       "symbol": "g_grav",
+      "type": "acceleration",
       "statement": "The acceleration due to gravity is the rate at which the speed of a falling object increases near the surface of the earth, about 9.8 m/s². It turns the mass of a column of fluid into the weight that presses on what lies beneath it."
     },
     {
@@ -8318,6 +8410,7 @@
       "section": "9.5",
       "name": "Speed",
       "symbol": "u",
+      "type": "velocity",
       "statement": "The speed of a particle is the distance it travels divided by the time it takes. The molecules of a gas move at a wide range of speeds."
     },
     {
@@ -8537,6 +8630,7 @@
       "terms": [
         "rate constant"
       ],
+      "type": "rate-constant",
       "statement": "The rate constant k is specific to a particular reaction at a particular temperature; it does not depend on the reactant concentrations, but it does vary with temperature."
     },
     {
@@ -8802,6 +8896,7 @@
       "terms": [
         "frequency factor"
       ],
+      "type": "rate-constant",
       "statement": "The frequency factor is the proportionality constant in the Arrhenius equation, related to the relative number of collisions that have an orientation capable of leading to product formation."
     },
     {
@@ -9000,6 +9095,7 @@
       "terms": [
         "reaction quotient"
       ],
+      "type": "equilibrium-constant",
       "statement": "The reaction quotient, $Q$, is the product of the product concentrations, each raised to the power of its coefficient in the balanced equation, divided by the product of the reactant concentrations raised to theirs. Its value changes as the reaction proceeds, so it serves as an indicator of the reaction’s status.",
       "forms": [
         {
@@ -9032,6 +9128,7 @@
       "terms": [
         "equilibrium constant"
       ],
+      "type": "equilibrium-constant",
       "statement": "The equilibrium constant, $K$, is the constant value of the reaction quotient exhibited by a system at equilibrium; $K_{c}$ is written with molar concentrations and $K_{P}$ with partial pressures.",
       "forms": [
         {
@@ -9368,6 +9465,7 @@
       "terms": [
         "ion-product constant for water"
       ],
+      "type": "equilibrium-constant",
       "statement": "The ion-product constant for water, $K_{\\text{w}}$, is the equilibrium constant for the autoionization of water, the product of the hydronium and hydroxide ion concentrations; it is 1.0 × 10<sup>−14</sup> at 25 °C.",
       "forms": [
         {
@@ -9589,6 +9687,7 @@
       "terms": [
         "acid ionization constant"
       ],
+      "type": "equilibrium-constant",
       "statement": "The acid ionization constant, $K_{\\text{a}}$, is the equilibrium constant for the ionization of a weak acid; its negative logarithm is p$K_{\\text{a}}$.",
       "forms": [
         {
@@ -9614,6 +9713,7 @@
       "terms": [
         "base ionization constant"
       ],
+      "type": "equilibrium-constant",
       "statement": "The base ionization constant, $K_{\\text{b}}$, is the equilibrium constant for the ionization of a weak base; its negative logarithm is p$K_{\\text{b}}$.",
       "forms": [
         {
@@ -9841,6 +9941,7 @@
       "terms": [
         "solubility product constant"
       ],
+      "type": "equilibrium-constant",
       "statement": "A saturated solution of a sparingly soluble ionic solid is an equilibrium in which the solid dissolves and its ions precipitate at equal rates. Its equilibrium constant is the solubility product, which, because only gases and solutes appear in an equilibrium constant expression, includes no term for the undissolved solid.",
       "forms": [
         {
@@ -9952,6 +10053,7 @@
       "terms": [
         "formation constant"
       ],
+      "type": "equilibrium-constant",
       "statement": "The equilibrium constant for the reaction of a metal ion with ligands to form a complex ion is its formation constant, and the constant for the reverse reaction is the dissociation constant, its reciprocal. A large formation constant lowers the free metal ion concentration enough to dissolve a sparingly soluble salt of the metal.",
       "forms": [
         {
@@ -9997,6 +10099,7 @@
       "terms": [
         "dissociation constant"
       ],
+      "type": "equilibrium-constant",
       "statement": "The dissociation constant, $K_{\\text{d}}$, is the equilibrium constant for the decomposition of a complex ion into its components in solution; it is the reciprocal of the formation constant.",
       "forms": [
         {

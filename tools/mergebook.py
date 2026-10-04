@@ -73,6 +73,23 @@ def chapter_number(ch):
     return int(m.group(1))
 
 
+def replace_in_place(rows, staged, key, owned):
+    """Return `rows` with this chapter's owned rows replaced by their staged
+    versions where they stand, owned rows no longer staged dropped, and staged
+    rows that are new appended at the end."""
+    by_key = {r[key]: r for r in staged}
+    out = []
+    for r in rows:
+        k = r[key]
+        if k in owned:
+            if k in by_key:
+                out.append(by_key.pop(k))
+        else:
+            out.append(r)
+    out.extend(by_key[k] for k in [r[key] for r in staged] if k in by_key)
+    return out
+
+
 def merge(ch):
     n = chapter_number(ch)
     chdir = os.path.join(BOOK, ch)
@@ -159,8 +176,12 @@ def merge(ch):
     # apply
     book["concepts"] = [c for c in book["concepts"] if c["section"] not in my_sections] + staged["concepts"]
     book["concept_prereqs"] = [e for e in book["concept_prereqs"] if e["concept"] not in placeholders and e["concept"] not in set(staged_ids)] + staged["concept_prereqs"]
-    book["symbols"] = [s for s in book["symbols"] if s["sym"] not in mine["symbols"]] + staged["symbols"]
-    book["types"] = [t for t in book["types"] if t["id"] not in mine["types"]] + staged["types"]
+    # Symbols and types keep their places: the order of `types` is the order the
+    # colour scheme deals hues along, so a re-merge that changes no row must not
+    # move one. A row this chapter already owns is replaced where it stands; a
+    # new row is appended.
+    book["symbols"] = replace_in_place(book["symbols"], staged["symbols"], "sym", set(mine["symbols"]))
+    book["types"] = replace_in_place(book["types"], staged["types"], "id", set(mine["types"]))
     if ch not in book["chapters"]:
         book["chapters"] = sorted(book["chapters"] + [ch], key=chapter_number)
 

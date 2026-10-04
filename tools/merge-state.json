@@ -6,7 +6,10 @@
       "T_K",
       "d"
     ],
-    "types": []
+    "types": [
+      "density",
+      "length"
+    ]
   },
   "ch07": {
     "symbols": [
@@ -27,7 +30,9 @@
       "R_o",
       "C_lattice"
     ],
-    "types": []
+    "types": [
+      "dipole-moment"
+    ]
   },
   "ch09": {
     "symbols": [
@@ -66,7 +71,11 @@
       "P_gas",
       "P_atm"
     ],
-    "types": []
+    "types": [
+      "force",
+      "acceleration",
+      "area"
+    ]
   },
   "ch06": {
     "symbols": [
@@ -94,7 +103,11 @@
       "m_s",
       "Z_eff"
     ],
-    "types": []
+    "types": [
+      "momentum",
+      "wavefunction",
+      "velocity"
+    ]
   },
   "ch03": {
     "symbols": [
@@ -135,7 +148,9 @@
       "\u0394V",
       "n_coef"
     ],
-    "types": []
+    "types": [
+      "heat-capacity"
+    ]
   },
   "ch02": {
     "symbols": [],
@@ -157,7 +172,10 @@
       "d_plane",
       "\u03b8_bragg"
     ],
-    "types": []
+    "types": [
+      "angle",
+      "surface-tension"
+    ]
   },
   "ch11": {
     "symbols": [
@@ -180,7 +198,9 @@
       "\u03a0",
       "i_vh"
     ],
-    "types": []
+    "types": [
+      "colligative-constant"
+    ]
   },
   "ch12": {
     "symbols": [
@@ -198,7 +218,9 @@
       "k_2",
       "k_m1"
     ],
-    "types": []
+    "types": [
+      "rate-constant"
+    ]
   },
   "ch13": {
     "symbols": [
@@ -219,7 +241,9 @@
       "\u0394n_gas",
       "x_ice"
     ],
-    "types": []
+    "types": [
+      "equilibrium-constant"
+    ]
   },
   "ch14": {
     "symbols": [

@@ -1,5 +1,11 @@
 {
-  "types": [],
+  "types": [
+    {
+      "id": "heat-capacity",
+      "label": "heat capacity",
+      "dimension": "J/°C"
+    }
+  ],
   "symbols": [
     {"sym": "ΔT", "latex": "\\Delta T", "macro": "\\kdT"},
     {"sym": "T_initial", "latex": "T_{\\text{initial}}", "macro": "\\kTinit"},
@@ -225,6 +231,7 @@
       "terms": [
         "heat capacity"
       ],
+      "type": "heat-capacity",
       "statement": "The heat capacity of a body of matter is the quantity of heat required to raise its temperature by 1 degree Celsius. It is an extensive property, growing with the amount of matter in the body.",
       "forms": [
         {
@@ -245,6 +252,7 @@
       "terms": [
         "specific heat capacity"
       ],
+      "type": "heat-capacity",
       "statement": "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 gram of it by 1 degree Celsius. It is an intensive property, set by the kind of substance alone.",
       "forms": [
         {
@@ -323,7 +331,7 @@
       "kind": "skill",
       "section": "5.2",
       "name": "Counting the Calories in a food",
-      "statement": "Food labels give energy in Calories, computed by the Atwater system from the grams of protein, carbohydrate, and fat in a serving and their average Calories per gram, values that were themselves found by bomb calorimetry. The reader who can do this sum can check a label and compare foods."
+      "statement": "Food labels give energy in Calories. The Atwater system computes them from the grams of protein, carbohydrate, and fat in a serving and their average Calories per gram, values that came from bomb calorimetry. With this sum you can check a label and compare foods."
     },
     {
       "id": "system",
@@ -441,14 +449,14 @@
       "kind": "skill",
       "section": "5.3",
       "name": "Writing and scaling thermochemical equations",
-      "statement": "A thermochemical equation gives ΔH after a balanced equation, for the amounts in moles that the equation shows. Since ΔH is extensive, it scales with the coefficients, it changes sign when the equation is reversed, and it depends on the physical states written, so the reader must carry all three rules and account for the limiting reactant when turning a measured heat into ΔH."
+      "statement": "A thermochemical equation gives ΔH after a balanced equation, for the amounts in moles that the equation shows. Since ΔH is extensive, it scales with the coefficients. It changes sign when you reverse the equation, and it depends on the physical states written. Apply all three rules, and account for the limiting reactant when you turn a measured heat into ΔH."
     },
     {
       "id": "enthalpy-of-combustion",
       "kind": "skill",
       "section": "5.3",
       "name": "Using a standard enthalpy of combustion",
-      "statement": "The standard enthalpy of combustion is the enthalpy change when 1 mole of a substance burns completely under standard state conditions. With it, and with the conversions of earlier chapters, the reader can find the heat given by any amount of a fuel, as the heat of 1.00 L of gasoline is found from the value for isooctane."
+      "statement": "The standard enthalpy of combustion is the enthalpy change when 1 mole of a substance burns completely under standard state conditions. With it, and with the conversions of earlier chapters, you can find the heat given by any amount of a fuel, as the value for isooctane gives the heat of 1.00 L of gasoline."
     },
     {
       "id": "standard-enthalpy-of-formation",
@@ -470,7 +478,7 @@
       "terms": [
         "Hess’s law"
       ],
-      "statement": "If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the steps. This lets the reader find the enthalpy change of a reaction that is hard or dangerous to carry out by adding reactions, reversed and scaled as needed, whose values are known."
+      "statement": "If a process is the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the steps. You can then find the enthalpy change of a reaction that is hard or dangerous to carry out by adding reactions of known enthalpy change, reversed and scaled as needed."
     },
     {
       "id": "enthalpy-from-formation-enthalpies",

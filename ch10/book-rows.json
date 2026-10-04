@@ -1,5 +1,16 @@
 {
- "types": [],
+ "types": [
+  {
+   "id": "angle",
+   "label": "angle",
+   "dimension": "°"
+  },
+  {
+   "id": "surface-tension",
+   "label": "surface tension",
+   "dimension": "N/m"
+  }
+ ],
  "symbols": [
   {
    "sym": "h_cap",
@@ -199,6 +210,7 @@
    "terms": [
     "surface tension"
    ],
+   "type": "surface-tension",
    "statement": "Molecules at the surface of a liquid are attracted by only about half as many neighbors as molecules within it, so the liquid contracts to the smallest surface. Surface tension is the energy required to increase the surface area of a liquid; it makes a small drop spherical and lets a water strider stand on water."
   },
   {
@@ -520,7 +532,7 @@
    "kind": "idea",
    "section": "10.5",
    "name": "Crystalline and amorphous solids",
-   "statement": "In a crystalline solid the particles are arranged in a definite repeating pattern, so every particle is held with the same forces and the solid melts at a precise temperature; in an amorphous solid they are arranged randomly, the attractions vary, and the solid softens over a range of temperatures."
+   "statement": "In a crystalline solid, the particles are arranged in a definite repeating pattern. Every particle is held by the same forces, so the solid melts at a precise temperature. In an amorphous solid, the particles are arranged randomly and the attractions vary, so the solid softens over a range of temperatures."
   },
   {
    "id": "types-of-crystalline-solids",
@@ -541,7 +553,7 @@
    "kind": "idea",
    "section": "10.5",
    "name": "Crystal defects",
-   "statement": "The repeating pattern of a crystal may contain defects: vacancies where a particle is missing, particles in interstitial sites, and impurities substituted into the lattice. Defects change physical properties, and doping silicon creates them on purpose for semiconductors."
+   "statement": "The repeating pattern of a crystal may contain defects: vacancies where a particle is missing, particles in interstitial sites, and impurities substituted into the lattice. Defects change physical properties, and doping silicon for semiconductors introduces them deliberately."
   },
   {
    "id": "crystalline-solid",

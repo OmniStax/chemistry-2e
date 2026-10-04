@@ -1,5 +1,16 @@
 {
- "types": [],
+ "types": [
+  {
+   "id": "density",
+   "label": "density",
+   "dimension": "g/mL"
+  },
+  {
+   "id": "length",
+   "label": "length",
+   "dimension": "m"
+  }
+ ],
  "symbols": [
   {
    "sym": "T_C",
@@ -172,7 +183,7 @@
    "kind": "skill",
    "section": "1.2",
    "name": "Classifying a sample of matter",
-   "statement": "Given a sample, the reader should be able to place it: constant composition or not, uniform or not, simplifiable by a chemical change or not. Two questions sort every sample into an element, a compound, a homogeneous mixture or a heterogeneous mixture, and the classification decides what can be done with the sample."
+   "statement": "Given a sample, you should be able to place it: constant composition or not, uniform or not, simplifiable by a chemical change or not. Two questions sort every sample into an element, a compound, a homogeneous mixture or a heterogeneous mixture, and the classification decides what you can do with the sample."
   },
   {
    "id": "atoms-and-molecules",
@@ -416,7 +427,7 @@
    "kind": "skill",
    "section": "1.4",
    "name": "Writing a measurement in scientific notation",
-   "statement": "A number in a measurement can be written in decimal form or in scientific notation, and for the very large and the very small the second is the only readable one. The mass of a mosquito is more usefully written as 2.5 x 10 to the minus 6 kilograms than as a string of zeros, and the notation will also be what settles how many digits of a measurement are meant."
+   "statement": "You can write a number in a measurement in decimal form or in scientific notation, and for the very large and the very small only the second is readable. The mass of a mosquito reads better as 2.5 x 10 to the minus 6 kilograms than as a string of zeros, and the notation also settles how many digits of a measurement count."
   },
   {
    "id": "si-base-units",
@@ -437,7 +448,7 @@
    "kind": "definition",
    "section": "1.4",
    "name": "Derived units",
-   "statement": "Many units are built out of the base units rather than agreed separately: a volume is a length cubed, and a density is a mass divided by a volume. Seeing a unit as the product and quotient of base units is what lets the reader check that a calculation has produced the kind of quantity it was meant to."
+   "statement": "Many units are built out of the base units rather than agreed separately: a volume is a length cubed, and a density is a mass divided by a volume. Seeing a unit as the product and quotient of base units lets you check that a calculation has produced the right kind of quantity."
   },
   {
    "id": "volume",
@@ -460,6 +471,7 @@
    "terms": [
     "density"
    ],
+   "type": "density",
    "statement": "The density of a substance is the ratio of the mass of a sample to its volume. It is an intensive property, so it identifies a substance rather than a sample: a brick of gold and a brick of lead of the same size do not have the same mass.",
    "forms": [
     {
@@ -495,6 +507,7 @@
    "terms": [
     "length"
    ],
+   "type": "length",
    "statement": "Length is the measure of one dimension of an object, and its SI unit is the meter."
   },
   {
@@ -630,7 +643,7 @@
    "kind": "idea",
    "section": "1.5",
    "name": "Every measurement carries an uncertainty",
-   "statement": "A measurement is read as far as the instrument allows and then one digit further, and that last digit is an estimate. A scale with one milliliter divisions can be read to a tenth of a milliliter, and a balance that reads 6.72 grams is saying the mass lies between 6.71 and 6.73, so uncertainty is a property of the instrument and the reader together, not a mistake."
+   "statement": "You read a measurement as far as the instrument allows and then one digit further, and that last digit is an estimate. A scale with one milliliter divisions reads to a tenth of a milliliter, and a balance that reads 6.72 grams says the mass lies between 6.71 and 6.73. Uncertainty belongs to the instrument and the person reading it together; it is not a mistake."
   },
   {
    "id": "significant-figures",
@@ -730,7 +743,7 @@
     "dimensional analysis",
     "factor-label method"
    ],
-   "statement": "The units of quantities must be subjected to the same mathematical operations as their numbers. That one premise is what lets a reader divide a distance by a time and get a speed, and it is also what lets the reader check a calculation by looking only at the units, since a wrong arrangement of factors gives a unit nobody wanted.",
+   "statement": "The units of quantities undergo the same mathematical operations as their numbers. That one premise lets you divide a distance by a time and get a speed. It also lets you check a calculation by looking only at the units, since a wrong arrangement of factors gives a unit nobody wanted.",
    "forms": [
     {
      "id": "eq-speed",

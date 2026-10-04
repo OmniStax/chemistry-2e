@@ -115,6 +115,7 @@
     {
       "sym": "R_o",
       "concept": "lattice-energy-trends",
+      "type": "length",
       "meaning": "the interionic distance, the sum of the radii of the positive and negative ions",
       "unit": "pm",
       "section": "7.5",
@@ -163,6 +164,7 @@
     {
       "sym": "Q_partial",
       "concept": "bond-polarity",
+      "type": "charge",
       "meaning": "the magnitude of the partial charges at the two ends of a bond, determined by the electronegativity difference between the bonded atoms",
       "unit": "C",
       "section": "7.6",

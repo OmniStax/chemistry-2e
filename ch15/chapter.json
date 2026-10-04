@@ -58,6 +58,7 @@
   {
    "sym": "p_stoich",
    "concept": "solubility-product",
+   "type": null,
    "meaning": "the number of cations in the formula M<sub>p</sub>X<sub>q</sub>",
    "unit": "none",
    "section": "15.1"
@@ -65,6 +66,7 @@
   {
    "sym": "q_stoich",
    "concept": "solubility-product",
+   "type": null,
    "meaning": "the number of anions in the formula M<sub>p</sub>X<sub>q</sub>",
    "unit": "none",
    "section": "15.1"

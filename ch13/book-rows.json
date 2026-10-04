@@ -1,5 +1,11 @@
 {
- "types": [],
+ "types": [
+  {
+   "id": "equilibrium-constant",
+   "label": "equilibrium constant",
+   "dimension": "none"
+  }
+ ],
  "symbols": [
   {"sym": "rate_f", "latex": "\\text{rate}_{f}", "macro": "\\kratef"},
   {"sym": "rate_r", "latex": "\\text{rate}_{r}", "macro": "\\krater"},
@@ -63,6 +69,7 @@
    "terms": [
     "reaction quotient"
    ],
+   "type": "equilibrium-constant",
    "statement": "The reaction quotient, $Q$, is the product of the product concentrations, each raised to the power of its coefficient in the balanced equation, divided by the product of the reactant concentrations raised to theirs. Its value changes as the reaction proceeds, so it serves as an indicator of the reaction’s status.",
    "forms": [
     {
@@ -95,6 +102,7 @@
    "terms": [
     "equilibrium constant"
    ],
+   "type": "equilibrium-constant",
    "statement": "The equilibrium constant, $K$, is the constant value of the reaction quotient exhibited by a system at equilibrium; $K_{c}$ is written with molar concentrations and $K_{P}$ with partial pressures.",
    "forms": [
     {

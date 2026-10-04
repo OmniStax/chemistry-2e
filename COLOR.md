@@ -17,28 +17,45 @@ draws. A chapter's `COLOR.md` may refine it, never inventing a hue.
 | 7 | `temperature` | T | K | The other slider of every gas and thermodynamics figure |
 | 8 | `energy` | E, q, w, ΔH, ΔG, ΔU, bond energy, photon energy, the shaded area under a curve | J, kJ/mol | One type for every energy, with enthalpy and free energy as decorated variants; heat, work and internal energy share the one hue |
 | 9 | `entropy` | S, ΔS | J/K | Not an energy; the T·ΔS term takes the energy hue only once it is multiplied by T |
-| 10 | `rate` | rate, the slope of a concentration–time curve | M/s | A derived quantity of its own; the rate constant k is untyped, since its unit changes with the order |
+| 10 | `rate` | rate, the slope of a concentration–time curve | M/s | A derived quantity of its own, and not the rate constant, which has its own place |
 | 11 | `wavelength` | λ | nm | The spectra of Chapter 6 are read in wavelength; a length, but the book never draws another |
 | 12 | `frequency` | ν | Hz | Not a wavelength and not a time; its own quantity, read off its own axis |
 | 13 | `potential` | E_cell, E°, electrode potentials | V | The voltmeter of every cell figure |
-| 14 | `charge` | q, e, the coulombs of Faraday's law | C | Millikan's drops in 2.2 and the electrons counted in electrolysis |
+| 14 | `charge` | q, the coulombs of Faraday's law, a partial charge | C | Millikan's drops in 2.2 and the electrons counted in electrolysis |
+| 15 | `density` | d, ρ, of a substance, a gas or a fluid | g/mL | A property of the material, which tells one substance from another |
+| 16 | `equilibrium-constant` | K, K_c, K_P, K_w, K_a, K_b, K_sp, K_f, K_d, Henry's k_H, the reaction quotient Q, and their p-functions | none | It differs with the reaction and the temperature, so it is no constant of nature; Q is its variant away from equilibrium |
+| 17 | `momentum` | p, Δp | kg·m/s | De Broglie's wavelength and Heisenberg's principle in 6.3 |
+| 18 | `wavefunction` | ψ, Ψ | m⁻³ᐟ² | The thing an orbital is drawn from in 6.3 |
+| 19 | `dipole-moment` | μ of a bond | C·m | A property of the bond, drawn as the dipole arrow of 7.6 |
+| 20 | `velocity` | v, u, u_rms | m/s | The molecular speeds of 9.5 and the electron of 6.3 |
+| 21 | `angle` | the contact angle, the Bragg angle | ° | Capillary rise in 10.2 and diffraction in 10.6 |
+| 22 | `colligative-constant` | K_b, K_f | °C/m | A property of the solvent, a temperature change per molality |
+| 23 | `surface-tension` | T | N/m | A property of the liquid in 10.2 |
+| 24 | `rate-constant` | k, k_f, k_r, the frequency factor A as its high-temperature limit | M¹⁻ⁿ/s | One kind though its unit changes with the order: it differs with the reaction and the temperature |
+| 25 | `force` | F | N | The force a gas exerts on a wall in 9.1 |
+| 26 | `acceleration` | g | m/s² | The barometer and the manometer of 9.1 |
+| 27 | `heat-capacity` | C, and the specific heat capacity c as its per-gram variant | J/°C | A property of the calorimeter or the substance in 5.1 |
+| 28 | `area` | A | m² | The area a gas presses on in 9.1 |
+| 29 | `length` | a bond length, a radius, a unit-cell edge, a plane spacing, a column height, an orbit radius, Δx | m, pm | A distance in the scene; the wavelength keeps its own place |
 
-Fourteen categories, which is the length of palette the app's recommended
-palettes provide, so every category gets a hue of its own. The order puts the
-quantities every chapter draws first (time, amount, mass, volume,
-concentration, pressure, temperature) and the ones a few chapters draw last.
+The first fourteen put the quantities every chapter draws first (time,
+amount, mass, volume, concentration, pressure, temperature) and the ones a few
+chapters draw last. The fifteen after them were added under the test of root
+`RULES.md` item 7 (2026-10-04), in the order that keeps each apart from the
+quantities it is drawn beside: every such pair stands 60° or more apart.
 
-These are not categories: length and radius (the bond length of 7.2 is measured along an
-axis but never coloured as a type), density, a count of atoms or
-molecules (the subscripts and coefficients of a formula), a percent
-(yield, composition, abundance), a mole ratio and a stoichiometric
-factor, an equilibrium constant and a reaction quotient (Q, K, K_a,
-K_sp: dimensionless, and derived from concentrations that already carry
-the hue), a rate constant, an oxidation number, a quantum number, an
-atomic number Z and a mass number A, electronegativity, and a formal
-charge.
-A figure that plots Q against time colours the
-concentrations it is built from and draws Q in ink.
+These are not categories, and stay in ink: a constant of nature (Planck's
+constant, the speed of light, the elementary charge, Avogadro's number, the
+gas constant, the Rydberg constant, the Bohr radius); a count or a label (the
+subscripts and coefficients of a formula, a quantum number, an atomic number
+Z and a mass number A, an effective nuclear charge, an oxidation number, a
+formal charge, a reaction order, a van't Hoff factor, an order of
+diffraction); and a rating, one number comparing two quantities of one kind
+(a percent of yield, composition or ionization, a mole fraction, a mole ratio,
+a compressibility factor, electronegativity on Pauling's scale). A constant
+of one law with no kind of its own (the van der Waals a, the lattice-energy
+constant, the Clausius–Clapeyron constant) stays in ink too; the van der Waals
+b is a molar volume and wears volume.
 
 Two decisions worth naming. Mass is typed, though in a book of mechanics
 it might pass as a parameter, because chemistry's central skill is turning a mass into an

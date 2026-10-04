@@ -111,7 +111,7 @@
    "terms": [
     "amphiprotic"
    ],
-   "statement": "Species capable of either donating or accepting protons are called amphiprotic. When such a species is added to water, both its acid and its base equilibria are established at the same time."
+   "statement": "A species that can either donate or accept a proton is amphiprotic. Add one to water and it sets up both its acid and its base equilibria at the same time."
   },
   {
    "id": "water-autoionization",
@@ -216,6 +216,7 @@
    "terms": [
     "ion-product constant for water"
    ],
+   "type": "equilibrium-constant",
    "statement": "The ion-product constant for water, $K_{\\text{w}}$, is the equilibrium constant for the autoionization of water, the product of the hydronium and hydroxide ion concentrations; it is 1.0 × 10<sup>−14</sup> at 25 °C.",
    "forms": [
     {
@@ -437,6 +438,7 @@
    "terms": [
     "acid ionization constant"
    ],
+   "type": "equilibrium-constant",
    "statement": "The acid ionization constant, $K_{\\text{a}}$, is the equilibrium constant for the ionization of a weak acid; its negative logarithm is p$K_{\\text{a}}$.",
    "forms": [
     {
@@ -462,6 +464,7 @@
    "terms": [
     "base ionization constant"
    ],
+   "type": "equilibrium-constant",
    "statement": "The base ionization constant, $K_{\\text{b}}$, is the equilibrium constant for the ionization of a weak base; its negative logarithm is p$K_{\\text{b}}$.",
    "forms": [
     {

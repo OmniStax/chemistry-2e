@@ -1,5 +1,11 @@
 {
- "types": [],
+ "types": [
+  {
+   "id": "rate-constant",
+   "label": "rate constant",
+   "dimension": "M¹⁻ⁿ/s"
+  }
+ ],
  "symbols": [
   {
    "sym": "[A]",
@@ -226,6 +232,7 @@
    "terms": [
     "rate constant"
    ],
+   "type": "rate-constant",
    "statement": "The rate constant k is specific to a particular reaction at a particular temperature; it does not depend on the reactant concentrations, but it does vary with temperature."
   },
   {
@@ -491,6 +498,7 @@
    "terms": [
     "frequency factor"
    ],
+   "type": "rate-constant",
    "statement": "The frequency factor is the proportionality constant in the Arrhenius equation, related to the relative number of collisions that have an orientation capable of leading to product formation."
   },
   {

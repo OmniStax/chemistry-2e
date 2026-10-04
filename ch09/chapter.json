@@ -335,6 +335,7 @@
     {
       "sym": "u_rms",
       "concept": "root-mean-square-speed",
+      "type": "velocity",
       "meaning": "the root mean square speed of the molecules of a gas, the square root of the average of their squared speeds",
       "unit": "m/s",
       "section": "9.5",
@@ -383,6 +384,7 @@
     {
       "sym": "b_vdw",
       "concept": "van-der-waals-equation",
+      "type": "volume",
       "meaning": "the van der Waals constant for the size of the molecules of a particular gas",
       "unit": "L/mol",
       "section": "9.6",

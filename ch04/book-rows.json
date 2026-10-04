@@ -48,7 +48,7 @@
       "kind": "skill",
       "section": "4.1",
       "name": "Writing a net ionic equation",
-      "statement": "Given a balanced molecular equation, the reader dissociates every dissolved ionic compound into its ions, identifies the spectator ions present in identical form on both sides, removes them, and reduces the coefficients to the smallest whole numbers. The result says, for example, that solid silver chloride forms from dissolved silver and chloride ions whatever their source."
+      "statement": "Start from a balanced molecular equation. Dissociate every dissolved ionic compound into its ions, find the spectator ions present in identical form on both sides, remove them, and reduce the coefficients to the smallest whole numbers. The result says, for example, that solid silver chloride forms from dissolved silver and chloride ions whatever their source."
     },
     {
       "id": "reactant",
@@ -149,7 +149,7 @@
       "kind": "definition",
       "section": "4.2",
       "name": "Strong and weak acids and bases",
-      "statement": "A strong acid reacts completely with water, so virtually every dissolved molecule yields a hydronium ion, and a strong base, such as an ionic hydroxide, dissociates completely. A weak acid or weak base reacts only partially, leaving most of its molecules in their original form, which is why its equation is written with a double arrow; only about 1% of acetic acid or of ammonia is ionized under typical conditions."
+      "statement": "A strong acid reacts completely with water, so virtually every dissolved molecule yields a hydronium ion, and a strong base, such as an ionic hydroxide, dissociates completely. A weak acid or weak base reacts only partially and leaves most of its molecules in their original form, which is why its equation carries a double arrow. Under typical conditions only about 1% of acetic acid or of ammonia ionizes."
     },
     {
       "id": "neutralization-reaction",
@@ -166,7 +166,7 @@
       "kind": "skill",
       "section": "4.2",
       "name": "Assigning oxidation numbers",
-      "statement": "The oxidation number of an element in a compound is the charge its atoms would have if the compound were ionic. It is assigned by four guidelines: zero in an elemental substance, the ion's charge for a monatomic ion, the usual values for hydrogen, oxygen and the halogens, and a sum equal to the charge of the molecule or ion, which fixes the one unknown. Note that an oxidation number is written sign first (+2), a charge number first (2+)."
+      "statement": "The oxidation number of an element in a compound is the charge its atoms would have if the compound were ionic. Four guidelines assign it: zero in an elemental substance, the ion's charge for a monatomic ion, the usual values for hydrogen, oxygen and the halogens, and a sum equal to the charge of the molecule or ion, which fixes the one unknown. An oxidation number puts the sign first (+2), and a charge puts the number first (2+)."
     },
     {
       "id": "redox-reaction",
@@ -183,7 +183,7 @@
       "kind": "skill",
       "section": "4.2",
       "name": "Classifying a reaction",
-      "statement": "Given an equation or a description, the reader should be able to say whether it is a precipitation, an acid-base or a redox reaction, or more than one, and name a redox subclass where one fits: combustion, in which a fuel and an oxidant react vigorously to give heat and often light, single displacement, in which an ion in solution is replaced through the oxidation of a metal, or disproportionation, in which one element is both oxidized and reduced."
+      "statement": "From an equation or a description, say whether a reaction is a precipitation, an acid-base or a redox reaction, or more than one. Where a redox subclass fits, name it. In combustion, a fuel and an oxidant react vigorously to give heat and often light. In single displacement, the oxidation of a metal replaces an ion in solution. In disproportionation, one element is both oxidized and reduced."
     },
     {
       "id": "half-reaction-method",
@@ -412,7 +412,7 @@
       "terms": [
         "stoichiometric factor"
       ],
-      "statement": "A stoichiometric factor is a ratio of two coefficients from a balanced equation, such as 2 mol NH3 per 3 mol H2 in the synthesis of ammonia, and it may be written in any amount unit. It is the one step every reaction stoichiometry calculation shares, whatever quantities are given at its start and asked for at its end."
+      "statement": "A stoichiometric factor is a ratio of two coefficients from a balanced equation, such as 2 mol NH3 per 3 mol H2 in the synthesis of ammonia, and you can write it in any amount unit. It is the one step every reaction stoichiometry calculation shares, whatever quantities it starts from and asks for."
     },
     {
       "id": "mole-stoichiometry",
@@ -436,7 +436,7 @@
       "terms": [
         "limiting reactant"
       ],
-      "statement": "When reactants are not present in stoichiometric amounts, one is used up first and limits the amount of product; the others are in excess and some of each is left over. Eleven slices of cheese and twenty-eight slices of bread make eleven sandwiches with six slices of bread to spare, and three moles of hydrogen with two of chlorine make four moles of hydrogen chloride with one mole of hydrogen to spare."
+      "statement": "When reactants are not present in stoichiometric amounts, one runs out first and limits the amount of product. The others are in excess, and some of each remains. Eleven slices of cheese and twenty-eight slices of bread make eleven sandwiches with six slices of bread to spare, and three moles of hydrogen with two of chlorine make four moles of hydrogen chloride with one mole of hydrogen to spare."
     },
     {
       "id": "identify-limiting-reactant",

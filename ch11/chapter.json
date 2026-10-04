@@ -50,6 +50,7 @@
   {
    "sym": "k_H",
    "concept": "henrys-law",
+   "type": "equilibrium-constant",
    "meaning": "the Henry’s law constant, which depends on the gaseous solute, the solvent and the temperature",
    "unit": "mol L⁻¹ kPa⁻¹ or M/atm",
    "section": "11.3",

@@ -1,5 +1,11 @@
 {
- "types": [],
+ "types": [
+  {
+   "id": "colligative-constant",
+   "label": "colligative constant",
+   "dimension": "°C/m"
+  }
+ ],
  "symbols": [
   {
    "sym": "C_g",
@@ -525,6 +531,7 @@
    "terms": [
     "boiling point elevation constant"
    ],
+   "type": "colligative-constant",
    "statement": "The boiling point elevation constant, or ebullioscopic constant, of a solvent is the proportionality constant relating the boiling point elevation of its solutions to the molality of solute."
   },
   {
@@ -536,6 +543,7 @@
    "terms": [
     "freezing point depression constant"
    ],
+   "type": "colligative-constant",
    "statement": "The freezing point depression constant, or cryoscopic constant, of a solvent is the proportionality constant relating the freezing point depression of its solutions to the molality of solute."
   },
   {

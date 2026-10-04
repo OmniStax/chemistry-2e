@@ -64,6 +64,7 @@
   {
    "sym": "θ_contact",
    "concept": "capillary-rise-equation",
+   "type": "angle",
    "meaning": "the contact angle between the liquid and the tube",
    "unit": "°",
    "section": "10.2",
@@ -223,6 +224,7 @@
   {
    "sym": "θ_bragg",
    "concept": "bragg-equation",
+   "type": "angle",
    "meaning": "the angle of the diffracted beam",
    "unit": "°",
    "section": "10.6",

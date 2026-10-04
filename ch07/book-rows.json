@@ -1,5 +1,11 @@
 {
- "types": [],
+ "types": [
+  {
+   "id": "dipole-moment",
+   "label": "dipole moment",
+   "dimension": "C·m"
+  }
+ ],
  "symbols": [
   {
    "sym": "μ",
@@ -89,7 +95,7 @@
    "terms": [
     "valence shell electron-pair repulsion theory (VSEPR)"
    ],
-   "statement": "VSEPR theory predicts the shape of a molecule from one assumption: the regions of high electron density in the valence shell of the central atom, whether they are bonding pairs or lone pairs, repel one another, and they settle into the arrangement that puts them as far apart as possible. It is worth noting that the theory considers electron-pair repulsions alone, and that nuclear-nuclear repulsions and nuclear-electron attractions are also at work in the arrangement a molecule finally adopts."
+   "statement": "VSEPR theory predicts the shape of a molecule from one assumption. The regions of high electron density in the valence shell of the central atom, bonding pairs and lone pairs alike, repel one another and settle into the arrangement that puts them as far apart as possible. The theory considers electron-pair repulsions alone, although nuclear-nuclear repulsions and nuclear-electron attractions also shape the arrangement a molecule finally adopts."
   },
   {
    "id": "electron-pair-geometry",
@@ -139,7 +145,7 @@
    "kind": "skill",
    "section": "7.6",
    "name": "Predicting electron-pair geometry and molecular structure",
-   "statement": "The prediction is a four-step procedure and it is the skill the section is written to teach: write the Lewis structure, count the regions of electron density around the central atom, read off the electron-pair geometry, and use the number of lone pairs to name the molecular structure, choosing the arrangement that minimizes repulsion where more than one is possible. A molecule with no single central atom is handled one interior atom at a time, each with a local geometry of its own."
+   "statement": "To predict a molecular structure, write the Lewis structure and count the regions of electron density around the central atom. Read off the electron-pair geometry, and use the number of lone pairs to name the molecular structure. Where more than one arrangement is possible, choose the one that minimizes repulsion. For a molecule with no single central atom, treat each interior atom in turn, each with its own local geometry."
   },
   {
    "id": "bond-dipole-moment",
@@ -150,6 +156,7 @@
    "terms": [
     "bond dipole moment"
    ],
+   "type": "dipole-moment",
    "statement": "A polar covalent bond leaves one atom with a partial positive charge and the other with a partial negative charge. The bond dipole moment measures this separation of charge; it is the product of the magnitude of the partial charges and the distance between them. We draw it as a vector pointing from the less electronegative atom toward the more electronegative one, with a small plus sign at the positive end and a length proportional to the electronegativity difference.",
    "forms": [
     {
@@ -344,7 +351,7 @@
    "terms": [
     "electronegativity"
    ],
-   "statement": "Electronegativity is the tendency of an atom to attract the electrons of a bond toward itself. On Pauling's scale it increases from left to right across a period and decreases down a group, so the nonmetals of the upper right are the most electronegative, fluorine above all at 4.0, and the group 1 metals are the least. It is a calculated, dimensionless number and should not be confused with electron affinity, which is a measured energy of an isolated atom."
+   "statement": "Electronegativity is the tendency of an atom to attract the electrons of a bond toward itself. On Pauling’s scale, it increases from left to right across a period and decreases down a group. The nonmetals of the upper right are therefore the most electronegative, fluorine above all at 4.0, and the group 1 metals are the least. Electronegativity is a calculated, dimensionless number; do not confuse it with electron affinity, a measured energy of an isolated atom."
   },
   {
    "id": "bond-type-from-electronegativity",
@@ -363,6 +370,7 @@
     "bond length",
     "bond distance"
    ],
+   "type": "length",
    "statement": "The bond length, or bond distance, is the distance between the nuclei of two bonded atoms at which the lowest potential energy is achieved."
   },
   {

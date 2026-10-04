@@ -199,5 +199,12 @@
   { "exercise": "q6", "concept": "domains-of-chemistry" },
   { "exercise": "q6", "concept": "hypothesis-law-theory", "weight": 1 },
   { "exercise": "q7", "concept": "domains-of-chemistry" }
+ ],
+ "referents": [
+  {
+   "id": "beaker",
+   "label": "the beaker of water",
+   "figure": "sim-water"
+  }
  ]
 }

@@ -46,7 +46,7 @@
     "/media/ch01/CNX_Chem_01_04_MYdCmIn.jpg"
    ],
    "original_caption": "The relative lengths of 1 m, 1 yd, 1 cm, and 1 in. are shown (not actual size), as well as comparisons of 2.54 cm and 1 in., and of 1 m and 1.094 yd.",
-   "draws": []
+   "draws": ["length"]
   },
   {
    "id": "fig-kilogram",
@@ -63,7 +63,8 @@
    ],
    "original_caption": "(a) The relative volumes are shown for cubes of 1 m³, 1 dm³ (1 L), and 1 cm³ (1 mL) (not to scale). (b) The diameter of a dime is compared relative to the edge length of a 1-cm³ (1-mL) cube.",
    "draws": [
-    "volume"
+    "volume",
+    "length"
    ]
   },
   {
@@ -71,7 +72,9 @@
    "kind": "sim",
    "draws": [
     "mass",
-    "volume"
+    "volume",
+    "density",
+    "length"
    ]
   },
   {
@@ -79,7 +82,8 @@
    "kind": "sim",
    "draws": [
     "mass",
-    "volume"
+    "volume",
+    "density"
    ]
   }
  ],
@@ -235,5 +239,27 @@
   { "exercise": "e3", "concept": "unit-prefixes" },
   { "exercise": "s1", "concept": "measure-volume-by-displacement" },
   { "exercise": "s1", "concept": "density", "weight": 2 }
+ ],
+ "referents": [
+  {
+   "id": "lead",
+   "label": "the cube of lead",
+   "figure": "sim-density"
+  },
+  {
+   "id": "gold",
+   "label": "the cube of gold",
+   "figure": "sim-density"
+  },
+  {
+   "id": "iron-block",
+   "label": "the iron block",
+   "figure": "sim-displacement"
+  },
+  {
+   "id": "wood-block",
+   "label": "the wood block",
+   "figure": "sim-displacement"
+  }
  ]
 }

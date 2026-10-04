@@ -201,7 +201,7 @@ function frame(r) {
   }
   /* the beaker: an open glass with a lip, its inside from (x0, y0) at the top left to (x1, y1) at the bottom right */
   function beaker(ctx, x0, y0, x1, y1) {
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.lineJoin = 'round';
+    ctx.save(); ctx.strokeStyle = F.ref('beaker'); ctx.lineWidth = 4; ctx.lineJoin = 'round';
     ctx.beginPath(); ctx.moveTo(x0 - 12, y0); ctx.lineTo(x0, y0 + 8); ctx.lineTo(x0, y1 - 14); ctx.quadraticCurveTo(x0, y1, x0 + 14, y1);
     ctx.lineTo(x1 - 14, y1); ctx.quadraticCurveTo(x1, y1, x1, y1 - 14); ctx.lineTo(x1, y0 + 8); ctx.lineTo(x1 + 12, y0); ctx.stroke(); ctx.restore();
   }
@@ -235,7 +235,7 @@ function frame(r) {
     }
     beaker(ctx, bx0, by0, bx1, by1);
     thermometer(ctx, 200, 100, 415, t);
-    hits.push({ x: 200, y: 415, r: 24, name: 'thermometer, reading ' + t + ' °C' }, { x: 200, y: 250, r: 16, name: 'thermometer, reading ' + t + ' °C' });
+    hits.push({ x: 200, y: 415, r: 24, name: 'thermometer, reading ' + t + ' °C' }, { x: 200, y: 250, r: 16, name: 'thermometer, reading ' + t + ' °C' }, { x: 320, y: 380, r: 80, name: 'the beaker of water' });
     text(ctx, WORD[s], (bx0 + bx1) / 2 + 30, by1 + 30, PAL.ink, { size: 22, align: 'center', weight: 600 });
     text(ctx, 'macroscopic domain', (bx0 + bx1) / 2, 530, PAL.muted, { size: 19, align: 'center' });
     /* (c) the symbolic domain: the formula between the two pictures */

@@ -51,7 +51,7 @@ function liquid(ctx, cx, base, w, Y, v, color) {
   ctx.strokeStyle = color; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(r, y - lift); ctx.quadraticCurveTo(cx, y + lift, l, y - lift); ctx.stroke(); ctx.restore();
 }
 /* the two-reading scene of a displacement figure: the cylinder before and after an object goes in */
-function displacement(d, before, after, mass, object, what, half) {
+function displacement(d, before, after, mass, object, what, half, who) {
   const VMAX = 25, W = 110, BASE = 470, HT = 300;
   function draw() {
     const { ctx } = begin(d.c);
@@ -59,12 +59,12 @@ function displacement(d, before, after, mass, object, what, half) {
     [[380, before, false], [780, after, true]].forEach(([cx, v, sunk]) => {
       const Y = cylinder(ctx, cx, BASE, W, HT, VMAX);
       liquid(ctx, cx, BASE, W, Y, v, cv);
-      if (sunk) object(ctx, cx, BASE - 14 - half, 1);   /* the object rests on the floor of the cylinder and never pokes through it */
+      if (sunk) object(ctx, cx, BASE - 14 - half, 1, F.ref(who));   /* the object rests on the floor of the cylinder and never pokes through it */
       line(ctx, cx + W / 2, Y(v), cx + W / 2 + 40, Y(v), cv, 2, [4, 8]);
       text(ctx, fmt(v, 1) + ' mL', cx + W / 2 + 48, Y(v), cv, { size: 24, weight: 600 });
       note(ctx, sunk ? 'after' : 'before', cx, BASE + 44);
     });
-    object(ctx, 640, 170, 1); text(ctx, fmt(mass, 3) + ' g', 640, 266, cm, { size: 24, weight: 600, align: 'center' });
+    object(ctx, 640, 170, 1, F.ref(who)); text(ctx, fmt(mass, 3) + ' g', 640, 266, cm, { size: 24, weight: 600, align: 'center' });
     arrow(ctx, 660, 290, 735, 385, PAL.muted, 3);
     text(ctx, 'volume of the ' + what, 1160, 200, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, fmt(after, 1) + ' mL − ' + fmt(before, 1) + ' mL = ' + fmt(after - before, 1) + ' mL', 1160, 240, cv, { size: 24, weight: 600, align: 'center' });
@@ -77,14 +77,14 @@ function displacement(d, before, after, mass, object, what, half) {
   still(d, draw);
 }
 /* a piece of rebar, a ribbed rod, centred on (x, y) */
-function rebar(ctx, x, y, s = 1) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.fillStyle = PAL.muted; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2;
+function rebar(ctx, x, y, s = 1, edge = PAL.ink) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.fillStyle = PAL.muted; ctx.strokeStyle = edge; ctx.lineWidth = 3;
   ctx.beginPath(); ctx.roundRect(-14, -70, 28, 140, 6); ctx.fill(); ctx.stroke();
   ctx.strokeStyle = PAL.panel; ctx.beginPath(); for (let k = -55; k <= 55; k += 18) { ctx.moveTo(-12, k - 4); ctx.lineTo(12, k + 4); } ctx.stroke(); ctx.restore();
 }
 /* an irregular nugget centred on (x, y) */
-function nugget(ctx, x, y, s = 1) {
-  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.fillStyle = PAL.muted; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.beginPath();
+function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
+  ctx.save(); ctx.translate(x, y); ctx.scale(s, s); ctx.fillStyle = PAL.muted; ctx.strokeStyle = edge; ctx.lineWidth = 3; ctx.beginPath();
   ctx.moveTo(-34, 6); ctx.lineTo(-22, -22); ctx.lineTo(4, -30); ctx.lineTo(30, -14); ctx.lineTo(36, 10); ctx.lineTo(16, 28); ctx.lineTo(-12, 26); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
 }
 
@@ -240,8 +240,8 @@ function nugget(ctx, x, y, s = 1) {
    The two graduated-cylinder readings of Example 1.7 and its Check Your
    Learning: faithful still redrawings with the book's numbers.
 ===================================================================== */
-displacement(sim('fig-rebar', 520), 13.5, 22.4, 69.658, rebar, 'piece of rebar', 70);
-displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of material', 30);
+displacement(sim('fig-rebar', 520), 13.5, 22.4, 69.658, rebar, 'piece of rebar', 70, 'rebar');
+displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of material', 30, 'nugget');
 
 /* =====================================================================
    FIGURE 1.27: the archery targets. Still: one live target whose group
@@ -250,8 +250,8 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
 ===================================================================== */
 (function () {
   const d = sim('sim-targets', 620);
-  const off = ctl(d.controls, { label: '\\text{offset}', cls: '', min: 0, max: 15, step: 0.5, value: 0, unit: 'cm', dec: 1, aria: 'distance of the group from the bull’s eye' });
-  const spr = ctl(d.controls, { label: '\\text{spread}', cls: '', min: 0.5, max: 12, step: 0.5, value: 1.5, unit: 'cm', dec: 1, aria: 'spread of the group' });
+  const off = ctl(d.controls, { label: '\\text{offset}', cls: 'length', min: 0, max: 15, step: 0.5, value: 0, unit: 'cm', dec: 1, aria: 'distance of the group from the bull’s eye' });
+  const spr = ctl(d.controls, { label: '\\text{spread}', cls: 'length', min: 0.5, max: 12, step: 0.5, value: 1.5, unit: 'cm', dec: 1, aria: 'spread of the group' });
   const n = ctl(d.controls, { label: '\\text{arrows}', cls: '', min: 3, max: 8, step: 1, value: 3, unit: '', dec: 0, aria: 'number of arrows' });
   const PAT = [[0.3, -0.8], [-0.9, 0.2], [0.7, 0.6], [-0.4, -0.5], [0.9, -0.3], [-0.6, 0.9], [0.1, 0.4], [-0.2, -1.0]];
   const DIR = [Math.cos(-0.9), Math.sin(-0.9)];          /* the group is pushed to the upper right, as the book draws it */
@@ -261,9 +261,10 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
      another; a group scattered evenly about the bull's eye is accurate, and judging it by the mean arrow distance would fail it */
   const centroidDist = (pts) => Math.hypot(pts.reduce((a, [x]) => a + x, 0) / pts.length, pts.reduce((a, [, y]) => a + y, 0) / pts.length);
   const spread = (pts) => Math.max(...pts.flatMap((p, i) => pts.slice(i + 1).map((q) => Math.hypot(p[0] - q[0], p[1] - q[1]))));
-  /* the four corners are four archers, told apart by the categorical palette (rule 7.4): each corner's arrows take one hue,
+  /* the four corners are four archers, the referents the caption names: each corner's arrows take one hue,
      the live group takes the hue of the corner it currently falls in, and the label under each corner is the legend, in ink
      with a swatch of the hue beside it */
+  const WHO = ['archer-a', 'archer-b', 'archer-d', 'archer-c'];
   const cells = [[true, true, '(a) accurate and precise', 0, 1.5], [false, true, '(b) precise but not accurate', 9, 1.5], [true, false, 'accurate but not precise', 0, 8], [false, false, '(c) neither accurate nor precise', 9, 8]];
   let hits = []; F.hover(d.stage, () => hits);
   function target(ctx, cx, cy, R, pts, r, color, who) {
@@ -282,19 +283,19 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
     const L = 720, T = 120, CW = 330, CH = 230;
     text(ctx, 'precise', L + CW / 2, T - 16, PAL.ink, { size: 20, weight: 600, align: 'center' }); text(ctx, 'not precise', L + CW * 1.5, T - 16, PAL.ink, { size: 20, weight: 600, align: 'center' });
     cells.forEach(([acc, pre, label, o, s], i) => {
-      const col = pre ? 0 : 1, row = acc ? 0 : 1, x = L + col * CW, y = T + row * CH, live = i === liveCell, hue = F.cat(i);
+      const col = pre ? 0 : 1, row = acc ? 0 : 1, x = L + col * CW, y = T + row * CH, live = i === liveCell, hue = F.ref(WHO[i]);
       if (live) { ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.12); ctx.fillRect(x, y, CW, CH); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(x, y, CW, CH); ctx.restore(); }
       target(ctx, x + CW / 2, y + 88, 72, group(o, s, 3), 4, hue, ['archer (a)', 'archer (b)', 'the archer of the fourth corner', 'archer (c)'][i]);
       const lw = widthOf(ctx, label, 18, live ? 600 : 400);
       dot(ctx, x + CW / 2 - lw / 2 - 12, y + CH - 34, hue, true, 6);
       text(ctx, label, x + CW / 2 + 8, y + CH - 34, PAL.ink, { size: 18, weight: live ? 600 : 400, align: 'center' });
     });
-    target(ctx, 360, 340, 230, pts, 8, F.cat(liveCell), 'the archer on the sliders');
+    target(ctx, 360, 340, 230, pts, 8, F.ref(WHO[liveCell]), 'the archer on the sliders');
     headline(ctx, accurate && precise ? 'These arrows are close to both the bull’s eye and one another, so they are accurate and precise.'
       : precise ? 'These arrows are close to one another but not on target, so they are precise but not accurate.'
       : accurate ? 'These arrows are scattered about the bull’s eye, so they are accurate on average but not precise.'
       : 'These arrows are neither on target nor close to one another, so they are neither accurate nor precise.');
-    readout(d.readout, `\\text{distance of the centre of the group from the bull's eye} = ${fmt(md, 1)}\\ \\text{cm}`,
+    readout(d.readout, `\\text{distance of the centre of the group from the bull's eye} = \\htmlClass{kv-length}{${fmt(md, 1)}\\ \\text{cm}}`,
       'The greatest distance between two arrows is ' + fmt(sp, 1) + ' cm. Accuracy is measured by how far the group sits from the bull’s eye and precision by how far the arrows sit from one another, and a group may have either without the other.');
   }
   still(d, draw);

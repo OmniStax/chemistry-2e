@@ -1,140 +1,127 @@
 # Chapter 1 colour plan
 
-Prepared 2026-09-12, and applied with `config.md`. It refines the book's
-`COLOR.md` for the quantities this chapter actually draws; root rule 7 and
-root rule 22 hold, and nothing here invents a hue. The app dresses the book's
-fourteen declared types from its own palette in declaration order. Every atom and
-molecule renders in its element's colour, which is the book's own
-convention and not a colouring.
+Prepared 2026-09-12 and restated under root `RULES.md` item 7 on 2026-10-04.
+It refines the book's `COLOR.md` for what this chapter draws and names; item
+7 and root rule 22 hold, and nothing here invents a hue. Colour reaches the
+chapter in item 7's four ways, and where two apply the earlier wins: fact,
+convention, referent, category.
 
-## What the chapter colours
+## Facts and conventions
 
-Three of the book's fourteen types, and they stand well apart in the order
-the book declares them, so the hues are well separated.
+The one fact colour of the chapter is the NFPA hazard diamond of 1.3: its red,
+blue, yellow and white are the sign's own and go through `F.fact`, with the
+sign's black numerals beside them, so the reader's Facts and conventions
+switch reaches them. With that switch off the quadrants are drawn as empty
+panels outlined in ink.
 
-| Type | Where it is coloured | What wears it |
+Every atom and molecule takes its element's colour through `F.el`: the water
+of 1.1 and 1.6, the hydrogen and oxygen over the electrodes of 1.15, the
+molecules of 1.14 and the fuel cell of 1.16. The phase of a sample is told by
+how its molecules pack, never by a tint. No particle in this chapter stands for
+matter in general: each picture names what it draws, and what it draws has an
+element.
+
+## Referents
+
+A referent is a vessel, a sample or an object that a figure draws and the text
+names; each figure's referents take the referent hues in table order, clear of
+the categories that figure draws.
+
+| Section | Figure | Referents |
 |---|---|---|
-| `mass` | 1.2, 1.3, 1.4, 1.5 | the balance reading, the m of the density readout, the mass slider of the cube, the mass axis where one is drawn |
-| `volume` | 1.2, 1.3, 1.4, 1.5 | the cube and its edge readout, the water level and the displaced volume in the cylinder, the V of the density readout, the litre and millilitre marks of the nested-volumes figure |
-| `temperature` | 1.1, 1.3, 1.6 | the temperature slider of the water beaker, the thermometer columns and their three scales, the T of the conversion readouts, the temperature reading that does not change when the sample is doubled |
+| 1.1 | Figure 1.5 | the beaker of water |
+| 1.2 | Figure 1.6 | the narrow and the wide container that hold one sample |
+| 1.2 | Figure 1.8 | the sealed bottle of beer precursor and the lead-acid battery |
+| 1.2 | Figure 1.15 | the hydrogen tube and the oxygen tube |
+| 1.3 | the extensive-against-intensive Sim | the jug of milk |
+| 1.4 | the density Sim | the cube of lead of Example 1.1 and the cube of gold beside it; the other five solids of Table 1.4 take the referent palette by index, since the text never names them one by one |
+| 1.4 | the displacement Sim | the iron block and the wood block of Example 1.2; the foam, unknown and other samples that only the exercises name are drawn in ink |
+| 1.5 | the rebar and gold-piece figures of Example 1.7 | the piece of rebar, and the piece of yellowish material |
+| 1.5 | Figure 1.27 | the four archers, (a), (b), (c) and the fourth corner |
 
-`time` was prepared as a fourth, and it is not coloured: the second is named in
-Table 1.2 as a base unit, and no figure of 1.4 gives it a reading of its own,
-so nothing in the chapter draws a time and the word second stays in ink.
-`amount of substance` is not coloured either, for the same reason: the mole is
-named in Table 1.2 as a base unit and nowhere counted, and a unit named in a
-table is not a quantity a figure draws. `concentration`, `pressure`, `energy`,
-`entropy`, `rate`, `wavelength`, `frequency`, `potential` and `charge` are
-untouched; the chapter neither draws nor states them.
+A referent's outline, label and hover name wear its hue; a quantity drawn on
+it keeps its category's. The balances, cylinders and thermometers are
+apparatus and stay in ink. The three thermometers of Figure 1.28 are not
+referents: they read one temperature on three scales, and three hues would
+say they were three things.
 
-Each section colours its own share, and its plan lists it:
+Where a figure offers a material (gold, lead, water, ethanol) the block is a
+sample, not an atom: it is drawn in a neutral fill or in its referent hue,
+never in an element colour.
 
-| Section | Colours |
+## Categories
+
+Every category the book declares is coloured on every page. A symbol wears
+its category through its macro and its section's variables row; a word wears
+it where it names a particular one the reader can point at on the page, a
+value given in the text, a reading or a drawn quantity, and stays ink where it
+names the kind in general, a unit, a definition or a generic case.
+
+| Category | Where it is coloured |
 |---|---|
-| `intro` | nothing; the introduction page has one photograph and no figure of its own |
-| 1.1 | `temperature`, where the water figure is warmed and cooled; nothing else; the water molecules are oxygen red and hydrogen white from the element palette in all three phases, and the phase is told by how they pack |
-| 1.2 | `volume`, for the beaker that keeps or loses its volume and for the gases collected over the electrodes; `mass`, for the balance readings that do not change when matter changes form; every molecule in the particle pictures, the water, the hydrogen and the oxygen over the electrodes, is drawn in its element's colours |
-| 1.3 | `mass`, `volume` and `temperature`, for the extensive-against-intensive figure |
-| 1.4 | `mass` and `volume`, for the cube on the balance and the block measured by displacement; the second is named among the base units and is not drawn, so `time` is left unbound |
-| 1.5 | `volume` for the meniscus and the cylinders, `mass` where a mass is weighed beside them; the target Sim draws one archer's group, so nothing on it is told apart by colour, and were it to draw several archers side by side their groups would take the categorical palette `F.cat(i)` |
-| 1.6 | `temperature` alone |
+| `temperature` | the slider and thermometer columns of 1.1, 1.3 and 1.6, the reference temperatures and readings the text gives in 1.1, 1.3, 1.4 and 1.6 |
+| `mass` | the balance readings and mass bars of 1.2, 1.3, 1.4 and 1.5, the m of the density readouts, and the masses the text gives in examples |
+| `volume` | the sample and its levels in 1.2, 1.3, 1.4 and 1.5, the gas collected over the electrodes, the V of the readouts, the volumes of the examples and of Table 1.5's dispensers |
+| `density` | the density slider and readout results of 1.4, the density bar of 1.3, the d of 1.3's readout, and the densities the text names in 1.3 to 1.6 |
+| `length` | the bar of Figure 1.23, the edge of the cubes in 1.4, the offset and spread of Figure 1.27, the diameters of 1.2, the bathtub's sides in 1.5 and the distances of 1.6 |
+| `time`, `velocity` | the sprinter of 1.6, in words only |
+
+The chapter's text writes `\kV`, `\kviron`, `\kT`, `\km` and `\kTC`, `\kTF`,
+`\kTK` in maths. `v_iron` of Example 1.2 is the chapter's own symbol: its v
+wears volume and its subscript the iron block's referent hue.
 
 ## How density's mass and volume are told apart
 
-Density is the chapter's one derived quantity and the reason `mass` and
-`volume` are coloured together on the same canvas. Density itself stays in ink,
-as the book's `COLOR.md` says: it is a ratio, it is the answer the figure
-computes rather than a knob the reader turns, and drawing it in a hue of its
-own would make a third colour out of two.
+Density is coloured, and its figures keep its parts apart by what each colour
+is on:
 
-The two that are coloured are told apart by what each colour is on, not by
-decoration:
+- **Mass is the balance.** The display, the number it reads and the m of the
+  readout wear the mass hue.
+- **Volume is the water and the reading.** The water level, the bracket that
+  measures the rise, the volume slider and the V of the readout wear the
+  volume hue.
+- **Density is the result.** The density slider, the quotient of the readout
+  and the density bar wear the density hue; the word density in the book's
+  own `\text{density} = \text{mass}/\text{volume}` stays as the book writes it.
+- **A sample doubled keeps its hues.** In 1.3 the mass and the volume bars
+  climb with the sample while the density and the temperature bars stand
+  still; the contrast is carried by what moves.
 
-- **Mass is the balance.** The pan, the needle, the number it reads and the
-  m of the readout are all the mass hue, and nothing else on the canvas is.
-- **Volume is the water and the reading.** The water level in the cylinder,
-  the bracket that measures the rise, the volume slider and the V of the
-  readout are all the volume hue. The cube itself is not: a body never takes a
-  type hue (root rule 7), so the cubes of 1.4 go through the drawing layer's
-  locked view, their faces the page colour under the share of ink each one's
-  angle to the lamp earns it, and the edge written beside a cube is a length
-  and stays in ink.
-- **The readout colours them.** `density = m ÷ V` is written with the m in the
-  mass hue, the V in the volume hue, the word density and the quotient in ink,
-  and the live numbers each in the hue of the quantity they belong to, so the
-  reader's eye goes from the balance to the m and from the water to the V
-  without a legend.
-- **A sample doubled keeps its hues.** In 1.3's extensive-against-intensive
-  figure the mass and the volume readings both climb with the sample and stay
-  in their hues, while the density and the temperature readings stand still,
-  the one in ink and the other in the temperature hue; the contrast the
-  section is teaching is carried by what moves, not by what is coloured.
-
-Where a figure offers a material (gold, lead, water, ethanol) it names it in
-ink and draws the block in a neutral fill from `PAL`, not in a hue of the
-scheme and not in an element colour: a block of gold is a sample with a
-density, not an atom, and a block has no atoms drawn on it to colour. The
-chapter's molecular pictures are another matter. The water of 1.1, in the
-beaker and in its three phases, is drawn molecule by molecule from the
-element palette, oxygen red and hydrogen white through `F.el`, and the phase
-is told by how the molecules pack, tight and ordered for ice, tight and
-loose for the liquid, sparse for the vapour, never by a tint; the
-temperature hue is on the slider and the T of the readout, not on the water.
-The molecules of 1.2, the water that boils and freezes, the hydrogen and
-oxygen collected over the electrodes and the pictures that set an element
-beside a compound and a mixture, are each drawn in their element's colours
-as well. No particle in this chapter stands for matter in general: each
-picture names what it draws, and what it draws has an element. This is the
-book's own convention and not a signal the app adds, so it stays when colour
-coding is switched off, and it is not coloured by any page.
+The cubes of 1.4 go through the drawing layer's locked view, their faces the
+page colour under the share of ink each one's angle to the lamp earns it; the
+edge written beside a cube is a length and wears it.
 
 ## The temperature scales of 1.6
 
-Celsius, Fahrenheit and kelvin are one type and take one hue. They are
-variants of `temperature`, not three types: a temperature is a temperature
-whatever scale it is read on, and the book's own argument in 1.6 is that the
-three scales differ in where their zero sits and how large their degree is,
-which is a fact about the scales and not about the quantity. Giving each scale
-a hue of its own would say the opposite.
-
-So the thermometer figure paints all three columns, all three sets of tick
-marks and all three readings in the temperature hue, and tells the scales
-apart the way the book's Figure 1.28 does:
-
-- by **label**: °F, °C and K set at the head of each column in ink;
-- by **decoration**: the Celsius column filled, the Fahrenheit and kelvin
-  columns hollow or dashed, as the book's `COLOR.md` says a variant is marked;
-- by **the marks on each**: the freezing and boiling temperatures of water
-  drawn across all three at the same height, in ink, since a reference
-  temperature is a line on the drawing rather than a quantity of its own.
-
-The three symbols `T_C`, `T_F` and `T_K` have rows in `book.json` with the
-type `temperature` and the macros `\kTC`, `\kTF` and `\kTK`, so the four
-conversion equations on the formula sheet wear the one hue across all of
-them and the reader sees at a glance that both sides of every conversion are
-the same quantity.
+Celsius, Fahrenheit and kelvin are one category and take one hue. They are
+variants of `temperature`: the book's own argument in 1.6 is that the three
+scales differ in where their zero sits and how large their degree is, which
+is a fact about the scales and not about the quantity. Figure 1.28 paints all
+three columns, ticks and readings in the temperature hue and tells the scales
+apart as the book's figure does: by the label at the head of each column, by
+decoration (the Celsius column filled, the other two hollow), and by the
+freezing and boiling temperatures of water drawn across all three in ink.
+`T_C`, `T_F` and `T_K` carry `\kTC`, `\kTF` and `\kTK`, so the conversion
+equations wear the one hue on both sides.
 
 ## What stays in ink
 
-Length and the edge of a cube, an area, density, a count of anything, a
-percent, a significant figure and the digits that are dropped, an accuracy
-and a precision, a conversion factor and the units that cancel inside one,
-the names of the elements and of the states of matter, the outlines of the
-beaker, the cylinder and the balance, and every label, bracket, axis rule
-and arrow that is not a quantity of a coloured type. Not the molecules: a drawn
-atom is never ink in this chapter, since each one has an element and takes
-its colour.
+A count, a percent (of composition or by mass), a significant figure and the
+digits that are dropped, an accuracy and a precision, a conversion factor and
+the units that cancel inside one, the numbers of the significant-figure
+exercises of 1.5 (they are numbers being rounded, not readings), the names of
+the elements and of the states of matter, the outlines of the apparatus, and
+every label, bracket, axis rule and arrow that is not a quantity.
 
-Two symbols of the chapter look like typed ones and are not, and neither may
-be written with a `\k` macro:
+Three symbols look like typed ones and are written without a `\k` macro:
 
-- **the d of 1.5's bathtub example**, `V = l × w × d`, which is a depth and
-  not a density;
-- **the m and b of 1.6's derivation**, `y = mx + b`, which are a slope and an
-  intercept and not a mass and not anything else the book declares.
+- **the l, w and d of 1.5's bathtub**, `V = l × w × d`: they are lengths and
+  their words wear length, but no length symbol of the book has a macro for
+  them, so the letters stay plain; the d is a depth, not a density;
+- **the m and b of 1.6's derivation**, `y = mx + b`, a slope and an
+  intercept;
+- **the W and g of Table 1.6's footnote**, `W = mg`, where only the m is the
+  book's mass symbol and wears it.
 
-Both are plain ink LaTeX, as are the l and w beside the first of them.
-
-Nothing in this chapter is coerced into a neighbouring type to save a colour.
-Density is not a mass, a length is not a volume, and a temperature scale is
-not a type.
+Nothing in this chapter is coerced into a neighbouring category to save a
+colour: a length is not a volume, and a temperature scale is not a category.

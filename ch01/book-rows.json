@@ -31,6 +31,11 @@
    "sym": "d",
    "latex": "d",
    "macro": "\\kd"
+  },
+  {
+   "sym": "v_iron",
+   "latex": "v_{\\text{iron}}",
+   "macro": "\\kviron"
   }
  ],
  "concepts": [

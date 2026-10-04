@@ -108,6 +108,39 @@
    "unit": "K",
    "section": "1.6",
    "anchor": "1.6-kelvin-scale"
+  },
+  {
+   "sym": "v_iron",
+   "concept": "volume",
+   "ref": "iron-block",
+   "meaning": "the volume of the iron block of Example 1.2, read as the rise of the water it displaces",
+   "unit": "mL",
+   "section": "1.4",
+   "anchor": "1.4-ex-displacement"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of the bathtub of Example 1.6, its length times its width times its depth",
+   "unit": "dm³",
+   "section": "1.5",
+   "anchor": "1.5-ex-bathtub"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "a temperature, whichever scale it is read on",
+   "unit": "°C, °F or K",
+   "section": "1.6",
+   "anchor": "1.6-linear-not-proportional"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of an object, whose weight is its mass times the acceleration of gravity",
+   "unit": "g",
+   "section": "1.6",
+   "anchor": "1.6-conversion-factors"
   }
  ]
 }

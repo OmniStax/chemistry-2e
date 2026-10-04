@@ -64,14 +64,14 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
 /* the glass of a vessel: the ink at a tenth, both faces, never hiding what is inside */
 const glass = (extra = {}) => ({ transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide, ...extra });
 /* the edges of a box, in ink, so a transparent vessel keeps its outline */
-function edges3(g, size, at = [0, 0, 0]) {
-  const e = new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(size[0], size[1], size[2])), new T3D.LineBasicMaterial({ color: new T3D.Color(PAL.ink) }));
+function edges3(g, size, at = [0, 0, 0], color = PAL.ink) {
+  const e = new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(size[0], size[1], size[2])), new T3D.LineBasicMaterial({ color: new T3D.Color(color) }));
   e.position.set(at[0], at[1], at[2]); g.add(e); return e;
 }
 /* an open cylinder of glass standing on its base: a tube or a beaker of radius r and height h whose bottom is at y0 */
-function tube3(g, x, y0, z, r, h, open = 'top') {
-  const m = new T3D.Mesh(new T3D.CylinderGeometry(r, r, h, 28, 1, true), mat3(PAL.ink, glass())); m.position.set(x, y0 + h / 2, z); m.renderOrder = 2; g.add(m);
-  const cap = new T3D.Mesh(new T3D.CircleGeometry(r, 28), mat3(PAL.ink, glass())); cap.rotation.x = open === 'top' ? Math.PI / 2 : -Math.PI / 2; cap.position.set(x, open === 'top' ? y0 : y0 + h, z); cap.renderOrder = 2; g.add(cap);
+function tube3(g, x, y0, z, r, h, open = 'top', color = PAL.ink) {
+  const m = new T3D.Mesh(new T3D.CylinderGeometry(r, r, h, 28, 1, true), mat3(color, glass())); m.position.set(x, y0 + h / 2, z); m.renderOrder = 2; g.add(m);
+  const cap = new T3D.Mesh(new T3D.CircleGeometry(r, 28), mat3(color, glass())); cap.rotation.x = open === 'top' ? Math.PI / 2 : -Math.PI / 2; cap.position.set(x, open === 'top' ? y0 : y0 + h, z); cap.renderOrder = 2; g.add(cap);
   return m;
 }
 /* a column of liquid or gas inside a tube: a solid cylinder of radius r from y0 up h, in a colour at an opacity */
@@ -164,15 +164,16 @@ function diatomic3(v, g, p, u, sym, r) {
   }
   let sig = '';
   function build() {
-    const key = [S.v, V.v, palSig(), Sc.k < 1 ? Sc.k : 1].join('|'); if (key === sig) return; sig = key;
+    const key = [S.v, V.v, palSig(), F.ref('narrow'), F.ref('wide'), Sc.k < 1 ? Sc.k : 1].join('|'); if (key === sig) return; sig = key;
     v.clear();
     box3(grp, [0, FLOOR - 0.1, 0], [5.2, 0.14, 2.2], PAL.soft);                                    /* the ground the containers stand on */
     for (const c of [NARROW, WIDE]) {
-      const wallsOf = box3(grp, [c.x, FLOOR + HT / 2, 0], [c.w, HT, DP], PAL.ink, glass()); wallsOf.renderOrder = 2;
-      edges3(grp, [c.w, HT, DP], [c.x, FLOOR + HT / 2, 0]);
+      const rc = F.ref(c === NARROW ? 'narrow' : 'wide');
+      const wallsOf = box3(grp, [c.x, FLOOR + HT / 2, 0], [c.w, HT, DP], rc, glass()); wallsOf.renderOrder = 2;
+      edges3(grp, [c.w, HT, DP], [c.x, FLOOR + HT / 2, 0], rc);
       v.pickable(wallsOf, (c === NARROW ? 'a narrow container, ' : 'a wide container, ') + fmt(cap(c), 0) + ' mL');
       samples(c, V.v);
-      v.label((c === NARROW ? 'a narrow container, ' : 'a wide container, ') + fmt(cap(c), 0) + ' mL', [c.x, FLOOR + HT + 0.06, 0], grp, c === NARROW ? 4 : 36);   /* above each container, the wide one's a line higher, so the two never meet as the scene turns */
+      v.label((c === NARROW ? 'a narrow container, ' : 'a wide container, ') + fmt(cap(c), 0) + ' mL', [c.x, FLOOR + HT + 0.06, 0], grp, c === NARROW ? 4 : 36).style.color = rc;   /* above each container, the wide one's a line higher, so the two never meet as the scene turns */
     }
   }
   function draw() {
@@ -208,14 +209,17 @@ function diatomic3(v, g, p, u, sym, r) {
   const SUGAR = 40, WATER = 960, ETH = 92.14 / 180.16, CO2 = 88.02 / 180.16;
   /* the battery: one reaction's worth of lead, lead oxide and sulfuric acid, 642.6 g, becomes lead sulfate and water */
   const PB = 207.2, PBO2 = 239.2, ACID = 196.2, PBSO4 = 606.6, H2O = 36.0;
+  let hits = []; F.hover(d.stage, () => hits);
   function bottle(ctx, x, y, fill) {
-    ctx.save(); ctx.fillStyle = fill; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.beginPath();
+    ctx.save(); ctx.fillStyle = fill; ctx.strokeStyle = F.ref('bottle'); ctx.lineWidth = 4; ctx.beginPath();
     ctx.moveTo(x - 46, y); ctx.lineTo(x - 46, y - 150); ctx.quadraticCurveTo(x - 46, y - 190, x - 16, y - 210); ctx.lineTo(x - 16, y - 250); ctx.lineTo(x + 16, y - 250); ctx.lineTo(x + 16, y - 210);
     ctx.quadraticCurveTo(x + 46, y - 190, x + 46, y - 150); ctx.lineTo(x + 46, y); ctx.closePath(); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = PAL.ink; ctx.fillRect(x - 20, y - 262, 40, 14); ctx.restore();
+    ctx.fillStyle = F.ref('bottle'); ctx.fillRect(x - 20, y - 262, 40, 14); ctx.restore();
+    hits.push({ x, y: y - 120, r: 70, name: 'the sealed bottle of beer precursor' });
   }
   function battery(ctx, x, y) {
-    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.fillRect(x - 110, y - 150, 220, 150); ctx.strokeRect(x - 110, y - 150, 220, 150);
+    hits.push({ x, y: y - 75, r: 90, name: 'the lead-acid battery' });
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = F.ref('battery'); ctx.lineWidth = 4; ctx.fillRect(x - 110, y - 150, 220, 150); ctx.strokeRect(x - 110, y - 150, 220, 150);
     ctx.fillStyle = PAL.ink; ctx.fillRect(x - 70, y - 170, 24, 20); ctx.fillRect(x + 46, y - 170, 24, 20);
     ctx.strokeStyle = PAL.muted; ctx.lineWidth = 3; for (let i = 0; i < 6; i++) { const px = x - 90 + i * 36; ctx.beginPath(); ctx.moveTo(px, y - 130); ctx.lineTo(px, y - 20); ctx.stroke(); } ctx.restore();
     text(ctx, '−', x - 58, y - 186, PAL.ink, { size: 22, weight: 600, align: 'center' }); text(ctx, '+', x + 58, y - 186, PAL.ink, { size: 22, weight: 600, align: 'center' });
@@ -230,6 +234,7 @@ function diatomic3(v, g, p, u, sym, r) {
   }
   function draw() {
     const { ctx } = begin(d.c);
+    hits.length = 0;
     const f = Fm.v / 100, q = Ds.v / 100;
     /* (a) the bottle */
     bottle(ctx, 250, 410, alpha(PAL.ink, 0.06 + 0.08 * f));
@@ -433,7 +438,7 @@ function centre(m) {
   const BENCH = -1.3, BR = 1.35, BH = 2.1, LEVEL = BENCH + 1.65, TX = [-0.42, 0.42], TR = 0.2, TB = BENCH + 0.5, TH = 1.55;
   let sig = '';
   function build() {
-    const key = [N.v, palSig()].join('|'); if (key === sig) return; sig = key;
+    const key = [N.v, palSig(), F.ref('h2-tube'), F.ref('o2-tube')].join('|'); if (key === sig) return; sig = key;
     v.clear();
     const n = N.v, h2 = n, o2 = n / 2, hue = C('volume');
     v.pickable(box3(grp, [0, BENCH - 0.09, 0], [6, 0.18, 3.2], PAL.soft), 'the bench');
@@ -443,7 +448,8 @@ function centre(m) {
     TX.forEach((x, i) => {
       v.pickable(box3(grp, [x, BENCH + 0.44, 0], [0.16, 0.1, 0.16], PAL.ink), i ? 'positive terminal of the battery' : 'negative terminal of the battery');
       const full = TH - 0.15, gas = (full * (i === 0 ? h2 : o2)) / 12;
-      tube3(grp, x, TB, 0, TR, TH, 'bottom');                                                       /* an inverted test tube, closed at its top */
+      const rc = F.ref(i ? 'o2-tube' : 'h2-tube');
+      tube3(grp, x, TB, 0, TR, TH, 'bottom', rc);                                                       /* an inverted test tube, closed at its top */
       column3(grp, x, TB, 0, TR - 0.015, TH - gas, PAL.muted, 0.16);                                /* the water still in it */
       const g = column3(grp, x, TB + TH - gas, 0, TR - 0.015, gas, hue, 0.3);                       /* the gas collected at its top */
       v.pickable(g, (i ? 'oxygen' : 'hydrogen') + ' collected, ' + fmt((100 * (i === 0 ? h2 : o2)) / 12, 0) + '% of the tube');
@@ -453,7 +459,7 @@ function centre(m) {
         const p = [x + (rnd(k * 3 + i * 40) - 0.5) * 0.2, TB + TH - 0.1 - rnd(k * 3 + 1 + i * 40) * Math.max(0.05, gas - 0.2), (rnd(k * 3 + 2 + i * 40) - 0.5) * 0.2];
         diatomic3(v, grp, p, V3.unit([rnd(k * 7 + i * 40) - 0.5, rnd(k * 7 + 1 + i * 40) - 0.5, rnd(k * 7 + 2 + i * 40) - 0.5]), i ? 'O' : 'H', r);
       }
-      v.label(i ? 'oxygen, over the + terminal' : 'hydrogen, over the − terminal', [x, TB + TH + 0.08, 0], grp, i ? 4 : 34);   /* the two tubes stand close, so the hydrogen label sits a line above the oxygen one */
+      v.label(i ? 'oxygen, over the + terminal' : 'hydrogen, over the − terminal', [x, TB + TH + 0.08, 0], grp, i ? 4 : 34).style.color = rc;   /* the two tubes stand close, so the hydrogen label sits a line above the oxygen one */
     });
     /* the water that remains, drawn molecule by molecule in the beaker about the tubes */
     for (let k = 0; k < 12 - n; k++) {

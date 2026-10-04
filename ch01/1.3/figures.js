@@ -47,14 +47,14 @@ function thermometer(ctx, x, y, h, f, color) {
   function draw() {
     const { ctx } = begin(d.c);
     const v = V.v, t = T.v, mL = v * 1000, mg = DENS * mL, mkg = mg / 1000;
-    const cm = C('mass'), cv = C('volume'), ct = C('temperature');
+    const cm = C('mass'), cv = C('volume'), ct = C('temperature'), cd = C('density');
     /* the scene: the jug, its milk, the balance and the thermometer */
     const jx = 300, jy = 430, jw = 220, jh = 300, inner = jh - 34;
     const level = jy - (inner * v) / VMAX;
     ctx.save(); ctx.fillStyle = alpha(cv, 0.28); ctx.fillRect(jx - jw / 2 + 2, level, jw - 4, jy - level - 2); ctx.restore();
     line(ctx, jx - jw / 2, level, jx + jw / 2, level, cv, 4);
-    jug(ctx, jx, jy, jw, jh, PAL.ink);
-    text(ctx, 'milk', jx, jy - jh - 26, PAL.ink, { size: 20, align: 'center' });
+    jug(ctx, jx, jy, jw, jh, F.ref('jug'));
+    text(ctx, 'milk', jx, jy - jh - 26, F.ref('jug'), { size: 20, align: 'center' });
     text(ctx, fmt(v, 2) + ' L', jx - jw / 2 - 14, level, cv, { size: 22, weight: 600, align: 'right' });
     balance(ctx, jx - 170, jx + 170, jy + 4, fmt(mkg, 2) + ' kg', cm);
     thermometer(ctx, 600, jy - 20, 240, t / TMAX, ct);
@@ -63,7 +63,7 @@ function thermometer(ctx, x, y, h, f, color) {
     const bx = 900, bw = 380, rows = [
       ['mass', 'extensive', mkg / (DENS * VMAX), fmt(mkg, 2) + ' kg', cm],
       ['volume', 'extensive', v / VMAX, fmt(v, 2) + ' L', cv],
-      ['density', 'intensive', DENS / 2, fmt(DENS, 2) + ' g/mL', PAL.ink],
+      ['density', 'intensive', DENS / 2, fmt(DENS, 2) + ' g/mL', cd],
       ['temperature', 'intensive', t / TMAX, fmt(t, 0) + ' °C', ct],
     ];
     rows.forEach(([name, kind, f, val, color], i) => {
@@ -75,7 +75,7 @@ function thermometer(ctx, x, y, h, f, color) {
     });
     line(ctx, bx - 60, 110, bx - 60, 500, PAL.rule, 1.5);
     headline(ctx, 'A jug holding ' + fmt(v, 2) + ' L of milk at ' + fmt(t, 0) + ' °C has a mass of ' + fmt(mkg, 2) + ' kg and a density of ' + fmt(DENS, 2) + ' g/mL.');
-    readout(d.readout, `\\km = d\\,\\kV = ${fmt(DENS, 2)}\\ \\text{g/mL} \\times ${fmt(mL, 0)}\\ \\text{mL} = ${fmt(mkg, 2)}\\ \\text{kg}`,
+    readout(d.readout, `\\km = \\kd\\,\\kV = \\htmlClass{kv-density}{${fmt(DENS, 2)}\\ \\text{g/mL}} \\times \\htmlClass{kv-volume}{${fmt(mL, 0)}\\ \\text{mL}} = \\htmlClass{kv-mass}{${fmt(mkg, 2)}\\ \\text{kg}}`,
       'The milk stands at ' + fmt(t, 0) + ' °C whatever its amount. Doubling the sample doubles the mass and the volume, and leaves the density and the temperature where they were.');
   }
   register(d.fig, { update: () => {}, draw });
@@ -106,10 +106,11 @@ const NFPA_RED = '#ff0000', NFPA_BLUE = '#0000ff', NFPA_YELLOW = '#ffff00', NFPA
   let hits = []; F.hover(d.stage, () => hits);
   function quad(ctx, q) {
     const [ax, ay] = q.at, h = R / 2, cx = CX + ax * h, cy = CY + ay * h;
-    ctx.save(); ctx.fillStyle = q.fill; ctx.strokeStyle = NFPA_INK; ctx.lineWidth = 3; ctx.lineJoin = 'round';
+    const ink = F.fact(NFPA_INK);
+    ctx.save(); ctx.fillStyle = F.shown.facts ? F.fact(q.fill) : PAL.panel; ctx.strokeStyle = ink; ctx.lineWidth = 3; ctx.lineJoin = 'round';
     ctx.beginPath(); ctx.moveTo(cx, cy - h); ctx.lineTo(cx + h, cy); ctx.lineTo(cx, cy + h); ctx.lineTo(cx - h, cy); ctx.closePath();
     ctx.fill(); ctx.stroke(); ctx.restore();
-    text(ctx, q.mark, cx, cy + 2, NFPA_INK, { size: 40, weight: 600, align: 'center' });
+    text(ctx, q.mark, cx, cy + 2, ink, { size: 40, weight: 600, align: 'center' });
     hits.push({ x: cx, y: cy, r: h * 0.8, name: q.name });
   }
   /* the scale of the three numbered diamonds, in the words of the passage, in columns narrow enough that no cell reaches the next */

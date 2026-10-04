@@ -120,7 +120,7 @@
     "/media/ch01/CNX_Chem_01_05_Archery.jpg"
    ],
    "original_caption": "(a) These arrows are close to both the bull’s eye and one another, so they are both accurate and precise. (b) These arrows are close to one another but not on target, so they are precise but not accurate. (c) These arrows are neither on target nor close to one another, so they are neither accurate nor precise.",
-   "draws": []
+   "draws": ["length"]
   }
  ],
  "coverage": [
@@ -587,6 +587,38 @@
   {
    "exercise": "e8",
    "concept": "accuracy-and-precision"
+  }
+ ],
+ "referents": [
+  {
+   "id": "rebar",
+   "label": "the piece of rebar",
+   "figure": "fig-rebar"
+  },
+  {
+   "id": "nugget",
+   "label": "the piece of yellowish material",
+   "figure": "fig-gold"
+  },
+  {
+   "id": "archer-a",
+   "label": "archer (a), accurate and precise",
+   "figure": "sim-targets"
+  },
+  {
+   "id": "archer-b",
+   "label": "archer (b), precise but not accurate",
+   "figure": "sim-targets"
+  },
+  {
+   "id": "archer-c",
+   "label": "archer (c), neither accurate nor precise",
+   "figure": "sim-targets"
+  },
+  {
+   "id": "archer-d",
+   "label": "the archer of the fourth corner, accurate but not precise",
+   "figure": "sim-targets"
   }
  ]
 }

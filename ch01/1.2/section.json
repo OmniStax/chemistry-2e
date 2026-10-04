@@ -739,5 +739,37 @@
    "exercise": "e18",
    "concept": "conservation-of-matter"
   }
+ ],
+ "referents": [
+  {
+   "id": "narrow",
+   "label": "the narrow container",
+   "figure": "sim-states"
+  },
+  {
+   "id": "wide",
+   "label": "the wide container",
+   "figure": "sim-states"
+  },
+  {
+   "id": "bottle",
+   "label": "the sealed bottle of beer precursor",
+   "figure": "sim-conservation"
+  },
+  {
+   "id": "battery",
+   "label": "the lead-acid battery",
+   "figure": "sim-conservation"
+  },
+  {
+   "id": "h2-tube",
+   "label": "the hydrogen tube",
+   "figure": "sim-electrolysis"
+  },
+  {
+   "id": "o2-tube",
+   "label": "the oxygen tube",
+   "figure": "sim-electrolysis"
+  }
  ]
 }

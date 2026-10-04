@@ -1226,6 +1226,11 @@
     {
       "sym": "q_stoich",
       "latex": "q"
+    },
+    {
+      "sym": "v_iron",
+      "latex": "v_{\\text{iron}}",
+      "macro": "\\kviron"
     }
   ],
   "exercise_kinds": [

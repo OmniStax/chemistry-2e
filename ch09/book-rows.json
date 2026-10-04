@@ -63,11 +63,13 @@
     },
     {
       "sym": "F_force",
-      "latex": "F"
+      "latex": "F",
+      "macro": "\\kforce"
     },
     {
       "sym": "A_area",
-      "latex": "A"
+      "latex": "A",
+      "macro": "\\karea"
     },
     {
       "sym": "p_hydro",
@@ -76,15 +78,18 @@
     },
     {
       "sym": "h_col",
-      "latex": "h"
+      "latex": "h",
+      "macro": "\\khcol"
     },
     {
       "sym": "ρ",
-      "latex": "\\rho"
+      "latex": "\\rho",
+      "macro": "\\krho"
     },
     {
       "sym": "g_grav",
-      "latex": "g"
+      "latex": "g",
+      "macro": "\\kgrav"
     },
     {
       "sym": "P_total",
@@ -142,11 +147,13 @@
     },
     {
       "sym": "u",
-      "latex": "u"
+      "latex": "u",
+      "macro": "\\ku"
     },
     {
       "sym": "u_rms",
-      "latex": "u_{\\text{rms}}"
+      "latex": "u_{\\text{rms}}",
+      "macro": "\\kurms"
     },
     {
       "sym": "Z_comp",
@@ -163,7 +170,8 @@
     },
     {
       "sym": "b_vdw",
-      "latex": "b"
+      "latex": "b",
+      "macro": "\\kbvdw"
     },
     {
       "sym": "P_gas",

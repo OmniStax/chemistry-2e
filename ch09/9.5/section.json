@@ -48,12 +48,12 @@
         "/media/ch09/CNX_Chem_09_05_MolSpeed3.jpg"
       ],
       "original_caption": "(Figure 9.32) The molecular speed distribution for oxygen gas at 300 K is shown here. Very few molecules move at either very low or very high speeds. The number of molecules with intermediate speeds increases rapidly up to a maximum, which is the most probable speed, then drops off rapidly. Note that the most probable speed, νp, is a little less than 400 m/s, while the root mean square speed, urms, is closer to 500 m/s. (Figure 9.33) The molecular speed distribution for nitrogen gas (N2) shifts to the right and flattens as the temperature increases; it shifts to the left and heightens as the temperature decreases. (Figure 9.34) molecular speed is directly related to molecular mass. At a given temperature, lighter molecules move faster on average than heavier molecules.",
-      "draws": ["temperature", "energy", "mass"]
+      "draws": ["temperature", "energy", "mass", "velocity"]
     },
     {
       "id": "sim-gasbox",
       "kind": "sim",
-      "draws": ["temperature", "energy"]
+      "draws": ["temperature", "energy", "velocity"]
     }
   ],
   "coverage": [
@@ -91,5 +91,42 @@
     {"exercise": "e6", "concept": "kmt-explains-gas-laws", "weight": 1, "weights_by": "ai"},
     {"exercise": "e6", "concept": "gas-density", "weight": 2, "weights_by": "ai"},
     {"exercise": "e7", "concept": "grahams-law-from-kmt", "weight": 2, "weights_by": "ai"}
+  ],
+  "referents": [
+    {
+      "id": "baseline",
+      "label": "the baseline cylinder",
+      "figure": "sim-kmt"
+    },
+    {
+      "id": "changed",
+      "label": "the changed cylinder",
+      "figure": "sim-kmt"
+    },
+    {
+      "id": "xenon",
+      "label": "the xenon curve",
+      "figure": "sim-speeds"
+    },
+    {
+      "id": "argon",
+      "label": "the argon curve",
+      "figure": "sim-speeds"
+    },
+    {
+      "id": "neon",
+      "label": "the neon curve",
+      "figure": "sim-speeds"
+    },
+    {
+      "id": "helium",
+      "label": "the helium curve",
+      "figure": "sim-speeds"
+    },
+    {
+      "id": "speed-count",
+      "label": "the count of speeds",
+      "figure": "sim-gasbox"
+    }
   ]
 }

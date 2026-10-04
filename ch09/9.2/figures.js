@@ -158,17 +158,17 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
   let sig = '', bath = null, glow = null;
   /* the apparatus is built once and rebuilt on a theme change; the bath and the glow take their tint from the temperature every frame */
   function build() {
-    const key = palSig(); if (key === sig) return; sig = key;
+    const glassC = F.ref('sphere'), key = palSig() + '|' + glassC; if (key === sig) return; sig = key;
     v.clear(); birds.drop();
     v.pickable(box3(grp, [0, -1.42, 0], [3.8, 0.16, 3.8], PAL.soft), 'hot plate');                 /* the hot plate */
     glow = box3(grp, [0, -1.33, 0], [3.0, 0.02, 3.0], PAL.soft, { transparent: true, opacity: 0.55 });   /* the plate's element, an apparatus in ink and never a body tinted by the temperature (rule 7) */
     const beaker = new T3D.Mesh(new T3D.CylinderGeometry(1.5, 1.5, 1.9, 36, 1, true), mat3(PAL.ink, glass())); beaker.position.set(0, -0.4, 0); grp.add(beaker);
     bath = new T3D.Mesh(new T3D.CylinderGeometry(1.48, 1.48, 1.5, 36), mat3(PAL.muted, { transparent: true, opacity: 0.16, depthWrite: false })); bath.position.set(0, -0.6, 0); grp.add(bath);   /* water, drawn as the beakers of Chapter 1 draw it; the temperature hue stays on the slider and the readout */
     v.pickable(bath, 'water bath');
-    const ball = new T3D.Mesh(new T3D.SphereGeometry(RS, 36, 24), mat3(PAL.ink, glass())); ball.renderOrder = 2; grp.add(ball);
-    const neck = new T3D.Mesh(new T3D.CylinderGeometry(0.12, 0.12, 0.7, 18, 1, true), mat3(PAL.ink, glass())); neck.position.set(0, RS + 0.3, 0); grp.add(neck);
+    const ball = new T3D.Mesh(new T3D.SphereGeometry(RS, 36, 24), mat3(glassC, glass({ opacity: 0.16 }))); ball.renderOrder = 2; grp.add(ball);
+    const neck = new T3D.Mesh(new T3D.CylinderGeometry(0.12, 0.12, 0.7, 18, 1, true), mat3(glassC, glass({ opacity: 0.16 }))); neck.position.set(0, RS + 0.3, 0); grp.add(neck);
     v.pickable(box3(grp, [0, RS + 0.72, 0], [0.5, 0.16, 0.16], C('pressure')), 'pressure gauge, on the neck of the sphere; its reading is on the dial beneath');
-    v.label('sealed sphere, 1 L', [0, RS + 0.95, 0], grp, 6);
+    v.label('sealed sphere, 1 L', [0, RS + 0.95, 0], grp, 6).style.color = glassC;
     v.label('water bath', [1.5, -0.55, 0], grp, 0);
     v.label('hot plate', [-1.9, -1.42, 0], grp, 0);
   }
@@ -315,7 +315,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     text(ctx, fmt(p2, 1) + ' psi', 150, yc + 96, cp, { size: 20, weight: 600, align: 'center' });
     line(ctx, 216, yc, 300, yc, PAL.ink, 8);
     ctx.save(); ctx.fillStyle = alpha(cv, 0.28); ctx.fillRect(X(0), yc - hh + 3, X(v2) - X(0), 2 * hh - 6); ctx.restore();
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3.5; ctx.strokeRect(X(0) - 30, yc - hh, X(32) - X(0) + 30, 2 * hh); ctx.restore();
+    ctx.save(); ctx.strokeStyle = F.ref('syringe'); ctx.lineWidth = 3.5; ctx.strokeRect(X(0) - 30, yc - hh, X(32) - X(0) + 30, 2 * hh); ctx.restore();
     for (let m = 0; m <= 30; m += 1) { const big = m % 5 === 0; line(ctx, X(m), yc + hh, X(m), yc + hh - (big ? 18 : 9), PAL.ink, big ? 2 : 1.2); if (big && m) text(ctx, String(m), X(m), yc + hh + 22, PAL.ink, { size: 16, align: 'center' }); }
     text(ctx, 'mL', X(31.5), yc + hh + 22, PAL.muted, { size: 15, align: 'center' });
     /* the plunger at V2, and the first position dashed */
@@ -372,7 +372,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     const { ctx } = begin(d.c);
     const T = period(), tau = isFinite(cy.now()) ? cy.now() : 0, ph = tau / T, f = (1 - Math.cos(TAU * ph)) / 2;   /* f: 0 at the end of a breath out, 1 at the end of a breath in */
     const V = REST + TV.v * f, dV = Math.sin(TAU * ph), inhaling = dV > 0.05, exhaling = dV < -0.05;
-    const cv = C('volume'), cp = C('pressure');
+    const cv = C('volume'), cp = C('pressure'), cl = F.ref('lungs'), cd = F.ref('diaphragm');
     /* the drawn swelling: four times life, or as much of that as the chest will hold, and the factor is stated */
     const sPeak = Math.cbrt((REST + TV.v) / REST), drawnPeak = 1 + Math.min(4 * (sPeak - 1), 0.45), EX = (drawnPeak - 1) / (sPeak - 1);
     /* the torso in profile, facing left, in the page colour with an ink outline */
@@ -384,14 +384,14 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     ctx.save(); ctx.translate(0, 34); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 8; ctx.beginPath(); ctx.moveTo(352, 150); ctx.quadraticCurveTo(410, 150, 430, 200); ctx.lineTo(432, 290); ctx.stroke(); ctx.restore();
     /* the lungs, whose drawn size follows the volume they hold */
     const s = 1 + EX * (Math.cbrt(V / REST) - 1), rx = 56 * s, ry = 76 * s, lx = 440, ly = 400;
-    ctx.save(); ctx.fillStyle = alpha(cv, 0.35); ctx.strokeStyle = cv; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(lx, ly, rx, ry, 0, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.fillStyle = alpha(cv, 0.35); ctx.strokeStyle = cl; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(lx, ly, rx, ry, 0, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
     text(ctx, fmt(V, 2) + ' L', lx, ly, cv, { size: 22, weight: 600, align: 'center', bg: alpha(PAL.panel, 0.85) });
     text(ctx, 'the swelling is drawn ' + fmt(EX, 1) + ' times larger than life', lx, ly + 28, PAL.muted, { size: 15, align: 'center', bg: alpha(PAL.panel, 0.85) });
     /* the diaphragm under the lungs: a dome that flattens as it contracts */
     const dy0 = ly + ry + 4, dome = 56 * (1 - f);
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(310, dy0 + 40); ctx.quadraticCurveTo(lx, dy0 - dome + 16, 585, dy0 + 40); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = cd; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(310, dy0 + 40); ctx.quadraticCurveTo(lx, dy0 - dome + 16, 585, dy0 + 40); ctx.stroke(); ctx.restore();
     if (inhaling || exhaling) { arrow(ctx, lx + 190, inhaling ? dy0 + 10 : dy0 + 80, lx + 190, inhaling ? dy0 + 80 : dy0 + 10, PAL.ink, 5); }
-    text(ctx, inhaling ? 'diaphragm contracts' : exhaling ? 'diaphragm relaxes' : 'diaphragm at rest', lx + 40, dy0 + 88, PAL.ink, { size: 18, weight: 600, align: 'center' });
+    text(ctx, inhaling ? 'diaphragm contracts' : exhaling ? 'diaphragm relaxes' : 'diaphragm at rest', lx + 40, dy0 + 88, cd, { size: 18, weight: 600, align: 'center' });
     /* the air, in through the nose and mouth or out */
     if (inhaling) { arrow(ctx, 240, 166, 340, 184, PAL.ink, 4); arrow(ctx, 230, 209, 340, 194, PAL.ink, 4); }
     if (exhaling) { arrow(ctx, 340, 184, 240, 166, PAL.ink, 4); arrow(ctx, 340, 194, 230, 209, PAL.ink, 4); }
@@ -629,7 +629,8 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
   const SPOTS = [[-0.45, -0.5, 0.2], [0.4, -0.55, -0.3], [-0.1, -0.15, 0.5], [0.5, 0.05, 0.1], [-0.55, 0.2, -0.4], [0.1, 0.4, -0.5], [-0.3, 0.65, 0.3], [0.45, 0.6, -0.1]];
   let hits = []; F.hover(d.stage, () => hits);
   const picks = () => [GASES[A.v], GASES[B.v], GASES[Cc.v]];
-  const label = (gas, n) => gas[0] + ' (' + fmt(n * gas[1], 1) + ' g)';
+  const grams = (gas, n) => fmt(n * gas[1], 1) + ' g';
+  const label = (gas, n) => gas[0] + ' <span style="color:' + C('mass') + '">(' + grams(gas, n) + ')</span>';
   function balloon(ctx, x, y, r, gas, n) {
     const cv = C('volume');
     ctx.save(); ctx.fillStyle = alpha(cv, 0.16); ctx.strokeStyle = cv; ctx.lineWidth = 3.5; ctx.beginPath();
@@ -651,8 +652,10 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     ps.forEach((gas, i) => {
       const x = 300 + i * 400, y = 240;
       balloon(ctx, x, y, r, gas, n);
-      text(ctx, label(gas, n), x, 490, PAL.ink, { size: 22, weight: 600, align: 'center' });
-      text(ctx, fmt(n, 2) + ' mol, ' + fmt(V, 1) + ' L', x, 520, PAL.ink, { size: 17, align: 'center' });
+      text(ctx, gas[0], x - 6, 490, PAL.ink, { size: 22, weight: 600, align: 'right' });
+      text(ctx, '(' + grams(gas, n) + ')', x + 6, 490, C('mass'), { size: 22, weight: 600 });
+      text(ctx, fmt(n, 2) + ' mol,', x - 4, 520, C('amount'), { size: 17, align: 'right' });
+      text(ctx, fmt(V, 1) + ' L', x + 4, 520, C('volume'), { size: 17 });
     });
     text(ctx, 'at STP: 273.15 K and 1 atm', 1330, 548, PAL.muted, { size: 16, align: 'right' });
     topline(ctx, head());
@@ -664,7 +667,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     grp = v.part(0); cnv = strip(d, 100);
   }
   function build() {
-    const n = N.v, ps = picks(), key = [n, ps.map((g) => g[0]).join(), palSig()].join('|'); if (key === sig) return; sig = key;
+    const n = N.v, ps = picks(), key = [n, ps.map((g) => g[0]).join(), palSig(), C('mass')].join('|'); if (key === sig) return; sig = key;
     v.clear();
     const r = 0.72 * Math.cbrt(n), k = 0.008 * (0.9 + 0.5 * (n - 0.25) / 1.75);
     ps.forEach((gas, i) => {

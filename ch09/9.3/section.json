@@ -30,7 +30,7 @@
  "exercises_lead": "",
  "exercise_notes": "Bloom levels, concept tags, hints and the suggested approaches marked as OmniStax’s own are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The nine Check Your Learning items are set inline after their examples. Where the key answers an outline item with its steps and a number, the number of part (b) is checked and the whole key is the solution. The unkeyed numerical exercises fs-idp231956592 (the density of laughing gas), fs-idp20795744 (the gas at 307 torr), fs-idm10841488 (the compound of carbon, nitrogen and hydrogen), fs-idp106657088 (the calibration gas at 146 atm), fs-idp19919472 (the mixture at STP), fs-idp100299232 (the mercury vapor analyzer), fs-idp38931136 (the gas collected by a student), fs-idp46179152 (Cavendish’s hydrogen), fs-idp152416544 (the air bag), fs-idp228232112 (the carbide lamp), fs-idp88428400 (the oxidation of NO), fs-idp68901248 (methanol), fs-idp86448160 (the colorless gas), fs-idp55931680 (hemoglobin) and fs-idp224745536 (the van Slyke method) are left out, and no answer is computed for them. The two unkeyed conceptual exercises are kept with a suggested approach marked as OmniStax’s own.",
  "figures": [
-  { "id": "sim-gas-density", "kind": "sim", "draws": ["mass", "pressure", "temperature"] },
+  { "id": "sim-gas-density", "kind": "sim", "draws": ["mass", "density", "pressure", "temperature"] },
   { "id": "fig-flask-procedure", "kind": "photo", "number": "9.19", "draws": [] },
   { "id": "sim-dalton", "kind": "sim", "number": "9.20", "originals": ["/media/ch09/CNX_Chem_09_03_DaltonLaw1-f981.jpg"], "original_caption": "If equal-volume cylinders containing gasses at pressures of 300 kPa, 450 kPa, and 600 kPa are all combined in the same-size cylinder, the total pressure of the gas mixture is 1350 kPa.", "draws": ["pressure"] },
   { "id": "sim-over-water", "kind": "sim", "number": "9.21", "folds": ["9.22"], "originals": ["/media/ch09/CNX_Chem_09_03_WaterVapor.jpg", "/media/ch09/CNX_Chem_09_03_WaterVapor2.jpg"], "original_caption": "(Figure 9.21) When a reaction produces a gas that is collected above water, the trapped gas is a mixture of the gas produced by the reaction and water vapor. If the collection flask is appropriately positioned to equalize the water levels both within and outside the flask, the pressure of the trapped gas mixture will equal the atmospheric pressure outside the flask (see the earlier discussion of manometers). (Figure 9.22) This graph shows the vapor pressure of water at sea level as a function of temperature.", "draws": ["pressure", "temperature"] },
@@ -378,5 +378,32 @@
   { "exercise": "e17", "concept": "gas-stoichiometry" },
   { "exercise": "e18", "concept": "daltons-law-of-partial-pressures" },
   { "exercise": "e18", "concept": "combining-volumes-of-gases" }
+ ],
+ "referents": [
+  {
+   "id": "hydrogen",
+   "label": "the cylinder of hydrogen",
+   "figure": "sim-dalton"
+  },
+  {
+   "id": "helium",
+   "label": "the cylinder of helium",
+   "figure": "sim-dalton"
+  },
+  {
+   "id": "neon",
+   "label": "the cylinder of neon",
+   "figure": "sim-dalton"
+  },
+  {
+   "id": "reaction-flask",
+   "label": "the reaction flask",
+   "figure": "sim-over-water"
+  },
+  {
+   "id": "collection-flask",
+   "label": "the collection flask",
+   "figure": "sim-over-water"
+  }
  ]
 }

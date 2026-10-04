@@ -8,7 +8,7 @@ const R8 = 8.314;                                    /* J mol⁻¹ K⁻¹, the f
 const T3D = window.THREE;
 const { sphere: sphere3, stick: stick3, box: box3, mat: mat3 } = F.mesh;
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
-const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, F.CC, F.el('N'), F.el('He'), F.el('Xe'), F.cat(0), F.cat(1), C('volume')].join('|');
+const palSig = () => [PAL.ink, PAL.panel, PAL.soft, PAL.muted, F.CC, F.el('N'), F.el('He'), F.el('Xe'), F.ref('baseline'), F.ref('changed'), C('volume')].join('|');
 const glass = (extra = {}) => ({ transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide, ...extra });
 
 /* the gases, each molecule as [element, dx, dy, radius] about its center, and its molar mass in g/mol */
@@ -95,13 +95,13 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     v.clear(); ms = [];
     v.pickable(box3(grp, [0, YB - 0.08, 0], [5.4, 0.16, 2.0], PAL.soft), 'the bench');
     cyl.forEach((c, i) => {
-      const wall = new T3D.Mesh(new T3D.CylinderGeometry(RC, RC, 2 * H0 + 0.5, 36, 1, true), mat3(PAL.ink, glass())); wall.position.set(c.cx, YB + H0 + 0.15, 0); wall.renderOrder = 2; grp.add(wall);
+      const wall = new T3D.Mesh(new T3D.CylinderGeometry(RC, RC, 2 * H0 + 0.5, 36, 1, true), mat3(F.ref(i ? 'changed' : 'baseline'), glass({ opacity: 0.16 }))); wall.position.set(c.cx, YB + H0 + 0.15, 0); wall.renderOrder = 2; grp.add(wall);
       const body = new T3D.Mesh(new T3D.CylinderGeometry(RC - 0.01, RC - 0.01, c.h, 36), mat3(C('volume'), { transparent: true, opacity: 0.12, depthWrite: false })); body.position.set(c.cx, YB + c.h / 2, 0); grp.add(body);
       v.pickable(body, 'the gas, ' + (c.h === H0 ? '1.00 L' : fmt(c.h / H0, 2) + ' L'));
       v.pickable(box3(grp, [c.cx, YB + c.h + 0.05, 0], [2 * RC - 0.02, 0.1, 2 * RC - 0.02], PAL.muted), 'the piston');
       stick3(grp, [c.cx, YB + c.h + 0.1, 0], [c.cx, YB + 2 * H0 + 0.7, 0], 0.04, PAL.ink);
       const lab = v.label(i === 0 ? 'baseline' : law.value === 'amontons' ? 'heated' : law.value === 'boyle' ? 'volume decreased' : 'increased gas', [c.cx, YB + 2 * H0 + 0.85, 0], grp, 6);
-      lab.style.color = F.cat(i);
+      lab.style.color = F.ref(i ? 'changed' : 'baseline');
       const vl = v.label(fmt(c.h / H0, 2) + ' L', [c.cx + RC + 0.1, YB + c.h / 2, 0], grp, 0); vl.style.color = C('volume');
       if (i === 1 && law.value === 'amontons') { const tl = v.label('600 K', [c.cx, YB - 0.3, 0.9], grp, 0); tl.style.color = C('temperature'); }
       else { const tl = v.label('300 K', [c.cx, YB - 0.3, 0.9], grp, 0); tl.style.color = C('temperature'); }
@@ -122,8 +122,8 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     const bmax = 260, x0 = 300, W = 820;
     cyl.forEach((c, i) => {
       const y = 150 + i * 50, w = (W * Math.min(rel(c), bmax)) / bmax;
-      text(ctx, i === 0 ? 'baseline' : L === 'amontons' ? 'heated' : L === 'boyle' ? 'volume decreased' : 'increased gas', 80, y + 7, F.cat(i), { size: 20, weight: 600 });
-      ctx.save(); ctx.fillStyle = alpha(F.cat(i), 0.85); ctx.fillRect(x0, y - 14, w, 28); ctx.restore();
+      text(ctx, i === 0 ? 'baseline' : L === 'amontons' ? 'heated' : L === 'boyle' ? 'volume decreased' : 'increased gas', 80, y + 7, F.ref(i ? 'changed' : 'baseline'), { size: 20, weight: 600 });
+      ctx.save(); ctx.fillStyle = alpha(F.ref(i ? 'changed' : 'baseline'), 0.85); ctx.fillRect(x0, y - 14, w, 28); ctx.restore();
       line(ctx, x0, y - 20, x0, y + 20, PAL.ink, 2);
       text(ctx, fmt(rel(c), 0), x0 + w + 10, y + 7, PAL.ink, { size: 18 });
     });
@@ -154,16 +154,18 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
   const cmp = F.choice(d.controls, { label: '\\text{compare with}', aria: 'the curves drawn behind the live one', options: [{ value: 'one', label: 'none' }, { value: 'temps', label: 'temperatures' }, { value: 'gases', label: 'gases' }], value: 'one' });
   const gas = F.select(d.controls, { label: '\\text{gas}', aria: 'the gas', options: GASES.map((g) => ({ value: g, label: g })), value: 'O₂' });
   const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 100, max: 1000, step: 1, value: 300, unit: 'K', dec: 0, detents: [100, 200, 300, 500, 1000], aria: 'temperature of the gas in kelvin' });
+  const REF = { Xe: 'xenon', Ar: 'argon', Ne: 'neon', He: 'helium' };
   const r1 = el('div'), r2 = el('div'); d.readout.append(r1, r2);
   const box = { l: 130, r: 1300, t: 110, b: 420 };
   function draw() {
     const { ctx } = begin(d.c);
     const g = gas.value, M = MOLS[g].m, T = Tc.v, mode = cmp.value;
     const xmax = mode === 'gases' ? 3000 : xmaxFor(M), ymax = mode === 'gases' ? 1.1 * peak(131.29, 300) : ymaxFor(M);
-    const { X, Y } = axes(ctx, box, [0, xmax], [0, ymax], { nx: xmax / 500, ny: 4, fy: () => '', xl: 'speed u (m/s)', yl: 'fraction of molecules' });
+    const { X, Y } = axes(ctx, box, [0, xmax], [0, ymax], { nx: xmax / 500, ny: 4, fy: () => '', xl: 'speed u (m/s)', xc: C('velocity'), yl: 'fraction of molecules' });
     const fam = mode === 'temps' ? TEMPS.map((t) => ({ M, T: t, name: t + ' K' })) : mode === 'gases' ? NOBLE.map((n) => ({ M: MOLS[n].m, T, name: n })) : [];
+    const famC = (c, i) => (mode === 'gases' ? F.ref(REF[c.name]) : F.cat(i));
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t - 2, box.r - box.l, box.b - box.t + 2); ctx.clip();
-    fam.forEach((c, i) => F.curve(ctx, (u) => mb(u, c.M, c.T), 0, xmax, X, Y, F.cat(i), 3, 160));
+    fam.forEach((c, i) => F.curve(ctx, (u) => mb(u, c.M, c.T), 0, xmax, X, Y, famC(c, i), 3, 160));
     F.curve(ctx, (u) => mb(u, M, T), 0, xmax, X, Y, PAL.ink, 5, 200);
     ctx.restore();
     const p = vp(M, T), q = urms(M, T), marks = [[p, 'v_{p}'], [q, 'u_{rms}']];
@@ -171,19 +173,19 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
       if (u > xmax) return;
       const y = Math.max(Y(mb(u, M, T)), box.t);
       line(ctx, X(u), y, X(u), box.b, alpha(PAL.ink, 0.5), 2, [4, 8]);
-      dot(ctx, X(u), y, PAL.ink, true, 8);
-      text(ctx, s, X(u) + (i ? 12 : -12), y - 14, PAL.ink, { size: 20, weight: 600, align: i ? 'left' : 'right', bg: PAL.panel });
+      dot(ctx, X(u), y, C('velocity'), true, 8);
+      text(ctx, s, X(u) + (i ? 12 : -12), y - 14, C('velocity'), { size: 20, weight: 600, align: i ? 'left' : 'right', bg: PAL.panel });
     });
     fam.forEach((c, i) => {
       const lx = box.r - 190, ly = box.t + 20 + i * 30;
-      line(ctx, lx, ly - 6, lx + 36, ly - 6, F.cat(i), 4);
+      line(ctx, lx, ly - 6, lx + 36, ly - 6, famC(c, i), 4);
       text(ctx, mode === 'temps' ? g + ' at ' + c.name : c.name + ' at ' + T + ' K', lx + 46, ly, PAL.ink, { size: 18 });
     });
     const ly = box.t + 20 + fam.length * 30;
     line(ctx, box.r - 190, ly - 6, box.r - 154, ly - 6, PAL.ink, 5);
     text(ctx, g + ' at ' + T + ' K', box.r - 144, ly, PAL.ink, { size: 18, weight: 600 });
     topline(ctx, 'For ' + MOLS[g].word + ' at ' + T + ' K the most probable speed is ' + fmt(p, 0) + ' m/s and the root mean square speed is ' + fmt(q, 0) + ' m/s.');
-    tex(r1, `u_{\\text{rms}} = \\sqrt{\\frac{3R\\kT}{\\kMM}} = \\sqrt{\\frac{3(8.314\\ \\text{J/mol K})(${hue('temperature', T + '\\ \\text{K}')})}{${hue('mass', fmt(kg(M), 4) + '\\ \\text{kg/mol}')}}} = ${fmt(q, 0)}\\ \\text{m/s}`);
+    tex(r1, `\\kurms = \\sqrt{\\frac{3R\\kT}{\\kMM}} = \\sqrt{\\frac{3(8.314\\ \\text{J/mol K})(${hue('temperature', T + '\\ \\text{K}')})}{${hue('mass', fmt(kg(M), 4) + '\\ \\text{kg/mol}')}}} = ${hue('velocity', fmt(q, 0) + '\\ \\text{m/s}')}`);
     tex(r2, `\\kKEavg = \\frac{3}{2}R\\kT = \\frac{3}{2}(8.314\\ \\text{J/mol K})(${hue('temperature', T + '\\ \\text{K}')}) = ${hue('energy', fmt(1.5 * R8 * T, 0) + '\\ \\text{J/mol}')}\\ \\text{for every gas}`);
   }
   register(d.fig, { update: () => {}, draw });
@@ -237,14 +239,14 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     v.invalidate();
     const { ctx } = begin(cnv), g = gas.value, M = MOLS[g].m, T = Tc.v, q = urms(M, T);
     const box = { l: 130, r: 1300, t: 110, b: 270 }, ymax = ymaxFor(M), bw = xmax / NB;
-    const { X, Y } = axes(ctx, box, [0, xmax], [0, ymax], { nx: xmax / 500, ny: 2, fy: () => '', xl: 'speed u (m/s)', yl: 'fraction of molecules' });
+    const { X, Y } = axes(ctx, box, [0, xmax], [0, ymax], { nx: xmax / 500, ny: 2, fy: () => '', xl: 'speed u (m/s)', xc: C('velocity'), yl: 'fraction of molecules' });
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t, box.r - box.l, box.b - box.t); ctx.clip();
-    ctx.fillStyle = alpha(F.cat(0), 0.7);
+    ctx.fillStyle = alpha(F.ref('speed-count'), 0.7);
     if (total) bins.forEach((c, i) => { const h = c / (total * bw); ctx.fillRect(X(i * bw) + 1, Y(h), X(bw) - X(0) - 2, box.b - Y(h)); });
     F.curve(ctx, (u) => mb(u, M, T), 0, xmax, X, Y, PAL.ink, 3, 160);
     ctx.restore();
-    line(ctx, X(q), box.t, X(q), box.b, alpha(PAL.ink, 0.6), 2, [10, 10]);
-    text(ctx, 'u_{rms}', X(q) + 8, box.t + 18, PAL.ink, { size: 18, weight: 600, bg: PAL.panel });
+    line(ctx, X(q), box.t, X(q), box.b, C('velocity'), 2, [10, 10]);
+    text(ctx, 'u_{rms}', X(q) + 8, box.t + 18, C('velocity'), { size: 18, weight: 600, bg: PAL.panel });
     const seen = total ? Math.sqrt(sumsq / total) : 0;
     topline(ctx, total + ' speeds of ' + MOLS[g].word + ' at ' + T + ' K counted so far; their root mean square is ' + fmt(seen, 0) + ' m/s, and √(3RT/ℳ) gives ' + fmt(q, 0) + ' m/s.');
     tex(d.readout, `\\kKEavg = \\frac{3}{2}R\\kT = \\frac{3}{2}(8.314\\ \\text{J/mol K})(${hue('temperature', T + '\\ \\text{K}')}) = ${hue('energy', fmt(1.5 * R8 * T, 0) + '\\ \\text{J/mol}')}`);

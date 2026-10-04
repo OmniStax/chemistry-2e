@@ -36,6 +36,7 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
   ];
   /* Z = 1 where PV = RT, which the van der Waals equation meets at V = ab/(a − RTb), below the Boyle temperature a/(Rb) */
   const crossing = (g, T) => { const den = g.a - R * T * g.b; if (den <= 0) return null; const V = (g.a * g.b) / den; return (R * T) / V; };
+  const WHO = ['h2', 'n2', 'o2', 'ch4', 'co2'];
   const d = sim('sim-z-graph', 560);
   const gas = F.select(d.controls, { label: '\\text{gas}', aria: 'the gas the readout follows', options: ZG.map((g, i) => ({ value: String(i), label: g.f })), value: '4', ms: 0 });
   let Tc = null;
@@ -51,17 +52,17 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
     line(ctx, box.l, Y(1), box.r, Y(1), PAL.ink, 3, [10, 10]);
     text(ctx, 'ideal gas', box.r - 8, Y(1) - 12, PAL.ink, { size: 18, align: 'right', bg: PAL.panel });
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t - 4, box.r - box.l, box.b - box.t + 4); ctx.clip();
-    ZG.forEach((q, i) => { if (i !== gi) curve(ctx, (p) => zOf(q, Math.max(p, 0.5), T), 0, 1000, X, Y, F.cat(i), 3, 100); });
-    curve(ctx, (p) => zOf(g, Math.max(p, 0.5), T), 0, 1000, X, Y, F.cat(gi), 5, 100);
+    ZG.forEach((q, i) => { if (i !== gi) curve(ctx, (p) => zOf(q, Math.max(p, 0.5), T), 0, 1000, X, Y, F.ref(WHO[i]), 3, 100); });
+    curve(ctx, (p) => zOf(g, Math.max(p, 0.5), T), 0, 1000, X, Y, F.ref(WHO[gi]), 5, 100);
     ctx.restore();
     line(ctx, X(P), box.b, X(P), box.t, alpha(C('pressure'), 0.45), 2, [4, 8]);
-    ZG.forEach((q, i) => { if (i === gi) return; const z = zOf(q, Pe, T); if (z <= 2.5) dot(ctx, X(P), Y(z), F.cat(i), true, 6); });
+    ZG.forEach((q, i) => { if (i === gi) return; const z = zOf(q, Pe, T); if (z <= 2.5) dot(ctx, X(P), Y(z), F.ref(WHO[i]), true, 6); });
     const z = zOf(g, Pe, T);
-    pinned(ctx, box, X, Y, P, z, F.cat(gi), 'Z = ' + fmt(z, 2));
+    pinned(ctx, box, X, Y, P, z, F.ref(WHO[gi]), 'Z = ' + fmt(z, 2));
     ZG.forEach((q, i) => {
       const y = 170 + i * 44;
-      line(ctx, 1100, y, 1150, y, F.cat(i), i === gi ? 5 : 3);
-      text(ctx, q.f, 1164, y + 7, PAL.ink, { size: 20, weight: i === gi ? 700 : 400 });
+      line(ctx, 1100, y, 1150, y, F.ref(WHO[i]), i === gi ? 5 : 3);
+      text(ctx, q.f, 1164, y + 7, F.ref(WHO[i]), { size: 20, weight: i === gi ? 700 : 400 });
     });
     const Vm = molarVolume(g.a, g.b, Pe, T), VmS = +Vm.toPrecision(4), zS = (Pe * VmS) / (R * T);
     topline(ctx, P < 1 ? 'At a pressure near zero, every gas has Z = 1 and behaves as an ideal gas.'
@@ -94,8 +95,8 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
     { f: 'CO₂', word: 'carbon dioxide', m: 44.0, a: 3.59, b: 0.0427, atoms: [['O', -13, 0, 7], ['O', 13, 0, 7], ['C', 0, 0, 6.5]] },
   ];
   const V0 = 4.25, HW = 1.1, HH = 0.85, HD = 0.85, CXI = -1.45, CXR = 1.45, K = 0.011;
-  const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('He'), F.el('N'), F.el('O'), F.el('C')].join('|');
-  const glass = () => ({ transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide });
+  const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('He'), F.el('N'), F.el('O'), F.el('C'), F.ref('ideal-gas'), F.ref('real-gas')].join('|');
+  const glass = (extra = {}) => ({ transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide, ...extra });
   const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TAU, r = Math.sqrt(1 - z * z); return [r * Math.cos(a), r * Math.sin(a), z]; };
 
   const d = sim('sim-real-boxes');
@@ -170,10 +171,11 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
     const q = s.q, name = (q.atoms.length === 1 ? 'an atom of ' : 'a molecule of ') + q.word + ', ' + q.f;
     boxes.forEach((b, bi) => {
       const hw = halfW(b, s);
-      const glassBox = new T3D.Mesh(new T3D.BoxGeometry(2 * hw, 2 * HH, 2 * HD), mat3(PAL.ink, glass())); glassBox.position.set(b.cx, 0, 0); glassBox.renderOrder = 2; grp.add(glassBox);
-      const edges = new T3D.LineSegments(new T3D.EdgesGeometry(glassBox.geometry), new T3D.LineBasicMaterial({ color: PAL.ink, transparent: true, opacity: 0.5 })); edges.position.copy(glassBox.position); grp.add(edges);
+      const who = F.ref(b.id === 'ideal' ? 'ideal-gas' : 'real-gas');
+      const glassBox = new T3D.Mesh(new T3D.BoxGeometry(2 * hw, 2 * HH, 2 * HD), mat3(who, glass({ opacity: 0.14 }))); glassBox.position.set(b.cx, 0, 0); glassBox.renderOrder = 2; grp.add(glassBox);
+      const edges = new T3D.LineSegments(new T3D.EdgesGeometry(glassBox.geometry), new T3D.LineBasicMaterial({ color: who, transparent: true, opacity: 0.7 })); edges.position.copy(glassBox.position); grp.add(edges);
       v.pickable(glassBox, b.id === 'ideal' ? 'the ideal gas' : 'the real gas, ' + q.word);
-      v.label(b.id === 'ideal' ? 'ideal' : 'real', [b.cx, HH + 0.14, 0], grp, 6);
+      v.label(b.id === 'ideal' ? 'ideal' : 'real', [b.cx, HH + 0.14, 0], grp, 6).style.color = who;
       const sc = b.id === 'ideal' ? 0.2 : 1;
       ms[bi] = b.P.map(() => {
         const m = new T3D.Group(); grp.add(m);
@@ -197,10 +199,10 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
       /* pressure axis fixed at 0 to 140 atm, above the largest nRT/(V − nb), 129 atm for 10 mol of CO₂ at 600 K */
       const X = (p) => 250 + (p / 140) * 1000;
       const bar = (y, p0, p1, fill) => { ctx.save(); ctx.fillStyle = fill; ctx.fillRect(X(p0), y - 16, X(p1) - X(p0), 32); ctx.restore(); };
-      text(ctx, 'ideal gas', 230, 118, PAL.ink, { size: 20, align: 'right' });
+      text(ctx, 'ideal gas', 230, 118, F.ref('ideal-gas'), { size: 20, align: 'right' });
       bar(111, 0, s.Pi, alpha(cp, 0.75));
       text(ctx, 'nRT/V = ' + sig3(s.Pi) + ' atm', X(s.Pi) + 12, 118, cp, { size: 18, weight: 600 });
-      text(ctx, 'real gas', 230, 188, PAL.ink, { size: 20, align: 'right' });
+      text(ctx, 'real gas', 230, 188, F.ref('real-gas'), { size: 20, align: 'right' });
       bar(181, 0, s.Pr, alpha(cp, 0.75));
       ctx.save(); ctx.strokeStyle = cp; ctx.lineWidth = 2; ctx.setLineDash([6, 6]); ctx.strokeRect(X(Math.min(s.Pr, s.rep)), 165, Math.abs(X(s.rep) - X(s.Pr)), 32); ctx.restore();
       text(ctx, 'nRT/(V − nb) = ' + sig3(s.rep) + ' atm, less n²a/V² = ' + sig3(s.att) + ' atm', X(Math.max(s.rep, s.Pr)) + 12, 188, cp, { size: 18, weight: 600 });
@@ -213,10 +215,10 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
       /* volume axis fixed at 0 to 5 L; the real volume stays below 4.6 L across the sliders */
       const X = (V) => 250 + (V / 5) * 1000;
       const bar = (y, a0, a1, fill) => { ctx.save(); ctx.fillStyle = fill; ctx.fillRect(X(a0), y - 16, X(a1) - X(a0), 32); ctx.restore(); };
-      text(ctx, 'ideal gas', 230, 118, PAL.ink, { size: 20, align: 'right' });
+      text(ctx, 'ideal gas', 230, 118, F.ref('ideal-gas'), { size: 20, align: 'right' });
       bar(111, 0, V0, alpha(cv, 0.75));
       text(ctx, 'V = nRT/P = 4.25 L', X(V0) + 12, 118, cv, { size: 18, weight: 600 });
-      text(ctx, 'real gas', 230, 188, PAL.ink, { size: 20, align: 'right' });
+      text(ctx, 'real gas', 230, 188, F.ref('real-gas'), { size: 20, align: 'right' });
       bar(181, 0, s.Vr, alpha(cv, 0.75));
       bar(181, 0, nb, alpha(PAL.ink, 0.35));
       text(ctx, 'V = ' + fmt(s.Vr, 2) + ' L, of which nb = ' + fmt(nb, 3) + ' L', X(s.Vr) + 12, 188, cv, { size: 18, weight: 600 });

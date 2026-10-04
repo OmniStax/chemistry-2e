@@ -40,7 +40,9 @@
    ],
    "original_caption": "The atmosphere above us exerts a large pressure on objects at the surface of the earth, roughly equal to the weight of a bowling ball pressing on an area the size of a human thumbnail.",
    "draws": [
-    "pressure"
+    "pressure",
+    "force",
+    "area"
    ]
   },
   {
@@ -58,7 +60,10 @@
    ],
    "original_caption": "In a barometer, the height, h, of the column of liquid is used as a measurement of the air pressure. Using very dense liquid mercury (left) permits the construction of reasonably sized barometers, whereas using water (right) would require a barometer more than 30 feet tall.",
    "draws": [
-    "pressure"
+    "pressure",
+    "length",
+    "density",
+    "acceleration"
    ]
   },
   {
@@ -70,7 +75,10 @@
    ],
    "original_caption": "A manometer can be used to measure the pressure of a gas. The (difference in) height between the liquid levels (h) is a measure of the pressure. Mercury is usually used because of its large density.",
    "draws": [
-    "pressure"
+    "pressure",
+    "length",
+    "density",
+    "acceleration"
    ]
   },
   {
@@ -80,7 +88,8 @@
     "/media/ch09/CNX_Chem_09_01_Manometer1_img.jpg"
    ],
    "draws": [
-    "pressure"
+    "pressure",
+    "length"
    ]
   },
   {
@@ -90,7 +99,8 @@
     "/media/ch09/CNX_Chem_09_01_Manometer2_img.jpg"
    ],
    "draws": [
-    "pressure"
+    "pressure",
+    "length"
    ]
   },
   {
@@ -100,7 +110,8 @@
     "/media/ch09/CNX_Chem_09_01_Manometer3_img.jpg"
    ],
    "draws": [
-    "pressure"
+    "pressure",
+    "length"
    ]
   },
   {
@@ -110,7 +121,8 @@
     "/media/ch09/CNX_Chem_09_01_manometer4_img.jpg"
    ],
    "draws": [
-    "pressure"
+    "pressure",
+    "length"
    ]
   },
   {
@@ -719,6 +731,18 @@
   {
    "exercise": "e11",
    "concept": "manometer-pressure"
+  }
+ ],
+ "referents": [
+  {
+   "id": "mercury-barometer",
+   "label": "the mercury barometer",
+   "figure": "sim-barometer"
+  },
+  {
+   "id": "water-barometer",
+   "label": "the water barometer",
+   "figure": "sim-barometer"
   }
  ]
 }

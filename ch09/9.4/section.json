@@ -99,5 +99,37 @@
     {"exercise": "e5", "concept": "grahams-law", "weight": 2, "weights_by": "ai"},
     {"exercise": "e6", "concept": "grahams-law-calculations", "weight": 2, "weights_by": "ai"},
     {"exercise": "e6", "concept": "diffusion-and-effusion", "weight": 1, "weights_by": "ai"}
+  ],
+  "referents": [
+    {
+      "id": "left-bulb",
+      "label": "the left bulb",
+      "figure": "sim-bulbs"
+    },
+    {
+      "id": "right-bulb",
+      "label": "the right bulb",
+      "figure": "sim-bulbs"
+    },
+    {
+      "id": "lighter-gas",
+      "label": "the lighter gas",
+      "figure": "sim-bulbs"
+    },
+    {
+      "id": "heavier-gas",
+      "label": "the heavier gas",
+      "figure": "sim-bulbs"
+    },
+    {
+      "id": "uf6-235",
+      "label": "²³⁵UF₆",
+      "figure": "sim-diffuser"
+    },
+    {
+      "id": "uf6-238",
+      "label": "²³⁸UF₆",
+      "figure": "sim-diffuser"
+    }
   ]
 }

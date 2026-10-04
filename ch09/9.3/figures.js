@@ -97,11 +97,11 @@ function flock(v, grp, g, k) {
   function draw() {
     const { ctx } = begin(d.c);
     hits.length = 0;
-    const p = P.v, t = T.v, slope = p / (R * t), cm = C('mass');
+    const p = P.v, t = T.v, slope = p / (R * t), cm = C('mass'), cd = C('density');
     const box = { l: 150, r: 1300, t: 130, b: 460 };
-    const { X, Y } = axes(ctx, box, [0, 130], [0, 15], { xl: 'ℳ (g/mol)', xc: cm, yl: 'd (g/L)', nx: 13, ny: 3 });
+    const { X, Y } = axes(ctx, box, [0, 130], [0, 15], { xl: 'ℳ (g/mol)', xc: cm, yl: 'd (g/L)', yc: cd, nx: 13, ny: 3 });
     ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t, box.r - box.l, box.b - box.t); ctx.clip();
-    line(ctx, X(0), Y(0), X(130), Y(130 * slope), PAL.ink, 4);
+    line(ctx, X(0), Y(0), X(130), Y(130 * slope), cd, 4);
     ctx.restore();
     const sel = GASES[G.v];
     GASES.forEach((f) => {
@@ -111,9 +111,9 @@ function flock(v, grp, g, k) {
       hits.push({ x: q.x, y: q.y - 26, r: reach + 4, name: molName(f) + ', ' + fmt(m, 2) + ' g/mol, ' + fmt(m * slope, 2) + ' g/L' });
     });
     const m = MOLS[sel].m, dd = m * slope, q = { x: X(m), y: Y(Math.min(dd, 15)) };
-    F.label(ctx, sel + ': ' + fmt(dd, dd < 1 ? 3 : 2) + ' g/L', q.x, q.y - 26, { side: dd > 11 ? 'right' : 'above', color: PAL.ink, gap: 22 });
+    F.label(ctx, sel + ': ' + fmt(dd, dd < 1 ? 3 : 2) + ' g/L', q.x, q.y - 26, { side: dd > 11 ? 'right' : 'above', color: cd, gap: 22 });
     topline(ctx, 'At ' + fmt(p, 2) + ' atm and ' + t + ' K, a liter of ' + WORD[sel] + ' has a mass of ' + fmt(dd, dd < 1 ? 3 : 2) + ' g, and every other gas lies on the same line.');
-    readout(d.readout, `d = \\frac{\\kMM\\kP}{R\\kT} = \\frac{(${hue('mass', fmt(m, 2) + '\\ \\text{g/mol}')})(${hue('pressure', fmt(p, 2) + '\\ \\text{atm}')})}{(${RTEX})(${hue('temperature', t + '\\ \\text{K}')})} = ${fmt(dd, dd < 1 ? 3 : 2)}\\ \\text{g/L}`,
+    readout(d.readout, `${hue('density', 'd')} = \\frac{\\kMM\\kP}{R\\kT} = \\frac{(${hue('mass', fmt(m, 2) + '\\ \\text{g/mol}')})(${hue('pressure', fmt(p, 2) + '\\ \\text{atm}')})}{(${RTEX})(${hue('temperature', t + '\\ \\text{K}')})} = ${hue('density', fmt(dd, dd < 1 ? 3 : 2) + '\\ \\text{g/L}')}`,
       'The slope of the line is P/RT, the number of moles in one liter, which is the same for every gas; a gas of greater molar mass packs more grams into those moles and so lies higher on the line.');
   }
   register(d.fig, { update: () => {}, draw });
@@ -130,7 +130,7 @@ function flock(v, grp, g, k) {
   const d = sim('sim-dalton');
   const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.25], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 330, dist: 8.4, tilt: 0.2 });
   const grp = v.part(0), cnv = strip(d, 300);
-  const GAS = ['H₂', 'He', 'Ne'], SYM = ['\\kPA', '\\kPB', '\\kPC'], NAME = ['P_{A}', 'P_{B}', 'P_{C}'];
+  const GAS = ['H₂', 'He', 'Ne'], WHO = ['hydrogen', 'helium', 'neon'], SYM = ['\\kPA', '\\kPB', '\\kPC'], NAME = ['P_{A}', 'P_{B}', 'P_{C}'];
   const Ps = [300, 450, 600].map((val, i) => ctl(d.controls, { label: SYM[i], cls: 'pressure', min: 0, max: 900, step: 10, value: val, unit: 'kPa', dec: 0, aria: 'partial pressure of ' + WORD[GAS[i]] + ' in kilopascals', onInput: refill }));
   const RC = 0.55, HC = 1.7, XS = [-3.3, -1.6, 0.1, 2.9], RM = 0.1, LIM = RC - RM - 0.02;
   const g = gas3();
@@ -150,16 +150,17 @@ function flock(v, grp, g, k) {
   const birds = flock(v, grp, g, 0.011);
   let sig = '';
   function build() {
-    const key = [Ps.map((p) => p.v).join(), palSig()].join('|'); if (key === sig) return; sig = key;
+    const key = [Ps.map((p) => p.v).join(), palSig(), WHO.map((w) => F.ref(w)).join()].join('|'); if (key === sig) return; sig = key;
     v.clear(); birds.drop();
     v.pickable(box3(grp, [-0.2, -HC / 2 - 0.08, 0], [8.2, 0.12, 1.8], PAL.soft), 'bench');
     XS.forEach((x, i) => {
-      const body = new T3D.Mesh(new T3D.CylinderGeometry(RC, RC, HC, 36, 1, true), mat3(PAL.ink, glass())); body.position.set(x, 0, 0); grp.add(body);
-      const cap = new T3D.Mesh(new T3D.SphereGeometry(RC, 36, 12, 0, TAU, 0, Math.PI / 2), mat3(PAL.ink, glass())); cap.position.set(x, HC / 2, 0); grp.add(cap);
+      const wall = i < 3 ? F.ref(WHO[i]) : PAL.ink, op = i < 3 ? 0.16 : 0.1;
+      const body = new T3D.Mesh(new T3D.CylinderGeometry(RC, RC, HC, 36, 1, true), mat3(wall, glass({ opacity: op }))); body.position.set(x, 0, 0); grp.add(body);
+      const cap = new T3D.Mesh(new T3D.SphereGeometry(RC, 36, 12, 0, TAU, 0, Math.PI / 2), mat3(wall, glass({ opacity: op }))); cap.position.set(x, HC / 2, 0); grp.add(cap);
       v.pickable(body, i < 3 ? 'a cylinder of ' + WORD[GAS[i]] + ' alone' : 'the same-size cylinder holding all three gases');
       stick3(grp, [x, HC / 2 + RC - 0.05, 0], [x, HC / 2 + RC + 0.22, 0], 0.06, PAL.muted);
       v.pickable(box3(grp, [x, HC / 2 + RC + 0.26, 0], [0.34, 0.1, 0.1], PAL.muted), 'valve');
-      v.label(i < 3 ? GAS[i] : 'mixture', [x, -HC / 2 - 0.2, 0.9], grp, 16);
+      v.label(i < 3 ? GAS[i] : 'mixture', [x, -HC / 2 - 0.2, 0.9], grp, 16).style.color = wall;
     });
     F.mesh.arrow(grp, [XS[2] + 0.75, 0, 0], [XS[3] - 0.75, 0, 0], 0.035, PAL.ink);
     v.label('combined', [(XS[2] + XS[3]) / 2, 0.22, 0], grp, 0);
@@ -175,9 +176,9 @@ function flock(v, grp, g, k) {
     const rows = [0, 1, 2, 3].map((i) => 110 + i * 38);
     for (let k = 0; k <= 6; k++) { const xv = X(k * 500); line(ctx, xv, rows[0] - 16, xv, rows[3] + 16, PAL.rule, 1.5); text(ctx, String(k * 500), xv, rows[3] + 40, PAL.muted, { size: 17, align: 'center' }); }
     text(ctx, 'pressure (kPa)', x1, rows[3] + 70, cp, { size: 20, weight: 600, align: 'right' });
-    const bar = (y, a, b, i) => { ctx.save(); ctx.fillStyle = F.cat(i); ctx.fillRect(X(a), y - 12, X(b) - X(a), 24); ctx.restore(); };
+    const bar = (y, a, b, i) => { ctx.save(); ctx.fillStyle = F.ref(WHO[i]); ctx.fillRect(X(a), y - 12, X(b) - X(a), 24); ctx.restore(); };
     GAS.forEach((f, i) => {
-      text(ctx, WORD[GAS[i]] + ' alone, ' + NAME[i], x0 - 16, rows[i], PAL.ink, { size: 18, align: 'right' });
+      text(ctx, WORD[GAS[i]] + ' alone, ' + NAME[i], x0 - 16, rows[i], F.ref(WHO[i]), { size: 18, align: 'right' });
       bar(rows[i], 0, p[i], i);
       text(ctx, p[i] + ' kPa', X(p[i]) + 10, rows[i], cp, { size: 17, weight: 600 });
     });
@@ -215,20 +216,20 @@ function flock(v, grp, g, k) {
     const { ctx } = begin(d.c);
     hits.length = 0;
     const t = Tc.v, PT = Pt.v, pw = vp(t), par = PT - pw, cp = C('pressure'), ct = C('temperature');
-    const water = alpha(PAL.muted, 0.22), LEVEL = 380;
+    const water = alpha(PAL.muted, 0.22), LEVEL = 380, rf = F.ref('reaction-flask'), cf = F.ref('collection-flask');
     /* the generating flask */
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.fillStyle = water;
+    ctx.save(); ctx.strokeStyle = rf; ctx.lineWidth = 3; ctx.fillStyle = water;
     ctx.beginPath(); ctx.moveTo(115, 200); ctx.lineTo(115, 300); ctx.lineTo(50, 520); ctx.lineTo(230, 520); ctx.lineTo(165, 300); ctx.lineTo(165, 200); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(95, 420); ctx.lineTo(200, 420); ctx.lineTo(230, 520); ctx.lineTo(50, 520); ctx.closePath(); ctx.fill();
     ctx.fillStyle = PAL.muted; ctx.fillRect(108, 186, 64, 22);
     /* the delivery tube: up from the stopper, across, down into the pan and up into the collection flask */
     ctx.strokeStyle = PAL.ink; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath(); ctx.moveTo(140, 190); ctx.lineTo(140, 150); ctx.lineTo(330, 150); ctx.lineTo(330, 520); ctx.lineTo(500, 520); ctx.lineTo(500, 400); ctx.stroke();
     /* the pan of water */
-    ctx.lineWidth = 3; ctx.fillStyle = water; ctx.fillRect(280, LEVEL, 330, 170); ctx.beginPath(); ctx.moveTo(280, 330); ctx.lineTo(280, 550); ctx.lineTo(610, 550); ctx.lineTo(610, 330); ctx.stroke();
+    ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.fillStyle = water; ctx.fillRect(280, LEVEL, 330, 170); ctx.beginPath(); ctx.moveTo(280, 330); ctx.lineTo(280, 550); ctx.lineTo(610, 550); ctx.lineTo(610, 330); ctx.stroke();
     /* the inverted collection flask, its mouth under water, the level inside the same as outside */
     ctx.fillStyle = water; ctx.fillRect(425, LEVEL, 150, 60);
     ctx.fillStyle = PAL.panel; ctx.globalAlpha = 0.6; ctx.fillRect(427, 172, 146, LEVEL - 172); ctx.globalAlpha = 1;
-    ctx.beginPath(); ctx.moveTo(425, 440); ctx.lineTo(425, 200); ctx.quadraticCurveTo(425, 170, 455, 170); ctx.lineTo(545, 170); ctx.quadraticCurveTo(575, 170, 575, 200); ctx.lineTo(575, 440); ctx.stroke();
+    ctx.strokeStyle = cf; ctx.beginPath(); ctx.moveTo(425, 440); ctx.lineTo(425, 200); ctx.quadraticCurveTo(425, 170, 455, 170); ctx.lineTo(545, 170); ctx.quadraticCurveTo(575, 170, 575, 200); ctx.lineTo(575, 440); ctx.stroke();
     ctx.restore();
     line(ctx, 262, LEVEL, 628, LEVEL, alpha(PAL.ink, 0.4), 2, [10, 10]);
     for (const [bx, by] of [[130, 470], [150, 445], [112, 492], [500, 450], [496, 420]]) dot(ctx, bx, by, PAL.ink, false, 5);
@@ -239,8 +240,8 @@ function flock(v, grp, g, k) {
       const reach = molecule(ctx, f, x, y, 0.95, (i * 1.3) % TAU);
       hits.push({ x, y, r: reach + 3, name: f === 'Ar' ? 'an argon atom, Ar' : 'a water molecule, H₂O, in the vapor' });
     });
-    text(ctx, 'reaction producing gas', 140, 548, PAL.ink, { size: 18, align: 'center' });
-    text(ctx, 'collection flask', 500, 150, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, 'reaction producing gas', 140, 548, rf, { size: 18, align: 'center' });
+    text(ctx, 'collection flask', 500, 150, cf, { size: 18, align: 'center' });
     text(ctx, 'levels equal', 416, LEVEL - 14, PAL.muted, { size: 16, align: 'right' });
     /* the vapor pressure of water against temperature */
     const box = { l: 800, r: 1320, t: 130, b: 500 };
@@ -251,7 +252,7 @@ function flock(v, grp, g, k) {
     dot(ctx, X(100), Y(760), PAL.muted, true, 6); hits.push({ x: X(100), y: Y(760), r: 12, name: 'the vapor pressure of water at 100 °C, 760 torr' });
     line(ctx, X(t), box.b, X(t), Y(pw), alpha(PAL.ink, 0.4), 2, [4, 8]);
     pinned(ctx, box, X, Y, t, pw, cp);
-    vbracket(ctx, X(t) + 14, Y(PT), Y(pw), PAL.ink, 'argon, ' + fmt(par, 0) + ' torr', 1, { size: 18 });
+    vbracket(ctx, X(t) + 14, Y(PT), Y(pw), cp, 'argon, ' + fmt(par, 0) + ' torr', 1, { size: 18 });
     topline(ctx, 'At ' + t + ' °C the trapped gas is ' + fmt(par, 0) + ' torr of argon and ' + fmt(pw, 1) + ' torr of water vapor, ' + PT + ' torr in all.');
     readout(d.readout, `\\kP_{\\text{Ar}} = \\kP_{\\text{T}} - \\kP_{\\text{H}_2\\text{O}} = ${hue('pressure', PT + '\\ \\text{torr}')} - ${hue('pressure', fmt(pw, 1) + '\\ \\text{torr}')} = ${hue('pressure', fmt(par, 0) + '\\ \\text{torr}')}`,
       'The vapor pressure depends on the temperature of the water alone, so the warmer the water, the larger the share of the trapped gas that is water vapor and the less of the total that belongs to the argon.');

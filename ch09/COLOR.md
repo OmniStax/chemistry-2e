@@ -1,194 +1,118 @@
 # Chapter 9 colour plan
 
-Prepared 2026-09-12, and applied with `config.md`. It refines the book's
-`COLOR.md` for the quantities this chapter actually draws; root rule 7 and root
-rule 22 hold, and nothing here invents a hue. The app dresses the book's
-fourteen declared types from its own palette in declaration order. Every particle
-of gas renders in the element colours of the gas it is, which is the
-book's own convention and not a colouring.
-
-9.2 was built on 2026-09-12 and everything this file says of it stands. The
-rest of the chapter was planned and built on 2026-09-28, and the section table
-below and the section "The other sections" say what each of them colours as
-built.
+Prepared 2026-09-12 and brought in line with root `RULES.md` item 7 on
+2026-10-04. It refines the book's `COLOR.md` for this chapter; item 7 and root
+item 22 hold, and nothing here invents a hue. Colour reaches the chapter in
+item 7's four ways, the earlier winning: fact, convention, referent, category.
+Every particle of gas renders in the element colours of the gas it is, which
+is the book's own convention and outranks a referent: a referent of this
+chapter is a vessel, a sample, a curve or a body the text names, never the
+molecules inside it.
 
 ## What the chapter colours
 
-Four of the book's fourteen types, and the book's own `COLOR.md` predicted
-exactly this page: "a Chapter 9 page colours amount, volume, pressure and
-temperature, all four, and the reader sees the whole gas law in colour."
+A category is coloured on every page. A word wears one when it names a
+particular one the reader can point at (a value in an example, a reading in a
+figure, a slider's quantity); the kind in general, a law, a unit and a
+definition stay ink. The figures draw these:
 
-| Type | Where it is coloured | What wears it |
-|---|---|---|
-| `pressure` | 9.2 | the gauge face and its needle, the pressure axis of the P–T and P–V graphs, the P of every readout and of PV = nRT, the 1/P axis of the linearized graph |
-| `volume` | 9.2 | the body of the gas in the cylinder and the syringe, the piston's travel, the volume axis of the V–T and P–V graphs, the balloon outlines of Figure 9.18, the V of every readout |
-| `temperature` | 9.2 | the temperature slider, the bath and the hot plate's heat, the temperature axis of the P–T and V–T graphs, the T of every readout |
-| `amount` | 9.2 | the amount slider, the count of moles in the readout, the n of PV = nRT |
-
-`time` is not coloured. Two figures of the section move, but neither gives a time a
-reading of its own: the gas box's particles travel so that the gauge has
-something to read, and the breathing figure's cycle is a breath rather than a
-measured interval. A clock that is not read is not a quantity the page draws.
-`concentration`, `mass`, `energy`, `entropy`, `rate`, `wavelength`, `frequency`,
-`potential` and `charge` are untouched; the section neither draws nor states
-them. The masses the book writes in Example 9.9 and in several exercises (655 g
-of methane, 77.8 g of nitrogen) are converted to moles in the prose and never
-drawn, so `mass` stays unbound and those numbers are ink.
-
-Section by section:
-
-| Section | Colours |
+| Category | Where a figure draws it |
 |---|---|
-| `intro` | nothing; one photograph |
-| 9.1 | `pressure` |
-| 9.2 | `pressure`, `volume`, `temperature`, `amount` |
-| 9.3 | `pressure`, `volume`, `temperature`, `mass` |
-| 9.4 | `mass` |
-| 9.5 | `temperature`, `energy`, `mass`, `pressure`, `volume`, `amount` |
-| 9.6 | `pressure`, `volume`, `temperature`, `amount` |
+| `pressure` | every gauge, the pressure axes, the partial-pressure bars, every P of a readout |
+| `volume` | the body of gas in a cylinder, syringe, sphere or balloon, the volume axes, the lungs' fill |
+| `temperature` | the temperature sliders and axes, every T of a readout |
+| `amount` | the amount sliders and the n of a readout; never the discs |
+| `mass` | the molar-mass axis of the density graph, the masses on Figure 9.18's balloons, ℳ in Graham's law and u_rms |
+| `density` | the density line of the gas-density Sim, ρ in p = hρg (`\krho`) |
+| `length` | the column height h of the barometer and the manometers (`\khcol`) |
+| `force`, `area` | the force arrow and the area bracket of Figure 9.2 (`\kforce`, `\karea`) |
+| `acceleration` | g in p = hρg (`\kgrav`) |
+| `velocity` | the speed axes, v_p and u_rms on the distributions (`\ku`, `\kurms`) |
+| `energy` | KE and KE_avg in the readouts of 9.5 |
 
-## The other sections
+`time` and `concentration` reach the chapter only in words (the 243 s of
+Example 9.21, the CO₂ concentration of the greenhouse note); no figure reads a
+clock, since the moving figures run so that a gauge or a count has something
+to read. The density symbol d of 9.3 has no macro yet: its symbols row belongs
+to Chapter 1, and until that chapter gives it one the d of 9.3's equations is
+ink while the density line and the words are coloured.
 
-- **9.1** colours `pressure` alone: the gauge and the P of P = F/A, the hydrostatic
-  pressure p of p = hρg (`\kphyd`), the atmospheric column and the gas in a
-  manometer read as a pressure. The manometer's two pressures are variants
-  of `pressure` with rows of their own, P_gas (`\kPgas`) and P_atm
-  (`\kPatm`): same hue. Force, area, the height h of a liquid column,
-  the density ρ and g are ink: a column height is a length, even when it stands
-  for a pressure, and the readout converts it. Mercury and water in a barometer
-  or a manometer are drawn as the substances they are (mercury's metal gray,
-  water at a fixed ink opacity, as 9.2's bath), never in the pressure hue.
-- **9.3** adds `mass` for the molar mass ℳ (`\kMM`) and a sample's mass m, and
-  keeps three of the four gas-law hues; `amount` is not coloured as built,
-  since no figure draws a count of moles, and n, n_A and n_Total render in ink. Density d and the mole fraction X are ink. The
-  partial pressures P_A, P_B, P_C and P_Total are variants of `pressure`
-  (`\kPA`, `\kPB`, `\kPC`, `\kPtot`): same hue. Where several gases share one
-  canvas (Dalton's cylinders, a mixture's bar), each gas is told apart by its
-  element colours through `F.el`, and a bar or a line for each gas's partial
-  pressure takes `F.cat(i)` in the order the gases are listed, with the pressure
-  axis in the pressure hue; the book's blue, purple and yellow circles of
-  Figure 9.20 become named gases. The vapor-pressure curve of Figure 9.22 is a
-  pressure against a temperature, both axes in their hues.
-- **9.4** colours `mass` for the molar masses ℳ_A and ℳ_B (`\kMMA`, `\kMMB`).
-  Time is not read by any figure and is not coloured. A rate of effusion is ink: it is not the book's `rate` type, which is the
-  rate of a reaction, and no rate symbol is staged. Every molecule is `F.el`
-  (hydrogen light with an ink outline, oxygen red, helium and argon from the
-  palette, the two uranium hexafluorides told apart by a categorical ring,
-  since they are one element pair and the isotope is the difference).
-- **9.5** colours `temperature` (the slider, the T of 3/2 RT), `energy`
-  (KE, KE_avg, `\kKE`, `\kKEavg`) and `mass` (ℳ in u_rms = √(3RT/ℳ); the book
-  writes M, and the page writes `\kMM`, never `\kM`, which is molarity). Speed
-  u and u_rms are ink: the book declares no speed type and a type is not
-  added for one section. The speed distributions at several temperatures or
-  for several gases are instances told apart by `F.cat(i)` with a legend, the
-  axis ink. Figure 9.31 also colours `pressure`, `volume` and `amount`: its
-  readout states the two states of each law in their type hues (`\kPone`,
-  `\kPtwo`, `\kVone`, `\kVtwo`, `\knone`, `\kntwo`) and the body of gas in
-  each cylinder is the volume hue.
-- **9.6** colours the four gas-law hues. Z, a and b are untyped and ink; the
-  molar volume V_m is a variant of `volume` (`\kVm`). On the Z graph each gas's
-  curve takes `F.cat(i)`, the ideal line is ink and dashed. The book's image
-  of the van der Waals equation colours P blue and V red; the redrawn equation
-  uses the pressure and volume hues instead, which is what the book's colours
-  were for.
+## Referents, section by section
 
-## How the four are told apart
+- **9.1** The mercury barometer and the water barometer of Figure 9.4: the tube
+  walls and the name under each. The mercury is `F.el('Hg')` and the water a
+  fixed ink opacity, as the substances they are; the column height is
+  `length`.
+- **9.2** The sealed sphere of Figure 9.10 (its glass and label), the syringe
+  of Figure 9.13 (its barrel; the plunger stays ink), and the lungs and the
+  diaphragm of Figure 9.15 (the lungs' outline over their volume fill, the
+  diaphragm's stroke and label). The three balloons of Figure 9.18 are drawn
+  alike in the volume hue, since the figure's argument is that the gas does
+  not matter; the gas name is ink and the mass beside it is `mass`.
+- **9.3** The cylinders of hydrogen, helium and neon in Figure 9.20: each
+  cylinder's glass, its name, its row and its share of the partial-pressure
+  bar. The reaction flask and the collection flask of Figure 9.21 (the book's
+  "bottle" is the collection flask).
+- **9.4** The left and right bulbs of Figure 9.27, and the lighter and heavier
+  gas of the pair chosen (their count bars). ²³⁵UF₆ and ²³⁸UF₆ in the diffuser
+  are referents: the uranium atom is `F.el('U')` and the ring round it the
+  referent hue, since the isotope is the one difference.
+- **9.5** The baseline and the changed cylinder of Figure 9.31; the xenon,
+  argon, neon and helium curves of the distribution figure; the count of
+  speeds in the gas-box Sim. The four temperature curves of one gas are not
+  named one by one in the text and are told apart by `F.cat(i)`.
+- **9.6** The five Z curves of Figure 9.35 (hydrogen, nitrogen, oxygen,
+  methane, carbon dioxide), with the ideal line ink and dashed; the ideal and
+  the real gas of Figure 9.36 (their boxes, labels and bar names).
 
-Four hues on one canvas is the most this book asks of a page, and the whole
-point of the section is that the reader should see the four quantities as four
-distinct things that one equation ties together. They are told apart by what
-each colour is on, not by decoration:
+No symbol of the chapter is split: P_A, P_B, ℳ_A and ℳ_B name generic gases
+A and B in the text, and P₁, P₂ and their companions name states, not things.
 
-- **Pressure is the gauge.** The dial face, the needle, the tick marks it swings
-  across, the pressure axis of a graph and the P of a readout are the pressure
-  hue, and nothing else on the canvas is.
-- **Volume is the space the gas fills.** The shaded body of gas between the
-  piston and the closed end, the piston's travel, the syringe barrel's fill, a
-  balloon's outline, the volume axis and the V of a readout are the volume hue.
-  The walls of the vessel are ink: a wall is a boundary, not a volume.
-- **Temperature is the heat under the vessel.** The slider, the hot plate's
-  glow, the bath, the temperature axis and the T of a readout are the
-  temperature hue.
-- **Amount is the count of moles.** The slider, the number of moles in the
-  readout and the n of the equation are the amount hue. The particles drawn
-  inside the box are **not** in the amount hue: a particle is a thing, not a
-  quantity, and colouring the discs in the amount hue would say that a drawn
-  particle is a mole. Nor are they ink. The gas box draws the gas the reader
-  picks, from a named control in ink over He, N₂, O₂, Ar and CO₂, and every
-  particle is that gas drawn in its element's colours through `F.el`: a
-  single disc for helium and argon, two blue discs for nitrogen, two red for
-  oxygen, a black carbon between two red oxygens for carbon dioxide. The
-  reader ties the discs to n by watching the count change with the slider,
-  which is what the figure is for, and ties them to a substance by their
-  colour. The sealed sphere of Figure 9.10 draws its particles the same way,
-  as the nitrogen and oxygen of the air the book fills it with.
-- **The equation colours all four.** PV = nRT is written with each symbol in the
-  hue of its type and R and the equals sign in ink, and the live numbers each in
-  the hue of the quantity they belong to, so the reader's eye goes from the
-  gauge to the P, from the gas body to the V, from the slider to the T and from
-  the count to the n without a legend.
+## How the four gas-law quantities are told apart
+
+Most canvases of 9.2 draw all four of pressure, volume, temperature and
+amount. They are told apart by what each colour is on:
+
+- **Pressure is the gauge.** The dial face, the needle, its ticks, the
+  pressure axis and the P of a readout.
+- **Volume is the space the gas fills.** The shaded body of gas, a balloon's
+  outline, the volume axis and the V of a readout. A vessel's walls are ink,
+  or the vessel's referent hue where the text names it.
+- **Temperature is the heat under the vessel.** The slider, the temperature
+  axis and the T of a readout; the bath and the plate are apparatus, never
+  tinted by the temperature.
+- **Amount is the count of moles.** The slider, the moles in the readout and
+  the n of the equation. The particles are **not** in the amount hue: a
+  particle is a thing, not a quantity. The gas box draws the gas the reader
+  picks (He, N₂, O₂, Ar, CO₂) in its element colours, and the sealed sphere
+  draws the nitrogen and oxygen of air.
+- **The equation colours all four.** PV = nRT with each symbol and each live
+  number in its hue, R and the equals sign in ink.
 
 ## Initial and final states
 
-Where a graph of the section lays more than one gas on one pair of axes, as
-the tables the book prints beside Figures 9.11 and 9.12 invite and as a Sim
-that compares the gases of the box would, the lines are told apart by the
-categorical palette, `F.cat(i)` in the order the gases are listed, and never
-by the hue of `pressure`, `volume`, `temperature` or
-`amount`; the axes keep their type hues, and the legend names each gas in
-ink beside its colour. Nothing in 9.2 draws such a graph yet, and the
-statement is here so that the one that does draws it this way.
+Every law of 9.2 is stated twice, as a proportionality and as an equality
+between two states, P₁/T₁ = P₂/T₂ and its companions. The two states are
+variants of one category: on a canvas that draws both, the initial state is
+hollow or dashed and the final filled, both in the hue of their category, and
+`\kPone`, `\kPtwo`, `\kVone`, `\kVtwo`, `\kTone`, `\kTtwo`, `\knone` and
+`\kntwo` wear the hue of the quantity they are a state of. Where a graph lays
+several gases on one pair of axes, each gas's line is a referent of that
+figure and its axes keep their category hues.
 
-Every law of the section is stated twice: once as a proportionality and once as
-an equality between two states, P₁/T₁ = P₂/T₂ and its three companions. The two
-states are variants of one type, not two types, and the book's own `COLOR.md`
-says how a variant is marked: same hue, told apart by decoration.
-
-So on a canvas that draws both states — the syringe at its first volume and at
-its second, the sphere before and after it is warmed — the initial state is
-drawn **hollow or dashed** and the final state **filled**, both in the hue of
-their type, and the subscripts 1 and 2 are set in ink beside the symbol. The
-eight symbols `P_1`, `P_2`, `V_1`, `V_2`, `T_1`, `T_2`, `n_1` and `n_2` have
-rows in `book.json` carrying the type of the quantity they are a state of, and
-the macros `\kPone`, `\kPtwo`, `\kVone`, `\kVtwo`, `\kTone`, `\kTtwo`, `\knone`
-and `\kntwo`, so both sides of every two-state equation wear one hue and the
-reader sees at a glance that an equation relates one quantity to itself.
+The dashed extrapolation to absolute zero on Figures 9.11 and 9.12 is in the
+hue of the quantity its axis carries; the marker at absolute zero is ink, a
+named point being a label rather than a reading. The book's data points and
+the fitted line take the hue of the vertical axis.
 
 ## What stays in ink
 
-The ideal gas constant R, which is a constant of proportionality and not a
-quantity the reader varies; the proportionality constant k the book writes in
-each of the four laws, for the same reason; a molar mass and every mass in a
-prompt; a count of particles, though never the discs that draw them; a unit name, whether
-kPa, torr, psi, atm, bar or L; the subscripts 1 and 2; the names of the four
-laws and of the chemists they are named for; the walls of a vessel, a piston
-rod, a syringe plunger, a balloon's string; and every axis rule, tick, bracket,
-arrow and label that is not a quantity of a coloured type.
-
-Two lines on the graphs deserve naming. The **dashed extrapolation to absolute
-zero** on Figures 9.11 and 9.12 is drawn in the hue of the quantity its axis
-carries, since it is the same line continued beyond the data; and the **marker
-at absolute zero itself** is drawn in ink, since a named point on an axis is a
-label rather than a reading. The book's own data points are drawn in the hue of
-the quantity on the vertical axis, and the fitted line with them.
-
-The element palette reaches every figure of this section that draws a
-particle, since root rule 7 gives every particle with an identity its element
-colour and gives a generic one an identity so that it can have one. Figure
-9.18's three balloons hold whichever gases the reader chooses, and the
-figure's whole argument is that the gas does not matter, so the three balloons
-themselves are drawn alike in the volume hue, named in ink, and the one thing
-that differs between them, the mass on the label, is ink as well. The
-molecules drawn inside them are each in their element's colours through
-`F.el(symbol)`, hydrogen as a light fill with an ink outline, so that a
-balloon of helium and a balloon of ammonia hold visibly different molecules
-in visibly the same volume, which is the book's own drawing convention and
-not a signal about any quantity. The gas box and the sealed sphere draw their
-particles the same way, as said above, and no figure of the section draws a
-grey particle: each figure is either coloured throughout, its quantities in
-their type hues and its particles in their element colours, or it is ink
-throughout, and the test of rule 7 is met on every canvas.
-
-Nothing in this section is coerced into a neighbouring type to save a colour. A
-pressure is not a force, an amount is not a mass, a volume is not a length, and
-the two states of one quantity are one type.
+The gas constant R and the proportionality constant k of each law; the
+compressibility factor Z and the van der Waals a (b is a molar volume and
+wears `volume`); a mole fraction; a rate of effusion, which is not the book's
+`rate`; a count of particles, though never the discs that draw them; a unit
+name; the names of the laws and of their chemists; a piston rod, a plunger, a
+balloon's string, a vessel no text names; and every rule, tick, bracket, arrow
+and label that is not a quantity of a category or a referent. Nothing is
+coerced into a neighbouring category to save a colour: a pressure is not a
+force, an amount is not a mass, a volume is not a length.

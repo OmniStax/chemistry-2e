@@ -808,11 +808,13 @@
     },
     {
       "sym": "F_force",
-      "latex": "F"
+      "latex": "F",
+      "macro": "\\kforce"
     },
     {
       "sym": "A_area",
-      "latex": "A"
+      "latex": "A",
+      "macro": "\\karea"
     },
     {
       "sym": "p_hydro",
@@ -821,15 +823,18 @@
     },
     {
       "sym": "h_col",
-      "latex": "h"
+      "latex": "h",
+      "macro": "\\khcol"
     },
     {
       "sym": "ρ",
-      "latex": "\\rho"
+      "latex": "\\rho",
+      "macro": "\\krho"
     },
     {
       "sym": "g_grav",
-      "latex": "g"
+      "latex": "g",
+      "macro": "\\kgrav"
     },
     {
       "sym": "P_total",
@@ -887,11 +892,13 @@
     },
     {
       "sym": "u",
-      "latex": "u"
+      "latex": "u",
+      "macro": "\\ku"
     },
     {
       "sym": "u_rms",
-      "latex": "u_{\\text{rms}}"
+      "latex": "u_{\\text{rms}}",
+      "macro": "\\kurms"
     },
     {
       "sym": "Z_comp",
@@ -908,7 +915,8 @@
     },
     {
       "sym": "b_vdw",
-      "latex": "b"
+      "latex": "b",
+      "macro": "\\kbvdw"
     },
     {
       "sym": "P_gas",
@@ -7777,696 +7785,6 @@
       "statement": "An emulsifying agent is an amphiphilic substance used to stabilize the particles of an emulsion."
     },
     {
-      "id": "gas-pressure",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Gas pressure",
-      "symbol": "P",
-      "terms": [
-        "pressure"
-      ],
-      "type": "pressure",
-      "statement": "Pressure is the force exerted per unit area, P = F/A. A gas exerts pressure on the walls of its container because its molecules collide with those walls, so a small force on a small area can give a larger pressure than a large force spread over a large one.",
-      "forms": [
-        {
-          "id": "eq-pressure",
-          "latex": "P=\\frac{F}{A}",
-          "ktex": "\\kP=\\frac{F}{A}",
-          "condition": "pressure as the force exerted on a given area",
-          "anchor": "9.1-pressure"
-        }
-      ]
-    },
-    {
-      "id": "pressure-unit-conversion",
-      "kind": "skill",
-      "section": "9.1",
-      "name": "Converting among units of pressure",
-      "statement": "Pressures are reported in pascals, kilopascals, bar, pounds per square inch, atmospheres, torr and millimeters of mercury, depending on who measured them and why. Converting among these units with the relations of Table 9.1 is the first step of nearly every gas calculation, since the gas constant has to be used in units that match the pressure."
-    },
-    {
-      "id": "atmospheric-pressure-and-barometer",
-      "kind": "idea",
-      "section": "9.1",
-      "name": "Atmospheric pressure and the barometer",
-      "statement": "The weight of the column of air above an object presses on it, and at sea level this atmospheric pressure is about 1 atm. A barometer measures it by balancing it against a column of liquid in an inverted tube, and because mercury is about 13.6 times denser than water, a mercury column of about 760 mm does what a water column over 10 m tall would do."
-    },
-    {
-      "id": "hydrostatic-pressure",
-      "kind": "result",
-      "section": "9.1",
-      "name": "Hydrostatic pressure",
-      "symbol": "p_hydro",
-      "terms": [
-        "hydrostatic pressure"
-      ],
-      "type": "pressure",
-      "statement": "The pressure exerted by a column of fluid because of gravity is the product of its height, its density and the acceleration due to gravity. It is why the height of a liquid column can stand for a pressure at all, and it lets us check that 760 mm of mercury does correspond to 101,325 Pa.",
-      "forms": [
-        {
-          "id": "eq-hydrostatic",
-          "latex": "p=h\\rho g",
-          "ktex": "\\kphyd=h\\rho g",
-          "condition": "a column of fluid of height h and density ρ under gravity",
-          "anchor": "9.1-barometer"
-        }
-      ]
-    },
-    {
-      "id": "manometer-pressure",
-      "kind": "skill",
-      "section": "9.1",
-      "name": "Reading a manometer",
-      "statement": "A manometer is a U-shaped tube of liquid connected to a gas. In a closed-end manometer the difference in liquid levels is the pressure of the gas itself; in an open-end manometer it is the difference between the gas pressure and the atmospheric pressure, added when the level is higher on the open side and subtracted when it is higher on the gas side."
-    },
-    {
-      "id": "force",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Force",
-      "symbol": "F_force",
-      "type": "force",
-      "statement": "A force is a push or a pull on an object. A gas pushes on the walls of its container with a force that comes from the collisions of its molecules with those walls."
-    },
-    {
-      "id": "area",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Area",
-      "symbol": "A_area",
-      "type": "area",
-      "statement": "The area of a surface is its extent, measured in square units such as square meters. A force spread over a larger area gives a smaller pressure."
-    },
-    {
-      "id": "acceleration-due-to-gravity",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Acceleration due to gravity",
-      "symbol": "g_grav",
-      "type": "acceleration",
-      "statement": "The acceleration due to gravity is the rate at which the speed of a falling object increases near the surface of the earth, about 9.8 m/s². It turns the mass of a column of fluid into the weight that presses on what lies beneath it."
-    },
-    {
-      "id": "pascal",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Pascal",
-      "terms": [
-        "pascal (Pa)"
-      ],
-      "statement": "The pascal is the SI unit of pressure, a force of one newton on an area of one square meter: 1 Pa = 1 N/m²."
-    },
-    {
-      "id": "bar-unit",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Bar",
-      "terms": [
-        "bar"
-      ],
-      "statement": "The bar is a unit of pressure equal to 100,000 Pa, close to the pressure of the atmosphere at sea level."
-    },
-    {
-      "id": "atmosphere-unit",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Atmosphere",
-      "terms": [
-        "atmosphere (atm)"
-      ],
-      "statement": "The standard atmosphere is a unit of pressure equal to 101,325 Pa, the average pressure of the atmosphere at sea level."
-    },
-    {
-      "id": "torr",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Torr",
-      "terms": [
-        "torr"
-      ],
-      "statement": "The torr is a unit of pressure equal to 1/760 atm, almost exactly the pressure that supports a column of mercury 1 millimeter high."
-    },
-    {
-      "id": "pounds-per-square-inch",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Pounds per square inch",
-      "terms": [
-        "pounds per square inch (psi)"
-      ],
-      "statement": "Pounds per square inch is a unit of pressure common in the United States; 1 atm is 14.7 psi."
-    },
-    {
-      "id": "barometer",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Barometer",
-      "terms": [
-        "barometer"
-      ],
-      "statement": "A barometer is a device used to measure atmospheric pressure, usually by the height of the column of liquid the atmosphere supports in an inverted tube."
-    },
-    {
-      "id": "manometer",
-      "kind": "definition",
-      "section": "9.1",
-      "name": "Manometer",
-      "terms": [
-        "manometer"
-      ],
-      "statement": "A manometer is a device used to measure the pressure of a gas trapped in a container: a U-shaped tube of liquid whose difference in levels gives the pressure."
-    },
-    {
-      "id": "amontons-law",
-      "kind": "axiom",
-      "section": "9.2",
-      "name": "Amontons’s law",
-      "terms": [
-        "Amontons’s law"
-      ],
-      "statement": "The pressure of a given amount of gas is directly proportional to its temperature on the kelvin scale when the volume is held constant. This is the first of the four relationships the section establishes, and it is the one that explains why a sealed can warns against heat: the gas inside cannot expand, so everything the heating does shows up on the gauge.",
-      "forms": [
-        {
-          "id": "eq-amontons",
-          "latex": "\\frac{P_1}{T_1}=\\frac{P_2}{T_2}",
-          "ktex": "\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}",
-          "condition": "a fixed amount of gas held at constant volume, with both temperatures on the kelvin scale",
-          "anchor": "9.2-amontons"
-        }
-      ]
-    },
-    {
-      "id": "charles-law",
-      "kind": "axiom",
-      "section": "9.2",
-      "name": "Charles’s law",
-      "terms": [
-        "Charles’s law"
-      ],
-      "statement": "The volume of a given amount of gas is directly proportional to its temperature on the kelvin scale when the pressure is held constant. It is the law a balloon in a refrigerator demonstrates, and it is the one that makes a gas thermometer possible, since a volume read at a known pressure is a temperature.",
-      "forms": [
-        {
-          "id": "eq-charles",
-          "latex": "\\frac{V_1}{T_1}=\\frac{V_2}{T_2}",
-          "ktex": "\\frac{\\kVone}{\\kTone}=\\frac{\\kVtwo}{\\kTtwo}",
-          "condition": "a fixed amount of gas held at constant pressure, with both temperatures on the kelvin scale",
-          "anchor": "9.2-charles"
-        }
-      ]
-    },
-    {
-      "id": "boyles-law",
-      "kind": "axiom",
-      "section": "9.2",
-      "name": "Boyle’s law",
-      "terms": [
-        "Boyle’s law"
-      ],
-      "statement": "The volume of a given amount of gas held at constant temperature is inversely proportional to its pressure. Unlike the laws of Amontons and Charles, this is not a direct proportionality, and the graph of volume against pressure is a curve. Plotting the inverse of the pressure against the volume turns the same data into a straight line, which is easier to read.",
-      "forms": [
-        {
-          "id": "eq-boyle",
-          "latex": "P_1V_1=P_2V_2",
-          "ktex": "\\kPone\\kVone=\\kPtwo\\kVtwo",
-          "condition": "a fixed amount of gas held at constant temperature",
-          "anchor": "9.2-boyle"
-        }
-      ]
-    },
-    {
-      "id": "avogadro-law",
-      "kind": "axiom",
-      "section": "9.2",
-      "name": "Avogadro’s law",
-      "terms": [
-        "Avogadro’s law"
-      ],
-      "statement": "For a confined gas at constant pressure and temperature, the volume and the number of moles are directly proportional, which is another way of saying that equal volumes of all gases under the same conditions contain the same number of molecules. It is the law that makes the identity of the gas irrelevant, and it is what lets a volume stand in for a count in every gas calculation that follows.",
-      "forms": [
-        {
-          "id": "eq-avogadro",
-          "latex": "\\frac{V_1}{n_1}=\\frac{V_2}{n_2}",
-          "ktex": "\\frac{\\kVone}{\\knone}=\\frac{\\kVtwo}{\\kntwo}",
-          "condition": "a confined gas held at constant pressure and constant temperature",
-          "anchor": "9.2-avogadro"
-        }
-      ]
-    },
-    {
-      "id": "absolute-zero",
-      "kind": "idea",
-      "section": "9.2",
-      "name": "Absolute zero",
-      "terms": [
-        "absolute zero"
-      ],
-      "statement": "Both of the section’s direct proportionalities hold only when the temperature is read on the kelvin scale, and the reason is visible on their graphs: extrapolated to lower temperatures, the pressure line and the volume line both reach zero at –273 °C. That temperature is zero on the kelvin scale and the lowest there is, and it is why a gas law calculation in Celsius gives the wrong answer."
-    },
-    {
-      "id": "ideal-gas",
-      "kind": "idea",
-      "section": "9.2",
-      "name": "Ideal gas",
-      "terms": [
-        "ideal gas"
-      ],
-      "statement": "An ideal gas is a hypothetical construct whose properties are described exactly by the gas laws; no real gas is ideal. The ideal gas law can therefore be trusted only where real gases come close to ideal behavior, at relatively low pressures and high temperatures."
-    },
-    {
-      "id": "ideal-gas-law",
-      "kind": "result",
-      "section": "9.2",
-      "name": "Ideal gas law",
-      "terms": [
-        "ideal gas law"
-      ],
-      "statement": "Combining the four separate laws yields one equation relating the pressure, volume, amount and temperature of a gas, with the gas constant R carrying the units. It contains five terms, so specifying any four of them gives the fifth, and this single relation replaces the four laws for every calculation the rest of the chapter makes.",
-      "forms": [
-        {
-          "id": "eq-ideal-gas",
-          "latex": "PV=nRT",
-          "ktex": "\\kP\\kV=\\kn R\\kT",
-          "condition": "a gas behaving ideally, which is a good approximation at relatively low pressures and high temperatures",
-          "anchor": "9.2-ideal-gas-law"
-        },
-        {
-          "id": "eq-p-mrt",
-          "latex": "P=MRT",
-          "ktex": "\\kP=\\kM R\\kT",
-          "condition": "an ideal gas of molar concentration M",
-          "section": "13.2"
-        }
-      ]
-    },
-    {
-      "id": "combined-gas-law",
-      "kind": "result",
-      "section": "9.2",
-      "name": "Combined gas law",
-      "statement": "When the amount of gas is the same under two sets of conditions, PV/T equals the same product nR in both, so we can set the pressure, volume and temperature of the first condition equal to those of the second. Every two-state gas problem takes this form. Amontons’s, Charles’s and Boyle’s laws are the cases in which one of the three quantities does not change.",
-      "forms": [
-        {
-          "id": "eq-combined-gas",
-          "latex": "\\frac{P_1V_1}{T_1}=\\frac{P_2V_2}{T_2}",
-          "ktex": "\\frac{\\kPone\\kVone}{\\kTone}=\\frac{\\kPtwo\\kVtwo}{\\kTtwo}",
-          "condition": "a fixed amount of an ideal gas under two different sets of conditions",
-          "anchor": "9.2-combined-gas-law"
-        }
-      ]
-    },
-    {
-      "id": "standard-temperature-and-pressure",
-      "kind": "definition",
-      "section": "9.2",
-      "name": "Standard temperature and pressure",
-      "terms": [
-        "standard conditions of temperature and pressure (STP)"
-      ],
-      "statement": "Standard conditions of temperature and pressure, STP, are 273.15 K (0 °C) and 1 atm (101.325 kPa), the conditions chemists agree to report the volume of a gas against. At STP one mole of any ideal gas occupies about 22.4 L."
-    },
-    {
-      "id": "ideal-gas-constant",
-      "kind": "definition",
-      "section": "9.2",
-      "name": "Ideal gas constant",
-      "symbol": "R",
-      "terms": [
-        "ideal gas constant (R)"
-      ],
-      "statement": "The ideal gas constant R is the constant of proportionality in the ideal gas law, the same for every gas. Its value depends on the units of pressure and volume: 0.08206 L atm mol⁻¹ K⁻¹ or 8.314 L kPa mol⁻¹ K⁻¹."
-    },
-    {
-      "id": "molar-volume",
-      "kind": "definition",
-      "section": "9.2",
-      "name": "Molar volume",
-      "symbol": "V_m",
-      "type": "volume",
-      "statement": "The molar volume of a gas is the volume occupied by 1 mole of it at a given temperature and pressure."
-    },
-    {
-      "id": "standard-molar-volume",
-      "kind": "definition",
-      "section": "9.2",
-      "name": "Standard molar volume",
-      "terms": [
-        "standard molar volume"
-      ],
-      "statement": "The standard molar volume is the volume of 1 mole of gas at STP, about 22.4 L for any gas behaving ideally."
-    },
-    {
-      "id": "gas-density",
-      "kind": "result",
-      "section": "9.3",
-      "name": "Gas density",
-      "statement": "Substituting the ideal gas law into the definition of density shows that the density of a gas is its molar mass times its pressure divided by RT. Unlike the ideal gas law itself, this relation depends on the identity of the gas, so a density measured at a known temperature and pressure can identify a gas, and a heavier gas is denser than a lighter one under the same conditions.",
-      "forms": [
-        {
-          "id": "eq-gas-density",
-          "latex": "d=\\frac{\\mathcal{M}P}{RT}",
-          "ktex": "d=\\frac{\\kMM\\kP}{R\\kT}",
-          "condition": "an ideal gas of known identity",
-          "anchor": "9.3-density"
-        }
-      ]
-    },
-    {
-      "id": "molar-mass-of-a-gas",
-      "kind": "skill",
-      "section": "9.3",
-      "name": "Finding the molar mass of a gas",
-      "statement": "When a gas is unknown, measuring the mass, pressure, volume and temperature of a sample gives its molar mass through ℳ = mRT/PV. Compared with the mass of an empirical formula, that molar mass tells how many formula units make up a molecule, and the same measurement made on the vapor of a volatile liquid gives the liquid's molar mass.",
-      "forms": [
-        {
-          "id": "eq-gas-molar-mass",
-          "latex": "\\mathcal{M}=\\frac{mRT}{PV}",
-          "ktex": "\\kMM=\\frac{\\km R\\kT}{\\kP\\kV}",
-          "condition": "a sample of an ideal gas of measured mass, pressure, volume and temperature",
-          "anchor": "9.3-density"
-        }
-      ]
-    },
-    {
-      "id": "daltons-law-of-partial-pressures",
-      "kind": "axiom",
-      "section": "9.3",
-      "name": "Dalton’s law of partial pressures",
-      "terms": [
-        "Dalton’s law of partial pressures"
-      ],
-      "statement": "Unless they react, the gases in a mixture do not affect one another’s pressure: each exerts the pressure it would exert alone in the container, and the total pressure of the mixture is the sum of these partial pressures. The partial pressure of each gas can therefore be found from the ideal gas law using its own amount.",
-      "forms": [
-        {
-          "id": "eq-dalton",
-          "latex": "P_{Total}=P_A+P_B+P_C+\\ldots=\\Sigma_i P_i",
-          "ktex": "\\kPtot=\\kPA+\\kPB+\\kPC+\\ldots=\\Sigma_i P_i",
-          "condition": "a mixture of ideal gases that do not react with one another",
-          "anchor": "9.3-dalton"
-        }
-      ]
-    },
-    {
-      "id": "mole-fraction-and-partial-pressure",
-      "kind": "result",
-      "section": "9.3",
-      "name": "Partial pressure from mole fraction",
-      "statement": "The partial pressure of a gas in a mixture is its mole fraction times the total pressure. The relation lets us move between the composition of a mixture and the pressures of its components without computing each pressure from the ideal gas law.",
-      "forms": [
-        {
-          "id": "eq-partial-pressure",
-          "latex": "P_A=X_A P_{Total}",
-          "ktex": "\\kPA=X_A\\kPtot",
-          "condition": "a component A of a mixture of ideal gases",
-          "anchor": "9.3-dalton"
-        }
-      ]
-    },
-    {
-      "id": "gas-collected-over-water",
-      "kind": "skill",
-      "section": "9.3",
-      "name": "Finding the pressure of a gas collected over water",
-      "statement": "A gas collected in an inverted bottle over water is saturated with water vapor, so the pressure it shows when the water levels are equal is the sum of its own partial pressure and the vapor pressure of water at that temperature. The pressure of the dry gas is the total pressure minus the vapor pressure of water, read from Table 9.2."
-    },
-    {
-      "id": "combining-volumes-of-gases",
-      "kind": "result",
-      "section": "9.3",
-      "name": "Combining volumes of gases",
-      "statement": "Because equal volumes of ideal gases at the same temperature and pressure contain equal numbers of molecules, the volumes of gases that react or form are in the same ratio as the coefficients of the balanced equation. A volume of one gas can then be turned into the volume of another without passing through moles, provided both are measured under the same conditions."
-    },
-    {
-      "id": "gas-stoichiometry",
-      "kind": "skill",
-      "section": "9.3",
-      "name": "Gas stoichiometry",
-      "statement": "When a reaction involves a gas, the ideal gas law turns a measured volume, pressure and temperature into moles, and moles of gas back into a volume under any conditions. With the mole ratios of the balanced equation, this links the mass of a solid or liquid reactant to the volume of a gas produced or consumed."
-    },
-    {
-      "id": "partial-pressure",
-      "kind": "definition",
-      "section": "9.3",
-      "name": "Partial pressure",
-      "symbol": "P_A",
-      "terms": [
-        "partial pressure"
-      ],
-      "type": "pressure",
-      "statement": "The partial pressure of a gas in a mixture is the pressure that gas exerts, the pressure it would exert if it alone occupied the container."
-    },
-    {
-      "id": "mole-fraction",
-      "kind": "definition",
-      "section": "9.3",
-      "name": "Mole fraction",
-      "symbol": "X_A",
-      "terms": [
-        "mole fraction (X)"
-      ],
-      "statement": "The mole fraction of a component of a mixture is its amount in moles divided by the total amount of all the components, a concentration unit that carries no units of its own.",
-      "forms": [
-        {
-          "id": "eq-mole-fraction",
-          "latex": "X_A=\\frac{n_A}{n_{Total}}",
-          "ktex": "X_A=\\frac{\\knA}{\\kntot}",
-          "condition": "the mole fraction of a component A of a mixture",
-          "anchor": "9.3-dalton"
-        },
-        {
-          "id": "eq-mole-fraction-11",
-          "latex": "X_{\\text{A}}=\\frac{\\text{mol A}}{\\text{total mol of all components}}",
-          "condition": "any component A of a solution",
-          "section": "11.4",
-          "anchor": "11.4-molality"
-        }
-      ]
-    },
-    {
-      "id": "vapor-pressure-of-water",
-      "kind": "definition",
-      "section": "9.3",
-      "name": "Vapor pressure of water",
-      "terms": [
-        "vapor pressure of water"
-      ],
-      "statement": "The vapor pressure of water is the pressure exerted by water vapor in equilibrium with liquid water in a closed container at a specific temperature. It rises with the temperature."
-    },
-    {
-      "id": "mean-free-path",
-      "kind": "definition",
-      "section": "9.4",
-      "name": "Mean free path",
-      "terms": [
-        "mean free path"
-      ],
-      "statement": "The mean free path is the average distance a molecule travels between collisions. Gas molecules travel at hundreds of meters per second but collide billions of times a second, so the mean free path is short, and it grows as the pressure falls."
-    },
-    {
-      "id": "diffusion-and-effusion",
-      "kind": "idea",
-      "section": "9.4",
-      "name": "Diffusion and effusion",
-      "statement": "Diffusion is the dispersal of molecules through space from regions of higher concentration to regions of lower concentration, which happens because the molecules move randomly and there are more of them to move away from a crowded region. Effusion is the escape of gas molecules through a tiny hole into a vacuum. The rates of the two processes differ, but for two gases the ratio of their rates is the same."
-    },
-    {
-      "id": "grahams-law",
-      "kind": "axiom",
-      "section": "9.4",
-      "name": "Graham’s law of effusion",
-      "terms": [
-        "Graham’s law of effusion"
-      ],
-      "statement": "The rate of effusion of a gas is inversely proportional to the square root of its molar mass, so for two gases at the same temperature and pressure the ratio of their rates is the inverse ratio of the square roots of their molar masses. Lighter gases escape faster, which is why a helium balloon goes flat before an argon balloon does.",
-      "forms": [
-        {
-          "id": "eq-graham",
-          "latex": "\\frac{\\text{rate of effusion of gas A}}{\\text{rate of effusion of gas B}}=\\frac{\\sqrt{\\mathcal{M}_B}}{\\sqrt{\\mathcal{M}_A}}",
-          "ktex": "\\frac{\\text{rate of effusion of gas A}}{\\text{rate of effusion of gas B}}=\\frac{\\sqrt{\\kMMB}}{\\sqrt{\\kMMA}}",
-          "condition": "two gases at the same temperature and pressure",
-          "anchor": "9.4-graham"
-        }
-      ]
-    },
-    {
-      "id": "grahams-law-calculations",
-      "kind": "skill",
-      "section": "9.4",
-      "name": "Using Graham’s law",
-      "statement": "Since the time for a given amount of gas to effuse is inversely proportional to its rate, the effusion times of two gases are in the direct ratio of the square roots of their molar masses. Graham’s law can then give an unknown effusion time, or a molar mass from a measured ratio of rates, which is a way of identifying a gas."
-    },
-    {
-      "id": "diffusion",
-      "kind": "definition",
-      "section": "9.4",
-      "name": "Diffusion",
-      "terms": [
-        "diffusion"
-      ],
-      "statement": "Diffusion is the movement of atoms or molecules from a region of relatively high concentration to one of relatively low concentration, caused by their random motion."
-    },
-    {
-      "id": "effusion",
-      "kind": "definition",
-      "section": "9.4",
-      "name": "Effusion",
-      "terms": [
-        "effusion"
-      ],
-      "statement": "Effusion is the escape of gaseous atoms or molecules from a container into a vacuum through very small openings."
-    },
-    {
-      "id": "rate-of-diffusion",
-      "kind": "definition",
-      "section": "9.4",
-      "name": "Rate of diffusion",
-      "terms": [
-        "rate of diffusion"
-      ],
-      "statement": "The rate of diffusion is the amount of gas passing through a given area in a unit of time.",
-      "forms": [
-        {
-          "id": "eq-rate-of-diffusion",
-          "latex": "\\text{rate of diffusion}=\\frac{\\text{amount of gas passing through an area}}{\\text{unit of time}}",
-          "condition": "the definition of a rate of diffusion",
-          "anchor": "9.4-diffusion"
-        }
-      ]
-    },
-    {
-      "id": "kinetic-molecular-theory",
-      "kind": "axiom",
-      "section": "9.5",
-      "name": "Kinetic-molecular theory",
-      "terms": [
-        "kinetic molecular theory"
-      ],
-      "statement": "The kinetic-molecular theory explains the empirical gas laws with a microscopic model of five postulates: gas molecules move continuously in straight lines, they are negligibly small compared with the distances between them, their collisions with the walls cause the pressure, they exert no forces on one another so that their collisions are elastic, and their average kinetic energy is proportional to the kelvin temperature."
-    },
-    {
-      "id": "kmt-explains-gas-laws",
-      "kind": "idea",
-      "section": "9.5",
-      "name": "Gas laws from the kinetic-molecular theory",
-      "statement": "Each gas law follows from the theory when pressure is read as the frequency and force of molecular collisions with the walls. Heating a gas at constant volume makes the collisions faster and more forceful, so the pressure rises; compressing it makes collisions with the smaller wall area more frequent; and adding molecules at constant pressure requires a larger volume to keep the collisions per unit area the same."
-    },
-    {
-      "id": "maxwell-boltzmann-distribution",
-      "kind": "idea",
-      "section": "9.5",
-      "name": "Distribution of molecular speeds",
-      "statement": "The molecules of a gas move at widely varying speeds, but because there are so many of them the distribution of speeds is constant at a given temperature. It rises to a most probable speed and then falls off, shifts to higher speeds and flattens as the temperature rises, and lies at higher speeds for lighter molecules than for heavier ones at the same temperature."
-    },
-    {
-      "id": "average-kinetic-energy-and-temperature",
-      "kind": "result",
-      "section": "9.5",
-      "name": "Average kinetic energy and temperature",
-      "statement": "The average kinetic energy of a mole of gas molecules is directly proportional to the kelvin temperature and does not depend on what the gas is. At a given temperature, then, all gases have the same average kinetic energy, and heavier molecules must move more slowly on average to have it.",
-      "forms": [
-        {
-          "id": "eq-ke-avg",
-          "latex": "\\text{KE}_{\\text{avg}}=\\frac{3}{2}RT",
-          "ktex": "\\kKEavg=\\frac{3}{2}R\\kT",
-          "condition": "a mole of an ideal gas, with R = 8.314 J/mol·K",
-          "anchor": "9.5-speeds"
-        }
-      ]
-    },
-    {
-      "id": "root-mean-square-speed",
-      "kind": "result",
-      "section": "9.5",
-      "name": "Root mean square speed",
-      "terms": [
-        "root mean square speed (u_rms)"
-      ],
-      "statement": "The root mean square speed is the square root of the average of the squared speeds of the molecules. Setting the two expressions for the average kinetic energy equal shows that it grows with the square root of the kelvin temperature and falls with the square root of the molar mass, which must be written in kilograms per mole.",
-      "forms": [
-        {
-          "id": "eq-u-rms",
-          "latex": "u_{\\text{rms}}=\\sqrt{\\frac{3RT}{\\mathcal{M}}}",
-          "ktex": "u_{\\text{rms}}=\\sqrt{\\frac{3R\\kT}{\\kMM}}",
-          "condition": "an ideal gas, with the molar mass in kg/mol and R = 8.314 J/mol·K",
-          "anchor": "9.5-speeds"
-        },
-        {
-          "id": "eq-u-rms-definition",
-          "latex": "u_{\\text{rms}}=\\sqrt{\\overline{u^2}}=\\sqrt{\\frac{u_1^2+u_2^2+u_3^2+u_4^2+\\ldots}{n}}",
-          "condition": "a sample of n particles",
-          "anchor": "9.5-speeds"
-        }
-      ]
-    },
-    {
-      "id": "grahams-law-from-kmt",
-      "kind": "result",
-      "section": "9.5",
-      "name": "Graham’s law from the kinetic-molecular theory",
-      "statement": "The rate of effusion of a gas depends directly on the average speed of its molecules, and the root mean square speed is inversely proportional to the square root of the molar mass. The ratio of the effusion rates of two gases is therefore the inverse ratio of the square roots of their molar masses, which is Graham’s law obtained from the theory rather than from experiment."
-    },
-    {
-      "id": "speed",
-      "kind": "definition",
-      "section": "9.5",
-      "name": "Speed",
-      "symbol": "u",
-      "type": "velocity",
-      "statement": "The speed of a particle is the distance it travels divided by the time it takes. The molecules of a gas move at a wide range of speeds."
-    },
-    {
-      "id": "compressibility-factor",
-      "kind": "definition",
-      "section": "9.6",
-      "name": "Compressibility factor",
-      "symbol": "Z_comp",
-      "terms": [
-        "compressibility factor (Z)"
-      ],
-      "statement": "The compressibility factor is the ratio of the measured molar volume of a gas to the molar volume of an ideal gas at the same temperature and pressure, (PV_m/RT) measured. It equals 1 for an ideal gas, so its departure from 1 measures how far a real gas departs from the ideal gas law.",
-      "forms": [
-        {
-          "id": "eq-compressibility",
-          "latex": "Z=\\frac{\\text{molar volume of gas at same }T\\text{ and }P}{\\text{molar volume of ideal gas at same }T\\text{ and }P}=\\left(\\frac{PV_m}{RT}\\right)_{\\text{measured}}",
-          "ktex": "Z=\\frac{\\text{molar volume of gas at same }T\\text{ and }P}{\\text{molar volume of ideal gas at same }T\\text{ and }P}=\\left(\\frac{\\kP\\kVm}{R\\kT}\\right)_{\\text{measured}}",
-          "condition": "a real gas compared with an ideal gas at the same temperature and pressure",
-          "anchor": "9.6-compressibility"
-        }
-      ]
-    },
-    {
-      "id": "causes-of-non-ideal-behavior",
-      "kind": "idea",
-      "section": "9.6",
-      "name": "Non-ideal behavior",
-      "statement": "Real gas molecules occupy some volume and attract one another. At high pressures the volume of the molecules themselves becomes an appreciable part of the whole, so the gas is less compressible than an ideal gas; at moderate pressures and low temperatures the attractions pull the molecules together, lowering the pressure at constant volume or the volume at constant pressure."
-    },
-    {
-      "id": "conditions-for-ideal-behavior",
-      "kind": "idea",
-      "section": "9.6",
-      "name": "When a gas behaves ideally",
-      "statement": "The ideal gas law describes a gas well when intermolecular attractions are negligible and the molecules occupy a negligible part of the volume, which is the case at low pressure and high temperature. It is this, and not a property of any particular gas, that justifies treating gases as ideal in most of the chapter’s calculations."
-    },
-    {
-      "id": "van-der-waals-equation",
-      "kind": "axiom",
-      "section": "9.6",
-      "name": "Van der Waals equation",
-      "terms": [
-        "van der Waals equation"
-      ],
-      "statement": "The van der Waals equation corrects the ideal gas law with two constants of each gas: a, for the attraction between molecules, adds n²a/V² to the pressure, and b, for the size of the molecules, subtracts nb from the volume. When the volume is large and the amount small, both corrections vanish and the equation reduces to PV = nRT.",
-      "forms": [
-        {
-          "id": "eq-van-der-waals",
-          "latex": "\\left(P+\\frac{n^2a}{V^2}\\right)(V-nb)=nRT",
-          "ktex": "\\left(\\kP+\\frac{\\kn^2a}{\\kV^2}\\right)(\\kV-\\kn b)=\\kn R\\kT",
-          "condition": "a real gas, with the constants a and b of that gas",
-          "anchor": "9.6-van-der-waals"
-        }
-      ]
-    },
-    {
       "id": "reaction-rate",
       "kind": "definition",
       "section": "12.1",
@@ -10173,6 +9491,696 @@
       "section": "15.3",
       "name": "Calculating solubilities in coupled equilibria",
       "statement": "The concentrations in a coupled system follow from one equilibrium at a time, such as the hydroxide ion concentration of a buffer and then the solubility product, or from the constant of the combined net reaction."
+    },
+    {
+      "id": "gas-pressure",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Gas pressure",
+      "symbol": "P",
+      "terms": [
+        "pressure"
+      ],
+      "type": "pressure",
+      "statement": "Pressure is the force exerted per unit area, P = F/A. A gas exerts pressure on the walls of its container because its molecules collide with those walls, so a small force on a small area can give a larger pressure than a large force spread over a large one.",
+      "forms": [
+        {
+          "id": "eq-pressure",
+          "latex": "P=\\frac{F}{A}",
+          "ktex": "\\kP=\\frac{F}{A}",
+          "condition": "pressure as the force exerted on a given area",
+          "anchor": "9.1-pressure"
+        }
+      ]
+    },
+    {
+      "id": "pressure-unit-conversion",
+      "kind": "skill",
+      "section": "9.1",
+      "name": "Converting among units of pressure",
+      "statement": "Pressures are reported in pascals, kilopascals, bar, pounds per square inch, atmospheres, torr and millimeters of mercury, depending on who measured them and why. Converting among these units with the relations of Table 9.1 is the first step of nearly every gas calculation, since the gas constant has to be used in units that match the pressure."
+    },
+    {
+      "id": "atmospheric-pressure-and-barometer",
+      "kind": "idea",
+      "section": "9.1",
+      "name": "Atmospheric pressure and the barometer",
+      "statement": "The weight of the column of air above an object presses on it, and at sea level this atmospheric pressure is about 1 atm. A barometer measures it by balancing it against a column of liquid in an inverted tube, and because mercury is about 13.6 times denser than water, a mercury column of about 760 mm does what a water column over 10 m tall would do."
+    },
+    {
+      "id": "hydrostatic-pressure",
+      "kind": "result",
+      "section": "9.1",
+      "name": "Hydrostatic pressure",
+      "symbol": "p_hydro",
+      "terms": [
+        "hydrostatic pressure"
+      ],
+      "type": "pressure",
+      "statement": "The pressure exerted by a column of fluid because of gravity is the product of its height, its density and the acceleration due to gravity. It is why the height of a liquid column can stand for a pressure at all, and it lets us check that 760 mm of mercury does correspond to 101,325 Pa.",
+      "forms": [
+        {
+          "id": "eq-hydrostatic",
+          "latex": "p=h\\rho g",
+          "ktex": "\\kphyd=h\\rho g",
+          "condition": "a column of fluid of height h and density ρ under gravity",
+          "anchor": "9.1-barometer"
+        }
+      ]
+    },
+    {
+      "id": "manometer-pressure",
+      "kind": "skill",
+      "section": "9.1",
+      "name": "Reading a manometer",
+      "statement": "A manometer is a U-shaped tube of liquid connected to a gas. In a closed-end manometer the difference in liquid levels is the pressure of the gas itself; in an open-end manometer it is the difference between the gas pressure and the atmospheric pressure, added when the level is higher on the open side and subtracted when it is higher on the gas side."
+    },
+    {
+      "id": "force",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Force",
+      "symbol": "F_force",
+      "type": "force",
+      "statement": "A force is a push or a pull on an object. A gas pushes on the walls of its container with a force that comes from the collisions of its molecules with those walls."
+    },
+    {
+      "id": "area",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Area",
+      "symbol": "A_area",
+      "type": "area",
+      "statement": "The area of a surface is its extent, measured in square units such as square meters. A force spread over a larger area gives a smaller pressure."
+    },
+    {
+      "id": "acceleration-due-to-gravity",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Acceleration due to gravity",
+      "symbol": "g_grav",
+      "type": "acceleration",
+      "statement": "The acceleration due to gravity is the rate at which the speed of a falling object increases near the surface of the earth, about 9.8 m/s². It turns the mass of a column of fluid into the weight that presses on what lies beneath it."
+    },
+    {
+      "id": "pascal",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Pascal",
+      "terms": [
+        "pascal (Pa)"
+      ],
+      "statement": "The pascal is the SI unit of pressure, a force of one newton on an area of one square meter: 1 Pa = 1 N/m²."
+    },
+    {
+      "id": "bar-unit",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Bar",
+      "terms": [
+        "bar"
+      ],
+      "statement": "The bar is a unit of pressure equal to 100,000 Pa, close to the pressure of the atmosphere at sea level."
+    },
+    {
+      "id": "atmosphere-unit",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Atmosphere",
+      "terms": [
+        "atmosphere (atm)"
+      ],
+      "statement": "The standard atmosphere is a unit of pressure equal to 101,325 Pa, the average pressure of the atmosphere at sea level."
+    },
+    {
+      "id": "torr",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Torr",
+      "terms": [
+        "torr"
+      ],
+      "statement": "The torr is a unit of pressure equal to 1/760 atm, almost exactly the pressure that supports a column of mercury 1 millimeter high."
+    },
+    {
+      "id": "pounds-per-square-inch",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Pounds per square inch",
+      "terms": [
+        "pounds per square inch (psi)"
+      ],
+      "statement": "Pounds per square inch is a unit of pressure common in the United States; 1 atm is 14.7 psi."
+    },
+    {
+      "id": "barometer",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Barometer",
+      "terms": [
+        "barometer"
+      ],
+      "statement": "A barometer is a device used to measure atmospheric pressure, usually by the height of the column of liquid the atmosphere supports in an inverted tube."
+    },
+    {
+      "id": "manometer",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Manometer",
+      "terms": [
+        "manometer"
+      ],
+      "statement": "A manometer is a device used to measure the pressure of a gas trapped in a container: a U-shaped tube of liquid whose difference in levels gives the pressure."
+    },
+    {
+      "id": "amontons-law",
+      "kind": "axiom",
+      "section": "9.2",
+      "name": "Amontons’s law",
+      "terms": [
+        "Amontons’s law"
+      ],
+      "statement": "The pressure of a given amount of gas is directly proportional to its temperature on the kelvin scale when the volume is held constant. This is the first of the four relationships the section establishes, and it is the one that explains why a sealed can warns against heat: the gas inside cannot expand, so everything the heating does shows up on the gauge.",
+      "forms": [
+        {
+          "id": "eq-amontons",
+          "latex": "\\frac{P_1}{T_1}=\\frac{P_2}{T_2}",
+          "ktex": "\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}",
+          "condition": "a fixed amount of gas held at constant volume, with both temperatures on the kelvin scale",
+          "anchor": "9.2-amontons"
+        }
+      ]
+    },
+    {
+      "id": "charles-law",
+      "kind": "axiom",
+      "section": "9.2",
+      "name": "Charles’s law",
+      "terms": [
+        "Charles’s law"
+      ],
+      "statement": "The volume of a given amount of gas is directly proportional to its temperature on the kelvin scale when the pressure is held constant. It is the law a balloon in a refrigerator demonstrates, and it is the one that makes a gas thermometer possible, since a volume read at a known pressure is a temperature.",
+      "forms": [
+        {
+          "id": "eq-charles",
+          "latex": "\\frac{V_1}{T_1}=\\frac{V_2}{T_2}",
+          "ktex": "\\frac{\\kVone}{\\kTone}=\\frac{\\kVtwo}{\\kTtwo}",
+          "condition": "a fixed amount of gas held at constant pressure, with both temperatures on the kelvin scale",
+          "anchor": "9.2-charles"
+        }
+      ]
+    },
+    {
+      "id": "boyles-law",
+      "kind": "axiom",
+      "section": "9.2",
+      "name": "Boyle’s law",
+      "terms": [
+        "Boyle’s law"
+      ],
+      "statement": "The volume of a given amount of gas held at constant temperature is inversely proportional to its pressure. Unlike the laws of Amontons and Charles, this is not a direct proportionality, and the graph of volume against pressure is a curve. Plotting the inverse of the pressure against the volume turns the same data into a straight line, which is easier to read.",
+      "forms": [
+        {
+          "id": "eq-boyle",
+          "latex": "P_1V_1=P_2V_2",
+          "ktex": "\\kPone\\kVone=\\kPtwo\\kVtwo",
+          "condition": "a fixed amount of gas held at constant temperature",
+          "anchor": "9.2-boyle"
+        }
+      ]
+    },
+    {
+      "id": "avogadro-law",
+      "kind": "axiom",
+      "section": "9.2",
+      "name": "Avogadro’s law",
+      "terms": [
+        "Avogadro’s law"
+      ],
+      "statement": "For a confined gas at constant pressure and temperature, the volume and the number of moles are directly proportional, which is another way of saying that equal volumes of all gases under the same conditions contain the same number of molecules. It is the law that makes the identity of the gas irrelevant, and it is what lets a volume stand in for a count in every gas calculation that follows.",
+      "forms": [
+        {
+          "id": "eq-avogadro",
+          "latex": "\\frac{V_1}{n_1}=\\frac{V_2}{n_2}",
+          "ktex": "\\frac{\\kVone}{\\knone}=\\frac{\\kVtwo}{\\kntwo}",
+          "condition": "a confined gas held at constant pressure and constant temperature",
+          "anchor": "9.2-avogadro"
+        }
+      ]
+    },
+    {
+      "id": "absolute-zero",
+      "kind": "idea",
+      "section": "9.2",
+      "name": "Absolute zero",
+      "terms": [
+        "absolute zero"
+      ],
+      "statement": "Both of the section’s direct proportionalities hold only when the temperature is read on the kelvin scale, and the reason is visible on their graphs: extrapolated to lower temperatures, the pressure line and the volume line both reach zero at –273 °C. That temperature is zero on the kelvin scale and the lowest there is, and it is why a gas law calculation in Celsius gives the wrong answer."
+    },
+    {
+      "id": "ideal-gas",
+      "kind": "idea",
+      "section": "9.2",
+      "name": "Ideal gas",
+      "terms": [
+        "ideal gas"
+      ],
+      "statement": "An ideal gas is a hypothetical construct whose properties are described exactly by the gas laws; no real gas is ideal. The ideal gas law can therefore be trusted only where real gases come close to ideal behavior, at relatively low pressures and high temperatures."
+    },
+    {
+      "id": "ideal-gas-law",
+      "kind": "result",
+      "section": "9.2",
+      "name": "Ideal gas law",
+      "terms": [
+        "ideal gas law"
+      ],
+      "statement": "Combining the four separate laws yields one equation relating the pressure, volume, amount and temperature of a gas, with the gas constant R carrying the units. It contains five terms, so specifying any four of them gives the fifth, and this single relation replaces the four laws for every calculation the rest of the chapter makes.",
+      "forms": [
+        {
+          "id": "eq-ideal-gas",
+          "latex": "PV=nRT",
+          "ktex": "\\kP\\kV=\\kn R\\kT",
+          "condition": "a gas behaving ideally, which is a good approximation at relatively low pressures and high temperatures",
+          "anchor": "9.2-ideal-gas-law"
+        },
+        {
+          "id": "eq-p-mrt",
+          "latex": "P=MRT",
+          "ktex": "\\kP=\\kM R\\kT",
+          "condition": "an ideal gas of molar concentration M",
+          "section": "13.2"
+        }
+      ]
+    },
+    {
+      "id": "combined-gas-law",
+      "kind": "result",
+      "section": "9.2",
+      "name": "Combined gas law",
+      "statement": "When the amount of gas is the same under two sets of conditions, PV/T equals the same product nR in both, so we can set the pressure, volume and temperature of the first condition equal to those of the second. Every two-state gas problem takes this form. Amontons’s, Charles’s and Boyle’s laws are the cases in which one of the three quantities does not change.",
+      "forms": [
+        {
+          "id": "eq-combined-gas",
+          "latex": "\\frac{P_1V_1}{T_1}=\\frac{P_2V_2}{T_2}",
+          "ktex": "\\frac{\\kPone\\kVone}{\\kTone}=\\frac{\\kPtwo\\kVtwo}{\\kTtwo}",
+          "condition": "a fixed amount of an ideal gas under two different sets of conditions",
+          "anchor": "9.2-combined-gas-law"
+        }
+      ]
+    },
+    {
+      "id": "standard-temperature-and-pressure",
+      "kind": "definition",
+      "section": "9.2",
+      "name": "Standard temperature and pressure",
+      "terms": [
+        "standard conditions of temperature and pressure (STP)"
+      ],
+      "statement": "Standard conditions of temperature and pressure, STP, are 273.15 K (0 °C) and 1 atm (101.325 kPa), the conditions chemists agree to report the volume of a gas against. At STP one mole of any ideal gas occupies about 22.4 L."
+    },
+    {
+      "id": "ideal-gas-constant",
+      "kind": "definition",
+      "section": "9.2",
+      "name": "Ideal gas constant",
+      "symbol": "R",
+      "terms": [
+        "ideal gas constant (R)"
+      ],
+      "statement": "The ideal gas constant R is the constant of proportionality in the ideal gas law, the same for every gas. Its value depends on the units of pressure and volume: 0.08206 L atm mol⁻¹ K⁻¹ or 8.314 L kPa mol⁻¹ K⁻¹."
+    },
+    {
+      "id": "molar-volume",
+      "kind": "definition",
+      "section": "9.2",
+      "name": "Molar volume",
+      "symbol": "V_m",
+      "type": "volume",
+      "statement": "The molar volume of a gas is the volume occupied by 1 mole of it at a given temperature and pressure."
+    },
+    {
+      "id": "standard-molar-volume",
+      "kind": "definition",
+      "section": "9.2",
+      "name": "Standard molar volume",
+      "terms": [
+        "standard molar volume"
+      ],
+      "statement": "The standard molar volume is the volume of 1 mole of gas at STP, about 22.4 L for any gas behaving ideally."
+    },
+    {
+      "id": "gas-density",
+      "kind": "result",
+      "section": "9.3",
+      "name": "Gas density",
+      "statement": "Substituting the ideal gas law into the definition of density shows that the density of a gas is its molar mass times its pressure divided by RT. Unlike the ideal gas law itself, this relation depends on the identity of the gas, so a density measured at a known temperature and pressure can identify a gas, and a heavier gas is denser than a lighter one under the same conditions.",
+      "forms": [
+        {
+          "id": "eq-gas-density",
+          "latex": "d=\\frac{\\mathcal{M}P}{RT}",
+          "ktex": "d=\\frac{\\kMM\\kP}{R\\kT}",
+          "condition": "an ideal gas of known identity",
+          "anchor": "9.3-density"
+        }
+      ]
+    },
+    {
+      "id": "molar-mass-of-a-gas",
+      "kind": "skill",
+      "section": "9.3",
+      "name": "Finding the molar mass of a gas",
+      "statement": "When a gas is unknown, measuring the mass, pressure, volume and temperature of a sample gives its molar mass through ℳ = mRT/PV. Compared with the mass of an empirical formula, that molar mass tells how many formula units make up a molecule, and the same measurement made on the vapor of a volatile liquid gives the liquid's molar mass.",
+      "forms": [
+        {
+          "id": "eq-gas-molar-mass",
+          "latex": "\\mathcal{M}=\\frac{mRT}{PV}",
+          "ktex": "\\kMM=\\frac{\\km R\\kT}{\\kP\\kV}",
+          "condition": "a sample of an ideal gas of measured mass, pressure, volume and temperature",
+          "anchor": "9.3-density"
+        }
+      ]
+    },
+    {
+      "id": "daltons-law-of-partial-pressures",
+      "kind": "axiom",
+      "section": "9.3",
+      "name": "Dalton’s law of partial pressures",
+      "terms": [
+        "Dalton’s law of partial pressures"
+      ],
+      "statement": "Unless they react, the gases in a mixture do not affect one another’s pressure: each exerts the pressure it would exert alone in the container, and the total pressure of the mixture is the sum of these partial pressures. The partial pressure of each gas can therefore be found from the ideal gas law using its own amount.",
+      "forms": [
+        {
+          "id": "eq-dalton",
+          "latex": "P_{Total}=P_A+P_B+P_C+\\ldots=\\Sigma_i P_i",
+          "ktex": "\\kPtot=\\kPA+\\kPB+\\kPC+\\ldots=\\Sigma_i P_i",
+          "condition": "a mixture of ideal gases that do not react with one another",
+          "anchor": "9.3-dalton"
+        }
+      ]
+    },
+    {
+      "id": "mole-fraction-and-partial-pressure",
+      "kind": "result",
+      "section": "9.3",
+      "name": "Partial pressure from mole fraction",
+      "statement": "The partial pressure of a gas in a mixture is its mole fraction times the total pressure. The relation lets us move between the composition of a mixture and the pressures of its components without computing each pressure from the ideal gas law.",
+      "forms": [
+        {
+          "id": "eq-partial-pressure",
+          "latex": "P_A=X_A P_{Total}",
+          "ktex": "\\kPA=X_A\\kPtot",
+          "condition": "a component A of a mixture of ideal gases",
+          "anchor": "9.3-dalton"
+        }
+      ]
+    },
+    {
+      "id": "gas-collected-over-water",
+      "kind": "skill",
+      "section": "9.3",
+      "name": "Finding the pressure of a gas collected over water",
+      "statement": "A gas collected in an inverted bottle over water is saturated with water vapor, so the pressure it shows when the water levels are equal is the sum of its own partial pressure and the vapor pressure of water at that temperature. The pressure of the dry gas is the total pressure minus the vapor pressure of water, read from Table 9.2."
+    },
+    {
+      "id": "combining-volumes-of-gases",
+      "kind": "result",
+      "section": "9.3",
+      "name": "Combining volumes of gases",
+      "statement": "Because equal volumes of ideal gases at the same temperature and pressure contain equal numbers of molecules, the volumes of gases that react or form are in the same ratio as the coefficients of the balanced equation. A volume of one gas can then be turned into the volume of another without passing through moles, provided both are measured under the same conditions."
+    },
+    {
+      "id": "gas-stoichiometry",
+      "kind": "skill",
+      "section": "9.3",
+      "name": "Gas stoichiometry",
+      "statement": "When a reaction involves a gas, the ideal gas law turns a measured volume, pressure and temperature into moles, and moles of gas back into a volume under any conditions. With the mole ratios of the balanced equation, this links the mass of a solid or liquid reactant to the volume of a gas produced or consumed."
+    },
+    {
+      "id": "partial-pressure",
+      "kind": "definition",
+      "section": "9.3",
+      "name": "Partial pressure",
+      "symbol": "P_A",
+      "terms": [
+        "partial pressure"
+      ],
+      "type": "pressure",
+      "statement": "The partial pressure of a gas in a mixture is the pressure that gas exerts, the pressure it would exert if it alone occupied the container."
+    },
+    {
+      "id": "mole-fraction",
+      "kind": "definition",
+      "section": "9.3",
+      "name": "Mole fraction",
+      "symbol": "X_A",
+      "terms": [
+        "mole fraction (X)"
+      ],
+      "statement": "The mole fraction of a component of a mixture is its amount in moles divided by the total amount of all the components, a concentration unit that carries no units of its own.",
+      "forms": [
+        {
+          "id": "eq-mole-fraction",
+          "latex": "X_A=\\frac{n_A}{n_{Total}}",
+          "ktex": "X_A=\\frac{\\knA}{\\kntot}",
+          "condition": "the mole fraction of a component A of a mixture",
+          "anchor": "9.3-dalton"
+        },
+        {
+          "id": "eq-mole-fraction-11",
+          "latex": "X_{\\text{A}}=\\frac{\\text{mol A}}{\\text{total mol of all components}}",
+          "condition": "any component A of a solution",
+          "section": "11.4",
+          "anchor": "11.4-molality"
+        }
+      ]
+    },
+    {
+      "id": "vapor-pressure-of-water",
+      "kind": "definition",
+      "section": "9.3",
+      "name": "Vapor pressure of water",
+      "terms": [
+        "vapor pressure of water"
+      ],
+      "statement": "The vapor pressure of water is the pressure exerted by water vapor in equilibrium with liquid water in a closed container at a specific temperature. It rises with the temperature."
+    },
+    {
+      "id": "mean-free-path",
+      "kind": "definition",
+      "section": "9.4",
+      "name": "Mean free path",
+      "terms": [
+        "mean free path"
+      ],
+      "statement": "The mean free path is the average distance a molecule travels between collisions. Gas molecules travel at hundreds of meters per second but collide billions of times a second, so the mean free path is short, and it grows as the pressure falls."
+    },
+    {
+      "id": "diffusion-and-effusion",
+      "kind": "idea",
+      "section": "9.4",
+      "name": "Diffusion and effusion",
+      "statement": "Diffusion is the dispersal of molecules through space from regions of higher concentration to regions of lower concentration, which happens because the molecules move randomly and there are more of them to move away from a crowded region. Effusion is the escape of gas molecules through a tiny hole into a vacuum. The rates of the two processes differ, but for two gases the ratio of their rates is the same."
+    },
+    {
+      "id": "grahams-law",
+      "kind": "axiom",
+      "section": "9.4",
+      "name": "Graham’s law of effusion",
+      "terms": [
+        "Graham’s law of effusion"
+      ],
+      "statement": "The rate of effusion of a gas is inversely proportional to the square root of its molar mass, so for two gases at the same temperature and pressure the ratio of their rates is the inverse ratio of the square roots of their molar masses. Lighter gases escape faster, which is why a helium balloon goes flat before an argon balloon does.",
+      "forms": [
+        {
+          "id": "eq-graham",
+          "latex": "\\frac{\\text{rate of effusion of gas A}}{\\text{rate of effusion of gas B}}=\\frac{\\sqrt{\\mathcal{M}_B}}{\\sqrt{\\mathcal{M}_A}}",
+          "ktex": "\\frac{\\text{rate of effusion of gas A}}{\\text{rate of effusion of gas B}}=\\frac{\\sqrt{\\kMMB}}{\\sqrt{\\kMMA}}",
+          "condition": "two gases at the same temperature and pressure",
+          "anchor": "9.4-graham"
+        }
+      ]
+    },
+    {
+      "id": "grahams-law-calculations",
+      "kind": "skill",
+      "section": "9.4",
+      "name": "Using Graham’s law",
+      "statement": "Since the time for a given amount of gas to effuse is inversely proportional to its rate, the effusion times of two gases are in the direct ratio of the square roots of their molar masses. Graham’s law can then give an unknown effusion time, or a molar mass from a measured ratio of rates, which is a way of identifying a gas."
+    },
+    {
+      "id": "diffusion",
+      "kind": "definition",
+      "section": "9.4",
+      "name": "Diffusion",
+      "terms": [
+        "diffusion"
+      ],
+      "statement": "Diffusion is the movement of atoms or molecules from a region of relatively high concentration to one of relatively low concentration, caused by their random motion."
+    },
+    {
+      "id": "effusion",
+      "kind": "definition",
+      "section": "9.4",
+      "name": "Effusion",
+      "terms": [
+        "effusion"
+      ],
+      "statement": "Effusion is the escape of gaseous atoms or molecules from a container into a vacuum through very small openings."
+    },
+    {
+      "id": "rate-of-diffusion",
+      "kind": "definition",
+      "section": "9.4",
+      "name": "Rate of diffusion",
+      "terms": [
+        "rate of diffusion"
+      ],
+      "statement": "The rate of diffusion is the amount of gas passing through a given area in a unit of time.",
+      "forms": [
+        {
+          "id": "eq-rate-of-diffusion",
+          "latex": "\\text{rate of diffusion}=\\frac{\\text{amount of gas passing through an area}}{\\text{unit of time}}",
+          "condition": "the definition of a rate of diffusion",
+          "anchor": "9.4-diffusion"
+        }
+      ]
+    },
+    {
+      "id": "kinetic-molecular-theory",
+      "kind": "axiom",
+      "section": "9.5",
+      "name": "Kinetic-molecular theory",
+      "terms": [
+        "kinetic molecular theory"
+      ],
+      "statement": "The kinetic-molecular theory explains the empirical gas laws with a microscopic model of five postulates: gas molecules move continuously in straight lines, they are negligibly small compared with the distances between them, their collisions with the walls cause the pressure, they exert no forces on one another so that their collisions are elastic, and their average kinetic energy is proportional to the kelvin temperature."
+    },
+    {
+      "id": "kmt-explains-gas-laws",
+      "kind": "idea",
+      "section": "9.5",
+      "name": "Gas laws from the kinetic-molecular theory",
+      "statement": "Each gas law follows from the theory when pressure is read as the frequency and force of molecular collisions with the walls. Heating a gas at constant volume makes the collisions faster and more forceful, so the pressure rises; compressing it makes collisions with the smaller wall area more frequent; and adding molecules at constant pressure requires a larger volume to keep the collisions per unit area the same."
+    },
+    {
+      "id": "maxwell-boltzmann-distribution",
+      "kind": "idea",
+      "section": "9.5",
+      "name": "Distribution of molecular speeds",
+      "statement": "The molecules of a gas move at widely varying speeds, but because there are so many of them the distribution of speeds is constant at a given temperature. It rises to a most probable speed and then falls off, shifts to higher speeds and flattens as the temperature rises, and lies at higher speeds for lighter molecules than for heavier ones at the same temperature."
+    },
+    {
+      "id": "average-kinetic-energy-and-temperature",
+      "kind": "result",
+      "section": "9.5",
+      "name": "Average kinetic energy and temperature",
+      "statement": "The average kinetic energy of a mole of gas molecules is directly proportional to the kelvin temperature and does not depend on what the gas is. At a given temperature, then, all gases have the same average kinetic energy, and heavier molecules must move more slowly on average to have it.",
+      "forms": [
+        {
+          "id": "eq-ke-avg",
+          "latex": "\\text{KE}_{\\text{avg}}=\\frac{3}{2}RT",
+          "ktex": "\\kKEavg=\\frac{3}{2}R\\kT",
+          "condition": "a mole of an ideal gas, with R = 8.314 J/mol·K",
+          "anchor": "9.5-speeds"
+        }
+      ]
+    },
+    {
+      "id": "root-mean-square-speed",
+      "kind": "result",
+      "section": "9.5",
+      "name": "Root mean square speed",
+      "terms": [
+        "root mean square speed (u_rms)"
+      ],
+      "statement": "The root mean square speed is the square root of the average of the squared speeds of the molecules. Setting the two expressions for the average kinetic energy equal shows that it grows with the square root of the kelvin temperature and falls with the square root of the molar mass, which must be written in kilograms per mole.",
+      "forms": [
+        {
+          "id": "eq-u-rms",
+          "latex": "u_{\\text{rms}}=\\sqrt{\\frac{3RT}{\\mathcal{M}}}",
+          "ktex": "u_{\\text{rms}}=\\sqrt{\\frac{3R\\kT}{\\kMM}}",
+          "condition": "an ideal gas, with the molar mass in kg/mol and R = 8.314 J/mol·K",
+          "anchor": "9.5-speeds"
+        },
+        {
+          "id": "eq-u-rms-definition",
+          "latex": "u_{\\text{rms}}=\\sqrt{\\overline{u^2}}=\\sqrt{\\frac{u_1^2+u_2^2+u_3^2+u_4^2+\\ldots}{n}}",
+          "condition": "a sample of n particles",
+          "anchor": "9.5-speeds"
+        }
+      ]
+    },
+    {
+      "id": "grahams-law-from-kmt",
+      "kind": "result",
+      "section": "9.5",
+      "name": "Graham’s law from the kinetic-molecular theory",
+      "statement": "The rate of effusion of a gas depends directly on the average speed of its molecules, and the root mean square speed is inversely proportional to the square root of the molar mass. The ratio of the effusion rates of two gases is therefore the inverse ratio of the square roots of their molar masses, which is Graham’s law obtained from the theory rather than from experiment."
+    },
+    {
+      "id": "speed",
+      "kind": "definition",
+      "section": "9.5",
+      "name": "Speed",
+      "symbol": "u",
+      "type": "velocity",
+      "statement": "The speed of a particle is the distance it travels divided by the time it takes. The molecules of a gas move at a wide range of speeds."
+    },
+    {
+      "id": "compressibility-factor",
+      "kind": "definition",
+      "section": "9.6",
+      "name": "Compressibility factor",
+      "symbol": "Z_comp",
+      "terms": [
+        "compressibility factor (Z)"
+      ],
+      "statement": "The compressibility factor is the ratio of the measured molar volume of a gas to the molar volume of an ideal gas at the same temperature and pressure, (PV_m/RT) measured. It equals 1 for an ideal gas, so its departure from 1 measures how far a real gas departs from the ideal gas law.",
+      "forms": [
+        {
+          "id": "eq-compressibility",
+          "latex": "Z=\\frac{\\text{molar volume of gas at same }T\\text{ and }P}{\\text{molar volume of ideal gas at same }T\\text{ and }P}=\\left(\\frac{PV_m}{RT}\\right)_{\\text{measured}}",
+          "ktex": "Z=\\frac{\\text{molar volume of gas at same }T\\text{ and }P}{\\text{molar volume of ideal gas at same }T\\text{ and }P}=\\left(\\frac{\\kP\\kVm}{R\\kT}\\right)_{\\text{measured}}",
+          "condition": "a real gas compared with an ideal gas at the same temperature and pressure",
+          "anchor": "9.6-compressibility"
+        }
+      ]
+    },
+    {
+      "id": "causes-of-non-ideal-behavior",
+      "kind": "idea",
+      "section": "9.6",
+      "name": "Non-ideal behavior",
+      "statement": "Real gas molecules occupy some volume and attract one another. At high pressures the volume of the molecules themselves becomes an appreciable part of the whole, so the gas is less compressible than an ideal gas; at moderate pressures and low temperatures the attractions pull the molecules together, lowering the pressure at constant volume or the volume at constant pressure."
+    },
+    {
+      "id": "conditions-for-ideal-behavior",
+      "kind": "idea",
+      "section": "9.6",
+      "name": "When a gas behaves ideally",
+      "statement": "The ideal gas law describes a gas well when intermolecular attractions are negligible and the molecules occupy a negligible part of the volume, which is the case at low pressure and high temperature. It is this, and not a property of any particular gas, that justifies treating gases as ideal in most of the chapter’s calculations."
+    },
+    {
+      "id": "van-der-waals-equation",
+      "kind": "axiom",
+      "section": "9.6",
+      "name": "Van der Waals equation",
+      "terms": [
+        "van der Waals equation"
+      ],
+      "statement": "The van der Waals equation corrects the ideal gas law with two constants of each gas: a, for the attraction between molecules, adds n²a/V² to the pressure, and b, for the size of the molecules, subtracts nb from the volume. When the volume is large and the amount small, both corrections vanish and the equation reduces to PV = nRT.",
+      "forms": [
+        {
+          "id": "eq-van-der-waals",
+          "latex": "\\left(P+\\frac{n^2a}{V^2}\\right)(V-nb)=nRT",
+          "ktex": "\\left(\\kP+\\frac{\\kn^2a}{\\kV^2}\\right)(\\kV-\\kn b)=\\kn R\\kT",
+          "condition": "a real gas, with the constants a and b of that gas",
+          "anchor": "9.6-van-der-waals"
+        }
+      ]
     }
   ],
   "concept_prereqs": [
@@ -12671,318 +12679,6 @@
     {
       "concept": "charged-colloidal-particles",
       "prereq": "ions-and-atomic-charge"
-    },
-    {
-      "concept": "amontons-law",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "amontons-law",
-      "prereq": "celsius-kelvin-conversion"
-    },
-    {
-      "concept": "charles-law",
-      "prereq": "volume"
-    },
-    {
-      "concept": "charles-law",
-      "prereq": "celsius-kelvin-conversion"
-    },
-    {
-      "concept": "boyles-law",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "boyles-law",
-      "prereq": "volume"
-    },
-    {
-      "concept": "avogadro-law",
-      "prereq": "volume"
-    },
-    {
-      "concept": "avogadro-law",
-      "prereq": "atoms-and-molecules"
-    },
-    {
-      "concept": "absolute-zero",
-      "prereq": "amontons-law"
-    },
-    {
-      "concept": "absolute-zero",
-      "prereq": "charles-law"
-    },
-    {
-      "concept": "absolute-zero",
-      "prereq": "temperature-scales"
-    },
-    {
-      "concept": "ideal-gas",
-      "prereq": "states-of-matter"
-    },
-    {
-      "concept": "ideal-gas",
-      "prereq": "atoms-and-molecules"
-    },
-    {
-      "concept": "ideal-gas-law",
-      "prereq": "amontons-law"
-    },
-    {
-      "concept": "ideal-gas-law",
-      "prereq": "charles-law"
-    },
-    {
-      "concept": "ideal-gas-law",
-      "prereq": "boyles-law"
-    },
-    {
-      "concept": "ideal-gas-law",
-      "prereq": "avogadro-law"
-    },
-    {
-      "concept": "ideal-gas-law",
-      "prereq": "ideal-gas"
-    },
-    {
-      "concept": "ideal-gas-law",
-      "prereq": "convert-units"
-    },
-    {
-      "concept": "combined-gas-law",
-      "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "standard-temperature-and-pressure",
-      "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "standard-temperature-and-pressure",
-      "prereq": "avogadro-law"
-    },
-    {
-      "concept": "gas-pressure",
-      "prereq": "derived-units"
-    },
-    {
-      "concept": "gas-pressure",
-      "prereq": "states-of-matter"
-    },
-    {
-      "concept": "pressure-unit-conversion",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "pressure-unit-conversion",
-      "prereq": "convert-units"
-    },
-    {
-      "concept": "atmospheric-pressure-and-barometer",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "atmospheric-pressure-and-barometer",
-      "prereq": "density"
-    },
-    {
-      "concept": "hydrostatic-pressure",
-      "prereq": "atmospheric-pressure-and-barometer"
-    },
-    {
-      "concept": "hydrostatic-pressure",
-      "prereq": "density"
-    },
-    {
-      "concept": "hydrostatic-pressure",
-      "prereq": "compute-with-units"
-    },
-    {
-      "concept": "manometer-pressure",
-      "prereq": "hydrostatic-pressure"
-    },
-    {
-      "concept": "manometer-pressure",
-      "prereq": "pressure-unit-conversion"
-    },
-    {
-      "concept": "ideal-gas-law",
-      "prereq": "molar-mass"
-    },
-    {
-      "concept": "gas-density",
-      "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "gas-density",
-      "prereq": "density"
-    },
-    {
-      "concept": "gas-density",
-      "prereq": "molar-mass"
-    },
-    {
-      "concept": "molar-mass-of-a-gas",
-      "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "molar-mass-of-a-gas",
-      "prereq": "molar-mass"
-    },
-    {
-      "concept": "molar-mass-of-a-gas",
-      "prereq": "molecular-formula-from-empirical"
-    },
-    {
-      "concept": "daltons-law-of-partial-pressures",
-      "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "mole-fraction-and-partial-pressure",
-      "prereq": "daltons-law-of-partial-pressures"
-    },
-    {
-      "concept": "mole-fraction-and-partial-pressure",
-      "prereq": "mole"
-    },
-    {
-      "concept": "gas-collected-over-water",
-      "prereq": "daltons-law-of-partial-pressures"
-    },
-    {
-      "concept": "combining-volumes-of-gases",
-      "prereq": "avogadro-law"
-    },
-    {
-      "concept": "combining-volumes-of-gases",
-      "prereq": "coefficients-as-ratios"
-    },
-    {
-      "concept": "gas-stoichiometry",
-      "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "gas-stoichiometry",
-      "prereq": "mass-stoichiometry"
-    },
-    {
-      "concept": "mean-free-path",
-      "prereq": "atoms-and-molecules"
-    },
-    {
-      "concept": "diffusion-and-effusion",
-      "prereq": "mean-free-path"
-    },
-    {
-      "concept": "diffusion-and-effusion",
-      "prereq": "concentration"
-    },
-    {
-      "concept": "grahams-law",
-      "prereq": "diffusion-and-effusion"
-    },
-    {
-      "concept": "grahams-law",
-      "prereq": "molar-mass"
-    },
-    {
-      "concept": "grahams-law-calculations",
-      "prereq": "grahams-law"
-    },
-    {
-      "concept": "kinetic-molecular-theory",
-      "prereq": "ideal-gas"
-    },
-    {
-      "concept": "kinetic-molecular-theory",
-      "prereq": "potential-and-kinetic-energy"
-    },
-    {
-      "concept": "kinetic-molecular-theory",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "kinetic-molecular-theory"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "amontons-law"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "charles-law"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "boyles-law"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "avogadro-law"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "daltons-law-of-partial-pressures"
-    },
-    {
-      "concept": "maxwell-boltzmann-distribution",
-      "prereq": "kinetic-molecular-theory"
-    },
-    {
-      "concept": "average-kinetic-energy-and-temperature",
-      "prereq": "kinetic-molecular-theory"
-    },
-    {
-      "concept": "average-kinetic-energy-and-temperature",
-      "prereq": "thermal-energy-and-temperature"
-    },
-    {
-      "concept": "root-mean-square-speed",
-      "prereq": "average-kinetic-energy-and-temperature"
-    },
-    {
-      "concept": "root-mean-square-speed",
-      "prereq": "maxwell-boltzmann-distribution"
-    },
-    {
-      "concept": "root-mean-square-speed",
-      "prereq": "molar-mass"
-    },
-    {
-      "concept": "grahams-law-from-kmt",
-      "prereq": "root-mean-square-speed"
-    },
-    {
-      "concept": "grahams-law-from-kmt",
-      "prereq": "grahams-law"
-    },
-    {
-      "concept": "compressibility-factor",
-      "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "causes-of-non-ideal-behavior",
-      "prereq": "compressibility-factor"
-    },
-    {
-      "concept": "causes-of-non-ideal-behavior",
-      "prereq": "kinetic-molecular-theory"
-    },
-    {
-      "concept": "conditions-for-ideal-behavior",
-      "prereq": "causes-of-non-ideal-behavior"
-    },
-    {
-      "concept": "conditions-for-ideal-behavior",
-      "prereq": "ideal-gas"
-    },
-    {
-      "concept": "van-der-waals-equation",
-      "prereq": "causes-of-non-ideal-behavior"
-    },
-    {
-      "concept": "van-der-waals-equation",
-      "prereq": "ideal-gas-law"
     },
     {
       "concept": "reaction-rate",
@@ -16433,242 +16129,6 @@
       "prereq": "diamagnetism"
     },
     {
-      "concept": "force",
-      "prereq": "mass"
-    },
-    {
-      "concept": "area",
-      "prereq": "length"
-    },
-    {
-      "concept": "area",
-      "prereq": "derived-units"
-    },
-    {
-      "concept": "acceleration-due-to-gravity",
-      "prereq": "length"
-    },
-    {
-      "concept": "acceleration-due-to-gravity",
-      "prereq": "time"
-    },
-    {
-      "concept": "acceleration-due-to-gravity",
-      "prereq": "weight"
-    },
-    {
-      "concept": "pascal",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "pascal",
-      "prereq": "unit"
-    },
-    {
-      "concept": "pascal",
-      "prereq": "derived-units"
-    },
-    {
-      "concept": "bar-unit",
-      "prereq": "pascal"
-    },
-    {
-      "concept": "atmosphere-unit",
-      "prereq": "pascal"
-    },
-    {
-      "concept": "torr",
-      "prereq": "atmosphere-unit"
-    },
-    {
-      "concept": "pounds-per-square-inch",
-      "prereq": "atmosphere-unit"
-    },
-    {
-      "concept": "barometer",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "barometer",
-      "prereq": "hydrostatic-pressure"
-    },
-    {
-      "concept": "manometer",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "manometer",
-      "prereq": "hydrostatic-pressure"
-    },
-    {
-      "concept": "ideal-gas-constant",
-      "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "molar-volume",
-      "prereq": "volume"
-    },
-    {
-      "concept": "molar-volume",
-      "prereq": "mole"
-    },
-    {
-      "concept": "standard-molar-volume",
-      "prereq": "molar-volume"
-    },
-    {
-      "concept": "standard-molar-volume",
-      "prereq": "standard-temperature-and-pressure"
-    },
-    {
-      "concept": "standard-molar-volume",
-      "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "partial-pressure",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "partial-pressure",
-      "prereq": "mixtures"
-    },
-    {
-      "concept": "mole-fraction",
-      "prereq": "mole"
-    },
-    {
-      "concept": "mole-fraction",
-      "prereq": "mixtures"
-    },
-    {
-      "concept": "mole-fraction",
-      "prereq": "concentration"
-    },
-    {
-      "concept": "vapor-pressure-of-water",
-      "prereq": "partial-pressure"
-    },
-    {
-      "concept": "vapor-pressure-of-water",
-      "prereq": "temperature"
-    },
-    {
-      "concept": "diffusion",
-      "prereq": "concentration"
-    },
-    {
-      "concept": "diffusion",
-      "prereq": "atoms-and-molecules"
-    },
-    {
-      "concept": "effusion",
-      "prereq": "atoms-and-molecules"
-    },
-    {
-      "concept": "effusion",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "rate-of-diffusion",
-      "prereq": "diffusion"
-    },
-    {
-      "concept": "rate-of-diffusion",
-      "prereq": "area"
-    },
-    {
-      "concept": "rate-of-diffusion",
-      "prereq": "time"
-    },
-    {
-      "concept": "speed",
-      "prereq": "length"
-    },
-    {
-      "concept": "speed",
-      "prereq": "time"
-    },
-    {
-      "concept": "speed",
-      "prereq": "velocity"
-    },
-    {
-      "concept": "gas-pressure",
-      "prereq": "force"
-    },
-    {
-      "concept": "gas-pressure",
-      "prereq": "area"
-    },
-    {
-      "concept": "pressure-unit-conversion",
-      "prereq": "pascal"
-    },
-    {
-      "concept": "pressure-unit-conversion",
-      "prereq": "bar-unit"
-    },
-    {
-      "concept": "pressure-unit-conversion",
-      "prereq": "atmosphere-unit"
-    },
-    {
-      "concept": "pressure-unit-conversion",
-      "prereq": "torr"
-    },
-    {
-      "concept": "pressure-unit-conversion",
-      "prereq": "pounds-per-square-inch"
-    },
-    {
-      "concept": "hydrostatic-pressure",
-      "prereq": "acceleration-due-to-gravity"
-    },
-    {
-      "concept": "manometer-pressure",
-      "prereq": "manometer"
-    },
-    {
-      "concept": "daltons-law-of-partial-pressures",
-      "prereq": "partial-pressure"
-    },
-    {
-      "concept": "mole-fraction-and-partial-pressure",
-      "prereq": "mole-fraction"
-    },
-    {
-      "concept": "mole-fraction-and-partial-pressure",
-      "prereq": "partial-pressure"
-    },
-    {
-      "concept": "gas-collected-over-water",
-      "prereq": "vapor-pressure-of-water"
-    },
-    {
-      "concept": "diffusion-and-effusion",
-      "prereq": "diffusion"
-    },
-    {
-      "concept": "diffusion-and-effusion",
-      "prereq": "effusion"
-    },
-    {
-      "concept": "grahams-law",
-      "prereq": "effusion"
-    },
-    {
-      "concept": "grahams-law-calculations",
-      "prereq": "effusion"
-    },
-    {
-      "concept": "maxwell-boltzmann-distribution",
-      "prereq": "speed"
-    },
-    {
-      "concept": "root-mean-square-speed",
-      "prereq": "speed"
-    },
-    {
       "concept": "intermolecular-force",
       "prereq": "covalent-bond"
     },
@@ -17975,6 +17435,554 @@
     {
       "concept": "ionic-compound-properties",
       "prereq": "ionic-bond"
+    },
+    {
+      "concept": "amontons-law",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "amontons-law",
+      "prereq": "celsius-kelvin-conversion"
+    },
+    {
+      "concept": "charles-law",
+      "prereq": "volume"
+    },
+    {
+      "concept": "charles-law",
+      "prereq": "celsius-kelvin-conversion"
+    },
+    {
+      "concept": "boyles-law",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "boyles-law",
+      "prereq": "volume"
+    },
+    {
+      "concept": "avogadro-law",
+      "prereq": "volume"
+    },
+    {
+      "concept": "avogadro-law",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "absolute-zero",
+      "prereq": "amontons-law"
+    },
+    {
+      "concept": "absolute-zero",
+      "prereq": "charles-law"
+    },
+    {
+      "concept": "absolute-zero",
+      "prereq": "temperature-scales"
+    },
+    {
+      "concept": "ideal-gas",
+      "prereq": "states-of-matter"
+    },
+    {
+      "concept": "ideal-gas",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "amontons-law"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "charles-law"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "boyles-law"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "avogadro-law"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "ideal-gas"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "convert-units"
+    },
+    {
+      "concept": "combined-gas-law",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "standard-temperature-and-pressure",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "standard-temperature-and-pressure",
+      "prereq": "avogadro-law"
+    },
+    {
+      "concept": "gas-pressure",
+      "prereq": "derived-units"
+    },
+    {
+      "concept": "gas-pressure",
+      "prereq": "states-of-matter"
+    },
+    {
+      "concept": "pressure-unit-conversion",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "pressure-unit-conversion",
+      "prereq": "convert-units"
+    },
+    {
+      "concept": "atmospheric-pressure-and-barometer",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "atmospheric-pressure-and-barometer",
+      "prereq": "density"
+    },
+    {
+      "concept": "hydrostatic-pressure",
+      "prereq": "atmospheric-pressure-and-barometer"
+    },
+    {
+      "concept": "hydrostatic-pressure",
+      "prereq": "density"
+    },
+    {
+      "concept": "hydrostatic-pressure",
+      "prereq": "compute-with-units"
+    },
+    {
+      "concept": "manometer-pressure",
+      "prereq": "hydrostatic-pressure"
+    },
+    {
+      "concept": "manometer-pressure",
+      "prereq": "pressure-unit-conversion"
+    },
+    {
+      "concept": "ideal-gas-law",
+      "prereq": "molar-mass"
+    },
+    {
+      "concept": "gas-density",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "gas-density",
+      "prereq": "density"
+    },
+    {
+      "concept": "gas-density",
+      "prereq": "molar-mass"
+    },
+    {
+      "concept": "molar-mass-of-a-gas",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "molar-mass-of-a-gas",
+      "prereq": "molar-mass"
+    },
+    {
+      "concept": "molar-mass-of-a-gas",
+      "prereq": "molecular-formula-from-empirical"
+    },
+    {
+      "concept": "daltons-law-of-partial-pressures",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "mole-fraction-and-partial-pressure",
+      "prereq": "daltons-law-of-partial-pressures"
+    },
+    {
+      "concept": "mole-fraction-and-partial-pressure",
+      "prereq": "mole"
+    },
+    {
+      "concept": "gas-collected-over-water",
+      "prereq": "daltons-law-of-partial-pressures"
+    },
+    {
+      "concept": "combining-volumes-of-gases",
+      "prereq": "avogadro-law"
+    },
+    {
+      "concept": "combining-volumes-of-gases",
+      "prereq": "coefficients-as-ratios"
+    },
+    {
+      "concept": "gas-stoichiometry",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "gas-stoichiometry",
+      "prereq": "mass-stoichiometry"
+    },
+    {
+      "concept": "mean-free-path",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "diffusion-and-effusion",
+      "prereq": "mean-free-path"
+    },
+    {
+      "concept": "diffusion-and-effusion",
+      "prereq": "concentration"
+    },
+    {
+      "concept": "grahams-law",
+      "prereq": "diffusion-and-effusion"
+    },
+    {
+      "concept": "grahams-law",
+      "prereq": "molar-mass"
+    },
+    {
+      "concept": "grahams-law-calculations",
+      "prereq": "grahams-law"
+    },
+    {
+      "concept": "kinetic-molecular-theory",
+      "prereq": "ideal-gas"
+    },
+    {
+      "concept": "kinetic-molecular-theory",
+      "prereq": "potential-and-kinetic-energy"
+    },
+    {
+      "concept": "kinetic-molecular-theory",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "kmt-explains-gas-laws",
+      "prereq": "kinetic-molecular-theory"
+    },
+    {
+      "concept": "kmt-explains-gas-laws",
+      "prereq": "amontons-law"
+    },
+    {
+      "concept": "kmt-explains-gas-laws",
+      "prereq": "charles-law"
+    },
+    {
+      "concept": "kmt-explains-gas-laws",
+      "prereq": "boyles-law"
+    },
+    {
+      "concept": "kmt-explains-gas-laws",
+      "prereq": "avogadro-law"
+    },
+    {
+      "concept": "kmt-explains-gas-laws",
+      "prereq": "daltons-law-of-partial-pressures"
+    },
+    {
+      "concept": "maxwell-boltzmann-distribution",
+      "prereq": "kinetic-molecular-theory"
+    },
+    {
+      "concept": "average-kinetic-energy-and-temperature",
+      "prereq": "kinetic-molecular-theory"
+    },
+    {
+      "concept": "average-kinetic-energy-and-temperature",
+      "prereq": "thermal-energy-and-temperature"
+    },
+    {
+      "concept": "root-mean-square-speed",
+      "prereq": "average-kinetic-energy-and-temperature"
+    },
+    {
+      "concept": "root-mean-square-speed",
+      "prereq": "maxwell-boltzmann-distribution"
+    },
+    {
+      "concept": "root-mean-square-speed",
+      "prereq": "molar-mass"
+    },
+    {
+      "concept": "grahams-law-from-kmt",
+      "prereq": "root-mean-square-speed"
+    },
+    {
+      "concept": "grahams-law-from-kmt",
+      "prereq": "grahams-law"
+    },
+    {
+      "concept": "compressibility-factor",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "causes-of-non-ideal-behavior",
+      "prereq": "compressibility-factor"
+    },
+    {
+      "concept": "causes-of-non-ideal-behavior",
+      "prereq": "kinetic-molecular-theory"
+    },
+    {
+      "concept": "conditions-for-ideal-behavior",
+      "prereq": "causes-of-non-ideal-behavior"
+    },
+    {
+      "concept": "conditions-for-ideal-behavior",
+      "prereq": "ideal-gas"
+    },
+    {
+      "concept": "van-der-waals-equation",
+      "prereq": "causes-of-non-ideal-behavior"
+    },
+    {
+      "concept": "van-der-waals-equation",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "force",
+      "prereq": "mass"
+    },
+    {
+      "concept": "area",
+      "prereq": "length"
+    },
+    {
+      "concept": "area",
+      "prereq": "derived-units"
+    },
+    {
+      "concept": "acceleration-due-to-gravity",
+      "prereq": "length"
+    },
+    {
+      "concept": "acceleration-due-to-gravity",
+      "prereq": "time"
+    },
+    {
+      "concept": "acceleration-due-to-gravity",
+      "prereq": "weight"
+    },
+    {
+      "concept": "pascal",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "pascal",
+      "prereq": "unit"
+    },
+    {
+      "concept": "pascal",
+      "prereq": "derived-units"
+    },
+    {
+      "concept": "bar-unit",
+      "prereq": "pascal"
+    },
+    {
+      "concept": "atmosphere-unit",
+      "prereq": "pascal"
+    },
+    {
+      "concept": "torr",
+      "prereq": "atmosphere-unit"
+    },
+    {
+      "concept": "pounds-per-square-inch",
+      "prereq": "atmosphere-unit"
+    },
+    {
+      "concept": "barometer",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "barometer",
+      "prereq": "hydrostatic-pressure"
+    },
+    {
+      "concept": "manometer",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "manometer",
+      "prereq": "hydrostatic-pressure"
+    },
+    {
+      "concept": "ideal-gas-constant",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "molar-volume",
+      "prereq": "volume"
+    },
+    {
+      "concept": "molar-volume",
+      "prereq": "mole"
+    },
+    {
+      "concept": "standard-molar-volume",
+      "prereq": "molar-volume"
+    },
+    {
+      "concept": "standard-molar-volume",
+      "prereq": "standard-temperature-and-pressure"
+    },
+    {
+      "concept": "standard-molar-volume",
+      "prereq": "ideal-gas-law"
+    },
+    {
+      "concept": "partial-pressure",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "partial-pressure",
+      "prereq": "mixtures"
+    },
+    {
+      "concept": "mole-fraction",
+      "prereq": "mole"
+    },
+    {
+      "concept": "mole-fraction",
+      "prereq": "mixtures"
+    },
+    {
+      "concept": "mole-fraction",
+      "prereq": "concentration"
+    },
+    {
+      "concept": "vapor-pressure-of-water",
+      "prereq": "partial-pressure"
+    },
+    {
+      "concept": "vapor-pressure-of-water",
+      "prereq": "temperature"
+    },
+    {
+      "concept": "diffusion",
+      "prereq": "concentration"
+    },
+    {
+      "concept": "diffusion",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "effusion",
+      "prereq": "atoms-and-molecules"
+    },
+    {
+      "concept": "effusion",
+      "prereq": "gas-pressure"
+    },
+    {
+      "concept": "rate-of-diffusion",
+      "prereq": "diffusion"
+    },
+    {
+      "concept": "rate-of-diffusion",
+      "prereq": "area"
+    },
+    {
+      "concept": "rate-of-diffusion",
+      "prereq": "time"
+    },
+    {
+      "concept": "speed",
+      "prereq": "length"
+    },
+    {
+      "concept": "speed",
+      "prereq": "time"
+    },
+    {
+      "concept": "speed",
+      "prereq": "velocity"
+    },
+    {
+      "concept": "gas-pressure",
+      "prereq": "force"
+    },
+    {
+      "concept": "gas-pressure",
+      "prereq": "area"
+    },
+    {
+      "concept": "pressure-unit-conversion",
+      "prereq": "pascal"
+    },
+    {
+      "concept": "pressure-unit-conversion",
+      "prereq": "bar-unit"
+    },
+    {
+      "concept": "pressure-unit-conversion",
+      "prereq": "atmosphere-unit"
+    },
+    {
+      "concept": "pressure-unit-conversion",
+      "prereq": "torr"
+    },
+    {
+      "concept": "pressure-unit-conversion",
+      "prereq": "pounds-per-square-inch"
+    },
+    {
+      "concept": "hydrostatic-pressure",
+      "prereq": "acceleration-due-to-gravity"
+    },
+    {
+      "concept": "manometer-pressure",
+      "prereq": "manometer"
+    },
+    {
+      "concept": "daltons-law-of-partial-pressures",
+      "prereq": "partial-pressure"
+    },
+    {
+      "concept": "mole-fraction-and-partial-pressure",
+      "prereq": "mole-fraction"
+    },
+    {
+      "concept": "mole-fraction-and-partial-pressure",
+      "prereq": "partial-pressure"
+    },
+    {
+      "concept": "gas-collected-over-water",
+      "prereq": "vapor-pressure-of-water"
+    },
+    {
+      "concept": "diffusion-and-effusion",
+      "prereq": "diffusion"
+    },
+    {
+      "concept": "diffusion-and-effusion",
+      "prereq": "effusion"
+    },
+    {
+      "concept": "grahams-law",
+      "prereq": "effusion"
+    },
+    {
+      "concept": "grahams-law-calculations",
+      "prereq": "effusion"
+    },
+    {
+      "concept": "maxwell-boltzmann-distribution",
+      "prereq": "speed"
+    },
+    {
+      "concept": "root-mean-square-speed",
+      "prereq": "speed"
     }
   ],
   "sheets": [

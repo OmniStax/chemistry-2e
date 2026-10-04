@@ -151,7 +151,8 @@
         "volume",
         "amount",
         "pressure",
-        "temperature"
+        "temperature",
+        "mass"
       ]
     }
   ],
@@ -1048,6 +1049,28 @@
     {
       "exercise": "e30",
       "concept": "boyles-law"
+    }
+  ],
+  "referents": [
+    {
+      "id": "sphere",
+      "label": "the sealed sphere",
+      "figure": "sim-amontons-sphere"
+    },
+    {
+      "id": "syringe",
+      "label": "the syringe",
+      "figure": "sim-boyle"
+    },
+    {
+      "id": "lungs",
+      "label": "the lungs",
+      "figure": "sim-breathing"
+    },
+    {
+      "id": "diaphragm",
+      "label": "the diaphragm",
+      "figure": "sim-breathing"
     }
   ]
 }

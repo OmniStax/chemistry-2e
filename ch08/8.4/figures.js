@@ -82,31 +82,32 @@ function lewis(ctx, cx, cy, atoms, order) {
   function draw() {
     const { ctx } = begin(d.c);
     const th = tilt.v * RAD, px = 700, py = 150, L = 330;
+    const cBal = F.ref('balance'), cSam = F.ref('sample'), cMag = F.ref('electromagnets'), cW = F.ref('weights');
     const lx = px - L * Math.cos(th), ly = py + L * Math.sin(th), rx = px + L * Math.cos(th), ry = py - L * Math.sin(th);
     /* the stand */
-    line(ctx, px, py, px, 520, PAL.ink, 6); line(ctx, px - 120, 520, px + 120, 520, PAL.ink, 6);
-    line(ctx, lx, ly, rx, ry, PAL.ink, 6); dot(ctx, px, py, PAL.ink, true, 10);
+    line(ctx, px, py, px, 520, cBal, 6); line(ctx, px - 120, 520, px + 120, 520, cBal, 6);
+    line(ctx, lx, ly, rx, ry, cBal, 6); dot(ctx, px, py, cBal, true, 10);
     /* the electromagnets, one either side of the tube */
     const on = field.value === 'on';
     [[lx - 150, 'N'], [lx + 60, 'S']].forEach(([x, p]) => {
-      ctx.save(); ctx.fillStyle = alpha(PAL.ink, on ? 0.35 : 0.15); ctx.fillRect(x, 330, 90, 150); ctx.restore();
-      ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(x, 330, 90, 150); ctx.restore();
+      ctx.save(); ctx.fillStyle = alpha(cMag, on ? 0.35 : 0.15); ctx.fillRect(x, 330, 90, 150); ctx.restore();
+      ctx.save(); ctx.strokeStyle = cMag; ctx.lineWidth = 2; ctx.strokeRect(x, 330, 90, 150); ctx.restore();
       text(ctx, p, x + 45, 405, PAL.ink, { size: 26, weight: 600, align: 'center' });
     });
     if (on) for (let i = 0; i < 4; i++) line(ctx, lx - 58, 350 + i * 36, lx + 58, 350 + i * 36, alpha(PAL.ink, 0.4), 2, [6, 8]);
-    text(ctx, 'electromagnets', lx - 105, 510, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, 'electromagnets', lx - 105, 510, cMag, { size: 20, align: 'center' });
     /* the sample tube hanging from the left end */
     const ty = ly + 150;
-    line(ctx, lx, ly, lx, ty, PAL.ink, 2);
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(lx - 16, ty); ctx.lineTo(lx - 16, ty + 160); ctx.arc(lx, ty + 160, 16, Math.PI, 0, true); ctx.lineTo(lx + 16, ty); ctx.stroke(); ctx.restore();
+    line(ctx, lx, ly, lx, ty, cBal, 2);
+    ctx.save(); ctx.strokeStyle = cSam; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(lx - 16, ty); ctx.lineTo(lx - 16, ty + 160); ctx.arc(lx, ty + 160, 16, Math.PI, 0, true); ctx.lineTo(lx + 16, ty); ctx.stroke(); ctx.restore();
     ctx.save(); ctx.fillStyle = alpha(F.el(sample.value === 'o2' ? 'O' : 'N'), 0.8); ctx.fillRect(lx - 13, ty + 90, 26, 70); ctx.beginPath(); ctx.arc(lx, ty + 160, 13, 0, Math.PI); ctx.fill(); ctx.restore();
-    F.label(ctx, 'sample tube', lx, ty + 20, { side: 'right' });
+    F.label(ctx, 'sample tube', lx, ty + 20, { side: 'right', color: cSam });
     /* the dish and its weights on the right */
     const dy = ry + 200;
-    line(ctx, rx, ry, rx - 70, dy, PAL.ink, 2); line(ctx, rx, ry, rx + 70, dy, PAL.ink, 2);
-    line(ctx, rx - 90, dy, rx + 90, dy, PAL.ink, 5);
-    ctx.save(); ctx.fillStyle = PAL.ink; ctx.fillRect(rx - 50, dy - 40, 40, 40); ctx.fillRect(rx + 5, dy - 28, 30, 28); ctx.restore();
-    text(ctx, 'weights', rx + 110, dy - 10, PAL.ink, { size: 20 });
+    line(ctx, rx, ry, rx - 70, dy, cW, 2); line(ctx, rx, ry, rx + 70, dy, cW, 2);
+    line(ctx, rx - 90, dy, rx + 90, dy, cW, 5);
+    ctx.save(); ctx.fillStyle = cW; ctx.fillRect(rx - 50, dy - 40, 40, 40); ctx.fillRect(rx + 5, dy - 28, 30, 28); ctx.restore();
+    text(ctx, 'weights', rx + 110, dy - 10, cW, { size: 20 });
     hits = [{ x: lx, y: ty + 110, r: 40, name: sample.value === 'o2' ? 'liquid oxygen, O₂' : 'liquid nitrogen, N₂' }];
     const t = target(), name = sample.value === 'o2' ? 'O₂' : 'N₂';
     headline(ctx, !on ? 'With the electromagnets off, the sample and the weights balance.'
@@ -124,11 +125,11 @@ function lewis(ctx, cx, cy, atoms, order) {
 ===================================================================== */
 (function () {
   const d = sim('sim-waves', 620);
-  const P = ctl(d.controls, { label: '\\text{phase difference}', cls: '', min: 0, max: 180, step: 1, value: 0, unit: '°', dec: 0, aria: 'phase difference in degrees',
+  const P = ctl(d.controls, { label: '\\text{phase difference}', cls: 'angle', min: 0, max: 180, step: 1, value: 0, unit: '°', dec: 0, aria: 'phase difference in degrees',
     specials: [{ at: 0, label: 'in phase' }, { at: 180, label: 'out of phase' }] });
   const X0 = 260, X1 = 1300, A = 55, K = 2 * TAU / (X1 - X0);
-  function wave(ctx, y, amp, ph, w) {
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = w; ctx.beginPath();
+  function wave(ctx, y, amp, ph, w, col) {
+    ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.beginPath();
     for (let x = X0; x <= X1; x += 4) { const v = y - amp * Math.sin(K * (x - X0) + ph); x === X0 ? ctx.moveTo(x, v) : ctx.lineTo(x, v); }
     ctx.stroke(); ctx.restore();
     line(ctx, X0, y, X1, y, alpha(PAL.ink, 0.3), 2, [10, 10]);
@@ -136,19 +137,20 @@ function lewis(ctx, cx, cy, atoms, order) {
   function draw() {
     const { ctx } = begin(d.c);
     const ph = P.v * RAD, amp = 2 * Math.cos(ph / 2);
-    wave(ctx, 150, A, 0, 3); wave(ctx, 300, A, ph, 3);
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 5; ctx.beginPath();
+    const cA = F.ref('wave-a'), cB = F.ref('wave-b'), cS = F.ref('wave-sum');
+    wave(ctx, 150, A, 0, 3, cA); wave(ctx, 300, A, ph, 3, cB);
+    ctx.save(); ctx.strokeStyle = cS; ctx.lineWidth = 5; ctx.beginPath();
     for (let x = X0; x <= X1; x += 4) { const v = 490 - A * (Math.sin(K * (x - X0)) + Math.sin(K * (x - X0) + ph)); x === X0 ? ctx.moveTo(x, v) : ctx.lineTo(x, v); }
     ctx.stroke(); ctx.restore();
     line(ctx, X0, 490, X1, 490, alpha(PAL.ink, 0.3), 2, [10, 10]);
-    text(ctx, 'ψ_{A}', 200, 150, PAL.ink, { size: 26, align: 'right' });
-    text(ctx, '+  ψ_{B}', 200, 300, PAL.ink, { size: 26, align: 'right' });
-    text(ctx, '=  ψ_{A} + ψ_{B}', 225, 490, PAL.ink, { size: 26, align: 'right' });
+    text(ctx, 'ψ_{A}', 200, 150, cA, { size: 26, align: 'right' });
+    text(ctx, '+  ψ_{B}', 200, 300, cB, { size: 26, align: 'right' });
+    text(ctx, '=  ψ_{A} + ψ_{B}', 225, 490, cS, { size: 26, align: 'right' });
     const a = fmt(Math.abs(amp), 2);
     headline(ctx, P.v === 0 ? 'In phase, peaks line up with peaks: constructive interference doubles the amplitude.'
       : P.v === 180 ? 'Out of phase, peaks line up with troughs: destructive interference leaves no wave.'
       : 'At a phase difference of ' + P.v + '°, the sum has ' + a + ' times the amplitude of either wave.');
-    readout(d.readout, `\\text{amplitude of the sum} = 2\\cos\\left(\\frac{${P.v}^\\circ}{2}\\right) = ${a}`, 'The amplitude of the sum is given in units of the amplitude of either wave.');
+    readout(d.readout, `\\text{amplitude of the sum} = 2\\cos\\left(\\frac{\\htmlClass{kv-angle}{${P.v}^\\circ}}{2}\\right) = ${a}`, 'The amplitude of the sum is given in units of the amplitude of either wave.');
   }
   still(d, draw);
 })();
@@ -444,7 +446,7 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
     const nv = nPick.value === 'many' ? Infinity : +nPick.value, frac = nv === Infinity ? 1 : 1 - 2 / nv;
     const vt = mid + g / 2, vb = vt + W * frac, cb = mid - g / 2, ct = cb - W * frac;
     eAxis(ctx, 200, 560, 60);
-    const cV = F.cat(2), cC = F.cat(4);
+    const cV = F.ref('valence-band'), cC = F.ref('conduction-band');
     if (nv === Infinity) {
       ctx.save(); ctx.fillStyle = alpha(cV, 0.45); ctx.fillRect(x0, vt, x1 - x0, vb - vt); ctx.fillStyle = alpha(cC, 0.25); ctx.fillRect(x0, ct, x1 - x0, cb - ct); ctx.restore();
       ctx.save(); ctx.strokeStyle = cV; ctx.lineWidth = 3; ctx.strokeRect(x0, vt, x1 - x0, vb - vt); ctx.strokeStyle = cC; ctx.strokeRect(x0, ct, x1 - x0, cb - ct); ctx.restore();

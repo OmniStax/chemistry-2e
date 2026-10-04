@@ -58,7 +58,7 @@
     "/media/ch08/CNX_Chem_08_04_waveadd.jpg"
    ],
    "original_caption": "(a) When in-phase waves combine, constructive interference produces a wave with greater amplitude. (b) When out-of-phase waves combine, destructive interference produces a wave with less (or no) amplitude.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "sim-mo-shapes",
@@ -750,6 +750,53 @@
   {
    "exercise": "e18",
    "concept": "paramagnetism-and-diamagnetism"
+  }
+ ],
+ "referents": [
+  {
+   "id": "balance",
+   "label": "the Gouy balance",
+   "figure": "sim-gouy"
+  },
+  {
+   "id": "sample",
+   "label": "the sample in its tube",
+   "figure": "sim-gouy"
+  },
+  {
+   "id": "electromagnets",
+   "label": "the electromagnets",
+   "figure": "sim-gouy"
+  },
+  {
+   "id": "weights",
+   "label": "the weights on the dish",
+   "figure": "sim-gouy"
+  },
+  {
+   "id": "wave-a",
+   "label": "the first wave",
+   "figure": "sim-waves"
+  },
+  {
+   "id": "wave-b",
+   "label": "the second wave",
+   "figure": "sim-waves"
+  },
+  {
+   "id": "wave-sum",
+   "label": "the sum of the two waves",
+   "figure": "sim-waves"
+  },
+  {
+   "id": "valence-band",
+   "label": "the valence band",
+   "figure": "sim-bands"
+  },
+  {
+   "id": "conduction-band",
+   "label": "the conduction band",
+   "figure": "sim-bands"
   }
  ]
 }

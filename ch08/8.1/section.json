@@ -4,7 +4,7 @@
  "chapter": "8",
  "title": "Valence Bond Theory",
  "short": "Valence Bond Theory",
- "lead": "VSEPR theory predicts the shapes of molecules but does not explain the bonds that hold them together. Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms. The energy of two approaching hydrogen atoms sets the bond distance and the bond energy. End-to-end overlap forms σ bonds and side-by-side overlap forms π bonds, and from these two kinds we build single, double and triple bonds.",
+ "lead": "VSEPR theory predicts the shapes of molecules but does not explain the bonds that hold them together. Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms. <span data-type=\"energy\">The energy of two approaching hydrogen atoms</span> sets <span data-type=\"length\">the bond distance</span> and <span data-type=\"energy\">the bond energy</span>. End-to-end overlap forms σ bonds and side-by-side overlap forms π bonds, and from these two kinds we build single, double and triple bonds.",
  "objectives": [
   "Describe the formation of covalent bonds in terms of atomic orbital overlap",
   "Define and give examples of σ and π bonds"
@@ -38,7 +38,8 @@
    ],
    "original_caption": "(a) The interaction of two hydrogen atoms changes as a function of distance. (b) The energy of the system changes as the atoms interact. The lowest (most stable) energy occurs at a distance of 74 pm, which is the bond length observed for the H₂ molecule.",
    "draws": [
-    "energy"
+    "energy",
+    "length"
    ]
   },
   {

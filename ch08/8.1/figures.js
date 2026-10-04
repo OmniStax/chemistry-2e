@@ -54,7 +54,7 @@ function lewis(ctx, cx, cy, atoms, bonds) {
 ===================================================================== */
 (function () {
   const d = sim('sim-morse', 640);
-  const R = ctl(d.controls, { label: 'r', cls: '', min: 30, max: 300, step: 1, value: 74, unit: 'pm', dec: 0, aria: 'internuclear distance in picometers',
+  const R = ctl(d.controls, { label: 'r', cls: 'length', min: 30, max: 300, step: 1, value: 74, unit: 'pm', dec: 0, aria: 'internuclear distance in picometers',
     specials: [{ at: 74, label: 'bond length' }] });
   /* a Morse curve with the book's depth, 7.24 × 10⁻¹⁹ J at 74 pm; energies in units of 10⁻¹⁹ J */
   const DEPTH = 7.24, RE = 74, A = 0.0194, NA = 6.022e23;
@@ -65,8 +65,8 @@ function lewis(ctx, cx, cy, atoms, bonds) {
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
-    const r = R.v, e = E(r), cE = C('energy');
-    const { X, Y } = axes(ctx, box, [0, 300], [-8, 6], { nx: 6, ny: 7, xl: 'internuclear distance (pm)', yl: 'energy (10⁻¹⁹ J)', yc: cE, fy: (v) => minus(fmt(v, 0)) });
+    const r = R.v, e = E(r), cE = C('energy'), cL = C('length');
+    const { X, Y } = axes(ctx, box, [0, 300], [-8, 6], { nx: 6, ny: 7, xl: 'internuclear distance (pm)', xc: cL, yl: 'energy (10⁻¹⁹ J)', yc: cE, fy: (v) => minus(fmt(v, 0)) });
     line(ctx, box.l, Y(0), box.r, Y(0), alpha(PAL.ink, 0.35), 2, [10, 10]);
     line(ctx, box.l, Y(-DEPTH), X(RE), Y(-DEPTH), alpha(PAL.ink, 0.35), 2, [4, 8]);
     line(ctx, X(RE), Y(-DEPTH), X(RE), box.b, alpha(PAL.ink, 0.35), 2, [4, 8]);

@@ -41,7 +41,7 @@
     "/media/ch08/CNX_Chem_08_02_H2Otet.jpg"
    ],
    "original_caption": "(Figure 8.6) The hypothetical overlap of two of the 2p orbitals on an oxygen atom (red) with the 1s orbitals of two hydrogen atoms (blue) would produce a bond angle of 90°. This is not consistent with experimental evidence. (Note that orbitals may sometimes be drawn in an elongated “balloon” shape rather than in a more realistic “plump” shape in order to make the geometry easier to visualize.) (Figure 8.7) (a) A water molecule has four regions of electron density, so VSEPR theory predicts a tetrahedral arrangement of hybrid orbitals. (b) Two of the hybrid orbitals on oxygen contain lone pairs, and the other two overlap with the 1s orbitals of hydrogen atoms to form the O–H bonds in H₂O. This description is more consistent with the experimental structure.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "sim-sp",
@@ -51,7 +51,7 @@
     "/media/ch08/CNX_Chem_08_02_spGeom.jpg"
    ],
    "original_caption": "Hybridization of an s orbital (blue) and a p orbital (red) of the same atom produces two sp hybrid orbitals (yellow). Each hybrid orbital is oriented primarily in just one direction. Note that each sp orbital contains one lobe that is significantly larger than the other. The set of two sp orbitals are oriented at 180°, which is consistent with the geometry for two domains.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "fig-sp-levels",
@@ -79,7 +79,7 @@
     "/media/ch08/CNX_Chem_08_02_BH3.jpg"
    ],
    "original_caption": "(Figure 8.10) The hybridization of an s orbital (blue) and two p orbitals (red) produces three equivalent sp² hybridized orbitals (yellow) oriented at 120° with respect to each other. The remaining unhybridized p orbital is not shown here, but is located along the z axis. (Figure 8.11) This alternate way of drawing the trigonal planar sp² hybrid orbitals is sometimes used in more crowded figures. (Figure 8.12) BH₃ is an electron-deficient molecule with a trigonal planar structure.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "fig-sp2-levels",
@@ -111,7 +111,7 @@
     "/media/ch08/CNX_Chem_08_02_sp3Geom.jpg"
    ],
    "original_caption": "The hybridization of an s orbital (blue) and three p orbitals (red) produces four equivalent sp³ hybridized orbitals (yellow) oriented at 109.5° with respect to each other.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "fig-sp3-levels",
@@ -133,7 +133,7 @@
     "/media/ch08/CNX_Chem_08_02_ethane.jpg"
    ],
    "original_caption": "(a) In the ethane molecule, C₂H₆, each carbon has four sp³ orbitals. (b) These four orbitals overlap to form seven σ bonds.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "fig-sp3d-lewis",
@@ -157,7 +157,7 @@
     "/media/ch08/CNX_Chem_08_02_SF6.jpg"
    ],
    "original_caption": "(Figure 8.19) (a) The five regions of electron density around phosphorus in PCl₅ require five hybrid sp³d orbitals. (b) These orbitals combine to form a trigonal bipyramidal structure with each large lobe of the hybrid orbital pointing at a vertex. As before, there are also small lobes pointing in the opposite direction for each orbital (not shown for clarity). (Figure 8.20) (a) Sulfur hexafluoride, SF₆, has an octahedral structure that requires sp³d² hybridization. (b) The six sp³d² orbitals form an octahedral structure around sulfur. Again, the minor lobe of each orbital is not shown for clarity.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "sim-hybrid-sets",
@@ -167,7 +167,7 @@
     "/media/ch08/CNX_Chem_08_02_HybrdOrbit.jpg"
    ],
    "original_caption": "The shapes of hybridized orbital sets are consistent with the electron-pair geometries. For example, an atom surrounded by three regions of electron density is sp² hybridized, and the three sp² orbitals are arranged in a trigonal planar fashion.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "fig-hydrides",

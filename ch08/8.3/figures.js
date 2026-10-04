@@ -126,7 +126,7 @@ function resonanceArrow(ctx, x1, x2, y) {
   const g = v.part(0), c2 = F.makeCanvas(d.stage, 150);
   const mol = F.choice(d.controls, { label: '\\text{molecule}', aria: 'the molecule', options: [{ value: 'ethene', label: 'ethene (C₂H₄)' }, { value: 'acetylene', label: 'acetylene (C₂H₂)' }], value: 'ethene',
     onInput: () => tw.show(mol.value === 'ethene') });
-  const tw = F.ctl(d.controls, { label: '\\theta', cls: '', aria: 'twist of one CH2 group about the C–C axis', min: 0, max: 90, step: 1, value: 0, unit: '°', dec: 0, specials: [{ at: 90, label: 'perpendicular' }] });
+  const tw = F.ctl(d.controls, { label: '\\theta', cls: 'angle', aria: 'twist of one CH2 group about the C–C axis', min: 0, max: 90, step: 1, value: 0, unit: '°', dec: 0, specials: [{ at: 90, label: 'perpendicular' }] });
   const ro = F.readout(d);
   const rotX = (p, a) => [p[0], p[1] * Math.cos(a) - p[2] * Math.sin(a), p[1] * Math.sin(a) + p[2] * Math.cos(a)];
   const add = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]], mul = (a, k) => [a[0] * k, a[1] * k, a[2] * k], neg = (a) => mul(a, -1);
@@ -190,7 +190,7 @@ function resonanceArrow(ctx, x1, x2, y) {
         : `One CH_{2} group is twisted ${th}° about the C–C axis, and the p orbitals overlap only ${Math.round(s * 100)}% as much as in the planar molecule.`);
       legend(ctx, 'sp²');
       if (th >= 90) ro.set('\\mk{b}{\\text{C–C}} = \\mk{s}{1\\,\\sigma} + \\mk{p}{0\\,\\pi}', 'The side-by-side overlap is cos 90° = 0, so no π bond remains.', { form: 'broken' });
-      else ro.set(`\\mk{o}{\\text{overlap}} = \\mk{c}{\\cos ${th}^\\circ} = \\mk{v}{${s.toFixed(2)}}`, 'The C=C double bond is one σ bond and one π bond, and the π bond is only as strong as the side-by-side overlap allows.', { form: 'ethene' });
+      else ro.set(`\\mk{o}{\\text{overlap}} = \\mk{c}{\\cos \\htmlClass{kv-angle}{${th}^\\circ}} = \\mk{v}{${s.toFixed(2)}}`, 'The C=C double bond is one σ bond and one π bond, and the π bond is only as strong as the side-by-side overlap allows.', { form: 'ethene' });
     } else {
       acetylene();
       topline(ctx, 'Each carbon atom keeps two p orbitals at right angles, and the two pairs overlap side by side to form two π bonds around the C–C σ bond.');

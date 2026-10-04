@@ -6,6 +6,7 @@ const sim = (id, H) => F.sim(root, id, H);
 /* a still figure answers its choices, or nothing at all, and has no clock */
 const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
+const hued = (e, type) => { e.style.color = C(type); return e; };
 const RAD = Math.PI / 180, TAU = 2 * Math.PI;
 
 /* ---------- vectors ---------- */
@@ -74,6 +75,8 @@ const NAMES = { H: 'hydrogen (H)', B: 'boron (B)', C: 'carbon (C)', O: 'oxygen (
 function atom3(g, v, p, sym, r, a = 1) { const m = fade(sphere(g, p, r, F.el(sym)), a); if (a > 0.3) v.pickable(m, NAMES[sym]); return m; }
 function bond3(g, p, q, a = 1, r = 0.055) { return fade(stick(g, p, q, r, PAL.ink), a); }
 const FREE_PITCH = [-Math.PI / 2, Math.PI / 2];
+/* an angle between two directions from the nucleus: its arc and its degrees in the angle hue */
+const angle3 = (g, v, a, b, R, t) => hued(v.label(t, arc3d(g, a, b, R, [0, 0, 0], C('angle')), g, 0), 'angle');
 
 /* =====================================================================
    FIGURE 8.6 + 8.7: water with two perpendicular 2p orbitals, then with four
@@ -101,15 +104,15 @@ const FREE_PITCH = [-Math.PI / 2, Math.PI / 2];
     lones.forEach((b) => { const m = fade(lobe3(g, [0, 0, 0], b, len * (1 - 0.1 * k), col), 1); v.pickable(m, lName); });
     atom3(g, v, [0, 0, 0], 'O', 0.16);
     bonds.forEach((b) => { const p = V.mul(b, 1.75); sOrb(g, v, p, 0.5, S_COL(), 1, 'the 1s orbital of a hydrogen atom'); atom3(g, v, p, 'H', 0.12); });
-    const m = arc3d(g, bonds[0], bonds[1], 0.75);
-    if (k < 0.02 || k > 0.98) v.label(sp3 ? '109.5°' : '90°', m, g, 0);
+    if (k < 0.02 || k > 0.98) angle3(g, v, bonds[0], bonds[1], 0.75, sp3 ? '109.5°' : '90°');
+    else arc3d(g, bonds[0], bonds[1], 0.75, [0, 0, 0], C('angle'));
     v.label('O', [0, -0.28, 0], g, 0);
     v.label(sp3 ? '<em>sp</em><sup>3</sup>' : '2<em>p</em>', V.mul(bonds[1], 1.0), g, 0);
     v.label('H', V.mul(bonds[0], 2.4), g, 0); v.label('H', V.mul(bonds[1], 2.4), g, 0);
     v.headline(sp3
       ? 'Four sp<sup>3</sup> hybrids point toward the corners of a tetrahedron, 109.5° apart; the observed H–O–H angle is 104.5°.'
       : 'Two perpendicular 2p orbitals would hold the hydrogen atoms 90° apart; the observed H–O–H angle is 104.5°.');
-    readout(d.readout, `\\angle\\text{HOH}_{\\text{predicted}} = ${sp3 ? '109.5' : '90'}^\\circ \\qquad \\angle\\text{HOH}_{\\text{observed}} = 104.5^\\circ`,
+    readout(d.readout, `\\htmlClass{kv-angle}{\\angle\\text{HOH}_{\\text{predicted}}} = ${sp3 ? '109.5' : '90'}^\\circ \\qquad \\htmlClass{kv-angle}{\\angle\\text{HOH}_{\\text{observed}}} = 104.5^\\circ`,
       sp3 ? 'The two lone pairs occupy more space than the two bonding pairs, which is why the observed angle is slightly smaller than 109.5°.'
         : 'The prediction misses the observed angle by 14.5°, so a model that keeps the atomic orbitals of an isolated atom cannot be the whole story.');
   }
@@ -157,7 +160,7 @@ function bench(id, n, stages, opts) {
       if (sp === 'atomic') { v.label('<em>s</em>', [0.35, 0.5, 0.2], g, 0); v.label(`<em>p<sub>${AXN[0]}</sub></em>`, [1.95, 0.2, 0], g, 0); if (nP > 1) v.label(`<em>p<sub>y</sub></em>`, [0.2, 1.95, 0], g, 0); if (nP > 2) v.label(`<em>p<sub>z</sub></em>`, [0.2, 0.2, 1.95], g, 0); }
       if (sp === 'hybrid' || sp === 'thin') v.label(`<em>${hyb}</em>`, V.mul(dirs[0], 1.65), g, 0);
       if (n === 3 && sp !== 'atomic') v.label('<em>p<sub>z</sub></em>', [0.2, 0.2, 1.75], g, 0);
-      if (sp !== 'atomic') ARCS[n].forEach(([i, j, t]) => v.label(t, arc3d(g, dirs[i], dirs[j], 0.8), g, 0));
+      if (sp !== 'atomic') ARCS[n].forEach(([i, j, t]) => angle3(g, v, dirs[i], dirs[j], 0.8, t));
       if (sp === 'mol') { v.label('B', [0, -0.45, 0], g, 0); dirs.forEach((u) => v.label('H', V.mul(u, 2.15), g, 0)); }
     }
     v.headline(opts.head[sp]);
@@ -238,7 +241,7 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orb
   const v = F.view3d(d.stage, { h: 420, dist: 7.4, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.35, pitch: 0.3 }, { label: 'along C–C', yaw: -Math.PI / 2, pitch: 0 }] });
   const g = v.part(0); g.position.y = -0.35;
   const view = F.choice(d.controls, { label: 'drawing', aria: 'orbitals or bonds', options: [{ value: 'orb', label: 'orbitals' }, { value: 'bond', label: 'σ bonds' }], value: 'orb' });
-  const phi = F.ctl(d.controls, { label: '\\varphi', cls: '', min: 0, max: 120, step: 1, value: 0, unit: '°', dec: 0, aria: 'rotation of the right-hand CH3 group about the C–C bond' });
+  const phi = F.ctl(d.controls, { label: '\\varphi', cls: 'angle', min: 0, max: 120, step: 1, value: 0, unit: '°', dec: 0, aria: 'rotation of the right-hand CH3 group about the C–C bond' });
   const CC = 1.55, CH = 1.1 * 1.15;
   const hDirs = (sign, turn) => [90, 210, 330].map((a) => V.unit([sign * 1 / 3, T3 * Math.cos((a + turn) * RAD), T3 * Math.sin((a + turn) * RAD)]));
   function draw() {
@@ -263,7 +266,7 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orb
       if (view.value === 'orb') v.label('<em>sp</em><sup>3</sup>', V.add(C1, V.mul(groups[0].hs[0], 1.1)), g, 0);
     }
     v.headline(`One CH<sub>3</sub> group turned ${Math.round(phi.v)}° about the C–C bond: seven σ bonds, one C–C and six C–H, at every angle.`);
-    readout(d.readout, `\\varphi = ${Math.round(phi.v)}^\\circ`, 'The C–C σ bond is formed by end-to-end overlap along the bond axis, so turning one group about that axis leaves the overlap unchanged.');
+    readout(d.readout, `\\htmlClass{kv-angle}{\\varphi} = ${Math.round(phi.v)}^\\circ`, 'The C–C σ bond is formed by end-to-end overlap along the bond axis, so turning one group about that axis leaves the overlap unchanged.');
   }
   still(d, draw);
 })();
@@ -296,7 +299,7 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orb
     one('pcl5', mol.a('pcl5')); one('sf6', mol.a('sf6'));
     const m = MOL[mol.value], dirs = SITES[m.n], hyb = how.value === 'hyb';
     if (mol.k > 0.98 && how.k > 0.98) {
-      ARCS[m.n].forEach(([i, j, t]) => v.label(t, arc3d(g, dirs[i], dirs[j], 0.8), g, 0));
+      ARCS[m.n].forEach(([i, j, t]) => angle3(g, v, dirs[i], dirs[j], 0.8, t));
       if (hyb) v.label(`<em>${HYB[m.n]}</em>`, V.mul(dirs[2], 1.75), g, 0);
       else { v.label(m.c, [0.3, -0.35, 0.3], g, 0); v.label(m.x, V.mul(dirs[2], 2.3), g, 0); }
     }
@@ -328,7 +331,7 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orb
     v.clear(); nucleus(g);
     [2, 3, 4, 5, 6].forEach((i) => one(i, n.a(String(i))));
     const i = +n.value;
-    if (n.k > 0.98) ARCS[i].forEach(([a, b, t]) => v.label(t, arc3d(g, SITES[i][a], SITES[i][b], 0.8), g, 0));
+    if (n.k > 0.98) ARCS[i].forEach(([a, b, t]) => angle3(g, v, SITES[i][a], SITES[i][b], 0.8, t));
     v.headline(`${WORDS[i]} regions of electron density: a ${ARRANGE[i]} arrangement of ${HYB[i]} hybrid orbitals, ${ANGLES[i]} apart.`);
     readout(d.readout, `${i}\\ \\text{regions} \\;\\longrightarrow\\; \\text{${ARRANGE[i]}},\\ ${HYB_TEX[i]}`,
       i > 4 ? 'This set needs d orbitals, so it is possible only for an atom beyond the second period.' : 'The arrangement is the electron-pair geometry VSEPR theory predicts for the same number of regions.');

@@ -398,7 +398,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Find the atomic number of each element, which is its number of electrons, and place the electrons one at a time into the subshells in the order of Figure 6.26, filling each subshell to its capacity (2 for <em>s</em>, 6 for <em>p</em>, 10 for <em>d</em>, 14 for <em>f</em>) before the next is begun. Stop when the superscripts add up to the atomic number, and check the last subshell against the square of that element in Figure 6.29."
+    "solution": "Find the atomic number of each element, which is its number of electrons, and place the electrons one at a <span data-ink>time</span> into the subshells in the order of Figure 6.26, filling each subshell to its capacity (2 for <em>s</em>, 6 for <em>p</em>, 10 for <em>d</em>, 14 for <em>f</em>) before the next is begun. Stop when the superscripts add up to the atomic number, and check the last subshell against the square of that element in Figure 6.29."
    }
   },
   {

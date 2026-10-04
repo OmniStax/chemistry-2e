@@ -583,7 +583,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: by Raoult’s law, the vapor pressure depends on the mole fraction of water in the liquid. For pure water the mole fraction stays 1 as it evaporates, so its line stays flat at the vapor pressure of water. The sugar solution starts below it, since the sugar lowers the mole fraction of water, and as water leaves and the sugar stays behind, the solution grows more concentrated, so its line slopes gently downward over time."
+        "solution": "Suggested approach: by Raoult’s law, the vapor pressure depends on the mole fraction of water in the liquid. For pure water the mole fraction stays 1 as it evaporates, so its line stays flat at the vapor pressure of water. The sugar solution starts below it, since the sugar lowers the mole fraction of water, and as water leaves and the sugar stays behind, the solution grows more concentrated, so its line slopes gently downward over <span data-ink>time</span>."
       }
     },
     {

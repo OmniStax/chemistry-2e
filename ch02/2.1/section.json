@@ -4,12 +4,12 @@
  "chapter": "2",
  "title": "Early Ideas in Atomic Theory",
  "short": "Early atomic theory",
- "lead": "The idea that matter consists of atoms is older than chemistry, but it became a scientific theory only when John Dalton used it to explain what chemists could measure. Dalton’s postulates account for two laws of mass. Every sample of a compound contains its elements in the same proportion by mass. And when two elements form more than one compound, the masses of one that combine with a fixed mass of the other stand in a ratio of small whole numbers.",
+ "lead": "The idea that matter consists of atoms is older than chemistry, but it became a scientific theory only when John Dalton used it to explain what chemists could measure. Dalton’s postulates account for two laws of <span data-concept=\"mass\">mass</span>. Every sample of a compound contains its elements in the same proportion by <span data-concept=\"mass\">mass</span>. And when two elements form more than one compound, the <span data-concept=\"mass\">masses</span> of one that combine with a fixed <span data-concept=\"mass\">mass</span> of the other stand in a ratio of small whole numbers.",
  "objectives": [
   "State the postulates of Dalton’s atomic theory",
   "Use postulates of Dalton’s atomic theory to explain the laws of definite and multiple proportions"
  ],
- "summary_html": "<p>The ancient Greeks proposed that matter consists of extremely small particles called atoms. Dalton postulated that each element has a characteristic type of atom that differs in properties from atoms of all other elements, and that atoms of different elements can combine in fixed, small, whole-number ratios to form compounds. Samples of a particular compound all have the same elemental proportions by mass. When two elements form different compounds, a given mass of one element will combine with masses of the other element in a small, whole-number ratio. During any chemical change, atoms are neither created nor destroyed.</p>",
+ "summary_html": "<p>The ancient Greeks proposed that matter consists of extremely small particles called atoms. Dalton postulated that each element has a characteristic type of atom that differs in properties from atoms of all other elements, and that atoms of different elements can combine in fixed, small, whole-number ratios to form compounds. Samples of a particular compound all have the same elemental proportions by <span data-concept=\"mass\">mass</span>. When two elements form different compounds, a given <span data-concept=\"mass\">mass</span> of one element will combine with <span data-concept=\"mass\">masses</span> of the other element in a small, whole-number ratio. During any chemical change, atoms are neither created nor destroyed.</p>",
  "notes": "The section prints no Link to Learning note and no boxed note, and nothing of it is left out.",
  "ai": {
   "text": [

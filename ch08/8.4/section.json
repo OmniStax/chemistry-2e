@@ -4,7 +4,7 @@
  "chapter": "8",
  "title": "Molecular Orbital Theory",
  "short": "Molecular Orbital Theory",
- "lead": "The Lewis structure of O<sub>2</sub> pairs every electron, yet liquid oxygen is held between the poles of a magnet. Molecular orbital theory combines the atomic orbitals of the atoms into molecular orbitals spread over the whole molecule, bonding orbitals lower in energy and antibonding orbitals higher. Filling σ and π molecular orbitals with electrons gives bond orders. The same diagrams explain the paramagnetism of oxygen and how s-p mixing changes the orbital order across the second period.",
+ "lead": "The Lewis structure of O<sub>2</sub> pairs every electron, yet liquid oxygen is held between the poles of a magnet. Molecular orbital theory combines the atomic orbitals of the atoms into molecular orbitals spread over the whole molecule, bonding orbitals lower in <span data-concept=\"energy-and-work\">energy</span> and antibonding orbitals higher. Filling σ and π molecular orbitals with electrons gives bond orders. The same diagrams explain the paramagnetism of oxygen and how s-p mixing changes the orbital order across the second period.",
  "objectives": [
   "Outline the basic quantum-mechanical approach to deriving molecular orbitals from atomic orbitals",
   "Describe traits of bonding and antibonding molecular orbitals",
@@ -390,7 +390,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) Similarities: Both are bonding orbitals that can contain a maximum of two electrons. Differences: σ orbitals are end-to-end combinations of atomic orbitals, whereas π orbitals are formed by side-by-side overlap of orbitals. (b) Similarities: Both are quantum-mechanical constructs that represent the probability of finding the electron about the atom or the molecule. Differences: <em>ψ</em> for an atomic orbital describes the behavior of only one electron at a <span data-ink>time</span> based on the atom. For a molecule, <em>ψ</em> represents a mathematical combination of atomic orbitals. (c) Similarities: Both are orbitals that can contain two electrons. Differences: Bonding orbitals result in holding two or more atoms together. Antibonding orbitals have the effect of destabilizing any bonding that has occurred."
+    "solution": "(a) Similarities: Both are bonding orbitals that can contain a maximum of two electrons. Differences: σ orbitals are end-to-end combinations of atomic orbitals, whereas π orbitals are formed by side-by-side overlap of orbitals. (b) Similarities: Both are quantum-mechanical constructs that represent the probability of finding the electron about the atom or the molecule. Differences: <em>ψ</em> for an atomic orbital describes the behavior of only one electron at a time based on the atom. For a molecule, <em>ψ</em> represents a mathematical combination of atomic orbitals. (c) Similarities: Both are orbitals that can contain two electrons. Differences: Bonding orbitals result in holding two or more atoms together. Antibonding orbitals have the effect of destabilizing any bonding that has occurred."
    }
   },
   {
@@ -534,7 +534,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Go through the configurations of Table 8.3 one molecule at a <span data-ink>time</span> and look at the last level filled. Where a degenerate pair of π or π* orbitals holds fewer than four electrons and Hund’s rule leaves some unpaired, the molecule is paramagnetic."
+    "solution": "Go through the configurations of Table 8.3 one molecule at a time and look at the last level filled. Where a degenerate pair of π or π* orbitals holds fewer than four electrons and Hund’s rule leaves some unpaired, the molecule is paramagnetic."
    }
   },
   {

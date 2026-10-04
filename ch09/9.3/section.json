@@ -4,13 +4,13 @@
  "chapter": "9",
  "title": "Stoichiometry of Gaseous Substances, Mixtures, and Reactions",
  "short": "Gas Stoichiometry and Mixtures",
- "lead": "The ideal gas law turns measurements of pressure, volume and temperature into an amount of gas. It gives the density and the molar mass of a gas. Dalton’s law adds the partial pressures of the gases in a mixture, and a gas collected over water must be corrected for the water vapor it holds. Volumes of gases also enter the stoichiometry of reactions.",
+ "lead": "The ideal gas law turns measurements of <span data-concept=\"gas-pressure\">pressure</span>, <span data-concept=\"volume\">volume</span> and <span data-concept=\"temperature\">temperature</span> into an amount of gas. It gives the <span data-concept=\"density\">density</span> and the <span data-concept=\"molar-mass\">molar mass</span> of a gas. Dalton’s law adds the <span data-concept=\"partial-pressure\">partial pressures</span> of the gases in a mixture, and a gas collected over water must be corrected for the water vapor it holds. <span data-concept=\"volume\">Volumes</span> of gases also enter the stoichiometry of reactions.",
  "objectives": [
   "Use the ideal gas law to compute gas densities and molar masses",
   "Perform stoichiometric calculations involving gaseous substances",
   "State Dalton’s law of partial pressures and use it in calculations involving gaseous mixtures"
  ],
- "summary_html": "<p>The ideal gas law can be used to derive a number of convenient equations relating directly measured quantities to properties of interest for gaseous substances and mixtures. Appropriate rearrangement of the ideal gas equation may be made to permit the calculation of gas densities and molar masses. Dalton’s law of partial pressures may be used to relate measured gas pressures for gaseous mixtures to their compositions. Avogadro’s law may be used in stoichiometric computations for chemical reactions involving gaseous reactants or products.</p>",
+ "summary_html": "<p>The ideal gas law can be used to derive a number of convenient equations relating directly measured quantities to properties of interest for gaseous substances and mixtures. Appropriate rearrangement of the ideal gas equation may be made to permit the calculation of gas densities and <span data-concept=\"molar-mass\">molar masses</span>. Dalton’s law of partial pressures may be used to relate measured <span data-concept=\"gas-pressure\">gas pressures</span> for gaseous mixtures to their compositions. Avogadro’s law may be used in stoichiometric computations for chemical reactions involving gaseous reactants or products.</p>",
  "notes": "The Link to Learning note with a video on greenhouse gases and global warming is left out, as are the sentence inside the portrait of Susan Solomon that points to a video about her and the footnote citing the source of Lagrange’s quotation.",
  "ai": {
   "text": [

@@ -4,7 +4,7 @@
  "chapter": "10",
  "title": "Lattice Structures in Crystalline Solids",
  "short": "Lattice Structures",
- "lead": "Most solids are crystalline, their particles packed in a regular pattern that repeats in three dimensions. The unit cell describes that pattern, from the simple cubic, body-centered cubic and face-centered cubic cells of metals to the two ways identical spheres pack most closely. The ions of a salt fill the holes between its larger anions, and a radius and a density follow from the edge length of a cell. X-ray diffraction and the Bragg equation measure the distances between the planes of atoms in a crystal.",
+ "lead": "Most solids are crystalline, their particles packed in a regular pattern that repeats in three dimensions. The unit cell describes that pattern, from the simple cubic, body-centered cubic and face-centered cubic cells of metals to the two ways identical spheres pack most closely. The ions of a salt fill the holes between its larger anions, and a radius and a <span data-concept=\"density\">density</span> follow from the edge <span data-concept=\"length\">length</span> of a cell. X-ray diffraction and the Bragg equation measure the distances between the planes of atoms in a crystal.",
  "objectives": [
   "Describe the arrangement of atoms and ions in crystalline structures",
   "Compute ionic radii using unit cell dimensions",

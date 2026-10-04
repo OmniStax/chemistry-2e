@@ -4,13 +4,13 @@
  "chapter": "10",
  "title": "Properties of Liquids",
  "short": "Properties of Liquids",
- "lead": "The attractions between the molecules of a liquid show in how the liquid behaves. Cohesive forces between like molecules explain viscosity, a liquid’s resistance to flow, and surface tension, the tough skin of its surface. Adhesive forces between a liquid and a surface it touches compete with them. The balance decides whether the liquid wets the surface, which way its meniscus curves, and how high it climbs in a narrow tube.",
+ "lead": "The attractions between the molecules of a liquid show in how the liquid behaves. Cohesive forces between like molecules explain viscosity, a liquid’s resistance to flow, and <span data-concept=\"surface-tension\">surface tension</span>, the tough skin of its surface. Adhesive forces between a liquid and a surface it touches compete with them. The balance decides whether the liquid wets the surface, which way its meniscus curves, and how high it climbs in a narrow tube.",
  "objectives": [
   "Distinguish between adhesive and cohesive forces",
   "Define viscosity, surface tension, and capillary rise",
   "Describe the roles of intermolecular attractive forces in each of these properties/phenomena"
  ],
- "summary_html": "<p>The intermolecular forces between molecules in the liquid state vary depending upon their chemical identities and result in corresponding variations in various physical properties. Cohesive forces between like molecules are responsible for a liquid’s viscosity (resistance to flow) and surface tension (elasticity of a liquid surface). Adhesive forces between the molecules of a liquid and different molecules composing a surface in contact with the liquid are responsible for phenomena such as surface wetting and capillary rise.</p>",
+ "summary_html": "<p>The intermolecular forces between molecules in the liquid state vary depending upon their chemical identities and result in corresponding variations in various physical properties. Cohesive forces between like molecules are responsible for a liquid’s viscosity (resistance to flow) and <span data-concept=\"surface-tension\">surface tension</span> (elasticity of a liquid surface). Adhesive forces between the molecules of a liquid and different molecules composing a surface in contact with the liquid are responsible for phenomena such as surface wetting and capillary rise.</p>",
  "notes": "The module prints no headers of its own; the page divides it into five blocks by idea. Figures 10.16, 10.17 and 10.19 are each a photograph and a drawing in one image and are kept as the book’s images; Figure 10.20 is redrawn as a live figure. The surface tension, density and contact angle of mercury and the densities of ethanol and ethylene glycol that the live figure uses are handbook values the book does not print.",
  "ai": {
   "text": [

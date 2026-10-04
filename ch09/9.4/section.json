@@ -4,12 +4,12 @@
   "chapter": "9",
   "title": "Effusion and Diffusion of Gases",
   "short": "Effusion and Diffusion",
-  "lead": "Gas molecules move at hundreds of meters per second, yet they collide so often that a gas spreads through a room in seconds rather than instantly. That spreading is diffusion, and the escape of a gas through a tiny hole is effusion. Graham’s law states that the rate of effusion of a gas is inversely proportional to the square root of its molar mass. It compares effusion rates and times and finds the molar mass of an unknown gas.",
+  "lead": "Gas molecules move at hundreds of meters per second, yet they collide so often that a gas spreads through a room in seconds rather than instantly. That spreading is diffusion, and the escape of a gas through a tiny hole is effusion. Graham’s law states that the rate of effusion of a gas is inversely proportional to the square root of its <span data-concept=\"molar-mass\">molar mass</span>. It compares effusion rates and times and finds the <span data-concept=\"molar-mass\">molar mass</span> of an unknown gas.",
   "objectives": [
     "Define and explain effusion and diffusion",
     "State Graham’s law and use it to compute relevant gas properties"
   ],
-  "summary_html": "<p>Gaseous atoms and molecules move freely and randomly through space. Diffusion is the process whereby gaseous atoms and molecules are transferred from regions of relatively high concentration to regions of relatively low concentration. Effusion is a similar process in which gaseous species pass from a container to a vacuum through very small orifices. The rates of effusion of gases are inversely proportional to the square roots of their densities or to the square roots of their atoms/molecules’ masses (Graham’s law).</p>",
+  "summary_html": "<p>Gaseous atoms and molecules move freely and randomly through space. Diffusion is the process whereby gaseous atoms and molecules are transferred from regions of relatively high <span data-concept=\"concentration\">concentration</span> to regions of relatively low <span data-concept=\"concentration\">concentration</span>. Effusion is a similar process in which gaseous species pass from a container to a vacuum through very small orifices. The rates of effusion of gases are inversely proportional to the square roots of their <span data-concept=\"density\">densities</span> or to the square roots of their atoms/molecules’ <span data-concept=\"mass\">masses</span> (Graham’s law).</p>",
   "notes": "The section prints no Link to Learning note. Figure 9.28, the book’s drawing of diffusion against effusion, is folded into Figure 9.27 as the effusion state of the same two bulbs. The uranium note’s sentence “The small difference in molecular weights between ²³⁵UF₆ and ²³⁸UF₆ only about 0.4% enrichment, is achieved in one diffuser” and the missing period in the caption of Figure 9.30 are kept as printed.",
   "ai": {
     "text": [

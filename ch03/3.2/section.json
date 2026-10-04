@@ -4,13 +4,13 @@
  "chapter": "3",
  "title": "Determining Empirical and Molecular Formulas",
  "short": "Empirical and Molecular Formulas",
- "lead": "When the formula of a compound is unknown, we first measure the masses of its elements. From those masses, or from a formula, you can compute the compound’s percent composition. Converting the masses of the elements to moles gives the whole-number ratio of atoms that is the empirical formula. Comparing the molar mass with the empirical formula mass then gives the molecular formula.",
+ "lead": "When the formula of a compound is unknown, we first measure the <span data-concept=\"mass\">masses</span> of its elements. From those <span data-concept=\"mass\">masses</span>, or from a formula, you can compute the compound’s percent composition. Converting the <span data-concept=\"mass\">masses</span> of the elements to <span data-concept=\"mole\">moles</span> gives the whole-number ratio of atoms that is the empirical formula. Comparing the <span data-concept=\"molar-mass\">molar mass</span> with the empirical formula mass then gives the molecular formula.",
  "objectives": [
   "Compute the percent composition of a compound",
   "Determine the empirical formula of a compound",
   "Determine the molecular formula of a compound"
  ],
- "summary_html": "<p>The chemical identity of a substance is defined by the types and relative numbers of atoms composing its fundamental entities (molecules in the case of covalent compounds, ions in the case of ionic compounds). A compound’s percent composition provides the mass percentage of each element in the compound, and it is often experimentally determined and used to derive the compound’s empirical formula. The empirical formula mass of a covalent compound may be compared to the compound’s molecular or molar mass to derive a molecular formula.</p>",
+ "summary_html": "<p>The chemical identity of a substance is defined by the types and relative numbers of atoms composing its fundamental entities (molecules in the case of covalent compounds, ions in the case of ionic compounds). A compound’s percent composition provides the mass percentage of each element in the compound, and it is often experimentally determined and used to derive the compound’s empirical formula. The empirical formula mass of a covalent compound may be compared to the compound’s molecular or <span data-concept=\"molar-mass\">molar mass</span> to derive a molecular formula.</p>",
  "notes": "The Link to Learning note, a video of further worked examples of empirical formulas, is left out. Example 3.13 prints 8.624 in its ratio table where the line above gives 8.641 mol H, and the key gives 82.24% N for ammonia where the text computes 82.27%; both are kept as printed.",
  "ai": {
   "text": [

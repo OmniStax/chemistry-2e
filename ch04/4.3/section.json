@@ -4,13 +4,13 @@
  "chapter": "4",
  "title": "Reaction Stoichiometry",
  "short": "Reaction Stoichiometry",
- "lead": "The coefficients of a balanced equation give the relative amounts of the substances a reaction consumes and produces, much as a recipe gives the amounts of its ingredients. Stoichiometric factors come from those coefficients. With molar masses and Avogadro’s number, they relate the moles, the numbers of molecules and the masses of any two substances in a reaction.",
+ "lead": "The coefficients of a balanced equation give the relative amounts of the substances a reaction consumes and produces, much as a recipe gives the amounts of its ingredients. Stoichiometric factors come from those coefficients. With <span data-concept=\"molar-mass\">molar masses</span> and Avogadro’s number, they relate the <span data-concept=\"mole\">moles</span>, the numbers of molecules and the <span data-concept=\"mass\">masses</span> of any two substances in a reaction.",
  "objectives": [
   "Explain the concept of stoichiometry as it pertains to chemical reactions",
   "Use balanced chemical equations to derive stoichiometric factors relating amounts of reactants and products",
   "Perform stoichiometric calculations involving mass, moles, and solution molarity"
  ],
- "summary_html": "<p>A balanced chemical equation may be used to describe a reaction’s stoichiometry (the relationships between amounts of reactants and products). Coefficients from the equation are used to derive stoichiometric factors that subsequently may be used for computations relating reactant and product masses, molar amounts, and other quantitative properties.</p>",
+ "summary_html": "<p>A balanced chemical equation may be used to describe a reaction’s stoichiometry (the relationships between amounts of reactants and products). Coefficients from the equation are used to derive stoichiometric factors that subsequently may be used for computations relating reactant and product <span data-concept=\"mass\">masses</span>, molar amounts, and other quantitative properties.</p>",
  "notes": "The module prints no Link to Learning note. Nine end-of-chapter exercises have no answer in the book’s key and are left out.",
  "ai": {
   "text": [

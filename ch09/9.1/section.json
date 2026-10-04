@@ -4,14 +4,14 @@
  "chapter": "9",
  "title": "Gas Pressure",
  "short": "Gas Pressure",
- "lead": "A gas presses on every surface it touches, because its molecules strike that surface over and over. The pressure is the force of those collisions divided by the area they act on, and it is reported in many units. A barometer measures the pressure of the atmosphere, and a manometer the pressure of a gas in a container, both by the height of a column of liquid.",
+ "lead": "A gas presses on every surface it touches, because its molecules strike that surface over and over. The <span data-concept=\"gas-pressure\">pressure</span> is the <span data-concept=\"force\">force</span> of those collisions divided by the <span data-concept=\"area\">area</span> they act on, and it is reported in many units. A barometer measures the <span data-concept=\"gas-pressure\">pressure</span> of the atmosphere, and a manometer the <span data-concept=\"gas-pressure\">pressure</span> of a gas in a container, both by the height of a column of liquid.",
  "objectives": [
   "Define the property of pressure",
   "Define and convert among the units of pressure measurements",
   "Describe the operation of common tools for measuring gas pressure",
   "Calculate pressure from manometer data"
  ],
- "summary_html": "<p>Gases exert pressure, which is force per unit area. The pressure of a gas may be expressed in the SI unit of pascal or kilopascal, as well as in many other units including torr, atmosphere, and bar. Atmospheric pressure is measured using a barometer; other gas pressures can be measured using one of several types of manometers.</p>",
+ "summary_html": "<p>Gases exert <span data-concept=\"gas-pressure\">pressure</span>, which is <span data-concept=\"force\">force</span> per unit <span data-concept=\"area\">area</span>. The <span data-concept=\"gas-pressure\">pressure</span> of a gas may be expressed in the SI unit of pascal or kilopascal, as well as in many other units including torr, atmosphere, and bar. Atmospheric <span data-concept=\"gas-pressure\">pressure</span> is measured using a barometer; other <span data-concept=\"gas-pressure\">gas pressures</span> can be measured using one of several types of manometers.</p>",
  "notes": "The Link to Learning note is left out: a video of a railway tanker car imploding when its internal pressure is decreased, and a smaller demonstration of the same effect.",
  "ai": {
   "text": [

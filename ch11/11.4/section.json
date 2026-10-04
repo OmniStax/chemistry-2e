@@ -4,7 +4,7 @@
   "chapter": "11",
   "title": "Colligative Properties",
   "short": "Colligative Properties",
-  "lead": "A few properties of a solution depend only on how many solute particles it holds, not on what they are. Mole fraction and molality express that number. Raoult’s law explains why a nonvolatile solute lowers the vapor pressure of its solvent, raises its boiling point and lowers its freezing point. Osmosis and osmotic pressure follow, and all of these properties can be used to find molar masses. An electrolyte’s effect is multiplied by the van’t Hoff factor.",
+  "lead": "A few properties of a solution depend only on how many solute particles it holds, not on what they are. Mole fraction and <span data-concept=\"molality\">molality</span> express that number. Raoult’s law explains why a nonvolatile solute lowers the <span data-concept=\"vapor-pressure\">vapor pressure</span> of its solvent, raises its boiling point and lowers its freezing point. <span data-concept=\"osmotic-pressure\">Osmosis and osmotic pressure</span> follow, and all of these properties can be used to find <span data-concept=\"molar-mass\">molar masses</span>. An electrolyte’s effect is multiplied by the van’t Hoff factor.",
   "objectives": [
     "Express concentrations of solution components using mole fraction and molality",
     "Describe the effect of solute concentration on various solution properties (vapor pressure, boiling point, freezing point, and osmotic pressure)",
@@ -12,7 +12,7 @@
     "Describe the process of distillation and its practical applications",
     "Explain the process of osmosis and describe how it is applied industrially and in nature"
   ],
-  "summary_html": "<p>Properties of a solution that depend only on the concentration of solute particles are called colligative properties. They include changes in the vapor pressure, boiling point, and freezing point of the solvent in the solution. The magnitudes of these properties depend only on the total concentration of solute particles in solution, not on the type of particles. The total concentration of solute particles in a solution also determines its osmotic pressure. This is the pressure that must be applied to the solution to prevent diffusion of molecules of pure solvent through a semipermeable membrane into the solution. Ionic compounds may not completely dissociate in solution due to activity effects, in which case observed colligative effects may be less than predicted.</p>",
+  "summary_html": "<p>Properties of a solution that depend only on the <span data-concept=\"concentration\">concentration</span> of solute particles are called colligative properties. They include changes in the <span data-concept=\"vapor-pressure\">vapor pressure</span>, boiling point, and freezing point of the solvent in the solution. The magnitudes of these properties depend only on the total <span data-concept=\"concentration\">concentration</span> of solute particles in solution, not on the type of particles. The total <span data-concept=\"concentration\">concentration</span> of solute particles in a solution also determines its <span data-concept=\"osmotic-pressure\">osmotic pressure</span>. This is the <span data-concept=\"gas-pressure\">pressure</span> that must be applied to the solution to prevent diffusion of molecules of pure solvent through a semipermeable membrane into the solution. Ionic compounds may not completely dissociate in solution due to activity effects, in which case observed colligative effects may be less than predicted.</p>",
   "notes": "Nothing of the section is left out. Example 11.3 keeps the book’s C₂H₂(OH)₂ once for ethylene glycol, the section keeps “electroyte” as printed, Table 11.3 keeps its title’s “Predicated” and its HCl row’s H₃O⁺ where the book’s table summary reads H⁺, and the headers of Table 11.2 are written with the degree sign °.",
   "ai": {
     "text": [
@@ -583,7 +583,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: by Raoult’s law, the vapor pressure depends on the mole fraction of water in the liquid. For pure water the mole fraction stays 1 as it evaporates, so its line stays flat at the vapor pressure of water. The sugar solution starts below it, since the sugar lowers the mole fraction of water, and as water leaves and the sugar stays behind, the solution grows more concentrated, so its line slopes gently downward over <span data-ink>time</span>."
+        "solution": "Suggested approach: by Raoult’s law, the vapor pressure depends on the mole fraction of water in the liquid. For pure water the mole fraction stays 1 as it evaporates, so its line stays flat at the vapor pressure of water. The sugar solution starts below it, since the sugar lowers the mole fraction of water, and as water leaves and the sugar stays behind, the solution grows more concentrated, so its line slopes gently downward over time."
       }
     },
     {

@@ -268,7 +268,7 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
     v.headline(HEAD[FORM.value]);
     v.invalidate();
     const n = FORM.value === 'stack' ? flat.length + layerN : COUNT[FORM.value];
-    readout(d.readout, `\\text{${n} carbon atoms, each bonded to three others about } 1.4 \\times 10^{-10}\\ \\text{m away}`);
+    readout(d.readout, `\\text{${n} carbon atoms, each bonded to three others about }${hue('length', '1.4 \\times 10^{-10}\\ \\text{m}')}\\text{ away}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

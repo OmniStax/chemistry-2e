@@ -44,7 +44,7 @@
     "/media/ch10/CNX_Chem_10_04_CO2PhasDi.jpg"
    ],
    "original_caption": "(Figure 10.30) The physical state of a substance and its phase-transition temperatures are represented graphically in a phase diagram. (Figure 10.31) The pressure and temperature axes on this phase diagram of water are not drawn to constant scale in order to illustrate several important properties. (Figure 10.34) A phase diagram for carbon dioxide is shown. The pressure axis is plotted on a logarithmic scale to accommodate the large range of values.",
-   "draws": []
+   "draws": ["pressure", "temperature"]
   },
   {
    "id": "fig-freezedry",
@@ -406,6 +406,33 @@
   {
    "exercise": "e8",
    "concept": "read-phase-diagram"
+  }
+ ],
+ "referents": [
+  {
+   "id": "sub-curve",
+   "label": "the solid-gas curve (AB)",
+   "figure": "sim-phase"
+  },
+  {
+   "id": "vap-curve",
+   "label": "the liquid-gas curve (BC)",
+   "figure": "sim-phase"
+  },
+  {
+   "id": "melt-curve",
+   "label": "the solid-liquid curve (BD)",
+   "figure": "sim-phase"
+  },
+  {
+   "id": "triple-point",
+   "label": "the triple point (B)",
+   "figure": "sim-phase"
+  },
+  {
+   "id": "critical-point",
+   "label": "the critical point (C)",
+   "figure": "sim-phase"
   }
  ]
 }

@@ -74,6 +74,16 @@
    "sym": "θ_bragg",
    "latex": "\\theta",
    "macro": "\\kthetabragg"
+  },
+  {
+   "sym": "l_edge",
+   "latex": "l",
+   "macro": "\\kledge"
+  },
+  {
+   "sym": "d_diag",
+   "latex": "d",
+   "macro": "\\kddiag"
   }
  ],
  "concepts": [

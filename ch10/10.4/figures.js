@@ -11,7 +11,8 @@ const sim = (id, H) => F.sim(root, id, H);
    and a window on the molecules of the sample in that state. Still: the
    figure answers its controls; the molecules move between arrangements
    when the state changes, and a change of substance bends one diagram
-   into the other.
+   into the other. The three curves and the triple and critical points
+   are the section's referents, each in its F.ref; the regions stay ink.
 ===================================================================== */
 (function () {
   const d = sim('sim-phase', 640);
@@ -188,9 +189,9 @@ const sim = (id, H) => F.sim(root, id, H);
     ctx.save(); ctx.beginPath(); ctx.rect(B.l, B.t, B.r - B.l, B.b - B.t); ctx.clip();
     stroke(ctx, [cv.cp, [cv.cp[0], B.t]], alpha(PAL.ink, 0.4), 2.5, [10, 10]);
     stroke(ctx, [cv.cp, [B.r, cv.cp[1]]], alpha(PAL.ink, 0.4), 2.5, [10, 10]);
-    stroke(ctx, cv.sub, PAL.ink, 4); stroke(ctx, cv.vap, PAL.ink, 4); stroke(ctx, cv.melt, PAL.ink, 4);
+    stroke(ctx, cv.sub, F.ref('sub-curve'), 4); stroke(ctx, cv.vap, F.ref('vap-curve'), 4); stroke(ctx, cv.melt, F.ref('melt-curve'), 4);
     ctx.restore();
-    dot(ctx, cv.tp[0], cv.tp[1], PAL.ink, true, 7); dot(ctx, cv.cp[0], cv.cp[1], PAL.ink, true, 7);
+    dot(ctx, cv.tp[0], cv.tp[1], F.ref('triple-point'), true, 8); dot(ctx, cv.cp[0], cv.cp[1], F.ref('critical-point'), true, 8);
 
     /* the region names and the two points, for the substance shown */
     ['water', 'co2'].forEach((key) => sub.only(ctx, key, () => {
@@ -200,8 +201,8 @@ const sim = (id, H) => F.sim(root, id, H);
       text(ctx, 'gas', sc.X(q.at.gas[0]), sc.Y(q.at.gas[1]), PAL.ink, { size: 22, align: 'center' });
       text(ctx, 'supercritical fluid', (c.cp[0] + B.r) / 2, (c.cp[1] + B.t) / 2, PAL.ink, { size: 17, align: 'center' });
       const tpUp = key === v && Math.abs(Y(L10(P)) - c.tp[1]) < 40;
-      text(ctx, 'triple point', c.tp[0] + 14, c.tp[1] + (tpUp ? -22 : 24), PAL.muted, { size: 17, align: 'left', bg: PAL.panel });
-      text(ctx, 'critical point', c.cp[0] + 12, c.cp[1] + 22, PAL.muted, { size: 17, align: 'left', bg: PAL.panel });
+      text(ctx, 'triple point', c.tp[0] + 14, c.tp[1] + (tpUp ? -22 : 24), F.ref('triple-point'), { size: 17, align: 'left', bg: PAL.panel });
+      text(ctx, 'critical point', c.cp[0] + 12, c.cp[1] + 22, F.ref('critical-point'), { size: 17, align: 'left', bg: PAL.panel });
     }, [0, 0]));
 
     /* the isobar through the state point, the temperatures where it crosses a curve, and the point itself */

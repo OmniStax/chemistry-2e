@@ -343,7 +343,7 @@ function twoWays(d, H, opts, onShow) {
     return [Math.min(...near.map((p) => p[0])) - 0.8, Math.max(...near.map((p) => p[0])) + 0.8];
   }
   function band(ctx, x0, x1, y) {
-    ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 5; ctx.beginPath();
+    ctx.save(); ctx.strokeStyle = C('area'); ctx.lineWidth = 5; ctx.beginPath();
     for (let x = x0, i = 0; x <= x1; x += 9, i++) { const yy = y + (i % 2 ? -5 : 5); if (i) ctx.lineTo(x, yy); else ctx.moveTo(x, yy); }
     ctx.stroke(); ctx.restore();
   }
@@ -353,11 +353,11 @@ function twoWays(d, H, opts, onShow) {
     for (let i = 0; i < flat.length; i += 3) pts.push([flat[i], flat[i + 1], flat[i + 2]]);
     const [c0, c1] = contact(pts), head = iso.name + ': ' + iso.head + ', boiling point ' + fmt(iso.bp, iso.bp % 1 ? 1 : 0) + ' °C.';
     if (two.three) {
-      const key = K.value + palSig();
+      const key = K.value + palSig() + C('area');
       if (key !== sig && two.g) {
         sig = key; two.v.clear(); buildScene(two.v, two.g, sceneOf(iso.pts, iso.name));
         const cc = contact(iso.pts);
-        F.mesh.box(two.g, [(cc[0] + cc[1]) / 2, 0, 0], [cc[1] - cc[0], 0.04, 3.2], PAL.muted, { transparent: true, opacity: 0.5 });
+        F.mesh.box(two.g, [(cc[0] + cc[1]) / 2, 0, 0], [cc[1] - cc[0], 0.04, 3.2], C('area'), { transparent: true, opacity: 0.5 });
         two.v.label('contact', [cc[1], 0, 0], two.g, 0); two.v.headline(/^n-/.test(head) ? head : head.charAt(0).toUpperCase() + head.slice(1));
       }
       two.v?.invalidate();
@@ -471,17 +471,17 @@ function twoWays(d, H, opts, onShow) {
    period-2 points from where the heavier hydrides' trends predict them
    (the text's −120, −80 and −110 °C) to where they are measured, and the
    lines bend with them; the carbon family of Example 10.1, which has no
-   hydrogen bonding, stays on its trend. Still. The families are told
-   apart by the categorical palette; the temperature axis wears its hue.
+   hydrogen bonding, stays on its trend. Still. The families are the
+   section's referents, each in its F.ref; the temperature axis wears its hue.
 ===================================================================== */
 (function () {
   const d = sim('sim-hydrides', 560);
   /* measured normal boiling points, °C, periods 2 to 5; pred is the text's prediction for period 2 */
   const FAM = [
-    { name: 'carbon family (group 14)', f: ['CH_{4}', 'SiH_{4}', 'GeH_{4}', 'SnH_{4}'], bp: [-161, -112, -88, -52], pred: -161 },
-    { name: 'nitrogen family (group 15)', f: ['NH_{3}', 'PH_{3}', 'AsH_{3}', 'SbH_{3}'], bp: [-33, -88, -62, -17], pred: -120 },
-    { name: 'oxygen family (group 16)', f: ['H_{2}O', 'H_{2}S', 'H_{2}Se', 'H_{2}Te'], bp: [100, -60, -41, -2], pred: -80 },
-    { name: 'halogen family (group 17)', f: ['HF', 'HCl', 'HBr', 'HI'], bp: [20, -85, -67, -35], pred: -110 },
+    { id: 'group-14', name: 'carbon family (group 14)', f: ['CH_{4}', 'SiH_{4}', 'GeH_{4}', 'SnH_{4}'], bp: [-161, -112, -88, -52], pred: -161 },
+    { id: 'group-15', name: 'nitrogen family (group 15)', f: ['NH_{3}', 'PH_{3}', 'AsH_{3}', 'SbH_{3}'], bp: [-33, -88, -62, -17], pred: -120 },
+    { id: 'group-16', name: 'oxygen family (group 16)', f: ['H_{2}O', 'H_{2}S', 'H_{2}Se', 'H_{2}Te'], bp: [100, -60, -41, -2], pred: -80 },
+    { id: 'group-17', name: 'halogen family (group 17)', f: ['HF', 'HCl', 'HBr', 'HI'], bp: [20, -85, -67, -35], pred: -110 },
   ];
   const M = F.choice(d.controls, { label: '\\text{period 2}', options: [{ value: 'trend', label: 'predicted from the trend' }, { value: 'measured', label: 'measured' }], value: 'trend', aria: 'predicted or measured boiling points of the period 2 hydrides' });
   const hits = []; F.hover(d.stage, () => hits);
@@ -493,7 +493,7 @@ function twoWays(d, H, opts, onShow) {
     const p2 = M.mix((v) => FAM.map((fm) => (v === 'trend' ? fm.pred : fm.bp[0])));
     const meas = M.value === 'measured';
     FAM.forEach((fm, i) => {
-      const col = F.cat(i), ys = [p2[i], ...fm.bp.slice(1)];
+      const col = F.ref(fm.id), ys = [p2[i], ...fm.bp.slice(1)];
       for (let k = 0; k < 3; k++) line(ctx, g.X(k + 2), g.Y(ys[k]), g.X(k + 3), g.Y(ys[k + 1]), col, 4, k === 0 && !meas && i > 0 ? [10, 10] : undefined);
       ys.forEach((y, k) => {
         const hollow = k === 0 && !meas && i > 0;
@@ -502,8 +502,8 @@ function twoWays(d, H, opts, onShow) {
       });
       if (i > 0) text(ctx, meas ? fm.f[0] : fm.f[0] + ' ?', g.X(2) - 18, g.Y(p2[i]), col, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
     });
-    FAM.forEach((fm, i) => { const y = 150 + i * 40; dot(ctx, 1060, y, F.cat(i), true, 9); text(ctx, fm.name, 1080, y, PAL.ink, { size: 17 }); });
-    text(ctx, 'CH_{4}', g.X(2) - 18, g.Y(-161), F.cat(0), { size: 18, weight: 600, align: 'right', bg: PAL.panel });
+    FAM.forEach((fm, i) => { const y = 150 + i * 40; dot(ctx, 1060, y, F.ref(fm.id), true, 9); text(ctx, fm.name, 1080, y, PAL.ink, { size: 17 }); });
+    text(ctx, 'CH_{4}', g.X(2) - 18, g.Y(-161), F.ref('group-14'), { size: 18, weight: 600, align: 'right', bg: PAL.panel });
     topline(ctx, meas ? 'Measured, H_{2}O boils at 100 °C, HF at 20 °C and NH_{3} at −33 °C, far above the trends of the heavier hydrides.'
       : 'The trends of the heavier hydrides predict that H_{2}O boils near −80 °C, HF near −110 °C and NH_{3} near −120 °C.');
     readout(d.readout, meas ? `\\text{boiling point of H}_2\\text{O} = ${hue('temperature', '100\\ ^\\circ\\text{C}')}` : `\\text{boiling point of H}_2\\text{O} \\approx ${hue('temperature', texNum(-80) + '\\ ^\\circ\\text{C}')}`,

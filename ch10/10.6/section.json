@@ -71,7 +71,7 @@
    "draws": []
   },
   { "id": "fig-ex-ca", "kind": "figure", "draws": [] },
-  { "id": "sim-density", "kind": "sim", "draws": ["mass", "volume"] },
+  { "id": "sim-density", "kind": "sim", "draws": ["mass", "volume", "length", "density"] },
   {
    "id": "sim-lattices",
    "kind": "sim",
@@ -82,7 +82,7 @@
     "/media/ch10/CNX_Chem_10_06_CrystalSys.jpg"
    ],
    "original_caption": "(Figure 10.55) A unit cell is defined by the lengths of its three axes (a, b, and c) and the angles (α, β, and γ) between the axes. (Figure 10.56) There are seven different lattice systems and 14 different unit cells.",
-   "draws": []
+   "draws": ["angle"]
   },
   {
    "id": "sim-holes",
@@ -94,7 +94,7 @@
     "/media/ch10/CNX_Chem_10_06_IntIonst.jpg"
    ],
    "original_caption": "(Figure 10.57) Cations may occupy two types of holes between anions: octahedral holes or tetrahedral holes. (Figure 10.58) A cation’s size and the shape of the hole occupied by the compound are directly related.",
-   "draws": []
+   "draws": ["length"]
   },
   {
    "id": "sim-ionic",
@@ -121,7 +121,7 @@
     "/media/ch10/CNX_Chem_10_06_XRyDiff1.jpg"
    ],
    "original_caption": "(Figure 10.63) Light waves occupying the same space experience interference, combining to yield waves of greater (a) or lesser (b) intensity, depending upon the separation of their maxima and minima. (Figure 10.64) The diffraction of X-rays scattered by the atoms within a crystal permits the determination of the distance between the atoms. The top image depicts constructive interference between two scattered waves and a resultant diffracted wave of high intensity. The bottom image depicts destructive interference and a low intensity diffracted wave.",
-   "draws": ["wavelength"]
+   "draws": ["wavelength", "length", "angle"]
   },
   { "id": "fig-diffractometer", "kind": "photo", "number": "10.65", "draws": [] },
   { "id": "fig-franklin", "kind": "photo", "number": "10.66", "draws": [] }
@@ -521,5 +521,37 @@
   { "exercise": "e23", "concept": "bragg-equation" },
   { "exercise": "e24", "concept": "bragg-equation" },
   { "exercise": "e24", "concept": "photon-energy" }
+ ],
+ "referents": [
+  {
+   "id": "layer-a",
+   "label": "the A positions and their layers",
+   "figure": "sim-packing"
+  },
+  {
+   "id": "layer-b",
+   "label": "the B positions and their layers",
+   "figure": "sim-packing"
+  },
+  {
+   "id": "layer-c",
+   "label": "the C positions and their layers",
+   "figure": "sim-packing"
+  },
+  {
+   "id": "upper-ray",
+   "label": "the ray scattered by the upper plane, and its wave",
+   "figure": "sim-bragg"
+  },
+  {
+   "id": "lower-ray",
+   "label": "the ray scattered by the lower plane, and its wave",
+   "figure": "sim-bragg"
+  },
+  {
+   "id": "sum-wave",
+   "label": "the sum of the two scattered waves",
+   "figure": "sim-bragg"
+  }
  ]
 }

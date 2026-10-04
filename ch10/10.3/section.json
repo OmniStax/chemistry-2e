@@ -880,5 +880,37 @@
    "exercise": "e21",
    "concept": "enthalpies-of-phase-change"
   }
+ ],
+ "referents": [
+  {
+   "id": "flask",
+   "label": "the sealed flask",
+   "figure": "sim-vapor"
+  },
+  {
+   "id": "manometer",
+   "label": "the manometer",
+   "figure": "sim-vapor"
+  },
+  {
+   "id": "diethyl-ether",
+   "label": "diethyl ether",
+   "figure": "sim-bp"
+  },
+  {
+   "id": "ethanol",
+   "label": "ethanol",
+   "figure": "sim-bp"
+  },
+  {
+   "id": "water",
+   "label": "water",
+   "figure": "sim-bp"
+  },
+  {
+   "id": "ethylene-glycol",
+   "label": "ethylene glycol",
+   "figure": "sim-bp"
+  }
  ]
 }

@@ -200,11 +200,11 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
   };
   let a;
   const metal = F.choice(d.controls, { label: '\\text{metal}', aria: 'the metal', options: Object.keys(METALS).map((k) => ({ value: k, label: METALS[k].name })), value: 'Ca', ms: 0, onInput: (k) => { a.set(METALS[k].a); a.refresh(); } });
-  a = ctl(d.controls, { label: 'a', cls: '', min: 250, max: 650, step: 0.1, value: 558.8, unit: 'pm', dec: 1, aria: 'edge length of the unit cell in picometers',
+  a = ctl(d.controls, { label: '\\kacell', cls: 'length', min: 250, max: 650, step: 0.1, value: 558.8, unit: 'pm', dec: 1, aria: 'edge length of the unit cell in picometers',
     specials: [{ at: () => METALS[metal.value].a, label: 'measured' }] });
   const K = 0.4, CX = 300, CY = 250;
   function draw() {
-    const { ctx } = begin(d.c), m = METALS[metal.value], q = CELLS[m.cell], av = a.v, col = F.el(metal.value);
+    const { ctx } = begin(d.c), m = METALS[metal.value], q = CELLS[m.cell], av = a.v, col = F.el(metal.value), cl = C('length');
     const r = q.r * av, w = (m.cell === 'bcc' ? S2 : 1) * av * K, hgt = av * K, l = CX - w / 2, t = CY - hgt / 2, R = r * K;
     const sites = [[0, 0], [1, 0], [0, 1], [1, 1]];
     if (m.cell !== 'sc') sites.push([0.5, 0.5]);
@@ -215,21 +215,21 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(l, t, w, hgt); ctx.restore();
     /* the line of contact */
     const [x1, y1, x2, y2] = m.cell === 'sc' ? [l, t + hgt, l + w, t + hgt] : [l, t + hgt, l + w, t];
-    line(ctx, x1, y1, x2, y2, PAL.ink, 4);
+    line(ctx, x1, y1, x2, y2, cl, 4);
     const nR = m.cell === 'sc' ? 2 : 4;
-    for (let i = 0; i <= nR; i++) { const f = i / nR, x = x1 + (x2 - x1) * f, y = y1 + (y2 - y1) * f; dot(ctx, x, y, PAL.ink, true, 5); }
-    F.vbracket(ctx, l - 30, t, t + hgt, PAL.ink, 'a', -1);
-    F.hbracket(ctx, l, l + w, t + hgt + 34, PAL.ink, m.cell === 'bcc' ? '√2 a' : 'a', { side: 'below' });
+    for (let i = 0; i <= nR; i++) { const f = i / nR, x = x1 + (x2 - x1) * f, y = y1 + (y2 - y1) * f; dot(ctx, x, y, cl, true, 5); }
+    F.vbracket(ctx, l - 30, t, t + hgt, cl, 'a', -1);
+    F.hbracket(ctx, l, l + w, t + hgt + 34, cl, m.cell === 'bcc' ? '√2 a' : 'a', { side: 'below' });
     const contact = m.cell === 'sc' ? '2r' : '4r';
-    if (m.cell === 'sc') label(ctx, contact, CX, y1 - 30, { side: 'above', size: 22, gap: 4 });
-    else label(ctx, contact, x2, y2, { side: 'right', size: 22, gap: 14 });
+    if (m.cell === 'sc') label(ctx, contact, CX, y1 - 30, { side: 'above', size: 22, gap: 4, color: cl });
+    else label(ctx, contact, x2, y2, { side: 'right', size: 22, gap: 14, color: cl });
     text(ctx, m.cell === 'bcc' ? 'the plane through the body diagonal' : 'a face of the cell', CX, t + hgt + 90, PAL.muted, { size: 17, align: 'center' });
 
     const X0 = 640, n = q.n, mass = (n * m.M) / NA, vol = (av * 1e-10) ** 3;
     const rel = m.cell === 'sc' ? `a = 2r, so r = a/2 = ${fmt(r, 1)} pm` : m.cell === 'bcc' ? `4r = √3 a, so r = √3 a/4 = ${fmt(r, 1)} pm` : `4r = √2 a, so r = √2 a/4 = ${fmt(r, 1)} pm`;
     const cnt = { sc: '8 × 1/8 = 1', bcc: '8 × 1/8 + 1 = 2', fcc: '8 × 1/8 + 6 × 1/2 = 4' }[m.cell];
     const rows = [
-      ['radius', rel, PAL.ink],
+      ['radius', rel, cl],
       ['atoms in the cell', cnt, PAL.ink],
       ['mass of the cell', `${n} × ${fmt(m.M, 3)} g/mol ÷ (6.022 × 10²³ /mol) = ${sciText(mass)} g`, C('mass')],
       ['volume of the cell', `(${fmt(av, 1)} × 10⁻¹⁰ cm)³ = ${sciText(vol)} cm³`, C('volume')],
@@ -240,7 +240,7 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
     });
     topline(ctx, `${m.name[0].toUpperCase() + m.name.slice(1)} is ${q.name}, so its atoms touch ${q.touch.split(',')[0]} and r = ${fmt(r, 1)} pm.`);
     const rho = mass / vol;
-    tex(d.readout, `\\rho = \\frac{\\km}{\\kV} = \\frac{${hue('mass', sciTex(mass) + '\\ \\text{g}')}}{${hue('volume', sciTex(vol) + '\\ \\text{cm}^3')}} = ${fmt(rho, rho < 10 ? 2 : 1)}\\ \\text{g/cm}^3`);
+    tex(d.readout, `\\krho = \\frac{\\km}{\\kV} = \\frac{${hue('mass', sciTex(mass) + '\\ \\text{g}')}}{${hue('volume', sciTex(vol) + '\\ \\text{cm}^3')}} = ${hue('density', fmt(rho, rho < 10 ? 2 : 1) + '\\ \\text{g/cm}^3')}`);
   }
   still(d, draw);
 })();
@@ -249,8 +249,8 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
    Figure 10.53 + 10.54: four close-packed layers. Layers A and B stay put;
    the third and fourth slide between A and C sites as the stacking changes,
    and in the cubic stack the fourteen atoms of one face-centered cube stay
-   solid while the rest fade. Still. Layers take F.cat(0..2) for A, B, C,
-   as the chapter's COLOR.md says. Sphere diameter D; a layer rises D√(2/3).
+   solid while the rest fade. Still. The positions A, B, C are the section's
+   referents and their layers take F.ref. Sphere diameter D; a layer rises D√(2/3).
 ===================================================================== */
 (function () {
   const d = sim('sim-packing');
@@ -262,6 +262,7 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
   const D = 0.36, SP = D * Math.sqrt(2 / 3), U = [0, D / S3];
   const OFF = { A: [0, 0], B: U, C: [2 * U[0], 2 * U[1]] };
   const SEQ = { hcp: ['A', 'B', 'A', 'B'], ccp: ['A', 'B', 'C', 'A'] };
+  const LAYER = ['layer-a', 'layer-b', 'layer-c'], refOf = (x) => F.ref(LAYER['ABC'.indexOf(x)]);
   const rot = (p, k) => { const c = Math.cos(k * 2 * Math.PI / 3), s = Math.sin(k * 2 * Math.PI / 3); return [p[0] * c - p[1] * s, p[0] * s + p[1] * c]; };
   const LAT = [];
   for (let i = -5; i <= 5; i++) for (let j = -5; j <= 5; j++) { const p = [D * (i + j / 2), D * j * S3 / 2]; if (Math.hypot(p[0], p[1]) <= 2.45 * D) LAT.push(p); }
@@ -277,11 +278,11 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
   const isCube = (p) => cubeSites.some((q) => len3([p[0] - q[0], p[1] - q[1], p[2] - q[2]]) < 1e-6);
   let sig = '', atoms = [], edges = null, labs = [];
   function build() {
-    const key = stack.value + themeKey() + [0, 1, 2].map((i) => F.cat(i)).join(); if (key === sig || !grp) return; sig = key;
+    const key = stack.value + themeKey() + LAYER.map((id) => F.ref(id)).join(); if (key === sig || !grp) return; sig = key;
     v.clear(); atoms = []; labs = [];
     for (let layer = 0; layer < 4; layer++) LAT.forEach((p) => {
       const ccpPos = world([p[0] + OFF[SEQ.ccp[layer]][0], p[1] + OFF[SEQ.ccp[layer]][1]], layer);
-      const m = F.mesh.sphere(grp, [0, 0, 0], D / 2 * 0.985, F.cat(0), { transparent: true });
+      const m = F.mesh.sphere(grp, [0, 0, 0], D / 2 * 0.985, refOf('A'), { transparent: true });
       v.pickable(m, `an atom of layer ${SEQ[stack.value][layer]}`);
       atoms.push({ m, p, layer, cube: isCube(ccpPos) });
     });
@@ -297,12 +298,12 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
     atoms.forEach((q) => {
       const off = mixOff(q.layer), pos = world([q.p[0] + off[0], q.p[1] + off[1]], q.layer);
       q.m.position.set(pos[0], pos[1], pos[2]);
-      q.m.material.color.set(stack.mixColor((s) => F.cat('ABC'.indexOf(SEQ[s][q.layer]))));
+      q.m.material.color.set(stack.mixColor((s) => refOf(SEQ[s][q.layer])));
       const op = q.cube ? 1 : 1 - 0.86 * ccp;
       q.m.material.opacity = op; q.m.material.depthWrite = op >= 1;
     });
     if (edges) F.fade3(edges, ccp);
-    labs.forEach((e, layer) => { e.textContent = 'layer ' + SEQ[stack.k < 0.5 ? stack.from : stack.value][layer]; });
+    labs.forEach((e, layer) => { const x = SEQ[stack.k < 0.5 ? stack.from : stack.value][layer]; e.textContent = 'layer ' + x; e.style.color = refOf(x); });
     v.invalidate();
     const hcp = stack.value === 'hcp';
     v.headline(hcp
@@ -346,7 +347,7 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
   const cap = (s) => s[0].toUpperCase() + s.slice(1);
   let sig = '';
   function draw() {
-    const key = sel.from + '>' + sel.value + '|' + sel.k.toFixed(3) + '|' + themeKey();
+    const key = sel.from + '>' + sel.value + '|' + sel.k.toFixed(3) + '|' + themeKey() + C('angle');
     if (key === sig || !grp) return; sig = key;
     v.clear();
     const q = sel.mix((s) => SYS[LIST[+s][0]].p);
@@ -391,9 +392,10 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
     v.label('a', out([0.72, 0, 0]), g, 0);
     v.label('b', out([0, 0.72, 0]), g, 0);
     v.label('c', out([0, 0, 0.72]), g, 0);
-    v.label('α', F.mesh.arc(g, dB, dC, 0.34, O, PAL.ink), g, 0);
-    v.label('β', F.mesh.arc(g, dA, dC, 0.34, O, PAL.ink), g, 0);
-    v.label('γ', F.mesh.arc(g, dA, dB, 0.34, O, PAL.ink), g, 0);
+    const ca3 = C('angle');
+    v.label('α', F.mesh.arc(g, dB, dC, 0.34, O, ca3), g, 0).style.color = ca3;
+    v.label('β', F.mesh.arc(g, dA, dC, 0.34, O, ca3), g, 0).style.color = ca3;
+    v.label('γ', F.mesh.arc(g, dA, dB, 0.34, O, ca3), g, 0).style.color = ca3;
     faded.forEach(([s, x]) => F.fade3(s, x));
     v.invalidate();
     const [sys, c] = LIST[+alive], S = SYS[sys];
@@ -435,7 +437,7 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
     swap(cmp, [HOLES.zns, HOLES.nacl, HOLES.cscl].map((q) => F.el(q.cat[0]) + F.el(q.an[0])).join());
     const q = HOLES[cmp.value], x = ratio(cmp.value);
     v.headline(`The ${q.cat[2]} sits in ${q.hole === 'octahedral' ? 'an' : 'a'} ${q.hole} hole, among ${q.n} ${q.an[2]}s at the corners of ${q.shape === 'octahedron' ? 'an' : 'a'} ${q.shape}.`);
-    tex(d.readout, `\\dfrac{r_{+}}{r_{-}} = \\dfrac{${q.cat[3]}\\ \\text{pm}}{${q.an[3]}\\ \\text{pm}} = ${x.toFixed(3)}`);
+    tex(d.readout, `\\dfrac{r_{+}}{r_{-}} = \\dfrac{${hue('length', q.cat[3] + '\\ \\text{pm}')}}{${hue('length', q.an[3] + '\\ \\text{pm}')}} = ${x.toFixed(3)}`);
     const { ctx } = begin(cnv), L = 150, R = 1250, Y = 78, X = (r) => L + (R - L) * r;
     line(ctx, L, Y, R, Y, PAL.ink, 3);
     [[0.225, 0.414, 'tetrahedral hole'], [0.414, 0.732, 'octahedral hole'], [0.732, 1, 'cubic hole']].forEach(([a, b, s]) => {
@@ -501,42 +503,44 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
    two rays in and out at θ, and the extra path d sin θ on either side of the
    lower atom. Right: the two scattered waves, drawn at 600 units per nm of
    wavelength, and their sum. Still: the lesson is the phase between the
-   waves, not their travel.
+   waves, not their travel. The two rays with their waves and the sum are
+   referents in F.ref; the spacing and the extra path wear length, θ angle,
+   λ wavelength.
 ===================================================================== */
 (function () {
   const d = sim('sim-bragg', 560);
   const bragg = (n, th, lm, dd) => n * lm / (2 * dd);
-  const th = ctl(d.controls, { label: '\\theta', cls: '', min: 5, max: 60, step: 0.05, value: 25.25, unit: '°', dec: 2, aria: 'angle theta in degrees',
+  const th = ctl(d.controls, { label: '\\kthetabragg', cls: 'angle', min: 5, max: 60, step: 0.05, value: 25.25, unit: '°', dec: 2, aria: 'angle theta in degrees',
     specials: [1, 2, 3].map((n) => ({ at: () => { const s = bragg(n, 0, lm.v, dd.v); return s < 1 ? Math.asin(s) / RAD : null; }, label: `n = ${n}` })) });
   const lm = ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: 0.05, max: 0.3, step: 0.0005, value: 0.1315, unit: 'nm', dec: 4, aria: 'wavelength in nanometers',
     specials: [1, 2, 3].map((n) => ({ at: () => 2 * dd.v * Math.sin(th.v * RAD) / n, label: `n = ${n}` })) });
-  const dd = ctl(d.controls, { label: 'd', cls: '', min: 0.1, max: 0.5, step: 0.001, value: 0.154, unit: 'nm', dec: 3, aria: 'spacing between the planes in nanometers',
+  const dd = ctl(d.controls, { label: '\\kdplane', cls: 'length', min: 0.1, max: 0.5, step: 0.001, value: 0.154, unit: 'nm', dec: 3, aria: 'spacing between the planes in nanometers',
     specials: [1, 2, 3].map((n) => ({ at: () => n * lm.v / (2 * Math.sin(th.v * RAD)), label: `n = ${n}` })) });
   const S = 400, XP = 380, Y1 = 250, L0 = 40, R0 = 700;
   function draw() {
     const { ctx, H } = begin(d.c), lab = F.labeller(ctx, H, { headline: true });
-    const t = th.v * RAD, dn = dd.v, lam = lm.v, cw = C('wavelength'), Y2 = Y1 + dn * S, cs = Math.cos(t), sn = Math.sin(t);
+    const t = th.v * RAD, dn = dd.v, lam = lm.v, cw = C('wavelength'), cl = C('length'), ca = C('angle'), cU = F.ref('upper-ray'), cD = F.ref('lower-ray'), Y2 = Y1 + dn * S, cs = Math.cos(t), sn = Math.sin(t);
     /* the planes */
     [Y1, Y2].forEach((y) => { line(ctx, L0, y, R0, y, alpha(PAL.ink, 0.35), 2); for (let x = XP - 5 * 64; x <= R0; x += 64) if (x >= L0) { ctx.beginPath(); ctx.arc(x, y, 13, 0, 2 * Math.PI); ctx.fillStyle = F.el('Cu'); ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.stroke(); } });
-    F.vbracket(ctx, L0 + 12, Y1, Y2, PAL.ink, 'd', 1);
+    F.vbracket(ctx, L0 + 12, Y1, Y2, cl, 'd', 1);
     /* the rays, clipped to the scene */
     ctx.save(); ctx.beginPath(); ctx.rect(L0, 118, R0 - L0, 440); ctx.clip();
     const Lr = 420;
-    [[XP, Y1], [XP, Y2]].forEach(([x, y]) => {
-      F.arrow(ctx, x - Lr * cs, y - Lr * sn, x - 16 * cs, y - 16 * sn, cw, 4);
-      F.arrow(ctx, x, y, x + Lr * cs, y - Lr * sn, cw, 4);
+    [[XP, Y1, cU], [XP, Y2, cD]].forEach(([x, y, cr]) => {
+      F.arrow(ctx, x - Lr * cs, y - Lr * sn, x - 16 * cs, y - 16 * sn, cr, 4);
+      F.arrow(ctx, x, y, x + Lr * cs, y - Lr * sn, cr, 4);
     });
     /* the extra path of the lower ray: d sin θ in and d sin θ out */
     const k = dn * S * sn, Fin = [XP - k * cs, Y2 - k * sn], Gout = [XP + k * cs, Y2 - k * sn];
     line(ctx, XP, Y1, Fin[0], Fin[1], alpha(PAL.ink, 0.5), 2, [4, 8]);
     line(ctx, XP, Y1, Gout[0], Gout[1], alpha(PAL.ink, 0.5), 2, [4, 8]);
-    line(ctx, Fin[0], Fin[1], XP, Y2, PAL.ink, 7);
-    line(ctx, XP, Y2, Gout[0], Gout[1], PAL.ink, 7);
+    line(ctx, Fin[0], Fin[1], XP, Y2, cl, 7);
+    line(ctx, XP, Y2, Gout[0], Gout[1], cl, 7);
     ctx.restore();
-    lab.add('d sin θ', (Fin[0] + XP) / 2, (Fin[1] + Y2) / 2, -sn, cs, PAL.ink, 20, 14);
-    lab.add('d sin θ', (Gout[0] + XP) / 2, (Gout[1] + Y2) / 2, sn, cs, PAL.ink, 20, 14);
-    F.angleArc(ctx, { x: XP, y: Y1 }, 64, Math.PI - t, Math.PI, 'θ', lab);
-    F.angleArc(ctx, { x: XP, y: Y1 }, 64, 0, t, 'θ', lab);
+    lab.add('d sin θ', (Fin[0] + XP) / 2, (Fin[1] + Y2) / 2, -sn, cs, cl, 20, 14);
+    lab.add('d sin θ', (Gout[0] + XP) / 2, (Gout[1] + Y2) / 2, sn, cs, cl, 20, 14);
+    F.angleArc(ctx, { x: XP, y: Y1 }, 64, Math.PI - t, Math.PI, 'θ', lab, ca);
+    F.angleArc(ctx, { x: XP, y: Y1 }, 64, 0, t, 'θ', lab, ca);
     text(ctx, 'incident X-rays', L0 + 10, 96, PAL.muted, { size: 17 });
     text(ctx, 'diffracted X-rays', R0 - 10, 96, PAL.muted, { size: 17, align: 'right' });
 
@@ -545,10 +549,11 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
     const wave = (y, ph, amp, col, w) => { ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.beginPath(); for (let x = WL; x <= WR; x += 3) { const yy = y - amp * Math.cos(2 * Math.PI * (x - WL) / px - ph); if (x === WL) ctx.moveTo(x, yy); else ctx.lineTo(x, yy); } ctx.stroke(); ctx.restore(); };
     const ya = 150, yb = 290, ys = 450, amp = 2 * A * Math.abs(Math.cos(delta / 2)), phs = delta / 2;
     [ya, yb, ys].forEach((y) => line(ctx, WL, y, WR, y, alpha(PAL.ink, 0.25), 2));
-    wave(ya, 0, A, cw, 3.5); wave(yb, delta, A, cw, 3.5); wave(ys, phs, amp, cw, 5);
-    text(ctx, 'from the upper plane', WL, ya - A - 18, PAL.muted, { size: 17 });
-    text(ctx, 'from the lower plane', WL, yb - A - 18, PAL.muted, { size: 17 });
-    text(ctx, 'sum', WL, ys - 2 * A - 16, PAL.muted, { size: 17 });
+    const cS = F.ref('sum-wave');
+    wave(ya, 0, A, cU, 3.5); wave(yb, delta, A, cD, 3.5); wave(ys, phs, amp, cS, 5);
+    text(ctx, 'from the upper plane', WL, ya - A - 18, cU, { size: 17 });
+    text(ctx, 'from the lower plane', WL, yb - A - 18, cD, { size: 17 });
+    text(ctx, 'sum', WL, ys - 2 * A - 16, cS, { size: 17 });
     F.hbracket(ctx, WL, WL + px, ya + A + 12, cw, 'λ', { side: 'below' });
     line(ctx, 755, 110, 755, 500, alpha(PAL.ink, 0.2), 2);
     lab.flush();
@@ -558,7 +563,7 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
       : off > 0.42 ? 'about half a wavelength more than a whole number, so the waves cancel'
         : 'not a whole number of wavelengths, so the waves partly cancel';
     topline(ctx, `The lower ray travels ${m.toFixed(2)} wavelengths farther, ${verdict}.`);
-    tex(d.readout, `2d\\sin\\theta = 2(${dn.toFixed(3)}\\ \\text{nm})\\sin(${th.v.toFixed(2)}^\\circ) = ${path.toFixed(4)}\\ \\text{nm} = ${m.toFixed(2)}\\,\\klam`);
+    tex(d.readout, `2\\kdplane\\sin\\kthetabragg = 2(${hue('length', dn.toFixed(3) + '\\ \\text{nm}')})\\sin(${hue('angle', th.v.toFixed(2) + '^\\circ')}) = ${hue('length', path.toFixed(4) + '\\ \\text{nm}')} = ${m.toFixed(2)}\\,\\klam`);
   }
   still(d, draw);
 })();

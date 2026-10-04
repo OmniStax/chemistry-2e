@@ -36,7 +36,7 @@
     { "id": "sim-intra-inter", "kind": "sim", "number": "10.5", "originals": ["/media/ch10/CNX_Chem_10_01_IntravInter.jpg"], "original_caption": "Intramolecular forces keep a molecule intact. Intermolecular forces hold multiple molecules together and determine many of a substance’s properties.", "draws": [] },
     { "id": "sim-dispersion", "kind": "sim", "number": "10.6", "originals": ["/media/ch10/CNX_Chem_10_01_DispForces.jpg"], "original_caption": "Dispersion forces result from the formation of temporary dipoles, as illustrated here for two nonpolar diatomic molecules.", "draws": ["temperature"] },
     { "id": "fig-carbon-family", "kind": "figure", "draws": [] },
-    { "id": "sim-pentanes", "kind": "sim", "number": "10.7", "originals": ["/media/ch10/CNX_Chem_10_01_PentIso.jpg"], "original_caption": "The strength of the dispersion forces increases with the contact area between molecules, as demonstrated by the boiling points of these pentane isomers.", "draws": ["temperature"] },
+    { "id": "sim-pentanes", "kind": "sim", "number": "10.7", "originals": ["/media/ch10/CNX_Chem_10_01_PentIso.jpg"], "original_caption": "The strength of the dispersion forces increases with the contact area between molecules, as demonstrated by the boiling points of these pentane isomers.", "draws": ["temperature", "area"] },
     { "id": "fig-geckos", "kind": "photo", "number": "10.8", "draws": [] },
     { "id": "fig-dipoles", "kind": "figure", "number": "10.9", "originals": ["/media/ch10/CNX_Chem_10_01_DipDip.jpg"], "original_caption": "This image shows two arrangements of polar molecules, such as HCl, that allow an attraction between the partial negative end of one molecule and the partial positive end of another.", "draws": [] },
     { "id": "sim-hbond", "kind": "sim", "number": "10.10", "originals": ["/media/ch10/CNX_Chem_10_01_HBonding.jpg"], "original_caption": "Water molecules participate in multiple hydrogen-bonding interactions with nearby water molecules.", "draws": [] },
@@ -339,5 +339,27 @@
     { "exercise": "e19", "concept": "phase-from-imf-and-kinetic-energy" },
     { "exercise": "e20", "concept": "rank-by-intermolecular-forces" },
     { "exercise": "e20", "concept": "dispersion-forces" }
+  ],
+  "referents": [
+    {
+      "id": "group-14",
+      "label": "the carbon family (group 14 hydrides)",
+      "figure": "sim-hydrides"
+    },
+    {
+      "id": "group-15",
+      "label": "the nitrogen family (group 15 hydrides)",
+      "figure": "sim-hydrides"
+    },
+    {
+      "id": "group-16",
+      "label": "the oxygen family (group 16 hydrides)",
+      "figure": "sim-hydrides"
+    },
+    {
+      "id": "group-17",
+      "label": "the halogen family (group 17 hydrides)",
+      "figure": "sim-hydrides"
+    }
   ]
 }

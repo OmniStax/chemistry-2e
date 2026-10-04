@@ -18,10 +18,10 @@ const minus = (s) => s.replace(/^-/, '−');
    the rest handbook values. Every vapor pressure on the page comes from the
    Clausius-Clapeyron equation through the normal boiling point, so the figures agree. */
 const LIQ = {
-  ether: { name: 'diethyl ether', bp: 34.6, dH: 26.5 },
-  ethanol: { name: 'ethanol', bp: 78.4, dH: 41.4 },
-  water: { name: 'water', bp: 100.0, dH: 40.67 },
-  glycol: { name: 'ethylene glycol', bp: 197.3, dH: 50.5 },
+  ether: { name: 'diethyl ether', ref: 'diethyl-ether', bp: 34.6, dH: 26.5 },
+  ethanol: { name: 'ethanol', ref: 'ethanol', bp: 78.4, dH: 41.4 },
+  water: { name: 'water', ref: 'water', bp: 100.0, dH: 40.67 },
+  glycol: { name: 'ethylene glycol', ref: 'ethylene-glycol', bp: 197.3, dH: 50.5 },
 };
 const KEYS = Object.keys(LIQ);
 const pOf = (k, tc) => { const q = LIQ[k]; return 101.3 * Math.exp((-q.dH * 1000 / R) * (1 / (tc + 273.15) - 1 / (q.bp + 273.15))); };
@@ -36,7 +36,8 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
    equilibrium is a process in time. The flask stands on a floor, so the
    pitch stays between 1° and 69° above level; the yaw is free and there is
    no idle spin, since the molecules already move. The strip beneath holds
-   the manometer and the pressure against time.
+   the manometer and the pressure against time. The flask and the
+   manometer are referents, in F.ref.
 ===================================================================== */
 (function () {
   const d = sim('sim-vapor');
@@ -65,11 +66,11 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   const born = (i, n) => (i < n ? -TAU * Math.log(1 - (i + 0.5) / n) : Infinity);
   let sig = '', ms = [];
   function build() {
-    const key = L.value + '|' + [PAL.ink, F.el('C'), F.el('O'), F.el('H')].join('|'); if (key === sig || !grp) return; sig = key;
+    const key = L.value + '|' + [PAL.ink, F.ref('flask'), F.el('C'), F.el('O'), F.el('H')].join('|'); if (key === sig || !grp) return; sig = key;
     v.clear(); ms = [];
-    const glass = new T3D.Mesh(new T3D.BoxGeometry(2 * W, TOP - FLOOR, 2 * W), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.05, depthWrite: false, side: T3D.DoubleSide }));
+    const glass = new T3D.Mesh(new T3D.BoxGeometry(2 * W, TOP - FLOOR, 2 * W), F.mesh.mat(F.ref('flask'), { transparent: true, opacity: 0.05, depthWrite: false, side: T3D.DoubleSide }));
     glass.position.set(0, (TOP + FLOOR) / 2, 0); grp.add(glass);
-    const e = new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(2 * W, TOP - FLOOR, 2 * W)), new T3D.LineBasicMaterial({ color: new T3D.Color(PAL.ink) }));
+    const e = new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(2 * W, TOP - FLOOR, 2 * W)), new T3D.LineBasicMaterial({ color: new T3D.Color(F.ref('flask')) }));
     e.position.copy(glass.position); grp.add(e);
     const liq = new T3D.Mesh(new T3D.BoxGeometry(2 * W - 0.02, SURF - FLOOR, 2 * W - 0.02), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.16, depthWrite: false }));
     liq.position.set(0, (SURF + FLOOR) / 2, 0); grp.add(liq);
@@ -97,7 +98,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const { ctx } = begin(cnv), cp = C('pressure'), ctm = C('time');
     /* the manometer: 60 kPa parts the arms by 120 units */
     const MX = 170, MB = 290, MK = 2, lift = clamp(p, 0, 70) * MK / 2, arm = 60;
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath();
+    ctx.save(); ctx.strokeStyle = F.ref('manometer'); ctx.lineWidth = 3; ctx.beginPath();
     ctx.moveTo(MX - arm - 14, 120); ctx.lineTo(MX - arm - 14, MB); ctx.arc(MX, MB, arm + 14, Math.PI, 0, true); ctx.lineTo(MX + arm + 14, 120);
     ctx.moveTo(MX - arm + 14, 120); ctx.lineTo(MX - arm + 14, MB); ctx.arc(MX, MB, arm - 14, Math.PI, 0, true); ctx.lineTo(MX + arm - 14, 120);
     ctx.stroke(); ctx.restore();
@@ -181,7 +182,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
    and the boiling point of each where its curve meets the pressure of the
    surroundings. Still: the curves answer the pressure. Axes 0 to 120 °C
    and 0 to 120 kPa, fixed; ethylene glycol's crossings fall to the right
-   and are pinned at the edge.
+   and are pinned at the edge. Each liquid's curve is its referent's F.ref.
 ===================================================================== */
 (function () {
   const d = sim('sim-bp', 560);
@@ -196,7 +197,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     line(ctx, box.l, Y(p), box.r, Y(p), cp, 3, [10, 10]);
     text(ctx, fmt(p, 1) + ' kPa', box.l + 12, Y(p) + 20, cp, { size: 18, weight: 600, bg: PAL.panel });
     KEYS.forEach((k, i) => {
-      const on = k === sel, col = F.cat(i);
+      const on = k === sel, col = F.ref(LIQ[k].ref);
       ctx.save(); ctx.beginPath(); ctx.rect(box.l, box.t, box.r - box.l, box.b - box.t); ctx.clip();
       F.curve(ctx, (tc) => pOf(k, tc), 0, 120, X, Y, on ? col : alpha(col, 0.75), on ? 5 : 3, 120); ctx.restore();
       const tb = bpAt(k, p);

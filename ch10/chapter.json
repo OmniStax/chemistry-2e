@@ -229,6 +229,94 @@
    "unit": "°",
    "section": "10.6",
    "anchor": "10.6-xray"
+  },
+  {
+   "sym": "q",
+   "concept": "heat-flow",
+   "meaning": "the heat absorbed or released by a substance as it warms, cools or changes state",
+   "unit": "J",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of the substance being heated or cooled",
+   "unit": "g",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "c_spec",
+   "concept": "specific-heat-capacity",
+   "meaning": "the specific heat of the substance in the phase being heated",
+   "unit": "J/g °C",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "ΔT",
+   "concept": "temperature",
+   "meaning": "the temperature change of the substance",
+   "unit": "°C",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the amount of the substance that changes phase, in moles",
+   "unit": "mol",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "ΔH",
+   "concept": "enthalpies-of-phase-change",
+   "meaning": "the enthalpy change of a phase transition, per mole of the substance",
+   "unit": "kJ/mol",
+   "section": "10.3",
+   "anchor": "10.3-vaporization-enthalpy"
+  },
+  {
+   "sym": "l_edge",
+   "concept": "length",
+   "meaning": "the edge length of the simple cubic unit cell of polonium",
+   "unit": "pm",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
+  },
+  {
+   "sym": "d_diag",
+   "concept": "length",
+   "meaning": "the length of the diagonal of a face of the unit cell",
+   "unit": "pm",
+   "section": "10.6",
+   "anchor": "10.6-ex-ca"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of the unit cell, its edge length cubed",
+   "unit": "cm³",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of the atoms contained within one unit cell",
+   "unit": "g",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
+  },
+  {
+   "sym": "ρ",
+   "concept": "density",
+   "meaning": "the density of the metal, the mass of its unit cell divided by the volume of the cell",
+   "unit": "g/cm³",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
   }
  ]
 }

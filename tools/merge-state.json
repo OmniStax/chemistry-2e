@@ -178,7 +178,9 @@
       "r_atom",
       "n_order",
       "d_plane",
-      "\u03b8_bragg"
+      "\u03b8_bragg",
+      "l_edge",
+      "d_diag"
     ],
     "types": [
       "angle",

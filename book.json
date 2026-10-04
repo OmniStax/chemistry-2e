@@ -1261,6 +1261,16 @@
       "sym": "q_solution",
       "latex": "q_{\\text{solution}}",
       "macro": "\\kqsolution"
+    },
+    {
+      "sym": "l_edge",
+      "latex": "l",
+      "macro": "\\kledge"
+    },
+    {
+      "sym": "d_diag",
+      "latex": "d",
+      "macro": "\\kddiag"
     }
   ],
   "exercise_kinds": [

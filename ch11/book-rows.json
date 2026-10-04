@@ -56,7 +56,6 @@
   {
    "sym": "ΔP_vp",
    "latex": "\\Delta P",
-   "type": "pressure",
    "macro": "\\kdPvp"
   },
   {

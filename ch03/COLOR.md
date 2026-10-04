@@ -2,7 +2,7 @@
 
 Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for the quantities this chapter draws; root rules 7 and 22 hold and nothing here invents a hue.
 
-## What the chapter binds
+## What the chapter colours
 
 Four of the book's fourteen types, the head of its order, so the hues are the best separated the scheme has.
 
@@ -13,10 +13,10 @@ Four of the book's fourteen types, the head of its order, so the hues are the be
 | `volume` | 3.3 | the volume of solution, V₁ and V₂ (V₁ hollow or dashed, V₂ filled), L, L₁, L₂ |
 | `concentration` | 3.3 | the molarity M, M₁, M₂, C₁, C₂ (the initial dashed or hollow), a concentration axis |
 
-| Section | Binds |
+| Section | Colours |
 |---|---|
 | `intro` | nothing |
-| 3.1 | `mass` and `amount`; the formula-mass figure binds nothing of the scheme (amu masses of single atoms are a mass, but the figure's counts and subtotals are read as a sum, so it binds `mass` only if its readout states a mass) |
+| 3.1 | `mass` and `amount`; the formula-mass figure colours nothing of the scheme (amu masses of single atoms are a mass, but the figure's counts and subtotals are read as a sum, so it colours `mass` only if its readout states a mass) |
 | 3.2 | `mass` and `amount`; the percentages and the mole ratios stay in ink |
 | 3.3 | `amount`, `volume`, `concentration`; `mass` only where a figure weighs the solute |
 | 3.4 | `mass` only, as built: the two sliders of the ppm Sim and the masses in its readout; volume is in prose and the kept flowchart; a percentage, ppm and ppb are untyped and ink; a density is ink |
@@ -33,4 +33,4 @@ Nothing is coerced: molar mass is a mass (per mole), not an amount; molarity is 
 
 ## As built
 
-3.1 binds `mass` and `amount` in the mass–mole–number Sim; its formula-mass Figure keeps its sums in ink. 3.2 binds `mass` on its sliders and `amount` on the moles. 3.3 binds `mass` on the balance of the molarity Sim, `amount`, `volume` and `concentration`; the copper nitrate blue is the named constant `CU_NITRATE`, its opacity following the concentration, and the water `WATER`. 3.4 binds `mass` only. Every atom and ion is drawn through `F.el`.
+3.1 colours `mass` and `amount` in the mass–mole–number Sim; its formula-mass Figure keeps its sums in ink. 3.2 colours `mass` on its sliders and `amount` on the moles. 3.3 colours `mass` on the balance of the molarity Sim, `amount`, `volume` and `concentration`; the copper nitrate blue is the named constant `CU_NITRATE`, its opacity following the concentration, and the water `WATER`. 3.4 colours `mass` only. Every atom and ion is drawn through `F.el`.

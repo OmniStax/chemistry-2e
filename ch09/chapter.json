@@ -102,6 +102,21 @@
       "anchor": "9.1-barometer"
     },
     {
+      "sym": "P_atm",
+      "concept": "atmospheric-pressure-and-barometer",
+      "type": "pressure",
+      "meaning": "the pressure of the atmosphere",
+      "unit": "torr",
+      "section": "9.1"
+    },
+    {
+      "sym": "P_gas",
+      "concept": "gas-pressure",
+      "meaning": "the pressure of the gas in the flask",
+      "unit": "torr",
+      "section": "9.1"
+    },
+    {
       "sym": "P",
       "concept": "gas-pressure",
       "meaning": "the pressure of a gas, measured on a gauge attached to the vessel that holds it",

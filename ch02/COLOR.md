@@ -1,12 +1,12 @@
 # Chapter 2 colour plan
 
-Prepared 2026-09-28 and applied with `config.md`. It refines the book's `COLOR.md` for what this chapter draws; root rules 7 and 22 hold, and nothing here invents a hue. A page colours only the types its figures draw, its sliders carry or its readouts state; every other symbol is ink, and every atom is drawn in its element's colour through `F.el`, the book's convention and not a binding.
+Prepared 2026-09-28 and applied with `config.md`. It refines the book's `COLOR.md` for what this chapter draws; root rules 7 and 22 hold, and nothing here invents a hue. Every atom is drawn in its element's colour through `F.el`, the book's convention and not a colouring.
 
-## What the chapter binds
+## What the chapter colours
 
 Two of the book's fourteen types, `mass` and `charge`, far apart in the declared order and so well separated in hue.
 
-| Section | Binds | What wears it |
+| Section | Colours | What wears it |
 |---|---|---|
 | `intro` | nothing | one photograph |
 | 2.1 | `mass`, where a figure weighs the elements of a compound (the grams of carbon and hydrogen of Table 2.1, the grams of chlorine per gram of copper) | the mass readings and bars; the mass ratio itself is ink, as a ratio of two masses is not a mass |
@@ -29,4 +29,4 @@ Nothing is coerced into a neighbouring type to save a colour.
 
 ## As built
 
-The bindings are as tabled, with one narrowing: 2.2 binds `charge` alone, since no figure reads out a mass. 2.1 and 2.3 bind `mass`; 2.2, 2.3 and 2.6 bind `charge`. The element palette now carries Al, Se, Zr, Pb and Cr, so no atom of the chapter falls back to "other".
+The colours are as tabled, with one narrowing: 2.2 colours `charge` alone, since no figure reads out a mass. 2.1 and 2.3 colour `mass`; 2.2, 2.3 and 2.6 colour `charge`. The element palette now carries Al, Se, Zr, Pb and Cr, so no atom of the chapter falls back to "other".

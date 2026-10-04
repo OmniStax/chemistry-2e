@@ -2,14 +2,14 @@
 
 Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what this chapter draws; root rules 7 and 22 hold and nothing here invents a hue.
 
-## What the chapter binds
+## What the chapter colours
 
 Four of the book's fourteen types: `amount`, `mass`, `volume` and `concentration`. Nothing is added.
 
-| Section | Binds |
+| Section | Colours |
 |---|---|
 | `intro` | nothing |
-| 4.1 | nothing by default. The molecules are in the element palette through `F.el`; coefficients and atom counts are counts and stay ink. If a figure puts the equation on a mole scale with a slider, it binds `amount` |
+| 4.1 | nothing by default. The molecules are in the element palette through `F.el`; coefficients and atom counts are counts and stay ink. If a figure puts the equation on a mole scale with a slider, it colours `amount` |
 | 4.2 | nothing by default. Ions and molecules in element colours, an ion carrying its charge as a mark; oxidation numbers are untyped and stay ink; the yellow of PbI2, the blue of Cu²⁺ and an indicator colour are physical facts |
 | 4.3 | `amount` and `mass` (the mole and mass boxes of the route), `volume` and `concentration` where the route starts from a solution |
 | 4.4 | `amount` (moles of each reactant and of product, leftovers as the same hue hollow), `mass` where the example gives grams; percent yield is untyped and stays ink |
@@ -25,7 +25,7 @@ Four of the book's fourteen types: `amount`, `mass`, `volume` and `concentration
 
 ## As built (chapter pass, 2026-09-28)
 
-- `intro`, 4.1, 4.2: nothing bound. Molecules and ions in the element palette; the precipitate colours of 4.2 (PbI₂ yellow, AgI and Ag₂CO₃ pale) and the white solids are named in `figures.js` as physical facts.
+- `intro`, 4.1, 4.2: nothing coloured. Molecules and ions in the element palette; the precipitate colours of 4.2 (PbI₂ yellow, AgI and Ag₂CO₃ pale) and the white solids are named in `figures.js` as physical facts.
 - 4.3: `amount`, `mass` and `volume` in the route boxes and `sim-flowchart`; `concentration` is not drawn, since no route box of 4.3 holds a molarity that the figures colour.
 - 4.4: `amount` and `mass` (the reaction boxes and the two gram-slider Sims); percent yield in ink.
 - 4.5: `volume`, `concentration`, `amount`, `mass`; the indicator pink, the two absorber grains and the furnace glow are named as physical facts.

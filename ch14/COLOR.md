@@ -2,9 +2,9 @@
 
 Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what this chapter draws; root rules 7 and 22 hold and nothing here invents a hue or coerces a quantity into a neighbouring type. The chapter's central quantity is concentration: [H₃O⁺], [OH⁻], pH and pOH are one type, pH and pOH its variants with the p as decoration, so every log concentration axis wears the concentration hue. The ionization constants K_w, K_a, K_b and their p-forms are equilibrium constants, untyped by the book's decision, and are drawn in ink even where they sit on the same log axis.
 
-## What the chapter binds
+## What the chapter colours
 
-| Section | Binds | What wears it |
+| Section | Colours | What wears it |
 |---|---|---|
 | `intro` | nothing | one photograph |
 | 14.1 | `concentration`; `temperature` where K_w is read against T | [H₃O⁺] and [OH⁻] in readouts; a temperature choice or slider for K_w |
@@ -24,4 +24,4 @@ Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what 
 
 ## What stays in ink
 
-K_w, K_a, K_b, K_a1 to K_a3, K_b1, K_b2, pK_w, pK_a, pK_b, percent ionization, x, the logarithm terms, every K ladder and axis rule and label that is not one of the bound types. No `\k` macro appears except for the bound types: `\kconcHyd`, `\kconcOH`, `\kconcHA`, `\kconcAm`, `\kconcHBp`, `\kconcB`, `\kconcHAz`, `\kconcHydeq`, `\kpH`, `\kpOH`, `\kM`, `\kV`, `\kn`, `\kT`.
+K_w, K_a, K_b, K_a1 to K_a3, K_b1, K_b2, pK_w, pK_a, pK_b, percent ionization, x, the logarithm terms, every K ladder and axis rule and label that is not one of the coloured types. No `\k` macro appears except for the coloured types: `\kconcHyd`, `\kconcOH`, `\kconcHA`, `\kconcAm`, `\kconcHBp`, `\kconcB`, `\kconcHAz`, `\kconcHydeq`, `\kpH`, `\kpOH`, `\kM`, `\kV`, `\kn`, `\kT`.

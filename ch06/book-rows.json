@@ -19,7 +19,6 @@
     {
       "sym": "ΔE",
       "latex": "\\Delta E",
-      "type": "energy",
       "macro": "\\kdE"
     },
     {
@@ -49,7 +48,6 @@
     {
       "sym": "λ_max",
       "latex": "\\lambda_{\\text{max}}",
-      "type": "wavelength",
       "macro": "\\klammax"
     },
     {

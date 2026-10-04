@@ -3,35 +3,33 @@
 Prepared 2026-09-12, and applied with `config.md`. It refines the book's
 `COLOR.md` for the quantities this chapter actually draws; root rule 7 and
 root rule 22 hold, and nothing here invents a hue. The app dresses the book's
-fourteen declared types from its own palette in declaration order, and a page
-colours only the types its figures draw, its sliders carry or its readouts
-state. Every other symbol on that page renders in ink, and every atom and
-molecule on it renders in its element's colour, which is the book's own
-convention and not a binding.
+fourteen declared types from its own palette in declaration order. Every atom and
+molecule renders in its element's colour, which is the book's own
+convention and not a colouring.
 
-## What the chapter binds
+## What the chapter colours
 
 Three of the book's fourteen types, and they stand well apart in the order
 the book declares them, so the hues are well separated.
 
-| Type | Where it is bound | What wears it |
+| Type | Where it is coloured | What wears it |
 |---|---|---|
 | `mass` | 1.2, 1.3, 1.4, 1.5 | the balance reading, the m of the density readout, the mass slider of the cube, the mass axis where one is drawn |
 | `volume` | 1.2, 1.3, 1.4, 1.5 | the cube and its edge readout, the water level and the displaced volume in the cylinder, the V of the density readout, the litre and millilitre marks of the nested-volumes figure |
 | `temperature` | 1.1, 1.3, 1.6 | the temperature slider of the water beaker, the thermometer columns and their three scales, the T of the conversion readouts, the temperature reading that does not change when the sample is doubled |
 
-`time` was prepared as a fourth, and it is not bound: the second is named in
+`time` was prepared as a fourth, and it is not coloured: the second is named in
 Table 1.2 as a base unit, and no figure of 1.4 gives it a reading of its own,
 so nothing in the chapter draws a time and the word second stays in ink.
-`amount of substance` is not bound either, for the same reason: the mole is
+`amount of substance` is not coloured either, for the same reason: the mole is
 named in Table 1.2 as a base unit and nowhere counted, and a unit named in a
 table is not a quantity a figure draws. `concentration`, `pressure`, `energy`,
 `entropy`, `rate`, `wavelength`, `frequency`, `potential` and `charge` are
 untouched; the chapter neither draws nor states them.
 
-Each section binds only its own share, and its plan lists it:
+Each section colours its own share, and its plan lists it:
 
-| Section | Binds |
+| Section | Colours |
 |---|---|
 | `intro` | nothing; the introduction page has one photograph and no figure of its own |
 | 1.1 | `temperature`, where the water figure is warmed and cooled; nothing else; the water molecules are oxygen red and hydrogen white from the element palette in all three phases, and the phase is told by how they pack |
@@ -44,7 +42,7 @@ Each section binds only its own share, and its plan lists it:
 ## How density's mass and volume are told apart
 
 Density is the chapter's one derived quantity and the reason `mass` and
-`volume` are bound together on the same canvas. Density itself stays in ink,
+`volume` are coloured together on the same canvas. Density itself stays in ink,
 as the book's `COLOR.md` says: it is a ratio, it is the answer the figure
 computes rather than a knob the reader turns, and drawing it in a hue of its
 own would make a third colour out of two.
@@ -61,7 +59,7 @@ decoration:
   locked view, their faces the page colour under the share of ink each one's
   angle to the lamp earns it, and the edge written beside a cube is a length
   and stays in ink.
-- **The readout binds them.** `density = m ÷ V` is written with the m in the
+- **The readout colours them.** `density = m ÷ V` is written with the m in the
   mass hue, the V in the volume hue, the word density and the quotient in ink,
   and the live numbers each in the hue of the quantity they belong to, so the
   reader's eye goes from the balance to the m and from the water to the V
@@ -88,7 +86,7 @@ beside a compound and a mixture, are each drawn in their element's colours
 as well. No particle in this chapter stands for matter in general: each
 picture names what it draws, and what it draws has an element. This is the
 book's own convention and not a signal the app adds, so it stays when colour
-coding is switched off, and it is not bound by any page.
+coding is switched off, and it is not coloured by any page.
 
 ## The temperature scales of 1.6
 
@@ -123,7 +121,7 @@ percent, a significant figure and the digits that are dropped, an accuracy
 and a precision, a conversion factor and the units that cancel inside one,
 the names of the elements and of the states of matter, the outlines of the
 beaker, the cylinder and the balance, and every label, bracket, axis rule
-and arrow that is not a quantity of a bound type. Not the molecules: a drawn
+and arrow that is not a quantity of a coloured type. Not the molecules: a drawn
 atom is never ink in this chapter, since each one has an element and takes
 its colour.
 

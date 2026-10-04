@@ -2,9 +2,9 @@
 
 Prepared 2026-09-12 for 7.6 and extended 2026-09-28 to the whole chapter. It refines the book's `COLOR.md` for the quantities this chapter actually draws; root rules 7 and 22 hold, and nothing here invents a hue.
 
-## What each section binds
+## What each section colours
 
-| Section | Binds | Families of rule 7 |
+| Section | Colours | Families of rule 7 |
 |---|---|---|
 | Intro | nothing | a kept photograph |
 | 7.1 | nothing | element palette (Na, Cl and the ions of the lattice); a kept photograph |
@@ -21,7 +21,7 @@ Every energy of the chapter is one type. A bond energy is an energy per mole, a 
 ## What stays in ink, and why
 
 - **Electronegativity and ΔEN.** A dimensionless relative number, untyped by the book's list.
-- **The partial charges δ+ and δ−.** Not bound as `charge`. The book's `COLOR.md` types the charge of Millikan's drops and of the electrons of electrolysis, which a figure reads in coulombs; a partial charge is written as δ with a sign, never as a number with a unit, and what the figures draw is the electronegativity difference that sets it. Binding `charge` would tie the δ of a C–H bond to the coulombs of Faraday's law, the coercion rule 7 forbids. The same holds for the ionic charges Z<sup>+</sup> and Z<sup>−</sup> of 7.5 and the formal charges of 7.4: small integers of bookkeeping, not quantities in coulombs.
+- **The partial charges δ+ and δ−.** Not coloured as `charge`. The book's `COLOR.md` types the charge of Millikan's drops and of the electrons of electrolysis, which a figure reads in coulombs; a partial charge is written as δ with a sign, never as a number with a unit, and what the figures draw is the electronegativity difference that sets it. Binding `charge` would tie the δ of a C–H bond to the coulombs of Faraday's law, the coercion rule 7 forbids. The same holds for the ionic charges Z<sup>+</sup> and Z<sup>−</sup> of 7.5 and the formal charges of 7.4: small integers of bookkeeping, not quantities in coulombs.
 - **Bond length, interionic distance, bond angle.** Length is untyped by the book's list, and an angle is geometry. The bracket that measures 1.21 Å across C=O in Figure 7.14 and the arc of 118° are ink.
 - **The bond dipole moment μ and the molecular dipole.** The product of a charge and a distance, with no type; drawn as arrows in ink, told apart by weight.
 - **A count of valence electrons, lone pairs and bonds.** Counts are untyped.

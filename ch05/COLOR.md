@@ -2,7 +2,7 @@
 
 Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` (root rules 7 and 22) and invents no hue.
 
-## What the chapter binds
+## What the chapter colours
 
 | Type | Where | What wears it |
 |---|---|---|
@@ -11,7 +11,7 @@ Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` (root rul
 | `mass` | 5.1, 5.2 | the m of q = c × m × ΔT and the mass slider of a sample or a metal |
 | `volume`, `pressure` | nowhere as built; no figure draws PΔV | V, ΔV, P stay in ink |
 
-| Section | Binds |
+| Section | Colours |
 |---|---|
 | intro | nothing |
 | 5.1 | energy, temperature, mass |

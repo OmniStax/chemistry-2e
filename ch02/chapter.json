@@ -73,6 +73,14 @@
    "unit": "C",
    "section": "2.3",
    "anchor": "2.3-units"
+  },
+  {
+   "sym": "Q_charge",
+   "concept": "fundamental-charge",
+   "type": "charge",
+   "meaning": "the charge of a particle, a whole number of fundamental charges",
+   "unit": "C",
+   "section": "2.2"
   }
  ]
 }

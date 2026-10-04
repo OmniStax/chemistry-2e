@@ -4,14 +4,12 @@ Prepared 2026-09-12 for 6.2 and extended on 2026-09-28 to the whole
 chapter, and applied with `config.md`. It refines the book's `COLOR.md` for
 the quantities this chapter actually draws; root rule 7 and root rule 22
 hold, and nothing here invents a hue. The app dresses the book's fourteen
-declared types from its own palette in declaration order, and a page
-colours only the types its figures draw, its sliders carry or its readouts
-state. Every other symbol on that page renders in ink. The chapter declares
+declared types from its own palette in declaration order. The chapter declares
 no new type.
 
 ## The chapter at a glance
 
-| Section | Types it may bind | Other families |
+| Section | Types it may colour | Other families |
 |---|---|---|
 | Intro | none | the photograph |
 | 6.1 | `wavelength`, `frequency`, `energy`, `temperature` | the colours of visible light on spectra, fringes and blackbody bands |
@@ -20,24 +18,24 @@ no new type.
 | 6.4 | `energy` | `F.el` for every atom and ion; `F.cat` for the s, p, d and f blocks |
 | 6.5 | `energy` | `F.el` for every atom and ion |
 
-A section binds a type only where a figure draws it, a slider carries it or
+A section colours a type only where a figure draws it, a slider carries it or
 a readout states it; the list is a ceiling, and the section's plan says
-what it actually binds.
+what it actually colours.
 
-## What 6.2 binds
+## What 6.2 colours
 
 Two of the book's fourteen types.
 
-| Type | Where it is bound | What wears it |
+| Type | Where it is coloured | What wears it |
 |---|---|---|
 | `energy` | the folded Figure 6.14 + 6.15, and the orbit-and-rung Sim | the rungs of the energy ladder, the arrow drawn between two rungs, the E<sub>n</sub> and ΔE of every readout, the energy axis the ladder is laid along, and the ionization limit at the top of it |
 | `wavelength` | the folded Figure 6.14 + 6.15, and the series Sim | the wavelength strip beneath the ladder, its axis and its ticks, the λ of the readout, and each line the figure lays on the strip |
 
-Nothing else is bound. `frequency` was considered as a third, since the
+Nothing else is coloured. `frequency` was considered as a third, since the
 section writes ΔE = hν, and it is left unbound: the equation names ν once and
 no figure of the section gives a frequency a reading, an axis or a slider, and
 a symbol that is only written is not a quantity a page draws. A later section
-that plots a frequency binds it then.
+that plots a frequency colours it then.
 
 Two families of colour meet on this section's canvas, and neither is the
 element palette. The type hues of `energy` and `wavelength` are the page's
@@ -59,7 +57,7 @@ between, the nuclear charge Z, the orbit radius r and the Bohr radius a₀,
 Planck's constant h, the speed of light c, the Rydberg constant R<sub>∞</sub>
 and the constant k that stands for the fundamental constants together, the
 nucleus and the electron drawn on the canvas, and every label, tick, bracket
-and rule that is not a quantity of a bound type.
+and rule that is not a quantity of a coloured type.
 
 Two of these are worth naming, because each looks like a typed symbol and is
 not:
@@ -105,7 +103,7 @@ of light, so the two hues have to meet:
   readout are all the energy hue, and nothing else on the canvas is.
 - **Wavelength is the strip.** The axis beneath, its ticks and its numbers,
   and the λ of the readout are all the wavelength hue.
-- **The readout binds them.** λ = hc ÷ |ΔE| is written with the ΔE in the
+- **The readout colours them.** λ = hc ÷ |ΔE| is written with the ΔE in the
   energy hue, the λ in the wavelength hue, and h, c and the quotient in ink,
   so the reader's eye goes from the arrow to the ΔE and from the line on the
   strip to the λ without a legend.
@@ -150,7 +148,7 @@ of light, so the two hues have to meet:
   and |ψ|², the quantum numbers n, l, m_l and m_s, r, the radial-distance
   axis and the probability-density axis, Δt (written once, not drawn).
 - Categorical: the two signs of an orbital's lobes (the book's red and blue)
-  take `F.cat(0)` and `F.cat(1)`, never a bound hue; spin up and spin down
+  take `F.cat(0)` and `F.cat(1)`, never a category hue the figure draws; spin up and spin down
   are arrows in ink.
 
 ## 6.4 Electronic Structure of Atoms
@@ -160,7 +158,7 @@ of light, so the two hues have to meet:
 - `F.el` for every named atom and ion; the element of an orbital diagram is
   named in its label, its symbol coloured by `F.el`.
 - Categorical: the s, p, d and f blocks of the periodic table (6.26, 6.27,
-  6.29) take `F.cat(0..3)`, one per block, never a bound hue.
+  6.29) take `F.cat(0..3)`, one per block, never a category hue the figure draws.
 - Ink: the boxes and arrows of orbital diagrams, the configuration text,
   Z and every quantum number.
 
@@ -176,13 +174,13 @@ of light, so the two hues have to meet:
 
 ## As built, 2026-09-28
 
-- 6.1 binds `wavelength`, `frequency`, `energy` and `temperature` on its
+- 6.1 colours `wavelength`, `frequency`, `energy` and `temperature` on its
   canvases, the colours of visible light as fact, and a metal through `F.el`.
-- 6.3 binds `wavelength` and `energy` on its canvases and `mass` in the de
+- 6.3 colours `wavelength` and `energy` on its canvases and `mass` in the de
   Broglie readouts only, through `\km`; the lobe signs take `F.cat`, and the
   electron of the orbit wave and the double slit takes the electron's entry
   of `F.el`.
-- 6.4 binds `energy` on the subshell ladder of the Aufbau figure, the blocks
+- 6.4 colours `energy` on the subshell ladder of the Aufbau figure, the blocks
   through `F.cat`, and its atoms through `F.el`.
-- 6.5 binds `energy` on IE and EA, and every atom and ion through `F.el`;
+- 6.5 colours `energy` on IE and EA, and every atom and ion through `F.el`;
   the radii stay in ink.

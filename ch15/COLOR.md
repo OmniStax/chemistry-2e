@@ -2,9 +2,9 @@
 
 Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what this chapter draws; root rules 7 and 22 hold. The chapter's central quantity is concentration: every ion concentration, a molar solubility, pH and pOH are one type and every log concentration axis wears its hue. K_sp, Q_sp, K_f, K_d and the net K are equilibrium constants, untyped by the book's decision, and are drawn in ink, even as the K_sp line on a concentration plane (the line is ink, the axes are concentration).
 
-## What the chapter binds
+## What the chapter colours
 
-| Section | Binds | What wears it |
+| Section | Colours | What wears it |
 |---|---|---|
 | `intro` | nothing | one photograph |
 | 15.1 | `concentration`; `mass` where grams dissolved are read out | [M^m+], [X^n-], [Ag⁺], [Cl⁻], molar solubility on axes, sliders and readouts; pH in Example 15.10 |

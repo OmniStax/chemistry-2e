@@ -2,9 +2,9 @@
 
 Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what this chapter draws; root rules 7 and 22 hold and nothing here invents a hue or coerces a quantity into a neighbouring type.
 
-## What the chapter binds
+## What the chapter colours
 
-| Section | Binds | What wears it |
+| Section | Colours | What wears it |
 |---|---|---|
 | `intro` | nothing | one photograph |
 | 10.1 | `temperature`; `energy` only if the phases figure draws kinetic energy as a quantity | the boiling and melting points on the axes of 10.11, 10.12 and Example 10.1's graph and on any temperature slider of the phases box; the forces themselves are drawn in ink, partial charges as δ+ and δ− marks in ink |
@@ -24,8 +24,8 @@ Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what 
 
 ## What stays in ink
 
-Lengths and radii, density, surface tension, viscosity, the contact angle and the Bragg angle, the order n, the coordination number, counts of atoms per cell, the percent of space filled, K and ratios, every axis rule and label that is not one of the bound types, and the region names on phase diagrams. No `\k` macro appears except for the bound types: `\kP`, `\kT`, `\kPone`, `\kPtwo`, `\kTone`, `\kTtwo`, `\kdHvap`, `\kdHfus`, `\kdHsub`, `\kq`, `\km`, `\kn`, `\kdT`, `\klam`, `\kt`.
+Lengths and radii, density, surface tension, viscosity, the contact angle and the Bragg angle, the order n, the coordination number, counts of atoms per cell, the percent of space filled, K and ratios, every axis rule and label that is not one of the coloured types, and the region names on phase diagrams. No `\k` macro appears except for the coloured types: `\kP`, `\kT`, `\kPone`, `\kPtwo`, `\kTone`, `\kTtwo`, `\kdHvap`, `\kdHfus`, `\kdHsub`, `\kq`, `\km`, `\kn`, `\kdT`, `\klam`, `\kt`.
 
 ## As built
 
-10.1 binds temperature alone; 10.2 nothing; 10.3 pressure, temperature, energy, mass and amount (`\kP`, `\kT`, the two-point forms, `\kdHvap`, `\kdHfus`, `\kdHsub`, `\kq`, `\km`, `\kdT`); 10.4 pressure and temperature; 10.5 temperature on its melting-point readout; 10.6 wavelength, mass and volume (`\klam`, `\km`, `\kV`). Layers A, B, C and the dipole ends take the categorical pair and triple as planned.
+10.1 colours temperature alone; 10.2 nothing; 10.3 pressure, temperature, energy, mass and amount (`\kP`, `\kT`, the two-point forms, `\kdHvap`, `\kdHfus`, `\kdHsub`, `\kq`, `\km`, `\kdT`); 10.4 pressure and temperature; 10.5 temperature on its melting-point readout; 10.6 wavelength, mass and volume (`\klam`, `\km`, `\kV`). Layers A, B, C and the dipole ends take the categorical pair and triple as planned.

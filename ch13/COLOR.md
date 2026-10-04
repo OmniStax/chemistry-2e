@@ -2,9 +2,9 @@
 
 Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what this chapter draws; root rules 7 and 22 hold and nothing here invents a hue or coerces a quantity into a neighbouring type. The chapter's central quantities, K and Q, are untyped by the book's decision: they are ratios built from concentrations or pressures that already carry their hue, so a figure colours the concentrations and draws K and Q in ink.
 
-## What the chapter binds
+## What the chapter colours
 
-| Section | Binds | What wears it |
+| Section | Colours | What wears it |
 |---|---|---|
 | `intro` | nothing | one drawing |
 | 13.1 | `concentration`, `time`, `rate` | the concentration axis and each species' concentration readout, the clock and time axis, rate_f and rate_r on the rate axis and in the readout |
@@ -21,4 +21,4 @@ Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what 
 
 ## What stays in ink
 
-K, K_c, K_P, K_c', K_c1, K_c2, Q, Q_c, Q_P, k_f, k_r, R, Δn, x, the stoichiometric coefficients and exponents, the extent-of-reaction axis of 13.8, every axis rule and label that is not one of the bound types. No `\k` macro appears except for the bound types: `\kconcA`, `\kconcB`, `\kconcC`, `\kconcD`, `\kM`, `\kt`, `\kratef`, `\krater`, `\krate`, `\kP`, `\kPA`, `\kPB`, `\kPC`, `\kPD`, `\kT`, `\kV`, `\kdH`, `\kEa`.
+K, K_c, K_P, K_c', K_c1, K_c2, Q, Q_c, Q_P, k_f, k_r, R, Δn, x, the stoichiometric coefficients and exponents, the extent-of-reaction axis of 13.8, every axis rule and label that is not one of the coloured types. No `\k` macro appears except for the coloured types: `\kconcA`, `\kconcB`, `\kconcC`, `\kconcD`, `\kM`, `\kt`, `\kratef`, `\krater`, `\krate`, `\kP`, `\kPA`, `\kPB`, `\kPC`, `\kPD`, `\kT`, `\kV`, `\kdH`, `\kEa`.

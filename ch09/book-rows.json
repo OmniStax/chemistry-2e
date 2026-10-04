@@ -152,13 +152,11 @@
     {
       "sym": "P_gas",
       "latex": "P_{gas}",
-      "type": "pressure",
       "macro": "\\kPgas"
     },
     {
       "sym": "P_atm",
       "latex": "P_{atm}",
-      "type": "pressure",
       "macro": "\\kPatm"
     }
   ],

@@ -185,7 +185,6 @@
     {
       "sym": "ΔG",
       "latex": "\\Delta G",
-      "type": "energy",
       "macro": "\\kdG"
     },
     {
@@ -196,13 +195,11 @@
     {
       "sym": "S",
       "latex": "S",
-      "type": "entropy",
       "macro": "\\kS"
     },
     {
       "sym": "ΔS",
       "latex": "\\Delta S",
-      "type": "entropy",
       "macro": "\\kdS"
     },
     {
@@ -223,25 +220,21 @@
     {
       "sym": "E_cell",
       "latex": "E_{\\text{cell}}",
-      "type": "potential",
       "macro": "\\kEcell"
     },
     {
       "sym": "E_std",
       "latex": "E^{\\circ}",
-      "type": "potential",
       "macro": "\\kEo"
     },
     {
       "sym": "Q_charge",
       "latex": "Q",
-      "type": "charge",
       "macro": "\\kQ"
     },
     {
       "sym": "e",
       "latex": "e",
-      "type": "charge",
       "macro": "\\ke"
     },
     {
@@ -530,7 +523,6 @@
     {
       "sym": "ΔE",
       "latex": "\\Delta E",
-      "type": "energy",
       "macro": "\\kdE"
     },
     {
@@ -560,7 +552,6 @@
     {
       "sym": "λ_max",
       "latex": "\\lambda_{\\text{max}}",
-      "type": "wavelength",
       "macro": "\\klammax"
     },
     {
@@ -667,7 +658,6 @@
     {
       "sym": "ΔP_vp",
       "latex": "\\Delta P",
-      "type": "pressure",
       "macro": "\\kdPvp"
     },
     {
@@ -848,13 +838,11 @@
     {
       "sym": "P_gas",
       "latex": "P_{gas}",
-      "type": "pressure",
       "macro": "\\kPgas"
     },
     {
       "sym": "P_atm",
       "latex": "P_{atm}",
-      "type": "pressure",
       "macro": "\\kPatm"
     },
     {

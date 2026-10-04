@@ -2,13 +2,13 @@
 
 Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what this chapter draws; root rules 7 and 22 hold and nothing here invents a hue or coerces a quantity into a neighbouring type. A rate is its own type, never a concentration, and an activation energy is an energy.
 
-## What the chapter binds
+## What the chapter colours
 
-| Section | Binds | What wears it |
+| Section | Colours | What wears it |
 |---|---|---|
 | `intro` | nothing | one photograph |
 | 12.1 | `concentration`, `time`, `rate` | the concentration axis and each species' [A] readout, the time axis and Δt, every tangent or secant slope read as a rate and the rate readout |
-| 12.2 | `temperature`, `concentration`, `rate` where a Sim draws them; otherwise nothing | a temperature slider and an amount-per-volume slider of a collision box, the rate it reads; the photographs bind nothing |
+| 12.2 | `temperature`, `concentration`, `rate` where a Sim draws them; otherwise nothing | a temperature slider and an amount-per-volume slider of a collision box, the rate it reads; the photographs colour nothing |
 | 12.3 | `concentration`, `rate` | the concentration sliders of an initial-rates bench, the rate readout; k and the orders stay ink |
 | 12.4 | `concentration`, `time` | [A], [A]₀, [A]ₜ, the concentration axis and the flasks' reading, t and t₁/₂; ln[A] and 1/[A] axes are functions of a concentration and stay ink, their tick labels too |
 | 12.5 | `energy`, `temperature` | E_a, ΔH, every reaction-diagram energy axis and the energy axis of the distribution, the threshold line; T, T₁, T₂ and a temperature slider; ln k and 1/T axes stay ink |
@@ -25,4 +25,4 @@ Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what 
 
 ## What stays in ink
 
-k, k₁, k₂, k₋₁, the orders m and n, the frequency factor A, R, ln k, ln[A], 1/[A], 1/T, percent decomposed, counts of collisions, the stoichiometric coefficients, every axis rule and label that is not one of the bound types. No `\k` macro appears except for the bound types: `\krate`, `\kconcA`, `\kconcAz`, `\kconcAt`, `\kconcB`, `\kdconcA`, `\kdconcB`, `\kt`, `\kdt`, `\kthalf`, `\kEa`, `\kdH`, `\kT`, `\kTone`, `\kTtwo`.
+k, k₁, k₂, k₋₁, the orders m and n, the frequency factor A, R, ln k, ln[A], 1/[A], 1/T, percent decomposed, counts of collisions, the stoichiometric coefficients, every axis rule and label that is not one of the coloured types. No `\k` macro appears except for the coloured types: `\krate`, `\kconcA`, `\kconcAz`, `\kconcAt`, `\kconcB`, `\kdconcA`, `\kdconcB`, `\kt`, `\kdt`, `\kthalf`, `\kEa`, `\kdH`, `\kT`, `\kTone`, `\kTtwo`.

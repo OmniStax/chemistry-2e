@@ -83,6 +83,8 @@ function catLike(which) {
 (function () {
   const d = sim('sim-isooctane', 440);
   const SAMPLES = [['A', 17.60], ['C', 23.04], ['B', 26.52]];
+  /* each notched sample is a referent of Table 2.1, named in its colour while the slider rests on it */
+  const WHO = { A: 'sample-a', B: 'sample-b', C: 'sample-c' };
   const M = ctl(d.controls, { label: '\\km', cls: 'mass', min: 5, max: 30, step: 0.01, value: 17.60, unit: 'g', dec: 2, aria: 'mass of the sample of isooctane',
     detents: SAMPLES.map(([n, v]) => ({ v, label: n })), snap: true });
   /* sample A's carbon and hydrogen fix the composition: 14.82 g of carbon in 17.60 g */
@@ -101,6 +103,7 @@ function catLike(which) {
     /* the scale in grams, 0 to 30 */
     for (let g = 0; g <= 30; g += 5) { line(ctx, X(g), 110, X(g), 262, PAL.rule, 1.5); text(ctx, String(g), X(g), 280, PAL.muted, { size: 17, align: 'center' }); }
     text(ctx, 'mass (g)', RT, 304, PAL.muted, { size: 17, align: 'right' });
+    if (at) text(ctx, 'sample ' + at[0], 56, 100, F.ref(WHO[at[0]]), { size: 20, weight: 600 });
     atom(ctx, 70, 150, 'C', 14); text(ctx, 'carbon', 92, 150, PAL.ink, { size: 20 });
     atom(ctx, 70, 222, 'H', 10); text(ctx, 'hydrogen', 92, 222, PAL.ink, { size: 20 });
     bar(ctx, 150, 46, c, true); bar(ctx, 222, 46, h, false);

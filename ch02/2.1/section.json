@@ -273,5 +273,22 @@
    "exercise": "e4",
    "concept": "law-of-multiple-proportions"
   }
+ ],
+ "referents": [
+  {
+   "id": "sample-a",
+   "label": "sample A",
+   "figure": "sim-isooctane"
+  },
+  {
+   "id": "sample-b",
+   "label": "sample B",
+   "figure": "sim-isooctane"
+  },
+  {
+   "id": "sample-c",
+   "label": "sample C",
+   "figure": "sim-isooctane"
+  }
  ]
 }

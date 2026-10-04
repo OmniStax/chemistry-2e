@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Evolution of Atomic Theory",
  "short": "Evolution of Atomic Theory",
- "lead": "The atoms of Dalton’s theory turn out to contain smaller particles, and three experiments found them. Thomson’s cathode ray tube revealed the electron. Millikan’s oil drops measured its charge and so its mass. Rutherford’s gold foil, with its rare backward bounces, showed that an atom is mostly empty space around a small, dense, positive nucleus. The proton and the neutron complete the picture, and the neutron explains isotopes.",
+ "lead": "The atoms of Dalton’s theory turn out to contain smaller particles, and three experiments found them. <span data-ref=\"tube\">Thomson’s cathode ray tube</span> revealed the electron. <span data-ref=\"drops\">Millikan’s oil drops</span> measured <span data-type=\"charge\">its charge</span> and so <span data-type=\"mass\">its mass</span>. <span data-ref=\"foil\">Rutherford’s gold foil</span>, with its rare backward bounces, showed that an atom is mostly empty space around a small, dense, positive nucleus. The proton and the neutron complete the picture, and the neutron explains isotopes.",
  "objectives": [
   "Outline milestones in the development of modern atomic theory",
   "Summarize and interpret the results of the experiments of Thomson, Millikan, and Rutherford",
@@ -170,5 +170,42 @@
   { "exercise": "e3", "concept": "subatomic-particles" },
   { "exercise": "s1", "concept": "nuclear-model-of-the-atom" },
   { "exercise": "s2", "concept": "nuclear-model-of-the-atom" }
+ ],
+ "referents": [
+  {
+   "id": "tube",
+   "label": "the cathode ray tube",
+   "figure": "sim-cathode-ray"
+  },
+  {
+   "id": "cathode",
+   "label": "the cathode",
+   "figure": "sim-cathode-ray"
+  },
+  {
+   "id": "anode",
+   "label": "the anode",
+   "figure": "sim-cathode-ray"
+  },
+  {
+   "id": "drops",
+   "label": "the oil drops",
+   "figure": "sim-oil-drop"
+  },
+  {
+   "id": "lead-block",
+   "label": "the lead block",
+   "figure": "sim-gold-foil"
+  },
+  {
+   "id": "foil",
+   "label": "the foil",
+   "figure": "sim-gold-foil"
+  },
+  {
+   "id": "screen",
+   "label": "the luminescent screen",
+   "figure": "sim-gold-foil"
+  }
  ]
 }

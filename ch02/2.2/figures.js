@@ -72,7 +72,7 @@ const E_CHARGE = 1.602e-19;
       ...arc(BX, BR, Math.PI + b0, 3 * Math.PI - b0, 60),
       [490, Y0 + 50], [455, Y0 + 16],
       ...arc(CX + 10, 58, a0, TAU - a0, 40),
-    ], alpha(PAL.ink, 0.04), alpha(PAL.ink, 0.55), 2.5);
+    ], alpha(F.ref('tube'), 0.05), F.ref('tube'), 2.5);
   }
   function draw() {
     const { ctx } = begin(d.c);
@@ -91,8 +91,9 @@ const E_CHARGE = 1.602e-19;
     line(ctx, 110, 470, AX, 470, wire, 2.5); line(ctx, AX, 470, AX, Y0 + 20, wire, 2.5);
     /* the cathode, a disc of the chosen metal, and the anode, a short open cylinder */
     ctx.save(); ctx.fillStyle = metal.mixColor((s) => F.el(s)); ctx.fillRect(CX - 6, Y0 - 20, 12, 40); ctx.restore();
-    shape(ctx, [[AX - 12, Y0 - 16], [AX + 12, Y0 - 16], [AX + 12, Y0 - 5], [AX - 12, Y0 - 5]], PAL.muted, null);
-    shape(ctx, [[AX - 12, Y0 + 5], [AX + 12, Y0 + 5], [AX + 12, Y0 + 16], [AX - 12, Y0 + 16]], PAL.muted, null);
+    const ca = F.ref('anode');
+    shape(ctx, [[AX - 12, Y0 - 16], [AX + 12, Y0 - 16], [AX + 12, Y0 - 5], [AX - 12, Y0 - 5]], ca, null);
+    shape(ctx, [[AX - 12, Y0 + 5], [AX + 12, Y0 + 5], [AX + 12, Y0 + 16], [AX - 12, Y0 + 16]], ca, null);
     /* the magnets sit in front of and behind the tube at the plates; drawn only while they are on */
     const mA = magnets.a('on');
     F.faded(ctx, mA, [0, 0], () => {
@@ -113,8 +114,8 @@ const E_CHARGE = 1.602e-19;
       disc(ctx, 712, Y0 + 14, 46, alpha(PAL.soft, 0.85), alpha(PAL.ink, 0.6), 2); text(ctx, 'N', 712, Y0 + 14, PAL.ink, { size: 24, weight: 600, align: 'center' });
     });
     /* labels, one per part */
-    label(ctx, 'cathode', CX, Y0 - 30, { side: 'above', gap: 70 });
-    label(ctx, 'anode', AX, Y0 - 18, { side: 'above', gap: 70 });
+    label(ctx, 'cathode', CX, Y0 - 30, { side: 'above', gap: 70, color: F.ref('cathode') });
+    label(ctx, 'anode', AX, Y0 - 18, { side: 'above', gap: 70, color: ca });
     label(ctx, 'cathode ray', 520, Y0 + 2, { side: 'below', gap: 90 });
     label(ctx, 'charged plates', P1 - 40, Y0 + 36, { side: 'below', gap: 80 });
     if (mA > 0.5) label(ctx, 'magnets', 760, Y0 - 90, { side: 'right', gap: 60 });
@@ -166,7 +167,7 @@ const E_CHARGE = 1.602e-19;
   const y = () => { const t = Math.min(cy.now(), T), v = V0 * (1 - E.v / (EH / n())); return Math.min(BOT - R, Math.max(TOP + R, 350 + v * t)); };
   function draw() {
     const { ctx } = begin(d.c);
-    const cq = C('charge'), ce = F.el('e-'), k = n(), yd = y(), eh = EH / k, rel = E.v / eh;
+    const cq = C('charge'), ce = F.el('e-'), rd = F.ref('drops'), k = n(), yd = y(), eh = EH / k, rel = E.v / eh;
     /* the chamber, the atomizer at its top, the plates, the X-rays and the telescope */
     shape(ctx, [[120, 120], [690, 120], [690, 560], [120, 560]], alpha(PAL.ink, 0.03), alpha(PAL.ink, 0.5), 2);
     disc(ctx, 190, 150, 20, PAL.soft, PAL.ink, 2); line(ctx, 208, 146, 260, 146, PAL.ink, 4);
@@ -186,7 +187,7 @@ const E_CHARGE = 1.602e-19;
     const g = 64, up = Math.min(150, g * rel, yd - R - 6 - TOP);
     F.arrow(ctx, DX, yd + R + 2, DX, yd + R + 2 + g, alpha(PAL.ink, 0.7), 4);
     if (up > 6) F.arrow(ctx, DX, yd - R - 2, DX, yd - R - 2 - up, alpha(PAL.ink, 0.7), 4);
-    disc(ctx, DX, yd, R, PAL.soft, PAL.ink, 2);
+    disc(ctx, DX, yd, R, alpha(rd, 0.3), rd, 2.5);
     for (let i = 0; i < k; i++) { const a = (i / k) * TAU + 0.4; disc(ctx, DX + (k > 1 ? 8 * Math.cos(a) : 0), yd + (k > 1 ? 8 * Math.sin(a) : 0), 4, ce, null); }
     text(ctx, 'gravity pulls down; the field pulls up', 405, 588, PAL.muted, { size: 17, align: 'center' });
     /* the book's table of the five drops */
@@ -197,7 +198,7 @@ const E_CHARGE = 1.602e-19;
     DROPS.forEach(([name, m], i) => {
       const yy = ty + 48 + i * 32, on = name === drop.value;
       if (on) shape(ctx, [[tx - 10, yy - 15], [tx + 350, yy - 15], [tx + 350, yy + 15], [tx - 10, yy + 15]], alpha(PAL.ink, 0.07), null);
-      text(ctx, name, tx + 30, yy, PAL.ink, { size: 20, weight: on ? 600 : 400, align: 'center' });
+      text(ctx, name, tx + 30, yy, rd, { size: 20, weight: on ? 600 : 400, align: 'center' });
       text(ctx, fmt(1.6 * m, 1) + ' × 10⁻¹⁹ C', tx + 330, yy, cq, { size: 20, weight: on ? 600 : 400, align: 'right' });
     });
     /* the number line of charge, 0 to 8.0 × 10⁻¹⁹ C, a tick at every multiple of 1.6 */
@@ -213,7 +214,7 @@ const E_CHARGE = 1.602e-19;
     DROPS.forEach(([name, m]) => {
       const lvl = seen[m] = (seen[m] ?? -1) + 1, on = name === drop.value, x = X(1.6 * m), yy = ay - 20 - lvl * 28;
       disc(ctx, x, yy, on ? 11 : 8, on ? cq : alpha(cq, 0.45), on ? PAL.ink : null, 2);
-      text(ctx, name, x + 18, yy, PAL.ink, { size: 17, weight: on ? 600 : 400 });
+      text(ctx, name, x + 18, yy, rd, { size: 17, weight: on ? 600 : 400 });
     });
     const q = 1.6 * k, fate = Math.abs(rel - 1) < 0.004 ? 'hovers' : rel < 1 ? 'falls' : 'rises';
     topline(ctx, 'Drop ' + drop.value + ' carries ' + fmt(q, 1) + ' × 10⁻¹⁹ C, ' + ['', 'once', 'twice', 'three times', 'four times'][k] + ' 1.6 × 10⁻¹⁹ C; at ' + fmt(E.v, 1) + ' kN/C it ' + fate + '.');
@@ -269,28 +270,28 @@ const E_CHARGE = 1.602e-19;
   const RING = 1.5, SRC = [-2.3, 0, 0], SPEED = 2.6, RATE = 40, LIFE = 1.6;
   const flights = [], flashes = [];
   let sig = '', pool = [], glows = [], spawnDebt = 0;
-  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, F.el(elc.value), F.el('He'), F.el('Ra')].join('|');
+  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, F.el(elc.value), F.el('He'), F.el('Ra'), F.fact(GLOW), F.ref('lead-block'), F.ref('foil'), F.ref('screen')].join('|');
   function build() {
     if (!has3) return;
     const key = palSig(); if (key === sig) return; sig = key;
-    const T3 = window.THREE;
+    const T3 = window.THREE, glow = F.fact(GLOW), cb = F.ref('lead-block'), cf = F.ref('foil'), cs = F.ref('screen');
     v.clear();
     F.mesh.box(grp, [0, -0.5, 0], [6.4, 0.08, 3.8], PAL.soft);
-    v.pickable(F.mesh.box(grp, [-2.62, -0.14, 0], [0.64, 0.64, 0.64], PAL.muted), 'lead block, which absorbs the radiation the beam does not use');
+    v.pickable(F.mesh.box(grp, [-2.62, -0.14, 0], [0.64, 0.64, 0.64], cb), 'lead block, which absorbs the radiation the beam does not use');
     v.pickable(F.mesh.sphere(grp, SRC, 0.07, F.el('Ra')), 'radium, the source of the α particles');
     F.mesh.polyline(grp, [SRC, [0, 0, 0]], PAL.muted);
     v.pickable(F.mesh.box(grp, [0, 0, 0], [0.02, 0.56, 0.56], F.el(elc.value)), 'thin ' + ELS[elc.value][0] + ' foil');
     F.mesh.stick(grp, [0, -0.46, 0], [0, -0.28, 0], 0.03, PAL.muted);
     const ring = new T3.Mesh(new T3.CylinderGeometry(RING, RING, 0.5, 72, 1, true, 1.5 * Math.PI + 0.1, 2 * Math.PI - 0.2),
-      F.mesh.mat(PAL.soft, { transparent: true, opacity: 0.35, depthWrite: false, side: T3.DoubleSide }));
+      F.mesh.mat(cs, { transparent: true, opacity: 0.3, depthWrite: false, side: T3.DoubleSide }));
     grp.add(ring); v.pickable(ring, 'luminescent screen, which glows briefly where an α particle strikes it');
-    [-0.25, 0.25].forEach((yy) => F.mesh.polyline(grp, Array.from({ length: 73 }, (_, i) => { const a = 1.5 * Math.PI + 0.1 + ((2 * Math.PI - 0.2) * i) / 72; return [RING * Math.sin(a), yy, RING * Math.cos(a)]; }), PAL.muted));
+    [-0.25, 0.25].forEach((yy) => F.mesh.polyline(grp, Array.from({ length: 73 }, (_, i) => { const a = 1.5 * Math.PI + 0.1 + ((2 * Math.PI - 0.2) * i) / 72; return [RING * Math.sin(a), yy, RING * Math.cos(a)]; }), cs));
     [0.5, 2.1, 3.6, 4.6].forEach((a) => F.mesh.stick(grp, [RING * Math.cos(a), -0.46, RING * Math.sin(a)], [RING * Math.cos(a), -0.25, RING * Math.sin(a)], 0.025, PAL.muted));
     pool = Array.from({ length: 90 }, () => { const m = F.mesh.sphere(grp, [0, -9, 0], 0.035, F.el('He')); m.visible = false; return m; });
-    glows = Array.from({ length: 110 }, () => { const m = F.mesh.sphere(grp, [0, -9, 0], 0.045, GLOW, { transparent: true, opacity: 0, emissive: new T3.Color(GLOW), emissiveIntensity: 0.6 }); m.visible = false; return m; });
-    v.label('radium in a lead block', [-2.62, -0.46, 0.32], grp, -14);
-    v.label(ELS[elc.value][0] + ' foil', [0, 0.28, 0], grp, 34);
-    v.label('luminescent screen', [RING, 0.25, 0], grp, 16);
+    glows = Array.from({ length: 110 }, () => { const m = F.mesh.sphere(grp, [0, -9, 0], 0.045, glow, { transparent: true, opacity: 0, emissive: new T3.Color(glow), emissiveIntensity: 0.6 }); m.visible = false; return m; });
+    v.label('radium in a lead block', [-2.62, -0.46, 0.32], grp, -14).style.color = cb;
+    v.label(ELS[elc.value][0] + ' foil', [0, 0.28, 0], grp, 34).style.color = cf;
+    v.label('luminescent screen', [RING, 0.25, 0], grp, 16).style.color = cs;
     v.label('α particles', [-1.4, 0, 0], grp, 16);
   }
   function fire() {
@@ -380,7 +381,7 @@ const E_CHARGE = 1.602e-19;
       const [x, y] = seg[seg.length - 1]; if (u < 1) disc(ctx, x, y, 7, ca, alpha(PAL.ink, 0.6), 1.5);
     });
     ctx.restore();
-    shape(ctx, [[BOX.l, BOX.t], [BOX.r, BOX.t], [BOX.r, BOX.b], [BOX.l, BOX.b]], null, alpha(PAL.ink, 0.35), 1.5);
+    shape(ctx, [[BOX.l, BOX.t], [BOX.r, BOX.t], [BOX.r, BOX.b], [BOX.l, BOX.b]], null, F.ref('foil'), 2);
     label(ctx, 'α particles', 110, IMPACTS[0], { side: 'above', gap: 24 });
     label(ctx, pud < 0.5 ? ELS[elc.value][0] + ' nucleus' : 'sphere of positive charge', 760, 360 + (pud < 0.5 ? 5 : R), { side: 'below', gap: 34 });
     label(ctx, 'electrons', 560 + EL[0][0].ring[0] * R, 160 + EL[0][0].ring[1] * R, { side: 'left', gap: 60 });

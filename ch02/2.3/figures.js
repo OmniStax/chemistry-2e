@@ -121,11 +121,12 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
 ===================================================================== */
 (function () {
   const d = sim('sim-average-mass', 520);
-  /* isotopic masses and natural abundances from the text, Examples 2.4 and 2.5, and Table 2.4; start is the mix on load */
+  /* isotopic masses and natural abundances from the text, Examples 2.4 and 2.5, and Table 2.4; start is the mix on load;
+     an isotope the text names is a referent of the section, and lithium's, named only in Table 2.4, are told apart by F.cat */
   const ELEMENTS = {
-    boron: { sym: 'B', iso: [{ A: 10, m: 10.0129, nat: 19.9 }, { A: 11, m: 11.0093, nat: 80.1 }], start: [19.9] },
-    neon: { sym: 'Ne', iso: [{ A: 20, m: 19.9924, nat: 90.48 }, { A: 21, m: 20.9940, nat: 0.27 }, { A: 22, m: 21.9914, nat: 9.25 }], start: [91.84, 0.47] },
-    chlorine: { sym: 'Cl', iso: [{ A: 35, m: 34.96885, nat: 75.76 }, { A: 37, m: 36.96590, nat: 24.24 }], start: [75.76] },
+    boron: { sym: 'B', iso: [{ A: 10, m: 10.0129, nat: 19.9, ref: 'b-10' }, { A: 11, m: 11.0093, nat: 80.1, ref: 'b-11' }], start: [19.9] },
+    neon: { sym: 'Ne', iso: [{ A: 20, m: 19.9924, nat: 90.48, ref: 'ne-20' }, { A: 21, m: 20.9940, nat: 0.27, ref: 'ne-21' }, { A: 22, m: 21.9914, nat: 9.25, ref: 'ne-22' }], start: [91.84, 0.47] },
+    chlorine: { sym: 'Cl', iso: [{ A: 35, m: 34.96885, nat: 75.76, ref: 'cl-35' }, { A: 37, m: 36.96590, nat: 24.24, ref: 'cl-37' }], start: [75.76] },
     lithium: { sym: 'Li', iso: [{ A: 6, m: 6.0151, nat: 7.59 }, { A: 7, m: 7.0160, nat: 92.41 }], start: [7.59] },
   };
   /* each mass also kept as the book prints it, trailing zeros included */
@@ -162,8 +163,9 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
       xl: 'isotopic mass (amu)', xc: C('mass'), yl: 'abundance (%)' });
     e.iso.forEach((s, i) => {
       const x = X(s.m), y = Y(pct[i]);
-      ctx.save(); ctx.fillStyle = F.cat(i); ctx.fillRect(x - 14, y, 28, box.b - y); ctx.restore();
-      F.label(ctx, `${e.sym}-${s.A}, ${fmt(pct[i], 2)} %`, x, Math.min(y, box.b - 10) - 8, { side: 'above', size: 20, color: PAL.ink });
+      const col = s.ref ? F.ref(s.ref) : F.cat(i);
+      ctx.save(); ctx.fillStyle = col; ctx.fillRect(x - 14, y, 28, box.b - y); ctx.restore();
+      F.label(ctx, `${e.sym}-${s.A}, ${fmt(pct[i], 2)} %`, x, Math.min(y, box.b - 10) - 8, { side: 'above', size: 20, color: col });
     });
     /* the balance point: a fulcrum under the axis and a dashed line up through the bars */
     const xa = X(avg);
@@ -240,7 +242,8 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     ctx.save(); ctx.fillStyle = PAL.muted; ctx.fillRect(92, Y0 + 90, 24, 40); ctx.restore();
     [250, 330].forEach((x) => { line(ctx, x, Y0 - 40, x, Y0 - 8, PAL.ink, 5); line(ctx, x, Y0 + 8, x, Y0 + 40, PAL.ink, 5); });
     /* the magnetic field region */
-    ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.2); ctx.fillRect(XA, Y0 - 70, XB - XA, 200); ctx.restore();
+    const cfld = F.ref('field'), csam = F.ref('sample');
+    ctx.save(); ctx.fillStyle = alpha(cfld, 0.16); ctx.fillRect(XA, Y0 - 70, XB - XA, 200); ctx.restore();
     /* the detector plate, centred on where the beams land */
     const hitsAt = paths.map((P) => P.at(P.L)), px = -NY, py = NX;
     const along = hitsAt.map(([x, y]) => (x - DET.x) * px + (y - DET.y) * py);
@@ -260,13 +263,13 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
       }
     });
     /* the frame labels */
-    text(ctx, 'sample', 40, Y0 - 76, PAL.ink, { size: 18 });
-    line(ctx, 64, Y0 - 62, 64, Y0 - 44, alpha(PAL.ink, 0.4), 2);
+    text(ctx, 'sample', 40, Y0 - 76, csam, { size: 18, weight: 600 });
+    line(ctx, 64, Y0 - 62, 64, Y0 - 44, alpha(csam, 0.6), 2);
     text(ctx, 'heater', 150, Y0 - 76, PAL.ink, { size: 18 });
     line(ctx, 140, Y0 - 62, 120, Y0 - 36, alpha(PAL.ink, 0.4), 2);
     text(ctx, 'electron beam', 128, Y0 + 116, PAL.ink, { size: 18 });
     text(ctx, 'accelerating plates', 290, Y0 + 70, PAL.ink, { size: 18, align: 'center' });
-    text(ctx, 'magnetic field', (XA + XB) / 2, Y0 - 90, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, 'magnetic field', (XA + XB) / 2, Y0 - 90, cfld, { size: 18, weight: 600, align: 'center' });
     const [dx, dy] = [DET.x + (c0 + half) * px, DET.y + (c0 + half) * py];
     text(ctx, 'detector', dx - 20, dy + 26, PAL.ink, { size: 18, align: 'right' });
     /* the spectrum: relative abundance 0 to 100 % against mass-to-charge ratio, a unit either side of the isotopes */

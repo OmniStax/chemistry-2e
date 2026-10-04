@@ -189,7 +189,7 @@
       "id": "gas-pressure",
       "kind": "definition",
       "section": "9.1",
-      "name": "Gas pressure",
+      "name": "Pressure",
       "symbol": "P",
       "terms": [
         "pressure"

@@ -18282,12 +18282,6 @@
         "light": "#C30B7E",
         "dark": "#EE46A2"
       }
-    },
-    "dmin": {
-      "normal": 0.04,
-      "protan": 0.01,
-      "deutan": 0.01,
-      "tritan": 0.04
     }
   }
 }

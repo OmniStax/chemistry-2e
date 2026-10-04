@@ -44,7 +44,8 @@
   },
   {
    "sym": "A_freq",
-   "latex": "A"
+   "latex": "A",
+   "macro": "\\kAfreq"
   },
   {
    "sym": "m_rxorder",
@@ -56,15 +57,18 @@
   },
   {
    "sym": "k_1",
-   "latex": "k_{1}"
+   "latex": "k_{1}",
+   "macro": "\\kkone"
   },
   {
    "sym": "k_2",
-   "latex": "k_{2}"
+   "latex": "k_{2}",
+   "macro": "\\kktwo"
   },
   {
    "sym": "k_m1",
-   "latex": "k_{-1}"
+   "latex": "k_{-1}",
+   "macro": "\\kkmone"
   }
  ],
  "concepts": [

@@ -29,7 +29,8 @@
   },
   {
    "sym": "d",
-   "latex": "d"
+   "latex": "d",
+   "macro": "\\kd"
   }
  ],
  "concepts": [

@@ -322,15 +322,18 @@
     },
     {
       "sym": "K",
-      "latex": "K"
+      "latex": "K",
+      "macro": "\\kK"
     },
     {
       "sym": "Q_c",
-      "latex": "Q"
+      "latex": "Q",
+      "macro": "\\kQrxn"
     },
     {
       "sym": "k",
-      "latex": "k"
+      "latex": "k",
+      "macro": "\\kk"
     },
     {
       "sym": "T_C",
@@ -349,23 +352,28 @@
     },
     {
       "sym": "d",
-      "latex": "d"
+      "latex": "d",
+      "macro": "\\kd"
     },
     {
       "sym": "h_cap",
-      "latex": "h"
+      "latex": "h",
+      "macro": "\\khcap"
     },
     {
       "sym": "T_surf",
-      "latex": "T"
+      "latex": "T",
+      "macro": "\\kTsurf"
     },
     {
       "sym": "θ_contact",
-      "latex": "\\theta"
+      "latex": "\\theta",
+      "macro": "\\kthetacont"
     },
     {
       "sym": "r_tube",
-      "latex": "r"
+      "latex": "r",
+      "macro": "\\krtube"
     },
     {
       "sym": "ΔH_vap",
@@ -388,11 +396,13 @@
     },
     {
       "sym": "a_cell",
-      "latex": "a"
+      "latex": "a",
+      "macro": "\\kacell"
     },
     {
       "sym": "r_atom",
-      "latex": "r"
+      "latex": "r",
+      "macro": "\\kratom"
     },
     {
       "sym": "n_order",
@@ -400,11 +410,13 @@
     },
     {
       "sym": "d_plane",
-      "latex": "d"
+      "latex": "d",
+      "macro": "\\kdplane"
     },
     {
       "sym": "θ_bragg",
-      "latex": "\\theta"
+      "latex": "\\theta",
+      "macro": "\\kthetabragg"
     },
     {
       "sym": "ΔT",
@@ -423,11 +435,13 @@
     },
     {
       "sym": "C_heat",
-      "latex": "C"
+      "latex": "C",
+      "macro": "\\kC"
     },
     {
       "sym": "c_spec",
-      "latex": "c"
+      "latex": "c",
+      "macro": "\\kcspec"
     },
     {
       "sym": "U",
@@ -503,15 +517,18 @@
     },
     {
       "sym": "μ",
-      "latex": "\\mu"
+      "latex": "\\mu",
+      "macro": "\\kmu"
     },
     {
       "sym": "Q_partial",
-      "latex": "Q"
+      "latex": "Q",
+      "macro": "\\kQpart"
     },
     {
       "sym": "r_bond",
-      "latex": "r"
+      "latex": "r",
+      "macro": "\\krbond"
     },
     {
       "sym": "ΔH°",
@@ -566,7 +583,8 @@
     },
     {
       "sym": "R_o",
-      "latex": "R_{\\text{o}}"
+      "latex": "R_{\\text{o}}",
+      "macro": "\\kRo"
     },
     {
       "sym": "C_lattice",
@@ -574,11 +592,13 @@
     },
     {
       "sym": "ψ",
-      "latex": "\\psi"
+      "latex": "\\psi",
+      "macro": "\\kpsi"
     },
     {
       "sym": "Ψ",
-      "latex": "\\Psi"
+      "latex": "\\Psi",
+      "macro": "\\kPsi"
     },
     {
       "sym": "E_n",
@@ -606,11 +626,13 @@
     },
     {
       "sym": "r",
-      "latex": "r"
+      "latex": "r",
+      "macro": "\\kr"
     },
     {
       "sym": "a_0",
-      "latex": "a_0"
+      "latex": "a_0",
+      "macro": "\\kao"
     },
     {
       "sym": "h",
@@ -618,7 +640,8 @@
     },
     {
       "sym": "c",
-      "latex": "c"
+      "latex": "c",
+      "macro": "\\kc"
     },
     {
       "sym": "R_inf",
@@ -636,19 +659,23 @@
     },
     {
       "sym": "v",
-      "latex": "v"
+      "latex": "v",
+      "macro": "\\kv"
     },
     {
       "sym": "p_momentum",
-      "latex": "p"
+      "latex": "p",
+      "macro": "\\kp"
     },
     {
       "sym": "Δx",
-      "latex": "\\Delta x"
+      "latex": "\\Delta x",
+      "macro": "\\kdx"
     },
     {
       "sym": "Δp_x",
-      "latex": "\\Delta p_{x}"
+      "latex": "\\Delta p_{x}",
+      "macro": "\\kdpx"
     },
     {
       "sym": "hbar",
@@ -685,7 +712,8 @@
     },
     {
       "sym": "k_H",
-      "latex": "k"
+      "latex": "k",
+      "macro": "\\kkH"
     },
     {
       "sym": "P_g",
@@ -742,7 +770,8 @@
     },
     {
       "sym": "K_b",
-      "latex": "K_{\\text{b}}"
+      "latex": "K_{\\text{b}}",
+      "macro": "\\kKb"
     },
     {
       "sym": "ΔT_f",
@@ -751,7 +780,8 @@
     },
     {
       "sym": "K_f",
-      "latex": "K_{\\text{f}}"
+      "latex": "K_{\\text{f}}",
+      "macro": "\\kKf"
     },
     {
       "sym": "Π",
@@ -965,7 +995,8 @@
     },
     {
       "sym": "A_freq",
-      "latex": "A"
+      "latex": "A",
+      "macro": "\\kAfreq"
     },
     {
       "sym": "m_rxorder",
@@ -977,15 +1008,18 @@
     },
     {
       "sym": "k_1",
-      "latex": "k_{1}"
+      "latex": "k_{1}",
+      "macro": "\\kkone"
     },
     {
       "sym": "k_2",
-      "latex": "k_{2}"
+      "latex": "k_{2}",
+      "macro": "\\kktwo"
     },
     {
       "sym": "k_m1",
-      "latex": "k_{-1}"
+      "latex": "k_{-1}",
+      "macro": "\\kkmone"
     },
     {
       "sym": "rate_f",
@@ -1014,39 +1048,48 @@
     },
     {
       "sym": "k_f",
-      "latex": "k_{f}"
+      "latex": "k_{f}",
+      "macro": "\\kkf"
     },
     {
       "sym": "k_r",
-      "latex": "k_{r}"
+      "latex": "k_{r}",
+      "macro": "\\kkr"
     },
     {
       "sym": "Q_conc",
-      "latex": "Q_{c}"
+      "latex": "Q_{c}",
+      "macro": "\\kQc"
     },
     {
       "sym": "Q_P",
-      "latex": "Q_{P}"
+      "latex": "Q_{P}",
+      "macro": "\\kQP"
     },
     {
       "sym": "K_c",
-      "latex": "K_{c}"
+      "latex": "K_{c}",
+      "macro": "\\kKc"
     },
     {
       "sym": "K_P",
-      "latex": "K_{P}"
+      "latex": "K_{P}",
+      "macro": "\\kKP"
     },
     {
       "sym": "K_c_prime",
-      "latex": "K_{c'}"
+      "latex": "K_{c'}",
+      "macro": "\\kKcprime"
     },
     {
       "sym": "K_c1",
-      "latex": "K_{c1}"
+      "latex": "K_{c1}",
+      "macro": "\\kKcone"
     },
     {
       "sym": "K_c2",
-      "latex": "K_{c2}"
+      "latex": "K_{c2}",
+      "macro": "\\kKctwo"
     },
     {
       "sym": "Δn_gas",
@@ -1093,63 +1136,78 @@
     },
     {
       "sym": "K_w",
-      "latex": "K_{\\text{w}}"
+      "latex": "K_{\\text{w}}",
+      "macro": "\\kKw"
     },
     {
       "sym": "K_a",
-      "latex": "K_{\\text{a}}"
+      "latex": "K_{\\text{a}}",
+      "macro": "\\kKa"
     },
     {
       "sym": "K_b_ion",
-      "latex": "K_{\\text{b}}"
+      "latex": "K_{\\text{b}}",
+      "macro": "\\kKbion"
     },
     {
       "sym": "pK_w",
-      "latex": "\\text{p}K_{\\text{w}}"
+      "latex": "\\text{p}K_{\\text{w}}",
+      "macro": "\\kpKw"
     },
     {
       "sym": "pK_a",
-      "latex": "\\text{p}K_{\\text{a}}"
+      "latex": "\\text{p}K_{\\text{a}}",
+      "macro": "\\kpKa"
     },
     {
       "sym": "pK_b",
-      "latex": "\\text{p}K_{\\text{b}}"
+      "latex": "\\text{p}K_{\\text{b}}",
+      "macro": "\\kpKb"
     },
     {
       "sym": "K_a1",
-      "latex": "K_{\\text{a1}}"
+      "latex": "K_{\\text{a1}}",
+      "macro": "\\kKaone"
     },
     {
       "sym": "K_a2",
-      "latex": "K_{\\text{a2}}"
+      "latex": "K_{\\text{a2}}",
+      "macro": "\\kKatwo"
     },
     {
       "sym": "K_a3",
-      "latex": "K_{\\text{a3}}"
+      "latex": "K_{\\text{a3}}",
+      "macro": "\\kKathree"
     },
     {
       "sym": "K_b1",
-      "latex": "K_{\\text{b1}}"
+      "latex": "K_{\\text{b1}}",
+      "macro": "\\kKbone"
     },
     {
       "sym": "K_b2",
-      "latex": "K_{\\text{b2}}"
+      "latex": "K_{\\text{b2}}",
+      "macro": "\\kKbtwo"
     },
     {
       "sym": "K_sp",
-      "latex": "K_{\\text{sp}}"
+      "latex": "K_{\\text{sp}}",
+      "macro": "\\kKsp"
     },
     {
       "sym": "Q_sp",
-      "latex": "Q_{\\text{sp}}"
+      "latex": "Q_{\\text{sp}}",
+      "macro": "\\kQsp"
     },
     {
       "sym": "K_f_form",
-      "latex": "K_{\\text{f}}"
+      "latex": "K_{\\text{f}}",
+      "macro": "\\kKfform"
     },
     {
       "sym": "K_d",
-      "latex": "K_{\\text{d}}"
+      "latex": "K_{\\text{d}}",
+      "macro": "\\kKd"
     },
     {
       "sym": "[M^m+]",

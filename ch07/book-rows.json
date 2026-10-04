@@ -9,15 +9,18 @@
  "symbols": [
   {
    "sym": "μ",
-   "latex": "\\mu"
+   "latex": "\\mu",
+   "macro": "\\kmu"
   },
   {
    "sym": "Q_partial",
-   "latex": "Q"
+   "latex": "Q",
+   "macro": "\\kQpart"
   },
   {
    "sym": "r_bond",
-   "latex": "r"
+   "latex": "r",
+   "macro": "\\krbond"
   },
   {
    "sym": "ΔH°",
@@ -72,7 +75,8 @@
   },
   {
    "sym": "R_o",
-   "latex": "R_{\\text{o}}"
+   "latex": "R_{\\text{o}}",
+   "macro": "\\kRo"
   },
   {
    "sym": "C_lattice",

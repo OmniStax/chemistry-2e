@@ -1,10 +1,10 @@
 {
  "types": [],
  "symbols": [
-  {"sym": "K_sp", "latex": "K_{\\text{sp}}"},
-  {"sym": "Q_sp", "latex": "Q_{\\text{sp}}"},
-  {"sym": "K_f_form", "latex": "K_{\\text{f}}"},
-  {"sym": "K_d", "latex": "K_{\\text{d}}"},
+  {"sym": "K_sp", "latex": "K_{\\text{sp}}", "macro": "\\kKsp"},
+  {"sym": "Q_sp", "latex": "Q_{\\text{sp}}", "macro": "\\kQsp"},
+  {"sym": "K_f_form", "latex": "K_{\\text{f}}", "macro": "\\kKfform"},
+  {"sym": "K_d", "latex": "K_{\\text{d}}", "macro": "\\kKd"},
   {"sym": "[M^m+]", "latex": "[\\text{M}^{m+}]", "macro": "\\kconcMion"},
   {"sym": "[X^n-]", "latex": "[\\text{X}^{n-}]", "macro": "\\kconcXion"},
   {"sym": "p_stoich", "latex": "p"},

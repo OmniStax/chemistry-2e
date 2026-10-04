@@ -38,47 +38,58 @@
   },
   {
    "sym": "K_w",
-   "latex": "K_{\\text{w}}"
+   "latex": "K_{\\text{w}}",
+   "macro": "\\kKw"
   },
   {
    "sym": "K_a",
-   "latex": "K_{\\text{a}}"
+   "latex": "K_{\\text{a}}",
+   "macro": "\\kKa"
   },
   {
    "sym": "K_b_ion",
-   "latex": "K_{\\text{b}}"
+   "latex": "K_{\\text{b}}",
+   "macro": "\\kKbion"
   },
   {
    "sym": "pK_w",
-   "latex": "\\text{p}K_{\\text{w}}"
+   "latex": "\\text{p}K_{\\text{w}}",
+   "macro": "\\kpKw"
   },
   {
    "sym": "pK_a",
-   "latex": "\\text{p}K_{\\text{a}}"
+   "latex": "\\text{p}K_{\\text{a}}",
+   "macro": "\\kpKa"
   },
   {
    "sym": "pK_b",
-   "latex": "\\text{p}K_{\\text{b}}"
+   "latex": "\\text{p}K_{\\text{b}}",
+   "macro": "\\kpKb"
   },
   {
    "sym": "K_a1",
-   "latex": "K_{\\text{a1}}"
+   "latex": "K_{\\text{a1}}",
+   "macro": "\\kKaone"
   },
   {
    "sym": "K_a2",
-   "latex": "K_{\\text{a2}}"
+   "latex": "K_{\\text{a2}}",
+   "macro": "\\kKatwo"
   },
   {
    "sym": "K_a3",
-   "latex": "K_{\\text{a3}}"
+   "latex": "K_{\\text{a3}}",
+   "macro": "\\kKathree"
   },
   {
    "sym": "K_b1",
-   "latex": "K_{\\text{b1}}"
+   "latex": "K_{\\text{b1}}",
+   "macro": "\\kKbone"
   },
   {
    "sym": "K_b2",
-   "latex": "K_{\\text{b2}}"
+   "latex": "K_{\\text{b2}}",
+   "macro": "\\kKbtwo"
   }
  ],
  "concepts": [

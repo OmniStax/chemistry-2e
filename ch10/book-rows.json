@@ -14,19 +14,23 @@
  "symbols": [
   {
    "sym": "h_cap",
-   "latex": "h"
+   "latex": "h",
+   "macro": "\\khcap"
   },
   {
    "sym": "T_surf",
-   "latex": "T"
+   "latex": "T",
+   "macro": "\\kTsurf"
   },
   {
    "sym": "θ_contact",
-   "latex": "\\theta"
+   "latex": "\\theta",
+   "macro": "\\kthetacont"
   },
   {
    "sym": "r_tube",
-   "latex": "r"
+   "latex": "r",
+   "macro": "\\krtube"
   },
   {
    "sym": "ΔH_vap",
@@ -49,11 +53,13 @@
   },
   {
    "sym": "a_cell",
-   "latex": "a"
+   "latex": "a",
+   "macro": "\\kacell"
   },
   {
    "sym": "r_atom",
-   "latex": "r"
+   "latex": "r",
+   "macro": "\\kratom"
   },
   {
    "sym": "n_order",
@@ -61,11 +67,13 @@
   },
   {
    "sym": "d_plane",
-   "latex": "d"
+   "latex": "d",
+   "macro": "\\kdplane"
   },
   {
    "sym": "θ_bragg",
-   "latex": "\\theta"
+   "latex": "\\theta",
+   "macro": "\\kthetabragg"
   }
  ],
  "concepts": [

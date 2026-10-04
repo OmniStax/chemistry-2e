@@ -14,7 +14,8 @@
   },
   {
    "sym": "k_H",
-   "latex": "k"
+   "latex": "k",
+   "macro": "\\kkH"
   },
   {
    "sym": "P_g",
@@ -71,7 +72,8 @@
   },
   {
    "sym": "K_b",
-   "latex": "K_{\\text{b}}"
+   "latex": "K_{\\text{b}}",
+   "macro": "\\kKb"
   },
   {
    "sym": "ΔT_f",
@@ -80,7 +82,8 @@
   },
   {
    "sym": "K_f",
-   "latex": "K_{\\text{f}}"
+   "latex": "K_{\\text{f}}",
+   "macro": "\\kKf"
   },
   {
    "sym": "Π",

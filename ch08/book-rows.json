@@ -3,11 +3,13 @@
  "symbols": [
   {
    "sym": "ψ",
-   "latex": "\\psi"
+   "latex": "\\psi",
+   "macro": "\\kpsi"
   },
   {
    "sym": "Ψ",
-   "latex": "\\Psi"
+   "latex": "\\Psi",
+   "macro": "\\kPsi"
   }
  ],
  "concepts": [

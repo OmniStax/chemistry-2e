@@ -101,7 +101,8 @@
       "l_quantum",
       "m_l",
       "m_s",
-      "Z_eff"
+      "Z_eff",
+      "k"
     ],
     "types": [
       "momentum",
@@ -239,7 +240,9 @@
       "K_c1",
       "K_c2",
       "\u0394n_gas",
-      "x_ice"
+      "x_ice",
+      "Q_c",
+      "K"
     ],
     "types": [
       "equilibrium-constant"

@@ -16,11 +16,13 @@ and runs
 
     python3 tools/mergebook.py merge ch04
 
-which takes a lock, replaces every row the chapter owns (concepts whose
+which takes a lock, updates every row the chapter owns (concepts whose
 section is in the chapter, the edges out of them, and the symbols and types
-this chapter merged before) with the staged rows, adds the chapter dir to
-`chapters` in numeric order, and writes book.json atomically. It is
-idempotent: run it again after every change to book-rows.json.
+this chapter merged before) from the staged rows where it stands, drops an
+owned row the staged rows leave out, appends a staged row that is new, adds
+the chapter dir to `chapters` in numeric order, and writes book.json
+atomically. No row moves: a re-merge that changes nothing leaves book.json as
+it was, so run it after every change to book-rows.json.
 
 Ownership rules the merge enforces (it refuses and prints the offenders):
   - a staged concept id may not exist under another chapter's section, unless
@@ -28,7 +30,9 @@ Ownership rules the merge enforces (it refuses and prints the offenders):
   - a concept already in book.json under this chapter's sections that the staged
     rows leave out is withdrawn, unless another chapter's edge rests on it;
   - a staged symbol `sym` or `macro`, or a staged type `id`, may not already
-    exist in book.json unless this chapter merged it earlier;
+    exist in book.json unless this chapter merged it earlier; the one exception
+    is a symbol of the book's own, merged by no chapter, which a chapter adopts
+    by staging it with its other fields as they are and a `macro` of its own;
   - a staged edge's `concept` must be one of this chapter's concepts, and its
     `prereq` must exist in book.json or in the staged rows.
 
@@ -73,20 +77,19 @@ def chapter_number(ch):
     return int(m.group(1))
 
 
-def replace_in_place(rows, staged, key, owned):
-    """Return `rows` with this chapter's owned rows replaced by their staged
-    versions where they stand, owned rows no longer staged dropped, and staged
-    rows that are new appended at the end."""
-    by_key = {r[key]: r for r in staged}
+def update_in_place(rows, staged, key, owned):
+    """Return `rows` with every owned row replaced by its staged version where
+    it stands, an owned row no longer staged dropped, and a staged row that is
+    new appended at the end, in staged order. `key` names a row."""
+    by_key = {key(r): r for r in staged}
     out = []
     for r in rows:
-        k = r[key]
-        if k in owned:
-            if k in by_key:
-                out.append(by_key.pop(k))
-        else:
+        k = key(r)
+        if k not in owned:
             out.append(r)
-    out.extend(by_key[k] for k in [r[key] for r in staged] if k in by_key)
+        elif k in by_key:
+            out.append(by_key.pop(k))
+    out.extend(r for r in staged if by_key.pop(key(r), None) is not None)
     return out
 
 
@@ -141,12 +144,23 @@ def merge(ch):
             errors.append(f"edge {e['concept']} -> {e['prereq']}: prereq does not exist")
 
     # symbols
-    other_syms = {s["sym"] for s in book["symbols"] if s["sym"] not in mine["symbols"]}
-    other_macros = {s.get("macro") for s in book["symbols"] if s["sym"] not in mine["symbols"]} - {None}
+    owners = {sym: c for c, rows in state.items() for sym in rows.get("symbols", [])}
+    book_syms = {s["sym"]: s for s in book["symbols"]}
+
+    def bare(s):
+        return {k: v for k, v in s.items() if k != "macro"}
+
+    adopted = {s["sym"] for s in staged["symbols"]
+               if s["sym"] in book_syms and s["sym"] not in owners and bare(s) == bare(book_syms[s["sym"]])}
+    owned_syms = set(mine["symbols"]) | adopted
+    other_syms = set(book_syms) - owned_syms
+    other_macros = {s.get("macro") for s in book["symbols"] if s["sym"] not in owned_syms} - {None}
     seen_syms, seen_macros = set(), set()
     for s in staged["symbols"]:
-        if s["sym"] in other_syms:
-            errors.append(f"symbol {s['sym']} already exists in book.json; use it, do not restage it")
+        if s["sym"] in other_syms and owners.get(s["sym"]):
+            errors.append(f"symbol {s['sym']} belongs to {owners[s['sym']]}; stage a change to it there")
+        elif s["sym"] in other_syms:
+            errors.append(f"symbol {s['sym']} is the book's own; a chapter adopts it only to give it a macro, its other fields as they are")
         if s.get("macro") and s["macro"] in other_macros:
             errors.append(f"macro {s['macro']} already exists in book.json under another sym")
         if s["sym"] in seen_syms:
@@ -174,14 +188,17 @@ def merge(ch):
         sys.exit(1)
 
     # apply
-    book["concepts"] = [c for c in book["concepts"] if c["section"] not in my_sections] + staged["concepts"]
-    book["concept_prereqs"] = [e for e in book["concept_prereqs"] if e["concept"] not in placeholders and e["concept"] not in set(staged_ids)] + staged["concept_prereqs"]
-    # Symbols and types keep their places: the order of `types` is the order the
-    # colour scheme deals hues along, so a re-merge that changes no row must not
-    # move one. A row this chapter already owns is replaced where it stands; a
-    # new row is appended.
-    book["symbols"] = replace_in_place(book["symbols"], staged["symbols"], "sym", set(mine["symbols"]))
-    book["types"] = replace_in_place(book["types"], staged["types"], "id", set(mine["types"]))
+    # Every table keeps its rows where they stand: the order of `types` is the
+    # order the colour scheme deals hues along, and a re-merge that changes no
+    # row must leave every table, and the diff, as it was. A row this chapter
+    # owns is replaced where it stands; a new row is appended.
+    edge = lambda e: (e["concept"], e["prereq"])
+    mine_ids = placeholders | set(staged_ids)
+    book["concepts"] = update_in_place(book["concepts"], staged["concepts"], lambda c: c["id"], placeholders)
+    book["concept_prereqs"] = update_in_place(book["concept_prereqs"], staged["concept_prereqs"], edge,
+                                              {edge(e) for e in book["concept_prereqs"] if e["concept"] in mine_ids})
+    book["symbols"] = update_in_place(book["symbols"], staged["symbols"], lambda s: s["sym"], owned_syms)
+    book["types"] = update_in_place(book["types"], staged["types"], lambda t: t["id"], set(mine["types"]))
     if ch not in book["chapters"]:
         book["chapters"] = sorted(book["chapters"] + [ch], key=chapter_number)
 

@@ -43,11 +43,13 @@
     },
     {
       "sym": "r",
-      "latex": "r"
+      "latex": "r",
+      "macro": "\\kr"
     },
     {
       "sym": "a_0",
-      "latex": "a_0"
+      "latex": "a_0",
+      "macro": "\\kao"
     },
     {
       "sym": "h",
@@ -55,7 +57,8 @@
     },
     {
       "sym": "c",
-      "latex": "c"
+      "latex": "c",
+      "macro": "\\kc"
     },
     {
       "sym": "R_inf",
@@ -73,19 +76,23 @@
     },
     {
       "sym": "v",
-      "latex": "v"
+      "latex": "v",
+      "macro": "\\kv"
     },
     {
       "sym": "p_momentum",
-      "latex": "p"
+      "latex": "p",
+      "macro": "\\kp"
     },
     {
       "sym": "Δx",
-      "latex": "\\Delta x"
+      "latex": "\\Delta x",
+      "macro": "\\kdx"
     },
     {
       "sym": "Δp_x",
-      "latex": "\\Delta p_{x}"
+      "latex": "\\Delta p_{x}",
+      "macro": "\\kdpx"
     },
     {
       "sym": "hbar",
@@ -114,6 +121,11 @@
     {
       "sym": "Z_eff",
       "latex": "Z_{\\text{eff}}"
+    },
+    {
+      "sym": "k",
+      "latex": "k",
+      "macro": "\\kk"
     }
   ],
   "concepts": [

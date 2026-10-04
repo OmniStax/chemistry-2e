@@ -39,7 +39,13 @@
     "/media/ch02/CNX_Chem_02_02_CathodeRay.jpg"
    ],
    "original_caption": "(a) J. J. Thomson produced a visible beam in a cathode ray tube. (b) This is an early cathode ray tube, invented in 1897 by Ferdinand Braun. (c) In the cathode ray, the beam (shown in yellow) comes from the cathode and is accelerated past the anode toward a fluorescent scale at the end of the tube. Simultaneous deflections by applied electric and magnetic fields permitted Thomson to calculate the mass-to-charge ratio of the particles composing the cathode ray. (credit a: modification of work by Nobel Foundation; credit b: modification of work by Eugen Nesper; credit c: modification of work by “Kurzon”/Wikimedia Commons)",
-   "draws": ["charge"]
+   "draws": ["charge"],
+   "conventions": [
+    "e-",
+    "Cu",
+    "Fe",
+    "Zn"
+   ]
   },
   {
    "id": "sim-oil-drop",
@@ -49,7 +55,10 @@
     "/media/ch02/CNX_Chem_02_02_Millikan.jpg"
    ],
    "original_caption": "Millikan’s experiment measured the charge of individual oil drops. The tabulated data are examples of a few possible values.",
-   "draws": ["charge"]
+   "draws": ["charge"],
+   "conventions": [
+    "e-"
+   ]
   },
   {
    "id": "fig-atom-models",
@@ -67,7 +76,19 @@
     "/media/ch02/CNX_Chem_02_02_GoldFoil3.jpg"
    ],
    "original_caption": "(Figure 2.9) Geiger and Rutherford fired α particles at a piece of gold foil and detected where those particles went, as shown in this schematic diagram of their experiment. Most of the particles passed straight through the foil, but a few were deflected slightly and a very small number were significantly deflected. (Figure 2.10) The α particles are deflected only when they collide with or pass close to the much heavier, positively charged gold nucleus. Because the nucleus is very small compared to the size of an atom, very few α particles are deflected. Most pass through the relatively large region occupied by electrons, which are too light to deflect the rapidly moving particles.",
-   "draws": ["charge"]
+   "draws": ["charge"],
+   "conventions": [
+    "Au",
+    "Ag",
+    "Zr",
+    "Ca",
+    "He",
+    "Ra",
+    "e-"
+   ],
+   "facts": [
+    "#39d353"
+   ]
   }
  ],
  "coverage": [

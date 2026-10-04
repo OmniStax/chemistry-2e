@@ -50,7 +50,10 @@
     "/media/ch06/CNX_Chem_06_04_Econfig.jpg"
    ],
    "original_caption": "The diagram of an electron configuration specifies the subshell (n and l value, with letter symbol) and superscript number of electrons.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "H"
+   ]
   },
   {
    "id": "fig-fill-order",
@@ -84,7 +87,10 @@
     "/media/ch06/CNX_Chem_06_04_Valence.jpg"
    ],
    "original_caption": "A core-abbreviated electron configuration (right) replaces the core electrons with the noble gas symbol whose configuration matches the core electron configuration of the other element.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Na"
+   ]
   },
   {
    "id": "fig-od-h",
@@ -92,7 +98,10 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_Hydrog1_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "H"
+   ]
   },
   {
    "id": "fig-od-he",
@@ -100,7 +109,10 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_Helium1_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "He"
+   ]
   },
   {
    "id": "fig-od-li",
@@ -108,7 +120,10 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_Lithium12_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Li"
+   ]
   },
   {
    "id": "fig-od-be",
@@ -116,7 +131,10 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_Beryll12_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Be"
+   ]
   },
   {
    "id": "fig-od-b",
@@ -124,7 +142,10 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_Boron122_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "B"
+   ]
   },
   {
    "id": "fig-od-c",
@@ -132,7 +153,10 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_Carbon122_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "C"
+   ]
   },
   {
    "id": "fig-od-nofne",
@@ -140,7 +164,13 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_NOFNe_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "N",
+    "O",
+    "F",
+    "Ne"
+   ]
   },
   {
    "id": "fig-od-p",
@@ -148,7 +178,10 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_PhosphOrb_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "P"
+   ]
   }
  ],
  "coverage": [

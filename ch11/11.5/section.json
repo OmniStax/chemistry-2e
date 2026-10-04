@@ -31,12 +31,56 @@
   "figures": [
     {"id": "fig-colloids", "kind": "photo", "number": "11.29", "draws": []},
     {"id": "fig-searchlight", "kind": "photo", "number": "11.30", "draws": []},
-    {"id": "sim-tyndall", "kind": "sim", "draws": []},
-    {"id": "sim-amphiphile", "kind": "sim", "number": "11.31", "folds": ["11.32"], "originals": ["/media/ch11/CNX_Chem_11_05_soap.jpg", "/media/ch11/CNX_Chem_11_05_detrg.jpg"], "original_caption": "(Figure 11.31) Soaps contain a nonpolar hydrocarbon end (blue) and an ionic end (red). The ionic end is a carboxylate group. The length of the hydrocarbon end can vary from soap to soap. (Figure 11.32) Detergents contain a nonpolar hydrocarbon end (blue) and an ionic end (red). The ionic end can be either a sulfate or a sulfonate. The length of the hydrocarbon end can vary from detergent to detergent.", "draws": []},
-    {"id": "sim-emulsion", "kind": "sim", "number": "11.33", "originals": ["/media/ch11/CNX_Chem_11_05_emulsoil.jpg"], "original_caption": "This diagrammatic cross section of an emulsified drop of oil in water shows how soap or detergent acts as an emulsifier.", "draws": []},
+    {
+      "id": "sim-tyndall",
+      "kind": "sim",
+      "draws": [],
+      "conventions": [
+        "Na",
+        "Cl"
+      ],
+      "facts": [
+        "#22b04a"
+      ]
+    },
+    {
+      "id": "sim-amphiphile",
+      "kind": "sim",
+      "number": "11.31",
+      "folds": ["11.32"],
+      "originals": ["/media/ch11/CNX_Chem_11_05_soap.jpg", "/media/ch11/CNX_Chem_11_05_detrg.jpg"],
+      "original_caption": "(Figure 11.31) Soaps contain a nonpolar hydrocarbon end (blue) and an ionic end (red). The ionic end is a carboxylate group. The length of the hydrocarbon end can vary from soap to soap. (Figure 11.32) Detergents contain a nonpolar hydrocarbon end (blue) and an ionic end (red). The ionic end can be either a sulfate or a sulfonate. The length of the hydrocarbon end can vary from detergent to detergent.",
+      "draws": [],
+      "conventions": [
+        "C",
+        "H",
+        "O",
+        "S",
+        "Na"
+      ]
+    },
+    {
+      "id": "sim-emulsion",
+      "kind": "sim",
+      "number": "11.33",
+      "originals": ["/media/ch11/CNX_Chem_11_05_emulsoil.jpg"],
+      "original_caption": "This diagrammatic cross section of an emulsified drop of oil in water shows how soap or detergent acts as an emulsifier.",
+      "draws": [],
+      "conventions": [
+        "H",
+        "O",
+        "C",
+        "Na"
+      ],
+      "facts": [
+        "#e6c46a"
+      ]
+    },
     {"id": "fig-oil-spill", "kind": "photo", "number": "11.34", "draws": []},
     {"id": "fig-cottrell", "kind": "photo", "number": "11.35", "draws": []},
-    {"id": "sim-precipitator", "kind": "sim", "number": "11.36", "originals": ["/media/ch11/CNX_Chem_11_05_Cottrellp.jpg"], "original_caption": "In a Cottrell precipitator, positively and negatively charged particles are attracted to highly charged electrodes, where they are neutralized and deposited as dust.", "draws": []},
+    {"id": "sim-precipitator", "kind": "sim", "number": "11.36", "originals": ["/media/ch11/CNX_Chem_11_05_Cottrellp.jpg"], "original_caption": "In a Cottrell precipitator, positively and negatively charged particles are attracted to highly charged electrodes, where they are neutralized and deposited as dust.", "draws": [], "conventions": [
+  "C"
+]},
     {"id": "fig-gel", "kind": "photo", "number": "11.37", "draws": []}
   ],
   "coverage": [

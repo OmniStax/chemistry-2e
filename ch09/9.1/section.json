@@ -64,6 +64,9 @@
     "length",
     "density",
     "acceleration"
+   ],
+   "conventions": [
+    "Hg"
    ]
   },
   {
@@ -79,6 +82,9 @@
     "length",
     "density",
     "acceleration"
+   ],
+   "conventions": [
+    "Hg"
    ]
   },
   {
@@ -90,6 +96,9 @@
    "draws": [
     "pressure",
     "length"
+   ],
+   "conventions": [
+    "Hg"
    ]
   },
   {
@@ -101,6 +110,9 @@
    "draws": [
     "pressure",
     "length"
+   ],
+   "conventions": [
+    "Hg"
    ]
   },
   {
@@ -112,6 +124,9 @@
    "draws": [
     "pressure",
     "length"
+   ],
+   "conventions": [
+    "Hg"
    ]
   },
   {
@@ -123,6 +138,9 @@
    "draws": [
     "pressure",
     "length"
+   ],
+   "conventions": [
+    "Hg"
    ]
   },
   {

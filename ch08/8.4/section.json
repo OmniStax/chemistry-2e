@@ -48,7 +48,11 @@
     "/media/ch08/CNX_Chem_08_04_Gouy.jpg"
    ],
    "original_caption": "A Gouy balance compares the mass of a sample in the presence of a magnetic field with the mass with the electromagnet turned off to determine the number of unpaired electrons in a sample.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "O",
+    "N"
+   ]
   },
   {
    "id": "sim-waves",

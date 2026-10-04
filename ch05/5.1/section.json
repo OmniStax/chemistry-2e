@@ -58,6 +58,10 @@
    "draws": [
     "temperature",
     "energy"
+   ],
+   "conventions": [
+    "O",
+    "H"
    ]
   },
   {

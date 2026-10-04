@@ -18161,5 +18161,127 @@
       "kind": "table",
       "file": "sheets/half-lives.json"
     }
-  ]
+  ],
+  "colours": {
+    "palette": "oklab",
+    "vision": "deutan",
+    "assign": {
+      "time": {
+        "light": "#823E5C",
+        "dark": "#DD90AF"
+      },
+      "amount": {
+        "light": "#C53764",
+        "dark": "#E1527B"
+      },
+      "mass": {
+        "light": "#3C2B02",
+        "dark": "#F1DBB1"
+      },
+      "volume": {
+        "light": "#895FA9",
+        "dark": "#A177C3"
+      },
+      "concentration": {
+        "light": "#7143BB",
+        "dark": "#AC82FF"
+      },
+      "pressure": {
+        "light": "#8F2D01",
+        "dark": "#FB906C"
+      },
+      "temperature": {
+        "light": "#602171",
+        "dark": "#EAA6FF"
+      },
+      "energy": {
+        "light": "#6E59E2",
+        "dark": "#8472FE"
+      },
+      "entropy": {
+        "light": "#5F2C5B",
+        "dark": "#E9ADE3"
+      },
+      "rate": {
+        "light": "#894ABF",
+        "dark": "#AE6FE8"
+      },
+      "wavelength": {
+        "light": "#8F5564",
+        "dark": "#C38493"
+      },
+      "frequency": {
+        "light": "#532A2C",
+        "dark": "#F6C2C2"
+      },
+      "potential": {
+        "light": "#3F2D5B",
+        "dark": "#D9C6FE"
+      },
+      "charge": {
+        "light": "#37688D",
+        "dark": "#72A5CD"
+      },
+      "density": {
+        "light": "#BD4D00",
+        "dark": "#D8662A"
+      },
+      "equilibrium-constant": {
+        "light": "#6A2743",
+        "dark": "#F9A9C5"
+      },
+      "momentum": {
+        "light": "#624727",
+        "dark": "#D1B18E"
+      },
+      "wavefunction": {
+        "light": "#6D397D",
+        "dark": "#D198E3"
+      },
+      "dipole-moment": {
+        "light": "#AC3225",
+        "dark": "#F17260"
+      },
+      "velocity": {
+        "light": "#C04444",
+        "dark": "#DC5E5B"
+      },
+      "angle": {
+        "light": "#762494",
+        "dark": "#DB8AFE"
+      },
+      "colligative-constant": {
+        "light": "#80225A",
+        "dark": "#F891C7"
+      },
+      "surface-tension": {
+        "light": "#5C3825",
+        "dark": "#E6B9A3"
+      },
+      "rate-constant": {
+        "light": "#522645",
+        "dark": "#F5BDE2"
+      },
+      "force": {
+        "light": "#A35588",
+        "dark": "#BD6DA1"
+      },
+      "acceleration": {
+        "light": "#B8284D",
+        "dark": "#F15F7A"
+      },
+      "heat-capacity": {
+        "light": "#9C1F45",
+        "dark": "#FD7B96"
+      },
+      "area": {
+        "light": "#8925A4",
+        "dark": "#D775F4"
+      },
+      "length": {
+        "light": "#3F1E46",
+        "dark": "#F7CDFF"
+      }
+    }
+  }
 }

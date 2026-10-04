@@ -30,7 +30,10 @@
  "exercises_lead": "",
  "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed exercises fs-idp166618800 and fs-idp16477696 (write the balanced equations and outline the steps for six reactions each), fs-idp33547424 (hydrogen from chromium and phosphoric acid), fs-idp102353344 (iodine from copper(II) chloride), fs-idp216213984 (silver oxide for silver sulfadiazine), fs-idp9841552 (sodium azide for an air bag), fs-idp89497728 (the nitric acid spill), fs-idp10650096 (hydrochloric acid from sodium chloride) and fs-idp158165536 (calcium acetate as a mordant) are left out. The keyed exercises fs-idp147780304 and fs-idp61309952 refer to the reactions of fs-idp166618800 and fs-idp16477696, so their prompts are rewritten to carry those six reactions each in the book’s words, with the book’s structural formulas for part (f) on the card. Numeric answers accept 2% tolerance.",
  "figures": [
-  { "id": "sim-ammonia", "kind": "sim", "draws": ["amount"] },
+  { "id": "sim-ammonia", "kind": "sim", "draws": ["amount"], "conventions": [
+ "N",
+ "H"
+] },
   { "id": "fig-iodine", "kind": "photo", "number": "4.10", "draws": [] },
   { "id": "fig-route-al", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_03_moleratio1_img.jpg"], "draws": ["amount"] },
   { "id": "fig-route-propane", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_03_moleratio2_img.jpg"], "draws": ["amount"] },

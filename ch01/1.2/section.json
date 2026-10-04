@@ -49,6 +49,10 @@
    "original_caption": "The three most common states or phases of matter are solid, liquid, and gas.",
    "draws": [
     "volume"
+   ],
+   "conventions": [
+    "O",
+    "H"
    ]
   },
   {
@@ -105,7 +109,14 @@
     "/media/ch01/CNX_Chem_01_02_Molecules.jpg"
    ],
    "original_caption": "The elements hydrogen, oxygen, phosphorus, and sulfur form molecules consisting of two or more atoms of the same element. The compounds water, carbon dioxide, and glucose consist of combinations of atoms of different elements.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "H",
+    "O",
+    "P",
+    "S",
+    "C"
+   ]
   },
   {
    "id": "sim-electrolysis",
@@ -117,6 +128,10 @@
    "original_caption": "The decomposition of water is shown at the macroscopic, microscopic, and symbolic levels. The battery provides an electric current (microscopic) that decomposes water. At the macroscopic level, the liquid separates into the gases hydrogen (on the left) and oxygen (on the right). Symbolically, this change is presented by showing how liquid H₂O separates into H₂ and O₂ gases.",
    "draws": [
     "volume"
+   ],
+   "conventions": [
+    "H",
+    "O"
    ]
   },
   {
@@ -127,7 +142,11 @@
     "/media/ch01/CNX_Chem_01_01_FuelCell.jpg"
    ],
    "original_caption": "A fuel cell generates electrical energy from hydrogen and oxygen via an electrochemical process and produces only water as the waste product.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "H",
+    "O"
+   ]
   },
   {
    "id": "fig-cell-phone",

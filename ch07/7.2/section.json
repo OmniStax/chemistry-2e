@@ -35,7 +35,10 @@
    "number": "7.4",
    "originals": ["/media/ch07/CNX_Chem_07_02_Morse.jpg"],
    "original_caption": "The potential energy of two separate hydrogen atoms (right) decreases as they approach each other, and the single electrons on each atom are shared to form a covalent bond. The bond length is the internuclear distance at which the lowest potential energy is achieved.",
-   "draws": ["energy", "length"]
+   "draws": ["energy", "length"],
+   "conventions": [
+    "H"
+   ]
   },
   {
    "id": "fig-en",
@@ -58,7 +61,30 @@
    "folds": ["7.8"],
    "originals": ["/media/ch07/CNX_Chem_07_02_HClBond.jpg", "/media/ch07/CNX_Chem_07_02_DeltaEN.jpg"],
    "original_caption": "(Figure 7.5) (a) The distribution of electron density in the HCl molecule is uneven. The electron density is greater around the chlorine nucleus. The small, black dots indicate the location of the hydrogen and chlorine nuclei in the molecule. (b) Symbols δ+ and δ– indicate the polarity of the H–Cl bond. (Figure 7.8) As the electronegativity difference increases between two atoms, the bond becomes more ionic.",
-   "draws": ["charge", "dipole-moment"]
+   "draws": ["charge", "dipole-moment"],
+   "conventions": [
+    "H",
+    "Li",
+    "Na",
+    "K",
+    "Cs",
+    "Mg",
+    "Ca",
+    "Ba",
+    "Mn",
+    "B",
+    "C",
+    "Si",
+    "N",
+    "P",
+    "O",
+    "S",
+    "Se",
+    "F",
+    "Cl",
+    "Br",
+    "I"
+   ]
   }
  ],
  "coverage": [

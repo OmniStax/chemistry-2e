@@ -41,12 +41,23 @@
     "/media/ch04/CNX_Chem_04_01_rxn3.jpg"
    ],
    "original_caption": "(Figure 4.2) The reaction between methane and oxygen to yield carbon dioxide and water (shown at bottom) may be represented by a chemical equation using formulas (top). (Figure 4.3) Regardless of the absolute numbers of molecules involved, the ratios between numbers of molecules of each species that react (the reactants) and molecules of each species that form (the products) are the same and are given by the chemical reaction equation.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "C",
+    "H",
+    "O"
+   ]
   },
   {
    "id": "sim-balance",
    "kind": "sim",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "H",
+    "O",
+    "N",
+    "C"
+   ]
   }
  ],
  "coverage": [

@@ -30,7 +30,13 @@
  "exercises_lead": "",
  "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; answers that are formulas are compared by the reader. The unkeyed conceptual exercise fs-idm115920688 carries a suggested approach written by the AI. The unkeyed exercises fs-idm99186192 (percent compositions of HN<sub>3</sub>, TNT and the sulfate in Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>), fs-idm78648848 (the percent water in CuSO<sub>4</sub>∙5H<sub>2</sub>O), fs-idm106900080 (two empirical formulas from percent compositions), fs-idm234233056 (dichloroethane) and fs-idp2230736 (the empirical formulas of five polymers) are left out.",
  "figures": [
-  { "id": "sim-empirical", "kind": "sim", "number": "3.11", "originals": ["/media/ch03/CNX_Chem_03_03_empform.jpg"], "original_caption": "The empirical formula of a compound can be derived from the masses of all elements in the sample.", "draws": ["mass", "amount"] },
+  { "id": "sim-empirical", "kind": "sim", "number": "3.11", "originals": ["/media/ch03/CNX_Chem_03_03_empform.jpg"], "original_caption": "The empirical formula of a compound can be derived from the masses of all elements in the sample.", "draws": ["mass", "amount"], "conventions": [
+ "Fe",
+ "O",
+ "C",
+ "H",
+ "Cl"
+] },
   { "id": "fig-hematite", "kind": "photo", "number": "3.12", "draws": [] },
   { "id": "fig-brewtank", "kind": "photo", "number": "3.13", "draws": [] }
  ],

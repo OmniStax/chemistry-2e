@@ -48,7 +48,11 @@
     "/media/ch04/CNX_Chem_04_04_limiting.jpg"
    ],
    "original_caption": "When H2 and Cl2 are combined in nonstoichiometric amounts, one of these reactants will limit the amount of HCl that can be produced. This illustration shows a reaction in which hydrogen is present in excess and chlorine is the limiting reactant.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "H",
+    "Cl"
+   ]
   },
   {
    "id": "sim-silicon-nitride",

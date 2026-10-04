@@ -75,6 +75,10 @@
    "original_caption": "(a) Humidity in the air, icebergs, and the ocean represent water in the macroscopic domain. (b) At the molecular level (microscopic domain), gas molecules are far apart and disorganized, solid water molecules are close together and organized, and liquid molecules are close together and disorganized. (c) The formula H₂O symbolizes water, and (g), (s), and (l) symbolize its phases. (credit a: modification of work by “Gorkaazk”/Wikimedia Commons)",
    "draws": [
     "temperature"
+   ],
+   "conventions": [
+    "O",
+    "H"
    ]
   }
  ],

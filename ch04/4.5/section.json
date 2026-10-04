@@ -30,7 +30,14 @@
  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercises fs-idm9962448 (HBr for calcium hydroxide), fs-idm31045184 (sodium chloride by silver nitrate), fs-idp68782720 (the potato-peeling sodium hydroxide), fs-idp205066064 (naphthalene), fs-idm26094912 (purifying sodium bicarbonate), fs-idp204713328 (nitric acid for potassium hydrogen phosphate), fs-idp69216752 (potassium hydroxide for acid rain), fs-idp126088400 (calcium butanoate) and fs-idm1209456 (standardizing with KHP) are left out. Numeric answers accept 2% tolerance.",
  "figures": [
   { "id": "fig-buret", "kind": "photo", "number": "4.16", "draws": [] },
-  { "id": "sim-titration", "kind": "sim", "draws": ["volume", "concentration", "amount"] },
+  {
+   "id": "sim-titration",
+   "kind": "sim",
+   "draws": ["volume", "concentration", "amount"],
+   "facts": [
+    "#e8559b"
+   ]
+  },
   { "id": "fig-map7", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_map7_img.jpg"], "draws": ["volume", "amount", "concentration"] },
   { "id": "fig-filter", "kind": "photo", "number": "4.17", "draws": [] },
   { "id": "fig-map8", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_map8_img.jpg"], "draws": ["mass", "amount"] },
@@ -40,7 +47,12 @@
    "number": "4.18",
    "originals": ["/media/ch04/CNX_Chem_04_05_combustion.jpg"],
    "original_caption": "This schematic diagram illustrates the basic components of a combustion analysis device for determining the carbon and hydrogen content of a sample.",
-   "draws": ["mass", "amount"]
+   "draws": ["mass", "amount"],
+   "facts": [
+    "#e2462a",
+    "#8cc63f",
+    "#4a6fe0"
+   ]
   },
   { "id": "fig-combmap", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_combmap_img.jpg"], "draws": ["mass", "amount"] }
  ],

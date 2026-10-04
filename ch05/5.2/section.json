@@ -54,6 +54,13 @@
     "temperature",
     "mass",
     "heat-capacity"
+   ],
+   "conventions": [
+    "Fe",
+    "Cu",
+    "Pb",
+    "Au",
+    "Al"
    ]
   },
   {

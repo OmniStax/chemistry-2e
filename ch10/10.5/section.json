@@ -30,10 +30,41 @@
  "exercises_lead": "",
  "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book's answer key. The two unkeyed choice exercises fs-idp95742064 and fs-idp12717008 are kept as open items with their options and are never graded; they and the four other unkeyed exercises (fs-idp61090560, fs-idm41685552, fs-idm128882560, fs-idm126229856) carry a suggested approach marked as OmniStax's own. No exercise is left out.",
  "figures": [
-  { "id": "sim-order", "kind": "sim", "number": "10.37", "folds": ["10.38"], "originals": ["/media/ch10/CNX_Chem_10_05_TypesSol.jpg", "/media/ch10/CNX_Chem_10_05_BoronOxide.jpg"], "original_caption": "(Figure 10.37) The entities of a solid phase may be arranged in a regular, repeating pattern (crystalline solids) or randomly (amorphous). (Figure 10.38) (a) Silicon dioxide, SiO2, is abundant in nature as one of several crystalline forms of the mineral quartz. (b) Rapid cooling of molten SiO2 yields an amorphous solid known as “fused silica”.", "draws": ["temperature"] },
-  { "id": "sim-solids", "kind": "sim", "number": "10.39", "folds": ["10.40", "10.41", "10.42"], "originals": ["/media/ch10/CNX_Chem_10_05_IonicSolid.jpg", "/media/ch10/CNX_Chem_10_05_Metallic.jpg", "/media/ch10/CNX_Chem_10_05_NtwrkSolid.jpg", "/media/ch10/CNX_Chem_10_05_MolSolids.jpg"], "original_caption": "(Figure 10.39) Sodium chloride is an ionic solid. (Figure 10.40) Copper is a metallic solid. (Figure 10.41) A covalent crystal contains a three-dimensional network of covalent bonds, as illustrated by the structures of diamond, silicon dioxide, silicon carbide, and graphite. Graphite is an exceptional example, composed of planar sheets of covalent crystals that are held together in layers by noncovalent forces. Unlike typical covalent solids, graphite is very soft and electrically conductive. (Figure 10.42) Carbon dioxide (CO2) consists of small, nonpolar molecules and forms a molecular solid with a melting point of −78 °C. Iodine (I2) consists of larger, nonpolar molecules and forms a molecular solid that melts at 114 °C.", "draws": ["temperature"] },
+  {
+   "id": "sim-order",
+   "kind": "sim",
+   "number": "10.37",
+   "folds": ["10.38"],
+   "originals": ["/media/ch10/CNX_Chem_10_05_TypesSol.jpg", "/media/ch10/CNX_Chem_10_05_BoronOxide.jpg"],
+   "original_caption": "(Figure 10.37) The entities of a solid phase may be arranged in a regular, repeating pattern (crystalline solids) or randomly (amorphous). (Figure 10.38) (a) Silicon dioxide, SiO2, is abundant in nature as one of several crystalline forms of the mineral quartz. (b) Rapid cooling of molten SiO2 yields an amorphous solid known as “fused silica”.",
+   "draws": ["temperature"],
+   "conventions": [
+    "O",
+    "Si"
+   ]
+  },
+  {
+   "id": "sim-solids",
+   "kind": "sim",
+   "number": "10.39",
+   "folds": ["10.40", "10.41", "10.42"],
+   "originals": ["/media/ch10/CNX_Chem_10_05_IonicSolid.jpg", "/media/ch10/CNX_Chem_10_05_Metallic.jpg", "/media/ch10/CNX_Chem_10_05_NtwrkSolid.jpg", "/media/ch10/CNX_Chem_10_05_MolSolids.jpg"],
+   "original_caption": "(Figure 10.39) Sodium chloride is an ionic solid. (Figure 10.40) Copper is a metallic solid. (Figure 10.41) A covalent crystal contains a three-dimensional network of covalent bonds, as illustrated by the structures of diamond, silicon dioxide, silicon carbide, and graphite. Graphite is an exceptional example, composed of planar sheets of covalent crystals that are held together in layers by noncovalent forces. Unlike typical covalent solids, graphite is very soft and electrically conductive. (Figure 10.42) Carbon dioxide (CO2) consists of small, nonpolar molecules and forms a molecular solid with a melting point of −78 °C. Iodine (I2) consists of larger, nonpolar molecules and forms a molecular solid that melts at 114 °C.",
+   "draws": ["temperature"],
+   "conventions": [
+    "Na",
+    "Cl",
+    "Cu",
+    "Si",
+    "O",
+    "C",
+    "I"
+   ]
+  },
   { "id": "fig-carbon", "kind": "photo", "number": "10.43", "draws": [] },
-  { "id": "sim-graphene", "kind": "sim", "number": "10.44", "originals": ["/media/ch10/CNX_Chem_10_05_Graphene.jpg"], "original_caption": "Graphene sheets can be formed into buckyballs, nanotubes, and stacked layers.", "draws": ["length"] },
+  { "id": "sim-graphene", "kind": "sim", "number": "10.44", "originals": ["/media/ch10/CNX_Chem_10_05_Graphene.jpg"], "original_caption": "Graphene sheets can be formed into buckyballs, nanotubes, and stacked layers.", "draws": ["length"], "conventions": [
+ "C"
+] },
   { "id": "fig-defects", "kind": "figure", "number": "10.45", "originals": ["/media/ch10/CNX_Chem_10_05_CrystDfcts.jpg"], "original_caption": "Types of crystal defects include vacancies, interstitial atoms, and substitutions impurities.", "draws": [] }
  ],
  "coverage": [

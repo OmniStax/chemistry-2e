@@ -39,7 +39,14 @@
         "/media/ch09/CNX_Chem_09_04_DiffEff.jpg"
       ],
       "original_caption": "(Figure 9.27) (a) Two gases, H2 and O2, are initially separated. (b) When the stopcock is opened, they mix together. The lighter gas, H2, passes through the opening faster than O2, so just after the stopcock is opened, more H2 molecules move to the O2 side than O2 molecules move to the H2 side. (c) After a short time, both the slower-moving O2 molecules and the faster-moving H2 molecules have distributed themselves evenly on both sides of the vessel. (Figure 9.28) Diffusion involves the unrestricted dispersal of molecules throughout space due to their random motion. When this process is restricted to passage of molecules through very small openings in a physical barrier, the process is called effusion.",
-      "draws": ["mass"]
+      "draws": ["mass"],
+      "conventions": [
+        "H",
+        "O",
+        "Ne",
+        "Xe",
+        "C"
+      ]
     },
     {
       "id": "fig-balloons",
@@ -55,7 +62,10 @@
         "/media/ch09/CNX_Chem_09_04_GasDiff.jpg"
       ],
       "original_caption": "In a diffuser, gaseous UF6 is pumped through a porous barrier, which partially separates 235UF6 from 238UF6 The UF6 must pass through many large diffuser units to achieve sufficient enrichment in 235U.",
-      "draws": []
+      "draws": [],
+      "conventions": [
+        "U"
+      ]
     }
   ],
   "coverage": [

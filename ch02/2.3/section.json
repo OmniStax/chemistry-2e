@@ -39,7 +39,12 @@
    "number": "2.14",
    "originals": ["/media/ch02/CNX_Chem_02_03_AtomSym.jpg"],
    "original_caption": "The symbol for an atom indicates the element via its usual two-letter symbol, the mass number as a left superscript, the atomic number as a left subscript (sometimes omitted), and the charge as a right superscript.",
-   "draws": ["charge"]
+   "draws": ["charge"],
+   "conventions": [
+    "p+",
+    "n0",
+    "e-"
+   ]
   },
   { "id": "sim-average-mass", "kind": "sim", "draws": ["mass"] },
   {
@@ -48,7 +53,13 @@
    "number": "2.15",
    "originals": ["/media/ch02/CNX_Chem_02_03_MassSpec.jpg"],
    "original_caption": "Analysis of zirconium in a mass spectrometer produces a mass spectrum with peaks showing the different isotopes of Zr.",
-   "draws": ["mass"]
+   "draws": ["mass"],
+   "conventions": [
+    "Zr",
+    "B",
+    "Ne",
+    "Cl"
+   ]
   }
  ],
  "coverage": [

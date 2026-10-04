@@ -36,7 +36,10 @@
     {"id": "fig-recompress", "kind": "photo", "number": "11.11", "draws": []},
     {"id": "fig-ammonia", "kind": "figure", "draws": []},
     {"id": "fig-lake-nyos", "kind": "photo", "number": "11.12", "draws": []},
-    {"id": "sim-nyos", "kind": "sim", "draws": ["concentration", "pressure", "length", "equilibrium-constant"]},
+    {"id": "sim-nyos", "kind": "sim", "draws": ["concentration", "pressure", "length", "equilibrium-constant"], "conventions": [
+  "O",
+  "C"
+]},
     {"id": "fig-antifreeze", "kind": "photo", "number": "11.13", "draws": []},
     {"id": "fig-oil-water", "kind": "photo", "number": "11.14", "draws": []},
     {"id": "fig-bromine", "kind": "photo", "number": "11.15", "draws": []},

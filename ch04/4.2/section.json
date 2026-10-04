@@ -41,7 +41,13 @@
   {
    "id": "sim-precipitation",
    "kind": "sim",
-   "draws": []
+   "draws": [],
+   "facts": [
+    "#f2c300",
+    "#ece29a",
+    "#e8e1ae",
+    "#f5f5f0"
+   ]
   },
   {
    "id": "sim-hcl",
@@ -51,7 +57,13 @@
     "/media/ch04/CNX_Chem_04_02_HClsoln.jpg"
    ],
    "original_caption": "When hydrogen chloride gas dissolves in water, (a) it reacts as an acid, transferring protons to water molecules to yield (b) hydronium ions (and solvated chloride ions).",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "H",
+    "O",
+    "Cl",
+    "N"
+   ]
   },
   {
    "id": "fig-citrus",

@@ -45,7 +45,13 @@
       "number": "9.36",
       "originals": ["/media/ch09/CNX_Chem_09_06_RealGas2.jpg"],
       "original_caption": "(a) Attractions between gas molecules serve to decrease the gas volume at constant pressure compared to an ideal gas whose molecules experience no attractive forces. (b) These attractive forces will decrease the force of collisions between the molecules and container walls, therefore reducing the pressure exerted at constant volume compared to an ideal gas.",
-      "draws": ["pressure", "volume", "temperature", "amount"]
+      "draws": ["pressure", "volume", "temperature", "amount"],
+      "conventions": [
+        "He",
+        "N",
+        "O",
+        "C"
+      ]
     }
   ],
   "coverage": [

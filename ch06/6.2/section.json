@@ -39,7 +39,10 @@
     {
       "id": "sim-series",
       "kind": "sim",
-      "draws": ["wavelength", "energy", "velocity"]
+      "draws": ["wavelength", "energy", "velocity"],
+      "facts": [
+        "spectrum"
+      ]
     },
     {
       "id": "sim-bohr-ladder",
@@ -48,12 +51,21 @@
       "folds": ["6.15"],
       "originals": ["/media/ch06/CNX_Chem_06_02_Hlevels.jpg", "/media/ch06/CNX_Chem_06_02_BohrArrows.jpg"],
       "original_caption": "(Figure 6.14) Quantum numbers and energy levels in a hydrogen atom. The more negative the calculated value, the lower the energy. (Figure 6.15) The horizontal lines show the relative energy of orbits in the Bohr model of the hydrogen atom, and the vertical arrows depict the energy of photons absorbed (left) or emitted (right) as electrons move between these orbits.",
-      "draws": ["energy", "wavelength"]
+      "draws": ["energy", "wavelength"],
+      "conventions": [
+        "e-"
+      ],
+      "facts": [
+        "spectrum"
+      ]
     },
     {
       "id": "sim-orbit-rung",
       "kind": "sim",
-      "draws": ["energy", "length"]
+      "draws": ["energy", "length"],
+      "conventions": [
+        "e-"
+      ]
     },
     {
       "id": "fig-spectra",

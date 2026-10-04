@@ -36,11 +36,43 @@
    "number": "2.28",
    "originals": ["/media/ch02/CNX_Chem_02_06_NaCation.jpg"],
    "original_caption": "(a) A sodium atom (Na) has equal numbers of protons and electrons (11) and is uncharged. (b) A sodium cation (Na<sup>+</sup>) has lost an electron, so it has one more proton (11) than electrons (10), giving it an overall positive charge, signified by a superscripted plus sign.",
-   "draws": ["charge"]
+   "draws": ["charge"],
+   "conventions": [
+    "Na",
+    "Mg",
+    "Al",
+    "Ca",
+    "N",
+    "O",
+    "S",
+    "Cl",
+    "Se",
+    "Br",
+    "e-"
+   ]
   },
   { "id": "fig-ion-charges", "kind": "photo", "number": "2.29", "draws": [] },
   { "id": "fig-nacl-molten", "kind": "photo", "number": "2.30", "draws": [] },
-  { "id": "sim-ionic-formula", "kind": "sim", "draws": ["charge"] },
+  { "id": "sim-ionic-formula", "kind": "sim", "draws": ["charge"], "conventions": [
+ "Na",
+ "K",
+ "Li",
+ "Mg",
+ "Ca",
+ "Sr",
+ "Ba",
+ "Al",
+ "N",
+ "H",
+ "F",
+ "Cl",
+ "Br",
+ "I",
+ "O",
+ "S",
+ "C",
+ "P"
+] },
   { "id": "fig-sapphire", "kind": "photo", "number": "2.31", "draws": [] }
  ],
  "coverage": [

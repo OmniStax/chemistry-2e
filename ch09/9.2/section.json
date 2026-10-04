@@ -55,6 +55,10 @@
         "temperature",
         "amount",
         "volume"
+      ],
+      "conventions": [
+        "N",
+        "O"
       ]
     },
     {
@@ -127,6 +131,13 @@
         "volume",
         "temperature",
         "amount"
+      ],
+      "conventions": [
+        "He",
+        "N",
+        "O",
+        "Ar",
+        "C"
       ]
     },
     {
@@ -153,6 +164,14 @@
         "pressure",
         "temperature",
         "mass"
+      ],
+      "conventions": [
+        "He",
+        "H",
+        "N",
+        "O",
+        "C",
+        "Ar"
       ]
     }
   ],

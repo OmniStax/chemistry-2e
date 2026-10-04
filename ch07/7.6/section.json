@@ -45,7 +45,12 @@
     "/media/ch07/CNX_Chem_07_06_CH2O.jpg"
    ],
    "original_caption": "Bond distances (lengths) and angles are shown for the formaldehyde molecule, H₂CO.",
-   "draws": ["angle", "length"]
+   "draws": ["angle", "length"],
+   "conventions": [
+    "C",
+    "O",
+    "H"
+   ]
   },
   {
    "id": "fig-bef2",
@@ -96,7 +101,11 @@
     "/media/ch07/CNX_Chem_07_06_NH3.jpg"
    ],
    "original_caption": "(a) The electron-pair geometry for the ammonia molecule is tetrahedral with one lone pair and three single bonds. (b) The trigonal pyramidal molecular structure is determined from the electron-pair geometry. (c) The actual bond angles deviate slightly from the idealized angles because the lone pair takes up a larger region of space than do the single bonds, causing the HNH angle to be slightly smaller than 109.5°.",
-   "draws": ["angle"]
+   "draws": ["angle"],
+   "conventions": [
+    "N",
+    "H"
+   ]
   },
   {
    "id": "fig-lewis-co2",
@@ -157,7 +166,11 @@
     "/media/ch07/CNX_Chem_07_06_H2Omol.jpg"
    ],
    "original_caption": "(a) H₂O has four regions of electron density around the central atom, so it has a tetrahedral electron-pair geometry. (b) Two of the electron regions are lone pairs, so the molecular structure is bent.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "O",
+    "H"
+   ]
   },
   {
    "id": "fig-lewis-sf4",
@@ -175,7 +188,11 @@
     "/media/ch07/CNX_Chem_07_06_SF4mol.jpg"
    ],
    "original_caption": "(a) SF4 has a trigonal bipyramidal arrangement of the five regions of electron density. (b) One of the regions is a lone pair, which results in a seesaw-shaped molecular structure.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "S",
+    "F"
+   ]
   },
   {
    "id": "fig-lewis-xef4",
@@ -193,7 +210,11 @@
     "/media/ch07/CNX_Chem_07_06_XEF4mol.jpg"
    ],
    "original_caption": "(a) XeF₄ adopts an octahedral arrangement with two lone pairs (red lines) and four bonds in the electron-pair geometry. (b) The molecular structure is square planar with the lone pairs directly across from one another.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Xe",
+    "F"
+   ]
   },
   {
    "id": "fig-lewis-glycine",
@@ -223,7 +244,18 @@
     "/media/ch07/CNX_Chem_07_06_CO2H2Odip.jpg"
    ],
    "original_caption": "(Figure 7.26) (a) There is a small difference in electronegativity between C and H, represented as a short vector. (b) The electronegativity difference between B and F is much larger, so the vector representing the bond moment is much longer. (Figure 7.27) The overall dipole moment of a molecule depends on the individual bond dipole moments and how they are arranged. (a) Each CO bond has a bond dipole moment, but they point in opposite directions so that the net CO₂ molecule is nonpolar. (b) In contrast, water is polar because the OH bond moments do not cancel out.",
-   "draws": ["dipole-moment"]
+   "draws": ["dipole-moment"],
+   "conventions": [
+    "C",
+    "O",
+    "S",
+    "H",
+    "B",
+    "F",
+    "N",
+    "P",
+    "Cl"
+   ]
   },
   {
    "id": "fig-ocs",
@@ -231,7 +263,12 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_OSC_img.jpg"
    ],
-   "draws": ["dipole-moment"]
+   "draws": ["dipole-moment"],
+   "conventions": [
+    "O",
+    "C",
+    "S"
+   ]
   },
   {
    "id": "fig-chloromethane",
@@ -257,7 +294,11 @@
     "/media/ch07/CNX_Chem_07_06_Dipolfield.jpg"
    ],
    "original_caption": "(a) Molecules are always randomly distributed in the liquid state in the absence of an electric field. (b) When an electric field is applied, polar molecules like HF will align to the dipoles with the field direction.",
-   "draws": ["charge"]
+   "draws": ["charge"],
+   "conventions": [
+    "H",
+    "F"
+   ]
   }
  ],
  "coverage": [

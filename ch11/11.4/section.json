@@ -42,6 +42,12 @@
       "original_caption": "The presence of nonvolatile solutes lowers the vapor pressure of a solution by impeding the evaporation of solvent molecules.",
       "draws": [
         "pressure"
+      ],
+      "conventions": [
+        "O",
+        "H",
+        "C",
+        "N"
       ]
     },
     {
@@ -114,6 +120,11 @@
         "concentration",
         "pressure",
         "temperature"
+      ],
+      "conventions": [
+        "O",
+        "H",
+        "C"
       ]
     },
     {
@@ -132,6 +143,9 @@
       "original_caption": "Red blood cell membranes are water permeable and will (a) swell and possibly rupture in a hypotonic solution; (b) maintain normal volume and shape in an isotonic solution; and (c) shrivel and possibly die in a hypertonic solution. (credit a/b/c: modifications of work by “LadyofHats”/Wikimedia commons)",
       "draws": [
         "pressure"
+      ],
+      "facts": [
+        "#c0392b"
       ]
     },
     {
@@ -154,6 +168,12 @@
       "original_caption": "Dissociation of ionic compounds in water is not always complete due to the formation of ion pairs.",
       "draws": [
         "concentration"
+      ],
+      "conventions": [
+        "K",
+        "Cl",
+        "O",
+        "H"
       ]
     },
     {

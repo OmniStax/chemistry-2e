@@ -30,16 +30,55 @@
   "exercises_lead": "",
   "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed conceptual items fs-idp56789136, fs-idp137732064, fs-idm102175568, fs-idm75414800, fs-idp70845808, fs-idp59807680, fs-idp11327328, fs-idm24391648 and fs-idp83473328 carry a suggested approach marked as OmniStax’s own. The simulation exercise fs-idm78391360, which opens the PhET States of Matter simulation, is held: the phases figure of this page does not carry the simulation’s interaction-potential part.",
   "figures": [
-    { "id": "sim-phases", "kind": "sim", "number": "10.2", "originals": ["/media/ch10/CNX_Chem_10_01_KMTPhases1.jpg"], "original_caption": "Transitions between solid, liquid, and gaseous states of a substance occur when conditions of temperature or pressure favor the associated changes in intermolecular forces. (Note: The space between particles in the gas phase is much greater than shown.)", "draws": ["temperature"] },
+    {
+      "id": "sim-phases",
+      "kind": "sim",
+      "number": "10.2",
+      "originals": ["/media/ch10/CNX_Chem_10_01_KMTPhases1.jpg"],
+      "original_caption": "Transitions between solid, liquid, and gaseous states of a substance occur when conditions of temperature or pressure favor the associated changes in intermolecular forces. (Note: The space between particles in the gas phase is much greater than shown.)",
+      "draws": ["temperature"],
+      "conventions": [
+        "Ne",
+        "Ar",
+        "Kr",
+        "F",
+        "Cl"
+      ]
+    },
     { "id": "fig-water-photo", "kind": "photo", "number": "10.3", "draws": [] },
     { "id": "fig-butane-photo", "kind": "photo", "number": "10.4", "draws": [] },
-    { "id": "sim-intra-inter", "kind": "sim", "number": "10.5", "originals": ["/media/ch10/CNX_Chem_10_01_IntravInter.jpg"], "original_caption": "Intramolecular forces keep a molecule intact. Intermolecular forces hold multiple molecules together and determine many of a substance’s properties.", "draws": [] },
+    {
+      "id": "sim-intra-inter",
+      "kind": "sim",
+      "number": "10.5",
+      "originals": ["/media/ch10/CNX_Chem_10_01_IntravInter.jpg"],
+      "original_caption": "Intramolecular forces keep a molecule intact. Intermolecular forces hold multiple molecules together and determine many of a substance’s properties.",
+      "draws": [],
+      "conventions": [
+        "Cl",
+        "H"
+      ]
+    },
     { "id": "sim-dispersion", "kind": "sim", "number": "10.6", "originals": ["/media/ch10/CNX_Chem_10_01_DispForces.jpg"], "original_caption": "Dispersion forces result from the formation of temporary dipoles, as illustrated here for two nonpolar diatomic molecules.", "draws": ["temperature"] },
     { "id": "fig-carbon-family", "kind": "figure", "draws": [] },
-    { "id": "sim-pentanes", "kind": "sim", "number": "10.7", "originals": ["/media/ch10/CNX_Chem_10_01_PentIso.jpg"], "original_caption": "The strength of the dispersion forces increases with the contact area between molecules, as demonstrated by the boiling points of these pentane isomers.", "draws": ["temperature", "area"] },
+    {
+      "id": "sim-pentanes",
+      "kind": "sim",
+      "number": "10.7",
+      "originals": ["/media/ch10/CNX_Chem_10_01_PentIso.jpg"],
+      "original_caption": "The strength of the dispersion forces increases with the contact area between molecules, as demonstrated by the boiling points of these pentane isomers.",
+      "draws": ["temperature", "area"],
+      "conventions": [
+        "C",
+        "H"
+      ]
+    },
     { "id": "fig-geckos", "kind": "photo", "number": "10.8", "draws": [] },
     { "id": "fig-dipoles", "kind": "figure", "number": "10.9", "originals": ["/media/ch10/CNX_Chem_10_01_DipDip.jpg"], "original_caption": "This image shows two arrangements of polar molecules, such as HCl, that allow an attraction between the partial negative end of one molecule and the partial positive end of another.", "draws": [] },
-    { "id": "sim-hbond", "kind": "sim", "number": "10.10", "originals": ["/media/ch10/CNX_Chem_10_01_HBonding.jpg"], "original_caption": "Water molecules participate in multiple hydrogen-bonding interactions with nearby water molecules.", "draws": [] },
+    { "id": "sim-hbond", "kind": "sim", "number": "10.10", "originals": ["/media/ch10/CNX_Chem_10_01_HBonding.jpg"], "original_caption": "Water molecules participate in multiple hydrogen-bonding interactions with nearby water molecules.", "draws": [], "conventions": [
+  "O",
+  "H"
+] },
     { "id": "sim-hydrides", "kind": "sim", "number": "10.11", "folds": ["10.12"], "originals": ["/media/ch10/CNX_Chem_10_01_HydrideBP1.jpg", "/media/ch10/CNX_Chem_10_01_HydrideBP2.jpg"], "original_caption": "(Figure 10.11) For the group 15, 16, and 17 hydrides, the boiling points for each class of compounds increase with increasing molecular mass for elements in periods 3, 4, and 5. (Figure 10.12) In comparison to periods 3−5, the binary hydrides of period 2 elements in groups 17, 16 and 15 (F, O and N, respectively) exhibit anomalously high boiling points due to hydrogen bonding.", "draws": ["temperature"] },
     { "id": "fig-dna", "kind": "photo", "number": "10.13", "draws": [] },
     { "id": "fig-dna-pairs", "kind": "photo", "number": "10.14", "draws": [] }

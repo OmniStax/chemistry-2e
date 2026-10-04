@@ -44,7 +44,14 @@
     "/media/ch03/CNX_Chem_03_01_saltMass.jpg"
    ],
    "original_caption": "(Figure 3.2) The average mass of a chloroform molecule, CHCl₃, is 119.37 amu, which is the sum of the average atomic masses of each of its constituent atoms. The model shows the molecular structure of chloroform. (Figure 3.3) The average mass of an aspirin molecule is 180.15 amu. The model shows the molecular structure of aspirin, C₉H₈O₄. (Figure 3.4) Table salt, NaCl, contains an array of sodium and chloride ions combined in a 1:1 ratio. Its formula mass is 58.44 amu.",
-   "draws": ["mass"]
+   "draws": ["mass"],
+   "conventions": [
+    "C",
+    "H",
+    "O",
+    "Cl",
+    "Na"
+   ]
   },
   {
    "id": "fig-ibuprofen-table",

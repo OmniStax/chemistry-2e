@@ -49,7 +49,11 @@
     "/media/ch02/CNX_Chem_02_01_Dalton3.jpg"
    ],
    "original_caption": "When the elements copper (a shiny, red-brown solid, shown here as brown spheres) and oxygen (a clear and colorless gas, shown here as red spheres) react, their atoms rearrange to form a compound containing copper and oxygen (a powdery, black solid). (credit copper: modification of work by http://images-of-elements.com/copper.php)",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Cu",
+    "O"
+   ]
   },
   {
    "id": "fig-dalton-test",
@@ -64,6 +68,10 @@
    "kind": "sim",
    "draws": [
     "mass"
+   ],
+   "conventions": [
+    "C",
+    "H"
    ]
   },
   {
@@ -76,6 +84,10 @@
    "original_caption": "Compared to the copper chlorine compound in (a), where copper is represented by brown spheres and chlorine by green spheres, the copper chlorine compound in (b) has twice as many chlorine atoms per copper atom. (credit a: modification of work by “Benjah-bmm27”/Wikimedia Commons; credit b: modification of work by “Walkerma”/Wikimedia Commons)",
    "draws": [
     "mass"
+   ],
+   "conventions": [
+    "Cu",
+    "Cl"
    ]
   }
  ],

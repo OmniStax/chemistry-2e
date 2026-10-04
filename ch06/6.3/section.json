@@ -61,6 +61,9 @@
     "wavelength",
     "mass",
     "velocity"
+   ],
+   "conventions": [
+    "e-"
    ]
   },
   {
@@ -127,6 +130,9 @@
    "original_caption": "Electrons with spin values ±½ in an external magnetic field.",
    "draws": [
     "energy"
+   ],
+   "conventions": [
+    "e-"
    ]
   }
  ],

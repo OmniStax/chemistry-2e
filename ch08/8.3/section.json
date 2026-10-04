@@ -63,7 +63,11 @@
     "/media/ch08/CNX_Chem_08_03_C2H2.jpg"
    ],
    "original_caption": "(Figure 8.23) In the ethene molecule, C₂H₄, there are (a) five σ bonds. One C–C σ bond results from overlap of sp² hybrid orbitals on the carbon atom with one sp² hybrid orbital on the other carbon atom. Four C–H bonds result from the overlap between the C atoms' sp² orbitals with s orbitals on the hydrogen atoms. (b) The π bond is formed by the side-by-side overlap of the two unhybridized p orbitals in the two carbon atoms. The two lobes of the π bond are above and below the plane of the σ system. (Figure 8.24) Diagram of the two linear sp hybrid orbitals of a carbon atom, which lie in a straight line, and the two unhybridized p orbitals at perpendicular angles. (Figure 8.25) (a) In the acetylene molecule, C₂H₂, there are two C–H σ bonds and a C≡C triple bond involving one C–C σ bond and two C–C π bonds. The dashed lines, each connecting two lobes, indicate the side-by-side overlap of the four unhybridized p orbitals. (b) This shows the overall outline of the bonds in C₂H₂. The two lobes of each of the π bonds are positioned across from each other around the line of the C–C σ bond.",
-   "draws": ["angle"]
+   "draws": ["angle"],
+   "conventions": [
+    "C",
+    "H"
+   ]
   },
   {
    "id": "fig-benzene",

@@ -38,7 +38,19 @@
   {
    "id": "sim-charge-balance",
    "kind": "sim",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Na",
+    "K",
+    "Mg",
+    "Ca",
+    "Al",
+    "Fe",
+    "Cl",
+    "O",
+    "S",
+    "N"
+   ]
   },
   {
    "id": "sim-nacl-lattice",
@@ -48,7 +60,11 @@
     "/media/ch07/CNX_Chem_07_01_NaClStruc-1938.jpg"
    ],
    "original_caption": "The atoms in sodium chloride (common table salt) are arranged to (a) maximize opposite charges interacting. The smaller spheres represent sodium ions, the larger ones represent chloride ions. In the expanded view (b), the geometry can be seen more clearly. Note that each ion is “bonded” to all of the surrounding ions—six in this case.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Na",
+    "Cl"
+   ]
   }
  ],
  "coverage": [

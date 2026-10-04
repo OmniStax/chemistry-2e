@@ -41,6 +41,11 @@
    "draws": [
     "pressure",
     "time"
+   ],
+   "conventions": [
+    "C",
+    "O",
+    "H"
    ]
   },
   {

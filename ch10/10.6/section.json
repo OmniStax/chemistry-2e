@@ -42,7 +42,10 @@
     "/media/ch10/CNX_Chem_10_06_SimpleCub3.jpg"
    ],
    "original_caption": "(Figure 10.46) A unit cell shows the locations of lattice points repeating in all directions. (Figure 10.47) When metal atoms are arranged with spheres in one layer directly above or below spheres in another layer, the lattice structure is called simple cubic. Note that the spheres are in contact. (Figure 10.48) An atom in a simple cubic lattice structure contacts six other atoms, so it has a coordination number of six. (Figure 10.49) A simple cubic lattice unit cell contains one-eighth of an atom at each of its eight corners, so it contains one atom total.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Po"
+   ]
   },
   { "id": "fig-simpcube", "kind": "figure", "draws": [] },
   {
@@ -56,7 +59,12 @@
     "/media/ch10/CNX_Chem_10_06_FcCntrdCbc.jpg"
    ],
    "original_caption": "(Figure 10.50) Cubic unit cells of metals show (in the upper figures) the locations of lattice points and (in the lower figures) metal atoms located in the unit cell. (Figure 10.51) In a body-centered cubic structure, atoms in a specific layer do not touch each other. Each atom touches four atoms in the layer above it and four atoms in the layer below it. (Figure 10.52) A face-centered cubic solid has atoms at the corners and, as the name implies, at the centers of the faces of its unit cells.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Po",
+    "Fe",
+    "Cu"
+   ]
   },
   {
    "id": "sim-packing",
@@ -71,7 +79,16 @@
    "draws": []
   },
   { "id": "fig-ex-ca", "kind": "figure", "draws": [] },
-  { "id": "sim-density", "kind": "sim", "draws": ["mass", "volume", "length", "density"] },
+  {
+   "id": "sim-density",
+   "kind": "sim",
+   "draws": ["mass", "volume", "length", "density"],
+   "conventions": [
+    "Po",
+    "Fe",
+    "Ca"
+   ]
+  },
   {
    "id": "sim-lattices",
    "kind": "sim",
@@ -94,7 +111,14 @@
     "/media/ch10/CNX_Chem_10_06_IntIonst.jpg"
    ],
    "original_caption": "(Figure 10.57) Cations may occupy two types of holes between anions: octahedral holes or tetrahedral holes. (Figure 10.58) A cation’s size and the shape of the hole occupied by the compound are directly related.",
-   "draws": ["length"]
+   "draws": ["length"],
+   "conventions": [
+    "Zn",
+    "S",
+    "Na",
+    "Cl",
+    "Cs"
+   ]
   },
   {
    "id": "sim-ionic",
@@ -108,7 +132,16 @@
     "/media/ch10/CNX_Chem_10_07_CaF2Strctr.jpg"
    ],
    "original_caption": "(Figure 10.59) Ionic compounds with similar-sized cations and anions, such as CsCl, usually form a simple cubic structure. They can be described by unit cells with either cations at the corners or anions at the corners. (Figure 10.60) Ionic compounds with anions that are much larger than cations, such as NaCl, usually form an FCC structure. They can be described by FCC unit cells with cations in the octahedral holes. (Figure 10.61) ZnS, zinc sulfide (or zinc blende) forms an FCC unit cell with sulfide ions at the lattice points and much smaller zinc ions occupying half of the tetrahedral holes in the structure. (Figure 10.62) Calcium fluoride, CaF2, forms an FCC unit cell with calcium ions (green) at the lattice points and fluoride ions (red) occupying all of the tetrahedral sites between them.",
-   "draws": []
+   "draws": [],
+   "conventions": [
+    "Cl",
+    "Cs",
+    "Na",
+    "S",
+    "Zn",
+    "Ca",
+    "F"
+   ]
   },
   { "id": "fig-licl", "kind": "figure", "draws": [] },
   {
@@ -121,7 +154,10 @@
     "/media/ch10/CNX_Chem_10_06_XRyDiff1.jpg"
    ],
    "original_caption": "(Figure 10.63) Light waves occupying the same space experience interference, combining to yield waves of greater (a) or lesser (b) intensity, depending upon the separation of their maxima and minima. (Figure 10.64) The diffraction of X-rays scattered by the atoms within a crystal permits the determination of the distance between the atoms. The top image depicts constructive interference between two scattered waves and a resultant diffracted wave of high intensity. The bottom image depicts destructive interference and a low intensity diffracted wave.",
-   "draws": ["wavelength", "length", "angle"]
+   "draws": ["wavelength", "length", "angle"],
+   "conventions": [
+    "Cu"
+   ]
   },
   { "id": "fig-diffractometer", "kind": "photo", "number": "10.65", "draws": [] },
   { "id": "fig-franklin", "kind": "photo", "number": "10.66", "draws": [] }

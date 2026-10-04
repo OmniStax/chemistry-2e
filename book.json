@@ -1231,6 +1231,11 @@
       "sym": "v_iron",
       "latex": "v_{\\text{iron}}",
       "macro": "\\kviron"
+    },
+    {
+      "sym": "C_conc",
+      "latex": "C",
+      "macro": "\\kCconc"
     }
   ],
   "exercise_kinds": [

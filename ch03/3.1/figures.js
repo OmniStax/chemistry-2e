@@ -121,15 +121,15 @@ function bond(ctx, a, b, order) {
       text(ctx, sym, COL.el + 6, y, PAL.ink, { size: 24, weight: 600, align: 'center' });
       text(ctx, String(n), COL.q, y, PAL.ink, { size: 24, align: 'center' });
       text(ctx, '×', COL.x, y, PAL.muted, { size: 22, align: 'center' });
-      text(ctx, am, COL.m, y, PAL.ink, { size: 24, align: 'center' });
+      text(ctx, am, COL.m, y, C('mass'), { size: 24, align: 'center' });
       text(ctx, '=', COL.eq, y, PAL.muted, { size: 22, align: 'center' });
-      text(ctx, st, COL.sub, y, PAL.ink, { size: 24, align: 'right' });
+      text(ctx, st, COL.sub, y, C('mass'), { size: 24, align: 'right' });
     });
     const yl = y0 + 16 + c.rows.length * dy - 26;
     line(ctx, 1200, yl, 1350, yl, PAL.ink, 4);
     const w = c.word[0].toUpperCase() + c.word.slice(1);
     text(ctx, w, 800, yl + 36, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    text(ctx, c.total, COL.sub, yl + 36, PAL.ink, { size: 26, weight: 600, align: 'right' });
+    text(ctx, c.total, COL.sub, yl + 36, C('mass'), { size: 26, weight: 600, align: 'right' });
   }
   function draw2d() {
     const { ctx } = begin(d.c); hits = [];
@@ -179,8 +179,8 @@ function bond(ctx, a, b, order) {
   function draw() {
     if (Vw.value === '2d') draw2d(); else if (v) draw3d();
     const c = CMP[M.value];
-    const sum = c.rows.map(([, n, am]) => `${n} \\times ${am}`).join(' + ');
-    readout(d.readout, `\\text{${c.word}} = ${sum} = ${c.total}\\ \\text{amu}`,
+    const sum = c.rows.map(([, n, am]) => `${n} \\times ${hue('mass', am)}`).join(' + ');
+    readout(d.readout, `${hue('mass', `\\text{${c.word}}`)} = ${sum} = ${hue('mass', `${c.total}\\ \\text{amu}`)}`,
       c.ionic ? 'The formula NaCl gives the ratio of the ions in the crystal, not a molecule, so its sum is a formula mass.' : `Each term is the number of atoms of one element in the formula ${c.uni} times that element’s average atomic mass.`);
   }
   register(d.fig, { update: () => {}, draw });

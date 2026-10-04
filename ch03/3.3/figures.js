@@ -18,8 +18,8 @@ function disc(ctx, x, y, r, sym) {
 /* one particle of a solute: its two characteristic elements side by side */
 function glyph(ctx, x, y, pair, r = 6) { disc(ctx, x - r * 0.8, y, r, pair[0]); disc(ctx, x + r * 0.8, y, r, pair[1]); }
 /* an open vessel: walls and floor from x1 to x2 between the rim and the floor, with a lip at the rim */
-function vessel(ctx, x1, x2, top, bot) {
-  ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x1, top); ctx.lineTo(x1, bot); ctx.lineTo(x2, bot); ctx.lineTo(x2, top); ctx.stroke();
+function vessel(ctx, x1, x2, top, bot, color) {
+  ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x1, top); ctx.lineTo(x1, bot); ctx.lineTo(x2, bot); ctx.lineTo(x2, top); ctx.stroke();
   ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x1 - 12, top); ctx.lineTo(x1, top); ctx.moveTo(x2, top); ctx.lineTo(x2 + 12, top); ctx.stroke(); ctx.restore();
 }
 function liquid(ctx, x1, x2, top, bot, color, a) {
@@ -67,7 +67,7 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
     topline(ctx, `${sig3(mass)} g of ${s.name} is ${sig3(n)} mol, and dissolved to make ${sig3(vol)} L of solution it is ${sig3(M)} M.`);
     /* the balance and the solute weighed on it */
     const bx = 250, by = 380;
-    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.muted; ctx.lineWidth = 3;
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = F.ref('balance'); ctx.lineWidth = 3;
     ctx.fillRect(bx - 130, by, 260, 14); ctx.strokeRect(bx - 130, by, 260, 14);
     ctx.fillRect(bx - 100, by + 14, 200, 62); ctx.strokeRect(bx - 100, by + 14, 200, 62);
     const hgt = 18 + 60 * Math.cbrt(mass / 100), wid = 60 + 80 * Math.cbrt(mass / 100);
@@ -84,7 +84,7 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
     text(ctx, 'dissolved in water', 610, 362, PAL.muted, { size: 17, align: 'center' });
     /* the beaker, its marks every 0.1 L and the solution in it */
     const top = BOT - PERL * vol;
-    liquid(ctx, BX1, BX2, top, BOT, WATER, 0.35);
+    liquid(ctx, BX1, BX2, top, BOT, F.fact(WATER), 0.35);
     for (let k = 1; k <= 10; k++) {
       const y = BOT - PERL * k / 10; line(ctx, BX1, y, BX1 + (k % 5 ? 14 : 24), y, PAL.muted, 2);
       if (k % 2 === 0) text(ctx, `${(k / 10).toFixed(1)}`, BX1 - 14, y, PAL.muted, { size: 17, align: 'right' });
@@ -92,7 +92,7 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
     text(ctx, 'L', BX1 - 14, BOT - PERL - 30, PAL.muted, { size: 17, align: 'right' });
     const count = Math.round(n / PER);
     scatter(count, BX1, BX2, top, BOT, 14).forEach(([x, y]) => { glyph(ctx, x, y, s.pair); hits.push({ x, y, r: 12, name: `${s.name}, ${s.f}, one particle for each 0.04 mol` }); });
-    vessel(ctx, BX1, BX2, BOT - PERL - 20, BOT);
+    vessel(ctx, BX1, BX2, BOT - PERL - 20, BOT, F.ref('beaker'));
     text(ctx, `${sig3(vol)} L`, BX2 + 20, top, C('volume'), { size: 22, weight: 600, bg: PAL.panel });
     hits.push({ x: (BX1 + BX2) / 2, y: BOT - 20, r: 30, name: `${sig3(vol)} L of solution` });
     /* the legend: what one particle stands for */
@@ -121,21 +121,21 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
   /* both cylinders hold 4.00 L at their top mark, 340 units above the floor */
   const BOT = 480, PERL = 85, W = 140, XS = [380, 980];
   let hits = []; F.hover(d.stage, () => hits);
-  function cylinder(ctx, cx, vol, conc, n, sub, name) {
-    const x1 = cx - W / 2, x2 = cx + W / 2, top = BOT - PERL * vol;
-    liquid(ctx, x1, x2, top, BOT, CU_NITRATE, Math.min(0.9, 0.1 + 0.8 * conc / 6));
+  function cylinder(ctx, cx, vol, conc, n, sub, name, who) {
+    const x1 = cx - W / 2, x2 = cx + W / 2, top = BOT - PERL * vol, rc = F.ref(who);
+    liquid(ctx, x1, x2, top, BOT, F.fact(CU_NITRATE), Math.min(0.9, 0.1 + 0.8 * conc / 6));
     for (let k = 1; k <= 8; k++) {
       const y = BOT - PERL * k / 2; line(ctx, x1, y, x1 + (k % 2 ? 14 : 26), y, PAL.muted, 2);
       if (k % 2 === 0) text(ctx, `${k / 2}`, x1 - 14, y, PAL.muted, { size: 17, align: 'right' });
     }
     text(ctx, 'L', x1 - 14, BOT - PERL * 4 - 30, PAL.muted, { size: 17, align: 'right' });
     scatter(Math.round(n / PER), x1, x2, top, BOT, 12).forEach(([x, y]) => { disc(ctx, x, y, 7, 'Cu'); hits.push({ x, y, r: 10, name: 'copper nitrate, Cu(NO₃)₂, one particle for each 0.25 mol' }); });
-    vessel(ctx, x1, x2, BOT - PERL * 4 - 16, BOT);
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x1 - 30, BOT + 12); ctx.lineTo(x2 + 30, BOT + 12); ctx.stroke(); ctx.restore();
+    vessel(ctx, x1, x2, BOT - PERL * 4 - 16, BOT, rc);
+    ctx.save(); ctx.strokeStyle = rc; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x1 - 30, BOT + 12); ctx.lineTo(x2 + 30, BOT + 12); ctx.stroke(); ctx.restore();
     text(ctx, `V${sub} = ${sig3(vol)} L`, x2 + 18, top, C('volume'), { size: 22, weight: 600, bg: PAL.panel });
     text(ctx, `C${sub} = ${sig3(conc)} M`, cx, BOT + 38, C('concentration'), { size: 22, weight: 600, align: 'center' });
     text(ctx, `n${sub} = ${sig3(n)} mol`, cx, BOT + 66, C('amount'), { size: 20, weight: 600, align: 'center' });
-    text(ctx, name, cx + 20, BOT - PERL * 4 - 50, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, name, cx + 20, BOT - PERL * 4 - 50, rc, { size: 20, align: 'center' });
     hits.push({ x: cx, y: BOT - 16, r: 30, name: `${sig3(vol)} L of ${sig3(conc)} M copper nitrate` });
   }
   function draw() {
@@ -144,8 +144,8 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
     const same = Math.abs(v2 - v1) < 1e-9, evap = v2 < v1 && !same;
     topline(ctx, same ? `The volume is unchanged, so the ${sig3(n)} mol of copper nitrate is still ${sig3(c1)} M.`
       : `${sig3(v1)} L of ${sig3(c1)} M copper nitrate ${evap ? 'evaporated' : 'diluted'} to ${sig3(v2)} L is ${sig3(c2)} M; the ${sig3(n)} mol of solute is unchanged.`);
-    cylinder(ctx, XS[0], v1, c1, n, '₁', 'the stock solution');
-    cylinder(ctx, XS[1], v2, c2, n, '₂', evap ? 'after evaporation' : 'after dilution');
+    cylinder(ctx, XS[0], v1, c1, n, '₁', 'the stock solution', 'stock');
+    cylinder(ctx, XS[1], v2, c2, n, '₂', evap ? 'after evaporation' : 'after dilution', 'diluted');
     arrow(ctx, 580, 250, 780, 250, PAL.ink, 4);
     text(ctx, same ? 'no change' : evap ? 'water evaporated' : 'water added', 680, 222, PAL.ink, { size: 20, align: 'center' });
     tex(d.readout, `\\kCone\\kVone=(${sig3(c1)}\\ M)(${sig3(v1)}\\ \\text{L})=${sig3(n)}\\ \\text{mol}=(${sig3(c2)}\\ M)(${sig3(v2)}\\ \\text{L})=\\kCtwo\\kVtwo`);

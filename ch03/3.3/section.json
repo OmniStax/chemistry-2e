@@ -921,5 +921,27 @@
    "weight": 2,
    "weights_by": "ai"
   }
+ ],
+ "referents": [
+  {
+   "id": "balance",
+   "label": "the balance",
+   "figure": "sim-molarity"
+  },
+  {
+   "id": "beaker",
+   "label": "the beaker of solution",
+   "figure": "sim-molarity"
+  },
+  {
+   "id": "stock",
+   "label": "the stock solution",
+   "figure": "sim-dilution"
+  },
+  {
+   "id": "diluted",
+   "label": "the diluted solution",
+   "figure": "sim-dilution"
+  }
  ]
 }

@@ -9,7 +9,8 @@
     { "sym": "M_1", "latex": "M_1", "macro": "\\kMone" },
     { "sym": "M_2", "latex": "M_2", "macro": "\\kMtwo" },
     { "sym": "C_1", "latex": "C_1", "macro": "\\kCone" },
-    { "sym": "C_2", "latex": "C_2", "macro": "\\kCtwo" }
+    { "sym": "C_2", "latex": "C_2", "macro": "\\kCtwo" },
+    { "sym": "C_conc", "latex": "C", "macro": "\\kCconc" }
   ],
   "concepts": [
     {

@@ -24,13 +24,13 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
 ===================================================================== */
 (function () {
   const d = sim('sim-ppm', 560);
-  /* the solutions the section names, with the book's masses: [name, solute, mass of solute in g, mass of solution in g] */
+  /* the solutions the section names, with the book's masses: [name, solute, mass of solute in g, mass of solution in g, referent] */
   const SAMPLES = [
-    ['tap water at the lead action level', 'lead', 4.5e-6, 300],
-    ['tap water at the fluoride limit', 'fluoride', 1.2e-3, 300],
-    ['spinal fluid', 'glucose', 0.00375, 5.0],
-    ['liquid bleach', 'NaOCl', 7.4, 100.0],
-    ['concentrated hydrochloric acid', 'HCl', 221, 595],
+    ['tap water at the lead action level', 'lead', 4.5e-6, 300, 'lead-water'],
+    ['tap water at the fluoride limit', 'fluoride', 1.2e-3, 300, 'fluoride-water'],
+    ['spinal fluid', 'glucose', 0.00375, 5.0, 'spinal-fluid'],
+    ['liquid bleach', 'NaOCl', 7.4, 100.0, 'bleach'],
+    ['concentrated hydrochloric acid', 'HCl', 221, 595, 'hcl'],
   ];
   const OTHER = SAMPLES.length;
   const S = F.select(d.controls, { label: '\\text{solution}', aria: 'solution', value: '0',
@@ -85,16 +85,16 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
       }
       names.push([s.name, s.y - 34, PAL.ink, 600]);
     });
-    /* the samples of the section as small marks on the fraction line, named on hover */
-    SAMPLES.forEach((s, j) => {
-      const x = X(Math.log10(s[2] / s[3]));
-      dot(ctx, x, yF, PAL.muted, j === i, 7);
-      hits.push({ x, y: yF, r: 14, name: s[0] + ', ' + s[1] });
-    });
     /* the marker at the chosen ratio, crossing every scale, with the reading on each */
     const xm = X(lg);
     line(ctx, xm, yF, xm, SCALES[2].y + 8, cm, 3, [4, 8]);
     dot(ctx, xm, yF, cm, true, 10);
+    /* the samples of the section as small marks on the fraction line, named on hover */
+    SAMPLES.forEach((s, j) => {
+      const x = X(Math.log10(s[2] / s[3]));
+      dot(ctx, x, yF, F.ref(s[4]), j === i, 7);
+      hits.push({ x, y: yF, r: 14, name: s[0] + ', ' + s[1] });
+    });
     const right = xm < 900;
     [pct, ppm, ppb].forEach((v, j) => {
       const s = SCALES[j];

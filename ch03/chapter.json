@@ -95,7 +95,8 @@
    "meaning": "the molarity of a solution before it is diluted",
    "unit": "M",
    "section": "3.3",
-   "anchor": "3.3-dilution-equation"
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
   },
   {
    "sym": "M_2",
@@ -103,7 +104,8 @@
    "meaning": "the molarity of the solution after it is diluted",
    "unit": "M",
    "section": "3.3",
-   "anchor": "3.3-dilution-equation"
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
   },
   {
    "sym": "L_1",
@@ -111,7 +113,8 @@
    "meaning": "the volume of a solution in liters before it is diluted",
    "unit": "L",
    "section": "3.3",
-   "anchor": "3.3-dilution-equation"
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
   },
   {
    "sym": "L_2",
@@ -119,7 +122,8 @@
    "meaning": "the volume of the solution in liters after it is diluted",
    "unit": "L",
    "section": "3.3",
-   "anchor": "3.3-dilution-equation"
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
   },
   {
    "sym": "C_1",
@@ -127,7 +131,8 @@
    "meaning": "the concentration of a solution before it is diluted, in any unit",
    "unit": "M, or any concentration unit",
    "section": "3.3",
-   "anchor": "3.3-dilution-equation"
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
   },
   {
    "sym": "C_2",
@@ -135,7 +140,8 @@
    "meaning": "the concentration of the solution after it is diluted, in any unit",
    "unit": "M, or any concentration unit",
    "section": "3.3",
-   "anchor": "3.3-dilution-equation"
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
   },
   {
    "sym": "V_1",
@@ -143,7 +149,8 @@
    "meaning": "the volume of a solution before it is diluted",
    "unit": "L, or any volume unit",
    "section": "3.3",
-   "anchor": "3.3-dilution-equation"
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
   },
   {
    "sym": "V_2",
@@ -151,7 +158,8 @@
    "meaning": "the volume of the solution after it is diluted",
    "unit": "L, or any volume unit",
    "section": "3.3",
-   "anchor": "3.3-dilution-equation"
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
   },
   {
    "sym": "n_1",
@@ -159,7 +167,8 @@
    "meaning": "the amount of solute in the solution before it is diluted",
    "unit": "mol",
    "section": "3.3",
-   "anchor": "3.3-dilution-equation"
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
   },
   {
    "sym": "n_2",
@@ -167,7 +176,56 @@
    "meaning": "the amount of solute in the solution after it is diluted, equal to n₁",
    "unit": "mol",
    "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of one element in the sample analysed",
+   "unit": "g",
+   "section": "3.2",
+   "anchor": "3.2-empirical"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the amount of one element in the sample, in moles",
+   "unit": "mol",
+   "section": "3.2",
+   "anchor": "3.2-empirical"
+  },
+  {
+   "sym": "MM",
+   "concept": "molar-mass",
+   "meaning": "the molar mass of an element, the mass in grams of 1 mole of its atoms",
+   "unit": "g/mol",
+   "section": "3.2",
+   "anchor": "3.2-empirical"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of a solution, in any volume unit",
+   "unit": "L",
+   "section": "3.3",
    "anchor": "3.3-dilution-equation"
+  },
+  {
+   "sym": "C_conc",
+   "concept": "concentration",
+   "meaning": "the concentration of a solution, in any concentration unit",
+   "unit": "M, or any concentration unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of a solute or of the solution it is in",
+   "unit": "g",
+   "section": "3.4",
+   "anchor": "3.4-ppm-ppb"
   }
  ]
 }

@@ -21,10 +21,10 @@ const sig = (x, n = 4) => { const e = Math.floor(Math.log10(Math.abs(x))); retur
   const NAME = { Fe: 'iron', O: 'oxygen', C: 'carbon', H: 'hydrogen', Cl: 'chlorine' };
   /* the book's samples; each slider runs from about a fifth to twice the book's mass */
   const SAMPLES = [
-    { label: 'hematite', a: 'Fe', x: 'O', ma: 34.97, mx: 15.03, ra: [5, 70, 0.01, 2], rx: [2, 40, 0.01, 2] },
-    { label: 'carbon and hydrogen', a: 'C', x: 'H', ma: 1.71, mx: 0.287, ra: [0.2, 4, 0.01, 2], rx: [0.03, 0.6, 0.001, 3] },
-    { label: 'chlorine and oxygen', a: 'Cl', x: 'O', ma: 5.31, mx: 8.40, ra: [0.5, 12, 0.01, 2], rx: [1, 20, 0.01, 2] },
-    { label: 'fermentation gas', a: 'C', x: 'O', ma: 27.29, mx: 72.71, ra: [5, 60, 0.01, 2], rx: [10, 150, 0.01, 2] },
+    { label: 'hematite', ref: 'hematite', name: 'the hematite sample', a: 'Fe', x: 'O', ma: 34.97, mx: 15.03, ra: [5, 70, 0.01, 2], rx: [2, 40, 0.01, 2] },
+    { label: 'carbon and hydrogen', ref: 'ch-sample', name: 'the sample of carbon and hydrogen', a: 'C', x: 'H', ma: 1.71, mx: 0.287, ra: [0.2, 4, 0.01, 2], rx: [0.03, 0.6, 0.001, 3] },
+    { label: 'chlorine and oxygen', ref: 'clo-sample', name: 'the sample of chlorine and oxygen', a: 'Cl', x: 'O', ma: 5.31, mx: 8.40, ra: [0.5, 12, 0.01, 2], rx: [1, 20, 0.01, 2] },
+    { label: 'fermentation gas', ref: 'gas', name: 'the fermentation gas', a: 'C', x: 'O', ma: 27.29, mx: 72.71, ra: [5, 60, 0.01, 2], rx: [10, 150, 0.01, 2] },
   ];
   let S = SAMPLES[0];
   const mLabel = (sym) => `\\km_{\\text{${sym}}}`;
@@ -81,6 +81,9 @@ const sig = (x, n = 4) => { const e = Math.floor(Math.log10(Math.abs(x))); retur
       ctx.lineWidth = 2; ctx.strokeStyle = PAL.ink; ctx.strokeRect(x0, by, x1 - x0, bh); ctx.restore();
       if (x1 - x0 > 50) text(ctx, sym, (x0 + x1) / 2, by + bh / 2, PAL.ink, { size: 20, weight: 600, align: 'center' });
     });
+    /* the sample itself, outlined in its referent's colour */
+    ctx.save(); ctx.lineWidth = 4; ctx.strokeStyle = F.ref(S.ref); ctx.strokeRect(bx0 - 3, by - 3, bx1 - bx0 + 6, bh + 6); ctx.restore();
+    for (let x = bx0 + 18; x < bx1; x += 36) hits.push({ x, y: by + bh / 2, r: 18, name: S.name });
     const pa = (100 * ma) / total;
     text(ctx, `% ${A} = ${pa.toFixed(2)}%`, bx0, by + bh + 24, PAL.ink, { size: 19 });
     text(ctx, `% ${X} = ${(100 - pa).toFixed(2)}%`, bx1, by + bh + 24, PAL.ink, { size: 19, align: 'right' });

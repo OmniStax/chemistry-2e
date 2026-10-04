@@ -212,5 +212,27 @@
   { "exercise": "e6", "concept": "empirical-formula-from-percent", "weight": 2, "weights_by": "ai" },
   { "exercise": "e7", "concept": "molecular-formula-from-empirical" },
   { "exercise": "e7", "concept": "empirical-formula-from-percent" }
+ ],
+ "referents": [
+  {
+   "id": "hematite",
+   "label": "the hematite sample",
+   "figure": "sim-empirical"
+  },
+  {
+   "id": "ch-sample",
+   "label": "the sample of carbon and hydrogen",
+   "figure": "sim-empirical"
+  },
+  {
+   "id": "clo-sample",
+   "label": "the sample of chlorine and oxygen",
+   "figure": "sim-empirical"
+  },
+  {
+   "id": "gas",
+   "label": "the fermentation gas",
+   "figure": "sim-empirical"
+  }
  ]
 }

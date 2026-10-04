@@ -183,5 +183,32 @@
   { "exercise": "e5", "concept": "mass-mole-conversion" },
   { "exercise": "e6", "concept": "concentration-unit-conversions", "weight": 2, "weights_by": "ai" },
   { "exercise": "e6", "concept": "molarity" }
+ ],
+ "referents": [
+  {
+   "id": "lead-water",
+   "label": "the tap water at the lead action level",
+   "figure": "sim-ppm"
+  },
+  {
+   "id": "fluoride-water",
+   "label": "the tap water at the fluoride limit",
+   "figure": "sim-ppm"
+  },
+  {
+   "id": "spinal-fluid",
+   "label": "the spinal fluid sample",
+   "figure": "sim-ppm"
+  },
+  {
+   "id": "bleach",
+   "label": "the liquid bleach",
+   "figure": "sim-ppm"
+  },
+  {
+   "id": "hcl",
+   "label": "the concentrated hydrochloric acid",
+   "figure": "sim-ppm"
+  }
  ]
 }

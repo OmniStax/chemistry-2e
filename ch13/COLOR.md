@@ -1,24 +1,57 @@
 # Chapter 13 colour plan
 
-Prepared 2026-09-28 with `config.md`. It refines the book's `COLOR.md` for what this chapter draws; root rules 7 and 22 hold and nothing here invents a hue or coerces a quantity into a neighbouring type. The chapter's central quantities, K and Q, are untyped by the book's decision: they are ratios built from concentrations or pressures that already carry their hue, so a figure colours the concentrations and draws K and Q in ink.
+Prepared 2026-09-28 with `config.md` and brought under root `RULES.md` item 7
+on 2026-10-04, when only the introduction was built. Colour reaches these pages
+in item 7's four ways, fact, convention, referent and category, and where two
+apply the earlier wins. This file records what is particular to the chapter;
+it invents no hue.
 
-## What the chapter colours
+## Categories
 
-| Section | Colours | What wears it |
+| Quantity | Type | Treatment |
 |---|---|---|
-| `intro` | nothing | one drawing |
-| 13.1 | `concentration`, `time`, `rate` | the concentration axis and each species' concentration readout, the clock and time axis, rate_f and rate_r on the rate axis and in the readout |
-| 13.2 | `concentration`, `time`; `pressure` and `temperature` where a K_P figure draws them | the concentration axes and bars of 13.5 and 13.6, [A] to [D] in readouts, the time axis of 13.5; a partial pressure or a T slider in a K_P-to-K_c figure; Q_c, K_c, K_P and Δn in ink |
-| 13.3 | `concentration`, `volume`, `temperature`, `energy`; `rate` where the box reads rate_f and rate_r; `pressure` where it reads partial pressures | the concentrations of the Le Châtelier box, its piston's volume, its temperature slider, ΔH, the energy axis and E_a brackets of Figure 13.8 |
-| 13.4 | `concentration`; `pressure` for a K_P item drawn | the I, C and E rows' concentration bars and values; x in ink, since it stands for a concentration or a pressure by case |
+| [A] to [D], an initial or equilibrium concentration, a change in concentration | `concentration` | The axes and bars of 13.5 and 13.6, the I, C and E rows |
+| K, K_c, K_P, K_c', K_c1, K_c2, Q, Q_c, Q_P | `equilibrium-constant` | Q is its variant away from equilibrium, drawn dashed or hollow beside K |
+| k_f, k_r | `rate-constant` | 13.3's rate laws |
+| rate_f, rate_r | `rate` | 13.1's rate axis and readout |
+| t | `time` | 13.1, the time axis of 13.5 |
+| A partial pressure P_A to P_D | `pressure` | A K_P item and the Le Châtelier box |
+| T | `temperature` | |
+| The volume of the Le Châtelier box's piston | `volume` | |
+| ΔH, E_a, the energy axis of 13.8 | `energy` | |
 
-## Atoms, curves and bars
+These stay in ink: R, Δn, x (a concentration or a pressure by case), the
+stoichiometric coefficients and exponents, the extent-of-reaction axis of 13.8.
 
-- **Molecules** take `F.el` everywhere: N₂O₄ and NO₂ (13.2), Br₂ (13.4's bromine, if drawn), SO₂, O₂, SO₃ (13.5), CO, H₂O, CO₂, H₂ (13.6), H₂, I₂, HI and NO₂, NO, O₂ (13.3), PCl₅, PCl₃, Cl₂ and I₂, I⁻, I₃⁻ (13.4). An ion keeps its element colour with its charge as a mark.
-- **Several species on one graph or bar chart** take `F.cat(i)` per curve or bar, never the concentration hue that their shared axis carries, as Chapter 12 decided; within a figure the same species keeps the same index across its panels.
-- **Two paths on one diagram** (13.8, uncatalyzed and catalyzed): `F.cat(0)` and `F.cat(1)`, the same pair as 12.19, with the E_a brackets in `energy`.
-- **Physical colours**: brown NO₂ darkening the sealed tube of 13.2 and the orange-brown bromine vapour are real colours; drawn at all, they are a named constant for NO₂'s brown, named in the plan line, and never a stand-in for a concentration.
+A word or phrase wears a category when it names a particular one the reader can
+point at: the K_c of 50.0 at 400 °C for H₂ + I₂, the equilibrium [NO₂] and
+[N₂O₄] of the sealed tube, the forward and reverse rates once they are equal in
+13.1's example. The kind in general ("an equilibrium constant", "the rates of
+the forward and reverse reactions" as a definition), its unit and its
+definition stay ink.
 
-## What stays in ink
+## Facts and conventions
 
-K, K_c, K_P, K_c', K_c1, K_c2, Q, Q_c, Q_P, k_f, k_r, R, Δn, x, the stoichiometric coefficients and exponents, the extent-of-reaction axis of 13.8, every axis rule and label that is not one of the coloured types. No `\k` macro appears except for the coloured types: `\kconcA`, `\kconcB`, `\kconcC`, `\kconcD`, `\kM`, `\kt`, `\kratef`, `\krater`, `\krate`, `\kP`, `\kPA`, `\kPB`, `\kPC`, `\kPD`, `\kT`, `\kV`, `\kdH`, `\kEa`.
+`F.el` for every molecule and ion: N₂O₄ and NO₂, Br₂, SO₂, O₂, SO₃, CO, H₂O,
+CO₂, H₂, I₂, HI, NO, PCl₅, PCl₃, Cl₂, I⁻, I₃⁻; an ion keeps its element colour
+with its charge as a mark. Through `F.fact`: NO₂'s brown darkening the sealed
+tube of 13.2 and bromine's orange-brown vapour, never a stand-in for a
+concentration.
+
+## Referents
+
+Each section lists its own when it is built. Planned:
+
+- **13.1.** The forward and reverse reactions of the rate graph, one curve each;
+  rate_f and rate_r split, the f and r in their colours.
+- **13.2.** The species of 13.5 and 13.6 (H₂, I₂, HI; N₂O₄, NO₂), one curve or
+  bar each, the same species in the same colour across a figure's panels; the
+  sealed tube at its two temperatures. The coupled reactions of the last example,
+  K_c1 and K_c2 split, the 1 and 2 in the reactions' colours.
+- **13.3.** The Le Châtelier box and the species in it; the uncatalyzed and
+  catalyzed paths of 13.8, with the E_a brackets in `energy`.
+- **13.4.** The species of each ICE table; the I, C and E rows are labels and
+  stay ink.
+
+The frame of a figure and its labels stay in ink, and with colour coding off
+every figure stays legible from its labels.

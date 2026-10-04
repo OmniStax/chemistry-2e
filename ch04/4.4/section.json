@@ -468,5 +468,17 @@
    "exercise": "e10",
    "concept": "stoichiometry"
   }
+ ],
+ "referents": [
+  {
+   "id": "bread",
+   "label": "the slices of bread",
+   "figure": "sim-sandwich"
+  },
+  {
+   "id": "cheese",
+   "label": "the slices of cheese",
+   "figure": "sim-sandwich"
+  }
  ]
 }

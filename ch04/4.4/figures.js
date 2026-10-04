@@ -34,9 +34,10 @@ const shuffled = (n, seed) => { const a = [...Array(n).keys()]; let s = seed; fo
 /* =====================================================================
    FIGURE 4.13: the grilled cheese sandwiches. The slices provided in two
    rows, the sandwiches the recipe makes from them below, and the slices
-   left over. Bread and cheese are told apart by the categorical palette,
-   since they are ingredients with no element and no type. Still: the
-   picture answers its sliders and nothing here has a clock.
+   left over. Bread and cheese are the section's referents, each slice and
+   its count in its own colour, since they are ingredients with no element
+   and no type. Still: the picture answers its sliders and nothing here
+   has a clock.
 ===================================================================== */
 (function () {
   const d = sim('sim-sandwich', 600);
@@ -45,10 +46,10 @@ const shuffled = (n, seed) => { const a = [...Array(n).keys()]; let s = seed; fo
   const Ch = ctl(d.controls, { label: '\\text{cheese slices}', cls: '', min: 0, max: 15, step: 1, value: 11, unit: '', dec: 0, aria: 'slices of cheese provided',
     specials: [{ at: () => (Bs.v % 2 === 0 && Bs.v / 2 <= 15 ? Bs.v / 2 : null), label: '1 per 2 bread' }] });
   const X0 = 250, DX = 54;
-  function bread(ctx, x, y) { const c = F.cat(0); rrect(ctx, x, y, 44, 44, 12, alpha(c, 0.35), c, 3); }
-  function cheese(ctx, x, y) { const c = F.cat(1); rrect(ctx, x + 3, y + 3, 38, 38, 3, alpha(c, 0.55), c, 2); }
+  function bread(ctx, x, y) { const c = F.ref('bread'); rrect(ctx, x, y, 44, 44, 12, alpha(c, 0.35), c, 3); }
+  function cheese(ctx, x, y) { const c = F.ref('cheese'); rrect(ctx, x + 3, y + 3, 38, 38, 3, alpha(c, 0.55), c, 2); }
   function sandwich(ctx, x, y) {
-    const b = F.cat(0), c = F.cat(1);
+    const b = F.ref('bread'), c = F.ref('cheese');
     rrect(ctx, x, y, 54, 13, 5, alpha(b, 0.35), b, 2.5);
     rrect(ctx, x - 3, y + 15, 60, 7, 2, alpha(c, 0.55), c, 2);
     rrect(ctx, x, y + 24, 54, 13, 5, alpha(b, 0.35), b, 2.5);
@@ -58,8 +59,8 @@ const shuffled = (n, seed) => { const a = [...Array(n).keys()]; let s = seed; fo
     const nb = Bs.v, nc = Ch.v, s = Math.min(Math.floor(nb / 2), nc), lb = nb - 2 * s, lc = nc - s;
     /* what is provided */
     text(ctx, 'Provided with:', 60, 104, PAL.ink, { size: 22, weight: 600 });
-    text(ctx, nb + ' slices of bread', 60, 150, PAL.ink, { size: 20 });
-    text(ctx, nc + ' slices of cheese', 60, 262, PAL.ink, { size: 20 });
+    text(ctx, nb + ' slices of bread', 60, 150, F.ref('bread'), { size: 20 });
+    text(ctx, nc + ' slices of cheese', 60, 262, F.ref('cheese'), { size: 20 });
     for (let i = 0; i < nb; i++) bread(ctx, X0 + (i % 15) * DX, 128 + Math.floor(i / 15) * 54);
     for (let i = 0; i < nc; i++) cheese(ctx, X0 + i * DX, 240);
     arrow(ctx, 700, 300, 700, 348, PAL.muted, 4);

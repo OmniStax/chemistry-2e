@@ -226,5 +226,37 @@
   { "exercise": "e8", "concept": "titration-calculation" },
   { "exercise": "e9", "concept": "titration-calculation" },
   { "exercise": "e9", "concept": "gravimetric-analysis" }
+ ],
+ "referents": [
+  {
+   "id": "buret",
+   "label": "the buret of sodium hydroxide",
+   "figure": "sim-titration"
+  },
+  {
+   "id": "sample",
+   "label": "the sample of hydrochloric acid in its flask",
+   "figure": "sim-titration"
+  },
+  {
+   "id": "furnace",
+   "label": "the furnace",
+   "figure": "sim-combustion"
+  },
+  {
+   "id": "combustion-sample",
+   "label": "the sample burned",
+   "figure": "sim-combustion"
+  },
+  {
+   "id": "h2o-absorber",
+   "label": "the water absorber",
+   "figure": "sim-combustion"
+  },
+  {
+   "id": "co2-absorber",
+   "label": "the carbon dioxide absorber",
+   "figure": "sim-combustion"
+  }
  ]
 }

@@ -57,95 +57,180 @@
  ],
  "exercises": [
   {
-   "id": "cyl1", "source_id": "fs-idp48900096", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-moles-reactant" }, "cite": "moles",
+   "id": "cyl1",
+   "source_id": "fs-idp48900096",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-moles-reactant" },
+   "cite": "moles",
    "prompt": "How many moles of Ca(OH)<sub>2</sub> are required to react with 1.36 mol of H<sub>3</sub>PO<sub>4</sub> to produce Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> according to the equation $3\\text{Ca}{(\\text{OH})}_{2}+2{\\text{H}}_{3}{\\text{PO}}_{4}\\;\\longrightarrow \\;{\\text{Ca}}_{3}{({\\text{PO}}_{4})}_{2}+6{\\text{H}}_{2}\\text{O}$?",
    "answer": { "type": "number", "generated_by": "source", "value": 2.04, "unit": "mol", "hint": "Multiply the moles of H<sub>3</sub>PO<sub>4</sub> by the factor 3 mol Ca(OH)<sub>2</sub> per 2 mol H<sub>3</sub>PO<sub>4</sub>.", "solution": "2.04 mol" }
   },
   {
-   "id": "cyl2", "source_id": "fs-idp9124448", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-product-molecules" }, "cite": "moles",
+   "id": "cyl2",
+   "source_id": "fs-idp9124448",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-product-molecules" },
+   "cite": "moles",
    "prompt": "How many NH<sub>3</sub> molecules are produced by the reaction of 4.0 mol of Ca(OH)<sub>2</sub> according to the following equation: $${({\\text{NH}}_{4})}_{2}{\\text{SO}}_{4}+\\text{Ca}{(\\text{OH})}_{2}\\;\\longrightarrow \\;2{\\text{NH}}_{3}+{\\text{CaSO}}_{4}+2{\\text{H}}_{2}\\text{O}$$",
    "answer": { "type": "number", "generated_by": "source", "value": 4.8e24, "unit": "NH₃ molecules", "hint": "Convert moles of Ca(OH)<sub>2</sub> to moles of NH<sub>3</sub> with the stoichiometric factor, then use Avogadro’s number.", "solution": "4.8 $\\times$ 10<sup>24</sup> NH<sub>3</sub> molecules" }
   },
   {
-   "id": "cyl3", "source_id": "fs-idp113495744", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-masses-product" }, "cite": "masses",
+   "id": "cyl3",
+   "source_id": "fs-idp113495744",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-masses-product" },
+   "cite": "masses",
    "prompt": "What mass of gallium oxide, Ga<sub>2</sub>O<sub>3</sub>, can be prepared from 29.0 g of gallium metal? The equation for the reaction is $4\\text{Ga}+3{\\text{O}}_{2}\\;\\longrightarrow \\;2{\\text{Ga}}_{2}{\\text{O}}_{3}.$",
    "answer": { "type": "number", "generated_by": "source", "value": 39.0, "unit": "g", "hint": "Go from the mass of Ga to its moles, to moles of Ga<sub>2</sub>O<sub>3</sub>, and then to its mass.", "solution": "39.0 g" }
   },
   {
-   "id": "cyl4", "source_id": "fs-idp274853984", "kind": "check-your-learning", "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-masses-reactants" }, "cite": "masses",
+   "id": "cyl4",
+   "source_id": "fs-idp274853984",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-masses-reactants" },
+   "cite": "masses",
    "prompt": "What mass of CO is required to react with 25.13 g of Fe<sub>2</sub>O<sub>3</sub> according to the equation ${\\text{Fe}}_{2}{\\text{O}}_{3}+3\\text{CO}\\;\\longrightarrow \\;2\\text{Fe}+3{\\text{CO}}_{2}$?",
    "answer": { "type": "number", "generated_by": "source", "value": 13.22, "unit": "g", "hint": "Use the molar mass of Fe<sub>2</sub>O<sub>3</sub>, the factor 3 mol CO per 1 mol Fe<sub>2</sub>O<sub>3</sub>, and the molar mass of CO.", "solution": "13.22 g" }
   },
   {
-   "id": "e1", "source_id": "fs-idp147780304", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "masses",
+   "id": "e1",
+   "source_id": "fs-idp147780304",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "masses",
    "figure": { "src": "/media/ch04/CNX_Chem_04_03_etheneBr_img.jpg", "alt": "Part (f): the number of moles and the mass of 1,2-dibromoethane, drawn as a structural formula, formed by the reaction of 12.85 g of ethene, drawn as a structural formula, with an excess of Br2." },
    "prompt": "Determine the number of moles and the mass requested for each reaction: (a) The number of moles and the mass of chlorine, Cl<sub>2</sub>, required to react with 10.0 g of sodium metal, Na, to produce sodium chloride, NaCl. (b) The number of moles and the mass of oxygen formed by the decomposition of 1.252 g of mercury(II) oxide. (c) The number of moles and the mass of sodium nitrate, NaNO<sub>3</sub>, required to produce 128 g of oxygen. (NaNO<sub>2</sub> is the other product.) (d) The number of moles and the mass of carbon dioxide formed by the combustion of 20.0 kg of carbon in an excess of oxygen. (e) The number of moles and the mass of copper(II) carbonate needed to produce 1.500 kg of copper(II) oxide. (CO<sub>2</sub> is the other product.) (f) The number of moles and the mass of the product shown in the figure, formed by the reaction of 12.85 g of the reactant shown with an excess of Br<sub>2</sub>.",
-   "answer": { "type": "multi", "generated_by": "source",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
     "parts": [
-     { "part": "(a) moles Cl₂", "value": 0.217, "unit": "mol" }, { "part": "(a) mass Cl₂", "value": 15.4, "unit": "g" },
-     { "part": "(b) moles O₂", "value": 2.890e-3, "unit": "mol" }, { "part": "(b) mass O₂", "value": 9.248e-2, "unit": "g" },
-     { "part": "(c) moles NaNO₃", "value": 8.00, "unit": "mol" }, { "part": "(c) mass NaNO₃", "value": 680, "unit": "g" },
-     { "part": "(d) moles CO₂", "value": 1665, "unit": "mol" }, { "part": "(d) mass CO₂", "value": 73.3, "unit": "kg" },
-     { "part": "(e) moles", "value": 18.86, "unit": "mol" }, { "part": "(e) mass CuCO₃", "value": 2.330, "unit": "kg" },
-     { "part": "(f) moles C₂H₄Br₂", "value": 0.4580, "unit": "mol" }, { "part": "(f) mass C₂H₄Br₂", "value": 86.05, "unit": "g" }
+     { "part": "(a) moles Cl₂", "value": 0.217, "unit": "mol" },
+     { "part": "(a) mass Cl₂", "value": 15.4, "unit": "g" },
+     { "part": "(b) moles O₂", "value": 2.890e-3, "unit": "mol" },
+     { "part": "(b) mass O₂", "value": 9.248e-2, "unit": "g" },
+     { "part": "(c) moles NaNO₃", "value": 8.00, "unit": "mol" },
+     { "part": "(c) mass NaNO₃", "value": 680, "unit": "g" },
+     { "part": "(d) moles CO₂", "value": 1665, "unit": "mol" },
+     { "part": "(d) mass CO₂", "value": 73.3, "unit": "kg" },
+     { "part": "(e) moles", "value": 18.86, "unit": "mol" },
+     { "part": "(e) mass CuCO₃", "value": 2.330, "unit": "kg" },
+     { "part": "(f) moles C₂H₄Br₂", "value": 0.4580, "unit": "mol" },
+     { "part": "(f) mass C₂H₄Br₂", "value": 86.05, "unit": "g" }
     ],
-    "solution": "(a) 0.435 mol Na, 0.217 mol Cl<sub>2</sub>, 15.4 g Cl<sub>2</sub>; (b) 0.005780 mol HgO, 2.890 $\\times$ 10<sup>−3</sup> mol O<sub>2</sub>, 9.248 $\\times$ 10<sup>−2</sup> g O<sub>2</sub>; (c) 8.00 mol NaNO<sub>3</sub>, 6.8 $\\times$ 10<sup>2</sup> g NaNO<sub>3</sub>; (d) 1665 mol CO<sub>2</sub>, 73.3 kg CO<sub>2</sub>; (e) 18.86 mol CuO, 2.330 kg CuCO<sub>3</sub>; (f) 0.4580 mol C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub>, 86.05 g C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub>" }
+    "solution": "(a) 0.435 mol Na, 0.217 mol Cl<sub>2</sub>, 15.4 g Cl<sub>2</sub>; (b) 0.005780 mol HgO, 2.890 $\\times$ 10<sup>−3</sup> mol O<sub>2</sub>, 9.248 $\\times$ 10<sup>−2</sup> g O<sub>2</sub>; (c) 8.00 mol NaNO<sub>3</sub>, 6.8 $\\times$ 10<sup>2</sup> g NaNO<sub>3</sub>; (d) 1665 mol CO<sub>2</sub>, 73.3 kg CO<sub>2</sub>; (e) 18.86 mol CuO, 2.330 kg CuCO<sub>3</sub>; (f) 0.4580 mol C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub>, 86.05 g C<sub>2</sub>H<sub>4</sub>Br<sub>2</sub>"
+   }
   },
   {
-   "id": "e2", "source_id": "fs-idp61309952", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "masses",
+   "id": "e2",
+   "source_id": "fs-idp61309952",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "masses",
    "figure": { "src": "/media/ch04/CNX_Chem_04_03_ethene_img.jpg", "alt": "Part (f): the number of moles and the mass of ethene, drawn as a structural formula, required to react with H2O to produce 9.55 g of ethanol, drawn as a structural formula." },
    "prompt": "Determine the number of moles and the mass requested for each reaction: (a) The number of moles and the mass of Mg required to react with 5.00 g of HCl and produce MgCl<sub>2</sub> and H<sub>2</sub>. (b) The number of moles and the mass of oxygen formed by the decomposition of 1.252 g of silver(I) oxide. (c) The number of moles and the mass of magnesium carbonate, MgCO<sub>3</sub>, required to produce 283 g of carbon dioxide. (MgO is the other product.) (d) The number of moles and the mass of water formed by the combustion of 20.0 kg of acetylene, C<sub>2</sub>H<sub>2</sub>, in an excess of oxygen. (e) The number of moles and the mass of barium peroxide, BaO<sub>2</sub>, needed to produce 2.500 kg of barium oxide, BaO (O<sub>2</sub> is the other product.) (f) The number of moles and the mass of the reactant shown in the figure required to react with H<sub>2</sub>O to produce 9.55 g of the product shown.",
-   "answer": { "type": "multi", "generated_by": "source",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
     "parts": [
-     { "part": "(a) moles Mg", "value": 0.0686, "unit": "mol" }, { "part": "(a) mass Mg", "value": 1.67, "unit": "g" },
-     { "part": "(b) moles O₂", "value": 2.701e-3, "unit": "mol" }, { "part": "(b) mass O₂", "value": 0.08644, "unit": "g" },
-     { "part": "(c) moles MgCO₃", "value": 6.43, "unit": "mol" }, { "part": "(c) mass MgCO₃", "value": 542, "unit": "g" },
-     { "part": "(d) moles H₂O", "value": 768, "unit": "mol" }, { "part": "(d) mass H₂O", "value": 13.8, "unit": "kg" },
-     { "part": "(e) moles BaO₂", "value": 16.31, "unit": "mol" }, { "part": "(e) mass BaO₂", "value": 2762, "unit": "g" },
-     { "part": "(f) moles C₂H₄", "value": 0.207, "unit": "mol" }, { "part": "(f) mass C₂H₄", "value": 5.81, "unit": "g" }
+     { "part": "(a) moles Mg", "value": 0.0686, "unit": "mol" },
+     { "part": "(a) mass Mg", "value": 1.67, "unit": "g" },
+     { "part": "(b) moles O₂", "value": 2.701e-3, "unit": "mol" },
+     { "part": "(b) mass O₂", "value": 0.08644, "unit": "g" },
+     { "part": "(c) moles MgCO₃", "value": 6.43, "unit": "mol" },
+     { "part": "(c) mass MgCO₃", "value": 542, "unit": "g" },
+     { "part": "(d) moles H₂O", "value": 768, "unit": "mol" },
+     { "part": "(d) mass H₂O", "value": 13.8, "unit": "kg" },
+     { "part": "(e) moles BaO₂", "value": 16.31, "unit": "mol" },
+     { "part": "(e) mass BaO₂", "value": 2762, "unit": "g" },
+     { "part": "(f) moles C₂H₄", "value": 0.207, "unit": "mol" },
+     { "part": "(f) mass C₂H₄", "value": 5.81, "unit": "g" }
     ],
-    "solution": "(a) 0.0686 mol Mg, 1.67 g Mg; (b) 2.701 $\\times$ 10<sup>−3</sup> mol O<sub>2</sub>, 0.08644 g O<sub>2</sub>; (c) 6.43 mol MgCO<sub>3</sub>, 542 g MgCO<sub>3</sub>; (d) 768 mol H<sub>2</sub>O, 13.8 kg H<sub>2</sub>O; (e) 16.31 mol BaO<sub>2</sub>, 2762 g BaO<sub>2</sub>; (f) 0.207 mol C<sub>2</sub>H<sub>4</sub>, 5.81 g C<sub>2</sub>H<sub>4</sub>" }
+    "solution": "(a) 0.0686 mol Mg, 1.67 g Mg; (b) 2.701 $\\times$ 10<sup>−3</sup> mol O<sub>2</sub>, 0.08644 g O<sub>2</sub>; (c) 6.43 mol MgCO<sub>3</sub>, 542 g MgCO<sub>3</sub>; (d) 768 mol H<sub>2</sub>O, 13.8 kg H<sub>2</sub>O; (e) 16.31 mol BaO<sub>2</sub>, 2762 g BaO<sub>2</sub>; (f) 0.207 mol C<sub>2</sub>H<sub>4</sub>, 5.81 g C<sub>2</sub>H<sub>4</sub>"
+   }
   },
   {
-   "id": "e3", "source_id": "fs-idp272460112", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "routes",
+   "id": "e3",
+   "source_id": "fs-idp272460112",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "routes",
    "prompt": "Gallium chloride is formed by the reaction of 2.6 L of a 1.44 M solution of HCl according to the following equation: $2\\text{Ga}+6\\text{HCl}\\;\\longrightarrow \\;2{\\text{GaCl}}_{3}+3{\\text{H}}_{2}.$ (a) Outline the steps necessary to determine the number of moles and mass of gallium chloride. (b) Perform the calculations outlined.",
-   "answer": { "type": "multi", "generated_by": "source",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
     "parts": [ { "part": "(b) moles GaCl₃", "value": 1.25, "unit": "mol" }, { "part": "(b) mass GaCl₃", "value": 220, "unit": "g" } ],
-    "solution": "(a) $\\text{volume HCl solution}\\;\\longrightarrow \\;\\text{mol HCl}\\;\\longrightarrow \\;{\\text{mol GaCl}}_{3};$ (b) 1.25 mol GaCl<sub>3</sub>, 2.2 $\\times$ 10<sup>2</sup> g GaCl<sub>3</sub>" }
+    "solution": "(a) $\\text{volume HCl solution}\\;\\longrightarrow \\;\\text{mol HCl}\\;\\longrightarrow \\;{\\text{mol GaCl}}_{3};$ (b) 1.25 mol GaCl<sub>3</sub>, 2.2 $\\times$ 10<sup>2</sup> g GaCl<sub>3</sub>"
+   }
   },
   {
-   "id": "e4", "source_id": "fs-idp172099056", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "masses",
+   "id": "e4",
+   "source_id": "fs-idp172099056",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "masses",
    "prompt": "Silver is often extracted from ores such as K[Ag(CN)<sub>2</sub>] and then recovered by the reaction $2\\text{K}[\\text{Ag}{(\\text{CN})}_{2}](aq)+\\text{Zn}(s)\\;\\longrightarrow \\;\\text{2Ag}(s)+\\text{Zn}{(\\text{CN})}_{2}(aq)+2\\text{KCN}(aq)$ (a) How many molecules of Zn(CN)<sub>2</sub> are produced by the reaction of 35.27 g of K[Ag(CN)<sub>2</sub>]? (b) What mass of Zn(CN)<sub>2</sub> is produced?",
-   "answer": { "type": "multi", "generated_by": "source",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
     "parts": [ { "part": "(a)", "value": 5.337e22, "unit": "molecules" }, { "part": "(b)", "value": 10.41, "unit": "g" } ],
-    "solution": "(a) 5.337 $\\times$ 10<sup>22</sup> molecules; (b) 10.41 g Zn(CN)<sub>2</sub>" }
+    "solution": "(a) 5.337 $\\times$ 10<sup>22</sup> molecules; (b) 10.41 g Zn(CN)<sub>2</sub>"
+   }
   },
   {
-   "id": "e5", "source_id": "fs-idp65199360", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "masses",
+   "id": "e5",
+   "source_id": "fs-idp65199360",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "masses",
    "prompt": "Carborundum is silicon carbide, SiC, a very hard material used as an abrasive on sandpaper and in other applications. It is prepared by the reaction of pure sand, SiO<sub>2</sub>, with carbon at high temperature. Carbon monoxide, CO, is the other product of this reaction. Write the balanced equation for the reaction, and calculate how much SiO<sub>2</sub> is required to produce 3.00 kg of SiC.",
    "answer": { "type": "number", "generated_by": "source", "value": 4.50, "unit": "kg", "solution": "${\\text{SiO}}_{2}+3\\text{C}\\;\\longrightarrow \\;\\text{SiC}+2\\text{CO},$ 4.50 kg SiO<sub>2</sub>" }
   },
   {
-   "id": "e6", "source_id": "fs-idp220471472", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "masses",
+   "id": "e6",
+   "source_id": "fs-idp220471472",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "masses",
    "prompt": "Urea, CO(NH<sub>2</sub>)<sub>2</sub>, is manufactured on a large scale for use in producing urea-formaldehyde plastics and as a fertilizer. What is the maximum mass of urea that can be manufactured from the CO<sub>2</sub> produced by combustion of $1.00\\;\\times \\;{10}^{3}\\;\\text{kg}$ of carbon followed by the reaction? ${\\text{CO}}_{2}(g)+2{\\text{NH}}_{3}(g)\\;\\longrightarrow \\;\\text{CO}\\;{({\\text{NH}}_{2})}_{2}(s)+{\\text{H}}_{2}\\text{O}(l)$",
    "answer": { "type": "number", "generated_by": "source", "value": 5.00e3, "unit": "kg", "solution": "5.00 $\\times$ 10<sup>3</sup> kg" }
   },
   {
-   "id": "e7", "source_id": "fs-idp82714064", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "routes",
+   "id": "e7",
+   "source_id": "fs-idp82714064",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "routes",
    "prompt": "A compact car gets 37.5 miles per gallon on the highway. If gasoline contains 84.2% carbon by mass and has a density of 0.8205 g/mL, determine the mass of carbon dioxide produced during a 500-mile trip (3.785 liters per gallon).",
    "answer": { "type": "number", "generated_by": "source", "value": 1.28e5, "unit": "g", "solution": "1.28 $\\times$ 10<sup>5</sup> g CO<sub>2</sub>" }
   },
   {
-   "id": "e8", "source_id": "fs-idp8090960", "kind": "exercise", "bloom": "Apply", "place": { "at": "end" }, "cite": "routes",
+   "id": "e8",
+   "source_id": "fs-idp8090960",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "routes",
    "prompt": "What volume of a 0.2089 <em>M</em> KI solution contains enough KI to react exactly with the Cu(NO<sub>3</sub>)<sub>2</sub> in 43.88 mL of a 0.3842 <em>M</em> solution of Cu(NO<sub>3</sub>)<sub>2</sub>? $2\\text{Cu}{({\\text{NO}}_{3})}_{2}+4\\text{KI}\\;\\longrightarrow \\;2\\text{CuI}+{\\text{I}}_{2}+4{\\text{KNO}}_{3}$",
    "answer": { "type": "number", "generated_by": "source", "value": 161.4, "unit": "mL", "solution": "161.4 mL KI solution" }
   },
   {
-   "id": "e9", "source_id": "fs-idp149769296", "kind": "exercise", "bloom": "Analyze", "place": { "at": "end" }, "cite": "masses",
+   "id": "e9",
+   "source_id": "fs-idp149769296",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "masses",
    "prompt": "The toxic pigment called white lead, Pb<sub>3</sub>(OH)<sub>2</sub>(CO<sub>3</sub>)<sub>2</sub>, has been replaced in white paints by rutile, TiO<sub>2</sub>. How much rutile (g) can be prepared from 379 g of an ore that contains 88.3% ilmenite (FeTiO<sub>3</sub>) by mass? $2{\\text{FeTiO}}_{3}+4\\text{HCl}+{\\text{Cl}}_{2}\\;\\longrightarrow \\;2{\\text{FeCl}}_{3}+2{\\text{TiO}}_{2}+2{\\text{H}}_{2}\\text{O}$",
    "answer": { "type": "number", "generated_by": "source", "value": 176, "unit": "g", "solution": "176 g TiO<sub>2</sub>" }
   }
@@ -167,5 +252,17 @@
   { "exercise": "e7", "concept": "mass-stoichiometry" },
   { "exercise": "e8", "concept": "mass-stoichiometry" },
   { "exercise": "e9", "concept": "mass-stoichiometry" }
+ ],
+ "referents": [
+  {
+   "id": "substance-a",
+   "label": "substance A, the one given",
+   "figure": "sim-flowchart"
+  },
+  {
+   "id": "substance-b",
+   "label": "substance B, the one sought",
+   "figure": "sim-flowchart"
+  }
  ]
 }

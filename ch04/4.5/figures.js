@@ -8,7 +8,8 @@ function readout(host, main, small) { tex(host, main); if (small) host.appendChi
 const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 
 /* colours that are physical facts (book RULES, Files): the pink an acid-base indicator such as phenolphthalein takes
-   at the end point, the green and blue grains the book draws in the two absorbers, and the glow of the furnace */
+   at the end point, the green and blue grains the book draws in the two absorbers, and the glow of the furnace;
+   each is drawn through F.fact */
 const INDICATOR_PINK = '#e8559b';
 const H2O_ABSORBER = '#8cc63f';
 const CO2_ABSORBER = '#4a6fe0';
@@ -24,7 +25,9 @@ const SUB = ['', '', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
    The buret delivers titrant at a steady rate; the graph beside it counts
    the millimoles of NaOH delivered against the millimoles of HCl in the
    sample, and the indicator turns when the two are equal. Moving: a
-   titration has a clock, and the delivery stops at the end point.
+   titration has a clock, and the delivery stops at the end point. The
+   buret and the flask of sample are the caption's referents, their glass
+   in their own colours.
 ===================================================================== */
 (function () {
   const d = sim('sim-titration', 620);
@@ -46,7 +49,7 @@ const SUB = ['', '', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
     /* the buret: 0 mL at the top of its scale, 50 mL at the bottom */
     const bx = 250, bw = 36, Y = (mL) => 130 + 5.4 * mL;
     ctx.save(); ctx.fillStyle = alpha(cc, 0.18); ctx.fillRect(bx - bw / 2, Y(V), bw, Y(CAP) - Y(V) + 16); ctx.restore();
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(bx - bw / 2, Y(0) - 30); ctx.lineTo(bx - bw / 2, Y(CAP) + 16); ctx.lineTo(bx - 6, Y(CAP) + 40); ctx.lineTo(bx - 3, Y(CAP) + 62);
+    ctx.save(); ctx.strokeStyle = F.ref('buret'); ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(bx - bw / 2, Y(0) - 30); ctx.lineTo(bx - bw / 2, Y(CAP) + 16); ctx.lineTo(bx - 6, Y(CAP) + 40); ctx.lineTo(bx - 3, Y(CAP) + 62);
     ctx.moveTo(bx + bw / 2, Y(0) - 30); ctx.lineTo(bx + bw / 2, Y(CAP) + 16); ctx.lineTo(bx + 6, Y(CAP) + 40); ctx.lineTo(bx + 3, Y(CAP) + 62); ctx.stroke(); ctx.restore();
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.fillRect(bx - 34, Y(CAP) + 26, 68, 12); ctx.strokeRect(bx - 34, Y(CAP) + 26, 68, 12); ctx.restore();
     for (let mL = 0; mL <= CAP; mL++) { const big = mL % 10 === 0, mid = mL % 5 === 0; line(ctx, bx - bw / 2, Y(mL), bx - bw / 2 + (big ? 18 : mid ? 12 : 7), Y(mL), PAL.ink, big ? 2 : 1); if (big) text(ctx, String(mL), bx - bw / 2 - 12, Y(mL), PAL.muted, { size: 16, align: 'right' }); }
@@ -58,8 +61,8 @@ const SUB = ['', '', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
     const fx = bx, ftop = 470, fbot = 596, liquid = (VS.v + V) / 100;
     const shape = (y) => (y < ftop + 26 ? 22 : 22 + (y - ftop - 26) * 0.95);
     const ly = fbot - (fbot - ftop - 30) * Math.min(1, liquid);
-    ctx.save(); ctx.fillStyle = reached ? alpha(INDICATOR_PINK, 0.55) : alpha(PAL.muted, 0.14); ctx.beginPath(); ctx.moveTo(fx - shape(ly), ly); ctx.lineTo(fx + shape(ly), ly); ctx.lineTo(fx + shape(fbot), fbot); ctx.lineTo(fx - shape(fbot), fbot); ctx.closePath(); ctx.fill(); ctx.restore();
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(fx - 22, ftop); ctx.lineTo(fx - 22, ftop + 26); ctx.lineTo(fx - shape(fbot), fbot); ctx.lineTo(fx + shape(fbot), fbot); ctx.lineTo(fx + 22, ftop + 26); ctx.lineTo(fx + 22, ftop); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.fillStyle = reached ? alpha(F.fact(INDICATOR_PINK), 0.55) : alpha(PAL.muted, 0.14); ctx.beginPath(); ctx.moveTo(fx - shape(ly), ly); ctx.lineTo(fx + shape(ly), ly); ctx.lineTo(fx + shape(fbot), fbot); ctx.lineTo(fx - shape(fbot), fbot); ctx.closePath(); ctx.fill(); ctx.restore();
+    ctx.save(); ctx.strokeStyle = F.ref('sample'); ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(fx - 22, ftop); ctx.lineTo(fx - 22, ftop + 26); ctx.lineTo(fx - shape(fbot), fbot); ctx.lineTo(fx + shape(fbot), fbot); ctx.lineTo(fx + 22, ftop + 26); ctx.lineTo(fx + 22, ftop); ctx.stroke(); ctx.restore();
     text(ctx, fmt(VS.v, 2) + ' mL HCl sample', fx + shape(fbot) + 16, fbot - 40, cv, { size: 20, weight: 600 });
     text(ctx, reached ? 'the indicator has turned' : 'with a few drops of indicator', fx + shape(fbot) + 16, fbot - 12, PAL.muted, { size: 17 });
     /* drops falling from the tip while the stopcock is open */
@@ -146,7 +149,9 @@ routeFigure('fig-combmap', 690,
    it. The reader sets the mass each absorber gains; beneath each the
    moles of H or C it stands for, and the headline the ratio and the
    empirical formula. Still: the readings answer the sliders; the gas
-   stream is notation, drawn once.
+   stream is notation, drawn once. The furnace, the sample and the two
+   absorbers are the caption's referents, outlined and named in their own
+   colours; the furnace glow and the absorber grains stay facts.
 ===================================================================== */
 (function () {
   const d = sim('sim-combustion', 470);
@@ -158,8 +163,8 @@ routeFigure('fig-combmap', 690,
     let s = seed; const rnd = () => { s = (s * 16807) % 2147483647; return s / 2147483647; };
     for (let i = 0; i < n; i++) { const x = x0 + rnd() * (x1 - x0), y = y0 + rnd() * (y1 - y0); dot(ctx, x, y, alpha(color, 0.45 + 0.5 * rnd()), true, 6); }
   }
-  function capsule(ctx, x0, x1, yc, h) {
-    ctx.save(); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 3; ctx.fillStyle = alpha(PAL.panel, 0.4); ctx.beginPath(); ctx.roundRect(x0, yc - h / 2, x1 - x0, h, h / 2); ctx.fill(); ctx.stroke(); ctx.restore();
+  function capsule(ctx, x0, x1, yc, h, rim = PAL.muted) {
+    ctx.save(); ctx.strokeStyle = rim; ctx.lineWidth = 3; ctx.fillStyle = alpha(PAL.panel, 0.4); ctx.beginPath(); ctx.roundRect(x0, yc - h / 2, x1 - x0, h, h / 2); ctx.fill(); ctx.stroke(); ctx.restore();
   }
   function formula(nC, nH) {
     const r = nH / nC;
@@ -174,29 +179,31 @@ routeFigure('fig-combmap', 690,
     const name = f ? 'C' + SUB[f.c] + 'H' + SUB[f.h] : null;
     /* the oxygen stream in, the furnace and the sample boat */
     arrow(ctx, 40, yc, 150, yc, PAL.ink, 4); text(ctx, 'O₂', 40, yc - 30, PAL.ink, { size: 22, weight: 600 });
-    ctx.save(); ctx.fillStyle = alpha(FURNACE, 0.28); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.fillRect(170, 130, 300, 240); ctx.strokeRect(170, 130, 300, 240); ctx.restore();
+    const rf = F.ref('furnace'), rs = F.ref('combustion-sample');
+    ctx.save(); ctx.fillStyle = alpha(F.fact(FURNACE), 0.28); ctx.strokeStyle = rf; ctx.lineWidth = 3; ctx.fillRect(170, 130, 300, 240); ctx.strokeRect(170, 130, 300, 240); ctx.restore();
     ctx.save(); ctx.fillStyle = PAL.panel; ctx.fillRect(200, 180, 240, 140); ctx.restore();
     line(ctx, 150, yc - 10, 540, yc - 10, PAL.muted, 3); line(ctx, 150, yc + 10, 540, yc + 10, PAL.muted, 3);
     capsule(ctx, 210, 430, yc, 100);
-    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.35); ctx.beginPath(); ctx.ellipse(320, yc + 30, 80, 12, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
-    text(ctx, 'Furnace', 320, 106, PAL.ink, { size: 20, align: 'center' });
-    text(ctx, 'Sample', 320, 400, PAL.ink, { size: 20, align: 'center' }); line(ctx, 320, 382, 320, yc + 44, PAL.ink, 1.5);
+    ctx.save(); ctx.fillStyle = alpha(rs, 0.55); ctx.beginPath(); ctx.ellipse(320, yc + 30, 80, 12, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+    text(ctx, 'Furnace', 320, 106, rf, { size: 20, align: 'center' });
+    text(ctx, 'Sample', 320, 400, rs, { size: 20, align: 'center' }); line(ctx, 320, 382, 320, yc + 44, rs, 1.5);
     arrow(ctx, 250, yc, 380, yc, PAL.ink, 4);
     text(ctx, 'CO₂, H₂O, O₂, and other gases', 500, 120, PAL.ink, { size: 18 }); line(ctx, 540, 132, 515, yc - 12, PAL.ink, 1.5);
     /* the water absorber, then the carbon dioxide absorber */
-    const A = [{ x0: 560, x1: 800, color: H2O_ABSORBER, seed: 7, head: 'H₂O absorber', sub: 'such as Mg(ClO₄)₂', gain: MH.v, what: 'H₂O', n: nH, el: 'H' },
-               { x0: 880, x1: 1120, color: CO2_ABSORBER, seed: 19, head: 'CO₂ absorber', sub: 'such as NaOH', gain: MC.v, what: 'CO₂', n: nC, el: 'C' }];
+    const A = [{ x0: 560, x1: 800, color: F.fact(H2O_ABSORBER), who: 'h2o-absorber', seed: 7, head: 'H₂O absorber', sub: 'such as Mg(ClO₄)₂', gain: MH.v, what: 'H₂O', n: nH, el: 'H' },
+               { x0: 880, x1: 1120, color: F.fact(CO2_ABSORBER), who: 'co2-absorber', seed: 19, head: 'CO₂ absorber', sub: 'such as NaOH', gain: MC.v, what: 'CO₂', n: nC, el: 'C' }];
     line(ctx, 800, yc - 10, 880, yc - 10, PAL.muted, 3); line(ctx, 800, yc + 10, 880, yc + 10, PAL.muted, 3);
     line(ctx, 1120, yc - 10, 1180, yc - 10, PAL.muted, 3); line(ctx, 1120, yc + 10, 1180, yc + 10, PAL.muted, 3);
     arrow(ctx, 470, yc, 560, yc, PAL.ink, 4); arrow(ctx, 790, yc, 880, yc, PAL.ink, 4); arrow(ctx, 1110, yc, 1230, yc, PAL.ink, 4);
     text(ctx, 'O₂ and', 1240, yc - 14, PAL.ink, { size: 18 }); text(ctx, 'other gases', 1240, yc + 12, PAL.ink, { size: 18 });
     hits.length = 0;
     A.forEach((a) => {
-      capsule(ctx, a.x0, a.x1, yc, 100);
+      const rc = F.ref(a.who);
+      capsule(ctx, a.x0, a.x1, yc, 100, rc);
       grains(ctx, a.x0 + 24, a.x1 - 24, yc - 38, yc + 38, a.color, 70, a.seed);
       arrow(ctx, a.x0 + 40, yc, a.x1 - 40, yc, PAL.ink, 4);
       const cx = (a.x0 + a.x1) / 2;
-      text(ctx, a.head, cx, 334, PAL.ink, { size: 19, align: 'center' });
+      text(ctx, a.head, cx, 334, rc, { size: 19, align: 'center' });
       text(ctx, a.sub, cx, 358, PAL.muted, { size: 16, align: 'center' });
       text(ctx, 'gains ' + fmt(a.gain, 2) + ' mg ' + a.what, cx, 396, cm, { size: 19, weight: 600, align: 'center' });
       text(ctx, sciText(a.n) + ' mol ' + a.el, cx, 426, cn, { size: 19, weight: 600, align: 'center' });

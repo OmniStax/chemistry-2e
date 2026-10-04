@@ -786,5 +786,22 @@
    "exercise": "e15",
    "concept": "half-reaction-method"
   }
+ ],
+ "referents": [
+  {
+   "id": "first-solution",
+   "label": "the first solution",
+   "figure": "sim-precipitation"
+  },
+  {
+   "id": "second-solution",
+   "label": "the second solution",
+   "figure": "sim-precipitation"
+  },
+  {
+   "id": "flask",
+   "label": "the stoppered flask",
+   "figure": "sim-hcl"
+  }
  ]
 }

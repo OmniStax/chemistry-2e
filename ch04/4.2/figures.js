@@ -31,7 +31,8 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
   const SALTS = [['KI', 'K', 'I'], ['Pb(NO₃)₂', 'Pb', 'NO3'], ['NaCl', 'Na', 'Cl'], ['AgNO₃', 'Ag', 'NO3'], ['K₂SO₄', 'K', 'SO4'], ['Ba(NO₃)₂', 'Ba', 'NO3'],
     ['LiCl', 'Li', 'Cl'], ['AgC₂H₃O₂', 'Ag', 'Ac'], ['(NH₄)₂CO₃', 'NH4', 'CO3'], ['Na₂SO₄', 'Na', 'SO4'], ['BaCl₂', 'Ba', 'Cl'], ['Na₂CO₃', 'Na', 'CO3']];
   /* the colour of each solid as it is seen, a physical fact in both themes: lead iodide bright yellow, silver iodide and silver
-     carbonate pale yellow, and every other precipitate these salts can give white */
+     carbonate pale yellow, and every other precipitate these salts can give white; drawn through F.fact.
+     The two solutions poured together are the caption's referents, their beakers and names in their own colours */
   const PPT_COLOR = { 'PbI₂': '#f2c300', 'AgI': '#ece29a', 'Ag₂CO₃': '#e8e1ae' };
   const WHITE_SOLID = '#f5f5f0';
   const pick = (label, value, aria) => F.select(d.controls, { label, aria, value: String(value), options: SALTS.map((s, i) => ({ value: String(i), label: s[0] })) });
@@ -58,10 +59,10 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
   }
   const ionU = (ion, s) => ion.u + chargeU(ion.q, s);
   const ionT = (ion, s) => ion.t + '^{' + chargeT(ion.q, s) + '}';
-  function beaker(ctx, x, base, w, h, name) {
+  function beaker(ctx, x, base, w, h, name, rim = PAL.ink) {
     const lip = 8, top = base - h, lv = base - h * 0.72;
     ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.14); ctx.fillRect(x - w / 2, lv, w, base - lv); ctx.restore();
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath();
+    ctx.save(); ctx.strokeStyle = rim; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath();
     ctx.moveTo(x - w / 2 - lip, top); ctx.lineTo(x - w / 2, top + lip); ctx.lineTo(x - w / 2, base); ctx.lineTo(x + w / 2, base); ctx.lineTo(x + w / 2, top + lip); ctx.lineTo(x + w / 2 + lip, top); ctx.stroke(); ctx.restore();
     line(ctx, x - w / 2, lv, x + w / 2, lv, alpha(PAL.ink, 0.35), 2);
     hits.push({ x, y: (lv + base) / 2, r: w / 2, name });
@@ -81,9 +82,10 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
     const solids = pairs.filter((p) => p.j.out);
     const k = Math.min(A.k, B.k);
     /* the two solutions */
-    [[sa, ca, aa, 180], [sb, cb, ab, 420]].forEach(([s, c, a, x]) => {
-      beaker(ctx, x, 400, 150, 190, s[0] + '(aq), a solution of ' + ionU(c, 1) + ' and ' + ionU(a, -1) + ' ions');
-      text(ctx, s[0] + '(aq)', x, 440, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    [[sa, ca, aa, 180, 'first-solution'], [sb, cb, ab, 420, 'second-solution']].forEach(([s, c, a, x, who]) => {
+      const rc = F.ref(who);
+      beaker(ctx, x, 400, 150, 190, s[0] + '(aq), a solution of ' + ionU(c, 1) + ' and ' + ionU(a, -1) + ' ions', rc);
+      text(ctx, s[0] + '(aq)', x, 440, rc, { size: 22, weight: 600, align: 'center' });
       text(ctx, ionU(c, 1) + ' + ' + ionU(a, -1), x, 470, PAL.muted, { size: 17, align: 'center' });
     });
     text(ctx, '+', 300, 330, PAL.ink, { size: 30, align: 'center' });
@@ -95,7 +97,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
     [ionU(cb, 1), ionU(ab, -1)].forEach((s) => { if (!ions.includes(s)) ions.push(s); });
     text(ctx, ions.join(', '), mx, base + 34, PAL.muted, { size: 17, align: 'center' });
     if (solids.length) {
-      const col = PPT_COLOR[solids[0].f.u] || WHITE_SOLID, hgt = 36 * k, r = rng(7);
+      const col = F.fact(PPT_COLOR[solids[0].f.u] || WHITE_SOLID), hgt = 36 * k, r = rng(7);
       ctx.save(); ctx.fillStyle = col; ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5; ctx.beginPath();
       ctx.moveTo(mx - w / 2 + 2, base - 2); ctx.lineTo(mx - w / 2 + 2, base - hgt * 0.7);
       ctx.quadraticCurveTo(mx, base - hgt * 1.4, mx + w / 2 - 2, base - hgt * 0.7); ctx.lineTo(mx + w / 2 - 2, base - 2); ctx.closePath(); ctx.fill(); ctx.stroke();
@@ -198,11 +200,11 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
     const { ctx } = begin(d.c);
     hits = [];
     const gas = GAS.value, t = cy.now();
-    /* the water, then the glass and its stopper */
+    /* the water, then the glass and its stopper, the flask in its referent colour */
     ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.14); ctx.beginPath();
     const o = outline(); ctx.moveTo(FX - hw(LY), LY); o.slice(2, 6).forEach((p) => ctx.lineTo(p[0], p[1])); ctx.lineTo(FX + hw(LY), LY); ctx.closePath(); ctx.fill(); ctx.restore();
     line(ctx, FX - hw(LY), LY, FX + hw(LY), LY, alpha(PAL.ink, 0.35), 2);
-    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath(); o.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]))); ctx.stroke();
+    ctx.save(); ctx.strokeStyle = F.ref('flask'); ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath(); o.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]))); ctx.stroke();
     ctx.fillStyle = PAL.soft; ctx.beginPath(); ctx.moveTo(FX - 58, 66); ctx.lineTo(FX + 58, 66); ctx.lineTo(FX + 50, 118); ctx.lineTo(FX - 50, 118); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
     hits.push({ x: FX, y: 92, r: 50, name: 'the stopper' });
     /* the particles */

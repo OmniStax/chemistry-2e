@@ -367,5 +367,17 @@
    "exercise": "e11",
    "concept": "ionic-equations"
   }
+ ],
+ "referents": [
+  {
+   "id": "before",
+   "label": "the mixture before reaction",
+   "figure": "sim-methane"
+  },
+  {
+   "id": "after",
+   "label": "the mixture after reaction",
+   "figure": "sim-methane"
+  }
  ]
 }

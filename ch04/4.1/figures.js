@@ -25,7 +25,8 @@ function atom(ctx, x, y, sym, r) {
    mixture. Still: nothing in the idea has a time in it, so no cycle is
    registered and no transport is added. Coefficients and counts are
    ink; every atom is in its element's colour and names itself under
-   the pointer.
+   the pointer. The two mixtures are the caption's referents, each
+   outlined and titled in its own colour.
 ===================================================================== */
 (function () {
   const d = sim('sim-methane', 600);
@@ -65,9 +66,11 @@ function atom(ctx, x, y, sym, r) {
     const { ctx } = begin(d.c); hits = [];
     const n = Math.round(N.v);
     const L = { l: 30, r: 680, t: 92, b: 420 }, R = { l: 720, r: 1370, t: 92, b: 420 };
+    const rb = F.ref('before'), ra = F.ref('after');
     line(ctx, 700, 96, 700, 470, alpha(PAL.ink, 0.45), 2, [10, 10]);
-    text(ctx, 'Mixture before reaction', (L.l + L.r) / 2, 128, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    text(ctx, 'Mixture after reaction', (R.l + R.r) / 2, 128, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    [[L, rb], [R, ra]].forEach(([b, c]) => { ctx.save(); ctx.strokeStyle = c; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.roundRect(b.l, 96, b.r - b.l, 378, 10); ctx.stroke(); ctx.restore(); });
+    text(ctx, 'Mixture before reaction', (L.l + L.r) / 2, 128, rb, { size: 22, weight: 600, align: 'center' });
+    text(ctx, 'Mixture after reaction', (R.l + R.r) / 2, 128, ra, { size: 22, weight: 600, align: 'center' });
     mixture(ctx, L, order('CH4', 'O2', n), 1);
     mixture(ctx, R, order('CO2', 'H2O', n), 7);
     const counts = [['C', n], ['H', 4 * n], ['O', 4 * n]];

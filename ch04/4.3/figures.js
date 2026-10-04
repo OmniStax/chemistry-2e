@@ -124,7 +124,8 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
    book's chart of ten boxes, substance A on the left and B on the right,
    with the route of the chosen example lit and each box on it showing its
    value. Still: a route is chosen and computed, nothing runs; a new route
-   draws along its length.
+   draws along its length. Substances A and B are the caption's referents,
+   each named under its half of the chart in its own colour.
 ===================================================================== */
 (function () {
   const d = sim('sim-flowchart', 560);
@@ -208,6 +209,8 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
       const at = path.indexOf(key), shown = lit && k * steps >= at - 0.02;
       box(ctx, P[key][0], P[key][1], W, HB, kind, nm[key], shown ? txt[kind](val[key]) : '', lit ? 1 : 0);
     });
+    text(ctx, 'substance A: ' + a.txt, 280, 526, F.ref('substance-a'), { size: 20, weight: 600, align: 'center' });
+    text(ctx, 'substance B: ' + b.txt, 1120, 526, F.ref('substance-b'), { size: 20, weight: 600, align: 'center' });
     const giveTxt = txt[g](val[g + 'A']) + (g === 'N' ? ` ${a.unit} of ` : ' of ') + a.txt;
     const wantTxt = txt[w](val[w + 'B']) + (w === 'N' ? ` ${b.unit} of ` : ' of ') + b.txt;
     headline(ctx, e.verb === 'is produced from' ? `${giveTxt} is produced from ${wantTxt}.` : `${giveTxt} ${e.verb} ${wantTxt}.`);

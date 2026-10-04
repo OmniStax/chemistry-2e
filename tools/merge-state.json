@@ -149,7 +149,12 @@
       "q_p",
       "\u0394H_c\u00b0",
       "\u0394V",
-      "n_coef"
+      "n_coef",
+      "C_small_pan",
+      "C_large_pan",
+      "q_M",
+      "q_W",
+      "q_solution"
     ],
     "types": [
       "heat-capacity"

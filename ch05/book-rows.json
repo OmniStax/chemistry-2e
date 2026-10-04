@@ -17,7 +17,12 @@
     {"sym": "q_p", "latex": "q_{\\text{p}}", "macro": "\\kqp"},
     {"sym": "ΔH_c°", "latex": "\\Delta H_{\\text{c}}^{\\circ}", "macro": "\\kdHc"},
     {"sym": "ΔV", "latex": "\\Delta V", "macro": "\\kdV"},
-    {"sym": "n_coef", "latex": "n"}
+    {"sym": "n_coef", "latex": "n"},
+    {"sym": "C_small_pan", "latex": "C_{\\text{small pan}}", "macro": "\\kCsmallpan"},
+    {"sym": "C_large_pan", "latex": "C_{\\text{large pan}}", "macro": "\\kClargepan"},
+    {"sym": "q_M", "latex": "q_{\\text{substance M}}", "macro": "\\kqM"},
+    {"sym": "q_W", "latex": "q_{\\text{substance W}}", "macro": "\\kqW"},
+    {"sym": "q_solution", "latex": "q_{\\text{solution}}", "macro": "\\kqsolution"}
   ],
   "concepts": [
     {

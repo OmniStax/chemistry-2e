@@ -35,22 +35,22 @@ const sim = (id, H) => F.sim(root, id, H);
     options: Object.keys(METALS).map((k) => ({ value: k, label: METALS[k].name })), onInput: () => cy.reset(),
   });
   const metEl = d.controls.lastElementChild;
-  const MM = F.ctl(d.controls, { label: '\\km_{\\text{metal}}', cls: 'mass', min: 10, max: 500, step: 0.1, value: 360.0, unit: 'g', dec: 1, aria: 'mass of the metal in grams', onInput: () => cy.reset() });
+  const MM = F.ctl(d.controls, { label: '\\km_{\\htmlData{ref=metal}{\\text{metal}}}', cls: 'mass', min: 10, max: 500, step: 0.1, value: 360.0, unit: 'g', dec: 1, aria: 'mass of the metal in grams', onInput: () => cy.reset() });
   const TM = F.ctl(d.controls, {
-    label: '\\kT_{\\text{i,metal}}', cls: 'temperature', min: 15, max: 300, step: 1, value: 248, unit: '°C', dec: 0, aria: 'initial temperature of the metal in degrees Celsius',
+    label: '\\kT_{\\text{i,}\\htmlData{ref=metal}{\\text{metal}}}', cls: 'temperature', min: 15, max: 300, step: 1, value: 248, unit: '°C', dec: 0, aria: 'initial temperature of the metal in degrees Celsius',
     specials: [{ at: () => Math.round(TW.v), label: 'equal temperatures' }], onInput: () => cy.reset(),
   });
   const Q = F.ctl(d.controls, { label: '|\\kq_{\\text{reaction}}|', cls: 'energy', min: 0.1, max: 3, step: 0.01, value: 2.89, unit: 'kJ', dec: 2, aria: 'heat of the reaction in kilojoules', onInput: () => cy.reset() });
-  const MW = F.ctl(d.controls, { label: '\\km_{\\text{water}}', cls: 'mass', min: 50, max: 500, step: 0.1, value: 425.0, unit: 'g', dec: 1, aria: 'mass of the water in grams', onInput: () => cy.reset() });
-  const TW = F.ctl(d.controls, { label: '\\kT_{\\text{i,water}}', cls: 'temperature', min: 15, max: 30, step: 0.1, value: 24.0, unit: '°C', dec: 1, aria: 'initial temperature of the water in degrees Celsius', onInput: () => { TM.refresh(); cy.reset(); } });
+  const MW = F.ctl(d.controls, { label: '\\km_{\\htmlData{ref=water}{\\text{water}}}', cls: 'mass', min: 50, max: 500, step: 0.1, value: 425.0, unit: 'g', dec: 1, aria: 'mass of the water in grams', onInput: () => cy.reset() });
+  const TW = F.ctl(d.controls, { label: '\\kT_{\\text{i,}\\htmlData{ref=water}{\\text{water}}}', cls: 'temperature', min: 15, max: 30, step: 0.1, value: 24.0, unit: '°C', dec: 1, aria: 'initial temperature of the water in degrees Celsius', onInput: () => { TM.refresh(); cy.reset(); } });
   const metalParts = [metEl, MM.el, TM.el];
   Q.el.style.display = 'none'; Q.el.dataset.out = '';
   function switchTo(v) {
     const b = BOOK[v], metal = v === 'metal';
     MW.set(b.mw); TW.set(b.Tw); if (!metal) Q.set(b.q);
-    const liquid = metal ? 'water' : 'solution';
-    MW.relabel('\\km_{\\text{' + liquid + '}}', 'mass of the ' + liquid + ' in grams');
-    TW.relabel('\\kT_{\\text{i,' + liquid + '}}', 'initial temperature of the ' + liquid + ' in degrees Celsius');
+    const liquid = metal ? 'water' : 'solution', tag = '\\htmlData{ref=' + liquid + '}{\\text{' + liquid + '}}';
+    MW.relabel('\\km_{' + tag + '}', 'mass of the ' + liquid + ' in grams');
+    TW.relabel('\\kT_{\\text{i,}' + tag + '}', 'initial temperature of the ' + liquid + ' in degrees Celsius');
     F.regroup(d.controls, metal ? metalParts : [Q.el], metal ? [Q.el] : metalParts);
     TM.refresh(); cy.reset();
   }
@@ -79,19 +79,19 @@ const sim = (id, H) => F.sim(root, id, H);
   /* the cup of Figure 5.12: two nested polystyrene cups under a cover */
   const CX = 250, TOP = 170, BOT = 520, WT = 150, WB = 110, LEVEL = 232;
   const halfAt = (y, w0, w1) => w0 + (w1 - w0) * (y - TOP) / (BOT - TOP);
-  function cup(ctx) {
-    const outer = [[CX - WT - 16, TOP], [CX - WB - 12, BOT + 14], [CX + WB + 12, BOT + 14], [CX + WT + 16, TOP]];
-    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.lineJoin = 'round';
+  function cup(ctx, wet) {
+    const outer = [[CX - WT - 16, TOP], [CX - WB - 12, BOT + 14], [CX + WB + 12, BOT + 14], [CX + WT + 16, TOP]], rc = F.ref('calorimeter');
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = rc; ctx.lineWidth = 3; ctx.lineJoin = 'round';
     ctx.beginPath(); outer.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]))); ctx.closePath(); ctx.fill(); ctx.stroke();
     /* the liquid in the inner cup */
-    ctx.fillStyle = PAL.panel; ctx.beginPath();
+    ctx.strokeStyle = PAL.ink; ctx.fillStyle = PAL.panel; ctx.beginPath();
     ctx.moveTo(CX - halfAt(TOP, WT, WB), TOP); ctx.lineTo(CX - WB, BOT); ctx.lineTo(CX + WB, BOT); ctx.lineTo(CX + halfAt(TOP, WT, WB), TOP); ctx.closePath(); ctx.fill(); ctx.stroke();
-    ctx.fillStyle = alpha(PAL.muted, 0.16); ctx.beginPath();
+    ctx.fillStyle = alpha(wet, 0.16); ctx.beginPath();
     ctx.moveTo(CX - halfAt(LEVEL, WT, WB), LEVEL); ctx.lineTo(CX - WB, BOT); ctx.lineTo(CX + WB, BOT); ctx.lineTo(CX + halfAt(LEVEL, WT, WB), LEVEL); ctx.closePath(); ctx.fill();
     ctx.restore();
     line(ctx, CX - halfAt(LEVEL, WT, WB), LEVEL, CX + halfAt(LEVEL, WT, WB), LEVEL, alpha(PAL.ink, 0.35), 2);
     /* the cover */
-    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
+    ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = rc; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.rect(CX - WT - 30, TOP - 26, 2 * WT + 60, 26); ctx.fill(); ctx.stroke(); ctx.restore();
     hits.push({ x: CX - WT - 8, y: (TOP + BOT) / 2, r: 18, name: 'two nested polystyrene cups' }, { x: CX - 60, y: TOP - 13, r: 20, name: 'the cover' });
   }
@@ -147,18 +147,19 @@ const sim = (id, H) => F.sim(root, id, H);
     hits = [];
     const t = cy.now(), S = state(t), mode = S.mode, metal = mode === 'metal';
     const yr = PROC.mix(YR), qmax = PROC.mix(QMAX);
-    cup(ctx);
+    const rM = F.ref('metal'), rW = F.ref(metal ? 'water' : 'solution');
+    cup(ctx, rW);
     stirrer(ctx, S.flow > 0.03 ? 22 * (0.5 + 0.5 * Math.sin(t * 7)) : 0);
     const ICY = 420;
     if (metal) {
       const bw = 96, bh = 62, bx = CX + 6 - bw / 2, by = ICY - bh / 2;
-      ctx.save(); ctx.fillStyle = F.el(MET.value); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5;
+      ctx.save(); ctx.fillStyle = F.el(MET.value); ctx.strokeStyle = rM; ctx.lineWidth = 3.5;
       ctx.beginPath(); ctx.rect(bx, by, bw, bh); ctx.fill(); ctx.stroke(); ctx.restore();
-      text(ctx, 'M', CX + 6, ICY, PAL.panel, { size: 24, weight: 600, align: 'center' });
+      text(ctx, 'M', CX + 6, ICY, rM, { size: 24, weight: 600, align: 'center', bg: PAL.panel });
       text(ctx, f1(S.Tm(t)) + ' °C', CX + 6, by + bh + 24, C('temperature'), { size: 20, weight: 600, align: 'center', bg: PAL.panel });
       hits.push({ x: CX + 6, y: ICY, r: 36, name: 'a piece of ' + S.m.name + ', the system' });
       heatArrows(ctx, CX + 6, ICY, 62, S.Tm0 > S.Tw0, S.flow, t);
-      text(ctx, 'W', CX - 110, LEVEL + 40, PAL.muted, { size: 22, weight: 600, align: 'center' });
+      text(ctx, 'W', CX - 110, LEVEL + 40, rW, { size: 22, weight: 600, align: 'center' });
     } else {
       text(ctx, 'reaction', CX + 6, ICY - 12, PAL.ink, { size: 20, weight: 600, align: 'center' });
       text(ctx, '(system)', CX + 6, ICY + 14, PAL.muted, { size: 17, align: 'center' });
@@ -166,7 +167,7 @@ const sim = (id, H) => F.sim(root, id, H);
       heatArrows(ctx, CX + 6, ICY, 58, mode === 'exo', S.flow, t);
     }
     hits.push({ x: CX - 60, y: LEVEL + 70, r: 60, name: metal ? 'the water, the surroundings' : 'the solution, the surroundings' });
-    text(ctx, metal ? 'water (surroundings)' : 'solution (surroundings)', CX, BOT + 44, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, metal ? 'water (surroundings)' : 'solution (surroundings)', CX, BOT + 44, rW, { size: 20, align: 'center' });
     thermometer(ctx, S.Tw(t), yr);
 
     /* the graph */
@@ -175,14 +176,14 @@ const sim = (id, H) => F.sim(root, id, H);
     line(ctx, GB.l, Y(Tf), GB.r, Y(Tf), alpha(C('temperature'), 0.6), 2, [10, 10]);
     const tcol = C('temperature');
     if (metal) {
-      ctx.save(); ctx.setLineDash([12, 9]); curve(ctx, (x) => Math.min(yr[1], S.Tm(x)), 0, Math.max(t, 1e-3), X, Y, tcol, 4); ctx.restore();
-      F.pinned(ctx, GB, X, Y, t, S.Tm(t), tcol);
-      text(ctx, S.m.name, X(t) + 16, Math.max(GB.t + 10, Math.min(Y(S.Tm(t)) - 20, GB.b - 12)), tcol, { size: 18, weight: 600, bg: PAL.panel });
+      ctx.save(); ctx.setLineDash([12, 9]); curve(ctx, (x) => Math.min(yr[1], S.Tm(x)), 0, Math.max(t, 1e-3), X, Y, rM, 4); ctx.restore();
+      F.pinned(ctx, GB, X, Y, t, S.Tm(t), rM);
+      text(ctx, S.m.name, X(t) + 16, Math.max(GB.t + 10, Math.min(Y(S.Tm(t)) - 20, GB.b - 12)), rM, { size: 18, weight: 600, bg: PAL.panel });
     }
-    curve(ctx, S.Tw, 0, Math.max(t, 1e-3), X, Y, tcol, 5);
-    F.pinned(ctx, GB, X, Y, t, S.Tw(t), tcol);
+    curve(ctx, S.Tw, 0, Math.max(t, 1e-3), X, Y, rW, 5);
+    F.pinned(ctx, GB, X, Y, t, S.Tw(t), rW);
     const below = metal || mode === 'exo' ? 1 : -1;
-    text(ctx, metal ? 'water' : 'solution', X(t) + 16, Math.max(GB.t + 10, Math.min(Y(S.Tw(t)) + 22 * below, GB.b - 12)), tcol, { size: 18, weight: 600, bg: PAL.panel });
+    text(ctx, metal ? 'water' : 'solution', X(t) + 16, Math.max(GB.t + 10, Math.min(Y(S.Tw(t)) + 22 * below, GB.b - 12)), rW, { size: 18, weight: 600, bg: PAL.panel });
     text(ctx, 'T_{final} = ' + f1(S.Tf) + ' °C', GB.r, Y(Tf) + (Y(Tf) < GB.t + 40 ? 22 : -18), tcol, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
 
     /* the heat bars: equal and opposite at every moment */
@@ -209,13 +210,13 @@ const sim = (id, H) => F.sim(root, id, H);
     const u = '\\;\\text{J/g}\\,^\\circ\\text{C}';
     if (metal) {
       const dT = S.Tf - S.Tm0, q = S.Cm * dT / 1000;
-      const texs = '\\kq_{\\text{metal}}=c\\times\\km\\times\\kdT=(' + fmt(S.m.c, 3) + u + ')(' + f1(MM.v) + '\\;\\text{g})(' + tn(f1(dT)) + '\\;^\\circ\\text{C})=' + tn(kJ(q)).replace('+', '') + '\\;\\text{kJ}=-\\kq_{\\text{water}}';
+      const texs = '\\kq_{\\htmlData{ref=metal}{\\text{metal}}}=\\kcspec\\times\\km\\times\\kdT=(' + fmt(S.m.c, 3) + u + ')(' + f1(MM.v) + '\\;\\text{g})(' + tn(f1(dT)) + '\\;^\\circ\\text{C})=' + tn(kJ(q)).replace('+', '') + '\\;\\text{kJ}=-\\kq_{\\htmlData{ref=water}{\\text{water}}}';
       const note = S.Tf >= 100 ? 'The water would reach 100 °C and begin to boil, which this calculation does not include.'
         : 'The water gains ' + f2(Math.abs(q)) + ' kJ as it warms by ' + f1(S.Tf - S.Tw0) + ' °C, the same heat the ' + S.m.name + ' loses.';
       ro.set(texs, note, { form: 'metal' });
     } else {
       const dT = S.Tf - S.Tw0, qsol = CW * MW.v * dT / 1000;
-      const texs = '\\kq_{\\text{reaction}}=-\\kq_{\\text{solution}}=-c\\times\\km\\times\\kdT=-(4.184' + u + ')(' + f1(MW.v) + '\\;\\text{g})(' + tn(f2(dT)) + '\\;^\\circ\\text{C})=' + tn(kJ(-qsol)).replace('+', '') + '\\;\\text{kJ}';
+      const texs = '\\kq_{\\text{reaction}}=-\\kqsolution=-\\kcspec\\times\\km\\times\\kdT=-(4.184' + u + ')(' + f1(MW.v) + '\\;\\text{g})(' + tn(f2(dT)) + '\\;^\\circ\\text{C})=' + tn(kJ(-qsol)).replace('+', '') + '\\;\\text{kJ}';
       ro.set(texs, mode === 'exo' ? 'The negative sign shows that the reaction is exothermic: the solution absorbs the heat it gives off.' : 'The positive sign shows that the reaction is endothermic: it takes its heat from the solution.', { form: 'reaction' });
     }
   }

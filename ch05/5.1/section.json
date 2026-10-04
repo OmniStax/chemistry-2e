@@ -78,7 +78,8 @@
    "draws": [
     "energy",
     "temperature",
-    "mass"
+    "mass",
+    "heat-capacity"
    ]
   },
   {
@@ -582,6 +583,28 @@
    "concept": "energy-units",
    "weight": 2,
    "weights_by": "ai"
+  }
+ ],
+ "referents": [
+  {
+   "id": "sample-h",
+   "label": "sample H, the hotter water",
+   "figure": "sim-heat-flow"
+  },
+  {
+   "id": "sample-l",
+   "label": "sample L, the cooler water",
+   "figure": "sim-heat-flow"
+  },
+  {
+   "id": "small-pan",
+   "label": "the small cast iron frying pan",
+   "figure": "sim-heating"
+  },
+  {
+   "id": "large-pan",
+   "label": "the large cast iron frying pan",
+   "figure": "sim-heating"
   }
  ]
 }

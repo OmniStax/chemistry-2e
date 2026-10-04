@@ -52,7 +52,8 @@
    "draws": [
     "energy",
     "temperature",
-    "mass"
+    "mass",
+    "heat-capacity"
    ]
   },
   {
@@ -863,6 +864,28 @@
    "exercise": "e16",
    "concept": "food-calories",
    "weights_by": "ai"
+  }
+ ],
+ "referents": [
+  {
+   "id": "metal",
+   "label": "the hot metal, M",
+   "figure": "sim-calorimeter"
+  },
+  {
+   "id": "water",
+   "label": "the cool water, W",
+   "figure": "sim-calorimeter"
+  },
+  {
+   "id": "solution",
+   "label": "the solution in the calorimeter",
+   "figure": "sim-calorimeter"
+  },
+  {
+   "id": "calorimeter",
+   "label": "the coffee cup calorimeter",
+   "figure": "sim-calorimeter"
   }
  ]
 }

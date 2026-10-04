@@ -185,6 +185,107 @@
    "meaning": "the stoichiometric coefficient of a product or a reactant in the balanced equation",
    "section": "5.3",
    "anchor": "5.3-formation-enthalpies"
+  },
+  {
+   "sym": "C_small_pan",
+   "concept": "heat-capacity",
+   "ref": "small-pan",
+   "meaning": "the heat capacity of the small cast iron frying pan",
+   "unit": "J/°C",
+   "section": "5.1",
+   "anchor": "5.1-capacity"
+  },
+  {
+   "sym": "C_large_pan",
+   "concept": "heat-capacity",
+   "ref": "large-pan",
+   "meaning": "the heat capacity of the large cast iron frying pan",
+   "unit": "J/°C",
+   "section": "5.1",
+   "anchor": "5.1-capacity"
+  },
+  {
+   "sym": "q",
+   "concept": "heat-flow",
+   "meaning": "the heat gained or lost by a substance or a process, positive when it is gained and negative when it is lost",
+   "unit": "J",
+   "section": "5.2",
+   "anchor": "5.2-heat-balance"
+  },
+  {
+   "sym": "q_M",
+   "concept": "heat-flow",
+   "ref": "metal",
+   "meaning": "the heat gained by substance M, the hot metal; negative, since the metal loses heat",
+   "unit": "J",
+   "section": "5.2",
+   "anchor": "5.2-heat-balance"
+  },
+  {
+   "sym": "q_W",
+   "concept": "heat-flow",
+   "ref": "water",
+   "meaning": "the heat gained by substance W, the cool water; positive, since the water gains heat",
+   "unit": "J",
+   "section": "5.2",
+   "anchor": "5.2-heat-balance"
+  },
+  {
+   "sym": "q_solution",
+   "concept": "heat-flow",
+   "ref": "solution",
+   "meaning": "the heat absorbed or lost by the solution, the surroundings of a reaction in a calorimeter",
+   "unit": "J",
+   "section": "5.2",
+   "anchor": "5.2-reaction-heat"
+  },
+  {
+   "sym": "c_spec",
+   "concept": "specific-heat-capacity",
+   "meaning": "the specific heat of a substance in the calorimeter",
+   "unit": "J/g °C",
+   "section": "5.2",
+   "anchor": "5.2-heat-balance"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of a substance in the calorimeter",
+   "unit": "g",
+   "section": "5.2",
+   "anchor": "5.2-heat-balance"
+  },
+  {
+   "sym": "ΔT",
+   "concept": "temperature",
+   "meaning": "the temperature change of a substance in the calorimeter, its final temperature minus its initial temperature",
+   "unit": "°C",
+   "section": "5.2",
+   "anchor": "5.2-heat-balance"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature of a substance in the calorimeter, initial (i) or final (f)",
+   "unit": "°C",
+   "section": "5.2",
+   "anchor": "5.2-heat-balance"
+  },
+  {
+   "sym": "q",
+   "concept": "heat-flow",
+   "meaning": "the heat that flows into the system, positive when it flows in and negative when it flows out",
+   "unit": "J",
+   "section": "5.3",
+   "anchor": "5.3-first-law"
+  },
+  {
+   "sym": "E",
+   "concept": "internal-energy",
+   "meaning": "the internal energy of a system, another symbol for U",
+   "unit": "J",
+   "section": "5.3",
+   "anchor": "5.3-first-law"
   }
  ]
 }

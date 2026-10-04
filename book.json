@@ -1236,6 +1236,31 @@
       "sym": "C_conc",
       "latex": "C",
       "macro": "\\kCconc"
+    },
+    {
+      "sym": "C_small_pan",
+      "latex": "C_{\\text{small pan}}",
+      "macro": "\\kCsmallpan"
+    },
+    {
+      "sym": "C_large_pan",
+      "latex": "C_{\\text{large pan}}",
+      "macro": "\\kClargepan"
+    },
+    {
+      "sym": "q_M",
+      "latex": "q_{\\text{substance M}}",
+      "macro": "\\kqM"
+    },
+    {
+      "sym": "q_W",
+      "latex": "q_{\\text{substance W}}",
+      "macro": "\\kqW"
+    },
+    {
+      "sym": "q_solution",
+      "latex": "q_{\\text{solution}}",
+      "macro": "\\kqsolution"
     }
   ],
   "exercise_kinds": [

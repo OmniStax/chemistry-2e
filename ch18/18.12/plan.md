@@ -35,3 +35,7 @@ Nothing dropped from the text. Erratum kept as printed: "maximum oxidation sate 
 ## Wanted at chapter level
 
 - none
+
+Applied by the chapter pass (2026-10-05):
+
+- Nothing to apply; `config.md` says the section has no figure by the gate of root rule 24.3.

@@ -510,7 +510,10 @@
    "kind": "definition",
    "section": "17.6",
    "name": "Passivation",
-   "statement": "Passivation is the formation of a protective layer on a metal surface that prevents further corrosion of the metal beneath, as the patina does on copper and the chromium oxide layer does on stainless steel."
+   "statement": "Passivation is the formation of a protective layer on a metal surface that prevents further corrosion of the metal beneath, as the patina does on copper and the chromium oxide layer does on stainless steel.",
+   "terms": [
+    "passivation"
+   ]
   },
   {
    "id": "galvanization",

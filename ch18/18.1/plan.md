@@ -51,3 +51,9 @@ The two Link to Learning videos (alkali metals with water; aluminum attacked by 
 - glossary terms "representative element", "metalloid", "alkaline earth metal" → `main-group-element`, `metalloid`, `alkaline-earth-metal` (2.5), if not already their terms
 - `ch18/COLOR.md`: 18.1's figure states IE₁ as numbers in `energy`, so "ionization energy" in 18.1's prose could wear `energy` (`ionization-energy`, 6.5) as 7.2 and 7.5 do; left ink here as COLOR.md says
 - `ch18/COLOR.md`: the Figure 18.2 legend colours are drawn deepened (#e3c46e, #7392cb, #c49ac4, #8fb8aa) so a tint reads on a dark panel
+
+Applied by the chapter pass (2026-10-05):
+
+- Glossary: "passivation" added as a term of 17.6's `passivation` through `ch17/book-rows.json` and merged; "representative element", "metalloid" and "alkaline earth metal" were already terms of `main-group-element`, `metalloid` and `alkaline-earth-metal` (2.5), so nothing was staged for them.
+- "ionization energy" stays ink in the prose, as `COLOR.md` says; the figure's IE₁ values wear `energy`.
+- `COLOR.md` records the Figure 18.2 legend colours as drawn (#e3c46e, #7392cb, #c49ac4, #8fb8aa), and `exploration.md` the shading of zinc, cadmium and mercury as representative metals and the lanthanides as inner transition metals against the printed figure.

@@ -50,3 +50,9 @@ Nothing of the text. Errata kept as printed: S(s) + O₂(g) ⟶ 2SO₂(s) (fs-id
 
 - glossary term "amorphous" → concept `amorphous-solid` (10.5), another chapter's row (the chapter notes' item, used here in the Carbon and Sulfur spans)
 - `ch18/COLOR.md`: 18.4 draws the colours of molten sulfur as facts, #e3c75a (straw), #d4892b, #8c1d12 (dark red)
+
+Applied by the chapter pass (2026-10-05):
+
+- Glossary: "amorphous" added to 10.5's `amorphous-solid` (see 18.3).
+- Anchor: 18.4/T → 18.4-sulfur.
+- `COLOR.md` records the molten-sulfur facts (#e3c75a, #d4892b, #8c1d12); `exploration.md` records red phosphorus drawn with one bond of each tetrahedron opened.

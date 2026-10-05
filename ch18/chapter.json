@@ -86,77 +86,88 @@
    "concept": "enthalpy-change",
    "meaning": "the standard enthalpy change of a reaction, such as the reduction of boron trichloride by hydrogen or the reaction of silicon dioxide with hydrogen fluoride",
    "unit": "kJ",
-   "section": "18.3"
+   "section": "18.3",
+   "anchor": "18.3-boron-silicon"
   },
   {
    "sym": "K_a",
    "concept": "acid-ionization-constant",
    "meaning": "the acid ionization constant of boric acid, which acts as a Lewis acid toward hydroxide ion",
    "unit": "none",
-   "section": "18.3"
+   "section": "18.3",
+   "anchor": "18.3-boron-silicon"
   },
   {
    "sym": "ΔH°",
    "concept": "enthalpy-change",
    "meaning": "the standard enthalpy change of a reaction, such as the Haber process or the combustion of hydrazine",
    "unit": "kJ",
-   "section": "18.5"
+   "section": "18.5",
+   "anchor": "18.5-compounds"
   },
   {
    "sym": "ΔG_f°",
    "concept": "standard-free-energy-of-formation",
    "meaning": "the standard free energy of formation of hydrazine from its elements",
    "unit": "kJ/mol",
-   "section": "18.5"
+   "section": "18.5",
+   "anchor": "18.5-compounds"
   },
   {
    "sym": "E_std",
    "concept": "standard-electrode-potential",
    "meaning": "the standard reduction potential of a halogen, or the standard potential of a reaction between a halogen and a halide",
    "unit": "V",
-   "section": "18.5"
+   "section": "18.5",
+   "anchor": "18.5-compounds"
   },
   {
    "sym": "K_P",
    "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant of the nitrogen dioxide–dinitrogen tetraoxide equilibrium, written with partial pressures",
    "unit": "none",
-   "section": "18.7"
+   "section": "18.7",
+   "anchor": "18.7-dioxide"
   },
   {
    "sym": "ΔH°",
    "concept": "enthalpy-change",
    "meaning": "the standard enthalpy change of a reaction, such as the formation of ozone from oxygen or the oxidation of sulfur dioxide",
    "unit": "kJ",
-   "section": "18.9"
+   "section": "18.9",
+   "anchor": "18.9-ozone"
   },
   {
    "sym": "K_a",
    "concept": "acid-ionization-constant",
    "meaning": "the acid ionization constant of the hydrogen sulfate ion",
    "unit": "none",
-   "section": "18.9"
+   "section": "18.9",
+   "anchor": "18.9-sulfur-oxyacids"
   },
   {
    "sym": "K_a1",
    "concept": "acid-ionization-constant",
    "meaning": "the ionization constant for the first step of sulfurous acid",
    "unit": "none",
-   "section": "18.9"
+   "section": "18.9",
+   "anchor": "18.9-sulfur-oxyacids"
   },
   {
    "sym": "K_a2",
    "concept": "acid-ionization-constant",
    "meaning": "the ionization constant for the second step of sulfurous acid",
    "unit": "none",
-   "section": "18.9"
+   "section": "18.9",
+   "anchor": "18.9-sulfur-oxyacids"
   },
   {
    "sym": "pK_a",
    "concept": "acid-ionization-constant",
    "meaning": "the negative logarithm of the acid ionization constant of a halogen oxyacid",
    "unit": "none",
-   "section": "18.9"
+   "section": "18.9",
+   "anchor": "18.9-halogen-oxyacids"
   },
   {
    "sym": "V",
@@ -195,14 +206,16 @@
    "concept": "temperature",
    "meaning": "a temperature, whichever scale it is read on",
    "unit": "°C",
-   "section": "18.4"
+   "section": "18.4",
+   "anchor": "18.4-sulfur"
   },
   {
    "sym": "T",
    "concept": "temperature",
    "meaning": "the temperature of the superheated water forced down the outermost pipe of the Frasch process",
    "unit": "°C",
-   "section": "18.10"
+   "section": "18.10",
+   "anchor": "18.10-occurrence"
   },
   {
    "sym": "E_std",

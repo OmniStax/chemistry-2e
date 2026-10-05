@@ -180,9 +180,9 @@
  ],
  "exercises": [
   {
-   "id": "e1",
+   "id": "e56",
    "source_id": "fs-idp142161216",
-   "source_number": "1",
+   "source_number": "56",
    "kind": "exercise",
    "bloom": "Analyze",
    "place": {
@@ -197,9 +197,9 @@
    }
   },
   {
-   "id": "e2",
+   "id": "e57",
    "source_id": "fs-idm136160016",
-   "source_number": "2",
+   "source_number": "57",
    "kind": "exercise",
    "bloom": "Apply",
    "place": {
@@ -216,19 +216,19 @@
  ],
  "exercise_concepts": [
   {
-   "exercise": "e1",
+   "exercise": "e56",
    "concept": "carbonate"
   },
   {
-   "exercise": "e2",
+   "exercise": "e57",
    "concept": "carbonate"
   },
   {
-   "exercise": "e2",
+   "exercise": "e57",
    "concept": "hydrogen-carbonate"
   },
   {
-   "exercise": "e2",
+   "exercise": "e57",
    "concept": "acid-base-reaction"
   }
  ]

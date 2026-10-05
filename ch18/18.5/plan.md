@@ -45,3 +45,8 @@ No Link to Learning. Errata kept as printed: "Water gas is as an industrial fuel
 - 18.5/ΔG_f° → 18.5-compounds
 - 18.5/E_std → 18.5-compounds
 - 18.5/V added by this section with its anchor (→ 18.5-preparation), concept `volume`
+
+Applied by the chapter pass (2026-10-05):
+
+- Anchors: 18.5/ΔH°, 18.5/ΔG_f° and 18.5/E_std → 18.5-compounds; 18.5/V was already anchored at 18.5-preparation.
+- Figure 18.26's readout rounds the oxygen volume first and writes the hydrogen volume as twice it, so the two numbers shown always agree (it read 1.9 mL = 2 (0.9 mL) before).

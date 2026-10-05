@@ -44,3 +44,8 @@ The Link to Learning on the cubic diamond structure (the structures figure carri
 
 - glossary term "amorphous" → concept `amorphous-solid` (10.5), another chapter's row; the section marks the span `uses`
 - no anchors (the chapter has no forms), no new concept, edge or symbol
+
+Applied by the chapter pass (2026-10-05):
+
+- Glossary: "amorphous" added as a term of 10.5's `amorphous-solid` through `ch10/book-rows.json` and merged.
+- Anchors: 18.3/ΔH° and 18.3/K_a → 18.3-boron-silicon.

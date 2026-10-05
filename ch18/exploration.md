@@ -110,3 +110,21 @@ Physical 3D: the metalloid structures (18.12, 18.13), silica's network against C
 ## BE INSPIRING
 
 Make the periodic table a map the reader can walk with their hands on the substances. Pick a group and watch the trend the text states play out as real things: lithium floating on oil, sodium's yellow flame, magnesium burning in CO₂, zinc fizzing in acid while mercury sits unmoved. Turn the crystals: silicon's tetrahedral network beside the puckered sheets of arsenic and the spiral of tellurium, then roll a sheet of graphene into a nanotube and close C₆₀. Heat sulfur and see the crowns open, the chains lengthen and tangle, the liquid darken and thicken until it will not pour at 230 °C, then thin again. Chill brown NO₂ and see it pair into colourless N₂O₄. Let electricity pull sodium out of molten salt and the halogens push one another out of solution in the order of their potentials, and end on xenon, the "noble" gas that Bartlett made react.
+
+## Decisions as built
+
+Gathered at the chapter pass (2026-10-05) from the section plans; each departs from the printed figure or the book's data, and each is named here so a reviewer can find it.
+
+- 18.1: Figure 18.2 shades the elements as the text classes them: zinc, cadmium and mercury among the representative metals (the text counts groups 1, 2, 3, 12, 13, 14 and 15) and the lanthanides among the inner transition metals, where the printed figure shades them the other way round. The section's `notes` says so.
+- 18.4: red phosphorus (Figure 18.24) is drawn with one P–P bond of each P₄ tetrahedron opened and its two atoms bonded to the neighboring tetrahedra, so that every atom keeps three bonds; the text says only that the tetrahedra join through P–P single bonds.
+- 18.7: the Sim of the NO₂/N₂O₄ equilibrium takes K_P = 6.86 at 298 K from the text and its value at other temperatures from ΔH = +57.20 kJ for N₂O₄ ⟶ 2NO₂, which Section 13.3 gives; the chapter states no enthalpy for the reaction.
+- 18.9: two folds were weighed and refused: Figures 18.47 + 18.48 (the text says only that SO₂ is bent, and a turnable model adds no view the printed one lacks, root rule 28.5) and Figures 18.52 + 18.53 (a choice would only swap two printed pictures, and the caption of 18.53 already says which hydrogen atoms are acidic). Both stay the book's images. The chlorine oxyanions, Figures 18.55 to 18.57, are the chapter's one fold of that section.
+- 18.6 and 18.12 have no figure of their own: neither passes the gate of root rule 24.3 (`config.md`).
+- Exercises are numbered chapter-wide, 1 to 116; 18.6's three items are 56 to 58.
+
+## Errata as built
+
+Gathered at the chapter pass (2026-10-05) from each section's `notes` and `exercise_notes`. The slips under "Errata to carry as printed" above are kept as printed, and the sections' `notes` name them; the build found these besides, kept and named the same way:
+
+- 18.5: Table 18.1's first row, MH or MH₂ ⟶ MOH or M(OH)₂ + H₂, written without the water.
+- 18.9: "2+-oxidation state" and "7+-oxidation state" with their hyphens; the comma set as a subscript after H₂S.

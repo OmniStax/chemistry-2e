@@ -35,3 +35,7 @@ No Link to Learning. Errata kept as printed: the summary's "has as oxidation sta
 ## Wanted at chapter level
 
 - `18.10/T` → 18.10-occurrence (the variables row added for the figure's readout)
+
+Applied by the chapter pass (2026-10-05):
+
+- Anchor: 18.10/T → 18.10-occurrence.

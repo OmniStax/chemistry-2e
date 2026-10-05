@@ -47,3 +47,7 @@ The Link to Learning on sodium reacting with chlorine. Errata kept as printed: "
 
 - no anchors (the chapter has no forms), no new concept, edge or symbol
 - the section's glossary ("halide", "interhalogen") is printed in 18.12; both terms already sit on `halide` and `interhalogen`
+
+Applied by the chapter pass (2026-10-05):
+
+- Nothing to apply; E_std and r were already anchored, and "halide" and "interhalogen" already sit on their concepts.

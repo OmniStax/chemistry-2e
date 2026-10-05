@@ -36,3 +36,16 @@ Proposed by the agent after the chapter exploration (2026-10-05). Status: applie
 | Labels | Figure for a book number, Sim for an addition |
 | `ai` and `built` | `{"text":[{"model":"claude-opus-5-5","effort":"high"}],"figures":[{"model":"claude-opus-5-5","effort":"high"}]}`, `2026-10-05`; every figure row carries its own `ai` |
 | Book manifest | `ch18` added to `book.json` by `ost merge chemistry-2e 18` |
+
+## What the build changed
+
+| Setting | Built |
+|---|---|
+| Figures | nineteen drawn live: 18.1 Figure 18.2 as a still periodic table with a choice of group lighting its column, IE₁ and oxidation states; 18.2 Figures 18.10 and 18.11 as moving benches, the Downs cell with a choice of molten or aqueous salt; 18.3 Figures 18.12 + 18.13 folded in 3D with a choice of solid, Figure 18.14 moving, Figure 18.18 in 3D with a choice of CO₂ or SiO₂; 18.4 Figure 18.19 on one shared scale, Figures 18.20 + 18.22 + 18.23 folded in 3D with graphite drawing away to graphene and graphene rolling into a nanotube, Figure 18.21 copied, Figure 18.24 white to red phosphorus as a choice morph, Figure 18.25 on a temperature slider; 18.5 Figure 18.26 moving; 18.7 a Sim of NO₂ and N₂O₄ in a piston vessel on temperature and volume sliders (Figure 18.37 stays the book's photograph); 18.8 Figures 18.39 + 18.40 folded as a choice morph and Figure 18.41 with a choice of species; 18.9 Figures 18.55 + 18.56 + 18.57 folded with a view choice and a pK_a strip, the folds 18.47 + 18.48 and 18.52 + 18.53 refused; 18.10 Figure 18.59 moving on a water-temperature slider; 18.11 a Sim of the halogen ladder beside a test tube, and Figure 18.63 with a choice of interhalogen |
+| No figure of its own | 18.6 and 18.12, by the gate of root rule 24.3: their ideas are classes of compound and descriptive facts, and nothing in them varies on a quantity the text states; 18.6 keeps its two photographs, 18.12 prints none |
+| Photographs | forty kept as `photo` rows with their numbers, Figure 18.1 on the introduction page among them |
+| Unnumbered images | `fs-idp60354928` (18.3, `fig-bf3-lewis-acid`) and `fs-idp81139952` (18.5, `fig-ammonia-derivatives`) kept as the book's images in unnumbered rows |
+| Exercises | 77 kept, numbered chapter-wide 1 to 116; 18.6's renumbered 56 and 57 at the chapter pass (its left-out item is 58); the 27 Lewis-structure images of six keys copied to `media/ch18/`, the bundle's other 29 `Exercise*_img` files never copied |
+| Variables | 19 rows, every one anchored; eight added by the sections for their readouts (18.4 T, 18.5 V, 18.7 P, T and V, 18.10 T, 18.11 E_std and r) |
+| Glossary | "passivation" staged on 17.6's `passivation` and "amorphous" on 10.5's `amorphous-solid` at the chapter pass; "representative element", "metalloid" and "alkaline earth metal" were already terms of their 2.5 concepts |
+| Departures | Figure 18.2 shades Zn, Cd and Hg as representative and the lanthanides as inner transition metals, as the text classes them; red phosphorus opens one bond per tetrahedron; K_P away from 298 K uses 13.3's ΔH (see `exploration.md`) |

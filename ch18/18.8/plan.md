@@ -40,3 +40,7 @@ Nothing dropped from the text. Errata kept as printed: "2.00 g of PCl₃ is an e
 ## Wanted at chapter level
 
 - 18.6's exercises carry `source_number` 1 to 3; chapter-wide they are 56 to 58 (18.1 to 18.5 hold 55 items)
+
+Applied by the chapter pass (2026-10-05):
+
+- 18.6 renumbered 56 and 57 (see 18.6); nothing else to apply.

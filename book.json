@@ -2857,7 +2857,9 @@
       "section": "2.5",
       "name": "Lanthanide",
       "terms": [
-        "lanthanide"
+        "lanthanide",
+        "lanthanide series",
+        "lanthanoid series"
       ],
       "statement": "A lanthanide is an inner transition metal in the top of the bottom two rows of the periodic table."
     },
@@ -2867,7 +2869,9 @@
       "section": "2.5",
       "name": "Actinide",
       "terms": [
-        "actinide"
+        "actinide",
+        "actinide series",
+        "actinoid series"
       ],
       "statement": "An actinide is an inner transition metal in the bottom of the bottom two rows of the periodic table."
     },
@@ -3625,7 +3629,8 @@
       "section": "10.5",
       "name": "Amorphous solid",
       "terms": [
-        "amorphous solid"
+        "amorphous solid",
+        "amorphous"
       ],
       "statement": "An amorphous solid, or noncrystalline solid, is a solid in which the particles lack an ordered internal structure."
     },
@@ -11442,7 +11447,10 @@
       "kind": "definition",
       "section": "17.6",
       "name": "Passivation",
-      "statement": "Passivation is the formation of a protective layer on a metal surface that prevents further corrosion of the metal beneath, as the patina does on copper and the chromium oxide layer does on stainless steel."
+      "statement": "Passivation is the formation of a protective layer on a metal surface that prevents further corrosion of the metal beneath, as the patina does on copper and the chromium oxide layer does on stainless steel.",
+      "terms": [
+        "passivation"
+      ]
     },
     {
       "id": "galvanization",
@@ -12608,7 +12616,8 @@
         {
           "id": "eq-delta-tet",
           "latex": "\\Delta_{\\text{tet}}=\\frac{4}{9}\\Delta_{\\text{oct}}",
-          "ktex": "\\kdtet=\\frac{4}{9}\\kdoct"
+          "ktex": "\\kdtet=\\frac{4}{9}\\kdoct",
+          "anchor": "19.3-ex-other-geometries"
         }
       ]
     },
@@ -12663,7 +12672,8 @@
       "forms": [
         {
           "id": "eq-alkane-formula",
-          "latex": "\\text{C}_{n}\\text{H}_{2n+2}"
+          "latex": "\\text{C}_{n}\\text{H}_{2n+2}",
+          "anchor": "20.1-alkane-trend"
         }
       ]
     },
@@ -12884,7 +12894,8 @@
       "forms": [
         {
           "id": "eq-carbohydrate-formula",
-          "latex": "\\text{C}_{m}(\\text{H}_{2}\\text{O})_{n}"
+          "latex": "\\text{C}_{m}(\\text{H}_{2}\\text{O})_{n}",
+          "anchor": "20.2-carbohydrates"
         }
       ]
     },

@@ -54,3 +54,9 @@ Nothing dropped. Errata kept as printed: "tetraphosphorus decoxide"; "the only k
 - variables row `18.7/K_P` → `18.7-dioxide` (it has no anchor)
 - glossary term "passivation" → concept `passivation` (17.6) and "amorphous" → `amorphous-solid` (10.5), as the chapter notes ask (not this section's)
 - 18.6 numbers its exercises 1 to 3 (`e1`…, `source_number` "1"…); chapter-wide they are 56 to 58, as 18.1 counts 1 to 14 and this section 59 to 66
+
+Applied by the chapter pass (2026-10-05):
+
+- Anchor: 18.7/K_P → 18.7-dioxide; P, T and V were already anchored there.
+- Glossary terms "passivation" and "amorphous" added on their owners' concepts (see 18.1 and 18.3); 18.6 renumbered 56 and 57 (see 18.6).
+- `exploration.md` records that K_P away from 298 K comes from 13.3's ΔH.

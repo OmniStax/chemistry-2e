@@ -65,3 +65,9 @@ The Link to Learning video of gold dissolving in aqua regia. Errata kept as prin
 - `18.9/pK_a` → 18.9-halogen-oxyacids
 - No concept, edge or symbol fixes.
 - ch18/18.6 `section.json`: its exercises carry `source_number` 1 and 2; the chapter numbers its exercises continuously (18.1 has 14, 18.2 13, 18.3 16, 18.4 7, 18.5 5), so they are 56 and 57
+
+Applied by the chapter pass (2026-10-05):
+
+- Anchors: 18.9/ΔH° → 18.9-ozone; 18.9/K_a, K_a1, K_a2 → 18.9-sulfur-oxyacids; 18.9/pK_a → 18.9-halogen-oxyacids.
+- 18.6 renumbered 56 and 57 (see 18.6).
+- `exploration.md` records the two folds weighed and refused (18.47 + 18.48, 18.52 + 18.53).

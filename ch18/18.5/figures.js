@@ -113,7 +113,7 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
     build();
     const t = cy.now();
     if (v.scene) { place(t); v.invalidate(); }
-    const vH = GAS.H.max * t / T, vO = GAS.O.max * t / T, ml = (x) => hue('volume', x.toFixed(1) + '\\;\\text{mL}');
+    const vO = Math.round(GAS.O.max * t / T * 10) / 10, vH = (GAS.H.max / GAS.O.max) * vO, ml = (x) => hue('volume', x.toFixed(1) + '\\;\\text{mL}');
     const s = `\\kV_{\\text{H}_2} = 2\\,\\kV_{\\text{O}_2}:\\quad ${ml(vH)} = 2\\,(${ml(vO)})`;
     if (s !== lastTex) { lastTex = s; F.tex(d.readout, s, false, { values: false }); }
     /* the legend: the book's three molecules, named once */

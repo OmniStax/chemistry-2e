@@ -1449,3 +1449,70 @@ Checks: `ost check` clean for the book, and every page of the chapter in
 light and dark with no console error but the dev server's own missing
 offline catalogue, no KaTeX error, no missing image, every figure drawn and
 all ten exercise hosts filled.
+
+
+## Pass 21 (2026-10-05): Chapter 18, Representative Metals, Metalloids, and Nonmetals, is built and passed
+
+Built: the introduction and twelve sections, 18.1 to 18.12, in the
+publisher's numbering, Figures 18.1 to 18.63 all shown and linked. Nineteen
+figures drawn live. Figure 18.2 is the periodic table with a choice of group
+lighting its column, its members' first ionization energies and the
+oxidation states the text gives them. Figures 18.10 and 18.11 are the Downs
+and Hall–Héroult cells on moving 3D benches, the Downs cell with a choice of
+molten or aqueous salt. Figures 18.12 and 18.13 are the metalloid structures
+in 3D with a choice of solid, Figure 18.14 sweeps a molten zone up a silicon
+rod, and Figure 18.18 turns dry ice or silica. Figure 18.19 sets the
+nonmetals' oxidation states on one scale; Figures 18.20, 18.22 and 18.23 are
+one 3D figure of carbon in which graphite's layers draw away to graphene and
+graphene rolls into a nanotube; Figure 18.24 joins white phosphorus's
+tetrahedra into red; Figure 18.25 heats molten sulfur, its rings opening
+into chains that lengthen and tangle as the liquid darkens. Figure 18.26
+splits water on a clock, hydrogen collecting twice as fast as oxygen.
+Figures 18.39 and 18.40 grow sulfur and oxygen atoms out of P₄'s bonds, and
+Figure 18.41 swings chlorine atoms into the shapes of the phosphorus
+chlorides. Figures 18.55 to 18.57 are the chlorine oxyanions, a lone pair at
+a time becoming a bond, in the book's dot structures or in 3D, with the
+acids' pK_a strip beneath. Figure 18.59 runs the Frasch process, the deposit
+staying solid when the water is cooled below 113 °C, and Figure 18.63 grows
+the interhalogen fluorides out of the central atom's lone pairs. Two Sims of
+OmniStax's own: NO₂ and N₂O₄ in a piston vessel on temperature and volume
+sliders (18.7), and the ladder of the halogen couples beside a test tube
+whose colour says which displacement runs (18.11). Forty photographs kept,
+two unnumbered images kept as the book's, and Tables 18.1 to 18.3 written as
+tables. 18.6 and 18.12 have no figure of their own by root rule 24.3.
+Seventy-seven exercises, numbered chapter-wide 1 to 116, with no worked
+example and so no Check Your Learning. Thirty-nine unkeyed items whose
+answers would be computed are left out and named in `exercise_notes`; five
+unkeyed choice items are kept open with their options, and fourteen unkeyed
+conceptual items carry a suggested approach. No exercise moves.
+
+What the chapter pass changed. Every variables row of the chapter anchored,
+thirteen of the nineteen at the pass (ΔH°, K_a in 18.3; ΔH°, ΔG_f°, E_std
+in 18.5; K_P in 18.7; ΔH°, K_a, K_a1, K_a2, pK_a in 18.9; T in 18.4 and
+18.10); the eight rows the sections added for their readouts are kept. 18.6
+numbered its exercises 1 and 2 within the section; they are 56 and 57, ids
+and source numbers, as the chapter counts. "Passivation" is a term of 17.6's
+`passivation` and "amorphous" of 10.5's `amorphous-solid`, staged in their
+own chapters and merged; "representative element", "metalloid" and
+"alkaline earth metal" were already terms on 2.5. The 27 key images in
+`media/ch18/` are all used and stay. `config.md` records what the build
+changed, `COLOR.md` the referents, facts and bindings as built, and
+`exploration.md` four departures: Figure 18.2 shading zinc, cadmium and
+mercury as representative and the lanthanides as inner transition metals as
+the text classes them, red phosphorus opening one bond per tetrahedron, the
+NO₂ Sim taking 13.3's ΔH for K_P away from 298 K, and the two folds 18.9
+weighed and refused.
+
+Errata carried as printed and named in `exploration.md`: the antimony
+paragraph printed twice in 18.3; S(s) + O₂(g) ⟶ 2SO₂(s) in 18.4; Table
+18.1's first row without its water in 18.5; "tetraphosphorus decoxide" in
+18.7; "2HCL", the unbalanced Na₂O + H₂O ⟶ NaOH and "hydrogen phosphate ion,
+HPO₃²⁻" for hydrogen phosphite in 18.9; "HlO₃" and "Ca(PO₄)₃F" in 18.11;
+"oxidation sate" in 18.12; and the rest there. Five Link to Learning notes
+are dropped and named.
+
+Checks: `ost check` clean for the book (two warnings in sheets, none in the
+chapter), and every page of the chapter in light and dark with no console error but the dev server's own missing
+offline catalogue, no KaTeX error, no missing image and every figure drawn;
+the one fix was Figure 18.26's readout, whose rounded volumes now add up
+(the oxygen volume is rounded first and the hydrogen volume is twice it).

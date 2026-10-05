@@ -48,3 +48,7 @@ Nothing in the text. Errata kept as printed: "Ions of metals in of groups 1 and 
 ## Wanted at chapter level
 
 - none for 18.2: every concept of the section is introduced on its span (metal-isolation-by-electrolysis → 18.2-electrolysis, downs-cell → 18.2-sodium, hall-heroult-cell → 18.2-aluminum, chemical-reduction → 18.2-chemical-reduction, pidgeon-process → 18.2-pidgeon, carbon-reduction-of-zinc-and-tin → 18.2-zinc), and no row, edge or symbol needs a fix
+
+Applied by the chapter pass (2026-10-05):
+
+- Nothing to apply; the section was read for the pass's checks and nothing changed.

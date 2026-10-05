@@ -80,3 +80,11 @@ Each section lists its own when it is built. Planned:
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.
+
+As built (chapter pass, 2026-10-05):
+
+- **18.7.** `n2o4` and `no2`, the two gases of `sim-no2-dimer`, one bar each on its strip of partial pressures and marked in the text beside it. No other section has a referent: the groups of 18.1 are lit one at a time by a choice, the hydrogen isotopes of 18.5 are not drawn, the oxyanions of 18.9 are one ion at a time on a strip of pK_a values, and the halogens of 18.11's ladder are elements told apart by name and by the colours of their solutions.
+
+Facts as drawn: the Figure 18.2 legend colours deepened so that a tint reads on a dark panel (#e3c46e representative metals, #7392cb transition metals, #c49ac4 metalloids, #8fb8aa nonmetals); graphite and the molten metals of the Downs and Hall–Héroult cells (#3a3d42, #c9ced6); the orange glow of the molten zone in silicon (#ffb347); molten sulfur from straw through amber to dark red (#e3c75a, #d4892b, #8c1d12) in 18.4, and rhombic sulfur's yellow and molten sulfur's straw (#e5c444, #d9a63a) in the Frasch pipes; the brown of NO₂ (#8b4a1c); chlorine water pale yellow-green, bromine orange and iodine brown in 18.11's test tube (#c9dc6a, #d9822b, #8a4b1f).
+
+Types as bound: 18.1 energy (IE₁ in the figure; "ionization energy" in the prose stays ink, as above); 18.3 length (bond lengths in the structures), temperature; 18.4 temperature; 18.5 volume, energy, density, temperature; 18.7 equilibrium-constant, pressure, temperature, volume; 18.9 equilibrium-constant; 18.10 temperature, pressure; 18.11 potential, length (the covalent radius r), concentration; 18.12 temperature, time. `length` is drawn by 18.3 and 18.11 though the plan above did not list it.

@@ -38,3 +38,8 @@ Nothing dropped. Errata kept as printed: "The carbonates of the alkaline earth m
 ## Wanted at chapter level
 
 - none
+
+Applied by the chapter pass (2026-10-05):
+
+- Exercises renumbered chapter-wide: `e1`/`e2` became `e56`/`e57` with `source_number` 56 and 57 (18.1 to 18.5 hold 14, 13, 16, 7 and 5 items); the unkeyed fs-idp91885920 left out is the book's 58.
+- `config.md` says the section has no figure of its own by the gate of root rule 24.3.

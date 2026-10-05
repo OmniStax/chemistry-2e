@@ -1,0 +1,1250 @@
+{
+  "id": "16.4",
+  "module": "m68819",
+  "chapter": "16",
+  "title": "Free Energy",
+  "short": "Free Energy",
+  "lead": "The <span data-concept=\"gibbs-free-energy\">Gibbs free energy</span> is a property defined from a system’s <span data-concept=\"enthalpy\">enthalpy</span> and <span data-concept=\"entropy\">entropy</span> alone. This section relates its change to the spontaneity of a process and to useful <span data-concept=\"work\">work</span>, calculates it from tables of standard data, follows how it depends on <span data-concept=\"temperature\">temperature</span>, and ties it to the <span data-concept=\"reaction-quotient\">reaction quotient</span> and the <span data-concept=\"equilibrium-constant\">equilibrium constant</span>.",
+  "objectives": [
+    "Define Gibbs free energy, and describe its relation to spontaneity",
+    "Calculate free energy change for a process using free energies of formation for its reactants and products",
+    "Calculate free energy change for a process using enthalpies of formation and the entropies for its reactants and products",
+    "Explain how temperature affects the spontaneity of some processes",
+    "Relate standard free energy changes to equilibrium constants"
+  ],
+  "summary_html": "<p><span data-concept=\"gibbs-free-energy\">Gibbs free energy</span> ($\\kG$) is a <span data-concept=\"state-function\">state function</span> defined with regard to system quantities only and may be used to predict the spontaneity of a process. A negative value for $\\kdG$ indicates a spontaneous process; a positive $\\kdG$ indicates a nonspontaneous process; and a $\\kdG$ of zero indicates that the system is at <span data-concept=\"chemical-equilibrium\">equilibrium</span>. A number of approaches to the computation of <span data-concept=\"gibbs-free-energy\">free energy changes</span> are possible.</p>",
+  "notes": "Nothing of the section is left out. Printed as the book prints them: −285.83 kJ/mol in Example 16.7’s table against −286.83 kJ/mol in Example 16.11, “ΣνG_f°” and the ΔS° for standard entropies in Example 16.8, “201.3 kJ + −300.1 kJ”, and “H2S” in Example 16.9; the “two yellow lines” of the text are the two cases of the book’s Figure 16.13 whose enthalpy and entropy changes share a sign.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. Fifteen unkeyed numerical exercises are left out: fs-idm134681120, fs-idm160458752, fs-idm217769472, fs-idm118316848, fs-idm124546864, fs-idm45665120, fs-idm139694688, fs-idm13994016, fs-idm56827936, fs-idm189903696, fs-idm181696144, fs-idm234603840, fs-idm184693712, fs-idm156294896, fs-idm182364544. Three unkeyed exercises, fs-idm162318800, fs-idm139518608 and fs-idm154668704, ask for an explanation and are kept with a suggested approach marked as OmniStax’s own. The key of fs-idm230037264 prints “−0.16 kJ” for a ΔS°; it is kept as printed and checked as −0.16, in kJ/K. Part (e) of fs-idm128725552 is kept as printed, “SnCl₄(l) ⟶ SnCl₄(l)”, and fs-idm62833440 writes ΔG° with the degree sign. Nothing is moved.",
+  "figures": [
+    {
+      "id": "sim-temp-spont",
+      "kind": "sim",
+      "number": "16.12",
+      "folds": [
+        "16.13"
+      ],
+      "originals": [
+        "/media/ch16/CNX_Chem_16_04_Scenarios.jpg",
+        "/media/ch16/CNX_Chem_16_04_TempSpont-d7b9.jpg"
+      ],
+      "original_caption": "(Figure 16.12) There are four possibilities regarding the signs of enthalpy and entropy changes. (Figure 16.13) These plots show the variation in ΔG with temperature for the four possible combinations of arithmetic sign for ΔH and ΔS.",
+      "draws": [
+        "energy",
+        "entropy",
+        "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-gibbs",
+      "kind": "sim",
+      "number": "16.14",
+      "originals": [
+        "/media/ch16/CNX_Chem_16_04_Gibbs-1aa8.jpg"
+      ],
+      "original_caption": "These plots show the free energy versus reaction progress for systems whose standard free energy changes are (a) negative, (b) positive, and (c) zero. Nonequilibrium systems will proceed spontaneously in whatever direction is necessary to minimize free energy and establish equilibrium.",
+      "draws": [
+        "energy",
+        "equilibrium-constant",
+        "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "gibbs",
+      "concept": "gibbs-free-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "gibbs",
+      "concept": "free-energy-and-spontaneity",
+      "verb": "introduces"
+    },
+    {
+      "span": "gibbs",
+      "concept": "enthalpy",
+      "verb": "uses"
+    },
+    {
+      "span": "gibbs",
+      "concept": "entropy",
+      "verb": "uses"
+    },
+    {
+      "span": "gibbs",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "gibbs",
+      "concept": "state-function",
+      "verb": "uses"
+    },
+    {
+      "span": "gibbs",
+      "concept": "second-law-of-thermodynamics",
+      "verb": "uses"
+    },
+    {
+      "span": "gibbs",
+      "concept": "entropy-change-of-universe",
+      "verb": "uses"
+    },
+    {
+      "span": "gibbs",
+      "concept": "entropy-change-of-surroundings",
+      "verb": "uses"
+    },
+    {
+      "span": "gibbs",
+      "concept": "enthalpy-change-at-constant-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "gibbs",
+      "concept": "first-law-of-thermodynamics",
+      "verb": "uses"
+    },
+    {
+      "span": "free-work",
+      "concept": "free-energy-and-maximum-work",
+      "verb": "introduces"
+    },
+    {
+      "span": "free-work",
+      "concept": "gibbs-free-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "free-work",
+      "concept": "work",
+      "verb": "uses"
+    },
+    {
+      "span": "free-work",
+      "concept": "expansion-work",
+      "verb": "uses"
+    },
+    {
+      "span": "free-work",
+      "concept": "reversible-process",
+      "verb": "uses"
+    },
+    {
+      "span": "calculating",
+      "concept": "standard-free-energy-change",
+      "verb": "introduces"
+    },
+    {
+      "span": "calculating",
+      "concept": "standard-free-energy-of-formation",
+      "verb": "introduces"
+    },
+    {
+      "span": "calculating",
+      "concept": "state-function",
+      "verb": "uses"
+    },
+    {
+      "span": "calculating",
+      "concept": "standard-state",
+      "verb": "uses"
+    },
+    {
+      "span": "calculating",
+      "concept": "standard-entropy",
+      "verb": "uses"
+    },
+    {
+      "span": "calculating",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "uses"
+    },
+    {
+      "span": "calculating",
+      "concept": "standard-entropy-change",
+      "verb": "uses"
+    },
+    {
+      "span": "calculating",
+      "concept": "enthalpy-change",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-vaporization",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-vaporization",
+      "concept": "standard-entropy",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-vaporization",
+      "concept": "standard-free-energy-change",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-hgo",
+      "concept": "standard-enthalpy-of-formation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hgo",
+      "concept": "standard-entropy",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-hgo",
+      "concept": "standard-free-energy-of-formation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-hgo",
+      "concept": "standard-free-energy-change",
+      "verb": "reinforces"
+    },
+    {
+      "span": "coupled",
+      "concept": "free-energy-of-coupled-reactions",
+      "verb": "introduces"
+    },
+    {
+      "span": "coupled",
+      "concept": "hess-law",
+      "verb": "uses"
+    },
+    {
+      "span": "coupled",
+      "concept": "standard-free-energy-of-formation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-coupled",
+      "concept": "free-energy-of-coupled-reactions",
+      "verb": "reinforces"
+    },
+    {
+      "span": "temperature",
+      "concept": "temperature-dependence-of-spontaneity",
+      "verb": "introduces"
+    },
+    {
+      "span": "temperature",
+      "concept": "exothermic-and-endothermic",
+      "verb": "uses"
+    },
+    {
+      "span": "temperature",
+      "concept": "free-energy-and-spontaneity",
+      "verb": "uses"
+    },
+    {
+      "span": "temperature",
+      "concept": "chemical-equilibrium",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-co",
+      "concept": "exothermic-and-endothermic",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-co",
+      "concept": "predict-sign-of-entropy-change",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-co",
+      "concept": "temperature-dependence-of-spontaneity",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-boiling",
+      "concept": "boiling-point",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-boiling",
+      "concept": "temperature-dependence-of-spontaneity",
+      "verb": "reinforces"
+    },
+    {
+      "span": "equilibrium",
+      "concept": "free-energy-and-reaction-quotient",
+      "verb": "introduces"
+    },
+    {
+      "span": "equilibrium",
+      "concept": "free-energy-and-equilibrium-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "equilibrium",
+      "concept": "reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "equilibrium",
+      "concept": "equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "equilibrium",
+      "concept": "ideal-gas-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "equilibrium",
+      "concept": "chemical-equilibrium",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-nonstandard",
+      "concept": "free-energy-and-reaction-quotient",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-ksp",
+      "concept": "solubility-product",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-ksp",
+      "concept": "free-energy-and-equilibrium-constant",
+      "verb": "reinforces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm117444432",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-vaporization"
+      },
+      "cite": "ex-vaporization",
+      "prompt": "Use standard enthalpy and entropy data from Appendix G to calculate the standard free energy change for the reaction shown here (298 K). What does the computed value for Δ<em>G</em>° say about the spontaneity of this process?<br>${\\text{C}}_{2}{\\text{H}}_{6}(g)\\;\\longrightarrow \\;{\\text{H}}_{2}(g)+{\\text{C}}_{2}{\\text{H}}_{4}(g)$",
+      "answer": {
+        "type": "number",
+        "value": 102.0,
+        "unit": "kJ/mol",
+        "hint": "Find Δ<em>H</em>° from the standard enthalpies of formation and Δ<em>S</em>° from the standard entropies in Appendix G, then use Δ<em>G</em>° = Δ<em>H</em>° − <em>T</em>Δ<em>S</em>° at 298 K.",
+        "generated_by": "source",
+        "solution": "$\\text{Δ}G\\text{°}=\\text{102.0 kJ/mol};$ the reaction is nonspontaneous (<em>not</em> spontaneous) at 25 °C."
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm202485584",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-hgo"
+      },
+      "cite": "ex-hgo",
+      "prompt": "Calculate Δ<em>G</em>° using (a) free energies of formation and (b) enthalpies of formation and entropies (Appendix G). Do the results indicate the reaction to be spontaneous or nonspontaneous at 25 °C?<br>${\\text{C}}_{2}{\\text{H}}_{4}(g)\\;\\longrightarrow \\;{\\text{H}}_{2}(g)+{\\text{C}}_{2}{\\text{H}}_{2}(g)$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a) from free energies of formation",
+            "value": 140.8,
+            "unit": "kJ/mol",
+            "tol": 0.003,
+            "hint": "Subtract Δ<em>G</em><sub>f</sub>° of C<sub>2</sub>H<sub>4</sub>(<em>g</em>) from that of C<sub>2</sub>H<sub>2</sub>(<em>g</em>); H<sub>2</sub>(<em>g</em>) is an element in its standard state."
+          },
+          {
+            "part": "(b) from enthalpies of formation and entropies",
+            "value": 141.5,
+            "unit": "kJ/mol",
+            "tol": 0.003,
+            "hint": "Find Δ<em>H</em>° and Δ<em>S</em>° from Appendix G, then Δ<em>G</em>° = Δ<em>H</em>° − <em>T</em>Δ<em>S</em>° at 298.15 K."
+          }
+        ],
+        "generated_by": "source",
+        "solution": "(a)  140.8 kJ/mol, nonspontaneous\n(b)  141.5 kJ/mol, nonspontaneous"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm348331936",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-coupled"
+      },
+      "cite": "ex-coupled",
+      "prompt": "What is the standard free energy change for the reaction below? Is the reaction expected to be spontaneous under standard conditions?<br>$\\text{FeS}(s)+{\\text{O}}_{2}(g)\\to \\text{Fe}(s)+{\\text{SO}}_{\\text{2}}(g)$",
+      "answer": {
+        "type": "number",
+        "value": -199.7,
+        "unit": "kJ",
+        "hint": "Couple the decomposition of FeS into its elements with the formation of SO<sub>2</sub> from sulfur and oxygen, and add the two free energy changes from Appendix G.",
+        "generated_by": "source",
+        "solution": "−199.7 kJ; spontaneous"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idm299243200",
+      "kind": "check-your-learning",
+      "bloom": "Understand",
+      "place": {
+        "at": "inline",
+        "after": "ex-co"
+      },
+      "cite": "ex-co",
+      "prompt": "Popular chemical hand warmers generate heat by the air-oxidation of iron:<br>$\\text{4Fe}(s)+{\\text{3O}}_{2}(g)\\;\\longrightarrow \\;{\\text{2Fe}}_{2}{\\text{O}}_{3}(s)$<br>How does the spontaneity of this process depend upon temperature?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Δ<em>H</em> and Δ<em>S</em> are negative; the reaction is spontaneous at low temperatures."
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idm232248480",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-boiling"
+      },
+      "cite": "ex-boiling",
+      "prompt": "Use the information in Appendix G to estimate the boiling point of CS<sub>2</sub>.",
+      "answer": {
+        "type": "number",
+        "value": 313,
+        "unit": "K",
+        "hint": "Find Δ<em>H</em>° and Δ<em>S</em>° for CS<sub>2</sub>(<em>l</em>) ⟶ CS<sub>2</sub>(<em>g</em>) from Appendix G and divide, as in Example 16.11.",
+        "generated_by": "source",
+        "solution": "313 K (accepted value 319 K)"
+      }
+    },
+    {
+      "id": "cyl6",
+      "source_id": "fs-idm192477856",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-nonstandard"
+      },
+      "cite": "ex-nonstandard",
+      "prompt": "Calculate the free energy change for this same reaction at 875 °C for a mixture containing each gas at a partial pressure of 1.88 atm. Is the reaction spontaneous under these conditions?",
+      "answer": {
+        "type": "number",
+        "value": 45.1,
+        "unit": "kJ/mol",
+        "hint": "Convert 875 °C to kelvin, write <em>Q</em> from the three partial pressures, each raised to its coefficient, and use Δ<em>G</em> = Δ<em>G</em>° + <em>RT</em> ln <em>Q</em> with the Δ<em>G</em>° of Example 16.12.",
+        "generated_by": "source",
+        "solution": "Δ<em>G</em> = 45.1 kJ/mol; no"
+      }
+    },
+    {
+      "id": "cyl7",
+      "source_id": "fs-idm300346368",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-ksp"
+      },
+      "cite": "ex-ksp",
+      "prompt": "Use the thermodynamic data provided in Appendix G to calculate the equilibrium constant for the dissociation of dinitrogen tetroxide at 25 °C.<br>${\\text{2NO}}_{2}(g)\\;\\rightleftharpoons \\;{\\text{N}}_{2}{\\text{O}}_{4}(g)$",
+      "answer": {
+        "type": "number",
+        "value": 0.32,
+        "tol": 0.05,
+        "hint": "For the dissociation of N<sub>2</sub>O<sub>4</sub> into NO<sub>2</sub>, find Δ<em>G</em>° from the standard free energies of formation in Appendix G, then use <em>K</em> = <em>e</em><sup>−Δ<em>G</em>°/<em>RT</em></sup>.",
+        "generated_by": "source",
+        "solution": "<em>K</em> = 0.32"
+      }
+    },
+    {
+      "id": "e30",
+      "source_id": "fs-idm162318800",
+      "source_number": "30",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "What is the difference between Δ<em>G</em> and Δ<em>G</em>° for a chemical change?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: recall what the degree sign marks: Δ<em>G</em>° is the free energy change for reactants and products in their standard states, 1 bar for gases and 1 <em>M</em> for solutions. Compare it with Δ<em>G</em> = Δ<em>G</em>° + <em>RT</em> ln <em>Q</em>, which gives the free energy change under any set of conditions, and say under what conditions the two are equal."
+      }
+    },
+    {
+      "id": "e31",
+      "source_id": "fs-idm203151232",
+      "source_number": "31",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "temperature",
+      "prompt": "A reaction has $\\text{Δ}H\\text{°}$ = 100 kJ/mol and $\\text{Δ}S\\text{°}=\\text{250 J/mol·K.}$ Is the reaction spontaneous at room temperature? If not, under what temperature conditions will it become spontaneous?",
+      "answer": {
+        "type": "number",
+        "value": 400,
+        "unit": "K",
+        "part": "temperature above which it becomes spontaneous",
+        "hint": "Set Δ<em>G</em> = 0 and solve <em>T</em> = Δ<em>H</em>°/Δ<em>S</em>°, with Δ<em>S</em>° in kJ/mol·K.",
+        "generated_by": "source",
+        "solution": "The reaction is nonspontaneous at room temperature.<br>Above 400 K, Δ<em>G</em> will become negative, and the reaction will become spontaneous."
+      }
+    },
+    {
+      "id": "e32",
+      "source_id": "fs-idm139518608",
+      "source_number": "32",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Explain what happens as a reaction starts with Δ<em>G</em> < 0 (negative) and reaches the point where Δ<em>G</em> = 0.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: start from what a negative Δ<em>G</em> means, a driving force in the forward direction, and follow the mixture as reactants turn into products: <em>Q</em> grows toward <em>K</em>, so Δ<em>G</em> = Δ<em>G</em>° + <em>RT</em> ln <em>Q</em> rises toward zero as the mixture moves down the curve of Figure 16.14 to its lowest point. Then say what Δ<em>G</em> = 0 means for the rates of the forward and reverse processes and for the composition of the mixture."
+      }
+    },
+    {
+      "id": "e33",
+      "source_id": "fs-idm195989408",
+      "source_number": "33",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "calculating",
+      "prompt": "Use the standard free energy of formation data in Appendix G to determine the free energy change for each of the following reactions, which are run under standard state conditions and 25 °C. Identify each as either spontaneous or nonspontaneous at these conditions.<br>(a) ${\\text{MnO}}_{2}(s)\\;\\longrightarrow \\;\\text{Mn}(s)+{\\text{O}}_{2}(g)$<br>(b) ${\\text{H}}_{2}(g)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;\\text{2HBr}(g)$<br>(c) $\\text{Cu}(s)+\\text{S}(g)\\;\\longrightarrow \\;\\text{CuS}(s)$<br>(d) $\\text{2LiOH}(s)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Li}}_{2}{\\text{CO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(g)$<br>(e) ${\\text{CH}}_{4}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{C}(s,\\;\\text{graphite})+{\\text{2H}}_{2}\\text{O}(g)$<br>(f) ${\\text{CS}}_{2}(g)+{\\text{3Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{CCl}}_{4}(g)+{\\text{S}}_{2}{\\text{Cl}}_{2}(g)$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 465.1,
+            "unit": "kJ"
+          },
+          {
+            "part": "(b)",
+            "value": -106.86,
+            "unit": "kJ"
+          },
+          {
+            "part": "(c)",
+            "value": -291.9,
+            "unit": "kJ"
+          },
+          {
+            "part": "(d)",
+            "value": -83.4,
+            "unit": "kJ"
+          },
+          {
+            "part": "(e)",
+            "value": -406.7,
+            "unit": "kJ"
+          },
+          {
+            "part": "(f)",
+            "value": -154.3,
+            "unit": "kJ"
+          }
+        ],
+        "generated_by": "source",
+        "solution": "(a) 465.1 kJ nonspontaneous; (b) −106.86 kJ spontaneous; (c) −291.9 kJ spontaneous; (d) −83.4 kJ spontaneous; (e) −406.7 kJ spontaneous; (f) −154.3  kJ spontaneous"
+      }
+    },
+    {
+      "id": "e35",
+      "source_id": "fs-idm260990256",
+      "source_number": "35",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "coupled",
+      "prompt": "Given:<br>${\\text{P}}_{4}(s)+{\\text{5O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−2697.0 kJ/mol}$<br>${\\text{2H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{2H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−457.18 kJ/mol}$<br>${\\text{6H}}_{2}\\text{O}(g)+{\\text{P}}_{4}{\\text{O}}_{10}(s)\\;\\longrightarrow \\;{\\text{4H}}_{3}{\\text{PO}}_{4}(l)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−428.66 kJ/mol}$<br>(a) Determine the standard free energy of formation, $\\text{Δ}{G}_{\\text{f}}^{{}^{\\circ}},$ for phosphoric acid.<br>(b) How does your calculated result compare to the value in Appendix G? Explain.",
+      "answer": {
+        "type": "number",
+        "value": -1124.3,
+        "unit": "kJ/mol",
+        "part": "(a)",
+        "hint": "Combine the three given reactions so that they add up to the formation of one mole of H<sub>3</sub>PO<sub>4</sub>(<em>l</em>) from its elements, scaling each Δ<em>G</em>° with its reaction.",
+        "generated_by": "source",
+        "solution": "(a) The standard free energy of formation is –1124.3 kJ/mol. (b) The calculation agrees with the value in Appendix G because free energy is a state function (just like the enthalpy and entropy), so its change depends only on the initial and final states, not the path between them."
+      }
+    },
+    {
+      "id": "e37",
+      "source_id": "fs-idm207879392",
+      "source_number": "37",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "temperature",
+      "prompt": "Consider the decomposition of red mercury(II) oxide under standard state conditions.<br>$\\text{2HgO}(s,\\;\\text{red})\\;\\longrightarrow \\;\\text{2Hg}(l)+{\\text{O}}_{2}(g)$<br>(a) Is the decomposition spontaneous under standard state conditions?<br>(b) Above what temperature does the reaction become spontaneous?",
+      "answer": {
+        "type": "number",
+        "value": 566,
+        "unit": "°C",
+        "part": "(b)",
+        "tol": 0.01,
+        "hint": "Find Δ<em>H</em>° and Δ<em>S</em>° from Appendix G, solve <em>T</em> = Δ<em>H</em>°/Δ<em>S</em>°, and convert to degrees Celsius.",
+        "generated_by": "source",
+        "solution": "(a) The reaction is nonspontaneous; (b) Above 566 °C the process is spontaneous."
+      }
+    },
+    {
+      "id": "e39",
+      "source_id": "fs-idm21106912",
+      "source_number": "39",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Calculate Δ<em>G</em>° for each of the following reactions from the equilibrium constant at the temperature given.<br>(a) ${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{2NO}(g)\\hspace{5em}\\text{T}=2000\\;\\text{°C}\\hspace{5em}{K}_{p}=4.1\\;\\times \\;{10}^{\\text{−4}}$<br>(b) ${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\;\\longrightarrow \\;\\text{2HI}(g)\\hspace{5em}\\text{T}=400\\;\\text{°C}\\hspace{5em}{K}_{p}=50.0$<br>(c) ${\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)\\;\\longrightarrow \\;\\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{T}=980\\;\\text{°C}\\hspace{5em}{K}_{p}=1.67$<br>(d) ${\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\;\\text{CaO}(s)+{\\text{CO}}_{2}(g)\\hspace{5em}\\text{T}=900\\;\\text{°C}\\hspace{5em}{K}_{p}=1.04$<br>(e) $\\text{HF}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{F}}^{\\text{−}}(aq)\\hspace{5em}\\text{T}=25\\;\\text{°C}\\hspace{5em}{K}_{a}=7.2\\;\\times \\;{10}^{\\text{−4}}$<br>(f) $\\text{AgBr}(s)\\;\\longrightarrow \\;{\\text{Ag}}^{\\text{+}}(aq)+{\\text{Br}}^{\\text{−}}(aq)\\hspace{5em}\\text{T}=25\\;\\text{°C}\\hspace{5em}{K}_{sp}=3.3\\;\\times \\;{10}^{\\text{−13}}$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 150,
+            "unit": "kJ",
+            "tol": 0.04
+          },
+          {
+            "part": "(b)",
+            "value": -21.9,
+            "unit": "kJ"
+          },
+          {
+            "part": "(c)",
+            "value": -5.34,
+            "unit": "kJ"
+          },
+          {
+            "part": "(d)",
+            "value": -0.383,
+            "unit": "kJ",
+            "tol": 0.05
+          },
+          {
+            "part": "(e)",
+            "value": 18,
+            "unit": "kJ",
+            "tol": 0.05
+          },
+          {
+            "part": "(f)",
+            "value": 71,
+            "unit": "kJ",
+            "tol": 0.03
+          }
+        ],
+        "generated_by": "source",
+        "solution": "(a) 1.5 $\\times$ 10<sup>2</sup> kJ; (b) −21.9 kJ; (c) −5.34 kJ; (d) −0.383 kJ; (e) 18 kJ; (f) 71 kJ"
+      }
+    },
+    {
+      "id": "e41",
+      "source_id": "fs-idm128725552",
+      "source_number": "41",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Calculate the equilibrium constant at 25 °C for each of the following reactions from the value of Δ<em>G</em>° given.<br>(a) ${\\text{O}}_{2}(g)+{\\text{2F}}_{2}(g)\\;\\longrightarrow \\;{\\text{2OF}}_{2}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−9.2 kJ}$<br>(b) ${\\text{I}}_{2}(s)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;\\text{2IBr}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{7.3 kJ}$<br>(c) $\\text{2LiOH}(s)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Li}}_{2}{\\text{CO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−79 kJ}$<br>(d) ${\\text{N}}_{2}{\\text{O}}_{3}(g)\\;\\longrightarrow \\;\\text{NO}(g)+{\\text{NO}}_{2}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−1.6 kJ}$<br>(e) ${\\text{SnCl}}_{4}(l)\\;\\longrightarrow \\;{\\text{SnCl}}_{4}(l)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{8.0 kJ}$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 41,
+            "tol": 0.05
+          },
+          {
+            "part": "(b)",
+            "value": 0.053,
+            "tol": 0.05
+          },
+          {
+            "part": "(c)",
+            "value": 69000000000000.0,
+            "tol": 0.05
+          },
+          {
+            "part": "(d)",
+            "value": 1.9,
+            "tol": 0.05
+          },
+          {
+            "part": "(e)",
+            "value": 0.04,
+            "tol": 0.2
+          }
+        ],
+        "generated_by": "source",
+        "solution": "(a) <em>K</em> = 41; (b) <em>K</em> = 0.053; (c) <em>K</em> = 6.9 $\\times$ 10<sup>13</sup>; (d) <em>K</em> = 1.9; (e) <em>K</em> = 0.04"
+      }
+    },
+    {
+      "id": "e43",
+      "source_id": "fs-idm182192304",
+      "source_number": "43",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Calculate the equilibrium constant at the temperature given.<br>(a) ${\\text{O}}_{2}(g)+{\\text{2F}}_{2}(g)\\;\\longrightarrow \\;{\\text{2F}}_{2}\\text{O}(g)\\hspace{5em}(\\text{T}=100\\;\\text{°C})$<br>(b) ${\\text{I}}_{2}(s)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;\\text{2IBr}(g)\\hspace{5em}(\\text{T}=0.0\\;\\text{°C})$<br>(c) $\\text{2LiOH}(s)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Li}}_{2}{\\text{CO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}(\\text{T}=575\\;\\text{°C})$<br>(d) ${\\text{N}}_{2}{\\text{O}}_{3}(g)\\;\\longrightarrow \\;\\text{NO}(g)+{\\text{NO}}_{2}(g)\\hspace{5em}(\\text{T}=−10.0\\;\\text{°C})$<br>(e) ${\\text{SnCl}}_{4}(l)\\;\\longrightarrow \\;{\\text{SnCl}}_{4}(g)\\hspace{5em}(\\text{T}=200\\;\\text{°C})$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 1.07e-13,
+            "tol": 0.1
+          },
+          {
+            "part": "(b)",
+            "value": 0.00251,
+            "tol": 0.1
+          },
+          {
+            "part": "(c)",
+            "value": 27300.0,
+            "tol": 0.1
+          },
+          {
+            "part": "(d)",
+            "value": 0.219,
+            "tol": 0.1
+          },
+          {
+            "part": "(e)",
+            "value": 16.1,
+            "tol": 0.1
+          }
+        ],
+        "generated_by": "source",
+        "solution": "In each of the following, the value of Δ<em>G</em> is not given at the temperature of the reaction. Therefore, we must calculate Δ<em>G</em> from the values Δ<em>H</em>° and Δ<em>S</em> and then calculate Δ<em>G</em> from the relation Δ<em>G</em> = Δ<em>H</em>° − <em>T</em>Δ<em>S</em>°. (a) <em>K</em> = 1.07 × 10<sup>−13</sup>; (b) <em>K</em> = 2.51 $\\times$ 10<sup>−3</sup>; (c) <em>K</em> = 2.73 $\\times$ 10<sup>4</sup>; (d) <em>K</em> = 0.219; (e) <em>K</em> = 16.1"
+      }
+    },
+    {
+      "id": "e45",
+      "source_id": "fs-idm104559776",
+      "source_number": "45",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Consider the following reaction at 298 K:<br>${\\text{N}}_{2}{\\text{O}}_{4}(g)\\;\\rightleftharpoons \\;{\\text{2NO}}_{2}(g)\\hspace{5em}{K}_{P}=0.142$<br>What is the standard free energy change at this temperature? Describe what happens to the initial system, where the reactants and products are in standard states, as it approaches equilibrium.",
+      "answer": {
+        "type": "number",
+        "value": 4.84,
+        "unit": "kJ/mol",
+        "part": "standard free energy change",
+        "hint": "Use Δ<em>G</em>° = −<em>RT</em> ln <em>K</em> with <em>T</em> = 298 K, then compare <em>Q</em> = 1 for the standard states with <em>K</em>.",
+        "generated_by": "source",
+        "solution": "The standard free energy change is $\\text{Δ}{G}^{{}^{\\circ}}=\\text{−}RT\\;\\text{ln}\\;K=\\text{4.84 kJ/mol}.$ When reactants and products are in their standard states (1 bar or 1 atm), <em>Q</em> = 1. As the reaction proceeds toward equilibrium, the reaction shifts left (the amount of products drops while the amount of reactants increases): <em>Q</em> < 1, and $\\text{Δ}G$ becomes less positive as it approaches zero. At equilibrium, <em>Q</em> = <em>K</em>, and Δ<em>G</em> = 0."
+      }
+    },
+    {
+      "id": "e47",
+      "source_id": "fs-idm217271728",
+      "source_number": "47",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "temperature",
+      "prompt": "Under what conditions is ${\\text{N}}_{2}{\\text{O}}_{3}(g)\\;\\longrightarrow \\;\\text{NO}(g)+{\\text{NO}}_{2}(g)$ spontaneous?",
+      "answer": {
+        "type": "number",
+        "value": 287,
+        "unit": "K",
+        "hint": "Find Δ<em>H</em>° and Δ<em>S</em>° from Appendix G; both are positive, so the reaction is spontaneous above <em>T</em> = Δ<em>H</em>°/Δ<em>S</em>°.",
+        "generated_by": "source",
+        "solution": "The reaction will be spontaneous at temperatures greater than 287 K."
+      }
+    },
+    {
+      "id": "e49",
+      "source_id": "fs-idm113450896",
+      "source_number": "49",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Hydrogen sulfide is a pollutant found in natural gas. Following its removal, it is converted to sulfur by the reaction ${\\text{2H}}_{2}\\text{S}(g)+{\\text{SO}}_{2}(g)\\;\\rightleftharpoons \\;\\frac{3}{8}{\\text{S}}_{8}(s,\\;\\text{rhombic})+{\\text{2H}}_{2}\\text{O}(l).$ What is the equilibrium constant for this reaction? Is the reaction endothermic or exothermic?",
+      "answer": {
+        "type": "number",
+        "value": 5350000000000000.0,
+        "part": "<em>K</em>",
+        "tol": 0.1,
+        "hint": "Find Δ<em>G</em>° from the standard free energies of formation in Appendix G, then <em>K</em> = <em>e</em><sup>−Δ<em>G</em>°/<em>RT</em></sup>; the sign of Δ<em>H</em>° tells whether it is exothermic.",
+        "generated_by": "source",
+        "solution": "<em>K</em> = 5.35 $\\times$ 10<sup>15</sup>; The process is exothermic."
+      }
+    },
+    {
+      "id": "e51",
+      "source_id": "fs-idm64731488",
+      "source_number": "51",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "In the laboratory, hydrogen chloride (HCl(<em>g</em>)) and ammonia (NH<sub>3</sub>(<em>g</em>)) often escape from bottles of their solutions and react to form the ammonium chloride (NH<sub>4</sub>Cl(<em>s</em>)), the white glaze often seen on glassware. Assuming that the number of moles of each gas that escapes into the room is the same, what is the maximum partial pressure of HCl and NH<sub>3</sub> in the laboratory at room temperature? (Hint: The partial pressures will be equal and are at their maximum value when at equilibrium.)",
+      "answer": {
+        "type": "number",
+        "value": 1e-08,
+        "unit": "atm",
+        "tol": 0.1,
+        "hint": "Find <em>K</em> for NH<sub>3</sub>(<em>g</em>) + HCl(<em>g</em>) ⇌ NH<sub>4</sub>Cl(<em>s</em>) from Appendix G; at equilibrium <em>K</em> = 1/(<em>P</em><sub>NH<sub>3</sub></sub><em>P</em><sub>HCl</sub>) with the two pressures equal.",
+        "generated_by": "source",
+        "solution": "1.0 $\\times$ 10<sup>−8</sup> atm. This is the maximum pressure of the gases under the stated conditions."
+      }
+    },
+    {
+      "id": "e53",
+      "source_id": "fs-idm203633872",
+      "source_number": "53",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Carbon dioxide decomposes into CO and O<sub>2</sub> at elevated temperatures. What is the equilibrium partial pressure of oxygen in a sample at 1000 °C for which the initial pressure of CO<sub>2</sub> was 1.15 atm?",
+      "answer": {
+        "type": "number",
+        "value": 1.29e-05,
+        "unit": "atm",
+        "tol": 0.1,
+        "hint": "Find Δ<em>G</em>° at 1273 K from Δ<em>H</em>° − <em>T</em>Δ<em>S</em>°, then <em>K<sub>P</sub></em>, and solve the equilibrium for the small pressure of O<sub>2</sub>.",
+        "generated_by": "source",
+        "solution": "$x=1.29\\;\\times \\;{10}^{-5}\\;\\text{atm}={P}_{{\\text{O}}_{2}}$"
+      }
+    },
+    {
+      "id": "e55",
+      "source_id": "fs-idm230037264",
+      "source_number": "55",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Acetic acid, CH<sub>3</sub>CO<sub>2</sub>H, can form a dimer, (CH<sub>3</sub>CO<sub>2</sub>H)<sub>2</sub>, in the gas phase.<br>${\\text{2CH}}_{3}{\\text{CO}}_{2}\\text{H}(g)\\;\\longrightarrow \\;{({\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H})}_{2}(g)$<br>The dimer is held together by two hydrogen bonds with a total strength of 66.5 kJ per mole of dimer.<br><img src=\"/media/ch16/CNX_Chem_16_04_aceticdimr_img.jpg\" alt=\"This Lewis structure shows a six-sided ring structure composed of a methyl group single bonded to a carbon, which is double bonded to an oxygen atom in an upward position and single bonded to an oxygen atom in a downward position. The lower oxygen is single bonded to a hydrogen, which is connected by a dotted line to an oxygen that is double bonded to a carbon in an upward position. This carbon is single bonded to a methyl group to its right and to an oxygen in the upward position that is single bonded to a hydrogen that is connected by a dotted line to the double bonded oxygen on the left.\"><br>At 25 °C, the equilibrium constant for the dimerization is 1.3 $\\times$ 10<sup>3</sup> (pressure in atm). What is Δ<em>S</em>° for the reaction?",
+      "answer": {
+        "type": "number",
+        "value": -0.16,
+        "tol": 0.05,
+        "hint": "Give Δ<em>S</em>° in kJ/K: find Δ<em>G</em>° from <em>K</em>, take Δ<em>H</em>° as −66.5 kJ for the two hydrogen bonds formed, and use Δ<em>S</em>° = (Δ<em>H</em>° − Δ<em>G</em>°)/<em>T</em>.",
+        "generated_by": "source",
+        "solution": "−0.16 kJ"
+      }
+    },
+    {
+      "id": "e56",
+      "source_id": "fs-idm62833440",
+      "source_number": "56",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Determine Δ<em>G</em>° for the following reactions.<br>(a) Antimony pentachloride decomposes at 448 °C. The reaction is:<br>${\\text{SbCl}}_{5}(g)\\longrightarrow {\\text{SbCl}}_{3}(g)+{\\text{Cl}}_{2}(g)$<br>An equilibrium mixture in a 5.00 L flask at 448 °C contains 3.85 g of SbCl<sub>5</sub>, 9.14 g of SbCl<sub>3</sub>, and 2.84 g of Cl<sub>2</sub>.<br>(b) Chlorine molecules dissociate according to this reaction:<br>${\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{Cl}(g)$<br>1.00% of Cl<sub>2</sub> molecules dissociate at 975 K and a pressure of 1.00 atm.",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 22.1,
+            "unit": "kJ",
+            "tol": 0.03
+          },
+          {
+            "part": "(b)",
+            "value": 98.9,
+            "unit": "kJ/mol",
+            "tol": 0.03
+          }
+        ],
+        "generated_by": "source",
+        "solution": "(a) 22.1 kJ; (b) 98.9 kJ/mol"
+      }
+    },
+    {
+      "id": "e58",
+      "source_id": "fs-idm193107712",
+      "source_number": "58",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "Determine the standard free energy change, $\\text{Δ}{G}_{\\text{f}}^{{}^{\\circ}},$ for the formation of S<sup>2−</sup>(<em>aq</em>) given that the $\\text{Δ}{G}_{\\text{f}}^{{}^{\\circ}}$ for Ag<sup>+</sup>(<em>aq</em>) and Ag<sub>2</sub>S(<em>s</em>) are 77.1 kJ/mole and −39.5 kJ/mole respectively, and the solubility product for Ag<sub>2</sub>S(<em>s</em>) is 8 $\\times$ 10<sup>−51</sup>.",
+      "answer": {
+        "type": "number",
+        "value": 90,
+        "unit": "kJ/mol",
+        "tol": 0.06,
+        "hint": "Find Δ<em>G</em>° for Ag<sub>2</sub>S(<em>s</em>) ⇌ 2Ag<sup>+</sup>(<em>aq</em>) + S<sup>2−</sup>(<em>aq</em>) from −<em>RT</em> ln <em>K</em><sub>sp</sub>, then solve for the one unknown free energy of formation.",
+        "generated_by": "source",
+        "solution": "90 kJ/mol"
+      }
+    },
+    {
+      "id": "e60",
+      "source_id": "fs-idm208071680",
+      "source_number": "60",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "The evaporation of one mole of water at 298 K has a standard free energy change of 8.58 kJ.<br>${\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{8.58 kJ}$<br>(a) Is the evaporation of water under standard thermodynamic conditions spontaneous?<br>(b) Determine the equilibrium constant, <em>K<sub>P</sub></em>, for this physical process.<br>(c) By calculating ∆<em>G</em>, determine if the evaporation of water at 298 K is spontaneous when the partial pressure of water, ${P}_{{\\text{H}}_{2}\\text{O}},$ is 0.011 atm.<br>(d) If the evaporation of water were always nonspontaneous at room temperature, wet laundry would never dry when placed outside. In order for laundry to dry, what must be the value of ${P}_{{\\text{H}}_{2}\\text{O}}$ in the air?",
+      "answer": {
+        "type": "number",
+        "value": 0.031,
+        "part": "(b) <em>K<sub>P</sub></em>",
+        "tol": 0.05,
+        "hint": "Use <em>K<sub>P</sub></em> = <em>e</em><sup>−Δ<em>G</em>°/<em>RT</em></sup> at 298 K; for (c), <em>Q<sub>P</sub></em> is the partial pressure of water vapor.",
+        "generated_by": "source",
+        "solution": "(a) Under standard thermodynamic conditions, the evaporation is nonspontaneous; (b) <em>K<sub>p</sub></em> = 0.031; (c) The evaporation of water is spontaneous; (d) ${P}_{{\\text{H}}_{2}\\text{O}}$ must always be less than <em>K<sub>p</sub></em> or less than 0.031 atm. 0.031 atm represents air saturated with water vapor at 25 °C, or 100% humidity."
+      }
+    },
+    {
+      "id": "e62",
+      "source_id": "fs-idm222211904",
+      "source_number": "62",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "One of the important reactions in the biochemical pathway glycolysis is the reaction of glucose-6-phosphate (G6P) to form fructose-6-phosphate (F6P):<br>$\\text{G6P}\\;\\rightleftharpoons \\;\\text{F6P}\\hspace{5em}\\text{Δ}G\\text{°}=\\text{1.7 kJ}$<br>(a) Is the reaction spontaneous or nonspontaneous under standard thermodynamic conditions?<br>(b) Standard thermodynamic conditions imply the concentrations of G6P and F6P to be 1 <em>M</em>, however, in a typical cell, they are not even close to these values. Calculate Δ<em>G</em> when the concentrations of G6P and F6P are 120 μ<em>M</em> and 28 μ<em>M</em> respectively, and discuss the spontaneity of the forward reaction under these conditions. Assume the temperature is 37 °C.",
+      "answer": {
+        "type": "number",
+        "value": -2.1,
+        "unit": "kJ",
+        "part": "(b) Δ<em>G</em>",
+        "tol": 0.05,
+        "hint": "Use Δ<em>G</em> = Δ<em>G</em>° + <em>RT</em> ln <em>Q</em> at 310 K, with <em>Q</em> the ratio of the F6P to the G6P concentration.",
+        "generated_by": "source",
+        "solution": "(a) Nonspontaneous as $\\text{Δ}{G}^{{}^{\\circ}}>0;$ (b) $\\text{Δ}G=\\text{Δ}{G}^{\\text{°}}+RT\\;\\text{ln}\\;Q,$ $\\text{Δ}G=1.7\\;\\times \\;{10}^{3}+\\;(8.314\\;\\times \\;310\\;\\times \\;\\text{ln}\\;\\frac{28}{120})\\;=\\text{−2.1 kJ}.$ The forward reaction to produce F6P is spontaneous under these conditions."
+      }
+    },
+    {
+      "id": "e63",
+      "source_id": "fs-idm154668704",
+      "source_number": "63",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "temperature",
+      "prompt": "Without doing a numerical calculation, determine which of the following will reduce the free energy change for the reaction, that is, make it less positive or more negative, when the temperature is increased. Explain.<br>(a) ${\\text{N}}_{2}(g)+{\\text{3H}}_{2}(g)\\;\\longrightarrow \\;{\\text{2NH}}_{3}(g)$<br>(b) $\\text{HCl}(g)+{\\text{NH}}_{3}(g)\\;\\longrightarrow \\;{\\text{NH}}_{4}\\text{Cl}(s)$<br>(c) ${({\\text{NH}}_{4})}_{2}{\\text{Cr}}_{2}{\\text{O}}_{7}(s)\\;\\longrightarrow \\;{\\text{Cr}}_{2}{\\text{O}}_{3}(s)+{\\text{4H}}_{2}\\text{O}(g)+{\\text{N}}_{2}(g)$<br>(d) $\\text{2Fe}(s)+{\\text{3O}}_{2}(g)\\;\\longrightarrow \\;{\\text{Fe}}_{2}{\\text{O}}_{3}(s)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: write Δ<em>G</em> = Δ<em>H</em> − <em>T</em>Δ<em>S</em> and notice that raising <em>T</em> lowers Δ<em>G</em> only when Δ<em>S</em> is positive. For each reaction, predict the sign of Δ<em>S</em> from the change in the amount of gas, as in Example 16.10, and choose the reactions whose entropy increases."
+      }
+    },
+    {
+      "id": "e64",
+      "source_id": "fs-idm114483936",
+      "source_number": "64",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "temperature",
+      "prompt": "When ammonium chloride is added to water and stirred, it dissolves spontaneously and the resulting solution feels cold. Without doing any calculations, deduce the signs of Δ<em>G</em>, Δ<em>H</em>, and Δ<em>S</em> for this process, and justify your choices.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Δ<em>G</em> is negative as the process is spontaneous. Δ<em>H</em> is positive as with the solution becoming cold, the dissolving must be endothermic. Δ<em>S</em> must be positive as this drives the process, and it is expected for the dissolution of any soluble ionic compound."
+      }
+    },
+    {
+      "id": "e66",
+      "source_id": "fs-idm153799616",
+      "source_number": "66",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "equilibrium",
+      "prompt": "What happens to $\\text{Δ}G$ (becomes more negative or more positive) for the following chemical reactions when the partial pressure of oxygen is increased?<br>(a) $\\text{S}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{SO}}_{2}(g)$<br>(b) ${\\text{2SO}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{2SO}}_{3}(g)$<br>(c) $\\text{HgO}(s)\\;\\longrightarrow \\;\\text{Hg}(l)+{\\text{O}}_{2}(g)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) Increasing the oxygen partial pressure will yield a decrease in <em>Q</em> and $\\text{Δ}G$ thus becomes more negative. (b) Increasing the oxygen partial pressure will yield a decrease in <em>Q</em> and $\\text{Δ}G$ thus becomes more negative. (c) Increasing the oxygen partial pressure will yield an increase in <em>Q</em> and $\\text{Δ}G$ thus becomes more positive."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "standard-free-energy-change"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "free-energy-and-spontaneity"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "standard-free-energy-of-formation"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "standard-free-energy-change"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "free-energy-of-coupled-reactions"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "standard-free-energy-of-formation"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "temperature-dependence-of-spontaneity"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "temperature-dependence-of-spontaneity"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "standard-free-energy-change"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "free-energy-and-reaction-quotient"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "standard-free-energy-of-formation"
+    },
+    {
+      "exercise": "e30",
+      "concept": "standard-free-energy-change"
+    },
+    {
+      "exercise": "e30",
+      "concept": "free-energy-and-reaction-quotient"
+    },
+    {
+      "exercise": "e31",
+      "concept": "temperature-dependence-of-spontaneity"
+    },
+    {
+      "exercise": "e32",
+      "concept": "free-energy-and-reaction-quotient"
+    },
+    {
+      "exercise": "e32",
+      "concept": "free-energy-and-spontaneity"
+    },
+    {
+      "exercise": "e33",
+      "concept": "standard-free-energy-of-formation"
+    },
+    {
+      "exercise": "e33",
+      "concept": "free-energy-and-spontaneity"
+    },
+    {
+      "exercise": "e35",
+      "concept": "free-energy-of-coupled-reactions"
+    },
+    {
+      "exercise": "e35",
+      "concept": "standard-free-energy-of-formation"
+    },
+    {
+      "exercise": "e37",
+      "concept": "temperature-dependence-of-spontaneity"
+    },
+    {
+      "exercise": "e37",
+      "concept": "standard-free-energy-change"
+    },
+    {
+      "exercise": "e39",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e41",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e43",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e43",
+      "concept": "standard-free-energy-change"
+    },
+    {
+      "exercise": "e45",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e45",
+      "concept": "free-energy-and-reaction-quotient"
+    },
+    {
+      "exercise": "e47",
+      "concept": "temperature-dependence-of-spontaneity"
+    },
+    {
+      "exercise": "e49",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e49",
+      "concept": "standard-free-energy-of-formation"
+    },
+    {
+      "exercise": "e51",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e53",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e53",
+      "concept": "standard-free-energy-change"
+    },
+    {
+      "exercise": "e55",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e55",
+      "concept": "standard-free-energy-change"
+    },
+    {
+      "exercise": "e56",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e58",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e58",
+      "concept": "standard-free-energy-of-formation"
+    },
+    {
+      "exercise": "e60",
+      "concept": "free-energy-and-equilibrium-constant"
+    },
+    {
+      "exercise": "e60",
+      "concept": "free-energy-and-reaction-quotient"
+    },
+    {
+      "exercise": "e62",
+      "concept": "free-energy-and-reaction-quotient"
+    },
+    {
+      "exercise": "e63",
+      "concept": "temperature-dependence-of-spontaneity"
+    },
+    {
+      "exercise": "e64",
+      "concept": "free-energy-and-spontaneity"
+    },
+    {
+      "exercise": "e64",
+      "concept": "temperature-dependence-of-spontaneity"
+    },
+    {
+      "exercise": "e66",
+      "concept": "free-energy-and-reaction-quotient"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+<section id="gibbs">
+<h2>Gibbs free energy</h2>
+<p class="cite-target">One of the challenges of using the <span data-concept="second-law-of-thermodynamics">second law of thermodynamics</span> to determine if a process is spontaneous is that it requires measurements of the <span data-concept="entropy">entropy change</span> for the system <em>and</em> the <span data-concept="entropy-change-of-surroundings">entropy change for the surroundings</span>. An alternative approach involving a new thermodynamic property defined in terms of system properties only was introduced in the late nineteenth century by American mathematician Josiah Willard Gibbs. This new property is called the <strong><span data-concept="gibbs-free-energy">Gibbs free energy</span> ($\kG$)</strong> (or simply the <em><span data-concept="gibbs-free-energy">free energy</span></em>), and it is defined in terms of a system’s <span data-concept="enthalpy">enthalpy</span> and <span data-concept="entropy">entropy</span> as the following:</p>
+$$\kG=\kH-\kT\kS$$
+<p><span data-concept="gibbs-free-energy">Free energy</span> is a <span data-concept="state-function">state function</span>, and at constant <span data-concept="temperature">temperature</span> and <span data-concept="gas-pressure">pressure</span>, the <strong><span data-concept="gibbs-free-energy">free energy change</span> ($\kdG$)</strong> may be expressed as the following:</p>
+$$\kdG=\kdH-\kT\kdS$$
+<p>(For simplicity’s sake, the subscript “sys” will be omitted henceforth.)</p>
+<p>The relationship between this system property and the spontaneity of a process may be understood by recalling the previously derived <span data-concept="second-law-of-thermodynamics">second law</span> expression:</p>
+$$\kdSuniv=\kdS+\;\frac{\kqsurr}{\kT}$$
+<p>The <span data-concept="first-law-of-thermodynamics">first law</span> requires that $\kqsurr=-\kqsys$, and at constant <span data-concept="gas-pressure">pressure</span> $\kqsys=\kdH$, so this expression may be rewritten as:</p>
+$$\kdSuniv=\kdS-\;\frac{\kdH}{\kT}$$
+<p>Multiplying both sides of this equation by −$\kT$, and rearranging yields the following:</p>
+$$-\kT\kdSuniv=\kdH-\kT\kdS$$
+<p>Comparing this equation to the previous one for <span data-concept="gibbs-free-energy">free energy change</span> shows the following relation:</p>
+$$\kdG=-\kT\kdSuniv$$
+<p>The <span data-concept="gibbs-free-energy">free energy change</span> is therefore a reliable indicator of the spontaneity of a process, being directly related to the previously identified spontaneity indicator, $\kdSuniv$. Table 16.3 summarizes the relation between the spontaneity of a process and the arithmetic signs of these indicators.</p>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">Table 16.3</span><span>Relation between Process Spontaneity and Signs of Thermodynamic Properties</span></div>
+  <table>
+    <tbody>
+      <tr><td>$\kdSuniv$ &gt; 0</td><td>$\kdG$ &lt; 0</td><td>spontaneous</td></tr>
+      <tr><td>$\kdSuniv$ &lt; 0</td><td>$\kdG$ &gt; 0</td><td>nonspontaneous</td></tr>
+      <tr><td>$\kdSuniv$ = 0</td><td>$\kdG$ = 0</td><td>at equilibrium</td></tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<section id="free-work">
+<h2>What’s “Free” about Δ<em>G</em>?</h2>
+<p class="cite-target">In addition to indicating spontaneity, the <span data-concept="gibbs-free-energy">free energy change</span> also provides information regarding the amount of useful <span data-concept="work">work</span> ($\kwork$) that may be accomplished by a spontaneous process. Although a rigorous treatment of this subject is beyond the scope of an introductory chemistry text, a brief discussion is helpful for gaining a better perspective on this important thermodynamic property.</p>
+<p>For this purpose, consider a spontaneous, <span data-concept="exothermic-and-endothermic">exothermic</span> process that involves a decrease in <span data-concept="entropy">entropy</span>. The <span data-concept="gibbs-free-energy">free energy change</span>, as defined by</p>
+$$\kdG=\kdH-\kT\kdS$$
+<p>may be interpreted as representing the difference between the <span data-concept="enthalpy-change">enthalpy change</span> of the process, $\kdH$, and the <span data-concept="energy-and-work">energy</span> lost to the surroundings, $\kT\kdS$. The difference between the <span data-concept="energy-and-work">energy</span> produced and the <span data-concept="energy-and-work">energy</span> lost is the <span data-concept="energy-and-work">energy</span> available (or “free”) to do useful <span data-concept="work">work</span> by the process, $\kdG$. If the process somehow could be made to take place under conditions of <span data-concept="reversible-process">thermodynamic reversibility</span>, the amount of <span data-concept="work">work</span> that could be done would be maximal:</p>
+$$\kdG=\kwmax$$
+<p>where $\kwmax$ refers to all types of <span data-concept="work">work</span> except <span data-concept="expansion-work">expansion (pressure-volume) work</span>.</p>
+<p>However, as noted previously in this chapter, such conditions are not realistic. In addition, the technologies used to extract <span data-concept="work">work</span> from a spontaneous process (e.g., batteries) are never 100% efficient, and so the <span data-concept="work">work</span> done by these processes is always less than the theoretical maximum. Similar reasoning may be applied to a nonspontaneous process, for which the <span data-concept="gibbs-free-energy">free energy change</span> represents the <em>minimum</em> amount of <span data-concept="work">work</span> that must be done <em>on</em> the system to carry out the process.</p>
+</section>
+
+<section id="calculating">
+<h2>Calculating Free Energy Change</h2>
+<p class="cite-target"><span data-concept="gibbs-free-energy">Free energy</span> is a <span data-concept="state-function">state function</span>, so its value depends only on the conditions of the initial and final states of the system. A convenient and common approach to the calculation of <span data-concept="gibbs-free-energy">free energy changes</span> for physical and chemical reactions is by use of widely available compilations of <span data-concept="standard-state">standard state</span> thermodynamic data. One method involves the use of standard <span data-concept="enthalpy">enthalpies</span> and <span data-concept="standard-entropy">entropies</span> to compute <strong><span data-concept="standard-free-energy-change">standard free energy changes</span>, $\kdGo$</strong>, according to the following relation.</p>
+$$\kdGo=\kdHo-\kT\kdSo$$
+<div class="example" id="ex-vaporization">
+<h3>Example 16.7 · Using Standard Enthalpy and Entropy Changes to Calculate $\kdGo$</h3>
+<p>Use standard <span data-concept="enthalpy">enthalpy</span> and <span data-concept="entropy">entropy</span> data from <a href="/chemistry-2e/sheets/thermo/">Appendix G</a> to calculate the <span data-concept="standard-free-energy-change">standard free energy change</span> for the vaporization of water at room <span data-concept="temperature">temperature</span> (<span data-type="temperature">298 K</span>). What does the computed value for $\kdGo$ say about the spontaneity of this process?</p>
+<h4>Solution</h4>
+<p>The process of interest is the following:</p>
+$${\text{H}}_{2}\text{O}(l)\;\longrightarrow \;{\text{H}}_{2}\text{O}(g)$$
+<p>The standard change in <span data-concept="gibbs-free-energy">free energy</span> may be calculated using the following equation:</p>
+$$\kdGo=\kdHo-\kT\kdSo$$
+<p>From <a href="/chemistry-2e/sheets/thermo/">Appendix G</a>:</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th>Substance</th><th>$\kdHf$ (kJ/mol)</th><th>$\kSo$ (J/K·mol)</th></tr></thead>
+    <tbody>
+      <tr><td>H<sub>2</sub>O(<em>l</em>)</td><td>−285.83</td><td>70.0</td></tr>
+      <tr><td>H<sub>2</sub>O(<em>g</em>)</td><td>−241.82</td><td>188.8</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>Using the appendix data to calculate the standard <span data-concept="enthalpy-change">enthalpy</span> and <span data-concept="standard-entropy-change">entropy changes</span> yields:</p>
+$$\begin{array}{l}\kdHo=\kdHf({\text{H}}_{2}\text{O}(g))\;-\kdHf({\text{H}}_{2}\text{O}(l)) \\ =[\text{−241.82 kJ/mol}-(\text{−285.83})]\;\text{kJ/mol}=\text{44.01 kJ}\end{array}$$
+$$\begin{array}{l}\kdSo=1\;\text{mol}\;\times \;\kSo({\text{H}}_{2}\text{O}(g))\;-1\;\text{mol}\;\times \;\kSo({\text{H}}_{2}\text{O}(l)) \\ =\text{(1 mol)}188.8\;\text{J/mol·K}-\text{(1 mol)}70.0\;\text{J/mol K}=118.8\;\text{J/K}\end{array}$$
+$$\kdGo=\kdHo-\kT\kdSo$$
+<p>Substitution into the standard <span data-concept="gibbs-free-energy">free energy</span> equation yields:</p>
+$$\begin{array}{l}\kdGo=\kdHo-\kT\kdSo \\ \\ =\text{44.01 kJ}-(\text{298 K}\;\times \;118.8\;\text{J/K})\;\times \;\frac{\text{1 kJ}}{\text{1000 J}}\end{array}$$
+$$\text{44.01 kJ}-\text{35.4 kJ}=\text{8.6 kJ}$$
+<p>At <span data-type="temperature">298 K (25 °C)</span> $\kdGo>0,$ so boiling is nonspontaneous (<em>not</em> spontaneous).</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-vaporization"></div>
+</div>
+<p>The <span data-concept="standard-free-energy-change">standard free energy change</span> for a reaction may also be calculated from <strong><span data-concept="standard-free-energy-of-formation">standard free energy of formation</span> $\kdGf$</strong> values of the reactants and products involved in the reaction. The <span data-concept="standard-free-energy-of-formation">standard free energy of formation</span> is the <span data-concept="gibbs-free-energy">free energy change</span> that accompanies the formation of one mole of a substance from its elements in their <span data-concept="standard-state">standard states</span>. Similar to the <span data-concept="standard-enthalpy-of-formation">standard enthalpy of formation</span>, $\kdGf$ is by definition zero for elemental substances in their <span data-concept="standard-state">standard states</span>. The approach used to calculate $\kdGo$ for a reaction from $\kdGf$ values is the same as that demonstrated previously for <span data-concept="enthalpy">enthalpy</span> and <span data-concept="entropy">entropy</span> changes. For the reaction</p>
+$$m\text{A}+n\text{B}\;\longrightarrow \;x\text{C}+y\text{D},$$
+<p>the <span data-concept="standard-free-energy-change">standard free energy change</span> at room <span data-concept="temperature">temperature</span> may be calculated as</p>
+$$\begin{array}{l}\kdGo=\sum \nu \kdGo(\text{products})\;-\sum \nu \kdGo(\text{reactants}) \\ \\ =[x\kdGf(\text{C})+y\kdGf(\text{D})]\;-\;[m\kdGf(\text{A})+n\kdGf(\text{B})].\end{array}$$
+<div class="example" id="ex-hgo">
+<h3>Example 16.8 · Using Standard Free Energies of Formation to Calculate $\kdGo$</h3>
+<p>Consider the decomposition of yellow mercury(II) oxide.</p>
+$$\text{HgO}(s,\;\text{yellow})\;\longrightarrow \;\text{Hg}(l)\;+\;\frac{1}{2}{\text{O}}_{2}(g)$$
+<p>Calculate the <span data-concept="standard-free-energy-change">standard free energy change</span> at room <span data-concept="temperature">temperature</span>, $\kdGo,$ using (a) <span data-concept="standard-free-energy-of-formation">standard free energies of formation</span> and (b) <span data-concept="standard-enthalpy-of-formation">standard enthalpies of formation</span> and <span data-concept="standard-entropy">standard entropies</span>. Do the results indicate the reaction to be spontaneous or nonspontaneous under standard conditions?</p>
+<h4>Solution</h4>
+<p>The required data are available in <a href="/chemistry-2e/sheets/thermo/">Appendix G</a> and are shown here.</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th>Compound</th><th>$\kdGf$ (kJ/mol)</th><th>$\kdHf$ (kJ/mol)</th><th>$\kSo$ (J/K·mol)</th></tr></thead>
+    <tbody>
+      <tr><td>HgO (<em>s</em>, yellow)</td><td>−58.43</td><td>−90.46</td><td>71.13</td></tr>
+      <tr><td>Hg(<em>l</em>)</td><td>0</td><td>0</td><td>75.9</td></tr>
+      <tr><td>O<sub>2</sub>(<em>g</em>)</td><td>0</td><td>0</td><td>205.2</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>(a) Using <span data-concept="standard-free-energy-of-formation">free energies of formation</span>:</p>
+$$\kdGo=\sum \nu {G}_{f}^{{}^{\circ}}\text{(products)}\;-\sum \nu \kdGf\text{(reactants)}$$
+$$=[1\kdGf\text{Hg}(l)+\;\frac{1}{2}\kdGf{\text{O}}_{\text{2}}(g)]\;-\;1\kdGf\text{HgO}(s,\;\text{yellow})$$
+$$=[1\;\text{mol}\text{(0 kJ/mol)}+\;\frac{1}{2}\;\text{mol(0 kJ/mol)}]\;-\text{1 mol(−58.43 kJ/mol)}=\text{58.43 kJ/mol}$$
+<p>(b) Using <span data-concept="enthalpy">enthalpies</span> and <span data-concept="entropy">entropies</span> of formation:</p>
+$$\kdHo=\sum \nu \kdHf\text{(products)}\;-\sum \nu \kdHf\text{(reactants)}$$
+$$=[1\kdHf\text{Hg}(l)+\frac{1}{2}\kdHf{\text{O}}_{2}(g)]\;-1\kdHf\text{HgO}(s,\;\text{yellow})$$
+$$=[\text{1 mol}(\text{0 kJ/mol})\;+\;\frac{1}{2}\;\text{mol}(\text{0 kJ/mol})]\;-\text{1 mol}(\text{−90.46 kJ/mol})=\text{90.46 kJ/mol}$$
+$$\kdSo=\sum \nu \kdSo\text{(products)}-\sum \nu \kdSo\text{(reactants)}$$
+$$=[1\kdSo\text{Hg}(l)\;+\;\frac{1}{2}\kdSo{\text{O}}_{2}(g)]\;-1\kdSo\text{HgO}(s,\;\text{yellow})$$
+$$=[\text{1 mol}\;(\text{75.9 J/mol K})\;+\;\frac{1}{2}\;\text{mol}(\text{205.2 J/mol K})]\;-\text{1 mol}(\text{71.13 J/mol K})=\text{107.4 J/mol K}$$
+$$\kdGo=\kdHo-\kT\kdSo=\text{90.46 kJ}-\text{298.15 K}\;\times \;\text{107.4 J/K·mol}\;\times \;\frac{\text{1 kJ}}{\text{1000 J}}$$
+$$\kdGo=(90.46-32.01)\;\text{kJ/mol}=\text{58.45 kJ/mol}$$
+<p>Both ways to calculate the <span data-concept="standard-free-energy-change">standard free energy change</span> at <span data-type="temperature">25 °C</span> give the same numerical value (to three significant figures), and both predict that the process is nonspontaneous (<em>not</em> spontaneous) at room <span data-concept="temperature">temperature</span>.</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-hgo"></div>
+</div>
+</section>
+
+<section id="coupled">
+<h2>Free Energy Changes for Coupled Reactions</h2>
+<p class="cite-target">The use of <span data-concept="standard-free-energy-of-formation">free energies of formation</span> to compute <span data-concept="gibbs-free-energy">free energy changes</span> for reactions as described above is possible because $\kG$ is a <span data-concept="state-function">state function</span>, and the approach is analogous to the use of <span data-concept="hess-law">Hess’ Law</span> in computing <span data-concept="enthalpy-change">enthalpy changes</span> (see the chapter on thermochemistry). Consider the vaporization of water as an example:</p>
+$${\text{H}}_{2}\text{O}(l)\to {\text{H}}_{2}\text{O}(g)$$
+<p>An equation representing this process may be derived by adding the formation reactions for the two phases of water (necessarily reversing the reaction for the liquid phase). The <span data-concept="gibbs-free-energy">free energy change</span> for the sum reaction is the sum of <span data-concept="gibbs-free-energy">free energy changes</span> for the two added reactions:</p>
+$$\begin{array}{l}\underline{\begin{array}{ll}{\text{H}}_{2}(g)+\frac{1}{2}{\text{O}}_{2}(g)\to {\text{H}}_{2}\text{O}(g)\hspace{6.6em}\kdGf\text{gas} & \\ {\text{H}}_{2}\text{O}(l)\to {\text{H}}_{2}(g)+\frac{1}{2}{\text{O}}_{2}(g)\hspace{5.6em}-\kdGf\text{liquid}\end{array}} \\ \begin{array}{ll} \\ {\text{H}}_{2}\text{O}(l)\to {\text{H}}_{2}\text{O}(g)\hspace{10em}\kdGo=\kdGf\text{gas}-\kdGf\text{liquid} & \end{array}\end{array}$$
+<p>This approach may also be used in cases where a nonspontaneous reaction is enabled by coupling it to a spontaneous reaction. For example, the production of elemental zinc from zinc sulfide is thermodynamically unfavorable, as indicated by a positive value for $\kdGo$:</p>
+$$\text{ZnS}(s)\to \text{Zn}(s)+\text{S}(s)\hspace{5em}\kdGone=201.3\;\text{kJ}$$
+<p>The industrial process for production of zinc from sulfidic ores involves coupling this decomposition reaction to the thermodynamically favorable oxidation of sulfur:</p>
+$$\text{S}(s)+{\text{O}}_{\text{2}}(g)\to {\text{SO}}_{\text{2}}(g)\hspace{5em}\kdGtwo=-300.1\;\text{kJ}$$
+<p>The coupled reaction exhibits a negative <span data-concept="gibbs-free-energy">free energy change</span> and is spontaneous:</p>
+$$\text{ZnS}(s)+{\text{O}}_{2}(g)\to \text{Zn}(s)+\text{S}{\text{O}}_{2}(g)\hspace{5em}\kdGo=201.3\;\text{kJ}+-300.1\;\text{kJ}=-98.8\;\text{kJ}$$
+<p>This process is typically carried out at elevated <span data-concept="temperature">temperatures</span>, so this result obtained using standard <span data-concept="gibbs-free-energy">free energy</span> values is just an estimate. The gist of the calculation, however, holds true.</p>
+<div class="example" id="ex-coupled">
+<h3>Example 16.9 · Calculating Free Energy Change for a Coupled Reaction</h3>
+<p>Is a reaction coupling the decomposition of ZnS to the formation of H2S expected to be spontaneous under standard conditions?</p>
+<h4>Solution</h4>
+<p>Following the approach outlined above and using <span data-concept="gibbs-free-energy">free energy</span> values from <a href="/chemistry-2e/sheets/thermo/">Appendix G</a>:</p>
+$$\begin{array}{l}\text{Decomposition of zinc sulfide:}\hspace{5em}\text{ZnS}(s)\to \text{Zn}(s)+\text{S}(s)\hspace{5em}\kdGone=201.3\;\text{kJ} \\ \text{Formation of hydrogen sulfide:}\hspace{5em}\text{S}(s)+{\text{H}}_{2}(g)\to {\text{H}}_{\text{2}}\text{S}(g)\hspace{5em}\kdGtwo=-33.4\;\text{kJ} \\ \text{Coupled reaction:}\hspace{2em}\text{ZnS}(s)+{\text{H}}_{2}(g)\to \text{Zn}(s)+{\text{H}}_{\text{2}}\text{S}(g)\hspace{4em}\kdGo=201.3\;\text{kJ}+-33.4\;\text{kJ}=167.9\;\text{kJ}\end{array}$$
+<p>The coupled reaction exhibits a positive <span data-concept="gibbs-free-energy">free energy change</span> and is thus nonspontaneous.</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-coupled"></div>
+</div>
+</section>
+
+<section id="temperature">
+<h2>Temperature Dependence of Spontaneity</h2>
+<p class="cite-target">As was previously demonstrated in this chapter’s section on <span data-concept="entropy">entropy</span>, the spontaneity of a process may depend upon the <span data-concept="temperature">temperature</span> of the system. Phase transitions, for example, will proceed spontaneously in one direction or the other depending upon the <span data-concept="temperature">temperature</span> of the substance in question. Likewise, some chemical reactions can also exhibit <span data-concept="temperature">temperature</span> dependent spontaneities. To illustrate this concept, the equation relating <span data-concept="gibbs-free-energy">free energy change</span> to the <span data-concept="enthalpy-change">enthalpy</span> and <span data-concept="entropy">entropy changes</span> for the process is considered:</p>
+$$\kdG=\kdH-\kT\kdS$$
+<p>The spontaneity of a process, as reflected in the arithmetic sign of its <span data-concept="gibbs-free-energy">free energy change</span>, is then determined by the signs of the <span data-concept="enthalpy-change">enthalpy</span> and <span data-concept="entropy">entropy changes</span> and, in some cases, the absolute <span data-concept="temperature">temperature</span>. Since $\kT$ is the absolute (kelvin) <span data-concept="temperature">temperature</span>, it can only have positive values. Four possibilities therefore exist with regard to the signs of the <span data-concept="enthalpy-change">enthalpy</span> and <span data-concept="entropy">entropy changes</span>:</p>
+<ol>
+<li><strong>Both $\kdH$ and $\kdS$ are positive.</strong> This condition describes an <span data-concept="exothermic-and-endothermic">endothermic</span> process that involves an increase in system <span data-concept="entropy">entropy</span>. In this case, $\kdG$ will be negative if the magnitude of the $\kT\kdS$ term is greater than $\kdH$. If the $\kT\kdS$ term is less than $\kdH$, the <span data-concept="gibbs-free-energy">free energy change</span> will be positive. Such a process is <em>spontaneous at high temperatures and nonspontaneous at low temperatures.</em></li>
+<li><strong>Both $\kdH$ and $\kdS$ are negative.</strong> This condition describes an <span data-concept="exothermic-and-endothermic">exothermic</span> process that involves a decrease in system <span data-concept="entropy">entropy</span>. In this case, $\kdG$ will be negative if the magnitude of the $\kT\kdS$ term is less than $\kdH$. If the $\kT\kdS$ term’s magnitude is greater than $\kdH$, the <span data-concept="gibbs-free-energy">free energy change</span> will be positive. Such a process is <em>spontaneous at low temperatures and nonspontaneous at high temperatures.</em></li>
+<li><strong>$\kdH$ is positive and $\kdS$ is negative.</strong> This condition describes an <span data-concept="exothermic-and-endothermic">endothermic</span> process that involves a decrease in system <span data-concept="entropy">entropy</span>. In this case, $\kdG$ will be positive regardless of the <span data-concept="temperature">temperature</span>. Such a process is <em>nonspontaneous at all temperatures.</em></li>
+<li><strong>$\kdH$ is negative and $\kdS$ is positive.</strong> This condition describes an <span data-concept="exothermic-and-endothermic">exothermic</span> process that involves an increase in system <span data-concept="entropy">entropy</span>. In this case, $\kdG$ will be negative regardless of the <span data-concept="temperature">temperature</span>. Such a process is <em>spontaneous at all temperatures.</em></li>
+</ol>
+<p>These four scenarios are summarized in Figure 16.12.</p>
+<figure class="sim" id="sim-temp-spont" data-figure="16.12 + 16.13" data-original="/media/ch16/CNX_Chem_16_04_Scenarios.jpg,/media/ch16/CNX_Chem_16_04_TempSpont-d7b9.jpg" data-original-caption="(Figure 16.12) There are four possibilities regarding the signs of enthalpy and entropy changes. (Figure 16.13) These plots show the variation in ΔG with temperature for the four possible combinations of arithmetic sign for ΔH and ΔS.">
+  <div class="sim-head"><span class="eyebrow">Figure 16.12 + 16.13</span><span>There are four possibilities regarding the signs of <span data-concept="enthalpy-change">enthalpy</span> and <span data-concept="entropy">entropy changes</span>, and for each the plot of $\kdG$ against $\kT$ is a straight line that starts at $\kdH$ and falls by $\kdS$ for every kelvin. Drag $\kdH$ and $\kdS$ to carry the line through the four cases of the table beside the graph, and drag $\kT$ to read $\kdG$ at one <span data-concept="temperature">temperature</span>; where the two signs agree, the line crosses zero at $\kT=\kdH/\kdS$. The starting values are those of the vaporization of water in Examples 16.7 and 16.11.</span></div>
+</figure>
+<div class="example" id="ex-co">
+<h3>Example 16.10 · Predicting the Temperature Dependence of Spontaneity</h3>
+<p>The incomplete combustion of carbon is described by the following equation:</p>
+$$\text{2C}(s)+{\text{O}}_{2}(g)\;\longrightarrow \;\text{2CO}(g)$$
+<p>How does the spontaneity of this process depend upon <span data-concept="temperature">temperature</span>?</p>
+<h4>Solution</h4>
+<p>Combustion processes are <span data-concept="exothermic-and-endothermic">exothermic</span> ($\kdH$ &lt; 0). This particular reaction involves an increase in <span data-concept="entropy">entropy</span> due to the accompanying increase in the amount of gaseous species (net gain of one mole of gas, $\kdS$ &gt; 0). The reaction is therefore spontaneous ($\kdG$ &lt; 0) at all <span data-concept="temperature">temperatures</span>.</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-co"></div>
+</div>
+<p>When considering the conclusions drawn regarding the <span data-concept="temperature">temperature</span> dependence of spontaneity, it is important to keep in mind what the terms “high” and “low” mean. Since these terms are adjectives, the <span data-concept="temperature">temperatures</span> in question are deemed high or low relative to some reference <span data-concept="temperature">temperature</span>. A process that is nonspontaneous at one <span data-concept="temperature">temperature</span> but spontaneous at another will necessarily undergo a change in “spontaneity” (as reflected by its $\kdG$) as <span data-concept="temperature">temperature</span> varies. This is clearly illustrated by a graphical presentation of the <span data-concept="gibbs-free-energy">free energy change</span> equation, in which $\kdG$ is plotted on the <em>y</em> axis versus $\kT$ on the <em>x</em> axis:</p>
+$$\kdG=\kdH-\kT\kdS$$
+$$y=b+mx$$
+<p>Such a plot is shown in Figure 16.13. A process whose <span data-concept="enthalpy-change">enthalpy</span> and <span data-concept="entropy">entropy changes</span> are of the same arithmetic sign will exhibit a <span data-concept="temperature">temperature</span>-dependent spontaneity as depicted by the two yellow lines in the plot. Each line crosses from one spontaneity domain (positive or negative $\kdG$) to the other at a <span data-concept="temperature">temperature</span> that is characteristic of the process in question. This <span data-concept="temperature">temperature</span> is represented by the <em>x</em>-intercept of the line, that is, the value of $\kT$ for which $\kdG$ is zero:</p>
+$$\kdG=0=\kdH-\kT\kdS$$
+$$\kT=\;\frac{\kdH}{\kdS}$$
+<p>So, saying a process is spontaneous at “high” or “low” <span data-concept="temperature">temperatures</span> means the <span data-concept="temperature">temperature</span> is above or below, respectively, that <span data-concept="temperature">temperature</span> at which $\kdG$ for the process is zero. As noted earlier, the condition of $\kdG$ = 0 describes a system at <span data-concept="chemical-equilibrium">equilibrium</span>.</p>
+<div class="example" id="ex-boiling">
+<h3>Example 16.11 · Equilibrium Temperature for a Phase Transition</h3>
+<p>As defined in the chapter on liquids and solids, the <span data-concept="boiling-point">boiling point</span> of a liquid is the <span data-concept="temperature">temperature</span> at which its liquid and gaseous phases are in equilibrium (that is, when vaporization and condensation occur at equal rates). Use the information in <a href="/chemistry-2e/sheets/thermo/">Appendix G</a> to estimate the <span data-concept="boiling-point">boiling point</span> of water.</p>
+<h4>Solution</h4>
+<p>The process of interest is the following phase change:</p>
+$${\text{H}}_{2}\text{O}(l)\;\longrightarrow \;{\text{H}}_{2}\text{O}(g)$$
+<p>When this process is at equilibrium, $\kdG$ = 0, so the following is true:</p>
+$$0=\kdHo-\kT\kdSo\hspace{5em}\text{or}\hspace{5em}\kT=\;\frac{\kdHo}{\kdSo}$$
+<p>Using the standard thermodynamic data from <a href="/chemistry-2e/sheets/thermo/">Appendix G</a>,</p>
+$$\begin{array}{rll}\kdHo & = & 1\;\text{mol}\;\times \;\kdHf({\text{H}}_{2}\text{O}(g))\;-1\;\text{mol}\;\times \;\kdHf({\text{H}}_{2}\text{O}(l)) \\ & = & \text{(1 mol)}-\text{241.82 kJ/mol}-\text{(1 mol)}(-\text{286.83 kJ/mol})=\text{44.01 kJ}\end{array}$$
+$$\begin{array}{rll}\kdSo & = & 1\;\text{mol}\;\times \;\kdSo({\text{H}}_{2}\text{O}(g))\;-1\;\text{mol}\;\times \;\kdSo({\text{H}}_{2}\text{O}(l)) \\ & = & \text{(1 mol)}\;\text{188.8 J/K·mol}-\text{(1 mol)}\;\text{70.0 J/K·mol}=\text{118.8 J/K}\end{array}$$
+$$\kT=\;\frac{\kdHo}{\kdSo}\;=\;\frac{44.01\;\times \;{10}^{3}\;\text{J}}{118.8\;\text{J/K}}\;=370.5\;\text{K}=97.3\;\text{°C}$$
+<p>The accepted value for water’s normal <span data-concept="boiling-point">boiling point</span> is <span data-type="temperature">373.2 K (100.0 °C)</span>, and so this calculation is in reasonable agreement. Note that the values for <span data-concept="enthalpy-change">enthalpy</span> and <span data-concept="entropy">entropy changes</span> data used were derived from standard data at <span data-type="temperature">298 K</span> (<a href="/chemistry-2e/sheets/thermo/">Appendix G</a>). If desired, you could obtain more accurate results by using <span data-concept="enthalpy-change">enthalpy</span> and <span data-concept="entropy">entropy changes</span> determined at (or at least closer to) the actual <span data-concept="boiling-point">boiling point</span>.</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-boiling"></div>
+</div>
+</section>
+
+<section id="equilibrium">
+<h2>Free Energy and Equilibrium</h2>
+<p class="cite-target">The <span data-concept="gibbs-free-energy">free energy change</span> for a process may be viewed as a measure of its driving force. A negative value for $\kdG$ represents a driving force for the process in the forward direction, while a positive value represents a driving force for the process in the reverse direction. When $\kdG$ is zero, the forward and reverse driving forces are equal, and the process occurs in both directions at the same rate (the system is at <span data-concept="chemical-equilibrium">equilibrium</span>).</p>
+<p>In the chapter on equilibrium the <em><span data-concept="reaction-quotient">reaction quotient</span></em>, $\kQrxn$, was introduced as a convenient measure of the status of an equilibrium system. Recall that $\kQrxn$ is the numerical value of the mass action expression for the system, and that you may use its value to identify the direction in which a reaction will proceed in order to achieve <span data-concept="chemical-equilibrium">equilibrium</span>. When $\kQrxn$ is lesser than the <span data-concept="equilibrium-constant">equilibrium constant</span>, $\kK$, the reaction will proceed in the forward direction until <span data-concept="chemical-equilibrium">equilibrium</span> is reached and $\kQrxn=\kK$. Conversely, if $\kQrxn&gt;\kK$, the process will proceed in the reverse direction until <span data-concept="chemical-equilibrium">equilibrium</span> is achieved.</p>
+<p>The <span data-concept="gibbs-free-energy">free energy change</span> for a process taking place with reactants and products present under <em>nonstandard conditions</em> (<span data-concept="gas-pressure">pressures</span> other than 1 bar; <span data-concept="concentration">concentrations</span> other than 1 M) is related to the <span data-concept="standard-free-energy-change">standard free energy change</span> according to this equation:</p>
+$$\kdG=\kdGo+R\kT\;\text{ln}\;\kQrxn$$
+<p><em>R</em> is the <span data-concept="ideal-gas-constant">gas constant</span> (8.314 J/K mol), $\kT$ is the kelvin or absolute <span data-concept="temperature">temperature</span>, and $\kQrxn$ is the <span data-concept="reaction-quotient">reaction quotient</span>. For gas phase equilibria, the pressure-based <span data-concept="reaction-quotient">reaction quotient</span>, $\kQP$, is used. The concentration-based <span data-concept="reaction-quotient">reaction quotient</span>, $\kQc$, is used for condensed phase equilibria. This equation may be used to predict the spontaneity for a process under any given set of conditions as illustrated in Example 16.12.</p>
+<div class="example" id="ex-nonstandard">
+<h3>Example 16.12 · Calculating $\kdG$ under Nonstandard Conditions</h3>
+<p>What is the <span data-concept="gibbs-free-energy">free energy change</span> for the process shown here under the specified conditions?</p>
+<p>$\kT$ = <span data-type="temperature">25 °C</span>, ${P}_{{\text{N}}_{2}}=\text{0.870 atm},$ ${P}_{{\text{H}}_{2}}=\text{0.250 atm},$ and ${P}_{{\text{NH}}_{3}}=\text{12.9 atm}$</p>
+$${\text{2NH}}_{3}(g)\;\longrightarrow \;{\text{3H}}_{2}(g)+{\text{N}}_{2}(g)\hspace{5em}\kdGo=\text{33.0 kJ/mol}$$
+<h4>Solution</h4>
+<p>The equation relating <span data-concept="gibbs-free-energy">free energy change</span> to <span data-concept="standard-free-energy-change">standard free energy change</span> and <span data-concept="reaction-quotient">reaction quotient</span> may be used directly:</p>
+$$\begin{array}{l}\kdG=\kdGo+R\kT\;\text{ln}\;\kQrxn=33.0\;\frac{\text{kJ}}{\text{mol}}\;+\;(8.314\;\frac{\text{J}}{\text{mol K}}\;\times \;\text{298 K}\;\times \;\text{ln}\;\frac{({0.250}^{3})\;\times \;0.870}{{12.9}^{2}}) \\ \\ =9680\;\frac{\text{J}}{\text{mol}}\;\text{or 9.68 kJ/mol}\end{array}$$
+<p>Since the computed value for $\kdG$ is positive, the reaction is nonspontaneous under these conditions.</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-nonstandard"></div>
+</div>
+<p>For a system at <span data-concept="chemical-equilibrium">equilibrium</span>, $\kQrxn=\kK$ and $\kdG$ = 0, and the previous equation may be written as</p>
+$$0=\kdGo+R\kT\;\text{ln}\;\kK\hspace{5em}(\text{at equilibrium})$$
+$$\kdGo=-R\kT\;\text{ln}\;\kK\hspace{5em}\text{or}\hspace{5em}\kK={e}^{-\;\frac{\kdGo}{R\kT}}$$
+<p>This form of the equation provides a useful link between these two essential thermodynamic properties, and it can be used to derive <span data-concept="equilibrium-constant">equilibrium constants</span> from <span data-concept="standard-free-energy-change">standard free energy changes</span> and vice versa. The relations between <span data-concept="standard-free-energy-change">standard free energy changes</span> and <span data-concept="equilibrium-constant">equilibrium constants</span> are summarized in Table 16.4.</p>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">Table 16.4</span><span>Relations between Standard Free Energy Changes and Equilibrium Constants</span></div>
+  <table>
+    <thead><tr><th>$\kK$</th><th>$\kdGo$</th><th>Composition of an Equilibrium Mixture</th></tr></thead>
+    <tbody>
+      <tr><td>&gt; 1</td><td>&lt; 0</td><td>Products are more abundant</td></tr>
+      <tr><td>&lt; 1</td><td>&gt; 0</td><td>Reactants are more abundant</td></tr>
+      <tr><td>= 1</td><td>= 0</td><td>Reactants and products are comparably abundant</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="example" id="ex-ksp">
+<h3>Example 16.13 · Calculating an Equilibrium Constant using Standard Free Energy Change</h3>
+<p>Given that the <span data-concept="standard-free-energy-of-formation">standard free energies of formation</span> of Ag<sup>+</sup>(<em>aq</em>), Cl<sup>−</sup>(<em>aq</em>), and AgCl(<em>s</em>) are <span data-type="energy">77.1 kJ/mol</span>, <span data-type="energy">−131.2 kJ/mol</span>, and <span data-type="energy">−109.8 kJ/mol</span>, respectively, calculate the <span data-concept="solubility-product">solubility product</span>, $\kKsp$, for AgCl.</p>
+<h4>Solution</h4>
+<p>The reaction of interest is the following:</p>
+$$\text{AgCl}(s)\;\rightleftharpoons \;{\text{Ag}}^{\text{+}}(aq)+{\text{Cl}}^{\text{−}}(aq)\hspace{5em}\kKsp=[{\text{Ag}}^{\text{+}}][{\text{Cl}}^{\text{−}}]$$
+<p>The <span data-concept="standard-free-energy-change">standard free energy change</span> for this reaction is first computed using <span data-concept="standard-free-energy-of-formation">standard free energies of formation</span> for its reactants and products:</p>
+$$\begin{array}{l}\kdGo=[\kdGf({\text{Ag}}^{\text{+}}(aq))\;+\kdGf({\text{Cl}}^{\text{−}}(aq))]\;-\;[\kdGf(\text{AgCl}(s))] \\ =[\text{77.1 kJ/mol}-\text{131.2 kJ/mol}]-[-\text{109.8 kJ/mol}]=\text{55.7 kJ/mol}\end{array}$$
+<p>The <span data-concept="equilibrium-constant">equilibrium constant</span> for the reaction may then be derived from its <span data-concept="standard-free-energy-change">standard free energy change</span>:</p>
+$$\kKsp={e}^{-\frac{\kdGo}{R\kT}}=\text{exp}(-\;\frac{\kdGo}{R\kT})\;=\text{exp}(-\;\frac{55.7\;\times \;{10}^{3}\;\text{J/mol}}{8.314\;\text{J/mol·K}\;\times \;298.15\;\text{K}})=\text{exp}(-22.470)={e}^{-22.470}=1.74\;\times \;{10}^{-10}$$
+<p>This result is in reasonable agreement with the value provided in <a href="/chemistry-2e/sheets/ksp/">Appendix J</a>.</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-ksp"></div>
+</div>
+<p>To further illustrate the relation between these two essential thermodynamic concepts, consider the observation that reactions spontaneously proceed in a direction that ultimately establishes <span data-concept="chemical-equilibrium">equilibrium</span>. As may be shown by plotting the <span data-concept="gibbs-free-energy">free energy</span> versus the extent of the reaction (for example, as reflected in the value of $\kQrxn$), <span data-concept="chemical-equilibrium">equilibrium</span> is established when the system’s <span data-concept="gibbs-free-energy">free energy</span> is minimized (Figure 16.14). If a system consists of reactants and products in nonequilibrium amounts ($\kQrxn\ne\kK$), the reaction will proceed spontaneously in the direction necessary to establish <span data-concept="chemical-equilibrium">equilibrium</span>.</p>
+<figure class="sim" id="sim-gibbs" data-figure="16.14" data-original="/media/ch16/CNX_Chem_16_04_Gibbs-1aa8.jpg" data-original-caption="These plots show the free energy versus reaction progress for systems whose standard free energy changes are (a) negative, (b) positive, and (c) zero. Nonequilibrium systems will proceed spontaneously in whatever direction is necessary to minimize free energy and establish equilibrium.">
+  <div class="sim-head"><span class="eyebrow">Figure 16.14</span><span>The <span data-concept="gibbs-free-energy">free energy</span> versus reaction progress for one mole of a reactant turning into a product at <span data-type="temperature">298.15 K</span>, for a <span data-concept="standard-free-energy-change">standard free energy change</span> that may be negative, positive, or zero. Drag $\kdGo$ to move the lowest point of the curve, where $\kQrxn=\kK$, and drag the reaction progress to choose a mixture and read its $\kQrxn$ and the sign of $\kdG$. Nonequilibrium systems will proceed spontaneously in whatever direction is necessary to minimize <span data-concept="gibbs-free-energy">free energy</span> and establish <span data-concept="chemical-equilibrium">equilibrium</span>.</span></div>
+</figure>
+</section>

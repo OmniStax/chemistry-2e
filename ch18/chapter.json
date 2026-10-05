@@ -165,6 +165,37 @@
    "unit": "mL",
    "section": "18.5",
    "anchor": "18.5-preparation"
+  },
+  {
+   "sym": "P",
+   "concept": "partial-pressure",
+   "meaning": "the partial pressure of nitrogen dioxide or of dinitrogen tetraoxide in the sealed vessel",
+   "unit": "atm",
+   "section": "18.7",
+   "anchor": "18.7-dioxide"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature of the gas in the sealed vessel",
+   "unit": "K",
+   "section": "18.7",
+   "anchor": "18.7-dioxide"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of the sealed vessel, which its piston sets",
+   "unit": "L",
+   "section": "18.7",
+   "anchor": "18.7-dioxide"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "a temperature, whichever scale it is read on",
+   "unit": "°C",
+   "section": "18.4"
   }
  ]
 }

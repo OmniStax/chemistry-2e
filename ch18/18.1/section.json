@@ -1,0 +1,608 @@
+{
+ "id": "18.1",
+ "module": "m68829",
+ "chapter": "18",
+ "title": "Periodicity",
+ "short": "Periodicity",
+ "lead": "The <span data-concept=\"main-group-element\">representative elements</span> divide into metals, <span data-concept=\"metalloid\">metalloids</span> and <span data-concept=\"nonmetal\">nonmetals</span> by their places in the periodic table. The <span data-concept=\"representative-metal\">representative metals</span> are taken group by group, from the alkali metals through groups 2, 12, 13 and 14 to bismuth in group 15, with how readily each reacts, the ions each forms and the films that protect them.",
+ "objectives": [
+  "Classify elements",
+  "Make predictions about the periodicity properties of the representative elements"
+ ],
+ "summary_html": "<p>This section focuses on the periodicity of the <span data-concept=\"main-group-element\">representative elements</span>. These are the elements where the electrons are entering the <em>s</em> and <em>p</em> orbitals. The representative elements occur in groups 1, 2, and 12–18. These elements are <span data-concept=\"representative-metal\">representative metals</span>, <span data-concept=\"metalloid\">metalloids</span>, and <span data-concept=\"nonmetal\">nonmetals</span>. The <span data-concept=\"alkali-metal\">alkali metals</span> (group 1) are very reactive, readily form ions with a charge of 1+ to form <span data-concept=\"ionic-compounds\">ionic compounds</span> that are usually soluble in water, and react vigorously with water to form hydrogen gas and a basic solution of the metal hydroxide. The outermost electrons of the <span data-concept=\"alkaline-earth-metal\">alkaline earth metals</span> (group 2) are more difficult to remove than the outer electron of the alkali metals, leading to the group 2 metals being less reactive than those in group 1. These elements easily form compounds in which the metals exhibit an <span data-concept=\"oxidation-number\">oxidation state</span> of 2+. Zinc, cadmium, and mercury (group 12) commonly exhibit the group oxidation state of 2+ (although mercury also exhibits an oxidation state of 1+ in compounds that contain ${\\text{Hg}}_{2}{}^{2+}).$ Aluminum, gallium, indium, and thallium (group 13) are easier to oxidize than is hydrogen. Aluminum, gallium, and indium occur with an oxidation state 3+ (however, thallium also commonly occurs as the Tl<sup>+</sup> ion). Tin and lead form stable divalent cations and covalent compounds in which the metals exhibit the 4+-oxidation state.</p>",
+ "notes": "The two Link to Learning videos, on the alkali metals in water and on aluminum attacked by mercury, are left out. The section keeps as printed “alkaline metal comes from”, “Streetlights sometime employ”, “grey (brittle) tin” beside “gray tin”, “tin plate-sheet iron”, the hyphenated “2+-oxidation state” and its kin, and “groups 1, 2, 3, 12, 13, 14, and 15” for the twenty representative metals; Figure 18.2 shades the elements as the text classes them, with zinc, cadmium and mercury among the representative metals and the lanthanides among the inner transition metals, where the printed figure shades them the other way round.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key. The three unkeyed exercises fs-idp139403392 (the enthalpy of slaking quicklime), fs-idm8427088 (the ions in a solution of mercury(I) nitrate) and fs-idp36975968 (sodium, aluminum and chlorine, whose part (c) asks for a Lewis structure) are left out, and no answer is computed for them. The unkeyed choice items fs-idp230369616 and fs-idp144851648 are kept open with their options and a suggested approach, and the unkeyed conceptual exercises fs-idp81885328 and fs-idp36484288 carry a suggested approach marked as OmniStax’s own. The key to fs-idp111201728 writes Na + I₂ ⟶ 2NaI as printed, and the key to fs-idp74127408 gives the mass in pounds only, checked to 5%. Nothing is moved.",
+ "figures": [
+  {
+   "id": "sim-periodic",
+   "kind": "sim",
+   "number": "18.2",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_01_PeriodicPU3.jpg"
+   ],
+   "original_caption": "The location of the representative metals is shown in the periodic table. Nonmetals are shown in green, metalloids in purple, and the transition metals and inner transition metals in blue.",
+   "draws": [
+    "energy"
+   ],
+   "facts": [
+    "#e3c46e",
+    "#7392cb",
+    "#c49ac4",
+    "#8fb8aa"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-lithium",
+   "kind": "photo",
+   "number": "18.3",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-alkali-storage",
+   "kind": "photo",
+   "number": "18.4",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-sodium-flame",
+   "kind": "photo",
+   "number": "18.5",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-magnesium-water",
+   "kind": "photo",
+   "number": "18.6",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-zinc-hcl",
+   "kind": "photo",
+   "number": "18.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-mercury",
+   "kind": "photo",
+   "number": "18.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-tin-chlorides",
+   "kind": "photo",
+   "number": "18.9",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "classes",
+   "concept": "representative-metal",
+   "verb": "introduces"
+  },
+  {
+   "span": "classes",
+   "concept": "main-group-element",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "inner-transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "metalloid",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "metal",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "classes",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "alkali",
+   "concept": "alkali-metal-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkali",
+   "concept": "alkali-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "alkali",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "alkali",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "alkali",
+   "concept": "line-spectra",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "alkaline-earth-metal-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "alkaline-earth-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "lattice-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaline-earth",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "group-12-metals",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-12",
+   "concept": "amalgam",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-12",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "sacrificial-anode",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "cathodic-protection",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "group-12",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "group-13",
+   "concept": "group-13-metals",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-13",
+   "concept": "amphoteric",
+   "verb": "uses"
+  },
+  {
+   "span": "group-13",
+   "concept": "inert-pair-effect",
+   "verb": "uses"
+  },
+  {
+   "span": "group-13",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "group-13",
+   "concept": "amalgam",
+   "verb": "uses"
+  },
+  {
+   "span": "group-14",
+   "concept": "tin-and-lead",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-14",
+   "concept": "allotropes",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-14",
+   "concept": "inert-pair-effect",
+   "verb": "uses"
+  },
+  {
+   "span": "group-15",
+   "concept": "bismuth",
+   "verb": "introduces"
+  },
+  {
+   "span": "group-15",
+   "concept": "inert-pair-effect",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp50563648",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkaline-earth",
+   "prompt": "How do alkali metals differ from alkaline earth metals in atomic structure and general properties?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The alkali metals all have a single <em>s</em> electron in their outermost shell. In contrast, the alkaline earth metals have a completed <em>s</em> subshell in their outermost shell. In general, the alkali metals react faster and are more reactive than the corresponding alkaline earth metals in the same period."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp81885328",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkali",
+   "prompt": "Why does the reactivity of the alkali metals decrease from cesium to lithium?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: compare the size of the atoms and their first ionization energies from cesium up the group to lithium, and connect how easily each atom loses its single valence electron with how readily the metal is oxidized."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp111201728",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "classes",
+   "prompt": "Predict the formulas for the nine compounds that may form when each species in column 1 of the table reacts with each species in column 2.<table><thead><tr><th>1</th><th>2</th></tr></thead><tbody><tr><td>Na</td><td>I</td></tr><tr><td>Sr</td><td>Se</td></tr><tr><td>Al</td><td>O</td></tr></tbody></table>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\begin{array}{l}\\text{Na}+{\\text{I}}_{2}\\;\\longrightarrow \\;\\text{2NaI} \\\\ \\text{2Na}+\\text{Se}\\;\\longrightarrow \\;{\\text{Na}}_{2}\\text{Se} \\\\ \\text{2Na}+{\\text{O}}_{2}\\;\\longrightarrow \\;{\\text{Na}}_{2}{\\text{O}}_{2}\\end{array}$<br>$\\begin{array}{l}\\text{Sr}+{\\text{I}}_{2}\\;\\longrightarrow \\;{\\text{SrI}}_{2} \\\\ \\text{Sr}+\\text{Se}\\;\\longrightarrow \\;\\text{SrSe} \\\\ \\text{2Sr}+{\\text{O}}_{2}\\;\\longrightarrow \\;\\text{2SrO}\\end{array}$<br>$\\begin{array}{l}\\text{2Al}+{\\text{3I}}_{2}\\;\\longrightarrow \\;{\\text{2AlI}}_{3} \\\\ \\text{2Al}+\\text{3Se}\\;\\longrightarrow \\;{\\text{Al}}_{2}{\\text{Se}}_{3} \\\\ \\text{4Al}+{\\text{3O}}_{2}\\;\\longrightarrow \\;{\\text{2Al}}_{2}{\\text{O}}_{3}\\end{array}$"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp230369616",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "classes",
+   "prompt": "Predict the best choice in each of the following. You may wish to review the chapter on electronic structure for relevant examples.<br>(a) the most metallic of the elements Al, Be, and Ba<br>(b) the most covalent of the compounds NaCl, CaCl<sub>2</sub>, and BeCl<sub>2</sub><br>(c) the lowest first ionization energy among the elements Rb, K, and Li<br>(d) the smallest among Al, Al<sup>+</sup>, and Al<sup>3+</sup><br>(e) the largest among Cs<sup>+</sup>, Ba<sup>2+</sup>, and Xe",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: for (a) and (c), place the elements in the periodic table and use the trends in size and ionization energy across a period and down a group; for (b), compare how strongly each metal holds its valence electrons, recalling what the text says of the group 2 metals with the highest ionization energies; for (d) and (e), compare the numbers of electrons held by the same or by nearly the same nuclear charge."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp156797456",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkaline-earth",
+   "prompt": "Sodium chloride and strontium chloride are both white solids. How could you distinguish one from the other?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The possible ways of distinguishing between the two include infrared spectroscopy by comparison of known compounds, a flame test that gives the characteristic yellow color for sodium (strontium has a red flame), or comparison of their solubilities in water. At 20 °C, NaCl dissolves to the extent of $\\frac{\\text{35.7 g}}{\\text{100 mL}}$ compared with $\\frac{\\text{53.8 g}}{\\text{100 mL}}$ for SrCl<sub>2</sub>. Heating to 100 °C provides an easy test, since the solubility of NaCl is $\\frac{\\text{39.12 g}}{\\text{100 mL}},$ but that of SrCl<sub>2</sub> is $\\frac{\\text{100.8 g}}{\\text{100 mL}}.$ Density determination on a solid is sometimes difficult, but there is enough difference (2.165 g/mL NaCl and 3.052 g/mL SrCl<sub>2</sub>) that this method would be viable and perhaps the easiest and least expensive test to perform."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm18187152",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkaline-earth",
+   "prompt": "Write a balanced equation for the reaction of elemental strontium with each of the following:<br>(a) oxygen<br>(b) hydrogen bromide<br>(c) hydrogen<br>(d) phosphorus<br>(e) water",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $\\text{2Sr}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{2SrO}(s);$ (b) $\\text{Sr}(s)+\\text{2HBr}(g)\\;\\longrightarrow \\;{\\text{SrBr}}_{2}(s)+{\\text{H}}_{2}(g);$ (c) $\\text{Sr}(s)+{\\text{H}}_{2}(g)\\;\\longrightarrow \\;{\\text{SrH}}_{2}(s);$ (d) $\\text{6Sr}(s)+{\\text{P}}_{4}(s)\\;\\longrightarrow \\;{\\text{2Sr}}_{3}{\\text{P}}_{2}(s);$ (e) $\\text{Sr}(s)+{\\text{2H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Sr}{(\\text{OH})}_{2}(aq)+{\\text{H}}_{2}(g)$"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp74127408",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "group-12",
+   "prompt": "What is the mass of fish, in kilograms, that one would have to consume to obtain a fatal dose of mercury, if the fish contains 30 parts per million of mercury by weight? (Assume that all the mercury from the fish ends up as mercury(II) chloride in the body and that a fatal dose is 0.20 g of HgCl<sub>2</sub>.) How many pounds of fish is this?",
+   "answer": {
+    "type": "number",
+    "value": 11,
+    "unit": "lb",
+    "tol": 0.05,
+    "part": "the mass of fish in pounds",
+    "hint": "Find the mass of mercury in 0.20 g of HgCl<sub>2</sub> from the molar masses, then the mass of fish that holds it at 30 parts per million.",
+    "solution": "11 lb",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp203792128",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "group-14",
+   "prompt": "Does metallic tin react with HCl?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Yes, tin reacts with hydrochloric acid to produce hydrogen gas."
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp36484288",
+   "source_number": "12",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "group-14",
+   "prompt": "What is tin pest, also known as tin disease?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall the two common allotropes of tin and the temperature, 13.2 °C, above which white tin is the stable form; describe what happens to a tin article in a long cold spell, and why the change spreads from the spot where it starts."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm16477216",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "group-14",
+   "prompt": "Compare the nature of the bonds in PbCl<sub>2</sub> to that of the bonds in PbCl<sub>4</sub>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "In PbCl<sub>2</sub>, the bonding is ionic, as indicated by its melting point of 501 °C. In PbCl<sub>4</sub>, the bonding is covalent, as evidenced by it being an unstable liquid at room temperature."
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp144851648",
+   "source_number": "14",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkaline-earth",
+   "prompt": "Is the reaction of rubidium with water more or less vigorous than that of sodium? How does the rate of reaction of magnesium compare?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: use the trend in reactivity down group 1 that follows from the ionization energies, then place magnesium, an alkaline earth metal of the same period as sodium, against the alkali metals, recalling what passivation and Figure 18.6 show about magnesium in water."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "alkali-metal-properties"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e2",
+   "concept": "alkali-metal-properties"
+  },
+  {
+   "exercise": "e2",
+   "concept": "ionization-energy-trend"
+  },
+  {
+   "exercise": "e3",
+   "concept": "representative-metal"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ionic-compound-formula"
+  },
+  {
+   "exercise": "e4",
+   "concept": "ionization-energy-trend"
+  },
+  {
+   "exercise": "e4",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e4",
+   "concept": "covalent-radius-trend"
+  },
+  {
+   "exercise": "e5",
+   "concept": "alkali-metal-properties"
+  },
+  {
+   "exercise": "e5",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e7",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e9",
+   "concept": "group-12-metals"
+  },
+  {
+   "exercise": "e11",
+   "concept": "tin-and-lead"
+  },
+  {
+   "exercise": "e12",
+   "concept": "allotropes"
+  },
+  {
+   "exercise": "e13",
+   "concept": "tin-and-lead"
+  },
+  {
+   "exercise": "e13",
+   "concept": "inert-pair-effect"
+  },
+  {
+   "exercise": "e14",
+   "concept": "alkali-metal-properties"
+  },
+  {
+   "exercise": "e14",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e14",
+   "concept": "passivation"
+  }
+ ]
+}

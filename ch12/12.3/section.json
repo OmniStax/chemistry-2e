@@ -1,0 +1,694 @@
+{
+ "id": "12.3",
+ "module": "m68789",
+ "chapter": "12",
+ "title": "Rate Laws",
+ "short": "Rate Laws",
+ "lead": "A <span data-concept=\"rate-law\">rate law</span> ties the <span data-concept=\"reaction-rate\">rate of a reaction</span> to the <span data-concept=\"concentration\">concentrations</span> of its reactants through a <span data-concept=\"rate-constant\">rate constant</span> and the <span data-concept=\"reaction-order\">reaction orders</span>, which are found by experiment. The orders come from comparing the initial rates of trials whose concentrations differ, and the unit of the rate constant depends on the <span data-concept=\"overall-reaction-order\">overall order</span>.",
+ "objectives": [
+  "Explain the form and function of a rate law",
+  "Use rate laws to calculate reaction rates",
+  "Use rate and concentration data to identify reaction orders and derive rate laws"
+ ],
+ "summary_html": "<p><span data-concept=\"rate-law\">Rate laws</span> (<em>differential rate laws</em>) provide a mathematical description of how changes in the <span data-concept=\"concentration\">concentration</span> of a substance affect the <span data-concept=\"reaction-rate\">rate of a chemical reaction</span>. <span data-concept=\"rate-law\">Rate laws</span> are determined experimentally and cannot be predicted by reaction stoichiometry. The <span data-concept=\"reaction-order\">order of reaction</span> describes how much a change in the <span data-concept=\"concentration\">concentration</span> of each substance affects the overall <span data-concept=\"reaction-rate\">rate</span>, and the <span data-concept=\"overall-reaction-order\">overall order of a reaction</span> is the sum of the orders for each substance present in the reaction. <span data-concept=\"reaction-order\">Reaction orders</span> are typically first order, second order, or zero order, but fractional and even negative orders are possible.</p>",
+ "notes": "Nothing of the section is left out; the list of rate laws keeps the book’s unbalanced 2N₂O₅ ⟶ NO₂ + O₂, and Example 12.4 keeps “the rate increases also triples” and “is equal to 1.The rate law” as printed.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The nine unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm211287824, fs-idm207653024, fs-idm53134032, fs-idm147604432, fs-idm233306880, fs-idm146074112, fs-idm168734944, fs-idm140371280, fs-idm152420960. The unkeyed conceptual exercise fs-idm181252208 carries a suggested approach marked as OmniStax’s own. The key to fs-idm57376432 opens with a stray “(a)”, kept in its solution as printed. The table of fs-idm49483024 is printed with its cell 4.17 × 10⁻⁴, where the book’s table summary reads 4.7 × 10⁻⁴.",
+ "figures": [
+  {
+   "id": "fig-ozone-hole",
+   "kind": "photo",
+   "number": "12.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-initial-rates",
+   "kind": "sim",
+   "draws": [
+    "rate",
+    "concentration",
+    "rate-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "trial-1",
+   "label": "trial 1 of Example 12.5",
+   "figures": [
+    "sim-initial-rates"
+   ]
+  },
+  {
+   "id": "trial-2",
+   "label": "trial 2 of Example 12.5",
+   "figures": [
+    "sim-initial-rates"
+   ]
+  },
+  {
+   "id": "trial-3",
+   "label": "trial 3 of Example 12.5",
+   "figures": [
+    "sim-initial-rates"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "rate-laws",
+   "concept": "rate-law",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "rate-constant",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "reaction-order",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "overall-reaction-order",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "concentration-and-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "rate-laws",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "initial-rates-method",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "method-of-initial-rates",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "rate-from-rate-law",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "reaction-order",
+   "verb": "uses"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "initial-rates",
+   "concept": "initial-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "rate-laws-are-experimental",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "rate-constant-units",
+   "verb": "introduces"
+  },
+  {
+   "span": "units",
+   "concept": "overall-reaction-order",
+   "verb": "uses"
+  },
+  {
+   "span": "units",
+   "concept": "rate-constant",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm235878704",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-orders"
+   },
+   "cite": "rate-laws",
+   "prompt": "The rate law for the reaction: $${\\text{H}}_{2}(g)+2\\text{NO}(g)\\;\\longrightarrow \\;{\\text{N}}_{2}\\text{O}(g)+{\\text{H}}_{2}\\text{O}(g)$$ has been determined to be rate = <em>k</em>[NO]<sup>2</sup>[H<sub>2</sub>]. What are the orders with respect to each reactant, and what is the overall order of the reaction?",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in NO",
+      "value": 2,
+      "hint": "Read the exponent on [NO] in the rate law."
+     },
+     {
+      "part": "order in H<sub>2</sub>",
+      "value": 1,
+      "hint": "A concentration written with no exponent is raised to the first power."
+     },
+     {
+      "part": "overall order",
+      "value": 3,
+      "hint": "Add the orders of the reactants."
+     }
+    ],
+    "solution": "order in NO = 2; order in H<sub>2</sub> = 1; overall order = 3"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm235878704",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-orders"
+   },
+   "cite": "rate-laws",
+   "prompt": "In a transesterification reaction, a triglyceride reacts with an alcohol to form an ester and glycerol. Many students learn about the reaction between methanol (CH<sub>3</sub>OH) and ethyl acetate (CH<sub>3</sub>CH<sub>2</sub>OCOCH<sub>3</sub>) as a sample reaction before studying the chemical reactions that produce biodiesel: $${\\text{CH}}_{3}\\text{OH}+{\\text{CH}}_{3}{\\text{CH}}_{2}{\\text{OCOCH}}_{3}\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{OCOCH}}_{3}+{\\text{CH}}_{3}{\\text{CH}}_{2}\\text{OH}$$ The rate law for the reaction between methanol and ethyl acetate is, under certain conditions, determined to be: $$\\text{rate}=k[{\\text{CH}}_{3}\\text{OH}]$$ What is the order of reaction with respect to methanol and ethyl acetate, and what is the overall order of reaction?",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in CH<sub>3</sub>OH",
+      "value": 1,
+      "hint": "Read the exponent on [CH<sub>3</sub>OH]."
+     },
+     {
+      "part": "order in CH<sub>3</sub>CH<sub>2</sub>OCOCH<sub>3</sub>",
+      "value": 0,
+      "hint": "A reactant that does not appear in the rate law is raised to the zero power."
+     },
+     {
+      "part": "overall order",
+      "value": 1,
+      "hint": "Add the orders of the reactants."
+     }
+    ],
+    "solution": "order in CH<sub>3</sub>OH = 1; order in CH<sub>3</sub>CH<sub>2</sub>OCOCH<sub>3</sub> = 0; overall order = 1"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm234815200",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-ozone"
+   },
+   "cite": "initial-rates",
+   "prompt": "Acetaldehyde decomposes when heated to yield methane and carbon monoxide according to the equation: $${\\text{CH}}_{3}\\text{CHO}(g)\\;\\longrightarrow \\;{\\text{CH}}_{4}(g)+\\text{CO}(g)$$ Determine the rate law and the rate constant for the reaction from the following experimental data:<table><thead><tr><th>Trial</th><th>[CH<sub>3</sub>CHO] (mol/L)</th><th>$-\\frac{\\Delta[{\\text{CH}}_{3}\\text{CHO}]}{\\Delta t}\\;(\\text{mol}\\;{\\text{L}}^{-1}\\;{\\text{s}}^{-1})$</th></tr></thead><tbody><tr><td>1</td><td>1.75 × 10<sup>−3</sup></td><td>2.06 × 10<sup>−11</sup></td></tr><tr><td>2</td><td>3.50 × 10<sup>−3</sup></td><td>8.24 × 10<sup>−11</sup></td></tr><tr><td>3</td><td>7.00 × 10<sup>−3</sup></td><td>3.30 × 10<sup>−10</sup></td></tr></tbody></table>",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in CH<sub>3</sub>CHO",
+      "value": 2,
+      "hint": "Doubling the concentration from trial 1 to trial 2 multiplies the rate by about four."
+     },
+     {
+      "part": "<em>k</em>",
+      "value": 6.73e-06,
+      "unit": "L mol<sup>−1</sup> s<sup>−1</sup>",
+      "hint": "Divide one trial’s rate by its concentration squared."
+     }
+    ],
+    "solution": "rate = <em>k</em>[CH<sub>3</sub>CHO]<sup>2</sup> with <em>k</em> = 6.73 × 10<sup>−6</sup> L/mol/s"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idm285627376",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-nocl"
+   },
+   "cite": "initial-rates",
+   "prompt": "Use the provided initial rate data to derive the rate law for the reaction whose equation is: $${\\text{OCl}}^{-}(aq)+{\\text{I}}^{-}(aq)\\;\\longrightarrow \\;{\\text{OI}}^{-}(aq)+{\\text{Cl}}^{-}(aq)$$<table><thead><tr><th>Trial</th><th>[OCl<sup>−</sup>] (mol/L)</th><th>[I<sup>−</sup>] (mol/L)</th><th>Initial Rate (mol/L/s)</th></tr></thead><tbody><tr><td>1</td><td>0.0040</td><td>0.0020</td><td>0.00184</td></tr><tr><td>2</td><td>0.0020</td><td>0.0040</td><td>0.00092</td></tr><tr><td>3</td><td>0.0020</td><td>0.0020</td><td>0.00046</td></tr></tbody></table>Determine the rate law expression and the value of the rate constant <em>k</em> with appropriate units for this reaction.",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in OCl<sup>−</sup>",
+      "value": 2,
+      "hint": "Compare trials 1 and 3, in which only [OCl<sup>−</sup>] changes."
+     },
+     {
+      "part": "order in I<sup>−</sup>",
+      "value": 1,
+      "hint": "Compare trials 2 and 3, in which only [I<sup>−</sup>] changes."
+     },
+     {
+      "part": "<em>k</em>",
+      "value": 57500,
+      "unit": "mol<sup>−2</sup> L<sup>2</sup> s<sup>−1</sup>",
+      "hint": "Substitute trial 1’s concentrations and rate into the rate law."
+     }
+    ],
+    "solution": "$\\frac{\\text{rate 2}}{\\text{rate 3}}=\\frac{0.00092}{0.00046}=\\frac{k(0.0020)^{x}(0.0040)^{y}}{k(0.0020)^{x}(0.0020)^{y}}$; 2.00 = 2.00<sup><em>y</em></sup>; <em>y</em> = 1. $\\frac{\\text{rate 1}}{\\text{rate 2}}=\\frac{0.00184}{0.00092}=\\frac{k(0.0040)^{x}(0.0020)^{y}}{k(0.0020)^{x}(0.0040)^{y}}$; 2.00 = 2<sup><em>x</em></sup>/2<sup><em>y</em></sup> = 2<sup><em>x</em></sup>/2<sup>1</sup>; 4.00 = 2<sup><em>x</em></sup>; <em>x</em> = 2. Substituting the concentration data from trial 1 and solving for <em>k</em> yields: rate = <em>k</em>[OCl<sup>−</sup>]<sup>2</sup>[I<sup>−</sup>]<sup>1</sup>; 0.00184 = <em>k</em>(0.0040)<sup>2</sup>(0.0020)<sup>1</sup>; <em>k</em> = 5.75 × 10<sup>4</sup> mol<sup>−2</sup> L<sup>2</sup> s<sup>−1</sup>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm181252208",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rate-laws",
+   "prompt": "How do the rate of a reaction and its rate constant differ?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: start from the rate law, rate = <em>k</em>[A]<sup><em>m</em></sup>[B]<sup><em>n</em></sup>. Ask what the rate measures and what its units are, then ask which of the two quantities changes as the reactants are used up and which stays fixed for a given reaction at a given temperature. Compare their units too: the rate is always a concentration per unit time, while the unit of <em>k</em> depends on the overall order."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm256410736",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rate-laws",
+   "prompt": "Doubling the concentration of a reactant increases the rate of a reaction four times. With this knowledge, answer the following questions:<br>(a) What is the order of the reaction with respect to that reactant?<br>(b) Tripling the concentration of a different reactant increases the rate of a reaction three times. What is the order of the reaction with respect to that reactant?",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a) order",
+      "value": 2,
+      "hint": "Find the power of 2 that gives 4."
+     },
+     {
+      "part": "(b) order",
+      "value": 1,
+      "hint": "Find the power of 3 that gives 3."
+     }
+    ],
+    "solution": "(a) 2; (b) 1"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm291799584",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rate-laws",
+   "prompt": "How will the rate of reaction change for the process: $\\text{CO}(g)+{\\text{NO}}_{2}(g)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)+\\text{NO}(g)$ if the rate law for the reaction is $\\text{rate}=k{[{\\text{NO}}_{2}]}^{2}?$<br>(a) Decreasing the pressure of NO<sub>2</sub> from 0.50 atm to 0.250 atm.<br>(b) Increasing the concentration of CO from 0.01 <em>M</em> to 0.03 <em>M</em>.",
+   "answer": {
+    "generated_by": "source",
+    "type": "open",
+    "solution": "(a) The process reduces the rate by a factor of 4. (b) Since CO does not appear in the rate law, the rate is not affected."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm222164384",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "Regular flights of supersonic aircraft in the stratosphere are of concern because such aircraft produce nitric oxide, NO, as a byproduct in the exhaust of their engines. Nitric oxide reacts with ozone, and it has been suggested that this could contribute to depletion of the ozone layer. The reaction $\\text{NO}+{\\text{O}}_{3}\\;\\longrightarrow \\;{\\text{NO}}_{2}+{\\text{O}}_{2}$ is first order with respect to both NO and O<sub>3</sub> with a rate constant of 2.20 × 10<sup>7</sup> L/mol/s. What is the instantaneous rate of disappearance of NO when [NO] = 3.3 × 10<sup>−6</sup> <em>M</em> and [O<sub>3</sub>] = 5.9 × 10<sup>−7</sup> <em>M</em>?",
+   "answer": {
+    "generated_by": "source",
+    "type": "number",
+    "value": 4.3e-05,
+    "unit": "mol/L/s",
+    "hint": "Multiply the rate constant by both concentrations.",
+    "solution": "4.3 × 10<sup>−5</sup> mol/L/s"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm140350624",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "The rate constant for the radioactive decay of <sup>14</sup>C is 1.21 × 10<sup>−4</sup> year<sup>−1</sup>. The products of the decay are nitrogen atoms and electrons (beta particles): $${}_{6}^{14}\\text{C}\\;\\longrightarrow \\;{}_{7}^{14}\\text{N}+{\\text{e}}^{-}$$ $$\\text{rate}=k[{}_{6}^{14}\\text{C}]$$ What is the instantaneous rate of production of N atoms in a sample with a carbon-14 content of 6.5 × 10<sup>−9</sup> <em>M</em>?",
+   "answer": {
+    "generated_by": "source",
+    "type": "number",
+    "value": 7.9e-13,
+    "unit": "mol/L/year",
+    "hint": "Each carbon-14 atom that decays makes one nitrogen atom, so the rate of production of N is the rate law’s rate.",
+    "solution": "7.9 × 10<sup>−13</sup> mol/L/year"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm32841312",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "Alcohol is removed from the bloodstream by a series of metabolic reactions. The first reaction produces acetaldehyde; then other products are formed. The following data have been determined for the rate at which alcohol is removed from the blood of an average male, although individual rates can vary by 25–30%. Women metabolize alcohol a little more slowly than men:<table><tbody><tr><td>[C<sub>2</sub>H<sub>5</sub>OH] (<em>M</em>)</td><td>4.4 × 10<sup>−2</sup></td><td>3.3 × 10<sup>−2</sup></td><td>2.2 × 10<sup>−2</sup></td></tr><tr><td>Rate (mol L<sup>−1</sup> h<sup>−1</sup>)</td><td>2.0 × 10<sup>−2</sup></td><td>2.0 × 10<sup>−2</sup></td><td>2.0 × 10<sup>−2</sup></td></tr></tbody></table>Determine the rate law, the rate constant, and the overall order for this reaction.",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "<em>k</em>",
+      "value": 0.02,
+      "unit": "mol L<sup>−1</sup> h<sup>−1</sup>",
+      "hint": "The rate does not change as the concentration falls."
+     },
+     {
+      "part": "overall order",
+      "value": 0,
+      "hint": "What power of a concentration leaves the rate unchanged?"
+     }
+    ],
+    "solution": "rate = <em>k</em>; <em>k</em> = 2.0 × 10<sup>−2</sup> mol L<sup>−1</sup> h<sup>−1</sup> (about 0.9 g L<sup>−1</sup> h<sup>−1</sup> for the average male); The reaction is zero order."
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm263803776",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "Nitrosyl chloride, NOCl, decomposes to NO and Cl<sub>2</sub>. $$2\\text{NOCl}(g)\\;\\longrightarrow \\;2\\text{NO}(g)+{\\text{Cl}}_{2}(g)$$ Determine the rate law, the rate constant, and the overall order for this reaction from the following data:<table><tbody><tr><td>[NOCl] (<em>M</em>)</td><td>0.10</td><td>0.20</td><td>0.30</td></tr><tr><td>Rate (mol L<sup>−1</sup> h<sup>−1</sup>)</td><td>8.0 × 10<sup>−10</sup></td><td>3.2 × 10<sup>−9</sup></td><td>7.2 × 10<sup>−9</sup></td></tr></tbody></table>",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in NOCl",
+      "value": 2,
+      "hint": "Doubling [NOCl] multiplies the rate by four."
+     },
+     {
+      "part": "<em>k</em>",
+      "value": 8e-08,
+      "unit": "L/mol/h",
+      "hint": "Divide one rate by the square of its concentration."
+     }
+    ],
+    "solution": "rate = <em>k</em>[NOCl]<sup>2</sup>; <em>k</em> = 8.0 × 10<sup>−8</sup> L/mol/h; second order"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm238094880",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "Nitrogen monoxide reacts with chlorine according to the equation: $$2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{NOCl}(g)$$ The following initial rates of reaction have been observed for certain reactant concentrations:<table><thead><tr><th>[NO] (mol/L)</th><th>[Cl<sub>2</sub>] (mol/L)</th><th>Rate (mol L<sup>−1</sup> h<sup>−1</sup>)</th></tr></thead><tbody><tr><td>0.50</td><td>0.50</td><td>1.14</td></tr><tr><td>1.00</td><td>0.50</td><td>4.56</td></tr><tr><td>1.00</td><td>1.00</td><td>9.12</td></tr></tbody></table>What is the rate law that describes the rate’s dependence on the concentrations of NO and Cl<sub>2</sub>? What is the rate constant? What are the orders with respect to each reactant?",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "<em>k</em>",
+      "value": 9.1,
+      "unit": "L<sup>2</sup> mol<sup>−2</sup> h<sup>−1</sup>",
+      "hint": "Find both orders first, then substitute one row."
+     },
+     {
+      "part": "order in NO",
+      "value": 2,
+      "hint": "Compare the first two rows, in which only [NO] changes."
+     },
+     {
+      "part": "order in Cl<sub>2</sub>",
+      "value": 1,
+      "hint": "Compare the last two rows, in which only [Cl<sub>2</sub>] changes."
+     }
+    ],
+    "solution": "rate = <em>k</em>[NO]<sup>2</sup>[Cl<sub>2</sub>]; <em>k</em> = 9.1 L<sup>2</sup> mol<sup>−2</sup> h<sup>−1</sup>; second order in NO; first order in Cl<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm49483024",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "For the reaction $A\\;\\longrightarrow \\;B+C,$ the following data were obtained at 30 °C:<table><tbody><tr><td>[<em>A</em>] (<em>M</em>)</td><td>0.230</td><td>0.356</td><td>0.557</td></tr><tr><td>Rate (mol L<sup>−1</sup> s<sup>−1</sup>)</td><td>4.17 × 10<sup>−4</sup></td><td>9.99 × 10<sup>−4</sup></td><td>2.44 × 10<sup>−3</sup></td></tr></tbody></table>(a) What is the order of the reaction with respect to [<em>A</em>], and what is the rate law?<br>(b) What is the rate constant?",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a) order in A",
+      "value": 2,
+      "hint": "Compare the ratio of two rates with the ratio of their concentrations, using logarithms if needed."
+     },
+     {
+      "part": "(b) <em>k</em>",
+      "value": 0.00788,
+      "unit": "L mol<sup>−1</sup> s<sup>−1</sup>",
+      "hint": "Divide a rate by the square of its concentration."
+     }
+    ],
+    "solution": "(a) The rate law is second order in A and is written as rate = <em>k</em>[<em>A</em>]<sup>2</sup>. (b) <em>k</em> = 7.88 × 10<sup>−3</sup> L mol<sup>−1</sup> s<sup>−1</sup>"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idm57376432",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "The rate constant for the first-order decomposition at 45 °C of dinitrogen pentoxide, N<sub>2</sub>O<sub>5</sub>, dissolved in chloroform, CHCl<sub>3</sub>, is 6.2 × 10<sup>−4</sup> min<sup>−1</sup>. $$2{\\text{N}}_{2}{\\text{O}}_{5}\\;\\longrightarrow \\;4{\\text{NO}}_{2}+{\\text{O}}_{2}$$ What is the rate of the reaction when [N<sub>2</sub>O<sub>5</sub>] = 0.40 <em>M</em>?",
+   "answer": {
+    "generated_by": "source",
+    "type": "number",
+    "value": 0.00025,
+    "unit": "mol/L/min",
+    "hint": "For a first-order reaction, the rate is the rate constant times the concentration.",
+    "solution": "(a) 2.5 × 10<sup>−4</sup> mol/L/min"
+   }
+  },
+  {
+   "id": "e20",
+   "source_id": "fs-idm237267424",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial-rates",
+   "prompt": "The following data have been determined for the reaction: $${\\text{I}}^{-}+{\\text{OCl}}^{-}\\;\\longrightarrow \\;{\\text{IO}}^{-}+{\\text{Cl}}^{-}$$<table><thead><tr><th></th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td>${[{\\text{I}}^{-}]}_{\\text{initial}}$ (<em>M</em>)</td><td>0.10</td><td>0.20</td><td>0.30</td></tr><tr><td>${[{\\text{OCl}}^{-}]}_{\\text{initial}}$ (<em>M</em>)</td><td>0.050</td><td>0.050</td><td>0.010</td></tr><tr><td>Rate (mol L<sup>−1</sup> s<sup>−1</sup>)</td><td>3.05 × 10<sup>−4</sup></td><td>6.20 × 10<sup>−4</sup></td><td>1.83 × 10<sup>−4</sup></td></tr></tbody></table>Determine the rate law and the rate constant for this reaction.",
+   "answer": {
+    "generated_by": "source",
+    "type": "multi",
+    "parts": [
+     {
+      "part": "order in I<sup>−</sup>",
+      "value": 1,
+      "hint": "Compare trials 1 and 2, in which only [I<sup>−</sup>] changes."
+     },
+     {
+      "part": "order in OCl<sup>−</sup>",
+      "value": 1,
+      "hint": "With the order in I<sup>−</sup> known, compare trial 3 with trial 1."
+     },
+     {
+      "part": "<em>k</em>",
+      "value": 0.061,
+      "unit": "L mol<sup>−1</sup> s<sup>−1</sup>",
+      "hint": "Substitute trial 1 into the rate law."
+     }
+    ],
+    "solution": "rate = <em>k</em>[I<sup>−</sup>][OCl<sup>−</sup>]; <em>k</em> = 6.1 × 10<sup>−2</sup> L mol <sup>−1</sup> s<sup>−1</sup>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "reaction-order"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "overall-reaction-order"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "reaction-order"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "overall-reaction-order"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e1",
+   "concept": "rate-constant"
+  },
+  {
+   "exercise": "e1",
+   "concept": "rate-law"
+  },
+  {
+   "exercise": "e2",
+   "concept": "reaction-order"
+  },
+  {
+   "exercise": "e4",
+   "concept": "rate-from-rate-law"
+  },
+  {
+   "exercise": "e6",
+   "concept": "rate-from-rate-law"
+  },
+  {
+   "exercise": "e8",
+   "concept": "rate-from-rate-law"
+  },
+  {
+   "exercise": "e10",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e10",
+   "concept": "overall-reaction-order"
+  },
+  {
+   "exercise": "e10",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e12",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e12",
+   "concept": "overall-reaction-order"
+  },
+  {
+   "exercise": "e12",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e14",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e14",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e16",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e16",
+   "concept": "rate-constant-units"
+  },
+  {
+   "exercise": "e18",
+   "concept": "rate-from-rate-law"
+  },
+  {
+   "exercise": "e20",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e20",
+   "concept": "rate-constant-units"
+  }
+ ]
+}

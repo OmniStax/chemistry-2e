@@ -9,38 +9,109 @@ const sig3 = (x) => { const s = Math.abs(x).toPrecision(3); return s.includes('e
 const commas = (x) => Math.round(x).toLocaleString('en-US');
 
 /* =====================================================================
-   FIGURE 9.2: a force pressed on an area, P = F/A. Still: the pressure
-   answers two sliders. The arrows under the block are the pressure,
-   each as long as the force on one square inch.
+   FIGURE 9.2: one load pressed on a thumbnail, a skate blade or a bare
+   foot, P = F/A. Still: the pressure answers two sliders. The area
+   decides what bears the load: the book's column of air on a bowling
+   ball over a thumbnail below 1.5 in², a skater on a blade below 6 in²,
+   the same skater barefoot above. The footprint is drawn to scale on a
+   grid of square inches; the bar beside runs 0 to 100 lb/in².
 ===================================================================== */
 (function () {
-  const d = sim('sim-force-area', 500);
+  const d = sim('sim-force-area', 540);
   const Fs = ctl(d.controls, { label: '\\kforce', cls: 'force', min: 1, max: 150, step: 0.1, value: 14.7, unit: 'lb', dec: 1, aria: 'force in pounds', detents: [{ v: 14.7, label: 'air' }, { v: 60, label: 'skater' }] });
   const As = ctl(d.controls, { label: '\\karea', cls: 'area', min: 0.5, max: 30, step: 0.5, value: 1, unit: 'in²', dec: 1, aria: 'area in square inches', detents: [{ v: 1, label: 'thumbnail' }, 2, { v: 30, label: 'foot' }] });
-  const PMAX = 100;                                  /* the bar runs 0 to 100 lb/in², beyond which it is pinned */
+  const PMAX = 100, GROUND = 420;
+  /* a sole about 10 in long, heel at the origin, toes along +x, lateral side up; scaled to the area set */
+  const SOLE = [[0, 0], [0.2, -0.7], [1, -1.2], [2.5, -1.3], [5, -1.35], [7, -1.6], [8.5, -1.7], [9.6, -1.2], [10.1, -0.4], [10.2, 0.4], [9.9, 1.2], [9, 1.7], [7.5, 1.8], [6.5, 1.2], [5, 0.5], [3.5, 0.5], [2, 0.9], [1, 1.1], [0.2, 0.7]];
+  const SOLE_A = Math.abs(SOLE.reduce((s, p, i) => { const q = SOLE[(i + 1) % SOLE.length]; return s + p[0] * q[1] - q[0] * p[1]; }, 0)) / 2;
+  const smooth = (ctx, pts) => {
+    const mid = (i) => { const p = pts[i % pts.length], q = pts[(i + 1) % pts.length]; return [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2]; };
+    ctx.beginPath(); ctx.moveTo(...mid(0));
+    for (let i = 1; i <= pts.length; i++) ctx.quadraticCurveTo(...pts[i % pts.length], ...mid(i));
+    ctx.closePath();
+  };
+  const kindOf = (a) => (a < 1.5 ? 'nail' : a < 6 ? 'blade' : 'foot');
+  const NAME = { nail: 'thumbnail', blade: 'skate blade', foot: 'bare foot' };
+  /* the footprint, seen from below on a 12 in by 5 in grid of square inches */
+  const G = { l: 690, t: 230, u: 28, nx: 12, ny: 5 };
+  function footprint(ctx, kind, a, ca, lab) {
+    const { l, t, u, nx, ny } = G, r = l + nx * u, b = t + ny * u, cx = (l + r) / 2, cy = (t + b) / 2;
+    for (let i = 0; i <= nx; i++) line(ctx, l + i * u, t, l + i * u, b, alpha(PAL.ink, 0.18), 1.5);
+    for (let j = 0; j <= ny; j++) line(ctx, l, t + j * u, r, t + j * u, alpha(PAL.ink, 0.18), 1.5);
+    ctx.save(); ctx.fillStyle = alpha(ca, 0.35); ctx.strokeStyle = ca; ctx.lineWidth = 3;
+    if (kind === 'nail') {
+      const ry = Math.sqrt(a / (Math.PI * 1.15)), rx = 1.15 * ry;
+      ctx.beginPath(); ctx.ellipse(cx, cy, rx * u, ry * u, 0, 0, Math.PI * 2);
+    } else if (kind === 'blade') {
+      const L = 10, w = a / L, x0 = cx - (L / 2) * u, x1 = cx + (L / 2) * u, h = (w * u) / 2;
+      ctx.beginPath(); ctx.moveTo(x0, cy - h); ctx.lineTo(x1 - 0.4 * u, cy - h); ctx.quadraticCurveTo(x1, cy - h, x1, cy); ctx.quadraticCurveTo(x1, cy + h, x1 - 0.4 * u, cy + h); ctx.lineTo(x0, cy + h); ctx.closePath();
+    } else {
+      const k = Math.sqrt(a / SOLE_A), len = 10.2 * k;
+      smooth(ctx, SOLE.map(([x, y]) => [cx + (x * k - len / 2) * u, cy + y * k * u]));
+    }
+    ctx.fill(); ctx.stroke(); ctx.restore();
+    lab.place({ l, t, r, b });
+    text(ctx, 'footprint, 1 in² squares', cx, t - 22, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, NAME[kind] + ', A = ' + fmt(a, 1) + ' in²', cx, b + 26, ca, { size: 22, weight: 600, align: 'center' });
+  }
+  /* pressure arrows under the patch that bears the load, each as long as the pressure */
+  function pressArrows(ctx, x0, x1, y, p, cp, n) {
+    const pl = 14 + 50 * Math.min(p, PMAX) / PMAX;
+    for (let i = 0; i < n; i++) { const x = x0 + (i + 0.5) * (x1 - x0) / n; arrow(ctx, x, y + 3, x, y + 3 + pl, cp, 3); }
+  }
   function draw() {
     const { ctx } = begin(d.c);
-    const f = Fs.v, a = As.v, p = f / a, cp = C('pressure'), cf = C('force'), ca = C('area');
-    const cx = 520, ground = 330, w = 30 + 860 * (a / 30), bh = 70;
-    ctx.fillStyle = alpha(PAL.ink, 0.08); ctx.fillRect(60, ground, 920, 60);
-    line(ctx, 60, ground, 980, ground, PAL.ink, 3);
-    ctx.fillStyle = PAL.panel; ctx.fillRect(cx - w / 2, ground - bh, w, bh);
-    ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(cx - w / 2, ground - bh, w, bh);
-    const fl = 20 + 150 * (f / 150);
-    arrow(ctx, cx, ground - bh - 20 - fl, cx, ground - bh - 12, cf, 5);
-    text(ctx, 'F = ' + fmt(f, 1) + ' lb', cx + 18, ground - bh - 30 - fl / 2, cf, { size: 22, weight: 600 });
-    const n = Math.max(2, Math.min(14, Math.round(w / 60))), pl = 12 + 58 * Math.min(p, PMAX) / PMAX;
-    for (let i = 0; i < n; i++) { const x = cx - w / 2 + (i + 0.5) * w / n; arrow(ctx, x, ground + 4, x, ground + 4 + pl, cp, 3); }
-    F.hbracket(ctx, cx - w / 2, cx + w / 2, ground + 100, ca, 'A = ' + fmt(a, 1) + ' in²', { side: 'below' });
+    const lab = F.labeller(ctx, 540, { headline: 1 });
+    const f = Fs.v, a = As.v, p = f / a, kind = kindOf(a), cp = C('pressure'), cf = C('force'), ca = C('area');
+    const fl = 20 + 90 * (f / 150);
+    if (kind === 'nail') {
+      /* a thumbs-up seen from the back; the thumbnail at (NX, NY) bears the ball */
+      const NX = 330, NY = 350, R = 72, by = NY - R;
+      F.hand(ctx, NX - 90, NY + 114, { aim: [1, 0], view: 'back', curl: 0.9, thumb: 'up', s: 1.9 });
+      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.07); ctx.fillRect(NX - 20, 80, 40, by - R - 80); ctx.restore();
+      line(ctx, NX - 20, 80, NX - 20, by - R, alpha(PAL.ink, 0.4), 2, [10, 10]); line(ctx, NX + 20, 80, NX + 20, by - R, alpha(PAL.ink, 0.4), 2, [10, 10]);
+      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.22); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(NX, by, R, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = PAL.ink; [[-16, -40], [10, -42], [-2, -18]].forEach(([dx, dy]) => { ctx.beginPath(); ctx.arc(NX + dx, by + dy, 7, 0, Math.PI * 2); ctx.fill(); }); ctx.restore();
+      arrow(ctx, NX, by - R - 10 - fl, NX, by - R - 8, cf, 5);
+      pressArrows(ctx, NX - 14, NX + 14, NY, p, cp, 3);
+      lab.add('F = ' + fmt(f, 1) + ' lb', NX + 6, by - R - 10 - fl / 2, 1, 0, cf, 22, 24);
+      lab.add('column of air', NX - 20, 150, -1, 0, PAL.muted, 20, 16);
+      lab.add('bowling ball', NX + R * 0.7, by - R * 0.7, 1, -0.4, PAL.ink, 20, 16);
+      lab.add('thumbnail', NX + 22, NY + 6, 1, 0.3, ca, 20, 30);
+    } else {
+      /* the skater stands on the ice; the near foot's patch is the one the load is on */
+      const SX = 300, s = 2, fx = SX + 9 * s, lift = kind === 'blade' ? 26 : 6, fy = GROUND - lift, half = 30;
+      ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(40, GROUND, 600, 90); ctx.restore();
+      line(ctx, 40, GROUND, 640, GROUND, PAL.ink, 3);
+      F.silhouette(ctx, { x: SX, y: fy, s, pose: 'stand', color: PAL.muted });
+      for (const [x, c] of [[SX - 9 * s, alpha(PAL.ink, 0.45)], [fx, PAL.ink]]) {
+        if (kind === 'blade') {
+          line(ctx, x - 12, fy, x + 22, fy, c, 12); line(ctx, x - 8, fy + 4, x - 8, GROUND - 3, c, 3); line(ctx, x + 16, fy + 4, x + 16, GROUND - 3, c, 3);
+          line(ctx, x - half, GROUND - 2, x + half, GROUND - 2, c, 4);
+        } else {
+          ctx.save(); ctx.fillStyle = c; ctx.beginPath(); ctx.moveTo(x - 10, fy - 4); ctx.lineTo(x - 14, GROUND); ctx.lineTo(x + 34, GROUND); ctx.quadraticCurveTo(x + 30, fy - 4, x + 6, fy - 6); ctx.closePath(); ctx.fill(); ctx.restore();
+        }
+      }
+      const x0 = kind === 'blade' ? fx - half : fx - 14, x1 = kind === 'blade' ? fx + half : fx + 34;
+      const ax = fx + 44;
+      arrow(ctx, ax, fy - 2 - fl, ax, fy, cf, 5);
+      pressArrows(ctx, x0, x1, GROUND, p, cp, 4);
+      lab.add('F = ' + fmt(f, 1) + ' lb', ax + 6, fy - 2 - fl / 2, 1, 0, cf, 22, 20);
+      lab.add(NAME[kind], x0, GROUND + 10, -1, 0.2, ca, 20, 26);
+      lab.add('skater', SX + 6 * s, fy - 140 * s, 1, 0, PAL.muted, 20, 24);
+      lab.add('ice', 600, GROUND + 60, 0, 0, PAL.muted, 20, 0);
+    }
+    footprint(ctx, kind, a, ca, lab);
     /* the pressure bar, 0 to 100 lb/in² */
-    const bx = 1150, bt = 110, bb = 400, yOf = (v) => bb - (bb - bt) * Math.min(v, PMAX) / PMAX;
-    ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(bx, bt, 70, bb - bt);
+    const bx = 1190, bt = 120, bb = 430, yOf = (v) => bb - (bb - bt) * Math.min(v, PMAX) / PMAX;
+    ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(bx, bt, 70, bb - bt);
     ctx.fillStyle = cp; ctx.fillRect(bx, yOf(p), 70, bb - yOf(p));
-    ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(bx, bt, 70, bb - bt);
+    ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(bx, bt, 70, bb - bt); ctx.restore();
     for (let v = 0; v <= PMAX; v += 20) { line(ctx, bx - 8, yOf(v), bx, yOf(v), PAL.muted, 2); text(ctx, String(v), bx - 14, yOf(v), PAL.muted, { size: 17, align: 'right', base: 'middle' }); }
     text(ctx, 'P (lb/in²)', bx + 35, bb + 34, cp, { size: 20, weight: 600, align: 'center' });
     text(ctx, (p > PMAX ? '▲ ' : '') + fmt(p, p < 10 ? 2 : 1), bx + 84, yOf(p), cp, { size: 20, weight: 600, base: 'middle' });
-    topline(ctx, 'A force of ' + fmt(f, 1) + ' lb on ' + fmt(a, 1) + ' in² gives a pressure of ' + fmt(p, p < 10 ? 2 : 1) + ' lb/in².');
+    lab.flush();
+    topline(ctx, 'A load of ' + fmt(f, 1) + ' lb on a ' + fmt(a, 1) + ' in² ' + NAME[kind] + ' presses with $\\kP$ = ' + fmt(p, p < 10 ? 2 : 1) + ' lb/in².');
     readout(d.readout, `\\kP = \\frac{\\kforce}{\\karea} = \\frac{${hue('force', fmt(f, 1) + '\\ \\text{lb}')}}{${hue('area', fmt(a, 1) + '\\ \\text{in}^2')}} = ${hue('pressure', fmt(p, p < 10 ? 2 : 1) + '\\ \\text{lb/in}^2')}`);
   }
   register(d.fig, { update: () => {}, draw });

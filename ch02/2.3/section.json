@@ -44,9 +44,22 @@
     "p+",
     "n0",
     "e-"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
-  { "id": "sim-average-mass", "kind": "sim", "draws": ["mass"] },
+  { "id": "sim-average-mass", "kind": "sim", "draws": ["mass"], "ai": [
+ {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "part": "built"
+ }
+] },
   {
    "id": "sim-mass-spec",
    "kind": "sim",
@@ -59,6 +72,13 @@
     "B",
     "Ne",
     "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

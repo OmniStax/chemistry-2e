@@ -38,7 +38,14 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_04_O2_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-gouy",
@@ -52,6 +59,13 @@
    "conventions": [
     "O",
     "N"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -62,7 +76,14 @@
     "/media/ch08/CNX_Chem_08_04_waveadd.jpg"
    ],
    "original_caption": "(a) When in-phase waves combine, constructive interference produces a wave with greater amplitude. (b) When out-of-phase waves combine, destructive interference produces a wave with less (or no) amplitude.",
-   "draws": ["angle"]
+   "draws": ["angle"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-mo-shapes",
@@ -78,7 +99,14 @@
     "/media/ch08/CNX_Chem_08_04_pMOpi.jpg"
    ],
    "original_caption": "(Figure 8.29) Sigma (σ) and sigma-star (σ*) molecular orbitals are formed by the combination of two <em>s</em> atomic orbitals. The dots (·) indicate the locations of nuclei. (Figure 8.30) Combining wave functions of two <em>p</em> atomic orbitals along the internuclear axis creates two molecular orbitals, σ<sub><em>p</em></sub> and σ*<sub><em>p</em></sub>. (Figure 8.31) Side-by-side overlap of each two <em>p</em> orbitals results in the formation of two π molecular orbitals. Combining the out-of-phase orbitals results in an antibonding molecular orbital with two nodes. One contains the internuclear axis, and one is perpendicular to the axis. Combining the in-phase orbitals results in a bonding orbital. There is a node (blue) containing the internuclear axis with the two lobes of the orbital located above and below this node.",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-ao-types",
@@ -86,7 +114,14 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_04_AOtype_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-kohn",
@@ -118,6 +153,13 @@
    "original_caption": "(Figure 8.34) This is the molecular orbital diagram for the homonuclear diatomic Be₂⁺, showing the molecular orbitals of the valence shell only. The molecular orbitals are filled in the same manner as atomic orbitals, using the Aufbau principle and Hund’s rule. (Figure 8.35) The molecular orbital energy diagram predicts that H₂ will be a stable molecule with lower energy than the separated atoms. (Figure 8.36) The molecular orbital energy diagram predicts that He₂ will not be a stable molecule, since it has equal numbers of bonding and antibonding electrons. (Figure 8.40) The molecular orbital energy diagram for O₂ predicts two unpaired electrons.",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -130,6 +172,13 @@
    "original_caption": "This shows the MO diagrams for each homonuclear diatomic molecule in the second period. The orbital energies decrease across the period as the effective nuclear charge increases and atomic radius decreases. Between N₂ and O₂, the order of the orbitals changes.",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -142,6 +191,13 @@
    "original_caption": "Without mixing, the MO pattern occurs as expected, with the σ<sub><em>p</em></sub> orbital lower in energy than the π<sub><em>p</em></sub> orbitals. When s-p mixing occurs, the orbitals shift as shown, with the σ<sub><em>p</em></sub> orbital higher in energy than the π<sub><em>p</em></sub> orbitals.",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -154,6 +210,13 @@
    "original_caption": "Molecular orbitals in solids are so closely spaced that they are described as bands. The valence band is lower in energy and the conduction band is higher in energy. The type of solid is determined by the size of the “band gap” between the valence and conduction bands. Only a very small amount of energy is required to move electrons from the valence band to the conduction band in a conductor, and so they conduct electricity well. In an insulator, the band gap is large, so that very few electrons move, and they are poor conductors of electricity. Semiconductors are in between: they conduct electricity better than insulators, but not as well as conductors.",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

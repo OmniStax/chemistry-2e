@@ -32,7 +32,13 @@
   "exercises_lead": "",
   "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. The three Check Your Learning items carry the book’s own answers from the notes that follow them. Answers to the end-of-chapter exercises come from the book’s key, which covers the odd-numbered items of the chapter’s list; the seven unkeyed items are all numerical and are left out, with no answer computed: fs-idm65612800 (the wavelength of an FM station at 103.1 MHz), fs-idp23451200 (the energy of mercury’s 435.8 nm line), fs-idp158798576 (the frequency, wavelength and color of lithium’s photons), fs-idm74058400 (the frequencies and color of rubidium’s two lines), fs-idp80961152 (the infrared photons that warm a cup of water), fs-idp181189472 (the photons that trip a reptile’s visual signal) and fs-idp156427216 (the Blu-ray laser). The item on the colors of an RGB display is keyed with approximate values the book says may differ, so it is an open answer to compare with. Nothing is taken from another section and nothing is held for one. Numeric answers accept 2% tolerance.",
   "figures": [
-    { "id": "sim-wave", "kind": "sim", "number": "6.2", "originals": ["/media/ch06/CNX_Chem_06_01_Frequency.jpg"], "original_caption": "One-dimensional sinusoidal waves show the relationship among wavelength, frequency, and speed. The wave with the shortest wavelength has the highest frequency. Amplitude is one-half the height of the wave from peak to trough.", "draws": ["wavelength", "frequency"] },
+    { "id": "sim-wave", "kind": "sim", "number": "6.2", "originals": ["/media/ch06/CNX_Chem_06_01_Frequency.jpg"], "original_caption": "One-dimensional sinusoidal waves show the relationship among wavelength, frequency, and speed. The wave with the shortest wavelength has the highest frequency. Amplitude is one-half the height of the wave from peak to trough.", "draws": ["wavelength", "frequency"], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
+] },
     {
       "id": "sim-spectrum",
       "kind": "sim",
@@ -42,11 +48,30 @@
       "draws": ["wavelength", "frequency", "energy", "velocity"],
       "facts": [
         "spectrum"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
-    { "id": "sim-amfm", "kind": "sim", "number": "6.5", "originals": ["/media/ch06/CNX_Chem_06_01_AMFM.jpg"], "original_caption": "This schematic depicts how amplitude modulation (AM) and frequency modulation (FM) can be used to transmit a radio wave.", "draws": ["frequency"] },
+    { "id": "sim-amfm", "kind": "sim", "number": "6.5", "originals": ["/media/ch06/CNX_Chem_06_01_AMFM.jpg"], "original_caption": "This schematic depicts how amplitude modulation (AM) and frequency modulation (FM) can be used to transmit a radio wave.", "draws": ["frequency"], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
+] },
     { "id": "fig-fringes", "kind": "photo", "number": "6.6", "draws": [] },
-    { "id": "sim-string", "kind": "sim", "number": "6.7", "originals": ["/media/ch06/CNX_Chem_06_01_Vibrstring.jpg"], "original_caption": "A vibrating string shows some one-dimensional standing waves. Since the two end points of the string are held fixed, only waves having an integer number of half-wavelengths can form. The points on the string between the end points that are not moving are called the nodes.", "draws": ["wavelength"] },
+    { "id": "sim-string", "kind": "sim", "number": "6.7", "originals": ["/media/ch06/CNX_Chem_06_01_Vibrstring.jpg"], "original_caption": "A vibrating string shows some one-dimensional standing waves. Since the two end points of the string are held fixed, only waves having an integer number of half-wavelengths can form. The points on the string between the end points that are not moving are called the nodes.", "draws": ["wavelength"], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
+] },
     { "id": "fig-drum", "kind": "photo", "number": "6.8", "draws": [] },
     { "id": "fig-solar", "kind": "photo", "number": "6.9", "draws": [] },
     {
@@ -58,13 +83,36 @@
       "draws": ["wavelength", "temperature"],
       "facts": [
         "spectrum"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
-    { "id": "sim-photoelectric", "kind": "sim", "number": "6.11", "originals": ["/media/ch06/CNX_Chem_06_01_Ephoton.jpg"], "original_caption": "Photons with low frequencies do not have enough energy to cause electrons to be ejected via the photoelectric effect. For any frequency of light above the threshold frequency, the kinetic energy of an ejected electron will increase linearly with the energy of the incoming photon.", "draws": ["wavelength", "frequency", "energy", "velocity"], "conventions": [
-  "e-"
-], "facts": [
-  "spectrum"
-] },
+    {
+      "id": "sim-photoelectric",
+      "kind": "sim",
+      "number": "6.11",
+      "originals": ["/media/ch06/CNX_Chem_06_01_Ephoton.jpg"],
+      "original_caption": "Photons with low frequencies do not have enough energy to cause electrons to be ejected via the photoelectric effect. For any frequency of light above the threshold frequency, the kinetic energy of an ejected electron will increase linearly with the energy of the incoming photon.",
+      "draws": ["wavelength", "frequency", "energy", "velocity"],
+      "conventions": [
+        "e-"
+      ],
+      "facts": [
+        "spectrum"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     { "id": "fig-neon", "kind": "photo", "number": "6.12", "draws": [] },
     { "id": "fig-line-spectra", "kind": "photo", "number": "6.13", "draws": [] }
   ],

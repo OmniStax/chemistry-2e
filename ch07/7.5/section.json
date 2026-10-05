@@ -33,7 +33,14 @@
   {
    "id": "fig-ch4",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-length",
@@ -41,6 +48,13 @@
    "draws": [
     "energy",
     "length"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -48,12 +62,26 @@
    "kind": "sim",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
    "id": "fig-methanol",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-lattice",
@@ -61,6 +89,13 @@
    "draws": [
     "energy",
     "length"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -73,6 +108,13 @@
    "original_caption": "The Born-Haber cycle shows the relative energies of each step involved in the formation of an ionic solid from the necessary elements in their reference states.",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

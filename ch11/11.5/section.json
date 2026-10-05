@@ -41,6 +41,13 @@
       ],
       "facts": [
         "#22b04a"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -57,6 +64,13 @@
         "O",
         "S",
         "Na"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -74,13 +88,35 @@
       ],
       "facts": [
         "#e6c46a"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {"id": "fig-oil-spill", "kind": "photo", "number": "11.34", "draws": []},
     {"id": "fig-cottrell", "kind": "photo", "number": "11.35", "draws": []},
-    {"id": "sim-precipitator", "kind": "sim", "number": "11.36", "originals": ["/media/ch11/CNX_Chem_11_05_Cottrellp.jpg"], "original_caption": "In a Cottrell precipitator, positively and negatively charged particles are attracted to highly charged electrodes, where they are neutralized and deposited as dust.", "draws": [], "conventions": [
-  "C"
-]},
+    {
+      "id": "sim-precipitator",
+      "kind": "sim",
+      "number": "11.36",
+      "originals": ["/media/ch11/CNX_Chem_11_05_Cottrellp.jpg"],
+      "original_caption": "In a Cottrell precipitator, positively and negatively charged particles are attracted to highly charged electrodes, where they are neutralized and deposited as dust.",
+      "draws": [],
+      "conventions": [
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {"id": "fig-gel", "kind": "photo", "number": "11.37", "draws": []}
   ],
   "coverage": [

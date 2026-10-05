@@ -61,6 +61,13 @@
     "Pb",
     "Au",
     "Al"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {

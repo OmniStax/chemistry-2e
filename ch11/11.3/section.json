@@ -30,20 +30,50 @@
   "exercises_lead": "",
   "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercise fs-idm19146000 (exercise 24 of the chapter, the mass of oxygen dissolved in an aquarium) is left out, and no answer is computed for it. The unkeyed conceptual exercises (16, 18 and 22) and the unkeyed choice item fs-idm7358128 (exercise 20), kept as an open item with its options and never graded, carry a suggested approach marked as OmniStax’s own. The keyed exercise fs-idp128725184, printed in 11.4 as exercise 27, is placed here, where miscibility and Figure 11.14 are taught. Numeric answers accept 2% tolerance, except the percent by mass of KBr, which the book rounds to one significant digit and which accepts 10%.",
   "figures": [
-    {"id": "sim-gas-solubility", "kind": "sim", "number": "11.8", "originals": ["/media/ch11/CNX_Chem_11_03_gasdissolv.jpg"], "original_caption": "The solubilities of these gases in water decrease as the temperature increases. All solubilities were measured with a constant pressure of 101.3 kPa (1 atm) of gas above the solutions.", "draws": ["concentration", "pressure", "temperature", "equilibrium-constant"]},
+    {"id": "sim-gas-solubility", "kind": "sim", "number": "11.8", "originals": ["/media/ch11/CNX_Chem_11_03_gasdissolv.jpg"], "original_caption": "The solubilities of these gases in water decrease as the temperature increases. All solubilities were measured with a constant pressure of 101.3 kPa (1 atm) of gas above the solutions.", "draws": ["concentration", "pressure", "temperature", "equilibrium-constant"], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
+]},
     {"id": "fig-o2-bubbles", "kind": "photo", "number": "11.9", "draws": []},
     {"id": "fig-beverage", "kind": "photo", "number": "11.10", "draws": []},
     {"id": "fig-recompress", "kind": "photo", "number": "11.11", "draws": []},
-    {"id": "fig-ammonia", "kind": "figure", "draws": []},
-    {"id": "fig-lake-nyos", "kind": "photo", "number": "11.12", "draws": []},
-    {"id": "sim-nyos", "kind": "sim", "draws": ["concentration", "pressure", "length", "equilibrium-constant"], "conventions": [
-  "O",
-  "C"
+    {"id": "fig-ammonia", "kind": "figure", "draws": [], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
 ]},
+    {"id": "fig-lake-nyos", "kind": "photo", "number": "11.12", "draws": []},
+    {
+      "id": "sim-nyos",
+      "kind": "sim",
+      "draws": ["concentration", "pressure", "length", "equilibrium-constant"],
+      "conventions": [
+        "O",
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
     {"id": "fig-antifreeze", "kind": "photo", "number": "11.13", "draws": []},
     {"id": "fig-oil-water", "kind": "photo", "number": "11.14", "draws": []},
     {"id": "fig-bromine", "kind": "photo", "number": "11.15", "draws": []},
-    {"id": "sim-solid-solubility", "kind": "sim", "number": "11.16", "originals": ["/media/ch11/CNX_Chem_11_03_solubility.jpg"], "original_caption": "This graph shows how the solubility of several solids changes with temperature.", "draws": ["temperature", "mass"]},
+    {"id": "sim-solid-solubility", "kind": "sim", "number": "11.16", "originals": ["/media/ch11/CNX_Chem_11_03_solubility.jpg"], "original_caption": "This graph shows how the solubility of several solids changes with temperature.", "draws": ["temperature", "mass"], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
+]},
     {"id": "fig-handwarmer", "kind": "photo", "number": "11.17", "draws": []}
   ],
   "coverage": [

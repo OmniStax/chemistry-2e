@@ -41,7 +41,14 @@
    "number": "10.20",
    "originals": ["/media/ch10/CNX_Chem_10_02_CapRise.jpg"],
    "original_caption": "Depending upon the relative strengths of adhesive and cohesive forces, a liquid may rise (such as water) or fall (such as mercury) in a glass capillary tube. The extent of the rise (or fall) is directly proportional to the surface tension of the liquid and inversely proportional to the density of the liquid and the radius of the tube.",
-   "draws": ["length", "angle", "surface-tension", "density", "acceleration"]
+   "draws": ["length", "angle", "surface-tension", "density", "acceleration"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   { "id": "fig-blooddraw", "kind": "photo", "number": "10.21", "draws": [] }
  ],

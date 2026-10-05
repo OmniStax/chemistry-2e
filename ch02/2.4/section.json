@@ -41,6 +41,13 @@
    "conventions": [
     "C",
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -54,6 +61,13 @@
    "draws": [],
    "conventions": [
     "S"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -67,6 +81,13 @@
    "draws": [],
    "conventions": [
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -87,6 +108,13 @@
    "conventions": [
     "C",
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -102,6 +130,13 @@
     "C",
     "H",
     "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -112,6 +147,13 @@
     "C",
     "H",
     "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -128,7 +170,14 @@
     "/media/ch02/CNX_Chem_02_04_Isomers.jpg"
    ],
    "original_caption": "Molecules of (a) acetic acid and methyl formate (b) are structural isomers; they have the same formula (C₂H₄O₂) but different structures (and therefore different chemical properties).",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-carvone",
@@ -143,6 +192,13 @@
     "C",
     "H",
     "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

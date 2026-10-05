@@ -38,6 +38,13 @@
    "draws": ["energy", "length"],
    "conventions": [
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -46,7 +53,14 @@
    "number": "7.6",
    "originals": ["/media/ch07/CNX_Chem_07_02_ENTable.jpg"],
    "original_caption": "The electronegativity values derived by Pauling follow predictable periodic trends, with the higher electronegativities toward the upper right of the periodic table.",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-pauling",
@@ -84,6 +98,13 @@
     "Cl",
     "Br",
     "I"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

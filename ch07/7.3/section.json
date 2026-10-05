@@ -32,7 +32,14 @@
   {
    "id": "fig-calcium",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-period3-symbols",
@@ -43,12 +50,26 @@
   {
    "id": "fig-cations",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-anions",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-ionic-lewis",
@@ -59,92 +80,218 @@
   {
    "id": "fig-cl2-dots",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-cl2-dash",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-ccl4-sih4",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-nh3-h2o-hf",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-double-bonds",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-triple-bonds",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-pairing",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-skeletons",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-terminal-pairs",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-of2",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-formate",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-no-plus-double",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-no-plus-triple",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-lewis-steps",
    "kind": "sim",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-titan-1",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-titan-2",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-titan-3",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-titan-4",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-smalley",
@@ -155,22 +302,50 @@
   {
    "id": "fig-no-single",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-no-double",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-deficient",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-dative",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-hypervalent",
@@ -181,22 +356,50 @@
   {
    "id": "fig-if5-xef4",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-xe-skeletons",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-xef2",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-xef6",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   }
  ],
  "coverage": [

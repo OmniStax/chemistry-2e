@@ -49,30 +49,49 @@
     "Se",
     "Br",
     "e-"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   { "id": "fig-ion-charges", "kind": "photo", "number": "2.29", "draws": [] },
   { "id": "fig-nacl-molten", "kind": "photo", "number": "2.30", "draws": [] },
-  { "id": "sim-ionic-formula", "kind": "sim", "draws": ["charge"], "conventions": [
- "Na",
- "K",
- "Li",
- "Mg",
- "Ca",
- "Sr",
- "Ba",
- "Al",
- "N",
- "H",
- "F",
- "Cl",
- "Br",
- "I",
- "O",
- "S",
- "C",
- "P"
-] },
+  {
+   "id": "sim-ionic-formula",
+   "kind": "sim",
+   "draws": ["charge"],
+   "conventions": [
+    "Na",
+    "K",
+    "Li",
+    "Mg",
+    "Ca",
+    "Sr",
+    "Ba",
+    "Al",
+    "N",
+    "H",
+    "F",
+    "Cl",
+    "Br",
+    "I",
+    "O",
+    "S",
+    "C",
+    "P"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
+  },
   { "id": "fig-sapphire", "kind": "photo", "number": "2.31", "draws": [] }
  ],
  "coverage": [

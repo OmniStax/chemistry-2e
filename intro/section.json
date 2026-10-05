@@ -32,7 +32,14 @@
     "/media/intro/CNX_Chem_10_06_FcCntrdCb.jpg",
     "/media/intro/CNX_Chem_21_03_Reaction1.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   }
  ]
 }

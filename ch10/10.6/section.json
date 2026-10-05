@@ -45,9 +45,22 @@
    "draws": [],
    "conventions": [
     "Po"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
-  { "id": "fig-simpcube", "kind": "figure", "draws": [] },
+  { "id": "fig-simpcube", "kind": "figure", "draws": [], "ai": [
+ {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "part": "built"
+ }
+] },
   {
    "id": "sim-cubic",
    "kind": "sim",
@@ -64,6 +77,13 @@
     "Po",
     "Fe",
     "Cu"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -76,9 +96,22 @@
     "/media/ch10/CNX_Chem_10_06_ClstPckng2.jpg"
    ],
    "original_caption": "(Figure 10.53) A CCP arrangement consists of three repeating layers (ABCABC…) of hexagonally arranged atoms. Atoms in a CCP structure have a coordination number of 12 because they contact six atoms in their layer, plus three atoms in the layer above and three atoms in the layer below. By rotating our perspective, we can see that a CCP structure has a unit cell with a face containing an atom from layer A at one corner, atoms from layer B across a diagonal (at two corners and in the middle of the face), and an atom from layer C at the remaining corner. This is the same as a face-centered cubic arrangement. (Figure 10.54) In both types of closest packing, atoms are packed as compactly as possible. Hexagonal closest packing consists of two alternating layers (ABABAB…). Cubic closest packing consists of three alternating layers (ABCABCABC…).",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
-  { "id": "fig-ex-ca", "kind": "figure", "draws": [] },
+  { "id": "fig-ex-ca", "kind": "figure", "draws": [], "ai": [
+ {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "part": "built"
+ }
+] },
   {
    "id": "sim-density",
    "kind": "sim",
@@ -87,6 +120,13 @@
     "Po",
     "Fe",
     "Ca"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -99,7 +139,14 @@
     "/media/ch10/CNX_Chem_10_06_CrystalSys.jpg"
    ],
    "original_caption": "(Figure 10.55) A unit cell is defined by the lengths of its three axes (a, b, and c) and the angles (α, β, and γ) between the axes. (Figure 10.56) There are seven different lattice systems and 14 different unit cells.",
-   "draws": ["angle"]
+   "draws": ["angle"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-holes",
@@ -118,6 +165,13 @@
     "Na",
     "Cl",
     "Cs"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -141,9 +195,22 @@
     "Zn",
     "Ca",
     "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
-  { "id": "fig-licl", "kind": "figure", "draws": [] },
+  { "id": "fig-licl", "kind": "figure", "draws": [], "ai": [
+ {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "part": "built"
+ }
+] },
   {
    "id": "sim-bragg",
    "kind": "sim",
@@ -157,6 +224,13 @@
    "draws": ["wavelength", "length", "angle"],
    "conventions": [
     "Cu"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   { "id": "fig-diffractometer", "kind": "photo", "number": "10.65", "draws": [] },

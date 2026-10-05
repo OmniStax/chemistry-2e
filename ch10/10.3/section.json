@@ -46,12 +46,26 @@
     "C",
     "O",
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
    "id": "fig-structures",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-ke",
@@ -64,6 +78,13 @@
    "draws": [
     "temperature",
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -78,6 +99,13 @@
     "pressure",
     "temperature",
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -108,6 +136,13 @@
    "original_caption": "For a given substance, the sum of its enthalpy of fusion and enthalpy of vaporization is approximately equal to its enthalpy of sublimation.",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -122,6 +157,13 @@
     "mass",
     "temperature",
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

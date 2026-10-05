@@ -30,9 +30,21 @@
  "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed exercises fs-idp18877920 (the mass of a 4.00% NaOH solution holding 15.0 g of NaOH), fs-idp11082976 (the HCl in 45.0 mL of 37.21% acid), fs-idm1879104 (the molarity of mercury at 0.68 ppb), fs-idm26515200 (the molarity of a 1.40% phenol throat spray), fs-idp22072496 (the molarity of a 5.0% alcohol cough syrup) and fs-idm9484992 (the molarity of 40.0% sulfuric acid) are left out. The first exercise asks for an outline and an answer; the answer is checked and the book’s outline is shown with it.",
  "figures": [
   { "id": "fig-bleach", "kind": "photo", "number": "3.17", "draws": [] },
-  { "id": "fig-hcl-route", "kind": "figure", "draws": [] },
+  { "id": "fig-hcl-route", "kind": "figure", "draws": [], "ai": [
+ {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "part": "built"
+ }
+] },
   { "id": "fig-saline", "kind": "photo", "number": "3.18", "draws": [] },
-  { "id": "sim-ppm", "kind": "sim", "draws": ["mass"] },
+  { "id": "sim-ppm", "kind": "sim", "draws": ["mass"], "ai": [
+ {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "part": "built"
+ }
+] },
   { "id": "fig-faucet", "kind": "photo", "number": "3.19", "draws": [] }
  ],
  "coverage": [

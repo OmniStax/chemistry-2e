@@ -49,6 +49,13 @@
     "H",
     "O",
     "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {

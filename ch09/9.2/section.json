@@ -59,6 +59,18 @@
       "conventions": [
         "N",
         "O"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -72,6 +84,18 @@
       "draws": [
         "pressure",
         "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -85,6 +109,18 @@
       "draws": [
         "volume",
         "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -102,6 +138,18 @@
       "draws": [
         "pressure",
         "volume"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -115,6 +163,18 @@
       "draws": [
         "volume",
         "pressure"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -138,6 +198,18 @@
         "O",
         "Ar",
         "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -148,6 +220,18 @@
         "volume",
         "temperature",
         "amount"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -172,6 +256,18 @@
         "O",
         "C",
         "Ar"
+      ],
+      "ai": [
+        {
+          "model": "claude-fable-5-1",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     }
   ],

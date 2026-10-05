@@ -43,6 +43,13 @@
    ],
    "conventions": [
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -59,7 +66,14 @@
     "/media/ch08/CNX_Chem_08_01_pi.jpg"
    ],
    "original_caption": "(Figure 8.3) (a) The overlap of two p orbitals is greatest when the orbitals are directed end to end. (b) Any other arrangement results in less overlap. The dots indicate the locations of the nuclei. (Figure 8.4) Sigma (σ) bonds form from the overlap of the following: (a) two s orbitals, (b) an s orbital and a p orbital, and (c) two p orbitals. The dots indicate the locations of the nuclei. (Figure 8.5) Pi (π) bonds form from the side-by-side overlap of two p orbitals. The dots indicate the location of the nuclei.",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-bond-types",
@@ -67,7 +81,14 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_01_bondtype_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-butadiene",
@@ -75,7 +96,14 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_01_C4H6_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   }
  ],
  "coverage": [

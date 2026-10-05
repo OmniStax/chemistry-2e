@@ -42,6 +42,13 @@
     "O",
     "Cl",
     "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   { "id": "fig-flask-procedure", "kind": "photo", "number": "9.19", "draws": [] },
@@ -56,6 +63,13 @@
     "H",
     "He",
     "Ne"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -70,14 +84,36 @@
     "Ar",
     "H",
     "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
-  { "id": "sim-combining-volumes", "kind": "sim", "number": "9.23", "originals": ["/media/ch09/CNX_Chem_09_03_Ammonia.jpg"], "original_caption": "One volume of N₂ combines with three volumes of H₂ to form two volumes of NH₃.", "draws": ["volume"], "conventions": [
- "N",
- "H",
- "O",
- "Cl"
-] },
+  {
+   "id": "sim-combining-volumes",
+   "kind": "sim",
+   "number": "9.23",
+   "originals": ["/media/ch09/CNX_Chem_09_03_Ammonia.jpg"],
+   "original_caption": "One volume of N₂ combines with three volumes of H₂ to form two volumes of NH₃.",
+   "draws": ["volume"],
+   "conventions": [
+    "N",
+    "H",
+    "O",
+    "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
+  },
   { "id": "fig-greenhouse", "kind": "photo", "number": "9.24", "draws": [] },
   { "id": "fig-co2-record", "kind": "photo", "number": "9.25", "draws": [] },
   { "id": "fig-solomon", "kind": "photo", "number": "9.26", "draws": [] }

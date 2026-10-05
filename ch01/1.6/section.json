@@ -46,6 +46,18 @@
    "original_caption": "The Fahrenheit, Celsius, and kelvin temperature scales are compared.",
    "draws": [
     "temperature"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

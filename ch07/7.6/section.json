@@ -50,6 +50,18 @@
     "C",
     "O",
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -60,7 +72,19 @@
     "/media/ch07/CNX_Chem_07_06_BeF2.jpg"
    ],
    "original_caption": "The BeF₂ molecule adopts a linear structure in which the two bonds are as far apart as possible, on opposite sides of the Be atom.",
-   "draws": ["angle"]
+   "draws": ["angle"],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-vsepr",
@@ -76,12 +100,36 @@
     "/media/ch07/CNX_Chem_07_06_Axeq.jpg"
    ],
    "original_caption": "(Figure 7.16) The basic electron-pair geometries predicted by VSEPR theory maximize the space around any region of electron density (bonds or lone pairs). (Figure 7.19) The molecular structures are identical to the electron-pair geometries when there are no lone pairs present (first column). For a particular number of electron pairs (row), the molecular structures for one or more lone pairs are determined based on modifications of the corresponding electron-pair geometry. (Figure 7.20) (a) In a trigonal bipyramid, the two axial positions are located directly across from one another, whereas the three equatorial positions are located in a triangular arrangement. (b–d) The two lone pairs (red lines) in ClF₃ have several possible arrangements, but the T-shaped molecular structure (b) is the one actually observed, consistent with the larger lone pairs both occupying equatorial positions.",
-   "draws": ["angle"]
+   "draws": ["angle"],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-domains",
    "kind": "sim",
-   "draws": ["angle", "time"]
+   "draws": ["angle", "time"],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-methane",
@@ -91,7 +139,19 @@
     "/media/ch07/CNX_Chem_07_06_CH4.jpg"
    ],
    "original_caption": "The molecular structure of the methane molecule, CH₄, is shown with a tetrahedral arrangement of the hydrogen atoms. VSEPR structures like this one are often drawn using the wedge and dash notation, in which solid lines represent bonds in the plane of the page, solid wedges represent bonds coming up out of the plane, and dashed lines represent bonds going down into the plane.",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-ammonia",
@@ -105,6 +165,18 @@
    "conventions": [
     "N",
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -113,7 +185,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_CO2_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-lewis-bcl3",
@@ -121,7 +205,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_BCl3_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-bcl3",
@@ -130,7 +226,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_BCl3mol.jpg"
    ],
-   "draws": ["angle"]
+   "draws": ["angle"],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-lewis-nh4",
@@ -138,7 +246,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_NH4_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-ammonium",
@@ -148,7 +268,19 @@
     "/media/ch07/CNX_Chem_07_06_NH4mol.jpg"
    ],
    "original_caption": "The ammonium ion displays a tetrahedral electron-pair geometry as well as a tetrahedral molecular structure.",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-lewis-h2o",
@@ -156,7 +288,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_H2O_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-water",
@@ -170,6 +314,18 @@
    "conventions": [
     "O",
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -178,7 +334,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_SF4_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-sf4",
@@ -192,6 +360,18 @@
    "conventions": [
     "S",
     "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -200,7 +380,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_XeF4_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-xef4",
@@ -214,6 +406,18 @@
    "conventions": [
     "Xe",
     "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -222,7 +426,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_gly_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-glycine-3d",
@@ -230,7 +446,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_gly3D_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-bond-moments",
@@ -255,6 +483,18 @@
     "N",
     "P",
     "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -268,6 +508,18 @@
     "O",
     "C",
     "S"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -276,7 +528,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_CHCl3_img.jpg"
    ],
-   "draws": ["dipole-moment"]
+   "draws": ["dipole-moment"],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-h2s-nh3",
@@ -284,7 +548,19 @@
    "originals": [
     "/media/ch07/CNX_Chem_07_06_SH2NH3_img.jpg"
    ],
-   "draws": ["charge"]
+   "draws": ["charge"],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-field",
@@ -298,6 +574,18 @@
    "conventions": [
     "H",
     "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

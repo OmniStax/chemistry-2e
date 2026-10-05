@@ -104,6 +104,13 @@
     "Bi",
     "Po",
     "At"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -121,6 +128,13 @@
    "draws": [
     "energy",
     "length"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -135,6 +149,13 @@
    "conventions": [
     "Al",
     "S"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -151,18 +172,39 @@
    "original_caption": "(Figure 6.34) This version of the periodic table shows the first ionization energy (IE₁), in kJ/mol, of selected elements. (Figure 6.35) This version of the periodic table displays the electron affinity values (in kJ/mol) for selected elements.",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
    "id": "fig-oxygen-orbitals",
    "kind": "figure",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-successive",
    "kind": "sim",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

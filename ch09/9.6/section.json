@@ -37,7 +37,14 @@
       "number": "9.35",
       "originals": ["/media/ch09/CNX_Chem_09_06_ZvsPgraph.jpg"],
       "original_caption": "A graph of the compressibility factor (Z) vs. pressure shows that gases can exhibit significant deviations from the behavior predicted by the ideal gas law.",
-      "draws": ["pressure", "volume", "temperature"]
+      "draws": ["pressure", "volume", "temperature"],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
     },
     {
       "id": "sim-real-boxes",
@@ -51,6 +58,13 @@
         "N",
         "O",
         "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     }
   ],

@@ -40,6 +40,13 @@
    "original_caption": "Generalized energy-level diagram for atomic orbitals in an atom with two or more electrons (not to scale).",
    "draws": [
     "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -53,6 +60,13 @@
    "draws": [],
    "conventions": [
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -63,7 +77,14 @@
     "/media/ch06/CNX_Chem_06_04_Efillorder.jpg"
    ],
    "original_caption": "This diagram depicts the energy order for atomic orbitals and is useful for deriving ground-state electron configurations.",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "sim-periodic",
@@ -77,7 +98,14 @@
     "/media/ch06/CNX_Chem_06_04_Ptableconf.jpg"
    ],
    "original_caption": "(Figure 6.27) This partial periodic table shows electron configurations for the valence subshells of atoms. By “building up” from hydrogen, this table can be used to determine the electron configuration for atoms of most elements in the periodic table. (Electron configurations of the lanthanides and actinides are not accurately predicted by this simple approach. See Figure 6.29.) (Figure 6.29) This version of the periodic table shows the outer-shell electron configuration of each element. Note that down each group, the configuration is often similar.",
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   },
   {
    "id": "fig-valence",
@@ -90,6 +118,13 @@
    "draws": [],
    "conventions": [
     "Na"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -101,6 +136,13 @@
    "draws": [],
    "conventions": [
     "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -112,6 +154,13 @@
    "draws": [],
    "conventions": [
     "He"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -123,6 +172,13 @@
    "draws": [],
    "conventions": [
     "Li"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -134,6 +190,13 @@
    "draws": [],
    "conventions": [
     "Be"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -145,6 +208,13 @@
    "draws": [],
    "conventions": [
     "B"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -156,6 +226,13 @@
    "draws": [],
    "conventions": [
     "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -170,6 +247,13 @@
     "O",
     "F",
     "Ne"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -181,6 +265,13 @@
    "draws": [],
    "conventions": [
     "P"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

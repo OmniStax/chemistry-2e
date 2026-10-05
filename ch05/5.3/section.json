@@ -42,6 +42,13 @@
       "original_caption": "The internal energy, U, of a system can be changed by heat flow and work. If heat flows into the system, qin, or work is done on the system, won, its internal energy increases, ΔU > 0. If heat flows out of the system, qout, or work is done by the system, wby, its internal energy decreases, ΔU < 0.",
       "draws": [
         "energy"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     {
@@ -78,6 +85,13 @@
       "original_caption": "The formation of CO2(g) from its elements can be thought of as occurring in two steps, which sum to the overall reaction, as described by Hess’s law. The horizontal blue lines represent enthalpies. For an exothermic process, the products are at lower enthalpy than are the reactants.",
       "draws": [
         "energy"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     }
   ],

@@ -45,6 +45,13 @@
     "Cu",
     "Fe",
     "Zn"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -58,6 +65,13 @@
    "draws": ["charge"],
    "conventions": [
     "e-"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -88,6 +102,13 @@
    ],
    "facts": [
     "#39d353"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

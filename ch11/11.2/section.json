@@ -46,15 +46,43 @@
       ],
       "facts": [
         "#ffc94d"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
-    {"id": "sim-hydration", "kind": "sim", "number": "11.7", "originals": ["/media/ch11/CNX_Chem_11_02_waterions.jpg"], "original_caption": "As potassium chloride (KCl) dissolves in water, the ions are hydrated. The polar water molecules are attracted by the charges on the K<sup>+</sup> and Cl<sup>−</sup> ions. Water molecules in front of and behind the ions are not shown.", "draws": [], "conventions": [
-  "K",
-  "Cl",
-  "O",
-  "H"
-]},
-    {"id": "fig-hcl-water", "kind": "figure", "draws": []}
+    {
+      "id": "sim-hydration",
+      "kind": "sim",
+      "number": "11.7",
+      "originals": ["/media/ch11/CNX_Chem_11_02_waterions.jpg"],
+      "original_caption": "As potassium chloride (KCl) dissolves in water, the ions are hydrated. The polar water molecules are attracted by the charges on the K<sup>+</sup> and Cl<sup>−</sup> ions. Water molecules in front of and behind the ions are not shown.",
+      "draws": [],
+      "conventions": [
+        "K",
+        "Cl",
+        "O",
+        "H"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {"id": "fig-hcl-water", "kind": "figure", "draws": [], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
+]}
   ],
   "coverage": [
     {"span": "electrolytes", "concept": "electrolytes-and-nonelectrolytes", "verb": "introduces"},

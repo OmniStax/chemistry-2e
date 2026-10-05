@@ -36,11 +36,30 @@
    "draws": ["volume", "concentration", "amount"],
    "facts": [
     "#e8559b"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
-  { "id": "fig-map7", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_map7_img.jpg"], "draws": ["volume", "amount", "concentration"] },
+  { "id": "fig-map7", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_map7_img.jpg"], "draws": ["volume", "amount", "concentration"], "ai": [
+ {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "part": "built"
+ }
+] },
   { "id": "fig-filter", "kind": "photo", "number": "4.17", "draws": [] },
-  { "id": "fig-map8", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_map8_img.jpg"], "draws": ["mass", "amount"] },
+  { "id": "fig-map8", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_map8_img.jpg"], "draws": ["mass", "amount"], "ai": [
+ {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "part": "built"
+ }
+] },
   {
    "id": "sim-combustion",
    "kind": "sim",
@@ -52,9 +71,22 @@
     "#e2462a",
     "#8cc63f",
     "#4a6fe0"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
-  { "id": "fig-combmap", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_combmap_img.jpg"], "draws": ["mass", "amount"] }
+  { "id": "fig-combmap", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_combmap_img.jpg"], "draws": ["mass", "amount"], "ai": [
+ {
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "part": "built"
+ }
+] }
  ],
  "coverage": [
   { "span": "quantitative", "concept": "quantitative-analysis", "verb": "introduces" },

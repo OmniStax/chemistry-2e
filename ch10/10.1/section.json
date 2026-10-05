@@ -43,6 +43,13 @@
         "Kr",
         "F",
         "Cl"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     { "id": "fig-water-photo", "kind": "photo", "number": "10.3", "draws": [] },
@@ -57,10 +64,29 @@
       "conventions": [
         "Cl",
         "H"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
-    { "id": "sim-dispersion", "kind": "sim", "number": "10.6", "originals": ["/media/ch10/CNX_Chem_10_01_DispForces.jpg"], "original_caption": "Dispersion forces result from the formation of temporary dipoles, as illustrated here for two nonpolar diatomic molecules.", "draws": ["temperature"] },
-    { "id": "fig-carbon-family", "kind": "figure", "draws": [] },
+    { "id": "sim-dispersion", "kind": "sim", "number": "10.6", "originals": ["/media/ch10/CNX_Chem_10_01_DispForces.jpg"], "original_caption": "Dispersion forces result from the formation of temporary dipoles, as illustrated here for two nonpolar diatomic molecules.", "draws": ["temperature"], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
+] },
+    { "id": "fig-carbon-family", "kind": "figure", "draws": [], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
+] },
     {
       "id": "sim-pentanes",
       "kind": "sim",
@@ -71,15 +97,49 @@
       "conventions": [
         "C",
         "H"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
       ]
     },
     { "id": "fig-geckos", "kind": "photo", "number": "10.8", "draws": [] },
-    { "id": "fig-dipoles", "kind": "figure", "number": "10.9", "originals": ["/media/ch10/CNX_Chem_10_01_DipDip.jpg"], "original_caption": "This image shows two arrangements of polar molecules, such as HCl, that allow an attraction between the partial negative end of one molecule and the partial positive end of another.", "draws": [] },
-    { "id": "sim-hbond", "kind": "sim", "number": "10.10", "originals": ["/media/ch10/CNX_Chem_10_01_HBonding.jpg"], "original_caption": "Water molecules participate in multiple hydrogen-bonding interactions with nearby water molecules.", "draws": [], "conventions": [
-  "O",
-  "H"
+    { "id": "fig-dipoles", "kind": "figure", "number": "10.9", "originals": ["/media/ch10/CNX_Chem_10_01_DipDip.jpg"], "original_caption": "This image shows two arrangements of polar molecules, such as HCl, that allow an attraction between the partial negative end of one molecule and the partial positive end of another.", "draws": [], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
 ] },
-    { "id": "sim-hydrides", "kind": "sim", "number": "10.11", "folds": ["10.12"], "originals": ["/media/ch10/CNX_Chem_10_01_HydrideBP1.jpg", "/media/ch10/CNX_Chem_10_01_HydrideBP2.jpg"], "original_caption": "(Figure 10.11) For the group 15, 16, and 17 hydrides, the boiling points for each class of compounds increase with increasing molecular mass for elements in periods 3, 4, and 5. (Figure 10.12) In comparison to periods 3−5, the binary hydrides of period 2 elements in groups 17, 16 and 15 (F, O and N, respectively) exhibit anomalously high boiling points due to hydrogen bonding.", "draws": ["temperature"] },
+    {
+      "id": "sim-hbond",
+      "kind": "sim",
+      "number": "10.10",
+      "originals": ["/media/ch10/CNX_Chem_10_01_HBonding.jpg"],
+      "original_caption": "Water molecules participate in multiple hydrogen-bonding interactions with nearby water molecules.",
+      "draws": [],
+      "conventions": [
+        "O",
+        "H"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    { "id": "sim-hydrides", "kind": "sim", "number": "10.11", "folds": ["10.12"], "originals": ["/media/ch10/CNX_Chem_10_01_HydrideBP1.jpg", "/media/ch10/CNX_Chem_10_01_HydrideBP2.jpg"], "original_caption": "(Figure 10.11) For the group 15, 16, and 17 hydrides, the boiling points for each class of compounds increase with increasing molecular mass for elements in periods 3, 4, and 5. (Figure 10.12) In comparison to periods 3−5, the binary hydrides of period 2 elements in groups 17, 16 and 15 (F, O and N, respectively) exhibit anomalously high boiling points due to hydrogen bonding.", "draws": ["temperature"], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "low",
+    "part": "built"
+  }
+] },
     { "id": "fig-dna", "kind": "photo", "number": "10.13", "draws": [] },
     { "id": "fig-dna-pairs", "kind": "photo", "number": "10.14", "draws": [] }
   ],

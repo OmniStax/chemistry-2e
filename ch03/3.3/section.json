@@ -57,6 +57,13 @@
    ],
    "facts": [
     "#8fc6e8"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   },
   {
@@ -80,6 +87,13 @@
    ],
    "facts": [
     "#1f6fc5"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
    ]
   }
  ],

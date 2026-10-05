@@ -34,7 +34,14 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_00_N2O2Lewis_img.jpg"
    ],
-   "draws": []
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
   }
  ]
 }

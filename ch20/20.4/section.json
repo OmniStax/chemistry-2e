@@ -1,0 +1,579 @@
+{
+ "id": "20.4",
+ "module": "m68849",
+ "chapter": "20",
+ "title": "Amines and Amides",
+ "short": "Amines and Amides",
+ "lead": "Nitrogen added to an organic framework gives two families of compounds: <span data-concept=\"amine\">amines</span>, in which nitrogen bonds to carbon or hydrogen atoms and keeps a lone pair of electrons, and <span data-concept=\"amide\">amides</span>, in which nitrogen bonds to the carbon atom of a <span data-concept=\"carbonyl-group\">carbonyl group</span>. The section follows them into DNA, the alkaloids, proteins, and Kevlar.",
+ "objectives": [
+  "Describe the structure and properties of an amine",
+  "Describe the structure and properties of an amide"
+ ],
+ "summary_html": "<p>The addition of nitrogen into an organic framework leads to two families of molecules. Compounds containing a nitrogen atom bonded in a hydrocarbon framework are classified as <span data-concept=\"amine\">amines</span>. Compounds that have a nitrogen atom bonded to one side of a <span data-concept=\"carbonyl-group\">carbonyl group</span> are classified as <span data-concept=\"amide\">amides</span>. Amines are a basic <span data-concept=\"functional-group\">functional group</span>. Amines and <span data-concept=\"carboxylic-acid\">carboxylic acids</span> can combine in a condensation reaction to form amides.</p>",
+ "notes": "The Link to Learning on how DNA is packaged is left out. The section keeps as printed “a phosphate group (−PO₄³⁻) When new DNA” without its full stop, “one of which are proteins”, the glossary’s amine “bonded to one or more alkyl group”, the key to exercise fs-idp39423488 with “+ Cl” for Cl₂ and “CH₃CH(Cl)H(Cl)CH₃”, and “pyridium ion” in the image of the key to exercise fs-idm49015296.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The five unkeyed exercises fs-idp72930352 (the Lewis structures of the isomers of C₂H₇N), fs-idp42366896 (the resonance structures of the pyridinium ion), fs-idp98463728 (the isomers of C₃H₇ON with an amide linkage), fs-idp8208496 (equations for ethylammonium chloride and sodium hydroxide) and fs-idp70207696 (the hybridization changes in reactions of the section on alcohols and ethers) are left out, and no answer is computed for them. Exercises fs-idp39423488 and fs-idp10362640 turn on reactions from exercises of the sections on hydrocarbons and on aldehydes, ketones, carboxylic acids, and esters; their prompts state those reactions, and nothing is moved.",
+ "figures": [
+  {
+   "id": "fig-amines",
+   "kind": "figure",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_04_amines_img.jpg"
+   ],
+   "draws": [],
+   "conventions": [
+    "N",
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-pyridine",
+   "kind": "photo",
+   "number": "20.17",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-dna",
+   "kind": "photo",
+   "number": "20.18",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-amine-protonation",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-alkaloids",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-poppies",
+   "kind": "photo",
+   "number": "20.19",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-amide-names",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-amidation",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-peptide",
+   "kind": "sim",
+   "number": "20.20",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_04_peptide.jpg"
+   ],
+   "original_caption": "This condensation reaction forms a dipeptide from two amino acids and leads to the formation of water.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-phenylalanine-hydroxylase",
+   "kind": "photo",
+   "number": "20.21",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-kevlar-formula",
+   "kind": "photo",
+   "number": "20.22",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-kevlar-sheet",
+   "kind": "photo",
+   "number": "20.23",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-kevlar-uses",
+   "kind": "photo",
+   "number": "20.24",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-functional-groups",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "amines",
+   "concept": "amine",
+   "verb": "introduces"
+  },
+  {
+   "span": "amines",
+   "concept": "lone-pair",
+   "verb": "uses"
+  },
+  {
+   "span": "amines",
+   "concept": "aromatic-hydrocarbon",
+   "verb": "uses"
+  },
+  {
+   "span": "amines",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "dna",
+   "concept": "dna-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "dna",
+   "concept": "polymer",
+   "verb": "uses"
+  },
+  {
+   "span": "dna",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "amine-bases",
+   "concept": "amine-basicity",
+   "verb": "introduces"
+  },
+  {
+   "span": "amine-bases",
+   "concept": "weak-base",
+   "verb": "uses"
+  },
+  {
+   "span": "amine-bases",
+   "concept": "lone-pair",
+   "verb": "uses"
+  },
+  {
+   "span": "amine-bases",
+   "concept": "functional-group",
+   "verb": "uses"
+  },
+  {
+   "span": "amine-bases",
+   "concept": "polymer",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaloids",
+   "concept": "amine-basicity",
+   "verb": "reinforces"
+  },
+  {
+   "span": "alkaloids",
+   "concept": "functional-group",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaloids",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaloids",
+   "concept": "base",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaloids",
+   "concept": "ether",
+   "verb": "uses"
+  },
+  {
+   "span": "alkaloids",
+   "concept": "ester",
+   "verb": "uses"
+  },
+  {
+   "span": "amides",
+   "concept": "amide",
+   "verb": "introduces"
+  },
+  {
+   "span": "amides",
+   "concept": "carbonyl-group",
+   "verb": "uses"
+  },
+  {
+   "span": "amides",
+   "concept": "amine",
+   "verb": "uses"
+  },
+  {
+   "span": "amides",
+   "concept": "carboxylic-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "amides",
+   "concept": "polymer",
+   "verb": "uses"
+  },
+  {
+   "span": "amidation",
+   "concept": "amidation",
+   "verb": "introduces"
+  },
+  {
+   "span": "amidation",
+   "concept": "carboxylic-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "amidation",
+   "concept": "amine",
+   "verb": "uses"
+  },
+  {
+   "span": "amidation",
+   "concept": "ester",
+   "verb": "uses"
+  },
+  {
+   "span": "proteins",
+   "concept": "proteins-and-peptide-bonds",
+   "verb": "introduces"
+  },
+  {
+   "span": "proteins",
+   "concept": "functional-group",
+   "verb": "uses"
+  },
+  {
+   "span": "proteins",
+   "concept": "carboxylic-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "proteins",
+   "concept": "carbonyl-group",
+   "verb": "uses"
+  },
+  {
+   "span": "proteins",
+   "concept": "enzymes",
+   "verb": "uses"
+  },
+  {
+   "span": "proteins",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "proteins",
+   "concept": "activation-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "kevlar",
+   "concept": "kevlar-polyamide",
+   "verb": "introduces"
+  },
+  {
+   "span": "kevlar",
+   "concept": "polymer",
+   "verb": "uses"
+  },
+  {
+   "span": "kevlar",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "kevlar",
+   "concept": "carbonyl-group",
+   "verb": "uses"
+  },
+  {
+   "span": "kevlar",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "functional-groups",
+   "concept": "functional-group",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e55",
+   "source_id": "fs-idp41306208",
+   "source_number": "55",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "amine-bases",
+   "prompt": "What is the molecular structure about the nitrogen atom in trimethyl amine and in the trimethyl ammonium ion, (CH<sub>3</sub>)<sub>3</sub>NH<sup>+</sup>? What is the hybridization of the nitrogen atom in trimethyl amine and in the trimethyl ammonium ion?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Trimethyl amine: trigonal pyramidal, <em>sp</em><sup>3</sup>; trimethyl ammonium ion: tetrahedral, <em>sp</em><sup>3</sup>"
+   }
+  },
+  {
+   "id": "e57",
+   "source_id": "fs-idm49015296",
+   "source_number": "57",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "amines",
+   "prompt": "Draw Lewis structures for pyridine and its conjugate acid, the pyridinium ion, C<sub>5</sub>H<sub>5</sub>NH<sup>+</sup>. What are the hybridizations, electron domain geometries, and molecular geometries about the nitrogen atoms in pyridine and in the pyridinium ion?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_04_pyridinium_img.jpg\" alt=\"Two structures are shown, one for pyridine, which is trigonal planar and is labeled s p superscript 2. The second is for the pyridium ion, which is also trigonal planar and is labeled s p superscript 2. Both structures include a hexagonal ring composed of 5 C atoms and 1 N atom which is shown at the top of each structure. In both rings, double bonds alternate and single H atoms extend outward from each C atom. The only structural difference between the two structures involves the unshared electron pair on the N atom in pyridine. This is replaced by a bonded H atom in the pyridium ion which is represented in brackets with a superscript plus symbol outside the brackets.\">"
+   }
+  },
+  {
+   "id": "e59",
+   "source_id": "fs-idp61577168",
+   "source_number": "59",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "amine-bases",
+   "prompt": "Write two complete balanced equations for the following reaction, one using condensed formulas and one using Lewis structures.<br>Methyl amine is added to a solution of HCl.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "${\\text{CH}}_{3}{\\text{NH}}_{2}+{\\text{H}}_{3}{\\text{O}}^{+}\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{NH}}_{3}{}^{+}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch20/CNX_Chem_20_04_reaction1f_img.jpg\" alt=\"A reaction is shown. The first structure shown on the left shows a C atom with H atoms bonded above, below, and to the left. To the right, an N atom is bonded which has an unshared pair of electrons above it and H atoms bonded to its right and below. This structure is followed by a plus sign. A structure follows in brackets which includes an O atom with H atoms bonded above, to the left, and below. A single unshared electron pair is shown on the O atom. Outside the brackets is a superscript plus sign. This is followed by a plus sign and C l surrounded by 4 pairs of electron dots and a superscript minus sign. Following a reaction arrow is another structure in brackets. This structure shows a C atom with H atoms bonded above, below, and to the left. To the right, an N atom is bonded which has H atoms bonded above, below, and to the right. Outside the brackets is a superscript plus sign. This is followed by C l surrounded by 4 pairs of electron dots and superscript minus. This is followed by another plus sign and an H atom which forms a single bond to an O atom to which a second H atom is bonded above. The O atom has two sets of electron dots.\">"
+   }
+  },
+  {
+   "id": "e61",
+   "source_id": "fs-idp39423488",
+   "source_number": "61",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Identify any carbon atoms that change hybridization and the change in hybridization during the following reactions:<br>(a) 2-butene reacts with chlorine.<br>(b) benzene burns in air.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "CH<sub>3</sub><u>C</u>H = <u>C</u>HCH<sub>3</sub>(<em>sp</em><sup>2</sup>) + Cl $\\longrightarrow$ CH<sub>3</sub><u>C</u>H(Cl)H(Cl)CH<sub>3</sub>(<em>sp</em><sup>3</sup>); 2<u>C</u><sub>6</sub>H<sub>6</sub>(<em>sp</em><sup>2</sup>) + 15O<sub>2</sub> $\\longrightarrow$ 12<u>C</u>O<sub>2</sub>(<em>sp</em>) + 6H<sub>2</sub>O"
+   }
+  },
+  {
+   "id": "e63",
+   "source_id": "fs-idp10362640",
+   "source_number": "63",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "prompt": "Identify any carbon atoms that change hybridization and the change in hybridization during the following reactions:<br>(a) 1-butanol reacts with acetic acid<br>(b) propionic acid is poured onto solid calcium carbonate",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The carbon in CO<sub>3</sub><sup>2−</sup>, initially at <em>sp</em><sup>2</sup>, changes hybridization to <em>sp</em> in CO<sub>2</sub>."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e55",
+   "concept": "amine"
+  },
+  {
+   "exercise": "e55",
+   "concept": "amine-basicity"
+  },
+  {
+   "exercise": "e55",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e55",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e57",
+   "concept": "amine"
+  },
+  {
+   "exercise": "e57",
+   "concept": "conjugate-acid"
+  },
+  {
+   "exercise": "e57",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e57",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e57",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e59",
+   "concept": "amine-basicity"
+  },
+  {
+   "exercise": "e59",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e61",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e61",
+   "concept": "addition-reaction"
+  },
+  {
+   "exercise": "e61",
+   "concept": "aromatic-hydrocarbon"
+  },
+  {
+   "exercise": "e63",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e63",
+   "concept": "ester"
+  },
+  {
+   "exercise": "e63",
+   "concept": "carboxylic-acid"
+  }
+ ]
+}

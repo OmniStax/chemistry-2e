@@ -128,7 +128,7 @@ function readout(host, main, small) { tex(host, main); if (small) host.appendChi
   function note(st) {
     const m = st.m, short = m.atoms.map((a, i) => i).filter((i) => st.count[i] < (m.atoms[i].s === 'H' ? 2 : 8));
     if (st.s === 1) return 'Each atom is shown with its own valence electrons, as in its Lewis symbol.';
-    if (!short.length) return 'Every atom has a filled valence shell: eight electrons, or two for hydrogen.';
+    if (!short.length) return st.s === 5 && sum(st.orders) === m.bonds.length ? '' : 'Every atom has a filled valence shell: eight electrons, or two for hydrogen.';
     const names = [...new Set(short.map((i) => NAMES[m.atoms[i].s]))];
     const each = short.map((i) => st.count[i]);
     return `The ${names.join(' and ')} atom${short.length > 1 ? 's' : ''} ${short.length > 1 ? 'have' : 'has'} ${[...new Set(each)].join(' and ')} electrons and ${short.length > 1 ? 'lack octets' : 'lacks an octet'}.`;

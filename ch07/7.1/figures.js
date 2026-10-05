@@ -60,8 +60,7 @@ const count = (n, one, many) => `${['', 'One', 'Two', 'Three'][n]} ${n === 1 ? o
     row(ctx, an.value, a, na, 320, 'an anion, the');
     const sub = (k) => (k > 1 ? `_{${k}}` : '');
     const formula = `\\text{${cat.value}}${sub(nc)}\\text{${an.value}}${sub(na)}`;
-    readout(d.readout, `(${nc} \\times +${m}) + (${na} \\times -${n}) = 0 \\qquad ${formula}`,
-      `The formula gives the simplest ratio of ions whose positive and negative charges are equal, ${nc} : ${na}.`);
+    readout(d.readout, `(${nc} \\times +${m}) + (${na} \\times -${n}) = 0 \\qquad ${formula}`);
   }
   still(d, draw);
 })();
@@ -76,7 +75,7 @@ const count = (n, one, many) => `${['', 'One', 'Two', 'Three'][n]} ${n === 1 ? o
 (function () {
   const d = sim('sim-nacl-lattice');
   /* free yaw; pitch bounded so the rows of the crystal stay readable (rule 26.3) */
-  const v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 8.5, tilt: 0.42, pitch: [-0.9, 0.9],
+  const v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 11, tilt: 0.42, pitch: [-0.9, 0.9],
     views: [{ label: 'face', yaw: 0, pitch: 0 }, { label: 'corner', yaw: Math.PI / 4, pitch: 0.6155 }] });
   const g = v.part(0);
   /* ionic radii 102 and 181 pm over an Na–Cl distance of 283 pm, one drawn unit */

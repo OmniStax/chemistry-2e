@@ -132,7 +132,6 @@ function lewis(ctx, S, o) {
       forms: [[1, 2], [2, 1]],
       tex: '\\text{bonds per N–O} = \\frac{1 + 2}{2} = 1.5',
       head: 'Two resonance forms: in the hybrid, each N–O bond is the average of a single and a double bond.',
-      note: 'The charge of −1 is shared equally by the two oxygen atoms, one half on each.',
     },
     co3: {
       label: 'CO₃²⁻', center: 'C', bond: 'C–O', charge: '2−', share: '⅔−',
@@ -140,7 +139,6 @@ function lewis(ctx, S, o) {
       forms: [[2, 1, 1], [1, 2, 1], [1, 1, 2]],
       tex: '\\text{bonds per C–O} = \\frac{1 + 1 + 2}{3} \\approx 1.33',
       head: 'Three resonance forms: in the hybrid, each C–O bond is the average of two single bonds and one double bond.',
-      note: 'The charge of −2 is shared equally by the three oxygen atoms, two thirds on each.',
     },
   };
   const form = (I, orders) => ({
@@ -185,7 +183,7 @@ function lewis(ctx, S, o) {
     F.faded(ctx, pick.k < 1 && pick.from !== key ? pick.k : 1, [0, 0], () => { h = drawIon(ctx, key); });
     hits = h;
     headline(ctx, IONS[key].head);
-    readout(d.readout, IONS[key].tex, IONS[key].note);
+    readout(d.readout, IONS[key].tex);
   }
   register(d.fig, { update: () => {}, draw });
 })();

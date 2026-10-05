@@ -4,7 +4,7 @@
  "chapter": "7",
  "title": "Molecular Structure and Polarity",
  "short": "Molecular Structure and Polarity",
- "lead": "A Lewis structure is drawn flat, but a molecule occupies space, and its bonds have measurable distances and angles. Valence shell electron-pair repulsion theory predicts how the regions of electron density arrange themselves around a central atom. The number of lone pairs among them then gives the molecular structure. Adding the <span data-concept=\"bond-dipole-moment\">bond dipole moments</span> of a molecule as vectors in three dimensions tells us whether the molecule as a whole is polar.",
+ "lead": "A Lewis structure is drawn flat, but a molecule occupies space, and its bonds have measurable distances and angles. Valence shell electron-pair repulsion theory predicts how the regions of electron density arrange themselves around a central atom, and the shape a molecule takes decides how its <span data-concept=\"bond-dipole-moment\">bond dipole moments</span> combine.",
  "objectives": [
   "Predict the structures of small molecules using valence shell electron pair repulsion (VSEPR) theory",
   "Explain the concepts of polar covalent bonds and molecular polarity",
@@ -20,6 +20,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -61,6 +65,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: notes repeating caption and headline dropped, atom labels closer"
     }
    ]
   },
@@ -83,6 +92,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption dropped"
     }
    ]
   },
@@ -111,6 +125,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: sketch sites apart, camera back, name lines and ClF3 row fixed"
     }
    ]
   },
@@ -128,6 +147,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: camera back, graph clear of headline, repeated notes dropped"
     }
    ]
   },
@@ -150,6 +174,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: fourth hydrogen drawn apart from the third, note dropped"
     }
    ]
   },
@@ -176,6 +205,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: panel letters replace colliding captions, repeated note dropped"
     }
    ]
   },
@@ -237,6 +271,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption dropped"
     }
    ]
   },
@@ -279,6 +318,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: fourth hydrogen drawn apart, repeated note dropped"
     }
    ]
   },
@@ -325,6 +369,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: panel letters replace repeated captions, note trimmed"
     }
    ]
   },
@@ -371,6 +420,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: panel letters replace captions that repeated the figure caption"
     }
    ]
   },
@@ -417,6 +471,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: panel letters replace repeated captions, note dropped"
     }
    ]
   },
@@ -457,6 +516,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption dropped"
     }
    ]
   },
@@ -494,6 +558,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: crossed tails for plus signs, legend line, repeated notes dropped"
     }
    ]
   },
@@ -519,6 +588,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption dropped"
     }
    ]
   },
@@ -539,6 +613,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: fourth hydrogen drawn apart, repeated side notes dropped"
     }
    ]
   },
@@ -585,6 +664,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: one representative δ pair, hover names, repeated note dropped"
     }
    ]
   }

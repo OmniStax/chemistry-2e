@@ -45,13 +45,13 @@ function cloud(ctx, x, y, r, a) {
     line(ctx, box.l, Y(-DEPTH), X(RE), Y(-DEPTH), alpha(PAL.ink, 0.35), 2, [4, 8]);
     line(ctx, X(RE), Y(-DEPTH), X(RE), box.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
     curve(ctx, E, 30, 300, X, Y, cE, 5, 160);
-    text(ctx, '−7.24 × 10⁻¹⁹ J at 74 pm', X(RE) + 34, Y(-DEPTH) + 4, cE, { size: 18, weight: 600, bg: PAL.panel });
+    text(ctx, '−7.24 × 10⁻¹⁹ J at 74 pm', X(105), Y(-DEPTH) + 4, cE, { size: 18, weight: 600, bg: PAL.panel });
     const p = pinned(ctx, box, X, Y, r, e, cE);
     /* the pair of atoms, centered over the point where the band allows, a leader down to the point */
-    const half = (r * S) / 2, cx = Math.min(Math.max(X(r), box.l + half + RA + 10), 1380 - half - RA), cy = 140;
+    const half = (r * S) / 2, cx = Math.min(Math.max(X(r), box.l + half + RA + 10), 1340 - half - RA), cy = 140;
     line(ctx, cx, cy + RA + 6, p.x, p.y - 12, alpha(PAL.ink, 0.35), 2, [4, 8]);
     const over = Math.max(0, 1 - r / (2 * RA / S + 60));
-    cloud(ctx, cx, cy, RA * 1.6 + half * over, 0.4 + 0.6 * over);
+    cloud(ctx, cx, cy, RA * 1.6 + half * over, Math.min(1, 1.6 * over));
     cloud(ctx, cx - half, cy, RA * 1.5, 1 - over);
     cloud(ctx, cx + half, cy, RA * 1.5, 1 - over);
     atom(ctx, cx - half, cy, 'H', RA, 0.8); atom(ctx, cx + half, cy, 'H', RA, 0.8);
@@ -87,7 +87,7 @@ function cloud(ctx, x, y, r, a) {
     [['Fr', '0.7'], ['Ra', '0.9'], ['Ac', '1.1'], ['Th', '1.3'], ['Pa', '1.4'], ['U', '1.4'], ['Np–No', '1.4–1.3']],
   ];
   const CLASS = ['metals', 'metalloids', 'nonmetals'];
-  const CW = 66, CH = 66, X0 = 150, Y0 = 118;
+  const CW = 66, CH = 66, X0 = 190, Y0 = 118;
   function draw() {
     const { ctx } = begin(d.c);
     ROWS.forEach((row, ri) => {
@@ -95,7 +95,7 @@ function cloud(ctx, x, y, r, a) {
         /* the p-block cells of the second and third rows carry their own column past the gap */
         const c = col ?? i + 1;
         const x = X0 + (c - 1) * CW, y = Y0 + ri * CH;
-        ctx.save(); ctx.fillStyle = alpha(F.cat(cls ?? 0), 0.22); ctx.fillRect(x + 2, y + 2, CW - 4, CH - 4);
+        ctx.save(); ctx.fillStyle = alpha(F.cat(cls ?? 0), 0.4); ctx.fillRect(x + 2, y + 2, CW - 4, CH - 4);
         ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5; ctx.strokeRect(x + 2, y + 2, CW - 4, CH - 4); ctx.restore();
         const long = s.length > 2;
         text(ctx, s, x + CW / 2, y + 26, PAL.ink, { size: long ? 15 : 22, weight: 600, align: 'center' });
@@ -105,14 +105,14 @@ function cloud(ctx, x, y, r, a) {
     const xr = X0 + 17 * CW;
     arrow(ctx, X0, 62, xr, 62, PAL.ink, 3);
     text(ctx, 'Increasing electronegativity', (X0 + xr) / 2, 44, PAL.ink, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
-    arrow(ctx, 110, Y0, 110, Y0 + 7 * CH, PAL.ink, 3);
-    text(ctx, 'Decreasing', 96, Y0 + 3.2 * CH, PAL.ink, { size: 17, weight: 600, align: 'right' });
-    text(ctx, 'electro-', 96, Y0 + 3.2 * CH + 22, PAL.ink, { size: 17, weight: 600, align: 'right' });
-    text(ctx, 'negativity', 96, Y0 + 3.2 * CH + 44, PAL.ink, { size: 17, weight: 600, align: 'right' });
+    arrow(ctx, 150, Y0, 150, Y0 + 7 * CH, PAL.ink, 3);
+    text(ctx, 'Decreasing', 136, Y0 + 3.2 * CH, PAL.ink, { size: 17, weight: 600, align: 'right' });
+    text(ctx, 'electro-', 136, Y0 + 3.2 * CH + 22, PAL.ink, { size: 17, weight: 600, align: 'right' });
+    text(ctx, 'negativity', 136, Y0 + 3.2 * CH + 44, PAL.ink, { size: 17, weight: 600, align: 'right' });
     /* the legend of the three kinds, in the empty block above the transition metals */
     CLASS.forEach((n, i) => {
       const x = X0 + 3 * CW + i * 200, y = Y0 + 28;
-      ctx.save(); ctx.fillStyle = alpha(F.cat(i), 0.22); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5; ctx.fillRect(x, y - 12, 24, 24); ctx.strokeRect(x, y - 12, 24, 24); ctx.restore();
+      ctx.save(); ctx.fillStyle = alpha(F.cat(i), 0.4); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 1.5; ctx.fillRect(x, y - 12, 24, 24); ctx.strokeRect(x, y - 12, 24, 24); ctx.restore();
       text(ctx, n, x + 34, y, PAL.ink, { size: 18 });
     });
   }

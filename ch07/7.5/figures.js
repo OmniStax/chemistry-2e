@@ -222,7 +222,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
       const x = AX[i], y0 = Y(E[i]), y1 = Y(E[i + 1]);
       arrow(ctx, x, y0, x, y0 + (y1 - y0) * k, cE, 4);
       if (k > 0.85) level(i + 1, (k - 0.85) / 0.15);
-      F.faded(ctx, clamp((k - 0.5) * 2), [0, 0], () => text(ctx, `${stp.name}`, x + 12, (y0 + y1) / 2 + (stp.dh > 0 ? 8 : 0), cE, { size: 18, weight: 600, base: 'middle' }));
+      F.faded(ctx, clamp((k - 0.5) * 2), [0, 0], () => text(ctx, `${stp.name}`, i === 4 ? x - 12 : x + 12, (y0 + y1) / 2 + (stp.dh > 0 ? 8 : 0), cE, { size: 18, weight: 600, base: 'middle', align: i === 4 ? 'right' : 'left' }));
     });
     const sumTo = E[done];
     headline(ctx, done === 0 ? 'The cycle starts from cesium metal and fluorine gas, whose enthalpy of formation to CsF(s) is −553.5 kJ/mol.'

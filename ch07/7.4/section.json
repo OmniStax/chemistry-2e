@@ -4,7 +4,7 @@
  "chapter": "7",
  "title": "Formal Charges and Resonance",
  "short": "Formal Charges and Resonance",
- "lead": "When more than one Lewis structure can be written for a molecule or ion, formal charges help us decide which is the most reasonable. The formal charge of each atom in a Lewis structure is easy to calculate, and four guidelines choose among possible structures. In resonance, the actual distribution of electrons is an average of two or more Lewis structures.",
+ "lead": "When more than one Lewis structure can be written for a molecule or ion, formal charges help us decide which is the most reasonable. Some molecules and ions are described by no single Lewis structure, and resonance describes them by several at once.",
  "objectives": [
   "Compute formal charges for atoms in any Lewis structure",
   "Use formal charges to identify the most reasonable Lewis structure for a given molecule",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -171,6 +175,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: note that repeated the caption and the drawn shares dropped"
     }
    ]
   }

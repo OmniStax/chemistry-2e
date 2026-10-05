@@ -4,7 +4,7 @@
  "chapter": "7",
  "title": "Strengths of Ionic and Covalent Bonds",
  "short": "Bond Strengths",
- "lead": "Every bond takes <span data-concept=\"energy-and-work\">energy</span> to break. The <span data-concept=\"bond-energy\">bond energy</span> measures the strength of a covalent bond, and average <span data-concept=\"bond-energy\">bond energies</span> let us estimate the <span data-concept=\"enthalpy-change\">enthalpy change</span> of a reaction. The <span data-concept=\"lattice-energy\">lattice energy</span> measures the strength of an ionic solid. It grows with the charges of the ions and shrinks with their distance apart, and the Born-Haber cycle calculates it from measurable quantities.",
+ "lead": "Every bond takes <span data-concept=\"energy-and-work\">energy</span> to break, and that energy measures its strength: the <span data-concept=\"bond-energy\">bond energy</span> of a covalent bond and the <span data-concept=\"lattice-energy\">lattice energy</span> of an ionic solid. Average <span data-concept=\"bond-energy\">bond energies</span> let us estimate the <span data-concept=\"enthalpy-change\">enthalpy change</span> of a reaction, and the Born-Haber cycle finds a lattice energy from quantities that can be measured.",
  "objectives": [
   "Describe the energetics of covalent and ionic bond formation and breakage",
   "Use the Born-Haber cycle to compute lattice energies for ionic compounds",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -114,6 +118,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: lattice-step label moved left of its arrow, inside the stage"
     }
    ]
   }

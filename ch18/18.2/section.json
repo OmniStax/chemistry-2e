@@ -1,0 +1,582 @@
+{
+ "id": "18.2",
+ "module": "m68830",
+ "chapter": "18",
+ "title": "Occurrence and Preparation of the Representative Metals",
+ "short": "Preparing the Representative Metals",
+ "lead": "Most <span data-concept=\"representative-metal\">representative metals</span> occur in nature only in compounds, in minerals, salt deposits and seawater. The section follows how the metals are isolated from them: by <span data-concept=\"electrolysis\">electrolysis</span>, in the <span data-concept=\"downs-cell\">Downs cell</span> for sodium, the <span data-concept=\"hall-heroult-cell\">Hall–Héroult cell</span> for aluminum and molten magnesium chloride for magnesium, and by <span data-concept=\"chemical-reduction\">chemical reduction</span> with silicon or carbon, as in the <span data-concept=\"pidgeon-process\">Pidgeon process</span> and the preparation of zinc and tin.",
+ "objectives": [
+  "Identify natural sources of representative metals",
+  "Describe electrolytic and chemical reduction processes used to prepare these elements from natural sources"
+ ],
+ "summary_html": "<p>Because of their chemical reactivity, it is necessary to produce the <span data-concept=\"representative-metal\">representative metals</span> in their pure forms by <span data-concept=\"reduction\">reduction</span> from naturally occurring compounds. <span data-concept=\"electrolysis\">Electrolysis</span> is important in the production of sodium, potassium, and aluminum. <span data-concept=\"chemical-reduction\">Chemical reduction</span> is the primary method for the isolation of magnesium, zinc, and tin. Similar procedures are important for the other <span data-concept=\"representative-metal\">representative metals</span>.</p>",
+ "notes": "The section keeps as printed “Ions of metals in of groups 1 and 2”, “The principle tin ore” and “the principle lead and thallium ores”, “In honor to the two inventors”, “In the next section” for the Pidgeon process, which follows in the next subsection, and the summary’s “sodium, potassium, and aluminum” as the metals produced by electrolysis.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key. The three unkeyed numerical exercises fs-idp119437920 (the mass of chlorine from 3.00 kg of sodium chloride), fs-idp56785888 (the oxygen needed for 3.01 × 10²¹ atoms of magnesium) and fs-idp237555664 (the time and chlorine volume for 100 kg of sodium) are left out, and no answer is computed for them. The unkeyed conceptual exercises fs-idp199448112, fs-idp236482640 and fs-idp198987536 carry a suggested approach marked as OmniStax’s own. Nothing is moved.",
+ "figures": [
+  {
+   "id": "sim-downs-cell",
+   "kind": "sim",
+   "number": "18.10",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_02_DownsCell.jpg"
+   ],
+   "original_caption": "Pure sodium metal is isolated by electrolysis of molten sodium chloride using a Downs cell. It is not possible to isolate sodium by electrolysis of aqueous solutions of sodium salts because hydrogen ions are more easily reduced than are sodium ions; as a result, hydrogen gas forms at the cathode instead of the desired sodium metal. The high temperature required to melt NaCl means that liquid sodium metal forms.",
+   "draws": [],
+   "conventions": [
+    "Na",
+    "Cl",
+    "H",
+    "e-"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ],
+   "facts": [
+    "#3a3d42",
+    "#c9ced6"
+   ]
+  },
+  {
+   "id": "sim-hall-heroult",
+   "kind": "sim",
+   "number": "18.11",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_02_HallHerCell.jpg"
+   ],
+   "original_caption": "An electrolytic cell is used for the production of aluminum. The electrolysis of a solution of cryolite and calcium fluoride results in aluminum metal at the cathode, and oxygen, carbon monoxide, and carbon dioxide at the anode.",
+   "draws": [],
+   "conventions": [
+    "Al",
+    "O",
+    "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ],
+   "facts": [
+    "#3a3d42",
+    "#c9ced6"
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "occurrence",
+   "concept": "representative-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "alkaline-earth-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "chemical-reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "electrolysis",
+   "concept": "metal-isolation-by-electrolysis",
+   "verb": "introduces"
+  },
+  {
+   "span": "electrolysis",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "electrolysis",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "electrolysis",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "downs-cell",
+   "verb": "introduces"
+  },
+  {
+   "span": "sodium",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "colligative-properties",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "electric-current",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "oxidation",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "sodium",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "aluminum",
+   "concept": "hall-heroult-cell",
+   "verb": "introduces"
+  },
+  {
+   "span": "aluminum",
+   "concept": "electrolytic-cell",
+   "verb": "uses"
+  },
+  {
+   "span": "aluminum",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "aluminum",
+   "concept": "precipitate",
+   "verb": "uses"
+  },
+  {
+   "span": "aluminum",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "aluminum",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "aluminum",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "magnesium-electrolysis",
+   "concept": "metal-isolation-by-electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "magnesium-electrolysis",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "magnesium-electrolysis",
+   "concept": "precipitate",
+   "verb": "uses"
+  },
+  {
+   "span": "magnesium-electrolysis",
+   "concept": "chemical-reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "chemical-reduction",
+   "concept": "chemical-reduction",
+   "verb": "introduces"
+  },
+  {
+   "span": "chemical-reduction",
+   "concept": "representative-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "chemical-reduction",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "chemical-reduction",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "chemical-reduction",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "chemical-reduction",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "pidgeon",
+   "concept": "pidgeon-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "pidgeon",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "pidgeon",
+   "concept": "chemical-thermodynamics",
+   "verb": "uses"
+  },
+  {
+   "span": "pidgeon",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "zinc",
+   "concept": "carbon-reduction-of-zinc-and-tin",
+   "verb": "introduces"
+  },
+  {
+   "span": "zinc",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "zinc",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "zinc",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "tin",
+   "concept": "carbon-reduction-of-zinc-and-tin",
+   "verb": "uses"
+  },
+  {
+   "span": "tin",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "tin",
+   "concept": "temperature",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp79750944",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "chemical-reduction",
+   "prompt": "Write an equation for the reduction of cesium chloride by elemental calcium at high temperature.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\text{2CsCl}(l)+\\text{Ca}(g)\\;\\overset{\\;\\begin{array}{l}\\text{countercurrent} \\\\ \\text{fractionating} \\\\ \\text{tower}\\end{array}}{\\to}\\;\\text{2Cs}(g)+{\\text{CaCl}}_{2}(l)$"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp199448112",
+   "source_number": "16",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sodium",
+   "prompt": "Why is it necessary to keep the chlorine and sodium, resulting from the electrolysis of sodium chloride, separate during the production of sodium metal?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: ask what would happen if the two products of the cell met again, recalling how readily sodium reacts with chlorine, and connect that with the screen and the separate outlets of the Downs cell."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp265303360",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sodium",
+   "prompt": "Give balanced equations for the overall reaction in the electrolysis of molten lithium chloride and for the reactions occurring at the electrodes. You may wish to review the chapter on electrochemistry for relevant examples.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Cathode (reduction): ${\\text{2Li}}^{+}+{\\text{2e}}^{-}\\;\\longrightarrow \\;\\text{2Li}(l)\\text{;}$ Anode (oxidation): ${\\text{2Cl}}^{-}\\;\\longrightarrow \\;{\\text{Cl}}_{2}(g)+{\\text{2e}}^{\\text{−}};$ Overall reaction: ${\\text{2Li}}^{+}+{\\text{2Cl}}^{-}\\;\\longrightarrow \\;\\text{2Li}(l)+{\\text{Cl}}_{2}(g)$"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp84582880",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "occurrence",
+   "prompt": "What mass, in grams, of hydrogen gas forms during the complete reaction of 10.01 g of calcium with water?",
+   "answer": {
+    "type": "number",
+    "value": 0.5035,
+    "unit": "g",
+    "part": "the mass of hydrogen gas",
+    "hint": "Write the balanced equation for calcium with water, which gives calcium hydroxide and hydrogen, then convert the mass of calcium to moles, to moles of H<sub>2</sub>, and to grams.",
+    "solution": "0.5035 g H<sub>2</sub>",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm19716784",
+   "source_number": "21",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "magnesium-electrolysis",
+   "prompt": "Magnesium is an active metal; it burns in the form of powder, ribbons, and filaments to provide flashes of brilliant light. Why is it possible to use magnesium in construction?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Despite its reactivity, magnesium can be used in construction even when the magnesium is going to come in contact with a flame because a protective oxide coating is formed, preventing gross oxidation. Only if the metal is finely subdivided or present in a thin sheet will a high-intensity flame cause its rapid burning."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp236482640",
+   "source_number": "22",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aluminum",
+   "prompt": "Why is it possible for an active metal like aluminum to be useful as a structural metal?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: consider what forms on the surface of aluminum when it meets air, as with magnesium in the exercise before it, and how that film keeps the metal beneath from reacting further."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp72169040",
+   "source_number": "23",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aluminum",
+   "prompt": "Describe the production of metallic aluminum by electrolytic reduction.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Extract from ore: $\\text{AlO}(\\text{OH})(s)+\\text{NaOH}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Na}[\\text{Al}{(\\text{OH})}_{4}](aq)$<br>Recover: $\\text{2Na}[\\text{Al}{(\\text{OH})}_{4}](s)+{\\text{H}}_{2}{\\text{SO}}_{4}(aq)\\;\\longrightarrow \\;\\text{2Al}{(\\text{OH})}_{3}(s)+{\\text{Na}}_{2}{\\text{SO}}_{4}(aq)+{\\text{2H}}_{2}\\text{O}(l)$<br>Sinter: $\\text{2Al}{(\\text{OH})}_{3}(s)\\;\\longrightarrow \\;{\\text{Al}}_{2}{\\text{O}}_{3}(s)+{\\text{3H}}_{2}\\text{O}(g)$<br>Dissolve in Na<sub>3</sub>AlF<sub>6</sub>(<em>l</em>) and electrolyze: ${\\text{Al}}^{3+}+{\\text{3e}}^{-}\\;\\longrightarrow \\;\\text{Al}(s)$"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp198987536",
+   "source_number": "24",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "tin",
+   "prompt": "What is the common ore of tin and how is tin separated from it?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: name the oxide ore the section gives for tin, then follow the modern process in order: roasting to drive off volatile oxides, treatment with hydrochloric acid, and heating with carbon to reduce the oxide."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp139236992",
+   "source_number": "25",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "tin",
+   "prompt": "A chemist dissolves a 1.497-g sample of a type of metal (an alloy of Sn, Pb, Sb, and Cu) in nitric acid, and metastannic acid, H<sub>2</sub>SnO<sub>3</sub>, is precipitated. She heats the precipitate to drive off the water, which leaves 0.4909 g of tin(IV) oxide. What was the percentage of tin in the original sample?",
+   "answer": {
+    "type": "number",
+    "value": 25.83,
+    "unit": "%",
+    "part": "the percentage of tin",
+    "hint": "Find the mass of tin in 0.4909 g of SnO<sub>2</sub> from the molar masses, then divide by the mass of the sample.",
+    "solution": "25.83%",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp116461520",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "magnesium-electrolysis",
+   "prompt": "What mass of magnesium forms when 100,000 A is passed through a MgCl<sub>2</sub> melt for 1.00 h if the yield of magnesium is 85% of the theoretical yield?",
+   "answer": {
+    "type": "number",
+    "value": 39,
+    "unit": "kg",
+    "part": "the mass of magnesium",
+    "hint": "Find the charge passed, convert it to moles of electrons with Faraday’s constant, take two electrons per magnesium atom, and apply the 85% yield.",
+    "solution": "39 kg",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "chemical-reduction"
+  },
+  {
+   "exercise": "e2",
+   "concept": "downs-cell"
+  },
+  {
+   "exercise": "e3",
+   "concept": "downs-cell"
+  },
+  {
+   "exercise": "e3",
+   "concept": "electrolysis"
+  },
+  {
+   "exercise": "e3",
+   "concept": "half-reaction"
+  },
+  {
+   "exercise": "e4",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e4",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e5",
+   "concept": "passivation"
+  },
+  {
+   "exercise": "e5",
+   "concept": "alkaline-earth-metal-properties"
+  },
+  {
+   "exercise": "e6",
+   "concept": "passivation"
+  },
+  {
+   "exercise": "e6",
+   "concept": "group-13-metals"
+  },
+  {
+   "exercise": "e7",
+   "concept": "hall-heroult-cell"
+  },
+  {
+   "exercise": "e8",
+   "concept": "carbon-reduction-of-zinc-and-tin"
+  },
+  {
+   "exercise": "e9",
+   "concept": "gravimetric-analysis"
+  },
+  {
+   "exercise": "e9",
+   "concept": "percent-composition"
+  },
+  {
+   "exercise": "e10",
+   "concept": "electrolysis-stoichiometry"
+  },
+  {
+   "exercise": "e10",
+   "concept": "metal-isolation-by-electrolysis"
+  },
+  {
+   "exercise": "e10",
+   "concept": "percent-yield"
+  }
+ ]
+}

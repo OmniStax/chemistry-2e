@@ -57,3 +57,5 @@ The Link to Learning on DNA packaging. Errata kept as printed: "a phosphate grou
 
 - No anchors: the chapter has no variables rows and the section states no form.
 - No concept, edge or symbol fixes.
+
+Applied by the chapter pass (2026-10-05): nothing to anchor. The closing clause on resting the pointer was taken out of the captions of `fig-amines` and `sim-peptide`; hover names stay. The key images `react2a`, `react2b`, `react2c` and `react2e` that 20.2 and 20.3 use are one copy each in `media/ch20/`.

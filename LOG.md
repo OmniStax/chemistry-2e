@@ -1578,3 +1578,67 @@ light and dark with no console error but the dev server's own missing
 offline catalogue, no KaTeX error, no missing image, every figure drawn and
 all nine exercise hosts filled. One headline, the optical isomers' mirror
 view, was made a full sentence.
+
+
+## Pass 23 (2026-10-05): Chapter 20, Organic Chemistry, is built and passed
+
+Built: the introduction and four sections, 20.1 to 20.4, in the publisher's
+numbering, Figures 20.1 to 20.24 all shown and linked. Twelve figures drawn
+live. Figures 20.2 + 20.7 + 20.10 are one molecule at a time among ten
+hydrocarbons, drawn as the Lewis structure the text teaches or turned in 3D
+as a ball-and-stick model that swells into a space-filling one, so pentane's
+zigzag and the methyl groups of cis- and trans-2-butene are seen in space.
+Figure 20.3 morphs one molecule from its expanded to its condensed to its
+skeletal drawing; Figure 20.4 slides n-butane through its four drawings with
+2-methylpropane beside it; Figure 20.5 sets each alkyl group beside its
+alkane, the equivalent hydrogen atoms ringed; Figure 20.6 runs the
+fractional distillation column on a clock; Figure 20.11 slides benzene's
+double bonds into its circle, flat or with its p orbitals in 3D. A Sim
+beside Table 20.1 grows the alkane chain carbon by carbon against its
+melting and boiling points. 20.2 places one oxygen atom anywhere in a chain
+of two to six carbon atoms, as an alcohol or an ether, named as the book
+names them. Figure 20.14 puts each carbonyl family's substituents on one
+polar, trigonal planar group, flat or in 3D, and a Sim steps methane to
+carbon dioxide with carbon's oxidation number on a scale. In 20.4 ammonia
+gains methyl groups and its lone pair takes a proton, and Figure 20.20 joins
+two to four amino acids, a water molecule leaving at each peptide bond.
+Fourteen photographs and book drawings kept as numbered rows, forty-four
+unnumbered images kept as the book's, and Table 20.1 written as a table.
+Ten worked examples, each with its Check Your Learning inline. Thirty-six
+end-of-section exercises kept, numbered chapter-wide 1 to 63; twenty-seven
+unkeyed items whose answers would be drawn, named or computed are left out
+and named in `exercise_notes`, no unkeyed choice item, and four unkeyed
+conceptual items carry a suggested approach. No exercise moves; three items
+of 20.4 state the earlier sections' reactions in their own prompts.
+Forty-four concepts with ninety prerequisite edges, no type, no symbol and
+no variables row; the general formulas of the alkanes and the carbohydrates
+are forms on `alkane` and `carbohydrate`.
+
+What the chapter pass changed. Both forms anchored, `eq-alkane-formula` at
+20.1's trend paragraph and `eq-carbohydrate-formula` at 20.2's note; the
+chapter has no variables rows, so there is nothing else to anchor. 20.2's
+two photo rows had no `ai` and now carry it; every other figure row of the
+chapter already did. The 125 files in `media/ch20/` are all used and none is
+a copy of another; the key images the bundle names for 20.4 serve 20.2 and
+20.3 from one copy each. "Round the ring" became "around the ring" in
+20.1, and four captions lost a closing clause telling the reader to rest
+the pointer on an atom. `config.md` records what the build changed,
+`COLOR.md` the bindings as built, and `exploration.md` two departures: the
+distillation column shows no fraction temperatures, since the book gives
+none, and no dihedral Sim was built, the twist about a single bond being
+seen by turning the 3D models.
+
+Errata carried as printed and named in `exploration.md`: "Wohler" on the
+introduction page; "2–methylpropane" with an en dash, an unclosed
+parenthesis, an empty superscript and stray bold in 20.1; "ethylmethyl
+ether" as one word, "l,2,3-trihydroxypropane" and Figure 20.12's
+"five-carbon" fructose in 20.2; esters with "lower vapor pressures" and a
+key without its double bond in 20.3; "(−PO₄³⁻) When" and "+ Cl" for Cl₂ in
+20.4; and the rest there. Three Link to Learning notes are dropped and
+named.
+
+Checks: `ost check` clean for the book (two warnings in sheets, none in the
+chapter), and every page of the chapter in light and dark with no console
+error but the dev server's own missing offline catalogue, no KaTeX error, no
+missing image, every inline exercise card in its place and every figure
+drawn; the browser pass needed no fix.

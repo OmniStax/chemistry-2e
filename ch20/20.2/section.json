@@ -135,13 +135,27 @@
       "id": "fig-sugars",
       "kind": "photo",
       "number": "20.12",
-      "draws": []
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
     },
     {
       "id": "fig-diabetes",
       "kind": "photo",
       "number": "20.13",
-      "draws": []
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
     }
   ],
   "coverage": [

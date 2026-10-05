@@ -73,3 +73,5 @@ The Link to Learning on naming alkanes. Errata kept as printed: "2–methylpropa
 
 - `eq-alkane-formula` → 20.1-alkane-trend
 - No concept, edge or symbol fixes.
+
+Applied by the chapter pass (2026-10-05): `eq-alkane-formula` anchored at `20.1-alkane-trend`. No concept, edge or symbol rows changed. The distillation Sim's tower shows no fraction temperatures, since the book gives none, and no dihedral Sim was built; both are recorded in `config.md` and `exploration.md`. "round the ring" made "around the ring" in Figure 20.11's caption, headline and the caption of the example's isomers.

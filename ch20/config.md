@@ -37,3 +37,15 @@ Proposed by the agent after the chapter exploration (2026-10-05). Status: applie
 | Labels | Figure for a book number, Sim for an addition |
 | `ai` and `built` | `{"text":[{"model":"claude-opus-5-5","effort":"high"}],"figures":[{"model":"claude-opus-5-5","effort":"high"}]}`, `2026-10-05`; every figure row carries its own `ai` |
 | Book manifest | `ch20` added to `book.json` by `ost merge chemistry-2e 20` |
+
+## What the build changed
+
+| Setting | Built |
+|---|---|
+| Figures | twelve drawn live. 20.1 folds Figures 20.2 + 20.7 + 20.10 into one molecule Sim (ten molecules, Lewis or ball-and-stick or space-filling, the 3D view mounting on the first switch), so cis- and trans-2-butene are two of its molecules rather than a figure of their own; Figure 20.3 morphs expanded to condensed to skeletal; Figure 20.4 morphs n-butane through its four drawings beside 2-methylpropane in 2D, with no dihedral slider (the twist about the middle bond is seen by turning the 3D models, and a slider would show one molecule changing shape, which the book never asks); Table 20.1 stays a table beside a carbon-count Sim; Figure 20.5 a choice of alkyl group; Figure 20.6 moving and flat on a 6 s clock, with no tray or fraction temperatures because the book gives none: the tower carries the book's double arrow as a temperature bar from the furnace's 425 °C and the readout orders the fractions by boiling point; Figure 20.11 benzene both ways. 20.2 adds one Sim, an oxygen placed in a chain of two to six carbon atoms as an alcohol or an ether, and keeps Figure 20.12. 20.3 Figure 20.14 both ways with a choice of family, and Example 20.10's ladder as a Sim. 20.4 replaces the unnumbered amines image with a figure (amine by choice, lone pair protonated, both ways) and Figure 20.20 joins two to four amino acids |
+| Photographs | fourteen photo rows: 20.1 on the introduction page, 20.8, 20.9, 20.12, 20.13, 20.15, 20.16 and 20.17 to 20.24 (20.15, 20.17, 20.22 and 20.23 are the book's drawings, kept since nothing in them varies) |
+| Unnumbered images | forty-four kept as `figure` rows with no number (22, 7, 10, 5), the functional-group table closing 20.4 among them as the book's image |
+| Formulas | `eq-alkane-formula` anchored at `20.1-alkane-trend` and `eq-carbohydrate-formula` at `20.2-carbohydrates`; the chapter has no variables rows, so no other anchor |
+| Exercises | ten Check Your Learning items inline, thirty-six end-of-section items (18, 6, 7, 5), four with an AI-marked suggested approach (3, 1, 0, 0) |
+| Media | 125 files in `media/ch20/`, each used, none a copy of another; the key images named for 20.4 (`react2a`, `2b`, `2c`, `2e`) are used by 20.2 and 20.3 from one copy each |
+| Referents | none in any section |

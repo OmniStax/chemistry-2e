@@ -30,7 +30,8 @@
    "forms": [
     {
      "id": "eq-alkane-formula",
-     "latex": "\\text{C}_{n}\\text{H}_{2n+2}"
+     "latex": "\\text{C}_{n}\\text{H}_{2n+2}",
+     "anchor": "20.1-alkane-trend"
     }
    ]
   },
@@ -251,7 +252,8 @@
    "forms": [
     {
      "id": "eq-carbohydrate-formula",
-     "latex": "\\text{C}_{m}(\\text{H}_{2}\\text{O})_{n}"
+     "latex": "\\text{C}_{m}(\\text{H}_{2}\\text{O})_{n}",
+     "anchor": "20.2-carbohydrates"
     }
    ]
   },
@@ -743,5 +745,7 @@
    "concept": "kevlar-polyamide",
    "prereq": "hydrogen-bonding"
   }
- ]
+ ],
+ "types": [],
+ "symbols": []
 }

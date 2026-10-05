@@ -605,7 +605,7 @@ function views(d, three, mount, draw) {
     options: [{ value: 'form1', label: 'resonance 1' }, { value: 'form2', label: 'resonance 2' }, { value: 'circle', label: 'delocalized' }], onInput: () => V.show() });
   const VIEW = F.choice(d.controls, { label: '\\text{view}', options: VIEWS, value: '2d', aria: 'a flat drawing or a scene to turn', ms: 0, onInput: () => V.show() });
   const HEAD = {
-    form1: 'In one resonance structure, three double bonds alternate with three single bonds round the ring.',
+    form1: 'In one resonance structure, three double bonds alternate with three single bonds around the ring.',
     form2: 'In the other, each double bond has moved to the next pair of carbon atoms.',
     circle: 'The six carbon-carbon bonds are equivalent, each between a single and a double bond, and the circle shows it.',
   };

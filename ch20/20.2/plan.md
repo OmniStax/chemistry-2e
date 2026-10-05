@@ -58,3 +58,5 @@ The Link to Learning note (an ether-naming video). Errata kept as printed: the t
 ## Wanted at chapter level
 
 - none
+
+Applied by the chapter pass (2026-10-05): `eq-carbohydrate-formula` anchored at `20.2-carbohydrates`, where the note states C<sub>m</sub>(H<sub>2</sub>O)<sub>n</sub>; `ai` added to the photo rows `fig-sugars` and `fig-diabetes`.

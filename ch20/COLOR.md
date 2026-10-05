@@ -70,3 +70,10 @@ Each section lists its own when it is built. Planned:
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.
+
+## As built
+
+- `temperature`: 20.1 Table 20.1's melting and boiling points and its footnote's 0 °C, the 425 °C of the furnace, the curves and readout of the carbon-count Sim and the temperature bar beside the distillation tower, which carries no tray temperatures since the book gives none; 20.2 the 140 °C of the ether synthesis; 20.4 the –196 °C of liquid nitrogen. "Melting point" and "boiling point" are marked where they name the temperature.
+- `pressure`: 20.1, the footnote's 1 atm. `mass`: 20.1's exercises, and 20.2's 1000 kg of MTBE. `volume` and `density`: 20.2's methanol item. 20.3 binds no type, since its items with masses are left out unkeyed; "vapor pressure" is its one typed word.
+- Conventions: `F.el` for every atom in all twelve live figures; R groups through `F.el('R')`. The book's red, purple and green emphasis is drawn as weight or an ink ring.
+- Referents: none in any section. The propane image is kept as printed, its purple and green hydrogen atoms named by the text.

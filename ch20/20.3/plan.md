@@ -43,3 +43,5 @@ Nothing of the prose. Errata kept as printed: esters said to have "lower vapor p
 
 - No anchors: the chapter has no variables rows.
 - No concept, edge or symbol fixes.
+
+Applied by the chapter pass (2026-10-05): nothing to anchor. The closing clause on resting the pointer was taken out of the captions of `sim-carbonyl` and `sim-carbon-oxidation`; hover names stay.

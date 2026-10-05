@@ -51,6 +51,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "tubes start below the headline, liquid as a dropdown"
     }
    ]
   },

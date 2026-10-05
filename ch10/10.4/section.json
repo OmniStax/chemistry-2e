@@ -59,6 +59,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "pressure slider bound to each diagram's axis, label off the ticks"
     }
    ]
   },

@@ -56,6 +56,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note no longer repeats the caption"
     }
    ]
   },
@@ -88,6 +93,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "curve names placed clear, 300 K tail hatched, note dropped"
     }
    ]
   },
@@ -167,6 +177,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "headline total is the readout's rounded sum"
     }
    ]
   }

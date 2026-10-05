@@ -126,7 +126,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
         : `${name}: more molecules leave the liquid than return, and the vapor pressure is still rising (${fmt(p, 1)} kPa).`);
     const pv = hue('pressure', (p < 0.1 ? p.toFixed(2) : fmt(p, 1)) + '\\ \\text{kPa}');
     readout(d.readout, `\\text{rate of vaporization} ${eq ? '=' : '>'} \\text{rate of condensation},\\quad \\kP_{\\text{vap}} = ${pv}`,
-      'Each molecule drawn in the vapor stands for 2 kPa. The weaker the intermolecular attractions, the more molecules escape before the returning ones balance them, and the higher the vapor pressure.', { values: false });
+      'The weaker the intermolecular attractions, the more molecules escape before the returning ones balance them, and the higher the vapor pressure.', { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -152,27 +152,44 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     for (let i = 0; i <= 60; i++) { const e = e0 + ((20 - e0) * i) / 60; ctx.lineTo(X(e), Y(fn(e))); }
     ctx.lineTo(X(20), Y(0)); ctx.closePath(); ctx.fill(); ctx.restore();
   }
+  /* the 300 K tail hatched, so it shows over the shaded tail of the live curve */
+  function hatch(ctx, fn, e0, X, Y, color) {
+    ctx.save(); ctx.beginPath(); ctx.moveTo(X(e0), Y(0));
+    for (let i = 0; i <= 60; i++) { const e = e0 + ((20 - e0) * i) / 60; ctx.lineTo(X(e), Y(fn(e))); }
+    ctx.lineTo(X(20), Y(0)); ctx.closePath(); ctx.clip();
+    ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.beginPath();
+    for (let x = X(e0) - 400; x < X(20); x += 14) { ctx.moveTo(x, Y(0)); ctx.lineTo(x + 400, Y(0) - 400); }
+    ctx.stroke(); ctx.restore();
+  }
   function draw() {
-    const { ctx } = begin(d.c);
+    const { ctx, H } = begin(d.c);
     const tk = T.v, em = E.v, ct = C('temperature'), ce = C('energy');
     /* 0 to 20 kJ/mol; the height fixed from the tallest curve, 250 K */
     const box = { l: 150, r: 1300, t: 110, b: 440 };
     const { X, Y } = axes(ctx, box, [0, 20], [0, 0.25], { nx: 4, ny: 4, fy: () => '', xl: 'kinetic energy (kJ/mol)', xc: ce, yl: 'number of molecules' });
     const lo = f(T0), hi = f(tk);
-    fill(ctx, lo, em, X, Y, alpha(ct, 0.14));
-    fill(ctx, hi, em, X, Y, alpha(ct, 0.38));
+    fill(ctx, hi, em, X, Y, alpha(ct, 0.3));
+    hatch(ctx, lo, em, X, Y, alpha(ct, 0.75));
     ctx.save(); ctx.setLineDash([10, 10]); F.curve(ctx, lo, 0, 20, X, Y, alpha(ct, 0.8), 3, 120); ctx.restore();
     F.curve(ctx, hi, 0, 20, X, Y, ct, 5, 120);
     line(ctx, X(em), box.t + 20, X(em), box.b, PAL.ink, 3, [10, 10]);
-    label(ctx, 'minimum KE needed to escape', X(em), box.t + 20, { side: em > 12 ? 'left' : 'right', size: 18, gap: 14 });
-    const rl = R * T0 / 1000 / 2, rh = R * tk / 1000 / 2;
-    label(ctx, '300 K', X(rl), Y(lo(rl)), { side: tk > T0 ? 'above' : 'left', size: 18, color: ct, weight: 400 });
-    label(ctx, 'T = ' + tk + ' K', X(rh) + 70, Y(hi(rh)) - 16, { side: 'right', size: 18, color: ct, gap: 0, leader: false });
     const fl = tail(T0, em), fh = tail(tk, em), r = fh / fl;
-    topline(ctx, tk === T0 ? `At 300 K, ${pct(fl)} of the molecules have at least ${fmt(em, 1)} kJ/mol of kinetic energy.`
+    const lines = topline(ctx, tk === T0 ? `At 300 K, ${pct(fl)} of the molecules have at least ${fmt(em, 1)} kJ/mol of kinetic energy.`
       : `At ${tk} K, ${pct(fh)} of the molecules have at least ${fmt(em, 1)} kJ/mol, ${fmt(r, r < 10 ? 2 : 1)} times the fraction at 300 K.`);
-    readout(d.readout, `\\text{fraction with } KE \\ge ${hue('energy', fmt(em, 1) + '\\ \\text{kJ/mol}')}:\\ ${pct(fh).replace('%', '\\%')}\\ \\text{at}\\ \\kT = ${hue('temperature', tk + '\\ \\text{K}')},\\ ${pct(fl).replace('%', '\\%')}\\ \\text{at}\\ ${hue('temperature', '300\\ \\text{K}')}`,
-      'The dashed line is the fixed curve at 300 K; stronger intermolecular attractions raise the minimum and shrink both tails.');
+    /* the curve names: the colder curve over its peak, the warmer over its tail, past the crossing and clear of the minimum line */
+    const lab = F.labeller(ctx, H, { headline: lines });
+    lab.place(label(ctx, 'minimum KE needed to escape', X(em), box.t + 20, { side: em > 12 ? 'left' : 'right', size: 18, gap: 14 }));
+    lab.block(X(em) - 6, box.t + 20, X(em) + 6, box.b);
+    const name = (k) => (k === tk ? 'T = ' + tk + ' K' : '300 K');
+    const [cold, warm] = tk < T0 ? [tk, T0] : [T0, tk], peak = (R * cold) / 2000;
+    lab.add(name(cold), X(peak), Y(f(cold)(peak)), 0.45, -0.89, ct, 18, 16);
+    if (warm !== cold) {
+      const ec = (1.5 * Math.log(warm / cold)) / (1000 / (R * cold) - 1000 / (R * warm));
+      const e = [ec + 1.6, ec + 4, ec + 7].find((x) => Math.abs(X(x) - X(em)) > 150) ?? ec + 1.6;
+      lab.add(name(warm), X(e), Y(f(warm)(e)), 0.5, -0.87, ct, 18, 18);
+    }
+    lab.flush();
+    readout(d.readout, `\\text{fraction with } KE \\ge ${hue('energy', fmt(em, 1) + '\\ \\text{kJ/mol}')}:\\ ${pct(fh).replace('%', '\\%')}\\ \\text{at}\\ \\kT = ${hue('temperature', tk + '\\ \\text{K}')},\\ ${pct(fl).replace('%', '\\%')}\\ \\text{at}\\ ${hue('temperature', '300\\ \\text{K}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -303,11 +320,12 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     });
     const xq = Math.min(qNow, 700);
     if (steps.length) dot(ctx, X(xq), Y(at(qNow)), ct, true, 10);
-    const done = k >= 1, verb = up ? 'added' : 'removed', word = (x) => show3(sig3(x));
-    topline(ctx, !steps.length ? 'The starting and final temperatures are the same, so no heat flows.'
-      : done ? `All ${word(total)} kJ ${verb}: ${fmt(m, 0)} g of ${NAME[steps[steps.length - 1].ph]} at ${minus(String(tb))} °C.`
-        : `${word(qNow)} kJ of ${word(total)} kJ ${verb}: ${WORD(cur, up)}.`);
     const terms = steps.map((s) => sig3(s.q)), sum = terms.reduce((a, b) => a + b, 0);
+    /* the total the headline names is the readout's rounded sum, so the two agree */
+    const done = k >= 1, verb = up ? 'added' : 'removed', word = (x) => show3(sig3(x)), all = word(Math.abs(sum));
+    topline(ctx, !steps.length ? 'The starting and final temperatures are the same, so no heat flows.'
+      : done ? `All ${all} kJ ${verb}: ${fmt(m, 0)} g of ${NAME[steps[steps.length - 1].ph]} at ${minus(String(tb))} °C.`
+        : `${word(k * Math.abs(sum))} kJ of ${all} kJ ${verb}: ${WORD(cur, up)}.`);
     const kj = (x) => hue('energy', (x < 0 ? '-' : '') + show3(Math.abs(x)) + '\\ \\text{kJ}');
     const body = terms.length ? terms.map((x, i) => (i && x >= 0 ? '+' : i ? '+(' : x < 0 ? '(' : '') + kj(x) + (x < 0 ? ')' : '')).join('') + '=' + kj(sig3(sum)) : hue('energy', '0\\ \\text{kJ}');
     const kinds = steps.map((s) => (s.kind === 'warm' ? `${up ? 'warming' : 'cooling'} the ${NAME[s.ph]}` : s.melt ? (up ? 'melting' : 'freezing') : (up ? 'boiling' : 'condensing'))).join(', ');

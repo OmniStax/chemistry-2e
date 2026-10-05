@@ -26,7 +26,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   const G = 9.8, RAD = Math.PI / 180;
   /* the height in cm for a tube of diameter dmm in mm */
   const hOf = (k, dmm) => { const q = LIQ[k]; return (2 * (q.T / 1000) * Math.cos(q.th * RAD)) / ((dmm / 2000) * q.rho * 1000 * G) * 100; };
-  const liq = F.choice(d.controls, { label: '\\text{liquid}', aria: 'the liquid in the beaker', value: 'water',
+  const liq = F.select(d.controls, { label: '\\text{liquid}', aria: 'the liquid in the beaker', value: 'water',
     options: Object.keys(LIQ).map((k) => ({ value: k, label: LIQ[k].name })) });
   const D = ctl(d.controls, { label: 'd', cls: 'length', min: 0.2, max: 2, step: 0.01, value: 0.25, unit: 'mm', dec: 2, aria: 'diameter of the narrow tube in millimeters',
     specials: [{ at: 0.25, label: 'Example 10.4' }] });
@@ -35,7 +35,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   const S = 20, Y0 = 420, Yh = (cm) => Y0 - cm * S;
   /* tube widths drawn ten times true size: 1 mm of diameter is 0.1 cm, 2 units at the height scale, 20 drawn */
   const WMM = 20;
-  const BX0 = 250, BX1 = 720, BTOP = 290, BBOT = 600, TTOP = 86, TBOT = 560;
+  /* the tubes start below a two-line headline */
+  const BX0 = 250, BX1 = 720, BTOP = 290, BBOT = 600, TTOP = 104, TBOT = 560;
   const X1 = 410, X2 = 585;
   /* the rise of a meniscus's edge above its centre, for inner half-width a and contact angle th (degrees) */
   const sagOf = (a, th) => { const c = Math.cos(th * RAD); return Math.abs(c) < 1e-3 ? 0 : (a * (1 - Math.sin(th * RAD))) / c; };
@@ -76,7 +77,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       line(ctx, RX, Yh(c), RX + (big ? 16 : 9), Yh(c), PAL.muted, big ? 2 : 1.2);
       if (big) text(ctx, String(c), RX - 12, Yh(c), PAL.muted, { size: 17, align: 'right' });
     }
-    text(ctx, 'cm', RX, Yh(16) - 22, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, 'cm', RX + 26, Yh(16), PAL.muted, { size: 17 });
     line(ctx, RX + 18, Y0, BX0 - 8, Y0, alpha(PAL.ink, 0.35), 2, [4, 8]);
 
     /* the beaker and the liquid in it, with the tubes' insides kept clear of it */

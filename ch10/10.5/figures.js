@@ -68,9 +68,15 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
     const oxy = [];
     links.forEach(([a, b], i) => {
       const A = P[a], B = P[b], len = Math.hypot(B[0] - A[0], B[1] - A[1]) || 1, nx = -(B[1] - A[1]) / len, ny = (B[0] - A[0]) / len;
-      const O = [(A[0] + B[0]) / 2 + nx * bend[i] * k, (A[1] + B[1]) / 2 + ny * bend[i] * k];
-      if (broke(i)) { line(ctx, A[0], A[1], O[0], O[1], alpha(PAL.ink, 0.35), 4, [6, 8]); line(ctx, O[0], O[1], B[0], B[1], alpha(PAL.ink, 0.35), 4, [6, 8]); }
-      else { line(ctx, A[0], A[1], O[0], O[1], PAL.muted, 7); line(ctx, O[0], O[1], B[0], B[1], PAL.muted, 7); }
+      let O = [(A[0] + B[0]) / 2 + nx * bend[i] * k, (A[1] + B[1]) / 2 + ny * bend[i] * k];
+      if (broke(i)) {
+        /* the oxygen stays with one silicon and draws back from the other, leaving a gap across the broken link */
+        const [S1, S2] = i % 2 ? [B, A] : [A, B], ux = S1[0] - O[0], uy = S1[1] - O[1], u = Math.hypot(ux, uy) || 1;
+        O = [O[0] + (ux / u) * 14, O[1] + (uy / u) * 14];
+        const vx = S2[0] - O[0], vy = S2[1] - O[1], w = Math.hypot(vx, vy) || 1;
+        line(ctx, S1[0], S1[1], O[0], O[1], PAL.muted, 7);
+        line(ctx, O[0] + (vx / w) * 14, O[1] + (vy / w) * 14, S2[0] - (vx / w) * 19, S2[1] - (vy / w) * 19, alpha(PAL.ink, 0.45), 3, [4, 5]);
+      } else { line(ctx, A[0], A[1], O[0], O[1], PAL.muted, 7); line(ctx, O[0], O[1], B[0], B[1], PAL.muted, 7); }
       oxy.push(O);
     });
     term.forEach(([a, th], i) => {
@@ -82,7 +88,7 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
     const ly = 386;
     ball(ctx, 230, ly, 14, F.el('Si')); text(ctx, 'silicon', 252, ly, PAL.ink, { size: 18 });
     ball(ctx, 360, ly, 10, F.el('O')); text(ctx, 'oxygen', 378, ly, PAL.ink, { size: 18 });
-    line(ctx, 490, ly, 540, ly, alpha(PAL.ink, 0.35), 4, [6, 8]); text(ctx, 'broken link', 552, ly, PAL.ink, { size: 18 });
+    line(ctx, 496, ly, 524, ly, alpha(PAL.ink, 0.45), 3, [4, 5]); text(ctx, 'broken link', 552, ly, PAL.ink, { size: 18 });
     /* graph: share of links broken, 1000 to 1800 °C by 200, 0 to 100 % by 50 */
     const box = { l: 230, r: 1180, t: 450, b: 580 };
     const { X, Y } = axes(ctx, box, [1000, 1800], [0, 100], { nx: 4, ny: 2, xl: 'T (°C)', xc: C('temperature'), yl: 'links broken (%)', fy: (v) => fmt(v, 0) });
@@ -114,7 +120,7 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
 (function () {
   const d = sim('sim-solids');
   const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.35, h: 460, dist: 9.4, views: [{ label: 'along an axis', yaw: 0, pitch: 0 }, { label: 'along a diagonal', yaw: Math.PI / 4, pitch: 0.6155 }] });
-  const grp = v.part(0);
+  const grp = v.part(0); if (grp) grp.position.y = -0.35;
   const NM = { Na: 'a sodium ion, Na⁺', Cl: 'a chloride ion, Cl⁻', Cu: 'a copper atom, Cu', C: 'a carbon atom, C', Si: 'a silicon atom, Si', O: 'an oxygen atom, O', I: 'an iodine atom, I' };
   const cube = (n) => { const out = []; for (let i = 0; i <= n; i++) for (let j = 0; j <= n; j++) for (let k = 0; k <= n; k++) out.push([i, j, k]); return out; };
   const centre = (atoms) => { const c = [0, 1, 2].map((q) => (Math.min(...atoms.map((a) => a.p[q])) + Math.max(...atoms.map((a) => a.p[q]))) / 2); atoms.forEach((a) => { a.p = a.p.map((x, q) => x - c[q]); }); return atoms; };

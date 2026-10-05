@@ -46,7 +46,7 @@
     "/media/ch10/CNX_Chem_10_06_SimpleCub3.jpg"
    ],
    "original_caption": "(Figure 10.46) A unit cell shows the locations of lattice points repeating in all directions. (Figure 10.47) When metal atoms are arranged with spheres in one layer directly above or below spheres in another layer, the lattice structure is called simple cubic. Note that the spheres are in contact. (Figure 10.48) An atom in a simple cubic lattice structure contacts six other atoms, so it has a coordination number of six. (Figure 10.49) A simple cubic lattice unit cell contains one-eighth of an atom at each of its eight corners, so it contains one atom total.",
-   "draws": [],
+   "draws": ["length"],
    "conventions": [
     "Po"
    ],
@@ -55,6 +55,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "atoms view smaller and lower, note cut to packing and a = 2r"
     }
    ]
   },
@@ -81,7 +86,7 @@
     "/media/ch10/CNX_Chem_10_06_FcCntrdCbc.jpg"
    ],
    "original_caption": "(Figure 10.50) Cubic unit cells of metals show (in the upper figures) the locations of lattice points and (in the lower figures) metal atoms located in the unit cell. (Figure 10.51) In a body-centered cubic structure, atoms in a specific layer do not touch each other. Each atom touches four atoms in the layer above it and four atoms in the layer below it. (Figure 10.52) A face-centered cubic solid has atoms at the corners and, as the name implies, at the centers of the faces of its unit cells.",
-   "draws": [],
+   "draws": ["length"],
    "conventions": [
     "Po",
     "Fe",
@@ -92,6 +97,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "atoms view smaller, cell as a dropdown, note trimmed via macros"
     }
    ]
   },
@@ -159,6 +169,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "angle arcs larger, names unstacked after each render"
     }
    ]
   },
@@ -185,6 +200,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "scene smaller and lowered below the headline"
     }
    ]
   },
@@ -249,6 +269,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "d sin θ labels below the lower plane"
     }
    ]
   },

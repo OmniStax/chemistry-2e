@@ -59,12 +59,14 @@ const sim = (id, H) => F.sim(root, id, H);
     return [...new Set(out)].sort((a, b) => a - b);
   })();
   const pIdx = (p) => PS.reduce((best, q, i) => (Math.abs(L10(q / p)) < Math.abs(L10(PS[best] / p)) ? i : best), 0);
+  /* the slider walks only the pressures of the substance's own axis */
+  const pRange = (k, p) => ({ min: pIdx(10 ** S[k].lP[0]), max: pIdx(10 ** S[k].lP[1]), step: 1, value: pIdx(p) });
   const fmtP = (p) => p >= 10000 ? Math.round(p).toLocaleString('en-US') : p >= 100 ? (Number.isInteger(p) ? String(p) : p.toFixed(1)) : String(+p.toPrecision(p >= 1 ? 3 : 2));
   const fmtT = (t, dec = 1) => fmt(t, dec).replace('-', '−');
 
   const sub = F.choice(d.controls, { label: '\\text{substance}', aria: 'the substance', value: 'water',
     options: [{ value: 'water', label: 'water' }, { value: 'co2', label: 'carbon dioxide' }],
-    onInput: (v) => { TS[v].set(S[v].start[0]); TS.water.show(v === 'water'); TS.co2.show(v === 'co2'); Psl.set(pIdx(S[v].start[1])); TS[v].refresh(); } });
+    onInput: (v) => { TS[v].set(S[v].start[0]); TS.water.show(v === 'water'); TS.co2.show(v === 'co2'); Psl.range(pRange(v, S[v].start[1])); TS[v].refresh(); } });
   const cur = () => S[sub.value];
   /* the temperatures where the isobar at P crosses a curve, in order of rising temperature */
   function crossings(s, P) {
@@ -81,7 +83,7 @@ const sim = (id, H) => F.sim(root, id, H);
   const TS = { water: tSlider('water'), co2: tSlider('co2') };
   TS.co2.show(false, { ms: 0 });
   const Tsl = () => TS[sub.value];
-  Psl = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: 0, max: PS.length - 1, step: 1, value: pIdx(50), unit: 'kPa', dec: 0, aria: 'pressure in kilopascals',
+  Psl = ctl(d.controls, { label: '\\kP', cls: 'pressure', min: pRange('water').min, max: pRange('water').max, step: 1, value: pIdx(50), unit: 'kPa', dec: 0, aria: 'pressure in kilopascals',
     specials: [{ at: () => pIdx(cur().Pt), label: 'triple point' }, { at: () => pIdx(101.325), label: '1 atm' }, { at: () => pIdx(cur().Pc), label: 'critical point' }] });
   const pVal = Psl.el.querySelector('.ctl-val'), pInp = Psl.el.querySelector('input');
   const showP = () => { const s = fmtP(PS[Math.round(Psl.v)]) + ' kPa'; if (pVal.textContent !== s) pVal.textContent = s; pInp.setAttribute('aria-valuetext', s); };
@@ -220,8 +222,10 @@ const sim = (id, H) => F.sim(root, id, H);
         let up = nearTp || close ? 1 : i % 2 === 0 ? -1 : 1;
         if (yP + up * 26 < B.t + 10) up = 1; else if (yP + up * 26 > B.b - 10) up = -1;
         const name = NAMES[c.kind][0] + ' ' + fmtT(c.T, 0) + ' °C';
-        const align = close ? (i ? 'left' : 'right') : x < B.l + 90 ? 'left' : x > B.r - 90 ? 'right' : 'center';
-        const tx = close ? x + (i ? 10 : -10) : Math.min(B.r - 8, Math.max(B.l + 8, x));
+        let align = close ? (i ? 'left' : 'right') : x < B.l + 90 ? 'left' : x > B.r - 90 ? 'right' : 'center';
+        let tx = close ? x + (i ? 10 : -10) : Math.min(B.r - 8, Math.max(B.l + 8, x));
+        /* a name that would run into the pressure ticks goes right of its point, on the other side of the isobar */
+        if (align === 'right' && tx - F.measure(ctx, name, { size: 17, weight: 600 }) < B.l + 8) { align = 'left'; tx = x + 10; up = -up; if (yP + up * 26 < B.t + 10 || yP + up * 26 > B.b - 10) up = -up; }
         text(ctx, name, tx, yP + up * 26, C('temperature'), { size: 17, weight: 600, align, bg: PAL.panel });
       });
     }

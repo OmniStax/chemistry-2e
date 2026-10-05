@@ -85,13 +85,13 @@ function swapper(v, grp, build) {
 const CELLS = {
   sc: { name: 'simple cubic', metal: 'Po', metalName: 'polonium', n: 1, cn: 6, fill: 52, r: 0.5, touch: 'along each edge of the cell',
     count: '\\mk{c}{8\\times\\tfrac{1}{8}} = \\mk{n}{1}\\ \\text{atom}',
-    note: 'The coordination number is 6, and the atoms fill about 52% of the space. They touch along an edge, so the edge length is two radii, a = 2r.' },
+    note: 'The atoms fill about 52% of the space, and $\\kacell = 2\\kratom$.' },
   bcc: { name: 'body-centered cubic', metal: 'Fe', metalName: 'iron', n: 2, cn: 8, fill: 68, r: S3 / 4, touch: 'along the body diagonal, the corner atoms touching the one at the center',
     count: '\\mk{c}{8\\times\\tfrac{1}{8}} + \\mk{b}{1} = \\mk{n}{2}\\ \\text{atoms}',
-    note: 'The coordination number is 8, and the atoms fill about 68% of the space. They touch along the body diagonal, which is four radii, 4r = √3 a.' },
+    note: 'The atoms fill about 68% of the space, and $4\\kratom = \\sqrt{3}\\,\\kacell$.' },
   fcc: { name: 'face-centered cubic', metal: 'Cu', metalName: 'copper', n: 4, cn: 12, fill: 74, r: S2 / 4, touch: 'along each face diagonal, the corner atoms touching the one at the center of the face',
     count: '\\mk{c}{8\\times\\tfrac{1}{8}} + \\mk{f}{6\\times\\tfrac{1}{2}} = \\mk{n}{4}\\ \\text{atoms}',
-    note: 'The coordination number is 12, and the atoms fill about 74% of the space. They touch along a face diagonal, which is four radii, 4r = √2 a.' },
+    note: 'The atoms fill about 74% of the space, and $4\\kratom = \\sqrt{2}\\,\\kacell$.' },
 };
 const CORNERS = [];
 for (let i = 0; i <= 1; i++) for (let j = 0; j <= 1; j++) for (let k = 0; k <= 1; k++) CORNERS.push([i, j, k]);
@@ -106,10 +106,10 @@ const CUBE_VIEWS = [{ label: 'edge', yaw: 0, pitch: 0 }, { label: 'face diagonal
 
 function cubicFigure(id, cells, cell0) {
   const d = sim(id);
-  const v = F.view3d(d.stage, { h: 440, dist: 8.2, tilt: 0.42, spin: 'idle', pitch: [-1.4, 1.4], views: CUBE_VIEWS });
-  const grp = v.part(0); if (grp) grp.position.y = -0.25;
+  const v = F.view3d(d.stage, { h: 440, dist: 10.4, tilt: 0.42, spin: 'idle', pitch: [-1.4, 1.4], views: CUBE_VIEWS });
+  const grp = v.part(0); if (grp) grp.position.y = -0.45;
   const cellPick = cells.length > 1
-    ? F.choice(d.controls, { label: '\\text{unit cell}', aria: 'the cubic unit cell', options: cells.map((c) => ({ value: c, label: CELLS[c].name })), value: cell0 })
+    ? F.select(d.controls, { label: '\\text{unit cell}', aria: 'the cubic unit cell', options: cells.map((c) => ({ value: c, label: CELLS[c].name })), value: cell0 })
     : { value: cell0, from: cell0, a: () => 1, k: 1 };
   const pic = F.choice(d.controls, { label: '\\text{picture}', aria: 'how the structure is drawn', options: PICTURES, value: 'atoms' });
   const ro = F.readout(d);
@@ -326,7 +326,20 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
 ===================================================================== */
 (function () {
   const d = sim('sim-lattices');
-  const v = F.view3d(d.stage, { h: 440, dist: 4.6, tilt: 0.35, spin: 'idle', pitch: [-1.4, 1.4], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: -0.6, pitch: 0.45 }] });
+  /* the axis and angle names crowd the origin corner in some views: after each render, taken from the top, a name that overlaps one
+     above it steps down below it; where that runs past the foot of the stage, the names are stacked again from the foot upward */
+  const unstack = () => {
+    const wrap = d.stage.querySelector('.three-wrap'), foot = wrap ? wrap.clientHeight - 2 : Infinity;
+    const ls = [...d.stage.querySelectorAll('.lab3d:not(.head3d)')].map((e) => ({ e, x: e.offsetLeft, y: parseFloat(e.style.top), w: e.offsetWidth, h: e.offsetHeight }));
+    const hit = (a, b) => Math.abs(a.x - b.x) < (a.w + b.w) / 2 + 2 && Math.abs(a.y - b.y) < b.h + 2;
+    const stack = (dir) => ls.sort((p, q) => dir * (p.y - q.y)).forEach((b, i) => {
+      for (let k = 0; k < i;) { if (hit(ls[k], b)) { b.y = ls[k].y + dir * (b.h + 3); k = 0; } else k++; }
+    });
+    stack(1);
+    if (ls.some((b) => b.y > foot)) { ls.forEach((b) => { b.y = Math.min(b.y, foot); }); stack(-1); }
+    ls.forEach((b) => { b.e.style.top = b.y + 'px'; });
+  };
+  const v = F.view3d(d.stage, { h: 440, dist: 4.6, tilt: 0.35, spin: 'idle', pitch: [-1.4, 1.4], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: -0.6, pitch: 0.45 }], onRender: unstack });
   const grp = v.part(0); if (grp) grp.position.y = -0.15;
   const R90 = 90;
   const SYS = {
@@ -389,13 +402,15 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
     /* the axes and angles at the origin corner */
     const O = Pc([0, 0, 0]), dA = W(va), dB = W(vb), dC = W(vc);
     const mid = Pc([0.5, 0.5, 0.5]), out = (f) => { const q3 = Pc(f), dv = add3(q3, mul3(mid, -1)), l3 = len3(dv) || 1; return add3(q3, mul3(dv, 0.2 / l3)); };
-    v.label('a', out([0.72, 0, 0]), g, 0);
-    v.label('b', out([0, 0.72, 0]), g, 0);
-    v.label('c', out([0, 0, 0.72]), g, 0);
+    v.label('a', out([0.8, 0, 0]), g, 0);
+    v.label('b', out([0, 0.8, 0]), g, 0);
+    v.label('c', out([0, 0, 0.8]), g, 0);
     const ca3 = C('angle');
-    v.label('α', F.mesh.arc(g, dB, dC, 0.34, O, ca3), g, 0).style.color = ca3;
-    v.label('β', F.mesh.arc(g, dA, dC, 0.34, O, ca3), g, 0).style.color = ca3;
-    v.label('γ', F.mesh.arc(g, dA, dB, 0.34, O, ca3), g, 0).style.color = ca3;
+    /* each name just outside its arc, short of the face-centered point on the same bisector */
+    const named = (p) => add3(O, mul3(add3(p, mul3(O, -1)), 0.52 / 0.64));
+    v.label('α', named(F.mesh.arc(g, dB, dC, 0.46, O, ca3)), g, 0).style.color = ca3;
+    v.label('β', named(F.mesh.arc(g, dA, dC, 0.46, O, ca3)), g, 0).style.color = ca3;
+    v.label('γ', named(F.mesh.arc(g, dA, dB, 0.46, O, ca3)), g, 0).style.color = ca3;
     faded.forEach(([s, x]) => F.fade3(s, x));
     v.invalidate();
     const [sys, c] = LIST[+alive], S = SYS[sys];
@@ -414,8 +429,8 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
 ===================================================================== */
 (function () {
   const d = sim('sim-holes');
-  const v = F.view3d(d.stage, { h: 400, dist: 8.6, tilt: 0.3, spin: 'idle', pitch: [-1.4, 1.4], views: [{ label: 'face', yaw: 0, pitch: 0 }, { label: 'diagonal', yaw: Math.PI / 4, pitch: Math.atan(1 / S2) }] });
-  const grp = v.part(0); if (grp) grp.position.y = -0.3;
+  const v = F.view3d(d.stage, { h: 400, dist: 10.4, tilt: 0.3, spin: 'idle', pitch: [-1.4, 1.4], views: [{ label: 'face', yaw: 0, pitch: 0 }, { label: 'diagonal', yaw: Math.PI / 4, pitch: Math.atan(1 / S2) }] });
+  const grp = v.part(0); if (grp) grp.position.y = -0.5;
   const cnv = F.makeCanvas(d.stage, 170);
   const K = 0.004, T = 1 / S3;
   const HOLES = {
@@ -537,8 +552,9 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
     line(ctx, Fin[0], Fin[1], XP, Y2, cl, 7);
     line(ctx, XP, Y2, Gout[0], Gout[1], cl, 7);
     ctx.restore();
-    lab.add('d sin θ', (Fin[0] + XP) / 2, (Fin[1] + Y2) / 2, -sn, cs, cl, 20, 14);
-    lab.add('d sin θ', (Gout[0] + XP) / 2, (Gout[1] + Y2) / 2, sn, cs, cl, 20, 14);
+    /* below the lower plane, clear of its atoms, one to each side of the atom the lower ray meets */
+    lab.add('d sin θ', (Fin[0] + XP) / 2, Y2 + 16, -0.5, 0.87, cl, 20, 22);
+    lab.add('d sin θ', (Gout[0] + XP) / 2, Y2 + 16, 0.5, 0.87, cl, 20, 22);
     F.angleArc(ctx, { x: XP, y: Y1 }, 64, Math.PI - t, Math.PI, 'θ', lab, ca);
     F.angleArc(ctx, { x: XP, y: Y1 }, 64, 0, t, 'θ', lab, ca);
     text(ctx, 'incident X-rays', L0 + 10, 96, PAL.muted, { size: 17 });

@@ -170,8 +170,8 @@ function twoWays(d, H, opts, onShow) {
     const main = ph === 'solid' ? `${tt} < ${mp}\\ \\text{(melting point)}` : ph === 'liquid' ? `\\text{melting point } ${mp} \\le ${tt} < ${bp}\\ \\text{(boiling point)}` : `${tt} \\ge ${bp}\\ \\text{(boiling point)}`;
     readout(d.readout, main, 'The stronger the attractions between the particles of a substance, the higher the temperature, and so the greater the average kinetic energy, needed to melt it and to boil it.');
   }
-  cycle(() => Infinity, 0);
-  register(d.fig, { update: step, draw });
+  const clk = cycle(() => Infinity, 0);
+  register(d.fig, { update: (dt) => { clk.step(dt, () => 1); step(dt); }, draw });
 })();
 
 /* =====================================================================
@@ -205,8 +205,8 @@ function twoWays(d, H, opts, onShow) {
       const o = { yaw: 0, pitch: 0, cx: 700, cy: 230, s: 130 };
       const P = drawScene(ctx, sc, o, hits);
       const [bx, by] = P([-1.84, 0, 0]), [ix, iy] = P([-0.1, 0, 0]);
-      label(ctx, 'intramolecular force (strong)', bx, by + 12, { side: 'below', leader: true, size: 20 });
-      label(ctx, 'intermolecular force (weak)', ix, iy - 8, { side: 'above', leader: true, size: 20 });
+      label(ctx, 'intramolecular force (strong)', bx, by + 8, { side: 'below', leader: true, size: 20, gap: 0.62 * o.s + 30 });
+      label(ctx, 'intermolecular force (weak)', ix, iy - 8, { side: 'above', leader: true, size: 20, gap: 0.62 * o.s + 10 });
       text(ctx, 'H', P([2.47, 0, 0])[0], iy, PAL.ink, { size: 20, weight: 600, align: 'center' });
       text(ctx, 'Cl', P([1.2, 0, 0])[0], iy, PAL.panel, { size: 22, weight: 600, align: 'center' });
       text(ctx, 'H', P([-1.2, 0, 0])[0], iy, PAL.ink, { size: 20, weight: 600, align: 'center' });
@@ -254,8 +254,8 @@ function twoWays(d, H, opts, onShow) {
     dot(ctx, cx - dx, cy, PAL.ink, true, 7); dot(ctx, cx + dx, cy, PAL.ink, true, 7);
     hits.push({ x: cx - dx, y: cy, r: ra, name: 'a ' + h.name + ' atom, ' + h.v }, { x: cx + dx, y: cy, r: ra, name: 'a ' + h.name + ' atom, ' + h.v });
     if (Math.abs(s) > 0.2) {
-      text(ctx, s > 0 ? 'δ+' : 'δ−', x0 + 30, cy, PAL.panel, { size: 24, weight: 600, align: 'center' });
-      text(ctx, s > 0 ? 'δ−' : 'δ+', x1 - 30, cy, PAL.panel, { size: 24, weight: 600, align: 'center' });
+      text(ctx, s > 0 ? 'δ+' : 'δ−', x0 + 30, cy, PAL.ink, { size: 24, weight: 600, align: 'center' });
+      text(ctx, s > 0 ? 'δ−' : 'δ+', x1 - 30, cy, PAL.ink, { size: 24, weight: 600, align: 'center' });
     }
     return { x0, x1 };
   }
@@ -267,7 +267,7 @@ function twoWays(d, H, opts, onShow) {
     const A = molecule(ctx, cxA, cy, ra, s1, h), B = molecule(ctx, cxB, cy, ra, s2, h);
     const k = Math.min(1, Math.abs(s1 * s2) / (0.25 * amp * amp + 0.02));
     F.faded(ctx, 0.15 + 0.85 * k, [0, 0], () => { line(ctx, A.x1 + 16, cy, B.x0 - 16, cy, PAL.ink, 7, [1, 16]); });
-    label(ctx, 'attractive force', (A.x1 + B.x0) / 2, cy - 10, { side: 'above', leader: true, size: 20 });
+    label(ctx, 'attractive force', (A.x1 + B.x0) / 2, cy - 10, { side: 'above', leader: true, size: 20, gap: ra + 6 });
     const yb = cy + ra + 30;
     hbracket(ctx, A.x0, A.x1, yb, PAL.ink); hbracket(ctx, B.x0, B.x1, yb, PAL.ink);
     text(ctx, 'temporary dipoles', 700, yb + 34, PAL.ink, { size: 20, align: 'center' });
@@ -275,11 +275,10 @@ function twoWays(d, H, opts, onShow) {
     dot(ctx, 440, ly, F.cat(0), true, 11); text(ctx, 'δ+, fewer electrons', 460, ly, PAL.ink, { size: 18 });
     dot(ctx, 760, ly, F.cat(1), true, 11); text(ctx, 'δ−, more electrons', 780, ly, PAL.ink, { size: 18 });
     topline(ctx, 'Two ' + h.name + ' molecules, ' + h.f + ': the larger the atoms, the farther their electrons shift and the stronger the attraction.');
-    readout(d.readout, `\\text{${h.f.replace('_{2}', '}_2\\text{')}}:\\ \\text{atomic radius } ${h.r}\\ \\text{pm},\\ \\text{melting point } ${hue('temperature', h.mp + '\\ \\text{K}')},\\ \\text{boiling point } ${hue('temperature', h.bp + '\\ \\text{K}')}`,
-      'Larger halogen atoms hold their valence electrons less tightly, so their electron clouds are more polarizable, the temporary dipoles are larger, and the halogen melts and boils at higher temperatures.');
+    readout(d.readout, `\\text{${h.f.replace('_{2}', '}_2\\text{')}}:\\ \\text{atomic radius } ${h.r}\\ \\text{pm},\\ \\text{melting point } ${hue('temperature', h.mp + '\\ \\text{K}')},\\ \\text{boiling point } ${hue('temperature', h.bp + '\\ \\text{K}')}`);
   }
-  cycle(() => Infinity, 0);
-  register(d.fig, { update: (dt) => { t += dt; }, draw });
+  const clk = cycle(() => Infinity, 0);
+  register(d.fig, { update: (dt) => { clk.step(dt, () => 1); t += dt; }, draw });
 })();
 
 /* =====================================================================
@@ -326,9 +325,11 @@ function twoWays(d, H, opts, onShow) {
     iso: { name: 'isopentane', f: 'isopentane', bp: 27, head: 'less surface area, less attraction', pts: stand(ISO) },
     n: { name: 'n-pentane', f: 'n-pentane', bp: 36, head: 'large contact area, strong attraction', pts: stand(N_PENT) },
   };
+  /* one scale for the flat drawing, from the tallest isomer: its molecule and its image span 2 × TALL Å, 470 units of the canvas */
+  const TALL = Math.max(...Object.values(ISOS).map((q) => Math.max(...q.pts.map((p, i) => p[1] + (i < 5 ? RC : RH) + 0.1 * Math.abs(p[2])))));
   const K = F.choice(d.controls, { label: '\\text{isomer}', options: [{ value: 'neo', label: 'neopentane' }, { value: 'iso', label: 'isopentane' }, { value: 'n', label: 'n-pentane' }], value: 'n', aria: 'the pentane isomer', onInput: () => draw() });
   const hits = []; F.hover(d.stage, () => hits);
-  const two = twoWays(d, 600, { h: 520, dist: 26, views: [{ label: 'side', yaw: 0, pitch: 0 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0 }] }, () => draw());
+  const two = twoWays(d, 600, { h: 520, dist: 26, spin: 'off', views: [{ label: 'side', yaw: 0, pitch: 0 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0 }] }, () => draw());
   const atomName = (i, m) => (i < 5 ? 'a carbon atom of ' : 'a hydrogen atom of ') + m;
   function sceneOf(pts, m) {
     const atoms = [];
@@ -358,12 +359,12 @@ function twoWays(d, H, opts, onShow) {
         sig = key; two.v.clear(); buildScene(two.v, two.g, sceneOf(iso.pts, iso.name));
         const cc = contact(iso.pts);
         F.mesh.box(two.g, [(cc[0] + cc[1]) / 2, 0, 0], [cc[1] - cc[0], 0.04, 3.2], C('area'), { transparent: true, opacity: 0.5 });
-        two.v.label('contact', [cc[1], 0, 0], two.g, 0); two.v.headline(/^n-/.test(head) ? head : head.charAt(0).toUpperCase() + head.slice(1));
+        two.v.label('contact', [Math.max(...iso.pts.map((p, i) => p[0] + (i < 5 ? RC : RH))) + 0.4, 0, 0], two.g, -12); two.v.headline(/^n-/.test(head) ? head : head.charAt(0).toUpperCase() + head.slice(1));
       }
       two.v?.invalidate();
     } else {
       const { ctx } = begin(d.c); hits.length = 0;
-      const o = { yaw: 0.35, pitch: 0.1, cx: 700, cy: 340, s: 44 };
+      const o = { yaw: 0.35, pitch: 0.1, cx: 700, cy: 340, s: Math.min(44, 235 / TALL) };
       drawScene(ctx, sceneOf(pts, iso.name), o, hits);
       const Pc0 = turn([c0, 0, 0], o.yaw, o.pitch), Pc1 = turn([c1, 0, 0], o.yaw, o.pitch);
       band(ctx, o.cx + Pc0[0] * o.s, o.cx + Pc1[0] * o.s, o.cy - Pc0[1] * o.s);
@@ -444,11 +445,11 @@ function twoWays(d, H, opts, onShow) {
   const sc = { atoms, bonds, dots };
   const hits = []; F.hover(d.stage, () => hits);
   const HEAD = 'Hydrogen bonds join each hydrogen atom of one water molecule to an oxygen atom of another.';
-  const two = twoWays(d, 560, { h: 480, dist: 17, views: [{ label: 'front', yaw: 0.5, pitch: 0.3 }, { label: 'down a bond', yaw: Math.PI / 4, pitch: Math.atan(1 / Math.SQRT2) }] }, () => draw());
+  const two = twoWays(d, 560, { h: 480, dist: 20, views: [{ label: 'front', yaw: 0.5, pitch: 0.3 }, { label: 'down a bond', yaw: Math.PI / 4, pitch: Math.atan(1 / Math.SQRT2) }] }, () => draw());
   let sig = '';
   function draw() {
     if (two.three) {
-      const key = palSig(); if (key !== sig && two.g) { sig = key; two.v.clear(); buildScene(two.v, two.g, sc); two.v.headline(HEAD); two.v.setView(0.5, 0.3); }
+      const key = palSig(); if (key !== sig && two.g) { sig = key; two.v.clear(); two.g.position.y = -0.6; buildScene(two.v, two.g, sc); two.v.headline(HEAD); two.v.setView(0.5, 0.3); }
       two.v?.invalidate();
     } else {
       const { ctx } = begin(d.c); hits.length = 0;
@@ -500,10 +501,11 @@ function twoWays(d, H, opts, onShow) {
         dot(ctx, g.X(k + 2), g.Y(y), col, !hollow, 9);
         hits.push({ x: g.X(k + 2), y: g.Y(y), r: 14, name: fm.f[k].replace(/_\{(\d)\}/g, (m, n) => '₀₁₂₃₄₅'[n]) + (hollow ? ', predicted about ' : ', boils at ') + neg(y) + ' °C' });
       });
-      if (i > 0) text(ctx, meas ? fm.f[0] : fm.f[0] + ' ?', g.X(2) - 18, g.Y(p2[i]), col, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
     });
+    /* the period-2 names beside their points, spread apart where two points lie close (HF and NH₃ as predicted) */
+    const p2names = FAM.map((fm, i) => ({ s: i && !meas ? fm.f[0] + ' ?' : fm.f[0], y: g.Y(p2[i]), col: F.ref(fm.id) })).sort((a, b) => a.y - b.y);
+    p2names.forEach((q, i) => { if (i && q.y < p2names[i - 1].y + 26) q.y = p2names[i - 1].y + 26; text(ctx, q.s, g.X(2) - 18, q.y, q.col, { size: 18, weight: 600, align: 'right', bg: PAL.panel }); });
     FAM.forEach((fm, i) => { const y = 150 + i * 40; dot(ctx, 1060, y, F.ref(fm.id), true, 9); text(ctx, fm.name, 1080, y, PAL.ink, { size: 17 }); });
-    text(ctx, 'CH_{4}', g.X(2) - 18, g.Y(-161), F.ref('group-14'), { size: 18, weight: 600, align: 'right', bg: PAL.panel });
     topline(ctx, meas ? 'Measured, H_{2}O boils at 100 °C, HF at 20 °C and NH_{3} at −33 °C, far above the trends of the heavier hydrides.'
       : 'The trends of the heavier hydrides predict that H_{2}O boils near −80 °C, HF near −110 °C and NH_{3} near −120 °C.');
     readout(d.readout, meas ? `\\text{boiling point of H}_2\\text{O} = ${hue('temperature', '100\\ ^\\circ\\text{C}')}` : `\\text{boiling point of H}_2\\text{O} \\approx ${hue('temperature', texNum(-80) + '\\ ^\\circ\\text{C}')}`,

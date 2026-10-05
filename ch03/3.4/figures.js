@@ -33,8 +33,9 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
     ['concentrated hydrochloric acid', 'HCl', 221, 595, 'hcl'],
   ];
   const OTHER = SAMPLES.length;
+  const SHORT = ['lead in tap water', 'fluoride in tap water', 'glucose in spinal fluid', 'liquid bleach', 'concentrated HCl'];
   const S = F.select(d.controls, { label: '\\text{solution}', aria: 'solution', value: '0',
-    options: [...SAMPLES.map((s, i) => ({ value: String(i), label: s[0] })), { value: String(OTHER), label: 'another solution' }],
+    options: [...SAMPLES.map((s, i) => ({ value: String(i), label: SHORT[i] })), { value: String(OTHER), label: 'another solution' }],
     onInput: () => { const i = +S.value; if (i < OTHER) { MS.set(SAMPLES[i][3]); R.set(Math.log10(SAMPLES[i][2] / SAMPLES[i][3])); } } });
   /* the mass of solution sets the scale of the sample, and the second slider sets the solute's share of it on a logarithmic
      track, since the section's concentrations run from parts per billion to tens of percent; its value box shows the solute's mass */
@@ -73,6 +74,8 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
       if (k % 2 === 0) text(ctx, pow10(k), X(k), yF - 30, PAL.muted, { size: 17, align: 'center' });
     }
     const names = [['mass solute ÷ mass solution', yF + 36, PAL.muted, 400]];
+    const xm = X(lg);
+    line(ctx, xm, yF, xm, SCALES[2].y + 8, cm, 3, [4, 8]);
     /* each unit's scale, with the stretch where it reads between 0.1 and 1000 shaded */
     SCALES.forEach((s) => {
       const a = Math.max(LO, -1 - s.k), b = Math.min(HI, 3 - s.k);
@@ -81,13 +84,11 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
       for (let k = LO; k <= HI; k++) {
         const big = (k + s.k) % 3 === 0;
         line(ctx, X(k), s.y - (big ? 12 : 7), X(k), s.y + (big ? 12 : 7), PAL.ink, big ? 2 : 1.2);
-        if (big) text(ctx, tick(k, s), X(k), s.y + 32, PAL.ink, { size: 17, align: 'center' });
+        if (big) text(ctx, tick(k, s), X(k), s.y + 32, PAL.ink, { size: 17, align: 'center', bg: alpha(PAL.panel, 0.9) });
       }
       names.push([s.name, s.y - 34, PAL.ink, 600]);
     });
     /* the marker at the chosen ratio, crossing every scale, with the reading on each */
-    const xm = X(lg);
-    line(ctx, xm, yF, xm, SCALES[2].y + 8, cm, 3, [4, 8]);
     dot(ctx, xm, yF, cm, true, 10);
     /* the samples of the section as small marks on the fraction line, named on hover */
     SAMPLES.forEach((s, j) => {
@@ -105,7 +106,7 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
     names.forEach(([s, y, c, w]) => text(ctx, s, nx, y, c, { size: 18, weight: w, align: na, bg: alpha(PAL.panel, 0.9) }));
     const who = i < 0 ? 'the solution' : SAMPLES[i][0], what = i < 0 ? 'solute' : SAMPLES[i][1];
     headline(ctx, 'In ' + sig(ms, 3) + ' g of ' + who + ', ' + massStr(mSolute) + ' of ' + what + ' is ' + sig(pct) + '% of the mass, or ' + sig(ppm) + ' ppm, or ' + sig(ppb) + ' ppb.');
-    tex(d.readout, `\\frac{\\htmlClass{kv-mass}{${massTex(mSolute)}}}{\\htmlClass{kv-mass}{${sig(ms, 3)}\\ \\text{g}}} = ${sig(pct)}\\% = ${sig(ppm)}\\ \\text{ppm} = ${sig(ppb)}\\ \\text{ppb}`);
+    tex(d.readout, `\\frac{\\km_{\\text{solute}}}{\\km_{\\text{solution}}} = \\frac{\\htmlClass{kv-mass}{${massTex(mSolute)}}}{\\htmlClass{kv-mass}{${sig(ms, 3)}\\ \\text{g}}} = ${sig(pct)}\\% = ${sig(ppm)}\\ \\text{ppm} = ${sig(ppb)}\\ \\text{ppb}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

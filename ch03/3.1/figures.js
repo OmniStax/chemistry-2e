@@ -51,13 +51,13 @@ function bond(ctx, a, b, order) {
       name: 'chloroform', uni: 'CHCl₃', ionic: false, word: 'molecular mass', total: '119.37',
       rows: [['C', 1, '12.01', '12.01'], ['H', 1, '1.008', '1.008'], ['Cl', 3, '35.45', '106.35']],
       A: [['Cl', -0.82, 1.47, -0.44], ['C', 0, 0, 0.12], ['Cl', -0.89, -1.44, -0.41], ['Cl', 1.67, -0.04, -0.48], ['H', 0.03, 0.01, 1.21]],
-      F: [[-0.94, 0.42], [0, 0], [0.94, 0.42], [0, 1.02], [0, -1]], B: [[0, 1, 1], [1, 2, 1], [1, 3, 1], [1, 4, 1]], scale: 2.6,
+      F: [[-0.94, 0.42], [0, 0], [0.94, 0.42], [0, 1.02], [0, -1]], B: [[0, 1, 1], [1, 2, 1], [1, 3, 1], [1, 4, 1]], scale: 2.0,
       head: 'A chloroform molecule, CHCl₃, has a molecular mass of 119.37 amu.',
     },
     aspirin: {
       name: 'aspirin', uni: 'C₉H₈O₄', ionic: false, word: 'molecular mass', total: '180.15',
       rows: [['C', 9, '12.01', '108.09'], ['H', 8, '1.008', '8.064'], ['O', 4, '16.00', '64.00']],
-      A: ASP_A, F: ASP_F, B: ASP_B, scale: 1.4,
+      A: ASP_A, F: ASP_F, B: ASP_B, scale: 1.0,
       head: 'An aspirin molecule, C₉H₈O₄, has a molecular mass of 180.15 amu.',
     },
     salt: {
@@ -68,7 +68,7 @@ function bond(ctx, a, b, order) {
     },
   };
   const KEYS = Object.keys(CMP);
-  const M = F.choice(d.controls, { label: '\\text{compound}', options: [{ value: 'chloroform', label: 'chloroform' }, { value: 'aspirin', label: 'aspirin' }, { value: 'salt', label: 'sodium chloride' }], value: 'chloroform', aria: 'the compound' });
+  const M = F.select(d.controls, { label: '\\text{compound}', options: [{ value: 'chloroform', label: 'chloroform' }, { value: 'aspirin', label: 'aspirin' }, { value: 'salt', label: 'sodium chloride' }], value: 'chloroform', aria: 'the compound' });
   const Vw = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'flat drawing or three-dimensional model', ms: 0, onInput: show });
   const R2 = { H: 0.2, C: 0.27, O: 0.26, Cl: 0.34 };
   const ION = { Na: { r: 19, mark: '+', name: 'sodium ion, Na⁺' }, Cl: { r: 33, mark: '−', name: 'chloride ion, Cl⁻' } };
@@ -180,8 +180,7 @@ function bond(ctx, a, b, order) {
     if (Vw.value === '2d') draw2d(); else if (v) draw3d();
     const c = CMP[M.value];
     const sum = c.rows.map(([, n, am]) => `${n} \\times ${hue('mass', am)}`).join(' + ');
-    readout(d.readout, `${hue('mass', `\\text{${c.word}}`)} = ${sum} = ${hue('mass', `${c.total}\\ \\text{amu}`)}`,
-      c.ionic ? 'The formula NaCl gives the ratio of the ions in the crystal, not a molecule, so its sum is a formula mass.' : `Each term is the number of atoms of one element in the formula ${c.uni} times that element’s average atomic mass.`);
+    readout(d.readout, `${hue('mass', `\\text{${c.word}}`)} = ${sum} = ${hue('mass', `${c.total}\\ \\text{amu}`)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -207,7 +206,7 @@ function bond(ctx, a, b, order) {
       head: (q) => `A sample of ${q.m} g of glycine is ${q.n} mol of glycine molecules.` },
     vitaminC: { label: 'Example 3.7 · vitamin C', name: 'vitamin C', sym: 'vitamin C', tex: '\\text{vitamin C}', MM: 176.124, give: 'n', want: 'm', value: 0.142, sf: 3, unit: 'molecules', nC: 6, r: { min: 0.01, max: 0.5, step: 0.001, dec: 3, unit: 'mmol' },
       head: (q) => `Vitamin C in the amount of ${q.n} mol has a mass of ${q.m} g.` },
-    saccharin: { label: 'Example 3.8 · saccharin', name: 'saccharin', sym: 'C₇H₅NO₃S', tex: '\\text{C}_7\\text{H}_5\\text{NO}_3\\text{S}', MM: 183.18, give: 'm', want: 'C', value: 40, sf: 3, unit: 'molecules', nC: 7, mg: true, r: { min: 1, max: 200, step: 0.1, dec: 1, unit: 'mg' },
+    saccharin: { label: 'Example 3.8 · saccharin', name: 'saccharin', sym: 'saccharin', tex: '\\text{C}_7\\text{H}_5\\text{NO}_3\\text{S}', MM: 183.18, give: 'm', want: 'C', value: 40, sf: 3, unit: 'molecules', nC: 7, mg: true, r: { min: 1, max: 200, step: 0.1, dec: 1, unit: 'mg' },
       head: (q) => `A packet of ${q.m} mg of saccharin holds ${q.N} molecules and ${q.C} carbon atoms.` },
   };
   const ex = F.select(d.controls, { label: '\\text{example}', aria: 'the worked example', value: 'potassium', options: Object.keys(EX).map((k) => ({ value: k, label: EX[k].label })), onInput: () => load() });
@@ -255,8 +254,8 @@ function bond(ctx, a, b, order) {
     factor(ctx, 0, 'molar mass', `÷ ${e.MM} g/mol`, `× ${e.MM} g/mol`, dirOf(0));
     factor(ctx, 1, 'Avogadro’s number', '× 6.022 × 10²³/mol', '÷ 6.022 × 10²³/mol', dirOf(1));
     F.faded(ctx, nC, [0, 0], () => factor(ctx, 2, 'carbon atoms per molecule', `× ${e.nC || ''}`, `÷ ${e.nC || ''}`, dirOf(2)));
-    box(ctx, BX[0], 'm', `mass of ${e.sym} (${e.mg ? 'mg' : 'g'})`, q.m, lo === 0);
-    box(ctx, BX[1], 'n', `moles of ${e.sym} (mol)`, q.n, lo <= 1 && hi >= 1);
+    box(ctx, BX[0], 'm', `mass of ${e.sym}`, `${q.m} ${e.mg ? 'mg' : 'g'}`, lo === 0);
+    box(ctx, BX[1], 'n', `moles of ${e.sym}`, `${q.n} mol`, lo <= 1 && hi >= 1);
     box(ctx, BX[2], 'N', `${e.sym} ${e.unit}`, q.N, lo <= 2 && hi >= 2);
     F.faded(ctx, nC, [0, 0], () => box(ctx, BX[3], 'C', 'carbon atoms', e.nC ? q.C : '', b === 3));
     /* the chain of factors, written with the live numbers */

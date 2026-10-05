@@ -4,7 +4,7 @@
  "chapter": "3",
  "title": "Other Units for Solution Concentrations",
  "short": "Other Concentration Units",
- "lead": "<span data-concept=\"molarity\">Molarity</span> is only one way of stating how much solute a solution holds. The mass percentage, the volume percentage and the mass-volume percentage suit concentrated solutions and consumer products. Parts per million and parts per billion suit trace contaminants in water. A solution’s <span data-concept=\"density\">density</span> converts between a <span data-concept=\"volume\">volume</span> and a <span data-concept=\"mass\">mass</span>, so you can turn a <span data-concept=\"concentration\">concentration</span> in one unit into a <span data-concept=\"mass\">mass</span> or an amount of solute.",
+ "lead": "<span data-concept=\"molarity\">Molarity</span> is only one way of stating how much solute a solution holds: mass, volume and mass-volume percentages suit concentrated solutions and consumer products, and parts per million and parts per billion suit trace contaminants in water. A solution’s <span data-concept=\"density\">density</span> converts between its <span data-concept=\"volume\">volume</span> and its <span data-concept=\"mass\">mass</span>, so a <span data-concept=\"concentration\">concentration</span> in one unit can be turned into a <span data-concept=\"mass\">mass</span> or an amount of solute.",
  "objectives": [
   "Define the concentration units of mass percentage, volume percentage, mass-volume percentage, parts-per-million (ppm), and parts-per-billion (ppb)",
   "Perform computations relating a solution’s concentration and its components’ volumes and/or masses using these units"
@@ -16,6 +16,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -30,21 +34,36 @@
  "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed exercises fs-idp18877920 (the mass of a 4.00% NaOH solution holding 15.0 g of NaOH), fs-idp11082976 (the HCl in 45.0 mL of 37.21% acid), fs-idm1879104 (the molarity of mercury at 0.68 ppb), fs-idm26515200 (the molarity of a 1.40% phenol throat spray), fs-idp22072496 (the molarity of a 5.0% alcohol cough syrup) and fs-idm9484992 (the molarity of 40.0% sulfuric acid) are left out. The first exercise asks for an outline and an answer; the answer is checked and the book’s outline is shown with it.",
  "figures": [
   { "id": "fig-bleach", "kind": "photo", "number": "3.17", "draws": [] },
-  { "id": "fig-hcl-route", "kind": "figure", "draws": [], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
+  {
+   "id": "fig-hcl-route",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
+  },
   { "id": "fig-saline", "kind": "photo", "number": "3.18", "draws": [] },
-  { "id": "sim-ppm", "kind": "sim", "draws": ["mass"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
+  {
+   "id": "sim-ppm",
+   "kind": "sim",
+   "draws": ["mass"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "short dropdown labels, readout symbols, marker under tick labels"
+    }
+   ]
+  },
   { "id": "fig-faucet", "kind": "photo", "number": "3.19", "draws": [] }
  ],
  "coverage": [

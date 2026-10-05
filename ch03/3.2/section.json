@@ -4,7 +4,7 @@
  "chapter": "3",
  "title": "Determining Empirical and Molecular Formulas",
  "short": "Empirical and Molecular Formulas",
- "lead": "When the formula of a compound is unknown, we first measure the <span data-concept=\"mass\">masses</span> of its elements. From those <span data-concept=\"mass\">masses</span>, or from a formula, you can compute the compound’s percent composition. Converting the <span data-concept=\"mass\">masses</span> of the elements to <span data-concept=\"mole\">moles</span> gives the whole-number ratio of atoms that is the empirical formula. Comparing the <span data-concept=\"molar-mass\">molar mass</span> with the empirical formula mass then gives the molecular formula.",
+ "lead": "When the formula of a compound is unknown, we first measure the <span data-concept=\"mass\">masses</span> of its elements, and from those <span data-concept=\"mass\">masses</span>, or from a formula, you can compute its percent composition. Converting the <span data-concept=\"mass\">masses</span> of the elements to <span data-concept=\"mole\">moles</span> gives the whole-number ratio of atoms that is the empirical formula, and the <span data-concept=\"molar-mass\">molar mass</span> then leads to the molecular formula.",
  "objectives": [
   "Compute the percent composition of a compound",
   "Determine the empirical formula of a compound",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [

@@ -3,6 +3,7 @@ window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['3.3'] = function (root, F) {
 const { tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, topline } = F;
 const sim = (id, H) => F.sim(root, id, H);
+const hue = (type, x) => `\\htmlClass{kv-${type}}{${x}}`;
 
 const TAU = 2 * Math.PI;
 const rnd = (i) => { const s = Math.sin(i * 12.9898 + 78.233) * 43758.5453; return s - Math.floor(s); };
@@ -98,7 +99,8 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
     /* the legend: what one particle stands for */
     glyph(ctx, 90, 505, s.pair);
     text(ctx, `one particle in the beaker stands for 0.04 mol of ${s.name}`, 110, 505, PAL.muted, { size: 17 });
-    tex(d.readout, `\\kM=\\frac{\\km/\\kMM}{\\kV}=\\frac{${mass.toFixed(2)}\\ \\text{g}\\,/\\,${s.mm}\\ \\text{g/mol}}{${sig3(vol)}\\ \\text{L}}=\\frac{${sig3(n)}\\ \\text{mol}}{${sig3(vol)}\\ \\text{L}}=${sig3(M)}\\ M`);
+    const vT = hue('volume', `${sig3(vol)}\\ \\text{L}`);
+    tex(d.readout, `\\kM=\\frac{\\km/\\kMM}{\\kV}=\\frac{${hue('mass', `${mass.toFixed(2)}\\ \\text{g}`)}\\,/\\,${hue('mass', `${s.mm}\\ \\text{g/mol}`)}}{${vT}}=\\frac{${hue('amount', `${sig3(n)}\\ \\text{mol}`)}}{${vT}}=${hue('concentration', `${sig3(M)}\\ \\text{M}`)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -148,7 +150,8 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
     cylinder(ctx, XS[1], v2, c2, n, '₂', evap ? 'after evaporation' : 'after dilution', 'diluted');
     arrow(ctx, 580, 250, 780, 250, PAL.ink, 4);
     text(ctx, same ? 'no change' : evap ? 'water evaporated' : 'water added', 680, 222, PAL.ink, { size: 20, align: 'center' });
-    tex(d.readout, `\\kCone\\kVone=(${sig3(c1)}\\ M)(${sig3(v1)}\\ \\text{L})=${sig3(n)}\\ \\text{mol}=(${sig3(c2)}\\ M)(${sig3(v2)}\\ \\text{L})=\\kCtwo\\kVtwo`);
+    const cT = (c) => hue('concentration', `${sig3(c)}\\ \\text{M}`), vT = (v) => hue('volume', `${sig3(v)}\\ \\text{L}`);
+    tex(d.readout, `\\kCone\\kVone=(${cT(c1)})(${vT(v1)})=${hue('amount', `${sig3(n)}\\ \\text{mol}`)}=(${cT(c2)})(${vT(v2)})=\\kCtwo\\kVtwo`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

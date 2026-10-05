@@ -146,21 +146,19 @@ headline · graph
    the book's five points and the hyperbola, and 1/P against V with the
    straight line, both markers on each · readout $\kPone\kVone =
    \kPtwo\kVtwo$ · draws pressure, volume.
-6. `sim-breathing` · replaces Figure 9.15 (the chest on inspiration and on
-   expiration) inside the breathing note · boyles-law · **moves**: a breath
-   is a cycle the note itself counts at twenty a minute; one loop is one
-   breath and takes about 4.5 real seconds, with a scrubber since the
-   period is finite · sliders: the tidal volume, the air one breath moves
-   (0.3 to 3.0 L, volume; default 0.5), and the breathing rate (8 to 30
-   breaths per minute, in ink, since a rate of breathing is not a type of
-   this book; default 20) · "The diaphragm contracts and the lungs expand to
-   2.7 L, so the pressure in them falls 1 to 3 torr below the air outside
-   and air flows in." · no graph: a torso in profile drawn simply, the lungs
-   filled in the volume hue and swelling with the breath, the diaphragm
-   flattening and doming, arrows for the air in and out, and the book's
-   pressure label in the pressure hue · readout: the lung volume and the
-   book's 1 to 3 torr difference, the Boyle's law reasoning in one sentence
-   · draws volume, pressure.
+6. `sim-breathing` · Figure 9.15 · boyles-law · flow by animation: one
+   breath a cycle, lungs swell as the diaphragm flattens · moving, real-time
+   breath of 60/rate s with a 0.6 s pause after the breath out, transport
+   with scrubber · air per breath (volume, L, 0.3–3.0, 0.5), breaths per
+   minute (ink, 8–30, 20) · headline gives V and the 1–3 torr difference ·
+   none · 2D: F.silhouette (stand, face left) on the ground at the right, a
+   lens on its chest opening into the same silhouette magnified at the left,
+   two lungs (the far one dashed) and a domed diaphragm drawn inside its
+   torso at 4× the true swelling or as much as the chest holds, air arrows
+   at the nose and mouth and the diaphragm's way fading as the flow stops;
+   three labels (P_lungs in the book's words, lungs once, the diaphragm),
+   hover names; readout the volume sum and the factor drawn, no note; no
+   fold · draws volume, pressure. Rewritten 2026-10-05 after the review.
 7. `fig-scuba` · Figure 9.16, the diver · **photograph, kept**: Example
    9.10 and exercises fs-idp16137760 and fs-idm131888352 point at it; the
    book's caption with its credit clause; `widths` empty.

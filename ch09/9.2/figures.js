@@ -351,68 +351,96 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
 })();
 
 /* =====================================================================
-   FIGURE 9.15: a breath. The diaphragm contracts and flattens, the lungs
-   swell, the pressure in them falls below the air outside and air flows
-   in; then the reverse. Moving: one loop is one breath and runs in real
-   time, so the rate slider really does change how long a breath takes;
-   the period is finite, so the transport carries a scrubber. The lungs
-   swell by only a few percent of their radius, which no drawing could
-   show, so the swelling is exaggerated on a stated factor and the true
-   volumes stand in the readout (rule 28.4).
+   FIGURE 9.15: a breath. A person stands in profile, the library's
+   silhouette, and a lens on the chest opens into a larger view of the
+   same silhouette with two lungs and the diaphragm drawn inside it. The
+   diaphragm contracts and flattens, the lungs swell, the pressure in
+   them falls below the air outside and air flows in at the nose and
+   mouth; then the reverse, and a short pause before the next breath.
+   Moving: one loop is one breath and runs in real time, so the rate
+   slider sets how long a breath takes; the period is finite, so the
+   transport carries a scrubber. A quiet breath swells the lungs by a few
+   percent of their size, so the swelling is drawn four times larger, or
+   as much of that as the chest holds, and the readout states the factor
+   (rule 28.4).
 ===================================================================== */
 (function () {
-  const d = sim('sim-breathing', 620);
+  const H = 740, d = sim('sim-breathing', H);
   const TV = ctl(d.controls, { label: '\\text{air per breath}', cls: 'volume', min: 0.3, max: 3, step: 0.1, value: 0.5, unit: 'L', dec: 1, onInput: reset, aria: 'volume of air moved in one breath' });
   const BPM = ctl(d.controls, { label: '\\text{breaths per minute}', cls: '', min: 8, max: 30, step: 1, value: 20, unit: '/min', dec: 0, onInput: reset, aria: 'breaths per minute' });
-  const REST = 2.4;                                         /* litres left in the lungs at the end of a quiet breath out */
-  const period = () => 60 / BPM.v;
-  const cy = cycle(period, 0);
+  const REST = 2.4, PAUSE = 0.6;                            /* litres left in the lungs after a quiet breath out; seconds of pause after it */
+  const cy = cycle(() => 60 / BPM.v - PAUSE, PAUSE);
   function reset() { cy.reset(); }
+  /* Everything is drawn in the silhouette's own frame (150 units tall, feet at the origin, facing +x) and mirrored to face left:
+     once for the whole person standing on the ground at the right, and once magnified inside the lens at the left. */
+  const FACE = -1, P = F.silhouette.pose('stand'), LC = { x: 4, y: -108 };          /* LC: the frame's point at the centre of the lens */
+  const K1 = 2.6, O1 = { x: 1180, y: 700 }, K2 = 7, C2 = { x: 560, y: 420 }, R2 = 290, R1 = (R2 * K1) / K2;
+  const O2 = { x: C2.x - FACE * K2 * LC.x, y: C2.y - K2 * LC.y };
+  const map = (o, k) => (p) => ({ x: o.x + FACE * k * p.x, y: o.y + k * p.y });
+  const m1 = map(O1, K1), m2 = map(O2, K2), C1 = m1(LC);
+  /* the torso of the silhouette, its outline stroke included: half-width 7 at the hip and 11 at the shoulder, plus 1.5 */
+  const chest = (y) => { const t = (P.hip.y - y) / (P.hip.y - P.shoulder.y); return { c: P.hip.x + (P.shoulder.x - P.hip.x) * t, h: 8.5 + 4 * t }; };
+  const YA = -115, YE = -84, NOSE = { x: 18, y: -141 }, MOUTH = { x: 17, y: -133 }, FORK = { x: 2.6, y: -112 };
+  function geometry(f, sd) {
+    const RX = 7.5 * sd, RY = 13.5 * sd, YD = YA + 1.5 * RY, e = chest(YE), near = { x: chest(YA + RY).c - 0.5, y: YA + RY };
+    return { RX, RY, YD, dl: e.c - e.h, dr: e.c + e.h, dc: e.c, near, far: { x: near.x - 1.6, y: near.y - 0.8 } };
+  }
+  /* the body, the airway, the lungs and the diaphragm, at scale k with o the canvas point of the feet */
+  function body(ctx, o, k, g, cv, cl, cd) {
+    ctx.save(); ctx.translate(o.x, o.y); ctx.scale(FACE * k, k);
+    F.silhouette(ctx, { x: 0, y: 0, s: 1, face: 1, pose: 'stand', hands: [{ x: 6, y: -59 }, { x: -1, y: -59 }], color: F.mixColor(PAL.panel, PAL.ink, 0.17) });
+    const px = (w) => w / k;
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = PAL.muted; ctx.lineWidth = px(Math.max(3, k * 1.1)); ctx.beginPath();
+    ctx.moveTo(NOSE.x - 1, NOSE.y + 0.5); ctx.quadraticCurveTo(10, -138, 7.5, -130); ctx.moveTo(MOUTH.x - 1, MOUTH.y); ctx.lineTo(8.5, -132);
+    ctx.moveTo(7.5, -130); ctx.quadraticCurveTo(4, -124, FORK.x, FORK.y); ctx.lineTo(g.near.x + 2, g.near.y - 6); ctx.moveTo(FORK.x, FORK.y); ctx.lineTo(g.far.x - 1, g.far.y - 7); ctx.stroke();
+    const dome = () => { ctx.moveTo(g.dl, YE); ctx.quadraticCurveTo(g.dc, 2 * g.YD - YE, g.dr, YE); };
+    ctx.save(); const a = chest(P.hip.y), b = chest(P.shoulder.y);
+    ctx.beginPath(); ctx.moveTo(a.c - a.h, P.hip.y); ctx.lineTo(b.c - b.h, P.shoulder.y); ctx.lineTo(b.c + b.h, P.shoulder.y); ctx.lineTo(a.c + a.h, P.hip.y); ctx.closePath(); ctx.clip();
+    ctx.beginPath(); dome(); ctx.lineTo(g.dr, -160); ctx.lineTo(g.dl, -160); ctx.closePath(); ctx.clip();
+    [[g.far, 0.16, [6, 6]], [g.near, 0.36, []]].forEach(([p, al, dash]) => {
+      ctx.fillStyle = alpha(cv, al); ctx.strokeStyle = cl; ctx.lineWidth = px(3); ctx.setLineDash(dash.map(px));
+      ctx.beginPath(); ctx.ellipse(p.x, p.y, g.RX, g.RY, 0, 0, TAU); ctx.fill(); ctx.stroke();
+    });
+    ctx.restore();
+    ctx.strokeStyle = cd; ctx.lineWidth = px(5); ctx.beginPath(); dome(); ctx.stroke();
+    ctx.restore();
+  }
+  let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
-    const T = period(), tau = isFinite(cy.now()) ? cy.now() : 0, ph = tau / T, f = (1 - Math.cos(TAU * ph)) / 2;   /* f: 0 at the end of a breath out, 1 at the end of a breath in */
-    const V = REST + TV.v * f, dV = Math.sin(TAU * ph), inhaling = dV > 0.05, exhaling = dV < -0.05;
-    const cv = C('volume'), cp = C('pressure'), cl = F.ref('lungs'), cd = F.ref('diaphragm');
-    /* the drawn swelling: four times life, or as much of that as the chest will hold, and the factor is stated */
-    const sPeak = Math.cbrt((REST + TV.v) / REST), drawnPeak = 1 + Math.min(4 * (sPeak - 1), 0.45), EX = (drawnPeak - 1) / (sPeak - 1);
-    /* the torso in profile, facing left, in the page colour with an ink outline */
-    ctx.save(); ctx.translate(0, 34); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3.5; ctx.beginPath();
-    ctx.moveTo(300, 600); ctx.lineTo(300, 330); ctx.quadraticCurveTo(300, 250, 380, 225); ctx.lineTo(400, 190);
-    ctx.quadraticCurveTo(340, 175, 345, 120); ctx.quadraticCurveTo(360, 60, 430, 62); ctx.quadraticCurveTo(500, 66, 500, 130); ctx.quadraticCurveTo(500, 175, 470, 200);
-    ctx.lineTo(480, 230); ctx.quadraticCurveTo(580, 260, 590, 360); ctx.lineTo(590, 600); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
-    /* the airway from the nose and mouth to the lungs */
-    ctx.save(); ctx.translate(0, 34); ctx.strokeStyle = PAL.muted; ctx.lineWidth = 8; ctx.beginPath(); ctx.moveTo(352, 150); ctx.quadraticCurveTo(410, 150, 430, 200); ctx.lineTo(432, 290); ctx.stroke(); ctx.restore();
-    /* the lungs, whose drawn size follows the volume they hold */
-    const s = 1 + EX * (Math.cbrt(V / REST) - 1), rx = 56 * s, ry = 76 * s, lx = 440, ly = 400;
-    ctx.save(); ctx.fillStyle = alpha(cv, 0.35); ctx.strokeStyle = cl; ctx.lineWidth = 3; ctx.beginPath(); ctx.ellipse(lx, ly, rx, ry, 0, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
-    text(ctx, fmt(V, 2) + ' L', lx, ly, cv, { size: 22, weight: 600, align: 'center', bg: alpha(PAL.panel, 0.85) });
-    text(ctx, 'the swelling is drawn ' + fmt(EX, 1) + ' times larger than life', lx, ly + 28, PAL.muted, { size: 15, align: 'center', bg: alpha(PAL.panel, 0.85) });
-    /* the diaphragm under the lungs: a dome that flattens as it contracts */
-    const dy0 = ly + ry + 4, dome = 56 * (1 - f);
-    ctx.save(); ctx.strokeStyle = cd; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(310, dy0 + 40); ctx.quadraticCurveTo(lx, dy0 - dome + 16, 585, dy0 + 40); ctx.stroke(); ctx.restore();
-    if (inhaling || exhaling) { arrow(ctx, lx + 190, inhaling ? dy0 + 10 : dy0 + 80, lx + 190, inhaling ? dy0 + 80 : dy0 + 10, PAL.ink, 5); }
-    text(ctx, inhaling ? 'diaphragm contracts' : exhaling ? 'diaphragm relaxes' : 'diaphragm at rest', lx + 40, dy0 + 88, cd, { size: 18, weight: 600, align: 'center' });
-    /* the air, in through the nose and mouth or out */
-    if (inhaling) { arrow(ctx, 240, 166, 340, 184, PAL.ink, 4); arrow(ctx, 230, 209, 340, 194, PAL.ink, 4); }
-    if (exhaling) { arrow(ctx, 340, 184, 240, 166, PAL.ink, 4); arrow(ctx, 340, 194, 230, 209, PAL.ink, 4); }
-    /* the pressure in the lungs against the air outside, in the book's words */
-    const plab = inhaling ? 'P lungs = 1–3 torr lower' : exhaling ? 'P lungs = 1–3 torr higher' : 'P lungs = P outside';
-    text(ctx, plab, 60, 274, cp, { size: 20, weight: 600 });
-    text(ctx, inhaling ? 'air flows in' : exhaling ? 'air flows out' : 'no flow', 60, 304, PAL.muted, { size: 17 });
-    /* the readings on the right */
-    const rx0 = 780;
-    text(ctx, inhaling ? 'Inspiration' : exhaling ? 'Expiration' : 'Between breaths', rx0, 140, PAL.ink, { size: 24, weight: 600 });
-    text(ctx, 'lung volume V = ' + fmt(V, 2) + ' L', rx0, 190, cv, { size: 20, weight: 600 });
-    text(ctx, 'of which ' + fmt(V - REST, 2) + ' L is this breath', rx0, 218, PAL.muted, { size: 17 });
-    text(ctx, inhaling ? 'a larger volume, so a lower pressure (Boyle’s law)' : exhaling ? 'a smaller volume, so a higher pressure (Boyle’s law)' : 'the volume is not changing, so nothing flows', rx0, 262, cp, { size: 17 });
-    text(ctx, BPM.v + ' breaths a minute, one every ' + fmt(T, 1) + ' s', rx0, 320, PAL.ink, { size: 18 });
-    text(ctx, 'this breath has run ' + fmt(tau, 1) + ' s of its ' + fmt(T, 1) + ' s', rx0, 348, PAL.muted, { size: 17 });
-    text(ctx, fmt(TV.v * BPM.v, 1) + ' L of air a minute pass through the lungs', rx0, 400, PAL.ink, { size: 18 });
-    topline(ctx, inhaling ? 'On the way in the diaphragm contracts, the lungs expand to ' + fmt(V, 2) + ' L, the pressure in them falls 1 to 3 torr below the air outside, and air flows in.'
-      : exhaling ? 'On the way out the diaphragm relaxes, the lungs shrink to ' + fmt(V, 2) + ' L, the pressure in them rises 1 to 3 torr above the air outside, and air flows out.'
-      : 'Between breaths the lungs hold ' + fmt(V, 2) + ' L and their pressure matches the air outside, so for a moment nothing flows.');
-    readout(d.readout, `\\kV_{\\text{lungs}} = ${hue('volume', fmt(REST, 1) + '\\ \\text{L}')} + ${hue('volume', fmt(V - REST, 2) + '\\ \\text{L}')} = ${hue('volume', fmt(V, 2) + '\\ \\text{L}')}`,
-      (inhaling ? 'The pressure in the lungs is 1 to 3 torr below the air outside. ' : exhaling ? 'The pressure in the lungs is 1 to 3 torr above the air outside. ' : 'The pressure in the lungs equals the air outside. ') + 'Air flows from high pressure to low pressure, so a lung that has grown a little is filled by the air outside, and a lung that has shrunk a little empties into it; the difference of a few torr is small beside the 760 torr of the atmosphere, but it is enough. A quiet breath changes the radius of the lungs by only a few percent, so the swelling is drawn ' + fmt(EX, 1) + ' times larger than life while the volumes given here are the true ones.');
+    const T = 60 / BPM.v - PAUSE, tau = isFinite(cy.now()) ? cy.now() : T, ph = tau / T;
+    const f = (1 - Math.cos(TAU * ph)) / 2, flow = Math.sin(TAU * ph), inhaling = flow > 0.05, exhaling = flow < -0.05;
+    const V = REST + TV.v * f, cv = C('volume'), cp = C('pressure'), cl = F.ref('lungs'), cd = F.ref('diaphragm');
+    /* the drawn swelling: four times life, or as much of that as the chest holds at the largest breath */
+    const life = (v) => Math.cbrt(v / REST) - 1, EX = Math.min(4, 0.4 / life(REST + TV.v)), g = geometry(f, 1 + EX * life(V));
+    /* the whole person on the ground, the lens on its chest, and the lines out to the magnified view */
+    line(ctx, O1.x - 120, O1.y, O1.x + 120, O1.y, PAL.muted, 3);
+    body(ctx, O1, K1, g, cv, cl, cd);
+    const ang = Math.asin((R2 - R1) / Math.hypot(C1.x - C2.x, C1.y - C2.y)), dir = Math.atan2(C1.y - C2.y, C1.x - C2.x);
+    [1, -1].forEach((s) => { const a = dir + s * (Math.PI / 2 - ang); line(ctx, C2.x + R2 * Math.cos(a), C2.y + R2 * Math.sin(a), C1.x + R1 * Math.cos(a), C1.y + R1 * Math.sin(a), alpha(PAL.ink, 0.35), 2); });
+    ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(C1.x, C1.y, R1, 0, TAU); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.beginPath(); ctx.arc(C2.x, C2.y, R2, 0, TAU); ctx.fillStyle = PAL.panel; ctx.fill(); ctx.clip(); body(ctx, O2, K2, g, cv, cl, cd); ctx.restore();
+    ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(C2.x, C2.y, R2, 0, TAU); ctx.stroke(); ctx.restore();
+    const lab = F.labeller(ctx, H, { headline: topline(ctx, inhaling
+      ? `The diaphragm contracts and the lungs swell to $\\kV = ${fmt(REST + TV.v, 1)}\\ \\text{L}$, so the pressure in them falls 1 to 3 torr below the air outside and air flows in.`
+      : exhaling ? `The diaphragm relaxes and the lungs shrink to $\\kV = ${fmt(REST, 1)}\\ \\text{L}$, so the pressure in them rises 1 to 3 torr above the air outside and air flows out.`
+      : `Between breaths the lungs hold $\\kV = ${fmt(V, 1)}\\ \\text{L}$ at the pressure of the air outside, and no air flows.`) });
+    /* the air at the nose and mouth and the diaphragm's way, drawn while they move and fading as the flow stops */
+    const k = Math.min(1, Math.abs(flow) * 1.6), dm = m2({ x: g.dc, y: Math.max(g.YD, YE - 6) }), nose = m2(NOSE), mouth = m2(MOUTH);
+    if (k > 0.02) F.faded(ctx, k, [0, 0], () => {
+      arrow(ctx, dm.x - 30, inhaling ? dm.y + 12 : dm.y + 66, dm.x - 30, inhaling ? dm.y + 66 : dm.y + 12, PAL.ink, 5);
+      [nose, mouth].forEach((q, i) => { const tail = { x: q.x - 130, y: q.y + 34 + 8 * i }, tip = { x: q.x - 8, y: q.y + 3 }; inhaling ? arrow(ctx, tail.x, tail.y, tip.x, tip.y, PAL.ink, 4) : arrow(ctx, tip.x, tip.y, tail.x, tail.y, PAL.ink, 4); });
+    });
+    /* three labels: the pressure in the book's words, the lungs once, the diaphragm with what it is doing */
+    const nf = m2({ x: g.near.x + g.RX, y: g.near.y - 2 }), bk = m2({ x: g.far.x - g.RX, y: YA + 0.7 * g.RY }), de = m2({ x: g.dr, y: YE });
+    lab.add(inhaling ? 'P_{lungs} = 1–3 torr lower' : exhaling ? 'P_{lungs} = 1–3 torr higher' : 'P_{lungs} = P_{outside}', nf.x, nf.y, -1, 0, cp, 20, 40);
+    lab.add('lungs', bk.x, bk.y, 1, 0, cl, 20, 34);
+    lab.add(inhaling ? 'diaphragm contracts' : exhaling ? 'diaphragm relaxes' : 'diaphragm', de.x, de.y, -0.9, 0.44, cd, 20, 30);
+    lab.flush();
+    const nl = m2(g.near), fl = m2({ x: g.far.x - g.RX + 1.5, y: g.far.y - 4 });
+    hits = [{ x: nl.x, y: nl.y, r: 50, name: 'left lung' }, { x: fl.x, y: fl.y, r: 14, name: 'right lung' }, { x: m2({ x: g.dc, y: g.YD }).x, y: m2({ x: g.dc, y: g.YD }).y, r: 18, name: 'diaphragm' },
+      { ...m2({ x: 4.5, y: -124 }), r: 16, name: 'windpipe' }, { ...C1, r: R1, name: 'the chest, magnified at the left' }];
+    readout(d.readout, `\\kV_{\\text{lungs}} = ${V - REST < 0.005 ? '' : `${hue('volume', fmt(REST, 1) + '\\ \\text{L}')} + ${hue('volume', fmt(V - REST, 2) + '\\ \\text{L}')} = `}${hue('volume', fmt(V, 2) + '\\ \\text{L}')}\\qquad \\text{swelling drawn } ${fmt(EX, 1)}\\times`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });   /* one breath takes the time the rate says it takes */
 })();

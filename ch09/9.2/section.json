@@ -198,6 +198,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "rewritten: library silhouette with a chest lens, two lungs, readout"
         }
       ]
     },

@@ -1,0 +1,1483 @@
+{
+ "id": "20.1",
+ "module": "m68846",
+ "chapter": "20",
+ "title": "Hydrocarbons",
+ "short": "Hydrocarbons",
+ "lead": "Hydrocarbons, the simplest <span data-concept=\"organic-compound\">organic compounds</span>, contain only carbon and hydrogen, yet their molecules differ in the length, branching and rings of their carbon chains and in the bonds between their carbon atoms. The section takes the <span data-concept=\"alkane\">alkanes</span>, <span data-concept=\"alkene\">alkenes</span>, <span data-concept=\"alkyne\">alkynes</span> and <span data-concept=\"aromatic-hydrocarbon\">aromatic hydrocarbons</span> in turn: how their molecules are drawn and named, the isomers they form, and the reactions typical of each.",
+ "objectives": [
+  "Explain the importance of hydrocarbons and the reason for their diversity",
+  "Name saturated and unsaturated hydrocarbons, and molecules derived from them",
+  "Describe the reactions characteristic of saturated and unsaturated hydrocarbons",
+  "Identify structural and geometric isomers of hydrocarbons"
+ ],
+ "summary_html": "<p>Strong, stable bonds between carbon atoms produce complex molecules containing chains, branches, and rings. The chemistry of these compounds is called organic chemistry. <span data-concept=\"hydrocarbon\">Hydrocarbons</span> are <span data-concept=\"organic-compound\">organic compounds</span> composed of only carbon and hydrogen. The <span data-concept=\"alkane\">alkanes</span> are <span data-concept=\"alkane\">saturated hydrocarbons</span>—that is, <span data-concept=\"hydrocarbon\">hydrocarbons</span> that contain only single bonds. <span data-concept=\"alkene\">Alkenes</span> contain one or more carbon-carbon double bonds. <span data-concept=\"alkyne\">Alkynes</span> contain one or more carbon-carbon triple bonds. <span data-concept=\"aromatic-hydrocarbon\">Aromatic hydrocarbons</span> contain ring structures with delocalized <span data-concept=\"pi-bond\">π</span> electron systems.</p>",
+ "notes": "The Link to Learning video on naming alkanes is left out. The section keeps as printed “2–methylpropane” with an en dash, the sentence ending “(… bonded to three other carbon atoms)” without a full stop, the parenthesis opened before “It may be easier to see the equivalency” and never closed, constitutional isomers said to differ in “spatial arrangements,” the empty superscript after 120°, the stray bold on “The location of the double bond,” and key fs-idp68973952’s 6H₂O set inside its formula.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The eleven unkeyed exercises whose answers would have to be drawn, named or computed are left out, and no answer is made for them: fs-idp52657872, fs-idp6728112, fs-idp4501296, fs-idp1311200, fs-idp65090000, fs-idp53700896, fs-idp69267152, fs-idp53031744, fs-idp68859968, fs-idp49893888, fs-idp80653232. The unkeyed conceptual exercises fs-idp53479808, fs-idp14199456 and fs-idp45666096 carry a suggested approach marked as OmniStax’s own. No exercise moves; 20.4 states the reactions of fs-idp49893888 in its own prompt.",
+ "figures": [
+  {
+   "id": "sim-hydrocarbon-models",
+   "kind": "sim",
+   "number": "20.2",
+   "folds": [
+    "20.7",
+    "20.10"
+   ],
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_alkanes.jpg",
+    "/media/ch20/CNX_Chem_20_01_propene1.jpg",
+    "/media/ch20/CNX_Chem_20_01_geoIsomers_img.jpg"
+   ],
+   "original_caption": "(Figure 20.2) Pictured are the Lewis structures, ball-and-stick models, and space-filling models for molecules of methane, ethane, and pentane. (Figure 20.7) Expanded structures, ball-and-stick structures, and space-filling models for the alkenes ethene, propene, and 1-butene are shown. (Figure 20.10) These molecular models show the structural and geometric isomers of butene.",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-line-structures",
+   "kind": "sim",
+   "number": "20.3",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_LineStruct1.jpg"
+   ],
+   "original_caption": "The same structure can be represented three different ways: an expanded formula, a condensed formula, and a skeletal structure.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-skeletal-draw",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-skeletal-drawn",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-skeletal-read",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-skeletal-hydrogens",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-alkane-trend",
+   "kind": "sim",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-butane-drawings",
+   "kind": "sim",
+   "number": "20.4",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_butaneIsom_img.jpg",
+    "/media/ch20/CNX_Chem_20_01_butane_img.jpg"
+   ],
+   "original_caption": "These three representations of the structure of n-butane are not isomers because they all contain the same arrangement of atoms and bonds.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-substituents",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-halogen",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-halogen-numbered",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-alkyl-names",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-substituted",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-propane-hydrogens",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-alkyl-groups",
+   "kind": "sim",
+   "number": "20.5",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_alkyls.jpg"
+   ],
+   "original_caption": "This listing gives the names and formulas for various alkyl groups formed by the removal of hydrogen atoms from different locations.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-alkyl-locations",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-fractional-distillation",
+   "kind": "sim",
+   "number": "20.6",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_FracDistil.jpg"
+   ],
+   "original_caption": "In a column for the fractional distillation of crude oil, oil heated to about 425 °C in the furnace vaporizes when it enters the base of the tower. The vapors rise through bubble caps in a series of trays in the tower. As the vapors gradually cool, fractions of higher, then of lower, boiling points condense to liquids and are drawn off. (credit left: modification of work by Luigi Chiesa)",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ethane-chlorine",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-monomer",
+   "kind": "photo",
+   "number": "20.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-recycle",
+   "kind": "photo",
+   "number": "20.9",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-alkene-names",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ethene-chlorine",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-alkene",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-alkene-product",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ethyne",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-alkyne",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-acetylene-bromine",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-benzene",
+   "kind": "sim",
+   "number": "20.11",
+   "originals": [
+    "/media/ch20/CNX_Chem_20_01_aromatic_img.jpg",
+    "/media/ch20/CNX_Chem_20_01_benzene.jpg"
+   ],
+   "original_caption": "This condensed formula shows the unique bonding structure of benzene.",
+   "draws": [],
+   "conventions": [
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-benzene-derivatives",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-aromatic",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-aromatic-isomers",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "organic",
+   "concept": "organic-compound",
+   "verb": "introduces"
+  },
+  {
+   "span": "organic",
+   "concept": "carbon-compound-diversity",
+   "verb": "introduces"
+  },
+  {
+   "span": "organic",
+   "concept": "hydrocarbon",
+   "verb": "uses"
+  },
+  {
+   "span": "organic",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "alkanes",
+   "concept": "alkane",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkanes",
+   "concept": "sp3-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "alkanes",
+   "concept": "lewis-structure-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "alkanes",
+   "concept": "bond-angle",
+   "verb": "uses"
+  },
+  {
+   "span": "condensed",
+   "concept": "write-organic-structures",
+   "verb": "introduces"
+  },
+  {
+   "span": "skeletal",
+   "concept": "skeletal-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "alkane-properties-trend",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "dispersion-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "alkane-trend",
+   "concept": "standard-temperature-and-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "alkane-structural-isomers",
+   "verb": "introduces"
+  },
+  {
+   "span": "isomers",
+   "concept": "structural-isomer",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "molecular-formula",
+   "verb": "uses"
+  },
+  {
+   "span": "isomers",
+   "concept": "lewis-structure-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "naming",
+   "concept": "naming-alkanes",
+   "verb": "introduces"
+  },
+  {
+   "span": "naming",
+   "concept": "substituent",
+   "verb": "introduces"
+  },
+  {
+   "span": "naming",
+   "concept": "nomenclature",
+   "verb": "uses"
+  },
+  {
+   "span": "alkyl",
+   "concept": "alkyl-group",
+   "verb": "introduces"
+  },
+  {
+   "span": "fuels",
+   "concept": "alkanes-as-fuels",
+   "verb": "introduces"
+  },
+  {
+   "span": "fuels",
+   "concept": "combustion-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "fuels",
+   "concept": "exothermic-process",
+   "verb": "uses"
+  },
+  {
+   "span": "fuels",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "fuels",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "fuels",
+   "concept": "intermolecular-force",
+   "verb": "uses"
+  },
+  {
+   "span": "substitution",
+   "concept": "substitution-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "substitution",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "functional",
+   "concept": "functional-group",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkenes",
+   "concept": "alkene",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkenes",
+   "concept": "sigma-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "alkenes",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "alkenes",
+   "concept": "trigonal-planar-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "recycling",
+   "concept": "polymer",
+   "verb": "introduces"
+  },
+  {
+   "span": "recycling",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "alkene-names",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkene-isomers",
+   "concept": "alkene-geometric-isomers",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkene-isomers",
+   "concept": "geometric-isomer",
+   "verb": "uses"
+  },
+  {
+   "span": "alkene-isomers",
+   "concept": "structural-isomer",
+   "verb": "uses"
+  },
+  {
+   "span": "alkene-isomers",
+   "concept": "sp2-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "addition",
+   "concept": "addition-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "addition",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "addition",
+   "concept": "sigma-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "addition",
+   "concept": "sp3-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "alkynes",
+   "concept": "alkyne",
+   "verb": "introduces"
+  },
+  {
+   "span": "alkynes",
+   "concept": "sp-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "alkynes",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "verb": "uses"
+  },
+  {
+   "span": "alkynes",
+   "concept": "addition-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-alkyne-structure",
+   "concept": "carbon-geometry-and-hybridization",
+   "verb": "introduces"
+  },
+  {
+   "span": "aromatic",
+   "concept": "aromatic-hydrocarbon",
+   "verb": "introduces"
+  },
+  {
+   "span": "aromatic",
+   "concept": "resonance-hybrid",
+   "verb": "uses"
+  },
+  {
+   "span": "aromatic",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "aromatic",
+   "concept": "valence-bond-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "aromatic",
+   "concept": "resonance-and-delocalization",
+   "verb": "uses"
+  },
+  {
+   "span": "aromatic",
+   "concept": "substitution-reaction",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp10059824",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-skeletal-draw"
+   },
+   "cite": "skeletal",
+   "prompt": "Draw the skeletal structures for these two molecules:<br><img src=\"/media/ch20/CNX_Chem_20_01_LineStruct4_img.jpg\" alt=\"Figure a shows five C H subscript 2 groups and one C H group bonded in a hexagonal ring. A C H subscript 3 group appears above and to the right of the ring, bonded to the ring on the C H group appearing at the upper right portion of the ring. In b, a straight chain molecule composed of C H subscript 3 C H subscript 2 C H subscript 2 C H subscript 2 C H subscript 3 is shown.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_LineStruct5_img.jpg\" alt=\"In a, a hexagon with a vertex at the top is shown. The vertex just to the right has a line segment attached that extends up and to the right. In b, a zig zag pattern is shown in which line segments rise, fall, rise, fall, and rise moving left to right.\">"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp73321504",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-skeletal-read"
+   },
+   "cite": "skeletal",
+   "prompt": "Identify the chemical formula of the molecule represented here:<br><img src=\"/media/ch20/CNX_Chem_20_01_LineStruct8_img.jpg\" alt=\"A skeleton model is shown with a zig zag pattern that rises, falls, rises, and falls again left to right through the center of the molecule. From the two risen points, line segments extend both up and down, creating four branches.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "C<sub>9</sub>H<sub>20</sub>"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp50667744",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-halogen-names"
+   },
+   "cite": "naming",
+   "prompt": "Name the following molecule:<br><img src=\"/media/ch20/CNX_Chem_20_01_HalAlkane3_img.jpg\" alt=\"This figure shows a C atom bonded to three H atoms and another C atom. This second C atom is bonded to two H atoms and a third C atom. The third C atom is bonded to two B r atoms and a fourth C atom. This C atom is bonded to an H atom, and I atom, and a fifth C atom. This last C atom is bonded to three H atoms.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "3,3-dibromo-2-iodopentane"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp14108192",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-substituted-names"
+   },
+   "cite": "alkyl",
+   "prompt": "Name the following molecule:<br><img src=\"/media/ch20/CNX_Chem_20_01_octane2_img.jpg\" alt=\"This figure shows a C atom bonded to three H atoms and another C atom. This C atom is bonded to two H atoms and third C atom. The third C atom is bonded to two H atoms and a fourth C atom. The fourth C atom is bonded to two H atoms and a fifth C atom. This C atom is bonded to an H atom, a sixth C atom in the chain, and another C atom which appears to branch off the chain. The C atom in the branch is bonded to two H atoms and another C atom. This C atom is bonded to two H atoms and another C atom. This third C atom appears to the left of the second and is bonded to three H atoms. The sixth C atom in the chain is bonded to two H atoms and a seventh C atom. The seventh C atom is bonded to two H atoms and an eighth C atom. The eighth C atom is bonded to three H atoms.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "4-propyloctane"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp73227696",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-alkene-reactivity"
+   },
+   "cite": "addition",
+   "prompt": "Provide names for the reactant and product of the reaction shown:<br><img src=\"/media/ch20/CNX_Chem_20_01_ReactProd1_img.jpg\" alt=\"This shows a C atom bonded to three H atoms and another C atom. This second C atom is bonded to two H atoms and a third C atom. This third C atom is bonded to one H atom and also forms a double bond with a fourth C atom. This fourth C atom is bonded to one H atom and a fifth C atom. This fifth C atom is bonded to two H atoms and a sixth C atom. This sixth C atom is bonded to three H atoms. There is a plus sign followed by a C l atom bonded to another C l atom. There is a reaction arrow. no products are shown.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "reactant: cis-3-hexene product: 3,4-dichlorohexane"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idp19245952",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-alkyne-structure"
+   },
+   "cite": "alkynes",
+   "prompt": "Identify the hybridization and bond angles at the carbon atoms in the molecule shown:<br><img src=\"/media/ch20/CNX_Chem_20_01_HybrBAngl_img.jpg\" alt=\"A structural formula is shown with an H atom bonded to a C atom. The C atom has a triple bond with another C atom which is also bonded to C H. The C H has a double bond with another C H which is also bonded up and to the right to C H subscript 3. Each C atom is labeled 1, 2, 3, 4, or 5 from left to right.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "carbon 1: <em>sp</em>, 180°; carbon 2: <em>sp</em>, 180°; carbon 3: <em>sp</em><sup>2</sup>, 120°; carbon 4: <em>sp</em><sup>2</sup>, 120°; carbon 5: <em>sp</em><sup>3</sup>, 109.5°"
+   }
+  },
+  {
+   "id": "cyl7",
+   "source_id": "fs-idp67295280",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-aromatic-structure"
+   },
+   "cite": "aromatic",
+   "prompt": "Draw three isomers of a six-membered aromatic ring compound substituted with two bromines.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_AromatIso3_img.jpg\" alt=\"Three pairs of structural formulas are shown. The first has a six carbon hydrocarbon ring in which four of the C atoms are each bonded to only one H atom. At the upper right and right of the ring, the two C atoms that do not have bonded H atoms have one B r atom bonded each. A circle is at the center of the ring. Beneath this structure, a similar structure is shown which has a hexagon with a circle inside. From vertices of the hexagon at the upper right and right single B r atoms are attached. The second has a six carbon hydrocarbon ring in which four of the C atoms are each bonded to only one H atom. At the upper right and lower right of the ring, the two C atoms that do not have bonded H atoms have a single B r atom bonded each. A circle is at the center of the ring. Beneath this structure, a similar structure is shown which has a hexagon with a circle inside. From vertices of the hexagon at the upper right and lower right single B r atoms are attached. The third has a six carbon hydrocarbon ring in which four of the C atoms are each bonded to only one H atom. At the upper right and lower left of the ring, the two C atoms that do not have bonded H atoms have B r atoms bonded. A circle is at the center of the ring. Beneath this structure, a similar structure is shown which has a hexagon with a circle inside. From vertices of the hexagon at the upper right and lower left, single B r atoms are attached.\">"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp73372304",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkanes",
+   "prompt": "Write the chemical formula and Lewis structure of the following, each of which contains five carbon atoms:<br>(a) an alkane<br>(b) an alkene<br>(c) an alkyne",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "There are several sets of answers; one is:<br>(a) C<sub>5</sub>H<sub>12</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_1a_img.jpg\" alt=\"A chain of five C atoms with single bonds is shown. Each C atom has an H atom bonded above and below it. The C atoms on the end of the chain have a third H atom bonded to them each.\"><br>(b) C<sub>5</sub>H<sub>10</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_1b_img.jpg\" alt=\"A chain of five C atoms is shown. The first C atom (from left to right) forms a single bond with the second C atom. The second C atom forms a single bond with the third C atom. The third C atom forms a double bond with the fourth C atom. The fourth C atom forms a single bond to the fifth C atom. The first C atom (from left to right) as three H atoms bonded to it. The second C atom has two H atoms bonded to it. The third C atom has one H atom bonded to it. The fourth C atom has one H atom bonded to it. The fifth C atom as three H atoms bonded to it.\"><br>(c) C<sub>5</sub>H<sub>8</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_1c_img.jpg\" alt=\"A chain of five carbon atoms is shown. The first C atom (from left to right) forms a single bond with the second C atom. The second C atom forms a single bond with the third C atom. The third C atom forms a triple bond with the fourth C atom. The fourth C atom forms a single bond to the fifth C atom. The first C atom has three H atoms bonded to it. The second C atom has two H atoms bonded to it. The fifth C atom has three H atoms bonded to it.\">"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp53479808",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkenes",
+   "prompt": "What is the difference between the hybridization of carbon atoms’ valence orbitals in saturated and unsaturated hydrocarbons?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall that each carbon atom of a saturated hydrocarbon forms four single bonds, then count the atoms that surround a carbon atom taking part in a double bond and in a triple bond. The number of σ bonds and the geometry around each carbon atom tell which hybrid orbitals it uses, and the orbitals left unhybridized form the π bonds."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp46944768",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "addition",
+   "prompt": "On a microscopic level, how does the reaction of bromine with a saturated hydrocarbon differ from its reaction with an unsaturated hydrocarbon? How are they similar?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Both reactions result in bromine being incorporated into the structure of the product. The difference is the way in which that incorporation takes place. In the saturated hydrocarbon, an existing C–H bond is broken, and a bond between the C and the Br can then be formed. In the unsaturated hydrocarbon, the only bond broken in the hydrocarbon is the π bond whose electrons can be used to form a bond to one of the bromine atoms in Br<sub>2</sub> (the electrons from the Br–Br bond form the other C–Br bond on the other carbon that was part of the π bond in the starting unsaturated hydrocarbon)."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp14199456",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkynes",
+   "prompt": "On a microscopic level, how does the reaction of bromine with an alkene differ from its reaction with an alkyne? How are they similar?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: count the π bonds in a carbon-carbon double bond and in a triple bond, and recall that in an addition reaction one molecule of bromine adds as each π bond is broken. Compare how many bromine molecules each takes up and which bonds remain between the two carbon atoms afterward, then name what the two reactions have in common."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp53563584",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkene-isomers",
+   "prompt": "Explain why unbranched alkenes can form geometric isomers while unbranched alkanes cannot. Does this explanation involve the macroscopic domain or the microscopic domain?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Unbranched alkanes have free rotation about the C–C bonds, yielding all orientations of the substituents about these bonds equivalent, interchangeable by rotation. In the unbranched alkenes, the inability to rotate about the $\\text{C}=\\text{C}$ bond results in fixed (unchanging) substituent orientations, thus permitting different isomers. Since these concepts pertain to phenomena at the molecular level, this explanation involves the microscopic domain."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp45666096",
+   "source_number": "6",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isomers",
+   "prompt": "Explain why these two molecules are not isomers:<br><img src=\"/media/ch20/CNX_Chem_20_01_notiso1_img.jpg\" alt=\"Two structural formulas are shown. In the first, a chain of six carbon atoms with a single double bond between carbons two and three counting right to left across the molecule is shown with twelve total H atoms bonded. H atoms are bonded at each end of the molecule as well as above. H atoms are also bonded below all C atoms except those involved in the double bond. In the second structure, a hydrocarbon chain of five C atoms connected by single bonds is shown. A single C with three attached H atoms is bonded beneath the second carbon counting right to left across the molecule.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: count the carbon and hydrogen atoms in each structure and write each molecular formula. Isomers must have the same molecular formula, so compare the two formulas, and note which kinds of carbon-carbon bonds each molecule contains."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp68859088",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isomers",
+   "prompt": "Explain why these two molecules are not isomers:<br><img src=\"/media/ch20/CNX_Chem_20_01_notiso2_img.jpg\" alt=\"Two structural formulas are shown. In the first, a horizontal hydrocarbon chain consisting of six singly bonded C atoms is shown. Each C atom has an H atom bonded above and below it. The two C atoms on either end of the chain each have a third H atom bonded to them. In the second structure, a horizontal hydrocarbon chain composed of five C atoms connected by single bonds is shown with a sixth C atom singly bonded beneath the right-most C atom. The first C atom (from left to right) has three H atoms bonded to it. The second C atom has two H atoms bonded to it. The third C atom has two H atoms bonded to it. The fourth C atom has two H atoms bonded to it. The fifth C atom has two H atoms bonded to it. The C atom bonded below the fifth C atom has three H atoms bonded to it.\">",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "They are the same compound because each is a saturated hydrocarbon containing an unbranched chain of six carbon atoms."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp15287488",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "naming",
+   "prompt": "Write the Lewis structure and molecular formula for each of the following hydrocarbons:<br>(a) hexane<br>(b) 3-methylpentane<br>(c) <em>cis</em>-3-hexene<br>(d) 4-methyl-1-pentene<br>(e) 3-hexyne<br>(f) 4-methyl-2-pentyne",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) C<sub>6</sub>H<sub>14</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_a_img.jpg\" alt=\"This figure shows a horizontal hydrocarbon chain consisting of six singly bonded carbon atoms. Each C atom has an H atom bonded above and below it. The two C atoms on either end of the chain each of a third H atom bonded to it.\"><br>(b) C<sub>6</sub>H<sub>14</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_b_img.jpg\" alt=\"This figure shows five C atoms bonded together with a sixth C atom bonded below the chain. The first C atom (from left to right) has three H atoms bonded to it and is also bonded to another C atom. The second C atom has two H atoms bonded above and below it and is also bonded to another C atom. The third C atom has an H atom bonded above it and a C atom bonded below it. The C atom bonded below the third C atom in the chain has three H atoms bonded to it. The third C atom is also bonded to another C atom. The fourth C atom in the chain has two H atoms bonded above and below it and is bonded to another C atom. The fifth C atom has three H atoms bonded to it.\"><br>(c) C<sub>6</sub>H<sub>12</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_c_img.jpg\" alt=\"This figure shows a C atom with three H atoms bonded to it. This C atom is bonded to another C atom with two H atoms bonded above and below it. The second C atom is also bonded to another C atom down and to the right. This C atom is bonded to one H atom and has a double bond to a fourth C atom. The fourth C atom is also bonded to one H atom. The fourth C atom has a bond up and to the right to another C atom. This C atom has two H atoms bonded above and below it. This C atom also bonds to another C atom which is bonded to three H atoms.\"><br>(d) C<sub>6</sub>H<sub>12</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_d_img.jpg\" alt=\"This figure shows a hydrocarbon chain with a length of five C atoms. The first C atom (from left to right) is bonded to two H atoms and also forms a double bond with the second C atom. The second C atom is bonded to one H atom above it and is also bonded to a third C atom. The third C atom is bonded to two H atoms and also bonded to a fourth C atom. The fourth C atom is bonded to one H atom above it and a C atom below it. The C atom bonded to the fourth C atom in the chain has three H atoms bonded to it. The fourth C atom is also bonded to a fifth C atom which is bonded to three H atoms.\"><br>(e) C<sub>6</sub>H<sub>10</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_e_img.jpg\" alt=\"This figure shows a hydrocarbon chain with a length of six C atoms. The first C atom has three H atoms bonded to it, and it is also bonded to a second C atom. The second C atom has an H atom bonded above and below it. It is also bonded to a third C atom. The third C atom forms a triple bond to a fourth C atom. The fourth C atom forms a single bond with a fifth C atom which has two H atoms bonded above and below it. The sixth C atom has three H atoms bonded to it.\"><br>(f) C<sub>6</sub>H<sub>10</sub><br><img src=\"/media/ch20/CNX_Chem_20_01_hexane_f_img.jpg\" alt=\"This figure shows a hydrocarbon chain with a length of five C atoms. The first C atom (from left to right) has three H atoms bonded to it. It is also bonded to a second C atom. The second C atom forms a triple bond to a third C atom. The third C atom forms a single bond with a fourth C atom. The fourth C atom has an H atom bonded above it and a C atom bonded below it. The C atom bonded below the fourth C atom has three H atoms bonded to it. The fourth C atom is bonded to a fifth C atom. The fifth C atom has three H atoms bonded to it.\">"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp7100896",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "naming",
+   "prompt": "Give the complete IUPAC name for each of the following compounds:<br>(a) CH<sub>3</sub>CH<sub>2</sub>CBr<sub>2</sub>CH<sub>3</sub><br>(b) (CH<sub>3</sub>)<sub>3</sub>CCl<br>(c)<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_11_c_img.jpg\" alt=\"This structure shows a hydrocarbon chain composed of C H subscript 3 C H C H subscript 2 C H subscript 3 with a C H subscript 3 group attached beneath the second C atom counting left to right.\"><br>(d)<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_11_d_img.jpg\" alt=\"This structure shows a hydrocarbon chain composed of C H subscript 3 C H C H subscript 2 C double bonded to C H .\"><br>(e)<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_11_e_img.jpg\" alt=\"This structure shows a horizontal chain composed of C H subscript 3 C F C H subscript 2 C H subscript 2 C H subscript 2 C H subscript 3 with a C H subscript 2 C H triple bond C H group attached beneath the second C atom counting left to right.\"><br>(f)<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_11_f_img.jpg\" alt=\"This structure shows two double bounded C atoms with C l attached to the upper left, C H subscript 3 attached to the lower right, and H atoms attached to the upper right and lower left in the structure.\"><br>(g) ${({\\text{CH}}_{3})}_{2}{\\text{CHCH}}_{2}\\text{CH}={\\text{CH}}_{2}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 2,2-dibromobutane; (b) 2-chloro-2-methylpropane; (c) 2-methylbutane; (d) 1-butyne; (e) 4-fluoro-4-methyl-1-octyne; (f) <em>trans</em>-1-chloropropene; (g) 4-methyl-1-pentene"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp47819536",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "isomers",
+   "prompt": "Butane is used as a fuel in disposable lighters. Write the Lewis structure for each isomer of butane.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_ex1_14_img.jpg\" alt=\"Two structures are shown. The first includes a chain of four singly bonded C atoms. Each C atom has two H atoms bonded above and below it. The two C atoms at either end of the chain each have a third H atom bonded to it. The molecule is named n dash butane. The second includes a chain of three singly bonded C atoms with a C atom bonded above the middle C atom in the chain. The first C atom (from left to right) has three H atoms bonded to it. The second C atom has one H atom bonded below it and a C atom bonded above it. The C atom bonded above the middle C atom has three H atoms bonded to it. The third C atom in the chain has three H atoms bonded to it. This molecule is named 2 dash methylpropane.\">"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp63809536",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkene-isomers",
+   "prompt": "Write Lewis structures for the <em>cis–trans</em> isomers of ${\\text{CH}}_{3}\\text{CH}=\\text{CHCl.}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_ex1_16_img.jpg\" alt=\"This figure includes two structural formulas. The first structure shows two double bounded C atoms with C l bonded to the upper right, C H subscript 3 bonded to the upper left, and H atoms attached to the lower right and lower left in the structure. This structure is labeled cis dash. The second structure shows two double bounded carbon atoms with C l attached to the lower right, C H subscript 3 attached to the upper left, and H atoms attached to the upper right and lower left in the structure. This structure is labeled trans dash.\">"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp67272704",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkyl",
+   "prompt": "Isooctane is the common name of the isomer of C<sub>8</sub>H<sub>18</sub> used as the standard of 100 for the gasoline octane rating:<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_18a_img.jpg\" alt=\"The hydrocarbon molecular structure shown includes C H subscript 3 C H C H subscript 2 C C H subscript 3. There is a C H subscript 3 group bonded to the second C atom in the chain (from left to right). There are two C H subscript 3 groups bonded above and below the fourth C atom in the chain.\"><br>(a) What is the IUPAC name for the compound?<br>(b) Name the other isomers that contain a five-carbon chain with three methyl substituents.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 2,2,4-trimethylpentane; (b) 2,2,3-trimethylpentane, 2,3,4-trimethylpentane, and 2,3,3-trimethylpentane:<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_18b_img.jpg\" alt=\"Three hydrocarbon molecular structures are shown. The first has C H subscript 3 bonded up and to the right to a C atom. The C atom is bonded down and to the right to C H. C H is bonded up and to the right to C H subscript 2. C H subscript 2 is bonded down and to the right to C H subscript 3. The lone C atom is bonded to two C H subscript 3 groups. The C in the C H group is bonded to a C H subscript 3 group. The second structure shows C H subscript 3 bonded up and to the right to C H which is bonded down and to the right to C H. C H is bonded up and to the right to another C H which is bonded down and to the right to C H subscript 3. The initial C atom is bonded to a C H subscript 3 group. The second C atom is bonded to a C H subscript 3 group. The third C atom is bonded to a C H subscript 3 group. The third structure shows C H subscript 3 bonded up and to the right to C H which is bonded down and to the right to C. C is bonded up and to the right to C H subscript 2 which is bonded down and to the right to C H subscript 3. The second C atom is bonded to a C H subscript 3 group. The third C atom is bonded to two C H subscript 3 groups.\">"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp51534160",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "naming",
+   "prompt": "Write Lewis structures and IUPAC names for all isomers of C<sub>4</sub>H<sub>9</sub>Cl.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_ex1_20_img.jpg\" alt=\"Four structural formulas are provided. The first has a hydrocarbon chain with a length of four C atom. All bonds are single. Nine H atoms are attached and a single C l atom is attached at the far right end of the structure which is labeled 1 dash chlorobutane. The second has a hydrocarbon chain with a length four C atoms. All bonds are single. Nine H atoms are attached and a single C l atom is attached above the second carbon counting left to right. This structure is labeled 2 dash chlorobutane. The third has a hydrocarbon chain with a length of three C atoms. All bonds are single. A single C l atom is bonded beneath the middle C atom and a C H subscript 3 group is also bonded above the middle C atom. Six H atoms are attached, and the structure is labeled 2 dash chloro dash 2 dash methylpropane. The fourth structure has a hydrocarbon chain with a length of three C atoms. All bonds are single. A single C l atom is bonded beneath the first C atom (from left to right) and a C H subscript 3 group is bonded above the middle C atom. Six H atoms are attached, and the structure is labeled 1 dash chloro dash 2 dash methylpropane.\">"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idp51005312",
+   "source_number": "21",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkyl",
+   "prompt": "Write the structures for all the isomers of the –C<sub>5</sub>H<sub>11</sub> alkyl group.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "In the following, the carbon backbone and the appropriate number of hydrogen atoms are shown in condensed form:<br><img src=\"/media/ch20/CNX_Chem_20_01_ex1_21_img.jpg\" alt=\"Eight structures are shown. The first includes C H subscript 3 bonded to C H subscript 2 bonded to C H subscript 2 bonded to C H subscript 2 bonded to C H subscript 2 with a bond. The second shows C H subscript 3 bonded to C H subscript 2 bonded to C H subscript 2 bonded to C H bonded to C H subscript 3. There is a bond above the fourth C atom (from left to right). The third shows C H subscript 3 bonded to C H subscript 2 bonded to C H bonded to C H subscript 2 bonded to C H subscript 3. There is a bond above the third C atom (from left to right). The five remaining examples involve branching. The fourth structure shows C H subscript 3 bonded to C bonded to C. The second C atom (from left to right) has a bond above it and a bond to an H atom below it. The third C is bonded to two C H subscript 3 groups as well as an H atom. The fifth shows a bond leading to a C H subscript 2 group which is bonded to a C atom. This C atom is bonded to three C H subscript 3 groups. The sixth shows a bond and then C H subscript 2 bonded to C H subscript 2 bonded to C H. The C H is bonded to two C H subscript 3 groups. The seventh shows C H subscript 3 bonded to C H subscript 2 bonded to C with a bond. The C is also bonded to two C H subscript 3 groups. The final structure shows C H subscript 3 bonded to C H subscript 2 bonded to C H. The C H is bonded to a C H subscript 2 group with a bond and a C H subscript 3 group.\">"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idp64361104",
+   "source_number": "23",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "aromatic",
+   "prompt": "Benzene is one of the compounds used as an octane enhancer in unleaded gasoline. It is manufactured by the catalytic conversion of acetylene to benzene:<br>$3{\\text{C}}_{2}{\\text{H}}_{2}\\;\\longrightarrow \\;{\\text{C}}_{6}{\\text{H}}_{6}$<br>Draw Lewis structures for these compounds, with resonance structures as appropriate, and determine the hybridization of the carbon atoms in each.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_01_ex1_23_img.jpg\" alt=\"Two structural formulas are shown. The first shows two C atoms with a triple bond between them. At each end of the structure, a single H atom is bonded. The second structure involves a hydrocarbon ring of 6 C atoms with a circle at the center. There are alternating double bonds between C atoms. Each C atom is bonded to a single H atom.\"><br>In acetylene, the bonding uses <em>sp</em> hybrids on carbon atoms and <em>s</em> orbitals on hydrogen atoms. In benzene, the carbon atoms are <em>sp</em><sup>2</sup> hybridized."
+   }
+  },
+  {
+   "id": "e25",
+   "source_id": "fs-idp68973952",
+   "source_number": "25",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "addition",
+   "prompt": "Write two complete, balanced equations for each of the following reactions, one using condensed formulas and one using Lewis structures.<br>(a) 1 mol of 1-butyne reacts with 2 mol of iodine.<br>(b) Pentane is burned in air.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $\\text{CH}\\equiv {\\text{CCH}}_{2}{\\text{CH}}_{3}+2{\\text{I}}_{2}\\;\\longrightarrow \\;{\\text{CHI}}_{2}{\\text{CI}}_{2}{\\text{CH}}_{2}{\\text{CH}}_{3}$<br><img src=\"/media/ch20/CNX_Chem_20_04_reaction1b_img.jpg\" alt=\"A reaction is shown. On the left, a four carbon hydrocarbon chain is shown with a triple bond between C atoms 1 and 2 moving left to right across the molecule. The first C is bonded to one H atom. The second C atom bonds with the third C atom. The third C atom is bonded to two H atoms and a fourth C atom. The fourth C atom is bonded to three H atoms. A plus sign is shown followed by 2 I dash I, which is followed by a reaction arrow, then a four C atom hydrocarbon chain with I atoms bonded above and below C atoms 1 and 2 from left to right. The first C atom is bonded to one H. The third C atom is bonded to two H atoms. The fourth C atom is bonded to three H atoms.\"><br>(b) ${\\text{CH}}_{3}{\\text{CH}}_{2}{\\text{CH}}_{2}{\\text{CH}}_{2}{\\text{CH}}_{3}+8{\\text{O}}_{2}\\;\\longrightarrow \\;5{\\text{CO}}_{2}+{\\text{6H}}_{2}\\text{O}$<br><img src=\"/media/ch20/CNX_Chem_20_04_reaction1c_img.jpg\" alt=\"A reaction is shown. On the left, a five C atom hydrocarbon chain is shown with all single bonds between C atoms. Each C atom is bonded to an H atom above and below it. The two C atoms at either end of the chain each have a third H atom bonded to them. A plus sign is shown followed by 8 O double bond O. To the right of the reaction arrow appears 5 followed by O double bond C double bond O plus 6 O bonded to two H atoms.\">"
+   }
+  },
+  {
+   "id": "e27",
+   "source_id": "fs-idp81497952",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "addition",
+   "prompt": "What mass of 2-bromopropane could be prepared from <span data-type=\"mass\">25.5 g</span> of propene? Assume a 100% yield of product.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 74.5,
+    "unit": "g",
+    "hint": "Hydrogen bromide adds across the double bond of propene, one molecule of 2-bromopropane for each molecule of propene; convert the mass of propene to moles, then the moles of product to grams.",
+    "solution": "<span data-type=\"mass\">74.5 g</span>"
+   }
+  },
+  {
+   "id": "e29",
+   "source_id": "fs-idp9096944",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "alkenes",
+   "prompt": "Ethylene can be produced by the pyrolysis of ethane:<br>${\\text{C}}_{2}{\\text{H}}_{6}\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{4}+{\\text{H}}_{2}$<br>How many kilograms of ethylene is produced by the pyrolysis of <span data-type=\"mass\">1.000 × 10<sup>3</sup> kg</span> of ethane, assuming a 100.0% yield?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 932.8,
+    "unit": "kg",
+    "hint": "One mole of ethane gives one mole of ethylene; convert the mass of ethane to moles with its molar mass, then the moles of ethylene to kilograms with ethylene’s.",
+    "solution": "<span data-type=\"mass\">9.328 × 10<sup>2</sup> kg</span>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "skeletal-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "write-organic-structures",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "skeletal-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "write-organic-structures",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "substituent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "alkyl-group",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "alkene-geometric-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "carbon-geometry-and-hybridization",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "aromatic-hydrocarbon",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "substitution-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkane",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "carbon-geometry-and-hybridization",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "alkane",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "substitution-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "alkene-geometric-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "alkene",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "alkene-geometric-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "naming-unsaturated-hydrocarbons",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "substituent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "alkene-geometric-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "alkyl-group",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "naming-alkanes",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "substituent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e21",
+   "concept": "alkyl-group",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e21",
+   "concept": "alkane-structural-isomers",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "aromatic-hydrocarbon",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "carbon-geometry-and-hybridization",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "alkanes-as-fuels",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "alkyne",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e27",
+   "concept": "addition-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e27",
+   "concept": "mass-stoichiometry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e29",
+   "concept": "mass-stoichiometry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e29",
+   "concept": "alkene",
+   "weights_by": "ai"
+  }
+ ]
+}

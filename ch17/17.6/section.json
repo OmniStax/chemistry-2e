@@ -1,0 +1,364 @@
+{
+ "id": "17.6",
+ "module": "m68826",
+ "chapter": "17",
+ "title": "Corrosion",
+ "short": "Corrosion",
+ "lead": "Metals exposed to air and water degrade through electrochemical processes: copper turns green and iron rusts. The rusting of iron runs as a galvanic cell on the metal’s own surface, and paint, alloys, zinc coatings and sacrificial anodes are the ways of protecting iron against it.",
+ "objectives": [
+  "Define corrosion",
+  "List some of the methods used to prevent or slow corrosion"
+ ],
+ "summary_html": "<p>Spontaneous oxidation of metals by natural electrochemical processes is called <span data-concept=\"corrosion\">corrosion</span>, familiar examples including the rusting of iron and the tarnishing of silver. <span data-concept=\"corrosion\">Corrosion</span> process involve the creation of a <span data-concept=\"galvanic-cell\">galvanic cell</span> in which different sites on the metal object function as <span data-concept=\"anode\">anode</span> and <span data-concept=\"cathode\">cathode</span>, with the <span data-concept=\"corrosion\">corrosion</span> taking place at the anodic site. Approaches to preventing <span data-concept=\"corrosion\">corrosion</span> of metals include use of a protective coating of zinc (<span data-concept=\"galvanization\">galvanization</span>) and the use of <span data-concept=\"sacrificial-anode\">sacrificial anodes</span> connected to the metal object (<span data-concept=\"cathodic-protection\">cathodic protection</span>).</p>",
+ "notes": "Nothing of the section is left out. The book’s “as illustrated in Figure 17.15” for the rust cell of Figure 17.16, “a passivating an oxide layer”, “because as they get used up”, the cathode’s subscript O₂/O², the summary’s “Corrosion process involve”, and the missing question mark of exercise fs-idm80636048 are kept as printed.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and suggested approaches are AI-generated. Answers come from the book’s answer key. The unkeyed choice item fs-idp66944528 is kept open with its options and a suggested approach, never graded, and the unkeyed conceptual exercises fs-idm127027504 and fs-idp44419248 carry a suggested approach marked as OmniStax’s own; the values −2.07 V and −0.477 V in fs-idm127027504 are kept as printed. Nothing is left out or moved.",
+ "figures": [
+  {
+   "id": "fig-statue",
+   "kind": "photo",
+   "number": "17.15",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-corrosion",
+   "kind": "sim",
+   "number": "17.16",
+   "folds": [
+    "17.17"
+   ],
+   "originals": [
+    "/media/ch17/CNX_Chem_17_06_Rust.jpg",
+    "/media/ch17/CNX_Chem_17_06_Protect.jpg"
+   ],
+   "original_caption": "(Figure 17.16) Corrosion can occur when a painted iron or steel surface is exposed to the environment by a scratch through the paint. A galvanic cell results that may be approximated by the simplified cell schematic Fe(s) | Fe²⁺(aq) ||O₂(aq), H₂O(l) | Fe(s). (Figure 17.17) Cathodic protection is a useful approach to electrochemically preventing corrosion of underground storage tanks.",
+   "draws": [
+    "potential"
+   ],
+   "conventions": [
+    "Fe",
+    "Zn",
+    "Mg",
+    "O",
+    "H",
+    "e-"
+   ],
+   "facts": [
+    "#7b3f1d"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "corrosion",
+   "concept": "corrosion",
+   "verb": "introduces"
+  },
+  {
+   "span": "corrosion",
+   "concept": "passivation",
+   "verb": "introduces"
+  },
+  {
+   "span": "corrosion",
+   "concept": "metal",
+   "verb": "uses"
+  },
+  {
+   "span": "corrosion",
+   "concept": "galvanic-cell",
+   "verb": "uses"
+  },
+  {
+   "span": "corrosion",
+   "concept": "oxidation",
+   "verb": "uses"
+  },
+  {
+   "span": "corrosion",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "rusting-of-iron",
+   "verb": "introduces"
+  },
+  {
+   "span": "rust",
+   "concept": "galvanic-cell",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "standard-cell-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "cell-notation",
+   "verb": "uses"
+  },
+  {
+   "span": "rust",
+   "concept": "hydrate",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "galvanization",
+   "verb": "introduces"
+  },
+  {
+   "span": "protection",
+   "concept": "cathodic-protection",
+   "verb": "introduces"
+  },
+  {
+   "span": "protection",
+   "concept": "sacrificial-anode",
+   "verb": "introduces"
+  },
+  {
+   "span": "protection",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "electrode-potential-and-oxidant-strength",
+   "verb": "uses"
+  },
+  {
+   "span": "protection",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e37",
+   "source_id": "fs-idp66944528",
+   "source_number": "37",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "Which member of each pair of metals is more likely to corrode (oxidize)?<br>(a) Mg or Ca<br>(b) Au or Hg<br>(c) Fe or Zn<br>(d) Ag or Pt",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: find the standard electrode potential of each metal’s ion/metal couple in Table 17.1 or Appendix L. In each pair, the metal whose couple has the lower (more negative) reduction potential is the stronger reductant, the more readily oxidized, and so the one more likely to corrode."
+   }
+  },
+  {
+   "id": "e38",
+   "source_id": "fs-idm150150768",
+   "source_number": "38",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "Consider the following metals: Ag, Au, Mg, Ni, and Zn. Which of these metals could be used as a sacrificial anode in the cathodic protection of an underground steel storage tank? Steel is an alloy composed mostly of iron, so use −0.447 V as the standard reduction potential for steel.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Mg and Zn"
+   }
+  },
+  {
+   "id": "e39",
+   "source_id": "fs-idm127027504",
+   "source_number": "39",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rust",
+   "prompt": "Aluminum $({E}_{{\\text{Al}}^{\\text{3+}}\\text{/Al}}^{{}^{\\circ}}=\\text{−2.07 V})$ is more easily oxidized than iron $({E}_{{\\text{Fe}}^{\\text{3+}}\\text{/Fe}}^{{}^{\\circ}}=\\text{−0.477 V}),$ and yet when both are exposed to the environment, untreated aluminum has very good corrosion resistance while the corrosion resistance of untreated iron is poor. What might explain this observation?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: compare what the product of corrosion does to each metal’s surface. Recall the patina on copper and the chromium oxide layer on stainless steel, and ask whether the oxide that forms on aluminum behaves like those layers or like rust, which flakes off and exposes fresh iron."
+   }
+  },
+  {
+   "id": "e40",
+   "source_id": "fs-idp47040832",
+   "source_number": "40",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "If a sample of iron and a sample of zinc come into contact, the zinc corrodes but the iron does not. If a sample of iron comes into contact with a sample of copper, the iron corrodes but the copper does not. Explain this phenomenon.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Both examples involve cathodic protection. The (sacrificial) anode is the metal that corrodes (oxidizes or reacts). In the case of iron (−0.447 V) and zinc (−0.7618 V), zinc has a more negative standard reduction potential and so serves as the anode. In the case of iron and copper (0.34 V), iron has the smaller standard reduction potential and so corrodes (serves as the anode)."
+   }
+  },
+  {
+   "id": "e41",
+   "source_id": "fs-idp44419248",
+   "source_number": "41",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "Suppose you have three different metals, A, B, and C. When metals A and B come into contact, B corrodes and A does not corrode. When metals A and C come into contact, A corrodes and C does not corrode. Based on this information, which metal corrodes and which metal does not corrode when B and C come into contact?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: when two metals touch, the one that corrodes is the anode, the metal with the lower reduction potential. Use each observation to say which of the two metals has the lower reduction potential, put A, B and C in order on that basis, and then read off where B stands relative to C."
+   }
+  },
+  {
+   "id": "e42",
+   "source_id": "fs-idm80636048",
+   "source_number": "42",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "protection",
+   "prompt": "Why would a sacrificial anode made of lithium metal be a bad choice",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "While the reduction potential of lithium would make it capable of protecting the other metals, this high potential is also indicative of how reactive lithium is; it would have a spontaneous reaction with most substances. This means that the lithium would react quickly with other substances, even those that would not oxidize the metal it is attempting to protect. Reactivity like this means the sacrificial anode would be depleted rapidly and need to be replaced frequently. (Optional additional reason: fire hazard in the presence of water.)"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e37",
+   "concept": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "exercise": "e37",
+   "concept": "corrosion"
+  },
+  {
+   "exercise": "e38",
+   "concept": "cathodic-protection"
+  },
+  {
+   "exercise": "e38",
+   "concept": "sacrificial-anode"
+  },
+  {
+   "exercise": "e38",
+   "concept": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "exercise": "e39",
+   "concept": "corrosion"
+  },
+  {
+   "exercise": "e39",
+   "concept": "passivation"
+  },
+  {
+   "exercise": "e39",
+   "concept": "rusting-of-iron"
+  },
+  {
+   "exercise": "e40",
+   "concept": "cathodic-protection"
+  },
+  {
+   "exercise": "e40",
+   "concept": "sacrificial-anode"
+  },
+  {
+   "exercise": "e40",
+   "concept": "corrosion"
+  },
+  {
+   "exercise": "e41",
+   "concept": "corrosion"
+  },
+  {
+   "exercise": "e41",
+   "concept": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "exercise": "e42",
+   "concept": "sacrificial-anode"
+  },
+  {
+   "exercise": "e42",
+   "concept": "cathodic-protection"
+  }
+ ]
+}

@@ -31,7 +31,8 @@
     "ch15",
     "ch16",
     "ch17",
-    "ch18"
+    "ch18",
+    "ch19"
   ],
   "intro": {
     "module": "m68662",
@@ -1492,6 +1493,21 @@
       "sym": "w_elec",
       "latex": "w_{\\text{elec}}",
       "macro": "\\kwelec"
+    },
+    {
+      "sym": "Δ_oct",
+      "latex": "\\Delta_{\\text{oct}}",
+      "macro": "\\kdoct"
+    },
+    {
+      "sym": "Δ_tet",
+      "latex": "\\Delta_{\\text{tet}}",
+      "macro": "\\kdtet"
+    },
+    {
+      "sym": "P_pair",
+      "latex": "P",
+      "macro": "\\kPpair"
     }
   ],
   "exercise_kinds": [
@@ -12103,6 +12119,421 @@
       "section": "18.12",
       "name": "Compounds of the noble gases",
       "statement": "The assumption that the noble gases are unreactive was proved false in 1962. Xenon reacts with fluorine to form XeF₂, XeF₄ and XeF₆, depending on the proportions; XeF₆ with water gives explosive XeO₃, and in basic solution the perxenate ion, XeO₆⁴⁻, takes xenon to its maximum oxidation state of 8+. Krypton forms KrF₂ and radon apparently RnF₂, but stable compounds of helium and neon are not known."
+    },
+    {
+      "id": "d-block-element",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "d-block element",
+      "terms": [
+        "d-block element"
+      ],
+      "statement": "Transition metals are the elements that have, or readily form, partially filled d orbitals. The d-block elements in groups 3–11 are transition elements; the d orbitals fill with the copper family (group 11), so the group 12 elements are technically not transition elements, though they display some of the same chemical properties and are commonly included in discussions of transition metals."
+    },
+    {
+      "id": "f-block-element",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "f-block element",
+      "terms": [
+        "f-block element",
+        "inner transition element"
+      ],
+      "statement": "The f-block elements, also called inner transition metals, are the lanthanides and actinides, the elements with valence electrons in f orbitals. They also meet the criterion for transition metals, because the d orbital is partially occupied before the f orbitals, and they are frequently shown offset below the periodic table."
+    },
+    {
+      "id": "transition-series",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "Transition series",
+      "terms": [
+        "first transition series",
+        "second transition series",
+        "third transition series",
+        "fourth transition series"
+      ],
+      "statement": "The d-block elements are divided into four transition series, one per row of the d-block: the first transition series (Sc through Cu, atomic numbers 21–29), the second (Y through Ag, 39–47), the third (La and Hf through Au, 57 and 72–79) and the fourth (Ac and Rf through Rg, 89 and 104–111). Because lanthanum and actinium behave like the lanthanides and actinides, they are counted with those series, though their electron configurations make them the first members of the third and fourth transition series."
+    },
+    {
+      "id": "rare-earth-element",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "Rare earth element",
+      "terms": [
+        "rare earth element"
+      ],
+      "statement": "The 17 rare earth elements are the 15 lanthanoids plus scandium and yttrium. They often occur together and have similar chemical properties, which makes any one of them difficult to separate from the others; they are fairly abundant in the earth’s crust and were called rare because a pure sample was once rare."
+    },
+    {
+      "id": "coordination-compound",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "Coordination compound",
+      "terms": [
+        "coordination compound"
+      ],
+      "statement": "A coordination compound is a stable compound in which the central metal atom or ion acts as a Lewis acid and accepts one or more pairs of electrons from molecules or ions that act as Lewis bases. Transition metals form a wide variety of them, although main group elements can also form coordination compounds."
+    },
+    {
+      "id": "transition-metal-reactivity",
+      "kind": "idea",
+      "section": "19.1",
+      "name": "Reactivity of the transition elements",
+      "statement": "As their reduction potentials show, some transition metals are strong reducing agents while others have very low reactivity: the lanthanides all form stable 3+ aqueous cations, while platinum and gold resist oxidation. Ions of the lighter d-block elements form colorful hydrated ions stable in water, while the heavier elements form mostly oxyanions. The d- and f-block elements react with halogens and, on heating, with oxygen, and those above hydrogen react with acids to give hydrogen gas and salts."
+    },
+    {
+      "id": "platinum-metals",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "Platinum metals",
+      "terms": [
+        "platinum metals"
+      ],
+      "statement": "Ruthenium, osmium, rhodium, iridium, palladium and platinum are the platinum metals, which tend to occur in the same minerals and have similar chemical properties. With difficulty they form simple cations that are stable in water, and unlike the earlier elements of the second and third transition series they form no stable oxyanions."
+    },
+    {
+      "id": "transition-metal-oxidation-states",
+      "kind": "idea",
+      "section": "19.1",
+      "name": "Oxidation states of the transition metals",
+      "statement": "Transition metals form compounds in a wide range of oxidation states. Across the first transition series the number of common oxidation states rises to a maximum toward the middle, then falls; from scandium through manganese the highest state is the loss of all the s and d valence electrons, and most of the series forms 2+ or 3+ ions stable in water. The second and third series are generally more stable in higher oxidation states, since their larger ions lose electrons more easily."
+    },
+    {
+      "id": "smelting",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "Smelting",
+      "terms": [
+        "smelting"
+      ],
+      "statement": "Smelting is the extraction of a metal from its ore in the molten state, which includes reduction of the metallic compound to the metal. Impurities may be removed by adding a compound that forms a slag, a substance with a low melting point that is easily separated from the molten metal."
+    },
+    {
+      "id": "isolating-transition-metals",
+      "kind": "idea",
+      "section": "19.1",
+      "name": "Isolating the transition metals",
+      "statement": "How easily a transition element is recovered from its ore depends on its concentration in the ore, the other elements present and how hard its ions are to reduce. Carbon reduces most d-block ions to the free element, while f-block ions, like those of the more active main group metals, must be isolated by electrolysis or by reduction with an active metal. Isolation usually runs in three steps: preliminary treatment, smelting and refining."
+    },
+    {
+      "id": "blast-furnace",
+      "kind": "idea",
+      "section": "19.1",
+      "name": "Isolating iron in a blast furnace",
+      "statement": "Roasted iron ore, coke and limestone go in at the top of a blast furnace and preheated air is blown in near the bottom, where coke burns to carbon dioxide; passing up through white-hot coke, the CO₂ is reduced to carbon monoxide, which reduces the iron oxides in the upper regions. Limestone decomposes to calcium oxide, which combines with silica to form a slag of calcium silicate; molten iron and the less dense slag collect at the bottom and are drawn off."
+    },
+    {
+      "id": "steel",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "Steel",
+      "terms": [
+        "steel"
+      ],
+      "statement": "Steel is made from iron by removing impurities and adding substances such as manganese, chromium, nickel, tungsten, molybdenum and vanadium to produce alloys suited to specific uses. Most steels contain small but definite percentages of carbon, though much of the carbon in iron must be removed, since an excess makes the iron brittle."
+    },
+    {
+      "id": "copper-isolation",
+      "kind": "idea",
+      "section": "19.1",
+      "name": "Isolating copper",
+      "statement": "Concentrated copper sulfide ore is roasted, then heated with limestone as a flux, so that iron and silica leave as a molten slag in Lewis acid-base reactions. Blowing air through the remaining Cu₂S converts part of it to Cu₂O, which the rest of the sulfide reduces to blister copper; the impure copper is cast into anodes and refined electrolytically."
+    },
+    {
+      "id": "hydrometallurgy",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "Hydrometallurgy",
+      "terms": [
+        "hydrometallurgy"
+      ],
+      "statement": "Hydrometallurgy separates a metal from a mixture by first converting it into soluble ions, extracting the ions and then reducing them to precipitate the pure metal. Silver is dissolved by alkali metal cyanides in the presence of air as the dicyanoargentate(I) ion, [Ag(CN)₂]⁻, and precipitated from the solution by zinc or iron(II)."
+    },
+    {
+      "id": "transition-metal-compounds",
+      "kind": "idea",
+      "section": "19.1",
+      "name": "Transition metal compounds",
+      "statement": "The bonding in simple transition metal compounds ranges from ionic in lower oxidation states to covalent in higher ones, since a metal’s electronegativity rises with its oxidation state. Halides with low oxidation numbers are ionic, while the tetrahalides of titanium and vanadium react with water like covalent SiCl₄. Oxides in the lowest oxidation states are basic, those in intermediate states amphoteric and those in the highest acidic; hydroxides, carbonates and other salts are prepared much as those of the main group metals are."
+    },
+    {
+      "id": "superconductor",
+      "kind": "definition",
+      "section": "19.1",
+      "name": "Superconductor",
+      "terms": [
+        "superconductor"
+      ],
+      "statement": "A superconductor conducts electricity with no resistance, so no energy is lost in transmission. Commercial superconductors such as NbTi and Nb₃Sn must be cooled below 23 K with liquid helium, while oxides such as YBa₂Cu₃O₇ become superconducting near 90 K and can be cooled with liquid nitrogen."
+    },
+    {
+      "id": "central-metal",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Central metal",
+      "terms": [
+        "central metal"
+      ],
+      "statement": "In a coordination complex the Lewis acid, often called the central metal ion or atom, is the ion or atom to which one or more ligands are attached through coordinate covalent bonds. It is often a transition metal or an inner transition metal."
+    },
+    {
+      "id": "donor-atom",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Donor atom",
+      "terms": [
+        "donor atom"
+      ],
+      "statement": "A donor atom is the atom in a ligand with a lone pair of electrons that forms a coordinate covalent bond to the central metal."
+    },
+    {
+      "id": "coordination-sphere",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Coordination sphere",
+      "terms": [
+        "coordination sphere"
+      ],
+      "statement": "The coordination sphere is the central metal ion or atom plus its attached ligands. Brackets in a formula enclose the coordination sphere, and species outside the brackets are not part of it and are not bonded to the metal."
+    },
+    {
+      "id": "monodentate-ligand",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Monodentate ligand",
+      "terms": [
+        "monodentate"
+      ],
+      "statement": "A monodentate ligand, from the Greek for “one toothed,” attaches to the central metal through just one coordinate covalent bond; for monodentate ligands the number of ligands equals the coordination number."
+    },
+    {
+      "id": "bidentate-ligand",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Bidentate ligand",
+      "terms": [
+        "bidentate ligand"
+      ],
+      "statement": "A bidentate ligand coordinates to one central metal through two different donor atoms. Ethylenediamine (en) has two nitrogen atoms with lone pairs that both coordinate, so in [Co(en)₃]³⁺ three en ligands give cobalt(III) a coordination number of six."
+    },
+    {
+      "id": "polydentate-ligand",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Polydentate ligand",
+      "terms": [
+        "polydentate ligand"
+      ],
+      "statement": "A polydentate ligand bonds to a central metal ion through more than one donor atom; prefixes give the number of donors (bidentate, tridentate, tetradentate, pentadentate, hexadentate). The ligand in heme is tetradentate."
+    },
+    {
+      "id": "chelate",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Chelate",
+      "terms": [
+        "chelate",
+        "chelating ligand",
+        "chelating agent"
+      ],
+      "statement": "A chelate, from the Greek for “claw,” is a complex formed from one or more polydentate ligands attached to a central metal. A ligand that attaches by bonds from two or more donor atoms is a chelating ligand, or chelating agent, and holds the metal ion rather as a crab’s claw holds a marble."
+    },
+    {
+      "id": "naming-coordination-compounds",
+      "kind": "skill",
+      "section": "19.2",
+      "name": "Naming coordination compounds",
+      "statement": "A complex is named by Werner’s rules: an ionic compound names the cation first and the anion second; the ligands are named alphabetically before the metal, anions with an -o ending and the neutral aqua, ammine, carbonyl and nitrosyl as exceptions; di-, tri-, tetra- (or bis-, tris-, tetrakis-) count them; the metal’s oxidation state, found from the ligand charges and the overall charge, follows as a Roman numeral, with -ate added to the metal’s stem when the complex is an anion."
+    },
+    {
+      "id": "complex-geometry",
+      "kind": "idea",
+      "section": "19.2",
+      "name": "Structures of complexes",
+      "statement": "The coordination number determines the geometry around the central metal: two donor atoms give a linear complex, four a tetrahedral or square planar one and six an octahedral one, with 90° between adjacent ligands; higher coordination numbers give structures such as the pentagonal bipyramid, square antiprism and dodecahedron. Unlike in main group compounds, the nonbonding d electrons do not change the arrangement of the ligands."
+    },
+    {
+      "id": "geometric-isomer",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Geometric isomer",
+      "terms": [
+        "geometric isomers",
+        "geometric isomer"
+      ],
+      "statement": "Geometric isomers have the same atoms connected through the same types of bonds but oriented differently in space. They are different compounds with different properties, such as the violet cis and green trans forms of [Co(NH₃)₄Cl₂]NO₃, which also differ in dipole moment, solubility and reactivity."
+    },
+    {
+      "id": "cis-trans-configuration",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Cis and trans configurations",
+      "terms": [
+        "cis configuration",
+        "trans configuration"
+      ],
+      "statement": "In the cis configuration two similar groups are adjacent, on the same side of an imaginary reference line on the molecule, at 90° in a square planar or octahedral complex; in the trans configuration they are directly across from one another, at 180°. The cis isomer of [Co(NH₃)₄Cl₂]⁺ is polar, while the bond dipoles of the trans isomer cancel."
+    },
+    {
+      "id": "optical-isomer",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Optical isomer",
+      "terms": [
+        "optical isomer",
+        "enantiomer"
+      ],
+      "statement": "Optical isomers, or enantiomers, are nonsuperimposable mirror images, as a right and a left hand are. They have identical properties except in how they affect polarized light and react with other optical isomers; complexes such as [M(en)₃]ⁿ⁺ and cis-[Co(en)₂Cl₂]⁺ form them."
+    },
+    {
+      "id": "linkage-isomer",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Linkage isomer",
+      "terms": [
+        "linkage isomer"
+      ],
+      "statement": "Linkage isomers occur when a ligand can bind to the metal center through two different atoms: CN⁻ through carbon (cyano) or nitrogen (isocyano), SCN⁻ through sulfur or nitrogen."
+    },
+    {
+      "id": "ionization-isomer",
+      "kind": "definition",
+      "section": "19.2",
+      "name": "Ionization isomer",
+      "terms": [
+        "ionization isomer",
+        "coordination isomer"
+      ],
+      "statement": "Ionization isomers, or coordination isomers, occur when an anionic ligand in the inner coordination sphere is exchanged for the counter ion from the outer coordination sphere, as in [CoCl₆][Br] and [CoCl₅Br][Cl]."
+    },
+    {
+      "id": "complexes-in-nature-and-technology",
+      "kind": "idea",
+      "section": "19.2",
+      "name": "Coordination complexes in nature and technology",
+      "statement": "Chlorophyll is a magnesium complex and heme an iron complex that carries oxygen in hemoglobin only while its iron is Fe²⁺. Chelating agents such as EDTA soften water, preserve food and sequester metals, and drugs such as BAL and enterobactin remove toxic metals as water-soluble chelates. Complexes give smoother electroplated coatings and serve as pigments and catalysts, and the cis isomer of diamminedichloroplatinum(II), cisplatin, treats cancer where the trans isomer does not."
+    },
+    {
+      "id": "crystal-field-theory",
+      "kind": "definition",
+      "section": "19.3",
+      "name": "Crystal field theory",
+      "terms": [
+        "crystal field theory",
+        "CFT"
+      ],
+      "statement": "Crystal field theory (CFT) explains the energies of a transition metal’s orbitals in terms of electrostatic interactions with the ligands, treated as point charges, and leaves out metal-ligand bonding. Electrons donated by the ligands repel the electrons in the metal’s unhybridized d orbitals, so the d orbitals no longer all have the same energy; the model accounts for the colors, magnetic behavior and some structures of complexes."
+    },
+    {
+      "id": "eg-and-t2g-orbitals",
+      "kind": "definition",
+      "section": "19.3",
+      "name": "The eg and t2g orbitals",
+      "terms": [
+        "eg orbitals",
+        "t2g orbitals"
+      ],
+      "statement": "In an octahedral complex the six ligands lie along the axes. The two d orbitals whose lobes point at them, the d<sub>z²</sub> and d<sub>x²−y²</sub>, are the e<sub>g</sub> orbitals and are raised in energy; the three whose lobes point between them, the d<sub>xy</sub>, d<sub>xz</sub> and d<sub>yz</sub>, are the t<sub>2g</sub> orbitals and lie lower."
+    },
+    {
+      "id": "crystal-field-splitting",
+      "kind": "definition",
+      "section": "19.3",
+      "name": "Crystal field splitting",
+      "symbol": "Δ_oct",
+      "terms": [
+        "crystal field splitting"
+      ],
+      "type": "energy",
+      "statement": "The crystal field splitting, Δ<sub>oct</sub> for an octahedral complex, is the difference in energy between the e<sub>g</sub> and t<sub>2g</sub> sets of orbitals. Its size depends on the ligands, the charge on the metal and whether the metal uses 3d, 4d or 5d orbitals."
+    },
+    {
+      "id": "spectrochemical-series",
+      "kind": "definition",
+      "section": "19.3",
+      "name": "Spectrochemical series",
+      "terms": [
+        "spectrochemical series"
+      ],
+      "statement": "The spectrochemical series ranks ligands by the crystal field splitting they produce: I⁻ < Br⁻ < Cl⁻ < F⁻ < H₂O < NH₃ < en < NO₂⁻ < CN⁻, in order of increasing field strength."
+    },
+    {
+      "id": "ligand-field-strength",
+      "kind": "definition",
+      "section": "19.3",
+      "name": "Strong-field and weak-field ligands",
+      "terms": [
+        "strong-field ligand",
+        "weak-field ligand"
+      ],
+      "statement": "Ligands at the left of the spectrochemical series cause small crystal field splittings and are weak-field ligands; those at the right cause large splittings and are strong-field ligands, so Δ<sub>oct</sub> for iodide ligands is much smaller than for cyanide ligands on the same metal."
+    },
+    {
+      "id": "pairing-energy",
+      "kind": "definition",
+      "section": "19.3",
+      "name": "Pairing energy",
+      "symbol": "P_pair",
+      "terms": [
+        "pairing energy"
+      ],
+      "type": "energy",
+      "statement": "The pairing energy, P, is the energy required to place two electrons with opposite spins into a single orbital, where their like charges repel. Electrons singly occupy each orbital of a degenerate set before pairing, and P is similar in magnitude to Δ<sub>oct</sub>."
+    },
+    {
+      "id": "high-and-low-spin-complexes",
+      "kind": "result",
+      "section": "19.3",
+      "name": "High-spin and low-spin complexes",
+      "terms": [
+        "high-spin complex",
+        "low-spin complex"
+      ],
+      "statement": "The relative sizes of Δ<sub>oct</sub> and P decide which orbitals the d electrons occupy. With strong-field ligands Δ<sub>oct</sub> > P, and the electrons pair in the t<sub>2g</sub> orbitals before any occupy the e<sub>g</sub> orbitals, giving a low-spin complex such as [Fe(CN)₆]⁴⁻; with weak-field ligands Δ<sub>oct</sub> < P, and the electrons singly occupy all five orbitals before pairing, giving a high-spin complex such as [Fe(H₂O)₆]²⁺. Only d⁴ to d⁷ ions have a choice."
+    },
+    {
+      "id": "predict-unpaired-electrons",
+      "kind": "skill",
+      "section": "19.3",
+      "name": "Predicting unpaired electrons in a complex",
+      "statement": "To predict the number of unpaired electrons in a complex, find the metal’s oxidation state and its number of d electrons, place them in the split d orbitals by the complex’s geometry and, for d⁴ to d⁷ octahedral ions, by whether its ligands make it high spin or low spin, then count the singly occupied orbitals."
+    },
+    {
+      "id": "crystal-field-other-geometries",
+      "kind": "result",
+      "section": "19.3",
+      "name": "Crystal field splitting in other geometries",
+      "symbol": "Δ_tet",
+      "type": "energy",
+      "statement": "In a tetrahedral complex the four ligands lie between the axes, so the e set along the axes is lowered and the t<sub>2</sub> set raised; the overlap is less than in an octahedron, the splitting Δ<sub>tet</sub> is about four ninths of Δ<sub>oct</sub>, and all tetrahedral complexes are high spin. A square planar complex, an octahedron with its two trans ligands on the z axis removed, splits the d orbitals into a more complicated pattern.",
+      "forms": [
+        {
+          "id": "eq-delta-tet",
+          "latex": "\\Delta_{\\text{tet}}=\\frac{4}{9}\\Delta_{\\text{oct}}",
+          "ktex": "\\kdtet=\\frac{4}{9}\\kdoct"
+        }
+      ]
+    },
+    {
+      "id": "magnetic-moment-unpaired-electrons",
+      "kind": "idea",
+      "section": "19.3",
+      "name": "Magnetic moments of complexes",
+      "statement": "The magnetic moment of a system with unpaired electrons grows with the number of unpaired electrons, so a measured magnetic moment gives that number. Measurements confirm the theory: low-spin d⁶ [Fe(CN)₆]⁴⁻ is diamagnetic, while high-spin d⁶ [Fe(H₂O)₆]²⁺ has four unpaired electrons."
+    },
+    {
+      "id": "complementary-colors",
+      "kind": "idea",
+      "section": "19.3",
+      "name": "Complementary colors",
+      "statement": "The eye sees a mixture of all colors in sunlight, or of two complementary colors in the proper proportions, as white. Complementary colors lie across from each other on a color wheel, and when a color is missing from white light the eye sees its complement: an object that absorbs red light looks green, and one that absorbs violet looks lemon yellow."
+    },
+    {
+      "id": "colors-of-complexes",
+      "kind": "result",
+      "section": "19.3",
+      "name": "Colors of transition metal complexes",
+      "statement": "A complex absorbs photons whose energy matches the gap between its d orbitals, which often lies in the visible range, and appears in the complementary color: the absorption maximum corresponds to Δ<sub>oct</sub>. Strong-field complexes absorb higher-energy violet or blue light and look yellow, orange or red, weak-field complexes absorb yellow, orange or red light and look blue-green, blue or indigo, and d¹⁰ ions such as Cu⁺ absorb no visible light and are colorless."
     }
   ],
   "concept_prereqs": [
@@ -21189,6 +21620,310 @@
     {
       "concept": "noble-gas-compounds",
       "prereq": "halogen-properties"
+    },
+    {
+      "concept": "d-block-element",
+      "prereq": "transition-metal"
+    },
+    {
+      "concept": "d-block-element",
+      "prereq": "periodic-table-blocks"
+    },
+    {
+      "concept": "f-block-element",
+      "prereq": "inner-transition-metal"
+    },
+    {
+      "concept": "f-block-element",
+      "prereq": "periodic-table-blocks"
+    },
+    {
+      "concept": "transition-series",
+      "prereq": "d-block-element"
+    },
+    {
+      "concept": "transition-series",
+      "prereq": "lanthanide"
+    },
+    {
+      "concept": "transition-series",
+      "prereq": "actinide"
+    },
+    {
+      "concept": "rare-earth-element",
+      "prereq": "transition-series"
+    },
+    {
+      "concept": "coordination-compound",
+      "prereq": "complex-ion"
+    },
+    {
+      "concept": "coordination-compound",
+      "prereq": "d-block-element"
+    },
+    {
+      "concept": "transition-metal-reactivity",
+      "prereq": "d-block-element"
+    },
+    {
+      "concept": "transition-metal-reactivity",
+      "prereq": "f-block-element"
+    },
+    {
+      "concept": "transition-metal-reactivity",
+      "prereq": "electrode-potential-and-oxidant-strength"
+    },
+    {
+      "concept": "platinum-metals",
+      "prereq": "transition-metal-reactivity"
+    },
+    {
+      "concept": "transition-metal-oxidation-states",
+      "prereq": "transition-series"
+    },
+    {
+      "concept": "transition-metal-oxidation-states",
+      "prereq": "ion-configurations"
+    },
+    {
+      "concept": "transition-metal-oxidation-states",
+      "prereq": "oxidation-number"
+    },
+    {
+      "concept": "smelting",
+      "prereq": "reducing-agent"
+    },
+    {
+      "concept": "isolating-transition-metals",
+      "prereq": "smelting"
+    },
+    {
+      "concept": "isolating-transition-metals",
+      "prereq": "transition-metal-reactivity"
+    },
+    {
+      "concept": "isolating-transition-metals",
+      "prereq": "electrolysis"
+    },
+    {
+      "concept": "blast-furnace",
+      "prereq": "isolating-transition-metals"
+    },
+    {
+      "concept": "steel",
+      "prereq": "blast-furnace"
+    },
+    {
+      "concept": "steel",
+      "prereq": "alloy"
+    },
+    {
+      "concept": "copper-isolation",
+      "prereq": "isolating-transition-metals"
+    },
+    {
+      "concept": "copper-isolation",
+      "prereq": "lewis-acids-and-bases"
+    },
+    {
+      "concept": "hydrometallurgy",
+      "prereq": "isolating-transition-metals"
+    },
+    {
+      "concept": "hydrometallurgy",
+      "prereq": "complex-ion"
+    },
+    {
+      "concept": "transition-metal-compounds",
+      "prereq": "transition-metal-oxidation-states"
+    },
+    {
+      "concept": "transition-metal-compounds",
+      "prereq": "bond-type-from-electronegativity"
+    },
+    {
+      "concept": "transition-metal-compounds",
+      "prereq": "amphoteric"
+    },
+    {
+      "concept": "superconductor",
+      "prereq": "transition-metal-compounds"
+    },
+    {
+      "concept": "central-metal",
+      "prereq": "coordination-compound"
+    },
+    {
+      "concept": "donor-atom",
+      "prereq": "central-metal"
+    },
+    {
+      "concept": "donor-atom",
+      "prereq": "ligand"
+    },
+    {
+      "concept": "coordination-sphere",
+      "prereq": "donor-atom"
+    },
+    {
+      "concept": "monodentate-ligand",
+      "prereq": "donor-atom"
+    },
+    {
+      "concept": "monodentate-ligand",
+      "prereq": "coordination-number"
+    },
+    {
+      "concept": "bidentate-ligand",
+      "prereq": "monodentate-ligand"
+    },
+    {
+      "concept": "polydentate-ligand",
+      "prereq": "bidentate-ligand"
+    },
+    {
+      "concept": "chelate",
+      "prereq": "polydentate-ligand"
+    },
+    {
+      "concept": "naming-coordination-compounds",
+      "prereq": "coordination-sphere"
+    },
+    {
+      "concept": "naming-coordination-compounds",
+      "prereq": "name-variable-charge-metal-compounds"
+    },
+    {
+      "concept": "naming-coordination-compounds",
+      "prereq": "oxidation-numbers"
+    },
+    {
+      "concept": "complex-geometry",
+      "prereq": "coordination-sphere"
+    },
+    {
+      "concept": "complex-geometry",
+      "prereq": "coordination-number"
+    },
+    {
+      "concept": "complex-geometry",
+      "prereq": "vsepr-theory"
+    },
+    {
+      "concept": "geometric-isomer",
+      "prereq": "spatial-isomer"
+    },
+    {
+      "concept": "geometric-isomer",
+      "prereq": "complex-geometry"
+    },
+    {
+      "concept": "cis-trans-configuration",
+      "prereq": "geometric-isomer"
+    },
+    {
+      "concept": "cis-trans-configuration",
+      "prereq": "polar-molecule"
+    },
+    {
+      "concept": "optical-isomer",
+      "prereq": "spatial-isomer"
+    },
+    {
+      "concept": "optical-isomer",
+      "prereq": "complex-geometry"
+    },
+    {
+      "concept": "linkage-isomer",
+      "prereq": "isomers"
+    },
+    {
+      "concept": "linkage-isomer",
+      "prereq": "donor-atom"
+    },
+    {
+      "concept": "ionization-isomer",
+      "prereq": "isomers"
+    },
+    {
+      "concept": "ionization-isomer",
+      "prereq": "coordination-sphere"
+    },
+    {
+      "concept": "complexes-in-nature-and-technology",
+      "prereq": "chelate"
+    },
+    {
+      "concept": "complexes-in-nature-and-technology",
+      "prereq": "cis-trans-configuration"
+    },
+    {
+      "concept": "crystal-field-theory",
+      "prereq": "complex-geometry"
+    },
+    {
+      "concept": "crystal-field-theory",
+      "prereq": "valence-bond-theory"
+    },
+    {
+      "concept": "eg-and-t2g-orbitals",
+      "prereq": "crystal-field-theory"
+    },
+    {
+      "concept": "crystal-field-splitting",
+      "prereq": "eg-and-t2g-orbitals"
+    },
+    {
+      "concept": "spectrochemical-series",
+      "prereq": "crystal-field-splitting"
+    },
+    {
+      "concept": "ligand-field-strength",
+      "prereq": "spectrochemical-series"
+    },
+    {
+      "concept": "pairing-energy",
+      "prereq": "hunds-rule"
+    },
+    {
+      "concept": "high-and-low-spin-complexes",
+      "prereq": "ligand-field-strength"
+    },
+    {
+      "concept": "high-and-low-spin-complexes",
+      "prereq": "pairing-energy"
+    },
+    {
+      "concept": "predict-unpaired-electrons",
+      "prereq": "high-and-low-spin-complexes"
+    },
+    {
+      "concept": "crystal-field-other-geometries",
+      "prereq": "high-and-low-spin-complexes"
+    },
+    {
+      "concept": "magnetic-moment-unpaired-electrons",
+      "prereq": "high-and-low-spin-complexes"
+    },
+    {
+      "concept": "magnetic-moment-unpaired-electrons",
+      "prereq": "paramagnetism"
+    },
+    {
+      "concept": "magnetic-moment-unpaired-electrons",
+      "prereq": "diamagnetism"
+    },
+    {
+      "concept": "complementary-colors",
+      "prereq": "electromagnetic-spectrum"
+    },
+    {
+      "concept": "colors-of-complexes",
+      "prereq": "complementary-colors"
+    },
+    {
+      "concept": "colors-of-complexes",
+      "prereq": "ligand-field-strength"
     }
   ],
   "sheets": [

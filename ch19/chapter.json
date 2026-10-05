@@ -1,0 +1,96 @@
+{
+ "id": "19",
+ "dir": "ch19",
+ "title": "Transition Metals and Coordination Chemistry",
+ "intro": {
+  "module": "m68841",
+  "slug": "19-introduction"
+ },
+ "sections": [
+  {
+   "id": "19.1",
+   "module": "m68842",
+   "title": "Occurrence, Preparation, and Properties of Transition Metals and Their Compounds",
+   "slug": "19-1-occurrence-preparation-and-properties-of-transition-metals-and-their-compounds"
+  },
+  {
+   "id": "19.2",
+   "module": "m68843",
+   "title": "Coordination Chemistry of Transition Metals",
+   "slug": "19-2-coordination-chemistry-of-transition-metals"
+  },
+  {
+   "id": "19.3",
+   "module": "m68844",
+   "title": "Spectroscopic and Magnetic Properties of Coordination Compounds",
+   "slug": "19-3-spectroscopic-and-magnetic-properties-of-coordination-compounds"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "E_std",
+   "concept": "standard-electrode-potential",
+   "meaning": "the standard reduction potential of a half-reaction, such as the reduction of dichromate, permanganate or titanium dioxide in acid solution",
+   "unit": "V",
+   "section": "19.1"
+  },
+  {
+   "sym": "Δ_oct",
+   "concept": "crystal-field-splitting",
+   "meaning": "the crystal field splitting of an octahedral complex, the energy difference between its eg and t2g orbitals",
+   "unit": "J",
+   "section": "19.3"
+  },
+  {
+   "sym": "P_pair",
+   "concept": "pairing-energy",
+   "meaning": "the pairing energy, the energy needed to place two electrons of opposite spin in one orbital",
+   "unit": "J",
+   "section": "19.3"
+  },
+  {
+   "sym": "Δ_tet",
+   "concept": "crystal-field-other-geometries",
+   "meaning": "the crystal field splitting of a tetrahedral complex, the energy difference between its t2 and e orbitals",
+   "unit": "J",
+   "section": "19.3"
+  },
+  {
+   "sym": "λ",
+   "concept": "wavelength",
+   "meaning": "the wavelength of the light a complex absorbs, such as 499 nm at the absorption maximum of [Ti(H₂O)₆]³⁺",
+   "unit": "nm",
+   "section": "19.3"
+  },
+  {
+   "sym": "ν",
+   "concept": "frequency",
+   "meaning": "the frequency of the light absorbed at the maximum",
+   "unit": "Hz",
+   "section": "19.3"
+  },
+  {
+   "sym": "E",
+   "concept": "photon-energy",
+   "type": "energy",
+   "meaning": "the energy of one photon of the absorbed light, equal to the crystal field splitting at the absorption maximum",
+   "unit": "J",
+   "section": "19.3"
+  },
+  {
+   "sym": "c",
+   "concept": "wave-speed-relation",
+   "type": "velocity",
+   "meaning": "the speed of light in a vacuum, the product of the wavelength and the frequency",
+   "unit": "m/s",
+   "section": "19.3"
+  },
+  {
+   "sym": "h",
+   "concept": "blackbody-radiation",
+   "meaning": "Planck’s constant, 6.63 × 10⁻³⁴ J s",
+   "unit": "J s",
+   "section": "19.3"
+  }
+ ]
+}

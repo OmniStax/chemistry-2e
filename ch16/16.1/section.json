@@ -1,0 +1,382 @@
+{
+  "id": "16.1",
+  "module": "m68816",
+  "chapter": "16",
+  "title": "Spontaneity",
+  "short": "Spontaneity",
+  "lead": "Some processes run on their own in one direction and must be driven by a continual input of <span data-concept=\"energy-and-work\">energy</span> to run in the other. Whether a process is spontaneous says nothing about how fast it goes, and a gas spreading into an empty flask and <span data-concept=\"heat-flow\">heat</span> passing between two objects show what spontaneous processes have in common.",
+  "objectives": [
+    "Distinguish between spontaneous and nonspontaneous processes",
+    "Describe the dispersal of matter and energy that accompanies certain spontaneous processes"
+  ],
+  "summary_html": "<p>Chemical and physical processes have a natural tendency to occur in one direction under certain conditions. A <span data-concept=\"spontaneous-process\">spontaneous process</span> occurs without the need for a continual input of <span data-concept=\"energy-and-work\">energy</span> from some external source, while a <span data-concept=\"nonspontaneous-process\">nonspontaneous process</span> requires such. Systems undergoing a <span data-concept=\"spontaneous-process\">spontaneous process</span> may or may not experience a gain or loss of <span data-concept=\"energy-and-work\">energy</span>, but they will experience a change in the way matter and/or <span data-concept=\"energy-and-work\">energy</span> is distributed within the system.</p>",
+  "notes": "Nothing of the section is left out. The stray full stop of “(P = 0). (Figure 16.4).” is kept as printed. Figure 16.2 is drawn with time in days, the week its caption names, and with the six-hour half-life of technetium-99m that the text gives, where the book’s axis reads hours.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The two unkeyed exercises, fs-idp120021296 and fs-idp158359616, ask for a definition or a description rather than a number, and each is kept with a suggested approach marked as OmniStax’s own. Nothing is left out or moved.",
+  "figures": [
+    {
+      "id": "sim-decay",
+      "kind": "sim",
+      "number": "16.2",
+      "originals": [
+        "/media/ch16/CNX_Chem_16_01_decayrates.jpg"
+      ],
+      "original_caption": "Both U-238 and Tc-99m undergo spontaneous radioactive decay, but at drastically different rates. Over the course of one week, essentially all of a Tc-99m sample and none of a U-238 sample will have decayed.",
+      "draws": [
+        "time"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-carbon",
+      "kind": "photo",
+      "number": "16.3",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-gas-flasks",
+      "kind": "sim",
+      "number": "16.4",
+      "originals": [
+        "/media/ch16/CNX_Chem_16_02_Gas.jpg"
+      ],
+      "original_caption": "An isolated system consists of an ideal gas in one flask that is connected by a closed valve to a second flask containing a vacuum. Once the valve is opened, the gas spontaneously becomes evenly distributed between the flasks.",
+      "draws": [
+        "energy",
+        "pressure",
+        "volume"
+      ],
+      "conventions": [
+        "Ar"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-heat-flow",
+      "kind": "sim",
+      "number": "16.5",
+      "originals": [
+        "/media/ch16/CNX_Chem_16_02_Temperature.jpg"
+      ],
+      "original_caption": "When two objects at different temperatures come in contact, heat spontaneously flows from the hotter to the colder object.",
+      "draws": [
+        "temperature",
+        "energy",
+        "time"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-process",
+      "kind": "photo",
+      "number": "16.6",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "tc-99m",
+      "label": "technetium-99m",
+      "figures": [
+        "sim-decay"
+      ]
+    },
+    {
+      "id": "u-238",
+      "label": "uranium-238",
+      "figures": [
+        "sim-decay"
+      ]
+    },
+    {
+      "id": "object-x",
+      "label": "object X, the hotter object",
+      "figures": [
+        "sim-heat-flow"
+      ]
+    },
+    {
+      "id": "object-y",
+      "label": "object Y, the colder object",
+      "figures": [
+        "sim-heat-flow"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "spontaneity",
+      "concept": "nonspontaneous-process",
+      "verb": "introduces"
+    },
+    {
+      "span": "spontaneity",
+      "concept": "spontaneity-and-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "spontaneity",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "spontaneity",
+      "concept": "reaction-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "spontaneity",
+      "concept": "phase-diagram",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "dispersal-of-matter-and-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "dispersal",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "ideal-gas",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "expansion-work",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "first-law-of-thermodynamics",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "internal-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "dispersal",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-redistribution",
+      "concept": "dispersal-of-matter-and-energy",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-redistribution",
+      "concept": "sublimation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-redistribution",
+      "concept": "condensation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-redistribution",
+      "concept": "diffusion",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp106049744",
+      "kind": "check-your-learning",
+      "bloom": "Understand",
+      "place": {
+        "at": "inline",
+        "after": "ex-redistribution"
+      },
+      "cite": "ex-redistribution",
+      "prompt": "Describe how energy is redistributed when a spoon at room temperature is placed in a cup of hot coffee.",
+      "answer": {
+        "type": "open",
+        "solution": "Heat will spontaneously flow from the hotter object (coffee) to the colder object (spoon), resulting in a more uniform distribution of thermal energy as the spoon warms and the coffee cools.",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp114103472",
+      "source_number": "1",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "spontaneity",
+      "prompt": "What is a spontaneous reaction?",
+      "answer": {
+        "type": "open",
+        "solution": "A reaction has a natural tendency to occur and takes place without the continual input of energy from an external source.",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp120021296",
+      "source_number": "2",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "spontaneity",
+      "prompt": "What is a nonspontaneous reaction?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: start from the meaning of a nonspontaneous process, one that will not take place unless it is driven by the continual input of energy from an external source, and apply it to a reaction. Add that a reaction spontaneous in one direction under given conditions is nonspontaneous in the reverse direction."
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp1018800",
+      "source_number": "3",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "spontaneity",
+      "prompt": "Indicate whether the following processes are spontaneous or nonspontaneous.<br>(a) Liquid water freezing at a temperature below its freezing point<br>(b) Liquid water freezing at a temperature above its freezing point<br>(c) The combustion of gasoline<br>(d) A ball thrown into the air<br>(e) A raindrop falling to the ground<br>(f) Iron rusting in a moist atmosphere",
+      "answer": {
+        "type": "open",
+        "solution": "(a) spontaneous; (b) nonspontaneous; (c) spontaneous; (d) nonspontaneous; (e) spontaneous; (f) spontaneous",
+        "generated_by": "source"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp158359616",
+      "source_number": "4",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dispersal",
+      "prompt": "A helium-filled balloon spontaneously deflates overnight as He atoms diffuse through the wall of the balloon. Describe the redistribution of matter and/or energy that accompanies this process.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: compare where the helium atoms are before and after, as for the gas spreading between the two flasks of Figure 16.4. Ask whether the helium ends up crowded into a small volume or spread through a much larger one, and whether its distribution becomes more or less uniform, then say whether the matter is more or less dispersed."
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm103719792",
+      "source_number": "5",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "spontaneity",
+      "prompt": "Many plastic materials are organic polymers that contain carbon and hydrogen. The oxidation of these plastics in air to form carbon dioxide and water is a spontaneous process; however, plastic materials tend to persist in the environment. Explain.",
+      "answer": {
+        "type": "open",
+        "solution": "Although the oxidation of plastics is spontaneous, the rate of oxidation is very slow. Plastics are therefore kinetically stable and do not decompose appreciably even over relatively long periods of time.",
+        "generated_by": "source"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "dispersal-of-matter-and-energy"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "heat-flow"
+    },
+    {
+      "exercise": "e1",
+      "concept": "spontaneous-process"
+    },
+    {
+      "exercise": "e2",
+      "concept": "nonspontaneous-process"
+    },
+    {
+      "exercise": "e3",
+      "concept": "spontaneous-process"
+    },
+    {
+      "exercise": "e3",
+      "concept": "nonspontaneous-process"
+    },
+    {
+      "exercise": "e4",
+      "concept": "dispersal-of-matter-and-energy"
+    },
+    {
+      "exercise": "e4",
+      "concept": "diffusion"
+    },
+    {
+      "exercise": "e5",
+      "concept": "spontaneity-and-rate"
+    }
+  ]
+}

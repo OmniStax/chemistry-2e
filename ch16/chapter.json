@@ -73,28 +73,32 @@
    "concept": "temperature",
    "meaning": "the temperature of object X, the hotter object",
    "unit": "K",
-   "section": "16.1"
+   "section": "16.1",
+   "ref": "object-x"
   },
   {
    "sym": "T_Y",
    "concept": "temperature",
    "meaning": "the temperature of object Y, the colder object",
    "unit": "K",
-   "section": "16.1"
+   "section": "16.1",
+   "ref": "object-y"
   },
   {
    "sym": "q_X",
    "concept": "heat-flow",
    "meaning": "the heat gained by object X, negative since X loses thermal energy",
    "unit": "J",
-   "section": "16.1"
+   "section": "16.1",
+   "ref": "object-x"
   },
   {
    "sym": "q_Y",
    "concept": "heat-flow",
    "meaning": "the heat gained by object Y, equal and opposite to that of X",
    "unit": "J",
-   "section": "16.1"
+   "section": "16.1",
+   "ref": "object-y"
   },
   {
    "sym": "S",

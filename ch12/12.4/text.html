@@ -1,0 +1,206 @@
+<section id="integrated">
+<h2>Integrated rate laws</h2>
+<p class="cite-target">The rate laws discussed thus far relate the <span data-concept="reaction-rate">rate</span> and the <span data-concept="concentration">concentrations</span> of reactants. We can also determine a second form of each rate law that relates the <span data-concept="concentration">concentrations</span> of reactants and <span data-concept="time">time</span>. These are called <strong>integrated rate laws</strong>. We can use an integrated rate law to determine the amount of reactant or product present after a period of <span data-concept="time">time</span> or to estimate the <span data-concept="time">time</span> required for a reaction to proceed to a certain extent. For example, an integrated rate law is used to determine the length of <span data-concept="time">time</span> a radioactive material must be stored for its radioactivity to decay to a safe level.</p>
+<p>Using calculus, the differential rate law for a chemical reaction can be integrated with respect to <span data-concept="time">time</span> to give an equation that relates the amount of reactant or product present in a reaction mixture to the elapsed <span data-concept="time">time</span> of the reaction. This process can either be very straightforward or very complex, depending on the complexity of the differential rate law. For purposes of discussion, we will focus on the resulting integrated rate laws for first-, second-, and zero-order reactions.</p>
+</section>
+
+<section id="first-order">
+<h2>First-order reactions</h2>
+<p class="cite-target">Integration of the rate law for a simple first-order reaction ($\krate=\kk\kconcA$) results in an equation describing how the reactant <span data-concept="concentration">concentration</span> varies with <span data-concept="time">time</span>:</p>
+$$\kconcAt=\kconcAz\;e^{-\kk\kt}$$
+<p>where $\kconcAt$ is the <span data-concept="concentration">concentration</span> of <em>A</em> at any <span data-concept="time">time</span> $\kt$, $\kconcAz$ is the initial <span data-concept="concentration">concentration</span> of <em>A</em>, and $\kk$ is the first-order <span data-concept="rate-constant">rate constant</span>.</p>
+<p>For mathematical convenience, this equation may be rearranged to other formats, including direct and indirect proportionalities:</p>
+$$\ln\left(\frac{\kconcAt}{\kconcAz}\right)=-\kk\kt\hspace{2em}\text{or}\hspace{2em}\ln\left(\frac{\kconcAz}{\kconcAt}\right)=\kk\kt$$
+<p>and a format showing a linear dependence of <span data-concept="concentration">concentration</span> in <span data-concept="time">time</span>:</p>
+$$\ln\kconcAt=\ln\kconcAz-\kk\kt$$
+<div class="example" id="ex-first-order">
+<h3>Example 12.6 · The Integrated Rate Law for a First-Order Reaction</h3>
+<p>The <span data-concept="rate-constant">rate constant</span> for the first-order decomposition of cyclobutane, C<sub>4</sub>H<sub>8</sub> at <span data-type="temperature">500 °C</span> is <span data-type="rate-constant">9.2 × 10<sup>−3</sup> s<sup>−1</sup></span>:</p>
+$${\text{C}}_{4}{\text{H}}_{8}\;\longrightarrow\;{\text{2C}}_{2}{\text{H}}_{4}$$
+<p>How long will it take for 80.0% of a sample of C<sub>4</sub>H<sub>8</sub> to decompose?</p>
+<h4>Solution</h4>
+<p>Since the relative change in reactant <span data-concept="concentration">concentration</span> is provided, a convenient format for the integrated rate law is:</p>
+$$\ln\left(\frac{\kconcAz}{\kconcAt}\right)=\kk\kt$$
+<p>The initial <span data-concept="concentration">concentration</span> of C<sub>4</sub>H<sub>8</sub>, $\kconcAz$, is not provided, but the provision that 80.0% of the sample has decomposed is enough information to solve this problem. Let <em>x</em> be the initial <span data-concept="concentration">concentration</span>, in which case the <span data-concept="concentration">concentration</span> after 80.0% decomposition is 20.0% of <em>x</em> or 0.200<em>x.</em> Rearranging the rate law to isolate $\kt$ and substituting the provided quantities yields:</p>
+$$\begin{array}{rl}\kt & =\ln\;\frac{[x]}{[0.200x]}\;\times\;\frac{1}{\kk} \\ & =\ln\;5\;\times\;\frac{1}{9.2\;\times\;{10}^{-3}\;{\text{s}}^{-1}} \\ & =1.609\;\times\;\frac{1}{9.2\;\times\;{10}^{-3}\;{\text{s}}^{-1}} \\ & =1.7\;\times\;{10}^{2}\;\text{s}\end{array}$$
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-first-order"></div>
+</div>
+<p>In the next example exercise, a linear format for the integrated rate law will be convenient:</p>
+$$\begin{array}{rll}\ln\kconcAt & = & (-\kk)(\kt)+\ln\kconcAz \\ y & = & mx+b\end{array}$$
+<p>A plot of ln$\kconcAt$ versus $\kt$ for a first-order reaction is a straight line with a slope of −$\kk$ and a <em>y</em>-intercept of ln$\kconcAz$. If a set of rate data are plotted in this fashion but do <em>not</em> result in a straight line, the reaction is not first order in <em>A</em>.</p>
+<div class="example" id="ex-plot-first">
+<h3>Example 12.7 · Graphical Determination of Reaction Order and Rate Constant</h3>
+<p>Show that the data in Figure 12.2 can be represented by a first-order rate law by graphing ln[H<sub>2</sub>O<sub>2</sub>] versus <span data-concept="time">time</span>. Determine the <span data-concept="rate-constant">rate constant</span> for the decomposition of H<sub>2</sub>O<sub>2</sub> from these data.</p>
+<h4>Solution</h4>
+<p>The data from Figure 12.2 are tabulated below, and a plot of ln[H<sub>2</sub>O<sub>2</sub>] is shown in Figure 12.9.</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th>Time (h)</th><th>[H<sub>2</sub>O<sub>2</sub>] (<em>M</em>)</th><th>ln[H<sub>2</sub>O<sub>2</sub>]</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0.00</td><td class="num">1.000</td><td class="num">0.000</td></tr>
+      <tr><td class="num">6.00</td><td class="num">0.500</td><td class="num">−0.693</td></tr>
+      <tr><td class="num">12.00</td><td class="num">0.250</td><td class="num">−1.386</td></tr>
+      <tr><td class="num">18.00</td><td class="num">0.125</td><td class="num">−2.079</td></tr>
+      <tr><td class="num">24.00</td><td class="num">0.0625</td><td class="num">−2.772</td></tr>
+    </tbody>
+  </table>
+</div>
+<figure class="sim" id="sim-order-plots" data-figure="12.9 + 12.10 + 12.11" data-original="/media/ch12/CNX_Chem_12_04_FrstOKin.jpg,/media/ch12/CNX_Chem_12_04_2OrdKin.jpg,/media/ch12/CNX_Chem_12_04_AmDecomK.jpg" data-original-caption="(Figure 12.9) A linear relationship between ln[H₂O₂] and time suggests the decomposition of hydrogen peroxide is a first-order reaction. (Figure 12.10) These two graphs show first- and second-order plots for the dimerization of C₄H₆. The linear trend in the second-order plot (right) indicates that the reaction follows second-order kinetics. (Figure 12.11) The decomposition of NH₃ on a tungsten (W) surface is a zero-order reaction, whereas on a quartz (SiO₂) surface, the reaction is first order.">
+  <div class="sim-head"><span class="eyebrow">Figure 12.9 + 12.10 + 12.11</span><span>The <span data-concept="concentration">concentration</span> of a reactant, measured at several <span data-concept="time">times</span>, is plotted against <span data-concept="time">time</span> in three ways: as [A], as ln[A], and as 1/[A]. Each is a straight line for one order of reaction only: [A] for a zero-order reaction, ln[A] for a first-order reaction, and 1/[A] for a second-order reaction. A dashed line joins the first and last points of each plot. Where the points fall on it, the plot is linear, and the slope of that line gives the <span data-concept="rate-constant">rate constant</span>. Choose the decomposition of hydrogen peroxide, the dimerization of butadiene, or the decomposition of ammonia on <span data-ref="tungsten">tungsten</span> and on <span data-ref="quartz">quartz</span>, and find the plot in which the points line up.</span></div>
+</figure>
+<p>The plot of ln[H<sub>2</sub>O<sub>2</sub>] versus <span data-concept="time">time</span> is linear, indicating that the reaction may be described by a first-order rate law.</p>
+<p>According to the linear format of the first-order integrated rate law, the <span data-concept="rate-constant">rate constant</span> is given by the negative of this plot’s slope.</p>
+$$\text{slope}=\;\frac{\text{change in}\;y}{\text{change in}\;x}\;=\;\frac{\Delta y}{\Delta x}\;=\;\frac{\Delta\ln[{\text{H}}_{2}{\text{O}}_{2}]}{\kdt}$$
+<p>The slope of this line may be derived from two values of ln[H<sub>2</sub>O<sub>2</sub>] at different values of $\kt$ (one near each end of the line is preferable). For example, the value of ln[H<sub>2</sub>O<sub>2</sub>] when $\kt$ is <span data-type="time">0.00 h</span> is 0.000; the value when $\kt$ = <span data-type="time">24.00 h</span> is −2.772</p>
+$$\begin{array}{rll}\text{slope} & = & \frac{-2.772-0.000}{24.00-0.00\;\text{h}} \\ & = & \frac{-2.772}{24.00\;\text{h}} \\ & = & -0.116\;{\text{h}}^{-1} \\ \kk & = & -\text{slope}=-(-0.116\;{\text{h}}^{-1})=0.116\;{\text{h}}^{-1}\end{array}$$
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-plot-first"></div>
+</div>
+</section>
+
+<section id="second-order">
+<h2>Second-order reactions</h2>
+<p class="cite-target">The equations that relate the <span data-concept="concentration">concentrations</span> of reactants and the <span data-concept="rate-constant">rate constant</span> of second-order reactions can be fairly complicated. To illustrate the point with minimal complexity, only the simplest second-order reactions will be described here, namely, those whose <span data-concept="reaction-rate">rates</span> depend on the <span data-concept="concentration">concentration</span> of just one reactant. For these types of reactions, the differential rate law is written as:</p>
+$$\krate=\kk{\kconcA}^{2}$$
+<p>For these second-order reactions, the integrated rate law is:</p>
+$$\frac{1}{\kconcAt}\;=\kk\kt+\;\frac{1}{\kconcAz}$$
+<p>where the terms in the equation have their usual meanings as defined earlier.</p>
+<div class="example" id="ex-second-order">
+<h3>Example 12.8 · The Integrated Rate Law for a Second-Order Reaction</h3>
+<p>The reaction of butadiene gas (C<sub>4</sub>H<sub>6</sub>) to yield C<sub>8</sub>H<sub>12</sub> gas is described by the equation:</p>
+$${\text{2C}}_{4}{\text{H}}_{6}(g)\;\longrightarrow\;{\text{C}}_{8}{\text{H}}_{12}(g)$$
+<p>This “dimerization” reaction is second order with a <span data-concept="rate-constant">rate constant</span> equal to <span data-type="rate-constant">5.76 × 10<sup>−2</sup> L mol<sup>−1</sup> min<sup>−1</sup></span> under certain conditions. If the initial <span data-concept="concentration">concentration</span> of butadiene is <span data-type="concentration">0.200 <em>M</em></span>, what is the <span data-concept="concentration">concentration</span> after <span data-type="time">10.0 min</span>?</p>
+<h4>Solution</h4>
+<p>For a second-order reaction, the integrated rate law is written</p>
+$$\frac{1}{\kconcAt}\;=\kk\kt+\;\frac{1}{\kconcAz}$$
+<p>We know three variables in this equation: $\kconcAz$ = <span data-type="concentration">0.200 mol/L</span>, $\kk$ = <span data-type="rate-constant">5.76 × 10<sup>−2</sup> L/mol/min</span>, and $\kt$ = <span data-type="time">10.0 min</span>. Therefore, we can solve for [<em>A</em>], the fourth variable:</p>
+$$\begin{array}{rll}\frac{1}{\kconcAt} & = & (5.76\;\times\;{10}^{-2}\;{\text{L mol}}^{-1}\;{\text{min}}^{-1})\;(10\;\text{min})+\;\frac{1}{0.200\;{\text{mol}}^{-1}} \\ \frac{1}{\kconcAt} & = & (5.76\;\times\;{10}^{-1}\;{\text{L mol}}^{-1})+5.00\;{\text{L mol}}^{-1} \\ \frac{1}{\kconcAt} & = & 5.58\;{\text{L mol}}^{-1} \\ \kconcAt & = & 1.79\;\times\;{10}^{-1}\;{\text{mol L}}^{-1}\end{array}$$
+<p>Therefore <span data-type="concentration">0.179 mol/L</span> of butadiene remain at the end of <span data-type="time">10.0 min</span>, compared to the <span data-type="concentration">0.200 mol/L</span> that was originally present.</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-second-order"></div>
+</div>
+<p>The integrated rate law for second-order reactions has the form of the equation of a straight line:</p>
+$$\begin{array}{rll}\frac{1}{\kconcAt} & = & \kk\kt+\;\frac{1}{\kconcAz} \\ y & = & mx+b\end{array}$$
+<p>A plot of $\frac{1}{\kconcAt}$ versus $\kt$ for a second-order reaction is a straight line with a slope of $\kk$ and a <em>y</em>-intercept of $\frac{1}{\kconcAz}.$ If the plot is not a straight line, then the reaction is not second order.</p>
+<div class="example" id="ex-plot-second">
+<h3>Example 12.9 · Graphical Determination of Reaction Order and Rate Constant</h3>
+<p>The data below are for the same reaction described in Example 12.8. Prepare and compare two appropriate data plots to identify the reaction as being either first or second order. After identifying the reaction order, estimate a value for the <span data-concept="rate-constant">rate constant</span>.</p>
+<h4>Solution</h4>
+<div class="book-table">
+  <table>
+    <thead><tr><th>Time (s)</th><th>[C<sub>4</sub>H<sub>6</sub>] (<em>M</em>)</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0</td><td class="num">1.00 × 10<sup>−2</sup></td></tr>
+      <tr><td class="num">1600</td><td class="num">5.04 × 10<sup>−3</sup></td></tr>
+      <tr><td class="num">3200</td><td class="num">3.37 × 10<sup>−3</sup></td></tr>
+      <tr><td class="num">4800</td><td class="num">2.53 × 10<sup>−3</sup></td></tr>
+      <tr><td class="num">6200</td><td class="num">2.08 × 10<sup>−3</sup></td></tr>
+    </tbody>
+  </table>
+</div>
+<p>In order to distinguish a first-order reaction from a second-order reaction, prepare a plot of ln[C<sub>4</sub>H<sub>6</sub>]<sub><em>t</em></sub> versus $\kt$ and compare it to a plot of $\frac{1}{[{\text{C}}_{4}{\text{H}}_{6}]_{t}}$ versus $\kt$. The values needed for these plots follow.</p>
+<div class="book-table">
+  <table>
+    <thead><tr><th>Time (s)</th><th>$\frac{1}{[{\text{C}}_{4}{\text{H}}_{6}]}\;({M}^{-1})$</th><th>ln[C<sub>4</sub>H<sub>6</sub>]</th></tr></thead>
+    <tbody>
+      <tr><td class="num">0</td><td class="num">100</td><td class="num">−4.605</td></tr>
+      <tr><td class="num">1600</td><td class="num">198</td><td class="num">−5.289</td></tr>
+      <tr><td class="num">3200</td><td class="num">296</td><td class="num">−5.692</td></tr>
+      <tr><td class="num">4800</td><td class="num">395</td><td class="num">−5.978</td></tr>
+      <tr><td class="num">6200</td><td class="num">481</td><td class="num">−6.175</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The plots are shown in Figure 12.10, which clearly shows the plot of ln[C<sub>4</sub>H<sub>6</sub>]<sub><em>t</em></sub> versus $\kt$ is not linear, therefore the reaction is not first order. The plot of $\frac{1}{[{\text{C}}_{4}{\text{H}}_{6}]_{t}}$ versus $\kt$ is linear, indicating that the reaction is second order.</p>
+<p>According to the second-order integrated rate law, the <span data-concept="rate-constant">rate constant</span> is equal to the slope of the $\frac{1}{\kconcAt}$ versus $\kt$ plot. Using the data for $\kt$ = <span data-type="time">0 s</span> and $\kt$ = <span data-type="time">6200 s</span>, the <span data-concept="rate-constant">rate constant</span> is estimated as follows:</p>
+$$\kk=\text{slope}=\frac{(481\;{M}^{-1}-100\;{M}^{-1})}{(6200\;\text{s}-0\;\text{s})}=0.0614\;{M}^{-1}\;{\text{s}}^{-1}$$
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-plot-second"></div>
+</div>
+</section>
+
+<section id="zero-order">
+<h2>Zero-order reactions</h2>
+<p class="cite-target">For zero-order reactions, the differential rate law is:</p>
+$$\krate=\kk$$
+<p>A zero-order reaction thus exhibits a constant <span data-concept="reaction-rate">reaction rate</span>, regardless of the <span data-concept="concentration">concentration</span> of its reactant(s). This may seem counterintuitive, since the <span data-concept="reaction-rate">reaction rate</span> certainly can’t be finite when the reactant <span data-concept="concentration">concentration</span> is zero. For purposes of this introductory text, it will suffice to note that zero-order kinetics are observed for some reactions only under certain specific conditions. These same reactions exhibit different kinetic behaviors when the specific conditions aren’t met, and for this reason the more prudent term <em>pseudo-zero-order</em> is sometimes used.</p>
+<p>The integrated rate law for a zero-order reaction is a linear function:</p>
+$$\begin{array}{rll}\kconcAt & = & -\kk\kt+\kconcAz \\ y & = & mx+b\end{array}$$
+<p>A plot of $\kconcA$ versus $\kt$ for a zero-order reaction is a straight line with a slope of −$\kk$ and a <em>y</em>-intercept of $\kconcAz$. Figure 12.11 shows a plot of [NH<sub>3</sub>] versus $\kt$ for the thermal decomposition of ammonia at the surface of two different heated solids. The decomposition reaction exhibits first-order behavior at <span data-ref="quartz">a quartz (SiO<sub>2</sub>) surface</span>, as suggested by the exponentially decaying plot of <span data-concept="concentration">concentration</span> versus <span data-concept="time">time</span>. On <span data-ref="tungsten">a tungsten surface</span>, however, the plot is linear, indicating zero-order kinetics.</p>
+<div class="example" id="ex-zero-order">
+<h3>Example 12.10 · Graphical Determination of Zero-Order Rate Constant</h3>
+<p>Use the data plot in Figure 12.11 to graphically estimate the zero-order <span data-concept="rate-constant">rate constant</span> for ammonia decomposition at <span data-ref="tungsten">a tungsten surface</span>.</p>
+<h4>Solution</h4>
+<p>The integrated rate law for zero-order kinetics describes a linear plot of reactant <span data-concept="concentration">concentration</span>, $\kconcAt$, versus <span data-concept="time">time</span>, $\kt$, with a slope equal to the negative of the <span data-concept="rate-constant">rate constant</span>, −$\kk$. Following the mathematical approach of previous examples, the slope of the linear data plot (for decomposition on <span data-ref="tungsten">W</span>) is estimated from the graph. Using the ammonia <span data-concept="concentration">concentrations</span> at $\kt$ = <span data-type="time">0</span> and $\kt$ = <span data-type="time">1000 s</span>:</p>
+$$\kk=-\text{slope}=-\frac{(0.0015\;\text{mol}\;{\text{L}}^{-1}-0.0028\;\text{mol}\;{\text{L}}^{-1})}{(1000\;\text{s}-0\;\text{s})}=1.3\;\times\;{10}^{-6}\;\text{mol}\;{\text{L}}^{-1}\;{\text{s}}^{-1}$$
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-zero-order"></div>
+</div>
+</section>
+
+<section id="half-life">
+<h2>The half-life of a reaction</h2>
+<p class="cite-target">The <strong><span data-concept="half-life">half-life of a reaction</span> ($\kthalf$)</strong> is the <span data-concept="time">time</span> required for one-half of a given amount of reactant to be consumed. In each succeeding <span data-concept="half-life">half-life</span>, half of the remaining <span data-concept="concentration">concentration</span> of the reactant is consumed. Using the decomposition of hydrogen peroxide (Figure 12.2) as an example, we find that during <span data-type="time">the first half-life (from 0.00 hours to 6.00 hours)</span>, <span data-type="concentration">the concentration of H<sub>2</sub>O<sub>2</sub> decreases from 1.000 <em>M</em> to 0.500 <em>M</em></span>. During <span data-type="time">the second half-life (from 6.00 hours to 12.00 hours)</span>, <span data-type="concentration">it decreases from 0.500 <em>M</em> to 0.250 <em>M</em></span>; during the third <span data-concept="half-life">half-life</span>, <span data-type="concentration">it decreases from 0.250 <em>M</em> to 0.125 <em>M</em></span>. The <span data-concept="concentration">concentration</span> of H<sub>2</sub>O<sub>2</sub> decreases by half during each successive period of <span data-type="time">6.00 hours</span>. The decomposition of hydrogen peroxide is a first-order reaction, and, as can be shown, the <span data-concept="half-life">half-life</span> of a first-order reaction is independent of the <span data-concept="concentration">concentration</span> of the reactant. However, <span data-concept="half-life">half-lives</span> of reactions with other orders depend on the <span data-concept="concentration">concentrations</span> of the reactants.</p>
+<h3 id="half-life-first">First-order reactions</h3>
+<p>An equation relating the <span data-concept="half-life">half-life</span> of a first-order reaction to its <span data-concept="rate-constant">rate constant</span> may be derived from the integrated rate law as follows:</p>
+$$\begin{array}{rll}\ln\;\frac{\kconcAz}{\kconcAt} & = & \kk\kt \\ \kt & = & \ln\;\frac{\kconcAz}{\kconcAt}\;\times\;\frac{1}{\kk}\end{array}$$
+<p>Invoking the definition of <span data-concept="half-life">half-life</span>, symbolized $\kthalf,$ requires that the <span data-concept="concentration">concentration</span> of <em>A</em> at this point is one-half its initial <span data-concept="concentration">concentration</span>: $\kt=\kthalf,$ $\kconcAt=\;\frac{1}{2}\kconcAz.$</p>
+<p>Substituting these terms into the rearranged integrated rate law and simplifying yields the equation for <span data-concept="half-life">half-life</span>:</p>
+$$\begin{array}{rll}\kthalf & = & \ln\;\frac{\kconcAz}{\frac{1}{2}\kconcAz}\;\times\;\frac{1}{\kk} \\ & = & \ln\;2\;\times\;\frac{1}{\kk}\;=0.693\;\times\;\frac{1}{\kk} \\ \kthalf & = & \frac{0.693}{\kk}\end{array}$$
+<p>This equation describes an expected inverse relation between the <span data-concept="half-life">half-life</span> of the reaction and its <span data-concept="rate-constant">rate constant</span>, $\kk$. Faster reactions exhibit larger <span data-concept="rate-constant">rate constants</span> and correspondingly shorter <span data-concept="half-life">half-lives</span>. Slower reactions exhibit smaller <span data-concept="rate-constant">rate constants</span> and longer <span data-concept="half-life">half-lives</span>.</p>
+<div class="example" id="ex-half-life-first">
+<h3>Example 12.11 · Calculation of a First-order Rate Constant using Half-Life</h3>
+<p>Calculate the <span data-concept="rate-constant">rate constant</span> for the first-order decomposition of hydrogen peroxide in water at <span data-type="temperature">40 °C</span>, using the data given in Figure 12.12.</p>
+<figure class="sim" id="sim-half-lives" data-figure="12.12" data-original="/media/ch12/CNX_Chem_12_04_HPerDcmp.jpg" data-original-caption="The decomposition of H₂O₂ (2H₂O₂ ⟶ 2H₂O + O₂) at 40 °C is illustrated. The intensity of the color symbolizes the concentration of H₂O₂ at the indicated times; H₂O₂ is actually colorless.">
+  <div class="sim-head"><span class="eyebrow">Figure 12.12</span><span>One sample of hydrogen peroxide decomposing at <span data-type="temperature">40 °C</span> is seen at five <span data-concept="time">times</span>, <span data-type="time">6.00 h</span> apart. The depth of color stands for the <span data-concept="concentration">concentration</span> of H<sub>2</sub>O<sub>2</sub>, which is actually colorless. As the clock runs, the beakers fade together until each is left at its own <span data-concept="time">time</span>, and the graph beneath marks each <span data-concept="half-life">half-life</span> as it is completed. For this first-order reaction, each beaker holds half the <span data-concept="concentration">concentration</span> of the one before it. Choose a second-order or a zero-order reaction that starts from the same <span data-concept="concentration">concentration</span> with the same first <span data-concept="half-life">half-life</span>, and watch the <span data-concept="half-life">half-lives</span> that follow grow longer or shorter.</span></div>
+</figure>
+<h4>Solution</h4>
+<p>Inspecting the <span data-concept="concentration">concentration</span>/<span data-concept="time">time</span> data in Figure 12.12 shows <span data-type="time">the half-life for the decomposition of H<sub>2</sub>O<sub>2</sub> is 2.16 × 10<sup>4</sup> s</span>:</p>
+$$\begin{array}{rll}\kthalf & = & \frac{0.693}{\kk} \\ \kk & = & \frac{0.693}{\kthalf}\;=\;\frac{0.693}{2.16\;\times\;{10}^{4}\;\text{s}}\;=3.21\;\times\;{10}^{-5}\;{\text{s}}^{-1}\end{array}$$
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-half-life-first"></div>
+</div>
+<h3 id="half-life-second">Second-order reactions</h3>
+<p>Following the same approach as used for first-order reactions, an equation relating the <span data-concept="half-life">half-life</span> of a second-order reaction to its <span data-concept="rate-constant">rate constant</span> and initial <span data-concept="concentration">concentration</span> may be derived from its integrated rate law:</p>
+$$\frac{1}{\kconcAt}\;=\kk\kt+\;\frac{1}{\kconcAz}$$
+<p>or</p>
+$$\frac{1}{\kconcA}\;-\;\frac{1}{\kconcAz}\;=\kk\kt$$
+<p>Restrict $\kt$ to $\kthalf$</p>
+$$\kt=\kthalf$$
+<p>define $\kconcAt$ as one-half $\kconcAz$</p>
+$$\kconcAt=\;\frac{1}{2}\kconcAz$$
+<p>and then substitute into the integrated rate law and simplify:</p>
+$$\begin{array}{rll}\frac{1}{\frac{1}{2}\kconcAz}\;-\;\frac{1}{\kconcAz} & = & \kk\kthalf \\ \frac{2}{\kconcAz}-\;\frac{1}{\kconcAz} & = & \kk\kthalf \\ \frac{1}{\kconcAz} & = & \kk\kthalf \\ \kthalf & = & \frac{1}{\kk\kconcAz}\end{array}$$
+<p>For a second-order reaction, $\kthalf$ is inversely proportional to the <span data-concept="concentration">concentration</span> of the reactant, and the <span data-concept="half-life">half-life</span> increases as the reaction proceeds because the <span data-concept="concentration">concentration</span> of reactant decreases. Unlike with first-order reactions, the <span data-concept="rate-constant">rate constant</span> of a second-order reaction cannot be calculated directly from the <span data-concept="half-life">half-life</span> unless the initial <span data-concept="concentration">concentration</span> is known.</p>
+<h3 id="half-life-zero">Zero-order reactions</h3>
+<p>As for other reaction orders, an equation for zero-order <span data-concept="half-life">half-life</span> may be derived from the integrated rate law:</p>
+$$\kconcA=-\kk\kt+\kconcAz$$
+<p>Restricting the <span data-concept="time">time</span> and <span data-concept="concentration">concentrations</span> to those defined by <span data-concept="half-life">half-life</span>: $\kt=\kthalf$ and $\kconcA=\;\frac{\kconcAz}{2}.$ Substituting these terms into the zero-order integrated rate law yields:</p>
+$$\begin{array}{rll}\frac{\kconcAz}{2} & = & -\kk\kthalf+\kconcAz \\ \kk\kthalf & = & \frac{\kconcAz}{2} \\ \kthalf & = & \frac{\kconcAz}{2\kk}\end{array}$$
+<p>As for all reaction orders, the <span data-concept="half-life">half-life</span> for a zero-order reaction is inversely proportional to its <span data-concept="rate-constant">rate constant</span>. However, the <span data-concept="half-life">half-life</span> of a zero-order reaction increases as the initial <span data-concept="concentration">concentration</span> increases.</p>
+<p>Equations for both differential and integrated rate laws and the corresponding <span data-concept="half-life">half-lives</span> for zero-, first-, and second-order reactions are summarized in Table 12.2.</p>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">Table 12.2</span><span>Summary of Rate Laws for Zero-, First-, and Second-Order Reactions</span></div>
+  <table>
+    <thead><tr><th></th><th>Zero-Order</th><th>First-Order</th><th>Second-Order</th></tr></thead>
+    <tbody>
+      <tr><th>rate law</th><td>$\krate=\kk$</td><td>$\krate=\kk\kconcA$</td><td>$\krate=\kk{\kconcA}^{2}$</td></tr>
+      <tr><th>units of rate constant</th><td><em>M</em> s<sup>−1</sup></td><td>s<sup>−1</sup></td><td><em>M</em><sup>−1</sup> s<sup>−1</sup></td></tr>
+      <tr><th>integrated rate law</th><td>$\kconcA=-\kk\kt+\kconcAz$</td><td>$\ln\kconcA=-\kk\kt+\ln\kconcAz$</td><td>$\frac{1}{\kconcA}\;=\kk\kt+\left(\frac{1}{\kconcAz}\right)$</td></tr>
+      <tr><th>plot needed for linear fit of rate data</th><td>$\kconcA$ vs. $\kt$</td><td>ln$\kconcA$ vs. $\kt$</td><td>$\frac{1}{\kconcA}$ vs. $\kt$</td></tr>
+      <tr><th>relationship between slope of linear plot and rate constant</th><td>$\kk$ = −slope</td><td>$\kk$ = −slope</td><td>$\kk$ = slope</td></tr>
+      <tr><th>half-life</th><td>$\kthalf=\;\frac{\kconcAz}{2\kk}$</td><td>$\kthalf=\frac{0.693}{\kk}$</td><td>$\kthalf=\frac{1}{\kconcAz\kk}$</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="example" id="ex-half-life-others">
+<h3>Example 12.12 · Half-Life for Zero-Order and Second-Order Reactions</h3>
+<p>What is the <span data-concept="half-life">half-life</span> for the butadiene dimerization reaction described in Example 12.8?</p>
+<h4>Solution</h4>
+<p>The reaction in question is second order, is initiated with a <span data-type="concentration">0.200 mol L<sup>−1</sup></span> reactant solution, and exhibits a <span data-concept="rate-constant">rate constant</span> of <span data-type="rate-constant">0.0576 L mol<sup>−1</sup> min<sup>−1</sup></span>. Substituting these quantities into the second-order <span data-concept="half-life">half-life</span> equation:</p>
+$$\begin{array}{rll}\kthalf & = & \frac{1}{[(0.0576\;\text{L}\;{\text{mol}}^{-1}\;{\text{min}}^{-1})(0.200\;\text{mol}\;{\text{L}}^{-1})]}=86.8\;\text{min}\end{array}$$
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-half-life-others"></div>
+</div>
+</section>

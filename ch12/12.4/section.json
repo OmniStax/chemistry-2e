@@ -1,0 +1,693 @@
+{
+  "id": "12.4",
+  "module": "m68791",
+  "chapter": "12",
+  "title": "Integrated Rate Laws",
+  "short": "Integrated Rate Laws",
+  "lead": "Integrating a rate law gives an equation for how the <span data-concept=\"concentration\">concentration</span> of a reactant changes with <span data-concept=\"time\">time</span>. The section writes these integrated rate laws for first-, second-, and zero-order reactions, reads the order and the <span data-concept=\"rate-constant\">rate constant</span> of a reaction from plots of its data, and defines the <span data-concept=\"half-life\">half-life</span> of a reaction.",
+  "objectives": [
+    "Explain the form and function of an integrated rate law",
+    "Perform integrated rate law calculations for zero-, first-, and second-order reactions",
+    "Define half-life and carry out related calculations",
+    "Identify the order of a reaction from concentration/time data"
+  ],
+  "summary_html": "<p>Integrated rate laws are mathematically derived from differential rate laws, and they describe the <span data-concept=\"time\">time</span> dependence of reactant and product <span data-concept=\"concentration\">concentrations</span>.</p><p>The <span data-concept=\"half-life\">half-life</span> of a reaction is the <span data-concept=\"time\">time</span> required to decrease the amount of a given reactant by one-half. A reaction’s <span data-concept=\"half-life\">half-life</span> varies with <span data-concept=\"rate-constant\">rate constant</span> and, for some reaction orders, reactant <span data-concept=\"concentration\">concentration</span>. The <span data-concept=\"half-life\">half-life</span> of a zero-order reaction decreases as the initial <span data-concept=\"concentration\">concentration</span> of the reactant in the reaction decreases. The <span data-concept=\"half-life\">half-life</span> of a first-order reaction is independent of <span data-concept=\"concentration\">concentration</span>, and the <span data-concept=\"half-life\">half-life</span> of a second-order reaction decreases as the <span data-concept=\"concentration\">concentration</span> increases.</p>",
+  "notes": "Nothing of the section is left out; Example 12.8 keeps the book’s “1/0.200 mol⁻¹” for 1/(0.200 mol L⁻¹) as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the plots and the table the key prints are kept in the answers as printed. The eight unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm81797520, fs-idp123052496, fs-idm71090800, fs-idm82644240, fs-idm22532944, fs-idm45932336, fs-idp120051200, fs-idm43018880. The unkeyed conceptual exercise fs-idp11885680 carries a suggested approach marked as OmniStax’s own. Rate constants read from a plot accept 5% tolerance and the 18 min of Example 12.12’s Check Your Learning 3%; other numeric answers accept 2%.",
+  "figures": [
+    {
+      "id": "sim-order-plots",
+      "kind": "sim",
+      "number": "12.9",
+      "folds": [
+        "12.10",
+        "12.11"
+      ],
+      "originals": [
+        "/media/ch12/CNX_Chem_12_04_FrstOKin.jpg",
+        "/media/ch12/CNX_Chem_12_04_2OrdKin.jpg",
+        "/media/ch12/CNX_Chem_12_04_AmDecomK.jpg"
+      ],
+      "original_caption": "(Figure 12.9) A linear relationship between ln[H₂O₂] and time suggests the decomposition of hydrogen peroxide is a first-order reaction. (Figure 12.10) These two graphs show first- and second-order plots for the dimerization of C₄H₆. The linear trend in the second-order plot (right) indicates that the reaction follows second-order kinetics. (Figure 12.11) The decomposition of NH₃ on a tungsten (W) surface is a zero-order reaction, whereas on a quartz (SiO₂) surface, the reaction is first order.",
+      "draws": [
+        "concentration",
+        "time",
+        "rate-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-half-lives",
+      "kind": "sim",
+      "number": "12.12",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_04_HPerDcmp.jpg"
+      ],
+      "original_caption": "The decomposition of H₂O₂ (2H₂O₂ ⟶ 2H₂O + O₂) at 40 °C is illustrated. The intensity of the color symbolizes the concentration of H₂O₂ at the indicated times; H₂O₂ is actually colorless.",
+      "draws": [
+        "concentration",
+        "time",
+        "rate-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "integrated",
+      "concept": "integrated-rate-laws",
+      "verb": "introduces"
+    },
+    {
+      "span": "integrated",
+      "concept": "rate-law",
+      "verb": "uses"
+    },
+    {
+      "span": "first-order",
+      "concept": "first-order-integrated-rate-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-order",
+      "concept": "integrated-rate-law-calculations",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-order",
+      "concept": "order-from-linear-plots",
+      "verb": "introduces"
+    },
+    {
+      "span": "first-order",
+      "concept": "rate-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "first-order",
+      "concept": "reaction-order",
+      "verb": "uses"
+    },
+    {
+      "span": "second-order",
+      "concept": "second-order-integrated-rate-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "second-order",
+      "concept": "order-from-linear-plots",
+      "verb": "uses"
+    },
+    {
+      "span": "second-order",
+      "concept": "integrated-rate-law-calculations",
+      "verb": "uses"
+    },
+    {
+      "span": "zero-order",
+      "concept": "zero-order-integrated-rate-law",
+      "verb": "introduces"
+    },
+    {
+      "span": "zero-order",
+      "concept": "order-from-linear-plots",
+      "verb": "uses"
+    },
+    {
+      "span": "zero-order",
+      "concept": "rate-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "half-life",
+      "concept": "half-life",
+      "verb": "introduces"
+    },
+    {
+      "span": "half-life",
+      "concept": "half-life-by-order",
+      "verb": "introduces"
+    },
+    {
+      "span": "half-life",
+      "concept": "first-order-integrated-rate-law",
+      "verb": "uses"
+    },
+    {
+      "span": "half-life",
+      "concept": "second-order-integrated-rate-law",
+      "verb": "uses"
+    },
+    {
+      "span": "half-life",
+      "concept": "zero-order-integrated-rate-law",
+      "verb": "uses"
+    },
+    {
+      "span": "half-life",
+      "concept": "integrated-rate-law-calculations",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm148528000",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-first-order"
+      },
+      "cite": "first-order",
+      "prompt": "Iodine-131 is a radioactive isotope that is used to diagnose and treat some forms of thyroid cancer. Iodine-131 decays to xenon-131 according to the equation:<br>I-131 ⟶ Xe-131 + electron<br>The decay is first-order with a rate constant of 0.138 d<sup>−1</sup>. How many days will it take for 90% of the iodine−131 in a 0.500 <em>M</em> solution of this substance to decay to Xe-131?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 16.7,
+        "unit": "d",
+        "hint": "Ninety percent decayed leaves 10%, so ln([A]<sub>0</sub>/[A]<sub><em>t</em></sub>) = ln 10; divide by <em>k</em>.",
+        "solution": "16.7 days"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp35909968",
+      "kind": "check-your-learning",
+      "bloom": "Analyze",
+      "place": {
+        "at": "inline",
+        "after": "ex-plot-first"
+      },
+      "cite": "first-order",
+      "prompt": "Graph the following data to determine whether the reaction <em>A</em> ⟶ <em>B</em> + <em>C</em> is first order.<table><thead><tr><th>Time (s)</th><th>[<em>A</em>]</th></tr></thead><tbody><tr><td>4.0</td><td>0.220</td></tr><tr><td>8.0</td><td>0.144</td></tr><tr><td>12.0</td><td>0.110</td></tr><tr><td>16.0</td><td>0.088</td></tr><tr><td>20.0</td><td>0.074</td></tr></tbody></table>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The plot of ln[<em>A</em>]<sub><em>t</em></sub> vs. <em>t</em> is not linear, indicating the reaction is not first order:<br><img src=\"/media/ch12/CNX_Chem_12_04_CYL1_img.jpg\" alt=\"A graph titled ln[A] vs. Time, with time in seconds on the x-axis marked at 5, 10, 15, 20 and 25 and ln[A] on the y-axis marked at negative 3, negative 2, negative 1 and 0. A slight curve connects five points at about (4, negative 1.5), (8, negative 2), (12, negative 2.2), (16, negative 2.4) and (20, negative 2.6).\"><br>"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idm85213520",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-second-order"
+      },
+      "cite": "second-order",
+      "prompt": "If the initial concentration of butadiene is 0.0200 <em>M</em>, what is the concentration remaining after 20.0 min?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.0195,
+        "unit": "mol/L",
+        "tol": 0.005,
+        "hint": "Use 1/[<em>A</em>]<sub><em>t</em></sub> = <em>kt</em> + 1/[<em>A</em>]<sub>0</sub> with <em>k</em> = 5.76 × 10<sup>−2</sup> L mol<sup>−1</sup> min<sup>−1</sup>.",
+        "solution": "0.0195 mol/L"
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp69093472",
+      "kind": "check-your-learning",
+      "bloom": "Analyze",
+      "place": {
+        "at": "inline",
+        "after": "ex-plot-second"
+      },
+      "cite": "second-order",
+      "prompt": "Do the following data fit a second-order rate law?<table><thead><tr><th>Time (s)</th><th>[<em>A</em>] (<em>M</em>)</th></tr></thead><tbody><tr><td>5</td><td>0.952</td></tr><tr><td>10</td><td>0.625</td></tr><tr><td>15</td><td>0.465</td></tr><tr><td>20</td><td>0.370</td></tr><tr><td>25</td><td>0.308</td></tr><tr><td>35</td><td>0.230</td></tr></tbody></table>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Yes. The plot of 1/[<em>A</em>]<sub><em>t</em></sub> vs. <em>t</em> is linear:<br><img src=\"/media/ch12/CNX_Chem_12_04_CYL2_img.jpg\" alt=\"A graph titled 1 divided by [A] vs. Time, with time in seconds on the x-axis marked every 10 from 0 to 40 and 1 divided by [A] on the y-axis marked every 1 from 0 to 5. A rising line runs through six points at about (4, 1), (10, 1.5), (15, 2.2), (20, 2.8), (26, 3.4) and (36, 4.4).\"><br>"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idm339943456",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-zero-order"
+      },
+      "cite": "zero-order",
+      "prompt": "The zero-order plot in Figure 12.11 shows an initial ammonia concentration of 0.0028 mol L<sup>−1</sup> decreasing linearly with time for 1000 s. Assuming no change in this zero-order behavior, at what time (min) will the concentration reach 0.0001 mol L<sup>−1</sup>?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 35,
+        "unit": "min",
+        "hint": "Solve [<em>A</em>]<sub><em>t</em></sub> = −<em>kt</em> + [<em>A</em>]<sub>0</sub> for <em>t</em> with <em>k</em> = 1.3 × 10<sup>−6</sup> mol L<sup>−1</sup> s<sup>−1</sup>, then convert seconds to minutes.",
+        "solution": "35 min"
+      }
+    },
+    {
+      "id": "cyl6",
+      "source_id": "fs-idm35443680",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-half-life-first"
+      },
+      "cite": "half-life",
+      "prompt": "The first-order radioactive decay of iodine-131 exhibits a rate constant of 0.138 d<sup>−1</sup>. What is the half-life for this decay?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 5.02,
+        "unit": "d",
+        "hint": "For a first-order reaction, <em>t</em><sub>1/2</sub> = 0.693/<em>k</em>.",
+        "solution": "5.02 d."
+      }
+    },
+    {
+      "id": "cyl7",
+      "source_id": "fs-idm494886672",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-half-life-others"
+      },
+      "cite": "half-life",
+      "prompt": "What is the half-life (min) for the thermal decomposition of ammonia on tungsten (see Example 12.10)?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 18,
+        "unit": "min",
+        "tol": 0.03,
+        "hint": "The reaction is zero order, so <em>t</em><sub>1/2</sub> = [<em>A</em>]<sub>0</sub>/2<em>k</em> with [<em>A</em>]<sub>0</sub> = 0.0028 mol L<sup>−1</sup> and <em>k</em> = 1.3 × 10<sup>−6</sup> mol L<sup>−1</sup> s<sup>−1</sup>.",
+        "solution": "18 min"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp11885680",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "first-order",
+      "prompt": "Describe how graphical methods can be used to determine the order of a reaction and its rate constant from a series of data that includes the concentration of <em>A</em> at varying times.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: from the data, work out ln[<em>A</em>] and 1/[<em>A</em>] at each time, then plot [<em>A</em>], ln[<em>A</em>] and 1/[<em>A</em>] against time. Only one of the three plots is a straight line, and it names the order: [<em>A</em>] against <em>t</em> for a zero-order reaction, ln[<em>A</em>] against <em>t</em> for a first-order reaction, and 1/[<em>A</em>] against <em>t</em> for a second-order reaction. Read the slope of that line from two points near its ends; the rate constant is the negative of the slope for zero and first order and the slope itself for second order."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp145037952",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "first-order",
+      "prompt": "Use the data provided to graphically determine the order and rate constant of the following reaction: SO<sub>2</sub>Cl<sub>2</sub> ⟶ SO<sub>2</sub> + Cl<sub>2</sub><table><tbody><tr><th>Time (s)</th><td>0</td><td>5.00 × 10<sup>3</sup></td><td>1.00 × 10<sup>4</sup></td><td>1.50 × 10<sup>4</sup></td></tr><tr><th>[SO<sub>2</sub>Cl<sub>2</sub>] (<em>M</em>)</th><td>0.100</td><td>0.0896</td><td>0.0802</td><td>0.0719</td></tr><tr><th>Time (s)</th><td>2.50 × 10<sup>4</sup></td><td>3.00 × 10<sup>4</sup></td><td>4.00 × 10<sup>4</sup></td><td></td></tr><tr><th>[SO<sub>2</sub>Cl<sub>2</sub>] (<em>M</em>)</th><td>0.0577</td><td>0.0517</td><td>0.0415</td><td></td></tr></tbody></table>",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "order",
+            "value": 1,
+            "hint": "Plot ln[SO<sub>2</sub>Cl<sub>2</sub>] and 1/[SO<sub>2</sub>Cl<sub>2</sub>] against time and see which is straight."
+          },
+          {
+            "part": "<em>k</em>",
+            "value": 2.2e-05,
+            "unit": "s⁻¹",
+            "tol": 0.05,
+            "hint": "The rate constant is the negative of the slope of the straight plot."
+          }
+        ],
+        "solution": "Plotting a graph of ln[SO<sub>2</sub>Cl<sub>2</sub>] versus <em>t</em> reveals a linear trend; therefore we know this is a first-order reaction:<br><img src=\"/media/ch12/CNX_Chem_12_04_Exercise02_img.jpg\" alt=\"A graph with time in seconds on the x-axis, from 0 to 4.00 times 10 to the 4 marked every 1.00 times 10 to the 4, and ln[SO2Cl2] on the y-axis marked from negative 3.5 to negative 2.5. A falling straight line runs through seven points from about (0, negative 2.3) to (3.0 times 10 to the 4, negative 3.2).\"><br><em>k</em> = 2.20 × 10<sup>–5</sup> s<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp27819360",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "second-order",
+      "prompt": "Pure ozone decomposes slowly to oxygen, 2O<sub>3</sub>(<em>g</em>) ⟶ 3O<sub>2</sub>(<em>g</em>). Use the data provided in a graphical method and determine the order and rate constant of the reaction.<table><tbody><tr><th>Time (h)</th><td>0</td><td>2.0 × 10<sup>3</sup></td><td>7.6 × 10<sup>3</sup></td><td>1.00 × 10<sup>4</sup></td></tr><tr><th>[O<sub>3</sub>] (<em>M</em>)</th><td>1.00 × 10<sup>−5</sup></td><td>4.98 × 10<sup>−6</sup></td><td>2.07 × 10<sup>−6</sup></td><td>1.66 × 10<sup>−6</sup></td></tr><tr><th>Time (h)</th><td>1.23 × 10<sup>4</sup></td><td>1.43 × 10<sup>4</sup></td><td>1.70 × 10<sup>4</sup></td><td></td></tr><tr><th>[O<sub>3</sub>] (<em>M</em>)</th><td>1.39 × 10<sup>−6</sup></td><td>1.22 × 10<sup>−6</sup></td><td>1.05 × 10<sup>−6</sup></td><td></td></tr></tbody></table>",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "order",
+            "value": 2,
+            "hint": "Try ln[O<sub>3</sub>] and 1/[O<sub>3</sub>] against time; one of them is straight."
+          },
+          {
+            "part": "<em>k</em>",
+            "value": 50.1,
+            "unit": "L mol⁻¹ h⁻¹",
+            "tol": 0.05,
+            "hint": "For a second-order reaction the rate constant is the slope of the 1/[O<sub>3</sub>] plot."
+          }
+        ],
+        "solution": "<br><img src=\"/media/ch12/CNX_Chem_12_04_Exercise04_img_new.jpg\" alt=\"A graph with t in hours on the x-axis, marked at 0, 2, 6, 10, 14 and 18 thousand, and 1 divided by [O3] on the y-axis marked every 1 from 0 to 9. A rising straight line runs through seven points from (0, 1.00) to (1.70 times 10 to the 4, 9.52); a right triangle drawn on it has its horizontal leg labeled delta t and its vertical leg labeled delta 1 divided by [O3].\"><br>The plot is nicely linear, so the reaction is second order. <em>k</em> = 50.1 L mol<sup>−1</sup> h<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm81821952",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "What is the half-life for the first-order decay of phosphorus-32? (<sup>32</sup><sub>15</sub>P ⟶ <sup>32</sup><sub>16</sub>S + e<sup>−</sup>) The rate constant for the decay is 4.85 × 10<sup>−2</sup> day<sup>−1</sup>.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 14.3,
+        "unit": "d",
+        "hint": "For a first-order decay, <em>t</em><sub>1/2</sub> = 0.693/<em>k</em>.",
+        "solution": "14.3 d"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm86787888",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "What is the half-life for the decomposition of NOCl when the concentration of NOCl is 0.15 <em>M</em>? The rate constant for this second-order reaction is 8.0 × 10<sup>−8</sup> L mol<sup>−1</sup> s<sup>−1</sup>.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 83000000.0,
+        "unit": "s",
+        "hint": "For a second-order reaction, <em>t</em><sub>1/2</sub> = 1/(<em>k</em>[<em>A</em>]<sub>0</sub>).",
+        "solution": "8.3 × 10<sup>7</sup> s"
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idm110943344",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "The reaction of compound <em>A</em> to give compounds <em>C</em> and <em>D</em> was found to be second-order in <em>A</em>. The rate constant for the reaction was determined to be 2.42 L mol<sup>−1</sup> s<sup>−1</sup>. If the initial concentration is 0.500 mol/L, what is the value of t<sub>1/2</sub>?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.826,
+        "unit": "s",
+        "hint": "For a second-order reaction, <em>t</em><sub>1/2</sub> = 1/(<em>k</em>[<em>A</em>]<sub>0</sub>).",
+        "solution": "0.826 s"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idp55838576",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "first-order",
+      "prompt": "Some bacteria are resistant to the antibiotic penicillin because they produce penicillinase, an enzyme with a molecular weight of 3 × 10<sup>4</sup> g/mol that converts penicillin into inactive molecules. Although the kinetics of enzyme-catalyzed reactions can be complex, at low concentrations this reaction can be described by a rate law that is first order in the catalyst (penicillinase) and that also involves the concentration of penicillin. From the following data: 1.0 L of a solution containing 0.15 µg (0.15 × 10<sup>−6</sup> g) of penicillinase, determine the order of the reaction with respect to penicillin and the value of the rate constant.<table><thead><tr><th>[Penicillin] (<em>M</em>)</th><th>Rate (mol L<sup>−1</sup> min<sup>−1</sup>)</th></tr></thead><tbody><tr><td>2.0 × 10<sup>−6</sup></td><td>1.0 × 10<sup>−10</sup></td></tr><tr><td>3.0 × 10<sup>−6</sup></td><td>1.5 × 10<sup>−10</sup></td></tr><tr><td>4.0 × 10<sup>−6</sup></td><td>2.0 × 10<sup>−10</sup></td></tr></tbody></table>",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "order in penicillin",
+            "value": 1,
+            "hint": "Compare how the rate changes as the penicillin concentration doubles."
+          },
+          {
+            "part": "<em>k</em>",
+            "value": 10000000.0,
+            "unit": "L mol⁻¹ min⁻¹",
+            "tol": 0.05,
+            "hint": "The rate law is rate = <em>k</em>[penicillinase][penicillin]; find the molar concentration of penicillinase from its mass and molecular weight."
+          }
+        ],
+        "solution": "The reaction is first order. <em>k</em> = 1.0 × 10<sup>7</sup> L mol<sup>−1</sup> min<sup>−1</sup>"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idm84405632",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "There are two molecules with the formula C<sub>3</sub>H<sub>6</sub>. Propene, CH<sub>3</sub>CH=CH<sub>2</sub>, is the monomer of the polymer polypropylene, which is used for indoor-outdoor carpets. Cyclopropane is used as an anesthetic:<br><img src=\"/media/ch12/CNX_Chem_12_04_Cycloprop_img.jpg\" alt=\"A structural formula for cyclopropane: three CH2 groups at the corners of an equilateral triangle, joined by single bonds.\"><br>When heated to 499 °C, cyclopropane rearranges (isomerizes) and forms propene with a rate constant of 5.95 × 10<sup>−4</sup> s<sup>−1</sup>. What is the half-life of this reaction? What fraction of the cyclopropane remains after 0.75 h at 499 °C?",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "half-life",
+            "value": 1160,
+            "unit": "s",
+            "hint": "The reaction is first order, so <em>t</em><sub>1/2</sub> = 0.693/<em>k</em>."
+          },
+          {
+            "part": "cyclopropane remaining",
+            "value": 20,
+            "unit": "%",
+            "tol": 0.03,
+            "hint": "Convert 0.75 h to seconds and use [<em>A</em>]<sub><em>t</em></sub>/[<em>A</em>]<sub>0</sub> = <em>e</em><sup>−<em>kt</em></sup>."
+          }
+        ],
+        "solution": "1.16 × 10<sup>3</sup> s ; 20% remains"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idp89138768",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "half-life",
+      "prompt": "Suppose that the half-life of steroids taken by an athlete is 42 days. Assuming that the steroids biodegrade by a first-order process, how long would it take for 1/64 of the initial dose to remain in the athlete’s body?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 252,
+        "unit": "days",
+        "hint": "One sixty-fourth is one-half multiplied by itself six times.",
+        "solution": "252 days"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idp157675232",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "first-order",
+      "prompt": "Nitroglycerine is an extremely sensitive explosive. In a series of carefully controlled experiments, samples of the explosive were heated to 160 °C and their first-order decomposition studied. Determine the average rate constants for each experiment using the following data:<table><tbody><tr><th>Initial [C<sub>3</sub>H<sub>5</sub>N<sub>3</sub>O<sub>9</sub>] (<em>M</em>)</th><td>4.88</td><td>3.52</td><td>2.29</td><td>1.81</td><td>5.33</td><td>4.05</td><td>2.95</td><td>1.72</td></tr><tr><th><em>t</em> (s)</th><td>300</td><td>300</td><td>300</td><td>300</td><td>180</td><td>180</td><td>180</td><td>180</td></tr><tr><th>% Decomposed</th><td>52.0</td><td>52.9</td><td>53.2</td><td>53.9</td><td>34.6</td><td>35.9</td><td>36.0</td><td>35.4</td></tr></tbody></table>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<table><thead><tr><th>[<em>A</em>]<sub>0</sub> (<em>M</em>)</th><th><em>k</em> × 10<sup>3</sup> (s<sup>−1</sup>)</th></tr></thead><tbody><tr><td>4.88</td><td>2.45</td></tr><tr><td>3.52</td><td>2.51</td></tr><tr><td>2.29</td><td>2.53</td></tr><tr><td>1.81</td><td>2.58</td></tr><tr><td>5.33</td><td>2.36</td></tr><tr><td>4.05</td><td>2.47</td></tr><tr><td>2.95</td><td>2.48</td></tr><tr><td>1.72</td><td>2.43</td></tr></tbody></table>"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "second-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "second-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "zero-order-integrated-rate-law"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "cyl6",
+      "concept": "half-life"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "cyl7",
+      "concept": "zero-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e1",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "e2",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "e2",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e3",
+      "concept": "order-from-linear-plots"
+    },
+    {
+      "exercise": "e3",
+      "concept": "second-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e5",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "e7",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "e9",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "e11",
+      "concept": "method-of-initial-rates"
+    },
+    {
+      "exercise": "e11",
+      "concept": "reaction-order"
+    },
+    {
+      "exercise": "e11",
+      "concept": "rate-constant"
+    },
+    {
+      "exercise": "e13",
+      "concept": "half-life-by-order"
+    },
+    {
+      "exercise": "e13",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e13",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "e15",
+      "concept": "half-life"
+    },
+    {
+      "exercise": "e15",
+      "concept": "integrated-rate-law-calculations"
+    },
+    {
+      "exercise": "e17",
+      "concept": "first-order-integrated-rate-law"
+    },
+    {
+      "exercise": "e17",
+      "concept": "integrated-rate-law-calculations"
+    }
+  ],
+  "referents": [
+    {
+      "id": "tungsten",
+      "label": "the tungsten surface",
+      "figures": [
+        "sim-order-plots"
+      ]
+    },
+    {
+      "id": "quartz",
+      "label": "the quartz surface",
+      "figures": [
+        "sim-order-plots"
+      ]
+    }
+  ]
+}

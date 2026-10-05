@@ -1,0 +1,536 @@
+{
+ "id": "12.6",
+ "module": "m68794",
+ "chapter": "12",
+ "title": "Reaction Mechanisms",
+ "short": "Reaction Mechanisms",
+ "lead": "Most reactions take place as a sequence of elementary steps, the reaction’s <span data-concept=\"reaction-mechanism\">mechanism</span>. The section counts the reactant entities in each step, writes <span data-concept=\"rate-law\">rate laws</span> for single steps, and compares the <span data-concept=\"rate-law\">rate law</span> a proposed mechanism predicts with the one found by experiment, through the step that limits the <span data-concept=\"reaction-rate\">rate</span>.",
+ "objectives": [
+  "Distinguish net reactions from elementary reactions (steps)",
+  "Identify the molecularity of elementary reactions",
+  "Write a balanced chemical equation for a process given its reaction mechanism",
+  "Derive the rate law consistent with a given reaction mechanism"
+ ],
+ "summary_html": "<p>The sequence of individual steps, or elementary reactions, by which reactants are converted into products during the course of a reaction is called the <span data-concept=\"reaction-mechanism\">reaction mechanism</span>. The <span data-concept=\"molecularity\">molecularity</span> of an elementary reaction is the number of reactant entities involved, typically one (unimolecular), two (bimolecular), or, less commonly, three (termolecular). The overall <span data-concept=\"reaction-rate\">rate of a reaction</span> is determined by the rate of the slowest in its mechanism, called the <span data-concept=\"rate-determining-step\">rate-determining step</span>. Unimolecular elementary reactions have first-order <span data-concept=\"rate-law\">rate laws</span>, while bimolecular elementary reactions have second-order <span data-concept=\"rate-law\">rate laws</span>. By comparing the <span data-concept=\"rate-law\">rate laws</span> derived from a reaction mechanism to that determined experimentally, the mechanism may be deemed either incorrect or plausible.</p>",
+ "notes": "Nothing of the section is left out; the text keeps “a single reactant entities” and “the butadiene reaction” for the decomposition of cyclobutane as printed.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. No exercise is left out: the five unkeyed exercises (fs-idm14620304, fs-idp48807664, fs-idp38703248, fs-idp63617152, fs-idp225129424) carry a suggested approach marked as OmniStax’s own, and fs-idp38703248 keeps its five reactions as an open question that is never graded. The key to the AP item fs-idm20987200 is printed as the book gives it, with k in mol² L⁻² min⁻¹ and “Step II” for the mechanism’s Step 2.",
+ "figures": [
+  {
+   "id": "fig-cyclobutane",
+   "kind": "figure",
+   "originals": [
+    "/media/ch12/CNX_Chem_12_06_CyclobD_img.jpg"
+   ],
+   "draws": [
+    "rate",
+    "rate-constant",
+    "concentration"
+   ],
+   "conventions": [
+    "C",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-no2-co",
+   "kind": "sim",
+   "number": "12.17",
+   "originals": [
+    "/media/ch12/CNX_Chem_12_06_BimoElRe.jpg"
+   ],
+   "original_caption": "The probable mechanism for the reaction between NO₂ and CO to yield NO and CO₂.",
+   "draws": [
+    "rate",
+    "rate-constant",
+    "concentration"
+   ],
+   "conventions": [
+    "N",
+    "O",
+    "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-cattle",
+   "kind": "photo",
+   "number": "12.18",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-slow-step",
+   "kind": "sim",
+   "draws": [
+    "rate-constant",
+    "time",
+    "concentration",
+    "rate"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "mechanisms",
+   "concept": "reaction-mechanism",
+   "verb": "introduces"
+  },
+  {
+   "span": "mechanisms",
+   "concept": "elementary-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "mechanisms",
+   "concept": "reaction-intermediate",
+   "verb": "introduces"
+  },
+  {
+   "span": "mechanisms",
+   "concept": "rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "mechanisms",
+   "concept": "rate-laws-are-experimental",
+   "verb": "uses"
+  },
+  {
+   "span": "unimolecular",
+   "concept": "molecularity",
+   "verb": "introduces"
+  },
+  {
+   "span": "unimolecular",
+   "concept": "unimolecular-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "unimolecular",
+   "concept": "elementary-rate-laws",
+   "verb": "introduces"
+  },
+  {
+   "span": "unimolecular",
+   "concept": "rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "unimolecular",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "unimolecular",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "unimolecular",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "bimolecular",
+   "concept": "bimolecular-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "bimolecular",
+   "concept": "elementary-rate-laws",
+   "verb": "uses"
+  },
+  {
+   "span": "bimolecular",
+   "concept": "molecularity",
+   "verb": "uses"
+  },
+  {
+   "span": "termolecular",
+   "concept": "termolecular-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "termolecular",
+   "concept": "molecularity",
+   "verb": "uses"
+  },
+  {
+   "span": "termolecular",
+   "concept": "elementary-rate-laws",
+   "verb": "uses"
+  },
+  {
+   "span": "rate-determining",
+   "concept": "rate-determining-step",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-determining",
+   "concept": "mechanism-consistent-with-rate-law",
+   "verb": "introduces"
+  },
+  {
+   "span": "rate-determining",
+   "concept": "rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "rate-determining",
+   "concept": "reaction-intermediate",
+   "verb": "uses"
+  },
+  {
+   "span": "rate-determining",
+   "concept": "elementary-rate-laws",
+   "verb": "uses"
+  },
+  {
+   "span": "rate-determining",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "fast-equilibrium",
+   "concept": "rate-law-from-mechanism",
+   "verb": "introduces"
+  },
+  {
+   "span": "fast-equilibrium",
+   "concept": "dynamic-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "fast-equilibrium",
+   "concept": "reaction-intermediate",
+   "verb": "uses"
+  },
+  {
+   "span": "fast-equilibrium",
+   "concept": "rate-determining-step",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm389297024",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-mechanism"
+   },
+   "cite": "fast-equilibrium",
+   "prompt": "The first step of a proposed multistep mechanism is:\n$$\\text{F}_{2}(g)\\rightleftharpoons 2\\text{F}(g)\\;\\text{fast}$$\nDerive the equation relating atomic fluorine concentration to molecular fluorine concentration.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$[\\text{F}]={\\left(\\frac{\\kkone[\\text{F}_{2}]}{\\kkmone}\\right)}^{1/2}$"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm14620304",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "termolecular",
+   "prompt": "Why are elementary reactions involving three or more reactants very uncommon?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: an elementary reaction takes place only when all of its reactant entities meet at the same moment. Compare how often two particles collide with how often a third arrives at that same instant, using the comparison the text gives for termolecular steps, and carry the argument on to four or more particles."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp146992064",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "mechanisms",
+   "prompt": "In general, can we predict the effect of doubling the concentration of <em>A</em> on the rate of the overall reaction $A+B\\;\\longrightarrow \\;C$? Can we predict the effect if the reaction is known to be an elementary reaction?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "No. In general, for the overall reaction, we cannot predict the effect of changing the concentration without knowing the rate law. Yes. If the reaction is an elementary reaction, then doubling the concentration of <em>A</em> doubles the rate."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp48807664",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "mechanisms",
+   "prompt": "Define these terms:<br>(a) unimolecular reaction<br>(b) bimolecular reaction<br>(c) elementary reaction<br>(d) overall reaction",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: define the first two by molecularity, the number of reactant entities an elementary step involves. Say what makes a reaction elementary: it takes place in a single step, exactly as its equation is written. Then describe the overall reaction as the net change the steps of a mechanism add up to, with any intermediate cancelling from the sum."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm4441216",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "termolecular",
+   "prompt": "What is the rate law for the elementary termolecular reaction $A+2B\\;\\longrightarrow \\;\\text{products?}$ For $3A\\;\\longrightarrow \\;\\text{products?}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Rate = <em>k</em>[<em>A</em>][<em>B</em>]<sup>2</sup>; Rate = <em>k</em>[<em>A</em>]<sup>3</sup>"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp38703248",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "mechanisms",
+   "prompt": "Given the following reactions and the corresponding rate laws, in which of the reactions might the elementary reaction and the overall reaction be the same?<br>(a) $\\text{Cl}_{2}+\\text{CO}\\;\\longrightarrow \\;\\text{Cl}_{2}\\text{CO}$, $\\text{rate}=k{[\\text{Cl}_{2}]}^{3/2}[\\text{CO}]$<br>(b) $\\text{PCl}_{3}+\\text{Cl}_{2}\\;\\longrightarrow \\;\\text{PCl}_{5}$, $\\text{rate}=k[\\text{PCl}_{3}][\\text{Cl}_{2}]$<br>(c) $2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}_{2}$, $\\text{rate}=k[\\text{NO}][\\text{H}_{2}]$<br>(d) $2\\text{NO}+\\text{O}_{2}\\;\\longrightarrow \\;2\\text{NO}_{2}$, $\\text{rate}=k{[\\text{NO}]}^{2}[\\text{O}_{2}]$<br>(e) $\\text{NO}+\\text{O}_{3}\\;\\longrightarrow \\;\\text{NO}_{2}+\\text{O}_{2}$, $\\text{rate}=k[\\text{NO}][\\text{O}_{3}]$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: if a reaction were a single elementary step, its rate law could be written from its equation, each concentration raised to the power of that reactant’s coefficient. For each reaction, write the rate law its equation would predict and compare it with the rate law given. Where the two differ, the reaction cannot be a single step; where they agree, a single step is possible, though the agreement does not prove it."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp199466816",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "bimolecular",
+   "prompt": "Write the rate law for each of the following elementary reactions:<br>(a) $\\text{O}_{3}\\overset{\\;\\text{sunlight}\\;}{\\to}\\text{O}_{2}+\\text{O}$<br>(b) $\\text{O}_{3}+\\text{Cl}\\;\\longrightarrow \\;\\text{O}_{2}+\\text{ClO}$<br>(c) $\\text{ClO}+\\text{O}\\;\\longrightarrow \\;\\text{Cl}+\\text{O}_{2}$<br>(d) $\\text{O}_{3}+\\text{NO}\\;\\longrightarrow \\;\\text{NO}_{2}+\\text{O}_{2}$<br>(e) $\\text{NO}_{2}+\\text{O}\\;\\longrightarrow \\;\\text{NO}+\\text{O}_{2}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Rate<sub>1</sub> = <em>k</em>[O<sub>3</sub>]; (b) Rate<sub>2</sub> = <em>k</em>[O<sub>3</sub>][Cl]; (c) Rate<sub>3</sub> = <em>k</em>[ClO][O]; (d) Rate<sub>2</sub> = <em>k</em>[O<sub>3</sub>][NO]; (e) Rate<sub>3</sub> = <em>k</em>[NO<sub>2</sub>][O]"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp63617152",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rate-determining",
+   "prompt": "Nitrogen monoxide, NO, reacts with hydrogen, H<sub>2</sub>, according to the following equation:\n$$2\\text{NO}+2\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+2\\text{H}_{2}\\text{O}$$\nWhat would the rate law be if the mechanism for this reaction were:\n$$\\begin{array}{l}2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}_{2}\\;(\\text{slow}) \\\\ \\text{H}_{2}\\text{O}_{2}+\\text{H}_{2}\\;\\longrightarrow \\;2\\text{H}_{2}\\text{O}\\;(\\text{fast})\\end{array}$$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: the slow first step is the rate-determining step, and when the first step is the slow one, the rate law for the overall reaction is the rate law of that step. Write that step’s rate law from its equation, as for any elementary reaction, and check that the two steps add up to the overall equation."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm20987200",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "rate-determining",
+   "prompt": "Experiments were conducted to study the rate of the reaction represented by this equation.<sup>1</sup>\n$$2\\text{NO}(g)+2\\text{H}_{2}(g)\\;\\longrightarrow \\;\\text{N}_{2}(g)+2\\text{H}_{2}\\text{O}(g)$$\nInitial concentrations and rates of reaction are given here.<table><thead><tr><th>Experiment</th><th>Initial Concentration [NO] (mol L<sup>−1</sup>)</th><th>Initial Concentration, [H<sub>2</sub>] (mol L<sup>−1</sup>)</th><th>Initial Rate of Formation of N<sub>2</sub> (mol L<sup>−1</sup> min<sup>−1</sup>)</th></tr></thead><tbody><tr><td>1</td><td>0.0060</td><td>0.0010</td><td>1.8 × 10<sup>−4</sup></td></tr><tr><td>2</td><td>0.0060</td><td>0.0020</td><td>3.6 × 10<sup>−4</sup></td></tr><tr><td>3</td><td>0.0010</td><td>0.0060</td><td>0.30 × 10<sup>−4</sup></td></tr><tr><td>4</td><td>0.0020</td><td>0.0060</td><td>1.2 × 10<sup>−4</sup></td></tr></tbody></table>Consider the following questions:<br>(a) Determine the order for each of the reactants, NO and H<sub>2</sub>, from the data given and show your reasoning.<br>(b) Write the overall rate law for the reaction.<br>(c) Calculate the value of the rate constant, <em>k</em>, for the reaction. Include units.<br>(d) For experiment 2, calculate the concentration of NO remaining when exactly one-half of the original amount of H<sub>2</sub> had been consumed.<br>(e) The following sequence of elementary steps is a proposed mechanism for the reaction.<br>Step 1: $\\text{NO}+\\text{NO}\\;\\rightleftharpoons \\;\\text{N}_{2}\\text{O}_{2}$<br>Step 2: $\\text{N}_{2}\\text{O}_{2}+\\text{H}_{2}\\;\\rightleftharpoons \\;\\text{H}_{2}\\text{O}+\\text{N}_{2}\\text{O}$<br>Step 3: $\\text{N}_{2}\\text{O}+\\text{H}_{2}\\;\\rightleftharpoons \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}$<br>Based on the data presented, which of these is the rate determining step? Show that the mechanism is consistent with the observed rate law for the reaction and the overall stoichiometry of the reaction.<br><small><sup>1</sup> This question is taken from the Chemistry Advanced Placement Examination and is used with the permission of the Educational Testing Service.</small>",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(c) the rate constant <em>k</em>",
+      "value": 5000.0,
+      "unit": "mol² L⁻² min⁻¹",
+      "hint": "Find the orders by comparing experiments that change one concentration at a time, then solve the rate law for k with the numbers of any one experiment."
+     },
+     {
+      "part": "(d) [NO] remaining in experiment 2",
+      "value": 0.005,
+      "unit": "mol/L",
+      "hint": "The equation uses NO and H<sub>2</sub> in a 2:2 ratio, so each mole of H<sub>2</sub> consumed uses one mole of NO."
+     }
+    ],
+    "solution": "(a) Doubling [H<sub>2</sub>] doubles the rate. [H<sub>2</sub>] must enter the rate law to the first power. Doubling [NO] increases the rate by a factor of 4. [NO] must enter the rate law to the second power. (b) Rate = <em>k</em> [NO]<sup>2</sup>[H<sub>2</sub>]; (c) <em>k</em> = 5.0 × 10<sup>3</sup> mol<sup>2</sup> L<sup>−2</sup> min<sup>−1</sup>; (d) 0.0050 mol/L; (e) Step II is the rate-determining step. If step I gives N<sub>2</sub>O<sub>2</sub> in adequate amount, steps 1 and 2 combine to give $2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{H}_{2}\\text{O}+\\text{N}_{2}\\text{O}.$ This reaction corresponds to the observed rate law. Combine steps 1 and 2 with step 3, which occurs by supposition in a rapid fashion, to give the appropriate stoichiometry."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp225129424",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "fast-equilibrium",
+   "prompt": "The reaction of CO with Cl<sub>2</sub> gives phosgene (COCl<sub>2</sub>), a poisonous gas used as a chemical weapon during World War I. Use the mechanism shown here to complete the following exercises:<br>$\\text{Cl}_{2}(g)\\;\\rightleftharpoons \\;2\\text{Cl}(g)$ (fast, k<sub>1</sub> represents the forward rate constant, <em>k</em><sub>−1</sub> the reverse rate constant)<br>$\\text{CO}(g)+\\text{Cl}(g)\\;\\longrightarrow \\;\\text{COCl}(g)$ (slow, <em>k</em><sub>2</sub> the rate constant)<br>$\\text{COCl}(g)+\\text{Cl}(g)\\;\\longrightarrow \\;\\text{COCl}_{2}(g)$ (fast, <em>k</em><sub>3</sub> the rate constant)<br>(a) Write the overall reaction.<br>(b) Identify all intermediates.<br>(c) Write the rate law for each elementary reaction.<br>(d) Write the overall rate law expression.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: (a) add the three steps, counting the first step’s two chlorine atoms, and cancel whatever appears on both sides. (b) The species made in one step and used up in a later one are the intermediates. (c) Write each elementary step’s rate law from its equation, the reverse of the first step included. (d) The slow second step sets the rate, but its rate law contains an intermediate; express that intermediate’s concentration through the fast equilibrium of the first step, as in Example 12.14, and substitute it."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "rate-law-from-mechanism"
+  },
+  {
+   "exercise": "e1",
+   "concept": "termolecular-reaction"
+  },
+  {
+   "exercise": "e1",
+   "concept": "molecularity"
+  },
+  {
+   "exercise": "e2",
+   "concept": "elementary-rate-laws"
+  },
+  {
+   "exercise": "e2",
+   "concept": "rate-laws-are-experimental"
+  },
+  {
+   "exercise": "e3",
+   "concept": "unimolecular-reaction"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bimolecular-reaction"
+  },
+  {
+   "exercise": "e3",
+   "concept": "elementary-reaction"
+  },
+  {
+   "exercise": "e3",
+   "concept": "reaction-mechanism"
+  },
+  {
+   "exercise": "e4",
+   "concept": "elementary-rate-laws"
+  },
+  {
+   "exercise": "e4",
+   "concept": "termolecular-reaction"
+  },
+  {
+   "exercise": "e5",
+   "concept": "elementary-rate-laws"
+  },
+  {
+   "exercise": "e5",
+   "concept": "mechanism-consistent-with-rate-law"
+  },
+  {
+   "exercise": "e6",
+   "concept": "elementary-rate-laws"
+  },
+  {
+   "exercise": "e6",
+   "concept": "unimolecular-reaction"
+  },
+  {
+   "exercise": "e6",
+   "concept": "bimolecular-reaction"
+  },
+  {
+   "exercise": "e7",
+   "concept": "rate-determining-step"
+  },
+  {
+   "exercise": "e7",
+   "concept": "elementary-rate-laws"
+  },
+  {
+   "exercise": "e8",
+   "concept": "method-of-initial-rates"
+  },
+  {
+   "exercise": "e8",
+   "concept": "rate-law"
+  },
+  {
+   "exercise": "e8",
+   "concept": "rate-determining-step"
+  },
+  {
+   "exercise": "e8",
+   "concept": "mechanism-consistent-with-rate-law"
+  },
+  {
+   "exercise": "e9",
+   "concept": "rate-law-from-mechanism"
+  },
+  {
+   "exercise": "e9",
+   "concept": "reaction-intermediate"
+  },
+  {
+   "exercise": "e9",
+   "concept": "elementary-rate-laws"
+  }
+ ],
+ "referents": []
+}

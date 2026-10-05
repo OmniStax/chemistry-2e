@@ -1,0 +1,1204 @@
+{
+ "id": "19.1",
+ "module": "m68842",
+ "chapter": "19",
+ "title": "Occurrence, Preparation, and Properties of Transition Metals and Their Compounds",
+ "short": "Transition Metals",
+ "lead": "The transition metals, with their partially filled <em>d</em> orbitals, fill the middle of the periodic table, and the inner transition metals stand in the two rows beneath it. The section describes their reactivity and many oxidation states, how iron, copper and silver are isolated from their ores, and the halides, oxides, hydroxides, carbonates and other salts the metals form, closing on the superconducting oxides of copper.",
+ "summary_html": "<p>The <span data-concept=\"transition-metal\">transition metals</span> are elements with partially filled <em>d</em> orbitals, located in the <span data-concept=\"d-block-element\"><em>d</em>-block</span> of the periodic table. The reactivity of the transition elements varies widely from very active metals such as scandium and iron to almost inert elements, such as the <span data-concept=\"platinum-metals\">platinum metals</span>. The type of chemistry used in the isolation of the elements from their ores depends upon the concentration of the element in its ore and the difficulty of reducing ions of the elements to the metals. Metals that are more active are more difficult to reduce.</p><p>Transition metals exhibit chemical behavior typical of metals. For example, they oxidize in air upon heating and react with elemental <span data-concept=\"halogen\">halogens</span> to form <span data-concept=\"halide\">halides</span>. Those elements that lie above hydrogen in the activity series react with <span data-concept=\"acid\">acids</span>, producing <span data-concept=\"salt\">salts</span> and hydrogen gas. Oxides, hydroxides, and carbonates of transition metal compounds in low <span data-concept=\"oxidation-number\">oxidation states</span> are basic. Halides and other salts are generally stable in water, although oxygen must be excluded in some cases. Most transition metals form a variety of stable oxidation states, allowing them to demonstrate a wide range of chemical reactivity.</p>",
+ "notes": "The section’s opening, which the book prints without a header, carries one of OmniStax’s own, and the two Link to Learning notes, an animation of steelmaking and a video of a superconductor levitating round a magnetic racetrack, are left out. It keeps as printed “Hydrology involves the separation”, “it often useful to employ”, “zinc or iron(II) ions, which serves as the reducing agent”, “dicyanoargenate(I)” in Example 19.3, the unbalanced permanganate half-reaction of Example 19.2, the reduction potentials cited to Appendix H, and “Bismouth-Strontium-Copper-Oxides”.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idm194766704 (the electron configurations of titanium and its ions), fs-idm283106000 (the volume of air per ton of Fe₂O₃ in a blast furnace), fs-idm34793824 (the percent chloride of an alkali metal chloride), fs-idm227700608 (the products of six reactions), fs-idm343897984 (the gas from iron(II) sulfide and an acid) and fs-idm34789712 (an equation to balance) are left out, and no answer is computed for them. The key to fs-idm278997936 answers part (b) for TiCl₃ and CrO₄²⁻ and part (f) for CrCl₃, where the prompt names FeCl₂ with Cr₂O₇²⁻ and FeCl₃; it is carried as printed. Kept as printed: “VO₄³” in fs-idm218727072, “3Cl⁺” in the key to fs-idp5436400, and “MnO⁴⁻” and “5Fe₃” in the key to fs-idm232830240. Nothing is moved.",
+ "figures": [
+  {
+   "id": "sim-transition-series",
+   "kind": "sim",
+   "number": "19.2",
+   "originals": [
+    "/media/ch19/CNX_Chem_19_01_PeriodicEConfig.jpg"
+   ],
+   "original_caption": "The transition metals are located in groups 3–11 of the periodic table. The inner transition metals are in the two rows below the body of the table.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-lanthanoid",
+   "kind": "photo",
+   "number": "19.3",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-oxidation-states",
+   "kind": "sim",
+   "number": "19.4",
+   "originals": [
+    "/media/ch19/CNX_Chem_19_01_Oxistatra.jpg"
+   ],
+   "original_caption": "Transition metals of the first transition series can form compounds with varying oxidation states.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-native-metals",
+   "kind": "photo",
+   "number": "19.5",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-blast-furnace",
+   "kind": "sim",
+   "number": "19.6",
+   "originals": [
+    "/media/ch19/CNX_Chem_19_01_BlastFurn.jpg"
+   ],
+   "original_caption": "Within a blast furnace, different reactions occur in different temperature zones. Carbon monoxide is generated in the hotter bottom regions and rises upward to reduce the iron oxides to pure iron through a series of reactions that take place in the upper regions.",
+   "draws": [
+    "length",
+    "temperature"
+   ],
+   "conventions": [
+    "Fe",
+    "C",
+    "Ca",
+    "O"
+   ],
+   "facts": [
+    "#ff8c1a",
+    "#ffd24d"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-molten-steel",
+   "kind": "photo",
+   "number": "19.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-blister-copper",
+   "kind": "photo",
+   "number": "19.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-silver",
+   "kind": "photo",
+   "number": "19.9",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-superconductor",
+   "kind": "sim",
+   "number": "19.10",
+   "originals": [
+    "/media/ch19/CNX_Chem_19_01_ResTemp.jpg"
+   ],
+   "original_caption": "The resistance of the high-temperature superconductor YBa₂Cu₃O₇ varies with temperature. Note how the resistance falls to zero below 92 K, when the substance becomes superconducting.",
+   "draws": [
+    "temperature"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-maglev",
+   "kind": "photo",
+   "number": "19.11",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "transition",
+   "concept": "d-block-element",
+   "verb": "introduces"
+  },
+  {
+   "span": "transition",
+   "concept": "f-block-element",
+   "verb": "introduces"
+  },
+  {
+   "span": "transition",
+   "concept": "transition-series",
+   "verb": "introduces"
+  },
+  {
+   "span": "transition",
+   "concept": "coordination-compound",
+   "verb": "introduces"
+  },
+  {
+   "span": "transition",
+   "concept": "transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "inner-transition-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "lanthanide",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "actinide",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "electron-configuration",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "ion-configurations",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "main-group-element",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "transition",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "lanthanides-devices",
+   "concept": "rare-earth-element",
+   "verb": "introduces"
+  },
+  {
+   "span": "lanthanides-devices",
+   "concept": "lanthanide",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "transition-metal-reactivity",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "platinum-metals",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "transition-metal-oxidation-states",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "half-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "lanthanide",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "alkaline-earth-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxyanion",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "halide",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "acid",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "valence-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "transition-series",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "smelting",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "isolating-transition-metals",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "iron",
+   "concept": "blast-furnace",
+   "verb": "introduces"
+  },
+  {
+   "span": "iron",
+   "concept": "steel",
+   "verb": "introduces"
+  },
+  {
+   "span": "iron",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "iron",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "iron",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "copper",
+   "concept": "copper-isolation",
+   "verb": "introduces"
+  },
+  {
+   "span": "copper",
+   "concept": "lewis-acids-and-bases",
+   "verb": "uses"
+  },
+  {
+   "span": "copper",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "copper",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "copper",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "silver",
+   "concept": "hydrometallurgy",
+   "verb": "introduces"
+  },
+  {
+   "span": "silver",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "silver",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "silver",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "transition-metal-compounds",
+   "verb": "introduces"
+  },
+  {
+   "span": "compounds",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "ionic-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "halide",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "bond-polarity",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "ionic-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "amphoteric",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "oxyanion",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "precipitate",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "net-ionic-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "complex-ion",
+   "verb": "uses"
+  },
+  {
+   "span": "superconductors",
+   "concept": "superconductor",
+   "verb": "introduces"
+  },
+  {
+   "span": "superconductors",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "superconductors",
+   "concept": "boiling-point",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm42300304",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-valence-electrons"
+   },
+   "cite": "transition",
+   "prompt": "Give an example of an ion from the first transition series with no <em>d</em> electrons.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "V<sup>5+</sup> is one possibility. Other examples include Sc<sup>3+</sup>, Ti<sup>4+</sup>, Cr<sup>6+</sup>, and Mn<sup>7+</sup>."
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm126999824",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-activity"
+   },
+   "cite": "properties",
+   "prompt": "Predict what reaction (if any) will occur between HCl and Co(<em>s</em>), and between HBr and Pt(<em>s</em>). You will need to use the standard reduction potentials from Appendix L.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\text{Co}(s)+\\text{2HCl}\\;\\longrightarrow \\;{\\text{H}}_{2}+{\\text{CoCl}}_{2}(aq);$ no reaction because Pt(<em>s</em>) will not be oxidized by H<sup>+</sup>"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm273943792",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-refining-redox"
+   },
+   "cite": "silver",
+   "prompt": "During the refining of iron, carbon must be present in the blast furnace. Why is carbon necessary to convert iron oxide into iron?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The carbon is converted into CO, which is the reducing agent that accepts electrons so that iron(III) can be reduced to iron(0)."
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm283590960",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "transition",
+   "prompt": "Write the electron configurations for each of the following elements:<br>(a) Sc<br>(b) Ti<br>(c) Cr<br>(d) Fe<br>(e) Ru",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Sc: [Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>1</sup>; (b) Ti: [Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>2</sup>; (c) Cr: [Ar]4<em>s</em><sup>1</sup>3<em>d</em><sup>5</sup>; (d) Fe: [Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>6</sup>; (e) Ru: [Kr]5<em>s</em><sup>2</sup>4<em>d</em><sup>6</sup>"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm288603744",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "transition",
+   "prompt": "Write the electron configurations for each of the following elements and its 3+ ions:<br>(a) La<br>(b) Sm<br>(c) Lu",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) La: [Xe]6<em>s</em><sup>2</sup>5<em>d</em><sup>1</sup>, La<sup>3+</sup>: [Xe]; (b) Sm: [Xe]6<em>s</em><sup>2</sup>4<em>f</em><sup>6</sup>, Sm<sup>3+</sup>: [Xe]4<em>f</em><sup>5</sup>; (c) Lu: [Xe]6<em>s</em><sup>2</sup>4<em>f</em><sup>14</sup>5<em>d</em><sup>1</sup>, Lu<sup>3+</sup>: [Xe]4<em>f</em><sup>14</sup>"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm115085520",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "lanthanides-devices",
+   "prompt": "Why are the lanthanoid elements not found in nature in their elemental forms?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall how readily the lanthanides are oxidized, forming stable 3+ cations as the alkaline earth metals form 2+ ones, and ask what such a metal becomes when it meets the oxygen and water of the earth’s crust."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm224206832",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "Which of the following elements is most likely to be used to prepare La by the reduction of La<sub>2</sub>O<sub>3</sub>: Al, C, or Fe? Why?",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Al",
+     "C",
+     "Fe"
+    ],
+    "correct": 0,
+    "solution": "Al is used because it is the strongest reducing agent and the only option listed that can provide sufficient driving force to convert La(III) into La."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm218727072",
+   "source_number": "6",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Which of the following is the strongest oxidizing agent: ${\\text{VO}}_{4}{}^{3},$ ${\\text{CrO}}_{4}{}^{2−},$ or ${\\text{MnO}}_{4}{}^{\\text{−}}\\text{?}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: find the oxidation state of the metal in each oxyanion, then compare the reduction potentials of the ions in acid solution in Appendix L; the ion most easily reduced is the strongest oxidizing agent."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm121393200",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Which of the following elements is most likely to form an oxide with the formula MO<sub>3</sub>: Zr, Nb, or Mo?",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Zr",
+     "Nb",
+     "Mo"
+    ],
+    "correct": 2,
+    "solution": "Mo"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm111525632",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "iron",
+   "prompt": "The following reactions all occur in a blast furnace. Which of these are redox reactions?<br>(a) ${\\text{3Fe}}_{2}{\\text{O}}_{3}(s)+\\text{CO}(g)\\;\\longrightarrow \\;{\\text{2Fe}}_{3}{\\text{O}}_{4}(s)+{\\text{CO}}_{2}(g)$<br>(b) ${\\text{Fe}}_{3}{\\text{O}}_{4}(s)+\\text{CO}(g)\\;\\longrightarrow \\;\\text{3FeO}(s)+{\\text{CO}}_{2}(g)$<br>(c) $\\text{FeO}(s)+\\text{CO}(g)\\;\\longrightarrow \\;\\text{Fe}(l)+{\\text{CO}}_{2}(g)$<br>(d) $\\text{C}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)$<br>(e) $\\text{C}(s)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;\\text{2CO}(g)$<br>(f) ${\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\;\\text{CaO}(s)+{\\text{CO}}_{2}(g)$<br>(g) $\\text{CaO}(s)+{\\text{SiO}}_{2}(s)\\;\\longrightarrow \\;{\\text{CaSiO}}_{3}(l)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: assign an oxidation number to every element on both sides of each equation; a reaction in which the oxidation number of any element changes is a redox reaction."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm18229840",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "iron",
+   "prompt": "Why is the formation of slag useful during the smelting of iron?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The CaSiO<sub>3</sub> slag is less dense than the molten iron, so it can easily be separated. Also, the floating slag layer creates a barrier that prevents the molten iron from exposure to O<sub>2</sub>, which would oxidize the Fe back to Fe<sub>2</sub>O<sub>3</sub>."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm217295232",
+   "source_number": "10",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "Would you expect an aqueous manganese(VII) oxide solution to have a pH greater or less than 7.0? Justify your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall how the acid-base character of a transition metal oxide changes with the oxidation state of the metal, and what manganese(VII) oxide forms when it reacts with water."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm275915200",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "Iron(II) can be oxidized to iron(III) by dichromate ion, which is reduced to chromium(III) in acid solution. A <span data-type=\"mass\">2.5000-g</span> sample of iron ore is dissolved and the iron converted into iron(II). Exactly <span data-type=\"volume\">19.17 mL</span> of <span data-type=\"concentration\">0.0100 <em>M</em></span> Na<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> is required in the titration. What percentage of the ore sample was iron?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 2.57,
+    "unit": "%",
+    "tol": 0.01,
+    "solution": "2.57%"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm246626224",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Find the potentials of the following electrochemical cell:<br>Cd | Cd<sup>2+</sup>, <em>M</em> = 0.10 ‖ Ni<sup>2+</sup>, <em>M</em> = 0.50 | Ni",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.167,
+    "unit": "V",
+    "tol": 0.01,
+    "solution": "0.167 V"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm124442480",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "The standard reduction potential for the reaction ${[\\text{Co}{({\\text{H}}_{2}\\text{O})}_{6}]}^{3+}(aq)+{\\text{e}}^{-}\\;\\longrightarrow \\;{[{\\text{Co}(\\text{H}}_{2}\\text{O}{)}_{6}]}^{2+}(aq)$ is about 1.8 V. The reduction potential for the reaction ${[\\text{Co}{({\\text{NH}}_{3})}_{6}]}^{3+}(aq)+{\\text{e}}^{-}\\;\\longrightarrow \\;{[\\text{Co}{({\\text{NH}}_{3})}_{6}]}^{2+}(aq)$ is +0.1 V. Calculate the cell potentials to show whether the complex ions, [Co(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> and/or [Co(NH<sub>3</sub>)<sub>6</sub>]<sup>2+</sup>, can be oxidized to the corresponding cobalt(III) complex by oxygen.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<em>E</em>° = −0.6 V, <em>E</em>° is negative so this reduction is not spontaneous. <em>E</em>° = +1.1 V"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp5436400",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "Predict the products of each of the following reactions. (Note: In addition to using the information in this chapter, also use the knowledge you have accumulated at this stage of your study, including information on the prediction of reaction products.)<br>(a) $\\text{Fe}(s)+{\\text{H}}_{2}{\\text{SO}}_{4}(aq)\\;\\longrightarrow$<br>(b) ${\\text{FeCl}}_{3}(aq)+\\text{NaOH}(aq)\\;\\longrightarrow$<br>(c) $\\text{Mn}{(\\text{OH})}_{2}(s)+\\text{HBr}(aq)\\;\\longrightarrow$<br>(d) $\\text{Cr}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow$<br>(e) ${\\text{Mn}}_{2}{\\text{O}}_{3}(s)+\\text{HCl}(aq)\\longrightarrow$<br>(f) $\\text{Ti}(s)+xs{\\text{F}}_{2}(g)\\;\\longrightarrow$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $\\text{Fe}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{2+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)+{\\text{H}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l);$ (b) ${\\text{FeCl}}_{3}(aq)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\text{Fe}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3Cl}}^{\\text{+}}(aq);$ (c) $\\text{Mn}{(\\text{OH})}_{2}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{2Br}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)+{\\text{2Br}}^{\\text{−}}(aq)+4{\\text{H}}_{2}\\text{O}(l);$ (d) $\\text{4Cr}(s)+3{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{Cr}}_{2}{\\text{O}}_{3}(s);$ (e) ${\\text{Mn}}_{2}{\\text{O}}_{3}(s)+6{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{6Cl}}^{\\text{−}}(aq)\\;\\longrightarrow \\;2{\\text{MnCl}}_{3}(s)+9{\\text{H}}_{2}\\text{O}(l);$ (f) $\\text{Ti}(s)+xs{\\text{F}}_{2}(g)\\;\\longrightarrow \\;{\\text{TiF}}_{4}(g)$"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idm271102160",
+   "source_number": "18",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "copper",
+   "prompt": "Describe the electrolytic process for refining copper.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall from the chapter on electrochemistry how a plate of impure blister copper serves as the anode of an electrolytic cell with a cathode of pure copper, and describe what happens to the copper and to its impurities at each electrode."
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idm278997936",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "Predict the products of the following reactions and balance the equations.<br>(a) Zn is added to a solution of Cr<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> in acid.<br>(b) FeCl<sub>2</sub> is added to a solution containing an excess of ${\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−}$ in hydrochloric acid.<br>(c) Cr<sup>2+</sup> is added to ${\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−}$ in acid solution.<br>(d) Mn is heated with CrO<sub>3</sub>.<br>(e) CrO is added to 2HNO<sub>3</sub> in water.<br>(f) FeCl<sub>3</sub> is added to an aqueous solution of NaOH.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${\\text{Cr}}_{2}{({\\text{SO}}_{4})}_{3}(aq)+\\text{2Zn}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{2Zn}}^{2+}(aq)+{\\text{H}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l)+{\\text{2Cr}}^{2+}(aq)+{\\text{3SO}}_{4}{}^{2−}(aq);$ (b) ${\\text{4TiCl}}_{3}(s)+{\\text{CrO}}_{4}{}^{2−}(aq)+{\\text{8H}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{4Ti}}^{4+}(aq)+\\text{Cr}(s)+{\\text{4H}}_{2}\\text{O}(l)+{\\text{12Cl}}^{\\text{−}}(aq);$ (c) In acid solution between pH 2 and pH 6, ${\\text{CrO}}_{4}{}^{2−}$ forms ${\\text{HCrO}}_{4}{}^{\\text{−}},$ which is in equilibrium with dichromate ion. The reaction is ${\\text{2HCrO}}_{4}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−}(aq)+{\\text{H}}_{2}\\text{O}(l).$ At other acidic pHs, the reaction is ${\\text{3Cr}}^{2+}(aq)+{\\text{CrO}}_{4}{}^{2−}(aq)+{\\text{8H}}_{3}{\\text{O}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{4Cr}}^{3+}(aq)+{\\text{12H}}_{2}\\text{O}(l);$ (d) ${\\text{8CrO}}_{3}(s)+\\text{9Mn}(s)\\;\\overset{\\text{Δ}}{\\longrightarrow}\\;{\\text{4Cr}}_{2}{\\text{O}}_{3}(s)+{\\text{3Mn}}_{3}{\\text{O}}_{4}(s);$ (e) $\\text{CrO}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{2NO}}_{3}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Cr}}^{2+}(aq)+{\\text{2NO}}_{3}{}^{\\text{−}}(aq)+{\\text{3H}}_{2}\\text{O}(l);$ (f) ${\\text{CrCl}}_{3}(s)+\\text{3NaOH}(aq)\\;\\longrightarrow \\;\\text{Cr}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3Cl}}^{\\text{−}}(aq)$"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idm232830240",
+   "source_number": "21",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "Predict the products of each of the following reactions and then balance the chemical equations.<br>(a) Fe is heated in an atmosphere of steam.<br>(b) NaOH is added to a solution of Fe(NO<sub>3</sub>)<sub>3</sub>.<br>(c) FeSO<sub>4</sub> is added to an acidic solution of KMnO<sub>4</sub>.<br>(d) Fe is added to a dilute solution of H<sub>2</sub>SO<sub>4</sub>.<br>(e) A solution of Fe(NO<sub>3</sub>)<sub>2</sub> and HNO<sub>3</sub> is allowed to stand in air.<br>(f) FeCO<sub>3</sub> is added to a solution of HClO<sub>4</sub>.<br>(g) Fe is heated in air.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $\\text{3Fe}(s)+{\\text{4H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{Fe}}_{3}{\\text{O}}_{4}(s)+{\\text{4H}}_{2}(g);$ (b) $\\text{3NaOH}(aq)+\\text{Fe}{({\\text{NO}}_{3})}_{3}(aq)\\;\\overset{\\;{\\text{H}}_{2}\\text{O}\\;}{\\to}\\;\\text{Fe}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+3{\\text{NO}}_{3}{}^{\\text{−}}(aq);$ (c) $\\text{MnO}{}^{4−}+5{\\text{Fe}}^{\\text{2+}}+8{\\text{H}}^{\\text{+}}\\;\\longrightarrow \\;\\text{Mn}{}^{\\text{2+}}+5{\\text{Fe}}_{3}+4{\\text{H}}_{2}\\text{O};$ (d) $\\text{Fe}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{2+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)+{\\text{H}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l);$ (e) ${\\text{4Fe}}^{2+}(aq)+{\\text{O}}_{2}(g)+{\\text{4HNO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{4Fe}}^{3+}(aq)+{\\text{2H}}_{2}\\text{O}(l)+{\\text{4NO}}_{3}{}^{\\text{−}}(aq);$ (f) ${\\text{FeCO}}_{3}(s)+{\\text{2HClO}}_{4}(aq)\\;\\longrightarrow \\;\\text{Fe}{({\\text{ClO}}_{4})}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)+{\\text{CO}}_{2}(g);$ (g) $\\text{3Fe}(s)+{\\text{2O}}_{2}(g)\\;\\overset{\\;\\text{Δ}\\;}{\\longrightarrow}\\;{\\text{Fe}}_{3}{\\text{O}}_{4}(s)$"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idm186859104",
+   "source_number": "23",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "silver",
+   "prompt": "Dilute sodium cyanide solution is slowly dripped into a slowly stirred silver nitrate solution. A white precipitate forms temporarily but dissolves as the addition of sodium cyanide continues. Use chemical equations to explain this observation. Silver cyanide is similar to silver chloride in its solubility.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "As CN<sup>−</sup> is added,<br>${\\text{Ag}}^{\\text{+}}(aq)+{\\text{CN}}^{\\text{−}}(aq)\\;\\longrightarrow \\;\\text{AgCN}(s)$<br>As more CN<sup>−</sup> is added,<br>$\\begin{array}{l}{\\text{Ag}}^{\\text{+}}(aq)+2{\\text{CN}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{[\\text{Ag}{\\text{(CN)}}_{2}]}^{\\text{−}}(aq) \\\\ \\text{AgCN}(s)+{\\text{CN}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{[\\text{Ag}{\\text{(CN)}}_{2}]}^{\\text{−}}(aq)\\end{array}$"
+   }
+  },
+  {
+   "id": "e24",
+   "source_id": "fs-idm229701392",
+   "source_number": "24",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Predict which will be more stable, [CrO<sub>4</sub>]<sup>2−</sup> or [WO<sub>4</sub>]<sup>2−</sup>, and explain.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall how the stability of the higher oxidation states changes down a group of the transition elements, and compare chromium and tungsten, both in group 6 and both in the 6+ state in these ions."
+   }
+  },
+  {
+   "id": "e25",
+   "source_id": "fs-idm159717696",
+   "source_number": "25",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "Give the oxidation state of the metal for each of the following oxides of the first transition series. (Hint: Oxides of formula M<sub>3</sub>O<sub>4</sub> are examples of <em>mixed valence compounds</em> in which the metal ion is present in more than one oxidation state. It is possible to write these compound formulas in the equivalent format MO·M<sub>2</sub>O<sub>3</sub>, to permit estimation of the metal’s two oxidation states.)<br>(a) Sc<sub>2</sub>O<sub>3</sub><br>(b) TiO<sub>2</sub><br>(c) V<sub>2</sub>O<sub>5</sub><br>(d) CrO<sub>3</sub><br>(e) MnO<sub>2</sub><br>(f) Fe<sub>3</sub>O<sub>4</sub><br>(g) Co<sub>3</sub>O<sub>4</sub><br>(h) NiO<br>(i) Cu<sub>2</sub>O",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Sc<sup>3+</sup>; (b) Ti<sup>4+</sup>; (c) V<sup>5+</sup>; (d) Cr<sup>6+</sup>; (e) Mn<sup>4+</sup>; (f) Fe<sup>2+</sup> and Fe<sup>3+</sup>; (g) Co<sup>2+</sup> and Co<sup>3+</sup>; (h) Ni<sup>2+</sup>; (i) Cu<sup>+</sup>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "electron-configuration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "transition-series",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "electron-configuration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ion-configurations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "lanthanide",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "lanthanide",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e4",
+   "concept": "transition-metal-reactivity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "isolating-transition-metals",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "reducing-agent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "oxidizing-agent",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "standard-electrode-potential",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "transition-series",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "redox-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "oxidation-number",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "blast-furnace",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "blast-furnace",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "smelting",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "acid",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "redox-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "standard-electrode-potential",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "transition-metal-reactivity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "standard-electrode-potential",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "complex-ion",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "net-ionic-equation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e18",
+   "concept": "copper-isolation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e18",
+   "concept": "electrolysis",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "redox-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e21",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e21",
+   "concept": "redox-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "hydrometallurgy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "complex-ion",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e23",
+   "concept": "precipitate",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e24",
+   "concept": "transition-metal-oxidation-states",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e24",
+   "concept": "transition-series",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "oxidation-number",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e25",
+   "concept": "transition-metal-compounds",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "ion-configurations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "transition-series",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "transition-metal-reactivity",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "standard-electrode-potential",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "blast-furnace",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "reducing-agent",
+   "weights_by": "ai"
+  }
+ ]
+}

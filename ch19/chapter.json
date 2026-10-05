@@ -91,6 +91,13 @@
    "meaning": "Planck’s constant, 6.63 × 10⁻³⁴ J s",
    "unit": "J s",
    "section": "19.3"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature of a superconducting material, such as YBa₂Cu₃O₇ below 92 K",
+   "unit": "K",
+   "section": "19.1"
   }
  ]
 }

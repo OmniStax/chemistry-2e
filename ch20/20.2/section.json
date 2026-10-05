@@ -1,0 +1,520 @@
+{
+  "id": "20.2",
+  "module": "m68847",
+  "chapter": "20",
+  "title": "Alcohols and Ethers",
+  "short": "Alcohols and Ethers",
+  "lead": "<span data-concept=\"alcohol\">Alcohols</span> and <span data-concept=\"ether\">ethers</span> are the families made when oxygen joins a <span data-concept=\"hydrocarbon\">hydrocarbon</span> by single bonds: an –OH group in place of a hydrogen atom in an alcohol, an oxygen atom between two carbon atoms in an ether. How each is made and named is set out here, with the sugars, whose alcohol groups and ether links make them <span data-concept=\"carbohydrate\">carbohydrates</span>.",
+  "objectives": [
+    "Describe the structure and properties of alcohols",
+    "Describe the structure and properties of ethers",
+    "Name and draw structures for alcohols and ethers"
+  ],
+  "summary_html": "<p>Many organic compounds that are not <span data-concept=\"hydrocarbon\">hydrocarbons</span> can be thought of as derivatives of hydrocarbons. A hydrocarbon derivative can be formed by replacing one or more hydrogen atoms of a hydrocarbon by a <span data-concept=\"functional-group\">functional group</span>, which contains at least one atom of an element other than carbon or hydrogen. The properties of hydrocarbon derivatives are determined largely by the functional group. The –OH group is the functional group of an <span data-concept=\"alcohol\">alcohol</span>. The –R–O–R– group is the functional group of an <span data-concept=\"ether\">ether</span>.</p>",
+  "notes": "The Link to Learning note pointing to a video review of naming ethers is left out. The section keeps as printed “the compound shown in Example 20.9” for the methoxyethane drawn before it, “ethylmethyl ether” and “isopropylmethyl ether” written as one word, and the summary’s “–R–O–R– group”.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The four unkeyed exercises fs-idm8644288 (IUPAC names of three alcohols), fs-idm35115392 (condensed structures of the two isomers of C₂H₆O), fs-idm78429600 (condensed formulas of three compounds) and fs-idp5902704 (balanced equations for two reactions) are left out, and no answer is computed for them. The unkeyed conceptual exercise fs-idm36106080 carries a suggested approach marked as OmniStax’s own. The key to fs-idm20515632 writes “l,2,3-trihydroxypropane” with a letter l, as printed. Nothing is moved.",
+  "figures": [
+    {
+      "id": "fig-fermentation",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-ethylene-hydration",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-polyols",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-pentanol",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-methoxyethane",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-diethyl-ether",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-oxygen-chain",
+      "kind": "sim",
+      "draws": [],
+      "conventions": [
+        "C",
+        "H",
+        "O"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-diethyl-ether-synthesis",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-sugars",
+      "kind": "photo",
+      "number": "20.12",
+      "draws": []
+    },
+    {
+      "id": "fig-diabetes",
+      "kind": "photo",
+      "number": "20.13",
+      "draws": []
+    }
+  ],
+  "coverage": [
+    {
+      "span": "alcohols",
+      "concept": "hydrocarbon-derivative",
+      "verb": "introduces"
+    },
+    {
+      "span": "alcohols",
+      "concept": "alcohol",
+      "verb": "introduces"
+    },
+    {
+      "span": "alcohols",
+      "concept": "preparing-alcohols",
+      "verb": "introduces"
+    },
+    {
+      "span": "alcohols",
+      "concept": "functional-group",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "hydrocarbon",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "base",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "ionic-compounds",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "covalent-bond",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "addition-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "alkene",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "catalyst",
+      "verb": "uses"
+    },
+    {
+      "span": "alcohols",
+      "concept": "solvent",
+      "verb": "uses"
+    },
+    {
+      "span": "naming-alcohols",
+      "concept": "naming-alcohols",
+      "verb": "introduces"
+    },
+    {
+      "span": "naming-alcohols",
+      "concept": "alcohol",
+      "verb": "uses"
+    },
+    {
+      "span": "naming-alcohols",
+      "concept": "naming-alkanes",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-naming-alcohols",
+      "concept": "naming-alcohols",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "ether",
+      "verb": "introduces"
+    },
+    {
+      "span": "ethers",
+      "concept": "naming-ethers",
+      "verb": "introduces"
+    },
+    {
+      "span": "ethers",
+      "concept": "ethers-from-alcohols",
+      "verb": "introduces"
+    },
+    {
+      "span": "ethers",
+      "concept": "functional-group",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "substituent",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "alkyl-group",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "naming-alkanes",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "structural-isomer",
+      "verb": "uses"
+    },
+    {
+      "span": "ethers",
+      "concept": "solvent",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-naming-ethers",
+      "concept": "naming-ethers",
+      "verb": "uses"
+    },
+    {
+      "span": "carbohydrates",
+      "concept": "carbohydrate",
+      "verb": "introduces"
+    },
+    {
+      "span": "carbohydrates",
+      "concept": "alcohol",
+      "verb": "uses"
+    },
+    {
+      "span": "carbohydrates",
+      "concept": "ether",
+      "verb": "uses"
+    },
+    {
+      "span": "carbohydrates",
+      "concept": "polymer",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm9024448",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-naming-alcohols"
+      },
+      "cite": "naming-alcohols",
+      "figure": {
+        "src": "/media/ch20/CNX_Chem_20_02_alcohol2_img.jpg",
+        "alt": "The structure shown has a C H subscript 3 group bonded up and to the right to a C atom. The C atom is bonded down and to the right to a C H subscript 2 group. The C H subscript 2 group is bonded up and to the right to a C H subscript 2 group. The C H subscript 2 group is bonded down and to the right to a C H subscript 3 group. The second C atom (from left to right) is bonded to a C H subscript 3 group and an O H group."
+      },
+      "prompt": "Name the following molecule:",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "2-methyl-2-pentanol"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm48177328",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-naming-ethers"
+      },
+      "cite": "ethers",
+      "figure": {
+        "src": "/media/ch20/CNX_Chem_20_02_ethers2_img.jpg",
+        "alt": "A molecular structure shows a C H subscript 3 group bonded up and to the right to an O atom. The O atom is bonded down and to the right to a C H group. The C H group is bonded up and to the right to a C H subscript 3 group. The C H group is also bonded down and to the right to another C H subscript 3 group."
+      },
+      "prompt": "Provide the IUPAC and common name for the ether shown:",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "IUPAC: 2-methoxypropane; common: isopropylmethyl ether"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm36106080",
+      "source_number": "30",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "naming-alcohols",
+      "prompt": "Why do the compounds hexane, hexanol, and hexene have such similar names?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: take each name apart. The stem <em>hex-</em> is the same in all three because each comes from the same chain of six carbon atoms; the ending is what tells the families apart, <em>-ane</em> for the alkane with only single bonds, <em>-ene</em> for the alkene with a carbon–carbon double bond, and <em>-ol</em> for the alcohol with an –OH group in place of a hydrogen atom."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm20515632",
+      "source_number": "31",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "naming-alcohols",
+      "prompt": "Write condensed formulas and provide IUPAC names for the following compounds:<br>(a) ethyl alcohol (in beverages)<br>(b) methyl alcohol (used as a solvent, for example, in shellac)<br>(c) ethylene glycol (antifreeze)<br>(d) isopropyl alcohol (used in rubbing alcohol)<br>(e) glycerine",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) ethyl alcohol, ethanol: CH<sub>3</sub>CH<sub>2</sub>OH; (b) methyl alcohol, methanol: CH<sub>3</sub>OH; (c) ethylene glycol, ethanediol: HOCH<sub>2</sub>CH<sub>2</sub>OH; (d) isopropyl alcohol, 2-propanol: CH<sub>3</sub>CH(OH)CH<sub>3</sub>; (e) glycerine, l,2,3-trihydroxypropane: HOCH<sub>2</sub>CH(OH)CH<sub>2</sub>OH"
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm78442848",
+      "source_number": "33",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ethers",
+      "prompt": "Give the complete IUPAC name and the common name for each of the following compounds:<br>(a) <img src=\"/media/ch20/CNX_Chem_20_02_Exercise4a_img.jpg\" alt=\"This shows a C H subscript 3 group bonded to a C H subscript 2 group. This C H subscript 2 group is bonded to an O atom which is also bonded to a C H subscript 2 group. This C H subscript 2 group is bonded to a C H subscript 2 group. This C H subscript 2 group is bonded to a C H subscript 2 group. This C H subscript 2 group is bonded to a C H subscritp 3 group. All bonds are in a straight line.\"><br>(b) <img src=\"/media/ch20/CNX_Chem_20_02_Exercise4b_img.jpg\" alt=\"This shows a C H subscript 3 group bonded to a C H subscript 2 group. This C H subscript 2 group is bonded to an O atom. This O atom is bonded to a C H subscript 2 group which is also bonded to another C H subscript 2 group. This C H subscript 2 group is bonded to a C H subscript 3 group. All bonds are in a straight line.\"><br>(c) <img src=\"/media/ch20/CNX_Chem_20_02_Exercise4c_img.jpg\" alt=\"This figure shows a C H subscript 3 group bonded to an O atom. This O atom is bonded to a C H subscript 2 group which is also bonded to another C H subscript 2 group. This C H subscript 2 group is bonded to a C H subscript 3 group. All bonds are in a straight line.\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) 1-ethoxybutane, butyl ethyl ether; (b) 1-ethoxypropane, ethyl propyl ether; (c) 1-methoxypropane, methyl propyl ether"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm39860656",
+      "source_number": "35",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ethers",
+      "prompt": "Write the condensed structures of all isomers with the formula C<sub>2</sub>H<sub>6</sub>O<sub>2</sub>. Label the functional group (or groups) of each isomer.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "HOCH<sub>2</sub>CH<sub>2</sub>OH, two alcohol groups; CH<sub>3</sub>OCH<sub>2</sub>OH, ether and alcohol groups"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idp115280",
+      "source_number": "37",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ethers",
+      "prompt": "MTBE, Methyl <em>tert</em>-butyl ether, CH<sub>3</sub>OC(CH<sub>3</sub>)<sub>3</sub>, is used as an oxygen source in oxygenated gasolines. MTBE is manufactured by reacting 2-methylpropene with methanol.<br>(a) Using Lewis structures, write the chemical equation representing the reaction.<br>(b) What <span data-type=\"volume\">volume of methanol</span>, <span data-type=\"density\">density 0.7915 g/mL</span>, is required to produce <span data-type=\"mass\">exactly 1000 kg of MTBE</span>, assuming a 100% yield?",
+      "answer": {
+        "type": "number",
+        "value": 459.3,
+        "unit": "L",
+        "part": "(b)",
+        "generated_by": "source",
+        "hint": "One mole of methanol gives one mole of MTBE: find the moles of MTBE in 1000 kg, take the same moles of methanol, and turn them into a mass and then a volume with the density.",
+        "solution": "(a) <img src=\"/media/ch20/CNX_Chem_20_02_MTBE_img.jpg\" alt=\"A reaction is shown. The first molecule is a C atom bonded to another C atom. The first C atom (from left to right) is bonded to two C H subscript 3 groups. The second C atom is bonded to two H atoms. There is a plus sign. The next molecule shows an H atom bonded to an O atom bonded to a C H subscript 3 group. There is an arrow pointing right. This molecule shows a C atom bonded to three C H subscript 3 groups. The C atom is also bonded to an O atom which is also bonded to a C H subscript 3 group.\"><br>(b) <span data-type=\"volume\">4.593 × 10<sup>2</sup> L</span>"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm1615328",
+      "source_number": "39",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "alcohols",
+      "prompt": "Write two complete balanced equations for each of the following reactions, one using condensed formulas and one using Lewis structures.<br>(a) 2-butene is treated with water in dilute acid<br>(b) ethanol is dehydrated to yield ethene",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) ${\\text{CH}}_{3}\\text{CH}={\\text{CHCH}}_{3}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{CH}}_{2}{\\text{CH(OH)CH}}_{3}$<br><img src=\"/media/ch20/CNX_Chem_20_04_react2a_img.jpg\" alt=\"A reaction is shown. The first molecule shows a C atom bonded with three H atoms. The first C atom is bonded to another C atom. The second C atom is bonded to an H atom and also forms a double bond with a third C atom. The third C atom is bonded to one H atom and fourth C atom. The fourth C atom is bonded to three H atoms. There is a plus sign. The second molecule shows an O atom with two sets of electron dots bonded to two H atoms. There is an arrow pointing right which is labeled, “acid.” The new molecule is a C atom bonded to three H atoms and a second C atom. The second C atom is bonded to two H atoms and a third C atom. The third C atom is bonded to an H atom and an O atom with two sets of electron dots. The O atom is bonded to an H atom. The third C atom is bonded to a fourth C atom which is bonded to three H atoms.\"><br>(b) ${\\text{CH}}_{3}{\\text{CH}}_{2}\\text{OH}\\;\\longrightarrow \\;{\\text{CH}}_{2}={\\text{CH}}_{2}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch20/CNX_Chem_20_04_react2e_img.jpg\" alt=\"A reaction is shown. The first molecule shows a C atom which is bonded to three H atoms and a second C atom. The second C atom is bonded to an O atom as well. The O atom has two sets of electron dots and is bonded to an H atom. There is an arrow that points to the right. The next molecule shows two C atoms forming a double bond between them. Each C atom is bonded to two H atoms. There is a plus sign. The next molecule shows an O atom with two sets of electron dots bonded to two H atoms.\">"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "naming-alcohols"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "naming-ethers"
+    },
+    {
+      "exercise": "e1",
+      "concept": "naming-alcohols"
+    },
+    {
+      "exercise": "e1",
+      "concept": "naming-alkanes"
+    },
+    {
+      "exercise": "e1",
+      "concept": "naming-unsaturated-hydrocarbons"
+    },
+    {
+      "exercise": "e2",
+      "concept": "naming-alcohols"
+    },
+    {
+      "exercise": "e2",
+      "concept": "write-organic-structures"
+    },
+    {
+      "exercise": "e3",
+      "concept": "naming-ethers"
+    },
+    {
+      "exercise": "e4",
+      "concept": "alcohol"
+    },
+    {
+      "exercise": "e4",
+      "concept": "ether"
+    },
+    {
+      "exercise": "e4",
+      "concept": "structural-isomer"
+    },
+    {
+      "exercise": "e5",
+      "concept": "ether"
+    },
+    {
+      "exercise": "e5",
+      "concept": "density"
+    },
+    {
+      "exercise": "e5",
+      "concept": "mass-stoichiometry"
+    },
+    {
+      "exercise": "e6",
+      "concept": "preparing-alcohols"
+    },
+    {
+      "exercise": "e6",
+      "concept": "addition-reaction"
+    },
+    {
+      "exercise": "e6",
+      "concept": "balanced-equation"
+    }
+  ],
+  "referents": []
+}

@@ -4,7 +4,7 @@
   "chapter": "11",
   "title": "Electrolytes",
   "short": "Electrolytes",
-  "lead": "Some substances yield ions when they dissolve in water, and their solutions conduct electricity. The brightness of a bulb sorts solutes into strong electrolytes, weak electrolytes and nonelectrolytes. The ion-dipole attractions of water pull an ionic solid apart into hydrated ions, and some covalent compounds, such as the acids, form ions by reacting with water.",
+  "lead": "Some substances give ions when they dissolve in water, and the ions are what let a solution conduct electricity. Solutes differ in how fully they form ions, from ionic solids that come apart in water to covalent compounds that must react with it, and a conductivity test tells strong electrolytes, weak electrolytes and nonelectrolytes apart.",
   "objectives": [
     "Define and give examples of electrolytes",
     "Distinguish between the physical and chemical changes that accompany dissolution of ionic and covalent electrolytes",
@@ -17,6 +17,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
       }
     ],
     "figures": [
@@ -52,6 +56,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "notes that restated the headline dropped"
         }
       ]
     },
@@ -73,16 +82,26 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "note cut to the fact the caption lacks"
         }
       ]
     },
-    {"id": "fig-hcl-water", "kind": "figure", "draws": [], "ai": [
-  {
-    "model": "claude-opus-5-5",
-    "effort": "low",
-    "part": "built"
-  }
-]}
+    {
+      "id": "fig-hcl-water",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    }
   ],
   "coverage": [
     {"span": "electrolytes", "concept": "electrolytes-and-nonelectrolytes", "verb": "introduces"},

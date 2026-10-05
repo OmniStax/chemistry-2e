@@ -4,7 +4,7 @@
   "chapter": "11",
   "title": "Colloids",
   "short": "Colloids",
-  "lead": "Some mixtures hold particles too large to form a solution and too small to settle. Such colloids scatter light, and their dispersed phase and dispersion medium may be any combination of states. Colloids can be prepared and stabilized in several ways, and soaps and detergents emulsify oil. The charges on colloidal particles keep them dispersed, and an electric field can pull them out of smoke.",
+  "lead": "Some mixtures hold particles too large to form a solution and too small to settle, and these colloids scatter light and may combine any states of matter. Colloids are prepared and stabilized in several ways, soaps and detergents among them as emulsifiers of oil, and the charges on their particles both keep them dispersed and let an electric field pull them out of smoke.",
   "objectives": [
     "Describe the composition and properties of colloidal dispersions",
     "List and explain several technological applications of colloids"
@@ -16,6 +16,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
       }
     ],
     "figures": [
@@ -47,6 +51,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "ion legend glyphs fixed; notes that repeated the caption dropped"
         }
       ]
     },
@@ -70,6 +79,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "notes that repeated the caption dropped"
         }
       ]
     },
@@ -94,6 +108,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "anion labels wait until all have settled; note dropped"
         }
       ]
     },
@@ -114,6 +133,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "camera closer, labels off the chamber, oblique view, readout at zero, notes"
         }
       ]
     },

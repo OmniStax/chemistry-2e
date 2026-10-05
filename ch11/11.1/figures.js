@@ -85,10 +85,10 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     text(ctx, 'even split', X(N / 2), 222, PAL.muted, { size: 16, align: 'center' });
     const he = cnt('He', 1), ar = cnt('Ar', -1);
     topline(ctx, cock.value === 'closed'
-      ? 'With the stopcock closed, the 30 helium atoms stay in the left bulb and the 30 argon atoms in the right.'
+      ? 'With the stopcock closed, helium stays in the left bulb and argon in the right.'
       : he + ' of 30 helium atoms and ' + ar + ' of 30 argon atoms have crossed into the other bulb.');
     readout(d.readout, `\\text{He: } ${N - he} + ${he} = ${N} \\qquad \\text{Ar: } ${ar} + ${N - ar} = ${N}`,
-      'Each count is left bulb plus right bulb. Neither gas attracts the other, so no heat is exchanged as they mix; each simply spreads through twice the volume it held before.');
+      'Each count is left bulb plus right bulb; mixed evenly, each gas fills twice the volume it held before.');
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
 })();
@@ -149,9 +149,10 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       const xa = (XS[i] + XS[i + 1]) / 2;
       line(ctx, XS[i] + 100, Y(E[i]), xa + 4, Y(E[i]), alpha(PAL.ink, 0.35), 2, [4, 8]);
       if (Math.abs(h[i]) >= 2) arrow(ctx, xa, Y(E[i]), xa, Y(E[i + 1]), ce, 4);
-      const ym = (Y(E[i]) + Y(E[i + 1])) / 2 + (Math.abs(h[i]) < 60 ? (i === 2 ? 34 : -34) : 0);
-      text(ctx, 'step ' + (i + 1), xa, ym - 11, PAL.ink, { size: 16, align: 'center', bg: PAL.panel });
-      text(ctx, (h[i] > 0 ? '+' : h[i] < 0 ? '−' : '') + Math.abs(h[i]), xa, ym + 11, ce, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
+      /* under the start level, clear of the arrow: right of a rise and below the next level's name, left of solvation */
+      const up = i < 2, y0 = up ? Math.max(Y(E[i]) + 28, Y(E[i + 1]) + 56) : Y(E[i]) + 56, xl = up ? xa + 8 : xa - 8, al = up ? 'left' : 'right';
+      text(ctx, 'step ' + (i + 1), xl, y0 - 11, PAL.ink, { size: 16, align: al, bg: PAL.panel });
+      text(ctx, (h[i] > 0 ? '+' : h[i] < 0 ? '−' : '') + Math.abs(h[i]), xl, y0 + 11, ce, { size: 17, weight: 600, align: al, bg: PAL.panel });
     }
     const xd = 1250;
     line(ctx, XS[3] + 100, Y(s), xd, Y(s), alpha(PAL.ink, 0.35), 2, [4, 8]);
@@ -167,8 +168,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
         ? 'Separating the solute and the solvent costs ' + cost + ' kJ/mol and solvation returns only ' + back + ' kJ/mol, so the solution forms endothermically and absorbs ' + s + ' kJ/mol.'
         : 'Solvation returns exactly the ' + cost + ' kJ/mol spent separating the solute and the solvent, so the solution forms with no change in energy, as an ideal solution does.');
     const kj = (x) => hue('energy', (x < 0 ? '(' + x + '\\ \\text{kJ/mol})' : x + '\\ \\text{kJ/mol}')).replace('-', '−');
-    readout(d.readout, `\\kdH_{\\text{soln}} = \\kdH_{1} + \\kdH_{2} + \\kdH_{3} = ${kj(h[0])} + ${kj(h[1])} + ${kj(h[2])} = ${hue('energy', s + '\\ \\text{kJ/mol}').replace('-', '−')}`,
-      'Steps 1 and 2 overcome the solute-solute and solvent-solvent attractions and are endothermic; step 3 establishes the solute-solvent attractions and is exothermic.');
+    readout(d.readout, `\\kdH_{\\text{soln}} = \\kdH_{1} + \\kdH_{2} + \\kdH_{3} = ${kj(h[0])} + ${kj(h[1])} + ${kj(h[2])} = ${hue('energy', s + '\\ \\text{kJ/mol}').replace('-', '−')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

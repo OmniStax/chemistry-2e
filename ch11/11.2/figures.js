@@ -158,11 +158,7 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
       KCl: '\\text{KCl}(s) \\longrightarrow \\text{K}^{+}(aq) + \\text{Cl}^{-}(aq)',
       acetic: '\\text{CH}_{3}\\text{CO}_{2}\\text{H}(aq) + \\text{H}_{2}\\text{O}(l) \\rightleftharpoons \\text{H}_{3}\\text{O}^{+}(aq) + \\text{CH}_{3}\\text{CO}_{2}{}^{-}(aq)',
     };
-    readout(d.readout, EQ[sol.value], sol.value === 'ethanol'
-      ? 'A nonelectrolyte: its molecules stay whole, and a solution without ions cannot conduct.'
-      : sol.value === 'KCl'
-        ? 'A strong electrolyte: every formula unit that dissolves yields ions, so the solution conducts well.'
-        : 'A weak electrolyte: only a small fraction of its molecules react to form ions, so the solution conducts poorly.');
+    readout(d.readout, EQ[sol.value]);
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
 })();
@@ -260,7 +256,7 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
     });
     [['K', 'K⁺'], ['Cl', 'Cl⁻'], ['O', 'O'], ['H', 'H']].forEach(([sym, name], i) => { const y = 94 + i * 30; ball(ctx, 1130, y, R[sym] * 55, F.el(sym)); text(ctx, name, 1156, y, PAL.ink, { size: 18 }); });
     readout(d.readout, `\\text{KCl}(s) \\longrightarrow \\text{K}^{+}(aq) + \\text{Cl}^{-}(aq) \\qquad ${outK}\\ \\text{K}^{+}(aq),\\ ${outCl}\\ \\text{Cl}^{-}(aq)`,
-      'Each K+ ion is surrounded by the negative oxygen ends of water molecules and each Cl− ion by their positive hydrogen ends; these ion-dipole attractions replace the attractions that held the ions in the crystal.');
+      'Ion-dipole attractions to the water replace the attractions that held the ions in the crystal.');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

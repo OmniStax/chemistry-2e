@@ -273,7 +273,7 @@ function water(g, p, a, s = 1) {
       }
       return g;
     });
-    v.label('membrane', [0, YB - 0.5, 0.3], grp, 15).style.color = F.ref('membrane');
+    v.label('membrane', [0, YB - 0.55, 0.75], grp, 15).style.color = F.ref('membrane');
     v.label('water', [-XA - 0.6, YL + 0.3, 0], grp, 15).style.color = ARM(-1);
     v.label('solution', [XA + 0.7, YL + 0.3, 0], grp, 15).style.color = ARM(1);
   }
@@ -306,8 +306,8 @@ function water(g, p, a, s = 1) {
         : Math.abs(Pa.v - pi) <= 0.05
           ? 'With ' + fmt(Pa.v, 1) + ' atm applied, exactly the osmotic pressure, no water crosses on balance.'
           : Pa.v < pi
-            ? 'With ' + fmt(Pa.v, 1) + ' atm applied, less than the osmotic pressure, water still enters the solution, but its column rises only ' + fmt(pi - Pa.v, 1) + ' atm.'
-            : 'With ' + fmt(Pa.v, 1) + ' atm applied, more than the osmotic pressure of ' + fmt(pi, 1) + ' atm, water is pushed out of the solution into the pure water.');
+            ? 'With ' + fmt(Pa.v, 1) + ' atm applied, below the osmotic pressure, the column rises only ' + fmt(pi - Pa.v, 1) + ' atm.'
+            : 'With ' + fmt(Pa.v, 1) + ' atm applied, above the osmotic pressure of ' + fmt(pi, 1) + ' atm, water leaves the solution.');
     readout(d.readout, `\\kosm = \\kM R\\kT = ${hue('concentration', fmt(Mv.v, 2) + '\\ \\text{mol/L}')} \\times 0.08206\\ \\text{L atm/mol K} \\times ${hue('temperature', '310\\ \\text{K}')} = ${hue('pressure', fmt(pi, 1) + '\\ \\text{atm}')}`,
       'A column of water ' + fmt(pi * 10.3, 0) + ' m tall would exert this pressure; the columns are drawn about 1000 times shorter.');
   }
@@ -365,7 +365,7 @@ function water(g, p, a, s = 1) {
         : 'At ' + fmt(Po.v, 1) + ' atm the solution is hypertonic, so the cell loses water and shrivels.');
     const rel = state === 'isotonic' ? '=' : state === 'hypotonic' ? '<' : '>';
     readout(d.readout, `\\kosm_{\\text{solution}} = ${hue('pressure', fmt(Po.v, 1) + '\\ \\text{atm}')} ${rel} \\kosm_{\\text{cell}} = ${hue('pressure', '7.7\\ \\text{atm}')}`,
-      'Water moves through the membrane toward the side of higher osmotic pressure.');
+);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -375,7 +375,7 @@ function water(g, p, a, s = 1) {
    dimensions. Still: the box answers its slider. Eight formula units at
    every molality, so the true box edge grows as m^(−1/3); the scene
    keeps the box one size and scales the particles down with it, which
-   keeps their spacing honest (edge 3.0 at 0.050 m). Ion pairs: round(8 × min(0.5, 0.125 ×
+   keeps their spacing honest (edge 6.4 nm at 0.050 m, eight formula units in about 1 L per mol). Ion pairs: round(8 × min(0.5, 0.125 ×
    (m/0.05)^0.5)), one at 0.050 m (i = 15/8, near the 1.9 of Table 11.3
    for NaCl), none at 0.01 m and four at 1 m. Each ion wears a shell of
    up to four water molecules, O toward K⁺ and one H toward Cl⁻. Free
@@ -396,7 +396,7 @@ function water(g, p, a, s = 1) {
   function build() {
     if (palSig() === sig) return; sig = palSig();
     v.clear();
-    const m = mS.v, L = 3.0 * Math.cbrt(0.05 / m), k = 2 * HALF / L, np = pairsAt(m), R = rng(19);
+    const m = mS.v, L = 6.4 * Math.cbrt(0.05 / m), k = 2 * HALF / L, gap = Math.min(1, 0.3 * L), np = pairsAt(m), R = rng(19);
     F.mesh.box(grp, [0, 0, 0], [2 * HALF, 2 * HALF, 2 * HALF], PAL.ink, { transparent: true, opacity: 0.06, depthWrite: false });
     const edges = [[-1, -1], [-1, 1], [1, -1], [1, 1]];
     const boxC = F.ref('box');
@@ -407,11 +407,11 @@ function water(g, p, a, s = 1) {
     const pick = (gap) => { for (let tries = 0; tries < 400; tries++) { const p = [0, 0, 0].map(() => (R() * 2 - 1) * reach); if (free(p, gap)) return p; } return [0, 0, 0].map(() => (R() * 2 - 1) * reach); };
     for (let f = 0; f < 8; f++) {
       if (f < np) {
-        const c = pick(1.25), u = [R() - 0.5, R() - 0.5, R() - 0.5], l = Math.hypot(...u), dir = u.map((x) => x / l), half = (RK + RCL) / 2;
+        const c = pick(1.25 * gap), u = [R() - 0.5, R() - 0.5, R() - 0.5], l = Math.hypot(...u), dir = u.map((x) => x / l), half = (RK + RCL) / 2;
         const pk = add(c, dir, -half), pc = add(c, dir, half); placed.push(c);
         ions.push({ e: 'K', p: pk, mate: dir }, { e: 'Cl', p: pc, mate: dir.map((x) => -x) });
       } else {
-        for (const e of ['K', 'Cl']) { const p = pick(1.0); placed.push(p); ions.push({ e, p }); }
+        for (const e of ['K', 'Cl']) { const p = pick(gap); placed.push(p); ions.push({ e, p }); }
       }
     }
     const S = (p) => p.map((c) => c * k);
@@ -449,8 +449,7 @@ function water(g, p, a, s = 1) {
     topline(ctx, np === 0
       ? 'At ' + fmt(mS.v, 3) + ' m the ions lie far apart and none pair, so the solution holds 16 particles for 8 formula units.'
       : 'At ' + fmt(mS.v, 3) + ' m, ' + (np === 1 ? 'one of the eight formula units is an ion pair' : ['', '', 'two', 'three', 'four'][np] + ' of the eight formula units are ion pairs') + ', so the solution holds ' + parts + ' particles for 8 formula units.');
-    readout(d.readout, `i = \\frac{\\text{moles of particles in solution}}{\\text{moles of formula units dissolved}} = \\frac{${parts}}{8} = ${fmt(parts / 8, 2)}`,
-      'Complete dissociation would give i = 2. Each ion pair moves as one particle and lowers i.');
+    readout(d.readout, `i = \\frac{\\text{moles of particles in solution}}{\\text{moles of formula units dissolved}} = \\frac{${parts}}{8} = ${fmt(parts / 8, 2)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

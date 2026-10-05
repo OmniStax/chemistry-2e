@@ -94,7 +94,7 @@ function bar(ctx, x0, y, per, n, total, col) {
     text(ctx, 'card', CARD + 8, BY + 118, PAL.ink, { size: 20, align: 'center' });
     hits.push({ x: 270, y: BY, r: 50, name: 'a green laser' }, { x: CARD + 8, y: BY, r: 30, name: 'a card, where the beam that passes through the glass lands' });
     /* legend of the kinds in the glass */
-    const kinds = v === 'solution' ? [[F.el('Na'), 5, 'Na<sup>+</sup> ion'], [F.el('Cl'), 5, 'Cl<sup>−</sup> ion']] : v === 'colloid' ? [[F.ref('butterfat'), 11, 'butterfat droplet']] : [[F.ref('mud'), 16, 'grain of mud']];
+    const kinds = v === 'solution' ? [[F.el('Na'), 5, 'Na⁺ ion'], [F.el('Cl'), 5, 'Cl⁻ ion']] : v === 'colloid' ? [[F.ref('butterfat'), 11, 'butterfat droplet']] : [[F.ref('mud'), 16, 'grain of mud']];
     kinds.forEach(([c, r, name], i) => { const y = 180 + i * 40; ball(ctx, 1170, y, r, c); text(ctx, name, 1196, y, PAL.ink, { size: 20 }); });
     topline(ctx, v === 'solution'
       ? 'The ions dissolved in saltwater are too small to scatter light, so the beam crosses the glass unseen.'
@@ -104,10 +104,7 @@ function bar(ctx, x0, y, per, n, total, col) {
           ? 'The grains of mud cloud the water and scatter the beam, and they are settling to the bottom.'
           : 'The mud has settled to the bottom, and the clear water above it no longer shows the beam.');
     const B = (s, on) => (on ? `\\boxed{\\text{${s}}}` : `\\text{${s}}`);
-    readout(d.readout, `${B('dissolved ions', v === 'solution')} \\;<\\; ${B('colloidal particles', v === 'colloid')} \\;<\\; ${B('suspended particles', v === 'suspension')}`,
-      v === 'solution' ? 'A solution is homogeneous and transparent; its dissolved species are molecules or ions, and they do not settle out on standing.'
-        : v === 'colloid' ? 'A colloid’s particles are larger than most simple molecules, large enough to scatter light, but small enough that they do not settle out upon standing.'
-          : 'A suspension is a heterogeneous mixture; it is cloudy, and its suspended particles settle out after mixing.', { values: false });
+    readout(d.readout, `${B('dissolved ions', v === 'solution')} \\;<\\; ${B('colloidal particles', v === 'colloid')} \\;<\\; ${B('suspended particles', v === 'suspension')}`, null, { values: false });
   }
   register(d.fig, { update: (dt) => { clock += dt; cy.step(dt, () => 1); }, draw });
 })();
@@ -269,9 +266,7 @@ function twoWays(d, opts, onShow) {
       text(ctx, '+', Na[0] + 30, Na[1] - 18, PAL.ink, { size: 26, weight: 600, align: 'center' });
       topline(ctx, HEAD[st].replace(/<sub>(\d+)<\/sub>/g, '_{$1}'));
     }
-    readout(d.readout, EQ[st], st === 'soap'
-      ? 'The ionic end of a soap is a carboxylate group; the length of the hydrocarbon end can vary from soap to soap.'
-      : 'The ionic end of a detergent can be a sulfate or a sulfonate group; the length of the hydrocarbon end can vary from detergent to detergent.', { values: false });
+    readout(d.readout, EQ[st], null, { values: false });
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -283,7 +278,7 @@ function twoWays(d, opts, onShow) {
    hydrocarbon tail points into the oil and its ionic end stays in the
    water. Sodium ions stand in the water, each surrounded by four water
    molecules with their oxygen ends toward it. Moving: the anions arrive
-   over an 8 s clock, the one the labels name first. OIL_AMBER is the pale
+   over an 8 s clock; the anion labels wait until all have settled, so they never sit on a drifting chain. OIL_AMBER is the pale
    gold of oil, a physical colour; tails in carbon's colour, ionic ends in
    oxygen's, as the book draws them. Flat: the book's own cross section.
 ===================================================================== */
@@ -341,15 +336,15 @@ function twoWays(d, opts, onShow) {
     /* the book's four labels, the two on the anion only once it has arrived */
     const L = st[LABEL_SLOT], Tl = st[TAIL_SLOT], ion = IONS[0];
     label(ctx, 'solvated cation', ion.x - 40, ion.y, { side: 'left', size: 20, leader: true, gap: 60 });
-    if (L.w >= 1) label(ctx, 'ionic end', L.x - 14, L.y, { side: 'left', size: 20, leader: true, gap: 110 });
-    if (Tl.w >= 1) label(ctx, 'hydrocarbon tail', Tl.x + Math.cos(Tl.a) * 36, Tl.y + Math.sin(Tl.a) * 36 + 4, { side: 'left', size: 20, leader: true, gap: 170 });
+    const settled = st.every((s) => s.w >= 1);
+    if (settled) label(ctx, 'ionic end', L.x - 14, L.y, { side: 'left', size: 20, leader: true, gap: 110 });
+    if (settled) label(ctx, 'hydrocarbon tail', Tl.x + Math.cos(Tl.a) * 36, Tl.y + Math.sin(Tl.a) * 36 + 4, { side: 'left', size: 20, leader: true, gap: 170 });
     label(ctx, 'drop of oil', CX - 30, CY + RD - 10, { side: 'below', size: 20, leader: true, gap: 34 });
     const done = st.filter((s) => s.w >= 1).length;
     topline(ctx, done === N
       ? 'All 32 soap anions have settled at the surface of the oil drop, and the coated drop stays suspended in the water.'
       : done + ' of 32 soap anions have settled at the surface of the oil drop, their hydrocarbon tails in the oil and their ionic ends in the water.');
-    readout(d.readout, '\\underbrace{\\text{C}_{17}\\text{H}_{35}}_{\\text{in the oil}}\\text{—}\\underbrace{\\text{CO}_{2}{}^{-}}_{\\text{in the water}}',
-      'The nonpolar hydrocarbon tail is attracted to the oil and the ionic end to the polar water, so each soap anion bridges the two.', { values: false });
+    readout(d.readout, '\\underbrace{\\text{C}_{17}\\text{H}_{35}}_{\\text{in the oil}}\\text{—}\\underbrace{\\text{CO}_{2}{}^{-}}_{\\text{in the water}}', null, { values: false });
   }
   register(d.fig, { update: (dt) => { clock += dt; cy.step(dt, () => 1); }, draw });
 })();
@@ -368,10 +363,10 @@ function twoWays(d, opts, onShow) {
 (function () {
   const T3D = window.THREE;
   const d = sim('sim-precipitator');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.1 }, { label: 'above', yaw: 0, pitch: 1.15 }], h: 440, dist: 9.4, tilt: 0.15 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.1 }, { label: 'oblique', yaw: 0.6, pitch: 0.45 }], h: 440, dist: 7.4, tilt: 0.15 });
   v.setView(0, 0.12);
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 200);
-  grp.position.y = -0.25;
+  grp.position.y = -0.65;
   const RC = 0.9, Y0 = -0.6, Y1 = 1.8, YIN = 0.1, YOUT = 1.45, YH = -1.2, YP = -1.6, FLOOR = -1.95;
   const V = F.choice(d.controls, { label: '\\text{high DC voltage}', options: [{ value: 'off', label: 'off' }, { value: 'on', label: 'on' }], value: 'on', aria: 'the voltage on the point electrode', onInput: () => { outcomes.length = 0; gen++; } });
   let gen = 0;
@@ -428,17 +423,17 @@ function twoWays(d, opts, onShow) {
     v.pickable(tube(RC, RC, Y1 - Y0, (Y0 + Y1) / 2, F.ref('plate-electrode'), 0.16), 'the plate electrode, the grounded wall of the chamber');
     v.pickable(tube(RC, 0.2, Y0 - YH, (Y0 + YH) / 2, F.ref('hopper'), 0.16), 'the hopper, where the soot collects as dust');
     v.pickable(tube(0.2, 0.2, YH - YP, (YH + YP) / 2, PAL.muted, 0.22), 'the outlet for the soot removed');
-    v.pickable(tube(0.16, 0.16, 0.9, YIN, PAL.muted, 0.25, Math.PI / 2, -RC - 0.4), 'the inlet for soot-laden smoke');
-    v.pickable(tube(0.16, 0.16, 0.9, YOUT, PAL.muted, 0.25, Math.PI / 2, RC + 0.4), 'the outlet where soot-free gases escape');
+    v.pickable(tube(0.16, 0.16, 0.9, YIN, PAL.muted, 0.45, Math.PI / 2, -RC - 0.4), 'the inlet for soot-laden smoke');
+    v.pickable(tube(0.16, 0.16, 0.9, YOUT, PAL.muted, 0.45, Math.PI / 2, RC + 0.4), 'the outlet where soot-free gases escape');
     const cap = new T3D.Mesh(new T3D.CircleGeometry(RC, 48), F.mesh.mat(PAL.muted, { transparent: true, opacity: 0.3, side: T3D.DoubleSide })); cap.rotation.x = -Math.PI / 2; cap.position.y = Y1; grp.add(cap);
     for (const [x, z] of [[-0.7, -0.5], [0.7, -0.5], [0, 0.8]]) F.mesh.stick(grp, [x, YH + 0.1, z], [x, FLOOR, z], 0.03, PAL.muted);
-    v.pickable(F.mesh.stick(grp, [0, 2.35, 0], [0, -0.35, 0], 0.025, F.ref('point-electrode')), 'the point electrode, at a high DC voltage');
+    v.pickable(F.mesh.stick(grp, [0, 2.0, 0], [0, -0.35, 0], 0.025, F.ref('point-electrode')), 'the point electrode, at a high DC voltage');
     for (let y = -0.25; y < 1.5; y += 0.22) for (let m = 0; m < 4; m++) { const a = m * Math.PI / 2 + y; F.mesh.stick(grp, [0, y, 0], [0.16 * Math.cos(a), y + 0.04, 0.16 * Math.sin(a)], 0.012, F.ref('point-electrode')); }
-    v.label('point electrode', [0, 1.75, 0], grp, 0).style.color = F.ref('point-electrode');
-    v.label('plate electrode', [RC, 0.15, 0], grp, 0).style.color = F.ref('plate-electrode');
+    v.label('point electrode', [0, 2.27, 0], grp, 0).style.color = F.ref('point-electrode');
+    v.label('plate electrode', [RC + 1.15, 0.2, 0], grp, 0).style.color = F.ref('plate-electrode');
     for (const y of [Y0, Y1]) F.mesh.polyline(grp, Array.from({ length: 49 }, (_, i) => polar(RC, (i / 48) * TAU, y)), F.ref('plate-electrode'));
-    v.label('soot-laden smoke', [-RC - 0.9, YIN - 0.35, 0], grp, 0);
-    v.label('soot-free gases escape', [RC + 0.9, YOUT - 0.35, 0], grp, 0);
+    v.label('soot-laden smoke', [-RC - 1.55, YIN - 0.4, 0], grp, 0);
+    v.label('soot-free gases escape', [RC + 1.6, YOUT - 0.45, 0], grp, 0);
     v.label('soot removed here', [0, YP - 0.15, 0], grp, 14);
     meshes = parts.map(() => { const m = F.mesh.sphere(grp, [0, 0, 0], 0.035, F.el('C')); v.pickable(m, 'a soot particle, mostly carbon'); m.visible = false; return m; });
   }
@@ -460,9 +455,7 @@ function twoWays(d, opts, onShow) {
     text(ctx, 'escaped with the gases', x0 - 20, 154, PAL.ink, { size: 18, align: 'right' });
     bar(ctx, x0, 154, per, n - got, 50, F.el('C'));
     text(ctx, String(n - got), x0 + per * 50 + 16, 154, PAL.ink, { size: 18 });
-    readout(d.readout, `\\text{removed} = \\frac{${got}}{${Math.max(n, 1)}}`, on
-      ? 'The charged soot particles are attracted to the plate electrode, where they are neutralized and deposited as dust.'
-      : 'Without the voltage the particles are not drawn to the plate, and the gases carry them out of the chamber.', { values: false });
+    readout(d.readout, n === 0 ? '\\text{removed} = 0' : `\\text{removed} = \\frac{${got}}{${n}}`, null, { values: false });
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
 })();

@@ -4,7 +4,7 @@
   "chapter": "11",
   "title": "The Dissolution Process",
   "short": "The Dissolution Process",
-  "lead": "A solution forms when the particles of one substance spread individually among those of another. Every solution shares certain traits, and the dispersal of matter alone can drive two substances to mix. Weighing the <span data-concept=\"energy-and-work\">energy</span> spent separating solute and solvent against the <span data-concept=\"energy-and-work\">energy</span> released by solvation explains why some solutions warm as they form and others cool.",
+  "lead": "A solution is one substance dispersed evenly through another, and every solution shares a few traits whatever its phases. Dissolution is then taken apart into separating the solute, separating the solvent and solvation, to see why substances mix at all and why some solutions warm as they form while others cool.",
   "objectives": [
     "Describe the basic properties of solutions and how they form",
     "Predict whether a given mixture will yield a solution based on molecular properties of its components",
@@ -17,6 +17,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
       }
     ],
     "figures": [
@@ -47,16 +51,34 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "closed-state headline shortened off the bars; note trimmed of the caption"
         }
       ]
     },
-    {"id": "sim-steps", "kind": "sim", "number": "11.4", "originals": ["/media/ch11/CNX_Chem_11_01_solusolv.jpg"], "original_caption": "This schematic represents the direct formation of a solution as a hypothetical stepwise process. Steps 1 and 2 involve separation/expansion of the solute and solvent molecules, both of which require an input of energy to overcome intermolecular attractions and are thus endothermic. Step 3 involves establishing intermolecular attractive forces between solute and solvent molecules (solvation), and is thus exothermic.", "draws": ["energy"], "ai": [
-  {
-    "model": "claude-opus-5-5",
-    "effort": "low",
-    "part": "built"
-  }
-]},
+    {
+      "id": "sim-steps",
+      "kind": "sim",
+      "number": "11.4",
+      "originals": ["/media/ch11/CNX_Chem_11_01_solusolv.jpg"],
+      "original_caption": "This schematic represents the direct formation of a solution as a hypothetical stepwise process. Steps 1 and 2 involve separation/expansion of the solute and solvent molecules, both of which require an input of energy to overcome intermolecular attractions and are thus endothermic. Step 3 involves establishing intermolecular attractive forces between solute and solvent molecules (solvation), and is thus exothermic.",
+      "draws": ["energy"],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "step labels moved off the arrows; note that repeated the caption dropped"
+        }
+      ]
+    },
     {"id": "fig-cold-pack", "kind": "photo", "number": "11.5", "draws": []}
   ],
   "coverage": [

@@ -4,7 +4,7 @@
   "chapter": "11",
   "title": "Colligative Properties",
   "short": "Colligative Properties",
-  "lead": "A few properties of a solution depend only on how many solute particles it holds, not on what they are. Mole fraction and <span data-concept=\"molality\">molality</span> express that number. Raoult’s law explains why a nonvolatile solute lowers the <span data-concept=\"vapor-pressure\">vapor pressure</span> of its solvent, raises its boiling point and lowers its freezing point. <span data-concept=\"osmotic-pressure\">Osmosis and osmotic pressure</span> follow, and all of these properties can be used to find <span data-concept=\"molar-mass\">molar masses</span>. An electrolyte’s effect is multiplied by the van’t Hoff factor.",
+  "lead": "A few properties of a solution depend only on how many solute particles it holds, not on what they are, and mole fraction and <span data-concept=\"molality\">molality</span> measure that number. They are the lowering of <span data-concept=\"vapor-pressure\">vapor pressure</span>, the rise of the boiling point, the fall of the freezing point and <span data-concept=\"osmotic-pressure\">osmotic pressure</span>, with their use in finding <span data-concept=\"molar-mass\">molar masses</span> and the van’t Hoff factor that adjusts them for electrolytes.",
   "objectives": [
     "Express concentrations of solution components using mole fraction and molality",
     "Describe the effect of solute concentration on various solution properties (vapor pressure, boiling point, freezing point, and osmotic pressure)",
@@ -19,6 +19,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
       }
     ],
     "figures": [
@@ -166,6 +170,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "membrane label moved off the membrane; long headlines shortened"
         }
       ]
     },
@@ -194,6 +203,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "note that repeated the caption dropped"
         }
       ]
     },
@@ -243,6 +257,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "box edge set to the true spacing so ions no longer overlap at 1 m; note dropped"
         }
       ]
     },

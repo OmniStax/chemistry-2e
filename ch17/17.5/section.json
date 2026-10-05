@@ -1,0 +1,471 @@
+{
+  "id": "17.5",
+  "module": "m68825",
+  "chapter": "17",
+  "title": "Batteries and Fuel Cells",
+  "short": "Batteries and Fuel Cells",
+  "lead": "The <span data-concept=\"battery\">batteries</span> of everyday devices, from the zinc-carbon <span data-concept=\"dry-cell\">dry cell</span> to the <span data-concept=\"lithium-ion-battery\">lithium ion battery</span>, are <span data-concept=\"galvanic-cell\">galvanic cells</span> built to supply electrical power, some for a single use and some to be recharged. A <span data-concept=\"fuel-cell\">fuel cell</span> runs the same kind of redox chemistry on reactants fed to it continuously.",
+  "objectives": [
+    "Describe the electrochemistry associated with several common batteries",
+    "Distinguish the operation of a fuel cell from that of a battery"
+  ],
+  "summary_html": "<p><span data-concept=\"galvanic-cell\">Galvanic cells</span> designed specifically to function as electrical power supplies are called <span data-concept=\"battery\">batteries</span>. A variety of both single-use <span data-concept=\"battery\">batteries</span> (<span data-concept=\"primary-cell\">primary cells</span>) and rechargeable <span data-concept=\"battery\">batteries</span> (<span data-concept=\"secondary-cell\">secondary cells</span>) are commercially available to serve a variety of applications, with important specifications including <span data-concept=\"cell-potential\">voltage</span>, size, and lifetime. <span data-concept=\"fuel-cell\">Fuel cells</span>, sometimes called <span data-concept=\"fuel-cell\">flow batteries</span>, are devices that harness the energy of spontaneous redox reactions normally associated with <span data-concept=\"combustion-reaction\">combustion</span> processes. Like <span data-concept=\"battery\">batteries</span>, <span data-concept=\"fuel-cell\">fuel cells</span> enable the reaction’s electron transfer via an external circuit, but they require continuous input of the redox reactants (fuel and oxidant) from an external reservoir. <span data-concept=\"fuel-cell\">Fuel cells</span> are typically much more efficient in converting the energy released by the reaction to useful work in comparison to internal combustion engines.</p>",
+  "notes": "The seven Link to Learning notes (on batteries, zinc-carbon, alkaline, nickel-cadmium, lithium ion and lead acid batteries, and fuel cells) are left out. “Its intended use a source”, “a potassium hydroxide electrode” for the electrolyte, “a large amount current” and “via a catalyzed electrochemical that is” are kept as printed, and Figure 17.14 stands before the equations it illustrates, as the book prints it.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and the suggested approach are AI-generated. Answers come from the book’s answer key. The unkeyed fs-idm149853488 (a copper and lead battery), whose standard cell potential and electrode reactions would have to be worked out, is left out. The unkeyed fs-idp39083136 is kept with a suggested approach marked as OmniStax’s own. Nothing is moved.",
+  "figures": [
+    {
+      "id": "fig-daniell",
+      "kind": "photo",
+      "number": "17.8",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-dry-cell",
+      "kind": "photo",
+      "number": "17.9",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-alkaline",
+      "kind": "photo",
+      "number": "17.10",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-nicd",
+      "kind": "photo",
+      "number": "17.11",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-li-ion",
+      "kind": "sim",
+      "number": "17.12",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_05_LiIon.jpg"
+      ],
+      "original_caption": "In a lithium ion battery, charge flows as the lithium ions are transferred between the anode and cathode.",
+      "draws": [
+        "potential"
+      ],
+      "conventions": [
+        "Li",
+        "Co",
+        "O",
+        "C",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-lead-acid",
+      "kind": "photo",
+      "number": "17.13",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-fuel-cell",
+      "kind": "sim",
+      "number": "17.14",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_05_FuelCell.jpg"
+      ],
+      "original_caption": "In this hydrogen fuel cell, oxygen from the air reacts with hydrogen, producing water and electricity.",
+      "draws": [
+        "potential"
+      ],
+      "conventions": [
+        "H",
+        "O",
+        "N",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "batteries",
+      "concept": "battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "batteries",
+      "concept": "primary-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "batteries",
+      "concept": "secondary-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "batteries",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "half-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "salt-bridge",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "reversible-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "batteries",
+      "concept": "fuel-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "dry-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "single-use",
+      "concept": "alkaline-battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "single-use",
+      "concept": "primary-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "electrolyte",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "single-use",
+      "concept": "battery",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "nickel-cadmium-battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "lithium-ion-battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "lead-acid-battery",
+      "verb": "introduces"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "secondary-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "electrolyte",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "alkaline-battery",
+      "verb": "uses"
+    },
+    {
+      "span": "rechargeable",
+      "concept": "battery",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "fuel-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "combustion-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "catalyst",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "fuel-cells",
+      "concept": "electrolyte",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "e33",
+      "source_id": "fs-idm100291296",
+      "source_number": "33",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "batteries",
+      "prompt": "Consider a battery with the overall reaction: $\\text{Cu}(s)+2{\\text{Ag}}^{\\text{+}}(aq)\\;\\longrightarrow \\;\\text{2Ag}(s)+{\\text{Cu}}^{2+}(aq).$<br>(a) What is the reaction at the anode and cathode?<br>(b) A battery is “dead” when its cell potential is zero. What is the value of <em>Q</em> when this battery is dead?<br>(c) If a particular dead battery was found to have [Cu<sup>2+</sup>] = 0.11 <em>M</em>, what was the concentration of silver ion?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) $\\begin{array}{l} \\\\ \\text{anode: Cu}(s)\\;\\longrightarrow \\;{\\text{Cu}}^{2+}(aq)+{\\text{2e}}^{\\text{−}}\\hspace{4em}{E}_{\\text{anode}}^{{}^{\\circ}}=\\text{0.34 V} \\\\ \\text{cathode:}\\;2\\;\\times \\;({\\text{Ag}}^{\\text{+}}(aq)+{\\text{e}}^{\\text{−}}\\;\\longrightarrow \\;\\text{Ag}(s))\\hspace{4em}{E}_{\\text{cathode}}^{{}^{\\circ}}=\\text{0.7996 V}\\end{array};$ (b) 3.5 × 10<sup>15</sup>; (c) 5.6 × 10<sup>−9</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e34",
+      "source_id": "fs-idm59169968",
+      "source_number": "34",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "fuel-cells",
+      "prompt": "Why do batteries go dead, but fuel cells do not?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Batteries are self-contained and have a limited supply of reagents to expend before going dead. Alternatively, battery reaction byproducts accumulate and interfere with the reaction. Because a fuel cell is constantly resupplied with reactants and products are expelled, it can continue to function as long as reagents are supplied."
+      }
+    },
+    {
+      "id": "e35",
+      "source_id": "fs-idp39083136",
+      "source_number": "35",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "rechargeable",
+      "prompt": "Use the Nernst equation to explain the drop in voltage observed for some batteries as they discharge.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: write the Nernst equation for a battery’s cell reaction, $E_{\\text{cell}}=E_{\\text{cell}}^{\\circ}-\\dfrac{0.0592\\;\\text{V}}{n}\\log Q$ at 25 °C. As the battery discharges, ask what happens to the amounts of the reactants and products that appear in <em>Q</em>, so whether <em>Q</em> grows or shrinks, and then what the log <em>Q</em> term does to <em>E</em><sub>cell</sub>. Ask too what <em>Q</em> is when the cell potential has fallen to zero."
+      }
+    },
+    {
+      "id": "e36",
+      "source_id": "fs-idm192431088",
+      "source_number": "36",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "rechargeable",
+      "prompt": "Automobile batteries are often rated with regard to “cold-cranking amps,” a measure of the ability of the battery to perform in low-temperature weather. Suggest a reason to explain why a battery’s ability to deliver current is diminished at low temperatures. (Hint: Consider the kinetics of chemical reactions.)",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "According to kinetic theory, chemical reactions occur more slowly at lower temperatures due to the decreased rate of collisions between reactant molecules. The rates of the redox reactions taking place within batteries decrease with temperature, resulting in a decreased production of electrical current."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "e33",
+      "concept": "battery"
+    },
+    {
+      "exercise": "e33",
+      "concept": "half-reaction"
+    },
+    {
+      "exercise": "e33",
+      "concept": "anode"
+    },
+    {
+      "exercise": "e33",
+      "concept": "cathode"
+    },
+    {
+      "exercise": "e33",
+      "concept": "nernst-equation"
+    },
+    {
+      "exercise": "e34",
+      "concept": "battery"
+    },
+    {
+      "exercise": "e34",
+      "concept": "fuel-cell"
+    },
+    {
+      "exercise": "e35",
+      "concept": "nernst-equation"
+    },
+    {
+      "exercise": "e35",
+      "concept": "battery"
+    },
+    {
+      "exercise": "e35",
+      "concept": "cell-potential"
+    },
+    {
+      "exercise": "e36",
+      "concept": "lead-acid-battery"
+    },
+    {
+      "exercise": "e36",
+      "concept": "battery"
+    },
+    {
+      "exercise": "e36",
+      "concept": "temperature-and-rate"
+    }
+  ]
+}

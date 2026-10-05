@@ -81,6 +81,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "rewritten: flat panels by default, 3D lobes behind a view choice"
     }
    ]
   },

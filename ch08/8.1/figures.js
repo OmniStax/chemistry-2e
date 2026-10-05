@@ -1,7 +1,7 @@
 /* Figures for section 8.1 Valence Bond Theory. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['8.1'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, dot, text, headline, axes, curve, pinned } = F;
+const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, dot, text, headline, topline, axes, curve, pinned } = F;
 const sim = (id, H) => F.sim(root, id, H);
 const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
@@ -98,75 +98,130 @@ function lewis(ctx, cx, cy, atoms, bonds) {
 })();
 
 /* =====================================================================
-   FIGURE 8.3 + 8.4 + 8.5: two atomic orbitals overlapping, in three
-   dimensions. One choice walks the book's panels: two s orbitals, an s
-   and a p, two p end to end, two p at an angle, two p side by side. A
-   change of pair is one morph, the nuclei sliding and the p orbitals
-   swinging to their new directions while an orbital that changes kind
-   crossfades. Still: the pair only answers the choice and the drag.
-   The lobes wear the book's two colours as the two categorical colours,
-   the two signs of the orbital; phase is not yet the lesson.
+   FIGURE 8.3 + 8.4 + 8.5: two atomic orbitals overlapping. One choice
+   walks the book's panels: two s orbitals, an s and a p, two p end to
+   end, two p at an angle, two p side by side. A change of pair is one
+   morph, the nuclei sliding and the p orbitals swinging to their new
+   directions while an orbital that changes kind crossfades. Still: the
+   pair only answers the choice. Built both ways (the book's RULES): the
+   flat panels the book draws, the default, with the nuclei as dots; and
+   the same lobes in three dimensions, mounted on the first switch, where
+   turning the pair shows σ density on the axis and π density above and
+   below a node. The pitch stays within 60° of level so the lobes never
+   stand end on; no idle spin, since the side-on view is the book's.
+   The lobes wear the two categorical colours for the book's two, the
+   two signs of the orbital; phase is not yet the lesson.
 ===================================================================== */
 (function () {
-  const d = sim('sim-overlap');
-  const { sphere, lobe, polyline } = F.mesh;
-  const v = F.view3d(d.stage, { spin: 'idle', h: 500, dist: 9, tilt: 0.25, pitch: [-1.2, 1.2],
-    views: [{ label: 'side on', yaw: 0, pitch: 0 }, { label: 'along the axis', yaw: Math.PI / 2, pitch: 0 }] });
-  const g = v.part(0);
-  const up = (a) => [Math.cos(a * RAD), Math.sin(a * RAD), 0];
-  /* each state: two atoms, each an s orbital or a p orbital along a direction; c is the categorical colour index of the lobe along +dir, as the book colours it */
+  const H2 = 500;
+  const d = sim('sim-overlap', H2);
+  const { sphere, lobe, stick } = F.mesh;
+  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: () => show() });
+  /* each state: two atoms, each an s orbital or a p orbital along a direction in degrees; c is the categorical colour index of the lobe along +dir, as the book colours it */
   const STATES = {
     ss: { label: 's + s', names: ['H', 'H'], x: [-0.5, 0.5], k: ['s', 's'], dir: [0, 0], c: [0, 0], bond: 'σ',
-      eq: '1s\\,(\\text{H}) + 1s\\,(\\text{H}) \\rightarrow \\text{one }\\sigma\\text{ bond}', head: 'Two s orbitals overlap on the line between the nuclei and form a σ bond, as in H₂.' },
+      eq: '1s\\,(\\text{H}) + 1s\\,(\\text{H}) \\rightarrow \\text{one }\\sigma\\text{ bond}', head: 'Two $s$ orbitals overlap between the nuclei and form a σ bond, as in H₂.' },
     sp: { label: 's + p', names: ['H', 'Cl'], x: [-1.35, 0.55], k: ['s', 'p'], dir: [0, 180], c: [0, 0], bond: 'σ',
-      eq: '1s\\,(\\text{H}) + 3p\\,(\\text{Cl}) \\rightarrow \\text{one }\\sigma\\text{ bond}', head: 'An s orbital overlaps one lobe of a p orbital end on and forms a σ bond, as in HCl.' },
-    pp: { label: 'p + p end to end', names: ['Cl', 'Cl'], x: [-1.25, 1.25], k: ['p', 'p'], dir: [0, 180], c: [1, 1], bond: 'σ',
-      eq: '3p\\,(\\text{Cl}) + 3p\\,(\\text{Cl}) \\rightarrow \\text{one }\\sigma\\text{ bond}', head: 'Two p orbitals directed end to end overlap on the internuclear axis as much as they can and form a σ bond, as in Cl₂.' },
-    tilt: { label: 'p + p at an angle', names: ['Cl', 'Cl'], x: [-1.25, 1.25], k: ['p', 'p'], dir: [45, 135], c: [1, 1], bond: '',
-      eq: '3p\\,(\\text{Cl}) + 3p\\,(\\text{Cl}) \\rightarrow \\text{less overlap}', head: 'Turned away from the line between the nuclei, the same two p orbitals overlap much less.' },
-    pi: { label: 'p + p side by side', names: ['C', 'C'], x: [-0.62, 0.62], k: ['p', 'p'], dir: [90, 90], c: [1, 1], bond: 'π',
-      eq: '2p\\,(\\text{C}) + 2p\\,(\\text{C}) \\rightarrow \\text{one }\\pi\\text{ bond}', head: 'Two parallel p orbitals overlap side by side above and below the internuclear axis and form a π bond, with a node along the axis.' },
+      eq: '1s\\,(\\text{H}) + 3p\\,(\\text{Cl}) \\rightarrow \\text{one }\\sigma\\text{ bond}', head: 'An $s$ orbital overlaps one lobe of a $p$ orbital end on: a σ bond, as in HCl.' },
+    pp: { label: 'p + p end to end', names: ['Cl', 'Cl'], x: [-0.95, 0.95], k: ['p', 'p'], dir: [0, 180], c: [1, 1], bond: 'σ',
+      eq: '3p\\,(\\text{Cl}) + 3p\\,(\\text{Cl}) \\rightarrow \\text{one }\\sigma\\text{ bond}', head: 'Two $p$ orbitals directed end to end overlap the most: a σ bond, as in Cl₂.' },
+    tilt: { label: 'p + p at an angle', names: ['Cl', 'Cl'], x: [-0.95, 0.95], k: ['p', 'p'], dir: [45, 135], c: [1, 1], bond: '',
+      eq: '3p\\,(\\text{Cl}) + 3p\\,(\\text{Cl}) \\rightarrow \\text{less overlap}', head: 'Turned away from the internuclear axis, the same two $p$ orbitals overlap less.' },
+    pi: { label: 'p + p side by side', names: ['C', 'C'], x: [-0.28, 0.28], k: ['p', 'p'], dir: [90, 90], c: [1, 1], bond: 'π',
+      eq: '2p\\,(\\text{C}) + 2p\\,(\\text{C}) \\rightarrow \\text{one }\\pi\\text{ bond}', head: 'Two parallel $p$ orbitals overlap above and below the axis and form a π bond.' },
   };
-  const NOTE = { σ: 'The electron density of a σ bond is concentrated on the internuclear axis.', π: 'The two regions of overlap of a π bond lie on opposite sides of the internuclear axis.', '': 'Any arrangement other than end to end results in less overlap.' };
   const pick = F.choice(d.controls, { label: '\\text{orbitals}', options: Object.keys(STATES).map((k) => ({ value: k, label: STATES[k].label })), value: 'ss', aria: 'which pair of orbitals overlaps', onInput: () => draw() });
-  const LEN = 1.25, RS = 0.78;
+  const LEN = 1.25, RS = 0.78, AX = 3.0;          /* a p lobe's reach, an s orbital's radius, the axis's half length, in scene units */
   const NAME = { H: 'hydrogen', Cl: 'chlorine', C: 'carbon' };
   const SHELL = { H: '1s', Cl: '3p', C: '2p' };
-  function fade(m, a) { m.material.transparent = true; m.material.opacity *= a; m.material.depthWrite = a > 0.9 && m.material.opacity > 0.6; m.visible = a > 0.01; return m; }
-  function draw() {
-    v.clear();
-    const A = STATES[pick.from ?? pick.value] ?? STATES[pick.value], B = STATES[pick.value], k = pick.k;
-    const q = F.ease.smooth(Math.min(1, Math.max(0, k)));
-    [0, 1].forEach((i) => {
-      const x = A.x[i] + (B.x[i] - A.x[i]) * q, n = [x, 0, 0];
-      sphere(g, n, 0.07, PAL.ink);
-      const sym = q < 0.5 ? A.names[i] : B.names[i];
-      v.label(sym, [x, -0.28, 0.3], g, 0);
-      /* the orbital: an s sphere, a p pair of lobes, or both crossfading when the kind changes */
-      const kinds = A.k[i] === B.k[i] ? [[B.k[i], 1]] : [[A.k[i], 1 - q], [B.k[i], q]];
-      const a0 = A.dir[i], a1 = B.dir[i], ang = a0 + (a1 - a0) * q;
-      kinds.forEach(([kind, a]) => {
+  /* the morph between the state the pair left and the one it is going to: per atom its position, direction, kinds with their weights, colours and name */
+  function frame() {
+    const A = STATES[pick.from ?? pick.value] ?? STATES[pick.value], B = STATES[pick.value];
+    const q = F.ease.smooth(Math.min(1, Math.max(0, pick.k)));
+    const atoms = [0, 1].map((i) => {
+      const who = q < 0.5 ? A.names[i] : B.names[i];
+      return { x: A.x[i] + (B.x[i] - A.x[i]) * q, ang: A.dir[i] + (B.dir[i] - A.dir[i]) * q, who,
+        kinds: A.k[i] === B.k[i] ? [[B.k[i], 1]] : [[A.k[i], 1 - q], [B.k[i], q]],
+        c: F.mixColor(F.cat(A.c[i]), F.cat(B.c[i]), q), c2: F.mixColor(F.cat(1 - A.c[i]), F.cat(1 - B.c[i]), q) };
+    });
+    const orb = (who, kind) => `the ${kind === 's' ? '1s' : SHELL[who]} orbital of a ${NAME[who]} atom`;
+    return { B, atoms, orb, node: (A.bond === 'π' ? 1 - q : 0) + (B.bond === 'π' ? q : 0) };
+  }
+
+  /* ---------- the flat panels, as the book draws them: lobes seen side on, the nuclei as dots ---------- */
+  const U = 118, CX = 700, CY = 262;             /* 118 units per scene unit: the end-to-end pair spans ±2.4, the π pair ±1.45 up and down */
+  let hits = []; F.hover(d.stage, () => hits);
+  function shape(ctx, x, y, ang, col, a, draw) {
+    ctx.save(); ctx.globalAlpha *= a; ctx.translate(x, y); ctx.rotate(-ang * RAD);
+    ctx.beginPath(); draw(); ctx.globalAlpha *= 0.5; ctx.fillStyle = col; ctx.fill();
+    ctx.globalAlpha /= 0.5; ctx.lineWidth = 2.5; ctx.strokeStyle = col; ctx.stroke(); ctx.restore();
+  }
+  /* a p lobe is the side view of the scene's ellipsoid: from 0.04 L to 1.16 L along its direction, 0.3 L either side */
+  const lobe2 = (ctx, x, y, ang, col, a) => shape(ctx, x, y, ang, col, a, () => ctx.ellipse(0.6 * LEN * U, 0, 0.56 * LEN * U, 0.3 * LEN * U, 0, 0, TAU));
+  function draw2d(f) {
+    const { ctx } = begin(d.c);
+    const lab = F.labeller(ctx, H2, { headline: headline(ctx, f.B.head) });
+    hits = [];
+    const xl = CX - AX * U, xr = CX + AX * U;
+    line(ctx, xl, CY, xr, CY, alpha(PAL.ink, 0.45), 2, [10, 10]);
+    f.atoms.forEach((t) => {
+      const x = CX + t.x * U;
+      t.kinds.forEach(([kind, a]) => {
         if (a <= 0.01) return;
-        const who = q < 0.5 ? A.names[i] : B.names[i], orb = kind === 's' ? '1s' : SHELL[who];
-        const name = `the ${orb} orbital of a ${NAME[who]} atom`;
-        if (kind === 's') { v.pickable(fade(sphere(g, n, RS, F.cat(0), { transparent: true, opacity: 0.5 }), a), name); return; }
-        const u = up(ang), c = F.mixColor(F.cat(A.c[i]), F.cat(B.c[i]), q), c2 = F.mixColor(F.cat(1 - A.c[i]), F.cat(1 - B.c[i]), q);
-        v.pickable(fade(lobe(g, n, u, LEN, c), a), name + ', one lobe');
-        v.pickable(fade(lobe(g, n, [-u[0], -u[1], -u[2]], LEN, c2), a), name + ', the other lobe');
+        if (kind === 's') { shape(ctx, x, CY, 0, F.cat(0), a, () => ctx.arc(0, 0, RS * U, 0, TAU)); hits.push({ x, y: CY, r: RS * U, name: f.orb(t.who, 's') }); return; }
+        lobe2(ctx, x, CY, t.ang, t.c, a); lobe2(ctx, x, CY, t.ang + 180, t.c2, a);
+        [t.ang, t.ang + 180].forEach((g) => hits.push({ x: x + Math.cos(g * RAD) * 0.6 * LEN * U, y: CY - Math.sin(g * RAD) * 0.6 * LEN * U, r: 0.3 * LEN * U, name: f.orb(t.who, 'p') + ', one lobe' }));
       });
     });
-    /* the node of the π bond: the plane of the internuclear axis, drawn as a faint ink sheet with a dashed rim */
-    const pa = (A.bond === 'π' ? 1 - q : 0) + (B.bond === 'π' ? q : 0);
-    if (pa > 0.02) {
-      const w = 2.2, dz = 1.2, rim = [[-w, 0, -dz], [w, 0, -dz], [w, 0, dz], [-w, 0, dz], [-w, 0, -dz]];
-      F.mesh.box(g, [0, 0, 0], [2 * w, 0.004, 2 * dz], PAL.ink, { transparent: true, opacity: 0.1 * pa, depthWrite: false });
-      polyline(g, rim, alpha(PAL.ink, 0.6));
-      v.label('node', [w, 0, -dz], g, 0);
-    }
-    polyline(g, [[-2.3, 0, 0], [2.3, 0, 0]], alpha(PAL.ink, 0.5));
-    v.label('internuclear axis', [-2.3, 0, 0], g, 18);
-    v.headline(B.head);
-    readout(d.readout, B.eq, NOTE[B.bond]);
+    f.atoms.forEach((t) => { dot(ctx, CX + t.x * U, CY, PAL.ink, true, 7); hits.unshift({ x: CX + t.x * U, y: CY, r: 12, name: `the nucleus of a ${NAME[t.who]} atom` }); });
+    /* the atoms named in a row under the drawing, each under its own nucleus, a gap below the lowest orbital */
+    const reach = (φ) => { const s = Math.sin(φ * RAD), c = Math.cos(φ * RAD); return -0.6 * LEN * s + Math.hypot(0.56 * LEN * s, 0.3 * LEN * c); };
+    const low = Math.max(...f.atoms.flatMap((t) => t.kinds.filter(([, a]) => a > 0.01).map(([kind]) => (kind === 's' ? RS : Math.max(reach(t.ang), reach(t.ang + 180))))));
+    f.atoms.forEach((t) => lab.add(t.who, CX + t.x * U, Math.min(H2 - 28, CY + low * U + 34), 0, 0, PAL.ink, 24, 0.01));
+    lab.add('internuclear axis', xr, CY, 1, 0, PAL.muted, 20, 14);
+    if (f.node > 0.5) lab.add('node', xl, CY, -1, 0, PAL.ink, 20, 14);
+    lab.flush();
+  }
+
+  /* ---------- the same lobes in three dimensions, mounted on the first switch ---------- */
+  let v = null, g = null, strip = null;
+  function mount() {
+    v = F.view3d(d.stage, { spin: 'off', h: 420, dist: 6.5, tilt: 0.35, pitch: [-Math.PI / 3, Math.PI / 3],
+      views: [{ label: 'side on', yaw: 0, pitch: 0 }, { label: 'along the axis', yaw: Math.PI / 2, pitch: 0 }] });
+    g = v.part(0);
+    strip = F.makeCanvas(d.stage, 84); d.stage.insertBefore(strip, v.wrap);   /* the headline above the scene, never on the lobes */
+  }
+  function fade(m, a) { m.material.transparent = true; m.material.opacity *= a; m.material.depthWrite = a > 0.9 && m.material.opacity > 0.6; m.visible = a > 0.01; return m; }
+  function draw3d(f) {
+    v.clear();
+    f.atoms.forEach((t) => {
+      const n = [t.x, 0, 0], u = [Math.cos(t.ang * RAD), Math.sin(t.ang * RAD), 0];
+      v.pickable(sphere(g, n, 0.07, PAL.ink), `the nucleus of a ${NAME[t.who]} atom`);
+      t.kinds.forEach(([kind, a]) => {
+        if (a <= 0.01) return;
+        if (kind === 's') { v.pickable(fade(sphere(g, n, RS, F.cat(0), { transparent: true, opacity: 0.5 }), a), f.orb(t.who, 's')); return; }
+        v.pickable(fade(lobe(g, n, u, LEN, t.c), a), f.orb(t.who, 'p') + ', one lobe');
+        v.pickable(fade(lobe(g, n, [-u[0], -u[1], -u[2]], LEN, t.c2), a), f.orb(t.who, 'p') + ', the other lobe');
+      });
+    });
+    /* the node of the π bond: the plane of the internuclear axis, a faint ink sheet */
+    if (f.node > 0.02) v.pickable(F.mesh.box(g, [0, 0, 0], [4.4, 0.004, 2.4], PAL.ink, { transparent: true, opacity: 0.12 * f.node, depthWrite: false }), 'the node, a plane through the internuclear axis');
+    v.pickable(stick(g, [-AX, 0, 0], [AX, 0, 0], 0.025, PAL.muted), 'the internuclear axis');
+    v.invalidate();
+    topline(begin(strip).ctx, f.B.head);
+  }
+
+  function show() {
+    const three = VIEW.value === '3d';
+    if (three && !v) mount();
+    d.c.style.display = three ? 'none' : '';
+    if (v) [v.wrap, strip, d.stage.querySelector('.view3d-bar')].forEach((e) => { if (e) e.style.display = three ? '' : 'none'; });
+    draw();
+  }
+  function draw() {
+    const f = frame();
+    if (VIEW.value === '3d' && v) { hits = []; draw3d(f); } else draw2d(f);
+    tex(d.readout, f.B.eq);
   }
   still(d, draw);
 })();

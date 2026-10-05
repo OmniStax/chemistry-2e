@@ -49,3 +49,5 @@ Objectives, summary and glossary go to the tables. Kept as printed: "intial" in 
 - variables `n` → 14.7-titration-curves
 - variables `pH` → 14.7-titration-curves
 - variables `pK_a` → 14.7-titration-curves
+
+Applied by the chapter pass (2026-10-05): `V` and `n` take the meanings asked; the four anchors set; rows `[H3O+]`, `[OH-]`, `[A-]`, `[HA]`, `pOH`, `K_a`, `K_b_ion`, `K_w`, `pK_w` added with their 14.1 to 14.3 meanings, at `titration-curves`. General mentions of pH, volume and titrant are marked.

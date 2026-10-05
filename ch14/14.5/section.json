@@ -8,7 +8,7 @@
  "objectives": [
   "Extend previously introduced equilibrium concepts to acids and bases that may donate or accept more than one proton"
  ],
- "summary_html": "<p>An acid that contains more than one ionizable proton is a polyprotic acid. These acids undergo stepwise ionization reactions involving the transfer of single protons. The ionization constants for polyprotic acids decrease with each subsequent step; these decreases typically are large enough to permit simple equilibrium calculations that treat each step separately.</p>",
+ "summary_html": "<p>An acid that contains more than one ionizable proton is a polyprotic acid. These acids undergo <span data-concept=\"stepwise-ionization\">stepwise ionization</span> reactions involving the transfer of single protons. The ionization constants for polyprotic acids decrease with each subsequent step; these decreases typically are large enough to permit simple equilibrium calculations that treat each step separately.</p>",
  "notes": "Nothing of the section is left out; the ICE table of Example 14.19 is written as a table, the acetic acid equation is kept as the book’s image, and the example’s closing line keeps its [H₃O⁺] = 1.2 × 10⁻⁴ without a unit, as printed.",
  "ai": {
   "text": [
@@ -26,7 +26,7 @@
  },
  "built": "2026-10-05",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The two unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp108710816 and fs-idp33679104. The keyed exercise fs-idm75310368 (exercise 64, nicotine as a base that accepts two protons) is printed in 14.3 and placed here, where polyprotic bases are taught. Part (c) of exercise 76 is a demonstration whose worked answer is the book’s, given with the solution. Numeric answers accept 2%, except the one-significant-figure concentrations of the Check Your Learning and of exercise 64, which accept 10%.",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The two unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp108710816 and fs-idp33679104. The keyed exercise fs-idm75310368 (exercise 64, nicotine as a base that accepts two protons) is printed in Section 14.3 and set here because it tests the polyprotic bases this section introduces. Part (c) of exercise 76 is a demonstration whose worked answer is the book’s, given with the solution. Numeric answers accept 2%, except the one-significant-figure concentrations of the Check Your Learning and of exercise 64, which accept 10%.",
  "figures": [
   {
    "id": "sim-stepwise",

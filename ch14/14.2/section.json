@@ -4,13 +4,13 @@
  "chapter": "14",
  "title": "pH and pOH",
  "short": "pH and pOH",
- "lead": "The concentrations of hydronium and hydroxide ions in water span many orders of magnitude. This section expresses them on the logarithmic pH and pOH scales, uses those scales to describe a solution as acidic, basic, or neutral, and shows how the pH of a solution is measured.",
+ "lead": "The <span data-concept=\"concentration\">concentrations</span> of hydronium and hydroxide ions in water span many orders of magnitude. This section expresses them on the logarithmic <span data-concept=\"ph\">pH</span> and <span data-concept=\"poh\">pOH</span> scales, uses those scales to describe a solution as acidic, basic, or neutral, and shows how the <span data-concept=\"ph\">pH</span> of a solution is measured.",
  "objectives": [
   "Explain the characterization of aqueous solutions as acidic, basic, or neutral",
   "Express hydronium and hydroxide ion concentrations on the pH and pOH scales",
   "Perform calculations relating pH and pOH"
  ],
- "summary_html": "<p>Concentrations of hydronium and hydroxide ions in aqueous media are often represented as logarithmic pH and pOH values, respectively. At <span data-type=\"temperature\">25 °C</span>, the autoprotolysis equilibrium for water requires the sum of pH and pOH to equal <span data-type=\"equilibrium-constant\">14</span> for any aqueous solution. The relative concentrations of hydronium and hydroxide ion in a solution define its status as acidic ([H<sub>3</sub>O<sup>+</sup>] &gt; [OH<sup>−</sup>]), basic ([H<sub>3</sub>O<sup>+</sup>] &lt; [OH<sup>−</sup>]), or neutral ([H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]). At <span data-type=\"temperature\">25 °C</span>, a pH &lt; 7 indicates an acidic solution, a pH &gt; 7 a basic solution, and a pH = 7 a neutral solution.</p>",
+ "summary_html": "<p><span data-concept=\"concentration\">Concentrations</span> of hydronium and hydroxide ions in aqueous media are often represented as logarithmic <span data-concept=\"ph\">pH</span> and <span data-concept=\"poh\">pOH</span> values, respectively. At <span data-type=\"temperature\">25 °C</span>, the autoprotolysis equilibrium for water requires the sum of <span data-concept=\"ph\">pH</span> and <span data-concept=\"poh\">pOH</span> to equal <span data-type=\"equilibrium-constant\">14</span> for any aqueous solution. The relative <span data-concept=\"concentration\">concentrations</span> of hydronium and hydroxide ion in a solution define its status as acidic ([H<sub>3</sub>O<sup>+</sup>] &gt; [OH<sup>−</sup>]), basic ([H<sub>3</sub>O<sup>+</sup>] &lt; [OH<sup>−</sup>]), or neutral ([H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]). At <span data-type=\"temperature\">25 °C</span>, a <span data-concept=\"ph\">pH</span> &lt; 7 indicates an <span data-concept=\"acidic-solution\">acidic solution</span>, a <span data-concept=\"ph\">pH</span> &gt; 7 a <span data-concept=\"basic-solution\">basic solution</span>, and a <span data-concept=\"ph\">pH</span> = 7 a <span data-concept=\"neutral-solution\">neutral solution</span>.</p>",
  "notes": "Nothing of the section is left out. Kept as printed: Figure 14.3’s caption “It also is corrodes statues”, and the key to the last exercise, which gives the hydronium ion concentration the question asks for under the label [OH⁻].",
  "ai": {
   "text": [
@@ -94,11 +94,6 @@
  "coverage": [
   {
    "span": "acidic-basic",
-   "concept": "acidic-basic-neutral",
-   "verb": "introduces"
-  },
-  {
-   "span": "acidic-basic",
    "concept": "acidic-solution",
    "verb": "introduces"
   },
@@ -149,11 +144,6 @@
   },
   {
    "span": "neutral-ph",
-   "concept": "acidic-basic-neutral",
-   "verb": "reinforces"
-  },
-  {
-   "span": "neutral-ph",
    "concept": "ph-plus-poh",
    "verb": "uses"
   },
@@ -191,6 +181,11 @@
    "span": "measuring",
    "concept": "ph",
    "verb": "uses"
+  },
+  {
+   "span": "neutral-ph",
+   "concept": "neutral-solution",
+   "verb": "reinforces"
   }
  ],
  "exercises": [
@@ -494,10 +489,6 @@
   {
    "exercise": "cyl3",
    "concept": "ph-calculations"
-  },
-  {
-   "exercise": "e15",
-   "concept": "acidic-basic-neutral"
   },
   {
    "exercise": "e15",

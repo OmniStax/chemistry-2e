@@ -63,3 +63,5 @@ Nothing of the prose. The bundle gives the HF and pyridine images the same alt t
 - variables `x_ice` → 14.1-ex-pure-water
 - forms `eq-kw` → 14.1-autoionization
 - variables row `T` for 14.1 (temperature, reusing an earlier meaning such as 13.3's or 1.4's), since sim-kw and the prose read K_w against T
+
+Applied by the chapter pass (2026-10-05): every anchor as asked; the 14.1 row `T` added (temperature, "the temperature", anchored at `autoionization`). General mentions of concentration, autoionization and the other concepts the prose names are now marked as root rule 7 asks.

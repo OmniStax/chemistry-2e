@@ -4,13 +4,13 @@
  "chapter": "14",
  "title": "Acid-Base Titrations",
  "short": "Acid-Base Titrations",
- "lead": "A titration curve follows the pH of a sample as titrant is added to it. This section computes that pH at each stage of the titration of a strong acid and of a weak acid with a strong base, and explains how an acid-base indicator, chosen to suit the curve, signals the end point.",
+ "lead": "A <span data-concept=\"titration-curve\">titration curve</span> follows the <span data-concept=\"ph\">pH</span> of a sample as <span data-concept=\"titrant\">titrant</span> is added to it. This section computes that <span data-concept=\"ph\">pH</span> at each stage of the titration of a <span data-concept=\"strong-acid\">strong acid</span> and of a <span data-concept=\"weak-acid\">weak acid</span> with a <span data-concept=\"strong-base\">strong base</span>, and explains how an <span data-concept=\"acid-base-indicators\">acid-base indicator</span>, chosen to suit the curve, signals the <span data-concept=\"end-point\">end point</span>.",
  "objectives": [
   "Interpret titration curves for strong and weak acid-base systems",
   "Compute sample pH at important stages of a titration",
   "Explain the function of acid-base indicators"
  ],
- "summary_html": "<p>The titration curve for an acid-base titration is typically a plot of pH versus volume of added titrant. These curves are useful in selecting appropriate acid-base indicators that will permit accurate determinations of titration end points.</p>",
+ "summary_html": "<p>The <span data-concept=\"titration-curve\">titration curve</span> for an acid-base titration is typically a plot of <span data-concept=\"ph\">pH</span> versus <span data-concept=\"volume\">volume</span> of added <span data-concept=\"titrant\">titrant</span>. These curves are useful in selecting appropriate <span data-concept=\"acid-base-indicators\">acid-base indicators</span> that will permit accurate determinations of titration <span data-concept=\"end-point\">end points</span>.</p>",
  "notes": "Nothing of the section is left out. Kept as printed: “intial” in Example 14.21; the indicator equation’s roman “pKa” is written as pK<sub>a</sub>.",
  "ai": {
   "text": [

@@ -1215,3 +1215,62 @@ Checks: `ost check` clean for the book, and every page of the chapter in
 light and dark with no console error but the dev server's own missing
 offline catalogue, no KaTeX error, no missing image, every figure drawn and
 all eleven exercise hosts filled.
+
+
+## Pass 17 (2026-10-05): Chapter 14, Acid-Base Equilibria, is built and passed
+
+Built: the introduction and seven sections, 14.1 to 14.7, in the publisher's
+numbering, Figures 14.1 to 14.20, Tables 14.1 and 14.2 and Examples 14.1 to
+14.22 all shown and linked. Thirteen live figures, none on a clock, since no
+book figure in the chapter draws an arrow of motion. Figure 14.2 is the pH
+and pOH chart with a pH slider, the [OH⁻] and pOH columns sliding 1.38 units
+against the pH column when 80 °C is chosen. Figure 14.7 + 14.8 sets the
+book's 26 conjugate pairs on mirrored K_a and K_b axes, the strong acids
+stacked above hydronium ion and K_a × K_b = K_w written for the chosen pair.
+Figure 14.13 turns the hydrated aluminum ion in 3D and carries a proton to a
+free water molecule. Figure 14.15 + 14.17 drains the acetate buffer's
+partners as strong acid or base is added, its pH curve holding beside the
+unbuffered solution's leap. Figure 14.18 + 14.20 walks the strong and weak
+acid titrations along a volume slider, the flask in the chosen indicator's
+real colour and its colour-change band laid on the curve. Four are Sims of
+OmniStax's own: K_w against temperature, a 3D box of acid molecules
+ionizing by their constant, a salt's two ionization constants on one
+logarithmic axis, and the stepwise levels of a polyprotic acid. 14.1's four
+equation images are redrawn as unnumbered Figures. Figures 14.6, 14.11,
+14.12 and 14.19 are the book's images, and the eight photographs are kept.
+Every ICE table is written as a table. Ninety-five exercises, twenty-two of
+them Check Your Learning items placed inline, each with its host. Four items
+moved out of 14.3, three to 14.4 on salt hydrolysis and hydrated metal ions
+and one, nicotine, to 14.5. Twenty-two unkeyed numerical items are left out
+and named in `exercise_notes`; one unkeyed choice item is kept open with its
+options; twenty-four other unkeyed items are kept with a suggested approach.
+
+What the chapter pass changed. Every form and variables row anchored:
+thirteen forms and sixty-four variables, thirty-four of them added so that
+every symbol a page writes through its macro has a row in that section.
+Every K and pK stays typed as `equilibrium-constant`, as the tables and
+`COLOR.md` declared and the sections built them, and the prep's "untyped" is
+withdrawn in `config.md`. General mentions of a concept are marked as root
+rule 7 asks: the build had left the kind in general in ink on 14.2, 14.3
+and 14.5 to 14.7, and about six hundred mentions of pH, concentration, the
+ionization constants, buffer, titrant and the chapter's other terms are now
+marked in the text, the leads and the summaries. The concept
+`acidic-basic-neutral` is folded into `acidic-solution`, `basic-solution`
+and `neutral-solution`, the glossary's three words; `acid-base-ionization-constants`
+is kept as the relative strength of acids and bases; `acid-ionization-constant`
+takes K_a as its symbol. Fifty-seven concepts and 144 edges stand for the
+chapter. The three notes on the moved exercises agree. `config.md` records
+what the build changed and `COLOR.md` the bindings and referents as built.
+
+Errata carried as printed and named in `exploration.md`: "H+" in the
+introduction, NH₄OH in a 14.1 key, "is corrodes" and a key's [OH⁻] label in
+14.2, "wheres", "much lesser than" and three keys in 14.3, a lost
+parenthesis and question mark in 14.4, a unitless [H₃O⁺] in 14.5, "0.10
+NaOH" and "little affect" in 14.6, "intial" in 14.7. The book keys both
+exercise 47 and exercise 48, so the keyed items are the even ones from 48
+to 95; the publisher's numbers, checked on openstax.org, are kept.
+
+Checks: `ost check` clean for the book, and every page of the chapter in
+light and dark with no console error but the dev server's own missing
+offline catalogue, no KaTeX error, no missing image, every figure drawn and
+all twenty-two exercise hosts filled.

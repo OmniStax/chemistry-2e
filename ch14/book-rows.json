@@ -234,16 +234,10 @@
      "id": "eq-kw",
      "latex": "K_{\\text{w}}=[\\text{H}_{3}\\text{O}^{+}][\\text{OH}^{-}]=1.0\\times10^{-14}",
      "ktex": "K_{\\text{w}}=\\kconcHyd\\kconcOH=1.0\\times10^{-14}",
-     "condition": "any aqueous solution at 25 °C"
+     "condition": "any aqueous solution at 25 °C",
+     "anchor": "14.1-autoionization"
     }
    ]
-  },
-  {
-   "id": "acidic-basic-neutral",
-   "kind": "definition",
-   "section": "14.2",
-   "name": "Acidic, basic, and neutral solutions",
-   "statement": "A solution is neutral if it contains equal concentrations of hydronium and hydroxide ions, acidic if it contains a greater concentration of hydronium ions than hydroxide ions, and basic if it contains a lesser one. Since $K_{\\text{w}}$ depends on temperature, the pH of a neutral solution does too."
   },
   {
    "id": "ph-and-poh-scales",
@@ -263,7 +257,8 @@
      "id": "eq-ph-plus-poh",
      "latex": "\\text{pH}+\\text{pOH}=\\text{p}K_{\\text{w}}=14.00",
      "ktex": "\\kpH+\\kpOH=\\text{p}K_{\\text{w}}=14.00",
-     "condition": "any aqueous solution at 25 °C"
+     "condition": "any aqueous solution at 25 °C",
+     "anchor": "14.2-p-functions"
     }
    ]
   },
@@ -309,7 +304,7 @@
    "terms": [
     "neutral"
    ],
-   "statement": "A neutral solution contains equal concentrations of hydronium and hydroxide ions."
+   "statement": "A neutral solution contains equal concentrations of hydronium and hydroxide ions. Since $K_{\\text{w}}$ depends on temperature, the pH of a neutral solution does too: 7.00 at 25 °C."
   },
   {
    "id": "ph",
@@ -327,13 +322,15 @@
      "id": "eq-ph",
      "latex": "\\text{pH}=-\\log[\\text{H}_{3}\\text{O}^{+}]",
      "ktex": "\\kpH=-\\log\\kconcHyd",
-     "condition": "any aqueous solution"
+     "condition": "any aqueous solution",
+     "anchor": "14.2-p-functions"
     },
     {
      "id": "eq-h3o-from-ph",
      "latex": "[\\text{H}_{3}\\text{O}^{+}]=10^{-\\text{pH}}",
      "ktex": "\\kconcHyd=10^{-\\kpH}",
-     "condition": "any aqueous solution"
+     "condition": "any aqueous solution",
+     "anchor": "14.2-p-functions"
     }
    ]
   },
@@ -353,13 +350,15 @@
      "id": "eq-poh",
      "latex": "\\text{pOH}=-\\log[\\text{OH}^{-}]",
      "ktex": "\\kpOH=-\\log\\kconcOH",
-     "condition": "any aqueous solution"
+     "condition": "any aqueous solution",
+     "anchor": "14.2-p-functions"
     },
     {
      "id": "eq-oh-from-poh",
      "latex": "[\\text{OH}^{-}]=10^{-\\text{pOH}}",
      "ktex": "\\kconcOH=10^{-\\kpOH}",
-     "condition": "any aqueous solution"
+     "condition": "any aqueous solution",
+     "anchor": "14.2-p-functions"
     }
    ]
   },
@@ -367,8 +366,8 @@
    "id": "acid-base-ionization-constants",
    "kind": "definition",
    "section": "14.3",
-   "name": "Acid and base ionization constants",
-   "statement": "The relative strength of an acid or base is the extent to which it ionizes in water, and it is quantified by the equilibrium constant of its ionization, $K_{\\text{a}}$ or $K_{\\text{b}}$, in which water, being the solvent, does not appear. The larger the constant, the stronger the acid or base."
+   "name": "Relative strength of acids and bases",
+   "statement": "The relative strength of an acid or base is the extent to which it ionizes in water, measured by the equilibrium constant of its ionization, in which water, being the solvent, does not appear. The larger the constant, the stronger the acid or base."
   },
   {
    "id": "percent-ionization",
@@ -384,7 +383,8 @@
      "id": "eq-percent-ionization",
      "latex": "\\text{Percent ionization}=\\frac{[\\text{H}_{3}\\text{O}^{+}]_{\\text{eq}}}{[\\text{HA}]_{0}}\\times100",
      "ktex": "\\text{Percent ionization}=\\frac{\\kconcHydeq}{\\kconcHAz}\\times100",
-     "condition": "a weak acid HA"
+     "condition": "a weak acid HA",
+     "anchor": "14.3-ionization"
     }
    ]
   },
@@ -398,7 +398,8 @@
     {
      "id": "eq-ka-kb-kw",
      "latex": "K_{\\text{a}}\\times K_{\\text{b}}=1.0\\times10^{-14}=K_{\\text{w}}",
-     "condition": "a conjugate acid-base pair at 25 °C"
+     "condition": "a conjugate acid-base pair at 25 °C",
+     "anchor": "14.3-conjugate"
     }
    ]
   },
@@ -445,7 +446,7 @@
    "kind": "definition",
    "section": "14.3",
    "name": "Acid ionization constant",
-   "symbol": "K_a2",
+   "symbol": "K_a",
    "terms": [
     "acid ionization constant"
    ],
@@ -456,13 +457,15 @@
      "id": "eq-ka",
      "latex": "K_{\\text{a}}=\\frac{[\\text{H}_{3}\\text{O}^{+}][\\text{A}^{-}]}{[\\text{HA}]}",
      "ktex": "K_{\\text{a}}=\\frac{\\kconcHyd\\kconcAm}{\\kconcHA}",
-     "condition": "the ionization HA + H₂O ⇌ H₃O⁺ + A⁻ at equilibrium"
+     "condition": "the ionization HA + H₂O ⇌ H₃O⁺ + A⁻ at equilibrium",
+     "anchor": "14.3-ionization"
     },
     {
      "id": "eq-pka",
      "latex": "\\text{p}K_{\\text{a}}=-\\log K_{\\text{a}}",
      "condition": "any weak acid",
-     "section": "14.6"
+     "section": "14.6",
+     "anchor": "14.6-henderson-hasselbalch"
     }
    ]
   },
@@ -482,13 +485,15 @@
      "id": "eq-kb",
      "latex": "K_{\\text{b}}=\\frac{[\\text{HB}^{+}][\\text{OH}^{-}]}{[\\text{B}]}",
      "ktex": "K_{\\text{b}}=\\frac{\\kconcHBp\\kconcOH}{\\kconcB}",
-     "condition": "the ionization B + H₂O ⇌ HB⁺ + OH⁻ at equilibrium"
+     "condition": "the ionization B + H₂O ⇌ HB⁺ + OH⁻ at equilibrium",
+     "anchor": "14.3-ionization"
     },
     {
      "id": "eq-pkb",
      "latex": "\\text{p}K_{\\text{b}}=-\\log K_{\\text{b}}",
      "condition": "any weak base",
-     "section": "14.6"
+     "section": "14.6",
+     "anchor": "14.6-henderson-hasselbalch"
     }
    ]
   },
@@ -639,7 +644,8 @@
      "id": "eq-henderson-hasselbalch",
      "latex": "\\text{pH}=\\text{p}K_{\\text{a}}+\\log\\frac{[\\text{A}^{-}]}{[\\text{HA}]}",
      "ktex": "\\kpH=\\text{p}K_{\\text{a}}+\\log\\frac{\\kconcAm}{\\kconcHA}",
-     "condition": "a buffer of the weak acid HA and its conjugate base A⁻"
+     "condition": "a buffer of the weak acid HA and its conjugate base A⁻",
+     "anchor": "14.6-henderson-hasselbalch"
     }
    ]
   },
@@ -745,10 +751,6 @@
    "prereq": "molarity"
   },
   {
-   "concept": "acidic-basic-neutral",
-   "prereq": "water-autoionization"
-  },
-  {
    "concept": "ph-and-poh-scales",
    "prereq": "kw-ion-concentrations"
   },
@@ -771,10 +773,6 @@
   {
    "concept": "measuring-ph",
    "prereq": "ph-and-poh-scales"
-  },
-  {
-   "concept": "measuring-ph",
-   "prereq": "acidic-basic-neutral"
   },
   {
    "concept": "acid-base-ionization-constants",
@@ -1074,23 +1072,11 @@
   },
   {
    "concept": "acidic-solution",
-   "prereq": "acidic-basic-neutral"
-  },
-  {
-   "concept": "acidic-solution",
    "prereq": "molarity"
   },
   {
    "concept": "basic-solution",
-   "prereq": "acidic-basic-neutral"
-  },
-  {
-   "concept": "basic-solution",
    "prereq": "molarity"
-  },
-  {
-   "concept": "neutral-solution",
-   "prereq": "acidic-basic-neutral"
   },
   {
    "concept": "neutral-solution",
@@ -1279,6 +1265,18 @@
   {
    "concept": "choose-indicator",
    "prereq": "color-change-interval"
+  },
+  {
+   "concept": "acidic-solution",
+   "prereq": "water-autoionization"
+  },
+  {
+   "concept": "basic-solution",
+   "prereq": "water-autoionization"
+  },
+  {
+   "concept": "neutral-solution",
+   "prereq": "water-autoionization"
   }
  ]
 }

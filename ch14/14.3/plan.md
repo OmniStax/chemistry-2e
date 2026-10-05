@@ -68,3 +68,5 @@ The Link to Learning (a simulation of strong and weak acids and bases); its idea
 - variables `14.3/K_a` ref `acid`, `14.3/K_b_ion` ref `base` (`COLOR.md`: the a and b in the pair's colours)
 - concept `acid-ionization-constant`: its `symbol` is `K_a2`; it should be `K_a`
 - 14.4 and 14.5 `exercise_notes` to say fs-idm94404336, fs-idm94046624, fs-idm8587472 and fs-idm75310368 are printed in 14.3
+
+Applied by the chapter pass (2026-10-05): every form and variables anchor as asked, `K_a` with ref `acid` and `K_b_ion` with ref `base`; rows `K_w`, `[H3O+]`, `[OH-]`, `pH`, `pK_w`, `pOH` added for the symbols the page writes through macros. `acid-ionization-constant` takes `K_a` as its symbol (the `K_a2` symbol row itself is unchanged). `acid-base-ionization-constants` stays, renamed "Relative strength of acids and bases", the idea that K_a and K_b each make particular. The four moved exercises agree in all three sections' `exercise_notes`. The page's concept mentions, none marked at the build, are marked.

@@ -84,6 +84,20 @@ Both sections' `exercise_notes` say so. Every other item stays where it is print
 - 14.6: Figure 14.16's caption "has little affect"; Example 14.20 (b) "1.0 mL of 0.10 NaOH" drops the M in the question. The exercises header prints empty ("##  {section:exercises}") in 14.6 and 14.7; nothing to carry.
 - 14.7: the indicator equation writes "pKa" with K and a both roman (`\text{p}K\text{a}`); written as pK_a.
 
+## Errata as built (chapter pass, 2026-10-05)
+
+Gathered from the sections' `notes` and `exercise_notes`; each is carried as printed unless said otherwise.
+
+- Intro: "H+" without its superscript.
+- 14.1: the key to `fs-idp125665056` writes NH₄OH as a product of (a). The HF and pyridine images share pyridine's alt text and the water image puts hydroxide's minus on its hydrogen; all four images are redrawn, so neither is carried.
+- 14.2: Figure 14.3's caption "It also is corrodes statues"; Figure 14.4's caption's dollar sign written `&#36;`; the key to `fs-idm209904880` labels the hydronium ion concentration [OH⁻]; Table 14.1's CNXML summary (not printed) writes H₂O⁺.
+- 14.3: "wheres", "much lesser than", CH₂CO₂⁻ for acetate ion in the order of base strengths, the Check Your Learning of Example 14.11 ending "NH₃." as a question, the empty Change cell for formic acid in Example 14.12's ICE table; the keys of `fs-idp38295632` ("triethylamine" for trimethylamine), `fs-idm79424752` ("[H⁺] 0") and `fs-idp3008704` ("[HClO⁻]").
+- 14.4: Example 14.15's question without a question mark and its (x)(x)/0.233 − x) with one parenthesis; acetate's base ionization writing OH−; Example 14.17 (b) ",and".
+- 14.5: Example 14.19's closing [H₃O⁺] = 1.2 × 10⁻⁴ without its unit.
+- 14.6: Example 14.20 (b) "1.0 mL of 0.10 NaOH"; Figure 14.16's "has little affect"; "the buffer pairs pKa" without its apostrophe, pK_a set as a symbol.
+- 14.7: "intial" in Example 14.21; the indicator equation's roman "pKa" written as pK_a.
+- Exercises: the key covers both exercise 47 (`fs-idp78760144`) and exercise 48 (`fs-idm4769600`) of 14.3, so the keyed items are the even ones from 48 to the end of the chapter (95); the publisher's numbers are kept.
+
 ## Depth: flat, locked or 3D (root rule 28)
 
 - Physical 3D: 14.13's hydrated aluminum ion (a coordination geometry, octahedral, bounded orbit); 14.3's acid-in-water Sim (a particle picture); 14.7's buret and flask if the section builds the bench (an apparatus, bounded orbit, never from beneath).

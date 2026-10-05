@@ -4,12 +4,12 @@
  "chapter": "14",
  "title": "Buffers",
  "short": "Buffers",
- "lead": "A mixture of a weak acid and its conjugate base, or a weak base and its conjugate acid, can take up added strong acid or base. This section explains how such a buffer works, what limits it, how a suitable buffer is chosen, and how its pH is calculated.",
+ "lead": "A mixture of a <span data-concept=\"weak-acid\">weak acid</span> and its <span data-concept=\"conjugate-base\">conjugate base</span>, or a <span data-concept=\"weak-base\">weak base</span> and its <span data-concept=\"conjugate-acid\">conjugate acid</span>, can take up added <span data-concept=\"strong-acid\">strong acid</span> or base. This section explains how such a <span data-concept=\"buffer-composition\">buffer</span> works, what limits it, how a suitable <span data-concept=\"buffer-composition\">buffer</span> is chosen, and how its <span data-concept=\"ph\">pH</span> is calculated.",
  "objectives": [
   "Describe the composition and function of acid–base buffers",
   "Calculate the pH of a buffer before and after the addition of added acid or base"
  ],
- "summary_html": "<p>Solutions that contain appreciable amounts of a weak conjugate acid-base pair are called buffers. A buffered solution will experience only slight changes in pH when small amounts of acid or base are added. Addition of large amounts of acid or base can exceed the buffer capacity, consuming most of one conjugate partner and preventing further buffering action.</p>",
+ "summary_html": "<p>Solutions that contain appreciable amounts of a weak <span data-concept=\"conjugate-acid-base-pairs\">conjugate acid-base pair</span> are called <span data-concept=\"buffer-composition\">buffers</span>. A buffered solution will experience only slight changes in <span data-concept=\"ph\">pH</span> when small amounts of acid or base are added. Addition of large amounts of acid or base can exceed the <span data-concept=\"buffer-capacity\">buffer capacity</span>, consuming most of one conjugate partner and preventing further buffering action.</p>",
  "notes": "The Link to Learning on the buffer system of natural waters is left out. Kept as printed: Example 14.20(b), first stated, adds “1.0 mL of 0.10 NaOH” without its M; Figure 14.16’s caption says “has little affect”; the blood paragraph’s “buffer pairs pKa” keeps its missing apostrophe, its pKa set as a symbol.",
  "ai": {
   "text": [

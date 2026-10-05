@@ -49,3 +49,5 @@ Objectives, summary and glossary go to the tables. The example's summary line pr
 - variables `K_b2` → 14.5-bases
 - `ch14/COLOR.md`: 14.5 plans H₂A, HA⁻ and A²⁻ as referents with K_a1 and K_a2 split; the built page marks none, since the Sim's acid is a choice (see Referents)
 - `ch14/config.md`: 14.5 keeps the acetic acid equation image as a figure row with no number and writes Example 14.19's ICE table as a table
+
+Applied by the chapter pass (2026-10-05): the five anchors as asked, and a 14.5 row `[H3O+]` added. `COLOR.md` and `config.md` say that 14.5 marks no referents, keeps the acetic acid equation as a `figure` row and writes Example 14.19's ICE table as a table. The exercise note on `fs-idm75310368` now matches 14.3's wording.

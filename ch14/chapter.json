@@ -56,210 +56,514 @@
    "concept": "molarity",
    "meaning": "the molar concentration of hydronium ion",
    "unit": "mol/L (M)",
-   "section": "14.1"
+   "section": "14.1",
+   "anchor": "14.1-autoionization"
   },
   {
    "sym": "[OH-]",
    "concept": "molarity",
    "meaning": "the molar concentration of hydroxide ion",
    "unit": "mol/L (M)",
-   "section": "14.1"
+   "section": "14.1",
+   "anchor": "14.1-autoionization"
   },
   {
    "sym": "K_w",
    "concept": "ion-product-constant-for-water",
    "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
    "unit": "none (concentrations in M)",
-   "section": "14.1"
+   "section": "14.1",
+   "anchor": "14.1-autoionization"
   },
   {
    "sym": "x_ice",
    "concept": "ice-change-terms",
    "meaning": "the change in concentration defined by the ICE table, equal to [H₃O⁺] = [OH⁻] in pure water",
    "unit": "mol/L (M)",
-   "section": "14.1"
+   "section": "14.1",
+   "anchor": "14.1-ex-pure-water"
   },
   {
    "sym": "pH",
    "concept": "ph",
    "meaning": "the negative base-10 logarithm of the hydronium ion molarity",
    "unit": "none",
-   "section": "14.2"
+   "section": "14.2",
+   "anchor": "14.2-p-functions"
   },
   {
    "sym": "pOH",
    "concept": "poh",
    "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
    "unit": "none",
-   "section": "14.2"
+   "section": "14.2",
+   "anchor": "14.2-p-functions"
   },
   {
    "sym": "pK_w",
    "concept": "ion-product-constant-for-water",
    "meaning": "the negative logarithm of K_w, 14.00 at 25 °C",
    "unit": "none",
-   "section": "14.2"
+   "section": "14.2",
+   "anchor": "14.2-p-functions"
   },
   {
    "sym": "K_a",
    "concept": "acid-ionization-constant",
    "meaning": "the acid ionization constant of a weak acid HA",
    "unit": "none (concentrations in M)",
-   "section": "14.3"
+   "section": "14.3",
+   "anchor": "14.3-ionization",
+   "ref": "acid"
   },
   {
    "sym": "K_b_ion",
    "concept": "base-ionization-constant",
    "meaning": "the base ionization constant of a weak base B",
    "unit": "none (concentrations in M)",
-   "section": "14.3"
+   "section": "14.3",
+   "anchor": "14.3-ionization",
+   "ref": "base"
   },
   {
    "sym": "[HA]",
    "concept": "molarity",
    "meaning": "the equilibrium molar concentration of the un-ionized acid HA",
    "unit": "mol/L (M)",
-   "section": "14.3"
+   "section": "14.3",
+   "anchor": "14.3-ionization"
   },
   {
    "sym": "[A-]",
    "concept": "molarity",
    "meaning": "the equilibrium molar concentration of the conjugate base A⁻",
    "unit": "mol/L (M)",
-   "section": "14.3"
+   "section": "14.3",
+   "anchor": "14.3-ionization"
   },
   {
    "sym": "[B]",
    "concept": "molarity",
    "meaning": "the equilibrium molar concentration of the un-ionized base B",
    "unit": "mol/L (M)",
-   "section": "14.3"
+   "section": "14.3",
+   "anchor": "14.3-ionization"
   },
   {
    "sym": "[HB+]",
    "concept": "molarity",
    "meaning": "the equilibrium molar concentration of the conjugate acid HB⁺",
    "unit": "mol/L (M)",
-   "section": "14.3"
+   "section": "14.3",
+   "anchor": "14.3-ionization"
   },
   {
    "sym": "[HA]_0",
    "concept": "molarity",
    "meaning": "the initial (formal) molar concentration of the acid",
    "unit": "mol/L (M)",
-   "section": "14.3"
+   "section": "14.3",
+   "anchor": "14.3-ionization"
   },
   {
    "sym": "[H3O+]_eq",
    "concept": "molarity",
    "meaning": "the equilibrium molar concentration of hydronium ion",
    "unit": "mol/L (M)",
-   "section": "14.3"
+   "section": "14.3",
+   "anchor": "14.3-ionization"
   },
   {
    "sym": "x_ice",
    "concept": "ice-change-terms",
    "meaning": "the change in concentration defined by the ICE table, equal to the equilibrium [H₃O⁺] or [OH⁻]",
    "unit": "mol/L (M)",
-   "section": "14.3"
+   "section": "14.3",
+   "anchor": "14.3-calculations"
   },
   {
    "sym": "K_a1",
    "concept": "acid-ionization-constant",
    "meaning": "the ionization constant for the first step of a polyprotic acid",
    "unit": "none (concentrations in M)",
-   "section": "14.5"
+   "section": "14.5",
+   "anchor": "14.5-diprotic"
   },
   {
    "sym": "K_a2",
    "concept": "acid-ionization-constant",
    "meaning": "the ionization constant for the second step of a polyprotic acid",
    "unit": "none (concentrations in M)",
-   "section": "14.5"
+   "section": "14.5",
+   "anchor": "14.5-diprotic"
   },
   {
    "sym": "K_a3",
    "concept": "acid-ionization-constant",
    "meaning": "the ionization constant for the third step of a triprotic acid",
    "unit": "none (concentrations in M)",
-   "section": "14.5"
+   "section": "14.5",
+   "anchor": "14.5-triprotic"
   },
   {
    "sym": "K_b1",
    "concept": "base-ionization-constant",
    "meaning": "the ionization constant for the first step of a diprotic base",
    "unit": "none (concentrations in M)",
-   "section": "14.5"
+   "section": "14.5",
+   "anchor": "14.5-bases"
   },
   {
    "sym": "K_b2",
    "concept": "base-ionization-constant",
    "meaning": "the ionization constant for the second step of a diprotic base",
    "unit": "none (concentrations in M)",
-   "section": "14.5"
+   "section": "14.5",
+   "anchor": "14.5-bases"
   },
   {
    "sym": "pK_a",
    "concept": "acid-ionization-constant",
    "meaning": "the negative logarithm of the acid ionization constant",
    "unit": "none",
-   "section": "14.6"
+   "section": "14.6",
+   "anchor": "14.6-henderson-hasselbalch"
   },
   {
    "sym": "pK_b",
    "concept": "base-ionization-constant",
    "meaning": "the negative logarithm of the base ionization constant",
    "unit": "none",
-   "section": "14.6"
+   "section": "14.6",
+   "anchor": "14.6-henderson-hasselbalch"
   },
   {
    "sym": "pH",
    "concept": "ph",
    "meaning": "the pH of the buffer solution, the negative base-10 logarithm of its hydronium ion molarity",
    "unit": "none",
-   "section": "14.6"
+   "section": "14.6",
+   "anchor": "14.6-how-buffers-work"
   },
   {
    "sym": "[HA]",
    "concept": "molarity",
    "meaning": "the molar concentration of the weak acid of the buffer pair",
    "unit": "mol/L (M)",
-   "section": "14.6"
+   "section": "14.6",
+   "anchor": "14.6-henderson-hasselbalch"
   },
   {
    "sym": "[A-]",
    "concept": "molarity",
    "meaning": "the molar concentration of the conjugate base of the buffer pair",
    "unit": "mol/L (M)",
-   "section": "14.6"
+   "section": "14.6",
+   "anchor": "14.6-henderson-hasselbalch"
   },
   {
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of titrant added",
+   "meaning": "the volume of titrant added, or of the whole titration solution where an amount is divided by it",
    "unit": "mL",
-   "section": "14.7"
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
   },
   {
    "sym": "n",
    "concept": "mole",
-   "meaning": "the amount of titrant added",
+   "meaning": "the amount of acid or base in the titration solution, in moles",
    "unit": "mol",
-   "section": "14.7"
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
   },
   {
    "sym": "pH",
    "concept": "ph",
    "meaning": "the pH of the titration solution, the negative base-10 logarithm of its hydronium ion molarity",
    "unit": "none",
-   "section": "14.7"
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
   },
   {
    "sym": "pK_a",
    "concept": "acid-ionization-constant",
    "meaning": "the negative logarithm of the acid ionization constant, equal to the pH at the half-equivalence point",
    "unit": "none",
-   "section": "14.7"
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature",
+   "unit": "°C",
+   "section": "14.1",
+   "anchor": "14.1-autoionization"
+  },
+  {
+   "sym": "K_a",
+   "concept": "acid-ionization-constant",
+   "meaning": "the acid ionization constant of a weak acid HA",
+   "unit": "none (concentrations in M)",
+   "section": "14.4",
+   "anchor": "14.4-acidic-ions"
+  },
+  {
+   "sym": "K_b_ion",
+   "concept": "base-ionization-constant",
+   "meaning": "the base ionization constant of a weak base B",
+   "unit": "none (concentrations in M)",
+   "section": "14.4",
+   "anchor": "14.4-acidic-ions"
+  },
+  {
+   "sym": "K_w",
+   "concept": "ion-product-constant-for-water",
+   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "unit": "none (concentrations in M)",
+   "section": "14.4",
+   "anchor": "14.4-acidic-ions"
+  },
+  {
+   "sym": "[H3O+]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydronium ion",
+   "unit": "mol/L (M)",
+   "section": "14.4",
+   "anchor": "14.4-ex-anilinium"
+  },
+  {
+   "sym": "pH",
+   "concept": "ph",
+   "meaning": "the negative base-10 logarithm of the hydronium ion molarity",
+   "unit": "none",
+   "section": "14.4",
+   "anchor": "14.4-ex-anilinium"
+  },
+  {
+   "sym": "x_ice",
+   "concept": "ice-change-terms",
+   "meaning": "the change in concentration defined by the ICE table, equal to the equilibrium [H₃O⁺] or [OH⁻]",
+   "unit": "mol/L (M)",
+   "section": "14.4",
+   "anchor": "14.4-ex-anilinium"
+  },
+  {
+   "sym": "[OH-]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydroxide ion",
+   "unit": "mol/L (M)",
+   "section": "14.4",
+   "anchor": "14.4-ex-acetate"
+  },
+  {
+   "sym": "pK_a",
+   "concept": "acid-ionization-constant",
+   "meaning": "the negative logarithm of the acid ionization constant",
+   "unit": "none",
+   "section": "14.4",
+   "anchor": "14.4-metal-ions"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the amount of strong acid or base added to the buffer",
+   "unit": "mol",
+   "section": "14.6",
+   "anchor": "14.6-how-buffers-work"
+  },
+  {
+   "sym": "[H3O+]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydronium ion",
+   "unit": "mol/L (M)",
+   "section": "14.6",
+   "anchor": "14.6-how-buffers-work"
+  },
+  {
+   "sym": "[OH-]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydroxide ion",
+   "unit": "mol/L (M)",
+   "section": "14.6",
+   "anchor": "14.6-how-buffers-work"
+  },
+  {
+   "sym": "K_a",
+   "concept": "acid-ionization-constant",
+   "meaning": "the acid ionization constant of a weak acid HA",
+   "unit": "none (concentrations in M)",
+   "section": "14.6",
+   "anchor": "14.6-how-buffers-work"
+  },
+  {
+   "sym": "pOH",
+   "concept": "poh",
+   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "unit": "none",
+   "section": "14.6",
+   "anchor": "14.6-how-buffers-work"
+  },
+  {
+   "sym": "[H3O+]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydronium ion",
+   "unit": "mol/L (M)",
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "[OH-]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydroxide ion",
+   "unit": "mol/L (M)",
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "[A-]",
+   "concept": "molarity",
+   "meaning": "the equilibrium molar concentration of the conjugate base A⁻",
+   "unit": "mol/L (M)",
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "[HA]",
+   "concept": "molarity",
+   "meaning": "the equilibrium molar concentration of the un-ionized acid HA",
+   "unit": "mol/L (M)",
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "pOH",
+   "concept": "poh",
+   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "unit": "none",
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "K_a",
+   "concept": "acid-ionization-constant",
+   "meaning": "the acid ionization constant of a weak acid HA",
+   "unit": "none (concentrations in M)",
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "K_b_ion",
+   "concept": "base-ionization-constant",
+   "meaning": "the base ionization constant of a weak base B",
+   "unit": "none (concentrations in M)",
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "K_w",
+   "concept": "ion-product-constant-for-water",
+   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "unit": "none (concentrations in M)",
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "pK_w",
+   "concept": "ion-product-constant-for-water",
+   "meaning": "the negative logarithm of K_w, 14.00 at 25 °C",
+   "unit": "none",
+   "section": "14.7",
+   "anchor": "14.7-titration-curves"
+  },
+  {
+   "sym": "K_w",
+   "concept": "ion-product-constant-for-water",
+   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "unit": "none (concentrations in M)",
+   "section": "14.2",
+   "anchor": "14.2-acidic-basic"
+  },
+  {
+   "sym": "[H3O+]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydronium ion",
+   "unit": "mol/L (M)",
+   "section": "14.2",
+   "anchor": "14.2-p-functions"
+  },
+  {
+   "sym": "[OH-]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydroxide ion",
+   "unit": "mol/L (M)",
+   "section": "14.2",
+   "anchor": "14.2-p-functions"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature",
+   "unit": "°C",
+   "section": "14.2",
+   "anchor": "14.2-neutral-ph"
+  },
+  {
+   "sym": "K_w",
+   "concept": "ion-product-constant-for-water",
+   "meaning": "the ion-product constant for water, 1.0 × 10⁻¹⁴ at 25 °C",
+   "unit": "none (concentrations in M)",
+   "section": "14.3",
+   "anchor": "14.3-conjugate"
+  },
+  {
+   "sym": "[H3O+]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydronium ion",
+   "unit": "mol/L (M)",
+   "section": "14.3",
+   "anchor": "14.3-ionization"
+  },
+  {
+   "sym": "[OH-]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydroxide ion",
+   "unit": "mol/L (M)",
+   "section": "14.3",
+   "anchor": "14.3-ionization"
+  },
+  {
+   "sym": "pH",
+   "concept": "ph",
+   "meaning": "the negative base-10 logarithm of the hydronium ion molarity",
+   "unit": "none",
+   "section": "14.3",
+   "anchor": "14.3-calculations"
+  },
+  {
+   "sym": "pK_w",
+   "concept": "ion-product-constant-for-water",
+   "meaning": "the negative logarithm of K_w, 14.00 at 25 °C",
+   "unit": "none",
+   "section": "14.3",
+   "anchor": "14.3-calculations"
+  },
+  {
+   "sym": "pOH",
+   "concept": "poh",
+   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "unit": "none",
+   "section": "14.3",
+   "anchor": "14.3-calculations"
+  },
+  {
+   "sym": "[H3O+]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydronium ion",
+   "unit": "mol/L (M)",
+   "section": "14.5",
+   "anchor": "14.5-diprotic"
   }
  ]
 }

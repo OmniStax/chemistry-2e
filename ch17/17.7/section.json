@@ -1,0 +1,503 @@
+{
+  "id": "17.7",
+  "module": "m68827",
+  "chapter": "17",
+  "title": "Electrolysis",
+  "short": "Electrolysis",
+  "lead": "An external power source can impose a voltage on a redox system and drive a reaction that would not take place on its own. This section follows <span data-concept=\"electrolysis\">electrolysis</span> through molten sodium chloride, water and aqueous sodium chloride, shows it at work in <span data-concept=\"electroplating\">electroplating</span>, and counts the electrons it moves from the <span data-concept=\"electric-current\">current</span> and the time.",
+  "objectives": [
+    "Describe the process of electrolysis",
+    "Compare the operation of electrolytic cells with that of galvanic cells",
+    "Perform stoichiometric calculations for electrolytic processes"
+  ],
+  "summary_html": "<p>Nonspontaneous redox processes may be forced to occur in <span data-concept=\"electrochemical-cell\">electrochemical cells</span> by the application of an appropriate potential using an external power source—a process known as <span data-concept=\"electrolysis\">electrolysis</span>. <span data-concept=\"electrolysis\">Electrolysis</span> is the basis for certain ore refining processes, the industrial production of many chemical commodities, and the <span data-concept=\"electroplating\">electroplating</span> of metal coatings on various products. Measurement of the <span data-concept=\"electric-current\">current</span> flow during <span data-concept=\"electrolysis\">electrolysis</span> permits <span data-concept=\"electrolysis-stoichiometry\">stoichiometric calculations</span>.</p>",
+  "notes": "Nothing of the section is left out. The untitled opening carries a header of our own, Electrolytic cells. Example 17.10’s “from a solution of containing”, the quantitative passage’s “n mole of electrons” and the opening’s italic “electroplating”, whose glossary term the note defines, are kept as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. Five unkeyed exercises whose answers would have to be worked out are left out: fs-idm330221280 (the coulombs of a 2.5 A current over 35 minutes), fs-idm324128112 (the electrons of the same scenario), fs-idm27929184 (the half-reactions and cell reactions for the electrolysis of four molten salts), fs-idp30601424 (the times to reduce one mole of four ions) and fs-idm13758224 (the surface area of a galvanized part). fs-idp30833248 points at the left-out fs-idm27929184, so its prompt restates the four molten salts. Nothing is moved.",
+  "figures": [
+    {
+      "id": "sim-downs-cell",
+      "kind": "sim",
+      "number": "17.18",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_07_NaCl.jpg"
+      ],
+      "original_caption": "Cells of this sort (a cell for the electrolysis of molten sodium chloride) are used in the Downs process for production of sodium and chlorine, and they typically use iron cathodes and carbon anodes.",
+      "draws": [],
+      "conventions": [
+        "Na",
+        "Cl",
+        "C",
+        "Fe",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-water-electrolysis",
+      "kind": "sim",
+      "number": "17.19",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_07_Water.jpg"
+      ],
+      "original_caption": "The electrolysis of water produces stoichiometric amounts of oxygen gas at the anode and hydrogen at the cathode.",
+      "draws": [
+        "potential"
+      ],
+      "conventions": [
+        "O",
+        "H",
+        "Pt",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-silver-plating",
+      "kind": "sim",
+      "number": "17.20",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_07_Electroplate.jpg"
+      ],
+      "original_caption": "This schematic shows an electrolytic cell for silver plating eating utensils.",
+      "draws": [
+        "amount",
+        "current",
+        "time",
+        "charge",
+        "mass"
+      ],
+      "conventions": [
+        "Ag",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "electrolytic",
+      "concept": "electrolysis",
+      "verb": "introduces"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "electrolytic-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "redox-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "electrolytic",
+      "concept": "secondary-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "driving-nonspontaneous-cell-reaction",
+      "verb": "introduces"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "molten-nacl",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "water",
+      "concept": "driving-nonspontaneous-cell-reaction",
+      "verb": "reinforces"
+    },
+    {
+      "span": "water",
+      "concept": "standard-electrode-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "water",
+      "concept": "standard-cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "water",
+      "concept": "strong-acid",
+      "verb": "uses"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "electrolysis-of-aqueous-solutions",
+      "verb": "introduces"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "standard-electrode-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "standard-cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "aqueous-nacl",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "electroplating",
+      "verb": "introduces"
+    },
+    {
+      "span": "electroplating",
+      "concept": "electrolytic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "electroplating",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "quantitative",
+      "concept": "electric-current",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantitative",
+      "concept": "charge-and-moles-of-electrons",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantitative",
+      "concept": "electrolysis-stoichiometry",
+      "verb": "introduces"
+    },
+    {
+      "span": "quantitative",
+      "concept": "faradays-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "quantitative",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "quantitative",
+      "concept": "time",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "electrolysis-stoichiometry",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "charge-and-moles-of-electrons",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "electric-current",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "faradays-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "molar-mass",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-current-moles",
+      "concept": "mole",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "electrolysis-stoichiometry",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "electric-current",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "density",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "volume",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-deposition-time",
+      "concept": "molar-mass",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm34493360",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-current-moles"
+      },
+      "cite": "ex-current-moles",
+      "prompt": "Aluminum metal can be made from aluminum(III) ions by electrolysis. What is the half-reaction at the cathode? What mass of aluminum metal would be recovered if a current of 25.0 A passed through the solution for 15.0 minutes?",
+      "answer": {
+        "type": "number",
+        "part": "mass of aluminum metal recovered",
+        "value": 2.1,
+        "unit": "g",
+        "hint": "Each Al<sup>3+</sup> ion takes three electrons, so the moles of aluminum are one third of <em>It</em>/<em>F</em>.",
+        "generated_by": "source",
+        "solution": "${\\text{Al}}^{3+}(aq)+3\\;{\\text{e}}^{\\text{−}}\\;\\longrightarrow \\;\\text{Al}(s)$; 0.0777 mol Al = 2.10 g Al."
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm33432704",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-deposition-time"
+      },
+      "cite": "ex-deposition-time",
+      "prompt": "What mass of zinc is required to galvanize the top of a 3.00 m × 5.50 m sheet of iron to a thickness of 0.100 mm of zinc? If the zinc comes from a solution of Zn(NO<sub>3</sub>)<sub>2</sub> and the current is 25.5 A, how long will it take to galvanize the top of the iron? The density of zinc is 7.140 g/cm<sup>3</sup>.",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "mass of zinc",
+            "value": 11.8,
+            "unit": "kg",
+            "hint": "The volume of zinc is the area of the top times the thickness; its density gives the mass."
+          },
+          {
+            "part": "time",
+            "value": 379,
+            "unit": "hr",
+            "hint": "Each Zn<sup>2+</sup> ion takes two electrons; <em>t</em> = <em>Q</em>/<em>I</em>."
+          }
+        ],
+        "generated_by": "source",
+        "solution": "11.8 kg Zn requires 379 hours."
+      }
+    },
+    {
+      "id": "e46",
+      "source_id": "fs-idp30833248",
+      "source_number": "46",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quantitative",
+      "prompt": "What mass of each product is produced in each of the electrolytic cells of the previous problem if a total charge of 3.33 × 10<sup>5</sup> C passes through each cell? The previous problem electrolyzes each of these molten salts: (a) CaCl<sub>2</sub>, (b) LiH, (c) AlCl<sub>3</sub>, (d) CrBr<sub>3</sub>.",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a) mass Ca",
+            "value": 69.1,
+            "unit": "g"
+          },
+          {
+            "part": "(a) mass Cl<sub>2</sub>",
+            "value": 122,
+            "unit": "g"
+          },
+          {
+            "part": "(b) mass Li",
+            "value": 23.9,
+            "unit": "g"
+          },
+          {
+            "part": "(b) mass H<sub>2</sub>",
+            "value": 3.48,
+            "unit": "g"
+          },
+          {
+            "part": "(c) mass Al",
+            "value": 31.0,
+            "unit": "g"
+          },
+          {
+            "part": "(c) mass Cl<sub>2</sub>",
+            "value": 122,
+            "unit": "g"
+          },
+          {
+            "part": "(d) mass Cr",
+            "value": 59.8,
+            "unit": "g"
+          },
+          {
+            "part": "(d) mass Br<sub>2</sub>",
+            "value": 276,
+            "unit": "g"
+          }
+        ],
+        "generated_by": "source",
+        "solution": "(a) mass Ca = 69.1 g, mass Cl<sub>2</sub> = 122 g; (b) mass Li = 23.9 g, mass H<sub>2</sub> = 3.48 g; (c) mass Al = 31.0 g, mass Cl<sub>2</sub> = 122 g; (d) mass Cr = 59.8 g, mass Br<sub>2</sub> = 276 g"
+      }
+    },
+    {
+      "id": "e48",
+      "source_id": "fs-idm171259104",
+      "source_number": "48",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quantitative",
+      "figure": {
+        "src": "/media/ch17/CNX_Chem_17_07_Water.jpg",
+        "alt": "This figure shows an apparatus used for electrolysis. A central chamber with an open top has a vertical column extending below that is nearly full of a clear, colorless liquid, which is labeled “H subscript 2 O plus H subscript 2 S O subscript 4.” A horizontal tube in the apparatus connects the central region to vertical columns to the left and right, each of which has a valve or stopcock at the top and a stoppered bottom. Bubbles are present near the surface of the liquid on each side of the apparatus, with the bubbles labeled as “O subscript 2 ( g )” on the left and “H subscript 2 ( g )” on the right.",
+        "caption": "Figure 17.19 The electrolysis of water produces stoichiometric amounts of oxygen gas at the anode and hydrogen at the cathode."
+      },
+      "prompt": "A current of 2.345 A passes through the cell shown in Figure 17.19 for 45 minutes. What is the volume of the hydrogen collected at room temperature if the pressure is exactly 1 atm? (Hint: Is hydrogen the only gas present above the water?)",
+      "answer": {
+        "type": "number",
+        "value": 0.79,
+        "unit": "L",
+        "generated_by": "source",
+        "solution": "0.79 L"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "electrolysis-stoichiometry"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "charge-and-moles-of-electrons"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "half-reaction"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "electrolysis-stoichiometry"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "electroplating"
+    },
+    {
+      "exercise": "e46",
+      "concept": "electrolysis-stoichiometry"
+    },
+    {
+      "exercise": "e46",
+      "concept": "charge-and-moles-of-electrons"
+    },
+    {
+      "exercise": "e48",
+      "concept": "electrolysis-stoichiometry"
+    },
+    {
+      "exercise": "e48",
+      "concept": "electric-current"
+    }
+  ]
+}

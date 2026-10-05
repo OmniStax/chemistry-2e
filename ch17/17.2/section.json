@@ -1,0 +1,453 @@
+{
+  "id": "17.2",
+  "module": "m68822",
+  "chapter": "17",
+  "title": "Galvanic Cells",
+  "short": "Galvanic Cells",
+  "lead": "Copper placed in a solution of silver ions gives its electrons to them directly. A <span data-concept=\"galvanic-cell\">galvanic cell</span> separates such a pair of reactants into two <span data-concept=\"half-cell\">half-cells</span>, sends the electrons through an external circuit and keeps the charge balanced through a <span data-concept=\"salt-bridge\">salt bridge</span>, and a <span data-concept=\"cell-notation\">cell schematic</span> writes the whole arrangement in one line.",
+  "objectives": [
+    "Describe the function of a galvanic cell and its components",
+    "Use cell notation to symbolize the composition and construction of galvanic cells"
+  ],
+  "summary_html": "<p><span data-concept=\"galvanic-cell\">Galvanic cells</span> are devices in which a spontaneous <span data-concept=\"redox-reaction\">redox reaction</span> occurs indirectly, with the oxidant and reductant redox couples contained in separate <span data-concept=\"half-cell\">half-cells</span>. Electrons are transferred from the reductant (in the <span data-concept=\"anode\">anode</span> <span data-concept=\"half-cell\">half-cell</span>) to the oxidant (in the <span data-concept=\"cathode\">cathode</span> <span data-concept=\"half-cell\">half-cell</span>) through an external circuit, and inert solution phase ions are transferred between <span data-concept=\"half-cell\">half-cells</span>, through a <span data-concept=\"salt-bridge\">salt bridge</span>, to maintain charge neutrality. The construction and composition of a <span data-concept=\"galvanic-cell\">galvanic cell</span> may be succinctly represented using chemical formulas and others symbols in the form of a <span data-concept=\"cell-notation\">cell schematic</span> (<span data-concept=\"cell-notation\">cell notation</span>).</p>",
+  "notes": "Nothing of the section is left out. The overall equation’s Cu^{2}{}^{+} and the misplaced parenthesis in the key of exercise fs-idm154595184 (d), “(aq), Cu²⁺”, are kept as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. Three unkeyed exercises whose answers would have to be worked out are left out: fs-idm104280704 (the half-cell reactions of two schematics), fs-idm218235136 (balancing four reactions and writing their schematics) and fs-idp19248144 (cell notation for three systems). The keyed fs-idm144742192 and fs-idm20230112 refer to the first two, and each restates the schematics or reactions it refers to. The unkeyed fs-idm144354208, which asks whether an electrode was an anode or a cathode, and fs-idm33124048 are kept with a suggested approach marked as OmniStax’s own. Nothing is moved.",
+  "figures": [
+    {
+      "id": "fig-cu-ag",
+      "kind": "photo",
+      "number": "17.2",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-galvanic-cell",
+      "kind": "sim",
+      "number": "17.3",
+      "folds": [
+        "17.4"
+      ],
+      "originals": [
+        "/media/ch17/CNX_Chem_17_02_Galvanicel.jpg",
+        "/media/ch17/CNX_Chem_17_02_Oxidareduc.jpg"
+      ],
+      "original_caption": "(Figure 17.3) A galvanic cell based on the spontaneous reaction between copper and silver(I) ions. (Figure 17.4) A galvanic cell based on the spontaneous reaction between magnesium and iron(III) ions.",
+      "draws": [
+        "concentration"
+      ],
+      "conventions": [
+        "Cu",
+        "Ag",
+        "Mg",
+        "Pt",
+        "Fe",
+        "Na",
+        "Cl",
+        "N",
+        "O",
+        "e-"
+      ],
+      "facts": [
+        "#3b8fd9"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "transfer",
+      "concept": "redox-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "transfer",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "transfer",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "transfer",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "transfer",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "electrochemical-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "galvanic-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "half-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "anode",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "cathode",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "salt-bridge",
+      "verb": "introduces"
+    },
+    {
+      "span": "galvanic",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "oxidation",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "reduction",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "electrolyte",
+      "verb": "uses"
+    },
+    {
+      "span": "galvanic",
+      "concept": "concentration",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "cell-notation",
+      "verb": "introduces"
+    },
+    {
+      "span": "notation",
+      "concept": "inert-electrode",
+      "verb": "introduces"
+    },
+    {
+      "span": "notation",
+      "concept": "active-electrode",
+      "verb": "introduces"
+    },
+    {
+      "span": "notation",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "half-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "salt-bridge",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "notation",
+      "concept": "molarity",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "cell-notation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "half-reaction-method",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-schematics",
+      "concept": "cathode",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm168909584",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-schematics"
+      },
+      "cite": "ex-schematics",
+      "prompt": "Omitting solute concentrations and spectator ion identities, write the schematic for a galvanic cell whose net cell reaction is shown below.<br>${\\text{Sn}}^{4+}(aq)+\\text{Zn}(s)\\;\\longrightarrow \\;{\\text{Sn}}^{2+}(aq)+{\\text{Zn}}^{2+}(aq)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "$\\text{Zn}(s)\\,|\\,{\\text{Zn}}^{2+}(aq)\\,\\|\\,{\\text{Sn}}^{4+}(aq),{\\text{Sn}}^{2+}(aq)\\,|\\,\\text{Pt}(s)$"
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idm154595184",
+      "source_number": "11",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "Write cell schematics for the following cell reactions, using platinum as an inert electrode as needed.<br>(a) $\\text{Mg}(s)+{\\text{Ni}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Mg}}^{2+}(aq)+\\text{Ni}(s)$<br>(b) $2{\\text{Ag}}^{\\text{+}}(aq)+\\text{Cu}(s)\\;\\longrightarrow \\;{\\text{Cu}}^{2+}(aq)+\\text{2Ag}(s)$<br>(c) $\\text{Mn}(s)+{\\text{Sn(NO}}_{3}{)}_{2}(aq)\\;\\longrightarrow \\;{\\text{Mn(NO}}_{3}{)}_{2}(aq)+\\text{Sn}(s)$<br>(d) $3{\\text{CuNO}}_{3}(aq)+{\\text{Au(NO}}_{3}{)}_{3}(aq)\\;\\longrightarrow \\;{\\text{3Cu(NO}}_{3}{)}_{2}(aq)+\\text{Au}(s)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) $\\text{Mg}(s)\\;\\,|\\,\\;{\\text{Mg}}^{2+}(aq)\\,\\|\\,{\\text{Ni}}^{\\text{2+}}(aq)\\;\\,|\\,\\;\\text{Ni}(s);$ (b) $\\text{Cu}(s)\\;\\,|\\,\\;{\\text{Cu}}^{2+}(aq)\\,\\|\\,{\\text{Ag}}^{\\text{+}}(aq)\\;\\,|\\,\\;\\text{Ag}(s);$ (c) $\\text{Mn}(s)\\;\\,|\\,\\;{\\text{Mn}}^{2+}(aq)\\,\\|\\,{\\text{Sn}}^{2+}(aq)\\;\\,|\\,\\;\\text{Sn}(s);$ (d) $\\text{Pt}(s)\\;\\,|\\,\\;{\\text{Cu}}^{\\text{+}}(aq{\\text{), Cu}}^{2+}(aq)\\,\\|\\,{\\text{Au}}^{\\text{3+}}(aq)\\;\\,|\\,\\;\\text{Au}(s)$"
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idm144742192",
+      "source_number": "13",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "Write a balanced equation for the cell reaction of each cell in the exercise that gives these two schematics, which represent galvanic cells as written:<br>(a) $\\text{Mg}(s)\\,|\\,{\\text{Mg}}^{2+}(aq)\\,\\|\\,{\\text{Cu}}^{2+}(aq)\\,|\\,\\text{Cu}(s)$<br>(b) $\\text{Ni}(s)\\,|\\,\\;{\\text{Ni}}^{2+}(aq)\\,\\|\\,{\\text{Ag}}^{\\text{+}}(aq)\\,|\\,\\;\\text{Ag}(s)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) $\\text{Mg}(s)+{\\text{Cu}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Mg}}^{2+}(aq)+\\text{Cu}(s);$ (b) $2{\\text{Ag}}^{\\text{+}}(aq)+\\text{Ni}(s)\\;\\longrightarrow \\;{\\text{Ni}}^{2+}(aq)+\\text{2Ag}(s)$"
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idm20230112",
+      "source_number": "15",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "transfer",
+      "prompt": "Identify the oxidant and reductant in each reaction of the exercise that asks for these reactions to be balanced:<br>(a) $\\text{Al}(s)+{\\text{Zr}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Al}}^{3+}(aq)+\\text{Zr}(s)$<br>(b) ${\\text{Ag}}^{\\text{+}}(aq)+\\text{NO}(g)\\;\\longrightarrow \\;\\text{Ag}(s)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\hspace{5em}(\\text{acidic solution})$<br>(c) ${\\text{SiO}}_{3}{}^{2−}(aq)+\\text{Mg}(s)\\;\\longrightarrow \\;\\text{Si}(s)+\\text{Mg}{(\\text{OH})}_{2}(s)\\hspace{5em}\\text{(basic solution)}$<br>(d) ${\\text{ClO}}_{3}{}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\longrightarrow \\;{\\text{Cl}}^{\\text{−}}(aq)+{\\text{MnO}}_{4}{}^{\\text{−}}(aq)\\hspace{5em}\\text{(basic solution)}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Species oxidized = reducing agent: (a) Al(<em>s</em>); (b) NO(<em>g</em>); (c) Mg(<em>s</em>); and (d) MnO<sub>2</sub>(<em>s</em>); Species reduced = oxidizing agent: (a) Zr<sup>4+</sup>(<em>aq</em>); (b) Ag<sup>+</sup>(<em>aq</em>); (c) ${\\text{SiO}}_{3}{}^{2−}(aq)$; and (d) ${\\text{ClO}}_{3}{}^{\\text{−}}(aq)$"
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idm117307760",
+      "source_number": "17",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "galvanic",
+      "prompt": "Why is a salt bridge necessary in galvanic cells like the one in Figure 17.3?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Without the salt bridge, the circuit would be open (or broken) and no current could flow. With a salt bridge, each half-cell remains electrically neutral and current can flow through the circuit."
+      }
+    },
+    {
+      "id": "e18",
+      "source_id": "fs-idm144354208",
+      "source_number": "18",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "An active (metal) electrode was found to gain mass as the oxidation-reduction reaction was allowed to proceed. Was the electrode an anode or a cathode? Explain.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: an active electrode is made of a member of its half-cell’s redox couple. Ask which half-reaction turns metal ions in the solution into atoms of the metal on the electrode’s surface, oxidation or reduction, and then at which electrode that half-reaction occurs, as for the silver foil of Figure 17.3."
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idp44043568",
+      "source_number": "19",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "An active (metal) electrode was found to lose mass as the oxidation-reduction reaction was allowed to proceed. Was the electrode an anode or a cathode? Explain.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Active electrodes participate in the oxidation-reduction reaction. Since metals form cations, the electrode would lose mass if metal atoms in the electrode were to oxidize and go into solution. Oxidation occurs at the anode."
+      }
+    },
+    {
+      "id": "e20",
+      "source_id": "fs-idm33124048",
+      "source_number": "20",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "notation",
+      "prompt": "The masses of three electrodes (A, B, and C), each from three different galvanic cells, were measured before and after the cells were allowed to pass current for a while. The mass of electrode A increased, that of electrode B was unchanged, and that of electrode C decreased. Identify each electrode as active or inert, and note (if possible) whether it functioned as anode or cathode.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: an inert electrode is neither oxidized nor reduced, so its mass does not change, while an active electrode’s mass changes as its metal dissolves or deposits. Decide first which electrodes are active, then, for each active one, whether metal left it as cations (oxidation) or was deposited on it (reduction), and name the electrode where that occurs. For the unchanged electrode, ask whether its mass alone can tell which half-reaction took place at it."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "cell-notation"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "inert-electrode"
+    },
+    {
+      "exercise": "e11",
+      "concept": "cell-notation"
+    },
+    {
+      "exercise": "e11",
+      "concept": "inert-electrode"
+    },
+    {
+      "exercise": "e13",
+      "concept": "cell-notation"
+    },
+    {
+      "exercise": "e13",
+      "concept": "half-reaction"
+    },
+    {
+      "exercise": "e15",
+      "concept": "oxidizing-agent"
+    },
+    {
+      "exercise": "e15",
+      "concept": "reducing-agent"
+    },
+    {
+      "exercise": "e17",
+      "concept": "salt-bridge"
+    },
+    {
+      "exercise": "e17",
+      "concept": "galvanic-cell"
+    },
+    {
+      "exercise": "e18",
+      "concept": "active-electrode"
+    },
+    {
+      "exercise": "e18",
+      "concept": "anode"
+    },
+    {
+      "exercise": "e18",
+      "concept": "cathode"
+    },
+    {
+      "exercise": "e19",
+      "concept": "active-electrode"
+    },
+    {
+      "exercise": "e19",
+      "concept": "anode"
+    },
+    {
+      "exercise": "e20",
+      "concept": "active-electrode"
+    },
+    {
+      "exercise": "e20",
+      "concept": "inert-electrode"
+    },
+    {
+      "exercise": "e20",
+      "concept": "anode"
+    },
+    {
+      "exercise": "e20",
+      "concept": "cathode"
+    }
+  ]
+}

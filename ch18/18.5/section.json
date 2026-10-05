@@ -1,0 +1,438 @@
+{
+ "id": "18.5",
+ "module": "m68833",
+ "chapter": "18",
+ "title": "Occurrence, Preparation, and Compounds of Hydrogen",
+ "short": "Hydrogen",
+ "lead": "Hydrogen, the most abundant element in the universe, is taken from its <span data-concept=\"isotopes\">isotopes</span> through the ways it is prepared from steam, water, acids and metal hydrides, to the reactions it enters when heated and its compounds with nitrogen, phosphorus, sulfur and the halogens.",
+ "objectives": [
+  "Describe the properties, preparation, and compounds of hydrogen"
+ ],
+ "summary_html": "<p>Hydrogen is the most abundant element in the universe and its chemistry is truly unique. Although it has some chemical reactivity that is similar to that of the <span data-concept=\"alkali-metal\">alkali metals</span>, hydrogen has many of the same chemical properties of a <span data-concept=\"nonmetal\">nonmetal</span> with a relatively low <span data-concept=\"electronegativity\">electronegativity</span>. It forms ionic hydrides with active metals, covalent compounds in which it has an oxidation state of 1− with less electronegative elements, and covalent compounds in which it has an oxidation state of 1+ with more electronegative nonmetals. It reacts explosively with oxygen, fluorine, and chlorine, less readily with bromine, and much less readily with iodine, sulfur, and nitrogen. Hydrogen reduces the oxides of metals with lower <span data-concept=\"standard-electrode-potential\">reduction potentials</span> than chromium to form the metal and water. The <span data-concept=\"hydrogen-halide\">hydrogen halides</span> are all acidic when dissolved in water.</p>",
+ "notes": "The section keeps as printed “Water gas is as an industrial fuel”, “Inorganic derivations include”, “In which case, the sulfide may oxidize” and Table 18.1’s first row, MH or MH₂ ⟶ MOH or M(OH)₂ + H₂, written without the water.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key. The two unkeyed exercises fs-idp75856256 (the Lewis acid and base, the oxidizing and reducing agents and the changes in oxidation number of calcium hydride with water) and fs-idp249418928 (the mass of CaH₂ to fill a balloon with hydrogen) are left out, and no answer is computed for them. Nothing is moved.",
+ "figures": [
+  {
+   "id": "sim-electrolysis",
+   "kind": "sim",
+   "number": "18.26",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_05_Electrolys.jpg"
+   ],
+   "original_caption": "The electrolysis of water produces hydrogen and oxygen. Because there are twice as many hydrogen atoms as oxygen atoms and both elements are diatomic, there is twice the volume of hydrogen produced at the cathode as there is oxygen produced at the anode.",
+   "draws": [
+    "volume"
+   ],
+   "conventions": [
+    "H",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-iron-hcl",
+   "kind": "photo",
+   "number": "18.27",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-shuttle",
+   "kind": "photo",
+   "number": "18.28",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ammonia",
+   "kind": "photo",
+   "number": "18.29",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ammonia-derivatives",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "hydrogen",
+   "concept": "hydrogen-isotopes",
+   "verb": "introduces"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "molecule",
+   "verb": "uses"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "isotopes",
+   "verb": "uses"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "vapor-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "hydrogen",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "hydrogen-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "hydrocarbon",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "hydrogenation",
+   "verb": "introduces"
+  },
+  {
+   "span": "reactions",
+   "concept": "hydrogen-place-in-periodic-table",
+   "verb": "introduces"
+  },
+  {
+   "span": "reactions",
+   "concept": "hydrogen-reactions",
+   "verb": "introduces"
+  },
+  {
+   "span": "reactions",
+   "concept": "exothermic-process",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "strong-base",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "gas-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "haber-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "compounds",
+   "concept": "ammonia-chemistry",
+   "verb": "introduces"
+  },
+  {
+   "span": "compounds",
+   "concept": "hydrogen-halide",
+   "verb": "introduces"
+  },
+  {
+   "span": "compounds",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "strong-base",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "bronsted-lowry-base",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "standard-free-energy-of-formation",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "strong-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "diprotic-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idm24100896",
+   "source_number": "51",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reactions",
+   "prompt": "Why does hydrogen not exhibit an oxidation state of 1− when bonded to nonmetals?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The electronegativity of the nonmetals is greater than that of hydrogen. Thus, the negative charge is better represented on the nonmetal, which has the greater tendency to attract electrons in the bond to itself."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp235517504",
+   "source_number": "53",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reactions",
+   "prompt": "In drawing Lewis structures, we learn that a hydrogen atom forms only one bond in a covalent compound. Why?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Hydrogen has only one orbital with which to bond to other atoms. Consequently, only one two-electron bond can form."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp52465648",
+   "source_number": "55",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "What mass of hydrogen gas results from the reaction of 8.5 g of KH with water?<br>$\\text{KH}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;\\text{KOH}+{\\text{H}}_{2}$",
+   "answer": {
+    "type": "number",
+    "value": 0.43,
+    "unit": "g",
+    "tol": 0.02,
+    "part": "the mass of H<sub>2</sub>",
+    "hint": "Convert the mass of KH to moles with its molar mass, use the one-to-one ratio of KH to H<sub>2</sub> in the equation, and convert the moles of H<sub>2</sub> to grams.",
+    "solution": "0.43 g H<sub>2</sub>",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "hydrogen-reactions"
+  },
+  {
+   "exercise": "e1",
+   "concept": "electronegativity"
+  },
+  {
+   "exercise": "e2",
+   "concept": "hydrogen-place-in-periodic-table"
+  },
+  {
+   "exercise": "e2",
+   "concept": "covalent-bond"
+  },
+  {
+   "exercise": "e3",
+   "concept": "hydrogen-preparation"
+  },
+  {
+   "exercise": "e3",
+   "concept": "mass-stoichiometry"
+  }
+ ]
+}

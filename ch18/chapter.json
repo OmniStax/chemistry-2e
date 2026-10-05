@@ -157,6 +157,14 @@
    "meaning": "the negative logarithm of the acid ionization constant of a halogen oxyacid",
    "unit": "none",
    "section": "18.9"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of a gas collected over an electrode in the electrolysis of water, hydrogen at the cathode and oxygen at the anode",
+   "unit": "mL",
+   "section": "18.5",
+   "anchor": "18.5-preparation"
   }
  ]
 }

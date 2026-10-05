@@ -1,0 +1,1008 @@
+{
+ "id": "18.9",
+ "module": "m68837",
+ "chapter": "18",
+ "title": "Occurrence, Preparation, and Compounds of Oxygen",
+ "short": "Oxygen",
+ "lead": "Oxygen, the most abundant element in the earth’s crust, is separated from liquid air and reacts with nearly every element. The section takes up <span data-concept=\"ozone\">ozone</span>, the <span data-concept=\"oxide\">oxides</span>, <span data-concept=\"peroxide\">peroxides</span>, <span data-concept=\"superoxide\">superoxides</span> and <span data-concept=\"hydroxide\">hydroxides</span> of the representative metals with the <span data-concept=\"chlor-alkali-process\">chlor-alkali process</span>, and the nonmetal oxides and the <span data-concept=\"oxyacid\">oxyacids</span> of nitrogen, phosphorus, sulfur and the halogens with their <span data-concept=\"salt\">salts</span>.",
+ "objectives": [
+  "Describe the properties, preparation, and compounds of oxygen",
+  "Describe the preparation, properties, and uses of some representative metal oxides, peroxides, and hydroxides"
+ ],
+ "summary_html": "<p>Oxygen is one of the most reactive elements. This reactivity, coupled with its abundance, makes the chemistry of oxygen very rich and well understood.</p><p>Compounds of the representative metals with oxygen exist in three categories (1) <span data-concept=\"oxide\">oxides</span>, (2) <span data-concept=\"peroxide\">peroxides</span> and <span data-concept=\"superoxide\">superoxides</span>, and (3) <span data-concept=\"hydroxide\">hydroxides</span>. Heating the corresponding hydroxides, <span data-concept=\"nitrate\">nitrates</span>, or <span data-concept=\"carbonate\">carbonates</span> is the most common method for producing oxides. Heating the metal or metal oxide in oxygen may lead to the formation of peroxides and superoxides. The soluble oxides dissolve in water to form solutions of hydroxides. Most metals oxides are <span data-concept=\"base-anhydride\">base anhydrides</span> and react with <span data-concept=\"acid\">acids</span>. The hydroxides of the representative metals react with acids in <span data-concept=\"acid-base-reaction\">acid-base reactions</span> to form <span data-concept=\"salt\">salts</span> and water. The hydroxides have many commercial uses.</p><p>All nonmetals except fluorine form multiple oxides. Nearly all of the nonmetal oxides are <span data-concept=\"acid-anhydride\">acid anhydrides</span>. <span data-concept=\"oxyacid-structure-and-strength\">The acidity of oxyacids requires that the hydrogen atoms bond to the oxygen atoms in the molecule rather than to the other nonmetal atom</span>. Generally, the strength of the oxyacid increases with the number of oxygen atoms bonded to the nonmetal atom and not to a hydrogen.</p>",
+ "notes": "The Link to Learning video of gold dissolving in aqua regia is left out, and the section keeps as printed “2HCL”, the unbalanced Na₂O(s) + H₂O(l) ⟶ NaOH(aq), “Tl₂O(s) + H₂O(aq)”, “peroxides ions”, the comma after “a bond order of 1½”, “tin(IV), SnO₂, and lead(IV), PbO₂”, “few second- and third-row transition metals”, “The process known as the chlor-alkali process, utilizes”, “Nitrogen pentaoxide”, “hydrogen phosphate ion, HPO₃²⁻” for hydrogen phosphite, the Δ over the arrow of 2H₂SO₃ + O₂, K<sub>a</sub> = 1.2 × 10⁻² for both HSO₄⁻ and the first step of H₂SO₃, “2+-oxidation state”, “7+-oxidation state”, the subscripted comma after H₂S, the summary’s “Most metals oxides” and the key’s “the oxygen electron”.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idp152584704, fs-idm11343008, fs-idm41302384 and fs-idm53754112 (equations to write) and fs-idm95780080 (the volume of sulfuric acid that neutralizes a mass of calcium carbonate) are left out, and no answer is computed for them. Nothing is moved.",
+ "figures": [
+  {
+   "id": "fig-ozone",
+   "kind": "photo",
+   "number": "18.42",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-limelight",
+   "kind": "photo",
+   "number": "18.43",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-sunblock",
+   "kind": "photo",
+   "number": "18.44",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-zinc-hydroxide",
+   "kind": "photo",
+   "number": "18.45",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-antacid",
+   "kind": "photo",
+   "number": "18.46",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-so2",
+   "kind": "photo",
+   "number": "18.47",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-so3",
+   "kind": "photo",
+   "number": "18.48",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-chlorine-oxides",
+   "kind": "photo",
+   "number": "18.49",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-nitric-acid",
+   "kind": "photo",
+   "number": "18.50",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-nitrous-acid",
+   "kind": "photo",
+   "number": "18.51",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-phosphoric-acid",
+   "kind": "photo",
+   "number": "18.52",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-phosphorous-acid",
+   "kind": "photo",
+   "number": "18.53",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-sulfuric-acid",
+   "kind": "photo",
+   "number": "18.54",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-chlorine-oxyanions",
+   "kind": "sim",
+   "number": "18.55",
+   "folds": [
+    "18.56",
+    "18.57"
+   ],
+   "originals": [
+    "/media/ch18/CNX_Chem_18_09_ChloritIon.jpg",
+    "/media/ch18/CNX_Chem_18_09_ClO3Ion.jpg",
+    "/media/ch18/CNX_Chem_18_09_PerchloIon.jpg"
+   ],
+   "original_caption": "(Figure 18.55) Chlorite ions, ClO₂⁻, are produced when chlorous acid reacts with bases. (Figure 18.56) Chlorate ions, ClO₃⁻, are produced when halic acids react with bases. (Figure 18.57) Perchlorate ions, ClO₄⁻, can be produced when perchloric acid reacts with a base or by electrolysis of hot solutions of their chlorides.",
+   "draws": [
+    "equilibrium-constant"
+   ],
+   "conventions": [
+    "Cl",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "oxygen",
+   "concept": "oxygen-occurrence-and-reactivity",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxygen",
+   "concept": "photosynthesis",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxygen",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "combustion-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "mass",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "solubility",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "oxygen",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "ozone",
+   "verb": "introduces"
+  },
+  {
+   "span": "ozone",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "ozone",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxygen-occurrence-and-reactivity",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "noble-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "peroxide",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "superoxide",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxide",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "peroxide",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "superoxide",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "hydroxide",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "base-anhydride",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "chlor-alkali-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "inert-pair-effect",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "acid-base-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "bond-order",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "net-ionic-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "complex-ion",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "lewis-acids-and-bases",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "electrolysis-of-aqueous-solutions",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "base",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "acid",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "alkali-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "reversible-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "carbonate",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "nitrate",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "precipitate",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "sulfite",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "sulfate",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "lewis-acids-and-bases",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "hydroxide",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "strong-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetal-oxides",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "acid-anhydride",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "oxyanion",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "acid",
+   "verb": "uses"
+  },
+  {
+   "span": "oxyacids",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "ostwald-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "nitrate",
+   "verb": "introduces"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "nitrogen-oxides-with-water",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "strong-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "oxyacid",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "hydroxide",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "carbonate",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "nitrogen-oxyacids",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus-oxyacids",
+   "concept": "oxyacid-structure-and-strength",
+   "verb": "introduces"
+  },
+  {
+   "span": "phosphorus-oxyacids",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus-oxyacids",
+   "concept": "lewis-structure-diagram",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "sulfate",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "sulfite",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "diprotic-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "molecular-structure",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "oxide",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "hydroxide",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "base",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur-oxyacids",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "oxyacid-strength",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "strong-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "electrolysis-of-aqueous-solutions",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "base",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "gas-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "halogen-oxyacids",
+   "concept": "oxyacid-structure-and-strength",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp58245760",
+   "source_number": "79",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "oxides",
+   "prompt": "Predict the product of burning francium in air.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "FrO<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp175610544",
+   "source_number": "81",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "oxides",
+   "prompt": "Write balanced chemical equations for the following reactions:<br>(a) zinc metal heated in a stream of oxygen gas<br>(b) zinc carbonate heated until loss of mass stops<br>(c) zinc carbonate added to a solution of acetic acid, CH<sub>3</sub>CO<sub>2</sub>H<br>(d) zinc added to a solution of hydrobromic acid",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $\\text{2Zn}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{2ZnO}(s);$ (b) ${\\text{ZnCO}}_{3}(s)\\;\\longrightarrow \\;\\text{ZnO}(s)+{\\text{CO}}_{2}(g);$ (c) ${\\text{ZnCO}}_{3}(s)+2{\\text{CH}}_{3}\\text{COOH}(aq)\\;\\longrightarrow \\;\\text{Zn}{({\\text{CH}}_{3}\\text{COO})}_{2}(aq)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l);$ (d) $\\text{Zn}(s)+\\text{2HBr}(aq)\\;\\longrightarrow \\;{\\text{ZnBr}}_{2}(aq)+{\\text{H}}_{2}(g)$"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp99009104",
+   "source_number": "83",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "oxides",
+   "prompt": "Illustrate the amphoteric nature of aluminum hydroxide by citing suitable equations.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\text{Al}{(\\text{OH})}_{3}(s)+3{\\text{H}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{Al}}^{3+}+3{\\text{H}}_{2}\\text{O}(l);$ $\\text{Al}{(\\text{OH})}_{3}(s)+{\\text{OH}}^{-}\\;\\longrightarrow \\;{[\\text{Al}{(\\text{OH})}_{4}]}^{\\text{−}}(aq)$"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm57353488",
+   "source_number": "85",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "oxides",
+   "prompt": "Write balanced chemical equations for the following reactions:<br>(a) sodium oxide added to water<br>(b) cesium carbonate added to an excess of an aqueous solution of HF<br>(c) aluminum oxide added to an aqueous solution of HClO<sub>4</sub><br>(d) a solution of sodium carbonate added to solution of barium nitrate<br>(e) titanium metal produced from the reaction of titanium tetrachloride with elemental sodium",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${\\text{Na}}_{2}\\text{O}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2NaOH}(aq);$ (b) ${\\text{Cs}}_{2}{\\text{CO}}_{3}(s)+\\text{2HF}(aq)\\;\\longrightarrow \\;\\text{2CsF}(aq)+\\;{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l);$ (c) ${\\text{Al}}_{2}{\\text{O}}_{3}(s)+6{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;\\text{2Al}{({\\text{ClO}}_{4})}_{3}(aq)+3{\\text{H}}_{2}\\text{O}(l);$ (d) ${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+\\text{Ba}{({\\text{NO}}_{3})}_{2}(aq)\\;\\longrightarrow \\;2{\\text{NaNO}}_{3}(aq)+{\\text{BaCO}}_{3}(s);$ (e) ${\\text{TiCl}}_{4}(l)+\\text{4Na}(s)\\;\\longrightarrow \\;\\text{Ti}(s)+\\text{4NaCl}(s)$"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp61089040",
+   "source_number": "87",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halogen-oxyacids",
+   "prompt": "Which is the stronger acid, HClO<sub>4</sub> or HBrO<sub>4</sub>? Why?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "HClO<sub>4</sub> is the stronger acid because, in a series of oxyacids with similar formulas, the higher the electronegativity of the central atom, the stronger is the attraction of the central atom for the electrons of the oxygen(s). The stronger attraction of the oxygen electron results in a stronger attraction of oxygen for the electrons in the O-H bond, making the hydrogen more easily released. The weaker this bond, the stronger the acid."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp59653392",
+   "source_number": "89",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "sulfur-oxyacids",
+   "prompt": "Which is the stronger acid, H<sub>2</sub>SO<sub>4</sub> or H<sub>2</sub>SeO<sub>4</sub>? Why? You may wish to review the chapter on acid-base equilibria.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "As H<sub>2</sub>SO<sub>4</sub> and H<sub>2</sub>SeO<sub>4</sub> are both oxyacids and their central atoms both have the same oxidation number, the acid strength depends on the relative electronegativity of the central atom. As sulfur is more electronegative than selenium, H<sub>2</sub>SO<sub>4</sub> is the stronger acid."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "superoxide"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alkali-metal"
+  },
+  {
+   "exercise": "e2",
+   "concept": "oxide"
+  },
+  {
+   "exercise": "e2",
+   "concept": "carbonate"
+  },
+  {
+   "exercise": "e2",
+   "concept": "acid-base-reaction"
+  },
+  {
+   "exercise": "e3",
+   "concept": "hydroxide"
+  },
+  {
+   "exercise": "e3",
+   "concept": "amphoteric"
+  },
+  {
+   "exercise": "e3",
+   "concept": "complex-ion"
+  },
+  {
+   "exercise": "e4",
+   "concept": "oxide"
+  },
+  {
+   "exercise": "e4",
+   "concept": "base-anhydride"
+  },
+  {
+   "exercise": "e4",
+   "concept": "hydroxide"
+  },
+  {
+   "exercise": "e4",
+   "concept": "acid-base-reaction"
+  },
+  {
+   "exercise": "e5",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e5",
+   "concept": "oxyacid-structure-and-strength"
+  },
+  {
+   "exercise": "e5",
+   "concept": "electronegativity"
+  },
+  {
+   "exercise": "e6",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e6",
+   "concept": "electronegativity"
+  }
+ ]
+}

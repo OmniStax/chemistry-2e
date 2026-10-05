@@ -124,11 +124,12 @@ function flock(v, grp, g, k) {
    cylinders of hydrogen, helium and neon, and a fourth of the same size
    holding all three. Moving: the molecules travel and strike the walls,
    so the figure runs continuously with the transport. The cylinders
-   stand on a bench, so the pitch stays between 2° and 72° above level.
+   stand on a bench, so the pitch stays between 2° and 52° above level,
+   past which the names under the cylinders would lie over them.
 ===================================================================== */
 (function () {
   const d = sim('sim-dalton');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.25], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 330, dist: 8.4, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 0.9], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 0.75 }], h: 330, dist: 8.4, tilt: 0.2 });
   const grp = v.part(0), cnv = strip(d, 300);
   const GAS = ['H₂', 'He', 'Ne'], WHO = ['hydrogen', 'helium', 'neon'], SYM = ['\\kPA', '\\kPB', '\\kPC'], NAME = ['P_{A}', 'P_{B}', 'P_{C}'];
   const Ps = [300, 450, 600].map((val, i) => ctl(d.controls, { label: SYM[i], cls: 'pressure', min: 0, max: 900, step: 10, value: val, unit: 'kPa', dec: 0, aria: 'partial pressure of ' + WORD[GAS[i]] + ' in kilopascals', onInput: refill }));
@@ -189,7 +190,7 @@ function flock(v, grp, g, k) {
     text(ctx, 'mole fractions in the mixture: hydrogen ' + X_(0) + ', helium ' + X_(1) + ', neon ' + X_(2), 700, 286, PAL.muted, { size: 17, align: 'center' });
     topline(ctx, p[0] + ' kPa of hydrogen, ' + p[1] + ' kPa of helium and ' + p[2] + ' kPa of neon, put together in one cylinder of the same size, press at ' + tot + ' kPa.');
     readout(d.readout, `\\kPtot = \\kPA + \\kPB + \\kPC = ${hue('pressure', p[0] + '\\ \\text{kPa}')} + ${hue('pressure', p[1] + '\\ \\text{kPa}')} + ${hue('pressure', p[2] + '\\ \\text{kPa}')} = ${hue('pressure', tot + '\\ \\text{kPa}')}`,
-      'One molecule is drawn for every 50 kPa. Each gas keeps its own molecules and strikes the walls of the mixture’s cylinder as often as it struck the walls of its own, so its partial pressure is its mole fraction times the total.');
+      'One molecule is drawn for every 50 kPa, and each partial pressure is its gas’s mole fraction times the total.');
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); g.step(dt, 0.78, inside); }, draw });
 })();
@@ -242,7 +243,7 @@ function flock(v, grp, g, k) {
     });
     text(ctx, 'reaction producing gas', 140, 548, rf, { size: 18, align: 'center' });
     text(ctx, 'collection flask', 500, 150, cf, { size: 18, align: 'center' });
-    text(ctx, 'levels equal', 416, LEVEL - 14, PAL.muted, { size: 16, align: 'right' });
+    text(ctx, 'levels equal', 636, LEVEL - 14, PAL.muted, { size: 16 });
     /* the vapor pressure of water against temperature */
     const box = { l: 800, r: 1320, t: 130, b: 500 };
     const { X, Y } = axes(ctx, box, [0, 100], [0, 800], { xl: 'T (°C)', xc: ct, yl: 'vapor pressure of water (torr)', yc: cp, nx: 5, ny: 4 });
@@ -343,8 +344,7 @@ function flock(v, grp, g, k) {
     if (VIEW.value === '3d') draw3d(); else draw2d();
     const c = coef(Rc.value), V = Vc.v;
     const sym = c.map(([f]) => `\\kV_{\\text{${f.replace(/₂/g, '_2').replace(/₃/g, '_3').replace(/_(\d)/g, '}_{$1}\\text{')}}}`).join(' : ');
-    readout(d.readout, `${sym} = ${c.map(([, n]) => n).join(' : ')} = ${c.map(([, n]) => hue('volume', fmt(n * V, 2) + '\\ \\text{L}')).join(' : ')}`,
-      'Equal volumes of gases at the same temperature and pressure hold equal numbers of molecules, so the volumes that react and form stand in the ratio of the coefficients.');
+    readout(d.readout, `${sym} = ${c.map(([, n]) => n).join(' : ')} = ${c.map(([, n]) => hue('volume', fmt(n * V, 2) + '\\ \\text{L}')).join(' : ')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

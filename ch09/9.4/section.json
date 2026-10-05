@@ -4,7 +4,7 @@
   "chapter": "9",
   "title": "Effusion and Diffusion of Gases",
   "short": "Effusion and Diffusion",
-  "lead": "Gas molecules move at hundreds of meters per second, yet they collide so often that a gas spreads through a room in seconds rather than instantly. That spreading is diffusion, and the escape of a gas through a tiny hole is effusion. Graham’s law states that the rate of effusion of a gas is inversely proportional to the square root of its <span data-concept=\"molar-mass\">molar mass</span>. It compares effusion rates and times and finds the <span data-concept=\"molar-mass\">molar mass</span> of an unknown gas.",
+  "lead": "Gas molecules move at hundreds of meters per second, yet they collide so often that a gas spreads through a room in seconds rather than instantly, and that spreading is diffusion. The escape of a gas through a tiny hole is effusion, and how fast a gas effuses depends on its <span data-concept=\"molar-mass\">molar mass</span>, which lets effusion rates and times be compared and the <span data-concept=\"molar-mass\">molar mass</span> of an unknown gas be found.",
   "objectives": [
     "Define and explain effusion and diffusion",
     "State Graham’s law and use it to compute relevant gas properties"
@@ -16,6 +16,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
       }
     ],
     "figures": [
@@ -78,6 +82,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "thicker isotope rings; molecules kept off the rounded ends"
         }
       ]
     }

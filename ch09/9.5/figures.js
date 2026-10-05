@@ -51,12 +51,14 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
    Moving: the rate of striking is the idea, so the figure runs
    continuously with the transport and no scrubber, and a new law starts it
    again. The bench is a ground, so the pitch is held between level and
-   72° above it; the yaw is free and nothing spins on its own.
+   52° above it, past which the names cover the cylinders; the yaw is
+   free and nothing spins on its own.
 ===================================================================== */
 (function () {
   const d = sim('sim-kmt');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0, 1.25], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 420, dist: 8.6, tilt: 0.1 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0, 0.9], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 0.75 }], h: 420, dist: 9.4, tilt: 0.1 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 250);
+  grp.position.y = -0.25;                                   /* the names above the cylinders stay inside the stage */
   const law = F.choice(d.controls, { label: '\\text{law}', aria: 'the gas law the kinetic-molecular theory explains', options: [{ value: 'amontons', label: 'Amontons’s law' }, { value: 'boyle', label: 'Boyle’s law' }, { value: 'avogadro', label: 'Avogadro’s law' }], value: 'amontons', ms: 0, onInput: restart });
   const RC = 0.62, H0 = 1.1, YB = -1.25, RM = 0.08, K = 0.011, N0 = 10, XS = [-1.4, 1.4], U0 = 0.8;
   const SPEC = { amontons: { h: H0, n: N0, T: 600 }, boyle: { h: H0 / 2, n: N0, T: 300 }, avogadro: { h: 2 * H0, n: 2 * N0, T: 300 } };

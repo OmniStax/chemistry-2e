@@ -4,7 +4,7 @@
  "chapter": "9",
  "title": "Stoichiometry of Gaseous Substances, Mixtures, and Reactions",
  "short": "Gas Stoichiometry and Mixtures",
- "lead": "The ideal gas law turns measurements of <span data-concept=\"gas-pressure\">pressure</span>, <span data-concept=\"volume\">volume</span> and <span data-concept=\"temperature\">temperature</span> into an amount of gas. It gives the <span data-concept=\"density\">density</span> and the <span data-concept=\"molar-mass\">molar mass</span> of a gas. Dalton’s law adds the <span data-concept=\"partial-pressure\">partial pressures</span> of the gases in a mixture, and a gas collected over water must be corrected for the water vapor it holds. <span data-concept=\"volume\">Volumes</span> of gases also enter the stoichiometry of reactions.",
+ "lead": "The ideal gas law turns measurements of <span data-concept=\"gas-pressure\">pressure</span>, <span data-concept=\"volume\">volume</span> and <span data-concept=\"temperature\">temperature</span> into an amount of gas, and from there into the <span data-concept=\"density\">density</span> and the <span data-concept=\"molar-mass\">molar mass</span> of a gas. The same reasoning covers mixtures of gases through their <span data-concept=\"partial-pressure\">partial pressures</span>, a gas collected over water, and the <span data-concept=\"volume\">volumes</span> of gases that react.",
  "objectives": [
   "Use the ideal gas law to compute gas densities and molar masses",
   "Perform stoichiometric calculations involving gaseous substances",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -69,6 +73,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "orbit bounded to 52° so names stay off the cylinders; note trimmed"
     }
    ]
   },
@@ -90,6 +99,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "'levels equal' moved clear of the delivery tube"
     }
    ]
   },
@@ -111,6 +125,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note that repeated the caption dropped"
     }
    ]
   },

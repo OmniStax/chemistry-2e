@@ -52,7 +52,7 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
    the atmosphere set on the slider.
 ===================================================================== */
 (function () {
-  const d = sim('sim-barometer', 600);
+  const d = sim('sim-barometer', 630);
   const Ps = ctl(d.controls, { label: '\\kPatm', cls: 'pressure', min: 60, max: 110, step: 0.1, value: 101.3, unit: 'kPa', dec: 1, aria: 'atmospheric pressure in kilopascals', detents: [{ v: 101.325, label: '1 atm' }] });
   const G = 9.81, RHO = { Hg: 13600, water: 1000 };
   const top = 70, base = 520, perM = (base - top) / 12;
@@ -80,8 +80,7 @@ const commas = (x) => Math.round(x).toLocaleString('en-US');
     text(ctx, 'atmosphere', 1180, base - 50, cp, { size: 20, weight: 600, align: 'center' });
     arrow(ctx, 1180, base - 36, 1180, base - 4, cp, 4);
     topline(ctx, 'An atmospheric pressure of ' + fmt(Ps.v, 1) + ' kPa holds up ' + fmt(hHg * 1000, 0) + ' mm of mercury or ' + fmt(hW, 2) + ' m of water.');
-    readout(d.readout, `\\kphyd = \\khcol\\krho\\kgrav = (${hue('length', fmt(hHg, 3) + '\\ \\text{m}')})(${hue('density', '13{,}600\\ \\text{kg/m}^3')})(${hue('acceleration', '9.81\\ \\text{m/s}^2')}) = ${hue('pressure', commas(p).replace(',', '{,}') + '\\ \\text{Pa}')}`,
-      'The same pressure holds up ' + fmt(hW, 2) + ' m of water, whose density is 1000 kg/m³, a column 13.6 times as tall.');
+    readout(d.readout, `\\kphyd = \\khcol\\krho\\kgrav = (${hue('length', fmt(hHg, 3) + '\\ \\text{m}')})(${hue('density', '13{,}600\\ \\text{kg/m}^3')})(${hue('acceleration', '9.81\\ \\text{m/s}^2')}) = ${hue('pressure', commas(p).replace(',', '{,}') + '\\ \\text{Pa}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -144,7 +143,7 @@ function manometer(ctx, o) {
     const closed = end.value === 'closed', pg = gas.v, pa = atm.v;
     const dMm = closed ? pg : pg - pa, h = Math.abs(dMm);
     manometer(ctx, { x: 760, y0: 270, s: 0.3, dMm, closed, hLabel: 'h = ' + h + ' mm', gasTop: 110, bottom: 450 });
-    if (!closed) { const cp = C('pressure'); arrow(ctx, 850, 96, 850, 128, cp, 4); text(ctx, 'P_{atm} = ' + pa + ' torr', 900, 150, cp, { size: 20, weight: 600, base: 'middle' }); }
+    if (!closed) { const cp = C('pressure'); arrow(ctx, 850, 96, 850, 128, cp, 4); text(ctx, 'P_{atm} = ' + pa + ' torr', 950, 150, cp, { size: 20, weight: 600, base: 'middle' }); }
     const side = dMm > 0 ? 'the far arm' : 'the gas arm';
     topline(ctx, closed ? 'With a closed end the mercury stands ' + h + ' mm higher in the far arm, so the gas pressure is ' + pg + ' torr.'
       : dMm === 0 ? 'The gas and the atmosphere press equally, so the mercury is level in both arms.'
@@ -153,7 +152,7 @@ function manometer(ctx, o) {
     const main = closed ? `${G} = \\khcol\\krho\\kgrav = ${h}\\ \\text{mm Hg} = ${hv}`
       : dMm >= 0 ? `${G} = ${A} + \\khcol\\krho\\kgrav = ${hue('pressure', pa + '\\ \\text{torr}')} + ${h}\\ \\text{mm Hg} = ${hv}`
       : `${G} = ${A} - \\khcol\\krho\\kgrav = ${hue('pressure', pa + '\\ \\text{torr}')} - ${h}\\ \\text{mm Hg} = ${hv}`;
-    readout(d.readout, main, closed ? 'A column of mercury h millimeters high exerts h mm Hg, about h torr, so h reads the pressure directly.' : null);
+    readout(d.readout, main);
   }
   register(d.fig, { update: () => {}, draw });
 })();

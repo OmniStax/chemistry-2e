@@ -151,7 +151,7 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
   const mols = [];
   const put = (x, y, iso) => mols.push({ x, y, iso });
   for (let i = 0; i < 64; i++) { const x = 200 + rnd() * 960, f = (x - 200) / 960; put(x, TY + 8 + rnd() * (TH - 16), rnd() < 0.32 * (1 - f) ? 235 : 238); }
-  for (let i = 0; i < 110; i++) { const x = L + 30 + rnd() * (R - L - 70), up = rnd() < 0.45, y = up ? TOP + 22 + rnd() * (TY - TOP - 40) : TY + TH + 18 + rnd() * (BOT - TY - TH - 40); put(x, y, rnd() < 0.06 ? 238 : 235); }
+  for (let i = 0; i < 110; i++) { const x = L + 60 + rnd() * (R - L - 120), up = rnd() < 0.45, y = up ? TOP + 22 + rnd() * (TY - TOP - 40) : TY + TH + 18 + rnd() * (BOT - TY - TH - 40); put(x, y, rnd() < 0.06 ? 238 : 235); }
   for (let i = 0; i < 4; i++) put(1210 + i * 14, 338, 235);
   const ISO = { 235: { ref: 'uf6-235', name: 'a molecule of ²³⁵UF₆' }, 238: { ref: 'uf6-238', name: 'a molecule of ²³⁸UF₆' } };
   F.hover(d.stage, () => mols.map((m) => ({ x: m.x, y: m.y, r: 8, name: ISO[m.iso].name })));
@@ -168,8 +168,8 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
     line(ctx, 180, TY, 180, TY + TH, PAL.ink, 3); line(ctx, 1200, TY, 1200, TY + TH, PAL.ink, 3);
     ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.fillRect(R - 20, 322, 170, 30); ctx.strokeRect(R - 20, 322, 170, 30); ctx.restore();
     for (const m of mols) {
-      ctx.save(); ctx.fillStyle = F.el('U'); ctx.strokeStyle = F.ref(ISO[m.iso].ref); ctx.lineWidth = 3.5;
-      ctx.beginPath(); ctx.arc(m.x, m.y, 8, 0, TAU); ctx.stroke(); ctx.fillStyle = F.el('U'); ctx.beginPath(); ctx.arc(m.x, m.y, 4.5, 0, TAU); ctx.fill(); ctx.restore();
+      ctx.save(); ctx.fillStyle = F.el('U'); ctx.strokeStyle = F.ref(ISO[m.iso].ref); ctx.lineWidth = 5;
+      ctx.beginPath(); ctx.arc(m.x, m.y, 8.5, 0, TAU); ctx.stroke(); ctx.fillStyle = F.el('U'); ctx.beginPath(); ctx.arc(m.x, m.y, 4, 0, TAU); ctx.fill(); ctx.restore();
     }
     [[420, -1], [640, 1], [820, -1], [520, 1], [900, 1], [700, -1]].forEach(([x, s]) => arrow(ctx, x, s < 0 ? TY - 4 : TY + TH + 4, x + 18, s < 0 ? TY - 46 : TY + TH + 46, PAL.ink, 3));
     arrow(ctx, 20, TY + TH / 2, 170, TY + TH / 2, PAL.ink, 4);
@@ -183,7 +183,7 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
     text(ctx, 'higher speed ²³⁵UF_{6} diffuses through the barrier faster than ²³⁸UF_{6}', 640, 60, PAL.ink, { size: 20, align: 'center' });
     [['uf6-235', '²³⁵UF_{6}'], ['uf6-238', '²³⁸UF_{6}']].forEach(([c, s], i) => {
       const x = 330 + i * 200;
-      ctx.save(); ctx.fillStyle = F.el('U'); ctx.strokeStyle = F.ref(c); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(x, 440, 8, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.arc(x, 440, 4.5, 0, TAU); ctx.fill(); ctx.restore();
+      ctx.save(); ctx.fillStyle = F.el('U'); ctx.strokeStyle = F.ref(c); ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(x, 440, 8.5, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.arc(x, 440, 4, 0, TAU); ctx.fill(); ctx.restore();
       text(ctx, s, x + 16, 447, F.ref(c), { size: 18, weight: 600 });
     });
   }

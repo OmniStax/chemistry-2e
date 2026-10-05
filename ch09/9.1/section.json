@@ -4,7 +4,7 @@
  "chapter": "9",
  "title": "Gas Pressure",
  "short": "Gas Pressure",
- "lead": "A gas presses on every surface it touches, because its molecules strike that surface over and over. The <span data-concept=\"gas-pressure\">pressure</span> is the <span data-concept=\"force\">force</span> of those collisions divided by the <span data-concept=\"area\">area</span> they act on, and it is reported in many units. A barometer measures the <span data-concept=\"gas-pressure\">pressure</span> of the atmosphere, and a manometer the <span data-concept=\"gas-pressure\">pressure</span> of a gas in a container, both by the height of a column of liquid.",
+ "lead": "A gas presses on every surface it touches, because its molecules strike that surface over and over, and the <span data-concept=\"gas-pressure\">pressure</span> is the <span data-concept=\"force\">force</span> of those collisions divided by the <span data-concept=\"area\">area</span> they act on. A barometer measures the <span data-concept=\"gas-pressure\">pressure</span> of the atmosphere and a manometer that of a gas in a container, both by the height of a column of liquid, and the result is reported in many units.",
  "objectives": [
   "Define the property of pressure",
   "Define and convert among the units of pressure measurements",
@@ -18,6 +18,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -80,6 +84,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "names clear of the bottom edge; note that repeated the headline dropped"
     }
    ]
   },
@@ -105,6 +114,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "atmosphere label clear of the level line; closed-end note dropped"
     }
    ]
   },

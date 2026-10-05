@@ -55,7 +55,7 @@ function gauge(ctx, x, y, r, value, max, unit) {
   for (let i = 0; i <= 10; i++) { const a = a0 + ((a1 - a0) * i) / 10, big = i % 5 === 0; line(ctx, x + (r - (big ? 16 : 9)) * Math.cos(a), y + (r - (big ? 16 : 9)) * Math.sin(a), x + (r - 4) * Math.cos(a), y + (r - 4) * Math.sin(a), cp, big ? 2.5 : 1.5); if (big) text(ctx, String((max * i) / 10), x + (r - 30) * Math.cos(a), y + (r - 30) * Math.sin(a), cp, { size: 14, align: 'center' }); }
   const a = a0 + (a1 - a0) * f;
   ctx.save(); ctx.strokeStyle = cp; ctx.fillStyle = cp; ctx.lineWidth = 3.5; ctx.beginPath(); ctx.moveTo(x - 10 * Math.cos(a), y - 10 * Math.sin(a)); ctx.lineTo(x + (r - 14) * Math.cos(a), y + (r - 14) * Math.sin(a)); ctx.stroke(); ctx.beginPath(); ctx.arc(x, y, 5, 0, TAU); ctx.fill(); ctx.restore();
-  text(ctx, unit, x, y + r * 0.55, cp, { size: 14, align: 'center' });
+  text(ctx, unit, x, y + r * 0.8, cp, { size: 14, align: 'center' });
 }
 /* air, as the book fills its vessels: four molecules of nitrogen to one of oxygen */
 const AIR = (i) => (i % 5 === 4 ? 'O₂' : 'N₂');
@@ -142,8 +142,9 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
 ===================================================================== */
 (function () {
   const d = sim('sim-amontons-sphere');
-  const v = F.view3d(d.stage, { ...OVERPLATE, h: 420, dist: 7.2, tilt: 0.22 });
+  const v = F.view3d(d.stage, { ...OVERPLATE, h: 420, dist: 8.6, tilt: 0.22 });
   const grp = v.part(0), cnv = strip(d, 250);
+  grp.position.y = -0.32;                                   /* the plate to the label above the neck, centred on the camera's aim */
   /* the sphere stands in a water bath, so the temperature runs from the ice point to the boiling point and no further */
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 273, max: 373, step: 1, value: 298, unit: 'K', dec: 0, aria: 'temperature of the gas in kelvin' });
   const N = ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.25, max: 2, step: 0.05, value: 1, unit: 'mol', dec: 2, aria: 'amount of gas in moles' });
@@ -160,7 +161,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
   function build() {
     const glassC = F.ref('sphere'), key = palSig() + '|' + glassC; if (key === sig) return; sig = key;
     v.clear(); birds.drop();
-    v.pickable(box3(grp, [0, -1.42, 0], [3.8, 0.16, 3.8], PAL.soft), 'hot plate');                 /* the hot plate */
+    v.pickable(box3(grp, [0, -1.42, 0], [3.8, 0.16, 3.8], PAL.muted), 'hot plate');                 /* the hot plate */
     glow = box3(grp, [0, -1.33, 0], [3.0, 0.02, 3.0], PAL.soft, { transparent: true, opacity: 0.55 });   /* the plate's element, an apparatus in ink and never a body tinted by the temperature (rule 7) */
     const beaker = new T3D.Mesh(new T3D.CylinderGeometry(1.5, 1.5, 1.9, 36, 1, true), mat3(PAL.ink, glass())); beaker.position.set(0, -0.4, 0); grp.add(beaker);
     bath = new T3D.Mesh(new T3D.CylinderGeometry(1.48, 1.48, 1.5, 36), mat3(PAL.muted, { transparent: true, opacity: 0.16, depthWrite: false })); bath.position.set(0, -0.6, 0); grp.add(bath);   /* water, drawn as the beakers of Chapter 1 draw it; the temperature hue stays on the slider and the readout */
@@ -185,14 +186,13 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     text(ctx, fmt(P, 1) + ' atm', 230, 118, cp, { size: 30, weight: 600 });
     text(ctx, 'about ' + g.rate + ' strikes on the wall each second', 230, 156, PAL.muted, { size: 17 });
     const rx = 700;
-    text(ctx, 'held constant', rx, 92, PAL.muted, { size: 17 });
     text(ctx, 'V = ' + fmt(V, 2) + ' L, the sealed sphere', rx, 122, C('volume'), { size: 22, weight: 600 });
     text(ctx, 'n = ' + fmt(n, 2) + ' mol of air, ' + g.p.length + ' molecules drawn', rx, 152, ca, { size: 22, weight: 600 });
     text(ctx, 'T = ' + t + ' K, the water bath, which runs from 273 K to 373 K', rx, 182, ct, { size: 22, weight: 600 });
-    text(ctx, 'P / T = ' + fmt(P / t, 4) + ' atm/K. The molecules move ' + fmt(Math.sqrt(t / 298), 2) + ' times as fast as at 298 K.', rx, 218, PAL.ink, { size: 17, weight: 600 });
+    text(ctx, 'The molecules move ' + fmt(Math.sqrt(t / 298), 2) + ' times as fast as at 298 K.', rx, 218, PAL.ink, { size: 17, weight: 600 });
     topline(ctx, 'At ' + t + ' K the gauge reads ' + fmt(P, 1) + ' atm; the ratio P/T stays at ' + fmt(P / t, 4) + ' atm/K for this filling of the sphere.');
     readout(d.readout, `\\frac{\\kP}{\\kT} = \\frac{${hue('pressure', fmt(P, 1) + '\\ \\text{atm}')}}{${hue('temperature', t + '\\ \\text{K}')}} = ${fmt(P / t, 4)}\\ \\text{atm/K} = \\frac{\\kn R}{\\kV}`,
-      'The sphere is rigid and sealed, so the volume and the amount of gas cannot change. Carrying the bath from the ice point at 273 K to the boiling point at 373 K raises the kelvin temperature by the factor ' + fmt(373 / 273, 2) + ', and the pressure rises by the same factor, from ' + fmt((n * R * 273) / V, 1) + ' atm to ' + fmt((n * R * 373) / V, 1) + ' atm.');
+      'Carrying the bath from the ice point at 273 K to the boiling point at 373 K raises the kelvin temperature by the factor ' + fmt(373 / 273, 2) + ', and the pressure rises by the same factor, from ' + fmt((n * R * 273) / V, 1) + ' atm to ' + fmt((n * R * 373) / V, 1) + ' atm.');
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); g.step(dt, speed3(T.v), inside); }, draw });
 })();
@@ -221,27 +221,27 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     line(ctx, 50, ty + 40, 480, ty + 40, PAL.muted, 2);
     DATA.forEach((r, i) => { const y = ty + 76 + i * 40; text(ctx, String(r[0]).replace('-', '−'), tx[0], y, PAL.ink, { size: 18, align: 'center' }); text(ctx, String(r[1]), tx[1], y, ct, { size: 18, align: 'center' }); text(ctx, fmt(r[2], 1), tx[2], y, cp, { size: 18, align: 'center' }); });
     text(ctx, 'air at constant volume', 265, ty + 76 + DATA.length * 40 + 4, PAL.muted, { size: 16, align: 'center' });
-    /* the graph: 0 to 500 K by 100, 0 to 100 kPa by 20, fixed from the slider range and the data */
+    /* the graph: 0 to 500 K by 100, 0 to 120 kPa by 20, fixed from the slider range (104 kPa at 500 K) and the data */
     const box = { l: 640, r: 1320, t: 110, b: 460 };
-    const g = axes(ctx, box, [0, 500], [0, 100], { xl: 'Temperature (K)', xc: ct, yl: 'Pressure (kPa)', yc: cp, nx: 5, ny: 5 });
+    const g = axes(ctx, box, [0, 500], [0, 120], { xl: 'Temperature (K)', xc: ct, yl: 'Pressure (kPa)', yc: cp, nx: 5, ny: 6 });
     line(ctx, g.X(0), g.Y(0), g.X(173), g.Y(P(173)), cp, 3, [10, 10]);
     line(ctx, g.X(423), g.Y(P(423)), g.X(480), g.Y(P(480)), cp, 3, [10, 10]);
     line(ctx, g.X(173), g.Y(P(173)), g.X(423), g.Y(P(423)), cp, 5);
     DATA.forEach((r) => dot(ctx, g.X(r[1]), g.Y(r[2]), cp, true, 7));
     dot(ctx, g.X(0), g.Y(0), PAL.ink, false, 9);
-    text(ctx, 'absolute zero, 0 K (−273 °C)', g.X(0) + 18, g.Y(0) - 22, PAL.ink, { size: 16, weight: 600 });
-    text(ctx, 'no measurements below 173 K: the air condenses', g.X(60), g.Y(70), PAL.muted, { size: 15 });
     /* the two states, the first hollow and the second filled */
     for (const [t, p, filled, lab] of [[t1, p1, false, '1'], [t2, p2, true, '2']]) {
       line(ctx, g.X(t), box.b, g.X(t), g.Y(p), ct, 2, [4, 8]); line(ctx, box.l, g.Y(p), g.X(t), g.Y(p), cp, 2, [4, 8]);
       dot(ctx, g.X(t), g.Y(p), cp, filled, 10);
       /* where the two states are close, and where they coincide, the labels take opposite sides rather than overprinting */
       const left = t > 420 || (lab === '1' && Math.abs(t2 - t1) < 60 && t2 >= t1) || (lab === '2' && Math.abs(t2 - t1) < 60 && t2 < t1);
-      text(ctx, 'P' + lab + ' = ' + fmt(p, 1) + ' kPa', g.X(t) + (left ? -16 : 16), g.Y(p) - 20, cp, { size: 17, weight: 600, align: left ? 'right' : 'left', bg: PAL.panel });
+      text(ctx, 'P_{' + lab + '} = ' + fmt(p, 1) + ' kPa', g.X(t) + (left ? -16 : 16), g.Y(p) - 20, cp, { size: 17, weight: 600, align: left ? 'right' : 'left', bg: PAL.panel });
     }
+    text(ctx, 'absolute zero, 0 K (−273 °C)', g.X(0) + 70, g.Y(0) - 16, PAL.ink, { size: 16, weight: 600, base: 'middle', bg: PAL.panel });
+    text(ctx, 'no measurements below 173 K: the air condenses', g.X(175), g.Y(14), PAL.muted, { size: 15, base: 'middle', bg: PAL.panel });
     topline(ctx, 'At ' + t1 + ' K the line gives ' + fmt(p1, 1) + ' kPa and at ' + t2 + ' K ' + fmt(p2, 1) + ' kPa; P/T is ' + fmt(K, 3) + ' kPa/K at both.');
     readout(d.readout, `\\frac{\\kPone}{\\kTone} = \\frac{${hue('pressure', fmt(p1, 1) + '\\ \\text{kPa}')}}{${hue('temperature', t1 + '\\ \\text{K}')}} = \\frac{\\kPtwo}{\\kTtwo} = \\frac{${hue('pressure', fmt(p2, 1) + '\\ \\text{kPa}')}}{${hue('temperature', t2 + '\\ \\text{K}')}} = ${fmt(K, 3)}\\ \\text{kPa/K}`,
-      t1 === t2 ? 'The two states are the same point on the line.' : 'The kelvin temperature is ' + fmt(t2 / t1, 2) + ' times as great in the second state, and so is the pressure; the same change written in degrees Celsius, from ' + (t1 - 273) + ' °C to ' + (t2 - 273) + ' °C, is no simple ratio at all.');
+      t1 === t2 ? 'The two states are the same point on the line.' : 'The kelvin temperature is ' + fmt(t2 / t1, 2) + ' times as great in the second state, and so is the pressure; the same change written in degrees Celsius, from ' + String(t1 - 273).replace('-', '−') + ' °C to ' + String(t2 - 273).replace('-', '−') + ' °C, is no simple ratio at all.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -277,15 +277,15 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     line(ctx, g.X(111), g.Y(Vof(111)), g.X(473), g.Y(Vof(473)), cv, 5);
     DATA.forEach((r) => dot(ctx, g.X(r[1]), g.Y(r[2]), cv, true, 7));
     dot(ctx, g.X(0), g.Y(0), PAL.ink, false, 9);
-    text(ctx, 'absolute zero, 0 K', g.X(0) + 18, g.Y(0) - 22, PAL.ink, { size: 16, weight: 600 });
     line(ctx, g.X(111), box.b, g.X(111), g.Y(Vof(111)), alpha(PAL.ink, 0.35), 2, [4, 8]);
-    text(ctx, 'the line stops at 111 K, where methane liquefies', g.X(120), g.Y(44), PAL.muted, { size: 15 });
     for (const [t, v, filled, lab] of [[t1, v1, false, '1'], [t2, v2, true, '2']]) {
       line(ctx, g.X(t), box.b, g.X(t), g.Y(v), ct, 2, [4, 8]); line(ctx, box.l, g.Y(v), g.X(t), g.Y(v), cv, 2, [4, 8]);
       dot(ctx, g.X(t), g.Y(v), cv, filled, 10);
       const left = t > 420 || (lab === '1' && Math.abs(t2 - t1) < 50 && t2 >= t1) || (lab === '2' && Math.abs(t2 - t1) < 50 && t2 < t1);
-      text(ctx, 'V' + lab + ' = ' + fmt(v, 1) + ' L', g.X(t) + (left ? -16 : 16), g.Y(v) - 20, cv, { size: 17, weight: 600, align: left ? 'right' : 'left', bg: PAL.panel });
+      text(ctx, 'V_{' + lab + '} = ' + fmt(v, 1) + ' L', g.X(t) + (left ? -16 : 16), g.Y(v) - 20, cv, { size: 17, weight: 600, align: left ? 'right' : 'left', bg: PAL.panel });
     }
+    text(ctx, 'absolute zero, 0 K', g.X(0) + 70, g.Y(0) - 16, PAL.ink, { size: 16, weight: 600, base: 'middle', bg: PAL.panel });
+    text(ctx, 'the line stops at 111 K, where methane liquefies', g.X(170), g.Y(6), PAL.muted, { size: 15, base: 'middle', bg: PAL.panel });
     topline(ctx, 'At ' + t1 + ' K the line gives ' + fmt(v1, 1) + ' L and at ' + t2 + ' K ' + fmt(v2, 1) + ' L; V/T is ' + fmt(K, 4) + ' L/K at both.');
     readout(d.readout, `\\frac{\\kVone}{\\kTone} = \\frac{${hue('volume', fmt(v1, 2) + '\\ \\text{L}')}}{${hue('temperature', t1 + '\\ \\text{K}')}} = \\frac{\\kVtwo}{\\kTtwo} = \\frac{${hue('volume', fmt(v2, 2) + '\\ \\text{L}')}}{${hue('temperature', t2 + '\\ \\text{K}')}} = ${fmt(K, 4)}\\ \\text{L/K}`,
       'Warming the mole of methane from ' + t1 + ' K to ' + t2 + ' K at 1 atm changes its volume by the factor ' + fmt(t2 / t1, 3) + ', the same factor as the kelvin temperature; extrapolated below 111 K, the line reaches zero volume at absolute zero.');
@@ -329,7 +329,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     const gl = axes(ctx, bl, [0, 35], [0, 40], { xl: 'V (mL)', xc: cv, yl: 'P (psi)', yc: cp, nx: 7, ny: 4 });
     ctx.save(); ctx.strokeStyle = cp; ctx.lineWidth = 4; ctx.beginPath(); for (let i = 0; i <= 100; i++) { const v = 4.9 + (30.1 * i) / 100; const x = gl.X(v), y = gl.Y(P(v)); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); } ctx.stroke(); ctx.restore();
     DATA.forEach(([v, p]) => dot(ctx, gl.X(v), gl.Y(p), cp, true, 7));
-    text(ctx, 'a hyperbola: PV = ' + fmt(K, 0) + ' psi·mL', gl.X(18), gl.Y(30), PAL.muted, { size: 16 });
+    text(ctx, 'a hyperbola: PV = ' + fmt(K, 0) + ' psi·mL', gl.X(20), gl.Y(36), PAL.muted, { size: 16 });
     /* 1/P against V: 0 to 35 mL by 5, 0 to 0.18 psi⁻¹ by 0.06 */
     const br = { l: 860, r: 1330, t: 380, b: 700 };
     const gr = axes(ctx, br, [0, 35], [0, 0.18], { xl: 'V (mL)', xc: cv, yl: '1/P (psi⁻¹)', yc: cp, nx: 7, ny: 3, fy: (v) => fmt(v, 2) });
@@ -340,12 +340,12 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
       line(ctx, gl.X(v), bl.b, gl.X(v), gl.Y(p), cv, 2, [4, 8]); line(ctx, bl.l, gl.Y(p), gl.X(v), gl.Y(p), cp, 2, [4, 8]); dot(ctx, gl.X(v), gl.Y(p), cp, filled, 10);
       line(ctx, gr.X(v), br.b, gr.X(v), gr.Y(1 / p), cv, 2, [4, 8]); line(ctx, br.l, gr.Y(1 / p), gr.X(v), gr.Y(1 / p), cp, 2, [4, 8]); dot(ctx, gr.X(v), gr.Y(1 / p), cp, filled, 10);
     }
-    text(ctx, 'P₁ = ' + fmt(p1, 1) + ' psi', gl.X(v1) + 14, gl.Y(p1) - 22, cp, { size: 16, weight: 600, bg: PAL.panel });
-    text(ctx, 'P₂ = ' + fmt(p2, 1) + ' psi', gl.X(v2) + 14, gl.Y(p2) + (Math.abs(v2 - v1) < 3 ? 26 : -22), cp, { size: 16, weight: 600, bg: PAL.panel });
+    text(ctx, 'P₁ = ' + fmt(p1, 1) + ' psi', gl.X(v1) + 14, gl.Y(p1) + (p1 > 30 ? 26 : -22), cp, { size: 16, weight: 600, bg: PAL.panel });
+    text(ctx, 'P₂ = ' + fmt(p2, 1) + ' psi', gl.X(v2) + 14, gl.Y(p2) + (Math.abs(v2 - v1) < 3 || p2 > 30 ? 26 : -22), cp, { size: 16, weight: 600, bg: PAL.panel });
     const ratio = v1 / v2;
     topline(ctx, 'At ' + fmt(v2, 1) + ' mL the gauge reads ' + fmt(p2, 1) + ' psi; ' + (Math.abs(ratio - 1) < 0.005 ? 'the plunger has not moved, so the pressure is unchanged' : (ratio > 1 ? 'compressing' : 'expanding') + ' the gas from ' + fmt(v1, 1) + ' mL by the factor ' + fmt(Math.max(ratio, 1 / ratio), 2) + ' has ' + (ratio > 1 ? 'raised' : 'lowered') + ' the pressure by the same factor') + '.');
     readout(d.readout, `\\kPone\\kVone = (${hue('pressure', fmt(p1, 1) + '\\ \\text{psi}')})(${hue('volume', fmt(v1, 1) + '\\ \\text{mL}')}) = \\kPtwo\\kVtwo = (${hue('pressure', fmt(p2, 1) + '\\ \\text{psi}')})(${hue('volume', fmt(v2, 1) + '\\ \\text{mL}')}) = ${fmt(K, 0)}\\ \\text{psi·mL}`,
-      'The product of pressure and volume is the same at every point of the hyperbola, which is why 1/P against V is a straight line through the origin with slope 1/' + fmt(K, 0) + ' mL⁻¹ psi⁻¹; the temperature and the amount of air are held constant throughout.');
+      'The temperature and the amount of air are held constant throughout.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -577,7 +577,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     const V = Vc.v, T = Tc.v, n = Nc.v, P = (n * R * T) / V, cv = C('volume'), ct = C('temperature'), cp = C('pressure');
     /* the four frames, fixed from the slider ranges: V 0 to 30 L, T 0 to 600 K, P 0 to 10 atm (pinned beyond), 1/P 0 to 2 atm⁻¹ */
     const boxes = [{ l: 130, r: 620, t: 140, b: 340 }, { l: 850, r: 1340, t: 140, b: 340 }, { l: 130, r: 620, t: 450, b: 650 }, { l: 850, r: 1340, t: 450, b: 650 }];
-    const note = (box, s) => text(ctx, s, box.r - 8, box.t + 18, PAL.muted, { size: 15, align: 'right' });
+    const note = (box, s) => text(ctx, s, box.r, box.t - 26, PAL.muted, { size: 15, align: 'right' });
     /* P against V, at this T and n */
     let g = axes(ctx, boxes[0], [0, 30], [0, 10], { xl: 'V (L)', xc: cv, yl: 'P (atm)', yc: cp, nx: 3, ny: 2 });
     clipped(ctx, boxes[0], (v) => (n * R * T) / v, 0.5, 30, g.X, g.Y, cp);
@@ -595,8 +595,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     clipped(ctx, boxes[3], (v) => v / (n * R * T), 0, 30, g.X, g.Y, cp);
     pinned(ctx, boxes[3], g.X, g.Y, V, 1 / P, cp, fmt(1 / P, 2) + ' atm⁻¹'); note(boxes[3], 'T and n held: Boyle’s law, linearized');
     topline(ctx, 'At V = ' + fmt(V, 1) + ' L, T = ' + T + ' K and n = ' + fmt(n, 2) + ' mol, the same state is one point on each of the four graphs, and the pressure is ' + fmt(P, 2) + ' atm on all of them.');
-    readout(d.readout, `\\kP = \\frac{\\kn R\\kT}{\\kV} = \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', T + '\\ \\text{K}')})}{${hue('volume', fmt(V, 1) + '\\ \\text{L}')}} = ${hue('pressure', fmt(P, 2) + '\\ \\text{atm}')}`,
-      'Each graph holds two of the four quantities still and draws the relation between the other two: a hyperbola where the relation is inverse, a straight line through the origin where it is direct. A change of volume moves the state along the two curves against V, which hold T and n, and a change of temperature moves it along the P against T line, which holds V and n; any other change moves the curve the state sits on.');
+    readout(d.readout, `\\kP = \\frac{\\kn R\\kT}{\\kV} = \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', T + '\\ \\text{K}')})}{${hue('volume', fmt(V, 1) + '\\ \\text{L}')}} = ${hue('pressure', fmt(P, 2) + '\\ \\text{atm}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -677,14 +676,13 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
       polyline3(grp, [[x, y - r - 0.14, 0], [x + 0.12, y - r - 0.5, 0], [x - 0.05, y - r - 0.9, 0], [x + 0.08, y - r - 1.3, 0]], PAL.ink);
       SPOTS.forEach(([sx, sy, sz], j) => { const m = molecule3(v, grp, gas[0], k); m.position.set(x + sx * r * 0.72, y + sy * r * 0.72, sz * r * 0.72); m.rotation.set(j * 0.7, j * 1.1, 0); });
       v.pickable(skin, 'a balloon of ' + WORD[gas[0]] + ', ' + fmt(n, 2) + ' mol');
-      v.label(label(gas, n), [x, y - r - 0.2, 0], grp, -30);
+      v.label(label(gas, n), [x, y + r + 0.1, 0], grp, -6);
     });
   }
   function draw3d() {
     build(); v.invalidate();
     const { ctx } = begin(cnv);
     topline(ctx, head());
-    text(ctx, 'At STP, which is 273.15 K and 1 atm, each balloon holds ' + fmt(N.v, 2) + ' mol and ' + fmt((N.v * R * TSTP) / PSTP, 1) + ' L.', 700, 82, PAL.muted, { size: 16, align: 'center' });
   }
   function head() {
     const n = N.v, V = (n * R * TSTP) / PSTP, ps = picks(), same = ps[0] === ps[1] && ps[1] === ps[2];
@@ -702,8 +700,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: 'front', 
     const n = N.v, V = (n * R * TSTP) / PSTP;
     if (VIEW.value === '3d') draw3d(); else draw2d();
     readout(d.readout, `\\kV = \\frac{\\kn R\\kT}{\\kP} = \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', '273.15\\ \\text{K}')})}{${hue('pressure', '1\\ \\text{atm}')}} = ${hue('volume', fmt(V, 1) + '\\ \\text{L}')}`,
-      Math.abs(n - 1) < 0.001 ? 'One mole of any gas behaving ideally occupies about 22.4 L at STP, the standard molar volume; the gas decides only the mass in the balloon, not its size.'
-        : 'The volume follows the amount alone, ' + fmt(22.4 * n, 1) + ' L for ' + fmt(n, 2) + ' mol, whatever the gas; equal volumes of the three gases hold equal numbers of molecules, as Avogadro proposed.');
+      'Equal volumes of the three gases hold equal numbers of molecules, as Avogadro proposed.');
   }
   register(d.fig, { update: () => {}, draw });
 })();

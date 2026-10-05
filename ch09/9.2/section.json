@@ -4,7 +4,7 @@
   "chapter": "9",
   "title": "Relating Pressure, Volume, Amount, and Temperature: The Ideal Gas Law",
   "short": "The Ideal Gas Law",
-  "lead": "Four properties describe a sample of gas: its <span data-concept=\"gas-pressure\">pressure</span>, its <span data-concept=\"volume\">volume</span>, its <span data-concept=\"temperature\">temperature</span> and its amount. Scientists of the balloon age found how each pair is related when the other two are held constant. These four laws, Amontons’s, Charles’s, Boyle’s and Avogadro’s, combine into the ideal gas law, PV = nRT. With that one equation and the combined gas law, we can compute any one property of a gas from the others.",
+  "lead": "Four properties describe a sample of gas, its <span data-concept=\"gas-pressure\">pressure</span>, its <span data-concept=\"volume\">volume</span>, its <span data-concept=\"temperature\">temperature</span> and its amount, and the scientists of the balloon age found how each pair is related when the other two are held constant. Their four laws, Amontons’s, Charles’s, Boyle’s and Avogadro’s, combine into a single equation for a gas behaving ideally, from which any one property can be found from the others.",
   "objectives": [
     "Identify the mathematical relationships between the various properties of gases",
     "Use the ideal gas law, and related gas laws, to compute the values of various gas properties under specified conditions"
@@ -19,6 +19,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
       }
     ],
     "figures": [
@@ -70,6 +74,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "framed so label and plate show; dial unit clear; strip and note trimmed"
         }
       ]
     },
@@ -95,6 +104,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "pressure axis to 120 kPa; notes and labels clear of lines"
         }
       ]
     },
@@ -120,6 +134,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "notes clear of the line and labels; subscripted V labels"
         }
       ]
     },
@@ -149,6 +168,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "dial unit clear; P labels and hyperbola note apart; note trimmed"
         }
       ]
     },
@@ -209,6 +233,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "dial unit clear of the end labels"
         }
       ]
     },
@@ -231,6 +260,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "law names above the frames; note that repeated the caption dropped"
         }
       ]
     },
@@ -267,6 +301,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "3D names above the balloons; strip line and note trimmed"
         }
       ]
     }

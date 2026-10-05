@@ -4,7 +4,7 @@
   "chapter": "9",
   "title": "The Kinetic-Molecular Theory",
   "short": "Kinetic-Molecular Theory",
-  "lead": "The gas laws describe how gases behave but do not say why. The kinetic-molecular theory answers with a simple picture of molecules in constant motion, colliding elastically with one another and with the walls of their container. Its five postulates explain the gas laws and relate the <span data-concept=\"speed\">speeds</span> and <span data-concept=\"kinetic-energy\">kinetic energies</span> of gas molecules to their <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"molar-mass\">molar mass</span>. That relation leads to the root mean square speed and to Graham’s law.",
+  "lead": "The gas laws describe how gases behave but do not say why, and the kinetic-molecular theory answers with a simple picture of molecules in constant motion, colliding elastically with one another and with the walls of their container. Its postulates explain the gas laws and tie the <span data-concept=\"speed\">speeds</span> and <span data-concept=\"kinetic-energy\">kinetic energies</span> of gas molecules to their <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"molar-mass\">molar mass</span>.",
   "objectives": [
     "State the postulates of the kinetic-molecular theory",
     "Use this theory’s postulates to explain the gas laws"
@@ -16,6 +16,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
       }
     ],
     "figures": [
@@ -44,6 +48,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "scene lowered so names fit; orbit bounded to 52°"
         }
       ]
     },
@@ -64,6 +73,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "caption: the compare choice draws the chosen gas, not nitrogen"
         }
       ]
     },

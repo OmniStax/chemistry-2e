@@ -1,0 +1,556 @@
+{
+ "id": "18.11",
+ "module": "m68839",
+ "chapter": "18",
+ "title": "Occurrence, Preparation, and Properties of Halogens",
+ "short": "Halogens",
+ "lead": "The <span data-concept=\"halogen\">halogens</span>, fluorine to astatine, are too reactive to be found free in nature. The section follows how each is obtained from its <span data-concept=\"halide\">halide</span> ions, how strongly each acts as an <span data-concept=\"oxidizing-agent\">oxidizing agent</span>, how the halides of the representative metals and the <span data-concept=\"interhalogen\">interhalogens</span> are prepared, and what the halogens are used for.",
+ "objectives": [
+  "Describe the preparation, properties, and uses of halogens",
+  "Describe the properties, preparation, and uses of halogen compounds"
+ ],
+ "summary_html": "<p>The <span data-concept=\"halogen\">halogens</span> form <span data-concept=\"halide\">halides</span> with less electronegative elements. Halides of the metals vary from ionic to covalent; halides of nonmetals are covalent. <span data-concept=\"interhalogen\">Interhalogens</span> form by the combination of two or more different halogens.</p><p>All of the <span data-concept=\"representative-metal\">representative metals</span> react directly with elemental halogens or with solutions of the hydrohalic acids (HF, HCl, HBr, and HI) to produce representative metal halides. Other laboratory preparations involve the addition of aqueous hydrohalic acids to compounds that contain such basic anions, such as hydroxides, oxides, or carbonates.</p>",
+ "notes": "The Link to Learning on sodium reacting with chlorine is left out. The section keeps as printed “iodic acid, HlO₃” with a lowercase l, “NaIO₃,” with its comma set as a subscript, “Ca(PO₄)₃F” for fluoroapatite, “makes the reaction between them to be imperceptibly slow”, “The direct reaction of a metal and a halogen produce”, “IF₅is” in the caption of Figure 18.63, “tetrachloride (CCl₄)”, “empty valence d orbitals” of iodine, the caption’s “pale yellow-green” beside the text’s “greenish-yellow”, and the summary’s “such basic anions, such as”.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key. The three unkeyed exercises fs-idp270945872 (balanced equations), fs-idp86909200 (the hybridization of iodine in IF₃ and IF₅) and fs-idm15587536 (the mass of sodium chloride in a saline solution) are left out, and no answer is computed for them. The unkeyed choice item fs-idp153262192 is kept open with a suggested approach and is never graded, and the unkeyed conceptual exercises fs-idp137679248 and fs-idp25457408 carry a suggested approach marked as OmniStax’s own. Exercise fs-idm10171552 rests on the halic acids of the section on oxygen and fs-idm48157456 on the PCl₅ of the section on phosphorus; nothing is moved.",
+ "figures": [
+  {
+   "id": "fig-halogen-gases",
+   "kind": "photo",
+   "number": "18.60",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-halogen-ladder",
+   "kind": "sim",
+   "draws": [
+    "potential"
+   ],
+   "facts": [
+    "#c9dc6a",
+    "#d9822b",
+    "#8a4b1f"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-hgi2",
+   "kind": "photo",
+   "number": "18.61",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-salt-mine",
+   "kind": "photo",
+   "number": "18.62",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-interhalogens",
+   "kind": "sim",
+   "number": "18.63",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_11_IF3IF5IF7.jpg"
+   ],
+   "original_caption": "The structure of IF₃ is T-shaped (left), IF₅is square pyramidal (center), and IF₇ is pentagonal bipyramidal (right).",
+   "draws": [
+    "length"
+   ],
+   "conventions": [
+    "Cl",
+    "Br",
+    "I",
+    "F"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "halogens",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "halogen-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "occurrence",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "halide",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "electrolysis",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "anode",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "cathode",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "chlor-alkali-process",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "halogen-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "chlorine-water",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "vapor-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "sublimation",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "noble-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "hydrocarbon",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "standard-electrode-potential",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "halide",
+   "verb": "introduces"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "preparing-metal-halides",
+   "verb": "introduces"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "representative-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "ionic-and-covalent-bonds",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "hydrogen-halide",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "insoluble",
+   "verb": "uses"
+  },
+  {
+   "span": "metal-halides",
+   "concept": "chlor-alkali-process",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "interhalogen",
+   "verb": "introduces"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "covalent-radius",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "alkali-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "interhalogens",
+   "concept": "vsepr-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "applications",
+   "concept": "chlorine-water",
+   "verb": "uses"
+  },
+  {
+   "span": "applications",
+   "concept": "hydrocarbon",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e100",
+   "source_id": "fs-idp137679248",
+   "source_number": "100",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metal-halides",
+   "prompt": "What does it mean to say that mercury(II) halides are weak electrolytes?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall what a weak electrolyte does when it dissolves, ionizing only partly so that most of it stays as molecules, and connect that with the text’s statement that mercury forms covalent rather than ionic binary halides; then say what dissolved HgCl<sub>2</sub> mostly consists of and how well its solution conducts electricity."
+   }
+  },
+  {
+   "id": "e101",
+   "source_id": "fs-idm31814768",
+   "source_number": "101",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metal-halides",
+   "prompt": "Why is SnCl<sub>4</sub> not classified as a salt?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "SnCl<sub>4</sub> is not a salt because it is covalently bonded. A salt must have ionic bonds."
+   }
+  },
+  {
+   "id": "e103",
+   "source_id": "fs-idm10171552",
+   "source_number": "103",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Which is the stronger acid, HClO<sub>3</sub> or HBrO<sub>3</sub>? Why?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "In oxyacids with similar formulas, the acid strength increases as the electronegativity of the central atom increases. HClO<sub>3</sub> is stronger than HBrO<sub>3</sub>; Cl is more electronegative than Br."
+   }
+  },
+  {
+   "id": "e105",
+   "source_id": "fs-idm48157456",
+   "source_number": "105",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "interhalogens",
+   "prompt": "Predict the molecular geometries and draw Lewis structures for each of the following. You may wish to review the chapter on chemical bonding and molecular geometry.<br>(a) IF<sub>5</sub><br>(b) $\\text{I}_{3}{}^{-}$<br>(c) PCl<sub>5</sub><br>(d) SeF<sub>4</sub><br>(e) ClF<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) IF<sub>5</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4a_img.jpg\" alt=\"This Lewis structure shows an iodine atom with one lone pair of electrons single bonded to five fluorine atoms, each of which has three lone pairs of electrons. The image is labeled, “Square pyramidal.”\"><br>(b) $\\text{I}_{3}{}^{-}$:<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4b_img.jpg\" alt=\"This Lewis structure shows an iodine atom with three lone pairs of electrons single bonded to two iodine atoms, each of which has three lone pairs of electrons. The image is surrounded by brackets. A superscript negative sign appears outside the brackets. The image is labeled, “Linear.”\"><br>(c) PCl<sub>5</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4c_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to five chlorine atoms, each of which has three lone pairs of electrons. The image is labeled, “Trigonal bipyramidal.”\"><br>(d) SeF<sub>4</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4d_img.jpg\" alt=\"This Lewis structure shows a selenium atom with one lone pair of electrons single bonded to four fluorine atoms, each of which has three lone pairs of electrons. The image is labeled “Seesaw.”\"><br>(e) ClF<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_11_Exercise4e_img.jpg\" alt=\"This Lewis structure shows a chlorine atom with two lone pairs of electrons single bonded to three fluorine atoms, each of which has three lone pairs of electrons. The image is labeled, “T-shaped.”\">"
+   }
+  },
+  {
+   "id": "e106",
+   "source_id": "fs-idp153262192",
+   "source_number": "106",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Which halogen has the highest ionization energy? Is this what you would predict based on what you have learned about periodic properties?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall the trend in first ionization energy down a group from the chapter on electronic structure and periodic properties, where the valence electrons lie farther from the nucleus in each heavier element; then compare that prediction with the text’s statement that fluoride is the most difficult halide ion to oxidize and fluorine the most powerful oxidizing agent."
+   }
+  },
+  {
+   "id": "e107",
+   "source_id": "fs-idm70668928",
+   "source_number": "107",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "interhalogens",
+   "prompt": "Name each of the following compounds:<br>(a) BrF<sub>3</sub><br>(b) NaBrO<sub>3</sub><br>(c) PBr<sub>5</sub><br>(d) NaClO<sub>4</sub><br>(e) KClO",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) bromine trifluoride; (b) sodium bromate; (c) phosphorus pentabromide; (d) sodium perchlorate; (e) potassium hypochlorite"
+   }
+  },
+  {
+   "id": "e108",
+   "source_id": "fs-idp25457408",
+   "source_number": "108",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Explain why, at room temperature, fluorine and chlorine are gases, bromine is a liquid, and iodine is a solid.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: the four halogens are nonpolar diatomic molecules, so the only forces between their molecules are dispersion forces. Compare the numbers of electrons and the sizes of F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub> and I<sub>2</sub>, say how the strength of the dispersion forces changes from one to the next, and connect that with how high the melting and boiling points must be."
+   }
+  },
+  {
+   "id": "e109",
+   "source_id": "fs-idm108582784",
+   "source_number": "109",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "interhalogens",
+   "prompt": "What is the oxidation state of the halogen in each of the following?<br>(a) H<sub>5</sub>IO<sub>6</sub><br>(b) $\\text{IO}_{4}{}^{-}$<br>(c) ClO<sub>2</sub><br>(d) ICl<sub>3</sub><br>(e) F<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) I: 7+; (b) I: 7+; (c) Cl: 4+; (d) I: 3+; Cl: 1−; (e) F: 0"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e100",
+   "concept": "weak-electrolyte"
+  },
+  {
+   "exercise": "e100",
+   "concept": "halide"
+  },
+  {
+   "exercise": "e101",
+   "concept": "salt"
+  },
+  {
+   "exercise": "e101",
+   "concept": "halide"
+  },
+  {
+   "exercise": "e103",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e103",
+   "concept": "electronegativity"
+  },
+  {
+   "exercise": "e105",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e105",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e105",
+   "concept": "interhalogen"
+  },
+  {
+   "exercise": "e106",
+   "concept": "ionization-energy-trend"
+  },
+  {
+   "exercise": "e106",
+   "concept": "halogen-properties"
+  },
+  {
+   "exercise": "e107",
+   "concept": "name-binary-molecular-compounds"
+  },
+  {
+   "exercise": "e107",
+   "concept": "name-ionic-compounds"
+  },
+  {
+   "exercise": "e107",
+   "concept": "interhalogen"
+  },
+  {
+   "exercise": "e108",
+   "concept": "dispersion-forces"
+  },
+  {
+   "exercise": "e108",
+   "concept": "halogen-properties"
+  },
+  {
+   "exercise": "e109",
+   "concept": "oxidation-number"
+  },
+  {
+   "exercise": "e109",
+   "concept": "interhalogen"
+  }
+ ]
+}

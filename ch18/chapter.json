@@ -203,6 +203,22 @@
    "meaning": "the temperature of the superheated water forced down the outermost pipe of the Frasch process",
    "unit": "°C",
    "section": "18.10"
+  },
+  {
+   "sym": "E_std",
+   "concept": "standard-electrode-potential",
+   "meaning": "the standard reduction potential of a halogen, or the standard potential of a reaction between a halogen and a halide",
+   "unit": "V",
+   "section": "18.11",
+   "anchor": "18.11-properties"
+  },
+  {
+   "sym": "r",
+   "concept": "covalent-radius",
+   "meaning": "the covalent radius of an atom, one-half the distance between the nuclei of two identical atoms joined by a covalent bond",
+   "unit": "pm",
+   "section": "18.11",
+   "anchor": "18.11-interhalogens"
   }
  ]
 }

@@ -1,0 +1,566 @@
+{
+  "id": "12.7",
+  "module": "m68795",
+  "chapter": "12",
+  "title": "Catalysis",
+  "short": "Catalysis",
+  "lead": "A <span data-concept=\"catalyst\">catalyst</span> increases the rate of a reaction without being consumed by it. Some catalysts act in the same phase as the reactants, as in the destruction of ozone in the upper atmosphere; others are solids whose surfaces the reactants meet, as in hydrogenation and the catalytic converters of automobiles; and enzymes are the catalysts of living cells.",
+  "objectives": [
+    "Explain the function of a catalyst in terms of reaction mechanisms and potential energy diagrams",
+    "List examples of catalysis in natural and industrial processes"
+  ],
+  "summary_html": "<p><span data-concept=\"catalyst\">Catalysts</span> affect the rate of a chemical reaction by altering its <span data-concept=\"reaction-mechanism\">mechanism</span> to provide a lower <span data-concept=\"activation-energy\">activation energy</span>. Catalysts can be homogenous (in the same phase as the reactants) or heterogeneous (a different phase than the reactants).</p>",
+  "notes": "The two Link to Learning notes are left out, the ChemWiki page on catalytic converters and the Royal Society of Chemistry’s introduction to enzymes; Figure 12.19’s “two transitions states” and the converter note’s NO₂ where the text says nitric oxide are kept as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The unkeyed numerical exercise fs-idm260004768 (12.81) is left out, and no answer is computed for it; its two diagrams are carried into the prompt of fs-idm189363504 (12.83), which asks about them. The unkeyed fs-idm119808848, fs-idm194307024 and fs-idm189363504 are kept with a suggested approach marked as AI-generated. The estimates read off the diagrams of fs-idm218836096 and of the Check Your Learning are checked with a tolerance.",
+  "figures": [
+    {
+      "id": "sim-catalysis",
+      "kind": "sim",
+      "number": "12.19",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_07_CatReCoDig.jpg"
+      ],
+      "original_caption": "Reaction diagrams for an endothermic process in the absence (red curve) and presence (blue curve) of a catalyst. The catalyzed pathway involves a two-step mechanism (note the presence of two transition states) and an intermediate species (represented by the valley between the two transitions states).",
+      "draws": [
+        "energy",
+        "rate-constant",
+        "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-ex-catalyzed",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-molina",
+      "kind": "photo",
+      "number": "12.20",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-g6pd",
+      "kind": "photo",
+      "number": "12.21",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-pathway",
+      "kind": "photo",
+      "number": "12.22",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-hydrogenation",
+      "kind": "sim",
+      "number": "12.23",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_07_HetCats-230a.jpg"
+      ],
+      "original_caption": "Mechanism for the Ni-catalyzed reaction C₂H₄ + H₂ ⟶ C₂H₆. (a) Hydrogen is adsorbed on the surface, breaking the H–H bonds and forming Ni–H bonds. (b) Ethylene is adsorbed on the surface, breaking the C–C π-bond and forming Ni–C bonds. (c) Atoms diffuse across the surface and form new C–H bonds when they collide. (d) C₂H₆ molecules desorb from the Ni surface.",
+      "draws": [],
+      "conventions": [
+        "Ni",
+        "H",
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-converter",
+      "kind": "photo",
+      "number": "12.24",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-enzyme",
+      "kind": "sim",
+      "number": "12.25",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_07_Enzyme.jpg"
+      ],
+      "original_caption": "(a) According to the lock-and-key model, the shape of an enzyme’s active site is a perfect fit for the substrate. (b) According to the induced fit model, the active site is somewhat flexible, and can change shape in order to bond with the substrate.",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "uncatalyzed",
+      "label": "the uncatalyzed reaction",
+      "figures": [
+        "sim-catalysis"
+      ]
+    },
+    {
+      "id": "catalyzed",
+      "label": "the catalyzed reaction",
+      "figures": [
+        "sim-catalysis"
+      ]
+    },
+    {
+      "id": "enzyme",
+      "label": "the enzyme",
+      "figures": [
+        "sim-enzyme"
+      ]
+    },
+    {
+      "id": "substrates",
+      "label": "the substrates",
+      "figures": [
+        "sim-enzyme"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "catalysts",
+      "concept": "catalysis-lowers-activation-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "catalysts",
+      "concept": "catalyzed-reaction-diagrams",
+      "verb": "introduces"
+    },
+    {
+      "span": "catalysts",
+      "concept": "catalyst",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "reaction-diagram",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "activation-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "reaction-mechanism",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "rate-determining-step",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "activated-complex",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "reaction-intermediate",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "enthalpy-change",
+      "verb": "uses"
+    },
+    {
+      "span": "catalysts",
+      "concept": "arrhenius-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "homogeneous-catalysis",
+      "verb": "introduces"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "reaction-mechanism",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "reaction-intermediate",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "elementary-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "catalysis-lowers-activation-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "heterogeneous-catalysis",
+      "verb": "introduces"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "catalysis-lowers-activation-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "sigma-and-pi-bonds",
+      "verb": "uses"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "surface-area-and-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "enzymes",
+      "concept": "enzymes",
+      "verb": "introduces"
+    },
+    {
+      "span": "enzymes",
+      "concept": "catalysis-lowers-activation-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "enzymes",
+      "concept": "reaction-intermediate",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm226461504",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-catalyzed"
+      },
+      "cite": "catalysts",
+      "figure": {
+        "src": "/media/ch12/CNX_Chem_12_07_Rxndiagramcyl_img.jpg",
+        "alt": "In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction,” and the y-axes are labeledc “Energy (k J).” The y-axes are marked off from 0 to 100 at intervals of 10. In a, a blue curve is shown. It begins with a horizontal segment at about 10. The curve then rises sharply near the middle to reach a maximum of about 91, then sharply falls to about 52, again rises sharply to about 73 and falls to another horizontal segment at about 5. In b, the curve begins and ends similarly, but the first peak reaches about 81, drops to about 55, then rises to about 77 before falling to the horizontal region at about 5."
+      },
+      "prompt": "Reaction diagrams for a chemical process with and without a catalyst are shown below. Both reactions involve a two-step mechanism with a rate-determining first step. Compute activation energies for the first step of each mechanism, and identify which corresponds to the catalyzed reaction. How do the second steps of these two mechanisms compare?",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "$\\kEa$ of the first step, diagram (a)",
+            "value": 80,
+            "unit": "kJ",
+            "tol": 0.1,
+            "hint": "Subtract the energy of the reactants from the energy at the top of the first peak."
+          },
+          {
+            "part": "$\\kEa$ of the first step, diagram (b)",
+            "value": 70,
+            "unit": "kJ",
+            "tol": 0.1
+          },
+          {
+            "part": "$\\kEa$ of the second step, both diagrams",
+            "value": 20,
+            "unit": "kJ",
+            "tol": 0.15,
+            "hint": "Measure the second barrier from the bottom of the valley, where the intermediate sits, to the top of the second peak."
+          }
+        ],
+        "solution": "For the first step, <em>E</em><sub>a</sub> = 80 kJ for (a) and 70 kJ for (b), so diagram (b) depicts the catalyzed reaction. Activation energies for the second steps of both mechanisms are the same, 20 kJ."
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idm121944048",
+      "source_number": "76",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "Account for the increase in reaction rate brought about by a catalyst.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The general mode of action for a catalyst is to provide a mechanism by which the reactants can unite more readily by taking a path with a lower reaction energy. The rates of both the forward and the reverse reactions are increased, leading to a faster achievement of equilibrium."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm119808848",
+      "source_number": "77",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "Compare the functions of homogeneous and heterogeneous catalysts.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: for each kind of catalyst, say what phase it is in compared with the reactants and where the reaction takes place, then compare how each gives the reaction a path of lower activation energy, taking the nitric oxide–catalyzed decomposition of ozone and the hydrogenation of ethylene on nickel as the examples."
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm268031984",
+      "source_number": "78",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "Consider this scenario and answer the following questions: Chlorine atoms resulting from decomposition of chlorofluoromethanes, such as CCl<sub>2</sub>F<sub>2</sub>, catalyze the decomposition of ozone in the atmosphere. One simplified mechanism for the decomposition is:<br>$\\begin{array}{l}{\\text{O}}_{3}\\overset{\\;\\text{sunlight}\\;}{\\to}{\\text{O}}_{2}+\\text{O} \\\\ {\\text{O}}_{3}+\\text{Cl}\\;\\longrightarrow \\;{\\text{O}}_{2}+\\text{ClO} \\\\ \\text{ClO}+\\text{O}\\;\\longrightarrow \\;\\text{Cl}+{\\text{O}}_{2}\\end{array}$<br>(a) Explain why chlorine atoms are catalysts in the gas-phase transformation:<br>$2{\\text{O}}_{3}\\;\\longrightarrow \\;3{\\text{O}}_{2}$<br>(b) Nitric oxide is also involved in the decomposition of ozone by the mechanism:<br>$\\begin{array}{l}{\\text{O}}_{3}\\overset{\\;\\text{sunlight}\\;}{\\to}{\\text{O}}_{2}+\\text{O} \\\\ {\\text{O}}_{3}+\\text{NO}\\;\\longrightarrow \\;{\\text{NO}}_{2}+{\\text{O}}_{2} \\\\ {\\text{NO}}_{2}+\\text{O}\\;\\longrightarrow \\;\\text{NO}+{\\text{O}}_{2}\\end{array}$<br>Is NO a catalyst for the decomposition? Explain your answer.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) Chlorine atoms are a catalyst because they react in the second step but are regenerated in the third step. Thus, they are not used up, which is a characteristic of catalysts. (b) NO is a catalyst for the same reason as in part (a)."
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm194307024",
+      "source_number": "79",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "For each of the following pairs of reaction diagrams, identify which of the pair is catalyzed:<br>(a)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise4a_img.jpg\" alt=\"In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction,” and the y-axes are labeled, “Energy (k J).” The y-axis of the first graph is marked off from 0 to 30 in intervals of 5. The y-axis of the second graph is marked off from 0 to 25 by intervals of 5. In a, a blue curve is shown. It begins with a horizontal region at about 12. The curve then rises sharply near the middle to reach a maximum of about 24 and similarly falls to another horizontal segment at 5. In b, the curve begins and ends similarly, but the maximum reached near the center of the graph is only 20.\"><br>(b)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise4b_img.jpg\" alt=\"In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction,” and the y-axes are labeled, “Energy.” The y-axes are marked off from 0 to 50 in intervals of 5. In a, a blue curve is shown. It begins with a horizontal region at about 2. The curve then rises sharply near the middle to reach a maximum of about 43 and similarly falls to another horizontal segment at 15. In b, the curve begins and ends similarly, but the maximum reached near the center of the graph is only about 32.\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: the two diagrams of each pair are for the same reaction, so they start and end at the same energies; read the activation energy of each as the height of its highest barrier above the reactants, and remember that a catalyst gives a path with a lower activation energy."
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm219276192",
+      "source_number": "80",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "For each of the following pairs of reaction diagrams, identify which of the pairs is catalyzed:<br>(a)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise5a_img.jpg\" alt=\"In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction” and the y-axes are labeled, “Energy (k J).” The y-axes are marked off from 0 to 50 at intervals of 5. In a, a blue curve is shown. It begins with a horizontal segment at about 2J. The curve then rises sharply near the middle to reach a maximum of about 46, then sharply falls to about 35, again rises to about 38 and falls to another horizontal segment at about 15. In b, the curve begins and ends similarly, but the first peak reaches about 46, drops to about 35, then rises to about 43 before falling to the horizontal region at about 15.\"><br>(b)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise5b_img.jpg\" alt=\"In this figure, two graphs are shown. The x-axes are labeled, “Extent of reaction,” and the y-axes are labeled, “Energy (k J).” The y-axes are marked off from 0 to 50 at intervals of 5. In a, a blue curve is shown. It begins with a horizontal segment at about 34. The curve then rises sharply near the middle to reach a maximum of about 45, then sharply falls to about 25, again rises sharply to about 35 and falls to another horizontal segment at about 15. In b, the curve begins and ends similarly, but the first peak reaches about 40, drops to 25, then rises to 35 before falling to the horizontal region at about 15.\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The lowering of the transition state energy indicates the effect of a catalyst. (a) B; (b) B"
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm218836096",
+      "source_number": "82",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "For each of the following reaction diagrams, estimate the activation energy ($\\kEa$) of the reaction:<br>(a)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise7a_img.jpg\" alt=\"In this figure, a graph is shown. The x-axis is labeled, “Extent of reaction,” and the y-axis is labeled, “Energy (k J).” A blue curve is shown. It begins with a horizontal segment at about 35. The curve then rises sharply near the middle to reach a maximum of about 45, then sharply falls to about 24, again rises to about 30 and falls to another horizontal segment at about 15.\"><br>(b)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise7b_img.jpg\" alt=\"In this figure, a graph is shown. The x-axis is labeled, “Extent of reaction,” and the y-axis is labeled, “Energy (k J).” A blue curve is shown. It begins with a horizontal segment at about 35. The curve then rises sharply near the middle to reach a maximum of about 45, then sharply falls to about 40, again rises to about 45 and falls to another horizontal segment at about 20.\">",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 10,
+            "unit": "kJ",
+            "tol": 0.2,
+            "hint": "Take the energy of the reactants from the level at the left and subtract it from the energy at the top of the first peak."
+          },
+          {
+            "part": "(b)",
+            "value": 10,
+            "unit": "kJ",
+            "tol": 0.2
+          }
+        ],
+        "solution": "The energy needed to go from the initial state to the transition state is (a) 10 kJ; (b) 10 kJ."
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idm189363504",
+      "source_number": "83",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "Assuming the diagrams in Exercise 12.81 represent different mechanisms for the same reaction, which of the reactions has the faster rate?<br>(a)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise6a_img.jpg\" alt=\"This figure shows a graph. The x-axis is labeled, “Extent of reaction,” and the y-axis is labeled, “Energy (k J).” The y-axis is marked off from 0 to 40 at intervals of 5. A blue curve is shown. It begins with a horizontal region at 10. The curve then rises sharply near the middle to reach a maximum of 35 and similarly falls to another horizontal segment at 5.\"><br>(b)<br><img src=\"/media/ch12/CNX_Chem_12_07_Exercise6b_img.jpg\" alt=\"This figure shows a graph. The x-axis is labeled, “Extent of reaction,” and the y-axis is labeled, “Energy (k J).” The y-axis is marked off from 0 to 40 at intervals of 5. A blue curve is shown. It begins with a horizontal region at 10. The curve then rises sharply near the middle to reach a maximum of 20 and similarly falls to another horizontal segment at 5.\">",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: read the activation energy of each diagram as the height of its barrier above the reactants. For the same reaction at the same temperature, the path with the lower activation energy has more molecules able to cross the barrier, so its rate is faster."
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idm225889216",
+      "source_number": "84",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "catalysts",
+      "prompt": "Consider the similarities and differences in the two reaction diagrams shown in Exercise 12.82. Do these diagrams represent two different overall reactions, or do they represent the same overall reaction taking place by two different mechanisms? Explain your answer.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Both diagrams describe two-step, exothermic reactions, but with different changes in enthalpy, suggesting the diagrams depict two different overall reactions."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "catalyzed-reaction-diagrams"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "activation-energy"
+    },
+    {
+      "exercise": "e1",
+      "concept": "catalysis-lowers-activation-energy"
+    },
+    {
+      "exercise": "e2",
+      "concept": "homogeneous-catalysis"
+    },
+    {
+      "exercise": "e2",
+      "concept": "heterogeneous-catalysis"
+    },
+    {
+      "exercise": "e3",
+      "concept": "homogeneous-catalysis"
+    },
+    {
+      "exercise": "e3",
+      "concept": "reaction-mechanism"
+    },
+    {
+      "exercise": "e4",
+      "concept": "catalyzed-reaction-diagrams"
+    },
+    {
+      "exercise": "e5",
+      "concept": "catalyzed-reaction-diagrams"
+    },
+    {
+      "exercise": "e7",
+      "concept": "activation-energy"
+    },
+    {
+      "exercise": "e7",
+      "concept": "reaction-diagram"
+    },
+    {
+      "exercise": "e8",
+      "concept": "activation-energy"
+    },
+    {
+      "exercise": "e8",
+      "concept": "catalysis-lowers-activation-energy"
+    },
+    {
+      "exercise": "e9",
+      "concept": "reaction-diagram"
+    },
+    {
+      "exercise": "e9",
+      "concept": "reaction-mechanism"
+    },
+    {
+      "exercise": "e9",
+      "concept": "enthalpy-change"
+    }
+  ]
+}

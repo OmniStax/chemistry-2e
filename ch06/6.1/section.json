@@ -99,7 +99,16 @@
         }
       ]
     },
-    { "id": "fig-fringes", "kind": "photo", "number": "6.6", "draws": [] },
+    { "id": "fig-fringes", "kind": "figure", "number": "6.6", "draws": ["wavelength"], "originals": ["/media/ch06/CNX_Chem_06_01_LiteInterf.jpg"], "original_caption": "Interference fringe patterns are shown for light passing through two closely spaced, narrow slits. The spacing of the fringes depends on the wavelength, with the fringes being more closely spaced for the shorter-wavelength blue light. (credit: PASCO)", "facts": [
+  "spectrum",
+  "#000000"
+], "ai": [
+  {
+    "model": "claude-opus-5-5",
+    "effort": "high",
+    "part": "rewritten: four fringe bands drawn from the two-slit pattern"
+  }
+] },
     {
       "id": "sim-string",
       "kind": "sim",

@@ -41,7 +41,7 @@ function freqU(hz) {
 /* ---------- the colours of light, which are a physical fact and not a type ----------
    The visible band from 400 to 700 nm in the hue of that light (the usual linear approximation);
    light outside it has a wavelength and no colour, and is drawn in the wavelength hue. */
-function lightColor(nm) {
+function lightRGB(nm) {
   let r = 0, g = 0, b = 0;
   if (nm < 440) { r = -(nm - 440) / 60; b = 1; }
   else if (nm < 490) { g = (nm - 440) / 50; b = 1; }
@@ -50,9 +50,10 @@ function lightColor(nm) {
   else if (nm < 645) { r = 1; g = -(nm - 645) / 65; }
   else { r = 1; }
   const f = nm < 430 ? 0.45 + 0.55 * (nm - 400) / 30 : nm > 660 ? 0.45 + 0.55 * (700 - nm) / 40 : 1;
-  const ch = (v) => Math.round(255 * Math.pow(Math.max(0, v * f), 0.8));
-  return F.fact(`rgb(${ch(r)},${ch(g)},${ch(b)})`);
+  return [r * f, g * f, b * f];
 }
+const rgbOf = ([r, g, b]) => { const ch = (v) => Math.round(255 * Math.pow(Math.min(1, Math.max(0, v)), 0.8)); return F.fact(`rgb(${ch(r)},${ch(g)},${ch(b)})`); };
+const lightColor = (nm) => rgbOf(lightRGB(nm));
 const visible = (nm) => nm >= 400 && nm <= 700;
 const lightOr = (nm) => (visible(nm) ? lightColor(nm) : C('wavelength'));
 const colorName = (nm) => (nm < 450 ? 'violet' : nm < 495 ? 'blue' : nm < 570 ? 'green' : nm < 590 ? 'yellow' : nm < 620 ? 'orange' : 'red');
@@ -237,6 +238,57 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
       m === 'am'
         ? 'An AM station broadcasts in the band of 540 to 2830 kHz.'
         : 'An FM station in its band of 87.5 to 108.0 MHz swings its carrier by only 75 kHz; the drawing exaggerates the swing so that it can be seen.');
+  }
+  register(d.fig, { update: () => {}, draw });
+})();
+
+/* =====================================================================
+   FIGURE 6.6: the fringes of light through two narrow slits, redrawn
+   faithfully from the book's four bands, since the bundle's image keeps
+   only the red one. Each band is the two-slit pattern, cos² of the fringe
+   phase under the single-slit envelope, with its fringe spacing in
+   proportion to λ; white light is the sum of the visible wavelengths, so
+   its centre is white and its outer fringes part into colours. The
+   brightness is shown as its square root, as the camera's exposure does.
+   Still: a photograph has nothing to vary and no clock. The black is the
+   dark of the photograph, and the bands wear the colours of their light.
+===================================================================== */
+const DARK = '#000000';
+(function () {
+  const d = sim('fig-fringes', 380);
+  const X0 = 300, X1 = 1370, XC = (X0 + X1) / 2, TOP = 28, BH = 64, GAP = 22;
+  const PX_PER_NM = 0.032, ENV = 5;   /* fringe spacing 20.8 units at 650 nm; slit spacing five slit widths */
+  const BANDS = [
+    { name: 'white light', nm: null },
+    { name: 'red light', nm: 650 },
+    { name: 'green light', nm: 532 },
+    { name: 'blue light', nm: 450 },
+  ];
+  const sinc2 = (u) => (Math.abs(u) < 1e-6 ? 1 : (Math.sin(u) / u) ** 2);
+  const I = (y, nm) => { const p = PX_PER_NM * nm; return Math.cos((Math.PI * y) / p) ** 2 * sinc2((Math.PI * y) / (ENV * p)); };
+  const WHITE = []; for (let nm = 400; nm <= 700; nm += 5) WHITE.push([nm, lightRGB(nm)]);
+  const W0 = [0, 1, 2].map((k) => WHITE.reduce((a, [, c]) => a + c[k], 0));
+  function rgbAt(y, nm) {
+    if (nm) return lightRGB(nm).map((c) => c * Math.sqrt(I(y, nm)));
+    const sum = [0, 0, 0];
+    WHITE.forEach(([n, c]) => { const i = I(y, n); for (let k = 0; k < 3; k++) sum[k] += c[k] * i; });
+    return sum.map((v, k) => Math.sqrt(v / W0[k]));
+  }
+  function draw() {
+    const { ctx } = begin(d.c);
+    const facts = F.shown.facts, STEP = 2;
+    BANDS.forEach((b, i) => {
+      const y = TOP + i * (BH + GAP);
+      ctx.save(); ctx.fillStyle = facts ? F.fact(DARK) : PAL.panel; ctx.fillRect(X0, y, X1 - X0, BH);
+      for (let x = X0; x < X1; x += STEP) {
+        const c = rgbAt(x + STEP / 2 - XC, b.nm);
+        ctx.fillStyle = facts ? rgbOf(c) : alpha(PAL.ink, Math.max(...c));
+        ctx.fillRect(x, y, STEP + 0.5, BH);
+      }
+      ctx.restore();
+      text(ctx, b.name, X0 - 24, y + (b.nm ? BH / 2 - 14 : BH / 2), PAL.ink, { size: 22, align: 'right' });
+      if (b.nm) text(ctx, 'λ = ' + b.nm + ' nm', X0 - 24, y + BH / 2 + 16, C('wavelength'), { size: 20, weight: 600, align: 'right' });
+    });
   }
   register(d.fig, { update: () => {}, draw });
 })();

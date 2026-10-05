@@ -1,0 +1,373 @@
+{
+ "id": "18.8",
+ "module": "m68836",
+ "chapter": "18",
+ "title": "Occurrence, Preparation, and Properties of Phosphorus",
+ "short": "Phosphorus",
+ "lead": "Phosphorus is prepared industrially from calcium phosphate, and the preparation of many of its compounds begins with its oxide P<sub>4</sub>O<sub>10</sub>. It forms two common oxides, P<sub>4</sub>O<sub>6</sub> and P<sub>4</sub>O<sub>10</sub>, and halides with the halogens, the most important of them the chlorides PCl<sub>3</sub> and PCl<sub>5</sub>.",
+ "objectives": [
+  "Describe the properties, preparation, and uses of phosphorus"
+ ],
+ "summary_html": "<p>Phosphorus (group 15) commonly exhibits <span data-concept=\"oxidation-number\">oxidation states</span> of 3− with active metals and of 3+ and 5+ with more electronegative nonmetals. The <span data-concept=\"halogen\">halogens</span> and oxygen will oxidize phosphorus. The oxides are phosphorus(V) oxide, P<sub>4</sub>O<sub>10</sub>, and phosphorus(III) oxide, P<sub>4</sub>O<sub>6</sub>. The two common methods for preparing orthophosphoric acid, H<sub>3</sub>PO<sub>4</sub>, are either the reaction of a phosphate with sulfuric acid or the reaction of water with phosphorus(V) oxide. Orthophosphoric acid is a <span data-concept=\"triprotic-acid\">triprotic acid</span> that forms three types of salts.</p>",
+ "notes": "The section keeps as printed “2.00 g of PCl₃ is an excess of water” in exercise 71, and a summary that names the preparations and salts of orthophosphoric acid, which Section 18.9 describes.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key; the keys of exercises 67 and 75 are the book’s Lewis-structure images. The unkeyed exercises whose answers would be computed are left out, and no answer is computed for them: 68 (fs-idp101864208, molecular structures), 70 (fs-idm43491296, hybridization), 72 (fs-idm123772752, numerical), 74 (fs-idp208490096, equations) and 78 (fs-idp126473504, numerical). The unkeyed conceptual exercise 76 (fs-idm55936272) carries a suggested approach marked as OmniStax’s own. Nothing is moved.",
+ "figures": [
+  {
+   "id": "sim-phosphorus-cage",
+   "kind": "sim",
+   "number": "18.39",
+   "folds": [
+    "18.40"
+   ],
+   "originals": [
+    "/media/ch18/CNX_Chem_18_08_P4S3.jpg",
+    "/media/ch18/CNX_Chem_18_08_P4O6P4O10.jpg"
+   ],
+   "original_caption": "(Figure 18.39) P₄S₃ is a component of the heads of strike-anywhere matches. (Figure 18.40) This image shows the molecular structures of P₄O₆ (left) and P₄O₁₀ (right).",
+   "draws": [],
+   "conventions": [
+    "P",
+    "S",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-phosphorus-chlorides",
+   "kind": "sim",
+   "number": "18.41",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_08_PCl3PCl5.jpg"
+   ],
+   "original_caption": "This image shows the molecular structure of PCl₃ (left) and PCl₅ (right) in the gas phase.",
+   "draws": [],
+   "conventions": [
+    "P",
+    "Cl"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "preparation",
+   "concept": "phosphorus-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "alloy",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "phosphorus-oxides",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "standard-enthalpy-of-formation",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "phosphorus-halides",
+   "verb": "introduces"
+  },
+  {
+   "span": "halides",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "first-member-anomaly",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "sublimation",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "oxyacid",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "molecular-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "x-ray-crystallography",
+   "verb": "uses"
+  },
+  {
+   "span": "halides",
+   "concept": "ionic-compounds",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e67",
+   "source_id": "fs-idp52847792",
+   "source_number": "67",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "Write the Lewis structure for each of the following. You may wish to review the chapter on chemical bonding and molecular geometry.<br>(a) PH<sub>3</sub><br>(b) ${\\text{PH}}_{4}{}^{+}$<br>(c) P<sub>2</sub>H<sub>4</sub><br>(d) ${\\text{PO}}_{4}{}^{3−}$<br>(e) PF<sub>5</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1a_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom with a lone pair of electrons single bonded to three hydrogen atoms.\"><br>(b)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1b_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to four hydrogen atoms. The structure is surrounded by brackets and has a superscript positive sign outside the brackets.\"><br>(c)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1c_img.jpg\" alt=\"This Lewis structure shows two phosphorus atoms, each with a lone pair of electrons, single bonded to one another. Each phosphorus atom is also single bonded to two hydrogen atoms.\"><br>(d)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1d_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to four oxygen atoms, each with three lone pairs of electrons. The structure is surrounded by brackets and has a superscript 3 negative sign outside the brackets.\"><br>(e)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1e_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to five fluorine atoms, each with three lone pairs of electrons.\">"
+   }
+  },
+  {
+   "id": "e69",
+   "source_id": "fs-idm2951584",
+   "source_number": "69",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halides",
+   "prompt": "Complete and balance each of the following chemical equations. (In some cases, there may be more than one correct answer.)<br>(a) ${\\text{P}}_{4}+\\text{Al}\\;\\longrightarrow$<br>(b) ${\\text{P}}_{4}+\\text{Na}\\;\\longrightarrow$<br>(c) ${\\text{P}}_{4}+{\\text{F}}_{2}\\;\\longrightarrow$<br>(d) ${\\text{P}}_{4}+{\\text{Cl}}_{2}\\;\\longrightarrow$<br>(e) ${\\text{P}}_{4}+{\\text{O}}_{2}\\;\\longrightarrow$<br>(f) ${\\text{P}}_{4}{\\text{O}}_{6}+{\\text{O}}_{2}\\;\\longrightarrow$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${\\text{P}}_{4}(s)+\\text{4Al}(s)\\;\\longrightarrow \\;\\text{4AlP}(s);$ (b) ${\\text{P}}_{4}(s)+\\text{12Na}(s)\\;\\longrightarrow \\;{\\text{4Na}}_{3}\\text{P}(s);$ (c) ${\\text{P}}_{4}(s)+{\\text{10F}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PF}}_{5}(l);$ (d) ${\\text{P}}_{4}(s)+{\\text{6Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{3}(l)$ or ${\\text{P}}_{4}(s)+{\\text{10Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{5}(l);$ (e) ${\\text{P}}_{4}(s)+{\\text{3O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{6}(s)$ or ${\\text{P}}_{4}(s)+{\\text{5O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s);$ (f) ${\\text{P}}_{4}{\\text{O}}_{6}(s)+{\\text{2O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s)$"
+   }
+  },
+  {
+   "id": "e71",
+   "source_id": "fs-idp54197664",
+   "source_number": "71",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halides",
+   "prompt": "What volume of 0.200 <em>M</em> NaOH is necessary to neutralize the solution produced by dissolving 2.00 g of PCl<sub>3</sub> is an excess of water? Note that when H<sub>3</sub>PO<sub>3</sub> is titrated under these conditions, only one proton of the acid molecule reacts.",
+   "answer": {
+    "type": "number",
+    "value": 291,
+    "unit": "mL",
+    "tol": 0.02,
+    "part": "the volume of NaOH solution",
+    "hint": "Water turns each PCl<sub>3</sub> into H<sub>3</sub>PO<sub>3</sub> and three HCl; count the moles of acid that react with NaOH, one proton from each H<sub>3</sub>PO<sub>3</sub> and one from each HCl.",
+    "solution": "291 mL",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e73",
+   "source_id": "fs-idp32430320",
+   "source_number": "73",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "How many tons of Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> are necessary to prepare 5.0 tons of phosphorus if the yield is 90%?",
+   "answer": {
+    "type": "number",
+    "value": 28,
+    "unit": "tons",
+    "tol": 0.03,
+    "part": "the mass of Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>",
+    "hint": "Each Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> holds two phosphorus atoms; find the mass of phosphate that holds 5.0 tons of phosphorus, then divide by the 90% yield.",
+    "solution": "28 tons",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e75",
+   "source_id": "fs-idm54656592",
+   "source_number": "75",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halides",
+   "prompt": "Draw the Lewis structures and describe the geometry for the following:<br>(a) ${\\text{PF}}_{4}{}^{+}$<br>(b) PF<sub>5</sub><br>(c) ${\\text{PF}}_{6}{}^{-}$<br>(d) POF<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8a_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to four fluorine atoms, each with three lone pairs of electrons. The structure is surrounded by brackets and has a superscript positive sign outside the brackets. The label, “Tetrahedral,” is written under the structure.\"><br>(b)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8b_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to five fluorine atoms, each with three lone pairs of electrons. The label, “Trigonal bipyramidal,” is written under the structure.\"><br>(c)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8c_img.jpg\" alt=\"A Lewis structure shows a phosphorus atom single bonded to six fluorine atoms, each with three lone pairs of electrons. The structure is surrounded by brackets and has a superscript negative sign outside the brackets. The label, “Octahedral,” is written under the structure.\"><br>(d)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8d_img.jpg\" alt=\"This Lewis structure shows a phosphorus atom single bonded to three fluorine atoms, each with three lone pairs of electrons. The phosphorus atom is also double bonded to an oxygen atom with two lone pairs of electrons. The label, “Tetrahedral,” is written under the structure.\">"
+   }
+  },
+  {
+   "id": "e76",
+   "source_id": "fs-idm55936272",
+   "source_number": "76",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "halides",
+   "prompt": "Why does phosphorous acid form only two series of salts, even though the molecule contains three hydrogen atoms?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: draw the Lewis structure of phosphorous acid, H<sub>3</sub>PO<sub>3</sub>, and note which atom each hydrogen atom is bonded to. Recall which hydrogen atoms of an oxyacid ionize, and count how many of the three can be lost to a base; each one lost gives one series of salts."
+   }
+  },
+  {
+   "id": "e77",
+   "source_id": "fs-idp5265904",
+   "source_number": "77",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "Assign an oxidation state to phosphorus in each of the following:<br>(a) NaH<sub>2</sub>PO<sub>3</sub><br>(b) PF<sub>5</sub><br>(c) P<sub>4</sub>O<sub>6</sub><br>(d) K<sub>3</sub>PO<sub>4</sub><br>(e) Na<sub>3</sub>P<br>(f) Na<sub>4</sub>P<sub>2</sub>O<sub>7</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) P = 3+; (b) P = 5+; (c) P = 3+; (d) P = 5+; (e) P = 3−; (f) P = 5+"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e67",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e67",
+   "concept": "phosphorus-preparation"
+  },
+  {
+   "exercise": "e69",
+   "concept": "phosphorus-oxides"
+  },
+  {
+   "exercise": "e69",
+   "concept": "phosphorus-halides"
+  },
+  {
+   "exercise": "e69",
+   "concept": "balance-by-inspection"
+  },
+  {
+   "exercise": "e71",
+   "concept": "phosphorus-halides"
+  },
+  {
+   "exercise": "e71",
+   "concept": "titration-calculation"
+  },
+  {
+   "exercise": "e73",
+   "concept": "phosphorus-preparation"
+  },
+  {
+   "exercise": "e73",
+   "concept": "mass-stoichiometry"
+  },
+  {
+   "exercise": "e73",
+   "concept": "percent-yield"
+  },
+  {
+   "exercise": "e75",
+   "concept": "phosphorus-halides"
+  },
+  {
+   "exercise": "e75",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e75",
+   "concept": "predict-molecular-structure"
+  },
+  {
+   "exercise": "e76",
+   "concept": "phosphorus-oxides"
+  },
+  {
+   "exercise": "e76",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e77",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "e77",
+   "concept": "phosphorus-preparation"
+  }
+ ]
+}

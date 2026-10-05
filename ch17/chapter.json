@@ -1,0 +1,293 @@
+{
+ "id": "17",
+ "dir": "ch17",
+ "title": "Electrochemistry",
+ "intro": {
+  "module": "m68820",
+  "slug": "17-introduction"
+ },
+ "sections": [
+  {
+   "id": "17.1",
+   "module": "m68821",
+   "title": "Review of Redox Chemistry",
+   "slug": "17-1-review-of-redox-chemistry"
+  },
+  {
+   "id": "17.2",
+   "module": "m68822",
+   "title": "Galvanic Cells",
+   "slug": "17-2-galvanic-cells"
+  },
+  {
+   "id": "17.3",
+   "module": "m68823",
+   "title": "Electrode and Cell Potentials",
+   "slug": "17-3-electrode-and-cell-potentials"
+  },
+  {
+   "id": "17.4",
+   "module": "m68824",
+   "title": "Potential, Free Energy, and Equilibrium",
+   "slug": "17-4-potential-free-energy-and-equilibrium"
+  },
+  {
+   "id": "17.5",
+   "module": "m68825",
+   "title": "Batteries and Fuel Cells",
+   "slug": "17-5-batteries-and-fuel-cells"
+  },
+  {
+   "id": "17.6",
+   "module": "m68826",
+   "title": "Corrosion",
+   "slug": "17-6-corrosion"
+  },
+  {
+   "id": "17.7",
+   "module": "m68827",
+   "title": "Electrolysis",
+   "slug": "17-7-electrolysis"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "E_potential",
+   "concept": "electrical-potential",
+   "meaning": "the potential, a measure of the energy accompanying the separation or transfer of charge",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E_cell",
+   "concept": "cell-potential",
+   "meaning": "the cell potential, the difference in potential between the cathode and anode half-cells",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E_cathode",
+   "concept": "electrode-potential",
+   "meaning": "the potential of the half-cell functioning as the cathode",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E_anode",
+   "concept": "electrode-potential",
+   "meaning": "the potential of the half-cell functioning as the anode",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E°_cell",
+   "concept": "standard-cell-potential",
+   "meaning": "the standard cell potential, measured with both half-cells under standard-state conditions",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E°_cathode",
+   "concept": "standard-electrode-potential",
+   "meaning": "the standard electrode potential of the cathode half-cell",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E°_anode",
+   "concept": "standard-electrode-potential",
+   "meaning": "the standard electrode potential of the anode half-cell",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E_SHE",
+   "concept": "electrode-potential",
+   "meaning": "the potential of the standard hydrogen electrode, exactly 0 V by definition",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E_X",
+   "concept": "electrode-potential",
+   "meaning": "the electrode potential of half-cell X, the cell potential with X as cathode and the SHE as anode",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E°_X",
+   "concept": "standard-electrode-potential",
+   "meaning": "the standard electrode potential of half-cell X, its electrode potential under standard-state conditions",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "E_std",
+   "concept": "standard-electrode-potential",
+   "meaning": "a standard electrode potential, tabulated for a half-reaction written as a reduction",
+   "unit": "V",
+   "section": "17.3"
+  },
+  {
+   "sym": "ΔG°",
+   "concept": "standard-free-energy-change",
+   "meaning": "the standard free energy change, for a process occurring under standard conditions",
+   "unit": "kJ/mol",
+   "section": "17.4"
+  },
+  {
+   "sym": "ΔG",
+   "concept": "gibbs-free-energy",
+   "meaning": "the free energy change of the redox process",
+   "unit": "kJ/mol",
+   "section": "17.4"
+  },
+  {
+   "sym": "w_max",
+   "concept": "work",
+   "meaning": "the maximum work that could be performed by the system",
+   "unit": "J",
+   "section": "17.4"
+  },
+  {
+   "sym": "w_elec",
+   "concept": "work",
+   "meaning": "the electrical work of transferring the electrons from reductant to oxidant",
+   "unit": "J",
+   "section": "17.4"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the number of moles of electrons transferred in the balanced redox reaction",
+   "unit": "mol",
+   "section": "17.4"
+  },
+  {
+   "sym": "F_Faraday",
+   "concept": "faradays-constant",
+   "meaning": "Faraday’s constant, the charge of one mole of electrons, 96,485 C/mol",
+   "unit": "C/mol",
+   "section": "17.4"
+  },
+  {
+   "sym": "E_cell",
+   "concept": "cell-potential",
+   "meaning": "the cell potential under the prevailing, possibly nonstandard, conditions",
+   "unit": "V",
+   "section": "17.4"
+  },
+  {
+   "sym": "E°_cell",
+   "concept": "standard-cell-potential",
+   "meaning": "the standard cell potential",
+   "unit": "V",
+   "section": "17.4"
+  },
+  {
+   "sym": "R",
+   "concept": "ideal-gas-constant",
+   "meaning": "the gas constant, 8.314 J/K mol",
+   "unit": "J mol⁻¹ K⁻¹",
+   "section": "17.4"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature, in kelvin",
+   "unit": "K",
+   "section": "17.4"
+  },
+  {
+   "sym": "K",
+   "concept": "equilibrium-constant",
+   "meaning": "the equilibrium constant of the redox reaction",
+   "unit": "none",
+   "section": "17.4"
+  },
+  {
+   "sym": "Q_c",
+   "concept": "reaction-quotient",
+   "meaning": "the reaction quotient, which reflects the composition of the reaction mixture",
+   "unit": "none",
+   "section": "17.4"
+  },
+  {
+   "sym": "E_cell",
+   "concept": "cell-potential",
+   "meaning": "the cell potential of a battery or fuel cell",
+   "unit": "V",
+   "section": "17.5"
+  },
+  {
+   "sym": "E_std",
+   "concept": "standard-electrode-potential",
+   "meaning": "a standard reduction potential, such as that of the Fe²⁺/Fe couple",
+   "unit": "V",
+   "section": "17.6"
+  },
+  {
+   "sym": "E°_cell",
+   "concept": "standard-cell-potential",
+   "meaning": "the standard cell potential of the corrosion cell",
+   "unit": "V",
+   "section": "17.6"
+  },
+  {
+   "sym": "E°_anode",
+   "concept": "standard-electrode-potential",
+   "meaning": "the standard electrode potential of the anode half-reaction, written as a reduction",
+   "unit": "V",
+   "section": "17.7"
+  },
+  {
+   "sym": "E°_cathode",
+   "concept": "standard-electrode-potential",
+   "meaning": "the standard electrode potential of the cathode half-reaction",
+   "unit": "V",
+   "section": "17.7"
+  },
+  {
+   "sym": "E°_cell",
+   "concept": "standard-cell-potential",
+   "meaning": "the standard cell potential of the electrolysis reaction, negative for a nonspontaneous one",
+   "unit": "V",
+   "section": "17.7"
+  },
+  {
+   "sym": "Q_charge",
+   "type": "charge",
+   "meaning": "the charge transferred by passage of a current over a time interval",
+   "unit": "C",
+   "section": "17.7"
+  },
+  {
+   "sym": "I",
+   "concept": "electric-current",
+   "meaning": "the constant current passed through the cell",
+   "unit": "A",
+   "section": "17.7"
+  },
+  {
+   "sym": "t",
+   "concept": "time",
+   "meaning": "the time interval over which the current passes",
+   "unit": "s",
+   "section": "17.7"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the number of moles of electrons transferred",
+   "unit": "mol",
+   "section": "17.7"
+  },
+  {
+   "sym": "F_Faraday",
+   "concept": "faradays-constant",
+   "meaning": "Faraday’s constant, the charge in coulombs for one mole of electrons",
+   "unit": "C/mol",
+   "section": "17.7"
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+# Plan: Introduction to Chapter 17, Electrochemistry (m68820)
+
+Source: `source.md`. Status: built 2026-10-05 by the chapter's prep agent, on Chen's instruction to finish the book without check-ins; left here for review after.
+
+The page is the book's one paragraph on electrochemistry, the transfer of a redox reaction's electrons through an external circuit, kept verbatim under the opener (root rule 21). The opener is the photograph of an electric car at a charging station; it is Figure 17.1, a `photo` row with the book's caption and credit, served from `media/ch17/`, with an alt text of our own shortened from the bundle's. No figure is drawn: cells, potentials, batteries and electrolysis are drawn in 17.2 to 17.7, where the text works them out, so the page registers no `figures.js`. No lead, objectives, summary, glossary or exercises, since the book prints none. Redox reactions, oxidation states and batteries are marked with their concepts; none is typed, so they stay in ink. The module's abstract, which lists the seven section topics, is left out and named in `notes`.

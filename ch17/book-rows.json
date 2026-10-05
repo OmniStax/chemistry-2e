@@ -1,0 +1,1014 @@
+{
+ "types": [
+  {
+   "id": "current",
+   "label": "electric current",
+   "dimension": "A"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "E_potential",
+   "latex": "E",
+   "macro": "\\kEpot"
+  },
+  {
+   "sym": "E°_cell",
+   "latex": "E_{\\text{cell}}^{\\circ}",
+   "macro": "\\kEocell"
+  },
+  {
+   "sym": "E_cathode",
+   "latex": "E_{\\text{cathode}}",
+   "macro": "\\kEcathode"
+  },
+  {
+   "sym": "E_anode",
+   "latex": "E_{\\text{anode}}",
+   "macro": "\\kEanode"
+  },
+  {
+   "sym": "E°_cathode",
+   "latex": "E_{\\text{cathode}}^{\\circ}",
+   "macro": "\\kEocathode"
+  },
+  {
+   "sym": "E°_anode",
+   "latex": "E_{\\text{anode}}^{\\circ}",
+   "macro": "\\kEoanode"
+  },
+  {
+   "sym": "E_X",
+   "latex": "E_{\\text{X}}",
+   "macro": "\\kEX"
+  },
+  {
+   "sym": "E°_X",
+   "latex": "E_{\\text{X}}^{\\circ}",
+   "macro": "\\kEoX"
+  },
+  {
+   "sym": "E_SHE",
+   "latex": "E_{\\text{SHE}}",
+   "macro": "\\kEshe"
+  },
+  {
+   "sym": "F_Faraday",
+   "latex": "F",
+   "macro": "\\kFaraday"
+  },
+  {
+   "sym": "I",
+   "latex": "I",
+   "macro": "\\kI"
+  },
+  {
+   "sym": "w_elec",
+   "latex": "w_{\\text{elec}}",
+   "macro": "\\kwelec"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "oxidation-number-covalent-limit",
+   "kind": "idea",
+   "section": "17.1",
+   "name": "Oxidation numbers in covalent compounds",
+   "statement": "For a covalent compound, oxidation numbers are assigned by imagining the polarization of each shared bond to be complete, so that the shared electrons are transferred to the more electronegative atom. Water treated this way would be an ionic compound of O2− anions and H+ cations, and so the oxidation numbers of oxygen and hydrogen in water are −2 and +1."
+  },
+  {
+   "id": "balance-redox-basic-solution",
+   "kind": "skill",
+   "section": "17.1",
+   "name": "Balancing redox equations in basic solution",
+   "statement": "A redox equation for a reaction in a basic medium is first balanced by the half-reaction method as if the solution were acidic; OH− ions are then added in equal numbers to both sides to neutralize the H+ ions, the H+ and OH− on one side are combined as water, and the equation is simplified, so that no H+ appears among its reactants or products."
+  },
+  {
+   "id": "electrochemical-cell",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "Electrochemical cell",
+   "statement": "An electrochemical cell contains all the reactants and products of a redox system but prevents physical contact between the reactants, so that the electrons are transferred indirectly, through an external circuit that contacts the separated reactants."
+  },
+  {
+   "id": "galvanic-cell",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "Galvanic cell",
+   "terms": [
+    "galvanic cell",
+    "voltaic cell"
+   ],
+   "statement": "A galvanic cell, or voltaic cell, is an electrochemical cell in which a spontaneous redox reaction takes place. Electrons are transferred from the reductant in the anode half-cell to the oxidant in the cathode half-cell through the external circuit."
+  },
+  {
+   "id": "half-cell",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "Half-cell",
+   "terms": [
+    "half-cell",
+    "half cell"
+   ],
+   "statement": "A half-cell is the component of an electrochemical cell that contains the redox conjugate pair, or couple, of a single reactant, such as a copper foil in copper nitrate solution for the Cu(0)/Cu(II) couple. The redox reaction of a half-cell occurs only at the interface between its reaction mixture and its electrode."
+  },
+  {
+   "id": "anode",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "Anode",
+   "terms": [
+    "anode"
+   ],
+   "statement": "The anode of an electrochemical cell is the electrode at which oxidation occurs."
+  },
+  {
+   "id": "cathode",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "Cathode",
+   "terms": [
+    "cathode"
+   ],
+   "statement": "The cathode of an electrochemical cell is the electrode at which reduction occurs."
+  },
+  {
+   "id": "salt-bridge",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "Salt bridge",
+   "terms": [
+    "salt bridge"
+   ],
+   "statement": "A salt bridge is a tube filled with inert electrolyte solution that connects the two half-cell solutions, keeping the reactants separate while maintaining charge balance: inert ions flow from it into each half-cell to compensate for the ions the cell reaction produces or consumes there."
+  },
+  {
+   "id": "cell-notation",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "Cell notation",
+   "terms": [
+    "cell notation",
+    "cell schematic"
+   ],
+   "statement": "Cell notation, or a cell schematic, is a symbolic representation of the components and reactions of an electrochemical cell. Each component is written by its formula or element symbol, an interface between phases by a vertical line, components of one phase are separated by commas, and the schematic begins with the anode and proceeds left to right to the cathode."
+  },
+  {
+   "id": "inert-electrode",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "Inert electrode",
+   "terms": [
+    "inert electrode"
+   ],
+   "statement": "An inert electrode conducts electrons to and from the reactants in a half-cell but is not itself oxidized or reduced. It is required when neither member of the half-cell's redox couple can function as an electrode, as when both are solute species; platinum is a common choice."
+  },
+  {
+   "id": "active-electrode",
+   "kind": "definition",
+   "section": "17.2",
+   "name": "Active electrode",
+   "terms": [
+    "active electrode"
+   ],
+   "statement": "An active electrode is constructed from a member of the redox couple and participates as a reactant or product in the redox reaction of an electrochemical cell, so its mass changes as the reaction proceeds."
+  },
+  {
+   "id": "electrical-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "Potential",
+   "symbol": "E_potential",
+   "type": "potential",
+   "statement": "Potential, more commonly called voltage in electrical applications, is a measure of the energy accompanying the separation or transfer of charge. It is measured in volts, one joule of energy per one coulomb of charge, V = J/C."
+  },
+  {
+   "id": "cell-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "Cell potential",
+   "symbol": "E_cell",
+   "terms": [
+    "cell potential"
+   ],
+   "type": "potential",
+   "statement": "The potential of a single half-cell cannot be measured, since a transfer of electrons requires both a donor and a recipient; only the difference in potential between two half-cells can be measured. This difference, between the cathode and the anode half-cells, is the cell potential.",
+   "forms": [
+    {
+     "id": "eq-cell-potential",
+     "latex": "E_{\\text{cell}}=E_{\\text{cathode}}-E_{\\text{anode}}",
+     "ktex": "\\kEcell=\\kEcathode-\\kEanode"
+    }
+   ]
+  },
+  {
+   "id": "standard-cell-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "Standard cell potential",
+   "symbol": "E°_cell",
+   "terms": [
+    "standard cell potential"
+   ],
+   "type": "potential",
+   "statement": "The standard cell potential is the cell potential measured when both half-cells are under standard-state conditions: 1 M concentrations, 1 bar pressures, 298 K.",
+   "forms": [
+    {
+     "id": "eq-standard-cell-potential",
+     "latex": "E_{\\text{cell}}^{\\circ}=E_{\\text{cathode}}^{\\circ}-E_{\\text{anode}}^{\\circ}",
+     "ktex": "\\kEocell=\\kEocathode-\\kEoanode"
+    }
+   ]
+  },
+  {
+   "id": "standard-hydrogen-electrode",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "Standard hydrogen electrode",
+   "terms": [
+    "standard hydrogen electrode",
+    "SHE"
+   ],
+   "statement": "The standard hydrogen electrode (SHE) is the half-cell designated as the universal reference for cell potential measurements and assigned a potential of exactly 0 V. It is based on the reduction of hydrogen ions to hydrogen gas, with an inert platinum electrode immersed in precisely 1 M aqueous H+ and a stream of H2 gas at 1 bar, at 298 K."
+  },
+  {
+   "id": "electrode-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "Electrode potential",
+   "symbol": "E_X",
+   "terms": [
+    "electrode potential"
+   ],
+   "type": "potential",
+   "statement": "The electrode potential of a half-cell X is the potential measured for a cell comprised of X acting as cathode and the standard hydrogen electrode acting as anode. Since the SHE is assigned 0 V, the cell potential so measured is the potential of X.",
+   "forms": [
+    {
+     "id": "eq-electrode-potential",
+     "latex": "E_{\\text{cell}}=E_{\\text{X}}-E_{\\text{SHE}}=E_{\\text{X}}",
+     "ktex": "\\kEcell=\\kEX-\\kEshe=\\kEX",
+     "condition": "E_SHE = 0 V, by definition"
+    }
+   ]
+  },
+  {
+   "id": "standard-electrode-potential",
+   "kind": "definition",
+   "section": "17.3",
+   "name": "Standard electrode potential",
+   "symbol": "E°_X",
+   "terms": [
+    "standard electrode potential"
+   ],
+   "type": "potential",
+   "statement": "The standard electrode potential of a half-cell is its electrode potential measured under standard-state conditions. Since the definition requires the half-cell to function as a cathode, these potentials are sometimes called standard reduction potentials, and they are tabulated for half-reactions written as reductions."
+  },
+  {
+   "id": "electrode-potential-and-oxidant-strength",
+   "kind": "result",
+   "section": "17.3",
+   "name": "Electrode potential and oxidant strength",
+   "statement": "The stronger oxidant is the one exhibiting the greater standard electrode potential: an increased E° corresponds to an increased driving force behind the reduction of the species. A table of standard electrode potentials in numerical order is therefore in order of the oxidizing strength of each half-reaction's reactant, from the strongest oxidant at the most positive E° to the weakest at the most negative; a negative value only means the reactant is a weaker oxidant than aqueous hydrogen ions."
+  },
+  {
+   "id": "cell-potential-and-spontaneity",
+   "kind": "result",
+   "section": "17.3",
+   "name": "Cell potential and spontaneity",
+   "statement": "The arithmetic sign of a cell potential indicates the spontaneity of the cell reaction: a spontaneous process exhibits a positive cell potential and a nonspontaneous one a negative cell potential. Reversing a redox reaction interchanges its cathode and anode half-reactions and so changes the sign of its cell potential."
+  },
+  {
+   "id": "predict-redox-spontaneity",
+   "kind": "skill",
+   "section": "17.3",
+   "name": "Predicting redox spontaneity from electrode potentials",
+   "statement": "To predict whether a redox reaction is spontaneous under standard-state conditions, identify its cathode (reduction) and anode (oxidation) half-reactions, look up their standard electrode potentials and compute the standard cell potential as the cathode's minus the anode's. Any reaction in which the oxidant's entry in the table lies above the reductant's has a positive standard cell potential and is predicted to be spontaneous."
+  },
+  {
+   "id": "faradays-constant",
+   "kind": "definition",
+   "section": "17.4",
+   "name": "Faraday’s constant",
+   "symbol": "F_Faraday",
+   "terms": [
+    "Faraday’s constant"
+   ],
+   "type": "charge",
+   "statement": "Faraday’s constant is the charge in coulombs of one mole of electrons, F = 96,485 C/mol e−."
+  },
+  {
+   "id": "free-energy-and-cell-potential",
+   "kind": "result",
+   "section": "17.4",
+   "name": "Free energy change and cell potential",
+   "statement": "For a redox reaction in a galvanic cell, essentially all the maximum work is associated with transferring electrons from reductant to oxidant, and that work is determined by the total charge transferred and the cell potential. The free energy change therefore equals −nF times the cell potential, where n is the number of moles of electrons transferred: spontaneous redox reactions exhibit positive potentials and negative free energy changes.",
+   "forms": [
+    {
+     "id": "eq-standard-free-energy-cell-potential",
+     "latex": "\\Delta G^{\\circ}=-nFE_{\\text{cell}}^{\\circ}",
+     "ktex": "\\kdGo=-\\kn\\kFaraday\\kEocell"
+    },
+    {
+     "id": "eq-free-energy-cell-potential",
+     "latex": "\\Delta G=-nFE_{\\text{cell}}",
+     "ktex": "\\kdG=-\\kn\\kFaraday\\kEcell"
+    },
+    {
+     "id": "eq-electrical-work",
+     "latex": "w_{\\text{elec}}=w_{\\text{max}}=-nFE_{\\text{cell}}",
+     "ktex": "\\kwelec=\\kwmax=-\\kn\\kFaraday\\kEcell"
+    }
+   ]
+  },
+  {
+   "id": "cell-potential-and-equilibrium-constant",
+   "kind": "result",
+   "section": "17.4",
+   "name": "Standard cell potential and the equilibrium constant",
+   "statement": "Combining ΔG° = −RT ln K with ΔG° = −nFE°cell shows that the standard cell potential is proportional to the natural logarithm of the equilibrium constant. Redox reactions with large positive standard cell potentials proceed far towards completion, reaching equilibrium when the majority of reactant has been converted to product.",
+   "forms": [
+    {
+     "id": "eq-standard-cell-potential-k",
+     "latex": "E_{\\text{cell}}^{\\circ}=\\frac{RT}{nF}\\ln K",
+     "ktex": "\\kEocell=\\frac{R\\kT}{\\kn\\kFaraday}\\ln\\kK"
+    },
+    {
+     "id": "eq-standard-cell-potential-k-298",
+     "latex": "E_{\\text{cell}}^{\\circ}=\\frac{0.0257\\text{ V}}{n}\\ln K=\\frac{0.0592\\text{ V}}{n}\\log K",
+     "ktex": "\\kEocell=\\frac{0.0257\\text{ V}}{\\kn}\\ln\\kK=\\frac{0.0592\\text{ V}}{\\kn}\\log\\kK",
+     "condition": "at 298.15 K"
+    }
+   ]
+  },
+  {
+   "id": "potential-free-energy-equilibrium-relations",
+   "kind": "idea",
+   "section": "17.4",
+   "name": "Relations among E°, ΔG° and K",
+   "statement": "The standard cell potential, the standard free energy change and the equilibrium constant are three linked measures of one reaction's driving force. When K > 1, ΔG° < 0 and E°cell > 0, the reaction is spontaneous under standard conditions and products are more abundant at equilibrium; when K < 1, ΔG° > 0 and E°cell < 0, it is nonspontaneous and reactants are more abundant; when K = 1, ΔG° = 0 and E°cell = 0, it is at equilibrium under standard conditions."
+  },
+  {
+   "id": "nernst-equation",
+   "kind": "result",
+   "section": "17.4",
+   "name": "Nernst equation",
+   "terms": [
+    "Nernst equation"
+   ],
+   "statement": "Substituting ΔG = −nFEcell into ΔG = ΔG° + RT ln Q yields the Nernst equation, which describes how the potential of a redox system varies from its standard state value as a function of the number of electrons transferred, the temperature and the reaction mixture composition as reflected in the reaction quotient.",
+   "forms": [
+    {
+     "id": "eq-nernst",
+     "latex": "E_{\\text{cell}}=E_{\\text{cell}}^{\\circ}-\\frac{RT}{nF}\\ln Q",
+     "ktex": "\\kEcell=\\kEocell-\\frac{R\\kT}{\\kn\\kFaraday}\\ln\\kQrxn"
+    },
+    {
+     "id": "eq-nernst-298",
+     "latex": "E_{\\text{cell}}=E_{\\text{cell}}^{\\circ}-\\frac{0.0592\\text{ V}}{n}\\log Q",
+     "ktex": "\\kEcell=\\kEocell-\\frac{0.0592\\text{ V}}{\\kn}\\log\\kQrxn",
+     "condition": "at 298.15 K"
+    }
+   ]
+  },
+  {
+   "id": "concentration-cell",
+   "kind": "definition",
+   "section": "17.4",
+   "name": "Concentration cell",
+   "terms": [
+    "concentration cell"
+   ],
+   "statement": "A concentration cell is a galvanic cell constructed from two nearly identical half-cells, based on the same half-reaction and using the same electrode, that differ only in the concentration of one redox species. Its standard cell potential is zero, so its potential is determined only by the difference in concentration, and it runs until the two concentrations are equal."
+  },
+  {
+   "id": "predict-spontaneity-nonstandard",
+   "kind": "skill",
+   "section": "17.4",
+   "name": "Calculating a cell potential under nonstandard conditions",
+   "statement": "To find the potential of a redox system under nonstandard conditions, compute its standard cell potential from tabulated electrode potentials, write the reaction quotient from the stated concentrations and pressures, and substitute both, with the number of electrons transferred, into the Nernst equation; the sign of the result predicts the spontaneity of the reaction under those conditions."
+  },
+  {
+   "id": "battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "Battery",
+   "terms": [
+    "battery"
+   ],
+   "statement": "A battery is a galvanic cell, or a series of galvanic cells, specially designed and constructed for use as a source of electrical power for specific applications. Cells connected in series yield batteries of greater voltage, and larger cells of the same chemistry give the same voltage but can transfer more charge."
+  },
+  {
+   "id": "primary-cell",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "Primary cell",
+   "terms": [
+    "primary cell"
+   ],
+   "statement": "A primary cell is a nonrechargeable battery, designed for single-use applications."
+  },
+  {
+   "id": "secondary-cell",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "Secondary cell",
+   "terms": [
+    "secondary cell"
+   ],
+   "statement": "A secondary cell is a battery based on a conveniently reversible cell reaction, which allows it to be recharged by an external power source."
+  },
+  {
+   "id": "dry-cell",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "Dry cell",
+   "terms": [
+    "dry cell"
+   ],
+   "statement": "The dry cell, or zinc-carbon battery, is a primary battery based on the spontaneous oxidation of zinc by manganese(IV). Its zinc can serves as container and anode, a graphite rod as the cathode, and an electrolyte paste of manganese(IV) oxide, zinc(II) chloride, ammonium chloride and water fills the can; every size gives approximately 1.5 V."
+  },
+  {
+   "id": "alkaline-battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "Alkaline battery",
+   "terms": [
+    "alkaline battery"
+   ],
+   "statement": "An alkaline battery is a primary battery designed around the same redox couples as the dry cell but with an alkaline electrolyte, often potassium hydroxide. It gives about 1.43 V and delivers three to five times the energy of a dry cell of similar size, with less electrolyte leakage."
+  },
+  {
+   "id": "nickel-cadmium-battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "Nickel-cadmium battery",
+   "terms": [
+    "nickel-cadmium battery"
+   ],
+   "statement": "A nickel-cadmium (NiCd) battery is a rechargeable battery based on Ni/Cd half-cells in potassium hydroxide, giving about 1.2 V. Its positive and negative plates are rolled together in a jelly-roll design that lets it deliver much more current than a similar-sized alkaline battery, and it can be recharged about 1000 times."
+  },
+  {
+   "id": "lithium-ion-battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "Lithium ion battery",
+   "terms": [
+    "lithium ion battery"
+   ],
+   "statement": "A lithium ion battery is a rechargeable battery, widely used in portable electronic devices, based on the transfer of lithium ions between a graphite anode and a lithium cobalt oxide cathode. It gives approximately 3.7 V, nearly constant as it discharges, is lighter than comparable batteries and only slowly loses its charge when stored."
+  },
+  {
+   "id": "lead-acid-battery",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "Lead acid battery",
+   "terms": [
+    "lead acid battery"
+   ],
+   "statement": "The lead acid battery is the rechargeable battery commonly used in automobiles. Each of its cells, based on Pb half-reactions in sulfuric acid, produces about 2 V, so six cells are connected in series to give 12 V; it is inexpensive and capable of the high current a starter motor requires."
+  },
+  {
+   "id": "fuel-cell",
+   "kind": "definition",
+   "section": "17.5",
+   "name": "Fuel cell",
+   "terms": [
+    "fuel cell"
+   ],
+   "statement": "A fuel cell is a galvanic cell that uses a traditional combustive fuel, most often hydrogen or methane, fed continuously into the cell along with an oxidant. Fuel and oxidant undergo the same redox chemistry as in combustion, but via a catalyzed electrochemical route that is significantly more efficient, and the cell works as long as reactants are supplied."
+  },
+  {
+   "id": "corrosion",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "Corrosion",
+   "terms": [
+    "corrosion"
+   ],
+   "statement": "Corrosion is the degradation of metals by a naturally occurring electrochemical process, such as the formation of rust on iron, tarnish on silver and the blue-green patina on copper. Different sites on the metal object function as anode and cathode of a galvanic cell, and the corrosion takes place at the anodic site."
+  },
+  {
+   "id": "rusting-of-iron",
+   "kind": "idea",
+   "section": "17.6",
+   "name": "Rusting of iron",
+   "statement": "Iron rusts when exposed to oxygen and water through a galvanic cell at its surface: iron is oxidized to Fe2+ at an anodic site while oxygen is reduced at a cathodic site, and further reaction of the iron(II) in humid air gives the hydrated iron(III) oxide called rust. Unlike the patina on copper, rust forms no protective layer, so corrosion continues as it flakes off and exposes fresh iron."
+  },
+  {
+   "id": "passivation",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "Passivation",
+   "statement": "Passivation is the formation of a protective layer on a metal surface that prevents further corrosion of the metal beneath, as the patina does on copper and the chromium oxide layer does on stainless steel."
+  },
+  {
+   "id": "galvanization",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "Galvanization",
+   "terms": [
+    "galvanization"
+   ],
+   "statement": "Galvanization is a method of protecting iron or similar metals from corrosion by coating them with a thin layer of a more readily oxidized metal, usually zinc. The intact layer keeps air from the metal beneath, and a breached layer still protects it by cathodic protection."
+  },
+  {
+   "id": "cathodic-protection",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "Cathodic protection",
+   "terms": [
+    "cathodic protection"
+   ],
+   "statement": "Cathodic protection prevents corrosion of a metal by making it the cathode of a galvanic cell, connecting it to a more active metal with a lower reduction potential. The protected metal serves as the cathode for the reduction of oxygen and simply conducts the electrons transferred, while the more active metal is oxidized."
+  },
+  {
+   "id": "sacrificial-anode",
+   "kind": "definition",
+   "section": "17.6",
+   "name": "Sacrificial anode",
+   "terms": [
+    "sacrificial anode"
+   ],
+   "statement": "A sacrificial anode is an electrode of an easily oxidized metal, often magnesium or zinc, connected to a metal object to protect it by cathodic protection; it is used up as it corrodes and must be monitored and periodically replaced."
+  },
+  {
+   "id": "electrolysis",
+   "kind": "definition",
+   "section": "17.7",
+   "name": "Electrolysis",
+   "terms": [
+    "electrolysis"
+   ],
+   "statement": "Electrolysis is the process in which an external circuit does work on a redox system, imposing a voltage sufficient to drive an otherwise nonspontaneous reaction. Recharging a battery, refining metallic ores, manufacturing commodity chemicals and electroplating are applications."
+  },
+  {
+   "id": "electrolytic-cell",
+   "kind": "definition",
+   "section": "17.7",
+   "name": "Electrolytic cell",
+   "terms": [
+    "electrolytic cell"
+   ],
+   "statement": "An electrolytic cell is an electrochemical cell in which an external source of electrical power is used to drive an otherwise nonspontaneous process."
+  },
+  {
+   "id": "driving-nonspontaneous-cell-reaction",
+   "kind": "result",
+   "section": "17.7",
+   "name": "Driving a nonspontaneous cell reaction",
+   "statement": "A cell reaction whose cell potential is negative is not spontaneous; to force it, a positive potential of magnitude greater than the negative cell potential must be applied to the cell. Water, with a standard cell potential of −1.229 V for its decomposition, must be driven by imposing a voltage greater than +1.229 V."
+  },
+  {
+   "id": "electrolysis-of-aqueous-solutions",
+   "kind": "idea",
+   "section": "17.7",
+   "name": "Electrolysis of aqueous solutions",
+   "statement": "When an aqueous solution of an ionic compound is electrolyzed, the anode and cathode half-reactions may involve either water species or solute species. Standard potentials only inform the prediction, since the solution is not at standard state: in aqueous sodium chloride both water and chloride are oxidized, and water rather than hydrogen ion is reduced, because hydrogen ion is far below 1 M, giving hydrogen, chlorine and hydroxide in the chlor-alkali process."
+  },
+  {
+   "id": "electroplating",
+   "kind": "definition",
+   "section": "17.7",
+   "name": "Electroplating",
+   "terms": [
+    "electroplating"
+   ],
+   "statement": "Electroplating is the use of an electrolytic cell to deposit a thin coating of one metal on a conducting surface, which serves as the cathode, often with an anode of the coating metal that dissolves as the coating forms. It makes an object more corrosion resistant, strengthens its surface, gives a more attractive finish or purifies a metal."
+  },
+  {
+   "id": "electric-current",
+   "kind": "definition",
+   "section": "17.7",
+   "name": "Electrical current",
+   "symbol": "I",
+   "type": "current",
+   "statement": "Electrical current is the rate of flow of any charged species, most relevant here the flow of electrons. It is measured in amperes, one coulomb per second (A = 1 C/s), and the charge transferred by a constant current over a time interval is their product.",
+   "forms": [
+    {
+     "id": "eq-charge-current-time",
+     "latex": "Q=It",
+     "ktex": "\\kQ=\\kI\\kt"
+    }
+   ]
+  },
+  {
+   "id": "charge-and-moles-of-electrons",
+   "kind": "result",
+   "section": "17.7",
+   "name": "Charge and moles of electrons",
+   "statement": "The stoichiometry of a redox process gives the amount of electrons it transfers, and the charge transferred is that amount times Faraday’s constant; the reduction of a metal ion Mn+ to the metal transfers n moles of electrons for each mole of metal.",
+   "forms": [
+    {
+     "id": "eq-charge-moles-electrons",
+     "latex": "Q=nF",
+     "ktex": "\\kQ=\\kn\\kFaraday"
+    }
+   ]
+  },
+  {
+   "id": "electrolysis-stoichiometry",
+   "kind": "skill",
+   "section": "17.7",
+   "name": "Stoichiometry of electrolysis",
+   "statement": "Measuring the current during electrolysis permits stoichiometric calculations: the charge passed is the current times the time, Faraday’s constant converts it to moles of electrons, the half-reaction converts those to moles of product, and the molar mass to mass. The same chain run backwards gives the time required to deposit a given amount of product at a given current."
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "oxidation-number-covalent-limit",
+   "prereq": "oxidation-number"
+  },
+  {
+   "concept": "oxidation-number-covalent-limit",
+   "prereq": "polar-covalent-bond"
+  },
+  {
+   "concept": "balance-redox-basic-solution",
+   "prereq": "half-reaction-method"
+  },
+  {
+   "concept": "electrochemical-cell",
+   "prereq": "half-reaction"
+  },
+  {
+   "concept": "galvanic-cell",
+   "prereq": "electrochemical-cell"
+  },
+  {
+   "concept": "galvanic-cell",
+   "prereq": "spontaneous-process"
+  },
+  {
+   "concept": "half-cell",
+   "prereq": "electrochemical-cell"
+  },
+  {
+   "concept": "anode",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "anode",
+   "prereq": "oxidation"
+  },
+  {
+   "concept": "cathode",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "cathode",
+   "prereq": "reduction"
+  },
+  {
+   "concept": "salt-bridge",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "salt-bridge",
+   "prereq": "electrolyte"
+  },
+  {
+   "concept": "cell-notation",
+   "prereq": "anode"
+  },
+  {
+   "concept": "cell-notation",
+   "prereq": "cathode"
+  },
+  {
+   "concept": "cell-notation",
+   "prereq": "salt-bridge"
+  },
+  {
+   "concept": "inert-electrode",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "active-electrode",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "electrical-potential",
+   "prereq": "energy-and-work"
+  },
+  {
+   "concept": "electrical-potential",
+   "prereq": "fundamental-charge"
+  },
+  {
+   "concept": "cell-potential",
+   "prereq": "electrical-potential"
+  },
+  {
+   "concept": "cell-potential",
+   "prereq": "anode"
+  },
+  {
+   "concept": "cell-potential",
+   "prereq": "cathode"
+  },
+  {
+   "concept": "standard-cell-potential",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "standard-cell-potential",
+   "prereq": "standard-state"
+  },
+  {
+   "concept": "standard-hydrogen-electrode",
+   "prereq": "inert-electrode"
+  },
+  {
+   "concept": "standard-hydrogen-electrode",
+   "prereq": "standard-state"
+  },
+  {
+   "concept": "electrode-potential",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "electrode-potential",
+   "prereq": "standard-hydrogen-electrode"
+  },
+  {
+   "concept": "standard-electrode-potential",
+   "prereq": "electrode-potential"
+  },
+  {
+   "concept": "standard-electrode-potential",
+   "prereq": "standard-cell-potential"
+  },
+  {
+   "concept": "electrode-potential-and-oxidant-strength",
+   "prereq": "standard-electrode-potential"
+  },
+  {
+   "concept": "electrode-potential-and-oxidant-strength",
+   "prereq": "oxidizing-agent"
+  },
+  {
+   "concept": "cell-potential-and-spontaneity",
+   "prereq": "standard-cell-potential"
+  },
+  {
+   "concept": "cell-potential-and-spontaneity",
+   "prereq": "nonspontaneous-process"
+  },
+  {
+   "concept": "predict-redox-spontaneity",
+   "prereq": "cell-potential-and-spontaneity"
+  },
+  {
+   "concept": "predict-redox-spontaneity",
+   "prereq": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "concept": "faradays-constant",
+   "prereq": "mole"
+  },
+  {
+   "concept": "faradays-constant",
+   "prereq": "fundamental-charge"
+  },
+  {
+   "concept": "free-energy-and-cell-potential",
+   "prereq": "standard-cell-potential"
+  },
+  {
+   "concept": "free-energy-and-cell-potential",
+   "prereq": "faradays-constant"
+  },
+  {
+   "concept": "free-energy-and-cell-potential",
+   "prereq": "free-energy-and-maximum-work"
+  },
+  {
+   "concept": "free-energy-and-cell-potential",
+   "prereq": "standard-free-energy-change"
+  },
+  {
+   "concept": "cell-potential-and-equilibrium-constant",
+   "prereq": "free-energy-and-cell-potential"
+  },
+  {
+   "concept": "cell-potential-and-equilibrium-constant",
+   "prereq": "free-energy-and-equilibrium-constant"
+  },
+  {
+   "concept": "potential-free-energy-equilibrium-relations",
+   "prereq": "cell-potential-and-equilibrium-constant"
+  },
+  {
+   "concept": "potential-free-energy-equilibrium-relations",
+   "prereq": "cell-potential-and-spontaneity"
+  },
+  {
+   "concept": "potential-free-energy-equilibrium-relations",
+   "prereq": "magnitude-of-k"
+  },
+  {
+   "concept": "nernst-equation",
+   "prereq": "free-energy-and-cell-potential"
+  },
+  {
+   "concept": "nernst-equation",
+   "prereq": "free-energy-and-reaction-quotient"
+  },
+  {
+   "concept": "concentration-cell",
+   "prereq": "galvanic-cell"
+  },
+  {
+   "concept": "concentration-cell",
+   "prereq": "half-cell"
+  },
+  {
+   "concept": "concentration-cell",
+   "prereq": "concentration"
+  },
+  {
+   "concept": "predict-spontaneity-nonstandard",
+   "prereq": "nernst-equation"
+  },
+  {
+   "concept": "predict-spontaneity-nonstandard",
+   "prereq": "cell-potential-and-spontaneity"
+  },
+  {
+   "concept": "predict-spontaneity-nonstandard",
+   "prereq": "write-reaction-quotient"
+  },
+  {
+   "concept": "battery",
+   "prereq": "galvanic-cell"
+  },
+  {
+   "concept": "primary-cell",
+   "prereq": "battery"
+  },
+  {
+   "concept": "secondary-cell",
+   "prereq": "battery"
+  },
+  {
+   "concept": "secondary-cell",
+   "prereq": "reversible-reaction"
+  },
+  {
+   "concept": "dry-cell",
+   "prereq": "primary-cell"
+  },
+  {
+   "concept": "dry-cell",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "alkaline-battery",
+   "prereq": "dry-cell"
+  },
+  {
+   "concept": "nickel-cadmium-battery",
+   "prereq": "secondary-cell"
+  },
+  {
+   "concept": "nickel-cadmium-battery",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "lithium-ion-battery",
+   "prereq": "secondary-cell"
+  },
+  {
+   "concept": "lithium-ion-battery",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "lead-acid-battery",
+   "prereq": "secondary-cell"
+  },
+  {
+   "concept": "lead-acid-battery",
+   "prereq": "cell-potential"
+  },
+  {
+   "concept": "fuel-cell",
+   "prereq": "galvanic-cell"
+  },
+  {
+   "concept": "fuel-cell",
+   "prereq": "combustion-reaction"
+  },
+  {
+   "concept": "corrosion",
+   "prereq": "galvanic-cell"
+  },
+  {
+   "concept": "corrosion",
+   "prereq": "metal"
+  },
+  {
+   "concept": "rusting-of-iron",
+   "prereq": "corrosion"
+  },
+  {
+   "concept": "rusting-of-iron",
+   "prereq": "anode"
+  },
+  {
+   "concept": "rusting-of-iron",
+   "prereq": "cathode"
+  },
+  {
+   "concept": "passivation",
+   "prereq": "corrosion"
+  },
+  {
+   "concept": "galvanization",
+   "prereq": "corrosion"
+  },
+  {
+   "concept": "galvanization",
+   "prereq": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "concept": "cathodic-protection",
+   "prereq": "corrosion"
+  },
+  {
+   "concept": "cathodic-protection",
+   "prereq": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "concept": "sacrificial-anode",
+   "prereq": "cathodic-protection"
+  },
+  {
+   "concept": "electrolysis",
+   "prereq": "electrochemical-cell"
+  },
+  {
+   "concept": "electrolysis",
+   "prereq": "nonspontaneous-process"
+  },
+  {
+   "concept": "electrolytic-cell",
+   "prereq": "electrolysis"
+  },
+  {
+   "concept": "driving-nonspontaneous-cell-reaction",
+   "prereq": "electrolytic-cell"
+  },
+  {
+   "concept": "driving-nonspontaneous-cell-reaction",
+   "prereq": "cell-potential-and-spontaneity"
+  },
+  {
+   "concept": "electrolysis-of-aqueous-solutions",
+   "prereq": "driving-nonspontaneous-cell-reaction"
+  },
+  {
+   "concept": "electrolysis-of-aqueous-solutions",
+   "prereq": "standard-electrode-potential"
+  },
+  {
+   "concept": "electrolysis-of-aqueous-solutions",
+   "prereq": "neutral-solution"
+  },
+  {
+   "concept": "electroplating",
+   "prereq": "electrolytic-cell"
+  },
+  {
+   "concept": "electric-current",
+   "prereq": "fundamental-charge"
+  },
+  {
+   "concept": "electric-current",
+   "prereq": "time"
+  },
+  {
+   "concept": "charge-and-moles-of-electrons",
+   "prereq": "faradays-constant"
+  },
+  {
+   "concept": "charge-and-moles-of-electrons",
+   "prereq": "half-reaction"
+  },
+  {
+   "concept": "electrolysis-stoichiometry",
+   "prereq": "electric-current"
+  },
+  {
+   "concept": "electrolysis-stoichiometry",
+   "prereq": "charge-and-moles-of-electrons"
+  },
+  {
+   "concept": "electrolysis-stoichiometry",
+   "prereq": "electrolytic-cell"
+  },
+  {
+   "concept": "electrolysis-stoichiometry",
+   "prereq": "mass-stoichiometry"
+  }
+ ]
+}

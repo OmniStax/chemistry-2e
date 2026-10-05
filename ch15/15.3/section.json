@@ -1,0 +1,599 @@
+{
+ "id": "15.3",
+ "module": "m68814",
+ "chapter": "15",
+ "title": "Coupled Equilibria",
+ "short": "Coupled Equilibria",
+ "lead": "A sparingly soluble salt can share an ion with a second equilibrium, an acid-base reaction or the formation of a <span data-concept=\"complex-ion\">complex ion</span>, so that the two equilibria shift together. Coral reefs, tooth enamel, and aluminum hydroxide in acid and in base show what such coupling does to solubility.",
+ "objectives": [
+  "Describe examples of systems involving two (or more) coupled chemical equilibria",
+  "Calculate reactant and product concentrations for coupled equilibrium systems"
+ ],
+ "summary_html": "<p>Systems involving two or more chemical equilibria that share one or more reactant or product are called coupled equilibria. Common examples of coupled equilibria include the increased solubility of some compounds in acidic solutions (coupled dissolution and neutralization equilibria) and in solutions containing ligands (coupled dissolution and complex formation). The equilibrium tools from other chapters may be applied to describe and perform calculations on these systems.</p>",
+ "notes": "The Link to Learning on ocean acidification and coral reefs is left out, and the book’s slips are kept as printed: the charge written −2 on carbonate ion in the first equation, “solublities” in Example 15.15, and Ag(S₂O₂)₂³⁻ once in Example 15.16.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and the suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The eight unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp12915808, fs-idm356832, fs-idp103984, fs-idm455072, fs-idp11095024, fs-idp65312, fs-idm397184, fs-idp12821792. Exercises fs-idm65484352 and fs-idm98555648 (exercises 63 and 65) are printed in 15.2 and placed here, where coupled dissolution is taught; exercises fs-idm301808 and fs-idp11595856 (85 and 101) are placed in 15.1, and fs-idm299312, fs-idp457072 and fs-idp135248 (86, 88 and 90) in 15.2. The key to exercise 105 heads its third column [OH⁻] where the question asks for [HPO₄²⁻], and the key to exercise 95 runs its two equations together; both are kept as printed. The one-figure answers of the first Check Your Learning and of exercise 93 accept 30% and 15%, and the pH of exercise 99 accepts 1%; other numeric answers accept 2%.",
+ "figures": [
+  {
+   "id": "fig-coral",
+   "kind": "photo",
+   "number": "15.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-apatite",
+   "kind": "photo",
+   "number": "15.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-toothpaste",
+   "kind": "photo",
+   "number": "15.9",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-aloh4",
+   "kind": "figure",
+   "originals": [
+    "/media/ch15/CNX_Chem_15_02_AlOH4_img.jpg"
+   ],
+   "draws": [
+    "equilibrium-constant"
+   ],
+   "conventions": [
+    "Al",
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-solubility-ph",
+   "kind": "sim",
+   "draws": [
+    "concentration",
+    "equilibrium-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-thiosulfate",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "al-ion",
+   "label": "the aluminum ion, Al³⁺",
+   "figures": [
+    "sim-solubility-ph"
+   ]
+  },
+  {
+   "id": "aluminate",
+   "label": "the complex ion Al(OH)₄⁻",
+   "figures": [
+    "fig-aloh4",
+    "sim-solubility-ph"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "coupled",
+   "concept": "coupled-equilibrium",
+   "verb": "reinforces"
+  },
+  {
+   "span": "coupled",
+   "concept": "coupled-equilibria",
+   "verb": "uses"
+  },
+  {
+   "span": "reefs",
+   "concept": "solubility-in-acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "reefs",
+   "concept": "solubility-product",
+   "verb": "uses"
+  },
+  {
+   "span": "reefs",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "reefs",
+   "concept": "coupled-equilibria",
+   "verb": "uses"
+  },
+  {
+   "span": "enamel",
+   "concept": "solubility-in-acid",
+   "verb": "reinforces"
+  },
+  {
+   "span": "enamel",
+   "concept": "polyprotic-acids",
+   "verb": "uses"
+  },
+  {
+   "span": "complex",
+   "concept": "dissolution-by-complex-formation",
+   "verb": "introduces"
+  },
+  {
+   "span": "complex",
+   "concept": "complex-ion",
+   "verb": "uses"
+  },
+  {
+   "span": "complex",
+   "concept": "formation-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "complex",
+   "concept": "coupled-equilibria",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "coupled-equilibrium-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "calculations",
+   "concept": "henderson-hasselbalch",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "molar-solubility-from-ksp",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "complex-ion-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "solubility-in-acid",
+   "verb": "reinforces"
+  },
+  {
+   "span": "calculations",
+   "concept": "dissolution-by-complex-formation",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm596544",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-acid-buffer"
+   },
+   "cite": "calculations",
+   "prompt": "What is the solubility of aluminum hydroxide in a buffer comprised of 0.100 <em>M</em> formic acid and 0.100 <em>M</em> sodium formate?",
+   "answer": {
+    "type": "number",
+    "value": 0.1,
+    "unit": "M",
+    "tol": 0.3,
+    "generated_by": "source",
+    "hint": "Find the pH of the buffer from the p<em>K</em><sub>a</sub> of formic acid with the Henderson-Hasselbalch equation, then [OH<sup>−</sup>], then [Al<sup>3+</sup>] from <em>K</em><sub>sp</sub>, as in Example 15.15.",
+    "solution": "0.1 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp14732576",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-thiosulfate"
+   },
+   "cite": "calculations",
+   "prompt": "AgCl(<em>s</em>), silver chloride, has a very low solubility: $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq),$ <em>K</em><sub>sp</sub> = 1.6 × 10<sup>–10</sup>. Adding ammonia significantly increases the solubility of AgCl because a complex ion is formed: ${\\text{Ag}}^{\\text{+}}(aq)+2{\\text{NH}}_{3}(aq)\\rightleftharpoons \\text{Ag}{({\\text{NH}}_{3})}_{2}{}^{+}(aq),$ <em>K</em><sub>f</sub> = 1.7 × 10<sup>7</sup>. What mass of NH<sub>3</sub> is required to prepare 1.00 L of solution that will dissolve 2.00 g of AgCl by formation of $\\text{Ag}{({\\text{NH}}_{3})}_{2}{}^{\\text{+}}?$",
+   "answer": {
+    "type": "number",
+    "value": 5.0,
+    "unit": "g",
+    "generated_by": "source",
+    "hint": "Combine the two equilibria into one with <em>K</em> = <em>K</em><sub>sp</sub><em>K</em><sub>f</sub>, find the free [NH<sub>3</sub>] it leaves, and add the ammonia bound in the complex, as in Example 15.16.",
+    "solution": "1.00 L of a solution prepared with 5.0 g NH<sub>3</sub> dissolves 2.0 g of AgCl."
+   }
+  },
+  {
+   "id": "e63",
+   "source_id": "fs-idm65484352",
+   "source_section": "15.2",
+   "source_number": "63",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "complex",
+   "prompt": "Explain why the addition of NH<sub>3</sub> or HNO<sub>3</sub> to a saturated solution of Ag<sub>2</sub>CO<sub>3</sub> in contact with solid Ag<sub>2</sub>CO<sub>3</sub> increases the solubility of the solid.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: write the dissolution equilibrium of Ag<sub>2</sub>CO<sub>3</sub>, then couple it in turn with the formation of the complex ion Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup> and with the reaction of carbonate ion, a base, with the hydronium ion of the acid. Say which ion each added substance removes from the solution and which way that shifts the dissolution equilibrium."
+   }
+  },
+  {
+   "id": "e65",
+   "source_id": "fs-idm98555648",
+   "source_section": "15.2",
+   "source_number": "65",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "complex",
+   "prompt": "Explain why addition of NH<sub>3</sub> or HNO<sub>3</sub> to a saturated solution of Cu(OH)<sub>2</sub> in contact with solid Cu(OH)<sub>2</sub> increases the solubility of the solid.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: write the dissolution equilibrium of Cu(OH)<sub>2</sub>, then couple it in turn with the formation of a complex ion of Cu<sup>2+</sup> with ammonia and with the neutralization of hydroxide ion by the acid. Say which ion each added substance removes from the solution and which way that shifts the dissolution equilibrium."
+   }
+  },
+  {
+   "id": "e93",
+   "source_id": "fs-idp14750992",
+   "source_number": "93",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "Calculate the molar solubility of Al(OH)<sub>3</sub> in a buffer solution with 0.100 <em>M</em> NH<sub>3</sub> and 0.400 <em>M</em> ${\\text{NH}}_{4}{}^{+}.$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[OH<sup>−</sup>]",
+      "value": 4.5e-06,
+      "unit": "M",
+      "hint": "Find the hydroxide ion concentration of the buffer from <em>K</em><sub>b</sub> of ammonia and the ratio of the two concentrations."
+     },
+     {
+      "part": "[Al<sup>3+</sup>] (molar solubility)",
+      "value": 2e-16,
+      "unit": "M",
+      "tol": 0.15,
+      "hint": "Divide <em>K</em><sub>sp</sub> by the cube of [OH<sup>−</sup>], as in Example 15.15."
+     }
+    ],
+    "solution": "[OH<sup>−</sup>] = 4.5 × 10<sup>−6</sup>; [Al<sup>3+</sup>] = 2 × 10<sup>–16</sup> (molar solubility)"
+   }
+  },
+  {
+   "id": "e95",
+   "source_id": "fs-idp11209952",
+   "source_number": "95",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "What is the molar solubility of BaSO<sub>4</sub> in a 0.250-<em>M</em> solution of NaHSO<sub>4</sub>? <em>K</em><sub>a</sub> for ${\\text{HSO}}_{4}{}^{\\text{−}}$ = 1.2 × 10<sup>–2</sup>.",
+   "answer": {
+    "type": "number",
+    "value": 2.2e-09,
+    "unit": "M",
+    "generated_by": "source",
+    "hint": "Find [SO<sub>4</sub><sup>2−</sup>] from the ionization of HSO<sub>4</sub><sup>−</sup> first; it is a common ion for the dissolution of BaSO<sub>4</sub>.",
+    "solution": "${\\text{K}}_{sp}=[{\\text{Ba}}^{2+}][{\\text{SO}}_{4}{}^{\\text{2−}}]=[{\\text{Ba}}^{2+}](0.049)=1.08\\times {10}^{–10}[{\\text{Ba}}^{2+}]=2.2\\times {10}^{–9}$; (molar solubility)"
+   }
+  },
+  {
+   "id": "e97",
+   "source_id": "fs-idp510128",
+   "source_number": "97",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "What is the molar solubility of Pb(OH)<sub>2</sub> in a 0.138-<em>M</em> solution of CH<sub>3</sub>NH<sub>2</sub>?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[OH<sup>−</sup>]",
+      "value": 0.0076,
+      "unit": "M",
+      "hint": "Find the hydroxide ion concentration from the base ionization of methylamine first."
+     },
+     {
+      "part": "[Pb<sup>2+</sup>] (molar solubility)",
+      "value": 2.1e-11,
+      "unit": "M",
+      "hint": "Divide <em>K</em><sub>sp</sub> of Pb(OH)<sub>2</sub> by the square of [OH<sup>−</sup>]."
+     }
+    ],
+    "solution": "[OH<sup>–</sup>] = 7.6 × 10<sup>−3</sup> <em>M</em>; [Pb<sup>2+</sup>] = 2.1 × 10<sup>–11</sup> (molar solubility)"
+   }
+  },
+  {
+   "id": "e99",
+   "source_id": "fs-idm235264",
+   "source_number": "99",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "A 0.125-<em>M</em> solution of Mn(NO<sub>3</sub>)<sub>2</sub> is saturated with H<sub>2</sub>S ([H<sub>2</sub>S] = 0.10 <em>M</em>). At what pH does MnS begin to precipitate?<br>$\\text{MnS}(s)\\rightleftharpoons {\\text{Mn}}^{\\text{2+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)\\hspace{4em}{K}_{\\text{sp}}=2.3\\;\\times \\;{10}^{\\text{−13}}$<br>${\\text{H}}_{2}\\text{S}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons 2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)\\hspace{4em}K=1.0\\;\\times \\;{10}^{\\text{−26}}$",
+   "answer": {
+    "type": "number",
+    "value": 7.66,
+    "tol": 0.01,
+    "generated_by": "source",
+    "hint": "Find the [S<sup>2−</sup>] at which the ion product of MnS reaches <em>K</em><sub>sp</sub>, then the [H<sub>3</sub>O<sup>+</sup>] that the H<sub>2</sub>S equilibrium allows at that [S<sup>2−</sup>].",
+    "solution": "7.66"
+   }
+  },
+  {
+   "id": "e102",
+   "source_id": "fs-idp12964976",
+   "source_number": "102",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "enamel",
+   "prompt": "Which of the following compounds, when dissolved in a 0.01-<em>M</em> solution of HClO<sub>4</sub>, has a solubility greater than in pure water: CuCl, CaCO<sub>3</sub>, MnS, PbBr<sub>2</sub>, CaF<sub>2</sub>? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: for each salt, decide whether its anion is the conjugate base of a weak acid or of a strong acid. Hydronium ion from the HClO<sub>4</sub> removes a basic anion from the solution and pulls the dissolution equilibrium to the right, as it does for calcium carbonate in this section; an anion of a strong acid is left as it is."
+   }
+  },
+  {
+   "id": "e103",
+   "source_id": "fs-idp12972608",
+   "source_number": "103",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "enamel",
+   "prompt": "Which of the following compounds, when dissolved in a 0.01-<em>M</em> solution of HClO<sub>4</sub>, has a solubility greater than in pure water: AgBr, BaF<sub>2</sub>, Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>, ZnS, PbI<sub>2</sub>? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "BaF<sub>2</sub>, Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>, ZnS; each is a salt of a weak acid, and the $[{\\text{H}}_{3}{\\text{O}}^{+}]$ from perchloric acid reduces the equilibrium concentration of the anion, thereby increasing the concentration of the cations"
+   }
+  },
+  {
+   "id": "e104",
+   "source_id": "fs-idp12981920",
+   "source_number": "104",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "complex",
+   "prompt": "What is the effect on the amount of solid Mg(OH)<sub>2</sub> that dissolves and the concentrations of Mg<sup>2+</sup> and OH<sup>–</sup> when each of the following are added to a mixture of solid Mg(OH)<sub>2</sub> and water at equilibrium?<br>(a) MgCl<sub>2</sub><br>(b) KOH<br>(c) HClO<sub>4</sub><br>(d) NaNO<sub>3</sub><br>(e) Mg(OH)<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: write the dissolution equilibrium of Mg(OH)<sub>2</sub>. For each added substance, decide whether it adds Mg<sup>2+</sup> or OH<sup>–</sup> as a common ion, removes OH<sup>–</sup> by neutralization, or takes part in neither reaction, and apply Le Châtelier’s principle to the amount of solid and to each concentration. Remember that adding more of a solid does not change the concentrations of a saturated solution."
+   }
+  },
+  {
+   "id": "e105",
+   "source_id": "fs-idp12990000",
+   "source_number": "105",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "enamel",
+   "prompt": "What is the effect on the amount of CaHPO<sub>4</sub> that dissolves and the concentrations of Ca<sup>2+</sup> and ${\\text{HPO}}_{4}{}^{\\text{2−}}$ when each of the following are added to a mixture of solid CaHPO<sub>4</sub> and water at equilibrium?<br>(a) CaCl<sub>2</sub><br>(b) HCl<br>(c) KClO<sub>4</sub><br>(d) NaOH<br>(e) CaHPO<sub>4</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Effect on amount of solid CaHPO<sub>4</sub>, [Ca<sup>2+</sup>], [OH<sup>–</sup>]: (a) increase, increase, decrease; (b) decrease, increase, decrease; (c) no effect, no effect, no effect; (d) decrease, increase, decrease; (e) increase, no effect, no effect"
+   }
+  },
+  {
+   "id": "e106",
+   "source_id": "fs-idp12998992",
+   "source_number": "106",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "enamel",
+   "prompt": "Identify all chemical species present in an aqueous solution of Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> and list these species in decreasing order of their concentrations. (Hint: Remember that the ${\\text{PO}}_{4}{}^{\\text{3−}}$ ion is a weak base.)",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: write the dissolution equilibrium of Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> and then the stepwise reactions of PO<sub>4</sub><sup>3−</sup> with water as a base, each step much less extensive than the one before, as for a polyprotic base. Include water itself and the ions it forms, and rank the species by how much of each the small solubility product and the successive steps leave."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "coupled-equilibrium-calculations"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "solubility-in-acid"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "henderson-hasselbalch"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "coupled-equilibrium-calculations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "dissolution-by-complex-formation"
+  },
+  {
+   "exercise": "e63",
+   "concept": "solubility-in-acid"
+  },
+  {
+   "exercise": "e63",
+   "concept": "dissolution-by-complex-formation"
+  },
+  {
+   "exercise": "e65",
+   "concept": "solubility-in-acid"
+  },
+  {
+   "exercise": "e65",
+   "concept": "dissolution-by-complex-formation"
+  },
+  {
+   "exercise": "e93",
+   "concept": "coupled-equilibrium-calculations"
+  },
+  {
+   "exercise": "e93",
+   "concept": "solubility-in-acid"
+  },
+  {
+   "exercise": "e95",
+   "concept": "coupled-equilibrium-calculations"
+  },
+  {
+   "exercise": "e95",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e97",
+   "concept": "coupled-equilibrium-calculations"
+  },
+  {
+   "exercise": "e97",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e99",
+   "concept": "coupled-equilibrium-calculations"
+  },
+  {
+   "exercise": "e99",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "e102",
+   "concept": "solubility-in-acid"
+  },
+  {
+   "exercise": "e103",
+   "concept": "solubility-in-acid"
+  },
+  {
+   "exercise": "e104",
+   "concept": "solubility-in-acid"
+  },
+  {
+   "exercise": "e104",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e105",
+   "concept": "solubility-in-acid"
+  },
+  {
+   "exercise": "e105",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e106",
+   "concept": "solubility-in-acid"
+  },
+  {
+   "exercise": "e106",
+   "concept": "polyprotic-bases"
+  }
+ ]
+}

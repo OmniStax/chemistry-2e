@@ -1,0 +1,407 @@
+{
+  "id": "12.1",
+  "module": "m68786",
+  "chapter": "12",
+  "title": "Chemical Reaction Rates",
+  "short": "Chemical Reaction Rates",
+  "lead": "The <span data-concept=\"reaction-rate\">rate of a chemical reaction</span> measures how fast a reactant is consumed or a product forms, and it is found from how <span data-concept=\"concentration\">concentrations</span> change with time, either over an interval or at a single instant. A reaction’s rate can be written in terms of any one of its reactants or products.",
+  "objectives": [
+    "Define chemical reaction rate",
+    "Derive rate expressions from the balanced equation for a given chemical reaction",
+    "Calculate reaction rates from experimental data"
+  ],
+  "summary_html": "<p>The <span data-concept=\"reaction-rate\">rate of a reaction</span> can be expressed either in terms of the decrease in the amount of a reactant or the increase in the amount of a product per unit time. Relations between different <span data-concept=\"rate-expression\">rate expressions</span> for a given reaction are derived directly from the stoichiometric coefficients of the equation representing the reaction.</p>",
+  "notes": "Nothing of the section is left out; the text writes the book’s “t₂** − t₁” without its markup slip and keeps the relative-rate equation’s ΔA and ΔB as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The two unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp24119136 and fs-idm40595504. The unkeyed fs-idp77962352 is kept with a suggested approach marked as AI-generated. The key to fs-idm82430624 writes ClF₃ as “CIF₃”, kept as printed.",
+  "figures": [
+    {
+      "id": "sim-h2o2-rate",
+      "kind": "sim",
+      "number": "12.2",
+      "folds": [
+        "12.3"
+      ],
+      "originals": [
+        "/media/ch12/CNX_Chem_12_01_KDataH2O2.jpg",
+        "/media/ch12/CNX_Chem_12_01_RRateIll.jpg"
+      ],
+      "original_caption": "(Figure 12.2) The rate of decomposition of H₂O₂ in an aqueous solution decreases as the concentration of H₂O₂ decreases. (Figure 12.3) This graph shows a plot of concentration versus time for a 1.000 M solution of H₂O₂. The rate at any time is equal to the negative of the slope of a line tangent to the curve at that time. Tangents are shown at t = 0 h (“initial rate”) and at t = 12 h (“instantaneous rate” at 12 h).",
+      "draws": [
+        "concentration",
+        "time",
+        "rate"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-urine-strips",
+      "kind": "photo",
+      "number": "12.4",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-nh3-rates",
+      "kind": "sim",
+      "number": "12.5",
+      "originals": [
+        "/media/ch12/CNX_Chem_12_01_NH3Decomp.jpg"
+      ],
+      "original_caption": "Changes in concentrations of the reactant and products for the reaction 2NH₃ ⟶ N₂ + 3H₂. The rates of change of the three concentrations are related by the reaction stoichiometry, as shown by the different slopes of the tangents at t = 500 s.",
+      "draws": [
+        "concentration",
+        "time",
+        "rate"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "nh3",
+      "label": "ammonia",
+      "figures": [
+        "sim-nh3-rates"
+      ]
+    },
+    {
+      "id": "n2",
+      "label": "nitrogen",
+      "figures": [
+        "sim-nh3-rates"
+      ]
+    },
+    {
+      "id": "h2",
+      "label": "hydrogen",
+      "figures": [
+        "sim-nh3-rates"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "rate",
+      "concept": "reaction-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "rate",
+      "concept": "concentration",
+      "verb": "uses"
+    },
+    {
+      "span": "expression",
+      "concept": "rate-expression",
+      "verb": "introduces"
+    },
+    {
+      "span": "expression",
+      "concept": "reaction-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "expression",
+      "concept": "molarity",
+      "verb": "uses"
+    },
+    {
+      "span": "average",
+      "concept": "rate-from-concentration-data",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "average-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "instantaneous-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "initial-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "average-instantaneous-initial-rate",
+      "verb": "introduces"
+    },
+    {
+      "span": "average",
+      "concept": "rate-expression",
+      "verb": "uses"
+    },
+    {
+      "span": "relative",
+      "concept": "relative-reaction-rates",
+      "verb": "introduces"
+    },
+    {
+      "span": "relative",
+      "concept": "write-relative-rate-expressions",
+      "verb": "introduces"
+    },
+    {
+      "span": "relative",
+      "concept": "rate-expression",
+      "verb": "uses"
+    },
+    {
+      "span": "relative",
+      "concept": "instantaneous-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "relative",
+      "concept": "balanced-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "relative",
+      "concept": "stoichiometric-factor",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp40614224",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-relative"
+      },
+      "cite": "relative",
+      "prompt": "The rate of formation of Br<sub>2</sub> is 6.0 × 10<sup>−6</sup> mol/L/s in a reaction described by the following net ionic equation: ${\\text{5Br}}^{\\text{−}}+{\\text{BrO}}_{3}{}^{\\text{−}}+{\\text{6H}}^{\\text{+}}\\;\\longrightarrow \\;{\\text{3Br}}_{2}+{\\text{3H}}_{2}\\text{O}$<br>Write the equations that relate the rates of consumption of the reactants and the rates of formation of the products.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "$-\\;\\frac{1}{5}\\;\\frac{\\text{Δ}[{\\text{Br}}^{\\text{−}}]}{\\text{Δ}t}\\;=-\\;\\frac{\\text{Δ}[{\\text{BrO}}_{3}{}^{\\text{−}}]}{\\text{Δ}t}\\;=-\\;\\frac{1}{6}\\;\\frac{\\text{Δ}[{\\text{H}}^{\\text{+}}]}{\\text{Δ}t}\\;=\\;\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{Br}}_{2}]}{\\text{Δ}t}\\;=\\;\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{H}}_{\\text{2}}\\text{O}]}{\\text{Δ}t}$"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm24260800",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-h2o2-rates"
+      },
+      "cite": "relative",
+      "prompt": "If the rate of decomposition of ammonia, NH<sub>3</sub>, at 1150 K is 2.10 × 10<sup>−6</sup> mol/L/s, what is the rate of production of nitrogen and hydrogen?",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "rate of production of N<sub>2</sub>",
+            "value": 1.05e-06,
+            "unit": "mol/L/s",
+            "hint": "Two moles of NH<sub>3</sub> decompose for each mole of N<sub>2</sub> formed, so divide the rate for ammonia by 2."
+          },
+          {
+            "part": "rate of production of H<sub>2</sub>",
+            "value": 3.15e-06,
+            "unit": "mol/L/s",
+            "hint": "Three moles of H<sub>2</sub> form for each mole of N<sub>2</sub>, so multiply the rate for nitrogen by 3."
+          }
+        ],
+        "solution": "1.05 × 10<sup>−6</sup> mol/L/s, N<sub>2</sub> and 3.15 × 10<sup>−6</sup> mol/L/s, H<sub>2</sub>."
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp53700320",
+      "source_number": "1",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "average",
+      "prompt": "What is the difference between average rate, initial rate, and instantaneous rate?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The instantaneous rate is the rate of a reaction at any particular point in time, a period of time that is so short that the concentrations of reactants and products change by a negligible amount. The initial rate is the instantaneous rate of reaction as it starts (as product just begins to form). Average rate is the average of the instantaneous rates over a time period."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp77962352",
+      "source_number": "2",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "relative",
+      "prompt": "Ozone decomposes to oxygen according to the equation ${\\text{2O}}_{3}(g)\\;\\longrightarrow \\;{\\text{3O}}_{2}(g).$ Write the equation that relates the rate expressions for this reaction in terms of the disappearance of O<sub>3</sub> and the formation of oxygen.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: write the rate of change of each species’ concentration as Δ[X]/Δt, put a negative sign before the term for the reactant, O<sub>3</sub>, since its concentration falls, and divide each term by that species’ coefficient in the balanced equation. The two terms are then equal, as in Example 12.1."
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm82430624",
+      "source_number": "3",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "relative",
+      "prompt": "In the nuclear industry, chlorine trifluoride is used to prepare uranium hexafluoride, a volatile compound of uranium used in the separation of uranium isotopes. Chlorine trifluoride is prepared by the reaction ${\\text{Cl}}_{2}(g)+{\\text{3F}}_{2}(g)\\;\\longrightarrow \\;{\\text{2ClF}}_{3}(g).$ Write the equation that relates the rate expressions for this reaction in terms of the disappearance of Cl<sub>2</sub> and F<sub>2</sub> and the formation of ClF<sub>3</sub>.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "$\\text{rate}=+\\frac{1}{2}\\;\\frac{\\text{Δ}[{\\text{CIF}}_{3}]}{\\text{Δ}t}\\;=-\\frac{\\text{Δ}[{\\text{Cl}}_{2}]}{\\text{Δ}t}\\;=-\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{F}}_{2}]}{\\text{Δ}t}$"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm57147216",
+      "source_number": "5",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "average",
+      "prompt": "A study of the rate of the reaction represented as $2A\\;\\longrightarrow \\;B$ gave the following data:<table><thead><tr><th>Time (s)</th><th>0.0</th><th>5.0</th><th>10.0</th><th>15.0</th><th>20.0</th><th>25.0</th><th>35.0</th></tr></thead><tbody><tr><td>[<em>A</em>] (<em>M</em>)</td><td>1.00</td><td>0.775</td><td>0.625</td><td>0.465</td><td>0.360</td><td>0.285</td><td>0.230</td></tr></tbody></table>(a) Determine the average rate of disappearance of <em>A</em> between 0.0 s and 10.0 s, and between 10.0 s and 20.0 s.<br>(b) Estimate the instantaneous rate of disappearance of <em>A</em> at 15.0 s from a graph of time versus [<em>A</em>]. What are the units of this rate?<br>(c) Use the rates found in parts (a) and (b) to determine the average rate of formation of <em>B</em> between 0.00 s and 10.0 s, and the instantaneous rate of formation of <em>B</em> at 15.0 s.",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) average rate, 0 to 10 s",
+            "value": 0.0375,
+            "unit": "mol L⁻¹ s⁻¹",
+            "hint": "Divide the fall in [<em>A</em>] over the interval by the 10.0 s it took."
+          },
+          {
+            "part": "(a) average rate, 10 to 20 s",
+            "value": 0.0265,
+            "unit": "mol L⁻¹ s⁻¹"
+          },
+          {
+            "part": "(b) instantaneous rate at 15 s",
+            "value": 0.023,
+            "unit": "mol L⁻¹ s⁻¹",
+            "tol": 0.15,
+            "hint": "Plot [<em>A</em>] against time, draw the tangent at 15.0 s, and take the negative of its slope."
+          },
+          {
+            "part": "(c) average rate of formation of <em>B</em>, 0 to 10 s",
+            "value": 0.0188,
+            "unit": "mol L⁻¹ s⁻¹",
+            "hint": "One mole of <em>B</em> forms for every two moles of <em>A</em> used."
+          },
+          {
+            "part": "(c) instantaneous rate of formation of <em>B</em> at 15 s",
+            "value": 0.012,
+            "unit": "mol L⁻¹ s⁻¹",
+            "tol": 0.15
+          }
+        ],
+        "solution": "(a) average rate, 0 − 10 s = 0.0375 mol L<sup>−1</sup> s<sup>−1</sup>; average rate, 10 − 20 s = 0.0265 mol L<sup>−1</sup> s<sup>−1</sup>; (b) instantaneous rate, 15 s = 0.023 mol L<sup>−1</sup> s<sup>−1</sup>; (c) average rate for B formation = 0.0188 mol L<sup>−1</sup> s<sup>−1</sup>; instantaneous rate for B formation = 0.012 mol L<sup>−1</sup> s<sup>−1</sup>"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "write-relative-rate-expressions"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "relative-reaction-rates"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "relative-reaction-rates"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "instantaneous-rate"
+    },
+    {
+      "exercise": "e1",
+      "concept": "average-instantaneous-initial-rate"
+    },
+    {
+      "exercise": "e1",
+      "concept": "average-rate"
+    },
+    {
+      "exercise": "e1",
+      "concept": "instantaneous-rate"
+    },
+    {
+      "exercise": "e1",
+      "concept": "initial-rate"
+    },
+    {
+      "exercise": "e2",
+      "concept": "write-relative-rate-expressions"
+    },
+    {
+      "exercise": "e3",
+      "concept": "write-relative-rate-expressions"
+    },
+    {
+      "exercise": "e5",
+      "concept": "rate-from-concentration-data"
+    },
+    {
+      "exercise": "e5",
+      "concept": "instantaneous-rate"
+    },
+    {
+      "exercise": "e5",
+      "concept": "relative-reaction-rates"
+    }
+  ]
+}

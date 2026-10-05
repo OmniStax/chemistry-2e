@@ -1,0 +1,720 @@
+{
+ "id": "16.2",
+ "module": "m68817",
+ "chapter": "16",
+ "title": "Entropy",
+ "short": "Entropy",
+ "lead": "Clausius defined entropy through the reversible heat of a process and its temperature, and Boltzmann tied it to the number of microstates a system can take. Counting how particles share two boxes, and how two objects share units of energy, connects entropy to probability, and the same picture of dispersal guides predictions of the sign of an entropy change.",
+ "objectives": [
+  "Define entropy",
+  "Explain the relationship between entropy and the number of microstates",
+  "Predict the sign of the entropy change for chemical and physical processes"
+ ],
+ "summary_html": "<p><span data-concept=\"entropy\">Entropy ($\\kS$)</span> is a <span data-concept=\"state-function\">state function</span> that can be related to the number of <span data-concept=\"microstate\">microstates</span> for a system (the number of ways the system can be arranged) and to the ratio of reversible <span data-concept=\"heat-flow\">heat</span> to kelvin <span data-concept=\"temperature\">temperature</span>. It may be interpreted as a measure of the dispersal or distribution of matter and/or energy in a system, and it is often described as representing the “disorder” of the system.</p><p>For a given substance, <span data-concept=\"entropy\">entropy</span> depends on phase with $\\kSsolid &lt; \\kSliquid &lt; \\kSgas$. For different substances in the same physical state at a given <span data-concept=\"temperature\">temperature</span>, <span data-concept=\"entropy\">entropy</span> is typically greater for heavier atoms or more complex molecules. <span data-concept=\"entropy\">Entropy</span> increases when a system is heated and when solutions form. Using these guidelines, the sign of <span data-concept=\"entropy\">entropy changes</span> for some chemical reactions and physical changes may be reliably predicted.</p>",
+ "notes": "The Link to Learning on a simulator of the states of matter is left out. Kept as printed: Figure 16.7’s caption spells Carnot’s first name “Nicholas” where the text has “Nicolas”, the heat-flow paragraph reads “one of the other two distribution”, and Example 16.2 writes W<sub>c</sub>/W<sub>a</sub> for W<sub>f</sub>/W<sub>i</sub>.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the prompt of fs-idm203140096 prints Fe<sub>2</sub>O<sub>2</sub>(<em>s</em>) in part (b), and it is carried as printed. Two unkeyed exercises that ask for a number are left out: fs-idp46279440 and fs-idm215906096. The five unkeyed exercises fs-idm56843152, fs-idm199093136, fs-idm12232336, fs-idm216212480 and fs-idm213645360 ask for a comparison, a sign or an explanation, and each is kept with a suggested approach marked as OmniStax’s own. Nothing is moved.",
+ "figures": [
+  {
+   "id": "fig-carnot",
+   "kind": "photo",
+   "number": "16.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-microstates",
+   "kind": "sim",
+   "number": "16.8",
+   "originals": [
+    "/media/ch16/CNX_Chem_16_02_Microstates.jpg"
+   ],
+   "original_caption": "The sixteen microstates associated with placing four particles in two boxes are shown. The microstates are collected into five distributions—(a), (b), (c), (d), and (e)—based on the numbers of particles in each box.",
+   "draws": [
+    "entropy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-energy-microstates",
+   "kind": "sim",
+   "number": "16.9",
+   "originals": [
+    "/media/ch16/CNX_Chem_16_03_Energy.jpg"
+   ],
+   "original_caption": "This shows a microstate model describing the flow of heat from a hot object to a cold object. (a) Before the heat flow occurs, the object comprised of particles A and B contains both units of energy and as represented by a distribution of three microstates. (b) If the heat flow results in an even dispersal of energy (one energy unit transferred), a distribution of four microstates results. (c) If both energy units are transferred, the resulting distribution has three microstates.",
+   "draws": [
+    "entropy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ex-matter",
+   "kind": "figure",
+   "originals": [
+    "/media/ch16/CNX_Chem_16_03_Matter_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-entropy-phase",
+   "kind": "sim",
+   "number": "16.10",
+   "folds": [
+    "16.11"
+   ],
+   "originals": [
+    "/media/ch16/CNX_Chem_16_03_Entropies.jpg",
+    "/media/ch16/CNX_Chem_16_02_EntGraph.jpg"
+   ],
+   "original_caption": "(Figure 16.10) The entropy of a substance increases (ΔS > 0) as it transforms from a relatively ordered solid, to a less-ordered liquid, and then to a still less-ordered gas. The entropy decreases (ΔS < 0) as the substance transforms from a gas to a liquid and then to a solid. (Figure 16.11) Entropy increases as the temperature of a substance is raised, which corresponds to the greater spread of kinetic energies. When a substance undergoes a phase transition, its entropy changes significantly.",
+   "draws": [
+    "temperature",
+    "entropy",
+    "energy",
+    "velocity"
+   ],
+   "conventions": [
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "hot-object",
+   "label": "the hot object, particles A and B",
+   "figures": [
+    "sim-energy-microstates"
+   ]
+  },
+  {
+   "id": "cold-object",
+   "label": "the cold object, particles C and D",
+   "figures": [
+    "sim-energy-microstates"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "reversible-heat",
+   "concept": "reversible-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "entropy",
+   "verb": "introduces"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "state-function",
+   "verb": "uses"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "reversible-heat",
+   "concept": "kelvin",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "microstate",
+   "verb": "introduces"
+  },
+  {
+   "span": "microstates",
+   "concept": "boltzmann-entropy-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "microstates",
+   "concept": "most-probable-distribution",
+   "verb": "introduces"
+  },
+  {
+   "span": "microstates",
+   "concept": "entropy",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "state-function",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "dispersal-of-matter-and-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "ideal-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "spontaneous-process",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "microstates",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-delta-s",
+   "concept": "boltzmann-entropy-equation",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-delta-s",
+   "concept": "microstate",
+   "verb": "reinforces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "entropy-and-phase",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "entropy-and-temperature",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "entropy-and-molecular-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "predict-sign-of-entropy-change",
+   "verb": "introduces"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "entropy",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "melting",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "freezing",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "vaporization",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "sublimation",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "condensation",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "deposition",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "kinetic-molecular-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "average-kinetic-energy-and-temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "mixture",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "predicting-sign",
+   "concept": "heat-flow",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-predict-sign",
+   "concept": "predict-sign-of-entropy-change",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm141128112",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-delta-s"
+   },
+   "cite": "ex-delta-s",
+   "prompt": "Consider the system shown in Figure 16.9. What is the change in entropy for the process where <em>all</em> the energy is transferred from the hot object (<strong>AB</strong>) to the cold object (<strong>CD</strong>)?",
+   "answer": {
+    "type": "number",
+    "value": 0,
+    "unit": "J/K",
+    "hint": "Count the microstates with both units in the hot object and those with both units in the cold object.",
+    "solution": "0 J/K",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm151499136",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-predict-sign"
+   },
+   "cite": "ex-predict-sign",
+   "prompt": "Predict the sign of the entropy change for the following processes. Give a reason for your prediction.<br>(a) ${\\text{NaNO}}_{3}(s)\\;\\longrightarrow \\;{\\text{Na}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{-}(aq)$<br>(b) the freezing of liquid water<br>(c) ${\\text{CO}}_{2}(s)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)$<br>(d) ${\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\;\\text{CaO}(s)+{\\text{CO}}_{2}(g)$",
+   "answer": {
+    "type": "open",
+    "solution": "(a) Positive; The solid dissolves to give an increase of mobile ions in solution. (b) Negative; The liquid becomes a more ordered solid. (c) Positive; The relatively ordered solid becomes a gas. (d) Positive; There is a net increase in the amount of gaseous species.",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm145774432",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "microstates",
+   "prompt": "In Figure 16.8 all of the possible distributions and microstates are shown for four different particles shared between two boxes. Determine the entropy change, Δ<em>S</em>, for the system when it is converted from distribution (b) to distribution (d).",
+   "answer": {
+    "type": "number",
+    "value": 0,
+    "unit": "J/K",
+    "hint": "Count the microstates in distribution (b) and in distribution (d), then use the ratio of the final count to the initial one.",
+    "solution": "There are four initial microstates and four final microstates.<br>$\\kdS=k\\;\\text{ln}\\;\\frac{{W}_{\\text{f}}}{{W}_{\\text{i}}}\\;=1.38\\;\\times \\;{10}^{-23}\\;\\text{J/K}\\;\\times \\;\\text{ln}\\;\\frac{4}{4}\\;=0$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm56843152",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "microstates",
+   "prompt": "How does the process described in the previous item relate to the system shown in Figure 16.4?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: picture the two flasks of Figure 16.4 as the two boxes of Figure 16.8 and the gas molecules as the particles. Ask which distribution the gas is in while it is held in one flask, which distribution it moves toward once the valve is opened, and how $W$ changes on the way. Then set that beside the change from (b) to (d), in which the number of microstates is the same before and after, and say what each change means for $\\kdS$."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm72753056",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "microstates",
+   "prompt": "Consider a system similar to the one in Figure 16.8, except that it contains six particles instead of four. What is the probability of having all the particles in only one of the two boxes in the case? Compare this with the similar probability for the system of four particles that we have derived to be equal to $\\frac{1}{8}.$ What does this comparison tell us about even larger systems?",
+   "answer": {
+    "type": "open",
+    "solution": "The probability for all the particles to be on one side is $\\frac{1}{32}.$ This probability is noticeably lower than the $\\frac{1}{8}$ result for the four-particle system. The conclusion we can make is that the probability for all the particles to stay in only one part of the system will decrease rapidly as the number of particles increases, and, for instance, the probability for all molecules of gas to gather in only one side of a room at room temperature and pressure is negligible since the number of gas molecules in the room is very large.",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm18362192",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "microstates",
+   "prompt": "Consider the system shown in Figure 16.9. What is the change in entropy for the process where the energy is initially associated with particles A and B, and the energy is distributed between two particles in different boxes (one in A-B, the other in C-D)?",
+   "answer": {
+    "type": "number",
+    "value": 1.91e-23,
+    "unit": "J/K",
+    "tol": 0.01,
+    "hint": "The initial state, one unit on A and one on B, is a single microstate; count the ways of putting one unit in each object.",
+    "solution": "There is only one initial state. For the final state, the energy can be contained in pairs A-C, A-D, B-C, or B-D. Thus, there are four final possible states.<br>$\\kdS=k\\;\\text{ln}\\;(\\frac{{W}_{\\text{f}}}{{W}_{\\text{i}}})=1.38\\;\\times \\;{10}^{-23}\\;\\text{J/K}\\;\\times \\;\\text{ln}\\;(\\frac{4}{1})=1.91\\;\\times \\;{10}^{-23}\\;\\text{J/K}$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm199093136",
+   "source_number": "12",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "Arrange the following sets of systems in order of increasing entropy. Assume one mole of each substance and the same temperature for each member of a set.<br>(a) H<sub>2</sub>(<em>g</em>), HBrO<sub>4</sub>(<em>g</em>), HBr(<em>g</em>)<br>(b) H<sub>2</sub>O(<em>l</em>), H<sub>2</sub>O(<em>g</em>), H<sub>2</sub>O(<em>s</em>)<br>(c) He(<em>g</em>), Cl<sub>2</sub>(<em>g</em>), P<sub>4</sub>(<em>g</em>)",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: in each set, find what the members share and what differs. Where all are gases, compare the number of atoms in each particle and its mass, since more atoms give more ways to vibrate and heavier particles more entropy at one temperature. Where one substance appears in three phases, use $\\kSsolid < \\kSliquid < \\kSgas$."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idm215000480",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "At room temperature, the entropy of the halogens increases from I<sub>2</sub> to Br<sub>2</sub> to Cl<sub>2</sub>. Explain.",
+   "answer": {
+    "type": "open",
+    "solution": "The masses of these molecules would suggest the opposite trend in their entropies. The observed trend is a result of the more significant variation of entropy with a physical state. At room temperature, I<sub>2</sub> is a solid, Br<sub>2</sub> is a liquid, and Cl<sub>2</sub> is a gas.",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idm12232336",
+   "source_number": "14",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "Consider two processes: sublimation of I<sub>2</sub>(<em>s</em>) and melting of I<sub>2</sub>(<em>s</em>) (Note: the latter process can occur at the same temperature but somewhat higher pressure).<br>${\\text{I}}_{2}(s)\\;\\longrightarrow \\;{\\text{I}}_{2}(g)$<br>${\\text{I}}_{2}(s)\\;\\longrightarrow \\;{\\text{I}}_{2}(l)$<br>Is Δ<em>S</em> positive or negative in these processes? In which of the processes will the magnitude of the entropy change be greater?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: both processes start from the same solid at the same temperature, so compare only where the particles end up. Ask whether the freedom of motion, and so the number of microstates, grows or shrinks in each, and use the order $\\kSsolid < \\kSliquid < \\kSgas$ to judge which final state lies farther above the solid."
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idm136809856",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "Indicate which substance in the given pairs has the higher entropy value. Explain your choices.<br>(a) C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>) or C<sub>3</sub>H<sub>7</sub>OH(<em>l</em>)<br>(b) C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>) or C<sub>2</sub>H<sub>5</sub>OH(<em>g</em>)<br>(c) 2H(<em>g</em>) or H(<em>g</em>)",
+   "answer": {
+    "type": "open",
+    "solution": "(a) C<sub>3</sub>H<sub>7</sub>OH(<em>l</em>) as it is a larger molecule (more complex and more massive), and so more microstates describing its motions are available at any given temperature. (b) C<sub>2</sub>H<sub>5</sub>OH(<em>g</em>) as it is in the gaseous state. (c) 2H(<em>g</em>), since entropy is an extensive property, and so two H atoms (or two moles of H atoms) possess twice as much entropy as one atom (or one mole of atoms).",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idm216212480",
+   "source_number": "16",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "Predict the sign of the entropy change for the following processes.<br>(a) An ice cube is warmed to near its melting point.<br>(b) Exhaled breath forms fog on a cold morning.<br>(c) Snow melts.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: for each process, decide whether the temperature of the substance changes and whether it changes phase, and which phase it ends in. Fog is a cloud of tiny liquid droplets formed from water vapor. Then apply two rules of this section: entropy rises with temperature, and $\\kSsolid < \\kSliquid < \\kSgas$."
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idm203140096",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "Predict the sign of the entropy change for the following processes. Give a reason for your prediction.<br>(a) ${\\text{Na}}^{+}(aq)+{\\text{Cl}}^{-}(aq)\\;\\longrightarrow \\;\\text{NaCl}(s)$<br>(b) $2\\text{Fe}(s)+\\frac{3}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{Fe}}_{2}{\\text{O}}_{2}(s)$<br>(c) $2{\\text{C}}_{6}{\\text{H}}_{14}(l)+19{\\text{O}}_{2}(g)\\;\\longrightarrow \\;14{\\text{H}}_{2}\\text{O}(g)+12{\\text{CO}}_{2}(g)$",
+   "answer": {
+    "type": "open",
+    "solution": "(a) Negative. The relatively ordered solid precipitating decreases the number of mobile ions in solution. (b) Negative. There is a net loss of three moles of gas from reactants to products. (c) Positive. There is a net increase of seven moles of gas from reactants to products.",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idm213645360",
+   "source_number": "18",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "Write the balanced chemical equation for the combustion of methane, CH<sub>4</sub>(<em>g</em>), to give carbon dioxide and water vapor. Explain why it is difficult to predict whether Δ<em>S</em> is positive or negative for this chemical reaction.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: balance the equation with water as a gas, then count the moles of gaseous species on each side. The amount of gas is usually the strongest guide to the sign of $\\kdS$ for a reaction; ask what is left to decide the sign when that count gives no clear direction, and whether the remaining factors, such as the complexity of the molecules, point the same way."
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp19392560",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "predicting-sign",
+   "prompt": "Write the balanced chemical equation for the combustion of benzene, C<sub>6</sub>H<sub>6</sub>(<em>l</em>), to give carbon dioxide and water vapor. Would you expect Δ<em>S</em> to be positive or negative in this process?",
+   "answer": {
+    "type": "open",
+    "solution": "${\\text{C}}_{6}{\\text{H}}_{6}(l)+7.5{\\text{O}}_{2}(g)\\;\\longrightarrow {\\text{3H}}_{2}\\text{O(}g)+{\\text{6CO}}_{2}(g)$<br>There are 7.5 moles of gas initially, and 3 + 6 = 9 moles of gas in the end. Therefore, it is likely that the entropy increases as a result of this reaction, and Δ<em>S</em> is positive.",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "boltzmann-entropy-equation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "microstate",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "boltzmann-entropy-equation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "most-probable-distribution",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "most-probable-distribution",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e8",
+   "concept": "dispersal-of-matter-and-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "most-probable-distribution",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "microstate",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "boltzmann-entropy-equation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e11",
+   "concept": "microstate",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "entropy-and-molecular-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e12",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e13",
+   "concept": "entropy-and-molecular-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e14",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "entropy-and-molecular-structure",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e15",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "entropy-and-temperature",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e16",
+   "concept": "entropy-and-phase",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e18",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e19",
+   "concept": "predict-sign-of-entropy-change",
+   "weights_by": "ai"
+  }
+ ]
+}

@@ -55,3 +55,5 @@ The four Link to Learning notes (the CERN tour and video, the fission simulation
 - `ch21/COLOR.md`: 21.4 binds `rate` (the fission rate, `reaction-rate`, and sim-reactor's graph), `time`, `volume` and `pressure` as well as energy, temperature, mass and length.
 - `ch21/config.md`: 21.4's untitled opening takes the header "The Nuclear Age" (`nuclear-age`).
 - No concept, edge or symbol fixes.
+
+Applied by the chapter pass: `ch21/COLOR.md` records the `rate`, `time`, `volume` and `pressure` bindings; `config.md` records "The Nuclear Age"; `exploration.md` carries the two book errors in Figures 21.15 and 21.16. The "Choose another of the book's reactions" in Figure 21.14 + 21.15's caption now reads "Choose another of the five reactions of Figure 21.15".

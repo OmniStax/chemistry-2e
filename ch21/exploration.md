@@ -102,3 +102,18 @@ Physical 3D under the book's rule: the deflection bench of 21.6 (an apparatus), 
 ## BE INSPIRING
 
 Pull a helium nucleus apart and watch 0.0305 amu reappear as 28.4 MeV. Slide along the curve of binding energy and feel both fission and fusion run uphill toward iron. Pick a nuclide off the chart, see which side of the band it sits on, and watch it spit the α, β or positron that walks it back toward stability, step by step down the fourteen decays from uranium-238 to lead-206. Hold a sample of cobalt-60 and watch half of it vanish every 5.27 years, at random, one nucleus at a time, while the curve traces itself. Fire one neutron into uranium-235 and watch the chain branch, then shrink the sphere until too many neutrons escape and the chain dies. Swing the cobalt-60 gantry around a tumour and watch the dose pile up at the target and nowhere else.
+
+## Found in the build
+
+Errata the sections found beyond the list above, carried as printed and named in the sections' `notes`:
+
+- 21.3: Figure 21.5's image labels the daughter radon-234 where its caption says thorium-234.
+- 21.4: Figure 21.15 (a) writes ⁹⁷₃₇Rb + ¹³⁷₅₅Cs + 3n, whose mass numbers add to 237, not 236; the live Figure 21.14 + 21.15 takes Figure 21.16's balanced ⁹⁶₃₇Rb in its place, and the original image keeps the book's. Figure 21.16 draws its first fission as Kr-93 and Ba-142 above an equation that writes Ba-140 + Kr-90 + 3n, which itself adds to 233; the original image is kept as printed.
+
+Departures from the plan above, each argued in its section's plan:
+
+- Figure 21.6 is a moving 2D figure on a locked view (root rule 28.2), not the 3D bench the book's rule names for an apparatus: the beams bend in the one vertical plane the book's perspective already shows, so turning the bench adds no relation (28.5).
+- Figures 21.30, 21.34 and 21.36 are kept as the book's drawings although each draws a kinematic arrow: the radiation entering the cell begins the event Figure 21.32 plays, the radon routes carry no rate or path the text gives, and the squiggles leaving the source are Figure 21.33's streams. Figures 21.18 and 21.19 are kept as photographs, their arrows carried by the chain-reaction and reactor figures of 21.4.
+- 21.4's untitled opening takes the header "The Nuclear Age".
+- The atomic masses behind Figure 21.3's points are OmniStax's own, from standard tables to four decimals, for 31 of the 33 nuclides; only helium-4 (4.0026 amu) and iron-56 (55.9349 amu) come from the book. The constants are the book's (1.0073, 1.0087 and 0.00055 amu, 1.6605 × 10⁻²⁷ kg per amu, 2.998 × 10⁸ m/s, 1.602 × 10⁻¹³ J per MeV).
+- The hydroxyl-radical image of 21.6 is set as a displayed equation; its copy in `media/ch21/` is no longer used.

@@ -48,3 +48,5 @@ Nothing in the text. Errata kept as printed: "Radioimmunossays", "Grave’s dise
 ## Wanted at chapter level
 
 - none
+
+Applied by the chapter pass: the section's own variables rows anchored, `t` at `21.5-therapy`, `I` and `Q_charge` at `21.5-other-uses`; `ch21/COLOR.md` records the `current`, `charge`, `potential`, `angle`, `length` and `mass` bindings.

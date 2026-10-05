@@ -73,3 +73,5 @@ The two Link to Learning notes (a cloud chamber demonstration; the PhET radiomet
 - forms `eq-first-order-radioactive-decay` → 21.3-half-lives
 - forms `eq-radioactive-decay-time` → 21.3-half-lives
 - `config.md`: Figure 21.6 is a moving 2D figure on a locked view, not the 3D bench the 3D row names (argued in its plan line above).
+
+Applied by the chapter pass: every variables row and form above anchored at `21.3-half-lives`; `config.md` and `exploration.md` record Figure 21.6 on a locked view in place of the 3D bench, and `exploration.md` Figure 21.5's radon-234.

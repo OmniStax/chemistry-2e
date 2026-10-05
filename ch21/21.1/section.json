@@ -28,7 +28,7 @@
  },
  "built": "2026-10-05",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and the suggested approach are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idm1122208 (four isotopes in nuclide notation), fs-idm82455680 (the protons, neutrons and electrons of four isotopes), fs-idm91931648 (the density of a magnesium-24 nucleus) and fs-idm82186208 (the binding energy of sodium-23) are left out, and no answer is computed for them. The unkeyed choice item fs-idp43351040 is kept open with its options and a suggested approach. Exercise fs-idp74968928, the binding energy of fluorine-19, is taken from 21.2, since it tests only this section; its key gives 148.8 MeV where the Check Your Learning of Example 21.2 gives 148.4 MeV for the same nuclide, and both are carried as printed.",
+ "exercise_notes": "Bloom levels, concept tags and the suggested approach are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idm1122208 (four isotopes in nuclide notation), fs-idm82455680 (the protons, neutrons and electrons of four isotopes), fs-idm91931648 (the density of a magnesium-24 nucleus) and fs-idm82186208 (the binding energy of sodium-23) are left out, and no answer is computed for them. The unkeyed choice item fs-idp43351040 is kept open with its options and a suggested approach. Exercise fs-idp74968928, the binding energy of fluorine-19, is taken from 21.2 and carries source_section 21.2, since it tests only the binding energy of this section; its key gives 148.8 MeV where the Check Your Learning of Example 21.2 gives 148.4 MeV for the same nuclide, and both are carried as printed.",
  "figures": [
   {
    "id": "sim-band-stability",

@@ -56,3 +56,5 @@ The Link to Learning note on the four fundamental forces. Kept as printed: "the 
 - variables `21.1/r` → 21.1-ex-neutron-star
 - variables `21.1/E` → 21.1-binding
 - variables `21.1/c` → 21.1-binding
+
+Applied by the chapter pass: every anchor above set as listed. The raw ☉ in the solar-mass symbol of Example 21.1 became `\odot`, which KaTeX sets. Both sections' `exercise_notes` now say that `fs-idp74968928` carries `source_section` 21.2. `config.md` and `exploration.md` record that the atomic masses behind Figure 21.3 are OmniStax's own for 31 of its 33 nuclides.

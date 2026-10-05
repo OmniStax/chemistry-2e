@@ -45,3 +45,5 @@ Nothing in the text. Errata kept as printed: the key of fs-idp225643904 (b) writ
 ## Wanted at chapter level
 
 - none
+
+Applied by the chapter pass: variables rows `21.2/E`, `21.2/m` and `21.2/c` added with 21.1's meanings and anchored at `21.2-particles`, since the antimatter paragraph writes E = mc² through the macros; the opening header capitalized as "Nuclear Reactions"; `exercise_notes` aligned with 21.1's on `fs-idp74968928`.

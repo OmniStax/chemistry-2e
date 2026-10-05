@@ -10,7 +10,7 @@
     "Write and balance nuclear equations"
   ],
   "summary_html": "<p>Nuclei can undergo reactions that change their number of protons, number of neutrons, or energy state. Many different particles can be involved in <span data-concept=\"nuclear-reaction\">nuclear reactions</span>. The most common are <span data-concept=\"proton\">protons</span>, <span data-concept=\"neutron\">neutrons</span>, <span data-concept=\"positron\">positrons</span> (which are positively charged <span data-concept=\"electron\">electrons</span>), <span data-concept=\"alpha-particle\">alpha (α) particles</span> (which are high-energy helium nuclei), <span data-concept=\"beta-particle\">beta (β) particles</span> (which are high-energy <span data-concept=\"electron\">electrons</span>), and <span data-concept=\"gamma-ray\">gamma (γ) rays</span> (which compose high-energy <span data-concept=\"electromagnetic-radiation\">electromagnetic radiation</span>). As with chemical reactions, <span data-concept=\"balanced-nuclear-equation\">nuclear reactions are always balanced</span>. When a <span data-concept=\"nuclear-reaction\">nuclear reaction</span> occurs, the total mass (number) and the total charge remain unchanged.</p>",
-  "notes": "Nothing in the section’s text is left out.",
+  "notes": "Nothing in the section’s text is left out. The section’s opening, which the book prints without a header, carries one of OmniStax’s own, Nuclear Reactions.",
   "ai": {
     "text": [
       {
@@ -27,7 +27,7 @@
   },
   "built": "2026-10-05",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The three unkeyed exercises fs-idm5988192 (four nuclear equations to complete), fs-idp59747856 (the equations of the preparation of technetium-99) and fs-idp208355344 (the volume of nitrogen gas from the decay of carbon-14) are left out, and no answer is computed for them. The unkeyed conceptual exercise fs-idp158311008 carries a suggested approach marked as OmniStax’s own. The keyed exercise fs-idp74968928, the binding energy of fluorine-19, tests the binding energy of Section 21.1 and is moved there. The key to fs-idp225643904 (b) writes ¹⁴₇C for nitrogen-14, as printed.",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The three unkeyed exercises fs-idm5988192 (four nuclear equations to complete), fs-idp59747856 (the equations of the preparation of technetium-99) and fs-idp208355344 (the volume of nitrogen gas from the decay of carbon-14) are left out, and no answer is computed for them. The unkeyed conceptual exercise fs-idp158311008 carries a suggested approach marked as OmniStax’s own. The keyed exercise fs-idp74968928, the binding energy of fluorine-19, tests only the binding energy of 21.1 and is moved there, where it carries source_section 21.2. The key to fs-idp225643904 (b) writes ¹⁴₇C for nitrogen-14, as printed.",
   "figures": [
     {
       "id": "sim-particles",

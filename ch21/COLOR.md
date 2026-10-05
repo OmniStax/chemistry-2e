@@ -78,3 +78,35 @@ Each section lists its own when it is built. Planned:
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.
+
+## As built
+
+Checked at the chapter pass against every page's `data-type` and
+`data-concept` spans and every figure row's `draws`, `conventions` and
+`facts`. The `dose` type has its colour from the book's refit of 2026-10-05.
+
+| Section | Values and words | Figures |
+|---|---|---|
+| 21.1 | `length`, `density`, `mass`, `energy` values; density, mass, mass defect, molar mass, energy, binding energy, binding energy per nucleon and enthalpy change words; "strong nuclear force" in `force` | Figure 21.3 draws `energy`, `mass`, `velocity` (its readout's E = mc²) |
+| 21.2 | mass and energy words; E = mc² through `\kE`, `\km`, `\kc` | none binds a type; particles by `F.el` |
+| 21.3 | `time`, `mass`, `rate` values; half-life, time, decay rate, decay constant, rate constant and activation energy words | Figure 21.6 `charge` (the plates' signs; the lead block `F.el('Pb')`, the source `F.el('Ra')`); 21.10 `time`, `rate-constant`, `mass`; 21.11 `time`, `rate`, `rate-constant`, its carbon dioxide and nitrogen by `F.el` |
+| 21.4 | `length`, `time`, `mass`, `energy`, `volume`, `temperature` values; energy, kinetic energy, heat, binding energy per nucleon, mass, mass defect, half-life, temperature, reaction rate and pressure words | Figure 21.14 + 21.15 `energy`; 21.16 + 21.17 `energy`; 21.20 `rate` (the fission rate curve) and `energy`; fuel `F.el('U')`, neutrons `F.el('n0')` |
+| 21.5 | `time`, `mass` values; half-life, electrical potential and electric current words | Figure 21.26 `time`, `angle`, `length`; 21.27 `energy`, `time`; 21.29 `current`, `charge`, `time` |
+| 21.6 | `dose`, `time`, `rate`, `mass` values; energy, bond energy, frequency, half-life, decay rate, absorbed dose and dose equivalent words | Figure 21.31 `frequency`, `energy` and the visible band as fact (`spectrum`); the dose Sim and Figure 21.37 `dose`, absorbed dose hollow and dose equivalent filled |
+
+Beyond the plan above: 21.3 binds `charge`; 21.4 binds `rate`, `time`,
+`volume` and `pressure`; 21.5 binds `current`, `charge`, `potential`, `angle`,
+`length` and `mass`. No figure binds `temperature` or `pressure`; they reach
+only 21.4's words and values.
+
+Referents as built: nitrogen-14, iron-56 and lead-207 on Figure 21.2 (21.1);
+the light and heavy fission fragments, krypton-92 and barium-141 by default,
+on Figure 21.14 + 21.15 and its yield curve (21.4). The planned referents of
+21.3 and the two spheres of 21.17 were not built: Figure 21.10 draws cobalt-60
+alone, each decay figure names its parent and daughter in its labels and
+readout, and the chain-reaction figure is one lump on a mass slider. 21.33's
+four radiations wear their particle colours, and 21.37's ten sources are one
+`dose` hue told apart by their names, so neither uses `F.cat`. `F.cat` is used
+twice: 21.9's β arrows are `F.cat(1)` against the α arrows' ink, and the
+unnamed fission fragments in the chain-reaction lump are `F.cat(0)`, each
+named in its figure's legend.

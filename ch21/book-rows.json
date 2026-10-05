@@ -100,7 +100,8 @@
     {
      "id": "eq-mass-energy-equivalence",
      "latex": "E=mc^{2}",
-     "ktex": "\\kE=\\km\\kc^{2}"
+     "ktex": "\\kE=\\km\\kc^{2}",
+     "anchor": "21.1-binding"
     }
    ]
   },
@@ -357,12 +358,14 @@
     {
      "id": "eq-decay-constant",
      "latex": "\\lambda=\\frac{\\ln 2}{t_{1/2}}=\\frac{0.693}{t_{1/2}}",
-     "ktex": "\\klamdecay=\\frac{\\ln 2}{\\kthalf}=\\frac{0.693}{\\kthalf}"
+     "ktex": "\\klamdecay=\\frac{\\ln 2}{\\kthalf}=\\frac{0.693}{\\kthalf}",
+     "anchor": "21.3-half-lives"
     },
     {
      "id": "eq-half-life-from-decay-constant",
      "latex": "t_{1/2}=\\frac{\\ln 2}{\\lambda}=\\frac{0.693}{\\lambda}",
-     "ktex": "\\kthalf=\\frac{\\ln 2}{\\klamdecay}=\\frac{0.693}{\\klamdecay}"
+     "ktex": "\\kthalf=\\frac{\\ln 2}{\\klamdecay}=\\frac{0.693}{\\klamdecay}",
+     "anchor": "21.3-half-lives"
     }
    ]
   },
@@ -378,7 +381,8 @@
     {
      "id": "eq-radioactive-decay-rate",
      "latex": "\\text{decay rate}=\\lambda N",
-     "ktex": "\\text{decay }\\krate=\\klamdecay N"
+     "ktex": "\\text{decay }\\krate=\\klamdecay N",
+     "anchor": "21.3-half-lives"
     }
    ]
   },
@@ -392,12 +396,14 @@
     {
      "id": "eq-first-order-radioactive-decay",
      "latex": "N_{t}=N_{0}e^{-\\lambda t}",
-     "ktex": "N_{t}=N_{0}e^{-\\klamdecay\\kt}"
+     "ktex": "N_{t}=N_{0}e^{-\\klamdecay\\kt}",
+     "anchor": "21.3-half-lives"
     },
     {
      "id": "eq-radioactive-decay-time",
      "latex": "t=-\\frac{1}{\\lambda}\\ln\\left(\\frac{N_{t}}{N_{0}}\\right)",
-     "ktex": "\\kt=-\\frac{1}{\\klamdecay}\\ln\\left(\\frac{N_{t}}{N_{0}}\\right)"
+     "ktex": "\\kt=-\\frac{1}{\\klamdecay}\\ln\\left(\\frac{N_{t}}{N_{0}}\\right)",
+     "anchor": "21.3-half-lives"
     }
    ]
   },
@@ -712,11 +718,13 @@
    "forms": [
     {
      "id": "eq-dose-equivalent-rem",
-     "latex": "\\text{number of rems}=\\text{RBE}\\times\\text{number of rads}"
+     "latex": "\\text{number of rems}=\\text{RBE}\\times\\text{number of rads}",
+     "anchor": "21.6-measuring"
     },
     {
      "id": "eq-dose-equivalent-sv",
-     "latex": "\\text{Sv}=\\text{RBE}\\times\\text{Gy}"
+     "latex": "\\text{Sv}=\\text{RBE}\\times\\text{Gy}",
+     "anchor": "21.6-units"
     }
    ]
   },

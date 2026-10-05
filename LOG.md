@@ -1642,3 +1642,80 @@ chapter), and every page of the chapter in light and dark with no console
 error but the dev server's own missing offline catalogue, no KaTeX error, no
 missing image, every inline exercise card in its place and every figure
 drawn; the browser pass needed no fix.
+
+
+## Pass 24 (2026-10-05): Chapter 21, Nuclear Chemistry, is built and passed
+
+Built: the introduction and six sections, 21.1 to 21.6, in the publisher's
+numbering, Figures 21.1 to 21.37 all shown and linked; the chapter is the
+book's last, and with it every section of Chemistry 2e is built. Twenty-one
+figures drawn live, two of them Sims. Figure 21.2 plots the 252 stable
+nuclides one point each against the band of known ones, and Figure 21.3
+places any of fifteen nuclides on the curve of binding energy per nucleon,
+its nucleus packed beside the graph and its mass defect turned into MeV
+through E = mc² as Examples 21.2 and 21.3 do. Figure 21.4 redraws the
+particles in the palette, and a Sim balances the section's six nuclear
+reactions by mass number and charge. In 21.3 the three rays bend between
+charged plates (Figure 21.6, on a locked view of the book's bench), Figures
+21.5 + 21.7 play each mode of decay on the text's own nuclide, Figure 21.9
+steps the fourteen decays from uranium-238 to lead-206, Figure 21.10 decays
+four hundred cobalt-60 nuclei at random under their curve, and Figure 21.11
+reads a sample's age off its measured decay rate. In 21.4 Figures 21.14 +
+21.15 split uranium-236 into any of the book's five pairs of fragments marked
+on the yield curve, Figures 21.16 + 21.17 run a chain reaction in a 3D lump
+whose mass is set against the critical mass, and Figure 21.20 runs a reactor
+core whose control rods and moderator the reader sets. In 21.5 the cobalt-60
+gantry swings round a head (Figure 21.26), the cobalt-60 decay scheme stands
+on an energy axis (Figure 21.27), and a smoke detector's ions drift to the
+plates until smoke catches them (Figure 21.29). In 21.6 a frequency slider
+walks the spectrum to its ionizing edge (Figure 21.31), a photon breaks a DNA
+strand directly or through a hydroxyl radical (Figure 21.32), four radiations
+stop at their barriers (Figure 21.33), a Sim converts rad to rem by the RBE,
+and Figure 21.37 is redrawn on one logarithmic axis. Sixteen photographs and
+book drawings kept as numbered rows; the one unnumbered image, the hydroxyl
+radical's reaction, set as a displayed equation. Tables 21.1 to 21.5 written
+as tables, the spanned rows of 21.4 and 21.5 from the CNXML. Eight worked
+examples, each with its Check Your Learning inline. Forty-two end-of-section
+exercises kept, numbered chapter-wide; twenty unkeyed items whose answers
+would be computed are left out and named in `exercise_notes`, one unkeyed
+choice item is kept open with its options, and ten unkeyed conceptual items
+carry a suggested approach. One exercise moves, 21.2's binding energy of
+fluorine-19 to 21.1 with `source_section` 21.2. Sixty-eight concepts with 125
+prerequisite edges, one type added, `dose`, and four symbols, among them
+`\klamdecay` for the decay constant, kept apart from the wavelength's `\klam`.
+
+What the chapter pass changed. Twenty-five variables rows and all eight forms
+anchored; three of the rows, 21.2's E, m and c for the E = mc² of the
+antimatter paragraph, were added with 21.1's meanings, and 21.6's E and ν
+moved after them so the checker reads the photon energy as the redefinition.
+The raw ☉ in Example 21.1's solar-mass symbol became `\odot`, which KaTeX
+sets. 21.2's opening header is "Nuclear Reactions", capitalized as the
+book's headers are; Figure 21.14 + 21.15's caption names the five reactions
+of Figure 21.15 where it said "the book's"; 21.2's and 21.6's `notes` name
+their opening headers and 21.6's the errata kept as printed; both sections'
+`exercise_notes` agree on the moved exercise. The frequency marker of Figure
+21.31 no longer crosses its band's name. `config.md` records what the build
+changed, among them 21.4's header "The Nuclear Age", Figure 21.6 flat on a
+locked view where this chapter's 3D row named a bench, and Figures 21.30,
+21.34 and 21.36 kept as the book's drawings despite their kinematic arrows;
+`COLOR.md` the bindings as built, with `rate`, `time`, `volume` and
+`pressure` in 21.4 and `current`, `charge`, `potential`, `angle`, `length`
+and `mass` in 21.5 beyond the plan; `exploration.md` the departures and that
+the atomic masses behind Figure 21.3 are OmniStax's own for 31 of its 33
+nuclides.
+
+Errata carried as printed and named in `exploration.md` and the sections'
+`notes`: "the number or nucleons" and Example 21.3 citing Example 21.1 in
+21.1; the key's ¹⁴₇C for nitrogen-14 in 21.2; "the actinide series",
+²³⁹₉₄Ra for plutonium, Rb-87's two half-lives and Figure 21.5's radon-234 in
+21.3; meitnerium's 107, "2₊₁⁰e⁺", "somewhat larger", Figure 21.15's unbalanced
+⁹⁷₃₇Rb and Figure 21.16's Kr-93 and Ba-142 above Ba-140 and Kr-90 in 21.4;
+"Radioimmunossays" and Tc-99m's 6.01 against 8.01 hours in 21.5; Example
+21.8's 3.7 × 10¹¹ decay/s in 21.6; and the rest there. Seven Link to Learning
+notes are dropped and named.
+
+Checks: `ost check` clean for the book (two warnings in sheets, none in the
+chapter), and every page of the chapter in light and dark with no console
+error but the dev server's own missing offline catalogue, no KaTeX error, no
+missing image, all eight inline exercise cards in their places and every
+figure drawn.

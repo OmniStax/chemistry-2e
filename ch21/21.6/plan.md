@@ -67,3 +67,5 @@ Nothing in the text. Errata kept as printed: Example 21.8's "1 Ci = 3.7 × 10¹�
 - variables `21.6/E` → 21.6-ionizing
 - variables `21.6/ν` → 21.6-ionizing
 - run `npm run colours:default -- chemistry-2e` for the new `dose` type (as the prep notes)
+
+Applied by the chapter pass: every anchor above set as listed, and `E` and `ν` anchored at `21.6-ionizing` (the rows moved after 21.2's new `E` so the checker reads 21.6's as the redefinition). The colours script was not run here: the book's type colours had already been refitted with `dose` placed. `config.md` and `exploration.md` record Figures 21.30, 21.34 and 21.36 kept as images; `notes` now names the opening header and the errata kept as printed.

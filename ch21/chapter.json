@@ -50,115 +50,132 @@
    "concept": "density",
    "meaning": "the density of a neutron star or a nucleus, its mass divided by its volume",
    "unit": "kg/m³",
-   "section": "21.1"
+   "section": "21.1",
+   "anchor": "21.1-ex-neutron-star"
   },
   {
    "sym": "m",
    "concept": "mass",
    "meaning": "the mass of the matter converted into energy, such as the mass defect of a nucleus",
    "unit": "kg",
-   "section": "21.1"
+   "section": "21.1",
+   "anchor": "21.1-binding"
   },
   {
    "sym": "V",
    "concept": "volume",
    "meaning": "the volume of a sphere, four-thirds of π times the cube of its radius",
    "unit": "m³",
-   "section": "21.1"
+   "section": "21.1",
+   "anchor": "21.1-ex-neutron-star"
   },
   {
    "sym": "r",
    "type": "length",
    "meaning": "the radius of a neutron star or a nucleus treated as a sphere",
    "unit": "m",
-   "section": "21.1"
+   "section": "21.1",
+   "anchor": "21.1-ex-neutron-star"
   },
   {
    "sym": "E",
    "concept": "energy-and-work",
    "meaning": "the energy that results when matter is converted into energy, such as the binding energy of a nucleus",
    "unit": "J or MeV",
-   "section": "21.1"
+   "section": "21.1",
+   "anchor": "21.1-binding"
   },
   {
    "sym": "c",
    "type": "velocity",
    "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s",
    "unit": "m/s",
-   "section": "21.1"
+   "section": "21.1",
+   "anchor": "21.1-binding"
   },
   {
    "sym": "t_half",
    "concept": "radioactive-half-life",
    "meaning": "the half-life of a radioisotope, the time required for half of the atoms in a sample to decay",
    "unit": "y",
-   "section": "21.3"
+   "section": "21.3",
+   "anchor": "21.3-half-lives"
   },
   {
    "sym": "λ_decay",
    "concept": "decay-constant",
    "meaning": "the decay constant of a radioisotope, its first-order rate constant",
    "unit": "y⁻¹",
-   "section": "21.3"
+   "section": "21.3",
+   "anchor": "21.3-half-lives"
   },
   {
    "sym": "rate",
    "concept": "radioactive-decay-rate",
    "meaning": "the decay rate of a radioactive sample, called its activity when stated in nuclear decays per second",
    "unit": "decays/s",
-   "section": "21.3"
+   "section": "21.3",
+   "anchor": "21.3-half-lives"
   },
   {
    "sym": "N_particles",
    "meaning": "the number of nuclei of the radioisotope in the sample",
    "unit": "none",
-   "section": "21.3"
+   "section": "21.3",
+   "anchor": "21.3-half-lives"
   },
   {
    "sym": "N_0",
    "meaning": "the initial number of nuclei or moles of the isotope",
    "unit": "none",
-   "section": "21.3"
+   "section": "21.3",
+   "anchor": "21.3-half-lives"
   },
   {
    "sym": "N_t",
    "meaning": "the number of nuclei or moles of the isotope remaining at time t",
    "unit": "none",
-   "section": "21.3"
+   "section": "21.3",
+   "anchor": "21.3-half-lives"
   },
   {
    "sym": "t",
    "concept": "time",
    "meaning": "the time elapsed since the decay began, such as the age of an object found by radiometric dating",
    "unit": "y",
-   "section": "21.3"
+   "section": "21.3",
+   "anchor": "21.3-half-lives"
   },
   {
    "sym": "activity",
    "concept": "radioactive-decay-rate",
    "meaning": "the activity of a radioactive sample, its number of decays per second",
    "unit": "Bq or Ci",
-   "section": "21.6"
+   "section": "21.6",
+   "anchor": "21.6-ex-activity"
   },
   {
    "sym": "λ_decay",
    "concept": "decay-constant",
    "meaning": "the decay constant of a radioisotope, ln 2 divided by its half-life",
    "unit": "y⁻¹",
-   "section": "21.6"
+   "section": "21.6",
+   "anchor": "21.6-ex-activity"
   },
   {
    "sym": "t_half",
    "concept": "radioactive-half-life",
    "meaning": "the half-life of a radioisotope, the time required for half of the atoms in a sample to decay",
    "unit": "y",
-   "section": "21.6"
+   "section": "21.6",
+   "anchor": "21.6-ex-activity"
   },
   {
    "sym": "N_particles",
    "meaning": "the number of nuclei of the radioisotope in the sample",
    "unit": "none",
-   "section": "21.6"
+   "section": "21.6",
+   "anchor": "21.6-ex-activity"
   },
   {
    "sym": "t",
@@ -166,21 +183,48 @@
    "meaning": "a time: the time a part of the head spends in the beam of a cobalt-60 machine, or the time over which charge reaches a plate of a smoke detector",
    "unit": "min or s",
    "section": "21.5",
-   "redefines": true
+   "redefines": true,
+   "anchor": "21.5-therapy"
   },
   {
    "sym": "I",
    "concept": "electric-current",
    "meaning": "the current through the ionization chamber of a smoke detector",
    "unit": "A",
-   "section": "21.5"
+   "section": "21.5",
+   "anchor": "21.5-other-uses"
   },
   {
    "sym": "Q_charge",
    "type": "charge",
    "meaning": "the charge the positive ions carry to the negative plate of the chamber in a time t",
    "unit": "C",
-   "section": "21.5"
+   "section": "21.5",
+   "anchor": "21.5-other-uses"
+  },
+  {
+   "sym": "E",
+   "concept": "energy-and-work",
+   "meaning": "the energy that results when matter is converted into energy, such as the binding energy of a nucleus",
+   "unit": "J or MeV",
+   "section": "21.2",
+   "anchor": "21.2-particles"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of the matter converted into energy, such as the mass defect of a nucleus",
+   "unit": "kg",
+   "section": "21.2",
+   "anchor": "21.2-particles"
+  },
+  {
+   "sym": "c",
+   "type": "velocity",
+   "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s",
+   "unit": "m/s",
+   "section": "21.2",
+   "anchor": "21.2-particles"
   },
   {
    "sym": "E",
@@ -189,14 +233,16 @@
    "meaning": "the energy of one photon of electromagnetic radiation, Planck’s constant times its frequency",
    "unit": "J",
    "section": "21.6",
-   "redefines": true
+   "redefines": true,
+   "anchor": "21.6-ionizing"
   },
   {
    "sym": "ν",
    "concept": "frequency",
    "meaning": "the frequency of the electromagnetic radiation, to which the energy of its photons is proportional",
    "unit": "Hz",
-   "section": "21.6"
+   "section": "21.6",
+   "anchor": "21.6-ionizing"
   }
  ]
 }

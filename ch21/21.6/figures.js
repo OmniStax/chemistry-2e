@@ -151,8 +151,9 @@ function burst(ctx, x, y, r, color, k) {
     /* the reader's frequency */
     const x = xOf(lv), cf = C('frequency');
     F.dot(ctx, x, 104, cf, true, 7);
-    line(ctx, x, SY - 8, x, SY + SH + 6, cf, 4);
-    F.dot(ctx, x, SY + SH / 2, cf, true, 9);
+    line(ctx, x, SY - 8, x, SY + 6, cf, 4);
+    line(ctx, x, SY + SH - 6, x, SY + SH + 6, cf, 4);
+    F.dot(ctx, x, SY, cf, true, 9);
     hits = [{ x, y: SY + SH / 2, r: 18, name: `ν = ${sciText(v)} Hz, ${band.name}` }].concat(BANDS.map((b) => ({ x: (b.x0 + b.x1) / 2, y: SY + SH / 2, r: 30, name: `${b.name}: ${edgeText(b.lo)} to ${edgeText(b.hi)} Hz` })));
     tex(d.readout, `\\kE = h\\knu = (6.626\\times10^{-34}\\ \\text{J s})(${sciTex(v)}\\ \\text{Hz}) = ${sciTex(E)}\\ \\text{J}`);
   }

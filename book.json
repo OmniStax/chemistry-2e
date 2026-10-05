@@ -32,7 +32,8 @@
     "ch16",
     "ch17",
     "ch18",
-    "ch19"
+    "ch19",
+    "ch20"
   ],
   "intro": {
     "module": "m68662",
@@ -12534,6 +12535,387 @@
       "section": "19.3",
       "name": "Colors of transition metal complexes",
       "statement": "A complex absorbs photons whose energy matches the gap between its d orbitals, which often lies in the visible range, and appears in the complementary color: the absorption maximum corresponds to Δ<sub>oct</sub>. Strong-field complexes absorb higher-energy violet or blue light and look yellow, orange or red, weak-field complexes absorb yellow, orange or red light and look blue-green, blue or indigo, and d¹⁰ ions such as Cu⁺ absorb no visible light and are colorless."
+    },
+    {
+      "id": "organic-compound",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Organic compound",
+      "terms": [
+        "organic compound"
+      ],
+      "statement": "An organic compound is a natural or synthetic compound that contains carbon. Most agree that a defining trait of organic molecules is the presence of carbon as the principal element, bonded to hydrogen and other carbon atoms; some carbon-containing compounds, such as carbonates, cyanides and simple oxides like CO and CO<sub>2</sub>, are not classified as organic."
+    },
+    {
+      "id": "carbon-compound-diversity",
+      "kind": "idea",
+      "section": "20.1",
+      "name": "Why carbon forms so many compounds",
+      "statement": "The existence of so many organic molecules is a consequence of the ability of carbon atoms to form up to four strong bonds to other carbon atoms, resulting in chains and rings of many different sizes, shapes, and complexities. Hydrocarbons may also differ in the types of carbon-carbon bonds in their molecules, which leads to differences in geometries and in the hybridization of the carbon orbitals."
+    },
+    {
+      "id": "alkane",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Alkane",
+      "terms": [
+        "alkane",
+        "saturated hydrocarbon"
+      ],
+      "statement": "Alkanes, or saturated hydrocarbons, contain only single covalent bonds between carbon atoms. Each carbon atom in an alkane has <i>sp</i><sup>3</sup> hybrid orbitals and is bonded to four other atoms, each either carbon or hydrogen, so the bond angles in carbon chains are close to 109.5° and the chains have a zigzag shape. Noncyclic alkanes all have a formula of C<sub>n</sub>H<sub>2n+2</sub>.",
+      "forms": [
+        {
+          "id": "eq-alkane-formula",
+          "latex": "\\text{C}_{n}\\text{H}_{2n+2}"
+        }
+      ]
+    },
+    {
+      "id": "skeletal-structure",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Skeletal structure",
+      "terms": [
+        "skeletal structure"
+      ],
+      "statement": "A skeletal structure, or line-angle structure, is a shorthand drawing of an organic molecule in which carbon atoms are represented by each end of a line or bend in a line, and hydrogen atoms attached to carbon are not drawn but are understood to be present. Atoms other than carbon and hydrogen are represented by their element symbols."
+    },
+    {
+      "id": "write-organic-structures",
+      "kind": "skill",
+      "section": "20.1",
+      "name": "Writing condensed and skeletal structures",
+      "statement": "A condensed structural formula is written to suggest the bonding in a molecule, like a Lewis structure from which most or all of the bond symbols have been removed. To draw a skeletal structure, each carbon atom is converted into the end of a line or the place where lines intersect, and the hydrogen atoms attached to carbon are left out; to read one, each carbon is given the number of hydrogen atoms it needs to make four bonds."
+    },
+    {
+      "id": "alkane-properties-trend",
+      "kind": "idea",
+      "section": "20.1",
+      "name": "Physical properties of the alkanes",
+      "statement": "Greater numbers of atoms in alkane molecules lead to stronger intermolecular attractions (dispersion forces), so properties such as melting point and boiling point usually change smoothly and predictably as the number of carbon and hydrogen atoms in the molecules changes, from gases through liquids to solids at STP."
+    },
+    {
+      "id": "alkane-structural-isomers",
+      "kind": "idea",
+      "section": "20.1",
+      "name": "Structural isomers of alkanes",
+      "statement": "Hydrocarbons with the same formula can have different structures: <i>n</i>-butane, with an unbranched chain, and 2-methylpropane, with a branched chain, are structural (constitutional) isomers of C<sub>4</sub>H<sub>10</sub>. Lewis structures that look different may represent the same molecule; drawings that contain the same arrangement of atoms and bonds, such as an unbranched chain of four carbon atoms, are not isomers."
+    },
+    {
+      "id": "substituent",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Substituent",
+      "terms": [
+        "substituent"
+      ],
+      "statement": "Substituents are branches or functional groups that replace hydrogen atoms on a chain. The position of a substituent is identified by the number of the carbon atom it is bonded to in the chain."
+    },
+    {
+      "id": "alkyl-group",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Alkyl group",
+      "terms": [
+        "alkyl group"
+      ],
+      "statement": "An alkyl group is a substituent that contains one less hydrogen than the corresponding alkane; its name drops the suffix <i>-ane</i> of the alkane and adds <i>-yl</i>. Alkyl groups do not exist as stable independent entities. A hydrocarbon whose hydrogen atoms lie in different environments, such as propane or 2-methylpropane, can form more than one alkyl group, depending on which hydrogen atom is removed."
+    },
+    {
+      "id": "naming-alkanes",
+      "kind": "skill",
+      "section": "20.1",
+      "name": "Naming alkanes",
+      "statement": "To name an alkane, first identify the longest chain of carbon atoms and name it (ethane, propane, butane, pentane up to decane), then add prefixes giving the positions and names of the substituents, numbering the chain from the end nearest the substituents so they get the lowest numbers. Several substituents are listed in alphabetical order, an electronegative substituent takes the ending <i>-o</i>, and <i>di-</i>, <i>tri-</i> and <i>tetra-</i> count substituents of the same type."
+    },
+    {
+      "id": "alkanes-as-fuels",
+      "kind": "idea",
+      "section": "20.1",
+      "name": "Alkanes as fuels",
+      "statement": "Alkanes are relatively stable, but heat or light activates reactions that break their C–H or C–C bonds. They burn in oxygen in a highly exothermic oxidation-reduction reaction that produces carbon dioxide and water, which makes them excellent fuels. The main source of liquid alkane fuels is crude oil, a complex mixture separated by fractional distillation, which takes advantage of the different boiling points of its components."
+    },
+    {
+      "id": "substitution-reaction",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Substitution reaction",
+      "terms": [
+        "substitution reaction"
+      ],
+      "statement": "In a substitution reaction, one or more of a molecule’s hydrogen atoms is replaced with a different atom or group of atoms, as when ethane reacts with chlorine to give chloroethane. No carbon-carbon bonds are broken and the hybridization of the carbon atoms does not change. It is a typical reaction of alkanes and of aromatic compounds."
+    },
+    {
+      "id": "functional-group",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Functional group",
+      "terms": [
+        "functional group"
+      ],
+      "statement": "A functional group is the part or moiety of an organic molecule that imparts a specific chemical reactivity, such as the C–Cl portion of chloroethane. The functional groups present in a molecule are major determinants of its chemical properties and are used to classify organic compounds."
+    },
+    {
+      "id": "alkene",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Alkene",
+      "terms": [
+        "alkene"
+      ],
+      "statement": "Alkenes are unsaturated hydrocarbons that contain one or more carbon-carbon double bonds. The two carbon atoms of a double bond are joined by one σ bond and one π bond, and each is trigonal planar with <i>sp</i><sup>2</sup> hybridization; ethene, C<sub>2</sub>H<sub>4</sub>, is the simplest. Because the π bond is weaker than a σ bond, alkenes are much more reactive than alkanes."
+    },
+    {
+      "id": "alkene-geometric-isomers",
+      "kind": "idea",
+      "section": "20.1",
+      "name": "Geometric isomers of alkenes",
+      "statement": "Carbon atoms rotate freely around a single bond but not around a double bond, which is rigid. Alkenes such as 2-butene therefore form geometric isomers: the <i>cis</i>-isomer has both methyl groups on the same side of the double bond and the <i>trans</i>-isomer has them on opposite sides, and the different geometries give different physical properties, such as boiling point."
+    },
+    {
+      "id": "addition-reaction",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Addition reaction",
+      "terms": [
+        "addition reaction"
+      ],
+      "statement": "In an addition reaction, the π bond of a carbon-carbon double bond is broken and replaced by two σ bonds as a reactant adds across it, so the double bond becomes a single bond and the hybridization of its carbon atoms changes from <i>sp</i><sup>2</sup> to <i>sp</i><sup>3</sup>. Halogens add to the double bond of an alkene instead of replacing hydrogen, as they do in an alkane."
+    },
+    {
+      "id": "alkyne",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Alkyne",
+      "terms": [
+        "alkyne"
+      ],
+      "statement": "Alkynes are hydrocarbons with one or more carbon-carbon triple bonds, one σ bond and two π bonds. The <i>sp</i>-hybridized carbons of the triple bond have bond angles of 180°, giving a linear, rod-like shape; ethyne, C<sub>2</sub>H<sub>2</sub> (acetylene), is the simplest. With two π bonds, alkynes react even more readily than alkenes and take up twice as much reagent in addition reactions."
+    },
+    {
+      "id": "naming-unsaturated-hydrocarbons",
+      "kind": "skill",
+      "section": "20.1",
+      "name": "Naming alkenes and alkynes",
+      "statement": "The name of an alkene is derived from the name of the alkane with the same number of carbon atoms by replacing the suffix <i>-ane</i> with <i>-ene</i>; an alkyne takes the suffix <i>-yne</i>. The location of the multiple bond is identified by the smaller of the numbers of the carbon atoms that take part in it, as in 1-butene, 2-butene and 1-butyne."
+    },
+    {
+      "id": "carbon-geometry-and-hybridization",
+      "kind": "skill",
+      "section": "20.1",
+      "name": "Geometry and hybridization of carbon atoms",
+      "statement": "The geometry and hybridization of each carbon atom follow from its bonds: a carbon with four single bonds is tetrahedral and <i>sp</i><sup>3</sup> (109.5°), a carbon in a double bond is trigonal planar and <i>sp</i><sup>2</sup> (120°), and a carbon in a triple bond is linear and <i>sp</i> (180°)."
+    },
+    {
+      "id": "aromatic-hydrocarbon",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Aromatic hydrocarbon",
+      "terms": [
+        "aromatic hydrocarbon"
+      ],
+      "statement": "Aromatic hydrocarbons, of which benzene, C<sub>6</sub>H<sub>6</sub>, is the simplest, contain rings of <i>sp</i><sup>2</sup>-hybridized carbon atoms whose unhybridized <i>p</i> orbitals form delocalized π bonds, described as a resonance hybrid. Each of benzene’s six carbon-carbon bonds is intermediate between a single and a double bond, drawn as a ring with a circle inside, and aromatic compounds undergo substitution reactions more readily than addition reactions."
+    },
+    {
+      "id": "polymer",
+      "kind": "definition",
+      "section": "20.1",
+      "name": "Polymer",
+      "statement": "Polymers are large molecules made up of repeating units called monomers. They can be natural, like starch and proteins, or synthetic, like polyethylene, which forms when the monomer ethylene is polymerized with a transition metal catalyst into long chains of –CH<sub>2</sub>– units. Plastics are synthetic organic solids that can be molded, typically organic polymers with high molecular masses."
+    },
+    {
+      "id": "hydrocarbon-derivative",
+      "kind": "idea",
+      "section": "20.2",
+      "name": "Hydrocarbon derivatives",
+      "statement": "Many organic compounds that are not hydrocarbons can be thought of as derivatives of hydrocarbons, formed by replacing one or more hydrogen atoms of a hydrocarbon by a functional group that contains at least one atom of an element other than carbon or hydrogen. Their properties are determined largely by the functional group."
+    },
+    {
+      "id": "alcohol",
+      "kind": "definition",
+      "section": "20.2",
+      "name": "Alcohol",
+      "terms": [
+        "alcohol"
+      ],
+      "statement": "Alcohols are derivatives of hydrocarbons in which an –OH group has replaced a hydrogen atom, so the hydroxyl group is bonded to a carbon atom by a covalent bond. Unlike NaOH and KOH, which are ionic compounds containing OH<sup>–</sup> ions, alcohols are covalent molecules and do not behave like bases. Alcohols with two or more hydroxyl groups include ethylene glycol and glycerine."
+    },
+    {
+      "id": "preparing-alcohols",
+      "kind": "idea",
+      "section": "20.2",
+      "name": "Preparing alcohols",
+      "statement": "Ethanol has long been prepared by yeasts fermenting sugars, and large quantities are synthesized by the addition reaction of water with ethylene using an acid as a catalyst."
+    },
+    {
+      "id": "naming-alcohols",
+      "kind": "skill",
+      "section": "20.2",
+      "name": "Naming alcohols",
+      "statement": "The name of an alcohol comes from the hydrocarbon from which it was derived: the final <i>-e</i> of the hydrocarbon’s name is replaced by <i>-ol</i>, and the number of the carbon atom to which the –OH group is bonded is placed before the name, as in 2-pentanol."
+    },
+    {
+      "id": "ether",
+      "kind": "definition",
+      "section": "20.2",
+      "name": "Ether",
+      "terms": [
+        "ether"
+      ],
+      "statement": "Ethers are compounds that contain the functional group –O–, an oxygen atom bonded to two carbon atoms, with the general formula R–O–R, where the hydrocarbon groups may be the same or different. Diethyl ether, the most widely used, is a colorless, volatile, highly flammable liquid used as a solvent."
+    },
+    {
+      "id": "naming-ethers",
+      "kind": "skill",
+      "section": "20.2",
+      "name": "Naming ethers",
+      "statement": "In the IUPAC system, the oxygen atom and the smaller carbon branch of an ether are named as an alkoxy substituent and the rest of the molecule as the base chain, as in methoxyethane. In a common name, the two branches connected to the oxygen atom are named separately and followed by “ether,” as in diethyl ether."
+    },
+    {
+      "id": "ethers-from-alcohols",
+      "kind": "idea",
+      "section": "20.2",
+      "name": "Ethers from alcohols",
+      "statement": "Ethers can be obtained from alcohols by the elimination of a molecule of water from two molecules of the alcohol; when ethanol is treated with a limited amount of sulfuric acid and heated to 140 °C, diethyl ether and water are formed."
+    },
+    {
+      "id": "carbohydrate",
+      "kind": "idea",
+      "section": "20.2",
+      "name": "Carbohydrates",
+      "statement": "Carbohydrates are large biomolecules of carbon, hydrogen and oxygen with the general formula C<sub>m</sub>(H<sub>2</sub>O)<sub>n</sub>. The smaller ones are sugars, or saccharides, classified by the number of sugar units joined together as monosaccharides, disaccharides, oligosaccharides or polysaccharides; sugars contain alcohol groups, and monosaccharide units are linked into a disaccharide by the formation of an ether.",
+      "forms": [
+        {
+          "id": "eq-carbohydrate-formula",
+          "latex": "\\text{C}_{m}(\\text{H}_{2}\\text{O})_{n}"
+        }
+      ]
+    },
+    {
+      "id": "carbonyl-group",
+      "kind": "definition",
+      "section": "20.3",
+      "name": "Carbonyl group",
+      "terms": [
+        "carbonyl group"
+      ],
+      "statement": "A carbonyl group is a carbon atom double bonded to an oxygen atom. The carbon is <i>sp</i><sup>2</sup> hybridized with trigonal planar geometry, its unhybridized <i>p</i> orbital overlapping one on oxygen to form the π bond. The C=O bond is polar, and many reactions of aldehydes and ketones start with a Lewis base attacking the carbon atom at its positive end."
+    },
+    {
+      "id": "aldehyde",
+      "kind": "definition",
+      "section": "20.3",
+      "name": "Aldehyde",
+      "terms": [
+        "aldehyde"
+      ],
+      "statement": "An aldehyde contains a carbonyl group bonded to at least one hydrogen atom, written –CHO; its name takes the suffix <i>-al</i>. Formaldehyde, HCHO, is the simplest."
+    },
+    {
+      "id": "ketone",
+      "kind": "definition",
+      "section": "20.3",
+      "name": "Ketone",
+      "terms": [
+        "ketone"
+      ],
+      "statement": "A ketone contains a carbonyl group bonded to two carbon atoms, written –C(O)– or –CO–; its name takes the suffix <i>-one</i>. Acetone, CH<sub>3</sub>COCH<sub>3</sub>, is the simplest."
+    },
+    {
+      "id": "organic-oxidation-reduction",
+      "kind": "idea",
+      "section": "20.3",
+      "name": "Oxidation and reduction of carbon",
+      "statement": "In organic molecules, a carbon atom is said to be oxidized when a carbon-hydrogen bond is replaced by a carbon-oxygen bond, and reduced when a carbon-oxygen bond is replaced by a carbon-hydrogen bond. A carbon atom attached to oxygen has a more positive oxidation number, rising from –4 in methane through methanol, formaldehyde and formic acid to +4 in carbon dioxide."
+    },
+    {
+      "id": "oxidizing-alcohols",
+      "kind": "result",
+      "section": "20.3",
+      "name": "Oxidizing alcohols to carbonyl compounds",
+      "statement": "An alcohol whose –OH group is bonded to a carbon atom bonded to no or one other carbon atom is oxidized to an aldehyde, and further to a carboxylic acid; an alcohol whose –OH carbon is attached to two other carbon atoms forms a ketone. If three carbons are attached to the carbon bonded to the –OH, there is no C–H bond to replace, and the alcohol is not susceptible to oxidation."
+    },
+    {
+      "id": "carboxylic-acid",
+      "kind": "definition",
+      "section": "20.3",
+      "name": "Carboxylic acid",
+      "terms": [
+        "carboxylic acid"
+      ],
+      "statement": "A carboxylic acid contains a carbonyl group with a second oxygen atom bonded to the carbonyl carbon by a single bond and to a hydrogen atom, the –CO<sub>2</sub>H group. Carboxylic acids are weak acids, generally only about 1% ionized in water, and the hydrogen of the functional group reacts with a base to form an ionic salt."
+    },
+    {
+      "id": "ester",
+      "kind": "definition",
+      "section": "20.3",
+      "name": "Ester",
+      "terms": [
+        "ester"
+      ],
+      "statement": "An ester contains a carbonyl group with a second oxygen atom bonded to the carbonyl carbon and to another carbon atom, the –CO<sub>2</sub>R group. Esters are produced by the reaction of acids with alcohols, as ethyl acetate forms from acetic acid and ethanol, and they give the odors and flavors of many flowers, perfumes and ripe fruits."
+    },
+    {
+      "id": "fats-and-oils",
+      "kind": "idea",
+      "section": "20.3",
+      "name": "Fats, oils, and fatty acids",
+      "statement": "Fats and oils are esters of the trihydroxyl alcohol glycerine with large carboxylic acids. Saturated fatty acids, such as palmitic and stearic acids, contain no double or triple bonds; unsaturated ones, such as oleic acid, contain a C=C double bond."
+    },
+    {
+      "id": "amine",
+      "kind": "definition",
+      "section": "20.4",
+      "name": "Amine",
+      "terms": [
+        "amine"
+      ],
+      "statement": "Amines are molecules that contain carbon-nitrogen bonds; the nitrogen atom has a lone pair of electrons and three bonds to other atoms, either carbon or hydrogen, and the names take the suffix <i>-ine</i>. In a heterocyclic amine such as pyridine, the nitrogen atom replaces a carbon atom in an aromatic ring."
+    },
+    {
+      "id": "amine-basicity",
+      "kind": "result",
+      "section": "20.4",
+      "name": "Amines as bases",
+      "statement": "Like ammonia, amines are weak bases because of the lone pair of electrons on their nitrogen atoms, which accepts a hydrogen ion. Alkaloids, amines found in plants, react with H<sub>3</sub>O<sup>+</sup> in dilute acid to form an ammonium salt, and the free amine is recovered by reaction with a base."
+    },
+    {
+      "id": "amide",
+      "kind": "definition",
+      "section": "20.4",
+      "name": "Amide",
+      "terms": [
+        "amide"
+      ],
+      "statement": "Amides are molecules that contain a nitrogen atom connected to the carbon atom of a carbonyl group; their names take the suffix <i>-amide</i>."
+    },
+    {
+      "id": "amidation",
+      "kind": "result",
+      "section": "20.4",
+      "name": "Forming amides",
+      "statement": "Amides are produced when carboxylic acids react with amines or ammonia in amidation: a water molecule is eliminated, and the amide forms from the remaining pieces of the acid and the amine, much as an ester forms from a carboxylic acid and an alcohol."
+    },
+    {
+      "id": "proteins-and-peptide-bonds",
+      "kind": "idea",
+      "section": "20.4",
+      "name": "Proteins and peptide bonds",
+      "statement": "Amino acids contain an amine group, a carboxylic acid group and a side chain. Two amino acids connect by a peptide bond, formed when the carboxylic acid group of one reacts with the amine group of the other in a condensation reaction that produces water; a chain of amino acids is a polypeptide, and proteins contain at least one long polypeptide chain folded into a specific three-dimensional structure."
+    },
+    {
+      "id": "dna-structure",
+      "kind": "idea",
+      "section": "20.4",
+      "name": "The structure of DNA",
+      "statement": "DNA is a polymer of four nucleotides, each a nitrogenous base bonded to the five-carbon sugar deoxyribose, which is bonded to a phosphate group. Two strands, each a backbone of sugars and phosphates with the bases sticking out, coil around each other in a double helix held together by hydrogen bonds between the bases."
+    },
+    {
+      "id": "kevlar-polyamide",
+      "kind": "idea",
+      "section": "20.4",
+      "name": "Kevlar, a polyamide",
+      "statement": "Kevlar is a synthetic polyamide made from 1,4-phenylene-diamine and terephthaloyl chloride. It owes much of its strength to hydrogen bonds between the carbonyl oxygen atom of one chain and the N–H hydrogen atom of an adjacent chain, with more from aromatic stacking of the six-membered rings."
     }
   ],
   "concept_prereqs": [
@@ -21924,6 +22306,366 @@
     {
       "concept": "colors-of-complexes",
       "prereq": "ligand-field-strength"
+    },
+    {
+      "concept": "organic-compound",
+      "prereq": "molecular-compounds"
+    },
+    {
+      "concept": "carbon-compound-diversity",
+      "prereq": "organic-compound"
+    },
+    {
+      "concept": "carbon-compound-diversity",
+      "prereq": "hybridization"
+    },
+    {
+      "concept": "alkane",
+      "prereq": "hydrocarbon"
+    },
+    {
+      "concept": "alkane",
+      "prereq": "sp3-hybrid-orbital"
+    },
+    {
+      "concept": "skeletal-structure",
+      "prereq": "structural-formula"
+    },
+    {
+      "concept": "skeletal-structure",
+      "prereq": "organic-compound"
+    },
+    {
+      "concept": "write-organic-structures",
+      "prereq": "skeletal-structure"
+    },
+    {
+      "concept": "write-organic-structures",
+      "prereq": "alkane"
+    },
+    {
+      "concept": "alkane-properties-trend",
+      "prereq": "alkane"
+    },
+    {
+      "concept": "alkane-properties-trend",
+      "prereq": "dispersion-forces"
+    },
+    {
+      "concept": "alkane-properties-trend",
+      "prereq": "boiling-point"
+    },
+    {
+      "concept": "alkane-structural-isomers",
+      "prereq": "alkane"
+    },
+    {
+      "concept": "alkane-structural-isomers",
+      "prereq": "structural-isomer"
+    },
+    {
+      "concept": "substituent",
+      "prereq": "alkane"
+    },
+    {
+      "concept": "alkyl-group",
+      "prereq": "substituent"
+    },
+    {
+      "concept": "naming-alkanes",
+      "prereq": "alkyl-group"
+    },
+    {
+      "concept": "naming-alkanes",
+      "prereq": "nomenclature"
+    },
+    {
+      "concept": "alkanes-as-fuels",
+      "prereq": "alkane"
+    },
+    {
+      "concept": "alkanes-as-fuels",
+      "prereq": "combustion-reaction"
+    },
+    {
+      "concept": "alkanes-as-fuels",
+      "prereq": "distillation"
+    },
+    {
+      "concept": "substitution-reaction",
+      "prereq": "alkane"
+    },
+    {
+      "concept": "functional-group",
+      "prereq": "organic-compound"
+    },
+    {
+      "concept": "alkene",
+      "prereq": "hydrocarbon"
+    },
+    {
+      "concept": "alkene",
+      "prereq": "pi-bonds-from-unhybridized-orbitals"
+    },
+    {
+      "concept": "alkene-geometric-isomers",
+      "prereq": "alkene"
+    },
+    {
+      "concept": "alkene-geometric-isomers",
+      "prereq": "restricted-rotation-about-pi-bonds"
+    },
+    {
+      "concept": "alkene-geometric-isomers",
+      "prereq": "spatial-isomer"
+    },
+    {
+      "concept": "addition-reaction",
+      "prereq": "alkene"
+    },
+    {
+      "concept": "alkyne",
+      "prereq": "hydrocarbon"
+    },
+    {
+      "concept": "alkyne",
+      "prereq": "pi-bonds-from-unhybridized-orbitals"
+    },
+    {
+      "concept": "naming-unsaturated-hydrocarbons",
+      "prereq": "naming-alkanes"
+    },
+    {
+      "concept": "naming-unsaturated-hydrocarbons",
+      "prereq": "alkene"
+    },
+    {
+      "concept": "naming-unsaturated-hydrocarbons",
+      "prereq": "alkyne"
+    },
+    {
+      "concept": "carbon-geometry-and-hybridization",
+      "prereq": "assign-hybridization"
+    },
+    {
+      "concept": "carbon-geometry-and-hybridization",
+      "prereq": "alkane"
+    },
+    {
+      "concept": "carbon-geometry-and-hybridization",
+      "prereq": "alkene"
+    },
+    {
+      "concept": "carbon-geometry-and-hybridization",
+      "prereq": "alkyne"
+    },
+    {
+      "concept": "aromatic-hydrocarbon",
+      "prereq": "hydrocarbon"
+    },
+    {
+      "concept": "aromatic-hydrocarbon",
+      "prereq": "resonance-and-delocalization"
+    },
+    {
+      "concept": "polymer",
+      "prereq": "alkene"
+    },
+    {
+      "concept": "hydrocarbon-derivative",
+      "prereq": "functional-group"
+    },
+    {
+      "concept": "hydrocarbon-derivative",
+      "prereq": "hydrocarbon"
+    },
+    {
+      "concept": "alcohol",
+      "prereq": "hydrocarbon-derivative"
+    },
+    {
+      "concept": "preparing-alcohols",
+      "prereq": "alcohol"
+    },
+    {
+      "concept": "preparing-alcohols",
+      "prereq": "addition-reaction"
+    },
+    {
+      "concept": "preparing-alcohols",
+      "prereq": "catalyst"
+    },
+    {
+      "concept": "naming-alcohols",
+      "prereq": "alcohol"
+    },
+    {
+      "concept": "naming-alcohols",
+      "prereq": "naming-alkanes"
+    },
+    {
+      "concept": "ether",
+      "prereq": "hydrocarbon-derivative"
+    },
+    {
+      "concept": "naming-ethers",
+      "prereq": "ether"
+    },
+    {
+      "concept": "naming-ethers",
+      "prereq": "naming-alkanes"
+    },
+    {
+      "concept": "ethers-from-alcohols",
+      "prereq": "ether"
+    },
+    {
+      "concept": "ethers-from-alcohols",
+      "prereq": "alcohol"
+    },
+    {
+      "concept": "carbohydrate",
+      "prereq": "alcohol"
+    },
+    {
+      "concept": "carbohydrate",
+      "prereq": "ether"
+    },
+    {
+      "concept": "carbohydrate",
+      "prereq": "polymer"
+    },
+    {
+      "concept": "carbonyl-group",
+      "prereq": "functional-group"
+    },
+    {
+      "concept": "carbonyl-group",
+      "prereq": "pi-bonds-from-unhybridized-orbitals"
+    },
+    {
+      "concept": "carbonyl-group",
+      "prereq": "polar-covalent-bond"
+    },
+    {
+      "concept": "aldehyde",
+      "prereq": "carbonyl-group"
+    },
+    {
+      "concept": "ketone",
+      "prereq": "carbonyl-group"
+    },
+    {
+      "concept": "organic-oxidation-reduction",
+      "prereq": "redox-reaction"
+    },
+    {
+      "concept": "organic-oxidation-reduction",
+      "prereq": "organic-compound"
+    },
+    {
+      "concept": "oxidizing-alcohols",
+      "prereq": "organic-oxidation-reduction"
+    },
+    {
+      "concept": "oxidizing-alcohols",
+      "prereq": "alcohol"
+    },
+    {
+      "concept": "oxidizing-alcohols",
+      "prereq": "aldehyde"
+    },
+    {
+      "concept": "oxidizing-alcohols",
+      "prereq": "ketone"
+    },
+    {
+      "concept": "oxidizing-alcohols",
+      "prereq": "carboxylic-acid"
+    },
+    {
+      "concept": "carboxylic-acid",
+      "prereq": "carbonyl-group"
+    },
+    {
+      "concept": "carboxylic-acid",
+      "prereq": "weak-acid"
+    },
+    {
+      "concept": "ester",
+      "prereq": "carboxylic-acid"
+    },
+    {
+      "concept": "ester",
+      "prereq": "alcohol"
+    },
+    {
+      "concept": "fats-and-oils",
+      "prereq": "ester"
+    },
+    {
+      "concept": "fats-and-oils",
+      "prereq": "alkane"
+    },
+    {
+      "concept": "fats-and-oils",
+      "prereq": "alkene"
+    },
+    {
+      "concept": "amine",
+      "prereq": "hydrocarbon-derivative"
+    },
+    {
+      "concept": "amine-basicity",
+      "prereq": "amine"
+    },
+    {
+      "concept": "amine-basicity",
+      "prereq": "weak-base"
+    },
+    {
+      "concept": "amide",
+      "prereq": "amine"
+    },
+    {
+      "concept": "amide",
+      "prereq": "carbonyl-group"
+    },
+    {
+      "concept": "amidation",
+      "prereq": "amide"
+    },
+    {
+      "concept": "amidation",
+      "prereq": "carboxylic-acid"
+    },
+    {
+      "concept": "proteins-and-peptide-bonds",
+      "prereq": "amidation"
+    },
+    {
+      "concept": "proteins-and-peptide-bonds",
+      "prereq": "polymer"
+    },
+    {
+      "concept": "dna-structure",
+      "prereq": "polymer"
+    },
+    {
+      "concept": "dna-structure",
+      "prereq": "hydrogen-bonding"
+    },
+    {
+      "concept": "kevlar-polyamide",
+      "prereq": "amide"
+    },
+    {
+      "concept": "kevlar-polyamide",
+      "prereq": "polymer"
+    },
+    {
+      "concept": "kevlar-polyamide",
+      "prereq": "hydrogen-bonding"
     }
   ],
   "sheets": [

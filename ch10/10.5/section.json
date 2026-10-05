@@ -4,7 +4,7 @@
  "chapter": "10",
  "title": "The Solid State of Matter",
  "short": "The Solid State of Matter",
- "lead": "A solid may hold its particles in a definite repeating pattern or in no pattern at all. Crystalline solids differ from amorphous ones, and the crystalline solids divide into ionic, metallic, covalent network and molecular solids by the <span data-concept=\"force\">forces</span> that hold their particles together. Those <span data-concept=\"force\">forces</span> explain their properties. Defects interrupt a crystal’s pattern.",
+ "lead": "A solid may hold its particles in a definite repeating pattern or in no pattern at all, and crystalline solids divide into ionic, metallic, covalent network and molecular solids by the <span data-concept=\"force\">forces</span> that hold their particles together. Those <span data-concept=\"force\">forces</span> explain the properties of each kind, and defects interrupt a crystal’s pattern.",
  "objectives": [
   "Define and describe the bonding and properties of ionic, molecular, metallic, and covalent network crystalline solids",
   "Describe the main types of crystalline solids: ionic solids, metallic solids, covalent network solids, and molecular solids",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -94,13 +98,21 @@
     }
    ]
   },
-  { "id": "fig-defects", "kind": "figure", "number": "10.45", "originals": ["/media/ch10/CNX_Chem_10_05_CrystDfcts.jpg"], "original_caption": "Types of crystal defects include vacancies, interstitial atoms, and substitutions impurities.", "draws": [], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] }
+  {
+   "id": "fig-defects",
+   "kind": "figure",
+   "number": "10.45",
+   "originals": ["/media/ch10/CNX_Chem_10_05_CrystDfcts.jpg"],
+   "original_caption": "Types of crystal defects include vacancies, interstitial atoms, and substitutions impurities.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
+  }
  ],
  "coverage": [
   { "span": "crystalline-amorphous", "concept": "crystalline-and-amorphous-solids", "verb": "introduces" },

@@ -4,7 +4,7 @@
  "chapter": "10",
  "title": "Phase Diagrams",
  "short": "Phase Diagrams",
- "lead": "The melting points, boiling points and <span data-concept=\"vapor-pressure\">vapor pressures</span> of a substance, measured over a wide range of <span data-concept=\"gas-pressure\">pressures</span>, can be gathered into one graph. A phase diagram maps the solid, liquid and gaseous states of a substance on a plane of <span data-concept=\"gas-pressure\">pressure</span> and <span data-concept=\"temperature\">temperature</span>. Its curves give the phase-transition <span data-concept=\"temperature\">temperatures</span> at any <span data-concept=\"gas-pressure\">pressure</span>, and all three curves meet at the triple point. Above the critical point, no liquid exists, and the substance becomes a supercritical fluid.",
+ "lead": "The melting points, boiling points and <span data-concept=\"vapor-pressure\">vapor pressures</span> of a substance, measured over a wide range of <span data-concept=\"gas-pressure\">pressures</span>, can be gathered into one graph. A phase diagram maps the solid, liquid and gaseous states of a substance on a plane of <span data-concept=\"gas-pressure\">pressure</span> and <span data-concept=\"temperature\">temperature</span>, and its curves, its triple point and its critical point tell us which state a sample takes under any conditions.",
  "objectives": [
   "Explain the construction and use of a typical phase diagram",
   "Use phase diagrams to identify stable phases at given temperatures and pressures, and to describe phase transitions resulting from changes in these properties",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [

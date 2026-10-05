@@ -4,7 +4,7 @@
  "chapter": "10",
  "title": "Properties of Liquids",
  "short": "Properties of Liquids",
- "lead": "The attractions between the molecules of a liquid show in how the liquid behaves. Cohesive forces between like molecules explain viscosity, a liquid’s resistance to flow, and <span data-concept=\"surface-tension\">surface tension</span>, the tough skin of its surface. Adhesive forces between a liquid and a surface it touches compete with them. The balance decides whether the liquid wets the surface, which way its meniscus curves, and how high it climbs in a narrow tube.",
+ "lead": "The attractions between the molecules of a liquid show in how the liquid behaves: cohesive forces between like molecules explain viscosity, a liquid’s resistance to flow, and <span data-concept=\"surface-tension\">surface tension</span>, the tough skin of its surface. Adhesive forces between a liquid and a surface it touches compete with them, and the contest shapes how the liquid wets the surface, which way its meniscus curves and how it moves in a narrow tube.",
  "objectives": [
   "Distinguish between adhesive and cohesive forces",
   "Define viscosity, surface tension, and capillary rise",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [

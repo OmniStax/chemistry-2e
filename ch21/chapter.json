@@ -159,6 +159,44 @@
    "meaning": "the number of nuclei of the radioisotope in the sample",
    "unit": "none",
    "section": "21.6"
+  },
+  {
+   "sym": "t",
+   "concept": "time",
+   "meaning": "a time: the time a part of the head spends in the beam of a cobalt-60 machine, or the time over which charge reaches a plate of a smoke detector",
+   "unit": "min or s",
+   "section": "21.5",
+   "redefines": true
+  },
+  {
+   "sym": "I",
+   "concept": "electric-current",
+   "meaning": "the current through the ionization chamber of a smoke detector",
+   "unit": "A",
+   "section": "21.5"
+  },
+  {
+   "sym": "Q_charge",
+   "type": "charge",
+   "meaning": "the charge the positive ions carry to the negative plate of the chamber in a time t",
+   "unit": "C",
+   "section": "21.5"
+  },
+  {
+   "sym": "E",
+   "concept": "photon-energy",
+   "type": "energy",
+   "meaning": "the energy of one photon of electromagnetic radiation, Planck’s constant times its frequency",
+   "unit": "J",
+   "section": "21.6",
+   "redefines": true
+  },
+  {
+   "sym": "ν",
+   "concept": "frequency",
+   "meaning": "the frequency of the electromagnetic radiation, to which the energy of its photons is proportional",
+   "unit": "Hz",
+   "section": "21.6"
   }
  ]
 }

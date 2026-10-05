@@ -1,0 +1,342 @@
+{
+  "id": "21.5",
+  "module": "m68857",
+  "chapter": "21",
+  "title": "Uses of Radioisotopes",
+  "short": "Uses of Radioisotopes",
+  "lead": "Radioisotopes behave chemically like the stable isotopes of their elements, but their radiation gives them away. This section surveys how they are put to work as <span data-concept=\"radioactive-tracer\">radioactive tracers</span>, in finding and treating disease through <span data-concept=\"radiation-therapy\">radiation therapy</span>, and in agriculture, industry and the home.",
+  "objectives": [
+    "List common applications of radioactive isotopes"
+  ],
+  "summary_html": "<p>Compounds known as <span data-concept=\"radioactive-tracer\">radioactive tracers</span> can be used to follow reactions, track the distribution of a substance, diagnose and treat medical conditions, and much more. Other radioactive substances are helpful for controlling pests, visualizing structures, providing fire warnings, and for many other applications. Hundreds of millions of nuclear medicine tests and procedures, using a wide variety of radioisotopes with relatively short <span data-concept=\"radioactive-half-life\">half-lives</span>, are performed every year in the US. Most of these radioisotopes have relatively short <span data-concept=\"radioactive-half-life\">half-lives</span>; some are short enough that the radioisotope must be made on-site at medical facilities. <span data-concept=\"radiation-therapy\">Radiation therapy</span> uses high-energy radiation to kill cancer cells by damaging their DNA. The radiation used for this treatment may be delivered externally or internally.</p>",
+  "notes": "Nothing in the section’s text is left out. The book prints no header in this section; Radioactive Tracers, Radiation Therapy and Other Uses of Radioisotopes are OmniStax’s own. The text is kept as printed, with “Radioimmunossays”, “Grave’s disease” and Tc-99m’s half-life of 6.01 hours, which Table 21.2 gives as 8.01 hours.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed numerical exercise fs-idp183594912 (when a patient injected with technetium-99m may leave the hospital) is left out, and no answer is computed for it. The exercise fs-idp88874912 names iodine-131 and then I-133, and its key writes the decay of ¹³³I; both are kept as printed.",
+  "figures": [
+    {
+      "id": "fig-thallium",
+      "kind": "photo",
+      "number": "21.24",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-tc99",
+      "kind": "photo",
+      "number": "21.25",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-gantry",
+      "kind": "sim",
+      "number": "21.26",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_05_RadTherapy.jpg"
+      ],
+      "original_caption": "The cartoon in (a) shows a cobalt-60 machine used in the treatment of cancer. The diagram in (b) shows how the gantry of the Co-60 machine swings through an arc, focusing radiation on the targeted region (tumor) and minimizing the amount of radiation that passes through nearby regions.",
+      "draws": [
+        "time",
+        "angle",
+        "length"
+      ],
+      "conventions": [
+        "gamma"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-co60-decay",
+      "kind": "sim",
+      "number": "21.27",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_05_Co60Decay.jpg"
+      ],
+      "original_caption": "Co-60 undergoes a series of radioactive decays. The γ emissions are used for radiation therapy.",
+      "draws": [
+        "energy",
+        "time"
+      ],
+      "conventions": [
+        "e-",
+        "gamma"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-uses",
+      "kind": "photo",
+      "number": "21.28",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-smoke",
+      "kind": "sim",
+      "number": "21.29",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_05_SmokeAlarm.jpg"
+      ],
+      "original_caption": "Inside a smoke detector, Am-241 emits α particles that ionize the air, creating a small electric current. During a fire, smoke particles impede the flow of ions, reducing the current and triggering an alarm. (credit a: modification of work by “Muffet”/Wikimedia Commons)",
+      "draws": [
+        "current",
+        "charge",
+        "time"
+      ],
+      "conventions": [
+        "p+",
+        "n0",
+        "N",
+        "O",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "tracers",
+      "concept": "radioactive-tracer",
+      "verb": "introduces"
+    },
+    {
+      "span": "tracers",
+      "concept": "medical-radioisotopes",
+      "verb": "introduces"
+    },
+    {
+      "span": "tracers",
+      "concept": "isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "tracers",
+      "concept": "radioactive-half-life",
+      "verb": "uses"
+    },
+    {
+      "span": "tracers",
+      "concept": "gamma-ray",
+      "verb": "uses"
+    },
+    {
+      "span": "tracers",
+      "concept": "beta-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "tracers",
+      "concept": "parent-and-daughter-nuclides",
+      "verb": "uses"
+    },
+    {
+      "span": "tracers",
+      "concept": "polyatomic-ions",
+      "verb": "uses"
+    },
+    {
+      "span": "therapy",
+      "concept": "radiation-therapy",
+      "verb": "introduces"
+    },
+    {
+      "span": "therapy",
+      "concept": "chemotherapy",
+      "verb": "introduces"
+    },
+    {
+      "span": "therapy",
+      "concept": "gamma-ray",
+      "verb": "uses"
+    },
+    {
+      "span": "therapy",
+      "concept": "beta-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "therapy",
+      "concept": "gamma-emission",
+      "verb": "uses"
+    },
+    {
+      "span": "therapy",
+      "concept": "nuclear-transmutation",
+      "verb": "uses"
+    },
+    {
+      "span": "therapy",
+      "concept": "radioactive-half-life",
+      "verb": "uses"
+    },
+    {
+      "span": "therapy",
+      "concept": "balanced-nuclear-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "other-uses",
+      "concept": "uses-of-radiation",
+      "verb": "introduces"
+    },
+    {
+      "span": "other-uses",
+      "concept": "radioactive-tracer",
+      "verb": "uses"
+    },
+    {
+      "span": "other-uses",
+      "concept": "photosynthesis",
+      "verb": "uses"
+    },
+    {
+      "span": "other-uses",
+      "concept": "gamma-ray",
+      "verb": "uses"
+    },
+    {
+      "span": "other-uses",
+      "concept": "alpha-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "other-uses",
+      "concept": "alpha-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "other-uses",
+      "concept": "radioactive-half-life",
+      "verb": "uses"
+    },
+    {
+      "span": "other-uses",
+      "concept": "electric-current",
+      "verb": "uses"
+    },
+    {
+      "span": "other-uses",
+      "concept": "ion",
+      "verb": "uses"
+    },
+    {
+      "span": "other-uses",
+      "concept": "electrical-potential",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "e1",
+      "source_id": "fs-idp257856896",
+      "source_number": "55",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "tracers",
+      "prompt": "How can a radioactive nuclide be used to show that the equilibrium:<br>$\\text{AgCl}(s)\\;\\rightleftharpoons \\;{\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$<br>is a dynamic equilibrium?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Introduction of either radioactive Ag<sup>+</sup> or radioactive Cl<sup>–</sup> into the solution containing the stated reaction, with subsequent time given for equilibration, will produce a radioactive precipitate that was originally devoid of radiation."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp88874912",
+      "source_number": "57",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "tracers",
+      "prompt": "Iodine that enters the body is stored in the thyroid gland from which it is released to control growth and metabolism. The thyroid can be imaged if iodine-131 is injected into the body. In larger doses, I-133 is also used as a means of treating cancer of the thyroid. I-131 has a half-life of 8.70 days and decays by β<sup>−</sup> emission.<br>(a) Write an equation for the decay.<br>(b) How long will it take for 95.0% of a dose of I-131 to decay?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) ${}_{\\;53}^{133}\\text{I}\\;\\longrightarrow \\;{}_{\\;54}^{133}\\text{Xe}+{}_{−1}^{\\;0}\\text{e};$ (b) 37.6 days"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "e1",
+      "concept": "radioactive-tracer"
+    },
+    {
+      "exercise": "e1",
+      "concept": "equilibrium-is-dynamic"
+    },
+    {
+      "exercise": "e2",
+      "concept": "medical-radioisotopes"
+    },
+    {
+      "exercise": "e2",
+      "concept": "beta-decay"
+    },
+    {
+      "exercise": "e2",
+      "concept": "radioactive-half-life"
+    },
+    {
+      "exercise": "e2",
+      "concept": "first-order-radioactive-decay"
+    }
+  ],
+  "referents": []
+}

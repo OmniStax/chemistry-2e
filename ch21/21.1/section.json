@@ -1,0 +1,634 @@
+{
+ "id": "21.1",
+ "module": "m68851",
+ "chapter": "21",
+ "title": "Nuclear Structure and Stability",
+ "short": "Nuclear Stability",
+ "lead": "A nucleus packs its protons and neutrons, held by the strong nuclear force, into a space a hundred thousand times smaller than the atom. The section turns the mass a nucleus loses as it forms into its binding energy with <em>E</em> = <em>mc</em><sup>2</sup>, and reads which nuclei are stable from a plot of neutrons against protons and from the binding energy per nucleon.",
+ "objectives": [
+  "Describe nuclear structure in terms of protons, neutrons, and electrons",
+  "Calculate mass defect and binding energy for nuclei",
+  "Explain trends in the relative stability of nuclei"
+ ],
+ "summary_html": "<p>An atomic nucleus consists of protons and neutrons, collectively called <span data-concept=\"nucleon\">nucleons</span>. Although protons repel each other, the nucleus is held tightly together by a short-range, but very strong, force called the <span data-concept=\"strong-nuclear-force\">strong nuclear force</span>. A nucleus has less mass than the total mass of its constituent nucleons. This “missing” mass is the <span data-concept=\"mass-defect\">mass defect</span>, which has been converted into the <span data-concept=\"nuclear-binding-energy\">binding energy</span> that holds the nucleus together according to Einstein’s <span data-concept=\"mass-energy-equivalence\">mass-energy equivalence equation</span>, $\\kE=\\km{\\kc}^{2}$. Of the many <span data-concept=\"nuclide\">nuclides</span> that exist, only a small number are stable. Nuclides with even numbers of protons or neutrons, or those with <span data-concept=\"magic-number\">magic numbers</span> of nucleons, are especially likely to be stable. These stable nuclides occupy a narrow <span data-concept=\"band-of-stability\">band of stability</span> on a graph of number of protons versus number of neutrons. The <span data-concept=\"binding-energy-per-nucleon\">binding energy per nucleon</span> is largest for the elements with mass numbers near 56; these are the most stable nuclei.</p>",
+ "notes": "The section’s opening, which the book prints without a header, carries one of OmniStax’s own, and the Link to Learning note on the four fundamental forces is left out. It keeps as printed “divided by the number or nucleons” and Example 21.3’s “the same process as in Example 21.1”, where the process is that of Example 21.2.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and the suggested approach are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idm1122208 (four isotopes in nuclide notation), fs-idm82455680 (the protons, neutrons and electrons of four isotopes), fs-idm91931648 (the density of a magnesium-24 nucleus) and fs-idm82186208 (the binding energy of sodium-23) are left out, and no answer is computed for them. The unkeyed choice item fs-idp43351040 is kept open with its options and a suggested approach. Exercise fs-idp74968928, the binding energy of fluorine-19, is taken from 21.2, since it tests only this section; its key gives 148.8 MeV where the Check Your Learning of Example 21.2 gives 148.4 MeV for the same nuclide, and both are carried as printed.",
+ "figures": [
+  {
+   "id": "sim-band-stability",
+   "kind": "sim",
+   "number": "21.2",
+   "originals": [
+    "/media/ch21/CNX_Chem_21_01_BandStable.jpg"
+   ],
+   "original_caption": "This plot shows the nuclides that are known to exist and those that are stable. The stable nuclides are indicated in blue, and the unstable nuclides are indicated in green. Note that all isotopes of elements with atomic numbers greater than 83 are unstable. The solid line is the line where n = Z.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-binding-curve",
+   "kind": "sim",
+   "number": "21.3",
+   "originals": [
+    "/media/ch21/CNX_Chem_21_01_BindEnergy.jpg"
+   ],
+   "original_caption": "The binding energy per nucleon is largest for nuclides with mass number of approximately 56.",
+   "draws": [
+    "energy",
+    "mass",
+    "velocity"
+   ],
+   "conventions": [
+    "p+",
+    "n0"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "nitrogen-14",
+   "label": "nitrogen-14",
+   "figures": [
+    "sim-band-stability"
+   ]
+  },
+  {
+   "id": "iron-56",
+   "label": "iron-56",
+   "figures": [
+    "sim-band-stability"
+   ]
+  },
+  {
+   "id": "lead-207",
+   "label": "lead-207",
+   "figures": [
+    "sim-band-stability"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "nucleus",
+   "concept": "nuclear-chemistry",
+   "verb": "introduces"
+  },
+  {
+   "span": "nucleus",
+   "concept": "nuclide",
+   "verb": "introduces"
+  },
+  {
+   "span": "nucleus",
+   "concept": "nucleon",
+   "verb": "introduces"
+  },
+  {
+   "span": "nucleus",
+   "concept": "nuclear-density",
+   "verb": "introduces"
+  },
+  {
+   "span": "nucleus",
+   "concept": "nucleus",
+   "verb": "uses"
+  },
+  {
+   "span": "nucleus",
+   "concept": "proton",
+   "verb": "uses"
+  },
+  {
+   "span": "nucleus",
+   "concept": "neutron",
+   "verb": "uses"
+  },
+  {
+   "span": "nucleus",
+   "concept": "atomic-number",
+   "verb": "uses"
+  },
+  {
+   "span": "nucleus",
+   "concept": "mass-number",
+   "verb": "uses"
+  },
+  {
+   "span": "nucleus",
+   "concept": "isotopes",
+   "verb": "uses"
+  },
+  {
+   "span": "nucleus",
+   "concept": "isotope-symbols",
+   "verb": "uses"
+  },
+  {
+   "span": "nucleus",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-neutron-star",
+   "concept": "density",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-neutron-star",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-neutron-star",
+   "concept": "mass",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-neutron-star",
+   "concept": "nuclear-density",
+   "verb": "reinforces"
+  },
+  {
+   "span": "strong-force",
+   "concept": "strong-nuclear-force",
+   "verb": "introduces"
+  },
+  {
+   "span": "strong-force",
+   "concept": "nucleon",
+   "verb": "uses"
+  },
+  {
+   "span": "binding",
+   "concept": "mass-defect",
+   "verb": "introduces"
+  },
+  {
+   "span": "binding",
+   "concept": "nuclear-binding-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "binding",
+   "concept": "mass-energy-equivalence",
+   "verb": "introduces"
+  },
+  {
+   "span": "binding",
+   "concept": "electron-volt",
+   "verb": "introduces"
+  },
+  {
+   "span": "binding",
+   "concept": "atomic-mass-unit",
+   "verb": "uses"
+  },
+  {
+   "span": "binding",
+   "concept": "mass-spectrometry",
+   "verb": "uses"
+  },
+  {
+   "span": "binding",
+   "concept": "energy-and-work",
+   "verb": "uses"
+  },
+  {
+   "span": "binding",
+   "concept": "mass",
+   "verb": "uses"
+  },
+  {
+   "span": "binding",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-binding-energy",
+   "concept": "binding-energy-calculation",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-binding-energy",
+   "concept": "molar-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-binding-energy",
+   "concept": "avogadro-number",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-binding-energy",
+   "concept": "joule",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-binding-energy",
+   "concept": "mass-defect",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-binding-energy",
+   "concept": "mass-energy-equivalence",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-binding-energy",
+   "concept": "electron-volt",
+   "verb": "reinforces"
+  },
+  {
+   "span": "stability",
+   "concept": "band-of-stability",
+   "verb": "introduces"
+  },
+  {
+   "span": "stability",
+   "concept": "radioactivity",
+   "verb": "introduces"
+  },
+  {
+   "span": "stability",
+   "concept": "isotopes",
+   "verb": "uses"
+  },
+  {
+   "span": "stability",
+   "concept": "strong-nuclear-force",
+   "verb": "uses"
+  },
+  {
+   "span": "magic",
+   "concept": "magic-number",
+   "verb": "introduces"
+  },
+  {
+   "span": "magic",
+   "concept": "noble-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "per-nucleon",
+   "concept": "binding-energy-per-nucleon",
+   "verb": "introduces"
+  },
+  {
+   "span": "per-nucleon",
+   "concept": "nuclear-binding-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-per-nucleon",
+   "concept": "binding-energy-calculation",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-per-nucleon",
+   "concept": "binding-energy-per-nucleon",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-per-nucleon",
+   "concept": "mass-defect",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp85198000",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-neutron-star"
+   },
+   "cite": "ex-neutron-star",
+   "prompt": "Find the density of a neutron star with a mass of <span data-type=\"mass\">1.97 solar masses</span> and a diameter of <span data-type=\"length\">13 km</span>, and compare it to the density of a hydrogen nucleus, which has a diameter of <span data-type=\"length\">1.75 fm</span> (1 fm = 1 × 10<sup>–15</sup> m).",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The density of the neutron star is 3.4 × 10<sup>18</sup> kg/m<sup>3</sup>. The density of a hydrogen nucleus is 6.0 × 10<sup>17</sup> kg/m<sup>3</sup>. The neutron star is 5.7 times denser than the hydrogen nucleus."
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm18254784",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-binding-energy"
+   },
+   "cite": "ex-binding-energy",
+   "prompt": "What is the binding energy for the nuclide ${}_{\\;9}^{19}\\text{F}$ (atomic mass: <span data-type=\"mass\">18.9984 amu</span>) in MeV per nucleus?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 148.4,
+    "unit": "MeV",
+    "tol": 0.01,
+    "solution": "148.4 MeV"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp47733552",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-per-nucleon"
+   },
+   "cite": "ex-per-nucleon",
+   "prompt": "What is the binding energy per nucleon in ${}_{\\;9}^{19}\\text{F}$ (atomic mass, <span data-type=\"mass\">18.9984 amu</span>)?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 7.81,
+    "unit": "MeV/nucleon",
+    "tol": 0.01,
+    "solution": "7.810 MeV/nucleon"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm84959200",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "nucleus",
+   "prompt": "Write the following isotopes in hyphenated form (e.g., “carbon-14”)<br>(a) ${}_{11}^{24}\\text{Na}$<br>(b) ${}_{13}^{29}\\text{Al}$<br>(c) ${}_{36}^{73}\\text{Kr}$<br>(d) ${}_{\\;77}^{194}\\text{Ir}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) sodium-24; (b) aluminum-29; (c) krypton-73; (d) iridium-194"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm73167408",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "nucleus",
+   "prompt": "For the following isotopes that have missing information, fill in the missing information to complete the notation<br>(a) ${}_{14}^{34}\\text{X}$<br>(b) ${}_{\\;\\text{X}}^{36}\\text{P}$<br>(c) ${}_{\\;\\text{X}}^{57}\\text{Mn}$<br>(d) ${}_{\\;56}^{121}\\text{X}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${}_{14}^{34}\\text{Si};$ (b) ${}_{15}^{36}\\text{P};$ (c) ${}_{25}^{57}\\text{Mn};$ (d) ${}_{\\;56}^{121}\\text{Ba}$"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp89003008",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "nucleus",
+   "prompt": "Write the nuclide notation, including charge if applicable, for atoms with the following characteristics:<br>(a) 25 protons, 20 neutrons, 24 electrons<br>(b) 45 protons, 24 neutrons, 43 electrons<br>(c) 53 protons, 89 neutrons, 54 electrons<br>(d) 97 protons, 146 neutrons, 97 electrons",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${}_{25}^{45}{\\text{Mn}}^{+1};$ (b) ${}_{45}^{69}{\\text{Rh}}^{+2};$ (c) ${}_{\\;53}^{142}{\\text{I}}^{−1};$ (d) ${}_{\\;97}^{243}\\text{Bk}$"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp167345472",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "binding",
+   "prompt": "What are the two principal differences between nuclear reactions and ordinary chemical changes?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Nuclear reactions usually change one type of nucleus into another; chemical changes rearrange atoms. Nuclear reactions involve much larger energies than chemical reactions and have measureable mass changes."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm96451808",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "stability",
+   "figure": {
+    "src": "/media/ch21/CNX_Chem_21_01_BandStable.jpg",
+    "alt": "A plot of the number of neutrons against the number of protons, with the stable nuclides in a narrow band inside a wider band of radioactive nuclides, and the straight line where n equals Z beneath them."
+   },
+   "prompt": "Which of the following nuclei lie within the band of stability shown in Figure 21.2?<br>(a) chlorine-37<br>(b) calcium-40<br>(c) <sup>204</sup>Bi<br>(d) <sup>56</sup>Fe<br>(e) <sup>206</sup>Pb<br>(f) <sup>211</sup>Pb<br>(g) <sup>222</sup>Rn<br>(h) carbon-14",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a), (b), (c), (d), and (e)"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp43351040",
+   "source_number": "10",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "stability",
+   "figure": {
+    "src": "/media/ch21/CNX_Chem_21_01_BandStable.jpg",
+    "alt": "A plot of the number of neutrons against the number of protons, with the stable nuclides in a narrow band inside a wider band of radioactive nuclides, and the straight line where n equals Z beneath them."
+   },
+   "prompt": "Which of the following nuclei lie within the band of stability shown in Figure 21.2?<br>(a) argon-40<br>(b) oxygen-16<br>(c) <sup>122</sup>Ba<br>(d) <sup>58</sup>Ni<br>(e) <sup>205</sup>Tl<br>(f) <sup>210</sup>Tl<br>(g) <sup>226</sup>Ra<br>(h) magnesium-24",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: for each nuclide, take its number of protons Z from the periodic table and its number of neutrons as the mass number less Z, then find the point (Z, n) on Figure 21.2 and ask whether it falls in the narrow band of stable nuclides or away from it; remember that every element with an atomic number greater than 83 has no stable isotope."
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp74968928",
+   "source_section": "21.2",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-per-nucleon",
+   "prompt": "The mass of the atom ${\\;}_{9}^{19}\\text{F}$ is <span data-type=\"mass\">18.99840 amu</span>.<br>(a) Calculate its binding energy per atom in millions of electron volts.<br>(b) Calculate its binding energy per nucleon.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 148.8,
+      "unit": "MeV",
+      "tol": 0.01
+     },
+     {
+      "part": "(b)",
+      "value": 7.808,
+      "unit": "MeV/nucleon",
+      "tol": 0.01
+     }
+    ],
+    "solution": "(a) 148.8 MeV per atom; (b) 7.808 MeV/nucleon"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "nuclear-density",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "density",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "binding-energy-calculation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "mass-defect",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "mass-energy-equivalence",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "binding-energy-calculation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "binding-energy-per-nucleon",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "nuclide",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e1",
+   "concept": "isotope-symbols",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "nuclide",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "isotope-symbols",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e3",
+   "concept": "atomic-number",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "nuclide",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "isotope-symbols",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e5",
+   "concept": "composition-of-an-atom",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "nuclear-chemistry",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e7",
+   "concept": "nuclear-binding-energy",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e9",
+   "concept": "band-of-stability",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e10",
+   "concept": "band-of-stability",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "binding-energy-calculation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e17",
+   "concept": "binding-energy-per-nucleon",
+   "weights_by": "ai"
+  }
+ ]
+}

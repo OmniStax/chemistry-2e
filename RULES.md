@@ -54,7 +54,7 @@ CC BY-NC-SA 4.0, copyright Rice University, published by OpenStax, by Paul Flowe
 
 ## Types
 
-Twenty-nine types in `book.json`, in scheme order: time, amount of substance, mass, volume, concentration, pressure, temperature, energy, entropy, rate, wavelength, frequency, potential, charge, density, equilibrium constant (with the reaction quotient), momentum, wavefunction, dipole moment, velocity, angle, colligative constant, surface tension, rate constant, force, acceleration, heat capacity, area, length. Untyped and in ink: a constant of nature, a count of particles or any other count or label, a percent, a mole ratio, a mole fraction and any other rating. `COLOR.md` says why each type is there and what its variants are.
+Thirty-one types in `book.json`, in scheme order: time, amount of substance, mass, volume, concentration, pressure, temperature, energy, entropy, rate, wavelength, frequency, potential, charge, density, equilibrium constant (with the reaction quotient), momentum, wavefunction, dipole moment, velocity, angle, colligative constant, surface tension, rate constant, force, acceleration, heat capacity, area, length, current, dose. Untyped and in ink: a constant of nature, a count of particles or any other count or label, a percent, a mole ratio, a mole fraction and any other rating. `COLOR.md` says why each type is there and what its variants are.
 
 Variants share the hue and differ by decoration: initial (subscript i or 0) hollow or dashed, final filled, standard state by its ° mark, per-mole by its unit. A derived quantity is another type: molarity is not an amount, a rate is not a concentration, entropy is not an energy. pH and pOH are variants of concentration with the p as decoration.
 

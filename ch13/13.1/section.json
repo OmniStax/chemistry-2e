@@ -1,0 +1,349 @@
+{
+ "id": "13.1",
+ "module": "m68797",
+ "chapter": "13",
+ "title": "Chemical Equilibria",
+ "short": "Chemical Equilibria",
+ "lead": "A <span data-concept=\"reversible-reaction\">reversible reaction</span> can run in both directions, and in a closed system its forward and reverse processes compete. This section follows the decomposition of dinitrogen tetroxide and the vaporization of bromine to describe the state such a system reaches and what is still happening once it gets there.",
+ "objectives": [
+  "Describe the nature of equilibrium systems",
+  "Explain the dynamic nature of a chemical equilibrium"
+ ],
+ "summary_html": "<p>A <span data-concept=\"reversible-reaction\">reversible reaction</span> is at <span data-concept=\"chemical-equilibrium\">equilibrium</span> when the forward and reverse processes occur at equal rates. <span data-concept=\"equilibrium-is-dynamic\">Chemical equilibria are dynamic processes</span> characterized by constant amounts of reactant and product species.</p>",
+ "notes": "Nothing of the section is left out.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual items fs-idp122639232 and fs-idp13186176 are kept with a suggested approach marked as AI-generated. Two exercises are set here from later sections because they test the dynamic equilibrium this section introduces: fs-idp194491952, on the closed vessel of Figure 13.4, is printed in Section 13.2, and fs-idp92538384, on radioactive silver ions in a saturated solution, is printed in Section 13.3.",
+ "figures": [
+  {
+   "id": "sim-n2o4-equilibrium",
+   "kind": "sim",
+   "number": "13.2",
+   "originals": [
+    "/media/ch13/CNX_Chem_13_01_equilibrium.jpg"
+   ],
+   "original_caption": "(a) A sealed tube containing colorless N₂O₄ darkens as it decomposes to yield brown NO₂. (b) Changes in concentration over time as the decomposition reaction achieves equilibrium. (c) At equilibrium, the forward and reverse reaction rates are equal.",
+   "draws": [
+    "concentration",
+    "rate",
+    "rate-constant",
+    "time"
+   ],
+   "conventions": [
+    "N",
+    "O"
+   ],
+   "facts": [
+    "#8b4a1c"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-juggling",
+   "kind": "photo",
+   "number": "13.3",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-bromine",
+   "kind": "photo",
+   "number": "13.4",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "n2o4",
+   "label": "dinitrogen tetroxide, N₂O₄",
+   "figures": [
+    "sim-n2o4-equilibrium"
+   ]
+  },
+  {
+   "id": "no2",
+   "label": "nitrogen dioxide, NO₂",
+   "figures": [
+    "sim-n2o4-equilibrium"
+   ]
+  },
+  {
+   "id": "forward",
+   "label": "the forward reaction",
+   "figures": [
+    "sim-n2o4-equilibrium"
+   ]
+  },
+  {
+   "id": "reverse",
+   "label": "the reverse reaction",
+   "figures": [
+    "sim-n2o4-equilibrium"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "reversible",
+   "concept": "reversible-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "reversible",
+   "concept": "chemical-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "reversible",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "reversible",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "dynamic",
+   "concept": "equilibrium-is-dynamic",
+   "verb": "introduces"
+  },
+  {
+   "span": "dynamic",
+   "concept": "elementary-rate-laws",
+   "verb": "uses"
+  },
+  {
+   "span": "dynamic",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "dynamic",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "dynamic",
+   "concept": "chemical-equilibrium",
+   "verb": "reinforces"
+  },
+  {
+   "span": "phase",
+   "concept": "vapor-pressure-dynamic-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "phase",
+   "concept": "vaporization",
+   "verb": "uses"
+  },
+  {
+   "span": "phase",
+   "concept": "equilibrium-is-dynamic",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp156600272",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reversible",
+   "prompt": "What does it mean to describe a reaction as “reversible”?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The reaction can proceed in both the forward and reverse directions."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp122639232",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dynamic",
+   "prompt": "When writing an equation, how is a reversible reaction distinguished from a nonreversible reaction?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: compare the arrow in the equation for the decomposition of N<sub>2</sub>O<sub>4</sub> in this section with the single arrow used for reactions in earlier chapters, and say what the arrow’s form tells a reader about the directions in which the reaction proceeds."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp77430432",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dynamic",
+   "prompt": "If a reaction is reversible, when can it be said to have reached equilibrium?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "When a system has reached equilibrium, no further changes in the reactant and product concentrations occur; the forward and reverse reactions continue to proceed, but at equal rates."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp13186176",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dynamic",
+   "prompt": "Is a system at equilibrium if the rate constants of the forward and reverse reactions are equal?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: equilibrium is defined by equal rates, not equal rate constants. Write the forward and reverse rate laws for N<sub>2</sub>O<sub>4</sub> ⇌ 2NO<sub>2</sub>, set <em>k</em><sub>f</sub> equal to <em>k</em><sub>r</sub>, and ask whether the two rates must then be equal, or whether that depends on the concentrations present."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp9783616",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "reversible",
+   "prompt": "If the concentrations of products and reactants are equal, is the system at equilibrium?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Not necessarily. A system at equilibrium is characterized by <em>constant</em> reactant and product concentrations, but the values of the reactant and product concentrations themselves need not be equal."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp194491952",
+   "source_section": "13.2",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "phase",
+   "prompt": "Explain why an equilibrium between Br<sub>2</sub>(<em>l</em>) and Br<sub>2</sub>(<em>g</em>) would not be established if the container were not a closed vessel shown in Figure 13.4.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Equilibrium cannot be established between the liquid and the gas phase if the top is removed from the bottle because the system is not closed; one of the components of the equilibrium, the Br<sub>2</sub> vapor, would escape from the bottle until all liquid disappeared. Thus, more liquid would evaporate than can condense back from the gas phase to the liquid phase."
+   }
+  },
+  {
+   "id": "e48",
+   "source_id": "fs-idp92538384",
+   "source_section": "13.3",
+   "source_number": "48",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dynamic",
+   "prompt": "A solution is saturated with silver sulfate and contains excess solid silver sulfate:<br>${\\text{Ag}}_{2}{\\text{SO}}_{4}(s)\\rightleftharpoons 2{\\text{Ag}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2-}(aq)$<br>A small amount of solid silver sulfate containing a radioactive isotope of silver is added to this solution. Within a few minutes, a portion of the solution phase is sampled and tests positive for radioactive Ag<sup>+</sup> ions. Explain this observation.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Though the solution is saturated, the dynamic nature of the solubility equilibrium means the opposing processes of solid dissolution and precipitation continue to occur (just at equal rates, meaning the dissolved ion concentrations and the amount of undissolved solid remain constant). The radioactive Ag<sup>+</sup> ions detected in the solution phase come from dissolution of the added solid, and their presence is countered by precipitation of nonradioactive Ag<sup>+</sup>."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "reversible-reaction"
+  },
+  {
+   "exercise": "e2",
+   "concept": "reversible-reaction"
+  },
+  {
+   "exercise": "e3",
+   "concept": "chemical-equilibrium"
+  },
+  {
+   "exercise": "e3",
+   "concept": "equilibrium-is-dynamic"
+  },
+  {
+   "exercise": "e4",
+   "concept": "chemical-equilibrium"
+  },
+  {
+   "exercise": "e4",
+   "concept": "rate-constant"
+  },
+  {
+   "exercise": "e5",
+   "concept": "chemical-equilibrium"
+  },
+  {
+   "exercise": "e5",
+   "concept": "equilibrium-is-dynamic"
+  },
+  {
+   "exercise": "e7",
+   "concept": "equilibrium-is-dynamic"
+  },
+  {
+   "exercise": "e7",
+   "concept": "vapor-pressure-dynamic-equilibrium"
+  },
+  {
+   "exercise": "e48",
+   "concept": "equilibrium-is-dynamic"
+  }
+ ]
+}

@@ -1,0 +1,164 @@
+{
+ "id": "21",
+ "dir": "ch21",
+ "title": "Nuclear Chemistry",
+ "intro": {
+  "module": "m68850",
+  "slug": "21-introduction"
+ },
+ "sections": [
+  {
+   "id": "21.1",
+   "module": "m68851",
+   "title": "Nuclear Structure and Stability",
+   "slug": "21-1-nuclear-structure-and-stability"
+  },
+  {
+   "id": "21.2",
+   "module": "m68852",
+   "title": "Nuclear Equations",
+   "slug": "21-2-nuclear-equations"
+  },
+  {
+   "id": "21.3",
+   "module": "m68854",
+   "title": "Radioactive Decay",
+   "slug": "21-3-radioactive-decay"
+  },
+  {
+   "id": "21.4",
+   "module": "m68856",
+   "title": "Transmutation and Nuclear Energy",
+   "slug": "21-4-transmutation-and-nuclear-energy"
+  },
+  {
+   "id": "21.5",
+   "module": "m68857",
+   "title": "Uses of Radioisotopes",
+   "slug": "21-5-uses-of-radioisotopes"
+  },
+  {
+   "id": "21.6",
+   "module": "m68858",
+   "title": "Biological Effects of Radiation",
+   "slug": "21-6-biological-effects-of-radiation"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "d",
+   "concept": "density",
+   "meaning": "the density of a neutron star or a nucleus, its mass divided by its volume",
+   "unit": "kg/m³",
+   "section": "21.1"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of the matter converted into energy, such as the mass defect of a nucleus",
+   "unit": "kg",
+   "section": "21.1"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of a sphere, four-thirds of π times the cube of its radius",
+   "unit": "m³",
+   "section": "21.1"
+  },
+  {
+   "sym": "r",
+   "type": "length",
+   "meaning": "the radius of a neutron star or a nucleus treated as a sphere",
+   "unit": "m",
+   "section": "21.1"
+  },
+  {
+   "sym": "E",
+   "concept": "energy-and-work",
+   "meaning": "the energy that results when matter is converted into energy, such as the binding energy of a nucleus",
+   "unit": "J or MeV",
+   "section": "21.1"
+  },
+  {
+   "sym": "c",
+   "type": "velocity",
+   "meaning": "the speed of light in a vacuum, 2.998 × 10⁸ m/s",
+   "unit": "m/s",
+   "section": "21.1"
+  },
+  {
+   "sym": "t_half",
+   "concept": "radioactive-half-life",
+   "meaning": "the half-life of a radioisotope, the time required for half of the atoms in a sample to decay",
+   "unit": "y",
+   "section": "21.3"
+  },
+  {
+   "sym": "λ_decay",
+   "concept": "decay-constant",
+   "meaning": "the decay constant of a radioisotope, its first-order rate constant",
+   "unit": "y⁻¹",
+   "section": "21.3"
+  },
+  {
+   "sym": "rate",
+   "concept": "radioactive-decay-rate",
+   "meaning": "the decay rate of a radioactive sample, called its activity when stated in nuclear decays per second",
+   "unit": "decays/s",
+   "section": "21.3"
+  },
+  {
+   "sym": "N_particles",
+   "meaning": "the number of nuclei of the radioisotope in the sample",
+   "unit": "none",
+   "section": "21.3"
+  },
+  {
+   "sym": "N_0",
+   "meaning": "the initial number of nuclei or moles of the isotope",
+   "unit": "none",
+   "section": "21.3"
+  },
+  {
+   "sym": "N_t",
+   "meaning": "the number of nuclei or moles of the isotope remaining at time t",
+   "unit": "none",
+   "section": "21.3"
+  },
+  {
+   "sym": "t",
+   "concept": "time",
+   "meaning": "the time elapsed since the decay began, such as the age of an object found by radiometric dating",
+   "unit": "y",
+   "section": "21.3"
+  },
+  {
+   "sym": "activity",
+   "concept": "radioactive-decay-rate",
+   "meaning": "the activity of a radioactive sample, its number of decays per second",
+   "unit": "Bq or Ci",
+   "section": "21.6"
+  },
+  {
+   "sym": "λ_decay",
+   "concept": "decay-constant",
+   "meaning": "the decay constant of a radioisotope, ln 2 divided by its half-life",
+   "unit": "y⁻¹",
+   "section": "21.6"
+  },
+  {
+   "sym": "t_half",
+   "concept": "radioactive-half-life",
+   "meaning": "the half-life of a radioisotope, the time required for half of the atoms in a sample to decay",
+   "unit": "y",
+   "section": "21.6"
+  },
+  {
+   "sym": "N_particles",
+   "meaning": "the number of nuclei of the radioisotope in the sample",
+   "unit": "none",
+   "section": "21.6"
+  }
+ ]
+}

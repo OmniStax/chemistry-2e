@@ -33,7 +33,8 @@
     "ch17",
     "ch18",
     "ch19",
-    "ch20"
+    "ch20",
+    "ch21"
   ],
   "intro": {
     "module": "m68662",
@@ -189,6 +190,11 @@
       "id": "current",
       "label": "electric current",
       "dimension": "A"
+    },
+    {
+      "id": "dose",
+      "label": "radiation dose",
+      "dimension": "Gy"
     }
   ],
   "symbols": [
@@ -1509,6 +1515,24 @@
       "sym": "P_pair",
       "latex": "P",
       "macro": "\\kPpair"
+    },
+    {
+      "sym": "λ_decay",
+      "latex": "\\lambda",
+      "macro": "\\klamdecay"
+    },
+    {
+      "sym": "N_0",
+      "latex": "N_{0}"
+    },
+    {
+      "sym": "N_t",
+      "latex": "N_{t}"
+    },
+    {
+      "sym": "activity",
+      "latex": "\\text{Activity}",
+      "macro": "\\kactivity"
     }
   ],
   "exercise_kinds": [
@@ -12916,6 +12940,713 @@
       "section": "20.4",
       "name": "Kevlar, a polyamide",
       "statement": "Kevlar is a synthetic polyamide made from 1,4-phenylene-diamine and terephthaloyl chloride. It owes much of its strength to hydrogen bonds between the carbonyl oxygen atom of one chain and the N–H hydrogen atom of an adjacent chain, with more from aromatic stacking of the six-membered rings."
+    },
+    {
+      "id": "nuclear-chemistry",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Nuclear chemistry",
+      "terms": [
+        "nuclear chemistry"
+      ],
+      "statement": "Nuclear chemistry is the study of the structure of atomic nuclei and of reactions that change nuclear structure, the numbers of protons and neutrons that ordinary chemical reactions leave unchanged."
+    },
+    {
+      "id": "nuclide",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Nuclide",
+      "terms": [
+        "nuclide"
+      ],
+      "statement": "A nuclide is the nucleus of a particular isotope, written ${}_{\\text{Z}}^{\\text{A}}\\text{X}$ with the mass number A above the atomic number Z, or named by the element and its mass number, as carbon-14."
+    },
+    {
+      "id": "nucleon",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Nucleon",
+      "terms": [
+        "nucleon"
+      ],
+      "statement": "Nucleon is the collective term for the protons and neutrons packed together tightly in a nucleus."
+    },
+    {
+      "id": "nuclear-density",
+      "kind": "idea",
+      "section": "21.1",
+      "name": "Nuclear density",
+      "type": "density",
+      "statement": "A nucleus, with a radius of about 10⁻¹⁵ m against the atom's 10⁻¹⁰ m, is extremely dense, about 1.8 × 10¹⁴ g/cm³ on average; a neutron star, almost entirely neutrons, has a density comparable to a nucleus's."
+    },
+    {
+      "id": "strong-nuclear-force",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Strong nuclear force",
+      "terms": [
+        "strong nuclear force"
+      ],
+      "type": "force",
+      "statement": "The strong nuclear force is the attraction between nucleons, protons and neutrons alike, that holds a nucleus together; over distances less than 10⁻¹⁵ m it is much stronger than the electrostatic repulsion between protons, and outside the nucleus it is essentially nonexistent."
+    },
+    {
+      "id": "mass-defect",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Mass defect",
+      "terms": [
+        "mass defect"
+      ],
+      "type": "mass",
+      "statement": "The mass defect is the difference between the summed mass of an atom's protons, neutrons and electrons and the measured mass of the atom, the mass lost when the nucleons are brought together; for helium-4 it is 4.0331 amu − 4.0026 amu = 0.0305 amu."
+    },
+    {
+      "id": "mass-energy-equivalence",
+      "kind": "axiom",
+      "section": "21.1",
+      "name": "Mass-energy equivalence",
+      "terms": [
+        "mass-energy equivalence equation"
+      ],
+      "statement": "Einstein's mass-energy equivalence equation, $E = mc^{2}$, gives the energy that results when a mass m of matter is converted into energy, c being the speed of light in a vacuum.",
+      "forms": [
+        {
+          "id": "eq-mass-energy-equivalence",
+          "latex": "E=mc^{2}",
+          "ktex": "\\kE=\\km\\kc^{2}"
+        }
+      ]
+    },
+    {
+      "id": "nuclear-binding-energy",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Nuclear binding energy",
+      "terms": [
+        "nuclear binding energy"
+      ],
+      "type": "energy",
+      "statement": "The nuclear binding energy is the energy produced when a nucleus's nucleons are bound together, the energy equivalent of its mass defect, and also the energy needed to break the nucleus into its protons and neutrons; it is vastly greater than any chemical bond energy, so mass changes in chemical reactions go undetected."
+    },
+    {
+      "id": "electron-volt",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Electron volt",
+      "terms": [
+        "electron volt"
+      ],
+      "statement": "The electron volt (eV), a unit used for nuclear binding energies, is the energy needed to move the charge of an electron across an electric potential difference of 1 volt, 1 eV = 1.602 × 10⁻¹⁹ J."
+    },
+    {
+      "id": "binding-energy-calculation",
+      "kind": "skill",
+      "section": "21.1",
+      "name": "Calculating a binding energy",
+      "statement": "To find a nuclide's binding energy, subtract the atom's measured mass from the summed masses of its protons, neutrons and electrons, express that mass defect in kilograms (per mole or per nucleus) and convert it with $E = mc^{2}$, then into MeV with 1 eV = 1.602 × 10⁻¹⁹ J."
+    },
+    {
+      "id": "binding-energy-per-nucleon",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Binding energy per nucleon",
+      "terms": [
+        "binding energy per nucleon"
+      ],
+      "type": "energy",
+      "statement": "The binding energy per nucleon is a nucleus's total binding energy divided by its number of nucleons, 7.10 MeV for helium-4; it is largest, near 8.8 MeV, for nuclides with mass numbers near 56, which are the most stable nuclei."
+    },
+    {
+      "id": "band-of-stability",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Band of stability",
+      "terms": [
+        "band of stability"
+      ],
+      "statement": "The band of stability is the narrow region of a plot of neutrons against protons where the roughly 250 stable nuclides lie; light stable nuclei have about equal numbers of protons and neutrons, and heavier ones need increasingly more neutrons (an n:p ratio of 1.52 for lead-207) to offset the repulsions between their protons."
+    },
+    {
+      "id": "magic-number",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Magic numbers",
+      "terms": [
+        "magic number"
+      ],
+      "statement": "Nuclei with even numbers of protons, neutrons or both are more likely to be stable, and those with a magic number (2, 8, 20, 28, 50, 82 or 126) of protons or neutrons, which complete a shell in the nucleus, are stable against decay; double magic nuclei such as helium-4 and lead-208 are particularly stable."
+    },
+    {
+      "id": "radioactivity",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Radioactivity",
+      "terms": [
+        "radioactivity",
+        "radioisotope"
+      ],
+      "statement": "A nucleus to the left or right of the band of stability is unstable and exhibits radioactivity: it changes spontaneously into a nucleus in or closer to the band; such an unstable isotope is a radioisotope."
+    },
+    {
+      "id": "nuclear-reaction",
+      "kind": "definition",
+      "section": "21.2",
+      "name": "Nuclear reaction",
+      "terms": [
+        "nuclear reaction"
+      ],
+      "statement": "A nuclear reaction is a change of a nucleus that changes its atomic number, its mass number or its energy state, described by an equation giving the mass and atomic numbers of every nuclide and particle involved."
+    },
+    {
+      "id": "beta-particle",
+      "kind": "definition",
+      "section": "21.2",
+      "name": "Beta particle",
+      "terms": [
+        "beta particle"
+      ],
+      "statement": "A beta particle, ${}_{-1}^{\\;0}\\beta$ or ${}_{-1}^{\\;0}\\text{e}$, is a high-energy electron."
+    },
+    {
+      "id": "positron",
+      "kind": "definition",
+      "section": "21.2",
+      "name": "Positron",
+      "terms": [
+        "positron"
+      ],
+      "statement": "A positron, ${}_{+1}^{\\;0}\\text{e}$ or ${}_{+1}^{\\;0}\\beta$, is the antiparticle to the electron, identical to it except for its opposite, positive charge."
+    },
+    {
+      "id": "antimatter",
+      "kind": "definition",
+      "section": "21.2",
+      "name": "Antimatter",
+      "terms": [
+        "antimatter"
+      ],
+      "statement": "Antimatter is particles with the same mass as ordinary particles but the opposite state of another property such as charge; when antimatter meets ordinary matter both are annihilated and their mass becomes energy, so a positron and an electron give two gamma-ray photons."
+    },
+    {
+      "id": "gamma-ray",
+      "kind": "definition",
+      "section": "21.2",
+      "name": "Gamma ray",
+      "terms": [
+        "gamma ray"
+      ],
+      "statement": "A gamma ray, γ or ${}_{0}^{0}\\gamma$, is a photon of short-wavelength, very high-energy electromagnetic radiation, emitted when a nucleus drops from a higher to a lower energy state, typically millions of times more energetic than radiation from electronic transitions."
+    },
+    {
+      "id": "balanced-nuclear-equation",
+      "kind": "axiom",
+      "section": "21.2",
+      "name": "Balanced nuclear equations",
+      "statement": "A nuclear reaction rearranges nucleons rather than atoms and is balanced two ways: the sum of the mass numbers of the reactants equals that of the products, and the sum of their charges (atomic numbers) does too."
+    },
+    {
+      "id": "balancing-nuclear-equations",
+      "kind": "skill",
+      "section": "21.2",
+      "name": "Completing a nuclear equation",
+      "statement": "When the mass and atomic numbers of all but one particle are known, equate the sums of mass numbers and of charges on the two sides to find A and Z of the missing one, then name it from Z on the periodic table."
+    },
+    {
+      "id": "radioactive-decay",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Radioactive decay",
+      "terms": [
+        "radioactive decay"
+      ],
+      "statement": "Radioactive decay is the spontaneous change of an unstable nuclide into another, by a radiation that leaves the product closer to the band of stability, so a nuclide's place relative to the band guides the kind of decay it undergoes."
+    },
+    {
+      "id": "parent-and-daughter-nuclides",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Parent and daughter nuclides",
+      "terms": [
+        "parent nuclide",
+        "daughter nuclide"
+      ],
+      "statement": "In radioactive decay the unstable nuclide is the parent nuclide and the nuclide that results is the daughter nuclide, which may be stable or may decay itself."
+    },
+    {
+      "id": "radiation-in-an-electric-field",
+      "kind": "idea",
+      "section": "21.3",
+      "name": "Rays in an electric field",
+      "statement": "Rutherford sent the radiation from a radioactive substance between charged plates: α particles bend slightly toward the negative plate (positive and massive), β particles bend strongly toward the positive plate (negative and light), and γ rays pass undeflected (uncharged)."
+    },
+    {
+      "id": "alpha-decay",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Alpha decay",
+      "terms": [
+        "alpha (α) decay"
+      ],
+      "statement": "Alpha decay is the emission of an α particle from a nucleus, lowering its mass number by four and its atomic number by two, as ${}_{\\;84}^{210}\\text{Po}\\longrightarrow{}_{2}^{4}\\text{He}+{}_{\\;82}^{206}\\text{Pb}$; it occurs mainly in heavy nuclei (A > 200, Z > 83) and raises the n:p ratio."
+    },
+    {
+      "id": "beta-decay",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Beta decay",
+      "terms": [
+        "beta (β) decay"
+      ],
+      "statement": "Beta decay is the emission of an electron from a nucleus, the conversion of a neutron into a proton and a β particle; it leaves the mass number unchanged, raises the atomic number by one and lowers the n:p ratio of nuclides above the band of stability."
+    },
+    {
+      "id": "gamma-emission",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Gamma emission",
+      "terms": [
+        "gamma (γ) emission"
+      ],
+      "statement": "Gamma emission is the decay of a nuclide formed in an excited state (marked with an asterisk) to its ground state with the emission of a γ ray, changing neither mass number nor atomic number."
+    },
+    {
+      "id": "positron-emission",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Positron emission",
+      "terms": [
+        "positron emission"
+      ],
+      "statement": "Positron emission (β⁺ decay) is the conversion of a proton into a neutron, which stays in the nucleus, and a positron, which is emitted; it lowers the atomic number by one and raises the n:p ratio of nuclides below the band of stability."
+    },
+    {
+      "id": "electron-capture",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Electron capture",
+      "terms": [
+        "electron capture"
+      ],
+      "statement": "In electron capture a nucleus captures one of the atom's inner electrons, which combines with a proton to give a neutron; like positron emission it lowers the atomic number by one in a proton-rich nucleus, and the outer electron that drops into the vacancy usually emits an X-ray."
+    },
+    {
+      "id": "predicting-decay-mode",
+      "kind": "skill",
+      "section": "21.3",
+      "name": "Predicting a mode of decay",
+      "statement": "Compare a nuclide's n:p ratio with the band of stability: above the band (too many neutrons) it undergoes β decay; below it, positron emission or electron capture; beyond Z = 83, α decay."
+    },
+    {
+      "id": "radioactive-decay-series",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Radioactive decay series",
+      "terms": [
+        "radioactive decay series"
+      ],
+      "statement": "A radioactive decay series is a chain of successive decays from a long-lived parent to a stable end-product; uranium-238 reaches lead-206 in 14 steps, eight α and six β decays."
+    },
+    {
+      "id": "radioactive-half-life",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Half-life of a radioisotope",
+      "symbol": "t_half",
+      "terms": [
+        "half-life"
+      ],
+      "type": "time",
+      "statement": "Each radioactive nuclide has a characteristic, constant half-life, $t_{1/2}$, the time required for half of the atoms in a sample to decay, so the amount and the intensity of radiation are both halved every half-life (cobalt-60, 5.27 years); half-lives range from fractions of a second to billions of years."
+    },
+    {
+      "id": "decay-constant",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Decay constant",
+      "symbol": "λ_decay",
+      "type": "rate-constant",
+      "statement": "Radioactive decay follows first-order kinetics, and its decay constant, λ, is the rate constant of that decay, related to the half-life by $\\lambda = \\ln 2/t_{1/2}$.",
+      "forms": [
+        {
+          "id": "eq-decay-constant",
+          "latex": "\\lambda=\\frac{\\ln 2}{t_{1/2}}=\\frac{0.693}{t_{1/2}}",
+          "ktex": "\\klamdecay=\\frac{\\ln 2}{\\kthalf}=\\frac{0.693}{\\kthalf}"
+        },
+        {
+          "id": "eq-half-life-from-decay-constant",
+          "latex": "t_{1/2}=\\frac{\\ln 2}{\\lambda}=\\frac{0.693}{\\lambda}",
+          "ktex": "\\kthalf=\\frac{\\ln 2}{\\klamdecay}=\\frac{0.693}{\\klamdecay}"
+        }
+      ]
+    },
+    {
+      "id": "radioactive-decay-rate",
+      "kind": "result",
+      "section": "21.3",
+      "name": "Rate of radioactive decay",
+      "symbol": "rate",
+      "type": "rate",
+      "statement": "The rate of radioactive decay is the decay constant times the number of nuclei, $\\text{decay rate} = \\lambda N$, called the activity when stated in nuclear decays per second; the intensity of radiation from a sample is proportional to it.",
+      "forms": [
+        {
+          "id": "eq-radioactive-decay-rate",
+          "latex": "\\text{decay rate}=\\lambda N",
+          "ktex": "\\text{decay }\\krate=\\klamdecay N"
+        }
+      ]
+    },
+    {
+      "id": "first-order-radioactive-decay",
+      "kind": "result",
+      "section": "21.3",
+      "name": "First-order decay of a radioisotope",
+      "statement": "The number of nuclei or moles of a radioisotope remaining at time t falls exponentially from its initial value, $N_{t} = N_{0}e^{-\\lambda t}$, so the time for a sample to fall to a given fraction is $t = -\\frac{1}{\\lambda}\\ln\\frac{N_{t}}{N_{0}}$.",
+      "forms": [
+        {
+          "id": "eq-first-order-radioactive-decay",
+          "latex": "N_{t}=N_{0}e^{-\\lambda t}",
+          "ktex": "N_{t}=N_{0}e^{-\\klamdecay\\kt}"
+        },
+        {
+          "id": "eq-radioactive-decay-time",
+          "latex": "t=-\\frac{1}{\\lambda}\\ln\\left(\\frac{N_{t}}{N_{0}}\\right)",
+          "ktex": "\\kt=-\\frac{1}{\\klamdecay}\\ln\\left(\\frac{N_{t}}{N_{0}}\\right)"
+        }
+      ]
+    },
+    {
+      "id": "radiometric-dating",
+      "kind": "definition",
+      "section": "21.3",
+      "name": "Radiometric dating",
+      "terms": [
+        "radiometric dating"
+      ],
+      "statement": "Radiometric dating is the use of radioisotopes and their half-lives to date the formation of objects such as archaeological artifacts, formerly living organisms or geological formations; it works for about 10 half-lives."
+    },
+    {
+      "id": "radiocarbon-dating",
+      "kind": "idea",
+      "section": "21.3",
+      "name": "Radiocarbon dating",
+      "terms": [
+        "radiocarbon dating"
+      ],
+      "statement": "Carbon-14, formed from nitrogen by cosmic-ray neutrons, keeps the ¹⁴C:¹²C ratio in a living organism the same as in the atmosphere; after death the carbon-14 decays by β emission with a half-life of 5730 years, so the fallen ratio, or the decay rate per gram of carbon, gives the time since death, up to about 50,000 years."
+    },
+    {
+      "id": "dating-rocks",
+      "kind": "skill",
+      "section": "21.3",
+      "name": "Dating a rock",
+      "statement": "Assume all of a daughter nuclide (lead-206 from uranium-238, argon-40 from potassium-40, strontium-87 from rubidium-87) came from decay of the parent, so the parent present at formation is the parent now plus the daughter in moles; the ratio of present to original parent and the decay constant then give the age."
+    },
+    {
+      "id": "nuclear-transmutation",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Nuclear transmutation",
+      "terms": [
+        "nuclear transmutation",
+        "transmutation reaction"
+      ],
+      "statement": "Nuclear transmutation is the conversion of one nuclide into another, by radioactive decay or by a transmutation reaction, the bombardment of nuclei with other nuclei or with neutrons, first done by Rutherford in 1919: ${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\longrightarrow{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H}$."
+    },
+    {
+      "id": "particle-accelerator",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Particle accelerator",
+      "terms": [
+        "particle accelerator"
+      ],
+      "statement": "A particle accelerator uses electric and magnetic fields, in a vacuum, to raise the speed and kinetic energy of nuclear particles enough to cause transmutation reactions."
+    },
+    {
+      "id": "transuranium-element",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Transuranium elements",
+      "terms": [
+        "transuranium element"
+      ],
+      "statement": "The transuranium elements, with atomic numbers greater than 92, do not occur in nature and are made by transmutation, as neptunium and plutonium are from uranium-238 that captures a neutron and then undergoes two β decays."
+    },
+    {
+      "id": "nuclear-fission",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Nuclear fission",
+      "terms": [
+        "fission"
+      ],
+      "statement": "Fission is the splitting of a heavy nucleus, usually when bombarded with neutrons, into two lighter nuclei of intermediate mass number, closer to the peak of binding energy per nucleon, and several neutrons; the mass lost becomes a very large energy, about 1.8 × 10¹⁰ kJ per mole of uranium-235."
+    },
+    {
+      "id": "chain-reaction",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Nuclear chain reaction",
+      "terms": [
+        "chain reaction"
+      ],
+      "statement": "In a nuclear chain reaction the two or three neutrons released by each fission cause further fissions, which release more neutrons, and so on; if too many neutrons escape the material without striking a nucleus, no chain reaction occurs."
+    },
+    {
+      "id": "fissile-material",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Fissile material",
+      "terms": [
+        "fissile",
+        "fissionable"
+      ],
+      "statement": "Material that can sustain a nuclear fission chain reaction is fissile or fissionable; strictly, fissile material undergoes fission with neutrons of any energy, whereas fissionable material requires high-energy neutrons."
+    },
+    {
+      "id": "critical-mass",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Critical mass",
+      "terms": [
+        "critical mass",
+        "subcritical mass",
+        "supercritical mass"
+      ],
+      "statement": "A critical mass is the amount of fissionable material that will support a self-sustaining chain reaction, where the neutrons produced equal or exceed those absorbed plus those that escape; a subcritical mass cannot sustain one, and in a supercritical mass the rate of fission increases. It depends on the material's purity, temperature and shape and on how its neutrons are controlled."
+    },
+    {
+      "id": "nuclear-reactor",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Nuclear reactor",
+      "terms": [
+        "nuclear reactor"
+      ],
+      "statement": "A nuclear reactor controls and sustains a fission chain reaction without explosion, keeping its fuel from forming a supercritical mass; in a power reactor the heat boils water to drive a turbine, and every reactor has fuel, a moderator, a coolant, control rods and a shield and containment system."
+    },
+    {
+      "id": "nuclear-fuel",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Nuclear fuel",
+      "terms": [
+        "nuclear fuel"
+      ],
+      "statement": "Nuclear fuel is a fissionable isotope present in sufficient quantity for a self-sustaining chain reaction; uranium is enriched from 0.7% to about 5% uranium-235, too little for an explosion, by gaseous diffusion of UF₆ through barriers, which rests on Graham's law."
+    },
+    {
+      "id": "nuclear-moderator",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Nuclear moderator",
+      "terms": [
+        "nuclear moderator"
+      ],
+      "statement": "A nuclear moderator, such as heavy water, light water or graphite, slows the neutrons from fission to a speed low enough to cause further fission."
+    },
+    {
+      "id": "reactor-coolant",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Reactor coolant",
+      "terms": [
+        "reactor coolant"
+      ],
+      "statement": "A reactor coolant, water in all US plants, carries the heat of fission to an external boiler and turbine where it is transformed into electricity."
+    },
+    {
+      "id": "control-rod",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Control rods",
+      "terms": [
+        "control rod"
+      ],
+      "statement": "Control rods of boron, cadmium, hafnium or other neutron absorbers are raised or lowered among the fuel rods to adjust the number of slow neutrons and so the rate of fission; fully inserted, they shut the chain reaction down."
+    },
+    {
+      "id": "containment-system",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Containment system",
+      "terms": [
+        "containment system"
+      ],
+      "statement": "A reactor's containment system, or shield, has three parts, the steel reactor vessel, a main shield of high-density concrete and a personnel shield, protecting the exterior and the operators from the high temperatures, pressures and radiation inside."
+    },
+    {
+      "id": "nuclear-fusion",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Nuclear fusion",
+      "terms": [
+        "fusion"
+      ],
+      "statement": "Fusion is the combination of very light nuclei into heavier ones, with the conversion of mass into large amounts of energy; the sun's net fusion of four hydrogen nuclei into helium releases about 3.6 × 10¹¹ kJ per mole of helium, and fusion needs about 15,000,000 K so the positive nuclei can collide."
+    },
+    {
+      "id": "nuclear-energy-release",
+      "kind": "idea",
+      "section": "21.4",
+      "name": "Why fission and fusion release energy",
+      "statement": "Heavy nuclei that split and light nuclei that fuse both form products nearer the peak of binding energy per nucleon near mass number 56, so both lose mass and release energy, millions of times more per mole than a chemical reaction such as the combustion of octane."
+    },
+    {
+      "id": "fusion-reactor",
+      "kind": "definition",
+      "section": "21.4",
+      "name": "Fusion reactor",
+      "terms": [
+        "fusion reactor"
+      ],
+      "statement": "A fusion reactor is a nuclear reactor in which fusion of light nuclei is controlled; since no solid can hold the plasma, it must be contained by a magnetic field or by focused laser beams, and none yet sustains itself."
+    },
+    {
+      "id": "radioactive-tracer",
+      "kind": "definition",
+      "section": "21.5",
+      "name": "Radioactive tracer",
+      "terms": [
+        "radioactive tracer",
+        "radioactive label"
+      ],
+      "statement": "A radioactive tracer, or radioactive label, is a compound in which a radioisotope, chemically the same as the stable isotope, replaces an atom so the substance can be followed by its radioactive emissions, through a biochemical reaction, an organism or a machine."
+    },
+    {
+      "id": "medical-radioisotopes",
+      "kind": "idea",
+      "section": "21.5",
+      "name": "Radioisotopes in medicine",
+      "statement": "Tracers such as technetium-99m, thallium-201, iodine-131 and sodium-24 collect in particular tissues and are located by their γ rays; medical radioisotopes have short half-lives, so Tc-99m is generated on site from the β decay of Mo-99, separating pertechnetate from molybdate on a column."
+    },
+    {
+      "id": "radiation-therapy",
+      "kind": "definition",
+      "section": "21.5",
+      "name": "Radiation therapy",
+      "terms": [
+        "radiation therapy",
+        "external beam radiation therapy",
+        "internal radiation therapy"
+      ],
+      "statement": "Radiation therapy uses high-energy radiation to damage the DNA of cancer cells, killing them or keeping them from dividing; it is external beam therapy when a machine outside the body delivers it, as a cobalt-60 source swung in an arc around the tumor, and internal therapy (brachytherapy) when a radioactive substance is placed in the body."
+    },
+    {
+      "id": "chemotherapy",
+      "kind": "definition",
+      "section": "21.5",
+      "name": "Chemotherapy",
+      "terms": [
+        "chemotherapy"
+      ],
+      "statement": "Chemotherapy, like internal radiation therapy, puts the cancer treatment into the body, but it kills the cancer cells with chemical rather than radioactive substances."
+    },
+    {
+      "id": "uses-of-radiation",
+      "kind": "idea",
+      "section": "21.5",
+      "name": "Other uses of radiation",
+      "statement": "Radioisotopes trace the pathways of reactions in plants and animals, as carbon-14 did for photosynthesis, and radiation measures the thickness of films, finds flaws in metals, sterilizes pests, preserves food and, as α particles from americium-241, ionizes the air in a smoke detector whose current drops when smoke enters."
+    },
+    {
+      "id": "ionizing-radiation",
+      "kind": "definition",
+      "section": "21.6",
+      "name": "Ionizing and nonionizing radiation",
+      "terms": [
+        "ionizing radiation",
+        "nonionizing radiation"
+      ],
+      "statement": "Ionizing radiation (α and β particles, γ rays, X-rays, high-energy ultraviolet) is energetic enough to knock electrons out of molecules and form ions; nonionizing radiation (light, microwaves) only speeds up atoms and molecules, which is equivalent to heating, and is far less harmful."
+    },
+    {
+      "id": "radiation-damage",
+      "kind": "idea",
+      "section": "21.6",
+      "name": "How radiation damages cells",
+      "statement": "Ionizing radiation damages biological molecules directly, by ionizing them or breaking their bonds, or indirectly, by ionizing water to H₂O⁺, which reacts with water to give a hydroxyl radical that attacks DNA and proteins; the damage, somatic or genetic, is worst in rapidly dividing cells."
+    },
+    {
+      "id": "penetrating-power",
+      "kind": "idea",
+      "section": "21.6",
+      "name": "Penetration and ionizing power",
+      "statement": "From least to most penetrating, α < β < neutron < γ: paper or skin stops α particles, a thin metal sheet stops β particles, and γ rays pass through thick layers unless shielded by dense elements such as lead; α particles ionize about 20 times as strongly as γ rays, so they are most dangerous inside the body."
+    },
+    {
+      "id": "radiation-detectors",
+      "kind": "definition",
+      "section": "21.6",
+      "name": "Radiation detectors",
+      "terms": [
+        "Geiger counter",
+        "scintillation counter",
+        "radiation dosimeter"
+      ],
+      "statement": "A Geiger counter measures radiation by the ionization it causes in the gas of a Geiger-Müller tube; a scintillation counter uses a scintillator, which emits light when excited by ionizing radiation, and a sensor; a radiation dosimeter measures personal exposure."
+    },
+    {
+      "id": "activity-units",
+      "kind": "definition",
+      "section": "21.6",
+      "name": "Units of activity",
+      "terms": [
+        "becquerel",
+        "curie",
+        "millicurie"
+      ],
+      "statement": "The SI unit of the rate of radioactive decay is the becquerel, 1 Bq = 1 disintegration per second; the curie, 1 Ci = 3.7 × 10¹⁰ disintegrations per second, and the millicurie are larger units used in medicine."
+    },
+    {
+      "id": "absorbed-dose",
+      "kind": "definition",
+      "section": "21.6",
+      "name": "Absorbed dose",
+      "terms": [
+        "gray",
+        "radiation absorbed dose"
+      ],
+      "type": "dose",
+      "statement": "The absorbed dose is the energy of radiation absorbed per kilogram of tissue, measured in grays, 1 Gy = 1 J/kg, or in rads (radiation absorbed dose), 1 rad = 0.01 Gy."
+    },
+    {
+      "id": "dose-equivalent",
+      "kind": "result",
+      "section": "21.6",
+      "name": "Dose equivalent",
+      "terms": [
+        "sievert",
+        "roentgen equivalent man",
+        "relative biological effectiveness"
+      ],
+      "type": "dose",
+      "statement": "Tissue damage is measured in sieverts or in rems (roentgen equivalent man, 100 rem = 1 Sv), the absorbed dose times the relative biological effectiveness (RBE) of the radiation, about 10 for α, 2 for protons and neutrons and 1 for β and γ.",
+      "forms": [
+        {
+          "id": "eq-dose-equivalent-rem",
+          "latex": "\\text{number of rems}=\\text{RBE}\\times\\text{number of rads}"
+        },
+        {
+          "id": "eq-dose-equivalent-sv",
+          "latex": "\\text{Sv}=\\text{RBE}\\times\\text{Gy}"
+        }
+      ]
+    },
+    {
+      "id": "activity-calculation",
+      "kind": "skill",
+      "section": "21.6",
+      "name": "Calculating the activity of a sample",
+      "statement": "Find the activity of a sample from $\\text{Activity} = \\lambda N$ with $\\lambda = \\ln 2/t_{1/2}$, converting the decaying amount to atoms per second with the molar mass and Avogadro's number, then to becquerels or curies."
+    },
+    {
+      "id": "radiation-exposure",
+      "kind": "idea",
+      "section": "21.6",
+      "name": "Effects of radiation exposure",
+      "statement": "A person in the US receives about 620 mrem a year from background sources such as cosmic rays and radon and from medical exposure; tens of rems at once cause illness and about 500 rems a 50% chance of death within 30 days, and exposure adds up over a lifetime, so it is limited by shielding, distance and time."
     }
   ],
   "concept_prereqs": [
@@ -22666,6 +23397,506 @@
     {
       "concept": "kevlar-polyamide",
       "prereq": "hydrogen-bonding"
+    },
+    {
+      "concept": "nuclear-chemistry",
+      "prereq": "nucleus"
+    },
+    {
+      "concept": "nuclear-chemistry",
+      "prereq": "chemical-change"
+    },
+    {
+      "concept": "nuclide",
+      "prereq": "isotope-symbols"
+    },
+    {
+      "concept": "nucleon",
+      "prereq": "proton"
+    },
+    {
+      "concept": "nucleon",
+      "prereq": "neutron"
+    },
+    {
+      "concept": "nuclear-density",
+      "prereq": "nucleon"
+    },
+    {
+      "concept": "nuclear-density",
+      "prereq": "density"
+    },
+    {
+      "concept": "strong-nuclear-force",
+      "prereq": "nucleon"
+    },
+    {
+      "concept": "mass-defect",
+      "prereq": "nucleon"
+    },
+    {
+      "concept": "mass-defect",
+      "prereq": "composition-of-an-atom"
+    },
+    {
+      "concept": "mass-defect",
+      "prereq": "atomic-mass-unit"
+    },
+    {
+      "concept": "mass-energy-equivalence",
+      "prereq": "mass"
+    },
+    {
+      "concept": "mass-energy-equivalence",
+      "prereq": "energy-and-work"
+    },
+    {
+      "concept": "nuclear-binding-energy",
+      "prereq": "mass-defect"
+    },
+    {
+      "concept": "nuclear-binding-energy",
+      "prereq": "mass-energy-equivalence"
+    },
+    {
+      "concept": "nuclear-binding-energy",
+      "prereq": "strong-nuclear-force"
+    },
+    {
+      "concept": "electron-volt",
+      "prereq": "electron"
+    },
+    {
+      "concept": "electron-volt",
+      "prereq": "energy-units"
+    },
+    {
+      "concept": "binding-energy-calculation",
+      "prereq": "nuclear-binding-energy"
+    },
+    {
+      "concept": "binding-energy-calculation",
+      "prereq": "electron-volt"
+    },
+    {
+      "concept": "binding-energy-per-nucleon",
+      "prereq": "nuclear-binding-energy"
+    },
+    {
+      "concept": "band-of-stability",
+      "prereq": "nuclide"
+    },
+    {
+      "concept": "band-of-stability",
+      "prereq": "strong-nuclear-force"
+    },
+    {
+      "concept": "magic-number",
+      "prereq": "band-of-stability"
+    },
+    {
+      "concept": "radioactivity",
+      "prereq": "band-of-stability"
+    },
+    {
+      "concept": "nuclear-reaction",
+      "prereq": "nuclide"
+    },
+    {
+      "concept": "nuclear-reaction",
+      "prereq": "chemical-equation"
+    },
+    {
+      "concept": "beta-particle",
+      "prereq": "electron"
+    },
+    {
+      "concept": "positron",
+      "prereq": "electron"
+    },
+    {
+      "concept": "antimatter",
+      "prereq": "positron"
+    },
+    {
+      "concept": "antimatter",
+      "prereq": "mass-energy-equivalence"
+    },
+    {
+      "concept": "antimatter",
+      "prereq": "gamma-ray"
+    },
+    {
+      "concept": "gamma-ray",
+      "prereq": "excited-state"
+    },
+    {
+      "concept": "balanced-nuclear-equation",
+      "prereq": "nuclear-reaction"
+    },
+    {
+      "concept": "balanced-nuclear-equation",
+      "prereq": "balanced-equation"
+    },
+    {
+      "concept": "balancing-nuclear-equations",
+      "prereq": "balanced-nuclear-equation"
+    },
+    {
+      "concept": "balancing-nuclear-equations",
+      "prereq": "periodic-table"
+    },
+    {
+      "concept": "radioactive-decay",
+      "prereq": "radioactivity"
+    },
+    {
+      "concept": "radioactive-decay",
+      "prereq": "nuclear-reaction"
+    },
+    {
+      "concept": "parent-and-daughter-nuclides",
+      "prereq": "radioactive-decay"
+    },
+    {
+      "concept": "radiation-in-an-electric-field",
+      "prereq": "alpha-particle"
+    },
+    {
+      "concept": "radiation-in-an-electric-field",
+      "prereq": "beta-particle"
+    },
+    {
+      "concept": "radiation-in-an-electric-field",
+      "prereq": "gamma-ray"
+    },
+    {
+      "concept": "alpha-decay",
+      "prereq": "radioactive-decay"
+    },
+    {
+      "concept": "alpha-decay",
+      "prereq": "alpha-particle"
+    },
+    {
+      "concept": "alpha-decay",
+      "prereq": "balanced-nuclear-equation"
+    },
+    {
+      "concept": "beta-decay",
+      "prereq": "radioactive-decay"
+    },
+    {
+      "concept": "beta-decay",
+      "prereq": "beta-particle"
+    },
+    {
+      "concept": "beta-decay",
+      "prereq": "balanced-nuclear-equation"
+    },
+    {
+      "concept": "gamma-emission",
+      "prereq": "radioactive-decay"
+    },
+    {
+      "concept": "gamma-emission",
+      "prereq": "gamma-ray"
+    },
+    {
+      "concept": "positron-emission",
+      "prereq": "radioactive-decay"
+    },
+    {
+      "concept": "positron-emission",
+      "prereq": "positron"
+    },
+    {
+      "concept": "positron-emission",
+      "prereq": "balanced-nuclear-equation"
+    },
+    {
+      "concept": "electron-capture",
+      "prereq": "radioactive-decay"
+    },
+    {
+      "concept": "electron-capture",
+      "prereq": "core-electrons"
+    },
+    {
+      "concept": "electron-capture",
+      "prereq": "balanced-nuclear-equation"
+    },
+    {
+      "concept": "predicting-decay-mode",
+      "prereq": "alpha-decay"
+    },
+    {
+      "concept": "predicting-decay-mode",
+      "prereq": "beta-decay"
+    },
+    {
+      "concept": "predicting-decay-mode",
+      "prereq": "positron-emission"
+    },
+    {
+      "concept": "predicting-decay-mode",
+      "prereq": "electron-capture"
+    },
+    {
+      "concept": "radioactive-decay-series",
+      "prereq": "alpha-decay"
+    },
+    {
+      "concept": "radioactive-decay-series",
+      "prereq": "beta-decay"
+    },
+    {
+      "concept": "radioactive-decay-series",
+      "prereq": "parent-and-daughter-nuclides"
+    },
+    {
+      "concept": "radioactive-half-life",
+      "prereq": "radioactive-decay"
+    },
+    {
+      "concept": "radioactive-half-life",
+      "prereq": "half-life"
+    },
+    {
+      "concept": "decay-constant",
+      "prereq": "radioactive-half-life"
+    },
+    {
+      "concept": "decay-constant",
+      "prereq": "rate-constant"
+    },
+    {
+      "concept": "radioactive-decay-rate",
+      "prereq": "decay-constant"
+    },
+    {
+      "concept": "first-order-radioactive-decay",
+      "prereq": "decay-constant"
+    },
+    {
+      "concept": "first-order-radioactive-decay",
+      "prereq": "first-order-integrated-rate-law"
+    },
+    {
+      "concept": "radiometric-dating",
+      "prereq": "first-order-radioactive-decay"
+    },
+    {
+      "concept": "radiocarbon-dating",
+      "prereq": "radiometric-dating"
+    },
+    {
+      "concept": "radiocarbon-dating",
+      "prereq": "beta-decay"
+    },
+    {
+      "concept": "dating-rocks",
+      "prereq": "radiometric-dating"
+    },
+    {
+      "concept": "dating-rocks",
+      "prereq": "radioactive-decay-series"
+    },
+    {
+      "concept": "dating-rocks",
+      "prereq": "molar-mass"
+    },
+    {
+      "concept": "nuclear-transmutation",
+      "prereq": "radioactive-decay"
+    },
+    {
+      "concept": "particle-accelerator",
+      "prereq": "nuclear-transmutation"
+    },
+    {
+      "concept": "particle-accelerator",
+      "prereq": "kinetic-energy"
+    },
+    {
+      "concept": "transuranium-element",
+      "prereq": "nuclear-transmutation"
+    },
+    {
+      "concept": "transuranium-element",
+      "prereq": "beta-decay"
+    },
+    {
+      "concept": "nuclear-fission",
+      "prereq": "binding-energy-per-nucleon"
+    },
+    {
+      "concept": "nuclear-fission",
+      "prereq": "nuclear-transmutation"
+    },
+    {
+      "concept": "chain-reaction",
+      "prereq": "nuclear-fission"
+    },
+    {
+      "concept": "fissile-material",
+      "prereq": "chain-reaction"
+    },
+    {
+      "concept": "critical-mass",
+      "prereq": "fissile-material"
+    },
+    {
+      "concept": "nuclear-reactor",
+      "prereq": "critical-mass"
+    },
+    {
+      "concept": "nuclear-fuel",
+      "prereq": "nuclear-reactor"
+    },
+    {
+      "concept": "nuclear-fuel",
+      "prereq": "grahams-law"
+    },
+    {
+      "concept": "nuclear-moderator",
+      "prereq": "nuclear-reactor"
+    },
+    {
+      "concept": "reactor-coolant",
+      "prereq": "nuclear-reactor"
+    },
+    {
+      "concept": "control-rod",
+      "prereq": "nuclear-reactor"
+    },
+    {
+      "concept": "containment-system",
+      "prereq": "nuclear-reactor"
+    },
+    {
+      "concept": "nuclear-fusion",
+      "prereq": "binding-energy-per-nucleon"
+    },
+    {
+      "concept": "nuclear-fusion",
+      "prereq": "nuclear-transmutation"
+    },
+    {
+      "concept": "nuclear-energy-release",
+      "prereq": "nuclear-fission"
+    },
+    {
+      "concept": "nuclear-energy-release",
+      "prereq": "nuclear-fusion"
+    },
+    {
+      "concept": "fusion-reactor",
+      "prereq": "nuclear-fusion"
+    },
+    {
+      "concept": "radioactive-tracer",
+      "prereq": "radioactivity"
+    },
+    {
+      "concept": "medical-radioisotopes",
+      "prereq": "radioactive-tracer"
+    },
+    {
+      "concept": "medical-radioisotopes",
+      "prereq": "radioactive-half-life"
+    },
+    {
+      "concept": "medical-radioisotopes",
+      "prereq": "gamma-emission"
+    },
+    {
+      "concept": "radiation-therapy",
+      "prereq": "gamma-emission"
+    },
+    {
+      "concept": "chemotherapy",
+      "prereq": "radiation-therapy"
+    },
+    {
+      "concept": "uses-of-radiation",
+      "prereq": "radioactive-tracer"
+    },
+    {
+      "concept": "uses-of-radiation",
+      "prereq": "alpha-decay"
+    },
+    {
+      "concept": "uses-of-radiation",
+      "prereq": "gamma-ray"
+    },
+    {
+      "concept": "ionizing-radiation",
+      "prereq": "electromagnetic-spectrum"
+    },
+    {
+      "concept": "ionizing-radiation",
+      "prereq": "ionization-energy"
+    },
+    {
+      "concept": "ionizing-radiation",
+      "prereq": "ion"
+    },
+    {
+      "concept": "radiation-damage",
+      "prereq": "ionizing-radiation"
+    },
+    {
+      "concept": "radiation-damage",
+      "prereq": "free-radical"
+    },
+    {
+      "concept": "penetrating-power",
+      "prereq": "ionizing-radiation"
+    },
+    {
+      "concept": "penetrating-power",
+      "prereq": "alpha-particle"
+    },
+    {
+      "concept": "penetrating-power",
+      "prereq": "beta-particle"
+    },
+    {
+      "concept": "penetrating-power",
+      "prereq": "gamma-ray"
+    },
+    {
+      "concept": "radiation-detectors",
+      "prereq": "ionizing-radiation"
+    },
+    {
+      "concept": "activity-units",
+      "prereq": "radioactive-decay-rate"
+    },
+    {
+      "concept": "absorbed-dose",
+      "prereq": "ionizing-radiation"
+    },
+    {
+      "concept": "dose-equivalent",
+      "prereq": "absorbed-dose"
+    },
+    {
+      "concept": "activity-calculation",
+      "prereq": "activity-units"
+    },
+    {
+      "concept": "activity-calculation",
+      "prereq": "avogadro-number"
+    },
+    {
+      "concept": "radiation-exposure",
+      "prereq": "dose-equivalent"
+    },
+    {
+      "concept": "radiation-exposure",
+      "prereq": "penetrating-power"
     }
   ],
   "sheets": [
@@ -22747,24 +23978,24 @@
     "vision": "normal",
     "assign": {
       "time": {
-        "light": "#674E14",
-        "dark": "#C9AD76"
+        "light": "#B4561A",
+        "dark": "#CF6E37"
       },
       "amount": {
-        "light": "#66302A",
-        "dark": "#F4B1A8"
+        "light": "#8C681C",
+        "dark": "#B28B45"
       },
       "mass": {
-        "light": "#A804CC",
-        "dark": "#D047F6"
+        "light": "#6B116D",
+        "dark": "#FA9DFA"
       },
       "volume": {
-        "light": "#A25A78",
-        "dark": "#BC7290"
+        "light": "#C30B7E",
+        "dark": "#EE46A2"
       },
       "concentration": {
-        "light": "#4F3E88",
-        "dark": "#B8A9FE"
+        "light": "#075EA9",
+        "dark": "#5EA8F9"
       },
       "pressure": {
         "light": "#317D01",
@@ -22775,135 +24006,139 @@
         "dark": "#B9EEC2"
       },
       "energy": {
-        "light": "#C30B7E",
-        "dark": "#EE46A2"
+        "light": "#A804CC",
+        "dark": "#D047F6"
       },
       "entropy": {
-        "light": "#854B47",
-        "dark": "#D2918C"
-      },
-      "rate": {
         "light": "#7E479C",
         "dark": "#BB83DD"
       },
+      "rate": {
+        "light": "#60415D",
+        "dark": "#CEAACA"
+      },
       "wavelength": {
-        "light": "#064867",
-        "dark": "#92CDF2"
-      },
-      "frequency": {
-        "light": "#8649E2",
-        "dark": "#9E64FE"
-      },
-      "potential": {
-        "light": "#90108B",
-        "dark": "#EE75E6"
-      },
-      "charge": {
-        "light": "#8F2E5D",
-        "dark": "#EE83B1"
-      },
-      "density": {
-        "light": "#5566DC",
-        "dark": "#6A7FF8"
-      },
-      "equilibrium-constant": {
-        "light": "#5F69A8",
-        "dark": "#818DCF"
-      },
-      "momentum": {
-        "light": "#314C01",
-        "dark": "#B0D18B"
-      },
-      "wavefunction": {
-        "light": "#4B7C56",
-        "dark": "#6EA078"
-      },
-      "dipole-moment": {
-        "light": "#AC43A5",
-        "dark": "#C65CBF"
-      },
-      "velocity": {
-        "light": "#B4561A",
-        "dark": "#CF6E37"
-      },
-      "angle": {
-        "light": "#432E08",
-        "dark": "#EED3AC"
-      },
-      "colligative-constant": {
-        "light": "#0B7A9A",
-        "dark": "#419FC0"
-      },
-      "surface-tension": {
-        "light": "#036946",
-        "dark": "#6CBF97"
-      },
-      "rate-constant": {
-        "light": "#AC3225",
-        "dark": "#F17260"
-      },
-      "force": {
-        "light": "#8C681C",
-        "dark": "#B28B45"
-      },
-      "acceleration": {
         "light": "#D70F36",
         "dark": "#F53B4E"
       },
-      "heat-capacity": {
+      "frequency": {
         "light": "#422C58",
         "dark": "#DEC4FB"
       },
+      "potential": {
+        "light": "#036946",
+        "dark": "#6CBF97"
+      },
+      "charge": {
+        "light": "#AC43A5",
+        "dark": "#C65CBF"
+      },
+      "density": {
+        "light": "#66302A",
+        "dark": "#F4B1A8"
+      },
+      "equilibrium-constant": {
+        "light": "#AC3225",
+        "dark": "#F17260"
+      },
+      "momentum": {
+        "light": "#432E08",
+        "dark": "#EED3AC"
+      },
+      "wavefunction": {
+        "light": "#064867",
+        "dark": "#92CDF2"
+      },
+      "dipole-moment": {
+        "light": "#8F2E5D",
+        "dark": "#EE83B1"
+      },
+      "velocity": {
+        "light": "#674E14",
+        "dark": "#C9AD76"
+      },
+      "angle": {
+        "light": "#4B7C56",
+        "dark": "#6EA078"
+      },
+      "colligative-constant": {
+        "light": "#8649E2",
+        "dark": "#9E64FE"
+      },
+      "surface-tension": {
+        "light": "#90108B",
+        "dark": "#EE75E6"
+      },
+      "rate-constant": {
+        "light": "#854B47",
+        "dark": "#D2918C"
+      },
+      "force": {
+        "light": "#A25A78",
+        "dark": "#BC7290"
+      },
+      "acceleration": {
+        "light": "#314C01",
+        "dark": "#B0D18B"
+      },
+      "heat-capacity": {
+        "light": "#0B7A9A",
+        "dark": "#419FC0"
+      },
       "area": {
-        "light": "#075EA9",
-        "dark": "#5EA8F9"
+        "light": "#4F3E88",
+        "dark": "#B8A9FE"
       },
       "length": {
-        "light": "#6B116D",
-        "dark": "#FA9DFA"
+        "light": "#5566DC",
+        "dark": "#6A7FF8"
       },
       "current": {
-        "light": "#60415D",
-        "dark": "#CEAACA"
+        "light": "#5F69A8",
+        "dark": "#818DCF"
+      },
+      "dose": {
+        "light": "#1E5245",
+        "dark": "#96CBBB"
       }
     },
     "referentOrder": [
-      6,
-      8,
-      19,
-      3,
-      31,
-      4,
-      2,
-      7,
+      10,
       11,
       1,
-      27,
-      25,
-      9,
-      17,
-      15,
-      18,
-      32,
-      22,
-      20,
-      34,
-      10,
-      16,
-      23,
-      0,
-      5,
-      30,
-      29,
-      14,
       33,
+      8,
+      3,
+      6,
+      7,
+      18,
+      0,
+      9,
+      4,
+      2,
+      31,
+      32,
+      19,
+      25,
+      15,
+      20,
+      17,
+      29,
+      34,
+      22,
+      30,
+      5,
+      26,
+      14,
+      24,
+      23,
+      27,
+      35,
       12,
       28,
       13,
-      26,
-      21,
-      35,
-      24
+      16,
+      21
     ]
   }
 }

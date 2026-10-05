@@ -1,0 +1,388 @@
+{
+ "id": "17.1",
+ "module": "m68821",
+ "chapter": "17",
+ "title": "Review of Redox Chemistry",
+ "short": "Review of Redox Chemistry",
+ "lead": "Electrochemistry is built on reactions in which electrons pass from one substance to another. This section reviews how <span data-concept=\"oxidation-number\">oxidation numbers</span> keep account of those electrons, in covalent compounds as well as ionic ones, and how the <span data-concept=\"half-reaction-method\">half-reaction method</span> balances the equation for a <span data-concept=\"redox-reaction\">redox reaction</span> in an acidic or a basic solution.",
+ "objectives": [
+  "Describe defining traits of redox chemistry",
+  "Identify the oxidant and reductant of a redox reaction",
+  "Balance chemical equations for redox reactions using the half-reaction method"
+ ],
+ "summary_html": "<p><span data-concept=\"redox-reaction\">Redox reactions</span> are defined by changes in reactant <span data-concept=\"oxidation-number\">oxidation numbers</span>, and those most relevant to electrochemistry involve actual transfer of electrons. Aqueous phase redox processes often involve water or its characteristic ions, H<sup>+</sup> and OH<sup>−</sup>, as reactants in addition to the oxidant and reductant, and equations representing these reactions can be challenging to balance. The <span data-concept=\"half-reaction-method\">half-reaction method</span> is a systematic approach to balancing such equations that involves separate treatment of the <span data-concept=\"oxidation\">oxidation</span> and <span data-concept=\"reduction\">reduction</span> <span data-concept=\"half-reaction\">half-reactions</span>.</p>",
+ "notes": "Nothing of the section is left out; the book’s “oxidations numbers”, step 8’s “add OH⁻ ions the equation obtained in step 7” and the missing full stop in the problem of Example 17.2 are kept as printed.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The two unkeyed exercises fs-idp25311568 and fs-idp171005680 ask for balanced equations, which would have to be computed, and are left out; the keyed exercises that follow them, fs-idp35560976 and fs-idp52202560, restate their reactions in the prompt. The unkeyed choice item fs-idp124081968 is kept open with its options and a suggested approach, and the unkeyed conceptual exercises fs-idp176626064 and fs-idp22326976 carry a suggested approach marked as OmniStax’s own. Nothing is moved.",
+ "figures": [
+  {
+   "id": "sim-polarization",
+   "kind": "sim",
+   "draws": [],
+   "conventions": [
+    "O",
+    "H",
+    "C",
+    "Cl",
+    "N",
+    "e-"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "review",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxidation-numbers",
+   "concept": "oxidation-number-covalent-limit",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxidation-numbers",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "oxidation-numbers",
+   "concept": "oxidation-numbers",
+   "verb": "uses"
+  },
+  {
+   "span": "oxidation-numbers",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "balancing",
+   "concept": "balance-redox-basic-solution",
+   "verb": "introduces"
+  },
+  {
+   "span": "balancing",
+   "concept": "half-reaction-method",
+   "verb": "uses"
+  },
+  {
+   "span": "balancing",
+   "concept": "half-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "balancing",
+   "concept": "oxidation",
+   "verb": "uses"
+  },
+  {
+   "span": "balancing",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "balancing",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "balancing",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "balancing",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm248400096",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-acidic"
+   },
+   "cite": "ex-acidic",
+   "prompt": "The reaction above results when using relatively diluted nitric acid. If concentrated nitric acid is used, nitrogen dioxide is produced instead of nitrogen monoxide. Write a balanced equation for this reaction.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\text{Cu}(s)+2{\\text{H}}^{\\text{+}}(aq)+2{\\text{HNO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{Cu}}^{2+}(aq)+2{\\text{NO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm246102992",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-basic"
+   },
+   "cite": "ex-basic",
+   "prompt": "Aqueous permanganate ion may also be reduced using aqueous bromide ion, Br<sup>−</sup>, the products of this reaction being solid manganese(IV) oxide and aqueous bromate ion, BrO<sub>3</sub><sup>−</sup>. Write the balanced equation for this reaction occurring in a basic medium.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "${\\text{H}}_{2}\\text{O}(l)+{\\text{2MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{Br}}^{\\text{−}}(aq)\\;\\longrightarrow \\;2{\\text{MnO}}_{2}(s)+{\\text{BrO}}_{3}{}^{\\text{−}}(aq)+2{\\text{OH}}^{\\text{−}}(aq)$"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp27088224",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing",
+   "prompt": "Identify each half-reaction below as either oxidation or reduction.<br>(a) ${\\text{Fe}}^{3+}+{\\text{3e}}^{\\text{−}}\\;\\longrightarrow \\;\\text{Fe}$<br>(b) $\\text{Cr}\\;\\longrightarrow \\;{\\text{Cr}}^{3+}+{\\text{3e}}^{\\text{−}}$<br>(c) ${\\text{MnO}}_{4}{}^{2−}\\;\\longrightarrow \\;{\\text{MnO}}_{4}{}^{-}+{\\text{e}}^{\\text{−}}$<br>(d) ${\\text{Li}}^{\\text{+}}+{\\text{e}}^{\\text{−}}\\;\\longrightarrow \\;\\text{Li}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) reduction; (b) oxidation; (c) oxidation; (d) reduction"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp124081968",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing",
+   "prompt": "Identify each half-reaction below as either oxidation or reduction.<br>(a) ${\\text{Cl}}^{\\text{−}}\\;\\longrightarrow \\;{\\text{Cl}}_{2}$<br>(b) ${\\text{Mn}}^{2+}\\;\\longrightarrow \\;{\\text{MnO}}_{2}$<br>(c) ${\\text{H}}_{2}\\;\\longrightarrow \\;{\\text{H}}^{\\text{+}}$<br>(d) ${\\text{NO}}_{3}{}^{-}\\;\\longrightarrow \\;\\text{NO}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: for each part, assign the oxidation number of the element other than oxygen on both sides of the arrow. An increase in oxidation number is oxidation and a decrease is reduction; as a check, balance the half-reaction for charge and see on which side the electrons appear, products for oxidation and reactants for reduction."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp6773632",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing",
+   "prompt": "Assuming each pair of half-reactions below takes place in an acidic solution, write a balanced equation for the overall reaction.<br>(a) $\\text{Ca}\\;\\longrightarrow \\;{\\text{Ca}}^{2+}+{\\text{2e}}^{\\text{−}},$ ${\\text{F}}_{2}+{\\text{2e}}^{\\text{−}}\\;\\longrightarrow \\;{\\text{2F}}^{\\text{−}}$<br>(b) $\\text{Li}\\;\\longrightarrow \\;{\\text{Li}}^{\\text{+}}+{\\text{e}}^{\\text{−}},$ ${\\text{Cl}}_{2}+{\\text{2e}}^{\\text{−}}\\;\\longrightarrow \\;{\\text{2Cl}}^{\\text{−}}$<br>(c) $\\text{Fe}\\;\\longrightarrow \\;{\\text{Fe}}^{3+}+{\\text{3e}}^{\\text{−}},$ ${\\text{Br}}_{2}+{\\text{2e}}^{-}\\;\\longrightarrow \\;{\\text{2Br}}^{-}$<br>(d) $\\text{Ag}\\;\\longrightarrow \\;{\\text{Ag}}^{\\text{+}}+{\\text{e}}^{\\text{−}},$ ${\\text{MnO}}_{4}{}^{-}+{\\text{4H}}^{\\text{+}}+{\\text{3e}}^{\\text{−}}\\;\\longrightarrow \\;{\\text{MnO}}_{2}+{\\text{2H}}_{2}\\text{O}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${\\text{F}}_{2}+\\text{Ca}\\;\\longrightarrow \\;{\\text{2F}}^{\\text{−}}+{\\text{Ca}}^{2+};$ (b) ${\\text{Cl}}_{2}+\\text{2Li}\\;\\longrightarrow \\;{\\text{2Li}}^{\\text{+}}+{\\text{2Cl}}^{\\text{−}};$ (c) ${\\text{3Br}}_{2}+\\text{2Fe}\\;\\longrightarrow \\;{\\text{2Fe}}^{3+}+{\\text{6Br}}^{\\text{−}};$ (d) ${\\text{MnO}}_{4}{}^{-}+{\\text{4H}}^{\\text{+}}+\\text{3Ag}\\;\\longrightarrow \\;{\\text{3Ag}}^{\\text{+}}+{\\text{MnO}}_{2}+{\\text{2H}}_{2}\\text{O}$"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp35560976",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing",
+   "prompt": "Identify the oxidant and reductant of each reaction of the previous exercise, which asks for these equations to be balanced assuming they occur in an acidic solution.<br>(a) ${\\text{H}}_{2}{\\text{O}}_{2}+{\\text{Sn}}^{2+}\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{O}+{\\text{Sn}}^{4+}$<br>(b) ${\\text{PbO}}_{2}+\\text{Hg}\\;\\longrightarrow \\;{\\text{Hg}}_{2}{}^{2+}+{\\text{Pb}}^{2+}$<br>(c) $\\text{Al}+{\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−}\\;\\longrightarrow \\;{\\text{Al}}^{3+}+{\\text{Cr}}^{3+}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Oxidized: (a) Sn<sup>2+</sup>; (b) Hg; (c) Al; reduced: (a) H<sub>2</sub>O<sub>2</sub>; (b) PbO<sub>2</sub>; (c) ${\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−};$ oxidizing agent: (a) H<sub>2</sub>O<sub>2</sub>; (b) PbO<sub>2</sub>; (c) ${\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−};$ reducing agent: (a) Sn<sup>2+</sup>; (b) Hg; (c) Al"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp52202560",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing",
+   "prompt": "Identify the oxidant and reductant of each reaction of the previous exercise, which asks for these equations to be balanced assuming they occur in a basic solution.<br>(a) ${\\text{SO}}_{3}{}^{2−}(aq)+{\\text{Cu(OH)}}_{2}(s)\\;\\longrightarrow \\;{\\text{SO}}_{4}{}^{2−}(aq)+\\text{Cu(OH)}(s)$<br>(b) ${\\text{O}}_{2}(g)+{\\text{Mn(OH)}}_{2}(s)\\;\\longrightarrow \\;{\\text{MnO}}_{2}(s)$<br>(c) ${\\text{NO}}_{3}{}^{\\text{−}}(aq)+{\\text{H}}_{2}(g)\\;\\longrightarrow \\;\\text{NO}(g)$<br>(d) $\\text{Al}(s)+{\\text{CrO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{Al(OH)}}_{3}(s)+{\\text{Cr(OH)}}_{4}{}^{\\text{−}}(aq)$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Oxidized = reducing agent: (a) ${\\text{SO}}_{3}{}^{\\text{2−}};$ (b) Mn(OH)<sub>2</sub>; (c) H<sub>2</sub>; (d) Al; reduced = oxidizing agent: (a) Cu(OH)<sub>2</sub>; (b) O<sub>2</sub>; (c) ${\\text{NO}}_{3}{}^{\\text{−}};$ (d) ${\\text{CrO}}_{4}{}^{2−}$"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp176626064",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing",
+   "prompt": "Why don’t hydroxide ions appear in equations for half-reactions occurring in acidic solution?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: compare the concentrations of H<sup>+</sup> and OH<sup>−</sup> in an acidic solution, using the ion product of water from the chapter on acid-base equilibria, and ask what would happen to any hydroxide ion formed in a solution that holds an excess of hydrogen ion. The keyed answer to the next exercise makes the same argument for basic solution."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm101720816",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing",
+   "prompt": "Why don’t hydrogen ions appear in equations for half-reactions occurring in basic solution?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "In basic solution, [OH<sup>−</sup>] &gt; 1 $\\times$ 10<sup>−7</sup> <em>M</em> &gt; [H<sup>+</sup>]. Hydrogen ion cannot appear as a reactant because its concentration is essentially zero. If it were produced, it would instantly react with the excess hydroxide ion to produce water. Thus, hydrogen ion should <em>not</em> appear as a reactant or product in basic solution."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp22326976",
+   "source_number": "10",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "balancing",
+   "prompt": "Why must the charge balance in oxidation-reduction reactions?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall that electrons are transferred in a redox reaction, never created or destroyed, so every electron lost in the oxidation half-reaction is gained in the reduction half-reaction. Connect this to step 6 of the half-reaction method and to the rule that the sum of oxidation numbers equals the charge on a species."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "half-reaction-method"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "balance-redox-basic-solution"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "half-reaction-method"
+  },
+  {
+   "exercise": "e1",
+   "concept": "half-reaction"
+  },
+  {
+   "exercise": "e1",
+   "concept": "oxidation"
+  },
+  {
+   "exercise": "e1",
+   "concept": "reduction"
+  },
+  {
+   "exercise": "e2",
+   "concept": "half-reaction"
+  },
+  {
+   "exercise": "e2",
+   "concept": "oxidation"
+  },
+  {
+   "exercise": "e2",
+   "concept": "reduction"
+  },
+  {
+   "exercise": "e2",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "e3",
+   "concept": "half-reaction-method"
+  },
+  {
+   "exercise": "e3",
+   "concept": "half-reaction"
+  },
+  {
+   "exercise": "e5",
+   "concept": "oxidizing-agent"
+  },
+  {
+   "exercise": "e5",
+   "concept": "reducing-agent"
+  },
+  {
+   "exercise": "e5",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "e7",
+   "concept": "oxidizing-agent"
+  },
+  {
+   "exercise": "e7",
+   "concept": "reducing-agent"
+  },
+  {
+   "exercise": "e7",
+   "concept": "oxidation-numbers"
+  },
+  {
+   "exercise": "e8",
+   "concept": "half-reaction-method"
+  },
+  {
+   "exercise": "e9",
+   "concept": "balance-redox-basic-solution"
+  },
+  {
+   "exercise": "e10",
+   "concept": "half-reaction-method"
+  },
+  {
+   "exercise": "e10",
+   "concept": "redox-reaction"
+  }
+ ],
+ "referents": []
+}

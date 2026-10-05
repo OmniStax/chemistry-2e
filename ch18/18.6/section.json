@@ -1,0 +1,235 @@
+{
+ "id": "18.6",
+ "module": "m68834",
+ "chapter": "18",
+ "title": "Occurrence, Preparation, and Properties of Carbonates",
+ "short": "Carbonates",
+ "lead": "The <span data-concept=\"carbonate\">carbonates</span> and <span data-concept=\"hydrogen-carbonate\">hydrogen carbonates</span> of the representative metals are prepared from carbon dioxide and an oxide or hydroxide, or by precipitation. Limestone that dissolves in water holding carbon dioxide shapes caves, stalactites and stalagmites, and carbonates and hydrogen carbonates react with acids in antacids and in baking powder.",
+ "objectives": [
+  "Describe the preparation, properties, and uses of some representative metal carbonates"
+ ],
+ "summary_html": "<p>The usual method for the preparation of the <span data-concept=\"carbonate\">carbonates</span> of the <span data-concept=\"alkali-metal\">alkali</span> and <span data-concept=\"alkaline-earth-metal\">alkaline earth metals</span> is by reaction of an oxide or hydroxide with carbon dioxide. Other carbonates form by <span data-concept=\"precipitation-reaction\">precipitation</span>. Metal carbonates or <span data-concept=\"hydrogen-carbonate\">hydrogen carbonates</span> such as limestone (CaCO<sub>3</sub>), the antacid Tums (CaCO<sub>3</sub>), and baking soda (NaHCO<sub>3</sub>) are common examples. Carbonates and hydrogen carbonates decompose in the presence of <span data-concept=\"acid\">acids</span> and most decompose on heating.</p>",
+ "notes": "The section keeps as printed “The carbonates of the alkaline earth metals of group 12 and lead(II)” and “Tin(II) or one of the trivalent or tetravalent ions such as Al³⁺ or Sn⁴⁺ behave”.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and suggested approaches are AI-generated. Answers come from the book’s answer key. The unkeyed exercise fs-idp91885920 (the formula of a sodium carbonate hydrate from the masses before and after heating) is left out, and no answer is computed for it. The unkeyed conceptual exercise fs-idp142161216 carries a suggested approach marked as OmniStax’s own. Nothing is moved.",
+ "figures": [
+  {
+   "id": "fig-cave",
+   "kind": "photo",
+   "number": "18.30",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-carbonate-acid",
+   "kind": "photo",
+   "number": "18.31",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "preparation",
+   "concept": "carbonate",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "hydrogen-carbonate",
+   "verb": "introduces"
+  },
+  {
+   "span": "preparation",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "ionic-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "alkali-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "alkaline-earth-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "precipitation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "net-ionic-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "preparation",
+   "concept": "solubility",
+   "verb": "uses"
+  },
+  {
+   "span": "caves",
+   "concept": "limestone-dissolution",
+   "verb": "introduces"
+  },
+  {
+   "span": "caves",
+   "concept": "carbonate",
+   "verb": "uses"
+  },
+  {
+   "span": "caves",
+   "concept": "hydrogen-carbonate",
+   "verb": "uses"
+  },
+  {
+   "span": "caves",
+   "concept": "alkaline-earth-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "caves",
+   "concept": "solubility",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "carbonate",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "hydrogen-carbonate",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "base",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "reversible-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "acid",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "acid-base-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "salt",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "amphoteric",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "weak-base",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp142161216",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "Carbon forms the ${\\text{CO}}_{3}{}^{2−}$ ion, yet silicon does not form an analogous ${\\text{SiO}}_{3}{}^{2−}$ ion. Why?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: draw the carbonate ion with its carbon–oxygen π bond, then compare the sizes of carbon and silicon atoms and recall how carbon dioxide and silicon dioxide differ in bonding; ask whether a silicon atom can form the π bond to oxygen that the carbonate ion needs."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm136160016",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "preparation",
+   "prompt": "Complete and balance the following chemical equations:<br>(a) hardening of plaster containing slaked lime<br>$\\text{Ca}{(\\text{OH})}_{2}+{\\text{CO}}_{2}\\;\\longrightarrow$<br>(b) removal of sulfur dioxide from the flue gas of power plants<br>$\\text{CaO}+{\\text{SO}}_{2}\\;\\longrightarrow$<br>(c) the reaction of baking powder that produces carbon dioxide gas and causes bread to rise<br>${\\text{NaHCO}}_{3}+{\\text{NaH}}_{2}{\\text{PO}}_{4}\\;\\longrightarrow$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) $\\text{Ca}{(\\text{OH})}_{2}(aq)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{CaCO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(l);$ (b) $\\text{CaO}(s)+{\\text{SO}}_{2}(g)\\;\\longrightarrow \\;{\\text{CaSO}}_{3}(s);$<br>(c) ${\\text{2NaHCO}}_{3}(s)+{\\text{NaH}}_{2}{\\text{PO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{Na}}_{3}{\\text{PO}}_{4}(aq)+{\\text{2CO}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l)$"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "carbonate"
+  },
+  {
+   "exercise": "e2",
+   "concept": "carbonate"
+  },
+  {
+   "exercise": "e2",
+   "concept": "hydrogen-carbonate"
+  },
+  {
+   "exercise": "e2",
+   "concept": "acid-base-reaction"
+  }
+ ]
+}

@@ -11,7 +11,7 @@
     "Perform stoichiometric calculations for electrolytic processes"
   ],
   "summary_html": "<p>Nonspontaneous redox processes may be forced to occur in <span data-concept=\"electrochemical-cell\">electrochemical cells</span> by the application of an appropriate potential using an external power source—a process known as <span data-concept=\"electrolysis\">electrolysis</span>. <span data-concept=\"electrolysis\">Electrolysis</span> is the basis for certain ore refining processes, the industrial production of many chemical commodities, and the <span data-concept=\"electroplating\">electroplating</span> of metal coatings on various products. Measurement of the <span data-concept=\"electric-current\">current</span> flow during <span data-concept=\"electrolysis\">electrolysis</span> permits <span data-concept=\"electrolysis-stoichiometry\">stoichiometric calculations</span>.</p>",
-  "notes": "Nothing of the section is left out. The untitled opening carries a header of our own, Electrolytic cells. Example 17.10’s “from a solution of containing”, the quantitative passage’s “n mole of electrons” and the opening’s italic “electroplating”, whose glossary term the note defines, are kept as printed.",
+  "notes": "Nothing of the section is left out. The untitled opening carries a header of our own, Electrolytic cells. Example 17.10’s “from a solution of containing”, the quantitative passage’s “n mole of electrons”, the hyphen of “OH-” among the water species and the opening’s italic “electroplating”, whose glossary term the note defines, are kept as printed.",
   "ai": {
     "text": [
       {

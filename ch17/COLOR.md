@@ -3,8 +3,8 @@
 Prepared 2026-10-05 with `config.md`. Colour reaches these pages in root
 `RULES.md` item 7's four ways, fact, convention, referent and category, and
 where two apply the earlier wins. This file records what is particular to the
-chapter; it invents no hue but asks for one: the type `current` is declared
-here, and its colour is dealt when `npm run colours:default` is rerun.
+chapter; it invents no hue: the type `current` is declared here and took its
+colour when the book's type colours were refitted.
 
 ## Categories
 
@@ -50,21 +50,23 @@ stay as the book draws them.
 
 ## Referents
 
-Each section lists its own when it is built. Planned:
+As built (chapter pass, 2026-10-05):
 
-- **17.2.** None by default: the two half-cells differ by element. Electrodes
-  A, B and C of exercise `fs-idm33124048` are not drawn.
-- **17.3.** The two half-cells chosen on the E° ladder, where both are
-  coloured as rungs (cathode couple and anode couple); E°_cathode and
-  E°_anode carry them as `ref`.
-- **17.4.** The two half-cells of the concentration cell (dilute anode,
-  concentrated cathode), one curve each where their concentrations are
-  plotted, and [Zn²⁺] split by subscript.
-- **17.5.** The batteries where several are compared on one axis.
-- **17.6.** The anodic and cathodic sites of 17.16 where both are named; the
-  protecting metals of a choice are elements and take `F.el`.
-- **17.7.** The anode and cathode compartments of 17.19 where two gas
-  volumes are plotted side by side.
+- **17.1, 17.2, 17.5, 17.6, 17.7.** None. The two half-cells of 17.2 differ by
+  element and take `F.el`; the protecting metals of 17.6 are elements; the
+  gases of 17.19 are told apart by element and by volume.
+- **17.3.** `cathode-half-cell` and `anode-half-cell`, the two rungs chosen on
+  the E° ladder (`sim-ladder`); E°_cathode and E°_anode carry them as `ref`.
+- **17.4.** The same two ids for the dilute anode and the concentrated cathode
+  of the concentration cell (`sim-concentration-cell`), one curve each on its
+  graph; E°_cathode, E°_anode, E_cathode and E_anode carry them as `ref`.
+
+Types as bound: 17.2 concentration; 17.3 potential; 17.4 potential, energy,
+equilibrium-constant, amount, charge, concentration and time; 17.5 potential;
+17.6 potential through its readout's macros; 17.7 potential, charge, current,
+time, amount and mass. Temperature, pressure and volume are written in ink or
+in prose where a figure states them. `current` took its hue in the refit of
+the book's type colours.
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.

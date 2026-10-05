@@ -87,3 +87,15 @@ Physical 3D: the galvanic cells of Figures 17.3, 17.4 and 17.6 (and the SHE of 1
 ## BE INSPIRING
 
 Make the reader feel the voltage as a push of electrons with a number on it. Drop a copper coil into silver nitrate and watch the blue rise, then pull the two reactants apart into half-cells and see the same electrons forced through a wire and a voltmeter. Hand the reader the ladder of standard potentials and let them pair any two rungs to read the push, positive downhill and negative uphill; then let the cell run, the concentrations creep toward each other and the needle sag to zero exactly where Q reaches K, which is why a battery dies. End with the push reversed: an external source drives electrons uphill, and a current dial and a clock decide how many grams of silver land on a spoon.
+
+## Errata as built
+
+Gathered at the chapter pass (2026-10-05) from each section's `notes` and `exercise_notes`. Every slip below is kept as printed and named in its section's `notes`; none is corrected.
+
+- 17.1: "the oxidations numbers"; step 8's "add OH⁻ ions the equation obtained in step 7"; the missing full stop in the problem of Example 17.2.
+- 17.2: the overall equation's "Cu^{2}{}^{+}"; the misplaced parenthesis "(aq), Cu²⁺" in the key of `fs-idm154595184` (d).
+- 17.3: the Check Your Learning answers' "−0. 47 V" and "Br₂(s)"; Table 17.1's +0.34 V for copper beside the text's and Figure 17.6's +0.337 V; its Mn²⁺ and Zn(OH)₂ rows printed above Zn²⁺; "Mg²(aq)" without its plus sign; "predication" for prediction.
+- 17.4: "TFaraday’s constant … C/mol e–.he relation", run together as openstax.org prints it; "(298) K)"; Example 17.7's "−0.1 7 V". The Key Equations' "w_ele" is not printed, since the Key Equations table is the chapter's forms.
+- 17.5: "its intended use a source"; "a potassium hydroxide electrode" for the electrolyte; "a large amount current"; "via a catalyzed electrochemical that is"; Figure 17.14 standing before the equations it illustrates. The seven Link to Learning notes are dropped and named in `notes`.
+- 17.6: "as illustrated in Figure 17.15" in the text, which means the rust cell of Figure 17.16; openstax.org prints 17.15 there too, so the reference is kept as printed and Figure 17.16 + 17.17 is the figure it describes. Also "a passivating an oxide layer", "because as they get used up", the cathode's subscript O₂/O², the summary's "Corrosion process involve", the missing question mark of `fs-idm80636048`, and in `fs-idm127027504` −2.07 V for aluminum and −0.477 V for Fe³⁺/Fe (named in `exercise_notes`).
+- 17.7: Example 17.10's "from a solution of containing"; "n mole of electrons"; "OH-" with a hyphen among the water species.

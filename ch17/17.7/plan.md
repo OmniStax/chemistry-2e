@@ -50,3 +50,8 @@ Nothing of the prose. Errata kept as printed: "OH<sup>-</sup>" with a hyphen, "n
 - anchors: `eq-charge-current-time` → 17.7-quantitative; `eq-charge-moles-electrons` → 17.7-quantitative
 - variables anchors: 17.7/I → 17.7-quantitative; 17.7/Q_charge → 17.7-quantitative; 17.7/t → 17.7-quantitative; 17.7/n → 17.7-quantitative; 17.7/F_Faraday → 17.7-quantitative; 17.7/E°_anode → 17.7-water; 17.7/E°_cathode → 17.7-water; 17.7/E°_cell → 17.7-water
 - type colours: rerun `npm run colours:default -- chemistry-2e` for `current`
+
+Applied by the chapter pass (2026-10-05):
+
+- Both forms and the eight variables rows anchored as listed.
+- The type colours had already been refitted for `current` before the pass (commit 7dff6a2f); the colours script was not rerun.

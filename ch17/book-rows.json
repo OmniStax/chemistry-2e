@@ -197,7 +197,8 @@
     {
      "id": "eq-cell-potential",
      "latex": "E_{\\text{cell}}=E_{\\text{cathode}}-E_{\\text{anode}}",
-     "ktex": "\\kEcell=\\kEcathode-\\kEanode"
+     "ktex": "\\kEcell=\\kEcathode-\\kEanode",
+     "anchor": "17.3-cell-potentials"
     }
    ]
   },
@@ -216,7 +217,8 @@
     {
      "id": "eq-standard-cell-potential",
      "latex": "E_{\\text{cell}}^{\\circ}=E_{\\text{cathode}}^{\\circ}-E_{\\text{anode}}^{\\circ}",
-     "ktex": "\\kEocell=\\kEocathode-\\kEoanode"
+     "ktex": "\\kEocell=\\kEocathode-\\kEoanode",
+     "anchor": "17.3-cell-potentials"
     }
    ]
   },
@@ -247,7 +249,8 @@
      "id": "eq-electrode-potential",
      "latex": "E_{\\text{cell}}=E_{\\text{X}}-E_{\\text{SHE}}=E_{\\text{X}}",
      "ktex": "\\kEcell=\\kEX-\\kEshe=\\kEX",
-     "condition": "E_SHE = 0 V, by definition"
+     "condition": "E_SHE = 0 V, by definition",
+     "anchor": "17.3-she"
     }
    ]
   },
@@ -258,7 +261,8 @@
    "name": "Standard electrode potential",
    "symbol": "E°_X",
    "terms": [
-    "standard electrode potential"
+    "standard electrode potential",
+    "standard reduction potential"
    ],
    "type": "potential",
    "statement": "The standard electrode potential of a half-cell is its electrode potential measured under standard-state conditions. Since the definition requires the half-cell to function as a cathode, these potentials are sometimes called standard reduction potentials, and they are tabulated for half-reactions written as reductions."
@@ -306,17 +310,20 @@
     {
      "id": "eq-standard-free-energy-cell-potential",
      "latex": "\\Delta G^{\\circ}=-nFE_{\\text{cell}}^{\\circ}",
-     "ktex": "\\kdGo=-\\kn\\kFaraday\\kEocell"
+     "ktex": "\\kdGo=-\\kn\\kFaraday\\kEocell",
+     "anchor": "17.4-dg"
     },
     {
      "id": "eq-free-energy-cell-potential",
      "latex": "\\Delta G=-nFE_{\\text{cell}}",
-     "ktex": "\\kdG=-\\kn\\kFaraday\\kEcell"
+     "ktex": "\\kdG=-\\kn\\kFaraday\\kEcell",
+     "anchor": "17.4-dg"
     },
     {
      "id": "eq-electrical-work",
      "latex": "w_{\\text{elec}}=w_{\\text{max}}=-nFE_{\\text{cell}}",
-     "ktex": "\\kwelec=\\kwmax=-\\kn\\kFaraday\\kEcell"
+     "ktex": "\\kwelec=\\kwmax=-\\kn\\kFaraday\\kEcell",
+     "anchor": "17.4-dg"
     }
    ]
   },
@@ -330,13 +337,15 @@
     {
      "id": "eq-standard-cell-potential-k",
      "latex": "E_{\\text{cell}}^{\\circ}=\\frac{RT}{nF}\\ln K",
-     "ktex": "\\kEocell=\\frac{R\\kT}{\\kn\\kFaraday}\\ln\\kK"
+     "ktex": "\\kEocell=\\frac{R\\kT}{\\kn\\kFaraday}\\ln\\kK",
+     "anchor": "17.4-k"
     },
     {
      "id": "eq-standard-cell-potential-k-298",
      "latex": "E_{\\text{cell}}^{\\circ}=\\frac{0.0257\\text{ V}}{n}\\ln K=\\frac{0.0592\\text{ V}}{n}\\log K",
      "ktex": "\\kEocell=\\frac{0.0257\\text{ V}}{\\kn}\\ln\\kK=\\frac{0.0592\\text{ V}}{\\kn}\\log\\kK",
-     "condition": "at 298.15 K"
+     "condition": "at 298.15 K",
+     "anchor": "17.4-ex-relations"
     }
    ]
   },
@@ -360,13 +369,15 @@
     {
      "id": "eq-nernst",
      "latex": "E_{\\text{cell}}=E_{\\text{cell}}^{\\circ}-\\frac{RT}{nF}\\ln Q",
-     "ktex": "\\kEcell=\\kEocell-\\frac{R\\kT}{\\kn\\kFaraday}\\ln\\kQrxn"
+     "ktex": "\\kEcell=\\kEocell-\\frac{R\\kT}{\\kn\\kFaraday}\\ln\\kQrxn",
+     "anchor": "17.4-nernst"
     },
     {
      "id": "eq-nernst-298",
      "latex": "E_{\\text{cell}}=E_{\\text{cell}}^{\\circ}-\\frac{0.0592\\text{ V}}{n}\\log Q",
      "ktex": "\\kEcell=\\kEocell-\\frac{0.0592\\text{ V}}{\\kn}\\log\\kQrxn",
-     "condition": "at 298.15 K"
+     "condition": "at 298.15 K",
+     "anchor": "17.4-nernst"
     }
    ]
   },
@@ -587,7 +598,8 @@
     {
      "id": "eq-charge-current-time",
      "latex": "Q=It",
-     "ktex": "\\kQ=\\kI\\kt"
+     "ktex": "\\kQ=\\kI\\kt",
+     "anchor": "17.7-quantitative"
     }
    ]
   },
@@ -601,7 +613,8 @@
     {
      "id": "eq-charge-moles-electrons",
      "latex": "Q=nF",
-     "ktex": "\\kQ=\\kn\\kFaraday"
+     "ktex": "\\kQ=\\kn\\kFaraday",
+     "anchor": "17.7-quantitative"
     }
    ]
   },

@@ -27,7 +27,7 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
   const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 660, dist: 8.4, tilt: 0.16 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 100);
   grp.position.y = -0.35;
-  const CU_BLUE = '#3b8fd9';
+  const CU_BLUE = '#3b8fd9';                    /* the blue of Cu²⁺(aq) */
   const T = 6, TAU_E = 0.6, LIFE = 1.8;
   const XA = -1.7, XC = 1.7, RB = 0.8, YB = -1.3, YT = 0.35, YL = 0, XS = 1.15, YP = -0.5, YW = 1.45;
   const CELLS = {

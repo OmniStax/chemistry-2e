@@ -45,3 +45,7 @@ Nothing of the prose. Errata kept as printed: the overall equation's "Cu^{2}{}^{
 
 - No variables, forms or anchors: 17.2 has no variables rows and states no formula.
 - concepts `cell-potential`: the glossary term "cell potential" printed in 17.2's glossary already sits on 17.3's concept (no change).
+
+Applied by the chapter pass (2026-10-05):
+
+- Nothing to apply. A fact comment now names the blue of Cu²⁺(aq) beside its colour in `figures.js`.

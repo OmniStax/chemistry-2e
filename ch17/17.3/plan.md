@@ -67,3 +67,9 @@ Learning objectives, the summary (to `summary_html`), the Key Equations table an
 - variables `17.3/E°_cathode`: set `ref` to `cathode-half-cell`
 - variables `17.3/E°_anode`: set `ref` to `anode-half-cell`
 - concepts `standard-electrode-potential`: add the term "standard reduction potential" (the book's other name for it, italicized in 17.3)
+
+Applied by the chapter pass (2026-10-05):
+
+- The eleven variables rows anchored as listed and the three forms anchored as listed.
+- `17.3/E°_cathode` and `17.3/E°_anode` carry `ref` `cathode-half-cell` and `anode-half-cell`.
+- `standard-electrode-potential` has the term "standard reduction potential", merged into `book.json`.

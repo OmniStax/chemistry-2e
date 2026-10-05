@@ -50,3 +50,8 @@ Nothing of the prose. Errata kept as printed: "TFaraday's constant … C/mol e<s
 - anchors: `eq-standard-free-energy-cell-potential` → 17.4-dg; `eq-free-energy-cell-potential` → 17.4-dg; `eq-electrical-work` → 17.4-dg; `eq-standard-cell-potential-k` → 17.4-k; `eq-standard-cell-potential-k-298` → 17.4-ex-relations; `eq-nernst` → 17.4-nernst; `eq-nernst-298` → 17.4-nernst
 - variables rows for 17.4 (the text writes them through their macros): `E°_cathode`, `E°_anode` (Examples 17.6, 17.7, 17.8), `E_cathode`, `E_anode` (Example 17.8), `E_std` (the E° of the `k` paragraph), each linked as in 17.3
 - concepts: none to change; the glossary's three terms already sit on `faradays-constant`, `nernst-equation`, `concentration-cell`
+
+Applied by the chapter pass (2026-10-05):
+
+- The seven forms anchored as listed; the twelve existing variables rows anchored where the text first writes them (ΔG°, w_max, w_elec, n, F, E°_cell at 17.4-dg; R, T, K at 17.4-k; ΔG, E_cell, Q_c at 17.4-nernst).
+- Five variables rows added: E°_cathode and E°_anode (anchor 17.4-ex-relations), E_cathode and E_anode (17.4-ex-concentration), with the same concepts as in 17.3 and `ref` on the concentration cell's two half-cells; E_std (17.4-k) links `standard-cell-potential` rather than 17.3's `standard-electrode-potential`, since the E° the paragraph summarizes is that of a cell.

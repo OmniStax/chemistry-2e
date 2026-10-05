@@ -29,10 +29,19 @@ Proposed by the agent after the chapter exploration (2026-10-05). Status: applie
 | Answers to book problems | the book's key only; sixteen unkeyed items whose answers would be computed left out (2, 3, 3, 2, 1, 0, 5); three unkeyed choice items kept open with their options (17.1, 17.2, 17.6); six unkeyed conceptual items kept with an AI-marked suggested approach (2, 1, 0, 0, 1, 2, 0) |
 | Generated questions | none |
 | Concept nodes | 50 rows merged (2, 9, 9, 7, 9, 6, 8), 99 prerequisite edges into Chapters 1, 2, 3, 4, 5, 7, 11, 13, 14, 16 and within the chapter; 4.2's redox concepts reused for 17.1 |
-| Formulas | forms on the concepts in `book.json` (12); 34 variables in `chapter.json`; no anchors until the chapter pass |
-| Glossary | the book’s wording, 31 entries as 36 concept terms (with SHE, voltaic cell, cell schematic, half-cell and electroplating), each on the concept of the section that introduces it ("electrode potential" and "half cell" printed in 17.1, "cell potential" in 17.2, "salt bridge" in 17.6) |
+| Formulas | forms on the concepts in `book.json` (12); 39 variables in `chapter.json`; every form and variables row anchored at the chapter pass |
+| Glossary | the book’s wording, 31 entries as 36 concept terms, and "standard reduction potential" added at the chapter pass as a term of `standard-electrode-potential` (with SHE, voltaic cell, cell schematic, half-cell and electroplating), each on the concept of the section that introduces it ("electrode potential" and "half cell" printed in 17.1, "cell potential" in 17.2, "salt bridge" in 17.6) |
 | Degrees | `°` in prose and `^\circ` in math, never `º` |
 | Cross references | plain text to other sections; the appendices as above |
 | Labels | Figure for a book number, Sim for an addition |
 | `ai` and `built` | `{"text":[{"model":"claude-opus-5-5","effort":"high"}],"figures":[{"model":"claude-opus-5-5","effort":"high"}]}`, `2026-10-05`; every figure row carries its own `ai` |
 | Book manifest | `ch17` added to `book.json` by `ost merge chemistry-2e 17` |
+
+## What the build changed
+
+| Setting | Built |
+|---|---|
+| Figures | 17.1 a still Sim of a polar bond's shared pair sliding to an oxidation number (in place of a half-reaction stepper); 17.2 folds Figures 17.3 + 17.4 into one 3D bench with a choice of cell; 17.3 folds Figures 17.5 + 17.6 into one 3D bench with a choice of half-cell X, and adds the E° ladder Sim; 17.4 Figure 17.7 on one slider, a Nernst Sim and a moving concentration-cell Sim; 17.5 moves Figures 17.12 and 17.14 and keeps 17.8 to 17.11 and 17.13 as the book's images; 17.6 folds Figures 17.16 + 17.17 with a choice of protection; 17.7 redraws all three, 17.18 to 17.20, as 3D benches, the current and time sliders on 17.20 |
+| Photographs | as proposed, and the battery cutaways 17.9, 17.10, 17.11 and 17.13 kept as photo rows of the book's images |
+| Formulas | 39 variables (five added in 17.4 at the chapter pass), every row and form anchored |
+| Types | `current` coloured by the refit of the book's type colours before the chapter pass |

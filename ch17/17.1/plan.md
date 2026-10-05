@@ -51,3 +51,7 @@ Nothing of the prose; objectives, summary and the glossary go to the tables. Err
 ## Wanted at chapter level
 
 - none: the section has no variables rows or forms to anchor, and no concept, edge or symbol fix.
+
+Applied by the chapter pass (2026-10-05):
+
+- Nothing to apply; the section was read for the pass's checks and nothing changed.

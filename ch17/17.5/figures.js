@@ -22,7 +22,7 @@ function charge(ctx, x, y, r, plus) {
   line(ctx, cx - s, cy, cx + s, cy, PAL.ink, 2); if (plus) line(ctx, cx, cy - s, cx, cy + s, PAL.ink, 2);
 }
 const electron = (ctx, x, y) => { atom(ctx, x, y, 6, 'e-'); charge(ctx, x, y, 6, false); };
-/* a row of kinds beneath a scene: a token w wide and its name each, centred */
+/* a row of kinds beneath a scene: a token w wide and its name each, centered */
 function legend(ctx, y, items) {
   const tw = items.map((it) => it.w || 20), w = items.map((it, i) => tw[i] + 8 + F.measure(ctx, it.name, { size: 18 }));
   let x = 700 - (w.reduce((a, b) => a + b, 0) + 28 * (items.length - 1)) / 2;

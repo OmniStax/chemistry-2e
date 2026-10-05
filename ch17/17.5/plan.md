@@ -49,3 +49,7 @@ The seven Link to Learning notes. Errata kept as printed: "its intended use a so
 
 - No anchors: 17.5 has no forms; its one variables row, `17.5/E_cell`, already names `cell-potential`.
 - No concept, edge or symbol fixes.
+
+Applied by the chapter pass (2026-10-05):
+
+- `17.5/E_cell` anchored at 17.5-single-use, where the dry cell's potential is first written. The seven Link to Learning notes stay dropped and named in `notes`. A British spelling in a code comment corrected.

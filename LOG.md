@@ -1387,3 +1387,65 @@ Checks: `ost check` clean for the book, and every page of the chapter in
 light and dark with no console error but the dev server's own missing
 offline catalogue, no KaTeX error, no missing image, every figure drawn and
 all thirteen exercise hosts filled.
+
+
+## Pass 20 (2026-10-05): Chapter 17, Electrochemistry, is built and passed
+
+Built: the introduction and seven sections, 17.1 to 17.7, in the publisher's
+numbering, Figures 17.1 to 17.20 all shown and linked. Thirteen figures drawn
+live. Figures 17.3 and 17.4 are one galvanic cell on a 3D bench with a choice
+of cell, copper and silver(I) or magnesium and iron(III): electrons run through
+the wire on a clock, ions leave the salt bridge, the anode thins and the
+cathode grows, and the cell's schematic stands beneath with its
+concentrations. Figures 17.5 and 17.6 are the standard hydrogen electrode
+wired against a chosen half-cell X, the voltmeter reading E°X, with each
+electrode's surface magnified beneath. Figure 17.7 is the triangle of K, ΔG°
+and E°cell on one slider with n as a choice. Figure 17.12 shuttles lithium
+ions on charge or discharge, Figure 17.14 runs the fuel cell's gases and ions
+through it, and Figures 17.16 and 17.17 are one cross section of scratched
+iron with a choice of protection, scratched paint, a zinc coating or a
+magnesium anode. Figures 17.18, 17.19 and 17.20 are electrolytic cells on 3D
+benches: the Downs cell, water split only once the applied voltage passes
+1.229 V with hydrogen rising twice as fast as oxygen, and a spoon
+silver-plated under current and time sliders set to Example 17.9. Four Sims
+of OmniStax's own: a polar bond's shared pairs sliding onto one atom until
+the charges are oxidation numbers (17.1), the ladder of Table 17.1 with a
+cathode and an anode to choose (17.3), the Nernst line and the zinc
+concentration cell of Example 17.8 running down until Q reaches K (17.4).
+Figures 17.1, 17.2, 17.8 to 17.11, 17.13 and 17.15 are the book's photographs
+and drawings. Tables 17.1 and 17.2 are written as tables. Forty-three
+exercises, ten of them Check Your Learning items placed inline after their
+examples, each with its host. Sixteen unkeyed items whose answers would be
+computed are left out and named in `exercise_notes`; three unkeyed choice
+items are kept open with their options, and six unkeyed conceptual items
+carry a suggested approach. No exercise moves.
+
+What the chapter pass changed. Every form and variables row of the chapter
+anchored: twelve forms and thirty-nine variables, five of them added in 17.4
+(E°cathode, E°anode, Ecathode, Eanode and E°) so that every symbol a page
+writes through its macro has a row in that section; the E° of 17.4's
+summary paragraph links the standard cell potential. E°cathode and E°anode
+take the colours of the cathode and anode half-cells in 17.3, and all four
+electrode potentials take them in 17.4, where the concentration cell draws
+both. "Standard reduction potential", the book's other name, is a term of
+`standard-electrode-potential`. `config.md` records what the build changed,
+`COLOR.md` the referents and bindings as built; the type `current` took its
+colour in the refit of the book's type colours before the pass.
+
+Errata carried as printed and named in `exploration.md`: "oxidations
+numbers", "add OH⁻ ions the equation" and a missing full stop in 17.1;
+"Cu^{2}{}^{+}" and a key's misplaced parenthesis in 17.2; "−0. 47 V",
+"Br₂(s)", Table 17.1's +0.34 V against +0.337 V, its out-of-order Mn²⁺ and
+Zn(OH)₂ rows, "Mg²(aq)" and "predication" in 17.3; "TFaraday's … e–.he",
+"(298) K)" and "−0.1 7 V" in 17.4; "a potassium hydroxide electrode" for the
+electrolyte, "a large amount current" and two more slips in 17.5; "as
+illustrated in Figure 17.15" for the rust cell of Figure 17.16, "a
+passivating an oxide layer", and an exercise's −2.07 V for aluminum and
+−0.477 V for Fe³⁺/Fe in 17.6; "from a solution of containing", "n mole of
+electrons" and a hyphen for OH⁻'s minus in 17.7. The seven Link to Learning
+notes of 17.5 are dropped and named.
+
+Checks: `ost check` clean for the book, and every page of the chapter in
+light and dark with no console error but the dev server's own missing
+offline catalogue, no KaTeX error, no missing image, every figure drawn and
+all ten exercise hosts filled.

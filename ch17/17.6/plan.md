@@ -47,3 +47,7 @@ Learning objectives, the summary (to `summary_html`) and the glossary go to the 
 
 - variables `17.6/E_std` → 17.6-rust
 - variables `17.6/E°_cell` → 17.6-rust
+
+Applied by the chapter pass (2026-10-05):
+
+- Both rows anchored as listed. The text's "as illustrated in Figure 17.15", which means the rust cell of Figure 17.16, is kept as printed and recorded among the errata in `exploration.md`.

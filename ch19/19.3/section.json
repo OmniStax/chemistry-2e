@@ -1,0 +1,762 @@
+{
+  "id": "19.3",
+  "module": "m68844",
+  "chapter": "19",
+  "title": "Spectroscopic and Magnetic Properties of Coordination Compounds",
+  "short": "Spectroscopic and Magnetic Properties",
+  "lead": "<span data-concept=\"crystal-field-theory\">Crystal field theory</span> treats the ligands of a complex as point charges that repel the electrons in the metal’s <em>d</em> orbitals. This section follows the splitting of those orbitals in octahedral, tetrahedral and square planar complexes, weighs the <span data-concept=\"crystal-field-splitting\">crystal field splitting</span> against the <span data-concept=\"pairing-energy\">pairing energy</span> to tell high-spin from low-spin complexes, and connects the splitting to the magnetism and the colors of complexes.",
+  "objectives": [
+    "Outline the basic premise of crystal field theory (CFT)",
+    "Identify molecular geometries associated with various d-orbital splitting patterns",
+    "Predict electron configurations of split d orbitals for selected transition metal atoms or ions",
+    "Explain spectral and magnetic properties in terms of CFT concepts"
+  ],
+  "summary_html": "<p><span data-concept=\"crystal-field-theory\">Crystal field theory</span> treats interactions between the electrons on the metal and the <span data-concept=\"ligand\">ligands</span> as a simple electrostatic effect. The presence of the <span data-concept=\"ligand\">ligands</span> near the metal ion changes the energies of the metal <em>d</em> orbitals relative to their energies in the free ion. Both the color and the magnetic properties of a complex can be attributed to this <span data-concept=\"crystal-field-splitting\">crystal field splitting</span>. The magnitude of the splitting ($\\kdoct$) depends on the nature of the <span data-concept=\"ligand\">ligands</span> bonded to the metal. <span data-concept=\"ligand-field-strength\">Strong-field ligands</span> produce large splitting and favor <span data-concept=\"high-and-low-spin-complexes\">low-spin complexes</span>, in which the <em>t</em><sub>2<em>g</em></sub> orbitals are completely filled before any electrons occupy the <em>e<sub>g</sub></em> orbitals. <span data-concept=\"ligand-field-strength\">Weak-field ligands</span> favor formation of <span data-concept=\"high-and-low-spin-complexes\">high-spin complexes</span>. The <em>t</em><sub>2<em>g</em></sub> and the <em>e<sub>g</sub></em> orbitals are singly occupied before any are doubly occupied.</p>",
+  "notes": "The Link to Learning on the reduction of vanadium complexes is dropped; the sentence that points to it is kept. The untitled opening carries a header of our own, Explaining transition metal complexes. The t<sub>2g</sub> list’s “<em>d<sub>zy</sub></em>”, the straight apostrophe of “Hund's rule”, Figure 19.35’s “5d orbitals” and “eg”, Example 19.9’s v for the frequency and its “450 (blue)”, and “blue, blue-green violet, or yellow” are kept as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the key to exercise 37 (fs-idm69906288) is the book’s pair of crystal field diagrams. Three unkeyed exercises whose answers would have to be worked out are left out, and no answer is computed for them: 36 (fs-idp119097632, the unpaired electrons of [Fe(NO<sub>2</sub>)<sub>6</sub>]<sup>3−</sup> and [FeF<sub>6</sub>]<sup>3−</sup>), 38 (fs-idp62990928, the oxidation state, <em>d</em> electrons and unpaired electrons of [Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>3</sub>) and 44 (fs-idm147246656, the geometry and formula of a nickel compound from its analysis). The unkeyed choice exercises 46 (fs-idp74371168) and 48 (fs-idp70727968) are kept open with their options and a suggested approach, and the unkeyed conceptual exercises 40 (fs-idm98451056) and 42 (fs-idm107475184) carry a suggested approach marked as OmniStax’s own. Nothing is moved.",
+  "figures": [
+    {
+      "id": "sim-d-orbitals",
+      "kind": "sim",
+      "number": "19.33",
+      "folds": [
+        "19.34",
+        "19.36"
+      ],
+      "originals": [
+        "/media/ch19/CNX_Chem_19_03_Dorbital.jpg",
+        "/media/ch19/CNX_Chem_19_03_CFSE.jpg",
+        "/media/ch19/CNX_Chem_19_03_TetCube.jpg"
+      ],
+      "original_caption": "(Figure 19.33) The directional characteristics of the five d orbitals are shown here. The shaded portions indicate the phase of the orbitals. The ligands (L) coordinate along the axes. For clarity, the ligands have been omitted from the dx²−y² orbital so that the axis labels could be shown. (Figure 19.34) In octahedral complexes, the eg orbitals are destabilized (higher in energy) compared to the t2g orbitals because the ligands interact more strongly with the d orbitals at which they are pointed directly. (Figure 19.36) This diagram shows the orientation of the tetrahedral ligands with respect to the axis system for the orbitals.",
+      "draws": [
+        "energy"
+      ],
+      "conventions": [
+        "M",
+        "L"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-high-low-spin",
+      "kind": "sim",
+      "number": "19.35",
+      "originals": [
+        "/media/ch19/CNX_Chem_19_03_Lowhigh.jpg"
+      ],
+      "original_caption": "Iron(II) complexes have six electrons in the 5d orbitals. In the absence of a crystal field, the orbitals are degenerate. For coordination complexes with strong-field ligands such as [Fe(CN)6]4−, Δoct is greater than P, and the electrons pair in the lower energy t2g orbitals before occupying the eg orbitals. With weak-field ligands such as H2O, the ligand field splitting is less than the pairing energy, Δoct less than P, so the electrons occupy all d orbitals singly before any pairing occurs.",
+      "draws": [
+        "energy"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-tet-splitting",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-square-planar",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-color-wheel",
+      "kind": "sim",
+      "number": "19.37",
+      "originals": [
+        "/media/ch19/CNX_Chem_19_03_Lightper.jpg"
+      ],
+      "original_caption": "(a) An object is black if it absorbs all colors of light. If it reflects all colors of light, it is white. An object has a color if it absorbs all colors except one, such as this yellow strip. The strip also appears yellow if it absorbs the complementary color from white light (in this case, indigo). (b) Complementary colors are located directly across from one another on the color wheel. (c) A solution of [Cu(NH3)4]2+ ions absorbs red and orange light, so the transmitted light appears as the complementary color, blue.",
+      "draws": [
+        "wavelength",
+        "frequency",
+        "velocity",
+        "energy"
+      ],
+      "facts": [
+        "spectrum"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-aqueous-colors",
+      "kind": "photo",
+      "number": "19.38",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-iron-complexes",
+      "kind": "photo",
+      "number": "19.39",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-copper-complexes",
+      "kind": "photo",
+      "number": "19.40",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [],
+  "coverage": [
+    {
+      "span": "opening",
+      "concept": "valence-bond-theory",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "degenerate-orbitals",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "coordination-compound",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "d-orbital",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "crystal-field-theory",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "eg-and-t2g-orbitals",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "crystal-field-splitting",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "spectrochemical-series",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "ligand-field-strength",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "pairing-energy",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "high-and-low-spin-complexes",
+      "verb": "introduces"
+    },
+    {
+      "span": "cft",
+      "concept": "d-orbital",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "ligand",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "hunds-rule",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "degenerate-orbitals",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "octahedral-geometry",
+      "verb": "uses"
+    },
+    {
+      "span": "cft",
+      "concept": "aufbau-principle",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-high-low-spin",
+      "concept": "predict-unpaired-electrons",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-high-low-spin",
+      "concept": "high-and-low-spin-complexes",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-high-low-spin",
+      "concept": "ion-configurations",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-high-low-spin",
+      "concept": "ligand-field-strength",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-other-geometries",
+      "concept": "crystal-field-other-geometries",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-other-geometries",
+      "concept": "tetrahedral-geometry",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-other-geometries",
+      "concept": "eg-and-t2g-orbitals",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-other-geometries",
+      "concept": "hunds-rule",
+      "verb": "uses"
+    },
+    {
+      "span": "square-planar",
+      "concept": "crystal-field-other-geometries",
+      "verb": "reinforces"
+    },
+    {
+      "span": "square-planar",
+      "concept": "complex-geometry",
+      "verb": "uses"
+    },
+    {
+      "span": "square-planar",
+      "concept": "cis-trans-configuration",
+      "verb": "uses"
+    },
+    {
+      "span": "magnetic",
+      "concept": "magnetic-moment-unpaired-electrons",
+      "verb": "introduces"
+    },
+    {
+      "span": "magnetic",
+      "concept": "paramagnetism",
+      "verb": "uses"
+    },
+    {
+      "span": "magnetic",
+      "concept": "diamagnetism",
+      "verb": "uses"
+    },
+    {
+      "span": "magnetic",
+      "concept": "high-and-low-spin-complexes",
+      "verb": "uses"
+    },
+    {
+      "span": "colors",
+      "concept": "complementary-colors",
+      "verb": "introduces"
+    },
+    {
+      "span": "colors",
+      "concept": "colors-of-complexes",
+      "verb": "introduces"
+    },
+    {
+      "span": "colors",
+      "concept": "electromagnetic-spectrum",
+      "verb": "uses"
+    },
+    {
+      "span": "colors",
+      "concept": "photon-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "colors",
+      "concept": "crystal-field-splitting",
+      "verb": "uses"
+    },
+    {
+      "span": "colors",
+      "concept": "ligand-field-strength",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "colors-of-complexes",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "complementary-colors",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "photon-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "wave-speed-relation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "frequency",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "wavelength",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "blackbody-radiation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-colors",
+      "concept": "crystal-field-splitting",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm131078432",
+      "kind": "check-your-learning",
+      "bloom": "Analyze",
+      "place": {
+        "at": "inline",
+        "after": "ex-high-low-spin"
+      },
+      "cite": "ex-high-low-spin",
+      "prompt": "The size of the crystal field splitting only influences the arrangement of electrons when there is a choice between pairing electrons and filling the higher-energy orbitals. For which <em>d</em>-electron configurations will there be a difference between high- and low-spin configurations in octahedral complexes?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<em>d</em><sup>4</sup>, <em>d</em><sup>5</sup>, <em>d</em><sup>6</sup>, and <em>d</em><sup>7</sup>"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm108712192",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-other-geometries"
+      },
+      "cite": "ex-other-geometries",
+      "prompt": "Explain how many unpaired electrons a tetrahedral <em>d</em><sup>4</sup> ion will have.",
+      "answer": {
+        "type": "number",
+        "part": "unpaired electrons",
+        "value": 4,
+        "hint": "Compare the small tetrahedral splitting with the pairing energy before placing the four electrons in the <em>e</em> and <em>t</em><sub>2</sub> sets.",
+        "generated_by": "source",
+        "solution": "4; because Δ<sub>tet</sub> is small, all tetrahedral complexes are high spin and the electrons go into the <em>t</em><sub>2</sub> orbitals before pairing"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idp4936672",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-colors"
+      },
+      "cite": "ex-colors",
+      "prompt": "A complex that appears green, absorbs photons of what wavelengths?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "red, 620–800 nm"
+      }
+    },
+    {
+      "id": "e37",
+      "source_id": "fs-idm69906288",
+      "source_number": "37",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "cft",
+      "prompt": "Draw the crystal field diagrams for [Fe(NO<sub>2</sub>)<sub>6</sub>]<sup>4−</sup> and [FeF<sub>6</sub>]<sup>3−</sup>. State whether each complex is high spin or low spin, paramagnetic or diamagnetic, and compare Δ<sub>oct</sub> to <em>P</em> for each complex.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "<img src=\"/media/ch19/CNX_Chem_19_03_FECN6FEH2O_img.jpg\" alt=\"A diagram is shown with two columns and two rows of squares outlined in yellow. The first column is labeled “[ F e ( N O subscript 2 ) subscript 6 ] superscript 4 negative sign.” The second is labeled, “[ F e F subscript 6 ] superscript 3 negative sign.” In the left column, three linked squares outlined in yellow are shown. Each of the squares contains two half arrows, one pointing up and one pointing down. In a row just above, two empty linked squares are shown. The label, “Low spin, diamagnetic, P less than capital delta subscript oct,” is provided below the column. In the right column, three linked squares outlined in yellow are shown. The square on the left contains two half arrows, one pointing up and one pointing down. The other two squares each contain a single upward pointing half arrow. In a row just above, two linked squares are shown which each contain a single upward pointing half arrow. The label, “High spin, paramagnetic, P greater than capital delta subscript oct,” is provided below the column.\">"
+      }
+    },
+    {
+      "id": "e39",
+      "source_id": "fs-idm40512384",
+      "source_number": "39",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-high-low-spin",
+      "prompt": "The anhydrous solid CoCl<sub>2</sub> is blue in color. Because it readily absorbs water from the air, it is used as a humidity indicator to monitor if equipment (such as a cell phone) has been exposed to excessive levels of moisture. Predict what product is formed by this reaction, and how many unpaired electrons this complex will have.",
+      "answer": {
+        "type": "number",
+        "part": "unpaired electrons in the product",
+        "value": 3,
+        "hint": "Water adds as six ligands; find the <em>d</em> count of Co<sup>2+</sup> and place its electrons for a weak-field ligand.",
+        "generated_by": "source",
+        "solution": "[Co(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>2</sub> with three unpaired electrons."
+      }
+    },
+    {
+      "id": "e40",
+      "source_id": "fs-idm98451056",
+      "source_number": "40",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "cft",
+      "prompt": "Is it possible for a complex of a metal in the transition series to have six unpaired electrons? Explain.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: count the <em>d</em> orbitals a transition metal ion has and ask how many electrons can occupy them singly, whatever the splitting; then decide whether a sixth unpaired electron would have anywhere to go."
+      }
+    },
+    {
+      "id": "e41",
+      "source_id": "fs-idm67958768",
+      "source_number": "41",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-high-low-spin",
+      "prompt": "How many unpaired electrons are present in each of the following?<br>(a) [CoF<sub>6</sub>]<sup>3−</sup> (high spin)<br>(b) [Mn(CN)<sub>6</sub>]<sup>3−</sup> (low spin)<br>(c) [Mn(CN)<sub>6</sub>]<sup>4−</sup> (low spin)<br>(d) [MnCl<sub>6</sub>]<sup>4−</sup> (high spin)<br>(e) [RhCl<sub>6</sub>]<sup>3−</sup> (low spin)",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) [CoF<sub>6</sub>]<sup>3−</sup>",
+            "value": 4,
+            "hint": "Find the metal's oxidation state and its number of <em>d</em> electrons first."
+          },
+          {
+            "part": "(b) [Mn(CN)<sub>6</sub>]<sup>3−</sup>",
+            "value": 2
+          },
+          {
+            "part": "(c) [Mn(CN)<sub>6</sub>]<sup>4−</sup>",
+            "value": 1
+          },
+          {
+            "part": "(d) [MnCl<sub>6</sub>]<sup>4−</sup>",
+            "value": 5
+          },
+          {
+            "part": "(e) [RhCl<sub>6</sub>]<sup>3−</sup>",
+            "value": 0
+          }
+        ],
+        "solution": "(a) 4; (b) 2; (c) 1; (d) 5; (e) 0"
+      }
+    },
+    {
+      "id": "e42",
+      "source_id": "fs-idm107475184",
+      "source_number": "42",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "cft",
+      "prompt": "Explain how the diphosphate ion, [O<sub>3</sub>P−O−PO<sub>3</sub>]<sup>4−</sup>, can function as a water softener that prevents the precipitation of Fe<sup>2+</sup> as an insoluble iron salt.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: look for the atoms of the diphosphate ion that carry lone pairs and could act as donor atoms, ask how many of them could bind one Fe<sup>2+</sup> ion at once, and connect the soluble complex this forms with the iron that is then no longer free to precipitate."
+      }
+    },
+    {
+      "id": "e43",
+      "source_id": "fs-idm124930528",
+      "source_number": "43",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-high-low-spin",
+      "prompt": "For complexes of the same metal ion with no change in oxidation number, the stability increases as the number of electrons in the <em>t</em><sub>2<em>g</em></sub> orbitals increases. Which complex in each of the following pairs of complexes is more stable?<br>(a) [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> or [Fe(CN)<sub>6</sub>]<sup>4−</sup><br>(b) [Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup> or [CoF<sub>6</sub>]<sup>3−</sup><br>(c) [Mn(CN)<sub>6</sub>]<sup>4−</sup> or [MnCl<sub>6</sub>]<sup>4−</sup>",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) [Fe(CN)<sub>6</sub>]<sup>4−</sup>; (b) [Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup>; (c) [Mn(CN)<sub>6</sub>]<sup>4−</sup>"
+      }
+    },
+    {
+      "id": "e45",
+      "source_id": "fs-idm79409024",
+      "source_number": "45",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "magnetic",
+      "prompt": "Would you expect the complex [Co(en)<sub>3</sub>]Cl<sub>3</sub> to have any unpaired electrons? Any isomers?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The complex does not have any unpaired electrons. The complex does not have any geometric isomers, but the mirror image is nonsuperimposable, so it has an optical isomer."
+      }
+    },
+    {
+      "id": "e46",
+      "source_id": "fs-idp74371168",
+      "source_number": "46",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "magnetic",
+      "prompt": "Would you expect the Mg<sub>3</sub>[Cr(CN)<sub>6</sub>]<sub>2</sub> to be diamagnetic or paramagnetic? Explain your reasoning.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: find the charge of the complex ion from the two Mg<sup>2+</sup> ions, then the oxidation state and the number of <em>d</em> electrons of chromium; place those electrons in the <em>t</em><sub>2<em>g</em></sub> orbitals of an octahedral complex with a strong-field ligand and ask whether any are left unpaired."
+      }
+    },
+    {
+      "id": "e47",
+      "source_id": "fs-idm103127008",
+      "source_number": "47",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "colors",
+      "prompt": "Would you expect salts of the gold(I) ion, Au<sup>+</sup>, to be colored? Explain.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "No. Au<sup>+</sup> has a complete 5<em>d</em> sublevel."
+      }
+    },
+    {
+      "id": "e48",
+      "source_id": "fs-idp70727968",
+      "source_number": "48",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "colors",
+      "prompt": "[CuCl<sub>4</sub>]<sup>2−</sup> is green. [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> is blue. Which absorbs higher-energy photons? Which is predicted to have a larger crystal field splitting?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: use the color wheel to find the color each complex absorbs, the complement of the color it shows; compare the energies of photons of those two colors, and recall that the absorbed photon's energy matches the splitting between the <em>d</em> orbitals."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "high-and-low-spin-complexes"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "pairing-energy"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "crystal-field-other-geometries"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "complementary-colors"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "colors-of-complexes"
+    },
+    {
+      "exercise": "e37",
+      "concept": "high-and-low-spin-complexes"
+    },
+    {
+      "exercise": "e37",
+      "concept": "paramagnetism"
+    },
+    {
+      "exercise": "e37",
+      "concept": "diamagnetism"
+    },
+    {
+      "exercise": "e39",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e39",
+      "concept": "ligand-field-strength"
+    },
+    {
+      "exercise": "e40",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e40",
+      "concept": "d-orbital"
+    },
+    {
+      "exercise": "e41",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e41",
+      "concept": "high-and-low-spin-complexes"
+    },
+    {
+      "exercise": "e42",
+      "concept": "chelate"
+    },
+    {
+      "exercise": "e42",
+      "concept": "complex-ion"
+    },
+    {
+      "exercise": "e43",
+      "concept": "eg-and-t2g-orbitals"
+    },
+    {
+      "exercise": "e43",
+      "concept": "high-and-low-spin-complexes"
+    },
+    {
+      "exercise": "e45",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e45",
+      "concept": "optical-isomer"
+    },
+    {
+      "exercise": "e46",
+      "concept": "predict-unpaired-electrons"
+    },
+    {
+      "exercise": "e46",
+      "concept": "paramagnetism"
+    },
+    {
+      "exercise": "e47",
+      "concept": "colors-of-complexes"
+    },
+    {
+      "exercise": "e48",
+      "concept": "colors-of-complexes"
+    },
+    {
+      "exercise": "e48",
+      "concept": "crystal-field-splitting"
+    }
+  ]
+}

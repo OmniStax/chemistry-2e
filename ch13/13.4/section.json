@@ -1,0 +1,1068 @@
+{
+ "id": "13.4",
+ "module": "m68801",
+ "chapter": "13",
+ "title": "Equilibrium Calculations",
+ "short": "Equilibrium Calculations",
+ "lead": "Equilibrium constants and equilibrium <span data-concept=\"concentration\">concentrations</span> can each be calculated from the other. This section gathers a reaction’s initial <span data-concept=\"concentration\">concentrations</span>, their changes and its equilibrium <span data-concept=\"concentration\">concentrations</span> in an ICE table, and uses it to find an <span data-concept=\"equilibrium-constant\">equilibrium constant</span>, a missing <span data-concept=\"concentration\">concentration</span>, or a whole equilibrium mixture.",
+ "objectives": [
+  "Identify the changes in concentration or pressure that occur for chemical species in equilibrium systems",
+  "Calculate equilibrium concentrations or pressures and equilibrium constants, using various algebraic approaches"
+ ],
+ "summary_html": "<p>Calculating values for <span data-concept=\"equilibrium-constant\">equilibrium constants</span> and/or equilibrium <span data-concept=\"concentration\">concentrations</span> is of practical benefit to many applications. A mathematical strategy that uses initial <span data-concept=\"concentration\">concentrations</span>, changes in <span data-concept=\"concentration\">concentrations</span>, and equilibrium <span data-concept=\"concentration\">concentrations</span> (and goes by the acronym ICE) is useful for several types of equilibrium calculations.</p>",
+ "notes": "Nothing of the section is left out; the ICE tables the book prints as images are written as tables, and the “NaSO₄” of Exercise 13.70 and the square brackets on the pressures in the key of Exercise 13.76 are kept as printed.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The sixteen unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp235853120, fs-idp220009680, fs-idp99340080, fs-idp95397216, fs-idp165909856, fs-idp120770528, fs-idp193760224, fs-idp277387888, fs-idp97213088, fs-idp145400352, fs-idp124881392, fs-idp307489856, fs-idp186517200, fs-idp301926064, fs-idp157265136, fs-idp303786512. The unkeyed exercises fs-idp155255936, fs-idp76682304, fs-idp359131456 and fs-idp222775760 carry a suggested approach marked as OmniStax’s own. The [H₂] of 0.06 M in the second Check Your Learning of Example 13.9 accepts 10%; other numeric answers accept 2%. No exercise moves between sections.",
+ "figures": [
+  {
+   "id": "sim-small-x",
+   "kind": "sim",
+   "draws": [
+    "equilibrium-constant",
+    "concentration"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "changes",
+   "concept": "ice-change-terms",
+   "verb": "introduces"
+  },
+  {
+   "span": "changes",
+   "concept": "stoichiometric-factor",
+   "verb": "uses"
+  },
+  {
+   "span": "changes",
+   "concept": "relative-reaction-rates",
+   "verb": "uses"
+  },
+  {
+   "span": "changes",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "calc-k",
+   "concept": "k-from-ice-table",
+   "verb": "introduces"
+  },
+  {
+   "span": "calc-k",
+   "concept": "ice-change-terms",
+   "verb": "uses"
+  },
+  {
+   "span": "calc-k",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "missing",
+   "concept": "missing-equilibrium-concentration",
+   "verb": "introduces"
+  },
+  {
+   "span": "missing",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "missing",
+   "concept": "write-reaction-quotient",
+   "verb": "uses"
+  },
+  {
+   "span": "initial",
+   "concept": "equilibrium-from-initial-concentrations",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial",
+   "concept": "small-x-approximation",
+   "verb": "introduces"
+  },
+  {
+   "span": "initial",
+   "concept": "predict-direction-q-versus-k",
+   "verb": "uses"
+  },
+  {
+   "span": "initial",
+   "concept": "ice-change-terms",
+   "verb": "uses"
+  },
+  {
+   "span": "initial",
+   "concept": "magnitude-of-k",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp184218304",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-changes"
+   },
+   "cite": "changes",
+   "prompt": "Complete the changes in concentrations for each of the following reactions:<br>(a) $\\begin{array}{llll}2{\\text{SO}}_{2}(g)+ & {\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{SO}}_{3}(g) \\\\ \\_\\_\\_\\_\\_ & x & & \\_\\_\\_\\_\\_\\end{array}$<br>(b) $\\begin{array}{lll}{\\text{C}}_{4}{\\text{H}}_{8}(g) & \\rightleftharpoons & 2{\\text{C}}_{2}{\\text{H}}_{4}(g) \\\\ \\_\\_\\_\\_\\_ & & -2x\\end{array}$<br>(c) $\\begin{array}{lllll}4{\\text{NH}}_{3}(g)+ & 7{\\text{O}}_{2}(g) & \\rightleftharpoons & 4{\\text{NO}}_{2}(g)+ & 6{\\text{H}}_{2}\\text{O}(g) \\\\ \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_ & & \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_\\end{array}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) 2<em>x</em>, <em>x</em>, −2<em>x;</em> (b) <em>x</em>, −2<em>x;</em> (c) 4<em>x</em>, 7<em>x</em>, −4<em>x</em>, −6<em>x</em> or −4<em>x</em>, −7<em>x</em>, 4<em>x</em>, 6<em>x</em>"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp157656016",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-calc-k"
+   },
+   "cite": "calc-k",
+   "prompt": "Ethanol and acetic acid react and form water and ethyl acetate, the solvent responsible for the odor of some nail polish removers.<br>${\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}\\rightleftharpoons{\\text{CH}}_{3}{\\text{CO}}_{2}{\\text{C}}_{2}{\\text{H}}_{5}+{\\text{H}}_{2}\\text{O}$<br>When 1 mol each of C<sub>2</sub>H<sub>5</sub>OH and CH<sub>3</sub>CO<sub>2</sub>H are allowed to react in 1 L of the solvent dioxane, equilibrium is established when $\\frac{1}{3}$ mol of each of the reactants remains. Calculate the equilibrium constant for the reaction. (Note: Water is a solute in this reaction.)",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 4,
+    "hint": "Each reactant falls by 2/3 mol in the 1 L, so each product rises by the same amount; fill in an ICE table and substitute.",
+    "solution": "<em>K<sub>c</sub></em> = 4"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp69595744",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-missing"
+   },
+   "cite": "missing",
+   "prompt": "The equilibrium constant <em>K<sub>c</sub></em> for the reaction of nitrogen and hydrogen to produce ammonia at a certain temperature is 6.00 × 10<sup>−2</sup>. Calculate the equilibrium concentration of ammonia if the equilibrium concentrations of nitrogen and hydrogen are 4.26 <em>M</em> and 2.09 <em>M</em>, respectively.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.53,
+    "unit": "mol/L",
+    "hint": "For N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>, solve <em>K<sub>c</sub></em> = [NH<sub>3</sub>]<sup>2</sup>/([N<sub>2</sub>][H<sub>2</sub>]<sup>3</sup>) for [NH<sub>3</sub>].",
+    "solution": "1.53 mol/L"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp88215808",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-pcl5"
+   },
+   "cite": "initial",
+   "prompt": "Acetic acid, CH<sub>3</sub>CO<sub>2</sub>H, reacts with ethanol, C<sub>2</sub>H<sub>5</sub>OH, to form water and ethyl acetate, CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>.<br>${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}+{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}\\rightleftharpoons{\\text{CH}}_{3}{\\text{CO}}_{2}{\\text{C}}_{2}{\\text{H}}_{5}+{\\text{H}}_{2}\\text{O}$<br>The equilibrium constant for this reaction with dioxane as a solvent is 4.0. What are the equilibrium concentrations for a mixture that is initially 0.15 <em>M</em> in CH<sub>3</sub>CO<sub>2</sub>H, 0.15 <em>M</em> in C<sub>2</sub>H<sub>5</sub>OH, 0.40 <em>M</em> in CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>, and 0.40 <em>M</em> in H<sub>2</sub>O?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[CH₃CO₂H]",
+      "value": 0.18,
+      "unit": "M"
+     },
+     {
+      "part": "[C₂H₅OH]",
+      "value": 0.18,
+      "unit": "M"
+     },
+     {
+      "part": "[CH₃CO₂C₂H₅]",
+      "value": 0.37,
+      "unit": "M"
+     },
+     {
+      "part": "[H₂O]",
+      "value": 0.37,
+      "unit": "M"
+     }
+    ],
+    "solution": "[CH<sub>3</sub>CO<sub>2</sub>H] = 0.18 <em>M</em>, [C<sub>2</sub>H<sub>5</sub>OH] = 0.18 <em>M</em>, [CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>] = 0.37 <em>M</em>, [H<sub>2</sub>O] = 0.37 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp88215808",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-pcl5-2"
+   },
+   "cite": "initial",
+   "prompt": "A 1.00-L flask is filled with 1.00 mole of H<sub>2</sub> and 2.00 moles of I<sub>2</sub>. The value of the equilibrium constant for the reaction of hydrogen and iodine reacting to form hydrogen iodide is 50.5 under the given conditions. What are the equilibrium concentrations of H<sub>2</sub>, I<sub>2</sub>, and HI in moles/L?<br>${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\rightleftharpoons 2\\text{HI}(g)$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[H₂]",
+      "value": 0.06,
+      "unit": "M",
+      "tol": 0.1
+     },
+     {
+      "part": "[I₂]",
+      "value": 1.06,
+      "unit": "M"
+     },
+     {
+      "part": "[HI]",
+      "value": 1.88,
+      "unit": "M"
+     }
+    ],
+    "solution": "[H<sub>2</sub>] = 0.06 <em>M</em>, [I<sub>2</sub>] = 1.06 <em>M</em>, [HI] = 1.88 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idm94442464",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-hcn"
+   },
+   "cite": "initial",
+   "prompt": "What are the equilibrium concentrations in a 0.25 <em>M</em> NH<sub>3</sub> solution?<br>${\\text{NH}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons\\;{\\text{NH}}_{4}{}^{+}(aq)+{\\text{OH}}^{-}(aq)\\hspace{5em}{K}_{\\text{c}}=1.8\\;\\times\\;{10}^{-5}$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[OH⁻] = [NH₄⁺]",
+      "value": 0.0021,
+      "unit": "M"
+     },
+     {
+      "part": "[NH₃]",
+      "value": 0.25,
+      "unit": "M"
+     }
+    ],
+    "solution": "$[{\\text{OH}}^{-}]=[{\\text{NH}}_{4}{}^{+}]=0.0021\\;M;$ [NH<sub>3</sub>] = 0.25 <em>M</em>"
+   }
+  },
+  {
+   "id": "e50",
+   "source_id": "fs-idp78773232",
+   "source_number": "50",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "A reaction is represented by this equation: $\\text{A}(aq)+2\\text{B}(aq)\\rightleftharpoons 2\\text{C}(aq)\\hspace{5em}{K}_{c}=1\\;\\times \\;{10}^{3}$<br>(a) Write the mathematical expression for the equilibrium constant.<br>(b) Using concentrations ≤1 <em>M</em>, identify two sets of concentrations that describe a mixture of A, B, and C at equilibrium.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "${K}_{c}=\\;\\frac{{[\\text{C}]}^{2}}{[\\text{A}]{[\\text{B}]}^{2}}.$ [A] = 0.1 <em>M</em>, [B] = 0.1 <em>M</em>, [C] = 1 <em>M</em>; and [A] = 0.01, [B] = 0.250, [C] = 0.791."
+   }
+  },
+  {
+   "id": "e52",
+   "source_id": "fs-idp288474752",
+   "source_number": "52",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "What is the value of the equilibrium constant at 500 °C for the formation of NH<sub>3</sub> according to the following equation?<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>An equilibrium mixture of NH<sub>3</sub>(<em>g</em>), H<sub>2</sub>(<em>g</em>), and N<sub>2</sub>(<em>g</em>) at 500 °C was found to contain 1.35 <em>M</em> H<sub>2</sub>, 1.15 <em>M</em> N<sub>2</sub>, and 4.12 × 10<sup>−1</sup> <em>M</em> NH<sub>3</sub>.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.06,
+    "solution": "<em>K<sub>c</sub></em> = 6.00 × 10<sup>−2</sup>"
+   }
+  },
+  {
+   "id": "e54",
+   "source_id": "fs-idp343440336",
+   "source_number": "54",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "A 0.72-mol sample of PCl<sub>5</sub> is put into a 1.00-L vessel and heated. At equilibrium, the vessel contains 0.40 mol of PCl<sub>3</sub>(<em>g</em>) and 0.40 mol of Cl<sub>2</sub>(<em>g</em>). Calculate the value of the equilibrium constant for the decomposition of PCl<sub>5</sub> to PCl<sub>3</sub> and Cl<sub>2</sub> at this temperature.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.5,
+    "solution": "<em>K<sub>c</sub></em> = 0.50"
+   }
+  },
+  {
+   "id": "e56",
+   "source_id": "fs-idp70745776",
+   "source_number": "56",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "Calculate the value of the equilibrium constant <em>K<sub>P</sub></em> for the reaction $2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)$ from these equilibrium pressures: NO, 0.050 atm; Cl<sub>2</sub>, 0.30 atm; NOCl, 1.2 atm.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1900,
+    "solution": "<em>K<sub>P</sub></em> = 1.9 × 10<sup>3</sup>"
+   }
+  },
+  {
+   "id": "e58",
+   "source_id": "fs-idp148498768",
+   "source_number": "58",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calc-k",
+   "prompt": "A sample of ammonium chloride was heated in a closed container.<br>${\\text{NH}}_{4}\\text{Cl}(s)\\rightleftharpoons {\\text{NH}}_{3}(g)+\\text{HCl}(g)$<br>At equilibrium, the pressure of NH<sub>3</sub>(<em>g</em>) was found to be 1.75 atm. What is the value of the equilibrium constant <em>K<sub>P</sub></em> for the decomposition at this temperature?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3.06,
+    "solution": "<em>K<sub>P</sub></em> = 3.06"
+   }
+  },
+  {
+   "id": "e60",
+   "source_id": "fs-idp189641568",
+   "source_number": "60",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "changes",
+   "prompt": "Complete the following partial ICE tables.<br>(a)<br>$\\begin{array}{lllll} & 2{\\text{SO}}_{3}(g) & \\rightleftharpoons & 2{\\text{SO}}_{2}(g)+ & {\\text{O}}_{2}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & +x\\end{array}$<br>(b)<br>$\\begin{array}{llllll} & 4{\\text{NH}}_{3}(g) & +\\;3{\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{N}}_{2}(g)+ & 6{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & +x & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>(c)<br>$\\begin{array}{lllll} & 2{\\text{CH}}_{4}(g) & \\rightleftharpoons & {\\text{C}}_{2}{\\text{H}}_{2}(g)+ & 3{\\text{H}}_{2}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>(d)<br>$\\begin{array}{llllll} & {\\text{CH}}_{4}(g)+ & {\\text{H}}_{2}\\text{O}(g) & \\rightleftharpoons & \\text{CO}(g)+ & 3{\\text{H}}_{2}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & +x & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>(e)<br>$\\begin{array}{llll}{\\text{NH}}_{4}\\text{Cl}(s) & \\rightleftharpoons & {\\text{NH}}_{3}(g)+ & \\text{HCl}(g) \\\\ \\text{change} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>(f)<br>$\\begin{array}{llll}\\text{Ni}(s)+ & 4\\text{CO}(g) & \\rightleftharpoons & \\text{Ni}{(\\text{CO})}_{4}(g) \\\\ \\text{change} & +x & & \\text{\\_\\_\\_}\\end{array}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) −2<em>x</em>, +2<em>x</em>; (b) $\\frac{4}{3}x$, $-\\frac{2}{3}x$, −2<em>x</em>; (c) −2<em>x</em>, 3<em>x</em>; (d) <em>x</em>, –<em>x</em>, −3<em>x</em>; (e) +<em>x</em>; (f) $-\\frac{1}{4}x$"
+   }
+  },
+  {
+   "id": "e61",
+   "source_id": "fs-idp155255936",
+   "source_number": "61",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "changes",
+   "prompt": "Complete the following partial ICE tables.<br>(a)<br>$\\begin{array}{lllll} & 2{\\text{H}}_{2}(g)+ & {\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & \\text{\\_\\_\\_} & & +x\\end{array}$<br>(b)<br>$\\begin{array}{llllll} & {\\text{CS}}_{2}(g)+ & 4{\\text{H}}_{2}(g) & \\rightleftharpoons & {\\text{CH}}_{4}(g)+ & 2{\\text{H}}_{2}\\text{S}(g) \\\\ \\text{change} & +x & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>(c)<br>$\\begin{array}{lllll} & {\\text{H}}_{2}(g)+ & {\\text{Cl}}_{2}(g) & \\rightleftharpoons & 2\\text{HCl}(g) \\\\ \\text{change} & +x & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_}\\end{array}$<br>(d)<br>$\\begin{array}{llllll} & 2{\\text{NH}}_{3}(g) & +\\;2{\\text{O}}_{2}(g) & \\rightleftharpoons & {\\text{N}}_{2}\\text{O}(g)+ & 3{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & +x\\end{array}$<br>(e)<br>$\\begin{array}{llll}{\\text{NH}}_{4}\\text{HS}(s) & \\rightleftharpoons & {\\text{NH}}_{3}(g)+ & {\\text{H}}_{2}\\text{S}(g) \\\\ \\text{change} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>(f)<br>$\\begin{array}{llll}\\text{Fe}(s)+ & 5\\text{CO}(g) & \\rightleftharpoons & \\text{Fe}{(\\text{CO})}_{5}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & & +x\\end{array}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: take the change given for one species and divide it by that species’ coefficient to find the change per unit of coefficient. Multiply it by each other species’ coefficient, giving species on the same side of the arrow the same sign and species on the other side the opposite sign, as in Example 13.6. A pure solid has no concentration term, so it gets no change."
+   }
+  },
+  {
+   "id": "e62",
+   "source_id": "fs-idp116788016",
+   "source_number": "62",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "changes",
+   "prompt": "Why are there no changes specified for Ni in Exercise 13.60, part (f)? What property of Ni does change?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Activities of pure crystalline solids equal 1 and are constant; however, the mass of Ni does change."
+   }
+  },
+  {
+   "id": "e63",
+   "source_id": "fs-idp76682304",
+   "source_number": "63",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "changes",
+   "prompt": "Why are there no changes specified for NH<sub>4</sub>HS in Exercise 13.61, part (e)? What property of NH<sub>4</sub>HS does change?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall from Section 13.2 how a pure solid is treated in an equilibrium constant expression, and so why an ICE table gives it no change term. Then ask what does change about the solid as the gases form from it, as the answer to Exercise 13.62 does for nickel."
+   }
+  },
+  {
+   "id": "e64",
+   "source_id": "fs-idp99980832",
+   "source_number": "64",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "Analysis of the gases in a sealed reaction vessel containing NH<sub>3</sub>, N<sub>2</sub>, and H<sub>2</sub> at equilibrium at 400 °C established the concentration of N<sub>2</sub> to be 1.2 <em>M</em> and the concentration of H<sub>2</sub> to be 0.24 <em>M</em>.<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{5em}{K}_{c}=0.50\\;\\text{at}\\;400\\;{}^{\\circ}\\text{C}$<br>Calculate the equilibrium molar concentration of NH<sub>3</sub>.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.091,
+    "unit": "M",
+    "solution": "[NH<sub>3</sub>] = 9.1 × 10<sup>−2</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e66",
+   "source_id": "fs-idp316125088",
+   "source_number": "66",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "What is the pressure of BrCl in an equilibrium mixture of Cl<sub>2</sub>, Br<sub>2</sub>, and BrCl if the pressure of Cl<sub>2</sub> in the mixture is 0.115 atm and the pressure of Br<sub>2</sub> in the mixture is 0.450 atm?<br>${\\text{Cl}}_{2}(g)+{\\text{Br}}_{2}(g)\\rightleftharpoons 2\\text{BrCl}(g)\\hspace{5em}{K}_{P}=4.7\\;\\times \\;{10}^{−2}$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.049,
+    "unit": "atm",
+    "solution": "<em>P</em><sub>BrCl</sub> = 4.9 × 10<sup>−2</sup> atm"
+   }
+  },
+  {
+   "id": "e68",
+   "source_id": "fs-idp170146416",
+   "source_number": "68",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "Cobalt metal can be prepared by reducing cobalt(II) oxide with carbon monoxide.<br>$\\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g)\\hspace{5em}{K}_{c}=4.90\\;\\times \\;{10}^{2}\\text{at}\\;550\\;{}^{\\circ}\\text{C}$<br>What concentration of CO remains in an equilibrium mixture with [CO<sub>2</sub>] = 0.100 <em>M</em>?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.000204,
+    "unit": "M",
+    "solution": "[CO] = 2.04 × 10<sup>−4</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e70",
+   "source_id": "fs-idp151659712",
+   "source_number": "70",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "Sodium sulfate 10−hydrate, Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O, dehydrates according to the equation<br>${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{at}\\;25\\;{}^{\\circ}\\text{C}$<br>What is the pressure of water vapor at equilibrium with a mixture of Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O and NaSO<sub>4</sub>?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00364,
+    "unit": "atm",
+    "solution": "${P}_{{\\text{H}}_{\\text{2}}}{}_{\\text{O}}=3.64\\;\\times \\;{10}^{\\text{−3}}\\;\\text{atm}$"
+   }
+  },
+  {
+   "id": "e72",
+   "source_id": "fs-idp210607184",
+   "source_number": "72",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "A student solved the following problem and found the equilibrium concentrations to be [SO<sub>2</sub>] = 0.590 <em>M</em>, [O<sub>2</sub>] = 0.0450 <em>M</em>, and [SO<sub>3</sub>] = 0.260 <em>M</em>. How could this student check the work without reworking the problem? The problem was: For the following reaction at 600 °C:<br>$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)\\hspace{5em}{K}_{c}=4.32$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Calculate <em>Q</em> based on the calculated concentrations and see if it is equal to <em>K<sub>c</sub></em>. Because <em>Q</em> does equal 4.32, the system must be at equilibrium."
+   }
+  },
+  {
+   "id": "e73",
+   "source_id": "fs-idp359131456",
+   "source_number": "73",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "A student solved the following problem and found [N<sub>2</sub>O<sub>4</sub>] = 0.16 <em>M</em> at equilibrium. How could this student recognize that the answer was wrong without reworking the problem? The problem was: What is the equilibrium concentration of N<sub>2</sub>O<sub>4</sub> in a mixture formed from a sample of NO<sub>2</sub> with a concentration of 0.10 <em>M</em>?<br>$2{\\text{NO}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{O}}_{4}(g)\\hspace{5em}{K}_{c}=160$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: use the stoichiometry of the reaction to find the greatest concentration of N<sub>2</sub>O<sub>4</sub> that a sample of NO<sub>2</sub> at 0.10 <em>M</em> could form if every NO<sub>2</sub> molecule reacted, and compare the student’s answer with it."
+   }
+  },
+  {
+   "id": "e74",
+   "source_id": "fs-idp91440288",
+   "source_number": "74",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "Assume that the change in concentration of N<sub>2</sub>O<sub>4</sub> is small enough to be neglected in the following problem.<br>(a) Calculate the equilibrium concentration of both species in 1.00 L of a solution prepared from 0.129 mol of N<sub>2</sub>O<sub>4</sub> with chloroform as the solvent.<br>${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)\\hspace{5em}{K}_{c}=1.07\\;\\times \\;{10}^{−5}$ in chloroform<br>(b) Confirm that the change is small enough to be neglected.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[NO₂]",
+      "value": 0.00117,
+      "unit": "M"
+     },
+     {
+      "part": "[N₂O₄]",
+      "value": 0.128,
+      "unit": "M"
+     }
+    ],
+    "solution": "(a) [NO<sub>2</sub>] = 1.17 × 10<sup>−3</sup> <em>M</em>; [N<sub>2</sub>O<sub>4</sub>] = 0.128 <em>M</em>; (b) The assumption that <em>x</em> is negligibly small compared to 0.129 is confirmed by comparing the initial concentration of the N<sub>2</sub>O<sub>4</sub> to its concentration at equilibrium (they differ by just 1 in the least significant digit’s place)."
+   }
+  },
+  {
+   "id": "e76",
+   "source_id": "fs-idm19235840",
+   "source_number": "76",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "Assume that the change in pressure of H<sub>2</sub>S is small enough to be neglected in the following problem.<br>(a) Calculate the equilibrium pressures of all species in an equilibrium mixture that results from the decomposition of H<sub>2</sub>S with an initial pressure of 0.824 atm.<br>$2{\\text{H}}_{2}\\text{S}(g)\\rightleftharpoons 2{\\text{H}}_{2}(g)+{\\text{S}}_{2}(g)\\hspace{5em}{K}_{P}=2.2\\;\\times \\;{10}^{−6}$<br>(b) Confirm that the change is small enough to be neglected.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "pressure of H₂S",
+      "value": 0.81,
+      "unit": "atm"
+     },
+     {
+      "part": "pressure of H₂",
+      "value": 0.014,
+      "unit": "atm"
+     },
+     {
+      "part": "pressure of S₂",
+      "value": 0.0072,
+      "unit": "atm"
+     }
+    ],
+    "solution": "(a) [H<sub>2</sub>S] = 0.810 atm, [H<sub>2</sub>] = 0.014 atm, [S<sub>2</sub>] = 0.0072 atm; (b) The assumption that 2<em>x</em> is negligibly small compared to 0.824 is confirmed by comparing the initial concentration of the H<sub>2</sub>S to its concentration at equilibrium (0.824 atm versus 0.810 atm, a difference of less than 2%)."
+   }
+  },
+  {
+   "id": "e78",
+   "source_id": "fs-idp55521216",
+   "source_number": "78",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "What are the concentrations of PCl<sub>5</sub>, PCl<sub>3</sub>, and Cl<sub>2</sub> in an equilibrium mixture produced by the decomposition of a sample of pure PCl<sub>5</sub> with [PCl<sub>5</sub>] = 2.00 <em>M</em>?<br>${\\text{PCl}}_{5}(g)\\rightleftharpoons {\\text{PCl}}_{3}(g)+{\\text{Cl}}_{2}(g)\\hspace{5em}{K}_{c}=0.0211$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[PCl₅]",
+      "value": 1.8,
+      "unit": "M"
+     },
+     {
+      "part": "[Cl₂]",
+      "value": 0.195,
+      "unit": "M"
+     },
+     {
+      "part": "[PCl₃]",
+      "value": 0.195,
+      "unit": "M"
+     }
+    ],
+    "solution": "[PCl<sub>5</sub>] = 1.80 <em>M</em>; [Cl<sub>2</sub>] = 0.195 <em>M</em>; [PCl<sub>3</sub>] = 0.195 <em>M</em>."
+   }
+  },
+  {
+   "id": "e79",
+   "source_id": "fs-idp116933168",
+   "source_number": "79",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "Calculate the number of grams of HI that are at equilibrium with 1.25 mol of H<sub>2</sub> and 63.5 g of iodine at 448 °C.<br>${\\text{H}}_{2}+{\\text{I}}_{2}\\rightleftharpoons 2\\text{HI}\\hspace{5em}{K}_{c}=50.2\\;\\text{at}\\;448\\;{}^{\\circ}\\text{C}$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 507,
+    "unit": "g",
+    "solution": "507 g"
+   }
+  },
+  {
+   "id": "e81",
+   "source_id": "fs-idp99670512",
+   "source_number": "81",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "What is the minimum mass of CaCO<sub>3</sub> required to establish equilibrium at a certain temperature in a 6.50-L container if the equilibrium constant (<em>K<sub>c</sub></em>) is 0.50 for the decomposition reaction of CaCO<sub>3</sub> at that temperature?<br>${\\text{CaCO}}_{3}(s)\\rightleftharpoons \\text{CaO}(s)+{\\text{CO}}_{2}(g)$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 330,
+    "unit": "g",
+    "solution": "330 g"
+   }
+  },
+  {
+   "id": "e84",
+   "source_id": "fs-idp291800000",
+   "source_number": "84",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "missing",
+   "prompt": "The equilibrium constant (<em>K<sub>c</sub></em>) for this reaction is 5.0 at a given temperature.<br>$\\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)$<br>(a) On analysis, an equilibrium mixture of the substances present at the given temperature was found to contain 0.20 mol of CO, 0.30 mol of water vapor, and 0.90 mol of H<sub>2</sub> in a liter. How many moles of CO<sub>2</sub> were there in the equilibrium mixture?<br>(b) Maintaining the same temperature, additional H<sub>2</sub> was added to the system, and some water vapor was removed by drying. A new equilibrium mixture was thereby established containing 0.40 mol of CO, 0.30 mol of water vapor, and 1.2 mol of H<sub>2</sub> in a liter. How many moles of CO<sub>2</sub> were in the new equilibrium mixture? Compare this with the quantity in part (a), and discuss whether the second value is reasonable. Explain how it is possible for the water vapor concentration to be the same in the two equilibrium solutions even though some vapor was removed before the second equilibrium was established.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) CO₂",
+      "value": 0.33,
+      "unit": "mol"
+     },
+     {
+      "part": "(b) [CO₂]",
+      "value": 0.5,
+      "unit": "M"
+     }
+    ],
+    "solution": "(a) 0.33 mol. (b) [CO<sub>2</sub>] = 0.50 <em>M</em>. Added H<sub>2</sub> forms some water as a result of a shift to the left after H<sub>2</sub> is added."
+   }
+  },
+  {
+   "id": "e86",
+   "source_id": "fs-idp121255200",
+   "source_number": "86",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "Consider the equilibrium<br>$4{\\text{NO}}_{2}(g)+6{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons 4{\\text{NH}}_{3}(g)+7{\\text{O}}_{2}(g)$<br>(a) What is the expression for the equilibrium constant (<em>K<sub>c</sub></em>) of the reaction?<br>(b) How must the concentration of NH<sub>3</sub> change to reach equilibrium if the reaction quotient is less than the equilibrium constant?<br>(c) If the reaction were at equilibrium, how would an increase in the volume of the reaction vessel affect the pressure of NO<sub>2</sub>?<br>(d) If the change in the pressure of NO<sub>2</sub> is 28 torr as a mixture of the four gases reaches equilibrium, how much will the pressure of O<sub>2</sub> change?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${K}_{c}=\\;\\frac{{[{\\text{NH}}_{3}]}^{4}{[{\\text{O}}_{2}]}^{7}}{{[{\\text{NO}}_{2}]}^{4}{[{\\text{H}}_{2}\\text{O}]}^{6}}.$ (b) [NH<sub>3</sub>] must increase for <em>Q<sub>c</sub></em> to reach <em>K<sub>c</sub></em>. (c) The increase in system volume would lower the partial pressures of all reactants (including NO<sub>2</sub>). (d) ${P}_{{\\text{O}}_{\\text{2}}}=49\\;\\text{torr}$"
+   }
+  },
+  {
+   "id": "e87",
+   "source_id": "fs-idp222775760",
+   "source_number": "87",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "The binding of oxygen by hemoglobin (Hb), giving oxyhemoglobin (HbO<sub>2</sub>), is partially regulated by the concentration of H<sub>3</sub>O<sup>+</sup> and dissolved CO<sub>2</sub> in the blood. Although the equilibrium is complicated, it can be summarized as<br>${\\text{HbO}}_{2}(aq)+{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CO}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}\\text{−}\\text{Hb}\\text{−}{\\text{H}}^{\\text{+}}+{\\text{O}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$<br>(a) Write the equilibrium constant expression for this reaction.<br>(b) Explain why the production of lactic acid and CO<sub>2</sub> in a muscle during exertion stimulates release of O<sub>2</sub> from the oxyhemoglobin in the blood passing through the muscle.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: for (a), write the equilibrium constant expression from the balanced equation as in Section 13.2, leaving out the liquid water. For (b), note that lactic acid adds H<sub>3</sub>O<sup>+</sup> and that exertion adds CO<sub>2</sub>, both reactants of this equilibrium, and use Le Châtelier’s principle from Section 13.3 to say which way the equilibrium shifts and what happens to the O<sub>2</sub> it holds."
+   }
+  },
+  {
+   "id": "e88",
+   "source_id": "fs-idp149802032",
+   "source_number": "88",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "initial",
+   "prompt": "Liquid N<sub>2</sub>O<sub>3</sub> is dark blue at low temperatures, but the color fades and becomes greenish at higher temperatures as the compound decomposes to NO and NO<sub>2</sub>. At 25 °C, a value of <em>K<sub>P</sub></em> = 1.91 has been established for this decomposition. If 0.236 moles of N<sub>2</sub>O<sub>3</sub> are placed in a 1.52-L vessel at 25 °C, calculate the equilibrium partial pressures of N<sub>2</sub>O<sub>3</sub>(<em>g</em>), NO<sub>2</sub>(<em>g</em>), and NO(<em>g</em>).",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "pressure of N₂O₃",
+      "value": 1.9,
+      "unit": "atm"
+     },
+     {
+      "part": "pressure of NO",
+      "value": 1.9,
+      "unit": "atm"
+     },
+     {
+      "part": "pressure of NO₂",
+      "value": 1.9,
+      "unit": "atm"
+     }
+    ],
+    "solution": "${P}_{{\\text{N}}_{\\text{2}}}{}_{{\\text{O}}_{\\text{3}}}=1.90\\;\\text{atm and}\\;{P}_{\\text{NO}}={P}_{{\\text{NO}}_{\\text{2}}}=1.90\\;\\text{atm}$"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "k-from-ice-table",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "predict-direction-q-versus-k",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "small-x-approximation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e50",
+   "concept": "write-reaction-quotient",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e50",
+   "concept": "equilibrium-constant",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e52",
+   "concept": "equilibrium-constant",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e52",
+   "concept": "k-from-ice-table",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e54",
+   "concept": "k-from-ice-table",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e54",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e56",
+   "concept": "equilibrium-constant",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e56",
+   "concept": "write-reaction-quotient",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e58",
+   "concept": "k-from-ice-table",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e58",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e60",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e61",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e61",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e62",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e62",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e63",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e63",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e64",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e66",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e66",
+   "concept": "equilibrium-constant",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e68",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e68",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e70",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e70",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e72",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e72",
+   "concept": "predict-direction-q-versus-k",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e73",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e73",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e74",
+   "concept": "small-x-approximation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e74",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e76",
+   "concept": "small-x-approximation",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e76",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e78",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e79",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e79",
+   "concept": "molar-mass",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e81",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e81",
+   "concept": "heterogeneous-equilibrium",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e84",
+   "concept": "missing-equilibrium-concentration",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e84",
+   "concept": "concentration-stress",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "write-reaction-quotient",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "predict-direction-q-versus-k",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "ice-change-terms",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e87",
+   "concept": "write-reaction-quotient",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e87",
+   "concept": "le-chateliers-principle",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e88",
+   "concept": "equilibrium-from-initial-concentrations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e88",
+   "concept": "ideal-gas-law",
+   "weights_by": "ai"
+  }
+ ],
+ "referents": []
+}

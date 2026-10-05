@@ -1,0 +1,568 @@
+{
+ "id": "18.4",
+ "module": "m68832",
+ "chapter": "18",
+ "title": "Structure and General Properties of the Nonmetals",
+ "short": "Nonmetals",
+ "lead": "The <span data-concept=\"nonmetal\">nonmetals</span> are taken together: how they bond with metals and with one another, the <span data-concept=\"oxidation-number\">oxidation states</span> they show and the patterns of their oxidation-reduction chemistry and their oxides, and then the structures of the elements themselves, with the <span data-concept=\"allotropes\">allotropes</span> of carbon, phosphorus and sulfur.",
+ "objectives": [
+  "Describe structure and properties of nonmetals"
+ ],
+ "summary_html": "<p><span data-concept=\"nonmetal\">Nonmetals</span> have structures that are very different from those of the <span data-concept=\"metal\">metals</span>, primarily because they have greater <span data-concept=\"electronegativity\">electronegativity</span> and electrons that are more tightly bound to individual atoms. Most nonmetal oxides are <span data-concept=\"acid-anhydride\">acid anhydrides</span>, meaning that they react with water to form acidic solutions. Molecular structures are common for most of the nonmetals, and several have multiple <span data-concept=\"allotropes\">allotropes</span> with varying physical properties.</p>",
+ "notes": "The section keeps as printed the equation S(s) + O₂(g) ⟶ 2SO₂(s), the commas set as subscripts after NF₃, H₂ and H₂S, “the electron required necessary” and the note’s two citations of Figure 18.23; the photographs of diamond, graphite and the two allotropes of phosphorus are shown with the book’s originals of Figures 18.20 and 18.24, and red phosphorus is drawn with one bond of each tetrahedron opened to join its neighbors, so that every atom keeps three bonds.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and suggested approaches are AI-generated. Answers come from the book’s answer key. The two unkeyed exercises fs-idm173324096 (balanced equations for five acid anhydrides with water) and fs-idm207037584 (the oxidation state of sulfur in three species) are left out, and no answer is computed for them. The unkeyed conceptual exercises fs-idp44423136 and fs-idp14134080 carry a suggested approach marked as OmniStax’s own. The key to fs-idm146332464 writes “an σ bond” as printed. Nothing is moved.",
+ "figures": [
+  {
+   "id": "fig-oxidation-states",
+   "kind": "figure",
+   "number": "18.19",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_OxStNonmts.jpg"
+   ],
+   "original_caption": "Nonmetals exhibit these common oxidation states in ionic and covalent compounds.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-carbon",
+   "kind": "sim",
+   "number": "18.20",
+   "folds": [
+    "18.22",
+    "18.23"
+   ],
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_Carbonform.jpg",
+    "/media/ch18/CNX_Chem_18_04_Buckyball.jpg",
+    "/media/ch18/CNX_Chem_18_04_Nanotube.jpg"
+   ],
+   "original_caption": "(Figure 18.20) (a) Diamond and (b) graphite are two forms of carbon. (c) In the crystal structure of diamond, the covalent bonds form three-dimensional tetrahedrons. (d) In the crystal structure of graphite, each planar layer is composed of six-membered rings. (credit a: modification of work by “Fancy Diamonds”/Flickr; credit b: modification of work from http://images-of-elements.com/carbon.php) (Figure 18.22) The molecular structure of C₆₀, buckminsterfullerene, is icosahedral. (Figure 18.23) (a) Graphene and (b) carbon nanotubes are both allotropes of carbon.",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "C"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-graphite-orbitals",
+   "kind": "figure",
+   "number": "18.21",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_unhyporbC.jpg"
+   ],
+   "original_caption": "(a) Carbon atoms in graphite have unhybridized p orbitals. Each p orbital is perpendicular to the plane of carbon atoms. (b) These are two of the many resonance forms of graphite necessary to describe its electronic structure as a resonance hybrid.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-phosphorus",
+   "kind": "sim",
+   "number": "18.24",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_Phosphorus.jpg"
+   ],
+   "original_caption": "(a) Because white phosphorus bursts into flame in air, it is stored in water. (b) The structure of white phosphorus consists of P4 molecules arranged in a tetrahedron. (c) Red phosphorus is much less reactive than is white phosphorus. (d) The structure of red phosphorus consists of networks of P4 tetrahedra joined by P-P single bonds. (credit a: modification of work from http://images-of-elements.com/phosphorus.php)",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "P"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-sulfur",
+   "kind": "sim",
+   "number": "18.25",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_04_Sulfrchain.jpg"
+   ],
+   "original_caption": "These four sulfur allotropes show eight-membered, puckered rings. Each sulfur atom bonds to each of its two neighbors in the ring by covalent S-S single bonds. Here are (a) individual S8 rings, (b) S8 chains formed when the rings open, (c) longer chains formed by adding sulfur atoms to S8 chains, and (d) part of the very long sulfur chains formed at higher temperatures.",
+   "draws": [
+    "temperature"
+   ],
+   "conventions": [
+    "S"
+   ],
+   "facts": [
+    "#e3c75a",
+    "#d4892b",
+    "#8c1d12"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "nonmetals",
+   "concept": "nonmetal-bonding-and-ions",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "first-member-anomaly",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "nonmetal-redox-patterns",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "acid-anhydride",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "disproportionation-reaction",
+   "verb": "introduces"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "metal",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "bond-type-from-electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "ionic-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "cation",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "valence-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "d-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxidation",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxyacid",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "oxyacid-strength",
+   "verb": "uses"
+  },
+  {
+   "span": "nonmetals",
+   "concept": "binary-acid-strength",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "nonmetal-structures",
+   "verb": "introduces"
+  },
+  {
+   "span": "structures",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "noble-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "halogen",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "dispersion-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "polarizability",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "carbon-allotropes",
+   "verb": "introduces"
+  },
+  {
+   "span": "carbon",
+   "concept": "sp3-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "sp2-hybrid-orbital",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "sigma-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "resonance",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "resonance-hybrid",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "dispersion-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "covalent-network-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "amorphous-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "phosphorus-allotropes",
+   "verb": "introduces"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "phosphorus",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "sulfur-allotropes",
+   "verb": "introduces"
+  },
+  {
+   "span": "sulfur",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "viscosity",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "amorphous-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "paramagnetism",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "octet-rule",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "valence-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "sulfur",
+   "concept": "melting-point",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp44423136",
+   "source_number": "44",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "carbon",
+   "prompt": "Carbon forms a number of allotropes, two of which are graphite and diamond. Silicon has a diamond structure. Why is there no allotrope of silicon with a graphite structure?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall what a graphite layer needs besides σ bonds, namely π bonds formed by side-by-side overlap of unhybridized <em>p</em> orbitals, and compare how well a first member of a group and a heavier member such as silicon form π bonds, given the difference in their sizes."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm146332464",
+   "source_number": "45",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "nonmetals",
+   "prompt": "Nitrogen in the atmosphere exists as very stable diatomic molecules. Why does phosphorus form less stable P<sub>4</sub> molecules instead of P<sub>2</sub> molecules?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "In the N<sub>2</sub> molecule, the nitrogen atoms have an σ bond and two π bonds holding the two atoms together. The presence of three strong bonds makes N<sub>2</sub> a very stable molecule. Phosphorus is a third-period element, and as such, does not form π bonds efficiently; therefore, it must fulfill its bonding requirement by forming three σ bonds."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm105553408",
+   "source_number": "47",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "nonmetals",
+   "prompt": "Determine the oxidation number of each element in each of the following compounds:<br>(a) HCN<br>(b) OF<sub>2</sub><br>(c) AsCl<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) H = 1+, C = 2+, and N = 3−; (b) O = 2+ and F = 1−; (c) As = 3+ and Cl = 1−"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm129789632",
+   "source_number": "49",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "nonmetals",
+   "prompt": "Arrange the following in order of increasing electronegativity: F; Cl; O; and S.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "S &lt; Cl &lt; O &lt; F"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp14134080",
+   "source_number": "50",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "phosphorus",
+   "prompt": "Why does white phosphorus consist of tetrahedral P<sub>4</sub> molecules while nitrogen consists of diatomic N<sub>2</sub> molecules?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: count the bonds each atom of group 15 needs to complete its octet, then compare how readily nitrogen, the first member of the group, and phosphorus, a third-period element, form π bonds; ask how a phosphorus atom can make three bonds with σ bonds alone."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "carbon-allotropes"
+  },
+  {
+   "exercise": "e1",
+   "concept": "first-member-anomaly"
+  },
+  {
+   "exercise": "e2",
+   "concept": "first-member-anomaly"
+  },
+  {
+   "exercise": "e2",
+   "concept": "phosphorus-allotropes"
+  },
+  {
+   "exercise": "e2",
+   "concept": "sigma-and-pi-bonds"
+  },
+  {
+   "exercise": "e3",
+   "concept": "oxidation-number"
+  },
+  {
+   "exercise": "e3",
+   "concept": "nonmetal-redox-patterns"
+  },
+  {
+   "exercise": "e4",
+   "concept": "electronegativity"
+  },
+  {
+   "exercise": "e4",
+   "concept": "nonmetal-bonding-and-ions"
+  },
+  {
+   "exercise": "e5",
+   "concept": "phosphorus-allotropes"
+  },
+  {
+   "exercise": "e5",
+   "concept": "first-member-anomaly"
+  },
+  {
+   "exercise": "e5",
+   "concept": "nonmetal-structures"
+  }
+ ]
+}

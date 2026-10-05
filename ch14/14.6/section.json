@@ -1,0 +1,514 @@
+{
+ "id": "14.6",
+ "module": "m68808",
+ "chapter": "14",
+ "title": "Buffers",
+ "short": "Buffers",
+ "lead": "A mixture of a weak acid and its conjugate base, or a weak base and its conjugate acid, can take up added strong acid or base. This section explains how such a buffer works, what limits it, how a suitable buffer is chosen, and how its pH is calculated.",
+ "objectives": [
+  "Describe the composition and function of acid–base buffers",
+  "Calculate the pH of a buffer before and after the addition of added acid or base"
+ ],
+ "summary_html": "<p>Solutions that contain appreciable amounts of a weak conjugate acid-base pair are called buffers. A buffered solution will experience only slight changes in pH when small amounts of acid or base are added. Addition of large amounts of acid or base can exceed the buffer capacity, consuming most of one conjugate partner and preventing further buffering action.</p>",
+ "notes": "The Link to Learning on the buffer system of natural waters is left out. Kept as printed: Example 14.20(b), first stated, adds “1.0 mL of 0.10 NaOH” without its M; Figure 14.16’s caption says “has little affect”; the blood paragraph’s “buffer pairs pKa” keeps its missing apostrophe, its pKa set as a symbol.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The unkeyed exercises fs-idm2126064, fs-idp21075184 and fs-idm126903712 carry a suggested approach marked as OmniStax’s own. The five unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm163403536, fs-idm111908400, fs-idm128715952, fs-idp80593472, fs-idm111629776. In fs-idm148474576, part (b) is answered in words in the solution, and the two pH values are checked to 0.02%, since they differ only in the third decimal place.",
+ "figures": [
+  {
+   "id": "sim-buffer",
+   "kind": "sim",
+   "number": "14.15",
+   "folds": [
+    "14.17"
+   ],
+   "originals": [
+    "/media/ch14/CNX_Chem_14_06_bufferchrt.jpg",
+    "/media/ch14/CNX_Chem_14_06_buffer.jpg"
+   ],
+   "original_caption": "(Figure 14.15) Buffering action in a mixture of acetic acid and acetate salt. (Figure 14.17) Change in pH as an increasing amount of a 0.10-M NaOH solution is added to 100 mL of a buffer solution in which, initially, [CH₃CO₂H] = 0.10 M and [CH₃CO₂⁻] = 0.10 M. Note the greatly diminished buffering action occurring after the buffer capacity has been reached, resulting in drastic rises in pH on adding more strong base.",
+   "draws": [
+    "amount",
+    "concentration",
+    "equilibrium-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-compare",
+   "kind": "photo",
+   "number": "14.14",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-exhaust",
+   "kind": "photo",
+   "number": "14.16",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "buffer",
+   "label": "the acetate buffer",
+   "figures": [
+    "sim-buffer"
+   ]
+  },
+  {
+   "id": "unbuffered",
+   "label": "the unbuffered solution",
+   "figures": [
+    "sim-buffer"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "buffers",
+   "concept": "buffer-composition",
+   "verb": "introduces"
+  },
+  {
+   "span": "buffers",
+   "concept": "conjugate-acid-base-pairs",
+   "verb": "uses"
+  },
+  {
+   "span": "buffers",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "buffers",
+   "concept": "ph",
+   "verb": "uses"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "how-buffers-work",
+   "verb": "introduces"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "buffer-ph-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "neutralization-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "weak-acid-base-equilibrium-concentrations",
+   "verb": "uses"
+  },
+  {
+   "span": "how-buffers-work",
+   "concept": "ph-plus-poh",
+   "verb": "uses"
+  },
+  {
+   "span": "capacity",
+   "concept": "buffer-capacity",
+   "verb": "introduces"
+  },
+  {
+   "span": "capacity",
+   "concept": "buffer-composition",
+   "verb": "uses"
+  },
+  {
+   "span": "selection",
+   "concept": "buffer-capacity",
+   "verb": "reinforces"
+  },
+  {
+   "span": "selection",
+   "concept": "how-buffers-work",
+   "verb": "reinforces"
+  },
+  {
+   "span": "henderson-hasselbalch",
+   "concept": "henderson-hasselbalch",
+   "verb": "introduces"
+  },
+  {
+   "span": "henderson-hasselbalch",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "henderson-hasselbalch",
+   "concept": "ph",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm144695456",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-buffer-ph"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "Show that adding 1.0 mL of 0.10 <em>M</em> HCl changes the pH of 100 mL of a 1.8 × 10<sup>−5</sup> <em>M</em> HCl solution from 4.74 to 3.00.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Initial pH of 1.8 × 10<sup>−5</sup> <em>M</em> HCl; pH = −log[H<sub>3</sub>O<sup>+</sup>] = −log[1.8 × 10<sup>−5</sup>] = 4.74<br>Moles of H<sub>3</sub>O<sup>+</sup> in 100 mL 1.8 × 10<sup>−5</sup> <em>M</em> HCl; 1.8 × 10<sup>−5</sup> moles/L × 0.100 L = 1.8 × 10<sup>−6</sup><br>Moles of H<sub>3</sub>O<sup>+</sup> added by addition of 1.0 mL of 0.10 <em>M</em> HCl: 0.10 moles/L × 0.0010 L = 1.0 × 10<sup>−4</sup> moles; final pH after addition of 1.0 mL of 0.10 <em>M</em> HCl:<br>pH = −log[H<sub>3</sub>O<sup>+</sup>] = −log(total moles H<sub>3</sub>O<sup>+</sup>/total volume) = −log((1.0 × 10<sup>−4</sup> mol + 1.8 × 10<sup>−6</sup> mol)/(101 mL × (1 L/1000 mL))) = 3.00"
+   }
+  },
+  {
+   "id": "e77",
+   "source_id": "fs-idm2126064",
+   "source_number": "77",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "buffers",
+   "prompt": "Explain why a buffer can be prepared from a mixture of NH<sub>4</sub>Cl and NaOH but not from NH<sub>3</sub> and NaOH.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: a buffer needs appreciable amounts of a weak conjugate acid-base pair. Write the reaction of NaOH with NH<sub>4</sub><sup>+</sup> and ask what remains when less than the full amount of hydroxide is added: some NH<sub>4</sub><sup>+</sup> and the NH<sub>3</sub> it produced. Then ask whether NH<sub>3</sub> reacts with NaOH at all, and whether a weak base mixed with a strong base gives a conjugate pair."
+   }
+  },
+  {
+   "id": "e78",
+   "source_id": "fs-idm81726160",
+   "source_number": "78",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "Explain why the pH does not change significantly when a small amount of an acid or a base is added to a solution that contains equal amounts of the acid H<sub>3</sub>PO<sub>4</sub> and a salt of its conjugate base NaH<sub>2</sub>PO<sub>4</sub>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Excess H<sub>3</sub>O<sup>+</sup> is removed primarily by the reaction: H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(<em>aq</em>) ⟶ H<sub>3</sub>PO<sub>4</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)<br>Excess base is removed by the reaction: OH<sup>−</sup>(<em>aq</em>) + H<sub>3</sub>PO<sub>4</sub>(<em>aq</em>) ⟶ H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)"
+   }
+  },
+  {
+   "id": "e79",
+   "source_id": "fs-idp21075184",
+   "source_number": "79",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "Explain why the pH does not change significantly when a small amount of an acid or a base is added to a solution that contains equal amounts of the base NH<sub>3</sub> and a salt of its conjugate acid NH<sub>4</sub>Cl.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: follow the blood-buffer and phosphate answers. Write the reaction by which NH<sub>3</sub> removes added H<sub>3</sub>O<sup>+</sup> and the reaction by which NH<sub>4</sub><sup>+</sup> removes added OH<sup>−</sup>, then explain why converting a strong acid or base into the weak partner of the pair changes the ratio of the two, and so the pH, only slightly."
+   }
+  },
+  {
+   "id": "e80",
+   "source_id": "fs-idp10424992",
+   "source_number": "80",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "henderson-hasselbalch",
+   "prompt": "What is [H<sub>3</sub>O<sup>+</sup>] in a solution of 0.25 <em>M</em> CH<sub>3</sub>CO<sub>2</sub>H and 0.030 <em>M</em> NaCH<sub>3</sub>CO<sub>2</sub>?<br>CH<sub>3</sub>CO<sub>2</sub>H(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>aq</em>)&emsp;<em>K</em><sub>a</sub> = 1.8 × 10<sup>−5</sup>",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00015,
+    "unit": "M",
+    "hint": "[H<sub>3</sub>O<sup>+</sup>] = <em>K</em><sub>a</sub> × [HA]/[A<sup>−</sup>], with the acid and its conjugate base at their given concentrations.",
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 1.5 × 10<sup>−4</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e82",
+   "source_id": "fs-idp11460800",
+   "source_number": "82",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "henderson-hasselbalch",
+   "prompt": "What is [OH<sup>−</sup>] in a solution of 0.125 <em>M</em> CH<sub>3</sub>NH<sub>2</sub> and 0.130 <em>M</em> CH<sub>3</sub>NH<sub>3</sub>Cl?<br>CH<sub>3</sub>NH<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ CH<sub>3</sub>NH<sub>3</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>)&emsp;<em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00042,
+    "unit": "M",
+    "hint": "For a weak base and its conjugate acid, [OH<sup>−</sup>] = <em>K</em><sub>b</sub> × [B]/[HB<sup>+</sup>].",
+    "solution": "[OH<sup>−</sup>] = 4.2 × 10<sup>−4</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e84",
+   "source_id": "fs-idm108992432",
+   "source_number": "84",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "What is the effect on the concentration of acetic acid, hydronium ion, and acetate ion when the following are added to an acidic buffer solution of equal concentrations of acetic acid and sodium acetate:<br>(a) HCl<br>(b) KCH<sub>3</sub>CO<sub>2</sub><br>(c) NaCl<br>(d) KOH<br>(e) CH<sub>3</sub>CO<sub>2</sub>H",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) The added HCl will increase the concentration of H<sub>3</sub>O<sup>+</sup> slightly, which will react with CH<sub>3</sub>CO<sub>2</sub><sup>−</sup> and produce CH<sub>3</sub>CO<sub>2</sub>H in the process. Thus, [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] decreases and [CH<sub>3</sub>CO<sub>2</sub>H] increases. (b) The added KCH<sub>3</sub>CO<sub>2</sub> will increase the concentration of [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] which will react with H<sub>3</sub>O<sup>+</sup> and produce CH<sub>3</sub>CO<sub>2</sub> H in the process. Thus, [H<sub>3</sub>O<sup>+</sup>] decreases slightly and [CH<sub>3</sub>CO<sub>2</sub>H] increases. (c) The added NaCl will have no effect on the concentration of the ions. (d) The added KOH will produce OH<sup>−</sup> ions, which will react with the H<sub>3</sub>O<sup>+</sup>, thus reducing [H<sub>3</sub>O<sup>+</sup>]. Some additional CH<sub>3</sub>CO<sub>2</sub>H will dissociate, producing [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] ions in the process. Thus, [CH<sub>3</sub>CO<sub>2</sub>H] decreases slightly and [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] increases. (e) The added CH<sub>3</sub>CO<sub>2</sub>H will increase its concentration, causing more of it to dissociate and producing more [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] and H<sub>3</sub>O<sup>+</sup> in the process. Thus, [H<sub>3</sub>O<sup>+</sup>] increases slightly and [CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>] increases."
+   }
+  },
+  {
+   "id": "e85",
+   "source_id": "fs-idm126903712",
+   "source_number": "85",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "What is the effect on the concentration of ammonia, hydroxide ion, and ammonium ion when the following are added to a basic buffer solution of equal concentrations of ammonia and ammonium nitrate:<br>(a) KI<br>(b) NH<sub>3</sub><br>(c) HI<br>(d) NaOH<br>(e) NH<sub>4</sub>Cl",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: work as the key to the acetate exercise before this one does, with the equilibrium NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>). For each substance decide whether it adds a strong acid, a strong base, one partner of the pair, or a spectator ion; write the reaction it undergoes with the buffer, if any; and state which way each of the three concentrations moves, and whether the change in [OH<sup>−</sup>] is large or slight."
+   }
+  },
+  {
+   "id": "e86",
+   "source_id": "fs-idp11558384",
+   "source_number": "86",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "henderson-hasselbalch",
+   "prompt": "What will be the pH of a buffer solution prepared from 0.20 mol NH<sub>3</sub>, 0.40 mol NH<sub>4</sub>NO<sub>3</sub>, and just enough water to give 1.00 L of solution?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 8.95,
+    "tol": 0.001,
+    "hint": "Find the pOH from <em>K</em><sub>b</sub> of ammonia and the ratio of NH<sub>4</sub><sup>+</sup> to NH<sub>3</sub>, then pH = 14.00 − pOH.",
+    "solution": "pH = 8.95"
+   }
+  },
+  {
+   "id": "e88",
+   "source_id": "fs-idm105355104",
+   "source_number": "88",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "henderson-hasselbalch",
+   "prompt": "How much solid NaCH<sub>3</sub>CO<sub>2</sub>•3H<sub>2</sub>O must be added to 0.300 L of a 0.50-<em>M</em> acetic acid solution to give a buffer with a pH of 5.00? (Hint: Assume a negligible change in volume as the solid is added.)",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "mass",
+      "value": 37,
+      "unit": "g",
+      "hint": "Find the ratio [A<sup>−</sup>]/[HA] that gives pH 5.00 from the Henderson-Hasselbalch equation, then the moles of acetate and the mass of the trihydrate."
+     },
+     {
+      "part": "amount",
+      "value": 0.27,
+      "unit": "mol"
+     }
+    ],
+    "solution": "37 g (0.27 mol)"
+   }
+  },
+  {
+   "id": "e90",
+   "source_id": "fs-idm148474576",
+   "source_number": "90",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "how-buffers-work",
+   "prompt": "A buffer solution is prepared from equal volumes of 0.200 <em>M</em> acetic acid and 0.600 <em>M</em> sodium acetate. Use 1.80 × 10<sup>−5</sup> as <em>K</em><sub>a</sub> for acetic acid.<br>(a) What is the pH of the solution?<br>(b) Is the solution acidic or basic?<br>(c) What is the pH of a solution that results when 3.00 mL of 0.034 <em>M</em> HCl is added to 0.200 L of the original buffer?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) pH",
+      "value": 5.222,
+      "tol": 0.0002,
+      "hint": "Mixing equal volumes halves each concentration; their ratio is unchanged."
+     },
+     {
+      "part": "(c) pH",
+      "value": 5.22,
+      "tol": 0.0002,
+      "hint": "Let the added H<sub>3</sub>O<sup>+</sup> convert acetate into acetic acid first, then use the new amounts."
+     }
+    ],
+    "solution": "(a) pH = 5.222; (b) The solution is acidic. (c) pH = 5.220"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "neutralization-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e77",
+   "concept": "buffer-composition",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e77",
+   "concept": "neutralization-reaction",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e78",
+   "concept": "how-buffers-work",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e79",
+   "concept": "how-buffers-work",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e80",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e80",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e82",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e82",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e84",
+   "concept": "how-buffers-work",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e84",
+   "concept": "le-chateliers-principle",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e85",
+   "concept": "how-buffers-work",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e85",
+   "concept": "le-chateliers-principle",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e86",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e88",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e88",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e90",
+   "concept": "buffer-ph-calculations",
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e90",
+   "concept": "henderson-hasselbalch",
+   "weights_by": "ai"
+  }
+ ]
+}

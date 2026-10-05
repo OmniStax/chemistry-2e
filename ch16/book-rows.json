@@ -1,0 +1,796 @@
+{
+ "types": [],
+ "symbols": [
+  {
+   "sym": "S°",
+   "latex": "S^{\\circ}",
+   "macro": "\\kSo"
+  },
+  {
+   "sym": "ΔS°",
+   "latex": "\\Delta S^{\\circ}",
+   "macro": "\\kdSo"
+  },
+  {
+   "sym": "ΔS_univ",
+   "latex": "\\Delta S_{\\text{univ}}",
+   "macro": "\\kdSuniv"
+  },
+  {
+   "sym": "ΔS_sys",
+   "latex": "\\Delta S_{\\text{sys}}",
+   "macro": "\\kdSsys"
+  },
+  {
+   "sym": "ΔS_surr",
+   "latex": "\\Delta S_{\\text{surr}}",
+   "macro": "\\kdSsurr"
+  },
+  {
+   "sym": "S_f",
+   "latex": "S_{\\text{f}}",
+   "macro": "\\kSf"
+  },
+  {
+   "sym": "S_i",
+   "latex": "S_{\\text{i}}",
+   "macro": "\\kSi"
+  },
+  {
+   "sym": "S_solid",
+   "latex": "S_{\\text{solid}}",
+   "macro": "\\kSsolid"
+  },
+  {
+   "sym": "S_liquid",
+   "latex": "S_{\\text{liquid}}",
+   "macro": "\\kSliquid"
+  },
+  {
+   "sym": "S_gas",
+   "latex": "S_{\\text{gas}}",
+   "macro": "\\kSgas"
+  },
+  {
+   "sym": "G",
+   "latex": "G",
+   "macro": "\\kG"
+  },
+  {
+   "sym": "ΔG°",
+   "latex": "\\Delta G^{\\circ}",
+   "macro": "\\kdGo"
+  },
+  {
+   "sym": "ΔG_f°",
+   "latex": "\\Delta G_{\\text{f}}^{\\circ}",
+   "macro": "\\kdGf"
+  },
+  {
+   "sym": "ΔG_1°",
+   "latex": "\\Delta G_{1}^{\\circ}",
+   "macro": "\\kdGone"
+  },
+  {
+   "sym": "ΔG_2°",
+   "latex": "\\Delta G_{2}^{\\circ}",
+   "macro": "\\kdGtwo"
+  },
+  {
+   "sym": "q_rev",
+   "latex": "q_{\\text{rev}}",
+   "macro": "\\kqrev"
+  },
+  {
+   "sym": "q_surr",
+   "latex": "q_{\\text{surr}}",
+   "macro": "\\kqsurr"
+  },
+  {
+   "sym": "q_sys",
+   "latex": "q_{\\text{sys}}",
+   "macro": "\\kqsys"
+  },
+  {
+   "sym": "q_X",
+   "latex": "q_{\\text{X}}",
+   "macro": "\\kqX"
+  },
+  {
+   "sym": "q_Y",
+   "latex": "q_{\\text{Y}}",
+   "macro": "\\kqY"
+  },
+  {
+   "sym": "w_max",
+   "latex": "w_{\\text{max}}",
+   "macro": "\\kwmax"
+  },
+  {
+   "sym": "T_X",
+   "latex": "T_{\\text{X}}",
+   "macro": "\\kTX"
+  },
+  {
+   "sym": "T_Y",
+   "latex": "T_{\\text{Y}}",
+   "macro": "\\kTY"
+  },
+  {
+   "sym": "T_sys",
+   "latex": "T_{\\text{sys}}",
+   "macro": "\\kTsys"
+  },
+  {
+   "sym": "T_surr",
+   "latex": "T_{\\text{surr}}",
+   "macro": "\\kTsurr"
+  },
+  {
+   "sym": "W",
+   "latex": "W"
+  },
+  {
+   "sym": "W_f",
+   "latex": "W_{\\text{f}}"
+  },
+  {
+   "sym": "W_i",
+   "latex": "W_{\\text{i}}"
+  },
+  {
+   "sym": "k_B",
+   "latex": "k"
+  },
+  {
+   "sym": "N_particles",
+   "latex": "N"
+  },
+  {
+   "sym": "n_boxes",
+   "latex": "n"
+  },
+  {
+   "sym": "ν_coef",
+   "latex": "\\nu"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "nonspontaneous-process",
+   "kind": "definition",
+   "section": "16.1",
+   "name": "Nonspontaneous process",
+   "terms": [
+    "nonspontaneous process"
+   ],
+   "statement": "A nonspontaneous process will not take place unless it is driven by the continual input of energy from an external source. A process that is spontaneous in one direction under a particular set of conditions is nonspontaneous in the reverse direction."
+  },
+  {
+   "id": "spontaneity-and-rate",
+   "kind": "idea",
+   "section": "16.1",
+   "name": "Spontaneity and rate",
+   "statement": "The spontaneity of a process is not correlated to its speed: a spontaneous change may be essentially instantaneous or too slow to observe. Diamond converts to graphite spontaneously at ambient pressure, but so slowly that diamonds are thermodynamically unstable yet kinetically stable."
+  },
+  {
+   "id": "dispersal-of-matter-and-energy",
+   "kind": "idea",
+   "section": "16.1",
+   "name": "Dispersal of matter and energy",
+   "statement": "Spontaneous processes are accompanied by a more uniform dispersal of matter or energy. An ideal gas expanding into a vacuum does no work and exchanges no heat, so its internal energy is unchanged, yet it spreads evenly between the flasks; heat flowing from a hotter object to a colder one redistributes thermal energy without any net gain or loss."
+  },
+  {
+   "id": "reversible-process",
+   "kind": "definition",
+   "section": "16.2",
+   "name": "Reversible process",
+   "terms": [
+    "reversible process"
+   ],
+   "statement": "A reversible process takes place so slowly that it is always at equilibrium, and its direction can be changed by an infinitesimally small change in some condition. It is a formalism that real processes, which are all irreversible, can only approximate."
+  },
+  {
+   "id": "entropy",
+   "kind": "definition",
+   "section": "16.2",
+   "name": "Entropy",
+   "symbol": "S",
+   "terms": [
+    "entropy"
+   ],
+   "type": "entropy",
+   "statement": "Entropy is a state function, a measure of the dispersal of matter and energy in a system that is determined by the number of its microstates and is often described as its disorder. Clausius defined its change as the reversible heat divided by the kelvin temperature; an irreversible process between the same states has the same entropy change.",
+   "forms": [
+    {
+     "id": "eq-entropy-change-reversible-heat",
+     "latex": "\\Delta S=\\frac{q_{\\text{rev}}}{T}",
+     "ktex": "\\kdS=\\frac{\\kqrev}{\\kT}"
+    }
+   ]
+  },
+  {
+   "id": "microstate",
+   "kind": "definition",
+   "section": "16.2",
+   "name": "Microstate",
+   "terms": [
+    "microstate"
+   ],
+   "statement": "A microstate is a specific configuration of all the locations and energies of the atoms or molecules that make up a system."
+  },
+  {
+   "id": "boltzmann-entropy-equation",
+   "kind": "result",
+   "section": "16.2",
+   "name": "Boltzmann equation for entropy",
+   "statement": "Boltzmann related the entropy of a system to the number of microstates possible for it through the Boltzmann constant, so a process that increases the number of microstates increases the entropy, and one that reduces it decreases the entropy.",
+   "forms": [
+    {
+     "id": "eq-boltzmann-entropy",
+     "latex": "S=k\\ln W",
+     "ktex": "\\kS=k\\ln W"
+    },
+    {
+     "id": "eq-entropy-change-microstates",
+     "latex": "\\Delta S=S_{\\text{f}}-S_{\\text{i}}=k\\ln\\frac{W_{\\text{f}}}{W_{\\text{i}}}",
+     "ktex": "\\kdS=\\kSf-\\kSi=k\\ln\\frac{W_{\\text{f}}}{W_{\\text{i}}}"
+    }
+   ]
+  },
+  {
+   "id": "most-probable-distribution",
+   "kind": "result",
+   "section": "16.2",
+   "name": "Most probable distribution",
+   "statement": "Microstates with the same numbers of particles in each box form a distribution, and the probability of a distribution is proportional to the number of microstates in it. Since entropy grows with the number of microstates, the most probable distribution, with roughly equal numbers in each box, is the one of greatest entropy, and this only becomes more certain as the number of particles grows.",
+   "forms": [
+    {
+     "id": "eq-number-of-microstates",
+     "latex": "W=n^{N}",
+     "condition": "N particles distributed among n boxes"
+    }
+   ]
+  },
+  {
+   "id": "entropy-and-phase",
+   "kind": "result",
+   "section": "16.2",
+   "name": "Entropy and physical state",
+   "statement": "For any substance the entropy of the gas is greater than that of the liquid, which is greater than that of the solid, since freer motion and greater volume allow more microstates. Melting, vaporization and sublimation increase entropy, and freezing, condensation and deposition decrease it.",
+   "forms": [
+    {
+     "id": "eq-entropy-phase-order",
+     "latex": "S_{\\text{solid}}<S_{\\text{liquid}}<S_{\\text{gas}}",
+     "ktex": "\\kSsolid<\\kSliquid<\\kSgas"
+    }
+   ]
+  },
+  {
+   "id": "entropy-and-temperature",
+   "kind": "result",
+   "section": "16.2",
+   "name": "Entropy and temperature",
+   "statement": "The entropy of any substance increases with temperature, since the particles move more extensively and their kinetic energies are spread more broadly, and it changes significantly at each phase transition."
+  },
+  {
+   "id": "entropy-and-molecular-structure",
+   "kind": "result",
+   "section": "16.2",
+   "name": "Entropy, molecular structure and mixing",
+   "statement": "At a given temperature, heavier atoms possess greater entropy than lighter ones, and molecules with more atoms have more ways to vibrate and so more microstates. A mixture has greater entropy than a pure substance, so dissolution increases entropy."
+  },
+  {
+   "id": "predict-sign-of-entropy-change",
+   "kind": "skill",
+   "section": "16.2",
+   "name": "Predicting the sign of an entropy change",
+   "statement": "Weighing the changes in physical state, temperature, amount of gas, number of particles in solution and complexity of the species lets us predict whether the entropy of a system increases or decreases in a chemical or physical process."
+  },
+  {
+   "id": "entropy-change-of-universe",
+   "kind": "definition",
+   "section": "16.3",
+   "name": "Entropy change of the universe",
+   "symbol": "ΔS_univ",
+   "type": "entropy",
+   "statement": "The system and its surroundings comprise the universe, so the entropy change of the universe is the sum of the entropy changes of the system and of the surroundings.",
+   "forms": [
+    {
+     "id": "eq-entropy-change-universe",
+     "latex": "\\Delta S_{\\text{univ}}=\\Delta S_{\\text{sys}}+\\Delta S_{\\text{surr}}",
+     "ktex": "\\kdSuniv=\\kdSsys+\\kdSsurr"
+    }
+   ]
+  },
+  {
+   "id": "second-law-of-thermodynamics",
+   "kind": "axiom",
+   "section": "16.3",
+   "name": "Second law of thermodynamics",
+   "terms": [
+    "second law of thermodynamics"
+   ],
+   "statement": "All spontaneous changes cause an increase in the entropy of the universe. A process for which the entropy of the universe would decrease is nonspontaneous (spontaneous in the opposite direction), and one for which it is unchanged is at equilibrium.",
+   "forms": [
+    {
+     "id": "eq-second-law",
+     "latex": "\\Delta S_{\\text{univ}}>0",
+     "ktex": "\\kdSuniv>0",
+     "condition": "a spontaneous process"
+    }
+   ]
+  },
+  {
+   "id": "entropy-change-of-surroundings",
+   "kind": "result",
+   "section": "16.3",
+   "name": "Entropy change of the surroundings",
+   "symbol": "ΔS_surr",
+   "type": "entropy",
+   "statement": "When the surroundings are vast compared to the system, the heat they gain or lose is a nearly infinitesimal fraction of their thermal energy, so the heat of the surroundings approximates the reversible heat and their entropy change is that heat divided by the temperature.",
+   "forms": [
+    {
+     "id": "eq-second-law-surroundings",
+     "latex": "\\Delta S_{\\text{univ}}=\\Delta S_{\\text{sys}}+\\Delta S_{\\text{surr}}=\\Delta S_{\\text{sys}}+\\frac{q_{\\text{surr}}}{T}",
+     "ktex": "\\kdSuniv=\\kdSsys+\\kdSsurr=\\kdSsys+\\frac{\\kqsurr}{\\kT}",
+     "condition": "surroundings vast compared to the system"
+    }
+   ]
+  },
+  {
+   "id": "predict-spontaneity-from-entropy",
+   "kind": "skill",
+   "section": "16.3",
+   "name": "Predicting spontaneity from the entropy of the universe",
+   "statement": "Adding the entropy change of the system to the heat of the surroundings divided by the kelvin temperature gives the entropy change of the universe, whose sign tells whether a process is spontaneous at that temperature."
+  },
+  {
+   "id": "third-law-of-thermodynamics",
+   "kind": "axiom",
+   "section": "16.3",
+   "name": "Third law of thermodynamics",
+   "terms": [
+    "third law of thermodynamics"
+   ],
+   "statement": "The entropy of a pure, perfect crystalline substance at 0 K is zero, since such a crystal can be described by a single microstate.",
+   "forms": [
+    {
+     "id": "eq-third-law",
+     "latex": "S=k\\ln W=k\\ln(1)=0",
+     "ktex": "\\kS=k\\ln W=k\\ln(1)=0",
+     "condition": "a pure, perfect crystalline substance at 0 K"
+    }
+   ]
+  },
+  {
+   "id": "standard-entropy",
+   "kind": "definition",
+   "section": "16.3",
+   "name": "Standard entropy",
+   "symbol": "S°",
+   "terms": [
+    "standard entropy"
+   ],
+   "type": "entropy",
+   "statement": "A standard entropy is the entropy of one mole of a substance under standard conditions, a pressure of 1 bar and, for tabulated values, usually a temperature of 298.15 K, determined from careful calorimetric measurements."
+  },
+  {
+   "id": "standard-entropy-change",
+   "kind": "definition",
+   "section": "16.3",
+   "name": "Standard entropy change",
+   "symbol": "ΔS°",
+   "terms": [
+    "standard entropy change"
+   ],
+   "type": "entropy",
+   "statement": "The standard entropy change for a reaction is computed from the standard entropies of its products and reactants, each multiplied by its stoichiometric coefficient in the balanced equation.",
+   "forms": [
+    {
+     "id": "eq-standard-entropy-change",
+     "latex": "\\Delta S^{\\circ}=\\sum\\nu S^{\\circ}(\\text{products})-\\sum\\nu S^{\\circ}(\\text{reactants})",
+     "ktex": "\\kdSo=\\sum\\nu\\kSo(\\text{products})-\\sum\\nu\\kSo(\\text{reactants})"
+    }
+   ]
+  },
+  {
+   "id": "calculate-standard-entropy-change",
+   "kind": "skill",
+   "section": "16.3",
+   "name": "Calculating a standard entropy change",
+   "statement": "Multiplying the standard entropy of each product and reactant by its coefficient in the balanced equation and subtracting the reactants' sum from the products' gives the standard entropy change of a physical or chemical process."
+  },
+  {
+   "id": "gibbs-free-energy",
+   "kind": "definition",
+   "section": "16.4",
+   "name": "Gibbs free energy",
+   "symbol": "G",
+   "terms": [
+    "Gibbs free energy",
+    "free energy change",
+    "free energy"
+   ],
+   "type": "energy",
+   "statement": "The Gibbs free energy is a state function defined in terms of a system's enthalpy and entropy, so it can be found from system quantities alone; at constant temperature and pressure its change is the enthalpy change minus the product of the temperature and the entropy change.",
+   "forms": [
+    {
+     "id": "eq-gibbs-free-energy",
+     "latex": "G=H-TS",
+     "ktex": "\\kG=\\kH-\\kT\\kS"
+    },
+    {
+     "id": "eq-free-energy-change",
+     "latex": "\\Delta G=\\Delta H-T\\Delta S",
+     "ktex": "\\kdG=\\kdH-\\kT\\kdS",
+     "condition": "constant temperature and pressure"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-and-spontaneity",
+   "kind": "result",
+   "section": "16.4",
+   "name": "Free energy and spontaneity",
+   "statement": "Since the heat of the surroundings is the negative of the enthalpy change at constant pressure, the free energy change equals the negative of the temperature times the entropy change of the universe. A negative free energy change indicates a spontaneous process, a positive one a nonspontaneous process, and zero a system at equilibrium.",
+   "forms": [
+    {
+     "id": "eq-free-energy-entropy-universe",
+     "latex": "\\Delta G=-T\\Delta S_{\\text{univ}}",
+     "ktex": "\\kdG=-\\kT\\kdSuniv"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-and-maximum-work",
+   "kind": "result",
+   "section": "16.4",
+   "name": "Free energy and maximum work",
+   "statement": "The free energy change is the energy available, or free, to do useful work other than expansion work: the most work a spontaneous process could do if it took place reversibly, and the least work that must be done on the system to carry out a nonspontaneous one.",
+   "forms": [
+    {
+     "id": "eq-free-energy-max-work",
+     "latex": "\\Delta G=w_{\\text{max}}",
+     "ktex": "\\kdG=\\kwmax",
+     "condition": "a process carried out reversibly; all work except expansion work"
+    }
+   ]
+  },
+  {
+   "id": "standard-free-energy-change",
+   "kind": "definition",
+   "section": "16.4",
+   "name": "Standard free energy change",
+   "symbol": "ΔG°",
+   "terms": [
+    "standard free energy change"
+   ],
+   "type": "energy",
+   "statement": "The standard free energy change is the change in free energy for a process occurring under standard conditions, 1 bar pressure for gases and 1 M concentration for solutions, and may be computed from standard enthalpy and entropy changes.",
+   "forms": [
+    {
+     "id": "eq-standard-free-energy-change",
+     "latex": "\\Delta G^{\\circ}=\\Delta H^{\\circ}-T\\Delta S^{\\circ}",
+     "ktex": "\\kdGo=\\kdHo-\\kT\\kdSo"
+    }
+   ]
+  },
+  {
+   "id": "standard-free-energy-of-formation",
+   "kind": "definition",
+   "section": "16.4",
+   "name": "Standard free energy of formation",
+   "symbol": "ΔG_f°",
+   "terms": [
+    "standard free energy of formation"
+   ],
+   "type": "energy",
+   "statement": "The standard free energy of formation is the free energy change accompanying the formation of one mole of a substance from its elements in their standard states; it is zero for an element in its standard state, and a reaction's standard free energy change follows from the values for its products and reactants.",
+   "forms": [
+    {
+     "id": "eq-free-energy-from-formation",
+     "latex": "\\Delta G^{\\circ}=\\sum\\nu\\Delta G_{\\text{f}}^{\\circ}(\\text{products})-\\sum\\nu\\Delta G_{\\text{f}}^{\\circ}(\\text{reactants})",
+     "ktex": "\\kdGo=\\sum\\nu\\kdGf(\\text{products})-\\sum\\nu\\kdGf(\\text{reactants})"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-of-coupled-reactions",
+   "kind": "result",
+   "section": "16.4",
+   "name": "Free energy of coupled reactions",
+   "statement": "Because free energy is a state function, the free energy change of a reaction that is the sum of others is the sum of their free energy changes, so a nonspontaneous reaction, such as the decomposition of zinc sulfide, can be made spontaneous by coupling it to a spontaneous one."
+  },
+  {
+   "id": "temperature-dependence-of-spontaneity",
+   "kind": "result",
+   "section": "16.4",
+   "name": "Temperature dependence of spontaneity",
+   "statement": "The signs of the enthalpy and entropy changes decide how spontaneity depends on temperature: with both positive a process is spontaneous at high temperatures, with both negative at low temperatures, with a positive enthalpy and a negative entropy change at no temperature, and with a negative enthalpy and a positive entropy change at all temperatures. A process whose two changes share a sign changes spontaneity where the free energy change is zero.",
+   "forms": [
+    {
+     "id": "eq-crossover-temperature",
+     "latex": "T=\\frac{\\Delta H}{\\Delta S}",
+     "ktex": "\\kT=\\frac{\\kdH}{\\kdS}",
+     "condition": "the temperature at which the free energy change is zero"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-and-reaction-quotient",
+   "kind": "result",
+   "section": "16.4",
+   "name": "Free energy under nonstandard conditions",
+   "statement": "The free energy change for a process with reactants and products under nonstandard conditions is related to its standard free energy change through the reaction quotient, the pressure-based one for gases and the concentration-based one for condensed phases.",
+   "forms": [
+    {
+     "id": "eq-free-energy-nonstandard",
+     "latex": "\\Delta G=\\Delta G^{\\circ}+RT\\ln Q",
+     "ktex": "\\kdG=\\kdGo+R\\kT\\ln\\kQrxn"
+    }
+   ]
+  },
+  {
+   "id": "free-energy-and-equilibrium-constant",
+   "kind": "result",
+   "section": "16.4",
+   "name": "Standard free energy change and the equilibrium constant",
+   "statement": "At equilibrium the reaction quotient equals the equilibrium constant and the free energy change is zero, which links the standard free energy change to the equilibrium constant: a negative standard free energy change means K is greater than 1 and products are more abundant. Equilibrium is established where the system's free energy is minimized.",
+   "forms": [
+    {
+     "id": "eq-standard-free-energy-k",
+     "latex": "\\Delta G^{\\circ}=-RT\\ln K",
+     "ktex": "\\kdGo=-R\\kT\\ln\\kK"
+    },
+    {
+     "id": "eq-k-from-standard-free-energy",
+     "latex": "K=e^{-\\Delta G^{\\circ}/RT}",
+     "ktex": "\\kK=e^{-\\kdGo/R\\kT}"
+    }
+   ]
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "nonspontaneous-process",
+   "prereq": "spontaneous-process"
+  },
+  {
+   "concept": "spontaneity-and-rate",
+   "prereq": "spontaneous-process"
+  },
+  {
+   "concept": "spontaneity-and-rate",
+   "prereq": "reaction-rate"
+  },
+  {
+   "concept": "dispersal-of-matter-and-energy",
+   "prereq": "spontaneous-process"
+  },
+  {
+   "concept": "dispersal-of-matter-and-energy",
+   "prereq": "first-law-of-thermodynamics"
+  },
+  {
+   "concept": "dispersal-of-matter-and-energy",
+   "prereq": "expansion-work"
+  },
+  {
+   "concept": "dispersal-of-matter-and-energy",
+   "prereq": "ideal-gas"
+  },
+  {
+   "concept": "reversible-process",
+   "prereq": "dynamic-equilibrium"
+  },
+  {
+   "concept": "entropy",
+   "prereq": "state-function"
+  },
+  {
+   "concept": "entropy",
+   "prereq": "reversible-process"
+  },
+  {
+   "concept": "entropy",
+   "prereq": "dispersal-of-matter-and-energy"
+  },
+  {
+   "concept": "microstate",
+   "prereq": "kinetic-molecular-theory"
+  },
+  {
+   "concept": "boltzmann-entropy-equation",
+   "prereq": "entropy"
+  },
+  {
+   "concept": "boltzmann-entropy-equation",
+   "prereq": "microstate"
+  },
+  {
+   "concept": "most-probable-distribution",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "entropy-and-phase",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "entropy-and-phase",
+   "prereq": "melting"
+  },
+  {
+   "concept": "entropy-and-phase",
+   "prereq": "sublimation"
+  },
+  {
+   "concept": "entropy-and-temperature",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "entropy-and-temperature",
+   "prereq": "maxwell-boltzmann-distribution"
+  },
+  {
+   "concept": "entropy-and-molecular-structure",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "entropy-and-molecular-structure",
+   "prereq": "properties-of-solutions"
+  },
+  {
+   "concept": "predict-sign-of-entropy-change",
+   "prereq": "entropy-and-phase"
+  },
+  {
+   "concept": "predict-sign-of-entropy-change",
+   "prereq": "entropy-and-temperature"
+  },
+  {
+   "concept": "predict-sign-of-entropy-change",
+   "prereq": "entropy-and-molecular-structure"
+  },
+  {
+   "concept": "predict-sign-of-entropy-change",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "entropy-change-of-universe",
+   "prereq": "entropy"
+  },
+  {
+   "concept": "second-law-of-thermodynamics",
+   "prereq": "entropy-change-of-universe"
+  },
+  {
+   "concept": "entropy-change-of-surroundings",
+   "prereq": "entropy-change-of-universe"
+  },
+  {
+   "concept": "predict-spontaneity-from-entropy",
+   "prereq": "second-law-of-thermodynamics"
+  },
+  {
+   "concept": "predict-spontaneity-from-entropy",
+   "prereq": "entropy-change-of-surroundings"
+  },
+  {
+   "concept": "predict-spontaneity-from-entropy",
+   "prereq": "celsius-kelvin-conversion"
+  },
+  {
+   "concept": "third-law-of-thermodynamics",
+   "prereq": "boltzmann-entropy-equation"
+  },
+  {
+   "concept": "standard-entropy",
+   "prereq": "third-law-of-thermodynamics"
+  },
+  {
+   "concept": "standard-entropy",
+   "prereq": "standard-state"
+  },
+  {
+   "concept": "standard-entropy-change",
+   "prereq": "standard-entropy"
+  },
+  {
+   "concept": "standard-entropy-change",
+   "prereq": "balanced-equation"
+  },
+  {
+   "concept": "calculate-standard-entropy-change",
+   "prereq": "standard-entropy-change"
+  },
+  {
+   "concept": "gibbs-free-energy",
+   "prereq": "enthalpy"
+  },
+  {
+   "concept": "gibbs-free-energy",
+   "prereq": "entropy"
+  },
+  {
+   "concept": "free-energy-and-spontaneity",
+   "prereq": "gibbs-free-energy"
+  },
+  {
+   "concept": "free-energy-and-spontaneity",
+   "prereq": "second-law-of-thermodynamics"
+  },
+  {
+   "concept": "free-energy-and-spontaneity",
+   "prereq": "entropy-change-of-surroundings"
+  },
+  {
+   "concept": "free-energy-and-spontaneity",
+   "prereq": "enthalpy-change-at-constant-pressure"
+  },
+  {
+   "concept": "free-energy-and-maximum-work",
+   "prereq": "free-energy-and-spontaneity"
+  },
+  {
+   "concept": "standard-free-energy-change",
+   "prereq": "gibbs-free-energy"
+  },
+  {
+   "concept": "standard-free-energy-change",
+   "prereq": "standard-entropy-change"
+  },
+  {
+   "concept": "standard-free-energy-change",
+   "prereq": "enthalpy-change"
+  },
+  {
+   "concept": "standard-free-energy-of-formation",
+   "prereq": "standard-free-energy-change"
+  },
+  {
+   "concept": "standard-free-energy-of-formation",
+   "prereq": "standard-enthalpy-of-formation"
+  },
+  {
+   "concept": "free-energy-of-coupled-reactions",
+   "prereq": "standard-free-energy-change"
+  },
+  {
+   "concept": "free-energy-of-coupled-reactions",
+   "prereq": "hess-law"
+  },
+  {
+   "concept": "temperature-dependence-of-spontaneity",
+   "prereq": "free-energy-and-spontaneity"
+  },
+  {
+   "concept": "temperature-dependence-of-spontaneity",
+   "prereq": "exothermic-and-endothermic"
+  },
+  {
+   "concept": "free-energy-and-reaction-quotient",
+   "prereq": "free-energy-and-spontaneity"
+  },
+  {
+   "concept": "free-energy-and-reaction-quotient",
+   "prereq": "standard-free-energy-change"
+  },
+  {
+   "concept": "free-energy-and-reaction-quotient",
+   "prereq": "reaction-quotient"
+  },
+  {
+   "concept": "free-energy-and-reaction-quotient",
+   "prereq": "ideal-gas-constant"
+  },
+  {
+   "concept": "free-energy-and-equilibrium-constant",
+   "prereq": "free-energy-and-reaction-quotient"
+  },
+  {
+   "concept": "free-energy-and-equilibrium-constant",
+   "prereq": "equilibrium-constant"
+  }
+ ]
+}

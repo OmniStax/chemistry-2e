@@ -1,0 +1,387 @@
+{
+ "id": "16",
+ "dir": "ch16",
+ "title": "Thermodynamics",
+ "intro": {
+  "module": "m68815",
+  "slug": "16-introduction"
+ },
+ "sections": [
+  {
+   "id": "16.1",
+   "module": "m68816",
+   "title": "Spontaneity",
+   "slug": "16-1-spontaneity"
+  },
+  {
+   "id": "16.2",
+   "module": "m68817",
+   "title": "Entropy",
+   "slug": "16-2-entropy"
+  },
+  {
+   "id": "16.3",
+   "module": "m68818",
+   "title": "The Second and Third Laws of Thermodynamics",
+   "slug": "16-3-the-second-and-third-laws-of-thermodynamics"
+  },
+  {
+   "id": "16.4",
+   "module": "m68819",
+   "title": "Free Energy",
+   "slug": "16-4-free-energy"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "P",
+   "concept": "gas-pressure",
+   "meaning": "the pressure of the gas, zero in a vacuum",
+   "unit": "atm",
+   "section": "16.1"
+  },
+  {
+   "sym": "w",
+   "concept": "work",
+   "meaning": "the work done on the system, positive when the surroundings do work on the system and negative when the system does work on the surroundings",
+   "unit": "J",
+   "section": "16.1"
+  },
+  {
+   "sym": "ΔV",
+   "concept": "volume",
+   "meaning": "the change in the volume of the gas as it expands",
+   "unit": "L",
+   "section": "16.1"
+  },
+  {
+   "sym": "ΔU",
+   "concept": "internal-energy",
+   "meaning": "the change in the internal energy of a system",
+   "unit": "J",
+   "section": "16.1"
+  },
+  {
+   "sym": "q",
+   "concept": "heat-flow",
+   "meaning": "the heat that flows into the system, positive when it flows in and negative when it flows out",
+   "unit": "J",
+   "section": "16.1"
+  },
+  {
+   "sym": "T_X",
+   "concept": "temperature",
+   "meaning": "the temperature of object X, the hotter object",
+   "unit": "K",
+   "section": "16.1"
+  },
+  {
+   "sym": "T_Y",
+   "concept": "temperature",
+   "meaning": "the temperature of object Y, the colder object",
+   "unit": "K",
+   "section": "16.1"
+  },
+  {
+   "sym": "q_X",
+   "concept": "heat-flow",
+   "meaning": "the heat gained by object X, negative since X loses thermal energy",
+   "unit": "J",
+   "section": "16.1"
+  },
+  {
+   "sym": "q_Y",
+   "concept": "heat-flow",
+   "meaning": "the heat gained by object Y, equal and opposite to that of X",
+   "unit": "J",
+   "section": "16.1"
+  },
+  {
+   "sym": "S",
+   "concept": "entropy",
+   "meaning": "the entropy of a system, a state function that measures the dispersal of its matter and energy",
+   "unit": "J/K",
+   "section": "16.2"
+  },
+  {
+   "sym": "ΔS",
+   "concept": "entropy",
+   "meaning": "the entropy change of a process, the difference between its final and initial entropies",
+   "unit": "J/K",
+   "section": "16.2"
+  },
+  {
+   "sym": "q_rev",
+   "concept": "heat-flow",
+   "meaning": "the reversible heat, the heat of the theoretical reversible process between the same initial and final states",
+   "unit": "J",
+   "section": "16.2"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the kelvin temperature at which the process takes place",
+   "unit": "K",
+   "section": "16.2"
+  },
+  {
+   "sym": "W",
+   "meaning": "the number of microstates possible for the system",
+   "unit": "none",
+   "section": "16.2"
+  },
+  {
+   "sym": "W_f",
+   "meaning": "the number of microstates of the final state",
+   "unit": "none",
+   "section": "16.2"
+  },
+  {
+   "sym": "W_i",
+   "meaning": "the number of microstates of the initial state",
+   "unit": "none",
+   "section": "16.2"
+  },
+  {
+   "sym": "k_B",
+   "meaning": "the Boltzmann constant, 1.38 × 10⁻²³ J/K",
+   "unit": "J/K",
+   "section": "16.2"
+  },
+  {
+   "sym": "S_f",
+   "concept": "entropy",
+   "meaning": "the entropy of the final state",
+   "unit": "J/K",
+   "section": "16.2"
+  },
+  {
+   "sym": "S_i",
+   "concept": "entropy",
+   "meaning": "the entropy of the initial state",
+   "unit": "J/K",
+   "section": "16.2"
+  },
+  {
+   "sym": "N_particles",
+   "meaning": "the number of particles distributed among the boxes",
+   "unit": "none",
+   "section": "16.2"
+  },
+  {
+   "sym": "n_boxes",
+   "meaning": "the number of boxes the particles are distributed among",
+   "unit": "none",
+   "section": "16.2"
+  },
+  {
+   "sym": "S_solid",
+   "concept": "entropy",
+   "meaning": "the entropy of a substance in the solid phase",
+   "unit": "J/K",
+   "section": "16.2"
+  },
+  {
+   "sym": "S_liquid",
+   "concept": "entropy",
+   "meaning": "the entropy of a substance in the liquid phase",
+   "unit": "J/K",
+   "section": "16.2"
+  },
+  {
+   "sym": "S_gas",
+   "concept": "entropy",
+   "meaning": "the entropy of a substance in the gaseous phase",
+   "unit": "J/K",
+   "section": "16.2"
+  },
+  {
+   "sym": "ΔS_univ",
+   "concept": "entropy-change-of-universe",
+   "meaning": "the entropy change of the universe, the system and its surroundings together",
+   "unit": "J/K",
+   "section": "16.3"
+  },
+  {
+   "sym": "ΔS_sys",
+   "concept": "entropy",
+   "meaning": "the entropy change of the system",
+   "unit": "J/K",
+   "section": "16.3"
+  },
+  {
+   "sym": "ΔS_surr",
+   "concept": "entropy-change-of-surroundings",
+   "meaning": "the entropy change of the surroundings",
+   "unit": "J/K",
+   "section": "16.3"
+  },
+  {
+   "sym": "T_sys",
+   "concept": "temperature",
+   "meaning": "the temperature of the system",
+   "unit": "K",
+   "section": "16.3"
+  },
+  {
+   "sym": "T_surr",
+   "concept": "temperature",
+   "meaning": "the temperature of the surroundings",
+   "unit": "K",
+   "section": "16.3"
+  },
+  {
+   "sym": "q_surr",
+   "concept": "heat-flow",
+   "meaning": "the heat gained by the surroundings, a good approximation of the reversible heat when the surroundings are vast",
+   "unit": "J",
+   "section": "16.3"
+  },
+  {
+   "sym": "S°",
+   "concept": "standard-entropy",
+   "meaning": "the standard entropy of a substance, for one mole at 1 bar, usually tabulated at 298.15 K",
+   "unit": "J mol⁻¹ K⁻¹",
+   "section": "16.3"
+  },
+  {
+   "sym": "ΔS°",
+   "concept": "standard-entropy-change",
+   "meaning": "the standard entropy change of a reaction",
+   "unit": "J/K",
+   "section": "16.3"
+  },
+  {
+   "sym": "ν_coef",
+   "meaning": "a stoichiometric coefficient in the balanced equation",
+   "unit": "none",
+   "section": "16.3"
+  },
+  {
+   "sym": "G",
+   "concept": "gibbs-free-energy",
+   "meaning": "the Gibbs free energy of a system, defined by its enthalpy, temperature and entropy",
+   "unit": "J",
+   "section": "16.4"
+  },
+  {
+   "sym": "ΔG",
+   "concept": "gibbs-free-energy",
+   "meaning": "the free energy change of a process at constant temperature and pressure",
+   "unit": "kJ",
+   "section": "16.4"
+  },
+  {
+   "sym": "H",
+   "concept": "enthalpy",
+   "meaning": "the enthalpy of a system, the sum of its internal energy and the product of its pressure and volume",
+   "unit": "J",
+   "section": "16.4"
+  },
+  {
+   "sym": "ΔH",
+   "concept": "enthalpy-change",
+   "meaning": "the enthalpy change of the process, equal to the heat of the system at constant pressure",
+   "unit": "kJ",
+   "section": "16.4"
+  },
+  {
+   "sym": "q_sys",
+   "concept": "heat-flow",
+   "meaning": "the heat gained by the system, equal to the enthalpy change at constant pressure",
+   "unit": "J",
+   "section": "16.4"
+  },
+  {
+   "sym": "w_max",
+   "concept": "work",
+   "meaning": "the maximum work a process could do under reversible conditions, all types of work except expansion work",
+   "unit": "kJ",
+   "section": "16.4"
+  },
+  {
+   "sym": "ΔG°",
+   "concept": "standard-free-energy-change",
+   "meaning": "the standard free energy change, for a process occurring under standard conditions",
+   "unit": "kJ/mol",
+   "section": "16.4"
+  },
+  {
+   "sym": "ΔH°",
+   "concept": "enthalpy-change",
+   "meaning": "the standard enthalpy change, the enthalpy change for a process occurring under standard state conditions",
+   "unit": "kJ",
+   "section": "16.4"
+  },
+  {
+   "sym": "ΔG_f°",
+   "concept": "standard-free-energy-of-formation",
+   "meaning": "the standard free energy of formation of a substance from its elements in their standard states",
+   "unit": "kJ/mol",
+   "section": "16.4"
+  },
+  {
+   "sym": "ΔH_f°",
+   "concept": "standard-enthalpy-of-formation",
+   "meaning": "the standard enthalpy of formation, the enthalpy change when exactly 1 mole of a substance forms from its elements in their most stable states under standard state conditions",
+   "unit": "kJ/mol",
+   "section": "16.4"
+  },
+  {
+   "sym": "ΔG_1°",
+   "concept": "standard-free-energy-change",
+   "meaning": "the standard free energy change of the first of two coupled reactions",
+   "unit": "kJ",
+   "section": "16.4"
+  },
+  {
+   "sym": "ΔG_2°",
+   "concept": "standard-free-energy-change",
+   "meaning": "the standard free energy change of the second of two coupled reactions",
+   "unit": "kJ",
+   "section": "16.4"
+  },
+  {
+   "sym": "R",
+   "concept": "ideal-gas-constant",
+   "meaning": "the gas constant, 8.314 J/K mol",
+   "unit": "J mol⁻¹ K⁻¹",
+   "section": "16.4"
+  },
+  {
+   "sym": "Q_c",
+   "concept": "reaction-quotient",
+   "meaning": "the reaction quotient, the numerical value of the mass action expression for the system",
+   "unit": "none",
+   "section": "16.4"
+  },
+  {
+   "sym": "Q_P",
+   "concept": "reaction-quotient",
+   "meaning": "the reaction quotient written with partial pressures, used for gas phase equilibria",
+   "unit": "none",
+   "section": "16.4"
+  },
+  {
+   "sym": "K",
+   "concept": "equilibrium-constant",
+   "meaning": "the equilibrium constant, the value of the reaction quotient for a system at equilibrium",
+   "unit": "none",
+   "section": "16.4"
+  },
+  {
+   "sym": "K_P",
+   "concept": "equilibrium-constant",
+   "meaning": "the equilibrium constant written with partial pressures",
+   "unit": "none",
+   "section": "16.4"
+  },
+  {
+   "sym": "K_sp",
+   "concept": "solubility-product",
+   "meaning": "the solubility product constant, the equilibrium constant for the dissolution of a slightly soluble ionic compound",
+   "unit": "none",
+   "section": "16.4"
+  }
+ ]
+}

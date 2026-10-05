@@ -1,0 +1,5 @@
+# Plan: Introduction to Chapter 16, Thermodynamics (m68815)
+
+Source: `source.md`. Status: built 2026-10-05 by the chapter's prep agent, on Chen's instruction to finish the book without check-ins; left here for review after.
+
+The page is the book's one paragraph on thermodynamics as the means of predicting whether a process will occur, kept verbatim under the opener (root rule 21). The opener is the photograph of a geyser erupting; it is Figure 16.1, a `photo` row with the book's caption and credit, served from `media/ch16/`, with an alt text of our own since the bundle's describes the scene only loosely. No figure is drawn: spontaneity, entropy and free energy are drawn in 16.1 to 16.4, where the text works them out, so the page registers no `figures.js`. No lead, objectives, summary, glossary or exercises, since the book prints none. Energy, work and heat flow are marked with their concepts and wear the energy hue. The module's abstract, which lists the four section titles, is left out and named in `notes`.

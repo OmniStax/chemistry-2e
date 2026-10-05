@@ -1,0 +1,575 @@
+{
+ "id": "14.2",
+ "module": "m68804",
+ "chapter": "14",
+ "title": "pH and pOH",
+ "short": "pH and pOH",
+ "lead": "The concentrations of hydronium and hydroxide ions in water span many orders of magnitude. This section expresses them on the logarithmic pH and pOH scales, uses those scales to describe a solution as acidic, basic, or neutral, and shows how the pH of a solution is measured.",
+ "objectives": [
+  "Explain the characterization of aqueous solutions as acidic, basic, or neutral",
+  "Express hydronium and hydroxide ion concentrations on the pH and pOH scales",
+  "Perform calculations relating pH and pOH"
+ ],
+ "summary_html": "<p>Concentrations of hydronium and hydroxide ions in aqueous media are often represented as logarithmic pH and pOH values, respectively. At <span data-type=\"temperature\">25 °C</span>, the autoprotolysis equilibrium for water requires the sum of pH and pOH to equal <span data-type=\"equilibrium-constant\">14</span> for any aqueous solution. The relative concentrations of hydronium and hydroxide ion in a solution define its status as acidic ([H<sub>3</sub>O<sup>+</sup>] &gt; [OH<sup>−</sup>]), basic ([H<sub>3</sub>O<sup>+</sup>] &lt; [OH<sup>−</sup>]), or neutral ([H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]). At <span data-type=\"temperature\">25 °C</span>, a pH &lt; 7 indicates an acidic solution, a pH &gt; 7 a basic solution, and a pH = 7 a neutral solution.</p>",
+ "notes": "Nothing of the section is left out. Kept as printed: Figure 14.3’s caption “It also is corrodes statues”, and the key to the last exercise, which gives the hydronium ion concentration the question asks for under the label [OH⁻].",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The five unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm59232064, fs-idp100037936, fs-idm113520992, fs-idm93267520, fs-idm60999568. pH and pOH answers accept 1% and concentrations 2%, except lime juice’s, read from Figure 14.2, which accepts 10%. The key to fs-idm209904880 labels its hydronium ion concentration [OH⁻], as printed.",
+ "figures": [
+  {
+   "id": "sim-ph-scale",
+   "kind": "sim",
+   "number": "14.2",
+   "originals": [
+    "/media/ch14/CNX_Chem_14_02_phscale.jpg"
+   ],
+   "original_caption": "The pH and pOH scales represent concentrations of H₃O⁺ and OH⁻, respectively. The pH and pOH values of some common substances at 25 °C are shown in this chart.",
+   "draws": [
+    "concentration",
+    "temperature",
+    "equilibrium-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-acid-rain",
+   "kind": "photo",
+   "number": "14.3",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-ph-meter",
+   "kind": "photo",
+   "number": "14.4",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-indicator",
+   "kind": "photo",
+   "number": "14.5",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "acidic-basic",
+   "concept": "acidic-basic-neutral",
+   "verb": "introduces"
+  },
+  {
+   "span": "acidic-basic",
+   "concept": "acidic-solution",
+   "verb": "introduces"
+  },
+  {
+   "span": "acidic-basic",
+   "concept": "basic-solution",
+   "verb": "introduces"
+  },
+  {
+   "span": "acidic-basic",
+   "concept": "neutral-solution",
+   "verb": "introduces"
+  },
+  {
+   "span": "acidic-basic",
+   "concept": "water-autoionization",
+   "verb": "uses"
+  },
+  {
+   "span": "acidic-basic",
+   "concept": "ion-product-constant-for-water",
+   "verb": "uses"
+  },
+  {
+   "span": "p-functions",
+   "concept": "ph-and-poh-scales",
+   "verb": "introduces"
+  },
+  {
+   "span": "p-functions",
+   "concept": "ph",
+   "verb": "introduces"
+  },
+  {
+   "span": "p-functions",
+   "concept": "poh",
+   "verb": "introduces"
+  },
+  {
+   "span": "p-functions",
+   "concept": "ph-plus-poh",
+   "verb": "introduces"
+  },
+  {
+   "span": "p-functions",
+   "concept": "ion-product-constant-for-water",
+   "verb": "uses"
+  },
+  {
+   "span": "neutral-ph",
+   "concept": "acidic-basic-neutral",
+   "verb": "reinforces"
+  },
+  {
+   "span": "neutral-ph",
+   "concept": "ph-plus-poh",
+   "verb": "uses"
+  },
+  {
+   "span": "neutral-ph",
+   "concept": "kw-ion-concentrations",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "ph-calculations",
+   "verb": "introduces"
+  },
+  {
+   "span": "calculations",
+   "concept": "ph",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "poh",
+   "verb": "uses"
+  },
+  {
+   "span": "calculations",
+   "concept": "ph-plus-poh",
+   "verb": "uses"
+  },
+  {
+   "span": "measuring",
+   "concept": "measuring-ph",
+   "verb": "introduces"
+  },
+  {
+   "span": "measuring",
+   "concept": "ph",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp62701056",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ph-from-h3o"
+   },
+   "cite": "calculations",
+   "prompt": "Water exposed to air contains carbonic acid, H<sub>2</sub>CO<sub>3</sub>, due to the reaction between carbon dioxide and water:<br>CO<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>2</sub>CO<sub>3</sub>(<em>aq</em>)<br>Air-saturated water has a hydronium ion concentration caused by the dissolved CO<sub>2</sub> of 2.0 × 10<sup>−6</sup> <em>M</em>, about 20-times larger than that of pure water. Calculate the pH of the solution at 25 °C.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 5.7,
+    "tol": 0.01,
+    "hint": "pH = −log[H<sub>3</sub>O<sup>+</sup>]; keep two decimal places for the two significant figures of the concentration.",
+    "solution": "5.70"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp57695872",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-h3o-from-ph"
+   },
+   "cite": "calculations",
+   "prompt": "Calculate the hydronium ion concentration of a solution with a pH of −1.07.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 12,
+    "unit": "M",
+    "hint": "[H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>, so here it is 10<sup>1.07</sup>.",
+    "solution": "12 <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idm90070400",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-poh"
+   },
+   "cite": "calculations",
+   "prompt": "The hydronium ion concentration of vinegar is approximately 4 × 10<sup>−3</sup> <em>M</em>. What are the corresponding values of pOH and pH?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "pOH",
+      "value": 11.6,
+      "tol": 0.01,
+      "hint": "Find the pH from [H<sub>3</sub>O<sup>+</sup>] first, then subtract it from 14.00."
+     },
+     {
+      "part": "pH",
+      "value": 2.4,
+      "tol": 0.01,
+      "hint": "pH = −log[H<sub>3</sub>O<sup>+</sup>]."
+     }
+    ],
+    "solution": "pOH = 11.6, pH = 2.4"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp63054032",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "neutral-ph",
+   "prompt": "Explain why a sample of pure water at 40 °C is neutral even though [H<sub>3</sub>O<sup>+</sup>] = 1.7 × 10<sup>−7</sup> <em>M</em>. <em>K</em><sub>w</sub> is 2.9 × 10<sup>−14</sup> at 40 °C.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "In a neutral solution [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]. At 40 °C, [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>] = (2.910 × 10<sup>−14</sup>)<sup>1/2</sup> = 1.7 × 10<sup>−7</sup>."
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp62460480",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "neutral-ph",
+   "prompt": "The ionization constant for water (<em>K</em><sub>w</sub>) is 9.311 × 10<sup>−14</sup> at 60 °C. Calculate [H<sub>3</sub>O<sup>+</sup>], [OH<sup>−</sup>], pH, and pOH for pure water at 60 °C.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[H<sub>3</sub>O<sup>+</sup>]",
+      "value": 3.051e-07,
+      "unit": "M",
+      "hint": "In pure water [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>] = <em>x</em>, so <em>x</em><sup>2</sup> = <em>K</em><sub>w</sub>."
+     },
+     {
+      "part": "[OH<sup>−</sup>]",
+      "value": 3.051e-07,
+      "unit": "M"
+     },
+     {
+      "part": "pH",
+      "value": 6.5156,
+      "tol": 0.01,
+      "hint": "pH = −log[H<sub>3</sub>O<sup>+</sup>]."
+     },
+     {
+      "part": "pOH",
+      "value": 6.5156,
+      "tol": 0.01
+     }
+    ],
+    "solution": "<em>x</em> = 3.051 × 10<sup>−7</sup> <em>M</em> = [H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]; pH = −log 3.051 × 10<sup>−7</sup> = −(−6.5156) = 6.5156; pOH = pH = 6.5156"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idm78388032",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "Calculate the pH and the pOH of each of the following solutions at 25 °C for which the substances ionize completely:<br>(a) 0.000259 <em>M</em> HClO<sub>4</sub><br>(b) 0.21 <em>M</em> NaOH<br>(c) 0.000071 <em>M</em> Ba(OH)<sub>2</sub><br>(d) 2.5 <em>M</em> KOH",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) pH",
+      "value": 3.587,
+      "tol": 0.01,
+      "hint": "HClO<sub>4</sub> ionizes completely, so [H<sub>3</sub>O<sup>+</sup>] is 0.000259 <em>M</em>."
+     },
+     {
+      "part": "(a) pOH",
+      "value": 10.413,
+      "tol": 0.01
+     },
+     {
+      "part": "(b) pOH",
+      "value": 0.68,
+      "tol": 0.01,
+      "hint": "Start from [OH<sup>−</sup>] = 0.21 <em>M</em> and find the pOH first."
+     },
+     {
+      "part": "(b) pH",
+      "value": 13.32,
+      "tol": 0.01
+     },
+     {
+      "part": "(c) pOH",
+      "value": 3.85,
+      "tol": 0.01,
+      "hint": "Each Ba(OH)<sub>2</sub> gives two hydroxide ions."
+     },
+     {
+      "part": "(c) pH",
+      "value": 10.15,
+      "tol": 0.01
+     },
+     {
+      "part": "(d) pOH",
+      "value": -0.4,
+      "tol": 0.01,
+      "hint": "A hydroxide ion concentration above 1 <em>M</em> gives a negative pOH."
+     },
+     {
+      "part": "(d) pH",
+      "value": 14.4,
+      "tol": 0.01
+     }
+    ],
+    "solution": "(a) pH = 3.587; pOH = 10.413; (b) pOH = 0.68; pH = 13.32; (c) pOH = 3.85; pH = 10.15; (d) pOH = −0.40; pH = 14.4"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idp61935360",
+   "source_number": "21",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "What are the hydronium and hydroxide ion concentrations in a solution whose pH is 6.52?",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[H<sub>3</sub>O<sup>+</sup>]",
+      "value": 3e-07,
+      "unit": "M",
+      "hint": "[H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>."
+     },
+     {
+      "part": "[OH<sup>−</sup>]",
+      "value": 3.3e-08,
+      "unit": "M",
+      "hint": "Divide <em>K</em><sub>w</sub> by [H<sub>3</sub>O<sup>+</sup>], or use pOH = 14.00 − pH."
+     }
+    ],
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 3.0 × 10<sup>−7</sup> <em>M</em>; [OH<sup>−</sup>] = 3.3 × 10<sup>−8</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idp268784",
+   "source_number": "23",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "neutral-ph",
+   "prompt": "Calculate the hydronium ion concentration and the hydroxide ion concentration in lime juice from its pH. See Figure 14.2 for useful information.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "[H<sub>3</sub>O<sup>+</sup>]",
+      "value": 0.01,
+      "unit": "M",
+      "tol": 0.1,
+      "hint": "Read the pH of lime juice from the scale of Figure 14.2, then use [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup>."
+     },
+     {
+      "part": "[OH<sup>−</sup>]",
+      "value": 1e-12,
+      "unit": "M",
+      "tol": 0.1
+     }
+    ],
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 1 × 10<sup>−2</sup> <em>M</em>; [OH<sup>−</sup>] = 1 × 10<sup>−12</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e25",
+   "source_id": "fs-idm209904880",
+   "source_number": "25",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "calculations",
+   "prompt": "The hydroxide ion concentration in household ammonia is 3.2 × 10<sup>−3</sup> <em>M</em> at 25 °C. What is the concentration of hydronium ions in the solution?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3.1e-12,
+    "unit": "M",
+    "hint": "[H<sub>3</sub>O<sup>+</sup>] = <em>K</em><sub>w</sub>/[OH<sup>−</sup>], with <em>K</em><sub>w</sub> = 1.0 × 10<sup>−14</sup> at 25 °C.",
+    "solution": "[OH<sup>−</sup>] = 3.1 × 10<sup>−12</sup> <em>M</em>"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "ph"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ph"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "ph-plus-poh"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "e15",
+   "concept": "acidic-basic-neutral"
+  },
+  {
+   "exercise": "e15",
+   "concept": "neutral-solution"
+  },
+  {
+   "exercise": "e15",
+   "concept": "ion-product-constant-for-water"
+  },
+  {
+   "exercise": "e17",
+   "concept": "kw-ion-concentrations"
+  },
+  {
+   "exercise": "e17",
+   "concept": "ph"
+  },
+  {
+   "exercise": "e17",
+   "concept": "poh"
+  },
+  {
+   "exercise": "e17",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "e19",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "e19",
+   "concept": "ph"
+  },
+  {
+   "exercise": "e19",
+   "concept": "poh"
+  },
+  {
+   "exercise": "e19",
+   "concept": "ph-plus-poh"
+  },
+  {
+   "exercise": "e21",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "e21",
+   "concept": "ph"
+  },
+  {
+   "exercise": "e21",
+   "concept": "ph-plus-poh"
+  },
+  {
+   "exercise": "e23",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "e23",
+   "concept": "ph"
+  },
+  {
+   "exercise": "e23",
+   "concept": "ph-plus-poh"
+  },
+  {
+   "exercise": "e25",
+   "concept": "kw-ion-concentrations"
+  },
+  {
+   "exercise": "e25",
+   "concept": "ph-calculations"
+  }
+ ]
+}

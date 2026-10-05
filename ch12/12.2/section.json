@@ -1,0 +1,240 @@
+{
+ "id": "12.2",
+ "module": "m68787",
+ "chapter": "12",
+ "title": "Factors Affecting Reaction Rates",
+ "short": "Factors Affecting Reaction Rates",
+ "lead": "Five things set how fast a reaction goes: the nature of the reactants, how finely a solid reactant is divided, the <span data-concept=\"temperature\">temperature</span>, the <span data-concept=\"concentration\">concentrations</span> of the reactants and the presence of a <span data-concept=\"catalyst\">catalyst</span>.",
+ "objectives": [
+  "Describe the effects of chemical nature, physical state, temperature, concentration, and catalysis on reaction rates"
+ ],
+ "summary_html": "<p>The <span data-concept=\"reaction-rate\">rate of a chemical reaction</span> is affected by several parameters. Reactions involving two phases proceed more rapidly when there is greater surface <span data-concept=\"area\">area</span> contact. If <span data-concept=\"temperature\">temperature</span> or reactant <span data-concept=\"concentration\">concentration</span> is increased, the <span data-concept=\"reaction-rate\">rate of a given reaction</span> generally increases as well. A <span data-concept=\"catalyst\">catalyst</span> can increase the <span data-concept=\"reaction-rate\">rate of a reaction</span> by providing an alternative pathway with a lower <span data-concept=\"activation-energy\">activation energy</span>.</p>",
+ "notes": "The three Link to Learning notes are left out: the videos of cesium reacting with water and of phosphorus burning in oxygen, and the PhET Reactions &amp; Rates interactive, which the Sim of nitric oxide and ozone answers. Figure 12.6 keeps the book’s unbalanced equation for iron and hydrochloric acid as printed.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual exercise fs-idm86018304 carries a suggested approach marked as OmniStax’s own. Of the three items that are instructions for the PhET Reactions &amp; Rates simulation, fs-idm66455280 is set against the Sim of nitric oxide and ozone, its prompt rewritten to name it, and carries a suggested approach marked as OmniStax’s own since the book gives no key; fs-idm66513728, on a single aimed collision, and fs-idm49710224, whose key describes the simulation’s reversible reaction of A and BC settling into a mixture, are held, since the Sim draws neither.",
+ "figures": [
+  {
+   "id": "fig-acid-dissol",
+   "kind": "photo",
+   "number": "12.6",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-statue",
+   "kind": "photo",
+   "number": "12.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-collisions",
+   "kind": "sim",
+   "draws": [
+    "temperature",
+    "concentration",
+    "rate",
+    "time"
+   ],
+   "conventions": [
+    "N",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "factors",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "nature",
+   "concept": "chemical-nature-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "nature",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "states",
+   "concept": "surface-area-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "states",
+   "concept": "area",
+   "verb": "uses"
+  },
+  {
+   "span": "states",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "temperature-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "temperature",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "concentration-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "concentration",
+   "concept": "concentration",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "temperature-and-rate",
+   "verb": "reinforces"
+  },
+  {
+   "span": "catalyst",
+   "concept": "catalyst",
+   "verb": "introduces"
+  },
+  {
+   "span": "catalyst",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idm30837936",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "factors",
+   "prompt": "Describe the effect of each of the following on the rate of the reaction of magnesium metal with a solution of hydrochloric acid: the molarity of the hydrochloric acid, the temperature of the solution, and the size of the pieces of magnesium.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Higher molarity increases the rate of the reaction. Higher temperature increases the rate of the reaction. Smaller pieces of magnesium metal will react more rapidly than larger pieces because more reactive surface exists."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm86018304",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "Explain why an egg cooks more slowly in boiling water in Denver than in New York City. (Hint: Consider the effect of temperature on reaction rate and the effect of pressure on boiling point.)",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: take the two parts of the hint in turn. First, recall that a liquid boils when its vapor pressure equals the pressure of the atmosphere above it, and compare the atmospheric pressure in Denver, about a mile above sea level, with that in New York City, at sea level. Decide which city’s water boils at the lower temperature. Second, cooking an egg is a set of chemical reactions in its proteins, and chemical reactions typically occur faster at higher temperatures. Put the two together to say which egg’s reactions run more slowly."
+   }
+  },
+  {
+   "id": "s4",
+   "source_id": "fs-idm66455280",
+   "source_number": "10",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "In the Sim of nitric oxide and ozone in a closed box, observe how the molecules collide and react under varying conditions. Set the temperature and the initial concentrations of each reactant, and watch the count of collisions above the graph and the concentration of ozone falling on it. How is the rate of the reaction affected by concentration and temperature?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: change one condition at a time and compare the average rate the readout gives at the end of each run. Hold the temperature at 300 K and raise the initial concentration of nitric oxide or of ozone; count how many collisions occur in a run and how many of them react. Then return the concentrations to 1.00 M and compare a run at 200 K with one at 600 K, watching both how fast the molecules move and what share of their collisions react. Since a single run holds only a few dozen collisions, let each setting run several times before you decide. Relate what you see to the statements of this section that rates usually increase when the concentration of a reactant increases and that reactions occur faster at higher temperatures."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "concentration-and-rate"
+  },
+  {
+   "exercise": "e1",
+   "concept": "temperature-and-rate"
+  },
+  {
+   "exercise": "e1",
+   "concept": "surface-area-and-rate"
+  },
+  {
+   "exercise": "e2",
+   "concept": "temperature-and-rate"
+  },
+  {
+   "exercise": "e2",
+   "concept": "boiling-point"
+  },
+  {
+   "exercise": "s4",
+   "concept": "concentration-and-rate"
+  },
+  {
+   "exercise": "s4",
+   "concept": "temperature-and-rate"
+  }
+ ]
+}

@@ -1,0 +1,412 @@
+{
+ "id": "14.7",
+ "module": "m68809",
+ "chapter": "14",
+ "title": "Acid-Base Titrations",
+ "short": "Acid-Base Titrations",
+ "lead": "A titration curve follows the pH of a sample as titrant is added to it. This section computes that pH at each stage of the titration of a strong acid and of a weak acid with a strong base, and explains how an acid-base indicator, chosen to suit the curve, signals the end point.",
+ "objectives": [
+  "Interpret titration curves for strong and weak acid-base systems",
+  "Compute sample pH at important stages of a titration",
+  "Explain the function of acid-base indicators"
+ ],
+ "summary_html": "<p>The titration curve for an acid-base titration is typically a plot of pH versus volume of added titrant. These curves are useful in selecting appropriate acid-base indicators that will permit accurate determinations of titration end points.</p>",
+ "notes": "Nothing of the section is left out. Kept as printed: “intial” in Example 14.21; the indicator equation’s roman “pKa” is written as pK<sub>a</sub>.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercise fs-idp105330480 is left out, and no answer is computed for it. The unkeyed conceptual exercise fs-idm81056688 is kept with a suggested approach, marked as AI-generated. pH answers accept 1%.",
+ "figures": [
+  {
+   "id": "sim-titration",
+   "kind": "sim",
+   "number": "14.18",
+   "folds": [
+    "14.20"
+   ],
+   "originals": [
+    "/media/ch14/CNX_Chem_14_07_titration.jpg",
+    "/media/ch14/CNX_Chem_14_07_titration2.jpg"
+   ],
+   "original_caption": "(Figure 14.18) (a) The titration curve for the titration of 25.00 mL of 0.100 M HCl (strong acid) with 0.100 M NaOH (strong base) has an equivalence point of 7.00 pH. (b) The titration curve for the titration of 25.00 mL of 0.100 M acetic acid (weak acid) with 0.100 M NaOH (strong base) has an equivalence point of 8.72 pH. (Figure 14.20) Titration curves for strong and weak acids illustrating the proper choice of acid-base indicator. Any of the three indicators will exhibit a reasonably sharp color change at the equivalence point of the strong acid titration, but only phenolphthalein is suitable for use in the weak acid titration.",
+   "draws": [
+    "volume",
+    "concentration",
+    "equilibrium-constant"
+   ],
+   "facts": [
+    "#d9342b",
+    "#f2c12e",
+    "#c8323c",
+    "#3a56b8",
+    "#e0479e"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-indicators",
+   "kind": "photo",
+   "number": "14.19",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "strong-titration",
+   "label": "the titration of 0.100 M HCl",
+   "figures": [
+    "sim-titration"
+   ]
+  },
+  {
+   "id": "weak-titration",
+   "label": "the titration of 0.100 M acetic acid",
+   "figures": [
+    "sim-titration"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "titration-curves",
+   "concept": "titration-curve",
+   "verb": "introduces"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "strong-acid-titration-ph",
+   "verb": "introduces"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "weak-acid-titration-ph",
+   "verb": "introduces"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "titration",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "equivalence-point",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "ph",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "ph-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "henderson-hasselbalch",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "salt-solution-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "titration-curves",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "acid-base-indicators",
+   "verb": "introduces"
+  },
+  {
+   "span": "indicators",
+   "concept": "color-change-interval",
+   "verb": "introduces"
+  },
+  {
+   "span": "indicators",
+   "concept": "choose-indicator",
+   "verb": "introduces"
+  },
+  {
+   "span": "indicators",
+   "concept": "henderson-hasselbalch",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "measuring-ph",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "end-point",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "equivalence-point",
+   "verb": "uses"
+  },
+  {
+   "span": "indicators",
+   "concept": "titration-curve",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm49336656",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-strong-titration"
+   },
+   "cite": "titration-curves",
+   "prompt": "Calculate the pH for the strong acid/strong base titration between 50.0 mL of 0.100 <em>M</em> HNO<sub>3</sub>(<em>aq</em>) and 0.200 <em>M</em> NaOH (titrant) at the listed volumes of added base: 0.00 mL, 15.0 mL, 25.0 mL, and 40.0 mL.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "0.00 mL",
+      "value": 1.0,
+      "tol": 0.01,
+      "hint": "Before any base is added, [H<sub>3</sub>O<sup>+</sup>] is the acid’s own 0.100 <em>M</em>."
+     },
+     {
+      "part": "15.0 mL",
+      "value": 1.5111,
+      "tol": 0.01,
+      "hint": "Subtract the moles of NaOH added from the 5.00 × 10<sup>−3</sup> mol of HNO<sub>3</sub>, then divide by the total volume, 65.0 mL."
+     },
+     {
+      "part": "25.0 mL",
+      "value": 7,
+      "tol": 0.01,
+      "hint": "25.0 mL of 0.200 <em>M</em> NaOH is exactly the moles of acid: the equivalence point of a strong acid and a strong base."
+     },
+     {
+      "part": "40.0 mL",
+      "value": 12.523,
+      "tol": 0.01,
+      "hint": "Past the equivalence point, find [OH<sup>−</sup>] from the excess NaOH in 90.0 mL, then pH = 14 + log[OH<sup>−</sup>]."
+     }
+    ],
+    "solution": "0.00: 1.000; 15.0: 1.5111; 25.0: 7; 40.0: 12.523"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm99459616",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-weak-titration"
+   },
+   "cite": "titration-curves",
+   "prompt": "Calculate the pH for the weak acid/strong base titration between 50.0 mL of 0.100 <em>M</em> HCOOH(<em>aq</em>) (formic acid) and 0.200 <em>M</em> NaOH (titrant) at the listed volumes of added base: 0.00 mL, 15.0 mL, 25.0 mL, and 30.0 mL.",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "0.00 mL",
+      "value": 2.37,
+      "tol": 0.01,
+      "hint": "Treat the formic acid alone with an ICE table, using its <em>K</em><sub>a</sub> from Appendix H."
+     },
+     {
+      "part": "15.0 mL",
+      "value": 3.92,
+      "tol": 0.01,
+      "hint": "The NaOH turns part of the acid into formate; use the Henderson-Hasselbalch equation with the moles of each."
+     },
+     {
+      "part": "25.0 mL",
+      "value": 8.29,
+      "tol": 0.01,
+      "hint": "At the equivalence point only formate remains, in 75.0 mL; find <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub> and treat the base with an ICE table."
+     },
+     {
+      "part": "30.0 mL",
+      "value": 12.097,
+      "tol": 0.01,
+      "hint": "Past the equivalence point the excess NaOH, in 80.0 mL, sets [OH<sup>−</sup>]."
+     }
+    ],
+    "solution": "0.00 mL: 2.37; 15.0 mL: 3.92; 25.00 mL: 8.29; 30.0 mL: 12.097"
+   }
+  },
+  {
+   "id": "e92",
+   "source_id": "fs-idm5595328",
+   "source_number": "92",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "indicators",
+   "prompt": "Explain how to choose the appropriate acid-base indicator for the titration of a weak base with a strong acid.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "At the equivalence point in the titration of a weak base with a strong acid, the resulting solution is slightly acidic due to the presence of the conjugate acid. Thus, pick an indicator that changes color in the acidic range and brackets the pH at the equivalence point. Methyl orange is a good example."
+   }
+  },
+  {
+   "id": "e93",
+   "source_id": "fs-idm81056688",
+   "source_number": "93",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "indicators",
+   "prompt": "Explain why an acid-base indicator changes color over a range of pH values rather than at a specific pH.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: write the indicator’s ionization, HIn ⇌ H<sup>+</sup> + In<sup>−</sup>, and the Henderson-Hasselbalch equation for it, pH = p<em>K</em><sub>a</sub> + log([In<sup>−</sup>]/[HIn]). Ask how the ratio of the two colored forms changes as the pH passes p<em>K</em><sub>a</sub>, and how lopsided that ratio must be (about 60−90% of one form) before the eye sees only one color."
+   }
+  },
+  {
+   "id": "e94",
+   "source_id": "fs-idp255636208",
+   "source_number": "94",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "titration-curves",
+   "prompt": "Calculate the pH at the following points in a titration of 40 mL (0.040 L) of 0.100 <em>M</em> barbituric acid (<em>K</em><sub>a</sub> = 9.8 × 10<sup>−5</sup>) with 0.100 <em>M</em> KOH.<br>(a) no KOH added<br>(b) 20 mL of KOH solution added<br>(c) 39 mL of KOH solution added<br>(d) 40 mL of KOH solution added<br>(e) 41 mL of KOH solution added",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 2.5,
+      "tol": 0.01,
+      "hint": "Treat the barbituric acid alone with an ICE table."
+     },
+     {
+      "part": "(b)",
+      "value": 4.01,
+      "tol": 0.01,
+      "hint": "20 mL is halfway to the equivalence point."
+     },
+     {
+      "part": "(c)",
+      "value": 5.6,
+      "tol": 0.01,
+      "hint": "Use the Henderson-Hasselbalch equation with the moles of acid left and of its conjugate base formed."
+     },
+     {
+      "part": "(d)",
+      "value": 8.35,
+      "tol": 0.01,
+      "hint": "At the equivalence point the conjugate base alone, in 80 mL, sets the pH through <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>."
+     },
+     {
+      "part": "(e)",
+      "value": 11.08,
+      "tol": 0.01,
+      "hint": "The excess KOH in 81 mL sets [OH<sup>−</sup>]."
+     }
+    ],
+    "solution": "(a) pH = 2.50; (b) pH = 4.01; (c) pH = 5.60; (d) pH = 8.35; (e) pH = 11.08"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "strong-acid-titration-ph"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "weak-acid-titration-ph"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "henderson-hasselbalch"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "salt-solution-calculations"
+  },
+  {
+   "exercise": "e92",
+   "concept": "choose-indicator"
+  },
+  {
+   "exercise": "e92",
+   "concept": "color-change-interval"
+  },
+  {
+   "exercise": "e92",
+   "concept": "predict-salt-solution-ph"
+  },
+  {
+   "exercise": "e93",
+   "concept": "acid-base-indicators"
+  },
+  {
+   "exercise": "e93",
+   "concept": "color-change-interval"
+  },
+  {
+   "exercise": "e94",
+   "concept": "weak-acid-titration-ph"
+  },
+  {
+   "exercise": "e94",
+   "concept": "henderson-hasselbalch"
+  },
+  {
+   "exercise": "e94",
+   "concept": "salt-solution-calculations"
+  }
+ ]
+}

@@ -1,0 +1,944 @@
+{
+  "id": "13.2",
+  "module": "m68798",
+  "chapter": "13",
+  "title": "Equilibrium Constants",
+  "short": "Equilibrium Constants",
+  "lead": "The <span data-concept=\"reaction-quotient\">reaction quotient</span>, <em>Q</em>, describes the composition of a reaction mixture, and its value at equilibrium is the <span data-concept=\"equilibrium-constant\">equilibrium constant</span>, <em>K</em>. This section shows how to write both from a balanced equation in <span data-concept=\"concentration\">concentrations</span> or <span data-concept=\"partial-pressure\">partial pressures</span>, how comparing them tells which way a mixture will react, and how the constants of equilibria in one phase, in several phases, and of coupled reactions are found.",
+  "objectives": [
+    "Derive reaction quotients from chemical equations representing homogeneous and heterogeneous reactions",
+    "Calculate values of reaction quotients and equilibrium constants, using concentrations and pressures",
+    "Relate the magnitude of an equilibrium constant to properties of the chemical system"
+  ],
+  "summary_html": "<p>The composition of a reaction mixture may be represented by a mathematical function known as the <span data-concept=\"reaction-quotient\">reaction quotient</span>, $\\kQrxn$. For a reaction at equilibrium, the composition is constant, and $\\kQrxn$ is called the <span data-concept=\"equilibrium-constant\">equilibrium constant</span>, $\\kK$.</p><p>A <span data-concept=\"homogeneous-equilibrium\">homogeneous equilibrium</span> is an equilibrium in which all components are in the same phase. A <span data-concept=\"heterogeneous-equilibrium\">heterogeneous equilibrium</span> is an equilibrium in which components are in two or more phases.</p>",
+  "notes": "Nothing of the section is left out; the key to exercise 17 labels its (e) and (f) quotients Q_P and Q_c the other way round from the constants the item gives, Example 13.5’s Check Your Learning labels both of its constants K_c1, and Example 13.3’s table is followed where its description gives 0.0203 M, all as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The four unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp100224800, fs-idp163618080, fs-idp94819040 and fs-idp72435440. The nine unkeyed conceptual and expression-writing exercises are kept with a suggested approach marked as AI-generated: fs-idp109971312, fs-idp176984288, fs-idp114043728, fs-idp237441536, fs-idp68591104, fs-idp52174160, fs-idp132912112, fs-idp93479024 and fs-idp282222272. Exercise fs-idp194491952, on the bromine that needs a closed vessel, is set in 13.1, whose dynamic equilibria it tests. The key to fs-idp110211104 labels its (e) and (f) quotients Q_P and Q_c the other way round from the constants the item gives, and Example 13.5’s Check Your Learning labels both constants K_c1; both are kept as printed. The exercises that pointed to an earlier exercise name it by its reactions.",
+  "figures": [
+    {
+      "id": "sim-quotient",
+      "kind": "sim",
+      "number": "13.5",
+      "originals": [
+        "/media/ch13/CNX_Chem_13_02_quotient.jpg"
+      ],
+      "original_caption": "Changes in concentrations and Qc for a chemical equilibrium achieved beginning with (a) a mixture of reactants only and (b) products only.",
+      "draws": [
+        "concentration",
+        "equilibrium-constant",
+        "time"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-magnitude-k",
+      "kind": "sim",
+      "draws": [
+        "concentration",
+        "equilibrium-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-mixtures",
+      "kind": "sim",
+      "number": "13.6",
+      "originals": [
+        "/media/ch13/CNX_Chem_13_02_mixtures.jpg"
+      ],
+      "original_caption": "Compositions of three mixtures before (Qc ≠ Kc) and after (Qc = Kc) equilibrium is established for the reaction CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g).",
+      "draws": [
+        "concentration",
+        "equilibrium-constant"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "so2",
+      "label": "sulfur dioxide",
+      "figures": [
+        "sim-quotient"
+      ]
+    },
+    {
+      "id": "o2",
+      "label": "oxygen",
+      "figures": [
+        "sim-quotient"
+      ]
+    },
+    {
+      "id": "so3",
+      "label": "sulfur trioxide",
+      "figures": [
+        "sim-quotient"
+      ]
+    },
+    {
+      "id": "no2",
+      "label": "nitrogen dioxide",
+      "figures": [
+        "sim-magnitude-k"
+      ]
+    },
+    {
+      "id": "n2o4",
+      "label": "dinitrogen tetroxide",
+      "figures": [
+        "sim-magnitude-k"
+      ]
+    },
+    {
+      "id": "co",
+      "label": "carbon monoxide",
+      "figures": [
+        "sim-mixtures"
+      ]
+    },
+    {
+      "id": "h2o",
+      "label": "water",
+      "figures": [
+        "sim-mixtures"
+      ]
+    },
+    {
+      "id": "co2",
+      "label": "carbon dioxide",
+      "figures": [
+        "sim-mixtures"
+      ]
+    },
+    {
+      "id": "h2",
+      "label": "hydrogen",
+      "figures": [
+        "sim-mixtures"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "quotient",
+      "concept": "reaction-quotient",
+      "verb": "introduces"
+    },
+    {
+      "span": "quotient",
+      "concept": "write-reaction-quotient",
+      "verb": "introduces"
+    },
+    {
+      "span": "quotient",
+      "concept": "reversible-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "quotient",
+      "concept": "balanced-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "quotient",
+      "concept": "molarity",
+      "verb": "uses"
+    },
+    {
+      "span": "quotient",
+      "concept": "partial-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "constant",
+      "concept": "equilibrium-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "constant",
+      "concept": "law-of-mass-action",
+      "verb": "introduces"
+    },
+    {
+      "span": "constant",
+      "concept": "magnitude-of-k",
+      "verb": "introduces"
+    },
+    {
+      "span": "constant",
+      "concept": "reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "constant",
+      "concept": "chemical-equilibrium",
+      "verb": "uses"
+    },
+    {
+      "span": "direction",
+      "concept": "predict-direction-q-versus-k",
+      "verb": "introduces"
+    },
+    {
+      "span": "direction",
+      "concept": "reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "direction",
+      "concept": "equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "homogeneous-equilibrium",
+      "verb": "introduces"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "kp-kc-relation",
+      "verb": "introduces"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "ideal-gas-law",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "partial-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "molarity",
+      "verb": "uses"
+    },
+    {
+      "span": "homogeneous",
+      "concept": "write-reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "heterogeneous-equilibrium",
+      "verb": "introduces"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "homogeneous-and-heterogeneous-equilibria",
+      "verb": "introduces"
+    },
+    {
+      "span": "heterogeneous",
+      "concept": "write-reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "coupled",
+      "concept": "coupled-equilibrium",
+      "verb": "introduces"
+    },
+    {
+      "span": "coupled",
+      "concept": "coupled-equilibria",
+      "verb": "introduces"
+    },
+    {
+      "span": "coupled",
+      "concept": "equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "coupled",
+      "concept": "balanced-equation",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp168372720",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-quotient-expressions"
+      },
+      "cite": "quotient",
+      "prompt": "Write the concentration-based reaction quotient expression for each of the following reactions:<br>(a) $2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>(b) ${\\text{C}}_{4}{\\text{H}}_{8}(g)\\rightleftharpoons 2{\\text{C}}_{2}{\\text{H}}_{4}(g)$<br>(c) $2{\\text{C}}_{4}{\\text{H}}_{10}(g)+13{\\text{O}}_{2}(g)\\rightleftharpoons 8{\\text{CO}}_{2}(g)+10{\\text{H}}_{2}\\text{O}(g)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) ${Q}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]};$ (b) ${Q}_{c}=\\;\\frac{{[{\\text{C}}_{2}{\\text{H}}_{4}]}^{2}}{[{\\text{C}}_{4}{\\text{H}}_{8}]};$ (c) ${Q}_{c}=\\;\\frac{{[{\\text{CO}}_{2}]}^{8}[{\\text{H}}_{2}\\text{O}{]}^{10}}{{[{\\text{C}}_{4}{\\text{H}}_{10}]}^{2}[{\\text{O}}_{2}{]}^{13}}$"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idp54423808",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-evaluate-q"
+      },
+      "cite": "constant",
+      "prompt": "For the reaction ${\\text{2SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{2SO}}_{3}(g),$ the concentrations at equilibrium are [SO<sub>2</sub>] = 0.90 <em>M</em>, [O<sub>2</sub>] = 0.35 <em>M</em>, and [SO<sub>3</sub>] = 1.1 <em>M</em>. What is the value of the equilibrium constant, <em>K<sub>c</sub></em>?",
+      "answer": {
+        "type": "number",
+        "value": 4.3,
+        "generated_by": "source",
+        "hint": "Write $K_c$ from the balanced equation, each concentration raised to its coefficient, and substitute the equilibrium concentrations.",
+        "solution": "<em>K<sub>c</sub></em> = 4.3"
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idp174376240",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-direction"
+      },
+      "cite": "direction",
+      "prompt": "Calculate the reaction quotient and determine the direction in which each of the following reactions will proceed to reach equilibrium.<br>(a) A 1.00-L flask containing 0.0500 mol of NO(<em>g</em>), 0.0155 mol of Cl<sub>2</sub>(<em>g</em>), and 0.500 mol of NOCl: $2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)\\hspace{2em}{K}_{c}=4.6\\;\\times \\;{10}^{4}$<br>(b) A 5.0-L flask containing 17 g of NH<sub>3</sub>, 14 g of N<sub>2</sub>, and 12 g of H<sub>2</sub>: ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{2em}{K}_{c}=0.060$<br>(c) A 2.00-L flask containing 230 g of SO<sub>3</sub>(<em>g</em>): $2{\\text{SO}}_{3}(g)\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{c}=0.230$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) <em>Q<sub>c</sub></em>",
+            "value": 6450,
+            "hint": "Divide each amount by the volume to get the concentrations before evaluating <em>Q<sub>c</sub></em>."
+          },
+          {
+            "part": "(b) <em>Q<sub>c</sub></em>",
+            "value": 0.23,
+            "hint": "Convert each mass to moles with its molar mass, then to a concentration in the 5.0-L flask."
+          },
+          {
+            "part": "(c) <em>Q<sub>c</sub></em>",
+            "value": 0,
+            "hint": "Only SO<sub>3</sub> is present at the start."
+          }
+        ],
+        "solution": "(a) <em>Q<sub>c</sub></em> = 6.45 × 10<sup>3</sup>, forward. (b) <em>Q<sub>c</sub></em> = 0.23, reverse. (c) <em>Q<sub>c</sub></em> = 0, forward."
+      }
+    },
+    {
+      "id": "cyl4",
+      "source_id": "fs-idp74619616",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-kp"
+      },
+      "cite": "homogeneous",
+      "prompt": "Write the equations relating <em>K<sub>c</sub></em> to <em>K<sub>P</sub></em> for each of the following reactions:<br>(a) $2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>(b) ${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)$<br>(c) ${\\text{C}}_{3}{\\text{H}}_{8}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons 3{\\text{CO}}_{2}(g)+4{\\text{H}}_{2}\\text{O}(g)$<br>(d) At 227 °C, the following reaction has <em>K<sub>c</sub></em> = 0.0952: ${\\text{CH}}_{3}\\text{OH}(g)\\rightleftharpoons \\text{CO}(g)+2{\\text{H}}_{2}(g)$ What would be the value of <em>K<sub>P</sub></em> at this temperature?",
+      "answer": {
+        "type": "number",
+        "value": 160,
+        "part": "(d) <em>K<sub>P</sub></em>",
+        "generated_by": "source",
+        "hint": "Find Δ<em>n</em> from the gaseous species, convert 227 °C to kelvin, and use <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em>(<em>RT</em>)<sup>Δ<em>n</em></sup>.",
+        "solution": "(a) <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>)<sup>−1</sup>; (b) <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>); (c) <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>); (d) 160 or 1.6 × 10<sup>2</sup>"
+      }
+    },
+    {
+      "id": "cyl5",
+      "source_id": "fs-idm384162720",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-coupled"
+      },
+      "cite": "coupled",
+      "prompt": "Use the provided information to calculate Kc for the following reaction at 550 °C:<br>$\\begin{array}{llll}{\\text{H}}_{2}(g)+{\\text{CO}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g) & & & {\\text{K}}_{\\text{c}}=? \\\\ \\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g) & & & {\\text{K}}_{\\text{c}1}=490 \\\\ \\text{CoO}(s)+{\\text{H}}_{\\text{2}}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{H}}_{2}O(g) & & & {\\text{K}}_{\\text{c}1}=67\\end{array}$",
+      "answer": {
+        "type": "number",
+        "value": 0.14,
+        "generated_by": "source",
+        "hint": "Reverse the first reaction and add it to the second; the reversed constant is the reciprocal of the first.",
+        "solution": "K<sub>c</sub> = 0.14"
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idp109971312",
+      "source_number": "6",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "Explain why there may be an infinite number of values for the reaction quotient of a reaction at a given temperature but there can be only one value for the equilibrium constant at that temperature.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: recall that <em>Q</em> can be evaluated for any mixture of reactants and products, whatever their concentrations, while <em>K</em> is the particular value <em>Q</em> takes once the system has reached equilibrium. The law of mass action says that at a given temperature this equilibrium value is the same whatever mixture the reaction started from."
+      }
+    },
+    {
+      "id": "e8",
+      "source_id": "fs-idp176984288",
+      "source_number": "8",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "If you observe the following reaction at equilibrium, is it possible to tell whether the reaction started with pure NO<sub>2</sub> or with pure N<sub>2</sub>O<sub>4</sub>?<br>$2{\\text{NO}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{O}}_{4}(g)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: think of Figure 13.5, where one reaction reaches equilibrium once from reactants only and once from product only. Ask whether anything about an equilibrium mixture, whose <em>Q</em> equals the single value of <em>K</em> at that temperature, records the side from which it was approached."
+      }
+    },
+    {
+      "id": "e9",
+      "source_id": "fs-idp237194960",
+      "source_number": "9",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "Among the solubility rules previously discussed is the statement: All chlorides are soluble except Hg<sub>2</sub>Cl<sub>2</sub>, AgCl, PbCl<sub>2</sub>, and CuCl.<br>(a) Write the expression for the equilibrium constant for the reaction represented by the equation $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq).$ Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1? Explain your answer.<br>(b) Write the expression for the equilibrium constant for the reaction represented by the equation ${\\text{Pb}}^{2+}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)\\rightleftharpoons {\\text{PbCl}}_{2}(s).$ Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1? Explain your answer.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) <em>K<sub>c</sub></em> = [Ag<sup>+</sup>][Cl<sup>−</sup>] &lt; 1. AgCl is insoluble; thus, the concentrations of ions are much less than 1 <em>M</em>; (b) ${K}_{c}=\\;\\frac{1}{[{\\text{Pb}}^{2+}]{[{\\text{Cl}}^{\\text{−}}]}^{2}}$ &gt; 1 because PbCl<sub>2</sub> is insoluble and formation of the solid will reduce the concentration of ions to a low level (&lt;1 <em>M</em>)."
+      }
+    },
+    {
+      "id": "e10",
+      "source_id": "fs-idp114043728",
+      "source_number": "10",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "Among the solubility rules previously discussed is the statement: Carbonates, phosphates, borates, and arsenates—except those of the ammonium ion and the alkali metals—are insoluble.<br>(a) Write the expression for the equilibrium constant for the reaction represented by the equation ${\\text{CaCO}}_{3}(s)\\rightleftharpoons {\\text{Ca}}^{2+}(aq)+{\\text{CO}}_{3}{}^{2−}(\\text{aq}).$ Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1? Explain your answer.<br>(b) Write the expression for the equilibrium constant for the reaction represented by the equation $3{\\text{Ba}}^{2+}(aq)+2{\\text{PO}}_{4}{}^{3−}(aq)\\rightleftharpoons {\\text{Ba}}_{3}{({\\text{PO}}_{4})}_{2}(s).$ Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1? Explain your answer.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: write each <em>K<sub>c</sub></em> from its balanced equation, leaving out the solid, which appears in neither expression. Then use the solubility rule: an insoluble salt dissolves only slightly, so the ion concentrations at equilibrium are small. Decide whether small ion concentrations make the expression with the ions in its numerator, and the one with the ions in its denominator, greater or less than 1."
+      }
+    },
+    {
+      "id": "e11",
+      "source_id": "fs-idp61604544",
+      "source_number": "11",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "Benzene is one of the compounds used as octane enhancers in unleaded gasoline. It is manufactured by the catalytic conversion of acetylene to benzene: $3{\\text{C}}_{2}{\\text{H}}_{2}(g)\\;\\rightleftharpoons \\;{\\text{C}}_{6}{\\text{H}}_{6}(g).$ Which value of <em>K<sub>c</sub></em> would make this reaction most useful commercially? <em>K<sub>c</sub></em> ≈ 0.01, <em>K<sub>c</sub></em> ≈ 1, or <em>K<sub>c</sub></em> ≈ 10. Explain your answer.",
+      "answer": {
+        "type": "choice",
+        "options": [
+          "<em>K<sub>c</sub></em> ≈ 0.01",
+          "<em>K<sub>c</sub></em> ≈ 1",
+          "<em>K<sub>c</sub></em> ≈ 10"
+        ],
+        "correct": 2,
+        "generated_by": "source",
+        "solution": "Since ${K}_{c}=\\;\\frac{[{\\text{C}}_{6}{\\text{H}}_{6}]}{{[{\\text{C}}_{2}{\\text{H}}_{2}]}^{3}},$ a value of <em>K<sub>c</sub></em> ≈ 10 means that C<sub>6</sub>H<sub>6</sub> predominates over C<sub>2</sub>H<sub>2</sub>. In such a case, the reaction would be commercially feasible if the rate to equilibrium is suitable."
+      }
+    },
+    {
+      "id": "e12",
+      "source_id": "fs-idp237441536",
+      "source_number": "12",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quotient",
+      "prompt": "Show that the complete chemical equation, the total ionic equation, and the net ionic equation for the reaction represented by the equation $\\text{KI}(aq)+{\\text{I}}_{2}(aq)\\rightleftharpoons {\\text{KI}}_{3}(aq)$ give the same expression for the reaction quotient. KI<sub>3</sub> is composed of the ions K<sup>+</sup> and ${\\text{I}}_{3}{}^{\\text{−}}.$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: write the complete equation, the total ionic equation with KI and KI<sub>3</sub> as their separate ions, and the net ionic equation with the spectator K<sup>+</sup> removed. Write <em>Q<sub>c</sub></em> for each and check whether the [K<sup>+</sup>] terms cancel between numerator and denominator, so that all three reduce to one expression."
+      }
+    },
+    {
+      "id": "e13",
+      "source_id": "fs-idp57598704",
+      "source_number": "13",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "For a titration to be effective, the reaction must be rapid and the yield of the reaction must essentially be 100%. Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1 for a titration reaction?",
+      "answer": {
+        "type": "choice",
+        "options": [
+          "<em>K<sub>c</sub></em> &gt; 1",
+          "<em>K<sub>c</sub></em> &lt; 1",
+          "<em>K<sub>c</sub></em> ≈ 1"
+        ],
+        "correct": 0,
+        "generated_by": "source",
+        "solution": "<em>K<sub>c</sub></em> &gt; 1"
+      }
+    },
+    {
+      "id": "e14",
+      "source_id": "fs-idp68591104",
+      "source_number": "14",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "constant",
+      "prompt": "For a precipitation reaction to be useful in a gravimetric analysis, the product of the reaction must be insoluble. Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1 for a useful precipitation reaction?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: a useful precipitation leaves almost none of the measured ion in solution. Write the equilibrium constant for the ions combining into the solid; the solid does not appear in it, so the small ion concentrations left at equilibrium sit in its denominator. Decide what that does to the size of <em>K<sub>c</sub></em>."
+      }
+    },
+    {
+      "id": "e15",
+      "source_id": "fs-idp281095456",
+      "source_number": "15",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quotient",
+      "prompt": "Write the mathematical expression for the reaction quotient, <em>Q<sub>c</sub></em>, for each of the following reactions:<br>(a) ${\\text{CH}}_{4}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons {\\text{CH}}_{3}\\text{Cl}(g)+\\text{HCl}(g)$<br>(b) ${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)$<br>(c) $2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>(d) ${\\text{BaSO}}_{3}(s)\\rightleftharpoons \\text{BaO}(s)+{\\text{SO}}_{2}(g)$<br>(e) ${\\text{P}}_{4}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{P}}_{4}{\\text{O}}_{10}(s)$<br>(f) ${\\text{Br}}_{2}(g)\\rightleftharpoons 2\\text{Br}(g)$<br>(g) ${\\text{CH}}_{4}(g)+2{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$<br>(h) ${\\text{CuSO}}_{4}\\text{·}5{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{CuSO}}_{4}(s)+5{\\text{H}}_{2}\\text{O}(g)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) ${Q}_{c}=\\;\\frac{[{\\text{CH}}_{3}\\text{Cl}][\\text{HCl}]}{[{\\text{CH}}_{4}][{\\text{Cl}}_{2}]};$ (b) ${Q}_{c}=\\;\\frac{{[\\text{NO}]}^{2}}{[{\\text{N}}_{2}]\\;[{\\text{O}}_{2}]};$ (c) ${Q}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]};$ (d) <em>Q<sub>c</sub></em> = [SO<sub>2</sub>]; (e) ${Q}_{c}=\\;\\frac{1}{[{\\text{P}}_{4}]{[{\\text{O}}_{2}]}^{5}};$ (f) ${Q}_{c}=\\;\\frac{{[\\text{Br}]}^{2}}{[{\\text{Br}}_{2}]};$ (g) ${Q}_{c}=\\;\\frac{[{\\text{CO}}_{2}]}{[{\\text{CH}}_{4}]{[{\\text{O}}_{2}]}^{2}};$ (h) <em>Q<sub>c</sub></em> = [H<sub>2</sub>O]<sup>5</sup>"
+      }
+    },
+    {
+      "id": "e16",
+      "source_id": "fs-idp52174160",
+      "source_number": "16",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "quotient",
+      "prompt": "Write the mathematical expression for the reaction quotient, <em>Q<sub>c</sub></em>, for each of the following reactions:<br>(a) ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>(b) $4{\\text{NH}}_{3}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons 4\\text{NO}(g)+6{\\text{H}}_{2}\\text{O}(g)$<br>(c) ${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)$<br>(d) ${\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)$<br>(e) ${\\text{NH}}_{4}\\text{Cl}(s)\\rightleftharpoons {\\text{NH}}_{3}(g)+\\text{HCl}(g)$<br>(f) $2\\text{Pb}{({\\text{NO}}_{3})}_{2}(s)\\rightleftharpoons 2\\text{PbO}(s)+4{\\text{NO}}_{2}(g)+{\\text{O}}_{2}(g)$<br>(g) $2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{H}}_{2}\\text{O}(l)$<br>(h) ${\\text{S}}_{8}(g)\\rightleftharpoons 8\\text{S}(g)$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: for each reaction, put the product concentrations, each raised to the power of its coefficient, over the reactant concentrations raised to theirs, and leave out every pure solid and liquid, as in Example 13.1 and the heterogeneous equilibria above."
+      }
+    },
+    {
+      "id": "e17",
+      "source_id": "fs-idp110211104",
+      "source_number": "17",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "direction",
+      "prompt": "The initial concentrations or pressures of reactants and products are given for each of the following systems. Calculate the reaction quotient and determine the direction in which each system will proceed to reach equilibrium.<br>(a) $2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{2em}{K}_{c}=17;$ [NH<sub>3</sub>] = 0.20 <em>M</em>, [N<sub>2</sub>] = 1.00 <em>M</em>, [H<sub>2</sub>] = 1.00 <em>M</em><br>(b) $2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{2em}{K}_{P}=6.8\\;\\times \\;{10}^{4};$ NH<sub>3</sub> = 3.0 atm, N<sub>2</sub> = 2.0 atm, H<sub>2</sub> = 1.0 atm<br>(c) $2{\\text{SO}}_{3}(g)\\;\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{c}=0.230;$ [SO<sub>3</sub>] = 0.00 <em>M</em>, [SO<sub>2</sub>] = 1.00 <em>M</em>, [O<sub>2</sub>] = 1.00 <em>M</em><br>(d) $2{\\text{SO}}_{3}(g)\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{P}=16.5;$ SO<sub>3</sub> = 1.00 atm, SO<sub>2</sub> = 1.00 atm, O<sub>2</sub> = 1.00 atm<br>(e) $2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)\\hspace{2em}{K}_{c}=4.6\\;\\times \\;{10}^{4};$ [NO] = 1.00 <em>M</em>, [Cl<sub>2</sub>] = 1.00 <em>M</em>, [NOCl] = 0 <em>M</em><br>(f) ${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{2em}{K}_{P}=0.050;$ NO = 10.0 atm, N<sub>2</sub> = O<sub>2</sub> = 5 atm",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) <em>Q</em><sub>c</sub> 25 proceeds left; (b) <em>Q<sub>P</sub></em> 0.22 proceeds right; (c) <em>Q<sub>c</sub></em> undefined proceeds left; (d) <em>Q<sub>P</sub></em> 1.00 proceeds right; (e) <em>Q<sub>P</sub></em> 0 proceeds right; (f) <em>Q<sub>c</sub></em> 4 proceeds left"
+      }
+    },
+    {
+      "id": "e19",
+      "source_id": "fs-idp86297984",
+      "source_number": "19",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "direction",
+      "prompt": "The following reaction has <em>K<sub>P</sub></em> = 4.50 × 10<sup>−5</sup> at 720 K.<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>If a reaction vessel is filled with each gas to the partial pressures listed, in which direction will it shift to reach equilibrium? <em>P</em>(NH<sub>3</sub>) = 93 atm, <em>P</em>(N<sub>2</sub>) = 48 atm, and <em>P</em>(H<sub>2</sub>) = 52 atm",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The system will shift toward the reactants to reach equilibrium."
+      }
+    },
+    {
+      "id": "e21",
+      "source_id": "fs-idp57788496",
+      "source_number": "21",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "Which of the systems described in the exercise that asks for <em>Q<sub>c</sub></em> of reactions (a) CH<sub>4</sub> + Cl<sub>2</sub> through (h) CuSO<sub>4</sub>·5H<sub>2</sub>O are homogeneous equilibria? Which are heterogeneous equilibria?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) homogenous; (b) homogenous; (c) homogenous; (d) heterogeneous; (e) heterogeneous; (f) homogenous; (g) heterogeneous; (h) heterogeneous"
+      }
+    },
+    {
+      "id": "e22",
+      "source_id": "fs-idp132912112",
+      "source_number": "22",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "Which of the systems described in the exercise that asks for <em>Q<sub>c</sub></em> of reactions (a) N<sub>2</sub> + 3H<sub>2</sub> through (h) S<sub>8</sub> are homogeneous equilibria? Which are heterogeneous equilibria?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: look at the phase written beside each species. A reaction whose species are all in one phase, here all gases, is homogeneous; one that includes a solid or a liquid together with gases is heterogeneous."
+      }
+    },
+    {
+      "id": "e23",
+      "source_id": "fs-idp14899216",
+      "source_number": "23",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "For which of the reactions in the exercise that asks for <em>Q<sub>c</sub></em> of reactions (a) CH<sub>4</sub> + Cl<sub>2</sub> through (h) CuSO<sub>4</sub>·5H<sub>2</sub>O does <em>K<sub>c</sub></em> (calculated using concentrations) equal <em>K<sub>P</sub></em> (calculated using pressures)?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "This situation occurs in (a) and (b)."
+      }
+    },
+    {
+      "id": "e24",
+      "source_id": "fs-idp93479024",
+      "source_number": "24",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "For which of the reactions in the exercise that asks for <em>Q<sub>c</sub></em> of reactions (a) N<sub>2</sub> + 3H<sub>2</sub> through (h) S<sub>8</sub> does <em>K<sub>c</sub></em> (calculated using concentrations) equal <em>K<sub>P</sub></em> (calculated using pressures)?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: <em>K<sub>c</sub></em> equals <em>K<sub>P</sub></em> when (<em>RT</em>)<sup>Δ<em>n</em></sup> = 1, that is, when Δ<em>n</em>, the moles of gaseous products less the moles of gaseous reactants, is zero. Count only the gaseous species of each reaction."
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idp102347760",
+      "source_number": "25",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "Convert the values of <em>K<sub>c</sub></em> to values of <em>K<sub>P</sub></em> or the values of <em>K<sub>P</sub></em> to values of <em>K<sub>c</sub></em>.<br>(a) ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{2em}{K}_{c}=0.50\\;\\text{at}\\;400\\;\\text{°C}$<br>(b) ${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\rightleftharpoons 2\\text{HI}(g)\\hspace{2em}{K}_{c}=50.2\\;\\text{at}\\;448\\;\\text{°C}$<br>(c) ${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{2em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{at}\\;25\\;\\text{°C}$<br>(d) ${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)\\hspace{2em}{K}_{P}=0.122\\;\\text{at}\\;50\\;\\text{°C}$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) <em>K<sub>P</sub></em>",
+            "value": 0.00016,
+            "hint": "Δ<em>n</em> = 2 − 4; use the temperature in kelvin and <em>R</em> = 0.0821 L atm mol<sup>−1</sup> K<sup>−1</sup>."
+          },
+          {
+            "part": "(b) <em>K<sub>P</sub></em>",
+            "value": 50.2,
+            "hint": "Count the moles of gas on each side before computing anything."
+          },
+          {
+            "part": "(c) <em>K<sub>c</sub></em>",
+            "value": 5.31e-39,
+            "hint": "Only the water vapor is a gas, so Δ<em>n</em> = 10."
+          },
+          {
+            "part": "(d) <em>K<sub>c</sub></em>",
+            "value": 0.0046
+          }
+        ],
+        "solution": "(a) <em>K<sub>P</sub></em> = 1.6 × 10<sup>−4</sup>; (b) <em>K<sub>P</sub></em> = 50.2; (c) <em>K<sub>c</sub></em> = 5.31 × 10<sup>−39</sup>; (d) <em>K<sub>c</sub></em> = 4.60 × 10<sup>−3</sup>"
+      }
+    },
+    {
+      "id": "e27",
+      "source_id": "fs-idp103369136",
+      "source_number": "27",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "heterogeneous",
+      "prompt": "What is the value of the equilibrium constant expression for the change ${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)$ at 30 °C? (See <a href=\\\"/chemistry-2e/sheets/water/\\\">Appendix E</a>.)",
+      "answer": {
+        "type": "number",
+        "value": 0.042,
+        "generated_by": "source",
+        "hint": "The liquid is left out of the expression, so <em>K<sub>P</sub></em> is the vapor pressure of water at 30 °C, in atmospheres.",
+        "solution": "${K}_{P}={P}_{{\\text{H}}_{2}\\text{O}}=0.042.$"
+      }
+    },
+    {
+      "id": "e28",
+      "source_id": "fs-idp282222272",
+      "source_number": "28",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "Write the expression of the reaction quotient for the ionization of HOCN in water.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: HOCN is an acid that gives a proton to water, forming H<sub>3</sub>O<sup>+</sup> and OCN<sup>−</sup>. Write that balanced equation, then form <em>Q<sub>c</sub></em> from it, leaving out the water, as in the HF example among the homogeneous equilibria."
+      }
+    },
+    {
+      "id": "e29",
+      "source_id": "fs-idp131083248",
+      "source_number": "29",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "homogeneous",
+      "prompt": "Write the reaction quotient expression for the ionization of NH<sub>3</sub> in water.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "${Q}_{c}=\\;\\frac{[{\\text{NH}}_{4}{}^{\\text{+}}][{\\text{OH}}^{\\text{−}}]}{[{\\text{NH}}_{3}]}$"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "reaction-quotient"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "equilibrium-constant"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "reaction-quotient"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "predict-direction-q-versus-k"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "cyl4",
+      "concept": "kp-kc-relation"
+    },
+    {
+      "exercise": "cyl5",
+      "concept": "coupled-equilibria"
+    },
+    {
+      "exercise": "e6",
+      "concept": "reaction-quotient"
+    },
+    {
+      "exercise": "e6",
+      "concept": "equilibrium-constant"
+    },
+    {
+      "exercise": "e6",
+      "concept": "law-of-mass-action"
+    },
+    {
+      "exercise": "e8",
+      "concept": "law-of-mass-action"
+    },
+    {
+      "exercise": "e8",
+      "concept": "equilibrium-constant"
+    },
+    {
+      "exercise": "e9",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e9",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e9",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e10",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e10",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e10",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e11",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e12",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e13",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e14",
+      "concept": "magnitude-of-k"
+    },
+    {
+      "exercise": "e15",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e15",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e16",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e16",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e17",
+      "concept": "predict-direction-q-versus-k"
+    },
+    {
+      "exercise": "e17",
+      "concept": "reaction-quotient"
+    },
+    {
+      "exercise": "e19",
+      "concept": "predict-direction-q-versus-k"
+    },
+    {
+      "exercise": "e21",
+      "concept": "homogeneous-equilibrium"
+    },
+    {
+      "exercise": "e21",
+      "concept": "heterogeneous-equilibrium"
+    },
+    {
+      "exercise": "e22",
+      "concept": "homogeneous-equilibrium"
+    },
+    {
+      "exercise": "e22",
+      "concept": "heterogeneous-equilibrium"
+    },
+    {
+      "exercise": "e23",
+      "concept": "kp-kc-relation"
+    },
+    {
+      "exercise": "e24",
+      "concept": "kp-kc-relation"
+    },
+    {
+      "exercise": "e25",
+      "concept": "kp-kc-relation"
+    },
+    {
+      "exercise": "e27",
+      "concept": "homogeneous-and-heterogeneous-equilibria"
+    },
+    {
+      "exercise": "e27",
+      "concept": "equilibrium-constant"
+    },
+    {
+      "exercise": "e28",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "e29",
+      "concept": "write-reaction-quotient"
+    }
+  ]
+}

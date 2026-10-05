@@ -1,0 +1,387 @@
+{
+ "id": "18.10",
+ "module": "m68838",
+ "chapter": "18",
+ "title": "Occurrence, Preparation, and Properties of Sulfur",
+ "short": "Sulfur",
+ "lead": "Sulfur is found in elemental deposits, in sulfide and <span data-concept=\"sulfate\">sulfate</span> minerals and in natural and volcanic gases. The <span data-concept=\"frasch-process\">Frasch process</span> brings it up from underground deposits, and as a nonmetal of group 16 it <span data-concept=\"oxidizing-agent\">oxidizes</span> metals and is itself oxidized by more electronegative nonmetals.",
+ "objectives": [
+  "Describe the properties, preparation, and uses of sulfur"
+ ],
+ "summary_html": "<p>Sulfur (group 16) reacts with almost all metals and readily forms the sulfide ion, S<sup>2−</sup>, in which it has as <span data-concept=\"oxidation-number\">oxidation state</span> of 2−. Sulfur reacts with most <span data-concept=\"nonmetal\">nonmetals</span>.</p>",
+ "notes": "The section keeps as printed the summary’s “has as oxidation state of 2−”, and the key to fs-idm213191488 writes “SO₂, sp² 4+” without its comma.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key. The unkeyed exercise fs-idp17880736 (the Lewis structures of SF₄, K₂SO₄, SO₂Cl₂, H₂SO₃ and SO₃) is left out, and no answer is drawn for it. The unkeyed choice items fs-idm200394080 and fs-idm130857952 are kept open with their options and a suggested approach, and the unkeyed conceptual exercises fs-idm5069504 and fs-idm217260912 carry a suggested approach marked as OmniStax’s own. Exercises fs-idm200394080, fs-idm130857952 and fs-idm217260912 use the sulfurous and sulfuric acids of 18.9 and stay where the book prints them. Nothing is moved.",
+ "figures": [
+  {
+   "id": "fig-volcano",
+   "kind": "photo",
+   "number": "18.58",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-frasch",
+   "kind": "sim",
+   "number": "18.59",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_10_FrachMine.jpg"
+   ],
+   "original_caption": "The Frasch process is used to mine sulfur from underground deposits.",
+   "draws": [
+    "temperature",
+    "pressure"
+   ],
+   "conventions": [
+    "H",
+    "O",
+    "N",
+    "S"
+   ],
+   "facts": [
+    "#e5c444",
+    "#d9a63a"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "occurrence",
+   "concept": "frasch-process",
+   "verb": "introduces"
+  },
+  {
+   "span": "occurrence",
+   "concept": "sulfate",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "melting",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "gas-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "sulfur-chemistry",
+   "verb": "introduces"
+  },
+  {
+   "span": "properties",
+   "concept": "sulfur-allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "chalcogen",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "binary-compound",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "properties",
+   "concept": "sulfate",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e90",
+   "source_id": "fs-idm5069504",
+   "source_number": "90",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Explain why hydrogen sulfide is a gas at room temperature, whereas water, which has a lower molecular mass, is a liquid.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: compare the intermolecular forces between H<sub>2</sub>S molecules with those between H<sub>2</sub>O molecules, recalling which atoms must carry the hydrogen for hydrogen bonding and how the electronegativity of sulfur compares with that of oxygen; then ask which liquid needs more energy to separate its molecules."
+   }
+  },
+  {
+   "id": "e91",
+   "source_id": "fs-idm213191488",
+   "source_number": "91",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Give the hybridization and oxidation state for sulfur in SO<sub>2</sub>, in SO<sub>3</sub>, and in H<sub>2</sub>SO<sub>4</sub>.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "SO<sub>2</sub>, <em>sp</em><sup>2</sup> 4+; SO<sub>3</sub>, <em>sp</em><sup>2</sup>, 6+; H<sub>2</sub>SO<sub>4</sub>, <em>sp</em><sup>3</sup>, 6+"
+   }
+  },
+  {
+   "id": "e92",
+   "source_id": "fs-idm200394080",
+   "source_number": "92",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Which is the stronger acid, NaHSO<sub>3</sub> or NaHSO<sub>4</sub>?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: write the anion that each salt supplies, HSO<sub>3</sub><sup>−</sup> and HSO<sub>4</sub><sup>−</sup>, and count the oxygen atoms bonded to sulfur in each, together with sulfur’s oxidation state; then use the trend in oxyacid strength with the number of oxygen atoms on the central atom."
+   }
+  },
+  {
+   "id": "e93",
+   "source_id": "fs-idm129605056",
+   "source_number": "93",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Determine the oxidation state of sulfur in SF<sub>6</sub>, SO<sub>2</sub>F<sub>2</sub>, and KHS.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "SF<sub>6</sub>: S = 6+; SO<sub>2</sub>F<sub>2</sub>: S = 6+; KHS: S = 2−"
+   }
+  },
+  {
+   "id": "e94",
+   "source_id": "fs-idm130857952",
+   "source_number": "94",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Which is a stronger acid, sulfurous acid or sulfuric acid? Why?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: write the formulas H<sub>2</sub>SO<sub>3</sub> and H<sub>2</sub>SO<sub>4</sub> and the oxidation state of sulfur in each; then use the trend in oxyacid strength: the more oxygen atoms bonded to the central atom, the more electron density is drawn from the O–H bonds."
+   }
+  },
+  {
+   "id": "e95",
+   "source_id": "fs-idm135267520",
+   "source_number": "95",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Oxygen forms double bonds in O<sub>2</sub>, but sulfur forms single bonds in S<sub>8</sub>. Why?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Sulfur is able to form double bonds only at high temperatures (substantially endothermic conditions), which is not the case for oxygen."
+   }
+  },
+  {
+   "id": "e97",
+   "source_id": "fs-idm104555280",
+   "source_number": "97",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Write two balanced chemical equations in which sulfuric acid acts as an oxidizing agent.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "There are many possible answers including: $\\text{Cu}(s)+2{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;{\\text{CuSO}}_{4}(aq)+{\\text{SO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$ and $\\text{C}(s)+2{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)+2{\\text{SO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$"
+   }
+  },
+  {
+   "id": "e98",
+   "source_id": "fs-idm217260912",
+   "source_number": "98",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "Explain why sulfuric acid, H<sub>2</sub>SO<sub>4</sub>, which is a covalent molecule, dissolves in water and produces a solution that contains ions.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall that sulfuric acid is a strong acid, and write the reaction of an H<sub>2</sub>SO<sub>4</sub> molecule with a water molecule in which a proton moves from the acid to the water; name the ions that form and say why the polar O–H bonds of the acid let this happen."
+   }
+  },
+  {
+   "id": "e99",
+   "source_id": "fs-idm172430496",
+   "source_number": "99",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "properties",
+   "prompt": "How many grams of Epsom salts (MgSO<sub>4</sub>⋅7H<sub>2</sub>O) will form from 5.0 kg of magnesium?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 51000,
+    "unit": "g",
+    "tol": 0.02,
+    "part": "the mass of Epsom salts",
+    "hint": "Convert the mass of magnesium to moles with its molar mass, use the one-to-one ratio of Mg to MgSO<sub>4</sub>⋅7H<sub>2</sub>O, and convert moles of the hydrate to grams with its molar mass.",
+    "solution": "5.1 × 10<sup>4</sup> g"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e90",
+   "concept": "hydrogen-bonding"
+  },
+  {
+   "exercise": "e90",
+   "concept": "intermolecular-force"
+  },
+  {
+   "exercise": "e90",
+   "concept": "electronegativity"
+  },
+  {
+   "exercise": "e91",
+   "concept": "hybridization"
+  },
+  {
+   "exercise": "e91",
+   "concept": "oxidation-number"
+  },
+  {
+   "exercise": "e92",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e92",
+   "concept": "sulfate"
+  },
+  {
+   "exercise": "e93",
+   "concept": "oxidation-number"
+  },
+  {
+   "exercise": "e93",
+   "concept": "sulfur-chemistry"
+  },
+  {
+   "exercise": "e94",
+   "concept": "oxyacid-strength"
+  },
+  {
+   "exercise": "e95",
+   "concept": "sulfur-allotropes"
+  },
+  {
+   "exercise": "e95",
+   "concept": "sulfur-chemistry"
+  },
+  {
+   "exercise": "e97",
+   "concept": "oxidizing-agent"
+  },
+  {
+   "exercise": "e97",
+   "concept": "balanced-equation"
+  },
+  {
+   "exercise": "e97",
+   "concept": "redox-reaction"
+  },
+  {
+   "exercise": "e98",
+   "concept": "strong-acid"
+  },
+  {
+   "exercise": "e98",
+   "concept": "sulfate"
+  },
+  {
+   "exercise": "e99",
+   "concept": "sulfate"
+  }
+ ]
+}

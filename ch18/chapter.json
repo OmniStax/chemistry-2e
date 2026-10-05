@@ -196,6 +196,13 @@
    "meaning": "a temperature, whichever scale it is read on",
    "unit": "°C",
    "section": "18.4"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature of the superheated water forced down the outermost pipe of the Frasch process",
+   "unit": "°C",
+   "section": "18.10"
   }
  ]
 }

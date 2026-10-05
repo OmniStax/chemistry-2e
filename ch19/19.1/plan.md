@@ -62,3 +62,5 @@ Two Link to Learning notes (the steelmaking animation, whose process the moving 
 - variables `E_std` → 19.1-properties
 - variables `T` → 19.1-superconductors
 - glossary terms "lanthanide series" and "lanthanoid series" → concept `lanthanide` (2.5), "actinide series" and "actinoid series" → `actinide` (2.5), as the chapter notes ask (19.1's glossary headwords; another chapter's rows)
+
+Applied by the chapter pass (2026-10-05): `E_std` anchored to `19.1-properties` and `T` to `19.1-superconductors`, the T row the section added to `chapter.json` kept; "lanthanide series" and "lanthanoid series" added to the terms of 2.5's `lanthanide`, "actinide series" and "actinoid series" to `actinide`, through `ch02/book-rows.json` and `ost merge chemistry-2e 2`.

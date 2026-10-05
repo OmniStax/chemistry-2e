@@ -36,3 +36,14 @@ Proposed by the agent after the chapter exploration (2026-10-05). Status: applie
 | Labels | Figure for a book number, Sim for an addition |
 | `ai` and `built` | `{"text":[{"model":"claude-opus-5-5","effort":"high"}],"figures":[{"model":"claude-opus-5-5","effort":"high"}]}`, `2026-10-05`; every figure row carries its own `ai` |
 | Book manifest | `ch19` added to `book.json` by `ost merge chemistry-2e 19` |
+
+## What the build changed
+
+| Setting | Built |
+|---|---|
+| Figures | 19.1: Figure 19.2 a still Sim on the book's table with a choice of series; Figure 19.4 the book's chart with a choice of metal lighting its column beside its 4s and 3d boxes; Figure 19.6 a moving Sim on a 6 s clock with a choice of the lump followed (ore, coke, limestone); Figure 19.10 a still Sim with a temperature slider (detents at 4 K and 77 K) and a choice of material. 19.2: Figures 19.14 + 19.18 + 19.19 + 19.20 one 3D Sim with a choice of complex; 19.21 + 19.22 and 19.23 + 19.24 two 3D Sims; every Lewis and skeletal structure, EDTA (19.30) and the heme ribbon kept as the book's images. 19.3: Figures 19.33 + 19.34 + 19.36 one 3D Sim with the splitting beneath and a choice of geometry and orbital; Figure 19.35 a still Sim on a slider of Δ<sub>oct</sub>/P with a choice of d count (in place of a choice of ligand along the spectrochemical series); Figure 19.37 a moving Sim, white light crossing to the tube on a 4 s clock, where this file had the colour wheel still |
+| Apparatus | the blast furnace (Figure 19.6) is flat, as this file set it, although the book's rule puts an apparatus on a 3D bench: the book draws it as a cutaway with eight zones whose heights and temperatures are read off its side, and a cutaway is what the flat figure keeps |
+| Unnumbered images | `fs-idm6075904` and `fs-idp4747504` kept as `figure` rows with the book's images (`fig-square-planar`, `fig-tet-splitting`) |
+| Types | `angle` bound in 19.2 for the bond angles the text states (109.5°, 90°, 180°) and the arcs of its two 3D Sims, where this file bound nothing; see `COLOR.md` |
+| Formulas | ten variables rows, `T` added in 19.1 for the superconductor readout; every row and the form `eq-delta-tet` anchored at the chapter pass |
+| Glossary | "lanthanide series" and "lanthanoid series" added to 2.5's `lanthanide`, "actinide series" and "actinoid series" to `actinide`, through `ch02/book-rows.json` |

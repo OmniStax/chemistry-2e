@@ -1516,3 +1516,65 @@ chapter), and every page of the chapter in light and dark with no console error 
 offline catalogue, no KaTeX error, no missing image and every figure drawn;
 the one fix was Figure 18.26's readout, whose rounded volumes now add up
 (the oxygen volume is rounded first and the hydrogen volume is twice it).
+
+
+## Pass 22 (2026-10-05): Chapter 19, Transition Metals and Coordination Chemistry, is built and passed
+
+Built: the introduction and three sections, 19.1 to 19.3, in the publisher's
+numbering, Figures 19.1 to 19.40 all shown and linked. Ten figures drawn live.
+In 19.1, Figure 19.2 is the periodic table with a choice of series lighting
+its members, lanthanum and actinium in two series each; Figure 19.4 is the
+book's chart of oxidation states with a chosen metal's column lit beside its
+4s and 3d boxes, the electrons its highest state removes fading out, so
+manganese loses all seven and iron keeps two; Figure 19.6 is the blast
+furnace on a clock, the charge sinking and carbon monoxide rising, with a
+lump of ore, coke or limestone followed down through its zones and the
+reaction of each zone in the readout; Figure 19.10 is resistance falling to
+zero past a chosen material's transition temperature, with liquid helium and
+liquid nitrogen as detents on the temperature slider. In 19.2, Figures 19.14,
+19.18, 19.19 and 19.20 are one 3D figure of sixteen complexes whose ligands
+swing to the corners of each coordination polyhedron, the metal's oxidation
+state worked in the readout; Figures 19.21 and 19.22 are cis and trans with
+one chloride swinging across; Figures 19.23 and 19.24 lay a complex over its
+mirror image with the unmatched atoms ghosted, the trans form of
+[Co(en)₂Cl₂]⁺ matching atom for atom. In 19.3, Figures 19.33, 19.34 and
+19.36 are any d orbital among ligands that slide between octahedral,
+tetrahedral and square planar, with the splitting diagram beneath; Figure
+19.35 moves electrons between high and low spin as the reader drags the
+splitting past the pairing energy; Figure 19.37 is the colour wheel with the
+absorbed band, its complement and the solution's colour following the
+wavelength, white light crossing to the tube on a clock. Twenty-five
+photographs and drawings of the book's are kept, Figure 19.1 on the
+introduction and two unnumbered splitting diagrams among them. Tables 19.1 to 19.5 are written as tables. Forty-four
+exercises, nine of them Check Your Learning items placed inline after their
+examples, each with its host. Thirteen unkeyed items whose answers would be
+computed are left out and named in `exercise_notes`; seven unkeyed choice
+items are kept open with their options, and four unkeyed conceptual items
+carry a suggested approach. No exercise moves.
+
+What the chapter pass changed. Every variables row and the one form of the
+chapter anchored: ten variables, among them the temperature T that 19.1
+added for its superconductor readout, and Δtet = 4/9 Δoct on Example 19.8.
+"Lanthanide series" and "lanthanoid series" are terms of 2.5's lanthanide,
+"actinide series" and "actinoid series" of its actinide, as 19.1's glossary
+prints them. The bond angles of 19.2 wear the angle hue, which the chapter's
+plan had not bound; the blast furnace stays a flat cutaway though the book
+puts an apparatus on a 3D bench, since its zones are read off the book's
+side scale; and the colour wheel's swatch at 499 nm is pink-magenta where
+Example 19.9 says purple, because the Sim removes a band symmetric about the
+wavelength. `config.md` records what the build changed, `COLOR.md` the
+bindings as built, `exploration.md` the colour wheel's shade.
+
+Errata carried as printed and named in `exploration.md`: "Hydrology involves
+the separation", "dicyanoargenate(I)", the unbalanced permanganate
+half-reaction, potentials cited to Appendix H, "Bismouth" and "VO₄³" and
+three slips in the keys in 19.1; "[Cu(Cl)₄]²⁻", "SCN−", "In the Figure
+19.20", Figure 19.27's power plants and the key's "tetraamine" in 19.2;
+"d<sub>zy</sub>", Figure 19.35's "5d orbitals" and Example 19.9's v for ν in
+19.3. The four Link to Learning notes are dropped and named.
+
+Checks: `ost check` clean for the book, and every page of the chapter in
+light and dark with no console error but the dev server's own missing
+offline catalogue, no KaTeX error, no missing image, every figure drawn and
+all nine exercise hosts filled. One headline, the optical isomers' mirror
+view, was made a full sentence.

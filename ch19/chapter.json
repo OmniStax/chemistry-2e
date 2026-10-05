@@ -32,42 +32,48 @@
    "concept": "standard-electrode-potential",
    "meaning": "the standard reduction potential of a half-reaction, such as the reduction of dichromate, permanganate or titanium dioxide in acid solution",
    "unit": "V",
-   "section": "19.1"
+   "section": "19.1",
+   "anchor": "19.1-properties"
   },
   {
    "sym": "Δ_oct",
    "concept": "crystal-field-splitting",
    "meaning": "the crystal field splitting of an octahedral complex, the energy difference between its eg and t2g orbitals",
    "unit": "J",
-   "section": "19.3"
+   "section": "19.3",
+   "anchor": "19.3-cft"
   },
   {
    "sym": "P_pair",
    "concept": "pairing-energy",
    "meaning": "the pairing energy, the energy needed to place two electrons of opposite spin in one orbital",
    "unit": "J",
-   "section": "19.3"
+   "section": "19.3",
+   "anchor": "19.3-cft"
   },
   {
    "sym": "Δ_tet",
    "concept": "crystal-field-other-geometries",
    "meaning": "the crystal field splitting of a tetrahedral complex, the energy difference between its t2 and e orbitals",
    "unit": "J",
-   "section": "19.3"
+   "section": "19.3",
+   "anchor": "19.3-ex-other-geometries"
   },
   {
    "sym": "λ",
    "concept": "wavelength",
    "meaning": "the wavelength of the light a complex absorbs, such as 499 nm at the absorption maximum of [Ti(H₂O)₆]³⁺",
    "unit": "nm",
-   "section": "19.3"
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
   },
   {
    "sym": "ν",
    "concept": "frequency",
    "meaning": "the frequency of the light absorbed at the maximum",
    "unit": "Hz",
-   "section": "19.3"
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
   },
   {
    "sym": "E",
@@ -75,7 +81,8 @@
    "type": "energy",
    "meaning": "the energy of one photon of the absorbed light, equal to the crystal field splitting at the absorption maximum",
    "unit": "J",
-   "section": "19.3"
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
   },
   {
    "sym": "c",
@@ -83,21 +90,24 @@
    "type": "velocity",
    "meaning": "the speed of light in a vacuum, the product of the wavelength and the frequency",
    "unit": "m/s",
-   "section": "19.3"
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
   },
   {
    "sym": "h",
    "concept": "blackbody-radiation",
    "meaning": "Planck’s constant, 6.63 × 10⁻³⁴ J s",
    "unit": "J s",
-   "section": "19.3"
+   "section": "19.3",
+   "anchor": "19.3-ex-colors"
   },
   {
    "sym": "T",
    "concept": "temperature",
    "meaning": "the temperature of a superconducting material, such as YBa₂Cu₃O₇ below 92 K",
    "unit": "K",
-   "section": "19.1"
+   "section": "19.1",
+   "anchor": "19.1-superconductors"
   }
  ]
 }

@@ -57,3 +57,5 @@ The Link to Learning to the University of Sydney's naming quizzes. Errata kept a
 ## Wanted at chapter level
 
 - none
+
+Applied by the chapter pass (2026-10-05): nothing wanted. The bond angles typed `angle` where the chapter notes bound nothing are kept and written into `ch19/COLOR.md` as built.

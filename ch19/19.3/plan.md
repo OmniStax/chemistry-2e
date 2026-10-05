@@ -59,3 +59,5 @@ The Link to Learning on the reduction of vanadium complexes; the sentence pointi
 - form anchor: eq-delta-tet → 19.3-ex-other-geometries
 - variables anchors: 19.3/Δ_oct → 19.3-cft; 19.3/P_pair → 19.3-cft; 19.3/Δ_tet → 19.3-ex-other-geometries; 19.3/λ → 19.3-ex-colors; 19.3/ν → 19.3-ex-colors; 19.3/E → 19.3-ex-colors; 19.3/c → 19.3-ex-colors; 19.3/h → 19.3-ex-colors
 - no concept, edge or symbol fixes
+
+Applied by the chapter pass (2026-10-05): `eq-delta-tet` anchored to `19.3-ex-other-geometries` through `ost set … forms` (merged into `book.json`); `Δ_oct` and `P_pair` anchored to `19.3-cft`, `Δ_tet` to `19.3-ex-other-geometries`, and `λ`, `ν`, `E`, `c` and `h` to `19.3-ex-colors`. The colour wheel's computed pink-magenta at 499 nm, where the book calls the solution purple, is recorded in `ch19/exploration.md`.

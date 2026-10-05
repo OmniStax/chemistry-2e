@@ -343,7 +343,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     const over = arr.value === 'over', miss = B.best.miss;
     v.headline(over
       ? (miss ? `Turned to its best fit, the mirror image of ${B.name} still leaves ${miss} atoms where the original has none: the two are optical isomers.` : `Turned to fit, the mirror image of ${B.name} lands atom for atom on the original: it is the same ion, with no optical isomer.`)
-      : `${B.name} and its mirror image, reflected in the plane between them.`);
+      : `${B.name} stands beside its mirror image, reflected in the plane between them.`);
     ro.set(`\\text{atoms of the image without a twin} = ${miss}\\ \\text{of}\\ ${B.total}`);
   }
   still(d, draw);

@@ -499,7 +499,9 @@
    "section": "2.5",
    "name": "Lanthanide",
    "terms": [
-    "lanthanide"
+    "lanthanide",
+    "lanthanide series",
+    "lanthanoid series"
    ],
    "statement": "A lanthanide is an inner transition metal in the top of the bottom two rows of the periodic table."
   },
@@ -509,7 +511,9 @@
    "section": "2.5",
    "name": "Actinide",
    "terms": [
-    "actinide"
+    "actinide",
+    "actinide series",
+    "actinoid series"
    ],
    "statement": "An actinide is an inner transition metal in the bottom of the bottom two rows of the periodic table."
   },

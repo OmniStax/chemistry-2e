@@ -20,6 +20,7 @@ the colour a complex shows is drawn as the colour it is.
 | a mass, volume or concentration of an exercise (2.5000 g, 19.17 mL, 0.0100 M) | `mass`, `volume`, `concentration` | 19.1 | `data-type` where the prose or a prompt states one |
 | a furnace height (5–75 ft, 80–100 feet) | `length` | 19.1 | `data-type` where a figure or the prose states one |
 | a pressure (760 torr) | `pressure` | 19.1 | in one exercise |
+| a bond angle (109.5°, 90°, 180°), the arcs of the geometry and cis–trans Sims | `angle` | 19.2 | `data-type` on the three angles the text states, as 7.6 marks them; added by the build where the plan bound nothing |
 
 These stay in ink: oxidation states and numbers, charges, coordination
 numbers, the number of d electrons and of unpaired electrons, the
@@ -61,17 +62,13 @@ phases are drawn in two ink tones, never in type hues, as 6.3 drew them.
 
 ## Referents
 
-Each section lists its own when it is built. Planned:
+As built (chapter pass, 2026-10-05): none. 19.1's series and metals, 19.2's isomers and 19.3's complexes are told apart by their labels and by a choice, one at a time; no figure sets two of them side by side in their own colours, so the referents planned for Example 19.2's ladder and Figure 19.35's two iron complexes were not needed.
 
-- **19.1.** The three oxidizers of Example 19.2 (dichromate, permanganate,
-  titanium dioxide) if their potentials are plotted on one ladder; the
-  four transition series where a figure lights them on one table.
-- **19.2.** None by default: the isomers are told apart by arrangement and
-  label, their atoms in `F.el`; two enantiomers shown side by side are the
-  same atoms and need no referent colours.
-- **19.3.** [Fe(CN)₆]⁴⁻ and [Fe(H₂O)₆]²⁺ where their two splittings sit on
-  one diagram (Figure 19.35), or the ligands of the spectrochemical series
-  where one Δ<sub>oct</sub> bar each is drawn.
+## As built
+
+- 19.1: the blast furnace draws `temperature` on its zone scale and `length` on its heights, with the glow of molten iron and of molten slag as facts and `F.el` for Fe, C, Ca and O; the superconductor Sim draws `temperature`; the series and oxidation-state Sims are ink with a neutral highlight. Resistance stays ink.
+- 19.2: `angle` on the geometry and cis–trans Sims' arcs; violet cis- and green trans-[Co(NH₃)₄Cl₂]⁺ as facts; `F.el` for every atom, a generic M through its fallback.
+- 19.3: `energy` for Δ<sub>oct</sub>, Δ<sub>tet</sub>, P and the splitting diagrams; the colour wheel draws `wavelength`, `frequency`, `velocity` and `energy` in its readout, with the wheel, the light and the solution as `"spectrum"`; M and L through `F.el`'s fallback.
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.

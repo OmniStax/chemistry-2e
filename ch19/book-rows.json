@@ -407,7 +407,8 @@
     {
      "id": "eq-delta-tet",
      "latex": "\\Delta_{\\text{tet}}=\\frac{4}{9}\\Delta_{\\text{oct}}",
-     "ktex": "\\kdtet=\\frac{4}{9}\\kdoct"
+     "ktex": "\\kdtet=\\frac{4}{9}\\kdoct",
+     "anchor": "19.3-ex-other-geometries"
     }
    ]
   },
@@ -738,5 +739,6 @@
    "concept": "colors-of-complexes",
    "prereq": "ligand-field-strength"
   }
- ]
+ ],
+ "types": []
 }

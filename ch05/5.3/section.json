@@ -48,6 +48,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "ΔU label under the levels; note that repeated the caption dropped"
         }
       ]
     },
@@ -91,6 +96,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "arrow labels placed clear of levels; sum table and repeating note dropped"
         }
       ]
     }

@@ -1,7 +1,7 @@
 /* Figures for section 5.3 Enthalpy. Boots against the section's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['5.3'] = function (root, F) {
-const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, topline } = F;
+const { el, fmt, tex, C, PAL, alpha, ctl, register, begin, line, arrow, text, topline, measure } = F;
 const sim = (id, H) => F.sim(root, id, H);
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 
@@ -74,14 +74,13 @@ function dashedArrow(ctx, x1, y1, x2, y2, color, w) {
     if (dU !== 0) {
       text(ctx, 'U after', UX + UW + 10, y1 + (dU < 0 ? 14 : -12), ce, { size: 19, weight: 600, base: 'middle' });
       if (Math.abs(y1 - y0) > 26) arrow(ctx, UX + UW / 2, y0, UX + UW / 2, y1 + (dU > 0 ? 2 : -2), ce, 4);
-      text(ctx, 'ΔU = ' + signed(dU, 0) + ' kJ', UX - 12, (y0 + y1) / 2, ce, { size: 20, weight: 600, align: 'right', base: 'middle' });
+      text(ctx, 'ΔU = ' + signed(dU, 0) + ' kJ', UX + UW / 2, Math.max(y0, y1) + 34, ce, { size: 20, weight: 600, align: 'center', base: 'middle' });
     } else text(ctx, 'U after is the same', UX + UW / 2, y0 + 30, ce, { size: 19, align: 'center' });
     const qs = q.v > 0 ? 'absorbs ' + q.v + ' kJ of heat' : q.v < 0 ? 'loses ' + -q.v + ' kJ of heat' : 'neither gains nor loses heat';
     const ws = w.v > 0 ? 'has ' + w.v + ' kJ of work done on it' : w.v < 0 ? 'does ' + -w.v + ' kJ of work on the surroundings' : 'does no work';
     const us = dU > 0 ? 'its internal energy rises by ' + dU + ' kJ' : dU < 0 ? 'its internal energy falls by ' + -dU + ' kJ' : 'its internal energy does not change';
     topline(ctx, 'The system ' + qs + ' and ' + ws + ', so ' + us + '.');
-    readout(d.readout, `\\kdU = \\kq + \\kwork = (${hue(signedTex(q.v, 0))}\\ \\text{kJ}) + (${hue(signedTex(w.v, 0))}\\ \\text{kJ}) = ${hue(signedTex(dU, 0))}\\ \\text{kJ}`,
-      'Heat flowing in and work done on the system are positive; heat flowing out and work done by the system are negative.');
+    readout(d.readout, `\\kdU = \\kq + \\kwork = (${hue(signedTex(q.v, 0))}\\ \\text{kJ}) + (${hue(signedTex(w.v, 0))}\\ \\text{kJ}) = ${hue(signedTex(dU, 0))}\\ \\text{kJ}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -103,7 +102,7 @@ function dashedArrow(ctx, x1, y1, x2, y2, color, w) {
     hno3: { levels: [['3NO₂(g) + H₂O(l)', -186.23], ['3/2 N₂(g) + 7/2 O₂(g) + H₂(g)', 0], ['2HNO₃(aq) + NO(g)', -323.03]], dec: 2 },
   };
   const pick = F.select(d.controls, { label: '\\text{reaction}', aria: 'the reaction and its two steps', value: 'co2',
-    options: [{ value: 'co2', label: 'CO₂ from carbon (Figure 5.24)' }, { value: 'fecl3', label: 'FeCl₃ from iron (Example 5.13)' }, { value: 'hno3', label: 'HNO₃ by way of the elements (Example 5.15)' }] });
+    options: [{ value: 'co2', label: 'CO₂ (Figure 5.24)' }, { value: 'fecl3', label: 'FeCl₃ (Example 5.13)' }, { value: 'hno3', label: 'HNO₃ (Example 5.15)' }] });
   const dir = F.choice(d.controls, { label: '\\text{direction}', aria: 'the direction of every equation', value: 'fwd',
     options: [{ value: 'fwd', label: 'forward' }, { value: 'rev', label: 'reverse' }] });
   const f = ctl(d.controls, { label: '\\text{factor}', cls: '', min: 0.5, max: 2, step: 0.5, value: 1, unit: '', dec: 1, aria: 'the factor every equation is multiplied by', detents: [0.5, 1, 2] });
@@ -117,39 +116,50 @@ function dashedArrow(ctx, x1, y1, x2, y2, color, w) {
     const hs = pick.mix((v) => RX[v].levels.map((l) => l[1]));
     const s = dir.mix((v) => (v === 'rev' ? 1 : 0));
     const yA = Y(hs[0] * k), yM = Y(hs[1] * k), yE = Y(hs[2] * k);
+    const sign = dir.value === 'rev' ? -1 : 1;
+    const d1 = (hs[1] - hs[0]) * k, d2 = (hs[2] - hs[1]) * k, dO = (hs[2] - hs[0]) * k;
+    const exo = dO * sign < 0;
+    const lines = topline(ctx, 'Step 1 (' + signed(d1 * sign, r.dec) + ' kJ) and step 2 (' + signed(d2 * sign, r.dec) + ' kJ) add up to ' + signed(dO * sign, r.dec)
+      + ' kJ, the same as the overall reaction in one step, which is ' + (exo ? 'exothermic.' : 'endothermic.'));
+    /* every box drawn so far, so the arrow labels can step clear of the levels, the formulas and each other */
+    const taken = [{ l: 0, r: 1400, t: 0, b: lines === 2 ? 96 : 68 }];
+    const clash = (b) => taken.some((o) => b.l < o.r + 6 && o.l < b.r + 6 && b.t < o.b + 4 && o.t < b.b + 4);
     /* the enthalpy axis, as the book draws it */
-    arrow(ctx, 90, BOT + 20, 90, TOP - 30, ce, 4);
-    text(ctx, 'H increasing', 110, TOP - 30, ce, { size: 20, weight: 600, base: 'middle' });
+    arrow(ctx, 40, BOT + 20, 40, TOP - 30, ce, 4);
+    text(ctx, 'H increasing', 60, TOP - 30, ce, { size: 20, weight: 600, base: 'middle' });
+    taken.push({ l: 36, r: 44, t: TOP - 30, b: BOT + 20 }, { l: 50, r: 60 + measure(ctx, 'H increasing', { size: 20, weight: 600 }) + 7, t: TOP - 44, b: TOP - 16 });
     /* the three levels, the start of the reaction on the upper left in the book's order */
     const pre = k === 1 ? '' : fmt(k, k % 1 ? 1 : 0) + ' × (';
     const post = k === 1 ? '' : ')';
     [[A, yA, 0], [M, yM, 1], [E, yE, 2]].forEach(([L, y, i]) => {
       line(ctx, L.x0, y, L.x1, y, ce, 4);
-      text(ctx, pre + r.levels[i][0] + post, i === 2 ? L.x0 + 10 : L.x0 + 10, i === 2 ? y + 28 : y - 14, PAL.ink, { size: 20 });
+      const s0 = pre + r.levels[i][0] + post, ty = i === 2 ? y + 28 : y - 14;
+      text(ctx, s0, L.x0 + 10, ty, PAL.ink, { size: 20 });
+      taken.push({ l: L.x0, r: L.x1, t: y - 3, b: y + 3 }, { l: L.x0 + 3, r: L.x0 + 17 + measure(ctx, s0, { size: 20 }), t: ty - 14, b: ty + 14 });
     });
     /* the arrows: forward runs top level to middle to bottom; reverse turns each one round */
-    const d1 = (hs[1] - hs[0]) * k, d2 = (hs[2] - hs[1]) * k, dO = (hs[2] - hs[0]) * k;
-    const sign = dir.value === 'rev' ? -1 : 1;
-    const grow = (x, ya, yb, wdt) => { const t = lerp(ya, yb, s), h = lerp(yb, ya, s); if (Math.abs(h - t) > 8) arrow(ctx, x, t, x, h, ce, wdt); };
+    const grow = (x, ya, yb, wdt) => { const t = lerp(ya, yb, s), h = lerp(yb, ya, s); if (Math.abs(h - t) > 8) arrow(ctx, x, t, x, h, ce, wdt); taken.push({ l: x - 4, r: x + 4, t: Math.min(ya, yb), b: Math.max(ya, yb) }); };
     grow(XO, yA, yE, 6);
     grow(X1, yA, yM, 4);
     grow(X2, yM, yE, 4);
-    const lab = (x, ya, yb, v, name, left) => text(ctx, name + ' = ' + signed(v * sign, r.dec) + ' kJ', left ? x - 14 : x + 14, (ya + yb) / 2, ce, { size: 20, weight: 600, base: 'middle', bg: PAL.panel, align: left ? 'right' : 'left' });
-    lab(XO, yA, yE, dO, 'overall ΔH°');
-    lab(X1, yA, yM, d1, 'step 1 ΔH°', true);
-    lab(X2, yM, yE, d2, 'step 2 ΔH°', true);
-    /* the sum, kept on the right */
-    const SXR = 1060;
-    text(ctx, 'step 1', SXR, 240, PAL.ink, { size: 20 }); text(ctx, signed(d1 * sign, r.dec) + ' kJ', 1340, 240, ce, { size: 20, weight: 600, align: 'right' });
-    text(ctx, 'step 2', SXR, 280, PAL.ink, { size: 20 }); text(ctx, signed(d2 * sign, r.dec) + ' kJ', 1340, 280, ce, { size: 20, weight: 600, align: 'right' });
-    line(ctx, SXR, 298, 1340, 298, PAL.ink, 2);
-    text(ctx, 'overall', SXR, 326, PAL.ink, { size: 20 }); text(ctx, signed(dO * sign, r.dec) + ' kJ', 1340, 326, ce, { size: 20, weight: 600, align: 'right' });
-    const exo = dO * sign < 0;
-    topline(ctx, 'Step 1 (' + signed(d1 * sign, r.dec) + ' kJ) and step 2 (' + signed(d2 * sign, r.dec) + ' kJ) add up to ' + signed(dO * sign, r.dec)
-      + ' kJ, the same as the overall reaction in one step, which is ' + (exo ? 'exothermic.' : 'endothermic.'));
+    /* each label beside its arrow at mid-height, or the nearest height that is clear, with a leader when it leaves the arrow's span */
+    const lab = (x, ya, yb, v, name, side) => {
+      const str = name + ' = ' + signed(v * sign, r.dec) + ' kJ', w = measure(ctx, str, { size: 20, weight: 600 }) + 14, mid = (ya + yb) / 2;
+      const l = side > 0 ? x + 20 - 7 : x - 20 - w + 7;
+      let y = mid;
+      for (const dy of [0, 24, -24, 48, -48, 72, -72, 96, -96, 120, -120, 144, -144]) {
+        const b = { l, r: l + w, t: mid + dy - 14, b: mid + dy + 14 };
+        if (b.b > 576 || clash(b)) continue;
+        y = mid + dy; taken.push(b); break;
+      }
+      if (y < Math.min(ya, yb) || y > Math.max(ya, yb)) line(ctx, x + side * 6, mid, x + side * 16, y, alpha(ce, 0.5), 1.5, [5, 6]);
+      text(ctx, str, side > 0 ? x + 20 : x - 20, y, ce, { size: 20, weight: 600, base: 'middle', bg: PAL.panel, align: side > 0 ? 'left' : 'right' });
+    };
+    lab(XO, yA, yE, dO, 'overall ΔH°', -1);
+    lab(X1, yA, yM, d1, 'step 1 ΔH°', -1);
+    lab(X2, yM, yE, d2, 'step 2 ΔH°', 1);
     readout(d.readout, `\\kdHo_{\\text{overall}} = \\kdHo_{1} + \\kdHo_{2} = (${hue(signedTex(d1 * sign, r.dec))}\\ \\text{kJ}) + (${hue(signedTex(d2 * sign, r.dec))}\\ \\text{kJ}) = ${hue(signedTex(dO * sign, r.dec))}\\ \\text{kJ}`,
-      k === 1 && sign === 1 ? 'The enthalpy change of the overall reaction equals the sum of the enthalpy changes of its steps.'
-        : 'Reversing an equation changes the sign of its ΔH°, and multiplying it by a factor multiplies its ΔH° by the same factor.');
+      k === 1 && sign === 1 ? '' : 'Reversing an equation changes the sign of its enthalpy change, and multiplying it by a factor multiplies its enthalpy change by the same factor.');
   }
   register(d.fig, { update: () => {}, draw });
 })();

@@ -4,7 +4,7 @@
  "chapter": "5",
  "title": "Calorimetry",
  "short": "Calorimetry",
- "lead": "A calorimeter measures a <span data-concept=\"heat-flow\">heat</span> by letting it change the <span data-concept=\"temperature\">temperature</span> of something of known <span data-concept=\"specific-heat-capacity\">specific heat</span> and <span data-concept=\"mass\">mass</span>. The measurement divides the world into a system and its surroundings. The <span data-concept=\"heat-flow\">heat</span> lost by a hot metal balances the <span data-concept=\"heat-flow\">heat</span> gained by cool water, and the <span data-concept=\"temperature\">temperature</span> change of a coffee cup calorimeter gives the <span data-concept=\"heat-flow\">heat</span> of a reaction in solution. A combustion at constant <span data-concept=\"volume\">volume</span>, such as one that finds the <span data-concept=\"energy-and-work\">energy</span> content of a food, also needs the <span data-concept=\"heat-capacity\">heat capacity</span> of the bomb.",
+ "lead": "A calorimeter measures a <span data-concept=\"heat-flow\">heat</span> by letting it change the <span data-concept=\"temperature\">temperature</span> of something of known <span data-concept=\"specific-heat-capacity\">specific heat</span> and <span data-concept=\"mass\">mass</span>, which divides the world into a system and its surroundings. A coffee cup calorimeter serves for a reaction in solution, and a bomb calorimeter for a combustion at constant <span data-concept=\"volume\">volume</span>, such as one that finds the <span data-concept=\"energy-and-work\">energy</span> content of a food.",
  "objectives": [
   "Explain the technique of calorimetry",
   "Calculate and interpret heat and related properties using typical calorimetry data"
@@ -16,6 +16,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -67,6 +71,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "loop lands on the final state; bar labels, q label, readout hues, note"
     }
    ]
   },

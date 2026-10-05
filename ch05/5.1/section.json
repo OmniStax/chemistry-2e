@@ -4,7 +4,7 @@
  "chapter": "5",
  "title": "Energy Basics",
  "short": "Energy Basics",
- "lead": "<span data-concept=\"energy-and-work\">Energy</span> is the capacity to supply <span data-concept=\"heat-flow\">heat</span> or do <span data-concept=\"work\">work</span>, and every chemical and physical change converts it from one form into another without creating or destroying any. Thermal energy, <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"heat-flow\">heat</span> are three different things. <span data-concept=\"heat-flow\">Heat</span> flows from a hotter body to a cooler one, and the <span data-concept=\"heat-flow\">heat</span> a substance gains or loses depends on its <span data-concept=\"specific-heat-capacity\">specific heat</span>, its <span data-concept=\"mass\">mass</span> and its <span data-concept=\"temperature\">temperature</span> change.",
+ "lead": "<span data-concept=\"energy-and-work\">Energy</span> is the capacity to supply <span data-concept=\"heat-flow\">heat</span> or do <span data-concept=\"work\">work</span>, and every chemical and physical change converts it from one form into another without creating or destroying any. Thermal energy, <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"heat-flow\">heat</span> are told apart here, and the <span data-concept=\"heat-flow\">heat</span> a substance gains or loses is tied to its <span data-concept=\"specific-heat-capacity\">specific heat</span>, its <span data-concept=\"mass\">mass</span> and its <span data-concept=\"temperature\">temperature</span> change.",
  "objectives": [
   "Define energy, distinguish types of energy, and describe the nature of energy changes that accompany chemical and physical changes",
   "Distinguish the related properties of heat, thermal energy, and temperature",
@@ -18,6 +18,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -68,6 +72,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "heat label beside its arrow; contact tag kept off the traces"
     }
    ]
   },
@@ -97,6 +106,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "gas sample kept under the headline; repeating note dropped"
     }
    ]
   },

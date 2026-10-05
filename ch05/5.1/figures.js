@@ -92,7 +92,7 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     heat = new window.THREE.Group(); grp.add(heat);
     F.mesh.arrow(heat, [-0.5, 0, 0], [0.5, 0, 0], 0.05, C('energy'));
     heat.position.set(0, S / 2 + 0.18, 0);
-    heatLab = v.label('heat, q', [0, S / 2 + 0.18, 0], grp, 14);
+    heatLab = v.label('heat, q', [-0.9, S / 2 + 0.18, 0], grp, -12);
   }
   function place(t) {
     if (!has3) return;
@@ -127,7 +127,9 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     const box = { l: 160, r: 1300, t: FLAT + 130, b: FLAT + 300 }, ct = C('temperature');
     const g = axes(ctx, box, [0, LOOP], [0, 100], { xl: 'time (s)', yl: 'temperature (°C)', yc: ct, nx: 7, ny: 5 });
     line(ctx, g.X(TC), box.t, g.X(TC), box.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
-    text(ctx, 'contact', g.X(TC) + 8, box.t + 14, PAL.muted, { size: 16 });
+    /* the contact tag in the widest clear band between the two flat traces and the frame */
+    const lv = [0, TL.v, TH.v, 100].sort((a, b) => a - b), gi = lv.slice(1).reduce((bi, x, i) => (x - lv[i] > lv[bi + 1] - lv[bi] ? i : bi), 0);
+    text(ctx, 'contact', g.X(TC) + 8, g.Y((lv[gi] + lv[gi + 1]) / 2) + 5, PAL.muted, { size: 16 });
     const rH = F.ref('sample-h'), rL = F.ref('sample-l');
     const trace = (T0, col) => { const n = 80, pts = []; for (let i = 0; i <= n; i++) { const s = (t * i) / n; pts.push([g.X(s), g.Y(temp(T0, s))]); } ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore(); };
     trace(TH.v, rH); trace(TL.v, rL);
@@ -176,22 +178,22 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     const [name, , state, c] = SUBS[+sub.value], m = M.v, dt = DT.v, q = c * m * dt, Cap = c * m;
     const ce = C('energy'), ct = C('temperature'), cm = C('mass'), cc = C('heat-capacity');
     /* ---------- the sample, sized by the cube root of its mass, over its heat arrow ---------- */
-    const sx = 300, base = 330, w = 90 + 170 * Math.cbrt(m / 5000), hgt = w * 0.62;
+    const sx = 300, base = 360, w = 90 + 170 * Math.cbrt(m / 5000), hgt = w * 0.62;
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
     if (state === 's') { ctx.fillRect(sx - w / 2, base - hgt, w, hgt); ctx.strokeRect(sx - w / 2, base - hgt, w, hgt); }
     else if (state === 'l') {
       const bw = w + 30, bh = hgt + 40; ctx.fillRect(sx - w / 2 - 12, base - hgt, w + 24, hgt);
       ctx.beginPath(); ctx.moveTo(sx - bw / 2, base - bh); ctx.lineTo(sx - bw / 2, base); ctx.lineTo(sx + bw / 2, base); ctx.lineTo(sx + bw / 2, base - bh); ctx.stroke();
     } else {
-      const r = w * 0.55; ctx.globalAlpha = 0.6; ctx.beginPath(); ctx.ellipse(sx, base - r, r, r, 0, 0, 2 * Math.PI); ctx.fill(); ctx.globalAlpha = 1; ctx.stroke();
+      const r = w * 0.42; ctx.globalAlpha = 0.6; ctx.beginPath(); ctx.ellipse(sx, base - r, r, r, 0, 0, 2 * Math.PI); ctx.fill(); ctx.globalAlpha = 1; ctx.stroke();
       ctx.strokeRect(sx - 14, base - 2 * r - 22, 28, 22);
     }
     ctx.restore();
-    const top = state === 'g' ? base - w * 1.1 - 22 : state === 'l' ? base - hgt - 40 : base - hgt;
+    const top = state === 'g' ? base - w * 0.84 - 22 : state === 'l' ? base - hgt - 40 : base - hgt;
     hits.push({ x: sx, y: (top + base) / 2, r: w / 2, name: fmt(m, 0) + ' g of ' + name + (state === 'g' ? ', a gas in a sealed vessel' : state === 'l' ? ', a liquid in a beaker' : '') });
     text(ctx, fmt(m, 0) + ' g of ' + name, sx, top - 26, cm, { size: 22, weight: 600, align: 'center' });
-    /* the heat arrow: 0 to 100 kJ over 20 to 150 units, past that held at full length */
-    const L = 20 + 130 * Math.min(1, q / 100000);
+    /* the heat arrow: 0 to 100 kJ over 20 to 120 units, past that held at full length */
+    const L = 20 + 100 * Math.min(1, q / 100000);
     if (q > 0) arrow(ctx, sx, base + 30 + L, sx, base + 8, ce, 5);
     text(ctx, 'q = ' + sig3(q) + ' J', sx + 20, base + 30 + L / 2 + 4, ce, { size: 22, weight: 600 });
     /* ---------- the graph: ΔT 0 to 100 °C by 20, q 0 to 100 kJ by 20, fixed from the slider range and the two pans of iron ---------- */
@@ -210,8 +212,7 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     label(ctx, 'slope C = ' + sig3(Cap) + ' J/°C', sx2, sy2, { side: xe < 60 ? 'right' : 'above', gap: 26, color: cc, size: 18 });
     if (!p.out) hits.push({ x: p.x, y: p.y, r: 12, name: 'q = ' + sig3(q) + ' J at ΔT = ' + fmt(dt, 1) + ' °C' });
     topline(ctx, 'Heating ' + fmt(m, 0) + ' g of ' + name + ' by ' + fmt(dt, 1) + ' °C takes ' + sig3(q / 1000) + ' kJ; its heat capacity is ' + sig3(Cap) + ' J/°C.');
-    readout(d.readout, `\\kq = \\kcspec \\times \\km \\times \\kdT = ${hue('heat-capacity', fmt(c, 3) + '\\ \\text{J/g}\\,{}^{\\circ}\\text{C}')} \\times ${hue('mass', fmt(m, 0) + '\\ \\text{g}')} \\times ${hue('temperature', fmt(dt, 1) + '\\ {}^{\\circ}\\text{C}')} = ${hue('energy', sig3(q).replace(/,/g, '{,}') + '\\ \\text{J}')}`,
-      'The heat capacity of this sample is C = c × m = ' + sig3(Cap) + ' J/°C; its specific heat, ' + fmt(c, 3) + ' J/g °C, belongs to ' + name + ' whatever the mass.');
+    readout(d.readout, `\\kq = \\kcspec \\times \\km \\times \\kdT = ${hue('heat-capacity', fmt(c, 3) + '\\ \\text{J/g}\\,{}^{\\circ}\\text{C}')} \\times ${hue('mass', fmt(m, 0) + '\\ \\text{g}')} \\times ${hue('temperature', fmt(dt, 1) + '\\ {}^{\\circ}\\text{C}')} = ${hue('energy', sig3(q).replace(/,/g, '{,}') + '\\ \\text{J}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

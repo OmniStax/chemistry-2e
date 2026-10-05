@@ -60,19 +60,22 @@ const sim = (id, H) => F.sim(root, id, H);
   let hits = []; F.hover(d.stage, () => hits);
   const ro = F.readout(d);
   const f1 = (x) => fmt(x, 1), f2 = (x) => fmt(x, 2), tn = (s) => s.replace(/−/g, '-');
-  const kJ = (x) => (Math.abs(x) < 0.005 ? '0.00' : (x > 0 ? '+' : '−') + f2(Math.abs(x)));
+  const kJ = (x) => (Math.abs(x) < 0.005 ? '0.00' : (x > 0 ? '+' : '−') + (Math.abs(x) >= 10 ? f1(Math.abs(x)) : f2(Math.abs(x))));
+  const hu = (type, x) => '\\htmlClass{kv-' + type + '}{' + x + '}';
 
+  /* the relaxation, scaled so that it lands on the final state at the end of the loop */
+  const R = (x) => (1 - Math.exp(-x / TAU)) / (1 - Math.exp(-TT / TAU));
   /* the state at time t: every temperature and heat, from the sliders alone */
   function state(t) {
-    const mode = PROC.value, mw = MW.v, Tw0 = TW.v, Cw = CW * mw, r = 1 - Math.exp(-t / TAU);
+    const mode = PROC.value, mw = MW.v, Tw0 = TW.v, Cw = CW * mw, r = R(t);
     if (mode === 'metal') {
       const m = METALS[MET.value], Cm = m.c * MM.v, Tm0 = TM.v;
       const Tf = (Cm * Tm0 + Cw * Tw0) / (Cm + Cw);
-      const Tm = (x) => Tm0 + (Tf - Tm0) * (1 - Math.exp(-x / TAU)), Tw = (x) => Tw0 + (Tf - Tw0) * (1 - Math.exp(-x / TAU));
+      const Tm = (x) => Tm0 + (Tf - Tm0) * R(x), Tw = (x) => Tw0 + (Tf - Tw0) * R(x);
       return { mode, m, Cm, Tm0, Tw0, Tf, Tm, Tw, qs: Cm * (Tm(t) - Tm0) / 1000, ql: Cw * (Tw(t) - Tw0) / 1000, flow: Math.abs(Tm0 - Tf) > 0.05 ? 1 - r : 0 };
     }
     const qr = (mode === 'exo' ? -1 : 1) * Q.v * 1000, Tf = Tw0 - qr / Cw;
-    const Tw = (x) => Tw0 + (Tf - Tw0) * (1 - Math.exp(-x / TAU));
+    const Tw = (x) => Tw0 + (Tf - Tw0) * R(x);
     return { mode, Tw0, Tf, Tw, qs: qr * r / 1000, ql: -qr * r / 1000, flow: 1 - r };
   }
 
@@ -124,7 +127,7 @@ const sim = (id, H) => F.sim(root, id, H);
       arrow(ctx, cx + u[0] * a0, cy0 + u[1] * a0, cx + u[0] * a1, cy0 + u[1] * a1, col, 4);
     });
     ctx.restore();
-    text(ctx, 'q', cx - r0 - run - 44, cy0 - 22, col, { size: 24, weight: 600, bg: PAL.panel });
+    text(ctx, 'q', cx + 16, cy0 - r0 - run / 2, col, { size: 24, weight: 600 });
   }
 
   /* graph: temperature against time, beside the cup; T from 0 to 300 °C for a metal, 0 to 50 °C for a solution */
@@ -137,8 +140,7 @@ const sim = (id, H) => F.sim(root, id, H);
     const col = C('energy'), w = Math.min(Math.abs(q), qmax) / qmax * BH, sgn = q >= 0 ? 1 : -1;
     ctx.save(); ctx.fillStyle = alpha(col, 0.85); ctx.fillRect(sgn > 0 ? BX : BX - w, y - 13, w, 26); ctx.restore();
     if (Math.abs(q) > qmax) arrow(ctx, BX + sgn * (BH - 30), y, BX + sgn * (BH + 6), y, col, 4);
-    const lx = BX + sgn * (w + 14);
-    text(ctx, name + ' = ' + kJ(q) + ' kJ', lx, y, col, { size: 20, weight: 600, align: sgn > 0 ? 'left' : 'right', bg: PAL.panel });
+    text(ctx, name + ' = ' + kJ(q) + ' kJ', BX - sgn * 14, y, col, { size: 20, weight: 600, align: sgn > 0 ? 'right' : 'left', bg: PAL.panel });
     hits.push({ x: BX + sgn * w / 2, y, r: 14, name: fullName });
   }
 
@@ -210,13 +212,12 @@ const sim = (id, H) => F.sim(root, id, H);
     const u = '\\;\\text{J/g}\\,^\\circ\\text{C}';
     if (metal) {
       const dT = S.Tf - S.Tm0, q = S.Cm * dT / 1000;
-      const texs = '\\kq_{\\htmlData{ref=metal}{\\text{metal}}}=\\kcspec\\times\\km\\times\\kdT=(' + fmt(S.m.c, 3) + u + ')(' + f1(MM.v) + '\\;\\text{g})(' + tn(f1(dT)) + '\\;^\\circ\\text{C})=' + tn(kJ(q)).replace('+', '') + '\\;\\text{kJ}=-\\kq_{\\htmlData{ref=water}{\\text{water}}}';
-      const note = S.Tf >= 100 ? 'The water would reach 100 °C and begin to boil, which this calculation does not include.'
-        : 'The water gains ' + f2(Math.abs(q)) + ' kJ as it warms by ' + f1(S.Tf - S.Tw0) + ' °C, the same heat the ' + S.m.name + ' loses.';
+      const texs = '\\kq_{\\htmlData{ref=metal}{\\text{metal}}}=\\kcspec\\times\\km\\times\\kdT=(' + hu('heat-capacity', fmt(S.m.c, 3) + u) + ')(' + hu('mass', f1(MM.v) + '\\;\\text{g}') + ')(' + hu('temperature', tn(f1(dT)) + '\\;^\\circ\\text{C}') + ')=' + hu('energy', tn(kJ(q)).replace('+', '') + '\\;\\text{kJ}') + '=-\\kq_{\\htmlData{ref=water}{\\text{water}}}';
+      const note = S.Tf >= 100 ? 'The water would reach 100 °C and begin to boil, which this calculation does not include.' : '';
       ro.set(texs, note, { form: 'metal' });
     } else {
       const dT = S.Tf - S.Tw0, qsol = CW * MW.v * dT / 1000;
-      const texs = '\\kq_{\\text{reaction}}=-\\kqsolution=-\\kcspec\\times\\km\\times\\kdT=-(4.184' + u + ')(' + f1(MW.v) + '\\;\\text{g})(' + tn(f2(dT)) + '\\;^\\circ\\text{C})=' + tn(kJ(-qsol)).replace('+', '') + '\\;\\text{kJ}';
+      const texs = '\\kq_{\\text{reaction}}=-\\kqsolution=-\\kcspec\\times\\km\\times\\kdT=-(' + hu('heat-capacity', '4.184' + u) + ')(' + hu('mass', f1(MW.v) + '\\;\\text{g}') + ')(' + hu('temperature', tn(f2(dT)) + '\\;^\\circ\\text{C}') + ')=' + hu('energy', tn(kJ(-qsol)).replace('+', '') + '\\;\\text{kJ}');
       ro.set(texs, mode === 'exo' ? 'The negative sign shows that the reaction is exothermic: the solution absorbs the heat it gives off.' : 'The positive sign shows that the reaction is endothermic: it takes its heat from the solution.', { form: 'reaction' });
     }
   }

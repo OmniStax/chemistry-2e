@@ -16,6 +16,8 @@ chapter; it invents no hue.
 | P (16.1, the empty flask), partial pressures in 16.4 examples | `pressure` | Where a readout states one |
 | ΔV | `volume` | 16.1's expansion |
 | Time on Figure 16.2's axis | `time` | — |
+| The speed axis of Figure 16.10 + 16.11 | `velocity` | — |
+| 1.00 kJ/K, the heat capacity of Figure 16.5's objects | `heat-capacity` | In the caption only |
 
 These stay in ink: W, W_f, W_i (counts of microstates), k (the Boltzmann
 constant), N and n (numbers of particles and boxes), ν (stoichiometric
@@ -29,26 +31,31 @@ skill (the second law, predicting the sign of ΔS) stays ink, and so does
 
 ## Facts and conventions
 
-`F.el` for every atom and molecule drawn (the gas of 16.4, the particles of
-16.10, carbon in 16.3's lattices if redrawn). The four particles of 16.8 are
-distinguishable in the book by colour: they are referents (below), not
-elements. Energy units of 16.9 are ink marks (the book's asterisks).
+`F.el` for every atom and molecule drawn: the argon of Figure 16.4 and the
+water of Figure 16.10 + 16.11. The four particles of Figure 16.8 and of
+Example 16.2's image are told apart by `F.cat`, since the text names none of
+them. The energy units of Figure 16.9 are ink marks, the book's asterisks.
 
 ## Referents
 
-Each section lists its own when it is built. Planned:
+Each section lists its own in `referents`. As built:
 
-- **16.1.** Object X and object Y (16.5), and q_X, q_Y, T_X, T_Y split with
-  the subscript in each object's colour; the two isotopes of Figure 16.2,
-  one curve each; the two flasks of 16.4 if the readout counts each.
-- **16.2.** The four particles of 16.8 (red, green, blue, yellow in the book;
-  dealt referent colours, named by hover) and the four particles A, B, C, D
-  of 16.9; the hot and cold objects of 16.9.
-- **16.3.** The system and the surroundings (ΔS_sys, ΔS_surr, T_sys, T_surr)
-  where a figure draws both.
-- **16.4.** The four ΔH/ΔS scenarios of 16.12 and 16.13, one line each, where
-  they are drawn together (the book's green, yellow and red are not kept as
-  facts); the reactions of a coupled pair, ΔG₁° and ΔG₂° split by subscript.
+- **16.1.** `tc-99m` and `u-238`, one curve each on Figure 16.2; `object-x`
+  and `object-y`, the two blocks of Figure 16.5 and their temperature curves,
+  with T_X, T_Y, q_X and q_Y split so that each subscript wears its object's
+  colour (`ref` on their variables rows). The flasks of Figure 16.4 are not
+  referents: the strip counts the atoms in each, and the labels name them.
+- **16.2.** `hot-object` and `cold-object`, the two objects of Figure 16.9,
+  their particles' letters and every mention of either in the text. The four
+  particles of Figure 16.8 are instances (`F.cat`), not referents.
+- **16.3.** None. The Sim draws the system's, the surroundings' and the
+  universe's entropy changes as three bars of one category, told apart by
+  fill (hollow for the system and surroundings, solid for the universe) and by
+  label, and draws neither the ice nor its surroundings as a body.
+- **16.4.** None. Each figure draws one line or one curve; the four cases of
+  Figure 16.12 sit in the table beside the graph, the current one outlined and
+  its sketch in `energy`, the other three in muted ink. ΔG₁° and ΔG₂° are not
+  drawn and carry no `ref`.
 
 The frame of a figure and its labels stay in ink, and with colour coding off
 every figure stays legible from its labels.

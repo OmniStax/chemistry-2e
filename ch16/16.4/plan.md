@@ -81,3 +81,5 @@ Nothing of the prose. Errata kept as printed: −285.83 in Example 16.7's table 
 - variables `16.4/K_P` → 16.4-equilibrium
 - variables `16.4/K_sp` → 16.4-ex-ksp
 - variables: a new row `16.4/Q_conc` (\kQc, "the reaction quotient written with molar concentrations", concept `reaction-quotient`, as in 13.2) → 16.4-equilibrium; the text writes the book's *Q*<sub>C</sub> with `\kQc`
+
+Applied by the chapter pass (2026-10-05): every anchor as listed, ten forms and eighteen variables; the new row Q_conc (13.2's meaning, concept `reaction-quotient`) at 16.4-equilibrium. Eight rows added so that each macro the page writes has a row here: S, T, ΔS, ΔS_univ and q_surr at 16.4-gibbs, ΔS° at 16.4-calculating, S° at 16.4-ex-vaporization, all with their earlier meanings, and w at 16.4-free-work as the useful work a spontaneous process may accomplish, with `redefines`.

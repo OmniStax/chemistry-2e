@@ -1330,3 +1330,60 @@ Checks: `ost check` clean for the book, and every page of the chapter in
 light and dark with no console error but the dev server's own missing
 offline catalogue, no KaTeX error, no missing image, every figure drawn and
 all sixteen exercise hosts filled.
+
+
+## Pass 19 (2026-10-05): Chapter 16, Thermodynamics, is built and passed
+
+Built: the introduction and four sections, 16.1 to 16.4, in the publisher's
+numbering, Figures 16.1 to 16.14 all shown and linked. Ten figures drawn
+live. Figure 16.4 is thirty argon atoms in two flasks on a bench in 3D: the
+reader opens the valve and the atoms wander through the tube on a clock until
+the flasks hold about half each, the counts on a strip beneath, with
+w = 0 and ΔU = 0 in the readout. Figure 16.5 runs heat from X to Y
+on a clock while the two temperatures, which the reader sets, close on one
+value. Figure 16.2 is a faithful copy of the two decay curves. Figures 16.8
+and 16.9 lay out every microstate of two, four or six particles and of two
+energy units among four, sorted by distribution with each probability, and a
+choice of starting and final distribution gives ΔS = k ln(W_f/W_i); Example
+16.2's image is redrawn in the same colors. Figures 16.10 and 16.11 are one
+mole of water in a 3D box under a temperature slider, solid, liquid or gas,
+its speed distribution and its entropy curve beneath, the readout turning to
+ΔS = q_rev/T at melting and boiling. One Sim of OmniStax's own, in 16.3: the
+entropy changes of the ice, its surroundings and the universe as bars beside
+ΔS_univ against temperature, crossing zero at 271.5 K, for melting or
+freezing. Figures 16.12 and 16.13 are one ΔG line under ΔH, ΔS and T sliders
+beside the book's table of the four cases; Figure 16.14 is G against
+reaction progress, its minimum where Q = K. Figures 16.1, 16.3, 16.6 and 16.7
+are the book's photographs. Tables 16.1 to 16.4 and the two data tables of
+Examples 16.7 and 16.8 are written as tables. Fifty-eight exercises, thirteen
+of them Check Your Learning items placed inline after their examples, each
+with its host. Twenty-one unkeyed numerical items are left out and named in
+`exercise_notes`; eleven unkeyed conceptual items are kept with a suggested
+approach. No exercise moves.
+
+What the chapter pass changed. Every form and variables row of the chapter
+anchored: twenty forms and sixty-four variables, the new Q_conc in 16.4 for
+the book's Q_C among them, and twelve added so that every symbol a page
+writes through its macro has a row in that section; in 16.4, w is the useful
+work a process may do and says `redefines`. T_X, T_Y, q_X and q_Y keep the
+`ref` that splits their subscripts into the colors of objects X and Y. The
+glossary's "spontaneous change" is a term of `spontaneous-process`, staged in
+Chapter 11, which owns it. `config.md` gives Tables 16.1 and 16.2 the titles
+they print and records what the build changed; `COLOR.md` the referents as
+built, where the particles of Figure 16.8 are instances and 16.3 and 16.4
+have none. Every degree sign inside an exercise's math is written `^\circ`,
+and two captions of 16.2 are spelled as the rest of the page is.
+
+Errata carried as printed and named in `exploration.md`: "(P = 0). (" and
+Figure 16.2's axis in hours in 16.1; "Nicholas" in Figure 16.7's caption,
+"two distribution", Example 16.2's W_c/W_a and "Fe₂O₂" in 16.2; "S_univ"
+without the Δ, Example 16.5's unit and an upright state in 16.3;
+−285.83 against −286.83, "ΣνG_f°", "201.3 kJ + −300.1 kJ", "H2S",
+"SnCl₄(l) ⟶ SnCl₄(l)", a key's "−0.16 kJ" for a ΔS° and the text's "two
+yellow lines" in 16.4. Figure 16.5's heat capacities and Figure 16.10 +
+16.11's entropy curve are modelled, and `exploration.md` gives the numbers.
+
+Checks: `ost check` clean for the book, and every page of the chapter in
+light and dark with no console error but the dev server's own missing
+offline catalogue, no KaTeX error, no missing image, every figure drawn and
+all thirteen exercise hosts filled.

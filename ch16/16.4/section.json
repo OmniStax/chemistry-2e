@@ -365,7 +365,7 @@
         "unit": "kJ/mol",
         "hint": "Find Δ<em>H</em>° from the standard enthalpies of formation and Δ<em>S</em>° from the standard entropies in Appendix G, then use Δ<em>G</em>° = Δ<em>H</em>° − <em>T</em>Δ<em>S</em>° at 298 K.",
         "generated_by": "source",
-        "solution": "$\\text{Δ}G\\text{°}=\\text{102.0 kJ/mol};$ the reaction is nonspontaneous (<em>not</em> spontaneous) at 25 °C."
+        "solution": "$\\text{Δ}G^{\\circ}=\\text{102.0 kJ/mol};$ the reaction is nonspontaneous (<em>not</em> spontaneous) at 25 °C."
       }
     },
     {
@@ -525,7 +525,7 @@
         "at": "end"
       },
       "cite": "temperature",
-      "prompt": "A reaction has $\\text{Δ}H\\text{°}$ = 100 kJ/mol and $\\text{Δ}S\\text{°}=\\text{250 J/mol·K.}$ Is the reaction spontaneous at room temperature? If not, under what temperature conditions will it become spontaneous?",
+      "prompt": "A reaction has $\\text{Δ}H^{\\circ}$ = 100 kJ/mol and $\\text{Δ}S^{\\circ}=\\text{250 J/mol·K.}$ Is the reaction spontaneous at room temperature? If not, under what temperature conditions will it become spontaneous?",
       "answer": {
         "type": "number",
         "value": 400,
@@ -612,7 +612,7 @@
         "at": "end"
       },
       "cite": "coupled",
-      "prompt": "Given:<br>${\\text{P}}_{4}(s)+{\\text{5O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−2697.0 kJ/mol}$<br>${\\text{2H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{2H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−457.18 kJ/mol}$<br>${\\text{6H}}_{2}\\text{O}(g)+{\\text{P}}_{4}{\\text{O}}_{10}(s)\\;\\longrightarrow \\;{\\text{4H}}_{3}{\\text{PO}}_{4}(l)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−428.66 kJ/mol}$<br>(a) Determine the standard free energy of formation, $\\text{Δ}{G}_{\\text{f}}^{{}^{\\circ}},$ for phosphoric acid.<br>(b) How does your calculated result compare to the value in Appendix G? Explain.",
+      "prompt": "Given:<br>${\\text{P}}_{4}(s)+{\\text{5O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s)\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{−2697.0 kJ/mol}$<br>${\\text{2H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{2H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{−457.18 kJ/mol}$<br>${\\text{6H}}_{2}\\text{O}(g)+{\\text{P}}_{4}{\\text{O}}_{10}(s)\\;\\longrightarrow \\;{\\text{4H}}_{3}{\\text{PO}}_{4}(l)\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{−428.66 kJ/mol}$<br>(a) Determine the standard free energy of formation, $\\text{Δ}{G}_{\\text{f}}^{{}^{\\circ}},$ for phosphoric acid.<br>(b) How does your calculated result compare to the value in Appendix G? Explain.",
       "answer": {
         "type": "number",
         "value": -1124.3,
@@ -655,7 +655,7 @@
         "at": "end"
       },
       "cite": "equilibrium",
-      "prompt": "Calculate Δ<em>G</em>° for each of the following reactions from the equilibrium constant at the temperature given.<br>(a) ${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{2NO}(g)\\hspace{5em}\\text{T}=2000\\;\\text{°C}\\hspace{5em}{K}_{p}=4.1\\;\\times \\;{10}^{\\text{−4}}$<br>(b) ${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\;\\longrightarrow \\;\\text{2HI}(g)\\hspace{5em}\\text{T}=400\\;\\text{°C}\\hspace{5em}{K}_{p}=50.0$<br>(c) ${\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)\\;\\longrightarrow \\;\\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{T}=980\\;\\text{°C}\\hspace{5em}{K}_{p}=1.67$<br>(d) ${\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\;\\text{CaO}(s)+{\\text{CO}}_{2}(g)\\hspace{5em}\\text{T}=900\\;\\text{°C}\\hspace{5em}{K}_{p}=1.04$<br>(e) $\\text{HF}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{F}}^{\\text{−}}(aq)\\hspace{5em}\\text{T}=25\\;\\text{°C}\\hspace{5em}{K}_{a}=7.2\\;\\times \\;{10}^{\\text{−4}}$<br>(f) $\\text{AgBr}(s)\\;\\longrightarrow \\;{\\text{Ag}}^{\\text{+}}(aq)+{\\text{Br}}^{\\text{−}}(aq)\\hspace{5em}\\text{T}=25\\;\\text{°C}\\hspace{5em}{K}_{sp}=3.3\\;\\times \\;{10}^{\\text{−13}}$",
+      "prompt": "Calculate Δ<em>G</em>° for each of the following reactions from the equilibrium constant at the temperature given.<br>(a) ${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{2NO}(g)\\hspace{5em}\\text{T}=2000\\;{}^{\\circ}\\text{C}\\hspace{5em}{K}_{p}=4.1\\;\\times \\;{10}^{\\text{−4}}$<br>(b) ${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\;\\longrightarrow \\;\\text{2HI}(g)\\hspace{5em}\\text{T}=400\\;{}^{\\circ}\\text{C}\\hspace{5em}{K}_{p}=50.0$<br>(c) ${\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)\\;\\longrightarrow \\;\\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{T}=980\\;{}^{\\circ}\\text{C}\\hspace{5em}{K}_{p}=1.67$<br>(d) ${\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\;\\text{CaO}(s)+{\\text{CO}}_{2}(g)\\hspace{5em}\\text{T}=900\\;{}^{\\circ}\\text{C}\\hspace{5em}{K}_{p}=1.04$<br>(e) $\\text{HF}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{F}}^{\\text{−}}(aq)\\hspace{5em}\\text{T}=25\\;{}^{\\circ}\\text{C}\\hspace{5em}{K}_{a}=7.2\\;\\times \\;{10}^{\\text{−4}}$<br>(f) $\\text{AgBr}(s)\\;\\longrightarrow \\;{\\text{Ag}}^{\\text{+}}(aq)+{\\text{Br}}^{\\text{−}}(aq)\\hspace{5em}\\text{T}=25\\;{}^{\\circ}\\text{C}\\hspace{5em}{K}_{sp}=3.3\\;\\times \\;{10}^{\\text{−13}}$",
       "answer": {
         "type": "multi",
         "parts": [
@@ -708,7 +708,7 @@
         "at": "end"
       },
       "cite": "equilibrium",
-      "prompt": "Calculate the equilibrium constant at 25 °C for each of the following reactions from the value of Δ<em>G</em>° given.<br>(a) ${\\text{O}}_{2}(g)+{\\text{2F}}_{2}(g)\\;\\longrightarrow \\;{\\text{2OF}}_{2}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−9.2 kJ}$<br>(b) ${\\text{I}}_{2}(s)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;\\text{2IBr}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{7.3 kJ}$<br>(c) $\\text{2LiOH}(s)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Li}}_{2}{\\text{CO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−79 kJ}$<br>(d) ${\\text{N}}_{2}{\\text{O}}_{3}(g)\\;\\longrightarrow \\;\\text{NO}(g)+{\\text{NO}}_{2}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{−1.6 kJ}$<br>(e) ${\\text{SnCl}}_{4}(l)\\;\\longrightarrow \\;{\\text{SnCl}}_{4}(l)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{8.0 kJ}$",
+      "prompt": "Calculate the equilibrium constant at 25 °C for each of the following reactions from the value of Δ<em>G</em>° given.<br>(a) ${\\text{O}}_{2}(g)+{\\text{2F}}_{2}(g)\\;\\longrightarrow \\;{\\text{2OF}}_{2}(g)\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{−9.2 kJ}$<br>(b) ${\\text{I}}_{2}(s)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;\\text{2IBr}(g)\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{7.3 kJ}$<br>(c) $\\text{2LiOH}(s)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Li}}_{2}{\\text{CO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{−79 kJ}$<br>(d) ${\\text{N}}_{2}{\\text{O}}_{3}(g)\\;\\longrightarrow \\;\\text{NO}(g)+{\\text{NO}}_{2}(g)\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{−1.6 kJ}$<br>(e) ${\\text{SnCl}}_{4}(l)\\;\\longrightarrow \\;{\\text{SnCl}}_{4}(l)\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{8.0 kJ}$",
       "answer": {
         "type": "multi",
         "parts": [
@@ -752,7 +752,7 @@
         "at": "end"
       },
       "cite": "equilibrium",
-      "prompt": "Calculate the equilibrium constant at the temperature given.<br>(a) ${\\text{O}}_{2}(g)+{\\text{2F}}_{2}(g)\\;\\longrightarrow \\;{\\text{2F}}_{2}\\text{O}(g)\\hspace{5em}(\\text{T}=100\\;\\text{°C})$<br>(b) ${\\text{I}}_{2}(s)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;\\text{2IBr}(g)\\hspace{5em}(\\text{T}=0.0\\;\\text{°C})$<br>(c) $\\text{2LiOH}(s)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Li}}_{2}{\\text{CO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}(\\text{T}=575\\;\\text{°C})$<br>(d) ${\\text{N}}_{2}{\\text{O}}_{3}(g)\\;\\longrightarrow \\;\\text{NO}(g)+{\\text{NO}}_{2}(g)\\hspace{5em}(\\text{T}=−10.0\\;\\text{°C})$<br>(e) ${\\text{SnCl}}_{4}(l)\\;\\longrightarrow \\;{\\text{SnCl}}_{4}(g)\\hspace{5em}(\\text{T}=200\\;\\text{°C})$",
+      "prompt": "Calculate the equilibrium constant at the temperature given.<br>(a) ${\\text{O}}_{2}(g)+{\\text{2F}}_{2}(g)\\;\\longrightarrow \\;{\\text{2F}}_{2}\\text{O}(g)\\hspace{5em}(\\text{T}=100\\;{}^{\\circ}\\text{C})$<br>(b) ${\\text{I}}_{2}(s)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;\\text{2IBr}(g)\\hspace{5em}(\\text{T}=0.0\\;{}^{\\circ}\\text{C})$<br>(c) $\\text{2LiOH}(s)+{\\text{CO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Li}}_{2}{\\text{CO}}_{3}(s)+{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}(\\text{T}=575\\;{}^{\\circ}\\text{C})$<br>(d) ${\\text{N}}_{2}{\\text{O}}_{3}(g)\\;\\longrightarrow \\;\\text{NO}(g)+{\\text{NO}}_{2}(g)\\hspace{5em}(\\text{T}=−10.0\\;{}^{\\circ}\\text{C})$<br>(e) ${\\text{SnCl}}_{4}(l)\\;\\longrightarrow \\;{\\text{SnCl}}_{4}(g)\\hspace{5em}(\\text{T}=200\\;{}^{\\circ}\\text{C})$",
       "answer": {
         "type": "multi",
         "parts": [
@@ -972,7 +972,7 @@
         "at": "end"
       },
       "cite": "equilibrium",
-      "prompt": "The evaporation of one mole of water at 298 K has a standard free energy change of 8.58 kJ.<br>${\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}G\\text{°}=\\text{8.58 kJ}$<br>(a) Is the evaporation of water under standard thermodynamic conditions spontaneous?<br>(b) Determine the equilibrium constant, <em>K<sub>P</sub></em>, for this physical process.<br>(c) By calculating ∆<em>G</em>, determine if the evaporation of water at 298 K is spontaneous when the partial pressure of water, ${P}_{{\\text{H}}_{2}\\text{O}},$ is 0.011 atm.<br>(d) If the evaporation of water were always nonspontaneous at room temperature, wet laundry would never dry when placed outside. In order for laundry to dry, what must be the value of ${P}_{{\\text{H}}_{2}\\text{O}}$ in the air?",
+      "prompt": "The evaporation of one mole of water at 298 K has a standard free energy change of 8.58 kJ.<br>${\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{8.58 kJ}$<br>(a) Is the evaporation of water under standard thermodynamic conditions spontaneous?<br>(b) Determine the equilibrium constant, <em>K<sub>P</sub></em>, for this physical process.<br>(c) By calculating ∆<em>G</em>, determine if the evaporation of water at 298 K is spontaneous when the partial pressure of water, ${P}_{{\\text{H}}_{2}\\text{O}},$ is 0.011 atm.<br>(d) If the evaporation of water were always nonspontaneous at room temperature, wet laundry would never dry when placed outside. In order for laundry to dry, what must be the value of ${P}_{{\\text{H}}_{2}\\text{O}}$ in the air?",
       "answer": {
         "type": "number",
         "value": 0.031,
@@ -993,7 +993,7 @@
         "at": "end"
       },
       "cite": "equilibrium",
-      "prompt": "One of the important reactions in the biochemical pathway glycolysis is the reaction of glucose-6-phosphate (G6P) to form fructose-6-phosphate (F6P):<br>$\\text{G6P}\\;\\rightleftharpoons \\;\\text{F6P}\\hspace{5em}\\text{Δ}G\\text{°}=\\text{1.7 kJ}$<br>(a) Is the reaction spontaneous or nonspontaneous under standard thermodynamic conditions?<br>(b) Standard thermodynamic conditions imply the concentrations of G6P and F6P to be 1 <em>M</em>, however, in a typical cell, they are not even close to these values. Calculate Δ<em>G</em> when the concentrations of G6P and F6P are 120 μ<em>M</em> and 28 μ<em>M</em> respectively, and discuss the spontaneity of the forward reaction under these conditions. Assume the temperature is 37 °C.",
+      "prompt": "One of the important reactions in the biochemical pathway glycolysis is the reaction of glucose-6-phosphate (G6P) to form fructose-6-phosphate (F6P):<br>$\\text{G6P}\\;\\rightleftharpoons \\;\\text{F6P}\\hspace{5em}\\text{Δ}G^{\\circ}=\\text{1.7 kJ}$<br>(a) Is the reaction spontaneous or nonspontaneous under standard thermodynamic conditions?<br>(b) Standard thermodynamic conditions imply the concentrations of G6P and F6P to be 1 <em>M</em>, however, in a typical cell, they are not even close to these values. Calculate Δ<em>G</em> when the concentrations of G6P and F6P are 120 μ<em>M</em> and 28 μ<em>M</em> respectively, and discuss the spontaneity of the forward reaction under these conditions. Assume the temperature is 37 °C.",
       "answer": {
         "type": "number",
         "value": -2.1,
@@ -1002,7 +1002,7 @@
         "tol": 0.05,
         "hint": "Use Δ<em>G</em> = Δ<em>G</em>° + <em>RT</em> ln <em>Q</em> at 310 K, with <em>Q</em> the ratio of the F6P to the G6P concentration.",
         "generated_by": "source",
-        "solution": "(a) Nonspontaneous as $\\text{Δ}{G}^{{}^{\\circ}}>0;$ (b) $\\text{Δ}G=\\text{Δ}{G}^{\\text{°}}+RT\\;\\text{ln}\\;Q,$ $\\text{Δ}G=1.7\\;\\times \\;{10}^{3}+\\;(8.314\\;\\times \\;310\\;\\times \\;\\text{ln}\\;\\frac{28}{120})\\;=\\text{−2.1 kJ}.$ The forward reaction to produce F6P is spontaneous under these conditions."
+        "solution": "(a) Nonspontaneous as $\\text{Δ}{G}^{{}^{\\circ}}>0;$ (b) $\\text{Δ}G=\\text{Δ}{G}^{\\circ}+RT\\;\\text{ln}\\;Q,$ $\\text{Δ}G=1.7\\;\\times \\;{10}^{3}+\\;(8.314\\;\\times \\;310\\;\\times \\;\\text{ln}\\;\\frac{28}{120})\\;=\\text{−2.1 kJ}.$ The forward reaction to produce F6P is spontaneous under these conditions."
       }
     },
     {

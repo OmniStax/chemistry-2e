@@ -7545,7 +7545,8 @@
       "section": "11.1",
       "name": "Spontaneous process",
       "terms": [
-        "spontaneous process"
+        "spontaneous process",
+        "spontaneous change"
       ],
       "statement": "A spontaneous process is a physical or chemical change that occurs without the addition of energy from an external source."
     },
@@ -10635,7 +10636,8 @@
         {
           "id": "eq-entropy-change-reversible-heat",
           "latex": "\\Delta S=\\frac{q_{\\text{rev}}}{T}",
-          "ktex": "\\kdS=\\frac{\\kqrev}{\\kT}"
+          "ktex": "\\kdS=\\frac{\\kqrev}{\\kT}",
+          "anchor": "16.2-reversible-heat"
         }
       ]
     },
@@ -10659,12 +10661,14 @@
         {
           "id": "eq-boltzmann-entropy",
           "latex": "S=k\\ln W",
-          "ktex": "\\kS=k\\ln W"
+          "ktex": "\\kS=k\\ln W",
+          "anchor": "16.2-microstates"
         },
         {
           "id": "eq-entropy-change-microstates",
           "latex": "\\Delta S=S_{\\text{f}}-S_{\\text{i}}=k\\ln\\frac{W_{\\text{f}}}{W_{\\text{i}}}",
-          "ktex": "\\kdS=\\kSf-\\kSi=k\\ln\\frac{W_{\\text{f}}}{W_{\\text{i}}}"
+          "ktex": "\\kdS=\\kSf-\\kSi=k\\ln\\frac{W_{\\text{f}}}{W_{\\text{i}}}",
+          "anchor": "16.2-microstates"
         }
       ]
     },
@@ -10678,7 +10682,8 @@
         {
           "id": "eq-number-of-microstates",
           "latex": "W=n^{N}",
-          "condition": "N particles distributed among n boxes"
+          "condition": "N particles distributed among n boxes",
+          "anchor": "16.2-microstates"
         }
       ]
     },
@@ -10692,7 +10697,8 @@
         {
           "id": "eq-entropy-phase-order",
           "latex": "S_{\\text{solid}}<S_{\\text{liquid}}<S_{\\text{gas}}",
-          "ktex": "\\kSsolid<\\kSliquid<\\kSgas"
+          "ktex": "\\kSsolid<\\kSliquid<\\kSgas",
+          "anchor": "16.2-predicting-sign"
         }
       ]
     },
@@ -10729,7 +10735,8 @@
         {
           "id": "eq-entropy-change-universe",
           "latex": "\\Delta S_{\\text{univ}}=\\Delta S_{\\text{sys}}+\\Delta S_{\\text{surr}}",
-          "ktex": "\\kdSuniv=\\kdSsys+\\kdSsurr"
+          "ktex": "\\kdSuniv=\\kdSsys+\\kdSsurr",
+          "anchor": "16.3-second-law"
         }
       ]
     },
@@ -10747,7 +10754,8 @@
           "id": "eq-second-law",
           "latex": "\\Delta S_{\\text{univ}}>0",
           "ktex": "\\kdSuniv>0",
-          "condition": "a spontaneous process"
+          "condition": "a spontaneous process",
+          "anchor": "16.3-second-law"
         }
       ]
     },
@@ -10764,7 +10772,8 @@
           "id": "eq-second-law-surroundings",
           "latex": "\\Delta S_{\\text{univ}}=\\Delta S_{\\text{sys}}+\\Delta S_{\\text{surr}}=\\Delta S_{\\text{sys}}+\\frac{q_{\\text{surr}}}{T}",
           "ktex": "\\kdSuniv=\\kdSsys+\\kdSsurr=\\kdSsys+\\frac{\\kqsurr}{\\kT}",
-          "condition": "surroundings vast compared to the system"
+          "condition": "surroundings vast compared to the system",
+          "anchor": "16.3-second-law"
         }
       ]
     },
@@ -10789,7 +10798,8 @@
           "id": "eq-third-law",
           "latex": "S=k\\ln W=k\\ln(1)=0",
           "ktex": "\\kS=k\\ln W=k\\ln(1)=0",
-          "condition": "a pure, perfect crystalline substance at 0 K"
+          "condition": "a pure, perfect crystalline substance at 0 K",
+          "anchor": "16.3-third-law"
         }
       ]
     },
@@ -10820,7 +10830,8 @@
         {
           "id": "eq-standard-entropy-change",
           "latex": "\\Delta S^{\\circ}=\\sum\\nu S^{\\circ}(\\text{products})-\\sum\\nu S^{\\circ}(\\text{reactants})",
-          "ktex": "\\kdSo=\\sum\\nu\\kSo(\\text{products})-\\sum\\nu\\kSo(\\text{reactants})"
+          "ktex": "\\kdSo=\\sum\\nu\\kSo(\\text{products})-\\sum\\nu\\kSo(\\text{reactants})",
+          "anchor": "16.3-third-law"
         }
       ]
     },
@@ -10848,13 +10859,15 @@
         {
           "id": "eq-gibbs-free-energy",
           "latex": "G=H-TS",
-          "ktex": "\\kG=\\kH-\\kT\\kS"
+          "ktex": "\\kG=\\kH-\\kT\\kS",
+          "anchor": "16.4-gibbs"
         },
         {
           "id": "eq-free-energy-change",
           "latex": "\\Delta G=\\Delta H-T\\Delta S",
           "ktex": "\\kdG=\\kdH-\\kT\\kdS",
-          "condition": "constant temperature and pressure"
+          "condition": "constant temperature and pressure",
+          "anchor": "16.4-gibbs"
         }
       ]
     },
@@ -10868,7 +10881,8 @@
         {
           "id": "eq-free-energy-entropy-universe",
           "latex": "\\Delta G=-T\\Delta S_{\\text{univ}}",
-          "ktex": "\\kdG=-\\kT\\kdSuniv"
+          "ktex": "\\kdG=-\\kT\\kdSuniv",
+          "anchor": "16.4-gibbs"
         }
       ]
     },
@@ -10883,7 +10897,8 @@
           "id": "eq-free-energy-max-work",
           "latex": "\\Delta G=w_{\\text{max}}",
           "ktex": "\\kdG=\\kwmax",
-          "condition": "a process carried out reversibly; all work except expansion work"
+          "condition": "a process carried out reversibly; all work except expansion work",
+          "anchor": "16.4-free-work"
         }
       ]
     },
@@ -10902,7 +10917,8 @@
         {
           "id": "eq-standard-free-energy-change",
           "latex": "\\Delta G^{\\circ}=\\Delta H^{\\circ}-T\\Delta S^{\\circ}",
-          "ktex": "\\kdGo=\\kdHo-\\kT\\kdSo"
+          "ktex": "\\kdGo=\\kdHo-\\kT\\kdSo",
+          "anchor": "16.4-calculating"
         }
       ]
     },
@@ -10921,7 +10937,8 @@
         {
           "id": "eq-free-energy-from-formation",
           "latex": "\\Delta G^{\\circ}=\\sum\\nu\\Delta G_{\\text{f}}^{\\circ}(\\text{products})-\\sum\\nu\\Delta G_{\\text{f}}^{\\circ}(\\text{reactants})",
-          "ktex": "\\kdGo=\\sum\\nu\\kdGf(\\text{products})-\\sum\\nu\\kdGf(\\text{reactants})"
+          "ktex": "\\kdGo=\\sum\\nu\\kdGf(\\text{products})-\\sum\\nu\\kdGf(\\text{reactants})",
+          "anchor": "16.4-calculating"
         }
       ]
     },
@@ -10943,7 +10960,8 @@
           "id": "eq-crossover-temperature",
           "latex": "T=\\frac{\\Delta H}{\\Delta S}",
           "ktex": "\\kT=\\frac{\\kdH}{\\kdS}",
-          "condition": "the temperature at which the free energy change is zero"
+          "condition": "the temperature at which the free energy change is zero",
+          "anchor": "16.4-temperature"
         }
       ]
     },
@@ -10957,7 +10975,8 @@
         {
           "id": "eq-free-energy-nonstandard",
           "latex": "\\Delta G=\\Delta G^{\\circ}+RT\\ln Q",
-          "ktex": "\\kdG=\\kdGo+R\\kT\\ln\\kQrxn"
+          "ktex": "\\kdG=\\kdGo+R\\kT\\ln\\kQrxn",
+          "anchor": "16.4-equilibrium"
         }
       ]
     },
@@ -10971,12 +10990,14 @@
         {
           "id": "eq-standard-free-energy-k",
           "latex": "\\Delta G^{\\circ}=-RT\\ln K",
-          "ktex": "\\kdGo=-R\\kT\\ln\\kK"
+          "ktex": "\\kdGo=-R\\kT\\ln\\kK",
+          "anchor": "16.4-equilibrium"
         },
         {
           "id": "eq-k-from-standard-free-energy",
           "latex": "K=e^{-\\Delta G^{\\circ}/RT}",
-          "ktex": "\\kK=e^{-\\kdGo/R\\kT}"
+          "ktex": "\\kK=e^{-\\kdGo/R\\kT}",
+          "anchor": "16.4-equilibrium"
         }
       ]
     },

@@ -54,3 +54,5 @@ Nothing of the prose. Erratum kept as printed: "(*P* = 0). (Figure 16.4)." with 
 - variables `16.1/q_X` → 16.1-dispersal
 - variables `16.1/q_Y` → 16.1-dispersal
 - concepts `spontaneous-process`: add the glossary term "spontaneous change" (16.1's glossary; the concept is 11.1's)
+
+Applied by the chapter pass (2026-10-05): the nine anchors as listed; the `ref` already set on T_X, T_Y, q_X and q_Y kept. “spontaneous change” added to the terms of `spontaneous-process` through `ch11/book-rows.json` and `ost merge chemistry-2e 11`.

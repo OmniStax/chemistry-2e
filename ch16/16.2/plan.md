@@ -72,3 +72,5 @@ The Link to Learning on the states of matter simulator. Carried as printed: Figu
 - forms `eq-entropy-change-microstates` → 16.2-microstates
 - forms `eq-number-of-microstates` → 16.2-microstates
 - forms `eq-entropy-phase-order` → 16.2-predicting-sign
+
+Applied by the chapter pass (2026-10-05): every anchor as listed, fifteen variables and five forms.

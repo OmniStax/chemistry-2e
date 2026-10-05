@@ -302,7 +302,7 @@
         "at": "end"
       },
       "cite": "third-law",
-      "prompt": "Calculate $\\text{Δ}S\\text{°}$ for the following changes.<br>(a) ${\\text{SnCl}}_{4}(l)\\;\\longrightarrow \\;{\\text{SnCl}}_{4}(g)$<br>(b) ${\\text{CS}}_{2}(g)\\;\\longrightarrow \\;{\\text{CS}}_{2}(l)$<br>(c) $\\text{Cu}(s)\\;\\longrightarrow \\;\\text{Cu}(g)$<br>(d) ${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{O}(g)$<br>(e) $2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(l)$<br>(f) $2\\text{HCl}(g)+\\text{Pb}(s)\\;\\longrightarrow \\;{\\text{PbCl}}_{2}(s)+{\\text{H}}_{2}(g)$<br>(g) $\\text{Zn}(s)+{\\text{CuSO}}_{4}(s)\\;\\longrightarrow \\;\\text{Cu}(s)+{\\text{ZnSO}}_{4}(s)$",
+      "prompt": "Calculate $\\text{Δ}S^{\\circ}$ for the following changes.<br>(a) ${\\text{SnCl}}_{4}(l)\\;\\longrightarrow \\;{\\text{SnCl}}_{4}(g)$<br>(b) ${\\text{CS}}_{2}(g)\\;\\longrightarrow \\;{\\text{CS}}_{2}(l)$<br>(c) $\\text{Cu}(s)\\;\\longrightarrow \\;\\text{Cu}(g)$<br>(d) ${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{O}(g)$<br>(e) $2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(l)$<br>(f) $2\\text{HCl}(g)+\\text{Pb}(s)\\;\\longrightarrow \\;{\\text{PbCl}}_{2}(s)+{\\text{H}}_{2}(g)$<br>(g) $\\text{Zn}(s)+{\\text{CuSO}}_{4}(s)\\;\\longrightarrow \\;\\text{Cu}(s)+{\\text{ZnSO}}_{4}(s)$",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -378,7 +378,7 @@
         "at": "end"
       },
       "cite": "third-law",
-      "prompt": "Using the relevant $S\\text{°}$ values listed in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, calculate ${\\text{Δ}S\\text{°}}_{298}$ for the following changes:<br>(a) ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NH}}_{3}(g)$<br>(b) ${\\text{N}}_{2}(g)+\\;\\frac{5}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{N}}_{2}{\\text{O}}_{5}(g)$",
+      "prompt": "Using the relevant $S^{\\circ}$ values listed in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, calculate ${\\text{Δ}S^{\\circ}}_{298}$ for the following changes:<br>(a) ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NH}}_{3}(g)$<br>(b) ${\\text{N}}_{2}(g)+\\;\\frac{5}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{N}}_{2}{\\text{O}}_{5}(g)$",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -387,7 +387,7 @@
             "part": "(a)",
             "value": -198.1,
             "unit": "J/K",
-            "hint": "Look up $S\\text{°}$ for N<sub>2</sub>, H<sub>2</sub>, NH<sub>3</sub>, O<sub>2</sub> and N<sub>2</sub>O<sub>5</sub> in Appendix G and weight each by its coefficient, the fraction 5/2 included."
+            "hint": "Look up $S^{\\circ}$ for N<sub>2</sub>, H<sub>2</sub>, NH<sub>3</sub>, O<sub>2</sub> and N<sub>2</sub>O<sub>5</sub> in Appendix G and weight each by its coefficient, the fraction 5/2 included."
           },
           {
             "part": "(b)",

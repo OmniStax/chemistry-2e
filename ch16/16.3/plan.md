@@ -58,3 +58,5 @@ Nothing of the prose. The converter's stray `**` after the third-law equation is
 - forms `eq-second-law-surroundings` → 16.3-second-law
 - forms `eq-third-law` → 16.3-third-law
 - forms `eq-standard-entropy-change` → 16.3-third-law
+
+Applied by the chapter pass (2026-10-05): every anchor as listed, nine variables and five forms. Four rows added so that each macro the page writes has a row here: S at 16.3-third-law; T, ΔS and q_rev at 16.3-second-law, with 16.2's meanings. `config.md` now gives Table 16.1 its header row and Table 16.2 its CNXML caption as titles, as built.

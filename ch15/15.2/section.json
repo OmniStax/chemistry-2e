@@ -1,0 +1,890 @@
+{
+  "id": "15.2",
+  "module": "m68813",
+  "chapter": "15",
+  "title": "Lewis Acids and Bases",
+  "short": "Lewis Acids and Bases",
+  "lead": "Lewis widened the idea of an acid and a base to any species that accepts or donates a pair of electrons to form a <span data-concept=\"coordinate-covalent-bond\">coordinate covalent bond</span>. A metal ion that takes up ligands this way forms a <span data-concept=\"complex-ion\">complex ion</span>, whose <span data-concept=\"formation-constant\">formation constant</span> governs how much of a slightly soluble salt can be drawn into solution.",
+  "objectives": [
+    "Explain the Lewis model of acid-base chemistry",
+    "Write equations for the formation of adducts and complex ions",
+    "Perform equilibrium calculations involving formation constants"
+  ],
+  "summary_html": "<p>A Lewis acid is a species that can accept an electron pair, whereas a Lewis base has an electron pair available for donation to a Lewis acid. Complex ions are examples of Lewis acid-base adducts and comprise central metal atoms or ions acting as Lewis acids bonded to molecules or ions called ligands that act as Lewis bases. The equilibrium constant for the reaction between a metal ion and ligands produces a complex ion called a formation constant; for the reverse reaction, it is called a dissociation constant.</p>",
+  "notes": "Nothing of the section is left out; its five Lewis equations and the structure of Cu(CN)<sub>2</sub><sup>–</sup> are redrawn from the book’s images, the ICE table of Example 15.14 is written as a table and keeps the example’s [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099 without a unit, and the exercises keep as printed the “0.100 NH<sub>3</sub>” of exercise 64, the “potassium cyanide ion” of exercise 72 and the chargeless BF<sub>4</sub> in the key of exercise 82.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer; the keys of exercises 76 and 78 are the book’s Lewis-structure images. The seven unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm212489824, fs-idm50986272, fs-idm19606400, fs-idp18044656, fs-idm65404096, fs-idp26835744, fs-idm23888576. The three unkeyed conceptual exercises 75, 77 and 83 carry a suggested approach marked as OmniStax’s own. Exercise 62 (fs-idp46388832) is set in Section 15.1, where saturation is taught, and exercises 63 and 65 (fs-idm65484352, fs-idm98555648) in Section 15.3, which couples dissolution with other equilibria; exercises 86, 88 and 90 (fs-idm299312, fs-idp457072, fs-idp135248), printed in Section 15.3, are set here, where complex ion concentrations are calculated. Numeric answers accept 2%, the Check Your Learning 5% and the one-figure formation constant of exercise 66 10%.",
+  "figures": [
+    {
+      "id": "fig-hydronium",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_03_hydronium_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-bf3",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_BF3-LA_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-silver-ammonia",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_NH3-LBase_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-oxide",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_NonmetalOx_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-displace",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_Displace_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-cucn2",
+      "kind": "figure",
+      "originals": [
+        "/media/ch15/CNX_Chem_15_02_CuCN2-_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-agcl-ammonia",
+      "kind": "sim",
+      "draws": [
+        "concentration",
+        "amount",
+        "equilibrium-constant"
+      ],
+      "facts": [
+        "#f4f4f2"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "acid",
+      "label": "the Lewis acid",
+      "figures": [
+        "fig-hydronium",
+        "fig-bf3",
+        "fig-silver-ammonia",
+        "fig-oxide",
+        "fig-displace",
+        "fig-cucn2"
+      ]
+    },
+    {
+      "id": "displacer",
+      "label": "the base or acid that displaces another",
+      "figures": [
+        "fig-displace"
+      ]
+    },
+    {
+      "id": "base",
+      "label": "the Lewis base",
+      "figures": [
+        "fig-hydronium",
+        "fig-bf3",
+        "fig-silver-ammonia",
+        "fig-oxide",
+        "fig-displace",
+        "fig-cucn2"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "lewis-definition",
+      "concept": "coordinate-covalent-bond",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-acids-and-bases",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-acid",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-base",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-acid-base-adduct",
+      "verb": "introduces"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "bronsted-lowry-acids-bases",
+      "verb": "uses"
+    },
+    {
+      "span": "lewis-definition",
+      "concept": "lewis-structure",
+      "verb": "uses"
+    },
+    {
+      "span": "other-acids",
+      "concept": "lewis-acid",
+      "verb": "reinforces"
+    },
+    {
+      "span": "other-acids",
+      "concept": "lewis-base",
+      "verb": "reinforces"
+    },
+    {
+      "span": "other-acids",
+      "concept": "lewis-acid-base-adduct",
+      "verb": "reinforces"
+    },
+    {
+      "span": "other-acids",
+      "concept": "octet-rule-exceptions",
+      "verb": "uses"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "complex-ions-and-ligands",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "complex-ion",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "ligand",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "formation-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "dissociation-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "complex-ions",
+      "concept": "coupled-equilibria",
+      "verb": "uses"
+    },
+    {
+      "span": "dissolution",
+      "concept": "complex-ion-calculations",
+      "verb": "introduces"
+    },
+    {
+      "span": "dissolution",
+      "concept": "solubility-product",
+      "verb": "uses"
+    },
+    {
+      "span": "dissolution",
+      "concept": "qsp-versus-ksp",
+      "verb": "uses"
+    },
+    {
+      "span": "dissolution",
+      "concept": "small-x-approximation",
+      "verb": "uses"
+    },
+    {
+      "span": "dissolution",
+      "concept": "formation-constant",
+      "verb": "reinforces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm87668752",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-complex"
+      },
+      "cite": "dissolution",
+      "prompt": "Calculate the silver ion concentration, [Ag<sup>+</sup>], of a solution prepared by dissolving 1.00 g of AgNO<sub>3</sub> and 10.0 g of KCN in sufficient water to make 1.00 L of solution. (Hint: Because <em>K</em><sub>f</sub> is very large, the silver/cyanide complex ion (see Appendix K), assume the reaction goes to completion and then calculate the [Ag<sup>+</sup>] produced by dissociation of the complex.)",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 2.9e-22,
+        "unit": "M",
+        "tol": 0.05,
+        "hint": "Convert both masses to moles; the cyanide is in excess, so nearly all the silver ends up as Ag(CN)<sub>2</sub><sup>−</sup> and the leftover cyanide stays free. Then solve the formation constant expression for [Ag<sup>+</sup>].",
+        "solution": "2.9 × 10<sup>–22</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e64",
+      "source_id": "fs-idm55438304",
+      "source_number": "64",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "Calculate the cadmium ion concentration, [Cd<sup>2+</sup>], in a solution prepared by mixing 0.100 L of 0.0100 <em>M</em> Cd(NO<sub>3</sub>)<sub>2</sub> with 0.150 L of 0.100 NH<sub>3</sub>(<em>aq</em>).",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 8.2e-05,
+        "unit": "M",
+        "hint": "Find each concentration after mixing in 0.250 L, let the Cd<sup>2+</sup> form Cd(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup> completely, and use the formation constant from Appendix K with the ammonia left over.",
+        "solution": "8.2 × 10<sup>–5</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e66",
+      "source_id": "fs-idm72577424",
+      "source_number": "66",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "complex-ions",
+      "prompt": "Sometimes equilibria for complex ions are described in terms of dissociation constants, <em>K</em><sub>d</sub>. For the complex ion ${\\text{AlF}}_{6}{}^{3-}$ the dissociation reaction is:<br>${\\text{AlF}}_{6}{}^{3-}\\rightleftharpoons{\\text{Al}}^{3+}+6{\\text{F}}^{-}$ and ${K}_{\\text{d}}=\\frac{[{\\text{Al}}^{3+}]{[{\\text{F}}^{-}]}^{6}}{[{\\text{AlF}}_{6}{}^{3-}]}=2\\times{10}^{-24}$<br>Calculate the value of the formation constant, <em>K</em><sub>f</sub>, for ${\\text{AlF}}_{6}{}^{3-}.$",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 5e+23,
+        "tol": 0.1,
+        "hint": "The formation reaction is the reverse of the dissociation.",
+        "solution": "5 × 10<sup>23</sup>"
+      }
+    },
+    {
+      "id": "e68",
+      "source_id": "fs-idp18623376",
+      "source_number": "68",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "Using the dissociation constant, <em>K</em><sub>d</sub> = 3.3 × 10<sup>–19</sup>, calculate the equilibrium concentrations of Cd<sup>2+</sup> and CN<sup>–</sup> in a 0.250-<em>M</em> solution of $\\text{Cd}{(\\text{CN})}_{4}{}^{2-}.$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "[Cd<sup>2+</sup>]",
+            "value": 5e-05,
+            "unit": "M",
+            "hint": "Let x mol/L of the complex dissociate: [Cd<sup>2+</sup>] = x and [CN<sup>–</sup>] = 4x. With x small beside 0.250, solve x(4x)<sup>4</sup> = K<sub>d</sub>(0.250)."
+          },
+          {
+            "part": "[CN<sup>–</sup>]",
+            "value": 0.0002,
+            "unit": "M"
+          }
+        ],
+        "solution": "<img src=\"/media/ch15/CNX_Chem_15_02_ICETable3_img.jpg\" alt=\"An ICE table. Initial concentrations: Cd(CN)4 2− 0.250, CN− 0, Cd2+ 0. Equilibrium concentrations: 0.250 − x, 4x, and x.\"><br>[Cd<sup>2+</sup>] = 5.0 × 10<sup>–5</sup> <em>M</em>; [CN<sup>–</sup>] = 2.0 × 10<sup>–4</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e70",
+      "source_id": "fs-idm47233344",
+      "source_number": "70",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "Using the dissociation constant, <em>K</em><sub>d</sub> = 2.2 × 10<sup>–34</sup>, calculate the equilibrium concentrations of Co<sup>3+</sup> and NH<sub>3</sub> in a 0.500-<em>M</em> solution of $\\text{Co}{({\\text{NH}}_{3})}_{6}{}^{3+}.$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "[Co<sup>3+</sup>]",
+            "value": 3e-06,
+            "unit": "M",
+            "hint": "Let x mol/L dissociate: [Co<sup>3+</sup>] = x and [NH<sub>3</sub>] = 6x; with x small beside 0.500, solve x(6x)<sup>6</sup> = K<sub>d</sub>(0.500)."
+          },
+          {
+            "part": "[NH<sub>3</sub>]",
+            "value": 1.8e-05,
+            "unit": "M"
+          }
+        ],
+        "solution": "[Co<sup>3+</sup>] = 3.0 × 10<sup>–6</sup> <em>M</em>; [NH<sub>3</sub>] = 1.8 × 10<sup>–5</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e72",
+      "source_id": "fs-idm73346208",
+      "source_number": "72",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "Calculate the mass of potassium cyanide ion that must be added to 100 mL of solution to dissolve 2.0 × 10<sup>–2</sup> mol of silver cyanide, AgCN.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 1.3,
+        "unit": "g",
+        "hint": "Each AgCN that dissolves as Ag(CN)<sub>2</sub><sup>−</sup> takes one more cyanide ion; find the moles of cyanide needed and their mass as KCN.",
+        "solution": "1.3 g"
+      }
+    },
+    {
+      "id": "e74",
+      "source_id": "fs-idm77437136",
+      "source_number": "74",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "A roll of 35-mm black and white photographic film contains about 0.27 g of unexposed AgBr before developing. What mass of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub>·5H<sub>2</sub>O (sodium thiosulfate pentahydrate or hypo) in 1.0 L of fixer is required to dissolve the AgBr as $\\text{Ag}{({\\text{S}}_{2}{\\text{O}}_{3})}_{2}{}^{3-}$ (<em>K</em><sub>f</sub> = 4.7 × 10<sup>13</sup>)?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.79,
+        "unit": "g",
+        "hint": "Each AgBr dissolved takes two thiosulfate ions into the complex; convert the moles of thiosulfate to grams of the pentahydrate.",
+        "solution": "0.79 g"
+      }
+    },
+    {
+      "id": "e75",
+      "source_id": "fs-idp28555376",
+      "source_number": "75",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-definition",
+      "prompt": "We have seen an introductory definition of an acid: An acid is a compound that reacts with water and increases the amount of hydronium ion present. In the chapter on acids and bases, we saw two more definitions of acids: a compound that donates a proton (a hydrogen ion, H<sup>+</sup>) to another compound is called a Brønsted-Lowry acid, and a Lewis acid is any species that can accept a pair of electrons. Explain why the introductory definition is a macroscopic definition, while the Brønsted-Lowry definition and the Lewis definition are microscopic definitions.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: ask what each definition is tested by. A rise in hydronium ion concentration is something measured in a bulk sample, with an indicator or a pH meter. Donating a proton and accepting an electron pair describe what single molecules or ions do in a reaction, which cannot be seen in the bulk sample but explains what is measured there."
+      }
+    },
+    {
+      "id": "e76",
+      "source_id": "fs-idm105219776",
+      "source_number": "76",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "Write the Lewis structures of the reactants and product of each of the following equations, and identify the Lewis acid and the Lewis base in each:<br>(a) ${\\text{CO}}_{2}+{\\text{OH}}^{-}\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}$<br>(b) $\\text{B}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{B}{(\\text{OH})}_{4}{}^{-}$<br>(c) ${\\text{I}}^{-}+{\\text{I}}_{2}\\;\\longrightarrow\\;{\\text{I}}_{3}{}^{-}$<br>(d) ${\\text{AlCl}}_{3}+{\\text{Cl}}^{-}\\;\\longrightarrow\\;{\\text{AlCl}}_{4}{}^{-}$ (use Al-Cl single bonds)<br>(e) ${\\text{O}}^{2-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SO}}_{4}{}^{2-}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18a_img.jpg\" alt=\"Lewis structures: carbon dioxide, a carbon atom double bonded to two oxygen atoms, plus hydroxide ion in brackets with a negative charge, yields the bicarbonate ion, a carbon atom double bonded to one oxygen, single bonded to a second oxygen with three lone pairs, and single bonded to an oxygen that carries the hydrogen, in brackets with a negative charge.\"><br>(b)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18b_img.jpg\" alt=\"Lewis structures: boric acid, a boron atom single bonded to three O–H groups, plus hydroxide ion in brackets with a negative charge, yields B(OH)4−, a boron atom single bonded to four O–H groups, in brackets with a negative charge.\"><br>(c)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18c_img.jpg\" alt=\"Lewis structures: an iodine molecule, two iodine atoms single bonded with three lone pairs each, plus iodide ion with four lone pairs and a negative charge, yields the triiodide ion, three iodine atoms in a line, the central one with two lone pairs, in brackets with a negative charge.\"><br>(d)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18d_img.jpg\" alt=\"Lewis structures: aluminum chloride, an aluminum atom single bonded to three chlorine atoms, labelled Acid, plus chloride ion with four lone pairs and a negative charge, labelled Base, yields AlCl4−, an aluminum atom single bonded to four chlorine atoms, in brackets with a negative charge.\"><br>(e)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18e_img.jpg\" alt=\"Lewis structures: sulfur trioxide, a sulfur atom single bonded to two oxygen atoms and double bonded to a third, plus oxide ion with four lone pairs and a 2− charge, yields the sulfate ion, a sulfur atom single bonded to four oxygen atoms, in brackets with a 2− charge.\">"
+      }
+    },
+    {
+      "id": "e77",
+      "source_id": "fs-idp56004352",
+      "source_number": "77",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "Write the Lewis structures of the reactants and product of each of the following equations, and identify the Lewis acid and the Lewis base in each:<br>(a) ${\\text{CS}}_{2}+{\\text{SH}}^{-}\\;\\longrightarrow\\;{\\text{HCS}}_{3}{}^{-}$<br>(b) ${\\text{BF}}_{3}+{\\text{F}}^{-}\\;\\longrightarrow\\;{\\text{BF}}_{4}{}^{-}$<br>(c) ${\\text{I}}^{-}+{\\text{SnI}}_{2}\\;\\longrightarrow\\;{\\text{SnI}}_{3}{}^{-}$<br>(d) $\\text{Al}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{Al}{(\\text{OH})}_{4}{}^{-}$<br>(e) ${\\text{F}}^{-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SFO}}_{3}{}^{-}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: draw each reactant's Lewis structure first, then find the atom in the product that has gained a bond. The species that brings a lone pair to that bond is the Lewis base, and the species whose atom accepts the pair, often one short of an octet or able to give up a π bond, is the Lewis acid. In each of these reactions the anion is the base."
+      }
+    },
+    {
+      "id": "e78",
+      "source_id": "fs-idp26968080",
+      "source_number": "78",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "Using Lewis structures, write balanced equations for the following reactions:<br>(a) $\\text{HCl}(g)+{\\text{PH}}_{3}(g)\\;\\longrightarrow$<br>(b) ${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow$<br>(c) $\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow$<br>(d) ${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) <img src=\"/media/ch15/CNX_Chem_15_02_Answer24a_img.jpg\" alt=\"The equation HCl(g) plus PH3(g) yields PH4+ plus Cl−, then the same in Lewis structures: the phosphorus atom's lone pair of PH3 takes the hydrogen ion from HCl, giving the phosphonium ion, a phosphorus atom bonded to four hydrogen atoms in brackets with a positive charge, and chloride ion with four lone pairs.\"><br>(b) ${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow\\;{\\text{CH}}_{4}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24b_img.jpg\" alt=\"Lewis structures: the hydronium ion in brackets with a positive charge plus the methyl anion, a carbon atom with three hydrogen atoms and a lone pair in brackets with a negative charge, yields methane, a carbon atom bonded to four hydrogen atoms, plus water, an oxygen atom with two hydrogen atoms and two lone pairs.\"><br>(c) $\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow\\;\\text{CaSO}4$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24c_img.jpg\" alt=\"Lewis structures: Ca2+ beside the oxide ion with four lone pairs and a 2− charge, plus sulfur trioxide, yields Ca2+ beside the sulfate ion, a sulfur atom single bonded to four oxygen atoms with three lone pairs each, in brackets with a 2− charge.\"><br>(d) ${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow\\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{NH}}_{3}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24d_img.jpg\" alt=\"Lewis structures: the ammonium ion in brackets with a positive charge plus the ethoxide ion, CH3CH2O− with three lone pairs on oxygen, in brackets with a negative charge, yields ethanol, CH3CH2OH, plus ammonia.\">"
+      }
+    },
+    {
+      "id": "e80",
+      "source_id": "fs-idm44455728",
+      "source_number": "80",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "In a titration of cyanide ion, 28.72 mL of 0.0100 <em>M</em> AgNO<sub>3</sub> is added before precipitation begins. [The reaction of Ag<sup>+</sup> with CN<sup>–</sup> goes to completion, producing the $\\text{Ag}{(\\text{CN})}_{2}{}^{-}$ complex.] Precipitation of solid AgCN takes place when excess Ag<sup>+</sup> is added to the solution, above the amount needed to complete the formation of $\\text{Ag}{(\\text{CN})}_{2}{}^{-}.$ How many grams of NaCN were in the original sample?",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.0281,
+        "unit": "g",
+        "hint": "Up to the first precipitate, each Ag<sup>+</sup> added has taken two cyanide ions into the complex.",
+        "solution": "0.0281 g"
+      }
+    },
+    {
+      "id": "e82",
+      "source_id": "fs-idm47551360",
+      "source_number": "82",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "In dilute aqueous solution HF acts as a weak acid. However, pure liquid HF (boiling point = 19.5 °C) is a strong acid. In liquid HF, HNO<sub>3</sub> acts like a base and accepts protons. The acidity of liquid HF can be increased by adding one of several inorganic fluorides that are Lewis acids and accept F<sup>–</sup> ion (for example, BF<sub>3</sub> or SbF<sub>5</sub>). Write balanced chemical equations for the reaction of pure HNO<sub>3</sub> with pure HF and of pure HF with BF<sub>3</sub>.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "${\\text{HNO}}_{3}(l)+\\text{HF}(l)\\;\\longrightarrow\\;{\\text{H}}_{2}{\\text{NO}}_{3}{}^{+}+{\\text{F}}^{-};$ $\\text{HF}(l)+{\\text{BF}}_{3}(g)\\;\\longrightarrow\\;{\\text{H}}^{+}+{\\text{BF}}_{4}$"
+      }
+    },
+    {
+      "id": "e83",
+      "source_id": "fs-idp127234208",
+      "source_number": "83",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "lewis-definition",
+      "prompt": "The simplest amino acid is glycine, H<sub>2</sub>NCH<sub>2</sub>CO<sub>2</sub>H. The common feature of amino acids is that they contain the functional groups: an amine group, –NH<sub>2</sub>, and a carboxylic acid group, –CO<sub>2</sub>H. An amino acid can function as either an acid or a base. For glycine, the acid strength of the carboxyl group is about the same as that of acetic acid, CH<sub>3</sub>CO<sub>2</sub>H, and the base strength of the amino group is slightly greater than that of ammonia, NH<sub>3</sub>.<br>(a) Write the Lewis structures of the ions that form when glycine is dissolved in 1 <em>M</em> HCl and in 1 <em>M</em> KOH.<br>(b) Write the Lewis structure of glycine when this amino acid is dissolved in water. (Hint: Consider the relative base strengths of the –NH<sub>2</sub> and $-{\\text{CO}}_{2}{}^{-}$ groups.)",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: in a strong acid every group that can take a proton does, so the lone pair of the amine nitrogen bonds to H<sup>+</sup> and the carboxyl group stays as –CO<sub>2</sub>H; in a strong base every group that can lose a proton does, so the carboxyl group becomes –CO<sub>2</sub><sup>−</sup> and the amine stays –NH<sub>2</sub>. In water, compare the two groups: the amine is the stronger base, so the proton of the carboxyl group moves to the nitrogen, and both groups carry a charge in one molecule."
+      }
+    },
+    {
+      "id": "e84",
+      "source_id": "fs-idm16601024",
+      "source_number": "84",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "other-acids",
+      "prompt": "Boric acid, H<sub>3</sub>BO<sub>3</sub>, is not a Brønsted-Lowry acid but a Lewis acid. (Hint: See the equation in exercise 76.)<br>(a) Write an equation for its reaction with water.<br>(b) Predict the shape of the anion thus formed.<br>(c) What is the hybridization on the boron, and is it consistent with the shape you have predicted?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) ${\\text{H}}_{3}{\\text{BO}}_{3}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow\\;{\\text{H}}_{4}{\\text{BO}}_{4}{}^{-}+{\\text{H}}^{+};$ (b) The electronic and molecular shapes are the same—both tetrahedral. (c) The tetrahedral structure is consistent with <em>sp</em><sup>3</sup> hybridization."
+      }
+    },
+    {
+      "id": "e86",
+      "source_id": "fs-idm299312",
+      "source_section": "15.3",
+      "source_number": "86",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "Calculate the equilibrium concentration of Ni<sup>2+</sup> in a 1.0-<em>M</em> solution [Ni(NH<sub>3</sub>)<sub>6</sub>](NO<sub>3</sub>)<sub>2</sub>.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 0.014,
+        "unit": "M",
+        "hint": "Let x mol/L of Ni(NH<sub>3</sub>)<sub>6</sub><sup>2+</sup> dissociate, giving x of Ni<sup>2+</sup> and 6x of NH<sub>3</sub>, and use its formation constant from Appendix K.",
+        "solution": "0.014 <em>M</em>"
+      }
+    },
+    {
+      "id": "e88",
+      "source_id": "fs-idp457072",
+      "source_section": "15.3",
+      "source_number": "88",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "Calculate the equilibrium concentration of Cu<sup>2+</sup> in a solution initially with 0.050 <em>M</em> Cu<sup>2+</sup> and 1.00 <em>M</em> NH<sub>3</sub>.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 7.2e-15,
+        "unit": "M",
+        "hint": "Let the Cu<sup>2+</sup> form Cu(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup> completely, find the ammonia left over, then solve the formation constant expression for the small [Cu<sup>2+</sup>] that remains.",
+        "solution": "7.2 × 10<sup>–15</sup> <em>M</em>"
+      }
+    },
+    {
+      "id": "e90",
+      "source_id": "fs-idp135248",
+      "source_section": "15.3",
+      "source_number": "90",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dissolution",
+      "prompt": "Calculate the Fe<sup>3+</sup> equilibrium concentration when 0.0888 mole of K<sub>3</sub>[Fe(CN)<sub>6</sub>] is added to a solution with 0.00010 <em>M</em> CN<sup>–</sup>.",
+      "answer": {
+        "type": "number",
+        "generated_by": "source",
+        "value": 4.4e-22,
+        "unit": "M",
+        "hint": "The cyanide already present suppresses the dissociation, so [CN<sup>–</sup>] stays 0.00010 M; solve the formation constant expression of Fe(CN)<sub>6</sub><sup>3−</sup> for [Fe<sup>3+</sup>].",
+        "solution": "4.4 × 10<sup>−22</sup> <em>M</em>"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e64",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e64",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e64",
+      "concept": "dilution",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e66",
+      "concept": "dissociation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e66",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e68",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e68",
+      "concept": "dissociation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e70",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e70",
+      "concept": "dissociation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e72",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e72",
+      "concept": "complex-ion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e74",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e74",
+      "concept": "complex-ion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e75",
+      "concept": "lewis-acids-and-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e75",
+      "concept": "bronsted-lowry-acids-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e76",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e76",
+      "concept": "lewis-base",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e76",
+      "concept": "lewis-acid-base-adduct",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e76",
+      "concept": "lewis-structure",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e77",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e77",
+      "concept": "lewis-base",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e77",
+      "concept": "lewis-acid-base-adduct",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e77",
+      "concept": "lewis-structure",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e78",
+      "concept": "lewis-acids-and-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e78",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e78",
+      "concept": "lewis-base",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e78",
+      "concept": "lewis-structure",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e80",
+      "concept": "complex-ion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e80",
+      "concept": "titration-calculation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e82",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e82",
+      "concept": "lewis-acids-and-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e82",
+      "concept": "bronsted-lowry-acids-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e83",
+      "concept": "lewis-base",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e83",
+      "concept": "bronsted-lowry-acids-bases",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e83",
+      "concept": "lewis-structure",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e84",
+      "concept": "lewis-acid",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e84",
+      "concept": "vsepr-theory",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e84",
+      "concept": "hybridization",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e86",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e86",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e88",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e88",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e90",
+      "concept": "complex-ion-calculations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e90",
+      "concept": "formation-constant",
+      "weights_by": "ai"
+    }
+  ]
+}

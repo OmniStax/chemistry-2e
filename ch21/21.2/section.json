@@ -1,0 +1,363 @@
+{
+  "id": "21.2",
+  "module": "m68852",
+  "chapter": "21",
+  "title": "Nuclear Equations",
+  "short": "Nuclear Equations",
+  "lead": "<span data-concept=\"nuclear-reaction\">Nuclear reactions</span> change nuclei rather than the arrangement of their electrons. The particles that take part in them, from <span data-concept=\"alpha-particle\">alpha</span> and <span data-concept=\"beta-particle\">beta particles</span> to <span data-concept=\"positron\">positrons</span> and <span data-concept=\"gamma-ray\">gamma rays</span>, are named here, and a nuclear equation is written and balanced.",
+  "objectives": [
+    "Identify common particles and energies involved in nuclear reactions",
+    "Write and balance nuclear equations"
+  ],
+  "summary_html": "<p>Nuclei can undergo reactions that change their number of protons, number of neutrons, or energy state. Many different particles can be involved in <span data-concept=\"nuclear-reaction\">nuclear reactions</span>. The most common are <span data-concept=\"proton\">protons</span>, <span data-concept=\"neutron\">neutrons</span>, <span data-concept=\"positron\">positrons</span> (which are positively charged <span data-concept=\"electron\">electrons</span>), <span data-concept=\"alpha-particle\">alpha (α) particles</span> (which are high-energy helium nuclei), <span data-concept=\"beta-particle\">beta (β) particles</span> (which are high-energy <span data-concept=\"electron\">electrons</span>), and <span data-concept=\"gamma-ray\">gamma (γ) rays</span> (which compose high-energy <span data-concept=\"electromagnetic-radiation\">electromagnetic radiation</span>). As with chemical reactions, <span data-concept=\"balanced-nuclear-equation\">nuclear reactions are always balanced</span>. When a <span data-concept=\"nuclear-reaction\">nuclear reaction</span> occurs, the total mass (number) and the total charge remain unchanged.</p>",
+  "notes": "Nothing in the section’s text is left out.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The three unkeyed exercises fs-idm5988192 (four nuclear equations to complete), fs-idp59747856 (the equations of the preparation of technetium-99) and fs-idp208355344 (the volume of nitrogen gas from the decay of carbon-14) are left out, and no answer is computed for them. The unkeyed conceptual exercise fs-idp158311008 carries a suggested approach marked as OmniStax’s own. The keyed exercise fs-idp74968928, the binding energy of fluorine-19, tests the binding energy of Section 21.1 and is moved there. The key to fs-idp225643904 (b) writes ¹⁴₇C for nitrogen-14, as printed.",
+  "figures": [
+    {
+      "id": "sim-particles",
+      "kind": "sim",
+      "number": "21.4",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_03_RadioDecay-d92b.jpg"
+      ],
+      "original_caption": "Although many species are encountered in nuclear reactions, this table summarizes the names, symbols, representations, and descriptions of the most common of these.",
+      "draws": [],
+      "conventions": [
+        "p+",
+        "n0",
+        "e-",
+        "e+",
+        "gamma"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-nuclear-balance",
+      "kind": "sim",
+      "draws": [],
+      "conventions": [
+        "p+",
+        "n0"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "nuclear-reactions",
+      "concept": "nuclear-reaction",
+      "verb": "introduces"
+    },
+    {
+      "span": "nuclear-reactions",
+      "concept": "nuclide",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-reactions",
+      "concept": "mass-number",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-reactions",
+      "concept": "atomic-number",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "beta-particle",
+      "verb": "introduces"
+    },
+    {
+      "span": "particles",
+      "concept": "positron",
+      "verb": "introduces"
+    },
+    {
+      "span": "particles",
+      "concept": "antimatter",
+      "verb": "introduces"
+    },
+    {
+      "span": "particles",
+      "concept": "gamma-ray",
+      "verb": "introduces"
+    },
+    {
+      "span": "particles",
+      "concept": "alpha-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "proton",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "neutron",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "electron",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "mass-energy-equivalence",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "electromagnetic-radiation",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "wave-particle-duality",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "excited-state",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "particles",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "balancing",
+      "concept": "balanced-nuclear-equation",
+      "verb": "introduces"
+    },
+    {
+      "span": "balancing",
+      "concept": "balancing-nuclear-equations",
+      "verb": "introduces"
+    },
+    {
+      "span": "balancing",
+      "concept": "balanced-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "balancing",
+      "concept": "nucleon",
+      "verb": "uses"
+    },
+    {
+      "span": "balancing",
+      "concept": "mass-number",
+      "verb": "uses"
+    },
+    {
+      "span": "balancing",
+      "concept": "atomic-number",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-balancing",
+      "concept": "balancing-nuclear-equations",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-balancing",
+      "concept": "periodic-table",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp244468800",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-balancing"
+      },
+      "cite": "ex-balancing",
+      "prompt": "The nuclide ${}_{\\;53}^{125}\\text{I}$ combines with an electron and produces a new nucleus and no other massive particles. What is the equation for this reaction?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "${}_{\\;53}^{125}\\text{I}+{}_{-1}^{\\;0}\\text{e}\\;\\longrightarrow \\;{}_{\\;52}^{125}\\text{Te}$"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp161987712",
+      "source_number": "11",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "particles",
+      "prompt": "Write a brief description or definition of each of the following:<br>(a) nucleon<br>(b) α particle<br>(c) β particle<br>(d) positron<br>(e) γ ray<br>(f) nuclide<br>(g) mass number<br>(h) atomic number",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) A nucleon is any particle contained in the nucleus of the atom, so it can refer to protons and neutrons. (b) An α particle is one product of natural radioactivity and is the nucleus of a helium atom. (c) A β particle is a product of natural radioactivity and is a high-speed electron. (d) A positron is a particle with the same mass as an electron but with a positive charge. (e) Gamma rays compose electromagnetic radiation of high energy and short wavelength. (f) Nuclide is a term used when referring to a single type of nucleus. (g) The mass number is the sum of the number of protons and the number of neutrons in an element. (h) The atomic number is the number of protons in the nucleus of an element."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp158311008",
+      "source_number": "12",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "particles",
+      "prompt": "Which of the various particles (α particles, β particles, and so on) that may be produced in a nuclear reaction are actually nuclei?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: a nucleus is a bound cluster of protons and neutrons, the part of an atom left when its electrons are taken away. Go down the particles of Figure 21.4 and read each one’s description, asking whether it is the nucleus of an atom of some element; set aside the ones described as electrons or as electromagnetic radiation, since these carry no protons or neutrons at all."
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp126933936",
+      "source_number": "13",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "balancing",
+      "prompt": "Complete each of the following equations by adding the missing species:<br>(a) ${}_{13}^{27}\\text{Al}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;?\\;+{}_{0}^{1}\\text{n}$<br>(b) ${}_{\\;94}^{239}\\text{Pu}+?\\;\\longrightarrow \\;{}_{\\;96}^{242}\\text{Cm}+{}_{0}^{1}\\text{n}$<br>(c) ${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;\\text{?}+{}_{1}^{1}\\text{H}$<br>(d) ${}_{\\;92}^{235}\\text{U}\\;\\longrightarrow \\;\\text{?}+{}_{\\;55}^{135}\\text{Cs}+4{}_{0}^{1}\\text{n}$",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) ${}_{13}^{27}\\text{Al}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{15}^{30}\\text{P}+{}_{0}^{1}\\text{n};$ (b) ${}_{\\;94}^{239}\\text{Pu}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;96}^{242}\\text{Cm}+{}_{0}^{1}\\text{n};$ (c) ${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ (d) ${}_{\\;92}^{235}\\text{U}\\;\\longrightarrow \\;{}_{37}^{96}\\text{Rb}+{}_{\\;55}^{135}\\text{Cs}+4{}_{0}^{1}\\text{n}$"
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp225643904",
+      "source_number": "15",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "balancing",
+      "prompt": "Write a balanced equation for each of the following nuclear reactions:<br>(a) the production of <sup>17</sup>O from <sup>14</sup>N by α particle bombardment<br>(b) the production of <sup>14</sup>C from <sup>14</sup>N by neutron bombardment<br>(c) the production of <sup>233</sup>Th from <sup>232</sup>Th by neutron bombardment<br>(d) the production of <sup>239</sup>U from <sup>238</sup>U by ${}_{1}^{2}\\text{H}$ bombardment",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) ${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ (b) ${}_{\\;7}^{14}\\text{C}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;6}^{14}\\text{C}+{}_{1}^{1}\\text{H};$ (c) ${}_{\\;90}^{232}\\text{Th}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;90}^{233}\\text{Th};$ (d) ${}_{92}^{238}\\text{U}+{}_{1}^{2}\\text{H}\\;\\longrightarrow \\;{}_{\\;92}^{239}\\text{U}+{}_{1}^{1}\\text{H}$"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "balancing-nuclear-equations"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "balanced-nuclear-equation"
+    },
+    {
+      "exercise": "e1",
+      "concept": "nucleon"
+    },
+    {
+      "exercise": "e1",
+      "concept": "alpha-particle"
+    },
+    {
+      "exercise": "e1",
+      "concept": "beta-particle"
+    },
+    {
+      "exercise": "e1",
+      "concept": "positron"
+    },
+    {
+      "exercise": "e1",
+      "concept": "gamma-ray"
+    },
+    {
+      "exercise": "e1",
+      "concept": "nuclide"
+    },
+    {
+      "exercise": "e1",
+      "concept": "mass-number"
+    },
+    {
+      "exercise": "e1",
+      "concept": "atomic-number"
+    },
+    {
+      "exercise": "e2",
+      "concept": "alpha-particle"
+    },
+    {
+      "exercise": "e2",
+      "concept": "beta-particle"
+    },
+    {
+      "exercise": "e2",
+      "concept": "positron"
+    },
+    {
+      "exercise": "e2",
+      "concept": "gamma-ray"
+    },
+    {
+      "exercise": "e3",
+      "concept": "balancing-nuclear-equations"
+    },
+    {
+      "exercise": "e4",
+      "concept": "balancing-nuclear-equations"
+    },
+    {
+      "exercise": "e4",
+      "concept": "nuclear-reaction"
+    }
+  ],
+  "referents": []
+}

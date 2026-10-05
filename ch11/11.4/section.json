@@ -140,6 +140,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "rewritten: log overview with a linear inset at 1 atm for ΔT_b and ΔP"
         }
       ]
     },

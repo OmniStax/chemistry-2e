@@ -134,9 +134,13 @@ function water(g, p, a, s = 1) {
 
 /* =====================================================================
    FIGURE 11.23: phase diagrams of water and of an aqueous solution.
-   Still: the diagram answers its slider and choice. Temperature axis
-   fixed at −30 to 110 °C; pressure on a logarithmic axis from 0.001 to
-   2 atm, so the triple point (0.008 atm here) and 1 atm both show.
+   Still: the diagram answers its slider and choice. Left, the overview:
+   temperature fixed at −40 to 120 °C, pressure on a logarithmic axis
+   from 0.001 to 10 atm, so the triple point (0.006 atm) and 1 atm both
+   show; it carries the ΔT_f bracket. Right, a linear inset round the
+   normal boiling point, 98 to 106 °C and 0.85 to 1.10 atm, which holds
+   the ΔT_b and ΔP brackets at 3.00 m of CaCl2 (4.3 °C, 0.14 atm) and
+   magnifies the 0.51 °C and 0.018 atm of the default to a readable size.
    Water by Clausius–Clapeyron: ΔH_vap = 40.7 kJ/mol through 100 °C and
    1 atm (which gives K_b = 0.512 °C/m), ΔH_sub = 46.7 kJ/mol through the
    triple point. The solution's liquid–vapor curve is X_solvent times
@@ -152,54 +156,91 @@ function water(g, p, a, s = 1) {
   const K = (t) => t + 273.15;
   const Pvap = (t) => Math.exp(-HV / RG * (1 / K(t) - 1 / 373.15));
   const P3 = Pvap(0.01), Psub = (t) => P3 * Math.exp(-HS / RG * (1 / K(t) - 1 / 273.16));
-  const box = { l: 150, r: 1320, t: 110, b: 530 };
-  const X = (t) => box.l + (t + 30) / 140 * (box.r - box.l);
-  const LO = -3, HI = Math.log10(2), Y = (p) => box.b - (Math.log10(p) - LO) / (HI - LO) * (box.b - box.t);
-  const path = (ctx, f, t0, t1, color, dash) => {
-    ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = 4; if (dash) ctx.setLineDash(dash); ctx.beginPath();
-    let started = false;
-    for (let i = 0; i <= 160; i++) { const t = t0 + (t1 - t0) * i / 160, p = f(t); if (p > 2 || p < 1e-3) { started = false; continue; } const x = X(t), y = Y(p); if (started) ctx.lineTo(x, y); else { ctx.moveTo(x, y); started = true; } }
-    ctx.stroke(); ctx.restore();
-  };
+  /* the overview's axes run in t + 40 and log10 P + 3, so neither range straddles the zero F.axes rules */
+  const OB = { l: 120, r: 820, t: 120, b: 520 }, IB = { l: 960, r: 1350, t: 120, b: 470 };
+  const IX = [98, 106], IY = [0.85, 1.1];
+  const lg = (p) => Math.log10(Math.max(p, 1e-9)) + 3;
+  function clipTo(ctx, b, f) { ctx.save(); ctx.beginPath(); ctx.rect(b.l, b.t, b.r - b.l, b.b - b.t); ctx.clip(); f(); ctx.restore(); }
+  function dashed(ctx, f) { ctx.save(); ctx.setLineDash([12, 9]); f(); ctx.restore(); }
   function draw() {
-    const { ctx } = begin(d.c);
+    const { ctx, H } = begin(d.c), lab = F.labeller(ctx, H, { headline: true });
     const m = mS.v, iv = sol.mix((s) => I[s]), ip = I[sol.value], ct = C('temperature'), cp = C('pressure');
     const Xs = W_MOL / (W_MOL + iv * m), tf = -iv * KF * m;
     const tb = 1 / (1 / 373.15 + RG * Math.log(Xs) / HV) - 273.15;
-    /* frame */
-    line(ctx, box.l, box.t, box.l, box.b, PAL.muted, 2); line(ctx, box.l, box.b, box.r, box.b, PAL.muted, 2);
-    for (let t = -20; t <= 100; t += 20) { line(ctx, X(t), box.b, X(t), box.b + 8, PAL.muted, 2); text(ctx, minus(t), X(t), box.b + 26, PAL.muted, { size: 17, align: 'center' }); }
-    for (const p of [0.001, 0.01, 0.1, 1]) { line(ctx, box.l - 8, Y(p), box.l, Y(p), PAL.muted, 2); line(ctx, box.l, Y(p), box.r, Y(p), alpha(PAL.ink, 0.12), 1); text(ctx, String(p), box.l - 14, Y(p), PAL.muted, { size: 17, align: 'right' }); }
-    text(ctx, 'temperature (°C)', (box.l + box.r) / 2, box.b + 62, ct, { size: 20, weight: 600, align: 'center' });
-    text(ctx, 'pressure (atm)', 30, box.t - 42, cp, { size: 20, weight: 600 });
-    line(ctx, box.l, Y(1), box.r, Y(1), alpha(PAL.ink, 0.35), 2, [10, 10]);
-    /* water, solid; the solution, dashed */
-    const cSub = F.ref('sub-curve'), cVap = F.ref('vap-curve'), cMelt = F.ref('melt-curve');
-    path(ctx, Psub, -30, 0.01, cSub);
-    path(ctx, Pvap, 0.01, 110, cVap);
-    line(ctx, X(0.01), Y(P3), X(0.01), box.t, cMelt, 4);
-    const pT = Psub(tf);
-    path(ctx, (t) => Xs * Pvap(t), tf, 110, cVap, [12, 9]);
-    ctx.save(); ctx.setLineDash([12, 9]); line(ctx, X(tf), Y(pT), X(tf), box.t, cMelt, 4); ctx.restore();
-    text(ctx, 'solid', X(-22), Y(0.3), PAL.muted, { size: 20, align: 'center' });
-    text(ctx, 'liquid', X(45), Y(0.6), PAL.muted, { size: 20, align: 'center' });
-    text(ctx, 'gas', X(60), Y(0.004), PAL.muted, { size: 20, align: 'center' });
-    /* the colligative gaps */
+    const cSub = F.ref('sub-curve'), cVap = F.ref('vap-curve'), cMelt = F.ref('melt-curve'), guide = alpha(PAL.ink, 0.35);
+    const sol_ = (t) => Xs * Pvap(t);
+    /* the overview */
+    const o = F.axes(ctx, OB, [0, 160], [0, 4], { nx: 8, ny: 4, fx: (v) => minus(fmt(v - 40, 0)), fy: (v) => String(+(10 ** (v - 3)).toPrecision(1)), xl: 'temperature (°C)', xc: ct, yl: 'pressure (atm)', yc: cp });
+    const OX = (t) => o.X(t + 40), OY = (p) => o.Y(lg(p));
+    clipTo(ctx, OB, () => {
+      line(ctx, OB.l, OY(1), OB.r, OY(1), guide, 2, [10, 10]);
+      F.curve(ctx, (t) => lg(Psub(t)), -40, 0.01, OX, o.Y, cSub, 4, 120);
+      F.curve(ctx, (t) => lg(Pvap(t)), 0.01, 120, OX, o.Y, cVap, 4, 160);
+      line(ctx, OX(0.01), OY(P3), OX(0.01), OB.t, cMelt, 4);
+      if (m > 0) dashed(ctx, () => {
+        F.curve(ctx, (t) => lg(sol_(t)), tf, 120, OX, o.Y, cVap, 4, 160);
+        line(ctx, OX(tf), OY(Psub(tf)), OX(tf), OB.t, cMelt, 4);
+      });
+    });
+    text(ctx, 'solid', OX(-30), OY(0.1), PAL.muted, { size: 20, align: 'center' });
+    text(ctx, 'liquid', OX(45), OY(3), PAL.muted, { size: 20, align: 'center' });
+    text(ctx, 'gas', OX(45), OY(0.01), PAL.muted, { size: 20, align: 'center' });
+    /* the legend, in the overview's empty gas region */
+    const lx = OX(78), ly = OY(0.0035);
+    line(ctx, lx, ly, lx + 46, ly, PAL.ink, 4); text(ctx, 'water', lx + 58, ly, PAL.ink, { size: 18 });
+    dashed(ctx, () => line(ctx, lx, ly + 32, lx + 46, ly + 32, PAL.ink, 4)); text(ctx, 'solution', lx + 58, ly + 32, PAL.ink, { size: 18 });
+    lab.block(lx - 8, ly - 16, lx + 150, ly + 48);
+    /* the window the inset magnifies */
+    const wl = OX(IX[0]), wr = OX(IX[1]), wt = OY(IY[1]), wb = OY(IY[0]);
+    ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(wl, wt, wr - wl, wb - wt); ctx.restore();
     const dTf = ip * KF * m, dTb = ip * KB * m, dP = 1 - W_MOL / (W_MOL + ip * m);
     if (m > 0) {
-      line(ctx, X(tf), Y(1), X(tf), Y(1) - 34, alpha(PAL.ink, 0.35), 2, [4, 8]); hbracket(ctx, X(tf), X(0), Y(1) - 34, ct, 'ΔT_{f}', { size: 20 });
-      hbracket(ctx, X(100), X(tb), Y(1) - 34, ct, 'ΔT_{b}', { size: 20 });
-      line(ctx, X(100), Y(1), X(100), Y(1) - 34, alpha(PAL.ink, 0.35), 2, [4, 8]);
-      line(ctx, X(tb), Y(1), X(tb), Y(1) - 34, alpha(PAL.ink, 0.35), 2, [4, 8]);
-      vbracket(ctx, X(100) - 14, Y(1), Y(Xs * Pvap(100)), cp, 'ΔP', -1, { side: 'left', size: 20 });
+      const yb = OY(1) - 44;
+      line(ctx, OX(tf), OY(1), OX(tf), yb, guide, 2, [4, 8]);
+      hbracket(ctx, OX(tf), OX(0), yb, ct);
+      lab.block(OX(tf) - 6, OB.t, OX(0) + 6, OB.b);
+      lab.add('ΔT_{f}', OX(tf) - 10, yb, -1, 0, ct, 20, 12);
     }
-    text(ctx, 'water', X(66), Y(Pvap(66)) - 24, PAL.ink, { size: 18, align: 'right', bg: PAL.panel });
-    if (m > 0) text(ctx, 'solution', X(74), Y(Xs * Pvap(74)) + 28, PAL.ink, { size: 18, align: 'left', bg: PAL.panel });
+    /* the inset */
+    const n = F.axes(ctx, IB, IX, IY, { nx: 4, ny: 5, fy: (v) => fmt(v, 2), xl: 'temperature (°C)', xc: ct, yl: 'pressure (atm)', yc: cp });
+    ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 1.5; ctx.strokeRect(IB.l, IB.t, IB.r - IB.l, IB.b - IB.t); ctx.restore();
+    lab.block(IB.l - 70, IB.t - 40, IB.r, IB.t - 8); lab.block(IB.l - 70, IB.t, IB.l, IB.b + 70); lab.block(IB.l, IB.b, IB.r + 30, IB.b + 70);
+    text(ctx, 'liquid', IB.l + 14, IB.t + 24, PAL.muted, { size: 20 });
+    text(ctx, 'gas', IB.r - 14, IB.b - 22, PAL.muted, { size: 20, align: 'right' });
+    lab.block(IB.l, IB.t, IB.l + 80, IB.t + 44); lab.block(IB.r - 60, IB.b - 44, IB.r, IB.b);
+    clipTo(ctx, IB, () => {
+      line(ctx, IB.l, n.Y(1), IB.r, n.Y(1), guide, 2, [10, 10]);
+      F.curve(ctx, Pvap, IX[0], IX[1], n.X, n.Y, cVap, 4, 80);
+      if (m > 0) dashed(ctx, () => F.curve(ctx, sol_, IX[0], IX[1], n.X, n.Y, cVap, 4, 80));
+    });
+    /* the curves join the labels' collision set, so a label steps off them */
+    for (let t = IX[0]; t <= IX[1]; t += 0.08) for (const p of m > 0 ? [Pvap(t), sol_(t)] : [Pvap(t)]) {
+      if (p < IY[0] || p > IY[1]) continue;
+      const x = n.X(t), y = n.Y(p); lab.block(x - 3, y - 3, x + 3, y + 3);
+    }
+    if (m > 0) {
+      const x0 = n.X(100), x1 = n.X(tb), y0 = n.Y(1), y1 = n.Y(Xs);
+      hbracket(ctx, x0, x1, y0, ct);
+      vbracket(ctx, x0, y0, y1, cp);
+      lab.block(x0 - 6, y0 - 6, x0 + 6, y1 + 6); lab.block(x0 - 6, y0 - 12, x1 + 6, y0 + 12);
+      /* ΔT_b leaves its bracket down into the gas, clear of both curves */
+      const aim = (hx, hy, tx, ty) => { const L = Math.hypot(tx - hx, ty - hy) || 1; return [(tx - hx) / L, (ty - hy) / L, Math.max(20, L)]; };
+      const [bx, by, bg] = aim((x0 + x1) / 2, y0, n.X(tb + 0.7), n.Y(0.965));
+      lab.add('ΔT_{b}', (x0 + x1) / 2, y0 + 6, bx, by, ct, 20, bg);
+    }
+    lab.flush();
+    if (m > 0) {
+      /* ΔP is set in the liquid region above 1 atm, where nothing moves at any molality, and leadered back to its bracket */
+      const x0 = n.X(100), ym = (n.Y(1) + n.Y(Xs)) / 2, hx = IB.l + 64, hy = n.Y(1.045), L = Math.hypot(hx - x0, hy - ym);
+      line(ctx, x0 + (hx - x0) / L * 12, ym + (hy - ym) / L * 12, hx + (x0 - hx) / L * 30, hy + (ym - hy) / L * 30, alpha(cp, 0.5), 1.5, [5, 6]);
+      text(ctx, 'ΔP_{vp}', hx, hy, cp, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
+    }
     const fz = minus(fmt(-dTf, 2)), bp = fmt(100 + dTb, 2);
     topline(ctx, m === 0 ? 'With no solute, the solution’s curves lie on those of water.' : 'A ' + fmt(m, 2) + ' m solution of ' + NAME[sol.value] + ' freezes at ' + fz + ' °C and boils at ' + bp + ' °C.');
     const mm = hue('concentration', fmt(m, 2) + '\\ m');
-    readout(d.readout, `\\kdTf = i\\kKf\\kmolal = ${ip} \\times ${hue('colligative-constant', '1.86\\ {}^{\\circ}\\text{C}/m')} \\times ${mm} = ${hue('temperature', fmt(dTf, 2) + '\\ {}^{\\circ}\\text{C}')}`,
-      'By the same count of particles, the boiling point rises by ' + fmt(dTb, 2) + ' °C, and at 100 °C the vapor pressure is lowered by ' + fmt(dP, 3) + ' atm. For ' + NAME[sol.value] + ', i = ' + ip + (ip > 1 ? ', assuming complete dissociation.' : ', since it does not dissociate.'));
+    tex(d.readout, `\\kdTf = i\\kKf\\kmolal = ${ip} \\times ${hue('colligative-constant', '1.86\\ {}^{\\circ}\\text{C}/m')} \\times ${mm} = ${hue('temperature', fmt(dTf, 2) + '\\ {}^{\\circ}\\text{C}')}`);
+    const sm = d.readout.appendChild(el('small'));
+    tex(sm, `\\text{at } ${hue('temperature', '100\\ {}^{\\circ}\\text{C}')}\\text{: } \\kdPvp = (1 - X_{\\text{solvent}}) \\times ${hue('pressure', '1\\ \\text{atm}')} = ${hue('pressure', fmt(dP, 3) + '\\ \\text{atm}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

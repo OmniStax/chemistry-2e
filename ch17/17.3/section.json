@@ -1,0 +1,449 @@
+{
+  "id": "17.3",
+  "module": "m68823",
+  "chapter": "17",
+  "title": "Electrode and Cell Potentials",
+  "short": "Electrode and Cell Potentials",
+  "lead": "Only the difference in potential between two half-cells can be measured. Fixing one half-cell, the standard hydrogen electrode, at exactly 0 V gives every other half-cell an electrode potential of its own, and a table of standard electrode potentials, in order of oxidant strength, is the tool for predicting which redox reactions occur on their own.",
+  "objectives": [
+    "Describe and relate the definitions of electrode and cell potentials",
+    "Interpret electrode potentials in terms of relative oxidant and reductant strengths",
+    "Calculate cell potentials and predict redox spontaneity using standard electrode potentials"
+  ],
+  "summary_html": "<p>The property of <span data-concept=\"electrical-potential\">potential</span>, $\\kEpot$, is the energy associated with the separation/transfer of charge. In electrochemistry, the potentials of cells and half-cells are thermodynamic quantities that reflect the driving force or the spontaneity of their redox processes. The <span data-concept=\"cell-potential\">cell potential</span> of an electrochemical cell is the difference in between its cathode and anode. To permit easy sharing of half-cell potential data, the <span data-concept=\"standard-hydrogen-electrode\">standard hydrogen electrode (SHE)</span> is assigned a potential of exactly <span data-type=\"potential\">0 V</span> and used to define a single electrode potential for any given half-cell. The <span data-concept=\"electrode-potential\">electrode potential</span> of a half-cell, $\\kEX$, is the cell potential of said half-cell acting as a cathode when connected to a SHE acting as an anode. When the half-cell is operating under standard state conditions, its potential is the <span data-concept=\"standard-electrode-potential\">standard electrode potential</span>, $\\kEoX$. Standard electrode potentials reflect the relative oxidizing strength of the half-reaction’s reactant, with stronger oxidants exhibiting larger (more positive) $\\kEoX$ values. Tabulations of standard electrode potentials may be used to compute <span data-concept=\"standard-cell-potential\">standard cell potentials</span>, $\\kEocell$, for many redox reactions. The arithmetic sign of a cell potential indicates the spontaneity of the cell reaction, with positive values for spontaneous reactions and negative values for nonspontaneous reactions (spontaneous in the reverse direction).</p>",
+  "notes": "The book’s slips are kept as printed: the answer “−0. 47 V” and “Br₂(s)” in the Check Your Learning answers, Table 17.1’s +0.34 V for copper beside the text’s +0.337 V, its Mn²⁺ and Zn(OH)₂ rows printed above Zn²⁺, and “Mg²(aq)” without its plus sign.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The three unkeyed exercises, whose answers would have to be computed, are left out, and no answer is computed for them: fs-idm18460288 (exercise 22), fs-idp4217296 (24) and fs-idp110111760 (26).",
+  "figures": [
+    {
+      "id": "sim-she-cell",
+      "kind": "sim",
+      "number": "17.5",
+      "folds": [
+        "17.6"
+      ],
+      "originals": [
+        "/media/ch17/CNX_Chem_17_03_SHE.jpg",
+        "/media/ch17/CNX_Chem_17_03_GalvanCu.jpg"
+      ],
+      "original_caption": "(Figure 17.5) A standard hydrogen electrode (SHE). (Figure 17.6) A cell permitting experimental measurement of the standard electrode potential for the half-reaction Cu²⁺(aq) + 2e⁻ ⟶ Cu(s)",
+      "draws": [
+        "potential"
+      ],
+      "conventions": [
+        "Pt",
+        "H",
+        "e-",
+        "Ag",
+        "Cu",
+        "Pb",
+        "Zn"
+      ],
+      "facts": [
+        "#3c9ad6",
+        "#c62828",
+        "#1f1f1f"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-ladder",
+      "kind": "sim",
+      "draws": [
+        "potential"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "cathode-half-cell",
+      "label": "the cathode half-cell",
+      "figures": [
+        "sim-ladder"
+      ]
+    },
+    {
+      "id": "anode-half-cell",
+      "label": "the anode half-cell",
+      "figures": [
+        "sim-ladder"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "cell-potentials",
+      "concept": "electrical-potential",
+      "verb": "introduces"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "cell-potential",
+      "verb": "introduces"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "standard-cell-potential",
+      "verb": "introduces"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "redox-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "oxidizing-agent",
+      "verb": "uses"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "reducing-agent",
+      "verb": "uses"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "half-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "cell-potentials",
+      "concept": "standard-state",
+      "verb": "uses"
+    },
+    {
+      "span": "she",
+      "concept": "standard-hydrogen-electrode",
+      "verb": "introduces"
+    },
+    {
+      "span": "she",
+      "concept": "electrode-potential",
+      "verb": "introduces"
+    },
+    {
+      "span": "she",
+      "concept": "standard-electrode-potential",
+      "verb": "introduces"
+    },
+    {
+      "span": "she",
+      "concept": "inert-electrode",
+      "verb": "uses"
+    },
+    {
+      "span": "she",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "she",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "she",
+      "concept": "salt-bridge",
+      "verb": "uses"
+    },
+    {
+      "span": "table",
+      "concept": "standard-electrode-potential",
+      "verb": "reinforces"
+    },
+    {
+      "span": "table",
+      "concept": "standard-cell-potential",
+      "verb": "reinforces"
+    },
+    {
+      "span": "table",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "table",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-standard-cell",
+      "concept": "standard-cell-potential",
+      "verb": "reinforces"
+    },
+    {
+      "span": "interpreting",
+      "concept": "electrode-potential-and-oxidant-strength",
+      "verb": "introduces"
+    },
+    {
+      "span": "interpreting",
+      "concept": "cell-potential-and-spontaneity",
+      "verb": "introduces"
+    },
+    {
+      "span": "interpreting",
+      "concept": "predict-redox-spontaneity",
+      "verb": "introduces"
+    },
+    {
+      "span": "interpreting",
+      "concept": "oxidizing-agent",
+      "verb": "uses"
+    },
+    {
+      "span": "interpreting",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "interpreting",
+      "concept": "nonspontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-spontaneity",
+      "concept": "predict-redox-spontaneity",
+      "verb": "reinforces"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idm10620896",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-standard-cell"
+      },
+      "cite": "table",
+      "prompt": "What is the standard cell potential expected if the silver cathode half-cell in Figure 17.3 is replaced with a lead half-cell: ${\\text{Pb}}^{2+}(aq)+2{\\text{e}}^{−}\\;\\longrightarrow \\;\\text{Pb}(s)$?",
+      "answer": {
+        "type": "number",
+        "value": -0.47,
+        "unit": "V",
+        "generated_by": "source",
+        "hint": "Lead is now the cathode and copper is still the anode; subtract the anode’s standard electrode potential from the cathode’s, as in Example 17.4.",
+        "solution": "−0. 47 V"
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm226975904",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-spontaneity"
+      },
+      "cite": "interpreting",
+      "prompt": "Use the data in Table 17.1 to predict the spontaneity of the oxidation of bromide ion by molecular iodine under standard state conditions, supporting the prediction by calculating the standard cell potential for the reaction. Repeat for the oxidation of iodide ion by molecular bromine.",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "<em>E</em>°<sub>cell</sub> for the oxidation of Br<sup>−</sup> by I<sub>2</sub>",
+            "value": -0.5518,
+            "unit": "V",
+            "hint": "The oxidant, I<sub>2</sub>, is reduced at the cathode and Br<sup>−</sup> is oxidized at the anode; compare the positions of their entries in the table."
+          },
+          {
+            "part": "<em>E</em>°<sub>cell</sub> for the oxidation of I<sup>−</sup> by Br<sub>2</sub>",
+            "value": 0.5518,
+            "unit": "V",
+            "hint": "Reversing the reaction swaps the cathode and anode, so the subtraction runs the other way."
+          }
+        ],
+        "solution": "$\\begin{array}{ll}{\\text{I}}_{2}(s)+2{\\text{Br}}^{−}(aq)\\;\\longrightarrow \\;2{\\text{I}}^{−}(aq)+{\\text{Br}}_{2}(l) & \\hspace{2em}{E}^{\\circ}{}_{\\text{cell}}=−0.5518\\;\\text{V}\\;\\text{(nonspontaneous)} \\\\ {\\text{Br}}_{2}(s)+2{\\text{I}}^{−}(aq)\\;\\longrightarrow \\;2{\\text{Br}}^{−}(aq)+{\\text{I}}_{2}(s) & \\hspace{2em}{E}^{\\circ}{}_{\\text{cell}}=+0.5518\\;\\text{V}\\;\\text{(spontaneous)}\\end{array}$"
+      }
+    },
+    {
+      "id": "e21",
+      "source_id": "fs-idm2030592",
+      "source_number": "21",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "interpreting",
+      "prompt": "Calculate the standard cell potential for each reaction below, and note whether the reaction is spontaneous under standard state conditions.<br>(a) $\\text{Mg}(s)+{\\text{Ni}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Mg}}^{2+}(aq)+\\text{Ni}(s)$<br>(b) $2{\\text{Ag}}^{+}(aq)+\\text{Cu}(s)\\;\\longrightarrow \\;{\\text{Cu}}^{2+}(aq)+\\text{2Ag}(s)$<br>(c) $\\text{Mn}(s)+{\\text{Sn(NO}}_{3}{)}_{2}(aq)\\;\\longrightarrow \\;{\\text{Mn(NO}}_{3}{)}_{2}(aq)+\\text{Sn}(s)$<br>(d) $3{\\text{Fe(NO}}_{3}{)}_{2}(aq)+{\\text{Au(NO}}_{3}{)}_{3}(aq)\\;\\longrightarrow \\;{\\text{3Fe(NO}}_{3}{)}_{3}(aq)+\\text{Au}(s)$",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 2.115,
+            "unit": "V",
+            "hint": "Find which species is reduced (the cathode) and which is oxidized (the anode), then subtract the anode’s standard electrode potential from the cathode’s."
+          },
+          {
+            "part": "(b)",
+            "value": 0.4626,
+            "unit": "V"
+          },
+          {
+            "part": "(c)",
+            "value": 1.048,
+            "unit": "V"
+          },
+          {
+            "part": "(d)",
+            "value": 0.727,
+            "unit": "V",
+            "hint": "The nitrate ions are spectators: Au<sup>3+</sup> is reduced and Fe<sup>2+</sup> is oxidized to Fe<sup>3+</sup>."
+          }
+        ],
+        "solution": "(a) +2.115 V (spontaneous); (b) +0.4626 V (spontaneous); (c) +1.048 V (spontaneous); (d) +0.727 V (spontaneous)"
+      }
+    },
+    {
+      "id": "e23",
+      "source_id": "fs-idm8651504",
+      "source_number": "23",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "interpreting",
+      "prompt": "Write the balanced cell reaction for the cell schematic below, calculate the standard cell potential, and note whether the reaction is spontaneous under standard state conditions.<br>$\\text{Cu}(s)\\,|\\,{\\text{Cu}}^{2+}(aq)\\,\\|\\,{\\text{Au}}^{3+}(aq)\\,|\\,\\text{Au}(s)$",
+      "answer": {
+        "type": "number",
+        "value": 1.16,
+        "unit": "V",
+        "generated_by": "source",
+        "hint": "In a cell schematic the anode is written on the left and the cathode on the right.",
+        "solution": "$3\\text{Cu}(s)+{\\text{2Au}}^{3+}(aq)\\;\\longrightarrow \\;{\\text{3Cu}}^{2+}(aq)+\\text{2Au}(s)\\text{;}$ +1.16 V; spontaneous"
+      }
+    },
+    {
+      "id": "e25",
+      "source_id": "fs-idm10353296",
+      "source_number": "25",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "interpreting",
+      "prompt": "Determine the cell reaction and standard cell potential at 25 °C for a cell made from an anode half-cell containing a cadmium electrode in 1 <em>M</em> cadmium nitrate and a cathode half-cell consisting of an aluminum electrode in 1 <em>M</em> aluminum nitrate solution. Is the reaction spontaneous at standard conditions?",
+      "answer": {
+        "type": "number",
+        "value": -1.259,
+        "unit": "V",
+        "generated_by": "source",
+        "hint": "Aluminum is the cathode as the problem assigns it, even though its entry sits far below cadmium’s.",
+        "solution": "$3\\text{Cd}(s)+{\\text{2Al}}^{3+}(aq)\\;\\longrightarrow \\;{\\text{3Cd}}^{2+}(aq)+\\text{2Al}(s);$ −1.259 V; nonspontaneous"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "standard-cell-potential"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "standard-electrode-potential"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "predict-redox-spontaneity"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "cell-potential-and-spontaneity"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "standard-cell-potential"
+    },
+    {
+      "exercise": "e21",
+      "concept": "standard-cell-potential"
+    },
+    {
+      "exercise": "e21",
+      "concept": "cell-potential-and-spontaneity"
+    },
+    {
+      "exercise": "e21",
+      "concept": "predict-redox-spontaneity"
+    },
+    {
+      "exercise": "e23",
+      "concept": "standard-cell-potential"
+    },
+    {
+      "exercise": "e23",
+      "concept": "cell-potential-and-spontaneity"
+    },
+    {
+      "exercise": "e23",
+      "concept": "cell-notation"
+    },
+    {
+      "exercise": "e25",
+      "concept": "standard-cell-potential"
+    },
+    {
+      "exercise": "e25",
+      "concept": "cell-potential-and-spontaneity"
+    },
+    {
+      "exercise": "e25",
+      "concept": "anode"
+    },
+    {
+      "exercise": "e25",
+      "concept": "cathode"
+    }
+  ]
+}

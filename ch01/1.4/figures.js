@@ -106,7 +106,7 @@ function rule(ctx, x1, x2, y, h) {
     const yB = 130;
     line(ctx, X(0), yB, X(l), yB, cl, 7);
     line(ctx, X(0), yB - 12, X(0), yB + 12, cl, 3); line(ctx, X(l), yB - 12, X(l), yB + 12, cl, 3);
-    line(ctx, X(l), yB + 12, X(l), yY + 70, cl, 2, [4, 8]);
+    [[yB + 12, yM + 32], [yM + 56, yY + 32], [yY + 56, yY + 70]].forEach(([a, b]) => line(ctx, X(l), a, X(l), b, cl, 2, [4, 8]));
     text(ctx, l + ' cm', X(l / 2), yB - 26, cl, { size: 22, weight: 600, align: 'center' });
     text(ctx, fmt(inches, 2) + ' in', X(l) + (l > 90 ? -10 : 10), yY + 88, cl, { size: 20, weight: 600, align: l > 90 ? 'right' : 'left' });
     /* the inset: one inch against 2.54 cm, magnified ten times */
@@ -122,8 +122,7 @@ function rule(ctx, x1, x2, y, h) {
     text(ctx, '1 m = 1.094 yd = 39.37 in.', 1300, iy + 30, PAL.ink, { size: 22, weight: 600, align: 'right' });
     text(ctx, 'A meter is about 3 inches longer than a yard.', 1300, iy + 62, PAL.muted, { size: 17, align: 'right' });
     headline(ctx, 'A length of ' + l + ' cm is ' + fmt(l / 100, 2) + ' m, which is ' + fmt(yards, 3) + ' yd or ' + fmt(inches, 2) + ' in.');
-    readout(d.readout, `\\htmlClass{kv-length}{${l}\\ \\text{cm} = ${fmt(l / 100, 2)}\\ \\text{m} = ${fmt(yards, 3)}\\ \\text{yd} = ${fmt(inches, 2)}\\ \\text{in.}}`,
-      l === 100 ? 'One meter is about 39.37 inches or 1.094 yards, so a meter is about 3 inches longer than a yard.' : 'Every centimeter is 0.3937 inch, since 2.54 cm is exactly one inch.');
+    readout(d.readout, `\\htmlClass{kv-length}{${l}\\ \\text{cm} = ${fmt(l / 100, 2)}\\ \\text{m} = ${fmt(yards, 3)}\\ \\text{yd} = ${fmt(inches, 2)}\\ \\text{in.}}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -157,7 +156,7 @@ function rule(ctx, x1, x2, y, h) {
       const sx = iso(mx, my, E, 0, 0)[0] + 110, sy = my - 30;
       if (k >= 5) cube(ctx, sx, sy, k, 2); else dot(ctx, sx, sy, PAL.ink, true, 4);
       text(ctx, '1 cm³ = 1 mL', sx, sy + 40, PAL.ink, { size: 17, align: 'center' });
-      const dx = sx + 130, r = (1.8 * k) / 2;
+      const dx = sx + 170, r = (1.8 * k) / 2;
       ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(dx, sy - r, Math.max(r, 3), 0, Math.PI * 2); ctx.fill(); ctx.stroke(); ctx.restore();
       text(ctx, '1.8 cm dime', dx, sy + 40, PAL.ink, { size: 17, align: 'center' });
     } else text(ctx, 'this is the cubic centimeter', iso(mx, my, E, 0, 0)[0] + 40, my - 60, PAL.ink, { size: 17 });
@@ -167,8 +166,9 @@ function rule(ctx, x1, x2, y, h) {
     const words = a === 100 ? '1,000,000 cm³, which is 1,000 L or one cubic meter' : L >= 1 ? commas(String(V)) + ' cm³, which is ' + commas(String(V)) + ' mL or ' + Ls + ' L' : V + ' cm³, which is ' + V + ' mL';
     headline(ctx, 'A cube ' + a + ' cm on an edge holds ' + words + '.');
     const lit = L >= 1 ? ` = ${Ls}\\ \\text{L}` : '', cub = a === 100 ? ` = 1\\ \\text{m}^3` : '';
-    readout(d.readout, `\\kV = \\htmlClass{kv-length}{a}^3 = (\\htmlClass{kv-length}{${a}\\ \\text{cm}})^3 = ${commas(String(V))}\\ \\text{cm}^3 = ${commas(String(V))}\\ \\text{mL}${lit}${cub}`,
-      a === 10 ? 'A cube one decimeter on an edge is one cubic decimeter, the volume the book calls a liter.' : a === 100 ? 'The box holds a cubic meter, which is 1,000 liters or a million milliliters.' : 'Doubling the edge multiplies the volume by eight, since the volume is the edge cubed.');
+    const tc = (x) => commas(String(x)).replace(/,/g, '{,}');
+    readout(d.readout, `\\kV = \\htmlClass{kv-length}{a}^3 = (\\htmlClass{kv-length}{${a}\\ \\text{cm}})^3 = ${tc(V)}\\ \\text{cm}^3 = ${tc(V)}\\ \\text{mL}${lit}${cub}`,
+      a === 10 || a === 100 ? '' : 'Doubling the edge multiplies the volume by eight, since the volume is the edge cubed.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -180,7 +180,7 @@ function rule(ctx, x1, x2, y, h) {
    Still: the picture answers its sliders.
 ===================================================================== */
 (function () {
-  const d = sim('sim-density', 540);
+  const d = sim('sim-density', 580);
   const MATS = [['ice', 0.92], ['oak', 0.75], ['iron', 7.87], ['copper', 8.96], ['silver', 10.5], ['lead', 11.34], ['gold', 19.3]];
   const OTHER = MATS.length;                                 /* the eighth entry of the dropdown: a solid of a density between the book's */
   /* the material is picked from a dropdown, and its density is also a slider with a soft detent at each of the seven solids of
@@ -210,7 +210,7 @@ function rule(ctx, x1, x2, y, h) {
     text(ctx, 'V = a³ = ' + sig3(V) + ' cm³', bx, by + 136, cvol, { size: 20, weight: 600, align: 'center' });
     /* the seven densities of Table 1.4: the samples of a table, told apart by the categorical palette (rule 7.4) with their names
        in ink beneath, the chosen one outlined in ink; a density off the table is a dashed level across the chart */
-    const gl = 760, gr = 1320, gt = 110, gb = 400, Y = (v) => gb - ((gb - gt) * v) / 20, bw = (gr - gl) / MATS.length;
+    const gl = 760, gr = 1320, gt = 150, gb = 420, Y = (v) => gb - ((gb - gt) * v) / 20, bw = (gr - gl) / MATS.length;
     for (let v = 0; v <= 20; v += 5) { if (v) line(ctx, gl, Y(v), gr, Y(v), PAL.rule, 1.5); text(ctx, String(v), gl - 12, Y(v), PAL.muted, { size: 17, align: 'right' }); }
     line(ctx, gl, gt, gl, gb, PAL.muted, 2); line(ctx, gl, gb, gr, gb, PAL.muted, 2);
     text(ctx, 'density (g/cm³)', gl, gt - 24, cd, { size: 20, weight: 600 });
@@ -258,7 +258,7 @@ function rule(ctx, x1, x2, y, h) {
     text(ctx, name + ' block', bx, by - bh - 24, rc, { size: 22, weight: 600, align: 'center' });
     text(ctx, 'weighed first, on the balance', bx, by + 100, PAL.muted, { size: 17, align: 'center' });
     /* the graduated cylinder, 0 to 60 mL */
-    const cl = 900, cr = 1040, ct = 110, cb = 580, Y = (mL) => cb - ((cb - ct) * mL) / 60;
+    const cl = 900, cr = 1040, ct = 150, cb = 580, Y = (mL) => cb - ((cb - ct) * mL) / 60;
     ctx.save(); ctx.fillStyle = alpha(cvol, 0.22); ctx.fillRect(cl, Y(v2), cr - cl, cb - Y(v2)); ctx.restore();
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(cl, ct - 10); ctx.lineTo(cl, cb); ctx.lineTo(cr, cb); ctx.lineTo(cr, ct - 10); ctx.stroke(); ctx.restore();
     for (let mL = 0; mL <= 60; mL++) { const big = mL % 10 === 0, mid = mL % 5 === 0; line(ctx, cl, Y(mL), cl + (big ? 26 : mid ? 18 : 10), Y(mL), PAL.ink, big ? 2 : 1); if (big) text(ctx, String(mL), cl - 12, Y(mL), PAL.muted, { size: 16, align: 'right' }); }
@@ -273,13 +273,13 @@ function rule(ctx, x1, x2, y, h) {
     text(ctx, 'before, V₁ = ' + fmt(v1, 1) + ' mL', cr + 150, Y(v1) + (V < 3 ? 22 : 0), cvol, { size: 18, weight: 600 });
     text(ctx, 'after, V₂ = ' + fmt(v2, 1) + ' mL', cr + 150, Y(v2) - (V < 3 ? 22 : 0), cvol, { size: 18, weight: 600 });
     vbracket(ctx, cr + 60, Y(v2), Y(v1), cvol, '', 1);
-    text(ctx, 'rise = ' + fmt(V, 1) + ' mL', cr + 60, Y(v2) - (V < 3 ? 48 : 26), cvol, { size: 18, weight: 600, align: 'center' });
+    text(ctx, 'rise = ' + fmt(V, 1) + ' mL', cr + 50, Y(v2) - (V < 3 ? 48 : 26), cvol, { size: 18, weight: 600 });
     text(ctx, 'then lowered into the cylinder', (cl + cr) / 2 + 60, cb + 40, PAL.muted, { size: 17, align: 'center' });
     hits.push({ x: bx, y: by - bh / 2, r: Math.max(bw, bh) / 2 + 4, name: 'the ' + name + ' block, ' + fmt(m, 2) + ' g' }, { x: bx, y: by + 40, r: 56, name: 'balance, reading ' + fmt(m, 2) + ' g' },
       { x: bxx + bw2 / 2, y: byy + bh2 / 2, r: Math.max(bw2, bh2) / 2 + 4, name: 'the ' + name + ' block under the water' }, { x: (cl + cr) / 2, y: (Y(v2) + cb) / 2, r: 40, name: 'water in the graduated cylinder, ' + fmt(v2, 1) + ' mL with the block in' });
     headline(ctx, 'The water rises from ' + fmt(v1, 1) + ' mL to ' + fmt(v2, 1) + ' mL, so the ' + name + ' block has a volume of ' + fmt(V, 1) + ' mL; it weighs ' + fmt(m, 2) + ' g, so its density is ' + dens + ' g/mL.');
     readout(d.readout, `\\text{density} = \\frac{\\km}{\\kV} = \\frac{\\htmlClass{kv-mass}{${fmt(m, 2)}\\ \\text{g}}}{\\htmlClass{kv-volume}{${fmt(V, 1)}\\ \\text{mL}}} = \\htmlClass{kv-density}{${dens}\\ \\text{g/mL}}`,
-      'The block’s volume is the rise, ' + fmt(v2, 1) + ' mL − ' + fmt(v1, 1) + ' mL = ' + fmt(V, 1) + ' mL. ' + (floats ? 'A block less dense than water floats, so it is held under the surface until it is fully submerged; the water then rises by its whole volume.' : 'The block sinks, and the water rises by exactly the volume of the block, whatever its shape.'));
+      floats ? 'A block less dense than water floats, so it is held under the surface until it is fully submerged.' : '');
   }
   register(d.fig, { update: () => {}, draw });
 })();

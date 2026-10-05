@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Phases and Classification of Matter",
  "short": "Phases and classification of matter",
- "lead": "Matter is anything that occupies space and has <span data-concept=\"mass\">mass</span>, and on earth it exists as a solid, a liquid, a gas, or, at high <span data-concept=\"temperature\">temperatures</span>, a plasma. <span data-concept=\"mass\">Mass</span> is not the same as weight. The total quantity of matter does not change when matter changes form. Every sample of matter is an element, a compound, a homogeneous mixture, or a heterogeneous mixture, and all of them are made of atoms and molecules.",
+ "lead": "Matter, anything that occupies space and has <span data-concept=\"mass\">mass</span>, exists on earth as a solid, a liquid, a gas or a plasma, and it can pass from one of these forms to another. Every sample of it is an element, a compound, or a mixture, homogeneous or heterogeneous, and all of them are made of atoms and molecules.",
  "objectives": [
   "Describe the basic properties of each physical state of matter: solid, liquid, and gas",
   "Distinguish between mass and weight",
@@ -22,6 +22,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -64,6 +68,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "readout note that repeated the headline dropped"
     }
    ]
   },
@@ -88,6 +97,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "readout carries both balances, note cut to one sentence, headline"
     }
    ]
   },
@@ -122,6 +136,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "readout that repeated the caption dropped"
     }
    ]
   },
@@ -163,6 +182,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "sulfur ring moved clear of the headline"
     }
    ]
   },
@@ -191,6 +215,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "strip rows moved below the headline, repeated lines dropped"
     }
    ]
   },
@@ -217,6 +246,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "readout note that repeated the caption dropped"
     }
    ]
   },

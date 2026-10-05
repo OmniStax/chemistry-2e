@@ -76,7 +76,7 @@ function thermometer(ctx, x, y, h, f, color) {
     line(ctx, bx - 60, 110, bx - 60, 500, PAL.rule, 1.5);
     headline(ctx, 'A jug holding ' + fmt(v, 2) + ' L of milk at ' + fmt(t, 0) + ' °C has a mass of ' + fmt(mkg, 2) + ' kg and a density of ' + fmt(DENS, 2) + ' g/mL.');
     readout(d.readout, `\\km = \\kd\\,\\kV = \\htmlClass{kv-density}{${fmt(DENS, 2)}\\ \\text{g/mL}} \\times \\htmlClass{kv-volume}{${fmt(mL, 0)}\\ \\text{mL}} = \\htmlClass{kv-mass}{${fmt(mkg, 2)}\\ \\text{kg}}`,
-      'The milk stands at ' + fmt(t, 0) + ' °C whatever its amount. Doubling the sample doubles the mass and the volume, and leaves the density and the temperature where they were.');
+      'The milk stands at ' + fmt(t, 0) + ' °C whatever its amount.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -92,10 +92,10 @@ function thermometer(ctx, x, y, h, f, color) {
    quadrant names itself under the pointer (rule 26.6).
 ===================================================================== */
 /* the National Fire Protection Agency's own colours for the 704 sign, and the black it prints its numerals in */
-const NFPA_RED = '#ff0000', NFPA_BLUE = '#0000ff', NFPA_YELLOW = '#ffff00', NFPA_WHITE = '#ffffff', NFPA_INK = '#000000';
+const NFPA_RED = '#ff0000', NFPA_BLUE = '#3366ff', NFPA_YELLOW = '#ffff00', NFPA_WHITE = '#ffffff', NFPA_INK = '#000000';
 (function () {
   const d = sim('fig-hazard-diamond', 640);
-  const CX = 330, CY = 320, R = 210;
+  const CX = 330, CY = 330, R = 180;
   /* the four small diamonds, each named by where it sits on the sign and what it rates */
   const QUADS = [
     { fill: NFPA_RED, at: [0, -1], mark: '0–4', name: 'the red diamond at the top: the fire hazard, rated 0 to 4 by flash point' },
@@ -133,21 +133,19 @@ const NFPA_RED = '#ff0000', NFPA_BLUE = '#0000ff', NFPA_YELLOW = '#ffff00', NFPA
     text(ctx, 'reactivity', CX + R + 12, CY, PAL.ink, { size: 20, weight: 600 });
     text(ctx, 'specific hazard', CX, CY + R + 30, PAL.ink, { size: 20, weight: 600, align: 'center' });
     /* the scale, in the words of the passage: three columns of five ratings */
-    const X = [600, 670, 830, 1040], y0 = 150, dy = 42;
+    const X = [660, 730, 890, 1100], y0 = 150, dy = 42;
     ['rating', 'flash point', 'health hazard', 'reactivity'].forEach((h, i) => text(ctx, h, X[i], y0, PAL.ink, { size: 19, weight: 600 }));
-    line(ctx, 590, y0 + 18, 1370, y0 + 18, PAL.muted, 2);
+    line(ctx, 650, y0 + 18, 1390, y0 + 18, PAL.muted, 2);
     ROWS.forEach((r, i) => r.forEach((cell, j) => text(ctx, cell, X[j], y0 + 44 + i * dy, j === 0 ? PAL.ink : PAL.muted, { size: 18, weight: j === 0 ? 600 : 400 })));
-    text(ctx, '4 is extremely hazardous and 0 is no hazard at all.', 590, y0 + 44 + ROWS.length * dy + 12, PAL.ink, { size: 18 });
+    text(ctx, '4 is extremely hazardous and 0 is no hazard at all.', 650, y0 + 44 + ROWS.length * dy + 12, PAL.ink, { size: 18 });
     /* the abbreviations of the white diamond */
-    text(ctx, 'specific hazard', 590, 470, PAL.ink, { size: 19, weight: 600 });
+    text(ctx, 'specific hazard', 650, 470, PAL.ink, { size: 19, weight: 600 });
     SPECIAL.forEach(([abbr, meaning], i) => {
-      const x = 590 + (i % 3) * 270, y = 506 + Math.floor(i / 3) * 40;
+      const x = 650 + (i % 3) * 250, y = 506 + Math.floor(i / 3) * 40;
       text(ctx, abbr, x, y, PAL.ink, { size: 19, weight: 600 }); text(ctx, meaning, x + 64, y, PAL.muted, { size: 18 });
     });
-    text(ctx, 'The sign strikes the W through, and marks a radioactive or a biological hazard with a symbol rather than a word.', 590, 590, PAL.muted, { size: 17 });
+    text(ctx, 'The sign strikes the W through; a radioactive or biological hazard takes a symbol.', 650, 590, PAL.muted, { size: 17 });
     headline(ctx, 'The NFPA hazard diamond rates a substance for fire, health and reactivity, and names any special hazard in the fourth quadrant.');
-    readout(d.readout, '\\text{fire} \\quad \\text{health} \\quad \\text{reactivity} \\quad \\text{specific hazard}',
-      'The color of each quadrant is the sign’s own and says which hazard it rates: red at the top for fire, blue on the left for health, yellow on the right for reactivity, and white at the bottom for a hazard that a number cannot carry.');
   }
   register(d.fig, { update: () => {}, draw });
 })();

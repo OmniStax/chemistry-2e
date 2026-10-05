@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Measurements",
  "short": "Measurements",
- "lead": "Every measurement carries a number, a unit and an uncertainty, and a number without its unit can be meaningless or dangerous. The International System has seven base units, with prefixes that scale them. From the meter, the kilogram, the kelvin and the second come the units of <span data-concept=\"volume\">volume</span> and of <span data-concept=\"density\">density</span>, and you measure <span data-concept=\"density\">density</span> with a balance and a graduated cylinder.",
+ "lead": "Every measurement carries a number, a unit and an uncertainty, and the International System supplies the units: seven base units, with prefixes that scale them. From the meter, the kilogram, the kelvin and the second come the units of <span data-concept=\"volume\">volume</span> and of <span data-concept=\"density\">density</span>, and you measure <span data-concept=\"density\">density</span> with a balance and a graduated cylinder.",
  "objectives": [
   "Explain the process of measurement",
   "Identify the three basic parts of a quantity",
@@ -21,6 +21,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -57,6 +61,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "drop line clear of tick labels, repeated note dropped"
     }
    ]
   },
@@ -88,6 +97,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "labels spaced, TeX thousands commas, repeated notes dropped"
     }
    ]
   },
@@ -110,6 +124,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "chart below the headline, stage taller so the volume line fits"
     }
    ]
   },
@@ -131,6 +150,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "cylinder below the headline, rise label off the wall, note cut"
     }
    ]
   }

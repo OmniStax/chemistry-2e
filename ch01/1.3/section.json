@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Physical and Chemical Properties",
  "short": "Physical and chemical properties",
- "lead": "Every substance has properties that tell it apart from every other. You can observe some of them without the substance becoming anything else, while others show only as it turns into something new. Properties and changes are either physical or chemical. Properties are also either extensive, depending on how much matter is present, or intensive, independent of it. The periodic table lays out three classes of elements.",
+ "lead": "Every substance has properties that tell it apart, some observed without changing it and others only as it turns into something new. These properties, and the changes matter undergoes, are sorted as physical or chemical and as extensive or intensive, and the periodic table groups the elements by them.",
  "objectives": [
   "Identify properties of and changes in matter as physical or chemical",
   "Identify properties of matter as extensive or intensive"
@@ -19,6 +19,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -39,18 +43,28 @@
   { "id": "fig-physical-change", "kind": "photo", "number": "1.18", "draws": [] },
   { "id": "fig-rust", "kind": "photo", "number": "1.19", "draws": [] },
   { "id": "fig-chemical-change", "kind": "photo", "number": "1.20", "draws": [] },
-  { "id": "sim-extensive", "kind": "sim", "draws": ["mass", "volume", "density", "temperature"], "ai": [
- {
-  "model": "claude-fable-5-1",
-  "effort": "low",
-  "part": "built"
- },
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
+  {
+   "id": "sim-extensive",
+   "kind": "sim",
+   "draws": ["mass", "volume", "density", "temperature"],
+   "ai": [
+    {
+     "model": "claude-fable-5-1",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "readout note cut to the one fact the caption lacks"
+    }
+   ]
+  },
   {
    "id": "fig-hazard-diamond",
    "kind": "figure",
@@ -75,6 +89,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "layout cleared of collisions, blue for contrast, readout dropped"
     }
    ]
   },

@@ -1100,3 +1100,5 @@ dark with no console errors, no KaTeX errors, every figure drawn and every
 exercise card rendered.
 
 Review pass ch03 (2026-10-04, Claude Opus 5.5 high): 20 pass, 9 fixed, 0 rewrite filed.
+
+Review pass ch01 (2026-10-04, Claude Opus 5.5 high): 15 pass, 21 fixed, 0 rewrite filed.

@@ -65,14 +65,14 @@ function displacement(d, before, after, mass, object, what, half, who) {
       note(ctx, sunk ? 'after' : 'before', cx, BASE + 44);
     });
     object(ctx, 640, 170, 1, F.ref(who)); text(ctx, fmt(mass, 3) + ' g', 640, 266, cm, { size: 24, weight: 600, align: 'center' });
-    arrow(ctx, 660, 290, 735, 385, PAL.muted, 3);
+    arrow(ctx, 672, 120, 765, 120, PAL.muted, 3);
     text(ctx, 'volume of the ' + what, 1160, 200, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, fmt(after, 1) + ' mL − ' + fmt(before, 1) + ' mL = ' + fmt(after - before, 1) + ' mL', 1160, 240, cv, { size: 24, weight: 600, align: 'center' });
     text(ctx, 'mass of the ' + what, 1160, 320, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, fmt(mass, 3) + ' g', 1160, 360, cm, { size: 24, weight: 600, align: 'center' });
     headline(ctx, 'The water rises from ' + fmt(before, 1) + ' mL to ' + fmt(after, 1) + ' mL when the ' + fmt(mass, 3) + '-g ' + what + ' is submerged, and that rise is its volume.');
     readout(d.readout, `\\kV = ${fmt(after, 1)}\\ \\text{mL} - ${fmt(before, 1)}\\ \\text{mL} = ${fmt(after - before, 1)}\\ \\text{mL}`,
-      'The rise of the water is the volume of the ' + what + ', read to the nearest 0.1 mL as the rule for subtraction allows; the density is its mass divided by this volume.');
+      'The density of the ' + what + ' is its mass divided by this volume.');
   }
   still(d, draw);
 }
@@ -112,9 +112,9 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
     ctx.fillStyle = alpha(cv, 0.22); ctx.beginPath(); ctx.moveTo(gl, MY + MR); ctx.lineTo(gr, MY + MR); ctx.lineTo(gr, my(v) - lift); ctx.quadraticCurveTo(MX, my(v) + lift, gl, my(v) - lift); ctx.closePath(); ctx.fill();
     ctx.strokeStyle = cv; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(gr, my(v) - lift); ctx.quadraticCurveTo(MX, my(v) + lift, gl, my(v) - lift); ctx.stroke();
     line(ctx, gl, MY - MR, gl, MY + MR, PAL.ink, 3); line(ctx, gr, MY - MR, gr, MY + MR, PAL.ink, 3);
-    for (let k = -1; k <= 2; k++) { const u = whole + k; if (u < 0 || u > VMAX) continue; line(ctx, gl, my(u), gl + 44, my(u), PAL.muted, 3); text(ctx, u + ' mL', gl + 54, my(u), PAL.ink, { size: 20, weight: 600 }); for (let t = 1; t < 10; t++) line(ctx, gl, my(u + t / 10), gl + 14, my(u + t / 10), PAL.rule, 1.5); }
     line(ctx, gl, my(reading), gr, my(reading), PAL.ink, 2.5, [8, 8]);
-    text(ctx, 'your reading ' + fmt(reading, 1) + ' mL', gr - 8, my(reading) - 18, PAL.ink, { size: 18, weight: 600, align: 'right' });
+    for (let k = -1; k <= 2; k++) { const u = whole + k; if (u < 0 || u > VMAX || Math.abs(my(u) - MY) > MR - 16) continue; line(ctx, gl, my(u), gl + 44, my(u), PAL.muted, 3); text(ctx, u + ' mL', gl + 54, my(u), PAL.ink, { size: 20, weight: 600, bg: PAL.panel }); for (let t = 1; t < 10; t++) line(ctx, gl, my(u + t / 10), gl + 14, my(u + t / 10), PAL.rule, 1.5); }
+    text(ctx, 'your reading ' + fmt(reading, 1) + ' mL', gr - 20, my(reading) + (digit >= 7 ? 30 : -30), PAL.ink, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
     ctx.restore();
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(MX, MY, MR, 0, TAU); ctx.stroke(); ctx.restore();
     line(ctx, MX + MR * 0.72, MY + MR * 0.72, MX + MR * 0.72 + 70, MY + MR * 0.72 + 70, PAL.ink, 12);
@@ -122,7 +122,8 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
     const s = fmt(reading, 1), cs = charsCentred(ctx, s, 1190, 300, 96, (i) => (i === s.length - 1 ? cv : PAL.ink));
     text(ctx, 'mL', cs[cs.length - 1].r + 14, 312, PAL.ink, { size: 36, weight: 600 });
     ubracket(ctx, cs[0].l + 4, cs[s.length - 3].r - 4, 372, PAL.ink, 'certain');
-    ubracket(ctx, cs[s.length - 1].l + 4, cs[s.length - 1].r - 4, 372, cv, 'estimated');
+    ubracket(ctx, cs[s.length - 1].l + 4, cs[s.length - 1].r - 4, 372, cv, whole >= 10 ? 'estimated' : '');
+    if (whole < 10) text(ctx, 'estimated', cs[s.length - 1].x, 422, cv, { align: 'center', weight: 600, size: 20 });
     note(ctx, '1-mL divisions: read to the nearest 0.1 mL', 1190, 460);
     note(ctx, 'no hundredths digit can be estimated', 1190, 490);
     /* the headline judges the reader's digit against where the meniscus lies */
@@ -133,8 +134,7 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
     const where = frac < 0.35 ? ', nearer the ' + whole : frac > 0.65 ? ', nearer the ' + (whole + 1) : ', about midway';
     headline(ctx, ok ? between + ', so a tenths digit of ' + digit + ' is reasonable and the reading is ' + fmt(reading, 1) + ' mL.'
       : between + where + ', so a tenths digit of ' + list + ' would be more reasonable than ' + digit + '.');
-    readout(d.readout, `\\kV = ${fmt(reading, 1)}\\ \\text{mL}`,
-      'The ' + s.slice(0, -2).split('').join(' and the ') + (whole >= 10 ? ' are' : ' is') + ' certain, since the meniscus clearly lies between the ' + whole + ' and ' + (whole + 1) + ' mL marks; the ' + digit + ' is an estimate, and the scale permits no digit beyond it.');
+    readout(d.readout, `\\kV = ${fmt(reading, 1)}\\ \\text{mL}`);
   }
   still(d, draw);
 })();
@@ -227,9 +227,9 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
   function draw() {
     const { ctx } = begin(d.c);
     text(ctx, '(a)', 60, 110, PAL.muted, { size: 24, weight: 600 });
-    column(ctx, 230, ['1.0023', '4.383'], '+', '5.3853', 5, 'g', '5.385 g', '4.383 g stops at the thousandths, so the sum is rounded there');
+    column(ctx, 230, ['1.0023', '4.383'], '+', '5.3853', 5, 'g', '5.385 g', '4.383 g stops at the thousandths');
     text(ctx, '(b)', 760, 110, PAL.muted, { size: 24, weight: 600 });
-    column(ctx, 930, ['486', '421.23'], '−', '64.77', 2, 'g', '65 g', '486 g has no decimal places, so the difference is rounded to the ones');
+    column(ctx, 930, ['486', '421.23'], '−', '64.77', 2, 'g', '65 g', '486 g has no decimal places');
     headline(ctx, 'A sum or a difference is rounded to the decimal place of its least precise term.');
     readout(d.readout, '5.3853\\ \\text{g} \\longrightarrow 5.385\\ \\text{g} \\qquad 64.77\\ \\text{g} \\longrightarrow 65\\ \\text{g}', 'The muted digits are the ones the rule for addition and subtraction drops.');
   }
@@ -287,7 +287,7 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
       if (live) { ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.12); ctx.fillRect(x, y, CW, CH); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(x, y, CW, CH); ctx.restore(); }
       target(ctx, x + CW / 2, y + 88, 72, group(o, s, 3), 4, hue, ['archer (a)', 'archer (b)', 'the archer of the fourth corner', 'archer (c)'][i]);
       const lw = widthOf(ctx, label, 18, live ? 600 : 400);
-      dot(ctx, x + CW / 2 - lw / 2 - 12, y + CH - 34, hue, true, 6);
+      dot(ctx, x + CW / 2 - lw / 2 - 18, y + CH - 34, hue, true, 6);
       text(ctx, label, x + CW / 2 + 8, y + CH - 34, PAL.ink, { size: 18, weight: live ? 600 : 400, align: 'center' });
     });
     target(ctx, 360, 340, 230, pts, 8, F.ref(WHO[liveCell]), 'the archer on the sliders');
@@ -296,7 +296,7 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
       : accurate ? 'These arrows are scattered about the bull’s eye, so they are accurate on average but not precise.'
       : 'These arrows are neither on target nor close to one another, so they are neither accurate nor precise.');
     readout(d.readout, `\\text{distance of the centre of the group from the bull's eye} = \\htmlClass{kv-length}{${fmt(md, 1)}\\ \\text{cm}}`,
-      'The greatest distance between two arrows is ' + fmt(sp, 1) + ' cm. Accuracy is measured by how far the group sits from the bull’s eye and precision by how far the arrows sit from one another, and a group may have either without the other.');
+      'The greatest distance between two arrows is ' + fmt(sp, 1) + ' cm.');
   }
   still(d, draw);
 })();

@@ -30,8 +30,8 @@ function lines(ctx, ls, x, y, o = {}) {
 /* an arc of an ellipse drawn as an arrow, ending in a head along its tangent; angles increase clockwise on the canvas */
 function arcArrow(ctx, cx, cy, rx, ry, a0, a1, color, w = 4) {
   ctx.save(); ctx.strokeStyle = color; ctx.lineWidth = w; ctx.beginPath(); ctx.ellipse(cx, cy, rx, ry, 0, a0, a1, false); ctx.stroke(); ctx.restore();
-  const at = (a) => [cx + rx * Math.cos(a), cy + ry * Math.sin(a)], [ex, ey] = at(a1), [bx, by] = at(a1 - 0.08);
-  arrow(ctx, bx, by, ex, ey, color, w);
+  const ex = cx + rx * Math.cos(a1), ey = cy + ry * Math.sin(a1), tx = -rx * Math.sin(a1), ty = ry * Math.cos(a1), tl = Math.hypot(tx, ty);
+  arrow(ctx, ex - 26 * tx / tl, ey - 26 * ty / tl, ex, ey, color, w);
 }
 /* a seeded generator, so a still picture is the same picture every time it is drawn */
 function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
@@ -212,7 +212,7 @@ function frame(r) {
     ctx.save(); ctx.strokeStyle = PAL.muted; ctx.fillStyle = PAL.panel; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.moveTo(x - 9, top); ctx.lineTo(x - 9, y0); ctx.arc(x, bulbY, 18, Math.PI * 1.2, Math.PI * 1.8, true); ctx.lineTo(x + 9, top); ctx.arc(x, top, 9, 0, Math.PI, true); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
     ctx.save(); ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, bulbY, 13, 0, Math.PI * 2); ctx.fill(); ctx.fillRect(x - 4, Y(t), 8, y0 - Y(t) + 4); ctx.restore();
-    [0, 100].forEach((v) => { line(ctx, x + 9, Y(v), x + 22, Y(v), PAL.muted, 2); text(ctx, v + ' °C', x + 28, Y(v), PAL.muted, { size: 17 }); });
+    [0, 100].forEach((v) => { line(ctx, x + 9, Y(v), x + 22, Y(v), PAL.muted, 2); text(ctx, v + ' °C', x + 28, Y(v), PAL.muted, { size: 17, bg: PAL.panel }); });
     text(ctx, t + ' °C', x, top - 26, col, { size: 24, weight: 600, align: 'center' });
   }
   /* the flat drawing: the three domains side by side */
@@ -338,11 +338,10 @@ function frame(r) {
     draw();
   }
   function draw() {
-    const t = T.v, s = stateOf(t);
+    const s = stateOf(T.v);
     S.set(s);
     if (VIEW.value === '3d') draw3d(); else draw2d();
-    readout(d.readout, `\\text{H}_2\\text{O}(\\mathit{${s}})`,
-      `At ${t} °C the formula H₂O names both the water in the beaker and the molecule in the circle; only the letter in parentheses changes with the state.`);
+    readout(d.readout, `\\text{H}_2\\text{O}(\\mathit{${s}})`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

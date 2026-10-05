@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Measurement Uncertainty, Accuracy, and Precision",
  "short": "Uncertainty, accuracy, and precision",
- "lead": "Counting is the one kind of measurement that is exact; every other measurement carries an uncertainty, and its last digit holds that uncertainty. You read an instrument to one estimated digit and count the significant figures of a reported value. A calculated result must be rounded so that it claims no more certainty than the measurements behind it. The precision of repeated measurements differs from their accuracy.",
+ "lead": "Counting is the one kind of measurement that is exact; every other measurement carries an uncertainty, held in its last digit. Reading an instrument, counting significant figures, rounding a calculated result, and telling precision from accuracy all keep a reported value honest about that uncertainty.",
  "objectives": [
   "Define accuracy and precision",
   "Distinguish exact and uncertain numbers",
@@ -21,6 +21,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -59,6 +63,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "magnifier labels kept inside, reading label clear, note dropped"
     }
    ]
   },
@@ -159,6 +168,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "notes shortened to clear the edge and each other"
     }
    ]
   },
@@ -182,6 +196,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "arrow clear of the scale labels, note cut to one sentence"
     }
    ]
   },
@@ -205,6 +224,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "arrow clear of the scale labels, note cut to one sentence"
     }
    ]
   },
@@ -227,6 +251,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "legend swatches spaced, note cut to its one fact"
     }
    ]
   }

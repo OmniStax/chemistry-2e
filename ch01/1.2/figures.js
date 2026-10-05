@@ -190,7 +190,7 @@ function diatomic3(v, g, p, u, sym, r) {
     const R = [`\\kV = ${fmt(vol * ICE, 0)}\\ \\text{mL of ice in both containers, with the same shape in both}`,
       `\\kV = ${vol}\\ \\text{mL in both containers, at two heights}`,
       `\\kV = ${fmt(cap(NARROW), 0)}\\ \\text{mL in the narrow container and } ${fmt(cap(WIDE), 0)}\\ \\text{mL in the wide one}`][s];
-    readout(d.readout, R, ['A solid is rigid and possesses a definite shape.', 'A liquid flows and takes the shape of its container, except that it forms a flat or slightly curved upper surface when acted upon by gravity.', 'A gas takes both the shape and volume of its container.'][s]);
+    readout(d.readout, R);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -256,10 +256,10 @@ function diatomic3(v, g, p, u, sym, r) {
     text(ctx, 'sugar → ethanol + carbon dioxide', 250, 120, PAL.ink, { size: 17, align: 'center' });
     text(ctx, 'lead + lead oxide + sulfuric acid → lead sulfate + water', 900, 120, PAL.ink, { size: 17, align: 'center' });
     const fs = Fm.v, ds = Ds.v;
-    headline(ctx, fs === 0 && ds === 0 ? 'Nothing has changed yet, so the bottle weighs 1000.0 g and the battery’s reacting substances 642.6 g.'
+    headline(ctx, fs === 0 && ds === 0 ? 'The bottle weighs 1000.0 g and the battery’s reacting substances 642.6 g; watch both readings as the matter inside changes.'
       : `With the sugar ${fs}% fermented and the battery ${ds}% discharged, the kinds of matter have changed and neither balance has moved.`);
-    readout(d.readout, `\\km_{\\text{before}} = \\km_{\\text{after}} = ${fmt(WATER + SUGAR, 1)}\\ \\text{g}`,
-      'The battery’s reacting substances likewise stay at ' + fmt(PB + PBO2 + ACID, 1) + ' g however far it discharges. The bottle is sealed, so the carbon dioxide stays inside and is weighed with the rest; if the bottle were open, the gas would escape and the balance would read less, though no matter would have been destroyed.');
+    readout(d.readout, `\\km_{\\text{before}} = \\km_{\\text{after}}:\\quad ${fmt(WATER + SUGAR, 1)}\\ \\text{g (bottle)},\\quad ${fmt(PB + PBO2 + ACID, 1)}\\ \\text{g (battery)}`,
+      'The bottle is sealed, so the carbon dioxide stays inside and is weighed with the rest.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -289,7 +289,6 @@ function diatomic3(v, g, p, u, sym, r) {
     down(ctx, 920, 282, 870, 384, 'No'); down(ctx, 1200, 282, 1250, 384, 'Yes');
     box(ctx, 150, 418, 260, 52, 'Heterogeneous', B, PAL.muted); box(ctx, 530, 418, 260, 52, 'Homogeneous', B, PAL.muted);
     box(ctx, 870, 418, 260, 52, 'Element', B, PAL.muted); box(ctx, 1250, 418, 260, 52, 'Compound', B, PAL.muted);
-    readout(d.readout, '\\text{matter} \\longrightarrow \\text{mixture or pure substance}', 'A mixture is heterogeneous or homogeneous, and a pure substance is an element or a compound, so two questions are enough to place any sample.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -351,7 +350,7 @@ function centre(m) {
   const K = 50;                                            /* canvas units to the Ångstrom, one scale for every molecule */
   const SC = 0.34;                                         /* scene units to the Ångstrom */
   /* where each molecule stands, on the canvas and in the scene; the two rows are the elements and the compounds */
-  const SPOT = [[200, 220, -2.6, 0.95], [400, 220, -1.7, 0.95], [640, 220, -0.6, 0.95], [1010, 220, 1.5, 0.95],
+  const SPOT = [[200, 220, -2.6, 0.95], [400, 220, -1.7, 0.95], [640, 220, -0.6, 0.95], [1150, 220, 1.5, 0.95],
     [180, 500, -3.1, -0.95], [420, 500, -1.9, -0.95], [950, 500, 1.5, -0.95]];
   let hits = []; F.hover(d.stage, () => hits);
   function bond2(ctx, p, q, order) {
@@ -432,7 +431,7 @@ function centre(m) {
 (function () {
   const d = sim('sim-electrolysis');
   const v = F.view3d(d.stage, { spin: 'none', pitch: [0.04, 0.95], yaw: [-Math.PI / 2, Math.PI / 2], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0, pitch: 0.9 }], h: 460, dist: 7.4, tilt: 0.3 });
-  const grp = v.part(0), cnv = strip(d, 200);
+  const grp = v.part(0), cnv = strip(d, 230);
   const N = ctl(d.controls, { label: '\\text{water molecules decomposed}', cls: '', min: 0, max: 12, step: 2, value: 6, unit: '', dec: 0, aria: 'number of water molecules decomposed' });
   /* the bench, the beaker on it, the battery on its floor and the two tubes over the terminals */
   const BENCH = -1.3, BR = 1.35, BH = 2.1, LEVEL = BENCH + 1.65, TX = [-0.42, 0.42], TR = 0.2, TB = BENCH + 0.5, TH = 1.55;
@@ -474,17 +473,16 @@ function centre(m) {
     build(); v.invalidate();
     const n = N.v, h2 = n, o2 = n / 2, hue = C('volume');
     const { ctx } = begin(cnv);
-    text(ctx, 'hydrogen collected: ' + fmt((100 * h2) / 12, 0) + '% of its tube', 40, 96, hue, { size: 20, weight: 600 });
-    text(ctx, 'oxygen collected: ' + fmt((100 * o2) / 12, 0) + '% of its tube', 40, 128, hue, { size: 20, weight: 600 });
-    text(ctx, 'the hydrogen tube holds twice the volume of gas the oxygen tube does', 40, 158, PAL.muted, { size: 17 });
+    text(ctx, 'hydrogen collected: ' + fmt((100 * h2) / 12, 0) + '% of its tube', 40, 140, hue, { size: 20, weight: 600 });
+    text(ctx, 'oxygen collected: ' + fmt((100 * o2) / 12, 0) + '% of its tube', 40, 172, hue, { size: 20, weight: 600 });
     const rx = 760;
-    text(ctx, (12 - n) + ' water molecule' + (12 - n === 1 ? '' : 's') + ' left in the beaker', rx, 96, PAL.ink, { size: 18 });
-    text(ctx, h2 + ' hydrogen molecule' + (h2 === 1 ? '' : 's') + ' in the left tube', rx, 128, PAL.ink, { size: 18 });
-    text(ctx, o2 + ' oxygen molecule' + (o2 === 1 ? '' : 's') + ' in the right tube', rx, 158, PAL.ink, { size: 18 });
+    text(ctx, (12 - n) + ' water molecule' + (12 - n === 1 ? '' : 's') + ' left in the beaker', rx, 124, PAL.ink, { size: 18 });
+    text(ctx, h2 + ' hydrogen molecule' + (h2 === 1 ? '' : 's') + ' in the left tube', rx, 156, PAL.ink, { size: 18 });
+    text(ctx, o2 + ' oxygen molecule' + (o2 === 1 ? '' : 's') + ' in the right tube', rx, 188, PAL.ink, { size: 18 });
     topline(ctx, n === 0 ? 'No water has been decomposed yet, so both tubes are still full of water and every molecule in the beaker is a water molecule.'
       : `Of the water, ${n} molecules have become ${h2} hydrogen molecules and ${o2} oxygen molecules, and the hydrogen tube holds twice the gas the oxygen tube does.`);
     readout(d.readout, `${n}\\,\\text{H}_2\\text{O}(l) \\longrightarrow ${h2}\\,\\text{H}_2(g) + ${o2}\\,\\text{O}_2(g)`,
-      'The hydrogen collected has twice the volume of the oxygen. Every atom is accounted for: the ' + 2 * n + ' hydrogen atoms and ' + n + ' oxygen atoms of the water that decomposed are the atoms of the hydrogen and oxygen molecules that formed.');
+      'Every atom is accounted for: the ' + 2 * n + ' hydrogen atoms and ' + n + ' oxygen atoms of the water that decomposed are the atoms of the hydrogen and oxygen molecules that formed.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -543,7 +541,7 @@ function centre(m) {
     named(ctx, 960, 330, 'O', 11, 'the oxygen molecule split at the cathode'); proton(ctx, 925, 305); proton(ctx, 925, 355);
     arrow(ctx, 960, 360, 960, 410, PAL.ink, 3); water(named, ctx, 960, 440); arrow(ctx, 990, 480, 1040, 480, PAL.ink, 3); water(named, ctx, 1090, 480);
     text(ctx, 'Water', 1250, 480, PAL.ink, { size: 20 }); arrow(ctx, 1200, 480, 1240, 480, PAL.ink, 3);
-    readout(d.readout, '2\\,\\text{H}_2(g) + \\text{O}_2(g) \\longrightarrow 2\\,\\text{H}_2\\text{O}(l)', 'Hydrogen gives up its electrons at the anode and oxygen takes them up at the cathode, so the electrons must travel round the outer circuit, and that current is the electric power the cell delivers.');
+    readout(d.readout, '2\\,\\text{H}_2(g) + \\text{O}_2(g) \\longrightarrow 2\\,\\text{H}_2\\text{O}(l)');
   }
   register(d.fig, { update: () => {}, draw });
 })();

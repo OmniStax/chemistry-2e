@@ -65,7 +65,7 @@ function column(ctx, x, yTop, bottom, r, color, filled) {
       for (let v = first; v <= last + 1e-9; v += s.step) {
         const y = Y(s.back(v)), big = Math.round(v / s.step) % s.every === 0;
         line(ctx, s.x + R, y, s.x + R + (big ? 12 : 7), y, PAL.muted, 2);
-        if (big) text(ctx, num(v, 0), s.x + R + 18, y, PAL.muted, { size: 17 });
+        if (big && Math.abs(y - Y(tc)) > 26) text(ctx, num(v, 0), s.x + R + 18, y, PAL.muted, { size: 17 });
       }
       column(ctx, s.x, Y(tc), BOT, R, hue, s.filled);
       dot(ctx, s.x, Y(tc), hue, s.filled, 6);
@@ -77,8 +77,8 @@ function column(ctx, x, yTop, bottom, r, color, filled) {
     const X = g.X, Yg = g.Y;
     line(ctx, X(LO), Yg(toF(LO)), X(HI), Yg(toF(HI)), hue, 4);
     line(ctx, X(LO), Yg(toK(LO)), X(HI), Yg(toK(HI)), hue, 4, [12, 10]);
-    text(ctx, '°F', box.r + 10, Yg(toF(HI)), PAL.ink, { size: 20, weight: 600 });
-    text(ctx, 'K', box.r + 10, Yg(toK(HI)), PAL.ink, { size: 20, weight: 600 });
+    text(ctx, '°F', box.r + 20, Yg(toF(HI)), PAL.ink, { size: 20, weight: 600 });
+    text(ctx, 'K', box.r + 20, Yg(toK(HI)), PAL.ink, { size: 20, weight: 600 });
     dot(ctx, X(0), Yg(0), PAL.ink, false, 7); text(ctx, 'origin', X(0) + 14, Yg(0) + 20, PAL.muted, { size: 17 });
     line(ctx, X(tc), box.b, X(tc), Yg(Math.max(tf, tk)), hue, 2, [4, 8]);
     dot(ctx, X(tc), Yg(tf), hue, true, 9);
@@ -90,7 +90,7 @@ function column(ctx, x, yTop, bottom, r, color, filled) {
       : 'At ' + num(tc, 1) + ' °C the three thermometers read ' + num(tc, 1) + ' °C, ' + num(tf, 1) + ' °F and ' + num(tk, 1) + ' K.';
     headline(ctx, at);
     readout(d.readout, `\\kTF=\\left(\\frac{9}{5}\\times\\kTC\\right)+32=\\left(\\frac{9}{5}\\times ${fmt(tc, 1)}\\right)+32=${fmt(tf, 1)}\\ \\text{°F}`,
-      'On the kelvin scale the same temperature is ' + num(tc, 1) + ' + 273.15 = ' + num(tk, 1) + ' K. A kelvin and a Celsius degree are the same size, so the two scales differ only in where their zeros sit, and the Fahrenheit degree is five ninths as large as either.');
+      'On the kelvin scale the same temperature is ' + num(tc, 1) + ' + 273.15 = ' + num(tk, 1) + ' K.');
   }
   register(d.fig, { update: () => {}, draw });
 })();

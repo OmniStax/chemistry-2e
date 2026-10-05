@@ -4,7 +4,7 @@
  "chapter": "1",
  "title": "Chemistry in Context",
  "short": "Chemistry in context",
- "lead": "Chemistry is the study of the composition, properties, and interactions of matter, and people practiced it for thousands of years before anyone understood it. Its history runs from the first pottery and bronze through the alchemists to modern drug design. Chemistry sits among the other sciences, and it tests a hypothesis by the scientific method until it may become a law or a theory. Chemists think about matter in three domains at once: macroscopic, microscopic, and symbolic.",
+ "lead": "Chemistry has been practiced since people first made pottery and bronze, long before it became a science. Its path runs from the alchemists to the scientific method, and chemists now consider matter in three domains: macroscopic, microscopic, and symbolic.",
  "objectives": [
   "Outline the historical development of chemistry",
   "Provide examples of the importance of chemistry in everyday life",
@@ -22,6 +22,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -64,6 +68,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "caption: chemical physics no longer said to join physics"
     }
    ]
   },
@@ -86,6 +95,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "loop arcs given visible arrowheads"
     }
    ]
   },
@@ -114,6 +128,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "tick labels on a panel, repeated note dropped, caption trimmed"
     }
    ]
   }

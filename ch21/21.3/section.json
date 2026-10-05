@@ -1,0 +1,1053 @@
+{
+ "id": "21.3",
+ "module": "m68854",
+ "chapter": "21",
+ "title": "Radioactive Decay",
+ "short": "Radioactive Decay",
+ "lead": "When an unstable <span data-concept=\"nuclide\">nuclide</span> changes spontaneously into another, it gives off α particles, β particles, positrons or γ rays, or captures one of its own electrons. The section names these <span data-concept=\"radioactive-decay\">modes of decay</span>, follows uranium-238 down its <span data-concept=\"radioactive-decay-series\">decay series</span>, treats decay with first-order kinetics through the <span data-concept=\"radioactive-half-life\">half-life</span> and the <span data-concept=\"decay-constant\">decay constant</span>, and uses them to <span data-concept=\"radiometric-dating\">date</span> wood, paper and rocks.",
+ "objectives": [
+  "Recognize common modes of radioactive decay",
+  "Identify common particles and energies involved in nuclear decay reactions",
+  "Write and balance nuclear decay equations",
+  "Calculate kinetic parameters for decay processes, including half-life",
+  "Describe common radiometric dating techniques"
+ ],
+ "summary_html": "<p>Nuclei that have unstable n:p ratios undergo spontaneous <span data-concept=\"radioactive-decay\">radioactive decay</span>. The most common types of <span data-concept=\"radioactivity\">radioactivity</span> are <span data-concept=\"alpha-decay\">α decay</span>, <span data-concept=\"beta-decay\">β decay</span>, <span data-concept=\"gamma-emission\">γ emission</span>, <span data-concept=\"positron-emission\">positron emission</span>, and <span data-concept=\"electron-capture\">electron capture</span>. Nuclear reactions also often involve <span data-concept=\"gamma-ray\">γ rays</span>, and some nuclei decay by <span data-concept=\"electron-capture\">electron capture</span>. Each of these modes of decay leads to the formation of a new nucleus with a more stable n:p ratio. Some substances undergo <span data-concept=\"radioactive-decay-series\">radioactive decay series</span>, proceeding through multiple decays before ending in a stable isotope. All nuclear decay processes follow <span data-concept=\"first-order-integrated-rate-law\">first-order kinetics</span>, and each radioisotope has its own characteristic <span data-concept=\"radioactive-half-life\">half-life</span>, the <span data-concept=\"time\">time</span> that is required for half of its atoms to decay. Because of the large differences in stability among nuclides, there is a very wide range of <span data-concept=\"radioactive-half-life\">half-lives</span> of radioactive substances. Many of these substances have found useful applications in medical diagnosis and treatment, determining the age of archaeological and geological objects, and more.</p>",
+ "notes": "The two Link to Learning notes, on a cloud chamber demonstration and on the PhET radiometric dating simulation, are left out; the section keeps as printed “the actinide series,” the fragment “The decay constant, λ, which is the same as a rate constant,” ²³⁹₉₄Ra for plutonium, “as seen is gas samples,” the doubled ¹⁴C¹⁴CO₂, Example 21.5’s “(15 × y)” and its 2.0% then 2.00%, the 48.8-billion-year half-life of Rb-87 against Example 21.7’s 4.7 × 10¹⁰ y, the carbon-14 limit of about 57,000 years after a maximum of about 50,000, and Figure 21.5’s image naming the daughter radon-234 where its caption says thorium-234.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers, carried as printed: fs-idp13838752’s “η (neutrons),” fs-idp50277600’s ₊₁⁰e for the β particle and ₀¹p for the neutron, fs-idp87827184’s 5770 years for carbon-14, fs-idp226288768’s “c = 0,” and fs-idp92569456’s ₋₁⁰e for the positron and ₋₁⁰Np. The eleven unkeyed exercises whose answers would have to be worked out are left out, and no answer is computed for them: fs-idm82641568 and fs-idp53072816 (decay modes), fs-idp14930000 and fs-idm23721392 (nuclear equations), fs-idm20282880, fs-idp160912384, fs-idp22881184, fs-idp75965808, fs-idm70032656, fs-idp172415648 and fs-idp50360016 (numerical). The unkeyed conceptual exercises fs-idp81671360, fs-idm39924368 and fs-idp1698768 carry a suggested approach marked as OmniStax’s own. The key’s 2 × 10³ y has one significant figure and accepts 10%, its 0.12 h⁻¹ accepts 5%, and the 3.7 × 10⁹ y of Example 21.7’s Check Your Learning accepts 3%; other numeric answers accept 2%. Nothing is moved.",
+ "figures": [
+  {
+   "id": "sim-rays-field",
+   "kind": "sim",
+   "number": "21.6",
+   "originals": [
+    "/media/ch21/CNX_Chem_21_03_Radiation.jpg"
+   ],
+   "original_caption": "Alpha particles, which are attracted to the negative plate and deflected by a relatively small amount, must be positively charged and relatively massive. Beta particles, which are attracted to the positive plate and deflected a relatively large amount, must be negatively charged and relatively light. Gamma rays, which are unaffected by the electric field, must be uncharged.",
+   "draws": [
+    "charge"
+   ],
+   "conventions": [
+    "Pb",
+    "Ra",
+    "p+",
+    "n0",
+    "e-",
+    "gamma"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-decay-modes",
+   "kind": "sim",
+   "number": "21.5",
+   "folds": [
+    "21.7"
+   ],
+   "originals": [
+    "/media/ch21/CNX_Chem_21_03_Reaction1.jpg",
+    "/media/ch21/CNX_Chem_21_03_RadioDecay-e619.jpg"
+   ],
+   "original_caption": "(Figure 21.5) A nucleus of uranium-238 (the parent nuclide) undergoes α decay to form thorium-234 (the daughter nuclide). The alpha particle removes two protons (green) and two neutrons (gray) from the uranium-238 nucleus. (Figure 21.7) This table summarizes the type, nuclear equation, representation, and any changes in the mass or atomic numbers for various types of decay.",
+   "conventions": [
+    "p+",
+    "n0",
+    "e-",
+    "e+",
+    "gamma"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-pet-scan",
+   "kind": "photo",
+   "number": "21.8",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-decay-series",
+   "kind": "sim",
+   "number": "21.9",
+   "originals": [
+    "/media/ch21/CNX_Chem_21_03_DecayS.jpg"
+   ],
+   "original_caption": "Uranium-238 undergoes a radioactive decay series consisting of 14 separate steps before producing stable lead-206. This series consists of eight α decays and six β decays.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-half-life",
+   "kind": "sim",
+   "number": "21.10",
+   "originals": [
+    "/media/ch21/CNX_Chem_21_03_HalfLife.jpg"
+   ],
+   "original_caption": "For cobalt-60, which has a half-life of 5.27 years, 50% remains after 5.27 years (one half-life), 25% remains after 10.54 years (two half-lives), 12.5% remains after 15.81 years (three half-lives), and so on.",
+   "draws": [
+    "time",
+    "rate-constant",
+    "mass"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-carbon-dating",
+   "kind": "sim",
+   "number": "21.11",
+   "originals": [
+    "/media/ch21/CNX_Chem_21_03_CarbonDate.jpg"
+   ],
+   "original_caption": "Along with stable carbon-12, radioactive carbon-14 is taken in by plants and animals, and remains at a constant level within them while they are alive. After death, the C-14 decays and the C-14:C-12 ratio in the remains decreases. Comparing this ratio to the C-14:C-12 ratio in living organisms allows us to determine how long ago the organism lived (and died).",
+   "draws": [
+    "time",
+    "rate",
+    "rate-constant"
+   ],
+   "conventions": [
+    "C",
+    "N",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-dead-sea-scrolls",
+   "kind": "photo",
+   "number": "21.12",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "opening",
+   "concept": "radioactive-decay",
+   "verb": "introduces"
+  },
+  {
+   "span": "opening",
+   "concept": "parent-and-daughter-nuclides",
+   "verb": "introduces"
+  },
+  {
+   "span": "opening",
+   "concept": "radioactivity",
+   "verb": "uses"
+  },
+  {
+   "span": "opening",
+   "concept": "nuclide",
+   "verb": "uses"
+  },
+  {
+   "span": "opening",
+   "concept": "band-of-stability",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "radiation-in-an-electric-field",
+   "verb": "introduces"
+  },
+  {
+   "span": "types",
+   "concept": "alpha-decay",
+   "verb": "introduces"
+  },
+  {
+   "span": "types",
+   "concept": "beta-decay",
+   "verb": "introduces"
+  },
+  {
+   "span": "types",
+   "concept": "gamma-emission",
+   "verb": "introduces"
+  },
+  {
+   "span": "types",
+   "concept": "positron-emission",
+   "verb": "introduces"
+  },
+  {
+   "span": "types",
+   "concept": "electron-capture",
+   "verb": "introduces"
+  },
+  {
+   "span": "types",
+   "concept": "predicting-decay-mode",
+   "verb": "introduces"
+  },
+  {
+   "span": "types",
+   "concept": "alpha-particle",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "beta-particle",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "gamma-ray",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "positron",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "electromagnetic-radiation",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "excited-state",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "core-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "mass-number",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "atomic-number-and-mass-number",
+   "verb": "uses"
+  },
+  {
+   "span": "types",
+   "concept": "activation-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "pet-scan",
+   "concept": "positron-emission",
+   "verb": "uses"
+  },
+  {
+   "span": "pet-scan",
+   "concept": "gamma-ray",
+   "verb": "uses"
+  },
+  {
+   "span": "series",
+   "concept": "radioactive-decay-series",
+   "verb": "introduces"
+  },
+  {
+   "span": "series",
+   "concept": "parent-and-daughter-nuclides",
+   "verb": "uses"
+  },
+  {
+   "span": "series",
+   "concept": "alpha-decay",
+   "verb": "uses"
+  },
+  {
+   "span": "series",
+   "concept": "beta-decay",
+   "verb": "uses"
+  },
+  {
+   "span": "half-lives",
+   "concept": "radioactive-half-life",
+   "verb": "introduces"
+  },
+  {
+   "span": "half-lives",
+   "concept": "radioactive-decay-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "half-lives",
+   "concept": "decay-constant",
+   "verb": "introduces"
+  },
+  {
+   "span": "half-lives",
+   "concept": "first-order-radioactive-decay",
+   "verb": "introduces"
+  },
+  {
+   "span": "half-lives",
+   "concept": "half-life",
+   "verb": "uses"
+  },
+  {
+   "span": "half-lives",
+   "concept": "first-order-integrated-rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "half-lives",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-decay-rates",
+   "concept": "decay-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-decay-rates",
+   "concept": "first-order-radioactive-decay",
+   "verb": "uses"
+  },
+  {
+   "span": "dating",
+   "concept": "radiometric-dating",
+   "verb": "introduces"
+  },
+  {
+   "span": "carbon-14",
+   "concept": "radiocarbon-dating",
+   "verb": "introduces"
+  },
+  {
+   "span": "carbon-14",
+   "concept": "isotopes",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon-14",
+   "concept": "beta-decay",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon-14",
+   "concept": "radioactive-half-life",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon-14",
+   "concept": "photosynthesis",
+   "verb": "uses"
+  },
+  {
+   "span": "carbon-14",
+   "concept": "mass-spectrometry",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-radiocarbon",
+   "concept": "radiocarbon-dating",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-radiocarbon",
+   "concept": "first-order-radioactive-decay",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-radiocarbon",
+   "concept": "decay-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "other-nuclides",
+   "concept": "dating-rocks",
+   "verb": "introduces"
+  },
+  {
+   "span": "other-nuclides",
+   "concept": "radiometric-dating",
+   "verb": "uses"
+  },
+  {
+   "span": "other-nuclides",
+   "concept": "radioactive-decay-series",
+   "verb": "uses"
+  },
+  {
+   "span": "other-nuclides",
+   "concept": "positron-emission",
+   "verb": "uses"
+  },
+  {
+   "span": "other-nuclides",
+   "concept": "electron-capture",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-rock-dating",
+   "concept": "dating-rocks",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-rock-dating",
+   "concept": "molar-mass",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-rock-dating",
+   "concept": "decay-constant",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idp79391408",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-decay-rates"
+   },
+   "cite": "ex-decay-rates",
+   "prompt": "Radon-222, ${}_{\\;86}^{222}\\text{Rn},$ has a half-life of 3.823 days. How long will it take a sample of radon-222 with a mass of 0.750 g to decay into other elements, leaving only 0.100 g of radon-222?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 11.1,
+    "unit": "d",
+    "hint": "Find λ = 0.693/t<sub>1/2</sub>, then t = −(1/λ) ln(0.100/0.750).",
+    "solution": "11.1 days"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm12472048",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-radiocarbon"
+   },
+   "cite": "ex-radiocarbon",
+   "prompt": "More accurate dates of the reigns of ancient Egyptian pharaohs have been determined recently using plants that were preserved in their tombs. Samples of seeds and plant matter from King Tutankhamun’s tomb have a C-14 decay rate of 9.07 disintegrations/min/g of C. How long ago did King Tut’s reign come to an end?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3350,
+    "unit": "y",
+    "hint": "Use Rate<sub>0</sub> = 13.6 disintegrations/min/g C and λ = 1.21 × 10<sup>−4</sup> y<sup>−1</sup> in t = −(1/λ) ln(Rate<sub><em>t</em></sub>/Rate<sub>0</sub>).",
+    "solution": "about 3350 years ago, or approximately 1340 BC"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp133528864",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-rock-dating"
+   },
+   "cite": "ex-rock-dating",
+   "prompt": "A sample of rock contains 6.14 × 10<sup>–4</sup> g of Rb-87 and 3.51 × 10<sup>–5</sup> g of Sr-87. Calculate the age of the rock. (The half-life of the β decay of Rb-87 is 4.7 × 10<sup>10</sup> y.)",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3700000000.0,
+    "unit": "y",
+    "tol": 0.03,
+    "hint": "Convert both masses to moles; the Rb-87 at the start is the Rb-87 now plus the moles of Sr-87.",
+    "solution": "3.7 × 10<sup>9</sup> y"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp13838752",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "types",
+   "prompt": "What are the types of radiation emitted by the nuclei of radioactive elements?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "α (helium nuclei), β (electrons), β<sup>+</sup> (positrons), and η (neutrons) may be emitted from a radioactive element, all of which are particles; γ rays also may be emitted."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp81671360",
+   "source_number": "20",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "types",
+   "prompt": "What changes occur to the atomic number and mass of a nucleus during each of the following decay scenarios?<br>(a) an α particle is emitted<br>(b) a β particle is emitted<br>(c) γ radiation is emitted<br>(d) a positron is emitted<br>(e) an electron is captured",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: write each decay as a general nuclear equation, ${}_{Z}^{A}\\text{X}$ going to the particle plus the daughter, and balance the mass numbers and the atomic numbers on the two sides. The particle’s own superscript and subscript (${}_{2}^{4}\\text{He}$, ${}_{-1}^{\\;0}\\text{e}$, ${}_{0}^{0}\\gamma$, ${}_{+1}^{\\;0}\\text{e}$, and a captured ${}_{-1}^{\\;0}\\text{e}$ on the left) then say how much the daughter’s <em>A</em> and <em>Z</em> must differ from the parent’s; Figure 21.7 sets the five cases side by side."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp50277600",
+   "source_number": "21",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "types",
+   "prompt": "What is the change in the nucleus that results from the following decay scenarios?<br>(a) emission of a β particle<br>(b) emission of a β<sup>+</sup> particle<br>(c) capture of an electron",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) conversion of a neutron to a proton: ${}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{1}^{1}\\text{p}+{}_{+1}^{\\;0}\\text{e};$ (b) conversion of a proton to a neutron; the positron has the same mass as an electron and the same magnitude of positive charge as the electron has negative charge; when the n:p ratio of a nucleus is too low, a proton is converted into a neutron with the emission of a positron: ${}_{1}^{1}\\text{p}\\;\\longrightarrow \\;{}_{0}^{1}\\text{n}+{}_{+1}^{\\;0}\\text{e};$ (c) In a proton-rich nucleus, an inner atomic electron can be absorbed. In simplest form, this changes a proton into a neutron: ${}_{1}^{1}\\text{p}+{}_{-1}^{\\;0}\\text{e}\\;\\longrightarrow \\;{}_{0}^{1}\\text{p}$"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm39924368",
+   "source_number": "22",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "series",
+   "prompt": "Many nuclides with atomic numbers greater than 83 decay by processes such as electron emission. Explain the observation that the emissions from these unstable nuclides also normally include α particles.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall that no nuclide with <em>Z</em> &gt; 83 is stable, so a heavy nuclide must lose mass, not only change a neutron into a proton, to reach the band of stability. Electron emission leaves the mass number unchanged; only α decay lowers it, by four units at a time. Follow the uranium-238 series of Figure 21.9 to see the two kinds of step alternating on the way down to lead."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp102836704",
+   "source_number": "23",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "types",
+   "prompt": "Why is electron capture accompanied by the emission of an X-ray?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The electron pulled into the nucleus was most likely found in the 1<em>s</em> orbital. As an electron falls from a higher energy level to replace it, the difference in the energy of the replacement electron in its two energy levels is given off as an X-ray."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp1698768",
+   "source_number": "24",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "types",
+   "prompt": "Explain, in terms of Figure 21.2, how unstable heavy nuclides (atomic number &gt; 83) may decompose to form nuclides of greater stability (a) if they are below the band of stability and (b) if they are above the band of stability.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: for each case, decide whether the nuclide has too few or too many neutrons for its number of protons, and which decay moves its n:p ratio the right way. Below the band the ratio must rise: α decay raises it for a heavy nuclide, and positron emission or electron capture raise it by turning a proton into a neutron. Above the band the ratio must fall: β decay turns a neutron into a proton. Remember that a heavy nuclide must also lose mass to reach a stable nuclide, which only α decay does."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp16009760",
+   "source_number": "25",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "types",
+   "prompt": "Which of the following nuclei is most likely to decay by positron emission? Explain your choice.",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "chromium-53",
+     "manganese-51",
+     "iron-59"
+    ],
+    "correct": 1,
+    "hint": "Work out the n:p ratio of each; positron emission happens when it is low.",
+    "solution": "Manganese-51 is most likely to decay by positron emission. The n:p ratio for Cr-53 is $\\;\\frac{29}{24}\\;$ = 1.21; for Mn-51, it is $\\;\\frac{26}{25}\\;$ = 1.04; for Fe-59, it is $\\;\\frac{33}{26}\\;$ = 1.27. Positron decay occurs when the n:p ratio is low. Mn-51 has the lowest n:p ratio and therefore is most likely to decay by positron emission. Besides, ${}_{24}^{53}\\text{Cr}$ is a stable isotope, and ${}_{26}^{59}\\text{Fe}$ decays by beta emission."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp54341232",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "types",
+   "prompt": "The following nuclei do not lie in the band of stability. How would they be expected to decay?<br>(a) ${}_{15}^{28}\\text{P}$<br>(b) ${}_{\\;92}^{235}\\text{U}$<br>(c) ${}_{20}^{37}\\text{Ca}$<br>(d) ${}_{3}^{9}\\text{L}\\text{i}$<br>(e) ${}_{\\;96}^{245}\\text{Cm}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) positron emission; (b) α decay; (c) positron emission; (d) β decay; (e) α decay"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp48794032",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "series",
+   "prompt": "Write a nuclear reaction for each step in the formation of ${}_{\\;84}^{218}\\text{Po}$ from ${}_{\\;92}^{238}\\text{U},$ which proceeds by a series of decay reactions involving the step-wise emission of α, β, β, α, α, α, α particles, in that order.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "${}_{\\;92}^{238}\\text{U}\\;\\longrightarrow \\;{}_{\\;90}^{234}\\text{Th}+{}_{2}^{4}\\text{He};$ ${}_{\\;90}^{234}\\text{Th}\\;\\longrightarrow \\;{}_{\\;91}^{234}\\text{Pa}+{}_{-1}^{\\;0}\\text{e};$ ${}_{\\;91}^{234}\\text{Pa}\\;\\longrightarrow \\;{}_{\\;92}^{234}\\text{U}+{}_{-1}^{\\;0}\\text{e};$ ${}_{\\;92}^{234}\\text{U}\\;\\longrightarrow \\;{}_{\\;90}^{230}\\text{Th}+{}_{2}^{4}\\text{He}$ ${}_{\\;90}^{230}\\text{Th}\\;\\longrightarrow \\;{}_{\\;88}^{226}\\text{Ra}+{}_{2}^{4}\\text{He}$ ${}_{\\;88}^{226}\\text{Ra}\\;\\longrightarrow \\;{}_{\\;86}^{222}\\text{Rn}+{}_{2}^{4}\\text{He};$ ${}_{\\;86}^{222}\\text{Rn}\\;\\longrightarrow \\;{}_{\\;84}^{218}\\text{Po}+{}_{2}^{4}\\text{He}$"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp87827184",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "half-lives",
+   "prompt": "Define the term half-life and illustrate it with an example.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Half-life is the time required for half the atoms in a sample to decay. Example (answers may vary): For C-14, the half-life is 5770 years. A 10-g sample of C-14 would contain 5 g of C-14 after 5770 years; a 0.20-g sample of C-14 would contain 0.10 g after 5770 years."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp18159360",
+   "source_number": "33",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "half-lives",
+   "prompt": "<sup>239</sup>Pu is a nuclear waste byproduct with a half-life of 24,000 y. What fraction of the <sup>239</sup>Pu present today will be present in 1000 y?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.973,
+    "hint": "1000 y is 1000/24,000 of a half-life, so the fraction left is (1/2) raised to that power.",
+    "solution": "${(\\;\\frac{1}{2}\\;)}^{0.04}\\;=\\;0.973$ or 97.3%"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp120962800",
+   "source_number": "35",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "half-lives",
+   "prompt": "If 1.000 g of ${}_{\\;88}^{226}\\text{Ra}$ produces 0.0001 mL of the gas ${}_{\\;86}^{222}\\text{Rn}$ at STP (standard temperature and pressure) in 24 h, what is the half-life of <sup>226</sup>Ra in years?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 2000,
+    "unit": "y",
+    "tol": 0.1,
+    "hint": "Moles of Rn made per day over moles of Ra is the fraction decaying per day, which is λ in d<sup>−1</sup>; then t<sub>1/2</sub> = 0.693/λ.",
+    "solution": "2 × 10<sup>3</sup> y"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp20502256",
+   "source_number": "37",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "half-lives",
+   "prompt": "Technetium-99 is often used for assessing heart, liver, and lung damage because certain technetium compounds are absorbed by damaged tissues. It has a half-life of 6.0 h. Calculate the rate constant for the decay of ${}_{43}^{99}\\text{Tc}.$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.12,
+    "unit": "h⁻¹",
+    "tol": 0.05,
+    "hint": "λ = 0.693/t<sub>1/2</sub>.",
+    "solution": "0.12 h<sup>–1</sup>"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp60953824",
+   "source_number": "39",
+   "kind": "exercise",
+   "bloom": "Evaluate",
+   "place": {
+    "at": "end"
+   },
+   "cite": "other-nuclides",
+   "prompt": "A sample of rock was found to contain 8.23 mg of rubidium-87 and 0.47 mg of strontium-87.<br>(a) Calculate the age of the rock if the half-life of the decay of rubidium by β emission is 4.7 × 10<sup>10</sup> y.<br>(b) If some ${}_{38}^{87}\\text{Sr}$ was initially present in the rock, would the rock be younger, older, or the same age as the age calculated in (a)? Explain your answer.",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3800000000.0,
+    "part": "(a)",
+    "unit": "y",
+    "hint": "The Rb-87 at the start is the Rb-87 now plus the moles of Sr-87 formed from it.",
+    "solution": "(a) 3.8 billion years; (b) The rock would be younger than the age calculated in part (a). If Sr was originally in the rock, the amount produced by radioactive decay would equal the present amount minus the initial amount. As this amount would be smaller than the amount used to calculate the age of the rock and the age is proportional to the amount of Sr, the rock would be younger."
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp226288768",
+   "source_number": "41",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "half-lives",
+   "prompt": "Plutonium was detected in trace amounts in natural uranium deposits by Glenn Seaborg and his associates in 1941. They proposed that the source of this <sup>239</sup>Pu was the capture of neutrons by <sup>238</sup>U nuclei. Why is this plutonium not likely to have been trapped at the time the solar system formed 4.7 × 10<sup>9</sup> years ago?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<em>c</em> = 0; This shows that no Pu-239 could remain since the formation of the earth. Consequently, the plutonium now present could not have been formed with the uranium."
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idp168859936",
+   "source_number": "43",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "types",
+   "prompt": "A ${}_{5}^{8}\\text{B}$ atom (mass = 8.0246 amu) decays into a ${}_{4}^{8}\\text{Be}$ atom (mass = 8.0053 amu) by loss of a β<sup>+</sup> particle (mass = 0.00055 amu) or by electron capture. How much energy (in millions of electron volts) is produced by this reaction?",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 17.5,
+    "unit": "MeV",
+    "hint": "Find the mass lost in amu and convert with 1 amu = 931.5 MeV, as for a binding energy.",
+    "solution": "17.5 MeV"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp92569456",
+   "source_number": "45",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "types",
+   "prompt": "Write a balanced equation for each of the following nuclear reactions:<br>(a) bismuth-212 decays into polonium-212<br>(b) beryllium-8 and a positron are produced by the decay of an unstable nucleus<br>(c) neptunium-239 forms from the reaction of uranium-238 with a neutron and then spontaneously converts into plutonium-239<br>(d) strontium-90 decays into yttrium-90",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${}_{\\;83}^{212}\\text{Bi}\\;\\longrightarrow \\;{}_{\\;84}^{212}\\text{Po}+{}_{-1}^{\\;0}\\text{e};$ (b) ${}_{5}^{8}\\text{B}\\;\\longrightarrow \\;{}_{4}^{8}\\text{B}\\text{e}+{}_{-1}^{\\;0}\\text{e};$ (c) ${}_{\\;92}^{238}\\text{U}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;93}^{239}\\text{Np}+{}_{-1}^{\\;0}\\text{N}\\text{p},$ ${}_{\\;93}^{239}\\text{Np}\\;\\longrightarrow \\;{}_{\\;94}^{239}\\text{Pu}+{}_{-1}^{\\;0}\\text{e};$ (d) ${}_{38}^{90}\\text{Sr}\\;\\longrightarrow \\;{}_{39}^{90}\\text{Y}+{}_{-1}^{\\;0}\\text{e}$"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "first-order-radioactive-decay"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "decay-constant"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "radiocarbon-dating"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "first-order-radioactive-decay"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "dating-rocks"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "decay-constant"
+  },
+  {
+   "exercise": "e1",
+   "concept": "alpha-decay"
+  },
+  {
+   "exercise": "e1",
+   "concept": "beta-decay"
+  },
+  {
+   "exercise": "e1",
+   "concept": "positron-emission"
+  },
+  {
+   "exercise": "e1",
+   "concept": "gamma-emission"
+  },
+  {
+   "exercise": "e2",
+   "concept": "alpha-decay"
+  },
+  {
+   "exercise": "e2",
+   "concept": "beta-decay"
+  },
+  {
+   "exercise": "e2",
+   "concept": "gamma-emission"
+  },
+  {
+   "exercise": "e2",
+   "concept": "positron-emission"
+  },
+  {
+   "exercise": "e2",
+   "concept": "electron-capture"
+  },
+  {
+   "exercise": "e3",
+   "concept": "beta-decay"
+  },
+  {
+   "exercise": "e3",
+   "concept": "positron-emission"
+  },
+  {
+   "exercise": "e3",
+   "concept": "electron-capture"
+  },
+  {
+   "exercise": "e4",
+   "concept": "alpha-decay"
+  },
+  {
+   "exercise": "e4",
+   "concept": "beta-decay"
+  },
+  {
+   "exercise": "e4",
+   "concept": "radioactive-decay-series"
+  },
+  {
+   "exercise": "e4",
+   "concept": "predicting-decay-mode"
+  },
+  {
+   "exercise": "e5",
+   "concept": "electron-capture"
+  },
+  {
+   "exercise": "e5",
+   "concept": "core-electrons"
+  },
+  {
+   "exercise": "e6",
+   "concept": "predicting-decay-mode"
+  },
+  {
+   "exercise": "e6",
+   "concept": "band-of-stability"
+  },
+  {
+   "exercise": "e6",
+   "concept": "alpha-decay"
+  },
+  {
+   "exercise": "e6",
+   "concept": "beta-decay"
+  },
+  {
+   "exercise": "e6",
+   "concept": "positron-emission"
+  },
+  {
+   "exercise": "e7",
+   "concept": "predicting-decay-mode"
+  },
+  {
+   "exercise": "e7",
+   "concept": "positron-emission"
+  },
+  {
+   "exercise": "e8",
+   "concept": "predicting-decay-mode"
+  },
+  {
+   "exercise": "e8",
+   "concept": "band-of-stability"
+  },
+  {
+   "exercise": "e9",
+   "concept": "radioactive-decay-series"
+  },
+  {
+   "exercise": "e9",
+   "concept": "alpha-decay"
+  },
+  {
+   "exercise": "e9",
+   "concept": "beta-decay"
+  },
+  {
+   "exercise": "e9",
+   "concept": "balancing-nuclear-equations"
+  },
+  {
+   "exercise": "e10",
+   "concept": "radioactive-half-life"
+  },
+  {
+   "exercise": "e11",
+   "concept": "first-order-radioactive-decay"
+  },
+  {
+   "exercise": "e11",
+   "concept": "radioactive-half-life"
+  },
+  {
+   "exercise": "e12",
+   "concept": "radioactive-decay-rate"
+  },
+  {
+   "exercise": "e12",
+   "concept": "decay-constant"
+  },
+  {
+   "exercise": "e12",
+   "concept": "standard-temperature-and-pressure"
+  },
+  {
+   "exercise": "e13",
+   "concept": "decay-constant"
+  },
+  {
+   "exercise": "e14",
+   "concept": "dating-rocks"
+  },
+  {
+   "exercise": "e14",
+   "concept": "first-order-radioactive-decay"
+  },
+  {
+   "exercise": "e15",
+   "concept": "first-order-radioactive-decay"
+  },
+  {
+   "exercise": "e15",
+   "concept": "radioactive-half-life"
+  },
+  {
+   "exercise": "e16",
+   "concept": "positron-emission"
+  },
+  {
+   "exercise": "e16",
+   "concept": "electron-capture"
+  },
+  {
+   "exercise": "e16",
+   "concept": "mass-energy-equivalence"
+  },
+  {
+   "exercise": "e17",
+   "concept": "balancing-nuclear-equations"
+  },
+  {
+   "exercise": "e17",
+   "concept": "beta-decay"
+  },
+  {
+   "exercise": "e17",
+   "concept": "positron-emission"
+  }
+ ],
+ "referents": []
+}

@@ -32,28 +32,32 @@
    "concept": "solubility-product",
    "meaning": "the solubility product constant, the equilibrium constant for the dissolution of a slightly soluble ionic compound",
    "unit": "none (concentrations in M)",
-   "section": "15.1"
+   "section": "15.1",
+   "anchor": "15.1-solubility-product"
   },
   {
    "sym": "Q_sp",
    "concept": "reaction-quotient",
    "meaning": "the reaction quotient for the dissolution of a slightly soluble ionic compound",
    "unit": "none (concentrations in M)",
-   "section": "15.1"
+   "section": "15.1",
+   "anchor": "15.1-precipitation"
   },
   {
    "sym": "[M^m+]",
    "concept": "molarity",
    "meaning": "the molar concentration of the cation M<sup>m+</sup> in a saturated solution",
    "unit": "mol/L (M)",
-   "section": "15.1"
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
   },
   {
    "sym": "[X^n-]",
    "concept": "molarity",
    "meaning": "the molar concentration of the anion X<sup>n–</sup> in a saturated solution",
    "unit": "mol/L (M)",
-   "section": "15.1"
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
   },
   {
    "sym": "p_stoich",
@@ -61,7 +65,8 @@
    "type": null,
    "meaning": "the number of cations in the formula M<sub>p</sub>X<sub>q</sub>",
    "unit": "none",
-   "section": "15.1"
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
   },
   {
    "sym": "q_stoich",
@@ -69,42 +74,144 @@
    "type": null,
    "meaning": "the number of anions in the formula M<sub>p</sub>X<sub>q</sub>",
    "unit": "none",
-   "section": "15.1"
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
   },
   {
    "sym": "x_ice",
    "concept": "ice-change-terms",
    "meaning": "the change in concentration defined by the ICE table; for a simple dissolution, the molar solubility",
    "unit": "mol/L (M)",
-   "section": "15.1"
+   "section": "15.1",
+   "anchor": "15.1-ksp-solubility"
   },
   {
    "sym": "K_f_form",
    "concept": "formation-constant",
    "meaning": "the formation constant (stability constant) for a complex ion",
    "unit": "none (concentrations in M)",
-   "section": "15.2"
+   "section": "15.2",
+   "anchor": "15.2-complex-ions"
   },
   {
    "sym": "K_d",
    "concept": "dissociation-constant",
    "meaning": "the dissociation constant for a complex ion, the reciprocal of its formation constant",
    "unit": "none (concentrations in M)",
-   "section": "15.2"
+   "section": "15.2",
+   "anchor": "15.2-complex-ions"
   },
   {
    "sym": "K",
    "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant for the net reaction of two coupled equilibria",
    "unit": "none (concentrations in M)",
-   "section": "15.3"
+   "section": "15.3",
+   "anchor": "15.3-reefs"
   },
   {
    "sym": "K_a2",
    "concept": "acid-ionization-constant",
    "meaning": "the second ionization constant of carbonic acid, for bicarbonate ion",
    "unit": "none (concentrations in M)",
-   "section": "15.3"
+   "section": "15.3",
+   "anchor": "15.3-reefs"
+  },
+  {
+   "sym": "[OH-]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydroxide ion at which a hydroxide begins to precipitate",
+   "unit": "mol/L (M)",
+   "section": "15.1",
+   "anchor": "15.1-precipitation"
+  },
+  {
+   "sym": "pOH",
+   "concept": "poh",
+   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "unit": "none",
+   "section": "15.1",
+   "anchor": "15.1-precipitation"
+  },
+  {
+   "sym": "pH",
+   "concept": "ph",
+   "meaning": "the negative base-10 logarithm of the hydronium ion molarity",
+   "unit": "none",
+   "section": "15.1",
+   "anchor": "15.1-precipitation"
+  },
+  {
+   "sym": "K_sp",
+   "concept": "solubility-product",
+   "meaning": "the solubility product constant, the equilibrium constant for the dissolution of a slightly soluble ionic compound",
+   "unit": "none (concentrations in M)",
+   "section": "15.2",
+   "anchor": "15.2-dissolution"
+  },
+  {
+   "sym": "Q_c",
+   "concept": "reaction-quotient",
+   "meaning": "the reaction quotient for the dissolution of silver chloride, which falls below its solubility product as the complex forms",
+   "unit": "none",
+   "section": "15.2",
+   "anchor": "15.2-dissolution"
+  },
+  {
+   "sym": "K_sp",
+   "concept": "solubility-product",
+   "meaning": "the solubility product constant, the equilibrium constant for the dissolution of a slightly soluble ionic compound",
+   "unit": "none (concentrations in M)",
+   "section": "15.3",
+   "anchor": "15.3-reefs"
+  },
+  {
+   "sym": "K_a1",
+   "concept": "acid-ionization-constant",
+   "meaning": "the ionization constant for the first step of carbonic acid",
+   "unit": "none (concentrations in M)",
+   "section": "15.3",
+   "anchor": "15.3-reefs"
+  },
+  {
+   "sym": "K_f_form",
+   "concept": "formation-constant",
+   "meaning": "the formation constant (stability constant) for a complex ion",
+   "unit": "none (concentrations in M)",
+   "section": "15.3",
+   "anchor": "15.3-complex"
+  },
+  {
+   "sym": "pK_a",
+   "concept": "acid-ionization-constant",
+   "meaning": "the negative logarithm of the acid ionization constant of acetic acid",
+   "unit": "none",
+   "section": "15.3",
+   "anchor": "15.3-calculations"
+  },
+  {
+   "sym": "pH",
+   "concept": "ph",
+   "meaning": "the pH of the buffered solution, the negative base-10 logarithm of its hydronium ion molarity",
+   "unit": "none",
+   "section": "15.3",
+   "anchor": "15.3-calculations"
+  },
+  {
+   "sym": "pOH",
+   "concept": "poh",
+   "meaning": "the negative base-10 logarithm of the hydroxide ion molarity",
+   "unit": "none",
+   "section": "15.3",
+   "anchor": "15.3-calculations"
+  },
+  {
+   "sym": "[OH-]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of hydroxide ion",
+   "unit": "mol/L (M)",
+   "section": "15.3",
+   "anchor": "15.3-calculations"
   }
  ]
 }

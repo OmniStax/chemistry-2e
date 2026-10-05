@@ -63,3 +63,5 @@ Objectives, summary and glossary go to the tables. Kept as printed: exercise 64'
 - variables rows for 15.2 of `K_sp` (concept `solubility-product`) and `Q_c` (concept `reaction-quotient`, the book's plain Q), both written here through their macros in the text and the Sim
 - `ch15/COLOR.md`: 15.2's referents are the Lewis base, the Lewis acid and the displacing species of the redrawn Lewis equations, not the metal ion, ligand and complex it planned (see Referents)
 - `ch15/config.md`: 15.2 redraws the five Lewis equations and the Cu(CN)₂⁻ structure as figure rows with no number, builds no 3D complex ion (the ions it draws are linear), and writes Example 15.14's ICE table as a table
+
+Applied by the chapter pass (2026-10-05): all four anchors as asked; rows added for `K_sp` (concept `solubility-product`) and `Q_c` (concept `reaction-quotient`) at 15.2-dissolution. `ch15/COLOR.md` lists `base`, `acid` and `displacer` as built; `ch15/config.md` records the six unnumbered figure rows, no 3D complex ion and the ICE table written as a table. The alt of exercise 76's key image (d) now spells "labeled".

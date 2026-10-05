@@ -20,8 +20,8 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Unnumbered images kept as `figure` rows | any ICE table or Lewis equation image a section keeps as an image |
 | 3D | Figure 15.2 (particle picture), bounded orbit; a complex ion (Ag(NH₃)₂⁺, Al(OH)₄⁻, Cu(CN)₂⁻) drawn both ways with a view choice, default 2D; every graph flat |
 | Motion | per figure in its plan line; the dissolution box may exchange ions on a clock if the section argues dynamic equilibrium; everything else still |
-| Colour | `concentration` for every ion concentration, molar solubility and log concentration axis, pH and pOH; `mass` for grams dissolved where a readout states it; every K_sp, Q_sp, K_f, K_d, K and x in ink; see `COLOR.md` |
-| Symbols | eight rows added: untyped `K_sp`, `Q_sp`, `K_f_form`, `K_d`, `p_stoich`, `q_stoich`; typed `[M^m+]` `\kconcMion`, `[X^n-]` `\kconcXion`; reused `K`, `K_a2`, `x_ice`, `[H3O+]`, `[OH-]`, `pH`, `pOH`, `M`; never `K_f` (Chapter 11's cryoscopic constant) or `K_b` |
+| Colour | `concentration` for every ion concentration, molar solubility and log concentration axis, pH and pOH; `mass` for grams dissolved where a readout states it; K_sp, Q_sp, K_f, K_d, Q and the net K in `equilibrium-constant`, through their macros, as the tables declare them; x, p and q in ink; see `COLOR.md` |
+| Symbols | eight rows added: `K_sp` `\kKsp`, `Q_sp` `\kQsp`, `K_f_form` `\kKfform` and `K_d` `\kKd`, each taking `equilibrium-constant` from its concept; `p_stoich` and `q_stoich` with LaTeX only; `[M^m+]` `\kconcMion`, `[X^n-]` `\kconcXion`; reused `K`, `K_a2`, `x_ice`, `[H3O+]`, `[OH-]`, `pH`, `pOH`, `M`; never `K_f` (Chapter 11's cryoscopic constant) or `K_b` |
 | Inline exercises | sixteen Check Your Learning items (13, 1, 2), each with a `data-place` host |
 | Exercises tab | end-of-section items, kind `exercise`; `fs-idp2894848` (15.1) is a `simulation-exercise`, held unless the Sim carries it |
 | Exercise placement | `fs-idp46388832` 15.2 → 15.1; `fs-idm301808` and `fs-idp11595856` 15.3 → 15.1; `fs-idm65484352`, `fs-idm98555648` 15.2 → 15.3; `fs-idm299312`, `fs-idp457072`, `fs-idp135248` 15.3 → 15.2; each with `source_section` |
@@ -36,3 +36,14 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Labels | Figure for a book number, Sim for an addition |
 | `ai` and `built` | `{"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"}`, `2026-09-28` |
 | Book manifest | `ch15` added to `book.json` by `ost merge chemistry-2e 15` |
+
+## What the build changed
+
+- K_sp, Q_sp, K_f, K_d, the book's plain Q and the net K are typed `equilibrium-constant` and written through their macros on every page, as the symbols and concepts tables declared them; the Colour and Symbols rows above are corrected to say so. The concept `molar-solubility` is typed `concentration` at the chapter pass, as 15.1 asked.
+- Figure 15.2 is a moving 3D Figure: ion pairs leave a silver chloride block and return on a 6 s clock until the two rates meet, with the counts on a strip beneath. A K_sp-plane Sim (15.1), a Sim of silver chloride dissolving in ammonia (15.2) and a solubility-against-pH Sim for aluminum hydroxide (15.3) are added, each labelled Sim.
+- ICE tables: 15.1's four (Examples 15.3, 15.4, 15.6, 15.13) and 15.2's one (Example 15.14) are written as unnumbered HTML tables in the text; no ICE image is copied.
+- Unnumbered images as `figure` rows with no number: 15.2 redraws its five Lewis equations (hydronium and ammonium, BF₄⁻, Ag(NH₃)₂⁺, sulfate, the two displacements) and the Cu(CN)₂⁻ structure flat; 15.3 replaces the Al(OH)₄⁻ image with a two-view Figure (flat by default, tetrahedral in 3D) and keeps Example 15.16's thiosulfate equation as printed.
+- 15.2 builds no 3D complex ion: Ag(NH₃)₂⁺ and Cu(CN)₂⁻ are linear, and a 3D view would show nothing the flat drawing lacks.
+- `fs-idp2894848` (15.1) stays held: the K_sp-plane Sim draws AgCl and AgBr, not the simulation's salts.
+- Anchors, set at the chapter pass: the five forms and every variables row, including twelve rows added for the symbols the pages write through macros ([OH⁻], pH and pOH in 15.1; K_sp and Q in 15.2; K_sp, K_a1, K_f, pK_a, pH, pOH and [OH⁻] in 15.3).
+- Concepts: the sections added seven concepts and 21 prerequisite edges to the 16 and 41 merged before the build, 23 and 62 in all.

@@ -1274,3 +1274,59 @@ Checks: `ost check` clean for the book, and every page of the chapter in
 light and dark with no console error but the dev server's own missing
 offline catalogue, no KaTeX error, no missing image, every figure drawn and
 all twenty-two exercise hosts filled.
+
+
+## Pass 18 (2026-10-05): Chapter 15, Equilibria of Other Reaction Classes, is built and passed
+
+Built: the introduction and three sections, 15.1 to 15.3, in the publisher's
+numbering, Figures 15.1 to 15.9 all shown and linked. Eleven figures drawn
+live. Figure 15.2 is a beaker in 3D where ion pairs leave a silver chloride
+block and return on a 6 s clock until the two rates meet, the counts
+dissolved and returned drawn on a strip beneath. Three are Sims of
+OmniStax's own: the K_sp plane of 15.1, where a mixture of silver and halide
+ions is one point on logarithmic axes that crosses the solubility line,
+slides along it under a common ion and meets the AgCl and AgBr lines in turn;
+silver chloride dissolving as ammonia is added in 15.2; and the solubility of
+aluminum hydroxide against pH in 15.3, the sum of a line for Al³⁺ and a line
+for Al(OH)₄⁻. 15.2 redraws its five Lewis equations and the Cu(CN)₂⁻
+structure flat, each atom in the colour of the base, the acid or the
+displacing species it came from; 15.3 redraws Al(OH)₄⁻ with a choice of a
+flat Lewis structure or a tetrahedron in 3D, and keeps Example 15.16's
+thiosulfate equation as printed. The seven photographs, Figures 15.1 and
+15.3 to 15.9, are the book's own. The five ICE tables of 15.1 and 15.2 are
+written as tables. Eighty-four exercises, sixteen of them Check Your
+Learning items placed inline after their examples, each with its host.
+Eight items moved between sections: one from 15.2 and two from 15.3 to 15.1,
+on saturation and precipitation; three complex-ion calculations from 15.3 to
+15.2; two questions on dissolving a salt with ammonia or nitric acid from
+15.2 to 15.3. Thirty-seven unkeyed numerical items are left out and named in
+`exercise_notes`; two unkeyed choice items are kept open with their options;
+the fourteen other unkeyed items are kept with a suggested approach; the one
+simulation exercise is held.
+
+What the chapter pass changed. Every form and variables row of the chapter
+anchored: the five forms, K_sp at the heading that defines it and the
+general form's symbols at the one that states it, Q_sp at Predicting
+Precipitation, K_f and K_d at 15.2's complex ions, the net K and K_a2 at the
+coral reefs; twenty-three variables, twelve of them added so that every
+symbol a page writes through its macro has a row in that section. K_sp,
+Q_sp, K_f, K_d, Q and the net K stay typed as `equilibrium-constant`, as the
+tables declared them and the sections built them, and `config.md` and
+`COLOR.md` no longer say they are in ink. Molar solubility is typed
+`concentration`. `config.md` records what the build changed, the unnumbered
+figure rows and the ICE tables among it, and `COLOR.md` the referents as
+built. The readouts of 15.1 and 15.3 set their unit upright, and one alt
+text of 15.2 is spelled as the rest of the page is.
+
+Errata carried as printed and named in `exploration.md`: "Le ChÂtelier’s",
+which the CNXML itself prints, Example 15.10's "log(3.3 × 10-4)", the
+subscript missing from Example 15.1's "(PO₄)3OH", a key in 15.1 writing
+[Ti⁺] and [C₂)₄²⁻], "0.100 NH₃" without its unit and "potassium cyanide ion"
+in 15.2, chargeless BF₄ in one of its keys, the carbonate written −2,
+"solublities" and "Ag(S₂O₂)₂³⁻" once in 15.3, and a 15.3 key heading its
+third column [OH⁻].
+
+Checks: `ost check` clean for the book, and every page of the chapter in
+light and dark with no console error but the dev server's own missing
+offline catalogue, no KaTeX error, no missing image, every figure drawn and
+all sixteen exercise hosts filled.

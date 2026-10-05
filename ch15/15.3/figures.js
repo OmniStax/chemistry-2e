@@ -82,7 +82,7 @@ const sigTex = (x) => { const s = sig(x); return s.plain ?? `${s.m} \\times 10^{
     [3, 5, 7, 9, 11, 13].forEach((q) => { if (lb(q) > -12 && lb(q) < 2) hits.push({ x: g.X(q), y: g.Y(lb(q)), r: 14, name: '[Al(OH)₄⁻], the line of the complex coupling' }); });
     hits.push({ x: pt.x, y: pt.y, r: 16, name: `molar solubility at pH ${p.toFixed(2)}: ${sigText(s)} M` });
     const ohT = hue('concentration', sigTex(oh));
-    ro.set(`[\\text{Al}^{3+}] + [\\text{Al(OH)}_{4}{}^{-}] = \\frac{\\kKsp}{{\\kconcOH}^{3}} + \\kK\\,\\kconcOH = \\frac{${hue('equilibrium-constant', '2 \\times 10^{-32}')}}{(${ohT})^{3}} + ${hue('equilibrium-constant', '22')}\\,(${ohT}) = ${hue('concentration', sigTex(t1))} + ${hue('concentration', sigTex(t2))} = ${hue('concentration', sigTex(s))}\\ M`,
+    ro.set(`[\\text{Al}^{3+}] + [\\text{Al(OH)}_{4}{}^{-}] = \\frac{\\kKsp}{{\\kconcOH}^{3}} + \\kK\\,\\kconcOH = \\frac{${hue('equilibrium-constant', '2 \\times 10^{-32}')}}{(${ohT})^{3}} + ${hue('equilibrium-constant', '22')}\\,(${ohT}) = ${hue('concentration', sigTex(t1))} + ${hue('concentration', sigTex(t2))} = ${hue('concentration', sigTex(s))}\\ \\text{M}`,
       'Each unit of $\\kpH$ multiplies $\\kconcOH$ by 10, which divides [Al³⁺] by 1000 and multiplies [Al(OH)₄⁻] by 10.');
   }
   still(d, draw);

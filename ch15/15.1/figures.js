@@ -323,7 +323,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     } else {
       const k = LK.cl - cl.v <= LK.br - br.v ? 'cl' : 'br', xr = k === 'cl' ? cr : rr, ion = k === 'cl' ? '[\\text{Cl}^{-}]' : '[\\text{Br}^{-}]';
       const t = round2(KS[k] / xr);
-      ro.set(`[\\text{Ag}^{+}] = \\frac{\\kKsp}{${ion}} = \\frac{\\mk{K}{${hue('equilibrium-constant', sciTex(KS[k]))}}}{\\mk{x}{${hue('concentration', sciTex(xr))}}} = \\mk{t}{${hue('concentration', sciTex(t))}}\\ M`, undefined, { form: 'two-' + k });
+      ro.set(`[\\text{Ag}^{+}] = \\frac{\\kKsp}{${ion}} = \\frac{\\mk{K}{${hue('equilibrium-constant', sciTex(KS[k]))}}}{\\mk{x}{${hue('concentration', sciTex(xr))}}} = \\mk{t}{${hue('concentration', sciTex(t))}}\\ \\text{M}`, undefined, { form: 'two-' + k });
     }
   }
   register(d.fig, { update: () => {}, draw });

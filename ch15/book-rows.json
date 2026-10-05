@@ -27,7 +27,8 @@
      "id": "eq-ksp",
      "latex": "\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)\\qquad K_{\\text{sp}}=[\\text{M}^{m+}]^{p}[\\text{X}^{n-}]^{q}",
      "ktex": "\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)\\qquad K_{\\text{sp}}=\\kconcMion^{p}\\kconcXion^{q}",
-     "condition": "a slightly soluble ionic solid whose dissolution involves only dissociation and solvation"
+     "condition": "a slightly soluble ionic solid whose dissolution involves only dissociation and solvation",
+     "anchor": "15.1-ksp-solubility"
     }
    ]
   },
@@ -94,7 +95,8 @@
    "terms": [
     "molar solubility"
    ],
-   "statement": "The molar solubility of a compound is its solubility expressed in moles of solute per liter of saturated solution."
+   "statement": "The molar solubility of a compound is its solubility expressed in moles of solute per liter of saturated solution.",
+   "type": "concentration"
   },
   {
    "id": "coordinate-covalent-bond",
@@ -138,7 +140,8 @@
     {
      "id": "eq-kf",
      "latex": "K_{\\text{f}}=\\frac{[\\text{Cu(CN)}_{2}{}^{-}]}{[\\text{Cu}^{+}][\\text{CN}^{-}]^{2}}",
-     "condition": "the formation of Cu(CN)<sub>2</sub><sup>–</sup> from Cu<sup>+</sup> and CN<sup>–</sup>"
+     "condition": "the formation of Cu(CN)<sub>2</sub><sup>–</sup> from Cu<sup>+</sup> and CN<sup>–</sup>",
+     "anchor": "15.2-complex-ions"
     }
    ]
   },
@@ -184,7 +187,8 @@
     {
      "id": "eq-kd",
      "latex": "K_{\\text{d}}=K_{\\text{f}}^{-1}",
-     "condition": "a complex ion and the reverse of its formation reaction"
+     "condition": "a complex ion and the reverse of its formation reaction",
+     "anchor": "15.2-complex-ions"
     }
    ]
   },
@@ -228,7 +232,8 @@
     {
      "id": "eq-k-acid-coupled",
      "latex": "\\text{CaCO}_{3}(s)+\\text{H}_{3}\\text{O}^{+}(aq)\\rightleftharpoons\\text{Ca}^{2+}(aq)+\\text{HCO}_{3}{}^{-}(aq)+\\text{H}_{2}\\text{O}(l)\\qquad K=K_{\\text{sp}}/K_{\\text{a2}}=180",
-     "condition": "calcium carbonate dissolution coupled with the reverse of bicarbonate's acid ionization"
+     "condition": "calcium carbonate dissolution coupled with the reverse of bicarbonate's acid ionization",
+     "anchor": "15.3-reefs"
     }
    ]
   },
@@ -242,7 +247,8 @@
     {
      "id": "eq-k-complex-coupled",
      "latex": "\\text{Al(OH)}_{3}(s)+\\text{OH}^{-}(aq)\\rightleftharpoons\\text{Al(OH)}_{4}{}^{-}(aq)\\qquad K=K_{\\text{sp}}K_{\\text{f}}=22",
-     "condition": "aluminum hydroxide dissolution coupled with the formation of Al(OH)<sub>4</sub><sup>–</sup>"
+     "condition": "aluminum hydroxide dissolution coupled with the formation of Al(OH)<sub>4</sub><sup>–</sup>",
+     "anchor": "15.3-complex"
     }
    ]
   },

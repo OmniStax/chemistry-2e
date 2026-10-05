@@ -1,0 +1,652 @@
+{
+  "id": "21.6",
+  "module": "m68858",
+  "chapter": "21",
+  "title": "Biological Effects of Radiation",
+  "short": "Biological Effects of Radiation",
+  "lead": "<span data-concept=\"ionizing-radiation\">Ionizing radiation</span> carries enough <span data-concept=\"energy-and-work\">energy</span> to break bonds and knock electrons out of the molecules of living cells. This section separates it from <span data-concept=\"ionizing-radiation\">nonionizing radiation</span>, compares how far each kind of radiation penetrates matter, and names the <span data-concept=\"radiation-detectors\">instruments</span> and the units used to measure <span data-concept=\"radioactive-decay-rate\">activity</span>, <span data-concept=\"absorbed-dose\">absorbed dose</span> and <span data-concept=\"dose-equivalent\">tissue damage</span>.",
+  "objectives": [
+    "Describe the biological impact of ionizing radiation",
+    "Define units for measuring radiation exposure",
+    "Explain the operation of common tools for detecting radioactivity",
+    "List common sources of radiation exposure in the US"
+  ],
+  "summary_html": "<p>We are constantly exposed to radiation from a variety of naturally occurring and human-produced sources. This radiation can affect living organisms. <span data-concept=\"ionizing-radiation\">Ionizing radiation</span> is the most harmful because it can <span data-concept=\"ion\">ionize</span> molecules or break chemical bonds, which damages the molecule and causes malfunctions in cell processes. It can also create reactive hydroxyl radicals that <span data-concept=\"radiation-damage\">damage biological molecules and disrupt physiological processes</span>. Radiation can cause somatic or genetic damage, and is most harmful to rapidly reproducing cells. Types of radiation differ in their <span data-concept=\"penetrating-power\">ability to penetrate material</span> and damage tissue, with <span data-concept=\"alpha-particle\">alpha particles</span> the least penetrating but potentially most damaging and <span data-concept=\"gamma-ray\">gamma rays</span> the most penetrating.</p><p>Various devices, including <span data-concept=\"radiation-detectors\">Geiger counters, scintillators, and dosimeters</span>, are used to detect and measure radiation, and monitor radiation exposure. We use several units to measure radiation: becquerels or curies for <span data-concept=\"radioactive-decay-rate\">rates of radioactive decay</span>; gray or rads for <span data-concept=\"absorbed-dose\">energy absorbed</span>; and rems or sieverts for <span data-concept=\"dose-equivalent\">biological effects of radiation</span>. <span data-concept=\"radiation-exposure\">Exposure to radiation</span> can cause a wide range of health effects, from minor to severe, and including death. We can minimize the effects of radiation by shielding with dense materials such as lead, moving away from the source, and limiting time of exposure.</p>",
+  "notes": "Nothing in the section’s text is left out; the hydroxyl-radical reaction the book prints as an image is set as an equation.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. No exercise is left out. The three unkeyed conceptual exercises fs-idp29076672 (the containment for cobalt-60 and molybdenum-99), fs-idp16044272 (uranium-232 against uranium-233) and fs-idp224139168 (neon-24 against bismuth-211) carry a suggested approach marked as OmniStax’s own, and no answer is given for them. Example 21.8 divides by 3.7 × 10<sup>11</sup> decays per second for the curie where the text gives 3.7 × 10<sup>10</sup>, as printed.",
+  "figures": [
+    {
+      "id": "fig-damage-cells",
+      "kind": "photo",
+      "number": "21.30",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-ionizing",
+      "kind": "sim",
+      "number": "21.31",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_06_IonRadSpec.jpg"
+      ],
+      "original_caption": "Lower frequency, lower-energy electromagnetic radiation is nonionizing, and higher frequency, higher-energy electromagnetic radiation is ionizing.",
+      "draws": [
+        "frequency",
+        "energy"
+      ],
+      "facts": [
+        "spectrum"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-damage",
+      "kind": "sim",
+      "number": "21.32",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_06_Damage2.jpg"
+      ],
+      "original_caption": "Ionizing radiation can (a) directly damage a biomolecule by ionizing it or breaking its bonds, or (b) create an H<sub>2</sub>O<sup>+</sup> ion, which reacts with H<sub>2</sub>O to form a hydroxyl radical, which in turn reacts with the biomolecule, causing damage indirectly.",
+      "draws": [],
+      "conventions": [
+        "O",
+        "H",
+        "e-",
+        "gamma"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-penetration",
+      "kind": "sim",
+      "number": "21.33",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_06_Penetrate.jpg"
+      ],
+      "original_caption": "The ability of different types of radiation to pass through material is shown. From least to most penetrating, they are alpha < beta < neutron < gamma.",
+      "draws": [],
+      "conventions": [
+        "p+",
+        "n0",
+        "e-",
+        "gamma"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-radon",
+      "kind": "photo",
+      "number": "21.34",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-monitors",
+      "kind": "photo",
+      "number": "21.35",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "fig-units",
+      "kind": "photo",
+      "number": "21.36",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-dose",
+      "kind": "sim",
+      "draws": [
+        "dose"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-doses",
+      "kind": "sim",
+      "number": "21.37",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_06_Exposure2.jpg"
+      ],
+      "original_caption": "The total annual radiation exposure for a person in the US is about 620 mrem. The various sources and their relative amounts are shown in this bar graph. (source: U.S. Nuclear Regulatory Commission)",
+      "draws": [
+        "dose"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "opening",
+      "concept": "radiation-damage",
+      "verb": "introduces"
+    },
+    {
+      "span": "opening",
+      "concept": "radioactivity",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "nuclide",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "electromagnetic-radiation",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "alpha-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "beta-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "bond-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "opening",
+      "concept": "ion",
+      "verb": "uses"
+    },
+    {
+      "span": "ionizing",
+      "concept": "ionizing-radiation",
+      "verb": "introduces"
+    },
+    {
+      "span": "ionizing",
+      "concept": "electromagnetic-spectrum",
+      "verb": "uses"
+    },
+    {
+      "span": "ionizing",
+      "concept": "photon-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "ionizing",
+      "concept": "frequency",
+      "verb": "uses"
+    },
+    {
+      "span": "ionizing",
+      "concept": "free-radical",
+      "verb": "uses"
+    },
+    {
+      "span": "ionizing",
+      "concept": "ion",
+      "verb": "uses"
+    },
+    {
+      "span": "ionizing",
+      "concept": "gamma-ray",
+      "verb": "uses"
+    },
+    {
+      "span": "ionizing",
+      "concept": "radiation-damage",
+      "verb": "uses"
+    },
+    {
+      "span": "biological-effects",
+      "concept": "penetrating-power",
+      "verb": "introduces"
+    },
+    {
+      "span": "biological-effects",
+      "concept": "alpha-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "biological-effects",
+      "concept": "beta-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "biological-effects",
+      "concept": "neutron",
+      "verb": "uses"
+    },
+    {
+      "span": "biological-effects",
+      "concept": "gamma-ray",
+      "verb": "uses"
+    },
+    {
+      "span": "biological-effects",
+      "concept": "atomic-number",
+      "verb": "uses"
+    },
+    {
+      "span": "biological-effects",
+      "concept": "ionizing-radiation",
+      "verb": "uses"
+    },
+    {
+      "span": "radon",
+      "concept": "radioactive-decay-series",
+      "verb": "uses"
+    },
+    {
+      "span": "radon",
+      "concept": "radioactive-half-life",
+      "verb": "uses"
+    },
+    {
+      "span": "radon",
+      "concept": "alpha-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "radon",
+      "concept": "penetrating-power",
+      "verb": "uses"
+    },
+    {
+      "span": "measuring",
+      "concept": "radiation-detectors",
+      "verb": "introduces"
+    },
+    {
+      "span": "measuring",
+      "concept": "activity-units",
+      "verb": "introduces"
+    },
+    {
+      "span": "measuring",
+      "concept": "absorbed-dose",
+      "verb": "introduces"
+    },
+    {
+      "span": "measuring",
+      "concept": "dose-equivalent",
+      "verb": "introduces"
+    },
+    {
+      "span": "measuring",
+      "concept": "radioactive-decay-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "measuring",
+      "concept": "ionizing-radiation",
+      "verb": "uses"
+    },
+    {
+      "span": "measuring",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "units",
+      "concept": "activity-units",
+      "verb": "reinforces"
+    },
+    {
+      "span": "units",
+      "concept": "absorbed-dose",
+      "verb": "reinforces"
+    },
+    {
+      "span": "units",
+      "concept": "dose-equivalent",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-activity",
+      "concept": "activity-calculation",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-activity",
+      "concept": "radioactive-decay-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-activity",
+      "concept": "decay-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-activity",
+      "concept": "radioactive-half-life",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-activity",
+      "concept": "molar-mass",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-activity",
+      "concept": "avogadro-number",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-activity",
+      "concept": "activity-units",
+      "verb": "uses"
+    },
+    {
+      "span": "long-term",
+      "concept": "radiation-exposure",
+      "verb": "introduces"
+    },
+    {
+      "span": "long-term",
+      "concept": "dose-equivalent",
+      "verb": "uses"
+    },
+    {
+      "span": "long-term",
+      "concept": "absorbed-dose",
+      "verb": "uses"
+    },
+    {
+      "span": "long-term",
+      "concept": "ionizing-radiation",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp8743280",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-activity"
+      },
+      "cite": "ex-activity",
+      "prompt": "Tritium is a radioactive isotope of hydrogen (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">12.32 y</span>) that has several uses, including self-powered lighting, in which electrons emitted in tritium radioactive decay cause phosphorus to glow. Its nucleus contains one proton and two neutrons, and the atomic mass of tritium is <span data-type=\"mass\">3.016 amu</span>. What is the activity of a sample containing <span data-type=\"mass\">1.00mg</span> of tritium (a) in Bq and (b) in Ci?",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) in Bq",
+            "value": 356000000000.0,
+            "unit": "Bq"
+          },
+          {
+            "part": "(b) in Ci",
+            "value": 0.962,
+            "unit": "Ci"
+          }
+        ],
+        "solution": "(a) 3.56 × 10<sup>11</sup> Bq; (b) 0.962 Ci"
+      }
+    },
+    {
+      "id": "e1",
+      "source_id": "fs-idp29076672",
+      "source_number": "58",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "biological-effects",
+      "prompt": "If a hospital were storing radioisotopes, what is the minimum containment needed to protect against:<br>(a) cobalt-60 (a strong γ emitter used for irradiation)<br>(b) molybdenum-99 (a beta emitter used to produce technetium-99 for imaging)",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: for each isotope, name the radiation it gives off and find, in Figure 21.33 and the paragraph before it, the thinnest barrier that stops that radiation. Then ask what a storage room would need so that the radiation stops inside it, keeping in mind which materials attenuate γ rays effectively with the least thickness."
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idp14911920",
+      "source_number": "59",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "radon",
+      "prompt": "Based on what is known about Radon-222’s primary decay method, why is inhalation so dangerous?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Alpha particles can be stopped by very thin shielding but have much stronger ionizing potential than beta particles, X-rays, and γ-rays. When inhaled, there is no protective skin covering the cells of the lungs, making it possible to damage the DNA in those cells and cause cancer."
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idp16044272",
+      "source_number": "60",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-activity",
+      "prompt": "Given specimens uranium-232 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">68.9 y</span>) and uranium-233 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">159,200 y</span>) of equal mass, which one would have greater activity and why?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: write the activity as λN, with λ = ln 2/t<sub>1/2</sub>. Equal masses of two isotopes of nearly the same molar mass hold nearly the same number of nuclei, N, so compare the decay constants, which depend only on the half-lives, and decide which sample has more nuclei decaying each second."
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idp14100336",
+      "source_number": "61",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-activity",
+      "prompt": "A scientist is studying a <span data-type=\"mass\">2.234 g</span> sample of thorium-229 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">7340 y</span>) in a laboratory.<br>(a) What is its activity in Bq?<br>(b) What is its activity in Ci?",
+      "answer": {
+        "type": "multi",
+        "generated_by": "source",
+        "parts": [
+          {
+            "part": "(a) in Bq",
+            "value": 7640000000.0,
+            "unit": "Bq"
+          },
+          {
+            "part": "(b) in Ci",
+            "value": 0.0206,
+            "unit": "Ci"
+          }
+        ],
+        "solution": "(a) 7.64 × 10<sup>9</sup> Bq; (b) 2.06 × 10<sup>−2</sup> Ci"
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idp224139168",
+      "source_number": "62",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "ex-activity",
+      "prompt": "Given specimens neon-24 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">3.38 min</span>) and bismuth-211 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">2.14 min</span>) of equal mass, which one would have greater activity and why?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Suggested approach: write the activity as λN, with λ = ln 2/t<sub>1/2</sub>, and compare the two factors separately. The masses are equal but the molar masses are very different, so first decide which sample holds more nuclei; then decide which isotope has the larger decay constant. Weigh the two comparisons together, noticing how much larger one ratio is than the other."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "activity-calculation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "activity-units",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "radioactive-decay-rate",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "penetrating-power",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "gamma-ray",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "beta-particle",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "penetrating-power",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "alpha-particle",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "radiation-damage",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "activity-calculation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "decay-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "radioactive-half-life",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "activity-calculation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "activity-units",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "decay-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "activity-calculation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "decay-constant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "molar-mass",
+      "weights_by": "ai"
+    }
+  ],
+  "referents": []
+}

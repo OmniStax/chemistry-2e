@@ -30,7 +30,8 @@
     "ch14",
     "ch15",
     "ch16",
-    "ch17"
+    "ch17",
+    "ch18"
   ],
   "intro": {
     "module": "m68662",
@@ -11441,6 +11442,667 @@
       "section": "17.7",
       "name": "Stoichiometry of electrolysis",
       "statement": "Measuring the current during electrolysis permits stoichiometric calculations: the charge passed is the current times the time, Faraday’s constant converts it to moles of electrons, the half-reaction converts those to moles of product, and the molar mass to mass. The same chain run backwards gives the time required to deposit a given amount of product at a given current."
+    },
+    {
+      "id": "representative-metal",
+      "kind": "definition",
+      "section": "18.1",
+      "name": "Representative metal",
+      "terms": [
+        "representative metal",
+        "metal (representative)"
+      ],
+      "statement": "The representative metals are the metals among the representative elements, the elements whose s and p orbitals are filling; they lie in groups 1, 2, 12, 13, 14 and 15. Metallic character results from an element’s ability to lose its outer valence electrons, and these metals form ionic compounds by losing electrons from their outer s or p orbitals."
+    },
+    {
+      "id": "alkali-metal-properties",
+      "kind": "idea",
+      "section": "18.1",
+      "name": "Properties of the alkali metals",
+      "statement": "The alkali metals have the largest atomic radii and the lowest first ionization energies in their periods, so they readily lose their single valence electron to form 1+ cations, and their reactivity increases with increasing atomic number. They react vigorously with water to form hydrogen gas and a basic solution of the metal hydroxide, never occur free in nature, are stored under oil, and are prepared by electrolysis of their compounds."
+    },
+    {
+      "id": "alkaline-earth-metal-properties",
+      "kind": "idea",
+      "section": "18.1",
+      "name": "Properties of the alkaline earth metals",
+      "statement": "Because the nuclear charge increases from group 1 to group 2, the alkaline earth metals are smaller and have higher first ionization energies than the alkali metals of the same period, and so are less reactive, though still very reactive. They lose both valence electrons to form compounds with an oxidation state of 2+, their reactivity increases down the group, and many of their common salts are insoluble because of the high lattice energies of compounds of a divalent ion."
+    },
+    {
+      "id": "group-12-metals",
+      "kind": "idea",
+      "section": "18.1",
+      "name": "The group 12 metals",
+      "statement": "Zinc, cadmium and mercury add their last electron to an s orbital, so they are representative metals that behave more like the alkaline earth metals than like transition metals; losing their two ns electrons gives 2+ cations with pseudo-noble gas configurations, and mercury also forms the Hg₂²⁺ ion. Reactivity decreases down the group: zinc and cadmium have lower reduction potentials than hydrogen and produce hydrogen gas with acids, whereas mercury does not displace hydrogen from acids."
+    },
+    {
+      "id": "amalgam",
+      "kind": "definition",
+      "section": "18.1",
+      "name": "Amalgam",
+      "statement": "An amalgam is an alloy of mercury with one or more other metals. Most metals form amalgams, the main exceptions being iron, platinum, tungsten and tantalum; amalgams of the alkali metals are strong reducing agents that are easier to handle than the pure metals."
+    },
+    {
+      "id": "group-13-metals",
+      "kind": "idea",
+      "section": "18.1",
+      "name": "The group 13 metals",
+      "statement": "Aluminum, gallium, indium and thallium have the valence configuration ns²np¹ and form compounds with an oxidation state of 3+; gallium, indium and thallium also show the 1+ state of the inert pair effect, which for thallium is the more stable. The oxides and hydroxides of aluminum and gallium are amphoteric, those of indium and thallium only basic. A thin, hard oxide film passivates these reactive metals, and disrupting it, as an amalgam does, lets the metal react with air and water."
+    },
+    {
+      "id": "allotropes",
+      "kind": "definition",
+      "section": "18.1",
+      "name": "Allotropes",
+      "terms": [
+        "allotropes"
+      ],
+      "statement": "Allotropes are two or more forms of the same element in the same physical state with different chemical and physical properties, which differ in the arrangement of their atoms. White tin, stable above 13.2 °C, is malleable like other metals; gray tin, stable at low temperatures, is brittle and breaks down to a powder, so articles made of tin disintegrate in a lengthy cold spell (tin pest)."
+    },
+    {
+      "id": "tin-and-lead",
+      "kind": "idea",
+      "section": "18.1",
+      "name": "Tin and lead",
+      "statement": "Tin and lead form the stable divalent cations Sn²⁺ and Pb²⁺, two below the group oxidation state of 4+, as a consequence of the inert pair effect; they also form covalent compounds with a formal 4+ oxidation state, such as the low-boiling liquids SnCl₄ and PbCl₄. Tin is more easily oxidized than hydrogen, while lead is only slightly easier to oxidize than hydrogen."
+    },
+    {
+      "id": "bismuth",
+      "kind": "definition",
+      "section": "18.1",
+      "name": "Bismuth",
+      "terms": [
+        "bismuth"
+      ],
+      "statement": "Bismuth, the heaviest member of group 15, is a less reactive metal than the other representative metals. It readily gives up three of its five valence electrons to form Bi³⁺, and forms compounds with the group oxidation state of 5+ only with strong oxidizing agents, another example of the inert pair effect."
+    },
+    {
+      "id": "metal-isolation-by-electrolysis",
+      "kind": "idea",
+      "section": "18.2",
+      "name": "Isolating reactive metals by electrolysis",
+      "statement": "Ions of the metals of groups 1 and 2 and of aluminum are very difficult to reduce, so these metals are prepared by electrolysis, using electrical energy to drive the unfavorable reduction to completion. Magnesium, for example, is precipitated from seawater as Mg(OH)₂, converted to MgCl₂ with hydrochloric acid, and obtained by electrolysis of the molten chloride."
+    },
+    {
+      "id": "downs-cell",
+      "kind": "definition",
+      "section": "18.2",
+      "name": "Downs cell",
+      "terms": [
+        "Downs cell"
+      ],
+      "statement": "A Downs cell is the electrolysis cell for the commercial preparation of metallic sodium, and chlorine, from molten sodium chloride, to which calcium chloride is added to lower the melting point to 600 °C. Sodium ions are reduced to liquid sodium at the cathode and chloride ions oxidized to chlorine at the anode, and the products are kept apart to prevent recombination."
+    },
+    {
+      "id": "hall-heroult-cell",
+      "kind": "definition",
+      "section": "18.2",
+      "name": "Hall–Héroult cell",
+      "terms": [
+        "Hall–Héroult cell"
+      ],
+      "statement": "The Hall–Héroult cell is the electrolysis cell for the production of aluminum. Bauxite is purified by dissolving it in hot sodium hydroxide as aluminate and reprecipitating aluminum hydroxide with acid; heating gives Al₂O₃, which is dissolved in molten cryolite and calcium fluoride and electrolyzed, giving aluminum at the cathode and oxygen, carbon monoxide and carbon dioxide at the anode."
+    },
+    {
+      "id": "chemical-reduction",
+      "kind": "definition",
+      "section": "18.2",
+      "name": "Chemical reduction",
+      "terms": [
+        "chemical reduction"
+      ],
+      "statement": "Chemical reduction prepares a representative metal by using another element as a reducing agent; it is much less expensive than electrolysis and is the method of choice where it works. Potassium, rubidium and cesium are obtained by reducing their molten chlorides with sodium, because the metals formed are more volatile than sodium and their removal as vapor shifts the equilibrium toward more metal."
+    },
+    {
+      "id": "pidgeon-process",
+      "kind": "definition",
+      "section": "18.2",
+      "name": "Pidgeon process",
+      "terms": [
+        "Pidgeon process"
+      ],
+      "statement": "The Pidgeon process produces magnesium by the reaction of magnesium oxide with elemental silicon at high temperature. The reaction is unfavorable thermodynamically, but removal of the magnesium vapor drives it forward by Le Châtelier’s principle."
+    },
+    {
+      "id": "carbon-reduction-of-zinc-and-tin",
+      "kind": "idea",
+      "section": "18.2",
+      "name": "Carbon reduction of zinc and tin",
+      "statement": "Zinc sulfide or carbonate ores are roasted in air to zinc oxide, which coal reduces to zinc vapor; the zinc is purified by distillation, removing arsenic and cadmium at lower temperatures and leaving lead and iron behind. Tin(IV) oxide, after roasting and acid treatment of the ore, is reduced by carbon above 1000 °C to molten tin."
+    },
+    {
+      "id": "metalloid-properties",
+      "kind": "idea",
+      "section": "18.3",
+      "name": "Properties of the metalloids",
+      "statement": "The metalloids boron, silicon, germanium, arsenic, antimony and tellurium look metallic but conduct electricity less well than metals, because their electrons are more tightly bound to their nuclei: they are semiconductors. Their chemical behavior falls between that of metals and nonmetals, in part because of their intermediate electronegativities; like nonmetals they form covalent crystals, and like metals they generally do not form monatomic anions."
+    },
+    {
+      "id": "metalloid-structures",
+      "kind": "idea",
+      "section": "18.3",
+      "name": "Structures of the metalloids",
+      "statement": "Covalent bonding is the key to the crystal structures of the metalloids. Silicon and germanium crystallize with a diamond structure, each atom bonded to four neighbors at the corners of a regular tetrahedron; arsenic and antimony form layers of puckered sheets with three bonds per atom; tellurium forms infinite spiral chains with two bonds per atom; and boron crystals consist of B₁₂ icosahedra."
+    },
+    {
+      "id": "boron-and-silicon-lewis-acids",
+      "kind": "idea",
+      "section": "18.3",
+      "name": "Boron and silicon compounds as Lewis acids",
+      "statement": "Boron’s 2s²2p¹ configuration gives it one less valence electron than valence orbitals, and silicon has empty 3d orbitals, so trigonal planar boron compounds and tetrahedral silicon compounds can act as Lewis acids: BF₃ accepts a fluoride ion to form BF₄⁻, SiF₄ accepts two to form octahedral [SiF₆]²⁻, and boric acid is a Lewis acid toward hydroxide ion rather than a proton donor. Lacking d orbitals, boron is limited to a coordination number of four."
+    },
+    {
+      "id": "boron-preparation",
+      "kind": "idea",
+      "section": "18.3",
+      "name": "Occurrence and preparation of boron",
+      "statement": "Boron occurs in nature only in compounds with oxygen, as boric acid and borates such as borax. Reduction of boric oxide with magnesium gives an impure, brown, amorphous powder; purer boron comes from converting it to boron trichloride and heating the trichloride with hydrogen. Elemental boron is inert at room temperature, reacting only with fluorine and oxygen."
+    },
+    {
+      "id": "silicon-preparation",
+      "kind": "idea",
+      "section": "18.3",
+      "name": "Preparation and purification of silicon",
+      "statement": "Silicon, nearly one-fourth of the mass of the earth’s crust, is produced by high-temperature reduction of silicon dioxide with carbon or magnesium. Semiconductor-grade silicon is made by converting it to a tetrahalide or silane, decomposing it, and zone refining: a thin molten zone moved along the rod carries the impurities, which dissolve in the liquid, to one end, which is cut off."
+    },
+    {
+      "id": "borate",
+      "kind": "definition",
+      "section": "18.3",
+      "name": "Borate",
+      "terms": [
+        "borate"
+      ],
+      "statement": "Borates are salts of the oxyacids of boron, compounds containing boron–oxygen bonds, typically with clusters or chains, from the simple trigonal planar BO₃³⁻ ion to chains and rings of three- and four-coordinated boron. Borax, Na₂[B₄O₅(OH)₄]⋅8H₂O, is the most important commercially."
+    },
+    {
+      "id": "silicon-dioxide-structure",
+      "kind": "idea",
+      "section": "18.3",
+      "name": "Silicon dioxide against carbon dioxide",
+      "statement": "Solid carbon dioxide consists of discrete CO₂ molecules with two C=O double bonds held by weak intermolecular forces, whereas silicon dioxide is a covalent network solid in which each silicon atom is singly bonded to four oxygen atoms and the SiO₄ tetrahedra share oxygen atoms. The difference lies in π bonding: second-period elements such as carbon form strong π bonds, while silicon forms them less readily and more weakly, so silica contains only σ bonds."
+    },
+    {
+      "id": "polymorph",
+      "kind": "definition",
+      "section": "18.3",
+      "name": "Polymorph",
+      "terms": [
+        "polymorphs",
+        "polymorph"
+      ],
+      "statement": "Polymorphs are variations in the crystalline structure of a compound that give it different physical properties. Silica takes many crystalline forms, or polymorphs, in nature, the usual one being quartz; melted quartz supercools into amorphous glassy silica."
+    },
+    {
+      "id": "silicate",
+      "kind": "definition",
+      "section": "18.3",
+      "name": "Silicate",
+      "terms": [
+        "silicates",
+        "silicate"
+      ],
+      "statement": "Silicates are salts containing anions of silicon and oxygen, in which sp³-hybridized silicon atoms sit at the centers of SiO₄ tetrahedra connected in rings, sheets or three-dimensional networks. The silicon-to-oxygen ratio varies because the tetrahedra may be independent or share oxygen atoms at their corners, and with the variety of cations this gives the many silicate minerals and ceramics."
+    },
+    {
+      "id": "nonmetal-bonding-and-ions",
+      "kind": "idea",
+      "section": "18.4",
+      "name": "Bonding of the nonmetals",
+      "statement": "The nonmetals have higher electronegativities than metals, so compounds of metals with nonmetals are generally ionic solids, while compounds of two or more nonmetals share electrons in covalent bonds and are molecular gases, liquids or volatile solids. Because their ionization energies are too high, nonmetals form no monatomic cations in normal chemical processes: all monatomic nonmetal ions are anions."
+    },
+    {
+      "id": "first-member-anomaly",
+      "kind": "idea",
+      "section": "18.4",
+      "name": "The first member of each nonmetal group",
+      "statement": "The first member of each nonmetal group behaves differently from the others: it is smaller, has a greater ionization energy, and has only four valence orbitals (one 2s and three 2p), whereas heavier members have empty d orbitals that allow five, six or more bonds about the central atom, so nitrogen forms only NF₃ while phosphorus forms PF₃ and PF₅. Its small size also lets it form π bonds more readily."
+    },
+    {
+      "id": "nonmetal-redox-patterns",
+      "kind": "idea",
+      "section": "18.4",
+      "name": "Oxidation-reduction chemistry of the nonmetals",
+      "statement": "Nonmetals oxidize most metals; with the exception of nitrogen and carbon, a more electronegative nonmetal oxidizes a less electronegative nonmetal or its anion; fluorine and oxygen, the strongest oxidizing elements, oxidize all the elements below them in their groups, and within a period the strongest oxidizing agent is in group 17; the stronger a nonmetal is as an oxidizing agent, the more difficult its anion is to oxidize; and fluorine never shows a positive oxidation state, oxygen only when combined with fluorine."
+    },
+    {
+      "id": "acid-anhydride",
+      "kind": "definition",
+      "section": "18.4",
+      "name": "Acid anhydride",
+      "terms": [
+        "acid anhydride",
+        "acid anhydrides"
+      ],
+      "statement": "An acid anhydride is a compound that reacts with water to form an acid or acidic solution. Nonmetal oxides such as SO₂ and N₂O₅, in which the nonmetal shows one of its common oxidation states, react with water to form oxyacids with no change in oxidation state."
+    },
+    {
+      "id": "disproportionation-reaction",
+      "kind": "definition",
+      "section": "18.4",
+      "name": "Disproportionation reaction",
+      "terms": [
+        "disproportionation reaction",
+        "disproportionation reactions"
+      ],
+      "statement": "A disproportionation reaction is a reaction in which a single reactant is simultaneously oxidized and reduced, so that it is both the reducing agent and the oxidizing agent: NO₂, in which nitrogen does not show a common oxidation state, reacts with water to give HNO₃ (+5) and NO (+2)."
+    },
+    {
+      "id": "nonmetal-structures",
+      "kind": "idea",
+      "section": "18.4",
+      "name": "Structures of the nonmetals",
+      "statement": "Nonmetal structures contain localized covalent bonds, and many nonmetals consist of individual molecules: the noble gases are monatomic, hydrogen, nitrogen, oxygen and the halogens diatomic, and the halogens change from gas to liquid to solid down the group as London forces grow with molecular mass. The elements usually complete an octet: group 15 forms three bonds, group 16 two, and the halogens one."
+    },
+    {
+      "id": "carbon-allotropes",
+      "kind": "idea",
+      "section": "18.4",
+      "name": "Allotropes of carbon",
+      "statement": "In diamond each carbon atom forms four single bonds to atoms at the corners of a tetrahedron (sp³), making a hard, high-melting three-dimensional network. Graphite is layers of sp²-hybridized carbon atoms bonded by σ bonds and delocalized π bonds, so it conducts electricity, while weak London forces between layers make it soft and slippery. Fullerenes such as C₆₀ are closed cages; graphene is a single graphite layer, and a nanotube is such a layer rolled into a tube."
+    },
+    {
+      "id": "phosphorus-allotropes",
+      "kind": "idea",
+      "section": "18.4",
+      "name": "Allotropes of phosphorus",
+      "statement": "White phosphorus consists of P₄ molecules, four atoms at the corners of a regular tetrahedron each singly bonded to the other three; it is waxy, toxic, bursts into flame in air and is stored under water. Heating it to 270–300 °C in the absence of air gives red phosphorus, a polymeric network of P₄ tetrahedra joined by P–P bonds that is denser, higher melting, much less reactive and essentially nontoxic."
+    },
+    {
+      "id": "sulfur-allotropes",
+      "kind": "idea",
+      "section": "18.4",
+      "name": "Allotropes of sulfur",
+      "statement": "Rhombic and monoclinic sulfur both contain S₈ molecules, puckered eight-membered rings like crowns; rhombic sulfur is the stable form at room temperature. Molten sulfur is mobile at first, but as the temperature rises the rings break into chains that combine and tangle, so the liquid darkens and becomes so viscous near 230 °C that it does not pour; rapid cooling gives plastic sulfur, and the vapor at about 1000 °C is S₂."
+    },
+    {
+      "id": "hydrogen-isotopes",
+      "kind": "idea",
+      "section": "18.5",
+      "name": "Isotopes of hydrogen",
+      "statement": "Hydrogen has three isotopes with names and symbols of their own: protium (¹H), deuterium (²H or D) and tritium (³H or T). Their chemical properties are very similar because their electron structures are identical, but their differing atomic masses give different physical properties, such as the lower vapor pressures of deuterium and tritium."
+    },
+    {
+      "id": "hydrogen-preparation",
+      "kind": "idea",
+      "section": "18.5",
+      "name": "Preparation of hydrogen",
+      "statement": "Elemental hydrogen is prepared from compounds by breaking chemical bonds: steam over coke gives water gas, CO and H₂, and steam with hydrocarbons over a nickel catalyst gives the same mixture; electrolysis of water gives hydrogen at the cathode, twice the volume of the oxygen at the anode; metals with lower reduction potentials reduce the hydrogen ion of dilute acids; and ionic metal hydrides react with water."
+    },
+    {
+      "id": "hydrogen-place-in-periodic-table",
+      "kind": "idea",
+      "section": "18.5",
+      "name": "Hydrogen’s place in the periodic table",
+      "statement": "An uncombined hydrogen atom has one valence electron in a 1s orbital. Hydrogen can be considered a group 1 element, because it can lose that electron to form H⁺, or a group 17 element, because it needs only one electron to fill its valence orbital, forming the hydride ion H⁻ or a single covalent bond; it is a unique element that almost deserves its own place in the table."
+    },
+    {
+      "id": "hydrogen-reactions",
+      "kind": "idea",
+      "section": "18.5",
+      "name": "Reactions of hydrogen",
+      "statement": "Hydrogen is relatively inactive at normal conditions but reacts when heated. With group 1 metals and Ca, Sr and Ba it forms ionic hydrides containing H⁻, a strong reducing agent and strong base; with nonmetals it forms acidic hydrogen compounds with hydrogen in the 1+ state, the reactions becoming more exothermic as the nonmetal’s electronegativity increases. It reduces the heated oxides of many metals to the metal and water."
+    },
+    {
+      "id": "haber-process",
+      "kind": "definition",
+      "section": "18.5",
+      "name": "Haber process",
+      "terms": [
+        "Haber process"
+      ],
+      "statement": "The Haber process is the main industrial process for producing ammonia by the direct combination of nitrogen and hydrogen, N₂ + 3H₂ ⇌ 2NH₃, using an iron catalyst at elevated temperatures and pressures."
+    },
+    {
+      "id": "ammonia-chemistry",
+      "kind": "idea",
+      "section": "18.5",
+      "name": "Chemical properties of ammonia",
+      "statement": "Ammonia acts as a Brønsted base, and also as a very weak acid that reacts with metals at high temperatures to give amides, imides or nitrides. Its nitrogen has its lowest possible oxidation state, 3−, so it can be oxidized but not reduced, and replacing its hydrogen atoms gives derivatives such as chloramine, NH₂Cl, and hydrazine, N₂H₄."
+    },
+    {
+      "id": "hydrogenation",
+      "kind": "definition",
+      "section": "18.5",
+      "name": "Hydrogenation",
+      "terms": [
+        "hydrogenation"
+      ],
+      "statement": "Hydrogenation is the addition of hydrogen (H₂) to reduce a compound, a process that uses large quantities of hydrogen."
+    },
+    {
+      "id": "hydrogen-halide",
+      "kind": "definition",
+      "section": "18.5",
+      "name": "Hydrogen halide",
+      "terms": [
+        "hydrogen halides",
+        "hydrogen halide"
+      ],
+      "statement": "Hydrogen halides are the binary compounds of hydrogen and a halogen, HF, HCl, HBr and HI, all gases at room temperature. They are prepared from the elements or by a nonvolatile acid acting on a metal halide, and all dissolve in water to form hydrohalic acids, strong except for hydrogen fluoride; the heavier halide ions are reducing agents that the lighter halogens oxidize."
+    },
+    {
+      "id": "carbonate",
+      "kind": "definition",
+      "section": "18.6",
+      "name": "Carbonate",
+      "terms": [
+        "carbonate",
+        "carbonates"
+      ],
+      "statement": "Carbonates are compounds containing the carbonate anion, CO₃²⁻, often formed by the reaction of carbon dioxide with an oxide or hydroxide; the insoluble carbonates precipitate when a soluble alkali metal carbonate is mixed with salts of the metals. Carbonates are moderately strong bases and react with acids to form salts, carbon dioxide and water."
+    },
+    {
+      "id": "hydrogen-carbonate",
+      "kind": "definition",
+      "section": "18.6",
+      "name": "Hydrogen carbonate",
+      "terms": [
+        "hydrogen carbonate",
+        "hydrogen carbonates",
+        "bicarbonate anion"
+      ],
+      "statement": "Hydrogen carbonates, or bicarbonates, are salts of the hydrogen carbonate anion, HCO₃⁻, formed by saturating a solution of a hydroxide with carbon dioxide. They are amphoteric, reacting with hydroxides to form carbonates and with acids to form a salt, carbon dioxide and water, as baking soda does in baking powder."
+    },
+    {
+      "id": "limestone-dissolution",
+      "kind": "idea",
+      "section": "18.6",
+      "name": "Limestone, caves and stalactites",
+      "statement": "Alkaline earth carbonates, insoluble in pure water, dissolve in water containing carbon dioxide because hydrogen carbonate salts form, so caves and sinkholes form in limestone. Those hydrogen carbonates are stable only in solution: evaporation leaves the carbonate again, which builds stalactites and stalagmites."
+    },
+    {
+      "id": "nitrogen-inertness",
+      "kind": "idea",
+      "section": "18.7",
+      "name": "The inertness of nitrogen",
+      "statement": "Nitrogen, 78% of the atmosphere by volume and obtained by fractional distillation of liquid air, is very unreactive because of the very strong triple bond between its atoms; its only common reactions at room temperature are with lithium, certain transition metal complexes, and hydrogen or oxygen in nitrogen-fixing bacteria. Its compounds span every oxidation state from 3− to 5+."
+    },
+    {
+      "id": "nitrogen-fixation",
+      "kind": "definition",
+      "section": "18.7",
+      "name": "Nitrogen fixation",
+      "terms": [
+        "nitrogen fixation"
+      ],
+      "statement": "Nitrogen fixation is the formation of nitrogen compounds from molecular nitrogen, the process by which organisms convert atmospheric nitrogen into biologically useful chemicals; it is carried out by microorganisms using nitrogenase enzymes, and also occurs when lightning makes air’s nitrogen react with oxygen."
+    },
+    {
+      "id": "nitrogen-oxides",
+      "kind": "idea",
+      "section": "18.7",
+      "name": "The nitrogen oxides",
+      "statement": "Nitrogen forms oxides in each positive oxidation state from 1+ to 5+: nitrous oxide, N₂O, from carefully heated ammonium nitrate; nitric oxide, NO, a colorless molecule with an unpaired electron that dimerizes to N₂O₂; blue liquid N₂O₃; brown, paramagnetic NO₂; and white solid N₂O₅. They show extensive redox behavior: N₂O supports combustion, NO is both an oxidizing and a reducing agent, and NO₂ is a good oxidizing agent."
+    },
+    {
+      "id": "no2-n2o4-equilibrium",
+      "kind": "idea",
+      "section": "18.7",
+      "name": "Nitrogen dioxide and dinitrogen tetraoxide",
+      "statement": "The unpaired electron of NO₂ makes it dimerize to colorless N₂O₄. At low pressures or high temperatures the deep brown color of NO₂ dominates, at low temperatures the color almost disappears as N₂O₄ forms, and at room temperature the two are in equilibrium, 2NO₂(g) ⇌ N₂O₄(g), with K_P = 6.86."
+    },
+    {
+      "id": "nitrogen-oxides-with-water",
+      "kind": "idea",
+      "section": "18.7",
+      "name": "Nitrogen oxides with water",
+      "statement": "N₂O₃ is the anhydride of nitrous acid and N₂O₅ the anhydride of nitric acid. There is no stable oxyacid of nitrogen in the 4+ state, so NO₂ disproportionates in water, giving HNO₂ and HNO₃ in cold water and HNO₃ and NO at higher temperatures."
+    },
+    {
+      "id": "phosphorus-preparation",
+      "kind": "idea",
+      "section": "18.8",
+      "name": "Preparation and uses of phosphorus",
+      "statement": "Phosphorus is prepared industrially by heating calcium phosphate from phosphate rock with sand and coke; the P₄ distills out and is condensed or burned to P₄O₁₀, the starting point for many other phosphorus compounds. In compounds phosphorus usually shows the oxidation states 3−, 3+ and 5+, with unusual values in compounds containing P–P bonds, such as P₄S₃ in strike-anywhere matches."
+    },
+    {
+      "id": "phosphorus-oxides",
+      "kind": "idea",
+      "section": "18.8",
+      "name": "Oxides of phosphorus",
+      "statement": "Phosphorus(III) oxide, P₄O₆, is a poisonous white solid that oxidizes to P₄O₁₀ and dissolves slowly in cold water to form phosphorous acid, H₃PO₃. Phosphorus(V) oxide, P₄O₁₀, made by burning phosphorus in excess oxygen, has a very high enthalpy of formation and is a very poor oxidizing agent; its great affinity for water, forming orthophosphoric acid, makes it an excellent drying agent."
+    },
+    {
+      "id": "phosphorus-halides",
+      "kind": "idea",
+      "section": "18.8",
+      "name": "Halides of phosphorus",
+      "statement": "Phosphorus reacts directly with the halogens to form trihalides, PX₃, much more stable than the nitrogen trihalides, and pentahalides, PX₅, which nitrogen cannot form. Both chlorides hydrolyze to hydrogen chloride and an oxyacid, and the pentahalides are Lewis acids that add a halide ion to form PX₆⁻; solid phosphorus pentachloride is the ionic compound [PCl₄⁺][PCl₆⁻]."
+    },
+    {
+      "id": "oxygen-occurrence-and-reactivity",
+      "kind": "idea",
+      "section": "18.9",
+      "name": "Occurrence, preparation and reactivity of oxygen",
+      "statement": "Oxygen is the most abundant element in the earth’s crust and about 20% of the mass of air. Most commercial oxygen is separated from liquefied air, oxygen (boiling point 90 K) remaining after nitrogen (77 K) boils off. It is a strong oxidizing agent that reacts with all other elements except the noble gases, the halogens and a few metals of low reactivity, and with compounds containing an element below its maximum oxidation state."
+    },
+    {
+      "id": "photosynthesis",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Photosynthesis",
+      "terms": [
+        "photosynthesis"
+      ],
+      "statement": "Photosynthesis is the process by which light energy promotes the reaction of water and carbon dioxide to form carbohydrates, such as glucose, and oxygen, which lets green plants store energy and replenish the oxygen of the atmosphere."
+    },
+    {
+      "id": "ozone",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Ozone",
+      "terms": [
+        "ozone"
+      ],
+      "statement": "Ozone, O₃, is an allotrope of oxygen with a distinctive odor, formed endothermically from oxygen by an electric discharge, heat or ultraviolet light. Stratospheric ozone absorbs harmful ultraviolet light by decomposing to O and O₂; chlorine atoms from chlorofluorocarbons deplete it, while ozone in the troposphere is a toxic component of smog."
+    },
+    {
+      "id": "oxide",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Oxide",
+      "terms": [
+        "oxide",
+        "oxides"
+      ],
+      "statement": "An oxide is a binary compound of oxygen with another element or group, typically containing O²⁻ ions or the group –O– or =O. The oxides of most representative metals form on heating the hydroxides or carbonates, or by burning the metal, the heaviest member of each group giving an oxide two below the group oxidation state; ionic oxides are powerful hydrogen ion acceptors that react with acids to form salts."
+    },
+    {
+      "id": "base-anhydride",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Base anhydride",
+      "terms": [
+        "base anhydride",
+        "base anhydrides"
+      ],
+      "statement": "A base anhydride is a metal oxide that behaves as a base toward acids. Most metal oxides are base anhydrides: the soluble ones form metal hydroxides with water, and the insoluble ones still react with acids."
+    },
+    {
+      "id": "peroxide",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Peroxide",
+      "terms": [
+        "peroxide",
+        "peroxides"
+      ],
+      "statement": "A peroxide contains two oxygen atoms bonded together, as in the peroxide ion, O₂²⁻, with its oxygen–oxygen single bond. Sodium peroxide and the peroxides of calcium, strontium and barium form by heating the metal or its oxide in pure oxygen; peroxides are strong oxidizers, and hydrogen peroxide made from them is a bleach and disinfectant."
+    },
+    {
+      "id": "superoxide",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Superoxide",
+      "terms": [
+        "superoxide",
+        "superoxides"
+      ],
+      "statement": "A superoxide is an oxide containing the anion O₂⁻, whose oxygen–oxygen bond has a bond order of 1½. Potassium, rubidium and cesium form the superoxides KO₂, RbO₂ and CsO₂ with an excess of oxygen, and the stability of the alkali metal peroxides and superoxides increases with the size of the cation."
+    },
+    {
+      "id": "hydroxide",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Hydroxide",
+      "terms": [
+        "hydroxide",
+        "hydroxides"
+      ],
+      "statement": "A hydroxide is a compound of a metal with the hydroxide ion, OH⁻, or the group –OH. Soluble metal hydroxides are made from the metal or, more safely, its oxide with water; insoluble ones precipitate when a soluble salt of the metal is mixed with hydroxide ion, and those of aluminum, gallium, zinc and tin(II) dissolve in excess hydroxide as complex ions."
+    },
+    {
+      "id": "chlor-alkali-process",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Chlor-alkali process",
+      "terms": [
+        "chlor-alkali process"
+      ],
+      "statement": "The chlor-alkali process is the electrolysis of aqueous sodium chloride that produces chlorine and sodium hydroxide together: chloride ions are oxidized to chlorine at the positive electrode, while water rather than sodium ion is reduced to hydrogen and hydroxide ion at the negative electrode."
+    },
+    {
+      "id": "sulfite",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Sulfite and hydrogen sulfite",
+      "terms": [
+        "sulfite",
+        "sulfites",
+        "hydrogen sulfite",
+        "hydrogen sulfites"
+      ],
+      "statement": "Sulfites contain the SO₃²⁻ ion and hydrogen sulfites the HSO₃⁻ ion; they are salts of sulfurous acid, the unstable, moderately strong diprotic acid formed when sulfur dioxide dissolves in water, and they also form when SO₂ reacts as a Lewis acid with oxides and hydroxides. Solutions of sulfites are readily oxidized by air to sulfates."
+    },
+    {
+      "id": "sulfate",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Sulfate and hydrogen sulfate",
+      "terms": [
+        "sulfate",
+        "sulfates",
+        "hydrogen sulfate",
+        "hydrogen sulfates"
+      ],
+      "statement": "Sulfates contain the SO₄²⁻ ion and hydrogen sulfates the HSO₄⁻ ion; they are salts of sulfuric acid, made from sulfur by way of sulfur trioxide. Sulfuric acid is a strong diprotic acid whose first ionization is essentially complete; HSO₄⁻ is a moderately strong acid, so hydrogen sulfates are acidic. Concentrated sulfuric acid is also a dehydrating agent and, hot, an oxidizing agent."
+    },
+    {
+      "id": "ostwald-process",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Ostwald process",
+      "terms": [
+        "Ostwald process"
+      ],
+      "statement": "The Ostwald process is the industrial conversion of ammonia into nitric acid: ammonia is oxidized to nitric oxide, nitric oxide to nitrogen dioxide, and nitrogen dioxide is further oxidized and hydrated to nitric acid."
+    },
+    {
+      "id": "nitrate",
+      "kind": "definition",
+      "section": "18.9",
+      "name": "Nitrate",
+      "terms": [
+        "nitrate",
+        "nitrates"
+      ],
+      "statement": "A nitrate is a salt of nitric acid containing the NO₃⁻ ion, formed when metals, oxides, hydroxides or carbonates react with nitric acid; most nitrates are soluble in water. Nitric acid is both a strong acid and a strong oxidizing agent, which reduces to nitrogen oxides rather than releasing hydrogen when it reacts with metals."
+    },
+    {
+      "id": "oxyacid-structure-and-strength",
+      "kind": "idea",
+      "section": "18.9",
+      "name": "Structure and strength of nonmetal oxyacids",
+      "statement": "In an oxyacid only hydrogen atoms bonded to oxygen are acidic, so phosphorous acid, H₃PO₃, with one P–H bond, forms only two series of salts. The strength of an oxyacid generally increases with the number of oxygen atoms bonded to the nonmetal and not to hydrogen: the halogen oxyacids run from the very weak hypohalous acids, HXO, through the halous and halic acids to the very strong perhalic acids, HXO₄."
+    },
+    {
+      "id": "frasch-process",
+      "kind": "definition",
+      "section": "18.10",
+      "name": "Frasch process",
+      "terms": [
+        "Frasch process"
+      ],
+      "statement": "The Frasch process mines free sulfur from underground deposits: superheated water forced down the outermost of three concentric pipes melts the sulfur, compressed air sent down the innermost pipe forces the liquid sulfur up the outlet pipe, and the sulfur separates on cooling, 99.5% to 99.9% pure."
+    },
+    {
+      "id": "sulfur-chemistry",
+      "kind": "idea",
+      "section": "18.10",
+      "name": "Chemical behavior of sulfur",
+      "statement": "Like oxygen, sulfur is distinctly nonmetallic: it oxidizes metals to binary sulfides in which it shows the 2− oxidation state, oxidizes less electronegative nonmetals, and is itself oxidized by oxygen, the halogens and strong oxidizing agents such as concentrated nitric acid. Unlike oxygen, it forms many compounds in which it shows positive oxidation states."
+    },
+    {
+      "id": "halogen-preparation",
+      "kind": "idea",
+      "section": "18.11",
+      "name": "Occurrence and preparation of the halogens",
+      "statement": "The halogens are too reactive to occur free but are widely distributed as halide ions, chloride most abundantly. Each is prepared by oxidizing its halide ion, fluoride being the most difficult and iodide the easiest: fluorine by electrolysis of KHF₂ in anhydrous HF, chlorine by the chlor-alkali process or by oxidation with MnO₂, and bromine by oxidizing bromide with chlorine; iodine comes from reducing iodate with hydrogen sulfite."
+    },
+    {
+      "id": "halogen-properties",
+      "kind": "idea",
+      "section": "18.11",
+      "name": "Properties of the halogens",
+      "statement": "Fluorine is a pale yellow gas, chlorine a greenish-yellow gas, bromine a deep reddish-brown liquid, and iodine a grayish-black solid that sublimes to a violet vapor. The easier it is to oxidize the halide ion, the weaker the halogen is as an oxidizing agent: fluorine, the most powerful oxidizing agent of the elements, oxidizes elements to their highest states, while iodine is the weakest and does not oxidize other halide ions. Iodine dissolves in iodide solutions as the triiodide ion, I₃⁻."
+    },
+    {
+      "id": "chlorine-water",
+      "kind": "idea",
+      "section": "18.11",
+      "name": "Chlorine in water",
+      "statement": "In cold water chlorine disproportionates, half its atoms oxidized to hypochlorous acid (1+) and half reduced to chloride ion (1−). The reaction is incomplete, so chlorine water is an equilibrium mixture, and in light the hypochlorous acid decomposes to oxygen; the oxidizing action of hypochlorous acid is what bleaches and disinfects."
+    },
+    {
+      "id": "halide",
+      "kind": "definition",
+      "section": "18.11",
+      "name": "Halide",
+      "terms": [
+        "halide",
+        "halides"
+      ],
+      "statement": "A halide is a compound containing an anion of a group 17 element in the 1− oxidation state: fluoride, F⁻; chloride, Cl⁻; bromide, Br⁻; and iodide, I⁻. Most binary halides of metals are ionic, but those of mercury, the group 13 elements in the 3+ state, tin(IV) and lead(IV) are covalent."
+    },
+    {
+      "id": "preparing-metal-halides",
+      "kind": "idea",
+      "section": "18.11",
+      "name": "Preparing the halides of the representative metals",
+      "statement": "Metal halides are prepared by direct reaction of the metal with the halogen, controlling the stoichiometry where the metal has two oxidation states; by the reaction of active metals with hydrogen halides, gaseous or in solution; by the reaction of hydroxides, carbonates and some oxides with hydrohalic acids; and, for insoluble halides, by metathesis reactions between solutions of soluble salts."
+    },
+    {
+      "id": "interhalogen",
+      "kind": "definition",
+      "section": "18.11",
+      "name": "Interhalogen",
+      "terms": [
+        "interhalogen",
+        "interhalogens"
+      ],
+      "statement": "An interhalogen is a compound formed from two or more different halogens: one atom of the heavier halogen bonded by single bonds to an odd number of atoms of the lighter one, up to the 7+ oxidation state of IF₇, the number possible growing with the radius of the central atom. The ionic polyhalides of the alkali metals, such as KI₃, are closely related."
+    },
+    {
+      "id": "noble-gas-properties",
+      "kind": "idea",
+      "section": "18.12",
+      "name": "Properties and sources of the noble gases",
+      "statement": "The noble gases occur in the atmosphere in small amounts; helium is isolated from natural gas, and argon, neon, krypton and xenon come from the fractional distillation of liquid air. Only weak London dispersion forces act between their atoms, so their boiling and melting points are extremely low, and helium does not solidify on cooling at normal pressure."
+    },
+    {
+      "id": "noble-gas-uses",
+      "kind": "idea",
+      "section": "18.12",
+      "name": "Uses of the noble gases",
+      "statement": "The noble gases serve as inert atmospheres, in helium-filled balloons and helium-oxygen mixtures for divers, as coolants (liquid helium, boiling at 4.2 K, for superconducting magnets), and as sources of light: neon’s red glow in neon signs, argon in light bulbs and fluorescent tubes, and krypton-xenon flash tubes."
+    },
+    {
+      "id": "noble-gas-compounds",
+      "kind": "idea",
+      "section": "18.12",
+      "name": "Compounds of the noble gases",
+      "statement": "The assumption that the noble gases are unreactive was proved false in 1962. Xenon reacts with fluorine to form XeF₂, XeF₄ and XeF₆, depending on the proportions; XeF₆ with water gives explosive XeO₃, and in basic solution the perxenate ion, XeO₆⁴⁻, takes xenon to its maximum oxidation state of 8+. Krypton forms KrF₂ and radon apparently RnF₂, but stable compounds of helium and neon are not known."
     }
   ],
   "concept_prereqs": [
@@ -19879,6 +20541,654 @@
     {
       "concept": "electrolysis-stoichiometry",
       "prereq": "mass-stoichiometry"
+    },
+    {
+      "concept": "representative-metal",
+      "prereq": "main-group-element"
+    },
+    {
+      "concept": "representative-metal",
+      "prereq": "metal"
+    },
+    {
+      "concept": "alkali-metal-properties",
+      "prereq": "alkali-metal"
+    },
+    {
+      "concept": "alkali-metal-properties",
+      "prereq": "representative-metal"
+    },
+    {
+      "concept": "alkali-metal-properties",
+      "prereq": "ionization-energy-trend"
+    },
+    {
+      "concept": "alkaline-earth-metal-properties",
+      "prereq": "alkaline-earth-metal"
+    },
+    {
+      "concept": "alkaline-earth-metal-properties",
+      "prereq": "alkali-metal-properties"
+    },
+    {
+      "concept": "alkaline-earth-metal-properties",
+      "prereq": "lattice-energy-trends"
+    },
+    {
+      "concept": "group-12-metals",
+      "prereq": "representative-metal"
+    },
+    {
+      "concept": "group-12-metals",
+      "prereq": "electron-configuration"
+    },
+    {
+      "concept": "group-12-metals",
+      "prereq": "electrode-potential-and-oxidant-strength"
+    },
+    {
+      "concept": "amalgam",
+      "prereq": "alloy"
+    },
+    {
+      "concept": "amalgam",
+      "prereq": "group-12-metals"
+    },
+    {
+      "concept": "group-13-metals",
+      "prereq": "representative-metal"
+    },
+    {
+      "concept": "group-13-metals",
+      "prereq": "amphoteric"
+    },
+    {
+      "concept": "group-13-metals",
+      "prereq": "inert-pair-effect"
+    },
+    {
+      "concept": "group-13-metals",
+      "prereq": "passivation"
+    },
+    {
+      "concept": "allotropes",
+      "prereq": "elements-and-compounds"
+    },
+    {
+      "concept": "tin-and-lead",
+      "prereq": "representative-metal"
+    },
+    {
+      "concept": "tin-and-lead",
+      "prereq": "inert-pair-effect"
+    },
+    {
+      "concept": "tin-and-lead",
+      "prereq": "ionic-and-covalent-bonds"
+    },
+    {
+      "concept": "bismuth",
+      "prereq": "representative-metal"
+    },
+    {
+      "concept": "bismuth",
+      "prereq": "inert-pair-effect"
+    },
+    {
+      "concept": "metal-isolation-by-electrolysis",
+      "prereq": "electrolysis"
+    },
+    {
+      "concept": "metal-isolation-by-electrolysis",
+      "prereq": "alkali-metal-properties"
+    },
+    {
+      "concept": "downs-cell",
+      "prereq": "metal-isolation-by-electrolysis"
+    },
+    {
+      "concept": "downs-cell",
+      "prereq": "freezing-point-depression"
+    },
+    {
+      "concept": "hall-heroult-cell",
+      "prereq": "metal-isolation-by-electrolysis"
+    },
+    {
+      "concept": "hall-heroult-cell",
+      "prereq": "amphoteric"
+    },
+    {
+      "concept": "chemical-reduction",
+      "prereq": "reducing-agent"
+    },
+    {
+      "concept": "chemical-reduction",
+      "prereq": "le-chateliers-principle"
+    },
+    {
+      "concept": "pidgeon-process",
+      "prereq": "chemical-reduction"
+    },
+    {
+      "concept": "carbon-reduction-of-zinc-and-tin",
+      "prereq": "chemical-reduction"
+    },
+    {
+      "concept": "carbon-reduction-of-zinc-and-tin",
+      "prereq": "distillation"
+    },
+    {
+      "concept": "metalloid-properties",
+      "prereq": "metalloid"
+    },
+    {
+      "concept": "metalloid-properties",
+      "prereq": "electronegativity"
+    },
+    {
+      "concept": "metalloid-structures",
+      "prereq": "metalloid-properties"
+    },
+    {
+      "concept": "metalloid-structures",
+      "prereq": "covalent-network-solid"
+    },
+    {
+      "concept": "boron-and-silicon-lewis-acids",
+      "prereq": "lewis-acid"
+    },
+    {
+      "concept": "boron-and-silicon-lewis-acids",
+      "prereq": "hybridization"
+    },
+    {
+      "concept": "boron-and-silicon-lewis-acids",
+      "prereq": "metalloid-properties"
+    },
+    {
+      "concept": "boron-preparation",
+      "prereq": "chemical-reduction"
+    },
+    {
+      "concept": "boron-preparation",
+      "prereq": "amorphous-solid"
+    },
+    {
+      "concept": "silicon-preparation",
+      "prereq": "chemical-reduction"
+    },
+    {
+      "concept": "silicon-preparation",
+      "prereq": "metalloid-properties"
+    },
+    {
+      "concept": "borate",
+      "prereq": "boron-and-silicon-lewis-acids"
+    },
+    {
+      "concept": "borate",
+      "prereq": "oxyanion"
+    },
+    {
+      "concept": "silicon-dioxide-structure",
+      "prereq": "covalent-network-solid"
+    },
+    {
+      "concept": "silicon-dioxide-structure",
+      "prereq": "sigma-and-pi-bonds"
+    },
+    {
+      "concept": "polymorph",
+      "prereq": "silicon-dioxide-structure"
+    },
+    {
+      "concept": "polymorph",
+      "prereq": "crystalline-and-amorphous-solids"
+    },
+    {
+      "concept": "silicate",
+      "prereq": "silicon-dioxide-structure"
+    },
+    {
+      "concept": "silicate",
+      "prereq": "oxyanion"
+    },
+    {
+      "concept": "nonmetal-bonding-and-ions",
+      "prereq": "nonmetal"
+    },
+    {
+      "concept": "nonmetal-bonding-and-ions",
+      "prereq": "bond-type-from-electronegativity"
+    },
+    {
+      "concept": "first-member-anomaly",
+      "prereq": "nonmetal-bonding-and-ions"
+    },
+    {
+      "concept": "first-member-anomaly",
+      "prereq": "octet-rule-exceptions"
+    },
+    {
+      "concept": "first-member-anomaly",
+      "prereq": "sigma-and-pi-bonds"
+    },
+    {
+      "concept": "nonmetal-redox-patterns",
+      "prereq": "nonmetal-bonding-and-ions"
+    },
+    {
+      "concept": "nonmetal-redox-patterns",
+      "prereq": "oxidizing-agent"
+    },
+    {
+      "concept": "nonmetal-redox-patterns",
+      "prereq": "oxidation-number"
+    },
+    {
+      "concept": "acid-anhydride",
+      "prereq": "oxyacid"
+    },
+    {
+      "concept": "acid-anhydride",
+      "prereq": "nonmetal-bonding-and-ions"
+    },
+    {
+      "concept": "disproportionation-reaction",
+      "prereq": "redox-reaction"
+    },
+    {
+      "concept": "nonmetal-structures",
+      "prereq": "nonmetal-bonding-and-ions"
+    },
+    {
+      "concept": "nonmetal-structures",
+      "prereq": "octet-rule"
+    },
+    {
+      "concept": "nonmetal-structures",
+      "prereq": "polarizability-and-dispersion-strength"
+    },
+    {
+      "concept": "carbon-allotropes",
+      "prereq": "allotropes"
+    },
+    {
+      "concept": "carbon-allotropes",
+      "prereq": "covalent-network-solid"
+    },
+    {
+      "concept": "carbon-allotropes",
+      "prereq": "resonance-and-delocalization"
+    },
+    {
+      "concept": "phosphorus-allotropes",
+      "prereq": "allotropes"
+    },
+    {
+      "concept": "phosphorus-allotropes",
+      "prereq": "molecular-structure"
+    },
+    {
+      "concept": "sulfur-allotropes",
+      "prereq": "allotropes"
+    },
+    {
+      "concept": "sulfur-allotropes",
+      "prereq": "molecular-structure"
+    },
+    {
+      "concept": "hydrogen-isotopes",
+      "prereq": "isotopes"
+    },
+    {
+      "concept": "hydrogen-preparation",
+      "prereq": "electrolysis"
+    },
+    {
+      "concept": "hydrogen-preparation",
+      "prereq": "single-displacement-reaction"
+    },
+    {
+      "concept": "hydrogen-place-in-periodic-table",
+      "prereq": "valence-and-core-electrons"
+    },
+    {
+      "concept": "hydrogen-place-in-periodic-table",
+      "prereq": "periods-and-groups"
+    },
+    {
+      "concept": "hydrogen-reactions",
+      "prereq": "hydrogen-place-in-periodic-table"
+    },
+    {
+      "concept": "hydrogen-reactions",
+      "prereq": "electronegativity"
+    },
+    {
+      "concept": "hydrogen-reactions",
+      "prereq": "reducing-agent"
+    },
+    {
+      "concept": "haber-process",
+      "prereq": "reversible-reaction"
+    },
+    {
+      "concept": "haber-process",
+      "prereq": "catalyst"
+    },
+    {
+      "concept": "ammonia-chemistry",
+      "prereq": "bronsted-lowry-base"
+    },
+    {
+      "concept": "ammonia-chemistry",
+      "prereq": "oxidation-number"
+    },
+    {
+      "concept": "hydrogenation",
+      "prereq": "reduction"
+    },
+    {
+      "concept": "hydrogen-halide",
+      "prereq": "binary-acid"
+    },
+    {
+      "concept": "hydrogen-halide",
+      "prereq": "halogen"
+    },
+    {
+      "concept": "carbonate",
+      "prereq": "polyatomic-ions"
+    },
+    {
+      "concept": "carbonate",
+      "prereq": "precipitation-reaction"
+    },
+    {
+      "concept": "hydrogen-carbonate",
+      "prereq": "carbonate"
+    },
+    {
+      "concept": "hydrogen-carbonate",
+      "prereq": "amphoteric"
+    },
+    {
+      "concept": "limestone-dissolution",
+      "prereq": "hydrogen-carbonate"
+    },
+    {
+      "concept": "limestone-dissolution",
+      "prereq": "reversible-reaction"
+    },
+    {
+      "concept": "nitrogen-inertness",
+      "prereq": "multiple-bonds"
+    },
+    {
+      "concept": "nitrogen-inertness",
+      "prereq": "oxidation-number"
+    },
+    {
+      "concept": "nitrogen-fixation",
+      "prereq": "nitrogen-inertness"
+    },
+    {
+      "concept": "nitrogen-oxides",
+      "prereq": "nitrogen-inertness"
+    },
+    {
+      "concept": "nitrogen-oxides",
+      "prereq": "paramagnetism-and-diamagnetism"
+    },
+    {
+      "concept": "no2-n2o4-equilibrium",
+      "prereq": "nitrogen-oxides"
+    },
+    {
+      "concept": "no2-n2o4-equilibrium",
+      "prereq": "equilibrium-constant"
+    },
+    {
+      "concept": "no2-n2o4-equilibrium",
+      "prereq": "le-chateliers-principle"
+    },
+    {
+      "concept": "nitrogen-oxides-with-water",
+      "prereq": "nitrogen-oxides"
+    },
+    {
+      "concept": "nitrogen-oxides-with-water",
+      "prereq": "acid-anhydride"
+    },
+    {
+      "concept": "nitrogen-oxides-with-water",
+      "prereq": "disproportionation-reaction"
+    },
+    {
+      "concept": "phosphorus-preparation",
+      "prereq": "phosphorus-allotropes"
+    },
+    {
+      "concept": "phosphorus-preparation",
+      "prereq": "chemical-reduction"
+    },
+    {
+      "concept": "phosphorus-oxides",
+      "prereq": "phosphorus-preparation"
+    },
+    {
+      "concept": "phosphorus-oxides",
+      "prereq": "acid-anhydride"
+    },
+    {
+      "concept": "phosphorus-halides",
+      "prereq": "phosphorus-preparation"
+    },
+    {
+      "concept": "phosphorus-halides",
+      "prereq": "first-member-anomaly"
+    },
+    {
+      "concept": "phosphorus-halides",
+      "prereq": "lewis-acid"
+    },
+    {
+      "concept": "oxygen-occurrence-and-reactivity",
+      "prereq": "oxidizing-agent"
+    },
+    {
+      "concept": "oxygen-occurrence-and-reactivity",
+      "prereq": "distillation"
+    },
+    {
+      "concept": "photosynthesis",
+      "prereq": "oxygen-occurrence-and-reactivity"
+    },
+    {
+      "concept": "ozone",
+      "prereq": "allotropes"
+    },
+    {
+      "concept": "ozone",
+      "prereq": "exothermic-and-endothermic"
+    },
+    {
+      "concept": "oxide",
+      "prereq": "oxygen-occurrence-and-reactivity"
+    },
+    {
+      "concept": "oxide",
+      "prereq": "inert-pair-effect"
+    },
+    {
+      "concept": "base-anhydride",
+      "prereq": "oxide"
+    },
+    {
+      "concept": "base-anhydride",
+      "prereq": "acid-base-reaction"
+    },
+    {
+      "concept": "peroxide",
+      "prereq": "oxide"
+    },
+    {
+      "concept": "superoxide",
+      "prereq": "peroxide"
+    },
+    {
+      "concept": "superoxide",
+      "prereq": "bond-order"
+    },
+    {
+      "concept": "hydroxide",
+      "prereq": "base-anhydride"
+    },
+    {
+      "concept": "hydroxide",
+      "prereq": "precipitation-reaction"
+    },
+    {
+      "concept": "hydroxide",
+      "prereq": "complex-ion"
+    },
+    {
+      "concept": "chlor-alkali-process",
+      "prereq": "electrolysis-of-aqueous-solutions"
+    },
+    {
+      "concept": "chlor-alkali-process",
+      "prereq": "hydroxide"
+    },
+    {
+      "concept": "sulfite",
+      "prereq": "acid-anhydride"
+    },
+    {
+      "concept": "sulfite",
+      "prereq": "diprotic-acid"
+    },
+    {
+      "concept": "sulfate",
+      "prereq": "acid-anhydride"
+    },
+    {
+      "concept": "sulfate",
+      "prereq": "diprotic-acid"
+    },
+    {
+      "concept": "sulfate",
+      "prereq": "strong-acid"
+    },
+    {
+      "concept": "ostwald-process",
+      "prereq": "nitrogen-oxides-with-water"
+    },
+    {
+      "concept": "nitrate",
+      "prereq": "ostwald-process"
+    },
+    {
+      "concept": "nitrate",
+      "prereq": "strong-acid"
+    },
+    {
+      "concept": "nitrate",
+      "prereq": "oxidizing-agent"
+    },
+    {
+      "concept": "oxyacid-structure-and-strength",
+      "prereq": "oxyacid-strength"
+    },
+    {
+      "concept": "oxyacid-structure-and-strength",
+      "prereq": "acid-anhydride"
+    },
+    {
+      "concept": "frasch-process",
+      "prereq": "sulfur-allotropes"
+    },
+    {
+      "concept": "sulfur-chemistry",
+      "prereq": "nonmetal-redox-patterns"
+    },
+    {
+      "concept": "sulfur-chemistry",
+      "prereq": "sulfur-allotropes"
+    },
+    {
+      "concept": "halogen-preparation",
+      "prereq": "halogen"
+    },
+    {
+      "concept": "halogen-preparation",
+      "prereq": "chlor-alkali-process"
+    },
+    {
+      "concept": "halogen-properties",
+      "prereq": "halogen"
+    },
+    {
+      "concept": "halogen-properties",
+      "prereq": "nonmetal-redox-patterns"
+    },
+    {
+      "concept": "chlorine-water",
+      "prereq": "disproportionation-reaction"
+    },
+    {
+      "concept": "chlorine-water",
+      "prereq": "halogen-properties"
+    },
+    {
+      "concept": "halide",
+      "prereq": "halogen"
+    },
+    {
+      "concept": "halide",
+      "prereq": "ionic-and-covalent-bonds"
+    },
+    {
+      "concept": "preparing-metal-halides",
+      "prereq": "halide"
+    },
+    {
+      "concept": "preparing-metal-halides",
+      "prereq": "hydrogen-halide"
+    },
+    {
+      "concept": "preparing-metal-halides",
+      "prereq": "precipitation-reaction"
+    },
+    {
+      "concept": "interhalogen",
+      "prereq": "halogen-properties"
+    },
+    {
+      "concept": "interhalogen",
+      "prereq": "vsepr-theory"
+    },
+    {
+      "concept": "noble-gas-properties",
+      "prereq": "noble-gas"
+    },
+    {
+      "concept": "noble-gas-properties",
+      "prereq": "dispersion-forces"
+    },
+    {
+      "concept": "noble-gas-uses",
+      "prereq": "noble-gas-properties"
+    },
+    {
+      "concept": "noble-gas-compounds",
+      "prereq": "noble-gas-properties"
+    },
+    {
+      "concept": "noble-gas-compounds",
+      "prereq": "halogen-properties"
     }
   ],
   "sheets": [

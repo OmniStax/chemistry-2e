@@ -1,0 +1,747 @@
+{
+ "id": "14.1",
+ "module": "m68803",
+ "chapter": "14",
+ "title": "Brønsted-Lowry Acids and Bases",
+ "short": "Brønsted-Lowry Acids and Bases",
+ "lead": "In the Brønsted-Lowry view an acid gives up a proton and a base takes one, and each leaves behind a conjugate partner. Water can play either part, toward other species and toward itself, and an equilibrium constant of its own measures how far it ionizes.",
+ "objectives": [
+  "Identify acids, bases, and conjugate acid-base pairs according to the Brønsted-Lowry definition",
+  "Write equations for acid and base ionization reactions",
+  "Use the ion-product constant for water to calculate hydronium and hydroxide ion concentrations",
+  "Describe the acid-base behavior of amphiprotic substances"
+ ],
+ "summary_html": "<p>A compound that can donate a proton (a hydrogen ion) to another compound is called a <span data-concept=\"bronsted-lowry-acid\">Brønsted-Lowry acid</span>. The compound that accepts the proton is called a <span data-concept=\"bronsted-lowry-base\">Brønsted-Lowry base</span>. The species remaining after a Brønsted-Lowry acid has lost a proton is the <span data-concept=\"conjugate-base\">conjugate base</span> of the acid. The species formed when a Brønsted-Lowry base gains a proton is the <span data-concept=\"conjugate-acid\">conjugate acid</span> of the base. Thus, an <span data-concept=\"bronsted-lowry-acids-bases\">acid-base reaction</span> occurs when a proton is transferred from an acid to a base, with formation of the conjugate base of the reactant acid and formation of the conjugate acid of the reactant base. <span data-concept=\"amphiprotic-species\">Amphiprotic species</span> can act as both proton donors and proton acceptors. Water is the most important amphiprotic species. It can form both the hydronium ion, H<sub>3</sub>O<sup>+</sup>, and the hydroxide ion, OH<sup>−</sup> when it undergoes <span data-concept=\"autoionization\">autoionization</span>:</p>\n$${\\text{2H}}_{2}\\text{O(}l)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{OH}}^{-}(aq)$$\n<p>The <span data-concept=\"ion-product-constant-for-water\">ion product of water</span>, $\\kKw$ is the <span data-concept=\"equilibrium-constant\">equilibrium constant</span> for the autoionization reaction:</p>\n$$\\kKw=\\kconcHyd\\kconcOH=1.0\\;\\times \\;1{0}^{-14}\\;\\text{at}\\;25\\;{}^{\\circ}\\text{C}$$",
+ "notes": "Nothing of the section is left out; the four equation images are redrawn, so the bundle’s alt text, which describes pyridine under both the hydrogen fluoride and the pyridine images, and the minus sign the water image sets on the hydroxide ion’s hydrogen are not carried over.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the key to fs-idp125665056 writes NH<sub>4</sub>OH as a product of part (a), and it is carried as printed. The seven unkeyed exercises, fs-idm85056096, fs-idm76406352, fs-idm3064240, fs-idm70827280, fs-idp141145072, fs-idp122889456 and fs-idp42982384, ask for equations, labels or a judgement rather than a number, and each is kept with a suggested approach marked as OmniStax’s own. Nothing is left out or moved.",
+ "figures": [
+  {
+   "id": "fig-water-ammonia",
+   "kind": "figure",
+   "originals": [
+    "/media/ch14/CNX_Chem_14_01_conjugate_img.jpg"
+   ],
+   "draws": [],
+   "conventions": [
+    "O",
+    "N",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-hf-water",
+   "kind": "figure",
+   "originals": [
+    "/media/ch14/CNX_Chem_14_01_HF_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-pyridine-water",
+   "kind": "figure",
+   "originals": [
+    "/media/ch14/CNX_Chem_14_01_NH3_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-water-water",
+   "kind": "figure",
+   "originals": [
+    "/media/ch14/CNX_Chem_14_01_Water_img.jpg"
+   ],
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-kw",
+   "kind": "sim",
+   "draws": [
+    "concentration",
+    "equilibrium-constant",
+    "temperature"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "pair-acid",
+   "label": "the acid and its conjugate base",
+   "figures": [
+    "fig-water-ammonia",
+    "fig-hf-water",
+    "fig-pyridine-water"
+   ]
+  },
+  {
+   "id": "pair-base",
+   "label": "the base and its conjugate acid",
+   "figures": [
+    "fig-water-ammonia",
+    "fig-hf-water",
+    "fig-pyridine-water"
+   ]
+  },
+  {
+   "id": "water-acid",
+   "label": "the water molecule that acts as the acid, and its conjugate base",
+   "figures": [
+    "fig-water-water"
+   ]
+  },
+  {
+   "id": "water-base",
+   "label": "the water molecule that acts as the base, and its conjugate acid",
+   "figures": [
+    "fig-water-water"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "definitions",
+   "concept": "bronsted-lowry-acids-bases",
+   "verb": "introduces"
+  },
+  {
+   "span": "definitions",
+   "concept": "bronsted-lowry-acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "definitions",
+   "concept": "bronsted-lowry-base",
+   "verb": "introduces"
+  },
+  {
+   "span": "definitions",
+   "concept": "acids-and-bases",
+   "verb": "uses"
+  },
+  {
+   "span": "definitions",
+   "concept": "proton",
+   "verb": "uses"
+  },
+  {
+   "span": "conjugate-pairs",
+   "concept": "conjugate-acid-base-pairs",
+   "verb": "introduces"
+  },
+  {
+   "span": "conjugate-pairs",
+   "concept": "conjugate-base",
+   "verb": "introduces"
+  },
+  {
+   "span": "conjugate-pairs",
+   "concept": "conjugate-acid",
+   "verb": "introduces"
+  },
+  {
+   "span": "conjugate-pairs",
+   "concept": "reversible-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "conjugate-pairs",
+   "concept": "bronsted-lowry-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "conjugate-pairs",
+   "concept": "bronsted-lowry-base",
+   "verb": "uses"
+  },
+  {
+   "span": "ionization",
+   "concept": "acid-ionization",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionization",
+   "concept": "base-ionization",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionization",
+   "concept": "write-ionization-equations",
+   "verb": "introduces"
+  },
+  {
+   "span": "ionization",
+   "concept": "conjugate-base",
+   "verb": "uses"
+  },
+  {
+   "span": "ionization",
+   "concept": "conjugate-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "amphiprotic",
+   "concept": "amphiprotic-species",
+   "verb": "introduces"
+  },
+  {
+   "span": "amphiprotic",
+   "concept": "amphoteric",
+   "verb": "introduces"
+  },
+  {
+   "span": "amphiprotic",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "autoionization",
+   "concept": "autoionization",
+   "verb": "introduces"
+  },
+  {
+   "span": "autoionization",
+   "concept": "ion-product-constant-for-water",
+   "verb": "introduces"
+  },
+  {
+   "span": "autoionization",
+   "concept": "water-autoionization",
+   "verb": "introduces"
+  },
+  {
+   "span": "autoionization",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "autoionization",
+   "concept": "endothermic-process",
+   "verb": "uses"
+  },
+  {
+   "span": "autoionization",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "autoionization",
+   "concept": "temperature-changes-k",
+   "verb": "uses"
+  },
+  {
+   "span": "ion-concentrations",
+   "concept": "kw-ion-concentrations",
+   "verb": "introduces"
+  },
+  {
+   "span": "ion-concentrations",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "ion-concentrations",
+   "concept": "ion-product-constant-for-water",
+   "verb": "uses"
+  },
+  {
+   "span": "ion-concentrations",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "amphiprotic-reactions",
+   "concept": "amphiprotic-species",
+   "verb": "reinforces"
+  },
+  {
+   "span": "amphiprotic-reactions",
+   "concept": "write-ionization-equations",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm123712192",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-pure-water"
+   },
+   "cite": "ex-pure-water",
+   "prompt": "The ion product of water at 80 °C is 2.4 × 10<sup>−13</sup>. What are the concentrations of hydronium and hydroxide ions in pure water at 80 °C?",
+   "answer": {
+    "type": "number",
+    "value": 4.9e-07,
+    "unit": "M",
+    "hint": "In pure water the two concentrations are equal, so K<sub>w</sub> is the square of either one.",
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>] = 4.9 × 10<sup>−7</sup> <em>M</em>",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idm136168496",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-inverse"
+   },
+   "cite": "ex-inverse",
+   "prompt": "What is the hydronium ion concentration in an aqueous solution with a hydroxide ion concentration of 0.001 <em>M</em> at 25 °C?",
+   "answer": {
+    "type": "number",
+    "value": 1e-11,
+    "unit": "M",
+    "hint": "Divide K<sub>w</sub> at 25 °C by the hydroxide ion concentration.",
+    "solution": "[H<sub>3</sub>O<sup>+</sup>] = 1 × 10<sup>−11</sup> <em>M</em>",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp171180224",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-amphoteric"
+   },
+   "cite": "ex-amphoteric",
+   "prompt": "Write separate equations representing the reaction of ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}$<br>(a) as a base with HBr<br>(b) as an acid with OH<sup>−</sup>",
+   "answer": {
+    "type": "open",
+    "solution": "(a) ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}(aq)+\\text{HBr}(aq)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{PO}}_{4}(aq)+{\\text{Br}}^{-}(aq);$ (b) ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}(aq)+{\\text{OH}}^{-}(aq)\\;\\rightleftharpoons \\;{\\text{HPO}}_{4}{}^{2-}(aq)+{\\text{H}}_{2}\\text{O}(l)$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm60626080",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conjugate-pairs",
+   "prompt": "Write equations that show NH<sub>3</sub> as both a conjugate acid and a conjugate base.",
+   "answer": {
+    "type": "open",
+    "solution": "One example for NH<sub>3</sub> as a conjugate acid: ${\\text{NH}}_{2}{}^{-}+{\\text{H}}^{+}\\;\\longrightarrow \\;{\\text{NH}}_{3};$ as a conjugate base: ${\\text{NH}}_{4}{}^{+}(aq)+{\\text{OH}}^{-}(aq)\\;\\longrightarrow \\;{\\text{NH}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm85056096",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "amphiprotic",
+   "prompt": "Write equations that show ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}$ acting both as an acid and as a base.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: pair H<sub>2</sub>PO<sub>4</sub><sup>−</sup> once with a species that takes a proton from it, such as OH<sup>−</sup>, and once with a species that gives it a proton, such as HCl or H<sub>3</sub>O<sup>+</sup>. In each equation, move one H<sup>+</sup>, lower or raise the charge of the phosphate species by one, and check that atoms and charges balance, as Example 14.3 does for HSO<sub>3</sub><sup>−</sup>."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm113554592",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "definitions",
+   "prompt": "Show by suitable net ionic equations that each of the following species can act as a Brønsted-Lowry acid:<br>(a) ${\\text{H}}_{3}{\\text{O}}^{+}$<br>(b) HCl<br>(c) NH<sub>3</sub><br>(d) CH<sub>3</sub>CO<sub>2</sub>H<br>(e) ${\\text{NH}}_{4}{}^{+}$<br>(f) ${\\text{HSO}}_{4}{}^{-}$",
+   "answer": {
+    "type": "open",
+    "solution": "(a) ${\\text{H}}_{3}{\\text{O}}^{+}(aq)\\;\\longrightarrow \\;{\\text{H}}^{+}(aq)+{\\text{H}}_{2}\\text{O}(l);$ (b) $\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{H}}^{+}(aq)+{\\text{Cl}}^{-}(aq);$ (c) ${\\text{NH}}_{3}(aq)\\;\\longrightarrow \\;{\\text{H}}^{+}(aq)+{\\text{NH}}_{2}{}^{-}(aq);$ (d) ${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(aq)\\;\\longrightarrow \\;{\\text{H}}^{+}(aq)+{\\text{CH}}_{3}{\\text{CO}}_{2}{}^{-}(aq);$ (e) ${\\text{NH}}_{4}{}^{+}(aq)\\;\\longrightarrow \\;{\\text{H}}^{+}(aq)+{\\text{NH}}_{3}(aq);$ (f) ${\\text{HSO}}_{4}{}^{-}(aq)\\;\\longrightarrow \\;{\\text{H}}^{+}(aq)+{\\text{SO}}_{4}{}^{2-}(aq)$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm76406352",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "definitions",
+   "prompt": "Show by suitable net ionic equations that each of the following species can act as a Brønsted-Lowry acid:<br>(a) HNO<sub>3</sub><br>(b) ${\\text{PH}}_{4}{}^{+}$<br>(c) H<sub>2</sub>S<br>(d) CH<sub>3</sub>CH<sub>2</sub>COOH<br>(e) ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}$<br>(f) HS<sup>−</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: an acid is a proton donor, so for each species write it losing one H<sup>+</sup>: the product is the species with one hydrogen fewer and a charge one lower. Follow the pattern of the key to the previous exercise, and check that hydrogen atoms and charges balance on both sides."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm62968960",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "definitions",
+   "prompt": "Show by suitable net ionic equations that each of the following species can act as a Brønsted-Lowry base:<br>(a) H<sub>2</sub>O<br>(b) OH<sup>−</sup><br>(c) NH<sub>3</sub><br>(d) CN<sup>−</sup><br>(e) S<sup>2−</sup><br>(f) ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}$",
+   "answer": {
+    "type": "open",
+    "solution": "(a) ${\\text{H}}_{2}\\text{O}(l)+{\\text{H}}^{+}(aq)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq);$ (b) ${\\text{OH}}^{-}(aq)+{\\text{H}}^{+}(aq)\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{O}(l);$ (c) ${\\text{NH}}_{3}(aq)+{\\text{H}}^{+}(aq)\\;\\longrightarrow \\;{\\text{NH}}_{4}{}^{+}(aq);$ (d) ${\\text{CN}}^{-}(aq)+{\\text{H}}^{+}(aq)\\;\\longrightarrow \\;\\text{HCN}(aq);$ (e) ${\\text{S}}^{2-}(aq)+{\\text{H}}^{+}(aq)\\;\\longrightarrow \\;{\\text{HS}}^{-}(aq);$ (f) ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}(aq)+{\\text{H}}^{+}(aq)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{PO}}_{4}(aq)$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm3064240",
+   "source_number": "6",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "definitions",
+   "prompt": "Show by suitable net ionic equations that each of the following species can act as a Brønsted-Lowry base:<br>(a) HS<sup>−</sup><br>(b) ${\\text{PO}}_{4}{}^{3-}$<br>(c) ${\\text{NH}}_{2}{}^{-}$<br>(d) C<sub>2</sub>H<sub>5</sub>OH<br>(e) O<sup>2−</sup><br>(f) ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: a base is a proton acceptor, so for each species write it gaining one H<sup>+</sup>: the product has one hydrogen more and a charge one higher. For ethanol, the proton attaches to a lone pair of the oxygen atom. Follow the pattern of the key to the previous exercise and check the balance of atoms and charge."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm53911232",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conjugate-pairs",
+   "prompt": "What is the conjugate acid of each of the following? What is the conjugate base of each?<br>(a) OH<sup>−</sup><br>(b) H<sub>2</sub>O<br>(c) ${\\text{HCO}}_{3}{}^{-}$<br>(d) NH<sub>3</sub><br>(e) ${\\text{HSO}}_{4}{}^{-}$<br>(f) H<sub>2</sub>O<sub>2</sub><br>(g) HS<sup>−</sup><br>(h) ${\\text{H}}_{5}{\\text{N}}_{2}{}^{+}$",
+   "answer": {
+    "type": "open",
+    "solution": "(a) H<sub>2</sub>O, O<sup>2−</sup>; (b) H<sub>3</sub>O<sup>+</sup>, OH<sup>−</sup>; (c) H<sub>2</sub>CO<sub>3</sub>, ${\\text{CO}}_{3}{}^{2-};$ (d) ${\\text{NH}}_{4}{}^{+},$ ${\\text{NH}}_{2}{}^{-};$ (e) H<sub>2</sub>SO<sub>4</sub>, ${\\text{SO}}_{4}{}^{2-};$ (f) ${\\text{H}}_{3}{\\text{O}}_{2}{}^{+},$ ${\\text{HO}}_{2}{}^{-};$ (g) H<sub>2</sub>S; S<sup>2−</sup>; (h) ${\\text{H}}_{6}{\\text{N}}_{2}{}^{2+},$ H<sub>4</sub>N<sub>2</sub>",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm70827280",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conjugate-pairs",
+   "prompt": "What is the conjugate acid of each of the following? What is the conjugate base of each?<br>(a) H<sub>2</sub>S<br>(b) ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}$<br>(c) PH<sub>3</sub><br>(d) HS<sup>−</sup><br>(e) ${\\text{HSO}}_{3}{}^{-}$<br>(f) ${\\text{H}}_{3}{\\text{O}}_{2}{}^{+}$<br>(g) H<sub>4</sub>N<sub>2</sub><br>(h) CH<sub>3</sub>OH",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: the members of a conjugate pair differ by one H<sup>+</sup>. For the conjugate acid, add one hydrogen and raise the charge by one; for the conjugate base, take one hydrogen away and lower the charge by one. Compare your formulas with the key to the previous exercise, which pairs several of the same species."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp110525216",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conjugate-pairs",
+   "prompt": "Identify and label the Brønsted-Lowry acid, its conjugate base, the Brønsted-Lowry base, and its conjugate acid in each of the following equations:<br>(a) ${\\text{HNO}}_{3}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{+}+{\\text{NO}}_{3}{}^{-}$<br>(b) ${\\text{CN}}^{-}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;\\text{HCN}+{\\text{OH}}^{-}$<br>(c) ${\\text{H}}_{2}{\\text{SO}}_{4}+{\\text{Cl}}^{-}\\;\\longrightarrow \\;\\text{HCl}+{\\text{HSO}}_{4}{}^{-}$<br>(d) ${\\text{HSO}}_{4}{}^{-}+{\\text{OH}}^{-}\\;\\longrightarrow \\;{\\text{SO}}_{4}{}^{2-}+{\\text{H}}_{2}\\text{O}$<br>(e) ${\\text{O}}^{2-}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;2{\\text{OH}}^{-}$<br>(f) ${[\\text{Cu}{({\\text{H}}_{2}\\text{O})}_{3}(\\text{OH})]}^{+}+{[\\text{Al}{({\\text{H}}_{2}\\text{O})}_{6}]}^{3+}\\;\\longrightarrow \\;{[\\text{Cu}{({\\text{H}}_{2}\\text{O})}_{4}]}^{2+}+{[\\text{Al}{({\\text{H}}_{2}\\text{O})}_{5}(\\text{OH})]}^{2+}$<br>(g) ${\\text{H}}_{2}\\text{S}+{\\text{NH}}_{2}{}^{-}\\;\\longrightarrow \\;{\\text{HS}}^{-}+{\\text{NH}}_{3}$",
+   "answer": {
+    "type": "open",
+    "solution": "The labels are Brønsted-Lowry acid = BA; its conjugate base = CB; Brønsted-Lowry base = BB; its conjugate acid = CA. (a) HNO<sub>3</sub>(BA), H<sub>2</sub>O(BB), H<sub>3</sub>O<sup>+</sup>(CA), ${\\text{NO}}_{3}{}^{-}(\\text{CB});$ (b) CN<sup>−</sup>(BB), H<sub>2</sub>O(BA), HCN(CA), OH<sup>−</sup>(CB); (c) H<sub>2</sub>SO<sub>4</sub>(BA), Cl<sup>−</sup>(BB), HCl(CA), ${\\text{HSO}}_{4}{}^{-}(\\text{CB});$ (d) ${\\text{HSO}}_{4}{}^{-}(\\text{BA}),$ OH<sup>−</sup>(BB), ${\\text{SO}}_{4}{}^{2-}$(CB), H<sub>2</sub>O(CA); (e) O<sup>2−</sup>(BB), H<sub>2</sub>O(BA) OH<sup>−</sup>(CB and CA); (f) [Cu(H<sub>2</sub>O)<sub>3</sub>(OH)]<sup>+</sup>(BB), [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup>(BA), [Cu(H<sub>2</sub>O)<sub>4</sub>]<sup>2+</sup>(CA), [Al(H<sub>2</sub>O)<sub>5</sub>(OH)]<sup>2+</sup>(CB); (g) H<sub>2</sub>S(BA), ${\\text{NH}}_{2}{}^{-}(\\text{BB}),$ HS<sup>−</sup>(CB), NH<sub>3</sub>(CA)",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp141145072",
+   "source_number": "10",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "conjugate-pairs",
+   "prompt": "Identify and label the Brønsted-Lowry acid, its conjugate base, the Brønsted-Lowry base, and its conjugate acid in each of the following equations:<br>(a) ${\\text{NO}}_{2}{}^{-}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;{\\text{HNO}}_{2}+{\\text{OH}}^{-}$<br>(b) $\\text{HBr}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{+}+{\\text{Br}}^{-}$<br>(c) ${\\text{HS}}^{-}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{S}+{\\text{OH}}^{-}$<br>(d) ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}+{\\text{OH}}^{-}\\;\\longrightarrow \\;{\\text{HPO}}_{4}{}^{2-}+{\\text{H}}_{2}\\text{O}$<br>(e) ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}+\\text{HCl}\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{PO}}_{4}+{\\text{Cl}}^{-}$<br>(f) ${[\\text{Fe}{({\\text{H}}_{2}\\text{O})}_{5}(\\text{OH})]}^{2+}+{[\\text{Al}{({\\text{H}}_{2}\\text{O})}_{6}]}^{3+}\\;\\longrightarrow \\;{\\text{[Fe}{({\\text{H}}_{2}\\text{O})}_{6}]}^{3+}+{[\\text{Al}{({\\text{H}}_{2}\\text{O})}_{5}(\\text{OH})]}^{2+}$<br>(g) ${\\text{CH}}_{3}\\text{OH}+{\\text{H}}^{-}\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{O}}^{-}+{\\text{H}}_{2}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: in each equation, find the reactant that loses one H<sup>+</sup> (the acid) and the product it becomes (its conjugate base), then the reactant that gains that H<sup>+</sup> (the base) and the product it becomes (its conjugate acid). Each pair differs by exactly one hydrogen and one unit of charge. Label them as the key to the previous exercise does."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm62869120",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "amphiprotic",
+   "prompt": "What are amphiprotic species? Illustrate with suitable equations.",
+   "answer": {
+    "type": "open",
+    "solution": "Amphiprotic species may either gain or lose a proton in a chemical reaction, thus acting as a base or an acid. An example is H<sub>2</sub>O. As an acid: ${\\text{H}}_{2}\\text{O}(aq)+{\\text{NH}}_{3}(aq)\\;\\rightleftharpoons \\;{\\text{NH}}_{4}{}^{+}(aq)+{\\text{OH}}^{-}(aq).$ As a base: ${\\text{H}}_{2}\\text{O}(aq)+\\text{HCl}(aq)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{Cl}}^{-}(aq)$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp122889456",
+   "source_number": "12",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "amphiprotic",
+   "prompt": "State which of the following species are amphiprotic and write chemical equations illustrating the amphiprotic character of these species:<br>(a) H<sub>2</sub>O<br>(b) ${\\text{HPO}}_{4}{}^{2-}$<br>(c) S<sup>2−</sup><br>(d) ${\\text{CO}}_{3}{}^{2-}$<br>(e) ${\\text{HSO}}_{4}{}^{-}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: a species is amphiprotic only if it can both give up a hydrogen ion and take one on, so it must carry at least one hydrogen it can lose and a lone pair or negative charge that can accept a proton. Check each species for both; for each one that qualifies, write one equation with a base such as OH<sup>−</sup> and one with an acid such as H<sub>3</sub>O<sup>+</sup>, as Example 14.3 does."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp125665056",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "amphiprotic",
+   "prompt": "State which of the following species are amphiprotic and write chemical equations illustrating the amphiprotic character of these species.<br>(a) ${\\text{NH}}_{3}$<br>(b) ${\\text{HPO}}_{4}{}^{2-}$<br>(c) Br<sup>−</sup><br>(d) ${\\text{NH}}_{4}{}^{+}$<br>(e) ${\\text{AsO}}_{4}{}^{3-}$",
+   "answer": {
+    "type": "open",
+    "solution": "amphiprotic: (a) ${\\text{NH}}_{3}+{\\text{H}}_{3}{\\text{O}}^{+}\\;\\longrightarrow \\;{\\text{NH}}_{4}\\text{OH}+{\\text{H}}_{2}\\text{O},$ ${\\text{NH}}_{3}+{\\text{OCH}}_{3}{}^{-}\\;\\longrightarrow \\;{\\text{NH}}_{2}{}^{-}+{\\text{CH}}_{3}\\text{OH};$ (b) ${\\text{HPO}}_{4}{}^{2-}+{\\text{OH}}^{-}\\;\\longrightarrow \\;{\\text{PO}}_{4}{}^{3-}+{\\text{H}}_{2}\\text{O},$ ${\\text{HPO}}_{4}{}^{2-}+{\\text{HClO}}_{4}\\;\\longrightarrow \\;{\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}+{\\text{ClO}}_{4}{}^{-};$ not amphiprotic: (c) Br<sup>−</sup>; (d) ${\\text{NH}}_{4}{}^{+};$ (e) ${\\text{AsO}}_{4}{}^{3-}$",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp42982384",
+   "source_number": "14",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "autoionization",
+   "prompt": "Is the self-ionization of water endothermic or exothermic? The ionization constant for water (<em>K</em><sub>w</sub>) is 2.9 × 10<sup>−14</sup> at 40 °C and 9.3 × 10<sup>−14</sup> at 60 °C.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: compare the two values of K<sub>w</sub> and note which way the constant moves as the temperature rises. By Le Châtelier’s principle, raising the temperature favors the direction of a reaction that absorbs heat, so a constant that grows with temperature and one that shrinks point to opposite signs of the enthalpy change."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "kw-ion-concentrations"
+  },
+  {
+   "exercise": "cyl1",
+   "concept": "ion-product-constant-for-water"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "kw-ion-concentrations"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "amphiprotic-species"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "write-ionization-equations"
+  },
+  {
+   "exercise": "e1",
+   "concept": "conjugate-acid-base-pairs"
+  },
+  {
+   "exercise": "e1",
+   "concept": "write-ionization-equations"
+  },
+  {
+   "exercise": "e2",
+   "concept": "amphiprotic-species"
+  },
+  {
+   "exercise": "e2",
+   "concept": "write-ionization-equations"
+  },
+  {
+   "exercise": "e3",
+   "concept": "bronsted-lowry-acid"
+  },
+  {
+   "exercise": "e3",
+   "concept": "write-ionization-equations"
+  },
+  {
+   "exercise": "e4",
+   "concept": "bronsted-lowry-acid"
+  },
+  {
+   "exercise": "e4",
+   "concept": "write-ionization-equations"
+  },
+  {
+   "exercise": "e5",
+   "concept": "bronsted-lowry-base"
+  },
+  {
+   "exercise": "e5",
+   "concept": "write-ionization-equations"
+  },
+  {
+   "exercise": "e6",
+   "concept": "bronsted-lowry-base"
+  },
+  {
+   "exercise": "e6",
+   "concept": "write-ionization-equations"
+  },
+  {
+   "exercise": "e7",
+   "concept": "conjugate-acid"
+  },
+  {
+   "exercise": "e7",
+   "concept": "conjugate-base"
+  },
+  {
+   "exercise": "e8",
+   "concept": "conjugate-acid"
+  },
+  {
+   "exercise": "e8",
+   "concept": "conjugate-base"
+  },
+  {
+   "exercise": "e9",
+   "concept": "conjugate-acid-base-pairs"
+  },
+  {
+   "exercise": "e9",
+   "concept": "bronsted-lowry-acid"
+  },
+  {
+   "exercise": "e9",
+   "concept": "bronsted-lowry-base"
+  },
+  {
+   "exercise": "e10",
+   "concept": "conjugate-acid-base-pairs"
+  },
+  {
+   "exercise": "e10",
+   "concept": "bronsted-lowry-acid"
+  },
+  {
+   "exercise": "e10",
+   "concept": "bronsted-lowry-base"
+  },
+  {
+   "exercise": "e11",
+   "concept": "amphiprotic-species"
+  },
+  {
+   "exercise": "e12",
+   "concept": "amphiprotic-species"
+  },
+  {
+   "exercise": "e12",
+   "concept": "write-ionization-equations"
+  },
+  {
+   "exercise": "e13",
+   "concept": "amphiprotic-species"
+  },
+  {
+   "exercise": "e13",
+   "concept": "write-ionization-equations"
+  },
+  {
+   "exercise": "e14",
+   "concept": "water-autoionization"
+  },
+  {
+   "exercise": "e14",
+   "concept": "ion-product-constant-for-water"
+  }
+ ]
+}

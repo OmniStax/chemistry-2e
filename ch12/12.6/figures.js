@@ -9,7 +9,7 @@ const TAU = 2 * Math.PI;
 const VIEWS = [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }];
 const NAME = { H: 'hydrogen atom', C: 'carbon atom', N: 'nitrogen atom', O: 'oxygen atom' };
 
-/* an atom as a disc in its element's colour; hydrogen is light and takes an ink outline so that it reads on a light page */
+/* an atom as a disc in its element's color; hydrogen is light and takes an ink outline so that it reads on a light page */
 function atom(ctx, x, y, sym, r) {
   ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = F.el(sym); ctx.fill();
   ctx.lineWidth = sym === 'H' ? 2 : 1.5; ctx.strokeStyle = sym === 'H' ? PAL.ink : alpha(PAL.ink, 0.45); ctx.stroke(); ctx.restore();
@@ -132,7 +132,7 @@ function views(d, VIEW, mount, draw) {
    of the page as the book draws them: NO2 bent at 134 degrees with N-O
    1.20; CO 1.13; in the transition state the moving oxygen 1.27 from N
    and 1.35 from C; NO 1.15 and CO2 1.16 apart afterwards. Space-filling
-   radius 0.66. Each stage is centred on its own extent. Still: the
+   radius 0.66. Each stage is centered on its own extent. Still: the
    stages are states of one event, not a clock.
 ===================================================================== */
 (function () {

@@ -35,3 +35,16 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 | Labels | Figure for a book number, Sim for an addition; the word "demo" nowhere |
 | `ai` and `built` | `{"text": "Claude Opus 5.5", "figures": "Claude Opus 5.5"}`, `2026-09-28` |
 | Book manifest | `ch12` added to `book.json` by `ost merge chemistry-2e 12` |
+
+## What the build changed
+
+- Folds: Figures 12.2 + 12.3 (the data table beside its curve, a secant closing on the tangent), 12.9 + 12.10 + 12.11 (each data set plotted three ways) and 12.13 + 12.14 (one collision above the reaction diagram it traces). Every number from 12.1 to 12.25 is shown and linked.
+- Collisions: 12.2 holds the chapter's many-collisions box, a Sim of NO and O₃ in 3D with sliders for T, [NO]₀ and [O₃]₀ and the ozone concentration on a strip beneath; 12.5 holds the single oriented collision, CO striking O₂ carbon end or oxygen end first in 3D, in Figure 12.13 + 12.14. The PhET items follow them: 12.2's `fs-idm66455280` is set against the box, 12.5's two against the single collision, and 12.2's `fs-idm66513728` and `fs-idm49710224` stay held.
+- Sims added: the collisions box (12.2), the initial-rates trials (12.3) and the slow step of a two-step mechanism (12.6), each labelled Sim.
+- Unnumbered images: 12.6's cyclobutane equation (`CNX_Chem_12_06_CyclobD_img.jpg`) is redrawn as a figure row with no number, with a 2D/3D view choice; Example 12.15's diagrams (`CNX_Chem_12_07_Rxndiagramex_img.jpg`) are kept as a figure row with no number; the CYL images of 12.4 and 12.7 stay in their cards.
+- 3D: 12.2's box, 12.13 + 12.14 and 12.23 are physical 3D scenes; 12.17 and the cyclobutane carry the view choice; 12.12's flasks and 12.25's enzyme are flat.
+- Symbols: k is typed `rate-constant` throughout (`\kk`, `\kkone`, `\kktwo`, `\kkmone`, and A as `\kAfreq`), as `book.json` declares, in place of the untyped k of the Symbols line; the chapter's forms write the macros. No variables rows were added for symbols a section only reuses (12.2, 12.3, 12.6, 12.7): a symbol's card falls back to the chapter's one meaning.
+- Concepts: 57 rows; the prerequisite edges Hasse-reduced at the chapter pass from 129 to 98, among them `catalyzed-reaction-diagrams`, which now rests on `catalysis-lowers-activation-energy` alone.
+- Exercises: sixteen Check Your Learning items inline; fifty-nine end-of-section items, three of them `simulation-exercise`; twenty-three unkeyed numerical items left out; 12.7's `fs-idm189363504` carries the two diagrams of the left-out `fs-idm260004768`.
+- Colour: 12.2 binds `time` too; no section binds `amount`; general mentions of a concept are marked as root rule 7 asks; see `COLOR.md`.
+- Anchors, set at the chapter pass: the relative-rates form and six variables to 12.1's relative and expression headings; the rate law, k, m and n to 12.3's rate-laws heading; the seven integrated-rate and half-life forms and four variables to 12.4's headings; the three Arrhenius forms and nine variables to 12.5's activation, arrhenius, graphical and ex-ea blocks; k₋₁ to 12.6's fast-equilibrium heading.

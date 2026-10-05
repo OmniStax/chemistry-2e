@@ -8186,7 +8186,8 @@
           "id": "eq-relative-rates",
           "latex": "\\text{rate}=-\\frac{1}{a}\\frac{\\Delta[\\text{A}]}{\\Delta t}=\\frac{1}{b}\\frac{\\Delta[\\text{B}]}{\\Delta t}",
           "ktex": "\\krate=-\\frac{1}{a}\\frac{\\kdconcA}{\\kdt}=\\frac{1}{b}\\frac{\\kdconcB}{\\kdt}",
-          "condition": "the reaction aA ⟶ bB"
+          "condition": "the reaction aA ⟶ bB",
+          "anchor": "12.1-relative"
         }
       ]
     },
@@ -8288,8 +8289,9 @@
         {
           "id": "eq-rate-law",
           "latex": "\\text{rate}=k[\\text{A}]^{m}[\\text{B}]^{n}",
-          "ktex": "\\krate=k\\kconcA^{m}\\kconcB^{n}",
-          "condition": "the reaction aA + bB ⟶ products, with orders m and n found by experiment"
+          "ktex": "\\krate=\\kk\\kconcA^{m}\\kconcB^{n}",
+          "condition": "the reaction aA + bB ⟶ products, with orders m and n found by experiment",
+          "anchor": "12.3-rate-laws"
         }
       ]
     },
@@ -8384,14 +8386,16 @@
         {
           "id": "eq-first-order-integrated",
           "latex": "\\ln[\\text{A}]_{t}=-kt+\\ln[\\text{A}]_{0}",
-          "ktex": "\\ln\\kconcAt=-k\\kt+\\ln\\kconcAz",
-          "condition": "a reaction first order in A"
+          "ktex": "\\ln\\kconcAt=-\\kk\\kt+\\ln\\kconcAz",
+          "condition": "a reaction first order in A",
+          "anchor": "12.4-first-order"
         },
         {
           "id": "eq-first-order-exponential",
           "latex": "[\\text{A}]_{t}=[\\text{A}]_{0}e^{-kt}",
-          "ktex": "\\kconcAt=\\kconcAz e^{-k\\kt}",
-          "condition": "a reaction first order in A"
+          "ktex": "\\kconcAt=\\kconcAz e^{-\\kk\\kt}",
+          "condition": "a reaction first order in A",
+          "anchor": "12.4-first-order"
         }
       ]
     },
@@ -8405,8 +8409,9 @@
         {
           "id": "eq-second-order-integrated",
           "latex": "\\frac{1}{[\\text{A}]_{t}}=kt+\\frac{1}{[\\text{A}]_{0}}",
-          "ktex": "\\frac{1}{\\kconcAt}=k\\kt+\\frac{1}{\\kconcAz}",
-          "condition": "a reaction second order in a single reactant A"
+          "ktex": "\\frac{1}{\\kconcAt}=\\kk\\kt+\\frac{1}{\\kconcAz}",
+          "condition": "a reaction second order in a single reactant A",
+          "anchor": "12.4-second-order"
         }
       ]
     },
@@ -8420,8 +8425,9 @@
         {
           "id": "eq-zero-order-integrated",
           "latex": "[\\text{A}]_{t}=-kt+[\\text{A}]_{0}",
-          "ktex": "\\kconcAt=-k\\kt+\\kconcAz",
-          "condition": "a zero-order reaction, under the conditions where it is zero order"
+          "ktex": "\\kconcAt=-\\kk\\kt+\\kconcAz",
+          "condition": "a zero-order reaction, under the conditions where it is zero order",
+          "anchor": "12.4-zero-order"
         }
       ]
     },
@@ -8454,20 +8460,23 @@
         {
           "id": "eq-half-life-first",
           "latex": "t_{1/2}=\\frac{0.693}{k}",
-          "ktex": "\\kthalf=\\frac{0.693}{k}",
-          "condition": "a first-order reaction"
+          "ktex": "\\kthalf=\\frac{0.693}{\\kk}",
+          "condition": "a first-order reaction",
+          "anchor": "12.4-half-life-first"
         },
         {
           "id": "eq-half-life-second",
           "latex": "t_{1/2}=\\frac{1}{[\\text{A}]_{0}k}",
-          "ktex": "\\kthalf=\\frac{1}{\\kconcAz k}",
-          "condition": "a second-order reaction"
+          "ktex": "\\kthalf=\\frac{1}{\\kconcAz\\kk}",
+          "condition": "a second-order reaction",
+          "anchor": "12.4-half-life-second"
         },
         {
           "id": "eq-half-life-zero",
           "latex": "t_{1/2}=\\frac{[\\text{A}]_{0}}{2k}",
-          "ktex": "\\kthalf=\\frac{\\kconcAz}{2k}",
-          "condition": "a zero-order reaction"
+          "ktex": "\\kthalf=\\frac{\\kconcAz}{2\\kk}",
+          "condition": "a zero-order reaction",
+          "anchor": "12.4-half-life-zero"
         }
       ]
     },
@@ -8534,14 +8543,16 @@
         {
           "id": "eq-arrhenius",
           "latex": "k=Ae^{-E_{\\text{a}}/RT}",
-          "ktex": "k=Ae^{-\\kEa/R\\kT}",
-          "condition": "a reaction whose kinetics follow the Arrhenius equation, T in kelvin"
+          "ktex": "\\kk=\\kAfreq e^{-\\kEa/R\\kT}",
+          "condition": "a reaction whose kinetics follow the Arrhenius equation, T in kelvin",
+          "anchor": "12.5-arrhenius"
         },
         {
           "id": "eq-arrhenius-linear",
           "latex": "\\ln k=\\left(\\frac{-E_{\\text{a}}}{R}\\right)\\left(\\frac{1}{T}\\right)+\\ln A",
-          "ktex": "\\ln k=\\left(\\frac{-\\kEa}{R}\\right)\\left(\\frac{1}{\\kT}\\right)+\\ln A",
-          "condition": "rate constants measured at several temperatures"
+          "ktex": "\\ln\\kk=\\left(\\frac{-\\kEa}{R}\\right)\\left(\\frac{1}{\\kT}\\right)+\\ln\\kAfreq",
+          "condition": "rate constants measured at several temperatures",
+          "anchor": "12.5-graphical"
         }
       ]
     },
@@ -8555,8 +8566,9 @@
         {
           "id": "eq-arrhenius-two-point",
           "latex": "\\ln\\frac{k_{1}}{k_{2}}=\\frac{E_{\\text{a}}}{R}\\left(\\frac{1}{T_{2}}-\\frac{1}{T_{1}}\\right)",
-          "ktex": "\\ln\\frac{k_{1}}{k_{2}}=\\frac{\\kEa}{R}\\left(\\frac{1}{\\kTtwo}-\\frac{1}{\\kTone}\\right)",
-          "condition": "rate constants k₁ and k₂ measured at two temperatures T₁ and T₂"
+          "ktex": "\\ln\\frac{\\kkone}{\\kktwo}=\\frac{\\kEa}{R}\\left(\\frac{1}{\\kTtwo}-\\frac{1}{\\kTone}\\right)",
+          "condition": "rate constants k₁ and k₂ measured at two temperatures T₁ and T₂",
+          "anchor": "12.5-ex-ea"
         }
       ]
     },
@@ -8758,7 +8770,8 @@
           "id": "eq-equal-rates",
           "latex": "\\text{rate}_{f}=\\text{rate}_{r}",
           "ktex": "\\kratef=\\krater",
-          "condition": "a reversible reaction at equilibrium"
+          "condition": "a reversible reaction at equilibrium",
+          "anchor": "13.1-reversible"
         }
       ]
     },
@@ -8784,14 +8797,16 @@
         {
           "id": "eq-reaction-quotient",
           "latex": "Q_{c}=\\frac{[\\text{C}]^{x}[\\text{D}]^{y}}{[\\text{A}]^{m}[\\text{B}]^{n}}",
-          "ktex": "Q_{c}=\\frac{\\kconcC^{x}\\kconcD^{y}}{\\kconcA^{m}\\kconcB^{n}}",
-          "condition": "the reaction mA + nB ⇌ xC + yD"
+          "ktex": "\\kQc=\\frac{\\kconcC^{x}\\kconcD^{y}}{\\kconcA^{m}\\kconcB^{n}}",
+          "condition": "the reaction mA + nB ⇌ xC + yD",
+          "anchor": "13.2-quotient"
         },
         {
           "id": "eq-reaction-quotient-p",
           "latex": "Q_{P}=\\frac{(P_{C})^{x}(P_{D})^{y}}{(P_{A})^{m}(P_{B})^{n}}",
-          "ktex": "Q_{P}=\\frac{(\\kPC)^{x}(\\kPD)^{y}}{(\\kPA)^{m}(\\kPB)^{n}}",
-          "condition": "the gas-phase reaction mA + nB ⇌ xC + yD"
+          "ktex": "\\kQP=\\frac{(\\kPC)^{x}(\\kPD)^{y}}{(\\kPA)^{m}(\\kPB)^{n}}",
+          "condition": "the gas-phase reaction mA + nB ⇌ xC + yD",
+          "anchor": "13.2-quotient"
         }
       ]
     },
@@ -8817,7 +8832,9 @@
         {
           "id": "eq-k-equals-q",
           "latex": "K_{c}=Q_{c}\\ \\text{at equilibrium}",
-          "condition": "a system at equilibrium; likewise K_P = Q_P"
+          "condition": "a system at equilibrium; likewise K_P = Q_P",
+          "anchor": "13.2-constant",
+          "ktex": "\\kKc=\\kQc\\ \\text{at equilibrium}"
         }
       ]
     },
@@ -8845,13 +8862,15 @@
         {
           "id": "eq-kp-kc",
           "latex": "K_{P}=K_{c}(RT)^{\\Delta n}",
-          "ktex": "K_{P}=K_{c}(R\\kT)^{\\Delta n}",
-          "condition": "a gas-phase equilibrium, with Δn = (c + d) − (a + b) for aA + bB ⇌ cC + dD"
+          "ktex": "\\kKP=\\kKc(R\\kT)^{\\Delta n}",
+          "condition": "a gas-phase equilibrium, with Δn = (c + d) − (a + b) for aA + bB ⇌ cC + dD",
+          "anchor": "13.2-homogeneous"
         },
         {
           "id": "eq-delta-n",
           "latex": "\\Delta n=(c+d)-(a+b)",
-          "condition": "the gas-phase reaction aA + bB ⇌ cC + dD"
+          "condition": "the gas-phase reaction aA + bB ⇌ cC + dD",
+          "anchor": "13.2-homogeneous"
         }
       ]
     },
@@ -8872,17 +8891,23 @@
         {
           "id": "eq-reversed-k",
           "latex": "K_{c'}=\\frac{1}{K_{c}}",
-          "condition": "the equation written in the reverse direction"
+          "condition": "the equation written in the reverse direction",
+          "anchor": "13.2-coupled",
+          "ktex": "\\kKcprime=\\frac{1}{\\kKc}"
         },
         {
           "id": "eq-scaled-k",
           "latex": "K_{c'}=K_{c}^{\\,x}",
-          "condition": "the coefficients of the equation multiplied by x"
+          "condition": "the coefficients of the equation multiplied by x",
+          "anchor": "13.2-coupled",
+          "ktex": "\\kKcprime=\\kKc^{\\,x}"
         },
         {
           "id": "eq-coupled-k",
           "latex": "K_{c'}=K_{c1}K_{c2}",
-          "condition": "the net equation formed by adding two equations"
+          "condition": "the net equation formed by adding two equations",
+          "anchor": "13.2-coupled",
+          "ktex": "\\kKcprime=\\kKcone\\kKctwo"
         }
       ]
     },
@@ -8960,8 +8985,9 @@
         {
           "id": "eq-k-from-rate-constants",
           "latex": "\\frac{[\\text{B}]}{[\\text{A}]}=\\frac{k_{f}}{k_{r}}=K_{c}",
-          "ktex": "\\frac{\\kconcB}{\\kconcA}=\\frac{k_{f}}{k_{r}}=K_{c}",
-          "condition": "the elementary reaction A ⇌ B at equilibrium"
+          "ktex": "\\frac{\\kconcB}{\\kconcA}=\\frac{\\kkf}{\\kkr}=\\kKc",
+          "condition": "the elementary reaction A ⇌ B at equilibrium",
+          "anchor": "13.3-temperature"
         }
       ]
     },
@@ -10135,7 +10161,8 @@
           "latex": "P=MRT",
           "ktex": "\\kP=\\kM R\\kT",
           "condition": "an ideal gas of molar concentration M",
-          "section": "13.2"
+          "section": "13.2",
+          "anchor": "13.2-homogeneous"
         }
       ]
     },
@@ -16148,31 +16175,11 @@
     },
     {
       "concept": "reaction-rate",
-      "prereq": "concentration"
-    },
-    {
-      "concept": "reaction-rate",
       "prereq": "molarity"
-    },
-    {
-      "concept": "average-instantaneous-initial-rate",
-      "prereq": "reaction-rate"
-    },
-    {
-      "concept": "rate-from-concentration-data",
-      "prereq": "reaction-rate"
     },
     {
       "concept": "rate-from-concentration-data",
       "prereq": "average-instantaneous-initial-rate"
-    },
-    {
-      "concept": "relative-reaction-rates",
-      "prereq": "reaction-rate"
-    },
-    {
-      "concept": "relative-reaction-rates",
-      "prereq": "coefficients-as-ratios"
     },
     {
       "concept": "relative-reaction-rates",
@@ -16211,24 +16218,12 @@
       "prereq": "reaction-rate"
     },
     {
-      "concept": "concentration-and-rate",
-      "prereq": "concentration"
-    },
-    {
       "concept": "catalyst",
       "prereq": "reaction-rate"
     },
     {
       "concept": "rate-law",
-      "prereq": "reaction-rate"
-    },
-    {
-      "concept": "rate-law",
       "prereq": "concentration-and-rate"
-    },
-    {
-      "concept": "rate-law",
-      "prereq": "molarity"
     },
     {
       "concept": "reaction-order",
@@ -16269,14 +16264,6 @@
     {
       "concept": "rate-constant-units",
       "prereq": "reaction-order"
-    },
-    {
-      "concept": "rate-constant-units",
-      "prereq": "derived-units"
-    },
-    {
-      "concept": "rate-from-rate-law",
-      "prereq": "rate-law"
     },
     {
       "concept": "rate-from-rate-law",
@@ -16348,14 +16335,6 @@
     },
     {
       "concept": "integrated-rate-law-calculations",
-      "prereq": "first-order-integrated-rate-law"
-    },
-    {
-      "concept": "integrated-rate-law-calculations",
-      "prereq": "second-order-integrated-rate-law"
-    },
-    {
-      "concept": "integrated-rate-law-calculations",
       "prereq": "half-life-by-order"
     },
     {
@@ -16376,19 +16355,7 @@
     },
     {
       "concept": "activation-energy",
-      "prereq": "collision-theory"
-    },
-    {
-      "concept": "activation-energy",
-      "prereq": "potential-and-kinetic-energy"
-    },
-    {
-      "concept": "activation-energy",
       "prereq": "average-kinetic-energy-and-temperature"
-    },
-    {
-      "concept": "reaction-diagram",
-      "prereq": "activation-energy"
     },
     {
       "concept": "reaction-diagram",
@@ -16420,10 +16387,6 @@
     },
     {
       "concept": "arrhenius-equation",
-      "prereq": "collision-orientation"
-    },
-    {
-      "concept": "arrhenius-equation",
       "prereq": "celsius-kelvin-conversion"
     },
     {
@@ -16433,10 +16396,6 @@
     {
       "concept": "activation-energy-from-rate-constants",
       "prereq": "order-from-linear-plots"
-    },
-    {
-      "concept": "reaction-mechanism",
-      "prereq": "chemical-equation"
     },
     {
       "concept": "reaction-mechanism",
@@ -16452,15 +16411,7 @@
     },
     {
       "concept": "elementary-rate-laws",
-      "prereq": "rate-law"
-    },
-    {
-      "concept": "elementary-rate-laws",
       "prereq": "rate-laws-are-experimental"
-    },
-    {
-      "concept": "rate-determining-step",
-      "prereq": "reaction-mechanism"
     },
     {
       "concept": "rate-determining-step",
@@ -16471,16 +16422,8 @@
       "prereq": "rate-determining-step"
     },
     {
-      "concept": "mechanism-consistent-with-rate-law",
-      "prereq": "rate-laws-are-experimental"
-    },
-    {
       "concept": "rate-law-from-mechanism",
       "prereq": "rate-determining-step"
-    },
-    {
-      "concept": "rate-law-from-mechanism",
-      "prereq": "elementary-rate-laws"
     },
     {
       "concept": "rate-law-from-mechanism",
@@ -16496,10 +16439,6 @@
     },
     {
       "concept": "catalysis-lowers-activation-energy",
-      "prereq": "reaction-mechanism"
-    },
-    {
-      "concept": "catalysis-lowers-activation-energy",
       "prereq": "rate-determining-step"
     },
     {
@@ -16507,16 +16446,8 @@
       "prereq": "catalysis-lowers-activation-energy"
     },
     {
-      "concept": "catalyzed-reaction-diagrams",
-      "prereq": "reaction-diagram"
-    },
-    {
       "concept": "homogeneous-catalysis",
       "prereq": "catalysis-lowers-activation-energy"
-    },
-    {
-      "concept": "homogeneous-catalysis",
-      "prereq": "reaction-mechanism"
     },
     {
       "concept": "heterogeneous-catalysis",
@@ -20452,26 +20383,10 @@
     },
     {
       "concept": "average-instantaneous-initial-rate",
-      "prereq": "average-rate"
-    },
-    {
-      "concept": "average-instantaneous-initial-rate",
-      "prereq": "instantaneous-rate"
-    },
-    {
-      "concept": "average-instantaneous-initial-rate",
       "prereq": "initial-rate"
     },
     {
-      "concept": "rate-from-concentration-data",
-      "prereq": "average-rate"
-    },
-    {
       "concept": "relative-reaction-rates",
-      "prereq": "rate-expression"
-    },
-    {
-      "concept": "write-relative-rate-expressions",
       "prereq": "rate-expression"
     },
     {
@@ -20491,19 +20406,7 @@
       "prereq": "reaction-energy-diagram"
     },
     {
-      "concept": "catalyzed-reaction-diagrams",
-      "prereq": "reaction-energy-diagram"
-    },
-    {
       "concept": "reaction-mechanism",
-      "prereq": "elementary-reaction"
-    },
-    {
-      "concept": "molecularity",
-      "prereq": "elementary-reaction"
-    },
-    {
-      "concept": "elementary-rate-laws",
       "prereq": "elementary-reaction"
     },
     {

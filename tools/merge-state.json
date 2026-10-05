@@ -292,5 +292,88 @@
       "q_stoich"
     ],
     "types": []
+  },
+  "ch16": {
+    "symbols": [
+      "S\u00b0",
+      "\u0394S\u00b0",
+      "\u0394S_univ",
+      "\u0394S_sys",
+      "\u0394S_surr",
+      "S_f",
+      "S_i",
+      "S_solid",
+      "S_liquid",
+      "S_gas",
+      "G",
+      "\u0394G\u00b0",
+      "\u0394G_f\u00b0",
+      "\u0394G_1\u00b0",
+      "\u0394G_2\u00b0",
+      "q_rev",
+      "q_surr",
+      "q_sys",
+      "q_X",
+      "q_Y",
+      "w_max",
+      "T_X",
+      "T_Y",
+      "T_sys",
+      "T_surr",
+      "W",
+      "W_f",
+      "W_i",
+      "k_B",
+      "N_particles",
+      "n_boxes",
+      "\u03bd_coef"
+    ],
+    "types": []
+  },
+  "ch17": {
+    "symbols": [
+      "E_potential",
+      "E\u00b0_cell",
+      "E_cathode",
+      "E_anode",
+      "E\u00b0_cathode",
+      "E\u00b0_anode",
+      "E_X",
+      "E\u00b0_X",
+      "E_SHE",
+      "F_Faraday",
+      "I",
+      "w_elec"
+    ],
+    "types": [
+      "current"
+    ]
+  },
+  "ch18": {
+    "symbols": [],
+    "types": []
+  },
+  "ch19": {
+    "symbols": [
+      "\u0394_oct",
+      "\u0394_tet",
+      "P_pair"
+    ],
+    "types": []
+  },
+  "ch20": {
+    "symbols": [],
+    "types": []
+  },
+  "ch21": {
+    "symbols": [
+      "\u03bb_decay",
+      "N_0",
+      "N_t",
+      "activity"
+    ],
+    "types": [
+      "dose"
+    ]
   }
 }

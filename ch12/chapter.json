@@ -56,161 +56,184 @@
    "concept": "reaction-rate",
    "meaning": "the rate of the reaction, the change in concentration of a reactant or product per unit time, taken as positive",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
-   "section": "12.1"
+   "section": "12.1",
+   "anchor": "12.1-relative"
   },
   {
    "sym": "[A]",
    "concept": "molarity",
    "meaning": "the molar concentration of reactant A",
    "unit": "mol/L (M)",
-   "section": "12.1"
+   "section": "12.1",
+   "anchor": "12.1-relative"
   },
   {
    "sym": "[B]",
    "concept": "molarity",
    "meaning": "the molar concentration of product B (a second reactant in a rate law)",
    "unit": "mol/L (M)",
-   "section": "12.1"
+   "section": "12.1",
+   "anchor": "12.1-relative"
   },
   {
    "sym": "Δ[A]",
    "concept": "molarity",
    "meaning": "the change in the molar concentration of A over a time interval",
    "unit": "mol/L (M)",
-   "section": "12.1"
+   "section": "12.1",
+   "anchor": "12.1-relative"
   },
   {
    "sym": "Δ[B]",
    "concept": "molarity",
    "meaning": "the change in the molar concentration of B over a time interval",
    "unit": "mol/L (M)",
-   "section": "12.1"
+   "section": "12.1",
+   "anchor": "12.1-relative"
   },
   {
    "sym": "Δt",
    "concept": "time",
    "meaning": "the time interval over which the concentration changes",
    "unit": "s",
-   "section": "12.1"
+   "section": "12.1",
+   "anchor": "12.1-expression"
   },
   {
    "sym": "k",
    "concept": "rate-constant",
    "meaning": "the rate constant, specific to a reaction at a particular temperature",
    "unit": "depends on the overall order, L^(x−1) mol^(1−x) s⁻¹",
-   "section": "12.3"
+   "section": "12.3",
+   "anchor": "12.3-rate-laws"
   },
   {
    "sym": "m_rxorder",
    "concept": "reaction-order",
    "meaning": "the reaction order with respect to reactant A",
    "unit": "none",
-   "section": "12.3"
+   "section": "12.3",
+   "anchor": "12.3-rate-laws"
   },
   {
    "sym": "n_rxorder",
    "concept": "reaction-order",
    "meaning": "the reaction order with respect to reactant B",
    "unit": "none",
-   "section": "12.3"
+   "section": "12.3",
+   "anchor": "12.3-rate-laws"
   },
   {
    "sym": "[A]_0",
    "concept": "molarity",
    "meaning": "the initial concentration of A",
    "unit": "mol/L (M)",
-   "section": "12.4"
+   "section": "12.4",
+   "anchor": "12.4-first-order"
   },
   {
    "sym": "[A]_t",
    "concept": "molarity",
    "meaning": "the concentration of A at time t",
    "unit": "mol/L (M)",
-   "section": "12.4"
+   "section": "12.4",
+   "anchor": "12.4-first-order"
   },
   {
    "sym": "t",
    "concept": "time",
    "meaning": "the time elapsed since the reaction began",
    "unit": "s",
-   "section": "12.4"
+   "section": "12.4",
+   "anchor": "12.4-first-order"
   },
   {
    "sym": "t_half",
    "concept": "half-life",
    "meaning": "the half-life, the time for half of the reactant to be consumed",
    "unit": "s",
-   "section": "12.4"
+   "section": "12.4",
+   "anchor": "12.4-half-life"
   },
   {
    "sym": "E_a",
    "concept": "activation-energy",
    "meaning": "the activation energy, the minimum energy needed to form products in a collision",
    "unit": "J/mol or kJ/mol",
-   "section": "12.5"
+   "section": "12.5",
+   "anchor": "12.5-activation"
   },
   {
    "sym": "A_freq",
    "concept": "frequency-factor",
    "meaning": "the frequency factor, related to the frequency of collisions and the orientation of the reacting molecules",
    "unit": "the units of k",
-   "section": "12.5"
+   "section": "12.5",
+   "anchor": "12.5-arrhenius"
   },
   {
    "sym": "R",
    "concept": "ideal-gas-constant",
    "meaning": "the ideal gas constant, 8.314 J/mol/K",
    "unit": "J mol⁻¹ K⁻¹",
-   "section": "12.5"
+   "section": "12.5",
+   "anchor": "12.5-arrhenius"
   },
   {
    "sym": "T",
    "concept": "temperature",
    "meaning": "the temperature on the kelvin scale",
    "unit": "K",
-   "section": "12.5"
+   "section": "12.5",
+   "anchor": "12.5-arrhenius"
   },
   {
    "sym": "T_1",
    "concept": "temperature",
    "meaning": "the first of two temperatures",
    "unit": "K",
-   "section": "12.5"
+   "section": "12.5",
+   "anchor": "12.5-ex-ea"
   },
   {
    "sym": "T_2",
    "concept": "temperature",
    "meaning": "the second of two temperatures",
    "unit": "K",
-   "section": "12.5"
+   "section": "12.5",
+   "anchor": "12.5-ex-ea"
   },
   {
    "sym": "k_1",
    "concept": "rate-constant",
    "meaning": "a rate constant labeled 1: at the first temperature, or of the forward reaction of a mechanism’s first step",
    "unit": "depends on the order",
-   "section": "12.5"
+   "section": "12.5",
+   "anchor": "12.5-ex-ea"
   },
   {
    "sym": "k_2",
    "concept": "rate-constant",
    "meaning": "a rate constant labeled 2: at the second temperature, or of a mechanism’s second step",
    "unit": "depends on the order",
-   "section": "12.5"
+   "section": "12.5",
+   "anchor": "12.5-ex-ea"
   },
   {
    "sym": "k_m1",
    "concept": "rate-constant",
    "meaning": "the rate constant of the reverse reaction of a mechanism’s first step",
    "unit": "depends on the order",
-   "section": "12.6"
+   "section": "12.6",
+   "anchor": "12.6-fast-equilibrium"
   },
   {
    "sym": "ΔH",
    "concept": "enthalpy-change",
    "meaning": "the enthalpy change of the reaction, the energy difference between reactants and products on a reaction diagram",
    "unit": "kJ/mol",
-   "section": "12.5"
+   "section": "12.5",
+   "anchor": "12.5-activation"
   }
  ]
 }

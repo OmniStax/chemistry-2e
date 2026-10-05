@@ -46,3 +46,5 @@ Nothing of the prose. Errata kept as printed: "the butadiene reaction" for the c
 - variables rows in 12.6 for `rate`, `k`, `[A]`, `[B]`, `k_1`, `k_2`, `Δt` (the meanings of 12.1, 12.3 and 12.5) if the chapter pass wants them per section; the page writes `\krate`, `\kk`, `\kconcA`, `\kconcB`, `\kkone`, `\kktwo`, `\kkmone`, `\kdt`
 - `ch12/COLOR.md` and the chapter notes disagree on k: the tables type it `rate-constant` (`\kk`), and the page follows them
 - `ch12/config.md`: the cyclobutane equation of 12.6 is an unnumbered image redrawn as a figure row with no number
+
+Applied by the chapter pass (2026-10-05): the k₋₁ anchor set; no per-section rows for the reused symbols, whose cards fall back to the chapter's meanings; k stays typed (`COLOR.md`, `config.md`); `config.md` names the cyclobutane figure row.

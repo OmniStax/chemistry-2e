@@ -1112,3 +1112,51 @@ Review pass ch11 (2026-10-04, Claude Opus 5.5 high): 29 pass, 14 fixed, 1 rewrit
 Review pass ch09 (2026-10-04, Claude Opus 5.5 high): 19 pass, 16 fixed, 2 rewrite filed.
 Review pass ch06 (2026-10-04, Claude Opus 5.5 high): 23 pass, 19 fixed, 1 rewrite filed.
 Review pass ch07 (2026-10-04, Claude Opus 5.5 high): 59 pass, 23 fixed, 0 rewrite filed.
+
+
+## Pass 15 (2026-10-05): Chapter 12, Kinetics, is built and passed
+
+Built: the introduction and seven sections, 12.1 to 12.7, in the publisher's
+numbering, Figures 12.1 to 12.25 and Tables 12.1 to 12.3 all shown and
+linked. Fifteen live figures, three of them folds: the hydrogen peroxide
+data table beside its curve, where a secant closes on the tangent (12.2 and
+12.3); one data set plotted as [A], ln[A] and 1/[A] (12.9, 12.10 and 12.11);
+and one collision of carbon monoxide with oxygen above the reaction diagram
+it traces (12.13 and 12.14). Three are Sims of OmniStax's own: the
+many-collisions box of nitric oxide and ozone in 12.2, the initial-rates
+trials of 12.3, and the slow step of a two-step mechanism in 12.6. The
+collisions box, the single collision and the hydrogenation on nickel are
+physical 3D with bounded orbit; the cyclobutane and the NO₂ + CO step carry
+a 2D/3D view choice; the graphs, the reaction diagrams, the fading beakers
+and the enzyme stay flat. Ten kept images, the
+photographs with the pathway chart and the converter cutaway, and Example
+12.15's diagrams stay as the book's. Seventy-five exercises, sixteen of them Check Your Learning
+items placed inline after their examples, each with its host. Twenty-three
+unkeyed numerical items are left out and named in `exercise_notes`; one
+unkeyed choice item is kept open with its options; the unkeyed conceptual
+items are kept with a suggested approach. Three PhET items are set against
+the chapter's own collisions, and two stay held.
+
+What the chapter pass changed. Every form and variable row of the chapter
+anchored: twelve forms and twenty-three variables, at the headings of 12.1,
+12.3, 12.4, 12.5 and 12.6 that state them. The rate constant stays typed, as
+`book.json` declares and the sections built it, and the chapter's forms now
+write k, k₁, k₂ and the frequency factor through their macros. The
+prerequisite edges were Hasse-reduced from 129 to 98, which also settles the
+catalyzed reaction diagrams resting on both the reaction diagram and the
+skill of reading one. `COLOR.md` now marks general mentions of a concept as
+root rule 7 does, binds `time` in 12.2 and lists the referents as built;
+`config.md` records what the build changed, the two collision figures among
+it; a few British spellings in captions and comments were made American.
+
+Errata carried as printed and named in `exploration.md`: Figure 12.6's
+unbalanced Fe + HCl equation, "CIF₃" in 12.1's key, the unbalanced 2N₂O₅ ⟶
+NO₂ + O₂ of 12.3, the stray "(a)" in one key, Example 12.8's "1/0.200
+mol⁻¹", the glossary's "t_l/2", "the butadiene reaction" and the AP key's
+mol² L⁻² min⁻¹ in 12.6, "two transitions states" and the converter note's
+NO₂ for nitric oxide in 12.7.
+
+Checks: `ost check` clean for the book, and every page of the chapter in
+light and dark on the dev server, with no KaTeX error, no missing image,
+every figure drawn and labelled as its row says, a transport on the five
+moving figures only, and every exercise card in place.

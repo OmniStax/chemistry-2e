@@ -46,3 +46,5 @@ The three Link to Learning notes (the cesium video, the phosphorus video, the Ph
 - variables rows 12.2 · rate and Δt (reuse 12.1's meanings) for the Sim's readout, on the same terms
 - ch12/COLOR.md: 12.2 binds `time` too (Δt and the strip's time axis); its line reads "temperature, concentration, rate only if a Sim draws them", and the Sim draws all four
 - No anchors (12.2 states no form), no concept, edge or symbol fix.
+
+Applied by the chapter pass (2026-10-05): no figure-only variables rows; the Sim's T, rate and Δt cards fall back to the chapter's one meaning of each (12.5's and 12.1's). `COLOR.md` now binds `time` in 12.2 and names the box as the chapter's many-collisions Sim; `config.md` says so too.

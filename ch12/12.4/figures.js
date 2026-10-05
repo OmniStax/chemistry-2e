@@ -116,7 +116,7 @@ function sci(x) {
    then a hold). Each beaker shows [A] at min(t, its own time), so all
    fade together until each is left behind; at the end they are the
    book's five beakers. Tint: an opacity of the concentration hue (H2O2
-   is colourless). Below, [A] against t to the clock, with a bracket in
+   is colorless). Below, [A] against t to the clock, with a bracket in
    time for each half-life as it completes. The order is a choice, each
    order starting from 1.000 M with a first half-life of 6.00 h:
    first k = ln2/t_half (3.21e-5 /s), second k = 1/([A]0 t_half)

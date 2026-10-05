@@ -12,7 +12,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
    SIM: a box of nitric oxide and ozone, NO + O₃ ⟶ NO₂ + O₂. Speeds are
    drawn from the Maxwell-Boltzmann distribution at T with the real molar
    masses; an NO meeting an O₃ reacts when its energy of approach along the
-   line of centres passes EA, a model threshold, and otherwise bounces off
+   line of centers passes EA, a model threshold, and otherwise bounces off
    elastically. A run of TRUN seconds is computed whole when a slider moves,
    so the transport scrubs it exactly. Each molecule stands for 0.10 M. The
    strip beneath plots [O₃] against t (0 to 5 s, 0 to 2.5 M, fixed) with
@@ -29,7 +29,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
   const fx = el('div'), nt = el('small'); d.readout.append(fx, nt);
   nt.textContent = 'Each molecule drawn stands for 0.10 M of its gas, and in the real gases the collisions come billions of times a second.';
 
-  /* each molecule as [element, x, y, radius] about its centre, scene units */
+  /* each molecule as [element, x, y, radius] about its center, scene units */
   const MOLS = {
     NO: { M: 30.01, name: 'nitric oxide, NO', atoms: [['N', -0.055, 0, 0.066], ['O', 0.055, 0, 0.062]] },
     O3: { M: 48.00, name: 'ozone, O₃', atoms: [['O', 0, 0.035, 0.062], ['O', -0.1, -0.025, 0.062], ['O', 0.1, -0.025, 0.062]] },

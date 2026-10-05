@@ -59,3 +59,5 @@ Nothing of the prose. Errata kept as printed: the "*E*<sub>a</sub>** =" markup s
 - forms `eq-arrhenius` → 12.5-arrhenius
 - forms `eq-arrhenius-linear` → 12.5-graphical
 - forms `eq-arrhenius-two-point` → 12.5-ex-ea
+
+Applied by the chapter pass (2026-10-05): all twelve anchors set as listed; the Arrhenius forms write `\kk`, `\kkone`, `\kktwo` and `\kAfreq`.

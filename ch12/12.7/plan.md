@@ -52,3 +52,5 @@ The two Link to Learning notes (the ChemWiki page on catalytic converters, the R
 - `config.md`: Example 12.15's diagram (Rxndiagramex_img) is an unnumbered image kept as a figure row with no number.
 - variables rows in 12.7 for `E_a`, `ΔH`, `k`, `R`, `T` (the meanings of 12.3 and 12.5) if the chapter pass wants them per section; the page writes `\kEa`, `\kdH`, `\kk`, `\kT`
 - the concept prereqs list both `reaction-diagram` and `reaction-energy-diagram` under `catalyzed-reaction-diagrams`, two rows for one idea from 12.5
+
+Applied by the chapter pass (2026-10-05): `config.md` names Example 12.15's figure row; no per-section rows for the reused symbols. `reaction-energy-diagram` (the definition) and `reaction-diagram` (the skill of reading one) are two kinds and both stay; the edge from `catalyzed-reaction-diagrams` to each was redundant, and the chapter's edges were Hasse-reduced, so it now rests on `catalysis-lowers-activation-energy` alone.

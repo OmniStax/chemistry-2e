@@ -47,3 +47,5 @@ Nothing of the prose. Errata kept as printed: 2N₂O₅ ⟶ NO₂ + O₂ in the 
 - equations `eq-rate-law` → 12.3-rate-laws
 - variables rows in 12.3 for `rate`, `[A]`, `[B]` (the same meanings as 12.1's) if the chapter pass wants them per section; the page writes `\krate`, `\kconcA`, `\kconcB`
 - `ch12/COLOR.md` and the chapter notes disagree on k: the tables type it `rate-constant` (`\kk`), and the page follows them
+
+Applied by the chapter pass (2026-10-05): the four anchors set as listed; no per-section rows for rate, [A] and [B], whose cards fall back to 12.1's meanings. k stays typed `rate-constant`; `COLOR.md` and `config.md` now say so, and the chapter's forms write `\kk`.

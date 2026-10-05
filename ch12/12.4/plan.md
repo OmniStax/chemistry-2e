@@ -56,3 +56,5 @@ Objectives, summary, key equations and glossary go to the tables. Errata kept as
 - forms `eq-half-life-first` → 12.4-half-life-first
 - forms `eq-half-life-second` → 12.4-half-life-second
 - forms `eq-half-life-zero` → 12.4-half-life-zero
+
+Applied by the chapter pass (2026-10-05): all eleven anchors set as listed, and the forms' k written `\kk`.

@@ -1103,3 +1103,4 @@ Review pass ch03 (2026-10-04, Claude Opus 5.5 high): 20 pass, 9 fixed, 0 rewrite
 
 Review pass ch01 (2026-10-04, Claude Opus 5.5 high): 15 pass, 21 fixed, 0 rewrite filed.
 Review pass ch04 (2026-10-04, Claude Opus 5.5 high): 14 pass, 20 fixed, 0 rewrite filed.
+Review pass ch02 (2026-10-04, Claude Opus 5.5 high): 19 pass, 19 fixed (13 figures, 6 leads), 0 rewrite filed.

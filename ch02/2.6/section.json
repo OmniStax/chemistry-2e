@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Ionic and Molecular Compounds",
  "short": "Ionic and Molecular Compounds",
- "lead": "Atoms can gain or lose electrons to form ions, and the periodic table predicts which ions many elements form and what charges they carry. Ions may be monatomic or polyatomic, and ionic bonds differ from covalent bonds. The charges of the ions fix the formula of an ionic compound, and the positions of the elements in the periodic table tell you whether a compound is ionic or molecular.",
+ "lead": "Atoms can gain or lose electrons to become ions, and compounds divide into ionic compounds built of ions and molecular compounds built of discrete molecules.",
  "objectives": [
   "Define ionic and molecular (covalent) compounds",
   "Predict the type of compound formed from elements based on their location within the periodic table",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [

@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Early Ideas in Atomic Theory",
  "short": "Early atomic theory",
- "lead": "The idea that matter consists of atoms is older than chemistry, but it became a scientific theory only when John Dalton used it to explain what chemists could measure. Dalton’s postulates account for two laws of <span data-concept=\"mass\">mass</span>. Every sample of a compound contains its elements in the same proportion by <span data-concept=\"mass\">mass</span>. And when two elements form more than one compound, the <span data-concept=\"mass\">masses</span> of one that combine with a fixed <span data-concept=\"mass\">mass</span> of the other stand in a ratio of small whole numbers.",
+ "lead": "The idea that matter consists of atoms is older than chemistry, but it became a scientific theory only when John Dalton used it to explain what chemists could measure: the <span data-concept=\"mass\">masses</span> in which elements combine to form compounds.",
  "objectives": [
   "State the postulates of Dalton’s atomic theory",
   "Use postulates of Dalton’s atomic theory to explain the laws of definite and multiple proportions"
@@ -16,6 +16,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -59,6 +63,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the caption"
     }
    ]
   },
@@ -74,6 +83,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "spheres in the green and blue the example names"
     }
    ]
   },
@@ -92,6 +106,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the caption"
     }
    ]
   },
@@ -115,6 +134,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the caption"
     }
    ]
   }

@@ -16,16 +16,8 @@ const atom = (ctx, x, y, sym, r) => disc(ctx, x, y, r, F.el(sym), sym === 'H');
 /* a bond between two atoms, drawn under them */
 const bond = (ctx, a, b) => line(ctx, a[0], a[1], b[0], b[1], alpha(PAL.ink, 0.55), 5);
 
-/* the categorical hue that reads as the colour the book names, for spheres that stand for unnamed elements */
-function catLike(which) {
-  let best = 0, score = -Infinity;
-  for (let i = 0; i < 8; i++) {
-    const h = F.cat(i).replace('#', ''), r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
-    const s = which === 'green' ? g - Math.max(r, b) : b - Math.max(r, g);
-    if (s > score) { score = s; best = i; }
-  }
-  return F.cat(best);
-}
+/* the example names its spheres green and blue, so those colours are the fact its question points at */
+const SPHERE = { green: '#3c9a4a', blue: '#3a72d0' };
 
 /* =====================================================================
    FIGURE 2.4: copper and oxygen become copper(II) oxide. A choice between
@@ -68,8 +60,7 @@ function catLike(which) {
     const after = S.value === 'after';
     headline(ctx, after ? 'The same 16 copper atoms and 16 oxygen atoms are now combined in a 1:1 ratio as copper(II) oxide.'
       : 'Sixteen copper atoms in the metal and 16 oxygen atoms in eight O₂ molecules, before the change.');
-    readout(d.readout, '\\text{copper atoms: } 16 \\text{ before} = 16 \\text{ after} \\qquad \\text{oxygen atoms: } 16 \\text{ before} = 16 \\text{ after}',
-      'The atoms are rearranged into a different substance, but none is created and none is destroyed.');
+    readout(d.readout, '\\text{copper atoms: } 16 \\text{ before} = 16 \\text{ after} \\qquad \\text{oxygen atoms: } 16 \\text{ before} = 16 \\text{ after}');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -119,8 +110,7 @@ function catLike(which) {
     text(ctx, 'per 1.00 g', 70, y - 11, PAL.ink, { size: 18 }); text(ctx, 'of hydrogen', 70, y + 13, PAL.ink, { size: 18 });
     hits = [{ x: (L + X(c)) / 2, y: 150, r: 26, name: fmt(c, 2) + ' g of carbon' }, { x: (L + X(h)) / 2, y: 222, r: 26, name: fmt(h, 2) + ' g of hydrogen' }];
     headline(ctx, (at ? 'Sample ' + at[0] + ', ' : 'A sample of ') + fmt(m, 2) + ' g of isooctane holds ' + fmt(c, 2) + ' g of carbon and ' + fmt(h, 2) + ' g of hydrogen, or 5.33 g of carbon for every 1.00 g of hydrogen.');
-    readout(d.readout, `\\frac{\\htmlClass{kv-mass}{${fmt(c, 2)}\\ \\text{g carbon}}}{\\htmlClass{kv-mass}{${fmt(h, 2)}\\ \\text{g hydrogen}}}=\\frac{\\htmlClass{kv-mass}{5.33\\ \\text{g carbon}}}{\\htmlClass{kv-mass}{1.00\\ \\text{g hydrogen}}}`,
-      'Every sample of the pure compound has the same carbon-to-hydrogen mass ratio, whatever its size.');
+    readout(d.readout, `\\frac{\\htmlClass{kv-mass}{${fmt(c, 2)}\\ \\text{g carbon}}}{\\htmlClass{kv-mass}{${fmt(h, 2)}\\ \\text{g hydrogen}}}=\\frac{\\htmlClass{kv-mass}{5.33\\ \\text{g carbon}}}{\\htmlClass{kv-mass}{1.00\\ \\text{g hydrogen}}}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -173,8 +163,7 @@ function catLike(which) {
     bars(ctx, 110, 440, cu, g); bars(ctx, 800, 440, cu, b);
     headline(ctx, 'With ' + fmt(cu, 2) + ' g of copper, the green compound holds ' + fmt(g, 3) + ' g of chlorine and the brown compound ' + fmt(b, 3) + ' g, twice as much.');
     const cuT = `\\htmlClass{kv-mass}{${fmt(cu, 2)}\\ \\text{g Cu}}`;
-    readout(d.readout, `\\dfrac{\\dfrac{\\htmlClass{kv-mass}{${fmt(b, 3)}\\ \\text{g Cl}}}{${cuT}}}{\\dfrac{\\htmlClass{kv-mass}{${fmt(g, 3)}\\ \\text{g Cl}}}{${cuT}}}=\\dfrac{2}{1}`,
-      'A fixed mass of copper combines with masses of chlorine in a ratio of small whole numbers, because the brown compound has two chlorine atoms for every copper atom and the green compound one.');
+    readout(d.readout, `\\dfrac{\\dfrac{\\htmlClass{kv-mass}{${fmt(b, 3)}\\ \\text{g Cl}}}{${cuT}}}{\\dfrac{\\htmlClass{kv-mass}{${fmt(g, 3)}\\ \\text{g Cl}}}{${cuT}}}=\\dfrac{2}{1}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -188,7 +177,7 @@ function catLike(which) {
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
-    const gr = catLike('green'), bl = catLike('blue'), RG = 30, RB = 23;
+    const gr = F.fact(SPHERE.green), bl = F.fact(SPHERE.blue), RG = 30, RB = 23;
     hits = [];
     const put = (x, y, r, fill, name) => { disc(ctx, x, y, r, fill, false); hits.push({ x, y, r, name }); };
     const y = 120;

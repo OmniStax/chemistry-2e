@@ -92,10 +92,11 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     /* the three parts named, as the book labels them */
     const aw = F.measure(ctx, String(A), { size: 56, weight: 600 });
     const zw = F.measure(ctx, String(p), { size: 56, weight: 600 });
-    line(ctx, left - aw - 12, up, 700, up - 40, alpha(PAL.ink, 0.4), 2);
-    text(ctx, 'mass number', 690, up - 40, PAL.ink, { size: 20, align: 'right' });
-    line(ctx, left - zw - 12, down, 700, down + 40, alpha(PAL.ink, 0.4), 2);
-    text(ctx, 'atomic number (often omitted)', 690, down + 40, PAL.ink, { size: 20, align: 'right' });
+    line(ctx, left - aw - 12, up, 730, up - 40, alpha(PAL.ink, 0.4), 2);
+    text(ctx, 'mass number', 720, up - 40, PAL.ink, { size: 20, align: 'right' });
+    line(ctx, left - zw - 12, down, 730, down + 40, alpha(PAL.ink, 0.4), 2);
+    text(ctx, 'atomic number', 720, down + 40, PAL.ink, { size: 20, align: 'right' });
+    text(ctx, '(often omitted)', 720, down + 64, PAL.muted, { size: 17, align: 'right' });
     const cw = q !== 0 ? F.measure(ctx, chargeSup(q), { size: 56, weight: 600 }) : 0;
     line(ctx, right + cw + 10, up, 1250, up - 40, alpha(PAL.ink, 0.4), 2);
     text(ctx, q === 0 ? 'charge (none)' : 'charge', 1260, up - 40, q === 0 ? PAL.muted : C('charge'), { size: 20 });
@@ -157,9 +158,9 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     const prod = e.iso.map((s, i) => +((pct[i] / 100) * s.m).toFixed(2));
     const avg = +prod.reduce((a, b) => a + b, 0).toFixed(2);
     const lo = Math.round(e.iso[0].m) - 0.5, hi = Math.round(e.iso[n - 1].m) + 0.5;
-    /* the mass axis spans half a mass unit either side of the isotopes; abundance 0 to 100 % */
+    /* the mass axis spans half a mass unit either side of the isotopes; abundance 0 to 120 %, headroom for a bar's label at 100 % */
     const box = { l: 170, r: 1250, t: 120, b: 400 };
-    const { X, Y } = F.axes(ctx, box, [lo, hi], [0, 100], { nx: Math.round((hi - lo) * 2), ny: 4, fx: (v) => fmt(v, 1),
+    const { X, Y } = F.axes(ctx, box, [lo, hi], [0, 120], { nx: Math.round((hi - lo) * 2), ny: 4, fx: (v) => fmt(v, 1),
       xl: 'isotopic mass (amu)', xc: C('mass'), yl: 'abundance (%)' });
     e.iso.forEach((s, i) => {
       const x = X(s.m), y = Y(pct[i]);
@@ -169,12 +170,14 @@ const frac = (pct) => String(+(pct / 100).toFixed(4));
     });
     /* the balance point: a fulcrum under the axis and a dashed line up through the bars */
     const xa = X(avg);
-    line(ctx, xa, box.t + 10, xa, box.b, C('mass'), 3, [10, 10]);
-    ctx.save(); ctx.beginPath(); ctx.moveTo(xa, box.b + 2); ctx.lineTo(xa - 18, box.b + 34); ctx.lineTo(xa + 18, box.b + 34); ctx.closePath();
+    line(ctx, xa, Y(Math.max(...pct)), xa, box.b, C('mass'), 3, [10, 10]);
+    ctx.save(); ctx.beginPath(); ctx.moveTo(xa, box.b + 2); ctx.lineTo(xa - 11, box.b + 15); ctx.lineTo(xa + 11, box.b + 15); ctx.closePath();
     ctx.fillStyle = C('mass'); ctx.fill(); ctx.restore();
     text(ctx, `average ${fmt(avg, 2)} amu`, xa, box.b + 90, C('mass'), { size: 22, weight: 600, align: 'center', bg: alpha(PAL.panel, 0.9) });
     const name = pick.value;
-    headline(ctx, `The average mass of ${name} in this mix is ${fmt(avg, 2)} amu, though no single atom of ${name} has that mass.`);
+    const only = e.iso.find((s, i) => pct[i] >= 99.995);
+    headline(ctx, only ? `Every atom in this mix is ${name}-${only.A}, so the average mass is its own, ${fmt(avg, 2)} amu.`
+      : `The average mass of ${name} in this mix is ${fmt(avg, 2)} amu, though no single atom of ${name} has that mass.`);
     const terms = e.iso.map((s, i) => `(${frac(pct[i])} \\times \\htmlClass{kv-mass}{${s.ms}\\ \\text{amu}})`).join(' + ');
     const sums = prod.map((v) => `\\htmlClass{kv-mass}{${fmt(v, 2)}\\ \\text{amu}}`).join(' + ');
     const t = `\\text{average mass} = ${terms} = ${sums} = \\htmlClass{kv-mass}{${fmt(avg, 2)}\\ \\text{amu}}`;

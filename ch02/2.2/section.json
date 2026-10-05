@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Evolution of Atomic Theory",
  "short": "Evolution of Atomic Theory",
- "lead": "The atoms of Dalton’s theory turn out to contain smaller particles, and three experiments found them. <span data-ref=\"tube\">Thomson’s cathode ray tube</span> revealed the electron. <span data-ref=\"drops\">Millikan’s oil drops</span> measured <span data-type=\"charge\">its charge</span> and so <span data-type=\"mass\">its mass</span>. <span data-ref=\"foil\">Rutherford’s gold foil</span>, with its rare backward bounces, showed that an atom is mostly empty space around a small, dense, positive nucleus. The proton and the neutron complete the picture, and the neutron explains isotopes.",
+ "lead": "The atoms of Dalton’s theory turn out to contain smaller particles, and three experiments, <span data-ref=\"tube\">Thomson’s cathode ray tube</span>, <span data-ref=\"drops\">Millikan’s oil drops</span> and <span data-ref=\"foil\">Rutherford’s gold foil</span>, each showed something new about what lies inside an atom.",
  "objectives": [
   "Outline milestones in the development of modern atomic theory",
   "Summarize and interpret the results of the experiments of Thomson, Millikan, and Rutherford",
@@ -18,6 +18,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -51,6 +55,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped; front magnet made see-through over the beam"
     }
    ]
   },
@@ -71,6 +80,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note kept only off the hover, where it says the hover field"
     }
    ]
   },
@@ -98,6 +112,7 @@
     "Ca",
     "He",
     "Ra",
+    "Pb",
     "e-"
    ],
    "facts": [
@@ -108,6 +123,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "lead block in lead's colour; camera pulled back so above view fits"
     }
    ]
   }

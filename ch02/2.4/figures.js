@@ -182,7 +182,7 @@ represent('fig-acetic', 'acetic');
     const formula = (c === 2 ? '2' : '') + 'H' + (s === 2 ? '_2' : '');
     text(ctx, formula, 700, 140, PAL.ink, { size: 56, weight: 600, align: 'center' });
     for (let i = 0; i < c; i++) text(ctx, UNITWORD[s], 700 + (i - (c - 1) / 2) * UNIT, Y + 72, PAL.muted, { size: 19, align: 'center' });
-    readout(d.readout, `\\text{hydrogen atoms} = ${c} \\times ${s} = ${c * s}`, 'The number in front counts separate units; the subscript counts the atoms bonded together in each unit.');
+    readout(d.readout, `\\text{hydrogen atoms} = ${c} \\times ${s} = ${c * s}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -198,13 +198,13 @@ represent('fig-acetic', 'acetic');
 (function () {
   const d = sim('sim-empirical', 500);
   const CMP = {
-    methane: { name: 'methane', n: { C: 1, H: 4 }, mol: 'CH_4', uni: 'CH₄', tex: '\\text{CH}_4' },
-    benzene: { name: 'benzene', n: { C: 6, H: 6 }, mol: 'C_6H_6', uni: 'C₆H₆', tex: '\\text{C}_6\\text{H}_6' },
-    acetic: { name: 'acetic acid', n: { C: 2, H: 4, O: 2 }, mol: 'C_2H_4O_2', uni: 'C₂H₄O₂', tex: '\\text{C}_2\\text{H}_4\\text{O}_2' },
-    glucose: { name: 'glucose', n: { C: 6, H: 12, O: 6 }, mol: 'C_6H_{12}O_6', uni: 'C₆H₁₂O₆', tex: '\\text{C}_6\\text{H}_{12}\\text{O}_6' },
+    methane: { name: 'methane', n: { C: 1, H: 4 }, mol: 'CH_{4}', uni: 'CH₄', tex: '\\text{CH}_4' },
+    benzene: { name: 'benzene', n: { C: 6, H: 6 }, mol: 'C_{6}H_{6}', uni: 'C₆H₆', tex: '\\text{C}_6\\text{H}_6' },
+    acetic: { name: 'acetic acid', n: { C: 2, H: 4, O: 2 }, mol: 'C_{2}H_{4}O_{2}', uni: 'C₂H₄O₂', tex: '\\text{C}_2\\text{H}_4\\text{O}_2' },
+    glucose: { name: 'glucose', n: { C: 6, H: 12, O: 6 }, mol: 'C_{6}H_{12}O_{6}', uni: 'C₆H₁₂O₆', tex: '\\text{C}_6\\text{H}_{12}\\text{O}_6' },
   };
   const gcd = (a, b) => (b ? gcd(b, a % b) : a);
-  const sub = (s, n, u) => (n === 1 ? s : s + (u ? String(n).split('').map((c) => '₀₁₂₃₄₅₆₇₈₉'[+c]).join('') : `_${n}`));
+  const sub = (s, n, u) => (n === 1 ? s : s + (u ? String(n).split('').map((c) => '₀₁₂₃₄₅₆₇₈₉'[+c]).join('') : `_{${n}}`));
   const fmt = (n, u) => Object.entries(n).map(([s, k]) => sub(s, k, u)).join('');
   const texOf = (n) => Object.entries(n).map(([s, k]) => (k === 1 ? `\\text{${s}}` : `\\text{${s}}_{${k}}`)).join('');
   const K = F.choice(d.controls, { label: '\\text{compound}', options: Object.keys(CMP).map((k) => ({ value: k, label: CMP[k].name })), value: 'acetic', aria: 'the compound' });
@@ -277,6 +277,9 @@ represent('fig-acetic', 'acetic');
     const L = 125, cx = 700, cy = 250;
     const flat = I.mix((v) => POS[v].flat());
     const P = SYM.map((_, i) => [cx + flat[2 * i] * L, cy + flat[2 * i + 1] * L]);
+    /* the carbon and the oxygen that trade places pass on arcs, one above the bond line and one below, not through each other */
+    const lift = I.k < 1 ? Math.sin(Math.PI * I.k) * 60 : 0;
+    P[4][1] -= lift; P[6][1] += lift;
     ['acetic', 'formate'].forEach((v) => {
       const other = v === 'acetic' ? 'formate' : 'acetic';
       BONDS[v].forEach((b) => {
@@ -287,7 +290,7 @@ represent('fig-acetic', 'acetic');
     });
     SYM.forEach((s, i) => { text(ctx, s, P[i][0], P[i][1], PAL.ink, { size: 40, align: 'center' }); hits.push({ x: P[i][0], y: P[i][1], r: 24, name: NAME[s] + ' atom' }); });
     text(ctx, I.value === 'acetic' ? 'acetic acid' : 'methyl formate', cx, cy + 180, PAL.muted, { size: 22, align: 'center' });
-    readout(d.readout, '\\text{C}_2\\text{H}_4\\text{O}_2', 'Both compounds contain two carbon atoms, four hydrogen atoms and two oxygen atoms; only the way the atoms are connected differs.');
+    readout(d.readout, '\\text{C}_2\\text{H}_4\\text{O}_2');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -320,14 +323,15 @@ represent('fig-acetic', 'acetic');
     const T = T3(), plane = new T.Mesh(new T.PlaneGeometry(9, 9), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.07, depthWrite: false, side: T.DoubleSide }));
     plane.rotation.y = Math.PI / 2; g.add(plane);
     molecule(S, 'S-(+)-carvone'); molecule(Rm, 'R-(−)-carvone');
-    v.label('<em>S</em>-(+)-carvone', [-GAP, -4.2, 0], g); v.label('<em>R</em>-(−)-carvone', [GAP, -4.2, 0], g);
+    /* the names sit below and in front of each molecule, so that seen from above they fall clear of it too */
+    v.label('<em>S</em>-(+)-carvone', [-GAP, -4.2, 4.6], g); v.label('<em>R</em>-(−)-carvone', [GAP, -4.2, 4.6], g);
   }
   function draw() {
     if (!v.scene) return;
     build();
     v.headline('<em>S</em>-(+)-carvone, which smells like caraway, and <em>R</em>-(−)-carvone, which smells like spearmint, are mirror images.');
     v.invalidate();
-    readout(d.readout, '\\text{C}_{10}\\text{H}_{14}\\text{O}', 'The two molecules have the same formula and the same bonds; only the orientation of the atoms in space differs.');
+    readout(d.readout, '\\text{C}_{10}\\text{H}_{14}\\text{O}');
   }
   register(d.fig, { update: () => {}, draw });
 })();

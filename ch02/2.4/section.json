@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Chemical Formulas",
  "short": "Chemical formulas",
- "lead": "A chemical formula says which atoms make up a substance and in what numbers, and there is more than one kind. A molecular formula counts the atoms in one molecule. A structural formula, a ball-and-stick model and a space-filling model show how those atoms connect and how they are arranged. An empirical formula gives only the simplest whole-number ratio of the atoms. Isomers are compounds that share a formula but differ in structure.",
+ "lead": "A chemical formula tells which atoms make up a substance and in what numbers, and chemists write and draw formulas in several ways, each showing something the others leave out.",
  "objectives": [
   "Symbolize the composition of molecules using molecular formulas and empirical formulas",
   "Represent the bonding arrangement of atoms within molecules using structural formulas"
@@ -16,6 +16,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -87,6 +91,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the caption"
     }
    ]
   },
@@ -153,6 +162,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "formula subscripts braced so only the digits drop"
     }
    ]
   },
@@ -176,6 +190,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "swapping atoms pass on arcs; note dropped"
     }
    ]
   },
@@ -198,6 +217,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "names moved clear of the molecules; note dropped"
     }
    ]
   }

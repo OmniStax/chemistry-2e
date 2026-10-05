@@ -111,7 +111,7 @@ const E_CHARGE = 1.602e-19;
     for (let s = (run * speed) % gap; s < total; s += gap) { const [x, y] = at(pts, L, s); disc(ctx, x, y, 5, ce, null); }
     disc(ctx, end[0], end[1], 11, alpha(ce, 0.55), null); disc(ctx, end[0], end[1], 5, ce, null);
     F.faded(ctx, mA, [0, 0], () => {
-      disc(ctx, 712, Y0 + 14, 46, alpha(PAL.soft, 0.85), alpha(PAL.ink, 0.6), 2); text(ctx, 'N', 712, Y0 + 14, PAL.ink, { size: 24, weight: 600, align: 'center' });
+      disc(ctx, 712, Y0 + 14, 46, alpha(PAL.soft, 0.4), alpha(PAL.ink, 0.6), 2); text(ctx, 'N', 712, Y0 + 14, PAL.ink, { size: 24, weight: 600, align: 'center' });
     });
     /* labels, one per part */
     label(ctx, 'cathode', CX, Y0 - 30, { side: 'above', gap: 70, color: F.ref('cathode') });
@@ -131,8 +131,7 @@ const E_CHARGE = 1.602e-19;
       : p === 'down' ? 'The beam bends toward the positive plate below it and strikes the scale ' + -deg + '° below the middle.'
       : 'The magnets alone bend the beam down, and it strikes the scale ' + -deg + '° below the middle.';
     topline(ctx, head);
-    ro.set('\\text{charge-to-mass ratio} = 1.759\\times10^{11}\\ \\text{C/kg}',
-      'The cathode is ' + METALS[metal.value] + '. Every metal gives the same beam and the same ratio, so its particles are the same in all atoms.');
+    ro.set('\\text{charge-to-mass ratio} = 1.759\\times10^{11}\\ \\text{C/kg}');
   }
   F.hover(d.stage, () => [
     { x: 110, y: 392, r: 30, name: 'high-voltage supply' },
@@ -219,7 +218,7 @@ const E_CHARGE = 1.602e-19;
     const q = 1.6 * k, fate = Math.abs(rel - 1) < 0.004 ? 'hovers' : rel < 1 ? 'falls' : 'rises';
     topline(ctx, 'Drop ' + drop.value + ' carries ' + fmt(q, 1) + ' × 10⁻¹⁹ C, ' + ['', 'once', 'twice', 'three times', 'four times'][k] + ' 1.6 × 10⁻¹⁹ C; at ' + fmt(E.v, 1) + ' kN/C it ' + fate + '.');
     ro.set(`\\kQ = ${k}\\,\\ke = ${k} \\times ${hue('1.6\\times10^{-19}\\ \\text{C}')} = ${hue(fmt(q, 1) + '\\times10^{-19}\\ \\text{C}')}`,
-      'Drop ' + drop.value + ' has picked up ' + ['', 'one extra electron', 'two extra electrons', 'three extra electrons', 'four extra electrons'][k] + ', and it hovers at ' + fmt(eh, 1) + ' kN/C.');
+      fate === 'hovers' ? '' : 'Drop ' + drop.value + ' hovers at ' + fmt(eh, 1) + ' kN/C.');
   }
   F.hover(d.stage, () => [{ x: DX, y: y(), r: R + 6, name: 'oil drop ' + drop.value + ', with ' + n() + ' extra electron' + (n() > 1 ? 's' : '') }]);
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
@@ -243,7 +242,7 @@ const E_CHARGE = 1.602e-19;
 ===================================================================== */
 (function () {
   const d = sim('sim-gold-foil');
-  const v = F.view3d(d.stage, { h: 400, dist: 5.2, tilt: 0.5, spin: 'off', pitch: [0.15, 1.35],
+  const v = F.view3d(d.stage, { h: 400, dist: 6.2, tilt: 0.5, spin: 'off', pitch: [0.15, 1.35],
     views: [{ label: 'bench', yaw: 0.5, pitch: 0.5 }, { label: 'above', yaw: 0, pitch: 1.35 }] });
   const has3 = !!v.scene;
   if (!has3) v.wrap.style.display = 'none';
@@ -270,14 +269,14 @@ const E_CHARGE = 1.602e-19;
   const RING = 1.5, SRC = [-2.3, 0, 0], SPEED = 2.6, RATE = 40, LIFE = 1.6;
   const flights = [], flashes = [];
   let sig = '', pool = [], glows = [], spawnDebt = 0;
-  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, F.el(elc.value), F.el('He'), F.el('Ra'), F.fact(GLOW), F.ref('lead-block'), F.ref('foil'), F.ref('screen')].join('|');
+  const palSig = () => [PAL.ink, PAL.soft, PAL.muted, F.el(elc.value), F.el('He'), F.el('Ra'), F.el('Pb'), F.fact(GLOW), F.ref('lead-block'), F.ref('foil'), F.ref('screen')].join('|');
   function build() {
     if (!has3) return;
     const key = palSig(); if (key === sig) return; sig = key;
     const T3 = window.THREE, glow = F.fact(GLOW), cb = F.ref('lead-block'), cf = F.ref('foil'), cs = F.ref('screen');
     v.clear();
     F.mesh.box(grp, [0, -0.5, 0], [6.4, 0.08, 3.8], PAL.soft);
-    v.pickable(F.mesh.box(grp, [-2.62, -0.14, 0], [0.64, 0.64, 0.64], cb), 'lead block, which absorbs the radiation the beam does not use');
+    v.pickable(F.mesh.box(grp, [-2.62, -0.14, 0], [0.64, 0.64, 0.64], F.el('Pb')), 'lead block, which absorbs the radiation the beam does not use');
     v.pickable(F.mesh.sphere(grp, SRC, 0.07, F.el('Ra')), 'radium, the source of the α particles');
     F.mesh.polyline(grp, [SRC, [0, 0, 0]], PAL.muted);
     v.pickable(F.mesh.box(grp, [0, 0, 0], [0.02, 0.56, 0.56], F.el(elc.value)), 'thin ' + ELS[elc.value][0] + ' foil');

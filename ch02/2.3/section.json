@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Atomic Structure and Symbolism",
  "short": "Atomic Structure",
- "lead": "An atom is a very small nucleus of protons and neutrons inside a much larger cloud of electrons. We measure its <span data-concept=\"mass\">masses</span> in atomic mass units and its charges in units of the electron’s charge. The atomic number and the mass number identify an atom, and gaining or losing electrons makes it an anion or a cation. Symbols name elements, isotopes and ions, and the atomic mass of an element is a weighted average over its isotopes, as a mass spectrometer measures them.",
+ "lead": "The protons, neutrons and electrons inside an atom can be counted, and chemists write those counts into the symbols for elements, isotopes and ions and into the atomic <span data-concept=\"mass\">mass</span> of each element.",
  "objectives": [
   "Write and interpret symbols that depict the atomic number, mass number, and charge of an atom or ion",
   "Define the atomic mass unit and average atomic mass",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -50,16 +54,31 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "atomic number label split off the electron ring"
     }
    ]
   },
-  { "id": "sim-average-mass", "kind": "sim", "draws": ["mass"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
+  {
+   "id": "sim-average-mass",
+   "kind": "sim",
+   "draws": ["mass"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "axis headroom, fulcrum off ticks, one-isotope headline, caption"
+    }
+   ]
+  },
   {
    "id": "sim-mass-spec",
    "kind": "sim",

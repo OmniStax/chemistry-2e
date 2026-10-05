@@ -4,7 +4,7 @@
  "chapter": "2",
  "title": "Chemical Nomenclature",
  "short": "Chemical nomenclature",
- "lead": "A compound’s name follows from what kind of compound it is. An ionic compound takes its name from its cation and anion, with a Roman numeral for the charge of a metal that can form more than one ion. A hydrate’s name gives the number of water molecules it carries, and a molecular compound uses Greek prefixes to count its atoms. Binary acids and oxyacids follow rules of their own.",
+ "lead": "Every compound has a systematic name, and the rules for building that name depend on whether the compound is ionic, molecular or an acid.",
  "objectives": [
   "Derive names for common types of inorganic compounds using a systematic approach"
  ],
@@ -15,6 +15,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [

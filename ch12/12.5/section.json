@@ -1,0 +1,615 @@
+{
+ "id": "12.5",
+ "module": "m68793",
+ "chapter": "12",
+ "title": "Collision Theory",
+ "short": "Collision Theory",
+ "lead": "Molecules react only when they collide, and only when they meet in the right orientation and with enough energy. The minimum energy, the activation energy, links the rate constant to the temperature through the Arrhenius equation.",
+ "objectives": [
+  "Use the postulates of collision theory to explain the effects of physical state, temperature, and concentration on reaction rates",
+  "Define the concepts of activation energy and transition state",
+  "Use the Arrhenius equation in calculations relating rate constants to temperature"
+ ],
+ "summary_html": "<p>Chemical reactions typically require collisions between reactant species. These reactant collisions must be of proper orientation and sufficient <span data-concept=\"energy-and-work\">energy</span> in order to result in product formation. <span data-concept=\"collision-theory\">Collision theory</span> provides a simple but effective explanation for the effect of many experimental parameters on <span data-concept=\"reaction-rate\">reaction rates</span>. The <span data-concept=\"arrhenius-equation\">Arrhenius equation</span> describes the relation between a reaction’s <span data-concept=\"rate-constant\">rate constant</span>, <span data-concept=\"activation-energy\">activation energy</span>, <span data-concept=\"temperature\">temperature</span>, and dependence on collision orientation.</p>",
+ "notes": "Nothing of the section is left out; the stray bold markup after E<sub>a</sub> in Example 12.13’s result is written plainly.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The three unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm67340288 (a decomposition heated 20 °C higher), fs-idm129065792 (the activation energy of acetaldehyde’s decomposition) and fs-idm166518032 (the reduction of a Co(III) complex). The unkeyed conceptual exercises fs-idm147445136, fs-idm190953584 and fs-idm122581792, and the unkeyed choice item fs-idm3600240, kept as an open item with its options and never graded, carry a suggested approach marked as OmniStax’s own. The two PhET items, fs-idp179196768 (unkeyed, with a suggested approach) and fs-idp11390128 (keyed), are asked of Figure 12.13 + 12.14 instead of the PhET simulation, the carbon monoxide molecule standing for A and the oxygen molecule for BC; the keyed answer is the book’s. The key to fs-idm167771040 gives the activation energy as “108 kJ”, as printed. Numeric answers accept 2% tolerance unless the book rounds more coarsely.",
+ "figures": [
+  {
+   "id": "sim-collision",
+   "kind": "sim",
+   "number": "12.13",
+   "folds": [
+    "12.14"
+   ],
+   "originals": [
+    "/media/ch12/CNX_Chem_12_05_COandO2.jpg",
+    "/media/ch12/CNX_Chem_12_05_RCooDgm.jpg"
+   ],
+   "original_caption": "(Figure 12.13) Illustrated are two collisions that might take place between carbon monoxide and oxygen molecules. The orientation of the colliding molecules partially determines whether a reaction between the two molecules will occur. (Figure 12.14) Reaction diagram for the exothermic reaction A + B ⟶ C + D.",
+   "draws": [
+    "energy"
+   ],
+   "conventions": [
+    "C",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-distribution",
+   "kind": "sim",
+   "number": "12.15",
+   "originals": [
+    "/media/ch12/CNX_Chem_12_05_SuccessR.jpg"
+   ],
+   "original_caption": "Molecular energy distributions showing numbers of molecules with energies exceeding (a) two different activation energies at a given temperature, and (b) a given activation energy at two different temperatures.",
+   "draws": [
+    "energy",
+    "temperature",
+    "rate-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-arrhenius-plot",
+   "kind": "sim",
+   "number": "12.16",
+   "originals": [
+    "/media/ch12/CNX_Chem_12_05_ArrhPlot.jpg"
+   ],
+   "original_caption": "This graph shows the linear relationship between ln k and 1/T for the reaction 2HI ⟶ H2 + I2 according to the Arrhenius equation.",
+   "draws": [
+    "energy",
+    "rate-constant",
+    "temperature"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "postulates",
+   "concept": "collision-theory",
+   "verb": "introduces"
+  },
+  {
+   "span": "postulates",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "orientation",
+   "concept": "collision-orientation",
+   "verb": "introduces"
+  },
+  {
+   "span": "orientation",
+   "concept": "activated-complex",
+   "verb": "introduces"
+  },
+  {
+   "span": "orientation",
+   "concept": "collision-theory",
+   "verb": "uses"
+  },
+  {
+   "span": "orientation",
+   "concept": "concentration-and-rate",
+   "verb": "reinforces"
+  },
+  {
+   "span": "activation",
+   "concept": "activation-energy",
+   "verb": "introduces"
+  },
+  {
+   "span": "activation",
+   "concept": "reaction-energy-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "activation",
+   "concept": "reaction-diagram",
+   "verb": "introduces"
+  },
+  {
+   "span": "activation",
+   "concept": "kinetic-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "activation",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "activation",
+   "concept": "exothermic-process",
+   "verb": "uses"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "arrhenius-equation",
+   "verb": "introduces"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "frequency-factor",
+   "verb": "introduces"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "energy-distribution-and-rate",
+   "verb": "introduces"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "ideal-gas-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "average-kinetic-energy-and-temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "arrhenius",
+   "concept": "temperature-and-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "graphical",
+   "concept": "activation-energy-from-rate-constants",
+   "verb": "introduces"
+  },
+  {
+   "span": "graphical",
+   "concept": "arrhenius-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "graphical",
+   "concept": "activation-energy",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm160727824",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ea"
+   },
+   "cite": "ex-ea",
+   "prompt": "The rate constant for the rate of decomposition of N<sub>2</sub>O<sub>5</sub> to NO and O<sub>2</sub> in the gas phase is 1.66 L/mol/s at 650 K and 7.39 L/mol/s at 700 K:<br>2N<sub>2</sub>O<sub>5</sub>(<em>g</em>) ⟶ 4NO(<em>g</em>) + 3O<sub>2</sub>(<em>g</em>)<br>Assuming the kinetics of this reaction are consistent with the Arrhenius equation, calculate the activation energy for this decomposition.",
+   "answer": {
+    "type": "number",
+    "value": 110000.0,
+    "unit": "J/mol",
+    "tol": 0.05,
+    "hint": "Put the two rate constants and their temperatures into the two-point form of the Arrhenius equation and solve for the activation energy.",
+    "solution": "1.1 × 10<sup>5</sup> J mol<sup>−1</sup> or 110 kJ mol<sup>−1</sup>",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp801808",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "Chemical reactions occur when reactants collide. What are two factors that may prevent a collision from producing a chemical reaction?",
+   "answer": {
+    "type": "open",
+    "solution": "The reactants either may be moving too slowly to have enough kinetic energy to exceed the activation energy for the reaction, or the orientation of the molecules when they collide may prevent the reaction from occurring.",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idm147445136",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "postulates",
+   "prompt": "When every collision between reactants leads to a reaction, what determines the rate at which the reaction occurs?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: start from the first postulate of collision theory. If neither orientation nor energy turns any collision away, the rate of reaction is set by how often the reactant species meet, so ask what the number of collisions per unit time depends on, such as the concentrations of the reactants."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm141471856",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "activation",
+   "prompt": "What is the activation energy of a reaction, and how is this energy related to the activated complex of the reaction?",
+   "answer": {
+    "type": "open",
+    "solution": "The activation energy is the minimum amount of energy necessary to form the activated complex in a reaction. It is usually expressed as the energy necessary to form one mole of activated complex.",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm190953584",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "arrhenius",
+   "prompt": "Account for the relationship between the rate of a reaction and its activation energy.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: use the distribution of molecular energies. Only the molecules whose energy reaches the activation energy can react, so ask how the size of that fraction changes as the activation energy rises or falls, and connect that fraction to the exponential term of the Arrhenius equation."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idm162997840",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "graphical",
+   "prompt": "Describe how graphical methods can be used to determine the activation energy of a reaction from a series of data that includes the rate of reaction at varying temperatures.",
+   "answer": {
+    "type": "open",
+    "solution": "After finding <em>k</em> at several different temperatures, a plot of ln <em>k</em> versus 1/<em>T</em>, gives a straight line with the slope −<em>E</em><sub>a</sub>/<em>R</em> from which <em>E</em><sub>a</sub> may be determined.",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm122581792",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "arrhenius",
+   "prompt": "How does an increase in temperature affect rate of reaction? Explain this effect in terms of the collision theory of the reaction rate.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: say first which way the rate changes. Then use the energy distribution: at a higher temperature the molecules move faster, so they collide more often and a larger fraction of the collisions carry at least the activation energy. Decide which of the two effects is the larger one by looking at how the shaded tail of the distribution grows."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idm166001648",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "arrhenius",
+   "prompt": "The rate of a certain reaction doubles for every 10 °C rise in temperature.<br>(a) How much faster does the reaction proceed at 45 °C than at 25 °C?<br>(b) How much faster does the reaction proceed at 95 °C than at 25 °C?",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a)",
+      "value": 4,
+      "unit": "times",
+      "hint": "Count the 10 °C steps from 25 °C to 45 °C, and double once for each."
+     },
+     {
+      "part": "(b)",
+      "value": 128,
+      "unit": "times",
+      "hint": "Count the 10 °C steps from 25 °C to 95 °C, and double once for each."
+     }
+    ],
+    "solution": "(a) 4-times faster (b) 128-times faster",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idm128511072",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "arrhenius",
+   "prompt": "The rate constant at 325 °C for the decomposition reaction C<sub>4</sub>H<sub>8</sub> ⟶ 2C<sub>2</sub>H<sub>4</sub> is 6.1 × 10<sup>−8</sup> s<sup>−1</sup>, and the activation energy is 261 kJ per mole of C<sub>4</sub>H<sub>8</sub>. Determine the frequency factor for the reaction.",
+   "answer": {
+    "type": "number",
+    "value": 3900000000000000.0,
+    "unit": "s⁻¹",
+    "tol": 0.05,
+    "hint": "Convert the temperature to kelvin and the activation energy to joules per mole, then solve the Arrhenius equation for A.",
+    "solution": "3.9 × 10<sup>15</sup> s<sup>−1</sup>",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idm131383728",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ea",
+   "prompt": "An elevated level of the enzyme alkaline phosphatase (ALP) in human serum is an indication of possible liver or bone disorder. The level of serum ALP is so low that it is very difficult to measure directly. However, ALP catalyzes a number of reactions, and its relative concentration can be determined by measuring the rate of one of these reactions under controlled conditions. One such reaction is the conversion of p-nitrophenyl phosphate (PNPP) to p-nitrophenoxide ion (PNP) and phosphate ion. Control of temperature during the test is very important; the rate of the reaction increases 1.47 times if the temperature changes from 30 °C to 37 °C. What is the activation energy for the ALP–catalyzed conversion of PNPP to PNP and phosphate?",
+   "answer": {
+    "type": "number",
+    "value": 43.0,
+    "unit": "kJ/mol",
+    "hint": "The ratio of the rate constants is the ratio of the rates, 1.47; put it and the two temperatures in kelvin into the two-point form of the Arrhenius equation.",
+    "solution": "43.0 kJ/mol",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idm3600240",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "postulates",
+   "prompt": "In terms of collision theory, to which of the following is the rate of a chemical reaction proportional?<br>(a) the change in free energy per second<br>(b) the change in temperature per second<br>(c) the number of collisions per second<br>(d) the number of product molecules",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: read the first postulate of collision theory and the proportionality written under it, and find the option that names the same quantity."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idm58458096",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ea",
+   "prompt": "Hydrogen iodide, HI, decomposes in the gas phase to produce hydrogen, H<sub>2</sub>, and iodine, I<sub>2</sub>. The value of the rate constant, <em>k</em>, for the reaction was measured at several different temperatures and the data are shown here:<br><table><thead><tr><th>Temperature (K)</th><th><em>k</em> (L mol<sup>−1</sup> s<sup>−1</sup>)</th></tr></thead><tbody><tr><td>555</td><td>6.23 × 10<sup>−7</sup></td></tr><tr><td>575</td><td>2.42 × 10<sup>−6</sup></td></tr><tr><td>645</td><td>1.44 × 10<sup>−4</sup></td></tr><tr><td>700</td><td>2.01 × 10<sup>−3</sup></td></tr></tbody></table>What is the value of the activation energy (in kJ/mol) for this reaction?",
+   "answer": {
+    "type": "number",
+    "value": 177,
+    "unit": "kJ/mol",
+    "tol": 0.03,
+    "hint": "Plot ln k against 1/T, or take the first and last rows, and multiply the negative of the slope by R.",
+    "solution": "177 kJ/mol",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idm167771040",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ex-ea",
+   "prompt": "The hydrolysis of the sugar sucrose to the sugars glucose and fructose,<br>C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> + H<sub>2</sub>O ⟶ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>follows a first-order rate law for the disappearance of sucrose: rate = <em>k</em>[C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>] (The products of the reaction, glucose and fructose, have the same molecular formulas but differ in the arrangement of the atoms in their molecules.)<br>(a) In neutral solution, <em>k</em> = 2.1 × 10<sup>−11</sup> s<sup>−1</sup> at 27 °C and 8.5 × 10<sup>−11</sup> s<sup>−1</sup> at 37 °C. Determine the activation energy, the frequency factor, and the rate constant for this equation at 47 °C (assuming the kinetics remain consistent with the Arrhenius equation at this temperature).<br>(b) When a solution of sucrose with an initial concentration of 0.150 <em>M</em> reaches equilibrium, the concentration of sucrose is 1.65 × 10<sup>−7</sup> <em>M</em>. How long will it take the solution to reach equilibrium at 27 °C in the absence of a catalyst? Because the concentration of sucrose at equilibrium is so low, assume that the reaction is irreversible.<br>(c) Why does assuming that the reaction is irreversible simplify the calculation in part (b)?",
+   "answer": {
+    "type": "multi",
+    "parts": [
+     {
+      "part": "(a) activation energy",
+      "value": 108,
+      "unit": "kJ/mol",
+      "tol": 0.03,
+      "hint": "Use the two-point form of the Arrhenius equation with both temperatures in kelvin."
+     },
+     {
+      "part": "(a) frequency factor",
+      "value": 200000000.0,
+      "unit": "s⁻¹",
+      "tol": 0.06,
+      "hint": "Put the activation energy and either rate constant into the Arrhenius equation and solve for A."
+     },
+     {
+      "part": "(a) rate constant at 47 °C",
+      "value": 3.2e-10,
+      "unit": "s⁻¹",
+      "tol": 0.05,
+      "hint": "Use A and the activation energy in the Arrhenius equation at 320 K."
+     },
+     {
+      "part": "(b)",
+      "value": 181000000.0,
+      "unit": "h",
+      "tol": 0.03,
+      "hint": "Use the first-order integrated rate law with the rate constant at 27 °C."
+     }
+    ],
+    "solution": "<em>E</em><sub>a</sub> = 108 kJ; <em>A</em> = 2.0 × 10<sup>8</sup> s<sup>−1</sup>; <em>k</em> = 3.2 × 10<sup>−10</sup> s<sup>−1</sup>; (b) 1.81 × 10<sup>8</sup> h or 7.6 × 10<sup>6</sup> day; (c) Assuming that the reaction is irreversible simplifies the calculation because we do not have to account for any reactant that, having been converted to product, returns to the original state.",
+    "generated_by": "source"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp179196768",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "Use Figure 12.13 + 12.14, where the carbon monoxide molecule plays <em>A</em> and the oxygen molecule plays <em>BC</em> in a reaction <em>A</em> + <em>BC</em> ⟶ <em>AB</em> + <em>C</em>, and the reaction diagram beneath the molecules is the energy view. With the carbon end first, try launching the collision with varying amounts of energy. What changes when the collision energy line is below the transition state of the energy curve? Why? What happens when it is above the transition state? Why?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: watch the dot on the reaction diagram as the molecules close in. Its height is the part of the collision energy that has gone into the barrier, so ask where it must stop when the dashed collision energy line meets the curve below the peak, and what the molecules do then. Then raise the energy past the activation energy and follow the dot over the transition state to the products."
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp11390128",
+   "kind": "simulation-exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "orientation",
+   "prompt": "Use Figure 12.13 + 12.14, where the carbon monoxide molecule plays <em>A</em> and the oxygen molecule plays <em>BC</em> in a reaction <em>A</em> + <em>BC</em> ⟶ <em>AB</em> + <em>C</em>, and the reaction diagram beneath the molecules is the energy view. Give the collision more energy than the transition state, and launch <em>A</em> at <em>BC</em> first with its carbon end and then with its oxygen end. What happens when the <em>A</em> atom hits the <em>BC</em> molecule from different directions? Why?",
+   "answer": {
+    "type": "open",
+    "solution": "The <em>A</em> atom has enough energy to react with <em>BC</em>; however, the different angles at which it bounces off of <em>BC</em> without reacting indicate that the orientation of the molecule is an important part of the reaction kinetics and determines whether a reaction will occur.",
+    "generated_by": "source"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e1",
+   "concept": "collision-orientation"
+  },
+  {
+   "exercise": "e1",
+   "concept": "activation-energy"
+  },
+  {
+   "exercise": "e2",
+   "concept": "collision-theory"
+  },
+  {
+   "exercise": "e3",
+   "concept": "activation-energy"
+  },
+  {
+   "exercise": "e3",
+   "concept": "activated-complex"
+  },
+  {
+   "exercise": "e4",
+   "concept": "activation-energy"
+  },
+  {
+   "exercise": "e4",
+   "concept": "energy-distribution-and-rate"
+  },
+  {
+   "exercise": "e5",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e6",
+   "concept": "energy-distribution-and-rate"
+  },
+  {
+   "exercise": "e6",
+   "concept": "collision-theory"
+  },
+  {
+   "exercise": "e7",
+   "concept": "temperature-and-rate"
+  },
+  {
+   "exercise": "e8",
+   "concept": "arrhenius-equation"
+  },
+  {
+   "exercise": "e8",
+   "concept": "frequency-factor"
+  },
+  {
+   "exercise": "e9",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e10",
+   "concept": "collision-theory"
+  },
+  {
+   "exercise": "e11",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e12",
+   "concept": "activation-energy-from-rate-constants"
+  },
+  {
+   "exercise": "e12",
+   "concept": "arrhenius-equation"
+  },
+  {
+   "exercise": "e12",
+   "concept": "first-order-integrated-rate-law"
+  },
+  {
+   "exercise": "e13",
+   "concept": "activation-energy"
+  },
+  {
+   "exercise": "e13",
+   "concept": "reaction-diagram"
+  },
+  {
+   "exercise": "e13",
+   "concept": "activated-complex"
+  },
+  {
+   "exercise": "e14",
+   "concept": "collision-orientation"
+  }
+ ]
+}

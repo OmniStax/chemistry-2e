@@ -48,3 +48,5 @@ The Link to Learning video of an equilibrium changing with pressure; the Sim ans
 - `ch13/COLOR.md` and the chapter notes disagree on K, Q, k_f and k_r: the tables type them (`equilibrium-constant`, `rate-constant`) with macros, and the page follows them
 - `ch13/config.md`: Figure 13.9 is a moving Figure (its arrows are flow, root rule 24.5), not a faithful copy
 - No concept, edge or symbol fix.
+
+Applied by the chapter pass (2026-10-05): `eq-k-from-rate-constants` and `ΔH` anchored at 13.3-temperature, the form's `ktex` written through `\kconcA`, `\kconcB`, `\kkf`, `\kkr`, `\kKc`; nineteen variables rows added with the earlier sections' meanings: `rate_f`, `rate_r`, `k_f`, `k_r`, `Q_conc`, `K_c` at 13.3-concentration; `M`, `P`, `R`, `T`, `n`, `V`, `Q_P`, `K_P` at 13.3-volume; `K`, `[A]`, `[B]` (the product of A ⇌ B here, so `redefines`), `q` (5.2's meaning) at 13.3-temperature; `E_a` at 13.3-catalyst. `COLOR.md` keeps K, Q, k_f and k_r typed; `config.md` records Figure 13.9 as a moving Figure. Figure 13.8's caption no longer names the book.

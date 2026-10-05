@@ -161,7 +161,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const pl = (n, one, many) => n + ' ' + (n === 1 ? one : many);
     const { ctx } = begin(cnv);
     const eq = t >= teq;
-    topline(ctx, t < DT / 2 ? 'At t = 0 the tube holds ' + N0 + ' molecules of N_{2}O_{4} and no NO_{2}.'
+    topline(ctx, t < DT / 2 ? 'At $\\kt = 0$ the tube holds ' + N0 + ' molecules of N_{2}O_{4} and no NO_{2}.'
       : (eq ? 'At equilibrium: ' : 'Pre-equilibrium: ') + pl(nS, 'N_{2}O_{4} has', 'N_{2}O_{4} have') + ' split and ' + pl(nJ, 'pair', 'pairs') + ' of NO_{2} ' + (nJ === 1 ? 'has' : 'have') + ' joined' + (eq ? ', and both go on.' : '.'));
 
     const at = (arr) => (s) => { const g = Math.min(NF, s / DT), i = Math.floor(g), k = g - i; return i >= NF ? arr[NF] : arr[i] + (arr[i + 1] - arr[i]) * k; };

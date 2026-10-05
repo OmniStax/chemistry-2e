@@ -65,7 +65,8 @@ Both sections' `exercise_notes` say so. Every other item stays where it is print
 - 13.2 Example 13.5's Check Your Learning labels both given constants *K*<sub>c1</sub> (490 and 67).
 - 13.2 Example 13.3's table summary lists 0.0203 M where the table prints 0.020 M; the table is followed.
 - 13.3 prints "Le Chatelier’s principle" once without the accent, and 13.3's acetic acid exercise `fs-idp261498704` gives acetate as (*l*); both kept.
-- 13.4 `fs-idp151659712` writes "NaSO<sub>4</sub>" for Na<sub>2</sub>SO<sub>4</sub>; `fs-idp149802032`'s key gives 1.90 atm for all three pressures; `fs-idm19235840`'s key writes pressures in square brackets. All kept as printed.
+- 13.4 `fs-idp151659712` writes "NaSO<sub>4</sub>" for Na<sub>2</sub>SO<sub>4</sub>; `fs-idm19235840`'s key writes pressures in square brackets. Both kept as printed.
+- Not an erratum, as the chapter pass found on 2026-10-05: `fs-idp149802032`'s key gives 1.90 atm for all three pressures, and the data give exactly that (0.236 mol in 1.52 L at 25 °C is 3.80 atm of N<sub>2</sub>O<sub>3</sub>; *x*<sup>2</sup>/(3.80 − *x*) = 1.91 gives *x* = 1.90 atm, so 3.80 − *x* = 1.90 atm too).
 
 ## Depth: flat, locked or 3D (root rule 28)
 

@@ -56,3 +56,5 @@ The learning objectives, summary and glossary go to the tables. Nothing of the n
 - variables `k_r` → 13.1-dynamic
 - variables `13.1/rate_f` ref `forward`, `13.1/rate_r` ref `reverse` (COLOR.md: the f and r in the referents' colours)
 - 13.2 and 13.3 `exercise_notes` to say that fs-idp194491952 and fs-idp92538384 are set in 13.1
+
+Applied by the chapter pass (2026-10-05): `eq-equal-rates` anchored at 13.1-reversible; `rate_f`, `rate_r`, `k_f` and `k_r` anchored at 13.1-dynamic, with `rate_f` ref `forward` and `rate_r` ref `reverse`; a `t` row added at 13.1-dynamic (12.4's meaning), since the figure's headline now writes $\kt = 0$ through its macro; 13.2's and 13.3's `exercise_notes` already said that fs-idp194491952 and fs-idp92538384 are set here, and all three agree.

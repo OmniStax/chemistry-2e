@@ -463,7 +463,8 @@
           "latex": "P=MRT",
           "ktex": "\\kP=\\kM R\\kT",
           "condition": "an ideal gas of molar concentration M",
-          "section": "13.2"
+          "section": "13.2",
+          "anchor": "13.2-homogeneous"
         }
       ]
     },

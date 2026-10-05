@@ -51,7 +51,8 @@
      "id": "eq-equal-rates",
      "latex": "\\text{rate}_{f}=\\text{rate}_{r}",
      "ktex": "\\kratef=\\krater",
-     "condition": "a reversible reaction at equilibrium"
+     "condition": "a reversible reaction at equilibrium",
+     "anchor": "13.1-reversible"
     }
    ]
   },
@@ -77,14 +78,16 @@
     {
      "id": "eq-reaction-quotient",
      "latex": "Q_{c}=\\frac{[\\text{C}]^{x}[\\text{D}]^{y}}{[\\text{A}]^{m}[\\text{B}]^{n}}",
-     "ktex": "Q_{c}=\\frac{\\kconcC^{x}\\kconcD^{y}}{\\kconcA^{m}\\kconcB^{n}}",
-     "condition": "the reaction mA + nB ⇌ xC + yD"
+     "ktex": "\\kQc=\\frac{\\kconcC^{x}\\kconcD^{y}}{\\kconcA^{m}\\kconcB^{n}}",
+     "condition": "the reaction mA + nB ⇌ xC + yD",
+     "anchor": "13.2-quotient"
     },
     {
      "id": "eq-reaction-quotient-p",
      "latex": "Q_{P}=\\frac{(P_{C})^{x}(P_{D})^{y}}{(P_{A})^{m}(P_{B})^{n}}",
-     "ktex": "Q_{P}=\\frac{(\\kPC)^{x}(\\kPD)^{y}}{(\\kPA)^{m}(\\kPB)^{n}}",
-     "condition": "the gas-phase reaction mA + nB ⇌ xC + yD"
+     "ktex": "\\kQP=\\frac{(\\kPC)^{x}(\\kPD)^{y}}{(\\kPA)^{m}(\\kPB)^{n}}",
+     "condition": "the gas-phase reaction mA + nB ⇌ xC + yD",
+     "anchor": "13.2-quotient"
     }
    ]
   },
@@ -110,7 +113,9 @@
     {
      "id": "eq-k-equals-q",
      "latex": "K_{c}=Q_{c}\\ \\text{at equilibrium}",
-     "condition": "a system at equilibrium; likewise K_P = Q_P"
+     "condition": "a system at equilibrium; likewise K_P = Q_P",
+     "anchor": "13.2-constant",
+     "ktex": "\\kKc=\\kQc\\ \\text{at equilibrium}"
     }
    ]
   },
@@ -138,13 +143,15 @@
     {
      "id": "eq-kp-kc",
      "latex": "K_{P}=K_{c}(RT)^{\\Delta n}",
-     "ktex": "K_{P}=K_{c}(R\\kT)^{\\Delta n}",
-     "condition": "a gas-phase equilibrium, with Δn = (c + d) − (a + b) for aA + bB ⇌ cC + dD"
+     "ktex": "\\kKP=\\kKc(R\\kT)^{\\Delta n}",
+     "condition": "a gas-phase equilibrium, with Δn = (c + d) − (a + b) for aA + bB ⇌ cC + dD",
+     "anchor": "13.2-homogeneous"
     },
     {
      "id": "eq-delta-n",
      "latex": "\\Delta n=(c+d)-(a+b)",
-     "condition": "the gas-phase reaction aA + bB ⇌ cC + dD"
+     "condition": "the gas-phase reaction aA + bB ⇌ cC + dD",
+     "anchor": "13.2-homogeneous"
     }
    ]
   },
@@ -165,17 +172,23 @@
     {
      "id": "eq-reversed-k",
      "latex": "K_{c'}=\\frac{1}{K_{c}}",
-     "condition": "the equation written in the reverse direction"
+     "condition": "the equation written in the reverse direction",
+     "anchor": "13.2-coupled",
+     "ktex": "\\kKcprime=\\frac{1}{\\kKc}"
     },
     {
      "id": "eq-scaled-k",
      "latex": "K_{c'}=K_{c}^{\\,x}",
-     "condition": "the coefficients of the equation multiplied by x"
+     "condition": "the coefficients of the equation multiplied by x",
+     "anchor": "13.2-coupled",
+     "ktex": "\\kKcprime=\\kKc^{\\,x}"
     },
     {
      "id": "eq-coupled-k",
      "latex": "K_{c'}=K_{c1}K_{c2}",
-     "condition": "the net equation formed by adding two equations"
+     "condition": "the net equation formed by adding two equations",
+     "anchor": "13.2-coupled",
+     "ktex": "\\kKcprime=\\kKcone\\kKctwo"
     }
    ]
   },
@@ -253,8 +266,9 @@
     {
      "id": "eq-k-from-rate-constants",
      "latex": "\\frac{[\\text{B}]}{[\\text{A}]}=\\frac{k_{f}}{k_{r}}=K_{c}",
-     "ktex": "\\frac{\\kconcB}{\\kconcA}=\\frac{k_{f}}{k_{r}}=K_{c}",
-     "condition": "the elementary reaction A ⇌ B at equilibrium"
+     "ktex": "\\frac{\\kconcB}{\\kconcA}=\\frac{\\kkf}{\\kkr}=\\kKc",
+     "condition": "the elementary reaction A ⇌ B at equilibrium",
+     "anchor": "13.3-temperature"
     }
    ]
   },

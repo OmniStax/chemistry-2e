@@ -16726,10 +16726,6 @@
       "prereq": "molarity"
     },
     {
-      "concept": "acidic-basic-neutral",
-      "prereq": "water-autoionization"
-    },
-    {
       "concept": "ph-and-poh-scales",
       "prereq": "kw-ion-concentrations"
     },
@@ -16752,10 +16748,6 @@
     {
       "concept": "measuring-ph",
       "prereq": "ph-and-poh-scales"
-    },
-    {
-      "concept": "measuring-ph",
-      "prereq": "acidic-basic-neutral"
     },
     {
       "concept": "acid-base-ionization-constants",
@@ -20515,23 +20507,11 @@
     },
     {
       "concept": "acidic-solution",
-      "prereq": "acidic-basic-neutral"
-    },
-    {
-      "concept": "acidic-solution",
       "prereq": "molarity"
     },
     {
       "concept": "basic-solution",
-      "prereq": "acidic-basic-neutral"
-    },
-    {
-      "concept": "basic-solution",
       "prereq": "molarity"
-    },
-    {
-      "concept": "neutral-solution",
-      "prereq": "acidic-basic-neutral"
     },
     {
       "concept": "neutral-solution",
@@ -23800,6 +23780,14 @@
     {
       "concept": "radiation-exposure",
       "prereq": "penetrating-power"
+    },
+    {
+      "concept": "acidic-solution",
+      "prereq": "water-autoionization"
+    },
+    {
+      "concept": "basic-solution",
+      "prereq": "water-autoionization"
     }
   ],
   "sheets": [

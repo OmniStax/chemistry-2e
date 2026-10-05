@@ -1160,3 +1160,58 @@ Checks: `ost check` clean for the book, and every page of the chapter in
 light and dark on the dev server, with no KaTeX error, no missing image,
 every figure drawn and labelled as its row says, a transport on the five
 moving figures only, and every exercise card in place.
+
+
+## Pass 16 (2026-10-05): Chapter 13, Fundamental Equilibrium Concepts, is built and passed
+
+Built: the introduction and four sections, 13.1 to 13.4, in the publisher's
+numbering, Figures 13.1 to 13.9 all shown and linked. Eight live figures.
+Figure 13.2 folds the book's three panels into one sealed box of N₂O₄ that
+runs on a clock in 3D, molecules splitting and pairs joining while the
+concentrations and the two rates are drawn beneath it until the rates meet
+and both go on. Figure 13.5 runs 2SO₂ + O₂ ⇌ 2SO₃ from either side to the
+same K_c; Figure 13.6 carries each of the book's three mixtures to
+equilibrium along a scale of Q; Figure 13.8 lowers the catalyzed barrier
+with both activation energies falling together; Figure 13.9 is the
+Haber-Bosch plant with its gases and water flowing on a loop, since the
+book's arrows are flow. Three are Sims of OmniStax's own: the magnitude of K
+in Example 13.2's flask, a stressed equilibrium in a vessel closed by a
+piston (added or removed gas, compression to a third, heating and cooling,
+with K moving only under temperature), and the small-x approximation over a
+live ICE table. The two boxes are physical 3D with bounded orbit; the graphs,
+the bars, the reaction diagrams, the plant and the ICE tables stay flat.
+Figures 13.1, 13.3, 13.4 and 13.7 are the book's own. The four ICE tables of
+13.4 are written as tables. Eighty exercises, eleven of them Check Your
+Learning items placed inline after their examples, each with its host. Two
+items moved to 13.1, both on the dynamic nature of equilibrium: the bromine
+that needs a closed vessel from 13.2, and the radioactive silver ions from
+13.3. Twenty unkeyed numerical items are left out and named in
+`exercise_notes`; one unkeyed choice item is kept open with its options; the
+twenty-three other unkeyed items are kept with a suggested approach.
+
+What the chapter pass changed. Every form and variables row of the chapter
+anchored: eleven forms, the equal rates at 13.1, the reaction quotients, K =
+Q, the K_P and K_c relation and the three rules of coupled equilibria at the
+headings of 13.2 that teach them, and K = k_f/k_r at 13.3; fifty-two
+variables, twenty-four of them added so that every symbol a page writes
+through its macro has a row in that section. K and Q stay typed as
+`equilibrium-constant` and k_f and k_r as `rate-constant`, as the tables
+declared them and the sections built them, and the forms now write them
+through their macros. Figure 13.2's headline writes t through its macro, and
+Figure 13.8's caption no longer speaks of the book, and the small-x Sim's
+headline sets its formulas as math. `config.md` records what
+the build changed, Figure 13.9 a moving Figure among it, and `COLOR.md` the
+bindings as built, general mentions of a concept marked as root rule 7 asks.
+
+Errata carried as printed and named in `exploration.md`: the key to 13.2's
+exercise on Q_P and Q_c with its (e) and (f) labels swapped, Example 13.5's
+Check Your Learning labelling both constants K_c1, Example 13.3's table
+summary against its 0.020 M, "Le Chatelier" once without its accent and
+acetate as a liquid in 13.3, "NaSO₄" and the bracketed pressures of one key
+in 13.4. The key that gives 1.90 atm for all three pressures of N₂O₃, NO and
+NO₂, listed as an erratum before the build, is what the data give.
+
+Checks: `ost check` clean for the book, and every page of the chapter in
+light and dark with no console error but the dev server's own missing
+offline catalogue, no KaTeX error, no missing image, every figure drawn and
+all eleven exercise hosts filled.

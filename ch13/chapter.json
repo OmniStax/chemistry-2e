@@ -38,196 +38,419 @@
    "concept": "reaction-rate",
    "meaning": "the rate of the forward reaction",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
-   "section": "13.1"
+   "section": "13.1",
+   "anchor": "13.1-dynamic",
+   "ref": "forward"
   },
   {
    "sym": "rate_r",
    "concept": "reaction-rate",
    "meaning": "the rate of the reverse reaction",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
-   "section": "13.1"
+   "section": "13.1",
+   "anchor": "13.1-dynamic",
+   "ref": "reverse"
   },
   {
    "sym": "k_f",
    "concept": "rate-constant",
    "meaning": "the rate constant of the forward reaction",
    "unit": "depends on the order of the forward reaction",
-   "section": "13.1"
+   "section": "13.1",
+   "anchor": "13.1-dynamic"
   },
   {
    "sym": "k_r",
    "concept": "rate-constant",
    "meaning": "the rate constant of the reverse reaction",
    "unit": "depends on the order of the reverse reaction",
-   "section": "13.1"
+   "section": "13.1",
+   "anchor": "13.1-dynamic"
   },
   {
    "sym": "Q_c",
    "concept": "reaction-quotient",
    "meaning": "the reaction quotient, the function of the concentrations or pressures of reactants and products that describes the status of a reaction mixture",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "Q_conc",
    "concept": "reaction-quotient",
    "meaning": "the reaction quotient written with molar concentrations",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "Q_P",
    "concept": "reaction-quotient",
    "meaning": "the reaction quotient written with partial pressures",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "K",
    "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant, the value of the reaction quotient for a system at equilibrium",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-constant"
   },
   {
    "sym": "K_c",
    "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant written with molar concentrations",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-constant"
   },
   {
    "sym": "K_P",
    "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant written with partial pressures",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-homogeneous"
   },
   {
    "sym": "[A]",
    "concept": "molarity",
    "meaning": "the molar concentration of reactant A",
    "unit": "mol/L (M)",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "[B]",
    "concept": "molarity",
    "meaning": "the molar concentration of reactant B",
    "unit": "mol/L (M)",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "[C]",
    "concept": "molarity",
    "meaning": "the molar concentration of product C",
    "unit": "mol/L (M)",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "[D]",
    "concept": "molarity",
    "meaning": "the molar concentration of product D",
    "unit": "mol/L (M)",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "P_A",
    "concept": "partial-pressure",
    "meaning": "the partial pressure of reactant A",
    "unit": "atm",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "P_B",
    "concept": "partial-pressure",
    "meaning": "the partial pressure of reactant B",
    "unit": "atm",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "P_C",
    "concept": "partial-pressure",
    "meaning": "the partial pressure of product C",
    "unit": "atm",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "P_D",
    "concept": "partial-pressure",
    "meaning": "the partial pressure of product D",
    "unit": "atm",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-quotient"
   },
   {
    "sym": "P",
    "concept": "partial-pressure",
    "meaning": "the partial pressure of a gas",
    "unit": "atm",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-homogeneous"
   },
   {
    "sym": "M",
    "concept": "molarity",
    "meaning": "the molar concentration of a gas",
    "unit": "mol/L (M)",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-homogeneous"
   },
   {
    "sym": "R",
    "concept": "ideal-gas-law",
    "meaning": "the gas constant, 0.0821 L atm mol⁻¹ K⁻¹",
    "unit": "L atm mol⁻¹ K⁻¹",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-homogeneous"
   },
   {
    "sym": "T",
    "concept": "temperature",
    "meaning": "the temperature",
    "unit": "K",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-homogeneous"
   },
   {
    "sym": "Δn_gas",
    "concept": "kp-kc-relation",
    "meaning": "the difference in the molar amounts of product and reactant gases in the balanced equation",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-homogeneous"
   },
   {
    "sym": "K_c_prime",
    "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant of an equation reversed, multiplied by a factor, or formed as a sum of equations",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-coupled"
   },
   {
    "sym": "K_c1",
    "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant of the first of two coupled reactions",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-coupled"
   },
   {
    "sym": "K_c2",
    "concept": "equilibrium-constant",
    "meaning": "the equilibrium constant of the second of two coupled reactions",
    "unit": "none",
-   "section": "13.2"
+   "section": "13.2",
+   "anchor": "13.2-coupled"
   },
   {
    "sym": "ΔH",
    "concept": "enthalpy-change-at-constant-pressure",
    "meaning": "the enthalpy change of the reaction, which decides how the equilibrium shifts with temperature",
    "unit": "kJ",
-   "section": "13.3"
+   "section": "13.3",
+   "anchor": "13.3-temperature"
   },
   {
    "sym": "x_ice",
    "concept": "ice-change-terms",
    "meaning": "the change in the concentration (or pressure) of a species with coefficient 1, in terms of which the other changes are written",
    "unit": "mol/L (M) or atm",
-   "section": "13.4"
+   "section": "13.4",
+   "anchor": "13.4-changes"
+  },
+  {
+   "section": "13.2",
+   "anchor": "13.2-homogeneous",
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of the gas, which is the volume of the vessel that confines it",
+   "unit": "L"
+  },
+  {
+   "section": "13.2",
+   "anchor": "13.2-homogeneous",
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the amount of gas in the vessel, counted in moles",
+   "unit": "mol"
+  },
+  {
+   "sym": "rate_f",
+   "concept": "reaction-rate",
+   "meaning": "the rate of the forward reaction",
+   "unit": "mol L⁻¹ s⁻¹ (M/s)",
+   "section": "13.3",
+   "anchor": "13.3-concentration"
+  },
+  {
+   "sym": "rate_r",
+   "concept": "reaction-rate",
+   "meaning": "the rate of the reverse reaction",
+   "unit": "mol L⁻¹ s⁻¹ (M/s)",
+   "section": "13.3",
+   "anchor": "13.3-concentration"
+  },
+  {
+   "sym": "k_f",
+   "concept": "rate-constant",
+   "meaning": "the rate constant of the forward reaction",
+   "unit": "depends on the order of the forward reaction",
+   "section": "13.3",
+   "anchor": "13.3-concentration"
+  },
+  {
+   "sym": "k_r",
+   "concept": "rate-constant",
+   "meaning": "the rate constant of the reverse reaction",
+   "unit": "depends on the order of the reverse reaction",
+   "section": "13.3",
+   "anchor": "13.3-concentration"
+  },
+  {
+   "sym": "Q_conc",
+   "concept": "reaction-quotient",
+   "meaning": "the reaction quotient written with molar concentrations",
+   "unit": "none",
+   "section": "13.3",
+   "anchor": "13.3-concentration"
+  },
+  {
+   "sym": "K_c",
+   "concept": "equilibrium-constant",
+   "meaning": "the equilibrium constant written with molar concentrations",
+   "unit": "none",
+   "section": "13.3",
+   "anchor": "13.3-concentration"
+  },
+  {
+   "sym": "M",
+   "concept": "molarity",
+   "meaning": "the molar concentration of a gas",
+   "unit": "mol/L (M)",
+   "section": "13.3",
+   "anchor": "13.3-volume"
+  },
+  {
+   "sym": "P",
+   "concept": "partial-pressure",
+   "meaning": "the partial pressure of a gas",
+   "unit": "atm",
+   "section": "13.3",
+   "anchor": "13.3-volume"
+  },
+  {
+   "sym": "R",
+   "concept": "ideal-gas-law",
+   "meaning": "the gas constant, 0.0821 L atm mol⁻¹ K⁻¹",
+   "unit": "L atm mol⁻¹ K⁻¹",
+   "section": "13.3",
+   "anchor": "13.3-volume"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature",
+   "unit": "K",
+   "section": "13.3",
+   "anchor": "13.3-volume"
+  },
+  {
+   "section": "13.3",
+   "anchor": "13.3-volume",
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of the gas, which is the volume of the vessel that confines it",
+   "unit": "L"
+  },
+  {
+   "section": "13.3",
+   "anchor": "13.3-volume",
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the amount of gas in the vessel, counted in moles",
+   "unit": "mol"
+  },
+  {
+   "sym": "Q_P",
+   "concept": "reaction-quotient",
+   "meaning": "the reaction quotient written with partial pressures",
+   "unit": "none",
+   "section": "13.3",
+   "anchor": "13.3-volume"
+  },
+  {
+   "sym": "K_P",
+   "concept": "equilibrium-constant",
+   "meaning": "the equilibrium constant written with partial pressures",
+   "unit": "none",
+   "section": "13.3",
+   "anchor": "13.3-volume"
+  },
+  {
+   "sym": "K",
+   "concept": "equilibrium-constant",
+   "meaning": "the equilibrium constant, the value of the reaction quotient for a system at equilibrium",
+   "unit": "none",
+   "section": "13.3",
+   "anchor": "13.3-temperature"
+  },
+  {
+   "sym": "[A]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of reactant A",
+   "unit": "mol/L (M)",
+   "section": "13.3",
+   "anchor": "13.3-temperature"
+  },
+  {
+   "sym": "[B]",
+   "concept": "molarity",
+   "meaning": "the molar concentration of product B",
+   "unit": "mol/L (M)",
+   "section": "13.3",
+   "anchor": "13.3-temperature",
+   "redefines": true
+  },
+  {
+   "sym": "q",
+   "concept": "heat-flow",
+   "meaning": "the heat gained or lost by a substance or a process, positive when it is gained and negative when it is lost",
+   "unit": "J",
+   "section": "13.3",
+   "anchor": "13.3-temperature"
+  },
+  {
+   "sym": "E_a",
+   "concept": "activation-energy",
+   "meaning": "the activation energy, the minimum energy needed to form products in a collision",
+   "unit": "J/mol or kJ/mol",
+   "section": "13.3",
+   "anchor": "13.3-catalyst"
+  },
+  {
+   "sym": "K_c",
+   "concept": "equilibrium-constant",
+   "meaning": "the equilibrium constant written with molar concentrations",
+   "unit": "none",
+   "section": "13.4",
+   "anchor": "13.4-calc-k"
+  },
+  {
+   "sym": "Q_conc",
+   "concept": "reaction-quotient",
+   "meaning": "the reaction quotient written with molar concentrations",
+   "unit": "none",
+   "section": "13.4",
+   "anchor": "13.4-initial"
+  },
+  {
+   "sym": "t",
+   "concept": "time",
+   "meaning": "the time elapsed since the reaction began",
+   "unit": "s",
+   "section": "13.1",
+   "anchor": "13.1-dynamic"
   }
  ]
 }

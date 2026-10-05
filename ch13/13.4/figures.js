@@ -74,7 +74,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const cK = C('equilibrium-constant'), cC = C('concentration');
     if (kBox) kBox.textContent = sigText(k);
     const spA = `[${r.sp[0]}]_{i}`, cs = c.toFixed(2);
-    const lines = topline(ctx, `x is ${pct(x / c)}% of ${spA}, and the approximation ${cs} − x ≈ ${cs} puts x ${pct(xa / x - 1)}% too high.`);
+    const lines = topline(ctx, `$x$ is ${pct(x / c)}% of ${spA}, and the approximation $${cs} - x \\approx ${cs}$ puts $x$ ${pct(xa / x - 1)}% too high.`);
     const lab = F.labeller(ctx, H, { headline: lines });
     table(ctx, r, c, x);
     lab.block(COLS[0], ROWS[0] - 20, COLS[4], ROWS[3] + 20);

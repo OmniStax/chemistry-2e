@@ -1,0 +1,638 @@
+{
+ "id": "18.3",
+ "module": "m68831",
+ "chapter": "18",
+ "title": "Structure and General Properties of the Metalloids",
+ "short": "The Metalloids",
+ "lead": "The six <span data-concept=\"metalloid\">metalloids</span>, boron, silicon, germanium, arsenic, antimony and tellurium, stand between the metals and the <span data-concept=\"nonmetal\">nonmetals</span>. The section looks at the covalent crystals they form, then at boron and silicon in detail: how each is found and purified, their halides as <span data-concept=\"lewis-acid\">Lewis acids</span>, boric acid and the <span data-concept=\"borate\">borates</span>, and silica and the <span data-concept=\"silicate\">silicates</span>.",
+ "objectives": [
+  "Describe the general preparation, properties, and uses of the metalloids",
+  "Describe the preparation, properties, and compounds of boron and silicon"
+ ],
+ "summary_html": "<p>The elements boron, silicon, germanium, arsenic, antimony, and tellurium separate the metals from the <span data-concept=\"nonmetal\">nonmetals</span> in the periodic table. These elements, called <span data-concept=\"metalloid\">metalloids</span> or sometimes semimetals, exhibit properties characteristic of both metals and nonmetals. The structures of these elements are similar in many ways to those of nonmetals, but the elements are electrical semiconductors.</p>",
+ "notes": "The Link to Learning on the cubic diamond structure is left out; Figure 18.12 carries the diamond structure of silicon and germanium. The section keeps as printed the antimony paragraph printed twice (the second time without “Sb₂S₅”), “passivation of silicon occurs due the formation”, “silicon is” run into “sp³d²” without a space, “colorless gasses”, “The volatility of dry ice reflect”, and the two empty rows that open the array of the silicon dioxide reductions.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key. The seven unkeyed exercises fs-idp16930624 and fs-idp53586384 (hybridization and molecular geometry), fs-idp20024944 (Lewis structures), fs-idm40238272 (balanced equations), fs-idm26980560 (formulas), fs-idp26638608 (the empirical formula of silicon sulfide) and fs-idp421376 (the molecular formula of a silicon hydride) are left out, and no answer is computed for them. The unkeyed conceptual exercise fs-idp46618224 carries a suggested approach marked as OmniStax’s own. Nothing is moved.",
+ "figures": [
+  {
+   "id": "sim-structures",
+   "kind": "sim",
+   "number": "18.12",
+   "folds": [
+    "18.13"
+   ],
+   "originals": [
+    "/media/ch18/CNX_Chem_18_03_Structures.jpg",
+    "/media/ch18/CNX_Chem_18_03_BIcosahed.jpg"
+   ],
+   "original_caption": "(Figure 18.12) (a) Arsenic and (b) antimony have a layered structure similar to that of (c) graphite, except that the layers are puckered rather than planar. (d) Elemental tellurium forms spiral chains. (Figure 18.13) An icosahedron is a symmetrical, solid shape with 20 faces, each of which is an equilateral triangle. The faces meet at 12 corners.",
+   "draws": [
+    "length"
+   ],
+   "conventions": [
+    "B",
+    "Si",
+    "As",
+    "C",
+    "Te"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-zone-refining",
+   "kind": "sim",
+   "number": "18.14",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_03_SiPurif.jpg"
+   ],
+   "original_caption": "A zone-refining apparatus used to purify silicon.",
+   "draws": [],
+   "facts": [
+    "#ffb347"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-bf3-lewis-acid",
+   "kind": "figure",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-glass",
+   "kind": "photo",
+   "number": "18.15",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-boric-acid",
+   "kind": "photo",
+   "number": "18.16",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-borates",
+   "kind": "photo",
+   "number": "18.17",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-co2-sio2",
+   "kind": "sim",
+   "number": "18.18",
+   "originals": [
+    "/media/ch18/CNX_Chem_18_03_CO2vsSiO2.jpg"
+   ],
+   "original_caption": "Because carbon tends to form double and triple bonds and silicon does not, (a) carbon dioxide is a discrete molecule with two C=O double bonds and (b) silicon dioxide is an infinite network of oxygen atoms bridging between silicon atoms with each silicon atom possessing four Si-O single bonds. (credit a photo: modification of work by Erica Gerdes; credit b photo: modification of work by Didier Descouens)",
+   "draws": [],
+   "conventions": [
+    "C",
+    "O",
+    "Si"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "metalloids",
+   "concept": "metalloid-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "metalloids",
+   "concept": "boron-and-silicon-lewis-acids",
+   "verb": "introduces"
+  },
+  {
+   "span": "metalloids",
+   "concept": "metalloid",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "nonmetal",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "anion",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "electronegativity",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "electron-configuration",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "valence-electrons",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "tetrahedral-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "trigonal-planar-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "metalloids",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "metalloid-structures",
+   "verb": "introduces"
+  },
+  {
+   "span": "structures",
+   "concept": "covalent-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "tetrahedral-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "allotropes",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "cubic-closest-packing",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "covalent-network-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "structures",
+   "concept": "metalloid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "boron-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "silicon-preparation",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "borate",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "silicon-dioxide-structure",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "polymorph",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "silicate",
+   "verb": "introduces"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "amorphous-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "chemical-reduction",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "passivation",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "enthalpy-change",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "lewis-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "lewis-base",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "boron-and-silicon-lewis-acids",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "octahedral-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "hybridization",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "trigonal-planar-geometry",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "acid-ionization-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "weak-acid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "hydrogen-bonding",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "crystalline-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "intermolecular-force",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "covalent-network-solid",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "pi-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "boron-silicon",
+   "concept": "sigma-and-pi-bonds",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e29",
+   "source_id": "fs-idp187127952",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "Write a Lewis structure for each of the following molecules or ions. You may wish to review the chapter on chemical bonding.<br>(a) H<sub>3</sub>BPH<sub>3</sub><br>(b) $\\text{BF}_{4}{}^{-}$<br>(c) BBr<sub>3</sub><br>(d) B(CH<sub>3</sub>)<sub>3</sub><br>(e) B(OH)<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) H<sub>3</sub>BPH<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2a_img.jpg\" alt=\"This Lewis structure is composed of a boron atom single bonded to a phosphorus atom. Each of these atoms is single bonded to three hydrogen atoms.\"><br>(b) $\\text{BF}_{4}{}^{\\text{−}}$:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2b_img.jpg\" alt=\"This Lewis structure is composed of a boron atom single bonded to four fluorine atoms, each of which has three lone pairs of electrons. The structure is surrounded by brackets, and a negative sign appears as a superscript outside the brackets.\"><br>(c) BBr<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2c_img.jpg\" alt=\"This Lewis structure is composed of a boron atom single bonded to three bromine atoms, each of which has three lone pairs of electrons.\"><br>(d) B(CH<sub>3</sub>)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2d_img.jpg\" alt=\"This Lewis structure is composed of a boron atom that is single bonded to three carbon atoms, each of which is single bonded to three hydrogen atoms.\"><br>(e) B(OH)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2e_img.jpg\" alt=\"This Lewis structure is composed of a boron atom that is single bonded to three oxygen atoms, each of which has two lone pairs of electrons. Each oxygen atom is single bonded to a hydrogen atom.\">"
+   }
+  },
+  {
+   "id": "e31",
+   "source_id": "fs-idm42816224",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metalloids",
+   "prompt": "Using only the periodic table, write the complete electron configuration for silicon, including any empty orbitals in the valence shell. You may wish to review the chapter on electronic structure.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>3<em>d</em><sup>0</sup>."
+   }
+  },
+  {
+   "id": "e33",
+   "source_id": "fs-idp50725056",
+   "source_number": "33",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "Describe the hybridization of silicon and the molecular structure of the following molecules and ions:<br>(a) (CH<sub>3</sub>)<sub>3</sub>SiH<br>(b) $\\text{SiO}_{4}{}^{4−}$<br>(c) Si<sub>2</sub>H<sub>6</sub><br>(d) Si(OH)<sub>4</sub><br>(e) $\\text{SiF}_{6}{}^{2−}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) (CH<sub>3</sub>)<sub>3</sub>SiH: <em>sp</em><sup>3</sup> bonding about Si; the structure is tetrahedral; (b) $\\text{SiO}_{4}{}^{\\text{4−}}$: <em>sp</em><sup>3</sup> bonding about Si; the structure is tetrahedral; (c) Si<sub>2</sub>H<sub>6</sub>: <em>sp</em><sup>3</sup> bonding about each Si; the structure is linear along the Si-Si bond; (d) Si(OH)<sub>4</sub>: <em>sp</em><sup>3</sup> bonding about Si; the structure is tetrahedral; (e) $\\text{SiF}_{6}{}^{\\text{2−}}$: <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> bonding about Si; the structure is octahedral"
+   }
+  },
+  {
+   "id": "e34",
+   "source_id": "fs-idp46618224",
+   "source_number": "34",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "structures",
+   "prompt": "Describe the hybridization and the bonding of a silicon atom in elemental silicon.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Suggested approach: recall the diamond structure the text gives silicon, count the neighbors each silicon atom bonds to and the shape they make, and choose the set of hybrid orbitals that points to the corners of that shape; then say what kind of bond each hybrid orbital forms with a neighbor."
+   }
+  },
+  {
+   "id": "e35",
+   "source_id": "fs-idp51747488",
+   "source_number": "35",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "Classify each of the following molecules as polar or nonpolar. You may wish to review the chapter on chemical bonding.<br>(a) SiH<sub>4</sub><br>(b) Si<sub>2</sub>H<sub>6</sub><br>(c) SiCl<sub>3</sub>H<br>(d) SiF<sub>4</sub><br>(e) SiCl<sub>2</sub>F<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) nonpolar; (b) nonpolar; (c) polar; (d) nonpolar; (e) polar"
+   }
+  },
+  {
+   "id": "e37",
+   "source_id": "fs-idp54395392",
+   "source_number": "37",
+   "kind": "exercise",
+   "bloom": "Remember",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metalloids",
+   "prompt": "Name each of the following compounds:<br>(a) TeO<sub>2</sub><br>(b) Sb<sub>2</sub>S<sub>3</sub><br>(c) GeF<sub>4</sub><br>(d) SiH<sub>4</sub><br>(e) GeH<sub>4</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) tellurium dioxide or tellurium(IV) oxide; (b) antimony(III) sulfide; (c) germanium(IV) fluoride; (d) silane or silicon(IV) hydride; (e) germanium(IV) hydride"
+   }
+  },
+  {
+   "id": "e39",
+   "source_id": "fs-idp194759200",
+   "source_number": "39",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "metalloids",
+   "prompt": "Why is boron limited to a maximum coordination number of four in its compounds?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Boron has only <em>s</em> and <em>p</em> orbitals available, which can accommodate a maximum of four electron pairs. Unlike silicon, no <em>d</em> orbitals are available in boron."
+   }
+  },
+  {
+   "id": "e41",
+   "source_id": "fs-idp50984592",
+   "source_number": "41",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "From the data given in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, determine the standard enthalpy change and the standard free energy change for each of the following reactions:<br>(a) ${\\text{BF}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HF}(g)$<br>(b) ${\\text{BCl}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HCl}(g)$<br>(c) ${\\text{B}}_{2}{\\text{H}}_{6}(g)+{\\text{6H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2B}{(\\text{OH})}_{3}(s)+{\\text{6H}}_{2}(g)$",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) ΔH°",
+      "value": 87,
+      "unit": "kJ",
+      "hint": "Subtract the sum of the reactants’ standard enthalpies of formation, each times its coefficient, from the products’ sum; do the same with the standard free energies of formation for ΔG°."
+     },
+     {
+      "part": "(a) ΔG°",
+      "value": 44,
+      "unit": "kJ"
+     },
+     {
+      "part": "(b) ΔH°",
+      "value": -109.9,
+      "unit": "kJ"
+     },
+     {
+      "part": "(b) ΔG°",
+      "value": -154.7,
+      "unit": "kJ"
+     },
+     {
+      "part": "(c) ΔH°",
+      "value": -510,
+      "unit": "kJ"
+     },
+     {
+      "part": "(c) ΔG°",
+      "value": -601.5,
+      "unit": "kJ"
+     }
+    ],
+    "solution": "(a) Δ<em>H</em>° = 87 kJ; Δ<em>G</em>° = 44 kJ; (b) Δ<em>H</em>° = −109.9 kJ; Δ<em>G</em>° = −154.7 kJ; (c) Δ<em>H</em>° = −510 kJ; Δ<em>G</em>° = −601.5 kJ"
+   }
+  },
+  {
+   "id": "e43",
+   "source_id": "fs-idm48610704",
+   "source_number": "43",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "boron-silicon",
+   "prompt": "Suppose you discovered a diamond completely encased in a silicate rock. How would you chemically free the diamond without harming it?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "A mild solution of hydrofluoric acid would dissolve the silicate and would not harm the diamond."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e29",
+   "concept": "lewis-structure"
+  },
+  {
+   "exercise": "e29",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e31",
+   "concept": "writing-electron-configurations"
+  },
+  {
+   "exercise": "e31",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e33",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e33",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e34",
+   "concept": "metalloid-structures"
+  },
+  {
+   "exercise": "e34",
+   "concept": "assign-hybridization"
+  },
+  {
+   "exercise": "e35",
+   "concept": "molecular-polarity"
+  },
+  {
+   "exercise": "e35",
+   "concept": "silicon-preparation"
+  },
+  {
+   "exercise": "e37",
+   "concept": "metalloid-properties"
+  },
+  {
+   "exercise": "e39",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e41",
+   "concept": "enthalpy-from-formation-enthalpies"
+  },
+  {
+   "exercise": "e41",
+   "concept": "boron-and-silicon-lewis-acids"
+  },
+  {
+   "exercise": "e43",
+   "concept": "silicate"
+  },
+  {
+   "exercise": "e43",
+   "concept": "silicon-dioxide-structure"
+  }
+ ]
+}

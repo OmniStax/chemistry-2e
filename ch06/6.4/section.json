@@ -4,7 +4,7 @@
  "chapter": "6",
  "title": "Electronic Structure of Atoms (Electron Configurations)",
  "short": "Electron Configurations",
- "lead": "The orbitals of an atom with two or more electrons fill in order of increasing <span data-concept=\"energy-and-work\">energy</span>, and that order is not simply the order of n. The Aufbau principle, the Pauli exclusion principle and Hund’s rule build the ground-state configuration of each element one electron at a time. You can write it as a configuration or as an orbital diagram and separate core electrons from valence electrons. Chromium and copper are exceptions. Elements with the same valence configuration share a group, and ions form by gaining or losing electrons in a predictable order.",
+ "lead": "The electrons of an atom fill its orbitals in order of increasing <span data-concept=\"energy-and-work\">energy</span>, under the Aufbau principle, the Pauli exclusion principle and Hund’s rule. The electron configurations and orbital diagrams that result separate core from valence electrons and tie each element to its place in the periodic table, and they extend to ions.",
  "objectives": [
   "Derive the predicted ground-state electron configurations of atoms",
   "Identify and explain exceptions to predicted electron configurations for atoms and ions",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -46,6 +50,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "notes repeating the headline and readout cut"
     }
    ]
   },
@@ -104,6 +113,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "valence note no longer reads the count as n"
     }
    ]
   },

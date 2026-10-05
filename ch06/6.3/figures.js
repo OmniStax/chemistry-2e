@@ -76,8 +76,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     dot(ctx, SX0, SY, cw, true, 9); dot(ctx, SX1, SY, cw, false, 11);
     if (!whole) dot(ctx, SX1, yEnd, cw, true, 9);
     if (L <= CIRC) hbracket(ctx, X(0), X(L), SY - SAMP - 16, cw, 'λ = ' + fmt(L, 1) + ' pm', { side: 'above' });
-    readout(d.readout, `2\\pi \\kr = n\\klam:\\quad ${fmt(CIRC, 1)}\\ \\text{pm} = ${fmt(n, 2)}\\times ${fmt(L, 1)}\\ \\text{pm}`,
-      whole ? 'n is a whole number, so this wavelength gives an allowed standing wave.' : 'n must be a whole number for the electron wave to stand in the orbit.');
+    readout(d.readout, `2\\pi \\kr = n\\klam:\\quad ${fmt(CIRC, 1)}\\ \\text{pm} = ${fmt(n, 2)}\\times ${fmt(L, 1)}\\ \\text{pm}`);
   }
   still(d, draw);
 })();
@@ -145,8 +144,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     }
     text(ctx, 'electrons counted at each height', (HB.l + HB.r) / 2, SCR.b + 24, PAL.ink, { size: 19, align: 'center' });
     const lam = HP / (ME * v.v * 1e6);
-    readout(d.readout, `\\klam = \\frac{h}{\\km \\kv} = \\frac{6.626\\times10^{-34}\\ \\text{kg m}^{2}\\text{/s}}{(9.109\\times10^{-31}\\ \\text{kg})(${fmt(v.v, 1)}\\times10^{6}\\ \\text{m/s})} = ${sciT(lam, 2)}\\ \\text{m}`,
-      'The bands on the screen are spaced in proportion to this wavelength.');
+    readout(d.readout, `\\klam = \\frac{h}{\\km \\kv} = \\frac{6.626\\times10^{-34}\\ \\text{kg m}^{2}\\text{/s}}{(9.109\\times10^{-31}\\ \\text{kg})(${fmt(v.v, 1)}\\times10^{6}\\ \\text{m/s})} = ${sciT(lam, 2)}\\ \\text{m}`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -278,7 +276,7 @@ const ANGMAX = [1, 1, 2];
     KEYS.forEach((k) => { const a = k === key || k === orb.from ? orb.a(k) : 0; if (a > 0) cloud(k); if (clouds[k]) { paint(clouds[k]); F.fade3(clouds[k].grp, a); } });
     V.invalidate();
     const { ctx } = begin(c2), nodes = o.n - o.l - 1;
-    topline(ctx, `The ${key} orbital has n − l − 1 = ${o.n} − ${o.l} − 1 = ${nodes} radial node${nodes === 1 ? '' : 's'}` + (nodes ? ', at ' + o.nodes.map((r) => fmt(r * A0, 0) + ' pm').join(' and ') + ' from the nucleus.' : ', so its probability never falls to zero between the nucleus and the outside.'));
+    topline(ctx, `The ${key} orbital has n − l − 1 = ${o.n} − ${o.l} − 1 = ${nodes} radial node${nodes === 1 ? '' : 's'}` + (nodes ? ', at ' + o.nodes.map((r) => fmt(r * A0, 0) + ' pm').join(' and ') + ' from the nucleus.' : ', so its probability never falls to zero.'));
     const box = { l: 150, r: 1300, t: 120, b: 262 };
     const { X, Y } = axes(ctx, box, [0, 1000], [0, 0.6], { xl: 'distance from nucleus (pm)', xc: C('length'), yl: 'probability density', nx: 5, ny: 3, fy: () => '' });
     /* the area under the curve in the colour of the sign of ψ there */
@@ -293,7 +291,7 @@ const ANGMAX = [1, 1, 2];
     fill(key, orb.a(key));
     orb.curve(ctx, (k) => pOf(k), 0, 1000, X, Y, PAL.ink, 4, 240);
     o.nodes.forEach((r) => { const x = X(r * A0); line(ctx, x, box.t, x, box.b, PAL.muted, 2, [4, 8]); text(ctx, 'node', x + 8, box.t + 14, PAL.muted, { size: 17 }); });
-    readout(d.readout, `n - l - 1 = ${o.n} - ${o.l} - 1 = ${nodes}`, 'At a radial node ψ is zero, and on either side of it ψ has opposite signs, drawn in the two colors.');
+    readout(d.readout, `n - l - 1 = ${o.n} - ${o.l} - 1 = ${nodes}`);
   }
   still(d, draw);
 })();
@@ -319,7 +317,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
 ===================================================================== */
 (function () {
   const d = sim('sim-orbital-shapes');
-  const V = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'along x', yaw: 0, pitch: 0 }, { label: 'along y', yaw: -Math.PI / 2, pitch: 0 }, { label: 'along z', yaw: 0, pitch: Math.PI / 2 }], h: 420, dist: 8, tilt: 0.35 });
+  const V = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'along x', yaw: 0, pitch: 0 }, { label: 'along y', yaw: -Math.PI / 2, pitch: 0 }, { label: 'along z', yaw: 0, pitch: Math.PI / 2 }], h: 420, dist: 15, tilt: 0.35 });
   const g = V.part(0);
   const sub = F.choice(d.controls, { label: '\\text{subshell}', options: [{ value: 's', label: 's (<em>l</em> = 0)' }, { value: 'p', label: 'p (<em>l</em> = 1)' }, { value: 'd', label: 'd (<em>l</em> = 2)' }, { value: 'f', label: 'f (<em>l</em> = 3)' }], value: 'p', aria: 'the subshell', onInput: () => { rows(); go(); } });
   const pick = {}, box = {};
@@ -349,7 +347,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
     geo.setAttribute('position', pos); geo.setAttribute('color', col); geo.setIndex(idx);
     mesh = new T3.Mesh(geo, new T3.MeshPhongMaterial({ vertexColors: true, side: T3.DoubleSide, shininess: 30 }));
     g.add(mesh); V.pickable(mesh, 'a lobe of the orbital');
-    const L = 2.3;
+    const L = 2.0;
     [[[0, 0, L], 'x'], [[L, 0, 0], 'y'], [[0, L, 0], 'z']].forEach(([p, name]) => {
       F.mesh.polyline(g, [p.map((c) => -c), p], PAL.muted);
       V.label(name, p.map((c) => c * 1.07), g, 0);
@@ -369,7 +367,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
     }
     const l = LOF[sub.value], name = byV[to].label;
     readout(d.readout, `l = ${l}:\\quad 2l + 1 = 2(${l}) + 1 = ${2 * l + 1}\\ \\text{orbital${l ? 's' : ''}}`,
-      l ? `The ${sub.value} subshell has ${WORDS[2 * l + 1]} orbitals, one for each value of mₗ from −${l} to +${l}; they differ in their orientation in space.` : 'The s subshell has one orbital, a sphere, so it has no orientation to choose.');
+      l ? `The values of mₗ run from −${l} to +${l}.` : 'With one orbital, the s subshell has no orientation to choose.');
     V.headline(l ? `The <em>${name}</em> orbital, one of the ${WORDS[2 * l + 1]} <em>${sub.value}</em> orbitals` : 'The <em>s</em> orbital is a sphere');
   }
   still(d, draw);
@@ -386,7 +384,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
   /* heights from 0 (1s) to 1 (4p): the book's chart, and hydrogen's (1 − 1/n²)/(1 − 1/16) */
   const SUBS = [['1s', 1, 1, 0], ['2s', 2, 1, 0.433], ['2p', 2, 3, 0.488], ['3s', 3, 1, 0.788], ['3p', 3, 3, 0.843], ['3d', 3, 5, 0.981], ['4s', 4, 1, 0.943], ['4p', 4, 3, 1]]
     .map(([name, n, count, many]) => ({ name, n, count, many, H: (1 - 1 / (n * n)) / (1 - 1 / 16) }));
-  const W = 52, GAP = 14, SEP = 40, BOT = 386, TOP = 112;
+  const W = 44, GAP = 10, SEP = 40, BOT = 386, TOP = 112;
   let x = 140; SUBS.forEach((s) => { s.x = x; x += s.count * W + (s.count - 1) * GAP + SEP; });
   const span = x - SEP - 140, off = (1340 - 140 - span) / 2;
   SUBS.forEach((s) => { s.x += off; });
@@ -425,7 +423,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
       text(ctx, s, e.x, y, PAL.ink, { size: 22, weight: 600, align: 'center' });
     });
     /* the magnetic moment through the electron */
-    if (e.up) arrow(ctx, e.x, CY + 124, e.x, CY - 122, PAL.muted, 14); else arrow(ctx, e.x, CY - 124, e.x, CY + 122, PAL.muted, 14);
+    if (e.up) arrow(ctx, e.x, CY + 124, e.x, CY - 122, PAL.muted, 7); else arrow(ctx, e.x, CY - 124, e.x, CY + 122, PAL.muted, 7);
     const gr = ctx.createRadialGradient(e.x - 12, CY - 12, 4, e.x, CY, RE);
     gr.addColorStop(0, F.mixColor(ce, PAL.panel, 0.55)); gr.addColorStop(1, ce);
     ctx.save(); ctx.fillStyle = gr; ctx.beginPath(); ctx.arc(e.x, CY, RE, 0, TAU); ctx.fill(); ctx.restore();

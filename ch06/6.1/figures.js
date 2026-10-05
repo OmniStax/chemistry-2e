@@ -3,7 +3,7 @@ window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['6.1'] = function (root, F) {
 const { el, fmt, tex, C, PAL, alpha, ctl, cycle, register, begin, line, arrow, dot, text, topline, axes, hbracket, vbracket } = F;
 const sim = (id, H) => F.sim(root, id, H);
-function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
+function readout(host, main, small) { tex(host, main); if (small) { const s = el('small', null, small); host.appendChild(s); F.renderMath(s); } }
 
 /* ---------- the constants, as the book states them ---------- */
 const HP = 6.626e-34;         /* J s, Planck's constant */
@@ -101,7 +101,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     line(ctx, X0, 110, X0, 420, alpha(PAL.ink, 0.4), 2, [10, 10]);
     line(ctx, X1, 110, X1, 420, alpha(PAL.ink, 0.4), 2, [10, 10]);
     arrow(ctx, X0 + 4, 112, X1 - 4, 112, PAL.muted, 3);
-    text(ctx, 'distance traveled in 1 second, 12 m', (X0 + X1) / 2, 132, PAL.muted, { size: 17, align: 'center', bg: PAL.panel });
+    text(ctx, 'distance traveled in 1 second, 12 m', X0 + 12, 132, PAL.muted, { size: 17, align: 'left', bg: PAL.panel });
     /* the rope, crest at x = X0 + V t, drawn from its held end past the second line */
     const xc = X0 + V * t * PX;
     ctx.save(); ctx.strokeStyle = F.ref('rope'); ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath();
@@ -124,8 +124,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     text(ctx, 't = ' + fmt(t, 2) + ' s', X0, 450, PAL.muted, { size: 18, align: 'left' });
     topline(ctx, 'At ' + fmt(nu, 1) + ' Hz the wavelength is ' + fmt(lam, 2) + ' m, and ' + fmt(nu, 1) + ' wavelengths fit in the 12 m the wave travels in one second.');
     readout(d.readout,
-      `\\klam\\knu=(${fmt(lam, 2)}\\ \\text{m})(${fmt(nu, 1)}\\ \\text{Hz})=12\\ \\text{m/s}`,
-      'The amplitude a = ' + fmt(a, 2) + ' m is one-half the height from peak to trough; it changes the intensity of the wave and neither its wavelength nor its frequency.');
+      `\\klam\\knu=(${fmt(lam, 2)}\\ \\text{m})(${fmt(nu, 1)}\\ \\text{Hz})=12\\ \\text{m/s}`);
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 0.25), draw });
 })();
@@ -165,7 +164,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     REGIONS.forEach((r, i) => {
       if (i) line(ctx, X(r.a), SY - SH / 2, X(r.a), SY + SH / 2, alpha(PAL.ink, 0.35), 1.5);
       if (r.name === 'visible') return;
-      text(ctx, r.name, (X(r.a) + X(r.b)) / 2, SY, PAL.ink, { size: r.b - r.a < 1.2 ? 14 : 17, align: 'center' });
+      text(ctx, r.name, (X(r.a) + X(r.b)) / 2, SY, PAL.ink, { size: r.b - r.a < 1.2 ? 14 : 17, align: 'center', bg: PAL.soft });
     });
     const vx = (X(REGIONS[3].a) + X(REGIONS[3].b)) / 2;
     line(ctx, vx, SY - SH / 2 - 4, vx, SY - SH / 2 - 16, PAL.muted, 1.5);
@@ -177,26 +176,27 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     /* the frequency scale runs the other way: ν = c/λ */
     line(ctx, L, NY, R, NY, cf, 2);
     for (let q = 6; q <= 20; q += 1) { const x = X(Math.log10(CL) - q); if (x < L - 1 || x > R + 1) continue; line(ctx, x, NY - 9, x, NY, cf, 2); if (q % 3 === 0) text(ctx, '10' + sup(q), x, NY + 22, cf, { size: 17, align: 'center' }); }
-    text(ctx, 'frequency ν (Hz), increasing to the left', R, NY - 26, cf, { size: 19, weight: 600, align: 'right' });
+    const x = X(lg), side = x > 900 ? 'right' : 'left', dx = side === 'right' ? -14 : 14;
+    /* an axis title moves to the left end where the marked value would sit on it */
+    const title = (s, y, col, val) => { const w = F.measure(ctx, s, { size: 19, weight: 600 }), vw = F.measure(ctx, val, { size: 18, weight: 600 }), v0 = side === 'right' ? x + dx - vw : x + dx, left = v0 + vw > R - w - 12;
+      text(ctx, s, left ? L : R, y, col, { size: 19, weight: 600, align: left ? 'left' : 'right' }); };
+    title('frequency ν (Hz), increasing to the left', NY - 26, cf, lenU(lam));
     /* the energy of one photon, E = hν */
     line(ctx, L, EY, R, EY, ce, 2);
     for (let q = -28; q <= -13; q += 1) { const x = X(Math.log10(HP * CL) - q); if (x < L - 1 || x > R + 1) continue; line(ctx, x, EY - 9, x, EY, ce, 2); if (q % 3 === 0) text(ctx, '10' + sup(q), x, EY + 22, ce, { size: 17, align: 'center' }); }
-    text(ctx, 'energy of one photon E (J), increasing to the left', R, EY - 26, ce, { size: 19, weight: 600, align: 'right' });
+    title('energy of one photon E (J), increasing to the left', EY - 26, ce, freqU(nu));
     /* the chosen wavelength through all three scales */
-    const x = X(lg);
     line(ctx, x, SY - SH / 2 - 10, x, EY + 6, alpha(PAL.ink, 0.5), 2, [4, 8]);
     line(ctx, x, SY - SH / 2, x, SY + SH / 2, visible(nm) ? PAL.ink : cw, 4);
     dot(ctx, x, SY - SH / 2 - 12, lightOr(nm), true, 10);
     dot(ctx, x, NY, cf, true, 8); dot(ctx, x, EY, ce, true, 8);
-    const side = x > 900 ? 'right' : 'left', dx = side === 'right' ? -14 : 14;
     text(ctx, lenU(lam), x + dx, SY + SH / 2 + 84, cw, { size: 18, weight: 600, align: side, bg: PAL.panel });
     text(ctx, freqU(nu), x + dx, NY + 48, cf, { size: 18, weight: 600, align: side, bg: PAL.panel });
     text(ctx, sciU(E) + ' J', x + dx, EY + 48, ce, { size: 18, weight: 600, align: side, bg: PAL.panel });
     const reg = regionOf(lg);
     topline(ctx, 'Radiation of wavelength ' + lenU(lam) + ' is ' + (reg.name === 'visible' ? colorName(nm) + ' visible light' : reg.name === 'radio' ? 'a radio wave' : reg.name) + ', with a frequency of ' + freqU(nu) + ' and ' + sciU(E) + ' J in each photon.');
     readout(d.readout,
-      `\\knu=\\frac{\\kc}{\\klam}=\\frac{2.998\\times10^{8}\\ \\text{m s}^{-1}}{${sciT(lam)}\\ \\text{m}}=${sciT(nu)}\\ \\text{s}^{-1}`,
-      'One photon of this radiation carries E = hν = ' + sciU(E) + ' J; the shorter the wavelength, the higher the frequency and the greater the energy.');
+      `\\knu=\\frac{\\kc}{\\klam}=\\frac{2.998\\times10^{8}\\ \\text{m s}^{-1}}{${sciT(lam)}\\ \\text{m}}=${sciT(nu)}\\ \\text{s}^{-1},\\quad \\kE=h\\knu=${sciT(E)}\\ \\text{J}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -209,7 +209,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
 (function () {
   const d = sim('sim-amfm', 440);
   const MODE = F.choice(d.controls, { label: '\\text{modulation}', options: [{ value: 'am', label: 'AM' }, { value: 'fm', label: 'FM' }], value: 'am', aria: 'amplitude or frequency modulation' });
-  const L = 150, R = 1250, SY = 150, CYc = 320;
+  const L = 150, R = 1250, SY = 158, CYc = 320;
   const sig = (s) => Math.sin(2 * Math.PI * (1.5 * s - 0.25));              /* the signal over s = 0..1: two crests and a trough, as the book draws it */
   const K0 = 16;                                                            /* carrier cycles across the width */
   /* the carrier's phase for FM is the running integral of its frequency, K0 (1 + 0.45 s(x)) */
@@ -227,7 +227,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     MODE.only(ctx, 'am', () => text(ctx, 'AM', R + 20, CYc, cc, { size: 22, weight: 600 }));
     MODE.only(ctx, 'fm', () => text(ctx, 'FM', R + 20, CYc, cc, { size: 22, weight: 600 }));
     /* guide lines from the signal's crests and trough down to the carrier */
-    [1 / 3, 2 / 3, 0.985].forEach((s, i) => { line(ctx, Xs(s), Ys(sig(s)) + 12, Xs(s), CYc - 110, alpha(PAL.ink, 0.3), 1.5, [4, 8]); text(ctx, i === 1 ? 'trough' : 'crest', Xs(s), CYc + 116, PAL.muted, { size: 16, align: 'center' }); });
+    [1 / 3, 2 / 3, 0.985].forEach((s, i) => { line(ctx, Xs(s), Ys(sig(s)) + 12, Xs(s), CYc - 110, alpha(PAL.ink, 0.3), 1.5, [4, 8]); text(ctx, i === 1 ? 'trough' : 'crest', Xs(s), CYc + 112, PAL.muted, { size: 16, align: 'center' }); });
     topline(ctx, m === 'am'
       ? 'In AM the carrier keeps one frequency, and its amplitude is greatest under the crests of the signal and least under its trough.'
       : 'In FM the carrier keeps one amplitude, and its waves crowd together under the crests of the signal and spread apart under its trough.');
@@ -235,7 +235,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
       ? `\\knu_{\\text{carrier}}=1000\\ \\text{kHz, fixed}`
       : `\\knu_{\\text{carrier}}=100.0\\ \\text{MHz}\\pm0.075\\ \\text{MHz}`,
       m === 'am'
-        ? 'An AM station near the middle of its band, 540 to 2830 kHz, varies only the height of its carrier.'
+        ? 'An AM station broadcasts in the band of 540 to 2830 kHz.'
         : 'An FM station in its band of 87.5 to 108.0 MHz swings its carrier by only 75 kHz; the drawing exaggerates the swing so that it can be seen.');
   }
   register(d.fig, { update: () => {}, draw });
@@ -279,7 +279,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     topline(ctx, 'With n = ' + n + (n === 1 ? ' half-wavelength' : ' half-wavelengths') + ' between the ends the string has ' + (n - 1) + (n - 1 === 1 ? ' node' : ' nodes') + ' and a wavelength of ' + fmt(lam, 3) + ' m.');
     readout(d.readout,
       `\\klam=\\frac{2L}{n}=\\frac{2(1.00\\ \\text{m})}{${n}}=${fmt(lam, 3)}\\ \\text{m}`,
-      'Only a whole number of half-wavelengths fits between two fixed ends, so the wavelength is quantized; the n − 1 = ' + (n - 1) + (n - 1 === 1 ? ' node stands' : ' nodes stand') + ' still while the rest of the string vibrates.');
+      'Only a whole number of half-wavelengths fits between two fixed ends, so the wavelength is quantized.');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -299,7 +299,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
   const S = 9.5 / raw(2898 / 6000, 6000);          /* arbitrary units: the 6000 K maximum stands at 9.5, as the book draws it */
   const planck = (T) => (lam) => (lam <= 0.02 ? 0 : S * raw(lam, T));
   const classical = (T) => (lam) => (lam <= 0.02 ? 1e6 : (S * T) / (C2 * Math.pow(lam, 4)));
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 2000, max: 7000, step: 10, value: 5000, unit: 'K', dec: 0, aria: 'temperature of the blackbody',
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 2000, max: 6000, step: 10, value: 5000, unit: 'K', dec: 0, aria: 'temperature of the blackbody',
     detents: [3000, 4000, 5000, 6000], specials: [{ at: 5523, label: '5250 °C, the sun' }] });
   const TH = F.choice(d.controls, { label: '\\text{theory}', options: [{ value: 'planck', label: 'observed (Planck)' }, { value: 'classical', label: 'classical' }], value: 'planck', aria: 'observed curve or the classical prediction' });
   function draw() {
@@ -310,15 +310,21 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     /* the regions */
     [0.4, 0.7].forEach((v) => line(ctx, X(v), B.t, X(v), B.b, alpha(PAL.ink, 0.35), 2, [10, 10]));
     text(ctx, 'UV', X(0.2), B.t + 18, PAL.muted, { size: 16, align: 'center' });
-    text(ctx, 'visible', X(0.55), B.t + 18, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, 'visible', X(0.6), B.t + 18, PAL.muted, { size: 16, align: 'center' });
     text(ctx, 'infrared', X(1.6), B.t + 18, PAL.muted, { size: 16, align: 'center' });
     /* the visible band under the observed curve, in the colours of that light */
     clip(() => paintVisible(ctx, (nm) => X(nm / 1000), B.b, (nm) => Math.max(B.t, Y(planck(Tv)(nm / 1000)))));
+    /* the chosen curve's two labels first, so a faint name that would sit on them is left to the caption */
+    const lamS = 'λ_{max} = ' + fmt(lm, 3) + ' μm', lx = X(lm) + 16, ly = Math.max(B.t + 44, Y(planck(Tv)(lm)) - 24), lw = F.measure(ctx, lamS, { size: 18, weight: 600 });
+    const xT = Math.min(2.85, lm + 0.5), tx = X(xT), ty0 = Math.max(B.t + 70, Y(planck(Tv)(xT)) - 20), ty = !clas && tx < lx + lw * 1.25 + 24 && Math.abs(ty0 - ly) < 28 ? ly - 30 : ty0, tw = F.measure(ctx, Tv + ' K', { size: 20, weight: 600 });
+    const taken = [[lx, ly, lx + lw], [tx, ty, tx + tw]];
     /* the book's four temperatures, faint, named at their maxima */
     [3000, 4000, 5000, 6000].forEach((t0) => {
       clip(() => F.curve(ctx, planck(t0), 0.05, 3, X, Y, alpha(PAL.ink, 0.25), 2, 160));
       const px = X(2898 / t0 + 0.2), py = Math.max(B.t + 44, Y(planck(t0)(2898 / t0 + 0.08)) - 6);
-      if (Math.abs(t0 - Tv) > 150) text(ctx, t0 + ' K', px, py, alpha(ct, 0.8), { size: 16, align: 'left' });
+      const pw = F.measure(ctx, t0 + ' K', { size: 16 });
+      const onCurve = [0, 0.5, 1].some((f) => Math.abs(py - Y(planck(Tv)(2898 / t0 + 0.2 + (f * pw * 1.2 * 3) / (B.r - B.l)))) < 18);
+      if (Math.abs(t0 - Tv) > 150 && !onCurve && !taken.some(([a, y, b]) => px < b * 1.02 + 24 && px + pw * 1.25 > a - 24 && Math.abs(py - y) < 28)) text(ctx, t0 + ' K', px, py, alpha(ct, 0.8), { size: 16, align: 'left' });
     });
     /* the locus of maxima, λ_max against the peak height, for 2000 to 7000 K */
     clip(() => {
@@ -333,22 +339,22 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     const pk = planck(Tv)(lm);
     TH.only(ctx, 'planck', () => {
       F.pinned(ctx, B, X, Y, lm, pk, cw);
-      text(ctx, 'λ_{max} = ' + fmt(lm, 3) + ' μm', X(lm) + 16, Math.max(B.t + 44, Y(pk) - 24), cw, { size: 18, weight: 600, bg: PAL.panel });
+      text(ctx, lamS, lx, ly, cw, { size: 18, weight: 600, bg: PAL.panel });
     });
     TH.only(ctx, 'classical', () => {
       const xa = X(Math.pow((S * Tv) / (C2 * 10), 0.25));
       arrow(ctx, xa + 90, B.t + 70, xa + 12, B.t + 12, PAL.ink, 3);
       text(ctx, 'the ultraviolet catastrophe', xa + 96, B.t + 78, PAL.ink, { size: 18, weight: 600, bg: PAL.panel });
     });
-    text(ctx, Tv + ' K', X(Math.min(2.85, lm + 0.35)), Math.max(B.t + 70, Y(planck(Tv)(Math.min(2.85, lm + 0.35))) - 20), ct, { size: 20, weight: 600, align: 'left', bg: PAL.panel });
+    text(ctx, Tv + ' K', tx, ty, ct, { size: 20, weight: 600, align: 'left', bg: PAL.panel });
     topline(ctx, clas
-      ? 'At ' + Tv + ' K the classical theory agrees with the observed curve at long wavelengths but climbs without limit as the wavelength shrinks.'
+      ? 'At ' + Tv + ' K the classical curve climbs without limit as the wavelength shrinks.'
       : 'At ' + Tv + ' K (' + fmt(Tv - 273, 0) + ' °C) the curve reaches its maximum at ' + fmt(lm * 1000, 0) + ' nm, ' + (lm * 1000 < 400 ? 'in the ultraviolet' : lm * 1000 <= 700 ? 'in the visible' : 'in the infrared') + '.');
     readout(d.readout,
       `\\klammax=${fmt(lm * 1000, 0)}\\ \\text{nm at}\\ \\kT=${Tv}\\ \\text{K}`,
       clas
-        ? 'With vibrating atoms allowed any energy, the intensity grows without limit at short wavelengths; restricting each frequency to the energies E = nhν makes the curve turn down, as observed.'
-        : 'Planck’s quantized energies, E = nhν, give the observed curve; as the temperature rises the maximum grows and moves to shorter wavelengths.');
+        ? 'With vibrating atoms allowed any energy, the intensity grows without limit at short wavelengths; restricting each frequency to the energies $\\kE=nh\\knu$ makes the curve turn down, as observed.'
+        : 'Planck’s quantized energies, $\\kE=nh\\knu$, give the observed curve.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -369,7 +375,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
   const BR = ctl(d.controls, { label: '\\text{brightness}', cls: '', min: 1, max: 8, step: 1, value: 3, unit: 'photons/s', dec: 0, aria: 'brightness, the number of photons arriving each second' });
   const LOOP = 8, cy = cycle(() => LOOP, 0);
   const MT = { l: 420, r: 1180, y: 430 };           /* the metal's surface */
-  const SRC = [120, 110], TRAVEL = 1.1;              /* where the light comes from, and the seconds a photon takes to reach the surface */
+  const SRC = [340, 110], TRAVEL = 1.1;              /* where the light comes from, and the seconds a photon takes to reach the surface */
   const hash = (i) => { const s = Math.sin(i * 12.9898) * 43758.5453; return s - Math.floor(s); };
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
@@ -416,8 +422,8 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
       ? `\\kKE=\\kE-\\kE_{\\text{threshold}}=${sciT(E)}\\ \\text{J}-${sciT(W0)}\\ \\text{J}=${sciT(KE)}\\ \\text{J}`
       : `\\kE=\\frac{h\\kc}{\\klam}=${sciT(E)}\\ \\text{J}<\\kE_{\\text{threshold}}=${sciT(W0)}\\ \\text{J}`,
       out
-        ? 'The threshold wavelength is ' + fmt(L0, 0) + ' nm; a brighter light sends more photons and frees more electrons, but none of them faster.'
-        : 'Light of wavelength longer than ' + fmt(L0, 0) + ' nm, a frequency below ' + sciU(CL / (L0 * 1e-9)) + ' Hz, ejects nothing; only the energy of each photon counts, not how many arrive.');
+        ? undefined
+        : 'Light of wavelength longer than ' + fmt(L0, 0) + ' nm, a frequency below ' + sciU(CL / (L0 * 1e-9)) + ' Hz, ejects nothing.');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

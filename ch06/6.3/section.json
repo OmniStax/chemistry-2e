@@ -4,7 +4,7 @@
  "chapter": "6",
  "title": "Development of Quantum Theory",
  "short": "Development of Quantum Theory",
- "lead": "Bohr’s model could not say why only certain orbits were allowed, and it failed for every atom with more than one electron. Three ideas replaced it: de Broglie’s proposal that a particle such as an electron also behaves as a wave, Heisenberg’s limit on how exactly its position and <span data-concept=\"momentum\">momentum</span> can be known together, and Schrödinger’s <span data-concept=\"wavefunction\">wavefunctions</span>, whose squared magnitude gives the probability of finding the electron near a point. Four quantum numbers then describe an electron in an atom, and the Pauli exclusion principle allows no two electrons to share all four.",
+ "lead": "Bohr’s model could not say why only certain orbits were allowed, and it failed for every atom with more than one electron. In its place came de Broglie’s matter waves, Heisenberg’s limit on knowing position and <span data-concept=\"momentum\">momentum</span> together, Schrödinger’s <span data-concept=\"wavefunction\">wavefunctions</span>, and the four quantum numbers that describe an electron in an atom.",
  "objectives": [
   "Extend the concept of wave–particle duality that was observed in electromagnetic radiation to matter as well",
   "Understand the general idea of the quantum mechanical description of electrons in an atom, and that it uses the notion of three-dimensional wave functions, or orbitals, that define the distribution of probability to find an electron in a particular part of space",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -53,6 +57,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note repeating the headline and caption dropped"
     }
    ]
   },
@@ -77,6 +86,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note repeating the caption dropped"
     }
    ]
   },
@@ -130,6 +144,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "headline one line clear of the axis title; note repeating caption dropped"
     }
    ]
   },
@@ -147,6 +166,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "camera pulled back, axes shortened, clear of the headline; notes cut"
     }
    ]
   },
@@ -166,6 +190,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "orbital lines narrowed so 1s clears the axis and 4p the edge"
     }
    ]
   },
@@ -188,6 +217,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "moment arrows thinned so their heads show"
     }
    ]
   }

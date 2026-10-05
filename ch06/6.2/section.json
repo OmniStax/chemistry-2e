@@ -4,7 +4,7 @@
   "chapter": "6",
   "title": "The Bohr Model",
   "short": "The Bohr Model",
-  "lead": "Bohr kept the planetary picture of the atom but allowed the electron only certain orbits, each with a definite <span data-concept=\"energy-and-work\">energy</span>. The atom emits or absorbs light only when the electron moves between two of them. For hydrogen and the one-electron ions, the model gives the <span data-concept=\"energy-and-work\">energy</span> and radius of each orbit and the photon a transition produces, and the Rydberg equation follows from it.",
+  "lead": "Bohr kept the planetary picture of the atom but allowed the electron only certain orbits, each with a definite <span data-concept=\"energy-and-work\">energy</span>, so that the atom emits or absorbs light only when the electron moves between two of them. For hydrogen and the one-electron ions, the model gives the <span data-concept=\"energy-and-work\">energy</span> and radius of each orbit and the photon each transition produces.",
   "objectives": [
     "Describe the Bohr model of the hydrogen atom",
     "Use the Rydberg equation to calculate energies of light emitted or absorbed by hydrogen atoms"
@@ -19,6 +19,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
       }
     ],
     "figures": [
@@ -53,6 +57,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "n₁ and n₂ as choices; note cut to the Rydberg constant through macros"
         }
       ]
     },
@@ -80,6 +89,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "nᵢ and n_f as choices; labels on panels; note through macros, shortened"
         }
       ]
     },
@@ -100,6 +114,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "n as a choice; radius and charge labels kept apart; columns fit; note cut"
         }
       ]
     },

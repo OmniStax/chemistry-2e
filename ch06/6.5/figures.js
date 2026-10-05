@@ -227,8 +227,10 @@ function disc(ctx, x, y, r, sym) {
       ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.3); ctx.strokeRect(x - CW / 2, y - CH / 2, CW, CH); ctx.restore();
       prop.only(ctx, 'ea', () => { if (pos) { ctx.save(); ctx.setLineDash([5, 4]); ctx.lineWidth = 2.5; ctx.strokeStyle = ce; ctx.strokeRect(x - CW / 2 + 3, y - CH / 2 + 3, CW - 6, CH - 6); ctx.restore(); } }, [0, 0]);
       text(ctx, e.sym, x, y - 12, PAL.ink, { size: 19, weight: 600, align: 'center' });
-      prop.only(ctx, 'ie', () => text(ctx, e.ieBook ? String(e.ie) : '…', x, y + 14, ce, { size: 17, align: 'center' }), [0, 0]);
-      prop.only(ctx, 'ea', () => text(ctx, eaText(e), x, y + 14, ce, { size: 17, align: 'center' }), [0, 0]);
+      /* a value on a deeply shaded cell is set in ink, which reads against the shading where the energy hue does not */
+      const deepIE = e.ieBook && e.ie > 1100, deepEA = n !== null && n < -170;
+      prop.only(ctx, 'ie', () => text(ctx, e.ieBook ? String(e.ie) : '…', x, y + 14, deepIE ? PAL.ink : ce, { size: 17, align: 'center', weight: deepIE ? 600 : 400 }), [0, 0]);
+      prop.only(ctx, 'ea', () => text(ctx, eaText(e), x, y + 14, deepEA ? PAL.ink : ce, { size: 17, align: 'center', weight: deepEA ? 600 : 400 }), [0, 0]);
       const val = v === 'ie' ? (e.ieBook ? `first ionization energy ${e.ie} kJ/mol` : 'no value printed') : (e.ea === null ? 'no value printed' : `electron affinity ${eaText(e)} kJ/mol`);
       hits.push({ x, y, r: 30, name: `${e.name}, ${val}` });
     });
@@ -262,7 +264,7 @@ function disc(ctx, x, y, r, sym) {
     const s = pick.value, ce = C('energy'), n = VAL[s], vals = IE[s];
     const hs = pick.mix((w) => IE[w].map((x) => x ?? 0));
     const ratio = vals[n] / vals[n - 1];
-    headline(ctx, `${BY[s].name} has ${WORD[n]} valence electron${n > 1 ? 's' : ''}, so its ionization energies jump after the ${ORD[n]}: IE_{${n + 1}} is ${fmt(ratio, 2)} times IE_{${n}}.`);
+    headline(ctx, `${BY[s].name} has ${WORD[n]} valence electron${n > 1 ? 's' : ''}, so its ionization energies jump after the ${ORD[n]}: $\\kIE_{${n + 1}}$ is ${fmt(ratio, 2)} times $\\kIE_{${n}}$.`);
     const { Y } = axes(ctx, box, [0, 7], [0, 14000], { nx: 7, ny: 7, yl: 'ionization energy (kJ/mol)', yc: ce, fx: () => '', fy: (y) => fmt(y, 0) });
     const k = F.arrival(d);
     hits = [];

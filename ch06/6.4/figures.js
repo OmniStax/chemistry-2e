@@ -277,8 +277,8 @@ function atomTag(ctx, sym, x, y, r, size) {
     const c = coreOf(Z);
     const f = `\\text{${el0.sym}}:\\ ${texTerms(terms(obs))}` + (c ? `=[\\text{${c[1]}}]\\,${texTerms(valenceTerms(Z, obs))}` : '');
     ro.set(f, exc
-      ? 'The Aufbau order predicts ' + abbr(Z, pred) + '; the ground state observed is ' + abbr(Z, obs) + ', with ' + un + '.'
-      : (c ? 'Outside the [' + c[1] + '] core the configuration is ' + plain(valenceTerms(Z, obs)) + ', with ' + un + '.' : 'The atom has no noble-gas core, and it has ' + un + '.'));
+      ? 'The observed ground state has ' + un + '.'
+      : '');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -421,7 +421,7 @@ function atomTag(ctx, sym, x, y, r, size) {
     const c = coreOf(sel);
     const f = `\\text{${s0.sym}}:\\ ` + (c ? `[\\text{${c[1]}}]\\,` : '') + texTerms(c ? vt : terms(so), isVal);
     const rule = kind === 'a main group element'
-      ? 'The valence electrons of a main group element are those with the highest n, ' + nVal + ' here, underlined' + (vt.some(([s]) => !isVal(s)) ? '; the filled subshells beneath them count as core.' : '.')
+      ? 'The valence electrons of a main group element are those in the shell of highest n, the ' + nVal + ' underlined here' + (vt.some(([s]) => !isVal(s)) ? '; the filled subshells beneath them count as core.' : '.')
       : kind === 'a transition element'
         ? 'The valence electrons of a transition element are the ns and (n – 1)d electrons, ' + nVal + ' here, underlined.'
         : 'The valence shell of an inner transition element holds the (n – 2)f, (n – 1)d and ns subshells, ' + nVal + ' electrons here, underlined.';

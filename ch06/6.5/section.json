@@ -4,7 +4,7 @@
  "chapter": "6",
  "title": "Periodic Variations in Element Properties",
  "short": "Periodic Variations",
- "lead": "The size of an atom, the <span data-concept=\"energy-and-work\">energy</span> needed to remove an electron from it, and the <span data-concept=\"energy-and-work\">energy</span> change when it accepts one all vary periodically with its electronic structure. The effective nuclear charge explains the trends in covalent and ionic radius. First and successive ionization energies change in regular ways across periods and down groups, and <span data-concept=\"electron-affinity\">electron affinity</span> follows a trend with a few exceptions.",
+ "lead": "The size of an atom, the <span data-concept=\"energy-and-work\">energy</span> needed to remove an electron from it and the <span data-concept=\"energy-and-work\">energy</span> change when it gains one all vary periodically with its electronic structure. Covalent and ionic radii, first and successive ionization energies, and <span data-concept=\"electron-affinity\">electron affinities</span> are followed across periods and down groups, with the effective nuclear charge as the guide.",
  "objectives": [
   "Describe and explain the observed trends in atomic size, ionization energy, and electron affinity of the elements"
  ],
@@ -15,6 +15,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -178,6 +182,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "values on deeply shaded cells set in ink for contrast"
     }
    ]
   },
@@ -204,6 +213,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "headline IE symbols typeset through the macros"
     }
    ]
   }

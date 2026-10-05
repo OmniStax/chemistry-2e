@@ -4,7 +4,7 @@
   "chapter": "6",
   "title": "Electromagnetic Energy",
   "short": "Electromagnetic Energy",
-  "lead": "Light is a wave, with a <span data-concept=\"wavelength\">wavelength</span> and a <span data-concept=\"frequency\">frequency</span> whose product is <span data-type=\"velocity\">the speed of light</span>, and it is also a stream of photons, each carrying an <span data-concept=\"energy-and-work\">energy</span> set by its <span data-concept=\"frequency\">frequency</span>. Traveling and standing waves and the electromagnetic spectrum come first. Then come three observations that classical physics could not explain: blackbody curves, the photoelectric effect and the line spectra of the elements.",
+  "lead": "Light behaves as a wave, with a <span data-concept=\"wavelength\">wavelength</span> and a <span data-concept=\"frequency\">frequency</span>, and also as a stream of <span data-concept=\"photon\">photons</span>, each carrying <span data-concept=\"energy-and-work\">energy</span>. Waves, standing waves and the electromagnetic spectrum lead to three observations that classical physics could not explain: blackbody radiation, the photoelectric effect and the line spectra of the elements.",
   "objectives": [
     "Explain the basic behavior of waves, including travelling waves and standing waves",
     "Describe the wave nature of light",
@@ -19,6 +19,10 @@
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
       }
     ],
     "figures": [
@@ -32,13 +36,26 @@
   "exercises_lead": "",
   "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. The three Check Your Learning items carry the book’s own answers from the notes that follow them. Answers to the end-of-chapter exercises come from the book’s key, which covers the odd-numbered items of the chapter’s list; the seven unkeyed items are all numerical and are left out, with no answer computed: fs-idm65612800 (the wavelength of an FM station at 103.1 MHz), fs-idp23451200 (the energy of mercury’s 435.8 nm line), fs-idp158798576 (the frequency, wavelength and color of lithium’s photons), fs-idm74058400 (the frequencies and color of rubidium’s two lines), fs-idp80961152 (the infrared photons that warm a cup of water), fs-idp181189472 (the photons that trip a reptile’s visual signal) and fs-idp156427216 (the Blu-ray laser). The item on the colors of an RGB display is keyed with approximate values the book says may differ, so it is an open answer to compare with. Nothing is taken from another section and nothing is held for one. Numeric answers accept 2% tolerance.",
   "figures": [
-    { "id": "sim-wave", "kind": "sim", "number": "6.2", "originals": ["/media/ch06/CNX_Chem_06_01_Frequency.jpg"], "original_caption": "One-dimensional sinusoidal waves show the relationship among wavelength, frequency, and speed. The wave with the shortest wavelength has the highest frequency. Amplitude is one-half the height of the wave from peak to trough.", "draws": ["wavelength", "frequency"], "ai": [
-  {
-    "model": "claude-opus-5-5",
-    "effort": "low",
-    "part": "built"
-  }
-] },
+    {
+      "id": "sim-wave",
+      "kind": "sim",
+      "number": "6.2",
+      "originals": ["/media/ch06/CNX_Chem_06_01_Frequency.jpg"],
+      "original_caption": "One-dimensional sinusoidal waves show the relationship among wavelength, frequency, and speed. The wave with the shortest wavelength has the highest frequency. Amplitude is one-half the height of the wave from peak to trough.",
+      "draws": ["wavelength", "frequency"],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "distance label off the λ bracket; note repeating the caption dropped"
+        }
+      ]
+    },
     {
       "id": "sim-spectrum",
       "kind": "sim",
@@ -54,24 +71,55 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "axis titles clear the values; E = hν into the readout; note dropped"
         }
       ]
     },
-    { "id": "sim-amfm", "kind": "sim", "number": "6.5", "originals": ["/media/ch06/CNX_Chem_06_01_AMFM.jpg"], "original_caption": "This schematic depicts how amplitude modulation (AM) and frequency modulation (FM) can be used to transmit a radio wave.", "draws": ["frequency"], "ai": [
-  {
-    "model": "claude-opus-5-5",
-    "effort": "low",
-    "part": "built"
-  }
-] },
+    {
+      "id": "sim-amfm",
+      "kind": "sim",
+      "number": "6.5",
+      "originals": ["/media/ch06/CNX_Chem_06_01_AMFM.jpg"],
+      "original_caption": "This schematic depicts how amplitude modulation (AM) and frequency modulation (FM) can be used to transmit a radio wave.",
+      "draws": ["frequency"],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "signal off the headline; AM note shortened"
+        }
+      ]
+    },
     { "id": "fig-fringes", "kind": "photo", "number": "6.6", "draws": [] },
-    { "id": "sim-string", "kind": "sim", "number": "6.7", "originals": ["/media/ch06/CNX_Chem_06_01_Vibrstring.jpg"], "original_caption": "A vibrating string shows some one-dimensional standing waves. Since the two end points of the string are held fixed, only waves having an integer number of half-wavelengths can form. The points on the string between the end points that are not moving are called the nodes.", "draws": ["wavelength"], "ai": [
-  {
-    "model": "claude-opus-5-5",
-    "effort": "low",
-    "part": "built"
-  }
-] },
+    {
+      "id": "sim-string",
+      "kind": "sim",
+      "number": "6.7",
+      "originals": ["/media/ch06/CNX_Chem_06_01_Vibrstring.jpg"],
+      "original_caption": "A vibrating string shows some one-dimensional standing waves. Since the two end points of the string are held fixed, only waves having an integer number of half-wavelengths can form. The points on the string between the end points that are not moving are called the nodes.",
+      "draws": ["wavelength"],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "note repeating caption and headline cut to the quantization fact"
+        }
+      ]
+    },
     { "id": "fig-drum", "kind": "photo", "number": "6.8", "draws": [] },
     { "id": "fig-solar", "kind": "photo", "number": "6.9", "draws": [] },
     {
@@ -89,6 +137,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "T to 6000 K, labels kept apart, one-line headline, note through macros"
         }
       ]
     },
@@ -110,6 +163,11 @@
           "model": "claude-opus-5-5",
           "effort": "low",
           "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "light source moved off its labels; notes repeating the caption cut"
         }
       ]
     },

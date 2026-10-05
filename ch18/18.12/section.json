@@ -1,0 +1,192 @@
+{
+ "id": "18.12",
+ "module": "m68840",
+ "chapter": "18",
+ "title": "Occurrence, Preparation, and Properties of the Noble Gases",
+ "short": "Noble gases",
+ "lead": "The <span data-concept=\"noble-gas\">noble gases</span> of group 18 were long assumed to be nonreactive because their valence shells are filled. The section follows where they are found, why they boil and melt only at very low temperatures, how they serve as coolants, inert atmospheres and sources of light, and the fluorides and oxides that xenon and a few of its neighbors form.",
+ "objectives": [
+  "Describe the properties, preparation, and uses of the noble gases"
+ ],
+ "summary_html": "<p>The most significant property of the <span data-concept=\"noble-gas\">noble gases</span> (group 18) is their inactivity. They occur in low concentrations in the atmosphere. They find uses as inert atmospheres, neon signs, and as coolants. The three heaviest noble gases react with fluorine to form fluorides. The xenon fluorides are the best characterized as the starting materials for a few other noble gas compounds.</p>",
+ "notes": "The section keeps as printed “maximum oxidation sate of 8+”.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idm74693408 (the molecular structures of five xenon compounds), fs-idm133419136 (the oxidation state of the noble gas in five compounds) and fs-idm4544048 (the mass of manganese(II) nitrate hexahydrate that reacts with a perxenate solution) are left out, and no answer is computed for them. Nothing is moved.",
+ "figures": [],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "occurrence",
+   "concept": "noble-gas-properties",
+   "verb": "introduces"
+  },
+  {
+   "span": "occurrence",
+   "concept": "noble-gas",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "valence-shell",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "dispersion-forces",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "uses",
+   "concept": "noble-gas-uses",
+   "verb": "introduces"
+  },
+  {
+   "span": "uses",
+   "concept": "noble-gas-properties",
+   "verb": "uses"
+  },
+  {
+   "span": "uses",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "noble-gas-compounds",
+   "verb": "introduces"
+  },
+  {
+   "span": "compounds",
+   "concept": "noble-gas-properties",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "halogen-properties",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "compounds",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idm83460880",
+   "source_number": "111",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "Give the hybridization of xenon in each of the following. You may wish to review the chapter on the advanced theories of covalent bonding.<br>(a) XeF<sub>2</sub><br>(b) XeF<sub>4</sub><br>(c) XeO<sub>3</sub><br>(d) XeO<sub>4</sub><br>(e) XeOF<sub>4</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) <em>sp</em><sup>3</sup><em>d</em> hybridized; (b) <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> hybridized; (c) <em>sp</em><sup>3</sup> hybridized; (d) <em>sp</em><sup>3</sup> hybridized; (e) <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> hybridized;"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp149698576",
+   "source_number": "113",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "Indicate whether each of the following molecules is polar or nonpolar. You may wish to review the chapter on chemical bonding and molecular geometry.<br>(a) XeF<sub>2</sub><br>(b) XeF<sub>4</sub><br>(c) XeO<sub>3</sub><br>(d) XeO<sub>4</sub><br>(e) XeOF<sub>4</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) nonpolar; (b) nonpolar; (c) polar; (d) nonpolar; (e) polar"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idm124175648",
+   "source_number": "115",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "compounds",
+   "prompt": "A mixture of xenon and fluorine was heated. A sample of the white solid that formed reacted with hydrogen to yield 81 mL of xenon (at STP) and hydrogen fluoride, which was collected in water, giving a solution of hydrofluoric acid. The hydrofluoric acid solution was titrated, and 68.43 mL of 0.3172 <em>M</em> sodium hydroxide was required to reach the equivalence point. Determine the empirical formula for the white solid and write balanced chemical equations for the reactions involving xenon.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The empirical formula is XeF<sub>6</sub>, and the balanced reactions are: $\\begin{array}{l}\\text{Xe}(g)+{\\text{3F}}_{2}(g)\\;\\overset{\\;\\text{Δ}\\;}{\\to}\\;{\\text{XeF}}_{6}(s) \\\\ {\\text{XeF}}_{6}(s)+{\\text{3H}}_{2}(g)\\;\\longrightarrow \\;\\text{6HF}(g)+\\text{Xe}(g)\\end{array}$"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "noble-gas-compounds"
+  },
+  {
+   "exercise": "e1",
+   "concept": "hybridization"
+  },
+  {
+   "exercise": "e2",
+   "concept": "noble-gas-compounds"
+  },
+  {
+   "exercise": "e2",
+   "concept": "polar-molecule"
+  },
+  {
+   "exercise": "e3",
+   "concept": "noble-gas-compounds"
+  },
+  {
+   "exercise": "e3",
+   "concept": "empirical-formula"
+  },
+  {
+   "exercise": "e3",
+   "concept": "titration-calculation"
+  }
+ ]
+}

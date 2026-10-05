@@ -1,0 +1,812 @@
+{
+  "id": "21.4",
+  "module": "m68856",
+  "chapter": "21",
+  "title": "Transmutation and Nuclear Energy",
+  "short": "Nuclear Energy",
+  "lead": "<span data-concept=\"nuclear-transmutation\">Nuclear transmutation</span> turns one nuclide into another, by bombarding nuclei with other nuclei or with neutrons, and it is how the <span data-concept=\"transuranium-element\">transuranium elements</span> are made. The section then turns to the two nuclear reactions that release enormous amounts of <span data-concept=\"energy-and-work\">energy</span>, the <span data-concept=\"nuclear-fission\">fission</span> of heavy nuclei and the <span data-concept=\"nuclear-fusion\">fusion</span> of light ones, and to the <span data-concept=\"chain-reaction\">chain reaction</span>, the <span data-concept=\"critical-mass\">critical mass</span> and the parts of a <span data-concept=\"nuclear-reactor\">nuclear reactor</span> that put fission to use.",
+  "objectives": [
+    "Describe the synthesis of transuranium nuclides",
+    "Explain nuclear fission and fusion processes",
+    "Relate the concepts of critical mass and nuclear chain reactions",
+    "Summarize basic requirements for nuclear fission and fusion reactors"
+  ],
+  "summary_html": "<p>It is possible to produce new atoms by bombarding other atoms with nuclei or high-speed particles. The products of these <span data-concept=\"nuclear-transmutation\">transmutation reactions</span> can be stable or radioactive. A number of artificial elements, including technetium, astatine, and the <span data-concept=\"transuranium-element\">transuranium elements</span>, have been produced in this way.</p><p>Nuclear power as well as nuclear weapon detonations can be generated through <span data-concept=\"nuclear-fission\">fission</span> (reactions in which a heavy nucleus is split into two or more lighter nuclei and several neutrons). Because the neutrons may induce additional fission reactions when they combine with other heavy nuclei, a <span data-concept=\"chain-reaction\">chain reaction</span> can result. Useful power is obtained if the fission process is carried out in a <span data-concept=\"nuclear-reactor\">nuclear reactor</span>. The conversion of light nuclei into heavier nuclei (<span data-concept=\"nuclear-fusion\">fusion</span>) also produces <span data-concept=\"energy-and-work\">energy</span>. At present, this <span data-concept=\"energy-and-work\">energy</span> has not been contained adequately and is too expensive to be feasible for commercial <span data-concept=\"energy-and-work\">energy</span> production.</p>",
+  "notes": "The section’s opening, which the book prints without a header, carries one of OmniStax’s own, and the four Link to Learning notes (a talk and a video on the Large Hadron Collider, a simulation of nuclear fission, a video on how nuclear reactors work and a page on nuclear waste management) are left out. It keeps as printed “split the U-238 nuclei” after uranium-235, “Strassman”, the atomic number 107 beside meitnerium-266 with its 109 in Table 21.3, the sun’s “2₊₁⁰e⁺”, fusion’s 3.6 × 10¹¹ kJ called “somewhat larger” than fission’s 1.8 × 10¹⁰ kJ, “any radioactive materials might be released”, and the summary’s technetium and astatine, which the section does not make. Figure 21.15 (a) writes ⁹⁷₃₇Rb + ¹³⁷₅₅Cs + 3n, whose mass numbers add to 237, and the live figure takes Figure 21.16’s balanced ⁹⁶₃₇Rb in its place; Figure 21.16 draws its first fission as Kr-93 and Ba-142 above an equation that writes Ba-140 and Kr-90; both images are kept as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key; the suggested approaches to fs-idm227188304, fs-idm153436832 and fs-idm209547408, which the key does not answer, are OmniStax’s own. The unkeyed exercise fs-idm210379536 (the energy released per mole of helium-4 by the fusion of hydrogen-1 and tritium) is left out, and no answer is computed for it. Nothing is moved.",
+  "figures": [
+    {
+      "id": "photo-cern",
+      "kind": "photo",
+      "number": "21.13",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-fission",
+      "kind": "sim",
+      "number": "21.14",
+      "folds": [
+        "21.15"
+      ],
+      "originals": [
+        "/media/ch21/CNX_Chem_21_04_Fission1.jpg",
+        "/media/ch21/CNX_Chem_21_04_Fission2.jpg"
+      ],
+      "original_caption": "(Figure 21.14) When a slow neutron hits a fissionable U-235 nucleus, it is absorbed and forms an unstable U-236 nucleus. The U-236 nucleus then rapidly breaks apart into two smaller nuclei (in this case, Ba-141 and Kr-92) along with several neutrons (usually two or three), and releases a very large amount of energy. (Figure 21.15) (a) Nuclear fission of U-235 produces a range of fission products. (b) The larger fission products of U-235 are typically one isotope with a mass number around 85–105, and another isotope with a mass number that is about 50% larger, that is, about 130–150.",
+      "draws": [
+        "energy"
+      ],
+      "conventions": [
+        "p+",
+        "n0"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-chain",
+      "kind": "sim",
+      "number": "21.16",
+      "folds": [
+        "21.17"
+      ],
+      "originals": [
+        "/media/ch21/CNX_Chem_21_04_ChnReact1.jpg",
+        "/media/ch21/CNX_Chem_21_04_CritMass.jpg"
+      ],
+      "original_caption": "(Figure 21.16) The fission of a large nucleus, such as U-235, produces two or three neutrons, each of which is capable of causing fission of another nucleus by the reactions shown. If this process continues, a nuclear chain reaction occurs. (Figure 21.17) (a) In a subcritical mass, the fissile material is too small and allows too many neutrons to escape the material, so a chain reaction does not occur. (b) In a critical mass, a large enough number of neutrons in the fissile material induce fission to create a chain reaction.",
+      "draws": [
+        "energy"
+      ],
+      "conventions": [
+        "U",
+        "n0"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "photo-bomb",
+      "kind": "photo",
+      "number": "21.18",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "photo-power-plant",
+      "kind": "photo",
+      "number": "21.19",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-reactor",
+      "kind": "sim",
+      "number": "21.20",
+      "originals": [
+        "/media/ch21/CNX_Chem_21_04_ControlRod.jpg"
+      ],
+      "original_caption": "The nuclear reactor core shown in (a) contains the fuel and control rod assembly shown in (b). (credit: modification of work by E. Generalic, http://glossary.periodni.com/glossary.php?en=control+rod)",
+      "draws": [
+        "rate",
+        "energy"
+      ],
+      "conventions": [
+        "U",
+        "n0"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "photo-three-mile-island",
+      "kind": "photo",
+      "number": "21.21",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "photo-fukushima",
+      "kind": "photo",
+      "number": "21.22",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "photo-fusion",
+      "kind": "photo",
+      "number": "21.23",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "light-fragment",
+      "label": "the lighter fission fragment",
+      "figures": [
+        "sim-fission"
+      ]
+    },
+    {
+      "id": "heavy-fragment",
+      "label": "the heavier fission fragment",
+      "figures": [
+        "sim-fission"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "nuclear-age",
+      "concept": "radioactivity",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-age",
+      "concept": "nuclear-chemistry",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-age",
+      "concept": "isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "nuclear-age",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "nuclear-transmutation",
+      "verb": "introduces"
+    },
+    {
+      "span": "synthesis",
+      "concept": "particle-accelerator",
+      "verb": "introduces"
+    },
+    {
+      "span": "synthesis",
+      "concept": "transuranium-element",
+      "verb": "introduces"
+    },
+    {
+      "span": "synthesis",
+      "concept": "nuclide",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "radioactive-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "neutron",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "alpha-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "proton",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "kinetic-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "atomic-number",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "radioactive-half-life",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "beta-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "balanced-nuclear-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "synthesis",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "nuclear-fission",
+      "verb": "introduces"
+    },
+    {
+      "span": "fission",
+      "concept": "chain-reaction",
+      "verb": "introduces"
+    },
+    {
+      "span": "fission",
+      "concept": "fissile-material",
+      "verb": "introduces"
+    },
+    {
+      "span": "fission",
+      "concept": "critical-mass",
+      "verb": "introduces"
+    },
+    {
+      "span": "fission",
+      "concept": "binding-energy-per-nucleon",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "mass-number",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "neutron",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "reaction-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "fission",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "reactors",
+      "concept": "nuclear-reactor",
+      "verb": "introduces"
+    },
+    {
+      "span": "reactors",
+      "concept": "critical-mass",
+      "verb": "uses"
+    },
+    {
+      "span": "reactors",
+      "concept": "chain-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "reactors",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "nuclear-fuel",
+      "verb": "introduces"
+    },
+    {
+      "span": "fuels",
+      "concept": "isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "grahams-law",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "fuels",
+      "concept": "chain-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "moderators",
+      "concept": "nuclear-moderator",
+      "verb": "introduces"
+    },
+    {
+      "span": "moderators",
+      "concept": "hydrogen-isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "moderators",
+      "concept": "nuclear-fission",
+      "verb": "uses"
+    },
+    {
+      "span": "coolants",
+      "concept": "reactor-coolant",
+      "verb": "introduces"
+    },
+    {
+      "span": "coolants",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "control-rod",
+      "verb": "introduces"
+    },
+    {
+      "span": "control-rods",
+      "concept": "reaction-rate",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "alpha-particle",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "chain-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "control-rods",
+      "concept": "nuclear-moderator",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "containment-system",
+      "verb": "introduces"
+    },
+    {
+      "span": "containment",
+      "concept": "gamma-ray",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "heat-flow",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "critical-mass",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "transuranium-element",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "radioactive-decay",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "containment",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "nuclear-fusion",
+      "verb": "introduces"
+    },
+    {
+      "span": "fusion",
+      "concept": "nuclear-energy-release",
+      "verb": "introduces"
+    },
+    {
+      "span": "fusion",
+      "concept": "fusion-reactor",
+      "verb": "introduces"
+    },
+    {
+      "span": "fusion",
+      "concept": "positron",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "hydrogen-isotopes",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "mass",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "mass-defect",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "kinetic-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "plasma",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "gas-pressure",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "energy-and-work",
+      "verb": "uses"
+    },
+    {
+      "span": "fusion",
+      "concept": "binding-energy-per-nucleon",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "e1",
+      "source_id": "fs-idm122155008",
+      "source_number": "47",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "synthesis",
+      "prompt": "Write the balanced nuclear equation for the production of the following transuranium elements:<br>(a) berkelium-244, made by the reaction of Am-241 and He-4<br>(b) fermium-254, made by the reaction of Pu-239 with a large number of neutrons<br>(c) lawrencium-257, made by the reaction of Cf-250 and B-11<br>(d) dubnium-260, made by the reaction of Cf-249 and N-15",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) ${}_{\\;95}^{241}\\text{Am}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;97}^{244}\\text{Bk}+{}_{0}^{1}\\text{n};$ (b) ${}_{\\;94}^{239}\\text{Pu}+15{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{100}^{254}\\text{Fm}+6{}_{−1}^{\\;0}\\text{e};$ (c) ${}_{\\;98}^{250}\\text{Cf}+{}_{\\;5}^{11}\\text{B}\\;\\longrightarrow \\;{}_{103}^{257}\\text{Lr}+4{}_{0}^{1}\\text{n};$ (d) ${}_{\\;98}^{249}\\text{Cf}+{}_{\\;7}^{15}\\text{N}\\;\\longrightarrow \\;{}_{105}^{260}\\text{Db}+4{}_{0}^{1}\\text{n}$"
+      }
+    },
+    {
+      "id": "e2",
+      "source_id": "fs-idm227188304",
+      "source_number": "48",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "fusion",
+      "prompt": "How does nuclear fission differ from nuclear fusion? Why are both of these processes exothermic?",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Compare what happens to the nuclei. In fission a heavy nucleus, such as uranium-235 that has absorbed a neutron, splits into two nuclei of intermediate mass number and a few neutrons; in fusion very light nuclei, such as the isotopes of hydrogen, combine into a heavier nucleus. For why both release energy, look at where the reactants and the products sit on the graph of binding energy per nucleon against mass number in Figure 21.3: in both reactions the products lie nearer the peak near mass number 56, so they are more tightly bound, their total mass is less than that of the reactants, and the mass lost appears as energy according to E = mc<sup>2</sup>."
+      }
+    },
+    {
+      "id": "e3",
+      "source_id": "fs-idm39373072",
+      "source_number": "49",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "fusion",
+      "prompt": "Both fusion and fission are nuclear reactions. Why is a very high temperature required for fusion, but not for fission?",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "Two nuclei must collide for fusion to occur. High temperatures are required to give the nuclei enough kinetic energy to overcome the very strong repulsion resulting from their positive charges."
+      }
+    },
+    {
+      "id": "e4",
+      "source_id": "fs-idm153436832",
+      "source_number": "50",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "control-rods",
+      "prompt": "Cite the conditions necessary for a nuclear chain reaction to take place. Explain how it can be controlled to produce energy, but not produce an explosion.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Start from what keeps a chain going: the neutrons released by each fission must cause, on average, at least one more fission. That requires a fissionable material in at least a critical mass, so that too few neutrons escape through its surface, and in a reactor neutrons slowed by a moderator so that they can be absorbed by the fuel. Then ask what keeps the number from growing: control rods that absorb neutrons are raised or lowered so that each fission leads to just one more, and the fuel is enriched to only about 5% uranium-235 and kept apart in fuel rods, so a supercritical mass, which an explosion needs, cannot form."
+      }
+    },
+    {
+      "id": "e5",
+      "source_id": "fs-idm213403024",
+      "source_number": "51",
+      "kind": "exercise",
+      "bloom": "Remember",
+      "place": {
+        "at": "end"
+      },
+      "cite": "reactors",
+      "prompt": "Describe the components of a nuclear reactor.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "A nuclear reactor consists of the following:<br>1. A nuclear fuel. A fissionable isotope must be present in large enough quantities to sustain a controlled chain reaction. The radioactive isotope is contained in tubes called fuel rods.<br>2. A moderator. A moderator slows neutrons produced by nuclear reactions so that they can be absorbed by the fuel and cause additional nuclear reactions.<br>3. A coolant. The coolant carries heat from the fission reaction to an external boiler and turbine where it is transformed into electricity.<br>4. A control system. The control system consists of control rods placed between fuel rods to absorb neutrons and is used to adjust the number of neutrons and keep the rate of the chain reaction at a safe level.<br>5. A shield and containment system. The function of this component is to protect workers from radiation produced by the nuclear reactions and to withstand the high pressures resulting from high-temperature reactions."
+      }
+    },
+    {
+      "id": "e6",
+      "source_id": "fs-idm209547408",
+      "source_number": "52",
+      "kind": "exercise",
+      "bloom": "Analyze",
+      "place": {
+        "at": "end"
+      },
+      "cite": "moderators",
+      "prompt": "In usual practice, both a moderator and control rods are necessary to operate a nuclear chain reaction safely for the purpose of energy production. Cite the function of each and explain why both are necessary.",
+      "answer": {
+        "type": "open",
+        "generated_by": "ai",
+        "solution": "Take the two in turn. The neutrons that fission releases move too fast to be absorbed by uranium-235, so the moderator, such as water or graphite, slows them to a speed at which they cause further fission; without it the chain does not run at all. The control rods, of boron, cadmium or hafnium, absorb slow neutrons, and raising or lowering them sets how many neutrons from each fission go on to cause another; without them the chain could grow out of control. One makes the chain reaction possible and the other keeps its rate at a safe level, which is why a power reactor needs both."
+      }
+    },
+    {
+      "id": "e7",
+      "source_id": "fs-idm210381584",
+      "source_number": "53",
+      "kind": "exercise",
+      "bloom": "Understand",
+      "place": {
+        "at": "end"
+      },
+      "cite": "reactors",
+      "prompt": "Describe how the potential energy of uranium is converted into electrical energy in a nuclear power plant.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "The fission of uranium generates heat, which is carried to an external steam generator (boiler). The resulting steam turns a turbine that powers an electrical generator."
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "e1",
+      "concept": "nuclear-transmutation",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "transuranium-element",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e1",
+      "concept": "balancing-nuclear-equations",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "nuclear-fission",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "nuclear-fusion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e2",
+      "concept": "nuclear-energy-release",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "nuclear-fusion",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e3",
+      "concept": "kinetic-energy",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "chain-reaction",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "critical-mass",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e4",
+      "concept": "control-rod",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "nuclear-reactor",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "nuclear-fuel",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "nuclear-moderator",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "reactor-coolant",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "control-rod",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e5",
+      "concept": "containment-system",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "nuclear-moderator",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "control-rod",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e6",
+      "concept": "chain-reaction",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "nuclear-reactor",
+      "weights_by": "ai"
+    },
+    {
+      "exercise": "e7",
+      "concept": "reactor-coolant",
+      "weights_by": "ai"
+    }
+  ]
+}

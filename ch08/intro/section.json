@@ -40,6 +40,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "names under molecules, lone pairs as the book, readout dropped"
     }
    ]
   }

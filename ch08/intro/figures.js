@@ -1,7 +1,7 @@
 /* Figures for the introduction to Chapter 8, Advanced Theories of Covalent Bonding. Boots against the page's text article. */
 window.OMNISTAX_FIGURES = window.OMNISTAX_FIGURES || {};
 window.OMNISTAX_FIGURES['8.intro'] = function (root, F) {
-const { tex, PAL, register, begin, line, text } = F;
+const { PAL, register, begin, line, text } = F;
 const RAD = Math.PI / 180;
 
 function bondLine(ctx, x1, y1, x2, y2, order) {
@@ -11,7 +11,7 @@ function bondLine(ctx, x1, y1, x2, y2, order) {
 }
 /* atoms: [{sym, x, y, lp: [angles in degrees]}]; bonds: [[i, j, order]]; drawn about (cx, cy) */
 function lewis(ctx, cx, cy, atoms, bonds) {
-  const gap = 18;
+  const gap = 24;
   bonds.forEach(([i, j, order]) => {
     const a = atoms[i], b = atoms[j], x1 = cx + a.x, y1 = cy + a.y, x2 = cx + b.x, y2 = cy + b.y, dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1;
     bondLine(ctx, x1 + dx * gap / L, y1 + dy * gap / L, x2 - dx * gap / L, y2 - dy * gap / L, order);
@@ -31,9 +31,10 @@ const H = 200;
 const d = F.sim(root, 'fig-lewis-n2-o2', H);
 function draw() {
   const { ctx } = begin(d.c);
-  lewis(ctx, 420, H / 2, [{ sym: 'N', x: -75, y: 0, lp: [180] }, { sym: 'N', x: 75, y: 0, lp: [0] }], [[0, 1, 3]]);
-  lewis(ctx, 980, H / 2, [{ sym: 'O', x: -75, y: 0, lp: [90, 270] }, { sym: 'O', x: 75, y: 0, lp: [90, 270] }], [[0, 1, 2]]);
-  tex(d.readout, '\\text{N}_2 \\qquad \\text{O}_2');
+  lewis(ctx, 420, 84, [{ sym: 'N', x: -75, y: 0, lp: [180] }, { sym: 'N', x: 75, y: 0, lp: [0] }], [[0, 1, 3]]);
+  lewis(ctx, 980, 84, [{ sym: 'O', x: -75, y: 0, lp: [90, 180] }, { sym: 'O', x: 75, y: 0, lp: [90, 0] }], [[0, 1, 2]]);
+  text(ctx, 'N₂', 420, 160, PAL.muted, { size: 24, align: 'center' });
+  text(ctx, 'O₂', 980, 160, PAL.muted, { size: 24, align: 'center' });
 }
 register(d.fig, { update: () => {}, draw });
 };

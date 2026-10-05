@@ -73,7 +73,7 @@ function resonanceArrow(ctx, x1, x2, y) {
   function orbital(ctx, x, y) { line(ctx, x - HALF, y, x + HALF, y, PAL.ink, 4); }
   /* an electron as a half-arrow on its orbital line, up or down */
   function electron(ctx, x, y, up) {
-    const y1 = up ? y + 20 : y - 20, y2 = up ? y - 20 : y + 20;
+    const y1 = up ? y - 6 : y - 46, y2 = up ? y - 46 : y - 6;
     line(ctx, x, y1, x, y2, PAL.ink, 3);
     line(ctx, x, y2, x + (up ? -10 : 10), y2 + (up ? 14 : -14), PAL.ink, 3);
   }
@@ -88,7 +88,7 @@ function resonanceArrow(ctx, x1, x2, y) {
     text(ctx, 'E', 110, 108, E, { size: 24, weight: 600, align: 'center' });
     /* the isolated atom */
     text(ctx, 'Orbitals in an isolated C atom', 370, 130, PAL.ink, { size: 20, weight: 600, align: 'center' });
-    orbital(ctx, 230, Y2S); electron(ctx, 216, Y2S, true); electron(ctx, 244, Y2S, false);
+    orbital(ctx, 230, Y2S); electron(ctx, 220, Y2S, true); electron(ctx, 240, Y2S, false);
     text(ctx, '2s', 230, Y2S + 50, PAL.ink, { size: 20, align: 'center' });
     [390, 470, 550].forEach((x, i) => { orbital(ctx, x, Y2P); if (i < 2) electron(ctx, x, Y2P, true); });
     text(ctx, '2p', 470, Y2P + 50, PAL.ink, { size: 20, align: 'center' });
@@ -105,8 +105,8 @@ function resonanceArrow(ctx, x1, x2, y) {
       text(ctx, s.name, (hx[0] + hx[hx.length - 1]) / 2, s.ys[0] + 50, PAL.ink, { size: 20, align: 'center' });
       text(ctx, '2p', (px[0] + px[px.length - 1]) / 2, Y2P + 50, PAL.ink, { size: 20, align: 'center' });
     }, [0, 8]));
-    if (pick.value === 'sp2') ro.set('\\mk{s}{2s} + \\mk{p}{2\\,(2p)} \\longrightarrow \\mk{h}{3\\,sp^2}', 'The three sp² orbitals form σ bonds, and the one p orbital left over forms the π bond.', { form: 'sp2' });
-    else ro.set('\\mk{s}{2s} + \\mk{p}{2p} \\longrightarrow \\mk{h}{2\\,sp}', 'The two sp orbitals form σ bonds, and the two p orbitals left over form two π bonds.', { form: 'sp' });
+    if (pick.value === 'sp2') ro.set('\\mk{s}{2s} + \\mk{p}{2\\,(2p)} \\longrightarrow \\mk{h}{3\\,sp^2}', null, { form: 'sp2' });
+    else ro.set('\\mk{s}{2s} + \\mk{p}{2p} \\longrightarrow \\mk{h}{2\\,sp}', null, { form: 'sp' });
   }
   still(d, draw);
 })();
@@ -171,7 +171,7 @@ function resonanceArrow(ctx, x1, x2, y) {
     [[0, 1, 0], [0, 0, 1]].forEach((u) => { pOrbital(L, u); pOrbital(R, u); });
     cloud([0, 1, 0], PLUS(), 0.42, 'one π bond'); cloud([0, -1, 0], MINUS(), 0.42, 'one π bond');
     cloud([0, 0, 1], PLUS(), 0.42, 'the second π bond'); cloud([0, 0, -1], MINUS(), 0.42, 'the second π bond');
-    v.label('π bond', [0, 1.0, 0], g, 0); v.label('second π bond', [0, 0, 1.3], g, 0);
+    v.label('π bond', [0, 1.0, 0], g, 0); v.label('second π bond', [0.95, 0, 1.3], g, 0);
     v.label('C', L, g, 30); v.label('H', [-a - 1.06, 0, 0], g, 30);
   }
   function legend(ctx, hybName) {
@@ -189,13 +189,13 @@ function resonanceArrow(ctx, x1, x2, y) {
         : th >= 90 ? 'At 90° the two p orbitals are perpendicular and do not overlap, so the π bond is broken and only the σ bond joins the carbon atoms.'
         : `One CH_{2} group is twisted ${th}° about the C–C axis, and the p orbitals overlap only ${Math.round(s * 100)}% as much as in the planar molecule.`);
       legend(ctx, 'sp²');
-      if (th >= 90) ro.set('\\mk{b}{\\text{C–C}} = \\mk{s}{1\\,\\sigma} + \\mk{p}{0\\,\\pi}', 'The side-by-side overlap is cos 90° = 0, so no π bond remains.', { form: 'broken' });
+      if (th >= 90) ro.set('\\mk{b}{\\text{C–C}} = \\mk{s}{1\\,\\sigma} + \\mk{p}{0\\,\\pi}', null, { form: 'broken' });
       else ro.set(`\\mk{o}{\\text{overlap}} = \\mk{c}{\\cos \\htmlClass{kv-angle}{${th}^\\circ}} = \\mk{v}{${s.toFixed(2)}}`, 'The C=C double bond is one σ bond and one π bond, and the π bond is only as strong as the side-by-side overlap allows.', { form: 'ethene' });
     } else {
       acetylene();
       topline(ctx, 'Each carbon atom keeps two p orbitals at right angles, and the two pairs overlap side by side to form two π bonds around the C–C σ bond.');
       legend(ctx, 'sp');
-      ro.set('\\mk{b}{\\text{C}\\equiv\\text{C}} = \\mk{s}{1\\,\\sigma} + \\mk{p}{2\\,\\pi}', 'The sp hybrid orbitals form the C–C and C–H σ bonds, and the two unhybridized p orbitals on each carbon atom form the two π bonds.', { form: 'acetylene' });
+      ro.set('\\mk{b}{\\text{C}\\equiv\\text{C}} = \\mk{s}{1\\,\\sigma} + \\mk{p}{2\\,\\pi}', null, { form: 'acetylene' });
     }
     v.invalidate();
   }
@@ -237,18 +237,18 @@ function resonanceArrow(ctx, x1, x2, y) {
   const H = 260, d = sim('fig-lewis-so2', H);
   const left = [
     { sym: 'S', x: 0, y: -40, lp: [90], q: '+' },
-    { sym: 'O', x: -115, y: 45, lp: [150, 225, 300], q: '−', qx: -26 },
-    { sym: 'O', x: 115, y: 45, lp: [15, 280] },
+    { sym: 'O', x: -115, y: 45, lp: [180, 270] },
+    { sym: 'O', x: 115, y: 45, lp: [60, 0, 270], q: '−', qx: 46 },
   ];
   const right = [
     { sym: 'S', x: 0, y: -40, lp: [90], q: '+' },
-    { sym: 'O', x: -115, y: 45, lp: [165, 260] },
-    { sym: 'O', x: 115, y: 45, lp: [30, 315, 240], q: '−' },
+    { sym: 'O', x: -115, y: 45, lp: [120, 180, 270], q: '−', qx: -46 },
+    { sym: 'O', x: 115, y: 45, lp: [0, 270] },
   ];
   function draw() {
     const { ctx } = begin(d.c);
-    lewis(ctx, 450, H / 2 + 10, left, [[0, 1, 1], [0, 2, 2]]);
-    lewis(ctx, 950, H / 2 + 10, right, [[0, 1, 2], [0, 2, 1]]);
+    lewis(ctx, 450, H / 2 + 10, left, [[0, 1, 2], [0, 2, 1]]);
+    lewis(ctx, 950, H / 2 + 10, right, [[0, 1, 1], [0, 2, 2]]);
     resonanceArrow(ctx, 640, 760, H / 2 + 10);
     tex(d.readout, '\\text{SO}_2');
   }

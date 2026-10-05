@@ -59,25 +59,26 @@ function lewis(ctx, cx, cy, atoms, bonds) {
   /* a Morse curve with the book's depth, 7.24 × 10⁻¹⁹ J at 74 pm; energies in units of 10⁻¹⁹ J */
   const DEPTH = 7.24, RE = 74, A = 0.0194, NA = 6.022e23;
   const E = (r) => DEPTH * ((1 - Math.exp(-A * (r - RE))) ** 2 - 1);
-  /* fixed axes: 0 to 300 pm across the slider's reach, −8 to +6 × 10⁻¹⁹ J to hold the curve from 30 pm */
+  /* fixed axes: 0 to 300 pm across the slider's reach, −8 to +8 × 10⁻¹⁹ J to hold the curve from 30 pm clear of the axis title */
   const box = { l: 170, r: 1320, t: 250, b: 580 };
   const S = 1.3, RA = 46;                         /* the atoms above: 1.3 units per picometer, a drawn radius of 46 units */
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
     const r = R.v, e = E(r), cE = C('energy'), cL = C('length');
-    const { X, Y } = axes(ctx, box, [0, 300], [-8, 6], { nx: 6, ny: 7, xl: 'internuclear distance (pm)', xc: cL, yl: 'energy (10⁻¹⁹ J)', yc: cE, fy: (v) => minus(fmt(v, 0)) });
+    const { X, Y } = axes(ctx, box, [0, 300], [-8, 8], { nx: 6, ny: 8, xl: 'internuclear distance (pm)', xc: cL, fy: (v) => minus(fmt(v, 0)) });
     line(ctx, box.l, Y(0), box.r, Y(0), alpha(PAL.ink, 0.35), 2, [10, 10]);
     line(ctx, box.l, Y(-DEPTH), X(RE), Y(-DEPTH), alpha(PAL.ink, 0.35), 2, [4, 8]);
     line(ctx, X(RE), Y(-DEPTH), X(RE), box.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
     curve(ctx, E, 30, 300, X, Y, cE, 5, 160);
-    text(ctx, '−7.24 × 10⁻¹⁹ J at 74 pm, the H–H bond length', X(RE) + 34, Y(-DEPTH) + 4, cE, { size: 18, weight: 600, bg: PAL.panel });
+    text(ctx, '−7.24 × 10⁻¹⁹ J at 74 pm, the H–H bond length', X(RE) + 90, Y(-DEPTH) + 4, cE, { size: 18, weight: 600, bg: PAL.panel });
     const p = pinned(ctx, box, X, Y, r, e, cE);
     /* the pair of atoms, centred over the point where the band allows, a leader down to the point */
-    const half = (r * S) / 2, cx = Math.min(Math.max(X(r), box.l + half + RA + 10), 1380 - half - RA), cy = 150;
+    const half = (r * S) / 2, cx = Math.min(Math.max(X(r), box.l + half + RA + 10), 1380 - half - RA - 40), cy = 150;
     line(ctx, cx, cy + RA + 6, p.x, p.y - 12, alpha(PAL.ink, 0.35), 2, [4, 8]);
+    text(ctx, 'energy (10⁻¹⁹ J)', box.l, box.t - 24, cE, { weight: 600, size: 20, bg: PAL.panel });
     const over = Math.max(0, 1 - r / (2 * RA / S + 60));
-    cloud(ctx, cx, cy, RA * 1.6 + half * over, 0.4 + 0.6 * over);
+    cloud(ctx, cx, cy, RA * 1.6 + half * over, over);
     cloud(ctx, cx - half, cy, RA * 1.5, 1 - over);
     cloud(ctx, cx + half, cy, RA * 1.5, 1 - over);
     atom(ctx, cx - half, cy, 'H', RA, 0.8); atom(ctx, cx + half, cy, 'H', RA, 0.8);
@@ -88,7 +89,7 @@ function lewis(ctx, cx, cy, atoms, bonds) {
     const eS = minus(fmt(e, 2)), kj = (e * 1e-19 * NA) / 1000;
     headline(ctx, r === RE ? 'At 74 pm the energy is −7.24 × 10⁻¹⁹ J, its lowest value, so 74 pm is the bond distance of H₂.'
       : r < RE ? 'At ' + r + ' pm the repulsions are stronger than the attractions, and the energy has risen to ' + eS + ' × 10⁻¹⁹ J.'
-      : e > -0.15 ? 'At ' + r + ' pm the atoms are far enough apart to have almost no interaction, and the energy is close to zero.'
+      : e > -0.25 ? 'At ' + r + ' pm the atoms are far enough apart to have almost no interaction, and the energy is close to zero.'
       : 'At ' + r + ' pm the atoms begin to interact, the attractions are stronger than the repulsions, and the energy is ' + eS + ' × 10⁻¹⁹ J.');
     readout(d.readout, `\\kE = ${eS}\\times 10^{-19}\\ \\text{J},\\quad \\kE\\times N_{\\text{A}} = ${minus(fmt(kj, 0))}\\ \\text{kJ/mol}`,
       'The bond energy is the depth of the minimum: 7.24 × 10⁻¹⁹ J for one H–H bond, or 436 kJ for a mole of them.');
@@ -187,7 +188,6 @@ function lewis(ctx, cx, cy, atoms, bonds) {
       text(ctx, a, x, 180, PAL.ink, { size: 24, align: 'center' });
       text(ctx, b, x, 215, PAL.ink, { size: 24, align: 'center' });
     });
-    tex(d.readout, '\\text{HCl} \\qquad \\text{O}_2 \\qquad \\text{N}_2');
   }
   still(d, draw);
 })();

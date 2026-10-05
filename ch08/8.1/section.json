@@ -4,7 +4,7 @@
  "chapter": "8",
  "title": "Valence Bond Theory",
  "short": "Valence Bond Theory",
- "lead": "VSEPR theory predicts the shapes of molecules but does not explain the bonds that hold them together. Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms. <span data-type=\"energy\">The energy of two approaching hydrogen atoms</span> sets <span data-type=\"length\">the bond distance</span> and <span data-type=\"energy\">the bond energy</span>. End-to-end overlap forms σ bonds and side-by-side overlap forms π bonds, and from these two kinds we build single, double and triple bonds.",
+ "lead": "Valence bond theory describes a covalent bond as the overlap of half-filled atomic orbitals on two atoms, which Lewis structures and VSEPR shapes leave unexplained. <span data-type=\"energy\">The energy</span> of two hydrogen atoms drawn together sets <span data-type=\"length\">the bond distance</span> and <span data-type=\"energy\">the bond energy</span>, and the two ways orbitals overlap, end to end and side by side, build single, double and triple bonds.",
  "objectives": [
   "Describe the formation of covalent bonds in terms of atomic orbital overlap",
   "Define and give examples of σ and π bonds"
@@ -16,6 +16,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -49,6 +53,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "atoms clear of the edge, stray cloud, axis title and label clearances"
     }
    ]
   },
@@ -87,6 +96,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "misplaced name readout dropped"
     }
    ]
   },

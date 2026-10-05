@@ -63,7 +63,7 @@ function hOrb(g, v, c, dir, len, col, a, name, minor = 1, thin = 0) {
   if (minor * a > 0.01) { const n = fade(lobe3(g, c, V.mul(dir, -1), len * 0.34, col), a * minor); if (a * minor > 0.3) v.pickable(n, name); }
   return m;
 }
-function axes3(g, v, L = 2.3) {
+function axes3(g, v, L = 1.75) {
   const col = alpha(PAL.ink, 0.45);
   [[1, 0, 0, 'x'], [0, 1, 0, 'y'], [0, 0, 1, 'z']].forEach(([x, y, z, n]) => {
     polyline(g, [[-x * L, -y * L, -z * L], [x * L, y * L, z * L]], col);
@@ -85,13 +85,14 @@ const angle3 = (g, v, a, b, R, t) => hued(v.label(t, arc3d(g, a, b, R, [0, 0, 0]
 ===================================================================== */
 (function () {
   const d = sim('sim-water');
-  const v = F.view3d(d.stage, { h: 440, dist: 6.4, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'from the side', yaw: -0.9, pitch: 0.5 }] });
-  const g = v.part(0); g.position.y = -0.35;
-  const model = F.choice(d.controls, { label: 'model', aria: 'orbitals on oxygen', options: [{ value: 'p', label: '2<em>p</em> orbitals' }, { value: 'sp3', label: '<em>sp</em><sup>3</sup> hybrids' }], value: 'p' });
-  const u = V.unit([1, 1, 0]), w = V.unit([1, -1, 0]), z = [0, 0, 1];
+  const v = F.view3d(d.stage, { h: 440, dist: 9.4, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'from the side', yaw: -0.9, pitch: 0.5 }] });
+  const g = v.part(0); g.position.y = 0.05;
+  const model = F.choice(d.controls, { label: '\\text{model}', aria: 'orbitals on oxygen', options: [{ value: 'p', label: '2<em>p</em> orbitals' }, { value: 'sp3', label: '<em>sp</em><sup>3</sup> hybrids' }], value: 'p' });
+  /* the H–O–H bisector u points down, so the hydrogen atoms sit below the oxygen and the lone pairs above */
+  const u = [0, -1, 0], w = [1, 0, 0], z = [0, 0, 1];
   const half = (a) => [V.add(V.mul(u, Math.cos(a * RAD)), V.mul(w, Math.sin(a * RAD))), V.add(V.mul(u, Math.cos(a * RAD)), V.mul(w, -Math.sin(a * RAD)))];
   const [H1p, H2p] = half(45), [H1h, H2h] = half(54.75);
-  const back = [[-1, 0, 0], [0, -1, 0]];
+  const back = [V.mul(H1p, -1), V.mul(H2p, -1)];
   const lone = [V.add(V.mul(u, -Math.cos(54.75 * RAD)), V.mul(z, Math.sin(54.75 * RAD))), V.add(V.mul(u, -Math.cos(54.75 * RAD)), V.mul(z, -Math.sin(54.75 * RAD)))];
   function draw() {
     const k = model.mix((m) => (m === 'sp3' ? 1 : 0)), sp3 = model.value === 'sp3';
@@ -106,8 +107,8 @@ const angle3 = (g, v, a, b, R, t) => hued(v.label(t, arc3d(g, a, b, R, [0, 0, 0]
     bonds.forEach((b) => { const p = V.mul(b, 1.75); sOrb(g, v, p, 0.5, S_COL(), 1, 'the 1s orbital of a hydrogen atom'); atom3(g, v, p, 'H', 0.12); });
     if (k < 0.02 || k > 0.98) angle3(g, v, bonds[0], bonds[1], 0.75, sp3 ? '109.5°' : '90°');
     else arc3d(g, bonds[0], bonds[1], 0.75, [0, 0, 0], C('angle'));
-    v.label('O', [0, -0.28, 0], g, 0);
-    v.label(sp3 ? '<em>sp</em><sup>3</sup>' : '2<em>p</em>', V.mul(bonds[1], 1.0), g, 0);
+    v.label('O', V.mul(u, -0.3), g, 0);
+    v.label(sp3 ? '<em>sp</em><sup>3</sup>' : '2<em>p</em>', V.mul(lones[0], 1.3), g, 0);
     v.label('H', V.mul(bonds[0], 2.4), g, 0); v.label('H', V.mul(bonds[1], 2.4), g, 0);
     v.headline(sp3
       ? 'Four sp<sup>3</sup> hybrids point toward the corners of a tetrahedron, 109.5° apart; the observed H–O–H angle is 104.5°.'
@@ -128,8 +129,8 @@ const angle3 = (g, v, a, b, R, t) => hued(v.label(t, arc3d(g, a, b, R, [0, 0, 0]
 const AXES = [[1, 0, 0], [0, 1, 0], [0, 0, 1]], AXN = ['x', 'y', 'z'];
 function bench(id, n, stages, opts) {
   const d = sim(id);
-  const v = F.view3d(d.stage, { h: 420, dist: 6.6, spin: 'idle', pitch: FREE_PITCH, views: opts.views });
-  const g = v.part(0); g.position.y = -0.35;
+  const v = F.view3d(d.stage, { h: 420, dist: 9.6, spin: 'idle', pitch: FREE_PITCH, views: opts.views });
+  const g = v.part(0); g.position.y = -0.7;
   const nP = n - 1;
   const STATE = {
     atomic: { at: 1, hy: 0, minor: 1, thin: 0, mol: 0 },
@@ -137,7 +138,7 @@ function bench(id, n, stages, opts) {
     thin: { at: 0, hy: 1, minor: 0, thin: 1, mol: 0 },
     mol: { at: 0, hy: 0, minor: 0, thin: 1, mol: 1 },
   };
-  const st = F.choice(d.controls, { label: 'orbitals', aria: 'which drawing', options: stages, value: 'atomic' });
+  const st = F.choice(d.controls, { label: '\\text{orbitals}', aria: 'which drawing', options: stages, value: 'atomic' });
   const dirs = SITES[n], hyb = HYB[n];
   function draw() {
     const s = st.mix((x) => STATE[x]);
@@ -157,11 +158,11 @@ function bench(id, n, stages, opts) {
     }
     const sp = st.value;
     if (st.k > 0.98) {
-      if (sp === 'atomic') { v.label('<em>s</em>', [0.35, 0.5, 0.2], g, 0); v.label(`<em>p<sub>${AXN[0]}</sub></em>`, [1.95, 0.2, 0], g, 0); if (nP > 1) v.label(`<em>p<sub>y</sub></em>`, [0.2, 1.95, 0], g, 0); if (nP > 2) v.label(`<em>p<sub>z</sub></em>`, [0.2, 0.2, 1.95], g, 0); }
-      if (sp === 'hybrid' || sp === 'thin') v.label(`<em>${hyb}</em>`, V.mul(dirs[0], 1.65), g, 0);
-      if (n === 3 && sp !== 'atomic') v.label('<em>p<sub>z</sub></em>', [0.2, 0.2, 1.75], g, 0);
+      if (sp === 'atomic') { v.label('<em>s</em>', [0.35, 0.5, 0.2], g, 0); v.label(`<em>p<sub>${AXN[0]}</sub></em>`, [1.2, -0.5, 0], g, 0); if (nP > 1) v.label(`<em>p<sub>y</sub></em>`, [-0.5, 1.2, 0], g, 0); if (nP > 2) v.label(`<em>p<sub>z</sub></em>`, [-0.45, -0.45, 1.2], g, 0); }
+      if (sp === 'hybrid' || sp === 'thin') v.label(`<em>${hyb}</em>`, V.mul(dirs[1], 1.6), g, 0);
+      if (n === 3 && sp !== 'atomic') v.label('<em>p<sub>z</sub></em>', [-0.45, -0.45, 1.2], g, 0);
       if (sp !== 'atomic') ARCS[n].forEach(([i, j, t]) => angle3(g, v, dirs[i], dirs[j], 0.8, t));
-      if (sp === 'mol') { v.label('B', [0, -0.45, 0], g, 0); dirs.forEach((u) => v.label('H', V.mul(u, 2.15), g, 0)); }
+      if (sp === 'mol') { v.label('B', [0, -0.45, 0], g, 0); dirs.forEach((u) => v.label('H', V.mul(u, 1.75), g, -30)); }
     }
     v.headline(opts.head[sp]);
     readout(d.readout, opts.eq, opts.note[sp]);
@@ -171,19 +172,19 @@ function bench(id, n, stages, opts) {
 bench('sim-sp', 2, [{ value: 'atomic', label: 'atomic orbitals' }, { value: 'hybrid', label: 'hybrid orbitals' }], {
   views: [{ label: 'side', yaw: 0.45, pitch: 0.35 }, { label: 'along x', yaw: -Math.PI / 2, pitch: 0 }],
   eq: '1\\ s + 1\\ p \\;\\longrightarrow\\; 2\\ sp',
-  head: { atomic: 'One valence s orbital and one valence p orbital, before they mix.', hybrid: 'Two sp hybrid orbitals, 180° apart along the x axis.' },
+  head: { atomic: 'One s and one p orbital, before they mix.', hybrid: 'Two sp hybrid orbitals, 180° apart along the x axis.' },
   note: { atomic: 'Two atomic orbitals go into the set, so two hybrid orbitals come out of it.', hybrid: 'Each sp orbital has one large lobe and one small one; the two are equivalent in shape and energy.' },
 });
 bench('sim-sp2', 3, [{ value: 'atomic', label: 'atomic orbitals' }, { value: 'hybrid', label: 'hybrid orbitals' }, { value: 'thin', label: 'drawn thin' }, { value: 'mol', label: 'in BH<sub>3</sub>' }], {
   views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'edge on', yaw: 0.3, pitch: 1.35 }],
   eq: '1\\ s + 2\\ p \\;\\longrightarrow\\; 3\\ sp^2 \\;(+\\ 1\\ p\\ \\text{unhybridized})',
-  head: { atomic: 'One s orbital and two p orbitals, before they mix; the third p orbital lies along z.', hybrid: 'Three sp<sup>2</sup> hybrid orbitals, 120° apart in one plane; the p orbital along z is unchanged.', thin: 'The same three sp<sup>2</sup> orbitals drawn thinner and without their minor lobes.', mol: 'BH<sub>3</sub>: a trigonal planar molecule with its three B–H bonds 120° apart.' },
-  note: { atomic: 'Three atomic orbitals go into the set, so three hybrid orbitals come out of it.', hybrid: 'The three hybrids are equivalent in shape and energy, and together they lie in the plane perpendicular to the unhybridized p orbital.', thin: 'This drawing keeps the directions and the 120° angles and leaves out what would crowd a larger figure.', mol: 'Each sp² hybrid of boron overlaps with the 1s orbital of a hydrogen atom to form one of the three σ bonds.' },
+  head: { atomic: 'One s and two p orbitals, before they mix.', hybrid: 'Three sp<sup>2</sup> hybrids, 120° apart in one plane.', thin: 'The same sp<sup>2</sup> set, drawn thin without minor lobes.', mol: 'BH<sub>3</sub> is trigonal planar, its three B–H bonds 120° apart.' },
+  note: { atomic: 'Three atomic orbitals go into the set, so three hybrid orbitals come out of it.', hybrid: 'The three hybrids are equivalent in shape and energy, and together they lie in the plane perpendicular to the unhybridized p orbital.', thin: '', mol: 'Each sp² hybrid of boron overlaps with the 1s orbital of a hydrogen atom to form one of the three σ bonds.' },
 });
 bench('sim-sp3', 4, [{ value: 'atomic', label: 'atomic orbitals' }, { value: 'hybrid', label: 'hybrid orbitals' }], {
   views: [{ label: 'side', yaw: 0.45, pitch: 0.3 }, { label: 'down a lobe', yaw: 0, pitch: Math.PI / 2 }],
   eq: '1\\ s + 3\\ p \\;\\longrightarrow\\; 4\\ sp^3',
-  head: { atomic: 'One s orbital and all three p orbitals, before they mix.', hybrid: 'Four sp<sup>3</sup> hybrid orbitals pointing toward the corners of a tetrahedron, 109.5° apart.' },
+  head: { atomic: 'One s and three p orbitals, before they mix.', hybrid: 'Four sp<sup>3</sup> hybrids point to the corners of a tetrahedron.' },
   note: { atomic: 'Four atomic orbitals go into the set, so four hybrid orbitals come out of it, and no p orbital is left over.', hybrid: 'The four hybrids are equivalent in shape and energy; each can overlap with another orbital to form a σ bond or hold a lone pair.' },
 });
 
@@ -238,9 +239,9 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orb
 ===================================================================== */
 (function () {
   const d = sim('sim-ethane');
-  const v = F.view3d(d.stage, { h: 420, dist: 7.4, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.35, pitch: 0.3 }, { label: 'along C–C', yaw: -Math.PI / 2, pitch: 0 }] });
+  const v = F.view3d(d.stage, { h: 420, dist: 8.8, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.35, pitch: 0.3 }, { label: 'along C–C', yaw: -Math.PI / 2, pitch: 0 }] });
   const g = v.part(0); g.position.y = -0.35;
-  const view = F.choice(d.controls, { label: 'drawing', aria: 'orbitals or bonds', options: [{ value: 'orb', label: 'orbitals' }, { value: 'bond', label: 'σ bonds' }], value: 'orb' });
+  const view = F.choice(d.controls, { label: '\\text{drawing}', aria: 'orbitals or bonds', options: [{ value: 'orb', label: 'orbitals' }, { value: 'bond', label: 'σ bonds' }], value: 'orb' });
   const phi = F.ctl(d.controls, { label: '\\varphi', cls: 'angle', min: 0, max: 120, step: 1, value: 0, unit: '°', dec: 0, aria: 'rotation of the right-hand CH3 group about the C–C bond' });
   const CC = 1.55, CH = 1.1 * 1.15;
   const hDirs = (sign, turn) => [90, 210, 330].map((a) => V.unit([sign * 1 / 3, T3 * Math.cos((a + turn) * RAD), T3 * Math.sin((a + turn) * RAD)]));
@@ -263,10 +264,10 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orb
     bond3(g, C1, C2, k);
     if (view.k > 0.98) {
       v.label('C', [C1[0], -0.42, 0], g, 0); v.label('C', [C2[0], -0.42, 0], g, 0);
-      if (view.value === 'orb') v.label('<em>sp</em><sup>3</sup>', V.add(C1, V.mul(groups[0].hs[0], 1.1)), g, 0);
+      if (view.value === 'orb') v.label('<em>sp</em><sup>3</sup>', V.add(C1, V.mul(groups[0].hs[2], 1.1)), g, 0);
     }
     v.headline(`One CH<sub>3</sub> group turned ${Math.round(phi.v)}° about the C–C bond: seven σ bonds, one C–C and six C–H, at every angle.`);
-    readout(d.readout, `\\htmlClass{kv-angle}{\\varphi} = ${Math.round(phi.v)}^\\circ`, 'The C–C σ bond is formed by end-to-end overlap along the bond axis, so turning one group about that axis leaves the overlap unchanged.');
+    readout(d.readout, `\\htmlClass{kv-angle}{\\varphi} = ${Math.round(phi.v)}^\\circ`, null);
   }
   still(d, draw);
 })();
@@ -279,11 +280,11 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orb
 ===================================================================== */
 (function () {
   const d = sim('sim-sp3d');
-  const v = F.view3d(d.stage, { h: 440, dist: 9.5, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.45, pitch: 0.3 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] });
+  const v = F.view3d(d.stage, { h: 440, dist: 10.6, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.45, pitch: 0.3 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] });
   const g = v.part(0); g.position.y = -0.6;
   const MOL = { pcl5: { n: 5, c: 'P', x: 'Cl', rx: 0.3, name: 'PCl<sub>5</sub>' }, sf6: { n: 6, c: 'S', x: 'F', rx: 0.26, name: 'SF<sub>6</sub>' } };
-  const mol = F.choice(d.controls, { label: 'molecule', aria: 'molecule', options: [{ value: 'pcl5', label: 'PCl<sub>5</sub>' }, { value: 'sf6', label: 'SF<sub>6</sub>' }], value: 'pcl5' });
-  const how = F.choice(d.controls, { label: 'drawing', aria: 'ball-and-stick or hybrid orbitals', options: [{ value: 'mol', label: 'ball and stick' }, { value: 'hyb', label: 'hybrid orbitals' }], value: 'mol' });
+  const mol = F.choice(d.controls, { label: '\\text{molecule}', aria: 'molecule', options: [{ value: 'pcl5', label: 'PCl<sub>5</sub>' }, { value: 'sf6', label: 'SF<sub>6</sub>' }], value: 'pcl5' });
+  const how = F.choice(d.controls, { label: '\\text{drawing}', aria: 'ball-and-stick or hybrid orbitals', options: [{ value: 'mol', label: 'ball and stick' }, { value: 'hyb', label: 'hybrid orbitals' }], value: 'mol' });
   function one(key, a) {
     if (a < 0.01) return;
     const m = MOL[key], dirs = SITES[m.n], h = how.mix((x) => (x === 'hyb' ? 1 : 0)), hy = HYB_NAME[m.n];
@@ -301,7 +302,7 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orb
     if (mol.k > 0.98 && how.k > 0.98) {
       ARCS[m.n].forEach(([i, j, t]) => angle3(g, v, dirs[i], dirs[j], 0.8, t));
       if (hyb) v.label(`<em>${HYB[m.n]}</em>`, V.mul(dirs[2], 1.75), g, 0);
-      else { v.label(m.c, [0.3, -0.35, 0.3], g, 0); v.label(m.x, V.mul(dirs[2], 2.3), g, 0); }
+      else { v.label(m.c, [0.3, -0.35, 0.3], g, 0); v.label(m.x, V.mul(dirs[1], 2.3), g, 0); }
     }
     const five = m.n === 5;
     v.headline(hyb
@@ -320,9 +321,9 @@ levels('fig-sp3-levels', { atom: 'C', m: 3, p: 2, e: 4, hyb: 'sp³', title: 'Orb
 ===================================================================== */
 (function () {
   const d = sim('sim-hybrid-sets');
-  const v = F.view3d(d.stage, { h: 420, dist: 6.4, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.45, pitch: 0.3 }, { label: 'face on', yaw: 0, pitch: 0 }] });
-  const g = v.part(0); g.position.y = -0.35;
-  const n = F.choice(d.controls, { label: 'regions of electron density', aria: 'number of regions of electron density', options: [2, 3, 4, 5, 6].map((i) => ({ value: String(i), label: String(i) })), value: '3' });
+  const v = F.view3d(d.stage, { h: 420, dist: 7.8, spin: 'idle', pitch: FREE_PITCH, views: [{ label: 'side', yaw: 0.45, pitch: 0.3 }, { label: 'face on', yaw: 0, pitch: 0 }] });
+  const g = v.part(0); g.position.y = -0.45;
+  const n = F.choice(d.controls, { label: '\\text{regions}', aria: 'number of regions of electron density', options: [2, 3, 4, 5, 6].map((i) => ({ value: String(i), label: String(i) })), value: '3' });
   function one(i, a) {
     if (a < 0.01) return;
     SITES[i].forEach((u) => hOrb(g, v, [0, 0, 0], u, 1.4 * (0.4 + 0.6 * a), H_COL(), a, `an ${HYB_NAME[i]} hybrid orbital`, 0));
@@ -376,30 +377,32 @@ function ionBrackets(ctx, l, r, t, b, charge) {
 }
 function lewisFigure(id, H, paint, main, small) {
   const d = sim(id, H);
-  still(d, () => { const { ctx } = begin(d.c); paint(ctx); readout(d.readout, main, small); });
+  still(d, () => { const { ctx } = begin(d.c); paint(ctx); if (main) readout(d.readout, main, small); });
 }
 
 /* FIGURE 8.14: ClNO, formaldehyde and ethene */
-lewisFigure('fig-sp2-examples', 300, (ctx) => {
+lewisFigure('fig-sp2-examples', 330, (ctx) => {
   lewis(ctx, 250, 160, [{ sym: 'Cl', x: -95, y: 30, lp: [180, 90, 270] }, { sym: 'N', x: 0, y: -30, lp: [90] }, { sym: 'O', x: 95, y: 30, lp: [0, 270] }], [[0, 1, 1], [1, 2, 2]]);
   lewis(ctx, 700, 150, [{ sym: 'O', x: 0, y: -95, lp: [180, 0] }, { sym: 'C', x: 0, y: 15 }, { sym: 'H', x: -95, y: 75 }, { sym: 'H', x: 95, y: 75 }], [[0, 1, 2], [1, 2, 1], [1, 3, 1]]);
   lewis(ctx, 1150, 150, [{ sym: 'C', x: -55, y: 0 }, { sym: 'C', x: 55, y: 0 }, { sym: 'H', x: -110, y: -85 }, { sym: 'H', x: -110, y: 85 }, { sym: 'H', x: 110, y: -85 }, { sym: 'H', x: 110, y: 85 }], [[0, 1, 2], [0, 2, 1], [0, 3, 1], [1, 4, 1], [1, 5, 1]]);
-}, '\\text{ClNO} \\qquad \\text{CH}_2\\text{O} \\qquad \\text{H}_2\\text{CCH}_2', 'Three regions of electron density around each central atom: a lone pair, a single bond and a double bond around nitrogen; two single bonds and a double bond around each carbon.');
+  [[250, 'ClNO'], [700, 'CH₂O'], [1150, 'H₂CCH₂']].forEach(([x, t]) => text(ctx, t, x, 300, PAL.muted, { size: 24, align: 'center' }));
+});
 
 /* FIGURE 8.18: SF4, ClF3 and ClF4+ in wedge-and-dash notation */
-lewisFigure('fig-sp3d-lewis', 320, (ctx) => {
+lewisFigure('fig-sp3d-lewis', 350, (ctx) => {
   const see = (cx, c, lps) => lewis(ctx, cx, 160, [{ sym: c, x: 0, y: 0, lp: lps }, { sym: 'F', x: 0, y: -105 }, { sym: 'F', x: 0, y: 105 }, { sym: 'F', x: 90, y: -40 }, { sym: 'F', x: 90, y: 45 }], [[0, 1, 1], [0, 2, 1], [0, 3, 1, 'd'], [0, 4, 1, 'w']]);
   see(250, 'S', [180]);
   lewis(ctx, 700, 160, [{ sym: 'Cl', x: 0, y: 0, lp: [155, 205] }, { sym: 'F', x: 0, y: -105 }, { sym: 'F', x: 0, y: 105 }, { sym: 'F', x: 110, y: 0 }], [[0, 1, 1], [0, 2, 1], [0, 3, 1]]);
   see(1140, 'Cl', [180]);
   ionBrackets(ctx, 1060, 1265, 32, 290, '+');
-}, '\\text{SF}_4 \\qquad \\text{ClF}_3 \\qquad \\text{ClF}_4{}^{+}', 'Five regions of electron density around each central atom: four bonds and one lone pair in SF₄ and ClF₄⁺, three bonds and two lone pairs in ClF₃.');
+  [[250, 'SF₄'], [700, 'ClF₃'], [1160, 'ClF₄⁺']].forEach(([x, t]) => text(ctx, t, x, 326, PAL.muted, { size: 24, align: 'center' }));
+});
 
 /* the Lewis structure of urea, in Example 8.3 */
 lewisFigure('fig-urea', 280, (ctx) => {
   lewis(ctx, 700, 140, [{ sym: 'C', x: 0, y: 0 }, { sym: 'O', x: 0, y: -100, lp: [90, 180] }, { sym: 'N', x: -120, y: 0, lp: [90] }, { sym: 'N', x: 120, y: 0, lp: [90] }, { sym: 'H', x: -235, y: 0 }, { sym: 'H', x: -120, y: 100 }, { sym: 'H', x: 235, y: 0 }, { sym: 'H', x: 120, y: 100 }],
     [[0, 1, 2], [0, 2, 1], [0, 3, 1], [2, 4, 1], [2, 5, 1], [3, 6, 1], [3, 7, 1]]);
-}, '\\text{NH}_2\\text{C(O)NH}_2', 'Three regions of electron density around the carbon atom: two single bonds and one double bond.');
+}, '\\text{NH}_2\\text{C(O)NH}_2');
 
 /* the sulfate ion in Example 8.2, the book's ball-and-stick drawing laid flat; atoms in the element palette */
 (function () {
@@ -414,9 +417,9 @@ lewisFigure('fig-urea', 280, (ctx) => {
     ATOMS.forEach((a) => { if (a !== s) line(ctx, s.x, s.y, a.x, a.y, PAL.ink, 12); });
     ATOMS.forEach((a) => {
       ctx.save(); ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, TAU); ctx.fillStyle = F.el(a.sym); ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.stroke(); ctx.restore();
-      if (a.q) text(ctx, '−', a.x + a.r + 14, a.y - a.r + 6, PAL.ink, { size: 30, weight: 600, align: 'center' });
+      if (a.q) text(ctx, '−', a.x + a.r + 16, a.y - a.r * 0.4, PAL.ink, { size: 30, weight: 600, align: 'center' });
     });
-    readout(d.readout, '\\text{SO}_4{}^{2-}', 'Four regions of electron density around the sulfur atom, in a tetrahedral arrangement.');
+    readout(d.readout, '\\text{SO}_4{}^{2-}');
   }
   F.hover(d.stage, () => ATOMS.map((a) => ({ x: a.x, y: a.y, r: a.r, name: a.sym === 'S' ? 'sulfur (S)' : a.q ? 'oxygen (O), carrying a negative charge' : 'oxygen (O)' })));
   still(d, draw);

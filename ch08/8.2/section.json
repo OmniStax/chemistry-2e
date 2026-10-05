@@ -4,7 +4,7 @@
  "chapter": "8",
  "title": "Hybrid Atomic Orbitals",
  "short": "Hybrid Atomic Orbitals",
- "lead": "The orbitals of an isolated atom cannot explain the bond angles of a molecule such as water. The valence orbitals of a bonded atom combine into sets of hybrid orbitals, sp, sp², sp³, sp³d and sp³d², whose arrangements match the electron-pair geometries of VSEPR theory. The number of regions of electron density around an atom then gives its hybridization.",
+ "lead": "The orbitals of an isolated atom cannot explain the bond angles of a molecule such as water. Valence bond theory lets the valence orbitals of a bonded atom mix into sets of hybrid orbitals, sp, sp², sp³, sp³d and sp³d², each pointing in its own arrangement in space, and ties the choice of set to the regions of electron density around the atom.",
  "objectives": [
   "Explain the concept of atomic orbital hybridization",
   "Determine the hybrid orbitals associated with various molecular geometries"
@@ -16,6 +16,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -51,6 +55,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framed clear of the headline, H atoms below, orbital label off the arc"
     }
    ]
   },
@@ -68,6 +77,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framed clear of the headline, shorter headline, labels off axis names"
     }
    ]
   },
@@ -114,6 +128,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framing, one-line headlines, labels off axis names, meta note dropped"
     }
    ]
   },
@@ -150,6 +169,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "names under each structure, note repeating caption dropped"
     }
    ]
   },
@@ -167,6 +191,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framed clear of the headline, one-line headlines, labels off axis names"
     }
    ]
   },
@@ -207,6 +236,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framing, sp3 label off the C label, note repeating caption dropped"
     }
    ]
   },
@@ -224,6 +258,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "names under each structure, note repeating caption dropped"
     }
    ]
   },
@@ -251,6 +290,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framing, outer-atom label off the 90° arc, meta caption clause cut"
     }
    ]
   },
@@ -268,6 +312,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "framed clear of the headline, choice label set as text"
     }
    ]
   },
@@ -299,6 +348,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "charge mark placed by its oxygen, note giving the answer dropped"
     }
    ]
   },
@@ -314,6 +368,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note giving the example's answer dropped"
     }
    ]
   }

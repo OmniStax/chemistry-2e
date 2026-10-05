@@ -4,7 +4,7 @@
  "chapter": "8",
  "title": "Multiple Bonds",
  "short": "Multiple Bonds",
- "lead": "A double bond and a triple bond are more than one bond between the same two atoms. In the valence bond picture, the hybrid orbitals of each atom form the σ bonds, and the p orbitals left over after hybridization overlap side by side to form the π bonds, which is why a double bond resists rotation and why resonance does not change the hybridization of an atom.",
+ "lead": "A double or a triple bond joins the same two atoms by more than one bond. Valence bond theory describes each of those bonds with the hybrid orbitals of the two atoms and the <em>p</em> orbitals left over after hybridization, and follows what that means for turning about a double bond and for molecules with resonance.",
  "objectives": [
   "Describe multiple covalent bonding in terms of atomic orbital overlap",
   "Relate the concept of resonance to π-bonding and electron delocalization"
@@ -16,6 +16,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -60,6 +64,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "electrons stand on their lines, notes repeating caption dropped"
     }
    ]
   },
@@ -87,6 +96,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "second π label off the C label, repeated notes dropped, caption"
     }
    ]
   },
@@ -119,6 +133,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "resonance forms in the book's order, lone pairs as the book"
     }
    ]
   }

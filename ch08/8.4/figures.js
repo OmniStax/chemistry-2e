@@ -14,10 +14,10 @@ function eAxis(ctx, x, y0, y1) {
   arrow(ctx, x, y0, x, y1, c, 4);
   text(ctx, 'E', x - 22, (y0 + y1) / 2, c, { size: 26, weight: 600, align: 'right' });
 }
-/* one electron as a half-arrow, up or down, centred on (x, y) */
+/* one electron as a half-arrow, up or down, standing on the orbital line at (x, y) */
 function electron(ctx, x, y, up, a = 1) {
   ctx.save(); ctx.globalAlpha *= a;
-  const s = up ? -1 : 1, t = y + s * 17, b = y - s * 17;
+  const s = up ? -1 : 1, t = y - 19 + s * 17, b = y - 19 - s * 17;
   line(ctx, x, b, x, t, PAL.ink, 3);
   line(ctx, x, t, x + (up ? -9 : 9), t - s * 11, PAL.ink, 3);
   ctx.restore();
@@ -60,7 +60,7 @@ function lewis(ctx, cx, cy, atoms, order) {
   const d = sim('fig-o2-lewis', 180);
   function draw() {
     const { ctx } = begin(d.c);
-    lewis(ctx, 700, 90, [{ sym: 'O', x: -60, lp: [90, 270] }, { sym: 'O', x: 60, lp: [90, 270] }], 2);
+    lewis(ctx, 700, 90, [{ sym: 'O', x: -60, lp: [90, 180] }, { sym: 'O', x: 60, lp: [90, 0] }], 2);
     tex(d.readout, '\\text{O}_2');
   }
   still(d, draw);
@@ -114,7 +114,7 @@ function lewis(ctx, cx, cy, atoms, order) {
       : t > 0 ? 'The field pulls the paramagnetic ' + name + ' into it, so the sample appears heavier.'
       : 'The field weakly pushes the diamagnetic ' + name + ' out, so the sample appears slightly lighter.');
     readout(d.readout, sample.value === 'o2' ? '\\text{O}_2:\\ 2\\ \\text{unpaired electrons} \\Rightarrow \\text{paramagnetic}' : '\\text{N}_2:\\ 0\\ \\text{unpaired electrons} \\Rightarrow \\text{diamagnetic}',
-      on ? 'Only in an applied magnetic field does the sample show attraction or repulsion.' : 'Switch the electromagnets on to compare the weights.');
+      on ? 'Only in an applied magnetic field does the sample show attraction or repulsion.' : null);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -164,19 +164,19 @@ function lewis(ctx, cx, cy, atoms, order) {
 (function () {
   const d = sim('sim-mo-shapes');
   const { sphere, lobe, polyline, box } = F.mesh;
-  const v = F.view3d(d.stage, { spin: 'idle', h: 420, dist: 7.2, tilt: 0.25, pitch: [-1.2, 1.2],
+  const v = F.view3d(d.stage, { spin: 'idle', h: 420, dist: 8.4, tilt: 0.25, pitch: [-1.2, 1.2],
     views: [{ label: 'side on', yaw: 0, pitch: 0 }, { label: 'along the axis', yaw: Math.PI / 2, pitch: 0 }] });
-  const g = v.part(0);
-  const pair = F.choice(d.controls, { label: '\\text{orbitals}', options: [{ value: 's', label: 'two s' }, { value: 'pe', label: 'two p end to end' }, { value: 'ps', label: 'two p side by side' }], value: 's', aria: 'which atomic orbitals combine', onInput: () => draw() });
-  const comb = F.choice(d.controls, { label: '\\text{combination}', options: [{ value: 'in', label: 'in phase (add)' }, { value: 'out', label: 'out of phase (subtract)' }], value: 'in', aria: 'in phase or out of phase', onInput: () => draw() });
+  const g = v.part(0); g.position.y = -0.3;
+  const pair = F.select(d.controls, { label: '\\text{orbitals}', options: [{ value: 's', label: 'two s' }, { value: 'pe', label: 'two p end to end' }, { value: 'ps', label: 'two p side by side' }], value: 's', aria: 'which atomic orbitals combine', onInput: () => draw() });
+  const comb = F.choice(d.controls, { label: '\\text{combination}', options: [{ value: 'in', label: 'in phase' }, { value: 'out', label: 'out of phase' }], value: 'in', aria: 'in phase or out of phase', onInput: () => draw() });
   const N = 0.7;
   const INFO = {
-    'sin': { name: 'σ_s', tex: '\\sigma_s', head: 'In phase, two s orbitals give the bonding σs orbital, its density concentrated between the nuclei.', nodes: 'no node between the nuclei' },
-    'sout': { name: 'σ*_s', tex: '\\sigma_s^{*}', head: 'Out of phase, two s orbitals give the antibonding σ*s orbital, with a node between the nuclei.', nodes: 'one node between the nuclei' },
-    'pein': { name: 'σ_p', tex: '\\sigma_p', head: 'In phase, two p orbitals end to end give the bonding σp orbital, its density along the internuclear axis.', nodes: 'no node between the nuclei' },
-    'peout': { name: 'σ*_p', tex: '\\sigma_p^{*}', head: 'Out of phase, two p orbitals end to end give the antibonding σ*p orbital, with a node between the nuclei.', nodes: 'one node between the nuclei' },
-    'psin': { name: 'π_p', tex: '\\pi_p', head: 'In phase, two p orbitals side by side give the bonding πp orbital, above and below a node that contains the internuclear axis.', nodes: 'one node containing the internuclear axis' },
-    'psout': { name: 'π*_p', tex: '\\pi_p^{*}', head: 'Out of phase, two p orbitals side by side give the antibonding π*p orbital, with two nodes.', nodes: 'two nodes, one containing the axis and one between the nuclei' },
+    'sin': { name: 'σ_s', tex: '\\sigma_s', head: 'In phase, two s orbitals give the bonding $\\sigma_s$ orbital, its density concentrated between the nuclei.', nodes: 'no node between the nuclei' },
+    'sout': { name: 'σ*_s', tex: '\\sigma_s^{*}', head: 'Out of phase, two s orbitals give the antibonding $\\sigma_s^{*}$ orbital, with a node between the nuclei.', nodes: 'one node between the nuclei' },
+    'pein': { name: 'σ_p', tex: '\\sigma_p', head: 'In phase, two p orbitals end to end give the bonding $\\sigma_p$ orbital, its density along the internuclear axis.', nodes: 'no node between the nuclei' },
+    'peout': { name: 'σ*_p', tex: '\\sigma_p^{*}', head: 'Out of phase, two p orbitals end to end give the antibonding $\\sigma_p^{*}$ orbital, with a node between the nuclei.', nodes: 'one node between the nuclei' },
+    'psin': { name: 'π_p', tex: '\\pi_p', head: 'In phase, two p orbitals side by side give the bonding $\\pi_p$ orbital, above and below a node that contains the internuclear axis.', nodes: 'one node containing the internuclear axis' },
+    'psout': { name: 'π*_p', tex: '\\pi_p^{*}', head: 'Out of phase, two p orbitals side by side give the antibonding $\\pi_p^{*}$ orbital, with two nodes.', nodes: 'two nodes, one containing the axis and one between the nuclei' },
   };
   function fade(m, a) { m.material.transparent = true; m.material.opacity *= a; m.material.depthWrite = a > 0.9 && m.material.opacity > 0.6; m.visible = a > 0.01; return m; }
   function blob(p, r, c, a, name) { const m = sphere(g, p, 1, c, { transparent: true, opacity: 0.55 }); m.scale.set(r[0], r[1], r[2]); v.pickable(fade(m, a), name); }
@@ -243,7 +243,6 @@ function lewis(ctx, cx, cy, atoms, order) {
     [[230, '3p_{x} and 3p_{x}', '(a)'], [710, '3p_{x} and 3p_{y}', '(b)'], [1155, '3p_{y} and 3p_{y}', '(c)']].forEach(([x, s, t]) => {
       text(ctx, s, x, 255, PAL.ink, { size: 22, align: 'center' }); text(ctx, t, x, 292, PAL.ink, { size: 22, align: 'center' });
     });
-    readout(d.readout, '\\text{(a)}\\ 3p_x + 3p_x \\qquad \\text{(b)}\\ 3p_x + 3p_y \\qquad \\text{(c)}\\ 3p_y + 3p_y');
   }
   still(d, draw);
 })();
@@ -319,7 +318,7 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       text(ctx, l.id, R.r + 16, Y(l.E), PAL.ink, { size: 22 });
       hits.push({ x: XL, y: Y(l.E), r: 40, name: 'the ' + l.id + ' atomic orbital' + (l.deg > 1 ? 's' : '') + ' of one ' + X + ' atom' }, { x: XR, y: Y(l.E), r: 40, name: 'the ' + l.id + ' atomic orbital' + (l.deg > 1 ? 's' : '') + ' of the other ' + X + ' atom' });
     });
-    let prev = Infinity;
+    let prev = Infinity; const names = [];
     const ys = D.mo.map((l) => { const y = Math.min(Y(l.E), prev - 44); prev = y; return y; });
     D.mo.forEach((l, i) => {
       const y = ys[i], a = show(occ[i]);
@@ -328,9 +327,10 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       line(ctx, ar + 6, ay, box.l - 6, y, alpha(PAL.ink, 0.45), 2, [6, 6]);
       line(ctx, box.r + 6, y, bl - 6, ay, alpha(PAL.ink, 0.45), 2, [6, 6]);
       level(ctx, XM, y, l.deg, occ[i], 70, a);
-      text(ctx, l.name, box.r + 14, y - 16, PAL.ink, { size: 20, bg: PAL.panel });
+      names.push([l.name, box.r + 14, y - 16]);
       hits.push({ x: XM, y, r: 45, name: 'the ' + l.name.replace(/[_{}]/g, '') + ' ' + (l.anti ? 'antibonding' : 'bonding') + ' molecular orbital' });
     });
+    names.forEach(([s, x, y]) => text(ctx, s, x, y, PAL.ink, { size: 20, bg: PAL.panel }));
     text(ctx, 'Atomic orbitals', XL, 590, PAL.muted, { size: 20, align: 'center' });
     text(ctx, 'Molecular orbitals', XM, 590, PAL.muted, { size: 20, align: 'center' });
     text(ctx, 'Atomic orbitals', XR, 590, PAL.muted, { size: 20, align: 'center' });
@@ -340,7 +340,7 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
     let b = 0, ab = 0, unp = 0;
     D.mo.forEach((l, i) => { if (l.anti) ab += occ[i]; else b += occ[i]; spread(occ[i], l.deg).forEach((o) => { if (o === 1) unp++; }); });
     const conf = D.mo.map((l, i) => (occ[i] ? '(' + l.name + ')' + SUPN[occ[i]] : '')).join('');
-    headline(ctx, nameOf(SPECIES[+pick.value]) + ': ' + conf);
+    headline(ctx, nameOf(SPECIES[+pick.value]) + ' has the valence configuration ' + conf + '.');
     const bo = (b - ab) / 2;
     readout(d.readout, `\\text{bond order of } \\text{${X}}_2${TSUP[q]} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`,
       (unp === 0 ? 'All the valence electrons are paired, so ' : unp === 1 ? 'One electron is unpaired, so ' : unp + ' electrons are unpaired, so ') + nameOf(SPECIES[+pick.value]) + (unp ? ' is paramagnetic' : ' is diamagnetic') + (bo <= 0 ? ', and with a bond order of zero it is not stable.' : '.'));
@@ -376,8 +376,7 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       text(ctx, nm, X0 + 7 * DX + 70, Y(E37[k][7]), PAL.ink, { size: 20 });
     });
     text(ctx, 'σ_{2px}', X0 - 72, Y(E37.s2p[0]), PAL.ink, { size: 20, align: 'right' });
-    readout(d.readout, '\\text{Li}_2\\ \\text{to}\\ \\text{N}_2:\\ \\pi_{2p} < \\sigma_{2px} \\qquad \\text{O}_2\\ \\text{to}\\ \\text{Ne}_2:\\ \\sigma_{2px} < \\pi_{2p}',
-      'The order changes between N₂ and O₂.');
+    readout(d.readout, '\\text{Li}_2\\ \\text{to}\\ \\text{N}_2:\\ \\pi_{2p} < \\sigma_{2px} \\qquad \\text{O}_2\\ \\text{to}\\ \\text{Ne}_2:\\ \\sigma_{2px} < \\pi_{2p}');
   }
   still(d, draw);
 })();
@@ -403,7 +402,7 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       { n: 'π*_{p}', E: 420, deg: 2, from: 'p', c: PAL.ink }, { n: 'σ*_{p}', E: 480 + 30 * m, deg: 1, from: 'p', c: cS }];
     const AT = { s: 125, p: 365 };
     eAxis(ctx, 70, 610, 60);
-    hits = [];
+    hits = []; const names = [];
     Object.entries(AT).forEach(([k, E]) => {
       const deg = k === 'p' ? 3 : 1, w = deg === 3 ? 40 : 70;
       level(ctx, XL, Y(E), deg, 0, w); level(ctx, XR, Y(E), deg, 0, w);
@@ -416,9 +415,10 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       const ax = l.from === 'p' ? 90 : 35;
       line(ctx, XL + ax, Y(AT[l.from]), x0 - 6, y, alpha(PAL.ink, 0.4), 2, [6, 6]);
       line(ctx, x0 + tot + 6, y, XR - ax, Y(AT[l.from]), alpha(PAL.ink, 0.4), 2, [6, 6]);
-      text(ctx, l.n, x0 + tot + (l.deg > 1 ? 14 : 110), y - 16, l.c, { size: 20, bg: PAL.panel });
+      names.push([l.n, x0 + tot + (l.deg > 1 ? 14 : 110), y - 16, l.c]);
       hits.push({ x: XM, y, r: 45, name: 'the ' + l.n.replace(/[_{}]/g, '') + ' molecular orbital' });
     });
+    names.forEach(([s, x, y, c]) => text(ctx, s, x, y, c, { size: 20, bg: PAL.panel }));
     const above = 250 + 100 * m > 310;
     headline(ctx, m === 0 ? 'Without mixing, σ_{p} lies below the π_{p} pair, as in O₂, F₂ and Ne₂.'
       : above ? 'With enough s-p mixing, σ_{p} rises above the π_{p} pair, as in Li₂ through N₂.'

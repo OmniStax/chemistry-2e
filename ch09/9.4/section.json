@@ -73,7 +73,7 @@
         "/media/ch09/CNX_Chem_09_04_GasDiff.jpg"
       ],
       "original_caption": "In a diffuser, gaseous UF6 is pumped through a porous barrier, which partially separates 235UF6 from 238UF6 The UF6 must pass through many large diffuser units to achieve sufficient enrichment in 235U.",
-      "draws": [],
+      "draws": ["mass"],
       "conventions": [
         "U"
       ],
@@ -87,6 +87,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "thicker isotope rings; molecules kept off the rounded ends"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "animated: UF6 flowing, 235UF6 through the barrier to the enriched outlet"
         }
       ]
     }

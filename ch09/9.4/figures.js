@@ -136,57 +136,100 @@ const heading3 = () => { const z = 2 * Math.random() - 1, a = Math.random() * TA
 })();
 
 /* =====================================================================
-   FIGURE 9.30: a gaseous diffuser, a faithful still copy of the book's
-   drawing. Each UF₆ molecule is its uranium atom in the element colour,
-   ringed in the referent colour of its isotope, since the isotope is
-   the only difference between the two. The book's exaggerated separation
-   is kept. Still: nothing in the idea has a clock, so no transport and no
-   controls; the molecules are named under the pointer.
+   FIGURE 9.30: a gaseous diffuser. UF₆ flows in along the feed tube; a
+   ²³⁵UF₆ molecule passes through the porous barrier far more often than a
+   ²³⁸UF₆ one, wanders the shell in straight runs between collisions and
+   leaves by the enriched outlet, while the rest is carried on to the
+   depleted outlet. Each molecule is its uranium atom in the element
+   colour, ringed in the referent colour of its isotope; the book's
+   exaggerated separation is kept. Moving on a 5 s loop with a 1.2 s hold:
+   the tube flows at one speed in two staggered lanes and the narrower
+   enriched outlet at twice it, so molecules in either never overlap; a
+   path through the shell lasts three loops and carries three molecules a
+   loop apart, so the end of a loop is its start. The book's flow arrows
+   are carried by the motion and drawn faint only under reduced motion. A
+   molecule going from the upper half of the shell to the outlet passes
+   behind the tube.
 ===================================================================== */
 (function () {
   const d = sim('sim-diffuser', 470);
   const L = 300, R = 1060, TOP = 110, BOT = 350, TY = 205, TH = 42;
+  const T = 5, V = 1440 / T, X0 = -20, X1 = 1420, M = 48, PIPE = 337, MOUTH = R - 20, K = 3;
+  const REDUCED = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
   let seed = 7;
   const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
-  const mols = [];
-  const put = (x, y, iso) => mols.push({ x, y, iso });
-  for (let i = 0; i < 64; i++) { const x = 200 + rnd() * 960, f = (x - 200) / 960; put(x, TY + 8 + rnd() * (TH - 16), rnd() < 0.32 * (1 - f) ? 235 : 238); }
-  for (let i = 0; i < 110; i++) { const x = L + 60 + rnd() * (R - L - 120), up = rnd() < 0.45, y = up ? TOP + 22 + rnd() * (TY - TOP - 40) : TY + TH + 18 + rnd() * (BOT - TY - TH - 40); put(x, y, rnd() < 0.06 ? 238 : 235); }
-  for (let i = 0; i < 4; i++) put(1210 + i * 14, 338, 235);
+  const between = (a, b) => a + rnd() * (b - a);
   const ISO = { 235: { ref: 'uf6-235', name: 'a molecule of ²³⁵UF₆' }, 238: { ref: 'uf6-238', name: 'a molecule of ²³⁸UF₆' } };
-  F.hover(d.stage, () => mols.map((m) => ({ x: m.x, y: m.y, r: 8, name: ISO[m.iso].name })));
+  /* a path is keyframes [x, y, t, behind]: straight runs, `behind` true while the run is drawn under the tube */
+  function through(ly, xc) {
+    const top = rnd() < 0.5, band = () => [between(L + 60, R - 60), top ? between(TOP + 18, TY - 18) : between(TY + TH + 18, BOT - 18)];
+    const pts = [[xc, ly], [xc + 18, top ? TY - 18 : TY + TH + 18]];
+    for (let n = 3 + Math.floor(rnd() * 3); n > 0; n--) pts.push(band());
+    if (top) { const xb = between(R - 110, R - 70); pts.push([xb, TY - 18], [xb, TY + TH + 18]); }
+    pts.push([between(R - 110, R - 70), between(BOT - 40, BOT - 22)], [MOUTH, PIPE]);
+    const t0 = (xc - X0) / V, shell = K * T - t0 - (X1 - MOUTH) / (2 * V);
+    const seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1])), len = seg.reduce((a, b) => a + b, 0);
+    const keys = [[X0, ly, 0, false]];
+    let t = t0;
+    pts.forEach((p, i) => { if (i) t += shell * seg[i - 1] / len; keys.push([p[0], p[1], t, i > 0 && i < pts.length - 1]); });
+    keys.push([X1, PIPE, K * T, false]);
+    return keys;
+  }
+  const fates = [...Array(32).fill('235x'), ...Array(3).fill('235'), ...Array(2).fill('238x'), ...Array(59).fill('238')];
+  for (let i = fates.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [fates[i], fates[j]] = [fates[j], fates[i]]; }
+  const paths = fates.map((f, s) => {
+    const lane = s % 2, ly = TY + 12 + 18 * lane, phi = (Math.floor(s / 2) + 0.5 * lane) / M, iso = +f.slice(0, 3);
+    return f.endsWith('x') ? { iso, phi, k: K, keys: through(ly, between(L + 40, R - 80)) } : { iso, phi, k: 1, keys: [[X0, ly, 0, false], [X1, ly, T, false]] };
+  });
+  const at = (keys, tau) => {
+    let i = 0; while (i < keys.length - 2 && keys[i + 1][2] <= tau) i++;
+    const a = keys[i], b = keys[i + 1], f = Math.min(1, Math.max(0, (tau - a[2]) / (b[2] - a[2])));
+    return { x: a[0] + (b[0] - a[0]) * f, y: a[1] + (b[1] - a[1]) * f, behind: a[3] };
+  };
+  const cy = cycle(() => T, 1.2);
+  let live = [], said = false;
+  F.hover(d.stage, () => live.map((m) => ({ x: m.x, y: m.y, r: 9, name: ISO[m.iso].name })));
+  const mol = (ctx, x, y, iso) => {
+    ctx.save(); ctx.fillStyle = F.el('U'); ctx.strokeStyle = F.ref(ISO[iso].ref); ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.arc(x, y, 8.5, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.arc(x, y, 4, 0, TAU); ctx.fill(); ctx.restore();
+  };
   function draw() {
-    const { ctx } = begin(d.c);
+    const { ctx } = begin(d.c), t = cy.now();
+    live = [];
+    for (const p of paths) for (let m = 0; m < p.k; m++) live.push({ ...at(p.keys, ((p.phi + m) * T + t) % (p.k * T)), iso: p.iso });
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.fillRect(120, 352, 1020, 40); ctx.restore();
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.roundRect(L, TOP, R - L, BOT - TOP, 60); ctx.fill(); ctx.stroke(); ctx.restore();
-    ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
-    ctx.fillRect(180, TY, 1020, TH); ctx.restore();
+    for (const m of live) if (m.behind) mol(ctx, m.x, m.y, m.iso);
+    ctx.save(); ctx.fillStyle = PAL.panel; ctx.fillRect(180, TY, 1020, TH); ctx.restore();
     line(ctx, 180, TY, L, TY, PAL.ink, 3); line(ctx, 180, TY + TH, L, TY + TH, PAL.ink, 3);
     line(ctx, R, TY, 1200, TY, PAL.ink, 3); line(ctx, R, TY + TH, 1200, TY + TH, PAL.ink, 3);
     line(ctx, L, TY, R, TY, PAL.ink, 3, [6, 8]); line(ctx, L, TY + TH, R, TY + TH, PAL.ink, 3, [6, 8]);
     line(ctx, 180, TY, 180, TY + TH, PAL.ink, 3); line(ctx, 1200, TY, 1200, TY + TH, PAL.ink, 3);
     ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.fillRect(R - 20, 322, 170, 30); ctx.strokeRect(R - 20, 322, 170, 30); ctx.restore();
-    for (const m of mols) {
-      ctx.save(); ctx.fillStyle = F.el('U'); ctx.strokeStyle = F.ref(ISO[m.iso].ref); ctx.lineWidth = 5;
-      ctx.beginPath(); ctx.arc(m.x, m.y, 8.5, 0, TAU); ctx.stroke(); ctx.fillStyle = F.el('U'); ctx.beginPath(); ctx.arc(m.x, m.y, 4, 0, TAU); ctx.fill(); ctx.restore();
+    if (REDUCED) {
+      const faint = alpha(PAL.ink, 0.35);
+      [[420, -1], [640, 1], [820, -1], [520, 1], [900, 1], [700, -1]].forEach(([x, s]) => arrow(ctx, x, s < 0 ? TY - 4 : TY + TH + 4, x + 18, s < 0 ? TY - 46 : TY + TH + 46, faint, 3));
+      arrow(ctx, 20, TY + TH / 2, 170, TY + TH / 2, faint, 4);
+      arrow(ctx, 1210, TY + TH / 2, 1360, TY + TH / 2, faint, 4);
+      arrow(ctx, 1270, PIPE, 1380, PIPE, faint, 4);
     }
-    [[420, -1], [640, 1], [820, -1], [520, 1], [900, 1], [700, -1]].forEach(([x, s]) => arrow(ctx, x, s < 0 ? TY - 4 : TY + TH + 4, x + 18, s < 0 ? TY - 46 : TY + TH + 46, PAL.ink, 3));
-    arrow(ctx, 20, TY + TH / 2, 170, TY + TH / 2, PAL.ink, 4);
-    arrow(ctx, 1210, TY + TH / 2, 1360, TY + TH / 2, PAL.ink, 4);
-    arrow(ctx, 1270, 337, 1380, 337, PAL.ink, 4);
+    for (const m of live) if (!m.behind) mol(ctx, m.x, m.y, m.iso);
     text(ctx, 'uranium hexafluoride (UF_{6})', 20, TY + TH / 2 + 44, PAL.ink, { size: 20 });
     label(ctx, 'high pressure feed tube', 190, TY - 4, { side: 'above', size: 20, color: PAL.ink, gap: 60 });
     label(ctx, 'porous barrier', 600, TY, { side: 'above', size: 20, color: PAL.ink, gap: 112 });
     text(ctx, 'depleted ²³⁸UF_{6}', 1210, TY - 16, PAL.ink, { size: 20 });
     text(ctx, 'enriched ²³⁵UF_{6}', 1160, 385, PAL.ink, { size: 20 });
     text(ctx, 'higher speed ²³⁵UF_{6} diffuses through the barrier faster than ²³⁸UF_{6}', 640, 60, PAL.ink, { size: 20, align: 'center' });
-    [['uf6-235', '²³⁵UF_{6}'], ['uf6-238', '²³⁸UF_{6}']].forEach(([c, s], i) => {
+    [['uf6-235', 235, '²³⁵UF_{6}'], ['uf6-238', 238, '²³⁸UF_{6}']].forEach(([c, iso, s], i) => {
       const x = 330 + i * 200;
-      ctx.save(); ctx.fillStyle = F.el('U'); ctx.strokeStyle = F.ref(c); ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(x, 440, 8.5, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.arc(x, 440, 4, 0, TAU); ctx.fill(); ctx.restore();
+      mol(ctx, x, 440, iso);
       text(ctx, s, x + 16, 447, F.ref(c), { size: 18, weight: 600 });
     });
+    if (said) return; said = true;
+    const mm = (x) => hue('mass', x + '\\ \\text{g/mol}');
+    tex(d.readout, `\\frac{\\text{rate of diffusion of }{}^{235}\\text{UF}_6}{\\text{rate of diffusion of }{}^{238}\\text{UF}_6} = \\frac{\\sqrt{\\kMMB}}{\\sqrt{\\kMMA}} = \\frac{\\sqrt{${mm('352.04')}}}{\\sqrt{${mm('349.03')}}} = 1.0043`);
   }
-  register(d.fig, { update: () => {}, draw });
+  register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 };

@@ -4,7 +4,7 @@
  "chapter": "4",
  "title": "Reaction Stoichiometry",
  "short": "Reaction Stoichiometry",
- "lead": "The coefficients of a balanced equation give the relative amounts of the substances a reaction consumes and produces, much as a recipe gives the amounts of its ingredients. Stoichiometric factors come from those coefficients. With <span data-concept=\"molar-mass\">molar masses</span> and Avogadro’s number, they relate the <span data-concept=\"mole\">moles</span>, the numbers of molecules and the <span data-concept=\"mass\">masses</span> of any two substances in a reaction.",
+ "lead": "The coefficients of a balanced equation give the relative amounts of the substances a reaction consumes and produces, much as a recipe gives the amounts of its ingredients. Stoichiometric factors taken from them, with <span data-concept=\"molar-mass\">molar masses</span> and Avogadro’s number, relate the <span data-concept=\"mole\">moles</span>, the numbers of molecules and the <span data-concept=\"mass\">masses</span> of any two substances in a reaction.",
  "objectives": [
   "Explain the concept of stoichiometry as it pertains to chemical reactions",
   "Use balanced chemical equations to derive stoichiometric factors relating amounts of reactants and products",
@@ -17,6 +17,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -43,45 +47,92 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the caption; plus sign kept off the nitrogen"
     }
    ]
   },
   { "id": "fig-iodine", "kind": "photo", "number": "4.10", "draws": [] },
-  { "id": "fig-route-al", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_03_moleratio1_img.jpg"], "draws": ["amount"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
-  { "id": "fig-route-propane", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_03_moleratio2_img.jpg"], "draws": ["amount"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
-  { "id": "fig-route-naoh", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_03_map2_img.jpg"], "draws": ["mass", "amount"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
-  { "id": "fig-route-octane", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_03_map3_img.jpg"], "draws": ["mass", "amount"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
-  { "id": "sim-flowchart", "kind": "sim", "number": "4.11", "originals": ["/media/ch04/CNX_Chem_04_03_flowchart.jpg"], "original_caption": "The flowchart depicts the various computational steps involved in most reaction stoichiometry calculations.", "draws": ["mass", "amount", "volume"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
+  {
+   "id": "fig-route-al",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_03_moleratio1_img.jpg"],
+   "draws": ["amount"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-route-propane",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_03_moleratio2_img.jpg"],
+   "draws": ["amount"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "molecules of CO2 box added, as the book draws it"
+    }
+   ]
+  },
+  {
+   "id": "fig-route-naoh",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_03_map2_img.jpg"],
+   "draws": ["mass", "amount"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-route-octane",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_03_map3_img.jpg"],
+   "draws": ["mass", "amount"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-flowchart",
+   "kind": "sim",
+   "number": "4.11",
+   "originals": ["/media/ch04/CNX_Chem_04_03_flowchart.jpg"],
+   "original_caption": "The flowchart depicts the various computational steps involved in most reaction stoichiometry calculations.",
+   "draws": ["mass", "amount", "volume"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "box names wrap inside boxes, factor on two lines, wrapping choices as dropdowns"
+    }
+   ]
+  },
   { "id": "fig-airbag", "kind": "photo", "number": "4.12", "draws": [] }
  ],
  "coverage": [

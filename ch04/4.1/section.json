@@ -4,7 +4,7 @@
  "chapter": "4",
  "title": "Writing and Balancing Chemical Equations",
  "short": "Writing and balancing equations",
- "lead": "A chemical equation states which substances react and which form, and its coefficients give their relative numbers. Balancing an equation makes it count the same atoms of each element on both sides. An equation can also give states and conditions, and a reaction between ions in water appears as a molecular, a complete ionic and a net ionic equation.",
+ "lead": "A chemical equation states which substances react and which form, its coefficients giving their relative numbers so that each element counts the same atoms on both sides. An equation can also give states and conditions, and a reaction between ions in water can be written as a molecular, a complete ionic or a net ionic equation.",
  "objectives": [
   "Derive chemical equations from narrative descriptions of chemical reactions.",
   "Write and balance chemical equations in molecular, total ionic, and net ionic formats."
@@ -16,6 +16,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -52,6 +56,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "note dropped, it repeated the tallies and the caption"
     }
    ]
   },

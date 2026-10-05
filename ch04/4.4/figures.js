@@ -46,7 +46,14 @@ const shuffled = (n, seed) => { const a = [...Array(n).keys()]; let s = seed; fo
   const Ch = ctl(d.controls, { label: '\\text{cheese slices}', cls: '', min: 0, max: 15, step: 1, value: 11, unit: '', dec: 0, aria: 'slices of cheese provided',
     specials: [{ at: () => (Bs.v % 2 === 0 && Bs.v / 2 <= 15 ? Bs.v / 2 : null), label: '1 per 2 bread' }] });
   const X0 = 250, DX = 54;
-  function bread(ctx, x, y) { const c = F.ref('bread'); rrect(ctx, x, y, 44, 44, 12, alpha(c, 0.35), c, 3); }
+  /* a slice of bread face on: a square body under the domed crust */
+  function bread(ctx, x, y) {
+    const c = F.ref('bread'), w = 44, h = 44;
+    ctx.save(); ctx.beginPath(); ctx.moveTo(x + 0.12 * w, y + h); ctx.lineTo(x + 0.88 * w, y + h); ctx.lineTo(x + 0.88 * w, y + 0.42 * h);
+    ctx.bezierCurveTo(x + 1.1 * w, y + 0.3 * h, x + 1.02 * w, y - 0.06 * h, x + 0.5 * w, y);
+    ctx.bezierCurveTo(x - 0.02 * w, y - 0.06 * h, x - 0.1 * w, y + 0.3 * h, x + 0.12 * w, y + 0.42 * h); ctx.closePath();
+    ctx.fillStyle = alpha(c, 0.35); ctx.fill(); ctx.strokeStyle = c; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.stroke(); ctx.restore();
+  }
   function cheese(ctx, x, y) { const c = F.ref('cheese'); rrect(ctx, x + 3, y + 3, 38, 38, 3, alpha(c, 0.55), c, 2); }
   function sandwich(ctx, x, y) {
     const b = F.ref('bread'), c = F.ref('cheese');
@@ -76,8 +83,7 @@ const shuffled = (n, seed) => { const a = [...Array(n).keys()]; let s = seed; fo
       : lc > 0 ? '; the bread limits the number of sandwiches and the cheese is in excess'
       : '; the cheese limits the number of sandwiches and the bread is in excess';
     topline(ctx, nb + ' slices of bread and ' + nc + ' slices of cheese make ' + s + (s === 1 ? ' sandwich' : ' sandwiches') + who + '.');
-    readout(d.readout, `\\text{sandwiches} = \\text{the lesser of}\\ \\frac{${nb}\\ \\text{bread}}{2}\\ \\text{and}\\ \\frac{${nc}\\ \\text{cheese}}{1} = ${s}`,
-      'Each sandwich uses two slices of bread and one slice of cheese, so the ingredient that would make fewer sandwiches decides how many are made.');
+    readout(d.readout, `\\text{sandwiches} = \\text{the lesser of}\\ \\frac{${nb}\\ \\text{bread}}{2}\\ \\text{and}\\ \\frac{${nc}\\ \\text{cheese}}{1} = ${s}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -120,8 +126,7 @@ const shuffled = (n, seed) => { const a = [...Array(n).keys()]; let s = seed; fo
     text(ctx, hcl + ' HCl' + rest, RX + PB.w / 2, PB.y + PB.h + 40, PAL.ink, { size: 22, weight: 600, align: 'center' });
     const tail = lh ? '; chlorine is the limiting reactant and hydrogen is in excess' : lc ? '; hydrogen is the limiting reactant and chlorine is in excess' : '; the reactants are in the 1:1 stoichiometric ratio and neither is left over';
     topline(ctx, count(h, 'H2') + ' and ' + count(c, 'Cl2') + ' give ' + hcl + ' HCl' + (lh ? ' and leave ' + count(lh, 'H2') : lc ? ' and leave ' + count(lc, 'Cl2') : '') + tail + '.');
-    readout(d.readout, `\\text{from H}_2:\\ ${h} \\times \\frac{2\\ \\text{HCl}}{1\\ \\text{H}_2} = ${2 * h}\\ \\text{HCl}\\qquad \\text{from Cl}_2:\\ ${c} \\times \\frac{2\\ \\text{HCl}}{1\\ \\text{Cl}_2} = ${2 * c}\\ \\text{HCl}`,
-      h === c ? 'Both reactants would give the same amount of HCl, so both are used up completely.' : (lh ? 'Chlorine' : 'Hydrogen') + ' would give the lesser amount of HCl, so it is the limiting reactant.');
+    readout(d.readout, `\\text{from H}_2:\\ ${h} \\times \\frac{2\\ \\text{HCl}}{1\\ \\text{H}_2} = ${2 * h}\\ \\text{HCl}\\qquad \\text{from Cl}_2:\\ ${c} \\times \\frac{2\\ \\text{HCl}}{1\\ \\text{Cl}_2} = ${2 * c}\\ \\text{HCl}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -141,7 +146,7 @@ const shuffled = (n, seed) => { const a = [...Array(n).keys()]; let s = seed; fo
   /* the product axis runs 0 to 0.06 mol, past the most either slider can give (4.00 g Si gives 0.0475 mol, 3.00 g N2 0.0535 mol) */
   const BX = 860, BW = 440, PMAX = 0.06, PX = (n) => BX + (n / PMAX) * BW;
   function box(ctx, x, y, w, s, type) { const c = C(type); rrect(ctx, x, y - 26, w, 52, 6, alpha(c, 0.12), c, 2.5); text(ctx, s, x + w / 2, y, c, { size: 21, weight: 600, align: 'center', base: 'middle' }); }
-  function step(ctx, x1, x2, y, s) { arrow(ctx, x1, y, x2, y, PAL.muted, 3); text(ctx, s, (x1 + x2) / 2, y - 16, PAL.muted, { size: 15, align: 'center' }); }
+  function step(ctx, x1, x2, y, s) { arrow(ctx, x1, y, x2, y, PAL.muted, 3); text(ctx, s, (x1 + x2) / 2, y - 40, PAL.muted, { size: 15, align: 'center' }); }
   function draw() {
     const { ctx } = begin(d.c);
     const cm = C('mass'), cn = C('amount');
@@ -164,12 +169,12 @@ const shuffled = (n, seed) => { const a = [...Array(n).keys()]; let s = seed; fo
       text(ctx, eq ? 'used up' : lim ? 'limiting reactant' : 'excess reactant', 40, r.y + 46, PAL.ink, { size: 18 });
     });
     /* the amount that actually forms, a level across both bars */
-    line(ctx, PX(lesser), 110, PX(lesser), 340, PAL.ink, 2, [4, 8]);
+    rows.forEach((r) => line(ctx, PX(lesser), r.y - 28, PX(lesser), r.y + 28, PAL.ink, 2, [4, 8]));
     topline(ctx, eq ? 'Both reactants would give ' + sig(pSi, 3) + ' mol of Si₃N₄, so they are in the stoichiometric ratio and neither is in excess.'
       : 'Silicon would give ' + sig(pSi, 3) + ' mol of Si₃N₄ and nitrogen ' + sig(pN, 3) + ' mol, so ' + (siLim ? 'silicon' : 'nitrogen') + ' is the limiting reactant.');
     const ratio = nSi / nN;
     readout(d.readout, `\\frac{\\kn_{\\text{Si}}}{\\kn_{\\text{N}_2}} = \\frac{${hue('amount', sig(nSi, 3))}\\ \\text{mol Si}}{${hue('amount', sig(nN, 3))}\\ \\text{mol N}_2} = \\frac{${sig(ratio, 3)}\\ \\text{mol Si}}{1\\ \\text{mol N}_2}`,
-      eq ? 'The provided ratio equals the stoichiometric ratio of 1.5 mol Si to 1 mol N₂.' : 'The stoichiometric ratio is 1.5 mol Si to 1 mol N₂, so ' + (siLim ? 'silicon is provided in less than the stoichiometric amount.' : 'nitrogen is provided in less than the stoichiometric amount.'));
+      'The stoichiometric ratio is 1.5 mol Si to 1 mol N₂.');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -190,7 +195,7 @@ const shuffled = (n, seed) => { const a = [...Array(n).keys()]; let s = seed; fo
   /* the mass axis runs 0 to 1.0 g, past the 0.995 g that 2.5 g of copper sulfate can give */
   const AX = 180, AW = 1000, X = (g) => AX + g * AW;
   function box(ctx, x, y, w, s, type) { const c = C(type); rrect(ctx, x, y - 26, w, 52, 6, alpha(c, 0.12), c, 2.5); text(ctx, s, x + w / 2, y, c, { size: 20, weight: 600, align: 'center', base: 'middle' }); }
-  function step(ctx, x1, x2, y, s) { arrow(ctx, x1, y, x2, y, PAL.muted, 3); text(ctx, s, (x1 + x2) / 2, y - 16, PAL.muted, { size: 15, align: 'center' }); }
+  function step(ctx, x1, x2, y, s) { arrow(ctx, x1, y, x2, y, PAL.muted, 3); text(ctx, s, (x1 + x2) / 2, y - 40, PAL.muted, { size: 15, align: 'center' }); }
   function draw() {
     const { ctx } = begin(d.c);
     const cm = C('mass');

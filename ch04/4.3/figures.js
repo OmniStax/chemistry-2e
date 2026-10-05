@@ -29,11 +29,19 @@ function box(ctx, x, y, w, h, kind, name, value, on = 1) {
   ctx.beginPath(); ctx.roundRect(x - w / 2, y - h / 2, w, h, 8);
   ctx.fillStyle = kind === 'N' ? PAL.soft : alpha(c, 0.10 + 0.12 * on); ctx.fill();
   ctx.lineWidth = on > 0.5 ? 3 : 2; ctx.strokeStyle = c; ctx.stroke(); ctx.restore();
-  const size = Math.min(17, (17 * (w - 18)) / F.measure(ctx, name, { size: 17 }));
-  if (value) {
-    text(ctx, name, x, y - 13, PAL.ink, { size, align: 'center' });
-    text(ctx, value, x, y + 14, kind === 'N' ? PAL.ink : c, { size: 19, weight: 600, align: 'center' });
-  } else text(ctx, name, x, y, on > 0.5 ? PAL.ink : PAL.muted, { size, align: 'center' });
+  /* page text never sets below 11 px, so on a narrow pane a name runs wider and its lines taller than their logical size */
+  const px = (ctx.canvas.clientWidth || 1400) / 1400, k = Math.max(1, 11 / (17 * px)), lh = Math.max(19, 13 / px);
+  const lines = fit(ctx, name, (w - 18) / (1.08 * k)), n = lines.length + (value ? 1 : 0), y0 = y - ((n - 1) * lh) / 2;
+  lines.forEach((s, i) => text(ctx, s, x, y0 + i * lh, value || on > 0.5 ? PAL.ink : PAL.muted, { size: 17, align: 'center' }));
+  if (value) text(ctx, value, x, y0 + lines.length * lh, kind === 'N' ? PAL.ink : c, { size: 19, weight: 600, align: 'center' });
+}
+/* a name on one line, or on two split at the space that keeps the longer line shortest */
+function fit(ctx, name, room) {
+  const wd = (s) => F.measure(ctx, s, { size: 17 }), ws = name.split(' ');
+  if (wd(name) <= room || ws.length < 2) return [name];
+  let best = null;
+  for (let i = 1; i < ws.length; i++) { const a = ws.slice(0, i).join(' '), b = ws.slice(i).join(' '), m = Math.max(wd(a), wd(b)); if (!best || m < best[2]) best = [a, b, m]; }
+  return best.slice(0, 2);
 }
 /* a double-headed arrow between two boxes, the symbolic arrow of the book's chart */
 function link(ctx, x1, y1, x2, y2, color, w) {
@@ -64,7 +72,8 @@ function route(id, steps) {
   still(d, draw);
 }
 route('fig-route-al', [{ kind: 'n', name: 'moles of Al' }, { kind: 'n', name: 'moles of I_{2}', via: 'stoichiometric factor' }]);
-route('fig-route-propane', [{ kind: 'n', name: 'moles of C_{3}H_{8}' }, { kind: 'n', name: 'moles of CO_{2}', via: 'stoichiometric factor' }]);
+route('fig-route-propane', [{ kind: 'n', name: 'moles of C_{3}H_{8}' }, { kind: 'n', name: 'moles of CO_{2}', via: 'stoichiometric factor' },
+  { kind: 'N', name: 'molecules of CO_{2}', via: 'Avogadro’s number' }]);
 route('fig-route-naoh', [{ kind: 'm', name: 'mass of Mg(OH)_{2}' }, { kind: 'n', name: 'moles of Mg(OH)_{2}', via: 'molar mass' },
   { kind: 'n', name: 'moles of NaOH', via: 'stoichiometric factor' }, { kind: 'm', name: 'mass of NaOH', via: 'molar mass' }]);
 route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: 'n', name: 'moles of C_{8}H_{18}', via: 'molar mass' },
@@ -103,7 +112,7 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
     const yLab = top + 3 * row + 44;
     text(ctx, word(n2, 'N_{2}'), 112, yLab, PAL.ink, { size: 20, weight: 600, align: 'center' });
     text(ctx, word(h, 'H_{2}'), 425, yLab, PAL.ink, { size: 20, weight: 600, align: 'center' });
-    text(ctx, '+', 190, top + row, PAL.ink, { size: 30, align: 'center' });
+    text(ctx, '+', 197, top + row, PAL.ink, { size: 30, align: 'center' });
     arrow(ctx, 760, top + row, 880, top + row, PAL.ink, 4);
     /* product: ammonia in rows of six */
     grid(nh3, 940, top, 6, 72, row + 14, (x, y) => ammonia(ctx, x, y));
@@ -113,8 +122,7 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
     const unitTex = u === 'molecules' ? '' : u === 'doz' ? '\\text{doz}\\ ' : '\\text{mol}\\ ';
     const lhs = u === 'mol' ? '\\kn_{\\text{NH}_3}' : u === 'doz' ? '\\text{dozens of NH}_{3}' : '\\text{NH}_3\\ \\text{molecules}';
     const q = (k) => (u === 'mol' ? hue('amount', `${k}\\ \\text{mol}`) : `${k}\\ ${unitTex}`);
-    readout(d.readout, `${lhs} = ${q(h)}\\ \\text{H}_{2} \\times \\frac{2\\ ${unitTex}\\text{NH}_3}{3\\ ${unitTex}\\text{H}_2} = ${q(nh3)}\\ \\text{NH}_{3}`,
-      'The factor 2 to 3 comes from the coefficients, so it is the same for molecules, dozens and moles.');
+    readout(d.readout, `${lhs} = ${q(h)}\\ \\text{H}_{2} \\times \\frac{2\\ ${unitTex}\\text{NH}_3}{3\\ ${unitTex}\\text{H}_2} = ${q(nh3)}\\ \\text{NH}_{3}`);
   }
   still(d, draw);
 })();
@@ -149,12 +157,12 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
   const KINDS = [{ value: 'm', label: 'mass' }, { value: 'n', label: 'moles' }, { value: 'N', label: 'particles' }];
   const ex = F.select(d.controls, { label: '\\text{example}', aria: 'worked example', value: '4.8',
     options: Object.keys(EX).map((k) => ({ value: k, label: 'Example ' + k })), onInput: () => load() });
-  const give = F.choice(d.controls, { label: '\\text{given (A)}', aria: 'quantity given', value: 'n', options: KINDS, onInput: () => swapGiven() });
-  const want = F.choice(d.controls, { label: '\\text{sought (B)}', aria: 'quantity sought', value: 'n', options: KINDS, onInput: () => relight() });
+  const give = F.select(d.controls, { label: '\\text{given (A)}', aria: 'quantity given', value: 'n', options: KINDS, onInput: () => swapGiven() });
+  const want = F.select(d.controls, { label: '\\text{sought (B)}', aria: 'quantity sought', value: 'n', options: KINDS, onInput: () => relight() });
   const S = {
     m: ctl(d.controls, { label: '\\km_A', cls: 'mass', min: 1, max: 1000, step: 0.5, value: 16, unit: 'g', dec: 1, aria: 'mass of A in grams' }),
     n: ctl(d.controls, { label: '\\kn_A', cls: 'amount', min: 0.01, max: 10, step: 0.001, value: 0.429, unit: 'mol', dec: 3, aria: 'moles of A' }),
-    N: ctl(d.controls, { label: 'N_A', cls: '', min: 0.1, max: 100, step: 0.1, value: 4.5, unit: '× 10²³', dec: 1, aria: 'particles of A in units of ten to the twenty-third' }),
+    N: ctl(d.controls, { label: '\\text{particles of A}', cls: '', min: 0.1, max: 100, step: 0.1, value: 4.5, unit: '× 10²³', dec: 1, aria: 'particles of A in units of ten to the twenty-third' }),
   };
   const reveal = F.tween(d, 1);
   let shownKind = 'n';
@@ -175,7 +183,7 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
     give.set(e.give); want.set(e.want); S[e.give].set(e.value); showSlider(e.give); relight();
   }
   /* box centres: A in the two left columns, B mirrored in the two right */
-  const W = 210, HB = 64;
+  const W = 210, HB = 76;
   const P = { vpA: [120, 150], mA: [440, 150], vsA: [120, 300], nA: [440, 300], NA: [440, 450],
     nB: [960, 300], mB: [960, 150], vpB: [1280, 150], vsB: [1280, 300], NB: [960, 450] };
   function draw() {
@@ -201,7 +209,8 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
     edge('vpA', 'mA', 'density'); edge('vsA', 'nA', 'molarity'); edge('mA', 'nA', 'molar mass'); edge('nA', 'NA', 'Avogadro’s number');
     edge('mB', 'vpB', 'density'); edge('nB', 'vsB', 'molarity'); edge('mB', 'nB', 'molar mass'); edge('nB', 'NB', 'Avogadro’s number');
     edge('nA', 'nB', 'stoichiometric factor', -24);
-    text(ctx, `${e.cB} mol ${b.txt} per ${e.cA} mol ${a.txt}`, 700, 324, PAL.ink, { size: 17, weight: 600, align: 'center' });
+    text(ctx, `${e.cB} mol ${b.txt} per`, 700, 326, PAL.ink, { size: 17, weight: 600, align: 'center' });
+    text(ctx, `${e.cA} mol ${a.txt}`, 700, 348, PAL.ink, { size: 17, weight: 600, align: 'center' });
     const nm = { vpA: `volume of pure ${a.txt}`, vsA: `volume of ${a.txt} solution`, mA: `mass of ${a.txt}`, nA: `moles of ${a.txt}`, NA: `${a.unit} of ${a.txt}`,
       vpB: `volume of pure ${b.txt}`, vsB: `volume of ${b.txt} solution`, mB: `mass of ${b.txt}`, nB: `moles of ${b.txt}`, NB: `${b.unit} of ${b.txt}` };
     Object.keys(P).forEach((key) => {

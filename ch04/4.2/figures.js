@@ -51,13 +51,14 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
   }
   /* Table 4.1 read for one pairing: whether it is insoluble, and the guideline that decides it */
   function judge(c, a) {
-    if (c.g1) return { out: false, why: ['Compounds of group 1 cations and NH₄⁺', 'are soluble.'] };
+    if (c.g1) return { out: false, why: ['Compounds of group 1 cations', 'and NH₄⁺ are soluble.'] };
     if (a.kind === 'always') return { out: false, why: [a.u + '⁻ compounds are soluble,', 'with no exceptions.'] };
-    if (a.kind === 'halide') return ['Ag', 'Pb'].includes(c.u) ? { out: true, why: ['Cl⁻, Br⁻ and I⁻ compounds are soluble,', 'except with Ag⁺, Hg₂²⁺ and Pb²⁺.'] } : { out: false, why: ['Cl⁻, Br⁻ and I⁻ compounds are soluble.'] };
-    if (a.kind === 'sulfate') return ['Ag', 'Pb', 'Ba'].includes(c.u) ? { out: true, why: ['SO₄²⁻ compounds are soluble, except with', 'Ag⁺, Ba²⁺, Ca²⁺, Hg₂²⁺, Pb²⁺ and Sr²⁺.'] } : { out: false, why: ['SO₄²⁻ compounds are soluble.'] };
-    return { out: true, why: ['CO₃²⁻ compounds are insoluble, except with', 'group 1 cations and NH₄⁺.'] };
+    if (a.kind === 'halide') return ['Ag', 'Pb'].includes(c.u) ? { out: true, why: ['Cl⁻, Br⁻ and I⁻ compounds are', 'soluble, except with Ag⁺,', 'Hg₂²⁺ and Pb²⁺.'] } : { out: false, why: ['Cl⁻, Br⁻ and I⁻ compounds are soluble.'] };
+    if (a.kind === 'sulfate') return ['Ag', 'Pb', 'Ba'].includes(c.u) ? { out: true, why: ['SO₄²⁻ compounds are soluble,', 'except with Ag⁺, Ba²⁺, Ca²⁺,', 'Hg₂²⁺, Pb²⁺ and Sr²⁺.'] } : { out: false, why: ['SO₄²⁻ compounds are soluble.'] };
+    return { out: true, why: ['CO₃²⁻ compounds are insoluble,', 'except with group 1 cations', 'and NH₄⁺.'] };
   }
   const ionU = (ion, s) => ion.u + chargeU(ion.q, s);
+  const list = (xs) => (xs.length < 3 ? xs.join(' and ') : xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1]);
   const ionT = (ion, s) => ion.t + '^{' + chargeT(ion.q, s) + '}';
   function beaker(ctx, x, base, w, h, name, rim = PAL.ink) {
     const lip = 8, top = base - h, lv = base - h * 0.72;
@@ -124,10 +125,11 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
       d.key = key;
       if (solids.length) {
         const eqs = solids.map((p) => (p.f.x > 1 ? p.f.x : '') + ionT(CAT[p.c], 1) + '(aq)+' + (p.f.y > 1 ? p.f.y : '') + ionT(AN[p.a], -1) + '(aq)\\;\\longrightarrow\\;' + p.f.t + '(s)');
-        readout(d.readout, eqs.join('\\qquad '), solids.map((p) => p.f.u).join(' and ') + ' is insoluble by the guidelines of Table 4.1, so it precipitates; the other ions stay in solution as spectator ions.');
+        const spect = ions.filter((s) => !solids.some((p) => s === ionU(CAT[p.c], 1) || s === ionU(AN[p.a], -1)));
+        readout(d.readout, eqs.join('\\qquad '), spect.length ? list(spect) + ' stay in solution as spectator ions.' : '');
       } else {
         const all = [ionT(ca, 1), ionT(aa, -1), ionT(cb, 1), ionT(ab, -1)].filter((s, i, arr) => arr.indexOf(s) === i).map((s) => s + '(aq)');
-        readout(d.readout, all.join('+') + '\\;\\longrightarrow\\;\\text{no reaction}', 'Every compound these ions can form is soluble, so nothing precipitates and the ions simply stay in solution.');
+        readout(d.readout, all.join('+') + '\\;\\longrightarrow\\;\\text{no reaction}');
       }
     }
   }
@@ -266,8 +268,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
       : nIn + ' of 12 NH₃ molecules have dissolved, and ' + nR + (nR === 1 ? ' has' : ' have') + ' taken a hydrogen ion from a water molecule.');
     if (rkey !== gas) {
       rkey = gas;
-      if (gas === 'HCl') readout(d.readout, '\\text{HCl}(aq)+\\text{H}_{2}\\text{O}(l)\\;\\longrightarrow\\;\\text{H}_{3}\\text{O}^{+}(aq)+\\text{Cl}^{-}(aq)',
-        'Hydrogen chloride is a strong acid: virtually every molecule that dissolves transfers its hydrogen ion to a water molecule.');
+      if (gas === 'HCl') readout(d.readout, '\\text{HCl}(aq)+\\text{H}_{2}\\text{O}(l)\\;\\longrightarrow\\;\\text{H}_{3}\\text{O}^{+}(aq)+\\text{Cl}^{-}(aq)');
       else readout(d.readout, '\\text{NH}_{3}(aq)+\\text{H}_{2}\\text{O}(l)\\;\\rightleftharpoons\\;\\text{NH}_{4}^{+}(aq)+\\text{OH}^{-}(aq)',
         'Ammonia is a weak base: only about 1% of the dissolved ammonia is present as NH₄⁺ ions, so the one ion in twelve drawn here is more than a real solution holds.');
     }

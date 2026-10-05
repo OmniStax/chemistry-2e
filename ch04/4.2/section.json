@@ -4,7 +4,7 @@
  "chapter": "4",
  "title": "Classifying Chemical Reactions",
  "short": "Classifying Reactions",
- "lead": "Many chemical reactions fall into one of three common classes. In a precipitation reaction, dissolved ions combine to form an insoluble solid. In an acid-base reaction, a hydrogen ion passes from one species to another. In an oxidation-reduction reaction, one or more elements change in oxidation number. You will learn to recognize each class, predict a precipitate from the <span data-concept=\"solubility\">solubility</span> guidelines, and balance a redox equation by the half-reaction method.",
+ "lead": "Many chemical reactions fall into one of three common classes: precipitation, in which dissolved ions combine to form an insoluble solid; acid-base, in which a hydrogen ion passes from one species to another; and oxidation-reduction, in which one or more elements change in oxidation number. The <span data-concept=\"solubility\">solubility</span> guidelines tell which mixtures of ions give a precipitate, and the half-reaction method balances a redox equation.",
  "objectives": [
   "Define three common types of chemical reactions (precipitation, acid-base, and oxidation-reduction)",
   "Classify chemical reactions as one of these three types given appropriate descriptions or chemical equations",
@@ -19,6 +19,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -53,6 +57,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "guideline lines rewrapped inside the stage; notes trimmed to the spectator ions"
     }
    ]
   },
@@ -76,6 +85,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "HCl note dropped, it repeated the caption"
     }
    ]
   },

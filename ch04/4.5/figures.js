@@ -18,7 +18,7 @@ const FURNACE = '#e2462a';
 /* a number in scientific notation for figure text */
 const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
 function sciText(x, n = 3) { const e = Math.floor(Math.log10(Math.abs(x))); const m = x / Math.pow(10, e); return fmt(m, n - 1) + ' × 10' + String(e).split('').map((c) => SUP[c]).join(''); }
-const SUB = ['', '', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
+const sub = (n) => (n === 1 ? '' : String(n).split('').map((c) => '₀₁₂₃₄₅₆₇₈₉'[c]).join(''));
 
 /* =====================================================================
    SIM: a titration of HCl with NaOH, run to its end point.
@@ -77,7 +77,7 @@ const SUB = ['', '', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
     line(ctx, box.l, GY(nA), box.r, GY(nA), cn, 3, [10, 10]);
     text(ctx, fmt(nA, 2) + ' mmol HCl in the sample', box.r, GY(nA) - 18, cn, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
     text(ctx, 'mmol NaOH delivered', X(Math.min(top, 50)) - 10, GY(MT.v * Math.min(top, 50)) + (MT.v * top > 17 ? 26 : -22), cn, { size: 18, align: 'right', bg: PAL.panel });
-    if (Veq <= CAP) { line(ctx, X(Veq), GY(nA), X(Veq), box.b, alpha(PAL.ink, 0.4), 2.5, [4, 8]); text(ctx, 'end point ' + fmt(Veq, 2) + ' mL', X(Veq), box.b - 18, PAL.ink, { size: 17, align: Veq > 40 ? 'right' : 'center', bg: PAL.panel }); }
+    if (Veq <= CAP) { line(ctx, X(Veq), GY(nA), X(Veq), box.b, alpha(PAL.ink, 0.4), 2.5, [4, 8]); text(ctx, 'end point ' + fmt(Veq, 2) + ' mL', Veq < 10 ? X(Veq) + 8 : X(Veq), box.b - 18, PAL.ink, { size: 17, align: Veq > 40 ? 'right' : Veq < 10 ? 'left' : 'center', bg: PAL.panel }); }
     F.pinned(ctx, box, X, GY, V, nT, cn);
     headline(ctx, reached ? 'The indicator turns after ' + fmt(Veq, 2) + ' mL of ' + fmt(MT.v, 3) + ' M NaOH, which is ' + fmt(nA, 2) + ' mmol, so the ' + fmt(VS.v, 2) + '-mL sample of HCl is ' + fmt(MA.v, 3) + ' M.'
       : Veq > CAP && done ? 'The buret empties after 50.00 mL, ' + fmt(CAP * MT.v, 2) + ' mmol of NaOH, before it has matched the ' + fmt(nA, 2) + ' mmol of HCl in the sample, so no end point is reached.'
@@ -85,7 +85,7 @@ const SUB = ['', '', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
     readout(d.readout, Veq <= CAP
       ? `\\kM_{\\text{HCl}} = \\frac{\\kV_{\\text{NaOH}}\\times\\kM_{\\text{NaOH}}\\times\\frac{1\\ \\text{mmol HCl}}{1\\ \\text{mmol NaOH}}}{\\kV_{\\text{sample}}} = \\frac{${hue('volume', fmt(Veq, 2) + '\\ \\text{mL}')}\\times ${hue('concentration', fmt(MT.v, 3) + '\\ \\text{M}')}\\times 1}{${hue('volume', fmt(VS.v, 2) + '\\ \\text{mL}')}} = ${hue('concentration', fmt(MA.v, 3) + '\\ \\text{M}')}`
       : `\\kV_{\\text{NaOH}} = \\frac{${hue('volume', fmt(VS.v, 2) + '\\ \\text{mL}')}\\times ${hue('concentration', fmt(MA.v, 3) + '\\ \\text{M}')}}{${hue('concentration', fmt(MT.v, 3) + '\\ \\text{M}')}} = ${hue('volume', fmt(Veq, 2) + '\\ \\text{mL}')} > 50\\ \\text{mL}`,
-      'A molarity is also millimoles per milliliter, so milliliters times molarity gives millimoles, and the end point is where the millimoles of NaOH delivered equal the millimoles of HCl in the sample, one for one by the equation.');
+      'A molarity is also millimoles per milliliter, so milliliters times molarity gives millimoles.');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -98,7 +98,7 @@ const SUB = ['', '', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
 ===================================================================== */
 function routeFigure(id, H, boxes, edges, head, ro) {
   const d = sim(id, H);
-  const BW = 210, BH = 90, GX = 150, Y0 = 120, GY = 60, cols = Math.max(...boxes.map((b) => b.c)) + 1, X0 = (1400 - cols * BW - (cols - 1) * GX) / 2;
+  const BW = 186, BH = 90, GX = 178, Y0 = 120, GY = 60, cols = Math.max(...boxes.map((b) => b.c)) + 1, X0 = (1400 - cols * BW - (cols - 1) * GX) / 2;
   const at = (b) => ({ x: X0 + b.c * (BW + GX), y: Y0 + b.r * (BH + GY) });
   function draw() {
     const { ctx } = begin(d.c);
@@ -118,7 +118,7 @@ function routeFigure(id, H, boxes, edges, head, ro) {
       const p = at(b), col = b.type ? C(b.type) : PAL.ink;
       ctx.save(); ctx.fillStyle = b.type ? alpha(col, 0.16) : PAL.soft; ctx.strokeStyle = col; ctx.lineWidth = 3;
       ctx.beginPath(); ctx.roundRect(p.x, p.y, BW, BH, 8); ctx.fill(); ctx.stroke(); ctx.restore();
-      const ls = b.t.split('\n');
+      const ls = (b.t.includes('\n') ? b.t : b.t.replace(' of ', ' of\n')).split('\n');
       ls.forEach((s, i) => text(ctx, s, p.x + BW / 2, p.y + BH / 2 + (i - (ls.length - 1) / 2) * 28, PAL.ink, { size: 23, weight: 600, align: 'center' }));
     });
     headline(ctx, head);
@@ -132,7 +132,7 @@ routeFigure('fig-map7', 280,
   'A volume of titrant leads through moles of each substance to the concentration of the analyte.',
   `\\frac{${hue('volume', '35.23\\ \\text{mL NaOH}')}\\times ${hue('concentration', '0.250\\ \\text{mmol/mL}')}\\times\\frac{1\\ \\text{mmol HCl}}{1\\ \\text{mmol NaOH}}}{${hue('volume', '50.00\\ \\text{mL}')}} = ${hue('concentration', '0.176\\ \\text{M HCl}')}`);
 routeFigure('fig-map8', 420,
-  [{ c: 0, r: 0, t: 'Mass of BaSO₄', type: 'mass' }, { c: 1, r: 0, t: 'Moles of BaSO₄', type: 'amount' }, { c: 2, r: 0, t: 'Moles of MgSO₄', type: 'amount' }, { c: 2, r: 1, t: 'Mass of MgSO₄', type: 'mass' }, { c: 1, r: 1, t: 'Percent MgSO₄' }],
+  [{ c: 0, r: 0, t: 'Mass of BaSO₄', type: 'mass' }, { c: 1, r: 0, t: 'Moles of BaSO₄', type: 'amount' }, { c: 2, r: 0, t: 'Moles of MgSO₄', type: 'amount' }, { c: 2, r: 1, t: 'Mass of MgSO₄', type: 'mass' }, { c: 1, r: 1, t: 'Percent\nMgSO₄' }],
   [[0, 1, 'Molar mass'], [1, 2, 'Stoichiometric\nfactor'], [2, 3, 'Molar mass'], [3, 4, 'Sample\nmass']],
   'The mass of the precipitate leads through moles to the mass of the analyte and its percent of the sample.',
   `\\frac{${hue('mass', '0.3181\\ \\text{g MgSO}_4')}}{${hue('mass', '0.4550\\ \\text{g sample}')}}\\times 100\\% = 69.91\\%`);
@@ -168,7 +168,7 @@ routeFigure('fig-combmap', 690,
   }
   function formula(nC, nH) {
     const r = nH / nC;
-    for (let k = 1; k <= 8; k++) { const h = r * k; if (Math.abs(h - Math.round(h)) < 0.08 * k && Math.round(h) >= 1) return { c: k, h: Math.round(h) }; }
+    for (let k = 1; k <= 8; k++) { const h = r * k; if (Math.abs(h - Math.round(h)) < 0.1 && Math.round(h) >= 1) return { c: k, h: Math.round(h) }; }
     return null;
   }
   function draw() {
@@ -176,7 +176,7 @@ routeFigure('fig-combmap', 690,
     const cm = C('mass'), cn = C('amount');
     const yc = 250;
     const nC = MC.v / 1000 / 44.01, nH = (2 * MH.v) / 1000 / 18.02, f = formula(nC, nH);
-    const name = f ? 'C' + SUB[f.c] + 'H' + SUB[f.h] : null;
+    const name = f ? 'C' + sub(f.c) + 'H' + sub(f.h) : null;
     /* the oxygen stream in, the furnace and the sample boat */
     arrow(ctx, 40, yc, 150, yc, PAL.ink, 4); text(ctx, 'O₂', 40, yc - 30, PAL.ink, { size: 22, weight: 600 });
     const rf = F.ref('furnace'), rs = F.ref('combustion-sample');
@@ -212,9 +212,9 @@ routeFigure('fig-combmap', 690,
     hits.push({ x: 320, y: yc + 30, r: 50, name: 'the sample burning in the stream of oxygen' });
     const ratio = nH / nC;
     headline(ctx, 'The absorbers gain ' + fmt(MH.v, 2) + ' mg of water and ' + fmt(MC.v, 2) + ' mg of carbon dioxide, so the sample held ' + fmt(ratio, 2) + ' mol H for every mol C'
-      + (name ? ' and its empirical formula is ' + name + '.' : ', a ratio no small whole numbers give.'));
+      + (ratio > 4.05 ? ', more than any hydrocarbon holds, since CH₄ has 4.' : name ? ' and its empirical formula is ' + name + '.' : ', a ratio no small whole numbers give.'));
     readout(d.readout, `\\frac{\\kn_{\\text{H}}}{\\kn_{\\text{C}}} = \\frac{${hue('mass', fmt(MH.v, 2) + '\\ \\text{mg}')}\\times\\frac{2}{18.02\\ \\text{mg/mmol}}}{${hue('mass', fmt(MC.v, 2) + '\\ \\text{mg}')}\\times\\frac{1}{44.01\\ \\text{mg/mmol}}} = \\frac{${hue('amount', (nH * 1000).toPrecision(3) + '\\ \\text{mmol}')}}{${hue('amount', (nC * 1000).toPrecision(3) + '\\ \\text{mmol}')}} = ${fmt(ratio, 2)}`,
-      'Each mole of water carries two moles of hydrogen and each mole of carbon dioxide one mole of carbon, and the smallest whole numbers in the ratio of the two are the subscripts of the empirical formula.');
+      'Each mole of water carries two moles of hydrogen, and each mole of carbon dioxide one mole of carbon.');
   }
   still(d, draw);
 })();

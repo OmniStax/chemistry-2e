@@ -4,7 +4,7 @@
  "chapter": "4",
  "title": "Quantitative Chemical Analysis",
  "short": "Quantitative analysis",
- "lead": "You can turn the stoichiometry of a reaction around to measure how much of a substance a sample holds. In a titration, the <span data-concept=\"volume\">volume</span> of a solution of known <span data-concept=\"concentration\">concentration</span> needed to react completely with the analyte gives its <span data-concept=\"concentration\">concentration</span>. In gravimetric analysis, the <span data-concept=\"mass\">mass</span> of a separated product gives the <span data-concept=\"mass\">mass</span> of the analyte. Combustion analysis, one kind of gravimetric analysis, finds the empirical formula of a hydrocarbon.",
+ "lead": "The stoichiometry of a reaction can be turned around to measure how much of a substance a sample holds. In a titration the <span data-concept=\"volume\">volume</span> of a solution of known <span data-concept=\"concentration\">concentration</span> that reacts completely with the analyte gives its <span data-concept=\"concentration\">concentration</span>, and in gravimetric analysis, of which combustion analysis is one kind, the <span data-concept=\"mass\">mass</span> of a separated product gives the <span data-concept=\"mass\">mass</span> of the analyte.",
  "objectives": [
   "Describe the fundamental aspects of titrations and gravimetric analysis.",
   "Perform stoichiometric calculations using typical titration and gravimetric data."
@@ -16,6 +16,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
    }
   ],
   "figures": [
@@ -42,24 +46,51 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "end-point label kept clear of the axis; note cut to its one fact"
     }
    ]
   },
-  { "id": "fig-map7", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_map7_img.jpg"], "draws": ["volume", "amount", "concentration"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
+  {
+   "id": "fig-map7",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_05_map7_img.jpg"],
+   "draws": ["volume", "amount", "concentration"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "box names and factor labels kept inside their room"
+    }
+   ]
+  },
   { "id": "fig-filter", "kind": "photo", "number": "4.17", "draws": [] },
-  { "id": "fig-map8", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_map8_img.jpg"], "draws": ["mass", "amount"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] },
+  {
+   "id": "fig-map8",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_05_map8_img.jpg"],
+   "draws": ["mass", "amount"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "box names and factor labels kept inside their room"
+    }
+   ]
+  },
   {
    "id": "sim-combustion",
    "kind": "sim",
@@ -77,16 +108,32 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "subscripts past 9 written; ratios past CH4 named; note cut"
     }
    ]
   },
-  { "id": "fig-combmap", "kind": "figure", "originals": ["/media/ch04/CNX_Chem_04_05_combmap_img.jpg"], "draws": ["mass", "amount"], "ai": [
- {
-  "model": "claude-opus-5-5",
-  "effort": "low",
-  "part": "built"
- }
-] }
+  {
+   "id": "fig-combmap",
+   "kind": "figure",
+   "originals": ["/media/ch04/CNX_Chem_04_05_combmap_img.jpg"],
+   "draws": ["mass", "amount"],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "box names and factor labels kept inside their room"
+    }
+   ]
+  }
  ],
  "coverage": [
   { "span": "quantitative", "concept": "quantitative-analysis", "verb": "introduces" },

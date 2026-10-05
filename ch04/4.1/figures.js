@@ -83,8 +83,7 @@ function atom(ctx, x, y, sym, r) {
     const mol = (k, one, many) => k + ' ' + (k === 1 ? one : many);
     headline(ctx, mol(n, 'methane molecule', 'methane molecules') + ' and ' + 2 * n + ' oxygen molecules react to yield ' + mol(n, 'carbon dioxide molecule', 'carbon dioxide molecules') + ' and ' + 2 * n + ' water molecules.');
     const c = (k) => (k === 1 ? '' : String(k));
-    readout(d.readout, `${c(n)}{\\text{CH}}_{4}+${2 * n}{\\text{O}}_{2}\\;\\longrightarrow\\;${c(n)}{\\text{CO}}_{2}+${2 * n}{\\text{H}}_{2}\\text{O}`,
-      'Each side holds ' + n + ' carbon, ' + 4 * n + ' hydrogen and ' + 4 * n + ' oxygen atoms' + (n > 1 ? ', and the numbers of molecules, ' + [n, 2 * n, n, 2 * n].join(':') + ', stand in the ratio 1:2:1:2.' : ', and the molecules react in the ratio 1:2:1:2.'));
+    readout(d.readout, `${c(n)}{\\text{CH}}_{4}+${2 * n}{\\text{O}}_{2}\\;\\longrightarrow\\;${c(n)}{\\text{CO}}_{2}+${2 * n}{\\text{H}}_{2}\\text{O}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

@@ -1,0 +1,93 @@
+<section id="intro">
+<h2>Potential and thermodynamics</h2>
+<p class="cite-target">So far in this chapter, the relationship between the <span data-concept="cell-potential">cell potential</span> and reaction <em><span data-concept="spontaneous-process">spontaneity</span></em> has been described, suggesting a link to the <span data-concept="gibbs-free-energy">free energy change</span> for the reaction (see chapter on thermodynamics). The interpretation of potentials as measures of oxidant <em><span data-concept="electrode-potential-and-oxidant-strength">strength</span></em> was presented, bringing to mind similar measures of <span data-concept="acid-base-ionization-constants">acid-base strength</span> as reflected in <span data-concept="equilibrium-constant">equilibrium constants</span> (see the chapter on acid-base equilibria). This section provides a summary of the relationships between potential and the related thermodynamic properties $\kdG$ and $\kK$.</p>
+</section>
+
+<section id="dg">
+<h2><em>E</em>° and Δ<em>G</em>°</h2>
+<p class="cite-target">The <span data-concept="standard-free-energy-change">standard free energy change</span> of a process, $\kdGo$, was defined in a previous chapter as the maximum <span data-concept="work">work</span> that could be performed by a system, $\kwmax$. In the case of a redox reaction taking place within a <span data-concept="galvanic-cell">galvanic cell</span> under <span data-concept="standard-state">standard state</span> conditions, essentially all the <span data-concept="work">work</span> is associated with transferring the electrons from reductant-to-oxidant, $\kwelec$:</p>
+$$\kdGo=\kwmax=\kwelec$$
+<p>The <span data-concept="work">work</span> associated with transferring electrons is determined by the total amount of charge (coulombs) transferred and the <span data-concept="cell-potential">cell potential</span>:</p>
+$$\begin{array}{rll}\kdGo=\kwelec & = & -\kn\kFaraday\kEocell \\ \kdGo & = & -\kn\kFaraday\kEocell\end{array}$$
+<p>where $\kn$ is the number of <span data-concept="mole">moles</span> of electrons transferred, $\kFaraday$ is <strong><span data-concept="faradays-constant">Faraday’s constant</span></strong>, and $\kEocell$ is the <span data-concept="standard-cell-potential">standard cell potential</span>. T<span data-concept="faradays-constant">Faraday’s constant</span> is defined as the charge in coulombs of one <span data-concept="mole">mole</span> of electrons, $\kFaraday$ = <span data-type="charge">96,485 C/mol e<sup>–</sup></span>.he relation between <span data-concept="gibbs-free-energy">free energy change</span> and <span data-concept="standard-cell-potential">standard cell potential</span> confirms the sign conventions and spontaneity criteria previously discussed for both of these properties: spontaneous redox reactions exhibit positive potentials and negative <span data-concept="gibbs-free-energy">free energy changes</span>.</p>
+</section>
+
+<section id="k">
+<h2><em>E</em>° and <em>K</em></h2>
+<p class="cite-target">Combining a previously derived relation between $\kdGo$ and $\kK$ (see the chapter on thermodynamics) and the equation above relating $\kdGo$ and $\kEocell$ yields the following:</p>
+$$\begin{array}{rll}\kdGo & = & -R\kT\;\text{ln}\;\kK=-\kn\kFaraday\kEocell \\ \kEocell & = & (\frac{R\kT}{\kn\kFaraday})\;\text{ln}\;\kK\end{array}$$
+<p>This equation indicates redox reactions with large (positive) <span data-concept="standard-cell-potential">standard cell potentials</span> will proceed far towards completion, reaching equilibrium when the majority of reactant has been converted to product. A summary of the relations between $\kEo$, $\kdGo$ and $\kK$ is depicted in Figure 17.7, and a table correlating reaction spontaneity to values of these properties is provided in Table 17.2.</p>
+<figure class="sim" id="sim-relations" data-figure="17.7" data-original="/media/ch17/CNX_Chem_17_04_Relation.jpg" data-original-caption="Graphic depicting the relation between three important thermodynamic properties.">
+  <div class="sim-head"><span class="eyebrow">Figure 17.7</span><span>The relations among three important thermodynamic properties, $\kEocell$, $\kdGo$ and $\kK$, for a reaction at <span data-type="temperature">298 K</span>, with each vertex carrying its value. Drag $\kEocell$ and watch $\kdGo$ follow it with the opposite sign while $\kK$ runs over dozens of powers of ten; choose the number of <span data-concept="mole">moles</span> of electrons, $\kn$, and every relation scales with it. The graph sets $\kK$ on a logarithmic axis, where it rises along a straight line through $\kK$ = 1 at $\kEocell$ = 0, the dashed circle on the slider.</span></div>
+</figure>
+<div class="book-table">
+  <div class="tcap"><span class="eyebrow">Table 17.2</span></div>
+  <table>
+    <thead><tr><th>$\kK$</th><th>$\kdGo$</th><th>$\kEocell$</th><th></th></tr></thead>
+    <tbody>
+      <tr><td>&gt; 1</td><td>&lt; 0</td><td>&gt; 0</td><td>Reaction is spontaneous under standard conditions<br>Products more abundant at equilibrium</td></tr>
+      <tr><td>&lt; 1</td><td>&gt; 0</td><td>&lt; 0</td><td>Reaction is non-spontaneous under standard conditions<br>Reactants more abundant at equilibrium</td></tr>
+      <tr><td>= 1</td><td>= 0</td><td>= 0</td><td>Reaction is at equilibrium under standard conditions<br>Reactants and products equally abundant</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="example cite-target" id="ex-relations">
+<h3>Example 17.6 · Equilibrium Constants, Standard Cell Potentials, and Standard Free Energy Changes</h3>
+<p>Use data from <a href="/chemistry-2e/sheets/potentials/">Appendix L</a> to calculate the <span data-concept="standard-cell-potential">standard cell potential</span>, <span data-concept="standard-free-energy-change">standard free energy change</span>, and <span data-concept="equilibrium-constant">equilibrium constant</span> for the following reaction at <span data-type="temperature">25 °C</span>. Comment on the spontaneity of the forward reaction and the composition of an equilibrium mixture of reactants and products.</p>
+$$2{\text{Ag}}^{\text{+}}(aq)+\text{Fe}(s)\rightleftharpoons \text{2Ag}(s)+{\text{Fe}}^{2+}(aq)$$
+<h4>Solution</h4>
+<p>The reaction involves an oxidation-reduction reaction, so the <span data-concept="standard-cell-potential">standard cell potential</span> can be calculated using the data in <a href="/chemistry-2e/sheets/potentials/">Appendix L</a>.</p>
+$$\begin{array}{llrll} \\ \text{anode (oxidation):} & \text{Fe}(s)\;\longrightarrow \;{\text{Fe}}^{2+}(aq)+{\text{2e}}^{\text{−}} & {E}_{{\text{Fe}}^{2+}\text{/Fe}}^{{}^{\circ}} & = & \text{−0.447 V} \\ \text{cathode (reduction):} & 2\;\times \;({\text{Ag}}^{\text{+}}(aq)+{\text{e}}^{\text{−}}\;\longrightarrow \;\text{Ag}(s)) & {E}_{{\text{Ag}}^{\text{+}}\text{/Ag}}^{{}^{\circ}} & = & \text{0.7996 V} \\ & \kEocell=\kEocathode-\kEoanode= & {E}_{{\text{Ag}}^{\text{+}}\text{/Ag}}^{{}^{\circ}}-{E}_{{\text{Fe}}^{2+}\text{/Fe}}^{{}^{\circ}} & = & \text{+1.247 V}\end{array}$$
+<p>With $\kn$ = 2, the <span data-concept="equilibrium-constant">equilibrium constant</span> is then</p>
+$$\begin{array}{rll}\kEocell & = & \frac{\text{0.0592 V}}{\kn}\;\text{log}\;\kK \\ \kK & = & {10}^{\kn\;\times \;\kEocell\text{/}\text{0.0592 V}} \\ \kK & = & {10}^{2\;\times \;\text{1.247 V/0.0592 V}} \\ \kK & = & {10}^{42.128} \\ \kK & = & 1.3\;\times \;{10}^{42}\end{array}$$
+<p>The standard free energy is then</p>
+$$\begin{array}{rll}\kdGo & = & -\kn\kFaraday\kEocell \\ \kdGo & = & −2\;\times \;96{,}485\;\frac{\text{C}}{\text{mol}}\;\times \;1.247\;\frac{\text{J}}{\text{C}}=−240.6\;\frac{\text{kJ}}{\text{mol}}\end{array}$$
+<p>The reaction is spontaneous, as indicated by a negative <span data-concept="gibbs-free-energy">free energy change</span> and a positive <span data-concept="cell-potential">cell potential</span>. The $\kK$ value is very large, indicating the reaction proceeds to near completion to yield an equilibrium mixture containing mostly products.</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-relations"></div>
+</div>
+</section>
+
+<section id="nernst">
+<h2>Potentials at Nonstandard Conditions: The Nernst Equation</h2>
+<p class="cite-target">Most of the redox processes that interest science and society do not occur under standard state conditions, and so the potentials of these systems under nonstandard conditions are a property worthy of attention. Having established the relationship between potential and <span data-concept="gibbs-free-energy">free energy change</span> in this section, the previously discussed relation between <span data-concept="gibbs-free-energy">free energy change</span> and reaction mixture composition can be used for this purpose.</p>
+$$\kdG=\kdGo+R\kT\;\text{ln}\;\kQrxn$$
+<p>Notice the <span data-concept="reaction-quotient">reaction quotient</span>, $\kQrxn$, appears in this equation, making the <span data-concept="gibbs-free-energy">free energy change</span> dependent upon the composition of the reaction mixture. Substituting the equation relating <span data-concept="gibbs-free-energy">free energy change</span> to <span data-concept="cell-potential">cell potential</span> yields the <strong><span data-concept="nernst-equation">Nernst equation</span></strong>:</p>
+$$-\kn\kFaraday\kEcell=-\kn\kFaraday\kEocell+R\kT\;\text{ln}\;\kQrxn$$
+$$\kEcell=\kEocell-\;\frac{R\kT}{\kn\kFaraday}\;\text{ln}\;\kQrxn$$
+<p>This equation describes how the potential of a redox system (such as a <span data-concept="galvanic-cell">galvanic cell</span>) varies from its standard state value, specifically, showing it to be a function of the number of electrons transferred, $\kn$, the <span data-concept="temperature">temperature</span>, $\kT$, and the reaction mixture composition as reflected in $\kQrxn$. A convenient form of the <span data-concept="nernst-equation">Nernst equation</span> for most work is one in which values for the fundamental constants ($R$ and $\kFaraday$) and standard <span data-concept="temperature">temperature</span> (298) K), along with a factor converting from natural to base-10 logarithms, have been included:</p>
+$$\kEcell=\kEocell-\;\frac{0.0592\text{ V}}{\kn}\;\text{log}\;\kQrxn$$
+<figure class="sim" id="sim-nernst">
+  <div class="sim-head"><span class="eyebrow">Sim</span><span>The <span data-concept="nernst-equation">Nernst equation</span> at <span data-type="temperature">298 K</span> as a line: the <span data-concept="cell-potential">cell potential</span>, $\kEcell$, against the logarithm of the <span data-concept="reaction-quotient">reaction quotient</span>, $\kQrxn$. The line passes through $\kEocell$ where $\kQrxn$ = 1 and falls by 0.0592 V divided by $\kn$ for every tenfold rise in $\kQrxn$. Slide $\kQrxn$ to change the composition of the mixture and watch the point cross from spontaneous to nonspontaneous where the line meets zero, at $\kQrxn$ = $\kK$, the dashed circle; drag $\kEocell$ or choose $\kn$ to move or tilt the line. The defaults are the cobalt and iron(II) reaction of Example 17.7.</span></div>
+</figure>
+<div class="example cite-target" id="ex-nonstandard">
+<h3>Example 17.7 · Predicting Redox Spontaneity Under Nonstandard Conditions</h3>
+<p>Use the <span data-concept="nernst-equation">Nernst equation</span> to predict the spontaneity of the redox reaction shown below.</p>
+$$\text{Co}(s)+{\text{Fe}}^{2+}(aq,\;1.94\;M)\;\longrightarrow \;{\text{Co}}^{2+}(aq\text{, 0.15}\;M)+\text{Fe}(s)$$
+<h4>Solution</h4>
+<p>Collecting information from <a href="/chemistry-2e/sheets/potentials/">Appendix L</a> and the problem,</p>
+$$\begin{array}{llrll} \\ \text{Anode (oxidation):} & \text{Co}(s)\;\longrightarrow \;{\text{Co}}^{2+}(aq)+{\text{2e}}^{\text{−}} & {E}_{{\text{Co}}^{2+}\text{/Co}}^{{}^{\circ}} & = & \text{−0.28 V} \\ \text{Cathode (reduction):} & {\text{Fe}}^{2+}(aq)+{\text{2e}}^{\text{−}}\;\longrightarrow \;\text{Fe}(s) & {E}_{{\text{Fe}}^{2+}\text{/Fe}}^{{}^{\circ}} & = & \text{−0.447 V} \\ & \kEocell=\kEocathode-\kEoanode= & \text{−0.447 V}-(\text{−0.28 V}) & = & \text{−0.17 V}\end{array}$$
+<p>Notice the negative value of the <span data-concept="standard-cell-potential">standard cell potential</span> indicates the process is not spontaneous under standard conditions. Substitution of the <span data-concept="nernst-equation">Nernst equation</span> terms for the nonstandard conditions yields:</p>
+$$\begin{array}{rll}\kQrxn & = & \frac{{[\text{Co}}^{2+}]}{{[\text{Fe}}^{2+}]}\;=\;\frac{0.15\;M}{1.94\;M}\;=0.077 \\ \kEcell & = & \kEocell-\;\frac{0.0592 V}{\kn}\;\text{log}\;\kQrxn \\ \kEcell & = & −0.1\text{7 V}-\;\frac{0.0592 V}{2}\;\text{log}\;0.077 \\ \kEcell & = & \text{−0.17 V}+0.033 V=−0.14 V\end{array}$$
+<p>The <span data-concept="cell-potential">cell potential</span> remains negative (slightly) under the specified conditions, and so the reaction remains nonspontaneous.</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-nonstandard"></div>
+</div>
+<p id="concentration-cell" class="cite-target">A <strong><span data-concept="concentration-cell">concentration cell</span></strong> is constructed by connecting two nearly identical <span data-concept="half-cell">half-cells</span>, each based on the same <span data-concept="half-reaction">half-reaction</span> and using the same electrode, varying only in the <span data-concept="concentration">concentration</span> of one redox species. The potential of a <span data-concept="concentration-cell">concentration cell</span>, therefore, is determined only by the difference in <span data-concept="concentration">concentration</span> of the chosen redox species. The example problem below illustrates the use of the <span data-concept="nernst-equation">Nernst equation</span> in calculations involving <span data-concept="concentration-cell">concentration cells</span>.</p>
+<div class="example cite-target" id="ex-concentration">
+<h3>Example 17.8 · Concentration Cells</h3>
+<p>What is the <span data-concept="cell-potential">cell potential</span> of the <span data-concept="concentration-cell">concentration cell</span> described by</p>
+$$\text{Zn}(s)\,|\,{\text{Zn}}^{2+}(aq\text{, 0.10}\;M)\,\|\,{\text{Zn}}^{2+}(aq\text{, 0.50}\;M)\,|\,\text{Zn}(s)$$
+<h4>Solution</h4>
+<p>From the information given:</p>
+$$\begin{array}{l} \\ \underline{\begin{array}{llllllrll}\text{Anode:} & & & \text{Zn}(s)\;\longrightarrow \;{\text{Zn}}^{2+}(aq\text{, 0.10}\;M)+{\text{2e}}^{\text{−}} & & & \kEoanode & = & \text{−0.7618 V} \\ \text{Cathode:} & & & {\text{Zn}}^{2+}(aq\text{, 0.50}\;M)+{\text{2e}}^{\text{−}}\;\longrightarrow \;\text{Zn}(s) & & & \kEocathode & = & \text{−0.7618 V}\end{array}} \\ \begin{array}{llllllrll}\text{Overall:} & & & {\text{Zn}}^{2+}(aq\text{, 0.50}\;M)\;\longrightarrow \;{\text{Zn}}^{2+}(aq\text{, 0.10}\;M) & & & \kEocell & = & \text{0.000 V}\end{array}\end{array}$$
+<p>Substituting into the <span data-concept="nernst-equation">Nernst equation</span>,</p>
+$$\kEcell=\text{0.000 V}-\;\frac{\text{0.0592 V}}{2}\;\text{log}\;\frac{0.10}{0.50}\;=+0.021 V$$
+<p>The positive value for <span data-concept="cell-potential">cell potential</span> indicates the overall cell reaction (see above) is spontaneous. This spontaneous reaction is one in which the zinc ion <span data-concept="concentration">concentration</span> in <span data-ref="cathode-half-cell">the <span data-concept="cathode">cathode</span></span> falls (it is reduced to elemental zinc) while that in <span data-ref="anode-half-cell">the <span data-concept="anode">anode</span></span> rises (it is produced by oxidation of the zinc <span data-concept="anode">anode</span>). A greater driving force for zinc reduction is present in <span data-ref="cathode-half-cell">the <span data-concept="cathode">cathode</span></span>, where the zinc(II) ion <span data-concept="concentration">concentration</span> is greater ($\kEcathode$ &gt; $\kEanode$).</p>
+<h4>Check Your Learning</h4>
+<div class="exercises" data-place="ex-concentration"></div>
+</div>
+<figure class="sim" id="sim-concentration-cell">
+  <div class="sim-head"><span class="eyebrow">Sim</span><span>The zinc <span data-concept="concentration-cell">concentration cell</span> of Example 17.8 running down. Electrons leave the zinc <span data-concept="anode">anode</span> in <span data-ref="anode-half-cell">the dilute half-cell</span> and cross the external circuit to the zinc <span data-concept="cathode">cathode</span> in <span data-ref="cathode-half-cell">the concentrated one</span>, where Zn<sup>2+</sup> ions plate out as zinc while the <span data-concept="anode">anode</span> dissolves into its solution. Watch the two zinc(II) <span data-concept="concentration">concentrations</span> converge on the graph below while the <span data-concept="cell-potential">cell potential</span>, $\kEcell$, falls, and the electrons slow with it, until the two solutions are equally concentrated and the cell is at equilibrium. How fast the cell runs down depends on the external circuit, so time carries no numbers.</span></div>
+</figure>
+</section>

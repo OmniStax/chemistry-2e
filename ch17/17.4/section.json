@@ -1,0 +1,610 @@
+{
+  "id": "17.4",
+  "module": "m68824",
+  "chapter": "17",
+  "title": "Potential, Free Energy, and Equilibrium",
+  "short": "Potential, Free Energy, and Equilibrium",
+  "lead": "The <span data-concept=\"cell-potential\">cell potential</span> of a redox reaction, its <span data-concept=\"gibbs-free-energy\">free energy change</span> and its <span data-concept=\"equilibrium-constant\">equilibrium constant</span> are three measures of one driving force. This section relates them through <span data-concept=\"faradays-constant\">Faraday’s constant</span> and follows the potential away from standard conditions with the <span data-concept=\"nernst-equation\">Nernst equation</span>, down to a <span data-concept=\"concentration-cell\">concentration cell</span>.",
+  "objectives": [
+    "Explain the relations between potential, free energy change, and equilibrium constants",
+    "Perform calculations involving the relations between cell potentials, free energy changes, and equilibrium",
+    "Use the Nernst equation to determine cell potentials under nonstandard conditions"
+  ],
+  "summary_html": "<p>Potential is a thermodynamic quantity reflecting the intrinsic driving force of a redox process, and it is directly related to the <span data-concept=\"gibbs-free-energy\">free energy change</span> and <span data-concept=\"equilibrium-constant\">equilibrium constant</span> for the process. For redox processes taking place in electrochemical cells, the maximum (electrical) <span data-concept=\"work\">work</span> done by the system is easily computed from the <span data-concept=\"cell-potential\">cell potential</span> and the reaction stoichiometry and is equal to the <span data-concept=\"gibbs-free-energy\">free energy change</span> for the process. The <span data-concept=\"equilibrium-constant\">equilibrium constant</span> for a redox reaction is logarithmically related to the reaction’s <span data-concept=\"cell-potential\">cell potential</span>, with larger (more positive) potentials indicating reactions with greater driving force that equilibrate when the reaction has proceeded far towards completion (large value of $\\kK$). Finally, the potential of a redox process varies with the composition of the reaction mixture, being related to the reactions standard potential and the value of its <span data-concept=\"reaction-quotient\">reaction quotient</span>, $\\kQrxn$, as described by the <span data-concept=\"nernst-equation\">Nernst equation</span>.</p>",
+  "notes": "Nothing of the section is left out. The run-together “TFaraday's constant … C/mol e–.he relation”, “(298) K)” and Example 17.7’s “−0.1 7 V” are kept as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ]
+  },
+  "built": "2026-10-05",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. Two unkeyed exercises whose answers would have to be worked out are left out: fs-idp27704096 (standard cell potentials from two free energy changes) and fs-idp126191568 (ΔG and ΔG° for the reactions of the previous problem). The equilibrium constants of fs-idp17461440 and of the first Check Your Learning are checked to a tenth, since a millivolt of cell potential moves K by several percent. Nothing is moved.",
+  "figures": [
+    {
+      "id": "sim-relations",
+      "kind": "sim",
+      "number": "17.7",
+      "originals": [
+        "/media/ch17/CNX_Chem_17_04_Relation.jpg"
+      ],
+      "original_caption": "Graphic depicting the relation between three important thermodynamic properties.",
+      "draws": [
+        "potential",
+        "energy",
+        "equilibrium-constant",
+        "amount",
+        "charge",
+        "temperature"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-nernst",
+      "kind": "sim",
+      "draws": [
+        "potential",
+        "equilibrium-constant",
+        "amount"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    },
+    {
+      "id": "sim-concentration-cell",
+      "kind": "sim",
+      "draws": [
+        "potential",
+        "equilibrium-constant",
+        "amount",
+        "concentration",
+        "time"
+      ],
+      "conventions": [
+        "Zn",
+        "e-"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "referents": [
+    {
+      "id": "anode-half-cell",
+      "label": "the anode half-cell",
+      "figures": [
+        "sim-concentration-cell"
+      ]
+    },
+    {
+      "id": "cathode-half-cell",
+      "label": "the cathode half-cell",
+      "figures": [
+        "sim-concentration-cell"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "span": "intro",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "intro",
+      "concept": "spontaneous-process",
+      "verb": "uses"
+    },
+    {
+      "span": "intro",
+      "concept": "gibbs-free-energy",
+      "verb": "uses"
+    },
+    {
+      "span": "intro",
+      "concept": "electrode-potential-and-oxidant-strength",
+      "verb": "uses"
+    },
+    {
+      "span": "intro",
+      "concept": "acid-base-ionization-constants",
+      "verb": "uses"
+    },
+    {
+      "span": "intro",
+      "concept": "equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "dg",
+      "concept": "faradays-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "dg",
+      "concept": "free-energy-and-cell-potential",
+      "verb": "introduces"
+    },
+    {
+      "span": "dg",
+      "concept": "standard-free-energy-change",
+      "verb": "uses"
+    },
+    {
+      "span": "dg",
+      "concept": "free-energy-and-maximum-work",
+      "verb": "uses"
+    },
+    {
+      "span": "dg",
+      "concept": "work",
+      "verb": "uses"
+    },
+    {
+      "span": "dg",
+      "concept": "standard-cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "dg",
+      "concept": "mole",
+      "verb": "uses"
+    },
+    {
+      "span": "dg",
+      "concept": "cell-potential-and-spontaneity",
+      "verb": "uses"
+    },
+    {
+      "span": "k",
+      "concept": "cell-potential-and-equilibrium-constant",
+      "verb": "introduces"
+    },
+    {
+      "span": "k",
+      "concept": "potential-free-energy-equilibrium-relations",
+      "verb": "introduces"
+    },
+    {
+      "span": "k",
+      "concept": "free-energy-and-equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "k",
+      "concept": "equilibrium-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "k",
+      "concept": "magnitude-of-k",
+      "verb": "uses"
+    },
+    {
+      "span": "k",
+      "concept": "ideal-gas-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "k",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "k",
+      "concept": "standard-cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "k",
+      "concept": "standard-free-energy-change",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-relations",
+      "concept": "free-energy-and-cell-potential",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-relations",
+      "concept": "cell-potential-and-equilibrium-constant",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-relations",
+      "concept": "standard-electrode-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-relations",
+      "concept": "half-reaction",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-relations",
+      "concept": "faradays-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "nernst",
+      "concept": "nernst-equation",
+      "verb": "introduces"
+    },
+    {
+      "span": "nernst",
+      "concept": "free-energy-and-reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "nernst",
+      "concept": "reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "nernst",
+      "concept": "free-energy-and-cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "nernst",
+      "concept": "cell-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "nernst",
+      "concept": "temperature",
+      "verb": "uses"
+    },
+    {
+      "span": "nernst",
+      "concept": "ideal-gas-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "nernst",
+      "concept": "faradays-constant",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-nonstandard",
+      "concept": "predict-spontaneity-nonstandard",
+      "verb": "introduces"
+    },
+    {
+      "span": "ex-nonstandard",
+      "concept": "nernst-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-nonstandard",
+      "concept": "write-reaction-quotient",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-nonstandard",
+      "concept": "standard-electrode-potential",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-nonstandard",
+      "concept": "cell-notation",
+      "verb": "uses"
+    },
+    {
+      "span": "concentration-cell",
+      "concept": "concentration-cell",
+      "verb": "introduces"
+    },
+    {
+      "span": "concentration-cell",
+      "concept": "half-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "concentration-cell",
+      "concept": "galvanic-cell",
+      "verb": "uses"
+    },
+    {
+      "span": "concentration-cell",
+      "concept": "concentration",
+      "verb": "uses"
+    },
+    {
+      "span": "concentration-cell",
+      "concept": "nernst-equation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-concentration",
+      "concept": "concentration-cell",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-concentration",
+      "concept": "nernst-equation",
+      "verb": "reinforces"
+    },
+    {
+      "span": "ex-concentration",
+      "concept": "anode",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-concentration",
+      "concept": "cathode",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-concentration",
+      "concept": "cell-notation",
+      "verb": "uses"
+    },
+    {
+      "span": "ex-concentration",
+      "concept": "predict-spontaneity-nonstandard",
+      "verb": "uses"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "cyl1",
+      "source_id": "fs-idp16667568",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-relations"
+      },
+      "cite": "ex-relations",
+      "prompt": "What is the standard free energy change and the equilibrium constant for the following reaction at room temperature? Is the reaction spontaneous?<br>$\\text{Sn}(s)+2{\\text{Cu}}^{2+}(aq)\\rightleftharpoons {\\text{Sn}}^{2+}(aq)+2{\\text{Cu}}^{\\text{+}}(aq)$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "standard free energy change, Δ<em>G</em>°",
+            "value": -56.2,
+            "unit": "kJ/mol",
+            "hint": "Find <em>E</em>°<sub>cell</sub> from the Sn<sup>2+</sup>/Sn and Cu<sup>2+</sup>/Cu<sup>+</sup> potentials of Appendix L, then use Δ<em>G</em>° = −<em>nFE</em>°<sub>cell</sub> with <em>n</em> = 2."
+          },
+          {
+            "part": "equilibrium constant, <em>K</em>",
+            "value": 6800000000.0,
+            "tol": 0.1,
+            "hint": "<em>K</em> = 10<sup><em>nE</em>°<sub>cell</sub>/0.0592 V</sup>."
+          }
+        ],
+        "generated_by": "source",
+        "solution": "Spontaneous; <em>n</em> = 2; ${E}_{\\text{cell}}^{{}^{\\circ}}=\\text{+0.291 V};$ $\\text{Δ}G\\text{°}=−56.2\\;\\frac{\\text{kJ}}{\\text{mol}};$ <em>K</em> = 6.8 × 10<sup>9</sup>."
+      }
+    },
+    {
+      "id": "cyl2",
+      "source_id": "fs-idm240817536",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-nonstandard"
+      },
+      "cite": "ex-nonstandard",
+      "prompt": "For the cell schematic below, identify values for <em>n</em> and <em>Q</em>, and calculate the cell potential, <em>E</em><sub>cell</sub>.<br>$\\text{Al}(s)\\,|\\,{\\text{Al}}^{3+}(aq,\\;0.15\\;M)\\,\\|\\,{\\text{Cu}}^{2+}(aq,\\;0.025\\;M)\\,|\\,\\text{Cu}(s)$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "<em>n</em>",
+            "value": 6,
+            "tol": 0.001,
+            "hint": "Balance the electrons between two Al atoms and three Cu<sup>2+</sup> ions."
+          },
+          {
+            "part": "<em>Q</em>",
+            "value": 1440,
+            "hint": "<em>Q</em> = [Al<sup>3+</sup>]<sup>2</sup>/[Cu<sup>2+</sup>]<sup>3</sup>."
+          },
+          {
+            "part": "<em>E</em><sub>cell</sub>",
+            "value": 1.97,
+            "unit": "V",
+            "tol": 0.01
+          }
+        ],
+        "generated_by": "source",
+        "solution": "<em>n</em> = 6; <em>Q</em> = 1440; <em>E</em><sub>cell</sub> = +1.97 V, spontaneous."
+      }
+    },
+    {
+      "id": "cyl3",
+      "source_id": "fs-idp211103648",
+      "kind": "check-your-learning",
+      "bloom": "Apply",
+      "place": {
+        "at": "inline",
+        "after": "ex-concentration"
+      },
+      "cite": "ex-concentration",
+      "prompt": "The concentration cell above was allowed to operate until the cell reaction reached equilibrium. What are the cell potential and the concentrations of zinc(II) in each half-cell for the cell now?",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "<em>E</em><sub>cell</sub>",
+            "value": 0,
+            "unit": "V",
+            "hint": "At equilibrium <em>Q</em> = <em>K</em>, and for a concentration cell <em>K</em> = 1."
+          },
+          {
+            "part": "[Zn<sup>2+</sup>] in each half-cell",
+            "value": 0.3,
+            "unit": "M",
+            "hint": "The two half-cells hold equal volumes, so the zinc(II) ions are shared equally between them."
+          }
+        ],
+        "generated_by": "source",
+        "solution": "<em>E</em><sub>cell</sub> = 0.000 V; [Zn<sup>2+</sup>]<sub>cathode</sub> = [Zn<sup>2+</sup>]<sub>anode</sub> = 0.30 <em>M</em>"
+      }
+    },
+    {
+      "id": "e27",
+      "source_id": "fs-idp144244864",
+      "source_number": "27",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "dg",
+      "prompt": "For each pair of standard cell potential and electron stoichiometry values below, calculate a corresponding standard free energy change (kJ).<br>(a) 0.000 V, <em>n</em> = 2<br>(b) +0.434 V, <em>n</em> = 2<br>(c) −2.439 V, <em>n</em> = 1",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 0,
+            "unit": "kJ/mol"
+          },
+          {
+            "part": "(b)",
+            "value": -83.7,
+            "unit": "kJ/mol"
+          },
+          {
+            "part": "(c)",
+            "value": 235.3,
+            "unit": "kJ/mol"
+          }
+        ],
+        "generated_by": "source",
+        "solution": "(a) 0 kJ/mol; (b) −83.7 kJ/mol; (c) +235.3 kJ/mol"
+      }
+    },
+    {
+      "id": "e29",
+      "source_id": "fs-idm3860960",
+      "source_number": "29",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "nernst",
+      "prompt": "Determine the standard cell potential and the cell potential under the stated conditions for the electrochemical reactions described here. State whether each is spontaneous or nonspontaneous under each set of conditions at 298.15 K.<br>(a) $\\text{Hg}(l)+{\\text{S}}^{2−}(aq\\text{, 0.10}\\;M)+2{\\text{Ag}}^{\\text{+}}(aq\\text{, 0.25}\\;M)\\;\\longrightarrow \\;2\\text{Ag}(s)+\\text{HgS}(s)$<br>(b) The cell made from an anode half-cell consisting of an aluminum electrode in 0.015 <em>M</em> aluminum nitrate solution and a cathode half-cell consisting of a nickel electrode in 0.25 <em>M</em> nickel(II) nitrate solution.<br>(c) The cell comprised of a half-cell in which aqueous bromide ion (1.0 <em>M</em>) is being oxidized to aqueous bromine (0.11 <em>M</em>) and a half-cell in which Al<sup>3+</sup> (0.023 <em>M</em>) is being reduced to aluminum metal.",
+      "answer": {
+        "type": "open",
+        "generated_by": "source",
+        "solution": "(a) standard cell potential: 1.50 V, spontaneous; cell potential under stated conditions: 1.43 V, spontaneous; (b) standard cell potential: 1.405 V, spontaneous; cell potential under stated conditions: 1.423 V, spontaneous; (c) standard cell potential: −2.749 V, nonspontaneous; cell potential under stated conditions: −2.733 V, nonspontaneous"
+      }
+    },
+    {
+      "id": "e31",
+      "source_id": "fs-idp17461440",
+      "source_number": "31",
+      "kind": "exercise",
+      "bloom": "Apply",
+      "place": {
+        "at": "end"
+      },
+      "cite": "k",
+      "prompt": "Use the data in Appendix L to calculate equilibrium constants for the following reactions. Assume 298.15 K if no temperature is given.<br>(a) $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$<br>(b) $\\text{CdS}(s)\\rightleftharpoons {\\text{Cd}}^{2+}(aq)+{\\text{S}}^{2−}(aq)\\hspace{5em}\\text{at 377 K}$<br>(c) ${\\text{Hg}}^{2+}(aq)+4{\\text{Br}}^{\\text{−}}(aq)\\rightleftharpoons {[{\\text{HgBr}}_{4}]}^{2−}(aq)$<br>(d) ${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)\\hspace{5em}\\text{at 25}\\;{}^{\\circ}\\text{C}$",
+      "answer": {
+        "type": "multi",
+        "parts": [
+          {
+            "part": "(a)",
+            "value": 1.7e-10,
+            "tol": 0.1
+          },
+          {
+            "part": "(b)",
+            "value": 2.6e-21,
+            "tol": 0.1
+          },
+          {
+            "part": "(c)",
+            "value": 4.693e+21,
+            "tol": 0.1
+          },
+          {
+            "part": "(d)",
+            "value": 1e-14,
+            "tol": 0.1
+          }
+        ],
+        "generated_by": "source",
+        "solution": "(a) 1.7 × 10<sup>−10</sup>; (b) 2.6 × 10<sup>−21</sup>; (c) 4.693 × 10<sup>21</sup>; (d) 1.0 × 10<sup>−14</sup>"
+      }
+    }
+  ],
+  "exercise_concepts": [
+    {
+      "exercise": "cyl1",
+      "concept": "free-energy-and-cell-potential"
+    },
+    {
+      "exercise": "cyl1",
+      "concept": "cell-potential-and-equilibrium-constant"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "predict-spontaneity-nonstandard"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "nernst-equation"
+    },
+    {
+      "exercise": "cyl2",
+      "concept": "write-reaction-quotient"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "concentration-cell"
+    },
+    {
+      "exercise": "cyl3",
+      "concept": "nernst-equation"
+    },
+    {
+      "exercise": "e27",
+      "concept": "free-energy-and-cell-potential"
+    },
+    {
+      "exercise": "e29",
+      "concept": "predict-spontaneity-nonstandard"
+    },
+    {
+      "exercise": "e29",
+      "concept": "nernst-equation"
+    },
+    {
+      "exercise": "e31",
+      "concept": "cell-potential-and-equilibrium-constant"
+    }
+  ]
+}

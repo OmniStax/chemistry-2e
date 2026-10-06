@@ -81,7 +81,7 @@ function twoWays(d, H, opts, onShow) {
 ===================================================================== */
 (function () {
   const d = sim('sim-phases');
-  const v = F.view3d(d.stage, { spin: 'none', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 400, dist: 4.8 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 400, dist: 4.8 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 230);
   /* the book's halogens from Table 10.1 and three noble gases, each with its normal melting and boiling points in kelvin */
   const SUBS = {

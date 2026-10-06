@@ -98,7 +98,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
   const d = sim('fig-hydrated-al');
   const side = F.choice(d.controls, { label: '\\text{side}', key: 'side', options: [{ value: 'before', label: 'Al(H₂O)₆³⁺ + H₂O' }, { value: 'after', label: 'Al(H₂O)₅(OH)²⁺ + H₃O⁺' }], value: 'before', aria: 'the side of the equilibrium shown' });
   const FRONT = { label: 'front', yaw: 0.7, pitch: 0.25 };
-  const v = F.view3d(d.stage, { h: 500, dist: 14.5, tilt: FRONT.pitch, spin: 'none', pitch: [-1.2, 1.2], yaw: [-1.4, 1.4],
+  const v = F.view3d(d.stage, { h: 500, dist: 14.5, tilt: FRONT.pitch, spin: 'off', pitch: [-1.2, 1.2], yaw: [-1.4, 1.4],
     views: [FRONT, { label: 'above', yaw: 0.7, pitch: 1.2 }] });
   v.setView(FRONT.yaw, FRONT.pitch);
   const has3 = !!v.scene;

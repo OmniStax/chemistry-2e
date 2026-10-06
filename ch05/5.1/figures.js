@@ -31,7 +31,7 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
 ===================================================================== */
 (function () {
   const d = sim('sim-heat-flow');
-  const v = F.view3d(d.stage, { h: 340, dist: 4.3, tilt: 0.3, spin: 'none', pitch: [-0.3, 1.2], yaw: [-0.9, 0.9],
+  const v = F.view3d(d.stage, { h: 340, dist: 4.3, tilt: 0.3, spin: 'off', pitch: [-0.3, 1.2], yaw: [-0.9, 0.9],
     views: [{ label: 'front', yaw: 0, pitch: 0.3 }, { label: 'above', yaw: 0, pitch: 1.2 }] });
   const has3 = !!v.scene;
   if (!has3) v.wrap.style.display = 'none';

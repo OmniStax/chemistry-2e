@@ -112,19 +112,14 @@ const RAD = Math.PI / 180;
   let last = null, prev = null;
   const nPick = F.choice(d.controls, { label: '\\text{carbons}', key: 'carbons', options: NS.map((n) => ({ value: String(n), label: String(n) })), value: '5',
     aria: 'the number of carbon atoms in the chain', onInput: () => switchN() });
-  const boxes = {}, picks = {};
-  NS.forEach((n) => {
-    const box = document.createElement('div'); box.style.display = n === 5 ? 'contents' : 'none'; d.controls.appendChild(box); boxes[n] = box;
-    picks[n] = F.select(box, { label: '\\text{oxygen}', key: `oxygen-${n}`, options: optionsFor(n), value: n === 5 ? 'oh-2' : 'oh-1',
-      aria: 'where the oxygen atom goes, counting carbons from the left', onInput: () => { prev = shown; last = picks[n]; shown = state(); draw(); } });
-  });
-  const state = () => molecule(+nPick.value, picks[+nPick.value].value);
+  const oPick = F.select(d.controls, { label: '\\text{oxygen}', key: 'oxygen', options: optionsFor(5), value: 'oh-2',
+    aria: 'where the oxygen atom goes, counting carbons from the left', onInput: () => { prev = shown; last = oPick; shown = state(); draw(); } });
+  const state = () => molecule(+nPick.value, oPick.value);
   let shown = state();
   function switchN() {
     const n = +nPick.value, [g, ks] = shown ? [shown.alcohol ? 'oh' : 'oe', shown.k] : ['oh', 1];
     const k = Math.min(ks, g === 'oh' ? n : n - 1);
-    picks[n].set(`${g}-${k}`);
-    NS.forEach((x) => { boxes[x].style.display = x === n ? 'contents' : 'none'; });
+    oPick.options(optionsFor(n), `${g}-${k}`);
     prev = shown; last = nPick; shown = state(); draw();
   }
 

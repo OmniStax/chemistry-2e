@@ -41,7 +41,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 ===================================================================== */
 (function () {
   const d = sim('sim-vapor');
-  const v = F.view3d(d.stage, { spin: 'none', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 380, dist: 4.8 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 380, dist: 4.8 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 340);
   /* each molecule by its carbon and oxygen atoms and the hydrogen atoms of its O–H groups, in box units */
   const SHAPES = {

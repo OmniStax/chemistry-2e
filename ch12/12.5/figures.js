@@ -65,7 +65,7 @@ const sciText = (x, sig) => { const { m, e } = sci(x, sig); return `${minus(m.to
     const h = s - 4.25, xC = -0.375 - 0.45 * h, Ob = xC + 0.75 - 0.23 * S(h);
     return { C: xC, Oa: xC - 0.5 - 0.02 * S(h), Ob, Oc: Ob + 0.65 + 0.9 * h };
   }
-  const v = F.view3d(d.stage, { spin: 'none', pitch: [-1.22, 1.22], views: [{ label: 'side', yaw: 0, pitch: 0.18 }, { label: 'above', yaw: 0, pitch: 1.2 }], h: 300, dist: 5.6, tilt: 0.18 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'side', yaw: 0, pitch: 0.18 }, { label: 'above', yaw: 0, pitch: 1.2 }], h: 300, dist: 5.6, tilt: 0.18 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 470);
   if (grp) grp.position.y = -0.4;
   const NAMES = { Oa: 'an oxygen atom from the carbon monoxide molecule', C: 'the carbon atom from the carbon monoxide molecule', Ob: 'an oxygen atom from the oxygen molecule', Oc: 'an oxygen atom from the oxygen molecule' };

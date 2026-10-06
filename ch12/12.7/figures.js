@@ -109,7 +109,7 @@ const knots = (ks) => (x) => {
 ===================================================================== */
 (function () {
   const d = sim('sim-hydrogenation');
-  const v = F.view3d(d.stage, { h: 470, dist: 6.4, tilt: 0.42, spin: 'none', pitch: [0.05, 1.3], yaw: [-1.2, 1.2],
+  const v = F.view3d(d.stage, { h: 470, dist: 6.4, tilt: 0.42, spin: 'off', pitch: [0.05, 1.3], yaw: [-1.2, 1.2],
     views: [{ label: 'front', yaw: 0, pitch: 0.42 }, { label: 'above', yaw: 0, pitch: 1.25 }] });
   const has3 = !!v.scene;
   if (!has3) v.wrap.style.display = 'none';

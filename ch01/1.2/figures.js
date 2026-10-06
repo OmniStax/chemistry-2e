@@ -430,7 +430,7 @@ function centre(m) {
 ===================================================================== */
 (function () {
   const d = sim('sim-electrolysis');
-  const v = F.view3d(d.stage, { spin: 'none', pitch: [0.04, 0.95], yaw: [-Math.PI / 2, Math.PI / 2], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0, pitch: 0.9 }], h: 460, dist: 7.4, tilt: 0.3 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.04, 0.95], yaw: [-Math.PI / 2, Math.PI / 2], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0, pitch: 0.9 }], h: 460, dist: 7.4, tilt: 0.3 });
   const grp = v.part(0), cnv = strip(d, 230);
   const N = ctl(d.controls, { label: '\\text{water molecules decomposed}', cls: '', min: 0, max: 12, step: 2, value: 6, unit: '', dec: 0, aria: 'number of water molecules decomposed' });
   /* the bench, the beaker on it, the battery on its floor and the two tubes over the terminals */

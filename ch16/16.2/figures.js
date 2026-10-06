@@ -48,8 +48,6 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
   const w = (BAR * W) / total;
   ctx.save(); ctx.fillStyle = alpha(PAL.ink, final ? 0.55 : 0.3); ctx.fillRect(xr + 202, yc - 9, Math.max(2, w), 18); ctx.restore();
 }
-/* hide the entries of a dropdown that the current state does not offer */
-const offer = (sel, ok) => sel.querySelectorAll('option').forEach((o) => { o.hidden = o.disabled = !ok(o.value); });
 
 /* =====================================================================
    FIGURE 16.8: N particles in two boxes, every microstate drawn and
@@ -67,13 +65,10 @@ const offer = (sel, ok) => sel.querySelectorAll('option').forEach((o) => { o.hid
   const pick = (label, key, aria, value) => F.select(d.controls, { label, key, aria, value, options: [...LET].map((c) => ({ value: c, label: `(${c})` })), onInput: () => draw() });
   const A = pick('\\text{initial}', 'from', 'the initial distribution', 'a');
   const B = pick('\\text{final}', 'to', 'the final distribution', 'c');
-  const sels = d.controls.querySelectorAll('select');
   const ro = F.readout(d);
   function fit(redraw = true) {
-    const n = +N.value;
-    if (LET.indexOf(A.value) > n) A.set('a');
-    if (LET.indexOf(B.value) > n) B.set(LET[n / 2]);
-    sels.forEach((s) => offer(s, (v) => LET.indexOf(v) <= n));
+    const n = +N.value, offered = [...LET].slice(0, n + 1).map((c) => ({ value: c, label: `(${c})` }));
+    A.options(offered, 'a'); B.options(offered, LET[n / 2]);
     if (redraw) draw();
   }
   let hits = []; F.hover(d.stage, () => hits);
@@ -218,7 +213,7 @@ const offer = (sel, ok) => sel.querySelectorAll('option').forEach((o) => { o.hid
 (function () {
   const T3D = window.THREE;
   const d = sim('sim-entropy-phase');
-  const v = F.view3d(d.stage, { spin: 'none', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 360, dist: 3.1 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 360, dist: 3.1 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 430);
   const TM = 273.15, TB = 373.15, HF = 6010, HV = 40700, CL = 75.3, CG = 33.6, M = 0.01802, R = 8.3145;
   const SL0 = 70.0 - CL * Math.log(298.15 / TM), SS0 = SL0 - HF / TM, SLB = SL0 + CL * Math.log(TB / TM), SG0 = SLB + HV / TB;

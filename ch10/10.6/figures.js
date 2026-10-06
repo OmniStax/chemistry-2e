@@ -254,7 +254,7 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
 ===================================================================== */
 (function () {
   const d = sim('sim-packing');
-  const v = F.view3d(d.stage, { h: 440, dist: 4.4, tilt: 0.5, spin: 'none', pitch: [-Math.PI / 2, Math.PI / 2],
+  const v = F.view3d(d.stage, { h: 440, dist: 4.4, tilt: 0.5, spin: 'off', pitch: [-Math.PI / 2, Math.PI / 2],
     views: [{ label: 'top', yaw: 0, pitch: Math.PI / 2 - 0.001 }, { label: 'side', yaw: 0, pitch: 0 }, { label: 'cube face', yaw: Math.PI, pitch: Math.atan(1 / S2) }] });
   const grp = v.part(0); if (grp) grp.position.y = -0.12;
   const stack = F.choice(d.controls, { label: '\\text{stacking}', aria: 'the stacking of the layers', options: [{ value: 'hcp', label: 'hexagonal (ABAB)' }, { value: 'ccp', label: 'cubic (ABCA)' }], value: 'ccp' });

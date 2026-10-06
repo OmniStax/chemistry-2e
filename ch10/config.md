@@ -42,3 +42,4 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 - Photographs: 10.13, 10.14 and 10.36 stay as the book's images; the three unnumbered example images of 10.6 are kept.
 - Colour: 10.5 binds `temperature` on its melting-point readout; 10.6 binds `volume` and `mass` in the density readout and `wavelength` in the Bragg figure; 10.2 binds nothing.
 - Anchors, set at the chapter pass: the capillary rise equation to 10.2's capillary-rise heading, the three Clausius-Clapeyron forms to 10.3's clausius heading, the sublimation sum to 10.3's sublimation heading, the Bragg equation to 10.6's xray heading; the variables with their equations, `a_cell` and `r_atom` at Example 10.14.
+- Prerequisites, 2026-10-05: the concept-prerequisite edges were Hasse-reduced from 191 to 144.

@@ -45,3 +45,4 @@ Proposed by the agent after the chapter exploration (2026-09-28). Status: applie
 - Colour: 11.1 binds `energy` only; 11.4 binds no `amount`, `mass` or `time`; see `COLOR.md`, "As built".
 - Anchors, set at the chapter pass: Henry's law and its three variables to 11.3's henry heading; 11.4's nine equations and twenty variables to its molality, vapor, phase, boiling, freezing, osmosis and electrolytes headings.
 
+- Prerequisites, 2026-10-05: the concept-prerequisite edges were Hasse-reduced from 166 to 129.

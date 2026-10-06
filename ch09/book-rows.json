@@ -919,10 +919,6 @@
       "prereq": "charles-law"
     },
     {
-      "concept": "absolute-zero",
-      "prereq": "temperature-scales"
-    },
-    {
       "concept": "ideal-gas",
       "prereq": "states-of-matter"
     },
@@ -963,20 +959,8 @@
       "prereq": "ideal-gas-law"
     },
     {
-      "concept": "standard-temperature-and-pressure",
-      "prereq": "avogadro-law"
-    },
-    {
-      "concept": "gas-pressure",
-      "prereq": "derived-units"
-    },
-    {
       "concept": "gas-pressure",
       "prereq": "states-of-matter"
-    },
-    {
-      "concept": "pressure-unit-conversion",
-      "prereq": "gas-pressure"
     },
     {
       "concept": "pressure-unit-conversion",
@@ -996,15 +980,7 @@
     },
     {
       "concept": "hydrostatic-pressure",
-      "prereq": "density"
-    },
-    {
-      "concept": "hydrostatic-pressure",
       "prereq": "compute-with-units"
-    },
-    {
-      "concept": "manometer-pressure",
-      "prereq": "hydrostatic-pressure"
     },
     {
       "concept": "manometer-pressure",
@@ -1023,16 +999,8 @@
       "prereq": "density"
     },
     {
-      "concept": "gas-density",
-      "prereq": "molar-mass"
-    },
-    {
       "concept": "molar-mass-of-a-gas",
       "prereq": "ideal-gas-law"
-    },
-    {
-      "concept": "molar-mass-of-a-gas",
-      "prereq": "molar-mass"
     },
     {
       "concept": "molar-mass-of-a-gas",
@@ -1045,10 +1013,6 @@
     {
       "concept": "mole-fraction-and-partial-pressure",
       "prereq": "daltons-law-of-partial-pressures"
-    },
-    {
-      "concept": "mole-fraction-and-partial-pressure",
-      "prereq": "mole"
     },
     {
       "concept": "gas-collected-over-water",
@@ -1079,10 +1043,6 @@
       "prereq": "mean-free-path"
     },
     {
-      "concept": "diffusion-and-effusion",
-      "prereq": "concentration"
-    },
-    {
       "concept": "grahams-law",
       "prereq": "diffusion-and-effusion"
     },
@@ -1109,22 +1069,6 @@
     {
       "concept": "kmt-explains-gas-laws",
       "prereq": "kinetic-molecular-theory"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "amontons-law"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "charles-law"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "boyles-law"
-    },
-    {
-      "concept": "kmt-explains-gas-laws",
-      "prereq": "avogadro-law"
     },
     {
       "concept": "kmt-explains-gas-laws",
@@ -1179,16 +1123,8 @@
       "prereq": "causes-of-non-ideal-behavior"
     },
     {
-      "concept": "conditions-for-ideal-behavior",
-      "prereq": "ideal-gas"
-    },
-    {
       "concept": "van-der-waals-equation",
       "prereq": "causes-of-non-ideal-behavior"
-    },
-    {
-      "concept": "van-der-waals-equation",
-      "prereq": "ideal-gas-law"
     },
     {
       "concept": "force",
@@ -1223,10 +1159,6 @@
       "prereq": "unit"
     },
     {
-      "concept": "pascal",
-      "prereq": "derived-units"
-    },
-    {
       "concept": "bar-unit",
       "prereq": "pascal"
     },
@@ -1244,15 +1176,7 @@
     },
     {
       "concept": "barometer",
-      "prereq": "gas-pressure"
-    },
-    {
-      "concept": "barometer",
       "prereq": "hydrostatic-pressure"
-    },
-    {
-      "concept": "manometer",
-      "prereq": "gas-pressure"
     },
     {
       "concept": "manometer",
@@ -1279,10 +1203,6 @@
       "prereq": "standard-temperature-and-pressure"
     },
     {
-      "concept": "standard-molar-volume",
-      "prereq": "ideal-gas-law"
-    },
-    {
       "concept": "partial-pressure",
       "prereq": "gas-pressure"
     },
@@ -1293,10 +1213,6 @@
     {
       "concept": "mole-fraction",
       "prereq": "mole"
-    },
-    {
-      "concept": "mole-fraction",
-      "prereq": "mixtures"
     },
     {
       "concept": "mole-fraction",
@@ -1340,14 +1256,6 @@
     },
     {
       "concept": "speed",
-      "prereq": "length"
-    },
-    {
-      "concept": "speed",
-      "prereq": "time"
-    },
-    {
-      "concept": "speed",
       "prereq": "velocity"
     },
     {
@@ -1360,15 +1268,7 @@
     },
     {
       "concept": "pressure-unit-conversion",
-      "prereq": "pascal"
-    },
-    {
-      "concept": "pressure-unit-conversion",
       "prereq": "bar-unit"
-    },
-    {
-      "concept": "pressure-unit-conversion",
-      "prereq": "atmosphere-unit"
     },
     {
       "concept": "pressure-unit-conversion",
@@ -1395,10 +1295,6 @@
       "prereq": "mole-fraction"
     },
     {
-      "concept": "mole-fraction-and-partial-pressure",
-      "prereq": "partial-pressure"
-    },
-    {
       "concept": "gas-collected-over-water",
       "prereq": "vapor-pressure-of-water"
     },
@@ -1411,19 +1307,7 @@
       "prereq": "effusion"
     },
     {
-      "concept": "grahams-law",
-      "prereq": "effusion"
-    },
-    {
-      "concept": "grahams-law-calculations",
-      "prereq": "effusion"
-    },
-    {
       "concept": "maxwell-boltzmann-distribution",
-      "prereq": "speed"
-    },
-    {
-      "concept": "root-mean-square-speed",
       "prereq": "speed"
     }
   ]

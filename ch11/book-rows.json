@@ -762,10 +762,6 @@
    "prereq": "solution-components"
   },
   {
-   "concept": "properties-of-solutions",
-   "prereq": "mixtures"
-  },
-  {
    "concept": "ideal-solution",
    "prereq": "properties-of-solutions"
   },
@@ -806,10 +802,6 @@
    "prereq": "rank-by-intermolecular-forces"
   },
   {
-   "concept": "predict-solution-formation",
-   "prereq": "molecular-polarity"
-  },
-  {
    "concept": "electrolytes-and-nonelectrolytes",
    "prereq": "properties-of-solutions"
   },
@@ -820,10 +812,6 @@
   {
    "concept": "ion-dipole-attraction",
    "prereq": "molecular-polarity"
-  },
-  {
-   "concept": "ion-dipole-attraction",
-   "prereq": "ions-and-atomic-charge"
   },
   {
    "concept": "ion-dipole-attraction",
@@ -863,10 +851,6 @@
   },
   {
    "concept": "solubility-and-saturation",
-   "prereq": "concentration"
-  },
-  {
-   "concept": "solubility-and-saturation",
    "prereq": "vapor-pressure-dynamic-equilibrium"
   },
   {
@@ -899,19 +883,11 @@
   },
   {
    "concept": "henrys-law-calculations",
-   "prereq": "pressure-unit-conversion"
-  },
-  {
-   "concept": "henrys-law-calculations",
    "prereq": "mass-mole-conversion"
   },
   {
    "concept": "miscibility",
    "prereq": "predict-solution-formation"
-  },
-  {
-   "concept": "miscibility",
-   "prereq": "hydrogen-bonding"
   },
   {
    "concept": "solid-solubility-and-temperature",
@@ -931,15 +907,7 @@
   },
   {
    "concept": "molality-and-mole-fraction",
-   "prereq": "molarity"
-  },
-  {
-   "concept": "molality-and-mole-fraction",
    "prereq": "mole-fraction-and-partial-pressure"
-  },
-  {
-   "concept": "molality-and-mole-fraction",
-   "prereq": "mass-mole-conversion"
   },
   {
    "concept": "molality-and-mole-fraction",
@@ -958,10 +926,6 @@
    "prereq": "vapor-pressure-dynamic-equilibrium"
   },
   {
-   "concept": "raoults-law",
-   "prereq": "daltons-law-of-partial-pressures"
-  },
-  {
    "concept": "distillation",
    "prereq": "raoults-law"
   },
@@ -976,10 +940,6 @@
   {
    "concept": "boiling-point-elevation",
    "prereq": "boiling-point"
-  },
-  {
-   "concept": "boiling-point-elevation",
-   "prereq": "molality-and-mole-fraction"
   },
   {
    "concept": "freezing-point-depression",
@@ -1022,28 +982,12 @@
    "prereq": "osmotic-pressure"
   },
   {
-   "concept": "molar-mass-from-colligative-properties",
-   "prereq": "molar-mass"
-  },
-  {
-   "concept": "vant-hoff-factor",
-   "prereq": "colligative-properties"
-  },
-  {
    "concept": "vant-hoff-factor",
    "prereq": "dissociation-of-ionic-compounds"
   },
   {
    "concept": "vant-hoff-factor",
    "prereq": "freezing-point-depression"
-  },
-  {
-   "concept": "colloids-solutions-and-suspensions",
-   "prereq": "properties-of-solutions"
-  },
-  {
-   "concept": "colloids-solutions-and-suspensions",
-   "prereq": "mixtures"
   },
   {
    "concept": "dispersed-phase-and-medium",
@@ -1064,10 +1008,6 @@
   {
    "concept": "soaps-and-detergents",
    "prereq": "colloid-preparation"
-  },
-  {
-   "concept": "soaps-and-detergents",
-   "prereq": "molecular-polarity"
   },
   {
    "concept": "soaps-and-detergents",
@@ -1103,10 +1043,6 @@
   },
   {
    "concept": "solvation",
-   "prereq": "solvent"
-  },
-  {
-   "concept": "solvation",
    "prereq": "intermolecular-force"
   },
   {
@@ -1138,10 +1074,6 @@
    "prereq": "solubility"
   },
   {
-   "concept": "saturated-solution",
-   "prereq": "concentration"
-  },
-  {
    "concept": "unsaturated-solution",
    "prereq": "saturated-solution"
   },
@@ -1170,28 +1102,12 @@
    "prereq": "kilogram"
   },
   {
-   "concept": "molality",
-   "prereq": "solvent"
-  },
-  {
-   "concept": "molality",
-   "prereq": "solute"
-  },
-  {
    "concept": "boiling-point-elevation-constant",
    "prereq": "boiling-point-elevation"
   },
   {
-   "concept": "boiling-point-elevation-constant",
-   "prereq": "molality"
-  },
-  {
    "concept": "freezing-point-depression-constant",
    "prereq": "freezing-point-depression"
-  },
-  {
-   "concept": "freezing-point-depression-constant",
-   "prereq": "molality"
   },
   {
    "concept": "semipermeable-membrane",
@@ -1210,10 +1126,6 @@
    "prereq": "semipermeable-membrane"
   },
   {
-   "concept": "osmosis",
-   "prereq": "solvent"
-  },
-  {
    "concept": "isotonic",
    "prereq": "osmotic-pressure"
   },
@@ -1227,15 +1139,7 @@
   },
   {
    "concept": "crenation",
-   "prereq": "osmosis"
-  },
-  {
-   "concept": "crenation",
    "prereq": "hypertonic"
-  },
-  {
-   "concept": "hemolysis",
-   "prereq": "osmosis"
   },
   {
    "concept": "hemolysis",
@@ -1311,10 +1215,6 @@
   },
   {
    "concept": "electrolytes-and-nonelectrolytes",
-   "prereq": "electrolyte"
-  },
-  {
-   "concept": "electrolytes-and-nonelectrolytes",
    "prereq": "nonelectrolyte"
   },
   {
@@ -1324,30 +1224,10 @@
   {
    "concept": "electrolytes-and-nonelectrolytes",
    "prereq": "weak-electrolyte"
-  },
-  {
-   "concept": "classify-electrolyte-strength",
-   "prereq": "strong-electrolyte"
-  },
-  {
-   "concept": "classify-electrolyte-strength",
-   "prereq": "weak-electrolyte"
-  },
-  {
-   "concept": "classify-electrolyte-strength",
-   "prereq": "nonelectrolyte"
-  },
-  {
-   "concept": "solubility-and-saturation",
-   "prereq": "saturated-solution"
   },
   {
    "concept": "solubility-and-saturation",
    "prereq": "unsaturated-solution"
-  },
-  {
-   "concept": "supersaturated-solutions",
-   "prereq": "saturated-solution"
   },
   {
    "concept": "miscibility",
@@ -1366,28 +1246,12 @@
    "prereq": "molality"
   },
   {
-   "concept": "boiling-point-elevation",
-   "prereq": "molality"
-  },
-  {
-   "concept": "freezing-point-depression",
-   "prereq": "molality"
-  },
-  {
    "concept": "osmotic-pressure",
    "prereq": "osmosis"
   },
   {
-   "concept": "osmotic-pressure",
-   "prereq": "semipermeable-membrane"
-  },
-  {
    "concept": "vant-hoff-factor",
    "prereq": "ion-pair"
-  },
-  {
-   "concept": "molar-mass-from-colligative-properties",
-   "prereq": "molality"
   },
   {
    "concept": "colloids-solutions-and-suspensions",
@@ -1407,18 +1271,6 @@
   },
   {
    "concept": "colloid-preparation",
-   "prereq": "emulsion"
-  },
-  {
-   "concept": "colloid-preparation",
-   "prereq": "emulsifying-agent"
-  },
-  {
-   "concept": "soaps-and-detergents",
-   "prereq": "amphiphilic"
-  },
-  {
-   "concept": "soaps-and-detergents",
    "prereq": "emulsifying-agent"
   }
  ]

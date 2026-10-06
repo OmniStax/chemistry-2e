@@ -897,15 +897,7 @@
   },
   {
    "concept": "phase-from-imf-and-kinetic-energy",
-   "prereq": "kinetic-molecular-theory"
-  },
-  {
-   "concept": "phase-from-imf-and-kinetic-energy",
    "prereq": "average-kinetic-energy-and-temperature"
-  },
-  {
-   "concept": "phase-from-imf-and-kinetic-energy",
-   "prereq": "states-of-matter"
   },
   {
    "concept": "dispersion-forces",
@@ -932,10 +924,6 @@
    "prereq": "dipole-dipole-attraction"
   },
   {
-   "concept": "hydrogen-bonding",
-   "prereq": "electronegativity"
-  },
-  {
    "concept": "rank-by-intermolecular-forces",
    "prereq": "polarizability-and-dispersion-strength"
   },
@@ -945,15 +933,7 @@
   },
   {
    "concept": "rank-by-intermolecular-forces",
-   "prereq": "dipole-dipole-attraction"
-  },
-  {
-   "concept": "rank-by-intermolecular-forces",
    "prereq": "hydrogen-bonding"
-  },
-  {
-   "concept": "rank-by-intermolecular-forces",
-   "prereq": "predict-molecular-structure"
   },
   {
    "concept": "viscosity",
@@ -977,10 +957,6 @@
   },
   {
    "concept": "capillary-action",
-   "prereq": "cohesive-and-adhesive-forces"
-  },
-  {
-   "concept": "capillary-action",
    "prereq": "surface-tension"
   },
   {
@@ -994,10 +970,6 @@
   {
    "concept": "vapor-pressure-dynamic-equilibrium",
    "prereq": "phase-from-imf-and-kinetic-energy"
-  },
-  {
-   "concept": "vapor-pressure-dynamic-equilibrium",
-   "prereq": "gas-pressure"
   },
   {
    "concept": "vapor-pressure-dynamic-equilibrium",
@@ -1022,18 +994,6 @@
   {
    "concept": "boiling-point",
    "prereq": "vapor-pressure-and-temperature"
-  },
-  {
-   "concept": "boiling-point",
-   "prereq": "atmospheric-pressure-and-barometer"
-  },
-  {
-   "concept": "enthalpies-of-phase-change",
-   "prereq": "exothermic-and-endothermic"
-  },
-  {
-   "concept": "enthalpies-of-phase-change",
-   "prereq": "enthalpy-change-at-constant-pressure"
   },
   {
    "concept": "enthalpies-of-phase-change",
@@ -1064,16 +1024,8 @@
    "prereq": "enthalpies-of-phase-change"
   },
   {
-   "concept": "heating-curve",
-   "prereq": "heat-specific-heat-relation"
-  },
-  {
    "concept": "heating-curve-calculations",
    "prereq": "heating-curve"
-  },
-  {
-   "concept": "heating-curve-calculations",
-   "prereq": "mass-mole-conversion"
   },
   {
    "concept": "phase-diagram",
@@ -1082,10 +1034,6 @@
   {
    "concept": "phase-diagram",
    "prereq": "heating-curve"
-  },
-  {
-   "concept": "phase-diagram",
-   "prereq": "vapor-pressure-dynamic-equilibrium"
   },
   {
    "concept": "read-phase-diagram",
@@ -1100,28 +1048,12 @@
    "prereq": "phase-diagram"
   },
   {
-   "concept": "critical-point-and-supercritical-fluid",
-   "prereq": "phase-diagram"
-  },
-  {
    "concept": "crystalline-and-amorphous-solids",
    "prereq": "phase-from-imf-and-kinetic-energy"
   },
   {
-   "concept": "crystalline-and-amorphous-solids",
-   "prereq": "states-of-matter"
-  },
-  {
    "concept": "types-of-crystalline-solids",
    "prereq": "crystalline-and-amorphous-solids"
-  },
-  {
-   "concept": "types-of-crystalline-solids",
-   "prereq": "ionic-bond"
-  },
-  {
-   "concept": "types-of-crystalline-solids",
-   "prereq": "covalent-bond-formation"
   },
   {
    "concept": "types-of-crystalline-solids",
@@ -1140,10 +1072,6 @@
    "prereq": "crystalline-and-amorphous-solids"
   },
   {
-   "concept": "cubic-unit-cells",
-   "prereq": "unit-cell"
-  },
-  {
    "concept": "closest-packing",
    "prereq": "cubic-unit-cells"
   },
@@ -1158,10 +1086,6 @@
   {
    "concept": "unit-cell-radius-and-density",
    "prereq": "count-atoms-and-molecules"
-  },
-  {
-   "concept": "unit-cell-radius-and-density",
-   "prereq": "molar-mass"
   },
   {
    "concept": "holes-in-closest-packed-arrays",
@@ -1185,15 +1109,7 @@
   },
   {
    "concept": "ionic-unit-cells",
-   "prereq": "cubic-unit-cells"
-  },
-  {
-   "concept": "ionic-unit-cells",
    "prereq": "holes-in-closest-packed-arrays"
-  },
-  {
-   "concept": "ionic-unit-cells",
-   "prereq": "ionic-lattice"
   },
   {
    "concept": "bragg-equation",
@@ -1206,10 +1122,6 @@
   {
    "concept": "intermolecular-force",
    "prereq": "covalent-bond"
-  },
-  {
-   "concept": "intermolecular-force",
-   "prereq": "atoms-and-molecules"
   },
   {
    "concept": "van-der-waals-force",
@@ -1308,10 +1220,6 @@
    "prereq": "boiling-point"
   },
   {
-   "concept": "normal-boiling-point",
-   "prereq": "atmosphere-unit"
-  },
-  {
    "concept": "melting-point",
    "prereq": "melting"
   },
@@ -1326,10 +1234,6 @@
   {
    "concept": "critical-point",
    "prereq": "phase-diagram"
-  },
-  {
-   "concept": "critical-point",
-   "prereq": "condensation"
   },
   {
    "concept": "supercritical-fluid",
@@ -1404,10 +1308,6 @@
    "prereq": "simple-cubic-unit-cell"
   },
   {
-   "concept": "simple-cubic-structure",
-   "prereq": "crystalline-solid"
-  },
-  {
    "concept": "body-centered-cubic-unit-cell",
    "prereq": "unit-cell"
   },
@@ -1416,20 +1316,12 @@
    "prereq": "body-centered-cubic-unit-cell"
   },
   {
-   "concept": "body-centered-cubic-solid",
-   "prereq": "crystalline-solid"
-  },
-  {
    "concept": "face-centered-cubic-unit-cell",
    "prereq": "unit-cell"
   },
   {
    "concept": "face-centered-cubic-solid",
    "prereq": "face-centered-cubic-unit-cell"
-  },
-  {
-   "concept": "face-centered-cubic-solid",
-   "prereq": "crystalline-solid"
   },
   {
    "concept": "isomorphous",
@@ -1442,10 +1334,6 @@
   {
    "concept": "cubic-closest-packing",
    "prereq": "closest-packing"
-  },
-  {
-   "concept": "cubic-closest-packing",
-   "prereq": "face-centered-cubic-unit-cell"
   },
   {
    "concept": "crystal-hole",
@@ -1469,19 +1357,11 @@
   },
   {
    "concept": "x-ray-crystallography",
-   "prereq": "diffraction"
-  },
-  {
-   "concept": "x-ray-crystallography",
    "prereq": "bragg-equation"
   },
   {
    "concept": "intermolecular-versus-intramolecular-forces",
    "prereq": "intermolecular-force"
-  },
-  {
-   "concept": "dispersion-forces",
-   "prereq": "instantaneous-dipole"
   },
   {
    "concept": "dispersion-forces",
@@ -1492,10 +1372,6 @@
    "prereq": "polarizability"
   },
   {
-   "concept": "rank-by-intermolecular-forces",
-   "prereq": "intermolecular-force"
-  },
-  {
    "concept": "cohesive-and-adhesive-forces",
    "prereq": "cohesive-force"
   },
@@ -1504,43 +1380,7 @@
    "prereq": "adhesive-force"
   },
   {
-   "concept": "capillary-action",
-   "prereq": "cohesive-force"
-  },
-  {
-   "concept": "capillary-action",
-   "prereq": "adhesive-force"
-  },
-  {
    "concept": "vapor-pressure-dynamic-equilibrium",
-   "prereq": "dynamic-equilibrium"
-  },
-  {
-   "concept": "vapor-pressure-dynamic-equilibrium",
-   "prereq": "vapor-pressure"
-  },
-  {
-   "concept": "vapor-pressure-dynamic-equilibrium",
-   "prereq": "vaporization"
-  },
-  {
-   "concept": "vapor-pressure-dynamic-equilibrium",
-   "prereq": "condensation"
-  },
-  {
-   "concept": "vapor-pressure-and-imf",
-   "prereq": "vapor-pressure"
-  },
-  {
-   "concept": "vapor-pressure-and-temperature",
-   "prereq": "vapor-pressure"
-  },
-  {
-   "concept": "boiling-point",
-   "prereq": "vapor-pressure"
-  },
-  {
-   "concept": "clausius-clapeyron-equation",
    "prereq": "vapor-pressure"
   },
   {
@@ -1558,10 +1398,6 @@
   {
    "concept": "heating-curve",
    "prereq": "melting-point"
-  },
-  {
-   "concept": "critical-point-and-supercritical-fluid",
-   "prereq": "critical-point"
   },
   {
    "concept": "critical-point-and-supercritical-fluid",
@@ -1589,22 +1425,6 @@
   },
   {
    "concept": "types-of-crystalline-solids",
-   "prereq": "molecular-solid"
-  },
-  {
-   "concept": "classify-crystalline-solid",
-   "prereq": "ionic-solid"
-  },
-  {
-   "concept": "classify-crystalline-solid",
-   "prereq": "metallic-solid"
-  },
-  {
-   "concept": "classify-crystalline-solid",
-   "prereq": "covalent-network-solid"
-  },
-  {
-   "concept": "classify-crystalline-solid",
    "prereq": "molecular-solid"
   },
   {
@@ -1637,14 +1457,6 @@
   },
   {
    "concept": "holes-in-closest-packed-arrays",
-   "prereq": "octahedral-hole"
-  },
-  {
-   "concept": "formula-from-hole-occupancy",
-   "prereq": "tetrahedral-hole"
-  },
-  {
-   "concept": "formula-from-hole-occupancy",
    "prereq": "octahedral-hole"
   },
   {

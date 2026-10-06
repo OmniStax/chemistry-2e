@@ -47,6 +47,7 @@ Proposed by the agent after the chapter exploration (2026-09-12 for 9.2, 2026-09
 | Sims | two added on 2026-09-28, the gas-density line of 9.3 and the speed-histogram gas box of 9.5, which answers the dropped gas-simulator Link to Learning; 9.2 keeps its two |
 | Colour | 9.3 binds `pressure`, `volume`, `temperature` and `mass`, not `amount`, since no figure draws a count of moles; 9.4 binds `mass` alone, no figure reading a time; 9.5 binds `pressure`, `volume` and `amount` as well, through Figure 9.31's two-state readout and gas bodies |
 | Symbols | 25 rows added on 2026-09-28: the 23 of the prep and `P_gas` (`\kPgas`) and `P_atm` (`\kPatm`), both `pressure`, staged by the chapter pass for the manometer |
+| Prerequisites | 2026-10-05: the concept-prerequisite edges were Hasse-reduced from 137 to 108 |
 
 ## Section 9.2 as built (2026-09-12)
 

@@ -413,7 +413,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: recall that <em>Q</em> can be evaluated for any mixture of reactants and products, whatever their concentrations, while <em>K</em> is the particular value <em>Q</em> takes once the system has reached equilibrium. The law of mass action says that at a given temperature this equilibrium value is the same whatever mixture the reaction started from."
+        "solution": "The reaction quotient is evaluated for whatever mixture of reactants and products is present, and since the concentrations can be chosen freely, there are infinitely many mixtures and so infinitely many values of <em>Q</em>, from zero for reactants only to an immeasurably large value for products only. The equilibrium constant is the one value <em>Q</em> takes when the system is at equilibrium. The law of mass action states that at a given temperature the reaction quotient for a system at equilibrium is constant: every mixture reacts, forward or in reverse, until its <em>Q</em> reaches that same value. In Figure 13.5, the oxidation of SO<sub>2</sub> started from reactants only and from product only passes through different values of <em>Q<sub>c</sub></em> but levels off at the same <em>K<sub>c</sub></em>. Only a change in temperature changes <em>K</em>."
       }
     },
     {
@@ -430,7 +430,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: think of Figure 13.5, where one reaction reaches equilibrium once from reactants only and once from product only. Ask whether anything about an equilibrium mixture, whose <em>Q</em> equals the single value of <em>K</em> at that temperature, records the side from which it was approached."
+        "solution": "No. At equilibrium the mixture has <em>Q<sub>c</sub></em> = <em>K<sub>c</sub></em> = $\\frac{[{\\text{N}}_{2}{\\text{O}}_{4}]}{{[{\\text{NO}}_{2}]}^{2}}$, the one value of the equilibrium constant at that temperature, and the forward and reverse reactions go on at equal rates; nothing in the composition records how it got there. A sample of pure NO<sub>2</sub> reaches equilibrium by net forward reaction and a sample of pure N<sub>2</sub>O<sub>4</sub> by net reverse reaction, just as the oxidation of SO<sub>2</sub> in Figure 13.5 reaches the same <em>K<sub>c</sub></em> from reactants only or from product only. If the two samples hold the same atoms in the same volume, 0.20 <em>M</em> NO<sub>2</sub> or 0.10 <em>M</em> N<sub>2</sub>O<sub>4</sub>, they end with identical concentrations. Only watching the mixture before equilibrium, while its brown color is changing, would show the starting point."
       }
     },
     {
@@ -464,7 +464,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: write each <em>K<sub>c</sub></em> from its balanced equation, leaving out the solid, which appears in neither expression. Then use the solubility rule: an insoluble salt dissolves only slightly, so the ion concentrations at equilibrium are small. Decide whether small ion concentrations make the expression with the ions in its numerator, and the one with the ions in its denominator, greater or less than 1."
+        "solution": "(a) <em>K<sub>c</sub></em> = [Ca<sup>2+</sup>][CO<sub>3</sub><sup>2−</sup>] &lt; 1. Solid CaCO<sub>3</sub> does not appear in the expression. Calcium is neither an alkali metal nor ammonium, so CaCO<sub>3</sub> is insoluble and only a little of it dissolves; the ion concentrations at equilibrium are much less than 1 <em>M</em>, and their product is less than 1. (b) ${K}_{c}=\\;\\frac{1}{{[{\\text{Ba}}^{2+}]}^{3}{[{\\text{PO}}_{4}{}^{3−}]}^{2}}$ &gt; 1. Solid Ba<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> does not appear in the expression. Barium phosphate is insoluble, so forming the solid removes the ions until their concentrations are very small (much less than 1 <em>M</em>); the denominator is then very small and <em>K<sub>c</sub></em> is much greater than 1."
       }
     },
     {
@@ -504,7 +504,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: write the complete equation, the total ionic equation with KI and KI<sub>3</sub> as their separate ions, and the net ionic equation with the spectator K<sup>+</sup> removed. Write <em>Q<sub>c</sub></em> for each and check whether the [K<sup>+</sup>] terms cancel between numerator and denominator, so that all three reduce to one expression."
+        "solution": "All three give ${Q}_{c}=\\;\\frac{[{\\text{I}}_{3}{}^{\\text{−}}]}{[{\\text{I}}^{\\text{−}}][{\\text{I}}_{2}]}.$ For the complete equation, KI(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ KI<sub>3</sub>(<em>aq</em>), ${Q}_{c}=\\;\\frac{[{\\text{KI}}_{3}]}{[\\text{KI}][{\\text{I}}_{2}]};$ both salts are completely dissociated, and each formula unit gives one I<sup>−</sup> or one I<sub>3</sub><sup>−</sup>, so [KI] = [I<sup>−</sup>] and [KI<sub>3</sub>] = [I<sub>3</sub><sup>−</sup>]. For the total ionic equation, K<sup>+</sup>(<em>aq</em>) + I<sup>−</sup>(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ K<sup>+</sup>(<em>aq</em>) + I<sub>3</sub><sup>−</sup>(<em>aq</em>), ${Q}_{c}=\\;\\frac{[{\\text{K}}^{\\text{+}}][{\\text{I}}_{3}{}^{\\text{−}}]}{[{\\text{K}}^{\\text{+}}][{\\text{I}}^{\\text{−}}][{\\text{I}}_{2}]},$ and the spectator [K<sup>+</sup>] cancels. The net ionic equation, I<sup>−</sup>(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ I<sub>3</sub><sup>−</sup>(<em>aq</em>), gives the expression directly."
       }
     },
     {
@@ -544,7 +544,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: a useful precipitation leaves almost none of the measured ion in solution. Write the equilibrium constant for the ions combining into the solid; the solid does not appear in it, so the small ion concentrations left at equilibrium sit in its denominator. Decide what that does to the size of <em>K<sub>c</sub></em>."
+        "solution": "<em>K<sub>c</sub></em> &gt; 1, and much greater than 1. A precipitation reaction has the ions combining into the solid, for example Ag<sup>+</sup>(<em>aq</em>) + Cl<sup>−</sup>(<em>aq</em>) ⇌ AgCl(<em>s</em>), for which ${K}_{c}=\\;\\frac{1}{[{\\text{Ag}}^{\\text{+}}][{\\text{Cl}}^{\\text{−}}]}.$ The solid does not appear in the expression, so the ion concentrations sit in the denominator. A useful precipitation leaves almost none of the ion being measured in solution, so at equilibrium those concentrations are very small, the denominator is very small, and <em>K<sub>c</sub></em> is large."
       }
     },
     {
@@ -578,7 +578,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: for each reaction, put the product concentrations, each raised to the power of its coefficient, over the reactant concentrations raised to theirs, and leave out every pure solid and liquid, as in Example 13.1 and the heterogeneous equilibria above."
+        "solution": "Each <em>Q<sub>c</sub></em> is the product concentrations, each raised to its coefficient, over the reactant concentrations raised to theirs; the pure solids in (e) and (f) and the liquid water in (g) are left out. (a) ${Q}_{c}=\\;\\frac{{[{\\text{NH}}_{3}]}^{2}}{[{\\text{N}}_{2}]{[{\\text{H}}_{2}]}^{3}};$ (b) ${Q}_{c}=\\;\\frac{{[\\text{NO}]}^{4}{[{\\text{H}}_{2}\\text{O}]}^{6}}{{[{\\text{NH}}_{3}]}^{4}{[{\\text{O}}_{2}]}^{5}};$ (c) ${Q}_{c}=\\;\\frac{{[{\\text{NO}}_{2}]}^{2}}{[{\\text{N}}_{2}{\\text{O}}_{4}]};$ (d) ${Q}_{c}=\\;\\frac{[\\text{CO}][{\\text{H}}_{2}\\text{O}]}{[{\\text{CO}}_{2}][{\\text{H}}_{2}]};$ (e) <em>Q<sub>c</sub></em> = [NH<sub>3</sub>][HCl]; (f) <em>Q<sub>c</sub></em> = [NO<sub>2</sub>]<sup>4</sup>[O<sub>2</sub>]; (g) ${Q}_{c}=\\;\\frac{1}{{[{\\text{H}}_{2}]}^{2}[{\\text{O}}_{2}]};$ (h) ${Q}_{c}=\\;\\frac{{[\\text{S}]}^{8}}{[{\\text{S}}_{8}]}$"
       }
     },
     {
@@ -646,7 +646,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: look at the phase written beside each species. A reaction whose species are all in one phase, here all gases, is homogeneous; one that includes a solid or a liquid together with gases is heterogeneous."
+        "solution": "Homogeneous: (a), (b), (c), (d), and (h), in which every reactant and product is a gas, so all are in one phase. Heterogeneous: (e), where solid NH<sub>4</sub>Cl forms two gases; (f), where solid Pb(NO<sub>3</sub>)<sub>2</sub> forms solid PbO and two gases; and (g), where two gases form liquid water. Each of these has species in two phases."
       }
     },
     {
@@ -680,7 +680,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: <em>K<sub>c</sub></em> equals <em>K<sub>P</sub></em> when (<em>RT</em>)<sup>Δ<em>n</em></sup> = 1, that is, when Δ<em>n</em>, the moles of gaseous products less the moles of gaseous reactants, is zero. Count only the gaseous species of each reaction."
+        "solution": "Only (d). Since <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em>(<em>RT</em>)<sup>Δ<em>n</em></sup>, the two are equal when Δ<em>n</em>, the moles of gaseous products less the moles of gaseous reactants, is zero. Counting gases only: (a) Δ<em>n</em> = 2 − 4 = −2; (b) 10 − 9 = 1; (c) 2 − 1 = 1; (d) (1 + 1) − (1 + 1) = 0; (e) 2 − 0 = 2; (f) 5 − 0 = 5; (g) 0 − 3 = −3, because the water is liquid; (h) 8 − 1 = 7."
       }
     },
     {
@@ -754,7 +754,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: HOCN is an acid that gives a proton to water, forming H<sub>3</sub>O<sup>+</sup> and OCN<sup>−</sup>. Write that balanced equation, then form <em>Q<sub>c</sub></em> from it, leaving out the water, as in the HF example among the homogeneous equilibria."
+        "solution": "HOCN ionizes by giving a proton to water: HOCN(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + OCN<sup>−</sup>(<em>aq</em>), so ${Q}_{c}=\\;\\frac{[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{OCN}}^{\\text{−}}]}{[\\text{HOCN}]}.$ Water is the solvent as well as a reactant and, as a liquid, is left out of the expression, just as it is for HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>)."
       }
     },
     {

@@ -448,7 +448,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Follow the heat that leaks through the poorer insulator. The dissolution cools the solution below the temperature of the room, so heat flows from the outside environment into the solution while the reaction runs. That heat partly makes up for the heat the dissolution takes from the solution, so the temperature falls by less than it would in a well-insulated calorimeter. Since the heat absorbed by the dissolution is calculated from the measured temperature change, it would appear lesser."
+    "solution": "It would appear lesser. The dissolution of ammonium nitrate is endothermic, so it cools the solution below the temperature of the room. In a poorly insulated calorimeter, heat flows from the warmer surroundings into the colder solution while the dissolution runs, and that heat partly replaces the heat the dissolution takes from the solution. The temperature therefore falls by less than in a coffee cup calorimeter. The heat absorbed is calculated as $\\kq=\\kcspec\\times\\km\\times\\kdT$ from the measured temperature change, so a smaller $\\kdT$ gives a smaller apparent heat absorbed by the dissolution."
    }
   },
   {
@@ -505,7 +505,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Think about which way the heat flows. Heat flows from the hot coffee to the cool spoon until the two reach the same temperature, so the coffee can only cool and the spoon can only warm. The final temperature must therefore lie between 24 °C and 85 °C. An answer of 88 °C is higher than the starting temperature of the hotter substance, which would mean that both the coffee and the spoon gained heat with nothing losing any, and energy cannot be created in this way."
+    "solution": "An answer of 88 °C is impossible because the final temperature must lie between the two starting temperatures, 24 °C and 85 °C. Heat flows spontaneously from the hotter coffee to the cooler spoon until both are at the same temperature, so the coffee can only lose heat and cool, and the spoon can only gain heat and warm; the heat lost by one equals the heat gained by the other. A final temperature of 88 °C would mean both the coffee and the spoon had warmed, gaining heat with nothing giving it up, which violates the conservation of energy. Solving $(0.88\\;\\text{J/g}\\;^\\circ\\text{C})(45\\;\\text{g})(\\kT_{\\text{f}}-24\\;^\\circ\\text{C})=-(4.184\\;\\text{J/g}\\;^\\circ\\text{C})(180\\;\\text{g})(\\kT_{\\text{f}}-85\\;^\\circ\\text{C})$ gives $\\kT_{\\text{f}}=82\\;^\\circ\\text{C}$, a little below the coffee’s starting temperature, because the spoon’s heat capacity is small."
    }
   },
   {
@@ -597,7 +597,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Compare how the heat and the mass change together. Doubling both volumes doubles the amounts of acid and base that react, so the reaction produces twice as much heat; it also doubles the mass of the solution that absorbs that heat. In Δ<em>T</em> = <em>q</em>/(<em>c</em> × <em>m</em>) the heat and the mass are both doubled, so the temperature change is the same, an increase of 6.9 °C, to 28.9 °C."
+    "solution": "The temperature would increase by the same 6.9 °C, from 22.0 °C to 28.9 °C. Doubling both volumes doubles the amounts of HCl and NaOH that react, so the reaction gives off twice as much heat, $2\\kq$. It also doubles the mass of solution that absorbs that heat, from about 100 g to about 200 g, while the specific heat is unchanged. Since $\\kdT=\\frac{\\kq}{\\kcspec\\times\\km}$, doubling both $\\kq$ and $\\km$ leaves $\\kdT$ unchanged."
    }
   },
   {

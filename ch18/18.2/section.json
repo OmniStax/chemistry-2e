@@ -353,7 +353,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: ask what would happen if the two products of the cell met again, recalling how readily sodium reacts with chlorine, and connect that with the screen and the separate outlets of the Downs cell."
+    "solution": "The sodium and chlorine must be kept apart because they would react with each other at once and remake sodium chloride. Sodium is a very active metal and chlorine a strong oxidizing agent, so liquid sodium meeting chlorine gas reacts vigorously, $\\text{2Na}+{\\text{Cl}}_{2}\\;\\longrightarrow \\;\\text{2NaCl}$, releasing a great deal of heat. That reaction would undo the electrolysis, waste the electrical energy spent to separate the elements, destroy both products and create a fire hazard in the hot cell. In the Downs cell an iron screen around the carbon anode keeps the chlorine formed there away from the sodium formed at the cathode. The liquid sodium, less dense than the molten salt, floats up into its collector, and the chlorine leaves through a separate outlet to storage tanks, since chlorine is also a valuable product."
    }
   },
   {
@@ -425,7 +425,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: consider what forms on the surface of aluminum when it meets air, as with magnesium in the exercise before it, and how that film keeps the metal beneath from reacting further."
+    "solution": "Aluminum is useful as a structural metal because passivation protects it. Although aluminum is a reactive metal, on exposure to air it forms a tough, hard, thin film of aluminum oxide, Al<sub>2</sub>O<sub>3</sub>, over its surface. The film is nonreactive and adheres tightly, so it keeps oxygen and water from reaching the metal beneath and inhibits further reaction, much as the oxycarbonate layer does on magnesium. The metal therefore corrodes very slowly in ordinary use, and its low density and strength can be put to work in construction and transportation and in cans and foil. Only when the film is disrupted, for example when the aluminum forms an amalgam with mercury, does the metal beneath react readily with air and water."
    }
   },
   {
@@ -459,7 +459,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: name the oxide ore the section gives for tin, then follow the modern process in order: roasting to drive off volatile oxides, treatment with hydrochloric acid, and heating with carbon to reduce the oxide."
+    "solution": "The common ore of tin is cassiterite, the oxide SnO<sub>2</sub>, and tin is separated from it by reducing the oxide with carbon after the ore has been purified. The ore is first roasted, which removes contaminants such as arsenic and sulfur as volatile oxides. The remaining material is treated with hydrochloric acid, which removes the oxides of other metals and leaves purified SnO<sub>2</sub>. The purified ore is then heated with carbon above 1000 °C, and carbon reduces tin(IV) to the metal: ${\\text{SnO}}_{2}(s)+\\text{2C}(s)\\;\\overset{\\;\\text{Δ}\\;}{\\to}\\;\\text{Sn}(s)+\\text{2CO}(g)$. The molten tin collects at the bottom of the furnace, is drawn off and is cast into blocks. The same easy reduction of tin(IV) oxide by hot coals explains why tin was known in the ancient world."
    }
   },
   {

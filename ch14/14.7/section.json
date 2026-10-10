@@ -302,7 +302,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: write the indicator’s ionization, HIn ⇌ H<sup>+</sup> + In<sup>−</sup>, and the Henderson-Hasselbalch equation for it, pH = p<em>K</em><sub>a</sub> + log([In<sup>−</sup>]/[HIn]). Ask how the ratio of the two colored forms changes as the pH passes p<em>K</em><sub>a</sub>, and how lopsided that ratio must be (about 60−90% of one form) before the eye sees only one color."
+    "solution": "An indicator changes color over a range of about p<em>K</em><sub>a</sub> ± 1 because its color depends on the ratio of its two forms, and that ratio changes gradually with pH. The indicator is a weak acid, HIn(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + In<sup>−</sup>(<em>aq</em>), in which HIn and In<sup>−</sup> have different colors, and the Henderson-Hasselbalch equation, pH = p<em>K</em><sub>a</sub> + log([In<sup>−</sup>]/[HIn]), ties the ratio to the pH. At pH = p<em>K</em><sub>a</sub> the two forms are equal and the solution shows a mixture of both colors. The eye sees only the color of one form when most of the indicator, typically about 60−90% or more, is in that form. One pH unit above p<em>K</em><sub>a</sub> the ratio [In<sup>−</sup>]/[HIn] is 10, about 91% In<sup>−</sup>, and one unit below it is 1/10. So the perceived color shifts steadily across roughly two pH units, not at a single value."
    }
   },
   {

@@ -548,7 +548,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: write each decay as a general nuclear equation, ${}_{Z}^{A}\\text{X}$ going to the particle plus the daughter, and balance the mass numbers and the atomic numbers on the two sides. The particle’s own superscript and subscript (${}_{2}^{4}\\text{He}$, ${}_{-1}^{\\;0}\\text{e}$, ${}_{0}^{0}\\gamma$, ${}_{+1}^{\\;0}\\text{e}$, and a captured ${}_{-1}^{\\;0}\\text{e}$ on the left) then say how much the daughter’s <em>A</em> and <em>Z</em> must differ from the parent’s; Figure 21.7 sets the five cases side by side."
+    "solution": "(a) Emitting an α particle lowers the mass number by 4 and the atomic number by 2: ${}_{Z}^{A}\\text{X}\\;\\longrightarrow \\;{}_{Z-2}^{A-4}\\text{Y}+{}_{2}^{4}\\text{He}$. (b) Emitting a β particle leaves the mass number unchanged and raises the atomic number by 1, since a neutron becomes a proton: ${}_{Z}^{A}\\text{X}\\;\\longrightarrow \\;{}_{Z+1}^{\\;\\;A}\\text{Y}+{}_{-1}^{\\;0}\\text{e}$. (c) Emitting γ radiation changes neither the mass number nor the atomic number, since ${}_{0}^{0}\\gamma$ carries neither; the nucleus only drops from a higher to a lower energy state. (d) Emitting a positron leaves the mass number unchanged and lowers the atomic number by 1, since a proton becomes a neutron: ${}_{Z}^{A}\\text{X}\\;\\longrightarrow \\;{}_{Z-1}^{\\;\\;A}\\text{Y}+{}_{+1}^{\\;0}\\text{e}$. (e) Capturing an electron also leaves the mass number unchanged and lowers the atomic number by 1: ${}_{Z}^{A}\\text{X}+{}_{-1}^{\\;0}\\text{e}\\;\\longrightarrow \\;{}_{Z-1}^{\\;\\;A}\\text{Y}$. In each case the mass numbers and the atomic numbers balance on the two sides of the nuclear equation; the mass of the nucleus itself falls slightly in every decay, by the mass equivalent of the energy released."
    }
   },
   {
@@ -582,7 +582,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall that no nuclide with <em>Z</em> &gt; 83 is stable, so a heavy nuclide must lose mass, not only change a neutron into a proton, to reach the band of stability. Electron emission leaves the mass number unchanged; only α decay lowers it, by four units at a time. Follow the uranium-238 series of Figure 21.9 to see the two kinds of step alternating on the way down to lead."
+    "solution": "A heavy nuclide must lose mass, not only change its n:p ratio, to become stable, and only α decay lowers the mass number. Every nuclide with <em>Z</em> &gt; 83 is unstable, and the stable end-products of the heavy nuclides are isotopes of lead. Electron emission turns a neutron into a proton and leaves the mass number unchanged, so on its own it can never bring a nucleus of mass number above 200 down to the mass of a stable nuclide. α decay lowers the mass number by 4 and the atomic number by 2 at each step. Removing two protons and two neutrons from a nucleus that has many more neutrons than protons raises its n:p ratio, so after one or more α decays the daughter has too many neutrons, and β emission then lowers the ratio again. The two kinds of decay therefore alternate in a decay series: uranium-238 reaches lead-206 by eight α decays, which lower <em>A</em> by 32 and <em>Z</em> by 16, and six β decays, which raise <em>Z</em> by 6, from 92 − 16 = 76 to 82."
    }
   },
   {
@@ -616,7 +616,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for each case, decide whether the nuclide has too few or too many neutrons for its number of protons, and which decay moves its n:p ratio the right way. Below the band the ratio must rise: α decay raises it for a heavy nuclide, and positron emission or electron capture raise it by turning a proton into a neutron. Above the band the ratio must fall: β decay turns a neutron into a proton. Remember that a heavy nuclide must also lose mass to reach a stable nuclide, which only α decay does."
+    "solution": "(a) A heavy nuclide below the band of stability has too few neutrons for its protons, so its n:p ratio must rise. α decay does this: removing two protons and two neutrons from a nucleus with more neutrons than protons leaves a larger n:p ratio, and it also lowers the mass, which every nuclide with an atomic number greater than 83 must lose. Positron emission or electron capture raises the ratio as well, by converting a proton into a neutron. (b) A heavy nuclide above the band has too many neutrons, so its ratio must fall. β decay converts a neutron into a proton, lowering the number of neutrons by 1 and raising the atomic number by 1, which moves the nuclide back toward the band, while α decay removes the excess mass. In either case a sequence of such decays continues until a stable nuclide in the band is reached, for the heaviest elements an isotope of lead."
    }
   },
   {

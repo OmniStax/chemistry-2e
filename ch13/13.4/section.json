@@ -402,7 +402,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: take the change given for one species and divide it by that species’ coefficient to find the change per unit of coefficient. Multiply it by each other species’ coefficient, giving species on the same side of the arrow the same sign and species on the other side the opposite sign, as in Example 13.6. A pure solid has no concentration term, so it gets no change."
+    "solution": "The change for each species is proportional to its coefficient: species on the same side as the given one change with the same sign, and species on the other side with the opposite sign. (a) H<sub>2</sub>O changes by +<em>x</em> for a coefficient of 2, or +½<em>x</em> per unit of coefficient, so H<sub>2</sub> is −<em>x</em> and O<sub>2</sub> is −½<em>x</em>. (b) H<sub>2</sub> is +4<em>x</em>, CH<sub>4</sub> is −<em>x</em>, and H<sub>2</sub>S is −2<em>x</em>. (c) Cl<sub>2</sub> is +<em>x</em> and HCl is −2<em>x</em>. (d) H<sub>2</sub>O changes by +<em>x</em> for a coefficient of 3, or +⅓<em>x</em> per unit, so NH<sub>3</sub> is −⅔<em>x</em>, O<sub>2</sub> is −⅔<em>x</em>, and N<sub>2</sub>O is +⅓<em>x</em>. (e) H<sub>2</sub>S is +<em>x</em>; the solid NH<sub>4</sub>HS has no change term. (f) CO is −5<em>x</em>; the solid Fe has no change term."
    }
   },
   {
@@ -436,7 +436,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall from Section 13.2 how a pure solid is treated in an equilibrium constant expression, and so why an ICE table gives it no change term. Then ask what does change about the solid as the gases form from it, as the answer to Exercise 13.62 does for nickel."
+    "solution": "NH<sub>4</sub>HS is a pure solid. Its concentration (activity) is constant, equal to 1, so it does not appear in <em>K<sub>c</sub></em> = [NH<sub>3</sub>][H<sub>2</sub>S], and an ICE table, which tracks only the concentrations in that expression, gives it no change. What does change is the amount, and so the mass, of NH<sub>4</sub>HS: as NH<sub>3</sub> and H<sub>2</sub>S form, one mole of the solid is used up for each mole of NH<sub>3</sub> produced, so its mass decreases while its concentration stays the same."
    }
   },
   {
@@ -546,7 +546,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: use the stoichiometry of the reaction to find the greatest concentration of N<sub>2</sub>O<sub>4</sub> that a sample of NO<sub>2</sub> at 0.10 <em>M</em> could form if every NO<sub>2</sub> molecule reacted, and compare the student’s answer with it."
+    "solution": "The answer is larger than the reaction can possibly give. By the stoichiometry 2NO<sub>2</sub> → N<sub>2</sub>O<sub>4</sub>, even if every NO<sub>2</sub> molecule reacted, 0.10 <em>M</em> NO<sub>2</sub> could form at most 0.10 <em>M</em> × ½ = 0.050 <em>M</em> N<sub>2</sub>O<sub>4</sub>. A concentration of 0.16 <em>M</em> would require more nitrogen and oxygen atoms than the sample contains. Because <em>K<sub>c</sub></em> = 160 is large, the correct value lies a little below this limit: setting [N<sub>2</sub>O<sub>4</sub>] = <em>x</em> and [NO<sub>2</sub>] = 0.10 − 2<em>x</em> in $160=\\;\\frac{x}{{(0.10-2x)}^{2}}$ gives [N<sub>2</sub>O<sub>4</sub>] = 0.042 <em>M</em> and [NO<sub>2</sub>] = 0.016 <em>M</em>."
    }
   },
   {
@@ -744,7 +744,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for (a), write the equilibrium constant expression from the balanced equation as in Section 13.2, leaving out the liquid water. For (b), note that lactic acid adds H<sub>3</sub>O<sup>+</sup> and that exertion adds CO<sub>2</sub>, both reactants of this equilibrium, and use Le Châtelier’s principle from Section 13.3 to say which way the equilibrium shifts and what happens to the O<sub>2</sub> it holds."
+    "solution": "(a) ${K}_{c}=\\;\\frac{[{\\text{CO}}_{2}\\text{−}\\text{Hb}\\text{−}{\\text{H}}^{\\text{+}}][{\\text{O}}_{2}]}{[{\\text{HbO}}_{2}][{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{CO}}_{2}]};$ the liquid water is left out. (b) Lactic acid ionizes in the muscle and raises [H<sub>3</sub>O<sup>+</sup>], and exertion produces CO<sub>2</sub>, so both increase the concentrations of reactants of this equilibrium. The denominator of <em>Q<sub>c</sub></em> grows, <em>Q<sub>c</sub></em> falls below <em>K<sub>c</sub></em>, and the equilibrium shifts right, as Le Châtelier’s principle predicts. The shift converts HbO<sub>2</sub> to CO<sub>2</sub>−Hb−H<sup>+</sup> and releases O<sub>2</sub>, so blood passing through a working muscle gives up more oxygen exactly where it is being used."
    }
   },
   {

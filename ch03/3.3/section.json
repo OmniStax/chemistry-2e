@@ -427,7 +427,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Think about what is added during a dilution. Only solvent is added, so the amount of NaCl, in moles and in grams, stays the same. The volume of the solution increases from 1.00 L to 1.80 L, so the same amount of solute is spread through more solution and the concentration decreases, to 1.00/1.80 of its original value, as the dilution equation requires."
+    "solution": "The amount of NaCl stays the same, in moles and in grams, while the volume of the solution increases and its concentration decreases. Dilution adds only solvent, so the moles of solute before and after are equal, which is the content of $\\kCone\\kVone=\\kCtwo\\kVtwo$. The same amount of NaCl now occupies 1.80 L instead of 1.00 L, so the new molarity is $\\kCtwo=\\kCone\\times\\frac{1.00\\;\\text{L}}{1.80\\;\\text{L}}=0.556\\,\\kCone$, a little over half the original concentration. The mass of the solution also increases by the mass of the added water."
    }
   },
   {
@@ -459,7 +459,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Consider which properties depend on the size of a sample and which do not. The two samples are taken from the same solution, so they have the same composition: the same molarity, and the same properties that depend on concentration, such as taste and density. The 400-mL sample has twice the volume, so it contains twice the amount of salt, in moles and in grams, and twice the mass of solution."
+    "solution": "The two samples are identical in composition: they have the same molarity, the same ratio of salt to water, and the same concentration-dependent properties such as density and saltiness, because molarity, moles of solute per liter of solution, does not depend on how much of the solution is taken. They differ in quantity: the 400-mL sample has twice the volume, so at the same molarity it contains twice the moles and twice the mass of salt, and it has twice the total mass of solution."
    }
   },
   {

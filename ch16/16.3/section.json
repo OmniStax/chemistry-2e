@@ -289,7 +289,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: recall what the degree sign means for a tabulated quantity, the standard conditions of the third-law passage (1 bar, one mole of each substance, usually 298.15 K). Then compare an entropy change measured under whatever conditions the change actually takes place with one computed from standard entropies, and say which of the two Table 16.2 lets you calculate."
+        "solution": "$\\kdSo$ is the entropy change for the reaction with every reactant and product in its standard state, one mole of each substance with gases at 1 bar and solutions at 1 <em>M</em>, usually at 298.15 K; $\\kdS$ is the entropy change under whatever conditions the change actually takes place, at any pressures, concentrations and temperature. $\\kdSo$ has one value for a given reaction at a given temperature, found from standard entropies as $\\kdSo=\\sum \\nu\\kSo\\text{(products)}\\;-\\sum \\nu\\kSo\\text{(reactants)}$, and this is the quantity the $\\kSo$ values of Table 16.2 give. $\\kdS$ depends on the actual state of the mixture: for gases at pressures other than 1 bar the entropies of the species differ from their $\\kSo$ values, so $\\kdS$ differs from $\\kdSo$. The two are equal only when the change takes place under standard conditions."
       }
     },
     {

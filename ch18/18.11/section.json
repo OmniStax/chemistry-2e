@@ -356,7 +356,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall what a weak electrolyte does when it dissolves, ionizing only partly so that most of it stays as molecules, and connect that with the text’s statement that mercury forms covalent rather than ionic binary halides; then say what dissolved HgCl<sub>2</sub> mostly consists of and how well its solution conducts electricity."
+    "solution": "It means that when a mercury(II) halide dissolves in water, only a small fraction of it ionizes, so the solution contains mostly neutral molecules and few ions. Mercury forms covalent rather than ionic binary halides, so HgCl<sub>2</sub>, for example, is made of discrete Cl–Hg–Cl molecules, not a lattice of Hg<sup>2+</sup> and Cl<sup>−</sup> ions. On dissolving, the molecules stay largely intact, and only a few dissociate in equilibria such as $${\\text{HgCl}}_{2}(aq)\\;\\rightleftharpoons \\;{\\text{HgCl}}^{+}(aq)+{\\text{Cl}}^{−}(aq)$$ that lie far to the left. Because a solution conducts electricity by the movement of ions, a solution of HgCl<sub>2</sub> conducts only weakly, much less than a solution of an ionic halide such as NaCl or CdCl<sub>2</sub> of the same concentration, which is fully dissociated into ions. That partial ionization and poor conductivity are what define a weak electrolyte."
    }
   },
   {
@@ -424,7 +424,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall the trend in first ionization energy down a group from the chapter on electronic structure and periodic properties, where the valence electrons lie farther from the nucleus in each heavier element; then compare that prediction with the text’s statement that fluoride is the most difficult halide ion to oxidize and fluorine the most powerful oxidizing agent."
+    "solution": "Fluorine has the highest first ionization energy of the halogens, about 1681 kJ/mol, compared with about 1251 kJ/mol for chlorine, 1140 kJ/mol for bromine and 1008 kJ/mol for iodine. This is what the periodic trends predict. First ionization energy decreases down a group: each heavier halogen has its valence electrons in a higher shell, farther from the nucleus and better shielded from it by the inner electrons, so less energy is needed to remove one. Fluorine, the first member of group 17, is the smallest halogen atom, and its 2<em>p</em> electrons are held closest to the nucleus with the least shielding. Removing one of them therefore takes the most energy."
    }
   },
   {
@@ -458,7 +458,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: the four halogens are nonpolar diatomic molecules, so the only forces between their molecules are dispersion forces. Compare the numbers of electrons and the sizes of F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub> and I<sub>2</sub>, say how the strength of the dispersion forces changes from one to the next, and connect that with how high the melting and boiling points must be."
+    "solution": "The halogens change from gases to a liquid to a solid down the group because the dispersion forces between their molecules grow stronger as the molecules get larger. F<sub>2</sub>, Cl<sub>2</sub>, Br<sub>2</sub> and I<sub>2</sub> are all nonpolar diatomic molecules, so dispersion forces are the only attractions between them. These forces depend on how easily the electron cloud of a molecule can be distorted, which increases with the number of electrons and the size of the molecule: F<sub>2</sub> has 18 electrons, Cl<sub>2</sub> 34, Br<sub>2</sub> 70 and I<sub>2</sub> 106. Small F<sub>2</sub> and Cl<sub>2</sub> molecules attract one another so weakly that they boil well below room temperature, at about −188 °C and −34 °C. The larger Br<sub>2</sub> molecules attract strongly enough that bromine boils at about 59 °C and is a liquid at 25 °C. The largest, I<sub>2</sub>, attract most strongly, so iodine melts at about 114 °C and is a solid at room temperature."
    }
   },
   {

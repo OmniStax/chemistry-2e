@@ -334,7 +334,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: an active electrode is made of a member of its half-cell’s redox couple. Ask which half-reaction turns metal ions in the solution into atoms of the metal on the electrode’s surface, oxidation or reduction, and then at which electrode that half-reaction occurs, as for the silver foil of Figure 17.3."
+        "solution": "The electrode was a cathode. An active electrode is made of a metal that belongs to its half-cell's redox couple, so a gain in mass means metal atoms are being added to it: metal ions from the solution take up electrons at its surface and deposit as the solid metal, M<sup><em>n</em>+</sup>(<em>aq</em>) + <em>n</em>e<sup>−</sup> ⟶ M(<em>s</em>). That is a reduction, and reduction takes place at the cathode. In the copper–silver cell of Figure 17.3, for example, the silver cathode grows heavier as Ag<sup>+</sup>(<em>aq</em>) + e<sup>−</sup> ⟶ Ag(<em>s</em>), while the copper anode loses mass as copper is oxidized to Cu<sup>2+</sup> ions that go into solution."
       }
     },
     {
@@ -368,7 +368,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: an inert electrode is neither oxidized nor reduced, so its mass does not change, while an active electrode’s mass changes as its metal dissolves or deposits. Decide first which electrodes are active, then, for each active one, whether metal left it as cations (oxidation) or was deposited on it (reduction), and name the electrode where that occurs. For the unchanged electrode, ask whether its mass alone can tell which half-reaction took place at it."
+        "solution": "Electrode A is active and was the cathode, electrode B is inert and its role cannot be told from its mass, and electrode C is active and was the anode. An active electrode takes part in its half-reaction, so its mass changes. A gained mass, so metal ions from its solution were reduced and deposited on it, and reduction occurs at the cathode. C lost mass, so its metal was oxidized to cations that dissolved, and oxidation occurs at the anode. B's unchanged mass shows that it is neither oxidized nor reduced, the mark of an inert electrode such as platinum or graphite, which only conducts electrons to or from species in the solution. Because the half-reaction at an inert electrode involves only dissolved or gaseous species, its mass stays the same whether it serves as the anode or the cathode, so B's role cannot be identified from these measurements."
       }
     }
   ],

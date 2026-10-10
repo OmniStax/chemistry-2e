@@ -272,7 +272,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: write the neutralization of ammonia by hydrochloric acid and name the salt it leaves. Then consider each ion of that salt in turn, as the section does for ammonium chloride: which one is the conjugate partner of a weak species, and what does its reaction with water produce?"
+    "solution": "The salt formed contains the conjugate acid of the weak base, a weak acid, alongside an anion that does not react with water. Take ammonia and hydrochloric acid: NH<sub>3</sub>(<em>aq</em>) + HCl(<em>aq</em>) ⟶ NH<sub>4</sub>Cl(<em>aq</em>). The ammonium chloride dissolves as NH<sub>4</sub><sup>+</sup> and Cl<sup>−</sup> ions. The chloride ion is the conjugate base of a strong acid, so it is too weak a base to take protons from water and leaves the pH unchanged. The ammonium ion is the conjugate acid of the weak base NH<sub>3</sub>, and it ionizes slightly: NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + NH<sub>3</sub>(<em>aq</em>), with <em>K</em><sub>a</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>b</sub> = (1.0 × 10<sup>−14</sup>)/(1.8 × 10<sup>−5</sup>) = 5.6 × 10<sup>−10</sup>. This small ionization raises [H<sub>3</sub>O<sup>+</sup>] above 1.0 × 10<sup>−7</sup> <em>M</em>, so the neutralized solution is weakly acidic."
    }
   },
   {
@@ -308,7 +308,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: Figure 14.7 orders conjugate pairs by their ionization constants. Find the two acids whose $K_{\\text{a}}$ values bracket 1.4 × 10<sup>−5</sup>, place the hydrated aluminum ion between them, and write its conjugate base, $\\text{Al}{({\\text{H}}_{2}\\text{O})}_{5}(\\text{OH})^{2+}$, opposite it on the base side."
+    "solution": "The hydrated aluminum ion, with <em>K</em><sub>a</sub> = 1.4 × 10<sup>−5</sup>, belongs on the acid side just below acetic acid (<em>K</em><sub>a</sub> = 1.8 × 10<sup>−5</sup>) and above carbonic acid (4.3 × 10<sup>−7</sup>), since the acids in the figure are ordered by decreasing <em>K</em><sub>a</sub>. It is a slightly weaker acid than acetic acid. Its conjugate base, [Al(H<sub>2</sub>O)<sub>5</sub>(OH)]<sup>2+</sup>, sits opposite it on the base side, with <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub> = (1.0 × 10<sup>−14</sup>)/(1.4 × 10<sup>−5</sup>) = 7.1 × 10<sup>−10</sup>. That makes it a slightly stronger base than the acetate ion (<em>K</em><sub>b</sub> = 5.6 × 10<sup>−10</sup>) and a weaker one than the hydrogen carbonate ion (2.3 × 10<sup>−8</sup>), as the inverse relation between the strengths of conjugate partners requires."
    }
   },
   {
@@ -325,7 +325,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: consider each ion separately, as in Example 14.17. Ask whether a cation is a group 1 ion, a hydrated metal ion that ionizes as an acid, or the conjugate acid of a weak base, and whether an anion is the conjugate base of a strong acid or of a weak acid. Then combine the effects of the two ions."
+    "solution": "(a) acidic; (b) neutral; (c) basic; (d) acidic. (a) Al(NO<sub>3</sub>)<sub>3</sub> gives the hydrated aluminum ion, [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup>, a weak acid with <em>K</em><sub>a</sub> = 1.4 × 10<sup>−5</sup>, and the nitrate ion, the conjugate base of the strong acid HNO<sub>3</sub>, which does not react with water. (b) Rb<sup>+</sup> is a group 1 cation and I<sup>−</sup> is the conjugate base of the strong acid HI, so neither ion reacts with water. (c) K<sup>+</sup> is a group 1 cation, and the formate ion HCO<sub>2</sub><sup>−</sup> is the conjugate base of the weak formic acid (<em>K</em><sub>a</sub> = 1.8 × 10<sup>−4</sup>); it reacts with water, HCO<sub>2</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ HCO<sub>2</sub>H(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>), with <em>K</em><sub>b</sub> = 5.6 × 10<sup>−11</sup>. (d) CH<sub>3</sub>NH<sub>3</sub><sup>+</sup> is the conjugate acid of the weak base methylamine (<em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>), so it ionizes as an acid with <em>K</em><sub>a</sub> = 2.3 × 10<sup>−11</sup>, while Br<sup>−</sup>, the conjugate base of the strong acid HBr, does not react with water."
    }
   },
   {

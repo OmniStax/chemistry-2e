@@ -286,7 +286,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: start from the meaning of a nonspontaneous process, one that will not take place unless it is driven by the continual input of energy from an external source, and apply it to a reaction. Add that a reaction spontaneous in one direction under given conditions is nonspontaneous in the reverse direction."
+        "solution": "A nonspontaneous reaction is one that does not take place on its own under the given conditions: it proceeds only while energy is continually supplied to it from an external source, and it stops once that supply is removed. A reaction that is spontaneous in one direction is nonspontaneous in the reverse direction under the same conditions. Hydrogen and oxygen combine spontaneously to form water, so the decomposition of water into hydrogen and oxygen is nonspontaneous: it happens only while an electric current is passed through the water, and it stops when the current is switched off."
       }
     },
     {
@@ -320,7 +320,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: compare where the helium atoms are before and after, as for the gas spreading between the two flasks of Figure 16.4. Ask whether the helium ends up crowded into a small volume or spread through a much larger one, and whether its distribution becomes more or less uniform, then say whether the matter is more or less dispersed."
+        "solution": "Matter becomes more dispersed. Before the balloon deflates, the helium atoms are confined to the small volume inside the balloon at a concentration far higher than in the surrounding air; overnight they diffuse through the wall and spread through the much larger volume of the room until their concentration is nearly uniform. This is the same change as the gas spreading from one flask into the evacuated second flask of Figure 16.4: the atoms move from a less dispersed, less probable arrangement into a more dispersed, more probable one. The kinetic energy the helium atoms carry spreads out with them, so energy that was concentrated inside the balloon is now distributed through the whole room."
       }
     },
     {

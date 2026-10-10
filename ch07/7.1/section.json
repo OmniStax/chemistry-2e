@@ -226,7 +226,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Count the charges as the section does for aluminum oxide. The formula says how many of each ion the compound contains for every formula unit, so multiply each ion’s charge by its subscript and add the positive and negative totals. Since all substances must be electrically neutral, the formula of an ionic compound is the simplest ratio of ions in which these totals are equal."
+    "solution": "The positive and negative charges in iron(III) sulfate are equal, so they cancel. Each formula unit of Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> contains two Fe<sup>3+</sup> ions and three ${\\text{SO}}_{4}{}^{\\text{2−}}$ ions. The two iron ions carry a total charge of 2 × (3+) = 6+, and the three sulfate ions carry 3 × (2−) = 6−, so the formula unit has a net charge of 6+ + 6− = 0. A sample is made of a very large number of these formula units, each one neutral, so the whole sample is uncharged. This is why the ions combine in the ratio 2:3: all substances must be electrically neutral, and 2:3 is the simplest ratio of Fe<sup>3+</sup> to ${\\text{SO}}_{4}{}^{\\text{2−}}$ in which the total positive and negative charges are equal."
    }
   },
   {
@@ -306,7 +306,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Look for names that pair a metal with a nonmetal or with a polyatomic ion, such as sodium chloride in table salt, sodium fluoride in toothpaste or calcium carbonate in antacids. For each, write the charges of the two ions and choose the smallest numbers of each whose positive and negative charges cancel, as the section does for Al<sub>2</sub>O<sub>3</sub>; that ratio is the formula."
+    "solution": "Six ionic compounds found on common product labels are sodium chloride, NaCl (table salt); sodium fluoride, NaF (toothpaste); potassium iodide, KI (iodized salt); calcium carbonate, CaCO<sub>3</sub> (antacid tablets); sodium hydrogen carbonate, NaHCO<sub>3</sub> (baking soda); and magnesium hydroxide, Mg(OH)<sub>2</sub> (milk of magnesia). Each pairs a metal cation with a nonmetal anion or a polyatomic anion, and each formula is the simplest ratio of ions whose charges cancel. Na<sup>+</sup> with Cl<sup>−</sup>, Na<sup>+</sup> with F<sup>−</sup> and K<sup>+</sup> with I<sup>−</sup> balance one to one. Ca<sup>2+</sup> with ${\\text{CO}}_{3}{}^{\\text{2−}}$ also balances one to one, and Na<sup>+</sup> with ${\\text{HCO}}_{3}{}^{\\text{−}}$ likewise. Mg<sup>2+</sup> needs two OH<sup>−</sup> ions, 2+ + 2(1−) = 0, so the hydroxide is written in parentheses with the subscript 2."
    }
   },
   {

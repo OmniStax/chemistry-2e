@@ -472,7 +472,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: for each isotope, name the radiation it gives off and find, in Figure 21.33 and the paragraph before it, the thinnest barrier that stops that radiation. Then ask what a storage room would need so that the radiation stops inside it, keeping in mind which materials attenuate γ rays effectively with the least thickness."
+        "solution": "(a) Cobalt-60 needs thick shielding of a dense, high atomic number element such as lead, or a very thick layer of concrete. γ rays are the most penetrating radiation in Figure 21.33: they pass through a thick layer of most materials, and some pass through a few feet of concrete, but lead attenuates them effectively with a thinner barrier. The isotope must be kept in a lead container or a room walled with lead. (b) Molybdenum-99 needs only a thin layer of metal. β particles pass through a hand or a thin layer of paper or wood but are stopped by a thin layer of metal, so a closed metal container, such as one of aluminum a few millimeters thick, stops its radiation."
       }
     },
     {
@@ -506,7 +506,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: write the activity as λN, with λ = ln 2/t<sub>1/2</sub>. Equal masses of two isotopes of nearly the same molar mass hold nearly the same number of nuclei, N, so compare the decay constants, which depend only on the half-lives, and decide which sample has more nuclei decaying each second."
+        "solution": "Uranium-232 has the greater activity, about 2.32 × 10<sup>3</sup> times that of uranium-233. The activity is $\\klamdecay N$, with $\\klamdecay=\\text{ln 2}/\\kthalf$. Equal masses of the two isotopes hold nearly the same number of nuclei, since their molar masses are nearly the same; the ratio of nuclei, uranium-232 to uranium-233, is 233/232 = 1.004. The decay constants are in the inverse ratio of the half-lives, (159,200 y)/(68.9 y) = 2.311 × 10<sup>3</sup>, so a uranium-232 nucleus is about 2300 times as likely to decay in a given second. The ratio of activities is the product, 1.004 × 2.311 × 10<sup>3</sup> = 2.32 × 10<sup>3</sup>. The much shorter half-life makes uranium-232 the more active sample."
       }
     },
     {
@@ -552,7 +552,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: write the activity as λN, with λ = ln 2/t<sub>1/2</sub>, and compare the two factors separately. The masses are equal but the molar masses are very different, so first decide which sample holds more nuclei; then decide which isotope has the larger decay constant. Weigh the two comparisons together, noticing how much larger one ratio is than the other."
+        "solution": "Neon-24 has the greater activity, about 5.6 times that of bismuth-211. The activity is $\\klamdecay N$, with $\\klamdecay=\\text{ln 2}/\\kthalf$, so both the number of nuclei and the decay constant must be compared. Equal masses hold numbers of nuclei in the inverse ratio of the molar masses, about 24 g/mol and 211 g/mol, so the neon sample holds 211/24 = 8.79 times as many nuclei. Bismuth-211 has the shorter half-life, so its decay constant is larger, by 3.38 min/2.14 min = 1.58. The ratio of activities, neon-24 to bismuth-211, is 8.79/1.58 = 5.57. The far greater number of neon nuclei outweighs the somewhat faster decay of bismuth."
       }
     }
   ],

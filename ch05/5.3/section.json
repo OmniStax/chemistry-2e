@@ -527,7 +527,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: the values in Table 5.2 are standard enthalpies of combustion, measured with the reactants and products at 25 °C and 1 atm and for complete combustion. Compare those conditions with a working torch: think about the temperature of the gases leaving the flame, whether the water formed is liquid or gas, and whether every molecule of acetylene burns completely to carbon dioxide."
+        "solution": "The torch releases less heat per mole than the tabulated $\\kdHc=-1301.1\\;\\text{kJ/mol}$ because its conditions are not the standard conditions of Table 5.2. The table value is for complete combustion with reactants and products at 25 °C and 1 atm, with the water formed as liquid. In the torch the products leave the flame at a very high temperature, so much of the energy stays in the hot gases rather than being released as heat at 25 °C. The water forms as steam rather than liquid, and the heat that would be released by condensing it, about 44 kJ per mole of water, is never given off. Combustion is also often incomplete, giving some carbon monoxide or soot instead of carbon dioxide, which releases less energy than burning fully to $\\text{CO}_{2}$."
       }
     },
     {
@@ -631,7 +631,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: a standard enthalpy of formation belongs to a reaction that forms exactly 1 mole of one compound from its elements in their most stable states. Go down Table 5.2 and, for each combustion reaction, ask whether every reactant is an element in its standard state and whether the only product is 1 mole of a single compound; the reactions that pass both tests have combustion enthalpies that are also formation enthalpies."
+        "solution": "The enthalpies of combustion of carbon, hydrogen, magnesium and sulfur are also standard enthalpies of formation, of $\\text{CO}_{2}(g)$, $\\text{H}_{2}\\text{O}(l)$, $\\text{MgO}(s)$ and $\\text{SO}_{2}(g)$ respectively. A standard enthalpy of formation, $\\kdHf$, is the enthalpy change for forming 1 mole of a single compound from its elements in their standard states. Each of these four combustions has only elements in their standard states as reactants, the solid element and $\\text{O}_{2}(g)$, and forms exactly 1 mole of one compound; for example, $\\text{C}(s)+\\text{O}_{2}(g)\\;\\longrightarrow\\;\\text{CO}_{2}(g)$ gives $\\kdHf=\\kdHc=-393.5\\;\\text{kJ/mol}$. The combustion of carbon monoxide starts from a compound, and the combustions of methane, acetylene, ethanol, methanol and isooctane start from compounds and form two products, so those values are not enthalpies of formation."
       }
     },
     {
@@ -697,7 +697,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: draw an enthalpy diagram with three levels: graphite plus oxygen, diamond plus oxygen, and carbon dioxide. The conversion of graphite to diamond is endothermic, so decide which of the two starting levels lies higher. Both combustions end at the same level, carbon dioxide, so by Hess’s law the one that starts higher has the larger drop in enthalpy and releases more heat."
+        "solution": "The combustion of diamond produces more heat, 1.90 kJ more per mole. Diamond lies 1.90 kJ higher in enthalpy than graphite, and both burn to the same product, $\\text{CO}_{2}(g)$. By Hess’s law, burning diamond is the same as converting it to graphite and then burning the graphite: $\\text{C}(s,\\;\\text{diamond})\\;\\longrightarrow\\;\\text{C}(s,\\;\\text{graphite})$ has $\\kdHo=-1.90\\;\\text{kJ}$, and $\\text{C}(s,\\;\\text{graphite})+\\text{O}_{2}(g)\\;\\longrightarrow\\;\\text{CO}_{2}(g)$ has $\\kdHo=-393.5\\;\\text{kJ}$. Adding them gives $\\kdHo=-395.4\\;\\text{kJ}$ for the combustion of diamond, compared with $-393.5\\;\\text{kJ}$ for graphite."
       }
     },
     {
@@ -730,7 +730,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: both reactions start from the same level, osmium and oxygen. The phase change from solid to gaseous OsO<sub>4</sub> absorbs heat, so the gaseous product lies higher in enthalpy than the solid. Use Hess’s law to write the formation of the gas as the formation of the solid followed by the phase change, and decide which of the two reactions ends lower and so releases more heat."
+        "solution": "The reaction that forms solid $\\text{OsO}_{4}(s)$ produces more heat, 56.4 kJ more per mole. Both reactions start from the same reactants, $\\text{Os}(s)$ and $2\\text{O}_{2}(g)$. By Hess’s law, forming the gas is the same as forming the solid and then converting it to gas, so $\\kdH$ for forming $\\text{OsO}_{4}(g)$ equals $\\kdH$ for forming $\\text{OsO}_{4}(s)$ plus 56.4 kJ. The sublimation absorbs 56.4 kJ, so the gaseous product lies 56.4 kJ higher in enthalpy than the solid, and the formation of the gas is 56.4 kJ less exothermic than the formation of the solid."
       }
     },
     {

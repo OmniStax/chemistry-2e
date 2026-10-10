@@ -393,7 +393,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: write the Nernst equation for a battery’s cell reaction, $E_{\\text{cell}}=E_{\\text{cell}}^{\\circ}-\\dfrac{0.0592\\;\\text{V}}{n}\\log Q$ at 25 °C. As the battery discharges, ask what happens to the amounts of the reactants and products that appear in <em>Q</em>, so whether <em>Q</em> grows or shrinks, and then what the log <em>Q</em> term does to <em>E</em><sub>cell</sub>. Ask too what <em>Q</em> is when the cell potential has fallen to zero."
+        "solution": "As a battery discharges, its reactants are used up and its products accumulate, so the reaction quotient $\\kQrxn$ grows, and by the Nernst equation, $\\kEcell=\\kEocell-\\;\\frac{0.0592\\text{ V}}{\\kn}\\;\\text{log}\\;\\kQrxn$ at 25 °C, a larger $\\kQrxn$ subtracts more from $\\kEocell$ and the cell potential falls. In the dry cell, for example, $\\kQrxn$ contains the concentrations of the dissolved species: Zn<sup>2+</sup> and NH<sub>3</sub>, which are produced, rise in the numerator while NH<sub>4</sub>Cl, which is consumed, falls in the denominator, so log $\\kQrxn$ increases throughout the discharge and the voltage drops steadily below its initial 1.5 V. If the cell reaction ran all the way to equilibrium, $\\kQrxn$ would equal $\\kK$ and $\\kEcell$ would be 0, a dead battery. Batteries whose cell reaction involves only solids and liquids, such as the alkaline battery, Zn(<em>s</em>) + 2MnO<sub>2</sub>(<em>s</em>) ⟶ ZnO(<em>s</em>) + Mn<sub>2</sub>O<sub>3</sub>(<em>s</em>), have a $\\kQrxn$ that stays equal to 1, which is why only some batteries show this drop."
       }
     },
     {

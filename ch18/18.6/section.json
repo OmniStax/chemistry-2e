@@ -193,7 +193,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: draw the carbonate ion with its carbon–oxygen π bond, then compare the sizes of carbon and silicon atoms and recall how carbon dioxide and silicon dioxide differ in bonding; ask whether a silicon atom can form the π bond to oxygen that the carbonate ion needs."
+    "solution": "A carbonate-like ${\\text{SiO}}_{3}{}^{2−}$ ion would need a silicon–oxygen π bond, and silicon does not form stable π bonds to oxygen. In the ${\\text{CO}}_{3}{}^{2−}$ ion, carbon is <em>sp</em><sup>2</sup> hybridized and σ bonded to three oxygen atoms in a plane; its remaining <em>p</em> orbital overlaps side by side with an oxygen <em>p</em> orbital to form a C=O π bond, spread over three resonance forms. Carbon, the small first member of group 14, gives good overlap. A silicon atom is much larger, so its 3<em>p</em> orbital overlaps poorly with an oxygen 2<em>p</em> orbital and an Si=O π bond is weak. Silicon therefore bonds to oxygen only through single σ bonds, using four of them in tetrahedral SiO<sub>4</sub> units that share oxygen atoms with one another. The same difference makes carbon dioxide a gas of discrete O=C=O molecules while silicon dioxide is a network solid of linked SiO<sub>4</sub> tetrahedra, and it rules out a discrete planar ${\\text{SiO}}_{3}{}^{2−}$ ion."
    }
   },
   {

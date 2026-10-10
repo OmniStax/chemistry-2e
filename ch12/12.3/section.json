@@ -321,7 +321,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: start from the rate law, rate = <em>k</em>[A]<sup><em>m</em></sup>[B]<sup><em>n</em></sup>. Ask what the rate measures and what its units are, then ask which of the two quantities changes as the reactants are used up and which stays fixed for a given reaction at a given temperature. Compare their units too: the rate is always a concentration per unit time, while the unit of <em>k</em> depends on the overall order."
+    "solution": "The rate is the change in concentration of a reactant or product per unit time, and it changes as the reaction proceeds; the rate constant $\\kk$ is the proportionality constant in the rate law and stays fixed for a given reaction at a given temperature. In the rate law $\\krate=\\kk\\kconcA^{m}\\kconcB^{n}$, the rate depends on the concentrations, so it falls as the reactants are used up, while $\\kk$ does not depend on concentration at all. For a first-order reaction, $\\krate=\\kk\\kconcA$, halving $\\kconcA$ halves the rate but leaves $\\kk$ unchanged; only a change in temperature or the addition of a catalyst changes $\\kk$. Their units differ too: a rate always has units of concentration per time, such as mol L<sup>−1</sup> s<sup>−1</sup>, while the units of $\\kk$ depend on the overall order, s<sup>−1</sup> for a first-order reaction and L mol<sup>−1</sup> s<sup>−1</sup> for a second-order reaction."
    }
   },
   {

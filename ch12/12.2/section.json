@@ -186,7 +186,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: take the two parts of the hint in turn. First, recall that a liquid boils when its vapor pressure equals the pressure of the atmosphere above it, and compare the atmospheric pressure in Denver, about a mile above sea level, with that in New York City, at sea level. Decide which city’s water boils at the lower temperature. Second, cooking an egg is a set of chemical reactions in its proteins, and chemical reactions typically occur faster at higher temperatures. Put the two together to say which egg’s reactions run more slowly."
+    "solution": "The egg cooks more slowly in Denver because water there boils at a lower temperature, and the reactions that cook the egg run more slowly at a lower temperature. A liquid boils when its vapor pressure equals the pressure of the atmosphere above it. Denver lies about a mile above sea level, where the atmospheric pressure is only about 83% of the pressure at sea level in New York City, so its water reaches that lower vapor pressure and boils at about 95 °C instead of 100 °C. Boiling water cannot get hotter than its boiling point, however strongly it is heated. Cooking an egg is a set of chemical reactions in which its proteins change structure, and chemical reactions typically occur faster at higher temperatures. In water about 5 °C cooler, those reactions are slower, so the egg takes longer to cook in Denver."
    }
   },
   {
@@ -203,7 +203,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: change one condition at a time and compare the average rate the readout gives at the end of each run. Hold the temperature at 300 K and raise the initial concentration of nitric oxide or of ozone; count how many collisions occur in a run and how many of them react. Then return the concentrations to 1.00 M and compare a run at 200 K with one at 600 K, watching both how fast the molecules move and what share of their collisions react. Since a single run holds only a few dozen collisions, let each setting run several times before you decide. Relate what you see to the statements of this section that rates usually increase when the concentration of a reactant increases and that reactions occur faster at higher temperatures."
+    "solution": "The rate increases when the concentration of either reactant increases and when the temperature increases. At 300 K, a higher initial concentration of nitric oxide or of ozone puts more molecules in the box, so they meet more often: the collision count grows faster, more reactions occur in the same time, and the ozone concentration falls more steeply, giving a steeper dashed line and a larger average rate. Raising the temperature from 200 K to 600 K at 1.00 M of each reactant makes the molecules move faster, so they collide more often, and a larger share of those collisions react, so the ozone is again used up faster. Because a run holds only a few dozen collisions, single runs scatter, but repeated runs show both trends. Both agree with this section: rates usually increase when the concentration of a reactant increases, and reactions occur faster at higher temperatures."
    }
   }
  ],

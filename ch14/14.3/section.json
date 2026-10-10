@@ -548,7 +548,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: find each compound in Figure 14.8, or see that it releases hydroxide ion, as NaOH and Ca(OH)<sub>2</sub> do. Acids listed above hydronium ion and bases listed below hydroxide ion ionize completely in water; acids between hydronium ion and water, and bases between water and hydroxide ion, ionize only partly. A compound may appear in both columns."
+    "solution": "(a) The strong acids are HCl, HNO<sub>3</sub> and H<sub>2</sub>SO<sub>4</sub>; the strong bases are NaOH and Ca(OH)<sub>2</sub>. The three acids lie above hydronium ion in Figure 14.8 and ionize completely in water, and the two hydroxides dissolve to release hydroxide ion completely. (b) The acids between H<sub>3</sub>O<sup>+</sup> and H<sub>2</sub>O are CH<sub>3</sub>CO<sub>2</sub>H, H<sub>2</sub>CO<sub>3</sub>, HF, HNO<sub>2</sub> and H<sub>3</sub>PO<sub>4</sub>. Each is a weak acid that ionizes only partly in water, transferring protons to it to a limited extent. (c) The bases between H<sub>2</sub>O and OH<sup>−</sup> are NH<sub>3</sub> and Na<sub>2</sub>CO<sub>3</sub>, whose carbonate ion is the conjugate base of the weak acid HCO<sub>3</sub><sup>−</sup>. Both are weak bases that take protons from water only partly, so they are stronger bases than water but weaker than hydroxide ion."
    }
   },
   {
@@ -582,7 +582,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: follow the answer for acetic acid in the exercise before this one. Write the ionization of NH<sub>3</sub> with water, remember that a weak base ionizes only slightly, and compare the concentration of the solvent with that of every solute; place hydronium ion using <em>K</em><sub>w</sub> = [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>]."
+    "solution": "[H<sub>2</sub>O] &gt; [NH<sub>3</sub>] &gt; [OH<sup>−</sup>] ≈ [NH<sub>4</sub><sup>+</sup>] &gt; [H<sub>3</sub>O<sup>+</sup>]. Water is the solvent, about 55 <em>M</em>, far more concentrated than any solute. Ammonia is a weak base, so in NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) only a small fraction of the 1 <em>M</em> NH<sub>3</sub> reacts, and most of it remains as molecules. Each molecule that reacts gives one NH<sub>4</sub><sup>+</sup> and one OH<sup>−</sup>, so these two concentrations are nearly equal; [OH<sup>−</sup>] is very slightly larger because water’s own ionization adds a little hydroxide. Since [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>] = <em>K</em><sub>w</sub> = 1.0 × 10<sup>−14</sup>, a basic solution with appreciable [OH<sup>−</sup>] has a very small [H<sub>3</sub>O<sup>+</sup>], the lowest of all."
    }
   },
   {
@@ -616,7 +616,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: HF and HI are binary acids of the same group. Compare the strengths of the H–F and H–I bonds, as the text does for group 17, and say which bond breaks more readily when the acid ionizes in water."
+    "solution": "<em>K</em><sub>a</sub> for HI is larger because the H–I bond is much weaker than the H–F bond. Fluorine and iodine are both in group 17, and for binary acids in one group the acid strength increases as the H–A bond strength decreases down the group: HF &lt; HCl &lt; HBr &lt; HI. The iodine atom is much larger than the fluorine atom, so the H–I bond is longer and weaker, and HI gives up its proton to water readily. It ionizes completely and is a strong acid. The short, strong H–F bond breaks far less readily, so HF ionizes only partly in water and is a weak acid, with <em>K</em><sub>a</sub> = 6.4 × 10<sup>−4</sup>."
    }
   },
   {
@@ -650,7 +650,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: copper(II) oxide acts as a base toward the strong acid. Write copper(II) nitrate and water as the products, then balance the copper, nitrogen, oxygen and hydrogen atoms."
+    "solution": "2HNO<sub>3</sub>(<em>aq</em>) + CuO(<em>s</em>) ⟶ Cu(NO<sub>3</sub>)<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>). Copper(II) oxide acts as a base: its oxide ion accepts two protons from the acid to form one water molecule, and Cu<sup>2+</sup> pairs with two nitrate ions. The equation balances with one Cu, two N, seven O (six from the two HNO<sub>3</sub> and one from CuO) and two H on each side. As a net ionic equation, 2H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + CuO(<em>s</em>) ⟶ Cu<sup>2+</sup>(<em>aq</em>) + 3H<sub>2</sub>O(<em>l</em>)."
    }
   },
   {
@@ -704,7 +704,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: look up <em>K</em><sub>a</sub> for HBrO in Appendix H and find <em>K</em><sub>a</sub> for NH<sub>4</sub><sup>+</sup> from <em>K</em><sub>w</sub> and the <em>K</em><sub>b</sub> of NH<sub>3</sub> in Appendix I, as the Check Your Learning of Example 14.8 does; the larger constant belongs to the stronger acid."
+    "solution": "HBrO is the stronger acid. Appendix H gives <em>K</em><sub>a</sub> = 2.8 × 10<sup>−9</sup> for HBrO. The ammonium ion is the conjugate acid of ammonia, so its <em>K</em><sub>a</sub> follows from <em>K</em><sub>a</sub> × <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub> and the <em>K</em><sub>b</sub> of NH<sub>3</sub>, 1.8 × 10<sup>−5</sup>: <em>K</em><sub>a</sub> = (1.0 × 10<sup>−14</sup>)/(1.8 × 10<sup>−5</sup>) = 5.6 × 10<sup>−10</sup>. The larger ionization constant belongs to the acid that ionizes to the greater extent, and 2.8 × 10<sup>−9</sup> is about five times 5.6 × 10<sup>−10</sup>, so HBrO is the stronger acid of the two."
    }
   },
   {
@@ -738,7 +738,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: decide for each pair whether the two are binary acids, ranked across a row by electronegativity and down a group by bond strength, or hydroxy compounds and oxyacids, ranked by the electronegativity and the oxidation number of the central atom; then apply that trend."
+    "solution": "(a) HF. H<sub>2</sub>O and HF are binary acids of the same row; across a row acidity increases with the electronegativity of A, and F is more electronegative than O, so the H–F bond is more polar. (b) B(OH)<sub>3</sub>. In hydroxy compounds the acidity increases with the electronegativity of the central atom; boron (2.0) is more electronegative than aluminum (1.5), so B(OH)<sub>3</sub> is a weak acid while Al(OH)<sub>3</sub> is amphoteric. (c) HSO<sub>4</sub><sup>−</sup>. Both have sulfur as the central atom, but sulfur has oxidation number +6 in HSO<sub>4</sub><sup>−</sup> and +4 in HSO<sub>3</sub><sup>−</sup>; the extra oxygen draws electron density from the O–H bond and makes it easier to break. (d) H<sub>2</sub>S. Acidity of binary acids increases from left to right in a row and from top to bottom in a group; sulfur lies to the right of and below nitrogen, so both trends favor H<sub>2</sub>S, a weak acid, while NH<sub>3</sub> acts as a base in water. (e) H<sub>2</sub>Te. O and Te are both in group 16, and the H–Te bond is much weaker than the H–O bond, so H<sub>2</sub>Te loses a proton more readily."
    }
   },
   {
@@ -772,7 +772,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: parts (a) and (d) are binary acids, ranked by the trends down a group and across a row; for (b) use the base column of Figure 14.8 and the reciprocal strengths of conjugate partners; for (c) compare the electronegativities of Mg, Si and Cl as the central atoms of hydroxy compounds."
+    "solution": "(a) HCl &lt; HBr &lt; HI. These are binary acids of group 17, and acidity increases down the group as the H–X bond becomes longer and weaker. (b) Cl<sup>−</sup> &lt; H<sub>2</sub>O &lt; OH<sup>−</sup> &lt; H<sup>−</sup>. The stronger an acid, the weaker its conjugate base. HCl is a stronger acid than H<sub>3</sub>O<sup>+</sup>, since it gives its proton to water completely, so Cl<sup>−</sup> is a weaker base than H<sub>2</sub>O. Water is a weaker acid than H<sub>3</sub>O<sup>+</sup>, so its conjugate base OH<sup>−</sup> is stronger than H<sub>2</sub>O. H<sub>2</sub> is a far weaker acid than water, so H<sup>−</sup> lies below OH<sup>−</sup> in Figure 14.8 and takes a proton from water completely. (c) ClO<sub>3</sub>(OH) &lt; Si(OH)<sub>4</sub> &lt; Mg(OH)<sub>2</sub>. The electronegativities of the central atoms are Cl 3.0, Si 1.8 and Mg 1.2. A low-electronegativity atom like Mg forms an ionic bond with OH that breaks to release hydroxide ion, so Mg(OH)<sub>2</sub> is a base; highly electronegative Cl, in the +7 oxidation state, pulls electron density from the O–H bond, so ClO<sub>3</sub>(OH) is the strong acid HClO<sub>4</sub>; Si(OH)<sub>4</sub> lies between as a very weak acid. (d) CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O &lt; HF. These are binary acids of the second row, and acidity increases from left to right as the electronegativity of C &lt; N &lt; O &lt; F rises and the H–A bond grows more polar."
    }
   },
   {
@@ -806,7 +806,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: look up <em>K</em><sub>a</sub> for HF and for HCN in Appendix H. Since <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>, the conjugate base of the weaker acid is the stronger base."
+    "solution": "CN<sup>−</sup> is the stronger base. Appendix H gives <em>K</em><sub>a</sub> = 6.4 × 10<sup>−4</sup> for HF and 4.9 × 10<sup>−10</sup> for HCN, so HCN is much the weaker acid. For a conjugate pair <em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>, so the conjugate base of the weaker acid is the stronger base: <em>K</em><sub>b</sub> for F<sup>−</sup> is (1.0 × 10<sup>−14</sup>)/(6.4 × 10<sup>−4</sup>) = 1.6 × 10<sup>−11</sup>, and <em>K</em><sub>b</sub> for CN<sup>−</sup> is (1.0 × 10<sup>−14</sup>)/(4.9 × 10<sup>−10</sup>) = 2.0 × 10<sup>−5</sup>. The cyanide ion’s <em>K</em><sub>b</sub> is about a million times larger than the fluoride ion’s."
    }
   },
   {
@@ -840,7 +840,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: every aqueous solution obeys <em>K</em><sub>w</sub> = [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>] at a given temperature. Ask what must happen to one of the two concentrations when the other is made ten times larger while their product stays fixed."
+    "solution": "They are inversely proportional. In any aqueous solution at a given temperature the two concentrations obey <em>K</em><sub>w</sub> = [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>], which is 1.0 × 10<sup>−14</sup> at 25 °C. Because their product is fixed, [OH<sup>−</sup>] = <em>K</em><sub>w</sub>/[H<sub>3</sub>O<sup>+</sup>], and making one concentration ten times larger makes the other ten times smaller. Dissolving an acid raises [H<sub>3</sub>O<sup>+</sup>], and the water equilibrium shifts to lower [OH<sup>−</sup>]: in 0.010 <em>M</em> HCl, [H<sub>3</sub>O<sup>+</sup>] = 1.0 × 10<sup>−2</sup> <em>M</em> and [OH<sup>−</sup>] = 1.0 × 10<sup>−12</sup> <em>M</em>. Dissolving a base does the reverse."
    }
   },
   {
@@ -898,7 +898,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: write HF + H<sub>2</sub>O ⇌ H<sub>3</sub>O<sup>+</sup> + F<sup>−</sup>. For each addition, decide which species of the equation it adds, or which its ions react with, and which way Le Châtelier’s principle then shifts the equilibrium; compare with the keyed answer for ammonia in the exercise before this one."
+    "solution": "Only (a), the addition of NaOH, increases the percentage of HF converted to fluoride ion. The ionization is HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>). (a) Hydroxide ion from NaOH reacts with H<sub>3</sub>O<sup>+</sup> to form water, lowering [H<sub>3</sub>O<sup>+</sup>], so by Le Châtelier’s principle the equilibrium shifts to the right and more HF ionizes. (b) HCl ionizes completely and adds H<sub>3</sub>O<sup>+</sup>, a product, so the equilibrium shifts to the left and the percent ionization of HF falls. (c) NaF adds F<sup>−</sup>, also a product, so the equilibrium again shifts to the left and less HF is converted to fluoride ion."
    }
   },
   {
@@ -932,7 +932,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: write HF + H<sub>2</sub>O ⇌ H<sub>3</sub>O<sup>+</sup> + F<sup>−</sup>. For each substance added, say which species of the equation it adds or which its ions react with, shift the equilibrium as Le Châtelier’s principle predicts, and follow the three concentrations, as the keyed answer for KNO<sub>2</sub> in the exercise before this one does."
+    "solution": "The equilibrium is HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>). (a) HCl ionizes completely and adds H<sub>3</sub>O<sup>+</sup>, so [H<sub>3</sub>O<sup>+</sup>] increases; the equilibrium shifts to the left, [F<sup>−</sup>] decreases and [HF] increases. (b) KF adds F<sup>−</sup>, so [F<sup>−</sup>] increases; the equilibrium shifts to the left, [H<sub>3</sub>O<sup>+</sup>] decreases and [HF] increases. (c) NaCl has no effect: Na<sup>+</sup> is a group 1 cation and Cl<sup>−</sup> is the conjugate base of a strong acid, so neither reacts with any species in the equilibrium, and all three concentrations stay the same. (d) KOH adds OH<sup>−</sup>, which reacts with H<sub>3</sub>O<sup>+</sup> to form water, so [H<sub>3</sub>O<sup>+</sup>] decreases; the equilibrium shifts to the right, [HF] decreases and [F<sup>−</sup>] increases. (e) Added HF increases [HF]; the equilibrium shifts to the right, so [H<sub>3</sub>O<sup>+</sup>] and [F<sup>−</sup>] both increase, though the fraction of HF ionized becomes smaller."
    }
   },
   {

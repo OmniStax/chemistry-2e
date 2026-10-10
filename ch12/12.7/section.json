@@ -376,7 +376,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: for each kind of catalyst, say what phase it is in compared with the reactants and where the reaction takes place, then compare how each gives the reaction a path of lower activation energy, taking the nitric oxide–catalyzed decomposition of ozone and the hydrogenation of ethylene on nickel as the examples."
+        "solution": "Both kinds of catalyst speed up a reaction in the same way, by providing an alternative mechanism with a lower activation energy, and neither is consumed; they differ in phase and in where the reaction takes place. A homogeneous catalyst is in the same phase as the reactants and acts throughout that phase: it reacts with a reactant to form an intermediate, which then reacts further to form product and regenerate the catalyst. In the nitric oxide–catalyzed decomposition of ozone, gaseous NO reacts with O<sub>3</sub> to form NO<sub>2</sub>, and NO<sub>2</sub> reacts with an oxygen atom to give back NO, so NO is a reactant in the first step and a product in the last. A heterogeneous catalyst is in a different phase, usually a solid, and the reaction occurs on its surface: the reactants are adsorbed, activated and react there, and the products desorb. In the hydrogenation of ethylene on nickel, H<sub>2</sub> and C<sub>2</sub>H<sub>4</sub> bond to the Ni surface, the H–H bonds and the C–C π-bond break, new C–H bonds form, and C<sub>2</sub>H<sub>6</sub> leaves the surface."
       }
     },
     {
@@ -410,7 +410,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: the two diagrams of each pair are for the same reaction, so they start and end at the same energies; read the activation energy of each as the height of its highest barrier above the reactants, and remember that a catalyst gives a path with a lower activation energy."
+        "solution": "In both pairs, diagram (b) is the catalyzed reaction. The two diagrams of each pair start and end at the same energies, because a catalyst does not change the reactants, the products or the energy change between them; it provides a path with a lower activation energy. The activation energy is the height of the peak above the reactants. (a) The reactants are at about 12 kJ; diagram (a) peaks at about 24 kJ, so $\\kEa$ ≈ 12 kJ, and diagram (b) peaks at about 20 kJ, so $\\kEa$ ≈ 8 kJ. Diagram (b), with the lower barrier, is catalyzed. (b) The reactants are at about 2 kJ; diagram (a) peaks at about 43 kJ, so $\\kEa$ ≈ 41 kJ, and diagram (b) peaks at about 32 kJ, so $\\kEa$ ≈ 30 kJ. Again diagram (b) is catalyzed."
       }
     },
     {
@@ -476,7 +476,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: read the activation energy of each diagram as the height of its barrier above the reactants. For the same reaction at the same temperature, the path with the lower activation energy has more molecules able to cross the barrier, so its rate is faster."
+        "solution": "Reaction (b) has the faster rate. The activation energy is the height of the barrier above the reactants, which both diagrams place at 10 kJ. Diagram (a) peaks at 35 kJ, so $\\kEa$ = 35 kJ − 10 kJ = 25 kJ; diagram (b) peaks at 20 kJ, so $\\kEa$ = 20 kJ − 10 kJ = 10 kJ. For the same reaction at the same temperature, a lower activation energy means a greater fraction of molecules have enough energy to cross the barrier, so more collisions lead to reaction. The mechanism of diagram (b), with its barrier 15 kJ lower, is therefore faster, as a catalyzed path is faster than an uncatalyzed one."
       }
     },
     {

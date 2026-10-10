@@ -265,7 +265,7 @@
    "place": { "at": "end" },
    "cite": "density",
    "prompt": "Which is denser at the same temperature and pressure, dry air or air saturated with water vapor? Explain.",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: at the same temperature and pressure, a liter of either gas holds the same number of moles, so the denser gas is the one whose average molar mass is greater. Compare the molar mass of water, about 18 g/mol, with those of nitrogen and oxygen, which make up nearly all of dry air, and consider what happens to the average when some of those molecules are replaced by water molecules." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Dry air is denser. At the same temperature and pressure, equal volumes of gases hold the same number of molecules, so the density of a gas, $d=\\frac{\\kMM\\kP}{R\\kT}$, is proportional to its molar mass, and for a mixture to the average molar mass of its molecules. Dry air is nearly all N<sub>2</sub> (28.0 g/mol) and O<sub>2</sub> (32.0 g/mol), with an average molar mass of about 29 g/mol. Water vapor has a molar mass of only 18.0 g/mol, and in moist air water molecules take the places of some of the nitrogen and oxygen molecules, since the number of molecules in a liter stays the same. If 3% of the molecules are water, the average falls to $(0.97)(29\\;\\text{g/mol})+(0.03)(18\\;\\text{g/mol})=28.7\\;\\text{g/mol}$, so a liter of saturated air has less mass than a liter of dry air." }
   },
   {
    "id": "e3",
@@ -295,7 +295,7 @@
    "place": { "at": "end" },
    "cite": "density",
    "prompt": "How could you show experimentally that the molecular formula of propene is C<sub>3</sub>H<sub>6</sub>, not CH<sub>2</sub>?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: the two formulas have the same composition by mass, so an analysis of the elements cannot tell them apart; what differs is the molar mass. Measure the mass, pressure, volume and temperature of a sample of the gas, as in Example 9.12, calculate its molar mass from ℳ = mRT/PV, and compare it with the mass of the empirical formula, 14 g/mol, to find how many CH<sub>2</sub> units make up a molecule." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "By measuring the molar mass of the gas, which is 42 g/mol for C<sub>3</sub>H<sub>6</sub> and 14 g/mol for CH<sub>2</sub>. The two formulas have the same percent composition, so an elemental analysis gives only the empirical formula, CH<sub>2</sub>, with an empirical formula mass of 14.0 g/mol. Weighing a sample of the gas of known volume at a measured pressure and temperature, as in Example 9.12, gives the molar mass from $\\kMM=\\frac{\\km R\\kT}{\\kP\\kV}$. A 1.00-L flask that holds 1.88 g of propene at 1.00 atm and 273 K, for instance, gives $\\kMM=\\frac{(1.88\\;\\text{g})(0.08206\\;\\text{L atm mol}^{-1}\\text{K}^{-1})(273\\;\\text{K})}{(1.00\\;\\text{atm})(1.00\\;\\text{L})}=42.1\\;\\text{g/mol}$. Then $\\frac{42.1\\;\\text{g/mol}}{14.0\\;\\text{g/mol}}=3.00$, so each molecule contains three CH<sub>2</sub> units, and the molecular formula is C<sub>3</sub>H<sub>6</sub>." }
   },
   {
    "id": "e6",

@@ -165,7 +165,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: compare the intermolecular forces between H<sub>2</sub>S molecules with those between H<sub>2</sub>O molecules, recalling which atoms must carry the hydrogen for hydrogen bonding and how the electronegativity of sulfur compares with that of oxygen; then ask which liquid needs more energy to separate its molecules."
+    "solution": "Water is a liquid because its molecules are held together by hydrogen bonds, while hydrogen sulfide molecules attract one another only by much weaker forces. Hydrogen bonding requires hydrogen bonded to a small, highly electronegative atom such as oxygen. Oxygen (electronegativity 3.5) makes the O–H bonds very polar, and each H<sub>2</sub>O molecule hydrogen bonds strongly to its neighbors through its lone pairs and its partly positive hydrogen atoms. Sulfur is larger and less electronegative (2.5, close to hydrogen at 2.1), so the S–H bonds are only slightly polar and H<sub>2</sub>S forms essentially no hydrogen bonds; only dispersion forces and weak dipole-dipole attractions hold its molecules together. Although H<sub>2</sub>S has the higher molar mass, 34 g/mol against 18 g/mol, far less energy is needed to separate its molecules, so it boils at about −60 °C, whereas water boils at 100 °C."
    }
   },
   {
@@ -199,7 +199,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: write the anion that each salt supplies, HSO<sub>3</sub><sup>−</sup> and HSO<sub>4</sub><sup>−</sup>, and count the oxygen atoms bonded to sulfur in each, together with sulfur’s oxidation state; then use the trend in oxyacid strength with the number of oxygen atoms on the central atom."
+    "solution": "NaHSO<sub>4</sub> is the stronger acid. Each salt supplies its anion as the acid: ${\\text{HSO}}_{4}{}^{−}$ from NaHSO<sub>4</sub> and ${\\text{HSO}}_{3}{}^{−}$ from NaHSO<sub>3</sub>. In ${\\text{HSO}}_{4}{}^{−}$ the sulfur atom is bonded to four oxygen atoms and has an oxidation state of +6; in ${\\text{HSO}}_{3}{}^{−}$ it is bonded to three oxygen atoms and has an oxidation state of +4. For oxyacids of the same central atom, acid strength increases with the number of oxygen atoms bonded to it, because the extra electronegative oxygen atoms and the higher oxidation state draw electron density away from the O–H bond, making it more polar and the proton easier to lose, and they also spread the negative charge of the conjugate base. ${\\text{HSO}}_{4}{}^{−}$ has <em>K</em><sub>a</sub> = 1.2 × 10<sup>−2</sup>, whereas ${\\text{HSO}}_{3}{}^{−}$ has <em>K</em><sub>a</sub> = 6.4 × 10<sup>−8</sup>."
    }
   },
   {
@@ -233,7 +233,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: write the formulas H<sub>2</sub>SO<sub>3</sub> and H<sub>2</sub>SO<sub>4</sub> and the oxidation state of sulfur in each; then use the trend in oxyacid strength: the more oxygen atoms bonded to the central atom, the more electron density is drawn from the O–H bonds."
+    "solution": "Sulfuric acid, H<sub>2</sub>SO<sub>4</sub>, is the stronger acid; it is a strong acid, while sulfurous acid, H<sub>2</sub>SO<sub>3</sub>, is weak (<em>K</em><sub>a1</sub> = 1.6 × 10<sup>−2</sup>). In sulfuric acid the sulfur atom is bonded to four oxygen atoms, two of them OH groups, and has an oxidation state of +6; in sulfurous acid it is bonded to three oxygen atoms, two of them OH groups, and has an oxidation state of +4. Each additional oxygen atom bonded to the central atom, together with the higher oxidation state of sulfur, draws more electron density away from the O–H bonds. Those bonds become more polar, so the hydrogen ions are lost more easily, and the negative charge left on the anion is spread over more oxygen atoms, which stabilizes ${\\text{HSO}}_{4}{}^{−}$ more than ${\\text{HSO}}_{3}{}^{−}$. For this reason H<sub>2</sub>SO<sub>4</sub> ionizes completely in its first step in water, while H<sub>2</sub>SO<sub>3</sub> ionizes only partly."
    }
   },
   {
@@ -284,7 +284,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall that sulfuric acid is a strong acid, and write the reaction of an H<sub>2</sub>SO<sub>4</sub> molecule with a water molecule in which a proton moves from the acid to the water; name the ions that form and say why the polar O–H bonds of the acid let this happen."
+    "solution": "Sulfuric acid dissolves and forms ions because it is a strong acid that transfers a proton to water. Its molecule contains two highly polar O–H bonds: the sulfur atom, in the +6 oxidation state and bonded to four electronegative oxygen atoms, draws electron density away from them. When the molecule dissolves it hydrogen bonds to water, and a water molecule, acting as a base, takes a proton from an O–H group. The first ionization is complete: $${\\text{H}}_{2}{\\text{SO}}_{4}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{HSO}}_{4}{}^{−}(aq)$$ The hydrogen sulfate ion then ionizes partly in a second step: $${\\text{HSO}}_{4}{}^{−}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons \\;{\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)$$ The covalent molecules thus become hydronium ions, hydrogen sulfate ions and some sulfate ions, which are stabilized by hydration, so the solution conducts electricity."
    }
   },
   {

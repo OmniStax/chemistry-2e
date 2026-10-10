@@ -280,7 +280,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: write the rate of change of each species’ concentration as Δ[X]/Δt, put a negative sign before the term for the reactant, O<sub>3</sub>, since its concentration falls, and divide each term by that species’ coefficient in the balanced equation. The two terms are then equal, as in Example 12.1."
+        "solution": "$-\\;\\frac{1}{2}\\;\\frac{\\text{Δ}[{\\text{O}}_{3}]}{\\kdt}\\;=\\;\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{O}}_{2}]}{\\kdt}$. Ozone is the reactant, so its concentration falls and $\\text{Δ}[{\\text{O}}_{3}]$ is negative; the minus sign makes its term a positive rate. Oxygen is the product, so its term needs no sign. The balanced equation shows that 3 molecules of O<sub>2</sub> form for every 2 molecules of O<sub>3</sub> that decompose, so oxygen appears 3/2 times as fast as ozone disappears. Dividing each rate of change by its species’ coefficient, 2 for O<sub>3</sub> and 3 for O<sub>2</sub>, makes the two terms equal, just as the coefficients 4, 5, 4 and 6 do in Example 12.1."
       }
     },
     {

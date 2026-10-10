@@ -504,7 +504,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Look for the names of metals in the ingredient lists of products such as vitamin and mineral supplements, fertilizers and cleaning products, and note which of them lie in the <em>d</em> block of the periodic table and what charge each carries in its compound. For each cation, write the complete configuration of the neutral atom in the order of Figure 6.26 and then remove electrons as Example 6.11 does: for a transition metal the highest <em>ns</em> electrons are lost first, and only then the (<em>n</em> – 1)<em>d</em> electrons."
+    "solution": "A multivitamin and mineral tablet is one such product. Its label lists ferrous fumarate, zinc oxide, cupric sulfate and manganese sulfate, which contain the transition metal cations Fe<sup>2+</sup>, Zn<sup>2+</sup>, Cu<sup>2+</sup> and Mn<sup>2+</sup>. Each configuration starts from the neutral atom, and because these are transition metals the 4<em>s</em> electrons are lost before any 3<em>d</em> electrons, as Example 6.11 shows for iron. Fe, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>6</sup>, gives Fe<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>6</sup>. Zn, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>, gives Zn<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>. Copper is one of the exceptions of Figure 6.29, with the configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>1</sup>3<em>d</em><sup>10</sup>; it loses its 4<em>s</em> electron and one 3<em>d</em> electron, so Cu<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>9</sup>. Mn, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>5</sup>, gives Mn<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>5</sup>. Each ion has as many electrons as the atomic number minus the charge: 24, 28, 27 and 23."
    }
   },
   {
@@ -536,7 +536,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Find the atomic number of each element, which is its number of electrons, and place the electrons one at a time into the subshells in the order of Figure 6.26, filling each subshell to its capacity (2 for <em>s</em>, 6 for <em>p</em>, 10 for <em>d</em>, 14 for <em>f</em>) before the next is begun. Stop when the superscripts add up to the atomic number, and check the last subshell against the square of that element in Figure 6.29."
+    "solution": "(a) C: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>2</sup>; (b) P: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>3</sup>; (c) V: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>3</sup>; (d) Sb: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>3</sup>; (e) Sm: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>6</sup>. The number of electrons in each atom is its atomic number: 6, 15, 23, 51 and 62. The electrons fill the subshells in the order of Figure 6.26, 1<em>s</em>, 2<em>s</em>, 2<em>p</em>, 3<em>s</em>, 3<em>p</em>, 4<em>s</em>, 3<em>d</em>, 4<em>p</em>, 5<em>s</em>, 4<em>d</em>, 5<em>p</em>, 6<em>s</em>, 4<em>f</em>, each subshell taking its capacity (2 for <em>s</em>, 6 for <em>p</em>, 10 for <em>d</em>, 14 for <em>f</em>) before the next begins. Carbon ends with two electrons in 2<em>p</em>, phosphorus with three in 3<em>p</em>, vanadium with three in 3<em>d</em> after 4<em>s</em> is full, antimony with three in 5<em>p</em>, and samarium with six in 4<em>f</em> after 6<em>s</em> is full; in each case the superscripts add up to the atomic number."
    }
   },
   {
@@ -568,7 +568,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Recall from Chapter 1 that a macroscopic property is one we can observe or measure in a sample large enough to see, while a microscopic property belongs to the individual atoms and molecules. Ask what an electron configuration describes: the occupancy of the orbitals of one atom. Decide which kind of property that is, and explain it in terms of what the symbol tells you about a single atom."
+    "solution": "It is the symbol for a microscopic property. The configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup> describes how the ten electrons of a single neon atom are arranged in its orbitals: two in the 1<em>s</em> orbital, two in the 2<em>s</em> orbital and six in the three 2<em>p</em> orbitals. A macroscopic property, such as density or boiling point, is observed or measured in a sample large enough to see and handle. The electron configuration belongs to each atom, which is far too small to see, so it belongs to the microscopic domain, even though it is inferred from macroscopic observations such as spectra and it accounts for macroscopic behavior such as the lack of reactivity of neon."
    }
   },
   {
@@ -600,7 +600,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write each configuration first and pick out the valence subshells: for a main group element, the <em>s</em> and <em>p</em> subshells of the highest <em>n</em>; for a transition metal, the <em>ns</em> and (<em>n</em> – 1)<em>d</em> subshells. Draw one box for each orbital (one for <em>s</em>, three for <em>p</em>, five for <em>d</em>), place one arrow in each box of a subshell before pairing any, as Hund’s rule requires, and give paired arrows opposite directions. Check Figure 6.29 for any element whose observed configuration differs from the predicted one."
+    "solution": "(a) C, valence shell 2<em>s</em><sup>2</sup>2<em>p</em><sup>2</sup>: the 2<em>s</em> box holds a pair of arrows, one up and one down, and of the three 2<em>p</em> boxes two hold a single upward arrow and one is empty. (b) P, valence shell 3<em>s</em><sup>2</sup>3<em>p</em><sup>3</sup>: the 3<em>s</em> box holds a pair of arrows, and each of the three 3<em>p</em> boxes holds a single upward arrow. (c) V, valence electrons 4<em>s</em><sup>2</sup>3<em>d</em><sup>3</sup>: the 4<em>s</em> box holds a pair of arrows, and of the five 3<em>d</em> boxes three hold a single upward arrow and two are empty. (d) Sb, valence shell 5<em>s</em><sup>2</sup>5<em>p</em><sup>3</sup>: the 5<em>s</em> box holds a pair of arrows, and each of the three 5<em>p</em> boxes holds a single upward arrow. (e) Ru, valence electrons 5<em>s</em><sup>1</sup>4<em>d</em><sup>7</sup>, one of the exceptions of Figure 6.29: the 5<em>s</em> box holds a single upward arrow, and of the five 4<em>d</em> boxes two hold a pair of arrows and three hold a single upward arrow. In every diagram Hund’s rule places one electron in each orbital of a subshell, with parallel spins, before any orbital takes a second electron of opposite spin."
    }
   },
   {
@@ -632,7 +632,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the configuration of each neutral atom first. For an anion, add electrons in the order predicted by the Aufbau principle; for a cation of a main group element, remove the electrons that were added last; for a transition or inner transition metal, remove the highest <em>ns</em> electrons first and then the (<em>n</em> – 1)<em>d</em> or (<em>n</em> – 2)<em>f</em> electrons, as Example 6.11 does for Fe<sup>2+</sup> and Sm<sup>3+</sup>. Chromium and gadolinium are among the atoms whose observed configurations differ from the predicted ones, so start them from Figure 6.29."
+    "solution": "(a) N<sup>3–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; (b) Ca<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>; (c) S<sup>–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup>; (d) Cs<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>5</sup>; (e) Cr<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>4</sup>; (f) Gd<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>4<em>f</em><sup>7</sup>. An anion gains electrons in the Aufbau order: N, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>3</sup>, takes three more 2<em>p</em> electrons, and S, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>4</sup>, takes one more 3<em>p</em> electron. A main group cation loses the electrons added last: Ca loses its two 4<em>s</em> electrons, and Cs loses its single 6<em>s</em> electron and then one 5<em>p</em> electron, leaving 53. A transition or inner transition metal loses its highest <em>s</em> electrons first. Chromium is observed as 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>1</sup>3<em>d</em><sup>5</sup> (Figure 6.29), so Cr<sup>2+</sup> loses the 4<em>s</em> electron and one 3<em>d</em> electron, leaving 22. Gadolinium is observed as 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>7</sup>5<em>d</em><sup>1</sup>; Gd<sup>3+</sup> loses the two 6<em>s</em> electrons and the 5<em>d</em> electron, leaving the half-filled 4<em>f</em><sup>7</sup> subshell and 61 electrons."
    }
   },
   {
@@ -664,7 +664,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Add the superscripts to find the number of electrons, which for a neutral atom is its atomic number, and find that element in the periodic table. As a check, the last subshell being filled, and the number of electrons in it, should match that element’s square in Figure 6.29."
+    "solution": "It is cobalt, Co. The superscripts add up to 2 + 2 + 6 + 2 + 6 + 7 + 2 = 27, and a neutral atom has as many electrons as its atomic number, so the atomic number is 27. The configuration also places the element: after the argon core, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>, the 4<em>s</em> subshell is full and the 3<em>d</em> subshell holds seven electrons, which is the seventh element of the first transition series, in period 4 and group 9."
    }
   },
   {
@@ -696,7 +696,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the configuration of each of the five atoms and count the electrons in the shell of highest <em>n</em>, which for these main group elements are the valence electrons. Their positions in the periodic table give a quick check, since atoms in one group have the same number of valence electrons."
+    "solution": "Boron contains only three valence electrons. The valence electrons of these main group atoms are the electrons in the shell of highest <em>n</em>. Li, 1<em>s</em><sup>2</sup>2<em>s</em><sup>1</sup>, has one; B, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup>, has three, the two 2<em>s</em> electrons and the one 2<em>p</em> electron; N, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>3</sup>, has five; F, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup>, has seven; and Ne, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>, has eight. The periodic table agrees, since boron is in group 13, whose atoms all have the valence configuration <em>ns</em><sup>2</sup><em>np</em><sup>1</sup>."
    }
   },
   {
@@ -737,7 +737,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "A <em>p</em> subshell holds six electrons, so it is half-filled with three. Find the element whose last subshell to be filled by the Aufbau principle is 6<em>p</em> and which has three electrons in it: it lies in period 6 of the <em>p</em> block, in the group whose members all end in <em>np</em><sup>3</sup>."
+    "solution": "Bismuth, Bi, atomic number 83, has a half-filled 6<em>p</em> subshell. A <em>p</em> subshell holds six electrons in its three orbitals, so it is half-filled with three, one in each orbital by Hund’s rule. In the filling order, 6<em>p</em> follows 6<em>s</em>, 4<em>f</em> and 5<em>d</em>, so the element must have the xenon core plus 6<em>s</em><sup>2</sup>4<em>f</em><sup>14</sup>5<em>d</em><sup>10</sup>6<em>p</em><sup>3</sup>, a total of 54 + 2 + 14 + 10 + 3 = 83 electrons. Its configuration is 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>14</sup>5<em>d</em><sup>10</sup>6<em>p</em><sup>3</sup>, and it is the period 6 member of group 15, whose atoms all end in <em>np</em><sup>3</sup>."
    }
   },
   {
@@ -769,7 +769,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the configuration of the cobalt atom, atomic number 27, from Figure 6.26 or Figure 6.29. Cobalt is a transition metal, so its cations lose the 4<em>s</em> electrons first; the +3 ion then loses one electron from the 3<em>d</em> subshell as well. Check that the number of electrons left is 27 minus the charge."
+    "solution": "Co<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>7</sup>; Co<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>6</sup>. The cobalt atom has 27 electrons, with the configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>7</sup>. Cobalt is a transition metal, so its cations lose the 4<em>s</em> electrons before any 3<em>d</em> electrons, as Example 6.11 shows for Fe<sup>2+</sup>. Co<sup>2+</sup> loses both 4<em>s</em> electrons and keeps 25 electrons, seven of them in 3<em>d</em>. Co<sup>3+</sup> loses both 4<em>s</em> electrons and one 3<em>d</em> electron, keeping 24 electrons, six of them in 3<em>d</em>."
    }
   },
   {
@@ -801,7 +801,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Start from the configuration of each neutral atom. The number of electrons in an ion is the atomic number minus the charge, so a positive ion has lost electrons and a negative one has gained them. For the main group ions, remove the electrons added last or add electrons in the Aufbau order; titanium is a neutral atom, and its configuration follows the filling order of Figure 6.26 through the 4<em>s</em> and into the 3<em>d</em>."
+    "solution": "(a) B<sup>3+</sup>: 1<em>s</em><sup>2</sup>; (b) O<sup>–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup>; (c) Cl<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>; (d) Ca<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>; (e) Ti: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>2</sup>. An ion has the atomic number minus the charge in electrons. B, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup>, loses its 2<em>p</em> and both 2<em>s</em> electrons, leaving 2. O, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>4</sup>, gains one 2<em>p</em> electron, giving 9. Cl, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup>, loses three of its 3<em>p</em> electrons, the last ones added, leaving 14. Ca, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>, loses its two 4<em>s</em> electrons, leaving 18. Titanium is a neutral atom with 22 electrons; after the 4<em>s</em> subshell is full, the last two enter 3<em>d</em>."
    }
   },
   {
@@ -833,7 +833,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the configuration of scandium and pick out the subshells with <em>n</em> = 3: the 3<em>s</em>, the 3<em>p</em> and the 3<em>d</em>. For each electron, <em>l</em> is 0, 1 or 2 by its subshell, <em>m<sub>l</sub></em> runs over the values allowed for that <em>l</em>, one box per value, and <em>m<sub>s</sub></em> is +½ for the first electron in a box and −½ for the second, as in Example 6.10. No two electrons may share all four numbers."
+    "solution": "Scandium, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>1</sup>, has nine electrons with <em>n</em> = 3: two in 3<em>s</em>, six in 3<em>p</em> and one in 3<em>d</em>. Each set is written (<em>n</em>, <em>l</em>, <em>m<sub>l</sub></em>, <em>m<sub>s</sub></em>). The 3<em>s</em> electrons have <em>l</em> = 0 and <em>m<sub>l</sub></em> = 0 and differ in spin: (3, 0, 0, $+\\frac{1}{2}$) and (3, 0, 0, $-\\frac{1}{2}$). The 3<em>p</em> electrons have <em>l</em> = 1, and each of the three <em>m<sub>l</sub></em> values holds a pair of opposite spins: (3, 1, –1, $+\\frac{1}{2}$), (3, 1, –1, $-\\frac{1}{2}$), (3, 1, 0, $+\\frac{1}{2}$), (3, 1, 0, $-\\frac{1}{2}$), (3, 1, +1, $+\\frac{1}{2}$), (3, 1, +1, $-\\frac{1}{2}$). The single 3<em>d</em> electron has <em>l</em> = 2 and may take any <em>m<sub>l</sub></em> from –2 to +2, since the five 3<em>d</em> orbitals are degenerate, and as an unpaired electron it takes <em>m<sub>s</sub></em> = $+\\frac{1}{2}$, for example (3, 2, –2, $+\\frac{1}{2}$). No two of the nine sets are the same, as the Pauli exclusion principle requires."
    }
   },
   {
@@ -867,7 +867,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Elements in one group have the same number of valence electrons in the same kind of subshell. Find in Figure 6.29 the column whose squares all end in <em>ns</em><sup>2</sup> with nothing added after it, and note the one element outside that column whose configuration has the same form."
+    "solution": "The atoms of group 2, the alkaline earth metals beryllium, magnesium, calcium, strontium, barium and radium, have the valence shell configuration <em>ns</em><sup>2</sup>. Elements in one group have the same number of valence electrons in the same kind of subshell. In group 2 the <em>s</em> subshell of the outer shell is filled with two electrons and nothing follows it: Be is [He]2<em>s</em><sup>2</sup>, Mg [Ne]3<em>s</em><sup>2</sup> and Ca [Ar]4<em>s</em><sup>2</sup>, and so on down the group. Helium, 1<em>s</em><sup>2</sup>, has the same form with <em>n</em> = 1, but it is placed in group 18 because its filled shell makes it a noble gas like the other members of that group."
    }
   },
   {
@@ -884,7 +884,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the configuration of aluminum and name the subshell its last electron enters. Compare it with the elements of group 3, such as scandium, whose last electron enters a <em>d</em> subshell, and with boron, above aluminum in group 13. Explain the placement in terms of the valence electrons and the subshell being filled, which is how the periodic table groups the elements."
+    "solution": "Aluminum belongs to group 13 because its last electron enters a <em>p</em> subshell, not a <em>d</em> subshell. Its configuration is 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>, so its three valence electrons are 3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>, the same form, <em>ns</em><sup>2</sup><em>np</em><sup>1</sup>, as boron above it, 2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup>. The elements of group 3, such as scandium, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>1</sup>, also have three valence electrons, but theirs are <em>ns</em><sup>2</sup>(<em>n</em> – 1)<em>d</em><sup>1</sup>, with the last electron in a <em>d</em> subshell. The periodic table groups elements by the subshell being filled and the number of electrons in it, and the first <em>d</em> subshell, 3<em>d</em>, is not filled until after 4<em>s</em>, so aluminum in period 3 has no <em>d</em> electrons and sits in the <em>p</em> block with boron, whose chemistry it resembles."
    }
   }
  ],

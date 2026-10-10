@@ -633,7 +633,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Judge the two qualities separately, as for the three dispensers. Precision is how closely the repeated values agree with one another, so compare the spread between the largest and smallest values in each set with the size of the values. Accuracy is how closely the values agree with a true or accepted value, so look for the target the set is checked against. A pipette should deliver its nominal volume, and a purity is compared with what the gold should be. A set checked only for consistency names no true value, and you cannot judge its accuracy from the values alone. A set can be tight and far from its target, scattered and centered on it, both, or neither."
+    "solution": "(a) Neither. The cookie weights run from 13.05 g to 19.46 g, a spread of 6.41 g on values near 17 g, so the measurements do not agree closely with one another and are not precise. The check names no true or accepted weight to compare them with, and values this scattered cannot be counted on to land near any one target, so the set is classed as neither accurate nor precise. (b) Precise but not accurate. The four volumes lie between 26.97 mL and 27.02 mL, a spread of only 0.05 mL, so they agree closely with one another. Their average, 27.00 mL, is 2 mL more than the 25 mL the pipettes are meant to deliver, so they are not close to the true value. (c) Both. The four purities differ by no more than 0.0001%, so they are precise, and every one lies within 0.0002% of 100%, the purity of pure gold, so they are accurate as well."
    }
   }
  ],

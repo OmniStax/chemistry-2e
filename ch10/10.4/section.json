@@ -239,7 +239,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for each pair, find the temperature on the horizontal axis and the pressure on the vertical axis, and read which region of the diagram the point falls in. Compare the pressure with the vapor pressure of the liquid or of ice at that temperature: above the liquid-gas curve and to the right of the solid-liquid curve the water is a liquid, below the liquid-gas or solid-gas curve it is a gas, and to the left of the solid-liquid curve and above the solid-gas curve it is a solid. Remember that below the triple-point pressure of 0.6 kPa there is no liquid region at all."
+    "solution": "(a) liquid; (b) solid; (c) gas; (d) gas; (e) gas; (f) liquid. Each point is placed by its temperature on the horizontal axis and its pressure on the vertical axis. (a) At 35 °C the vapor pressure of liquid water, read from the liquid-gas curve, is only about 5.6 kPa, and 35 °C lies to the right of the solid-liquid curve, so at 85 kPa the point falls in the liquid region. (b) At −15 °C, to the left of the solid-liquid curve, the vapor pressure of ice is about 0.17 kPa; 40 kPa lies well above the solid-gas curve, so the water is solid. (c) At −15 °C and 0.1 kPa the pressure is below the vapor pressure of ice, so the point lies below the solid-gas curve and the water is a gas. (d) At 75 °C the vapor pressure of liquid water is about 39 kPa; 3 kPa is below the liquid-gas curve, so the water is a gas. (e) At 40 °C and 0.1 kPa the pressure is below the vapor pressure of the liquid, 7.4 kPa, and also below the triple-point pressure of 0.61 kPa, so the water is a gas. (f) At 60 °C the vapor pressure of liquid water is about 20 kPa; 50 kPa lies above the liquid-gas curve, so the water is a liquid."
    }
   },
   {
@@ -287,7 +287,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: at each temperature, follow a vertical line upward on the carbon dioxide diagram from the lowest pressure and note every curve it crosses, in order. Crossing the solid-gas curve is deposition, crossing the liquid-gas curve is condensation, and crossing the solid-liquid curve is freezing. Decide first whether the temperature lies below the triple-point temperature of about −57 °C, between the triple point and the critical temperature of 31 °C, or above the critical temperature, where no amount of pressure produces a liquid."
+    "solution": "(a) At −50 °C, carbon dioxide is a gas at low pressure, condenses to a liquid at about 680 kPa, and at a much higher pressure freezes to a solid. (b) At 50 °C it never becomes a liquid: it stays a gas and, above the critical pressure of 7400 kPa, becomes a supercritical fluid. At −40 °C the sequence is the same as at −50 °C, gas to liquid at about 1000 kPa and then liquid to solid at a much higher pressure. At 20 °C the gas condenses to a liquid at about 5700 kPa, and the liquid freezes only at a far higher pressure still. Each case follows a vertical line upward on Figure 10.34. The triple point of carbon dioxide lies at −56.6 °C and the critical point at 31.1 °C, so −50 °C, −40 °C, and 20 °C are all between the two. A line at any of these temperatures first crosses the liquid-gas curve, where the gas condenses, and then the solid-liquid curve, which leans to the right because the melting point of CO<sub>2</sub> increases with pressure, where the liquid freezes; the higher the temperature, the higher both pressures are. At 50 °C the line passes to the right of the critical point, where no amount of pressure can liquefy the gas."
    }
   },
   {
@@ -335,7 +335,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: a gas can be liquefied by pressure only below its critical temperature. Look up the critical temperatures of nitrogen and sulfur dioxide in the table of critical temperatures and pressures, and compare each with 25 °C."
+    "solution": "Nitrogen cannot be liquefied at room temperature, and sulfur dioxide can. A gas can be liquefied by pressure only below its critical temperature; above it, no amount of pressure produces a liquid. The critical temperature of nitrogen is −147.2 °C, far below 25 °C, so at room temperature compressing nitrogen only makes it a denser gas and, above its critical pressure, a supercritical fluid. The critical temperature of sulfur dioxide is 157.2 °C, well above 25 °C, so at room temperature sulfur dioxide condenses to a liquid once it is compressed to its vapor pressure at that temperature, which is less than its critical pressure of 7800 kPa."
    }
   },
   {

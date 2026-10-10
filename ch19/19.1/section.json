@@ -655,7 +655,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall how readily the lanthanides are oxidized, forming stable 3+ cations as the alkaline earth metals form 2+ ones, and ask what such a metal becomes when it meets the oxygen and water of the earth’s crust."
+    "solution": "They are too reactive to survive as free metals. Like the alkaline earth metals, the lanthanoids are strong reducing agents that are readily oxidized, and all of them form stable 3+ cations; the driving force is similar to that which turns Be and Mg into Be<sup>2+</sup> and Mg<sup>2+</sup>. Any lanthanoid metal in contact with the oxygen and water of the earth’s crust is oxidized to its 3+ ion, so these elements occur only in compounds, mixed together in ores, and the metals must be obtained by reducing those compounds."
    }
   },
   {
@@ -695,7 +695,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: find the oxidation state of the metal in each oxyanion, then compare the reduction potentials of the ions in acid solution in Appendix L; the ion most easily reduced is the strongest oxidizing agent."
+    "solution": "${\\text{MnO}}_{4}{}^{\\text{−}}$ is the strongest oxidizing agent. Each ion holds its metal in the highest oxidation state of its group: vanadium is +5 in ${\\text{VO}}_{4}{}^{3−}$ ($x - 8 = -3$), chromium is +6 in ${\\text{CrO}}_{4}{}^{2−}$ ($x - 8 = -2$), and manganese is +7 in ${\\text{MnO}}_{4}{}^{−}$ ($x - 8 = -1$). Across the first transition series these highest states become harder to reach and less stable, so a metal in such a state is more easily reduced the farther along the series it lies. The reduction potentials in Appendix L agree: permanganate is reduced to Mn<sup>2+</sup> at +1.51 V, dichromate, the form chromium(VI) takes in acid, to Cr<sup>3+</sup> at +1.33 V, and vanadium(V) is reduced least readily, at about +1.0 V. The ion most easily reduced, permanganate, is the strongest oxidizing agent."
    }
   },
   {
@@ -735,7 +735,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: assign an oxidation number to every element on both sides of each equation; a reaction in which the oxidation number of any element changes is a redox reaction."
+    "solution": "Reactions (a), (b), (c), (d), and (e) are redox reactions; (f) and (g) are not. In (a) iron goes from +3 in Fe<sub>2</sub>O<sub>3</sub> to an average of +8/3 in Fe<sub>3</sub>O<sub>4</sub> while carbon is oxidized from +2 in CO to +4 in CO<sub>2</sub>. In (b) iron is reduced from +8/3 to +2 in FeO, and in (c) from +2 to 0 in the metal, each time with carbon oxidized from +2 to +4. In (d) carbon is oxidized from 0 to +4 and oxygen is reduced from 0 to −2. In (e) carbon in C (0) is oxidized and carbon in CO<sub>2</sub> (+4) is reduced, both ending at +2 in CO. In (f) calcium stays +2, carbon +4, and oxygen −2, and in (g) calcium stays +2, silicon +4, and oxygen −2; no oxidation number changes, so these two are not redox reactions."
    }
   },
   {
@@ -769,7 +769,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall how the acid-base character of a transition metal oxide changes with the oxidation state of the metal, and what manganese(VII) oxide forms when it reacts with water."
+    "solution": "The pH is less than 7.0. Oxides of transition metals in their lowest oxidation states are basic, and those in their highest oxidation states are acidic. Manganese(VII) oxide holds manganese in its highest oxidation state, +7, and is one of the few transition metal oxides that dissolve in water. It reacts with water to form permanganic acid, ${\\text{Mn}}_{2}{\\text{O}}_{7}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{2HMnO}}_{4}(aq)$, a strong acid that ionizes into H<sub>3</sub>O<sup>+</sup> and ${\\text{MnO}}_{4}{}^{−}$ ions, so the solution is acidic."
    }
   },
   {
@@ -860,7 +860,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall from the chapter on electrochemistry how a plate of impure blister copper serves as the anode of an electrolytic cell with a cathode of pure copper, and describe what happens to the copper and to its impurities at each electrode."
+    "solution": "Impure blister copper is cast into plates that serve as the anodes of an electrolytic cell, thin sheets of pure copper serve as the cathodes, and the electrolyte is a solution of copper(II) sulfate acidified with sulfuric acid. With a low applied voltage, copper is oxidized at the anode, $\\text{Cu}(s)\\;\\longrightarrow \\;{\\text{Cu}}^{2+}(aq)+{\\text{2e}}^{−}$, and Cu<sup>2+</sup> ions are reduced at the cathode, ${\\text{Cu}}^{2+}(aq)+{\\text{2e}}^{−}\\;\\longrightarrow \\;\\text{Cu}(s)$, so copper moves through the solution from the impure anode and deposits as nearly pure metal on the cathode. Impurities that are more easily oxidized than copper, such as iron, zinc, and nickel, also dissolve at the anode, but their ions are harder to reduce than Cu<sup>2+</sup> and stay in solution. Less active metals such as silver, gold, and platinum are not oxidized; they fall from the anode as a sludge at the bottom of the cell, from which they are recovered."
    }
   },
   {
@@ -928,7 +928,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall how the stability of the higher oxidation states changes down a group of the transition elements, and compare chromium and tungsten, both in group 6 and both in the 6+ state in these ions."
+    "solution": "[WO<sub>4</sub>]<sup>2−</sup> is more stable. Both ions hold a group 6 metal in the 6+ oxidation state. Elements of the second and third transition series are more stable in high oxidation states than those of the first series, because their atoms are larger and electrons farther from the nucleus are easier to remove. Chromium, the lightest member of the group, is most stable as Cr<sup>3+</sup>, so chromium(VI) in chromate is readily reduced and chromate is a strong oxidizing agent. Tungsten, like molybdenum, is limited mostly to the 6+ state in aqueous solution, so tungstate has little tendency to be reduced."
    }
   },
   {

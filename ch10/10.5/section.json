@@ -152,7 +152,7 @@
    "place": { "at": "end" },
    "cite": "crystalline-amorphous",
    "prompt": "What types of liquids typically form amorphous solids?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: reread the paragraph after Figure 10.37 + 10.38. An amorphous solid forms when a liquid freezes before its particles can arrange themselves in an orderly pattern, so ask which kinds of liquid have particles that cannot easily move into place as they cool, and look for the example of candle wax." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Liquids made of large molecules, or of a mixture of molecules whose movements are restricted, typically form amorphous solids. As such a liquid cools, its bulky molecules cannot move into a definite repeating pattern before they are held in place, so it freezes with its particles randomly arranged. Candle wax is an example: it is composed of large hydrocarbon molecules and solidifies as an amorphous solid. Fast cooling has the same effect on a liquid that could otherwise crystallize: molten silicon dioxide cooled rapidly gives the amorphous solid fused silica instead of crystalline quartz. Metals and ionic compounds, whose particles are small and move freely in the liquid, typically form ordered, crystalline solids." }
   },
   {
    "id": "e2",
@@ -172,7 +172,7 @@
    "place": { "at": "end" },
    "cite": "properties",
    "prompt": "As it cools, olive oil slowly solidifies and forms a solid over a range of temperatures. Which best describes the solid?<br>(a) ionic<br>(b) covalent network<br>(c) metallic<br>(d) amorphous<br>(e) molecular crystals",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: the section contrasts the precise melting temperature of a crystalline solid with the gradual softening of an amorphous one. Ask which behavior olive oil shows as it solidifies over a range of temperatures, and which of the five choices that behavior points to." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "(d) amorphous. A crystalline solid has a precise melting temperature because every unit in it is held by the same forces, so all of its attractions form and break at one temperature. Olive oil instead solidifies over a range of temperatures, which is the behavior of an amorphous solid. Its molecules are large and of several kinds, so they are structurally nonequivalent: some attractions are weaker than others, and they take hold at different temperatures as the oil cools, just as they break one after another when an amorphous solid is heated and softens gradually. Ionic, covalent network, metallic, and molecular crystals all have a definite melting temperature, so none of them fits." }
   },
   {
    "id": "e4",
@@ -192,7 +192,7 @@
    "place": { "at": "end" },
    "cite": "properties",
    "prompt": "Identify the type of crystalline solid (metallic, network covalent, ionic, or molecular) formed by each of the following substances:<br>(a) SiO<sub>2</sub><br>(b) KCl<br>(c) Cu<br>(d) CO<sub>2</sub><br>(e) C (diamond)<br>(f) BaSO<sub>4</sub><br>(g) NH<sub>3</sub><br>(h) NH<sub>4</sub>F<br>(i) C<sub>2</sub>H<sub>5</sub>OH",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: for each formula, decide what particles the solid is built from, using Table 10.4. A metal alone gives metal atoms; a metal with a nonmetal, or a compound containing a polyatomic ion such as ammonium or sulfate, gives ions; a small set of nonmetal atoms joined into discrete molecules gives molecules; and a few nonmetals and compounds (the section names diamond, silicon dioxide and silicon carbide) form an unbroken network of covalent bonds." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "(a) SiO<sub>2</sub>: covalent network, one of the compounds whose atoms are joined by an unbroken network of covalent bonds. (b) KCl: ionic, a metal with a nonmetal, built of K<sup>+</sup> and Cl<sup>−</sup> ions. (c) Cu: metallic, copper atoms held by metallic bonding. (d) CO<sub>2</sub>: molecular, discrete CO<sub>2</sub> molecules held by IMFs. (e) C (diamond): covalent network, each carbon atom covalently bonded to its neighbors throughout the crystal. (f) BaSO<sub>4</sub>: ionic, built of Ba<sup>2+</sup> and SO<sub>4</sub><sup>2−</sup> ions. (g) NH<sub>3</sub>: molecular, discrete polar NH<sub>3</sub> molecules held by IMFs. (h) NH<sub>4</sub>F: ionic, built of NH<sub>4</sub><sup>+</sup> and F<sup>−</sup> ions even though it contains no metal. (i) C<sub>2</sub>H<sub>5</sub>OH: molecular, discrete ethanol molecules held by IMFs." }
   },
   {
    "id": "e6",
@@ -212,7 +212,7 @@
    "place": { "at": "end" },
    "cite": "properties",
    "prompt": "Classify each substance in the table as either a metallic, ionic, molecular, or covalent network solid:<br><table><thead><tr><th>Substance</th><th>Appearance</th><th>Melting Point</th><th>Electrical Conductivity</th><th>Solubility in Water</th></tr></thead><tbody><tr><td>X</td><td>lustrous, malleable</td><td>1500 °C</td><td>high</td><td>insoluble</td></tr><tr><td>Y</td><td>soft, yellow</td><td>113 °C</td><td>none</td><td>insoluble</td></tr><tr><td>Z</td><td>hard, white</td><td>800 °C</td><td>only if melted/dissolved</td><td>soluble</td></tr></tbody></table>",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: match each row against the Properties column of Table 10.4. Luster, malleability and high conductivity point to one kind of solid; softness, a low melting point and no conductivity to another; and hardness with conduction only when melted or dissolved to a third." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "X is metallic, Y is molecular, and Z is ionic. X is lustrous and malleable and conducts electricity well, the properties Table 10.4 gives for metallic solids, whose atoms sit in a sea of delocalized electrons; its melting point of 1500 °C is typical of a transition metal, and metals do not dissolve in water. Y is soft, does not conduct, and melts at only 113 °C, so its particles are neutral molecules held by weak IMFs; these properties match sulfur. Z is hard, melts at a high 800 °C, dissolves in water, and conducts only when melted or dissolved, which is the behavior of an ionic solid: its ions are held in place in the crystal and become free to move only in the liquid or in solution." }
   },
   {
    "id": "e8",
@@ -232,7 +232,7 @@
    "place": { "at": "end" },
    "cite": "properties",
    "prompt": "Identify the following substances as ionic, metallic, covalent network, or molecular solids:<br>Substance A is malleable, ductile, conducts electricity well, and has a melting point of 1135 °C. Substance B is brittle, does not conduct electricity as a solid but does when molten, and has a melting point of 2072 °C. Substance C is very hard, does not conduct electricity, and has a melting point of 3440 °C. Substance D is soft, does not conduct electricity, and has a melting point of 185 °C.",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: take each property in turn and find the row of Table 10.4 that shares it. Malleability and good conductivity belong to one kind of solid, conduction only when molten to another, great hardness with no conduction and a very high melting point to a third, and softness with a low melting point to the fourth." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "A is metallic, B is ionic, C is covalent network, and D is molecular. A is malleable and ductile and conducts electricity well, properties found only in metallic solids, and its melting point of 1135 °C is typical of a transition metal. B is brittle and conducts only when molten, because its ions become free to move in the liquid; its melting point of 2072 °C is the very high melting point of an ionic solid such as Al<sub>2</sub>O<sub>3</sub>. C is very hard, does not conduct, and melts at 3440 °C, the properties of a covalent network solid, whose melting requires breaking covalent bonds, as in diamond. D is soft, does not conduct, and melts at only 185 °C, so it is built of molecules held by IMFs; table sugar is a molecular solid with this melting point." }
   },
   {
    "id": "e10",
@@ -252,7 +252,7 @@
    "place": { "at": "end" },
    "cite": "properties",
    "prompt": "Substance B is hard, does not conduct electricity, and melts at 1200 °C. Substance B is likely a(n):<br>(a) ionic solid<br>(b) metallic solid<br>(c) molecular solid<br>(d) covalent network solid",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: compare the three properties with the Properties column of Table 10.4. A metallic solid conducts well and a molecular solid has a low melting point, so weigh the two kinds that remain. Note that an ionic solid does not conduct as a solid either, so ask what the problem would need to say to tell the two apart, and whether a melting point of 1200 °C is high or very high." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "(d) covalent network solid. Hardness, no electrical conductivity, and a high melting point of 1200 °C are the properties Table 10.4 lists for a covalent network solid, whose atoms are held by a network of strong covalent bonds. A metallic solid would conduct electricity well, and a molecular solid would have a low melting point, so neither fits. An ionic solid is also hard with a high melting point, but it conducts electricity when molten or dissolved because its ions become free to move. Substance B is described as not conducting at all, so the covalent network solid is the likely choice." }
   }
  ],
  "exercise_concepts": [

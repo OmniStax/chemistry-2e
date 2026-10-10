@@ -164,7 +164,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The section offers two guides, and it says which one is the better. Look first at the electronegativity difference between the two atoms, read from Figure 7.6 and placed on the scale of Figure 7.8, and then at the kinds of atoms involved and where they sit in the periodic table, remembering the exceptions the section lists for HF, NH<sub>3</sub>, NaCl and MnI<sub>2</sub>."
+    "solution": "Two pieces of information predict the bond type: the electronegativity difference between the two atoms, and the kinds of atoms involved, metal or nonmetal, read from their positions in the periodic table. On the rough scale of Figure 7.8, a difference below about 0.4 gives a pure (nonpolar) covalent bond, a difference from about 0.4 to 1.8 a polar covalent bond, and a larger difference an ionic bond; H–Cl, at 0.9, is polar covalent, and Na–Cl, at 2.1, is ionic. That scale has many exceptions: HF, with a difference of 1.9, is polar covalent, while MnI<sub>2</sub>, with a difference of only 1.0, is ionic. The better guide is therefore the types of atoms. A bond between two nonmetals is generally covalent, as in HF and NH<sub>3</sub>, and a bond between a metal and a nonmetal is often ionic, as in NaCl and MnI<sub>2</sub>."
    }
   },
   {
@@ -192,7 +192,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Think about what happens to the bonding electrons in each case. The passage on pure and polar covalent bonds describes how the shared electrons are distributed when the two atoms are identical and when they are different, and the passage on bond type describes the range from electrons shared completely equally to electrons not shared at all. Figure 7.8 ties each of the three bond types to a range of electronegativity difference."
+    "solution": "The three differ in how the bonding electrons are shared. In a nonpolar (pure) covalent bond the electrons are shared equally, because the two atoms attract them equally; this happens when the atoms are identical, as in H<sub>2</sub> and Cl<sub>2</sub>, where the electronegativity difference is 0. In a polar covalent bond the electrons are still shared, but unequally: they shift toward the more electronegative atom, which takes a partial negative charge δ–, while the other atom takes a partial positive charge δ+. H–Cl, with an electronegativity difference of 0.9, is an example. In an ionic bond the electrons are not shared at all. One atom has given its electrons to the other, forming a cation and an anion held together by electrostatic attraction, as in NaCl, where the difference is 2.1. Along Figure 7.8 the bond type passes from nonpolar covalent through polar covalent to ionic as the electronegativity difference grows."
    }
   },
   {
@@ -220,7 +220,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Use the two trends the section states: electronegativity increases from left to right across a period and decreases down a group. For a pair in the same group, the atom higher up is the more electronegative; for a pair in the same period, the atom farther to the right. Where the two atoms differ in both row and column, as in (b) and (f), or where one is hydrogen, as in (e), check your prediction against the values in Figure 7.6."
+    "solution": "Electronegativity increases from left to right across a period and decreases down a group, and the values of Figure 7.6 confirm each choice.<br>(a) N. Both are in group 15, and N lies above P (3.0 against 2.1).<br>(b) N. N lies higher and farther to the right than Ge (3.0 against 1.8).<br>(c) F. F lies higher and farther to the right than S, and it is the most electronegative element (4.0 against 2.5).<br>(d) Cl. Both are in period 3, and Cl lies to the right of S (3.0 against 2.5).<br>(e) C. Carbon’s value is larger than hydrogen’s (2.5 against 2.1).<br>(f) Se. Se lies farther to the right than P, which outweighs its lower row (2.4 against 2.1).<br>(g) C. Both are in group 14, and C lies above Si (2.5 against 1.8)."
    }
   },
   {
@@ -248,7 +248,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Place each atom in the periodic table and apply the two trends, rising across a period and falling down a group. Atoms of one group, such as N, P, As and Sb in (a), fall in order down the group, and atoms of one period, such as Si, P, S and Cl in (b), rise in order across it. Hydrogen belongs to neither trend in an obvious way, so place it by its value in Figure 7.6."
+    "solution": "Electronegativity rises across a period and falls down a group; hydrogen, which fits neither trend, is placed by its value of 2.1 in Figure 7.6.<br>(a) Sb (1.9) &lt; As (2.0) &lt; P (2.1) = H (2.1) &lt; N (3.0). N, P, As and Sb lie in group 15 and fall in order down it, and hydrogen has the same value as phosphorus.<br>(b) Si (1.8) &lt; H (2.1) = P (2.1) &lt; S (2.5) &lt; Cl (3.0). Si, P, S and Cl lie in period 3 and rise in order across it.<br>(c) Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Br (2.8) &lt; Cl (3.0). Sr is a metal of group 2, Ge and Br lie in period 4 with Br to the right, and Cl lies above Br in group 17.<br>(d) K (0.8) &lt; Ca (1.0) &lt; Si (1.8) &lt; H (2.1) &lt; N (3.0). K and Ca are the metals at the left of period 4, Si lies farther right, and N lies farther right and higher still.<br>(e) Cs (0.7) &lt; Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Cl (3.0). Cs lies lowest at the far left, Sr is in group 2, and Ge and Cl lie farther right."
    }
   },
   {
@@ -276,7 +276,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The polarity of a bond grows with the absolute value of the electronegativity difference between its two atoms, as Example 7.3 shows. Find the difference for each of the five bonds from the values in Figure 7.6, or set each pair on Figure 7.5 + 7.8, and compare them."
+    "solution": "(d) O–H is the most polar bond, with an electronegativity difference of 1.4. Bond polarity grows with the absolute value of the electronegativity difference, which the values of Figure 7.6 give for each bond: C–C, |2.5 – 2.5| = 0; C–H, |2.5 – 2.1| = 0.4; N–H, |3.0 – 2.1| = 0.9; O–H, |3.5 – 2.1| = 1.4; and Se–H, |2.4 – 2.1| = 0.3. The O–H difference is the largest, so its electrons are shifted most strongly, toward the oxygen atom, which carries the partial negative charge δ–."
    }
   },
   {
@@ -304,7 +304,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "A bond between two atoms of the same element is a pure covalent bond, since the two atoms have identical electronegativities, and a bond between atoms of different elements is polar to the extent that their electronegativities differ. So look at which atoms are bonded to which in each formula: a species made of one element only has no polar bond, and for the others compare the electronegativities of the bonded atoms in Figure 7.6."
+    "solution": "Species (d) ${\\text{NO}}_{3}{}^{\\text{−}}$, (e) CO<sub>2</sub>, (f) H<sub>2</sub>S and (g) ${\\text{BH}}_{4}{}^{\\text{−}}$ contain polar bonds. When the atoms joined by a covalent bond are different, the bonding electrons are shared unequally, and the bond is polar; when the atoms are identical, they are shared equally, and the bond is pure covalent. O<sub>3</sub>, S<sub>8</sub> and ${\\text{O}}_{2}{}^{\\text{2−}}$ contain only O–O or S–S bonds, so all their bonds are pure covalent. The other four each join atoms of two different elements, with electronegativity differences from Figure 7.6 of 0.5 for N–O (3.5 – 3.0), 1.0 for C–O (3.5 – 2.5), 0.4 for S–H (2.5 – 2.1) and 0.1 for B–H (2.1 – 2.0). The B–H bonds are therefore only slightly polar, while the C–O bonds of CO<sub>2</sub> are the most polar of the set."
    }
   }
  ],

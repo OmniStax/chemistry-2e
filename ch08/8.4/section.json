@@ -480,7 +480,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Recall that an in-phase combination builds up electron density between the nuclei and an out-of-phase combination leaves a node between them. For two <em>s</em> orbitals, draw the bonding σ<sub><em>s</em></sub> orbital as one region spread around both nuclei and the antibonding σ*<sub><em>s</em></sub> orbital as two regions with a node between the nuclei. For two <em>p</em> orbitals, draw the end-to-end σ<sub><em>p</em></sub> and σ*<sub><em>p</em></sub> pair and the side-by-side π<sub><em>p</em></sub> and π*<sub><em>p</em></sub> pair, comparing each with Figures 8.29 to 8.31."
+    "solution": "In a bonding orbital the in-phase combination piles electron density between the nuclei; in an antibonding orbital the out-of-phase combination leaves a node between them. From two <em>s</em> orbitals, the bonding σ<sub><em>s</em></sub> orbital is one egg-shaped region enclosing both nuclei, densest between them, and the antibonding σ*<sub><em>s</em></sub> orbital is two separate regions, one around each nucleus, with a nodal plane perpendicular to the internuclear axis halfway between the nuclei. From two <em>p</em> orbitals overlapping end to end, the σ<sub><em>p</em></sub> orbital has a large lobe of density on the axis between the nuclei and a small lobe beyond each nucleus, while the σ*<sub><em>p</em></sub> orbital has a node between the nuclei, with its density pushed to the outer sides. From two <em>p</em> orbitals overlapping side by side, the π<sub><em>p</em></sub> orbital is two sausage-shaped regions, one above and one below the internuclear axis, each stretched over both nuclei, with a nodal plane containing the axis; the π*<sub><em>p</em></sub> orbital has that same nodal plane plus a second one between the nuclei, which leaves four separate lobes."
    }
   },
   {
@@ -528,7 +528,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Think about how Hund’s rule fills a set of degenerate molecular orbitals. Ask whether an even number of electrons could end with two electrons spread singly over two degenerate orbitals rather than paired, and test the idea on O<sub>2</sub>, whose diagram is Figure 8.40."
+    "solution": "Yes. An even number of electrons can leave two electrons unpaired when the last two enter a set of two degenerate molecular orbitals, because Hund’s rule places one electron in each with parallel spins before any pairing. O<sub>2</sub>, with 12 valence electrons, is the example: its configuration ends in ${({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$, the two electrons occupy separate π* orbitals, and the molecule is paramagnetic, as liquid oxygen held between the poles of a magnet shows. B<sub>2</sub>, with six valence electrons and the configuration ending in ${({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$, is paramagnetic for the same reason."
    }
   },
   {
@@ -576,7 +576,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Count the valence electrons of each ion: twice the valence electrons of one atom, less two for the 2+ charge. Fill the valence molecular orbitals in order of energy, using the pattern of the period that the element’s diagram follows, with Hund’s rule for degenerate orbitals, as in Table 8.3. Then find the bond order from the bonding and antibonding electrons; an ion with a bond order greater than zero is predicted to be stable."
+    "solution": "(a) Na<sub>2</sub><sup>2+</sup>: no valence electrons (2 − 2 = 0); bond order 0, unstable.<br>(b) Mg<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}$; bond order 1, stable.<br>(c) Al<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}$; bond order 0, unstable.<br>(d) Si<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{2}$; bond order 1, stable.<br>(e) P<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}$; bond order 2, stable.<br>(f) S<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\sigma}_{3px})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}$; bond order 3, stable.<br>(g) F<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\sigma}_{2px})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{4}{({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$; bond order 2, stable.<br>(h) Ar<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\sigma}_{3px})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}{({\\pi}_{3py}^{*},\\;{\\pi}_{3pz}^{*})}^{4}$; bond order 1, stable.<br>Each ion has twice the valence electrons of one atom less two for the 2+ charge: 0, 2, 4, 6, 8, 10, 12 and 14. The orbitals fill in order of energy, with the π<sub><em>p</em></sub> pair below σ<sub><em>p</em></sub> for the elements before sulfur, as for Li through N, and σ<sub><em>p</em></sub> below the π<sub><em>p</em></sub> pair for S, F and Ar, as for O through Ne. The bond order is (bonding electrons − antibonding electrons)/2; for Si<sub>2</sub><sup>2+</sup>, (4 − 2)/2 = 1. An ion with a bond order greater than zero is predicted to be stable, and one with a bond order of zero, like Be<sub>2</sub>, is not."
    }
   },
   {
@@ -608,7 +608,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The first electron removed is the one of highest energy. Write the valence configuration of N<sub>2</sub> from Table 8.3, remembering that N<sub>2</sub> shows s-p mixing, and find the highest occupied molecular orbital."
+    "solution": "The electron is removed from the σ<sub>2<em>px</em></sub> bonding orbital. The valence configuration of N<sub>2</sub> is ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{4}{({\\sigma}_{2px})}^{2}.$ Because nitrogen shows s-p mixing, the σ<sub>2<em>px</em></sub> orbital is raised above the π<sub>2<em>py</em></sub> and π<sub>2<em>pz</em></sub> pair, so it is the highest occupied molecular orbital, and the first ionization energy removes one of its two electrons, leaving ${\\text{N}}_{2}{}^{\\text{+}}$ with ${({\\sigma}_{2px})}^{1}.$"
    }
   },
   {
@@ -640,7 +640,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Go through the configurations of Table 8.3 one molecule at a time and look at the last level filled. Where a degenerate pair of π or π* orbitals holds fewer than four electrons and Hund’s rule leaves some unpaired, the molecule is paramagnetic."
+    "solution": "B<sub>2</sub> and O<sub>2</sub> are predicted to be paramagnetic. B<sub>2</sub> has six valence electrons, and its configuration ends in ${({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$: by Hund’s rule the two electrons occupy the two degenerate π orbitals singly with parallel spins. O<sub>2</sub> has 12 valence electrons, and its configuration ends in ${({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$, which leaves one unpaired electron in each π* orbital. In Li<sub>2</sub>, C<sub>2</sub>, N<sub>2</sub> and F<sub>2</sub> every occupied orbital holds a pair, so they are diamagnetic, and Be<sub>2</sub> and Ne<sub>2</sub>, also fully paired, have bond order 0 and do not form."
    }
   },
   {
@@ -672,7 +672,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Recall that a molecular orbital diagram combines all the valence atomic orbitals of the two atoms, whether or not each holds electrons, and look at where the valence electrons of B<sub>2</sub> go in Table 8.3."
+    "solution": "(b) false. A molecular orbital diagram combines all the valence atomic orbitals of the two atoms, whether or not they hold electrons, so the 2<em>s</em> and all three 2<em>p</em> orbitals of each boron atom form the eight molecular orbitals σ<sub>2<em>s</em></sub>, σ*<sub>2<em>s</em></sub>, the π<sub>2<em>py</em></sub>, π<sub>2<em>pz</em></sub> pair, σ<sub>2<em>px</em></sub>, the two π* orbitals and σ*<sub>2<em>px</em></sub>. In B<sub>2</sub>, with six valence electrons, the configuration is ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}.$ The last two electrons occupy two different π orbitals, built from the 2<em>py</em> and the 2<em>pz</em> orbitals, so more than one <em>p</em> orbital is needed even for the electrons that are present."
    }
   },
   {
@@ -704,7 +704,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "s-p mixing occurs when the <em>s</em> and <em>p</em> orbitals have similar energies. Sulfur is in the same group as oxygen; compare the difference between its valence <em>s</em> and <em>p</em> energies with that of oxygen and the elements that do show mixing."
+    "solution": "The MO diagram for S<sub>2</sub> would show no significant s-p mixing; it would follow the pattern of O<sub>2</sub>, with σ<sub>3<em>px</em></sub> below the π<sub>3<em>py</em></sub>, π<sub>3<em>pz</em></sub> pair. s-p mixing occurs only when the <em>s</em> and <em>p</em> orbitals have similar energies, and the gap between them widens across a period: in period 2 it is large enough in O, F and Ne that their mixing is negligible. Sulfur is in the same group as oxygen and in the same position in its period, so its 3<em>s</em> and 3<em>p</em> orbitals are, like the 2<em>s</em> and 2<em>p</em> of oxygen, too far apart in energy for mixing to change the order of the orbitals."
    }
   },
   {

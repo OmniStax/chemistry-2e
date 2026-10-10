@@ -459,7 +459,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: the section says that while a substance is changing state, the added heat goes into diminishing intermolecular attractions instead of increasing the kinetic energies of the molecules. Use that to explain the temperature, and then ask what quantity in the pot changes as the heating goes on."
+    "solution": "The temperature of boiling water stays at the boiling point because the added heat goes into overcoming the intermolecular attractions between water molecules as the liquid becomes vapor, not into increasing their kinetic energies. Temperature reflects the average kinetic energy of the molecules, so while the heat is spent separating molecules the temperature does not rise. What changes is the amount of each phase: liquid water is converted to steam, so the quantity of liquid in the pot decreases and the quantity of vapor increases, by one mole of water for every 40.67 kJ absorbed at 100 °C. Only after all the liquid has vaporized does further heating raise the temperature of the steam."
    }
   },
   {
@@ -491,7 +491,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: name the two processes that go on in the closed container, and compare their rates once the amount of vapor stops changing. Say what stays constant and what never stops."
+    "solution": "The equilibrium is dynamic: vaporization and condensation both continue, at equal rates. In a closed container, molecules keep escaping from the surface of the liquid into the vapor, and vapor molecules keep striking the surface and re-entering the liquid. At first vaporization is faster, but as vapor builds up, condensation becomes more frequent, until the two rates are equal. From then on neither the amount of liquid nor the amount of vapor changes, so the pressure of the vapor holds at the equilibrium vapor pressure for that temperature, even though molecules are continually exchanged between the two phases."
    }
   },
   {
@@ -523,7 +523,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: think of the observations that show a liquid evaporating and ask which of them also apply to a solid. What happens over time to a piece of dry ice left in the open, and what can you sense in a closet that holds mothballs?"
+    "solution": "A piece of dry ice left in the open grows smaller and finally disappears without ever forming any liquid, and a closet that holds mothballs smells of them while the mothballs themselves slowly shrink. Both observations show that molecules leave the solid and enter the gas phase directly. The disappearance of a solid without melting means it is subliming, and the odor of mothballs means enough of their molecules are in the vapor to reach the nose. Both require the solid to have an appreciable vapor pressure at room temperature, just as the gradual loss of a liquid by evaporation and the smell of a volatile liquid show that the liquid has a vapor pressure."
    }
   },
   {
@@ -555,7 +555,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: the section ties the melting point of a crystalline solid to the attractive forces between the units of the crystal. Decide how stronger attractions change the energy needed to free the units from their fixed positions, and state the relationship in the direction it runs."
+    "solution": "The stronger the intermolecular forces in a solid, the higher its melting temperature. Melting requires the particles of the crystal to be freed from their fixed positions, which means partly overcoming the attractive forces between them. Molecules with weak attractive forces form crystals that need little energy, and so a low temperature, to melt; crystals whose particles attract one another more strongly need more energy and melt at higher temperatures. The enthalpy of fusion follows the same trend, rising with the strength of the attractions."
    }
   },
   {
@@ -603,7 +603,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: compare where and under what condition each happens. Evaporation needs only surface molecules with enough kinetic energy to escape, at any temperature; boiling is defined by a condition on the vapor pressure and the pressure of the surroundings. Use the definition of the boiling point to say what sets boiling apart."
+    "solution": "Evaporation takes place only at the surface of a liquid and at any temperature, whereas boiling takes place throughout the liquid and only at the temperature where its vapor pressure equals the pressure of its surroundings. In evaporation, molecules at the surface that happen to have enough kinetic energy to overcome the IMFs escape into the gas phase, so a liquid evaporates slowly even well below its boiling point. As a liquid is heated its vapor pressure rises, and when the vapor pressure reaches the external pressure (101.3 kPa at the normal boiling point), bubbles of vapor can form within the body of the liquid and grow, which is boiling."
    }
   },
   {
@@ -654,7 +654,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: the section compares how completely the intermolecular attractions must be overcome in melting and in vaporization. Describe each transition in those terms and relate the extent to the energy each requires."
+    "solution": "The enthalpy of vaporization of water, 40.67 kJ/mol at 100 °C, is much larger than its enthalpy of fusion, 6.01 kJ/mol at 0 °C, because vaporization overcomes the intermolecular attractions completely and melting overcomes them only partly. When ice melts, the molecules leave their fixed positions in the crystal but stay in contact, so most of the hydrogen bonds between them remain, broken and re-formed as the molecules move past one another. When liquid water vaporizes, each molecule must be separated from its neighbors entirely, which breaks all of its hydrogen bonds. Overcoming the attractions completely takes far more energy, nearly seven times as much per mole, than overcoming them partially."
    }
   },
   {
@@ -686,7 +686,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: with nearly equal molar masses, the dispersion forces of the three are similar, so look for a difference in the other attractions. Decide which molecules can form hydrogen bonds and how many each can take part in, and connect the strength of the attractions to the energy needed to vaporize the liquid."
+    "solution": "The enthalpies of vaporization increase in the order CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O because the hydrogen bonding between the molecules goes from none to moderate to extensive. The three molar masses are nearly equal (16, 17, and 18 g/mol), so the dispersion forces are similar, and the difference lies in the other attractions. CH<sub>4</sub> is nonpolar and has no hydrogen atom bonded to N, O, or F, so its molecules attract one another only by weak dispersion forces, and little energy is needed to vaporize it. NH<sub>3</sub> forms hydrogen bonds, but each molecule has only one lone pair to accept a hydrogen atom from a neighbor, which limits it to about one hydrogen bond per molecule. H<sub>2</sub>O has two hydrogen atoms and two lone pairs, so each molecule can take part in up to four hydrogen bonds, two per molecule on average, and nitrogen is less electronegative than oxygen, so the N–H···N hydrogen bonds of ammonia are also weaker than the O–H···O hydrogen bonds of water. Water therefore has the strongest attractions to overcome and the largest enthalpy of vaporization."
    }
   },
   {
@@ -718,7 +718,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: compare not only how strong one hydrogen bond is but how many each molecule can form. Count the hydrogen atoms bonded to F or O and the lone pairs each molecule offers, and consider how extensive the network of hydrogen bonds is in each liquid."
+    "solution": "Water has the larger enthalpy of vaporization because each water molecule takes part in about twice as many hydrogen bonds as an HF molecule, although each HF hydrogen bond is individually stronger. An HF molecule has three lone pairs on fluorine but only one hydrogen atom, so it can donate only one hydrogen bond, and on average each molecule forms one hydrogen bond, giving zigzag chains of molecules. A water molecule has two hydrogen atoms and two lone pairs, so it can donate two hydrogen bonds and accept two, and on average each molecule forms two, giving an extensive three-dimensional network. Vaporizing a mole of liquid water therefore breaks about twice as many hydrogen bonds as vaporizing a mole of HF, and the larger number outweighs the greater strength of the single HF hydrogen bond."
    }
   },
   {
@@ -750,7 +750,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: identify the kind of attraction that holds each substance together in its condensed state: dispersion forces only, hydrogen bonds, or the attractions between ions of an ionic compound. Compare their strengths, and for two substances with the same kind of attraction compare the sizes of their molecules. Then find the option whose order runs from the weakest attractions to the strongest."
+    "solution": "The correct order is (a), N<sub>2</sub> &lt; CS<sub>2</sub> &lt; H<sub>2</sub>O &lt; KCl. N<sub>2</sub> and CS<sub>2</sub> are nonpolar, so their molecules attract one another only by dispersion forces. N<sub>2</sub> is the smaller molecule (28 g/mol) and has the weakest dispersion forces, so it boils lowest, at −196 °C; the larger, more polarizable CS<sub>2</sub> molecule (76 g/mol) has stronger dispersion forces and boils at 46 °C. H<sub>2</sub>O molecules are held together by hydrogen bonds, which are stronger still, and water boils at 100 °C. KCl is an ionic compound, held together by the strong electrostatic attractions between K<sup>+</sup> and Cl<sup>−</sup> ions, far stronger than any of the intermolecular forces, and it boils at about 1420 °C. Only option (a) runs from the weakest attractions to the strongest."
    }
   },
   {

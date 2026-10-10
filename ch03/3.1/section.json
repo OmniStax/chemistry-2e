@@ -597,7 +597,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Count the carbon atoms and the hydrogen atoms that each structural formula shows, and add their average atomic masses as the tables of Figures 3.2 and 3.3 do. The molecule whose sum comes to 28.05 amu is the one asked for; note that all three molecules contain two carbon atoms, so they differ only in their number of hydrogen atoms."
+    "solution": "Molecule (b), C<sub>2</sub>H<sub>4</sub>, has a molecular mass of 28.05 amu. Each structure contains two carbon atoms, so the three differ only in their hydrogen atoms. Structure (a) is C<sub>2</sub>H<sub>2</sub>: 2(12.01 amu) + 2(1.008 amu) = 26.04 amu. Structure (b) is C<sub>2</sub>H<sub>4</sub>: 2(12.01 amu) + 4(1.008 amu) = 28.05 amu. Structure (c) is C<sub>2</sub>H<sub>6</sub>: 2(12.01 amu) + 6(1.008 amu) = 30.07 amu. Only the sum for (b) matches."
    }
   },
   {
@@ -631,7 +631,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "For part (a), recall what the definition of the mole says about the number of entities in 1 mole of any substance, whatever that substance is. For part (b), recall that the mass of 1 mole of a substance is its molar mass, which is numerically equal to its formula mass; compare the formula masses of the three molecules from the average atomic masses of H, O, and F."
+    "solution": "(a) All three contain the same number of molecules, 6.022 × 10<sup>23</sup>. A mole is defined as the amount of substance that contains Avogadro’s number of entities, whatever the substance, so 1 mole of H<sub>2</sub>, of O<sub>2</sub>, and of F<sub>2</sub> each contains 6.022 × 10<sup>23</sup> molecules.<br>(b) The F<sub>2</sub> has the greatest mass. The mass of 1 mole of a substance is its molar mass, numerically equal to its molecular mass: H<sub>2</sub> is 2(1.008) = 2.016 g/mol, O<sub>2</sub> is 2(16.00) = 32.00 g/mol, and F<sub>2</sub> is 2(19.00) = 38.00 g/mol. With equal numbers of molecules, the sample whose individual molecules are heaviest has the greatest mass, and an F<sub>2</sub> molecule is the heaviest of the three."
    }
   },
   {
@@ -665,7 +665,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Count the oxygen atoms in one molecule of each compound from its formula. Since 1 mole of a compound contains 1 mole of molecules, it contains as many moles of oxygen atoms as there are oxygen atoms in one molecule, so the three amounts can be compared directly from the formulas."
+    "solution": "The 1 mol of formic acid contains the most oxygen atoms, 2 mol. One molecule of HCO<sub>2</sub>H contains two oxygen atoms, while one molecule of ethanol, C<sub>2</sub>H<sub>5</sub>OH, and one molecule of water, H<sub>2</sub>O, each contain one. A mole of any compound contains 1 mole of its molecules, so it contains as many moles of oxygen atoms as one molecule contains oxygen atoms: 2 mol for formic acid and 1 mol each for ethanol and water."
    }
   },
   {

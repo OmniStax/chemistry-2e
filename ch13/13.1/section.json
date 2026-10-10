@@ -209,7 +209,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: compare the arrow in the equation for the decomposition of N<sub>2</sub>O<sub>4</sub> in this section with the single arrow used for reactions in earlier chapters, and say what the arrow’s form tells a reader about the directions in which the reaction proceeds."
+    "solution": "A reversible reaction is written with a double arrow, ⇌, and a nonreversible reaction with a single arrow, →. The decomposition of dinitrogen tetroxide is written N<sub>2</sub>O<sub>4</sub>(<em>g</em>) ⇌ 2NO<sub>2</sub>(<em>g</em>): the two half-arrows pointing in opposite directions show that N<sub>2</sub>O<sub>4</sub> molecules split into NO<sub>2</sub> while pairs of NO<sub>2</sub> molecules also join to re-form N<sub>2</sub>O<sub>4</sub>. The reaction therefore proceeds in both directions and can come to an equilibrium in which the forward and reverse rates are equal. A single arrow says the reaction runs only from reactants to products, until a reactant is used up."
    }
   },
   {
@@ -243,7 +243,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: equilibrium is defined by equal rates, not equal rate constants. Write the forward and reverse rate laws for N<sub>2</sub>O<sub>4</sub> ⇌ 2NO<sub>2</sub>, set <em>k</em><sub>f</sub> equal to <em>k</em><sub>r</sub>, and ask whether the two rates must then be equal, or whether that depends on the concentrations present."
+    "solution": "Not necessarily. Equilibrium requires equal rates, not equal rate constants. For the elementary reaction N<sub>2</sub>O<sub>4</sub>(<em>g</em>) ⇌ 2NO<sub>2</sub>(<em>g</em>), the rate laws are rate<sub>f</sub> = <em>k</em><sub>f</sub>[N<sub>2</sub>O<sub>4</sub>] and rate<sub>r</sub> = <em>k</em><sub>r</sub>[NO<sub>2</sub>]<sup>2</sup>. If <em>k</em><sub>f</sub> = <em>k</em><sub>r</sub>, the two rates are equal only when [N<sub>2</sub>O<sub>4</sub>] = [NO<sub>2</sub>]<sup>2</sup>, so only a mixture with those particular concentrations is at equilibrium. A mixture of 1.0 <em>M</em> N<sub>2</sub>O<sub>4</sub> and 0.50 <em>M</em> NO<sub>2</sub>, for example, has [NO<sub>2</sub>]<sup>2</sup> = 0.25, so its forward rate is four times its reverse rate and its composition keeps changing. Equal rate constants fix the ratio [NO<sub>2</sub>]<sup>2</sup>/[N<sub>2</sub>O<sub>4</sub>] at 1 once equilibrium is reached; whether a given system is at equilibrium still depends on its concentrations."
    }
   },
   {

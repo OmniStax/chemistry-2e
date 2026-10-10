@@ -612,7 +612,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Decide the charge of each ion from the position of its element in the periodic table, as in Section 7.1: a metal atom loses all of its valence electrons, and a nonmetal atom gains enough electrons to reach eight. Then draw the ion as the section draws Na<sup>+</sup>, Ca<sup>2+</sup>, Cl<sup>–</sup> and S<sup>2–</sup>, with one dot for each valence electron the ion keeps and its charge written as a superscript."
+    "solution": "Metal atoms lose all their valence electrons, so their cations are drawn with no dots; nonmetal atoms gain electrons until they have eight, so their anions are drawn with eight dots in brackets, with the charge outside.<br>(a) Cl<sup>–</sup>: Cl with eight dots (four pairs) in brackets, charge –. A chlorine atom has seven valence electrons and gains one.<br>(b) Na<sup>+</sup>: Na with no dots. The atom loses its one valence electron.<br>(c) Mg<sup>2+</sup>: Mg with no dots. The atom loses its two valence electrons.<br>(d) Ca<sup>2+</sup>: Ca with no dots. The atom loses its two valence electrons.<br>(e) K<sup>+</sup>: K with no dots. The atom loses its one valence electron.<br>(f) Br<sup>–</sup>: Br with eight dots in brackets, charge –. A bromine atom has seven valence electrons and gains one.<br>(g) Sr<sup>2+</sup>: Sr with no dots. The atom loses its two valence electrons.<br>(h) F<sup>–</sup>: F with eight dots in brackets, charge –. A fluorine atom has seven valence electrons and gains one."
    }
   },
   {
@@ -644,7 +644,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Read the charge of each ion from its superscript and the number of ions from any subscript outside the brackets. Since both elements are in the third period, M is the metal whose atom has as many valence electrons as the charge of its cation, and X is the nonmetal whose atom needs as many electrons as the charge of its anion to reach eight. The formula then carries the numbers of each ion that the drawing shows."
+    "solution": "(a) MgS. (b) AlCl<sub>3</sub>. (c) Na<sub>2</sub>S. (d) Al<sub>2</sub>S<sub>3</sub>. In the third period, a cation with no dots and charge 1+, 2+ or 3+ comes from Na, Mg or Al, whose atoms lose one, two or three valence electrons. An anion with eight dots and charge 1– or 2– comes from Cl or S, whose atoms gain one or two electrons to reach eight. A subscript outside the brackets gives the number of that ion.<br>(a) One M<sup>2+</sup> is Mg<sup>2+</sup> and one X<sup>2–</sup> is S<sup>2–</sup>, so the compound is MgS.<br>(b) One M<sup>3+</sup> is Al<sup>3+</sup> and three X<sup>–</sup> are three Cl<sup>–</sup>, so it is AlCl<sub>3</sub>.<br>(c) Two M<sup>+</sup> are two Na<sup>+</sup> and one X<sup>2–</sup> is S<sup>2–</sup>, so it is Na<sub>2</sub>S.<br>(d) Two M<sup>3+</sup> are two Al<sup>3+</sup> and three X<sup>2–</sup> are three S<sup>2–</sup>, so it is Al<sub>2</sub>S<sub>3</sub>. In each, the positive and negative charges cancel."
    }
   },
   {
@@ -676,7 +676,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Follow the five steps of the section for each species. Count one extra electron for each negative charge of NO<sup>–</sup> and CN<sup>–</sup> and draw those ions in brackets. Where an atom is still short of an octet after the fourth step, move lone pairs of a neighboring atom into a double or triple bond, as the section does for NO<sup>+</sup> and Example 7.4 does for HCN."
+    "solution": "Each structure uses exactly the valence electrons counted for it and gives every atom an octet, or two electrons for hydrogen.<br>(a) H<sub>2</sub>, 2 electrons: H–H, one single bond and no lone pairs.<br>(b) HBr, 1 + 7 = 8 electrons: H–Br, with three lone pairs on Br.<br>(c) PCl<sub>3</sub>, 5 + 3(7) = 26 electrons: P in the center joined to three Cl atoms by single bonds, three lone pairs on each Cl and one lone pair on P.<br>(d) SF<sub>2</sub>, 6 + 2(7) = 20 electrons: F–S–F with single bonds, three lone pairs on each F and two lone pairs on S.<br>(e) H<sub>2</sub>CCH<sub>2</sub>, 2(4) + 4(1) = 12 electrons: a C=C double bond, each carbon also bonded to two H atoms, no lone pairs.<br>(f) HNNH, 2(1) + 2(5) = 12 electrons: H–N=N–H, with one lone pair on each N.<br>(g) H<sub>2</sub>CNH, 4 + 5 + 3(1) = 12 electrons: a C=N double bond, carbon bonded to two H atoms, nitrogen bonded to one H atom and carrying one lone pair.<br>(h) NO<sup>–</sup>, 5 + 6 + 1 = 12 electrons: N=O, with two lone pairs on N and two on O, in brackets with charge –.<br>(i) N<sub>2</sub>, 2(5) = 10 electrons: N≡N, with one lone pair on each N.<br>(j) CO, 4 + 6 = 10 electrons: C≡O, with one lone pair on each atom.<br>(k) CN<sup>–</sup>, 4 + 5 + 1 = 10 electrons: C≡N, with one lone pair on each atom, in brackets with charge –.<br>In (e) through (k), single bonds left an atom short of an octet, so lone pairs of a neighbor were moved into double or triple bonds, as for NO<sup>+</sup> and HCN."
    }
   },
   {
@@ -708,7 +708,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Count the valence electrons, adding one for the charge of PF<sub>6</sub><sup>–</sup>, and join each outer atom to the central atom with a single bond. After the outer atoms have their octets, place the remaining electrons on the central atom. Chlorine and phosphorus are in the third period and may hold more than eight electrons, as phosphorus does in PCl<sub>5</sub> in Figure 7.12, while boron is one of the electron-deficient central atoms the section describes."
+    "solution": "(a) ClF<sub>3</sub>, 7 + 3(7) = 28 electrons: Cl in the center with three Cl–F single bonds, three lone pairs on each F, and the 4 electrons left over as two lone pairs on Cl. Chlorine has 10 electrons, which a third-period atom can hold.<br>(b) PCl<sub>5</sub>, 5 + 5(7) = 40 electrons: P in the center with five P–Cl single bonds and three lone pairs on each Cl. No electrons remain, and phosphorus shares five pairs, 10 electrons, as in Figure 7.12.<br>(c) BF<sub>3</sub>, 3 + 3(7) = 24 electrons: B in the center with three B–F single bonds and three lone pairs on each F. Boron has only 6 electrons; it is electron deficient, and the structure with three single bonds is the best one, as the measured bond lengths show.<br>(d) ${\\text{PF}}_{6}{}^{\\text{−}}$, 5 + 6(7) + 1 = 48 electrons: P in the center with six P–F single bonds and three lone pairs on each F, all in brackets with charge –. No electrons remain, and phosphorus has 12 electrons, like sulfur in SF<sub>6</sub>."
    }
   },
   {
@@ -740,7 +740,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Add one electron for each negative charge of the three ions and draw them in brackets. For HONO, write the skeleton in the order of the formula, with hydrogen bonded to an oxygen atom, since hydrogen is never a central atom. Iodine, like xenon in Example 7.5, may take the electrons that are left after the chlorine atoms have their octets."
+    "solution": "(a) ${\\text{PO}}_{4}{}^{\\text{3−}}$, 5 + 4(6) + 3 = 32 electrons: P in the center with four P–O single bonds and three lone pairs on each O, in brackets with charge 3–. Every atom has an octet.<br>(b) ${\\text{ICl}}_{4}{}^{\\text{−}}$, 7 + 4(7) + 1 = 36 electrons: I in the center with four I–Cl single bonds and three lone pairs on each Cl, using 32 electrons. The other 4 go on iodine as two lone pairs, so iodine holds 12 electrons, as xenon does in XeF<sub>4</sub>. The structure is in brackets with charge –.<br>(c) ${\\text{SO}}_{3}{}^{\\text{2−}}$, 6 + 3(6) + 2 = 26 electrons: S in the center with three S–O single bonds and three lone pairs on each O, using 24 electrons. The last 2 go on sulfur as one lone pair, completing its octet. The structure is in brackets with charge 2–.<br>(d) HONO, 1 + 2(6) + 5 = 18 electrons: H–O–N=O. The middle oxygen carries two lone pairs, nitrogen one lone pair and the terminal oxygen two lone pairs. With single bonds only, nitrogen had just 6 electrons, so one lone pair of the terminal oxygen became the N=O double bond."
    }
   },
   {
@@ -772,7 +772,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Antimony is in group 15, so SbH<sub>3</sub> follows the pattern of NH<sub>3</sub>. XeF<sub>2</sub> is worked in Example 7.5. For Se<sub>8</sub>, join the eight selenium atoms in a ring by single bonds and complete each atom’s octet with lone pairs; selenium is in group 16, so each atom forms two bonds, as oxygen does."
+    "solution": "(a) SbH<sub>3</sub>, 5 + 3(1) = 8 electrons: Sb in the center with three Sb–H single bonds and one lone pair on Sb, the same pattern as NH<sub>3</sub>, since antimony is in group 15.<br>(b) XeF<sub>2</sub>, 8 + 2(7) = 22 electrons: F–Xe–F with single bonds, three lone pairs on each F and the remaining 6 electrons as three lone pairs on Xe. Xenon holds 10 electrons, as in Example 7.5.<br>(c) Se<sub>8</sub>, 8(6) = 48 electrons: eight Se atoms in a ring joined by eight Se–Se single bonds, which use 16 electrons. The other 32 electrons are two lone pairs on each Se atom, so every atom has two bonds and two lone pairs, an octet, as an oxygen atom does in water."
    }
   },
   {
@@ -804,7 +804,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Carbon forms four bonds and hydrogen forms one. Join the carbon atoms in a chain in the order the formulas are written, attach the hydrogen atoms, and count the valence electrons. Where carbon atoms are short of an octet after the fourth step, form double or triple bonds between them, as Example 7.4 does for acetylene."
+    "solution": "Carbon forms four bonds and hydrogen one, and each structure uses all the valence electrons.<br>Methane, CH<sub>4</sub>, 4 + 4(1) = 8 electrons: C in the center with four C–H single bonds.<br>Ethylene, C<sub>2</sub>H<sub>4</sub>, 2(4) + 4(1) = 12 electrons: H<sub>2</sub>C=CH<sub>2</sub>, a carbon-carbon double bond with two H atoms on each carbon.<br>Ethane, C<sub>2</sub>H<sub>6</sub>, 2(4) + 6(1) = 14 electrons: H<sub>3</sub>C–CH<sub>3</sub>, all single bonds, three H atoms on each carbon.<br>Propyne, H<sub>3</sub>CCCH, 3(4) + 4(1) = 16 electrons: H<sub>3</sub>C–C≡C–H, a CH<sub>3</sub> group joined by a single bond to a carbon that is triple bonded to a carbon carrying one H.<br>Diacetylene, HCCCCH, 4(4) + 2(1) = 18 electrons: H–C≡C–C≡C–H, two triple bonds joined by a single bond.<br>None of the structures has lone pairs. In ethylene, propyne and diacetylene, single bonds alone leave carbon atoms short of an octet, so their electrons form double or triple bonds, as in acetylene in Example 7.4."
    }
   },
   {
@@ -836,7 +836,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Count the electrons in each configuration to find the atomic number and so the element. Then decide, as in Section 7.1, whether the atom loses its valence electrons to form a cation or gains enough to reach eight to form an anion, and write the Lewis symbol of that ion with its charge."
+    "solution": "The number of electrons in each configuration is the atomic number of the atom. A metal atom loses its valence electrons, giving a cation drawn with no dots, and a nonmetal atom gains enough electrons to reach eight, giving an anion drawn with eight dots in brackets.<br>(a) 9 electrons: fluorine. A fluorine atom has seven valence electrons and gains one, so its ion is F<sup>–</sup>, drawn with eight dots in brackets and the charge –.<br>(b) 12 electrons: magnesium. The atom loses its two 3<em>s</em> electrons, so its ion is Mg<sup>2+</sup>, drawn with no dots.<br>(c) 30 electrons: zinc. The atom loses its two 4<em>s</em> electrons, so its ion is Zn<sup>2+</sup>, drawn with no dots.<br>(d) 34 electrons: selenium. Its six valence electrons, 4<em>s</em><sup>2</sup>4<em>p</em><sup>4</sup>, become eight when it gains two, so its ion is Se<sup>2–</sup>, drawn with eight dots in brackets and the charge 2–.<br>(e) 31 electrons: gallium. The atom loses its three valence electrons, 4<em>s</em><sup>2</sup>4<em>p</em><sup>1</sup>, so its ion is Ga<sup>3+</sup>, drawn with no dots."
    }
   },
   {

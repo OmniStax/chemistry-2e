@@ -363,7 +363,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: write the reaction quotient in partial pressures and ask what happens to it when every partial pressure is multiplied by the same factor, as the text does for H<sub>2</sub> + I<sub>2</sub> ⇌ 2HI and for 2NO<sub>2</sub> ⇌ 2NO + O<sub>2</sub>. Compare the total moles of gas on the two sides of the balanced equation, and state what must be true of them for the factor to cancel and for the volume change to leave the equilibrium unshifted."
+    "solution": "A change in volume shifts a gas-phase equilibrium only when the balanced equation has different total moles of gas on its two sides. Decreasing the volume by a factor of 3 multiplies every partial pressure by 3. For H<sub>2</sub>(<em>g</em>) + I<sub>2</sub>(<em>g</em>) ⇌ 2HI(<em>g</em>), with 2 mol of gas on each side, the factors cancel: ${Q}_{P}{}^{'}=\\;\\frac{{(3{P}_{\\text{HI}})}^{2}}{3{P}_{{\\text{H}}_{2}}\\;3{P}_{{\\text{I}}_{2}}}={Q}_{P}={K}_{P},$ so there is no shift. For 2NO<sub>2</sub>(<em>g</em>) ⇌ 2NO(<em>g</em>) + O<sub>2</sub>(<em>g</em>), with 2 mol of gas on the left and 3 on the right, the same change gives <em>Q<sub>P</sub></em>′ = 3<sup>3</sup>/3<sup>2</sup> × <em>Q<sub>P</sub></em> = 3<em>K<sub>P</sub></em>, so <em>Q</em> &gt; <em>K</em> and the equilibrium shifts left. The test is therefore to count the moles of gas on each side, leaving out solids and liquids: if they differ, a decrease in volume shifts the equilibrium toward the side with fewer moles of gas and an increase toward the side with more; if they are equal, volume has no effect."
    }
   },
   {
@@ -414,7 +414,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for (a), write the expression for <em>K</em><sub>c</sub> with SO<sub>3</sub> in the numerator and ask what a smaller equilibrium amount of SO<sub>3</sub> at higher temperature does to its value; the faster rate of formation says nothing about <em>K</em>, as the text warns. For (b), treat heat as a reactant or a product, as the text does for N<sub>2</sub>O<sub>4</sub>, and decide which choice makes heating shift the equilibrium toward the reactants."
+    "solution": "(a) The equilibrium constant decreases as the temperature increases. In ${K}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]},$ a smaller equilibrium amount of SO<sub>3</sub> at higher temperature means a smaller numerator and a larger denominator, so <em>K<sub>c</sub></em> is smaller. The faster rate of formation is a kinetic effect; it changes how quickly equilibrium is reached, not where it lies. (b) The reaction is exothermic. Heat is then a product, 2SO<sub>2</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>) ⇌ 2SO<sub>3</sub>(<em>g</em>) + heat, and adding heat shifts the equilibrium to the left, lowering the amount of SO<sub>3</sub> as observed. Only temperature changes the value of <em>K</em>, and a <em>K</em> that falls on heating marks an exothermic reaction."
    }
   },
   {
@@ -448,7 +448,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: work through the stresses the section describes one at a time. Ask which species could be added to make <em>Q</em><sub>c</sub> smaller than <em>K</em><sub>c</sub>; compare the moles of gas on each side (7 against 4) to decide whether a smaller or a larger volume favors PH<sub>3</sub>; and use the sign of Δ<em>H</em>, treating heat as a reactant of an endothermic reaction, to decide whether heating or cooling helps."
+    "solution": "Add P<sub>4</sub>; add H<sub>2</sub>; decrease the volume of the container; heat the mixture. Adding either reactant makes <em>Q<sub>c</sub></em> smaller than <em>K<sub>c</sub></em>, so the equilibrium shifts right and forms more PH<sub>3</sub>. The left side has 1 + 6 = 7 mol of gas and the right side 4 mol, so decreasing the volume shifts the equilibrium toward PH<sub>3</sub>, the side with less gas. The reaction is endothermic (Δ<em>H</em> = 110.5 kJ), so heat acts as a reactant; raising the temperature shifts the equilibrium right and increases <em>K<sub>c</sub></em>."
    }
   },
   {
@@ -482,7 +482,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for each equation, first read the sign of Δ<em>H</em>: an endothermic reaction (positive) shifts right on heating and an exothermic one (negative) shifts left. Then count the moles of gas on each side, leaving out any solid, as in (d); a smaller volume shifts the equilibrium toward the side with fewer moles of gas, and equal counts mean no shift. Exercise 38 works the same steps with the book's answers."
+    "solution": "A positive Δ<em>H</em> means heat is a reactant, so heating shifts the equilibrium right; a negative Δ<em>H</em> means heat is a product, so heating shifts it left. A smaller volume shifts the equilibrium toward the side with fewer moles of gas. (a) Endothermic, so a temperature increase shifts it right; 2 mol of gas against 3, so a volume decrease shifts it left. (b) Exothermic, so a temperature increase shifts it left; 4 mol of gas against 2, so a volume decrease shifts it right. (c) Exothermic, so a temperature increase shifts it left; 2 mol of gas against 1, so a volume decrease shifts it right. (d) Endothermic, so a temperature increase shifts it right; solid I<sub>2</sub> is not counted, leaving 1 mol of gas against 2, so a volume decrease shifts it left."
    }
   },
   {
@@ -516,7 +516,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: write <em>K</em><sub>c</sub> as products over reactants, each raised to its coefficient. For each stress, decide the direction of the shift and then follow every species: the one added stays higher than before even after the shift, and the one removed stays lower, as the text says for adding H<sub>2</sub> to H<sub>2</sub> + I<sub>2</sub> ⇌ 2HI. For (e), compare the moles of gas on the two sides, as the text does for that same reaction, and remember that a smaller volume raises every concentration even when nothing shifts. For (f), use the sign of Δ<em>H</em>; for (g), recall what a catalyst does to <em>K</em>. Exercise 40 works the same steps with the book's answers."
+    "solution": "(a) ${K}_{c}=\\;\\frac{{[\\text{NO}]}^{2}}{[{\\text{N}}_{2}][{\\text{O}}_{2}]};$ (b) the equilibrium shifts right: [N<sub>2</sub>] decreases, [O<sub>2</sub>] increases (the shift uses up only part of the O<sub>2</sub> added), and [NO] increases; (c) the equilibrium shifts left to replace some of the N<sub>2</sub>: [N<sub>2</sub>] decreases, [O<sub>2</sub>] increases, and [NO] decreases; (d) the equilibrium shifts left: [N<sub>2</sub>] increases, [O<sub>2</sub>] increases, and [NO] increases; (e) there are 2 mol of gas on each side, so there is no shift, but the smaller volume raises [N<sub>2</sub>], [O<sub>2</sub>], and [NO] all by the same factor; (f) the reaction is endothermic (Δ<em>H</em> = 181 kJ), so heating increases <em>K<sub>c</sub></em> and shifts the equilibrium right: [N<sub>2</sub>] decreases, [O<sub>2</sub>] decreases, and [NO] increases; (g) a catalyst speeds the forward and reverse reactions equally and leaves <em>K<sub>c</sub></em> unchanged, so no concentration changes; equilibrium is only reached sooner."
    }
   },
   {
@@ -550,7 +550,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: leave the two solids out of <em>K</em><sub>c</sub>, as for a heterogeneous equilibrium, so that only H<sub>2</sub> and H<sub>2</sub>O appear, each cubed. A solid's amount can change without changing its concentration, which settles (b). For (c) and (d), decide the direction of the shift and follow the two gases. For (e), count the moles of gas on each side (3 and 3) and recall what a smaller volume does to every gas concentration when nothing shifts. For (f), use the sign of Δ<em>H</em>. Exercise 42 works a similar system with the book's answers."
+    "solution": "(a) ${K}_{c}=\\;\\frac{{[{\\text{H}}_{2}\\text{O}]}^{3}}{{[{\\text{H}}_{2}]}^{3}};$ the solids Fe<sub>2</sub>O<sub>3</sub> and Fe do not appear. (b) No change in any concentration. Adding Fe raises its mass, but the concentration (activity) of a pure solid is constant, so <em>Q<sub>c</sub></em> still equals <em>K<sub>c</sub></em>. (c) The equilibrium shifts right to replace some of the H<sub>2</sub>O: [H<sub>2</sub>] decreases and [H<sub>2</sub>O] decreases, ending lower than before because only part of the removed water is replaced. (d) The equilibrium shifts right: [H<sub>2</sub>] increases and [H<sub>2</sub>O] increases. (e) There are 3 mol of gas on each side, so there is no shift; the smaller volume raises [H<sub>2</sub>] and [H<sub>2</sub>O] by the same factor and leaves their ratio unchanged. (f) The reaction is endothermic (Δ<em>H</em> = 98.7 kJ), so heating increases <em>K<sub>c</sub></em> and shifts the equilibrium right: [H<sub>2</sub>] decreases and [H<sub>2</sub>O] increases. In every part the concentrations of Fe<sub>2</sub>O<sub>3</sub> and Fe stay the same; in (c), (d), and (f) the mass of Fe increases and the mass of Fe<sub>2</sub>O<sub>3</sub> decreases."
    }
   },
   {
@@ -591,7 +591,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for each addition, ask which species of the equation it adds or removes. HCl and NaCH<sub>3</sub>CO<sub>2</sub> each supply one of the products; hydroxide from NaOH reacts with H<sub>3</sub>O<sup>+</sup> and so removes a product. Then apply the text's rule: removing a product shifts the equilibrium right, adding one shifts it left. Exercise 44 asks the same question of ammonia and gives the book's answer."
+    "solution": "Only (b). (a) HCl supplies H<sub>3</sub>O<sup>+</sup>, a product, so the equilibrium shifts left and a smaller percent of the acetic acid reacts. (b) The hydroxide ion from NaOH reacts with H<sub>3</sub>O<sup>+</sup> to form water, removing a product; the equilibrium shifts right and a larger percent of the acetic acid is converted to CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>. (c) NaCH<sub>3</sub>CO<sub>2</sub> supplies CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>, a product, so the equilibrium shifts left and a smaller percent reacts."
    }
   },
   {
@@ -625,7 +625,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: this is a phase equilibrium with a single gas, so <em>K</em><sub>P</sub> is just the pressure of the water vapor, and adding liquid water or changing the volume cannot change it once equilibrium is re-established. Only a change in the value of <em>K</em> can, so read the sign of Δ<em>H</em>, treat heat as a reactant of this endothermic change, and decide whether heating or cooling raises the equilibrium pressure."
+    "solution": "Raise the temperature. The liquid does not appear in the equilibrium constant expression, so <em>K<sub>P</sub></em> = ${P}_{{\\text{H}}_{2}\\text{O}}$, the pressure of the water vapor itself. As long as some liquid remains, adding liquid water or changing the volume cannot change that pressure once equilibrium is re-established: more liquid evaporates or more vapor condenses until the pressure returns to <em>K<sub>P</sub></em>. Only a change in the value of <em>K<sub>P</sub></em> changes the equilibrium pressure, and only temperature changes <em>K</em>. The change is endothermic (Δ<em>H</em> = 41 kJ), so heat acts as a reactant; heating shifts the equilibrium toward the vapor and increases <em>K<sub>P</sub></em>. The vapor pressure of water rises from 0.042 atm at 30 °C to 1 atm at 100 °C."
    }
   },
   {
@@ -642,7 +642,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: a solution that freezes at a lower temperature holds more dissolved particles. Ask which acid, at the same concentration, must therefore be ionized to the greater extent, and recall that a larger equilibrium constant means more of the reactant has been converted to products at equilibrium. Then decide which of the four options names that compound."
+    "solution": "(a) HCl. The lowering of the freezing point depends on the number of dissolved particles, so the HCl solution, which freezes at a lower temperature, holds more particles than the HOCl solution made from the same molar amount of acid. HCl must therefore be ionized, HCl ⇌ H<sup>+</sup> + Cl<sup>−</sup>, to a greater extent than HOCl ⇌ H<sup>+</sup> + OCl<sup>−</sup>. A greater extent of reaction at equilibrium means larger product concentrations and a smaller reactant concentration in ${K}_{c}=\\;\\frac{[{\\text{H}}^{\\text{+}}][{\\text{Cl}}^{\\text{−}}]}{[\\text{HCl}]},$ so HCl has the larger acid ionization constant. Options (b) and (d) are the ions formed by ionization, not the compounds being compared."
    }
   }
  ],

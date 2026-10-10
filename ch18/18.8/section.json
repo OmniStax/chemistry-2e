@@ -279,7 +279,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: draw the Lewis structure of phosphorous acid, H<sub>3</sub>PO<sub>3</sub>, and note which atom each hydrogen atom is bonded to. Recall which hydrogen atoms of an oxyacid ionize, and count how many of the three can be lost to a base; each one lost gives one series of salts."
+    "solution": "Phosphorous acid forms only two series of salts because only two of its three hydrogen atoms are acidic. Its structure is HPO(OH)<sub>2</sub>: the phosphorus atom is bonded to one hydrogen atom directly, to one oxygen atom by a double bond and to two OH groups. In an oxyacid the ionizable hydrogen atoms are those bonded to oxygen, where the highly polar O–H bond lets a base remove the proton. The P–H bond is nearly nonpolar, so that hydrogen atom does not ionize. H<sub>3</sub>PO<sub>3</sub> is therefore a diprotic acid. Neutralizing one O–H hydrogen with a base such as sodium hydroxide gives the dihydrogen phosphite salts, such as NaH<sub>2</sub>PO<sub>3</sub>, and neutralizing both gives the hydrogen phosphite salts, such as Na<sub>2</sub>HPO<sub>3</sub>; no salt with the formula Na<sub>3</sub>PO<sub>3</sub> forms."
    }
   },
   {

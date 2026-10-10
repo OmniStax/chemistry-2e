@@ -398,7 +398,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: pair H<sub>2</sub>PO<sub>4</sub><sup>−</sup> once with a species that takes a proton from it, such as OH<sup>−</sup>, and once with a species that gives it a proton, such as HCl or H<sub>3</sub>O<sup>+</sup>. In each equation, move one H<sup>+</sup>, lower or raise the charge of the phosphate species by one, and check that atoms and charges balance, as Example 14.3 does for HSO<sub>3</sub><sup>−</sup>."
+    "solution": "As an acid, H<sub>2</sub>PO<sub>4</sub><sup>−</sup> gives a proton to hydroxide ion: H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⇌ HPO<sub>4</sub><sup>2−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>). As a base, it takes a proton from hydronium ion: H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(<em>aq</em>) + H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) ⇌ H<sub>3</sub>PO<sub>4</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>). Losing one H<sup>+</sup> leaves its conjugate base, HPO<sub>4</sub><sup>2−</sup>, with one hydrogen fewer and a charge one lower; gaining one H<sup>+</sup> gives its conjugate acid, H<sub>3</sub>PO<sub>4</sub>, with one hydrogen more and no charge. Both equations balance in atoms and in charge, and together they show the ion is amphiprotic."
    }
   },
   {
@@ -432,7 +432,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: an acid is a proton donor, so for each species write it losing one H<sup>+</sup>: the product is the species with one hydrogen fewer and a charge one lower. Follow the pattern of the key to the previous exercise, and check that hydrogen atoms and charges balance on both sides."
+    "solution": "Each species donates one proton to water, leaving a conjugate base with one hydrogen fewer and a charge one lower. (a) HNO<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⟶ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + NO<sub>3</sub><sup>−</sup>(<em>aq</em>); (b) PH<sub>4</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + PH<sub>3</sub>(<em>aq</em>); (c) H<sub>2</sub>S(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + HS<sup>−</sup>(<em>aq</em>); (d) CH<sub>3</sub>CH<sub>2</sub>COOH(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + CH<sub>3</sub>CH<sub>2</sub>COO<sup>−</sup>(<em>aq</em>), the proton coming from the O–H of the carboxyl group; (e) H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + HPO<sub>4</sub><sup>2−</sup>(<em>aq</em>); (f) HS<sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + S<sup>2−</sup>(<em>aq</em>). In every equation the species gives up an H<sup>+</sup>, which is what makes it a Brønsted-Lowry acid, and hydrogen atoms and charges balance on both sides."
    }
   },
   {
@@ -466,7 +466,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: a base is a proton acceptor, so for each species write it gaining one H<sup>+</sup>: the product has one hydrogen more and a charge one higher. For ethanol, the proton attaches to a lone pair of the oxygen atom. Follow the pattern of the key to the previous exercise and check the balance of atoms and charge."
+    "solution": "Each species accepts one proton, becoming a conjugate acid with one hydrogen more and a charge one higher. (a) HS<sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>2</sub>S(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>); (b) PO<sub>4</sub><sup>3−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ HPO<sub>4</sub><sup>2−</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>); (c) NH<sub>2</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⟶ NH<sub>3</sub>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>); (d) C<sub>2</sub>H<sub>5</sub>OH(<em>aq</em>) + H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) ⇌ C<sub>2</sub>H<sub>5</sub>OH<sub>2</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>), the proton bonding to a lone pair on the oxygen atom; (e) O<sup>2−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⟶ OH<sup>−</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>); (f) H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>PO<sub>4</sub>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>). In every equation the species takes an H<sup>+</sup> from the acid beside it, which is what makes it a Brønsted-Lowry base, and atoms and charges balance."
    }
   },
   {
@@ -500,7 +500,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: the members of a conjugate pair differ by one H<sup>+</sup>. For the conjugate acid, add one hydrogen and raise the charge by one; for the conjugate base, take one hydrogen away and lower the charge by one. Compare your formulas with the key to the previous exercise, which pairs several of the same species."
+    "solution": "Conjugate acid first, then conjugate base: (a) H<sub>3</sub>S<sup>+</sup>, HS<sup>−</sup>; (b) H<sub>3</sub>PO<sub>4</sub>, HPO<sub>4</sub><sup>2−</sup>; (c) PH<sub>4</sub><sup>+</sup>, PH<sub>2</sub><sup>−</sup>; (d) H<sub>2</sub>S, S<sup>2−</sup>; (e) H<sub>2</sub>SO<sub>3</sub>, SO<sub>3</sub><sup>2−</sup>; (f) H<sub>4</sub>O<sub>2</sub><sup>2+</sup>, H<sub>2</sub>O<sub>2</sub>; (g) H<sub>5</sub>N<sub>2</sub><sup>+</sup>, H<sub>3</sub>N<sub>2</sub><sup>−</sup>; (h) CH<sub>3</sub>OH<sub>2</sub><sup>+</sup>, CH<sub>3</sub>O<sup>−</sup>. The two members of a conjugate pair differ by a single hydrogen ion, so the conjugate acid is the species with one H<sup>+</sup> added, one more hydrogen and a charge one higher, and the conjugate base is the species with one H<sup>+</sup> removed, one hydrogen fewer and a charge one lower. For H<sub>3</sub>O<sub>2</sub><sup>+</sup>, for example, adding H<sup>+</sup> gives H<sub>4</sub>O<sub>2</sub><sup>2+</sup> and removing it gives neutral H<sub>2</sub>O<sub>2</sub>."
    }
   },
   {
@@ -534,7 +534,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: in each equation, find the reactant that loses one H<sup>+</sup> (the acid) and the product it becomes (its conjugate base), then the reactant that gains that H<sup>+</sup> (the base) and the product it becomes (its conjugate acid). Each pair differs by exactly one hydrogen and one unit of charge. Label them as the key to the previous exercise does."
+    "solution": "The labels are Brønsted-Lowry acid = BA; its conjugate base = CB; Brønsted-Lowry base = BB; its conjugate acid = CA. (a) NO<sub>2</sub><sup>−</sup>(BB), H<sub>2</sub>O(BA), HNO<sub>2</sub>(CA), OH<sup>−</sup>(CB); (b) HBr(BA), H<sub>2</sub>O(BB), H<sub>3</sub>O<sup>+</sup>(CA), Br<sup>−</sup>(CB); (c) HS<sup>−</sup>(BB), H<sub>2</sub>O(BA), H<sub>2</sub>S(CA), OH<sup>−</sup>(CB); (d) H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(BA), OH<sup>−</sup>(BB), HPO<sub>4</sub><sup>2−</sup>(CB), H<sub>2</sub>O(CA); (e) H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(BB), HCl(BA), H<sub>3</sub>PO<sub>4</sub>(CA), Cl<sup>−</sup>(CB); (f) [Fe(H<sub>2</sub>O)<sub>5</sub>(OH)]<sup>2+</sup>(BB), [Al(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup>(BA), [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup>(CA), [Al(H<sub>2</sub>O)<sub>5</sub>(OH)]<sup>2+</sup>(CB); (g) CH<sub>3</sub>OH(BA), H<sup>−</sup>(BB), CH<sub>3</sub>O<sup>−</sup>(CB), H<sub>2</sub>(CA). In each equation the acid is the reactant that loses one H<sup>+</sup>, and the product with one hydrogen fewer is its conjugate base; the base is the reactant that gains that H<sup>+</sup>, and the product with one hydrogen more is its conjugate acid."
    }
   },
   {
@@ -568,7 +568,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: a species is amphiprotic only if it can both give up a hydrogen ion and take one on, so it must carry at least one hydrogen it can lose and a lone pair or negative charge that can accept a proton. Check each species for both; for each one that qualifies, write one equation with a base such as OH<sup>−</sup> and one with an acid such as H<sub>3</sub>O<sup>+</sup>, as Example 14.3 does."
+    "solution": "H<sub>2</sub>O, HPO<sub>4</sub><sup>2−</sup> and HSO<sub>4</sub><sup>−</sup> are amphiprotic; S<sup>2−</sup> and CO<sub>3</sub><sup>2−</sup> are not, because they have no hydrogen to donate and can act only as bases. (a) As an acid: H<sub>2</sub>O(<em>l</em>) + NH<sub>3</sub>(<em>aq</em>) ⇌ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>); as a base: H<sub>2</sub>O(<em>l</em>) + HCl(<em>aq</em>) ⟶ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + Cl<sup>−</sup>(<em>aq</em>). (b) As an acid: HPO<sub>4</sub><sup>2−</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⇌ PO<sub>4</sub><sup>3−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>); as a base: HPO<sub>4</sub><sup>2−</sup>(<em>aq</em>) + H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) ⇌ H<sub>2</sub>PO<sub>4</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>). (e) As an acid: HSO<sub>4</sub><sup>−</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + SO<sub>4</sub><sup>2−</sup>(<em>aq</em>); as a base, toward an acid stronger than sulfuric acid: HSO<sub>4</sub><sup>−</sup> + HClO<sub>4</sub> ⟶ H<sub>2</sub>SO<sub>4</sub> + ClO<sub>4</sub><sup>−</sup>. Each amphiprotic species carries a hydrogen it can lose and a lone pair that can take on a proton."
    }
   },
   {
@@ -602,7 +602,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: compare the two values of K<sub>w</sub> and note which way the constant moves as the temperature rises. By Le Châtelier’s principle, raising the temperature favors the direction of a reaction that absorbs heat, so a constant that grows with temperature and one that shrinks point to opposite signs of the enthalpy change."
+    "solution": "The self-ionization of water is endothermic. As the temperature rises from 40 °C to 60 °C, <em>K</em><sub>w</sub> rises from 2.9 × 10<sup>−14</sup> to 9.3 × 10<sup>−14</sup>, so at the higher temperature the equilibrium 2H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) lies further to the right and more water is ionized. By Le Châtelier’s principle, raising the temperature shifts an equilibrium in the direction that absorbs heat. Since heating shifts this one toward the ions, the forward reaction absorbs heat, and its enthalpy change is positive."
    }
   }
  ],

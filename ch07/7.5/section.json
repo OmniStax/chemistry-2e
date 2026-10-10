@@ -247,7 +247,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "For a pair between the same two atoms, recall how bond strength changes with the number of electron pairs shared. For every pair, compare the bond energies listed in Table 7.2 and choose the larger."
+    "solution": "(a) C=C, 611 kJ/mol against 345 kJ/mol for C–C.<br>(b) C≡N, 891 kJ/mol against 290 kJ/mol for C–N.<br>(c) C≡O, 1080 kJ/mol against 741 kJ/mol for C=O.<br>(d) H–F, 569 kJ/mol against 432 kJ/mol for H–Cl.<br>(e) O–H, 464 kJ/mol against 415 kJ/mol for C–H.<br>(f) C–O, 350 kJ/mol against 290 kJ/mol for C–N.<br>In (a), (b) and (c) the two bonds join the same two atoms, and sharing more electron pairs makes the bond stronger, so a triple bond is stronger than a double bond, which is stronger than a single bond. In (d) the hydrogen bonds to two atoms of the same group, and bond strength decreases down the group, so H–F is stronger than H–Cl. Parts (e) and (f) join different pairs of atoms, so the values in Table 7.2 decide them."
    }
   },
   {
@@ -295,7 +295,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the reaction each quantity belongs to. The bond energy is defined by the reaction that breaks one mole of the bond in the gas into separate gaseous atoms; the enthalpy of formation, which you met in the chapter on thermochemistry, belongs to the reaction that forms one mole of the compound from its elements in their standard states. Compare the starting materials and the products of the two reactions."
+    "solution": "The bond energy of HCl(<em>g</em>), 432 kJ/mol, is the enthalpy change for breaking one mole of H–Cl bonds into gaseous atoms, $\\text{HCl}(g)\\longrightarrow \\text{H}(g)+\\text{Cl}(g)$, an endothermic change. The standard enthalpy of formation, $\\kdHf=-92.307\\;\\text{kJ/mol}$, is the enthalpy change for making one mole of HCl(<em>g</em>) from its elements in their standard states, $\\frac{1}{2}{\\text{H}}_{2}(g)+\\frac{1}{2}{\\text{Cl}}_{2}(g)\\longrightarrow \\text{HCl}(g)$, an exothermic change. The two reactions differ in direction and in their starting materials: formation begins from H<sub>2</sub> and Cl<sub>2</sub> molecules, not from separate atoms, so it also includes breaking half a mole of H–H bonds and half a mole of Cl–Cl bonds. Adding those steps links the two values: $\\kdHf\\approx \\frac{1}{2}(436)+\\frac{1}{2}(243)-432=-92.5\\;\\text{kJ/mol}$, close to the measured value."
    }
   },
   {
@@ -375,7 +375,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The two compounds have the same structure and ions of the same charges, so C, Z<sup>+</sup> and Z<sup>–</sup> are the same for both, and the lattice energy is inversely proportional to R<sub>o</sub>. Decide first whether the longer Na–F distance makes the lattice energy larger or smaller than that of LiF, then scale 1023 kJ/mol by the ratio of the two distances and pick the closest of the five values."
+    "solution": "The lattice energy of NaF is closest to 890 kJ/mol. LiF and NaF have the same structure, so C is the same, and both contain ions with charges of 1+ and 1–, so Z<sup>+</sup> and Z<sup>–</sup> are the same. The only difference in $\\kdHlat=\\frac{\\text{C}({\\text{Z}}^{+})({\\text{Z}}^{-})}{\\kRo}$ is the interionic distance, and the lattice energy is inversely proportional to it. The longer Na–F distance therefore gives a smaller lattice energy than that of LiF: $$\\kdHlat(\\text{NaF})=1023\\;\\text{kJ/mol}\\times \\frac{200.8\\;\\text{pm}}{231\\;\\text{pm}}=889\\;\\text{kJ/mol}$$ Of the five values, 890 kJ/mol is the closest. The values 1023 kJ/mol and above would need a distance equal to or shorter than that in LiF, and 510 kJ/mol would need a distance about twice as long."
    }
   },
   {
@@ -407,7 +407,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the enthalpy of formation as the sum of the steps of the Born-Haber cycle, as in Table 7.4, and find the step each option changes. Energy absorbed in a step (sublimation, ionization, breaking the halogen bond) makes the overall change less exothermic as it grows, while energy released (the electron affinity step and the negative of the lattice energy) makes it more exothermic. For the options about ionic size, use the relation between lattice energy and R<sub>o</sub>."
+    "solution": "(a) A small radius for M<sup>2+</sup>. A smaller cation shortens $\\kRo$, which raises the lattice energy, and $-\\kdHlat$ is the step that releases energy.<br>(b) A low ionization energy for M. Ionization absorbs energy, so a smaller $\\kIE$ adds less to $\\kdHf$.<br>(c) An increasing bond energy for the halogen makes the reaction less exothermic, because breaking the X–X bond absorbs energy and $\\kDbond$ adds directly to $\\kdHf$; a decreasing bond energy makes it more exothermic.<br>(d) A decreasing electron affinity, meaning less energy released as each halogen atom gains an electron, makes $\\kEA$ less negative and the reaction less exothermic; an increasing electron affinity makes it more exothermic.<br>(e) An increasing size of the anion makes the reaction less exothermic. A larger anion lengthens $\\kRo$ and lowers the lattice energy, so less energy is released when the ions form the solid; a smaller anion makes it more exothermic.<br>Each answer follows from the Born-Haber cycle, $\\kdHf=\\kdHs+\\kDbond+2\\kIE+2\\kEA-\\kdHlat$ for MX<sub>2</sub> (with $\\kIE$ the sum of the first and second ionization energies), in which the endothermic steps raise $\\kdHf$ and the exothermic steps lower it."
    }
   },
   {
@@ -439,7 +439,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "For each pair, compare the two factors in the lattice energy equation. First compare the charges Z<sup>+</sup> and Z<sup>–</sup> of the ions, then compare the interionic distances R<sub>o</sub>, using the note on similar radii and the trend of ionic size down a group. A larger product of the charges or a shorter distance gives a larger lattice energy, and a change in charge usually outweighs a change in size."
+    "solution": "(a) MgO. The charges are the same, 2+ and 2–, but O<sup>2–</sup> is smaller than Se<sup>2–</sup>, which lies further down group 16, so $\\kRo$ is shorter in MgO.<br>(b) MgO. Li<sup>+</sup> and Mg<sup>2+</sup> have similar radii, as do F<sup>–</sup> and O<sup>2–</sup>, so $\\kRo$ is about the same, but the product of the charges is (2)(2) = 4 for MgO against (1)(1) = 1 for LiF. The book gives 3900 kJ/mol for MgO and 1023 kJ/mol for LiF.<br>(c) Li<sub>2</sub>O. The product of the charges is (1)(2) = 2 against (1)(1) = 1 for LiCl, and O<sup>2–</sup>, similar in radius to F<sup>–</sup>, is smaller than Cl<sup>–</sup>, so both factors favor Li<sub>2</sub>O.<br>(d) MgO. The product of the charges is 4 against 2 for Li<sub>2</sub>Se, and with Mg<sup>2+</sup> similar in size to Li<sup>+</sup> and O<sup>2–</sup> smaller than Se<sup>2–</sup>, $\\kRo$ is also shorter in MgO.<br>In each pair the lattice energy, $\\kdHlat=\\frac{\\text{C}({\\text{Z}}^{+})({\\text{Z}}^{-})}{\\kRo}$, is larger for the compound with the larger product of charges or the shorter interionic distance."
    }
   },
   {
@@ -471,7 +471,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The energy asked for is the lattice energy. Sort the five compounds first by the charges of their ions, since the product Z<sup>+</sup>Z<sup>–</sup> has the larger effect, and then, among compounds with the same charges, by the sizes of the ions, remembering that ions grow larger down a group."
+    "solution": "(a) MgO requires the most energy. The energy to separate one mole of the solid into its gaseous ions is the lattice energy, $\\kdHlat=\\frac{\\text{C}({\\text{Z}}^{+})({\\text{Z}}^{-})}{\\kRo}$. MgO and SrO contain 2+ and 2– ions, so the product of the charges is 4; MgF<sub>2</sub> contains 2+ and 1– ions, a product of 2; KF and CsF contain 1+ and 1– ions, a product of 1. This places MgO and SrO above the other three. Between those two the charges are equal, so the smaller ion decides: Mg<sup>2+</sup> lies above Sr<sup>2+</sup> in group 2 and is smaller, which gives MgO the shorter $\\kRo$ and the larger lattice energy, about 3900 kJ/mol."
    }
   },
   {
@@ -503,7 +503,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "KF and NaF have the same structure and ions of the same charges, so only R<sub>o</sub> differs, and the lattice energy is inversely proportional to it. Decide whether the shorter Na–F distance raises or lowers the lattice energy, then multiply 794 kJ/mol by the ratio of the two distances and choose the closest value."
+    "solution": "The lattice energy of NaF is closest to 924 kJ/mol. KF and NaF have the same structure, so C is the same, and both contain 1+ and 1– ions, so Z<sup>+</sup> and Z<sup>–</sup> are the same. The lattice energy, $\\kdHlat=\\frac{\\text{C}({\\text{Z}}^{+})({\\text{Z}}^{-})}{\\kRo}$, is then inversely proportional to the interionic distance, and the shorter Na–F distance gives a larger lattice energy than that of KF: $$\\kdHlat(\\text{NaF})=794\\;\\text{kJ/mol}\\times \\frac{269\\;\\text{pm}}{231\\;\\text{pm}}=925\\;\\text{kJ/mol}$$ Of the five values, 924 kJ/mol is the closest. A value of 682 kJ/mol would need a longer distance than in KF, and 1588 or 3175 kJ/mol would need a change in the ionic charges."
    }
   }
  ],

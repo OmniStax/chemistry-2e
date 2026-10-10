@@ -216,7 +216,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: a buffer needs appreciable amounts of a weak conjugate acid-base pair. Write the reaction of NaOH with NH<sub>4</sub><sup>+</sup> and ask what remains when less than the full amount of hydroxide is added: some NH<sub>4</sub><sup>+</sup> and the NH<sub>3</sub> it produced. Then ask whether NH<sub>3</sub> reacts with NaOH at all, and whether a weak base mixed with a strong base gives a conjugate pair."
+    "solution": "Hydroxide ion converts part of the ammonium ion into ammonia, so a mixture of NH<sub>4</sub>Cl and less than an equal molar amount of NaOH holds both members of the conjugate pair NH<sub>4</sub><sup>+</sup>/NH<sub>3</sub>, which is what a buffer needs. The reaction is NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⟶ NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>). Mixing 0.20 mol NH<sub>4</sub>Cl with 0.10 mol NaOH, for example, leaves 0.10 mol NH<sub>4</sub><sup>+</sup> and 0.10 mol NH<sub>3</sub>, a buffer with pH = p<em>K</em><sub>a</sub> = −log(5.6 × 10<sup>−10</sup>) = 9.25. The NH<sub>3</sub> removes added acid and the NH<sub>4</sub><sup>+</sup> removes added base. Ammonia and sodium hydroxide are both bases and do not react with each other, so their mixture contains no NH<sub>4</sub><sup>+</sup>. With no weak acid present to consume added hydroxide, and with the strong base fixing [OH<sup>−</sup>], the mixture has no conjugate acid-base pair and cannot act as a buffer."
    }
   },
   {
@@ -250,7 +250,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: follow the blood-buffer and phosphate answers. Write the reaction by which NH<sub>3</sub> removes added H<sub>3</sub>O<sup>+</sup> and the reaction by which NH<sub>4</sub><sup>+</sup> removes added OH<sup>−</sup>, then explain why converting a strong acid or base into the weak partner of the pair changes the ratio of the two, and so the pH, only slightly."
+    "solution": "The pH stays nearly constant because each addition is consumed by one member of the NH<sub>3</sub>/NH<sub>4</sub><sup>+</sup> pair and turned into the other. Added acid is removed by ammonia: NH<sub>3</sub>(<em>aq</em>) + H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) ⟶ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>). Added base is removed by ammonium ion: NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⟶ NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>). A strong acid or base is thus replaced by a weak one, and the pH depends only on the ratio of the pair, pH = p<em>K</em><sub>a</sub> + log([NH<sub>3</sub>]/[NH<sub>4</sub><sup>+</sup>]). With 1.00 mol of each in 1.00 L, the pH is 9.25; adding 0.010 mol of H<sub>3</sub>O<sup>+</sup> gives 0.99 mol NH<sub>3</sub> and 1.01 mol NH<sub>4</sub><sup>+</sup>, and pH = 9.25 + log(0.99/1.01) = 9.24. When the two amounts are equal and large compared with the addition, their ratio barely changes, so the pH changes only slightly."
    }
   },
   {
@@ -324,7 +324,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: work as the key to the acetate exercise before this one does, with the equilibrium NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>). For each substance decide whether it adds a strong acid, a strong base, one partner of the pair, or a spectator ion; write the reaction it undergoes with the buffer, if any; and state which way each of the three concentrations moves, and whether the change in [OH<sup>−</sup>] is large or slight."
+    "solution": "The buffer equilibrium is NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>). (a) KI has no effect: K<sup>+</sup> and I<sup>−</sup> are spectator ions that do not react with the buffer, so [NH<sub>3</sub>], [OH<sup>−</sup>] and [NH<sub>4</sub><sup>+</sup>] stay the same. (b) Added NH<sub>3</sub> increases [NH<sub>3</sub>]; the equilibrium shifts to the right, so [NH<sub>4</sub><sup>+</sup>] increases and [OH<sup>−</sup>] increases slightly. (c) HI is a strong acid; its H<sub>3</sub>O<sup>+</sup> reacts with ammonia, NH<sub>3</sub> + H<sub>3</sub>O<sup>+</sup> ⟶ NH<sub>4</sub><sup>+</sup> + H<sub>2</sub>O, so [NH<sub>3</sub>] decreases, [NH<sub>4</sub><sup>+</sup>] increases and [OH<sup>−</sup>] decreases slightly. (d) NaOH adds OH<sup>−</sup>, which reacts with ammonium ion, NH<sub>4</sub><sup>+</sup> + OH<sup>−</sup> ⟶ NH<sub>3</sub> + H<sub>2</sub>O, so [NH<sub>4</sub><sup>+</sup>] decreases, [NH<sub>3</sub>] increases and [OH<sup>−</sup>] increases slightly. (e) NH<sub>4</sub>Cl increases [NH<sub>4</sub><sup>+</sup>]; the equilibrium shifts to the left, so [OH<sup>−</sup>] decreases slightly and [NH<sub>3</sub>] increases."
    }
   },
   {

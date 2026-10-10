@@ -507,7 +507,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: count the <em>d</em> orbitals a transition metal ion has and ask how many electrons can occupy them singly, whatever the splitting; then decide whether a sixth unpaired electron would have anywhere to go."
+        "solution": "No. A transition metal ion has only five <em>d</em> orbitals, and each orbital can hold only one unpaired electron, so at most five <em>d</em> electrons can be unpaired. That maximum belongs to a <em>d</em><sup>5</sup> ion in a high-spin complex, such as [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> or [FeF<sub>6</sub>]<sup>3−</sup>, with one electron in each of the five orbitals. Whatever the size of the crystal field splitting, a sixth <em>d</em> electron has no empty orbital left and must pair with one already present, so a <em>d</em><sup>6</sup> ion has at most four unpaired electrons, as in [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>, and more <em>d</em> electrons leave still fewer unpaired."
       }
     },
     {
@@ -564,7 +564,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: look for the atoms of the diphosphate ion that carry lone pairs and could act as donor atoms, ask how many of them could bind one Fe<sup>2+</sup> ion at once, and connect the soluble complex this forms with the iron that is then no longer free to precipitate."
+        "solution": "Diphosphate binds Fe<sup>2+</sup> as a polydentate, chelating ligand and holds it in a soluble complex. Each phosphorus atom carries terminal oxygen atoms with lone pairs, and an oxygen atom on each of the two phosphorus atoms can coordinate to the same Fe<sup>2+</sup> ion, closing a ring around it; with a second oxygen atom bonding as well, the ion can be tridentate. The complex formed, such as [Fe(P<sub>2</sub>O<sub>7</sub>)]<sup>2−</sup>, is charged and stays dissolved. Because the iron is tied up in the complex, the concentration of free Fe<sup>2+</sup> stays too low for the ion product of an insoluble salt such as FeCO<sub>3</sub> or Fe(OH)<sub>2</sub> to exceed its solubility product, so no precipitate forms. Like other complexing agents used in water softening, diphosphate sequesters the metal ion rather than removing it."
       }
     },
     {
@@ -615,7 +615,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: find the charge of the complex ion from the two Mg<sup>2+</sup> ions, then the oxidation state and the number of <em>d</em> electrons of chromium; place those electrons in the <em>t</em><sub>2<em>g</em></sub> orbitals of an octahedral complex with a strong-field ligand and ask whether any are left unpaired."
+        "solution": "It is paramagnetic. The three Mg<sup>2+</sup> ions carry a total charge of 6+, so the two complex ions carry 6− and each is [Cr(CN)<sub>6</sub>]<sup>3−</sup>. With six CN<sup>−</sup> ligands, −3 = −6 + <em>x</em>, and chromium is in the 3+ oxidation state. Chromium is [Ar]3<em>d</em><sup>5</sup>4<em>s</em><sup>1</sup>, so Cr<sup>3+</sup> is <em>d</em><sup>3</sup>. In an octahedral complex the three electrons occupy the three <em>t</em><sub>2<em>g</em></sub> orbitals singly. Cyanide is a strong-field ligand and produces a large $\\kdoct$, but that changes nothing here, since three electrons fill three orbitals singly before any pairing is possible. The three unpaired electrons make the compound paramagnetic."
       }
     },
     {
@@ -649,7 +649,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: use the color wheel to find the color each complex absorbs, the complement of the color it shows; compare the energies of photons of those two colors, and recall that the absorbed photon's energy matches the splitting between the <em>d</em> orbitals."
+        "solution": "[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> absorbs the higher-energy photons and is predicted to have the larger crystal field splitting. A complex shows the color complementary to the one it absorbs. [CuCl<sub>4</sub>]<sup>2−</sup> appears green, so it absorbs red light; [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> appears blue, so it absorbs orange light. Orange light has a shorter wavelength than red light, and since $E=hc/\\lambda$, orange photons carry more energy. The energy of the absorbed photon matches the splitting between the <em>d</em> orbitals, so the blue hexaaqua complex, with six ligands in an octahedral field and splitting $\\kdoct$, has a larger splitting than the green tetrahedral [CuCl<sub>4</sub>]<sup>2−</sup>, whose four ligands give the smaller splitting $\\kdtet$."
       }
     }
   ],

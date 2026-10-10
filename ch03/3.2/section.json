@@ -145,7 +145,7 @@
    "place": { "at": "end" },
    "cite": "molecular",
    "prompt": "What information is needed to determine the molecular formula of a compound from the empirical formula?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Recall how many empirical formula units a molecule contains and how that number is found. Ask which measured quantity must be divided by the empirical formula mass to give it, and name that quantity." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "The molecular mass or the molar mass of the compound is needed. The empirical formula gives only the simplest whole-number ratio of the atoms, so the molecular formula is some whole-number multiple of it. Dividing the molecular (or molar) mass by the empirical formula mass, the sum of the average atomic masses of the atoms in the empirical formula, gives that multiple, <em>n</em>, the number of empirical formula units per molecule. Multiplying each subscript in the empirical formula by <em>n</em> then gives the molecular formula. For example, a compound with empirical formula CH<sub>2</sub>O (empirical formula mass 30.03 amu) and molecular mass 180.16 amu has <em>n</em> = 180.16/30.03 = 6, so its molecular formula is C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>." }
   },
   {
    "id": "e2",

@@ -488,7 +488,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for each nuclide, take its number of protons Z from the periodic table and its number of neutrons as the mass number less Z, then find the point (Z, n) on Figure 21.2 and ask whether it falls in the narrow band of stable nuclides or away from it; remember that every element with an atomic number greater than 83 has no stable isotope."
+    "solution": "Argon-40, oxygen-16, <sup>58</sup>Ni, <sup>205</sup>Tl, and magnesium-24 lie within the band of stability; <sup>122</sup>Ba, <sup>210</sup>Tl, and <sup>226</sup>Ra do not. The number of neutrons is the mass number less <em>Z</em>. (a) Argon-40 has 18 protons and 22 neutrons, a stable nuclide in the band. (b) Oxygen-16 has 8 protons and 8 neutrons, n:p = 1.00, as light stable nuclei do; it is in the band. (c) <sup>122</sup>Ba has 56 protons and only 66 neutrons, n:p = 1.18, far below the band, where the stable barium nuclides have 74 to 82 neutrons. (d) <sup>58</sup>Ni has 28 protons and 30 neutrons, a stable nuclide in the band. (e) <sup>205</sup>Tl has 81 protons and 124 neutrons, n:p = 1.53, a stable nuclide in the band. (f) <sup>210</sup>Tl has 81 protons and 129 neutrons, n:p = 1.59, too many neutrons, so it lies above the band. (g) <sup>226</sup>Ra has 88 protons; every isotope of an element with an atomic number greater than 83 is unstable, so it lies beyond the end of the band. (h) Magnesium-24 has 12 protons and 12 neutrons, a stable nuclide in the band."
    }
   },
   {

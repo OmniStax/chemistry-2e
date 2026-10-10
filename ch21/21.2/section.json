@@ -251,7 +251,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: a nucleus is a bound cluster of protons and neutrons, the part of an atom left when its electrons are taken away. Go down the particles of Figure 21.4 and read each one’s description, asking whether it is the nucleus of an atom of some element; set aside the ones described as electrons or as electromagnetic radiation, since these carry no protons or neutrons at all."
+        "solution": "Alpha particles and protons are nuclei. An α particle, ${}_{2}^{4}\\text{He}$, is a high-energy helium-4 nucleus of two protons and two neutrons, and a proton, ${}_{1}^{1}\\text{p}$ or ${}_{1}^{1}\\text{H}$, is the nucleus of a hydrogen-1 atom; a deuteron, ${}_{1}^{2}\\text{H}$, used to bombard target nuclei, is likewise the nucleus of a hydrogen-2 atom. The other particles of Figure 21.4 are not nuclei. A neutron, ${}_{0}^{1}\\text{n}$, is a single constituent of nuclei with no proton, so it is not the nucleus of any element; β particles are high-energy electrons, positrons are positively charged electrons, and γ rays are photons of electromagnetic radiation, none of which contain protons or neutrons."
       }
     },
     {

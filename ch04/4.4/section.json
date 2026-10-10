@@ -279,7 +279,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: you calculate a theoretical yield from the balanced equation, which assumes that the reaction neither creates nor destroys atoms and that the atoms of each compound combine in a fixed whole-number ratio. Recall the postulate of Dalton’s atomic theory that says a chemical change neither creates nor destroys atoms but only separates, combines or rearranges them, together with the one that says a compound has a constant ratio of its atoms. Name the postulate that makes the mass of product predictable from the mass of reactant."
+    "solution": "The postulate that atoms are neither created nor destroyed during a chemical change, but are only rearranged into new substances, explains it. Because every atom in the reactants is still present in the products, the balanced equation holds the same number of atoms of each element on both sides, and its coefficients give fixed mole ratios between reactants and products. Together with the postulate that a compound always contains its elements in the same whole-number ratio, which fixes each substance’s formula and molar mass, this lets a known amount of the limiting reactant be converted into a definite amount of product. That calculated amount, the mass of product formed if all of the limiting reactant reacts as the equation describes, is the theoretical yield."
    }
   },
   {

@@ -570,7 +570,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: each ion’s change is its coefficient in the dissolution equation times the molar solubility. From the change you are given, find the molar solubility by dividing by that ion’s coefficient, then multiply by the other ion’s coefficient."
+        "solution": "(a) $x$ and $x$: one mole of BaSO<sub>4</sub> gives one mole of each ion, so both changes equal the molar solubility $x$.<br>(b) $2x$ and $x$: the change $x$ for ${\\text{SO}}_{4}{}^{\\text{2−}}$ is the molar solubility, and each formula unit releases two Ag<sup>+</sup> ions, so [Ag<sup>+</sup>] rises by $2x$.<br>(c) $x$ and $3x$: the change for Al<sup>3+</sup> is the molar solubility, and three OH<sup>−</sup> ions come with each Al<sup>3+</sup>.<br>(d) $x$, $x$ and $x$: Pb(OH)Cl releases one ion of each kind, so the change $x$ given for OH<sup>−</sup> is also the change for Pb<sup>2+</sup> and for Cl<sup>−</sup>.<br>(e) $3x$ and $2x$: the change $3x$ for Ca<sup>2+</sup> means a molar solubility of $x$, and two ${\\text{AsO}}_{4}{}^{\\text{3−}}$ ions dissolve per formula unit, so their concentration rises by $2x$."
       }
     },
     {
@@ -604,7 +604,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: write the dissolution equation of PbS and name the ion that K<sub>2</sub>S adds. Decide which way that addition shifts the equilibrium, and what the shift does to the concentration of each ion."
+        "solution": "The concentration of S<sup>2–</sup> increases and the concentration of Pb<sup>2+</sup> decreases. In the saturated solution $\\text{PbS}(s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)$ is at equilibrium, with $\\kKsp=[{\\text{Pb}}^{\\text{2+}}][{\\text{S}}^{\\text{2−}}]=7\\;\\times \\;{10}^{-29}$. K<sub>2</sub>S is a soluble salt that adds S<sup>2–</sup>, the common ion. The reaction quotient then exceeds $\\kKsp$, so by Le Châtelier’s principle the equilibrium shifts to the left: Pb<sup>2+</sup> and S<sup>2–</sup> combine and more solid PbS precipitates. The precipitation removes only a small part of the added sulfide, so [S<sup>2–</sup>] ends higher than before, while [Pb<sup>2+</sup>] falls until the product of the two concentrations is again equal to $\\kKsp$."
       }
     },
     {
@@ -638,7 +638,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: an anion that is the conjugate base of a weak acid reacts with water, which lowers its concentration and lets more of the solid dissolve. For each compound, decide whether its anion is the conjugate base of a weak acid or of a strong one."
+        "solution": "CoSO<sub>3</sub>, PbCO<sub>3</sub> and Tl<sub>2</sub>S. Their anions, sulfite, carbonate and sulfide, are conjugate bases of the weak acids ${\\text{HSO}}_{3}{}^{-}$, ${\\text{HCO}}_{3}{}^{-}$ and HS<sup>–</sup>, so each reacts with water, for example ${\\text{CO}}_{3}{}^{\\text{2−}}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{HCO}}_{3}{}^{-}(aq)+{\\text{OH}}^{-}(aq)$. This hydrolysis lowers the concentration of the free anion below the value the dissolution alone would give, the dissolution equilibrium shifts to the right, and more solid dissolves than the $\\kKsp$ predicts. The anions of CuI, PbCl<sub>2</sub> and KClO<sub>4</sub>, iodide, chloride and perchlorate, are conjugate bases of the strong acids HI, HCl and HClO<sub>4</sub>; they do not react with water, and the solubility of these salts is the one calculated from the solubility product."
       }
     },
     {
@@ -672,7 +672,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: write each compound’s ions with their charges and the coefficients that balance the formula. Each coefficient becomes the exponent of that ion’s concentration in the <em>K</em><sub>sp</sub> expression, and the solid does not appear in it."
+        "solution": "(a) $\\text{PbCl}_{2}(s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)\\hspace{2em}\\kKsp=[{\\text{Pb}}^{\\text{2+}}]{[{\\text{Cl}}^{\\text{−}}]}^{2}$<br>(b) ${\\text{Ag}}_{2}\\text{S}(s)\\rightleftharpoons 2{\\text{Ag}}^{\\text{+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)\\hspace{2em}\\kKsp={[{\\text{Ag}}^{\\text{+}}]}^{2}[{\\text{S}}^{\\text{2−}}]$<br>(c) ${\\text{Sr}}_{3}{({\\text{PO}}_{4})}_{2}(s)\\rightleftharpoons 3{\\text{Sr}}^{\\text{2+}}(aq)+2{\\text{PO}}_{4}{}^{\\text{3−}}(aq)\\hspace{2em}\\kKsp={[{\\text{Sr}}^{\\text{2+}}]}^{3}{[{\\text{PO}}_{4}{}^{\\text{3−}}]}^{2}$<br>(d) ${\\text{SrSO}}_{4}(s)\\rightleftharpoons {\\text{Sr}}^{\\text{2+}}(aq)+{\\text{SO}}_{4}{}^{\\text{2−}}(aq)\\hspace{2em}\\kKsp=[{\\text{Sr}}^{\\text{2+}}][{\\text{SO}}_{4}{}^{\\text{2−}}]$<br>Each coefficient in the dissolution equation becomes the exponent of that ion’s concentration, and the undissolved solid has no term in the expression."
       }
     },
     {
@@ -742,7 +742,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: look up each <em>K</em><sub>sp</sub> in Appendix J and write it in terms of the molar solubility <em>x</em>. Where every salt gives the same numbers of cations and anions, the order of the <em>K</em><sub>sp</sub> values is the order of the molar solubilities; where they do not, solve for each <em>x</em> and compare those."
+        "solution": "PbI<sub>2</sub> is the most soluble, at about 1.5 × 10<sup>–3</sup> <em>M</em>. Each of the four salts dissolves to one cation and two anions (the mercury(I) ion is ${\\text{Hg}}_{2}{}^{\\text{2+}}$), so for a molar solubility $x$ every one has $\\kKsp=(x){(2x)}^{2}=4{x}^{3}$, and the salt with the largest $\\kKsp$ has the largest molar solubility. From Appendix J: CaF<sub>2</sub>, $4{x}^{3}=4.0\\;\\times \\;{10}^{-11}$, $x=2.2\\;\\times \\;{10}^{-4}\\;M$; Hg<sub>2</sub>Cl<sub>2</sub>, $4{x}^{3}=1.1\\;\\times \\;{10}^{-18}$, $x=6.5\\;\\times \\;{10}^{-7}\\;M$; PbI<sub>2</sub>, $4{x}^{3}=1.4\\;\\times \\;{10}^{-8}$, $x=1.5\\;\\times \\;{10}^{-3}\\;M$; Sn(OH)<sub>2</sub>, $4{x}^{3}=3\\;\\times \\;{10}^{-27}$, $x=9\\;\\times \\;{10}^{-10}\\;M$. PbI<sub>2</sub> has the largest $\\kKsp$ and the greatest molar solubility."
       }
     },
     {
@@ -886,7 +886,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: in each part of Exercise 15.17, compare the change <em>x</em> with the initial concentration of the common ion. A change of less than about 5% of that concentration leaves it essentially unchanged and can be neglected."
+        "solution": "The changes can be neglected in parts (b), (c) and (d) because each of those salts is so slightly soluble that the common ion it adds is less than 5% of the common ion already present; in part (a) they cannot. In (b), $x={[\\text{Ba}}^{\\text{2+}}]=2.4\\;\\times \\;{10}^{-4}\\;M$, and the fluoride the BaF<sub>2</sub> adds, $2x=4.9\\;\\times \\;{10}^{-4}\\;M$, is 0.16% of 0.313 <em>M</em>. In (c), 8.156 g of Mg(NO<sub>3</sub>)<sub>2</sub> (148.3 g/mol) in 2.250 L is 0.02444 <em>M</em> Mg<sup>2+</sup>, and the MgC<sub>2</sub>O<sub>4</sub> adds only 2.9 × 10<sup>–5</sup> <em>M</em>, 0.12%. In (d), pH 12.700 gives pOH 1.300 and [OH<sup>–</sup>] = 0.0501 <em>M</em>; $x=1.3\\;\\times \\;{10}^{-6}\\text{/}{(0.0501)}^{2}=5.2\\;\\times \\;{10}^{-4}\\;M$, and the hydroxide added, $2x=1.0\\;\\times \\;{10}^{-3}\\;M$, is 2.1%. TlCl in (a) is far more soluble ($\\kKsp=1.7\\;\\times \\;{10}^{-4}$): solving $x(0.025+x)=1.7\\;\\times \\;{10}^{-4}$ gives $x=0.0056\\;M$, 22% of 0.025 <em>M</em>, so the quadratic must be solved and [Tl<sup>+</sup>] = 0.031 <em>M</em>."
       }
     },
     {
@@ -1248,7 +1248,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: as in Example 15.11, find the [Ag<sup>+</sup>] at which each salt begins to precipitate, its <em>K</em><sub>sp</sub> from Appendix J divided by the concentration of its halide ion. The salt that needs the lower [Ag<sup>+</sup>] forms first."
+        "solution": "Solid AgCl forms first, even though AgBr is the less soluble salt. Each salt begins to precipitate when the reaction quotient reaches its $\\kKsp$, so the [Ag<sup>+</sup>] needed is $\\kKsp$ divided by the halide concentration. For AgBr, $[{\\text{Ag}}^{\\text{+}}]=\\frac{5.0\\;\\times \\;{10}^{-13}}{1.0\\;\\times \\;{10}^{-5}}=5.0\\;\\times \\;{10}^{-8}\\;M$. For AgCl, $[{\\text{Ag}}^{\\text{+}}]=\\frac{1.6\\;\\times \\;{10}^{-10}}{0.10}=1.6\\;\\times \\;{10}^{-9}\\;M$. As AgNO<sub>3</sub> is added, [Ag<sup>+</sup>] reaches 1.6 × 10<sup>–9</sup> <em>M</em> first, so AgCl precipitates first; the chloride ion is 10<sup>4</sup> times more concentrated than the bromide ion, which more than makes up for the larger $\\kKsp$ of AgCl."
       }
     },
     {
@@ -1438,7 +1438,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: describe what happens at the surface of the solid in a saturated solution, and compare the rates at which ions leave it and return to it. Then count the phases present and recall what an equilibrium with components in more than one phase is called."
+        "solution": "In a saturated solution in contact with excess solid, ions leave the surface of the solid and dissolve at the same rate as dissolved ions return to the solid and precipitate, for example $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$. Both processes continue, but because their rates are equal the concentrations of the dissolved ions and the amount of solid stay constant. Opposing processes at equal rates with unchanging concentrations are the marks of a dynamic equilibrium, which is why the system is called an equilibrium. It is a heterogeneous equilibrium because its components are in different phases: the undissolved electrolyte is a solid and the ions are dissolved in the aqueous solution. For the same reason the solid does not appear in the $\\kKsp$ expression."
       }
     },
     {

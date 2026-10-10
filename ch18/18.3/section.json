@@ -447,7 +447,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall the diamond structure the text gives silicon, count the neighbors each silicon atom bonds to and the shape they make, and choose the set of hybrid orbitals that points to the corners of that shape; then say what kind of bond each hybrid orbital forms with a neighbor."
+    "solution": "Each silicon atom in elemental silicon is <em>sp</em><sup>3</sup> hybridized and forms four single covalent σ bonds to four neighboring silicon atoms. Silicon crystallizes with a diamond structure, in which every atom is bonded to four neighbors at the corners of a regular tetrahedron. Silicon has the valence configuration 3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>; mixing the 3<em>s</em> orbital with the three 3<em>p</em> orbitals gives four equivalent <em>sp</em><sup>3</sup> hybrid orbitals that point to the corners of a tetrahedron, 109.5° apart, each holding one electron. Each hybrid orbital overlaps end to end with an <em>sp</em><sup>3</sup> hybrid orbital of a neighboring atom to form a Si–Si σ bond containing one shared pair of electrons. Every atom uses all four valence electrons in this way, so the crystal is a giant three-dimensional molecule held together by single bonds, with no π bonding."
    }
   },
   {

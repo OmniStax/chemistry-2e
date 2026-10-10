@@ -281,7 +281,7 @@
       "place": { "at": "end" },
       "cite": "kmt",
       "prompt": "In terms of the kinetic molecular theory, in what ways are liquids similar to solids? In what ways are liquids different from solids?",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "Compare the two phases point by point, using the two aspects of the molecular-level environment. First consider how closely the particles are packed in each phase and whether they are arranged in a regular pattern. Then consider how the particles move: whether they vibrate about fixed positions or move past one another while remaining in contact." }
+      "answer": { "type": "open", "generated_by": "ai", "solution": "Liquids are like solids in that their particles are close together and in contact with one another, so both are condensed phases: each has a definite volume, is nearly incompressible, and is far denser than a gas, because in both the intermolecular attractions are strong relative to the kinetic energies of the particles. Liquids differ from solids in how the particles are arranged and how they move. In a solid the particles are held in fixed positions, often in a regular, repeating pattern, and can only vibrate about those positions. In a liquid the particles are randomly arranged and have enough kinetic energy to move past one another while remaining in contact, so a liquid flows and takes the shape of its container, whereas a solid keeps its own shape." }
     },
     {
       "id": "e3",
@@ -301,7 +301,7 @@
       "place": { "at": "end" },
       "cite": "kmt",
       "prompt": "Explain why liquids assume the shape of any container into which they are poured, whereas solids are rigid and retain their shape.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "Think about what the particles of each phase are able to do. In a solid, ask whether the particles can move in relation to one another or only vibrate about fixed positions; in a liquid, ask whether they can move past each other while their attractions keep them in contact. Then connect that freedom, or its absence, to whether the sample can flow into a new shape." }
+      "answer": { "type": "open", "generated_by": "ai", "solution": "A liquid takes the shape of its container because its molecules have enough kinetic energy to move past one another, although their attractions keep them in contact. The sample therefore flows under gravity until it fills the bottom of whatever vessel holds it, while its volume stays the same. In a solid the IMFs are strong enough relative to the kinetic energies of the particles that the particles are locked in fixed positions and can only vibrate about them. Because they cannot move in relation to one another, the solid cannot flow, and it is rigid and keeps its shape." }
     },
     {
       "id": "e5",
@@ -331,7 +331,7 @@
       "place": { "at": "end" },
       "cite": "kmt",
       "prompt": "The types of intermolecular forces in a substance are identical whether it is a solid, a liquid, or a gas. Why then does a substance change phase from a gas to a liquid or to a solid?",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "The phase depends on the relative extents of two things, the intermolecular forces and the kinetic energies of the molecules. If the forces themselves do not change, ask which of the two does change when a gas is cooled or compressed, and how that change alters the balance between holding the particles together and moving them apart." }
+      "answer": { "type": "open", "generated_by": "ai", "solution": "A gas condenses or freezes because cooling or compressing it changes the kinetic energies of the molecules relative to the IMFs, even though the kinds of force stay the same. The phase depends on the balance between the two. Cooling a gas lowers the average kinetic energy of its molecules, and compressing it brings the molecules closer together, where the attractions between them are stronger. Once the molecules no longer have enough kinetic energy to overcome the attractions that draw them together, they stay in contact and the gas condenses to a liquid. Further cooling lowers the kinetic energy until the IMFs hold the molecules in fixed positions, and the liquid freezes to a solid." }
     },
     {
       "id": "e8",
@@ -351,7 +351,7 @@
       "place": { "at": "end" },
       "cite": "hydrides",
       "prompt": "Neon and HF have approximately the same molecular masses.<br>(a) Explain why the boiling points of Neon and HF differ.<br>(b) Compare the change in the boiling points of Ne, Ar, Kr, and Xe with the change of the boiling points of HF, HCl, HBr, and HI, and explain the difference between the changes with increasing atomic or molecular mass.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "For (a), list the intermolecular forces each substance can experience from its structure: neon is a single nonpolar atom, while HF is a polar molecule with a hydrogen atom bonded to fluorine. For (b), note that the noble gases experience only dispersion forces, which grow steadily with size, and compare that with the hydrogen halides as Figures 10.11 and 10.12 plot them, asking which member of that family has an attraction the others lack." }
+      "answer": { "type": "open", "generated_by": "ai", "solution": "(a) Neon boils at −246 °C and HF at about 20 °C, because HF molecules attract one another by hydrogen bonds and neon atoms attract one another only by dispersion forces. A neon atom is a single nonpolar atom, and its dispersion forces are weak because the atom is small. An HF molecule has about the same mass, so its dispersion forces are similar, but it is polar and has a hydrogen atom bonded to fluorine. HF molecules therefore attract one another by dipole-dipole attractions and, much more strongly, by hydrogen bonds, so far more energy is needed to separate them.<br>(b) The boiling points of the noble gases rise steadily with atomic mass, from −246 °C for Ne through −186 °C for Ar and −153 °C for Kr to −108 °C for Xe, because their only attractions are dispersion forces, which grow as the atoms become larger and more polarizable. The hydrogen halides break this pattern: HCl (−85 °C), HBr (−67 °C), and HI (−35 °C) rise with molecular mass as their dispersion forces grow, but HF, the lightest, boils highest of all at about 20 °C. Only HF of the four can form hydrogen bonds, and these outweigh the larger dispersion forces of the heavier hydrogen halides." }
     },
     {
       "id": "e10",
@@ -371,7 +371,7 @@
       "place": { "at": "end" },
       "cite": "hydrides",
       "prompt": "The molecular mass of butanol, C<sub>4</sub>H<sub>9</sub>OH, is 74.14; that of ethylene glycol, CH<sub>2</sub>(OH)CH<sub>2</sub>OH, is 62.08, yet their boiling points are 117.2 °C and 174 °C, respectively. Explain the reason for the difference.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "Since the lighter molecule boils at the higher temperature, dispersion forces alone cannot explain the difference. Count the −OH groups in each molecule and consider how many hydrogen bonds each molecule can form with its neighbors, as Example 10.3 does for ethanol." }
+      "answer": { "type": "open", "generated_by": "ai", "solution": "Ethylene glycol boils at the higher temperature because each of its molecules has two −OH groups, whereas a butanol molecule has only one. Butanol is the heavier and larger molecule, so its dispersion forces are somewhat stronger, and these alone would give it the higher boiling point. In both liquids the strongest attractions are hydrogen bonds between a hydrogen atom bonded to oxygen in one molecule and a lone pair on an oxygen atom of a neighbor. With two −OH groups, an ethylene glycol molecule can take part in about twice as many hydrogen bonds as a butanol molecule, so the attractions between its molecules are much stronger overall. More energy, and so a higher temperature, is needed to separate the molecules in boiling: 174 °C for ethylene glycol against 117.2 °C for butanol." }
     },
     {
       "id": "e12",
@@ -391,7 +391,7 @@
       "place": { "at": "end" },
       "cite": "hydrides",
       "prompt": "On the basis of dipole moments and/or hydrogen bonding, explain in a qualitative way the differences in the boiling points of acetone (56.2 °C) and 1-propanol (97.4 °C), which have similar molar masses.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "With similar molar masses, the dispersion forces are similar, so look at the functional groups. Acetone has a C=O group and 1-propanol an −OH group; decide which molecules are polar and which contain a hydrogen atom bonded to oxygen, and so which can form hydrogen bonds with one another." }
+      "answer": { "type": "open", "generated_by": "ai", "solution": "1-Propanol boils at the higher temperature because its molecules can form hydrogen bonds with one another and acetone molecules cannot. The two compounds have similar molar masses, about 58 g/mol for acetone and 60 g/mol for 1-propanol, so their dispersion forces are comparable. Acetone, (CH<sub>3</sub>)<sub>2</sub>CO, is polar because of its C=O group, so its molecules attract each other by dipole-dipole attractions, but none of its hydrogen atoms is bonded to oxygen, so it cannot form hydrogen bonds among its own molecules. 1-Propanol, CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>OH, is also polar and has an −OH group, whose hydrogen atom is attracted to a lone pair on the oxygen atom of a neighboring molecule. Hydrogen bonds are stronger than ordinary dipole-dipole attractions, so 1-propanol must be heated to 97.4 °C to boil, while acetone boils at 56.2 °C." }
     },
     {
       "id": "e14",
@@ -411,7 +411,7 @@
       "place": { "at": "end" },
       "cite": "dipole",
       "prompt": "Silane (SiH<sub>4</sub>), phosphine (PH<sub>3</sub>), and hydrogen sulfide (H<sub>2</sub>S) melt at −185 °C, −133 °C, and −85 °C, respectively. What does this suggest about the polar character and intermolecular attractions of the three compounds?",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "The three molecules have similar sizes, so their dispersion forces are comparable. Use the shape of each molecule to judge whether it is polar, as in the chapter on chemical bonding and molecular geometry, and then relate the order of the melting points to the strength of the dipole-dipole attractions each can have." }
+      "answer": { "type": "open", "generated_by": "ai", "solution": "The melting points suggest that the polarity of the molecules, and with it the strength of their dipole-dipole attractions, increases in the order SiH<sub>4</sub> &lt; PH<sub>3</sub> &lt; H<sub>2</sub>S. The three molecules have similar sizes and molar masses (32, 34, and 34 g/mol), so their dispersion forces are comparable. SiH<sub>4</sub> is tetrahedral and its bond dipoles cancel, so it is nonpolar and has only dispersion forces; it melts lowest, at −185 °C. PH<sub>3</sub> is trigonal pyramidal with a lone pair on phosphorus, so it is polar, though only slightly, because phosphorus and hydrogen have nearly the same electronegativity; weak dipole-dipole attractions add to its dispersion forces and raise its melting point to −133 °C. H<sub>2</sub>S is bent, and sulfur is more electronegative than hydrogen, so its S–H bonds are more polar and it has the largest dipole moment of the three. Its dipole-dipole attractions are the strongest, and it melts highest, at −85 °C." }
     },
     {
       "id": "e16",
@@ -432,7 +432,7 @@
       "cite": "hbond",
       "figure": { "src": "/media/ch10/CNX_Chem_10_01_AceticAcid_img.jpg", "alt": "A Lewis structure shows a carbon atom single bonded to three hydrogen atoms and one other carbon atom, that is in turn double bonded to an oxygen atom and single bonded to another oxygen atom that is single bonded to a hydrogen atom. Dotted lines connect the terminal oxygen and hydrogen atoms to a reciprocal lewis structure to the right, rotated 180 degrees. Each dotted line is labeled “hydrogen bond.”" },
       "prompt": "Under certain conditions, molecules of acetic acid, CH<sub>3</sub>COOH, form “dimers,” pairs of acetic acid molecules held together by strong intermolecular attractions. Draw a dimer of acetic acid, showing how two CH<sub>3</sub>COOH molecules are held together, and stating the type of IMF that is responsible.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "Find the hydrogen atom in CH<sub>3</sub>COOH that is bonded to an oxygen atom, and the oxygen atoms that carry a partial negative charge. Draw the second molecule turned end for end so that each molecule’s O−H hydrogen faces an oxygen atom of the other, mark the attractions with dots as the image does, and name the attraction from what the section says about hydrogen bonded to F, O, or N." }
+      "answer": { "type": "open", "generated_by": "ai", "solution": "The two molecules are held together by two hydrogen bonds. In the dimer the two CH<sub>3</sub>COOH molecules face each other through their COOH groups, one turned end for end relative to the other, with the CH<sub>3</sub> groups pointing outward. The hydrogen atom of the O–H group of each molecule carries a partial positive charge and is attracted to a lone pair on the C=O oxygen atom of the other molecule, which carries a partial negative charge. Drawn flat, the two COOH groups and the two hydrogen bonds form a ring of eight atoms, C=O····H–O–C=O····H–O–, which closes on the first carbon atom, the dotted lines marking the hydrogen bonds. The attraction is hydrogen bonding because each hydrogen atom is bonded to a highly electronegative oxygen atom and is attracted to a lone pair on an oxygen atom of the neighboring molecule." }
     },
     {
       "id": "e18",
@@ -453,7 +453,7 @@
       "place": { "at": "end" },
       "cite": "kmt",
       "prompt": "The density of liquid NH<sub>3</sub> is 0.64 g/mL; the density of gaseous NH<sub>3</sub> at STP is 0.0007 g/mL. Explain the difference between the densities of these two phases.",
-      "answer": { "type": "open", "generated_by": "ai", "solution": "Density is mass divided by volume, and the molecules are the same in both phases. Recall how far apart the particles are in a liquid and in a gas, and reason about how much volume the same mass of ammonia occupies in each phase." }
+      "answer": { "type": "open", "generated_by": "ai", "solution": "Liquid ammonia is about 900 times as dense as the gas at STP (0.64 g/mL ÷ 0.0007 g/mL ≈ 900) because the same molecules are packed far more closely in the liquid. Density is mass divided by volume, and the mass of each molecule is the same in both phases, so the difference comes from how much volume a given number of molecules occupies. In the liquid the IMFs, chiefly hydrogen bonds between NH<sub>3</sub> molecules, keep the molecules in contact with one another, so a given mass occupies a small volume. In the gas the kinetic energies of the molecules overcome these attractions, and the molecules are widely separated, with mostly empty space between them, so the same mass of ammonia spreads over a volume roughly 900 times larger." }
     },
     {
       "id": "e20",

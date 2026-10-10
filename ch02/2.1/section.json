@@ -260,7 +260,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Compare the total mass before the change with the total mass after it. Ask what must be true of the atoms themselves if the mass of the products adds up to the mass of the calcium carbonate that was heated, and then find the postulate among the five that says the same thing about atoms in a chemical change."
+    "solution": "The observation is consistent with the postulate that atoms are neither created nor destroyed during a chemical change, but are instead rearranged to yield substances that are different from those present before the change. The products have a total mass of 44 g + 56 g = 100 g, exactly the mass of the calcium carbonate that was heated. Every calcium, carbon and oxygen atom in the calcium carbonate is still present afterward, rearranged into carbon dioxide and calcium oxide, and atoms of each element have a fixed mass, so the total mass cannot change. That unchanged total is the law of conservation of matter, which this postulate explains."
    }
   },
   {
@@ -292,7 +292,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Work out the mass of carbon per gram of hydrogen for each compound, as Example 2.2 does. Two compounds with the same ratio are consistent with the law of definite proportions and may be samples of the same substance, although, as the section notes, the same ratio does not prove they are. Two compounds with different ratios are different substances, and if the ratio of their two ratios is a small whole-number ratio, the pair is an example of the law of multiple proportions. Compare all three pairs before deciding whether the data show one law, the other, both, or neither."
+    "solution": "The data provide examples of both laws. The mass of carbon per gram of hydrogen is 1.776 g / 0.148 g = 12.0 g for X, 1.974 g / 0.329 g = 6.00 g for Y, and 7.812 g / 0.651 g = 12.0 g for Z. X and Z have the same ratio of carbon to hydrogen by mass, which is what the law of definite proportions requires of two samples of one compound, so X and Z may be the same compound; an equal mass ratio alone does not prove it, since different compounds can share one. Y has a different ratio, so it is a different compound from X and Z. For a fixed mass of hydrogen, the masses of carbon in X and in Y stand in the ratio 12.0 : 6.00 = 2 : 1, a ratio of small, whole numbers, so X and Y, and likewise Z and Y, are an example of the law of multiple proportions. X and Z contain twice as much carbon per gram of hydrogen as Y does."
    }
   }
  ],

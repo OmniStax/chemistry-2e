@@ -473,7 +473,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Find each of the five elements in the periodic table. The radius increases as we move down a group, because each step adds a shell farther from the nucleus, and it decreases as we move from left to right across a period, because the effective nuclear charge increases. The largest atom is therefore the one that lies farthest down and farthest to the left of the five."
+    "solution": "Rb has the largest atomic radius. Radius increases down a group, because each step adds a shell with a larger principal quantum number, and it decreases from left to right across a period, because <em>Z</em><sub>eff</sub> increases and draws the valence electrons closer to the nucleus. Li, N and F lie in period 2, while Rb and I lie in period 5, so Rb and I have an extra three shells and are larger than the other three. Rb is in group 1 and I in group 17 of the same period, so Rb, with the smaller effective nuclear charge, is the larger of the two. The covalent radii in Figure 6.30 agree: Rb 265 pm, Li 167 pm, I 133 pm, N 71 pm and F 64 pm."
    }
   },
   {
@@ -513,7 +513,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The first ionization energy generally decreases down a group, since the most loosely bound electron is farther from the nucleus, and increases across a period, since the effective nuclear charge increases. Look for the element of the five whose valence electron is farthest from the nucleus and least strongly held, which is the one lowest in the table and farthest to the left."
+    "solution": "Cs has the smallest first ionization energy. $\\kIE_{1}$ decreases down a group, because the outermost electron lies in a shell farther from the nucleus and is held less strongly, and it increases across a period as <em>Z</em><sub>eff</sub> increases. Cs lies in group 1 like Li, but five periods lower, in period 6, so its 6<em>s</em> electron is the farthest from the nucleus of the five and feels the weakest pull. N and F are in period 2 to the right of Li, and I is in group 17, so all three hold their electrons more tightly. Figure 6.34 gives $\\kIE_{1}$ = 380 kJ/mol for Cs, against 520 kJ/mol for Li, 1010 kJ/mol for I, 1400 kJ/mol for N and 1680 kJ/mol for F."
    }
   },
   {
@@ -545,7 +545,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Three of these elements, Mg, Si and S, lie in period 3, and the first ionization energy generally increases across a period, so place them in the order in which they stand from left to right. Oxygen lies above sulfur in group 16, and the first ionization energy decreases down a group, so oxygen goes above sulfur. Check the order against the values in Figure 6.34."
+    "solution": "The order of increasing first ionization energy is Mg &lt; Si &lt; S &lt; O. Mg, Si and S lie in period 3, in groups 2, 14 and 16, and $\\kIE_{1}$ generally increases from left to right across a period because <em>Z</em><sub>eff</sub> increases and the valence electrons are held more tightly, so Mg &lt; Si &lt; S. Oxygen lies directly above sulfur in group 16; its valence electrons are in the <em>n</em> = 2 shell, closer to the nucleus than the <em>n</em> = 3 electrons of sulfur, so O has the larger $\\kIE_{1}$ and comes last. Figure 6.34 confirms the order: Mg 730 kJ/mol, Si 780 kJ/mol, S 1000 kJ/mol and O 1310 kJ/mol."
    }
   },
   {
@@ -577,7 +577,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Compare the elements two at a time. Si and Cl lie in period 3, and the radius decreases across a period, so the one farther to the right is the smaller. Ca and Sr lie in group 2, and the radius increases down a group, so the one lower in the group is the larger. Ca, in period 4, is also larger than Si and Cl in period 3, since it has an additional shell. Putting these comparisons together gives the order."
+    "solution": "The order of increasing radius is Cl &lt; Si &lt; Ca &lt; Sr. Si and Cl lie in period 3, and radius decreases across a period as <em>Z</em><sub>eff</sub> increases, so Cl, in group 17, is smaller than Si, in group 14. Ca and Sr lie in group 2, and radius increases down a group as the principal quantum number of the valence shell increases, so Sr, in period 5, is larger than Ca, in period 4. Ca has its valence electrons in the <em>n</em> = 4 shell, one shell beyond those of Si and Cl, and it is also far to the left of them, so it is larger than both. The covalent radii in Figure 6.30 agree: Cl 99 pm, Si 111 pm, Ca 176 pm and Sr 195 pm."
    }
   },
   {
@@ -609,7 +609,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the electron configuration of each ion to find its outermost shell: an ion whose electrons occupy a higher <em>n</em> level is larger. Cations are smaller than their parent atoms and anions larger. Where two ions have outer electrons in the same shell, or the same number of electrons, the one with the greater nuclear charge draws its electrons in more tightly and is the smaller."
+    "solution": "The order of increasing radius is Li<sup>+</sup> &lt; Mg<sup>2+</sup> &lt; Br<sup>–</sup> &lt; Te<sup>2–</sup>. The electron configurations show the outermost shell of each ion: Li<sup>+</sup> is 1<em>s</em><sup>2</sup>, with <em>n</em> = 1; Mg<sup>2+</sup> is 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>, with <em>n</em> = 2; Br<sup>–</sup> is [Ar]3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>, with <em>n</em> = 4; and Te<sup>2–</sup> is [Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>6</sup>, with <em>n</em> = 5. Each increase in the principal quantum number of the outermost electrons places them farther from the nucleus, so the size follows <em>n</em>. The two cations have lost their valence electrons and are smaller than their parent atoms, while the two anions have gained electrons, which increases the repulsion among them and lowers <em>Z</em><sub>eff</sub> per electron, so they are larger than their parent atoms."
    }
   },
   {
@@ -641,7 +641,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Sulfur has 16 electrons, so S<sup>2+</sup> has 14. For each species, take the atomic number of the element and subtract the charge to count its electrons, then pick every species that also has 14 electrons in the same configuration."
+    "solution": "Cl<sup>3+</sup> and Si are isoelectronic with S<sup>2+</sup>. Sulfur has 16 electrons, so S<sup>2+</sup> has 14, with the configuration [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>. Counting the electrons of each species as its atomic number minus its charge gives Si<sup>4+</sup>, 14 − 4 = 10; Cl<sup>3+</sup>, 17 − 3 = 14; Ar, 18; As<sup>3+</sup>, 33 − 3 = 30; Si, 14; and Al<sup>3+</sup>, 13 − 3 = 10. Only Cl<sup>3+</sup> and Si have 14 electrons, and both have the same configuration as S<sup>2+</sup>: a silicon atom is [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>, and removing three 3<em>p</em> electrons from chlorine, [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup>, also leaves [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>. Si<sup>4+</sup> and Al<sup>3+</sup> are isoelectronic with Ne instead."
    }
   },
   {
@@ -673,7 +673,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The reaction is the reverse of the first ionization, X(<em>g</em>) ⟶ X<sup>+</sup>(<em>g</em>) + e<sup>−</sup>, so the energy it releases equals the first ionization energy of the element in size, with the opposite sign. The most exothermic reaction therefore belongs to the element with the largest first ionization energy of the five. Find it from the trends across a period and down a group, or from Figure 6.34. Then name the energy of the reverse process."
+    "solution": "Cl has the most exothermic reaction, releasing 1250 kJ/mol, and the energy of the reaction is the negative of the first ionization energy, −$\\kIE_{1}$. The process $\\text{E}^{+}(g)+\\text{e}^{-}\\longrightarrow\\text{E}(g)$ is the reverse of first ionization, $\\text{E}(g)\\longrightarrow\\text{E}^{+}(g)+\\text{e}^{-}$, so it releases the same energy that ionization absorbs. The element with the largest $\\kIE_{1}$ therefore releases the most energy when its cation captures an electron. Of the five, Na and Rb are in group 1 and Al in group 13, all with low ionization energies, while Cl and I are in group 17; Cl lies above I, with its valence electrons in the smaller <em>n</em> = 3 shell, so it holds them most tightly. Figure 6.34 gives $\\kIE_{1}$ = 1250 kJ/mol for Cl, 1010 kJ/mol for I, 580 kJ/mol for Al, 490 kJ/mol for Na and 400 kJ/mol for Rb."
    }
   },
   {
@@ -705,7 +705,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The three ions are isoelectronic, each with 18 electrons in the configuration [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>, so the difference lies in the nuclei. Count the protons of each (16 for sulfur, 17 for chlorine and 19 for potassium) and ask how strongly each nucleus pulls on the same set of electrons: the greater the nuclear charge, the greater the effective nuclear charge on the outer electrons, and the closer they are drawn to the nucleus."
+    "solution": "The three ions differ in size because their nuclei carry different charges. Each has 18 electrons in the configuration [Ne]3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>, so they are isoelectronic, and for isoelectronic species the number of protons determines the size. S<sup>2–</sup> has 16 protons, Cl<sup>–</sup> has 17 and K<sup>+</sup> has 19. The same set of electrons, with the same shielding, therefore feels a larger <em>Z</em><sub>eff</sub> from the potassium nucleus than from the chlorine nucleus, and the smallest from the sulfur nucleus. The stronger pull draws the electrons closer, so the radius falls as the nuclear charge rises: S<sup>2–</sup> is the largest at 184 pm, Cl<sup>–</sup> is 181 pm, and K<sup>+</sup>, with two more protons than chlorine, is the smallest at 138 pm."
    }
   },
   {

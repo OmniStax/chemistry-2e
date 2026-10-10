@@ -184,7 +184,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for each part, assign the oxidation number of the element other than oxygen on both sides of the arrow. An increase in oxidation number is oxidation and a decrease is reduction; as a check, balance the half-reaction for charge and see on which side the electrons appear, products for oxidation and reactants for reduction."
+    "solution": "(a) Oxidation. Chlorine goes from −1 in Cl<sup>−</sup> to 0 in Cl<sub>2</sub>; its oxidation number increases, and the balanced half-reaction, 2Cl<sup>−</sup> ⟶ Cl<sub>2</sub> + 2e<sup>−</sup>, has the electrons among the products.<br>(b) Oxidation. Manganese goes from +2 in Mn<sup>2+</sup> to +4 in MnO<sub>2</sub>, since the two oxygen atoms contribute −4 to a neutral compound.<br>(c) Oxidation. Hydrogen goes from 0 in H<sub>2</sub> to +1 in H<sup>+</sup>, and the half-reaction H<sub>2</sub> ⟶ 2H<sup>+</sup> + 2e<sup>−</sup> releases electrons.<br>(d) Reduction. Nitrogen goes from +5 in NO<sub>3</sub><sup>−</sup> (where three oxygen atoms contribute −6 to an ion of charge −1) to +2 in NO; its oxidation number decreases, and balancing in acid gives NO<sub>3</sub><sup>−</sup> + 4H<sup>+</sup> + 3e<sup>−</sup> ⟶ NO + 2H<sub>2</sub>O, with the electrons among the reactants."
    }
   },
   {
@@ -252,7 +252,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: compare the concentrations of H<sup>+</sup> and OH<sup>−</sup> in an acidic solution, using the ion product of water from the chapter on acid-base equilibria, and ask what would happen to any hydroxide ion formed in a solution that holds an excess of hydrogen ion. The keyed answer to the next exercise makes the same argument for basic solution."
+    "solution": "In an acidic solution the concentration of hydrogen ion far exceeds that of hydroxide ion, and the two are tied together by the ion product of water, [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>] = 1.0 × 10<sup>−14</sup> at 25 °C; at pH 1, for instance, [OH<sup>−</sup>] is only 1 × 10<sup>−13</sup> <em>M</em>. Any hydroxide ion that a half-reaction produced would at once be neutralized by the excess hydrogen ion, H<sup>+</sup> + OH<sup>−</sup> ⟶ H<sub>2</sub>O, so OH<sup>−</sup> is not a species actually present in significant amounts and cannot be written as a reactant or product. Half-reactions in acidic solution are therefore balanced with the species that are present, H<sub>2</sub>O for oxygen and H<sup>+</sup> for hydrogen."
    }
   },
   {
@@ -286,7 +286,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall that electrons are transferred in a redox reaction, never created or destroyed, so every electron lost in the oxidation half-reaction is gained in the reduction half-reaction. Connect this to step 6 of the half-reaction method and to the rule that the sum of oxidation numbers equals the charge on a species."
+    "solution": "Charge must balance because electrons are neither created nor destroyed in a redox reaction; they are only transferred from the reductant to the oxidant, so every electron lost in the oxidation half-reaction must be gained in the reduction half-reaction. In the half-reaction method this is why the half-reactions are multiplied by factors that make the number of electrons lost equal to the number gained before they are added: the electrons then cancel, and the total charge on the reactant side equals the total charge on the product side. An equation whose charges did not balance would describe electrons appearing from nothing or vanishing, which no real reaction does, just as an equation whose atoms did not balance would describe matter appearing or vanishing."
    }
   }
  ],

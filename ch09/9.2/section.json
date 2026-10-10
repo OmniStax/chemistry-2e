@@ -667,7 +667,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: the air in the tire is a fixed amount of gas in a nearly fixed volume, so Amontons’s law applies. As the sun raises the temperature of the air in the tire, its pressure rises in proportion to its kelvin temperature; if the pressure climbs past what the tire can hold, the tire bursts. Compare the hair spray can of Example 9.5."
+        "solution": "The sun heats the air inside the tire, and its pressure rises until the tire can no longer hold it. The tire holds a fixed amount of air in a volume that can grow very little, so Amontons’s law applies: at constant volume and amount, the pressure is directly proportional to the kelvin temperature, $\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}$. A dark tire in the sun on a hot day can warm from 20 °C to 50 °C, that is from 293 K to 323 K, which raises the pressure by a factor of $\\frac{323\\;\\text{K}}{293\\;\\text{K}}=1.10$, ten percent. A tire already pumped close to its limit is pushed past it, and it bursts, just as the heated can of hair spray in Example 9.5 may."
       }
     },
     {
@@ -699,7 +699,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: (a) two quantities are inversely proportional when one rises by the same factor that the other falls, so that their product stays constant; halving the volume doubles the pressure, and PV = k. (b) The temperature and the amount of gas must not change, as the section says when it states the law for a given amount of gas held at constant temperature."
+        "solution": "(a) Two quantities are inversely proportional when increasing one by some factor decreases the other by the same factor, so that their product stays constant: $\\kP=\\frac{k}{\\kV}$, or $\\kP\\kV=k$. Halving the volume of the gas doubles its pressure, and tripling the volume reduces the pressure to one third. (b) The other things are the temperature of the gas and the amount of gas. Boyle’s law holds for a given amount of gas held at constant temperature; heating the gas or adding more of it while the volume changes would change the pressure for reasons other than the change in volume."
       }
     },
     {
@@ -731,7 +731,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: the graph plots the volume of one mole of methane against its kelvin temperature at 1 atm, a straight line through the origin. By Avogadro’s law, twice the moles occupy twice the volume at every temperature and pressure, so every point of the line would sit twice as high and the line would be twice as steep, still passing through the origin at absolute zero."
+        "solution": "The line would be twice as steep: at every temperature the volume would be twice as great, and the line would still pass through the origin at absolute zero. The graph plots the volume of 1 mole of methane against its kelvin temperature at a constant pressure of 1 atm. By the ideal gas law, $\\kV=\\frac{\\kn R}{\\kP}\\kT$, so the slope of the line is $\\frac{\\kn R}{\\kP}$, and doubling $\\kn$ at the same pressure doubles the slope; this is Avogadro’s law, the volume being directly proportional to the number of moles. At 273 K, 1 mol occupies 22.4 L and 2 mol occupy 44.8 L. The line would still stop at 111 K, where methane liquefies at 1 atm whatever the amount."
       }
     },
     {
@@ -763,7 +763,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: the figure gives pressures and volumes at room temperature. The ideal gas law, PV = nRT, turns a pressure, a volume and a temperature into an amount in moles, so you need the temperature of the sample. To turn that amount into a mass, multiply by the molar mass of air."
+        "solution": "The temperature of the sample and the molar mass of air. The figure gives the pressure and volume of the sample at room temperature but not the exact temperature, and the ideal gas law needs all three to give the amount: $\\kn=\\frac{\\kP\\kV}{R\\kT}$. The mass is then the amount times the molar mass, $\\km=\\kn\\kMM$, and for air the molar mass is the average for its mixture of mostly nitrogen and oxygen, about 29 g/mol. If the sample were at 25 °C, for instance, the point at 15.0 mL and 13.0 psi (0.885 atm) would give $\\kn=\\frac{(0.885\\;\\text{atm})(0.0150\\;\\text{L})}{(0.08206\\;\\text{L atm mol}^{-1}\\text{K}^{-1})(298\\;\\text{K})}=5.43\\times10^{-4}\\;\\text{mol}$, and a mass of $(5.43\\times10^{-4}\\;\\text{mol})(29\\;\\text{g/mol})=0.016\\;\\text{g}$."
       }
     },
     {
@@ -975,7 +975,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: by Avogadro’s law, equal volumes of gases at the same temperature and pressure contain the same number of molecules, so a liter of methane and a liter of hydrogen at STP hold the same number of molecules. Each methane molecule carries four hydrogen atoms and each hydrogen molecule carries two, so the liter of methane holds twice as many hydrogen atoms."
+        "solution": "Because the two liters hold the same number of molecules, and each methane molecule carries four hydrogen atoms where each hydrogen molecule carries two. Avogadro’s law says that equal volumes of gases at the same temperature and pressure contain the same number of molecules, whatever the gas. At STP 1 mol of any gas occupies 22.4 L, so each liter holds $\\frac{1\\;\\text{L}}{22.4\\;\\text{L/mol}}=0.0446$ mol of molecules. The liter of CH<sub>4</sub> then contains $4\\times0.0446=0.178$ mol of hydrogen atoms, and the liter of H<sub>2</sub> contains $2\\times0.0446=0.0893$ mol, so the methane holds twice as many hydrogen atoms."
       }
     },
     {
@@ -1040,7 +1040,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: at constant volume and amount, Amontons’s law makes the pressure directly proportional to the kelvin temperature, so doubling the kelvin temperature doubles the pressure. Note that the doubling must be on the kelvin scale; doubling a Celsius reading is not a doubling of the temperature."
+        "solution": "The pressure doubles. At constant volume and a fixed amount of gas, Amontons’s law makes the pressure directly proportional to the kelvin temperature, $\\frac{\\kPone}{\\kTone}=\\frac{\\kPtwo}{\\kTtwo}$, so $\\kPtwo=\\kPone\\frac{\\kTtwo}{\\kTone}=2\\kPone$ when $\\kTtwo=2\\kTone$. A gas at 1.00 atm and 300 K heated to 600 K, for instance, reaches 2.00 atm. The doubling must be on the kelvin scale: warming a gas from 20 °C to 40 °C takes it only from 293 K to 313 K, and raises the pressure by a factor of 1.07."
       }
     },
     {

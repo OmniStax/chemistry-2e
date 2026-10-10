@@ -407,7 +407,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: picture the two flasks of Figure 16.4 as the two boxes of Figure 16.8 and the gas molecules as the particles. Ask which distribution the gas is in while it is held in one flask, which distribution it moves toward once the valve is opened, and how $W$ changes on the way. Then set that beside the change from (b) to (d), in which the number of microstates is the same before and after, and say what each change means for $\\kdS$."
+    "solution": "The gas expanding between the two flasks of Figure 16.4 is a change toward a more probable distribution, which the change from (b) to (d) is not. With all the gas held in one flask, the system resembles distribution (a) of Figure 16.8, every particle in one box, which for four particles has $W = 1$. Opening the valve lets the molecules spread toward the even distribution (c), the one with the most microstates ($W = 6$), so $\\kdS = k\\;\\text{ln}\\;\\frac{W_{\\text{f}}}{W_{\\text{i}}} &gt; 0$ and the expansion is spontaneous; for moles of gas the even distribution is so overwhelmingly probable that the gas never gathers back into one flask. Distributions (b) and (d) each have four microstates, so the change between them gives $\\kdS = k\\;\\text{ln}\\;\\frac{4}{4} = 0$. Reversing an uneven split leaves the arrangement no more probable, so no entropy increase drives it; only a change toward the even spread, like the gas filling both flasks, raises the entropy."
    }
   },
   {
@@ -462,7 +462,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: in each set, find what the members share and what differs. Where all are gases, compare the number of atoms in each particle and its mass, since more atoms give more ways to vibrate and heavier particles more entropy at one temperature. Where one substance appears in three phases, use $\\kSsolid < \\kSliquid < \\kSgas$."
+    "solution": "(a) H<sub>2</sub>(<em>g</em>) &lt; HBr(<em>g</em>) &lt; HBrO<sub>4</sub>(<em>g</em>). All three are gases at one temperature, so the ranking follows molecular size and mass: HBr has as many atoms as H<sub>2</sub> but is much heavier, and the six-atom HBrO<sub>4</sub> molecule has the most ways to vibrate and rotate and so the most microstates.<br>(b) H<sub>2</sub>O(<em>s</em>) &lt; H<sub>2</sub>O(<em>l</em>) &lt; H<sub>2</sub>O(<em>g</em>). One substance in three phases follows $\\kSsolid &lt; \\kSliquid &lt; \\kSgas$, since the particles gain freedom of motion from solid to liquid to gas.<br>(c) He(<em>g</em>) &lt; Cl<sub>2</sub>(<em>g</em>) &lt; P<sub>4</sub>(<em>g</em>). The single, light helium atom can only move from place to place, the diatomic Cl<sub>2</sub> molecule can also rotate and vibrate, and the heavier four-atom P<sub>4</sub> molecule has still more vibrational motions, so the number of microstates rises in that order."
    }
   },
   {
@@ -496,7 +496,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: both processes start from the same solid at the same temperature, so compare only where the particles end up. Ask whether the freedom of motion, and so the number of microstates, grows or shrinks in each, and use the order $\\kSsolid < \\kSliquid < \\kSgas$ to judge which final state lies farther above the solid."
+    "solution": "Δ<em>S</em> is positive for both processes, and its magnitude is greater for sublimation. In each, the iodine molecules leave the ordered solid, where they can only vibrate about fixed positions, for a phase in which they move more freely, so the number of microstates grows and $\\kdS &gt; 0$. Both start from the same solid at the same temperature, so the size of the change depends on the final state. Since $\\kSsolid &lt; \\kSliquid &lt; \\kSgas$, and the gas, with its molecules far apart and moving through the whole container, lies much farther above the solid than the liquid does, the entropy increase for I<sub>2</sub>(<em>s</em>) ⟶ I<sub>2</sub>(<em>g</em>) is larger than for I<sub>2</sub>(<em>s</em>) ⟶ I<sub>2</sub>(<em>l</em>). Sublimation amounts to melting followed by vaporization, so its Δ<em>S</em> is the sum of the two positive entropy changes."
    }
   },
   {
@@ -530,7 +530,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for each process, decide whether the temperature of the substance changes and whether it changes phase, and which phase it ends in. Fog is a cloud of tiny liquid droplets formed from water vapor. Then apply two rules of this section: entropy rises with temperature, and $\\kSsolid < \\kSliquid < \\kSgas$."
+    "solution": "(a) Positive. The ice stays solid but its temperature rises, so its molecules vibrate more energetically, the number of microstates grows, and entropy increases with temperature.<br>(b) Negative. Fog is a cloud of tiny liquid water droplets, so the water vapor in the breath condenses to a liquid, and $\\kSliquid &lt; \\kSgas$.<br>(c) Positive. Melting turns solid water into liquid water, and $\\kSsolid &lt; \\kSliquid$."
    }
   },
   {
@@ -564,7 +564,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: balance the equation with water as a gas, then count the moles of gaseous species on each side. The amount of gas is usually the strongest guide to the sign of $\\kdS$ for a reaction; ask what is left to decide the sign when that count gives no clear direction, and whether the remaining factors, such as the complexity of the molecules, point the same way."
+    "solution": "CH<sub>4</sub>(<em>g</em>) + 2O<sub>2</sub>(<em>g</em>) ⟶ CO<sub>2</sub>(<em>g</em>) + 2H<sub>2</sub>O(<em>g</em>). The sign of Δ<em>S</em> is hard to predict because the usual strongest guide, the change in the amount of gas, gives no direction here: there are 3 mol of gas on each side. The remaining factors give no clear answer either, since each side has three molecules made of nine atoms in all, one five-atom CH<sub>4</sub> and two diatomic O<sub>2</sub> molecules against three triatomic molecules, so the gain or loss of freedom of motion cannot be judged by inspection. Standard entropies settle it: $\\kdSo = [213.8 + 2(188.8)] - [186.3 + 2(205.2)] = -5.3\\;\\text{J/K}$, a change small enough that no qualitative rule could have fixed its sign."
    }
   },
   {

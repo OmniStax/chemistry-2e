@@ -263,7 +263,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: start from the first postulate of collision theory. If neither orientation nor energy turns any collision away, the rate of reaction is set by how often the reactant species meet, so ask what the number of collisions per unit time depends on, such as the concentrations of the reactants."
+    "solution": "The rate is then set by the frequency of collisions, the number of collisions between reactant species per unit time. The first postulate of collision theory states that the reaction rate is proportional to the rate of reactant collisions, $\\text{reaction rate}\\;\\propto \\;\\frac{\\#\\;\\text{collisions}}{\\text{time}}$, and postulates 2 and 3, on orientation and energy, ordinarily turn many collisions away. If every collision reacts, those two factors no longer reduce the rate, and the rate equals the collision rate. That collision rate grows with the concentrations of the reactants, since more reactant molecules in a given volume meet more often, and with the temperature, since faster-moving molecules collide more often."
    }
   },
   {
@@ -295,7 +295,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: use the distribution of molecular energies. Only the molecules whose energy reaches the activation energy can react, so ask how the size of that fraction changes as the activation energy rises or falls, and connect that fraction to the exponential term of the Arrhenius equation."
+    "solution": "The higher the activation energy, the slower the reaction; the lower the activation energy, the faster the reaction. Only molecules whose collisions carry at least the activation energy, $\\kEa$, can react. In the distribution of molecular energies at a given temperature, the molecules with that much energy form the tail of the curve beyond $\\kEa$. A larger $\\kEa$ moves that boundary farther out, so a smaller fraction of molecules qualifies and fewer collisions succeed; a smaller $\\kEa$ leaves a larger fraction adequately energized. The Arrhenius equation, $\\kk=\\kAfreq{e}^{-\\kEa/R\\kT}$, expresses this: the exponential term ${e}^{-\\kEa/R\\kT}$ is the fraction of molecules with sufficient energy, and it falls steeply as $\\kEa$ rises, so the rate constant, and with it the rate, decreases."
    }
   },
   {
@@ -327,7 +327,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: say first which way the rate changes. Then use the energy distribution: at a higher temperature the molecules move faster, so they collide more often and a larger fraction of the collisions carry at least the activation energy. Decide which of the two effects is the larger one by looking at how the shaded tail of the distribution grows."
+    "solution": "An increase in temperature increases the rate of reaction. In terms of collision theory, it has two effects. The molecules move faster, so they collide more often, and a larger fraction of the molecules carry at least the activation energy, $\\kEa$, so a larger share of the collisions lead to reaction. The second effect is by far the larger: at a higher temperature the energy distribution flattens and spreads, and its tail beyond $\\kEa$ grows many times over. For a reaction with $\\kEa$ = 50 kJ/mol, raising the temperature from 300 K to 310 K raises the collision frequency by less than 2%, but the fraction of molecules with sufficient energy, ${e}^{-\\kEa/R\\kT}$, rises by a factor of about 1.9. In the Arrhenius equation this appears as a larger rate constant and a correspondingly faster reaction."
    }
   },
   {
@@ -412,7 +412,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: read the first postulate of collision theory and the proportionality written under it, and find the option that names the same quantity."
+    "solution": "(c) the number of collisions per second. The first postulate of collision theory states that the rate of a reaction is proportional to the rate of reactant collisions, $\\text{reaction rate}\\;\\propto \\;\\frac{\\#\\;\\text{collisions}}{\\text{time}}$, which is the number of collisions per second. The change in free energy and the change in temperature describe the thermodynamics and conditions of the reaction, not how often the reactants meet, and the number of product molecules is an amount, not a rate."
    }
   },
   {
@@ -494,7 +494,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: watch the dot on the reaction diagram as the molecules close in. Its height is the part of the collision energy that has gone into the barrier, so ask where it must stop when the dashed collision energy line meets the curve below the peak, and what the molecules do then. Then raise the energy past the activation energy and follow the dot over the transition state to the products."
+    "solution": "When the collision energy line is below the transition state, the reaction does not occur: the molecules bounce apart unchanged as CO and O<sub>2</sub>. As the molecules close in, their kinetic energy goes into climbing the barrier, so the dot rises only until its height equals the collision energy, where the curve meets the dashed line, and there it turns back. The collision brings less than the activation energy, about 200 kJ/mol for this reaction, so the pair never reaches the transition state and its valence shells cannot penetrate far enough for bonds to rearrange. When the collision energy line is above the transition state, the reaction occurs: the dot passes over the peak, the pair forms the activated complex, and it decays to products, CO<sub>2</sub> and an oxygen atom (<em>AB</em> + <em>C</em>), ending 34 kJ/mol lower than it began. A collision with the carbon end first and with at least the activation energy meets both the orientation and the energy requirements of collision theory, so it succeeds."
    }
   },
   {

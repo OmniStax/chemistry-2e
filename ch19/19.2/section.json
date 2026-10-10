@@ -703,7 +703,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: draw the Lewis structure of the carbonate ion and mark the oxygen atoms that carry lone pairs, since each could be a donor atom. Then use the ion’s trigonal planar shape to ask how many of those oxygen atoms can reach one metal center at the same time, and which of the three options that allows."
+    "solution": "Carbonate can coordinate as a monodentate or a bidentate ligand, but not as a tridentate one. Each of its three oxygen atoms carries lone pairs and can act as a donor atom. The ion is trigonal planar, however, with its oxygen atoms 120° apart and pointing away from one another around the central carbon atom, so all three cannot reach one metal center at the same time. Either one oxygen atom bonds to the metal, or two oxygen atoms bond to it together and close a small four-membered ring with the carbon atom, as in [Co(NH<sub>3</sub>)<sub>4</sub>CO<sub>3</sub>]<sup>+</sup>, where carbonate is bidentate."
    }
   },
   {

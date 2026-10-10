@@ -408,7 +408,7 @@
    "place": { "at": "end" },
    "cite": "cubic-cells",
    "prompt": "Describe the crystal structure of Pt, which crystallizes with four equivalent metal atoms in a cubic unit cell.",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: count the atoms that each of the three cubic unit cells contains, using one-eighth for an atom at a corner, one-half for an atom on a face, and one for an atom wholly inside the cell. Decide which of the simple, body-centered, and face-centered cells contains four atoms, and describe where those atoms sit in the cell." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Platinum crystallizes in a face-centered cubic (FCC) structure, which is cubic closest packing. Of the three cubic unit cells, only the face-centered one contains four atoms: an atom at each of the eight corners contributes one-eighth $(8\\;\\times \\;\\frac{1}{8}\\;=1$ atom) and an atom at the center of each of the six faces contributes one-half $(6\\;\\times \\;\\frac{1}{2}\\;=3$ atoms), for a total of four. A simple cubic cell holds one atom and a body-centered cubic cell two. In the Pt cell, the atoms at the corners touch the atoms in the centers of the adjacent faces along the face diagonals, all atoms have identical environments, and each touches 12 neighbors, so platinum atoms fill 74% of the volume of the crystal." }
   },
   {
    "id": "e3",
@@ -428,7 +428,7 @@
    "place": { "at": "end" },
    "cite": "closest-packing",
    "prompt": "What is the coordination number of an aluminum atom in the face-centered cubic structure of aluminum?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: recall that the face-centered cubic structure is the same as cubic closest packing. Count the atoms that one atom touches in its own close-packed layer, in the layer above, and in the layer below, and add them." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "The coordination number is 12. The face-centered cubic structure of aluminum is cubic closest packing, made of repeating layers of hexagonally arranged atoms stacked ABCABC⋯. Each aluminum atom touches six atoms in its own layer, three atoms in the layer above that sit in the hollows around it, and three in the layer below: 6 + 3 + 3 = 12 nearest neighbors." }
   },
   {
    "id": "e5",
@@ -448,7 +448,7 @@
    "place": { "at": "end" },
    "cite": "closest-packing",
    "prompt": "Nickel metal crystallizes in a cubic closest packed structure. What is the coordination number of a nickel atom?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: in either kind of closest packing, each atom touches atoms in its own layer and in the layers directly above and below it. Count the contacts in each of the three layers and add them; the count does not depend on whether the third layer is type A or type C." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "The coordination number is 12. In cubic closest packing, each nickel atom lies in a layer of hexagonally arranged atoms and touches six atoms in its own layer. The layer above rests in the hollows of this layer, so three of its atoms touch the nickel atom, and three atoms of the layer below touch it in the same way. The total is 6 + 3 + 3 = 12. The count is the same in hexagonal closest packing, because the third layer’s position, type A or type C, changes only which hollows its atoms occupy and not how many atoms touch each atom." }
   },
   {
    "id": "e7",
@@ -498,7 +498,7 @@
    "place": { "at": "end" },
    "cite": "ex-zns",
    "prompt": "A compound of cadmium, tin, and phosphorus is used in the fabrication of some semiconductors. It crystallizes with cadmium occupying one-fourth of the tetrahedral holes and tin occupying one-fourth of the tetrahedral holes in a closest packed array of phosphide ions. What is the formula of the compound? Explain your answer.",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: a closest-packed array has two tetrahedral holes for each anion. Multiply the fraction of the holes each cation occupies by two to find the number of that cation per phosphide ion, then write the ratio of cadmium to tin to phosphorus in the smallest whole numbers." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "The formula is CdSnP<sub>2</sub>. A closest-packed array has two tetrahedral holes for each anion, here each phosphide ion. Cadmium occupies one-fourth of these holes, so there are $\\frac{1}{4}\\;\\times \\;2,$ or $\\frac{1}{2}$, cadmium ion per phosphide ion, and tin, also in one-fourth of the holes, gives $\\frac{1}{2}$ tin ion per phosphide ion. The ratio Cd:Sn:P is $\\frac{1}{2}$:$\\frac{1}{2}$:1, and the simplest whole-number ratio is 1:1:2, giving CdSnP<sub>2</sub>. Together the cations fill one-half of the tetrahedral holes, as zinc does in ZnS. The charges balance with Cd<sup>2+</sup> and Sn<sup>4+</sup>: 2+ plus 4+ is 6+, and two P<sup>3−</sup> ions give 6−." }
   },
   {
    "id": "e12",
@@ -518,7 +518,7 @@
    "place": { "at": "end" },
    "cite": "ex-al2o3",
    "prompt": "A compound containing zinc, aluminum, and sulfur crystallizes with a closest-packed array of sulfide ions. Zinc ions are found in one-eighth of the tetrahedral holes and aluminum ions in one-half of the octahedral holes. What is the empirical formula of the compound?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: for each sulfide ion there are two tetrahedral holes and one octahedral hole. Find the number of zinc ions per sulfide ion from the tetrahedral holes and the number of aluminum ions per sulfide ion from the octahedral holes, then scale the three numbers to the smallest whole-number ratio." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "The empirical formula is ZnAl<sub>2</sub>S<sub>4</sub>. A closest-packed array of sulfide ions has two tetrahedral holes and one octahedral hole for each sulfide ion. Zinc occupies one-eighth of the tetrahedral holes, so there are $\\frac{1}{8}\\;\\times \\;2,$ or $\\frac{1}{4}$, zinc ion per sulfide ion. Aluminum occupies one-half of the octahedral holes, so there are $\\frac{1}{2}\\;\\times \\;1,$ or $\\frac{1}{2}$, aluminum ion per sulfide ion. The ratio Zn:Al:S is $\\frac{1}{4}$:$\\frac{1}{2}$:1; multiplying by four gives 1:2:4, so the formula is ZnAl<sub>2</sub>S<sub>4</sub>. The charges balance: one Zn<sup>2+</sup> and two Al<sup>3+</sup> give 8+, and four S<sup>2−</sup> give 8−." }
   },
   {
    "id": "e14",
@@ -538,7 +538,7 @@
    "place": { "at": "end" },
    "cite": "octahedral",
    "prompt": "Which of the following elements reacts with sulfur to form a solid in which the sulfur atoms form a closest-packed array with all of the octahedral holes occupied: Li, Na, Be, Ca, or Al?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: with all of the octahedral holes occupied, there is one cation for each sulfide ion, so the formula must be a 1:1 ratio. Use the charge of each element’s ion and the 2− charge of the sulfide ion to decide which of the five would form a sulfide with one cation per anion." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Calcium. There is one octahedral hole per anion in a closest-packed array, so with all of the octahedral holes occupied the compound has one cation per sulfide ion, a 1:1 ratio, as in NiO, MnS and NaCl. A 1:1 sulfide needs a 2+ cation to balance S<sup>2−</sup>. Li and Na form Li<sub>2</sub>S and Na<sub>2</sub>S, with two cations per anion (these fill the tetrahedral holes instead), and Al forms Al<sub>2</sub>S<sub>3</sub>, so only Be and Ca give a 1:1 sulfide. Between those two, the relative sizes of the ions decide the hole. Ca<sup>2+</sup> (about 100 pm) is close in size to Na<sup>+</sup> (102 pm), which fills the octahedral holes in NaCl, so CaS takes the same structure. Be<sup>2+</sup> is so small (about 45 pm) that it fits the smaller tetrahedral holes, and BeS crystallizes with Be<sup>2+</sup> in one-half of the tetrahedral holes, like ZnS." }
   },
   {
    "id": "e16",
@@ -558,7 +558,7 @@
    "place": { "at": "end" },
    "cite": "ionic-cells",
    "prompt": "Explain why the chemically similar alkali metal chlorides NaCl and CsCl have different structures, whereas the chemically different NaCl and MnS have the same structure.",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: the text names the two principal factors that decide an ionic structure, the relative sizes of the ions and the ratio of their numbers. Compare the radius of the cation with the radius of the anion in NaCl and in CsCl, and think about which hole each cation fits. Then ask what NaCl and MnS share in their ratio of ions and in the relative sizes of their ions, whatever their chemistry." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "Structure depends on the relative sizes of the ions and the ratio of their numbers, not on their chemical similarity. NaCl and CsCl both have a 1:1 ratio, but their cations differ in size. Na<sup>+</sup> (102 pm) is much smaller than Cl<sup>−</sup> (181 pm), so it fits the octahedral holes of an FCC array of chloride ions and each ion has six neighbors. Cs<sup>+</sup> (174 pm) is almost as large as Cl<sup>−</sup> and is too large for an octahedral hole, so the chloride ions adopt the more open simple cubic array and each cesium ion sits in a cubic hole with eight neighbors. NaCl and MnS are chemically different, but both have a 1:1 ratio of cations to anions and in both the cation is much smaller than the anion and fits an octahedral hole, so both crystallize with all of the octahedral holes in a closest-packed array of anions filled." }
   },
   {
    "id": "e18",
@@ -578,7 +578,7 @@
    "place": { "at": "end" },
    "cite": "ionic-cells",
    "prompt": "Rubidium iodide crystallizes with a cubic unit cell that contains iodide ions at the corners and a rubidium ion in the center. What is the formula of the compound?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "Suggested approach: count the share of each ion that lies inside the cell, one-eighth for an ion at a corner and all of an ion at the center, as the text does for cesium chloride. The ratio of the two counts gives the formula." }
+   "answer": { "type": "open", "generated_by": "ai", "solution": "The formula is RbI. Each of the eight iodide ions at the corners of the cubic cell is shared among eight cells, so the cell contains $8\\;\\times \\;\\frac{1}{8}\\;=1$ iodide ion. The rubidium ion at the center lies wholly inside the cell, so the cell contains one rubidium ion. One Rb<sup>+</sup> for each I<sup>−</sup> gives a 1:1 ratio, which balances the charges, and the formula RbI. This is the same arrangement as in cesium chloride, with a cation in the cubic hole of a simple cubic array of anions." }
   },
   {
    "id": "e20",

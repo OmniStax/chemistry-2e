@@ -688,7 +688,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: sort each term by asking whether it can be observed or measured in a laboratory sample, such as a temperature, a pressure, a concentration or a flow of solvent. Otherwise it describes what the individual atoms, molecules and ions are doing, such as the attractions between particles and the particles themselves. Boiling point elevation, Henry’s law, molarity and osmosis are measured on the bulk solution; hydrogen bonds, ion-dipole attractions and solvated ions describe particles. For nonelectrolyte and nonstoichiometric compound, consider whether the classification rests on an observation, such as conductivity or composition, or on a picture of the particles."
+        "solution": "Boiling point elevation, Henry’s law, molarity, nonelectrolyte, nonstoichiometric compound and osmosis belong to the macroscopic domain; hydrogen bond, ion-dipole attraction and solvated ion belong to the microscopic domain. A boiling point elevation is a temperature measured on a bulk sample, Henry’s law relates a measured gas pressure to a measured concentration, molarity is a concentration found from a mass and a volume, and osmosis is the observed net flow of solvent through a membrane. A nonelectrolyte is identified by measuring the electrical conductance of its solution, and a nonstoichiometric compound by analyzing the composition of a sample, so both classifications rest on laboratory observations. Hydrogen bonds and ion-dipole attractions are forces between individual molecules and ions, and a solvated ion is a single ion surrounded by solvent molecules; none of these can be seen or measured directly in a sample."
       }
     },
     {
@@ -704,7 +704,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: by Raoult’s law, the vapor pressure depends on the mole fraction of water in the liquid. For pure water the mole fraction stays 1 as it evaporates, so its line stays flat at the vapor pressure of water. The sugar solution starts below it, since the sugar lowers the mole fraction of water, and as water leaves and the sugar stays behind, the solution grows more concentrated, so its line slopes gently downward over time."
+        "solution": "The graph has two lines. For pure water the pressure is a horizontal line at the vapor pressure of pure water, $\\kPsolvstar$, for the whole time. For the sugar solution the line starts below it and slopes gently downward as time passes. By Raoult’s law, $\\kPsoln={X}_{\\text{solvent}}\\kPsolvstar$. Pure water has a mole fraction of water of 1 however much evaporates, so its vapor pressure does not change. Sugar is nonvolatile, so as the solution evaporates only water leaves; the same amount of sugar is left in less water, its mole fraction rises and that of water falls, and the vapor pressure falls with it. For example, a solution that starts with 0.98 mol water per 0.02 mol sugar has $\\kPsoln=0.98\\kPsolvstar$; at half its volume it holds 0.49 mol water per 0.02 mol sugar, so ${X}_{\\text{solvent}}=0.49/0.51=0.96$ and $\\kPsoln=0.96\\kPsolvstar$."
       }
     },
     {
@@ -905,7 +905,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: freezing point depression depends on the number of solute particles per kilogram of solvent, not on their identity. Compare how many particles one formula unit of NaCl gives in water with how many one molecule of glycerin, a nonelectrolyte, gives, and then consider why the measured effect of NaCl falls a little short of twice as large, as the van’t Hoff factors of Table 11.3 show."
+        "solution": "Freezing point depression is a colligative property: it depends on the number of solute particles per kilogram of solvent, not on their identity. Glycerin is a nonelectrolyte, so 1 mol of it dissolves as 1 mol of molecules and gives a 1 <em>m</em> solution of particles, lowering the freezing point by $\\kdTf=\\kKf\\kmolal=1.86\\;{}^{\\circ}\\text{C}$. Sodium chloride is a strong electrolyte that dissociates into Na<sup>+</sup> and Cl<sup>−</sup>, so 1 mol of NaCl yields nearly 2 mol of ions, and the depression is nearly twice as large, close to 3.7 °C. It falls a little short of twice because the ions are not totally independent particles: residual interionic attractions, and ion pairs in which a Na<sup>+</sup> and a Cl<sup>−</sup> ion move together, make the van’t Hoff factor of NaCl less than its predicted value of 2, as the measured value of 1.9 in Table 11.3 shows."
       }
     },
     {
@@ -1033,7 +1033,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: the freezing point is lowered in proportion to the molality of all solute particles, so multiply each molality by the number of particles one formula unit gives in water, assuming complete dissociation for the ionic compounds and none for ethanol and carbon dioxide. The solution with the fewest particles per kilogram of water has the highest freezing point, and the one with the most has the lowest."
+        "solution": "In order of decreasing freezing point: 0.01 <em>m</em> CO<sub>2</sub> &gt; 0.1 <em>m</em> C<sub>2</sub>H<sub>5</sub>OH &gt; 0.15 <em>m</em> NaCl &gt; 0.1 <em>m</em> Na<sub>3</sub>PO<sub>4</sub> &gt; 0.2 <em>m</em> CaCl<sub>2</sub>. The depression $\\kdTf=\\kKf\\kmolal$ is proportional to the molality of all solute particles. CO<sub>2</sub> and ethanol are nonelectrolytes and give 0.01 <em>m</em> and 0.1 <em>m</em> particles. Assuming complete dissociation, NaCl gives 2 ions per formula unit, 2 × 0.15 <em>m</em> = 0.30 <em>m</em>; Na<sub>3</sub>PO<sub>4</sub> gives 3Na<sup>+</sup> and $\\text{PO}_{4}{}^{3-}$, 4 × 0.1 <em>m</em> = 0.4 <em>m</em>; and CaCl<sub>2</sub> gives Ca<sup>2+</sup> and 2Cl<sup>−</sup>, 3 × 0.2 <em>m</em> = 0.6 <em>m</em>. With $\\kKf=1.86\\;{}^{\\circ}\\text{C}\\;{m}^{−1}$ for water, the freezing points are about −0.02 °C, −0.19 °C, −0.56 °C, −0.74 °C and −1.1 °C."
       }
     },
     {
@@ -1083,7 +1083,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: compute the molality of CdI<sub>2</sub> from its mass, its molar mass and the mass of water, and the boiling point elevation it would give as a nonelectrolyte with <em>K</em><sub>b</sub> for water from Table 11.2. Dividing the measured elevation by that value gives an apparent van’t Hoff factor; compare it with the 3 that complete dissociation into Cd<sup>2+</sup> and 2I<sup>−</sup> would give, and consider what a value near 1 says about how far the salt dissociates in water."
+        "solution": "The salt hardly dissociates: its solution behaves as though nearly every formula unit of CdI<sub>2</sub> stays together as one particle. The molar mass of CdI<sub>2</sub> is 366.2 g/mol, so 5.6977 g is 0.015558 mol, and in 0.04469 kg of water the molality is 0.015558 mol / 0.04469 kg = 0.3481 <em>m</em>. As a nonelectrolyte it would raise the boiling point by $\\kdTb=\\kKb\\kmolal=0.512\\;{}^{\\circ}\\text{C}\\;{m}^{−1}\\times 0.3481\\;m=0.178\\;{}^{\\circ}\\text{C}$. The apparent van’t Hoff factor is the measured elevation divided by this value, <em>i</em> = 0.181 °C / 0.178 °C = 1.02. Complete dissociation into Cd<sup>2+</sup> and 2I<sup>−</sup> would give <em>i</em> = 3 and an elevation near 0.535 °C. A value so close to 1 means CdI<sub>2</sub> is a weak electrolyte in water, present mostly as undissociated CdI<sub>2</sub> units with very few free ions."
       }
     },
     {
@@ -1198,7 +1198,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: air dissolves in water, and any dissolved substance is a solute. Recall from the phase diagram of a solution how a solute moves the solid–liquid curve and lowers the liquid–vapor curve, and so what it does to the point where the three curves meet."
+        "solution": "Air dissolves in water, and the dissolved gases are a solute that would shift the triple point away from 273.16 K. Like any solute, dissolved air lowers the vapor pressure of the liquid by Raoult’s law, so on the phase diagram it lowers the liquid–vapor curve and moves the solid–liquid curve to the left, toward lower temperature, while the solid–gas curve for the pure ice stays where it was. The triple point is where the three curves meet, so for water containing air it lies at a slightly lower temperature and pressure than for pure water. The amount of dissolved air also depends on the conditions under which the water was exposed to air, so a triple point measured on air-containing water would vary from sample to sample. Only air-free water gives the fixed, reproducible temperature that defines 273.16 K."
       }
     },
     {

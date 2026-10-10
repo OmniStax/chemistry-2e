@@ -1100,7 +1100,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The passage on electron-pair geometry versus molecular structure answers this directly: the two are the same when there are no lone electron pairs around the central atom, and different when there are. So the feature to look for in the Lewis structure is the central atom itself, and whether every one of its regions of electron density is a bond. Methane in Figure 7.17 and the examples of CO<sub>2</sub>, BCl<sub>3</sub> and the ammonium ion show the case where they agree, and ammonia in Figure 7.18 shows what one lone pair does."
+    "solution": "The number of lone pairs on the central atom. When the central atom of the Lewis structure has no lone pairs, every region of electron density around it is a bond to another atom, so the molecular structure, which describes the positions of the atoms, is the same as the electron-pair geometry, which describes the positions of all the regions. Methane, CH<sub>4</sub>, with four bonds and no lone pair on carbon, is tetrahedral in both senses, as are BCl<sub>3</sub> (trigonal planar) and CO<sub>2</sub> (linear). When the central atom carries one or more lone pairs, the two differ: ammonia, NH<sub>3</sub>, has four regions and a tetrahedral electron-pair geometry, but one region is a lone pair, so its molecular structure is trigonal pyramidal."
    }
   },
   {
@@ -1132,7 +1132,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Both questions turn on the order of repulsions: lone pair-lone pair, then lone pair-bonding pair, then bonding pair-bonding pair. A lone pair also occupies a larger region of space than a single bond. Count the regions of electron density around the nitrogen atom in each ion or molecule, and count how many of them are lone pairs. Figure 7.18 shows what the one lone pair of ammonia does to the ideal tetrahedral angle. Example 7.12 works through the ammonium ion, which has four bonds and no lone pair, like methane."
+    "solution": "Both molecules have four regions of electron density around the central atom and a tetrahedral electron-pair geometry, but in NH<sub>3</sub> one of the four regions is a lone pair. A lone pair occupies a larger region of space than a single bond, and lone pair-bonding pair repulsion is greater than bonding pair-bonding pair repulsion, so the lone pair pushes the three N–H bonds closer together and the H–N–H angle, about 107°, is smaller than the 109.5° H–C–H angle of CH<sub>4</sub>. In ${\\text{NH}}_{4}{}^{+}$ the nitrogen atom forms a fourth N–H bond with the electron pair that was the lone pair in NH<sub>3</sub>. The ion then has four bonding regions and no lone pair, exactly like CH<sub>4</sub>, so all four regions repel one another equally and every H–N–H angle is the ideal tetrahedral angle, 109.5°."
    }
   },
   {
@@ -1164,7 +1164,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "A molecule is polar only if the sum of its bond moments does not cancel, so the exceptions are the structures in which the bond moments of identical M–X bonds point in opposite directions in pairs, even though the central atom carries lone pairs. Go down the rows of Figure 7.19 that have lone pairs, and for each molecular structure ask whether every bond has a partner directly across the central atom from it; the passage on axial and equatorial positions and Examples 7.14 and 7.15 describe where the lone pairs sit in the five-region and six-region cases, and the bond-moment bench of Figure 7.26 shows how opposed bond moments cancel."
+    "solution": "The linear structure with three lone pairs, as in XeF<sub>2</sub>, and the square planar structure with two lone pairs, as in XeF<sub>4</sub>. A molecule is nonpolar when its bond moments cancel. In the linear case there are five regions in a trigonal bipyramidal electron-pair geometry; the three lone pairs take the three more spacious equatorial positions, leaving the two M–X bonds in the axial positions, 180° apart, so their equal bond moments point in opposite directions and cancel. In the square planar case there are six regions in an octahedral electron-pair geometry; the two lone pairs sit on opposite sides of the central atom to minimize lone pair-lone pair repulsion, leaving four M–X bonds in a plane in two opposed pairs, so their bond moments also cancel. Both molecules are therefore nonpolar although M carries lone pairs."
    }
   },
   {
@@ -1382,7 +1382,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The second step of the section’s procedure says that a single, double, or triple bond each counts as one region of electron density, so one double bond, one single bond and one lone pair are three regions, one of them a lone pair. Set the bench to three regions and one lone pair and read the electron-pair geometry, the molecular structure and the ideal angle it prints beneath the drawing. For the real angle, recall the order of sizes the section states: a lone pair occupies more space than a double bond, which occupies more than a single bond, so the ideal angle is only approximate."
+    "solution": "The electron-pair geometry is trigonal planar, the molecular structure is bent, and the bond angle is predicted to be slightly less than the ideal 120°. A single bond and a double bond each count as one region of electron density, and the lone pair is a third, so the central atom has three regions, and three regions are arranged in a trigonal planar electron-pair geometry with 120° between them. Only two of the regions hold atoms, so the molecular structure, which describes the positions of the atoms, is bent. The lone pair occupies a larger region of space than either bond, so it pushes the two bonds closer together and the angle between them falls below 120°. The bench set to three regions with one lone pair prints trigonal planar, bent and 120°."
    }
   },
   {
@@ -1414,7 +1414,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the Lewis structure of S<sub>2</sub>O first, and count the regions of electron density around the central sulfur atom. Two bonds and one lone pair make three, so the bench at three regions and one lone pair gives the electron-pair geometry, the molecular structure and the ideal angle. Lone pair-bonding pair repulsion is greater than bonding pair-bonding pair repulsion, and this decides whether the real angle is larger or smaller. Figure 7.18 shows the effect on the angles of ammonia, and the sim beneath Figure 7.16 shows a lone pair squeezing the bonds toward one another."
+    "solution": "The bench set to three regions with one lone pair prints a trigonal planar electron-pair geometry, a bent molecular structure and an ideal angle of 120°, and the real S–S–O angle is smaller than 120°. The central sulfur atom has two bonds, one to oxygen and one to sulfur, and one lone pair; each bond counts as one region of electron density whatever its order, so there are three regions in a trigonal planar arrangement. Because lone pair-bonding pair repulsion is greater than bonding pair-bonding pair repulsion, and a lone pair occupies a larger region of space than a bond, the lone pair pushes the two bonds toward each other and closes the angle between them. The measured angle in S<sub>2</sub>O is about 118°."
    }
   }
  ],

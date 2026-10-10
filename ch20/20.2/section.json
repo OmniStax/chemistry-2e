@@ -367,7 +367,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: take each name apart. The stem <em>hex-</em> is the same in all three because each comes from the same chain of six carbon atoms; the ending is what tells the families apart, <em>-ane</em> for the alkane with only single bonds, <em>-ene</em> for the alkene with a carbon–carbon double bond, and <em>-ol</em> for the alcohol with an –OH group in place of a hydrogen atom."
+        "solution": "The names share the stem <em>hex-</em> because all three compounds are built on the same chain of six carbon atoms; only the ending differs, and it names the family. Hexane ends in <em>-ane</em>, the ending of an alkane, which has only single bonds. Hexene ends in <em>-ene</em>, the ending of an alkene, which has a carbon-carbon double bond. Hexanol ends in <em>-ol</em>, the ending of an alcohol, in which an –OH group replaces a hydrogen atom of the alkane. Systematic names are built this way, the stem giving the number of carbon atoms in the parent chain and the ending giving the kind of compound, so compounds with the same chain have similar names."
       }
     },
     {

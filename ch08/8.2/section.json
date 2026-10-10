@@ -666,7 +666,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Each set of hybrid orbitals takes the arrangement of the electron-pair geometry for the same number of regions of electron density. Count the hybrid orbitals in each set (one for the <em>s</em> orbital, one for each <em>p</em> orbital and one for each <em>d</em> orbital in its name), and then read the arrangement for that number from Figure 8.21."
+    "solution": "(a) trigonal planar<br>(b) trigonal bipyramidal<br>(c) linear<br>(d) octahedral<br>Each set of hybrid orbitals points in the directions of the electron-pair geometry for the same number of regions of electron density, and the number of hybrid orbitals equals the number of atomic orbitals combined. An <em>sp</em><sup>2</sup> set has three orbitals (one <em>s</em> and two <em>p</em>), which lie in a plane 120° apart. An <em>sp</em><sup>3</sup><em>d</em> set has five orbitals, three in a plane 120° apart and two along the axis perpendicular to it. An <em>sp</em> set has two orbitals pointing 180° apart. An <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> set has six orbitals pointing to the corners of an octahedron, 90° apart."
    }
   },
   {
@@ -698,7 +698,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Follow the three guidelines of the section for each species: write its Lewis structure, count the regions of electron density around the central atom (every bond, whether single or multiple, and every lone pair counts as one), and assign the set of hybrid orbitals that has that many members. Several of these molecules appear in the section itself."
+    "solution": "(a) <em>sp</em><br>(b) <em>sp</em><sup>3</sup><em>d</em><sup>2</sup><br>(c) <em>sp</em><sup>3</sup><br>(d) <em>sp</em><sup>3</sup><em>d</em><br>The hybridization has as many orbitals as there are regions of electron density around the central atom. In BeH<sub>2</sub> beryllium forms two single bonds and has no lone pairs, so two regions call for two <em>sp</em> orbitals. In SF<sub>6</sub> sulfur forms six S–F bonds with no lone pairs, so six regions call for <em>sp</em><sup>3</sup><em>d</em><sup>2</sup>. In ${\\text{PO}}_{4}{}^{\\text{3−}}$ (32 valence electrons) phosphorus is bonded to four oxygen atoms and has no lone pairs; each bond counts as one region whatever its order, so four regions give <em>sp</em><sup>3</sup>. In PCl<sub>5</sub> phosphorus forms five P–Cl bonds with no lone pairs, so five regions give <em>sp</em><sup>3</sup><em>d</em>."
    }
   },
   {
@@ -734,7 +734,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Treat each atom in turn as a central atom. In the Lewis structure, count the regions of electron density around it, remembering that the lone pairs on sulfur, nitrogen and oxygen count as regions and that a double bond counts as one region, and assign the hybrid set with that many orbitals. The carbon of the C=O group and the oxygen of the O–H group are the two atoms whose counts are easiest to get wrong."
+    "solution": "Four of the five carbon atoms are <em>sp</em><sup>3</sup> and the carbon of the CO<sub>2</sub>H group is <em>sp</em><sup>2</sup>; the doubly bonded oxygen is <em>sp</em><sup>2</sup> and the oxygen of the O–H group is <em>sp</em><sup>3</sup>; the nitrogen is <em>sp</em><sup>3</sup>; the sulfur is <em>sp</em><sup>3</sup>. Each follows from the number of regions of electron density around the atom, counting each bond as one region whatever its order and each lone pair as one. The CH<sub>3</sub>, the two CH<sub>2</sub> and the CH carbons each form four single bonds, four regions. The carboxyl carbon forms a double bond to one oxygen and single bonds to the other oxygen and to carbon, three regions. The C=O oxygen has one double bond and two lone pairs, three regions; the O–H oxygen has two single bonds and two lone pairs, four regions. Nitrogen has three single bonds and one lone pair, four regions, and sulfur has two single bonds and two lone pairs, four regions."
    }
   },
   {
@@ -766,7 +766,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The four carbon compounds are propane, ethene, propene and methane. In each Lewis structure, look at every carbon atom separately: a carbon with four single bonds has four regions of electron density, and a carbon with a double bond and two single bonds has three. The geometry about each carbon is the electron-pair geometry for its number of regions, and the hybridization follows from Figure 8.21. Propene has two kinds of carbon, so it has two answers."
+    "solution": "(a) Propane is CH<sub>3</sub>–CH<sub>2</sub>–CH<sub>3</sub>, every carbon with four single bonds; ethene is H<sub>2</sub>C=CH<sub>2</sub>; propene is H<sub>2</sub>C=CH–CH<sub>3</sub>; methane is CH<sub>4</sub>, carbon with four single bonds to hydrogen. No carbon has a lone pair.<br>(b) A carbon with four single bonds has four regions of electron density and a tetrahedral geometry, which describes every carbon in propane and methane and the CH<sub>3</sub> carbon of propene. A carbon with one double bond and two single bonds has three regions and a trigonal planar geometry, which describes both carbons of ethene and the two doubly bonded carbons of propene.<br>(c) The tetrahedral carbons, with four regions, are <em>sp</em><sup>3</sup> hybridized: all three carbons of propane, the carbon of methane and the CH<sub>3</sub> carbon of propene. The trigonal planar carbons, with three regions, are <em>sp</em><sup>2</sup> hybridized: both carbons of ethene and the CH<sub>2</sub> and CH carbons of propene, each keeping one unhybridized <em>p</em> orbital for the π bond."
    }
   },
   {
@@ -798,7 +798,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the Lewis structure with the atoms in the order H–O–N–O and complete the octets, which puts a double bond between nitrogen and the terminal oxygen. Then treat the internal oxygen and the nitrogen as central atoms: count their bonds and lone pairs as regions of electron density, name the electron-pair geometry, leave out the lone pairs to name the molecular geometry, and assign the hybrid set with as many orbitals as there are regions."
+    "solution": "(a) The 18 valence electrons give H–O–N=O, with two lone pairs on each oxygen atom and one lone pair on nitrogen, which gives every atom except hydrogen an octet.<br>(b) The internal oxygen has two single bonds (to H and to N) and two lone pairs, four regions of electron density: its electron-pair geometry is tetrahedral and its molecular geometry is bent. The nitrogen has a single bond, a double bond and one lone pair, three regions: its electron-pair geometry is trigonal planar and its molecular geometry is bent.<br>(c) The internal oxygen, with four regions, is <em>sp</em><sup>3</sup> hybridized, and the nitrogen, with three regions, is <em>sp</em><sup>2</sup> hybridized, keeping one unhybridized <em>p</em> orbital for the π bond to the terminal oxygen."
    }
   },
   {
@@ -838,7 +838,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Start by completing each carbon atom’s four bonds: count the hydrogen atoms already on each carbon, and put the remaining bonds between neighboring carbons as double or triple bonds so that every carbon has exactly four. Then count the regions of electron density around each carbon (a multiple bond counts as one region) and assign <em>sp</em>, <em>sp</em><sup>2</sup> or <em>sp</em><sup>3</sup> by the number of regions."
+    "solution": "The molecule is CH<sub>3</sub>CH<sub>2</sub>C≡CCH=CH<sub>2</sub>, and its carbons, numbered along the chain, are <em>sp</em><sup>3</sup>, <em>sp</em><sup>3</sup>, <em>sp</em>, <em>sp</em>, <em>sp</em><sup>2</sup>, <em>sp</em><sup>2</sup>. Every carbon needs four bonds. Carbon 1 has three hydrogens and a single bond to carbon 2, and carbon 2 has two hydrogens and single bonds to carbons 1 and 3. Carbon 6 has two hydrogens, so it needs a double bond to carbon 5; carbon 5 then has the double bond and one hydrogen, so its bond to carbon 4 is single. Carbon 4 then needs a triple bond to carbon 3, which completes carbon 3 with its single bond to carbon 2. Counting each bond as one region of electron density, carbons 1 and 2 have four regions (<em>sp</em><sup>3</sup>), carbons 3 and 4 have two (<em>sp</em>), and carbons 5 and 6 have three (<em>sp</em><sup>2</sup>)."
    }
   },
   {
@@ -870,7 +870,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the Lewis structures with the two nitrogen atoms bonded to each other and the fluorine atoms on the outside: in N<sub>2</sub>F<sub>4</sub> each nitrogen carries two fluorine atoms, and in N<sub>2</sub>F<sub>2</sub> each carries one, so the octets require a double bond between the nitrogen atoms. Count the regions of electron density around one nitrogen atom in each molecule, including its lone pair, and use that number for both the geometry about the nitrogen and its hybridization."
+    "solution": "N<sub>2</sub>F<sub>4</sub> is trigonal pyramidal about each nitrogen, with <em>sp</em><sup>3</sup> nitrogen, and N<sub>2</sub>F<sub>2</sub> is bent about each nitrogen, with <em>sp</em><sup>2</sup> nitrogen. In N<sub>2</sub>F<sub>4</sub> (38 valence electrons) the Lewis structure is F<sub>2</sub>N–NF<sub>2</sub>: each nitrogen has single bonds to two fluorine atoms and to the other nitrogen plus one lone pair. Four regions of electron density give a tetrahedral electron-pair geometry, and with one lone pair the arrangement about each nitrogen is trigonal pyramidal, as in NF<sub>3</sub>. In N<sub>2</sub>F<sub>2</sub> (24 valence electrons) the octets require F–N=N–F: each nitrogen has a single bond to fluorine, a double bond to nitrogen and one lone pair. Three regions give a trigonal planar electron-pair geometry, so the F–N=N angle is bent, near 120°, and the unhybridized <em>p</em> orbital on each nitrogen forms the N=N π bond, which keeps all four atoms in one plane."
    }
   }
  ],

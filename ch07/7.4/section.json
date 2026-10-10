@@ -316,7 +316,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "For each species, count the valence electrons and write one Lewis structure with the section’s procedure, keeping the arrangement of atoms given. Then look for a double bond that could equally well be drawn to another atom of the same kind: moving only that pair of electrons, with the lone pairs that go with it, gives each further resonance form. Join the forms with double-headed arrows, as for the nitrite and carbonate ions, and check that every form has the same atoms in the same places and the same total charge."
+    "solution": "In each case one double bond can be drawn to any of two or three equivalent atoms, and the forms are joined by double-headed arrows.<br>(a) OSeO, 6 + 2(6) = 18 electrons, has two forms, O=Se–O ↔ O–Se=O. Selenium carries one lone pair, the double-bonded oxygen two lone pairs and the single-bonded oxygen three.<br>(b) ${\\text{NO}}_{3}{}^{\\text{−}}$, 5 + 3(6) + 1 = 24 electrons, has three forms, like carbonate. Nitrogen has one N=O and two N–O bonds and no lone pair; the double-bonded oxygen carries two lone pairs and each single-bonded oxygen three, and the double bond goes to each oxygen in turn.<br>(c) HNO<sub>3</sub>, 24 electrons, has two forms. The OH oxygen is single bonded to N and carries two lone pairs, and the double bond goes to either of the two other oxygen atoms, which then carry two and three lone pairs.<br>(d) C<sub>6</sub>H<sub>6</sub>, 6(4) + 6(1) = 30 electrons, has two forms. Single and double bonds alternate around the ring, three C=C bonds in all, and in the second form every double bond has moved one position around the ring.<br>(e) The formate ion, 4 + 2(6) + 1 + 1 = 18 electrons, has two forms. Carbon is bonded to H, double bonded to one oxygen, which carries two lone pairs, and single bonded to the other, which carries three; the double bond may go to either oxygen. Both forms are in brackets with charge –."
    }
   },
   {
@@ -348,7 +348,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Count the valence electrons of three oxygen atoms and write a Lewis structure with one oxygen atom in the center. The central atom reaches an octet only if one of its two bonds is a double bond, and nothing makes one terminal oxygen atom different from the other, so the double bond may be drawn to either. The two structures, joined by a double-headed arrow, are the resonance forms, as the two forms of the nitrite ion are."
+    "solution": "Ozone has two resonance forms, O=O–O ↔ O–O=O. The three oxygen atoms have 3(6) = 18 valence electrons. In each form the central oxygen atom has one double bond, one single bond and one lone pair; the double-bonded terminal oxygen carries two lone pairs and the single-bonded one carries three, so every atom has an octet. The central atom reaches its octet only if one of its bonds is a double bond, and the two terminal atoms are equivalent, so the double bond may be drawn to either one. The forms are joined by a double-headed arrow, as for the nitrite ion. The resonance hybrid has two identical O–O bonds, each the average of a single and a double bond."
    }
   },
   {
@@ -380,7 +380,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Complete the Lewis structure of each species from its skeleton. In acetic acid, one oxygen atom also carries the hydrogen atom, so only the other oxygen atom can take the double bond. Only one structure can be written, with one single C–O bond and one double bond. In the acetate ion, the two oxygen atoms are bonded alike, and the double bond may go to either of them. Ask what the resonance hybrid of those two forms says about the two carbon-oxygen bonds."
+    "solution": "Acetic acid has one C=O double bond and one C–O single bond, while in the acetate ion both carbon-oxygen bonds are the same, each the average of a single and a double bond. In acetic acid, the second carbon atom reaches an octet only with a double bond to one oxygen. The oxygen atom that carries the hydrogen atom already has two bonds and two lone pairs, so the double bond goes to the other oxygen, and only one Lewis structure can be written: a shorter C=O bond and a longer C–O bond. When the hydrogen ion leaves, the two oxygen atoms are bonded alike, and the double bond may be drawn to either of them, giving two resonance forms with the negative charge on the single-bonded oxygen. The acetate ion is the resonance hybrid of those forms, so its two C–O bonds are identical, as the two N–O bonds of nitrite are."
    }
   },
   {
@@ -412,7 +412,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "In the hydrogen carbonate ion, the carbon atom is bonded to an OH group and two other oxygen atoms. Write a Lewis structure with the section’s procedure, and ask which of the oxygen atoms could carry the double bond to carbon; each possible position gives a resonance form. In hydrogen peroxide, H–O–O–H, every atom reaches its octet or its pair with single bonds only, so ask whether a second structure with the same arrangement of atoms can be written at all."
+    "solution": "The hydrogen carbonate ion, ${\\text{HCO}}_{3}{}^{\\text{−}}$, has two resonance forms, and hydrogen peroxide has one Lewis structure and no resonance forms. ${\\text{HCO}}_{3}{}^{\\text{−}}$ has 1 + 4 + 3(6) + 1 = 24 valence electrons. Carbon is bonded to an OH group, whose oxygen carries two lone pairs, and to two other oxygen atoms, one by a double bond, with two lone pairs on that oxygen, and one by a single bond, with three lone pairs; the structure is in brackets with charge –. The double bond may go to either of the two oxygen atoms without hydrogen, so the two forms are joined by a double-headed arrow. Hydrogen peroxide has 2(1) + 2(6) = 14 valence electrons: H–O–O–H, with two lone pairs on each oxygen. Every atom is complete with single bonds alone, and no other placement of the electrons keeps the same arrangement of atoms, so H<sub>2</sub>O<sub>2</sub> has no resonance forms."
    }
   },
   {
@@ -444,7 +444,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the Lewis structure of each species first. Then, for each atom, subtract its lone pair electrons and half of its bonding electrons from the number of valence electrons of the free atom, as in Examples 7.6 and 7.7. Check each answer by adding the formal charges: they must total zero for a neutral molecule and the charge of the ion for an ion."
+    "solution": "Each formal charge is the valence electrons of the free atom, less the lone pair electrons, less half of the bonding electrons.<br>(a) H<sub>3</sub>O<sup>+</sup>: O, +1; H, 0. Oxygen has three bonds and one lone pair, 6 – 2 – 3 = +1, and each H is 1 – 0 – 1 = 0. The sum, +1, is the charge of the ion.<br>(b) ${\\text{SO}}_{4}{}^{\\text{2−}}$: S, +2; O, –1. In the structure with four S–O single bonds and three lone pairs on each oxygen, sulfur is 6 – 0 – 4 = +2 and each oxygen 6 – 6 – 1 = –1, and the sum is +2 + 4(–1) = –2.<br>(c) NH<sub>3</sub>: N, 0; H, 0. Nitrogen has three bonds and one lone pair, 5 – 2 – 3 = 0.<br>(d) ${\\text{O}}_{2}{}^{\\text{2−}}$: O, –1 each. The ion has 14 electrons, an O–O single bond and three lone pairs on each oxygen, 6 – 6 – 1 = –1, and the sum is –2.<br>(e) H<sub>2</sub>O<sub>2</sub>: O, 0; H, 0. In H–O–O–H each oxygen has two bonds and two lone pairs, 6 – 4 – 2 = 0, and the sum is zero, as it must be for a neutral molecule."
    }
   },
   {
@@ -476,7 +476,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the Lewis structure of each species, remembering that some of them, such as ClF<sub>3</sub> and SeF<sub>6</sub>, are exceptions to the octet rule. For each atom, the formal charge is its valence electrons less its lone pair electrons less half of its bonding electrons. The formal charges of each species must add up to its overall charge, which checks the arithmetic."
+    "solution": "Each formal charge is the valence electrons of the free atom, less the lone pair electrons, less half of the bonding electrons, and the charges of each species add up to its overall charge.<br>(a) F<sub>2</sub>CO: C, 0; O, 0; F, 0. Carbon has a C=O double bond and two C–F bonds, 4 – 0 – 4 = 0; oxygen, with two lone pairs, is 6 – 4 – 2 = 0; each F is 7 – 6 – 1 = 0.<br>(b) NO<sup>–</sup>: N, –1; O, 0. In N=O with two lone pairs on each atom, N is 5 – 4 – 2 = –1 and O is 6 – 4 – 2 = 0.<br>(c) ${\\text{BF}}_{4}{}^{\\text{−}}$: B, –1; F, 0. Boron has four single bonds, 3 – 0 – 4 = –1.<br>(d) ${\\text{SnCl}}_{3}{}^{\\text{−}}$: Sn, –1; Cl, 0. The 26 electrons give tin three single bonds and one lone pair, 4 – 2 – 3 = –1.<br>(e) H<sub>2</sub>CCH<sub>2</sub>: C, 0; H, 0. Each carbon has a double bond and two single bonds, 4 – 0 – 4 = 0.<br>(f) ClF<sub>3</sub>: Cl, 0; F, 0. Chlorine has three bonds and two lone pairs, 7 – 4 – 3 = 0.<br>(g) SeF<sub>6</sub>: Se, 0; F, 0. Selenium has six bonds and no lone pair, 6 – 0 – 6 = 0.<br>(h) ${\\text{PO}}_{4}{}^{\\text{3−}}$: P, +1; O, –1. Phosphorus has four single bonds, 5 – 0 – 4 = +1, and each oxygen, with three lone pairs, 6 – 6 – 1 = –1; the sum is +1 + 4(–1) = –3."
    }
   },
   {
@@ -508,7 +508,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write a Lewis structure for each arrangement with the section’s procedure and assign the formal charge of every atom. Then apply the guidelines in order: prefer the structure with formal charges of zero, or else the smallest ones, and a negative formal charge on the more electronegative atom, as in the choice between the two structures of nitrous oxide."
+    "solution": "ClNO is the likely arrangement. Both have 7 + 5 + 6 = 18 valence electrons. In ClNO, written Cl–N=O with three lone pairs on Cl, one on N and two on O, the formal charges are Cl 7 – 6 – 1 = 0, N 5 – 2 – 3 = 0 and O 6 – 4 – 2 = 0. In ClON, written Cl–O=N with three lone pairs on Cl, one on O and two on N, they are Cl 0, O 6 – 2 – 3 = +1 and N 5 – 4 – 2 = –1. A structure with all formal charges zero is preferable (Guideline 1), and ClON is worse still because it puts the negative formal charge on nitrogen rather than on the more electronegative oxygen (Guideline 4)."
    }
   },
   {
@@ -540,7 +540,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write a Lewis structure for each arrangement and assign the formal charge of every atom. Compare the two sets of formal charges with the guidelines, as the section compares the three structures of carbon dioxide: the arrangement with fewer and smaller formal charges, and with any negative formal charge on the more electronegative atom, is the more likely."
+    "solution": "OSO is the likely arrangement. Both have 3(6) = 18 valence electrons. In OSO, written O=S–O with one lone pair on S, the formal charges are S 6 – 2 – 3 = +1, double-bonded O 6 – 4 – 2 = 0 and single-bonded O 6 – 6 – 1 = –1. Sulfur is a third-period atom and may hold more than eight electrons, so O=S=O, with one lone pair on S, can also be written, and then every formal charge is zero: S 6 – 2 – 4 = 0 and each O 6 – 4 – 2 = 0. In SOO, written S=O–O with two lone pairs on S, one on the central O and three on the terminal O, the charges are S 0, central O 6 – 2 – 3 = +1 and terminal O –1; the central oxygen cannot exceed an octet, so no SOO structure has all zero formal charges, and every one puts a positive formal charge on an oxygen atom. OSO is preferred by Guideline 1, and it places the less electronegative atom, sulfur, in the center, as in carbon dioxide."
    }
   },
   {
@@ -572,7 +572,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Iodine is the central atom in each compound, and in IF<sub>3</sub>, IF<sub>5</sub> and IF<sub>7</sub> it is hypervalent, as in the exceptions to the octet rule. Place the fluorine atoms with three lone pairs each and put every remaining electron on the iodine atom. Then count the iodine atom’s lone pair electrons and half of its bonding electrons and subtract both from its seven valence electrons."
+    "solution": "The formal charge of iodine is 0 in all four compounds. Each fluorine atom forms one single bond to iodine and carries three lone pairs, 7 – 6 – 1 = 0, and the electrons left over go on iodine as lone pairs.<br>(a) IF, 7 + 7 = 14 electrons: I–F with three lone pairs on iodine; I is 7 – 6 – 1 = 0.<br>(b) IF<sub>3</sub>, 7 + 3(7) = 28 electrons: three I–F bonds and two lone pairs on iodine; I is 7 – 4 – 3 = 0.<br>(c) IF<sub>5</sub>, 7 + 5(7) = 42 electrons: five I–F bonds and one lone pair on iodine; I is 7 – 2 – 5 = 0.<br>(d) IF<sub>7</sub>, 7 + 7(7) = 56 electrons: seven I–F bonds and no lone pair on iodine; I is 7 – 0 – 7 = 0.<br>Iodine is hypervalent in IF<sub>3</sub>, IF<sub>5</sub> and IF<sub>7</sub>, with 10, 12 and 14 electrons, which an atom of the fifth period can hold."
    }
   },
   {
@@ -604,7 +604,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Assign the formal charge of every atom in each structure, subtracting its lone pair electrons and half of its bonding electrons from its valence electrons. Then compare the two structures by the guidelines: the one whose formal charges are all zero is preferred."
+    "solution": "The right-hand structure, H–O–N=O, is the expected one, because all its formal charges are zero. Formal charge is the valence electrons of the free atom, less the lone pair electrons, less half of the bonding electrons. In the left-hand structure, with hydrogen on nitrogen, nitrogen has four bonds and no lone pair, 5 – 0 – 4 = +1; the single-bonded oxygen, with three lone pairs, is 6 – 6 – 1 = –1; the double-bonded oxygen is 6 – 4 – 2 = 0; and H is 0. In the right-hand structure, H is 0; the oxygen bonded to hydrogen, with two bonds and two lone pairs, is 6 – 4 – 2 = 0; nitrogen, with three bonds and one lone pair, is 5 – 2 – 3 = 0; and the terminal oxygen is 6 – 4 – 2 = 0. Both sets add up to zero, but a structure in which all formal charges are zero is preferable (Guideline 1)."
    }
   },
   {

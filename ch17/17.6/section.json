@@ -210,7 +210,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: find the standard electrode potential of each metal’s ion/metal couple in Table 17.1 or Appendix L. In each pair, the metal whose couple has the lower (more negative) reduction potential is the stronger reductant, the more readily oxidized, and so the one more likely to corrode."
+    "solution": "In each pair the metal whose couple has the lower standard reduction potential in Table 17.1 is the stronger reductant, more readily oxidized, and so more likely to corrode.<br>(a) Ca, since $\\kEo$ = −2.868 V for Ca<sup>2+</sup>/Ca is lower than −2.372 V for Mg<sup>2+</sup>/Mg.<br>(b) Hg, since $\\kEo$ = +0.7973 V for Hg<sub>2</sub><sup>2+</sup>/Hg is lower than +1.498 V for Au<sup>3+</sup>/Au.<br>(c) Zn, since $\\kEo$ = −0.7618 V for Zn<sup>2+</sup>/Zn is lower than −0.447 V for Fe<sup>2+</sup>/Fe.<br>(d) Ag, since $\\kEo$ = +0.7996 V for Ag<sup>+</sup>/Ag is lower than +1.20 V for Pt<sup>2+</sup>/Pt."
    }
   },
   {
@@ -244,7 +244,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: compare what the product of corrosion does to each metal’s surface. Recall the patina on copper and the chromium oxide layer on stainless steel, and ask whether the oxide that forms on aluminum behaves like those layers or like rust, which flakes off and exposes fresh iron."
+    "solution": "The oxide that forms on aluminum protects it, while the rust that forms on iron does not. Aluminum's very negative reduction potential means it reacts readily with oxygen, but the product is a thin, hard layer of aluminum oxide, Al<sub>2</sub>O<sub>3</sub>, that adheres tightly to the surface and seals the metal beneath from further contact with oxygen and water. Once this passivating layer forms, further corrosion is extremely slow, in the same way that the patina on copper and the chromium oxide layer on stainless steel protect the metal under them. Rust, the hydrated iron(III) oxide Fe<sub>2</sub>O<sub>3</sub>·<em>x</em>H<sub>2</sub>O, is porous and flakes off, exposing fresh iron to the atmosphere, so iron keeps corroding. The standard potentials describe only the tendency to be oxidized, not how fast oxidation continues once a surface layer exists."
    }
   },
   {
@@ -278,7 +278,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: when two metals touch, the one that corrodes is the anode, the metal with the lower reduction potential. Use each observation to say which of the two metals has the lower reduction potential, put A, B and C in order on that basis, and then read off where B stands relative to C."
+    "solution": "When B and C come into contact, B corrodes and C does not. When two metals touch, the one that corrodes acts as the anode, and it is the metal with the lower reduction potential. B corrodes in contact with A, so the reduction potential of B is lower than that of A; A corrodes in contact with C, so the reduction potential of A is lower than that of C. The order is therefore B &lt; A &lt; C, so B has a lower reduction potential than C and is oxidized when the two are joined, while C is protected, just as a zinc coating protects galvanized iron."
    }
   },
   {

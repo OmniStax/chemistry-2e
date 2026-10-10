@@ -361,7 +361,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: compare the size of the atoms and their first ionization energies from cesium up the group to lithium, and connect how easily each atom loses its single valence electron with how readily the metal is oxidized."
+    "solution": "Reactivity falls from cesium to lithium because the single valence electron is held more tightly in each lighter atom. Every alkali metal reacts by losing its one <em>n</em>s<sup>1</sup> electron to form a 1+ ion, so the metal that gives up that electron most easily is the most readily oxidized and the most reactive. Moving up the group from cesium to lithium, the atoms have fewer electron shells and are smaller, so the valence electron lies closer to the nucleus and is less shielded from it. The attraction it feels grows, and the first ionization energy rises from about 376 kJ/mol for cesium to about 520 kJ/mol for lithium. With more energy needed to remove the electron, lithium is the least readily oxidized and least reactive of these metals, while cesium, losing its electron most easily, is the most reactive."
    }
   },
   {
@@ -395,7 +395,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: for (a) and (c), place the elements in the periodic table and use the trends in size and ionization energy across a period and down a group; for (b), compare how strongly each metal holds its valence electrons, recalling what the text says of the group 2 metals with the highest ionization energies; for (d) and (e), compare the numbers of electrons held by the same or by nearly the same nuclear charge."
+    "solution": "(a) Ba; (b) BeCl<sub>2</sub>; (c) Rb; (d) Al<sup>3+</sup>; (e) Xe.<br>(a) Metallic character increases down a group and decreases from left to right across a period. Barium lies at the bottom of group 2, below beryllium, and to the left of aluminum in group 13, so it loses its valence electrons most easily and is the most metallic.<br>(b) Beryllium is the smallest group 2 atom and has the highest ionization energies of the group, so it does not give up its electrons fully to chlorine; its compounds show covalent character, and BeCl<sub>2</sub> is the most covalent, while NaCl and CaCl<sub>2</sub> are ionic.<br>(c) First ionization energy decreases down a group as the valence electron lies farther from the nucleus and is better shielded, so rubidium, the lowest of the three in group 1, has the lowest value.<br>(d) All three have the same nuclear charge, 13+. Al<sup>3+</sup> has lost all three valence electrons and keeps only 10 electrons in two shells, which the nucleus pulls in most tightly, so it is the smallest.<br>(e) Cs<sup>+</sup>, Ba<sup>2+</sup> and Xe are isoelectronic, each with 54 electrons. Xenon has the lowest nuclear charge, 54+, against 55+ for Cs<sup>+</sup> and 56+ for Ba<sup>2+</sup>, so its electrons are held least tightly and it is the largest."
    }
   },
   {
@@ -485,7 +485,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall the two common allotropes of tin and the temperature, 13.2 °C, above which white tin is the stable form; describe what happens to a tin article in a long cold spell, and why the change spreads from the spot where it starts."
+    "solution": "Tin pest, or tin disease, is the slow crumbling of tin articles to powder in cold weather, caused by the change of white tin into gray tin. Tin has two allotropes that differ in the arrangement of their atoms. White tin, the malleable metallic form, is stable above 13.2 °C; below that temperature gray tin is the more stable form, and gray tin is brittle and tends to break down to a powder. During a long cold spell white tin converts to gray tin and the article disintegrates. The change begins slowly at one spot and spreads from there, because the gray tin first formed catalyzes further change. That spreading resembles an infection in a plant or animal body, which is why the process is called tin disease or tin pest."
    }
   },
   {
@@ -519,7 +519,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: use the trend in reactivity down group 1 that follows from the ionization energies, then place magnesium, an alkaline earth metal of the same period as sodium, against the alkali metals, recalling what passivation and Figure 18.6 show about magnesium in water."
+    "solution": "Rubidium reacts with water more vigorously than sodium does, and magnesium reacts far more slowly than either. Reactivity of the alkali metals increases down group 1: rubidium, below sodium, is a larger atom whose single valence electron lies farther from the nucleus, so its first ionization energy is lower, it is oxidized more readily, and it releases hydrogen from water more violently. Magnesium, in the same period as sodium but in group 2, is smaller and must lose two electrons to form Mg<sup>2+</sup>, so its ionization energies are higher and it is less readily oxidized. Its surface is also passivated by a tightly adhering layer of magnesium oxycarbonate. Magnesium therefore barely reacts with cold water and reacts only slowly with hot water, giving hydrogen and a basic solution of Mg<sup>2+</sup> and OH<sup>−</sup> ions, as Figure 18.6 shows."
    }
   }
  ],

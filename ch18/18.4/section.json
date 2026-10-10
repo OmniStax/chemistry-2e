@@ -443,7 +443,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall what a graphite layer needs besides σ bonds, namely π bonds formed by side-by-side overlap of unhybridized <em>p</em> orbitals, and compare how well a first member of a group and a heavier member such as silicon form π bonds, given the difference in their sizes."
+    "solution": "Silicon has no graphite allotrope because silicon atoms do not form stable π bonds to one another. A graphite layer needs more than σ bonds: each carbon atom uses <em>sp</em><sup>2</sup> hybrid orbitals for σ bonds to three neighbors in a plane, and its unhybridized <em>p</em> orbital, perpendicular to the layer, overlaps side by side with those on adjacent atoms to form π bonds. Good side-by-side overlap requires small atoms, and the first member of each group forms π bonds far more readily than the heavier members. Carbon, the first member of group 14, is small enough, but silicon is much larger, so its 3<em>p</em> orbitals overlap poorly and Si–Si π bonds are weak. Silicon instead uses all four valence electrons in σ bonds, each atom <em>sp</em><sup>3</sup> hybridized and bonded to four neighbors at the corners of a tetrahedron, which is the diamond structure."
    }
   },
   {
@@ -511,7 +511,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: count the bonds each atom of group 15 needs to complete its octet, then compare how readily nitrogen, the first member of the group, and phosphorus, a third-period element, form π bonds; ask how a phosphorus atom can make three bonds with σ bonds alone."
+    "solution": "Each group 15 atom has five valence electrons and needs three bonds to complete its octet; nitrogen can make all three to one partner, while phosphorus cannot. Nitrogen, the small first member of the group, forms strong π bonds, so two nitrogen atoms share three pairs of electrons in a triple bond, one σ bond and two π bonds, and the small molecule N<sub>2</sub>, with one lone pair on each atom, satisfies both atoms. Phosphorus is a larger third-period atom whose 3<em>p</em> orbitals overlap poorly side by side, so P–P π bonds are weak and a P≡P triple bond is not stable. A phosphorus atom must make its three bonds as σ bonds to three different phosphorus atoms. In the P<sub>4</sub> tetrahedron each atom sits at a corner, bonded by single bonds to the other three and keeping one lone pair, so every atom has an octet without any π bonding."
    }
   }
  ],

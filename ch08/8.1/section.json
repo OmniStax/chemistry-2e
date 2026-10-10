@@ -254,7 +254,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Start from the electron configuration of each atom and find the half-filled orbital in its valence shell, since valence bond theory builds a bond from the overlap of two half-filled orbitals whose single electrons pair up. A hydrogen atom offers its 1<em>s</em> orbital, and each halogen atom offers the one <em>p</em> orbital of its valence shell that holds a single electron. Then decide how each pair of orbitals overlaps, an <em>s</em> orbital with a <em>p</em> orbital or two <em>p</em> orbitals end to end, as the pairs of Figure 8.4 do, and name the kind of bond that end-to-end overlap forms."
+    "solution": "Each bond is a σ bond formed by the end-to-end overlap of two half-filled orbitals, one from each atom, whose single electrons pair. A fluorine atom (1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup>) has one half-filled 2<em>p</em> orbital. In F<sub>2</sub> the half-filled 2<em>p</em> orbitals of the two fluorine atoms overlap end to end along the internuclear axis, a <em>p</em>–<em>p</em> σ bond like that of Cl<sub>2</sub>. In HF the half-filled 1<em>s</em> orbital of hydrogen overlaps the end of the half-filled 2<em>p</em> orbital of fluorine, an <em>s</em>–<em>p</em> σ bond like that of HCl. In ClBr the half-filled 3<em>p</em> orbital of chlorine (3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup>) overlaps end to end with the half-filled 4<em>p</em> orbital of bromine (4<em>s</em><sup>2</sup>4<em>p</em><sup>5</sup>), another <em>p</em>–<em>p</em> σ bond. The sketches match Figure 8.4: two dumbbell-shaped <em>p</em> orbitals meeting lobe to lobe on the line between the nuclei for F<sub>2</sub> and ClBr, with the larger bromine orbital drawn bigger, and a sphere meeting one lobe of a <em>p</em> orbital for HF. In each the overlap region lies on the internuclear axis."
    }
   },
   {
@@ -286,7 +286,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Draw the Lewis structure of HCN first, with carbon as the central atom, and read the order of each of its two bonds. Then apply the rule the section states: every bond between two atoms contains exactly one σ bond, and the second and third lines of a double or triple bond are π bonds. Add up the σ bonds of the two bonds and then the π bonds, as Example 8.1 does for butadiene."
+    "solution": "HCN has two σ bonds and two π bonds. Its Lewis structure is H–C≡N:, with carbon as the central atom joined to hydrogen by a single bond and to nitrogen by a triple bond, which gives carbon four bonds and nitrogen an octet with one lone pair (10 valence electrons in all). Every bond between two atoms contains one σ bond, so the C–H bond and the C≡N bond give two σ bonds. The second and third lines of the triple bond are π bonds, so there are two π bonds, both between carbon and nitrogen."
    }
   },
   {
@@ -318,7 +318,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write each Lewis structure by the procedure of Chapter 7, giving every atom an octet, and note the order of each carbon-oxygen bond. Every bond, whatever its order, contains one σ bond, and the remaining lines of a double or triple bond are π bonds, as the Lewis structures of O<sub>2</sub> and N<sub>2</sub> show. Count the σ and π bonds bond by bond for each molecule."
+    "solution": "(a) CO<sub>2</sub> has two σ bonds and two π bonds. Its 16 valence electrons give the Lewis structure O=C=O, with two lone pairs on each oxygen atom. Each carbon-oxygen double bond is one σ bond and one π bond, so the two double bonds give two of each.<br>(b) CO has one σ bond and two π bonds. Its 10 valence electrons give the Lewis structure :C≡O:, with one lone pair on each atom, the only arrangement that gives both atoms an octet. The triple bond contains one σ bond, and its second and third lines are two π bonds, as in N<sub>2</sub>."
    }
   }
  ],

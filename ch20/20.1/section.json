@@ -906,7 +906,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: recall that each carbon atom of a saturated hydrocarbon forms four single bonds, then count the atoms that surround a carbon atom taking part in a double bond and in a triple bond. The number of σ bonds and the geometry around each carbon atom tell which hybrid orbitals it uses, and the orbitals left unhybridized form the π bonds."
+    "solution": "In a saturated hydrocarbon every carbon atom is <em>sp</em><sup>3</sup> hybridized; in an unsaturated hydrocarbon the carbon atoms of a double bond are <em>sp</em><sup>2</sup> hybridized and those of a triple bond are <em>sp</em> hybridized. A carbon atom with four single bonds forms four σ bonds arranged tetrahedrally, using all four of its valence orbitals as <em>sp</em><sup>3</sup> hybrids. A carbon atom in a double bond forms three σ bonds in a trigonal planar arrangement from three <em>sp</em><sup>2</sup> hybrid orbitals, and its one unhybridized <em>p</em> orbital overlaps side by side with that of the neighboring carbon atom to form the π bond. A carbon atom in a triple bond forms two σ bonds in a linear arrangement from two <em>sp</em> hybrid orbitals, and its two unhybridized <em>p</em> orbitals form two π bonds."
    }
   },
   {
@@ -940,7 +940,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: count the π bonds in a carbon-carbon double bond and in a triple bond, and recall that in an addition reaction one molecule of bromine adds as each π bond is broken. Compare how many bromine molecules each takes up and which bonds remain between the two carbon atoms afterward, then name what the two reactions have in common."
+    "solution": "Both are addition reactions: as a π bond breaks, a bromine molecule adds across the multiple bond and a bromine atom bonds to each of the two carbon atoms. They differ in how many bromine molecules add. A carbon-carbon double bond contains one σ bond and one π bond, so an alkene adds one Br<sub>2</sub> molecule; ethene gives 1,2-dibromoethane, in which the two carbon atoms are left joined by a single σ bond. A triple bond contains one σ bond and two π bonds, so an alkyne can add two Br<sub>2</sub> molecules, one for each π bond: ethyne first gives 1,2-dibromoethene, with a double bond remaining, and then 1,1,2,2-tetrabromoethane, with a single bond. In both reactions the π bonds are replaced by C–Br σ bonds and the σ bond between the carbon atoms remains."
    }
   },
   {
@@ -974,7 +974,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: count the carbon and hydrogen atoms in each structure and write each molecular formula. Isomers must have the same molecular formula, so compare the two formulas, and note which kinds of carbon-carbon bonds each molecule contains."
+    "solution": "They have different molecular formulas, and isomers must have the same molecular formula. The first structure has six carbon atoms and twelve hydrogen atoms, C<sub>6</sub>H<sub>12</sub>; it is an alkene, 2-hexene, with one carbon-carbon double bond. The second has a chain of five carbon atoms with a methyl group on the second carbon, also six carbon atoms in all, but every carbon-carbon bond is single, so every carbon atom carries its full share of hydrogen: three on each of the three CH<sub>3</sub> groups, two on each of the two CH<sub>2</sub> groups, and one on the CH, fourteen in all. It is the alkane 2-methylpentane, C<sub>6</sub>H<sub>14</sub>. The double bond leaves the first molecule with two fewer hydrogen atoms, so the two are not isomers."
    }
   },
   {

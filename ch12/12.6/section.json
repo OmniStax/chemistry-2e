@@ -284,7 +284,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: an elementary reaction takes place only when all of its reactant entities meet at the same moment. Compare how often two particles collide with how often a third arrives at that same instant, using the comparison the text gives for termolecular steps, and carry the argument on to four or more particles."
+    "solution": "Elementary reactions involving three or more reactants are very uncommon because all the reactant entities must collide at the same instant, and such simultaneous collisions are rare. The probability of three particles colliding simultaneously is less than one one-thousandth of the probability of two particles colliding, so a termolecular step occurs far less often than a bimolecular one under the same conditions. Each additional particle must arrive at that same moment as well, so a collision of four or more particles is less likely still and is practically never observed. A reaction whose equation shows three or more reactants therefore almost always proceeds through a mechanism of unimolecular and bimolecular steps; only a few termolecular steps are established, such as those that appear to be involved in the reaction of nitric oxide with oxygen."
    }
   },
   {
@@ -316,7 +316,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: define the first two by molecularity, the number of reactant entities an elementary step involves. Say what makes a reaction elementary: it takes place in a single step, exactly as its equation is written. Then describe the overall reaction as the net change the steps of a mechanism add up to, with any intermediate cancelling from the sum."
+    "solution": "(a) A unimolecular reaction is an elementary reaction involving a single reactant entity that reacts to produce one or more molecules of product, $A\\;\\longrightarrow \\;\\text{products}$, such as ${\\text{O}}_{3}\\;\\longrightarrow \\;{\\text{O}}_{2}+\\text{O}$; its rate law is first order, $\\krate=\\kk\\kconcA$.<br>(b) A bimolecular reaction is an elementary reaction involving two reactant entities, $A+B\\;\\longrightarrow \\;\\text{products}$ or $2A\\;\\longrightarrow \\;\\text{products}$, such as $\\text{O}+{\\text{O}}_{3}\\;\\longrightarrow \\;2{\\text{O}}_{2}$; its rate law is second order, $\\krate=\\kk\\kconcA\\kconcB$ or $\\krate=\\kk\\kconcA^{2}$.<br>(c) An elementary reaction is a reaction that takes place in a single step, precisely as represented by its equation; each step of a reaction mechanism is an elementary reaction, and its rate law can be written from its molecularity.<br>(d) An overall reaction is the balanced chemical equation for the net change, obtained by adding the elementary reactions of the mechanism, in which intermediates produced in one step and consumed in a later step cancel; for the two-step decomposition of ozone, it is $2{\\text{O}}_{3}(g)\\;\\longrightarrow \\;3{\\text{O}}_{2}(g)$."
    }
   },
   {
@@ -348,7 +348,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: if a reaction were a single elementary step, its rate law could be written from its equation, each concentration raised to the power of that reactant’s coefficient. For each reaction, write the rate law its equation would predict and compare it with the rate law given. Where the two differ, the reaction cannot be a single step; where they agree, a single step is possible, though the agreement does not prove it."
+    "solution": "Reactions (b), (d) and (e) might be single elementary reactions, and reactions (a) and (c) cannot be. If a reaction were one elementary step, its rate law would follow from its equation, each concentration raised to the power of that reactant’s coefficient. For (a), that would be $\\text{rate}=k[\\text{Cl}_{2}][\\text{CO}]$, but the observed rate law has ${[\\text{Cl}_{2}]}^{3/2}$, a fractional order no single step can give. For (b), the predicted $\\text{rate}=k[\\text{PCl}_{3}][\\text{Cl}_{2}]$ matches the given rate law. For (c), the predicted $\\text{rate}=k{[\\text{NO}]}^{2}[\\text{H}_{2}]$ differs from the given first order in NO. For (d), the predicted $\\text{rate}=k{[\\text{NO}]}^{2}[\\text{O}_{2}]$ matches, consistent with the termolecular step this reaction appears to involve. For (e), the predicted $\\text{rate}=k[\\text{NO}][\\text{O}_{3}]$ matches. A matching rate law shows only that a single step is possible, not that it is the actual mechanism."
    }
   },
   {
@@ -380,7 +380,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: the slow first step is the rate-determining step, and when the first step is the slow one, the rate law for the overall reaction is the rate law of that step. Write that step’s rate law from its equation, as for any elementary reaction, and check that the two steps add up to the overall equation."
+    "solution": "$\\text{rate}=k{[\\text{NO}]}^{2}[\\text{H}_{2}]$. The first step is the slow one, so it is the rate-determining step, and when the first step is the slow one, the rate law for the overall reaction is the rate law of that step. As an elementary reaction, $2\\text{NO}+\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+\\text{H}_{2}\\text{O}_{2}$ has a rate law written from its molecularity: second order in NO, from its coefficient of 2, and first order in H<sub>2</sub>, third order overall. The fast second step consumes the H<sub>2</sub>O<sub>2</sub> as fast as it forms and does not affect the rate. The mechanism is consistent with the equation, because adding the two steps cancels the intermediate H<sub>2</sub>O<sub>2</sub> and gives $2\\text{NO}+2\\text{H}_{2}\\;\\longrightarrow \\;\\text{N}_{2}+2\\text{H}_{2}\\text{O}$."
    }
   },
   {
@@ -426,7 +426,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: (a) add the three steps, counting the first step’s two chlorine atoms, and cancel whatever appears on both sides. (b) The species made in one step and used up in a later one are the intermediates. (c) Write each elementary step’s rate law from its equation, the reverse of the first step included. (d) The slow second step sets the rate, but its rate law contains an intermediate; express that intermediate’s concentration through the fast equilibrium of the first step, as in Example 12.14, and substitute it."
+    "solution": "(a) $\\text{CO}(g)+\\text{Cl}_{2}(g)\\;\\longrightarrow \\;\\text{COCl}_{2}(g)$. Adding the three steps gives $\\text{Cl}_{2}+\\text{CO}+\\text{Cl}+\\text{COCl}+\\text{Cl}\\;\\longrightarrow \\;2\\text{Cl}+\\text{COCl}+\\text{COCl}_{2}$, and the two Cl atoms and the COCl cancel from both sides.<br>(b) Cl and COCl are the intermediates: Cl is produced in the first step and consumed in the second and third, and COCl is produced in the second step and consumed in the third.<br>(c) Step 1 forward, ${\\krate}_{1}=\\kkone[\\text{Cl}_{2}]$; step 1 reverse, ${\\krate}_{-1}=\\kkmone{[\\text{Cl}]}^{2}$; step 2, ${\\krate}_{2}=\\kktwo[\\text{CO}][\\text{Cl}]$; step 3, ${\\krate}_{3}={\\kk}_{3}[\\text{COCl}][\\text{Cl}]$.<br>(d) $\\krate=\\kktwo{\\left(\\frac{\\kkone}{\\kkmone}\\right)}^{1/2}[\\text{CO}]{[\\text{Cl}_{2}]}^{1/2}$, or $\\krate=\\kk[\\text{CO}]{[\\text{Cl}_{2}]}^{1/2}$. The slow second step determines the rate, $\\krate=\\kktwo[\\text{CO}][\\text{Cl}]$, but [Cl] is the concentration of an intermediate. The fast first step is at equilibrium, so its forward and reverse rates are equal, $\\kkone[\\text{Cl}_{2}]=\\kkmone{[\\text{Cl}]}^{2}$, which gives $[\\text{Cl}]={\\left(\\frac{\\kkone}{\\kkmone}\\right)}^{1/2}{[\\text{Cl}_{2}]}^{1/2}$. Substituting this into the rate law of step 2 gives the overall rate law, with $\\kk=\\kktwo{\\left(\\frac{\\kkone}{\\kkmone}\\right)}^{1/2}$."
    }
   }
  ],

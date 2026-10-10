@@ -504,7 +504,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: think of the weight of the vehicle as a force and of the wheels as the area it rests on. The same weight carried on more wheels or axles is spread over a larger area and over more places along the bridge, so each part of the deck bears a smaller pressure; with fewer wheels the pressure under each is greater, and the limit on the weight has to be lower."
+    "solution": "Because the deck feels the vehicle’s weight as a pressure, and pressure depends on the area the weight is spread over as well as on the weight itself. Pressure is the force exerted on a given area, $\\kP=\\frac{\\kforce}{\\karea}$. The same weight carried on more wheels or axles rests on a larger total area of tire and is shared among more places along the bridge, so the pressure under each wheel and the load on each span are smaller. Carried on fewer wheels, the same weight presses on a smaller area and gives a greater pressure, which a small bridge may not bear. A vehicle with many axles is therefore allowed a greater total weight than one with few, just as the elephant’s broad feet press on the ground less than a skater’s narrow blades."
    }
   },
   {
@@ -645,7 +645,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Suggested approach: consider what fills the space above the column. In a barometer that space must be a vacuum, and in a closed-end manometer too, so that the height of the liquid measures only the pressure pushing on the other surface. A volatile liquid would evaporate into that space, and its vapor would press down on the column and make the height a false measure of the pressure."
+    "solution": "Because the space above the liquid column must stay empty for the height of the column to measure the pressure. In a barometer, and in a closed-end manometer, that space is a vacuum, so the column stands until its own pressure, $\\kphyd=\\khcol\\krho\\kgrav$, equals the pressure on the open surface, and the height reads that pressure alone. A volatile liquid evaporates into the space above the column, and its vapor exerts a pressure of its own that pushes the column down. The column then stands lower than the pressure on the open surface warrants, and since the vapor pressure changes with temperature, the error changes too. A nonvolatile liquid such as mercury puts almost no vapor above the column, so the height gives the true pressure."
    }
   },
   {

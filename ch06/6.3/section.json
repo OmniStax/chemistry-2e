@@ -637,7 +637,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Degenerate orbitals are orbitals of the same energy, and the orbitals of one subshell are degenerate with one another. A subshell with secondary quantum number <em>l</em> holds 2<em>l</em> + 1 orbitals, one for each value of <em>m<sub>l</sub></em>, so a subshell contains degenerate orbitals only when 2<em>l</em> + 1 is greater than one. Read <em>l</em> for each of the three subshells and count 2<em>l</em> + 1 for each."
+    "solution": "The 2<em>p</em> subshell contains three degenerate orbitals, the 4<em>d</em> subshell five, and the 6<em>s</em> subshell none. In an atom with more than one electron, the orbitals of one subshell share one energy and are degenerate with one another, and a subshell with secondary quantum number <em>l</em> holds 2<em>l</em> + 1 orbitals, one for each value of <em>m<sub>l</sub></em>. (a) For 2<em>p</em>, <em>l</em> = 1, so <em>m<sub>l</sub></em> = –1, 0 or +1, which gives three degenerate orbitals. (b) For 4<em>d</em>, <em>l</em> = 2, so <em>m<sub>l</sub></em> runs from –2 to +2, which gives five degenerate orbitals. (c) For 6<em>s</em>, <em>l</em> = 0, so <em>m<sub>l</sub></em> = 0 is the only value; the subshell is a single orbital, with no other orbital of the same energy."
    }
   },
   {
@@ -669,7 +669,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Orbitals in one subshell share one energy, so they are degenerate. Read the value of <em>l</em> from the letter of each subshell (<em>s</em> for 0, <em>p</em> for 1, <em>d</em> for 2, <em>f</em> for 3) and count the 2<em>l</em> + 1 values of <em>m<sub>l</sub></em> that it allows; a subshell with only one orbital has no other orbital to be degenerate with."
+    "solution": "The 3<em>d</em> subshell contains five degenerate orbitals and the 4<em>f</em> subshell seven, while the 1<em>s</em> subshell contains none. The orbitals of one subshell share one energy, and a subshell with secondary quantum number <em>l</em> holds 2<em>l</em> + 1 orbitals, one for each value of <em>m<sub>l</sub></em>. (a) For 3<em>d</em>, <em>l</em> = 2, so <em>m<sub>l</sub></em> = –2, –1, 0, +1 or +2, which gives five degenerate orbitals. (b) For 1<em>s</em>, <em>l</em> = 0, so <em>m<sub>l</sub></em> = 0 is the only value; the subshell is a single orbital, with no other orbital to be degenerate with. (c) For 4<em>f</em>, <em>l</em> = 3, so <em>m<sub>l</sub></em> runs from –3 to +3, which gives seven degenerate orbitals."
    }
   },
   {
@@ -738,7 +738,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Start from the principle: it is fundamentally impossible to determine simultaneously and exactly both the momentum and the position of a particle. The product of the two uncertainties, Δ<em>x</em> × Δ<em>p<sub>x</sub></em>, can be no smaller than <em>ħ</em>/2. Then say what follows. The more exactly we know the position of a particle, the less exactly we can know its momentum. An electron in an atom therefore cannot be followed along a precise orbit, as the Bohr model supposed, and its position can only be described by a probability. Because <em>ħ</em> is so small, the limit matters for a particle as light as an electron but is far too small to notice for a macroscopic object such as a baseball."
+    "solution": "The Heisenberg uncertainty principle states that it is fundamentally impossible to determine simultaneously and exactly both the momentum and the position of a particle. The product of the uncertainty in position and the uncertainty in momentum can be no smaller than a fixed limit, Δ<em>x</em> × Δ<em>p<sub>x</sub></em> ≥ <em>ħ</em>/2, so the more accurately the position of a particle is known, the less accurately its momentum can be known, and the reverse. The principle implies that an electron in an atom cannot be followed along a precise path, such as the circular orbit of the Bohr model, because a definite orbit would require both its position and its momentum to be known exactly at every moment. The electron can only be described by the probability of finding it in a region of space, which is what an orbital gives. Because <em>ħ</em> is so small, the limit matters for a particle as light as an electron but is far too small to notice for a macroscopic object such as a baseball."
    }
   },
   {
@@ -772,7 +772,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Sort each equation by the quantities it contains. A wavelength <em>λ</em> or a frequency <em>ν</em> belongs to a wave, while a mass <em>m</em>, a speed or a definite radius belongs to a particle. An equation that holds only wave quantities describes wavelike behavior, one that holds only particle quantities describes particle-like behavior, and one that sets a wave quantity equal to an expression in particle quantities joins the two. Note that in (b) and (e) the book writes the velocity of the particle with the same letter it uses for frequency, so read that symbol as a velocity there, as in de Broglie’s equation."
+    "solution": "Equation (a) describes wavelike behavior, (b) and (c) describe particle-like behavior, and (d) and (e) involve both. An equation that holds only wave quantities, a wavelength <em>λ</em> or a frequency <em>ν</em>, describes a wave; one that holds only a mass, a velocity or a definite position describes a particle; one that relates the two kinds joins them. (a) <em>c</em> = <em>λν</em> relates the speed, wavelength and frequency of light, all properties of a wave, so it is wavelike. (b) Here <em>ν</em> stands for the velocity of a particle of mass <em>m</em>, and <em>E</em> = <em>mν</em><sup>2</sup>/2 is its kinetic energy, so it is particle-like. (c) The radius of a Bohr orbit gives the definite distance of an electron, treated as a particle, from the nucleus, so it is particle-like. (d) <em>E</em> = <em>hν</em> gives the energy of one photon, a particle of light, in terms of the frequency of its wave, so it involves both. (e) de Broglie’s <em>λ</em> = <em>h</em>/<em>mν</em> gives the wavelength of a particle of mass <em>m</em> and velocity <em>ν</em>, so it involves both."
    }
   },
   {

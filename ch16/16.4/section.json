@@ -512,7 +512,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: recall what the degree sign marks: Δ<em>G</em>° is the free energy change for reactants and products in their standard states, 1 bar for gases and 1 <em>M</em> for solutions. Compare it with Δ<em>G</em> = Δ<em>G</em>° + <em>RT</em> ln <em>Q</em>, which gives the free energy change under any set of conditions, and say under what conditions the two are equal."
+        "solution": "$\\kdGo$ is the free energy change for the reaction with all reactants and products in their standard states, 1 bar for gases, 1 <em>M</em> for solutions and the pure substance for solids and liquids; $\\kdG$ is the free energy change under the actual conditions of the mixture, whatever its composition. At a given temperature $\\kdGo$ is a fixed value for a reaction, related to its equilibrium constant by $\\kdGo=-R\\kT\\;\\text{ln}\\;\\kK$. $\\kdG$ changes as the reaction proceeds, since $\\kdG=\\kdGo+R\\kT\\;\\text{ln}\\;\\kQrxn$ and $\\kQrxn$ changes with the amounts of reactants and products. The two are equal when $\\kQrxn = 1$, which is the case when every species is in its standard state. The sign of $\\kdG$ tells whether the reaction is spontaneous under the conditions actually present; the sign of $\\kdGo$ tells this only for standard conditions."
       }
     },
     {
@@ -550,7 +550,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: start from what a negative Δ<em>G</em> means, a driving force in the forward direction, and follow the mixture as reactants turn into products: <em>Q</em> grows toward <em>K</em>, so Δ<em>G</em> = Δ<em>G</em>° + <em>RT</em> ln <em>Q</em> rises toward zero as the mixture moves down the curve of Figure 16.14 to its lowest point. Then say what Δ<em>G</em> = 0 means for the rates of the forward and reverse processes and for the composition of the mixture."
+        "solution": "While $\\kdG &lt; 0$ the reaction proceeds spontaneously in the forward direction, converting reactants into products, and it continues until the mixture reaches equilibrium, where $\\kdG = 0$. As reactants are used up and products form, the reaction quotient $\\kQrxn$ grows toward $\\kK$, so the term $R\\kT\\;\\text{ln}\\;\\kQrxn$ in $\\kdG=\\kdGo+R\\kT\\;\\text{ln}\\;\\kQrxn$ rises and $\\kdG$ becomes less negative; the free energy of the mixture falls along the curve of Figure 16.14 toward its lowest point. When $\\kQrxn = \\kK$, $\\kdG = 0$: the free energy is at its minimum, there is no longer a driving force in either direction, the forward and reverse processes occur at equal rates, and the amounts of reactants and products stay constant. The system is at equilibrium."
       }
     },
     {
@@ -1019,7 +1019,7 @@
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Suggested approach: write Δ<em>G</em> = Δ<em>H</em> − <em>T</em>Δ<em>S</em> and notice that raising <em>T</em> lowers Δ<em>G</em> only when Δ<em>S</em> is positive. For each reaction, predict the sign of Δ<em>S</em> from the change in the amount of gas, as in Example 16.10, and choose the reactions whose entropy increases."
+        "solution": "Only reaction (c). Since $\\kdG=\\kdH-\\kT\\kdS$, raising $\\kT$ makes $\\kdG$ less positive or more negative only when $\\kdS$ is positive, and the sign of $\\kdS$ follows the change in the amount of gas.<br>(a) 4 mol of gas form 2 mol of gas, so $\\kdS &lt; 0$; the $-\\kT\\kdS$ term is positive and grows with temperature, so $\\kdG$ increases.<br>(b) 2 mol of gas form a solid, so $\\kdS &lt; 0$ and $\\kdG$ increases with temperature.<br>(c) A solid forms a solid and 5 mol of gas, so $\\kdS &gt; 0$; the $-\\kT\\kdS$ term becomes more negative as $\\kT$ rises, so $\\kdG$ decreases.<br>(d) 3 mol of gas are consumed and only a solid forms, so $\\kdS &lt; 0$ and $\\kdG$ increases with temperature."
       }
     },
     {

@@ -18,7 +18,8 @@
    "name": "Solubility product constant",
    "symbol": "K_sp",
    "terms": [
-    "solubility product constant"
+    "solubility product constant",
+    "solubility product"
    ],
    "type": "equilibrium-constant",
    "statement": "A saturated solution of a sparingly soluble ionic solid is an equilibrium in which the solid dissolves and its ions precipitate at equal rates. Its equilibrium constant is the solubility product, which, because only gases and solutes appear in an equilibrium constant expression, includes no term for the undissolved solid.",

@@ -875,6 +875,16 @@
           "anchor": "9.6-van-der-waals"
         }
       ]
+    },
+    {
+      "id": "earth-atmosphere",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Earth’s atmosphere",
+      "terms": [
+        "atmosphere"
+      ],
+      "statement": "The atmosphere is the gaseous layer that surrounds a planet. Earth’s, roughly 100–125 km thick, is mostly nitrogen and oxygen, and its weight is what exerts atmospheric pressure."
     }
   ],
   "concept_prereqs": [
@@ -1309,6 +1319,10 @@
     {
       "concept": "maxwell-boltzmann-distribution",
       "prereq": "speed"
+    },
+    {
+      "concept": "earth-atmosphere",
+      "prereq": "gas"
     }
   ]
 }

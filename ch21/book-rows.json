@@ -741,6 +741,13 @@
    "section": "21.6",
    "name": "Effects of radiation exposure",
    "statement": "A person in the US receives about 620 mrem a year from background sources such as cosmic rays and radon and from medical exposure; tens of rems at once cause illness and about 500 rems a 50% chance of death within 30 days, and exposure adds up over a lifetime, so it is limited by shielding, distance and time."
+  },
+  {
+   "id": "nuclear-shell",
+   "kind": "definition",
+   "section": "21.1",
+   "name": "Nuclear shell",
+   "statement": "The protons and neutrons of a nucleus fill energy levels, or shells, much as electrons fill shells around it; 2, 8, 20, 28, 50, 82 or 126 protons or neutrons complete a shell."
   }
  ],
  "concept_prereqs": [
@@ -1243,6 +1250,14 @@
   {
    "concept": "radiation-exposure",
    "prereq": "penetrating-power"
+  },
+  {
+   "concept": "nuclear-shell",
+   "prereq": "nucleus"
+  },
+  {
+   "concept": "magic-number",
+   "prereq": "nuclear-shell"
   }
  ]
 }

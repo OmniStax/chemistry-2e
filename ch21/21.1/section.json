@@ -321,6 +321,11 @@
    "span": "ex-per-nucleon",
    "concept": "mass-defect",
    "verb": "reinforces"
+  },
+  {
+   "span": "stability",
+   "concept": "nuclear-shell",
+   "verb": "introduces"
   }
  ],
  "exercises": [

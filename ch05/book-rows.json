@@ -255,7 +255,8 @@
       "name": "Specific heat capacity",
       "symbol": "c_spec",
       "terms": [
-        "specific heat capacity"
+        "specific heat capacity",
+        "specific heat"
       ],
       "type": "heat-capacity",
       "statement": "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 gram of it by 1 degree Celsius. It is an intensive property, set by the kind of substance alone.",

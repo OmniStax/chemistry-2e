@@ -76,7 +76,8 @@
   {"span": "binary-acids", "concept": "binary-acid", "verb": "introduces"},
   {"span": "oxyacids", "concept": "name-oxyacids", "verb": "introduces"},
   {"span": "oxyacids", "concept": "polyatomic-ions", "verb": "uses"},
-  {"span": "oxyacids", "concept": "oxyacid", "verb": "introduces"}
+  {"span": "oxyacids", "concept": "oxyacid", "verb": "introduces"},
+  {"span": "hydrates", "concept": "formula-unit", "verb": "introduces"}
  ],
  "exercises": [
   {

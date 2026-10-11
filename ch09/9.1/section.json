@@ -335,6 +335,11 @@
    "span": "atmosphere",
    "concept": "atmospheric-pressure-and-barometer",
    "verb": "reinforces"
+  },
+  {
+   "span": "atmosphere",
+   "concept": "earth-atmosphere",
+   "verb": "introduces"
   }
  ],
  "exercises": [

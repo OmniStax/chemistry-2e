@@ -2562,7 +2562,8 @@
       "section": "2.3",
       "name": "Average atomic mass",
       "terms": [
-        "atomic mass"
+        "atomic mass",
+        "atomic weight"
       ],
       "statement": "The mass listed for an element in the periodic table is a weighted average over its naturally occurring isotopes, the sum of each isotope’s mass multiplied by its fractional abundance. That is why most atomic masses are not whole numbers, and it is important to understand that no single atom has the average mass: no boron atom weighs 10.8 amu.",
       "forms": [
@@ -4273,7 +4274,8 @@
       "section": "4.2",
       "name": "Oxidation number",
       "terms": [
-        "oxidation number"
+        "oxidation number",
+        "oxidation state"
       ],
       "statement": "The oxidation number, or oxidation state, of an element in a compound is the charge each of its atoms would have if the compound were ionic."
     },
@@ -4774,7 +4776,8 @@
       "name": "Specific heat capacity",
       "symbol": "c_spec",
       "terms": [
-        "specific heat capacity"
+        "specific heat capacity",
+        "specific heat"
       ],
       "type": "heat-capacity",
       "statement": "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 gram of it by 1 degree Celsius. It is an intensive property, set by the kind of substance alone.",
@@ -7166,7 +7169,8 @@
       "section": "6.3",
       "name": "Electron density",
       "terms": [
-        "electron density"
+        "electron density",
+        "probability density"
       ],
       "statement": "Electron density is a measure of the probability of locating an electron in a particular region of space, equal to the squared magnitude of the wavefunction."
     },
@@ -9660,7 +9664,8 @@
       "name": "Solubility product constant",
       "symbol": "K_sp",
       "terms": [
-        "solubility product constant"
+        "solubility product constant",
+        "solubility product"
       ],
       "type": "equilibrium-constant",
       "statement": "A saturated solution of a sparingly soluble ionic solid is an equilibrium in which the solid dissolves and its ions precipitate at equal rates. Its equilibrium constant is the solubility product, which, because only gases and solutes appear in an equilibrium constant expression, includes no term for the undissolved solid.",
@@ -13739,6 +13744,40 @@
       "section": "21.6",
       "name": "Effects of radiation exposure",
       "statement": "A person in the US receives about 620 mrem a year from background sources such as cosmic rays and radon and from medical exposure; tens of rems at once cause illness and about 500 rems a 50% chance of death within 30 days, and exposure adds up over a lifetime, so it is limited by shielding, distance and time."
+    },
+    {
+      "id": "earth-atmosphere",
+      "kind": "definition",
+      "section": "9.1",
+      "name": "Earth’s atmosphere",
+      "terms": [
+        "atmosphere"
+      ],
+      "statement": "The atmosphere is the gaseous layer that surrounds a planet. Earth’s, roughly 100–125 km thick, is mostly nitrogen and oxygen, and its weight is what exerts atmospheric pressure."
+    },
+    {
+      "id": "formula-unit",
+      "kind": "definition",
+      "section": "2.7",
+      "name": "Formula unit",
+      "terms": [
+        "formula unit"
+      ],
+      "statement": "A formula unit is the group of atoms or ions a compound’s formula names, the smallest whole-number ratio of its parts; for an ionic compound, which has no molecules, it plays the part a molecule plays for a molecular one."
+    },
+    {
+      "id": "nuclear-shell",
+      "kind": "definition",
+      "section": "21.1",
+      "name": "Nuclear shell",
+      "statement": "The protons and neutrons of a nucleus fill energy levels, or shells, much as electrons fill shells around it; 2, 8, 20, 28, 50, 82 or 126 protons or neutrons complete a shell."
+    },
+    {
+      "id": "electrically-neutral",
+      "kind": "definition",
+      "section": "2.2",
+      "name": "Electrically neutral",
+      "statement": "A particle or a substance is electrically neutral when its positive and negative charges balance, so its net charge is zero; an atom is neutral when it holds as many electrons as protons."
     }
   ],
   "concept_prereqs": [
@@ -23405,6 +23444,26 @@
     {
       "concept": "neutral-solution",
       "prereq": "water-autoionization"
+    },
+    {
+      "concept": "earth-atmosphere",
+      "prereq": "gas"
+    },
+    {
+      "concept": "formula-unit",
+      "prereq": "ionic-compound-formula"
+    },
+    {
+      "concept": "nuclear-shell",
+      "prereq": "nucleus"
+    },
+    {
+      "concept": "magic-number",
+      "prereq": "nuclear-shell"
+    },
+    {
+      "concept": "electrically-neutral",
+      "prereq": "fundamental-charge"
     }
   ],
   "sheets": [

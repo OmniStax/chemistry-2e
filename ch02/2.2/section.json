@@ -150,7 +150,8 @@
   { "span": "neutron", "concept": "subatomic-particles", "verb": "introduces" },
   { "span": "neutron", "concept": "isotopes", "verb": "reinforces" },
   { "span": "neutron", "concept": "nuclear-model-of-the-atom", "verb": "uses" },
-  { "span": "neutron", "concept": "neutron", "verb": "introduces" }
+  { "span": "neutron", "concept": "neutron", "verb": "introduces" },
+  { "span": "atom-models", "concept": "electrically-neutral", "verb": "introduces" }
  ],
  "exercises": [
   {

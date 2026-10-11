@@ -62,7 +62,7 @@ The one story is the magnet. The intro shows oxygen held between the poles; 8.4 
 
 Carried as printed:
 
-- 8.2, Figure 8.8: the caption says the hybrid orbitals are "(yellow)" while the image draws them purple.
+- 8.2, Figure 8.8: the caption says the hybrid orbitals are "(yellow)", as the image draws them; no erratum.
 - 8.2, fs-idp86297648: the answer has an unclosed parenthesis.
 - 8.4, the key equation reads "number of bonding electron".
 - 8.4, glossary: "π* bonding orbital" and "σ* bonding orbital" name antibonding orbitals.

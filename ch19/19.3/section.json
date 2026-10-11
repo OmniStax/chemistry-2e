@@ -764,6 +764,12 @@
       "id": "c-dxy",
       "kind": "correction",
       "html": "The book writes <em>d<sub>zy</sub></em>, which is the <em>d<sub>yz</sub></em> orbital again. The third <em>t</em><sub>2<em>g</em></sub> orbital is <em>d<sub>xy</sub></em>."
+    },
+    {
+      "id": "c-fig-5d",
+      "kind": "correction",
+      "figure": "sim-high-low-spin",
+      "html": "The caption puts the six electrons of iron(II) in the 5<em>d</em> orbitals; they are 3<em>d</em> electrons, as the text says."
     }
   ]
 }

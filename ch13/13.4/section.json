@@ -506,7 +506,7 @@
     "at": "end"
    },
    "cite": "missing",
-   "prompt": "Sodium sulfate 10−hydrate, Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O, dehydrates according to the equation<br>${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{at}\\;25\\;{}^{\\circ}\\text{C}$<br>What is the pressure of water vapor at equilibrium with a mixture of Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O and NaSO<sub>4</sub>?",
+   "prompt": "Sodium sulfate 10−hydrate, Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O, dehydrates according to the equation<br>${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{at}\\;25\\;{}^{\\circ}\\text{C}$<br>What is the pressure of water vapor at equilibrium with a mixture of Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O and NaSO<sub>4</sub><sup class=\"fn\" data-note=\"c-e70-naso4\"></sup>?",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -1064,5 +1064,12 @@
    "weights_by": "ai"
   }
  ],
- "referents": []
+ "referents": [],
+ "footnotes": [
+  {
+   "id": "c-e70-naso4",
+   "kind": "correction",
+   "html": "The book writes NaSO<sub>4</sub>; the dehydrated salt of the equation above is Na<sub>2</sub>SO<sub>4</sub>."
+  }
+ ]
 }

@@ -721,7 +721,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "triethylamine"
+    "solution": "triethylamine<sup class=\"fn\" data-note=\"c-e39-name\"></sup>"
    }
   },
   {
@@ -1447,6 +1447,11 @@
    "id": "c-acetate-formula",
    "kind": "correction",
    "html": "The book writes acetate ion as CH<sub>2</sub>CO<sub>2</sub><sup>−</sup> in this order. Acetate is CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>, as in the equations below."
+  },
+  {
+   "id": "c-e39-name",
+   "kind": "correction",
+   "html": "The key names triethylamine; (CH<sub>3</sub>)<sub>3</sub>N is trimethylamine, which is the stronger base (<em>K</em><sub>b</sub> = 6.3 × 10<sup>−5</sup> against 1.7 × 10<sup>−5</sup> for H<sub>2</sub>BO<sub>3</sub><sup>−</sup>)."
   }
  ]
 }

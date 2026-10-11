@@ -285,7 +285,7 @@
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) ${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ (b) ${}_{\\;7}^{14}\\text{C}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;6}^{14}\\text{C}+{}_{1}^{1}\\text{H};$ (c) ${}_{\\;90}^{232}\\text{Th}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;90}^{233}\\text{Th};$ (d) ${}_{92}^{238}\\text{U}+{}_{1}^{2}\\text{H}\\;\\longrightarrow \\;{}_{\\;92}^{239}\\text{U}+{}_{1}^{1}\\text{H}$"
+        "solution": "(a) ${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ (b) ${}_{\\;7}^{14}\\text{C}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;6}^{14}\\text{C}+{}_{1}^{1}\\text{H};$<sup class=\"fn\" data-note=\"c-e4-n14\"></sup> (c) ${}_{\\;90}^{232}\\text{Th}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;90}^{233}\\text{Th};$ (d) ${}_{92}^{238}\\text{U}+{}_{1}^{2}\\text{H}\\;\\longrightarrow \\;{}_{\\;92}^{239}\\text{U}+{}_{1}^{1}\\text{H}$"
       }
     }
   ],
@@ -359,5 +359,10 @@
       "concept": "nuclear-reaction"
     }
   ],
-  "referents": []
+  "referents": [],
+  "footnotes": [{
+  "id": "c-e4-n14",
+  "kind": "correction",
+  "html": "The key writes ${}_{\\;7}^{14}\\text{C}$ as the target; the nucleus with atomic number 7 is nitrogen-14, ${}_{\\;7}^{14}\\text{N}$, which a neutron turns into carbon-14 and a proton."
+}]
 }

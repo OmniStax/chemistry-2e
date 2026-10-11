@@ -458,7 +458,7 @@
    "place": { "at": "end" },
    "cite": "ex-ca",
    "prompt": "Tungsten crystallizes in a body-centered cubic unit cell with an edge length of 3.165 Å.<br>(a) What is the atomic radius of tungsten in this structure?<br>(b) Calculate the density of tungsten.",
-   "answer": { "type": "multi", "generated_by": "source", "parts": [ { "part": "(a)", "value": 1.37, "unit": "Å" }, { "part": "(b)", "value": 19.26, "unit": "g/cm³" } ], "solution": "(a) 1.370 Å; (b) 19.26 g/cm" }
+   "answer": { "type": "multi", "generated_by": "source", "parts": [ { "part": "(a)", "value": 1.37, "unit": "Å" }, { "part": "(b)", "value": 19.26, "unit": "g/cm³" } ], "solution": "(a) 1.370 Å; (b) 19.26 g/cm<sup class=\"fn\" data-note=\"c-e7-cm3\"></sup>" }
   },
   {
    "id": "e8",
@@ -597,7 +597,7 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "ex-licl",
-   "prompt": "At temperatures above ~175 °C, thallium(I) iodide crystallizes with the same structure as CsCl. The edge length of the unit cell of TlI is 4.20 Å. Assuming contact between the body-centered Tl<sup>+</sup> ion and the cube-corner I<sup>−</sup> ions of a unit cell, calculate the ionic radius of TI<sup>+</sup>. (The ionic radius of I<sup>−</sup> is 2.16 Å.)",
+   "prompt": "At temperatures above ~175 °C, thallium(I) iodide crystallizes with the same structure as CsCl. The edge length of the unit cell of TlI is 4.20 Å. Assuming contact between the body-centered Tl<sup>+</sup> ion and the cube-corner I<sup>−</sup> ions of a unit cell, calculate the ionic radius of TI<sup>+</sup><sup class=\"fn\" data-note=\"c-e21-tl\"></sup>. (The ionic radius of I<sup>−</sup> is 2.16 Å.)",
    "answer": { "type": "number", "generated_by": "source", "value": 1.48, "unit": "Å", "solution": "1.48 Å" }
   },
   {
@@ -718,6 +718,18 @@
    "figures": [
     "sim-bragg"
    ]
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e7-cm3",
+   "kind": "correction",
+   "html": "The key gives the density in g/cm; its unit is g/cm<sup>3</sup>."
+  },
+  {
+   "id": "c-e21-tl",
+   "kind": "correction",
+   "html": "The book writes TI<sup>+</sup>; the ion is thallium(I), Tl<sup>+</sup>."
   }
  ]
 }

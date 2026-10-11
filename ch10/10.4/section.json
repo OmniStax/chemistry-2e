@@ -351,7 +351,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10a_img.jpg\" alt=\"The carbon phase diagram with the two regions to the right labeled Water (liquid) and Water vapor (gas).\"><br>(b)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10b_img.jpg\" alt=\"The carbon phase diagram with the region to the left labeled Graphite.\"><br>(c)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10c_img.jpg\" alt=\"The carbon phase diagram with the top region labeled Diamond.\"><br>(d)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10d_img.jpg\" alt=\"The carbon phase diagram with its four regions labeled Diamond, Graphite, Water (liquid) and Water vapor (gas), and a red circle where the liquid, gas and graphite lines meet.\"><br>(e) liquid phase (f) sublimation"
+    "solution": "(a)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10a_img.jpg\" alt=\"The carbon phase diagram with the two regions to the right labeled Water (liquid) and Water vapor (gas).\"><sup class=\"fn\" data-note=\"c-e8-carbon\"></sup><br>(b)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10b_img.jpg\" alt=\"The carbon phase diagram with the region to the left labeled Graphite.\"><br>(c)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10c_img.jpg\" alt=\"The carbon phase diagram with the top region labeled Diamond.\"><br>(d)<br><img src=\"/media/ch10/CNX_Chem_10_04_Exercise10d_img.jpg\" alt=\"The carbon phase diagram with its four regions labeled Diamond, Graphite, Water (liquid) and Water vapor (gas), and a red circle where the liquid, gas and graphite lines meet.\"><br>(e) liquid phase (f) sublimation"
    }
   }
  ],
@@ -464,6 +464,13 @@
    "figures": [
     "sim-phase"
    ]
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e8-carbon",
+   "kind": "correction",
+   "html": "The key’s drawings label the liquid and gas regions of the carbon diagram “Water (liquid)” and “Water vapor (gas)”; they are liquid carbon and carbon vapor."
   }
  ]
 }

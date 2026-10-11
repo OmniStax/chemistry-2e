@@ -461,7 +461,7 @@
     "value": 3.1e-12,
     "unit": "M",
     "hint": "[H<sub>3</sub>O<sup>+</sup>] = <em>K</em><sub>w</sub>/[OH<sup>−</sup>], with <em>K</em><sub>w</sub> = 1.0 × 10<sup>−14</sup> at 25 °C.",
-    "solution": "[OH<sup>−</sup>] = 3.1 × 10<sup>−12</sup> <em>M</em>"
+    "solution": "[OH<sup>−</sup>]<sup class=\"fn\" data-note=\"c-e25-h3o\"></sup> = 3.1 × 10<sup>−12</sup> <em>M</em>"
    }
   }
  ],
@@ -561,6 +561,13 @@
   {
    "exercise": "e25",
    "concept": "ph-calculations"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e25-h3o",
+   "kind": "correction",
+   "html": "The key names the concentration [OH<sup>−</sup>]; the 3.1 × 10<sup>−12</sup> <em>M</em> it gives is the hydronium ion concentration, [H<sub>3</sub>O<sup>+</sup>]."
   }
  ]
 }

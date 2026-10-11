@@ -486,7 +486,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "CH<sub>3</sub><u>C</u>H = <u>C</u>HCH<sub>3</sub>(<em>sp</em><sup>2</sup>) + Cl $\\longrightarrow$ CH<sub>3</sub><u>C</u>H(Cl)H(Cl)CH<sub>3</sub>(<em>sp</em><sup>3</sup>); 2<u>C</u><sub>6</sub>H<sub>6</sub>(<em>sp</em><sup>2</sup>) + 15O<sub>2</sub> $\\longrightarrow$ 12<u>C</u>O<sub>2</sub>(<em>sp</em>) + 6H<sub>2</sub>O"
+    "solution": "CH<sub>3</sub><u>C</u>H = <u>C</u>HCH<sub>3</sub>(<em>sp</em><sup>2</sup>) + Cl $\\longrightarrow$ CH<sub>3</sub><u>C</u>H(Cl)H(Cl)CH<sub>3</sub>(<em>sp</em><sup>3</sup>);<sup class=\"fn\" data-note=\"c-e61-cl2\"></sup> 2<u>C</u><sub>6</sub>H<sub>6</sub>(<em>sp</em><sup>2</sup>) + 15O<sub>2</sub> $\\longrightarrow$ 12<u>C</u>O<sub>2</sub>(<em>sp</em>) + 6H<sub>2</sub>O"
    }
   },
   {
@@ -574,6 +574,13 @@
   {
    "exercise": "e63",
    "concept": "carboxylic-acid"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e61-cl2",
+   "kind": "correction",
+   "html": "The key writes + Cl and CH<sub>3</sub>CH(Cl)H(Cl)CH<sub>3</sub>; chlorine adds as Cl<sub>2</sub>, giving CH<sub>3</sub>CH(Cl)CH(Cl)CH<sub>3</sub>."
   }
  ]
 }

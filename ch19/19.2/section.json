@@ -820,6 +820,12 @@
    "id": "c-converter-caption",
    "kind": "correction",
    "html": "The book’s caption joins two things. The catalysts the text describes convert carbon dioxide captured at power plants; a car’s catalytic converter, the one shown, converts carbon monoxide, nitrogen oxides and unburned hydrocarbons, not carbon dioxide."
+  },
+  {
+   "id": "c-fig-trans",
+   "kind": "correction",
+   "figure": "sim-cis-trans",
+   "html": "Figure 19.22’s caption says each ligand is directly across from an adjacent ligand; in the <em>trans</em> isomer each ligand is directly across from the identical ligand, Cl across from Cl and NH<sub>3</sub> across from NH<sub>3</sub>."
   }
  ]
 }

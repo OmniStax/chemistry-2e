@@ -378,5 +378,13 @@
       "exercise": "e5",
       "concept": "spontaneity-and-rate"
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-fig-days",
+      "kind": "correction",
+      "figure": "sim-decay",
+      "html": "The graph’s time axis reads hours; for the week the caption describes, it is meant in days. Tc-99m’s half-life is about 6 hours, so within a few days essentially none of it is left."
+    }
   ]
 }

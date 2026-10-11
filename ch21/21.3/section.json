@@ -531,7 +531,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "α (helium nuclei), β (electrons), β<sup>+</sup> (positrons), and η (neutrons) may be emitted from a radioactive element, all of which are particles; γ rays also may be emitted."
+    "solution": "α (helium nuclei), β (electrons), β<sup>+</sup> (positrons), and η (neutrons)<sup class=\"fn\" data-note=\"c-e1-n\"></sup> may be emitted from a radioactive element, all of which are particles; γ rays also may be emitted."
    }
   },
   {
@@ -565,7 +565,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) conversion of a neutron to a proton: ${}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{1}^{1}\\text{p}+{}_{+1}^{\\;0}\\text{e};$ (b) conversion of a proton to a neutron; the positron has the same mass as an electron and the same magnitude of positive charge as the electron has negative charge; when the n:p ratio of a nucleus is too low, a proton is converted into a neutron with the emission of a positron: ${}_{1}^{1}\\text{p}\\;\\longrightarrow \\;{}_{0}^{1}\\text{n}+{}_{+1}^{\\;0}\\text{e};$ (c) In a proton-rich nucleus, an inner atomic electron can be absorbed. In simplest form, this changes a proton into a neutron: ${}_{1}^{1}\\text{p}+{}_{-1}^{\\;0}\\text{e}\\;\\longrightarrow \\;{}_{0}^{1}\\text{p}$"
+    "solution": "(a) conversion of a neutron to a proton: ${}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{1}^{1}\\text{p}+{}_{+1}^{\\;0}\\text{e};$ (b)<sup class=\"fn\" data-note=\"c-e3-beta\"></sup> conversion of a proton to a neutron; the positron has the same mass as an electron and the same magnitude of positive charge as the electron has negative charge; when the n:p ratio of a nucleus is too low, a proton is converted into a neutron with the emission of a positron: ${}_{1}^{1}\\text{p}\\;\\longrightarrow \\;{}_{0}^{1}\\text{n}+{}_{+1}^{\\;0}\\text{e};$ (c) In a proton-rich nucleus, an inner atomic electron can be absorbed. In simplest form, this changes a proton into a neutron: ${}_{1}^{1}\\text{p}+{}_{-1}^{\\;0}\\text{e}\\;\\longrightarrow \\;{}_{0}^{1}\\text{p}$<sup class=\"fn\" data-note=\"c-e3-capture\"></sup>"
    }
   },
   {
@@ -691,7 +691,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Half-life is the time required for half the atoms in a sample to decay. Example (answers may vary): For C-14, the half-life is 5770 years. A 10-g sample of C-14 would contain 5 g of C-14 after 5770 years; a 0.20-g sample of C-14 would contain 0.10 g after 5770 years."
+    "solution": "Half-life is the time required for half the atoms in a sample to decay. Example (answers may vary): For C-14, the half-life is 5770 years<sup class=\"fn\" data-note=\"c-e10-c14\"></sup>. A 10-g sample of C-14 would contain 5 g of C-14 after 5770 years; a 0.20-g sample of C-14 would contain 0.10 g after 5770 years."
    }
   },
   {
@@ -827,7 +827,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${}_{\\;83}^{212}\\text{Bi}\\;\\longrightarrow \\;{}_{\\;84}^{212}\\text{Po}+{}_{-1}^{\\;0}\\text{e};$ (b) ${}_{5}^{8}\\text{B}\\;\\longrightarrow \\;{}_{4}^{8}\\text{B}\\text{e}+{}_{-1}^{\\;0}\\text{e};$ (c) ${}_{\\;92}^{238}\\text{U}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;93}^{239}\\text{Np}+{}_{-1}^{\\;0}\\text{N}\\text{p},$ ${}_{\\;93}^{239}\\text{Np}\\;\\longrightarrow \\;{}_{\\;94}^{239}\\text{Pu}+{}_{-1}^{\\;0}\\text{e};$ (d) ${}_{38}^{90}\\text{Sr}\\;\\longrightarrow \\;{}_{39}^{90}\\text{Y}+{}_{-1}^{\\;0}\\text{e}$"
+    "solution": "(a) ${}_{\\;83}^{212}\\text{Bi}\\;\\longrightarrow \\;{}_{\\;84}^{212}\\text{Po}+{}_{-1}^{\\;0}\\text{e};$ (b) ${}_{5}^{8}\\text{B}\\;\\longrightarrow \\;{}_{4}^{8}\\text{B}\\text{e}+{}_{-1}^{\\;0}\\text{e};$<sup class=\"fn\" data-note=\"c-e17-positron\"></sup> (c) ${}_{\\;92}^{238}\\text{U}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;93}^{239}\\text{Np}+{}_{-1}^{\\;0}\\text{N}\\text{p},$<sup class=\"fn\" data-note=\"c-e17-np\"></sup> ${}_{\\;93}^{239}\\text{Np}\\;\\longrightarrow \\;{}_{\\;94}^{239}\\text{Pu}+{}_{-1}^{\\;0}\\text{e};$ (d) ${}_{38}^{90}\\text{Sr}\\;\\longrightarrow \\;{}_{39}^{90}\\text{Y}+{}_{-1}^{\\;0}\\text{e}$"
    }
   }
  ],
@@ -1065,6 +1065,36 @@
    "id": "c-tc99m-half-life",
    "kind": "correction",
    "html": "The book’s table gives 8.01 hours. The half-life of Tc-99m is 6.01 hours, as Section 21.5 writes it."
+  },
+  {
+   "id": "c-e1-n",
+   "kind": "correction",
+   "html": "The key writes η for the neutron; its symbol is n, ${}_{0}^{1}\\text{n}$."
+  },
+  {
+   "id": "c-e3-beta",
+   "kind": "correction",
+   "html": "The key writes the β particle as ${}_{+1}^{\\;0}\\text{e}$, the positron; a neutron becomes a proton by emitting an electron: ${}_{0}^{1}\\text{n}\\;\\longrightarrow\\;{}_{1}^{1}\\text{p}+{}_{-1}^{\\;0}\\text{e}$."
+  },
+  {
+   "id": "c-e3-capture",
+   "kind": "correction",
+   "html": "The key writes the product of electron capture as ${}_{0}^{1}\\text{p}$; it is a neutron, ${}_{0}^{1}\\text{n}$."
+  },
+  {
+   "id": "c-e10-c14",
+   "kind": "correction",
+   "html": "The key gives 5770 years; Table 21.2 and the text give carbon-14 a half-life of 5730 years."
+  },
+  {
+   "id": "c-e17-positron",
+   "kind": "correction",
+   "html": "The key writes the positron as ${}_{-1}^{\\;0}\\text{e}$, the electron; it is ${}_{+1}^{\\;0}\\text{e}$: ${}_{5}^{8}\\text{B}\\;\\longrightarrow\\;{}_{4}^{8}\\text{Be}+{}_{+1}^{\\;0}\\text{e}$."
+  },
+  {
+   "id": "c-e17-np",
+   "kind": "correction",
+   "html": "The key writes ${}_{-1}^{\\;0}\\text{Np}$ for the emitted β particle; it is an electron, ${}_{-1}^{\\;0}\\text{e}$, and the uranium-239 formed first decays to neptunium-239."
   }
  ]
 }

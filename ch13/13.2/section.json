@@ -390,7 +390,7 @@
         "after": "ex-coupled"
       },
       "cite": "coupled",
-      "prompt": "Use the provided information to calculate Kc for the following reaction at 550 °C:<br>$\\begin{array}{llll}{\\text{H}}_{2}(g)+{\\text{CO}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g) & & & {\\text{K}}_{\\text{c}}=? \\\\ \\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g) & & & {\\text{K}}_{\\text{c}1}=490 \\\\ \\text{CoO}(s)+{\\text{H}}_{\\text{2}}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{H}}_{2}O(g) & & & {\\text{K}}_{\\text{c}1}=67\\end{array}$",
+      "prompt": "Use the provided information to calculate Kc for the following reaction at 550 °C:<br>$\\begin{array}{llll}{\\text{H}}_{2}(g)+{\\text{CO}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g) & & & {\\text{K}}_{\\text{c}}=? \\\\ \\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g) & & & {\\text{K}}_{\\text{c}1}=490 \\\\ \\text{CoO}(s)+{\\text{H}}_{\\text{2}}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{H}}_{2}O(g) & & & {\\text{K}}_{\\text{c}1}=67\\end{array}$<sup class=\"fn\" data-note=\"c-cyl5-kc2\"></sup>",
       "answer": {
         "type": "number",
         "value": 0.14,
@@ -595,7 +595,7 @@
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) <em>Q</em><sub>c</sub> 25 proceeds left; (b) <em>Q<sub>P</sub></em> 0.22 proceeds right; (c) <em>Q<sub>c</sub></em> undefined proceeds left; (d) <em>Q<sub>P</sub></em> 1.00 proceeds right; (e) <em>Q<sub>P</sub></em> 0 proceeds right; (f) <em>Q<sub>c</sub></em> 4 proceeds left"
+        "solution": "(a) <em>Q</em><sub>c</sub> 25 proceeds left; (b) <em>Q<sub>P</sub></em> 0.22 proceeds right; (c) <em>Q<sub>c</sub></em> undefined proceeds left; (d) <em>Q<sub>P</sub></em> 1.00 proceeds right; (e) <em>Q<sub>P</sub></em> 0 proceeds right; (f) <em>Q<sub>c</sub></em><sup class=\"fn\" data-note=\"c-e17-labels\"></sup> 4 proceeds left"
       }
     },
     {
@@ -939,6 +939,18 @@
     {
       "exercise": "e29",
       "concept": "write-reaction-quotient"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-e17-labels",
+      "kind": "correction",
+      "html": "The key labels the quotients the other way round from the constants given: in (e), with <em>K<sub>c</sub></em> given, the quotient is <em>Q<sub>c</sub></em> = 0; in (f), with <em>K<sub>P</sub></em> given, it is <em>Q<sub>P</sub></em> = 4."
+    },
+    {
+      "id": "c-cyl5-kc2",
+      "kind": "correction",
+      "html": "The book labels both given constants <em>K</em><sub>c1</sub>; the second, 67 for CoO(<em>s</em>) + H<sub>2</sub>(<em>g</em>), is <em>K</em><sub>c2</sub>."
     }
   ]
 }

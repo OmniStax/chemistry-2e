@@ -299,7 +299,7 @@
             "hint": "Reversing the reaction swaps the cathode and anode, so the subtraction runs the other way."
           }
         ],
-        "solution": "$\\begin{array}{ll}{\\text{I}}_{2}(s)+2{\\text{Br}}^{−}(aq)\\;\\longrightarrow \\;2{\\text{I}}^{−}(aq)+{\\text{Br}}_{2}(l) & \\hspace{2em}{E}^{\\circ}{}_{\\text{cell}}=−0.5518\\;\\text{V}\\;\\text{(nonspontaneous)} \\\\ {\\text{Br}}_{2}(s)+2{\\text{I}}^{−}(aq)\\;\\longrightarrow \\;2{\\text{Br}}^{−}(aq)+{\\text{I}}_{2}(s) & \\hspace{2em}{E}^{\\circ}{}_{\\text{cell}}=+0.5518\\;\\text{V}\\;\\text{(spontaneous)}\\end{array}$"
+        "solution": "$\\begin{array}{ll}{\\text{I}}_{2}(s)+2{\\text{Br}}^{−}(aq)\\;\\longrightarrow \\;2{\\text{I}}^{−}(aq)+{\\text{Br}}_{2}(l) & \\hspace{2em}{E}^{\\circ}{}_{\\text{cell}}=−0.5518\\;\\text{V}\\;\\text{(nonspontaneous)} \\\\ {\\text{Br}}_{2}(s)+2{\\text{I}}^{−}(aq)\\;\\longrightarrow \\;2{\\text{Br}}^{−}(aq)+{\\text{I}}_{2}(s) & \\hspace{2em}{E}^{\\circ}{}_{\\text{cell}}=+0.5518\\;\\text{V}\\;\\text{(spontaneous)}\\end{array}$<sup class=\"fn\" data-note=\"c-cyl2-br2\"></sup>"
       }
     },
     {
@@ -451,6 +451,11 @@
       "id": "c-mg-charge",
       "kind": "correction",
       "html": "The book writes Mg<sup>2</sup>(<em>aq</em>). The ion reduced is Mg<sup>2+</sup>(<em>aq</em>)."
+    },
+    {
+      "id": "c-cyl2-br2",
+      "kind": "correction",
+      "html": "The second equation writes Br<sub>2</sub>(<em>s</em>); bromine is a liquid under standard conditions, Br<sub>2</sub>(<em>l</em>), as in the first."
     }
   ]
 }

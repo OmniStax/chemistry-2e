@@ -354,7 +354,7 @@
     "value": 1.34,
     "unit": "kJ",
     "hint": "Treat the 200 mL of solution as 200 g of water and find the heat it absorbs.",
-    "solution": "1.34 × 10<sup>3</sup> kJ, or 1.34 kJ; assume no heat is absorbed by the calorimeter, no heat is exchanged between the calorimeter and its surroundings, and that the specific heat and density of the solution are the same as those for water"
+    "solution": "1.34 × 10<sup>3</sup> kJ<sup class=\"fn\" data-note=\"c-cyl4-kj\"></sup>, or 1.34 kJ; assume no heat is absorbed by the calorimeter, no heat is exchanged between the calorimeter and its surroundings, and that the specific heat and density of the solution are the same as those for water"
    }
   },
   {
@@ -924,6 +924,11 @@
    "id": "c-glucose-heat",
    "kind": "correction",
    "html": "The book prints 48.7 kJ. The calculation above gives <em>q</em><sub>reaction</sub> = −48.8 kJ, so the reaction released 48.8 kJ of heat."
+  },
+  {
+   "id": "c-cyl4-kj",
+   "kind": "correction",
+   "html": "The book’s key writes 1.34 × 10<sup>3</sup> kJ; the heat is 1.34 × 10<sup>3</sup> J, which is the 1.34 kJ it gives next."
   }
  ]
 }

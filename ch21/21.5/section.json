@@ -304,11 +304,11 @@
         "at": "end"
       },
       "cite": "tracers",
-      "prompt": "Iodine that enters the body is stored in the thyroid gland from which it is released to control growth and metabolism. The thyroid can be imaged if iodine-131 is injected into the body. In larger doses, I-133 is also used as a means of treating cancer of the thyroid. I-131 has a half-life of 8.70 days and decays by β<sup>−</sup> emission.<br>(a) Write an equation for the decay.<br>(b) How long will it take for 95.0% of a dose of I-131 to decay?",
+      "prompt": "Iodine that enters the body is stored in the thyroid gland from which it is released to control growth and metabolism. The thyroid can be imaged if iodine-131 is injected into the body. In larger doses, I-133 is also used as a means of treating cancer of the thyroid. I-131 has a half-life of 8.70 days<sup class=\"fn\" data-note=\"c-e2-i131\"></sup> and decays by β<sup>−</sup> emission.<br>(a) Write an equation for the decay.<br>(b) How long will it take for 95.0% of a dose of I-131 to decay?",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) ${}_{\\;53}^{133}\\text{I}\\;\\longrightarrow \\;{}_{\\;54}^{133}\\text{Xe}+{}_{−1}^{\\;0}\\text{e};$ (b) 37.6 days"
+        "solution": "(a) ${}_{\\;53}^{133}\\text{I}\\;\\longrightarrow \\;{}_{\\;54}^{133}\\text{Xe}+{}_{−1}^{\\;0}\\text{e};$<sup class=\"fn\" data-note=\"c-e2-eq\"></sup> (b) 37.6 days"
       }
     }
   ],
@@ -338,5 +338,17 @@
       "concept": "first-order-radioactive-decay"
     }
   ],
-  "referents": []
+  "referents": [],
+  "footnotes": [
+    {
+      "id": "c-e2-i131",
+      "kind": "correction",
+      "html": "Table 21.2 gives I-131 a half-life of 8.02 days, against the 8.70 days here; with 8.02 days, 95.0% of the dose decays in 34.7 days. It is I-131, not I-133, that treats thyroid cancer."
+    },
+    {
+      "id": "c-e2-eq",
+      "kind": "correction",
+      "html": "The key writes the decay of I-133; for I-131 it is ${}_{\\;53}^{131}\\text{I}\\;\\longrightarrow\\;{}_{\\;54}^{131}\\text{Xe}+{}_{-1}^{\\;0}\\text{e}$."
+    }
+  ]
 }

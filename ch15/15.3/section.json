@@ -473,7 +473,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Effect on amount of solid CaHPO<sub>4</sub>, [Ca<sup>2+</sup>], [OH<sup>–</sup>]: (a) increase, increase, decrease; (b) decrease, increase, decrease; (c) no effect, no effect, no effect; (d) decrease, increase, decrease; (e) increase, no effect, no effect"
+    "solution": "Effect on amount of solid CaHPO<sub>4</sub>, [Ca<sup>2+</sup>], [OH<sup>–</sup>]:<sup class=\"fn\" data-note=\"c-e105-hpo4\"></sup> (a) increase, increase, decrease; (b) decrease, increase, decrease; (c) no effect, no effect, no effect; (d) decrease, increase, decrease; (e) increase, no effect, no effect"
    }
   },
   {
@@ -601,6 +601,11 @@
    "id": "c-thiosulfate-complex",
    "kind": "correction",
    "html": "The book writes Ag(S<sub>2</sub>O<sub>2</sub>)<sub>2</sub><sup>3−</sup> here. The complex is Ag(S<sub>2</sub>O<sub>3</sub>)<sub>2</sub><sup>3−</sup>, as the calculation below has it."
+  },
+  {
+   "id": "c-e105-hpo4",
+   "kind": "correction",
+   "html": "The key heads its third column [OH<sup>–</sup>]; the question asks for the concentration of ${\\text{HPO}}_{4}{}^{\\text{2−}}$, which that column gives."
   }
  ]
 }

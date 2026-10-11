@@ -322,7 +322,7 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "Calculate the cadmium ion concentration, [Cd<sup>2+</sup>], in a solution prepared by mixing 0.100 L of 0.0100 <em>M</em> Cd(NO<sub>3</sub>)<sub>2</sub> with 0.150 L of 0.100 NH<sub>3</sub>(<em>aq</em>).",
+      "prompt": "Calculate the cadmium ion concentration, [Cd<sup>2+</sup>], in a solution prepared by mixing 0.100 L of 0.0100 <em>M</em> Cd(NO<sub>3</sub>)<sub>2</sub> with 0.150 L of 0.100 NH<sub>3</sub>(<em>aq</em>)<sup class=\"fn\" data-note=\"c-e64-m\"></sup>.",
       "answer": {
         "type": "number",
         "generated_by": "source",
@@ -554,7 +554,7 @@
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "${\\text{HNO}}_{3}(l)+\\text{HF}(l)\\;\\longrightarrow\\;{\\text{H}}_{2}{\\text{NO}}_{3}{}^{+}+{\\text{F}}^{-};$ $\\text{HF}(l)+{\\text{BF}}_{3}(g)\\;\\longrightarrow\\;{\\text{H}}^{+}+{\\text{BF}}_{4}$"
+        "solution": "${\\text{HNO}}_{3}(l)+\\text{HF}(l)\\;\\longrightarrow\\;{\\text{H}}_{2}{\\text{NO}}_{3}{}^{+}+{\\text{F}}^{-};$ $\\text{HF}(l)+{\\text{BF}}_{3}(g)\\;\\longrightarrow\\;{\\text{H}}^{+}+{\\text{BF}}_{4}$<sup class=\"fn\" data-note=\"c-e82-bf4\"></sup>"
       }
     },
     {
@@ -892,6 +892,16 @@
       "id": "c-complex-unit",
       "kind": "correction",
       "html": "The book gives [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099 without its unit; it is 0.099 <em>M</em>."
+    },
+    {
+      "id": "c-e64-m",
+      "kind": "correction",
+      "html": "The book gives the ammonia as 0.100 without its unit; it is 0.100 <em>M</em> NH<sub>3</sub>."
+    },
+    {
+      "id": "c-e82-bf4",
+      "kind": "correction",
+      "html": "The key writes BF<sub>4</sub> without its charge; the ion formed is BF<sub>4</sub><sup>−</sup>."
     }
   ]
 }

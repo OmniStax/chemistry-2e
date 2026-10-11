@@ -691,7 +691,7 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "Which of the following is the strongest oxidizing agent: ${\\text{VO}}_{4}{}^{3},$ ${\\text{CrO}}_{4}{}^{2−},$ or ${\\text{MnO}}_{4}{}^{\\text{−}}\\text{?}$",
+   "prompt": "Which of the following is the strongest oxidizing agent: ${\\text{VO}}_{4}{}^{3},$<sup class=\"fn\" data-note=\"c-e6-vo4\"></sup> ${\\text{CrO}}_{4}{}^{2−},$ or ${\\text{MnO}}_{4}{}^{\\text{−}}\\text{?}$",
    "answer": {
     "type": "open",
     "generated_by": "ai",
@@ -843,7 +843,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $\\text{Fe}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{2+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)+{\\text{H}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l);$ (b) ${\\text{FeCl}}_{3}(aq)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\text{Fe}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3Cl}}^{\\text{+}}(aq);$ (c) $\\text{Mn}{(\\text{OH})}_{2}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{2Br}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)+{\\text{2Br}}^{\\text{−}}(aq)+4{\\text{H}}_{2}\\text{O}(l);$ (d) $\\text{4Cr}(s)+3{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{Cr}}_{2}{\\text{O}}_{3}(s);$ (e) ${\\text{Mn}}_{2}{\\text{O}}_{3}(s)+6{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{6Cl}}^{\\text{−}}(aq)\\;\\longrightarrow \\;2{\\text{MnCl}}_{3}(s)+9{\\text{H}}_{2}\\text{O}(l);$ (f) $\\text{Ti}(s)+xs{\\text{F}}_{2}(g)\\;\\longrightarrow \\;{\\text{TiF}}_{4}(g)$"
+    "solution": "(a) $\\text{Fe}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{2+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)+{\\text{H}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l);$ (b) ${\\text{FeCl}}_{3}(aq)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\text{Fe}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3Cl}}^{\\text{+}}(aq);$<sup class=\"fn\" data-note=\"c-e17-cl\"></sup> (c) $\\text{Mn}{(\\text{OH})}_{2}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{2Br}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)+{\\text{2Br}}^{\\text{−}}(aq)+4{\\text{H}}_{2}\\text{O}(l);$ (d) $\\text{4Cr}(s)+3{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{Cr}}_{2}{\\text{O}}_{3}(s);$ (e) ${\\text{Mn}}_{2}{\\text{O}}_{3}(s)+6{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{6Cl}}^{\\text{−}}(aq)\\;\\longrightarrow \\;2{\\text{MnCl}}_{3}(s)+9{\\text{H}}_{2}\\text{O}(l);$ (f) $\\text{Ti}(s)+xs{\\text{F}}_{2}(g)\\;\\longrightarrow \\;{\\text{TiF}}_{4}(g)$"
    }
   },
   {
@@ -877,7 +877,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${\\text{Cr}}_{2}{({\\text{SO}}_{4})}_{3}(aq)+\\text{2Zn}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{2Zn}}^{2+}(aq)+{\\text{H}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l)+{\\text{2Cr}}^{2+}(aq)+{\\text{3SO}}_{4}{}^{2−}(aq);$ (b) ${\\text{4TiCl}}_{3}(s)+{\\text{CrO}}_{4}{}^{2−}(aq)+{\\text{8H}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{4Ti}}^{4+}(aq)+\\text{Cr}(s)+{\\text{4H}}_{2}\\text{O}(l)+{\\text{12Cl}}^{\\text{−}}(aq);$ (c) In acid solution between pH 2 and pH 6, ${\\text{CrO}}_{4}{}^{2−}$ forms ${\\text{HCrO}}_{4}{}^{\\text{−}},$ which is in equilibrium with dichromate ion. The reaction is ${\\text{2HCrO}}_{4}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−}(aq)+{\\text{H}}_{2}\\text{O}(l).$ At other acidic pHs, the reaction is ${\\text{3Cr}}^{2+}(aq)+{\\text{CrO}}_{4}{}^{2−}(aq)+{\\text{8H}}_{3}{\\text{O}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{4Cr}}^{3+}(aq)+{\\text{12H}}_{2}\\text{O}(l);$ (d) ${\\text{8CrO}}_{3}(s)+\\text{9Mn}(s)\\;\\overset{\\text{Δ}}{\\longrightarrow}\\;{\\text{4Cr}}_{2}{\\text{O}}_{3}(s)+{\\text{3Mn}}_{3}{\\text{O}}_{4}(s);$ (e) $\\text{CrO}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{2NO}}_{3}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Cr}}^{2+}(aq)+{\\text{2NO}}_{3}{}^{\\text{−}}(aq)+{\\text{3H}}_{2}\\text{O}(l);$ (f) ${\\text{CrCl}}_{3}(s)+\\text{3NaOH}(aq)\\;\\longrightarrow \\;\\text{Cr}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3Cl}}^{\\text{−}}(aq)$"
+    "solution": "(a) ${\\text{Cr}}_{2}{({\\text{SO}}_{4})}_{3}(aq)+\\text{2Zn}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{2Zn}}^{2+}(aq)+{\\text{H}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l)+{\\text{2Cr}}^{2+}(aq)+{\\text{3SO}}_{4}{}^{2−}(aq);$ (b) ${\\text{4TiCl}}_{3}(s)+{\\text{CrO}}_{4}{}^{2−}(aq)+{\\text{8H}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{4Ti}}^{4+}(aq)+\\text{Cr}(s)+{\\text{4H}}_{2}\\text{O}(l)+{\\text{12Cl}}^{\\text{−}}(aq);$<sup class=\"fn\" data-note=\"c-e19-other\"></sup> (c) In acid solution between pH 2 and pH 6, ${\\text{CrO}}_{4}{}^{2−}$ forms ${\\text{HCrO}}_{4}{}^{\\text{−}},$ which is in equilibrium with dichromate ion. The reaction is ${\\text{2HCrO}}_{4}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Cr}}_{2}{\\text{O}}_{7}{}^{2−}(aq)+{\\text{H}}_{2}\\text{O}(l).$ At other acidic pHs, the reaction is ${\\text{3Cr}}^{2+}(aq)+{\\text{CrO}}_{4}{}^{2−}(aq)+{\\text{8H}}_{3}{\\text{O}}^{\\text{+}}(aq)\\;\\longrightarrow \\;{\\text{4Cr}}^{3+}(aq)+{\\text{12H}}_{2}\\text{O}(l);$ (d) ${\\text{8CrO}}_{3}(s)+\\text{9Mn}(s)\\;\\overset{\\text{Δ}}{\\longrightarrow}\\;{\\text{4Cr}}_{2}{\\text{O}}_{3}(s)+{\\text{3Mn}}_{3}{\\text{O}}_{4}(s);$ (e) $\\text{CrO}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{2NO}}_{3}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Cr}}^{2+}(aq)+{\\text{2NO}}_{3}{}^{\\text{−}}(aq)+{\\text{3H}}_{2}\\text{O}(l);$ (f) ${\\text{CrCl}}_{3}(s)+\\text{3NaOH}(aq)\\;\\longrightarrow \\;\\text{Cr}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+{\\text{3Cl}}^{\\text{−}}(aq)$"
    }
   },
   {
@@ -894,7 +894,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $\\text{3Fe}(s)+{\\text{4H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{Fe}}_{3}{\\text{O}}_{4}(s)+{\\text{4H}}_{2}(g);$ (b) $\\text{3NaOH}(aq)+\\text{Fe}{({\\text{NO}}_{3})}_{3}(aq)\\;\\overset{\\;{\\text{H}}_{2}\\text{O}\\;}{\\to}\\;\\text{Fe}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+3{\\text{NO}}_{3}{}^{\\text{−}}(aq);$ (c) $\\text{MnO}{}^{4−}+5{\\text{Fe}}^{\\text{2+}}+8{\\text{H}}^{\\text{+}}\\;\\longrightarrow \\;\\text{Mn}{}^{\\text{2+}}+5{\\text{Fe}}_{3}+4{\\text{H}}_{2}\\text{O};$ (d) $\\text{Fe}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{2+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)+{\\text{H}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l);$ (e) ${\\text{4Fe}}^{2+}(aq)+{\\text{O}}_{2}(g)+{\\text{4HNO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{4Fe}}^{3+}(aq)+{\\text{2H}}_{2}\\text{O}(l)+{\\text{4NO}}_{3}{}^{\\text{−}}(aq);$ (f) ${\\text{FeCO}}_{3}(s)+{\\text{2HClO}}_{4}(aq)\\;\\longrightarrow \\;\\text{Fe}{({\\text{ClO}}_{4})}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)+{\\text{CO}}_{2}(g);$ (g) $\\text{3Fe}(s)+{\\text{2O}}_{2}(g)\\;\\overset{\\;\\text{Δ}\\;}{\\longrightarrow}\\;{\\text{Fe}}_{3}{\\text{O}}_{4}(s)$"
+    "solution": "(a) $\\text{3Fe}(s)+{\\text{4H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{Fe}}_{3}{\\text{O}}_{4}(s)+{\\text{4H}}_{2}(g);$ (b) $\\text{3NaOH}(aq)+\\text{Fe}{({\\text{NO}}_{3})}_{3}(aq)\\;\\overset{\\;{\\text{H}}_{2}\\text{O}\\;}{\\to}\\;\\text{Fe}{(\\text{OH})}_{3}(s)+{\\text{3Na}}^{\\text{+}}(aq)+3{\\text{NO}}_{3}{}^{\\text{−}}(aq);$ (c) $\\text{MnO}{}^{4−}+5{\\text{Fe}}^{\\text{2+}}+8{\\text{H}}^{\\text{+}}\\;\\longrightarrow \\;\\text{Mn}{}^{\\text{2+}}+5{\\text{Fe}}_{3}+4{\\text{H}}_{2}\\text{O};$<sup class=\"fn\" data-note=\"c-e21-mno4\"></sup> (d) $\\text{Fe}(s)+{\\text{2H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{2+}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)+{\\text{H}}_{2}(g)+{\\text{2H}}_{2}\\text{O}(l);$ (e) ${\\text{4Fe}}^{2+}(aq)+{\\text{O}}_{2}(g)+{\\text{4HNO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{4Fe}}^{3+}(aq)+{\\text{2H}}_{2}\\text{O}(l)+{\\text{4NO}}_{3}{}^{\\text{−}}(aq);$ (f) ${\\text{FeCO}}_{3}(s)+{\\text{2HClO}}_{4}(aq)\\;\\longrightarrow \\;\\text{Fe}{({\\text{ClO}}_{4})}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)+{\\text{CO}}_{2}(g);$ (g) $\\text{3Fe}(s)+{\\text{2O}}_{2}(g)\\;\\overset{\\;\\text{Δ}\\;}{\\longrightarrow}\\;{\\text{Fe}}_{3}{\\text{O}}_{4}(s)$"
    }
   },
   {
@@ -1211,6 +1211,26 @@
    "id": "c-appendix-l",
    "kind": "correction",
    "html": "The book cites Appendix H, the ionization constants of weak acids. The standard reduction potentials are Appendix L."
+  },
+  {
+   "id": "c-e6-vo4",
+   "kind": "correction",
+   "html": "The book writes VO<sub>4</sub><sup>3</sup>; the vanadate ion is VO<sub>4</sub><sup>3−</sup>."
+  },
+  {
+   "id": "c-e17-cl",
+   "kind": "correction",
+   "html": "The key writes 3Cl<sup>+</sup>; the spectator ions are chloride, 3Cl<sup>−</sup>(<em>aq</em>)."
+  },
+  {
+   "id": "c-e19-other",
+   "kind": "correction",
+   "html": "The key answers (b) for TiCl<sub>3</sub> and CrO<sub>4</sub><sup>2−</sup>, and (f) for CrCl<sub>3</sub>, where the question names FeCl<sub>2</sub> with Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> and FeCl<sub>3</sub>. For the question’s reactants: (b) 6Fe<sup>2+</sup> + Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 14H<sup>+</sup> ⟶ 6Fe<sup>3+</sup> + 2Cr<sup>3+</sup> + 7H<sub>2</sub>O; (f) FeCl<sub>3</sub>(<em>aq</em>) + 3NaOH(<em>aq</em>) ⟶ Fe(OH)<sub>3</sub>(<em>s</em>) + 3Na<sup>+</sup>(<em>aq</em>) + 3Cl<sup>−</sup>(<em>aq</em>)."
+  },
+  {
+   "id": "c-e21-mno4",
+   "kind": "correction",
+   "html": "The key writes MnO<sup>4−</sup> and 5Fe<sub>3</sub>; the equation is MnO<sub>4</sub><sup>−</sup> + 5Fe<sup>2+</sup> + 8H<sup>+</sup> ⟶ Mn<sup>2+</sup> + 5Fe<sup>3+</sup> + 4H<sub>2</sub>O."
   }
  ]
 }

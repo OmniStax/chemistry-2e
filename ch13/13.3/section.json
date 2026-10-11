@@ -587,7 +587,7 @@
     "at": "end"
    },
    "cite": "concentration",
-   "prompt": "Acetic acid is a weak acid that reacts with water according to this equation:$${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}(l)$$Will any of the following increase the percent of acetic acid that reacts and produces ${\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}$ ion?<br>(a) Addition of HCl<br>(b) Addition of NaOH<br>(c) Addition of NaCH<sub>3</sub>CO<sub>2</sub>",
+   "prompt": "Acetic acid is a weak acid that reacts with water according to this equation:$${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}(l)$$<sup class=\"fn\" data-note=\"c-e15-aq\"></sup>Will any of the following increase the percent of acetic acid that reacts and produces ${\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}$ ion?<br>(a) Addition of HCl<br>(b) Addition of NaOH<br>(c) Addition of NaCH<sub>3</sub>CO<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
@@ -842,6 +842,13 @@
   {
    "exercise": "e18",
    "concept": "freezing-point-depression"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e15-aq",
+   "kind": "correction",
+   "html": "The book writes the acetate ion as a liquid, CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>l</em>); it is dissolved, CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>aq</em>)."
   }
  ]
 }

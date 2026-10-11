@@ -477,7 +477,7 @@
       "hint": "Use the first-order integrated rate law with the rate constant at 27 °C."
      }
     ],
-    "solution": "<em>E</em><sub>a</sub> = 108 kJ; <em>A</em> = 2.0 × 10<sup>8</sup> s<sup>−1</sup>; <em>k</em> = 3.2 × 10<sup>−10</sup> s<sup>−1</sup>; (b) 1.81 × 10<sup>8</sup> h or 7.6 × 10<sup>6</sup> day; (c) Assuming that the reaction is irreversible simplifies the calculation because we do not have to account for any reactant that, having been converted to product, returns to the original state.",
+    "solution": "<em>E</em><sub>a</sub> = 108 kJ<sup class=\"fn\" data-note=\"c-e12-ea\"></sup>; <em>A</em> = 2.0 × 10<sup>8</sup> s<sup>−1</sup>; <em>k</em> = 3.2 × 10<sup>−10</sup> s<sup>−1</sup>; (b) 1.81 × 10<sup>8</sup> h or 7.6 × 10<sup>6</sup> day; (c) Assuming that the reaction is irreversible simplifies the calculation because we do not have to account for any reactant that, having been converted to product, returns to the original state.",
     "generated_by": "source"
    }
   },
@@ -610,6 +610,13 @@
   {
    "exercise": "e14",
    "concept": "collision-orientation"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e12-ea",
+   "kind": "correction",
+   "html": "The key gives the activation energy in kJ; it is a molar quantity, <em>E</em><sub>a</sub> = 108 kJ/mol."
   }
  ]
 }

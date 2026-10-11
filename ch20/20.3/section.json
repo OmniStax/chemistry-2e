@@ -466,7 +466,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) CH<sub>3</sub>CH(OH)CH<sub>3</sub>: all carbons are tetrahedral; (b) ${\\text{CH}}_{3}\\text{C}\\text{O}{\\text{CH}}_{3}\\text{:}$ the end carbons are tetrahedral and the central carbon is trigonal planar; (c) CH<sub>3</sub>OCH<sub>3</sub>: all are tetrahedral; (d) CH<sub>3</sub>COOH: the methyl carbon is tetrahedral and the acid carbon is trigonal planar; (e) CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH(CH<sub>3</sub>)CHCH<sub>2</sub>: all are tetrahedral except the right-most two carbons, which are trigonal planar"
+    "solution": "(a) CH<sub>3</sub>CH(OH)CH<sub>3</sub>: all carbons are tetrahedral; (b) ${\\text{CH}}_{3}\\text{C}\\text{O}{\\text{CH}}_{3}\\text{:}$ the end carbons are tetrahedral and the central carbon is trigonal planar; (c) CH<sub>3</sub>OCH<sub>3</sub>: all are tetrahedral; (d) CH<sub>3</sub>COOH: the methyl carbon is tetrahedral and the acid carbon is trigonal planar; (e) CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH(CH<sub>3</sub>)CHCH<sub>2</sub><sup class=\"fn\" data-note=\"c-e4-alkene\"></sup>: all are tetrahedral except the right-most two carbons, which are trigonal planar"
    }
   },
   {
@@ -588,6 +588,11 @@
    "id": "c-ester-volatility",
    "kind": "correction",
    "html": "The book says esters have lower vapor pressures. Without hydrogen bonds between their molecules, esters are held together more weakly than the alcohols and carboxylic acids they come from, so their vapor pressures are higher and they are more volatile."
+  },
+  {
+   "id": "c-e4-alkene",
+   "kind": "correction",
+   "html": "The key’s formula leaves out the double bond of 1-hexene: CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH(CH<sub>3</sub>)CH=CH<sub>2</sub>."
   }
  ]
 }

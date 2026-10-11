@@ -869,7 +869,7 @@
             "unit": "M"
           }
         ],
-        "solution": "(a) The change in initial concentration of common ion may not be neglected (must solve quadratic equation)<br>[Ti<sup>+</sup>] =0.031  <em>M</em><br>[Cl<sup>–</sup>] = 0.0056 <em>M</em> (b) The change in initial concentration of common ion may be neglected.<br>[Ba<sup>2+</sup>] = 2.4 × 10<sup>–4</sup> <em>M</em><br>[F<sup>–</sup>] = 0.313 <em>M</em>;<br>(c) The change in initial concentration of common ion may be neglected.<br>[Mg<sup>2+</sup>] = 0.0244 <em>M</em><br>$[{\\text{C}}_{2}{\\text{O}}_{4}{}^{\\text{2−}}]=2.9\\;\\times \\;{10}^{\\text{−5}}\\;M$<br>(d) The change in initial concentration of common ion may be neglected.<br>[Ca<sup>2+</sup>] = 5.18 × 10<sup>–4</sup> <em>M</em><br>[C<sub>2</sub>)<sub>4</sub><sup>2–</sup>] = 0.051 <em>M</em>"
+        "solution": "(a) The change in initial concentration of common ion may not be neglected (must solve quadratic equation)<br>[Ti<sup>+</sup>]<sup class=\"fn\" data-note=\"c-e17-tl\"></sup> =0.031  <em>M</em><br>[Cl<sup>–</sup>] = 0.0056 <em>M</em> (b) The change in initial concentration of common ion may be neglected.<br>[Ba<sup>2+</sup>] = 2.4 × 10<sup>–4</sup> <em>M</em><br>[F<sup>–</sup>] = 0.313 <em>M</em>;<br>(c) The change in initial concentration of common ion may be neglected.<br>[Mg<sup>2+</sup>] = 0.0244 <em>M</em><br>$[{\\text{C}}_{2}{\\text{O}}_{4}{}^{\\text{2−}}]=2.9\\;\\times \\;{10}^{\\text{−5}}\\;M$<br>(d) The change in initial concentration of common ion may be neglected.<br>[Ca<sup>2+</sup>] = 5.18 × 10<sup>–4</sup> <em>M</em><br>[C<sub>2</sub>)<sub>4</sub><sup>2–</sup>] = 0.051 <em>M</em><sup class=\"fn\" data-note=\"c-e17-oh\"></sup>"
       }
     },
     {
@@ -1768,6 +1768,16 @@
       "id": "c-baso4-ksp",
       "kind": "correction",
       "html": "The book prints the <em>K</em><sub>sp</sub> of barium sulfate as 10.08 × 10<sup>−10</sup>. It is 1.08 × 10<sup>−10</sup>, the value of Appendix J."
+    },
+    {
+      "id": "c-e17-tl",
+      "kind": "correction",
+      "html": "The key writes [Ti<sup>+</sup>]; the ion is thallium(I), [Tl<sup>+</sup>]."
+    },
+    {
+      "id": "c-e17-oh",
+      "kind": "correction",
+      "html": "The key writes [C<sub>2</sub>)<sub>4</sub><sup>2–</sup>]; the common ion of (d) is hydroxide, [OH<sup>−</sup>] = 0.051 <em>M</em>."
     }
   ]
 }

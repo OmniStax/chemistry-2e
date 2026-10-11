@@ -240,7 +240,7 @@
     "at": "end"
    },
    "cite": "rust",
-   "prompt": "Aluminum $({E}_{{\\text{Al}}^{\\text{3+}}\\text{/Al}}^{{}^{\\circ}}=\\text{−2.07 V})$ is more easily oxidized than iron $({E}_{{\\text{Fe}}^{\\text{3+}}\\text{/Fe}}^{{}^{\\circ}}=\\text{−0.477 V}),$ and yet when both are exposed to the environment, untreated aluminum has very good corrosion resistance while the corrosion resistance of untreated iron is poor. What might explain this observation?",
+   "prompt": "Aluminum $({E}_{{\\text{Al}}^{\\text{3+}}\\text{/Al}}^{{}^{\\circ}}=\\text{−2.07 V})$ is more easily oxidized than iron $({E}_{{\\text{Fe}}^{\\text{3+}}\\text{/Fe}}^{{}^{\\circ}}=\\text{−0.477 V}),$<sup class=\"fn\" data-note=\"c-e39-potentials\"></sup> and yet when both are exposed to the environment, untreated aluminum has very good corrosion resistance while the corrosion resistance of untreated iron is poor. What might explain this observation?",
    "answer": {
     "type": "open",
     "generated_by": "ai",
@@ -366,6 +366,11 @@
    "id": "c-rust-figure",
    "kind": "correction",
    "html": "The book cites Figure 17.15, the Statue of Liberty. The galvanic cell at an iron surface is drawn in Figure 17.16."
+  },
+  {
+   "id": "c-e39-potentials",
+   "kind": "correction",
+   "html": "The book’s potentials depart from Appendix L: <em>E</em>° for Al<sup>3+</sup>/Al is −1.662 V, and for Fe<sup>3+</sup>/Fe −0.037 V (−0.447 V is Fe<sup>2+</sup>/Fe). Aluminum is still the more easily oxidized."
   }
  ]
 }

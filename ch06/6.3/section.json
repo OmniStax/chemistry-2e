@@ -589,7 +589,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "<em>n</em> determines the general range for the value of energy and the probable distances that the electron can be from the nucleus. <em>l</em> determines the shape of the orbital. <em>m</em><sub>1</sub> determines the orientation of the orbitals of the same <em>l</em> value with respect to one another. <em>m<sub>s</sub></em> determines the spin of an electron."
+    "solution": "<em>n</em> determines the general range for the value of energy and the probable distances that the electron can be from the nucleus. <em>l</em> determines the shape of the orbital. <em>m</em><sub>1</sub><sup class=\"fn\" data-note=\"c-e3-ml\"></sup> determines the orientation of the orbitals of the same <em>l</em> value with respect to one another. <em>m<sub>s</sub></em> determines the spin of an electron."
    }
   },
   {
@@ -768,7 +768,7 @@
     "at": "end"
    },
    "cite": "de-broglie",
-   "prompt": "Which of the following equations describe particle-like behavior? Which describe wavelike behavior? Do any involve both types of behavior? Describe the reasons for your choices.<br>(a) <em>c</em> = <em>λν</em><br>(b) $E=\\frac{m{\\nu}^{2}}{2}$<br>(c) $r=\\frac{{n}^{2}{a}_{0}}{Z}$<br>(d) <em>E = hν</em><br>(e) $\\lambda=\\frac{h}{m\\nu}$",
+   "prompt": "Which of the following equations describe particle-like behavior? Which describe wavelike behavior? Do any involve both types of behavior? Describe the reasons for your choices.<br>(a) <em>c</em> = <em>λν</em><br>(b) $E=\\frac{m{\\nu}^{2}}{2}$<br>(c) $r=\\frac{{n}^{2}{a}_{0}}{Z}$<br>(d) <em>E = hν</em><br>(e) $\\lambda=\\frac{h}{m\\nu}$<sup class=\"fn\" data-note=\"c-e14-v\"></sup>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
@@ -1055,6 +1055,16 @@
    "id": "c-m-l",
    "kind": "correction",
    "html": "The book writes <em>m</em> here. The quantum number meant is the magnetic quantum number <em>m<sub>l</sub></em>, which for <em>l</em> = 1 has the values –1, 0, +1."
+  },
+  {
+   "id": "c-e3-ml",
+   "kind": "correction",
+   "html": "The key writes <em>m</em><sub>1</sub>; the quantum number of orientation is <em>m<sub>l</sub></em>."
+  },
+  {
+   "id": "c-e14-v",
+   "kind": "correction",
+   "html": "The book writes the velocity of a particle as <em>ν</em>, its symbol for frequency; in (b) and (e) it is the velocity <em>v</em>: $E=\\frac{m{v}^{2}}{2}$ and $\\lambda=\\frac{h}{mv}$."
   }
  ]
 }

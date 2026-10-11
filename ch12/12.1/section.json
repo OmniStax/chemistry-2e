@@ -297,7 +297,7 @@
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "$\\text{rate}=+\\frac{1}{2}\\;\\frac{\\text{Δ}[{\\text{CIF}}_{3}]}{\\text{Δ}t}\\;=-\\frac{\\text{Δ}[{\\text{Cl}}_{2}]}{\\text{Δ}t}\\;=-\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{F}}_{2}]}{\\text{Δ}t}$"
+        "solution": "$\\text{rate}=+\\frac{1}{2}\\;\\frac{\\text{Δ}[{\\text{CIF}}_{3}]}{\\text{Δ}t}\\;=-\\frac{\\text{Δ}[{\\text{Cl}}_{2}]}{\\text{Δ}t}\\;=-\\frac{1}{3}\\;\\frac{\\text{Δ}[{\\text{F}}_{2}]}{\\text{Δ}t}$<sup class=\"fn\" data-note=\"c-e3-clf3\"></sup>"
       }
     },
     {
@@ -402,6 +402,13 @@
     {
       "exercise": "e5",
       "concept": "relative-reaction-rates"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-e3-clf3",
+      "kind": "correction",
+      "html": "The key writes CIF<sub>3</sub>; the product is chlorine trifluoride, ClF<sub>3</sub>."
     }
   ]
 }

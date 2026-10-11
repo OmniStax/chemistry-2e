@@ -1200,5 +1200,17 @@
    "concept": "reducing-agent",
    "weights_by": "ai"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-permanganate",
+   "kind": "correction",
+   "html": "The book’s half-reaction is not balanced in oxygen or hydrogen. Four oxygen atoms and eight H<sup>+</sup> give four waters: MnO<sub>4</sub><sup>−</sup> + 8H<sup>+</sup> + 5e<sup>−</sup> ⟶ Mn<sup>2+</sup> + 4H<sub>2</sub>O."
+  },
+  {
+   "id": "c-appendix-l",
+   "kind": "correction",
+   "html": "The book cites Appendix H, the ionization constants of weak acids. The standard reduction potentials are Appendix L."
+  }
  ]
 }

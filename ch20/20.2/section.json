@@ -530,5 +530,12 @@
       "concept": "balanced-equation"
     }
   ],
-  "referents": []
+  "referents": [],
+  "footnotes": [
+    {
+      "id": "c-ether-example",
+      "kind": "correction",
+      "html": "The book cites Example 20.9, whose ether is diethyl ether. The compound named ethylmethyl ether is the methoxyethane drawn below, CH<sub>3</sub>OCH<sub>2</sub>CH<sub>3</sub>, the compound “shown in the following” of the paragraph’s start."
+    }
+  ]
 }

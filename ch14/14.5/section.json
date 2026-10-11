@@ -370,5 +370,12 @@
    "exercise": "e76",
    "concept": "conjugate-pair-strengths"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-hydronium-unit",
+   "kind": "correction",
+   "html": "The book gives [H<sub>3</sub>O<sup>+</sup>] = 1.2 × 10<sup>−4</sup> without its unit; it is 1.2 × 10<sup>−4</sup> <em>M</em>."
+  }
  ]
 }

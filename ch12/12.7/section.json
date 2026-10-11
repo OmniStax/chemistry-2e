@@ -562,5 +562,12 @@
       "exercise": "e9",
       "concept": "enthalpy-change"
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-nitric-oxide",
+      "kind": "correction",
+      "html": "The book's first equation decomposes NO<sub>2</sub>, where the text speaks of nitric oxide. The decomposition of nitric oxide is 2NO(<em>g</em>) ⟶ N<sub>2</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>)."
+    }
   ]
 }

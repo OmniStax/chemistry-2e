@@ -165,5 +165,12 @@
         "sim-real-boxes"
       ]
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-a-units",
+      "kind": "correction",
+      "html": "The book writes the units of <em>a</em> as L<sup>2</sup> atm mol<sup>2</sup>. They are L<sup>2</sup> atm mol<sup>−2</sup>, as Table 9.3 gives them, so that the term comes out in atm."
+    }
   ]
 }

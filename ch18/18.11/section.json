@@ -552,5 +552,12 @@
    "exercise": "e109",
    "concept": "interhalogen"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-fluoroapatite",
+   "kind": "correction",
+   "html": "The book writes Ca(PO<sub>4</sub>)<sub>3</sub>F. Fluoroapatite is Ca<sub>5</sub>(PO<sub>4</sub>)<sub>3</sub>F, as the section writes it a few paragraphs on."
+  }
  ]
 }

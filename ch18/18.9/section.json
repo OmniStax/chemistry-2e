@@ -1004,5 +1004,17 @@
    "exercise": "e6",
    "concept": "electronegativity"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-na2o-balance",
+   "kind": "correction",
+   "html": "The book’s equation is not balanced. One Na<sub>2</sub>O gives two NaOH: Na<sub>2</sub>O(<em>s</em>) + H<sub>2</sub>O(<em>l</em>) ⟶ 2NaOH(<em>aq</em>)."
+  },
+  {
+   "id": "c-hydrogen-phosphite",
+   "kind": "correction",
+   "html": "The book names HPO<sub>3</sub><sup>2−</sup> the hydrogen phosphate ion. Formed from phosphorous acid, H<sub>3</sub>PO<sub>3</sub>, it is the hydrogen phosphite ion; hydrogen phosphate is HPO<sub>4</sub><sup>2−</sup>."
+  }
  ]
 }

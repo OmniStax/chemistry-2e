@@ -1547,5 +1547,12 @@
         "sim-ion-pairs"
       ]
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-glycol-formula",
+      "kind": "correction",
+      "html": "The book writes C<sub>2</sub>H<sub>2</sub>(OH)<sub>2</sub> in the conversion factor. Ethylene glycol is C<sub>2</sub>H<sub>4</sub>(OH)<sub>2</sub>, whose molar mass is the 62.07 g/mol used."
+    }
   ]
 }

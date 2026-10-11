@@ -1441,5 +1441,12 @@
    "exercise": "e68",
    "concept": "ph-plus-poh"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-acetate-formula",
+   "kind": "correction",
+   "html": "The book writes acetate ion as CH<sub>2</sub>CO<sub>2</sub><sup>−</sup> in this order. Acetate is CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>, as in the equations below."
+  }
  ]
 }

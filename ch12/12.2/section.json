@@ -236,5 +236,12 @@
    "exercise": "s4",
    "concept": "temperature-and-rate"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-iron-hcl",
+   "kind": "correction",
+   "html": "The book's equation Fe(<em>s</em>) + HCl(<em>aq</em>) ⟶ 2FeCl<sub>2</sub>(<em>aq</em>) + 3H<sub>2</sub>(<em>g</em>) is not balanced. The reaction is Fe(<em>s</em>) + 2HCl(<em>aq</em>) ⟶ FeCl<sub>2</sub>(<em>aq</em>) + H<sub>2</sub>(<em>g</em>)."
+  }
  ]
 }

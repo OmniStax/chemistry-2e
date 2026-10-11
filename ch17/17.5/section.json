@@ -467,5 +467,12 @@
       "exercise": "e36",
       "concept": "temperature-and-rate"
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-nicd-electrolyte",
+      "kind": "correction",
+      "html": "The book calls the potassium hydroxide an electrode. It is the cell’s electrolyte; the electrodes are the nickel-plated cathode and the cadmium-plated anode."
+    }
   ]
 }

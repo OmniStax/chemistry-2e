@@ -808,5 +808,17 @@
       "concept": "reactor-coolant",
       "weights_by": "ai"
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-u235-fission",
+      "kind": "correction",
+      "html": "The book says the neutrons split U-238 nuclei, though the atoms bombarded are uranium-235. Slow neutrons split U-235 nuclei; U-238 captures them and becomes uranium-239."
+    },
+    {
+      "id": "c-meitnerium",
+      "kind": "correction",
+      "html": "The book’s table gives 107. Meitnerium is element 109, the atomic number its equation gives ${}_{109}^{266}\\text{Mt}$."
+    }
   ]
 }

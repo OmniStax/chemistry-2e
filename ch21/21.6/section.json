@@ -648,5 +648,12 @@
       "weights_by": "ai"
     }
   ],
-  "referents": []
+  "referents": [],
+  "footnotes": [
+    {
+      "id": "c-curie",
+      "kind": "correction",
+      "html": "The book writes 1 Ci = 3.7 × 10<sup>11</sup> decay/s, here and in the line below. The curie is 3.7 × 10<sup>10</sup> decay/s, as the section defines it, and the activity is $2.10 \\times 10^{14}$ Bq ÷ $3.7 \\times 10^{10}$ Bq/Ci = 5.7 × 10<sup>3</sup> Ci."
+    }
+  ]
 }

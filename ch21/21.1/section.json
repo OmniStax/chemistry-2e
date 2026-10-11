@@ -635,5 +635,12 @@
    "concept": "binding-energy-per-nucleon",
    "weights_by": "ai"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-example-21-2",
+   "kind": "correction",
+   "html": "The book cites Example 21.1, the density of a neutron star. The binding energy this example divides by the nucleon count is computed in Example 21.2."
+  }
  ]
 }

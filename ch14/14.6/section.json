@@ -510,5 +510,12 @@
    "concept": "henderson-hasselbalch",
    "weights_by": "ai"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-naoh-molarity",
+   "kind": "correction",
+   "html": "The book prints 0.10 NaOH without its unit; the solution is 0.10 <em>M</em> NaOH, as the solution to (b) uses it."
+  }
  ]
 }

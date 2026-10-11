@@ -886,5 +886,12 @@
       "concept": "formation-constant",
       "weights_by": "ai"
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-complex-unit",
+      "kind": "correction",
+      "html": "The book gives [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099 without its unit; it is 0.099 <em>M</em>."
+    }
   ]
 }

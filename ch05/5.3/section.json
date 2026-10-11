@@ -1266,5 +1266,22 @@
       "concept": "heat-specific-heat-relation",
       "weights_by": "ai"
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-chlorate",
+      "kind": "correction",
+      "html": "The book says perchlorate. KClO<sub>3</sub> is potassium chlorate; perchlorate is ClO<sub>4</sub><sup>−</sup>."
+    },
+    {
+      "id": "c-isooctane",
+      "kind": "correction",
+      "html": "The book says Table 5.2 gives −5460 kJ. Table 5.2 prints −5465.5 kJ/mol for isooctane; −5460 kJ is that value rounded."
+    },
+    {
+      "id": "c-hno3",
+      "kind": "correction",
+      "html": "The first line takes Δ<em>H</em><sub>f</sub>° of HNO<sub>3</sub>(<em>aq</em>) as −207.4 kJ/mol, the second computes with −206.64 kJ/mol. With −207.4 kJ/mol the sum is −138.3 kJ, in agreement with the −138.4 kJ found below."
+    }
   ]
 }

@@ -1049,5 +1049,12 @@
     "sim-double-slit"
    ]
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-m-l",
+   "kind": "correction",
+   "html": "The book writes <em>m</em> here. The quantum number meant is the magnetic quantum number <em>m<sub>l</sub></em>, which for <em>l</em> = 1 has the values –1, 0, +1."
+  }
  ]
 }

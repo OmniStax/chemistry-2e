@@ -809,5 +809,17 @@
    "exercise": "e35",
    "concept": "ionization-isomer"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-ionization-isomers",
+   "kind": "correction",
+   "html": "The book’s pair is not neutral: [CoCl<sub>6</sub>]<sup>3−</sup> with one Br<sup>−</sup> carries a charge of 4−. Ionization isomers exchange an anion between the two spheres of one neutral compound, as [Co(NH<sub>3</sub>)<sub>5</sub>Cl]Br and [Co(NH<sub>3</sub>)<sub>5</sub>Br]Cl do."
+  },
+  {
+   "id": "c-converter-caption",
+   "kind": "correction",
+   "html": "The book’s caption joins two things. The catalysts the text describes convert carbon dioxide captured at power plants; a car’s catalytic converter, the one shown, converts carbon monoxide, nitrogen oxides and unburned hydrocarbons, not carbon dioxide."
+  }
  ]
 }

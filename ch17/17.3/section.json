@@ -445,5 +445,12 @@
       "exercise": "e25",
       "concept": "cathode"
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-mg-charge",
+      "kind": "correction",
+      "html": "The book writes Mg<sup>2</sup>(<em>aq</em>). The ion reduced is Mg<sup>2+</sup>(<em>aq</em>)."
+    }
   ]
 }

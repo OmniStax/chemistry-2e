@@ -918,5 +918,12 @@
     "sim-calorimeter"
    ]
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-glucose-heat",
+   "kind": "correction",
+   "html": "The book prints 48.7 kJ. The calculation above gives <em>q</em><sub>reaction</sub> = −48.8 kJ, so the reaction released 48.8 kJ of heat."
+  }
  ]
 }

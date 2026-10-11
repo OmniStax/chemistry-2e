@@ -1049,5 +1049,22 @@
    "concept": "positron-emission"
   }
  ],
- "referents": []
+ "referents": [],
+ "footnotes": [
+  {
+   "id": "c-actinium-series",
+   "kind": "correction",
+   "html": "The book writes the actinide series. The decay series that begins at uranium-235 is the actinium series; the actinides are a row of the periodic table."
+  },
+  {
+   "id": "c-plutonium-239",
+   "kind": "correction",
+   "html": "The book writes the symbol Ra over 239 and 94. Element 94 is plutonium: ${}_{\\;94}^{239}\\text{Pu}$, whose half-life is 24,000 years."
+  },
+  {
+   "id": "c-tc99m-half-life",
+   "kind": "correction",
+   "html": "The book’s table gives 8.01 hours. The half-life of Tc-99m is 6.01 hours, as Section 21.5 writes it."
+  }
+ ]
 }

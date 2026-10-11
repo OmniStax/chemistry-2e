@@ -9,7 +9,7 @@
     "State and explain the second and third laws of thermodynamics",
     "Calculate entropy changes for phase transitions and chemical reactions under standard conditions"
   ],
-  "summary_html": "<p>The <span data-concept=\"second-law-of-thermodynamics\">second law of thermodynamics</span> states that a spontaneous process increases the <span data-concept=\"entropy\">entropy</span> of the universe, <em>S</em><sub>univ</sub> &gt; 0. If $\\kdSuniv$ &lt; 0, the process is nonspontaneous, and if $\\kdSuniv$ = 0, the system is at equilibrium. The <span data-concept=\"third-law-of-thermodynamics\">third law of thermodynamics</span> establishes the zero for <span data-concept=\"entropy\">entropy</span> as that of a perfect, pure crystalline solid at <span data-type=\"temperature\">0 K</span>. With only one possible <span data-concept=\"microstate\">microstate</span>, the <span data-concept=\"entropy\">entropy</span> is zero. We may compute the <span data-concept=\"standard-entropy-change\">standard entropy change</span> for a process by using <span data-concept=\"standard-entropy\">standard entropy</span> values for the reactants and products involved in the process.</p>",
+  "summary_html": "<p>The <span data-concept=\"second-law-of-thermodynamics\">second law of thermodynamics</span> states that a spontaneous process increases the <span data-concept=\"entropy\">entropy</span> of the universe, <em>S</em><sub>univ</sub><sup class=\"fn\" data-note=\"c-s-univ-summary\"></sup> &gt; 0. If $\\kdSuniv$ &lt; 0, the process is nonspontaneous, and if $\\kdSuniv$ = 0, the system is at equilibrium. The <span data-concept=\"third-law-of-thermodynamics\">third law of thermodynamics</span> establishes the zero for <span data-concept=\"entropy\">entropy</span> as that of a perfect, pure crystalline solid at <span data-type=\"temperature\">0 K</span>. With only one possible <span data-concept=\"microstate\">microstate</span>, the <span data-concept=\"entropy\">entropy</span> is zero. We may compute the <span data-concept=\"standard-entropy-change\">standard entropy change</span> for a process by using <span data-concept=\"standard-entropy\">standard entropy</span> values for the reactants and products involved in the process.</p>",
   "notes": "Nothing of the section is left out. Example 16.4 and the summary write “S_univ” without the Δ, Example 16.5’s answer is given in J K⁻¹ mol⁻¹, and Example 16.6’s Check Your Learning sets the state of Ca(OH)₂ upright, all as printed; Table 16.2 gives the values of its cells.",
   "ai": {
     "text": [
@@ -526,6 +526,18 @@
     {
       "exercise": "e29",
       "concept": "calculate-standard-entropy-change"
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-s-univ-example",
+      "kind": "correction",
+      "html": "The book writes $S_{\\text{univ}} &lt; 0$ here and $S_{\\text{univ}} &gt; 0$ in the next paragraph. The entropy of the universe is always positive; what the sum above gives is the change, $\\kdSuniv &lt; 0$ at −10.00 °C and $\\kdSuniv &gt; 0$ at 10.00 °C."
+    },
+    {
+      "id": "c-s-univ-summary",
+      "kind": "correction",
+      "html": "The book writes $S_{\\text{univ}} &gt; 0$. The second law is a statement about the change, $\\kdSuniv &gt; 0$, as the next sentence writes it."
     }
   ]
 }

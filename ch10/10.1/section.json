@@ -532,5 +532,12 @@
         "sim-hydrides"
       ]
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-ethanol-bp",
+      "kind": "correction",
+      "html": "The book prints 78.5 °C here, where the problem gives the boiling point of ethanol as 78.4 °C. The value meant is 78.4 °C."
+    }
   ]
 }

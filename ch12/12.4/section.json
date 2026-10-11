@@ -689,5 +689,12 @@
         "sim-order-plots"
       ]
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-second-order-unit",
+      "kind": "correction",
+      "html": "The book writes the initial concentration as 0.200 mol<sup>−1</sup> in $\\frac{1}{0.200\\;\\text{mol}^{-1}}$. It is 0.200 mol L<sup>−1</sup>, so its reciprocal is 5.00 L mol<sup>−1</sup>, as the next line has it."
+    }
   ]
 }

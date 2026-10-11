@@ -434,5 +434,12 @@
    "exercise": "e3",
    "concept": "mass-stoichiometry"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-hydride-water",
+   "kind": "correction",
+   "html": "The book leaves water out of the left side. The hydrides react with water: MH or MH<sub>2</sub> + H<sub>2</sub>O ⟶ MOH or M(OH)<sub>2</sub> + H<sub>2</sub>."
+  }
  ]
 }

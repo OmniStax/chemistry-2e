@@ -582,5 +582,12 @@
    "exercise": "e7",
    "concept": "alcohol"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-ester-volatility",
+   "kind": "correction",
+   "html": "The book says esters have lower vapor pressures. Without hydrogen bonds between their molecules, esters are held together more weakly than the alcohols and carboxylic acids they come from, so their vapor pressures are higher and they are more volatile."
+  }
  ]
 }

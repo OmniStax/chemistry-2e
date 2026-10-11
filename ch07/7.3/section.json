@@ -1053,5 +1053,12 @@
    "exercise": "e19",
    "concept": "multiple-bonds"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-six-steps",
+   "kind": "correction",
+   "html": "The book says six steps. The procedure for drawing Lewis structures given earlier in this section has five steps."
+  }
  ]
 }

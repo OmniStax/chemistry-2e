@@ -564,5 +564,12 @@
    "exercise": "e5",
    "concept": "nonmetal-structures"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-so2-equation",
+   "kind": "correction",
+   "html": "The book writes S(<em>s</em>) + O<sub>2</sub>(<em>g</em>) ⟶ 2SO<sub>2</sub>(<em>s</em>). The balanced equation gives one sulfur dioxide, a gas: S(<em>s</em>) + O<sub>2</sub>(<em>g</em>) ⟶ SO<sub>2</sub>(<em>g</em>)."
+  }
  ]
 }

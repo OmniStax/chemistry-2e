@@ -267,5 +267,12 @@
     "sim-empirical"
    ]
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-h-ratio",
+   "kind": "correction",
+   "html": "The book divides 8.624 mol H here. The line above gives 8.641 mol H, and 8.641/1.233 = 7.008; the ratio is still close to 7."
+  }
  ]
 }

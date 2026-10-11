@@ -532,5 +532,12 @@
    "concept": "elementary-rate-laws"
   }
  ],
- "referents": []
+ "referents": [],
+ "footnotes": [
+  {
+   "id": "c-cyclobutane",
+   "kind": "correction",
+   "html": "The book says the butadiene reaction. The unimolecular step described is the decomposition of cyclobutane, C<sub>4</sub>H<sub>8</sub> ⟶ 2C<sub>2</sub>H<sub>4</sub>."
+  }
+ ]
 }

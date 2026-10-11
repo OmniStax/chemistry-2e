@@ -1479,5 +1479,12 @@
    "concept": "alkene",
    "weights_by": "ai"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-constitutional-isomers",
+   "kind": "correction",
+   "html": "The book describes constitutional isomers by the spatial arrangement of their atoms, which is what stereoisomers differ in. Constitutional isomers differ in which atoms are bonded to which, as butane and 2-methylpropane do."
+  }
  ]
 }

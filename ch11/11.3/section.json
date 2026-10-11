@@ -275,5 +275,12 @@
         "sim-solid-solubility"
       ]
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-o2-solubility",
+      "kind": "correction",
+      "html": "The book prints the solubility of oxygen at 30.0 °C as approximately ~1.2 mol/L. Figure 11.8 and the calculation that follows give $1.2 \\times 10^{-3}$ mol/L."
+    }
   ]
 }

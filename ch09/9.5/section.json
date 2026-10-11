@@ -188,5 +188,12 @@
         "sim-gasbox"
       ]
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-grahams-law",
+      "kind": "correction",
+      "html": "The book attributes this to Graham’s law. What follows is the kinetic-molecular theory’s account of a gas; Graham’s law concerns the rates of effusion and diffusion."
+    }
   ]
 }

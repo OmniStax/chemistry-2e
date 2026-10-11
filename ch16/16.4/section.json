@@ -1246,5 +1246,22 @@
       "exercise": "e66",
       "concept": "free-energy-and-reaction-quotient"
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-water-enthalpy",
+      "kind": "correction",
+      "html": "The book subtracts −286.83 kJ/mol for $\\kdHf$ of H<sub>2</sub>O(<em>l</em>). The table of Example 16.7 gives −285.83 kJ/mol, and only that value yields the 44.01 kJ printed: −241.82 kJ − (−285.83 kJ) = 44.01 kJ."
+    },
+    {
+      "id": "c-sum-gf",
+      "kind": "correction",
+      "html": "The book writes $\\sum \\nu G_f^\\circ$ for the products. The sum is of standard free energies of formation, $\\sum \\nu \\kdGf$, as for the reactants."
+    },
+    {
+      "id": "c-sum-so",
+      "kind": "correction",
+      "html": "The book sums $\\kdSo$ over the products and reactants here and in the next line. What is summed is each substance’s standard entropy $\\kSo$: $\\kdSo = \\sum \\nu \\kSo(\\text{products}) - \\sum \\nu \\kSo(\\text{reactants})$."
+    }
   ]
 }

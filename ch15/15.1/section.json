@@ -1762,5 +1762,12 @@
       "exercise": "e101",
       "concept": "qsp-versus-ksp"
     }
+  ],
+  "footnotes": [
+    {
+      "id": "c-baso4-ksp",
+      "kind": "correction",
+      "html": "The book prints the <em>K</em><sub>sp</sub> of barium sulfate as 10.08 × 10<sup>−10</sup>. It is 1.08 × 10<sup>−10</sup>, the value of Appendix J."
+    }
   ]
 }

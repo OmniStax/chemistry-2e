@@ -360,5 +360,12 @@
    "exercise": "e42",
    "concept": "cathodic-protection"
   }
+ ],
+ "footnotes": [
+  {
+   "id": "c-rust-figure",
+   "kind": "correction",
+   "html": "The book cites Figure 17.15, the Statue of Liberty. The galvanic cell at an iron surface is drawn in Figure 17.16."
+  }
  ]
 }

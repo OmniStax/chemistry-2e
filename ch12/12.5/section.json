@@ -618,5 +618,102 @@
    "kind": "correction",
    "html": "The key gives the activation energy in kJ; it is a molar quantity, <em>E</em><sub>a</sub> = 108 kJ/mol."
   }
+ ],
+ "derivations": [
+  {
+   "id": "arrhenius-two-point",
+   "what": "the two-point form of the Arrhenius equation",
+   "source": "Chemistry 2e, 12.5 Collision Theory, Example 12.13",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "tex": "\\ln\\kktwo = \\left(\\frac{-\\kEa}{R}\\right)\\left(\\frac{1}{\\kTtwo}\\right)+\\ln\\kAfreq",
+       "src": "12.5"
+      },
+      {
+       "tex": "\\ln x - \\ln y = \\ln\\frac{x}{y}",
+       "src": "Appendix B"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{l1}{\\ln\\kkone} = \\mk{e1}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t1}{\\left(\\frac{1}{\\kTone}\\right)}+\\mk{a1}{\\ln\\kAfreq}",
+      "src": "12.5",
+      "why": "The linear form of the Arrhenius equation at the first temperature, $T_1$, where the rate constant is $k_1$."
+     },
+     "steps": [
+      {
+       "tex": "\\mk{l1}{\\ln\\kkone} - \\mk{l2}{\\ln\\kktwo} = \\mk{e1}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t1}{\\left(\\frac{1}{\\kTone}\\right)}+\\mk{a1}{\\ln\\kAfreq} - \\mk{e2}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t2}{\\left(\\frac{1}{\\kTtwo}\\right)} - \\mk{a2}{\\ln\\kAfreq}",
+       "uses": [
+        0
+       ]
+      },
+      {
+       "tex": "\\mk{l1}{\\ln\\kkone} - \\mk{l2}{\\ln\\kktwo} = \\mk{e1}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t1}{\\left(\\frac{1}{\\kTone}\\right)} - \\mk{e2}{\\left(\\frac{-\\kEa}{R}\\right)}\\mk{t2}{\\left(\\frac{1}{\\kTtwo}\\right)}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{l1}{\\ln\\kkone} - \\mk{l2}{\\ln\\kktwo} = \\mk{e1}{\\frac{-\\kEa}{R}}\\left(\\mk{t1}{\\frac{1}{\\kTone}} - \\mk{t2}{\\frac{1}{\\kTtwo}}\\right)",
+       "uses": [],
+       "map": {
+        "e2": "e1"
+       }
+      },
+      {
+       "tex": "\\mk{l1}{\\ln\\kkone} - \\mk{l2}{\\ln\\kktwo} = \\mk{e1}{\\frac{\\kEa}{R}}\\left(\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}\\right)",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{l1}{\\ln\\frac{\\kkone}{\\kktwo}} = \\mk{e1}{\\frac{\\kEa}{R}}\\left(\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}\\right)",
+       "uses": [
+        1
+       ],
+       "map": {
+        "l2": "l1"
+       }
+      }
+     ],
+     "src": "Example 12.13"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "tex": "\\ln\\frac{x}{y} = \\ln x - \\ln y",
+       "src": "Appendix B"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{l1}{\\ln\\frac{\\kkone}{\\kktwo}} = \\mk{e1}{\\frac{\\kEa}{R}}\\left(\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}\\right)",
+      "src": "Example 12.13"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{E}{\\kEa} = \\mk{R}{R}\\,\\frac{\\mk{l1}{\\ln\\frac{\\kkone}{\\kktwo}}}{\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}}",
+       "uses": [],
+       "map": {
+        "e1": [
+         "E",
+         "R"
+        ]
+       }
+      },
+      {
+       "tex": "\\mk{E}{\\kEa} = \\mk{R}{R}\\,\\frac{\\mk{l1}{\\ln\\kkone-\\ln\\kktwo}}{\\mk{t2}{\\frac{1}{\\kTtwo}} - \\mk{t1}{\\frac{1}{\\kTone}}}",
+       "uses": [
+        1
+       ]
+      },
+      {
+       "tex": "\\mk{E}{\\kEa} = -\\mk{R}{R}\\left(\\frac{\\mk{l1}{\\ln\\kktwo-\\ln\\kkone}}{\\mk{t2}{\\left(\\frac{1}{\\kTtwo}\\right)}-\\mk{t1}{\\left(\\frac{1}{\\kTone}\\right)}}\\right)",
+       "uses": []
+      }
+     ],
+     "src": "Example 12.13"
+    }
+   ]
+  }
  ]
 }

@@ -67,3 +67,8 @@ None.
 Applied by the chapter pass (2026-09-28): each equation anchored as listed, and its variables anchored with it.
 
 Applied by the chapter pass (2026-09-28): the Photographs row of `config.md` names the three images; `a_cell` and `r_atom` anchored at Example 10.14 (`10.6-ex-po`).
+
+## Derivations
+
+- Examples 10.14 and 10.15, a metal's density from its unit cell (and the radius from the face diagonal, also Example 10.18) · score 3 · not built: worked examples, every line printed; the radius line is three moves.
+- `xray`, the Bragg equation nλ = 2d sin θ · score 7 · not built: a formula the book states as the condition for constructive interference, with the geometry told only in a caption; its derivation rests on path difference and interference, which the book never states.

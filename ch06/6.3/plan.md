@@ -131,3 +131,8 @@ r and every radius and distance. `F.cat(0)`/`F.cat(1)` for the two signs of ψ;
 ### Applied by the chapter pass (2026-09-28)
 
 Every variable and equation anchor above is written. Glossary rows carry no anchor field, so the glossary line is not written; the seven terms that carried HTML are now plain words. The evidence of `working-with-quantum-numbers` already names Examples 6.7 to 6.9 and the four exercises, and is unchanged.
+
+## Derivations
+
+- `de-broglie`, Bohr's quantization from the de Broglie standing wave · score 3 · not built: three moves, and the angular-momentum postulate it explains is never printed in 6.2.
+- Example 6.8, n² orbitals and 2n² electrons in shell n · score 3 · not built: three moves, and the sum of the first n odd numbers is never stated in the book.

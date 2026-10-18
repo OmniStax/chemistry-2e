@@ -420,3 +420,9 @@ Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 
 - `sim-orbit-rung` · readout Eₙ alone, the radius in the sentence (manim 12); the ion choice bends every orbit to its new radius (manim 15/16).
 - `sim-series` · readout one equation, the longest wavelength in the sentence (manim 12); the ion choice slides every line to its new wavelength (manim 16).
+
+## Derivations
+
+- `stationary-states`, the Bohr energy levels Eₙ = −k/n² (and the orbit radius) · score 13 · not built: Bohr's derivation rests on Coulomb's law, circular motion and the angular-momentum postulate, none of which the book states; the book says only that k comprises fundamental constants.
+- `rydberg-recovered`, the Rydberg equation from Bohr's levels · score 5, a printed block · built as drv-rydberg-equation: the energy levels put into Bohr's photon equation and solved for 1/λ, then matched with Rydberg's formula of 6.1 to give R∞ = k/hc. The work keeps |ΔE|, as the book's photon equation does, and inserts the line with the two levels substituted. The block's lines and its "Inserting …", "or" and "which is identical …" phrases are replaced; the sentence on k and the paragraph on Bohr's agreement stay.
+- `orbit-radius`, the ionization energy ΔE = E∞ − E₁ = k · score 0 · not built (found in the re-read, not in the scan): one printed line substituting the section's formula at n = 1 and n → ∞.

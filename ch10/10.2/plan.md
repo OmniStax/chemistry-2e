@@ -51,3 +51,7 @@ Nothing: the capillary equation's h, T, θ, r, ρ and g are untyped (chapter `CO
 - eq-capillary-rise → 10.2-capillary-rise
 
 Applied by the chapter pass (2026-09-28): each equation anchored as listed, and its variables anchored with it.
+
+## Derivations
+
+- `capillary-rise`, h = 2T cos θ/rρg · score 7 · not built: a formula the book states, with no claim that it follows from anything; the force balance is told only in words, and the weight of the column rests on weight = mg, which the book never states.

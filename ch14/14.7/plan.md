@@ -51,3 +51,8 @@ Objectives, summary and glossary go to the tables. Kept as printed: "intial" in 
 - variables `pK_a` → 14.7-titration-curves
 
 Applied by the chapter pass (2026-10-05): `V` and `n` take the meanings asked; the four anchors set; rows `[H3O+]`, `[OH-]`, `[A-]`, `[HA]`, `pOH`, `K_a`, `K_b_ion`, `K_w`, `pK_w` added with their 14.1 to 14.3 meanings, at `titration-curves`. General mentions of pH, volume and titrant are marked.
+
+## Derivations
+
+- Example 14.21, the pH along a strong acid–strong base titration · score 4 · not built: a worked example of the section's own method, stoichiometry then pH, with numbers throughout
+- Example 14.22, the pH along a weak acid–strong base titration · score 8 · not built: a worked example that applies the section's method with results of 14.2–14.6 at four points; numbers, no general result

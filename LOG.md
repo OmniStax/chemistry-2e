@@ -1719,3 +1719,217 @@ chapter), and every page of the chapter in light and dark with no console
 error but the dev server's own missing offline catalogue, no KaTeX error, no
 missing image, all eight inline exercise cards in their places and every
 figure drawn.
+
+
+## Pass 25 (2026-10-16): Chapter 12, Kinetics: derivations (rule 29)
+
+Six derivations built from the scan's ten candidates. In 12.4 the three
+half-lives, each from its integrated rate law and the definition of
+half-life, each in place of its printed block under its own heading
+(drv-half-life-first-order, -second-order, -zero-order). In 12.5 the
+two-point form of the Arrhenius equation in Example 12.13, which the book
+reaches with "rearranged to a convenient two-point form": the linear form at
+two temperatures subtracted to drop ln A, the logs merged by Appendix B, then
+Ea isolated (drv-arrhenius-two-point, two nodes); the substitution of the two
+data pairs stays as printed. In 12.6 the thin block of the NO dimerization
+equilibrium (drv-n2o2-equilibrium) and Example 12.14's rate law from a fast
+equilibrium before the slow step, the equilibrium of step 1 and the slow
+step's rate law as two lines joined where the intermediate is replaced
+(drv-mechanism-rate-law).
+
+Judged out: the three integrated rate laws of 12.4, whose integration rests
+on calculus the book never states; the relative rates of 12.1 and the linear
+Arrhenius form of 12.5, two moves each; Example 12.5, a worked example of the
+section's own method.
+
+Found: Example 12.13's two-point substitution evaluates to 1.86 × 10⁵ J/mol,
+which the book rounds to the graphical 1.8 × 10⁵; left as printed, outside
+the derivation.
+
+
+## Pass 26 (2026-10-16): Chapter 13, Fundamental Equilibrium Concepts: derivations (rule 29)
+
+Three derivations built from the scan's six candidates. In 13.2 the relation
+KP = Kc(RT)^Δn, the ideal gas law worked to P = MRT and then put into KP
+term by term (drv-kp-kc, two nodes), and the three manipulations of coupled
+equilibria, one derivation with a node each for the reversed, the scaled and
+the added equation, since the book prints them as one list from one law of
+mass action (drv-coupled-equilibria); the chemical equations and their K
+expressions stay in the list, and the derivation follows it. In 13.3 Kc =
+kf/kr from the rate laws of an elementary step at equilibrium
+(drv-kc-rate-constants).
+
+Judged out: the threefold compression of 13.3, two numerical instances whose
+rule is stated in prose; Examples 13.9 and 13.10, worked examples of the ICE
+method of 13.4.
+
+
+## Pass 27 (2026-10-16): Chapter 14, Acid-Base Equilibria: derivations (rule 29)
+
+Three derivations built from the scan's nine candidates, each in place of its
+printed block. In 14.2 pKw = pH + pOH from the Kw expression and the log of a
+product, then 14.00 at 25 °C as its own last node (drv-pkw). In 14.3 Ka × Kb
+= Kw, the two ionization constants multiplied and the shared concentrations
+cancelled (drv-ka-kb-kw); the summed chemical equations before it and the
+rearranged Ka = Kw/Kb after it stay as printed. In 14.6 the
+Henderson-Hasselbalch equation from Ka, the log of a product and the
+p-functions (drv-henderson-hasselbalch).
+
+Judged out: Examples 14.14, 14.15, 14.19, 14.20, 14.21 and 14.22, worked
+examples of their sections' own methods with numbers throughout; the
+scanners' scores of 8 for Examples 14.20 and 14.22 count the stoichiometry
+and the equilibrium as imported, but combining the two is what 14.6 and 14.7
+teach.
+
+
+## Pass 28 (2026-10-16): Chapter 15, Equilibria of Other Reaction Classes: derivations (rule 29)
+
+Nothing built: the scan's five candidates are worked examples of the
+sections' own methods (Examples 15.10, 15.11, 15.15 and 15.16, substitution
+into Ksp, Qsp and the product rule of coupled equilibria, with numbers
+throughout) and the three-move K for calcium carbonate dissolving in acid in
+15.3, under the hidden bar.
+
+Found: Example 15.16 prints the rearrangement of K for [S₂O₃²⁻] with the
+square root misplaced, while its arithmetic takes √(product/K); left as
+printed, outside any derivation.
+
+
+## Pass 29 (2026-10-16): Chapter 16, Thermodynamics: derivations (rule 29)
+
+Four derivations built from the scan's twelve candidates, each in place of
+its printed block. In 16.2 ΔS = k ln(W_f/W_i), the book's one-line chain from
+S = k ln W (drv-entropy-microstates). In 16.4 ΔG = −TΔS_univ from the second
+law expression, the first law and q_P = ΔH (drv-free-energy-universe); the
+crossover temperature T = ΔH/ΔS where the line of ΔG against T meets the
+axis (drv-crossover-temperature); and ΔG° = −RT ln K with K = e^(−ΔG°/RT) as
+a second result node (drv-free-energy-equilibrium).
+
+Judged out: the three cases of heat flow before the second law in 16.3, a
+prose-first illustration under the hidden bar, and the one-substitution third
+law; ΔG = w_max, which the book declines and which rests on maximum
+reversible work it never states; ΔG = ΔG° + RT ln Q, stated as a law; the
+vaporization free energy summed from formation reactions, a sum of chemical
+equations; Examples 16.8 and 16.13, substitutions into the section's
+formulas.
+
+
+## Pass 30 (2026-10-16): Chapter 17, Electrochemistry: derivations (rule 29)
+
+Four derivations built in 17.4 from the scan's four candidates, each in place
+of its printed display. ΔG° = −nFE°cell from ΔG° = w_max, with the two lines
+the book leaves out inserted: the work is minus the charge times the
+potential (V = J/C, 17.3, and the sign of work, 5.3), and n moles of
+electrons carry nF (drv-free-energy-cell-potential). E°cell = (RT/nF) ln K,
+the join of 16.4's ΔG° = −RT ln K with that result (drv-cell-potential-k).
+The Nernst equation from ΔG = ΔG° + RT ln Q (drv-nernst), and its 298 K
+form, which the book only describes: R, standard temperature and F put in,
+RT/F = 0.02569 V, ln Q = 2.303 log Q, and 0.0592 V (drv-nernst-298).
+Standard temperature is taken as the 298.15 K of 5.3, where the text's
+"(298) K" would give 0.0591 V.
+
+Judged out: Example 17.10 in 17.7, unit conversions into Q = nF and Q = It
+with every line printed.
+
+
+## Pass 31 (2026-10-16): Chapter 19, Transition Metals and Coordination Chemistry: derivations (rule 29)
+
+Nothing built. The scan's one candidate, Δtet = 4/9 Δoct in Example 19.8, is
+asserted by the book, and its derivation rests on a point-charge treatment of
+the crystal field the book never states.
+
+
+## Pass 32 (2026-10-16): Chapter 21, Nuclear Chemistry: derivations (rule 29)
+
+Nothing built from the scan's four candidates. The half-life from the decay
+constant in 21.3 restates 12.4's first-order half-life, built there as
+drv-half-life-first-order, and stays as printed; Examples 21.2, 21.7 and 21.8
+are worked examples of their sections' formulas and unit conversions, every
+line printed.
+
+
+## Pass 33 (2026-10-16): Chapter 1, Essential Ideas: derivations (rule 29)
+
+Built one derivation. 1.6's Celsius–Fahrenheit block is drv-celsius-fahrenheit: the slope from the two defining points, the intercept, the equation with and then without its units, and its rearrangement for the Celsius temperature, four nodes; the block's displayed lines and connecting phrases are replaced and its opening sentence kept.
+
+Judged out: 1.6's kelvin–Celsius equations (the slope stated in prose, the intercept skipped; four moves, score 3).
+
+Checks: `ost check` clean for 1.6 and the book; every line checked by hand and with sympy.
+
+
+## Pass 34 (2026-10-16): Chapter 2, Atoms, Molecules, and Ions: derivations (rule 29)
+
+Built none. Judged out: 2.3's Example 2.5, the isotopic abundances of chlorine, a worked example substituting into the section's average-mass formula. The decision is in 2.3's `plan.md`.
+
+
+## Pass 35 (2026-10-16): Chapter 3, Composition of Substances and Solutions: derivations (rule 29)
+
+Built one derivation. 3.3's dilution block is drv-dilution-equation: n = ML written for the solution before and after the dilution, two nodes, joined by the unchanged amount of solute into M₁L₁ = M₂L₂. The "where the subscripts" clause stays as a sentence after the host, and the general form C₁V₁ = C₂V₂ stays as printed, a renaming rather than a move.
+
+Judged out: 3.2's molecular-formula procedure (two lines stating a procedure) and Example 3.13, nicotine (a worked example).
+
+Checks: `ost check` clean for 3.3 and the book.
+
+
+## Pass 36 (2026-10-16): Chapter 4, Stoichiometry of Chemical Reactions: derivations (rule 29)
+
+Built none. Judged out: 4.2's Example 4.7, the dichromate–iron(II) half-reactions, and 4.5's Example 4.16, polyethylene by combustion analysis, both worked examples applying the section's own method, every line printed. The decisions are in the sections' `plan.md`.
+
+
+## Pass 37 (2026-10-16): Chapter 5, Thermochemistry: derivations (rule 29)
+
+Built two derivations in 5.3. drv-enthalpy-change-heat works ΔH = ΔU + PΔV through PΔV = −w and the first law to ΔH = q_p, the skipped line ΔH = ΔU − w inserted; the definitions H = U + PV, ΔH = ΔU + PΔV and PΔV = −w stay displayed and only the "Substituting … yields" paragraph and its lines are replaced. drv-reaction-enthalpy-from-formation works the prose argument for ΔH°reaction = Σ nΔH°f(products) − Σ nΔH°f(reactants), hidden at score 5: Hess's law over the decompositions and formations, the reversal and scaling rules for each, then the rearrangement; the prose stays and the host replaces the displayed result.
+
+Judged out: 5.2's Examples 5.3 and 5.7 (worked examples), 5.3's Hess's law (asserted and checked on one instance, three moves) and Example 5.14 (a worked example).
+
+Checks: `ost check` clean for 5.3 and the book.
+
+
+## Pass 38 (2026-10-16): Chapter 6, Electronic Structure and Periodic Properties of Elements: derivations (rule 29)
+
+Built one derivation. 6.2's Rydberg block is drv-rydberg-equation: Bohr's levels put into his photon equation and solved for 1/λ, then matched with Rydberg's formula of 6.1 to give R∞ = k/hc, two nodes; the work keeps |ΔE| as the photon equation does, so every line holds for emission and absorption alike. The sentence on k and the paragraph on Bohr's agreement stay.
+
+Judged out: 6.2's Bohr energy levels and orbit radius (they rest on Coulomb's law, circular motion and the angular-momentum postulate, none stated in the book) and its ionization-limit line (a substitution, found in the re-read); 6.3's de Broglie quantization and the n² orbitals of Example 6.8 (three moves each, on facts the book never prints).
+
+Checks: `ost check` clean for 6.2 and the book.
+
+
+## Pass 39 (2026-10-16): Chapter 7, Chemical Bonding and Molecular Geometry: derivations (rule 29)
+
+Built one derivation. 7.5's Born-Haber relation is drv-born-haber-lattice-energy: Table 7.4's sum of the five steps by Hess's law rearranged for ΔH_lattice, then the table's values plugged in as their own node, 756.9 kJ/mol. Table 7.4 stays; the host replaces the "For cesium fluoride, using this data" clause and its line.
+
+Judged out: the HCl enthalpy from bond energies (a substitution into the section's formula) and the lattice energy from Coulomb's law (Coulomb's law and the lattice sum are never stated in the book).
+
+Checks: `ost check` clean for 7.5 and the book.
+
+
+## Pass 40 (2026-10-16): Chapter 8, Advanced Theories of Covalent Bonding: derivations (rule 29)
+
+Built none. The scan found no candidate, and a re-read finds no proof, no derivation printed as a block and no hidden chain that meets the bar.
+
+
+## Pass 41 (2026-10-16): Chapter 9, Gases: derivations (rule 29)
+
+Built four derivations. In 9.3, drv-gas-density (the gas law solved for V and put into d = m/V, the ratio m/n named ℳ) and drv-gas-molar-mass (the gas law solved for n and put into ℳ = m/n); the two stay apart because the book prints them apart, Example 9.11 and the gas-density Sim between them. In 9.5, drv-root-mean-square-speed (KE = ½mu² averaged over the molecules and taken for a mole to KE_avg = ½ℳu²_rms, then equated with 3/2 RT and solved) and drv-grahams-law (the rate ratio as the u_rms ratio, 3RT cancelled at one temperature). Graham's printed side line ℳ = 3RT/u²_rms = 3RT/ū² is left out: the ratio does not pass through it, and ū² is not u²_rms.
+
+Judged out: 9.1's hydrostatic pressure (stated, and resting on weight = mg, never stated); 9.2's two-state forms, combined gas law and the ideal gas law (three moves by the book's own facts, and the shorter route needs joint proportionality, which the book never states); 9.3's Example 9.12 (a worked example at score 4), Dalton's P_A = X_A P_Total (three moves) and Example 9.19; 9.4's Example 9.21; 9.5's PV = ⅓Nmu² (never reached, and resting on mechanics outside the book).
+
+Checks: `ost check` clean for 9.3, 9.5 and the book; every line checked with sympy.
+
+
+## Pass 42 (2026-10-16): Chapter 10, Liquids and Solids: derivations (rule 29)
+
+Built two derivations in 10.3. drv-clausius-clapeyron-two-point: the logarithmic form from P = Ae^(−ΔH/RT) by the log rules of Appendix B, the line at each of the two points with ln A isolated, and the join that eliminates A and merges the logs, the two lines behind "combined into" inserted. drv-enthalpy-of-sublimation: Hess's law over melting then vaporization, a thin printed block. The exponential form stays displayed, and so does the paragraph that calls the sublimation model approximate.
+
+Judged out: 10.2's capillary rise and 10.6's Bragg equation (formulas stated, resting on physics the book never states) and 10.6's unit-cell density examples.
+
+Checks: `ost check` clean for 10.3 and the book.
+
+
+## Pass 43 (2026-10-16): Chapter 11, Solutions and Colloids: derivations (rule 29)
+
+Built one derivation. 11.4's vapor-pressure block is drv-vapor-pressure-of-solution: Dalton's law, Raoult's law for each component, the sum split into solvent and solutes, the solutes' terms dropped as negligible. The sentence defining a nonvolatile substance stays before the host.
+
+Judged out: the vapor's enrichment in the more volatile component (left to Exercise 65, so an exercise), the colligative proportionalities (stated as empirical laws) and Example 11.5 with Examples 11.11 and 11.12 (worked examples).
+
+Checks: `ost check` clean for 11.4 and the book.

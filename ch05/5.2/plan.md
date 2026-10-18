@@ -47,3 +47,8 @@ energy, temperature, mass. Specific heat and heat capacity in ink.
 - edge coffee-cup-calorimetry → molarity (from the notes; Example 5.5 and its CYL).
 
 Applied by the chapter pass: the three equations anchored as asked; edge coffee-cup-calorimetry → molarity merged. `Pb` and `Al` in `elements.ts` left for Chen, since that file is outside the chapter.
+
+## Derivations
+
+- Example 5.3, the initial temperature of the rebar · score 3 · not built: a worked example substituting q = cmΔT into the heat balance.
+- Example 5.7, a bomb calorimeter's heat of combustion · score 1 · not built: a worked example, substitution into the section's balance.

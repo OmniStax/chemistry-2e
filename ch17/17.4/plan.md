@@ -55,3 +55,10 @@ Applied by the chapter pass (2026-10-05):
 
 - The seven forms anchored as listed; the twelve existing variables rows anchored where the text first writes them (ΔG°, w_max, w_elec, n, F, E°_cell at 17.4-dg; R, T, K at 17.4-k; ΔG, E_cell, Q_c at 17.4-nernst).
 - Five variables rows added: E°_cathode and E°_anode (anchor 17.4-ex-relations), E_cathode and E_anode (17.4-ex-concentration), with the same concepts as in 17.3 and `ref` on the concentration cell's two half-cells; E_std (17.4-k) links `standard-cell-potential` rather than 17.3's `standard-electrode-potential`, since the E° the paragraph summarizes is that of a cell.
+
+## Derivations
+
+- E° and ΔG°, ΔG° = −nFE°cell · score 5 · built as drv-free-energy-cell-potential (the printed block, with the charge nF and the sign of the work inserted)
+- E° and K, E°cell = (RT/nF) ln K · score 2 · built as drv-cell-potential-k (a thin printed block)
+- Potentials at nonstandard conditions, the Nernst equation · score 6 · built as drv-nernst (the printed block)
+- Potentials at nonstandard conditions, the Nernst equation at 298 K with base-10 logarithms · score 8 · built as drv-nernst-298 (the hidden tail: the constants put in, RT/F evaluated, ln turned to log)

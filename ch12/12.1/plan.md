@@ -52,3 +52,7 @@ The learning objectives, summary, key equations and glossary go to the tables. E
 - forms `eq-relative-rates` → 12.1-relative
 
 Applied by the chapter pass (2026-10-05): all seven anchors set as listed.
+
+## Derivations
+
+- Relative rates of reaction, rate = −(1/a) Δ[A]/Δt = (1/b) Δ[B]/Δt · score 1 · not built: two moves told in prose, under the hidden bar

@@ -54,3 +54,7 @@ None built beyond the titration Sim. A gravimetric balance Sim was judged agains
 - edge: gravimetric-analysis → percent-composition (3.2)
 
 Applied by the chapter pass: eq-molarity-mmol and variable 4.5/M anchored at 4.5-titration-calc; the three edges merged (gravimetric-analysis → percent-composition).
+
+## Derivations
+
+- Example 4.16, the empirical formula of polyethylene from combustion analysis · score 3 · not built: a worked example, every line printed, each line a stoichiometric factor.

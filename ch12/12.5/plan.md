@@ -61,3 +61,8 @@ Nothing of the prose. Errata kept as printed: the "*E*<sub>a</sub>** =" markup s
 - forms `eq-arrhenius-two-point` → 12.5-ex-ea
 
 Applied by the chapter pass (2026-10-05): all twelve anchors set as listed; the Arrhenius forms write `\kk`, `\kkone`, `\kktwo` and `\kAfreq`.
+
+## Derivations
+
+- Finding an activation energy, the linear form of the Arrhenius equation · score 3 · not built: two moves (take ln, split the log), under the hidden bar
+- Example 12.13, alternative approach, the two-point form of the Arrhenius equation · score 5 · built as drv-arrhenius-two-point

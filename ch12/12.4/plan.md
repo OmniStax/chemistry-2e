@@ -58,3 +58,12 @@ Objectives, summary, key equations and glossary go to the tables. Errata kept as
 - forms `eq-half-life-zero` → 12.4-half-life-zero
 
 Applied by the chapter pass (2026-10-05): all eleven anchors set as listed, and the forms' k written `\kk`.
+
+## Derivations
+
+- First-order reactions, the integrated rate law · score 9 · not built: the integration of d[A]/[A] rests on calculus the book never states
+- Second-order reactions, the integrated rate law · score 7 · not built: stated, and its integration rests on calculus the book never states
+- Zero-order reactions, the integrated rate law · score 6 · not built: stated, and its integration rests on calculus the book never states
+- The half-life of a reaction, first-order reactions · score 1 · built as drv-half-life-first-order
+- The half-life of a reaction, second-order reactions · score 0 · built as drv-half-life-second-order
+- The half-life of a reaction, zero-order reactions · score 0 · built as drv-half-life-zero-order

@@ -1044,5 +1044,175 @@
    "exercise": "p43",
    "concept": "celsius-fahrenheit-conversion"
   }
+ ],
+ "derivations": [
+  {
+   "id": "celsius-fahrenheit",
+   "what": "the Celsius–Fahrenheit conversion",
+   "source": "Chemistry 2e, 1.6 Mathematical Treatment of Measurement Results",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "The relation between the two scales is linear.",
+       "src": "1.6"
+      },
+      {
+       "text": "Water freezes at 0 °C and 32 °F and boils at 100 °C and 212 °F.",
+       "src": "1.6"
+      },
+      {
+       "text": "The Celsius temperature is $x$ and the Fahrenheit temperature is $y$.",
+       "src": "1.6"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{m}{m} = \\dfrac{\\mk{dy}{\\Delta y}}{\\mk{dx}{\\Delta x}}",
+      "src": "1.6",
+      "uses": [
+       0
+      ],
+      "why": "On a line the rise over the run is the same between any two of its points."
+     },
+     "steps": [
+      {
+       "tex": "\\mk{m}{m} = \\dfrac{\\mk{dy}{\\text{212 °F}-\\text{32 °F}}}{\\mk{dx}{\\text{100 °C}-\\text{0 °C}}}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\mk{m}{m} = \\dfrac{\\mk{dy}{\\text{180 °F}}}{\\mk{dx}{\\text{100 °C}}}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{m}{m} = \\dfrac{\\mk{dy}{\\text{9 °F}}}{\\mk{dx}{\\text{5 °C}}}",
+       "uses": []
+      }
+     ],
+     "src": "1.6"
+    },
+    {
+     "assumes": [
+      {
+       "text": "The relation between the two scales is linear.",
+       "src": "1.6"
+      },
+      {
+       "text": "Water freezes at 0 °C and 32 °F and boils at 100 °C and 212 °F.",
+       "src": "1.6"
+      },
+      {
+       "text": "The Celsius temperature is $x$ and the Fahrenheit temperature is $y$.",
+       "src": "1.6"
+      },
+      {
+       "step": 0
+      }
+     ],
+     "then": {
+      "tex": "\\mk{y}{y} = \\mk{m}{m}\\mk{x}{x} + \\mk{b}{b}",
+      "src": "1.6",
+      "uses": [
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{b}{b} = \\mk{y}{y} - \\mk{m}{m}\\mk{x}{x}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{b}{b} = \\mk{y}{\\text{32 °F}} - \\mk{m}{m}\\;\\times\\;\\mk{x}{\\text{0 °C}}",
+       "uses": [
+        1,
+        2
+       ],
+       "cap": "Either defining pair lies on the line; the freezing point of water gives the simpler numbers."
+      },
+      {
+       "tex": "\\mk{b}{b} = \\mk{y}{\\text{32 °F}} - \\mk{m}{\\dfrac{\\text{9 °F}}{\\text{5 °C}}}\\;\\times\\;\\mk{x}{\\text{0 °C}}",
+       "uses": [
+        3
+       ]
+      },
+      {
+       "tex": "\\mk{b}{b} = \\mk{y}{\\text{32 °F}}",
+       "uses": []
+      }
+     ],
+     "src": "1.6"
+    },
+    {
+     "assumes": [
+      {
+       "text": "The relation between the two scales is linear.",
+       "src": "1.6"
+      },
+      {
+       "text": "The Celsius temperature is $x$ and the Fahrenheit temperature is $y$.",
+       "src": "1.6"
+      },
+      {
+       "step": 0
+      },
+      {
+       "step": 1
+      }
+     ],
+     "then": {
+      "tex": "\\mk{y}{y} = \\mk{m}{m}\\mk{x}{x} + \\mk{b}{b}",
+      "src": "1.6",
+      "uses": [
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{y}{\\kTF} = \\mk{m}{m}\\;\\times\\;\\mk{x}{\\kTC} + \\mk{b}{b}",
+       "uses": [
+        1
+       ]
+      },
+      {
+       "tex": "\\mk{y}{\\kTF} = \\left(\\mk{m}{\\dfrac{\\text{9 °F}}{\\text{5 °C}}}\\;\\times\\;\\mk{x}{\\kTC}\\right) + \\mk{b}{\\text{32 °F}}",
+       "uses": [
+        2,
+        3
+       ]
+      },
+      {
+       "tex": "\\mk{y}{\\kTF} = \\left(\\mk{m}{\\dfrac{9}{5}}\\;\\times\\;\\mk{x}{\\kTC}\\right) + \\mk{b}{32}",
+       "uses": [],
+       "cap": "Each temperature is read as its number of degrees on its own scale, so the units are left out."
+      }
+     ],
+     "src": "1.6"
+    },
+    {
+     "assumes": [
+      {
+       "step": 2
+      }
+     ],
+     "then": {
+      "tex": "\\mk{y}{\\kTF} = \\left(\\mk{m}{\\dfrac{9}{5}}\\;\\times\\;\\mk{x}{\\kTC}\\right) + \\mk{b}{32}",
+      "src": "1.6"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{y}{\\kTF} - \\mk{b}{32} = \\mk{m}{\\dfrac{9}{5}}\\;\\times\\;\\mk{x}{\\kTC}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{x}{\\kTC} = \\mk{m}{\\dfrac{5}{9}}\\left(\\mk{y}{\\kTF} - \\mk{b}{32}\\right)",
+       "uses": []
+      }
+     ],
+     "src": "1.6"
+    }
+   ]
+  }
  ]
 }

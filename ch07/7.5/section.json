@@ -638,5 +638,80 @@
    "concept": "lattice-energy-trends",
    "weights_by": "ai"
   }
+ ],
+ "derivations": [
+  {
+   "id": "born-haber-lattice-energy",
+   "what": "the lattice energy from the Born-Haber cycle",
+   "source": "Chemistry 2e, 7.5 Strengths of Ionic and Covalent Bonds",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the various steps.",
+       "src": "5.3, Hess’s law"
+      },
+      {
+       "text": "The five steps of the cycle add up to the formation of the compound from its elements, $\\text{Cs}(s)+\\tfrac{1}{2}\\,\\text{F}_{2}(g)\\longrightarrow\\text{CsF}(s)$.",
+       "src": "Table 7.4"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{f}{\\kdHf} = \\mk{s}{\\kdHs} + \\mk{D}{\\tfrac{1}{2}\\;\\kDbond} + \\mk{IE}{\\kIE} + \\mk{EA}{(\\kEA)} + \\mk{lat}{(-\\kdHlat)}",
+      "src": "Table 7.4",
+      "uses": [
+       1,
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{f}{\\kdHf} + \\mk{lat}{\\kdHlat} = \\mk{s}{\\kdHs} + \\mk{D}{\\tfrac{1}{2}\\;\\kDbond} + \\mk{IE}{\\kIE} + \\mk{EA}{\\kEA}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{lat}{\\kdHlat} = \\mk{s}{\\kdHs} + \\mk{D}{\\tfrac{1}{2}\\;\\kDbond} + \\mk{IE}{\\kIE} + \\mk{EA}{\\kEA} - \\mk{f}{\\kdHf}",
+       "uses": []
+      }
+     ],
+     "src": "7.5"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "tex": "\\begin{aligned}&\\kdHs = 76.5,\\ \\ \\tfrac{1}{2}\\;\\kDbond = 79.4,\\ \\ \\kIE = 375.7,\\\\&\\kEA = -328.2,\\ \\ \\kdHf = -553.5\\;\\text{kJ/mol}\\end{aligned}",
+       "src": "Table 7.4"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{lat}{\\kdHlat} = \\mk{s}{\\kdHs} + \\mk{D}{\\tfrac{1}{2}\\;\\kDbond} + \\mk{IE}{\\kIE} + \\mk{EA}{\\kEA} - \\mk{f}{\\kdHf}",
+      "src": "7.5"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{lat}{\\kdHlat} = \\mk{s}{76.5} + \\mk{D}{79.4} + \\mk{IE}{375.7} + \\mk{EA}{(-328.2)} - \\mk{f}{(-553.5)}",
+       "uses": [
+        1
+       ]
+      },
+      {
+       "tex": "\\mk{lat}{\\kdHlat} = \\mk{v}{756.9\\;\\text{kJ/mol}}",
+       "uses": [],
+       "map": {
+        "s": "v",
+        "D": "v",
+        "IE": "v",
+        "EA": "v",
+        "f": "v"
+       }
+      }
+     ],
+     "src": "7.5"
+    }
+   ]
+  }
  ]
 }

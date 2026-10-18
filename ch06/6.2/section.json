@@ -380,5 +380,86 @@
     { "exercise": "e8", "concept": "bohr-stationary-states" },
     { "exercise": "e9", "concept": "rydberg-constant-recovered" },
     { "exercise": "e9", "concept": "photon-emission-absorption", "weight": 2 }
+  ],
+  "derivations": [
+    {
+      "id": "rydberg-equation",
+      "what": "the Rydberg equation from Bohr’s model",
+      "source": "Chemistry 2e, 6.2 The Bohr Model",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kEn = -\\dfrac{\\kk}{n^{2}}",
+              "src": "6.2"
+            },
+            {
+              "text": "The electron moves between the orbits $n_1$ and $n_2$, integers with $n_1 < n_2$."
+            }
+          ],
+          "then": {
+            "tex": "\\mk{dE}{|\\kdE|} = \\mk{df}{|\\kEf - \\kEi|} = \\mk{l}{\\dfrac{h\\kc}{\\klam}}",
+            "src": "6.2"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{dE}{|\\kdE|} = \\mk{df}{\\left|-\\dfrac{\\kk}{n_{2}^{2}} + \\dfrac{\\kk}{n_{1}^{2}}\\right|} = \\mk{l}{\\dfrac{h\\kc}{\\klam}}",
+              "uses": [
+                0,
+                1
+              ],
+              "cap": "Whichever of the two orbits the electron starts in, the absolute value of the difference is the same."
+            },
+            {
+              "tex": "\\mk{dE}{|\\kdE|} = \\mk{df}{\\kk\\left(\\dfrac{1}{n_{1}^{2}}-\\dfrac{1}{n_{2}^{2}}\\right)} = \\mk{l}{\\dfrac{h\\kc}{\\klam}}",
+              "uses": [
+                1
+              ],
+              "cap": "Since $n_1 < n_2$, $1/n_1^2$ is the larger, so the bracket is positive and the absolute value is the bracket itself."
+            },
+            {
+              "tex": "\\mk{l}{\\dfrac{1}{\\klam}} = \\mk{c}{\\dfrac{\\kk}{h\\kc}}\\mk{df}{\\left(\\dfrac{1}{n_{1}^{2}}-\\dfrac{1}{n_{2}^{2}}\\right)}",
+              "uses": [],
+              "map": {
+                "df": [
+                  "c",
+                  "df"
+                ],
+                "l": [
+                  "l",
+                  "c"
+                ]
+              }
+            }
+          ],
+          "src": "6.2"
+        },
+        {
+          "assumes": [
+            {
+              "step": 0
+            },
+            {
+              "tex": "\\dfrac{1}{\\klam} = R_{\\infty}\\left(\\dfrac{1}{n_{1}^{2}}-\\dfrac{1}{n_{2}^{2}}\\right)",
+              "src": "6.1"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{l}{\\dfrac{1}{\\klam}} = \\mk{c}{\\dfrac{\\kk}{h\\kc}}\\mk{df}{\\left(\\dfrac{1}{n_{1}^{2}}-\\dfrac{1}{n_{2}^{2}}\\right)}",
+            "src": "6.2"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{R}{R_{\\infty}} = \\mk{c}{\\dfrac{\\kk}{h\\kc}}",
+              "uses": [
+                1
+              ],
+              "cap": "Both equations give $1/\\klam$ as a constant times the same bracket in $n_1$ and $n_2$, so the two constants are equal."
+            }
+          ],
+          "src": "6.2"
+        }
+      ]
+    }
   ]
 }

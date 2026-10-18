@@ -43,3 +43,8 @@ Binds `mass` and `amount`. Percentages, mole ratios, subscripts and n (formula u
 ### Applied by the chapter pass
 
 The three equation anchors set as asked, and `n_fu` anchored to 3.2-molecular. The edge empirical-formula → molar-mass is not added: empirical-formula already needs mass-mole-conversion, which needs molar-mass. The edge empirical-formula → Chapter 2’s empirical-formula-from-molecular-formula was already a row.
+
+## Derivations
+
+- `molecular`, the molecular formula from the empirical formula and the molar mass · score 0 · not built: two displayed lines that state a procedure (a ratio of masses, subscripts multiplied by it), not a chain from facts to a result.
+- Example 3.13, the molecular formula of nicotine · score 1 · not built: a worked example applying the section's own method, every line printed.

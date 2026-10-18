@@ -995,5 +995,92 @@
     "sim-dilution"
    ]
   }
+ ],
+ "derivations": [
+  {
+   "id": "dilution-equation",
+   "what": "the dilution equation",
+   "source": "Chemistry 2e, 3.3 Molarity",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "The subscript 1 marks the solution before the dilution and 2 the solution after it.",
+       "src": "3.3"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{n}{\\kn} = \\mk{M}{\\kM}\\mk{L}{\\kL}",
+      "src": "3.3"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{n}{\\knone} = \\mk{M}{\\kMone}\\mk{L}{\\kLone}",
+       "uses": [
+        0
+       ]
+      }
+     ],
+     "src": "3.3"
+    },
+    {
+     "assumes": [
+      {
+       "text": "The subscript 1 marks the solution before the dilution and 2 the solution after it.",
+       "src": "3.3"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{n}{\\kn} = \\mk{M}{\\kM}\\mk{L}{\\kL}",
+      "src": "3.3"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{n}{\\kntwo} = \\mk{M}{\\kMtwo}\\mk{L}{\\kLtwo}",
+       "uses": [
+        0
+       ]
+      }
+     ],
+     "src": "3.3"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "step": 1
+      },
+      {
+       "text": "Dilution does not change the amount of solute in the solution.",
+       "src": "3.3"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{one}{\\knone} = \\mk{two}{\\kntwo}",
+      "src": "3.3",
+      "uses": [
+       2
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{one}{\\kMone\\kLone} = \\mk{two}{\\kntwo}",
+       "uses": [
+        0
+       ]
+      },
+      {
+       "tex": "\\mk{one}{\\kMone\\kLone} = \\mk{two}{\\kMtwo\\kLtwo}",
+       "uses": [
+        1
+       ]
+      }
+     ],
+     "src": "3.3"
+    }
+   ]
+  }
  ]
 }

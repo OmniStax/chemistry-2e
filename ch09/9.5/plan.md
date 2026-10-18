@@ -53,3 +53,9 @@ The Link to Learning to the gas simulator is dropped; the Sim answers it. Errata
 ### Applied by the chapter pass
 
 Every item above was applied on 2026-09-28: the four equations and the five variable rows carry the anchors listed, and `ch09/COLOR.md` records that 9.5 also binds `pressure`, `volume` and `amount` through Figure 9.31. The caption of the folded Figure 9.32 + 9.33 + 9.34 said "as the book draws nitrogen" and spoke to the reader of the controls; its last sentence now reads "The same distribution may be drawn for nitrogen at 100, 200, 500, and 1000 K, or for xenon, argon, neon, and helium at a single temperature."
+
+## Derivations
+
+- `kmt-part-1`, PV = ⅓Nmu² from the kinetic-molecular theory · score 12 · not built: the book explains the gas laws in words only and never reaches the equation; its derivation rests on momentum and force, which the book never states.
+- `speeds`, u_rms = √(3RT/ℳ) · score 5, a printed block · built as drv-root-mean-square-speed: one node from KE = ½mu² through the average over the molecules and a mole's N_A of them to KE_avg = ½ℳu²_rms (the book's "is then equal to", its skipped lines inserted), and one node equating that with KE_avg = 3/2 RT and solving. The definitions of KE and u_rms and the statement KE_avg = 3/2 RT stay displayed; the derived KE_avg line and the "combined and rearranged" lines are replaced, and its "where M is the molar mass in kg/mol" clause moves into the fact on molar mass.
+- `kmt-part-2`, Graham's law from u_rms · score 2, a printed block the book calls a derivation · built as drv-grahams-law: the rate ratio as the u_rms ratio, the u_rms formula put in for each gas, 3RT cancelled at one temperature. The printed side line ℳ = 3RT/u_rms² = 3RT/ū² is left out: the ratio does not pass through it, and its ū² (the square of the mean speed) is not u²_rms.

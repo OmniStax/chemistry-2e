@@ -83,3 +83,14 @@ Nothing of the prose. Errata kept as printed: −285.83 in Example 16.7's table 
 - variables: a new row `16.4/Q_conc` (\kQc, "the reaction quotient written with molar concentrations", concept `reaction-quotient`, as in 13.2) → 16.4-equilibrium; the text writes the book's *Q*<sub>C</sub> with `\kQc`
 
 Applied by the chapter pass (2026-10-05): every anchor as listed, ten forms and eighteen variables; the new row Q_conc (13.2's meaning, concept `reaction-quotient`) at 16.4-equilibrium. Eight rows added so that each macro the page writes has a row here: S, T, ΔS, ΔS_univ and q_surr at 16.4-gibbs, ΔS° at 16.4-calculating, S° at 16.4-ex-vaporization, all with their earlier meanings, and w at 16.4-free-work as the useful work a spontaneous process may accomplish, with `redefines`.
+
+## Derivations
+
+- Gibbs free energy, ΔG = −TΔS_univ · score 5 · built as drv-free-energy-universe
+- What's "free" about ΔG?, ΔG = w_max · score 12 · not built: the book declines the derivation as beyond its scope, and it rests on the split of work into expansion and other work and on reversible work as the maximum, which the book never states
+- Free energy changes for coupled reactions, ΔG° of vaporization from the formation reactions · score 1 · not built: a sum of chemical equations with their free energies added, one move, not a chain of equations
+- Temperature dependence of spontaneity, T = ΔH/ΔS · score 0 · built as drv-crossover-temperature (a thin printed block)
+- Free energy and equilibrium, ΔG = ΔG° + RT ln Q · score 0 · not built: stated as a law, with no derivation the book hides
+- Free energy and equilibrium, ΔG° = −RT ln K and K = e^(−ΔG°/RT) · score 1 · built as drv-free-energy-equilibrium
+- Example 16.8, ΔG° of HgO decomposition two ways · score 1 · not built: a worked example substituting into the section's formulas
+- Example 16.13, Ksp of AgCl from free energies of formation · score 1 · not built: a worked example substituting into the section's formulas

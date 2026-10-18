@@ -86,3 +86,9 @@ The learning objectives, summary, key equations and glossary go to the tables. E
 - ch13/COLOR.md: K and Q are `equilibrium-constant` in the tables (`\kK`, `\kKc`, `\kQc`, `\kQrxn`, …), where the chapter notes call them untyped; the page follows the tables
 
 Applied by the chapter pass (2026-10-05): every form and variables row above anchored as listed, and `eq-p-mrt` (a form of `ideal-gas-law`, staged in Chapter 9) at 13.2-homogeneous; `V` and `n` added at 13.2-homogeneous with Chapter 9's meanings; the forms' `ktex` now write K and Q through their macros. `ch13/COLOR.md` keeps K and Q typed, as the tables and the page have them, and its wording is fixed; `config.md`'s "every K and Q in ink" is corrected.
+
+## Derivations
+
+- Homogeneous equilibria, the relation between KP and Kc · score 3 · built as drv-kp-kc
+- Coupled equilibria, the constants of a reversed and of a scaled equation · score 1 · built as drv-coupled-equilibria, nodes 1 and 2 (thin printed blocks, folded with the sum: one list, one law of mass action)
+- Coupled equilibria, the constant of a sum of equations · score 1 · built as drv-coupled-equilibria, node 3

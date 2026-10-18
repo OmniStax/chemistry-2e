@@ -58,3 +58,8 @@ Objectives, the summary, the key equation and the glossary go to the tables. The
 - `ch15/COLOR.md` and `notes/chemistry-2e-ch15.md`: K_sp and Q_sp carry macros (`\kKsp`, `\kQsp`) and their concepts the `equilibrium-constant` type, so the page colours them, against the notes' "no `\k` on any K, Q or x" and config's "every K_sp … in ink"
 
 Applied by the chapter pass (2026-10-05): `eq-ksp` anchored at 15.1-ksp-solubility; `[M^m+]`, `[X^n-]`, `p_stoich`, `q_stoich` and `x_ice` at 15.1-ksp-solubility and `Q_sp` at 15.1-precipitation, as asked; `K_sp` at 15.1-solubility-product instead, where the section defines it. Rows added for `[OH-]`, `pH` and `pOH` at 15.1-precipitation, which Example 15.10 writes through their macros. `molar-solubility` typed `concentration`. `ch15/COLOR.md` and `config.md` now say K_sp and Q_sp are typed and written through their macros; the prep notes file is the job's and is left as it is.
+
+## Derivations
+
+- Example 15.10, the pH that holds [Mn²⁺] at a given value · score 3 · not built: substitution into Ksp and the pH–pOH relation, under the hidden bar
+- Example 15.11, which silver halide precipitates first · score 2 · not built: two substitutions into Qsp = Ksp, compared

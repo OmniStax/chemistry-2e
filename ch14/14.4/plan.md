@@ -60,3 +60,7 @@ Objectives and summary go to the tables; no glossary or key equations in this mo
 - 14.3 `exercise_notes` to say that fs-idm94404336, fs-idm94046624 and fs-idm8587472 are set in 14.4
 
 Applied by the chapter pass (2026-10-05): the 14.4 rows `K_a`, `K_b_ion`, `K_w` (at `acidic-ions`), `[H3O+]`, `pH`, `x_ice` (at `ex-anilinium`), `[OH-]` (at `ex-acetate`) and `pK_a` (at `metal-ions`) added with their 14.3 meanings. 14.3's `exercise_notes` already named the three items set here.
+
+## Derivations
+
+- Example 14.15, the pH of anilinium chloride · score 4 · not built: a worked example that substitutes into the section's own method (Ka from Kb, then the ICE table)

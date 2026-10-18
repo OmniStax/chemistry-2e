@@ -952,5 +952,231 @@
       "kind": "correction",
       "html": "The book labels both given constants <em>K</em><sub>c1</sub>; the second, 67 for CoO(<em>s</em>) + H<sub>2</sub>(<em>g</em>), is <em>K</em><sub>c2</sub>."
     }
+  ],
+  "derivations": [
+    {
+      "id": "kp-kc",
+      "what": "the relation between $\\kKP$ and $\\kKc$",
+      "source": "Chemistry 2e, 13.2 Equilibrium Constants",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kM = \\frac{\\kn}{\\kV}",
+              "src": "3.3"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{n}{\\kn}\\mk{RT}{R\\kT}",
+            "src": "9.2"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{P}{\\kP} = \\mk{n}{\\left(\\frac{\\kn}{\\kV}\\right)}\\mk{RT}{R\\kT}",
+              "uses": [],
+              "map": {
+                "V": "n"
+              }
+            },
+            {
+              "tex": "\\mk{P}{\\kP} = \\mk{n}{\\kM}\\mk{RT}{R\\kT}",
+              "uses": [
+                0
+              ]
+            }
+          ],
+          "src": "13.2"
+        },
+        {
+          "assumes": [
+            {
+              "step": 0
+            },
+            {
+              "tex": "\\kKc = \\frac{{\\kconcC}^{c}{\\kconcD}^{d}}{{\\kconcA}^{a}{\\kconcB}^{b}}",
+              "src": "13.2"
+            },
+            {
+              "tex": "\\Delta n = (c+d)-(a+b)",
+              "src": "13.2"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{K}{\\kKP} = \\frac{\\mk{C}{{(\\kPC)}^{c}}\\mk{D}{{(\\kPD)}^{d}}}{\\mk{A}{{(\\kPA)}^{a}}\\mk{B}{{(\\kPB)}^{b}}}",
+            "src": "13.2",
+            "why": "$K_P$ for the gas-phase reaction $a\\text{A}+b\\text{B}\\rightleftharpoons c\\text{C}+d\\text{D}$, written with partial pressures."
+          },
+          "steps": [
+            {
+              "tex": "\\mk{K}{\\kKP} = \\frac{\\mk{C}{{(\\kconcC\\times R\\kT)}^{c}}\\mk{D}{{(\\kconcD\\times R\\kT)}^{d}}}{\\mk{A}{{(\\kconcA\\times R\\kT)}^{a}}\\mk{B}{{(\\kconcB\\times R\\kT)}^{b}}}",
+              "uses": [
+                0
+              ],
+              "cap": "Each gas obeys $P = MRT$ with its own molar concentration, so $P_C = [\\text{C}]RT$, and likewise for the others."
+            },
+            {
+              "tex": "\\mk{K}{\\kKP} = \\frac{\\mk{C}{{\\kconcC}^{c}}\\mk{D}{{\\kconcD}^{d}}}{\\mk{A}{{\\kconcA}^{a}}\\mk{B}{{\\kconcB}^{b}}}\\times\\frac{\\mk{rn}{{(R\\kT)}^{c+d}}}{\\mk{rd}{{(R\\kT)}^{a+b}}}",
+              "uses": [],
+              "cap": "A power of a product is the product of the powers, $(xy)^n = x^n y^n$.",
+              "map": {
+                "C": [
+                  "C",
+                  "rn"
+                ],
+                "D": [
+                  "D",
+                  "rn"
+                ],
+                "A": [
+                  "A",
+                  "rd"
+                ],
+                "B": [
+                  "B",
+                  "rd"
+                ]
+              }
+            },
+            {
+              "tex": "\\mk{K}{\\kKP} = \\mk{Kc}{\\kKc}\\,\\frac{\\mk{rn}{{(R\\kT)}^{c+d}}}{\\mk{rd}{{(R\\kT)}^{a+b}}}",
+              "uses": [
+                1
+              ],
+              "map": {
+                "C": "Kc",
+                "D": "Kc",
+                "A": "Kc",
+                "B": "Kc"
+              }
+            },
+            {
+              "tex": "\\mk{K}{\\kKP} = \\mk{Kc}{\\kKc}\\mk{r}{{(R\\kT)}^{(c+d)-(a+b)}}",
+              "uses": [],
+              "cap": "Powers of the same base divide by subtracting their exponents, $x^m/x^n = x^{m-n}$.",
+              "map": {
+                "rn": "r",
+                "rd": "r"
+              }
+            },
+            {
+              "tex": "\\mk{K}{\\kKP} = \\mk{Kc}{\\kKc}\\mk{r}{{(R\\kT)}^{\\Delta n}}",
+              "uses": [
+                2
+              ]
+            }
+          ],
+          "src": "13.2"
+        }
+      ]
+    },
+    {
+      "id": "coupled-equilibria",
+      "what": "the equilibrium constants of reversed, scaled and added equations",
+      "source": "Chemistry 2e, 13.2 Equilibrium Constants",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\text{A}\\rightleftharpoons\\text{B}\\qquad\\kKc = \\frac{\\kconcB}{\\kconcA}",
+              "src": "13.2"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{K}{\\kKcprime} = \\mk{q}{\\frac{\\kconcA}{\\kconcB}}",
+            "src": "13.2",
+            "why": "The law of mass action for the reversed equation, $\\text{B}\\rightleftharpoons\\text{A}$."
+          },
+          "steps": [
+            {
+              "tex": "\\mk{K}{\\kKcprime} = \\frac{1}{\\mk{q}{\\frac{\\kconcB}{\\kconcA}}}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{K}{\\kKcprime} = \\frac{1}{\\mk{q}{\\kKc}}",
+              "uses": [
+                0
+              ]
+            }
+          ],
+          "src": "13.2"
+        },
+        {
+          "assumes": [
+            {
+              "tex": "\\text{A}\\rightleftharpoons\\text{B}\\qquad\\kKc = \\frac{\\kconcB}{\\kconcA}",
+              "src": "13.2"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{K}{\\kKcprime} = \\frac{\\mk{b}{{\\kconcB}^{\\text{x}}}}{\\mk{a}{{\\kconcA}^{\\text{x}}}}",
+            "src": "13.2",
+            "why": "The law of mass action for the equation multiplied by x, $\\text{xA}\\rightleftharpoons\\text{xB}$."
+          },
+          "steps": [
+            {
+              "tex": "\\mk{K}{\\kKcprime} = \\mk{q}{{\\left(\\frac{\\kconcB}{\\kconcA}\\right)}^{\\text{x}}}",
+              "uses": [],
+              "map": {
+                "b": "q",
+                "a": "q"
+              },
+              "cap": "A quotient of two powers with the same exponent is the power of the quotient, $\\frac{x^n}{y^n} = \\left(\\frac{x}{y}\\right)^n$."
+            },
+            {
+              "tex": "\\mk{K}{\\kKcprime} = \\mk{q}{{\\kKc}^{\\text{x}}}",
+              "uses": [
+                0
+              ]
+            }
+          ],
+          "src": "13.2"
+        },
+        {
+          "assumes": [
+            {
+              "tex": "\\text{A}\\rightleftharpoons\\text{B}\\qquad\\kKcone = \\frac{\\kconcB}{\\kconcA}",
+              "src": "13.2"
+            },
+            {
+              "tex": "\\text{B}\\rightleftharpoons\\text{C}\\qquad\\kKctwo = \\frac{\\kconcC}{\\kconcB}",
+              "src": "13.2"
+            },
+            {
+              "tex": "\\text{A}\\rightleftharpoons\\text{C}\\qquad\\kKcprime = \\frac{\\kconcC}{\\kconcA}",
+              "src": "13.2"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{K}{\\kKcone\\;\\kKctwo} = \\mk{b}{\\frac{\\kconcB}{\\kconcA}}\\;\\times\\;\\mk{c}{\\frac{\\kconcC}{\\kconcB}}",
+            "src": "13.2",
+            "uses": [
+              0,
+              1
+            ]
+          },
+          "steps": [
+            {
+              "tex": "\\mk{K}{\\kKcone\\;\\kKctwo} = \\mk{q}{\\frac{\\cancel{\\kconcB}\\kconcC}{\\kconcA\\cancel{\\kconcB}}}",
+              "uses": [],
+              "map": {
+                "b": "q",
+                "c": "q"
+              }
+            },
+            {
+              "tex": "\\mk{K}{\\kKcone\\;\\kKctwo} = \\mk{q}{\\frac{\\kconcC}{\\kconcA}}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{q}{\\kKcprime} = \\mk{K}{\\kKcone\\;\\kKctwo}",
+              "uses": [
+                2
+              ]
+            }
+          ],
+          "src": "13.2"
+        }
+      ]
+    }
   ]
 }

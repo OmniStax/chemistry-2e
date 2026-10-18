@@ -517,5 +517,83 @@
    "kind": "correction",
    "html": "The book prints 0.10 NaOH without its unit; the solution is 0.10 <em>M</em> NaOH, as the solution to (b) uses it."
   }
+ ],
+ "derivations": [
+  {
+   "id": "henderson-hasselbalch",
+   "what": "the Henderson-Hasselbalch equation",
+   "source": "Chemistry 2e, 14.6 Buffers",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "tex": "\\log xy = \\log x + \\log y",
+       "src": "Appendix B"
+      },
+      {
+       "tex": "\\kpH = -\\log\\kconcHyd",
+       "src": "14.2"
+      },
+      {
+       "tex": "\\kpKa = -\\log\\kKa",
+       "src": "14.6"
+      },
+      {
+       "tex": "\\log\\frac{x}{y} = \\log x - \\log y",
+       "src": "Appendix B"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{K}{\\kKa} = \\frac{\\mk{H}{\\kconcHyd}\\mk{A}{\\kconcAm}}{\\mk{HA}{\\kconcHA}}",
+      "src": "14.3"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{H}{\\kconcHyd} = \\mk{K}{\\kKa}\\;\\times\\;\\mk{r}{\\frac{\\kconcHA}{\\kconcAm}}",
+       "uses": [],
+       "map": {
+        "A": "r",
+        "HA": "r"
+       }
+      },
+      {
+       "tex": "\\mk{H}{-\\log\\kconcHyd} = \\mk{L}{-\\log\\left(\\kKa\\;\\times\\;\\frac{\\kconcHA}{\\kconcAm}\\right)}",
+       "uses": [],
+       "map": {
+        "K": "L",
+        "r": "L"
+       }
+      },
+      {
+       "tex": "\\mk{H}{-\\log\\kconcHyd}\\;=\\;\\mk{k}{-\\log\\kKa}-\\mk{q}{\\log\\frac{\\kconcHA}{\\kconcAm}}",
+       "uses": [
+        0
+       ],
+       "map": {
+        "L": [
+         "k",
+         "q"
+        ]
+       }
+      },
+      {
+       "tex": "\\mk{H}{\\kpH} = \\mk{k}{\\kpKa}-\\mk{q}{\\log\\frac{\\kconcHA}{\\kconcAm}}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\mk{H}{\\kpH} = \\mk{k}{\\kpKa}+\\mk{q}{\\log\\;\\frac{\\kconcAm}{\\kconcHA}}",
+       "uses": [
+        3
+       ],
+       "cap": "Turning a fraction over changes the sign of its logarithm: $-\\log\\frac{x}{y} = \\log y - \\log x = \\log\\frac{y}{x}$."
+      }
+     ],
+     "src": "14.6"
+    }
+   ]
+  }
  ]
 }

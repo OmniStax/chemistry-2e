@@ -1453,5 +1453,59 @@
    "kind": "correction",
    "html": "The key names triethylamine; (CH<sub>3</sub>)<sub>3</sub>N is trimethylamine, which is the stronger base (<em>K</em><sub>b</sub> = 6.3 × 10<sup>−5</sup> against 1.7 × 10<sup>−5</sup> for H<sub>2</sub>BO<sub>3</sub><sup>−</sup>)."
   }
+ ],
+ "derivations": [
+  {
+   "id": "ka-kb-kw",
+   "what": "the product of the ionization constants of a conjugate pair",
+   "source": "Chemistry 2e, 14.3 Relative Strengths of Acids and Bases",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "tex": "\\kKa = \\frac{\\kconcHyd\\kconcAm}{\\kconcHA}",
+       "src": "14.3"
+      },
+      {
+       "tex": "\\kKbion = \\frac{\\kconcHA\\kconcOH}{\\kconcAm}",
+       "src": "14.3"
+      },
+      {
+       "tex": "\\kKw = \\kconcHyd\\kconcOH",
+       "src": "14.1"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{K}{\\kKa\\;\\times\\;\\kKbion} = \\mk{a}{\\frac{\\kconcHyd\\kconcAm}{\\kconcHA}}\\;\\times\\;\\mk{b}{\\frac{\\kconcHA\\kconcOH}{\\kconcAm}}",
+      "src": "14.3",
+      "uses": [
+       0,
+       1
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{K}{\\kKa\\;\\times\\;\\kKbion} = \\mk{q}{\\frac{\\kconcHyd\\cancel{\\kconcAm}\\,\\cancel{\\kconcHA}\\kconcOH}{\\cancel{\\kconcHA}\\,\\cancel{\\kconcAm}}}",
+       "uses": [],
+       "map": {
+        "a": "q",
+        "b": "q"
+       }
+      },
+      {
+       "tex": "\\mk{K}{\\kKa\\;\\times\\;\\kKbion} = \\mk{q}{\\kconcHyd\\kconcOH}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{K}{\\kKa\\;\\times\\;\\kKbion} = \\mk{q}{\\kconcHyd\\kconcOH} = \\mk{w}{\\kKw}",
+       "uses": [
+        2
+       ]
+      }
+     ],
+     "src": "14.3"
+    }
+   ]
+  }
  ]
 }

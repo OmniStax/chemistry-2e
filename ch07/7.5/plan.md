@@ -49,3 +49,9 @@ Tables 7.2 "Bond Energies (kJ/mol)" (spanned header written by hand), 7.3 "Avera
 ### Applied by the chapter pass (2026-09-28)
 
 Applied: the five equations anchor as listed. Variables: `D_bond` and `ΔH°` on `7.5-bond-strength`, `ΔH` on `7.5-enthalpy`, `ΔH_lattice` on `7.5-lattice`, `C_lattice`, `Z_plus`, `Z_minus`, `R_o` on `7.5-lattice-trends`, `ΔH_f°`, `ΔH_s°`, `IE`, `EA` on `7.5-born-haber`. The symbols `IE` and `EA` now render upright as `\text{IE}` and `\text{EA}`. Edges `born-haber-cycle` → `hess-law`, → `standard-enthalpy-of-formation`, → `ionization-energy-trend`, → `electron-affinity-trend`, and `enthalpy-from-bond-energies` → `thermochemical-equations` are merged. The glossary term "lattice energy (ΔH<sub>lattice</sub>)" is now the plain words "lattice energy".
+
+## Derivations
+
+- `enthalpy`, ΔH of H₂ + Cl₂ → 2HCl from bond energies · score 2 · not built: table values substituted into the section's own formula.
+- `lattice-trends`, ΔH_lattice = C(Z⁺)(Z⁻)/R₀ from Coulomb's law · score 7 · not built: it rests on Coulomb's law and the lattice sum, neither of which the book states.
+- `born-haber`, the lattice energy from the Born-Haber cycle · score 3, a printed block · built as drv-born-haber-lattice-energy: Table 7.4's sum of the five steps by Hess's law, rearranged for ΔH_lattice (the skipped lines inserted), then the table's values plugged in as their own node. Table 7.4 stays as printed; the host replaces the "For cesium fluoride, using this data, …" clause and its line.

@@ -195,5 +195,145 @@
       "kind": "correction",
       "html": "The book attributes this to Graham’s law. What follows is the kinetic-molecular theory’s account of a gas; Graham’s law concerns the rates of effusion and diffusion."
     }
+  ],
+  "derivations": [
+    {
+      "id": "root-mean-square-speed",
+      "what": "the root mean square speed of a gas",
+      "source": "Chemistry 2e, 9.5 The Kinetic-Molecular Theory",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kurms = \\sqrt{\\overline{\\ku^{2}}}",
+              "src": "9.5"
+            },
+            {
+              "text": "A mole of gas is $N_A$ molecules, and its molar mass $\\kMM$, in kg/mol, is their total mass.",
+              "src": "3.1"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{KE}{\\kKE} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\ku^{2}}",
+            "src": "9.5"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{KE}{\\overline{\\kKE}} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\overline{\\ku^{2}}}",
+              "uses": [],
+              "cap": "Averaged over the molecules, which all have the same mass $\\km$, $\\tfrac{1}{2}\\km\\ku^{2}$ becomes $\\tfrac{1}{2}\\km$ times the average of $\\ku^{2}$."
+            },
+            {
+              "tex": "\\mk{KE}{\\overline{\\kKE}} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\kurms^{2}}",
+              "uses": [
+                0
+              ]
+            },
+            {
+              "tex": "\\mk{KE}{\\kKEavg} = \\mk{N}{N_A}\\cdot\\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\kurms^{2}}",
+              "uses": [
+                1
+              ],
+              "cap": "$\\kKEavg$ is the kinetic energy of a mole of molecules, $N_A$ times the average of one."
+            },
+            {
+              "tex": "\\mk{KE}{\\kKEavg} = \\tfrac{1}{2}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}}",
+              "uses": [
+                1
+              ],
+              "map": {
+                "N": "m"
+              }
+            }
+          ],
+          "src": "9.5"
+        },
+        {
+          "assumes": [
+            {
+              "step": 0
+            },
+            {
+              "tex": "\\kKEavg = \\tfrac{3}{2}\\;R\\kT",
+              "src": "9.5"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{KE}{\\kKEavg} = \\tfrac{1}{2}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}}",
+            "src": "9.5"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{h}{\\tfrac{1}{2}}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}} = \\mk{KE}{\\tfrac{3}{2}\\;R\\kT}",
+              "uses": [
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{u}{\\kurms^{2}} = \\dfrac{\\mk{KE}{3R\\kT}}{\\mk{m}{\\kMM}}",
+              "uses": [],
+              "map": {
+                "h": "KE"
+              }
+            },
+            {
+              "tex": "\\mk{u}{\\kurms} = \\sqrt{\\dfrac{\\mk{KE}{3R\\kT}}{\\mk{m}{\\kMM}}}",
+              "uses": []
+            }
+          ],
+          "src": "9.5"
+        }
+      ]
+    },
+    {
+      "id": "grahams-law",
+      "what": "Graham’s law from the kinetic-molecular theory",
+      "source": "Chemistry 2e, 9.5 The Kinetic-Molecular Theory",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\text{effusion rate}\\;\\propto\\;\\kurms",
+              "src": "9.5"
+            },
+            {
+              "tex": "\\kurms = \\sqrt{\\dfrac{3R\\kT}{\\kMM}}",
+              "src": "9.5"
+            },
+            {
+              "text": "The two gases are at the same temperature $\\kT$."
+            }
+          ],
+          "then": {
+            "tex": "\\dfrac{\\mk{rA}{\\text{effusion rate A}}}{\\mk{rB}{\\text{effusion rate B}}} = \\dfrac{\\mk{uA}{\\ku_{\\text{rms}\\;\\text{A}}}}{\\mk{uB}{\\ku_{\\text{rms}\\;\\text{B}}}}",
+            "src": "9.5",
+            "uses": [
+              0
+            ],
+            "why": "Each rate is the same constant times its gas’s $\\kurms$, and the constant cancels in the ratio."
+          },
+          "steps": [
+            {
+              "tex": "\\dfrac{\\mk{rA}{\\text{effusion rate A}}}{\\mk{rB}{\\text{effusion rate B}}} = \\dfrac{\\mk{uA}{\\sqrt{\\dfrac{3R\\kT}{\\kMMA}}}}{\\mk{uB}{\\sqrt{\\dfrac{3R\\kT}{\\kMMB}}}}",
+              "uses": [
+                1
+              ]
+            },
+            {
+              "tex": "\\dfrac{\\mk{rA}{\\text{effusion rate A}}}{\\mk{rB}{\\text{effusion rate B}}} = \\mk{q}{\\sqrt{\\dfrac{\\kMMB}{\\kMMA}}}",
+              "uses": [
+                2
+              ],
+              "map": {
+                "uA": "q",
+                "uB": "q"
+              },
+              "cap": "A quotient of square roots is the square root of the quotient, and $3R\\kT$, the same for both gases, cancels."
+            }
+          ],
+          "src": "9.5"
+        }
+      ]
+    }
   ]
 }

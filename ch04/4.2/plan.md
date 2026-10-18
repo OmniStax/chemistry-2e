@@ -55,3 +55,7 @@ The two Link to Learning notes (the microscopic view of strong and weak acids an
 - edge: oxidation-numbers → ions-and-atomic-charge (the ion charge concept of Chapter 2, if that is its merged id).
 
 Applied by the chapter pass: oxidation-numbers → ions-and-atomic-charge (2.3).
+
+## Derivations
+
+- Example 4.7, the dichromate–iron(II) equation by half-reactions · score 0 · not built: a worked example applying the section's own steps to one reaction.

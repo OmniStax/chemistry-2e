@@ -539,5 +539,150 @@
    "kind": "correction",
    "html": "The book says the butadiene reaction. The unimolecular step described is the decomposition of cyclobutane, C<sub>4</sub>H<sub>8</sub> ⟶ 2C<sub>2</sub>H<sub>4</sub>."
   }
+ ],
+ "derivations": [
+  {
+   "id": "n2o2-equilibrium",
+   "what": "the concentration of an intermediate in a fast equilibrium",
+   "source": "Chemistry 2e, 12.6 Reaction Mechanisms",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "A reversible reaction is at equilibrium when the rates of the forward and reverse processes are equal.",
+       "src": "12.6"
+      },
+      {
+       "tex": "{\\krate}_{\\text{forward}} = \\kkone{[\\text{NO}]}^{2}",
+       "src": "12.6"
+      },
+      {
+       "tex": "{\\krate}_{\\text{reverse}} = \\kkmone[{\\text{N}}_{2}{\\text{O}}_{2}]",
+       "src": "12.6"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{f}{{\\krate}_{\\text{forward}}} = \\mk{r}{{\\krate}_{\\text{reverse}}}",
+      "src": "12.6",
+      "uses": [
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{f}{\\kkone{[\\text{NO}]}^{2}} = \\mk{r}{\\kkmone[{\\text{N}}_{2}{\\text{O}}_{2}]}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\left(\\frac{\\mk{f}{\\kkone{[\\text{NO}]}^{2}}}{\\mk{k}{\\kkmone}}\\right) = \\mk{r}{[{\\text{N}}_{2}{\\text{O}}_{2}]}",
+       "uses": [],
+       "map": {
+        "r": [
+         "k",
+         "r"
+        ]
+       }
+      }
+     ],
+     "src": "12.6"
+    }
+   ]
+  },
+  {
+   "id": "mechanism-rate-law",
+   "what": "the rate law of a mechanism with a fast equilibrium before the slow step",
+   "source": "Chemistry 2e, 12.6 Reaction Mechanisms, Example 12.14",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "Step 1 is at equilibrium: its forward and reverse rates are equal.",
+       "src": "12.6"
+      },
+      {
+       "tex": "{\\krate}_{1} = \\kkone[\\text{NO}][{\\text{Cl}}_{2}]"
+      },
+      {
+       "tex": "{\\krate}_{-1} = \\kkmone[{\\text{NOCl}}_{2}]"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{f}{{\\krate}_{1}} = \\mk{r}{{\\krate}_{-1}}",
+      "src": "Example 12.14",
+      "uses": [
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{f}{\\kkone[\\text{NO}][{\\text{Cl}}_{2}]} = \\mk{r}{\\kkmone[{\\text{NOCl}}_{2}]}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\mk{r}{[{\\text{NOCl}}_{2}]} = \\mk{k}{\\left(\\frac{\\kkone}{\\kkmone}\\right)}\\;\\mk{f}{[\\text{NO}][{\\text{Cl}}_{2}]}",
+       "uses": [],
+       "map": {
+        "r": [
+         "k",
+         "r"
+        ],
+        "f": [
+         "k",
+         "f"
+        ]
+       }
+      }
+     ],
+     "src": "Example 12.14"
+    },
+    {
+     "assumes": [
+      {
+       "text": "Step 2 is the rate-determining step, so the overall reaction has its rate law.",
+       "src": "12.6"
+      },
+      {
+       "step": 0
+      }
+     ],
+     "then": {
+      "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{k2}{\\kktwo}\\mk{c}{[{\\text{NOCl}}_{2}]}\\mk{no}{[\\text{NO}]}",
+      "src": "Example 12.14"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{ro}{{\\krate}_{\\text{overall}}} = \\mk{k2}{\\kktwo}\\mk{c}{[{\\text{NOCl}}_{2}]}\\mk{no}{[\\text{NO}]}",
+       "uses": [
+        0
+       ]
+      },
+      {
+       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{ro}{{\\krate}_{\\text{overall}}} = \\mk{k2}{\\kktwo}\\mk{c}{\\left(\\frac{\\kkone}{\\kkmone}\\right)[\\text{NO}][{\\text{Cl}}_{2}]}\\mk{no}{[\\text{NO}]}",
+       "uses": [
+        1
+       ]
+      },
+      {
+       "tex": "\\mk{r2}{{\\krate}_{2}} = \\mk{ro}{{\\krate}_{\\text{overall}}} = \\mk{k2}{\\left(\\frac{\\kktwo\\kkone}{\\kkmone}\\right)}\\mk{no}{{[\\text{NO}]}^{2}}\\mk{cl}{[{\\text{Cl}}_{2}]}",
+       "uses": [],
+       "map": {
+        "c": [
+         "k2",
+         "no",
+         "cl"
+        ]
+       }
+      }
+     ],
+     "src": "Example 12.14"
+    }
+   ]
+  }
  ]
 }

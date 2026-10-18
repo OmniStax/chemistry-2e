@@ -46,3 +46,7 @@ Link to Learning (the tanker car video and the smaller demonstration), named in 
 ### Applied by the chapter pass
 
 Every item above was applied on 2026-09-28. The two equations and the seven variable rows carry their anchors, `9.1-pressure` and `9.1-barometer`. The symbol rows `P_gas` and `P_atm` are staged in `ch09/book-rows.json` and merged, both typed `pressure` with the macros `\kPgas` and `\kPatm`, and the manometer and barometer figures now write those macros where they wrote `\kP_{\text{gas}}` and `\kP_{\text{atm}}`; the text never wrote either.
+
+## Derivations
+
+- `barometer`, the hydrostatic pressure p = hρg · score 7 · not built: a formula the book states, not derives, and its derivation rests on weight = mg, which the book never states.

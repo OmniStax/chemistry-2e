@@ -74,3 +74,7 @@ The Link to Learning on the states of matter simulator. Carried as printed: Figu
 - forms `eq-entropy-phase-order` → 16.2-predicting-sign
 
 Applied by the chapter pass (2026-10-05): every anchor as listed, fifteen variables and five forms.
+
+## Derivations
+
+- Entropy and microstates, ΔS = k ln(W_f/W_i) · score 1 · built as drv-entropy-microstates (a thin printed chain, two moves)

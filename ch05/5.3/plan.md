@@ -55,3 +55,10 @@ energy only. No figure draws PΔV, so `volume` and `pressure` stay unbound; P, V
 - edge enthalpy-from-formation-enthalpies → balanced-equation
 
 Applied by the chapter pass: the six equations anchored as asked, and every 5.3 variable anchored (U, ΔU, w to first-law; H, ΔH, P, V, ΔV, q_p to enthalpy; ΔH° to standard-state; ΔH_c° to combustion; ΔH_f° to formation; n_coef to formation-enthalpies). Edges merged: thermochemical-equations → balanced-equation, identify-limiting-reactant, mass-mole-conversion, molar-mass; enthalpy-of-combustion → mass-mole-conversion, molar-mass; enthalpy-from-formation-enthalpies → balanced-equation.
+
+## Derivations
+
+- `enthalpy`, ΔH = q_p · score 2, a printed block · built as drv-enthalpy-change-heat: one node from ΔH = ΔU + PΔV through PΔV = −w and the first law to q_p, the skipped line ΔH = ΔU − w inserted. The definitions H = U + PV, ΔH = ΔU + PΔV and PΔV = −w stay displayed where the book states them; only the "Substituting … yields" paragraph and its three lines are replaced.
+- `hess-law`, Hess's law · score 2 · not built: asserted from the state-function property and checked on one numerical instance; three moves.
+- `formation-enthalpies`, ΔH°reaction from enthalpies of formation · score 5, hidden in prose · built as drv-reaction-enthalpy-from-formation: one node, Hess's law over decompositions and formations, then the reversal and scaling rules for each, then the rearrangement the book prints. The prose is kept; the host replaces the displayed result after it.
+- Example 5.14, ClF + F₂ → ClF₃ · score 0 · not built: a worked example applying Hess's law, every line printed.

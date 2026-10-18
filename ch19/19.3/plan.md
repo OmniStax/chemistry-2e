@@ -61,3 +61,7 @@ The Link to Learning on the reduction of vanadium complexes; the sentence pointi
 - no concept, edge or symbol fixes
 
 Applied by the chapter pass (2026-10-05): `eq-delta-tet` anchored to `19.3-ex-other-geometries` through `ost set … forms` (merged into `book.json`); `Δ_oct` and `P_pair` anchored to `19.3-cft`, `Δ_tet` to `19.3-ex-other-geometries`, and `λ`, `ν`, `E`, `c` and `h` to `19.3-ex-colors`. The colour wheel's computed pink-magenta at 499 nm, where the book calls the solution purple, is recorded in `ch19/exploration.md`.
+
+## Derivations
+
+- Example 19.8, the tetrahedral splitting as four ninths of the octahedral · score 11 · not built: asserted without argument; its derivation rests on crystal field theory the book never states

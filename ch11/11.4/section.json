@@ -1559,5 +1559,68 @@
       "kind": "correction",
       "html": "The key takes 5.14 °C/<em>m</em> for benzene; Table 11.2 gives <em>K</em><sub>f</sub> = 5.12 °C/<em>m</em>, and the depression still rounds to 5.1 °C."
     }
+  ],
+  "derivations": [
+    {
+      "id": "vapor-pressure-of-solution",
+      "what": "the vapor pressure of a solution of nonvolatile solutes",
+      "source": "Chemistry 2e, 11.4 Colligative Properties",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "text": "The total pressure of a gaseous mixture is equal to the sum of the partial pressures of all its components.",
+              "src": "9.3, Dalton’s law"
+            },
+            {
+              "tex": "\\kPA = X_{\\text{A}}\\kPAstar",
+              "src": "11.4, Raoult’s law"
+            },
+            {
+              "text": "The solution holds one volatile solvent and only nonvolatile solutes."
+            },
+            {
+              "text": "A nonvolatile substance is one whose vapor pressure is negligible, $P^{*} \\approx 0$.",
+              "src": "11.4"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{P}{\\kPsoln} = \\mk{S}{\\sum_{i}\\kPcomp}",
+            "src": "11.4",
+            "uses": [
+              0
+            ]
+          },
+          "steps": [
+            {
+              "tex": "\\mk{P}{\\kPsoln} = \\mk{S}{\\sum_{i}X_{i}\\kPcompstar}",
+              "uses": [
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{P}{\\kPsoln} = \\mk{S}{X_{\\text{solvent}}\\kPsolvstar} + \\mk{u}{\\sum_{\\text{solutes}}X_{i}\\kPcompstar}",
+              "uses": [
+                2
+              ],
+              "map": {
+                "S": [
+                  "S",
+                  "u"
+                ]
+              }
+            },
+            {
+              "tex": "\\mk{P}{\\kPsoln} = \\mk{S}{X_{\\text{solvent}}\\kPsolvstar}",
+              "uses": [
+                3
+              ],
+              "cap": "Every solute’s $P^{*}$ is negligible, so its term is dropped."
+            }
+          ],
+          "src": "11.4"
+        }
+      ]
+    }
   ]
 }

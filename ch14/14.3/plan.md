@@ -70,3 +70,8 @@ The Link to Learning (a simulation of strong and weak acids and bases); its idea
 - 14.4 and 14.5 `exercise_notes` to say fs-idm94404336, fs-idm94046624, fs-idm8587472 and fs-idm75310368 are printed in 14.3
 
 Applied by the chapter pass (2026-10-05): every form and variables anchor as asked, `K_a` with ref `acid` and `K_b_ion` with ref `base`; rows `K_w`, `[H3O+]`, `[OH-]`, `pH`, `pK_w`, `pOH` added for the symbols the page writes through macros. `acid-ionization-constant` takes `K_a` as its symbol (the `K_a2` symbol row itself is unchanged). `acid-base-ionization-constants` stays, renamed "Relative strength of acids and bases", the idea that K_a and K_b each make particular. The four moved exercises agree in all three sections' `exercise_notes`. The page's concept mentions, none marked at the build, are marked.
+
+## Derivations
+
+- Relative strengths of conjugate acid-base pairs, Ka × Kb = Kw · score 3 · built as drv-ka-kb-kw (the summed chemical equations and the rearranged Ka = Kw/Kb stay as printed)
+- Example 14.14, the pH of 0.50 M HSO₄⁻ by the full quadratic · score 4 · not built: a worked example of the section's ICE method whose hidden moves are its own arithmetic

@@ -496,3 +496,9 @@ Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 - `sim-breathing` · readout the volume equation alone, the pressure difference in the sentence (manim 12).
 - `sim-balloons` · a dashed circle on n at 1 mol, the standard molar volume (manim 8).
 - `sim-amontons-sphere`, `sim-balloons`, `sim-four-graphs` · no sentence tells the reader to drag or speaks of the sliders (root 17).
+
+## Derivations
+
+- `amontons`, the two-state forms P₁/T₁ = P₂/T₂ (and Charles's, Boyle's) · score 0 · not built: two moves in prose, under the bar.
+- `ideal-gas-law`, PV = nRT from the four laws · score 4 · not built: the book says only "combining these four laws yields". Done by the book's own facts, the work is three moves (PV a function of T and n by Boyle, then of n times T by Charles, then nRT by Avogadro), under the four-move bar; the shorter route through V ∝ T/P needs the rule for joint proportionality, which the book never states.
+- `combined-gas-law`, P₁V₁/T₁ = P₂V₂/T₂ · score 2 · not built: three moves, told in words.

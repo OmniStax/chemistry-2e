@@ -50,3 +50,8 @@ Objectives and summary go to the tables. Nothing of the narrative is left out; n
 - `ch13/exploration.md`: the key of fs-idp149802032 is listed as an erratum, but its 1.90 atm for all three pressures is what the data give (x = 1.90 atm from 3.80 atm of N₂O₃); the page names no erratum for it
 
 Applied by the chapter pass (2026-10-05): `x_ice` anchored at 13.4-changes; `K_c` (13.4-calc-k) and `Q_conc` (13.4-initial) rows added, since the page writes `\kKc` and `\kQc`. `COLOR.md` now says 13.4 has no referents and the ICE tables stay in ink. `exploration.md` no longer lists the key of fs-idp149802032 as an erratum: 3.80 atm of N₂O₃ with K_P = 1.91 gives x = 1.90 atm, so all three pressures are 1.90 atm.
+
+## Derivations
+
+- Example 13.9, the equilibrium concentrations of PCl₅, PCl₃ and Cl₂ by the quadratic formula · score 1 · not built: a worked example of the section's ICE method
+- Example 13.10, the small-x approximation for HCN · score 3 · not built: a worked example that teaches the section's own approximation, under the hidden bar

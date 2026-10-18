@@ -71,3 +71,11 @@ The Link to Learning on greenhouse gases; the Solomon video sentence inside the 
 ### Applied by the chapter pass
 
 Every item above was applied on 2026-09-28: the five equations and the ten variable rows carry the anchors listed. The page binds `pressure`, `volume`, `temperature` and `mass`, as its figures draw them; `amount` is not bound, since no figure draws a count of moles, and `ch09/COLOR.md` now says so. The unit test that a folded figure carries an original for each figure it folds still failed on `sim-over-water`: the text named only the Figure 9.21 image, while the row carried both. Its `data-original` now names `CNX_Chem_09_03_WaterVapor2.jpg` as well, and the test passes.
+
+## Derivations
+
+- `density`, d = ℳP/RT · score 4, a printed block · built as drv-gas-density: the gas law solved for V, then put into d = m/V and the ratio m/n named ℳ. The block's displayed lines and connecting phrases are replaced; its opening sentences on the gas law and on density stay.
+- `density`, after Example 9.11, ℳ = mRT/PV · score 3, a printed block · built as drv-gas-molar-mass: the gas law solved for n and put into ℳ = m/n, the two skipped lines inserted. Not folded into drv-gas-density: the book prints the two apart, with Example 9.11 and the gas-density Sim between them, so each stays where the book works it.
+- Example 9.12, the molecular formula of cyclopropane · score 4 · not built: a worked example whose two lines are each a substitution into an earlier method (empirical formula, then ℳ = mRT/PV); judged a worked example.
+- `dalton`, P_A = X_A P_Total · score 4 · not built: three moves.
+- Example 9.19, the volume of hydrogen from gallium · score 3 · not built: a worked example, stoichiometry fed into the gas law in one chain.

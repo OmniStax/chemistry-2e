@@ -55,3 +55,7 @@ Applied by the chapter pass (2026-10-05):
 
 - Both forms and the eight variables rows anchored as listed.
 - The type colours had already been refitted for `current` before the pass (commit 7dff6a2f); the colours script was not rerun.
+
+## Derivations
+
+- Example 17.10, the time to electroplate a chromium layer · score 2 · not built: a worked example of unit conversions into Q = nF and Q = It, every line printed

@@ -90,3 +90,10 @@ Nothing of the prose. Errata kept as printed: Example 11.3's C<sub>2</sub>H<sub>
 - `config.md`: the six unnumbered step diagrams of 11.4's examples are kept as figure rows with no number.
 
 Applied by the chapter pass (2026-09-28): all twenty variables and nine equations anchored as listed, through `ost set`; `config.md` records the six unnumbered step diagrams. The osmosis figure's water and solution labels now stand beside the tubes, and the scene is lowered so the tube tops stay in frame.
+
+## Derivations
+
+- `vapor`, P_solution = X_solvent P*_solvent · score 1, a printed block · built as drv-vapor-pressure-of-solution: one node, Dalton's law, Raoult's law for each component, the sum split into solvent and solutes (inserted), the solutes' terms dropped. The "Recalling … Dalton's law" paragraph and both displayed lines are replaced; the sentence defining a nonvolatile substance stays before the host.
+- `distillation`, the vapor enriched in the more volatile component · score 9 · not built: the book leaves the argument to end-of-chapter Exercise 65, so it is an exercise.
+- `boiling`, `freezing`, `osmosis`, the colligative proportionalities · score 0 · not built: stated as empirical laws; their derivation is thermodynamics the book never gives.
+- Example 11.5, molality from molarity and density (and Examples 11.11, 11.12) · score 3 · not built: worked examples, every line printed.

@@ -606,5 +606,199 @@
       "exercise": "e31",
       "concept": "cell-potential-and-equilibrium-constant"
     }
+  ],
+  "derivations": [
+    {
+      "id": "free-energy-cell-potential",
+      "what": "the standard free energy change from the standard cell potential",
+      "source": "Chemistry 2e, 17.4 Potential, Free Energy, and Equilibrium",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "text": "In a galvanic cell under standard state conditions, essentially all the work is associated with transferring the electrons from reductant to oxidant.",
+              "src": "17.4"
+            },
+            {
+              "text": "The work, $w$, is negative if it is done by the system.",
+              "src": "5.3"
+            },
+            {
+              "tex": "\\text{V} = \\text{J/C}",
+              "src": "17.3"
+            },
+            {
+              "text": "Faraday’s constant, $F$, is the charge in coulombs of one mole of electrons.",
+              "src": "17.4"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{G}{\\kdGo} = \\mk{w}{\\kwmax}",
+            "src": "16.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{G}{\\kdGo} = \\mk{w}{\\kwmax} = \\mk{e}{\\kwelec}",
+              "uses": [
+                0
+              ]
+            },
+            {
+              "tex": "\\mk{G}{\\kdGo} = \\mk{e}{\\kwelec} = \\mk{x}{-\\kQ}\\,\\mk{E}{\\kEocell}",
+              "uses": [
+                1,
+                2
+              ],
+              "cap": "A potential is energy per unit charge, so moving the charge $Q$ through $E^\\circ_\\text{cell}$ is work of size $QE^\\circ_\\text{cell}$; the cell does this work, so it is negative."
+            },
+            {
+              "tex": "\\mk{G}{\\kdGo} = \\mk{e}{\\kwelec} = \\mk{x}{-\\kn\\kFaraday}\\mk{E}{\\kEocell}",
+              "uses": [
+                3
+              ],
+              "cap": "$n$ moles of electrons carry the charge $nF$."
+            },
+            {
+              "tex": "\\mk{G}{\\kdGo} = \\mk{x}{-\\kn\\kFaraday}\\mk{E}{\\kEocell}",
+              "uses": []
+            }
+          ],
+          "src": "17.4"
+        }
+      ]
+    },
+    {
+      "id": "cell-potential-k",
+      "what": "the standard cell potential and the equilibrium constant",
+      "source": "Chemistry 2e, 17.4 Potential, Free Energy, and Equilibrium",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kdGo = -\\kn\\kFaraday\\kEocell",
+              "src": "17.4"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{G}{\\kdGo} = \\mk{L}{-R\\kT\\;\\text{ln}\\;\\kK}",
+            "src": "16.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{G}{\\kdGo} = \\mk{L}{-R\\kT\\;\\text{ln}\\;\\kK} = \\mk{E}{-\\kn\\kFaraday\\kEocell}",
+              "uses": [
+                0
+              ]
+            },
+            {
+              "tex": "\\mk{E}{\\kEocell} = \\mk{L}{\\left(\\frac{R\\kT}{\\kn\\kFaraday}\\right)\\;\\text{ln}\\;\\kK}",
+              "uses": []
+            }
+          ],
+          "src": "17.4"
+        }
+      ]
+    },
+    {
+      "id": "nernst",
+      "what": "the Nernst equation",
+      "source": "Chemistry 2e, 17.4 Potential, Free Energy, and Equilibrium",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kdGo = -\\kn\\kFaraday\\kEocell",
+              "src": "17.4"
+            },
+            {
+              "tex": "\\kdG = -\\kn\\kFaraday\\kEcell",
+              "src": "17.4"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{G}{\\kdG} = \\mk{G0}{\\kdGo} + \\mk{L}{R\\kT\\;\\text{ln}\\;\\kQrxn}",
+            "src": "16.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{G}{-\\kn\\kFaraday\\kEcell} = \\mk{G0}{-\\kn\\kFaraday\\kEocell} + \\mk{L}{R\\kT\\;\\text{ln}\\;\\kQrxn}",
+              "uses": [
+                1,
+                0
+              ],
+              "cap": "Free energy and potential are related the same way under any conditions, so $\\Delta G = -nFE_\\text{cell}$ as $\\Delta G^\\circ = -nFE^\\circ_\\text{cell}$."
+            },
+            {
+              "tex": "\\mk{G}{\\kEcell} = \\mk{G0}{\\kEocell} - \\mk{L}{\\;\\frac{R\\kT}{\\kn\\kFaraday}\\;\\text{ln}\\;\\kQrxn}",
+              "uses": []
+            }
+          ],
+          "src": "17.4"
+        }
+      ]
+    },
+    {
+      "id": "nernst-298",
+      "what": "the Nernst equation at 298 K in base-10 logarithms",
+      "source": "Chemistry 2e, 17.4 Potential, Free Energy, and Equilibrium",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "R = 8.314\\ \\text{J/K mol}",
+              "src": "16.4"
+            },
+            {
+              "tex": "\\kT = 298.15\\ \\text{K}",
+              "src": "5.3"
+            },
+            {
+              "tex": "\\kFaraday = 96{,}485\\ \\text{C/mol}",
+              "src": "17.4"
+            },
+            {
+              "tex": "\\text{V} = \\text{J/C}",
+              "src": "17.3"
+            },
+            {
+              "tex": "\\ln x = 2.303\\,\\log x",
+              "src": "Appendix B"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{E}{\\kEcell} = \\mk{E0}{\\kEocell} - \\mk{c}{\\;\\frac{R\\kT}{\\kn\\kFaraday}}\\;\\mk{L}{\\text{ln}\\;\\kQrxn}",
+            "src": "17.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{E}{\\kEcell} = \\mk{E0}{\\kEocell} - \\mk{c}{\\frac{(8.314\\ \\text{J/K mol})(298.15\\ \\text{K})}{\\kn\\,(96{,}485\\ \\text{C/mol})}}\\;\\mk{L}{\\text{ln}\\;\\kQrxn}",
+              "uses": [
+                0,
+                1,
+                2
+              ]
+            },
+            {
+              "tex": "\\mk{E}{\\kEcell} = \\mk{E0}{\\kEocell} - \\mk{c}{\\frac{0.02569\\ \\text{V}}{\\kn}}\\;\\mk{L}{\\text{ln}\\;\\kQrxn}",
+              "uses": [
+                3
+              ]
+            },
+            {
+              "tex": "\\mk{E}{\\kEcell} = \\mk{E0}{\\kEocell} - \\mk{c}{\\frac{0.02569\\ \\text{V}}{\\kn}}\\;\\mk{L}{(2.303\\;\\text{log}\\;\\kQrxn)}",
+              "uses": [
+                4
+              ],
+              "cap": "Since $x = 10^{\\log x}$ and the natural logarithm of 10 is 2.303, $\\ln x = 2.303\\log x$."
+            },
+            {
+              "tex": "\\mk{E}{\\kEcell} = \\mk{E0}{\\kEocell} - \\mk{c}{\\;\\frac{0.0592\\text{ V}}{\\kn}}\\;\\mk{L}{\\text{log}\\;\\kQrxn}",
+              "uses": []
+            }
+          ],
+          "src": "17.4"
+        }
+      ]
+    }
   ]
 }

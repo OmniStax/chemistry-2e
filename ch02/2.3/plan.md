@@ -49,3 +49,7 @@ End of chapter (17): kept keyed fs-idm174365776, fs-idm187202528, fs-idm80933584
 - equation eq-average-atomic-mass → 2.3-atomic-mass
 
 **Applied by the chapter pass (2026-09-28).** All six anchors set as listed. The Figure 2.14 caption no longer speaks of "the book’s drawing"; it opens on "a helium ion". Zirconium in `sim-mass-spec` takes the palette's new Zr colour.
+
+## Derivations
+
+- Example 2.5, the isotopic abundances of chlorine · score 0 · not built: a worked example that substitutes into the section's average-mass formula and solves one linear equation, every line printed.

@@ -59,3 +59,8 @@ Objectives, summary, key equations and glossary go to the tables. The Link to Le
 - variables rows wanted for 14.6 `[H3O+]`, `[OH-]`, `K_a`, `pOH`: used in Example 14.20, the derivation and the readout of `sim-buffer`
 
 Applied by the chapter pass (2026-10-05): every anchor as asked (`pK_b` too); rows `n`, `[H3O+]`, `[OH-]`, `K_a` and `pOH` added at `how-buffers-work`. The numbering 77 to 91 is the publisher's (openstax.org checked); the keyed items are even because the book keys both 47 and 48, so nothing is renumbered. General mentions of pH and buffer are marked.
+
+## Derivations
+
+- The Henderson-Hasselbalch equation · score 3 · built as drv-henderson-hasselbalch
+- Example 14.20, the pH of an acetate buffer before and after adding base · score 8 · not built: a worked example of the section's own method, neutralization stoichiometry then the buffer equilibrium, with numbers throughout

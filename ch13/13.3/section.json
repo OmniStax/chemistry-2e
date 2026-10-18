@@ -850,5 +850,71 @@
    "kind": "correction",
    "html": "The book writes the acetate ion as a liquid, CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>l</em>); it is dissolved, CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>aq</em>)."
   }
+ ],
+ "derivations": [
+  {
+   "id": "kc-rate-constants",
+   "what": "the equilibrium constant as a ratio of rate constants",
+   "source": "Chemistry 2e, 13.3 Shifting Equilibria: Le Châtelier’s Principle",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "At equilibrium the forward and reverse reactions proceed at equal rates.",
+       "src": "13.1"
+      },
+      {
+       "tex": "\\kratef = \\kkf\\kconcA",
+       "src": "13.3"
+      },
+      {
+       "tex": "\\krater = \\kkr\\kconcB",
+       "src": "13.3"
+      },
+      {
+       "tex": "\\text{A}\\rightleftharpoons\\text{B}\\qquad\\kKc = \\frac{\\kconcB}{\\kconcA}",
+       "src": "13.2"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{r}{\\krater} = \\mk{f}{\\kratef}",
+      "src": "13.3",
+      "uses": [
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{f}{\\kkf\\kconcA} = \\mk{r}{\\kkr\\kconcB}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\frac{\\mk{B}{\\kconcB}}{\\mk{A}{\\kconcA}} = \\frac{\\mk{kf}{\\kkf}}{\\mk{kr}{\\kkr}}",
+       "uses": [],
+       "map": {
+        "f": [
+         "kf",
+         "A"
+        ],
+        "r": [
+         "B",
+         "kr"
+        ]
+       }
+      },
+      {
+       "tex": "\\frac{\\mk{B}{\\kconcB}}{\\mk{A}{\\kconcA}} = \\frac{\\mk{kf}{\\kkf}}{\\mk{kr}{\\kkr}} = \\mk{K}{\\kKc}",
+       "uses": [
+        3
+       ]
+      }
+     ],
+     "src": "13.3"
+    }
+   ]
+  }
  ]
 }

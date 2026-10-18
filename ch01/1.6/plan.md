@@ -284,3 +284,8 @@ labels are on.
 Judged against `docs/prompts/manim-style.md`; only the figures below changed.
 
 - `sim-temperature-scales` · dashed circles on T at −40 °C, 0 °C and 100 °C (manim 8).
+
+## Derivations
+
+- `linear-not-proportional`, the Celsius–Fahrenheit equation · score 1, a printed block · built as drv-celsius-fahrenheit: four nodes (slope, intercept, the equation with and without units, its rearrangement for °C); the block's displayed lines and connecting phrases are replaced, its opening sentence kept.
+- `kelvin-scale`, the kelvin–Celsius equations · score 3 · not built: stated with the slope in prose, the intercept skipped; four moves but under the score bar, and the method is the one built just above.

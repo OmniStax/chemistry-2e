@@ -63,3 +63,9 @@ Objectives, summary and glossary go to the tables; the Link to Learning on ocean
 - `ch15/config.md`: 15.3 replaces the Al(OH)₄⁻ image with a two-view Figure and keeps Example 15.16's thiosulfate equation as a figure row with no number
 
 Applied by the chapter pass (2026-10-05): all four anchors as asked; rows added for `K_sp` and `K_a1` at 15.3-reefs, `K_f_form` at 15.3-complex, and `pK_a`, `pH`, `pOH`, `[OH-]` at 15.3-calculations, each reusing its earlier meaning; `[H3O+]` gets no row, since the page never writes it through its macro. `ch15/COLOR.md` lists `al-ion` and `aluminate` and the unsplit coupled reactions; `ch15/config.md` records the two-view Al(OH)₄⁻ Figure and the thiosulfate equation kept as a figure row with no number.
+
+## Derivations
+
+- Coral reefs and ocean acidification, K for CaCO₃ dissolving in acid (and Al(OH)₃ + OH⁻ with K = Ksp Kf) · score 4 · not built: three moves, under the hidden bar
+- Example 15.15, the solubility of Al(OH)₃ in water and in an acetate buffer · score 7 · not built: a worked example of the section's own method of coupled equilibria, with numbers throughout
+- Example 15.16, the mass of thiosulfate that dissolves AgBr · score 5 · not built: a worked example of the section's own method of coupled equilibria, with numbers throughout

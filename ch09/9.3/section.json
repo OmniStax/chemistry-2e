@@ -513,5 +513,126 @@
     "sim-over-water"
    ]
   }
+ ],
+ "derivations": [
+  {
+   "id": "gas-density",
+   "what": "the density of a gas",
+   "source": "Chemistry 2e, 9.3 Stoichiometry of Gaseous Substances, Mixtures, and Reactions",
+   "nodes": [
+    {
+     "then": {
+      "tex": "\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{n}{\\kn}\\mk{R}{R}\\mk{T}{\\kT}",
+      "src": "9.2"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{V}{\\kV} = \\dfrac{\\mk{n}{\\kn}\\mk{R}{R}\\mk{T}{\\kT}}{\\mk{P}{\\kP}}",
+       "uses": []
+      }
+     ],
+     "src": "9.3"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "tex": "\\kMM = \\dfrac{\\km}{\\kn}",
+       "src": "3.1"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{d}{d} = \\dfrac{\\mk{m}{\\km}}{\\mk{V}{\\kV}}",
+      "src": "1.4"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{d}{d} = \\dfrac{\\mk{m}{\\km}}{\\mk{V}{\\dfrac{\\kn R\\kT}{\\kP}}}",
+       "uses": [
+        0
+       ]
+      },
+      {
+       "tex": "\\mk{d}{d} = \\dfrac{\\mk{m}{\\km}\\mk{P}{\\kP}}{\\mk{V}{\\kn R\\kT}}",
+       "uses": [],
+       "map": {
+        "V": [
+         "P",
+         "V"
+        ]
+       }
+      },
+      {
+       "tex": "\\mk{d}{d} = \\mk{mm}{\\left(\\dfrac{\\km}{\\kn}\\right)}\\dfrac{\\mk{P}{\\kP}}{\\mk{V}{R\\kT}}",
+       "uses": [],
+       "map": {
+        "m": "mm",
+        "V": [
+         "mm",
+         "V"
+        ]
+       }
+      },
+      {
+       "tex": "\\mk{d}{d} = \\dfrac{\\mk{mm}{\\kMM}\\mk{P}{\\kP}}{\\mk{V}{R\\kT}}",
+       "uses": [
+        1
+       ]
+      }
+     ],
+     "src": "9.3"
+    }
+   ]
+  },
+  {
+   "id": "gas-molar-mass",
+   "what": "the molar mass of a gas",
+   "source": "Chemistry 2e, 9.3 Stoichiometry of Gaseous Substances, Mixtures, and Reactions",
+   "nodes": [
+    {
+     "then": {
+      "tex": "\\mk{P}{\\kP}\\mk{V}{\\kV} = \\mk{n}{\\kn}\\mk{R}{R}\\mk{T}{\\kT}",
+      "src": "9.2"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{n}{\\kn} = \\dfrac{\\mk{P}{\\kP}\\mk{V}{\\kV}}{\\mk{R}{R}\\mk{T}{\\kT}}",
+       "uses": []
+      }
+     ],
+     "src": "9.3"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      }
+     ],
+     "then": {
+      "tex": "\\mk{M}{\\kMM} = \\dfrac{\\mk{m}{\\km}}{\\mk{n}{\\kn}}",
+      "src": "3.1"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{M}{\\kMM} = \\dfrac{\\mk{m}{\\km}}{\\mk{n}{\\dfrac{\\kP\\kV}{R\\kT}}}",
+       "uses": [0]
+      },
+      {
+       "tex": "\\mk{M}{\\kMM} = \\dfrac{\\mk{m}{\\km}\\mk{RT}{R\\kT}}{\\mk{n}{\\kP\\kV}}",
+       "uses": [],
+       "map": {
+        "n": [
+         "RT",
+         "n"
+        ]
+       }
+      }
+     ],
+     "src": "9.3"
+    }
+   ]
+  }
  ]
 }

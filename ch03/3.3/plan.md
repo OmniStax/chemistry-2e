@@ -59,3 +59,7 @@ Binds `amount`, `volume`, `concentration`, and `mass` (the molarity Sim weighs t
 ### Applied by the chapter pass
 
 Every variable and equation anchor set as asked.
+
+## Derivations
+
+- `dilution-equation`, the dilution equation · score 0, a printed block · built as drv-dilution-equation: n = ML written for the solution before and after (two nodes) and joined by the unchanged amount of solute. The block's lines and connecting phrases are replaced; the "where the subscripts" clause stays as a sentence after it, and the general form C₁V₁ = C₂V₂ stays as printed, a renaming rather than a move.

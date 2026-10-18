@@ -569,5 +569,92 @@
    "kind": "correction",
    "html": "The key names the concentration [OH<sup>−</sup>]; the 3.1 × 10<sup>−12</sup> <em>M</em> it gives is the hydronium ion concentration, [H<sub>3</sub>O<sup>+</sup>]."
   }
+ ],
+ "derivations": [
+  {
+   "id": "pkw",
+   "what": "the relation between pH and pOH",
+   "source": "Chemistry 2e, 14.2 pH and pOH",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "tex": "\\log xy = \\log x + \\log y",
+       "src": "Appendix B"
+      },
+      {
+       "tex": "\\kpH = -\\log\\kconcHyd",
+       "src": "14.2"
+      },
+      {
+       "tex": "\\kpOH = -\\log\\kconcOH",
+       "src": "14.2"
+      },
+      {
+       "tex": "\\text{pX} = -\\log \\text{X}",
+       "src": "14.2"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{K}{\\kKw} = \\mk{H}{\\kconcHyd}\\mk{O}{\\kconcOH}",
+      "src": "14.1"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{K}{-\\log\\;\\kKw} = \\mk{H}{-\\log(\\kconcHyd}\\mk{O}{\\kconcOH)}",
+       "uses": []
+      },
+      {
+       "tex": "\\mk{K}{-\\log\\;\\kKw} = \\mk{H}{-\\log\\kconcHyd}+\\mk{O}{-\\log\\kconcOH}",
+       "uses": [
+        0
+       ]
+      },
+      {
+       "tex": "\\mk{K}{\\kpKw} = \\mk{H}{\\kpH}+\\mk{O}{\\kpOH}",
+       "uses": [
+        3,
+        1,
+        2
+       ]
+      }
+     ],
+     "src": "14.2"
+    },
+    {
+     "assumes": [
+      {
+       "step": 0
+      },
+      {
+       "tex": "\\text{pX} = -\\log \\text{X}",
+       "src": "14.2"
+      },
+      {
+       "tex": "\\kKw = 1.0\\times10^{-14}\\ \\text{at}\\ 25\\ {}^{\\circ}\\text{C}",
+       "src": "14.1"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{K}{\\kpKw} = \\mk{H}{\\kpH}+\\mk{O}{\\kpOH}",
+      "src": "14.2"
+     },
+     "steps": [
+      {
+       "tex": "\\mk{K}{-\\log(1.0\\times10^{-14})} = \\mk{H}{\\kpH}+\\mk{O}{\\kpOH}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\mk{K}{14.00} = \\mk{H}{\\kpH}+\\mk{O}{\\kpOH}",
+       "uses": []
+      }
+     ],
+     "src": "14.2"
+    }
+   ]
+  }
  ]
 }

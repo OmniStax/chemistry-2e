@@ -49,3 +49,7 @@ Nothing of the prose. Errata kept as printed: 2N₂O₅ ⟶ NO₂ + O₂ in the 
 - `ch12/COLOR.md` and the chapter notes disagree on k: the tables type it `rate-constant` (`\kk`), and the page follows them
 
 Applied by the chapter pass (2026-10-05): the four anchors set as listed; no per-section rows for rate, [A] and [B], whose cards fall back to 12.1's meanings. k stays typed `rate-constant`; `COLOR.md` and `config.md` now say so, and the chapter's forms write `\kk`.
+
+## Derivations
+
+- Example 12.5, the order of a reaction from the ratio of two initial rates · score 1 · not built: a worked example of the section's own method of initial rates

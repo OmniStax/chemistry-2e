@@ -48,3 +48,8 @@ Nothing of the prose. Errata kept as printed: "the butadiene reaction" for the c
 - `ch12/config.md`: the cyclobutane equation of 12.6 is an unnumbered image redrawn as a figure row with no number
 
 Applied by the chapter pass (2026-10-05): the k₋₁ anchor set; no per-section rows for the reused symbols, whose cards fall back to the chapter's meanings; k stays typed (`COLOR.md`, `config.md`); `config.md` names the cyclobutane figure row.
+
+## Derivations
+
+- A fast, reversible step before the slow one, [N₂O₂] from the NO dimerization equilibrium · score 1 · built as drv-n2o2-equilibrium (a thin printed block, two moves)
+- Example 12.14, the rate law of a mechanism with a fast equilibrium before the slow step · score 2 · built as drv-mechanism-rate-law

@@ -75,3 +75,8 @@ The two Link to Learning notes (a cloud chamber demonstration; the PhET radiomet
 - `config.md`: Figure 21.6 is a moving 2D figure on a locked view, not the 3D bench the 3D row names (argued in its plan line above).
 
 Applied by the chapter pass: every variables row and form above anchored at `21.3-half-lives`; `config.md` and `exploration.md` record Figure 21.6 on a locked view in place of the 3D bench, and `exploration.md` Figure 21.5's radon-234.
+
+## Derivations
+
+- Radioactive half-lives, t½ = 0.693/λ from first-order kinetics · score 3 · not built: the same result as 12.4's first-order half-life, built there as drv-half-life-first-order; this restatement stays as printed
+- Example 21.7, the age of a rock from its U-238 to Pb-206 ratio · score 2 · not built: a worked example into the section's first-order time formula, every line printed

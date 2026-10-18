@@ -1273,5 +1273,174 @@
       "kind": "correction",
       "html": "The key gives the entropy change in kJ; its unit is kJ/K: Δ<em>S</em>° = −0.16 kJ/K, or −160 J/K."
     }
+  ],
+  "derivations": [
+    {
+      "id": "free-energy-universe",
+      "what": "the free energy change and the entropy change of the universe",
+      "source": "Chemistry 2e, 16.4 Free Energy",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "text": "The first law requires that $q_{\\text{surr}} = -q_{\\text{sys}}$.",
+              "src": "16.4"
+            },
+            {
+              "text": "At constant pressure, $q_{\\text{sys}} = \\Delta H$.",
+              "src": "5.3"
+            },
+            {
+              "tex": "\\kdG = \\kdH - \\kT\\kdS",
+              "src": "16.4"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{U}{\\kdSuniv} = \\mk{S}{\\kdS} + \\mk{q}{\\frac{\\kqsurr}{\\kT}}",
+            "src": "16.3"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{U}{\\kdSuniv} = \\mk{S}{\\kdS} + \\mk{q}{\\frac{-\\kqsys}{\\kT}}",
+              "uses": [
+                0
+              ]
+            },
+            {
+              "tex": "\\mk{U}{\\kdSuniv} = \\mk{S}{\\kdS} - \\mk{q}{\\frac{\\kdH}{\\kT}}",
+              "uses": [
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{U}{-\\kT\\kdSuniv} = \\mk{S}{-\\kT\\kdS} + \\mk{q}{\\kdH}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{U}{-\\kT\\kdSuniv} = \\mk{q}{\\kdH} - \\mk{S}{\\kT\\kdS}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{G}{\\kdG} = \\mk{U}{-\\kT\\kdSuniv}",
+              "uses": [
+                2
+              ],
+              "map": {
+                "q": "G",
+                "S": "G"
+              }
+            }
+          ],
+          "src": "16.4"
+        }
+      ]
+    },
+    {
+      "id": "crossover-temperature",
+      "what": "the temperature at which a process changes spontaneity",
+      "source": "Chemistry 2e, 16.4 Free Energy",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "text": "At the temperature where the line crosses the $x$ axis, $\\Delta G$ is zero.",
+              "src": "16.4"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{G}{\\kdG} = \\mk{H}{\\kdH} - \\mk{T}{\\kT\\kdS}",
+            "src": "16.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{G}{\\kdG} = \\mk{z}{0} = \\mk{H}{\\kdH} - \\mk{T}{\\kT\\kdS}",
+              "uses": [
+                0
+              ]
+            },
+            {
+              "tex": "\\mk{T}{\\kT\\kdS} = \\mk{H}{\\kdH}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{T}{\\kT} = \\;\\frac{\\mk{H}{\\kdH}}{\\mk{S}{\\kdS}}",
+              "uses": [],
+              "map": {
+                "T": [
+                  "T",
+                  "S"
+                ]
+              }
+            }
+          ],
+          "src": "16.4"
+        }
+      ]
+    },
+    {
+      "id": "free-energy-equilibrium",
+      "what": "the standard free energy change and the equilibrium constant",
+      "source": "Chemistry 2e, 16.4 Free Energy",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kdG = 0\\ \\text{at equilibrium}",
+              "src": "16.4, Table 16.3"
+            },
+            {
+              "tex": "\\kQrxn = \\kK\\ \\text{at equilibrium}",
+              "src": "13.2"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{G}{\\kdG} = \\mk{G0}{\\kdGo} + \\mk{L}{R\\kT\\;\\text{ln}\\;\\kQrxn}",
+            "src": "16.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{G}{0} = \\mk{G0}{\\kdGo} + \\mk{L}{R\\kT\\;\\text{ln}\\;\\kK}",
+              "uses": [
+                0,
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{G0}{\\kdGo} = \\mk{L}{-R\\kT\\;\\text{ln}\\;\\kK}",
+              "uses": []
+            }
+          ],
+          "src": "16.4"
+        },
+        {
+          "assumes": [
+            {
+              "step": 0
+            },
+            {
+              "text": "A number is found from its natural logarithm $x$ as $e^{x}$.",
+              "src": "Appendix B"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{G0}{\\kdGo} = \\mk{L}{-R\\kT\\;\\text{ln}\\;\\kK}",
+            "src": "16.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{L}{\\text{ln}\\;\\kK} = \\mk{G0}{-\\;\\frac{\\kdGo}{R\\kT}}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{L}{\\kK} = \\mk{G0}{{e}^{-\\;\\frac{\\kdGo}{R\\kT}}}",
+              "uses": [
+                1
+              ]
+            }
+          ],
+          "src": "16.4"
+        }
+      ]
+    }
   ]
 }

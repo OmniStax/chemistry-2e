@@ -58,3 +58,7 @@ Objectives, summary, key equations and glossary go to the tables. Errata kept as
 - concepts `acidic-basic-neutral` overlaps `acidic-solution`, `basic-solution` and `neutral-solution` (the glossary's three words as concepts of their own); one of the two sets could fold into the other
 
 Applied by the chapter pass (2026-10-05): every anchor as asked; rows `K_w`, `[H3O+]`, `[OH-]` and `T` added, since the page writes them through their macros. `acidic-basic-neutral` is folded into `acidic-solution`, `basic-solution` and `neutral-solution`, the glossary's three words, with the temperature dependence moved into `neutral-solution`'s statement; its coverage rows and exercise tag go to `neutral-solution`, and its edges to the three (each now rests on `water-autoionization`). The general mentions of pH, pOH, concentration and temperature this page kept in ink are marked, as root rule 7 asks; `COLOR.md` says so.
+
+## Derivations
+
+- The pH and pOH scales, pKw = pH + pOH and 14.00 at 25 °C · score 2 · built as drv-pkw

@@ -51,3 +51,7 @@ Objectives, summary and glossary go to the tables. The example's summary line pr
 - `ch14/config.md`: 14.5 keeps the acetic acid equation image as a figure row with no number and writes Example 14.19's ICE table as a table
 
 Applied by the chapter pass (2026-10-05): the five anchors as asked, and a 14.5 row `[H3O+]` added. `COLOR.md` and `config.md` say that 14.5 marks no referents, keeps the acetic acid equation as a `figure` row and writes Example 14.19's ICE table as a table. The exercise note on `fs-idm75310368` now matches 14.3's wording.
+
+## Derivations
+
+- Example 14.19, the species of a carbonic acid solution one ionization at a time · score 3 · not built: a worked example of the section's method, under the hidden bar

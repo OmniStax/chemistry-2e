@@ -696,5 +696,177 @@
       "kind": "correction",
       "html": "The book writes the initial concentration as 0.200 mol<sup>−1</sup> in $\\frac{1}{0.200\\;\\text{mol}^{-1}}$. It is 0.200 mol L<sup>−1</sup>, so its reciprocal is 5.00 L mol<sup>−1</sup>, as the next line has it."
     }
+  ],
+  "derivations": [
+    {
+      "id": "half-life-first-order",
+      "what": "the half-life of a first-order reaction",
+      "source": "Chemistry 2e, 12.4 Integrated Rate Laws",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kt = \\kthalf",
+              "src": "12.4"
+            },
+            {
+              "tex": "\\kconcAt = \\tfrac{1}{2}\\kconcAz",
+              "src": "12.4"
+            },
+            {
+              "tex": "\\ln 2 = 0.693"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{ln}{\\ln}\\,\\frac{\\mk{a0}{\\kconcAz}}{\\mk{at}{\\kconcAt}} = \\mk{k}{\\kk}\\mk{t}{\\kt}",
+            "src": "12.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{t}{\\kt} = \\mk{ln}{\\ln}\\,\\frac{\\mk{a0}{\\kconcAz}}{\\mk{at}{\\kconcAt}}\\;\\times\\;\\mk{k}{\\frac{1}{\\kk}}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\mk{ln}{\\ln}\\,\\frac{\\mk{a0}{\\kconcAz}}{\\mk{at}{\\frac{1}{2}\\kconcAz}}\\;\\times\\;\\mk{k}{\\frac{1}{\\kk}}",
+              "uses": [
+                0,
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\mk{ln}{\\ln}\\;\\mk{r}{2}\\;\\times\\;\\mk{k}{\\frac{1}{\\kk}}",
+              "uses": [],
+              "map": {
+                "a0": "r",
+                "at": "r"
+              }
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\mk{v}{0.693}\\;\\times\\;\\mk{k}{\\frac{1}{\\kk}}",
+              "uses": [
+                2
+              ],
+              "map": {
+                "ln": "v",
+                "r": "v"
+              }
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\frac{\\mk{v}{0.693}}{\\mk{k}{\\kk}}",
+              "uses": []
+            }
+          ],
+          "src": "12.4"
+        }
+      ]
+    },
+    {
+      "id": "half-life-second-order",
+      "what": "the half-life of a second-order reaction",
+      "source": "Chemistry 2e, 12.4 Integrated Rate Laws",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kt = \\kthalf",
+              "src": "12.4"
+            },
+            {
+              "tex": "\\kconcAt = \\tfrac{1}{2}\\kconcAz",
+              "src": "12.4"
+            }
+          ],
+          "then": {
+            "tex": "\\frac{1}{\\mk{at}{\\kconcAt}} = \\mk{k}{\\kk}\\mk{t}{\\kt} + \\mk{a0}{\\frac{1}{\\kconcAz}}",
+            "src": "12.4"
+          },
+          "steps": [
+            {
+              "tex": "\\frac{1}{\\mk{at}{\\kconcAt}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kt}",
+              "uses": []
+            },
+            {
+              "tex": "\\frac{1}{\\mk{at}{\\frac{1}{2}\\kconcAz}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
+              "uses": [0, 1]
+            },
+            {
+              "tex": "\\mk{at}{\\frac{2}{\\kconcAz}} - \\mk{a0}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{d}{\\frac{1}{\\kconcAz}} = \\mk{k}{\\kk}\\mk{t}{\\kthalf}",
+              "uses": [],
+              "map": {
+                "at": "d",
+                "a0": "d"
+              }
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\frac{\\mk{d}{1}}{\\mk{k}{\\kk}\\mk{a}{\\kconcAz}}",
+              "uses": [],
+              "map": {
+                "d": [
+                  "d",
+                  "a"
+                ]
+              }
+            }
+          ],
+          "src": "12.4"
+        }
+      ]
+    },
+    {
+      "id": "half-life-zero-order",
+      "what": "the half-life of a zero-order reaction",
+      "source": "Chemistry 2e, 12.4 Integrated Rate Laws",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kt = \\kthalf",
+              "src": "12.4"
+            },
+            {
+              "tex": "\\kconcA = \\frac{\\kconcAz}{2}",
+              "src": "12.4"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{a}{\\kconcA} = -\\mk{k}{\\kk}\\mk{t}{\\kt} + \\mk{a0}{\\kconcAz}",
+            "src": "12.4"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{a}{\\frac{\\kconcAz}{2}} = -\\mk{k}{\\kk}\\mk{t}{\\kthalf} + \\mk{a0}{\\kconcAz}",
+              "uses": [0, 1]
+            },
+            {
+              "tex": "\\mk{k}{\\kk}\\mk{t}{\\kthalf} = \\mk{a0}{\\kconcAz} - \\mk{a}{\\frac{\\kconcAz}{2}}",
+              "uses": []
+            },
+            {
+              "tex": "\\mk{k}{\\kk}\\mk{t}{\\kthalf} = \\mk{h}{\\frac{\\kconcAz}{2}}",
+              "uses": [],
+              "map": {
+                "a0": "h",
+                "a": "h"
+              }
+            },
+            {
+              "tex": "\\mk{t}{\\kthalf} = \\frac{\\mk{h}{\\kconcAz}}{\\mk{two}{2}\\mk{k}{\\kk}}",
+              "uses": [],
+              "map": {
+                "h": [
+                  "h",
+                  "two"
+                ]
+              }
+            }
+          ],
+          "src": "12.4"
+        }
+      ]
+    }
   ]
 }

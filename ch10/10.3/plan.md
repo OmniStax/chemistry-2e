@@ -58,3 +58,8 @@ Pressure, temperature, energy, time (the clock of `sim-vapor`), mass (the heat r
 - eq-sublimation-sum → 10.3-sublimation
 
 Applied by the chapter pass (2026-09-28): each equation anchored as listed, and its variables anchored with it.
+
+## Derivations
+
+- `clausius`, the two-point Clausius-Clapeyron equation · score 4, a printed block · built as drv-clausius-clapeyron-two-point: four nodes, the logarithmic form from P = Ae^(−ΔH/RT) by the log rules of Appendix B, the line at each of the two points with ln A isolated, and the join that eliminates A and merges the logs. The exponential form and its "where" paragraph stay displayed; everything from "This equation is often rearranged" to the two-point result is replaced, with the two skipped lines ("combined into") inserted.
+- `sublimation`, ΔH_sub = ΔH_fus + ΔH_vap · score 1, a thin printed block · built as drv-enthalpy-of-sublimation: one node, Hess's law over melting then vaporization. The array and its "For example:" are replaced; the paragraph that says the model is approximate stays.

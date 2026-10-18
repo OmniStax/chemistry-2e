@@ -1283,5 +1283,127 @@
       "kind": "correction",
       "html": "The first line takes Δ<em>H</em><sub>f</sub>° of HNO<sub>3</sub>(<em>aq</em>) as −207.4 kJ/mol, the second computes with −206.64 kJ/mol. With −207.4 kJ/mol the sum is −138.3 kJ, in agreement with the −138.4 kJ found below."
     }
+  ],
+  "derivations": [
+    {
+      "id": "enthalpy-change-heat",
+      "what": "the enthalpy change at constant pressure",
+      "source": "Chemistry 2e, 5.3 Enthalpy",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "text": "The process takes place at constant pressure.",
+              "src": "5.3"
+            },
+            {
+              "tex": "\\kH = \\kU + \\kP\\kV",
+              "src": "5.3"
+            },
+            {
+              "tex": "\\kP\\kdV = -\\kwork",
+              "src": "5.3"
+            },
+            {
+              "tex": "\\kdU = \\kq + \\kwork",
+              "src": "5.3"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{H}{\\kdH} = \\mk{U}{\\kdU} + \\mk{PV}{\\kP\\kdV}",
+            "src": "5.3",
+            "uses": [
+              0,
+              1
+            ],
+            "why": "The change in $\\kH = \\kU + \\kP\\kV$ is the change in $\\kU$ plus the change in $\\kP\\kV$, and at constant pressure the change in $\\kP\\kV$ is $\\kP\\kdV$."
+          },
+          "steps": [
+            {
+              "tex": "\\mk{H}{\\kdH} = \\mk{U}{\\kdU} - \\mk{PV}{\\kwork}",
+              "uses": [
+                2
+              ]
+            },
+            {
+              "tex": "\\mk{H}{\\kdH} = \\mk{U}{\\kqp + \\kwork} - \\mk{PV}{\\kwork}",
+              "uses": [
+                3,
+                0
+              ],
+              "cap": "At constant pressure the heat $\\kq$ of the process is the heat $\\kqp$."
+            },
+            {
+              "tex": "\\mk{H}{\\kdH} = \\mk{U}{\\kqp}",
+              "uses": []
+            }
+          ],
+          "src": "5.3"
+        }
+      ]
+    },
+    {
+      "id": "reaction-enthalpy-from-formation",
+      "what": "the enthalpy of a reaction from enthalpies of formation",
+      "source": "Chemistry 2e, 5.3 Enthalpy",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "text": "If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the various steps.",
+              "src": "5.3, Hess’s law"
+            },
+            {
+              "text": "Any reaction can be written as (i) decompositions of the reactants into their component elements, followed by (ii) re-combinations of the elements to give the products.",
+              "src": "5.3"
+            },
+            {
+              "text": "A standard enthalpy of formation $\\kdHf$ is the enthalpy change for forming exactly 1 mole of a pure substance from free elements in their most stable states.",
+              "src": "5.3"
+            },
+            {
+              "text": "If the direction of a chemical equation is reversed, the arithmetic sign of its $\\kdH$ is changed.",
+              "src": "5.3"
+            },
+            {
+              "text": "If the coefficients of a chemical equation are multiplied by some factor, the enthalpy change must be multiplied by that same factor.",
+              "src": "5.3"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{rx}{{\\kdH}_{\\text{reaction}}^{{}^{\\circ}}} = \\mk{i}{\\sum \\kdHo_{\\text{decompositions}}} + \\mk{ii}{\\sum \\kdHo_{\\text{formations}}}",
+            "src": "5.3",
+            "uses": [
+              1,
+              0
+            ]
+          },
+          "steps": [
+            {
+              "tex": "\\mk{rx}{{\\kdH}_{\\text{reaction}}^{{}^{\\circ}}} = \\mk{i}{\\sum n\\;\\times\\;\\left(-\\kdHf(\\text{reactants})\\right)} + \\mk{ii}{\\sum \\kdHo_{\\text{formations}}}",
+              "uses": [
+                2,
+                3,
+                4
+              ],
+              "cap": "Decomposing $n$ moles of a reactant into its elements is its formation reaction reversed and multiplied by $n$."
+            },
+            {
+              "tex": "\\mk{rx}{{\\kdH}_{\\text{reaction}}^{{}^{\\circ}}} = \\mk{i}{\\sum n\\;\\times\\;\\left(-\\kdHf(\\text{reactants})\\right)} + \\mk{ii}{\\sum n\\;\\times\\;\\kdHf(\\text{products})}",
+              "uses": [
+                2,
+                4
+              ],
+              "cap": "Forming $n$ moles of a product from its elements is its formation reaction multiplied by $n$."
+            },
+            {
+              "tex": "\\mk{rx}{{\\kdH}_{\\text{reaction}}^{{}^{\\circ}}} = \\mk{ii}{\\sum n\\;\\times\\;\\kdHf(\\text{products})} - \\mk{i}{\\sum n\\;\\times\\;\\kdHf(\\text{reactants})}",
+              "uses": []
+            }
+          ],
+          "src": "5.3"
+        }
+      ]
+    }
   ]
 }

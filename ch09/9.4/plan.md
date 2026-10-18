@@ -44,3 +44,7 @@ No Link to Learning in this section. Errata kept as printed: the key equation's 
 ### Applied by the chapter pass
 
 Every item above was applied on 2026-09-28: the two equations and the two variable rows carry the anchors listed.
+
+## Derivations
+
+- Example 9.21, the effusion time of neon from xenon's · score 0 · not built: a worked example on the section's own two facts.

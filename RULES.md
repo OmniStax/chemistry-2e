@@ -46,7 +46,7 @@ Inside each module, in order: learning objectives in `<md:abstract>`; the narrat
 
 Worked examples are `<example>` elements numbered Example N.M chapter-wide, each with a title, a problem, a Solution and a Check Your Learning whose answer is in a note.
 
-The key covers the odd-numbered exercises of each section (873 of 1736), inline in the `<exercise>` element; every Check Your Learning is keyed. A keyed "Answers will vary" or a narrated PhET run is an open answer the reader compares with. An unkeyed numerical exercise is left out and named in `exercise_notes`; an unkeyed conceptual exercise is kept with a suggested approach marked as OmniStax's own (root rule 13). No answer is ever generated.
+The key covers the odd-numbered exercises of each section (873 of 1736), inline in the `<exercise>` element; every Check Your Learning is keyed. A keyed "Answers will vary" or a narrated PhET run is an open answer the reader compares with. What becomes of an unkeyed exercise is the chapter's `config.md`'s to say, chosen on the exercise count report (root rule 13); the chapters built so far left a numerical one out and named it in `exercise_notes`, and kept a conceptual one with a suggested approach marked as OmniStax's own. A keyed answer always comes from the book's key.
 
 ## Licence and attribution
 

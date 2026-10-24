@@ -1,0 +1,13 @@
+# A push to main rebuilds omnistax.org through the Worker's Cloudflare deploy
+# hook, kept in this repository's DEPLOY_HOOK_URL secret.
+name: Deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  hook:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          HOOK: ${{ secrets.DEPLOY_HOOK_URL }}
+        run: '[ -z "$HOOK" ] || curl -fsS -X POST "$HOOK"'

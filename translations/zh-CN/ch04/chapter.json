@@ -1,0 +1,51 @@
+{
+  "id": "4",
+  "dir": "ch04",
+  "title": "Stoichiometry of Chemical Reactions",
+  "intro": {
+    "module": "m68730",
+    "slug": "4-introduction"
+  },
+  "sections": [
+    {
+      "id": "4.1",
+      "module": "m68709",
+      "title": "Writing and Balancing Chemical Equations",
+      "slug": "4-1-writing-and-balancing-chemical-equations"
+    },
+    {
+      "id": "4.2",
+      "module": "m68710",
+      "title": "Classifying Chemical Reactions",
+      "slug": "4-2-classifying-chemical-reactions"
+    },
+    {
+      "id": "4.3",
+      "module": "m68713",
+      "title": "Reaction Stoichiometry",
+      "slug": "4-3-reaction-stoichiometry"
+    },
+    {
+      "id": "4.4",
+      "module": "m68714",
+      "title": "Reaction Yields",
+      "slug": "4-4-reaction-yields"
+    },
+    {
+      "id": "4.5",
+      "module": "m68716",
+      "title": "Quantitative Chemical Analysis",
+      "slug": "4-5-quantitative-chemical-analysis"
+    }
+  ],
+  "variables": [
+    {
+      "sym": "M",
+      "concept": "molarity",
+      "meaning": "the molarity of a solution, the moles of solute per liter of solution (equally, millimoles per milliliter)",
+      "unit": "M (mol/L)",
+      "section": "4.5",
+      "anchor": "4.5-titration-calc"
+    }
+  ]
+}

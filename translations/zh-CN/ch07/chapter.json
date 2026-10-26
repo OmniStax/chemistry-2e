@@ -1,0 +1,198 @@
+{
+  "id": "7",
+  "dir": "ch07",
+  "title": "Chemical Bonding and Molecular Geometry",
+  "intro": {
+    "module": "m68736",
+    "slug": "7-introduction"
+  },
+  "sections": [
+    {
+      "id": "7.1",
+      "module": "m68737",
+      "title": "Ionic Bonding",
+      "slug": "7-1-ionic-bonding"
+    },
+    {
+      "id": "7.2",
+      "module": "m68738",
+      "title": "Covalent Bonding",
+      "slug": "7-2-covalent-bonding"
+    },
+    {
+      "id": "7.3",
+      "module": "m68739",
+      "title": "Lewis Symbols and Structures",
+      "slug": "7-3-lewis-symbols-and-structures"
+    },
+    {
+      "id": "7.4",
+      "module": "m68740",
+      "title": "Formal Charges and Resonance",
+      "slug": "7-4-formal-charges-and-resonance"
+    },
+    {
+      "id": "7.5",
+      "module": "m68741",
+      "title": "Strengths of Ionic and Covalent Bonds",
+      "slug": "7-5-strengths-of-ionic-and-covalent-bonds"
+    },
+    {
+      "id": "7.6",
+      "module": "m68742",
+      "title": "Molecular Structure and Polarity",
+      "slug": "7-6-molecular-structure-and-polarity"
+    }
+  ],
+  "variables": [
+    {
+      "sym": "EN",
+      "concept": "electronegativity",
+      "meaning": "the electronegativity of an atom, the tendency of the atom to attract the electrons of a bond toward itself, on Pauling's relative scale from 0 to 4",
+      "section": "7.2",
+      "anchor": "7.2-electronegativity"
+    },
+    {
+      "sym": "ΔEN",
+      "concept": "electronegativity",
+      "meaning": "the absolute value of the difference in electronegativity between two bonded atoms, a rough measure of the polarity of the bond",
+      "section": "7.2",
+      "anchor": "7.2-bond-type"
+    },
+    {
+      "sym": "D_bond",
+      "concept": "bond-energy",
+      "meaning": "the bond energy, the energy required to break one mole of a particular covalent bond in gaseous molecules; always positive",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-bond-strength"
+    },
+    {
+      "sym": "ΔH",
+      "concept": "enthalpy-change",
+      "meaning": "the enthalpy change of a reaction, estimated from the bond energies of the bonds broken and formed",
+      "unit": "kJ",
+      "section": "7.5",
+      "anchor": "7.5-enthalpy"
+    },
+    {
+      "sym": "ΔH°",
+      "concept": "enthalpy-change",
+      "meaning": "the standard enthalpy change of a reaction",
+      "unit": "kJ",
+      "section": "7.5",
+      "anchor": "7.5-bond-strength"
+    },
+    {
+      "sym": "ΔH_lattice",
+      "concept": "lattice-energy",
+      "meaning": "the lattice energy, the energy required to separate one mole of an ionic solid into its gaseous ions",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-lattice"
+    },
+    {
+      "sym": "C_lattice",
+      "concept": "lattice-energy-trends",
+      "meaning": "a constant that depends on the type of crystal structure",
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
+    },
+    {
+      "sym": "Z_plus",
+      "concept": "ions-and-atomic-charge",
+      "meaning": "the charge on the cation",
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
+    },
+    {
+      "sym": "Z_minus",
+      "concept": "ions-and-atomic-charge",
+      "meaning": "the charge on the anion",
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
+    },
+    {
+      "sym": "R_o",
+      "concept": "lattice-energy-trends",
+      "type": "length",
+      "meaning": "the interionic distance, the sum of the radii of the positive and negative ions",
+      "unit": "pm",
+      "section": "7.5",
+      "anchor": "7.5-lattice-trends"
+    },
+    {
+      "sym": "ΔH_f°",
+      "concept": "standard-enthalpy-of-formation",
+      "meaning": "the standard enthalpy of formation of the ionic compound from its elements",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
+    },
+    {
+      "sym": "ΔH_s°",
+      "concept": "enthalpies-of-phase-change",
+      "meaning": "the enthalpy of sublimation of the metal",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
+    },
+    {
+      "sym": "IE",
+      "concept": "ionization-energy",
+      "meaning": "the ionization energy of the metal atom",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
+    },
+    {
+      "sym": "EA",
+      "concept": "electron-affinity",
+      "meaning": "the electron affinity of the nonmetal atom, negative when the step releases energy",
+      "unit": "kJ/mol",
+      "section": "7.5",
+      "anchor": "7.5-born-haber"
+    },
+    {
+      "sym": "μ",
+      "concept": "bond-dipole-moment",
+      "meaning": "the bond dipole moment, the magnitude of the separation of charge in a bond",
+      "unit": "C·m",
+      "section": "7.6",
+      "anchor": "7.6-bond-dipole"
+    },
+    {
+      "sym": "Q_partial",
+      "concept": "bond-polarity",
+      "type": "charge",
+      "meaning": "the magnitude of the partial charges at the two ends of a bond, determined by the electronegativity difference between the bonded atoms",
+      "unit": "C",
+      "section": "7.6",
+      "anchor": "7.6-bond-dipole"
+    },
+    {
+      "sym": "r_bond",
+      "concept": "bond-length",
+      "meaning": "the distance between the two partial charges, which is the distance between the nuclei of the bonded atoms",
+      "unit": "Å (1 Å = 10⁻¹⁰ m, 100 pm = 1 Å)",
+      "section": "7.6",
+      "anchor": "7.6-bond-dipole"
+    },
+    {
+      "sym": "ΔH",
+      "concept": "enthalpy-change",
+      "meaning": "the enthalpy change of dissociating one mole of solid NaCl into its gaseous ions",
+      "unit": "kJ",
+      "section": "7.1",
+      "anchor": "7.1-formation"
+    },
+    {
+      "sym": "ΔH",
+      "concept": "enthalpy-change",
+      "meaning": "the enthalpy change of breaking, or of forming, the bonds of one mole of hydrogen molecules",
+      "unit": "kJ",
+      "section": "7.2",
+      "anchor": "7.2-formation"
+    }
+  ]
+}

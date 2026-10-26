@@ -1,0 +1,286 @@
+{
+  "id": "11.3",
+  "module": "m68782",
+  "chapter": "11",
+  "title": "Solubility",
+  "short": "Solubility",
+  "lead": "Every solute has a limit to how much of it a solvent will hold, and a solution may stand below that limit, at it, or beyond it. That limit shifts with <span data-concept=\"temperature\">temperature</span> and, for a gas, with <span data-concept=\"gas-pressure\">pressure</span>, and pairs of liquids range from mixing in all proportions to not mixing at all.",
+  "objectives": [
+    "Describe the effects of temperature and pressure on solubility",
+    "State Henry’s law and use it in calculations involving the solubility of a gas in a liquid",
+    "Explain the degrees of solubility possible for liquid-liquid solutions"
+  ],
+  "summary_html": "<p>The extent to which one substance will dissolve in another is determined by several factors, including the types and relative strengths of intermolecular attractive <span data-concept=\"force\">forces</span> that may exist between the substances’ atoms, ions, or molecules. This tendency to dissolve is quantified as a substance’s <span data-concept=\"solubility\">solubility</span>, its maximum <span data-concept=\"concentration\">concentration</span> in a solution at equilibrium under specified conditions. A saturated solution contains solute at a <span data-concept=\"concentration\">concentration</span> equal to its <span data-concept=\"solubility\">solubility</span>. A supersaturated solution is one in which a solute’s <span data-concept=\"concentration\">concentration</span> exceeds its <span data-concept=\"solubility\">solubility</span>—a nonequilibrium (unstable) condition that will result in solute precipitation when the solution is appropriately perturbed. Miscible liquids are soluble in all proportions, and immiscible liquids exhibit very low mutual <span data-concept=\"solubility\">solubility</span>. <span data-concept=\"solubility\">Solubilities</span> for gaseous solutes decrease with increasing <span data-concept=\"temperature\">temperature</span>, while those for most, but not all, solid solutes increase with <span data-concept=\"temperature\">temperature</span>. The <span data-concept=\"concentration\">concentration</span> of a gaseous solute in a solution is proportional to the <span data-concept=\"partial-pressure\">partial pressure</span> of the gas to which the solution is exposed, a relation known as Henry’s law.</p>",
+  "notes": "The three Link to Learning notes are left out, the PhET simulation of soluble salts, a video of sodium acetate precipitating from a supersaturated solution and a video of a hand warmer crystallizing. Example 11.2 keeps the book’s “approximately ~1.2 mol/L” for a solubility of 1.2 × 10⁻³ mol/L, and the answer to Example 11.1’s Check Your Learning keeps “7.25 × 10⁻³ in 100.0 mL” without its unit, grams, as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
+  },
+  "built": "2026-09-28",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercise fs-idm19146000 (exercise 24 of the chapter, the mass of oxygen dissolved in an aquarium) is left out, and no answer is computed for it. The unkeyed conceptual exercises (16, 18 and 22) and the unkeyed choice item fs-idm7358128 (exercise 20), kept as an open item with its options and never graded, carry a suggested approach marked as OmniStax’s own. The keyed exercise fs-idp128725184, printed in 11.4 as exercise 27, is placed here, where miscibility and Figure 11.14 are taught. Numeric answers accept 2% tolerance, except the percent by mass of KBr, which the book rounds to one significant digit and which accepts 10%.",
+  "figures": [
+    {
+      "id": "sim-gas-solubility",
+      "kind": "sim",
+      "number": "11.8",
+      "originals": ["/media/ch11/CNX_Chem_11_03_gasdissolv.jpg"],
+      "original_caption": "The solubilities of these gases in water decrease as the temperature increases. All solubilities were measured with a constant pressure of 101.3 kPa (1 atm) of gas above the solutions.",
+      "draws": ["concentration", "pressure", "temperature", "equilibrium-constant"],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "curve names over the drop lines; note without plain k or the caption"
+        }
+      ]
+    },
+    {"id": "fig-o2-bubbles", "kind": "photo", "number": "11.9", "draws": []},
+    {"id": "fig-beverage", "kind": "photo", "number": "11.10", "draws": []},
+    {"id": "fig-recompress", "kind": "photo", "number": "11.11", "draws": []},
+    {
+      "id": "fig-ammonia",
+      "kind": "figure",
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    },
+    {"id": "fig-lake-nyos", "kind": "photo", "number": "11.12", "draws": []},
+    {
+      "id": "sim-nyos",
+      "kind": "sim",
+      "draws": ["concentration", "pressure", "length", "equilibrium-constant"],
+      "conventions": [
+        "O",
+        "C"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "parcel kept in the water; depth title and Pg label off the bracket"
+        }
+      ]
+    },
+    {"id": "fig-antifreeze", "kind": "photo", "number": "11.13", "draws": []},
+    {"id": "fig-oil-water", "kind": "photo", "number": "11.14", "draws": []},
+    {"id": "fig-bromine", "kind": "photo", "number": "11.15", "draws": []},
+    {
+      "id": "sim-solid-solubility",
+      "kind": "sim",
+      "number": "11.16",
+      "originals": ["/media/ch11/CNX_Chem_11_03_solubility.jpg"],
+      "original_caption": "This graph shows how the solubility of several solids changes with temperature.",
+      "draws": ["temperature", "mass"],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "curve names over the drop line; notes that restated the headline dropped"
+        }
+      ]
+    },
+    {"id": "fig-handwarmer", "kind": "photo", "number": "11.17", "draws": []}
+  ],
+  "coverage": [
+    {"span": "solubility", "concept": "solubility-and-saturation", "verb": "introduces"},
+    {"span": "solubility", "concept": "saturated-solution", "verb": "introduces"},
+    {"span": "solubility", "concept": "unsaturated-solution", "verb": "introduces"},
+    {"span": "supersaturated", "concept": "supersaturated-solutions", "verb": "introduces"},
+    {"span": "gases", "concept": "gas-solubility-and-temperature", "verb": "introduces"},
+    {"span": "henry", "concept": "henrys-law", "verb": "introduces"},
+    {"span": "henry", "concept": "henrys-law-calculations", "verb": "introduces"},
+    {"span": "henry", "concept": "gas-solubility-and-temperature", "verb": "uses"},
+    {"span": "nyos", "concept": "supersaturated-solutions", "verb": "uses"},
+    {"span": "nyos", "concept": "henrys-law", "verb": "uses"},
+    {"span": "liquids", "concept": "miscibility", "verb": "introduces"},
+    {"span": "liquids", "concept": "miscible", "verb": "introduces"},
+    {"span": "liquids", "concept": "immiscible", "verb": "introduces"},
+    {"span": "liquids", "concept": "partially-miscible", "verb": "introduces"},
+    {"span": "solids", "concept": "solid-solubility-and-temperature", "verb": "introduces"},
+    {"span": "solids", "concept": "solubility-and-saturation", "verb": "uses"},
+    {"span": "solids", "concept": "supersaturated-solutions", "verb": "uses"}
+  ],
+  "exercises": [
+    {"id": "cyl1", "source_id": "fs-idp3359488", "kind": "check-your-learning", "bloom": "Apply", "place": {"at": "inline", "after": "ex-henry"}, "cite": "henry", "prompt": "Exposing a 100.0 mL sample of water at 0 °C to an atmosphere containing a gaseous solute at 152 torr resulted in the dissolution of 1.45 × 10<sup>−3</sup> g of the solute. Use Henry’s law to determine the solubility of this gaseous solute when its pressure is 760 torr.", "answer": {"type": "number", "generated_by": "source", "value": 0.0725, "unit": "g/L", "hint": "Find k from the first measurement, as grams per liter per torr, then multiply it by the new pressure.", "solution": "7.25 × 10<sup>−3</sup> in 100.0 mL or 0.0725 g/L"}},
+    {"id": "cyl2", "source_id": "fs-idm260338832", "kind": "check-your-learning", "bloom": "Apply", "place": {"at": "inline", "after": "ex-trout"}, "cite": "henry", "prompt": "What dissolved oxygen concentration is expected for the stream above when it returns to a normal summer time temperature of 15 °C?", "answer": {"type": "number", "generated_by": "source", "value": 8.2, "unit": "mg/L", "hint": "Read the solubility of oxygen at 15 °C from Figure 11.8 to find k, multiply by 0.17 atm, and convert mol/L to mg/L.", "solution": "8.2 mg/L"}},
+    {"id": "e1", "source_id": "fs-idp15462384", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "supersaturated", "prompt": "Suppose you are presented with a clear solution of sodium thiosulfate, Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub>. How could you determine whether the solution is unsaturated, saturated, or supersaturated?", "answer": {"type": "open", "generated_by": "ai", "solution": "Add a single small seed crystal of solid sodium thiosulfate to the solution and watch what becomes of it. If the crystal dissolves, the solution is unsaturated: its concentration is below the solubility, so it can take up more solute. If the crystal neither dissolves nor grows and nothing else happens, the solution is saturated: it is at equilibrium with the solid, dissolving and crystallizing at equal rates. If crystals rapidly grow from the seed and solid Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> precipitates through the liquid, the solution was supersaturated. It held more solute than its solubility in a nonequilibrium state, and the seed crystal starts the precipitation of the excess, which continues until the concentration falls to the solubility and the remaining solution is saturated."}},
+    {"id": "e2", "source_id": "fs-idp18282480", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "solids", "prompt": "Supersaturated solutions of most solids in water are prepared by cooling saturated solutions. Supersaturated solutions of most gases in water are prepared by heating saturated solutions. Explain the reasons for the difference in the two procedures.", "answer": {"type": "open", "generated_by": "source", "solution": "The solubility of solids usually decreases upon cooling a solution, while the solubility of gases usually decreases upon heating."}},
+    {"id": "e3", "source_id": "fs-idm29975600", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "liquids", "prompt": "Suggest an explanation for the observations that ethanol, C<sub>2</sub>H<sub>5</sub>OH, is completely miscible with water and that ethanethiol, C<sub>2</sub>H<sub>5</sub>SH, is soluble only to the extent of 1.5 g per 100 mL of water.", "answer": {"type": "open", "generated_by": "ai", "solution": "Ethanol is miscible with water because its O–H group takes part in hydrogen bonding with water molecules. Oxygen is small and highly electronegative, so the O–H hydrogen bonds ethanol forms with water are at least as strong as the attractions within pure ethanol and within pure water, and the two kinds of molecules mix in any proportion. Sulfur is larger and much less electronegative than oxygen, close to hydrogen, so the S–H bond of ethanethiol is only slightly polar and the molecule cannot form significant hydrogen bonds. Ethanethiol attracts water only by weak dipole-dipole and dispersion forces, which are not adequate to overcome the much stronger hydrogen bonding between water molecules that must be broken to make room for it. Only a little dissolves, about 1.5 g per 100 mL."}},
+    {"id": "e4", "source_id": "fs-idp50664544", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "solids", "prompt": "Calculate the percent by mass of KBr in a saturated solution of KBr in water at 10 °C. See Figure 11.16 for useful data, and report the computed percentage to one significant digit.", "answer": {"type": "number", "generated_by": "source", "value": 40, "unit": "%", "tol": 0.1, "hint": "Read the mass of KBr that saturates 100 g of water at 10 °C, then divide it by the mass of the whole solution.", "solution": "40%"}},
+    {"id": "e5", "source_id": "fs-idm7358128", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "gases", "prompt": "Which of the following gases is expected to be most soluble in water? Explain your reasoning.<br>(a) CH<sub>4</sub><br>(b) CCl<sub>4</sub><br>(c) CHCl<sub>3</sub>", "answer": {"type": "open", "generated_by": "ai", "solution": "(c) CHCl<sub>3</sub>, chloroform, is expected to be most soluble. When a gas dissolves there is no solute-solute attraction to overcome, so the solute-solvent attractions are the only energetic factor in its solubility. CH<sub>4</sub> and CCl<sub>4</sub> are symmetric tetrahedral molecules whose bond dipoles cancel, so both are nonpolar and attract water molecules only by dispersion forces. In CHCl<sub>3</sub> one chlorine atom is replaced by hydrogen, so the bond dipoles no longer cancel and the molecule is polar. Polar chloroform molecules experience dipole-dipole attraction to polar water molecules as well as dispersion forces, the stronger solute-solvent attraction among the three; chloroform is about 100 times more soluble in water than oxygen, which is held by dispersion forces alone."}},
+    {"id": "e6", "source_id": "fs-idp47233328", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "henry", "prompt": "At 0 °C and 1.00 atm, as much as 0.70 g of O<sub>2</sub> can dissolve in 1 L of water. At 0 °C and 4.00 atm, how many grams of O<sub>2</sub> dissolve in 1 L of water?", "answer": {"type": "number", "generated_by": "source", "value": 2.8, "unit": "g", "hint": "At a fixed temperature the solubility is directly proportional to the pressure of the gas.", "solution": "2.8 g"}},
+    {"id": "e7", "source_id": "fs-idp36424272", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "henry", "prompt": "Refer to Figure 11.10.<br>(a) How did the concentration of dissolved CO<sub>2</sub> in the beverage change when the bottle was opened?<br>(b) What caused this change?<br>(c) Is the beverage unsaturated, saturated, or supersaturated with CO<sub>2</sub>?", "answer": {"type": "open", "generated_by": "ai", "solution": "(a) The concentration of dissolved CO<sub>2</sub> decreased: some of the carbon dioxide left the solution as the small bubbles seen in the photograph. (b) Before opening, the beverage was saturated with CO<sub>2</sub> at a relatively high pressure of the gas. Opening the bottle released that pressure, and the pressure of CO<sub>2</sub> above the beverage fell to its much lower value in the air. By Henry’s law, $\\kCg=\\kkH\\kPg$, the solubility of a gas is directly proportional to its pressure above the solution, so the solubility of CO<sub>2</sub> dropped, and the dissolved gas in excess of the new solubility began to escape. (c) Just after opening, the beverage is supersaturated with CO<sub>2</sub>. It still holds more CO<sub>2</sub> than its solubility at the lower pressure, and the concentration keeps falling until the beverage goes flat and reaches its solubility, when it is saturated."}},
+    {"id": "e8", "source_id": "fs-idp43619984", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "henry", "prompt": "The Henry’s law constant for CO<sub>2</sub> is 3.4 × 10<sup>−2</sup> <em>M</em>/atm at 25 °C. Assuming ideal solution behavior, what pressure of carbon dioxide is needed to maintain a CO<sub>2</sub> concentration of 0.10 <em>M</em> in a can of lemon-lime soda?", "answer": {"type": "number", "generated_by": "source", "value": 2.9, "unit": "atm", "hint": "Rearrange C<sub>g</sub> = kP<sub>g</sub> to solve for the pressure.", "solution": "2.9 atm"}},
+    {"id": "e9", "source_id": "fs-idm32553568", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "henry", "prompt": "Assuming ideal solution behavior, how many liters of HCl gas, measured at 30.0 °C and 745 torr, are required to prepare 1.25 L of a 3.20-<em>M</em> solution of hydrochloric acid?", "answer": {"type": "number", "generated_by": "source", "value": 102, "unit": "L", "hint": "Find the moles of HCl the solution needs, then use the ideal gas law for the volume of that much gas.", "solution": "102 L HCl"}},
+    {"id": "e10", "source_id": "fs-idp128725184", "source_section": "11.4", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "liquids", "prompt": "What is the microscopic explanation for the macroscopic behavior illustrated in Figure 11.14?", "answer": {"type": "open", "generated_by": "source", "solution": "The strength of the bonds between like molecules is stronger than the strength between unlike molecules. Therefore, some regions will exist in which the water molecules will exclude oil molecules and other regions will exist in which oil molecules will exclude water molecules, forming a heterogeneous region."}}
+  ],
+  "exercise_concepts": [
+    {"exercise": "cyl1", "concept": "henrys-law-calculations"},
+    {"exercise": "cyl2", "concept": "henrys-law-calculations"},
+    {"exercise": "cyl2", "concept": "gas-solubility-and-temperature"},
+    {"exercise": "e1", "concept": "supersaturated-solutions"},
+    {"exercise": "e1", "concept": "solubility-and-saturation"},
+    {"exercise": "e2", "concept": "supersaturated-solutions"},
+    {"exercise": "e2", "concept": "gas-solubility-and-temperature"},
+    {"exercise": "e2", "concept": "solid-solubility-and-temperature"},
+    {"exercise": "e3", "concept": "miscibility"},
+    {"exercise": "e4", "concept": "solid-solubility-and-temperature"},
+    {"exercise": "e4", "concept": "solubility-and-saturation"},
+    {"exercise": "e5", "concept": "gas-solubility-and-temperature"},
+    {"exercise": "e6", "concept": "henrys-law-calculations"},
+    {"exercise": "e7", "concept": "henrys-law"},
+    {"exercise": "e7", "concept": "supersaturated-solutions"},
+    {"exercise": "e8", "concept": "henrys-law-calculations"},
+    {"exercise": "e9", "concept": "henrys-law-calculations"},
+    {"exercise": "e10", "concept": "miscibility"}
+  ],
+  "referents": [
+    {
+      "id": "methane",
+      "label": "methane dissolved in water",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "oxygen",
+      "label": "oxygen dissolved in water",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "carbon-monoxide",
+      "label": "carbon monoxide dissolved in water",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "nitrogen",
+      "label": "nitrogen dissolved in water",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "helium",
+      "label": "helium dissolved in water",
+      "figures": [
+        "sim-gas-solubility"
+      ]
+    },
+    {
+      "id": "lake",
+      "label": "the crater lake",
+      "figures": [
+        "sim-nyos"
+      ]
+    },
+    {
+      "id": "parcel",
+      "label": "the parcel of water rising through the lake",
+      "figures": [
+        "sim-nyos"
+      ]
+    },
+    {
+      "id": "sugar",
+      "label": "sugar, C₁₂H₂₂O₁₁",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "kno3",
+      "label": "potassium nitrate, KNO₃",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "nano3",
+      "label": "sodium nitrate, NaNO₃",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "nabr",
+      "label": "sodium bromide, NaBr",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "kbr",
+      "label": "potassium bromide, KBr",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "kcl",
+      "label": "potassium chloride, KCl",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "nacl",
+      "label": "sodium chloride, NaCl",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    },
+    {
+      "id": "cerium-sulfate",
+      "label": "cerium sulfate, Ce₂(SO₄)₃",
+      "figures": [
+        "sim-solid-solubility"
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-o2-solubility",
+      "kind": "correction",
+      "html": "The book prints the solubility of oxygen at 30.0 °C as approximately ~1.2 mol/L. Figure 11.8 and the calculation that follows give $1.2 \\times 10^{-3}$ mol/L."
+    }
+  ]
+}

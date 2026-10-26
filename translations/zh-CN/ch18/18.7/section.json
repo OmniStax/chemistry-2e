@@ -1,0 +1,500 @@
+{
+ "id": "18.7",
+ "module": "m68835",
+ "chapter": "18",
+ "title": "Occurrence, Preparation, and Properties of Nitrogen",
+ "short": "Nitrogen",
+ "lead": "Nitrogen, the main gas of the atmosphere, is prepared from liquid air and used wherever an unreactive atmosphere is wanted. The section describes how organisms fix it and the oxides it forms with oxygen, from nitrous oxide to dinitrogen pentaoxide, with the equilibrium between nitrogen dioxide and its dimer and the reactions of the oxides with water.",
+ "objectives": [
+  "Describe the properties, preparation, and uses of nitrogen"
+ ],
+ "summary_html": "<p>Nitrogen exhibits <span data-concept=\"oxidation-number\">oxidation states</span> ranging from 3− to 5+. Because of the stability of the N≡N <span data-concept=\"triple-bond\">triple bond</span>, it requires a great deal of energy to make compounds from molecular nitrogen. Active metals such as the <span data-concept=\"alkali-metal\">alkali metals</span> and <span data-concept=\"alkaline-earth-metal\">alkaline earth metals</span> can reduce nitrogen to form metal nitrides. Nitrogen oxides and nitrogen hydrides are also important substances.</p>",
+ "notes": "The section prints no header, so its four blocks carry headers of OmniStax’s own. It keeps as printed “tetraphosphorus decoxide”, “the only known kind of biological organisms” and the full stop inside the subscript of Figure 18.38’s caption. The Sim of the nitrogen dioxide equilibrium takes ΔH = 57.20 kJ for the decomposition of dinitrogen tetraoxide from the chapter on equilibrium.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key, the Lewis structures of fs-idp29787040 and fs-idp9296992 as the key’s own images. The four unkeyed exercises fs-idm31681344 (the hybridization of nitrogen in four species), fs-idp2884576 (the oxidation state of nitrogen in ten species), fs-idp114788336 (the mass of ammonia from 3.0 g each of hydrogen and nitrogen) and fs-idp88710064 (the concentration of a CsOH solution from a titration) are left out, and no answer is computed for them. Exercise 59 prints its part (a) as NH<sup>2−</sup>, kept as printed. Nothing is moved.",
+ "figures": [
+  {
+   "id": "fig-nitrogen-cycle",
+   "kind": "photo",
+   "number": "18.32",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-n2o",
+   "kind": "photo",
+   "number": "18.33",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-no-dimer",
+   "kind": "photo",
+   "number": "18.34",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-n2o3",
+   "kind": "photo",
+   "number": "18.35",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-copper-nitric",
+   "kind": "photo",
+   "number": "18.36",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-no2-n2o4",
+   "kind": "photo",
+   "number": "18.37",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-no2-dimer",
+   "kind": "sim",
+   "draws": [
+    "equilibrium-constant",
+    "pressure",
+    "temperature",
+    "volume"
+   ],
+   "conventions": [
+    "N",
+    "O"
+   ],
+   "facts": [
+    "#8b4a1c"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-n2o5",
+   "kind": "photo",
+   "number": "18.38",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "n2o4",
+   "label": "dinitrogen tetraoxide, N₂O₄",
+   "figures": [
+    "sim-no2-dimer"
+   ]
+  },
+  {
+   "id": "no2",
+   "label": "nitrogen dioxide, NO₂",
+   "figures": [
+    "sim-no2-dimer"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "occurrence",
+   "concept": "nitrogen-inertness",
+   "verb": "introduces"
+  },
+  {
+   "span": "occurrence",
+   "concept": "nitrogen-fixation",
+   "verb": "introduces"
+  },
+  {
+   "span": "occurrence",
+   "concept": "distillation",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "triple-bond",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "boiling-point",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "melting-point",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "alkali-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "alkaline-earth-metal",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "occurrence",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "nitrogen-oxides",
+   "verb": "introduces"
+  },
+  {
+   "span": "oxides",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "free-radical",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "oxides",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "no2-n2o4-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "dioxide",
+   "concept": "free-radical",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "paramagnetism",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "partial-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "gas-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "volume-stress",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "temperature-changes-k",
+   "verb": "uses"
+  },
+  {
+   "span": "dioxide",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "nitrogen-oxides-with-water",
+   "verb": "introduces"
+  },
+  {
+   "span": "reactions",
+   "concept": "acid-anhydride",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxyacid",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "disproportionation-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxidation-number",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "oxidizing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "reducing-agent",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "combustion-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "redox-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "resonance-forms",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "temperature",
+   "verb": "uses"
+  },
+  {
+   "span": "reactions",
+   "concept": "nitrogen-oxides",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e59",
+   "source_id": "fs-idp29787040",
+   "source_number": "59",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "occurrence",
+   "prompt": "Write the Lewis structures for each of the following:<br>(a) NH<sup>2−</sup><br>(b) N<sub>2</sub>F<sub>4</sub><br>(c) NH<sub>2</sub><sup>−</sup><br>(d) NF<sub>3</sub><br>(e) N<sub>3</sub><sup>−</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) NH<sup>2−</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1a_img.jpg\" alt=\"This Lewis structure shows a nitrogen atom with three lone pairs of electrons single bonded to a hydrogen atom. The structure is surrounded by brackets. Outside and superscript to the brackets is a two negative sign.\"><br>(b) N<sub>2</sub>F<sub>4</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1b_img.jpg\" alt=\"This Lewis structure shows two nitrogen atoms, each with one lone pair of electrons, single bonded to one another and each single bonded to two fluorine atoms. Each fluorine atom has three lone pairs of electrons.\"><br>(c) NH<sub>2</sub><sup>−</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1c_img.jpg\" alt=\"This Lewis structure shows a nitrogen atom with two lone pairs of electrons single bonded to two hydrogen atoms. The structure is surrounded by brackets. Outside and superscript to the brackets is a negative sign.\"><br>(d) NF<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1d_img.jpg\" alt=\"This Lewis structure shows a nitrogen atom, with one lone pair of electrons, single bonded to three fluorine atoms. Each fluorine atom has three lone pairs of electrons.\"><br>(e) N<sub>3</sub><sup>−</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise1e_img.jpg\" alt=\"Three Lewis structures are shown and connected by double-headed arrows in between. The left structure shows a nitrogen atom with a lone pair of electrons triple bonded to a second nitrogen which is single bonded to a third nitrogen. The third nitrogen has three lone pairs of electrons. The entire structure is surrounded by brackets, and outside and superscript to the brackets is a negative sign. The middle structure shows a nitrogen atom with three lone pair of electrons single bonded to a second nitrogen which is triple bonded to a third nitrogen. The third nitrogen which has one lone pair of electrons. The entire structure is surrounded by brackets, and outside and superscript to the brackets is a negative sign. The right structure shows a nitrogen atom with two lone pairs of electrons double bonded to a second nitrogen which is double bonded to a third nitrogen. The third nitrogen atom has two lone pairs of electrons. The entire structure is surrounded by brackets, and outside and superscript to the brackets is a negative sign.\">"
+   }
+  },
+  {
+   "id": "e61",
+   "source_id": "fs-idp14942656",
+   "source_number": "61",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "occurrence",
+   "prompt": "Explain how ammonia can function both as a Brønsted base and as a Lewis base.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Ammonia acts as a Brønsted base because it readily accepts protons and as a Lewis base in that it has an electron pair to donate.<br>Brønsted base: ${\\text{NH}}_{3}+{\\text{H}}_{3}{\\text{O}}^{+}\\;\\longrightarrow \\;{\\text{NH}}_{4}{}^{+}+{\\text{H}}_{2}\\text{O}$<br>Lewis base: ${\\text{2NH}}_{3}+{\\text{Ag}}^{+}\\;\\longrightarrow \\;{{\\text{[H}}_{3}\\text{N}-\\text{Ag}-{\\text{NH}}_{3}]}^{+}$"
+   }
+  },
+  {
+   "id": "e63",
+   "source_id": "fs-idp9296992",
+   "source_number": "63",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "dioxide",
+   "prompt": "For each of the following, draw the Lewis structure, predict the ONO bond angle, and give the hybridization of the nitrogen. You may wish to review the chapters on chemical bonding and advanced theories of covalent bonding for relevant examples.<br>(a) NO<sub>2</sub><br>(b) NO<sub>2</sub><sup>−</sup><br>(c) NO<sub>2</sub><sup>+</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) NO<sub>2</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5a_img.jpg\" alt=\"Two Lewis structures are shown and connected by double-headed arrows in between. The left structure shows a nitrogen atom with a single electron double bonded to an oxygen atom which has two lone pairs of electrons. The nitrogen atom is also single bonded to an oxygen atom with three lone pairs of electrons. The right structure is a mirror image of the left structure.\"><br>Nitrogen is <em>sp</em><sup>2</sup> hybridized. The molecule has a bent geometry with an ONO bond angle of approximately 120°.<br>(b) NO<sub>2</sub><sup>−</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5b_img.jpg\" alt=\"Two Lewis structures are shown and connected by double-headed arrows in between. Each structure is surrounded by brackets, and outside and superscript to the brackets is a negative sign. The left structure shows a nitrogen atom with a lone pair of electrons double bonded to an oxygen atom which has two lone pairs of electrons. The nitrogen atom is also single bonded to an oxygen atom with three lone pair of electrons. The right structure is a mirror image of the left structure.\"><br>Nitrogen is <em>sp</em><sup>2</sup> hybridized. The molecule has a bent geometry with an ONO bond angle slightly less than 120°.<br>(c) NO<sub>2</sub><sup>+</sup>:<br><img src=\"/media/ch18/CNX_Chem_18_07_Exercise5c_img.jpg\" alt=\"This Lewis structure shows a nitrogen atom double bonded on both sides to an oxygen atom which has two lone pairs of electrons each. The structure is surrounded by brackets and outside and superscript to the brackets is a negative sign.\"><br>Nitrogen is <em>sp</em> hybridized. The molecule has a linear geometry with an ONO bond angle of 180°."
+   }
+  },
+  {
+   "id": "e65",
+   "source_id": "fs-idm46455776",
+   "source_number": "65",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "occurrence",
+   "prompt": "Although PF<sub>5</sub> and AsF<sub>5</sub> are stable, nitrogen does not form NF<sub>5</sub> molecules. Explain this difference among members of the same group.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Nitrogen cannot form a NF<sub>5</sub> molecule because it does not have <em>d</em> orbitals to bond with the additional two fluorine atoms."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e59",
+   "concept": "lewis-structure-diagram"
+  },
+  {
+   "exercise": "e59",
+   "concept": "resonance-forms"
+  },
+  {
+   "exercise": "e59",
+   "concept": "nitrogen-inertness"
+  },
+  {
+   "exercise": "e61",
+   "concept": "bronsted-lowry-base"
+  },
+  {
+   "exercise": "e61",
+   "concept": "lewis-base"
+  },
+  {
+   "exercise": "e61",
+   "concept": "ammonia-chemistry"
+  },
+  {
+   "exercise": "e63",
+   "concept": "lewis-structure-diagram"
+  },
+  {
+   "exercise": "e63",
+   "concept": "bond-angle"
+  },
+  {
+   "exercise": "e63",
+   "concept": "hybridization"
+  },
+  {
+   "exercise": "e63",
+   "concept": "nitrogen-oxides"
+  },
+  {
+   "exercise": "e65",
+   "concept": "octet-rule-exceptions"
+  },
+  {
+   "exercise": "e65",
+   "concept": "first-member-anomaly"
+  }
+ ]
+}

@@ -1,0 +1,920 @@
+{
+ "id": "13.3",
+ "module": "m68799",
+ "chapter": "13",
+ "title": "Shifting Equilibria: Le Châtelier’s Principle",
+ "short": "Shifting Equilibria",
+ "lead": "An equilibrium can be disturbed by adding or removing a reactant or product, by changing the <span data-concept=\"volume\">volume</span> of a gaseous system, by changing the <span data-concept=\"temperature\">temperature</span>, or by adding a <span data-concept=\"catalyst\">catalyst</span>. <span data-concept=\"le-chateliers-principle\">Le Châtelier’s principle</span> predicts how the system responds to each of these stresses, and the industrial synthesis of ammonia puts them to work.",
+ "objectives": [
+  "Describe the ways in which an equilibrium system can be stressed",
+  "Predict the response of a stressed equilibrium using Le Châtelier’s principle"
+ ],
+ "summary_html": "<p>Systems at equilibrium can be disturbed by changes to <span data-concept=\"temperature\">temperature</span>, <span data-concept=\"concentration\">concentration</span>, and, in some cases, <span data-concept=\"volume\">volume</span> and <span data-concept=\"partial-pressure\">pressure</span>. The system’s response to these disturbances is described by <span data-concept=\"le-chateliers-principle\">Le Châtelier’s principle</span>: An equilibrium system subjected to a disturbance will shift in a way that counters the disturbance and re-establishes equilibrium. A <span data-concept=\"catalyst\">catalyst</span> will increase the <span data-concept=\"reaction-rate\">rate</span> of both the forward and reverse reactions of a reversible process, increasing the <span data-concept=\"reaction-rate\">rate</span> at which equilibrium is reached but not altering the equilibrium mixture’s composition ($\\kK$ does not change).</p>",
+ "notes": "The Link to Learning video of an equilibrium changing with pressure is left out; the Sim of a stressed equilibrium in a vessel closed by a piston answers it. The book’s “Le Chatelier’s principle,” written once without its accent, and the acetate ion written as (<em>l</em>) in exercise 45 are kept as printed.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ]
+ },
+ "built": "2026-10-05",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idp22318672, fs-idp55085984, fs-idp20860880, fs-idp212372192, fs-idp384696688, fs-idp31242816, fs-idp261498704 and fs-idm33369776 carry a suggested approach marked as OmniStax’s own, and fs-idp219741088, an unkeyed choice item, is kept as an open item with its four options and a suggested approach. Exercise 48 (fs-idp92538384), on radioactive silver ions in a saturated solution of silver sulfate, tests the dynamic nature of equilibrium and is set in 13.1.",
+ "figures": [
+  {
+   "id": "sim-le-chatelier",
+   "kind": "sim",
+   "draws": [
+    "concentration",
+    "equilibrium-constant",
+    "rate"
+   ],
+   "conventions": [
+    "H",
+    "I",
+    "N",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "fig-supersat",
+   "kind": "photo",
+   "number": "13.7",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-catalyst-diagram",
+   "kind": "sim",
+   "number": "13.8",
+   "originals": [
+    "/media/ch13/CNX_Chem_13_03_catalyst.jpg"
+   ],
+   "original_caption": "Reaction diagrams for an elementary process in the absence (red) and presence (blue) of a catalyst. The presence of catalyst lowers the activation energies of both the forward and reverse reactions but does not affect the value of the equilibrium constant.",
+   "draws": [
+    "energy"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  },
+  {
+   "id": "sim-haber-bosch",
+   "kind": "sim",
+   "number": "13.9",
+   "originals": [
+    "/media/ch13/CNX_Chem_13_03_factory.jpg"
+   ],
+   "original_caption": "The figure shows a typical industrial setup for the commercial production of ammonia by the Haber-Bosch process. The process operates under conditions that stress the chemical equilibrium to favor product formation.",
+   "draws": [
+    "energy"
+   ],
+   "conventions": [
+    "N",
+    "H",
+    "O"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "referents": [],
+ "coverage": [
+  {
+   "span": "principle",
+   "concept": "le-chateliers-principle",
+   "verb": "introduces"
+  },
+  {
+   "span": "principle",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "principle",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  },
+  {
+   "span": "principle",
+   "concept": "rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "principle",
+   "concept": "arrhenius-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "concentration-stress",
+   "verb": "introduces"
+  },
+  {
+   "span": "concentration",
+   "concept": "rate-law",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "reaction-quotient",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "predict-direction-q-versus-k",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "law-of-mass-action",
+   "verb": "uses"
+  },
+  {
+   "span": "concentration",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "volume-stress",
+   "verb": "introduces"
+  },
+  {
+   "span": "volume",
+   "concept": "partial-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "ideal-gas-law",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "volume",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "write-reaction-quotient",
+   "verb": "uses"
+  },
+  {
+   "span": "volume",
+   "concept": "le-chateliers-principle",
+   "verb": "reinforces"
+  },
+  {
+   "span": "volume",
+   "concept": "concentration-stress",
+   "verb": "reinforces"
+  },
+  {
+   "span": "temperature",
+   "concept": "temperature-changes-k",
+   "verb": "introduces"
+  },
+  {
+   "span": "temperature",
+   "concept": "elementary-reaction",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "elementary-rate-laws",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "rate-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "arrhenius-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "exothermic-and-endothermic",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "enthalpy-change-at-constant-pressure",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "law-of-mass-action",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "catalyst-and-equilibrium",
+   "verb": "introduces"
+  },
+  {
+   "span": "catalyst",
+   "concept": "catalyst",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "catalysis-lowers-activation-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "activation-energy",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "predict-equilibrium-shift",
+   "verb": "introduces"
+  },
+  {
+   "span": "haber",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "concentration-stress",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "volume-stress",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "temperature-changes-k",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "catalyst-and-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "haber",
+   "concept": "magnitude-of-k",
+   "verb": "uses"
+  },
+  {
+   "span": "temperature",
+   "concept": "reaction-mechanism",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "reaction-mechanism",
+   "verb": "uses"
+  },
+  {
+   "span": "catalyst",
+   "concept": "reaction-rate",
+   "verb": "uses"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "e1",
+   "source_id": "fs-idp6498944",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "volume",
+   "prompt": "The following equation represents a reversible decomposition:$${\\text{CaCO}}_{3}(s)\\rightleftharpoons \\text{CaO}(s)+{\\text{CO}}_{2}(g)$$Under what conditions will decomposition in a closed container proceed to completion so that no CaCO<sub>3</sub> remains?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The amount of CaCO<sub>3</sub> must be so small that $P_{{\\text{CO}}_{2}}$ is less than <em>K</em><sub>P</sub> when the CaCO<sub>3</sub> has completely decomposed. In other words, the starting amount of CaCO<sub>3</sub> cannot completely generate the full $P_{{\\text{CO}}_{2}}$ required for equilibrium."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp22318672",
+   "source_number": "32",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "volume",
+   "prompt": "Explain how to recognize the conditions under which changes in volume will affect gas-phase systems at equilibrium.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "A change in volume shifts a gas-phase equilibrium only when the balanced equation has different total moles of gas on its two sides. Decreasing the volume by a factor of 3 multiplies every partial pressure by 3. For H<sub>2</sub>(<em>g</em>) + I<sub>2</sub>(<em>g</em>) ⇌ 2HI(<em>g</em>), with 2 mol of gas on each side, the factors cancel: ${Q}_{P}{}^{'}=\\;\\frac{{(3{P}_{\\text{HI}})}^{2}}{3{P}_{{\\text{H}}_{2}}\\;3{P}_{{\\text{I}}_{2}}}={Q}_{P}={K}_{P},$ so there is no shift. For 2NO<sub>2</sub>(<em>g</em>) ⇌ 2NO(<em>g</em>) + O<sub>2</sub>(<em>g</em>), with 2 mol of gas on the left and 3 on the right, the same change gives <em>Q<sub>P</sub></em>′ = 3<sup>3</sup>/3<sup>2</sup> × <em>Q<sub>P</sub></em> = 3<em>K<sub>P</sub></em>, so <em>Q</em> &gt; <em>K</em> and the equilibrium shifts left. The test is therefore to count the moles of gas on each side, leaving out solids and liquids: if they differ, a decrease in volume shifts the equilibrium toward the side with fewer moles of gas and an increase toward the side with more; if they are equal, volume has no effect."
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp50583536",
+   "source_number": "33",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "What property of a reaction can we use to predict the effect of a change in temperature on the value of an equilibrium constant?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "The change in enthalpy may be used. If the reaction is exothermic, the heat produced can be thought of as a product. If the reaction is endothermic the heat added can be thought of as a reactant. Additional heat would shift an exothermic reaction back to the reactants but would shift an endothermic reaction to the products. Cooling an exothermic reaction causes the reaction to shift toward the product side; cooling an endothermic reaction would cause it to shift to the reactants’ side."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp176997392",
+   "source_number": "34",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "principle",
+   "prompt": "The following reaction occurs when a burner on a gas stove is lit:$${\\text{CH}}_{4}(g)+2{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(g)$$Is an equilibrium among CH<sub>4</sub>, O<sub>2</sub>, CO<sub>2</sub>, and H<sub>2</sub>O established under these conditions? Explain your answer.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "No, it is not at equilibrium. Because the system is not confined, products continuously escape from the region of the flame; reactants are also added continuously from the burner and surrounding atmosphere."
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp55085984",
+   "source_number": "35",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "A necessary step in the manufacture of sulfuric acid is the formation of sulfur trioxide, SO<sub>3</sub>, from sulfur dioxide, SO<sub>2</sub>, and oxygen, O<sub>2</sub>, shown here. At high temperatures, the rate of formation of SO<sub>3</sub> is higher, but the equilibrium amount (concentration or partial pressure) of SO<sub>3</sub> is lower than it would be at lower temperatures.$$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\rightleftharpoons \\;2{\\text{SO}}_{3}(g)$$(a) Does the equilibrium constant for the reaction increase, decrease, or remain about the same as the temperature increases?<br>(b) Is the reaction endothermic or exothermic?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "(a) The equilibrium constant decreases as the temperature increases. In ${K}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]},$ a smaller equilibrium amount of SO<sub>3</sub> at higher temperature means a smaller numerator and a larger denominator, so <em>K<sub>c</sub></em> is smaller. The faster rate of formation is a kinetic effect; it changes how quickly equilibrium is reached, not where it lies. (b) The reaction is exothermic. Heat is then a product, 2SO<sub>2</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>) ⇌ 2SO<sub>3</sub>(<em>g</em>) + heat, and adding heat shifts the equilibrium to the left, lowering the amount of SO<sub>3</sub> as observed. Only temperature changes the value of <em>K</em>, and a <em>K</em> that falls on heating marks an exothermic reaction."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm14144048",
+   "source_number": "36",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "haber",
+   "prompt": "Suggest four ways in which the concentration of hydrazine, N<sub>2</sub>H<sub>4</sub>, could be increased in an equilibrium described by the following equation:$${\\text{N}}_{2}(g)+2{\\text{H}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{H}}_{4}(g)\\hspace{5em}\\text{Δ}H=95\\;\\text{kJ}$$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Add N<sub>2</sub>; add H<sub>2</sub>; decrease the container volume; heat the mixture."
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp20860880",
+   "source_number": "37",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "haber",
+   "prompt": "Suggest four ways in which the concentration of PH<sub>3</sub> could be increased in an equilibrium described by the following equation:$${\\text{P}}_{4}(g)+6{\\text{H}}_{2}(g)\\rightleftharpoons 4{\\text{PH}}_{3}(g)\\hspace{5em}\\text{Δ}H=110.5\\;\\text{kJ}$$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Add P<sub>4</sub>; add H<sub>2</sub>; decrease the volume of the container; heat the mixture. Adding either reactant makes <em>Q<sub>c</sub></em> smaller than <em>K<sub>c</sub></em>, so the equilibrium shifts right and forms more PH<sub>3</sub>. The left side has 1 + 6 = 7 mol of gas and the right side 4 mol, so decreasing the volume shifts the equilibrium toward PH<sub>3</sub>, the side with less gas. The reaction is endothermic (Δ<em>H</em> = 110.5 kJ), so heat acts as a reactant; raising the temperature shifts the equilibrium right and increases <em>K<sub>c</sub></em>."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp53124112",
+   "source_number": "38",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "haber",
+   "prompt": "How will an increase in temperature affect each of the following equilibria? How will a decrease in the volume of the reaction vessel affect each?<br>(a) $2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{5em}\\text{Δ}H=92\\;\\text{kJ}$<br>(b) ${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{5em}\\text{Δ}H=181\\;\\text{kJ}$<br>(c) $2{\\text{O}}_{3}(g)\\rightleftharpoons 3{\\text{O}}_{2}(g)\\hspace{5em}\\text{Δ}H=−285\\;\\text{kJ}$<br>(d) $\\text{CaO}(s)+{\\text{CO}}_{2}(g)\\rightleftharpoons {\\text{CaCO}}_{3}(s)\\hspace{5em}\\text{Δ}H=−176\\;\\text{kJ}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) <em>T</em> increase = shift right, <em>V</em> decrease = shift left; (b) <em>T</em> increase = shift right, <em>V</em> = no effect; (c) <em>T</em> increase = shift left, <em>V</em> decrease = shift left; (d) <em>T</em> increase = shift left, <em>V</em> decrease = shift right."
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp212372192",
+   "source_number": "39",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "haber",
+   "prompt": "How will an increase in temperature affect each of the following equilibria? How will a decrease in the volume of the reaction vessel affect each?<br>(a) $2{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons 2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{5em}\\text{Δ}H=484\\;\\text{kJ}$<br>(b) ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{5em}\\text{Δ}H=−92.2\\;\\text{kJ}$<br>(c) $2\\text{Br}(g)\\rightleftharpoons {\\text{Br}}_{2}(g)\\hspace{5em}\\text{Δ}H=−224\\;\\text{kJ}$<br>(d) ${\\text{H}}_{2}(g)+{\\text{I}}_{2}(s)\\rightleftharpoons 2\\text{HI}(g)\\hspace{5em}\\text{Δ}H=53\\;\\text{kJ}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "A positive Δ<em>H</em> means heat is a reactant, so heating shifts the equilibrium right; a negative Δ<em>H</em> means heat is a product, so heating shifts it left. A smaller volume shifts the equilibrium toward the side with fewer moles of gas. (a) Endothermic, so a temperature increase shifts it right; 2 mol of gas against 3, so a volume decrease shifts it left. (b) Exothermic, so a temperature increase shifts it left; 4 mol of gas against 2, so a volume decrease shifts it right. (c) Exothermic, so a temperature increase shifts it left; 2 mol of gas against 1, so a volume decrease shifts it right. (d) Endothermic, so a temperature increase shifts it right; solid I<sub>2</sub> is not counted, leaving 1 mol of gas against 2, so a volume decrease shifts it left."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp65024704",
+   "source_number": "40",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "Methanol can be prepared from carbon monoxide and hydrogen at high temperature and pressure in the presence of a suitable catalyst.<br>(a) Write the expression for the equilibrium constant (<em>K</em><sub>c</sub>) for the reversible reaction$$2{\\text{H}}_{2}(g)+\\text{CO}(g)\\rightleftharpoons {\\text{CH}}_{3}\\text{OH}(g)\\hspace{5em}\\text{Δ}H=−90.2\\;\\text{kJ}$$(b) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if more H<sub>2</sub> is added?<br>(c) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if CO is removed?<br>(d) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if CH<sub>3</sub>OH is added?<br>(e) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if the temperature of the system is increased?<br>(f) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if more catalyst is added?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${K}_{c}=\\;\\frac{[{\\text{CH}}_{3}\\text{OH}]}{{[{\\text{H}}_{2}]}^{2}[\\text{CO}]};$ (b) [H<sub>2</sub>] increases, [CO] decreases, [CH<sub>3</sub>OH] increases; (c), [H<sub>2</sub>] increases, [CO] decreases, [CH<sub>3</sub>OH] decreases; (d), [H<sub>2</sub>] increases, [CO] increases, [CH<sub>3</sub>OH] increases; (e), [H<sub>2</sub>] increases, [CO] increases, [CH<sub>3</sub>OH] decreases; (f), no changes."
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp384696688",
+   "source_number": "41",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "Nitrogen and oxygen react at high temperatures.<br>(a) Write the expression for the equilibrium constant (<em>K</em><sub>c</sub>) for the reversible reaction$${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{5em}\\text{Δ}H=181\\;\\text{kJ}$$(b) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if more O<sub>2</sub> is added?<br>(c) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if N<sub>2</sub> is removed?<br>(d) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if NO is added?<br>(e) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if the volume of the reaction vessel is decreased?<br>(f) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if the temperature of the system is increased?<br>(g) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if a catalyst is added?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "(a) ${K}_{c}=\\;\\frac{{[\\text{NO}]}^{2}}{[{\\text{N}}_{2}][{\\text{O}}_{2}]};$ (b) the equilibrium shifts right: [N<sub>2</sub>] decreases, [O<sub>2</sub>] increases (the shift uses up only part of the O<sub>2</sub> added), and [NO] increases; (c) the equilibrium shifts left to replace some of the N<sub>2</sub>: [N<sub>2</sub>] decreases, [O<sub>2</sub>] increases, and [NO] decreases; (d) the equilibrium shifts left: [N<sub>2</sub>] increases, [O<sub>2</sub>] increases, and [NO] increases; (e) there are 2 mol of gas on each side, so there is no shift, but the smaller volume raises [N<sub>2</sub>], [O<sub>2</sub>], and [NO] all by the same factor; (f) the reaction is endothermic (Δ<em>H</em> = 181 kJ), so heating increases <em>K<sub>c</sub></em> and shifts the equilibrium right: [N<sub>2</sub>] decreases, [O<sub>2</sub>] decreases, and [NO] increases; (g) a catalyst speeds the forward and reverse reactions equally and leaves <em>K<sub>c</sub></em> unchanged, so no concentration changes; equilibrium is only reached sooner."
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp201703744",
+   "source_number": "42",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "Water gas, a mixture of H<sub>2</sub> and CO, is an important industrial fuel produced by the reaction of steam with red hot coke, essentially pure carbon.<br>(a) Write the expression for the equilibrium constant for the reversible reaction$$\\text{C}(s)+{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}(g)\\hspace{5em}\\text{Δ}H=131.30\\;\\text{kJ}$$(b) What will happen to the concentration of each reactant and product at equilibrium if more C is added?<br>(c) What will happen to the concentration of each reactant and product at equilibrium if H<sub>2</sub>O is removed?<br>(d) What will happen to the concentration of each reactant and product at equilibrium if CO is added?<br>(e) What will happen to the concentration of each reactant and product at equilibrium if the temperature of the system is increased?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) ${K}_{c}=\\;\\frac{[\\text{CO}][{\\text{H}}_{2}]}{[{\\text{H}}_{2}\\text{O}]};$ (b) [H<sub>2</sub>O] no change, [CO] no change, [H<sub>2</sub>] no change; (c) [H<sub>2</sub>O] decreases, [CO] decreases, [H<sub>2</sub>] decreases; (d) [H<sub>2</sub>O] increases, [CO] increases, [H<sub>2</sub>] decreases; (e) [H<sub>2</sub>O] decreases, [CO] increases, [H<sub>2</sub>] increases. In (b), (c), (d), and (e), the mass of carbon will change, but its concentration (activity) will not change."
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp31242816",
+   "source_number": "43",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "Pure iron metal can be produced by the reduction of iron(III) oxide with hydrogen gas.<br>(a) Write the expression for the equilibrium constant (<em>K</em><sub>c</sub>) for the reversible reaction$${\\text{Fe}}_{2}{\\text{O}}_{3}(s)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2\\text{Fe}(s)+3{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}H=98.7\\;\\text{kJ}$$(b) What will happen to the concentration of each reactant and product at equilibrium if more Fe is added?<br>(c) What will happen to the concentration of each reactant and product at equilibrium if H<sub>2</sub>O is removed?<br>(d) What will happen to the concentration of each reactant and product at equilibrium if H<sub>2</sub> is added?<br>(e) What will happen to the concentration of each reactant and product at equilibrium if the volume of the reaction vessel is decreased?<br>(f) What will happen to the concentration of each reactant and product at equilibrium if the temperature of the system is increased?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "(a) ${K}_{c}=\\;\\frac{{[{\\text{H}}_{2}\\text{O}]}^{3}}{{[{\\text{H}}_{2}]}^{3}};$ the solids Fe<sub>2</sub>O<sub>3</sub> and Fe do not appear. (b) No change in any concentration. Adding Fe raises its mass, but the concentration (activity) of a pure solid is constant, so <em>Q<sub>c</sub></em> still equals <em>K<sub>c</sub></em>. (c) The equilibrium shifts right to replace some of the H<sub>2</sub>O: [H<sub>2</sub>] decreases and [H<sub>2</sub>O] decreases, ending lower than before because only part of the removed water is replaced. (d) The equilibrium shifts right: [H<sub>2</sub>] increases and [H<sub>2</sub>O] increases. (e) There are 3 mol of gas on each side, so there is no shift; the smaller volume raises [H<sub>2</sub>] and [H<sub>2</sub>O] by the same factor and leaves their ratio unchanged. (f) The reaction is endothermic (Δ<em>H</em> = 98.7 kJ), so heating increases <em>K<sub>c</sub></em> and shifts the equilibrium right: [H<sub>2</sub>] decreases and [H<sub>2</sub>O] increases. In every part the concentrations of Fe<sub>2</sub>O<sub>3</sub> and Fe stay the same; in (c), (d), and (f) the mass of Fe increases and the mass of Fe<sub>2</sub>O<sub>3</sub> decreases."
+   }
+  },
+  {
+   "id": "e14",
+   "source_id": "fs-idp52451264",
+   "source_number": "44",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "Ammonia is a weak base that reacts with water according to this equation:$${\\text{NH}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{NH}}_{4}{}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)$$Will any of the following increase the percent of ammonia that is converted to the ammonium ion in water?",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "Addition of NaOH",
+     "Addition of HCl",
+     "Addition of NH<sub>4</sub>Cl"
+    ],
+    "correct": 1,
+    "hint": "Ask which addition removes a product of the reaction rather than adding one.",
+    "solution": "Only (b)"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp261498704",
+   "source_number": "45",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "Acetic acid is a weak acid that reacts with water according to this equation:$${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}(l)$$<sup class=\"fn\" data-note=\"c-e15-aq\"></sup>Will any of the following increase the percent of acetic acid that reacts and produces ${\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}$ ion?<br>(a) Addition of HCl<br>(b) Addition of NaOH<br>(c) Addition of NaCH<sub>3</sub>CO<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Only (b). (a) HCl supplies H<sub>3</sub>O<sup>+</sup>, a product, so the equilibrium shifts left and a smaller percent of the acetic acid reacts. (b) The hydroxide ion from NaOH reacts with H<sub>3</sub>O<sup>+</sup> to form water, removing a product; the equilibrium shifts right and a larger percent of the acetic acid is converted to CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>. (c) NaCH<sub>3</sub>CO<sub>2</sub> supplies CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>, a product, so the equilibrium shifts left and a smaller percent reacts."
+   }
+  },
+  {
+   "id": "e16",
+   "source_id": "fs-idp157396912",
+   "source_number": "46",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "concentration",
+   "prompt": "Suggest two ways in which the equilibrium concentration of Ag<sup>+</sup> can be reduced in a solution of Na<sup>+</sup>, Cl<sup>−</sup>, Ag<sup>+</sup>, and ${\\text{NO}}_{3}{}^{\\text{−}},$ in contact with solid AgCl.$${\\text{Na}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)+{\\text{Ag}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\rightleftharpoons \\text{AgCl}(s)+{\\text{Na}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)$$$$\\text{Δ}H=−65.9\\;\\text{kJ}$$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "Add NaCl or some other salt that produces Cl<sup>−</sup> to the solution. Cooling the solution forces the equilibrium to the right, precipitating more AgCl(<em>s</em>)."
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idm33369776",
+   "source_number": "47",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "How can the pressure of water vapor be increased in the following equilibrium?$${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}H=41\\;\\text{kJ}$$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Raise the temperature. The liquid does not appear in the equilibrium constant expression, so <em>K<sub>P</sub></em> = ${P}_{{\\text{H}}_{2}\\text{O}}$, the pressure of the water vapor itself. As long as some liquid remains, adding liquid water or changing the volume cannot change that pressure once equilibrium is re-established: more liquid evaporates or more vapor condenses until the pressure returns to <em>K<sub>P</sub></em>. Only a change in the value of <em>K<sub>P</sub></em> changes the equilibrium pressure, and only temperature changes <em>K</em>. The change is endothermic (Δ<em>H</em> = 41 kJ), so heat acts as a reactant; heating shifts the equilibrium toward the vapor and increases <em>K<sub>P</sub></em>. The vapor pressure of water rises from 0.042 atm at 30 °C to 1 atm at 100 °C."
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idp219741088",
+   "source_number": "49",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "temperature",
+   "prompt": "When equal molar amounts of HCl and HOCl are dissolved separately in equal amounts of water, the solution of HCl freezes at a lower temperature. Which compound has the larger equilibrium constant for acid ionization?<br>(a) HCl<br>(b) H<sup>+</sup> + Cl<sup>–</sup><br>(c) HOCl<br>(d) H<sup>+</sup> + OCl<sup>–</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "(a) HCl. The lowering of the freezing point depends on the number of dissolved particles, so the HCl solution, which freezes at a lower temperature, holds more particles than the HOCl solution made from the same molar amount of acid. HCl must therefore be ionized, HCl ⇌ H<sup>+</sup> + Cl<sup>−</sup>, to a greater extent than HOCl ⇌ H<sup>+</sup> + OCl<sup>−</sup>. A greater extent of reaction at equilibrium means larger product concentrations and a smaller reactant concentration in ${K}_{c}=\\;\\frac{[{\\text{H}}^{\\text{+}}][{\\text{Cl}}^{\\text{−}}]}{[\\text{HCl}]},$ so HCl has the larger acid ionization constant. Options (b) and (d) are the ions formed by ionization, not the compounds being compared."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "e1",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e1",
+   "concept": "heterogeneous-equilibrium"
+  },
+  {
+   "exercise": "e2",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e3",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e4",
+   "concept": "chemical-equilibrium"
+  },
+  {
+   "exercise": "e4",
+   "concept": "le-chateliers-principle"
+  },
+  {
+   "exercise": "e5",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e5",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e6",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e6",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e6",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e6",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e7",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e7",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e7",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e7",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e8",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e8",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e8",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e9",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e9",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e9",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e10",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e10",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e10",
+   "concept": "catalyst-and-equilibrium"
+  },
+  {
+   "exercise": "e10",
+   "concept": "write-reaction-quotient"
+  },
+  {
+   "exercise": "e11",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e11",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e11",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e11",
+   "concept": "catalyst-and-equilibrium"
+  },
+  {
+   "exercise": "e11",
+   "concept": "write-reaction-quotient"
+  },
+  {
+   "exercise": "e12",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e12",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e12",
+   "concept": "heterogeneous-equilibrium"
+  },
+  {
+   "exercise": "e13",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e13",
+   "concept": "volume-stress"
+  },
+  {
+   "exercise": "e13",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e13",
+   "concept": "heterogeneous-equilibrium"
+  },
+  {
+   "exercise": "e14",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e14",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e15",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e15",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e16",
+   "concept": "concentration-stress"
+  },
+  {
+   "exercise": "e16",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e16",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e17",
+   "concept": "temperature-changes-k"
+  },
+  {
+   "exercise": "e17",
+   "concept": "predict-equilibrium-shift"
+  },
+  {
+   "exercise": "e18",
+   "concept": "magnitude-of-k"
+  },
+  {
+   "exercise": "e18",
+   "concept": "freezing-point-depression"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-e15-aq",
+   "kind": "correction",
+   "html": "The book writes the acetate ion as a liquid, CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>l</em>); it is dissolved, CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>aq</em>)."
+  }
+ ],
+ "derivations": [
+  {
+   "id": "kc-rate-constants",
+   "what": "the equilibrium constant as a ratio of rate constants",
+   "source": "Chemistry 2e, 13.3 Shifting Equilibria: Le Châtelier’s Principle",
+   "nodes": [
+    {
+     "assumes": [
+      {
+       "text": "At equilibrium the forward and reverse reactions proceed at equal rates.",
+       "src": "13.1"
+      },
+      {
+       "tex": "\\kratef = \\kkf\\kconcA",
+       "src": "13.3"
+      },
+      {
+       "tex": "\\krater = \\kkr\\kconcB",
+       "src": "13.3"
+      },
+      {
+       "tex": "\\text{A}\\rightleftharpoons\\text{B}\\qquad\\kKc = \\frac{\\kconcB}{\\kconcA}",
+       "src": "13.2"
+      }
+     ],
+     "then": {
+      "tex": "\\mk{r}{\\krater} = \\mk{f}{\\kratef}",
+      "src": "13.3",
+      "uses": [
+       0
+      ]
+     },
+     "steps": [
+      {
+       "tex": "\\mk{f}{\\kkf\\kconcA} = \\mk{r}{\\kkr\\kconcB}",
+       "uses": [
+        1,
+        2
+       ]
+      },
+      {
+       "tex": "\\frac{\\mk{B}{\\kconcB}}{\\mk{A}{\\kconcA}} = \\frac{\\mk{kf}{\\kkf}}{\\mk{kr}{\\kkr}}",
+       "uses": [],
+       "map": {
+        "f": [
+         "kf",
+         "A"
+        ],
+        "r": [
+         "B",
+         "kr"
+        ]
+       }
+      },
+      {
+       "tex": "\\frac{\\mk{B}{\\kconcB}}{\\mk{A}{\\kconcA}} = \\frac{\\mk{kf}{\\kkf}}{\\mk{kr}{\\kkr}} = \\mk{K}{\\kKc}",
+       "uses": [
+        3
+       ]
+      }
+     ],
+     "src": "13.3"
+    }
+   ]
+  }
+ ]
+}

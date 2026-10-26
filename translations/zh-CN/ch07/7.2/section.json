@@ -1,0 +1,330 @@
+{
+ "id": "7.2",
+ "module": "m68738",
+ "chapter": "7",
+ "title": "Covalent Bonding",
+ "short": "Covalent Bonding",
+ "lead": "Atoms that attract electrons about equally do not transfer them but share them, and a pair of electrons held by both nuclei is a covalent bond. How evenly the pair is shared depends on electronegativity, the tendency of a bonded atom to draw the shared electrons toward itself.",
+ "objectives": [
+  "Describe the formation of covalent bonds",
+  "Define electronegativity and assess the polarity of covalent bonds"
+ ],
+ "summary_html": "<p>Covalent bonds form when electrons are shared between atoms and are attracted by the nuclei of both atoms. In pure covalent bonds, the electrons are shared equally. In polar covalent bonds, the electrons are shared unequally, as one atom exerts a stronger <span data-concept=\"force\">force</span> of attraction on the electrons than the other. The ability of an atom to attract a pair of electrons in a chemical bond is called its electronegativity. The difference in electronegativity between two atoms determines how polar a bond will be. In a diatomic molecule with two identical atoms, there is no difference in electronegativity, so the bond is nonpolar or pure covalent. When the electronegativity difference is very large, as is the case between metals and nonmetals, the bonding is characterized as ionic.</p>",
+ "notes": "Nothing of the section is left out.",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   },
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   }
+  ],
+  "figures": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "low"
+   }
+  ]
+ },
+ "built": "2026-09-28",
+ "exercises_lead": "",
+ "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The first exercise of this section in the book, fs-idp49074848 on why it is incorrect to speak of a molecule of solid NaCl, tests the ionic lattice of section 7.1 and is set there. The unkeyed items fs-idm13014880, fs-idp18335616, fs-idp43172032, fs-idp49532528 and fs-idp51035456 carry a suggested approach marked as OmniStax’s own, and the unkeyed choice item fs-idp9464672 is kept as an open question with the book’s five options.",
+ "figures": [
+  {
+   "id": "sim-bond",
+   "kind": "sim",
+   "number": "7.4",
+   "originals": ["/media/ch07/CNX_Chem_07_02_Morse.jpg"],
+   "original_caption": "The potential energy of two separate hydrogen atoms (right) decreases as they approach each other, and the single electrons on each atom are shared to form a covalent bond. The bond length is the internuclear distance at which the lowest potential energy is achieved.",
+   "draws": ["energy", "length"],
+   "conventions": [
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: H label kept on stage, shared cloud only on overlap, minimum label"
+    }
+   ]
+  },
+  {
+   "id": "fig-en",
+   "kind": "figure",
+   "number": "7.6",
+   "originals": ["/media/ch07/CNX_Chem_07_02_ENTable.jpg"],
+   "original_caption": "The electronegativity values derived by Pauling follow predictable periodic trends, with the higher electronegativities toward the upper right of the periodic table.",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    },
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "review: class tints strengthened, table moved clear of the left edge"
+    }
+   ]
+  },
+  {
+   "id": "fig-pauling",
+   "kind": "photo",
+   "number": "7.7",
+   "draws": []
+  },
+  {
+   "id": "sim-polarity",
+   "kind": "sim",
+   "number": "7.5",
+   "folds": ["7.8"],
+   "originals": ["/media/ch07/CNX_Chem_07_02_HClBond.jpg", "/media/ch07/CNX_Chem_07_02_DeltaEN.jpg"],
+   "original_caption": "(Figure 7.5) (a) The distribution of electron density in the HCl molecule is uneven. The electron density is greater around the chlorine nucleus. The small, black dots indicate the location of the hydrogen and chlorine nuclei in the molecule. (b) Symbols δ+ and δ– indicate the polarity of the H–Cl bond. (Figure 7.8) As the electronegativity difference increases between two atoms, the bond becomes more ionic.",
+   "draws": ["charge", "dipole-moment"],
+   "conventions": [
+    "H",
+    "Li",
+    "Na",
+    "K",
+    "Cs",
+    "Mg",
+    "Ca",
+    "Ba",
+    "Mn",
+    "B",
+    "C",
+    "Si",
+    "N",
+    "P",
+    "O",
+    "S",
+    "Se",
+    "F",
+    "Cl",
+    "Br",
+    "I"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "low",
+     "part": "built"
+    }
+   ]
+  }
+ ],
+ "coverage": [
+  { "span": "covalent", "concept": "covalent-bond-formation", "verb": "introduces" },
+  { "span": "formation", "concept": "covalent-bond-formation", "verb": "reinforces" },
+  { "span": "formation", "concept": "bond-length", "verb": "introduces" },
+  { "span": "pure-polar", "concept": "bond-polarity", "verb": "introduces" },
+  { "span": "pure-polar", "concept": "covalent-bond-formation", "verb": "uses" },
+  { "span": "pure-polar", "concept": "pure-covalent-bond", "verb": "introduces" },
+  { "span": "pure-polar", "concept": "polar-covalent-bond", "verb": "introduces" },
+  { "span": "electronegativity", "concept": "electronegativity", "verb": "introduces" },
+  { "span": "electronegativity", "concept": "bond-polarity", "verb": "uses" },
+  { "span": "bond-type", "concept": "bond-type-from-electronegativity", "verb": "introduces" },
+  { "span": "bond-type", "concept": "electronegativity", "verb": "uses" },
+  { "span": "bond-type", "concept": "bond-polarity", "verb": "reinforces" },
+  { "span": "ex-polarity", "concept": "bond-polarity", "verb": "uses" },
+  { "span": "ex-polarity", "concept": "electronegativity", "verb": "uses" }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm8119280",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": { "at": "inline", "after": "ex-polarity" },
+   "cite": "bond-type",
+   "prompt": "Silicones are polymeric compounds containing, among others, the following types of covalent bonds: Si–O, Si–C, C–H, and C–C. Using the electronegativity values in Figure 7.6, arrange the bonds in order of increasing polarity and designate the positive and negative atoms using the symbols δ+ and δ–.",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "<table><thead><tr><th>Bond</th><th>Electronegativity Difference</th><th>Polarity</th></tr></thead><tbody><tr><td>C–C</td><td>0.0</td><td>nonpolar</td></tr><tr><td>C–H</td><td>0.4</td><td><sup>δ–</sup>C–H<sup>δ+</sup></td></tr><tr><td>Si–C</td><td>0.7</td><td><sup>δ+</sup>Si–C<sup>δ–</sup></td></tr><tr><td>Si–O</td><td>1.7</td><td><sup>δ+</sup>Si–O<sup>δ–</sup></td></tr></tbody></table>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idm13014880",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "bond-type",
+   "prompt": "What information can you use to predict whether a bond between two atoms is covalent or ionic?",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Two pieces of information predict the bond type: the electronegativity difference between the two atoms, and the kinds of atoms involved, metal or nonmetal, read from their positions in the periodic table. On the rough scale of Figure 7.8, a difference below about 0.4 gives a pure (nonpolar) covalent bond, a difference from about 0.4 to 1.8 a polar covalent bond, and a larger difference an ionic bond; H–Cl, at 0.9, is polar covalent, and Na–Cl, at 2.1, is ionic. That scale has many exceptions: HF, with a difference of 1.9, is polar covalent, while MnI<sub>2</sub>, with a difference of only 1.0, is ionic. The better guide is therefore the types of atoms. A bond between two nonmetals is generally covalent, as in HF and NH<sub>3</sub>, and a bond between a metal and a nonmetal is often ionic, as in NaCl and MnI<sub>2</sub>."
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp119456432",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "bond-type",
+   "prompt": "Predict which of the following compounds are ionic and which are covalent, based on the location of their constituent atoms in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>:<br>(a) Cl<sub>2</sub>CO<br>(b) MnO<br>(c) NCl<sub>3</sub><br>(d) CoBr<sub>2</sub><br>(e) K<sub>2</sub>S<br>(f) CO<br>(g) CaF<sub>2</sub><br>(h) HI<br>(i) CaO<br>(j) IBr<br>(k) CO<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "ionic: (b), (d), (e), (g), and (i); covalent: (a), (c), (f), (h), (j), and (k)"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp18335616",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": { "at": "end" },
+   "cite": "pure-polar",
+   "prompt": "Explain the difference between a nonpolar covalent bond, a polar covalent bond, and an ionic bond.",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "The three differ in how the bonding electrons are shared. In a nonpolar (pure) covalent bond the electrons are shared equally, because the two atoms attract them equally; this happens when the atoms are identical, as in H<sub>2</sub> and Cl<sub>2</sub>, where the electronegativity difference is 0. In a polar covalent bond the electrons are still shared, but unequally: they shift toward the more electronegative atom, which takes a partial negative charge δ–, while the other atom takes a partial positive charge δ+. H–Cl, with an electronegativity difference of 0.9, is an example. In an ionic bond the electrons are not shared at all. One atom has given its electrons to the other, forming a cation and an anion held together by electrostatic attraction, as in NaCl, where the difference is 2.1. Along Figure 7.8 the bond type passes from nonpolar covalent through polar covalent to ionic as the electronegativity difference grows."
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idm121789856",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "electronegativity",
+   "prompt": "From its position in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>, determine which atom in each pair is more electronegative:<br>(a) Br or Cl<br>(b) N or O<br>(c) S or O<br>(d) P or S<br>(e) Si or N<br>(f) Ba or P<br>(g) N or K",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) Cl; (b) O; (c) O; (d) S; (e) N; (f) P; (g) N"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp43172032",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "electronegativity",
+   "prompt": "From its position in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>, determine which atom in each pair is more electronegative:<br>(a) N or P<br>(b) N or Ge<br>(c) S or F<br>(d) Cl or S<br>(e) H or C<br>(f) Se or P<br>(g) C or Si",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Electronegativity increases from left to right across a period and decreases down a group, and the values of Figure 7.6 confirm each choice.<br>(a) N. Both are in group 15, and N lies above P (3.0 against 2.1).<br>(b) N. N lies higher and farther to the right than Ge (3.0 against 1.8).<br>(c) F. F lies higher and farther to the right than S, and it is the most electronegative element (4.0 against 2.5).<br>(d) Cl. Both are in period 3, and Cl lies to the right of S (3.0 against 2.5).<br>(e) C. Carbon’s value is larger than hydrogen’s (2.5 against 2.1).<br>(f) Se. Se lies farther to the right than P, which outweighs its lower row (2.4 against 2.1).<br>(g) C. Both are in group 14, and C lies above Si (2.5 against 1.8)."
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idm28148800",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "electronegativity",
+   "prompt": "From their positions in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>, arrange the atoms in each of the following series in order of increasing electronegativity:<br>(a) C, F, H, N, O<br>(b) Br, Cl, F, H, I<br>(c) F, H, O, P, S<br>(d) Al, H, Na, O, P<br>(e) Ba, H, N, O, As",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) H, C, N, O, F; (b) H, I, Br, Cl, F; (c) H, P, S, O, F; (d) Na, Al, H, P, O; (e) Ba, H, As, N, O"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp49532528",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "electronegativity",
+   "prompt": "From their positions in the <a href=\"/chemistry-2e/sheets/elements/\">periodic table</a>, arrange the atoms in each of the following series in order of increasing electronegativity:<br>(a) As, H, N, P, Sb<br>(b) Cl, H, P, S, Si<br>(c) Br, Cl, Ge, H, Sr<br>(d) Ca, H, K, N, Si<br>(e) Cl, Cs, Ge, H, Sr",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Electronegativity rises across a period and falls down a group; hydrogen, which fits neither trend, is placed by its value of 2.1 in Figure 7.6.<br>(a) Sb (1.9) &lt; As (2.0) &lt; P (2.1) = H (2.1) &lt; N (3.0). N, P, As and Sb lie in group 15 and fall in order down it, and hydrogen has the same value as phosphorus.<br>(b) Si (1.8) &lt; H (2.1) = P (2.1) &lt; S (2.5) &lt; Cl (3.0). Si, P, S and Cl lie in period 3 and rise in order across it.<br>(c) Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Br (2.8) &lt; Cl (3.0). Sr is a metal of group 2, Ge and Br lie in period 4 with Br to the right, and Cl lies above Br in group 17.<br>(d) K (0.8) &lt; Ca (1.0) &lt; Si (1.8) &lt; H (2.1) &lt; N (3.0). K and Ca are the metals at the left of period 4, Si lies farther right, and N lies farther right and higher still.<br>(e) Cs (0.7) &lt; Sr (1.0) &lt; Ge (1.8) &lt; H (2.1) &lt; Cl (3.0). Cs lies lowest at the far left, Sr is in group 2, and Ge and Cl lie farther right."
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp31566784",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "electronegativity",
+   "prompt": "Which atoms can bond to sulfur so as to produce a positive partial charge on the sulfur atom?",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "N, O, F, and Cl"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp9464672",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "bond-type",
+   "prompt": "Which is the most polar bond?<br>(a) C–C<br>(b) C–H<br>(c) N–H<br>(d) O–H<br>(e) Se–H",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "(d) O–H is the most polar bond, with an electronegativity difference of 1.4. Bond polarity grows with the absolute value of the electronegativity difference, which the values of Figure 7.6 give for each bond: C–C, |2.5 – 2.5| = 0; C–H, |2.5 – 2.1| = 0.4; N–H, |3.0 – 2.1| = 0.9; O–H, |3.5 – 2.1| = 1.4; and Se–H, |2.4 – 2.1| = 0.3. The O–H difference is the largest, so its electrons are shifted most strongly, toward the oxygen atom, which carries the partial negative charge δ–."
+   }
+  },
+  {
+   "id": "e10",
+   "source_id": "fs-idp173506592",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": { "at": "end" },
+   "cite": "bond-type",
+   "prompt": "Identify the more polar bond in each of the following pairs of bonds:<br>(a) HF or HCl<br>(b) NO or CO<br>(c) SH or OH<br>(d) PCl or SCl<br>(e) CH or NH<br>(f) SO or PO<br>(g) CN or NN",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "(a) HF; (b) CO; (c) OH; (d) PCl; (e) NH; (f) PO; (g) CN"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp51035456",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": { "at": "end" },
+   "cite": "pure-polar",
+   "prompt": "Which of the following molecules or ions contain polar bonds?<br>(a) O<sub>3</sub><br>(b) S<sub>8</sub><br>(c) O<sub>2</sub><sup>2−</sup><br>(d) NO<sub>3</sub><sup>−</sup><br>(e) CO<sub>2</sub><br>(f) H<sub>2</sub>S<br>(g) BH<sub>4</sub><sup>−</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "Species (d) ${\\text{NO}}_{3}{}^{\\text{−}}$, (e) CO<sub>2</sub>, (f) H<sub>2</sub>S and (g) ${\\text{BH}}_{4}{}^{\\text{−}}$ contain polar bonds. When the atoms joined by a covalent bond are different, the bonding electrons are shared unequally, and the bond is polar; when the atoms are identical, they are shared equally, and the bond is pure covalent. O<sub>3</sub>, S<sub>8</sub> and ${\\text{O}}_{2}{}^{\\text{2−}}$ contain only O–O or S–S bonds, so all their bonds are pure covalent. The other four each join atoms of two different elements, with electronegativity differences from Figure 7.6 of 0.5 for N–O (3.5 – 3.0), 1.0 for C–O (3.5 – 2.5), 0.4 for S–H (2.5 – 2.1) and 0.1 for B–H (2.1 – 2.0). The B–H bonds are therefore only slightly polar, while the C–O bonds of CO<sub>2</sub> are the most polar of the set."
+   }
+  }
+ ],
+ "exercise_concepts": [
+  { "exercise": "cyl1", "concept": "bond-polarity", "weights_by": "ai" },
+  { "exercise": "cyl1", "concept": "electronegativity", "weights_by": "ai" },
+  { "exercise": "e1", "concept": "bond-type-from-electronegativity", "weights_by": "ai" },
+  { "exercise": "e2", "concept": "bond-type-from-electronegativity", "weights_by": "ai" },
+  { "exercise": "e3", "concept": "bond-polarity", "weights_by": "ai" },
+  { "exercise": "e3", "concept": "bond-type-from-electronegativity", "weights_by": "ai" },
+  { "exercise": "e4", "concept": "electronegativity", "weights_by": "ai" },
+  { "exercise": "e5", "concept": "electronegativity", "weights_by": "ai" },
+  { "exercise": "e6", "concept": "electronegativity", "weights_by": "ai" },
+  { "exercise": "e7", "concept": "electronegativity", "weights_by": "ai" },
+  { "exercise": "e8", "concept": "bond-polarity", "weights_by": "ai" },
+  { "exercise": "e8", "concept": "electronegativity", "weights_by": "ai" },
+  { "exercise": "e9", "concept": "bond-polarity", "weights_by": "ai" },
+  { "exercise": "e9", "concept": "electronegativity", "weights_by": "ai" },
+  { "exercise": "e10", "concept": "bond-polarity", "weights_by": "ai" },
+  { "exercise": "e10", "concept": "electronegativity", "weights_by": "ai" },
+  { "exercise": "e11", "concept": "bond-polarity", "weights_by": "ai" }
+ ]
+}

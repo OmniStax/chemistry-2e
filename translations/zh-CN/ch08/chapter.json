@@ -1,0 +1,67 @@
+{
+ "id": "8",
+ "dir": "ch08",
+ "title": "Advanced Theories of Covalent Bonding",
+ "intro": {
+  "module": "m68743",
+  "slug": "8-introduction"
+ },
+ "sections": [
+  {
+   "id": "8.1",
+   "module": "m68744",
+   "title": "Valence Bond Theory",
+   "slug": "8-1-valence-bond-theory"
+  },
+  {
+   "id": "8.2",
+   "module": "m68745",
+   "title": "Hybrid Atomic Orbitals",
+   "slug": "8-2-hybrid-atomic-orbitals"
+  },
+  {
+   "id": "8.3",
+   "module": "m68746",
+   "title": "Multiple Bonds",
+   "slug": "8-3-multiple-bonds"
+  },
+  {
+   "id": "8.4",
+   "module": "m68747",
+   "title": "Molecular Orbital Theory",
+   "slug": "8-4-molecular-orbital-theory"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "E",
+   "concept": "energy-and-work",
+   "meaning": "the energy of a system of two atoms, set at zero when the atoms are far apart",
+   "unit": "J",
+   "section": "8.1",
+   "anchor": "8.1-bond-distance"
+  },
+  {
+   "sym": "r_bond",
+   "concept": "bond-length",
+   "meaning": "the internuclear distance, the distance between the nuclei of the two atoms",
+   "unit": "pm",
+   "section": "8.1",
+   "anchor": "8.1-bond-distance"
+  },
+  {
+   "sym": "ψ",
+   "concept": "wavefunction",
+   "meaning": "the wave function, which contains information about each orbital and the wavelike properties of electrons in an isolated atom",
+   "section": "8.2",
+   "anchor": "8.2-water-problem"
+  },
+  {
+   "sym": "Ψ",
+   "concept": "wavefunction",
+   "meaning": "the wave function of an electron in a molecule; its square, Ψ², describes a molecular orbital",
+   "section": "8.4",
+   "anchor": "8.4-mo-theory"
+  }
+ ]
+}

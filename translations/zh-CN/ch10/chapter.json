@@ -1,0 +1,322 @@
+{
+ "id": "10",
+ "dir": "ch10",
+ "title": "Liquids and Solids",
+ "intro": {
+  "module": "m68760",
+  "slug": "10-introduction"
+ },
+ "sections": [
+  {
+   "id": "10.1",
+   "module": "m68761",
+   "title": "Intermolecular Forces",
+   "slug": "10-1-intermolecular-forces"
+  },
+  {
+   "id": "10.2",
+   "module": "m68764",
+   "title": "Properties of Liquids",
+   "slug": "10-2-properties-of-liquids"
+  },
+  {
+   "id": "10.3",
+   "module": "m68768",
+   "title": "Phase Transitions",
+   "slug": "10-3-phase-transitions"
+  },
+  {
+   "id": "10.4",
+   "module": "m68769",
+   "title": "Phase Diagrams",
+   "slug": "10-4-phase-diagrams"
+  },
+  {
+   "id": "10.5",
+   "module": "m68770",
+   "title": "The Solid State of Matter",
+   "slug": "10-5-the-solid-state-of-matter"
+  },
+  {
+   "id": "10.6",
+   "module": "m68773",
+   "title": "Lattice Structures in Crystalline Solids",
+   "slug": "10-6-lattice-structures-in-crystalline-solids"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "h_cap",
+   "concept": "length",
+   "meaning": "the height of the liquid inside a capillary tube relative to the surface of the liquid outside the tube",
+   "unit": "m",
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
+  },
+  {
+   "sym": "T_surf",
+   "concept": "surface-tension",
+   "meaning": "the surface tension of the liquid",
+   "unit": "N/m (mN/m in the book's tables)",
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
+  },
+  {
+   "sym": "θ_contact",
+   "concept": "capillary-rise-equation",
+   "type": "angle",
+   "meaning": "the contact angle between the liquid and the tube",
+   "unit": "°",
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
+  },
+  {
+   "sym": "r_tube",
+   "concept": "length",
+   "meaning": "the radius of the capillary tube",
+   "unit": "m",
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
+  },
+  {
+   "sym": "ρ",
+   "concept": "density",
+   "meaning": "the density of the liquid",
+   "unit": "kg/m³",
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
+  },
+  {
+   "sym": "g_grav",
+   "concept": "acceleration-due-to-gravity",
+   "meaning": "the acceleration due to gravity, 9.8 m/s²",
+   "unit": "m/s²",
+   "section": "10.2",
+   "anchor": "10.2-capillary-rise"
+  },
+  {
+   "sym": "P",
+   "concept": "vapor-pressure",
+   "meaning": "the vapor pressure of the liquid",
+   "unit": "kPa",
+   "section": "10.3",
+   "anchor": "10.3-clausius"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature, in kelvin",
+   "unit": "K",
+   "section": "10.3",
+   "anchor": "10.3-clausius"
+  },
+  {
+   "sym": "ΔH_vap",
+   "concept": "enthalpies-of-phase-change",
+   "meaning": "the enthalpy of vaporization of the liquid",
+   "unit": "kJ/mol",
+   "section": "10.3",
+   "anchor": "10.3-clausius"
+  },
+  {
+   "sym": "ΔH_fus",
+   "concept": "enthalpies-of-phase-change",
+   "meaning": "the enthalpy of fusion of the solid",
+   "unit": "kJ/mol",
+   "section": "10.3",
+   "anchor": "10.3-sublimation"
+  },
+  {
+   "sym": "ΔH_sub",
+   "concept": "enthalpies-of-phase-change",
+   "meaning": "the enthalpy of sublimation of the solid",
+   "unit": "kJ/mol",
+   "section": "10.3",
+   "anchor": "10.3-sublimation"
+  },
+  {
+   "sym": "R",
+   "concept": "ideal-gas-constant",
+   "meaning": "the gas constant, 8.3145 J/mol·K",
+   "unit": "J/mol·K",
+   "section": "10.3",
+   "anchor": "10.3-clausius"
+  },
+  {
+   "sym": "A_cc",
+   "concept": "clausius-clapeyron-equation",
+   "meaning": "a constant whose value depends on the chemical identity of the substance",
+   "unit": "kPa",
+   "section": "10.3",
+   "anchor": "10.3-clausius"
+  },
+  {
+   "sym": "P_1",
+   "concept": "vapor-pressure",
+   "meaning": "the vapor pressure at the temperature T₁",
+   "unit": "kPa",
+   "section": "10.3",
+   "anchor": "10.3-clausius"
+  },
+  {
+   "sym": "P_2",
+   "concept": "vapor-pressure",
+   "meaning": "the vapor pressure at the temperature T₂",
+   "unit": "kPa",
+   "section": "10.3",
+   "anchor": "10.3-clausius"
+  },
+  {
+   "sym": "T_1",
+   "concept": "temperature",
+   "meaning": "the first temperature",
+   "unit": "K",
+   "section": "10.3",
+   "anchor": "10.3-clausius"
+  },
+  {
+   "sym": "T_2",
+   "concept": "temperature",
+   "meaning": "the second temperature",
+   "unit": "K",
+   "section": "10.3",
+   "anchor": "10.3-clausius"
+  },
+  {
+   "sym": "a_cell",
+   "concept": "length",
+   "meaning": "the edge length of a cubic unit cell",
+   "unit": "pm",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
+  },
+  {
+   "sym": "r_atom",
+   "concept": "length",
+   "meaning": "the radius of an atom or ion in the unit cell",
+   "unit": "pm",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
+  },
+  {
+   "sym": "n_order",
+   "concept": "bragg-equation",
+   "meaning": "the order of the diffraction, a whole number",
+   "section": "10.6",
+   "anchor": "10.6-xray"
+  },
+  {
+   "sym": "λ",
+   "concept": "wavelength",
+   "meaning": "the wavelength of the X-rays",
+   "unit": "nm",
+   "section": "10.6",
+   "anchor": "10.6-xray"
+  },
+  {
+   "sym": "d_plane",
+   "concept": "length",
+   "meaning": "the distance between adjacent crystal planes",
+   "unit": "nm",
+   "section": "10.6",
+   "anchor": "10.6-xray"
+  },
+  {
+   "sym": "θ_bragg",
+   "concept": "bragg-equation",
+   "type": "angle",
+   "meaning": "the angle of the diffracted beam",
+   "unit": "°",
+   "section": "10.6",
+   "anchor": "10.6-xray"
+  },
+  {
+   "sym": "q",
+   "concept": "heat-flow",
+   "meaning": "the heat absorbed or released by a substance as it warms, cools or changes state",
+   "unit": "J",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of the substance being heated or cooled",
+   "unit": "g",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "c_spec",
+   "concept": "specific-heat-capacity",
+   "meaning": "the specific heat of the substance in the phase being heated",
+   "unit": "J/g °C",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "ΔT",
+   "concept": "temperature",
+   "meaning": "the temperature change of the substance",
+   "unit": "°C",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the amount of the substance that changes phase, in moles",
+   "unit": "mol",
+   "section": "10.3",
+   "anchor": "10.3-heating-curves"
+  },
+  {
+   "sym": "ΔH",
+   "concept": "enthalpies-of-phase-change",
+   "meaning": "the enthalpy change of a phase transition, per mole of the substance",
+   "unit": "kJ/mol",
+   "section": "10.3",
+   "anchor": "10.3-vaporization-enthalpy"
+  },
+  {
+   "sym": "l_edge",
+   "concept": "length",
+   "meaning": "the edge length of the simple cubic unit cell of polonium",
+   "unit": "pm",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
+  },
+  {
+   "sym": "d_diag",
+   "concept": "length",
+   "meaning": "the length of the diagonal of a face of the unit cell",
+   "unit": "pm",
+   "section": "10.6",
+   "anchor": "10.6-ex-ca"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of the unit cell, its edge length cubed",
+   "unit": "cm³",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of the atoms contained within one unit cell",
+   "unit": "g",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
+  },
+  {
+   "sym": "ρ",
+   "concept": "density",
+   "meaning": "the density of the metal, the mass of its unit cell divided by the volume of the cell",
+   "unit": "g/cm³",
+   "section": "10.6",
+   "anchor": "10.6-ex-po"
+  }
+ ]
+}

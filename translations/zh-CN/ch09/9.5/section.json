@@ -1,0 +1,339 @@
+{
+  "id": "9.5",
+  "module": "m68758",
+  "chapter": "9",
+  "title": "The Kinetic-Molecular Theory",
+  "short": "Kinetic-Molecular Theory",
+  "lead": "The gas laws describe how gases behave but do not say why, and the kinetic-molecular theory answers with a simple picture of molecules in constant motion, colliding elastically with one another and with the walls of their container. Its postulates explain the gas laws and tie the <span data-concept=\"speed\">speeds</span> and <span data-concept=\"kinetic-energy\">kinetic energies</span> of gas molecules to their <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"molar-mass\">molar mass</span>.",
+  "objectives": [
+    "State the postulates of the kinetic-molecular theory",
+    "Use this theory’s postulates to explain the gas laws"
+  ],
+  "summary_html": "<p>The kinetic molecular theory is a simple but very effective model that effectively explains ideal gas behavior. The theory assumes that gases consist of widely separated molecules of negligible <span data-concept=\"volume\">volume</span> that are in constant motion, colliding elastically with one another and the walls of their container with average <span data-concept=\"speed\">speeds</span> determined by their absolute <span data-concept=\"temperature\">temperatures</span>. The individual molecules of a gas exhibit a range of <span data-concept=\"speed\">speeds</span>, the distribution of these <span data-concept=\"speed\">speeds</span> being dependent on the <span data-concept=\"temperature\">temperature</span> of the gas and the <span data-concept=\"mass\">mass</span> of its molecules.</p>",
+  "notes": "The Link to Learning note pointing to an online gas simulator is left out, and the box of gas with its count of molecular speeds takes its place. Figures 9.33 and 9.34 are folded into Figure 9.32 as its two comparisons. The sentence “According to Graham’s law” that opens Part II, the image label “Charles’s Law” on panel (a) of Figure 9.31, the Greek ν that the caption of Figure 9.32 writes for the most probable speed and the lower-case start of the caption of Figure 9.34 are kept as printed.",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      }
+    ]
+  },
+  "built": "2026-09-28",
+  "exercises_lead": "",
+  "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The Check Your Learning item is set inline after Example 9.23. The unkeyed numerical exercises fs-idp62923856 (the ratios of the kinetic energies and speeds of SO₂ and O₂) and fs-idm98413904 (the root mean square speed of N₂ from that of H₂) are left out, and no answer is computed for them. The unkeyed conceptual exercises fs-idm159823744, fs-idm213877296 and fs-idm194405232 are kept with a suggested approach marked as OmniStax’s own. Exercise fs-idp16129152 refers to Figure 9.34, which draws no H₂ or H₂O curve, and exercise fs-idm150122880 uses the gas density of Section 9.3; both are kept as printed. Numeric answers accept 2% tolerance.",
+  "figures": [
+    {
+      "id": "sim-kmt",
+      "kind": "sim",
+      "number": "9.31",
+      "originals": ["/media/ch09/CNX_Chem_09_04_KMT2.jpg"],
+      "original_caption": "(a) When gas temperature increases, gas pressure increases due to increased force and frequency of molecular collisions. (b) When volume decreases, gas pressure increases due to increased frequency of molecular collisions. (c) When the amount of gas increases at a constant pressure, volume increases to yield a constant number of collisions per unit wall area per unit time.",
+      "draws": ["pressure", "volume", "temperature", "amount"],
+      "conventions": [
+        "N"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "scene lowered so names fit; orbit bounded to 52°"
+        }
+      ]
+    },
+    {
+      "id": "sim-speeds",
+      "kind": "sim",
+      "number": "9.32",
+      "folds": ["9.33", "9.34"],
+      "originals": [
+        "/media/ch09/CNX_Chem_09_05_MolSpeed1.jpg",
+        "/media/ch09/CNX_Chem_09_05_MolSpeed2.jpg",
+        "/media/ch09/CNX_Chem_09_05_MolSpeed3.jpg"
+      ],
+      "original_caption": "(Figure 9.32) The molecular speed distribution for oxygen gas at 300 K is shown here. Very few molecules move at either very low or very high speeds. The number of molecules with intermediate speeds increases rapidly up to a maximum, which is the most probable speed, then drops off rapidly. Note that the most probable speed, νp, is a little less than 400 m/s, while the root mean square speed, urms, is closer to 500 m/s. (Figure 9.33) The molecular speed distribution for nitrogen gas (N2) shifts to the right and flattens as the temperature increases; it shifts to the left and heightens as the temperature decreases. (Figure 9.34) molecular speed is directly related to molecular mass. At a given temperature, lighter molecules move faster on average than heavier molecules.",
+      "draws": ["temperature", "energy", "mass", "velocity"],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "caption: the compare choice draws the chosen gas, not nitrogen"
+        }
+      ]
+    },
+    {
+      "id": "sim-gasbox",
+      "kind": "sim",
+      "draws": ["temperature", "energy", "velocity"],
+      "conventions": [
+        "He",
+        "N",
+        "Ar",
+        "Xe"
+      ],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {"span": "postulates", "concept": "kinetic-molecular-theory", "verb": "introduces"},
+    {"span": "kmt-part-1", "concept": "kmt-explains-gas-laws", "verb": "introduces"},
+    {"span": "kmt-part-1", "concept": "kinetic-molecular-theory", "verb": "uses"},
+    {"span": "kmt-part-1", "concept": "speed", "verb": "introduces"},
+    {"span": "speeds", "concept": "maxwell-boltzmann-distribution", "verb": "introduces"},
+    {"span": "speeds", "concept": "average-kinetic-energy-and-temperature", "verb": "introduces"},
+    {"span": "speeds", "concept": "root-mean-square-speed", "verb": "introduces"},
+    {"span": "ex-urms", "concept": "root-mean-square-speed", "verb": "uses"},
+    {"span": "kmt-part-2", "concept": "grahams-law-from-kmt", "verb": "introduces"},
+    {"span": "kmt-part-2", "concept": "root-mean-square-speed", "verb": "uses"},
+    {"span": "kmt-part-2", "concept": "grahams-law", "verb": "uses"}
+  ],
+  "exercises": [
+    {"id": "cyl1", "source_id": "fs-idm203397264", "kind": "check-your-learning", "bloom": "Apply", "place": {"at": "inline", "after": "ex-urms"}, "cite": "speeds", "prompt": "Calculate the root-mean-square speed for a mole of oxygen molecules at –23 °C.", "answer": {"type": "number", "generated_by": "source", "value": 441, "unit": "m/s", "hint": "Convert the temperature to kelvin and the molar mass of O₂ to kg/mol, then use the square root of 3RT over the molar mass with R = 8.314 J/mol·K.", "solution": "441 m/s"}},
+    {"id": "e1", "source_id": "fs-idm159823744", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "postulates", "prompt": "Using the postulates of the kinetic molecular theory, explain why a gas uniformly fills a container of any shape.", "answer": {"type": "open", "generated_by": "ai", "solution": "A gas fills its container uniformly because its molecules move freely and randomly in every direction, with nothing holding them together. The postulates say that gases are composed of molecules in continuous motion, traveling in straight lines and changing direction only when they collide with other molecules or with the walls. The molecules are small compared with the distances between them, so they leave the space almost empty and do not crowd one another out, and they exert no attractive or repulsive forces on one another, so no group of them clings together in one part of the container. Their collisions are elastic, so the motion never runs down. Moving at random, molecules reach every corner of the space, whatever its shape, and they keep spreading from regions of higher concentration to lower until the same number are found in every part of equal volume."}},
+    {"id": "e2", "source_id": "fs-idm178556768", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "speeds", "prompt": "Can the speed of a given molecule in a gas double at constant temperature? Explain your answer.", "answer": {"type": "open", "generated_by": "source", "solution": "Yes. At any given instant, there are a range of values of molecular speeds in a sample of gas. Any single molecule can speed up or slow down as it collides with other molecules. The average speed of all the molecules is constant at constant temperature."}},
+    {"id": "e3", "source_id": "fs-idm213877296", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "speeds", "prompt": "Describe what happens to the average kinetic energy of ideal gas molecules when the conditions are changed as follows: (a) The pressure of the gas is increased by reducing the volume at constant temperature. (b) The pressure of the gas is increased by increasing the temperature at constant volume. (c) The average speed of the molecules is increased by a factor of 2.", "answer": {"type": "open", "generated_by": "ai", "solution": "(a) The average kinetic energy does not change. It depends only on the kelvin temperature, $\\kKEavg=\\frac{3}{2}R\\kT$, and here the temperature is held constant; the pressure rises because the same molecules strike a smaller wall area more often, not because they move faster. (b) The average kinetic energy increases, in proportion to the kelvin temperature: the molecules move faster and strike the walls more often and harder. (c) The average kinetic energy increases by a factor of 4. Kinetic energy is proportional to the square of the speed, $\\kKEavg=\\frac{1}{2}\\kMM\\kurms^{2}$, so doubling the speeds of the molecules gives $2^{2}=4$ times the kinetic energy, and the kelvin temperature of the gas must have risen fourfold to bring it about."}},
+    {"id": "e4", "source_id": "fs-idp16129152", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "speeds", "prompt": "The distribution of molecular speeds in a sample of helium is shown in Figure 9.34. If the sample is cooled, will the distribution of speeds look more like that of H<sub>2</sub> or of H<sub>2</sub>O? Explain your answer.", "answer": {"type": "open", "generated_by": "source", "solution": "H<sub>2</sub>O. Cooling slows the speeds of the He atoms, causing them to behave as though they were heavier."}},
+    {"id": "e5", "source_id": "fs-idm124543936", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "speeds", "prompt": "A 1-L sample of CO initially at STP is heated to 546 K, and its volume is increased to 2 L. (a) What effect do these changes have on the pressure exerted by the gas? (b) What is the effect on the average kinetic energy of the molecules? (c) What is the effect on the root mean square speed of the molecules?", "answer": {"type": "open", "generated_by": "source", "solution": "(a) The pressure of the gas remains constant. (b) The average kinetic energy doubles. (c) The root mean square speed increases to $\\sqrt{2}$ times its initial value; <em>u</em><sub>rms</sub> is proportional to $\\sqrt{{\\text{KE}}_{\\text{avg}}}$."}},
+    {"id": "e6", "source_id": "fs-idm150122880", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "kmt-part-1", "prompt": "Answer the following questions: (a) Is the pressure of the gas in the hot-air balloon shown at the opening of this chapter greater than, less than, or equal to that of the atmosphere outside the balloon? (b) Is the density of the gas in the hot-air balloon shown at the opening of this chapter greater than, less than, or equal to that of the atmosphere outside the balloon? (c) At a pressure of 1 atm and a temperature of 20 °C, dry air has a density of 1.2256 g/L. What is the (average) molar mass of dry air? (d) The average temperature of the gas in a hot-air balloon is 1.30 $\\times$ 10<sup>2</sup> °F. Calculate its density, assuming the molar mass equals that of dry air. (e) The lifting capacity of a hot-air balloon is equal to the difference in the mass of the cool air displaced by the balloon and the mass of the gas in the balloon. What is the difference in the mass of 1.00 L of the cool air in part (c) and the hot air in part (d)? (f) An average balloon has a diameter of 60 feet and a volume of 1.1 $\\times$ 10<sup>5</sup> ft<sup>3</sup>. What is the lifting power of such a balloon? If the weight of the balloon and its rigging is 500 pounds, what is its capacity for carrying passengers and cargo? (g) A balloon carries 40.0 gallons of liquid propane (density 0.5005 g/L). What volume of CO<sub>2</sub> and H<sub>2</sub>O gas is produced by the combustion of this propane at STP? (h) A balloon flight can last about 90 minutes. If all of the fuel is burned during this time, what is the approximate rate of heat loss (in kJ/min) from the hot air in the bag during the flight?", "answer": {"type": "open", "generated_by": "source", "solution": "(a) equal; (b) less than; (c) 29.48 g mol<sup>−1</sup>; (d) 1.0966 g L<sup>−1</sup>; (e) 0.129 g/L; (f) 4.01 $\\times$ 10<sup>5</sup> g; net lifting capacity = 384 lb; (g) 270 L; (h) 39.1 kJ min<sup>−1</sup>"}},
+    {"id": "e7", "source_id": "fs-idm194405232", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "kmt-part-2", "prompt": "Show that the ratio of the rate of diffusion of Gas 1 to the rate of diffusion of Gas 2, $\\frac{{R}_{1}}{{R}_{2}},$ is the same at 0 °C and 100 °C.", "answer": {"type": "open", "generated_by": "ai", "solution": "The ratio equals $\\sqrt{\\frac{\\kMM_{2}}{\\kMM_{1}}}$, which contains no temperature, so it is the same at 0 °C and at 100 °C. The rate at which a gas diffuses is proportional to the root mean square speed of its molecules, $\\kurms=\\sqrt{\\frac{3R\\kT}{\\kMM}}$, and both gases are at the same temperature. Then $\\frac{R_{1}}{R_{2}}=\\frac{\\sqrt{3R\\kT/\\kMM_{1}}}{\\sqrt{3R\\kT/\\kMM_{2}}}=\\sqrt{\\frac{\\kMM_{2}}{\\kMM_{1}}}$, since $3R\\kT$ cancels from numerator and denominator; this is Graham’s law. For hydrogen and oxygen, $\\kurms$ is 1838 m/s and 461 m/s at 273 K, and 2149 m/s and 539 m/s at 373 K, and both ratios are 3.98, equal to $\\sqrt{\\frac{32.00\\;\\text{g/mol}}{2.016\\;\\text{g/mol}}}=3.98$. Raising the temperature speeds both gases up by the same factor, $\\sqrt{\\frac{373\\;\\text{K}}{273\\;\\text{K}}}=1.17$, and leaves their ratio unchanged."}}
+  ],
+  "exercise_concepts": [
+    {"exercise": "cyl1", "concept": "root-mean-square-speed", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e1", "concept": "kinetic-molecular-theory", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e2", "concept": "maxwell-boltzmann-distribution", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e3", "concept": "average-kinetic-energy-and-temperature", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e3", "concept": "kmt-explains-gas-laws", "weight": 1, "weights_by": "ai"},
+    {"exercise": "e4", "concept": "maxwell-boltzmann-distribution", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e5", "concept": "average-kinetic-energy-and-temperature", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e5", "concept": "root-mean-square-speed", "weight": 1, "weights_by": "ai"},
+    {"exercise": "e6", "concept": "kmt-explains-gas-laws", "weight": 1, "weights_by": "ai"},
+    {"exercise": "e6", "concept": "gas-density", "weight": 2, "weights_by": "ai"},
+    {"exercise": "e7", "concept": "grahams-law-from-kmt", "weight": 2, "weights_by": "ai"}
+  ],
+  "referents": [
+    {
+      "id": "baseline",
+      "label": "the baseline cylinder",
+      "figures": [
+        "sim-kmt",
+        "sim-gasbox"
+      ]
+    },
+    {
+      "id": "changed",
+      "label": "the changed cylinder",
+      "figures": [
+        "sim-kmt",
+        "sim-gasbox"
+      ]
+    },
+    {
+      "id": "xenon",
+      "label": "the xenon curve",
+      "figures": [
+        "sim-speeds"
+      ]
+    },
+    {
+      "id": "argon",
+      "label": "the argon curve",
+      "figures": [
+        "sim-speeds"
+      ]
+    },
+    {
+      "id": "neon",
+      "label": "the neon curve",
+      "figures": [
+        "sim-speeds"
+      ]
+    },
+    {
+      "id": "helium",
+      "label": "the helium curve",
+      "figures": [
+        "sim-speeds"
+      ]
+    },
+    {
+      "id": "speed-count",
+      "label": "the count of speeds",
+      "figures": [
+        "sim-gasbox"
+      ]
+    }
+  ],
+  "footnotes": [
+    {
+      "id": "c-grahams-law",
+      "kind": "correction",
+      "html": "The book attributes this to Graham’s law. What follows is the kinetic-molecular theory’s account of a gas; Graham’s law concerns the rates of effusion and diffusion."
+    }
+  ],
+  "derivations": [
+    {
+      "id": "root-mean-square-speed",
+      "what": "the root mean square speed of a gas",
+      "source": "Chemistry 2e, 9.5 The Kinetic-Molecular Theory",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\kurms = \\sqrt{\\overline{\\ku^{2}}}",
+              "src": "9.5"
+            },
+            {
+              "text": "A mole of gas is $N_A$ molecules, and its molar mass $\\kMM$, in kg/mol, is their total mass.",
+              "src": "3.1"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{KE}{\\kKE} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\ku^{2}}",
+            "src": "9.5"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{KE}{\\overline{\\kKE}} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\overline{\\ku^{2}}}",
+              "uses": [],
+              "cap": "Averaged over the molecules, which all have the same mass $\\km$, $\\tfrac{1}{2}\\km\\ku^{2}$ becomes $\\tfrac{1}{2}\\km$ times the average of $\\ku^{2}$."
+            },
+            {
+              "tex": "\\mk{KE}{\\overline{\\kKE}} = \\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\kurms^{2}}",
+              "uses": [
+                0
+              ]
+            },
+            {
+              "tex": "\\mk{KE}{\\kKEavg} = \\mk{N}{N_A}\\cdot\\tfrac{1}{2}\\mk{m}{\\km}\\mk{u}{\\kurms^{2}}",
+              "uses": [
+                1
+              ],
+              "cap": "$\\kKEavg$ is the kinetic energy of a mole of molecules, $N_A$ times the average of one."
+            },
+            {
+              "tex": "\\mk{KE}{\\kKEavg} = \\tfrac{1}{2}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}}",
+              "uses": [
+                1
+              ],
+              "map": {
+                "N": "m"
+              }
+            }
+          ],
+          "src": "9.5"
+        },
+        {
+          "assumes": [
+            {
+              "step": 0
+            },
+            {
+              "tex": "\\kKEavg = \\tfrac{3}{2}\\;R\\kT",
+              "src": "9.5"
+            }
+          ],
+          "then": {
+            "tex": "\\mk{KE}{\\kKEavg} = \\tfrac{1}{2}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}}",
+            "src": "9.5"
+          },
+          "steps": [
+            {
+              "tex": "\\mk{h}{\\tfrac{1}{2}}\\mk{m}{\\kMM}\\mk{u}{\\kurms^{2}} = \\mk{KE}{\\tfrac{3}{2}\\;R\\kT}",
+              "uses": [
+                1
+              ]
+            },
+            {
+              "tex": "\\mk{u}{\\kurms^{2}} = \\dfrac{\\mk{KE}{3R\\kT}}{\\mk{m}{\\kMM}}",
+              "uses": [],
+              "map": {
+                "h": "KE"
+              }
+            },
+            {
+              "tex": "\\mk{u}{\\kurms} = \\sqrt{\\dfrac{\\mk{KE}{3R\\kT}}{\\mk{m}{\\kMM}}}",
+              "uses": []
+            }
+          ],
+          "src": "9.5"
+        }
+      ]
+    },
+    {
+      "id": "grahams-law",
+      "what": "Graham’s law from the kinetic-molecular theory",
+      "source": "Chemistry 2e, 9.5 The Kinetic-Molecular Theory",
+      "nodes": [
+        {
+          "assumes": [
+            {
+              "tex": "\\text{effusion rate}\\;\\propto\\;\\kurms",
+              "src": "9.5"
+            },
+            {
+              "tex": "\\kurms = \\sqrt{\\dfrac{3R\\kT}{\\kMM}}",
+              "src": "9.5"
+            },
+            {
+              "text": "The two gases are at the same temperature $\\kT$."
+            }
+          ],
+          "then": {
+            "tex": "\\dfrac{\\mk{rA}{\\text{effusion rate A}}}{\\mk{rB}{\\text{effusion rate B}}} = \\dfrac{\\mk{uA}{\\ku_{\\text{rms}\\;\\text{A}}}}{\\mk{uB}{\\ku_{\\text{rms}\\;\\text{B}}}}",
+            "src": "9.5",
+            "uses": [
+              0
+            ],
+            "why": "Each rate is the same constant times its gas’s $\\kurms$, and the constant cancels in the ratio."
+          },
+          "steps": [
+            {
+              "tex": "\\dfrac{\\mk{rA}{\\text{effusion rate A}}}{\\mk{rB}{\\text{effusion rate B}}} = \\dfrac{\\mk{uA}{\\sqrt{\\dfrac{3R\\kT}{\\kMMA}}}}{\\mk{uB}{\\sqrt{\\dfrac{3R\\kT}{\\kMMB}}}}",
+              "uses": [
+                1
+              ]
+            },
+            {
+              "tex": "\\dfrac{\\mk{rA}{\\text{effusion rate A}}}{\\mk{rB}{\\text{effusion rate B}}} = \\mk{q}{\\sqrt{\\dfrac{\\kMMB}{\\kMMA}}}",
+              "uses": [
+                2
+              ],
+              "map": {
+                "uA": "q",
+                "uB": "q"
+              },
+              "cap": "A quotient of square roots is the square root of the quotient, and $3R\\kT$, the same for both gases, cancels."
+            }
+          ],
+          "src": "9.5"
+        }
+      ]
+    }
+  ]
+}

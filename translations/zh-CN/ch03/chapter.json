@@ -1,0 +1,231 @@
+{
+ "id": "3",
+ "dir": "ch03",
+ "title": "Composition of Substances and Solutions",
+ "intro": {
+  "module": "m68699",
+  "slug": "3-introduction"
+ },
+ "sections": [
+  {
+   "id": "3.1",
+   "module": "m68700",
+   "title": "Formula Mass and the Mole Concept",
+   "slug": "3-1-formula-mass-and-the-mole-concept"
+  },
+  {
+   "id": "3.2",
+   "module": "m68702",
+   "title": "Determining Empirical and Molecular Formulas",
+   "slug": "3-2-determining-empirical-and-molecular-formulas"
+  },
+  {
+   "id": "3.3",
+   "module": "m68703",
+   "title": "Molarity",
+   "slug": "3-3-molarity"
+  },
+  {
+   "id": "3.4",
+   "module": "m68704",
+   "title": "Other Units for Solution Concentrations",
+   "slug": "3-4-other-units-for-solution-concentrations"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of a sample, weighed on a balance",
+   "unit": "g",
+   "section": "3.1",
+   "anchor": "3.1-conversions"
+  },
+  {
+   "sym": "MM",
+   "concept": "molar-mass",
+   "meaning": "the molar mass of a substance, the mass in grams of 1 mole of it",
+   "unit": "g/mol",
+   "section": "3.1",
+   "anchor": "3.1-molar-mass"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the amount of a substance, counted in moles",
+   "unit": "mol",
+   "section": "3.1",
+   "anchor": "3.1-mole"
+  },
+  {
+   "sym": "N_A",
+   "concept": "avogadro-number",
+   "meaning": "Avogadro’s number, the number of entities in 1 mole of substance",
+   "unit": "mol⁻¹",
+   "section": "3.1",
+   "anchor": "3.1-mole"
+  },
+  {
+   "sym": "n_fu",
+   "concept": "molecular-formula-from-empirical",
+   "meaning": "the number of empirical formula units in one molecule of a compound",
+   "unit": "formula units/molecule",
+   "section": "3.2",
+   "anchor": "3.2-molecular"
+  },
+  {
+   "sym": "M",
+   "concept": "molarity",
+   "meaning": "the molarity of a solution, the moles of solute per liter of solution",
+   "unit": "M (mol/L)",
+   "section": "3.3",
+   "anchor": "3.3-molarity"
+  },
+  {
+   "sym": "L",
+   "concept": "volume",
+   "meaning": "the volume of a solution in liters, as the book writes it in n = ML",
+   "unit": "L",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation"
+  },
+  {
+   "sym": "M_1",
+   "concept": "molarity",
+   "meaning": "the molarity of a solution before it is diluted",
+   "unit": "M",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "M_2",
+   "concept": "molarity",
+   "meaning": "the molarity of the solution after it is diluted",
+   "unit": "M",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "L_1",
+   "concept": "volume",
+   "meaning": "the volume of a solution in liters before it is diluted",
+   "unit": "L",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "L_2",
+   "concept": "volume",
+   "meaning": "the volume of the solution in liters after it is diluted",
+   "unit": "L",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "C_1",
+   "concept": "concentration",
+   "meaning": "the concentration of a solution before it is diluted, in any unit",
+   "unit": "M, or any concentration unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "C_2",
+   "concept": "concentration",
+   "meaning": "the concentration of the solution after it is diluted, in any unit",
+   "unit": "M, or any concentration unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "V_1",
+   "concept": "volume",
+   "meaning": "the volume of a solution before it is diluted",
+   "unit": "L, or any volume unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "V_2",
+   "concept": "volume",
+   "meaning": "the volume of the solution after it is diluted",
+   "unit": "L, or any volume unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "n_1",
+   "concept": "mole",
+   "meaning": "the amount of solute in the solution before it is diluted",
+   "unit": "mol",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "stock"
+  },
+  {
+   "sym": "n_2",
+   "concept": "mole",
+   "meaning": "the amount of solute in the solution after it is diluted, equal to n₁",
+   "unit": "mol",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation",
+   "ref": "diluted"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of one element in the sample analysed",
+   "unit": "g",
+   "section": "3.2",
+   "anchor": "3.2-empirical"
+  },
+  {
+   "sym": "n",
+   "concept": "mole",
+   "meaning": "the amount of one element in the sample, in moles",
+   "unit": "mol",
+   "section": "3.2",
+   "anchor": "3.2-empirical"
+  },
+  {
+   "sym": "MM",
+   "concept": "molar-mass",
+   "meaning": "the molar mass of an element, the mass in grams of 1 mole of its atoms",
+   "unit": "g/mol",
+   "section": "3.2",
+   "anchor": "3.2-empirical"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of a solution, in any volume unit",
+   "unit": "L",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation"
+  },
+  {
+   "sym": "C_conc",
+   "concept": "concentration",
+   "meaning": "the concentration of a solution, in any concentration unit",
+   "unit": "M, or any concentration unit",
+   "section": "3.3",
+   "anchor": "3.3-dilution-equation"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of a solute or of the solution it is in",
+   "unit": "g",
+   "section": "3.4",
+   "anchor": "3.4-ppm-ppb"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "id": "2",
+ "dir": "ch02",
+ "title": "Atoms, Molecules, and Ions",
+ "intro": {
+  "module": "m68684",
+  "slug": "2-introduction"
+ },
+ "sections": [
+  {
+   "id": "2.1",
+   "module": "m68685",
+   "title": "Early Ideas in Atomic Theory",
+   "slug": "2-1-early-ideas-in-atomic-theory"
+  },
+  {
+   "id": "2.2",
+   "module": "m68687",
+   "title": "Evolution of Atomic Theory",
+   "slug": "2-2-evolution-of-atomic-theory"
+  },
+  {
+   "id": "2.3",
+   "module": "m68692",
+   "title": "Atomic Structure and Symbolism",
+   "slug": "2-3-atomic-structure-and-symbolism"
+  },
+  {
+   "id": "2.4",
+   "module": "m68693",
+   "title": "Chemical Formulas",
+   "slug": "2-4-chemical-formulas"
+  },
+  {
+   "id": "2.5",
+   "module": "m68695",
+   "title": "The Periodic Table",
+   "slug": "2-5-the-periodic-table"
+  },
+  {
+   "id": "2.6",
+   "module": "m68696",
+   "title": "Ionic and Molecular Compounds",
+   "slug": "2-6-ionic-and-molecular-compounds"
+  },
+  {
+   "id": "2.7",
+   "module": "m68698",
+   "title": "Chemical Nomenclature",
+   "slug": "2-7-chemical-nomenclature"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "Z",
+   "concept": "atomic-number",
+   "meaning": "the atomic number of an atom, the number of protons in its nucleus, which fixes the identity of the element",
+   "section": "2.3",
+   "anchor": "2.3-atomic-number"
+  },
+  {
+   "sym": "A",
+   "concept": "mass-number",
+   "meaning": "the mass number of an atom, the total number of protons and neutrons in its nucleus",
+   "section": "2.3",
+   "anchor": "2.3-atomic-number"
+  },
+  {
+   "sym": "e",
+   "concept": "fundamental-charge",
+   "meaning": "the fundamental unit of charge, the magnitude of the charge of one electron",
+   "unit": "C",
+   "section": "2.3",
+   "anchor": "2.3-units",
+   "type": "charge"
+  },
+  {
+   "sym": "Q_charge",
+   "concept": "fundamental-charge",
+   "type": "charge",
+   "meaning": "the charge of a particle, a whole number of fundamental charges",
+   "unit": "C",
+   "section": "2.2"
+  }
+ ]
+}

@@ -1,0 +1,1362 @@
+{
+ "types": [
+  {
+   "id": "density",
+   "label": "密度",
+   "dimension": "g/mL"
+  },
+  {
+   "id": "length",
+   "label": "长度",
+   "dimension": "m"
+  }
+ ],
+ "symbols": [
+  {
+   "sym": "T_C",
+   "latex": "T_{\\text{°C}}",
+   "macro": "\\kTC"
+  },
+  {
+   "sym": "T_F",
+   "latex": "T_{\\text{°F}}",
+   "macro": "\\kTF"
+  },
+  {
+   "sym": "T_K",
+   "latex": "T_{\\text{K}}",
+   "macro": "\\kTK"
+  },
+  {
+   "sym": "d",
+   "latex": "d",
+   "macro": "\\kd"
+  },
+  {
+   "sym": "v_iron",
+   "latex": "v_{\\text{iron}}",
+   "macro": "\\kviron"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "scientific-method",
+   "kind": "idea",
+   "section": "1.1",
+   "name": "科学方法",
+   "terms": [
+    "科学方法"
+   ],
+   "statement": "化学是一门以观察和实验为基础的科学，从问题到答案并没有唯一的路径。所有路径的共同点是都建立在可重复的实验之上，所以从问题和观察到假说、从假说经检验到定律或理论的这条路径，就是本书全部论证所依据的方法。"
+  },
+  {
+   "id": "hypothesis-law-theory",
+   "kind": "skill",
+   "section": "1.1",
+   "name": "区分假说、定律和理论",
+   "statement": "在科学之外，这三个词用得很随意；在科学之内，它们则很精确。假说是用来指导收集信息的暂定解释，定律概括了大量观察并能做出预测，理论是经受住了大量数据检验的、有充分根据的解释。知道一个陈述属于三者中的哪一种，就知道它有多大的分量。"
+  },
+  {
+   "id": "domains-of-chemistry",
+   "kind": "idea",
+   "section": "1.1",
+   "name": "化学的领域",
+   "statement": "化学家同时在三个领域中描述物质：宏观领域，是你能看到、摸到的；微观领域，多半要靠想象；符号领域，是代表前两者的化学式和方程式。学习化学的一个难处是，同一个符号可以代表某一个领域中的事物，也可以代表另一个领域中的事物；一个乐趣则是用你必须想象的东西来解释你观察到的现象。"
+  },
+  {
+   "id": "chemistry",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "化学",
+   "terms": [
+    "化学"
+   ],
+   "statement": "化学是研究物质的组成、性质和相互作用的科学。"
+  },
+  {
+   "id": "hypothesis",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "假说",
+   "terms": [
+    "假说"
+   ],
+   "statement": "假说是对观察结果的暂定解释，用作收集和检验信息的指导。"
+  },
+  {
+   "id": "scientific-law",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "定律",
+   "terms": [
+    "定律"
+   ],
+   "statement": "定律是一种陈述，它概括了大量实验观察，并描述或预测自然界某一方面的情形。"
+  },
+  {
+   "id": "scientific-theory",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "理论",
+   "terms": [
+    "理论"
+   ],
+   "statement": "理论是对自然界某一特定方面的、有充分根据的、全面的、可检验的解释。"
+  },
+  {
+   "id": "macroscopic-domain",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "宏观领域",
+   "terms": [
+    "宏观领域"
+   ],
+   "statement": "宏观领域是日常事物的领域，这些事物大到可以直接用人的视觉和触觉感知。"
+  },
+  {
+   "id": "microscopic-domain",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "微观领域",
+   "terms": [
+    "微观领域"
+   ],
+   "statement": "微观领域是那些小到无法直接感知的事物的领域。"
+  },
+  {
+   "id": "symbolic-domain",
+   "kind": "definition",
+   "section": "1.1",
+   "name": "符号领域",
+   "terms": [
+    "符号领域"
+   ],
+   "statement": "符号领域是用来表示宏观领域和微观领域各组成部分的专门语言，例如化学符号、化学式、化学方程式、图表、图画和计算。"
+  },
+  {
+   "id": "matter",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "物质",
+   "terms": [
+    "物质"
+   ],
+   "statement": "物质是任何占据空间并具有质量的东西。气体和固体一样是物质，尽管你既看不见它，也拿不住它。"
+  },
+  {
+   "id": "states-of-matter",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "物态",
+   "statement": "固体是刚性的并保持其形状，液体能流动并保持其体积，气体则采取其容器的形状和体积；等离子体是带有足够多带电粒子的气体，其行为已不同于一般的气体。在其余各章中，本书将不断让一种物质在这些状态之间变化，所以先讲区分它们的性质。"
+  },
+  {
+   "id": "mass-versus-weight",
+   "kind": "idea",
+   "section": "1.2",
+   "name": "质量与重量",
+   "statement": "物体的质量度量其中所含物质的量，并且不会改变；重量是重力作用于它的力，会随它所处的重力而改变。宇航员在月球上的质量和在地球上相同，而她的重量只有地球上的六分之一，所以说明存在多少物质的是质量，而不是重量。"
+  },
+  {
+   "id": "conservation-of-matter",
+   "kind": "axiom",
+   "section": "1.2",
+   "name": "物质守恒定律",
+   "terms": [
+    "物质守恒定律"
+   ],
+   "statement": "当物质从一种类型转化为另一种类型，或在固态、液态和气态之间变化时，物质的总量没有可检测到的变化。后面各章中的每一个配平的方程式和每一次质量计算都以这条定律为基础，而一个看似消失的质量，只是去了没有人称量的地方。"
+  },
+  {
+   "id": "elements-and-compounds",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "元素与化合物",
+   "statement": "纯净物具有恒定的组成。元素不能通过化学变化分解成任何更简单的东西；化合物由两种或两种以上的元素组成，并且可以分解为这些元素。元素结合之后的性质与它们未结合时的性质毫无相似之处，这就是钠和氯能够形成食盐的原因。"
+  },
+  {
+   "id": "mixtures",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "均匀混合物与非均匀混合物",
+   "terms": [
+    "溶液"
+   ],
+   "statement": "混合物含有两种或两种以上的物质，其含量可以变化，并且可以用物理方法再次分离。非均匀混合物的组成因点而异，如色拉调味汁；均匀混合物也称为溶液，处处相同，如运动饮料。两者的区别在于，从一处取出的样品能说明其余部分的什么情况。"
+  },
+  {
+   "id": "classification-of-matter",
+   "kind": "skill",
+   "section": "1.2",
+   "name": "对物质样品进行分类",
+   "statement": "给定一个样品，你应该能够确定它属于哪一类：组成是否恒定，是否均匀，能否通过化学变化再简化。两个问题就能把每个样品分为元素、化合物、均匀混合物或非均匀混合物，而分类决定了你能对这个样品做什么。"
+  },
+  {
+   "id": "atoms-and-molecules",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "原子与分子",
+   "statement": "原子是保持元素性质并能参与化学结合的该元素的最小粒子；分子是由化学键连接在一起、作为一个整体运动的两个或多个原子。原子太小太轻，无法直接想象，而本书的整个微观领域就是由它们构建起来的。"
+  },
+  {
+   "id": "mass",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "质量",
+   "symbol": "m",
+   "terms": [
+    "质量"
+   ],
+   "type": "mass",
+   "statement": "物体的质量是其中所含物质的量的度量，它不随物体所处的位置而改变。"
+  },
+  {
+   "id": "weight",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "重量",
+   "terms": [
+    "重量"
+   ],
+   "statement": "物体的重量是重力作用于它的力，所以它随物体所处的重力而改变。"
+  },
+  {
+   "id": "gas",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "气体",
+   "terms": [
+    "气体"
+   ],
+   "statement": "气体是既没有确定体积也没有确定形状的物态。"
+  },
+  {
+   "id": "liquid",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "液体",
+   "terms": [
+    "液体"
+   ],
+   "statement": "液体是有确定体积但没有确定形状的物态。"
+  },
+  {
+   "id": "solid",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "固体",
+   "terms": [
+    "固体"
+   ],
+   "statement": "固体是刚性的、有确定形状且体积相当恒定的物态。"
+  },
+  {
+   "id": "plasma",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "等离子体",
+   "terms": [
+    "等离子体"
+   ],
+   "statement": "等离子体是含有大量带电原子和/或分子的气态物态。"
+  },
+  {
+   "id": "pure-substance",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "纯净物",
+   "terms": [
+    "纯净物"
+   ],
+   "statement": "纯净物是具有恒定组成的均匀物质。"
+  },
+  {
+   "id": "element",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "元素",
+   "terms": [
+    "元素"
+   ],
+   "statement": "元素是由单一类型的原子组成的物质，不能通过化学变化分解。"
+  },
+  {
+   "id": "compound",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "化合物",
+   "terms": [
+    "化合物"
+   ],
+   "statement": "化合物是可以分解为两种或两种以上元素的纯净物。"
+  },
+  {
+   "id": "mixture",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "混合物",
+   "terms": [
+    "混合物"
+   ],
+   "statement": "混合物是可以用物理方法分离成其组分的物质。"
+  },
+  {
+   "id": "heterogeneous-mixture",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "非均匀混合物",
+   "terms": [
+    "非均匀混合物"
+   ],
+   "statement": "非均匀混合物是由多种物质组合而成、其组成因点而异的混合物。"
+  },
+  {
+   "id": "homogeneous-mixture",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "均匀混合物",
+   "terms": [
+    "均匀混合物"
+   ],
+   "statement": "均匀混合物也称为溶液，是由多种物质组合而成、其组成处处均匀的混合物。"
+  },
+  {
+   "id": "atom",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "原子",
+   "terms": [
+    "原子"
+   ],
+   "statement": "原子是元素中能够参与化学结合的最小粒子。"
+  },
+  {
+   "id": "molecule",
+   "kind": "definition",
+   "section": "1.2",
+   "name": "分子",
+   "terms": [
+    "分子"
+   ],
+   "statement": "分子是由相同或不同元素的两个或多个原子结合而成的集合体。"
+  },
+  {
+   "id": "physical-property",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "物理性质",
+   "terms": [
+    "物理性质"
+   ],
+   "statement": "物理性质是物质的一种特征，与其化学组成的变化无关：密度、颜色、硬度、熔点和沸点、导电性。有些物理性质可以在完全不改变物质的情况下观察到，另一些则只能在物质改变状态时观察到，但无论哪一种，该物质都不会变成另一种物质。"
+  },
+  {
+   "id": "chemical-property",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "化学性质",
+   "terms": [
+    "化学性质"
+   ],
+   "statement": "化学性质是一种物质变成另一种物质的能力，或不能变成另一种物质的能力。可燃性、毒性、酸性和反应性都是化学性质，与物理性质不同，观察化学性质时，所涉及的物质必定会变成别的物质。"
+  },
+  {
+   "id": "physical-and-chemical-change",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "物理变化与化学变化",
+   "statement": "物理变化改变物态、形态或性质，而不改变它的化学本性；化学变化总是产生一种或多种原先不存在的物质。蜡熔化和糖溶解属于前者；铁生锈和火柴燃烧属于后者，判断的依据是剩下的是不是同一种物质。"
+  },
+  {
+   "id": "classify-physical-or-chemical",
+   "kind": "skill",
+   "section": "1.3",
+   "name": "对变化进行分类",
+   "statement": "要判断一个所描述的事件属于哪一种变化，只需问一个问题：之后剩下的物质与之前存在的物质是不是同一种物质？膨胀的气体发生了物理变化；燃烧过的气体则不然。"
+  },
+  {
+   "id": "extensive-and-intensive-properties",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "广度性质与强度性质",
+   "statement": "广度性质取决于存在的物质有多少，并与之成正比；强度性质则不然。质量和体积是广度性质，温度和密度是强度性质，这一区分很重要，因为强度性质能够鉴别一种物质，而广度性质只是度量该物质的一个样品。"
+  },
+  {
+   "id": "physical-change",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "物理变化",
+   "terms": [
+    "物理变化"
+   ],
+   "statement": "物理变化是物态或性质的变化，不涉及其化学组成的变化。"
+  },
+  {
+   "id": "chemical-change",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "化学变化",
+   "terms": [
+    "化学变化"
+   ],
+   "statement": "化学变化是产生与原来物质种类不同的物质的变化。"
+  },
+  {
+   "id": "extensive-property",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "广度性质",
+   "terms": [
+    "广度性质"
+   ],
+   "statement": "广度性质是取决于物质的量的物质性质。"
+  },
+  {
+   "id": "intensive-property",
+   "kind": "definition",
+   "section": "1.3",
+   "name": "强度性质",
+   "terms": [
+    "强度性质"
+   ],
+   "statement": "强度性质是与物质的量无关的物质性质。"
+  },
+  {
+   "id": "measurement-parts",
+   "kind": "idea",
+   "section": "1.4",
+   "name": "测量的组成部分",
+   "statement": "每个测量都提供三种信息：一个数，一个说明这个数是与什么相比较的单位，以及一个不确定度。你把数和单位写下来，而不确定度则隐含其中。缺少这三者中任何一个的量，至多让人困惑：一个没有单位的一百的剂量，可能是治疗量，也可能是致死量。"
+  },
+  {
+   "id": "scientific-notation",
+   "kind": "skill",
+   "section": "1.4",
+   "name": "用科学记数法表示测量值",
+   "statement": "测量中的数可以写成小数形式，也可以写成科学记数法，对于非常大和非常小的数，只有后者才便于阅读。蚊子的质量写成 2.5 x 10 的负 6 次方千克，比写成一长串零更易读，而且这种记法还能确定测量值的几位数字有效。"
+  },
+  {
+   "id": "si-base-units",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "SI基本单位",
+   "statement": "七个基本性质的单位由国际协议确定，本书中的其他所有单位都由它们导出。知道米、千克、秒、开尔文、安培、摩尔和坎德拉是基本单位，就使单位换算成为一件记账式的事，而不必靠死记。"
+  },
+  {
+   "id": "unit-prefixes",
+   "kind": "skill",
+   "section": "1.4",
+   "name": "使用SI词头",
+   "statement": "SI单位的分数和倍数总是 10 的幂，每个幂都有一个词头和一个符号。一个千米等于一千个米，一个微升是一升的百万分之一，所以懂得这些词头的读者无需算术就能把一个测量值在标度上上下移动。"
+  },
+  {
+   "id": "derived-units",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "导出单位",
+   "statement": "许多单位是由基本单位构成的，而不是另行约定的：体积是长度的立方，密度是质量除以体积。把一个单位看作基本单位的乘积和商，就可以检验一次计算得出的是否是正确种类的量。"
+  },
+  {
+   "id": "volume",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "体积及其单位",
+   "symbol": "V",
+   "terms": [
+    "体积"
+   ],
+   "type": "volume",
+   "statement": "体积是物体所占据的空间的大小，其标准单位是立方米，即边长为一米的立方体。立方分米是升，立方厘米是毫升，所以化学家实际使用的单位以一千倍的关系嵌套在标准单位之中。"
+  },
+  {
+   "id": "density",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "密度",
+   "symbol": "d",
+   "terms": [
+    "密度"
+   ],
+   "type": "density",
+   "statement": "物质的密度是样品的质量与其体积之比。它是一种强度性质，因此鉴别的是一种物质而不是一个样品：同样大小的一块金砖和一块铅砖，质量并不相同。",
+   "forms": [
+    {
+     "id": "eq-density",
+     "latex": "\\text{density}=\\frac{\\text{mass}}{\\text{volume}}",
+     "anchor": "1.4-density"
+    }
+   ]
+  },
+  {
+   "id": "measure-volume-by-displacement",
+   "kind": "skill",
+   "section": "1.4",
+   "name": "用排水法测量体积",
+   "statement": "立方体的体积可以由它的边长算出，但大多数物体不是立方体。把一个物体放入盛有部分水的量筒中，水面升高的量恰好等于该物体的体积，这就把一个不规则形状变成了一次减法，并使得任何沉入水中的物体的密度都可以用天平和量筒测出。"
+  },
+  {
+   "id": "unit",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "单位",
+   "terms": [
+    "单位"
+   ],
+   "statement": "单位是测量比较的标准；被测量的数说明该量含有多少个它的单位。"
+  },
+  {
+   "id": "length",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "长度",
+   "symbol": "h_col",
+   "terms": [
+    "长度"
+   ],
+   "type": "length",
+   "statement": "长度是物体一个维度的度量，其SI单位是米。"
+  },
+  {
+   "id": "time",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "时间",
+   "symbol": "t",
+   "type": "time",
+   "statement": "时间用时间的SI基本单位秒来度量。"
+  },
+  {
+   "id": "temperature",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "温度",
+   "symbol": "T",
+   "terms": [
+    "温度"
+   ],
+   "type": "temperature",
+   "statement": "温度是表示物质冷热程度的强度性质，其SI单位是开尔文。"
+  },
+  {
+   "id": "si-units",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "SI单位",
+   "terms": [
+    "SI单位（国际单位制）"
+   ],
+   "statement": "SI单位是国际单位制（Le Système International d’Unités）中由国际协议确定的标准。"
+  },
+  {
+   "id": "meter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "米",
+   "terms": [
+    "米（m）"
+   ],
+   "statement": "米（m）是长度的标准公制单位和SI单位；1 m 约等于 1.094 码。"
+  },
+  {
+   "id": "kilogram",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "千克",
+   "terms": [
+    "千克（kg）"
+   ],
+   "statement": "千克（kg）是质量的标准SI单位。"
+  },
+  {
+   "id": "second",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "秒",
+   "terms": [
+    "秒（s）"
+   ],
+   "statement": "秒（s）是时间的SI单位。"
+  },
+  {
+   "id": "kelvin",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "开尔文",
+   "terms": [
+    "开尔文（K）"
+   ],
+   "statement": "开尔文（K）是温度的SI单位；273.15 K 等于 0 °C。"
+  },
+  {
+   "id": "celsius",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "摄氏度",
+   "terms": [
+    "摄氏度（°C）"
+   ],
+   "statement": "摄氏度（°C）是温度的单位；在这个温标上，水在 0 °C 结冰，在 100 °C 沸腾。"
+  },
+  {
+   "id": "cubic-meter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "立方米",
+   "terms": [
+    "立方米（m³）"
+   ],
+   "statement": "立方米（m³）是体积的SI单位，即边长恰好为 1 m 的立方体的体积。"
+  },
+  {
+   "id": "cubic-centimeter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "立方厘米",
+   "terms": [
+    "立方厘米（cm³ 或 cc）"
+   ],
+   "statement": "立方厘米（cm³ 或 cc）是边长恰好为 1 cm 的立方体的体积。"
+  },
+  {
+   "id": "liter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "升",
+   "terms": [
+    "升（L）"
+   ],
+   "statement": "升（L）也称为立方分米，是体积的单位；1 L 等于 1,000 cm³。"
+  },
+  {
+   "id": "milliliter",
+   "kind": "definition",
+   "section": "1.4",
+   "name": "毫升",
+   "terms": [
+    "毫升（mL）"
+   ],
+   "statement": "毫升（mL）是升的 1/1,000，等于 1 cm³。"
+  },
+  {
+   "id": "exact-and-uncertain-numbers",
+   "kind": "idea",
+   "section": "1.5",
+   "name": "精确数与不确定数",
+   "statement": "计数是唯一没有不确定度的测量，由定义确定的数也同样是精确的：一英尺恰好是十二英寸，一英寸恰好是 2.54 厘米。其他每一个量在某种程度上都是不确定的，知道计算中哪些数是精确的，就决定了其中哪些数能够限制答案。"
+  },
+  {
+   "id": "measurement-uncertainty",
+   "kind": "idea",
+   "section": "1.5",
+   "name": "每个测量都带有不确定度",
+   "statement": "你把测量值读到仪器所允许的程度，然后再多读一位，这最后一位是估计值。刻度间隔为一毫升的量具可以读到十分之一毫升，读数为 6.72 克的天平表明质量介于 6.71 和 6.73 之间。不确定度是仪器和读数的人共同带来的，它不是错误。"
+  },
+  {
+   "id": "significant-figures",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "有效数字",
+   "terms": [
+    "有效数字"
+   ],
+   "statement": "测量值中的所有数字，包括不确定的最后一位，都是它的有效数字，其个数就是书写出来的量表明自己有多确定的方式。当一个结果的有效数字代表了产生它的过程的确定程度，而不比这更好时，这个结果才算报告得恰当。"
+  },
+  {
+   "id": "count-significant-figures",
+   "kind": "skill",
+   "section": "1.5",
+   "name": "有效数字的计数",
+   "statement": "规则是从左边第一个非零数字开始，数出它右边的每一个数字，唯一的困难在于零。夹在中间的零来自测量，总是有效的；前导零只是确定小数点的位置，从来不是有效的；小数点左边的末尾零是含糊的，除非这个数写成科学记数法。"
+  },
+  {
+   "id": "rounding-rules",
+   "kind": "skill",
+   "section": "1.5",
+   "name": "修约到指定位数",
+   "statement": "要舍去的数字小于五时向下修约，大于五时向上修约。当舍去的数字是五而后面全是零时，把保留的数字修约成偶数。统计学中的这条规则使修约在许多次计算中不偏向一方。"
+  },
+  {
+   "id": "significant-figures-in-calculations",
+   "kind": "skill",
+   "section": "1.5",
+   "name": "在计算中保留有效数字",
+   "statement": "由测量值算出的结果，其不确定度至少与它所依据的测量值一样大，所以答案必须修约，而不能照抄计算器上的数。和或差修约到最不精密的项的小数位，积或商修约到最不确定的因数的有效数字个数。"
+  },
+  {
+   "id": "accuracy-and-precision",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "准确度与精密度",
+   "statement": "重复测量得出非常相近的结果时，测量是精密的；测量值接近真值或公认值时，测量是准确的，两者是互相独立的。一台分配器可以精密而总是错的，也可以平均而言准确但很分散，只有两者兼备的才在正常工作。"
+  },
+  {
+   "id": "exact-number",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "精确数",
+   "terms": [
+    "精确数"
+   ],
+   "statement": "精确数是通过计数或定义得到的数。"
+  },
+  {
+   "id": "uncertainty",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "不确定度",
+   "terms": [
+    "不确定度"
+   ],
+   "statement": "测量的不确定度是对其与真值之差的估计。"
+  },
+  {
+   "id": "rounding",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "修约",
+   "terms": [
+    "修约"
+   ],
+   "statement": "修约是用来确保计算结果恰当地反映计算中所用测量值的不确定度的程序。"
+  },
+  {
+   "id": "accuracy",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "准确度",
+   "terms": [
+    "准确度"
+   ],
+   "statement": "准确度是测量值与正确值的接近程度。"
+  },
+  {
+   "id": "precision",
+   "kind": "definition",
+   "section": "1.5",
+   "name": "精密度",
+   "terms": [
+    "精密度"
+   ],
+   "statement": "精密度是测量值与重复的同一测量的结果的接近程度。"
+  },
+  {
+   "id": "dimensional-analysis",
+   "kind": "idea",
+   "section": "1.6",
+   "name": "量纲分析",
+   "terms": [
+    "量纲分析",
+    "因子标记法"
+   ],
+   "statement": "各个量的单位与它们的数一样经历相同的数学运算。仅此一个前提，就让你能用距离除以时间而得到速率。它还让你只看单位就能检验一次计算，因为因子的排列错了，就会得到一个没有人想要的单位。",
+   "forms": [
+    {
+     "id": "eq-speed",
+     "latex": "\\text{speed}=\\frac{\\text{distance}}{\\text{time}}",
+     "condition": "an average speed, computed from a measured distance and the time taken to cover it",
+     "anchor": "1.6-dimensional-analysis"
+    }
+   ]
+  },
+  {
+   "id": "unit-conversion-factor",
+   "kind": "definition",
+   "section": "1.6",
+   "name": "单位换算因子",
+   "terms": [
+    "单位换算因子"
+   ],
+   "statement": "不同单位下两个相等的量之比等于一，所以乘以它可以改变一个量的单位而不改变这个量。这个比可以上下颠倒，所以你要选择能约去你不想要的单位、留下你想要的单位的那种排列。"
+  },
+  {
+   "id": "convert-units",
+   "kind": "skill",
+   "section": "1.6",
+   "name": "单位换算",
+   "statement": "一个接一个地乘以换算因子，每个都取向成使不想要的单位约去，就能把一个测量值经过任意多步进行换算。这是本章最常用的技能，无论是在两个公制单位之间、公制与英制单位之间，还是在面积或体积的单位之间换算，做法都相同。"
+  },
+  {
+   "id": "compute-with-units",
+   "kind": "skill",
+   "section": "1.6",
+   "name": "含混合单位的计算",
+   "statement": "在简单换算之外，因子标记法还能解决这样的问题：所求的量要由两个或更多个以不合适的单位给出的测量量算出。把所有因子排成一行，使标记相约并合成答案的单位，算术只在最后做一次。"
+  },
+  {
+   "id": "linear-versus-proportional-scales",
+   "kind": "idea",
+   "section": "1.6",
+   "name": "线性标度与正比标度",
+   "statement": "一种性质的大多数单位彼此成正比，用一个换算因子就可以在它们之间换算。摄氏和华氏温标没有共同的零点，所以它们之间的关系是一条有截距的直线，而不是过原点的直线，在它们之间换算既需要斜率，也需要偏移量。"
+  },
+  {
+   "id": "temperature-scales",
+   "kind": "definition",
+   "section": "1.6",
+   "name": "温标",
+   "statement": "通过选定参考温度并把它们之间的间隔分成若干份，就确定了一种温标。摄氏温标把水的冰点和沸点定为 0 和 100，华氏温标定为 32 和 212。开尔文温标是绝对温标：它的零点是理论上可达到的最低温度，它的单位不带度的符号。"
+  },
+  {
+   "id": "celsius-fahrenheit-conversion",
+   "kind": "result",
+   "section": "1.6",
+   "name": "摄氏温度与华氏温度的换算",
+   "statement": "华氏温度是摄氏温度的九分之五倍加三十二，把这个关系式变形就得到由华氏温度求摄氏温度的式子。两种形式都在本书的关键方程式清单上，在实验室之外，它们是读者遇到得比任何其他换算都多的换算。",
+   "forms": [
+    {
+     "id": "eq-fahrenheit-from-celsius",
+     "latex": "T_{\\text{°F}}=\\left(\\frac{9}{5}\\times T_{\\text{°C}}\\right)+32",
+     "ktex": "\\kTF=\\left(\\frac{9}{5}\\times \\kTC\\right)+32",
+     "anchor": "1.6-linear-not-proportional"
+    },
+    {
+     "id": "eq-celsius-from-fahrenheit",
+     "latex": "T_{\\text{°C}}=\\frac{5}{9}\\times \\left(T_{\\text{°F}}-32\\right)",
+     "ktex": "\\kTC=\\frac{5}{9}\\times \\left(\\kTF-32\\right)",
+     "anchor": "1.6-linear-not-proportional"
+    }
+   ]
+  },
+  {
+   "id": "celsius-kelvin-conversion",
+   "kind": "result",
+   "section": "1.6",
+   "name": "摄氏温度与开尔文温度的换算",
+   "statement": "一开尔文和一摄氏度一样大，所以这两种温标只有零点所在的位置不同：摄氏温度加 273.15 得到开尔文温度，减去它就换回来。273.15 是由实验测定的，并不精确，这在对结果进行修约时很重要。",
+   "forms": [
+    {
+     "id": "eq-kelvin-from-celsius",
+     "latex": "T_{\\text{K}}=T_{\\text{°C}}+273.15",
+     "ktex": "\\kTK=\\kTC+273.15",
+     "anchor": "1.6-kelvin-scale"
+    },
+    {
+     "id": "eq-celsius-from-kelvin",
+     "latex": "T_{\\text{°C}}=T_{\\text{K}}-273.15",
+     "ktex": "\\kTC=\\kTK-273.15",
+     "anchor": "1.6-kelvin-scale"
+    }
+   ]
+  },
+  {
+   "id": "fahrenheit",
+   "kind": "definition",
+   "section": "1.6",
+   "name": "华氏度",
+   "terms": [
+    "华氏度"
+   ],
+   "statement": "华氏度（°F）是温度的单位；在这个温标上，水在 32 °F 结冰，在 212 °F 沸腾。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "states-of-matter",
+   "prereq": "matter"
+  },
+  {
+   "concept": "mass-versus-weight",
+   "prereq": "matter"
+  },
+  {
+   "concept": "conservation-of-matter",
+   "prereq": "matter"
+  },
+  {
+   "concept": "elements-and-compounds",
+   "prereq": "matter"
+  },
+  {
+   "concept": "mixtures",
+   "prereq": "matter"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "mixtures"
+  },
+  {
+   "concept": "atoms-and-molecules",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "physical-property",
+   "prereq": "matter"
+  },
+  {
+   "concept": "chemical-property",
+   "prereq": "matter"
+  },
+  {
+   "concept": "physical-and-chemical-change",
+   "prereq": "physical-property"
+  },
+  {
+   "concept": "physical-and-chemical-change",
+   "prereq": "chemical-property"
+  },
+  {
+   "concept": "classify-physical-or-chemical",
+   "prereq": "physical-and-chemical-change"
+  },
+  {
+   "concept": "extensive-and-intensive-properties",
+   "prereq": "physical-property"
+  },
+  {
+   "concept": "measurement-parts",
+   "prereq": "scientific-method"
+  },
+  {
+   "concept": "scientific-notation",
+   "prereq": "measurement-parts"
+  },
+  {
+   "concept": "si-base-units",
+   "prereq": "measurement-parts"
+  },
+  {
+   "concept": "unit-prefixes",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "unit-prefixes",
+   "prereq": "scientific-notation"
+  },
+  {
+   "concept": "derived-units",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "volume",
+   "prereq": "derived-units"
+  },
+  {
+   "concept": "density",
+   "prereq": "derived-units"
+  },
+  {
+   "concept": "density",
+   "prereq": "volume"
+  },
+  {
+   "concept": "density",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "measure-volume-by-displacement",
+   "prereq": "volume"
+  },
+  {
+   "concept": "measure-volume-by-displacement",
+   "prereq": "density"
+  },
+  {
+   "concept": "exact-and-uncertain-numbers",
+   "prereq": "measurement-parts"
+  },
+  {
+   "concept": "measurement-uncertainty",
+   "prereq": "measurement-parts"
+  },
+  {
+   "concept": "significant-figures",
+   "prereq": "measurement-uncertainty"
+  },
+  {
+   "concept": "count-significant-figures",
+   "prereq": "significant-figures"
+  },
+  {
+   "concept": "count-significant-figures",
+   "prereq": "scientific-notation"
+  },
+  {
+   "concept": "rounding-rules",
+   "prereq": "significant-figures"
+  },
+  {
+   "concept": "significant-figures-in-calculations",
+   "prereq": "count-significant-figures"
+  },
+  {
+   "concept": "significant-figures-in-calculations",
+   "prereq": "rounding-rules"
+  },
+  {
+   "concept": "accuracy-and-precision",
+   "prereq": "measurement-uncertainty"
+  },
+  {
+   "concept": "dimensional-analysis",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "unit-conversion-factor",
+   "prereq": "dimensional-analysis"
+  },
+  {
+   "concept": "convert-units",
+   "prereq": "unit-conversion-factor"
+  },
+  {
+   "concept": "convert-units",
+   "prereq": "unit-prefixes"
+  },
+  {
+   "concept": "convert-units",
+   "prereq": "significant-figures-in-calculations"
+  },
+  {
+   "concept": "compute-with-units",
+   "prereq": "convert-units"
+  },
+  {
+   "concept": "compute-with-units",
+   "prereq": "density"
+  },
+  {
+   "concept": "linear-versus-proportional-scales",
+   "prereq": "unit-conversion-factor"
+  },
+  {
+   "concept": "temperature-scales",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "celsius-fahrenheit-conversion",
+   "prereq": "temperature-scales"
+  },
+  {
+   "concept": "celsius-fahrenheit-conversion",
+   "prereq": "linear-versus-proportional-scales"
+  },
+  {
+   "concept": "celsius-kelvin-conversion",
+   "prereq": "temperature-scales"
+  },
+  {
+   "concept": "chemistry",
+   "prereq": "matter"
+  },
+  {
+   "concept": "scientific-theory",
+   "prereq": "hypothesis"
+  },
+  {
+   "concept": "mass",
+   "prereq": "matter"
+  },
+  {
+   "concept": "weight",
+   "prereq": "mass"
+  },
+  {
+   "concept": "unit",
+   "prereq": "measurement-parts"
+  },
+  {
+   "concept": "length",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "time",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "temperature",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "temperature",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "macroscopic-domain",
+   "prereq": "domains-of-chemistry"
+  },
+  {
+   "concept": "microscopic-domain",
+   "prereq": "domains-of-chemistry"
+  },
+  {
+   "concept": "symbolic-domain",
+   "prereq": "domains-of-chemistry"
+  },
+  {
+   "concept": "gas",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "liquid",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "solid",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "plasma",
+   "prereq": "states-of-matter"
+  },
+  {
+   "concept": "pure-substance",
+   "prereq": "matter"
+  },
+  {
+   "concept": "element",
+   "prereq": "pure-substance"
+  },
+  {
+   "concept": "element",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "compound",
+   "prereq": "pure-substance"
+  },
+  {
+   "concept": "compound",
+   "prereq": "element"
+  },
+  {
+   "concept": "compound",
+   "prereq": "elements-and-compounds"
+  },
+  {
+   "concept": "mixture",
+   "prereq": "matter"
+  },
+  {
+   "concept": "heterogeneous-mixture",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "heterogeneous-mixture",
+   "prereq": "mixtures"
+  },
+  {
+   "concept": "homogeneous-mixture",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "homogeneous-mixture",
+   "prereq": "mixtures"
+  },
+  {
+   "concept": "atom",
+   "prereq": "element"
+  },
+  {
+   "concept": "atom",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "molecule",
+   "prereq": "atom"
+  },
+  {
+   "concept": "molecule",
+   "prereq": "atoms-and-molecules"
+  },
+  {
+   "concept": "physical-change",
+   "prereq": "physical-and-chemical-change"
+  },
+  {
+   "concept": "chemical-change",
+   "prereq": "physical-and-chemical-change"
+  },
+  {
+   "concept": "extensive-property",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "intensive-property",
+   "prereq": "extensive-and-intensive-properties"
+  },
+  {
+   "concept": "si-units",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "si-units",
+   "prereq": "unit"
+  },
+  {
+   "concept": "meter",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "meter",
+   "prereq": "length"
+  },
+  {
+   "concept": "kilogram",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "kilogram",
+   "prereq": "mass"
+  },
+  {
+   "concept": "second",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "second",
+   "prereq": "time"
+  },
+  {
+   "concept": "kelvin",
+   "prereq": "si-base-units"
+  },
+  {
+   "concept": "kelvin",
+   "prereq": "temperature"
+  },
+  {
+   "concept": "celsius",
+   "prereq": "temperature"
+  },
+  {
+   "concept": "fahrenheit",
+   "prereq": "temperature-scales"
+  },
+  {
+   "concept": "cubic-meter",
+   "prereq": "volume"
+  },
+  {
+   "concept": "cubic-meter",
+   "prereq": "meter"
+  },
+  {
+   "concept": "cubic-centimeter",
+   "prereq": "volume"
+  },
+  {
+   "concept": "cubic-centimeter",
+   "prereq": "unit-prefixes"
+  },
+  {
+   "concept": "liter",
+   "prereq": "volume"
+  },
+  {
+   "concept": "liter",
+   "prereq": "cubic-centimeter"
+  },
+  {
+   "concept": "milliliter",
+   "prereq": "liter"
+  },
+  {
+   "concept": "milliliter",
+   "prereq": "unit-prefixes"
+  },
+  {
+   "concept": "exact-number",
+   "prereq": "exact-and-uncertain-numbers"
+  },
+  {
+   "concept": "uncertainty",
+   "prereq": "measurement-parts"
+  },
+  {
+   "concept": "rounding",
+   "prereq": "significant-figures"
+  },
+  {
+   "concept": "accuracy",
+   "prereq": "accuracy-and-precision"
+  },
+  {
+   "concept": "precision",
+   "prereq": "accuracy-and-precision"
+  },
+  {
+   "concept": "hypothesis-law-theory",
+   "prereq": "hypothesis"
+  },
+  {
+   "concept": "hypothesis-law-theory",
+   "prereq": "scientific-law"
+  },
+  {
+   "concept": "hypothesis-law-theory",
+   "prereq": "scientific-theory"
+  },
+  {
+   "concept": "mass-versus-weight",
+   "prereq": "mass"
+  },
+  {
+   "concept": "mass-versus-weight",
+   "prereq": "weight"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "pure-substance"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "mixture"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "homogeneous-mixture"
+  },
+  {
+   "concept": "classification-of-matter",
+   "prereq": "heterogeneous-mixture"
+  },
+  {
+   "concept": "classify-physical-or-chemical",
+   "prereq": "physical-change"
+  },
+  {
+   "concept": "classify-physical-or-chemical",
+   "prereq": "chemical-change"
+  },
+  {
+   "concept": "density",
+   "prereq": "mass"
+  },
+  {
+   "concept": "temperature-scales",
+   "prereq": "celsius"
+  },
+  {
+   "concept": "temperature-scales",
+   "prereq": "kelvin"
+  },
+  {
+   "concept": "celsius-kelvin-conversion",
+   "prereq": "celsius"
+  },
+  {
+   "concept": "celsius-kelvin-conversion",
+   "prereq": "kelvin"
+  },
+  {
+   "concept": "celsius-fahrenheit-conversion",
+   "prereq": "celsius"
+  },
+  {
+   "concept": "celsius-fahrenheit-conversion",
+   "prereq": "fahrenheit"
+  },
+  {
+   "concept": "rounding-rules",
+   "prereq": "rounding"
+  },
+  {
+   "concept": "convert-units",
+   "prereq": "unit"
+  }
+ ]
+}

@@ -5,7 +5,1910 @@
       "id": "termonline",
       "name": "全国科学技术名词审定委员会 术语在线",
       "url": "https://www.termonline.cn/"
+    },
+    {
+      "id": "cnterm-chemistry",
+      "name": "全国科学技术名词审定委员会《化学名词》",
+      "url": "https://www.termonline.cn/"
+    },
+    {
+      "id": "cnterm-physics",
+      "name": "全国科学技术名词审定委员会《物理学名词》",
+      "url": "https://www.termonline.cn/"
+    },
+    {
+      "id": "gb3100",
+      "name": "GB 3100-1993《国际单位制及其应用》与 GB 3102-1993《量和单位》",
+      "url": "https://syytrqhg.ijournals.cn/uploadfile/syytrq/20230331/GB%203100-1993%20%E5%9B%BD%E9%99%85%E5%8D%95%E4%BD%8D%E5%88%B6%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8.pdf"
+    },
+    {
+      "id": "jjf1001",
+      "name": "JJF 1001-2011《通用计量术语及定义》",
+      "url": "https://www.chinesestandard.net/Related.aspx/JJF1001-2011"
+    },
+    {
+      "id": "book",
+      "name": "本书自身栏目或标题的译法，无外部权威，待所有者确认",
+      "url": ""
     }
   ],
-  "terms": []
+  "terms": [
+    {
+      "source": "absolute zero",
+      "target": "绝对零度",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=b6ac3fb726ac11ee9441b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "acceleration",
+      "target": "加速度",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (acceleration) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "accuracy",
+      "target": "准确度",
+      "authority": "jjf1001",
+      "url": "https://www.termonline.cn/detail?id=b9d2ace726a711ee8babb068e6519520",
+      "concept": "accuracy",
+      "note": "JJF 1001 测量准确度; 精确度 is the superseded form and is not used termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "accuracy and precision",
+      "target": "准确度与精密度",
+      "authority": "book",
+      "url": "",
+      "concept": "accuracy-and-precision",
+      "note": ""
+    },
+    {
+      "source": "acidity",
+      "target": "酸性",
+      "authority": "termonline",
+      "url": "",
+      "note": "酸度 (化学名词) is the degree of acidity; the book names a chemical property, 酸性 termonline 2026-10-26: lists 酸度（兽医学名词）; 酸度（化学名词）; 酸度（大气科学名词）; 酸度（建筑学名词）; 酸度（生态学名词）; 酸度（电力名词）; 酸度（畜牧学名词）; 酸度（药学名词）; 酸度（计量学名词）; 酸度（食品科学技术名词）; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "alchemist",
+      "target": "炼金术士",
+      "authority": "book",
+      "url": "",
+      "note": ""
+    },
+    {
+      "source": "alchemy",
+      "target": "炼金术",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline lists 金丹术 (化学名词), the Chinese alchemy; 炼金术 is the usual word for the European alchemy the passage describes termonline 2026-10-26: lists 炼丹术（中医药学名词）; 金丹术（化学名词）; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "aluminum",
+      "target": "铝",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=23780c1826ab11eeaa62b068e6519520",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "amount of substance",
+      "target": "物质的量",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 物质的量; type label (amount)"
+    },
+    {
+      "source": "angle",
+      "target": "角",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (angle) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "anode",
+      "target": "阳极",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b3c182ea26a711eeb9a4b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "Answer",
+      "target": "答案",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "area",
+      "target": "面积",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=b9194ca826ac11ee9748b068e6519520",
+      "note": "type label (area) termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "atom",
+      "target": "原子",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b7a4ed5326a711ee80f9b068e6519520",
+      "concept": "atom",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "atoms and molecules",
+      "target": "原子与分子",
+      "authority": "book",
+      "url": "",
+      "concept": "atoms-and-molecules",
+      "note": ""
+    },
+    {
+      "source": "balance",
+      "target": "天平",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=d361380626ac11eebbccb068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "base unit",
+      "target": "基本单位",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=f0acbcd026b011ee96f9b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (计量学名词)."
+    },
+    {
+      "source": "battery",
+      "target": "电池",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b350bee226a711ee9d0eb068e6519520",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "boiling",
+      "target": "沸腾",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=8299da4a26ac11ee8331b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "boiling point",
+      "target": "沸点",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=8556199726ac11eea3e7b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "carrying significant figures through a calculation",
+      "target": "在计算中保留有效数字",
+      "authority": "book",
+      "url": "",
+      "concept": "significant-figures-in-calculations",
+      "note": ""
+    },
+    {
+      "source": "cathode",
+      "target": "阴极",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=af1a162726a711ee946db068e6519520",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "cell potential",
+      "target": "电池电势",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (potential) termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Celsius",
+      "target": "摄氏度",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "celsius",
+      "note": "GB 3100 unit name 摄氏度 termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage."
+    },
+    {
+      "source": "Celsius (°C)",
+      "target": "摄氏度（°C）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "celsius",
+      "note": ""
+    },
+    {
+      "source": "charge",
+      "target": "电荷",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (charge) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Check Your Learning",
+      "target": "学习检测",
+      "authority": "book",
+      "url": "",
+      "note": "exercise kind label (check-your-learning); no authority, owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "chemical change",
+      "target": "化学变化",
+      "authority": "termonline",
+      "url": "",
+      "concept": "chemical-change",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "chemical property",
+      "target": "化学性质",
+      "authority": "termonline",
+      "url": "",
+      "concept": "chemical-property",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "chemistry",
+      "target": "化学",
+      "authority": "termonline",
+      "url": "",
+      "concept": "chemistry",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Chemistry 2e",
+      "target": "化学（第2版）",
+      "authority": "book",
+      "url": "",
+      "note": "book title, the edition marker written the Chinese way; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "Chemistry End of Chapter Exercises",
+      "target": "化学章末习题",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label (exercises_lead); owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "Chemistry in Context",
+      "target": "化学的背景",
+      "authority": "book",
+      "url": "",
+      "note": "section 1.1 title; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "Chemistry in Everyday Life",
+      "target": "日常生活中的化学",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label (note eyebrow); owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "chlorine",
+      "target": "氯",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "classifying a change",
+      "target": "对变化进行分类",
+      "authority": "book",
+      "url": "",
+      "concept": "classify-physical-or-chemical",
+      "note": ""
+    },
+    {
+      "source": "classifying a sample of matter",
+      "target": "对物质样品进行分类",
+      "authority": "book",
+      "url": "",
+      "concept": "classification-of-matter",
+      "note": ""
+    },
+    {
+      "source": "colligative constant",
+      "target": "依数性常数",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (colligative constant); no entry for the constant itself, built on 依数性 colligative property termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "composition",
+      "target": "组成",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=b3d630dd26b411eea42db068e6519520",
+      "note": "termonline 2026-10-26: confirmed (地球物理学名词)."
+    },
+    {
+      "source": "Composition of Commercial Acids and Bases",
+      "target": "商品酸和碱的组成",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (acids-bases-commercial)",
+      "confirm": "owner"
+    },
+    {
+      "source": "compound",
+      "target": "化合物",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b970358226a711ee8ff7b068e6519520",
+      "concept": "compound",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "computing with mixed units",
+      "target": "含混合单位的计算",
+      "authority": "book",
+      "url": "",
+      "concept": "compute-with-units",
+      "note": ""
+    },
+    {
+      "source": "concentration",
+      "target": "浓度",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (concentration) termonline: not looked up; standard textbook usage",
+      "confirm": "termonline"
+    },
+    {
+      "source": "conversion factor",
+      "target": "换算因子",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c641155326a711ee9b18b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "converting between Celsius and Fahrenheit",
+      "target": "摄氏温度与华氏温度的换算",
+      "authority": "book",
+      "url": "",
+      "concept": "celsius-fahrenheit-conversion",
+      "note": ""
+    },
+    {
+      "source": "converting between Celsius and kelvin",
+      "target": "摄氏温度与开尔文温度的换算",
+      "authority": "book",
+      "url": "",
+      "concept": "celsius-kelvin-conversion",
+      "note": ""
+    },
+    {
+      "source": "converting units",
+      "target": "单位换算",
+      "authority": "book",
+      "url": "",
+      "concept": "convert-units",
+      "note": ""
+    },
+    {
+      "source": "copper",
+      "target": "铜",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=dd1c8d1426b111ee8031b068e6519520",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "counting significant figures",
+      "target": "有效数字的计数",
+      "authority": "book",
+      "url": "",
+      "concept": "count-significant-figures",
+      "note": ""
+    },
+    {
+      "source": "cubic centimeter",
+      "target": "立方厘米",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "cubic-centimeter",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage."
+    },
+    {
+      "source": "cubic centimeter (cm³ or cc)",
+      "target": "立方厘米（cm³ 或 cc）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "cubic-centimeter",
+      "note": "cc kept as printed"
+    },
+    {
+      "source": "cubic meter",
+      "target": "立方米",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "cubic-meter",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage."
+    },
+    {
+      "source": "cubic meter (m³)",
+      "target": "立方米（m³）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "cubic-meter",
+      "note": ""
+    },
+    {
+      "source": "decomposition",
+      "target": "分解",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c489bb4a26a711ee95acb068e6519520",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "degree Celsius",
+      "target": "摄氏度",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "celsius",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage."
+    },
+    {
+      "source": "degree Fahrenheit",
+      "target": "华氏度",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "fahrenheit",
+      "note": "not an SI unit; 华氏度 as in the textbooks termonline: not looked up in this pass"
+    },
+    {
+      "source": "density",
+      "target": "密度",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=7f297f6226ac11eeb7afb068e6519520",
+      "concept": "density",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "derived unit",
+      "target": "导出单位",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=ccb266a426ac11eebff6b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "derived units",
+      "target": "导出单位",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=ccb266a426ac11eebff6b068e6519520",
+      "concept": "derived-units",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "dimensional analysis",
+      "target": "量纲分析",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=dd88c74c26ac11eeabceb068e6519520",
+      "concept": "dimensional-analysis",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "dipole moment",
+      "target": "偶极矩",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=b4ab3f2f26ac11eebb68b068e6519520",
+      "note": "type label (dipole moment) termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "Discussion",
+      "target": "讨论",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label of a worked example; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "displacement",
+      "target": "排水",
+      "authority": "book",
+      "url": "",
+      "note": "'displacement of water' only; the physical quantity displacement is 位移"
+    },
+    {
+      "source": "domains of chemistry",
+      "target": "化学的领域",
+      "authority": "book",
+      "url": "",
+      "concept": "domains-of-chemistry",
+      "note": ""
+    },
+    {
+      "source": "electric current",
+      "target": "电流",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=e6325fc726ac11eeb5c1b068e6519520",
+      "note": "type label (current) termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "electrical conductivity",
+      "target": "导电性",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "electrolysis",
+      "target": "电解",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c42aec4726a711eeae73b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "electron",
+      "target": "电子",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=db4abf6226ac11eea539b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "element",
+      "target": "元素",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b969357026a711eeb882b068e6519520",
+      "concept": "element",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "elements and compounds",
+      "target": "元素与化合物",
+      "authority": "book",
+      "url": "",
+      "concept": "elements-and-compounds",
+      "note": ""
+    },
+    {
+      "source": "energy",
+      "target": "能量",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (energy) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "enthalpy",
+      "target": "焓",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=aa70612226a711eebb04b068e6519520",
+      "note": "type label (energy) termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "entropy",
+      "target": "熵",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (entropy) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "equilibrium constant",
+      "target": "平衡常数",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (equilibrium constant) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Essential Ideas",
+      "target": "基本概念",
+      "authority": "book",
+      "url": "",
+      "note": "chapter 1 title; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "every measurement carries an uncertainty",
+      "target": "每个测量都带有不确定度",
+      "authority": "book",
+      "url": "",
+      "concept": "measurement-uncertainty",
+      "note": ""
+    },
+    {
+      "source": "exact and uncertain numbers",
+      "target": "精确数与不确定数",
+      "authority": "book",
+      "url": "",
+      "concept": "exact-and-uncertain-numbers",
+      "note": ""
+    },
+    {
+      "source": "exact number",
+      "target": "精确数",
+      "authority": "termonline",
+      "url": "",
+      "concept": "exact-number",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Example",
+      "target": "例",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label (Example 1.1 ·); owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "Exercise",
+      "target": "习题",
+      "authority": "book",
+      "url": "",
+      "note": "exercise kind label; no authority, owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "experiment",
+      "target": "实验",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "extensive and intensive properties",
+      "target": "广度性质与强度性质",
+      "authority": "book",
+      "url": "",
+      "concept": "extensive-and-intensive-properties",
+      "note": ""
+    },
+    {
+      "source": "extensive property",
+      "target": "广度性质",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=a242718426a711ee83c4b068e6519520",
+      "concept": "extensive-property",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "factor-label method",
+      "target": "因子标记法",
+      "authority": "termonline",
+      "url": "",
+      "concept": "dimensional-analysis",
+      "note": "factor-label method termonline: not looked up; standard textbook usage",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Fahrenheit",
+      "target": "华氏度",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "fahrenheit",
+      "note": ""
+    },
+    {
+      "source": "Fahrenheit (°F)",
+      "target": "华氏度（°F）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "fahrenheit",
+      "note": ""
+    },
+    {
+      "source": "fermentation",
+      "target": "发酵",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Figure",
+      "target": "图",
+      "authority": "book",
+      "url": "",
+      "note": "chrome and citations: 图 1.3 in prose; the figure eyebrow stays as written (translate.md 4.6); owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "flammability",
+      "target": "可燃性",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "force",
+      "target": "力",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (force) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Formation Constants for Complex Ions",
+      "target": "配离子的形成常数",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (kf)",
+      "confirm": "owner"
+    },
+    {
+      "source": "free energy",
+      "target": "自由能",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=7f349b9726ac11eeb29eb068e6519520",
+      "note": "type label (energy) termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "freezing",
+      "target": "凝固",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "freezing point",
+      "target": "凝固点",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "frequency",
+      "target": "频率",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (frequency) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Fundamental Physical Constants",
+      "target": "基本物理常量",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (constants)",
+      "confirm": "owner"
+    },
+    {
+      "source": "gas",
+      "target": "气体",
+      "authority": "termonline",
+      "url": "",
+      "concept": "gas",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Glossary",
+      "target": "术语表",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "gold",
+      "target": "金",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "graduated cylinder",
+      "target": "量筒",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Half-Lives for Several Radioactive Isotopes",
+      "target": "若干放射性同位素的半衰期",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (half-lives)",
+      "confirm": "owner"
+    },
+    {
+      "source": "hardness",
+      "target": "硬度",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "heat capacity",
+      "target": "热容",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (heat capacity) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "heterogeneous mixture",
+      "target": "非均匀混合物",
+      "authority": "termonline",
+      "url": "",
+      "concept": "heterogeneous-mixture",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "homogeneous and heterogeneous mixtures",
+      "target": "均匀混合物与非均匀混合物",
+      "authority": "book",
+      "url": "",
+      "concept": "mixtures",
+      "note": ""
+    },
+    {
+      "source": "homogeneous mixture",
+      "target": "均匀混合物",
+      "authority": "termonline",
+      "url": "",
+      "concept": "homogeneous-mixture",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "How Sciences Interrelate",
+      "target": "各门科学如何相互联系",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label (the book's 'How Sciences Interconnect' in the book RULES is the same box); owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "hydrogen",
+      "target": "氢",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "hydrogen ion",
+      "target": "氢离子",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "hypothesis",
+      "target": "假说",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=8c53fbf526ac11eebff1b068e6519520",
+      "concept": "hypothesis",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "intensive property",
+      "target": "强度性质",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=afb4dc0b26a711eeb6e4b068e6519520",
+      "concept": "intensive-property",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "international system of units",
+      "target": "国际单位制",
+      "authority": "gb3100",
+      "url": "",
+      "note": "termonline: not looked up in this pass"
+    },
+    {
+      "source": "Introduction",
+      "target": "引言",
+      "authority": "book",
+      "url": "",
+      "note": "page title of ch01/intro; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "ion",
+      "target": "离子",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Ionization Constants of Weak Acids",
+      "target": "弱酸的电离常数",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (ka)",
+      "confirm": "owner"
+    },
+    {
+      "source": "Ionization Constants of Weak Bases",
+      "target": "弱碱的电离常数",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (kb)",
+      "confirm": "owner"
+    },
+    {
+      "source": "iron",
+      "target": "铁",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "kelvin",
+      "target": "开尔文",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=dd232fc226b011eebaa9b068e6519520",
+      "concept": "kelvin",
+      "note": "termonline 2026-10-26: confirmed (计量学名词)."
+    },
+    {
+      "source": "kelvin (K)",
+      "target": "开尔文（K）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "kelvin",
+      "note": ""
+    },
+    {
+      "source": "Key Concepts and Summary",
+      "target": "关键概念与小结",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "Key Equations",
+      "target": "关键方程式",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "kilogram",
+      "target": "千克",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=ea0588c826b011ee8317b068e6519520",
+      "concept": "kilogram",
+      "note": "termonline 2026-10-26: confirmed (计量学名词)."
+    },
+    {
+      "source": "kilogram (kg)",
+      "target": "千克（kg）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "kilogram",
+      "note": ""
+    },
+    {
+      "source": "law",
+      "target": "定律",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=d65d2acc26ac11ee847eb068e6519520",
+      "concept": "scientific-law",
+      "note": "scientific law termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "law of conservation of matter",
+      "target": "物质守恒定律",
+      "authority": "termonline",
+      "url": "",
+      "concept": "conservation-of-matter",
+      "note": "termonline lists 质量守恒 (conservation of mass); the usual textbook name is 质量守恒定律. The book states the law for matter, so the one-to-one rendering of matter 物质 is kept; owner to confirm termonline 2026-10-26: lists 质量守恒（力学名词）; 质量守恒（大气科学名词）; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "lead",
+      "target": "铅",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "lead-acid battery",
+      "target": "铅酸电池",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Learning Objectives",
+      "target": "学习目标",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "length",
+      "target": "长度",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=e2386f9426ac11eeb5aab068e6519520",
+      "concept": "length",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "linear versus proportional scales",
+      "target": "线性标度与正比标度",
+      "authority": "book",
+      "url": "",
+      "concept": "linear-versus-proportional-scales",
+      "note": ""
+    },
+    {
+      "source": "Link to Learning",
+      "target": "学习链接",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label (dropped from the pages, named in section notes); owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "liquid",
+      "target": "液体",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=8090095326ac11eea836b068e6519520",
+      "concept": "liquid",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "liter",
+      "target": "升",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "liter",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage."
+    },
+    {
+      "source": "liter (L)",
+      "target": "升（L）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "liter",
+      "note": ""
+    },
+    {
+      "source": "macroscopic domain",
+      "target": "宏观领域",
+      "authority": "termonline",
+      "url": "",
+      "concept": "macroscopic-domain",
+      "note": "domain 领域 is the book's word for the three ways of describing matter termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "mass",
+      "target": "质量",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=c8d2a32f26ac11eebafdb068e6519520",
+      "concept": "mass",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "mass versus weight",
+      "target": "质量与重量",
+      "authority": "book",
+      "url": "",
+      "concept": "mass-versus-weight",
+      "note": ""
+    },
+    {
+      "source": "Mathematical Treatment of Measurement Results",
+      "target": "测量结果的数学处理",
+      "authority": "book",
+      "url": "",
+      "note": "section 1.6 title",
+      "confirm": "owner"
+    },
+    {
+      "source": "matter",
+      "target": "物质",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=b74be3f726ac11ee890eb068e6519520",
+      "concept": "matter",
+      "note": "Collides with substance (also 物质 in the authority); the book distinguishes them rarely, and where it does 'pure substance' takes 纯净物 termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "measurement",
+      "target": "测量",
+      "authority": "jjf1001",
+      "url": "https://www.termonline.cn/detail?id=d9e9fe0126ac11eeacf6b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "Measurement Uncertainty, Accuracy, and Precision",
+      "target": "测量不确定度、准确度和精密度",
+      "authority": "book",
+      "url": "",
+      "note": "section 1.5 title",
+      "confirm": "owner"
+    },
+    {
+      "source": "Measurements",
+      "target": "测量",
+      "authority": "book",
+      "url": "",
+      "note": "section 1.4 title",
+      "confirm": "owner"
+    },
+    {
+      "source": "measuring volume by displacement",
+      "target": "用排水法测量体积",
+      "authority": "book",
+      "url": "",
+      "concept": "measure-volume-by-displacement",
+      "note": ""
+    },
+    {
+      "source": "melting",
+      "target": "熔化",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "melting point",
+      "target": "熔点",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "mercury",
+      "target": "汞",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "mercury(II) oxide",
+      "target": "氧化汞(II)",
+      "authority": "book",
+      "url": "",
+      "note": "compound name kept in the book's Stock form"
+    },
+    {
+      "source": "metal",
+      "target": "金属",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "metalloid",
+      "target": "半金属",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=c921ca8e26a711ee8527b068e6519520",
+      "note": "化学名词 lists 半金属; 物理学名词 lists 类金属, and textbooks also write 准金属. The chemistry authority is followed termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "meter",
+      "target": "米",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=df16709626b011ee9a89b068e6519520",
+      "concept": "meter",
+      "note": "termonline 2026-10-26: confirmed (计量学名词)."
+    },
+    {
+      "source": "meter (m)",
+      "target": "米（m）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "meter",
+      "note": ""
+    },
+    {
+      "source": "meter stick",
+      "target": "米尺",
+      "authority": "book",
+      "url": "",
+      "note": ""
+    },
+    {
+      "source": "microscopic domain",
+      "target": "微观领域",
+      "authority": "termonline",
+      "url": "",
+      "concept": "microscopic-domain",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "milliliter",
+      "target": "毫升",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "milliliter",
+      "note": "termonline: not looked up in this pass"
+    },
+    {
+      "source": "milliliter (mL)",
+      "target": "毫升（mL）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "milliliter",
+      "note": ""
+    },
+    {
+      "source": "mixture",
+      "target": "混合物",
+      "authority": "termonline",
+      "url": "",
+      "concept": "mixture",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "molecule",
+      "target": "分子",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=a919f8e926a711eebda8b068e6519520",
+      "concept": "molecule",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "momentum",
+      "target": "动量",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (momentum) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "none",
+      "target": "无",
+      "authority": "book",
+      "url": "",
+      "note": "dimension of the equilibrium constant type (no unit)"
+    },
+    {
+      "source": "nonmetal",
+      "target": "非金属",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "observation",
+      "target": "观察",
+      "authority": "book",
+      "url": "",
+      "note": ""
+    },
+    {
+      "source": "oxygen",
+      "target": "氧",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "parts of a measurement",
+      "target": "测量的组成部分",
+      "authority": "book",
+      "url": "",
+      "concept": "measurement-parts",
+      "note": ""
+    },
+    {
+      "source": "periodic table",
+      "target": "元素周期表",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "pH",
+      "target": "pH",
+      "authority": "book",
+      "url": "",
+      "note": "type label (concentration, pH); kept as printed"
+    },
+    {
+      "source": "phase",
+      "target": "相",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Phases and Classification of Matter",
+      "target": "物质的相与分类",
+      "authority": "book",
+      "url": "",
+      "note": "section 1.2 title; phase 相 is the authority's term, while the text speaks of states 状态; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "physical and chemical change",
+      "target": "物理变化与化学变化",
+      "authority": "book",
+      "url": "",
+      "concept": "physical-and-chemical-change",
+      "note": ""
+    },
+    {
+      "source": "Physical and Chemical Properties",
+      "target": "物理性质和化学性质",
+      "authority": "book",
+      "url": "",
+      "note": "section 1.3 title",
+      "confirm": "owner"
+    },
+    {
+      "source": "physical change",
+      "target": "物理变化",
+      "authority": "termonline",
+      "url": "",
+      "concept": "physical-change",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "physical property",
+      "target": "物理性质",
+      "authority": "termonline",
+      "url": "",
+      "concept": "physical-property",
+      "note": "termonline 2026-10-26: lists 物性（化学工程名词（十）化工系统工程与化工信息化）; 矿物物性（地质学名词）; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "plasma",
+      "target": "等离子体",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=a829a26926a711ee999db068e6519520",
+      "concept": "plasma",
+      "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "Portrait of a Chemist",
+      "target": "化学家小传",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "precision",
+      "target": "精密度",
+      "authority": "jjf1001",
+      "url": "https://www.termonline.cn/detail?id=bd1c142926a711eeb643b068e6519520",
+      "concept": "precision",
+      "note": "JJF 1001 测量精密度 termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "prefix",
+      "target": "词头",
+      "authority": "gb3100",
+      "url": "",
+      "note": "SI prefix 词头 (GB 3100)"
+    },
+    {
+      "source": "pressure",
+      "target": "压强",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=a2a3c20126ac11eea271b068e6519520",
+      "note": "type label (pressure). 物理学名词 lists both 压强 and 压力; 压强 is the form the sibling physics book uses and is kept for the one term; chemistry textbooks often write 压力, which the owner may prefer termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "property",
+      "target": "性质",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline 2026-10-26: lists 属性（自然辩证法名词）; 物业（建筑学名词）; 物业（管理科学技术名词）; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "proton",
+      "target": "质子",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "pure substance",
+      "target": "纯净物",
+      "authority": "termonline",
+      "url": "",
+      "concept": "pure-substance",
+      "note": "termonline lists 纯物质 only in the electric-power vocabulary; 纯净物 is the chemistry textbook term termonline 2026-10-26: lists 纯物质（电力名词）; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "quantity",
+      "target": "量",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=ee5574c126b011eea986b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (计量学名词)."
+    },
+    {
+      "source": "radiation dose",
+      "target": "辐射剂量",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (dose) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "rate constant",
+      "target": "速率常数",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (rate constant) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "reaction rate",
+      "target": "反应速率",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (rate) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "reactivity",
+      "target": "反应性",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "rounding",
+      "target": "修约",
+      "authority": "termonline",
+      "url": "",
+      "concept": "rounding",
+      "note": "数值修约 (GB/T 8170); termonline lists only 舍入 (电子学名词) for rounding, not the standard 修约; 'round' as a verb is 修约 termonline 2026-10-26: lists 倒圆角（机械工程名词 第二分册）; 扒圆（编辑与出版学名词）; 滚圆（食品科学技术名词）; 磨圆（电子学名词）; 舍入（电子学名词）; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "rounding to a given number of digits",
+      "target": "修约到指定位数",
+      "authority": "book",
+      "url": "",
+      "concept": "rounding-rules",
+      "note": ""
+    },
+    {
+      "source": "rust",
+      "target": "生锈",
+      "authority": "book",
+      "url": "",
+      "note": ""
+    },
+    {
+      "source": "scale",
+      "target": "标度",
+      "authority": "book",
+      "url": "",
+      "note": "scale of a thermometer or a unit system; temperature scale is 温标"
+    },
+    {
+      "source": "scientific method",
+      "target": "科学方法",
+      "authority": "termonline",
+      "url": "https://www.termonline.cn/detail?id=97b3dce20e0e11f080660242ac110003",
+      "concept": "scientific-method",
+      "note": "termonline 2026-10-26: confirmed (自然辩证法名词)."
+    },
+    {
+      "source": "scientific notation",
+      "target": "科学记数法",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "second",
+      "target": "秒",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=deaea70a26b011ee9387b068e6519520",
+      "concept": "second",
+      "note": "time unit; the ordinal second is 第二 termonline 2026-10-26: confirmed (计量学名词)."
+    },
+    {
+      "source": "second (s)",
+      "target": "秒（s）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "second",
+      "note": ""
+    },
+    {
+      "source": "SI base units",
+      "target": "SI基本单位",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "si-base-units",
+      "note": "termonline 2026-10-26: lists 基本单位（电力名词）; 基本单位（电气工程名词）; 基本单位（计量学名词）; target taken from standard textbook usage."
+    },
+    {
+      "source": "SI units",
+      "target": "SI单位",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=fb93c77426ad11eea9b4b068e6519520",
+      "concept": "si-units",
+      "note": "termonline 2026-10-26: confirmed (电气工程名词)."
+    },
+    {
+      "source": "SI units (International System of Units)",
+      "target": "SI单位（国际单位制）",
+      "authority": "gb3100",
+      "url": "",
+      "concept": "si-units",
+      "note": "International System of Units 国际单位制"
+    },
+    {
+      "source": "significant digits",
+      "target": "有效数字",
+      "authority": "termonline",
+      "url": "",
+      "concept": "significant-figures",
+      "note": "same term as significant figures termonline: not looked up; standard textbook usage",
+      "confirm": "termonline"
+    },
+    {
+      "source": "significant figures",
+      "target": "有效数字",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=a50fb3e526a711eeacbcb068e6519520",
+      "concept": "significant-figures",
+      "note": "also 'significant digits' termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "silver",
+      "target": "银",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "Sim",
+      "target": "模拟",
+      "authority": "book",
+      "url": "",
+      "note": "sim eyebrow (kept as written by the checker); owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "Simulation Exercise",
+      "target": "模拟习题",
+      "authority": "book",
+      "url": "",
+      "note": "exercise kind label (simulation-exercise); no authority, owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "sodium",
+      "target": "钠",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "sodium chloride",
+      "target": "氯化钠",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "solid",
+      "target": "固体",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=bc3866c626ac11ee9c69b068e6519520",
+      "concept": "solid",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "Solubility Products",
+      "target": "溶度积",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (ksp)",
+      "confirm": "owner"
+    },
+    {
+      "source": "Solution",
+      "target": "解",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label of a worked example (the answer part); distinct from the chemical solution 溶液; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "solution",
+      "target": "溶液",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=bb139eae26a711ee9a6db068e6519520",
+      "note": "a homogeneous mixture; the same word as the solution of Chapters 3 and 11 termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "speed",
+      "target": "速率",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (velocity) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Standard Electrode (Half-Cell) Potentials",
+      "target": "标准电极（半电池）电势",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (potentials)",
+      "confirm": "owner"
+    },
+    {
+      "source": "Standard Thermodynamic Properties for Selected Substances",
+      "target": "部分物质的标准热力学性质",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (thermo)",
+      "confirm": "owner"
+    },
+    {
+      "source": "states of matter",
+      "target": "物态",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=bf928e1e26ac11ee9549b068e6519520",
+      "concept": "states-of-matter",
+      "note": "物态 (物理学名词); also written 物质状态 in textbooks, not used. termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "Strategy",
+      "target": "思路",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label of a worked example; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "substance",
+      "target": "物质",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=b74be3f726ac11ee890eb068e6519520",
+      "note": "Same character as matter; where the book says 'pure substance' or 'chemical substance' the qualified forms 纯净物 / 化学物质 carry the difference termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "Summary",
+      "target": "小结",
+      "authority": "book",
+      "url": "",
+      "note": "apparatus label (summary_html); owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "surface tension",
+      "target": "表面张力",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (surface tension) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "symbolic domain",
+      "target": "符号领域",
+      "authority": "book",
+      "url": "",
+      "concept": "symbolic-domain",
+      "note": "符号 symbol; 领域 as for the macroscopic and microscopic domains"
+    },
+    {
+      "source": "Table",
+      "target": "表",
+      "authority": "book",
+      "url": "",
+      "note": "table eyebrow and citations: 表 1.1; owner to confirm",
+      "confirm": "owner"
+    },
+    {
+      "source": "telling a hypothesis, law and theory apart",
+      "target": "区分假说、定律和理论",
+      "authority": "book",
+      "url": "",
+      "concept": "hypothesis-law-theory",
+      "note": ""
+    },
+    {
+      "source": "temperature",
+      "target": "温度",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=7b62637c26ac11ee88d7b068e6519520",
+      "concept": "temperature",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "temperature scale",
+      "target": "温标",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=ade635f826ac11ee8db4b068e6519520",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "temperature scales",
+      "target": "温标",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=ade635f826ac11ee8db4b068e6519520",
+      "concept": "temperature-scales",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "The Elements",
+      "target": "元素",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (elements)",
+      "confirm": "owner"
+    },
+    {
+      "source": "theory",
+      "target": "理论",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=fa18c61126ac11eeb9aab068e6519520",
+      "concept": "scientific-theory",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "time",
+      "target": "时间",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=728169f626ac11ee8d79b068e6519520",
+      "concept": "time",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "tolerance",
+      "target": "容差",
+      "authority": "book",
+      "url": "",
+      "note": ""
+    },
+    {
+      "source": "toxicity",
+      "target": "毒性",
+      "authority": "termonline",
+      "url": "",
+      "note": "termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "uncertainty",
+      "target": "不确定度",
+      "authority": "jjf1001",
+      "url": "",
+      "concept": "uncertainty",
+      "note": "JJF 1001 测量不确定度 termonline: not looked up in this pass"
+    },
+    {
+      "source": "unit",
+      "target": "单位",
+      "authority": "gb3100",
+      "url": "https://www.termonline.cn/detail?id=e170ed5826ac11ee995eb068e6519520",
+      "concept": "unit",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "unit conversion factor",
+      "target": "单位换算因子",
+      "authority": "termonline",
+      "url": "",
+      "concept": "unit-conversion-factor",
+      "note": "化学名词 lists 换算因子 for conversion factor; GB 3102 writes 换算因数, the variant not used termonline 2026-10-26: lists 变流因数（电气工程名词）; 换算因子（化学名词）; 转换因子（管理科学技术名词）; 转换系数（林学名词）; target taken from standard textbook usage.",
+      "confirm": "termonline"
+    },
+    {
+      "source": "Units and Conversion Factors",
+      "target": "单位与换算因子",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (units)",
+      "confirm": "owner"
+    },
+    {
+      "source": "using the SI prefixes",
+      "target": "使用SI词头",
+      "authority": "book",
+      "url": "",
+      "concept": "unit-prefixes",
+      "note": ""
+    },
+    {
+      "source": "velocity",
+      "target": "速度",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (velocity) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "volume",
+      "target": "体积",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=d16e38d726ac11eeb3e6b068e6519520",
+      "concept": "volume",
+      "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "volume and its units",
+      "target": "体积及其单位",
+      "authority": "book",
+      "url": "",
+      "note": ""
+    },
+    {
+      "source": "water",
+      "target": "水",
+      "authority": "book",
+      "url": "",
+      "note": ""
+    },
+    {
+      "source": "Water Properties",
+      "target": "水的性质",
+      "authority": "book",
+      "url": "",
+      "note": "sheet title (water)",
+      "confirm": "owner"
+    },
+    {
+      "source": "wavefunction",
+      "target": "波函数",
+      "authority": "cnterm-chemistry",
+      "url": "https://www.termonline.cn/detail?id=b72ae20326a711eea80fb068e6519520",
+      "note": "type label (wavefunction) termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "wavelength",
+      "target": "波长",
+      "authority": "termonline",
+      "url": "",
+      "note": "type label (wavelength) termonline: not looked up in this pass",
+      "confirm": "termonline"
+    },
+    {
+      "source": "weight",
+      "target": "重量",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=a51b00aa26ac11eebe9bb068e6519520",
+      "concept": "weight",
+      "note": "The force of gravity on a body, as the book defines it; 物理学名词 lists 重量, and 重力 is gravity, which the same sentence names. (The sibling physics book renders the physical quantity weight as 重力; this book follows the authority entry 重量 and the chemistry textbooks.) termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "writing a measurement in scientific notation",
+      "target": "用科学记数法表示测量值",
+      "authority": "book",
+      "url": "",
+      "concept": "scientific-notation",
+      "note": ""
+    }
+  ]
 }

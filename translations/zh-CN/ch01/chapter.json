@@ -1,7 +1,7 @@
 {
  "id": "1",
  "dir": "ch01",
- "title": "Essential Ideas",
+ "title": "基本概念",
  "intro": {
   "module": "m68663",
   "slug": "1-introduction"
@@ -10,37 +10,37 @@
   {
    "id": "1.1",
    "module": "m68664",
-   "title": "Chemistry in Context",
+   "title": "化学的背景",
    "slug": "1-1-chemistry-in-context"
   },
   {
    "id": "1.2",
    "module": "m68667",
-   "title": "Phases and Classification of Matter",
+   "title": "物质的相与分类",
    "slug": "1-2-phases-and-classification-of-matter"
   },
   {
    "id": "1.3",
    "module": "m68670",
-   "title": "Physical and Chemical Properties",
+   "title": "物理性质和化学性质",
    "slug": "1-3-physical-and-chemical-properties"
   },
   {
    "id": "1.4",
    "module": "m68674",
-   "title": "Measurements",
+   "title": "测量",
    "slug": "1-4-measurements"
   },
   {
    "id": "1.5",
    "module": "m68690",
-   "title": "Measurement Uncertainty, Accuracy, and Precision",
+   "title": "测量不确定度、准确度和精密度",
    "slug": "1-5-measurement-uncertainty-accuracy-and-precision"
   },
   {
    "id": "1.6",
    "module": "m68683",
-   "title": "Mathematical Treatment of Measurement Results",
+   "title": "测量结果的数学处理",
    "slug": "1-6-mathematical-treatment-of-measurement-results"
   }
  ],
@@ -48,7 +48,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of a sample, the measure of the amount of matter in it",
+   "meaning": "样品的质量，即其中所含物质的量的度量",
    "unit": "g",
    "section": "1.4",
    "anchor": "1.4-density"
@@ -56,7 +56,7 @@
   {
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of a sample, the amount of space it occupies",
+   "meaning": "样品的体积，即它所占据的空间的大小",
    "unit": "cm³",
    "section": "1.4",
    "anchor": "1.4-volume"
@@ -64,7 +64,7 @@
   {
    "sym": "d",
    "concept": "density",
-   "meaning": "the density of a substance, the ratio of the mass of a sample to its volume",
+   "meaning": "物质的密度，即样品的质量与其体积之比",
    "unit": "g/cm³ (g/mL for liquids and solids, g/L for gases)",
    "section": "1.4",
    "anchor": "1.4-density"
@@ -72,7 +72,7 @@
   {
    "sym": "t",
    "concept": "time",
-   "meaning": "an interval of time, measured in the SI base unit of time",
+   "meaning": "时间间隔，用时间的SI基本单位度量",
    "unit": "s",
    "section": "1.4",
    "anchor": "1.4-time"
@@ -80,7 +80,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "the temperature of a sample, measured in the SI base unit of temperature",
+   "meaning": "样品的温度，用温度的SI基本单位度量",
    "unit": "K",
    "section": "1.4",
    "anchor": "1.4-temperature"
@@ -88,7 +88,7 @@
   {
    "sym": "T_C",
    "concept": "temperature",
-   "meaning": "a temperature read on the Celsius scale, on which water freezes at 0 °C and boils at 100 °C",
+   "meaning": "在摄氏温标上读出的温度，在该温标上水在 0 °C 结冰，在 100 °C 沸腾",
    "unit": "°C",
    "section": "1.6",
    "anchor": "1.6-linear-not-proportional"
@@ -96,7 +96,7 @@
   {
    "sym": "T_F",
    "concept": "temperature",
-   "meaning": "a temperature read on the Fahrenheit scale, on which water freezes at 32 °F and boils at 212 °F",
+   "meaning": "在华氏温标上读出的温度，在该温标上水在 32 °F 结冰，在 212 °F 沸腾",
    "unit": "°F",
    "section": "1.6",
    "anchor": "1.6-linear-not-proportional"
@@ -104,7 +104,7 @@
   {
    "sym": "T_K",
    "concept": "temperature",
-   "meaning": "a temperature read on the kelvin scale, an absolute scale whose zero is the lowest temperature that can theoretically be achieved",
+   "meaning": "在开尔文温标上读出的温度，开尔文温标是绝对温标，其零点是理论上可达到的最低温度",
    "unit": "K",
    "section": "1.6",
    "anchor": "1.6-kelvin-scale"
@@ -113,7 +113,7 @@
    "sym": "v_iron",
    "concept": "volume",
    "ref": "iron-block",
-   "meaning": "the volume of the iron block of Example 1.2, read as the rise of the water it displaces",
+   "meaning": "例 1.2 中铁块的体积，以其排开的水面升高的量读出",
    "unit": "mL",
    "section": "1.4",
    "anchor": "1.4-ex-displacement"
@@ -121,7 +121,7 @@
   {
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of the bathtub of Example 1.6, its length times its width times its depth",
+   "meaning": "例 1.6 中浴缸的体积，即其长度乘以宽度再乘以深度",
    "unit": "dm³",
    "section": "1.5",
    "anchor": "1.5-ex-bathtub"
@@ -129,7 +129,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "a temperature, whichever scale it is read on",
+   "meaning": "一个温度，无论在哪种温标上读出",
    "unit": "°C, °F or K",
    "section": "1.6",
    "anchor": "1.6-linear-not-proportional"
@@ -137,7 +137,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of an object, whose weight is its mass times the acceleration of gravity",
+   "meaning": "物体的质量，其重量等于质量乘以重力加速度",
    "unit": "g",
    "section": "1.6",
    "anchor": "1.6-conversion-factors"

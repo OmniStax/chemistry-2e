@@ -1,0 +1,95 @@
+{
+ "terms": [
+  {
+   "source": "acid",
+   "target": "酸",
+   "authority": "化学名词",
+   "note": "concept id acid, used in 'nitric acid'; 硝酸 in compound names",
+   "section": "1.3"
+  },
+  {
+   "source": "heat",
+   "target": "热",
+   "authority": "物理学名词",
+   "note": "concept heat-flow; 热 for the quantity in prose (热量 is also in use); confirm",
+   "section": "1.3"
+  },
+  {
+   "source": "color",
+   "target": "颜色",
+   "authority": "通用词",
+   "note": "everyday word, no standard-term issue",
+   "section": "1.3"
+  },
+  {
+   "source": "flash point",
+   "target": "闪点",
+   "authority": "化学名词",
+   "note": "confirm on termonline",
+   "section": "1.3"
+  },
+  {
+   "source": "oxidizer",
+   "target": "氧化剂",
+   "authority": "化学名词",
+   "note": "",
+   "section": "1.3"
+  },
+  {
+   "source": "corrosive",
+   "target": "腐蚀性",
+   "authority": "化学名词",
+   "note": "adjective used as a hazard class; confirm",
+   "section": "1.3"
+  },
+  {
+   "source": "alkaline",
+   "target": "碱性",
+   "authority": "化学名词",
+   "note": "",
+   "section": "1.3"
+  },
+  {
+   "source": "combustion",
+   "target": "燃烧",
+   "authority": "化学名词",
+   "note": "book glosses it as 'burning'; 燃烧 for both",
+   "section": "1.3"
+  },
+  {
+   "source": "condensation",
+   "target": "凝结",
+   "authority": "物理学名词",
+   "note": "steam condensing; 冷凝 is the apparatus sense; confirm",
+   "section": "1.3"
+  },
+  {
+   "source": "detonation",
+   "target": "爆炸",
+   "authority": "化学名词",
+   "note": "book words 'detonate/detonation'; 爆轰 is the narrow technical term, 爆炸 chosen for readability; confirm",
+   "section": "1.3"
+  },
+  {
+   "source": "magnetizing",
+   "target": "磁化",
+   "authority": "物理学名词",
+   "note": "",
+   "section": "1.3"
+  },
+  {
+   "source": "hazard diamond",
+   "target": "危险性菱形标志",
+   "authority": "book",
+   "note": "the book's own label for the NFPA 704 sign; no authority; for the owner",
+   "section": "1.3"
+  },
+  {
+   "source": "NFPA",
+   "target": "美国消防协会（NFPA）",
+   "authority": "book",
+   "note": "National Fire Protection Agency, rendered as the 美国消防协会 usually given to the association",
+   "section": "1.3"
+  }
+ ]
+}

@@ -2,15 +2,15 @@
  "id": "1.3",
  "module": "m68670",
  "chapter": "1",
- "title": "Physical and Chemical Properties",
- "short": "Physical and chemical properties",
- "lead": "Every substance has properties that tell it apart, some observed without changing it and others only as it turns into something new. These properties, and the changes matter undergoes, are sorted as physical or chemical and as extensive or intensive, and the periodic table groups the elements by them.",
+ "title": "物理性质和化学性质",
+ "short": "物理性质和化学性质",
+ "lead": "每种物质都有区别于其他物质的性质，有些性质无需改变物质即可观察到，另一些则只有在物质变成新的物质时才能观察到。这些性质以及物质所经历的变化，分为物理的和化学的，也分为广度的和强度的；元素周期表则按这些性质对元素分组。",
  "objectives": [
-  "Identify properties of and changes in matter as physical or chemical",
-  "Identify properties of matter as extensive or intensive"
+  "能把物质的性质和变化判别为物理的或化学的",
+  "能把物质的性质判别为广度性质或强度性质"
  ],
- "summary_html": "<p>All substances have distinct physical and chemical properties, and may undergo physical or chemical changes. Physical properties, such as hardness and boiling point, and physical changes, such as melting or freezing, do not involve a change in the composition of matter. Chemical properties, such flammability and acidity, and chemical changes, such as rusting, involve production of matter that differs from that present beforehand.</p><p>Measurable properties fall into one of two categories. Extensive properties depend on the amount of matter present, for example, the <span data-concept=\"mass\">mass</span> of gold. Intensive properties do not depend on the amount of matter present, for example, the <span data-concept=\"density\">density</span> of gold. <span data-concept=\"heat-flow\">Heat</span> is an example of an extensive property, and <span data-concept=\"temperature\">temperature</span> is an example of an intensive property.</p>",
- "notes": "The periodic table of Figure 1.22 is kept as the book’s own image, and an interactive table the reader can consult beside every page waits until the app can serve one.",
+ "summary_html": "<p>所有物质都有各自不同的物理性质和化学性质，并可能发生物理变化或化学变化。物理性质（如硬度和沸点）和物理变化（如熔化或凝固）不涉及物质组成的改变。化学性质（如可燃性和酸性）和化学变化（如生锈）则涉及生成与先前存在的物质不同的物质。</p><p>可测量的性质分为两类。广度性质取决于所存在物质的量，例如金的<span data-concept=\"mass\">质量</span>。强度性质不取决于所存在物质的量，例如金的<span data-concept=\"density\">密度</span>。<span data-concept=\"heat-flow\">热</span>是广度性质的一个例子，<span data-concept=\"temperature\">温度</span>是强度性质的一个例子。</p>",
+ "notes": "图 1.22 的元素周期表保留为本书自己的图像；可在每一页旁随时查阅的交互式周期表，要等应用能够提供时再做。",
  "ai": {
   "text": [
    {
@@ -23,6 +23,10 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
@@ -33,12 +37,16 @@
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-12",
- "exercises_lead": "Chemistry End of Chapter Exercises",
- "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key, which covers the second, fourth, sixth and eighth items of the section’s list; the other four are conceptual questions with no keyed answer and are kept with an AI-written suggested approach, marked as such, since no answer is computed. Nothing is left out and nothing is held for or taken from another section.",
+ "built": "2026-10-26",
+ "exercises_lead": "化学章末习题",
+ "exercise_notes": "布卢姆层级、概念标签和权重由AI生成。答案取自本书的参考答案，其涵盖本节习题列表中的第二、第四、第六和第八题；其余四题是没有答案的概念题，保留并附有AI撰写的建议思路，并已如此标明，因为没有计算出答案。没有删去任何习题，也没有为其他小节保留或取自其他小节的习题。",
  "figures": [
   { "id": "fig-physical-change", "kind": "photo", "number": "1.18", "draws": [] },
   { "id": "fig-rust", "kind": "photo", "number": "1.19", "draws": [] },
@@ -62,6 +70,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "readout note cut to the one fact the caption lacks"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -70,7 +83,7 @@
    "kind": "figure",
    "number": "1.21",
    "originals": ["/media/ch01/CNX_Chem_01_03_HazDiamond.jpg"],
-   "original_caption": "The National Fire Protection Agency (NFPA) hazard diamond summarizes the major hazards of a chemical substance.",
+   "original_caption": "美国消防协会（NFPA）的危险性菱形标志概括了化学物质的主要危险。",
    "draws": [],
    "facts": [
     "#ff0000",
@@ -94,6 +107,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "layout cleared of collisions, blue for contrast, readout dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -121,11 +139,11 @@
    "bloom": "Understand",
    "place": { "at": "end" },
    "cite": "chemical",
-   "prompt": "Classify the six underlined properties in the following paragraph as chemical or physical: Fluorine is a pale yellow <u>gas</u> that <u>reacts with most substances</u>. The free element <u>melts at −220 °C</u> and <u>boils at −188 °C</u>. Finely divided <u>metals burn in fluorine</u> with a bright flame. <u>Nineteen grams of fluorine will react with 1.0 gram of hydrogen</u>.",
+   "prompt": "把下面这段话中带下划线的六种性质分别归类为化学性质或物理性质：氟是一种淡黄色的<u>气体</u>，<u>能与大多数物质反应</u>。游离态的氟<u>在 −220 °C 熔化</u>，<u>在 −188 °C 沸腾</u>。细碎的<u>金属在氟中燃烧</u>，火焰明亮。<u>19 克氟将与 1.0 克氢反应</u>。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The test is whether the property can be observed without fluorine becoming a different kind of matter. Being a gas, melting at −220 °C and boiling at −188 °C are states and changes of state, and the fluorine stays fluorine through each of them, so these three are physical properties. Reacting with most substances, metals burning in fluorine, and nineteen grams of fluorine combining with 1.0 gram of hydrogen all describe fluorine turning into another kind of matter, so these three are chemical properties."
+    "solution": "判断的依据是：这种性质能否在氟不变成另一种物质的情况下观察到。是气体、在 −220 °C 熔化和在 −188 °C 沸腾，都是状态和状态的变化，在每一种情况下氟仍然是氟，所以这三种是物理性质。能与大多数物质反应、金属在氟中燃烧，以及 19 克氟与 1.0 克氢化合，描述的都是氟变成另一种物质，所以这三种是化学性质。"
    }
   },
   {
@@ -135,11 +153,11 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "chemical",
-   "prompt": "Classify each of the following changes as physical or chemical: (a) condensation of steam (b) burning of gasoline (c) souring of milk (d) dissolving of sugar in water (e) melting of gold",
+   "prompt": "把下列每种变化分别归类为物理变化或化学变化：（a）水蒸气凝结（b）汽油燃烧（c）牛奶变酸（d）糖溶于水（e）金熔化",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) physical; (b) chemical; (c) chemical; (d) physical; (e) physical"
+    "solution": "（a）物理变化；（b）化学变化；（c）化学变化；（d）物理变化；（e）物理变化"
    }
   },
   {
@@ -149,11 +167,11 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "chemical",
-   "prompt": "Classify each of the following changes as physical or chemical: (a) coal burning (b) ice melting (c) mixing chocolate syrup with milk (d) explosion of a firecracker (e) magnetizing of a screwdriver",
+   "prompt": "把下列每种变化分别归类为物理变化或化学变化：（a）煤燃烧（b）冰融化（c）把巧克力糖浆与牛奶混合（d）鞭炮爆炸（e）螺丝刀被磁化",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Ask of each change whether the matter left afterward is the same kind of matter as before. Burning coal is combustion, a chemical change, since it forms carbon dioxide and other new substances. The explosion of a firecracker produces gases that are very different kinds of matter from the original substance. So (a) and (d) are chemical changes. Ice melting is a change of state, mixing chocolate syrup with milk makes a mixture whose parts are still syrup and milk, and magnetizing a metal is a physical change, so (b), (c) and (e) are physical changes."
+    "solution": "对每种变化都要问：变化之后留下的物质与之前是否是同一种物质。煤燃烧是燃烧，属于化学变化，因为它生成二氧化碳和其他新物质。鞭炮爆炸产生的气体与原来的物质是非常不同的物质。所以（a）和（d）是化学变化。冰融化是状态的变化，把巧克力糖浆与牛奶混合得到的是混合物，其组分仍然是糖浆和牛奶，金属被磁化是物理变化，所以（b）、（c）和（e）是物理变化。"
    }
   },
   {
@@ -163,11 +181,11 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "physical",
-   "prompt": "The volume of a sample of oxygen gas changed from 10 mL to 11 mL as the temperature changed. Is this a chemical or physical change?",
+   "prompt": "一份氧气样品的体积随温度的变化从 10 mL 变为 11 mL。这是化学变化还是物理变化？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "physical"
+    "solution": "物理变化"
    }
   },
   {
@@ -177,11 +195,11 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "chemical",
-   "prompt": "A 2.0-liter volume of hydrogen gas combined with 1.0 liter of oxygen gas to produce 2.0 liters of water vapor. Does oxygen undergo a chemical or physical change?",
+   "prompt": "2.0 升氢气与 1.0 升氧气化合，生成 2.0 升水蒸气。氧发生的是化学变化还是物理变化？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Look at what is present afterward. Before the change there were two substances, hydrogen and oxygen; afterward there is water vapor, which is a different kind of matter from either of them. Since the oxygen has become part of a new substance rather than merely changing its state or its volume, it has undergone a chemical change."
+    "solution": "看变化之后存在的是什么。变化之前有氢和氧两种物质；变化之后是水蒸气，它与这两者中的任何一种都是不同的物质。由于氧已成为一种新物质的一部分，而不只是改变了状态或体积，所以它发生的是化学变化。"
    }
   },
   {
@@ -191,11 +209,11 @@
    "bloom": "Understand",
    "place": { "at": "end" },
    "cite": "extensive",
-   "prompt": "Explain the difference between extensive properties and intensive properties.",
+   "prompt": "解释广度性质与强度性质的区别。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The value of an extensive property depends upon the amount of matter being considered, whereas the value of an intensive property is the same regardless of the amount of matter being considered."
+    "solution": "广度性质的值取决于所考虑物质的量，而强度性质的值与所考虑物质的量无关。"
    }
   },
   {
@@ -205,11 +223,11 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "extensive",
-   "prompt": "Identify the following properties as either extensive or intensive. (a) volume (b) temperature (c) humidity (d) heat (e) boiling point",
+   "prompt": "指出下列性质是广度性质还是强度性质。（a）体积（b）温度（c）湿度（d）热（e）沸点",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Ask of each property whether its value changes when the amount of matter is doubled. The volume of a sample doubles with the sample, and so does the heat it contains, as the drop and the pot of hot oil show, so (a) and (d) are extensive. The temperature of a sample is the same for a cup and a gallon, the boiling point of a substance does not depend on how much of it is boiling, and the humidity of air is a measure of how much water vapor it holds for its size rather than of how much air there is, so (b), (c) and (e) are intensive."
+    "solution": "对每种性质都要问：物质的量加倍时，它的值是否改变。样品的体积随样品加倍，它所含的热也是如此，一滴热油和一锅热油就说明了这一点，所以（a）和（d）是广度性质。一杯和一加仑样品的温度相同，物质的沸点不取决于沸腾的是多少，而空气的湿度衡量的是空气按其大小含有多少水蒸气，而不是空气有多少，所以（b）、（c）和（e）是强度性质。"
    }
   },
   {
@@ -219,11 +237,11 @@
    "bloom": "Analyze",
    "place": { "at": "end" },
    "cite": "extensive",
-   "prompt": "The density ($d$) of a substance is an intensive property that is defined as the ratio of its mass ($\\km$) to its volume ($\\kV$). $$\\text{density} = \\frac{\\text{mass}}{\\text{volume}} \\hspace{2em} d = \\frac{\\km}{\\kV}$$ Considering that mass and volume are both extensive properties, explain why their ratio, density, is intensive.",
+   "prompt": "物质的密度（$d$）是一种强度性质，定义为其质量（$\\km$）与体积（$\\kV$）之比。$$\\text{密度} = \\frac{\\text{质量}}{\\text{体积}} \\hspace{2em} d = \\frac{\\km}{\\kV}$$ 考虑到质量和体积都是广度性质，解释为什么它们的比值——密度——是强度性质。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Being extensive properties, both mass and volume are directly proportional to the amount of substance under study. Dividing one extensive property by another will in effect “cancel” this dependence on amount, yielding a ratio that is independent of amount (an intensive property)."
+    "solution": "质量和体积都是广度性质，二者都与所研究物质的量成正比。用一种广度性质除以另一种广度性质，实际上会“抵消”这种对量的依赖，得到与量无关的比值（强度性质）。"
    }
   }
  ],
@@ -245,7 +263,7 @@
  "referents": [
   {
    "id": "jug",
-   "label": "the jug of milk",
+   "label": "那壶牛奶",
    "figures": [
     "sim-extensive"
    ]

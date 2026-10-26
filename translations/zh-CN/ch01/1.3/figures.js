@@ -40,8 +40,8 @@ function thermometer(ctx, x, y, h, f, color) {
 ===================================================================== */
 (function () {
   const d = sim('sim-extensive', 600);
-  const V = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 0.25, max: 4, step: 0.01, value: 3.79, unit: 'L', dec: 2, aria: 'volume of milk' });
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 0, max: 60, step: 1, value: 20, unit: '°C', dec: 0, aria: 'temperature' });
+  const V = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 0.25, max: 4, step: 0.01, value: 3.79, unit: 'L', dec: 2, aria: '牛奶的体积' });
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 0, max: 60, step: 1, value: 20, unit: '°C', dec: 0, aria: '温度' });
   const DENS = 1.03;               /* g/mL, whole milk */
   const VMAX = 4, TMAX = 60;
   function draw() {
@@ -54,17 +54,17 @@ function thermometer(ctx, x, y, h, f, color) {
     ctx.save(); ctx.fillStyle = alpha(cv, 0.28); ctx.fillRect(jx - jw / 2 + 2, level, jw - 4, jy - level - 2); ctx.restore();
     line(ctx, jx - jw / 2, level, jx + jw / 2, level, cv, 4);
     jug(ctx, jx, jy, jw, jh, F.ref('jug'));
-    text(ctx, 'milk', jx, jy - jh - 26, F.ref('jug'), { size: 20, align: 'center' });
+    text(ctx, '牛奶', jx, jy - jh - 26, F.ref('jug'), { size: 20, align: 'center' });
     text(ctx, fmt(v, 2) + ' L', jx - jw / 2 - 14, level, cv, { size: 22, weight: 600, align: 'right' });
     balance(ctx, jx - 170, jx + 170, jy + 4, fmt(mkg, 2) + ' kg', cm);
     thermometer(ctx, 600, jy - 20, 240, t / TMAX, ct);
     text(ctx, fmt(t, 0) + ' °C', 630, jy - 20 - 14 - (200 * t) / TMAX, ct, { size: 22, weight: 600 });
     /* the four bars beside the scene: two that grow with the sample and two that do not */
     const bx = 900, bw = 380, rows = [
-      ['mass', 'extensive', mkg / (DENS * VMAX), fmt(mkg, 2) + ' kg', cm],
-      ['volume', 'extensive', v / VMAX, fmt(v, 2) + ' L', cv],
-      ['density', 'intensive', DENS / 2, fmt(DENS, 2) + ' g/mL', cd],
-      ['temperature', 'intensive', t / TMAX, fmt(t, 0) + ' °C', ct],
+      ['质量', '广度性质', mkg / (DENS * VMAX), fmt(mkg, 2) + ' kg', cm],
+      ['体积', '广度性质', v / VMAX, fmt(v, 2) + ' L', cv],
+      ['密度', '强度性质', DENS / 2, fmt(DENS, 2) + ' g/mL', cd],
+      ['温度', '强度性质', t / TMAX, fmt(t, 0) + ' °C', ct],
     ];
     rows.forEach(([name, kind, f, val, color], i) => {
       const y = 150 + i * 96;
@@ -74,9 +74,9 @@ function thermometer(ctx, x, y, h, f, color) {
       text(ctx, val, bx + bw + 16, y, color, { size: 22, weight: 600 });
     });
     line(ctx, bx - 60, 110, bx - 60, 500, PAL.rule, 1.5);
-    headline(ctx, 'A jug holding ' + fmt(v, 2) + ' L of milk at ' + fmt(t, 0) + ' °C has a mass of ' + fmt(mkg, 2) + ' kg and a density of ' + fmt(DENS, 2) + ' g/mL.');
+    headline(ctx, '一壶盛有 ' + fmt(v, 2) + ' L、温度为 ' + fmt(t, 0) + ' °C 的牛奶，质量为 ' + fmt(mkg, 2) + ' kg，密度为 ' + fmt(DENS, 2) + ' g/mL。');
     readout(d.readout, `\\km = \\kd\\,\\kV = \\htmlClass{kv-density}{${fmt(DENS, 2)}\\ \\text{g/mL}} \\times \\htmlClass{kv-volume}{${fmt(mL, 0)}\\ \\text{mL}} = \\htmlClass{kv-mass}{${fmt(mkg, 2)}\\ \\text{kg}}`,
-      'The milk stands at ' + fmt(t, 0) + ' °C whatever its amount.');
+      '无论牛奶的量是多少，它的温度都是 ' + fmt(t, 0) + ' °C。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -98,10 +98,10 @@ const NFPA_RED = '#ff0000', NFPA_BLUE = '#3366ff', NFPA_YELLOW = '#ffff00', NFPA
   const CX = 330, CY = 330, R = 180;
   /* the four small diamonds, each named by where it sits on the sign and what it rates */
   const QUADS = [
-    { fill: NFPA_RED, at: [0, -1], mark: '0–4', name: 'the red diamond at the top: the fire hazard, rated 0 to 4 by flash point' },
-    { fill: NFPA_BLUE, at: [-1, 0], mark: '0–4', name: 'the blue diamond on the left: the health hazard, rated 0 to 4' },
-    { fill: NFPA_YELLOW, at: [1, 0], mark: '0–4', name: 'the yellow diamond on the right: the reactivity hazard, rated 0 to 4' },
-    { fill: NFPA_WHITE, at: [0, 1], mark: 'OX', name: 'the white diamond at the bottom: a specific hazard, named by an abbreviation' },
+    { fill: NFPA_RED, at: [0, -1], mark: '0–4', name: '上方的红色菱形：火灾危险，按闪点分为 0 到 4 级' },
+    { fill: NFPA_BLUE, at: [-1, 0], mark: '0–4', name: '左侧的蓝色菱形：健康危险，分为 0 到 4 级' },
+    { fill: NFPA_YELLOW, at: [1, 0], mark: '0–4', name: '右侧的黄色菱形：反应性危险，分为 0 到 4 级' },
+    { fill: NFPA_WHITE, at: [0, 1], mark: 'OX', name: '下方的白色菱形：特殊危险，用缩写标示' },
   ];
   let hits = []; F.hover(d.stage, () => hits);
   function quad(ctx, q) {
@@ -115,37 +115,37 @@ const NFPA_RED = '#ff0000', NFPA_BLUE = '#3366ff', NFPA_YELLOW = '#ffff00', NFPA
   }
   /* the scale of the three numbered diamonds, in the words of the passage, in columns narrow enough that no cell reaches the next */
   const ROWS = [
-    ['4', 'below 73 °F', 'deadly', 'may detonate'],
-    ['3', 'below 100 °F', 'extreme danger', 'shock or heat may detonate'],
-    ['2', '100 to 200 °F', 'hazardous', 'violent change possible'],
-    ['1', 'above 200 °F', 'slightly hazardous', 'unstable if heated'],
-    ['0', 'will not burn', 'normal material', 'stable'],
+    ['4', '低于 73 °F', '致命', '可能爆炸'],
+    ['3', '低于 100 °F', '极度危险', '撞击或受热可能爆炸'],
+    ['2', '100 至 200 °F', '危险', '可能发生剧烈变化'],
+    ['1', '高于 200 °F', '轻微危险', '受热不稳定'],
+    ['0', '不燃烧', '普通物质', '稳定'],
   ];
   /* the abbreviations the white diamond carries; the sign strikes its W through and marks a radioactive or a
      biological hazard with a symbol rather than a word, which the line beneath says */
-  const SPECIAL = [['OX', 'oxidizer'], ['ACID', 'acid'], ['ALK', 'alkali'], ['COR', 'corrosive'], ['W', 'use no water']];
+  const SPECIAL = [['OX', '氧化剂'], ['ACID', '酸'], ['ALK', '碱'], ['COR', '腐蚀性'], ['W', '禁止用水']];
   function draw() {
     const { ctx } = begin(d.c);
     hits.length = 0;
     QUADS.forEach((q) => quad(ctx, q));
-    text(ctx, 'fire hazard', CX, CY - R - 26, PAL.ink, { size: 20, weight: 600, align: 'center' });
-    text(ctx, 'health hazard', CX - R - 12, CY, PAL.ink, { size: 20, weight: 600, align: 'right' });
-    text(ctx, 'reactivity', CX + R + 12, CY, PAL.ink, { size: 20, weight: 600 });
-    text(ctx, 'specific hazard', CX, CY + R + 30, PAL.ink, { size: 20, weight: 600, align: 'center' });
+    text(ctx, '火灾危险', CX, CY - R - 26, PAL.ink, { size: 20, weight: 600, align: 'center' });
+    text(ctx, '健康危险', CX - R - 12, CY, PAL.ink, { size: 20, weight: 600, align: 'right' });
+    text(ctx, '反应性', CX + R + 12, CY, PAL.ink, { size: 20, weight: 600 });
+    text(ctx, '特殊危险', CX, CY + R + 30, PAL.ink, { size: 20, weight: 600, align: 'center' });
     /* the scale, in the words of the passage: three columns of five ratings */
     const X = [660, 730, 890, 1100], y0 = 150, dy = 42;
-    ['rating', 'flash point', 'health hazard', 'reactivity'].forEach((h, i) => text(ctx, h, X[i], y0, PAL.ink, { size: 19, weight: 600 }));
+    ['等级', '闪点', '健康危险', '反应性'].forEach((h, i) => text(ctx, h, X[i], y0, PAL.ink, { size: 19, weight: 600 }));
     line(ctx, 650, y0 + 18, 1390, y0 + 18, PAL.muted, 2);
     ROWS.forEach((r, i) => r.forEach((cell, j) => text(ctx, cell, X[j], y0 + 44 + i * dy, j === 0 ? PAL.ink : PAL.muted, { size: 18, weight: j === 0 ? 600 : 400 })));
-    text(ctx, '4 is extremely hazardous and 0 is no hazard at all.', 650, y0 + 44 + ROWS.length * dy + 12, PAL.ink, { size: 18 });
+    text(ctx, '4 表示极其危险，0 表示没有危险。', 650, y0 + 44 + ROWS.length * dy + 12, PAL.ink, { size: 18 });
     /* the abbreviations of the white diamond */
-    text(ctx, 'specific hazard', 650, 470, PAL.ink, { size: 19, weight: 600 });
+    text(ctx, '特殊危险', 650, 470, PAL.ink, { size: 19, weight: 600 });
     SPECIAL.forEach(([abbr, meaning], i) => {
       const x = 650 + (i % 3) * 250, y = 506 + Math.floor(i / 3) * 40;
       text(ctx, abbr, x, y, PAL.ink, { size: 19, weight: 600 }); text(ctx, meaning, x + 64, y, PAL.muted, { size: 18 });
     });
-    text(ctx, 'The sign strikes the W through; a radioactive or biological hazard takes a symbol.', 650, 590, PAL.muted, { size: 17 });
-    headline(ctx, 'The NFPA hazard diamond rates a substance for fire, health and reactivity, and names any special hazard in the fourth quadrant.');
+    text(ctx, '标志上的 W 被划掉；放射性危险或生物危险用符号表示。', 650, 590, PAL.muted, { size: 17 });
+    headline(ctx, 'NFPA 危险性菱形标志对物质的火灾、健康和反应性危险分级，并在第四个象限标出任何特殊危险。');
   }
   register(d.fig, { update: () => {}, draw });
 })();

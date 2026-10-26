@@ -36,23 +36,23 @@ function column(ctx, x, yTop, bottom, r, color, filled) {
 ===================================================================== */
 (function () {
   const d = sim('sim-temperature-scales', 640);
-  const T = ctl(d.controls, { label: '\\kTC', cls: 'temperature', min: -80, max: 120, step: 0.1, value: 37, unit: '°C', dec: 1, aria: 'temperature on the Celsius scale',
-    specials: [{ at: -40, label: '−40' }, { at: 0, label: 'freezing' }, { at: 100, label: 'boiling' }] });
+  const T = ctl(d.controls, { label: '\\kTC', cls: 'temperature', min: -80, max: 120, step: 0.1, value: 37, unit: '°C', dec: 1, aria: '摄氏温标上的温度',
+    specials: [{ at: -40, label: '−40' }, { at: 0, label: '凝固' }, { at: 100, label: '沸腾' }] });
   /* the height axis the three tubes share: −80 °C at the bottom, 120 °C at the top */
   const LO = -80, HI = 120, YB = 540, YT = 130;
   const Y = (tc) => YB - ((tc - LO) / (HI - LO)) * (YB - YT);
   const TOP = 108, BOT = 548, R = 13;
   /* the three scales: name, x of the tube, the reading for a Celsius temperature, the tick spacing in its own unit, how many ticks per label, decimals of the reading, its unit */
   const SCALES = [
-    { name: 'Fahrenheit', x: 300, of: toF, back: (f) => ((f - 32) * 5) / 9, step: 20, every: 2, dec: 1, unit: '°F', filled: false },
-    { name: 'Celsius', x: 520, of: (tc) => tc, back: (c) => c, step: 20, every: 1, dec: 1, unit: '°C', filled: true },
-    { name: 'Kelvin', x: 740, of: toK, back: (k) => k - 273.15, step: 20, every: 1, dec: 1, unit: 'K', filled: false },
+    { name: '华氏度', x: 300, of: toF, back: (f) => ((f - 32) * 5) / 9, step: 20, every: 2, dec: 1, unit: '°F', filled: false },
+    { name: '摄氏度', x: 520, of: (tc) => tc, back: (c) => c, step: 20, every: 1, dec: 1, unit: '°C', filled: true },
+    { name: '开尔文', x: 740, of: toK, back: (k) => k - 273.15, step: 20, every: 1, dec: 1, unit: 'K', filled: false },
   ];
   function draw() {
     const { ctx } = begin(d.c);
     const tc = T.v, tf = toF(tc), tk = toK(tc), hue = C('temperature');
     /* the reference temperatures of water, in ink, across all three tubes at the same height */
-    for (const [t, l1, l2] of [[100, 'Boiling point', 'of water'], [0, 'Freezing point', 'of water']]) {
+    for (const [t, l1, l2] of [[100, '水的', '沸点'], [0, '水的', '凝固点']]) {
       const y = Y(t);
       text(ctx, l1, 26, y - 11, PAL.ink, { size: 17 }); text(ctx, l2, 26, y + 11, PAL.ink, { size: 17 });
       for (const [a, b] of [[160, 284], [402, 504], [622, 724]]) line(ctx, a, y, b, y, PAL.ink, 2, [10, 8]);
@@ -73,24 +73,24 @@ function column(ctx, x, yTop, bottom, r, color, filled) {
     }
     /* the graph beside the tubes: the Fahrenheit and kelvin readings against the Celsius temperature */
     const box = { l: 960, r: 1330, t: 130, b: 540 };
-    const g = axes(ctx, box, [LO, HI], [-100, 400], { xl: 'Celsius temperature (°C)', xc: hue, yl: 'reading on the other scale', yc: hue, nx: 5, ny: 5, fx: (v) => num(v, 0), fy: (v) => num(v, 0) });
+    const g = axes(ctx, box, [LO, HI], [-100, 400], { xl: '摄氏温度 (°C)', xc: hue, yl: '另一温标上的读数', yc: hue, nx: 5, ny: 5, fx: (v) => num(v, 0), fy: (v) => num(v, 0) });
     const X = g.X, Yg = g.Y;
     line(ctx, X(LO), Yg(toF(LO)), X(HI), Yg(toF(HI)), hue, 4);
     line(ctx, X(LO), Yg(toK(LO)), X(HI), Yg(toK(HI)), hue, 4, [12, 10]);
     text(ctx, '°F', box.r + 20, Yg(toF(HI)), PAL.ink, { size: 20, weight: 600 });
     text(ctx, 'K', box.r + 20, Yg(toK(HI)), PAL.ink, { size: 20, weight: 600 });
-    dot(ctx, X(0), Yg(0), PAL.ink, false, 7); text(ctx, 'origin', X(0) + 14, Yg(0) + 20, PAL.muted, { size: 17 });
+    dot(ctx, X(0), Yg(0), PAL.ink, false, 7); text(ctx, '原点', X(0) + 14, Yg(0) + 20, PAL.muted, { size: 17 });
     line(ctx, X(tc), box.b, X(tc), Yg(Math.max(tf, tk)), hue, 2, [4, 8]);
     dot(ctx, X(tc), Yg(tf), hue, true, 9);
     dot(ctx, X(tc), Yg(tk), hue, false, 9);
     /* the headline names the reference temperatures and the one temperature at which two of the scales agree */
-    const at = Math.abs(tc) < 0.05 ? 'At 0 °C water freezes, and the thermometers read 0.0 °C, 32.0 °F and 273.2 K, the freezing point being 273.15 K exactly.'
-      : Math.abs(tc - 100) < 0.05 ? 'At 100 °C water boils, and the thermometers read 100.0 °C, 212.0 °F and 373.2 K, the boiling point being 373.15 K exactly.'
-      : Math.abs(tc + 40) < 0.05 ? 'At −40 °C the Celsius and Fahrenheit readings agree, both at −40, and the kelvin reading is 233.2 K.'
-      : 'At ' + num(tc, 1) + ' °C the three thermometers read ' + num(tc, 1) + ' °C, ' + num(tf, 1) + ' °F and ' + num(tk, 1) + ' K.';
+    const at = Math.abs(tc) < 0.05 ? '在 0 °C 时水凝固，温度计的读数为 0.0 °C、32.0 °F 和 273.2 K，凝固点恰为 273.15 K。'
+      : Math.abs(tc - 100) < 0.05 ? '在 100 °C 时水沸腾，温度计的读数为 100.0 °C、212.0 °F 和 373.2 K，沸点恰为 373.15 K。'
+      : Math.abs(tc + 40) < 0.05 ? '在 −40 °C 时，摄氏度读数与华氏度读数一致，均为 −40，开尔文读数为 233.2 K。'
+      : '在 ' + num(tc, 1) + ' °C 时，三支温度计的读数分别为 ' + num(tc, 1) + ' °C、' + num(tf, 1) + ' °F 和 ' + num(tk, 1) + ' K。';
     headline(ctx, at);
     readout(d.readout, `\\kTF=\\left(\\frac{9}{5}\\times\\kTC\\right)+32=\\left(\\frac{9}{5}\\times ${fmt(tc, 1)}\\right)+32=${fmt(tf, 1)}\\ \\text{°F}`,
-      'On the kelvin scale the same temperature is ' + num(tc, 1) + ' + 273.15 = ' + num(tk, 1) + ' K.');
+      '在开尔文温标上，同一温度为 ' + num(tc, 1) + ' + 273.15 = ' + num(tk, 1) + ' K。');
   }
   register(d.fig, { update: () => {}, draw });
 })();

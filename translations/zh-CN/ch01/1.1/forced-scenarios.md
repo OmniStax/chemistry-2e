@@ -1,0 +1,10 @@
+| File | Span or line | What was done | Why |
+|---|---|---|---|
+| text.html | `<em>Macro</em> is a Greek word that means “large.”` and `<em>Micro</em> comes from Greek and means “small.”` | The Greek prefixes stay in Latin letters inside the `<em>`, the meaning is translated: `<em>Macro</em> 是一个希腊词，意思是“大”。` | Sentences about the origin of an English word part (translate.md 4.3); the Chinese terms 宏观/微观 carry the meaning |
+| text.html | `(credit a: …; b: …)`, `(credit a: …)` | Rendered `（图片来源 a：…；b：…）`; names kept | Photo credit words are translated, names kept (section 5 table) |
+| text.html / section.json | `14 lb`, `2 lbs`, `1 lb` (exercises q4, q7) | Written `14 磅`, `2 磅`, `1 磅` in prose | Unit with a target name in prose (translate.md 4.4); lb has no SI symbol in the book |
+| text.html | Figure 1.2 caption: `Alma Levant Hayden`, `FDA`, `Percy Lavon Julian` | Names kept in Latin letters; FDA expanded once as `美国食品药品监督管理局（FDA）` | Names of people without a standard rendering kept (2.7); FDA is an acronym the reader needs glossed in Chinese |
+| figures.js | `NAME[sym] + ' atom of a water molecule'` (hover names, 5 places) | Becomes `NAME[sym] + '原子，属于水分子'` | English genitive phrase; Chinese needs the noun before the qualifier, code shape kept |
+| figures.js | `WORD = { s: 'a solid', l: 'a liquid', g: 'a gas' }` | Articles dropped: `固体`, `液体`, `气体` | English article grammar collapses to one Chinese form (4.1) |
+| figures.js | `headOf` template `At ${t} °C the water … is ${WORD[s]}, H₂O(${s}), and its molecules are ${MICRO[s]}.` | Template rewritten in Chinese word order with the same four slots: `在 ${t} °C 时，烧杯中的水是${WORD[s]}，H₂O(${s})，其分子${MICRO[s]}。` | English sentence frame cannot carry the slots in the same order |
+| figures.js | Figure 1.4 arrow labels `Results / not consistent with / prediction`, `Results / are consistent with / prediction` | Three lines kept as `结果 / 不符合 / 预测`, `结果 / 符合 / 预测`; middle line bold as in the source | Chinese word order differs (结果与预测不符); the three-line layout of the figure is kept |

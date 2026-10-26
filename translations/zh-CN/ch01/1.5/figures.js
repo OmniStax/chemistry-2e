@@ -62,17 +62,17 @@ function displacement(d, before, after, mass, object, what, half, who) {
       if (sunk) object(ctx, cx, BASE - 14 - half, 1, F.ref(who));   /* the object rests on the floor of the cylinder and never pokes through it */
       line(ctx, cx + W / 2, Y(v), cx + W / 2 + 40, Y(v), cv, 2, [4, 8]);
       text(ctx, fmt(v, 1) + ' mL', cx + W / 2 + 48, Y(v), cv, { size: 24, weight: 600 });
-      note(ctx, sunk ? 'after' : 'before', cx, BASE + 44);
+      note(ctx, sunk ? '放入后' : '放入前', cx, BASE + 44);
     });
     object(ctx, 640, 170, 1, F.ref(who)); text(ctx, fmt(mass, 3) + ' g', 640, 266, cm, { size: 24, weight: 600, align: 'center' });
     arrow(ctx, 672, 120, 765, 120, PAL.muted, 3);
-    text(ctx, 'volume of the ' + what, 1160, 200, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    text(ctx, what + '的体积', 1160, 200, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, fmt(after, 1) + ' mL − ' + fmt(before, 1) + ' mL = ' + fmt(after - before, 1) + ' mL', 1160, 240, cv, { size: 24, weight: 600, align: 'center' });
-    text(ctx, 'mass of the ' + what, 1160, 320, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    text(ctx, what + '的质量', 1160, 320, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, fmt(mass, 3) + ' g', 1160, 360, cm, { size: 24, weight: 600, align: 'center' });
-    headline(ctx, 'The water rises from ' + fmt(before, 1) + ' mL to ' + fmt(after, 1) + ' mL when the ' + fmt(mass, 3) + '-g ' + what + ' is submerged, and that rise is its volume.');
+    headline(ctx, '浸没 ' + fmt(mass, 3) + ' g 的' + what + '时，水从 ' + fmt(before, 1) + ' mL 升到 ' + fmt(after, 1) + ' mL，这个升高量就是它的体积。');
     readout(d.readout, `\\kV = ${fmt(after, 1)}\\ \\text{mL} - ${fmt(before, 1)}\\ \\text{mL} = ${fmt(after - before, 1)}\\ \\text{mL}`,
-      'The density of the ' + what + ' is its mass divided by this volume.');
+      what + '的密度是它的质量除以这个体积。');
   }
   still(d, draw);
 }
@@ -94,8 +94,8 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
 ===================================================================== */
 (function () {
   const d = sim('sim-meniscus', 620);
-  const V = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 5, max: 24.9, step: 0.02, value: 21.62, unit: 'mL', dec: 2, aria: 'liquid volume' });
-  const D = ctl(d.controls, { label: '\\text{tenths digit}', cls: '', min: 0, max: 9, step: 1, value: 6, unit: '', dec: 0, aria: 'the tenths digit you estimate' });
+  const V = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 5, max: 24.9, step: 0.02, value: 21.62, unit: 'mL', dec: 2, aria: '液体体积' });
+  const D = ctl(d.controls, { label: '\\text{十分位数字}', cls: '', min: 0, max: 9, step: 1, value: 6, unit: '', dec: 0, aria: '你估计的十分位数字' });
   const VMAX = 25, W = 120, BASE = 540, HT = 400, CX = 330;
   function draw() {
     const { ctx } = begin(d.c);
@@ -114,26 +114,26 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
     line(ctx, gl, MY - MR, gl, MY + MR, PAL.ink, 3); line(ctx, gr, MY - MR, gr, MY + MR, PAL.ink, 3);
     line(ctx, gl, my(reading), gr, my(reading), PAL.ink, 2.5, [8, 8]);
     for (let k = -1; k <= 2; k++) { const u = whole + k; if (u < 0 || u > VMAX || Math.abs(my(u) - MY) > MR - 16) continue; line(ctx, gl, my(u), gl + 44, my(u), PAL.muted, 3); text(ctx, u + ' mL', gl + 54, my(u), PAL.ink, { size: 20, weight: 600, bg: PAL.panel }); for (let t = 1; t < 10; t++) line(ctx, gl, my(u + t / 10), gl + 14, my(u + t / 10), PAL.rule, 1.5); }
-    text(ctx, 'your reading ' + fmt(reading, 1) + ' mL', gr - 20, my(reading) + (digit >= 7 ? 30 : -30), PAL.ink, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
+    text(ctx, '你的读数 ' + fmt(reading, 1) + ' mL', gr - 20, my(reading) + (digit >= 7 ? 30 : -30), PAL.ink, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
     ctx.restore();
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.beginPath(); ctx.arc(MX, MY, MR, 0, TAU); ctx.stroke(); ctx.restore();
     line(ctx, MX + MR * 0.72, MY + MR * 0.72, MX + MR * 0.72 + 70, MY + MR * 0.72 + 70, PAL.ink, 12);
     /* the reading written with its certain and estimated digits */
     const s = fmt(reading, 1), cs = charsCentred(ctx, s, 1190, 300, 96, (i) => (i === s.length - 1 ? cv : PAL.ink));
     text(ctx, 'mL', cs[cs.length - 1].r + 14, 312, PAL.ink, { size: 36, weight: 600 });
-    ubracket(ctx, cs[0].l + 4, cs[s.length - 3].r - 4, 372, PAL.ink, 'certain');
-    ubracket(ctx, cs[s.length - 1].l + 4, cs[s.length - 1].r - 4, 372, cv, whole >= 10 ? 'estimated' : '');
-    if (whole < 10) text(ctx, 'estimated', cs[s.length - 1].x, 422, cv, { align: 'center', weight: 600, size: 20 });
-    note(ctx, '1-mL divisions: read to the nearest 0.1 mL', 1190, 460);
-    note(ctx, 'no hundredths digit can be estimated', 1190, 490);
+    ubracket(ctx, cs[0].l + 4, cs[s.length - 3].r - 4, 372, PAL.ink, '确定');
+    ubracket(ctx, cs[s.length - 1].l + 4, cs[s.length - 1].r - 4, 372, cv, whole >= 10 ? '估计' : '');
+    if (whole < 10) text(ctx, '估计', cs[s.length - 1].x, 422, cv, { align: 'center', weight: 600, size: 20 });
+    note(ctx, '分度为 1 mL：读到最接近的 0.1 mL', 1190, 460);
+    note(ctx, '百分位数字无法估计', 1190, 490);
     /* the headline judges the reader's digit against where the meniscus lies */
     const ok = Math.abs(digit / 10 - frac) <= 0.15 + 1e-9;
     const near = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].filter((k) => Math.abs(k / 10 - frac) <= 0.15 + 1e-9);
-    const list = near.length === 1 ? String(near[0]) : near.slice(0, -1).join(', ') + ' or ' + near[near.length - 1];
-    const between = 'The meniscus lies between the ' + whole + ' and ' + (whole + 1) + ' mL marks';
-    const where = frac < 0.35 ? ', nearer the ' + whole : frac > 0.65 ? ', nearer the ' + (whole + 1) : ', about midway';
-    headline(ctx, ok ? between + ', so a tenths digit of ' + digit + ' is reasonable and the reading is ' + fmt(reading, 1) + ' mL.'
-      : between + where + ', so a tenths digit of ' + list + ' would be more reasonable than ' + digit + '.');
+    const list = near.length === 1 ? String(near[0]) : near.slice(0, -1).join('、') + ' 或 ' + near[near.length - 1];
+    const between = '弯月面位于 ' + whole + ' 和 ' + (whole + 1) + ' mL 刻度线之间';
+    const where = frac < 0.35 ? '，更靠近 ' + whole : frac > 0.65 ? '，更靠近 ' + (whole + 1) : '，约在正中';
+    headline(ctx, ok ? between + '，所以十分位数字取 ' + digit + ' 是合理的，读数为 ' + fmt(reading, 1) + ' mL。'
+      : between + where + '，所以十分位数字取 ' + list + ' 比取 ' + digit + ' 更合理。');
     readout(d.readout, `\\kV = ${fmt(reading, 1)}\\ \\text{mL}`);
   }
   still(d, draw);
@@ -148,12 +148,12 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
   function draw() {
     const { ctx } = begin(d.c);
     const a = charsCentred(ctx, '3090', 380, 130, 88, () => PAL.ink);
-    tag(ctx, a[1].x, 178, 236, 'captive', PAL.ink); tag(ctx, a[3].x, 178, 236, 'trailing', PAL.ink);
+    tag(ctx, a[1].x, 178, 236, '夹零', PAL.ink); tag(ctx, a[3].x, 178, 236, '末尾零', PAL.ink);
     const b = charsCentred(ctx, '0.008020', 1000, 130, 88, () => PAL.ink);
-    ubracket(ctx, b[0].l + 6, b[3].r - 6, 190, PAL.ink, 'leading');
-    tag(ctx, b[5].x, 178, 236, 'captive', PAL.ink); tag(ctx, b[7].x, 178, 236, 'trailing', PAL.ink);
-    headline(ctx, 'A zero in a measurement is leading, captive or trailing, and its kind decides whether it counts.');
-    readout(d.readout, '3090 \\qquad 0.008020', 'Only the zeros need thought: every nonzero digit is significant.');
+    ubracket(ctx, b[0].l + 6, b[3].r - 6, 190, PAL.ink, '前导零');
+    tag(ctx, b[5].x, 178, 236, '夹零', PAL.ink); tag(ctx, b[7].x, 178, 236, '末尾零', PAL.ink);
+    headline(ctx, '测量值中的零是前导零、夹零或末尾零，它属于哪一种决定了它是否计入有效数字。');
+    readout(d.readout, '3090 \\qquad 0.008020', '只有零需要斟酌：每个非零数字都是有效的。');
   }
   still(d, draw);
 })();
@@ -163,14 +163,14 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
   function draw() {
     const { ctx } = begin(d.c);
     const a = charsCentred(ctx, '1267 m', 380, 150, 88, () => PAL.ink);
-    arrow(ctx, a[0].x - 30, 92, a[0].x - 6, 116, PAL.ink, 3); text(ctx, 'first nonzero digit on the left', a[0].x - 40, 74, PAL.ink, { size: 19, weight: 600 });
-    ubracket(ctx, a[0].l + 4, a[3].r - 4, 212, PAL.ink, '4 significant figures');
+    arrow(ctx, a[0].x - 30, 92, a[0].x - 6, 116, PAL.ink, 3); text(ctx, '左起第一个非零数字', a[0].x - 40, 74, PAL.ink, { size: 19, weight: 600 });
+    ubracket(ctx, a[0].l + 4, a[3].r - 4, 212, PAL.ink, '4 位有效数字');
     const b = charsCentred(ctx, '55.0 g', 1000, 150, 88, () => PAL.ink);
-    arrow(ctx, b[0].x - 30, 92, b[0].x - 6, 116, PAL.ink, 3); text(ctx, 'first nonzero digit on the left', b[0].x - 40, 74, PAL.ink, { size: 19, weight: 600 });
-    ubracket(ctx, b[0].l + 4, b[3].r - 4, 212, PAL.ink, '3 significant figures');
-    note(ctx, 'the 0 lies to the right of the decimal point, so it is a measured digit and counts', 1000, 290);
-    headline(ctx, 'Count from the first nonzero digit on the left, and count every digit to its right.');
-    readout(d.readout, '1267\\ \\text{m}: \\text{four significant figures} \\qquad 55.0\\ \\text{g}: \\text{three significant figures}');
+    arrow(ctx, b[0].x - 30, 92, b[0].x - 6, 116, PAL.ink, 3); text(ctx, '左起第一个非零数字', b[0].x - 40, 74, PAL.ink, { size: 19, weight: 600 });
+    ubracket(ctx, b[0].l + 4, b[3].r - 4, 212, PAL.ink, '3 位有效数字');
+    note(ctx, '这个 0 位于小数点右侧，所以是测量得到的数字，要计入', 1000, 290);
+    headline(ctx, '从左起第一个非零数字开始数，其右边的每个数字都要计入。');
+    readout(d.readout, '1267\\ \\text{m}: \\text{四位有效数字} \\qquad 55.0\\ \\text{g}: \\text{三位有效数字}');
   }
   still(d, draw);
 })();
@@ -180,14 +180,14 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
   function draw() {
     const { ctx } = begin(d.c);
     const a = charsCentred(ctx, '70.607 mL', 380, 150, 84, () => PAL.ink);
-    ubracket(ctx, a[0].l + 4, a[5].r - 4, 210, PAL.ink, '5 significant figures');
-    note(ctx, 'the captive zeros are measured digits and count', 380, 290);
+    ubracket(ctx, a[0].l + 4, a[5].r - 4, 210, PAL.ink, '5 位有效数字');
+    note(ctx, '夹零是测量得到的数字，要计入', 380, 290);
     const b = charsCentred(ctx, '0.00832407 mL', 1000, 150, 84, (i) => (i < 4 ? PAL.muted : PAL.ink));
-    ubracket(ctx, b[4].l + 4, b[9].r - 4, 210, PAL.ink, '6 significant figures');
-    ubracket(ctx, b[0].l + 4, b[3].r - 4, 210, PAL.muted, 'leading zeros');
-    note(ctx, 'the leading zeros only locate the decimal point and do not count', 1000, 290);
-    headline(ctx, 'A captive zero is always significant. A leading zero never is, since it only locates the decimal point.');
-    readout(d.readout, '70.607\\ \\text{mL}: \\text{five significant figures} \\qquad 0.00832407\\ \\text{mL}: \\text{six significant figures}');
+    ubracket(ctx, b[4].l + 4, b[9].r - 4, 210, PAL.ink, '6 位有效数字');
+    ubracket(ctx, b[0].l + 4, b[3].r - 4, 210, PAL.muted, '前导零');
+    note(ctx, '前导零只标示小数点的位置，不计入', 1000, 290);
+    headline(ctx, '夹零总是有效的。前导零从来不是有效的，因为它只标示小数点的位置。');
+    readout(d.readout, '70.607\\ \\text{mL}: \\text{五位有效数字} \\qquad 0.00832407\\ \\text{mL}: \\text{六位有效数字}');
   }
   still(d, draw);
 })();
@@ -197,13 +197,13 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
   function draw() {
     const { ctx } = begin(d.c);
     const a = charsCentred(ctx, '1300 g', 700, 130, 88, (i) => (i === 2 || i === 3 ? PAL.muted : PAL.ink));
-    ubracket(ctx, a[0].l + 4, a[1].r - 4, 190, PAL.ink, 'measured');
-    ubracket(ctx, a[2].l + 4, a[3].r - 4, 190, PAL.muted); text(ctx, 'measured digits, or placeholders?', a[3].r, 242, PAL.muted, { size: 20, weight: 600, align: 'center' });
-    [['1.3 × 10³', 'two significant figures'], ['1.30 × 10³', 'three, if the tens place was measured'], ['1.300 × 10³', 'four, if the ones place was measured too']].forEach(([f, why], i) => {
+    ubracket(ctx, a[0].l + 4, a[1].r - 4, 190, PAL.ink, '测量值');
+    ubracket(ctx, a[2].l + 4, a[3].r - 4, 190, PAL.muted); text(ctx, '是测量数字，还是占位符？', a[3].r, 242, PAL.muted, { size: 20, weight: 600, align: 'center' });
+    [['1.3 × 10³', '两位有效数字'], ['1.30 × 10³', '三位，若十位是测量得到的'], ['1.300 × 10³', '四位，若个位也是测量得到的']].forEach(([f, why], i) => {
       const x = 280 + i * 420; text(ctx, f, x, 300, PAL.ink, { size: 34, weight: 600, align: 'center' }); note(ctx, why, x, 345);
     });
-    headline(ctx, 'Trailing zeros to the left of the decimal point are ambiguous, and exponential notation settles them.');
-    readout(d.readout, '1300\\ \\text{g}: \\text{two, three or four significant figures}', 'Where only the decimal form is available, it is prudent to assume that the trailing zeros are not significant.');
+    headline(ctx, '小数点左侧的末尾零是含糊的，指数记数法可以消除这种含糊。');
+    readout(d.readout, '1300\\ \\text{g}: \\text{两位、三位或四位有效数字}', '在只有小数形式的数可用时，稳妥的做法是假定末尾零不是有效的。');
   }
   still(d, draw);
 })();
@@ -227,11 +227,11 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
   function draw() {
     const { ctx } = begin(d.c);
     text(ctx, '(a)', 60, 110, PAL.muted, { size: 24, weight: 600 });
-    column(ctx, 230, ['1.0023', '4.383'], '+', '5.3853', 5, 'g', '5.385 g', '4.383 g stops at the thousandths');
+    column(ctx, 230, ['1.0023', '4.383'], '+', '5.3853', 5, 'g', '5.385 g', '4.383 g 只到千分位');
     text(ctx, '(b)', 760, 110, PAL.muted, { size: 24, weight: 600 });
-    column(ctx, 930, ['486', '421.23'], '−', '64.77', 2, 'g', '65 g', '486 g has no decimal places');
-    headline(ctx, 'A sum or a difference is rounded to the decimal place of its least precise term.');
-    readout(d.readout, '5.3853\\ \\text{g} \\longrightarrow 5.385\\ \\text{g} \\qquad 64.77\\ \\text{g} \\longrightarrow 65\\ \\text{g}', 'The muted digits are the ones the rule for addition and subtraction drops.');
+    column(ctx, 930, ['486', '421.23'], '−', '64.77', 2, 'g', '65 g', '486 g 没有小数位');
+    headline(ctx, '和或差要修约到其中最不精密的那一项的小数位。');
+    readout(d.readout, '5.3853\\ \\text{g} \\longrightarrow 5.385\\ \\text{g} \\qquad 64.77\\ \\text{g} \\longrightarrow 65\\ \\text{g}', '颜色较淡的数字是加减法规则所舍去的数字。');
   }
   still(d, draw);
 })();
@@ -240,8 +240,8 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
    The two graduated-cylinder readings of Example 1.7 and its Check Your
    Learning: faithful still redrawings with the book's numbers.
 ===================================================================== */
-displacement(sim('fig-rebar', 520), 13.5, 22.4, 69.658, rebar, 'piece of rebar', 70, 'rebar');
-displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of material', 30, 'nugget');
+displacement(sim('fig-rebar', 520), 13.5, 22.4, 69.658, rebar, '钢筋', 70, 'rebar');
+displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, '物块', 30, 'nugget');
 
 /* =====================================================================
    FIGURE 1.27: the archery targets. Still: one live target whose group
@@ -250,9 +250,9 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
 ===================================================================== */
 (function () {
   const d = sim('sim-targets', 620);
-  const off = ctl(d.controls, { label: '\\text{offset}', cls: 'length', min: 0, max: 15, step: 0.5, value: 0, unit: 'cm', dec: 1, aria: 'distance of the group from the bull’s eye' });
-  const spr = ctl(d.controls, { label: '\\text{spread}', cls: 'length', min: 0.5, max: 12, step: 0.5, value: 1.5, unit: 'cm', dec: 1, aria: 'spread of the group' });
-  const n = ctl(d.controls, { label: '\\text{arrows}', cls: '', min: 3, max: 8, step: 1, value: 3, unit: '', dec: 0, aria: 'number of arrows' });
+  const off = ctl(d.controls, { label: '\\text{偏移}', cls: 'length', min: 0, max: 15, step: 0.5, value: 0, unit: 'cm', dec: 1, aria: '这组箭离靶心的距离' });
+  const spr = ctl(d.controls, { label: '\\text{散布}', cls: 'length', min: 0.5, max: 12, step: 0.5, value: 1.5, unit: 'cm', dec: 1, aria: '这组箭的散布' });
+  const n = ctl(d.controls, { label: '\\text{箭数}', cls: '', min: 3, max: 8, step: 1, value: 3, unit: '', dec: 0, aria: '箭的数目' });
   const PAT = [[0.3, -0.8], [-0.9, 0.2], [0.7, 0.6], [-0.4, -0.5], [0.9, -0.3], [-0.6, 0.9], [0.1, 0.4], [-0.2, -1.0]];
   const DIR = [Math.cos(-0.9), Math.sin(-0.9)];          /* the group is pushed to the upper right, as the book draws it */
   const RCM = 25, LIMIT = 5;                              /* the target's radius in cm, and the ring inside which a group counts as close */
@@ -265,38 +265,38 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, 'piece of materia
      the live group takes the hue of the corner it currently falls in, and the label under each corner is the legend, in ink
      with a swatch of the hue beside it */
   const WHO = ['archer-a', 'archer-b', 'archer-d', 'archer-c'];
-  const cells = [[true, true, '(a) accurate and precise', 0, 1.5], [false, true, '(b) precise but not accurate', 9, 1.5], [true, false, 'accurate but not precise', 0, 8], [false, false, '(c) neither accurate nor precise', 9, 8]];
+  const cells = [[true, true, '(a) 准确且精密', 0, 1.5], [false, true, '(b) 精密但不准确', 9, 1.5], [true, false, '准确但不精密', 0, 8], [false, false, '(c) 既不准确也不精密', 9, 8]];
   let hits = []; F.hover(d.stage, () => hits);
   function target(ctx, cx, cy, R, pts, r, color, who) {
     for (let k = 5; k >= 1; k--) { ctx.save(); ctx.fillStyle = k % 2 ? PAL.soft : PAL.panel; ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(cx, cy, (R * k) / 5, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); }
     line(ctx, cx - R, cy, cx + R, cy, PAL.rule, 1.5); line(ctx, cx, cy - R, cx, cy + R, PAL.rule, 1.5);
-    const S = R / RCM; pts.forEach(([x, y], k) => { dot(ctx, cx + x * S, cy + y * S, color, true, r); hits.push({ x: cx + x * S, y: cy + y * S, r: r + 4, name: who + ': arrow ' + (k + 1) + ', ' + fmt(Math.hypot(x, y), 1) + ' cm from the bull’s eye' }); });
-    hits.push({ x: cx, y: cy, r: R / 5, name: 'bull’s eye' });   /* after the arrows, which the tooltip finds first */
+    const S = R / RCM; pts.forEach(([x, y], k) => { dot(ctx, cx + x * S, cy + y * S, color, true, r); hits.push({ x: cx + x * S, y: cy + y * S, r: r + 4, name: who + '：第 ' + (k + 1) + ' 支箭，离靶心 ' + fmt(Math.hypot(x, y), 1) + ' cm' }); });
+    hits.push({ x: cx, y: cy, r: R / 5, name: '靶心' });   /* after the arrows, which the tooltip finds first */
   }
   function draw() {
     const { ctx } = begin(d.c);
     hits.length = 0;
     const pts = group(off.v, spr.v, n.v), md = centroidDist(pts), sp = spread(pts), accurate = md <= LIMIT, precise = sp <= LIMIT;
     const liveCell = cells.findIndex(([acc, pre]) => acc === accurate && pre === precise);
-    text(ctx, 'bull’s eye', 360, 340 + 230 + 32, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '靶心', 360, 340 + 230 + 32, PAL.muted, { size: 17, align: 'center' });
     /* the four corners */
     const L = 720, T = 120, CW = 330, CH = 230;
-    text(ctx, 'precise', L + CW / 2, T - 16, PAL.ink, { size: 20, weight: 600, align: 'center' }); text(ctx, 'not precise', L + CW * 1.5, T - 16, PAL.ink, { size: 20, weight: 600, align: 'center' });
+    text(ctx, '精密', L + CW / 2, T - 16, PAL.ink, { size: 20, weight: 600, align: 'center' }); text(ctx, '不精密', L + CW * 1.5, T - 16, PAL.ink, { size: 20, weight: 600, align: 'center' });
     cells.forEach(([acc, pre, label, o, s], i) => {
       const col = pre ? 0 : 1, row = acc ? 0 : 1, x = L + col * CW, y = T + row * CH, live = i === liveCell, hue = F.ref(WHO[i]);
       if (live) { ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.12); ctx.fillRect(x, y, CW, CH); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(x, y, CW, CH); ctx.restore(); }
-      target(ctx, x + CW / 2, y + 88, 72, group(o, s, 3), 4, hue, ['archer (a)', 'archer (b)', 'the archer of the fourth corner', 'archer (c)'][i]);
+      target(ctx, x + CW / 2, y + 88, 72, group(o, s, 3), 4, hue, ['射手 (a)', '射手 (b)', '第四个角的射手', '射手 (c)'][i]);
       const lw = widthOf(ctx, label, 18, live ? 600 : 400);
       dot(ctx, x + CW / 2 - lw / 2 - 18, y + CH - 34, hue, true, 6);
       text(ctx, label, x + CW / 2 + 8, y + CH - 34, PAL.ink, { size: 18, weight: live ? 600 : 400, align: 'center' });
     });
-    target(ctx, 360, 340, 230, pts, 8, F.ref(WHO[liveCell]), 'the archer on the sliders');
-    headline(ctx, accurate && precise ? 'These arrows are close to both the bull’s eye and one another, so they are accurate and precise.'
-      : precise ? 'These arrows are close to one another but not on target, so they are precise but not accurate.'
-      : accurate ? 'These arrows are scattered about the bull’s eye, so they are accurate on average but not precise.'
-      : 'These arrows are neither on target nor close to one another, so they are neither accurate nor precise.');
-    readout(d.readout, `\\text{distance of the centre of the group from the bull's eye} = \\htmlClass{kv-length}{${fmt(md, 1)}\\ \\text{cm}}`,
-      'The greatest distance between two arrows is ' + fmt(sp, 1) + ' cm.');
+    target(ctx, 360, 340, 230, pts, 8, F.ref(WHO[liveCell]), '滑块控制的射手');
+    headline(ctx, accurate && precise ? '这些箭既靠近靶心，彼此也很接近，所以既准确又精密。'
+      : precise ? '这些箭彼此接近，但没有命中靶心，所以精密但不准确。'
+      : accurate ? '这些箭散布在靶心周围，所以平均而言是准确的，但不精密。'
+      : '这些箭既没有命中靶心，彼此也不接近，所以既不准确也不精密。');
+    readout(d.readout, `\\text{这组箭的中心到靶心的距离} = \\htmlClass{kv-length}{${fmt(md, 1)}\\ \\text{cm}}`,
+      '两支箭之间的最大距离为 ' + fmt(sp, 1) + ' cm。');
   }
   still(d, draw);
 })();

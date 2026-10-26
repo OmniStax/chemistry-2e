@@ -2,14 +2,18 @@
  "id": "intro",
  "module": "m68663",
  "chapter": "1",
- "title": "Introduction",
- "short": "Introduction",
+ "title": "引言",
+ "short": "引言",
  "lead": "",
- "notes": "The list of the chapter’s section titles that the module carries in place of learning objectives is left out, since the contents view lists them.",
+ "notes": "本模块在学习目标的位置给出本章各节标题的列表，因目录视图已列出这些标题，故予省略。",
  "ai": {
   "text": [
    {
     "model": "claude-fable-5-1"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
@@ -19,7 +23,7 @@
    }
   ]
  },
- "built": "2026-09-12",
+ "built": "2026-10-26",
  "figures": [
   {
    "id": "fig-daily-chem",

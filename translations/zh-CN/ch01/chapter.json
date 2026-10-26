@@ -1,0 +1,146 @@
+{
+ "id": "1",
+ "dir": "ch01",
+ "title": "Essential Ideas",
+ "intro": {
+  "module": "m68663",
+  "slug": "1-introduction"
+ },
+ "sections": [
+  {
+   "id": "1.1",
+   "module": "m68664",
+   "title": "Chemistry in Context",
+   "slug": "1-1-chemistry-in-context"
+  },
+  {
+   "id": "1.2",
+   "module": "m68667",
+   "title": "Phases and Classification of Matter",
+   "slug": "1-2-phases-and-classification-of-matter"
+  },
+  {
+   "id": "1.3",
+   "module": "m68670",
+   "title": "Physical and Chemical Properties",
+   "slug": "1-3-physical-and-chemical-properties"
+  },
+  {
+   "id": "1.4",
+   "module": "m68674",
+   "title": "Measurements",
+   "slug": "1-4-measurements"
+  },
+  {
+   "id": "1.5",
+   "module": "m68690",
+   "title": "Measurement Uncertainty, Accuracy, and Precision",
+   "slug": "1-5-measurement-uncertainty-accuracy-and-precision"
+  },
+  {
+   "id": "1.6",
+   "module": "m68683",
+   "title": "Mathematical Treatment of Measurement Results",
+   "slug": "1-6-mathematical-treatment-of-measurement-results"
+  }
+ ],
+ "variables": [
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of a sample, the measure of the amount of matter in it",
+   "unit": "g",
+   "section": "1.4",
+   "anchor": "1.4-density"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of a sample, the amount of space it occupies",
+   "unit": "cm³",
+   "section": "1.4",
+   "anchor": "1.4-volume"
+  },
+  {
+   "sym": "d",
+   "concept": "density",
+   "meaning": "the density of a substance, the ratio of the mass of a sample to its volume",
+   "unit": "g/cm³ (g/mL for liquids and solids, g/L for gases)",
+   "section": "1.4",
+   "anchor": "1.4-density"
+  },
+  {
+   "sym": "t",
+   "concept": "time",
+   "meaning": "an interval of time, measured in the SI base unit of time",
+   "unit": "s",
+   "section": "1.4",
+   "anchor": "1.4-time"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "the temperature of a sample, measured in the SI base unit of temperature",
+   "unit": "K",
+   "section": "1.4",
+   "anchor": "1.4-temperature"
+  },
+  {
+   "sym": "T_C",
+   "concept": "temperature",
+   "meaning": "a temperature read on the Celsius scale, on which water freezes at 0 °C and boils at 100 °C",
+   "unit": "°C",
+   "section": "1.6",
+   "anchor": "1.6-linear-not-proportional"
+  },
+  {
+   "sym": "T_F",
+   "concept": "temperature",
+   "meaning": "a temperature read on the Fahrenheit scale, on which water freezes at 32 °F and boils at 212 °F",
+   "unit": "°F",
+   "section": "1.6",
+   "anchor": "1.6-linear-not-proportional"
+  },
+  {
+   "sym": "T_K",
+   "concept": "temperature",
+   "meaning": "a temperature read on the kelvin scale, an absolute scale whose zero is the lowest temperature that can theoretically be achieved",
+   "unit": "K",
+   "section": "1.6",
+   "anchor": "1.6-kelvin-scale"
+  },
+  {
+   "sym": "v_iron",
+   "concept": "volume",
+   "ref": "iron-block",
+   "meaning": "the volume of the iron block of Example 1.2, read as the rise of the water it displaces",
+   "unit": "mL",
+   "section": "1.4",
+   "anchor": "1.4-ex-displacement"
+  },
+  {
+   "sym": "V",
+   "concept": "volume",
+   "meaning": "the volume of the bathtub of Example 1.6, its length times its width times its depth",
+   "unit": "dm³",
+   "section": "1.5",
+   "anchor": "1.5-ex-bathtub"
+  },
+  {
+   "sym": "T",
+   "concept": "temperature",
+   "meaning": "a temperature, whichever scale it is read on",
+   "unit": "°C, °F or K",
+   "section": "1.6",
+   "anchor": "1.6-linear-not-proportional"
+  },
+  {
+   "sym": "m",
+   "concept": "mass",
+   "meaning": "the mass of an object, whose weight is its mass times the acceleration of gravity",
+   "unit": "g",
+   "section": "1.6",
+   "anchor": "1.6-conversion-factors"
+  }
+ ]
+}

@@ -1,0 +1,240 @@
+{
+ "id": "units",
+ "title": "Units and Conversion Factors",
+ "kind": "table",
+ "source": {
+  "module": "m68861",
+  "appendix": "C"
+ },
+ "generated_by": "tool",
+ "tables": [
+  {
+   "id": "units-of-length",
+   "title": "Units of Length",
+   "columns": [
+    {
+     "id": "col1",
+     "label": "",
+     "kind": "text"
+    },
+    {
+     "id": "col2",
+     "label": "",
+     "kind": "text"
+    }
+   ],
+   "rows": [
+    [
+     "meter (m)",
+     "= 39.37 inches (in.)<br>= 1.094 yards (yd)"
+    ],
+    [
+     "centimeter (cm)",
+     "= 0.01 m (exact, definition)"
+    ],
+    [
+     "millimeter (mm)",
+     "= 0.001 m (exact, definition)"
+    ],
+    [
+     "kilometer (km)",
+     "= 1000 m (exact, definition)"
+    ],
+    [
+     "angstrom (Å)",
+     "= 10<sup>–8</sup> cm (exact, definition)<br>= 10<sup>–10</sup> m (exact, definition)"
+    ],
+    [
+     "yard (yd)",
+     "= 0.9144 m"
+    ],
+    [
+     "inch (in.)",
+     "= 2.54 cm (exact, definition)"
+    ],
+    [
+     "mile (US)",
+     "= 1.60934 km"
+    ]
+   ]
+  },
+  {
+   "id": "units-of-volume",
+   "title": "Units of Volume",
+   "columns": [
+    {
+     "id": "col1",
+     "label": "",
+     "kind": "text"
+    },
+    {
+     "id": "col2",
+     "label": "",
+     "kind": "formula"
+    }
+   ],
+   "rows": [
+    [
+     "liter (L)",
+     "= 0.001 m<sup>3</sup> (exact, definition)<br>= 1000 cm<sup>3</sup> (exact, definition)<br>= 1.057 (US) quarts"
+    ],
+    [
+     "milliliter (mL)",
+     "= 0.001 L (exact, definition)<br>= 1 cm<sup>3</sup> (exact, definition)"
+    ],
+    [
+     "microliter (μL)",
+     "= 10<sup>–6</sup> L (exact, definition)<br>= 10<sup>–3</sup> cm<sup>3</sup> (exact, definition)"
+    ],
+    [
+     "liquid quart (US)",
+     "= 32 (US) liquid ounces (exact, definition)<br>= 0.25 (US) gallon (exact, definition)<br>= 0.9463 L"
+    ],
+    [
+     "dry quart",
+     "= 1.1012 L"
+    ],
+    [
+     "cubic foot (US)",
+     "= 28.316 L"
+    ]
+   ]
+  },
+  {
+   "id": "units-of-mass",
+   "title": "Units of Mass",
+   "columns": [
+    {
+     "id": "col1",
+     "label": "",
+     "kind": "text"
+    },
+    {
+     "id": "col2",
+     "label": "",
+     "kind": "text"
+    }
+   ],
+   "rows": [
+    [
+     "gram (g)",
+     "= 0.001 kg (exact, definition)"
+    ],
+    [
+     "milligram (mg)",
+     "= 0.001 g (exact, definition)"
+    ],
+    [
+     "kilogram (kg)",
+     "= 1000 g (exact, definition)<br>= 2.205 lb<sup class=\"fn\">1</sup>"
+    ],
+    [
+     "ton (metric)",
+     "=1000 kg (exact, definition)<br>= 2204.62 lb"
+    ],
+    [
+     "ounce (oz)",
+     "= 28.35 g"
+    ],
+    [
+     "pound (lb)",
+     "= 0.4535924 kg"
+    ],
+    [
+     "ton (short)",
+     "=2000 lb (exact, definition)<br>= 907.185 kg"
+    ],
+    [
+     "ton (long)",
+     "= 2240 lb (exact, definition)<br>= 1.016 metric ton"
+    ]
+   ],
+   "notes": [
+    "Strictly speaking, the ounce and pound are units of weight, <em>W</em> (a force equal to the product of mass and gravitational acceleration, <em>W</em> = <em>mg</em>). The conversion relations in this table are commonly used to equate masses and weight assuming a nominal value for <em>g</em> at the surface of the earth."
+   ]
+  },
+  {
+   "id": "units-of-energy",
+   "title": "Units of Energy",
+   "columns": [
+    {
+     "id": "col1",
+     "label": "",
+     "kind": "text"
+    },
+    {
+     "id": "col2",
+     "label": "",
+     "kind": "formula"
+    }
+   ],
+   "rows": [
+    [
+     "4.184 joule (J)",
+     "= 1 thermochemical calorie (cal)"
+    ],
+    [
+     "1 thermochemical calorie (cal)",
+     "= 4.184 × 10<sup>7 </sup> erg"
+    ],
+    [
+     "erg",
+     "= 10<sup>–7</sup> J (exact, definition)"
+    ],
+    [
+     "electron-volt (eV)",
+     "= 1.60218 × 10<sup>−19</sup> J = 23.061 kcal mol<sup>−1</sup>"
+    ],
+    [
+     "liter∙atmosphere",
+     "= 24.217 cal = 101.325 J (exact, definition)"
+    ],
+    [
+     "nutritional calorie (Cal)",
+     "= 1000 cal (exact, definition) = 4184 J"
+    ],
+    [
+     "British thermal unit (BTU)",
+     "= 1054.804 J<sup class=\"fn\">1</sup>"
+    ]
+   ],
+   "notes": [
+    "BTU is the amount of energy needed to heat one pound of water by one degree Fahrenheit. Therefore, the exact relationship of BTU to joules and other energy units depends on the temperature at which BTU is measured. 59 °F (15 °C) is the most widely used reference temperature for BTU definition in the United States. At this temperature, the conversion factor is the one provided in this table."
+   ]
+  },
+  {
+   "id": "units-of-pressure",
+   "title": "Units of Pressure",
+   "columns": [
+    {
+     "id": "col1",
+     "label": "",
+     "kind": "text"
+    },
+    {
+     "id": "col2",
+     "label": "",
+     "kind": "formula"
+    }
+   ],
+   "rows": [
+    [
+     "torr",
+     "= 1 mm Hg (exact, definition)"
+    ],
+    [
+     "pascal (Pa)",
+     "= N m<sup>–2</sup> (exact, definition)<br>= kg m<sup>–1</sup> s<sup>–2</sup> (exact, definition)"
+    ],
+    [
+     "atmosphere (atm)",
+     "= 760 mm Hg (exact, definition)<br>= 760 torr (exact, definition)<br>= 101,325 N m<sup>–2</sup> (exact, definition)<br>= 101,325 Pa (exact, definition)"
+    ],
+    [
+     "bar",
+     "= 10<sup>5</sup> Pa (exact, definition)<br>= 10<sup>5</sup> kg m<sup>–1</sup> s<sup>–2</sup> (exact, definition)"
+    ]
+   ]
+  }
+ ]
+}

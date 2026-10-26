@@ -74,7 +74,7 @@ function thermometer(ctx, x, y, h, f, color) {
       text(ctx, val, bx + bw + 16, y, color, { size: 22, weight: 600 });
     });
     line(ctx, bx - 60, 110, bx - 60, 500, PAL.rule, 1.5);
-    headline(ctx, '一壶盛有 ' + fmt(v, 2) + ' L、温度为 ' + fmt(t, 0) + ' °C 的牛奶，质量为 ' + fmt(mkg, 2) + ' kg，密度为 ' + fmt(DENS, 2) + ' g/mL。');
+    headline(ctx, '壶中盛有 ' + fmt(v, 2) + ' L、温度为 ' + fmt(t, 0) + ' °C 的牛奶，其质量为 ' + fmt(mkg, 2) + ' kg，密度为 ' + fmt(DENS, 2) + ' g/mL。');
     readout(d.readout, `\\km = \\kd\\,\\kV = \\htmlClass{kv-density}{${fmt(DENS, 2)}\\ \\text{g/mL}} \\times \\htmlClass{kv-volume}{${fmt(mL, 0)}\\ \\text{mL}} = \\htmlClass{kv-mass}{${fmt(mkg, 2)}\\ \\text{kg}}`,
       '无论牛奶的量是多少，它的温度都是 ' + fmt(t, 0) + ' °C。');
   }

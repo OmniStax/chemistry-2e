@@ -155,7 +155,7 @@
    "kind": "idea",
    "section": "1.2",
    "name": "质量与重量",
-   "statement": "物体的质量度量其中所含物质的量，并且不会改变；重量是重力作用于它的力，会随它所处的重力而改变。宇航员在月球上的质量和在地球上相同，而她的重量只有地球上的六分之一，所以说明存在多少物质的是质量，而不是重量。"
+   "statement": "物体的质量度量其中所含物质的多少，并且不会改变；重量是重力作用于它的力，会随它所处的重力而改变。宇航员在月球上的质量和在地球上相同，而她的重量只有地球上的六分之一，所以说明存在多少物质的是质量，而不是重量。"
   },
   {
    "id": "conservation-of-matter",
@@ -208,7 +208,7 @@
     "质量"
    ],
    "type": "mass",
-   "statement": "物体的质量是其中所含物质的量的度量，它不随物体所处的位置而改变。"
+   "statement": "物体的质量是其中所含物质的多少的度量，它不随物体所处的位置而改变。"
   },
   {
    "id": "weight",
@@ -409,7 +409,7 @@
    "terms": [
     "广度性质"
    ],
-   "statement": "广度性质是取决于物质的量的物质性质。"
+   "statement": "广度性质是取决于物质的多少的物质性质。"
   },
   {
    "id": "intensive-property",
@@ -419,7 +419,7 @@
    "terms": [
     "强度性质"
    ],
-   "statement": "强度性质是与物质的量无关的物质性质。"
+   "statement": "强度性质是与物质的多少无关的物质性质。"
   },
   {
    "id": "measurement-parts",
@@ -439,15 +439,15 @@
    "id": "si-base-units",
    "kind": "definition",
    "section": "1.4",
-   "name": "SI基本单位",
+   "name": "SI 基本单位",
    "statement": "七个基本性质的单位由国际协议确定，本书中的其他所有单位都由它们导出。知道米、千克、秒、开尔文、安培、摩尔和坎德拉是基本单位，就使单位换算成为一件记账式的事，而不必靠死记。"
   },
   {
    "id": "unit-prefixes",
    "kind": "skill",
    "section": "1.4",
-   "name": "使用SI词头",
-   "statement": "SI单位的分数和倍数总是 10 的幂，每个幂都有一个词头和一个符号。一个千米等于一千个米，一个微升是一升的百万分之一，所以懂得这些词头的读者无需算术就能把一个测量值在标度上上下移动。"
+   "name": "使用 SI 词头",
+   "statement": "SI 单位的分数和倍数总是 10 的幂，每个幂都有一个词头和一个符号。一个千米等于一千个米，一个微升是一升的百万分之一，所以懂得这些词头的读者无需算术就能把一个测量值在标度上上下移动。"
   },
   {
    "id": "derived-units",
@@ -514,7 +514,7 @@
     "长度"
    ],
    "type": "length",
-   "statement": "长度是物体一个维度的度量，其SI单位是米。"
+   "statement": "长度是物体一个维度的度量，其 SI 单位是米。"
   },
   {
    "id": "time",
@@ -523,7 +523,7 @@
    "name": "时间",
    "symbol": "t",
    "type": "time",
-   "statement": "时间用时间的SI基本单位秒来度量。"
+   "statement": "时间用时间的 SI 基本单位秒来度量。"
   },
   {
    "id": "temperature",
@@ -535,17 +535,17 @@
     "温度"
    ],
    "type": "temperature",
-   "statement": "温度是表示物质冷热程度的强度性质，其SI单位是开尔文。"
+   "statement": "温度是表示物质冷热程度的强度性质，其 SI 单位是开尔文。"
   },
   {
    "id": "si-units",
    "kind": "definition",
    "section": "1.4",
-   "name": "SI单位",
+   "name": "SI 单位",
    "terms": [
-    "SI单位（国际单位制）"
+    "SI 单位（国际单位制）"
    ],
-   "statement": "SI单位是国际单位制（Le Système International d’Unités）中由国际协议确定的标准。"
+   "statement": "SI 单位是国际单位制（Le Système International d’Unités）中由国际协议确定的标准。"
   },
   {
    "id": "meter",
@@ -555,7 +555,7 @@
    "terms": [
     "米（m）"
    ],
-   "statement": "米（m）是长度的标准公制单位和SI单位；1 m 约等于 1.094 码。"
+   "statement": "米（m）是长度的标准公制单位和 SI 单位；1 m 约等于 1.094 码。"
   },
   {
    "id": "kilogram",
@@ -565,7 +565,7 @@
    "terms": [
     "千克（kg）"
    ],
-   "statement": "千克（kg）是质量的标准SI单位。"
+   "statement": "千克（kg）是质量的标准 SI 单位。"
   },
   {
    "id": "second",
@@ -575,7 +575,7 @@
    "terms": [
     "秒（s）"
    ],
-   "statement": "秒（s）是时间的SI单位。"
+   "statement": "秒（s）是时间的 SI 单位。"
   },
   {
    "id": "kelvin",
@@ -585,7 +585,7 @@
    "terms": [
     "开尔文（K）"
    ],
-   "statement": "开尔文（K）是温度的SI单位；273.15 K 等于 0 °C。"
+   "statement": "开尔文（K）是温度的 SI 单位；273.15 K 等于 0 °C。"
   },
   {
    "id": "celsius",
@@ -605,7 +605,7 @@
    "terms": [
     "立方米（m³）"
    ],
-   "statement": "立方米（m³）是体积的SI单位，即边长恰好为 1 m 的立方体的体积。"
+   "statement": "立方米（m³）是体积的 SI 单位，即边长恰好为 1 m 的立方体的体积。"
   },
   {
    "id": "cubic-centimeter",

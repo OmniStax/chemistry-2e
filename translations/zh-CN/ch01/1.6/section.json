@@ -250,7 +250,7 @@
     "at": "inline",
     "after": "ex-roadster"
    },
-   "prompt": "一辆丰田普锐斯混合动力汽车从旧金山行驶到西雅图，距离为 1300 km（两位有效数字），消耗了 59.7 L 汽油。<br>(a) 普锐斯在这次行程中的（平均）燃油经济性是多少英里每加仑？<br>(b) 如果汽油价格为每加仑＄3.90，这次行程的燃油费用是多少？",
+   "prompt": "一辆丰田普锐斯混合动力汽车从旧金山行驶到西雅图，距离为 1300 km（两位有效数字），消耗了 59.7 L 汽油。<br>（a）普锐斯在这次行程中的（平均）燃油经济性是多少英里每加仑？<br>（b）如果汽油价格为每加仑 ＄3.90，这次行程的燃油费用是多少？",
    "answer": {
     "type": "multi",
     "parts": [
@@ -266,7 +266,7 @@
      }
     ],
     "generated_by": "source",
-    "solution": "(a) 51 mpg；(b) ＄62"
+    "solution": "（a）51 mpg；（b）＄62"
    }
   },
   {
@@ -334,10 +334,10 @@
     "at": "end"
    },
    "cite": "conversion-factors",
-   "prompt": "写出下列各数的换算因子（写成比值）：<br>(a) 1 米中的码数<br>(b) 1 液量夸脱中的升数<br>(c) 1 千克中的磅数",
+   "prompt": "写出下列各数的换算因子（写成比值）：<br>（a）1 米中的码数<br>（b）1 液量夸脱中的升数<br>（c）1 千克中的磅数",
    "answer": {
     "type": "open",
-    "solution": "(a) $\\frac{\\text{1.0936 yd}}{\\text{1 m}}$；(b) $\\frac{\\text{0.94635 L}}{\\text{1 qt}}$；(c) $\\frac{\\text{2.2046 lb}}{\\text{1 kg}}$",
+    "solution": "（a）$\\frac{\\text{1.0936 yd}}{\\text{1 m}}$；（b）$\\frac{\\text{0.94635 L}}{\\text{1 qt}}$；（c）$\\frac{\\text{2.2046 lb}}{\\text{1 kg}}$",
     "generated_by": "source"
    }
   },
@@ -446,7 +446,7 @@
    "place": {
     "at": "end"
    },
-   "prompt": "用科学（指数）记数法，以表 1.2 中的SI基本单位表示下列各量：<br>(a) 0.13 g<br>(b) 232 Gg<br>(c) 5.23 pm<br>(d) 86.3 mg<br>(e) 37.6 cm<br>(f) 54 μm<br>(g) 1 Ts<br>(h) 27 ps<br>(i) 0.15 mK",
+   "prompt": "用科学（指数）记数法，以表 1.2 中的 SI 基本单位表示下列各量：<br>（a）0.13 g<br>（b）232 Gg<br>（c）5.23 pm<br>（d）86.3 mg<br>（e）37.6 cm<br>（f）54 μm<br>（g）1 Ts<br>（h）27 ps<br>(i) 0.15 mK",
    "answer": {
     "type": "multi",
     "parts": [
@@ -497,7 +497,7 @@
      }
     ],
     "generated_by": "source",
-    "solution": "(a) 1.3 $\\times$ 10<sup>−4</sup> kg；(b) 2.32 $\\times$ 10<sup>8</sup> kg；(c) 5.23 $\\times$ 10<sup>−12</sup> m；(d) 8.63 $\\times$ 10<sup>−5</sup> kg；(e) 3.76 $\\times$ 10<sup>−1</sup> m；(f) 5.4 $\\times$ 10<sup>−5</sup> m；(g) 1 $\\times$ 10<sup>12</sup> s；(h) 2.7 $\\times$ 10<sup>−11</sup> s；(i) 1.5 $\\times$ 10<sup>−4</sup> K"
+    "solution": "（a）1.3 $\\times$ 10<sup>−4</sup> kg；（b）2.32 $\\times$ 10<sup>8</sup> kg；（c）5.23 $\\times$ 10<sup>−12</sup> m；（d）8.63 $\\times$ 10<sup>−5</sup> kg；（e）3.76 $\\times$ 10<sup>−1</sup> m；（f）5.4 $\\times$ 10<sup>−5</sup> m；（g）1 $\\times$ 10<sup>12</sup> s；（h）2.7 $\\times$ 10<sup>−11</sup> s；(i) 1.5 $\\times$ 10<sup>−4</sup> K"
    }
   },
   {
@@ -541,7 +541,7 @@
    "place": {
     "at": "end"
    },
-   "prompt": "完成下列各项所示的换算：<br>(a) 足球场的长度 120 m（三位有效数字），换算成英尺<br>(b) 非洲最高峰乞力马扎罗山的高度 19,565 ft，换算成千米<br>(c) 一张 8.5 × 11 英寸的纸的面积，以 cm<sup>2</sup> 表示<br>(d) 汽车发动机的排量 161 in.<sup>3</sup>，换算成升<br>(e) 大气质量的估计值 5.6 × 10<sup>15</sup> 吨，换算成千克<br>(f) 一蒲式耳黑麦的质量 32.0 lb，换算成千克<br>(g) 一片 5.00 格令的阿司匹林药片的质量，换算成毫克（1 格令 = 0.00229 oz）",
+   "prompt": "完成下列各项所示的换算：<br>（a）足球场的长度 120 m（三位有效数字），换算成英尺<br>（b）非洲最高峰乞力马扎罗山的高度 19,565 ft，换算成千米<br>（c）一张 8.5 × 11 英寸的纸的面积，以 cm<sup>2</sup> 表示<br>（d）汽车发动机的排量 161 in.<sup>3</sup>，换算成升<br>（e）大气质量的估计值 5.6 × 10<sup>15</sup> 短吨（美吨），换算成千克<br>（f）一蒲式耳黑麦的质量 32.0 lb，换算成千克<br>（g）一片 5.00 格令的阿司匹林药片的质量，换算成毫克（1 格令 = 0.00229 oz）",
    "answer": {
     "type": "multi",
     "parts": [
@@ -582,7 +582,7 @@
      }
     ],
     "generated_by": "source",
-    "solution": "(a) 394 ft；(b) 5.9634 km；(c) 6.0 $\\times$ 10<sup>2</sup>；(d) 2.64 L；(e) 5.1 $\\times$ 10<sup>18</sup> kg；(f) 14.5 kg；(g) 325 mg"
+    "solution": "（a）394 ft；（b）5.9634 km；（c）6.0 $\\times$ 10<sup>2</sup>；（d）2.64 L；（e）5.1 $\\times$ 10<sup>18</sup> kg；（f）14.5 kg；（g）325 mg"
    }
   },
   {
@@ -637,7 +637,7 @@
    "place": {
     "at": "end"
    },
-   "prompt": "一名化学专业的学生身高 159 cm，重 45.8 kg。她的身高是多少英寸，重量是多少磅？",
+   "prompt": "一名学化学的学生身高 159 cm，重 45.8 kg。她的身高是多少英寸，重量是多少磅？",
    "answer": {
     "type": "multi",
     "parts": [
@@ -664,7 +664,7 @@
    "place": {
     "at": "end"
    },
-   "prompt": "解答下面这些关于木材尺寸的问题。<br>(a) 为了向欧洲人描述美国的房屋是如何建造的，必须把“二乘四”木材的尺寸换算成公制单位。在美国，其厚度 $\\times$ 宽度 $\\times$ 长度的尺寸为 1.50 in. $\\times$ 3.50 in. $\\times$ 8.00 ft。以 cm $\\times$ cm $\\times$ m 表示，这些尺寸是多少？<br>(b) 这种木材可以用作竖直的立柱，立柱通常间隔 16.0 in. 放置。这一距离是多少厘米？",
+   "prompt": "解答下面这些关于木材尺寸的问题。<br>（a）为了向欧洲人描述美国的房屋是如何建造的，必须把“二乘四”木材的尺寸换算成公制单位。在美国，其厚度 $\\times$ 宽度 $\\times$ 长度的尺寸为 1.50 in. $\\times$ 3.50 in. $\\times$ 8.00 ft。以 cm $\\times$ cm $\\times$ m 表示，这些尺寸是多少？<br>（b）这种木材可以用作竖直的立柱，立柱通常间隔 16.0 in. 放置。这一距离是多少厘米？",
    "answer": {
     "type": "multi",
     "parts": [
@@ -690,7 +690,7 @@
      }
     ],
     "generated_by": "source",
-    "solution": "(a) 3.81 cm $\\times$ 8.89 cm $\\times$ 2.44 m；(b) 40.6 cm"
+    "solution": "（a）3.81 cm $\\times$ 8.89 cm $\\times$ 2.44 m；（b）40.6 cm"
    }
   },
   {
@@ -718,7 +718,7 @@
    "place": {
     "at": "end"
    },
-   "prompt": "计算下列质量。<br>(a) 6.00 cm<sup>3</sup> 汞的质量是多少？汞的密度 = 13.5939 g/cm<sup>3</sup>。<br>(b) 25.0 mL 辛烷的质量是多少？辛烷的密度 = 0.702 g/cm<sup>3</sup>。",
+   "prompt": "计算下列质量。<br>（a）6.00 cm<sup>3</sup> 汞的质量是多少？汞的密度 = 13.5939 g/cm<sup>3</sup>。<br>（b）25.0 mL 辛烷的质量是多少？辛烷的密度 = 0.702 g/cm<sup>3</sup>。",
    "answer": {
     "type": "multi",
     "parts": [
@@ -734,7 +734,7 @@
      }
     ],
     "generated_by": "source",
-    "solution": "(a) 81.6 g；(b) 17.6 g"
+    "solution": "（a）81.6 g；（b）17.6 g"
    }
   },
   {
@@ -745,7 +745,7 @@
    "place": {
     "at": "end"
    },
-   "prompt": "计算下列体积。<br>(a) 25 g 碘的体积是多少？碘的密度 = 4.93 g/cm<sup>3</sup>。<br>(b) 3.28 g 气态氢的体积是多少？气态氢的密度 = 0.089 g/L。",
+   "prompt": "计算下列体积。<br>（a）25 g 碘的体积是多少？碘的密度 = 4.93 g/cm<sup>3</sup>。<br>（b）3.28 g 气态氢的体积是多少？气态氢的密度 = 0.089 g/L。",
    "answer": {
     "type": "multi",
     "parts": [
@@ -761,7 +761,7 @@
      }
     ],
     "generated_by": "source",
-    "solution": "(a) 5.1 mL；(b) 37 L"
+    "solution": "（a）5.1 mL；（b）37 L"
    }
   },
   {

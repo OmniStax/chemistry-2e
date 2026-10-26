@@ -10,7 +10,7 @@
   {
    "id": "1.1",
    "module": "m68664",
-   "title": "化学的背景",
+   "title": "情境中的化学",
    "slug": "1-1-chemistry-in-context"
   },
   {
@@ -48,7 +48,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "样品的质量，即其中所含物质的量的度量",
+   "meaning": "样品的质量，即其中所含物质的多少的度量",
    "unit": "g",
    "section": "1.4",
    "anchor": "1.4-density"
@@ -72,7 +72,7 @@
   {
    "sym": "t",
    "concept": "time",
-   "meaning": "时间间隔，用时间的SI基本单位度量",
+   "meaning": "时间间隔，用时间的 SI 基本单位度量",
    "unit": "s",
    "section": "1.4",
    "anchor": "1.4-time"
@@ -80,7 +80,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "样品的温度，用温度的SI基本单位度量",
+   "meaning": "样品的温度，用温度的 SI 基本单位度量",
    "unit": "K",
    "section": "1.4",
    "anchor": "1.4-temperature"

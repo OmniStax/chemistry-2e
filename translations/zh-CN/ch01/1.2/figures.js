@@ -239,7 +239,7 @@ function diatomic3(v, g, p, u, sym, r) {
     /* (a) the bottle */
     bottle(ctx, 250, 410, alpha(PAL.ink, 0.06 + 0.08 * f));
     balance(ctx, 250, 412, 200, fmt(WATER + SUGAR, 1) + ' g');
-    text(ctx, '(a)', 250, 520, PAL.muted, { size: 20, align: 'center' });
+    text(ctx, '（a）', 250, 520, PAL.muted, { size: 20, align: 'center' });
     bar(ctx, 500, 190, '水和其余部分', WATER, BK);
     bar(ctx, 500, 236, '糖', SUGAR * (1 - f), BK);
     bar(ctx, 500, 282, '乙醇', SUGAR * f * ETH, BK);
@@ -247,7 +247,7 @@ function diatomic3(v, g, p, u, sym, r) {
     /* (b) the battery */
     battery(ctx, 900, 410);
     balance(ctx, 900, 412, 260, fmt(PB + PBO2 + ACID, 1) + ' g');
-    text(ctx, '(b)', 900, 520, PAL.muted, { size: 20, align: 'center' });
+    text(ctx, '（b）', 900, 520, PAL.muted, { size: 20, align: 'center' });
     bar(ctx, 1150, 170, '铅', PB * (1 - q), BK);
     bar(ctx, 1150, 216, '氧化铅', PBO2 * (1 - q), BK);
     bar(ctx, 1150, 262, '硫酸', ACID * (1 - q), BK);
@@ -258,7 +258,7 @@ function diatomic3(v, g, p, u, sym, r) {
     const fs = Fm.v, ds = Ds.v;
     headline(ctx, fs === 0 && ds === 0 ? '瓶重 1000.0 g，电池的反应物重 642.6 g；随着里面的物质变化，请观察两个读数。'
       : `糖已发酵 ${fs}%，电池已放电 ${ds}%，物质的种类已经改变，而两台天平都没有动。`);
-    readout(d.readout, `\\km_{\\text{前}} = \\km_{\\text{后}}:\\quad ${fmt(WATER + SUGAR, 1)}\\ \\text{g（瓶）},\\quad ${fmt(PB + PBO2 + ACID, 1)}\\ \\text{g（电池）}`,
+    readout(d.readout, `\\km_{\\text{前}} = \\km_{\\text{后}}:\\quad ${fmt(WATER + SUGAR, 1)}\\ \\text{g (瓶)},\\quad ${fmt(PB + PBO2 + ACID, 1)}\\ \\text{g (电池)}`,
       '瓶是密封的，所以二氧化碳留在里面，与其余部分一起称量。');
   }
   register(d.fig, { update: () => {}, draw });

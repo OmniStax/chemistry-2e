@@ -73,7 +73,7 @@ function column(ctx, x, yTop, bottom, r, color, filled) {
     }
     /* the graph beside the tubes: the Fahrenheit and kelvin readings against the Celsius temperature */
     const box = { l: 960, r: 1330, t: 130, b: 540 };
-    const g = axes(ctx, box, [LO, HI], [-100, 400], { xl: '摄氏温度 (°C)', xc: hue, yl: '另一温标上的读数', yc: hue, nx: 5, ny: 5, fx: (v) => num(v, 0), fy: (v) => num(v, 0) });
+    const g = axes(ctx, box, [LO, HI], [-100, 400], { xl: '摄氏温度（°C）', xc: hue, yl: '另一温标上的读数', yc: hue, nx: 5, ny: 5, fx: (v) => num(v, 0), fy: (v) => num(v, 0) });
     const X = g.X, Yg = g.Y;
     line(ctx, X(LO), Yg(toF(LO)), X(HI), Yg(toF(HI)), hue, 4);
     line(ctx, X(LO), Yg(toK(LO)), X(HI), Yg(toK(HI)), hue, 4, [12, 10]);

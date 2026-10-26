@@ -149,11 +149,20 @@
       "note": "element name, 化学名词（化学元素名称）."
     },
     {
+      "source": "amount of matter",
+      "target": "物质的多少",
+      "authority": "book",
+      "url": "",
+      "note": "The everyday quantity (\"the amount of matter in an object\"), as in 质量是物体所含物质多少的量度. Not 物质的量, which is GB 3100 \"amount of substance\" (n, mol; 1.4 Table 1.2). Added in review pass 5; owner to confirm.",
+      "confirm": "owner",
+      "section": "1.2"
+    },
+    {
       "source": "amount of substance",
       "target": "物质的量",
       "authority": "gb3100",
       "url": "",
-      "note": "GB 3100 物质的量; type label (amount)"
+      "note": "GB 3100 物质的量; type label (amount). Only for the SI quantity n (mol). The everyday \"amount of matter\" is 物质的多少 (row amount of matter); 物质的量 is not used for it."
     },
     {
       "source": "ampere",
@@ -410,10 +419,10 @@
     },
     {
       "source": "captive zero",
-      "target": "夹零",
+      "target": "中间零",
       "authority": "book",
       "url": "",
-      "note": "The English textbook calls it a captive zero (often rendered 中间的零); no standard Chinese name, 夹零 kept.",
+      "note": "The English textbook calls it a captive zero; no standard Chinese name. 中间零 (a zero between two other digits) replaces 夹零 (review pass 5); 前导零 and 末尾零 stay.",
       "confirm": "termonline",
       "section": "1.5"
     },
@@ -578,10 +587,10 @@
     },
     {
       "source": "Chemistry in Context",
-      "target": "化学的背景",
+      "target": "情境中的化学",
       "authority": "book",
       "url": "",
-      "note": "section 1.1 title; owner to confirm",
+      "note": "section 1.1 title; 化学的背景 (background of chemistry) was a mistranslation of \"in context\", changed in review pass 5; owner to confirm",
       "confirm": "owner"
     },
     {
@@ -644,7 +653,7 @@
       "target": "燃烧",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "The book glosses it as burning; 燃烧 for both. termonline: not looked up in this pass.",
+      "note": "The book glosses it as \"combustion (burning)\"; 燃烧 for both, so the gloss (burning) is not written (it would read 燃烧（燃烧）). Recorded as a scenario (4.5). termonline: not looked up in this pass.",
       "confirm": "termonline",
       "section": "1.3"
     },
@@ -761,11 +770,19 @@
       "note": ""
     },
     {
+      "source": "credit",
+      "target": "来源",
+      "authority": "book",
+      "url": "",
+      "note": "Photo credit label, as the physics edition writes it: （来源：X）. Lettered credits read （来源 a：…；b：…）. Organisation and person names are kept as printed.",
+      "confirm": "owner"
+    },
+    {
       "source": "crystalline solid",
-      "target": "晶体固体",
+      "target": "晶态固体",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "Book phrase; 晶体 alone would drop \"solid\", and 晶体固体 keeps the compound the book uses. termonline: not looked up in this pass.",
+      "note": "Book phrase. 晶态固体 replaces 晶体固体 (review pass 5), built on 晶态 (crystalline state, 物理学名词). termonline 2026-10-26: neither 晶态固体 nor 晶体固体 is listed as an entry; to be confirmed.",
       "confirm": "termonline",
       "section": "1.2"
     },
@@ -906,6 +923,15 @@
       "note": "The book says \"detonate/detonation\"; 爆轰 is the narrow technical term and 爆炸 is chosen for readability. termonline: not looked up in this pass.",
       "confirm": "termonline",
       "section": "1.3"
+    },
+    {
+      "source": "dime",
+      "target": "10 美分硬币",
+      "authority": "book",
+      "url": "",
+      "note": "A US coin named by its value; 一角硬币 reads as a Chinese 1-jiao coin and is not used. Recorded as scenario 4.4 (1.2 and 1.4).",
+      "confirm": "owner",
+      "section": "1.2"
     },
     {
       "source": "dimensional analysis",
@@ -1128,7 +1154,7 @@
       "target": "科学记数法",
       "authority": "termonline",
       "url": "",
-      "note": "Decided in the merge: the book calls it the same thing as scientific notation (1.4: \"Scientific notation is also known as exponential notation\"), so the glossary term 科学记数法 is used everywhere, including 1.5. The one sentence that names both words keeps 指数记数法 as the alias (recorded as a forced scenario).",
+      "note": "Decided in the merge: the book calls it the same thing as scientific notation (1.4: \"Scientific notation is also known as exponential notation\"), so the glossary term 科学记数法 is used everywhere, including 1.5. Two places keep 指数记数法 as the alias: the 1.4 sentence that names both words (科学记数法也称指数记数法) and 1.6 exercise p15 (科学（指数）记数法), recorded as forced scenarios.",
       "confirm": "termonline",
       "section": "1.5"
     },
@@ -1154,7 +1180,7 @@
       "authority": "termonline",
       "url": "",
       "concept": "dimensional-analysis",
-      "note": "factor-label method termonline: not looked up; standard textbook usage",
+      "note": "factor-label method termonline: not looked up; standard textbook usage. 因子-标签法 is the other common rendering in Chinese translations of US general-chemistry texts; 因子标记法 kept until the owner decides.",
       "confirm": "termonline"
     },
     {
@@ -1890,7 +1916,7 @@
       "target": "长吨",
       "authority": "gb3100",
       "url": "",
-      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "note": "Name of a non-SI unit in prose (GB 3101): 2240 lb; the symbol stays as printed. Not the short ton (row short ton) and not the metric tonne 吨 (1000 kg). Recorded as scenario 4.4.",
       "confirm": "termonline",
       "section": "1.6"
     },
@@ -2077,7 +2103,7 @@
       "target": "半金属",
       "authority": "cnterm-chemistry",
       "url": "https://www.termonline.cn/detail?id=c921ca8e26a711ee8527b068e6519520",
-      "note": "化学名词 lists 半金属; 物理学名词 lists 类金属, and textbooks also write 准金属. The chemistry authority is followed termonline 2026-10-26: confirmed (化学名词)."
+      "note": "termonline 2026-10-26 (looked up again in review pass 5): 半金属 · metalloid · 化学名词; 类金属 · metalloid · 物理学名词; 准金属 is not listed. 半金属 is also 物理学名词 \"semimetal\" (Bi, graphite), a different concept; the chemistry list is followed because this is a chemistry book, so 半金属 stays. Not a conflict for the reader inside this book, but do not reuse the row in a physics context."
     },
     {
       "source": "meter",
@@ -2171,6 +2197,14 @@
       "confirm": "termonline"
     },
     {
+      "source": "modification of work by",
+      "target": "改编自 X 的作品",
+      "authority": "book",
+      "url": "",
+      "note": "The credit clause for an adapted image, as in the physics edition (改编自 X 的作品); an unadapted credit is just （来源：X）. One formula on all pages of chapter 1 (review pass 5).",
+      "confirm": "owner"
+    },
+    {
       "source": "mole",
       "target": "摩尔",
       "authority": "gb3100",
@@ -2207,7 +2241,7 @@
       "target": "美国消防协会（NFPA）",
       "authority": "book",
       "url": "",
-      "note": "The book writes National Fire Protection Agency; rendered as the 美国消防协会 usually given to the association, acronym kept.",
+      "note": "The book writes \"National Fire Protection Agency\"; the real name is the National Fire Protection Association, 美国消防协会, so the translation silently corrects the book's \"Agency\" and adds 美国. Recorded in config.md and translation-notes.md as an owner item (root item 13); acronym kept.",
       "confirm": "termonline",
       "section": "1.3"
     },
@@ -2470,6 +2504,14 @@
       "confirm": "termonline"
     },
     {
+      "source": "physical state",
+      "target": "物态",
+      "authority": "cnterm-physics",
+      "url": "https://www.termonline.cn/detail?id=bf928e1e26ac11ee9549b068e6519520",
+      "note": "The state of a sample (solid, liquid or gas) is 物态, the same term as states of matter; 物理状态 is not used (review pass 5 made one term in the 1.3 paragraph on physical change and the 1.2 objectives).",
+      "section": "1.3"
+    },
+    {
       "source": "pico-",
       "target": "皮",
       "authority": "gb3100",
@@ -2636,6 +2678,15 @@
       "section": "1.4"
     },
     {
+      "source": "quarter (coin)",
+      "target": "25 美分硬币",
+      "authority": "book",
+      "url": "",
+      "note": "A US coin named by its value, parallel to dime 10 美分硬币 (1.5).",
+      "confirm": "owner",
+      "section": "1.5"
+    },
+    {
       "source": "quartz",
       "target": "石英",
       "authority": "cnterm-chemistry",
@@ -2792,8 +2843,17 @@
       "note": ""
     },
     {
+      "source": "short ton",
+      "target": "短吨（美吨）",
+      "authority": "gb3100",
+      "url": "",
+      "note": "The US ton, 2000 lb (about 907 kg); the book's \"tons\" in 1.6 exercise p21(e) (5.6 × 10^15 tons of atmosphere, key 5.1 × 10^18 kg) are short tons. Plain 吨 is the metric tonne (1000 kg) and would give 5.6 × 10^18 kg. Not in the termonline lists (looked up 2026-10-26). Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
       "source": "SI base units",
-      "target": "SI基本单位",
+      "target": "SI 基本单位",
       "authority": "gb3100",
       "url": "",
       "concept": "si-base-units",
@@ -2801,7 +2861,7 @@
     },
     {
       "source": "SI units",
-      "target": "SI单位",
+      "target": "SI 单位",
       "authority": "gb3100",
       "url": "https://www.termonline.cn/detail?id=fb93c77426ad11eea9b4b068e6519520",
       "concept": "si-units",
@@ -2809,7 +2869,7 @@
     },
     {
       "source": "SI units (International System of Units)",
-      "target": "SI单位（国际单位制）",
+      "target": "SI 单位（国际单位制）",
       "authority": "gb3100",
       "url": "",
       "concept": "si-units",
@@ -2984,7 +3044,7 @@
       "authority": "cnterm-physics",
       "url": "https://www.termonline.cn/detail?id=bf928e1e26ac11ee9549b068e6519520",
       "concept": "states-of-matter",
-      "note": "物态 (物理学名词); also written 物质状态 in textbooks, not used. termonline 2026-10-26: confirmed (物理学名词)."
+      "note": "物态 (物理学名词); also written 物质状态 in textbooks, not used. termonline 2026-10-26: confirmed (物理学名词). The single-sample \"physical state\" is also 物态 (row physical state)."
     },
     {
       "source": "Strategy",
@@ -3268,7 +3328,7 @@
     },
     {
       "source": "using the SI prefixes",
-      "target": "使用SI词头",
+      "target": "使用 SI 词头",
       "authority": "book",
       "url": "",
       "concept": "unit-prefixes",

@@ -112,7 +112,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     box(ctx, law[0], law[1], W, Hb, ['观察', '成为', '定律'], { weight: 600 });
     box(ctx, thy[0], thy[1], W, Hb, ['假说', '成为', '理论'], { weight: 600 });
     /* the labels on the arrows, the book's own words; its three red phrases are set heavier here */
-    text(ctx, '下一步 …', hyp[0] + rx + 14, mid, ink, { size: 19 });
+    text(ctx, '下一步……', hyp[0] + rx + 14, mid, ink, { size: 19 });
     lines(ctx, ['结果'], hyp[0] - rx - 12, mid - 24, { align: 'right' });
     lines(ctx, ['不符合'], hyp[0] - rx - 12, mid, { align: 'right', weight: 600 });
     lines(ctx, ['预测'], hyp[0] - rx - 12, mid + 24, { align: 'right' });
@@ -183,7 +183,7 @@ function frame(r) {
   /* the state is a thing the reader chooses as well as a thing the temperature decides (rule 26.1): three buttons, the one the
      temperature falls in marked; pressing one sets the temperature to a value inside that state, and the slider is still free */
   const PRESET = { s: -10, l: 25, g: 110 };
-  const S = F.choice(d.controls, { label: '\\text{状态}', options: [{ value: 's', label: '固体' }, { value: 'l', label: '液体' }, { value: 'g', label: '气体' }], value: stateOf(T.v), aria: '水的状态', onInput: (v) => T.set(PRESET[v]) });
+  const S = F.choice(d.controls, { label: '\\text{状态}', options: [{ value: 's', label: '固态' }, { value: 'l', label: '液态' }, { value: 'g', label: '气态' }], value: stateOf(T.v), aria: '水的状态', onInput: (v) => T.set(PRESET[v]) });
   const WORD = { s: '固体', l: '液体', g: '气体' };
   const MICRO = { s: '紧密靠近且有序', l: '紧密靠近而无序', g: '相距很远且无序' };
   const headOf = (t, s) => `在 ${t} °C 时，烧杯中的水是${WORD[s]}，H₂O(${s})，其分子${MICRO[s]}。`;

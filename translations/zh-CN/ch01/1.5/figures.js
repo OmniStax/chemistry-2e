@@ -148,11 +148,11 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
   function draw() {
     const { ctx } = begin(d.c);
     const a = charsCentred(ctx, '3090', 380, 130, 88, () => PAL.ink);
-    tag(ctx, a[1].x, 178, 236, '夹零', PAL.ink); tag(ctx, a[3].x, 178, 236, '末尾零', PAL.ink);
+    tag(ctx, a[1].x, 178, 236, '中间零', PAL.ink); tag(ctx, a[3].x, 178, 236, '末尾零', PAL.ink);
     const b = charsCentred(ctx, '0.008020', 1000, 130, 88, () => PAL.ink);
     ubracket(ctx, b[0].l + 6, b[3].r - 6, 190, PAL.ink, '前导零');
-    tag(ctx, b[5].x, 178, 236, '夹零', PAL.ink); tag(ctx, b[7].x, 178, 236, '末尾零', PAL.ink);
-    headline(ctx, '测量值中的零是前导零、夹零或末尾零，它属于哪一种决定了它是否计入有效数字。');
+    tag(ctx, b[5].x, 178, 236, '中间零', PAL.ink); tag(ctx, b[7].x, 178, 236, '末尾零', PAL.ink);
+    headline(ctx, '测量值中的零是前导零、中间零或末尾零，它属于哪一种决定了它是否计入有效数字。');
     readout(d.readout, '3090 \\qquad 0.008020', '只有零需要斟酌：每个非零数字都是有效的。');
   }
   still(d, draw);
@@ -181,12 +181,12 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
     const { ctx } = begin(d.c);
     const a = charsCentred(ctx, '70.607 mL', 380, 150, 84, () => PAL.ink);
     ubracket(ctx, a[0].l + 4, a[5].r - 4, 210, PAL.ink, '5 位有效数字');
-    note(ctx, '夹零是测量得到的数字，要计入', 380, 290);
+    note(ctx, '中间零是测量得到的数字，要计入', 380, 290);
     const b = charsCentred(ctx, '0.00832407 mL', 1000, 150, 84, (i) => (i < 4 ? PAL.muted : PAL.ink));
     ubracket(ctx, b[4].l + 4, b[9].r - 4, 210, PAL.ink, '6 位有效数字');
     ubracket(ctx, b[0].l + 4, b[3].r - 4, 210, PAL.muted, '前导零');
     note(ctx, '前导零只标示小数点的位置，不计入', 1000, 290);
-    headline(ctx, '夹零总是有效的。前导零从来不是有效的，因为它只标示小数点的位置。');
+    headline(ctx, '中间零总是有效的。前导零从来不是有效的，因为它只标示小数点的位置。');
     readout(d.readout, '70.607\\ \\text{mL}: \\text{五位有效数字} \\qquad 0.00832407\\ \\text{mL}: \\text{六位有效数字}');
   }
   still(d, draw);
@@ -197,7 +197,7 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
   function draw() {
     const { ctx } = begin(d.c);
     const a = charsCentred(ctx, '1300 g', 700, 130, 88, (i) => (i === 2 || i === 3 ? PAL.muted : PAL.ink));
-    ubracket(ctx, a[0].l + 4, a[1].r - 4, 190, PAL.ink, '测量值');
+    ubracket(ctx, a[0].l + 4, a[1].r - 4, 190, PAL.ink, '测量所得');
     ubracket(ctx, a[2].l + 4, a[3].r - 4, 190, PAL.muted); text(ctx, '是测量数字，还是占位符？', a[3].r, 242, PAL.muted, { size: 20, weight: 600, align: 'center' });
     [['1.3 × 10³', '两位有效数字'], ['1.30 × 10³', '三位，若十位是测量得到的'], ['1.300 × 10³', '四位，若个位也是测量得到的']].forEach(([f, why], i) => {
       const x = 280 + i * 420; text(ctx, f, x, 300, PAL.ink, { size: 34, weight: 600, align: 'center' }); note(ctx, why, x, 345);
@@ -226,9 +226,9 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
   }
   function draw() {
     const { ctx } = begin(d.c);
-    text(ctx, '(a)', 60, 110, PAL.muted, { size: 24, weight: 600 });
+    text(ctx, '（a）', 60, 110, PAL.muted, { size: 24, weight: 600 });
     column(ctx, 230, ['1.0023', '4.383'], '+', '5.3853', 5, 'g', '5.385 g', '4.383 g 只到千分位');
-    text(ctx, '(b)', 760, 110, PAL.muted, { size: 24, weight: 600 });
+    text(ctx, '（b）', 760, 110, PAL.muted, { size: 24, weight: 600 });
     column(ctx, 930, ['486', '421.23'], '−', '64.77', 2, 'g', '65 g', '486 g 没有小数位');
     headline(ctx, '和或差要修约到其中最不精密的那一项的小数位。');
     readout(d.readout, '5.3853\\ \\text{g} \\longrightarrow 5.385\\ \\text{g} \\qquad 64.77\\ \\text{g} \\longrightarrow 65\\ \\text{g}', '颜色较淡的数字是加减法规则所舍去的数字。');
@@ -265,7 +265,7 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, '物块', 30, 'nu
      the live group takes the hue of the corner it currently falls in, and the label under each corner is the legend, in ink
      with a swatch of the hue beside it */
   const WHO = ['archer-a', 'archer-b', 'archer-d', 'archer-c'];
-  const cells = [[true, true, '(a) 准确且精密', 0, 1.5], [false, true, '(b) 精密但不准确', 9, 1.5], [true, false, '准确但不精密', 0, 8], [false, false, '(c) 既不准确也不精密', 9, 8]];
+  const cells = [[true, true, '（a）准确且精密', 0, 1.5], [false, true, '（b）精密但不准确', 9, 1.5], [true, false, '准确但不精密', 0, 8], [false, false, '（c）既不准确也不精密', 9, 8]];
   let hits = []; F.hover(d.stage, () => hits);
   function target(ctx, cx, cy, R, pts, r, color, who) {
     for (let k = 5; k >= 1; k--) { ctx.save(); ctx.fillStyle = k % 2 ? PAL.soft : PAL.panel; ctx.strokeStyle = PAL.muted; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(cx, cy, (R * k) / 5, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore(); }
@@ -285,7 +285,7 @@ displacement(sim('fig-gold', 520), 17.1, 19.8, 51.842, nugget, '物块', 30, 'nu
     cells.forEach(([acc, pre, label, o, s], i) => {
       const col = pre ? 0 : 1, row = acc ? 0 : 1, x = L + col * CW, y = T + row * CH, live = i === liveCell, hue = F.ref(WHO[i]);
       if (live) { ctx.save(); ctx.fillStyle = alpha(PAL.muted, 0.12); ctx.fillRect(x, y, CW, CH); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.strokeRect(x, y, CW, CH); ctx.restore(); }
-      target(ctx, x + CW / 2, y + 88, 72, group(o, s, 3), 4, hue, ['射手 (a)', '射手 (b)', '第四个角的射手', '射手 (c)'][i]);
+      target(ctx, x + CW / 2, y + 88, 72, group(o, s, 3), 4, hue, ['射手（a）', '射手（b）', '第四个角的射手', '射手（c）'][i]);
       const lw = widthOf(ctx, label, 18, live ? 600 : 400);
       dot(ctx, x + CW / 2 - lw / 2 - 18, y + CH - 34, hue, true, 6);
       text(ctx, label, x + CW / 2 + 8, y + CH - 34, PAL.ink, { size: 18, weight: live ? 600 : 400, align: 'center' });

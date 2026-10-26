@@ -65,6 +65,24 @@
       "note": ""
     },
     {
+      "source": "acetone",
+      "target": "丙酮",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "acid",
+      "target": "酸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "A span wraps 硫酸 for \"sulfuric acid\" and 硝酸 for \"nitric acid\"; recorded as a forced scenario.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
       "source": "acidity",
       "target": "酸性",
       "authority": "termonline",
@@ -88,6 +106,42 @@
       "confirm": "termonline"
     },
     {
+      "source": "alcohol",
+      "target": "酒精",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Decided in the merge: in Chapter 1 the book means the alcohol of drinks, so the everyday word 酒精 is used (1.1, 1.2, 1.4). The class of compounds, the concept alcohol of Chapter 20, is 醇 (化学名词) and gets that target when the chapter is translated. The compound the book names ethanol is 乙醇.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
+      "source": "alkali",
+      "target": "碱",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
+      "source": "alkaline",
+      "target": "碱性",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.3"
+    },
+    {
+      "source": "alloy",
+      "target": "合金",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "aluminum",
       "target": "铝",
       "authority": "cnterm-chemistry",
@@ -102,12 +156,28 @@
       "note": "GB 3100 物质的量; type label (amount)"
     },
     {
+      "source": "ampere",
+      "target": "安培",
+      "authority": "gb3100",
+      "url": "",
+      "note": "SI base unit name (GB 3100).",
+      "section": "1.4"
+    },
+    {
       "source": "angle",
       "target": "角",
       "authority": "termonline",
       "url": "",
       "note": "type label (angle) termonline: not looked up in this pass",
       "confirm": "termonline"
+    },
+    {
+      "source": "angstrom",
+      "target": "埃",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of Å (GB 3102).",
+      "section": "1.6"
     },
     {
       "source": "anode",
@@ -125,11 +195,55 @@
       "confirm": "owner"
     },
     {
+      "source": "answer key",
+      "target": "书后答案",
+      "authority": "book",
+      "url": "",
+      "note": "The answers printed at the back of the book, in the notes and exercise_notes of every page; the book's own apparatus word, no authority covers it.",
+      "confirm": "owner",
+      "section": "1.1"
+    },
+    {
+      "source": "anticonvulsant",
+      "target": "抗惊厥药",
+      "authority": "book",
+      "url": "",
+      "note": "Medical term, not in 化学名词.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "antifreeze",
+      "target": "防冻液",
+      "authority": "book",
+      "url": "",
+      "note": "Textbook and industry term (防冻剂 also in use); termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
       "source": "area",
       "target": "面积",
       "authority": "cnterm-physics",
       "url": "https://www.termonline.cn/detail?id=b9194ca826ac11ee9748b068e6519520",
       "note": "type label (area) termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "argon",
+      "target": "氩",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "atmosphere",
+      "target": "大气",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Earth's atmosphere (the 大气 of the concept span); termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "atom",
@@ -155,6 +269,23 @@
       "note": "termonline 2026-10-26: confirmed (物理学名词)."
     },
     {
+      "source": "barium",
+      "target": "钡",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "base metal",
+      "target": "贱金属",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Historical phrase in quotation marks. termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "base unit",
       "target": "基本单位",
       "authority": "gb3100",
@@ -162,11 +293,64 @@
       "note": "termonline 2026-10-26: confirmed (计量学名词)."
     },
     {
+      "source": "basic copper carbonate",
+      "target": "碱式碳酸铜",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "compound name",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
       "source": "battery",
       "target": "电池",
       "authority": "cnterm-chemistry",
       "url": "https://www.termonline.cn/detail?id=b350bee226a711ee9d0eb068e6519520",
       "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "beaker",
+      "target": "烧杯",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
+      "source": "beer precursor",
+      "target": "啤酒原料",
+      "authority": "book",
+      "url": "",
+      "note": "Book phrase, no authority.",
+      "section": "1.2"
+    },
+    {
+      "source": "biochemistry",
+      "target": "生物化学",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
+      "source": "Bloom level",
+      "target": "布鲁姆层级",
+      "authority": "book",
+      "url": "",
+      "note": "The Bloom taxonomy level tag of an exercise, in the exercise_notes; the book's own apparatus word, no authority covers it.",
+      "confirm": "owner",
+      "section": "1.1"
+    },
+    {
+      "source": "body weight",
+      "target": "体重",
+      "authority": "book",
+      "url": "",
+      "note": "\"Your weight\" in the 1.5 exercise on the number of grams in it is a person's body weight, so 体重 and not the row weight 重量 (an object's weight). Recorded as a scenario; owner to confirm.",
+      "confirm": "owner",
+      "section": "1.5"
     },
     {
       "source": "boiling",
@@ -181,6 +365,74 @@
       "authority": "cnterm-physics",
       "url": "https://www.termonline.cn/detail?id=8556199726ac11eea3e7b068e6519520",
       "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "bull's eye",
+      "target": "靶心",
+      "authority": "book",
+      "url": "",
+      "note": "Everyday word, no standard entry.",
+      "section": "1.5"
+    },
+    {
+      "source": "buoyancy",
+      "target": "浮力",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "bushel",
+      "target": "蒲式耳",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "calcium",
+      "target": "钙",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "candela",
+      "target": "坎德拉",
+      "authority": "gb3100",
+      "url": "",
+      "note": "SI base unit name (GB 3100).",
+      "section": "1.4"
+    },
+    {
+      "source": "captive zero",
+      "target": "夹零",
+      "authority": "book",
+      "url": "",
+      "note": "The English textbook calls it a captive zero (often rendered 中间的零); no standard Chinese name, 夹零 kept.",
+      "confirm": "termonline",
+      "section": "1.5"
+    },
+    {
+      "source": "carbon",
+      "target": "碳",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "carbon dioxide",
+      "target": "二氧化碳",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Compound name; termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "carrying significant figures through a calculation",
@@ -211,7 +463,7 @@
       "authority": "gb3100",
       "url": "",
       "concept": "celsius",
-      "note": "GB 3100 unit name 摄氏度 termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage."
+      "note": "GB 3100 unit name 摄氏度 termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage. Before 温标 the 1.4 and 1.6 spans wrap 摄氏 / 华氏 only (rows Celsius scale and Fahrenheit scale)."
     },
     {
       "source": "Celsius (°C)",
@@ -220,6 +472,23 @@
       "url": "",
       "concept": "celsius",
       "note": ""
+    },
+    {
+      "source": "Celsius scale",
+      "target": "摄氏温标",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "The span in 摄氏温标 wraps 摄氏 only (the row Celsius 摄氏度 is the unit) and 温标 follows outside it; recorded as a forced scenario.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "centi-",
+      "target": "厘",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix. Checked against GB 3100: centi is 10^-2.",
+      "section": "1.4"
     },
     {
       "source": "charge",
@@ -238,6 +507,15 @@
       "confirm": "owner"
     },
     {
+      "source": "chemical bond",
+      "target": "化学键",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "chemical change",
       "target": "化学变化",
       "authority": "termonline",
@@ -247,6 +525,15 @@
       "confirm": "termonline"
     },
     {
+      "source": "chemical equation",
+      "target": "化学方程式",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "chemical property",
       "target": "化学性质",
       "authority": "termonline",
@@ -254,6 +541,15 @@
       "concept": "chemical-property",
       "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
       "confirm": "termonline"
+    },
+    {
+      "source": "chemical symbols",
+      "target": "化学符号",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "The symbols of the periodic table (元素符号 in the narrow sense); the book's wording is kept. termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
     },
     {
       "source": "chemistry",
@@ -320,12 +616,37 @@
       "note": ""
     },
     {
+      "source": "cobalt",
+      "target": "钴",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
       "source": "colligative constant",
       "target": "依数性常数",
       "authority": "termonline",
       "url": "",
       "note": "type label (colligative constant); no entry for the constant itself, built on 依数性 colligative property termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
       "confirm": "termonline"
+    },
+    {
+      "source": "color",
+      "target": "颜色",
+      "authority": "book",
+      "url": "",
+      "note": "Everyday word, no standard-term issue.",
+      "section": "1.3"
+    },
+    {
+      "source": "combustion",
+      "target": "燃烧",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "The book glosses it as burning; 燃烧 for both. termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.3"
     },
     {
       "source": "composition",
@@ -367,6 +688,15 @@
       "confirm": "termonline"
     },
     {
+      "source": "condensation",
+      "target": "凝结",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "Steam condensing; 冷凝 is the apparatus sense. termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.3"
+    },
+    {
       "source": "conversion factor",
       "target": "换算因子",
       "authority": "cnterm-chemistry",
@@ -405,12 +735,39 @@
       "note": "element name, 化学名词（化学元素名称）."
     },
     {
+      "source": "corrosive",
+      "target": "腐蚀性",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Adjective used as a hazard class (腐蚀性); termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.3"
+    },
+    {
+      "source": "cortisone",
+      "target": "可的松",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "counting significant figures",
       "target": "有效数字的计数",
       "authority": "book",
       "url": "",
       "concept": "count-significant-figures",
       "note": ""
+    },
+    {
+      "source": "crystalline solid",
+      "target": "晶体固体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Book phrase; 晶体 alone would drop \"solid\", and 晶体固体 keeps the compound the book uses. termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "cubic centimeter",
@@ -429,6 +786,14 @@
       "note": "cc kept as printed"
     },
     {
+      "source": "cubic decimeter",
+      "target": "立方分米",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3102 unit name.",
+      "section": "1.4"
+    },
+    {
       "source": "cubic meter",
       "target": "立方米",
       "authority": "gb3100",
@@ -443,6 +808,49 @@
       "url": "",
       "concept": "cubic-meter",
       "note": ""
+    },
+    {
+      "source": "cubit",
+      "target": "腕尺",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "Dalton’s atomic theory",
+      "target": "道尔顿原子论",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "deci-",
+      "target": "分",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix. Checked against GB 3100: deci is 10^-1.",
+      "section": "1.4"
+    },
+    {
+      "source": "decimal place",
+      "target": "小数位",
+      "authority": "termonline",
+      "url": "",
+      "note": "GB/T 8170 wording of the rounding standard (小数位数); termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.5"
+    },
+    {
+      "source": "decimeter",
+      "target": "分米",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Prefix 分 plus 米.",
+      "section": "1.4"
     },
     {
       "source": "decomposition",
@@ -491,6 +899,15 @@
       "note": "termonline 2026-10-26: confirmed (物理学名词)."
     },
     {
+      "source": "detonation",
+      "target": "爆炸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "The book says \"detonate/detonation\"; 爆轰 is the narrow technical term and 爆炸 is chosen for readability. termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.3"
+    },
+    {
       "source": "dimensional analysis",
       "target": "量纲分析",
       "authority": "cnterm-physics",
@@ -521,6 +938,24 @@
       "note": "'displacement of water' only; the physical quantity displacement is 位移"
     },
     {
+      "source": "displacement (of an engine)",
+      "target": "排量",
+      "authority": "book",
+      "url": "",
+      "note": "The engine sense of displacement; the row displacement 排水 is the water-displacement method. Not looked up on termonline.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "distillation",
+      "target": "蒸馏",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "domains of chemistry",
       "target": "化学的领域",
       "authority": "book",
@@ -549,6 +984,15 @@
       "authority": "cnterm-chemistry",
       "url": "https://www.termonline.cn/detail?id=c42aec4726a711eeae73b068e6519520",
       "note": "termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "electrolyte",
+      "target": "电解质",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "electron",
@@ -605,12 +1049,30 @@
       "confirm": "termonline"
     },
     {
+      "source": "Erlenmeyer flask",
+      "target": "锥形瓶",
+      "authority": "book",
+      "url": "",
+      "note": "Standard laboratory term; termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
       "source": "Essential Ideas",
       "target": "基本概念",
       "authority": "book",
       "url": "",
       "note": "chapter 1 title; owner to confirm",
       "confirm": "owner"
+    },
+    {
+      "source": "ethanol",
+      "target": "乙醇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 name of the compound C₂H₅OH; 酒精 is the everyday word for the alcohol of drinks (row alcohol). termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "every measurement carries an uncertainty",
@@ -662,6 +1124,15 @@
       "confirm": "termonline"
     },
     {
+      "source": "exponential notation",
+      "target": "科学记数法",
+      "authority": "termonline",
+      "url": "",
+      "note": "Decided in the merge: the book calls it the same thing as scientific notation (1.4: \"Scientific notation is also known as exponential notation\"), so the glossary term 科学记数法 is used everywhere, including 1.5. The one sentence that names both words keeps 指数记数法 as the alias (recorded as a forced scenario).",
+      "confirm": "termonline",
+      "section": "1.5"
+    },
+    {
       "source": "extensive and intensive properties",
       "target": "广度性质与强度性质",
       "authority": "book",
@@ -692,7 +1163,7 @@
       "authority": "gb3100",
       "url": "",
       "concept": "fahrenheit",
-      "note": ""
+      "note": "Before 温标 the 1.4 and 1.6 spans wrap 摄氏 / 华氏 only (rows Celsius scale and Fahrenheit scale)."
     },
     {
       "source": "Fahrenheit (°F)",
@@ -701,6 +1172,32 @@
       "url": "",
       "concept": "fahrenheit",
       "note": ""
+    },
+    {
+      "source": "Fahrenheit scale",
+      "target": "华氏温标",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "As Celsius scale: the span wraps 华氏.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "feldspar",
+      "target": "长石",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "femto-",
+      "target": "飞",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix 飞[母托]; the short form is used. Checked against GB 3100: femto is 10^-15.",
+      "section": "1.4"
     },
     {
       "source": "fermentation",
@@ -725,6 +1222,49 @@
       "url": "",
       "note": "termonline: not looked up in this pass",
       "confirm": "termonline"
+    },
+    {
+      "source": "flash point",
+      "target": "闪点",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.3"
+    },
+    {
+      "source": "flask",
+      "target": "烧瓶",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "fluorine",
+      "target": "氟",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "foam",
+      "target": "泡沫",
+      "authority": "book",
+      "url": "",
+      "note": "Everyday word, no standard-term issue.",
+      "section": "1.4"
+    },
+    {
+      "source": "foot",
+      "target": "英尺",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.4"
     },
     {
       "source": "force",
@@ -774,6 +1314,33 @@
       "confirm": "termonline"
     },
     {
+      "source": "fuel cell",
+      "target": "燃料电池",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "fuel economy",
+      "target": "燃油经济性",
+      "authority": "book",
+      "url": "",
+      "note": "Used for fuel economy and for (average) mileage; the English has no single Chinese word for miles per gallon.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "fuel-cell vehicle",
+      "target": "燃料电池汽车",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
       "source": "Fundamental Physical Constants",
       "target": "基本物理常量",
       "authority": "book",
@@ -782,13 +1349,47 @@
       "confirm": "owner"
     },
     {
+      "source": "gadolinium",
+      "target": "钆",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "gallon",
+      "target": "加仑",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
       "source": "gas",
       "target": "气体",
       "authority": "termonline",
       "url": "",
       "concept": "gas",
-      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage. In the Introduction (\"fill the gas tank\") the English word means gasoline: the span wraps 汽油 (row gasoline), a forced scenario; elsewhere 气体 (and 氢气, 氧气 for the gases of an element, row oxygen gas).",
       "confirm": "termonline"
+    },
+    {
+      "source": "gasoline",
+      "target": "汽油",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Standard term. In the Introduction the English word \"gas\" means gasoline: the span wraps 汽油 and not 气体 (forced scenario).",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "giga-",
+      "target": "吉",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix 吉[咖]; the short form is used. Checked against GB 3100: giga is 10^9.",
+      "section": "1.4"
     },
     {
       "source": "Glossary",
@@ -797,6 +1398,24 @@
       "url": "",
       "note": "apparatus label; owner to confirm",
       "confirm": "owner"
+    },
+    {
+      "source": "glucose",
+      "target": "葡萄糖",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "glycerin",
+      "target": "丙三醇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 prefers 丙三醇 over the common name 甘油.",
+      "confirm": "termonline",
+      "section": "1.4"
     },
     {
       "source": "gold",
@@ -812,6 +1431,24 @@
       "url": "",
       "note": "termonline: not looked up in this pass",
       "confirm": "termonline"
+    },
+    {
+      "source": "grain",
+      "target": "格令",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "granite",
+      "target": "花岗岩",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "Half-Lives for Several Radioactive Isotopes",
@@ -830,12 +1467,47 @@
       "confirm": "termonline"
     },
     {
+      "source": "hazard diamond",
+      "target": "危险性菱形标志",
+      "authority": "book",
+      "url": "",
+      "note": "The book's own label for the NFPA 704 sign; no authority. Owner to confirm.",
+      "confirm": "owner",
+      "section": "1.3"
+    },
+    {
+      "source": "heat",
+      "target": "热量",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "Decided in the merge: the quantity of heat, 热量 (物理学名词 and 化学名词 list 热量). The concept heat-flow belongs to Chapter 5, so the row names no concept. 1.3 wrote 热, now 热量; where the source says \"broken down by heat\" (1.2) the span wraps the verb 加热, a recorded scenario; the adjective in 受热 and 导热 is not a span.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
       "source": "heat capacity",
       "target": "热容",
       "authority": "termonline",
       "url": "",
       "note": "type label (heat capacity) termonline: not looked up in this pass",
       "confirm": "termonline"
+    },
+    {
+      "source": "helium",
+      "target": "氦",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Element name; the gas in Table 1.4 is the row helium gas.",
+      "section": "1.2"
+    },
+    {
+      "source": "helium gas",
+      "target": "氦气",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "See oxygen gas; Table 1.4 Gases column.",
+      "confirm": "termonline",
+      "section": "1.4"
     },
     {
       "source": "heterogeneous mixture",
@@ -876,7 +1548,16 @@
       "target": "氢",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "element name, 化学名词（化学元素名称）."
+      "note": "element name, 化学名词（化学元素名称）. Element name 氢; for the gas see the row hydrogen gas."
+    },
+    {
+      "source": "hydrogen gas",
+      "target": "氢气",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "See oxygen gas.",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "hydrogen ion",
@@ -895,6 +1576,49 @@
       "note": "termonline 2026-10-26: confirmed (物理学名词)."
     },
     {
+      "source": "ice",
+      "target": "冰",
+      "authority": "book",
+      "url": "",
+      "note": "Everyday word, no standard-term issue.",
+      "section": "1.4"
+    },
+    {
+      "source": "inch",
+      "target": "英寸",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "indigo",
+      "target": "靛蓝",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
+      "source": "indium",
+      "target": "铟",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "indium tin oxide",
+      "target": "氧化铟锡",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
       "source": "intensive property",
       "target": "强度性质",
       "authority": "cnterm-chemistry",
@@ -910,12 +1634,28 @@
       "note": "termonline: not looked up in this pass"
     },
     {
+      "source": "International Union of Pure and Applied Chemistry (IUPAC)",
+      "target": "国际纯粹与应用化学联合会（IUPAC）",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Standard Chinese name of the body, acronym kept.",
+      "section": "1.4"
+    },
+    {
       "source": "Introduction",
       "target": "引言",
       "authority": "book",
       "url": "",
       "note": "page title of ch01/intro; owner to confirm",
       "confirm": "owner"
+    },
+    {
+      "source": "iodine",
+      "target": "碘",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
     },
     {
       "source": "ion",
@@ -965,6 +1705,15 @@
       "note": ""
     },
     {
+      "source": "kelvin scale",
+      "target": "开尔文温标",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "As Celsius scale: the span wraps 开尔文.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
       "source": "Key Concepts and Summary",
       "target": "关键概念与小结",
       "authority": "book",
@@ -979,6 +1728,14 @@
       "url": "",
       "note": "apparatus label; owner to confirm",
       "confirm": "owner"
+    },
+    {
+      "source": "kilo-",
+      "target": "千",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix. Checked against GB 3100: kilo is 10^3.",
+      "section": "1.4"
     },
     {
       "source": "kilogram",
@@ -1021,12 +1778,39 @@
       "note": "element name, 化学名词（化学元素名称）."
     },
     {
+      "source": "lead oxide",
+      "target": "氧化铅",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "The book says \"lead oxide\" for the battery material PbO₂ (二氧化铅 in 化学名词); 氧化铅 is kept as the book words it, and the owner is told (translation-notes.md).",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "lead sulfate",
+      "target": "硫酸铅",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
       "source": "lead-acid battery",
       "target": "铅酸电池",
       "authority": "termonline",
       "url": "",
       "note": "termonline: not looked up in this pass",
       "confirm": "termonline"
+    },
+    {
+      "source": "leading zero",
+      "target": "前导零",
+      "authority": "book",
+      "url": "",
+      "note": "Textbook term; no national standard entry.",
+      "confirm": "termonline",
+      "section": "1.5"
     },
     {
       "source": "Learning Objectives",
@@ -1069,6 +1853,15 @@
       "note": "termonline 2026-10-26: confirmed (物理学名词)."
     },
     {
+      "source": "liquid ammonia",
+      "target": "液氨",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "氨 (ammonia) plus 液.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
       "source": "liter",
       "target": "升",
       "authority": "gb3100",
@@ -1085,6 +1878,31 @@
       "note": ""
     },
     {
+      "source": "lithium",
+      "target": "锂",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "long ton",
+      "target": "长吨",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "luminous intensity",
+      "target": "发光强度",
+      "authority": "gb3100",
+      "url": "",
+      "note": "SI base quantity (GB 3102).",
+      "section": "1.4"
+    },
+    {
       "source": "macroscopic domain",
       "target": "宏观领域",
       "authority": "termonline",
@@ -1092,6 +1910,40 @@
       "concept": "macroscopic-domain",
       "note": "domain 领域 is the book's word for the three ways of describing matter termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
       "confirm": "termonline"
+    },
+    {
+      "source": "magnesium",
+      "target": "镁",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "magnetizing",
+      "target": "磁化",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.3"
+    },
+    {
+      "source": "malachite",
+      "target": "孔雀石",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "mineral name; confirm on termonline",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "manganese",
+      "target": "锰",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
     },
     {
       "source": "mass",
@@ -1157,6 +2009,14 @@
       "note": ""
     },
     {
+      "source": "mega-",
+      "target": "兆",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix. Checked against GB 3100: mega is 10^6.",
+      "section": "1.4"
+    },
+    {
       "source": "melting",
       "target": "熔化",
       "authority": "termonline",
@@ -1171,6 +2031,15 @@
       "url": "",
       "note": "termonline: not looked up in this pass",
       "confirm": "termonline"
+    },
+    {
+      "source": "meniscus",
+      "target": "弯月面",
+      "authority": "termonline",
+      "url": "",
+      "note": "Textbook term for the curved liquid surface; termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.5"
     },
     {
       "source": "mercury",
@@ -1193,6 +2062,15 @@
       "url": "",
       "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
       "confirm": "termonline"
+    },
+    {
+      "source": "metallic solid",
+      "target": "金属固体",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "metalloid",
@@ -1225,6 +2103,23 @@
       "note": ""
     },
     {
+      "source": "mica",
+      "target": "云母",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "micro-",
+      "target": "微",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix. Checked against GB 3100: micro is 10^-6.",
+      "section": "1.4"
+    },
+    {
       "source": "microscopic domain",
       "target": "微观领域",
       "authority": "termonline",
@@ -1232,6 +2127,23 @@
       "concept": "microscopic-domain",
       "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
       "confirm": "termonline"
+    },
+    {
+      "source": "mile",
+      "target": "英里",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "milli-",
+      "target": "毫",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix. Checked against GB 3100: milli is 10^-3.",
+      "section": "1.4"
     },
     {
       "source": "milliliter",
@@ -1259,6 +2171,14 @@
       "confirm": "termonline"
     },
     {
+      "source": "mole",
+      "target": "摩尔",
+      "authority": "gb3100",
+      "url": "",
+      "note": "SI base unit name (GB 3100): the amount-of-substance unit; the span in Table 1.2 wraps 摩尔.",
+      "section": "1.4"
+    },
+    {
       "source": "molecule",
       "target": "分子",
       "authority": "cnterm-chemistry",
@@ -1273,6 +2193,83 @@
       "url": "",
       "note": "type label (momentum) termonline: not looked up in this pass",
       "confirm": "termonline"
+    },
+    {
+      "source": "nano-",
+      "target": "纳",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix 纳[诺]; the short form is used. Checked against GB 3100: nano is 10^-9.",
+      "section": "1.4"
+    },
+    {
+      "source": "National Fire Protection Agency (NFPA)",
+      "target": "美国消防协会（NFPA）",
+      "authority": "book",
+      "url": "",
+      "note": "The book writes National Fire Protection Agency; rendered as the 美国消防协会 usually given to the association, acronym kept.",
+      "confirm": "termonline",
+      "section": "1.3"
+    },
+    {
+      "source": "National Institute of Standards and Technology (NIST)",
+      "target": "美国国家标准与技术研究院（NIST）",
+      "authority": "book",
+      "url": "",
+      "note": "Standard Chinese name of the body, acronym kept.",
+      "section": "1.4"
+    },
+    {
+      "source": "neon",
+      "target": "氖",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Element name; the gas in Table 1.4 is the row neon gas.",
+      "section": "1.2"
+    },
+    {
+      "source": "neon gas",
+      "target": "氖气",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "See oxygen gas; Table 1.4 Gases column.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "neutron",
+      "target": "中子",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
+      "source": "nitrogen",
+      "target": "氮",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Element name; the gas in Table 1.4 is the row nitrogen gas.",
+      "section": "1.2"
+    },
+    {
+      "source": "nitrogen gas",
+      "target": "氮气",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "See oxygen gas; Table 1.4 Gases column.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "noble metal",
+      "target": "贵金属",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Historical phrase in quotation marks. termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
     },
     {
       "source": "none",
@@ -1290,6 +2287,23 @@
       "confirm": "termonline"
     },
     {
+      "source": "nuclear chemistry",
+      "target": "核化学",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
+      "source": "oak",
+      "target": "橡木",
+      "authority": "book",
+      "url": "",
+      "note": "Everyday word, no standard-term issue.",
+      "section": "1.4"
+    },
+    {
       "source": "observation",
       "target": "观察",
       "authority": "book",
@@ -1297,11 +2311,64 @@
       "note": ""
     },
     {
+      "source": "octane",
+      "target": "辛烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Standard chemical name.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "olive oil",
+      "target": "橄榄油",
+      "authority": "book",
+      "url": "",
+      "note": "Everyday word, no standard-term issue.",
+      "section": "1.4"
+    },
+    {
+      "source": "ounce",
+      "target": "盎司",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "oxide",
+      "target": "氧化物",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "A data-concept span for a compound named by its oxide wraps the whole Chinese compound name (氧化汞(II), 氧化铅, 氧化铟锡, 聚环氧乙烷); recorded as a forced scenario.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "oxidizer",
+      "target": "氧化剂",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.3"
+    },
+    {
       "source": "oxygen",
       "target": "氧",
       "authority": "cnterm-chemistry",
       "url": "",
-      "note": "element name, 化学名词（化学元素名称）."
+      "note": "element name, 化学名词（化学元素名称）. Element name 氧; for the gas see the row oxygen gas."
+    },
+    {
+      "source": "oxygen gas",
+      "target": "氧气",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Rule: the element name (row oxygen 氧) is used for the element; the element-name + 气 form where the source says \"gas\" or the substance is one of the Gases column of Table 1.4 (the gas is the substance, not the element).",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "parts of a measurement",
@@ -1343,6 +2410,32 @@
       "confirm": "owner"
     },
     {
+      "source": "phenobarbital",
+      "target": "苯巴比妥",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "drug name; confirm on termonline",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "phosphoric acid",
+      "target": "磷酸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Standard chemical name.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "phosphorus",
+      "target": "磷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
       "source": "physical and chemical change",
       "target": "物理变化与化学变化",
       "authority": "book",
@@ -1377,6 +2470,23 @@
       "confirm": "termonline"
     },
     {
+      "source": "pico-",
+      "target": "皮",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix 皮[可]; the short form is used. Checked against GB 3100: pico is 10^-12.",
+      "section": "1.4"
+    },
+    {
+      "source": "pint",
+      "target": "品脱",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
       "source": "plasma",
       "target": "等离子体",
       "authority": "cnterm-chemistry",
@@ -1385,12 +2495,64 @@
       "note": "termonline 2026-10-26: confirmed (化学名词)."
     },
     {
+      "source": "platinum-iridium",
+      "target": "铂铱",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Element names 铂 and 铱 joined; termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "polyacrylonitrile",
+      "target": "聚丙烯腈",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "polyethylene oxide",
+      "target": "聚环氧乙烷",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "化学名词 also lists 聚氧化乙烯; termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
       "source": "Portrait of a Chemist",
       "target": "化学家小传",
       "authority": "book",
       "url": "",
       "note": "apparatus label; owner to confirm",
       "confirm": "owner"
+    },
+    {
+      "source": "potassium",
+      "target": "钾",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "pound",
+      "target": "磅",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "praseodymium",
+      "target": "镨",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
     },
     {
       "source": "precision",
@@ -1415,6 +2577,15 @@
       "note": "type label (pressure). 物理学名词 lists both 压强 and 压力; 压强 is the form the sibling physics book uses and is kept for the one term; chemistry textbooks often write 压力, which the owner may prefer termonline 2026-10-26: confirmed (物理学名词)."
     },
     {
+      "source": "progesterone",
+      "target": "孕酮",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "property",
       "target": "性质",
       "authority": "termonline",
@@ -1429,6 +2600,15 @@
       "url": "",
       "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
       "confirm": "termonline"
+    },
+    {
+      "source": "proton exchange membrane",
+      "target": "质子交换膜",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "pure substance",
@@ -1447,12 +2627,47 @@
       "note": "termonline 2026-10-26: confirmed (计量学名词)."
     },
     {
+      "source": "quart",
+      "target": "夸脱",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "quartz",
+      "target": "石英",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
       "source": "radiation dose",
       "target": "辐射剂量",
       "authority": "termonline",
       "url": "",
       "note": "type label (dose) termonline: not looked up in this pass",
       "confirm": "termonline"
+    },
+    {
+      "source": "radon",
+      "target": "氡",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Element name; the gas in Table 1.4 is the row radon gas.",
+      "section": "1.4"
+    },
+    {
+      "source": "radon gas",
+      "target": "氡气",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "See oxygen gas; Table 1.4 Gases column.",
+      "confirm": "termonline",
+      "section": "1.4"
     },
     {
       "source": "rate constant",
@@ -1479,6 +2694,15 @@
       "confirm": "termonline"
     },
     {
+      "source": "replicate measurements",
+      "target": "重复测量",
+      "authority": "jjf1001",
+      "url": "",
+      "note": "JJF 1001 lists 重复测量 (repeated measurement); termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.5"
+    },
+    {
       "source": "rounding",
       "target": "修约",
       "authority": "termonline",
@@ -1500,7 +2724,25 @@
       "target": "生锈",
       "authority": "book",
       "url": "",
-      "note": ""
+      "note": "This is the process (iron rusts); the red-brown substance is the row rust (the substance) 铁锈."
+    },
+    {
+      "source": "rust (the substance)",
+      "target": "铁锈",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "The red-brown iron(III) oxide; the row rust 生锈 is the process.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "salt",
+      "target": "盐",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "\"Table salt\" is 食盐.",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "scale",
@@ -1508,6 +2750,14 @@
       "authority": "book",
       "url": "",
       "note": "scale of a thermometer or a unit system; temperature scale is 温标"
+    },
+    {
+      "source": "scale (the weighing device)",
+      "target": "秤",
+      "authority": "book",
+      "url": "",
+      "note": "\"Measured using a scale\" (the device), not the concept scale 标度. Everyday word.",
+      "section": "1.4"
     },
     {
       "source": "scientific method",
@@ -1522,7 +2772,7 @@
       "target": "科学记数法",
       "authority": "termonline",
       "url": "",
-      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage.",
+      "note": "termonline 2026-10-26: not listed under this English term; target taken from standard textbook usage. The book's \"exponential notation\" is the same thing (row exponential notation).",
       "confirm": "termonline"
     },
     {
@@ -1583,11 +2833,37 @@
       "note": "also 'significant digits' termonline 2026-10-26: confirmed (化学名词)."
     },
     {
+      "source": "silica glass",
+      "target": "石英玻璃",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Glass strengthened with aluminum, sodium and potassium; 石英玻璃 kept over 二氧化硅玻璃. termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "silicon",
+      "target": "硅",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
       "source": "silver",
       "target": "银",
       "authority": "cnterm-chemistry",
       "url": "",
       "note": "element name, 化学名词（化学元素名称）."
+    },
+    {
+      "source": "silver(I) chloride",
+      "target": "氯化银(I)",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "Sim",
@@ -1604,6 +2880,15 @@
       "url": "",
       "note": "exercise kind label (simulation-exercise); no authority, owner to confirm",
       "confirm": "owner"
+    },
+    {
+      "source": "smelting",
+      "target": "冶炼",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
     },
     {
       "source": "sodium",
@@ -1629,6 +2914,15 @@
       "note": "termonline 2026-10-26: confirmed (物理学名词)."
     },
     {
+      "source": "solubility",
+      "target": "溶解度",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "Solubility Products",
       "target": "溶度积",
       "authority": "book",
@@ -1650,6 +2944,15 @@
       "authority": "cnterm-chemistry",
       "url": "https://www.termonline.cn/detail?id=bb139eae26a711ee9a6db068e6519520",
       "note": "a homogeneous mixture; the same word as the solution of Chapters 3 and 11 termonline 2026-10-26: confirmed (化学名词)."
+    },
+    {
+      "source": "soy sterols",
+      "target": "大豆甾醇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
     },
     {
       "source": "speed",
@@ -1692,11 +2995,63 @@
       "confirm": "owner"
     },
     {
+      "source": "strontium",
+      "target": "锶",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
       "source": "substance",
       "target": "物质",
       "authority": "cnterm-physics",
       "url": "https://www.termonline.cn/detail?id=b74be3f726ac11ee890eb068e6519520",
       "note": "Same character as matter; where the book says 'pure substance' or 'chemical substance' the qualified forms 纯净物 / 化学物质 carry the difference termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "sucrose",
+      "target": "蔗糖",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "suggested approach",
+      "target": "建议思路",
+      "authority": "book",
+      "url": "",
+      "note": "The AI-written hint for an open question, in the exercise_notes; the book's own apparatus word, no authority covers it.",
+      "confirm": "owner",
+      "section": "1.1"
+    },
+    {
+      "source": "sulfate",
+      "target": "硫酸盐",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "A span wraps 硫酸铅 for \"lead sulfate\"; recorded as a forced scenario.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "sulfur",
+      "target": "硫",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
+    },
+    {
+      "source": "sulfuric acid",
+      "target": "硫酸",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "confirm": "termonline",
+      "section": "1.2"
     },
     {
       "source": "Summary",
@@ -1762,6 +3117,41 @@
       "note": "termonline 2026-10-26: confirmed (物理学名词)."
     },
     {
+      "source": "tera-",
+      "target": "太",
+      "authority": "gb3100",
+      "url": "",
+      "note": "GB 3100 SI prefix 太[拉]; the short form is used. Checked against GB 3100: tera is 10^12.",
+      "section": "1.4"
+    },
+    {
+      "source": "terminal (of a battery)",
+      "target": "接线端",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "The battery terminal; 接线端 in the figure text, with 正极端 and 负极端 for the positive and negative terminal. termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "test tube",
+      "target": "试管",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.2"
+    },
+    {
+      "source": "testosterone",
+      "target": "睾酮",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "The Elements",
       "target": "元素",
       "authority": "book",
@@ -1778,12 +3168,37 @@
       "note": "termonline 2026-10-26: confirmed (物理学名词)."
     },
     {
+      "source": "thermometer",
+      "target": "温度计",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "Standard term; termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
+    },
+    {
       "source": "time",
       "target": "时间",
       "authority": "gb3100",
       "url": "https://www.termonline.cn/detail?id=728169f626ac11ee8d79b068e6519520",
       "concept": "time",
       "note": "termonline 2026-10-26: confirmed (物理学名词)."
+    },
+    {
+      "source": "tin",
+      "target": "锡",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.1"
+    },
+    {
+      "source": "titanium",
+      "target": "钛",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
     },
     {
       "source": "tolerance",
@@ -1799,6 +3214,24 @@
       "url": "",
       "note": "termonline: not looked up in this pass",
       "confirm": "termonline"
+    },
+    {
+      "source": "trailing zero",
+      "target": "末尾零",
+      "authority": "book",
+      "url": "",
+      "note": "Textbook term; no national standard entry.",
+      "confirm": "termonline",
+      "section": "1.5"
+    },
+    {
+      "source": "Tyrian purple",
+      "target": "泰尔紫",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "Also 骨螺紫; termonline: not looked up in this pass.",
+      "confirm": "termonline",
+      "section": "1.1"
     },
     {
       "source": "uncertainty",
@@ -1900,7 +3333,24 @@
       "authority": "cnterm-physics",
       "url": "https://www.termonline.cn/detail?id=a51b00aa26ac11eebe9bb068e6519520",
       "concept": "weight",
-      "note": "The force of gravity on a body, as the book defines it; 物理学名词 lists 重量, and 重力 is gravity, which the same sentence names. (The sibling physics book renders the physical quantity weight as 重力; this book follows the authority entry 重量 and the chemistry textbooks.) termonline 2026-10-26: confirmed (物理学名词)."
+      "note": "The force of gravity on a body, as the book defines it; 物理学名词 lists 重量, and 重力 is gravity, which the same sentence names. (The sibling physics book renders the physical quantity weight as 重力; this book follows the authority entry 重量 and the chemistry textbooks.) termonline 2026-10-26: confirmed (物理学名词). The weight of a person, in the 1.5 exercise on the grams in \"your weight\", is 体重 (row body weight)."
+    },
+    {
+      "source": "William Thompson (Lord Kelvin)",
+      "target": "威廉·汤姆孙",
+      "authority": "cnterm-physics",
+      "url": "",
+      "note": "The book writes Thompson; the standard rendering of the physicist's name is 汤姆孙.",
+      "confirm": "termonline",
+      "section": "1.6"
+    },
+    {
+      "source": "wood",
+      "target": "木材",
+      "authority": "book",
+      "url": "",
+      "note": "Everyday word, no standard-term issue. 木 in the displacement figure's material list and 木块 for the block; 木材 for the material in prose and Table 1.4.",
+      "section": "1.4"
     },
     {
       "source": "writing a measurement in scientific notation",
@@ -1909,6 +3359,23 @@
       "url": "",
       "concept": "scientific-notation",
       "note": ""
+    },
+    {
+      "source": "yard",
+      "target": "码",
+      "authority": "gb3100",
+      "url": "",
+      "note": "Name of a non-SI unit in prose (GB 3101); the symbol stays as printed. Recorded as scenario 4.4.",
+      "confirm": "termonline",
+      "section": "1.4"
+    },
+    {
+      "source": "yttrium",
+      "target": "钇",
+      "authority": "cnterm-chemistry",
+      "url": "",
+      "note": "",
+      "section": "1.2"
     }
   ]
 }

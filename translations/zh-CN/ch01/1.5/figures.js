@@ -202,7 +202,7 @@ function nugget(ctx, x, y, s = 1, edge = PAL.ink) {
     [['1.3 × 10³', '两位有效数字'], ['1.30 × 10³', '三位，若十位是测量得到的'], ['1.300 × 10³', '四位，若个位也是测量得到的']].forEach(([f, why], i) => {
       const x = 280 + i * 420; text(ctx, f, x, 300, PAL.ink, { size: 34, weight: 600, align: 'center' }); note(ctx, why, x, 345);
     });
-    headline(ctx, '小数点左侧的末尾零是含糊的，指数记数法可以消除这种含糊。');
+    headline(ctx, '小数点左侧的末尾零是含糊的，科学记数法可以消除这种含糊。');
     readout(d.readout, '1300\\ \\text{g}: \\text{两位、三位或四位有效数字}', '在只有小数形式的数可用时，稳妥的做法是假定末尾零不是有效的。');
   }
   still(d, draw);

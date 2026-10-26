@@ -1,6 +1,6 @@
 <section id="exact-numbers">
 <h2>精确数与不确定数</h2>
-<p class="cite-target">只要被计数的物体数目在计数过程中不发生变化，计数就是唯一不存在<span data-concept="uncertainty">不确定度</span>的一类测量。这种计数测量的结果就是<strong><span data-concept="exact-number">精确数</span></strong>的一个例子。通过数一盒鸡蛋，就可以<em>准确地</em>确定这盒里有多少个鸡蛋。定义量的数值同样是精确的。按定义，1 英尺恰好是 12 英寸，1 英寸恰好是 2.54 厘米，1 克恰好是 0.001 <span data-concept="kilogram">千克</span>。然而，由计数以外的测量得到的量，由于所用测量过程在实际中的局限，都有不同程度的不确定性。</p>
+<p class="cite-target">只要被计数的物体数目在计数过程中不发生变化，计数就是唯一不存在<span data-concept="uncertainty">不确定度</span>的一类测量。这种计数测量的结果就是<strong><span data-concept="exact-number">精确数</span></strong>的一个例子。通过数一盒鸡蛋，就可以<em>准确地</em>确定这盒里有多少个鸡蛋。定义量的数值同样是精确的。按定义，1 英尺恰好是 12 英寸，1 英寸恰好是 2.54 厘米，1 克恰好是 0.001 <span data-concept="kilogram">千克</span>。然而，由计数以外的测量得到的量，由于所用测量过程在实际中的局限，都有不同程度的不确定度。</p>
 </section>
 
 <section id="uncertainty">
@@ -27,12 +27,12 @@
 <figure class="sim" id="fig-captive-leading" data-original="/media/ch01/CNX_Chem_01_05_SigDigits2_img.jpg">
   <div class="sim-head"><span class="eyebrow">Figure</span><span>夹零要计入，前导零不计入。70.607 mL 的每个数字都是测量得到的，两个零也在其内，所以它有五位有效数字；0.00832407 mL 的计数从 8 开始，其前面的三个零只是标示小数点的位置，所以它有六位有效数字。</span></div>
 </figure>
-<p>这个例子中的前导零不是有效的。我们可以使用指数记数法（见<a href="https://openstax.org/books/chemistry-2e/pages/b-essential-mathematics">附录 B</a>），把这个数表示为 8.32407 $\times$ 10<sup>−3</sup>；这样，数 8.32407 包含了全部<span data-concept="significant-figures">有效数字</span>，而 10<sup>−3</sup> 标示小数点的位置。</p>
-<p>对于以位于小数点位置左侧的零结尾的数，其<span data-concept="significant-figures">有效数字</span>的位数是不确定的。测量值 1,300 克中的零可能是有效的，也可能只是表明小数点的位置。这种歧义可以用指数记数法来消除：1.3 $\times$ 10<sup>3</sup>（两位<span data-concept="significant-figures">有效数字</span>），1.30 $\times$ 10<sup>3</sup>（三位<span data-concept="significant-figures">有效数字</span>，如果十位是测量得到的），或 1.300 $\times$ 10<sup>3</sup>（四位<span data-concept="significant-figures">有效数字</span>，如果个位也是测量得到的）。在只有小数形式的数可用时，稳妥的做法是假定所有末尾零都不是有效的。</p>
+<p>这个例子中的前导零不是有效的。我们可以使用科学记数法（见<a href="https://openstax.org/books/chemistry-2e/pages/b-essential-mathematics">附录 B</a>），把这个数表示为 8.32407 $\times$ 10<sup>−3</sup>；这样，数 8.32407 包含了全部<span data-concept="significant-figures">有效数字</span>，而 10<sup>−3</sup> 标示小数点的位置。</p>
+<p>对于以位于小数点位置左侧的零结尾的数，其<span data-concept="significant-figures">有效数字</span>的位数是不确定的。测量值 1,300 克中的零可能是有效的，也可能只是表明小数点的位置。这种歧义可以用科学记数法来消除：1.3 $\times$ 10<sup>3</sup>（两位<span data-concept="significant-figures">有效数字</span>），1.30 $\times$ 10<sup>3</sup>（三位<span data-concept="significant-figures">有效数字</span>，如果十位是测量得到的），或 1.300 $\times$ 10<sup>3</sup>（四位<span data-concept="significant-figures">有效数字</span>，如果个位也是测量得到的）。在只有小数形式的数可用时，稳妥的做法是假定所有末尾零都不是有效的。</p>
 <figure class="sim" id="fig-trailing" data-original="/media/ch01/CNX_Chem_01_05_SigDigits3_img.jpg">
   <div class="sim-head"><span class="eyebrow">Figure</span><span>1300 g 的末尾零。1 和 3 是测量的结果；两个零可能是测量得到的数字，也可能只是小数点的占位符，只有下面的指数形式才能说明是哪一种。</span></div>
 </figure>
-<p>在确定<span data-concept="significant-figures">有效数字</span>时，务必留意所报告的数值，并在评估该数值是否合理时，从什么是合理的或可能的角度来考虑测量和<span data-concept="significant-figures">有效数字</span>。例如，2014 年 1 月的官方人口普查报告美国常住人口为 317,297,725。你认为美国人口真的被正确地确定到了所报告的九位<span data-concept="significant-figures">有效数字</span>，即确定到了<span data-concept="exact-number">精确</span>的人数吗？人们不断地出生、死亡，或迁入、迁出这个国家，而且对于大量实际上未被统计到的人，还要做一些假设。由于这些<span data-concept="uncertainty">不确定性</span>，更合理的期望也许是我们知道的人口数在一百万左右的范围之内，这时人口应报告为 3.17 $\times$ 10<sup>8</sup> 人。</p>
+<p>在确定<span data-concept="significant-figures">有效数字</span>时，务必留意所报告的数值，并在评估该数值是否合理时，从什么是合理的或可能的角度来考虑测量和<span data-concept="significant-figures">有效数字</span>。例如，2014 年 1 月的官方人口普查报告美国常住人口为 317,297,725。你认为美国人口真的被正确地确定到了所报告的九位<span data-concept="significant-figures">有效数字</span>，即确定到了<span data-concept="exact-number">精确</span>的人数吗？人们不断地出生、死亡，或迁入、迁出这个国家，而且对于大量实际上未被统计到的人，还要做一些假设。由于这些<span data-concept="uncertainty">不确定度</span>，更合理的期望也许是我们知道的人口数在一百万左右的范围之内，这时人口应报告为 3.17 $\times$ 10<sup>8</sup> 人。</p>
 </section>
 
 <section id="rounding">
@@ -142,7 +142,7 @@ $$\text{密度} = \frac{\text{质量}}{\text{体积}} = \frac{69.658\ \text{g}}{
 </figure>
 <p>假设一家制药公司的质量控制化学师受命检查三台不同机器的<span data-concept="accuracy">准确度</span>和<span data-concept="precision">精密度</span>，这些机器本应把 <span data-type="volume">10 盎司（296 mL）</span>止咳糖浆分装到储存瓶中。她用每台机器各灌装五个瓶子，然后仔细测定<span data-type="volume">实际分装的<span data-concept="volume">体积</span></span>，得到表 1.5 中列出的结果。</p>
 <div class="book-table">
-  <div class="tcap"><span class="eyebrow">Table 1.5</span><span>10 盎司（296 mL）分装机分装的止咳药<span data-concept="volume">体积</span>（mL）</span></div>
+  <div class="tcap"><span class="eyebrow">表 1.5</span><span>10 盎司（296 mL）分装机分装的止咳药<span data-concept="volume">体积</span>（mL）</span></div>
   <table>
     <thead><tr><th>1 号分装机</th><th>2 号分装机</th><th>3 号分装机</th></tr></thead>
     <tbody>

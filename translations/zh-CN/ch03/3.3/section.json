@@ -2,16 +2,16 @@
  "id": "3.3",
  "module": "m68703",
  "chapter": "3",
- "title": "Molarity",
- "short": "Molarity",
- "lead": "Most of the matter we meet is a mixture, and a solution, a solvent with one or more solutes in it, is described by how much of each component it holds. <span data-concept=\"molarity\">Molarity</span>, the <span data-concept=\"mole\">moles</span> of solute in a liter of solution, links amounts, <span data-concept=\"mass\">masses</span> and <span data-concept=\"volume\">volumes</span>, and it follows a solution’s <span data-concept=\"concentration\">concentration</span> through dilution.",
+ "title": "物质的量浓度",
+ "short": "物质的量浓度",
+ "lead": "我们遇到的大多数物质都是混合物，而溶液，即含有一种或多种溶质的溶剂，则用它所含各组分的多少来描述。<span data-concept=\"molarity\">物质的量浓度</span>是每升溶液中所含溶质的物质的量（以<span data-concept=\"mole\">摩尔</span>计），它把物质的量、<span data-concept=\"mass\">质量</span>和<span data-concept=\"volume\">体积</span>联系起来，并在稀释过程中追踪溶液的<span data-concept=\"concentration\">浓度</span>。",
  "objectives": [
-  "Describe the fundamental properties of solutions",
-  "Calculate solution concentrations using molarity",
-  "Perform dilution calculations using the dilution equation"
+  "描述溶液的基本性质",
+  "用物质的量浓度计算溶液的浓度",
+  "用稀释公式进行稀释计算"
  ],
- "summary_html": "<p>Solutions are homogeneous mixtures. Many solutions contain one component, called the solvent, in which other components, called solutes, are dissolved. An aqueous solution is one for which the solvent is water. The <span data-concept=\"concentration\">concentration</span> of a solution is a measure of the relative amount of solute in a given amount of solution. <span data-concept=\"concentration\">Concentrations</span> may be measured using various units, with one very useful unit being <span data-concept=\"molarity\">molarity</span>, defined as the number of <span data-concept=\"mole\">moles</span> of solute per liter of solution. The solute <span data-concept=\"concentration\">concentration</span> of a solution may be decreased by adding solvent, a process referred to as dilution. The dilution equation is a simple relation between <span data-concept=\"concentration\">concentrations</span> and <span data-concept=\"volume\">volumes</span> of a solution before and after dilution.</p>",
- "notes": "The Link to Learning note pointing to the PhET dilution simulation is left out; the interactive figures of the page vary the amount of solute, the volume of solution and the concentration, and dilute a solution, in its place.",
+ "summary_html": "<p>溶液是均匀混合物。许多溶液含有一种称为溶剂的组分，其他称为溶质的组分溶解在其中。水溶液是溶剂为水的溶液。溶液的<span data-concept=\"concentration\">浓度</span>是溶液中溶质相对含量的一种度量。<span data-concept=\"concentration\">浓度</span>可以用多种单位来测量，其中一种非常有用的单位是<span data-concept=\"molarity\">物质的量浓度</span>，定义为每升溶液中所含溶质的物质的量（以<span data-concept=\"mole\">摩尔</span>计）。向溶液中加入溶剂可以降低溶质的<span data-concept=\"concentration\">浓度</span>，这一过程称为稀释。稀释公式是溶液稀释前后<span data-concept=\"concentration\">浓度</span>与<span data-concept=\"volume\">体积</span>之间的一个简单关系。</p>",
+ "notes": "指向 PhET 稀释模拟的“学习链接”框被略去；本页的交互图改为改变溶质的量、溶液的体积和浓度，并对溶液进行稀释，取代了它。",
  "ai": {
   "text": [
    {
@@ -21,18 +21,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The two conceptual exercises fs-idm107608448 (diluting NaCl from 1.00 L to 1.80 L) and fs-idm80527600 (the 200-mL and 400-mL samples) have no keyed answer and carry a suggested approach marked as AI-written. The unkeyed numerical exercises fs-idm78757216, fs-idm26412832, fs-idm26440336, fs-idm27178816, fs-idm27153856, fs-idm27683248, fs-idm27384272, fs-idm27364240 and fs-idm26471216 are left out, and so are fs-idm59335888 and fs-idm3478704, whose outline in part (a) leads to an unkeyed answer in part (b). The keyed outline exercises fs-idm62194192 and fs-idm26500064 are checked on their part (b), with the book’s outline in the solution. Nothing is taken from or held for another section.",
+ "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案取自书后答案以及“学习检测”的答案。两道概念题 fs-idm107608448（将 NaCl 溶液从 1.00 L 稀释到 1.80 L）和 fs-idm80527600（200 mL 与 400 mL 的样品）在书中没有答案，附有标明由 AI 撰写的建议思路。没有答案的数值题 fs-idm78757216、fs-idm26412832、fs-idm26440336、fs-idm27178816、fs-idm27153856、fs-idm27683248、fs-idm27384272、fs-idm27364240 和 fs-idm26471216 被略去，fs-idm59335888 和 fs-idm3478704 也被略去，它们的（a）部分是概述步骤，而（b）部分导向没有答案的结果。有答案的概述题 fs-idm62194192 和 fs-idm26500064 只按（b）部分检查，书中的概述写在解里。没有取自或留给其他小节的内容。",
  "figures": [
   {
    "id": "fig-espresso",
@@ -72,6 +80,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "readout numbers in type colours, molar M set upright"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -88,7 +101,7 @@
    "originals": [
     "/media/ch03/CNX_Chem_03_04_dilution.jpg"
    ],
-   "original_caption": "Both solutions contain the same mass of copper nitrate. The solution on the right is more dilute because the copper nitrate is dissolved in more solvent. (credit: Mark Ott)",
+   "original_caption": "两种溶液含有相同质量的硝酸铜。右侧的溶液更稀，因为硝酸铜溶解在更多的溶剂中。（来源：Mark Ott）",
    "draws": [
     "amount",
     "volume",
@@ -107,6 +120,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "readout numbers in type colours, molar M set upright"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -264,13 +282,13 @@
     "after": "ex-molar-concentration"
    },
    "cite": "molarity",
-   "prompt": "A teaspoon of table sugar contains about 0.01 mol sucrose. What is the molarity of sucrose if a teaspoon of sugar has been dissolved in a cup of tea with a volume of 200 mL?",
+   "prompt": "一茶匙食糖约含 0.01 mol 蔗糖。如果把一茶匙糖溶于体积为 200 mL 的一杯茶中，蔗糖的物质的量浓度是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.05,
     "unit": "M",
-    "hint": "Convert the volume to liters, then divide the moles of sucrose by it.",
+    "hint": "把体积换算成升，再用蔗糖的物质的量除以它。",
     "solution": "0.05 <em>M</em>"
    }
   },
@@ -284,13 +302,13 @@
     "after": "ex-moles-volumes"
    },
    "cite": "molarity",
-   "prompt": "What volume (mL) of the sweetened tea described in Example 3.14 contains the same amount of sugar (mol) as 10 mL of the soft drink in this example?",
+   "prompt": "例 3.14 中所述的加糖茶，多大体积（mL）所含的糖（mol）与本例中 10 mL 软饮料所含的相同？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 80,
     "unit": "mL",
-    "hint": "Divide the 0.004 mol of sugar in the sip by the molarity of the tea from the Check Your Learning of Example 3.14.",
+    "hint": "用一小口中所含的 0.004 mol 糖除以例 3.14“学习检测”中茶的物质的量浓度。",
     "solution": "80 mL"
    }
   },
@@ -304,13 +322,13 @@
     "after": "ex-from-mass"
    },
    "cite": "molarity-calculations",
-   "prompt": "Calculate the molarity of 6.52 g of CoCl<sub>2</sub> (128.9 g/mol) dissolved in an aqueous solution with a total volume of 75.0 mL.",
+   "prompt": "计算 6.52 g CoCl<sub>2</sub>（128.9 g/mol）溶于总体积为 75.0 mL 的水溶液中所得溶液的物质的量浓度。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.674,
     "unit": "M",
-    "hint": "Convert the mass to moles with the molar mass, and the volume to liters.",
+    "hint": "用摩尔质量把质量换算成物质的量，并把体积换算成升。",
     "solution": "0.674 <em>M</em>"
    }
   },
@@ -324,13 +342,13 @@
     "after": "ex-mass-in-volume"
    },
    "cite": "molarity-calculations",
-   "prompt": "How many grams of CaCl<sub>2</sub> (110.98 g/mol) are contained in 250.0 mL of a 0.200-<em>M</em> solution of calcium chloride?",
+   "prompt": "250.0 mL 0.200 <em>M</em> 的氯化钙溶液中含有多少克 CaCl<sub>2</sub>（110.98 g/mol）？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 5.55,
     "unit": "g",
-    "hint": "Multiply the molarity by the volume in liters to get moles, then multiply by the molar mass.",
+    "hint": "用物质的量浓度乘以以升计的体积得到物质的量，再乘以摩尔质量。",
     "solution": "5.55 g CaCl<sub>2</sub>"
    }
   },
@@ -344,13 +362,13 @@
     "after": "ex-volume-for-mass"
    },
    "cite": "molarity-calculations",
-   "prompt": "What volume of a 1.50-<em>M</em> KBr solution contains 66.0 g KBr?",
+   "prompt": "多大体积的 1.50 <em>M</em> KBr 溶液含有 66.0 g KBr？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.37,
     "unit": "L",
-    "hint": "Convert the mass of KBr to moles, then divide by the molarity.",
+    "hint": "把 KBr 的质量换算成物质的量，再除以物质的量浓度。",
     "solution": "0.370 L"
    }
   },
@@ -364,13 +382,13 @@
     "after": "ex-diluted-concentration"
    },
    "cite": "dilution-equation",
-   "prompt": "What is the concentration of the solution that results from diluting 25.0 mL of a 2.04-<em>M</em> solution of CH<sub>3</sub>OH to 500.0 mL?",
+   "prompt": "将 25.0 mL 2.04 <em>M</em> 的 CH<sub>3</sub>OH 溶液稀释到 500.0 mL，所得溶液的浓度是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.102,
     "unit": "M",
-    "hint": "Solve C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> for C<sub>2</sub>; the volumes may stay in mL since their units cancel.",
+    "hint": "由 C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> 解出 C<sub>2</sub>；体积可以仍用 mL，因为它们的单位会约去。",
     "solution": "0.102 <em>M</em> CH<sub>3</sub>OH"
    }
   },
@@ -384,13 +402,13 @@
     "after": "ex-diluted-volume"
    },
    "cite": "dilution-equation",
-   "prompt": "A laboratory experiment calls for 0.125 <em>M</em> HNO<sub>3</sub>. What volume of 0.125 <em>M</em> HNO<sub>3</sub> can be prepared from 0.250 L of 1.88 <em>M</em> HNO<sub>3</sub>?",
+   "prompt": "某个实验室实验需要 0.125 <em>M</em> 的 HNO<sub>3</sub>。用 0.250 L 1.88 <em>M</em> 的 HNO<sub>3</sub> 可以配制多大体积的 0.125 <em>M</em> HNO<sub>3</sub>？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 3.76,
     "unit": "L",
-    "hint": "Solve the dilution equation for V<sub>2</sub>.",
+    "hint": "对 V<sub>2</sub> 解稀释公式。",
     "solution": "3.76 L"
    }
   },
@@ -404,13 +422,13 @@
     "after": "ex-stock-volume"
    },
    "cite": "dilution-equation",
-   "prompt": "What volume of a 0.575-<em>M</em> solution of glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, can be prepared from 50.00 mL of a 3.00-<em>M</em> glucose solution?",
+   "prompt": "用 50.00 mL 3.00 <em>M</em> 的葡萄糖溶液，可以配制多大体积的 0.575 <em>M</em> 葡萄糖（C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>）溶液？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.261,
     "unit": "L",
-    "hint": "Solve the dilution equation for the volume of the diluted solution, and give it in liters.",
+    "hint": "对稀释后溶液的体积解稀释公式，并以升为单位给出。",
     "solution": "0.261 L"
    }
   },
@@ -423,11 +441,11 @@
     "at": "end"
    },
    "cite": "dilution",
-   "prompt": "Explain what changes and what stays the same when 1.00 L of a solution of NaCl is diluted to 1.80 L.",
+   "prompt": "解释将 1.00 L NaCl 溶液稀释到 1.80 L 时，什么发生变化，什么保持不变。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The amount of NaCl stays the same, in moles and in grams, while the volume of the solution increases and its concentration decreases. Dilution adds only solvent, so the moles of solute before and after are equal, which is the content of $\\kCone\\kVone=\\kCtwo\\kVtwo$. The same amount of NaCl now occupies 1.80 L instead of 1.00 L, so the new molarity is $\\kCtwo=\\kCone\\times\\frac{1.00\\;\\text{L}}{1.80\\;\\text{L}}=0.556\\,\\kCone$, a little over half the original concentration. The mass of the solution also increases by the mass of the added water."
+    "solution": "NaCl 的量保持不变，无论以摩尔还是以克计，而溶液的体积增大，浓度降低。稀释只加入溶剂，所以稀释前后溶质的物质的量相等，这就是 $\\kCone\\kVone=\\kCtwo\\kVtwo$ 的含义。同样量的 NaCl 现在占据 1.80 L 而不是 1.00 L，所以新的物质的量浓度为 $\\kCtwo=\\kCone\\times\\frac{1.00\\;\\text{L}}{1.80\\;\\text{L}}=0.556\\,\\kCone$，略大于原来浓度的一半。溶液的质量也增加了所加水的质量。"
    }
   },
   {
@@ -439,11 +457,11 @@
     "at": "end"
    },
    "cite": "molarity",
-   "prompt": "What information is needed to calculate the molarity of a sulfuric acid solution?",
+   "prompt": "计算硫酸溶液的物质的量浓度需要哪些信息？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "We need to know the number of moles of sulfuric acid dissolved in the solution and the volume of the solution."
+    "solution": "我们需要知道溶液中溶解的硫酸的物质的量和溶液的体积。"
    }
   },
   {
@@ -455,11 +473,11 @@
     "at": "end"
    },
    "cite": "solutions",
-   "prompt": "A 200-mL sample and a 400-mL sample of a solution of salt have the same molarity. In what ways are the two samples identical? In what ways are these two samples different?",
+   "prompt": "一份 200 mL 和一份 400 mL 的盐溶液样品，物质的量浓度相同。这两份样品在哪些方面相同？在哪些方面不同？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The two samples are identical in composition: they have the same molarity, the same ratio of salt to water, and the same concentration-dependent properties such as density and saltiness, because molarity, moles of solute per liter of solution, does not depend on how much of the solution is taken. They differ in quantity: the 400-mL sample has twice the volume, so at the same molarity it contains twice the moles and twice the mass of salt, and it has twice the total mass of solution."
+    "solution": "两份样品的组成相同：它们的物质的量浓度相同，盐与水的比例相同，与浓度有关的性质如密度和咸度也相同，因为物质的量浓度，即每升溶液中所含溶质的物质的量，与取用溶液的多少无关。它们的差别在于量：400 mL 的样品体积是前者的两倍，所以在相同的物质的量浓度下，它所含盐的物质的量和质量都是前者的两倍，溶液的总质量也是前者的两倍。"
    }
   },
   {
@@ -471,7 +489,7 @@
     "at": "end"
    },
    "cite": "molarity-calculations",
-   "prompt": "Determine the molarity for each of the following solutions: (a) 0.444 mol of CoCl<sub>2</sub> in 0.654 L of solution (b) 98.0 g of phosphoric acid, H<sub>3</sub>PO<sub>4</sub>, in 1.00 L of solution (c) 0.2074 g of calcium hydroxide, Ca(OH)<sub>2</sub>, in 40.00 mL of solution (d) 10.5 kg of Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O in 18.60 L of solution (e) 7.0 $\\times$ 10<sup>−3</sup> mol of I<sub>2</sub> in 100.0 mL of solution (f) 1.8 $\\times$ 10<sup>4</sup> mg of HCl in 0.075 L of solution",
+   "prompt": "确定下列各溶液的物质的量浓度：（a）0.654 L 溶液中含 0.444 mol CoCl<sub>2</sub> （b）1.00 L 溶液中含 98.0 g 磷酸 H<sub>3</sub>PO<sub>4</sub> （c）40.00 mL 溶液中含 0.2074 g 氢氧化钙 Ca(OH)<sub>2</sub> （d）18.60 L 溶液中含 10.5 kg Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O （e）100.0 mL 溶液中含 7.0 $\\times$ 10<sup>−3</sup> mol I<sub>2</sub> （f）0.075 L 溶液中含 1.8 $\\times$ 10<sup>4</sup> mg HCl",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -507,7 +525,7 @@
       "unit": "M"
      }
     ],
-    "solution": "(a) 0.679 <em>M</em>; (b) 1.00 <em>M</em>; (c) 0.06998 <em>M</em>; (d) 1.75 <em>M</em>; (e) 0.070 <em>M</em>; (f) 6.6 <em>M</em>"
+    "solution": "（a）0.679 <em>M</em>；（b）1.00 <em>M</em>；（c）0.06998 <em>M</em>；（d）1.75 <em>M</em>；（e）0.070 <em>M</em>；（f）6.6 <em>M</em>"
    }
   },
   {
@@ -519,15 +537,15 @@
     "at": "end"
    },
    "cite": "molarity-calculations",
-   "prompt": "Consider this question: What is the mass of the solute in 0.500 L of 0.30 <em>M</em> glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>, used for intravenous injection? (a) Outline the steps necessary to answer the question. (b) Answer the question.",
+   "prompt": "考虑这个问题：用于静脉注射的 0.500 L 0.30 <em>M</em> 葡萄糖（C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>）溶液中，溶质的质量是多少？（a）概述回答该问题所需的步骤。（b）回答该问题。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 27,
     "unit": "g",
     "part": "(b)",
-    "hint": "Moles from molarity and volume, then grams from the molar mass of glucose.",
-    "solution": "(a) determine the number of moles of glucose in 0.500 L of solution; determine the molar mass of glucose; determine the mass of glucose from the number of moles and its molar mass; (b) 27 g"
+    "hint": "先由物质的量浓度和体积求出物质的量，再由葡萄糖的摩尔质量求出克数。",
+    "solution": "（a）确定 0.500 L 溶液中葡萄糖的物质的量；确定葡萄糖的摩尔质量；由物质的量和摩尔质量确定葡萄糖的质量；（b）27 g"
    }
   },
   {
@@ -539,7 +557,7 @@
     "at": "end"
    },
    "cite": "molarity-calculations",
-   "prompt": "Calculate the number of moles and the mass of the solute in each of the following solutions: (a) 2.00 L of 18.5 <em>M</em> H<sub>2</sub>SO<sub>4</sub>, concentrated sulfuric acid (b) 100.0 mL of 3.8 $\\times$ 10<sup>−6</sup> <em>M</em> NaCN, the minimum lethal concentration of sodium cyanide in blood serum (c) 5.50 L of 13.3 <em>M</em> H<sub>2</sub>CO, the formaldehyde used to “fix” tissue samples (d) 325 mL of 1.8 $\\times$ 10<sup>−6</sup> <em>M</em> FeSO<sub>4</sub>, the minimum concentration of iron sulfate detectable by taste in drinking water",
+   "prompt": "计算下列各溶液中溶质的物质的量和质量：（a）2.00 L 18.5 <em>M</em> 的 H<sub>2</sub>SO<sub>4</sub>，即浓硫酸 （b）100.0 mL 3.8 $\\times$ 10<sup>−6</sup> <em>M</em> 的 NaCN，即血清中氰化钠的最低致死浓度 （c）5.50 L 13.3 <em>M</em> 的 H<sub>2</sub>CO，即用于“固定”组织样品的甲醛 （d）325 mL 1.8 $\\times$ 10<sup>−6</sup> <em>M</em> 的 FeSO<sub>4</sub>，即饮用水中凭味道可检出的硫酸亚铁的最低浓度",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -585,7 +603,7 @@
       "unit": "g"
      }
     ],
-    "solution": "(a) 37.0 mol H<sub>2</sub>SO<sub>4</sub>, 3.63 $\\times$ 10<sup>3</sup> g H<sub>2</sub>SO<sub>4</sub>; (b) 3.8 $\\times$ 10<sup>−7</sup> mol NaCN, 1.9 $\\times$ 10<sup>−5</sup> g NaCN; (c) 73.2 mol H<sub>2</sub>CO, 2.20 kg H<sub>2</sub>CO; (d) 5.9 $\\times$ 10<sup>−7</sup> mol FeSO<sub>4</sub>, 8.9 $\\times$ 10<sup>−5</sup> g FeSO<sub>4</sub>"
+    "solution": "（a）37.0 mol H<sub>2</sub>SO<sub>4</sub>，3.63 $\\times$ 10<sup>3</sup> g H<sub>2</sub>SO<sub>4</sub>；（b）3.8 $\\times$ 10<sup>−7</sup> mol NaCN，1.9 $\\times$ 10<sup>−5</sup> g NaCN；（c）73.2 mol H<sub>2</sub>CO，2.20 kg H<sub>2</sub>CO；（d）5.9 $\\times$ 10<sup>−7</sup> mol FeSO<sub>4</sub>，8.9 $\\times$ 10<sup>−5</sup> g FeSO<sub>4</sub>"
    }
   },
   {
@@ -597,15 +615,15 @@
     "at": "end"
    },
    "cite": "molarity-calculations",
-   "prompt": "Consider this question: What is the molarity of KMnO<sub>4</sub> in a solution of 0.0908 g of KMnO<sub>4</sub> in 0.500 L of solution? (a) Outline the steps necessary to answer the question. (b) Answer the question.",
+   "prompt": "考虑这个问题：0.500 L 溶液中含有 0.0908 g KMnO<sub>4</sub>，该溶液中 KMnO<sub>4</sub> 的物质的量浓度是多少？（a）概述回答该问题所需的步骤。（b）回答该问题。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.00115,
     "unit": "M",
     "part": "(b)",
-    "hint": "Moles from the mass and the molar mass of KMnO<sub>4</sub>, then divide by the volume.",
-    "solution": "(a) Determine the molar mass of KMnO<sub>4</sub>; determine the number of moles of KMnO<sub>4</sub> in the solution; from the number of moles and the volume of solution, determine the molarity; (b) 1.15 $\\times$ 10<sup>−3</sup> <em>M</em>"
+    "hint": "由质量和 KMnO<sub>4</sub> 的摩尔质量求出物质的量，再除以体积。",
+    "solution": "（a）确定 KMnO<sub>4</sub> 的摩尔质量；确定溶液中 KMnO<sub>4</sub> 的物质的量；由物质的量和溶液的体积确定物质的量浓度；（b）1.15 $\\times$ 10<sup>−3</sup> <em>M</em>"
    }
   },
   {
@@ -617,7 +635,7 @@
     "at": "end"
    },
    "cite": "molarity-calculations",
-   "prompt": "Calculate the molarity of each of the following solutions: (a) 0.195 g of cholesterol, C<sub>27</sub>H<sub>46</sub>O, in 0.100 L of serum, the average concentration of cholesterol in human serum (b) 4.25 g of NH<sub>3</sub> in 0.500 L of solution, the concentration of NH<sub>3</sub> in household ammonia (c) 1.49 kg of isopropyl alcohol, C<sub>3</sub>H<sub>7</sub>OH, in 2.50 L of solution, the concentration of isopropyl alcohol in rubbing alcohol (d) 0.029 g of I<sub>2</sub> in 0.100 L of solution, the solubility of I<sub>2</sub> in water at 20 °C",
+   "prompt": "计算下列各溶液的物质的量浓度：（a）0.100 L 血清中含 0.195 g 胆固醇 C<sub>27</sub>H<sub>46</sub>O，即人体血清中胆固醇的平均浓度 （b）0.500 L 溶液中含 4.25 g NH<sub>3</sub>，即家用氨水中 NH<sub>3</sub> 的浓度 （c）2.50 L 溶液中含 1.49 kg 异丙醇 C<sub>3</sub>H<sub>7</sub>OH，即外用消毒酒精中异丙醇的浓度 （d）0.100 L 溶液中含 0.029 g I<sub>2</sub>，即 20 °C 时 I<sub>2</sub> 在水中的溶解度",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -643,7 +661,7 @@
       "unit": "M"
      }
     ],
-    "solution": "(a) 5.04 $\\times$ 10<sup>−3</sup> <em>M</em>; (b) 0.499 <em>M</em>; (c) 9.92 <em>M</em>; (d) 1.1 $\\times$ 10<sup>−3</sup> <em>M</em>"
+    "solution": "（a）5.04 $\\times$ 10<sup>−3</sup> <em>M</em>；（b）0.499 <em>M</em>；（c）9.92 <em>M</em>；（d）1.1 $\\times$ 10<sup>−3</sup> <em>M</em>"
    }
   },
   {
@@ -655,13 +673,13 @@
     "at": "end"
    },
    "cite": "molarity-calculations",
-   "prompt": "There is about 1.0 g of calcium, as Ca<sup>2+</sup>, in 1.0 L of milk. What is the molarity of Ca<sup>2+</sup> in milk?",
+   "prompt": "1.0 L 牛奶中约含 1.0 g 钙（以 Ca<sup>2+</sup> 形式）。牛奶中 Ca<sup>2+</sup> 的物质的量浓度是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.025,
     "unit": "M",
-    "hint": "Convert the mass of calcium to moles with its molar mass.",
+    "hint": "用钙的摩尔质量把钙的质量换算成物质的量。",
     "solution": "0.025 <em>M</em>"
    }
   },
@@ -674,13 +692,13 @@
     "at": "end"
    },
    "cite": "dilution-equation",
-   "prompt": "If 0.1718 L of a 0.3556-<em>M</em> C<sub>3</sub>H<sub>7</sub>OH solution is diluted to a concentration of 0.1222 <em>M</em>, what is the volume of the resulting solution?",
+   "prompt": "如果将 0.1718 L 0.3556 <em>M</em> 的 C<sub>3</sub>H<sub>7</sub>OH 溶液稀释到浓度为 0.1222 <em>M</em>，所得溶液的体积是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.5,
     "unit": "L",
-    "hint": "Solve C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> for V<sub>2</sub>.",
+    "hint": "由 C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> 解出 V<sub>2</sub>。",
     "solution": "0.5000 L"
    }
   },
@@ -693,13 +711,13 @@
     "at": "end"
    },
    "cite": "dilution-equation",
-   "prompt": "What volume of a 0.33-<em>M</em> C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> solution can be diluted to prepare 25 mL of a solution with a concentration of 0.025 <em>M</em>?",
+   "prompt": "多大体积的 0.33 <em>M</em> C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> 溶液经稀释，可以配制 25 mL 浓度为 0.025 <em>M</em> 的溶液？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.9,
     "unit": "mL",
-    "hint": "Solve the dilution equation for V<sub>1</sub>; the volume can stay in mL.",
+    "hint": "对 V<sub>1</sub> 解稀释公式；体积可以仍用 mL。",
     "solution": "1.9 mL"
    }
   },
@@ -712,7 +730,7 @@
     "at": "end"
    },
    "cite": "dilution-equation",
-   "prompt": "What is the molarity of the diluted solution when each of the following solutions is diluted to the given final volume? (a) 1.00 L of a 0.250-<em>M</em> solution of Fe(NO<sub>3</sub>)<sub>3</sub> is diluted to a final volume of 2.00 L (b) 0.5000 L of a 0.1222-<em>M</em> solution of C<sub>3</sub>H<sub>7</sub>OH is diluted to a final volume of 1.250 L (c) 2.35 L of a 0.350-<em>M</em> solution of H<sub>3</sub>PO<sub>4</sub> is diluted to a final volume of 4.00 L (d) 22.50 mL of a 0.025-<em>M</em> solution of C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> is diluted to 100.0 mL",
+   "prompt": "将下列各溶液稀释到给定的最终体积后，稀释后溶液的物质的量浓度是多少？（a）将 1.00 L 0.250 <em>M</em> 的 Fe(NO<sub>3</sub>)<sub>3</sub> 溶液稀释到最终体积 2.00 L （b）将 0.5000 L 0.1222 <em>M</em> 的 C<sub>3</sub>H<sub>7</sub>OH 溶液稀释到最终体积 1.250 L （c）将 2.35 L 0.350 <em>M</em> 的 H<sub>3</sub>PO<sub>4</sub> 溶液稀释到最终体积 4.00 L （d）将 22.50 mL 0.025 <em>M</em> 的 C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> 溶液稀释到 100.0 mL",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -738,7 +756,7 @@
       "unit": "M"
      }
     ],
-    "solution": "(a) 0.125 <em>M</em>; (b) 0.04888 <em>M</em>; (c) 0.206 <em>M</em>; (d) 0.0056 <em>M</em>"
+    "solution": "（a）0.125 <em>M</em>；（b）0.04888 <em>M</em>；（c）0.206 <em>M</em>；（d）0.0056 <em>M</em>"
    }
   },
   {
@@ -750,13 +768,13 @@
     "at": "end"
    },
    "cite": "molarity-calculations",
-   "prompt": "A 2.00-L bottle of a solution of concentrated HCl was purchased for the general chemistry laboratory. The solution contained 868.8 g of HCl. What is the molarity of the solution?",
+   "prompt": "为普通化学实验室购买了一瓶 2.00 L 的浓 HCl 溶液。该溶液含有 868.8 g HCl。该溶液的物质的量浓度是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 11.9,
     "unit": "M",
-    "hint": "Convert the mass of HCl to moles, then divide by the volume.",
+    "hint": "把 HCl 的质量换算成物质的量，再除以体积。",
     "solution": "11.9 <em>M</em>"
    }
   },
@@ -769,13 +787,13 @@
     "at": "end"
    },
    "cite": "molarity-calculations",
-   "prompt": "What volume of a 0.20-<em>M</em> K<sub>2</sub>SO<sub>4</sub> solution contains 57 g of K<sub>2</sub>SO<sub>4</sub>?",
+   "prompt": "多大体积的 0.20 <em>M</em> K<sub>2</sub>SO<sub>4</sub> 溶液含有 57 g K<sub>2</sub>SO<sub>4</sub>？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.6,
     "unit": "L",
-    "hint": "Convert the mass to moles, then divide by the molarity.",
+    "hint": "把质量换算成物质的量，再除以物质的量浓度。",
     "solution": "1.6 L"
    }
   }
@@ -969,28 +987,28 @@
  "referents": [
   {
    "id": "balance",
-   "label": "the balance",
+   "label": "天平",
    "figures": [
     "sim-molarity"
    ]
   },
   {
    "id": "beaker",
-   "label": "the beaker of solution",
+   "label": "盛有溶液的烧杯",
    "figures": [
     "sim-molarity"
    ]
   },
   {
    "id": "stock",
-   "label": "the stock solution",
+   "label": "储备液",
    "figures": [
     "sim-dilution"
    ]
   },
   {
    "id": "diluted",
-   "label": "the diluted solution",
+   "label": "稀释后的溶液",
    "figures": [
     "sim-dilution"
    ]
@@ -999,13 +1017,13 @@
  "derivations": [
   {
    "id": "dilution-equation",
-   "what": "the dilution equation",
-   "source": "Chemistry 2e, 3.3 Molarity",
+   "what": "稀释公式",
+   "source": "化学（第2版），3.3 物质的量浓度",
    "nodes": [
     {
      "assumes": [
       {
-       "text": "The subscript 1 marks the solution before the dilution and 2 the solution after it.",
+       "text": "下标 1 表示稀释前的溶液，下标 2 表示稀释后的溶液。",
        "src": "3.3"
       }
      ],
@@ -1026,7 +1044,7 @@
     {
      "assumes": [
       {
-       "text": "The subscript 1 marks the solution before the dilution and 2 the solution after it.",
+       "text": "下标 1 表示稀释前的溶液，下标 2 表示稀释后的溶液。",
        "src": "3.3"
       }
      ],
@@ -1053,7 +1071,7 @@
        "step": 1
       },
       {
-       "text": "Dilution does not change the amount of solute in the solution.",
+       "text": "稀释不改变溶液中溶质的物质的量。",
        "src": "3.3"
       }
      ],

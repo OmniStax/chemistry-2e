@@ -42,15 +42,15 @@ function burst(ctx, x, y, R, k, color) {
 (function () {
   const H = 640, A0 = 0.9, U6 = 1.3, S0 = 2.1, FL = 1.1, T = S0 + FL + 0.2;
   const RX = {
-    'Ba-Kr': { l: ['Kr', 92, 36], h: ['Ba', 141, 56], n: 3, light: false, word: 'krypton-92 and barium-141' },
-    'Sr-Xe': { l: ['Sr', 90, 38], h: ['Xe', 144, 54], n: 2, light: true, word: 'strontium-90 and xenon-144' },
-    'Br-La': { l: ['Br', 87, 35], h: ['La', 146, 57], n: 3, light: true, word: 'bromine-87 and lanthanum-146' },
-    'Rb-Cs': { l: ['Rb', 96, 37], h: ['Cs', 137, 55], n: 3, light: true, word: 'rubidium-96 and cesium-137' },
-    'Te-Zr': { l: ['Zr', 97, 40], h: ['Te', 137, 52], n: 2, light: false, word: 'zirconium-97 and tellurium-137' },
+    'Ba-Kr': { l: ['Kr', 92, 36], h: ['Ba', 141, 56], n: 3, light: false, word: '氪-92 和钡-141' },
+    'Sr-Xe': { l: ['Sr', 90, 38], h: ['Xe', 144, 54], n: 2, light: true, word: '锶-90 和氙-144' },
+    'Br-La': { l: ['Br', 87, 35], h: ['La', 146, 57], n: 3, light: true, word: '溴-87 和镧-146' },
+    'Rb-Cs': { l: ['Rb', 96, 37], h: ['Cs', 137, 55], n: 3, light: true, word: '铷-96 和铯-137' },
+    'Te-Zr': { l: ['Zr', 97, 40], h: ['Te', 137, 52], n: 2, light: false, word: '锆-97 和碲-137' },
   };
-  const NUM = ['', 'one', 'two', 'three'];
+  const NUM = ['', '一', '两', '三'];
   const d = sim('sim-fission', H);
-  const rx = F.select(d.controls, { label: '\\text{reaction}', key: 'reaction', aria: 'the fission reaction',
+  const rx = F.select(d.controls, { label: '\\text{反应}', key: 'reaction', aria: '裂变反应',
     options: [{ value: 'Ba-Kr', label: 'Ba-141 + Kr-92 + 3n' }, { value: 'Sr-Xe', label: 'Sr-90 + Xe-144 + 2n' }, { value: 'Br-La', label: 'Br-87 + La-146 + 3n' },
       { value: 'Rb-Cs', label: 'Rb-96 + Cs-137 + 3n' }, { value: 'Te-Zr', label: 'Te-137 + Zr-97 + 2n' }],
     value: 'Ba-Kr', ms: 0, onInput: () => cy.reset() });
@@ -99,7 +99,7 @@ function burst(ctx, x, y, R, k, color) {
     const P = F.el('p+'), N = F.el('n0'), E = C('energy'), INK = PAL.ink;
     const [sl, Al] = r.l, [sh, Ah] = r.h;
     hits = [];
-    topline(ctx, 'Uranium-236 splits into ' + r.word + ' and sets ' + NUM[r.n] + ' neutrons free.');
+    topline(ctx, '铀-236 分裂为' + r.word + '，并释放出' + NUM[r.n] + '个中子。');
 
     const k1 = smooth((t - U6) / (S0 - U6)), k2 = smooth((t - S0) / 0.35), sep = smooth((t - S0) / FL);
     const lc = { x: CX + (LC.x - CX) * sep, y: CY - R * 0.62 + (LC.y - CY + R * 0.62) * sep }, hc = { x: CX + (HC.x - CX) * sep, y: CY + R * 0.75 + (HC.y - CY - R * 0.75) * sep };
@@ -114,7 +114,7 @@ function burst(ctx, x, y, R, k, color) {
         else { const c = ro0.g === 'l' ? lc : hc; x = dx + (c.x + ro0.tx - dx) * k2; y = dy + (c.y + ro0.ty - dy) * k2; if (k2 >= 1) { x = c.x + ro0.tx; y = c.y + ro0.ty; } }
       }
       disc(ctx, x, y, RD, prot ? P : N, alpha(INK, 0.45), 0.9);
-      if (ro0.g === 'n' && t > S0) hits.push({ x, y, r: 12, name: 'a neutron set free by the fission' });
+      if (ro0.g === 'n' && t > S0) hits.push({ x, y, r: 12, name: '裂变释放出的一个中子' });
     });
     if (k2 > 0) {
       ctx.save(); ctx.globalAlpha *= k2;
@@ -126,17 +126,17 @@ function burst(ctx, x, y, R, k, color) {
       const x = sx + (tx - sx) * q, y = sy + (ty - sy) * q, L = Math.hypot(tx - sx, ty - sy);
       arrow(ctx, x - (tx - sx) / L * 34, y - (ty - sy) / L * 34, x - (tx - sx) / L * (RD + 2), y - (ty - sy) / L * (RD + 2), alpha(INK, 0.55), 2.5);
       disc(ctx, x, y, RD, N, alpha(INK, 0.45), 0.9);
-      hits.push({ x, y, r: 14, name: 'a slow neutron' });
+      hits.push({ x, y, r: 14, name: '一个慢中子' });
     }
     ctx.restore();
 
     if (t < S0) {
       label(ctx, t < U6 ? '²³⁵U' : '²³⁶U', CX - R * 0.8, CY + R * 0.8, { side: 'left', size: 24, gap: 30 });
-      hits.push({ x: CX, y: CY, r: R, name: t < A0 ? 'a uranium-235 nucleus: 92 protons and 143 neutrons' : t < U6 ? 'the neutron absorbed' : 'an unstable uranium-236 nucleus, stretching' });
+      hits.push({ x: CX, y: CY, r: R, name: t < A0 ? '一个铀-235 原子核：92 个质子和 143 个中子' : t < U6 ? '被吸收的中子' : '不稳定的铀-236 原子核，正在伸展' });
     } else {
-      hits.push({ x: lc.x, y: lc.y, r: RL.rl, name: 'the lighter fission fragment, ' + sl + '-' + Al }, { x: hc.x, y: hc.y, r: RL.rh, name: 'the heavier fission fragment, ' + sh + '-' + Ah });
-      hits.push({ x: BURST.x, y: BURST.y, r: 40, name: 'the energy released' });
-      if (k2 >= 1) label(ctx, 'energy', BURST.x, BURST.y - 40, { side: 'left', size: 20, gap: 34, color: E });
+      hits.push({ x: lc.x, y: lc.y, r: RL.rl, name: '较轻的裂变碎片，' + sl + '-' + Al }, { x: hc.x, y: hc.y, r: RL.rh, name: '较重的裂变碎片，' + sh + '-' + Ah });
+      hits.push({ x: BURST.x, y: BURST.y, r: 40, name: '释放出的能量' });
+      if (k2 >= 1) label(ctx, '能量', BURST.x, BURST.y - 40, { side: 'left', size: 20, gap: 34, color: E });
       if (t >= S0 + FL) {
         label(ctx, sl + '-' + Al, lc.x + RL.rl + 8, lc.y, { side: 'right', size: 24, gap: 22, color: FLc });
         label(ctx, sh + '-' + Ah, hc.x + RL.rh + 8, hc.y, { side: 'right', size: 24, gap: 22, color: FHc });
@@ -145,12 +145,12 @@ function burst(ctx, x, y, R, k, color) {
 
     /* the legend */
     const LY = H - 30;
-    disc(ctx, 50, LY, 8, N, alpha(INK, 0.45), 0.9); text(ctx, 'neutron', 66, LY, INK, { size: 18 });
-    disc(ctx, 180, LY, 8, P, alpha(INK, 0.45), 0.9); text(ctx, 'proton', 196, LY, INK, { size: 18 });
+    disc(ctx, 50, LY, 8, N, alpha(INK, 0.45), 0.9); text(ctx, '中子', 66, LY, INK, { size: 18 });
+    disc(ctx, 180, LY, 8, P, alpha(INK, 0.45), 0.9); text(ctx, '质子', 196, LY, INK, { size: 18 });
 
     /* fission yield against mass number */
     const GB = { l: 990, r: 1350, t: 150, b: 520 };
-    const { X, Y } = axes(ctx, GB, [60, 180], [0, 9], { nx: 6, ny: 9, xl: 'mass number', yl: 'fission yield (%)' });
+    const { X, Y } = axes(ctx, GB, [60, 180], [0, 9], { nx: 6, ny: 9, xl: '质量数', yl: '裂变产额（%）' });
     F.curve(ctx, (a) => yieldAt(a), 64, 172, X, Y, INK, 3.5, 216);
     if (k2 > 0) {
       ctx.save(); ctx.globalAlpha *= k2;
@@ -159,7 +159,7 @@ function burst(ctx, x, y, R, k, color) {
         line(ctx, X(A), Y(y), X(A), GB.b, alpha(col, 0.8), 2.5, [4, 8]);
         dot(ctx, X(A), Y(y), col, true, 10);
         text(ctx, String(A), X(A) + (A === Al ? -16 : 16), Y(y) - 20, col, { size: 20, weight: 600, align: A === Al ? 'right' : 'left' });
-        hits.push({ x: X(A), y: Y(y), r: 14, name: (A === Al ? sl : sh) + '-' + A + ': a fission yield of about ' + fmt(y, 1) + '%' });
+        hits.push({ x: X(A), y: Y(y), r: 14, name: (A === Al ? sl : sh) + '-' + A + '：裂变产额约为 ' + fmt(y, 1) + '%' });
       });
       ctx.restore();
     }
@@ -193,8 +193,8 @@ function burst(ctx, x, y, R, k, color) {
   const d = sim('sim-chain');
   const V = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], h: 420, dist: 9, tilt: 0.3 });
   const grp = V.part(0), cnv = F.makeCanvas(d.stage, 340);
-  const ms = ctl(d.controls, { label: '\\text{mass}', cls: '', key: 'mass', min: 0.3, max: 3, step: 0.01, value: 1, unit: '× critical mass', dec: 2,
-    aria: 'the mass of the lump as a multiple of the critical mass', specials: [{ at: 1, label: 'critical mass' }], onInput: () => { sig = ''; cy.reset(); } });
+  const ms = ctl(d.controls, { label: '\\text{质量}', cls: '', key: 'mass', min: 0.3, max: 3, step: 0.01, value: 1, unit: '× 临界质量', dec: 2,
+    aria: '这块铀的质量，以临界质量的倍数表示', specials: [{ at: 1, label: '临界质量' }], onInput: () => { sig = ''; cy.reset(); } });
   const cy = cycle(() => T, 1.2);
   const ro = readout(d);
   const T3 = window.THREE;
@@ -245,13 +245,13 @@ function burst(ctx, x, y, R, k, color) {
     V.clear();
     const SG = F.mesh.geo().sphere, mU = F.mesh.mat(F.el('U')), mN = F.mesh.mat(F.el('n0')), mF = F.mesh.mat(F.cat(0));
     lump = new T3.Mesh(SG, F.mesh.mat(F.el('U'), { transparent: true, opacity: 0.12, depthWrite: false })); lump.scale.setScalar(M.R); grp.add(lump);
-    V.pickable(lump, 'a lump of uranium-235, ' + fmt(ms.v, 2) + ' times the critical mass');
+    V.pickable(lump, '一块铀-235，质量为临界质量的 ' + fmt(ms.v, 2) + ' 倍');
     const mk = (mat, r, name) => { const o = new T3.Mesh(SG, mat); o.scale.setScalar(r); grp.add(o); if (name) V.pickable(o, name); return o; };
-    NUC = CH.pts.map((p) => { const o = mk(mU, RU, 'a uranium-235 nucleus'); o.position.set(...p); return o; });
-    FR = CH.pts.map(() => [mk(mF, RU * 0.75, 'a fission fragment'), mk(mF, RU * 0.65, 'a fission fragment')]);
+    NUC = CH.pts.map((p) => { const o = mk(mU, RU, '一个铀-235 原子核'); o.position.set(...p); return o; });
+    FR = CH.pts.map(() => [mk(mF, RU * 0.75, '一个裂变碎片'), mk(mF, RU * 0.65, '一个裂变碎片')]);
     FX = CH.pts.map(() => mk(F.mesh.mat(C('energy'), { transparent: true, opacity: 0, depthWrite: false }), RU * 2.4, null));
-    NEU = CH.flights.map((f) => mk(mN, RU * 0.5, f.hit ? 'a neutron that goes on to cause fission' : 'a neutron escaping through the surface'));
-    IN = mk(mN, RU * 0.5, 'the neutron that starts the chain');
+    NEU = CH.flights.map((f) => mk(mN, RU * 0.5, f.hit ? '继续引起裂变的中子' : '从表面逸出的中子'));
+    IN = mk(mN, RU * 0.5, '引发链式反应的中子');
   }
   const add3 = (a, u, s) => [a[0] + u[0] * s, a[1] + u[1] * s, a[2] + u[2] * s];
 
@@ -280,12 +280,12 @@ function burst(ctx, x, y, R, k, color) {
 
     const Mm = M || model(ms.v), CHc = CH || chain(Mm), crit = Mm.k === 1;
     const { ctx } = begin(cnv);
-    topline(ctx, crit ? 'Each fission sends exactly one neutron on to split another nucleus, so the chain holds steady: a critical mass.'
-      : Mm.k < 1 ? 'Each fission sends only ' + fmt(Mm.k, 2) + ' neutrons on to split another nucleus, so the chain dies out: a subcritical mass.'
-        : 'Each fission sends ' + fmt(Mm.k, 2) + ' neutrons on to split other nuclei, so the fissions grow: a supercritical mass.');
+    topline(ctx, crit ? '每次裂变恰好有一个中子继续使另一个原子核分裂，因此链式反应保持稳定：临界质量。'
+      : Mm.k < 1 ? '每次裂变只有 ' + fmt(Mm.k, 2) + ' 个中子继续使另一个原子核分裂，因此链式反应逐渐消失：次临界质量。'
+        : '每次裂变有 ' + fmt(Mm.k, 2) + ' 个中子继续使其他原子核分裂，因此裂变不断增多：超临界质量。');
     const GB = { l: 470, r: 1060, t: 140, b: 284 };
-    const { X, Y } = axes(ctx, GB, [0, NG], [0, YMAX], { nx: NG, ny: 4, fx: () => '', xl: '', yl: 'fissions' });
-    text(ctx, 'generation', (GB.l + GB.r) / 2, GB.b + 50, PAL.muted, { size: 17, align: 'center' });
+    const { X, Y } = axes(ctx, GB, [0, NG], [0, YMAX], { nx: NG, ny: 4, fx: () => '', xl: '', yl: '裂变次数' });
+    text(ctx, '中子代数', (GB.l + GB.r) / 2, GB.b + 50, PAL.muted, { size: 17, align: 'center' });
     for (let g = 0; g < NG; g++) {
       text(ctx, String(g), X(g + 0.5), GB.b + 24, PAL.muted, { size: 17, align: 'center' });
       if (t < sOf(g)) continue;
@@ -294,13 +294,13 @@ function burst(ctx, x, y, R, k, color) {
       if (n > YMAX) pinned(ctx, GB, X, Y, g + 0.5, n, PAL.ink, String(n));
     }
     const LX = 40, U = F.el('U');
-    [[150, U, 0.85, 12, '²³⁵U nucleus'], [192, F.el('n0'), 1, 7, 'neutron'], [234, F.cat(0), 1, 9, 'fission fragments']].forEach(([y, col, a, r, s]) => {
+    [[150, U, 0.85, 12, '²³⁵U 原子核'], [192, F.el('n0'), 1, 7, '中子'], [234, F.cat(0), 1, 9, '裂变碎片']].forEach(([y, col, a, r, s]) => {
       disc(ctx, LX + 12, y, r, alpha(col, a), alpha(PAL.ink, 0.4), 1); text(ctx, s, LX + 34, y, PAL.ink, { size: 18 });
     });
-    burst(ctx, LX + 12, 276, 15, 1, C('energy')); text(ctx, 'a fission', LX + 34, 276, PAL.ink, { size: 18 });
+    burst(ctx, LX + 12, 276, 15, 1, C('energy')); text(ctx, '一次裂变', LX + 34, 276, PAL.ink, { size: 18 });
 
     const kT = fmt(Mm.k, 2), eT = fmt(Mm.e, 2);
-    ro.set('\\mk{f}{\\text{to fission}} + \\mk{e}{\\text{escaping}} = \\mk{fv}{' + kT + '} + \\mk{ev}{' + eT + '} = 3\\ \\text{neutrons}', undefined, { form: crit ? 'c' : Mm.k < 1 ? 'sub' : 'super' });
+    ro.set('\\mk{f}{\\text{引起裂变}} + \\mk{e}{\\text{逸出}} = \\mk{fv}{' + kT + '} + \\mk{ev}{' + eT + '} = 3\\ \\text{个中子}', undefined, { form: crit ? 'c' : Mm.k < 1 ? 'sub' : 'super' });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -320,10 +320,10 @@ function burst(ctx, x, y, R, k, color) {
 (function () {
   const H = 680, OY = 36, T = 5, NGEN = 10, TAU = T / NGEN, RMAX = 3;
   const d = sim('sim-reactor', H);
-  const mod = F.choice(d.controls, { label: '\\text{moderator}', key: 'moderator', options: [{ value: 'water', label: 'water' }, { value: 'none', label: 'none' }], value: 'water',
-    aria: 'the moderator in the core', onInput: () => { rods.refresh(); cy.reset(); } });
-  const rods = ctl(d.controls, { label: '\\text{rods in}', cls: '', key: 'rods', min: 0, max: 100, step: 1, value: 25, unit: '%', dec: 0,
-    aria: 'how far the control rods are lowered into the core', specials: [{ at: () => (mod.value === 'water' ? 25 : null), label: 'steady' }], onInput: () => cy.reset() });
+  const mod = F.choice(d.controls, { label: '\\text{慢化剂}', key: 'moderator', options: [{ value: 'water', label: '水' }, { value: 'none', label: '无' }], value: 'water',
+    aria: '堆芯中的慢化剂', onInput: () => { rods.refresh(); cy.reset(); } });
+  const rods = ctl(d.controls, { label: '\\text{控制棒插入}', cls: '', key: 'rods', min: 0, max: 100, step: 1, value: 25, unit: '%', dec: 0,
+    aria: '控制棒向堆芯中降下的程度', specials: [{ at: () => (mod.value === 'water' ? 25 : null), label: '稳定' }], onInput: () => cy.reset() });
   const cy = cycle(() => T, 1.2);
   const ro = readout(d);
   let hits = [];
@@ -347,9 +347,9 @@ function burst(ctx, x, y, R, k, color) {
     const g = t / TAU, rate = Math.pow(kf, g), INK = PAL.ink, U = F.el('U'), N = F.el('n0'), RC = C('rate'), E = C('energy');
     const level = mod.mix((v) => (v === 'water' ? 1 : 0));
     hits = [];
-    topline(ctx, !wet ? 'With no moderator the neutrons stay too fast to cause fission, and the chain reaction stops.'
-      : crit ? 'With the control rods 25% in, each fission leads to exactly one more, and the fission rate holds steady.'
-        : 'With the control rods ' + fmt(rods.v, 0) + '% in, each fission leads to ' + fmt(kf, 2) + ' more, and the fission rate ' + (kf < 1 ? 'dies away.' : 'climbs.'));
+    topline(ctx, !wet ? '没有慢化剂时，中子保持过快的速度而不能引起裂变，链式反应停止。'
+      : crit ? '控制棒插入 25% 时，每次裂变恰好引起一次后续裂变，裂变速率保持稳定。'
+        : '控制棒插入 ' + fmt(rods.v, 0) + '% 时，每次裂变引起 ' + fmt(kf, 2) + ' 次后续裂变，裂变速率' + (kf < 1 ? '逐渐降为零。' : '上升。'));
 
     /* the scene, drawn OY down so the headline has the top to itself */
     ctx.save(); ctx.translate(0, OY);
@@ -359,18 +359,18 @@ function burst(ctx, x, y, R, k, color) {
     ctx.beginPath(); ctx.roundRect(VS.l, VS.t, VS.r - VS.l, VS.b - VS.t, [150, 150, 70, 70]); ctx.fill(); ctx.stroke();
     ctx.clip(); if (level > 0) { ctx.fillStyle = alpha(INK, 0.09 * level); ctx.fillRect(VS.l, VS.t, VS.r - VS.l, VS.b - VS.t); }
     ctx.restore();
-    hits.push({ x: VS.l, y: 420, r: 16, name: 'the steel pressure vessel' }, { x: VS.r, y: 420, r: 16, name: 'the steel pressure vessel' });
-    hits.push({ x: 175, y: INY, r: 18, name: 'cooler water flowing in' }, { x: 665, y: INY, r: 18, name: 'hot water flowing out to the steam generator' });
+    hits.push({ x: VS.l, y: 420, r: 16, name: '钢制压力容器' }, { x: VS.r, y: 420, r: 16, name: '钢制压力容器' });
+    hits.push({ x: 175, y: INY, r: 18, name: '较冷的水流入' }, { x: 665, y: INY, r: 18, name: '热水流出，去往蒸汽发生器' });
     line(ctx, CB.l, 280, CB.l, CB.b, alpha(INK, 0.5), 3); line(ctx, CB.r, 280, CB.r, CB.b, alpha(INK, 0.5), 3);
-    hits.push({ x: 276, y: 420, r: 16, name: wet ? 'water flowing down between the vessel and the core' : 'the core, its water gone' });
+    hits.push({ x: 276, y: 420, r: 16, name: wet ? '水在容器与堆芯之间向下流动' : '堆芯，其中的水已不在' });
 
     /* fuel rods, grids, control rods and their drive housing */
-    FUEL.forEach((x) => { ctx.save(); ctx.fillStyle = alpha(U, 0.8); ctx.strokeStyle = alpha(INK, 0.5); ctx.lineWidth = 1; ctx.fillRect(x - 6, FT, 12, FB - FT); ctx.strokeRect(x - 6, FT, 12, FB - FT); ctx.restore(); hits.push({ x, y: 470, r: 9, name: 'a fuel rod of enriched uranium oxide pellets' }); });
-    [GT, GB2].forEach((y) => { ctx.save(); ctx.fillStyle = alpha(INK, 0.25); ctx.strokeStyle = alpha(INK, 0.6); ctx.lineWidth = 1.5; ctx.fillRect(CB.l, y - 6, CB.r - CB.l, 12); ctx.strokeRect(CB.l, y - 6, CB.r - CB.l, 12); ctx.restore(); hits.push({ x: 420, y, r: 10, name: 'a grid holding the fuel rods' }); });
+    FUEL.forEach((x) => { ctx.save(); ctx.fillStyle = alpha(U, 0.8); ctx.strokeStyle = alpha(INK, 0.5); ctx.lineWidth = 1; ctx.fillRect(x - 6, FT, 12, FB - FT); ctx.strokeRect(x - 6, FT, 12, FB - FT); ctx.restore(); hits.push({ x, y: 470, r: 9, name: '一根装有浓缩氧化铀芯块的燃料棒' }); });
+    [GT, GB2].forEach((y) => { ctx.save(); ctx.fillStyle = alpha(INK, 0.25); ctx.strokeStyle = alpha(INK, 0.6); ctx.lineWidth = 1.5; ctx.fillRect(CB.l, y - 6, CB.r - CB.l, 12); ctx.strokeRect(CB.l, y - 6, CB.r - CB.l, 12); ctx.restore(); hits.push({ x: 420, y, r: 10, name: '固定燃料棒的格架' }); });
     const tip = GT - 10 + (FB - GT + 6) * iv;
     ctx.save(); ctx.fillStyle = alpha(INK, 0.2); ctx.strokeStyle = alpha(INK, 0.6); ctx.lineWidth = 2; ctx.fillRect(345, 48, 175, 46); ctx.strokeRect(345, 48, 175, 46); ctx.restore();
-    hits.push({ x: 432, y: 70, r: 26, name: 'the drive that raises and lowers the control rods' });
-    RODX.forEach((x) => { ctx.save(); ctx.fillStyle = alpha(INK, 0.78); ctx.fillRect(x - 4, 94, 8, tip - 94); ctx.restore(); hits.push({ x, y: Math.max(tip - 14, 200), r: 8, name: 'a control rod, ' + fmt(rods.v, 0) + '% in, absorbing slow neutrons' }); });
+    hits.push({ x: 432, y: 70, r: 26, name: '升降控制棒的驱动装置' });
+    RODX.forEach((x) => { ctx.save(); ctx.fillStyle = alpha(INK, 0.78); ctx.fillRect(x - 4, 94, 8, tip - 94); ctx.restore(); hits.push({ x, y: Math.max(tip - 14, 200), r: 8, name: '一根控制棒，已插入 ' + fmt(rods.v, 0) + '%，正在吸收慢中子' }); });
 
     /* the coolant */
     if (level > 0.02) FLOWS.forEach((P, j) => { for (let i = 0; i < 16; i++) { const [x, y] = P.at(i * P.L / 16 + 60 * t + j * 11); disc(ctx, x, y, 3.2, alpha(INK, 0.5 * level)); } });
@@ -396,16 +396,16 @@ function burst(ctx, x, y, R, k, color) {
       if (fate === 'f' && q > 0.85) burst(ctx, x1, y, 9, 1, E);
     }
 
-    label(ctx, 'steel pressure vessel', VS.r - 22, VS.t + 40, { side: 'right', size: 20, gap: 80, H: H - OY });
-    label(ctx, 'control rods', RODX[3] + 4, 230, { side: 'right', size: 20, gap: 110, H: H - OY });
-    label(ctx, 'grid', CB.r, GT, { side: 'right', size: 20, gap: 92, H: H - OY });
-    label(ctx, 'fuel rods', FUEL[8] + 6, 470, { side: 'right', size: 20, gap: 112, H: H - OY });
+    label(ctx, '钢制压力容器', VS.r - 22, VS.t + 40, { side: 'right', size: 20, gap: 80, H: H - OY });
+    label(ctx, '控制棒', RODX[3] + 4, 230, { side: 'right', size: 20, gap: 110, H: H - OY });
+    label(ctx, '格架', CB.r, GT, { side: 'right', size: 20, gap: 92, H: H - OY });
+    label(ctx, '燃料棒', FUEL[8] + 6, 470, { side: 'right', size: 20, gap: 112, H: H - OY });
     ctx.restore();
     hits.forEach((h) => { h.y += OY; });
 
     /* the fission rate over ten generations */
     const GRB = { l: 1000, r: 1350, t: 150, b: 470 };
-    const { X, Y } = axes(ctx, GRB, [0, NGEN], [0, RMAX], { nx: 5, ny: 3, xl: 'neutron generations', yl: 'fission rate ÷ starting rate', yc: RC });
+    const { X, Y } = axes(ctx, GRB, [0, NGEN], [0, RMAX], { nx: 5, ny: 3, xl: '中子代数', yl: '裂变速率 ÷ 初始速率', yc: RC });
     line(ctx, GRB.l, Y(1), GRB.r, Y(1), alpha(INK, 0.4), 2, [10, 10]);
     const gEnd = Math.min(g, NGEN), pts = [];
     for (let i = 0; i <= 120; i++) { const gi = gEnd * i / 120, p = Math.pow(kf, gi); if (p > RMAX) break; pts.push([X(gi), Y(p)]); }
@@ -413,9 +413,9 @@ function burst(ctx, x, y, R, k, color) {
     const pv = Math.pow(kf, gEnd);
     if (pv > RMAX) pinned(ctx, GRB, X, Y, gEnd, pv, RC, fmt(pv, 1));
     else dot(ctx, X(gEnd), Y(pv), RC, true, 9);
-    hits.push({ x: X(gEnd), y: Y(Math.min(pv, RMAX)), r: 14, name: 'the fission rate after ' + fmt(gEnd, 1) + ' generations: ' + (pv < 0.01 ? 'almost nothing' : fmt(pv, 2) + ' times its start') });
+    hits.push({ x: X(gEnd), y: Y(Math.min(pv, RMAX)), r: 14, name: '经过 ' + fmt(gEnd, 1) + ' 代后的裂变速率：' + (pv < 0.01 ? '几乎为零' : '为初始值的 ' + fmt(pv, 2) + ' 倍') });
 
-    ro.set('\\mk{f}{\\text{to fission}} + \\mk{r}{\\text{to rods}} + \\mk{l}{\\text{lost}} = \\mk{fv}{' + fmt(kf, 2) + '} + \\mk{rv}{' + fmt(kr, 2) + '} + \\mk{lv}{' + fmt(kl, 2) + '} = 3\\ \\text{neutrons}', undefined,
+    ro.set('\\mk{f}{\\text{引起裂变}} + \\mk{r}{\\text{被控制棒吸收}} + \\mk{l}{\\text{损失}} = \\mk{fv}{' + fmt(kf, 2) + '} + \\mk{rv}{' + fmt(kr, 2) + '} + \\mk{lv}{' + fmt(kl, 2) + '} = 3\\ \\text{个中子}', undefined,
       { form: !wet ? 'none' : crit ? 'c' : kf < 1 ? 'sub' : 'super' });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

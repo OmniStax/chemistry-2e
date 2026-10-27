@@ -427,7 +427,7 @@
     "沸点升高"
    ],
    "type": "temperature",
-   "statement": "不挥发的溶质使蒸气压下降，所以溶液必须比纯溶剂更热，其蒸气压才能达到大气压强，沸点升高值与所有溶质物种的质量摩尔浓度成正比，$\\Delta T_{\\text{b}} = K_{\\text{b}}m$。",
+   "statement": "不挥发的溶质使蒸气压下降，所以溶液必须比纯溶剂更热，其蒸气压才能达到大气压强，沸点升高值与所有溶质粒子的质量摩尔浓度成正比，$\\Delta T_{\\text{b}} = K_{\\text{b}}m$。",
    "forms": [
     {
      "id": "eq-boiling-point-elevation",
@@ -448,7 +448,7 @@
     "凝固点降低"
    ],
    "type": "temperature",
-   "statement": "溶液的凝固点低于其纯溶剂，降低值与所有溶质物种的质量摩尔浓度成正比，$\\Delta T_{\\text{f}} = K_{\\text{f}}m$，因为只有溶剂凝固析出；撒盐除冰和防冻液都利用了这一点。",
+   "statement": "溶液的凝固点低于其纯溶剂，降低值与所有溶质粒子的质量摩尔浓度成正比，$\\Delta T_{\\text{f}} = K_{\\text{f}}m$，因为只有溶剂凝固析出；撒盐除冰和防冻液都利用了这一点。",
    "forms": [
     {
      "id": "eq-freezing-point-depression",

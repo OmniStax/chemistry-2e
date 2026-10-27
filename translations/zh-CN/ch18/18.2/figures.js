@@ -99,7 +99,7 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
 ===================================================================== */
 (function () {
   const d = sim('sim-downs-cell');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 1.13], yaw: [-1.2, 1.2], views: [{ label: '正面', yaw: 0, pitch: 0.2 }, { label: '上方', yaw: 0, pitch: 1.05 }], h: 900, dist: 10.4, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 1.13], yaw: [-1.2, 1.2], views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '俯视', yaw: 0, pitch: 1.05 }], h: 900, dist: 10.4, tilt: 0.2 });
   const grp = v.part(-0.65);
   grp.position.y = -0.15;
   const legendCanvas = F.makeCanvas(d.stage, 60);
@@ -250,7 +250,7 @@ const atomMark = (ctx, x, y, els, r = 9) => els.forEach(([e, dx, rr]) => dot(ctx
 ===================================================================== */
 (function () {
   const d = sim('sim-hall-heroult');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 0.6], yaw: [-0.8, 0.8], views: [{ label: '正面', yaw: 0, pitch: 0.2 }], h: 900, dist: 11.6, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.05, 0.6], yaw: [-0.8, 0.8], views: [{ label: '正视', yaw: 0, pitch: 0.2 }], h: 900, dist: 11.6, tilt: 0.2 });
   const grp = v.part(0);
   grp.position.y = -0.55;
   const legendCanvas = F.makeCanvas(d.stage, 60);

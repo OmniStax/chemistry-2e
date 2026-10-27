@@ -86,7 +86,7 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
     lewis(ctx, [{ s: 'B', x: 1030, y: Y, c: A }, { s: 'F', x: 1030 - L, y: Y, c: B, lp: lpOf.left }, { s: 'F', x: 1030, y: Y - L, c: A, lp: lpOf.top }, { s: 'F', x: 1030 + L, y: Y, c: A, lp: lpOf.right }, { s: 'F', x: 1030, y: Y + L, c: A, lp: lpOf.bottom }],
       [[0, 1, 1, B], [0, 2, 1, A], [0, 3, 1, A], [0, 4, 1, A]]);
     brackets(ctx, 905, 1155, Y - 112, Y + 112, '−');
-    role(ctx, 'Lewis base', 170, 290, B); role(ctx, 'Lewis acid', 430, 290, A); role(ctx, 'Acid-base adduct', 1030, 290, PAL.ink);
+    role(ctx, '路易斯碱', 170, 290, B); role(ctx, '路易斯酸', 430, 290, A); role(ctx, '酸碱加合物', 1030, 290, PAL.ink);
   }
   still(d, draw);
 })();
@@ -111,7 +111,7 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
     const atoms = [{ s: 'Ag', x: 1040, y: Y, c: A }, ...left, ...right];
     lewis(ctx, atoms, [[0, 1, 1, B], [0, 5, 1, B], [1, 2, 1, B], [1, 3, 1, B], [1, 4, 1, B], [5, 6, 1, B], [5, 7, 1, B], [5, 8, 1, B]]);
     brackets(ctx, 835, 1245, Y - 112, Y + 112, '+');
-    role(ctx, 'Lewis base', 230, 290, B); role(ctx, 'Lewis acid', 470, 290, A); role(ctx, 'Acid-base adduct', 1040, 290, PAL.ink);
+    role(ctx, '路易斯碱', 230, 290, B); role(ctx, '路易斯酸', 470, 290, A); role(ctx, '酸碱加合物', 1040, 290, PAL.ink);
   }
   still(d, draw);
 })();
@@ -132,7 +132,7 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
     lewis(ctx, [{ s: 'S', x: 1030, y: Y, c: A }, { s: 'O', x: 1030 - L, y: Y, c: B, lp: lpOf.left }, { s: 'O', x: 1030, y: Y - L, c: A, lp: lpOf.top }, { s: 'O', x: 1030 + L, y: Y, c: A, lp: lpOf.right }, { s: 'O', x: 1030, y: Y + L, c: A, lp: lpOf.bottom }],
       [[0, 1, 1, B], [0, 2, 1, A], [0, 3, 1, A], [0, 4, 1, A]]);
     brackets(ctx, 905, 1155, Y - 112, Y + 112, '2−');
-    role(ctx, 'Lewis base', 170, 290, B); role(ctx, 'Lewis acid', 430, 290, A); role(ctx, 'Acid-base adduct', 1030, 290, PAL.ink);
+    role(ctx, '路易斯碱', 170, 290, B); role(ctx, '路易斯酸', 430, 290, A); role(ctx, '酸碱加合物', 1030, 290, PAL.ink);
   }
   still(d, draw);
 })();
@@ -167,7 +167,7 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
     plus(ctx, 1160, Y1);
     text(ctx, '2', 1198, Y1, PAL.ink, { size: S, align: 'center' });
     lewis(ctx, ammonia(1250, Y1, B, 'right', [180]), nh3Bonds(0, B), S);
-    role(ctx, 'Acid-base adduct', 200, R1, PAL.ink); role(ctx, 'Base', 540, R1, N); role(ctx, 'New adduct', 940, R1, PAL.ink); role(ctx, 'New base', 1265, R1, B);
+    role(ctx, '酸碱加合物', 200, R1, PAL.ink); role(ctx, '碱', 540, R1, N); role(ctx, '新的加合物', 940, R1, PAL.ink); role(ctx, '新的碱', 1265, R1, B);
     /* row 2: CO3 2- + SO3 -> SO4 2- + CO2 */
     lewis(ctx, [{ s: 'C', x: 150, y: Y2, c: A }, { s: 'O', x: 150, y: Y2 - L, c: B, lp: lpOf.top }, { s: 'O', x: 150 + L, y: Y2, c: A, lp: [90, 0] }, { s: 'O', x: 150, y: Y2 + L, c: A, lp: lpOf.bottom }],
       [[0, 1, 1, B], [0, 2, 2, A], [0, 3, 1, A]], S);
@@ -182,7 +182,7 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
     plus(ctx, 1040, Y2);
     lewis(ctx, [{ s: 'O', x: 1120, y: Y2, c: A, lp: [90, 180] }, { s: 'C', x: 1120 + L, y: Y2, c: A }, { s: 'O', x: 1120 + 2 * L, y: Y2, c: A, lp: [90, 0] }],
       [[0, 1, 2, A], [1, 2, 2, A]], S);
-    role(ctx, 'Acid-base adduct', 150, R2, PAL.ink); role(ctx, 'Acid', 420, R2, N); role(ctx, 'New adduct', 860, R2, PAL.ink); role(ctx, 'New acid', 1182, R2, A);
+    role(ctx, '酸碱加合物', 150, R2, PAL.ink); role(ctx, '酸', 420, R2, N); role(ctx, '新的加合物', 860, R2, PAL.ink); role(ctx, '新的酸', 1182, R2, A);
   }
   still(d, draw);
 })();
@@ -226,10 +226,10 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
     return { s: n, a, sat: false };
   }
   const nS = ctl(d.controls, { label: '\\text{AgCl}(s)', cls: 'amount', key: 'n', min: 0.001, max: 0.04, step: 0.001, value: 0.01, unit: 'mol', dec: 3,
-    aria: 'the amount of solid silver chloride in the beaker, in moles', onInput: () => draw() });
+    aria: '烧杯中固体氯化银的物质的量，单位为摩尔', onInput: () => draw() });
   const nh3 = ctl(d.controls, { label: '\\text{NH}_{3}', cls: 'concentration', key: 'N', min: 0, max: 1, step: 0.005, value: 0, unit: 'M', dec: 3,
-    aria: 'the concentration of ammonia added, in molar',
-    specials: [{ at: () => { const v = Nof(nS.v); return v <= 1 ? v : null; }, label: 'all dissolved' }], onInput: () => draw() });
+    aria: '加入的氨的浓度，单位为 M',
+    specials: [{ at: () => { const v = Nof(nS.v); return v <= 1 ? v : null; }, label: '全部溶解' }], onInput: () => draw() });
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
 
@@ -249,12 +249,12 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
     line(ctx, BK.l - lip, BK.t, BK.l, BK.t + 10, PAL.ink, 3); line(ctx, BK.l, BK.t + 10, BK.l, BK.b, PAL.ink, 3);
     line(ctx, BK.l, BK.b, BK.r, BK.b, PAL.ink, 3); line(ctx, BK.r, BK.b, BK.r, BK.t + 10, PAL.ink, 3); line(ctx, BK.r, BK.t + 10, BK.r + lip, BK.t, PAL.ink, 3);
     line(ctx, BK.l, BK.t + 40, BK.r, BK.t + 40, alpha(PAL.ink, 0.35), 2);
-    hits.push({ x: (BK.l + BK.r) / 2, y: BK.t + 110, r: 90, name: 'the solution, 1.00 L' });
+    hits.push({ x: (BK.l + BK.r) / 2, y: BK.t + 110, r: 90, name: '溶液，1.00 L' });
     if (!(rest > 1e-6)) return;
     const k = Math.sqrt(rest / 0.04), w = 230 * k, h = 70 * k, cx = (BK.l + BK.r) / 2, y0 = BK.b - 2;
     ctx.save(); ctx.beginPath(); ctx.ellipse(cx, y0, w / 2, h, 0, Math.PI, 2 * Math.PI); ctx.closePath();
     ctx.fillStyle = F.fact('#f4f4f2'); ctx.fill(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
-    hits.push({ x: cx, y: y0 - h / 2, r: Math.max(16, w / 2), name: `solid silver chloride, ${(rest).toFixed(4)} mol left` });
+    hits.push({ x: cx, y: y0 - h / 2, r: Math.max(16, w / 2), name: `固体氯化银，剩余 ${(rest).toFixed(4)} mol` });
     F.label(ctx, 'AgCl(s)', cx, BK.b + 4, { side: 'below', size: 20, gap: 26 });
   }
   function draw() {
@@ -264,10 +264,10 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
     const cc = C('concentration'), c0 = F.cat(0), c1 = F.cat(1);
     beaker(ctx, done ? 0 : n - st.s);
     const fy = (v) => (Math.round(v) === 0 ? '1' : Math.round(v) % 2 ? '' : '10' + sup(Math.round(v)));
-    const g = F.axes(ctx, G, [0, 1], [-12, 0], { nx: 5, ny: 12, fx: (v) => v.toFixed(1), fy, xl: 'NH_{3} added (M)', xc: cc, yl: 'concentration (M)', yc: cc });
+    const g = F.axes(ctx, G, [0, 1], [-12, 0], { nx: 5, ny: 12, fx: (v) => v.toFixed(1), fy, xl: '加入的 NH_{3} (M)', xc: cc, yl: '浓度 (M)', yc: cc });
     if (Nstar <= 1) {
       line(ctx, g.X(Nstar), G.t, g.X(Nstar), G.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
-      hits.push({ x: g.X(Nstar), y: (G.t + G.b) / 2, r: 10, name: `${Nstar.toFixed(3)} M ammonia: the last of the solid dissolves` });
+      hits.push({ x: g.X(Nstar), y: (G.t + G.b) / 2, r: 10, name: `${Nstar.toFixed(3)} M 氨水：最后一点固体溶解` });
     }
     const logCl = (x) => Math.log10(state(x, n).s), logAg = (x) => Math.log10(state(x, n).a);
     F.curve(ctx, logCl, 0, 1, g.X, g.Y, c0, 5, 140);
@@ -277,11 +277,11 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
     text(ctx, '[Ag⁺]', g.X(xl), g.Y(logAg(xl)) + 26, c1, { size: 22, weight: 600, align: 'center', bg: PAL.panel });
     const xs = g.X(N), ys = g.Y(Math.log10(st.s)), ya = g.Y(Math.log10(st.a));
     F.dot(ctx, xs, ys, c0, true, 9); F.dot(ctx, xs, ya, c1, true, 9);
-    hits.push({ x: xs, y: ys, r: 14, name: `[Cl⁻] = ${sciTxt(st.s, 3)} M, the silver chloride dissolved` }, { x: xs, y: ya, r: 14, name: `[Ag⁺] = ${sciTxt(st.a, 3)} M, the free silver ion` });
+    hits.push({ x: xs, y: ys, r: 14, name: `[Cl⁻] = ${sciTxt(st.s, 3)} M，已溶解的氯化银` }, { x: xs, y: ya, r: 14, name: `[Ag⁺] = ${sciTxt(st.a, 3)} M，游离银离子` });
     const nTxt = n.toFixed(3), NTxt = N.toFixed(N < 0.1 ? 3 : 2);
-    headline(ctx, N <= 0 ? `In pure water, only ${sciTxt(st.s)} mol of the silver chloride dissolves.`
-      : done ? `All ${nTxt} mol of the silver chloride has dissolved in ${NTxt} M ammonia.`
-        : `In ${NTxt} M ammonia, ${sciTxt(st.s)} mol of the silver chloride dissolves, ${big(st.s / S0)} times as much as in pure water.`);
+    headline(ctx, N <= 0 ? `在纯水中，只有 ${sciTxt(st.s)} mol 氯化银溶解。`
+      : done ? `全部 ${nTxt} mol 氯化银都已溶解在 ${NTxt} M 氨水中。`
+        : `在 ${NTxt} M 氨水中，有 ${sciTxt(st.s)} mol 氯化银溶解，是纯水中的 ${big(st.s / S0)} 倍。`);
     const aR = round(st.a, 3), sR = round(st.s, 3);
     const A = hue('concentration', sciTex(aR, 3)), Sv = hue('concentration', sciTex(sR, 3));
     const prod = `[\\text{Ag}^{+}][\\text{Cl}^{-}] = (\\mk{a}{${A}})(\\mk{s}{${Sv}})`;
@@ -289,8 +289,8 @@ const lpOf = { top: [0, 90, 180], right: [0, 90, 270], bottom: [0, 180, 270], le
       ? `\\mk{K}{\\kQrxn} = ${prod} = \\mk{v}{${hue('equilibrium-constant', sciTex(aR * sR, 2))}} \\mk{rel}{${onCircle ? '=' : '<'}} \\mk{k}{\\kKsp}`
       : `\\mk{K}{\\kKsp} = ${prod} = \\mk{v}{${hue('equilibrium-constant', sciTex(KSP, 2))}}`;
     const free = st.s / st.a;
-    const note = N <= 0 ? 'Without ammonia, every dissolved silver ion is free Ag⁺.'
-      : `Only one dissolved silver ion in ${big(free)} is free Ag⁺; the rest are Ag(NH₃)₂⁺.`;
+    const note = N <= 0 ? '没有氨时，每个溶解的银离子都是游离的 Ag⁺。'
+      : `每 ${big(free)} 个溶解的银离子中，只有一个是游离的 Ag⁺，其余都是 Ag(NH₃)₂⁺。`;
     ro.set(tex, note, { form: done });
   }
   still(d, draw);

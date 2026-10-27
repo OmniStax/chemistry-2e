@@ -81,7 +81,7 @@ function twoWays(d, H, opts, onShow) {
 ===================================================================== */
 (function () {
   const d = sim('sim-phases');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: '正面', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: 0.7, pitch: 0.45 }], h: 400, dist: 4.8 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: 0.7, pitch: 0.45 }], h: 400, dist: 4.8 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 230);
   /* the book's halogens from Table 10.1 and three noble gases, each with its normal melting and boiling points in kelvin */
   const SUBS = {
@@ -167,7 +167,7 @@ function twoWays(d, H, opts, onShow) {
     const WHAT = { solid: '固态：粒子在固定位置附近振动', liquid: '液态：粒子相互滑过，但保持接触', gas: '气态：粒子独立运动，充满整个烧瓶' };
     topline(ctx, '在 ' + T0 + ' K 时，' + s.name + '处于' + WHAT[ph] + '。');
     const mp = hue('temperature', s.mp + '\\ \\text{K}'), bp = hue('temperature', s.bp + '\\ \\text{K}'), tt = `\\kT = ${hue('temperature', T0 + '\\ \\text{K}')}`;
-    const main = ph === 'solid' ? `${tt} < ${mp}\\ \\text{（熔点）}` : ph === 'liquid' ? `\\text{熔点 } ${mp} \\le ${tt} < ${bp}\\ \\text{（沸点）}` : `${tt} \\ge ${bp}\\ \\text{（沸点）}`;
+    const main = ph === 'solid' ? `${tt} < ${mp}\\ (\\text{熔点})` : ph === 'liquid' ? `\\text{熔点 } ${mp} \\le ${tt} < ${bp}\\ (\\text{沸点})` : `${tt} \\ge ${bp}\\ (\\text{沸点})`;
     readout(d.readout, main, '物质的粒子之间的吸引越强，使它熔化和沸腾所需的温度就越高，因而所需的平均动能也越大。');
   }
   const clk = cycle(() => Infinity, 0);
@@ -445,7 +445,7 @@ function twoWays(d, H, opts, onShow) {
   const sc = { atoms, bonds, dots };
   const hits = []; F.hover(d.stage, () => hits);
   const HEAD = '氢键把一个水分子的每个氢原子与另一个水分子的氧原子连接起来。';
-  const two = twoWays(d, 560, { h: 480, dist: 20, views: [{ label: '正面', yaw: 0.5, pitch: 0.3 }, { label: '沿键方向', yaw: Math.PI / 4, pitch: Math.atan(1 / Math.SQRT2) }] }, () => draw());
+  const two = twoWays(d, 560, { h: 480, dist: 20, views: [{ label: '正视', yaw: 0.5, pitch: 0.3 }, { label: '沿键方向', yaw: Math.PI / 4, pitch: Math.atan(1 / Math.SQRT2) }] }, () => draw());
   let sig = '';
   function draw() {
     if (two.three) {

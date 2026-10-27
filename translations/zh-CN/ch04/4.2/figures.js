@@ -19,9 +19,9 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
   const d = sim('sim-precipitation', 560);
   /* the ions of the twelve salts: formula as drawn, as written in the readout, charge, and whether it is polyatomic */
   const CAT = {
-    K: { u: 'K', t: '\\text{K}', q: 1, g1: true, name: 'potassium' }, Na: { u: 'Na', t: '\\text{Na}', q: 1, g1: true, name: 'sodium' },
-    Li: { u: 'Li', t: '\\text{Li}', q: 1, g1: true, name: 'lithium' }, NH4: { u: 'NH₄', t: '\\text{NH}_{4}', q: 1, g1: true, poly: true, name: 'ammonium' },
-    Pb: { u: 'Pb', t: '\\text{Pb}', q: 2, name: 'lead(II)' }, Ag: { u: 'Ag', t: '\\text{Ag}', q: 1, name: 'silver' }, Ba: { u: 'Ba', t: '\\text{Ba}', q: 2, name: 'barium' },
+    K: { u: 'K', t: '\\text{K}', q: 1, g1: true, name: '钾' }, Na: { u: 'Na', t: '\\text{Na}', q: 1, g1: true, name: '钠' },
+    Li: { u: 'Li', t: '\\text{Li}', q: 1, g1: true, name: '锂' }, NH4: { u: 'NH₄', t: '\\text{NH}_{4}', q: 1, g1: true, poly: true, name: '铵' },
+    Pb: { u: 'Pb', t: '\\text{Pb}', q: 2, name: '铅(II)' }, Ag: { u: 'Ag', t: '\\text{Ag}', q: 1, name: '银' }, Ba: { u: 'Ba', t: '\\text{Ba}', q: 2, name: '钡' },
   };
   const AN = {
     I: { u: 'I', t: '\\text{I}', q: 1, kind: 'halide' }, Cl: { u: 'Cl', t: '\\text{Cl}', q: 1, kind: 'halide' },
@@ -36,8 +36,8 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
   const PPT_COLOR = { 'PbI₂': '#f2c300', 'AgI': '#ece29a', 'Ag₂CO₃': '#e8e1ae' };
   const WHITE_SOLID = '#f5f5f0';
   const pick = (label, value, aria) => F.select(d.controls, { label, aria, value: String(value), options: SALTS.map((s, i) => ({ value: String(i), label: s[0] })) });
-  const A = pick('\\text{first solution}', 0, 'the first solution');
-  const B = pick('\\text{second solution}', 1, 'the second solution');
+  const A = pick('\\text{第一种溶液}', 0, '第一种溶液');
+  const B = pick('\\text{第二种溶液}', 1, '第二种溶液');
   let hits = []; F.hover(d.stage, () => hits);
   const chargeU = (q, s) => (q === 1 ? '' : { 2: '²', 3: '³' }[q]) + (s > 0 ? '⁺' : '⁻');
   const chargeT = (q, s) => (q === 1 ? '' : q) + (s > 0 ? '+' : '-');
@@ -51,14 +51,14 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
   }
   /* Table 4.1 read for one pairing: whether it is insoluble, and the guideline that decides it */
   function judge(c, a) {
-    if (c.g1) return { out: false, why: ['Compounds of group 1 cations', 'and NH₄⁺ are soluble.'] };
-    if (a.kind === 'always') return { out: false, why: [a.u + '⁻ compounds are soluble,', 'with no exceptions.'] };
-    if (a.kind === 'halide') return ['Ag', 'Pb'].includes(c.u) ? { out: true, why: ['Cl⁻, Br⁻ and I⁻ compounds are', 'soluble, except with Ag⁺,', 'Hg₂²⁺ and Pb²⁺.'] } : { out: false, why: ['Cl⁻, Br⁻ and I⁻ compounds are soluble.'] };
-    if (a.kind === 'sulfate') return ['Ag', 'Pb', 'Ba'].includes(c.u) ? { out: true, why: ['SO₄²⁻ compounds are soluble,', 'except with Ag⁺, Ba²⁺, Ca²⁺,', 'Hg₂²⁺, Pb²⁺ and Sr²⁺.'] } : { out: false, why: ['SO₄²⁻ compounds are soluble.'] };
-    return { out: true, why: ['CO₃²⁻ compounds are insoluble,', 'except with group 1 cations', 'and NH₄⁺.'] };
+    if (c.g1) return { out: false, why: ['含第 1 族阳离子和 NH₄⁺', '的化合物都是可溶的。'] };
+    if (a.kind === 'always') return { out: false, why: ['含 ' + a.u + '⁻ 的化合物都是可溶的，', '无例外。'] };
+    if (a.kind === 'halide') return ['Ag', 'Pb'].includes(c.u) ? { out: true, why: ['含 Cl⁻、Br⁻ 和 I⁻ 的化合物', '都是可溶的，但含 Ag⁺、', 'Hg₂²⁺ 和 Pb²⁺ 的除外。'] } : { out: false, why: ['含 Cl⁻、Br⁻ 和 I⁻ 的化合物都是可溶的。'] };
+    if (a.kind === 'sulfate') return ['Ag', 'Pb', 'Ba'].includes(c.u) ? { out: true, why: ['含 SO₄²⁻ 的化合物都是可溶的，', '但含 Ag⁺、Ba²⁺、Ca²⁺、', 'Hg₂²⁺、Pb²⁺ 和 Sr²⁺ 的除外。'] } : { out: false, why: ['含 SO₄²⁻ 的化合物都是可溶的。'] };
+    return { out: true, why: ['含 CO₃²⁻ 的化合物都是不溶的，', '但含第 1 族阳离子', '和 NH₄⁺ 的除外。'] };
   }
   const ionU = (ion, s) => ion.u + chargeU(ion.q, s);
-  const list = (xs) => (xs.length < 3 ? xs.join(' and ') : xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1]);
+  const list = (xs) => (xs.length < 3 ? xs.join(' 和 ') : xs.slice(0, -1).join('、') + ' 和 ' + xs[xs.length - 1]);
   const ionT = (ion, s) => ion.t + '^{' + chargeT(ion.q, s) + '}';
   function beaker(ctx, x, base, w, h, name, rim = PAL.ink) {
     const lip = 8, top = base - h, lv = base - h * 0.72;
@@ -85,7 +85,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
     /* the two solutions */
     [[sa, ca, aa, 180, 'first-solution'], [sb, cb, ab, 420, 'second-solution']].forEach(([s, c, a, x, who]) => {
       const rc = F.ref(who);
-      beaker(ctx, x, 400, 150, 190, s[0] + '(aq), a solution of ' + ionU(c, 1) + ' and ' + ionU(a, -1) + ' ions', rc);
+      beaker(ctx, x, 400, 150, 190, s[0] + '(aq)，' + ionU(c, 1) + ' 和 ' + ionU(a, -1) + ' 离子的溶液', rc);
       text(ctx, s[0] + '(aq)', x, 440, rc, { size: 22, weight: 600, align: 'center' });
       text(ctx, ionU(c, 1) + ' + ' + ionU(a, -1), x, 470, PAL.muted, { size: 17, align: 'center' });
     });
@@ -93,7 +93,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
     arrow(ctx, 530, 320, 610, 320, PAL.ink, 4);
     /* the mixture, with whatever settles out of it */
     const mx = 800, base = 470, w = 280;
-    const lv = beaker(ctx, mx, base, w, 280, 'the mixture of the two solutions');
+    const lv = beaker(ctx, mx, base, w, 280, '两种溶液的混合物');
     const ions = [ionU(ca, 1), ionU(aa, -1)];
     [ionU(cb, 1), ionU(ab, -1)].forEach((s) => { if (!ions.includes(s)) ions.push(s); });
     text(ctx, ions.join(', '), mx, base + 34, PAL.muted, { size: 17, align: 'center' });
@@ -104,32 +104,32 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
       ctx.quadraticCurveTo(mx, base - hgt * 1.4, mx + w / 2 - 2, base - hgt * 0.7); ctx.lineTo(mx + w / 2 - 2, base - 2); ctx.closePath(); ctx.fill(); ctx.stroke();
       for (let i = 0; i < 26; i++) { const sx = mx - w / 2 + 14 + r() * (w - 28), sy = lv + 14 + r() * (base - lv - 70); ctx.globalAlpha = k * (0.5 + 0.5 * r()); ctx.beginPath(); ctx.arc(sx, sy + (1 - k) * -20, 3.2, 0, TAU); ctx.fill(); ctx.stroke(); }
       ctx.restore();
-      hits.unshift({ x: mx, y: base - 18, r: 40, name: 'a precipitate of ' + solids.map((p) => p.f.u).join(' and ') + '(s)' });
-      text(ctx, 'precipitate: ' + solids.map((p) => p.f.u + '(s)').join(', '), mx, base + 62, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    } else text(ctx, 'no precipitate', mx, base + 62, PAL.ink, { size: 22, weight: 600, align: 'center' });
+      hits.unshift({ x: mx, y: base - 18, r: 40, name: solids.map((p) => p.f.u).join(' 和 ') + '(s) 沉淀' });
+      text(ctx, '沉淀：' + solids.map((p) => p.f.u + '(s)').join('、'), mx, base + 62, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    } else text(ctx, '无沉淀', mx, base + 62, PAL.ink, { size: 22, weight: 600, align: 'center' });
     /* the new pairings, each with the guideline that decides it */
     const px = 1010;
-    text(ctx, 'possible new compounds', px, 150, PAL.muted, { size: 17 });
+    text(ctx, '可能生成的新化合物', px, 150, PAL.muted, { size: 17 });
     line(ctx, px, 162, 1380, 162, alpha(PAL.ink, 0.3), 2);
-    if (!pairs.length) text(ctx, 'none: the ions can only pair as they were', px, 200, PAL.ink, { size: 17 });
+    if (!pairs.length) text(ctx, '无：离子只能按原来的方式配对', px, 200, PAL.ink, { size: 17 });
     pairs.forEach((p, i) => {
       const y = 205 + i * 140;
       text(ctx, p.f.u, px, y, PAL.ink, { size: 24, weight: 600 });
-      text(ctx, p.j.out ? 'insoluble' : 'soluble', 1380, y, PAL.ink, { size: 20, weight: p.j.out ? 600 : 400, align: 'right' });
+      text(ctx, p.j.out ? '不溶的' : '可溶的', 1380, y, PAL.ink, { size: 20, weight: p.j.out ? 600 : 400, align: 'right' });
       p.j.why.forEach((s, m) => text(ctx, s, px, y + 34 + m * 24, PAL.muted, { size: 16 }));
     });
-    topline(ctx, solids.length ? 'Mixing ' + sa[0] + ' and ' + sb[0] + ' gives a precipitate of ' + solids.map((p) => p.f.u).join(' and ') + '.'
-      : 'Mixing ' + sa[0] + ' and ' + sb[0] + ' gives no precipitate, since every pairing of their ions is soluble.');
+    topline(ctx, solids.length ? '将 ' + sa[0] + ' 和 ' + sb[0] + ' 混合，得到 ' + solids.map((p) => p.f.u).join(' 和 ') + ' 沉淀。'
+      : '将 ' + sa[0] + ' 和 ' + sb[0] + ' 混合，得不到沉淀，因为它们的离子的每种配对都是可溶的。');
     const key = sa[0] + '|' + sb[0];
     if (key !== d.key) {
       d.key = key;
       if (solids.length) {
         const eqs = solids.map((p) => (p.f.x > 1 ? p.f.x : '') + ionT(CAT[p.c], 1) + '(aq)+' + (p.f.y > 1 ? p.f.y : '') + ionT(AN[p.a], -1) + '(aq)\\;\\longrightarrow\\;' + p.f.t + '(s)');
         const spect = ions.filter((s) => !solids.some((p) => s === ionU(CAT[p.c], 1) || s === ionU(AN[p.a], -1)));
-        readout(d.readout, eqs.join('\\qquad '), spect.length ? list(spect) + ' stay in solution as spectator ions.' : '');
+        readout(d.readout, eqs.join('\\qquad '), spect.length ? list(spect) + ' 作为旁观离子留在溶液中。' : '');
       } else {
         const all = [ionT(ca, 1), ionT(aa, -1), ionT(cb, 1), ionT(ab, -1)].filter((s, i, arr) => arr.indexOf(s) === i).map((s) => s + '(aq)');
-        readout(d.readout, all.join('+') + '\\;\\longrightarrow\\;\\text{no reaction}');
+        readout(d.readout, all.join('+') + '\\;\\longrightarrow\\;\\text{不发生反应}');
       }
     }
   }
@@ -147,7 +147,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
 ===================================================================== */
 (function () {
   const d = sim('sim-hcl', 580);
-  const GAS = F.choice(d.controls, { label: '\\text{gas}', aria: 'the gas that dissolves', value: 'HCl', options: [{ value: 'HCl', label: 'HCl' }, { value: 'NH3', label: 'NH₃' }], onInput: () => cy.reset() });
+  const GAS = F.choice(d.controls, { label: '\\text{气体}', aria: '溶解的气体', value: 'HCl', options: [{ value: 'HCl', label: 'HCl' }, { value: 'NH3', label: 'NH₃' }], onInput: () => cy.reset() });
   const S = 1.25;
   /* the particles as atoms about their centre, [element, dx, dy, radius], drawn with the first atom's direction free to turn */
   const MOL = {
@@ -158,7 +158,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
     Cl: [['Cl', 0, 0, 13]],
     NH3: [['N', 0, 0, 11], ['H', -11, 7, 6.5], ['H', 11, 7, 6.5], ['H', 0, -13, 6.5]],
   };
-  const NAME = { H2O: 'a water molecule, H₂O', H3O: 'a hydronium ion, H₃O⁺', OH: 'a hydroxide ion, OH⁻', HCl: 'a hydrogen chloride molecule, HCl', Cl: 'a chloride ion, Cl⁻', NH3: 'an ammonia molecule, NH₃', NH4: 'an ammonium ion, NH₄⁺' };
+  const NAME = { H2O: '水分子 H₂O', H3O: '水合氢离子 H₃O⁺', OH: '氢氧根离子 OH⁻', HCl: '氯化氢分子 HCl', Cl: '氯离子 Cl⁻', NH3: '氨分子 NH₃', NH4: '铵根离子 NH₄⁺' };
   function atom(ctx, e, x, y, r) {
     ctx.save(); ctx.fillStyle = F.el(e); ctx.strokeStyle = e === 'H' ? PAL.ink : alpha(PAL.ink, 0.4); ctx.lineWidth = e === 'H' ? 1.5 : 1;
     ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
@@ -208,7 +208,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
     line(ctx, FX - hw(LY), LY, FX + hw(LY), LY, alpha(PAL.ink, 0.35), 2);
     ctx.save(); ctx.strokeStyle = F.ref('flask'); ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath(); o.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]))); ctx.stroke();
     ctx.fillStyle = PAL.soft; ctx.beginPath(); ctx.moveTo(FX - 58, 66); ctx.lineTo(FX + 58, 66); ctx.lineTo(FX + 50, 118); ctx.lineTo(FX - 50, 118); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
-    hits.push({ x: FX, y: 92, r: 50, name: 'the stopper' });
+    hits.push({ x: FX, y: 92, r: 50, name: '瓶塞' });
     /* the particles */
     let nGas = 0, nAq = 0, nR = 0;
     const late = [];
@@ -228,7 +228,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
         const hx0 = x + 17 * Math.cos(a) * S, hy0 = y + 17 * Math.sin(a) * S, hx1 = px - 14 * dx * S, hy1 = py - 14 * dy * S;
         const hx = reacts ? hx0 + (hx1 - hx0) * v : hx0, hy = reacts ? hy0 + (hy1 - hy0) * v : hy0;
         late.push(() => { atom(ctx, 'H', hx, hy, 6.5 * S); mol(ctx, v < 1 ? 'HCl' : 'Cl', x, y, a); if (v >= 1) { sign(ctx, x, y, '−'); sign(ctx, px, py, '+'); } });
-        hits.push({ x, y, r: 22, name: v < 1 ? NAME.HCl + (u === 0 ? ', a gas' : ', dissolved') : NAME.Cl });
+        hits.push({ x, y, r: 22, name: v < 1 ? NAME.HCl + (u === 0 ? '，气态' : '，已溶解') : NAME.Cl });
       } else {
         /* ammonia: one molecule in twelve takes a hydrogen ion from its partner water, which is left a hydroxide ion */
         const R = REACTS[gas](i), pw = R ? 'OH' : 'H2O';
@@ -240,7 +240,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
           mol(ctx, 'NH3', x, y, a + Math.PI);
           if (reacts && v >= 1) { sign(ctx, x, y, '+'); sign(ctx, px, py, '−'); }
         });
-        hits.push({ x, y, r: 22, name: reacts && v >= 1 ? NAME.NH4 : NAME.NH3 + (u === 0 ? ', a gas' : ', dissolved') });
+        hits.push({ x, y, r: 22, name: reacts && v >= 1 ? NAME.NH4 : NAME.NH3 + (u === 0 ? '，气态' : '，已溶解') });
       }
     }
     late.forEach((f) => f());
@@ -251,7 +251,7 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
       ? [['HCl', 'HCl(g)', nGas, 0], ['HCl', 'HCl(aq)', nAq, 0], ['H2O', 'H₂O(l)', waters.length + N - nR, 0], ['H3O', 'H₃O⁺(aq)', nR, '+'], ['Cl', 'Cl⁻(aq)', nR, '−']]
       : [['NH3', 'NH₃(g)', nGas, 0], ['NH3', 'NH₃(aq)', nAq, 0], ['H2O', 'H₂O(l)', waters.length + N - nR, 0], ['NH3', 'NH₄⁺(aq)', nR, '+'], ['OH', 'OH⁻(aq)', nR, '−']];
     const lx = 860;
-    text(ctx, 'particles drawn in the flask', lx, 158, PAL.muted, { size: 17 });
+    text(ctx, '烧瓶中画出的粒子', lx, 158, PAL.muted, { size: 17 });
     line(ctx, lx, 170, 1330, 170, alpha(PAL.ink, 0.3), 2);
     rows.forEach(([key, name, n, ch], i) => {
       const y = 214 + i * 66;
@@ -264,13 +264,13 @@ const SUB = { 1: '', 2: '₂', 3: '₃', 4: '₄' };
     });
     const nIn = N - nGas;
     topline(ctx, gas === 'HCl'
-      ? (nIn === N && nR === N ? 'All 12 HCl molecules have dissolved, and every one has given its hydrogen ion to a water molecule.' : nIn + ' of 12 HCl molecules have dissolved, and ' + nR + (nR === 1 ? ' has' : ' have') + ' given a hydrogen ion to a water molecule.')
-      : nIn + ' of 12 NH₃ molecules have dissolved, and ' + nR + (nR === 1 ? ' has' : ' have') + ' taken a hydrogen ion from a water molecule.');
+      ? (nIn === N && nR === N ? '12 个 HCl 分子已全部溶解，且每一个都把它的氢离子交给了一个水分子。' : '12 个 HCl 分子中已有 ' + nIn + ' 个溶解，其中 ' + nR + ' 个把一个氢离子交给了水分子。')
+      : '12 个 NH₃ 分子中已有 ' + nIn + ' 个溶解，其中 ' + nR + ' 个从水分子中夺得了一个氢离子。');
     if (rkey !== gas) {
       rkey = gas;
       if (gas === 'HCl') readout(d.readout, '\\text{HCl}(aq)+\\text{H}_{2}\\text{O}(l)\\;\\longrightarrow\\;\\text{H}_{3}\\text{O}^{+}(aq)+\\text{Cl}^{-}(aq)');
       else readout(d.readout, '\\text{NH}_{3}(aq)+\\text{H}_{2}\\text{O}(l)\\;\\rightleftharpoons\\;\\text{NH}_{4}^{+}(aq)+\\text{OH}^{-}(aq)',
-        'Ammonia is a weak base: only about 1% of the dissolved ammonia is present as NH₄⁺ ions, so the one ion in twelve drawn here is more than a real solution holds.');
+        '氨是弱碱：溶解的氨中只有约 1% 以 NH₄⁺ 离子的形式存在，所以这里画出的十二个分子中有一个变成离子，比真实溶液中的还多。');
     }
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

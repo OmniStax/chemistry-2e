@@ -16,16 +16,16 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
   const ORDER = ['NH3', 'MeNH2', 'Me2NH', 'Me3N'];
   const SITES = ['left', 'right', 'down'];
   const AM = {
-    NH3: { me: 0, label: 'NH₃', name: 'ammonia', ion: 'ammonium ion', tex: '\\text{NH}_{3}', itex: '\\text{NH}_{4}{}^{+}', bonds: 'three hydrogen atoms' },
-    MeNH2: { me: 1, label: 'CH₃NH₂', name: 'methyl amine', ion: 'methyl ammonium ion', tex: '\\text{CH}_{3}\\text{NH}_{2}', itex: '\\text{CH}_{3}\\text{NH}_{3}{}^{+}', bonds: 'one carbon atom and two hydrogen atoms' },
-    Me2NH: { me: 2, label: '(CH₃)₂NH', name: 'dimethyl amine', ion: 'dimethyl ammonium ion', tex: '(\\text{CH}_{3})_{2}\\text{NH}', itex: '(\\text{CH}_{3})_{2}\\text{NH}_{2}{}^{+}', bonds: 'two carbon atoms and one hydrogen atom' },
-    Me3N: { me: 3, label: '(CH₃)₃N', name: 'trimethyl amine', ion: 'trimethyl ammonium ion', tex: '(\\text{CH}_{3})_{3}\\text{N}', itex: '(\\text{CH}_{3})_{3}\\text{NH}^{+}', bonds: 'three carbon atoms' },
+    NH3: { me: 0, label: 'NH₃', name: '氨', ion: '铵根离子', tex: '\\text{NH}_{3}', itex: '\\text{NH}_{4}{}^{+}', bonds: '三个氢原子' },
+    MeNH2: { me: 1, label: 'CH₃NH₂', name: '甲胺', ion: '甲铵离子', tex: '\\text{CH}_{3}\\text{NH}_{2}', itex: '\\text{CH}_{3}\\text{NH}_{3}{}^{+}', bonds: '一个碳原子和两个氢原子' },
+    Me2NH: { me: 2, label: '(CH₃)₂NH', name: '二甲胺', ion: '二甲铵离子', tex: '(\\text{CH}_{3})_{2}\\text{NH}', itex: '(\\text{CH}_{3})_{2}\\text{NH}_{2}{}^{+}', bonds: '两个碳原子和一个氢原子' },
+    Me3N: { me: 3, label: '(CH₃)₃N', name: '三甲胺', ion: '三甲铵离子', tex: '(\\text{CH}_{3})_{3}\\text{N}', itex: '(\\text{CH}_{3})_{3}\\text{NH}^{+}', bonds: '三个碳原子' },
   };
-  const amine = F.choice(d.controls, { label: '\\text{amine}', key: 'amine', aria: 'the amine',
+  const amine = F.choice(d.controls, { label: '\\text{胺}', key: 'amine', aria: '胺',
     options: ORDER.map((v) => ({ value: v, label: AM[v].label })), value: 'MeNH2', onInput: () => draw() });
-  const nitro = F.choice(d.controls, { label: '\\text{nitrogen}', key: 'nitrogen', aria: 'the lone pair kept or bonded to a hydrogen ion',
-    options: [{ value: 'pair', label: 'lone pair' }, { value: 'ion', label: 'bonded to H⁺' }], value: 'pair', onInput: () => draw() });
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', key: 'view', aria: 'a flat Lewis structure or a scene to turn',
+  const nitro = F.choice(d.controls, { label: '\\text{氮}', key: 'nitrogen', aria: '孤电子对保留，或与氢离子成键',
+    options: [{ value: 'pair', label: '孤电子对' }, { value: 'ion', label: '与 H⁺ 成键' }], value: 'pair', onInput: () => draw() });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', key: 'view', aria: '平面路易斯结构式或可转动的场景',
     options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', ms: 0, onInput: () => show() });
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
@@ -36,8 +36,8 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
   const head = () => {
     const a = AM[amine.value];
     return nitro.value === 'ion'
-      ? `The lone pair of ${a.name} bonds a hydrogen ion, and the ${a.ion} has four bonds to nitrogen.`
-      : `In ${a.name}, nitrogen bonds to ${a.bonds} and keeps one lone pair.`;
+      ? `${a.name}的孤电子对与一个氢离子成键，${a.ion}中氮形成四个键。`
+      : `在${a.name}中，氮与${a.bonds}成键，并保留一对孤电子对。`;
   };
 
   /* ---------- the flat view: the book's Lewis structure ---------- */
@@ -63,14 +63,14 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     const p = taken();
     brackets(ctx, p);
     text(ctx, 'N', CX, CY + 1, PAL.ink, { size: 30, align: 'center' });
-    hits.push({ x: CX, y: CY, r: 22, name: 'nitrogen atom' });
+    hits.push({ x: CX, y: CY, r: 22, name: '氮原子' });
     SITES.forEach((s) => {
       const w = methyl(s), [dx, dy] = DIR[s], x = CX + dx * BOND, y = CY + dy * BOND;
       const half = dx ? 24 + 14 * w : 16;
       bondLine(ctx, CX, CY, x, y, 20, half);
       F.faded(ctx, 1 - w, [0, 0], () => text(ctx, 'H', x, y + 1, PAL.ink, { size: 28, align: 'center' }));
       F.faded(ctx, w, [0, 0], () => text(ctx, 'CH_{3}', x, y + 1, PAL.ink, { size: 28, align: 'center' }));
-      hits.push({ x, y, r: 24, name: w > 0.5 ? 'methyl group, CH₃' : 'hydrogen atom' });
+      hits.push({ x, y, r: 24, name: w > 0.5 ? '甲基，CH₃' : '氢原子' });
     });
     /* the lone pair slides up into the shared pair as the hydrogen ion arrives, and the bond line takes its place */
     const r = LP + (BOND / 2 - LP) * p, fade = 1 - Math.min(1, Math.max(0, (p - 0.45) / 0.45));
@@ -78,13 +78,13 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
       ctx.save(); ctx.globalAlpha *= fade;
       [-6.5, 6.5].forEach((o) => F.dot(ctx, CX + o, CY - r, PAL.ink, true, 3.8));
       ctx.restore();
-      if (fade > 0.5) hits.push({ x: CX, y: CY - r, r: 14, name: 'lone pair on nitrogen' });
+      if (fade > 0.5) hits.push({ x: CX, y: CY - r, r: 14, name: '氮上的孤电子对' });
     }
     if (p > 0.01) {
       const hy = CY - BOND - (1 - p) * 26;
       bondLine(ctx, CX, CY, CX, CY - 20 - (BOND - 36) * p, 20, 0, Math.min(1, p * 1.6));
       F.faded(ctx, p, [0, 0], () => text(ctx, 'H', CX, hy + 1, PAL.ink, { size: 28, align: 'center' }));
-      if (p > 0.5) hits.push({ x: CX, y: hy, r: 22, name: 'hydrogen atom from the hydrogen ion' });
+      if (p > 0.5) hits.push({ x: CX, y: hy, r: 22, name: '来自氢离子的氢原子' });
     }
     ORDER.forEach((v) => amine.only(ctx, v, () => {
       F.faded(ctx, 1 - p, [0, 0], () => text(ctx, AM[v].name, CX, CY + BOND + 74, PAL.ink, { size: 24, align: 'center' }));
@@ -107,34 +107,34 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
   let V = null, g = null;
   function mount() {
     V = F.view3d(d.stage, { spin: 'idle', h: 520, dist: 9.4, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2],
-      views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.45 }] });
+      views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '俯视', yaw: 0, pitch: 1.45 }] });
     g = V.part(0); g.position.y = -0.15;
   }
   const fadeTo = (a) => (a < 0.99 ? { transparent: true, opacity: a } : undefined);
   function draw3d() {
     V.clear(); hits = [];
     const { sphere, bond, lobe } = F.mesh, cN = F.el('N'), cC = F.el('C'), cH = F.el('H');
-    V.pickable(sphere(g, [0, 0, 0], 0.34, cN), 'nitrogen atom');
+    V.pickable(sphere(g, [0, 0, 0], 0.34, cN), '氮原子');
     SITES.forEach((s) => {
       const w = methyl(s), u = T3[s];
       bond(g, [0, 0, 0], u.map((x) => x * (NH + (NC - NH) * w)), 1);
-      if (w < 0.99) V.pickable(sphere(g, u.map((x) => x * NH), 0.22 * (1 - 0.5 * w), cH, fadeTo(1 - w)), 'hydrogen atom');
+      if (w < 0.99) V.pickable(sphere(g, u.map((x) => x * NH), 0.22 * (1 - 0.5 * w), cH, fadeTo(1 - w)), '氢原子');
       if (w > 0.01) {
         const c = u.map((x) => x * NC);
-        V.pickable(sphere(g, c, 0.3 * (0.5 + 0.5 * w), cC, fadeTo(w)), 'carbon atom of a methyl group');
+        V.pickable(sphere(g, c, 0.3 * (0.5 + 0.5 * w), cC, fadeTo(w)), '甲基的碳原子');
         methylH(u).forEach((h) => {
           const e = add(c, h, CH);
           if (w > 0.5) bond(g, c, e, 1);
-          V.pickable(sphere(g, e, 0.2 * w, cH, fadeTo(w)), 'hydrogen atom of a methyl group');
+          V.pickable(sphere(g, e, 0.2 * w, cH, fadeTo(w)), '甲基的氢原子');
         });
       }
     });
     const p = taken();
     if (p > 0.01) {
       bond(g, [0, 0, 0], UP.map((x) => x * NH * (0.3 + 0.7 * p)), 1);
-      V.pickable(sphere(g, UP.map((x) => x * NH), 0.22 * (0.4 + 0.6 * p), cH, fadeTo(p)), 'hydrogen atom from the hydrogen ion');
+      V.pickable(sphere(g, UP.map((x) => x * NH), 0.22 * (0.4 + 0.6 * p), cH, fadeTo(p)), '来自氢离子的氢原子');
     }
-    if (p < 0.99) { const lb = lobe(g, [0, 0, 0], UP, 1.25 * (1 - 0.6 * p)); lb.material.opacity = 0.5 * (1 - p); V.pickable(lb, 'lone pair on nitrogen'); }
+    if (p < 0.99) { const lb = lobe(g, [0, 0, 0], UP, 1.25 * (1 - 0.6 * p)); lb.material.opacity = 0.5 * (1 - p); V.pickable(lb, '氮上的孤电子对'); }
     V.headline(head());
     V.invalidate();
   }
@@ -152,8 +152,8 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
       ? `\\mk{a}{${a.tex}} + \\mk{h}{\\text{H}^{+}}\\mk{r}{\\;\\longrightarrow\\;}\\mk{i}{${a.itex}}`
       : `\\mk{a}{${a.tex}}`;
     const note = ion
-      ? 'Four bonds point to the corners of a tetrahedron, so the ion is tetrahedral about nitrogen.'
-      : 'Three bonds and a lone pair point to the corners of a tetrahedron, so the molecule is trigonal pyramidal about nitrogen.';
+      ? '四个键指向四面体的顶点，所以该离子在氮周围呈四面体形。'
+      : '三个键和一对孤电子对指向四面体的顶点，所以该分子在氮周围呈三角锥形。';
     ro.set(tex, note, { form: ion });
   }
 
@@ -176,12 +176,12 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
 (function () {
   const d = F.sim(root, 'sim-peptide', 460);
   const B = 60, GAP = 60, SB = 4.5 * B + GAP, SA = 3 * B, Y = 230, WY = Y + 190;
-  const NUM = ['', 'one', 'two', 'three', 'four'];
-  const CHAIN = { 2: 'dipeptide', 3: 'tripeptide', 4: 'tetrapeptide' };
-  const count = F.choice(d.controls, { label: '\\text{amino acids}', key: 'amino-acids', aria: 'the number of amino acids',
+  const NUM = ['', '一', '两', '三', '四'];
+  const CHAIN = { 2: '二肽', 3: '三肽', 4: '四肽' };
+  const count = F.choice(d.controls, { label: '\\text{氨基酸}', key: 'amino-acids', aria: '氨基酸的个数',
     options: ['2', '3', '4'].map((v) => ({ value: v, label: v })), value: '2', onInput: () => draw() });
-  const step = F.choice(d.controls, { label: '\\text{condensation}', key: 'condensation', aria: 'before or after the condensation reaction',
-    options: [{ value: 'before', label: 'before' }, { value: 'after', label: 'after' }], value: 'before', onInput: () => draw() });
+  const step = F.choice(d.controls, { label: '\\text{缩合}', key: 'condensation', aria: '缩合反应之前或之后',
+    options: [{ value: 'before', label: '反应前' }, { value: 'after', label: '反应后' }], value: 'before', onInput: () => draw() });
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
 
@@ -209,9 +209,9 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
 
   function head() {
     const n = +count.value;
-    if (step.value === 'before') return 'Each amino acid carries an amine group, a carboxylic acid group, and a side chain R.';
-    const k = n - 1, s = k > 1 ? 's' : '';
-    return `${NUM[n][0].toUpperCase() + NUM[n].slice(1)} amino acids join by ${NUM[k]} peptide bond${s}, and ${NUM[k]} molecule${s} of water leave${s ? '' : 's'}.`;
+    if (step.value === 'before') return '每个氨基酸都带有一个氨基、一个羧基和一条侧链 R。';
+    const k = n - 1;
+    return `${NUM[n]}个氨基酸通过${NUM[k]}个肽键连接，脱去${NUM[k]}个水分子。`;
   }
 
   function draw() {
@@ -247,9 +247,9 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
         atom(ctx, 'O', ox, oy, 1, leaves); atom(ctx, 'H', hx, hy, 1, leaves);
         bondLine(ctx, x + 2 * B, Y, ox, oy, 1 - jout); bondLine(ctx, ox, oy, hx, hy);
         if (jout > 0.01) bondLine(ctx, x + 2 * B, Y, xs[i + 1], Y, jout * next, 1, 4);
-        hits.push({ x, y: Y, r: 18, name: jin > 0.5 ? 'nitrogen atom of a peptide bond' : 'nitrogen atom of the amine group' },
-          { x: x + B, y: Y + B, r: 18, name: 'side chain R' }, { x: x + 2 * B, y: Y - B, r: 18, name: 'oxygen atom of the carbonyl group' });
-        if (jout > 0.5) hits.push({ x: mxOut, y: WY, r: 50, name: 'molecule of water' });
+        hits.push({ x, y: Y, r: 18, name: jin > 0.5 ? '肽键中的氮原子' : '氨基中的氮原子' },
+          { x: x + B, y: Y + B, r: 18, name: '侧链 R' }, { x: x + 2 * B, y: Y - B, r: 18, name: '羰基中的氧原子' });
+        if (jout > 0.5) hits.push({ x: mxOut, y: WY, r: 50, name: '水分子' });
       });
       /* the plus sign between molecules apart */
       if (i < 3 && next > 0.01) F.faded(ctx, (1 - w) * next, [0, 0], () => text(ctx, '+', (x + 3.75 * B + xs[i + 1] - 0.6 * B) / 2, Y + 1, PAL.ink, { size: 26, align: 'center' }));
@@ -257,21 +257,21 @@ const { PAL, alpha, register, begin, line, text, headline } = F;
     /* the first peptide bond, named once */
     if (j[0] > 0.6) {
       const mx = (xs[0] + 2 * B + xs[1]) / 2, k = smooth(0.6, 1, j[0]);
-      F.faded(ctx, k, [0, 0], () => { line(ctx, mx, Y + 12, mx, Y + 96, alpha(PAL.ink, 0.5), 2); text(ctx, 'peptide bond', mx, Y + 112, PAL.ink, { size: 22, align: 'center' }); });
-      hits.push({ x: mx, y: Y, r: 16, name: 'peptide bond' });
+      F.faded(ctx, k, [0, 0], () => { line(ctx, mx, Y + 12, mx, Y + 96, alpha(PAL.ink, 0.5), 2); text(ctx, '肽键', mx, Y + 112, PAL.ink, { size: 22, align: 'center' }); });
+      hits.push({ x: mx, y: Y, r: 16, name: '肽键' });
     }
     /* the two groups that stay unreacted at the ends */
     const x0 = xs[0], xl = count.mix((v) => xOf(+v - 1, +v, w));
-    box(ctx, x0 - 0.6 * B - 22, Y - 0.6 * B - 24, x0 + 0.5 * B, Y + 0.6 * B + 24, 'amino group', 'right');
-    box(ctx, xl + 1.5 * B, Y - B - 24, xl + 3.75 * B + 20, Y + 22, 'carboxyl group', 'left');
-    hits.push({ x: x0 - 0.3 * B, y: Y, r: 30, name: 'amine group, –NH₂' }, { x: xl + 2.9 * B, y: Y - 0.4 * B, r: 34, name: 'carboxylic acid group, –COOH' });
+    box(ctx, x0 - 0.6 * B - 22, Y - 0.6 * B - 24, x0 + 0.5 * B, Y + 0.6 * B + 24, '氨基', 'right');
+    box(ctx, xl + 1.5 * B, Y - B - 24, xl + 3.75 * B + 20, Y + 22, '羧基', 'left');
+    hits.push({ x: x0 - 0.3 * B, y: Y, r: 30, name: '氨基，–NH₂' }, { x: xl + 2.9 * B, y: Y - 0.4 * B, r: 34, name: '羧基，–COOH' });
 
     const n = +count.value, after = step.value === 'after';
     const water = n - 1 > 1 ? `${n - 1}\\,\\text{H}_{2}\\text{O}` : '\\text{H}_{2}\\text{O}';
     const tex = after
-      ? `\\mk{n}{${n}\\ \\text{amino acids}}\\mk{r}{\\;\\longrightarrow\\;}\\mk{p}{\\text{${CHAIN[n]}}} + \\mk{w}{${water}}`
-      : `\\mk{n}{${n}\\ \\text{amino acids}}`;
-    ro.set(tex, after ? 'The chain still ends in an amine group and a carboxylic acid group, so another amino acid can join.' : '', { form: after });
+      ? `\\mk{n}{${n}\\ \\text{个氨基酸}}\\mk{r}{\\;\\longrightarrow\\;}\\mk{p}{\\text{${CHAIN[n]}}} + \\mk{w}{${water}}`
+      : `\\mk{n}{${n}\\ \\text{个氨基酸}}`;
+    ro.set(tex, after ? '链的两端仍是一个氨基和一个羧基，所以还可以再连接一个氨基酸。' : '', { form: after });
   }
   register(d.fig, { update: () => {}, draw });
 })();

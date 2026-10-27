@@ -17,22 +17,22 @@ const lerp = (a, b, k) => a + (b - a) * k;
   const d = F.sim(root, 'sim-carbonyl', 420);
   const ORDER = ['aldehyde', 'ketone', 'acid', 'ester'];
   const FAM = {
-    aldehyde: { label: 'aldehyde', left: 'R', head: 'In an aldehyde, the carbonyl carbon bonds to at least one hydrogen atom.',
-      tex: '\\mk{n}{\\text{aldehyde:}}\\; \\mk{l}{\\text{R}}\\mk{c}{\\text{CHO}}' },
-    ketone: { label: 'ketone', left: 'R¹', head: 'In a ketone, the carbonyl carbon bonds to two carbon groups, R¹ and R².',
-      tex: '\\mk{n}{\\text{ketone:}}\\; \\mk{l}{\\text{R}^{1}}\\mk{c}{\\text{CO}}\\mk{r}{\\text{R}^{2}}' },
-    acid: { label: 'carboxylic acid', left: 'R', head: 'In a carboxylic acid, a second oxygen atom on the carbonyl carbon carries a hydrogen atom.',
-      tex: '\\mk{n}{\\text{carboxylic acid:}}\\; \\mk{l}{\\text{R}}\\mk{c}{\\text{CO}_{2}}\\mk{r}{\\text{H}}' },
-    ester: { label: 'ester', left: 'R¹', head: 'In an ester, a second oxygen atom on the carbonyl carbon bonds to another carbon group, R².',
-      tex: '\\mk{n}{\\text{ester:}}\\; \\mk{l}{\\text{R}^{1}}\\mk{c}{\\text{CO}_{2}}\\mk{r}{\\text{R}^{2}}' },
+    aldehyde: { label: '醛', left: 'R', head: '在醛中，羰基碳与至少一个氢原子相连。',
+      tex: '\\mk{n}{\\text{醛：}}\\; \\mk{l}{\\text{R}}\\mk{c}{\\text{CHO}}' },
+    ketone: { label: '酮', left: 'R¹', head: '在酮中，羰基碳与两个碳基团 R¹ 和 R² 相连。',
+      tex: '\\mk{n}{\\text{酮：}}\\; \\mk{l}{\\text{R}^{1}}\\mk{c}{\\text{CO}}\\mk{r}{\\text{R}^{2}}' },
+    acid: { label: '羧酸', left: 'R', head: '在羧酸中，羰基碳上的第二个氧原子连有一个氢原子。',
+      tex: '\\mk{n}{\\text{羧酸：}}\\; \\mk{l}{\\text{R}}\\mk{c}{\\text{CO}_{2}}\\mk{r}{\\text{H}}' },
+    ester: { label: '酯', left: 'R¹', head: '在酯中，羰基碳上的第二个氧原子与另一个碳基团 R² 相连。',
+      tex: '\\mk{n}{\\text{酯：}}\\; \\mk{l}{\\text{R}^{1}}\\mk{c}{\\text{CO}_{2}}\\mk{r}{\\text{R}^{2}}' },
   };
-  const grp = F.select(d.controls, { label: '\\text{family}', key: 'family', aria: 'the family of carbonyl compound',
+  const grp = F.select(d.controls, { label: '\\text{类别}', key: 'family', aria: '羰基化合物的类别',
     options: ORDER.map((v) => ({ value: v, label: FAM[v].label })), value: 'ketone', onInput: () => draw() });
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', key: 'view', aria: 'a flat structure or a scene to turn',
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', key: 'view', aria: '平面结构或可转动的立体场景',
     options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', ms: 0, onInput: () => show() });
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
-  const NAME = { C: 'carbonyl carbon atom', O: 'carbonyl oxygen atom', H: 'hydrogen atom', O2: 'second oxygen atom', R: 'R group, a carbon chain' };
+  const NAME = { C: '羰基碳原子', O: '羰基氧原子', H: '氢原子', O2: '第二个氧原子', R: 'R 基团，一条碳链' };
 
   /* ---------- the flat view: the book's drawing ---------- */
   const CX = 700, CY = 268, B = 140, A = Math.PI / 6;
@@ -78,7 +78,7 @@ const lerp = (a, b, k) => a + (b - a) * k;
   let V = null, g = null;
   function mount() {
     V = F.view3d(d.stage, { spin: 'idle', h: 540, dist: 9.5, tilt: 0.15, pitch: [-Math.PI / 2, Math.PI / 2],
-      views: [{ label: 'front', yaw: 0, pitch: 0 }, { label: 'edge-on', yaw: Math.PI / 2, pitch: 0.15 }] });
+      views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '侧视', yaw: Math.PI / 2, pitch: 0.15 }] });
     g = V.part(0); g.position.set(-0.3, -0.7, 0);
   }
   function draw3d() {
@@ -95,7 +95,7 @@ const lerp = (a, b, k) => a + (b - a) * k;
       atom(P3.R, 'O', 0.28, NAME.O2); bond(g, P3.R, P3.R2, 1);
       if (v === 'acid') atom(P3.R2, 'H', 0.18, NAME.H); else { atom(P3.R2, 'R', 0.34, NAME.R); V.label('R²', out(P3.R, P3.R2), g); }
     }
-    [[P3.C, 'p orbital on carbon, half of the π bond'], [P3.O, 'p orbital on oxygen, half of the π bond']].forEach(([p, name]) =>
+    [[P3.C, '碳上的 p 轨道，π 键的一半'], [P3.O, '氧上的 p 轨道，π 键的一半']].forEach(([p, name]) =>
       [1, -1].forEach((s) => V.pickable(lobe(g, p, [0, 0, s], 0.85), name)));
     V.label('δ+', P3.C, g, -38); V.label('δ−', P3.O, g, 32);
     V.headline(FAM[v].head);
@@ -129,23 +129,23 @@ const lerp = (a, b, k) => a + (b - a) * k;
   const c30 = Math.cos(Math.PI / 6), s30 = 0.5;
   /* atoms by key in bond lengths about carbon, y down; bonds by key pair and order */
   const MOL = {
-    CH4: { label: 'CH₄', tex: '\\text{CH}_{4}', name: 'methane', ox: -4, nH: 4, nO: 0,
+    CH4: { label: 'CH₄', tex: '\\text{CH}_{4}', name: '甲烷', ox: -4, nH: 4, nO: 0,
       atoms: { C: [0, 0], Ha: [0, -1], Hb: [-1, 0], Hc: [0, 1], Hd: [1, 0] },
       bonds: [['C', 'Ha', 1], ['C', 'Hb', 1], ['C', 'Hc', 1], ['C', 'Hd', 1]] },
-    CH3OH: { label: 'CH₃OH', tex: '\\text{CH}_{3}\\text{OH}', name: 'methanol', ox: -2, nH: 4, nO: 1,
+    CH3OH: { label: 'CH₃OH', tex: '\\text{CH}_{3}\\text{OH}', name: '甲醇', ox: -2, nH: 4, nO: 1,
       atoms: { C: [0, 0], Ha: [0, -1], Hb: [-1, 0], Hc: [0, 1], O1: [1, 0], Ho1: [1.8, 0] },
       bonds: [['C', 'Ha', 1], ['C', 'Hb', 1], ['C', 'Hc', 1], ['C', 'O1', 1], ['O1', 'Ho1', 1]] },
-    CH2O: { label: 'CH₂O', tex: '\\text{CH}_{2}\\text{O}', name: 'formaldehyde', ox: 0, nH: 2, nO: 1,
+    CH2O: { label: 'CH₂O', tex: '\\text{CH}_{2}\\text{O}', name: '甲醛', ox: 0, nH: 2, nO: 1,
       atoms: { C: [0, 0], O1: [0, -1.05], Hb: [-c30, s30], Hc: [c30, s30] },
       bonds: [['C', 'O1', 2], ['C', 'Hb', 1], ['C', 'Hc', 1]] },
-    HCO2H: { label: 'HCO₂H', tex: '\\text{HCO}_{2}\\text{H}', name: 'formic acid', ox: 2, nH: 2, nO: 2,
+    HCO2H: { label: 'HCO₂H', tex: '\\text{HCO}_{2}\\text{H}', name: '甲酸', ox: 2, nH: 2, nO: 2,
       atoms: { C: [0, 0], O1: [0, -1.05], Hb: [-c30, s30], O2: [c30, s30], Ho2: [c30 + 0.8, s30] },
       bonds: [['C', 'O1', 2], ['C', 'Hb', 1], ['C', 'O2', 1], ['O2', 'Ho2', 1]] },
-    CO2: { label: 'CO₂', tex: '\\text{CO}_{2}', name: 'carbon dioxide', ox: 4, nH: 0, nO: 2,
+    CO2: { label: 'CO₂', tex: '\\text{CO}_{2}', name: '二氧化碳', ox: 4, nH: 0, nO: 2,
       atoms: { C: [0, 0], O1: [-1.1, 0], O2: [1.1, 0] },
       bonds: [['C', 'O1', 2], ['C', 'O2', 2]] },
   };
-  const COUNT = ['no', 'one', 'two', 'three', 'four'];
+  const COUNT = ['零', '一', '两', '三', '四'];
   const tally = (m) => {
     const ch = MOL[m].bonds.filter(([a, b]) => a === 'C' && b[0] === 'H').length;
     const co = MOL[m].bonds.filter(([a, b]) => a === 'C' && b[0] === 'O').reduce((s, b) => s + b[2], 0);
@@ -153,16 +153,16 @@ const lerp = (a, b, k) => a + (b - a) * k;
   };
   const HEAD = Object.fromEntries(ORDER.map((m) => {
     const [ch, co] = tally(m), t = MOL[m];
-    const bonds = (n, w) => `${COUNT[n]} ${w}${n === 1 ? '' : 's'}`;
-    return [m, `In ${t.name}, $${t.tex}$, carbon has ${bonds(ch, 'C–H bond')} and ${bonds(co, 'bond')} to oxygen.`];
+    const bonds = (n) => (n ? `有${COUNT[n]}个` : '没有');
+    return [m, `在${t.name} $${t.tex}$ 中，碳${bonds(ch)} C–H 键，与氧之间${bonds(co)}键。`];
   }));
-  const mol = F.choice(d.controls, { label: '\\text{molecule}', key: 'molecule', aria: 'the molecule on the oxidation ladder',
+  const mol = F.choice(d.controls, { label: '\\text{分子}', key: 'molecule', aria: '氧化梯度上的分子',
     options: ORDER.map((v) => ({ value: v, label: MOL[v].label })), value: 'CH4', onInput: () => draw() });
   const ro = F.readout(d);
   let hits = []; F.hover(d.stage, () => hits);
 
   const MX = 640, MY = 200, BL = 112, RAD = { C: 22, O: 21, H: 14 };
-  const NAME = { C: 'carbon atom', O: 'oxygen atom', H: 'hydrogen atom' };
+  const NAME = { C: '碳原子', O: '氧原子', H: '氢原子' };
   const P = (p) => [MX + p[0] * BL, MY + p[1] * BL];
   function disc(ctx, x, y, s, a) {
     if (a <= 0.01) return;
@@ -188,9 +188,9 @@ const lerp = (a, b, k) => a + (b - a) * k;
       line(ctx, X(n), SY, X(n), SY + 9, PAL.muted, 2);
       text(ctx, n > 0 ? `+${n}` : n < 0 ? `−${-n}` : '0', X(n), SY + 30, PAL.muted, { size: 17, align: 'center' });
     }
-    text(ctx, 'oxidation number of carbon', (XA + XB) / 2, SY + 60, PAL.ink, { size: 20, align: 'center' });
-    text(ctx, 'more reduced', XA - 20, SY + 2, PAL.muted, { size: 17, align: 'right' });
-    text(ctx, 'more oxidized', XB + 20, SY + 2, PAL.muted, { size: 17, align: 'left' });
+    text(ctx, '碳的氧化数', (XA + XB) / 2, SY + 60, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '更还原', XA - 20, SY + 2, PAL.muted, { size: 17, align: 'right' });
+    text(ctx, '更氧化', XB + 20, SY + 2, PAL.muted, { size: 17, align: 'left' });
     ORDER.forEach((m) => {
       const on = mol.a(m) > 0.5 && m === mol.value;
       F.dot(ctx, X(MOL[m].ox), SY, PAL.ink, false, 9);
@@ -199,7 +199,7 @@ const lerp = (a, b, k) => a + (b - a) * k;
     F.dot(ctx, X(mol.mix((m) => MOL[m].ox)), SY, PAL.ink, true, 11);
   }
   function legend(ctx) {
-    [['C', 'carbon'], ['H', 'hydrogen'], ['O', 'oxygen']].forEach(([s, n], i) => {
+    [['C', '碳'], ['H', '氢'], ['O', '氧']].forEach(([s, n], i) => {
       const y = 130 + i * 44; disc(ctx, 1120, y, s, 1); text(ctx, n, 1150, y + 1, PAL.ink, { size: 20, align: 'left' });
     });
   }

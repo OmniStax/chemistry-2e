@@ -38,7 +38,7 @@ const sigTex = (x) => { const s = sig(x); return s.plain ?? `${s.m} \\times 10^{
   const H = 560, d = sim('sim-solubility-ph', H);
   const KSP = 2e-32, K = 22, LKSP = Math.log10(KSP), LK = Math.log10(K);
   const pH = ctl(d.controls, { label: '\\kpH', cls: 'concentration', key: 'pH', min: 3, max: 13, step: 0.01, value: 4.74, unit: '', dec: 2,
-    aria: 'the pH of the buffered solution', detents: [{ v: 4.74, label: 'acetate buffer' }] });
+    aria: '缓冲溶液的 pH', detents: [{ v: 4.74, label: '乙酸盐缓冲溶液' }] });
   const ro = F.readout(d);
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -53,11 +53,11 @@ const sigTex = (x) => { const s = sig(x); return s.plain ?? `${s.m} \\times 10^{
     const p = Math.round(pH.v * 100) / 100, pOH = 14 - p, oh = round2(10 ** -pOH);
     const t1 = round2(KSP / oh ** 3), t2 = round2(K * oh), s = round2(t1 + t2);
     const f = 10 ** la(p) / (10 ** la(p) + 10 ** lb(p));
-    const share = f > 0.99 ? 'nearly all of it as Al³⁺' : f < 0.01 ? 'nearly all of it as Al(OH)_{4}⁻' : `${Math.round(100 * f)} percent of it as Al³⁺`;
-    const lines = topline(ctx, `At pH ${p.toFixed(2)}, Al(OH)_{3} dissolves to ${sigText(s)} M, ${share}.`);
+    const share = f > 0.99 ? '其中几乎全部是 Al³⁺' : f < 0.01 ? '其中几乎全部是 Al(OH)_{4}⁻' : `其中 ${Math.round(100 * f)}% 是 Al³⁺`;
+    const lines = topline(ctx, `在 pH ${p.toFixed(2)} 时，Al(OH)_{3} 的溶解度为 ${sigText(s)} M，${share}。`);
     const lab = F.labeller(ctx, H, { headline: lines });
     const ax = F.axes(ctx, G, [2, 14], [0, 14], { nx: 6, ny: 7, fx: (v) => String(Math.round(v)), fy: (v) => pow10(Math.round(v) + L0),
-      xl: 'pH', xc: cC, yl: 'concentration (M)', yc: cC });
+      xl: 'pH', xc: cC, yl: '浓度 (M)', yc: cC });
     const g = { X: ax.X, Y: (lg) => ax.Y(lg - L0) };
     lab.block(G.l - 120, G.t - 46, G.l + 220, G.t - 4); lab.block(G.l - 120, G.t, G.l - 4, G.b + 70); lab.block(G.l, G.b + 4, G.r, G.b + 70);
     ctx.save(); ctx.beginPath(); ctx.rect(G.l, G.t, G.r - G.l, G.b - G.t); ctx.clip();
@@ -75,15 +75,15 @@ const sigTex = (x) => { const s = sig(x); return s.plain ?? `${s.m} \\times 10^{
     text(ctx, `${sigText(s)} M`, G.l + 12, Math.min(Math.max(pt.y - 18, G.t + 14), G.b - 30), cC, { size: 17, weight: 600, bg: PAL.panel });
     lab.add('[Al³⁺]', g.X(6.6), g.Y(la(6.6)), 1, 0, cA, 22, 22);
     lab.add('[Al(OH)_{4}⁻]', g.X(4.3), g.Y(lb(4.3)), -0.25, 1, cB, 22, 22);
-    lab.add('molar solubility', g.X(10.5), g.Y(ls(10.5)), -0.6, -0.8, cC, 22, 30);
+    lab.add('摩尔溶解度', g.X(10.5), g.Y(ls(10.5)), -0.6, -0.8, cC, 22, 30);
     lab.flush();
     hits = [];
-    [3, 4, 5, 6, 7, 8, 9, 10].forEach((q) => { if (la(q) > -12 && la(q) < 2) hits.push({ x: g.X(q), y: g.Y(la(q)), r: 14, name: '[Al³⁺], the line of the acid coupling' }); });
-    [3, 5, 7, 9, 11, 13].forEach((q) => { if (lb(q) > -12 && lb(q) < 2) hits.push({ x: g.X(q), y: g.Y(lb(q)), r: 14, name: '[Al(OH)₄⁻], the line of the complex coupling' }); });
-    hits.push({ x: pt.x, y: pt.y, r: 16, name: `molar solubility at pH ${p.toFixed(2)}: ${sigText(s)} M` });
+    [3, 4, 5, 6, 7, 8, 9, 10].forEach((q) => { if (la(q) > -12 && la(q) < 2) hits.push({ x: g.X(q), y: g.Y(la(q)), r: 14, name: '[Al³⁺]，与酸相互关联时的曲线' }); });
+    [3, 5, 7, 9, 11, 13].forEach((q) => { if (lb(q) > -12 && lb(q) < 2) hits.push({ x: g.X(q), y: g.Y(lb(q)), r: 14, name: '[Al(OH)₄⁻]，与配合物形成相互关联时的曲线' }); });
+    hits.push({ x: pt.x, y: pt.y, r: 16, name: `pH ${p.toFixed(2)} 时的摩尔溶解度：${sigText(s)} M` });
     const ohT = hue('concentration', sigTex(oh));
     ro.set(`[\\text{Al}^{3+}] + [\\text{Al(OH)}_{4}{}^{-}] = \\frac{\\kKsp}{{\\kconcOH}^{3}} + \\kK\\,\\kconcOH = \\frac{${hue('equilibrium-constant', '2 \\times 10^{-32}')}}{(${ohT})^{3}} + ${hue('equilibrium-constant', '22')}\\,(${ohT}) = ${hue('concentration', sigTex(t1))} + ${hue('concentration', sigTex(t2))} = ${hue('concentration', sigTex(s))}\\ \\text{M}`,
-      'Each unit of $\\kpH$ multiplies $\\kconcOH$ by 10, which divides [Al³⁺] by 1000 and multiplies [Al(OH)₄⁻] by 10.');
+      '$\\kpH$ 每增大 1 个单位，$\\kconcOH$ 就乘以 10，使 [Al³⁺] 除以 1000，[Al(OH)₄⁻] 乘以 10。');
   }
   still(d, draw);
 })();
@@ -99,12 +99,12 @@ const sigTex = (x) => { const s = sig(x); return s.plain ?? `${s.m} \\times 10^{
 ===================================================================== */
 (function () {
   const H = 420, d = sim('fig-aloh4', H);
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d',
-    aria: 'a flat drawing or a scene to turn', ms: 0, onInput: () => show() });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d',
+    aria: '平面图，或可转动的立体场景', ms: 0, onInput: () => show() });
   F.tex(d.readout, '\\text{Al}^{3+}(aq)+4\\text{OH}^{-}(aq)\\rightleftharpoons\\text{Al(OH)}_{4}{}^{-}(aq)\\qquad\\kKfform=1.1\\times 10^{33}');
   let hits = [];
   F.hover(d.stage, () => hits);
-  const NAME = { Al: 'aluminum atom', O: 'oxygen atom of a hydroxide ion', H: 'hydrogen atom of a hydroxide ion' };
+  const NAME = { Al: '铝原子', O: '氢氧根离子中的氧原子', H: '氢氧根离子中的氢原子' };
 
   /* ---------- flat: the Lewis structure as the book draws it ---------- */
   const X0 = 700, Y0 = 200, AO = 120, OHL = 105;
@@ -167,7 +167,7 @@ const sigTex = (x) => { const s = sig(x); return s.plain ?? `${s.m} \\times 10^{
   function show() {
     if (VIEW.value === '3d' && !v) {
       v = F.view3d(d.stage, { h: H, dist: 9, tilt: 0.3, spin: 'idle', yaw: 'free', pitch: [-1.2, 1.2],
-        views: [{ label: 'front', yaw: 0, pitch: 0.3 }, { label: 'above', yaw: 0, pitch: 1.2 }] });
+        views: [{ label: '正视', yaw: 0, pitch: 0.3 }, { label: '俯视', yaw: 0, pitch: 1.2 }] });
       g = v.scene ? v.part(0) : null;
     }
     const on = !!three();

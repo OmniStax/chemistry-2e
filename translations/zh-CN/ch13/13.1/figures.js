@@ -22,16 +22,16 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 ===================================================================== */
 (function () {
   const d = F.sim(root, 'sim-n2o4-equilibrium');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.15 }, { label: 'corner', yaw: 0.7, pitch: 0.42 }], h: 380, dist: 5.0, tilt: 0.18 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.15 }, { label: '斜视', yaw: 0.7, pitch: 0.42 }], h: 380, dist: 5.0, tilt: 0.18 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 640);
-  const kf = ctl(d.controls, { label: '\\kkf', cls: 'rate-constant', key: 'kf', min: 0.1, max: 1.2, step: 0.05, value: 0.6, unit: 's⁻¹', dec: 2, onInput: rerun, aria: 'forward rate constant in per second' });
-  const kr = ctl(d.controls, { label: '\\kkr', cls: 'rate-constant', key: 'kr', min: 1, max: 3, step: 0.01, value: 1.41, unit: 'M⁻¹ s⁻¹', dec: 2, onInput: rerun, aria: 'reverse rate constant in per molar per second' });
+  const kf = ctl(d.controls, { label: '\\kkf', cls: 'rate-constant', key: 'kf', min: 0.1, max: 1.2, step: 0.05, value: 0.6, unit: 's⁻¹', dec: 2, onInput: rerun, aria: '正反应速率常数，单位为每秒' });
+  const kr = ctl(d.controls, { label: '\\kkr', cls: 'rate-constant', key: 'kr', min: 1, max: 3, step: 0.01, value: 1.41, unit: 'M⁻¹ s⁻¹', dec: 2, onInput: rerun, aria: '逆反应速率常数，单位为 M⁻¹ s⁻¹' });
   const fx = el('div'), nt = el('small'); d.readout.append(fx, nt);
-  nt.textContent = 'Each molecule drawn stands for 0.010 M of its gas; in the real gas the reaction runs far faster than drawn.';
+  nt.textContent = '图中每个分子代表其气体的 0.010 M；在真实的气体中，反应进行得比图中快得多。';
 
   const MOLS = {
-    A: { M: 92.01, r: 0.21, name: 'dinitrogen tetroxide, N₂O₄', atoms: [['N', -0.075, 0, 0.062], ['N', 0.075, 0, 0.062], ['O', -0.14, 0.08, 0.058], ['O', -0.14, -0.08, 0.058], ['O', 0.14, 0.08, 0.058], ['O', 0.14, -0.08, 0.058]] },
-    B: { M: 46.01, r: 0.17, name: 'nitrogen dioxide, NO₂', atoms: [['N', 0, 0.03, 0.062], ['O', -0.1, -0.02, 0.058], ['O', 0.1, -0.02, 0.058]] },
+    A: { M: 92.01, r: 0.21, name: '四氧化二氮，N₂O₄', atoms: [['N', -0.075, 0, 0.062], ['N', 0.075, 0, 0.062], ['O', -0.14, 0.08, 0.058], ['O', -0.14, -0.08, 0.058], ['O', 0.14, 0.08, 0.058], ['O', 0.14, -0.08, 0.058]] },
+    B: { M: 46.01, r: 0.17, name: '二氧化氮，NO₂', atoms: [['N', 0, 0.03, 0.062], ['O', -0.1, -0.02, 0.058], ['O', 0.1, -0.02, 0.058]] },
   };
   const SZ = 1.35, L = 1, Q = 0.01, N0 = 14, A0 = N0 * Q, TRUN = 8, PLAY = 1.4, DT = 1 / 60, NF = Math.round(TRUN / DT), GLIDE = 1.4;
   const SA = N0, SB = 2 * N0;
@@ -138,7 +138,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const key = palSig(); if (key === sig) return; sig = key;
     v.clear(); grp.position.set(0, -0.2, 0);
     box = new T3D.Mesh(new T3D.BoxGeometry(2 * L, 2 * L, 2 * L), mat3(F.fact(NO2_BROWN), { transparent: true, opacity: 0.04, depthWrite: false, side: T3D.DoubleSide })); grp.add(box);
-    v.pickable(box, 'the gas in the sealed tube');
+    v.pickable(box, '密封管中的气体');
     grp.add(new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(2 * L, 2 * L, 2 * L)), new T3D.LineBasicMaterial({ color: new T3D.Color(PAL.ink) })));
     v.label('N₂O₄ ⇌ 2NO₂', [0, L + 0.15, 0], grp, 6);
     slotsA = Array.from({ length: SA }, () => molecule3('A'));
@@ -161,8 +161,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const pl = (n, one, many) => n + ' ' + (n === 1 ? one : many);
     const { ctx } = begin(cnv);
     const eq = t >= teq;
-    topline(ctx, t < DT / 2 ? 'At $\\kt = 0$ the tube holds ' + N0 + ' molecules of N_{2}O_{4} and no NO_{2}.'
-      : (eq ? 'At equilibrium: ' : 'Pre-equilibrium: ') + pl(nS, 'N_{2}O_{4} has', 'N_{2}O_{4} have') + ' split and ' + pl(nJ, 'pair', 'pairs') + ' of NO_{2} ' + (nJ === 1 ? 'has' : 'have') + ' joined' + (eq ? ', and both go on.' : '.'));
+    topline(ctx, t < DT / 2 ? '在 $\\kt = 0$ 时，管中有 ' + N0 + ' 个 N_{2}O_{4} 分子，没有 NO_{2}。'
+      : (eq ? '平衡时：' : '平衡前：') + nS + ' 个 N_{2}O_{4} 已分裂，' + nJ + ' 对 NO_{2} 已结合' + (eq ? '，而且两种过程仍在继续。' : '。'));
 
     const at = (arr) => (s) => { const g = Math.min(NF, s / DT), i = Math.floor(g), k = g - i; return i >= NF ? arr[NF] : arr[i] + (arr[i + 1] - arr[i]) * k; };
     const cA = at(A), cB = at(B), rf = (s) => f1 * cA(s), rr = (s) => r1 * cB(s) * cB(s);
@@ -171,19 +171,19 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
       if (!eq) return;
       ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(X(teq), bx.t, bx.r - X(teq), bx.b - bx.t); ctx.restore();
       line(ctx, X(teq), bx.t, X(teq), bx.b, alpha(PAL.ink, 0.5), 2, [10, 10]);
-      text(ctx, 'equilibrium achieved', X(teq) + 12, bx.t + 16, PAL.muted, { size: 17, bg: PAL.panel });
+      text(ctx, '已达到平衡', X(teq) + 12, bx.t + 16, PAL.muted, { size: 17, bg: PAL.panel });
     };
     const key = (x, y, color, s) => { line(ctx, x, y, x + 40, y, color, 5); text(ctx, s, x + 52, y, PAL.ink, { size: 20, tex: true }); };
 
     const b1 = { l: 150, r: 1140, t: 110, b: 290 };
-    const g1 = axes(ctx, b1, [0, TRUN], [0, 0.3], { nx: 4, ny: 3, fy: (q) => fmt(q, 2), yl: 'concentration (M)', yc: C('concentration') });
+    const g1 = axes(ctx, b1, [0, TRUN], [0, 0.3], { nx: 4, ny: 3, fy: (q) => fmt(q, 2), yl: '浓度（M）', yc: C('concentration') });
     shade(b1, g1.X);
     curve(ctx, cA, 0, t, g1.X, g1.Y, F.ref('n2o4'), 5, n); curve(ctx, cB, 0, t, g1.X, g1.Y, F.ref('no2'), 5, n);
     dot(ctx, g1.X(t), g1.Y(cA(t)), F.ref('n2o4'), true, 9); dot(ctx, g1.X(t), g1.Y(cB(t)), F.ref('no2'), true, 9);
     key(1170, b1.t + 20, F.ref('n2o4'), '$[\\text{N}_2\\text{O}_4]$'); key(1170, b1.t + 60, F.ref('no2'), '$[\\text{NO}_2]$');
 
     const b2 = { l: 150, r: 1140, t: 400, b: 560 };
-    const g2 = axes(ctx, b2, [0, TRUN], [0, 0.18], { nx: 4, ny: 3, fy: (q) => fmt(q, 2), xl: 'time t (s)', xc: C('time'), yl: 'rate (M/s)', yc: C('rate') });
+    const g2 = axes(ctx, b2, [0, TRUN], [0, 0.18], { nx: 4, ny: 3, fy: (q) => fmt(q, 2), xl: '时间 t（s）', xc: C('time'), yl: '反应速率（M/s）', yc: C('rate') });
     shade(b2, g2.X);
     curve(ctx, rf, 0, t, g2.X, g2.Y, F.ref('forward'), 5, n); curve(ctx, rr, 0, t, g2.X, g2.Y, F.ref('reverse'), 5, n);
     dot(ctx, g2.X(t), g2.Y(rf(t)), F.ref('forward'), true, 9); dot(ctx, g2.X(t), g2.Y(rr(t)), F.ref('reverse'), true, 9);

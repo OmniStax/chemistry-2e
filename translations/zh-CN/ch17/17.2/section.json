@@ -314,7 +314,7 @@
         "at": "end"
       },
       "cite": "transfer",
-      "prompt": "指出习题中要求配平的这些反应各自的氧化剂和还原剂：<br>（a）$\\text{Al}(s)+{\\text{Zr}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Al}}^{3+}(aq)+\\text{Zr}(s)$<br>（b）${\\text{Ag}}^{\\text{+}}(aq)+\\text{NO}(g)\\;\\longrightarrow \\;\\text{Ag}(s)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\hspace{5em}(\\text{酸性溶液})$<br>（c）${\\text{SiO}}_{3}{}^{2−}(aq)+\\text{Mg}(s)\\;\\longrightarrow \\;\\text{Si}(s)+\\text{Mg}{(\\text{OH})}_{2}(s)\\hspace{5em}\\text{（碱性溶液）}$<br>（d）${\\text{ClO}}_{3}{}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\longrightarrow \\;{\\text{Cl}}^{\\text{−}}(aq)+{\\text{MnO}}_{4}{}^{\\text{−}}(aq)\\hspace{5em}\\text{（碱性溶液）}$",
+      "prompt": "指出习题中要求配平的这些反应各自的氧化剂和还原剂：<br>（a）$\\text{Al}(s)+{\\text{Zr}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Al}}^{3+}(aq)+\\text{Zr}(s)$<br>（b）${\\text{Ag}}^{\\text{+}}(aq)+\\text{NO}(g)\\;\\longrightarrow \\;\\text{Ag}(s)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\hspace{5em}\\text{（酸性溶液）}$<br>（c）${\\text{SiO}}_{3}{}^{2−}(aq)+\\text{Mg}(s)\\;\\longrightarrow \\;\\text{Si}(s)+\\text{Mg}{(\\text{OH})}_{2}(s)\\hspace{5em}\\text{（碱性溶液）}$<br>（d）${\\text{ClO}}_{3}{}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\longrightarrow \\;{\\text{Cl}}^{\\text{−}}(aq)+{\\text{MnO}}_{4}{}^{\\text{−}}(aq)\\hspace{5em}\\text{（碱性溶液）}$",
       "answer": {
         "type": "open",
         "generated_by": "source",

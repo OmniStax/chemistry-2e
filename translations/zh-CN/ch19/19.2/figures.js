@@ -35,7 +35,7 @@ const rot = (p, n, a) => { const c = Math.cos(a), s = Math.sin(a), k = V.dot(n, 
 /* ---------- atoms in the book's palette, each bond two half sticks in its atoms' colours ---------- */
 const RADIUS = { M: 0.42, H: 0.15, C: 0.25, N: 0.25, O: 0.26, F: 0.23, Cl: 0.32 };
 const rad = (s) => RADIUS[s] || RADIUS.M;
-const METAL = { Ag: 'silver', Cu: 'copper', Zn: 'zinc', Ni: 'nickel', Pt: 'platinum', Co: 'cobalt', V: 'vanadium', Cr: 'chromium', Zr: 'zirconium', Re: 'rhenium', Mo: 'molybdenum', M: 'a metal ion' };
+const METAL = { Ag: '银', Cu: '铜', Zn: '锌', Ni: '镍', Pt: '铂', Co: '钴', V: '钒', Cr: '铬', Zr: '锆', Re: '铼', Mo: '钼', M: '金属离子' };
 const fade = (a) => (a < 0.999 ? { transparent: true, opacity: a } : undefined);
 const plain = (e, a) => { e.style.opacity = String(Math.max(0, Math.min(1, a))); return e; };
 const hued = (e, type) => { e.style.color = F.C(type); return e; };
@@ -58,14 +58,14 @@ function molecule(v, g, atoms, bonds, k, ghost = 1) {
 /* ---------- ligands: each set out along its donor direction d at distance r (Å) ---------- */
 const T = (sym, along, side, name) => ({ sym, along, side, name });
 const LIG = {
-  NH3: { label: 'NH₃', atoms: [T('N', 0, 0, 'ammine ligand: nitrogen (N), the donor atom'), ...[0, 120, 240].map((az) => T('H', 1.01 * Math.cos(70.5 * RAD), [1.01 * Math.sin(70.5 * RAD), az], 'hydrogen (H) of an ammine ligand'))], bonds: [[0, 1], [0, 2], [0, 3]], q: 0 },
-  OH2: { label: 'H₂O', atoms: [T('O', 0, 0, 'aqua ligand: oxygen (O), the donor atom'), ...[0, 180].map((az) => T('H', 0.96 * Math.cos(52 * RAD), [0.96 * Math.sin(52 * RAD), az], 'hydrogen (H) of an aqua ligand'))], bonds: [[0, 1], [0, 2]], q: 0 },
-  Cl: { label: 'Cl', atoms: [T('Cl', 0, 0, 'chloride ligand (Cl)')], bonds: [], q: -1 },
-  F: { label: 'F', atoms: [T('F', 0, 0, 'fluoride ligand (F)')], bonds: [], q: -1 },
-  O: { label: 'O', atoms: [T('O', 0, 0, 'oxo ligand (O)')], bonds: [], q: -2 },
-  CN: { label: 'CN', atoms: [T('C', 0, 0, 'cyanide ligand: carbon (C), the donor atom'), T('N', 1.16, 0, 'nitrogen (N) of a cyanide ligand')], bonds: [[0, 1]], q: -1 },
-  CO: { label: 'CO', atoms: [T('C', 0, 0, 'carbonyl ligand: carbon (C), the donor atom'), T('O', 1.13, 0, 'oxygen (O) of a carbonyl ligand')], bonds: [[0, 1]], q: 0 },
-  en: { label: 'en', atoms: [T('N', 0, 0, 'ethylenediamine (en): nitrogen (N), a donor atom')], bonds: [], q: 0 },
+  NH3: { label: 'NH₃', atoms: [T('N', 0, 0, '氨配体：氮（N），配位原子'), ...[0, 120, 240].map((az) => T('H', 1.01 * Math.cos(70.5 * RAD), [1.01 * Math.sin(70.5 * RAD), az], '氨配体的氢（H）'))], bonds: [[0, 1], [0, 2], [0, 3]], q: 0 },
+  OH2: { label: 'H₂O', atoms: [T('O', 0, 0, '水配体：氧（O），配位原子'), ...[0, 180].map((az) => T('H', 0.96 * Math.cos(52 * RAD), [0.96 * Math.sin(52 * RAD), az], '水配体的氢（H）'))], bonds: [[0, 1], [0, 2]], q: 0 },
+  Cl: { label: 'Cl', atoms: [T('Cl', 0, 0, '氯离子配体（Cl）')], bonds: [], q: -1 },
+  F: { label: 'F', atoms: [T('F', 0, 0, '氟离子配体（F）')], bonds: [], q: -1 },
+  O: { label: 'O', atoms: [T('O', 0, 0, '氧配体（O）')], bonds: [], q: -2 },
+  CN: { label: 'CN', atoms: [T('C', 0, 0, '氰根配体：碳（C），配位原子'), T('N', 1.16, 0, '氰根配体的氮（N）')], bonds: [[0, 1]], q: -1 },
+  CO: { label: 'CO', atoms: [T('C', 0, 0, '羰基配体：碳（C），配位原子'), T('O', 1.13, 0, '羰基配体的氧（O）')], bonds: [[0, 1]], q: 0 },
+  en: { label: 'en', atoms: [T('N', 0, 0, '乙二胺（en）：氮（N），一个配位原子')], bonds: [], q: 0 },
 };
 /* the atoms of one ligand at donor direction d, distance r Å, scale K */
 function ligandAtoms(type, d, r, K) {
@@ -79,13 +79,13 @@ function ligandAtoms(type, d, r, K) {
 /* the two CH₂ carbons of an en ring closing sites i and j */
 function enCarbons(a, b, r, K) {
   const ca = V.add(V.mul(a, r), V.mul(V.unit(V.add(b, V.mul(a, 0.3))), 1.48)), cb = V.add(V.mul(b, r), V.mul(V.unit(V.add(a, V.mul(b, 0.3))), 1.48));
-  return [ca, cb].map((p) => ({ sym: 'C', p: V.mul(p, K), name: 'ethylenediamine (en): carbon (C) of a CH₂ group' }));
+  return [ca, cb].map((p) => ({ sym: 'C', p: V.mul(p, K), name: '乙二胺（en）：CH₂ 基团的碳（C）' }));
 }
 
 /* A complex as slots: sites [{d, type, r}] (a slot may be null) and en bridges [[i, j]]. Two states blend at k:
    a ligand in both swings to its new corner, one only in the old shrinks into the metal, one only in the new grows out of it. */
 function blend(A, B, k, K, at = [0, 0, 0], extra = {}) {
-  const atoms = [{ sym: B.metal, from: A.metal, p: at, a: 1, name: METAL[k < 0.5 ? A.metal : B.metal] + ` (${k < 0.5 ? A.metal : B.metal})`, ...extra }];
+  const atoms = [{ sym: B.metal, from: A.metal, p: at, a: 1, name: METAL[k < 0.5 ? A.metal : B.metal] + `（${k < 0.5 ? A.metal : B.metal}）`, ...extra }];
   const bonds = [], donors = [];
   const n = Math.max(A.sites.length, B.sites.length);
   for (let s = 0; s < n; s++) {
@@ -123,7 +123,7 @@ function arcPts(a, b, R, m) {
   for (let i = 0; i <= 32; i++) { const t = i / 32; pts.push(V.mul(opp ? V.add(V.mul(a, Math.cos(Math.PI * t)), V.mul(m, Math.sin(Math.PI * t))) : slerp(a, b, t), R)); }
   return { pts, mid: V.mul(opp ? m : V.unit(V.add(a, b)), R + 0.22) };
 }
-const FREE = { spin: 'idle', views: [{ label: 'front', yaw: 0.35, pitch: 0.22 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] };
+const FREE = { spin: 'idle', views: [{ label: '正视', yaw: 0.35, pitch: 0.22 }, { label: '沿轴向下看', yaw: 0, pitch: Math.PI / 2 }] };
 const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]];
 
 /* =====================================================================
@@ -138,19 +138,21 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
   const K = 0.62;
   const eq = (n, off = 90) => Array.from({ length: n }, (_, i) => dirOf(90, off + (360 / n) * i));
   const GEOM = {
-    linear: { name: 'linear', dirs: [[0, 1, 0], [0, -1, 0]], edge: 0 },
-    trigonal: { name: 'trigonal planar', dirs: [90, 210, 330].map((a) => [Math.cos(a * RAD), Math.sin(a * RAD), 0]), edge: 1.8 },
-    tetrahedral: { name: 'tetrahedral', dirs: [[0, 1, 0], ...[90, 210, 330].map((az) => dirOf(109.47, az))], edge: 1.7, arc: [0, 1, '109.5°'] },
-    square: { name: 'square planar', dirs: [[0, 1, 0], [1, 0, 0], [0, -1, 0], [-1, 0, 0]], edge: 1.5, arc: [0, 1, '90°'] },
-    tbp: { name: 'trigonal bipyramidal', dirs: [[0, 1, 0], [0, -1, 0], ...eq(3)], edge: 1.8 },
-    spy: { name: 'square pyramidal', dirs: [[0, 1, 0], ...[0, 90, 180, 270].map((az) => dirOf(104, az))], edge: 1.7 },
-    octahedral: { name: 'octahedral', dirs: OCT, edge: 1.5, arc: [0, 2, '90°'] },
-    pbp: { name: 'pentagonal bipyramid', dirs: [[0, 1, 0], [0, -1, 0], ...eq(5)], edge: 1.5 },
-    sap: { name: 'square antiprism', dirs: [...[45, 135, 225, 315].map((az) => dirOf(59.27, az)), ...[0, 90, 180, 270].map((az) => dirOf(120.73, az))], edge: 1.4 },
-    dodec: { name: 'dodecahedron', dirs: [dirOf(36.85, 0), dirOf(36.85, 180), dirOf(143.15, 90), dirOf(143.15, 270), dirOf(69.46, 90), dirOf(69.46, 270), dirOf(110.54, 0), dirOf(110.54, 180)], edge: 1.55 },
+    linear: { name: '直线形', dirs: [[0, 1, 0], [0, -1, 0]], edge: 0 },
+    trigonal: { name: '平面三角形', dirs: [90, 210, 330].map((a) => [Math.cos(a * RAD), Math.sin(a * RAD), 0]), edge: 1.8 },
+    tetrahedral: { name: '四面体形', dirs: [[0, 1, 0], ...[90, 210, 330].map((az) => dirOf(109.47, az))], edge: 1.7, arc: [0, 1, '109.5°'] },
+    square: { name: '平面正方形', dirs: [[0, 1, 0], [1, 0, 0], [0, -1, 0], [-1, 0, 0]], edge: 1.5, arc: [0, 1, '90°'] },
+    tbp: { name: '三角双锥形', dirs: [[0, 1, 0], [0, -1, 0], ...eq(3)], edge: 1.8 },
+    spy: { name: '四方锥形', dirs: [[0, 1, 0], ...[0, 90, 180, 270].map((az) => dirOf(104, az))], edge: 1.7 },
+    octahedral: { name: '八面体形', dirs: OCT, edge: 1.5, arc: [0, 2, '90°'] },
+    pbp: { name: '五角双锥形', dirs: [[0, 1, 0], [0, -1, 0], ...eq(5)], edge: 1.5 },
+    sap: { name: '四方反棱柱形', dirs: [...[45, 135, 225, 315].map((az) => dirOf(59.27, az)), ...[0, 90, 180, 270].map((az) => dirOf(120.73, az))], edge: 1.4 },
+    dodec: { name: '十二面体形', dirs: [dirOf(36.85, 0), dirOf(36.85, 180), dirOf(143.15, 90), dirOf(143.15, 270), dirOf(69.46, 90), dirOf(69.46, 270), dirOf(110.54, 0), dirOf(110.54, 180)], edge: 1.55 },
   };
   Object.values(GEOM).forEach((G) => { G.edges = []; G.dirs.forEach((a, i) => G.dirs.forEach((b, j) => { if (j > i && V.len(V.sub(a, b)) < G.edge) G.edges.push([i, j]); })); });
-  const NUM = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
+  const NUM = ['', '一', '二', '三', '四', '五', '六', '七', '八'];
+  /* a count of things takes 两 for 二; a coordination number stays 二 */
+  const CNT = (n) => NUM[n].replace('二', '两');
   /* [id, option label, metal, geometry, ligands by site (type or [type, r]), M–L distance Å, ion charge, headline, en bridges] */
   const ROWS = [
     ['ag', '[Ag(NH₃)₂]⁺', 'Ag', 'linear', 'NH3', 2.1, 1],
@@ -178,7 +180,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     vocn4: `[${E('VO')}(${E('CN')})_4]^{2-}`, coh2o6: `[${E('Co')}(${E('H')}_2${E('O')})_6]^{2+}`, cren3: `[${E('Cr')}(${E('en')})_3]^{3+}`, ptcl6: `[${E('PtCl')}_6]^{2-}`,
     cocl6: `[${E('CoCl')}_6]^{3-}`, zrf7: `[${E('ZrF')}_7]^{3-}`, ref8: `[${E('ReF')}_8]^{2-}`, mocn8: `[${E('Mo')}(${E('CN')})_8]^{4-}`,
   };
-  const LIGNAME = { NH3: 'ammine', OH2: 'aqua', Cl: 'chloride', F: 'fluoride', O: 'oxo', CN: 'cyanide', CO: 'carbonyl', en: 'en' };
+  const LIGNAME = { NH3: '氨', OH2: '水', Cl: '氯离子', F: '氟离子', O: '氧', CN: '氰根', CO: '羰基', en: 'en' };
   const C = {};
   ROWS.forEach(([id, label, metal, geom, lig, r, q, bridges]) => {
     const G = GEOM[geom];
@@ -190,15 +192,15 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     const termTex = terms.map((t, i) => `\\mk{t${i}}{${t.n === 1 ? '' : t.n}${t.n === 1 ? signed(t.q) : '(' + signed(t.q) + ')'}}`).join(' + ');
     const tex = `\\mk{ion}{${TEXION[id]}}:\\ \\mk{q}{${signed(q)}} = ${termTex} + \\mk{x}{x},\\quad \\mk{r}{x = ${signed(x)}}`;
     const cn = G.dirs.length;
-    const what = bridges ? `three bidentate en ligands place ${NUM[cn]} nitrogen donor atoms`
-      : kinds.length > 1 ? `${kinds.map((t) => `${NUM[sites.filter((s) => s.type === t).length]} ${LIGNAME[t]}`).join(' and ')} ligands place ${NUM[cn]} donor atoms`
-      : `${NUM[cn]} ${LIGNAME[kinds[0]]} ligands place their donor atoms`;
-    const shape = { linear: 'in a line on either side of the metal', trigonal: 'at the corners of a triangle', tetrahedral: 'at the corners of a tetrahedron', square: 'at the corners of a square', tbp: 'at the corners of a trigonal bipyramid', spy: 'at the corners of a square pyramid', octahedral: 'at the corners of an octahedron', pbp: 'at the corners of a pentagonal bipyramid', sap: 'at the corners of a square antiprism', dodec: 'at the corners of a dodecahedron' }[geom];
-    const head = `In ${label} ${what} ${shape}: the coordination number is ${NUM[cn]}${label.startsWith('K₂') ? ', and the potassium ions lie outside the coordination sphere' : ''}.`;
-    const note = { tetrahedral: 'Each pair of ligands forms an angle of $\\htmlClass{kv-angle}{109.5^\\circ}$.', square: 'Each ligand has two others at $\\htmlClass{kv-angle}{90^\\circ}$, the cis positions, and one at $\\htmlClass{kv-angle}{180^\\circ}$, the trans position.', octahedral: 'Adjacent donor atoms are $\\htmlClass{kv-angle}{90^\\circ}$ apart about the central atom.' }[geom] || '';
+    const what = bridges ? `三个双齿 en 配体将${CNT(cn)}个氮配位原子置于`
+      : kinds.length > 1 ? `${kinds.map((t) => `${CNT(sites.filter((s) => s.type === t).length)}个${LIGNAME[t]}`).join('和')}配体将${CNT(cn)}个配位原子置于`
+      : `${CNT(cn)}个${LIGNAME[kinds[0]]}配体将其配位原子置于`;
+    const shape = { linear: '金属两侧的一条直线上', trigonal: '三角形的顶点上', tetrahedral: '四面体的顶点上', square: '正方形的顶点上', tbp: '三角双锥的顶点上', spy: '四方锥的顶点上', octahedral: '八面体的顶点上', pbp: '五角双锥的顶点上', sap: '四方反棱柱的顶点上', dodec: '十二面体的顶点上' }[geom];
+    const head = `在 ${label} 中，${what}${shape}：配位数为${NUM[cn]}${label.startsWith('K₂') ? '，钾离子位于配位层之外' : ''}。`;
+    const note = { tetrahedral: '每一对配体形成 $\\htmlClass{kv-angle}{109.5^\\circ}$ 的夹角。', square: '每个配体与另外两个配体成 $\\htmlClass{kv-angle}{90^\\circ}$ 角，即顺式位置，与另一个配体成 $\\htmlClass{kv-angle}{180^\\circ}$ 角，即反式位置。', octahedral: '相邻的配位原子在中心原子周围相隔 $\\htmlClass{kv-angle}{90^\\circ}$。' }[geom] || '';
     C[id] = { id, label, metal, geom, sites, bridges: bridges || [], tex, terms: terms.length, head, note, kinds };
   });
-  const pick = F.select(d.controls, { label: '\\text{complex}', aria: 'the complex', options: ROWS.map(([id, label, , geom]) => ({ value: id, label: `${label} · ${GEOM[geom].name}` })), value: 'coh2o6' });
+  const pick = F.select(d.controls, { label: '\\text{配合物}', aria: '配合物', options: ROWS.map(([id, label, , geom]) => ({ value: id, label: `${label} · ${GEOM[geom].name}` })), value: 'coh2o6' });
   const ro = F.readout(d);
   function draw() {
     const k = pick.k, A = C[pick.from], B = C[pick.value];
@@ -239,7 +241,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
 ===================================================================== */
 (function () {
   const d = sim('sim-cis-trans');
-  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'front', yaw: 0.35, pitch: 0.22 }, { label: 'from above', yaw: 0, pitch: Math.PI / 2 }], h: 700, dist: 7.6 });
+  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正视', yaw: 0.35, pitch: 0.22 }, { label: '俯视', yaw: 0, pitch: Math.PI / 2 }], h: 700, dist: 7.6 });
   const g = v.part(0); g.position.y = -0.2;
   const K = 0.62;
   const [Y, Yn, X, Xn, Z, Zn] = OCT;
@@ -252,8 +254,8 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     ammine: { metal: 'Co', name: '[Co(NH₃)₄Cl₂]⁺', sites: (c) => oct('NH3', 1.97, c), colour: true, L: 'NH₃' },
     pt: { metal: 'Pt', name: '[Pt(NH₃)₂Cl₂]', sites: (c) => sq(c), colour: false, L: 'NH₃' },
   };
-  const cx = F.select(d.controls, { label: '\\text{complex}', aria: 'the complex', options: [{ value: 'aqua', label: '[Co(H₂O)₄Cl₂]⁺' }, { value: 'ammine', label: '[Co(NH₃)₄Cl₂]⁺' }, { value: 'pt', label: '[Pt(NH₃)₂Cl₂]' }], value: 'aqua' });
-  const iso = F.choice(d.controls, { label: '\\text{isomer}', aria: 'the isomer', options: [{ value: 'cis', label: 'cis' }, { value: 'trans', label: 'trans' }], value: 'cis' });
+  const cx = F.select(d.controls, { label: '\\text{配合物}', aria: '配合物', options: [{ value: 'aqua', label: '[Co(H₂O)₄Cl₂]⁺' }, { value: 'ammine', label: '[Co(NH₃)₄Cl₂]⁺' }, { value: 'pt', label: '[Pt(NH₃)₂Cl₂]' }], value: 'aqua' });
+  const iso = F.choice(d.controls, { label: '\\text{异构体}', aria: '异构体', options: [{ value: 'cis', label: '顺式' }, { value: 'trans', label: '反式' }], value: 'cis' });
   const ro = F.readout(d);
   const state = (c, i) => ({ metal: CPX[c].metal, sites: CPX[c].sites(i === 'cis'), bridges: [] });
   const swatch = (hex) => `<span style="display:inline-block;width:0.8em;height:0.8em;border-radius:2px;margin:0 0.15em;vertical-align:-0.05em;background:${F.fact(hex)}"></span>`;
@@ -274,10 +276,10 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     v.label(M, [0, 0, 0], g, -38);
     v.label('Cl', V.mul(donors[2].d, (donors[2].r + 0.85) * K), g, 0);
     v.label(P.L, V.mul(donors[3].d, (donors[3].r + 1.3) * K), g, 0);
-    const colour = P.colour ? (cis ? `, which is violet${swatch(VIOLET)}` : `, which is green${swatch(GREEN)}`) : '';
-    v.headline(cis ? `In <i>cis</i>-${P.name}${colour}, the two chloride ligands are adjacent.` : `In <i>trans</i>-${P.name}${colour}, the two chloride ligands are directly across from one another.`);
+    const colour = P.colour ? (cis ? `（紫色${swatch(VIOLET)}）` : `（绿色${swatch(GREEN)}）`) : '';
+    v.headline(cis ? `在<i>顺</i>-${P.name}${colour}中，两个氯离子配体彼此相邻。` : `在<i>反</i>-${P.name}${colour}中，两个氯离子配体彼此正好相对。`);
     ro.set(`\\htmlClass{kv-angle}{\\angle\\text{Cl–${M}–Cl}} = ${cis ? 90 : 180}^\\circ`,
-      cis ? `The two ${M}–Cl bond dipoles lie on one side of the metal and do not cancel: the ${M === 'Pt' ? 'molecule' : 'ion'} is polar.` : `Each ligand is directly across from an identical ligand, so the bond dipoles cancel: the ${M === 'Pt' ? 'molecule' : 'ion'} is nonpolar.`);
+      cis ? `两个 ${M}–Cl 键偶极矩位于金属的同一侧，不能抵消：该${M === 'Pt' ? '分子' : '离子'}有极性。` : `每个配体都正好与一个相同的配体相对，所以键偶极矩相互抵消：该${M === 'Pt' ? '分子' : '离子'}无极性。`);
   }
   still(d, draw);
 })();
@@ -289,14 +291,14 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
 ===================================================================== */
 (function () {
   const d = sim('sim-optical-isomers');
-  const v = F.view3d(d.stage, { spin: 'off', tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.3 }, { label: 'from above', yaw: 0, pitch: Math.PI / 2 }], h: 700, dist: 9.6 });
+  const v = F.view3d(d.stage, { spin: 'off', tilt: 0.3, views: [{ label: '正视', yaw: 0, pitch: 0.3 }, { label: '俯视', yaw: 0, pitch: Math.PI / 2 }], h: 700, dist: 9.6 });
   const g = v.part(0); g.position.y = -0.2;
   const K = 0.5, D = 3.7 * K;
   const site = (i, type, r) => ({ d: OCT[i], type, r });
   const CPX = {
     en3: { metal: 'M', name: '[M(en)₃]ⁿ⁺', sites: [0, 1, 2, 3, 4, 5].map((i) => site(i, 'en', 2.1)), bridges: [[0, 2], [1, 4], [3, 5]] },
-    cis: { metal: 'Co', name: '<i>cis</i>-[Co(en)₂Cl₂]⁺', sites: [0, 1, 2, 3, 4, 5].map((i) => (i === 0 || i === 2 ? site(i, 'Cl', 2.3) : site(i, 'en', 2.0))), bridges: [[1, 4], [3, 5]] },
-    trans: { metal: 'Co', name: '<i>trans</i>-[Co(en)₂Cl₂]⁺', sites: [0, 1, 2, 3, 4, 5].map((i) => (i < 2 ? site(i, 'Cl', 2.3) : site(i, 'en', 2.0))), bridges: [[2, 4], [3, 5]] },
+    cis: { metal: 'Co', name: '<i>顺</i>-[Co(en)₂Cl₂]⁺', sites: [0, 1, 2, 3, 4, 5].map((i) => (i === 0 || i === 2 ? site(i, 'Cl', 2.3) : site(i, 'en', 2.0))), bridges: [[1, 4], [3, 5]] },
+    trans: { metal: 'Co', name: '<i>反</i>-[Co(en)₂Cl₂]⁺', sites: [0, 1, 2, 3, 4, 5].map((i) => (i < 2 ? site(i, 'Cl', 2.3) : site(i, 'en', 2.0))), bridges: [[2, 4], [3, 5]] },
   };
   /* the 24 rotations of the octahedron as axis and angle */
   const ROTS = [[[0, 1, 0], 0]];
@@ -315,8 +317,8 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     });
     Object.assign(c, { S, best, total: orig.length });
   });
-  const cx = F.select(d.controls, { label: '\\text{complex}', aria: 'the complex', options: [{ value: 'en3', label: '[M(en)₃]ⁿ⁺' }, { value: 'cis', label: 'cis-[Co(en)₂Cl₂]⁺' }, { value: 'trans', label: 'trans-[Co(en)₂Cl₂]⁺' }], value: 'en3' });
-  const arr = F.choice(d.controls, { label: '\\text{arrangement}', aria: 'the arrangement', options: [{ value: 'mirror', label: 'mirror images' }, { value: 'over', label: 'laid over' }], value: 'mirror' });
+  const cx = F.select(d.controls, { label: '\\text{配合物}', aria: '配合物', options: [{ value: 'en3', label: '[M(en)₃]ⁿ⁺' }, { value: 'cis', label: '顺-[Co(en)₂Cl₂]⁺' }, { value: 'trans', label: '反-[Co(en)₂Cl₂]⁺' }], value: 'en3' });
+  const arr = F.choice(d.controls, { label: '\\text{排布}', aria: '排布', options: [{ value: 'mirror', label: '镜像对' }, { value: 'over', label: '叠合' }], value: 'mirror' });
   const ro = F.readout(d);
   function draw() {
     const k = cx.k, A = CPX[cx.from], B = CPX[cx.value];
@@ -324,7 +326,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     const { n, a } = B.best;
     const left = blend(A.S, B.S, k, K, [-D * (1 - t), 0, 0]);
     const right = blend(A.S, B.S, k, K, [0, 0, 0], { ghost: true, s: 1 + 0.06 * t });
-    right.atoms.forEach((x) => { x.p = V.add(rot(mirror(x.p), n, a * t), [D * (1 - t), 0, 0]); x.name = 'mirror image: ' + x.name; });
+    right.atoms.forEach((x) => { x.p = V.add(rot(mirror(x.p), n, a * t), [D * (1 - t), 0, 0]); x.name = '镜像：' + x.name; });
     const off = left.atoms.length;
     const atoms = [...left.atoms, ...right.atoms], bonds = [...left.bonds, ...right.bonds.map((b) => ({ ...b, i: b.i + off, j: b.j + off }))];
     v.clear();
@@ -332,7 +334,7 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     if (t < 0.99) {
       const h = 2.9 * K, l = polyline(g, [[0, h, h], [0, h, -h], [0, -h, -h], [0, -h, h], [0, h, h]], PAL.muted);
       l.material.transparent = true; l.material.opacity = 1 - t;
-      plain(v.label('mirror', [0, -h, 0], g, -22), 1 - t);
+      plain(v.label('镜面', [0, -h, 0], g, -22), 1 - t);
     }
     const S = k < 0.5 ? A : B;
     v.label(S.metal, left.atoms[0].p, g, -34);
@@ -342,9 +344,9 @@ const OCT = [[0, 1, 0], [0, -1, 0], [1, 0, 0], [-1, 0, 0], [0, 0, 1], [0, 0, -1]
     if (cs.length) v.label('en', cs[0].p, g, -22);
     const over = arr.value === 'over', miss = B.best.miss;
     v.headline(over
-      ? (miss ? `Turned to its best fit, the mirror image of ${B.name} still leaves ${miss} atoms where the original has none: the two are optical isomers.` : `Turned to fit, the mirror image of ${B.name} lands atom for atom on the original: it is the same ion, with no optical isomer.`)
-      : `${B.name} stands beside its mirror image, reflected in the plane between them.`);
-    ro.set(`\\text{atoms of the image without a twin} = ${miss}\\ \\text{of}\\ ${B.total}`);
+      ? (miss ? `将 ${B.name} 的镜像转到最吻合的位置后，仍有 ${miss} 个原子处在原物没有原子的地方：二者是旋光异构体。` : `将 ${B.name} 的镜像转到吻合的位置后，与原物逐个原子重合：它是同一种离子，没有旋光异构体。`)
+      : `${B.name} 与它的镜像并排而立，二者以它们之间的平面互为反射。`);
+    ro.set(`\\text{像中没有对应原子的原子数} = ${miss}\\ \\text{（共}\\ ${B.total}\\ \\text{个原子）}`);
   }
   still(d, draw);
 })();

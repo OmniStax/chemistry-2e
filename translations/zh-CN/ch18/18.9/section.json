@@ -7,7 +7,7 @@
  "lead": "氧是地壳中含量最丰富的元素，从液态空气中分离得到，几乎能与所有元素反应。本节讨论<span data-concept=\"ozone\">臭氧</span>，主族金属的<span data-concept=\"oxide\">氧化物</span>、<span data-concept=\"peroxide\">过氧化物</span>、<span data-concept=\"superoxide\">超氧化物</span>和<span data-concept=\"hydroxide\">氢氧化物</span>，以及<span data-concept=\"chlor-alkali-process\">氯碱工艺</span>；还有氮、磷、硫和卤素的非金属氧化物和<span data-concept=\"oxyacid\">含氧酸</span>及其<span data-concept=\"salt\">盐</span>。",
  "objectives": [
   "描述氧的性质、制备和化合物",
-  "描述一些典型金属氧化物、过氧化物和氢氧化物的制备、性质和用途"
+  "描述一些主族金属的氧化物、过氧化物和氢氧化物的制备、性质和用途"
  ],
  "summary_html": "<p>氧是反应性最强的元素之一。这种反应性加上它的丰度，使氧的化学非常丰富，而且为人们所深入了解。</p><p>主族金属与氧形成的化合物分为三类：（1）<span data-concept=\"oxide\">氧化物</span>，（2）<span data-concept=\"peroxide\">过氧化物</span>和<span data-concept=\"superoxide\">超氧化物</span>，以及（3）<span data-concept=\"hydroxide\">氢氧化物</span>。加热相应的氢氧化物、<span data-concept=\"nitrate\">硝酸盐</span>或<span data-concept=\"carbonate\">碳酸盐</span>是制备氧化物最常用的方法。在氧中加热金属或金属氧化物，可能生成过氧化物和超氧化物。可溶性氧化物溶于水形成氢氧化物溶液。大多数金属氧化物是<span data-concept=\"base-anhydride\">碱酐</span>，能与<span data-concept=\"acid\">酸</span>反应。主族金属的氢氧化物与酸发生<span data-concept=\"acid-base-reaction\">酸碱反应</span>，生成<span data-concept=\"salt\">盐</span>和水。氢氧化物有许多商业用途。</p><p>除氟之外，所有非金属都形成多种氧化物。几乎所有非金属氧化物都是<span data-concept=\"acid-anhydride\">酸酐</span>。<span data-concept=\"oxyacid-structure-and-strength\">含氧酸的酸性要求氢原子与分子中的氧原子键合，而不是与另一个非金属原子键合</span>。一般来说，含氧酸的强度随着与非金属原子键合、而不与氢键合的氧原子数目的增加而增强。</p>",
  "notes": "关于金溶于王水的“学习链接”视频已省略。本节保留了原书印刷的“2HCL”、未配平的 Na₂O(s) + H₂O(l) ⟶ NaOH(aq)、“Tl₂O(s) + H₂O(aq)”、“peroxides ions”、“a bond order of 1½”之后的逗号、“tin(IV), SnO₂, and lead(IV), PbO₂”、“few second- and third-row transition metals”、“The process known as the chlor-alkali process, utilizes”、“Nitrogen pentaoxide”、把亚磷酸氢根称作“hydrogen phosphate ion, HPO₃²⁻”、HSO₄⁻ 和 H₂SO₃ 第一步电离均为 K<sub>a</sub> = 1.2 × 10⁻²、“2+-oxidation state”、“7+-oxidation state”、H₂S 之后下标处的逗号、摘要中的“Most metals oxides”以及答案中的“the oxygen electron”。",
@@ -35,7 +35,7 @@
  },
  "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom 层级和概念标签由 AI 生成。答案取自原书的答案册。没有答案的习题 fs-idp152584704、fs-idm11343008、fs-idm41302384 和 fs-idm53754112（写方程式）以及 fs-idm95780080（中和一定质量碳酸钙所需硫酸的体积）已省略，也没有为它们计算答案。未作任何移动。",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案。没有答案的习题 fs-idp152584704、fs-idm11343008、fs-idm41302384 和 fs-idm53754112（写方程式）以及 fs-idm95780080（中和一定质量碳酸钙所需硫酸的体积）已省略，也没有为它们计算答案。未作任何移动。",
  "figures": [
   {
    "id": "fig-ozone",
@@ -284,7 +284,7 @@
     "/media/ch18/CNX_Chem_18_09_ClO3Ion.jpg",
     "/media/ch18/CNX_Chem_18_09_PerchloIon.jpg"
    ],
-   "original_caption": "（Figure 18.55）亚氯酸与碱反应时生成亚氯酸根离子 ClO₂⁻。（Figure 18.56）卤酸与碱反应时生成氯酸根离子 ClO₃⁻。（Figure 18.57）高氯酸与碱反应，或电解其氯化物的热溶液时，可以生成高氯酸根离子 ClO₄⁻。",
+   "original_caption": "（图 18.55）亚氯酸与碱反应时生成亚氯酸根离子 ClO₂⁻。（图 18.56）卤酸与碱反应时生成氯酸根离子 ClO₃⁻。（图 18.57）高氯酸与碱反应，或电解其氯化物的热溶液时，可以生成高氯酸根离子 ClO₄⁻。",
    "draws": [
     "equilibrium-constant"
    ],
@@ -941,7 +941,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $\\text{2Zn}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{2ZnO}(s);$ (b) ${\\text{ZnCO}}_{3}(s)\\;\\longrightarrow \\;\\text{ZnO}(s)+{\\text{CO}}_{2}(g);$ (c) ${\\text{ZnCO}}_{3}(s)+2{\\text{CH}}_{3}\\text{COOH}(aq)\\;\\longrightarrow \\;\\text{Zn}{({\\text{CH}}_{3}\\text{COO})}_{2}(aq)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l);$ (d) $\\text{Zn}(s)+\\text{2HBr}(aq)\\;\\longrightarrow \\;{\\text{ZnBr}}_{2}(aq)+{\\text{H}}_{2}(g)$"
+    "solution": "（a）$\\text{2Zn}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;\\text{2ZnO}(s);$ （b）${\\text{ZnCO}}_{3}(s)\\;\\longrightarrow \\;\\text{ZnO}(s)+{\\text{CO}}_{2}(g);$ （c）${\\text{ZnCO}}_{3}(s)+2{\\text{CH}}_{3}\\text{COOH}(aq)\\;\\longrightarrow \\;\\text{Zn}{({\\text{CH}}_{3}\\text{COO})}_{2}(aq)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l);$ （d）$\\text{Zn}(s)+\\text{2HBr}(aq)\\;\\longrightarrow \\;{\\text{ZnBr}}_{2}(aq)+{\\text{H}}_{2}(g)$"
    }
   },
   {
@@ -975,7 +975,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${\\text{Na}}_{2}\\text{O}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2NaOH}(aq);$ (b) ${\\text{Cs}}_{2}{\\text{CO}}_{3}(s)+\\text{2HF}(aq)\\;\\longrightarrow \\;\\text{2CsF}(aq)+\\;{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l);$ (c) ${\\text{Al}}_{2}{\\text{O}}_{3}(s)+6{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;\\text{2Al}{({\\text{ClO}}_{4})}_{3}(aq)+3{\\text{H}}_{2}\\text{O}(l);$ (d) ${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+\\text{Ba}{({\\text{NO}}_{3})}_{2}(aq)\\;\\longrightarrow \\;2{\\text{NaNO}}_{3}(aq)+{\\text{BaCO}}_{3}(s);$ (e) ${\\text{TiCl}}_{4}(l)+\\text{4Na}(s)\\;\\longrightarrow \\;\\text{Ti}(s)+\\text{4NaCl}(s)$"
+    "solution": "（a）${\\text{Na}}_{2}\\text{O}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2NaOH}(aq);$ （b）${\\text{Cs}}_{2}{\\text{CO}}_{3}(s)+\\text{2HF}(aq)\\;\\longrightarrow \\;\\text{2CsF}(aq)+\\;{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l);$ （c）${\\text{Al}}_{2}{\\text{O}}_{3}(s)+6{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;\\text{2Al}{({\\text{ClO}}_{4})}_{3}(aq)+3{\\text{H}}_{2}\\text{O}(l);$ （d）${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+\\text{Ba}{({\\text{NO}}_{3})}_{2}(aq)\\;\\longrightarrow \\;2{\\text{NaNO}}_{3}(aq)+{\\text{BaCO}}_{3}(s);$ （e）${\\text{TiCl}}_{4}(l)+\\text{4Na}(s)\\;\\longrightarrow \\;\\text{Ti}(s)+\\text{4NaCl}(s)$"
    }
   },
   {

@@ -20,7 +20,7 @@ function parts(x, s) {
 const sciTex = (x, s) => { const p = parts(x, s); return p.e ? `${p.m}\\times 10^{${p.e}}` : p.m; };
 const sciTxt = (x, s) => { const p = parts(x, s); return p.e ? `${p.m} × 10${String(p.e).split('').map((c) => SUP[c]).join('')}` : p.m; };
 
-const NAME = { H: 'hydrogen atom', C: 'carbon atom', O: 'oxygen atom', Cl: 'chlorine atom', Na: 'sodium atom' };
+const NAME = { H: '氢原子', C: '碳原子', O: '氧原子', Cl: '氯原子', Na: '钠原子' };
 /* an atom as a disc in its element's colour; hydrogen is light and takes an ink outline so that it reads on a light page */
 function atom(ctx, x, y, sym, r) {
   ctx.save(); ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fillStyle = F.el(sym); ctx.fill();
@@ -48,30 +48,30 @@ function bond(ctx, a, b, order) {
   for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) for (let k = -1; k <= 1; k++) GRID.push([(i + j + k + 3) % 2 ? 'Cl' : 'Na', i * S, j * S, k * S]);
   const CMP = {
     chloroform: {
-      name: 'chloroform', uni: 'CHCl₃', ionic: false, word: 'molecular mass', total: '119.37',
+      name: '氯仿', uni: 'CHCl₃', ionic: false, word: '分子质量', total: '119.37',
       rows: [['C', 1, '12.01', '12.01'], ['H', 1, '1.008', '1.008'], ['Cl', 3, '35.45', '106.35']],
       A: [['Cl', -0.82, 1.47, -0.44], ['C', 0, 0, 0.12], ['Cl', -0.89, -1.44, -0.41], ['Cl', 1.67, -0.04, -0.48], ['H', 0.03, 0.01, 1.21]],
       F: [[-0.94, 0.42], [0, 0], [0.94, 0.42], [0, 1.02], [0, -1]], B: [[0, 1, 1], [1, 2, 1], [1, 3, 1], [1, 4, 1]], scale: 2.0,
-      head: 'A chloroform molecule, CHCl₃, has a molecular mass of 119.37 amu.',
+      head: '一个氯仿分子 CHCl₃ 的分子质量为 119.37 amu。',
     },
     aspirin: {
-      name: 'aspirin', uni: 'C₉H₈O₄', ionic: false, word: 'molecular mass', total: '180.15',
+      name: '阿司匹林', uni: 'C₉H₈O₄', ionic: false, word: '分子质量', total: '180.15',
       rows: [['C', 9, '12.01', '108.09'], ['H', 8, '1.008', '8.064'], ['O', 4, '16.00', '64.00']],
       A: ASP_A, F: ASP_F, B: ASP_B, scale: 1.0,
-      head: 'An aspirin molecule, C₉H₈O₄, has a molecular mass of 180.15 amu.',
+      head: '一个阿司匹林分子 C₉H₈O₄ 的分子质量为 180.15 amu。',
     },
     salt: {
-      name: 'sodium chloride', uni: 'NaCl', ionic: true, word: 'formula mass', total: '58.44',
+      name: '氯化钠', uni: 'NaCl', ionic: true, word: '式量', total: '58.44',
       rows: [['Na', 1, '22.99', '22.99'], ['Cl', 1, '35.45', '35.45']],
       A: GRID, scale: 0.75,
-      head: 'Sodium chloride, NaCl, has a formula mass of 58.44 amu.',
+      head: '氯化钠 NaCl 的式量为 58.44 amu。',
     },
   };
   const KEYS = Object.keys(CMP);
-  const M = F.select(d.controls, { label: '\\text{compound}', options: [{ value: 'chloroform', label: 'chloroform' }, { value: 'aspirin', label: 'aspirin' }, { value: 'salt', label: 'sodium chloride' }], value: 'chloroform', aria: 'the compound' });
-  const Vw = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'flat drawing or three-dimensional model', ms: 0, onInput: show });
+  const M = F.select(d.controls, { label: '\\text{化合物}', options: [{ value: 'chloroform', label: '氯仿' }, { value: 'aspirin', label: '阿司匹林' }, { value: 'salt', label: '氯化钠' }], value: 'chloroform', aria: '化合物' });
+  const Vw = F.choice(d.controls, { label: '\\text{视图}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: '平面图或三维模型', ms: 0, onInput: show });
   const R2 = { H: 0.2, C: 0.27, O: 0.26, Cl: 0.34 };
-  const ION = { Na: { r: 19, mark: '+', name: 'sodium ion, Na⁺' }, Cl: { r: 33, mark: '−', name: 'chloride ion, Cl⁻' } };
+  const ION = { Na: { r: 19, mark: '+', name: '钠离子 Na⁺' }, Cl: { r: 33, mark: '−', name: '氯离子 Cl⁻' } };
   let hits = [];
   F.hover(d.stage, () => (Vw.value === '2d' ? hits : []));
 
@@ -90,7 +90,7 @@ function bond(ctx, a, b, order) {
         text(ctx, ion.mark, x + ion.r * 0.72 + 7, y - ion.r * 0.72 - 7, PAL.ink, { size: 20, weight: 600, align: 'center' });
         hits.push({ x, y, r: ion.r + 2, name: ion.name });
       }
-      text(ctx, 'one face of the crystal', cx, cy + 1.5 * s + 56, PAL.muted, { size: 17, align: 'center' });
+      text(ctx, '晶体的一个面', cx, cy + 1.5 * s + 56, PAL.muted, { size: 17, align: 'center' });
       return;
     }
     const xs = c.F.map((p) => p[0]), ys = c.F.map((p) => p[1]);
@@ -105,11 +105,11 @@ function bond(ctx, a, b, order) {
   const y0 = 150, dy = 58;
   function header(ctx) {
     {
-      text(ctx, 'Element', COL.el, y0 - 44, PAL.muted, { size: 17, align: 'center' });
-      text(ctx, 'Quantity', COL.q, y0 - 44, PAL.muted, { size: 17, align: 'center' });
-      text(ctx, 'Average atomic', COL.m, y0 - 56, PAL.muted, { size: 17, align: 'center' });
-      text(ctx, 'mass (amu)', COL.m, y0 - 34, PAL.muted, { size: 17, align: 'center' });
-      text(ctx, 'Subtotal (amu)', COL.sub, y0 - 44, PAL.muted, { size: 17, align: 'right' });
+      text(ctx, '元素', COL.el, y0 - 44, PAL.muted, { size: 17, align: 'center' });
+      text(ctx, '数量', COL.q, y0 - 44, PAL.muted, { size: 17, align: 'center' });
+      text(ctx, '平均原子', COL.m, y0 - 56, PAL.muted, { size: 17, align: 'center' });
+      text(ctx, '质量（amu）', COL.m, y0 - 34, PAL.muted, { size: 17, align: 'center' });
+      text(ctx, '小计（amu）', COL.sub, y0 - 44, PAL.muted, { size: 17, align: 'right' });
       line(ctx, 650, y0 - 18, 1350, y0 - 18, alpha(PAL.ink, 0.35), 2);
     }
   }
@@ -142,7 +142,7 @@ function bond(ctx, a, b, order) {
   const palSig = () => [PAL.ink, PAL.panel, PAL.muted, F.el('C'), F.el('H'), F.el('O'), F.el('Cl'), F.el('Na')].join('|');
   const RB = { H: 0.26, C: 0.38, O: 0.36, Cl: 0.5 }, RI = { Na: 0.6, Cl: 1.05 };
   function mount() {
-    v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 20, tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0 }, { label: 'top', yaw: 0, pitch: 1.45 }] });
+    v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 20, tilt: 0.3, views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '俯视', yaw: 0, pitch: 1.45 }] });
   }
   function build() {
     const s = palSig(); if (s === sig) return; sig = s;
@@ -195,24 +195,25 @@ function bond(ctx, a, b, order) {
 (function () {
   const d = sim("sim-mole-chain", 360);
   const NA = 6.022e23;
+  const SP = (t) => (/[A-Za-z0-9]$/.test(t) ? t + ' ' : t);
   const EX = {
-    potassium: { label: 'Example 3.3 · potassium', name: 'potassium', sym: 'K', tex: '\\text{K}', MM: 39.10, give: 'm', want: 'n', value: 4.7, sf: 2, unit: 'atoms', r: { min: 0.5, max: 10, step: 0.1, dec: 1, unit: 'g' },
-      head: (q) => `A sample of ${q.m} g of potassium is ${q.n} mol of K atoms.` },
-    argon: { label: 'Example 3.4 · argon', name: 'argon', sym: 'Ar', tex: '\\text{Ar}', MM: 39.95, give: 'n', want: 'm', value: 0.92, sf: 2, unit: 'atoms', r: { min: 0.1, max: 2, step: 0.01, dec: 2, unit: 'mmol' },
-      head: (q) => `Argon in the amount of ${q.n} mol has a mass of ${q.m} g.` },
-    copper: { label: 'Example 3.5 · copper', name: 'copper', sym: 'Cu', tex: '\\text{Cu}', MM: 63.55, give: 'm', want: 'N', value: 5, sf: 3, unit: 'atoms', r: { min: 0.5, max: 20, step: 0.01, dec: 2, unit: 'g' },
-      head: (q) => `A copper wire of ${q.m} g contains ${q.N} Cu atoms.` },
-    glycine: { label: 'Example 3.6 · glycine', name: 'glycine', sym: 'glycine', tex: '\\text{glycine}', MM: 75.07, give: 'm', want: 'n', value: 28.35, sf: 4, unit: 'molecules', nC: 2, r: { min: 1, max: 75, step: 0.01, dec: 2, unit: 'g' },
-      head: (q) => `A sample of ${q.m} g of glycine is ${q.n} mol of glycine molecules.` },
-    vitaminC: { label: 'Example 3.7 · vitamin C', name: 'vitamin C', sym: 'vitamin C', tex: '\\text{vitamin C}', MM: 176.124, give: 'n', want: 'm', value: 0.142, sf: 3, unit: 'molecules', nC: 6, r: { min: 0.01, max: 0.5, step: 0.001, dec: 3, unit: 'mmol' },
-      head: (q) => `Vitamin C in the amount of ${q.n} mol has a mass of ${q.m} g.` },
-    saccharin: { label: 'Example 3.8 · saccharin', name: 'saccharin', sym: 'saccharin', tex: '\\text{C}_7\\text{H}_5\\text{NO}_3\\text{S}', MM: 183.18, give: 'm', want: 'C', value: 40, sf: 3, unit: 'molecules', nC: 7, mg: true, r: { min: 1, max: 200, step: 0.1, dec: 1, unit: 'mg' },
-      head: (q) => `A packet of ${q.m} mg of saccharin holds ${q.N} molecules and ${q.C} carbon atoms.` },
+    potassium: { label: '例 3.3 · 钾', name: '钾', sym: 'K', tex: '\\text{K}', MM: 39.10, give: 'm', want: 'n', value: 4.7, sf: 2, unit: '原子', r: { min: 0.5, max: 10, step: 0.1, dec: 1, unit: 'g' },
+      head: (q) => `${q.m} g 钾相当于 ${q.n} mol K 原子。` },
+    argon: { label: '例 3.4 · 氩', name: '氩', sym: 'Ar', tex: '\\text{Ar}', MM: 39.95, give: 'n', want: 'm', value: 0.92, sf: 2, unit: '原子', r: { min: 0.1, max: 2, step: 0.01, dec: 2, unit: 'mmol' },
+      head: (q) => `物质的量为 ${q.n} mol 的氩，质量为 ${q.m} g。` },
+    copper: { label: '例 3.5 · 铜', name: '铜', sym: 'Cu', tex: '\\text{Cu}', MM: 63.55, give: 'm', want: 'N', value: 5, sf: 3, unit: '原子', r: { min: 0.5, max: 20, step: 0.01, dec: 2, unit: 'g' },
+      head: (q) => `${q.m} g 的铜线含有 ${q.N} 个 Cu 原子。` },
+    glycine: { label: '例 3.6 · 甘氨酸', name: '甘氨酸', sym: '甘氨酸', tex: '\\text{甘氨酸}', MM: 75.07, give: 'm', want: 'n', value: 28.35, sf: 4, unit: '分子', nC: 2, r: { min: 1, max: 75, step: 0.01, dec: 2, unit: 'g' },
+      head: (q) => `${q.m} g 甘氨酸相当于 ${q.n} mol 甘氨酸分子。` },
+    vitaminC: { label: '例 3.7 · 维生素 C', name: '维生素 C', sym: '维生素 C', tex: '\\text{维生素 C}', MM: 176.124, give: 'n', want: 'm', value: 0.142, sf: 3, unit: '分子', nC: 6, r: { min: 0.01, max: 0.5, step: 0.001, dec: 3, unit: 'mmol' },
+      head: (q) => `物质的量为 ${q.n} mol 的维生素 C，质量为 ${q.m} g。` },
+    saccharin: { label: '例 3.8 · 糖精', name: '糖精', sym: '糖精', tex: '\\text{C}_7\\text{H}_5\\text{NO}_3\\text{S}', MM: 183.18, give: 'm', want: 'C', value: 40, sf: 3, unit: '分子', nC: 7, mg: true, r: { min: 1, max: 200, step: 0.1, dec: 1, unit: 'mg' },
+      head: (q) => `一包 ${q.m} mg 的糖精含有 ${q.N} 个分子和 ${q.C} 个碳原子。` },
   };
-  const ex = F.select(d.controls, { label: '\\text{example}', aria: 'the worked example', value: 'potassium', options: Object.keys(EX).map((k) => ({ value: k, label: EX[k].label })), onInput: () => load() });
+  const ex = F.select(d.controls, { label: '\\text{例题}', aria: '例题', value: 'potassium', options: Object.keys(EX).map((k) => ({ value: k, label: EX[k].label })), onInput: () => load() });
   const SL = {
-    m: ctl(d.controls, { label: '\\km', cls: 'mass', min: 0.5, max: 10, step: 0.1, value: 4.7, unit: 'g', dec: 1, aria: 'mass of the sample' }),
-    n: ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.1, max: 2, step: 0.01, value: 0.92, unit: 'mmol', dec: 2, aria: 'amount of the sample in millimoles' }),
+    m: ctl(d.controls, { label: '\\km', cls: 'mass', min: 0.5, max: 10, step: 0.1, value: 4.7, unit: 'g', dec: 1, aria: '样品的质量' }),
+    n: ctl(d.controls, { label: '\\kn', cls: 'amount', min: 0.1, max: 2, step: 0.01, value: 0.92, unit: 'mmol', dec: 2, aria: '样品的物质的量，以毫摩尔计' }),
   };
   SL.n.show(false, { ms: 0 });
   let shown = 'm';
@@ -251,13 +252,13 @@ function bond(ctx, a, b, order) {
     const a = ORDER.indexOf(e.give), b = ORDER.indexOf(e.want), lo = Math.min(a, b), hi = Math.max(a, b), sgn = Math.sign(b - a);
     const dirOf = (i) => (i >= lo && i < hi ? sgn : 0);
     const nC = ex.mix((k) => (EX[k].nC ? 1 : 0));
-    factor(ctx, 0, 'molar mass', `÷ ${e.MM} g/mol`, `× ${e.MM} g/mol`, dirOf(0));
-    factor(ctx, 1, 'Avogadro’s number', '× 6.022 × 10²³/mol', '÷ 6.022 × 10²³/mol', dirOf(1));
-    F.faded(ctx, nC, [0, 0], () => factor(ctx, 2, 'carbon atoms per molecule', `× ${e.nC || ''}`, `÷ ${e.nC || ''}`, dirOf(2)));
-    box(ctx, BX[0], 'm', `mass of ${e.sym}`, `${q.m} ${e.mg ? 'mg' : 'g'}`, lo === 0);
-    box(ctx, BX[1], 'n', `moles of ${e.sym}`, `${q.n} mol`, lo <= 1 && hi >= 1);
-    box(ctx, BX[2], 'N', `${e.sym} ${e.unit}`, q.N, lo <= 2 && hi >= 2);
-    F.faded(ctx, nC, [0, 0], () => box(ctx, BX[3], 'C', 'carbon atoms', e.nC ? q.C : '', b === 3));
+    factor(ctx, 0, '摩尔质量', `÷ ${e.MM} g/mol`, `× ${e.MM} g/mol`, dirOf(0));
+    factor(ctx, 1, '阿伏加德罗常数', '× 6.022 × 10²³/mol', '÷ 6.022 × 10²³/mol', dirOf(1));
+    F.faded(ctx, nC, [0, 0], () => factor(ctx, 2, '每个分子的碳原子数', `× ${e.nC || ''}`, `÷ ${e.nC || ''}`, dirOf(2)));
+    box(ctx, BX[0], 'm', `${SP(e.sym)}的质量`, `${q.m} ${e.mg ? 'mg' : 'g'}`, lo === 0);
+    box(ctx, BX[1], 'n', `${SP(e.sym)}的物质的量`, `${q.n} mol`, lo <= 1 && hi >= 1);
+    box(ctx, BX[2], 'N', `${SP(e.sym)}${e.unit}`, q.N, lo <= 2 && hi >= 2);
+    F.faded(ctx, nC, [0, 0], () => box(ctx, BX[3], 'C', '碳原子', e.nC ? q.C : '', b === 3));
     /* the chain of factors, written with the live numbers */
     const M_ = hue('mass', `${e.MM}\\ \\text{g/mol}`);
     const mT = hue('mass', `${sciTex(val.m, s)}\\ \\text{g}`), nT = hue('amount', `${sciTex(val.n, s)}\\ \\text{mol}`);
@@ -265,8 +266,8 @@ function bond(ctx, a, b, order) {
     let f;
     if (e.give === 'm' && e.want === 'n') f = `\\kn = \\frac{\\km}{\\kMM} = \\frac{${mT}}{${M_}} = ${nT}`;
     else if (e.give === 'n' && e.want === 'm') f = `\\km = \\kn \\times \\kMM = ${nT} \\times ${M_} = ${mT}`;
-    else if (e.want === 'N') f = `N = \\frac{\\km}{\\kMM} \\times N_A = \\frac{${mT}}{${M_}} \\times ${NAt} = ${sciTex(val.N, s)}\\ \\text{${e.sym} atoms}`;
-    else f = `N_{\\text{C}} = \\frac{\\km}{\\kMM} \\times N_A \\times ${e.nC} = \\frac{${mT}}{${M_}} \\times ${NAt} \\times ${e.nC} = ${sciTex(val.C, s)}\\ \\text{C atoms}`;
+    else if (e.want === 'N') f = `N = \\frac{\\km}{\\kMM} \\times N_A = \\frac{${mT}}{${M_}} \\times ${NAt} = ${sciTex(val.N, s)}\\ \\text{${e.sym} 原子}`;
+    else f = `N_{\\text{C}} = \\frac{\\km}{\\kMM} \\times N_A \\times ${e.nC} = \\frac{${mT}}{${M_}} \\times ${NAt} \\times ${e.nC} = ${sciTex(val.C, s)}\\ \\text{C 原子}`;
     readout(d.readout, f);
   }
   register(d.fig, { update: () => {}, draw });

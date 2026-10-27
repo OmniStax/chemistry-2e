@@ -651,7 +651,7 @@
         "after": "ex-syringe"
       },
       "cite": "boyle",
-      "prompt": "图 9.13 中的气体样品在 6.5 psi 的压强下体积为 30.0 mL。请用以下方法确定气体在 11.0 psi 压强下的体积：（a）图 9.13 中的 <em>P</em>-<em>V</em> 图 （b）图 9.13 中的 1/<em>P</em> 对 <em>V</em> 图 （c）玻意耳定律方程。请评论每种方法可能的准确度。",
+      "prompt": "图 9.13 中的气体样品在 6.5 psi 的压强下体积为 30.0 mL。请用以下方法确定气体在 11.0 psi 压强下的体积：（a）图 9.13 中的 <em>P</em>-<em>V</em> 图（b）图 9.13 中的 1/<em>P</em> 对 <em>V</em> 图（c）玻意耳定律方程。请评论每种方法可能的准确度。",
       "answer": {
         "type": "number",
         "generated_by": "source",
@@ -743,7 +743,7 @@
         "at": "end"
       },
       "cite": "boyle",
-      "prompt": "叙述玻意耳定律的一种方式是：“在其他条件相同的情况下，气体的压强与其体积成反比。” （a）“成反比”一词是什么意思？（b）必须相同的“其他条件”是什么？",
+      "prompt": "叙述玻意耳定律的一种方式是：“在其他条件相同的情况下，气体的压强与其体积成反比。”（a）“成反比”一词是什么意思？（b）必须相同的“其他条件”是什么？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
@@ -759,7 +759,7 @@
         "at": "end"
       },
       "cite": "avogadro",
-      "prompt": "叙述阿伏加德罗定律的另一种方式是：“在其他条件相同的情况下，气体中的分子数与气体的体积成正比。” （a）“成正比”一词是什么意思？（b）必须相同的“其他条件”是什么？",
+      "prompt": "叙述阿伏加德罗定律的另一种方式是：“在其他条件相同的情况下，气体中的分子数与气体的体积成正比。”（a）“成正比”一词是什么意思？（b）必须相同的“其他条件”是什么？",
       "answer": {
         "type": "open",
         "generated_by": "source",
@@ -929,7 +929,7 @@
         "at": "end"
       },
       "cite": "ideal-gas-law",
-      "prompt": "在下列各种情况下，各有多少克气体？ （a）307 torr、26 °C 下的 0.100 L CO<sub>2</sub> （b）378.3 kPa、483 K 下的 8.75 L C<sub>2</sub>H<sub>4</sub> （c）0.23 torr、–54 °C 下的 221 mL Ar",
+      "prompt": "在下列各种情况下，各有多少克气体？（a）307 torr、26 °C 下的 0.100 L CO<sub>2</sub>（b）378.3 kPa、483 K 下的 8.75 L C<sub>2</sub>H<sub>4</sub>（c）0.23 torr、–54 °C 下的 221 mL Ar",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -1003,7 +1003,7 @@
         "at": "end"
       },
       "cite": "ideal-gas-law",
-      "prompt": "对于表现为理想行为的一定量气体，请画出带标注的图：（a）<em>P</em> 随 <em>V</em> 的变化 （b）<em>V</em> 随 <em>T</em> 的变化 （c）<em>P</em> 随 <em>T</em> 的变化 （d）$\\frac{1}{P}$ 随 <em>V</em> 的变化",
+      "prompt": "对于表现为理想行为的一定量气体，请画出带标注的图：（a）<em>P</em> 随 <em>V</em> 的变化（b）<em>V</em> 随 <em>T</em> 的变化（c）<em>P</em> 随 <em>T</em> 的变化（d）$\\frac{1}{P}$ 随 <em>V</em> 的变化",
       "answer": {
         "type": "open",
         "generated_by": "source",
@@ -1035,7 +1035,7 @@
         "at": "end"
       },
       "cite": "stp",
-      "prompt": "氯氟烃（如 CCl<sub>2</sub>F<sub>2</sub>）对臭氧层的消耗作用众所周知。用 CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>) 等替代品取代氯氟烃，已在很大程度上纠正了这个问题。请计算 10.0 g 这两种化合物在 STP 下各占的体积： （a）CCl<sub>2</sub>F<sub>2</sub>(<em>g</em>) （b）CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>)",
+      "prompt": "氯氟烃（如 CCl<sub>2</sub>F<sub>2</sub>）对臭氧层的消耗作用众所周知。用 CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>) 等替代品取代氯氟烃，已在很大程度上纠正了这个问题。请计算 10.0 g 这两种化合物在 STP 下各占的体积：（a）CCl<sub>2</sub>F<sub>2</sub>(<em>g</em>)（b）CH<sub>3</sub>CH<sub>2</sub>F(<em>g</em>)",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -1044,7 +1044,7 @@
             "part": "(a)",
             "value": 1.85,
             "unit": "L",
-            "hint": "用摩尔质量把 10.0 g 换算成摩尔数，再乘以标准摩尔体积 22.4 L/mol。"
+            "hint": "用摩尔质量把 10.0 g 换算成物质的量（以摩尔计），再乘以标准摩尔体积 22.4 L/mol。"
           },
           {
             "part": "(b)",

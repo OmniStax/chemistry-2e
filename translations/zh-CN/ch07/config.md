@@ -8,7 +8,7 @@ Each line is a setting and its value.
 | Source | `Chemistry 2e` ch07, every page it lists |
 | Language | zh-CN |
 | Translator | claude-sonnet-5-5, medium effort |
-| Terminology | `glossary.zh-CN.json`, read before the first sentence; the 239 terms of this chapter are in `glossary-ch07.json` |
+| Terminology | `glossary.zh-CN.json`, read before the first sentence; the terms of this chapter are in `glossary-ch07.json` |
 | Fidelity | the source's tone, sentences and content; nothing added or removed except the forced scenarios below |
 | Humanizer review | deferred to the owner |
 
@@ -35,6 +35,7 @@ entry.
 | ch07/intro/text.html | Figure 7.1 caption, "(credit middle: …; credit right: …)" | written （来源 中：改编自 … 的作品；右：改编自 … 的作品）; names kept | one credit formula for the book (ch01 precedent); lettered/positional labels translated |
 | ch07/intro/text.html | `Figure 7.1` eyebrow | kept in English | the checker matches the eyebrow; the app localises it (translate.md 4.6) |
 | ch07/intro/text.html | "Nicknamed “buckyballs,”" | sentence reordered: the subject 巴克敏斯特富勒烯分子 first, then 绰号“巴基球” | Chinese word order; sentence content and order of clauses kept |
+| ch07/intro/text.html | Figure 7.1 caption, "soccer ball" (alt text and caption) | written 足球 | the Chinese name of the object (translate.md 4.4) |
 
 ### ch07/7.1
 
@@ -78,6 +79,7 @@ entry.
 | ch07/7.2/figures.js | headline `'The two ' + NAMES[a] + ' atoms ...'`, `NAMES[..] + ' carries ...'` | element name + 原子 | English uses the bare element name as a count noun and subject; Chinese needs 原子 after the element name |
 | ch07/7.2/text.html | molecular-compounds, "covalent compounds" (3 spans, concept `molecular-compounds`) | the spans wrap 共价化合物 | the source span text is "covalent compounds"; 共价化合物 is its literal rendering and is listed among the concept's terms in `book.json`, so the spans wrap the whole word (review pass corrected the earlier note, which read the source as "molecular compounds") |
 | ch07/7.2/text.html | covalent-compounds, "at room temperature" (span `temperature`) | the span wraps 室温 | the ch01 rule (室温, 温度) (added by the merge) |
+| ch07/7.2/text.html | Example 7.3 prompt, "amino [acids]" (span `acid`) | the span wraps the whole compound name 氨基酸 | as 7.6 Example 7.16 and the compound-name rule above (review pass; was 氨基<span>酸</span>) |
 
 ### ch07/7.3
 
@@ -92,12 +94,13 @@ entry.
 | ch07/7.3/text.html | writing-lewis, "Since OF₂ is a neutral molecule" (span `electrically-neutral`) | written 是电中性的分子, the span on 电中性 | the glossary concept is 电中性; 中性 alone means pH-neutral (as in 7.1) |
 | ch07/7.3/text.html | writing-lewis, the four `\text{…}` lines of the valence-electron sums | "valence electrons/atom", "atom(s)", "additional electron", "electron (positive charge)" written 个价电子/原子, 个原子, 个额外电子, 个电子（正电荷）, with the number before 个 | English singular and plural (`atom`/`atoms`, `electron`/`electrons`) collapse to one Chinese form (4.1); the TeX around the words is kept |
 | ch07/7.3/text.html | writing-lewis, table sum "Si: 4 valence electrons/atom" and the colons inside `\text{}` | the colon written full-width inside \text{} (Si：) | the colon belongs to the Chinese words of \text{} |
-| ch07/7.3/text.html | fullerene, "since prehistoric times, ." and "C₆₀." | kept as 自史前时代起就为人所知，。 and C<sub>60.</sub> | the book's stray comma-period and the period inside the subscript are kept (see section.json notes) |
+| ch07/7.3/text.html | fullerene, "since prehistoric times, ." and "C₆₀." | kept as 自史前时代起就为人所知，。; the period inside the subscript is not kept: C<sub>60</sub> 为基础 | the book's stray comma-period is visible in English too and is kept (see section.json notes); the period inside the subscript is invisible in English but would become a stray "." in the middle of the Chinese sentence (review pass) |
 | ch07/7.3/text.html | fullerene, names of people | 理查德·斯莫利, 罗伯特·柯尔, 哈罗德·克罗托, 大泽映二 written in Chinese; Elena Galpern, James Heath, Sean O’Brien, Yuan Liu kept in Latin letters | standard rendering where one exists, the original otherwise (translate.md 2.7) |
 | ch07/7.3/text.html | fullerene, Figure 7.11 caption "(credit: United States Department of Energy)" | （来源：United States Department of Energy） | the book-wide credit formula, the organisation kept as printed |
 | ch07/7.3/text.html | fullerene, "Upon his death in 2005, the US Senate honored him as the “Father of Nanotechnology.”" | written 2005 年他去世后，美国参议院称他为“纳米技术之父”。 | the English has the Senate honor him upon his death; Chinese states the title in one clause |
 | ch07/7.3/text.html | Example 7.4, "NASA’s Cassini-Huygens mission … Titan, one of Saturn’s moons" | 美国国家航空航天局（NASA）的卡西尼-惠更斯号任务, 土卫六 | NASA expanded once, as FDA in ch01; Titan is called 土卫六 (泰坦) in Chinese astronomy, and the English possessive is dropped |
-| ch07/7.3/text.html | octet-exceptions, "Hypervalent" paragraph, `SF<sub>6.</sub>` | kept as SF<sub>6.</sub> followed by 的路易斯结构式 | the book's period inside the subscript is kept; the sentence continues in Chinese |
+| ch07/7.3/text.html | octet-exceptions, "Hypervalent" paragraph, `SF<sub>6.</sub>` | written SF<sub>6</sub> followed by 的路易斯结构式 | the book's period inside the subscript is not kept; the sentence continues in Chinese (review pass) |
+| ch07/7.3/text.html, ch07/7.4/text.html | "Nitric oxide" (7.3), "Nitrous oxide" (7.4, Example 7.8 and its figures) | written 一氧化氮 and 一氧化二氮, the 化学名词 names and the ch18 shard's targets; the ch02 shard's 氧化氮 / 氧化亚氮 apply only to the 2.7 passage that contrasts common and systematic names | two shards, two targets for the same source; this chapter follows ch18 and no ch07 row is added (review pass) |
 | ch07/7.3/text.html | Example 7.4 and 7.5 headings | 例 7.4 · 书写路易斯结构式, 例 7.5 · 书写路易斯结构式：违反八隅体规则的情形 | "Octet Rule Violations" needs 的情形 to read as a noun phrase |
 | ch07/7.3/section.json | e1 to e17, part labels `(a)`, `(b)` … and `(a) eight electrons:` | full-width （a）（b）, 八个电子：, 没有电子 | the book-wide formula for part labels in prose |
 | ch07/7.3/section.json | e9 solution `${\text{SeCl}}_{3}{}^{\text{+}}\text{:}$` | kept | the colon sits inside \text{} in the source's TeX; the other items' colons are written ： |
@@ -141,7 +144,7 @@ entry.
 | ch07/7.5/text.html | `the same two atoms` (Bond strength and bond length, 1st paragraph) | the sentence order "triple bonds are stronger and shorter than double bonds between the same two atoms" is kept in its order: 三键比同样两个原子之间的双键更强、更短 | the `atom` span stays in its block, the Chinese attributive 同样两个原子之间的 precedes 双键 |
 | ch07/7.5/figures.js | sim-length, `ORDER = ['single','double','triple']` and hover name `a ${ORDER[k]} bond` | `['单键','双键','三键']`, name `${n}，${ORDER[k]}：…`; the article `a` and the noun `bond` dropped | English article and noun grammar built by concatenation (4.1) |
 | ch07/7.5/figures.js | sim-length legend `${p.name} bonds` | `${p.name} 键` | English plural (4.1) |
-| ch07/7.5/figures.js | sim-enthalpy hover name `${n} bond ${kind}` with `kind` = 'broken' / 'formed' | `${n} 键${kind}`, `kind` = '被断开' / '被形成' | English word order `H–H bond broken` has no Chinese counterpart; a verb phrase follows the noun (4.1) |
+| ch07/7.5/figures.js | sim-enthalpy hover name `${n} bond ${kind}` with `kind` = 'broken' / 'formed' | `${n} 键${kind}`, `kind` = '断开' / '形成' (review pass; 被形成 is not idiomatic) | English word order `H–H bond broken` has no Chinese counterpart; a verb phrase follows the noun (4.1) |
 | ch07/7.5/figures.js | sim-enthalpy headline `… the reaction is ${dH < 0 ? 'exothermic' : 'endothermic'}.` | `…反应是${dH < 0 ? '放热' : '吸热'}的。`; 'Breaking the bonds takes … and forming the new bonds releases …' written with the same four slots in the same order | the adjective needs 的 in Chinese; the branch is a word choice, not grammar (4.1) |
 | ch07/7.5/figures.js | sim-enthalpy readout `\text{broken}` / `\text{formed}` subscripts | `\text{断开}` / `\text{形成}` | a subscript wants the shortest form (4.7, as ch01's 前/后) |
 | ch07/7.5/figures.js | symbol labels `ΔH_{lattice}`, `ΔH_{s}°`, `ΔH_{f}°`, `R_{o}`, `IE`, `EA`, `½D` | kept as printed | they are the book's symbols (the same as the `\kdHlat`, `\kdHs`, `\kdHf`, `\kRo` macros of text.html, which book.json symbols keep), not words |
@@ -170,3 +173,6 @@ entry.
 | ch07/7.6/figures.js | sim-bond-moments `MOLS[].structure` | 'bent, 104.5°' etc. written 'V 形,104.5°' with the ASCII comma kept | the code splits the string at ',' and shows only the part before it, so the separator is code, not prose |
 | ch07/7.6/figures.js | `NAMES`, `nameOf`, sim-field hover names | `'a lone pair'` 孤电子对, `'hydrogen (H)'` 氢（H）, `a hydrogen atom, the δ+ end` 氢原子，δ+ 端; the articles are dropped | English articles have no Chinese form (4.1) |
 | ch07/7.6/figures.js | sim-bond-moments row text | '`C–H: 2.5 and 2.1, a difference of 0.4`' written 'C–H：2.5 和 2.1，差值为 0.4' | Chinese word order (4.1) |
+| ch07/7.6/figures.js | sim-polarity, `topline` of the diatomic branch | `'the ' + mol.name + ' molecule'` / `' bond'` rewritten `mol.name + (mol.whole ? ' 分子' : ' 键')`; the `a long / a moderate / a short` articles dropped (长 / 中等长度 / 短); `mol.structure` gets a space only before a Latin initial | English article grammar collapses to one Chinese form (4.1); space between CJK and Latin |
+| ch07/7.6/figures.js | sim-polarity, readout `\text{bond}` subscript | written `\text{键}` | a subscript wants the shortest form (ch01 rule 4.7) |
+| ch07/7.6/figures.js | sim-polarity-field, controls `\text{molecule}` / `\text{molecules}` | `\text{分子}` and `\text{分子数}` | English singular/plural pair of labels; the count control takes 分子数 |

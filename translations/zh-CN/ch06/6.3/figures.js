@@ -19,7 +19,7 @@ const sup = (s) => String(s).split('').map((c) => SUP[c] ?? c).join('');
 const expOf = (x) => Math.floor(Math.log10(Math.abs(x)) + 1e-9);
 function sciU(x, d = 2) { const e = expOf(x), m = x / Math.pow(10, e); return m.toFixed(d) + ' × 10' + sup(e); }
 function sciT(x, d = 2) { const e = expOf(x), m = x / Math.pow(10, e); return m.toFixed(d) + '\\times10^{' + e + '}'; }
-const WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
+const WORDS = ['零', '一', '二', '三', '四', '五', '六', '七', '八'];
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
 /* =====================================================================
@@ -34,7 +34,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   const d = sim('sim-orbit-wave', 440);
   const R_PM = 100, CIRC = TAU * R_PM;                 /* the orbit's radius and circumference, pm */
   const specials = [1, 2, 3, 4, 5, 6].map((n) => ({ at: CIRC / n, label: 'n = ' + n }));
-  const lam = ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: 90, max: 660, step: 0.1, value: +(CIRC / 6).toFixed(1), unit: 'pm', dec: 1, aria: 'the wavelength of the electron wave', specials });
+  const lam = ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: 90, max: 660, step: 0.1, value: +(CIRC / 6).toFixed(1), unit: 'pm', dec: 1, aria: '电子波的波长', specials });
   const CX = 300, CY = 250, R = 138, AMP = 16;
   /* the unrolled orbit: one circumference, 0 to 628.3 pm, laid along x from SX0 to SX1 */
   const SX0 = 660, SX1 = 1320, SY = 250, SAMP = 46;
@@ -42,13 +42,13 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const { ctx } = begin(d.c), L = lam.v, n = CIRC / L, whole = Math.abs(n - Math.round(n)) < 0.004, cw = C('wavelength'), cr = C('length'), co = F.ref('orbit');
     const k = Math.round(n);
     topline(ctx, whole
-      ? `${cap(WORDS[k] ?? String(k))} wavelength${k > 1 ? 's' : ''} of ${fmt(L, 1)} pm fit the ${fmt(CIRC, 1)} pm orbit exactly, so the wave closes on itself.`
-      : `The ${fmt(CIRC, 1)} pm orbit holds ${fmt(n, 2)} wavelengths of ${fmt(L, 1)} pm, which is not a whole number, so the wave does not close on itself.`);
+      ? `${fmt(CIRC, 1)} pm 的轨道恰好容纳${WORDS[k] ?? String(k)}个 ${fmt(L, 1)} pm 的波长，所以波自身闭合。`
+      : `${fmt(CIRC, 1)} pm 的轨道容纳 ${fmt(n, 2)} 个 ${fmt(L, 1)} pm 的波长，这不是整数，所以波不能自身闭合。`);
     /* the orbit and the nucleus */
     ctx.save(); ctx.setLineDash([10, 10]); ctx.strokeStyle = co; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(CX, CY, R, 0, TAU); ctx.stroke(); ctx.restore();
     dot(ctx, CX, CY, PAL.ink, true, 9);
     arrow(ctx, CX, CY, CX + R * Math.cos(-2.3), CY + R * Math.sin(-2.3), cr, 3);
-    text(ctx, 'radius r = 100 pm', CX, CY + R + 40, cr, { size: 19, align: 'center' });
+    text(ctx, '半径 r = 100 pm', CX, CY + R + 40, cr, { size: 19, align: 'center' });
     /* the wave: arc length s = rθ, displacement AMP·sin(2πs/λ) outward from the orbit */
     const lap = (t0, t1, a, w) => {
       ctx.save(); ctx.strokeStyle = cw; ctx.globalAlpha *= a; ctx.lineWidth = w; ctx.beginPath();
@@ -65,9 +65,9 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const X = (s) => SX0 + ((SX1 - SX0) * s) / CIRC;
     line(ctx, SX0, SY, SX1, SY, co, 2, [10, 10]);
     [SX0, SX1].forEach((x) => line(ctx, x, SY - SAMP - 18, x, SY + SAMP + 18, PAL.muted, 2));
-    text(ctx, 'start', SX0, SY + SAMP + 38, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'once around, 628.3 pm', SX1, SY + SAMP + 38, cr, { size: 17, align: 'right' });
-    text(ctx, 'The orbit unrolled', (SX0 + SX1) / 2, SY + SAMP + 76, co, { size: 20, weight: 600, align: 'center' });
+    text(ctx, '起点', SX0, SY + SAMP + 38, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '绕一圈，628.3 pm', SX1, SY + SAMP + 38, cr, { size: 17, align: 'right' });
+    text(ctx, '展开的轨道', (SX0 + SX1) / 2, SY + SAMP + 76, co, { size: 20, weight: 600, align: 'center' });
     ctx.save(); ctx.strokeStyle = cw; ctx.lineWidth = 5; ctx.beginPath();
     for (let i = 0; i <= 400; i++) { const s = (CIRC * i) / 400, x = X(s), y = SY - SAMP * Math.sin((TAU * s) / L); if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y); }
     ctx.stroke(); ctx.restore();
@@ -89,7 +89,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 ===================================================================== */
 (function () {
   const d = sim('sim-double-slit', 460);
-  const v = ctl(d.controls, { label: '\\kv', cls: 'velocity', min: 2, max: 10, step: 0.1, value: 10, unit: '× 10⁶ m/s', dec: 1, aria: 'the speed of the electrons', onInput: () => { sample(); cy.reset(); } });
+  const v = ctl(d.controls, { label: '\\kv', cls: 'velocity', min: 2, max: 10, step: 0.1, value: 10, unit: '× 10⁶ m/s', dec: 1, aria: '电子的速率', onInput: () => { sample(); cy.reset(); } });
   const T = 7, NMAX = 2400;
   const cy = cycle(() => T, 2.5);
   const SCR = { l: 660, r: 810, t: 86, b: 406 }, YC = (SCR.t + SCR.b) / 2;
@@ -107,22 +107,22 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   }
   sample();
   const count = (t) => Math.min(NMAX, Math.floor(NMAX * Math.pow(t / T, 2.4)));
-  F.hover(d.stage, () => [{ x: 110, y: 250, r: 50, name: 'the electron source' }, { x: 380, y: 150, r: 30, name: 'the barrier with two slits' }, { x: 580, y: 250, r: 20, name: 'the screen, seen edge on' }]);
+  F.hover(d.stage, () => [{ x: 110, y: 250, r: 50, name: '电子源' }, { x: 380, y: 150, r: 30, name: '带双缝的挡板' }, { x: 580, y: 250, r: 20, name: '屏（侧视）' }]);
   function draw() {
     const { ctx } = begin(d.c), t = cy.now(), N = count(t), ce = F.el('e-'), cs = F.ref('source'), cb = F.ref('barrier'), cn = F.ref('screen');
-    topline(ctx, N === 0 ? 'No electrons have arrived yet.' : `${N} electron${N === 1 ? ' has' : 's have'} arrived. ` + (N < 40 ? 'So far they seem to land at random.' : N < 500 ? 'Bands are beginning to show where more of them land.' : 'Together they draw the interference pattern of a wave.'));
+    topline(ctx, N === 0 ? '尚无电子到达。' : `已有 ${N} 个电子到达。` + (N < 40 ? '到目前为止，它们看上去是随机落下的。' : N < 500 ? '在较多电子落下的地方，开始出现条带。' : '它们合起来画出了波的干涉图样。'));
     /* the source, the barrier and the screen edge on */
     ctx.save(); ctx.strokeStyle = cs; ctx.lineWidth = 3; ctx.fillStyle = alpha(cs, 0.18); ctx.beginPath(); ctx.rect(70, 220, 80, 60); ctx.fill(); ctx.stroke(); ctx.restore();
-    text(ctx, 'electron source', 110, 306, cs, { size: 19, align: 'center' });
+    text(ctx, '电子源', 110, 306, cs, { size: 19, align: 'center' });
     const slits = [YC - 22, YC + 22];
     line(ctx, 380, SCR.t, 380, slits[0] - 6, cb, 10); line(ctx, 380, slits[0] + 6, 380, slits[1] - 6, cb, 10); line(ctx, 380, slits[1] + 6, 380, SCR.b, cb, 10);
-    text(ctx, 'two slits', 380, SCR.b + 24, cb, { size: 19, align: 'center' });
+    text(ctx, '双缝', 380, SCR.b + 24, cb, { size: 19, align: 'center' });
     line(ctx, 580, SCR.t, 580, SCR.b, cn, 5);
-    text(ctx, 'screen', 580, SCR.b + 24, cn, { size: 19, align: 'center' });
+    text(ctx, '屏', 580, SCR.b + 24, cn, { size: 19, align: 'center' });
     arrow(ctx, 160, 250, 360, 250, alpha(PAL.ink, 0.4), 3);
     /* the screen face on, with every electron recorded so far */
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = cn; ctx.lineWidth = 3; ctx.fillRect(SCR.l, SCR.t, SCR.r - SCR.l, SCR.b - SCR.t); ctx.strokeRect(SCR.l, SCR.t, SCR.r - SCR.l, SCR.b - SCR.t); ctx.restore();
-    text(ctx, 'the screen, face on', (SCR.l + SCR.r) / 2, SCR.b + 24, cn, { size: 19, align: 'center' });
+    text(ctx, '屏（正视）', (SCR.l + SCR.r) / 2, SCR.b + 24, cn, { size: 19, align: 'center' });
     ctx.save(); ctx.fillStyle = ce;
     for (let i = 0; i < N; i++) { ctx.beginPath(); ctx.arc(hits[i][0], hits[i][1], 2.6, 0, TAU); ctx.fill(); }
     ctx.restore();
@@ -142,7 +142,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       ctx.stroke(); ctx.restore();
       text(ctx, '|ψ|²', HB.r, SCR.t + 10, PAL.ink, { size: 22, weight: 600, align: 'right' });
     }
-    text(ctx, 'electrons counted at each height', (HB.l + HB.r) / 2, SCR.b + 24, PAL.ink, { size: 19, align: 'center' });
+    text(ctx, '各高度处记录到的电子数', (HB.l + HB.r) / 2, SCR.b + 24, PAL.ink, { size: 19, align: 'center' });
     const lam = HP / (ME * v.v * 1e6);
     readout(d.readout, `\\klam = \\frac{h}{\\km \\kv} = \\frac{6.626\\times10^{-34}\\ \\text{kg m}^{2}\\text{/s}}{(9.109\\times10^{-31}\\ \\text{kg})(${fmt(v.v, 1)}\\times10^{6}\\ \\text{m/s})} = ${sciT(lam, 2)}\\ \\text{m}`);
   }
@@ -157,31 +157,31 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 (function () {
   const d = sim('sim-de-broglie', 360);
   const P = {
-    e: { name: 'electron', m: ME, range: { min: 0.1, max: 10, step: 0.01, value: 10, unit: '× 10⁶ m/s', dec: 2 }, k: 1e6 },
-    p: { name: 'proton', m: MP, range: { min: 0.1, max: 10, step: 0.01, value: 10, unit: '× 10⁶ m/s', dec: 2 }, k: 1e6 },
-    ball: { name: 'softball', m: 0.100, range: { min: 1, max: 50, step: 0.5, value: 35, unit: 'm/s', dec: 1 }, k: 1 },
+    e: { name: '电子', m: ME, range: { min: 0.1, max: 10, step: 0.01, value: 10, unit: '× 10⁶ m/s', dec: 2 }, k: 1e6 },
+    p: { name: '质子', m: MP, range: { min: 0.1, max: 10, step: 0.01, value: 10, unit: '× 10⁶ m/s', dec: 2 }, k: 1e6 },
+    ball: { name: '垒球', m: 0.100, range: { min: 1, max: 50, step: 0.5, value: 35, unit: 'm/s', dec: 1 }, k: 1 },
   };
-  const who = F.choice(d.controls, { label: '\\text{particle}', options: [{ value: 'e', label: 'electron' }, { value: 'p', label: 'proton' }, { value: 'ball', label: 'softball' }], value: 'e', aria: 'the moving particle', onInput: (x) => v.range(P[x].range) });
-  const v = ctl(d.controls, { label: '\\kv', cls: 'velocity', ...P.e.range, aria: 'the speed of the particle' });
+  const who = F.choice(d.controls, { label: '\\text{粒子}', options: [{ value: 'e', label: '电子' }, { value: 'p', label: '质子' }, { value: 'ball', label: '垒球' }], value: 'e', aria: '运动的粒子', onInput: (x) => v.range(P[x].range) });
+  const v = ctl(d.controls, { label: '\\kv', cls: 'velocity', ...P.e.range, aria: '粒子的速率' });
   const LO = -36, HI = -6, AX = { l: 90, r: 1310, y: 270 };
   const X = (lg) => AX.l + ((lg - LO) / (HI - LO)) * (AX.r - AX.l);
-  const REFS = [{ lg: -10, name: 'an atom, about 10⁻¹⁰ m' }, { lg: -14.5, name: 'a nucleus, about 10⁻¹⁵ to 10⁻¹⁴ m' }];
+  const REFS = [{ lg: -10, name: '原子，约 10⁻¹⁰ m' }, { lg: -14.5, name: '原子核，约 10⁻¹⁵ 至 10⁻¹⁴ m' }];
   function draw() {
     const { ctx } = begin(d.c), q = P[who.value], vel = v.v * q.k, lam = HP / (q.m * vel), lg = Math.log10(lam), cw = C('wavelength'), cr = C('length');
     const vs = q.k === 1 ? fmt(vel, 1) + ' m/s' : sciU(vel, 2) + ' m/s';
     const r = lam / 1e-10;
-    const cmp = r > 3 ? `about ${fmt(r, 0)} times the size of an atom` : r > 0.3 ? 'about the size of an atom' : `about ${sciU(1 / r, 1)} times smaller than an atom`;
-    topline(ctx, `${q.name === 'electron' ? 'An' : 'A'} ${q.name} moving at ${vs} has a de Broglie wavelength of ${sciU(lam, 2)} m, ${cmp}.`);
+    const cmp = r > 3 ? `约为原子大小的 ${fmt(r, 0)} 倍` : r > 0.3 ? '与原子的大小相当' : `约为原子大小的 1/${sciU(1 / r, 1)}`;
+    topline(ctx, `以 ${vs} 运动的${q.name}，其德布罗意波长为 ${sciU(lam, 2)} m，${cmp}。`);
     line(ctx, AX.l, AX.y, AX.r, AX.y, cw, 3);
     for (let e = -35; e <= -5; e += 5) { if (e > HI) break; line(ctx, X(e), AX.y, X(e), AX.y + 10, cw, 2); text(ctx, '10' + sup(e), X(e), AX.y + 32, cw, { size: 17, align: 'center' }); }
     for (let e = LO; e <= HI; e++) line(ctx, X(e), AX.y, X(e), AX.y + 5, cw, 1.5);
-    text(ctx, 'wavelength (m)', AX.r, AX.y + 66, cw, { size: 20, weight: 600, align: 'right' });
+    text(ctx, '波长（m）', AX.r, AX.y + 66, cw, { size: 20, weight: 600, align: 'right' });
     REFS.forEach((f, i) => { const x = X(f.lg); line(ctx, x, AX.y - 8, x, AX.y - 108 - 30 * i, cr, 2, [4, 8]); text(ctx, f.name, x, AX.y - 120 - 30 * i, cr, { size: 18, align: 'center' }); });
     const x = X(Math.max(LO, Math.min(HI, lg)));
     arrow(ctx, x, AX.y - 60, x, AX.y - 6, cw, 4); dot(ctx, x, AX.y, cw, true, 9);
-    F.label(ctx, `λ of the ${q.name}`, x, AX.y - 60, { side: 'above', color: cw, size: 20 });
+    F.label(ctx, `${q.name}的 λ`, x, AX.y - 60, { side: 'above', color: cw, size: 20 });
     readout(d.readout, `\\klam = \\frac{h}{\\km \\kv} = \\frac{6.626\\times10^{-34}\\ \\text{kg m}^{2}\\text{/s}}{(${sciT(q.m, 3)}\\ \\text{kg})(${q.k === 1 ? fmt(vel, 1) : sciT(vel, 2)}\\ \\text{m/s})} = ${sciT(lam, 2)}\\ \\text{m}`,
-      'The wavelength is inversely proportional to both the mass and the speed.');
+      '波长与质量和速率都成反比。');
   }
   still(d, draw);
 })();
@@ -193,17 +193,17 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 (function () {
   const d = sim('fig-shells', 380);
   const CX = 560, CY = 190, RS = [82, 128, 174];
-  F.hover(d.stage, () => [{ x: CX, y: CY, r: 36, name: 'the nucleus' }]);
+  F.hover(d.stage, () => [{ x: CX, y: CY, r: 36, name: '原子核' }]);
   function draw() {
     const { ctx } = begin(d.c), ce = C('energy');
     RS.forEach((r) => { ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(CX, CY, r, 0, TAU); ctx.stroke(); ctx.restore(); });
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(CX, CY, 34, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
     text(ctx, '+', CX, CY, PAL.ink, { size: 30, weight: 600, align: 'center' });
-    text(ctx, 'nucleus', CX - 34, CY + 60, PAL.ink, { size: 18, align: 'center', bg: PAL.panel });
+    text(ctx, '原子核', CX - 34, CY + 60, PAL.ink, { size: 18, align: 'center', bg: PAL.panel });
     RS.forEach((r, i) => { const a = -2.2; text(ctx, 'n = ' + (i + 1), CX + r * Math.cos(a), CY + r * Math.sin(a), PAL.ink, { size: 19, weight: 600, align: 'center', bg: PAL.panel }); });
     arrow(ctx, CX + 36, CY, CX + 290, CY, ce, 4);
-    text(ctx, 'increasing energy', CX + 300, CY, ce, { size: 20, weight: 600 });
-    readout(d.readout, 'n = 1,\\ 2,\\ 3,\\ \\ldots', 'The farther a shell lies from the nucleus, the higher the energy of its electrons.');
+    text(ctx, '能量增大', CX + 300, CY, ce, { size: 20, weight: 600 });
+    readout(d.readout, 'n = 1,\\ 2,\\ 3,\\ \\ldots', '电子层离原子核越远，其中电子的能量越高。');
   }
   still(d, draw);
 })();
@@ -230,10 +230,10 @@ const ANGMAX = [1, 1, 2];
 ===================================================================== */
 (function () {
   const d = sim('sim-radial');
-  const V = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'side', yaw: 0.6, pitch: 0.22 }, { label: 'above', yaw: 0.6, pitch: 1.4 }], h: 380, dist: 15, tilt: 0.22 });
+  const V = F.view3d(d.stage, { spin: 'idle', views: [{ label: '侧视', yaw: 0.6, pitch: 0.22 }, { label: '俯视', yaw: 0.6, pitch: 1.4 }], h: 380, dist: 15, tilt: 0.22 });
   const g = V.part(0), c2 = F.makeCanvas(d.stage, 330);
   const KEYS = ['1s', '2s', '3s', '2p', '3p', '3d'];
-  const orb = F.choice(d.controls, { label: '\\text{orbital}', options: KEYS.map((k) => ({ value: k, label: k.replace(/([spd])$/, '<em>$1</em>') })), value: '1s', aria: 'the orbital drawn' });
+  const orb = F.choice(d.controls, { label: '\\text{轨道}', options: KEYS.map((k) => ({ value: k, label: k.replace(/([spd])$/, '<em>$1</em>') })), value: '1s', aria: '所画的轨道' });
   const U = 0.2;                                     /* scene units per Bohr radius */
   const T3 = window.THREE;
   const clouds = {};
@@ -269,16 +269,16 @@ const ANGMAX = [1, 1, 2];
     cl.sgn.forEach((s, i) => { const c = s > 0 ? ca : cb; col.setXYZ(i, c.r, c.g, c.b); });
     col.needsUpdate = true; cl.paint = tag;
   }
-  if (T3 && V.scene) V.pickable(F.mesh.sphere(g, [0, 0, 0], 0.05, PAL.ink), 'the nucleus');
+  if (T3 && V.scene) V.pickable(F.mesh.sphere(g, [0, 0, 0], 0.05, PAL.ink), '原子核');
   const pOf = (key) => (x) => { const r = x / A0, o = RADIAL[key]; return (r * r * o.R(r) ** 2); };
   function draw() {
     const key = orb.value, o = RADIAL[key];
     KEYS.forEach((k) => { const a = k === key || k === orb.from ? orb.a(k) : 0; if (a > 0) cloud(k); if (clouds[k]) { paint(clouds[k]); F.fade3(clouds[k].grp, a); } });
     V.invalidate();
     const { ctx } = begin(c2), nodes = o.n - o.l - 1;
-    topline(ctx, `The ${key} orbital has n − l − 1 = ${o.n} − ${o.l} − 1 = ${nodes} radial node${nodes === 1 ? '' : 's'}` + (nodes ? ', at ' + o.nodes.map((r) => fmt(r * A0, 0) + ' pm').join(' and ') + ' from the nucleus.' : ', so its probability never falls to zero.'));
+    topline(ctx, `${key} 轨道的径向节点数 n − l − 1 = ${o.n} − ${o.l} − 1 = ${nodes}` + (nodes ? '，位于距原子核 ' + o.nodes.map((r) => fmt(r * A0, 0) + ' pm').join(' 和 ') + ' 处。' : '，所以它的概率从不降为零。'));
     const box = { l: 150, r: 1300, t: 120, b: 262 };
-    const { X, Y } = axes(ctx, box, [0, 1000], [0, 0.6], { xl: 'distance from nucleus (pm)', xc: C('length'), yl: 'probability density', nx: 5, ny: 3, fy: () => '' });
+    const { X, Y } = axes(ctx, box, [0, 1000], [0, 0.6], { xl: '到原子核的距离（pm）', xc: C('length'), yl: '概率密度', nx: 5, ny: 3, fy: () => '' });
     /* the area under the curve in the colour of the sign of ψ there */
     const fill = (k, a) => F.faded(ctx, a, [0, 0], () => {
       const R = RADIAL[k].R, f = pOf(k);
@@ -290,7 +290,7 @@ const ANGMAX = [1, 1, 2];
     if (orb.from && orb.from !== key) fill(orb.from, 1 - orb.a(key));
     fill(key, orb.a(key));
     orb.curve(ctx, (k) => pOf(k), 0, 1000, X, Y, PAL.ink, 4, 240);
-    o.nodes.forEach((r) => { const x = X(r * A0); line(ctx, x, box.t, x, box.b, PAL.muted, 2, [4, 8]); text(ctx, 'node', x + 8, box.t + 14, PAL.muted, { size: 17 }); });
+    o.nodes.forEach((r) => { const x = X(r * A0); line(ctx, x, box.t, x, box.b, PAL.muted, 2, [4, 8]); text(ctx, '节点', x + 8, box.t + 14, PAL.muted, { size: 17 }); });
     readout(d.readout, `n - l - 1 = ${o.n} - ${o.l} - 1 = ${nodes}`);
   }
   still(d, draw);
@@ -317,12 +317,12 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
 ===================================================================== */
 (function () {
   const d = sim('sim-orbital-shapes');
-  const V = F.view3d(d.stage, { spin: 'idle', views: [{ label: 'along x', yaw: 0, pitch: 0 }, { label: 'along y', yaw: -Math.PI / 2, pitch: 0 }, { label: 'along z', yaw: 0, pitch: Math.PI / 2 }], h: 420, dist: 15, tilt: 0.35 });
+  const V = F.view3d(d.stage, { spin: 'idle', views: [{ label: '沿 x 轴', yaw: 0, pitch: 0 }, { label: '沿 y 轴', yaw: -Math.PI / 2, pitch: 0 }, { label: '沿 z 轴', yaw: 0, pitch: Math.PI / 2 }], h: 420, dist: 15, tilt: 0.35 });
   const g = V.part(0);
-  const sub = F.choice(d.controls, { label: '\\text{subshell}', options: [{ value: 's', label: 's (<em>l</em> = 0)' }, { value: 'p', label: 'p (<em>l</em> = 1)' }, { value: 'd', label: 'd (<em>l</em> = 2)' }, { value: 'f', label: 'f (<em>l</em> = 3)' }], value: 'p', aria: 'the subshell', onInput: () => { rows(); go(); } });
+  const sub = F.choice(d.controls, { label: '\\text{亚层}', options: [{ value: 's', label: 's (<em>l</em> = 0)' }, { value: 'p', label: 'p (<em>l</em> = 1)' }, { value: 'd', label: 'd (<em>l</em> = 2)' }, { value: 'f', label: 'f (<em>l</em> = 3)' }], value: 'p', aria: '亚层', onInput: () => { rows(); go(); } });
   const pick = {}, box = {};
   ['p', 'd', 'f'].forEach((l) => {
-    const o = { label: '\\text{orbital}', options: SHAPES[l].map((q) => ({ value: q.v, label: l === 'f' ? q.label.replace(/<\/?sub>/g, '') : q.label })), value: SHAPES[l][l === 'p' ? 2 : 0].v, aria: 'the orbital of the ' + l + ' subshell', ms: 0, onInput: () => go() };
+    const o = { label: '\\text{轨道}', options: SHAPES[l].map((q) => ({ value: q.v, label: l === 'f' ? q.label.replace(/<\/?sub>/g, '') : q.label })), value: SHAPES[l][l === 'p' ? 2 : 0].v, aria: l + ' 亚层的轨道', ms: 0, onInput: () => go() };
     pick[l] = l === 'f' ? F.select(d.controls, o) : F.choice(d.controls, o);
     box[l] = d.controls.lastElementChild;
   });
@@ -346,13 +346,13 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
     pos = new T3.Float32BufferAttribute(new Float32Array(dirs.length * 3), 3); col = new T3.Float32BufferAttribute(new Float32Array(dirs.length * 3), 3);
     geo.setAttribute('position', pos); geo.setAttribute('color', col); geo.setIndex(idx);
     mesh = new T3.Mesh(geo, new T3.MeshPhongMaterial({ vertexColors: true, side: T3.DoubleSide, shininess: 30 }));
-    g.add(mesh); V.pickable(mesh, 'a lobe of the orbital');
+    g.add(mesh); V.pickable(mesh, '轨道的一个瓣');
     const L = 2.0;
     [[[0, 0, L], 'x'], [[L, 0, 0], 'y'], [[0, L, 0], 'z']].forEach(([p, name]) => {
       F.mesh.polyline(g, [p.map((c) => -c), p], PAL.muted);
       V.label(name, p.map((c) => c * 1.07), g, 0);
     });
-    V.pickable(F.mesh.sphere(g, [0, 0, 0], 0.05, PAL.ink), 'the nucleus');
+    V.pickable(F.mesh.sphere(g, [0, 0, 0], 0.05, PAL.ink), '原子核');
   }
   function draw() {
     const k = tw.v, A = valuesOf(from), B = valuesOf(to);
@@ -366,9 +366,9 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
       V.invalidate();
     }
     const l = LOF[sub.value], name = byV[to].label;
-    readout(d.readout, `l = ${l}:\\quad 2l + 1 = 2(${l}) + 1 = ${2 * l + 1}\\ \\text{orbital${l ? 's' : ''}}`,
-      l ? `The values of mₗ run from −${l} to +${l}.` : 'With one orbital, the s subshell has no orientation to choose.');
-    V.headline(l ? `The <em>${name}</em> orbital, one of the ${WORDS[2 * l + 1]} <em>${sub.value}</em> orbitals` : 'The <em>s</em> orbital is a sphere');
+    readout(d.readout, `l = ${l}:\\quad 2l + 1 = 2(${l}) + 1 = ${2 * l + 1}\\ \\text{个轨道}`,
+      l ? `mₗ 的值从 −${l} 到 +${l}。` : '只有一个轨道，s 亚层没有可供选择的取向。');
+    V.headline(l ? `<em>${name}</em> 轨道，${WORDS[2 * l + 1]}个 <em>${sub.value}</em> 轨道之一` : '<em>s</em> 轨道是球形');
   }
   still(d, draw);
 })();
@@ -380,7 +380,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
 ===================================================================== */
 (function () {
   const d = sim('sim-subshell-energies', 440);
-  const atom = F.choice(d.controls, { label: '\\text{atom}', options: [{ value: 'many', label: 'multi-electron atom' }, { value: 'H', label: 'hydrogen' }], value: 'many', aria: 'the atom whose orbital energies are drawn' });
+  const atom = F.choice(d.controls, { label: '\\text{原子}', options: [{ value: 'many', label: '多电子原子' }, { value: 'H', label: '氢' }], value: 'many', aria: '绘出其轨道能量的原子' });
   /* heights from 0 (1s) to 1 (4p): the book's chart, and hydrogen's (1 − 1/n²)/(1 − 1/16) */
   const SUBS = [['1s', 1, 1, 0], ['2s', 2, 1, 0.433], ['2p', 2, 3, 0.488], ['3s', 3, 1, 0.788], ['3p', 3, 3, 0.843], ['3d', 3, 5, 0.981], ['4s', 4, 1, 0.943], ['4p', 4, 3, 1]]
     .map(([name, n, count, many]) => ({ name, n, count, many, H: (1 - 1 / (n * n)) / (1 - 1 / 16) }));
@@ -391,8 +391,8 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
   function draw() {
     const { ctx } = begin(d.c), ce = C('energy');
     topline(ctx, atom.value === 'H'
-      ? 'In a hydrogen atom the energy depends on n alone, so 2s and 2p are degenerate, and so are 3s, 3p and 3d.'
-      : 'In a multi-electron atom the subshells of one shell have different energies; only the orbitals of one subshell are degenerate.');
+      ? '在氢原子中，能量只取决于 n，所以 2s 和 2p 是简并的，3s、3p 和 3d 也是简并的。'
+      : '在多电子原子中，同一电子层的各亚层具有不同的能量；只有同一亚层的轨道才是简并的。');
     arrow(ctx, 90, BOT + 10, 90, TOP - 40, ce, 3);
     text(ctx, 'E', 62, (BOT + TOP) / 2, ce, { size: 24, weight: 600, italic: true, align: 'center' });
     SUBS.forEach((s) => {
@@ -402,7 +402,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
       text(ctx, s.name, mid, y + 24, PAL.ink, { size: 19, align: 'center' });
     });
     readout(d.readout, atom.value === 'H' ? '\\kE = -\\frac{2.18\\times10^{-18}}{n^{2}}\\ \\text{J}' : '\\kE_{2s} < \\kE_{2p},\\qquad \\kE_{4s} < \\kE_{3d}',
-      atom.value === 'H' ? 'In a one-electron atom the orbitals of a shell differ in shape and orientation but not in energy.' : 'The interactions between the electrons remove the degeneracy of the orbitals that belong to different subshells.');
+      atom.value === 'H' ? '在单电子原子中，同一电子层的各轨道在形状和取向上不同，但能量相同。' : '电子之间的相互作用消除了属于不同亚层的轨道的简并。');
   }
   still(d, draw);
 })();
@@ -414,7 +414,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
 (function () {
   const d = sim('fig-spin', 420);
   const E1 = { x: 560, up: true }, E2 = { x: 880, up: false }, CY = 200, RE = 36;
-  F.hover(d.stage, () => [E1, E2].map((e) => ({ x: e.x, y: CY, r: RE, name: e.up ? 'an electron with spin +½' : 'an electron with spin −½' })));
+  F.hover(d.stage, () => [E1, E2].map((e) => ({ x: e.x, y: CY, r: RE, name: e.up ? '自旋为 +½ 的电子' : '自旋为 −½ 的电子' })));
   function electron(ctx, e) {
     const ce = F.el('e-');
     /* the two magnet poles */
@@ -432,7 +432,7 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.ellipse(e.x, CY + 6, RE + 16, 11, 0, 0.15 * Math.PI, 0.95 * Math.PI, false); ctx.stroke(); ctx.restore();
     const ax = e.up ? e.x + 26 : e.x - 26, dir = e.up ? -1 : 1;
     ctx.save(); ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.moveTo(ax + dir * 10, CY + 16); ctx.lineTo(ax - dir * 4, CY + 10); ctx.lineTo(ax - dir * 2, CY + 24); ctx.closePath(); ctx.fill(); ctx.restore();
-    text(ctx, e.up ? 'spin +½, spin-up' : 'spin −½, spin-down', e.x, CY + 196, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, e.up ? '自旋 +½，自旋向上' : '自旋 −½，自旋向下', e.x, CY + 196, PAL.ink, { size: 20, align: 'center' });
   }
   function draw() {
     const { ctx } = begin(d.c), ce = C('energy');
@@ -443,9 +443,9 @@ const byV = {}; Object.values(SHAPES).flat().forEach((q) => { byV[q.v] = q; });
     arrow(ctx, 1110, CY + 90, 1110, CY - 110, ce, 3);
     text(ctx, 'E', 1110, CY - 128, ce, { size: 22, weight: 600, italic: true, align: 'center' });
     line(ctx, 1140, CY + 50, 1200, CY + 50, ce, 5); line(ctx, 1140, CY - 50, 1200, CY - 50, ce, 5);
-    text(ctx, 'spin +½', 1212, CY + 50, PAL.ink, { size: 19 });
-    text(ctx, 'spin −½', 1212, CY - 50, PAL.ink, { size: 19 });
-    readout(d.readout, 'm_{s} = +\\tfrac{1}{2}\\quad\\text{or}\\quad m_{s} = -\\tfrac{1}{2}', 'In a field in the positive z direction, the electron with its moment along the field has the slightly lower energy.');
+    text(ctx, '自旋 +½', 1212, CY + 50, PAL.ink, { size: 19 });
+    text(ctx, '自旋 −½', 1212, CY - 50, PAL.ink, { size: 19 });
+    readout(d.readout, 'm_{s} = +\\tfrac{1}{2}\\quad\\text{或}\\quad m_{s} = -\\tfrac{1}{2}', '在沿 z 轴正方向的场中，磁矩沿场方向的电子能量略低。');
   }
   still(d, draw);
 })();

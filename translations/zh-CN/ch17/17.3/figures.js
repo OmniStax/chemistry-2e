@@ -56,7 +56,7 @@ const inTex = (s) => s.replace(MINUS, '-');
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear();
     const x = X[pick.value];
-    v.pickable(F.mesh.box(grp, P(0, BENCH - 0.05, 0), [4.8, 0.1, 1.9], PAL.soft), '实验台');
+    v.pickable(F.mesh.box(grp, P(0, BENCH - 0.05, 0), [4.8, 0.1, 1.9], PAL.soft), '工作台');
     for (const bx of [XL, XR]) {
       const b = new T3D.Mesh(new T3D.CylinderGeometry(0.62, 0.62, 1.3, 44, 1, true), F.mesh.mat(PAL.ink, glass()));
       b.position.set(...P(bx, BENCH + 0.65)); grp.add(b);

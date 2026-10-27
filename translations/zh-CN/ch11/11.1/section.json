@@ -2,16 +2,16 @@
   "id": "11.1",
   "module": "m68778",
   "chapter": "11",
-  "title": "The Dissolution Process",
-  "short": "The Dissolution Process",
-  "lead": "A solution is one substance dispersed evenly through another, and every solution shares a few traits whatever its phases. Dissolution is then taken apart into separating the solute, separating the solvent and solvation, to see why substances mix at all and why some solutions warm as they form while others cool.",
+  "title": "溶解过程",
+  "short": "溶解过程",
+  "lead": "溶液是一种物质均匀地分散在另一种物质中，无论各自处于什么相，所有溶液都有几个共同的特征。然后把溶解拆分为分离溶质、分离溶剂和溶剂化，以说明物质为什么会混合，以及为什么有些溶液在形成时升温而另一些降温。",
   "objectives": [
-    "Describe the basic properties of solutions and how they form",
-    "Predict whether a given mixture will yield a solution based on molecular properties of its components",
-    "Explain why some solutions either produce or absorb heat when they form"
+    "描述溶液的基本性质及其形成方式",
+    "根据各组分的分子性质预测给定的混合物是否会形成溶液",
+    "解释为什么有些溶液在形成时放出热量或吸收热量"
   ],
-  "summary_html": "<p>A solution forms when two or more substances combine physically to yield a mixture that is homogeneous at the molecular level. The solvent is the most concentrated component and determines the physical state of the solution. The solutes are the other components typically present at <span data-concept=\"concentration\">concentrations</span> less than that of the solvent. Solutions may form endothermically or exothermically, depending upon the relative magnitudes of solute and solvent intermolecular attractive <span data-concept=\"force\">forces</span>. Ideal solutions form with no appreciable change in <span data-concept=\"energy-and-work\">energy</span>.</p>",
-  "notes": "The two Link to Learning notes are left out, the PhET simulation of sugar and salt dissolving in water and a video of endothermic and exothermic dissolution.",
+  "summary_html": "<p>溶液是两种或两种以上物质通过物理方式结合而成的混合物，它在分子水平上是均匀的。溶剂是浓度最大的组分，决定溶液的物态。溶质是其他组分，其<span data-concept=\"concentration\">浓度</span>通常低于溶剂。溶液的形成可以是吸热的，也可以是放热的，取决于溶质和溶剂分子间吸引<span data-concept=\"force\">力</span>的相对大小。理想溶液形成时没有明显的<span data-concept=\"energy-and-work\">能量</span>变化。</p>",
+  "notes": "两个“学习链接”注记被省略，一个是糖和盐在水中溶解的 PhET 模拟，另一个是吸热溶解和放热溶解的视频。",
   "ai": {
     "text": [
       {
@@ -21,18 +21,26 @@
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-09-28",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed conceptual items fs-idm105740080, fs-idm33766240 and fs-idm118513216 carry a suggested approach marked as OmniStax’s own. The unkeyed numerical exercise fs-idm30601328 (the molarity, molality and percent by mass of hydrogen dissolved in palladium) is left out; it also prints the density of the solution as “10.8 g cm3” for 10.8 g cm−3.",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案。没有答案的概念题 fs-idm105740080、fs-idm33766240 和 fs-idm118513216 附有标明为 OmniStax 自拟的建议思路。没有答案的数值习题 fs-idm30601328（溶解在钯中的氢的物质的量浓度、质量摩尔浓度和质量分数）被省略；它还把溶液的密度印成了“10.8 g cm3”，而应为 10.8 g cm−3。",
   "figures": [
     {"id": "fig-dichromate", "kind": "photo", "number": "11.2", "draws": []},
     {
@@ -40,7 +48,7 @@
       "kind": "sim",
       "number": "11.3",
       "originals": ["/media/ch11/CNX_Chem_11_01_HeArsol.jpg"],
-      "original_caption": "Samples of helium and argon spontaneously mix to give a solution.",
+      "original_caption": "氦和氩的样品自发混合，形成溶液。",
       "draws": [],
       "conventions": [
         "He",
@@ -56,6 +64,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "closed-state headline shortened off the bars; note trimmed of the caption"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -64,7 +77,7 @@
       "kind": "sim",
       "number": "11.4",
       "originals": ["/media/ch11/CNX_Chem_11_01_solusolv.jpg"],
-      "original_caption": "This schematic represents the direct formation of a solution as a hypothetical stepwise process. Steps 1 and 2 involve separation/expansion of the solute and solvent molecules, both of which require an input of energy to overcome intermolecular attractions and are thus endothermic. Step 3 involves establishing intermolecular attractive forces between solute and solvent molecules (solvation), and is thus exothermic.",
+      "original_caption": "此示意图表示溶液的直接形成，把它看作一个假想的分步过程。步骤 1 和步骤 2 是溶质分子和溶剂分子的分离/膨胀，二者都需要输入能量来克服分子间吸引力，因此是吸热的。步骤 3 是在溶质分子与溶剂分子之间建立分子间吸引力（溶剂化），因此是放热的。",
       "draws": ["energy"],
       "ai": [
         {
@@ -76,6 +89,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "step labels moved off the arrows; note that repeated the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -93,13 +111,13 @@
     {"span": "heat", "concept": "endothermic-and-exothermic-dissolution", "verb": "introduces"}
   ],
   "exercises": [
-    {"id": "e1", "source_id": "fs-idm71361392", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "solutions", "prompt": "How do solutions differ from compounds? From other mixtures?", "answer": {"type": "open", "generated_by": "source", "solution": "A solution can vary in composition, while a compound cannot vary in composition. Solutions are homogeneous at the molecular level, while other mixtures are heterogeneous."}},
-    {"id": "e2", "source_id": "fs-idm105740080", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "solutions", "prompt": "Which of the principal characteristics of solutions are evident in the solutions of K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> shown in Figure 11.2?", "answer": {"type": "open", "generated_by": "ai", "solution": "The photographs show three of the defining traits. Once the orange crystals have dissolved, the liquid is the same orange at every point, so the mixture is homogeneous: its composition is uniform throughout. No solid remains on the bottom of the container, so the dissolved K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> does not settle out or separate from the water. And the mixture is a liquid, the same physical state as the solvent, water, even though the solute was a solid. The clear, even color also reflects the dispersal of the solute on a molecular scale, as K<sup>+</sup> ions and $\\text{Cr}_{2}\\text{O}_{7}{}^{2-}$ ions each surrounded by water molecules, although the individual ions themselves cannot be seen."}},
-    {"id": "e3", "source_id": "fs-idm84066432", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "heat", "prompt": "When KNO<sub>3</sub> is dissolved in water, the resulting solution is significantly colder than the water was originally.<br>(a) Is the dissolution of KNO<sub>3</sub> an endothermic or an exothermic process?<br>(b) What conclusions can you draw about the intermolecular attractions involved in the process?<br>(c) Is the resulting solution an ideal solution?", "answer": {"type": "open", "generated_by": "source", "solution": "(a) The process is endothermic as the solution is consuming heat. (b) Attraction between the K<sup>+</sup> and NO<sub>3</sub><sup>−</sup> ions is stronger than between the ions and water molecules (the ion-ion interactions have a lower, more negative energy). Therefore, the dissolution process increases the energy of the molecular interactions, and it consumes the thermal energy of the solution to make up for the difference. (c) No, an ideal solution is formed with no appreciable heat release or consumption."}},
-    {"id": "e4", "source_id": "fs-idm33766240", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "solutions", "prompt": "Give an example of each of the following types of solutions:<br>(a) a gas in a liquid<br>(b) a gas in a gas<br>(c) a solid in a solid", "answer": {"type": "open", "generated_by": "ai", "solution": "(a) A gas in a liquid: a soft drink, in which carbon dioxide gas, CO<sub>2</sub>(<em>g</em>), is dissolved in liquid water. (b) A gas in a gas: air, in which oxygen, O<sub>2</sub>(<em>g</em>), and several other gases are dissolved in nitrogen, N<sub>2</sub>(<em>g</em>). (c) A solid in a solid: brass, an alloy in which solid zinc is dissolved in solid copper; the nickel dissolved in copper in a US five-cent coin is another. In each case the mixture is homogeneous and takes the physical state of its solvent: the soft drink is a liquid, air is a gas and brass is a solid."}},
-    {"id": "e5", "source_id": "fs-idm6481344", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "steps", "prompt": "Indicate the most important types of intermolecular attractions in each of the following solutions:<br>(a) The solution in Figure 11.2.<br>(b) NO(<em>l</em>) in CO(<em>l</em>)<br>(c) Cl<sub>2</sub>(<em>g</em>) in Br<sub>2</sub>(<em>l</em>)<br>(d) HCl(<em>g</em>) in benzene C<sub>6</sub>H<sub>6</sub>(<em>l</em>)<br>(e) Methanol CH<sub>3</sub>OH(<em>l</em>) in H<sub>2</sub>O(<em>l</em>)", "answer": {"type": "open", "generated_by": "source", "solution": "(a) ion-dipole forces; (b) dipole-dipole forces; (c) dispersion forces; (d) dispersion forces; (e) hydrogen bonding"}},
-    {"id": "e6", "source_id": "fs-idm118513216", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "steps", "prompt": "Predict whether each of the following substances would be more soluble in water (polar solvent) or in a hydrocarbon such as heptane (C<sub>7</sub>H<sub>16</sub>, nonpolar solvent):<br>(a) vegetable oil (nonpolar)<br>(b) isopropyl alcohol (polar)<br>(c) potassium bromide (ionic)", "answer": {"type": "open", "generated_by": "ai", "solution": "(a) Vegetable oil is more soluble in heptane. Both are nonpolar, so the dispersion forces the oil forms with heptane are about as strong as those within the oil and within heptane. In water the oil could not replace the strong hydrogen bonds between water molecules it would have to break. (b) Isopropyl alcohol is more soluble in water. Its polar O–H group forms hydrogen bonds and dipole-dipole attractions with water comparable to those within each pure liquid, while heptane offers it only weak dispersion forces. (c) Potassium bromide is more soluble in water. The strong ion-dipole attractions between K<sup>+</sup> and Br<sup>−</sup> ions and polar water molecules can compensate for the electrostatic attractions in the crystal; nonpolar heptane cannot solvate the ions, so KBr is essentially insoluble in it."}},
-    {"id": "e7", "source_id": "fs-idm95777520", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "heat", "prompt": "Heat is released when some solutions form; heat is absorbed when other solutions form. Provide a molecular explanation for the difference between these two types of spontaneous processes.", "answer": {"type": "open", "generated_by": "source", "solution": "Heat is released when the total intermolecular forces (IMFs) between the solute and solvent molecules are stronger than the total IMFs in the pure solute and in the pure solvent: Breaking weaker IMFs and forming stronger IMFs releases heat. Heat is absorbed when the total IMFs in the solution are weaker than the total of those in the pure solute and in the pure solvent: Breaking stronger IMFs and forming weaker IMFs absorbs heat."}}
+    {"id": "e1", "source_id": "fs-idm71361392", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "solutions", "prompt": "溶液与化合物有何不同？与其他混合物有何不同？", "answer": {"type": "open", "generated_by": "source", "solution": "溶液的组成可以变化，而化合物的组成不能变化。溶液在分子水平上是均匀的，而其他混合物是非均匀的。"}},
+    {"id": "e2", "source_id": "fs-idm105740080", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "solutions", "prompt": "图 11.2 所示的 K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> 溶液中，明显体现了溶液的哪些主要特征？", "answer": {"type": "open", "generated_by": "ai", "solution": "这些照片显示了三个基本特征。橙色晶体溶解之后，液体各处的橙色都相同，所以这种混合物是均匀的：它的组成各处一致。容器底部没有留下固体，所以溶解的 K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub> 不会从水中沉降析出或分离。而且这种混合物是液体，与溶剂水的物态相同，尽管溶质原本是固体。清澈而均匀的颜色还反映出溶质在分子尺度上的分散，即 K<sup>+</sup> 离子和 $\\text{Cr}_{2}\\text{O}_{7}{}^{2-}$ 离子各自被水分子包围，不过单个离子本身是看不见的。"}},
+    {"id": "e3", "source_id": "fs-idm84066432", "kind": "exercise", "bloom": "Analyze", "place": {"at": "end"}, "cite": "heat", "prompt": "KNO<sub>3</sub> 溶于水时，所得溶液比原来的水冷得多。<br>（a）KNO<sub>3</sub> 的溶解是吸热过程还是放热过程？<br>（b）对于这一过程中涉及的分子间吸引力，你能得出什么结论？<br>（c）所得溶液是理想溶液吗？", "answer": {"type": "open", "generated_by": "source", "solution": "（a）这一过程是吸热的，因为溶液在消耗热量。（b）K<sup>+</sup> 离子与 NO<sub>3</sub><sup>−</sup> 离子之间的吸引力比这些离子与水分子之间的吸引力更强（离子–离子相互作用的能量更低，更负）。因此，溶解过程使分子间相互作用的能量增大，并消耗溶液的热能来弥补这一差额。（c）不是，形成理想溶液时没有明显的热量放出或消耗。"}},
+    {"id": "e4", "source_id": "fs-idm33766240", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "solutions", "prompt": "请分别给出下列每种类型溶液的一个例子：<br>（a）液体中的气体<br>（b）气体中的气体<br>（c）固体中的固体", "answer": {"type": "open", "generated_by": "ai", "solution": "（a）液体中的气体：软饮料，其中二氧化碳气体 CO<sub>2</sub>(<em>g</em>) 溶解在液态水中。（b）气体中的气体：空气，其中氧气 O<sub>2</sub>(<em>g</em>) 和其他几种气体溶解在氮气 N<sub>2</sub>(<em>g</em>) 中。（c）固体中的固体：黄铜，这是一种合金，其中固体锌溶解在固体铜中；美国 5 美分硬币中溶解在铜里的镍是另一个例子。在每种情况下，混合物都是均匀的，并且具有其溶剂的物态：软饮料是液体，空气是气体，黄铜是固体。"}},
+    {"id": "e5", "source_id": "fs-idm6481344", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "steps", "prompt": "指出下列每种溶液中最主要的分子间吸引力类型：<br>（a）图 11.2 中的溶液。<br>（b）CO(<em>l</em>) 中的 NO(<em>l</em>)<br>（c）Br<sub>2</sub>(<em>l</em>) 中的 Cl<sub>2</sub>(<em>g</em>)<br>（d）苯 C<sub>6</sub>H<sub>6</sub>(<em>l</em>) 中的 HCl(<em>g</em>)<br>（e）H<sub>2</sub>O(<em>l</em>) 中的甲醇 CH<sub>3</sub>OH(<em>l</em>)", "answer": {"type": "open", "generated_by": "source", "solution": "（a）离子–偶极作用力；（b）偶极–偶极作用力；（c）色散力；（d）色散力；（e）氢键"}},
+    {"id": "e6", "source_id": "fs-idm118513216", "kind": "exercise", "bloom": "Apply", "place": {"at": "end"}, "cite": "steps", "prompt": "预测下列每种物质更易溶于水（极性溶剂），还是更易溶于庚烷（C<sub>7</sub>H<sub>16</sub>，非极性溶剂）这样的烃：<br>（a）植物油（非极性）<br>（b）异丙醇（极性）<br>（c）溴化钾（离子型）", "answer": {"type": "open", "generated_by": "ai", "solution": "（a）植物油更易溶于庚烷。二者都是非极性的，所以油与庚烷之间形成的色散力与油内部和庚烷内部的色散力大致一样强。在水中，油无法取代它必须破坏的水分子之间的强氢键。（b）异丙醇更易溶于水。它的极性 O–H 基团与水形成的氢键和偶极–偶极吸引力，可与每种纯液体内部的相当，而庚烷只能提供给它较弱的色散力。（c）溴化钾更易溶于水。K<sup>+</sup> 离子和 Br<sup>−</sup> 离子与极性水分子之间的强离子–偶极吸引力，可以补偿晶体中的静电吸引力；非极性的庚烷不能使这些离子溶剂化，所以 KBr 基本上不溶于其中。"}},
+    {"id": "e7", "source_id": "fs-idm95777520", "kind": "exercise", "bloom": "Understand", "place": {"at": "end"}, "cite": "heat", "prompt": "形成某些溶液时放出热量，形成另一些溶液时吸收热量。请从分子角度解释这两类自发过程的差别。", "answer": {"type": "open", "generated_by": "source", "solution": "当溶质与溶剂分子之间的总分子间作用力（IMF）强于纯溶质中和纯溶剂中的总分子间作用力时，就会放出热量：破坏较弱的分子间作用力并形成较强的分子间作用力，放出热量。当溶液中的总分子间作用力弱于纯溶质中和纯溶剂中的总分子间作用力之和时，就会吸收热量：破坏较强的分子间作用力并形成较弱的分子间作用力，吸收热量。"}}
   ],
   "exercise_concepts": [
     {"exercise": "e1", "concept": "properties-of-solutions"},
@@ -115,28 +133,28 @@
   "referents": [
     {
       "id": "helium-bulb",
-      "label": "the bulb that first held helium",
+      "label": "最初盛氦的玻璃泡",
       "figures": [
         "sim-he-ar"
       ]
     },
     {
       "id": "argon-bulb",
-      "label": "the bulb that first held argon",
+      "label": "最初盛氩的玻璃泡",
       "figures": [
         "sim-he-ar"
       ]
     },
     {
       "id": "solute",
-      "label": "the solute, expanded in step 1",
+      "label": "溶质，在步骤 1 中膨胀",
       "figures": [
         "sim-steps"
       ]
     },
     {
       "id": "solvent",
-      "label": "the solvent, expanded in step 2",
+      "label": "溶剂，在步骤 2 中膨胀",
       "figures": [
         "sim-steps"
       ]

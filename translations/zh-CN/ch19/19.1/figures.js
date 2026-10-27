@@ -5,12 +5,12 @@ const { tex, C, PAL, alpha, register, begin, line, arrow, dot, text, topline, la
 const sim = (id, H) => F.sim(root, id, H);
 const TAU = 2 * Math.PI;
 const clamp01 = (x) => Math.min(1, Math.max(0, x));
-const WORD = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
+const WORD = ['零', '一', '两', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
 const kv = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 
 /* ---------- the elements, by atomic number ---------- */
 const SYM = "H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og".split(' ');
-const NAME = "Hydrogen Helium Lithium Beryllium Boron Carbon Nitrogen Oxygen Fluorine Neon Sodium Magnesium Aluminum Silicon Phosphorus Sulfur Chlorine Argon Potassium Calcium Scandium Titanium Vanadium Chromium Manganese Iron Cobalt Nickel Copper Zinc Gallium Germanium Arsenic Selenium Bromine Krypton Rubidium Strontium Yttrium Zirconium Niobium Molybdenum Technetium Ruthenium Rhodium Palladium Silver Cadmium Indium Tin Antimony Tellurium Iodine Xenon Cesium Barium Lanthanum Cerium Praseodymium Neodymium Promethium Samarium Europium Gadolinium Terbium Dysprosium Holmium Erbium Thulium Ytterbium Lutetium Hafnium Tantalum Tungsten Rhenium Osmium Iridium Platinum Gold Mercury Thallium Lead Bismuth Polonium Astatine Radon Francium Radium Actinium Thorium Protactinium Uranium Neptunium Plutonium Americium Curium Berkelium Californium Einsteinium Fermium Mendelevium Nobelium Lawrencium Rutherfordium Dubnium Seaborgium Bohrium Hassium Meitnerium Darmstadtium Roentgenium Copernicium Nihonium Flerovium Moscovium Livermorium Tennessine Oganesson".split(' ');
+const NAME = "氢 氦 锂 铍 硼 碳 氮 氧 氟 氖 钠 镁 铝 硅 磷 硫 氯 氩 钾 钙 钪 钛 钒 铬 锰 铁 钴 镍 铜 锌 镓 锗 砷 硒 溴 氪 铷 锶 钇 锆 铌 钼 锝 钌 铑 钯 银 镉 铟 锡 锑 碲 碘 氙 铯 钡 镧 铈 镨 钕 钷 钐 铕 钆 铽 镝 钬 铒 铥 镱 镥 铪 钽 钨 铼 锇 铱 铂 金 汞 铊 铅 铋 钋 砹 氡 钫 镭 锕 钍 镤 铀 镎 钚 镅 锔 锫 锎 锿 镄 钔 锘 铹 𬬻 𬭊 𬭳 𬭛 𬭶 鿏 𫟼 𬬭 鿔 鿭 𫓧 镆 𫟷 鿬 鿫".split(' ');
 /* group and period of an element; the lanthanides and actinides (57 to 71, 89 to 103) are in the f rows, as the book prints them */
 function place(Z) {
   const starts = [1, 3, 11, 19, 37, 55, 87, 119];
@@ -40,16 +40,16 @@ function spin(ctx, x, y, up, h, color, w = 3) {
   const d = sim('sim-transition-series', 790);
   const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
   const SERIES = {
-    first: { z: range(21, 29), head: 'The first transition series runs across period 4 from scandium to copper.', ro: '{}_{21}\\text{Sc}\\ \\text{to}\\ {}_{29}\\text{Cu}\\text{:}\\ 9\\ \\text{elements, filling the}\\ 3d\\ \\text{subshell}' },
-    second: { z: range(39, 47), head: 'The second transition series runs across period 5 from yttrium to silver.', ro: '{}_{39}\\text{Y}\\ \\text{to}\\ {}_{47}\\text{Ag}\\text{:}\\ 9\\ \\text{elements, filling the}\\ 4d\\ \\text{subshell}' },
-    third: { z: [57, ...range(72, 79)], head: 'The third transition series is lanthanum and the elements of period 6 from hafnium to gold.', ro: '{}_{57}\\text{La}\\ \\text{and}\\ {}_{72}\\text{Hf}\\ \\text{to}\\ {}_{79}\\text{Au}\\text{:}\\ 9\\ \\text{elements, filling the}\\ 5d\\ \\text{subshell}' },
-    fourth: { z: [89, ...range(104, 111)], head: 'The fourth transition series is actinium and the elements of period 7 from rutherfordium to roentgenium.', ro: '{}_{89}\\text{Ac}\\ \\text{and}\\ {}_{104}\\text{Rf}\\ \\text{to}\\ {}_{111}\\text{Rg}\\text{:}\\ 9\\ \\text{elements, filling the}\\ 6d\\ \\text{subshell}' },
-    lanthanides: { z: range(57, 71), head: 'The lanthanide series is lanthanum and the elements from cerium to lutetium.', ro: '{}_{57}\\text{La}\\ \\text{to}\\ {}_{71}\\text{Lu}\\text{:}\\ 15\\ \\text{elements, filling the}\\ 4f\\ \\text{subshell}' },
-    actinides: { z: range(89, 103), head: 'The actinide series is actinium and the elements from thorium to lawrencium.', ro: '{}_{89}\\text{Ac}\\ \\text{to}\\ {}_{103}\\text{Lr}\\text{:}\\ 15\\ \\text{elements, filling the}\\ 5f\\ \\text{subshell}' },
+    first: { z: range(21, 29), head: '第一过渡系横跨第 4 周期，从钪到铜。', ro: '{}_{21}\\text{Sc}\\ \\text{至}\\ {}_{29}\\text{Cu}\\text{：}\\ 9\\ \\text{种元素，填充}\\ 3d\\ \\text{亚层}' },
+    second: { z: range(39, 47), head: '第二过渡系横跨第 5 周期，从钇到银。', ro: '{}_{39}\\text{Y}\\ \\text{至}\\ {}_{47}\\text{Ag}\\text{：}\\ 9\\ \\text{种元素，填充}\\ 4d\\ \\text{亚层}' },
+    third: { z: [57, ...range(72, 79)], head: '第三过渡系由镧和第 6 周期中从铪到金的元素组成。', ro: '{}_{57}\\text{La}\\ \\text{和}\\ {}_{72}\\text{Hf}\\ \\text{至}\\ {}_{79}\\text{Au}\\text{：}\\ 9\\ \\text{种元素，填充}\\ 5d\\ \\text{亚层}' },
+    fourth: { z: [89, ...range(104, 111)], head: '第四过渡系由锕和第 7 周期中从𬬻到𬬭的元素组成。', ro: '{}_{89}\\text{Ac}\\ \\text{和}\\ {}_{104}\\text{Rf}\\ \\text{至}\\ {}_{111}\\text{Rg}\\text{：}\\ 9\\ \\text{种元素，填充}\\ 6d\\ \\text{亚层}' },
+    lanthanides: { z: range(57, 71), head: '镧系由镧和从铈到镥的元素组成。', ro: '{}_{57}\\text{La}\\ \\text{至}\\ {}_{71}\\text{Lu}\\text{：}\\ 15\\ \\text{种元素，填充}\\ 4f\\ \\text{亚层}' },
+    actinides: { z: range(89, 103), head: '锕系由锕和从钍到铹的元素组成。', ro: '{}_{89}\\text{Ac}\\ \\text{至}\\ {}_{103}\\text{Lr}\\text{：}\\ 15\\ \\text{种元素，填充}\\ 5f\\ \\text{亚层}' },
   };
   const pick = F.choice(d.controls, {
-    label: '\\text{series}', aria: 'the series lit on the table', value: 'first',
-    options: [['first', 'first'], ['second', 'second'], ['third', 'third'], ['fourth', 'fourth'], ['lanthanides', 'lanthanides'], ['actinides', 'actinides']].map(([value, l]) => ({ value, label: l })),
+    label: '\\text{系}', aria: '表中被点亮的系', value: 'first',
+    options: [['first', '第一'], ['second', '第二'], ['third', '第三'], ['fourth', '第四'], ['lanthanides', '镧系'], ['actinides', '锕系']].map(([value, l]) => ({ value, label: l })),
   });
   const lit = (v) => Array.from({ length: 118 }, (_, i) => (SERIES[v].z.includes(i + 1) ? 1 : 0));
   const X0 = 60, CW = 70, CH = 54, PY = 60, TOP = 140, FTOP = 590;
@@ -59,8 +59,8 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     return { x: X0 + (q.group - 1) * CW, y: TOP + (q.period - 1) * PY };
   }
   const DUAL = {
-    57: 'Lanthanum, Z = 57: a lanthanide by its behavior, the first member of the third transition series by its electron configuration',
-    89: 'Actinium, Z = 89: an actinide by its behavior, the first member of the fourth transition series by its electron configuration',
+    57: '镧，Z = 57：就其行为而言是镧系元素，就其电子构型而言是第三过渡系的第一个成员',
+    89: '锕，Z = 89：就其行为而言是锕系元素，就其电子构型而言是第四过渡系的第一个成员',
   };
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
@@ -70,7 +70,7 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     for (let p = 1; p <= 7; p++) text(ctx, String(p), X0 - 20, TOP + (p - 1) * PY + CH / 2, PAL.muted, { size: 15, align: 'center' });
     const firstRow = [1, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 1];
     firstRow.forEach((p, g) => text(ctx, String(g + 1), X0 + g * CW + CW / 2, TOP + (p - 1) * PY - 12, PAL.muted, { size: 15, align: 'center' }));
-    hbracket(ctx, X0 + 2 * CW + 2, X0 + 11 * CW - 4, TOP + 3 * PY - 38, PAL.ink, 'transition elements', { side: 'above' });
+    hbracket(ctx, X0 + 2 * CW + 2, X0 + 11 * CW - 4, TOP + 3 * PY - 38, PAL.ink, '过渡元素', { side: 'above' });
     /* the two places in group 3 the f rows stand for */
     [[6, '57–71'], [7, '89–103']].forEach(([p, s]) => {
       const x = X0 + 2 * CW, y = TOP + (p - 1) * PY;
@@ -85,11 +85,11 @@ function spin(ctx, x, y, up, h, color, w = 3) {
       ctx.strokeStyle = k > 0.5 ? PAL.ink : PAL.rule; ctx.lineWidth = 1.5 + 1.5 * k; ctx.strokeRect(x + 1, y, CW - 3, CH); ctx.restore();
       text(ctx, String(Z), x + 7, y + 12, PAL.muted, { size: 12 });
       text(ctx, SYM[Z - 1], x + CW / 2, y + 33, PAL.ink, { size: 20, weight: k > 0.5 ? 600 : 400, align: 'center' });
-      hits.push({ x: x + CW / 2, y: y + CH / 2, r: 27, name: DUAL[Z] ?? NAME[Z - 1] + ', Z = ' + Z });
+      hits.push({ x: x + CW / 2, y: y + CH / 2, r: 27, name: DUAL[Z] ?? NAME[Z - 1] + '，Z = ' + Z });
     }
-    text(ctx, 'lanthanides', X0 + 2 * CW - 10, FTOP + CH / 2, PAL.muted, { size: 15, align: 'right' });
-    text(ctx, 'actinides', X0 + 2 * CW - 10, FTOP + PY + CH / 2, PAL.muted, { size: 15, align: 'right' });
-    hbracket(ctx, X0 + 2 * CW + 2, X0 + 17 * CW - 4, FTOP + PY + CH + 16, PAL.ink, 'inner transition elements', { side: 'below' });
+    text(ctx, '镧系', X0 + 2 * CW - 10, FTOP + CH / 2, PAL.muted, { size: 15, align: 'right' });
+    text(ctx, '锕系', X0 + 2 * CW - 10, FTOP + PY + CH / 2, PAL.muted, { size: 15, align: 'right' });
+    hbracket(ctx, X0 + 2 * CW + 2, X0 + 17 * CW - 4, FTOP + PY + CH + 16, PAL.ink, '内过渡元素', { side: 'below' });
     topline(ctx, SERIES[pick.value].head);
     tex(d.readout, SERIES[pick.value].ro);
   }
@@ -106,12 +106,12 @@ function spin(ctx, x, y, up, h, color, w = 3) {
   const d = sim('sim-oxidation-states', 600);
   /* symbol, name, Z, 4s and 3d electrons of the atom, the states the book's chart prints */
   const M = [
-    ['Sc', 'Scandium', 21, 2, 1, [3]], ['Ti', 'Titanium', 22, 2, 2, [3, 4]], ['V', 'Vanadium', 23, 2, 3, [2, 3, 4, 5]],
-    ['Cr', 'Chromium', 24, 1, 5, [2, 3, 4, 6]], ['Mn', 'Manganese', 25, 2, 5, [2, 3, 4, 6, 7]], ['Fe', 'Iron', 26, 2, 6, [2, 3, 6]],
-    ['Co', 'Cobalt', 27, 2, 7, [2, 3]], ['Ni', 'Nickel', 28, 2, 8, [2, 3]], ['Cu', 'Copper', 29, 1, 10, [1, 2, 3]], ['Zn', 'Zinc', 30, 2, 10, [2]],
+    ['Sc', '钪', 21, 2, 1, [3]], ['Ti', '钛', 22, 2, 2, [3, 4]], ['V', '钒', 23, 2, 3, [2, 3, 4, 5]],
+    ['Cr', '铬', 24, 1, 5, [2, 3, 4, 6]], ['Mn', '锰', 25, 2, 5, [2, 3, 4, 6, 7]], ['Fe', '铁', 26, 2, 6, [2, 3, 6]],
+    ['Co', '钴', 27, 2, 7, [2, 3]], ['Ni', '镍', 28, 2, 8, [2, 3]], ['Cu', '铜', 29, 1, 10, [1, 2, 3]], ['Zn', '锌', 30, 2, 10, [2]],
   ].map(([sym, name, Z, s, dd, states]) => ({ sym, name, Z, s, d: dd, states, top: Math.max(...states) }));
   const pick = F.choice(d.controls, {
-    label: '\\text{metal}', aria: 'the metal of the first transition series', value: 'Ti',
+    label: '\\text{金属}', aria: '第一过渡系的金属', value: 'Ti',
     options: M.map((m) => ({ value: m.sym, label: m.sym })),
   });
   const of = (v) => M.find((m) => m.sym === v);
@@ -145,7 +145,7 @@ function spin(ctx, x, y, up, h, color, w = 3) {
         const y = GY + (n - 1) * RH + RH / 2;
         if (q.states.includes(n)) {
           text(ctx, n + '+', x, y, PAL.ink, { size: 19, weight: sel ? 600 : 400, align: 'center' });
-          hits.push({ x, y, r: 18, name: q.name + ' in the ' + n + '+ oxidation state' });
+          hits.push({ x, y, r: 18, name: q.name + '，' + n + '+ 氧化态' });
         }
       }
     });
@@ -168,17 +168,17 @@ function spin(ctx, x, y, up, h, color, w = 3) {
         if (e.lost) text(ctx, String(e.order), e.x, BY - BH / 2 - 16, PAL.muted, { size: 16, align: 'center' });
       });
     }, [0, 0]));
-    electrons(m).forEach((e) => hits.push({ x: e.x, y: BY, r: 14, name: (e.lost ? 'lost in ' + m.sym + ' ' + m.top + '+, removed ' + ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'][e.order - 1] : 'kept in ' + m.sym + ' ' + m.top + '+') + ': a ' + (e.sub === 's' ? '4s' : '3d') + ' electron, spin ' + (e.up ? 'up' : 'down') }));
+    electrons(m).forEach((e) => hits.push({ x: e.x, y: BY, r: 14, name: (e.lost ? '在 ' + m.sym + ' ' + m.top + '+ 中失去，第' + ['一', '二', '三', '四', '五', '六', '七'][e.order - 1] + '个被移去' : '在 ' + m.sym + ' ' + m.top + '+ 中保留') + '：一个 ' + (e.sub === 's' ? '4s' : '3d') + ' 电子，自旋' + (e.up ? '向上' : '向下') }));
     /* the key to the drawing */
     const KY = 470, KX = SX - 60;
-    spin(ctx, KX + 10, KY, true, 34, PAL.ink, 3.5); text(ctx, 'kept', KX + 30, KY, PAL.ink, { size: 18 });
-    spin(ctx, KX + 110, KY, true, 34, alpha(PAL.ink, 0.28), 2); text(ctx, 'lost in the highest state, numbered in order', KX + 130, KY, PAL.ink, { size: 18 });
+    spin(ctx, KX + 10, KY, true, 34, PAL.ink, 3.5); text(ctx, '保留', KX + 30, KY, PAL.ink, { size: 18 });
+    spin(ctx, KX + 110, KY, true, 34, alpha(PAL.ink, 0.28), 2); text(ctx, '在最高氧化态中失去，按顺序编号', KX + 130, KY, PAL.ink, { size: 18 });
     const n = m.s + m.d, all = m.top >= n;
     topline(ctx, all
-      ? `${m.name} loses all ${WORD[n]} of its $4s$ and $3d$ electrons in its highest oxidation state, ${m.top}+.`
-      : `In its highest oxidation state, ${m.top}+, ${m.name.toLowerCase()} loses only ${WORD[m.top]} of its ${WORD[n]} $4s$ and $3d$ electrons.`);
+      ? `${m.name}在其最高氧化态 ${m.top}+ 时，失去其全部${WORD[n]}个 $4s$ 和 $3d$ 电子。`
+      : `${m.name}在其最高氧化态 ${m.top}+ 时，其${WORD[n]}个 $4s$ 和 $3d$ 电子中只失去${WORD[m.top]}个。`);
     const sl = Math.max(0, m.s - m.top), dl = m.d - Math.max(0, m.top - m.s);
-    tex(d.readout, `\\text{${m.sym}}\\text{:}\\ [\\text{Ar}]\\,${cfg(m.s, m.d)}\\ \\longrightarrow\\ \\text{${m.sym}}^{${m.top}+}\\text{:}\\ [\\text{Ar}]${sl || dl ? '\\,' + cfg(sl, dl) : ''},\\quad ${m.top}\\ \\text{of}\\ ${n}\\ \\text{valence electrons lost}`);
+    tex(d.readout, `\\text{${m.sym}}\\text{:}\\ [\\text{Ar}]\\,${cfg(m.s, m.d)}\\ \\longrightarrow\\ \\text{${m.sym}}^{${m.top}+}\\text{:}\\ [\\text{Ar}]${sl || dl ? '\\,' + cfg(sl, dl) : ''},\\quad ${n}\\ \\text{个价电子中失去}\\ ${m.top}\\ \\text{个}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -214,13 +214,13 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     return (m[1] || '') + `\\text{${body}}` + (m[3] ? `(${m[3][1]})` : '');
   }).join(' ').replace(/\\text\{\}/g, '');
   const HEAD = {
-    ore: 'Carbon monoxide rising from below reduces a lump of iron ore to iron, which melts and collects at the bottom.',
-    coke: 'A lump of coke turns rising carbon dioxide into carbon monoxide and burns in the preheated air near the bottom.',
-    lime: 'A lump of limestone decomposes to calcium oxide, which combines with silica to form the slag that floats on the iron.',
+    ore: '从下方升起的一氧化碳把一块铁矿石还原为铁，铁熔化后聚集在底部。',
+    coke: '一块焦炭把上升的二氧化碳变为一氧化碳，并在靠近底部的预热空气中燃烧。',
+    lime: '一块石灰石分解为氧化钙，氧化钙与二氧化硅结合，形成浮在铁上的炉渣。',
   };
   const follow = F.choice(d.controls, {
-    label: '\\text{follow}', aria: 'the lump followed down the furnace', value: 'ore',
-    options: [{ value: 'ore', label: 'iron ore' }, { value: 'coke', label: 'coke' }, { value: 'lime', label: 'limestone' }],
+    label: '\\text{跟随}', aria: '沿炉子向下被跟随的料块', value: 'ore',
+    options: [{ value: 'ore', label: '铁矿石' }, { value: 'coke', label: '焦炭' }, { value: 'lime', label: '石灰石' }],
     onInput: () => cy.reset(),
   });
   const cy = F.cycle(() => T, 1.2);
@@ -246,9 +246,9 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     return h > 35 ? { c: F.el('Ca'), r: 8 } : h > 25 ? { c: F.el('Ca'), r: 7 } : { c: F.fact(SLAG), r: 5, molten: true };
   }
   const NAMES = {
-    ore: (h) => (h > 70 ? 'iron(III) oxide, Fe₂O₃' : h > 60 ? 'Fe₃O₄' : h > 50 ? 'iron(II) oxide, FeO' : h > 28 ? 'iron' : 'molten iron'),
-    coke: (h) => (h > 15 ? 'coke, carbon' : 'coke, burning'),
-    lime: (h) => (h > 40 ? 'limestone, CaCO₃' : h > 30 ? 'calcium oxide, CaO' : 'molten slag, CaSiO₃'),
+    ore: (h) => (h > 70 ? '氧化铁(III)，Fe₂O₃' : h > 60 ? 'Fe₃O₄' : h > 50 ? '氧化铁(II)，FeO' : h > 28 ? '铁' : '熔融的铁'),
+    coke: (h) => (h > 15 ? '焦炭，碳' : '焦炭，正在燃烧'),
+    lime: (h) => (h > 40 ? '石灰石，CaCO₃' : h > 30 ? '氧化钙，CaO' : '熔融的炉渣，CaSiO₃'),
   };
   /* a pipe or opening along which something flows: a dashed band whose dashes travel, and an arrowhead */
   function flow(ctx, x1, y1, x2, y2, color, t) {
@@ -271,17 +271,17 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     };
     ctx.save(); wall(-1); wall(1); ctx.restore();
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.fillRect(CX - 170, YB, 340, 18); ctx.strokeRect(CX - 170, YB, 340, 18); ctx.restore();
-    hits.push({ x: CX - half(50) - 17, y: yOf(50), r: 20, name: 'the furnace wall, lined with refractory brick' });
+    hits.push({ x: CX - half(50) - 17, y: yOf(50), r: 20, name: '炉壁，内衬耐火砖' });
     /* the hearth: molten iron under the slag */
     const pool = (h0, h1, c) => { ctx.save(); ctx.fillStyle = c; ctx.fillRect(CX - half(0), yOf(h1), 2 * half(0), yOf(h0) - yOf(h1)); ctx.restore(); };
     pool(0, 5, F.fact(IRON)); pool(5, 9, F.fact(SLAG));
-    hits.push({ x: CX, y: yOf(2.5), r: 30, name: 'molten iron' }, { x: CX + 60, y: yOf(7), r: 22, name: 'molten slag, floating on the iron' });
+    hits.push({ x: CX, y: yOf(2.5), r: 30, name: '熔融的铁' }, { x: CX + 60, y: yOf(7), r: 22, name: '熔融的炉渣，浮在铁上' });
     /* the pipes: off-take, tuyeres, slag notch and iron notch */
     const pipe = (x1, x2, h, w) => { ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.fillRect(Math.min(x1, x2), yOf(h) - w / 2, Math.abs(x2 - x1), w); ctx.strokeRect(Math.min(x1, x2), yOf(h) - w / 2, Math.abs(x2 - x1), w); ctx.restore(); };
     pipe(CX + half(OFF), PIPE_X, OFF, 30);
     pipe(CX - half(15) - 34, CX - half(15) - 120, 15, 20); pipe(CX + half(15) + 34, CX + half(15) + 120, 15, 20);
     pipe(CX - half(7) - 34, 120, 7, 18); pipe(CX + half(2.5) + 34, PIPE_X, 2.5, 18);
-    hits.push({ x: CX - half(15) - 80, y: yOf(15), r: 18, name: 'a tuyere, the nozzle that blows in preheated air' }, { x: CX + half(15) + 80, y: yOf(15), r: 18, name: 'a tuyere, the nozzle that blows in preheated air' });
+    hits.push({ x: CX - half(15) - 80, y: yOf(15), r: 18, name: '风口，吹入预热空气的喷嘴' }, { x: CX + half(15) + 80, y: yOf(15), r: 18, name: '风口，吹入预热空气的喷嘴' });
     /* the flows in and out */
     flow(ctx, CX - half(15) - 200, yOf(15), CX - half(15) - 4, yOf(15), PAL.muted, t);
     flow(ctx, CX + half(15) + 200, yOf(15), CX + half(15) + 4, yOf(15), PAL.muted, t);
@@ -303,14 +303,14 @@ function spin(ctx, x, y, up, h, color, w = 3) {
       const p = gasAt(g, t), two = p.h < 20 || (p.h > 58 && i % 2 === 0);
       const dots = two ? [[-7, 'O'], [0, 'C'], [7, 'O']] : [[-3.5, 'C'], [3.5, 'O']];
       dots.forEach(([dx, s]) => { ctx.save(); ctx.beginPath(); ctx.arc(p.x + dx, p.y, 4, 0, TAU); ctx.fillStyle = F.el(s); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 0.8; ctx.stroke(); ctx.restore(); });
-      hits.push({ x: p.x, y: p.y, r: 8, name: two ? 'carbon dioxide, CO₂' : 'carbon monoxide, CO' });
+      hits.push({ x: p.x, y: p.y, r: 8, name: two ? '二氧化碳，CO₂' : '一氧化碳，CO' });
     });
     /* the followed lump */
     const k = clamp01(t / T), hEnd = kind === 'ore' ? 5 : kind === 'lime' ? 7 : 9, hf = 80 - (80 - hEnd) * k;
     const fx = CX - 40, fl = look(kind, hf);
     if (fl.r > 0.5) {
       ctx.save(); ctx.beginPath(); ctx.arc(fx, yOf(hf), fl.r + 3, 0, TAU); ctx.fillStyle = fl.c; ctx.fill(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.stroke(); ctx.restore();
-      hits.push({ x: fx, y: yOf(hf), r: 18, name: 'the lump followed: ' + NAMES[kind](hf) });
+      hits.push({ x: fx, y: yOf(hf), r: 18, name: '被跟随的料块：' + NAMES[kind](hf) });
     }
     ctx.save(); ctx.beginPath(); ctx.arc(fx, yOf(hf), 17, 0, TAU); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
     /* the scale of zones: height and temperature */
@@ -324,17 +324,17 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     });
     const zy = yOf(zone[0]);
     ctx.save(); ctx.beginPath(); ctx.moveTo(SXH - 70, zy); ctx.lineTo(SXH - 84, zy - 8); ctx.lineTo(SXH - 84, zy + 8); ctx.closePath(); ctx.fillStyle = PAL.ink; ctx.fill(); ctx.restore();
-    text(ctx, 'height', SXH, yOf(83), C('length'), { size: 17, align: 'right' });
-    text(ctx, 'temperature', SXT + 70, yOf(83), C('temperature'), { size: 17, align: 'right' });
+    text(ctx, '高度', SXH, yOf(83), C('length'), { size: 17, align: 'right' });
+    text(ctx, '温度', SXT + 70, yOf(83), C('temperature'), { size: 17, align: 'right' });
     /* names of the inlets and outlets */
-    label(ctx, 'roasted ore, coke, limestone', CX + 14, yOf(97), { side: 'right', size: 19, leader: false, gap: 8 });
+    label(ctx, '焙烧后的矿石、焦炭、石灰石', CX + 14, yOf(97), { side: 'right', size: 19, leader: false, gap: 8 });
     label(ctx, 'CO, CO_{2}, N_{2}', PIPE_X + 10, yOf(OFF) - 30, { side: 'above', size: 19, leader: false, gap: 0 });
-    label(ctx, 'preheated air', CX - half(15) - 200, yOf(15) - 26, { side: 'right', size: 19, leader: false, gap: 0 });
-    label(ctx, 'slag', 100, yOf(7) - 24, { side: 'right', size: 19, leader: false, gap: 0 });
-    label(ctx, 'molten iron', PIPE_X + 48, yOf(2.5), { side: 'right', size: 19, leader: false, gap: 8 });
+    label(ctx, '预热空气', CX - half(15) - 200, yOf(15) - 26, { side: 'right', size: 19, leader: false, gap: 0 });
+    label(ctx, '炉渣', 100, yOf(7) - 24, { side: 'right', size: 19, leader: false, gap: 0 });
+    label(ctx, '熔融的铁', PIPE_X + 48, yOf(2.5), { side: 'right', size: 19, leader: false, gap: 8 });
     /* the key */
     const LX = 1110, LY = 580;
-    [['Fe', 'iron ore'], ['C', 'coke'], ['Ca', 'limestone']].forEach(([s, n], i) => {
+    [['Fe', '铁矿石'], ['C', '焦炭'], ['Ca', '石灰石']].forEach(([s, n], i) => {
       const y = LY + i * 34; ctx.save(); ctx.beginPath(); ctx.arc(LX, y, 9, 0, TAU); ctx.fillStyle = F.el(s); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 1; ctx.stroke(); ctx.restore();
       text(ctx, n, LX + 20, y, PAL.ink, { size: 18 });
     });
@@ -343,7 +343,7 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     [[-7, 'O'], [0, 'C'], [7, 'O']].forEach(([dx, s]) => { ctx.save(); ctx.beginPath(); ctx.arc(LX + dx, LY + 136, 4, 0, TAU); ctx.fillStyle = F.el(s); ctx.fill(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 0.8; ctx.stroke(); ctx.restore(); });
     text(ctx, 'CO_{2}', LX + 20, LY + 136, PAL.ink, { size: 18 });
     ctx.save(); ctx.beginPath(); ctx.arc(LX, LY + 172, 15, 0, TAU); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
-    text(ctx, 'the lump followed', LX + 26, LY + 172, PAL.ink, { size: 18 });
+    text(ctx, '被跟随的料块', LX + 26, LY + 172, PAL.ink, { size: 18 });
     topline(ctx, HEAD[kind]);
     tex(d.readout, `${kv('length', zone[0] + '\\ \\text{ft}')},\\ ${kv('temperature', zone[1] + '\\ ^\\circ\\text{C}')}\\text{:}\\quad ${tx(R[kind][zone[0]])}`, false, { values: false });
   }
@@ -361,19 +361,19 @@ function spin(ctx, x, y, up, h, color, w = 3) {
 (function () {
   const d = sim('sim-superconductor', 560);
   const MAT = {
-    nb: { Tc: 23, name: 'NbTi and Nb_{3}Sn', plural: true },
+    nb: { Tc: 23, name: 'NbTi 和 Nb_{3}Sn', plural: true },
     ybco: { Tc: 92, name: 'YBa_{2}Cu_{3}O_{7}' },
-    bscco: { Tc: 110, name: 'a bismuth-strontium-copper oxide' },
+    bscco: { Tc: 110, name: '铋锶铜氧化物' },
   };
   const mat = F.choice(d.controls, {
-    label: '\\text{material}', aria: 'the superconducting material', value: 'ybco',
-    options: [{ value: 'nb', label: 'NbTi, Nb₃Sn' }, { value: 'ybco', label: 'YBa₂Cu₃O₇' }, { value: 'bscco', label: 'Bi–Sr–Cu oxide' }],
+    label: '\\text{材料}', aria: '超导材料', value: 'ybco',
+    options: [{ value: 'nb', label: 'NbTi、Nb₃Sn' }, { value: 'ybco', label: 'YBa₂Cu₃O₇' }, { value: 'bscco', label: 'Bi–Sr–Cu 氧化物' }],
     onInput: () => Tk.refresh(),
   });
   const Tk = F.ctl(d.controls, {
     label: '\\kT', cls: 'temperature', min: 0, max: 300, step: 1, value: 77, unit: 'K', dec: 0,
     detents: [{ v: 4, label: 'He' }, { v: 77, label: 'N₂' }],
-    specials: [{ at: () => MAT[mat.value].Tc, label: 'superconducting below' }],
+    specials: [{ at: () => MAT[mat.value].Tc, label: '低于此值时超导' }],
   });
   /* the book's shape: zero below the transition, a jump to five sixths of the axis, then a slow rise */
   const R = (Tc) => (T) => (T < Tc ? 0 : 0.8 + (0.15 * (T - Tc)) / (300 - Tc));
@@ -384,8 +384,8 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     const ct = C('temperature');
     /* axes fixed at 0 to 300 K, as the book draws them; resistance has no scale */
     const { X, Y } = axes(ctx, box, [0, 300], [0, 1], { nx: 6, ny: 1, fy: (v) => (v === 0 ? '0' : ''), xl: 'T (K)', xc: ct });
-    text(ctx, 'resistance', box.l - 12, box.t + 10, PAL.ink, { size: 20, weight: 600, align: 'right' });
-    [[4, 'liquid helium', 'boils at 4 K'], [77, 'liquid nitrogen', 'boils at 77 K']].forEach(([v, n, b]) => {
+    text(ctx, '电阻', box.l - 12, box.t + 10, PAL.ink, { size: 20, weight: 600, align: 'right' });
+    [[4, '液氦', '沸点 4 K'], [77, '液氮', '沸点 77 K']].forEach(([v, n, b]) => {
       line(ctx, X(v), box.t, X(v), box.b, alpha(PAL.ink, 0.35), 2, [10, 10]);
       text(ctx, n, X(v) + 6, box.t - 40, PAL.ink, { size: 17 });
       text(ctx, b, X(v) + 6, box.t - 18, ct, { size: 17 });
@@ -398,9 +398,9 @@ function spin(ctx, x, y, up, h, color, w = 3) {
     dot(ctx, X(T), Y(r), PAL.ink, true, 9);
     const name = m.name;
     topline(ctx, below
-      ? `At ${T} K, ${name} ${m.plural ? 'conduct' : 'conducts'} electricity with no resistance.`
-      : `At ${T} K, ${name} still ${m.plural ? 'have' : 'has'} resistance; ${m.plural ? 'they become' : 'it becomes'} superconducting below ${Tc} K.`);
-    tex(d.readout, `\\kT = ${T}\\ \\text{K} ${below ? '<' : '\\geq'} ${kv('temperature', Tc + '\\ \\text{K}')}\\text{:}\\quad \\text{resistance} ${below ? '= 0' : '> 0'}`);
+      ? `在 ${T} K 时，${name} 导电无电阻。`
+      : `在 ${T} K 时，${name} 仍有电阻；低于 ${Tc} K 时才变为超导的。`);
+    tex(d.readout, `\\kT = ${T}\\ \\text{K} ${below ? '<' : '\\geq'} ${kv('temperature', Tc + '\\ \\text{K}')}\\text{:}\\quad \\text{电阻} ${below ? '= 0' : '> 0'}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

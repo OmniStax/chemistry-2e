@@ -112,7 +112,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     7: { F: [[c72, s72, 0], [c72, -s72, 0], [1, 0, 0], [0, 0, 1], [0, 0, -1], [c144, s144, 0], [c144, -s144, 0]], L: [null, null, null], rot: [-Math.PI / 2, 0, 0], shape: '五角双锥形', tag: 2 },
   };
   const COUNT = ['一', '', '', '三', '', '五', '', '七'];
-  const PAIRS = ['', '一个孤电子对', '两个孤电子对', '三个孤电子对'];
+  const PAIRS = ['', '一对孤电子对', '两对孤电子对', '三对孤电子对'];
   const MOL = {};
   [['Cl', [1.63, 1.65, 1.65]], ['Br', [1.76, 1.77, 1.75]], ['I', [1.91, 1.93, 1.86, 1.83]]].forEach(([X, lens]) => lens.forEach((len, i) => {
     const n = 2 * i + 1;
@@ -168,7 +168,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     if (lp) plain(v.label('孤电子对', lp.p, h, 0), lp.on);
     v.headline(B.head);
     const lone = (7 - B.n) / 2;
-    ro.set(`\\mk{m}{\\text{${B.X}F}${B.n > 1 ? `_{${B.n}}` : ''}}:\\ \\mk{b}{${B.n}}\\ \\text{个键} + \\mk{l}{${lone}}\\ \\text{个孤电子对} = \\mk{p}{${B.n + lone}}\\ \\text{个电子对}`,
+    ro.set(`\\mk{m}{\\text{${B.X}F}${B.n > 1 ? `_{${B.n}}` : ''}}:\\ \\mk{b}{${B.n}}\\ \\text{个键} + \\mk{l}{${lone}}\\ \\text{对孤电子对} = \\mk{p}{${B.n + lone}}\\ \\text{个电子对}`,
       `共价半径：$\\kr{}_{\\text{${B.X}}} = ${RCOV[B.X]}\\ \\text{pm}$，$\\kr{}_{\\text{F}} = 64\\ \\text{pm}$。`);
   }
   still(d, draw);

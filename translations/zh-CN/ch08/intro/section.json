@@ -1,52 +1,60 @@
 {
- "id": "intro",
- "module": "m68743",
- "chapter": "8",
- "title": "Introduction",
- "short": "Introduction",
- "lead": "",
- "notes": "The list of the chapter’s section titles that the module carries in place of learning objectives is left out, since the contents view lists them.",
- "ai": {
-  "text": [
-   {
-    "model": "claude-opus-5-5",
-    "effort": "low"
-   }
-  ],
-  "figures": [
-   {
-    "model": "claude-opus-5-5",
-    "effort": "low"
-   }
-  ]
- },
- "built": "2026-09-28",
- "figures": [
-  {
-   "id": "fig-liquid-oxygen",
-   "kind": "photo",
-   "number": "8.1",
-   "draws": []
+  "id": "intro",
+  "module": "m68743",
+  "chapter": "8",
+  "title": "引言",
+  "short": "引言",
+  "lead": "",
+  "notes": "本模块在学习目标的位置给出本章各节标题的列表，因目录视图已列出各节标题，故略去。",
+  "ai": {
+    "text": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ],
+    "figures": [
+      {
+        "model": "claude-opus-5-5",
+        "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
+      }
+    ]
   },
-  {
-   "id": "fig-lewis-n2-o2",
-   "kind": "figure",
-   "originals": [
-    "/media/ch08/CNX_Chem_08_00_N2O2Lewis_img.jpg"
-   ],
-   "draws": [],
-   "ai": [
+  "built": "2026-10-26",
+  "figures": [
     {
-     "model": "claude-opus-5-5",
-     "effort": "low",
-     "part": "built"
+      "id": "fig-liquid-oxygen",
+      "kind": "photo",
+      "number": "8.1",
+      "draws": []
     },
     {
-     "model": "claude-opus-5-5",
-     "effort": "high",
-     "part": "names under molecules, lone pairs as the book, readout dropped"
+      "id": "fig-lewis-n2-o2",
+      "kind": "figure",
+      "originals": [
+        "/media/ch08/CNX_Chem_08_00_N2O2Lewis_img.jpg"
+      ],
+      "draws": [],
+      "ai": [
+        {
+          "model": "claude-opus-5-5",
+          "effort": "low",
+          "part": "built"
+        },
+        {
+          "model": "claude-opus-5-5",
+          "effort": "high",
+          "part": "names under molecules, lone pairs as the book, readout dropped"
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

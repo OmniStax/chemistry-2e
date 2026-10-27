@@ -34,7 +34,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     ['Cm','锔','s'], ['Bk','锫','s'], ['Cf','锎','s'], ['Es','锿','s'], ['Fm','镄',''], ['Md','钔',''],
     ['No','锘',''], ['Lr','铹',''], ['Rf','𬬻',''], ['Db','𬭊',''], ['Sg','𬭳',''], ['Bh','𬭛',''],
     ['Hs','𬭶',''], ['Mt','鿏',''], ['Ds','𫟼',''], ['Rg','𬬭',''], ['Cn','鿔',''], ['Nh','鿭',''],
-    ['Fl','鈇',''], ['Mc','镆',''], ['Lv','鉝',''], ['Ts','鿬',''], ['Og','鿫','']
+    ['Fl','𫓧',''], ['Mc','镆',''], ['Lv','𫟷',''], ['Ts','鿬',''], ['Og','鿫','']
   ];
   /* the place of element Z: a group and period in the table, or a column (0 to 14) of the f-block rows */
   const place = (Z) => {
@@ -60,7 +60,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     metalloid: { hex: LEGEND_METALLOID, name: '半金属', legend: '半金属' },
     nonmetal: { hex: LEGEND_NONMETAL, name: '非金属', legend: '非金属' },
   };
-  const STATE = { s: '固体', l: '液体', g: '气体' };
+  const STATE = { s: '固态', l: '液态', g: '气态' };
   const EL = ELEMENTS.map(([sym, name, st], i) => ({ sym, name, st, Z: i + 1, cls: classOf(sym, i + 1), ...place(i + 1) }));
   const BY = Object.fromEntries(EL.map((e) => [e.sym, e]));
 
@@ -72,7 +72,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     2: { m: [['Be', 900, '2+'], ['Mg', 730, '2+'], ['Ca', 590, '2+'], ['Sr', 550, '2+'], ['Ba', 500, '2+']],
       head: '沿第 2 族向下，第一电离能从 900 降到 500 kJ/mol，在每个周期中都高于第 1 族，每种金属都形成 2+ 离子。' },
     12: { m: [['Zn', 910, '2+'], ['Cd', 870, '2+'], ['Hg', 1000, '2+ 1+']],
-      head: '锌、镉和汞形成 2+ 离子，汞在 $\\text{Hg}_{2}{}^{2+}$ 中还表现出 1+；锌的反应活性最强，汞最弱。' },
+      head: '锌、镉和汞形成 2+ 离子，汞在 $\\text{Hg}_{2}{}^{2+}$ 中还表现出 1+；锌的反应性最强，汞最弱。' },
     13: { m: [['B', 800], ['Al', 580, '3+'], ['Ga', 580, '3+ 1+*'], ['In', 560, '3+ 1+*'], ['Tl', 590, '3+ 1+*']],
       head: '镓、铟和铊除了形成 3+ 离子，还形成 1+ 离子，比该族的氧化态低两个单位：这就是惰性电子对效应。' },
     14: { m: [['C', 1090], ['Si', 780], ['Ge', 780], ['Sn', 700, '4+ 2+*'], ['Pb', 710, '4+ 2+*']],
@@ -157,7 +157,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
     const frame = 1 - pick.a('all');
     if (frame > 0) {
       ctx.save(); ctx.globalAlpha *= frame;
-      axes(ctx, box, [0, 1], [0, 2000], { nx: 1, ny: 4, fx: () => '', yl: '第一电离能 (kJ/mol)', yc: ce });
+      axes(ctx, box, [0, 1], [0, 2000], { nx: 1, ny: 4, fx: () => '', yl: '第一电离能（kJ/mol）', yc: ce });
       ctx.restore();
     }
     ['1', '2', '12', '13', '14', '15'].forEach((k) => pick.only(ctx, k, () => {

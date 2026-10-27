@@ -36,10 +36,10 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
       head: '电子从铜阳极流向银阴极。',
       labels: ['Cu 阳极（−）', 'Ag 阴极（+）', '盐桥（NaNO<sub>3</sub>）', 'Cu(NO<sub>3</sub>)<sub>2</sub>(<em>aq</em>)', 'AgNO<sub>3</sub>(<em>aq</em>)'],
       kinds: [
-        { el: 'Cu', role: 'out', at: 'anode', m: 1, name: '铜(II)离子 Cu²⁺，从阳极进入溶液' },
-        { el: 'Ag', role: 'in', at: 'cathode', m: 2, name: '银(I)离子 Ag⁺，即将作为银镀到阴极上' },
-        { el: 'NO3', role: 'out', at: 'left plug', m: 2, name: '硝酸根离子 NO₃⁻，离开盐桥' },
-        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: '钠离子 Na⁺，离开盐桥' },
+        { el: 'Cu', role: 'out', at: 'anode', m: 1, name: '一个铜(II)离子 Cu²⁺，从阳极进入溶液' },
+        { el: 'Ag', role: 'in', at: 'cathode', m: 2, name: '一个银(I)离子 Ag⁺，即将作为银镀到阴极上' },
+        { el: 'NO3', role: 'out', at: 'left plug', m: 2, name: '一个硝酸根离子 NO₃⁻，离开盐桥' },
+        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: '一个钠离子 Na⁺，离开盐桥' },
       ],
       legend: [['e-', '电子 e⁻'], ['Cu', 'Cu²⁺'], ['Ag', 'Ag⁺'], ['NO3', 'NO₃⁻'], ['Na', 'Na⁺']],
       tex: (x, f) => `\\mk{an}{\\text{Cu}(s)}\\,|\\,\\mk{as}{${hue('concentration', f(1 + x) + '\\;M')}\\;\\text{Cu}^{2+}(aq)}\\,\\|\\,\\mk{cs}{${hue('concentration', f(1 - 2 * x) + '\\;M')}\\;\\text{Ag}^{+}(aq)}\\,|\\,\\mk{ca}{\\text{Ag}(s)}`,
@@ -50,11 +50,11 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
       head: '电子从镁阳极流向铂。',
       labels: ['Mg 阳极（−）', 'Pt 阴极（+）', '盐桥', 'MgCl<sub>2</sub>(<em>aq</em>)', 'FeCl<sub>3</sub>(<em>aq</em>), FeCl<sub>2</sub>(<em>aq</em>)'],
       kinds: [
-        { el: 'Mg', role: 'out', at: 'anode', m: 1, name: '镁离子 Mg²⁺，从阳极进入溶液' },
-        { el: 'Fe', role: 'in', at: 'cathode', m: 2, name: '铁(III)离子 Fe³⁺，即将在铂上得到一个电子' },
-        { el: 'Fe', role: 'out', at: 'cathode', m: 2, name: '铁(II)离子 Fe²⁺，离开铂' },
-        { el: 'Cl', role: 'out', at: 'left plug', m: 2, name: '氯离子 Cl⁻，离开盐桥' },
-        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: '钠离子 Na⁺，离开盐桥' },
+        { el: 'Mg', role: 'out', at: 'anode', m: 1, name: '一个镁离子 Mg²⁺，从阳极进入溶液' },
+        { el: 'Fe', role: 'in', at: 'cathode', m: 2, name: '一个铁(III)离子 Fe³⁺，即将在铂上得到一个电子' },
+        { el: 'Fe', role: 'out', at: 'cathode', m: 2, name: '一个铁(II)离子 Fe²⁺，离开铂' },
+        { el: 'Cl', role: 'out', at: 'left plug', m: 2, name: '一个氯离子 Cl⁻，离开盐桥' },
+        { el: 'Na', role: 'out', at: 'right plug', m: 2, name: '一个钠离子 Na⁺，离开盐桥' },
       ],
       legend: [['e-', '电子 e⁻'], ['Mg', 'Mg²⁺'], ['Fe', 'Fe³⁺ 进，Fe²⁺ 出'], ['Cl', 'Cl⁻'], ['Na', 'Na⁺']],
       tex: (x, f) => `\\mk{an}{\\text{Mg}(s)}\\,|\\,\\mk{as}{${hue('concentration', f(0.1 + x) + '\\;M')}\\;\\text{Mg}^{2+}(aq)}\\,\\|\\,\\mk{cs}{${hue('concentration', f(0.2 - 2 * x) + '\\;M')}\\;\\text{Fe}^{3+}(aq),\\,${hue('concentration', f(0.3 + 2 * x) + '\\;M')}\\;\\text{Fe}^{2+}(aq)}\\,|\\,\\mk{ca}{\\text{Pt}(s)}`,
@@ -138,7 +138,7 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
     v.clear(); parts = {}; coils = [];
     const c = cell.value, C0 = CELLS[c];
     const glass = { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide };
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.2], PAL.soft), '实验台');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.2], PAL.soft), '工作台');
     for (const [x, who] of [[XA, 'anode'], [XC, 'cathode']]) {
       const b = new T3D.Mesh(new T3D.CylinderGeometry(RB, RB, YT - YB, 40, 1, true), F.mesh.mat(PAL.ink, glass)); b.position.set(x, (YT + YB) / 2, 0); grp.add(b);
       const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), F.mesh.mat(PAL.ink, glass)); floor.rotation.x = -Math.PI / 2; floor.position.set(x, YB + 0.005, 0); grp.add(floor);
@@ -159,7 +159,7 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
     v.pickable(F.mesh.box(grp, [0, YW, 0], [1.1, 0.46, 0.3], PAL.panel), '外电路');
     F.mesh.box(grp, [0, YW, 0], [1.14, 0.5, 0.26], PAL.muted);
     wire = along(smooth.map((p) => [p[0], p[1], 0]), 200);
-    electrons = Array.from({ length: NE }, () => v.pickable(F.mesh.sphere(grp, [0, -50, 0], 0.05, F.el('e-')), '导线中的电子 e⁻'));
+    electrons = Array.from({ length: NE }, () => v.pickable(F.mesh.sphere(grp, [0, -50, 0], 0.05, F.el('e-')), '导线中的一个电子 e⁻'));
     /* the electrodes */
     if (c === 'cu') {
       for (const [x, el, who] of [[AX, 'Cu', 'anode'], [CX, 'Ag', 'cathode']]) {

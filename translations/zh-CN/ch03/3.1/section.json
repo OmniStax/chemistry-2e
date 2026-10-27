@@ -2,16 +2,16 @@
  "id": "3.1",
  "module": "m68700",
  "chapter": "3",
- "title": "Formula Mass and the Mole Concept",
- "short": "Formula mass and the mole",
- "lead": "A chemical formula says which atoms a substance contains and how many of each, and the average <span data-concept=\"mass\">masses</span> of those atoms add up to its formula mass, for covalent and ionic compounds alike. The <span data-concept=\"mole\">mole</span> and Avogadro’s number give chemists a unit for counting atoms and molecules, and the <span data-concept=\"molar-mass\">molar mass</span> links the <span data-concept=\"mass\">mass</span> of a sample to its amount in <span data-concept=\"mole\">moles</span> and to the number of atoms or molecules it contains.",
+ "title": "式量与摩尔概念",
+ "short": "式量与摩尔",
+ "lead": "化学式说明一种物质含有哪些原子以及每种原子各有多少个，这些原子的平均<span data-concept=\"mass\">质量</span>之和就是它的式量，共价化合物和离子化合物都是如此。<span data-concept=\"mole\">摩尔</span>和阿伏加德罗常数为化学家提供了一个用来计数原子和分子的单位，而<span data-concept=\"molar-mass\">摩尔质量</span>则把样品的<span data-concept=\"mass\">质量</span>与它以<span data-concept=\"mole\">摩尔</span>计的物质的量，以及它所含的原子数或分子数联系起来。",
  "objectives": [
-  "Calculate formula masses for covalent and ionic compounds",
-  "Define the amount unit mole and the related quantity Avogadro’s number",
-  "Explain the relation between mass, moles, and numbers of atoms or molecules, and perform calculations deriving these quantities from one another"
+  "计算共价化合物和离子化合物的式量",
+  "定义物质的量单位摩尔及相关的量阿伏加德罗常数",
+  "说明质量、物质的量与原子数或分子数之间的关系，并进行由其中一个量推算其他量的计算"
  ],
- "summary_html": "<p>The formula mass of a substance is the sum of the average atomic masses of each atom represented in the chemical formula and is expressed in atomic mass units. The formula mass of a covalent compound is also called the molecular <span data-concept=\"mass\">mass</span>. A convenient amount unit for expressing very large numbers of atoms or molecules is the <span data-concept=\"mole\">mole</span>. Experimental measurements have determined the number of entities composing 1 <span data-concept=\"mole\">mole</span> of substance to be 6.022 × 10<sup>23</sup>, a quantity called Avogadro’s number. The <span data-concept=\"mass\">mass</span> in grams of 1 <span data-concept=\"mole\">mole</span> of substance is its <span data-concept=\"molar-mass\">molar mass</span>. Due to the use of the same reference substance in defining the atomic mass unit and the <span data-concept=\"mole\">mole</span>, the formula mass (amu) and <span data-concept=\"molar-mass\">molar mass</span> (g/mol) for any substance are numerically equivalent (for example, one H<sub>2</sub>O molecule weighs approximately18 amu and 1 <span data-concept=\"mole\">mole</span> of H<sub>2</sub>O molecules weighs approximately 18 g).</p>",
- "notes": "The Link to Learning note, a video on the size of the mole, is left out. Five of the six boxes-and-arrows diagrams in the solutions of Examples 3.3 to 3.8 are left out, since the interactive figure before the examples draws the same route; Example 3.7 keeps its diagram, which its solution points at.",
+ "summary_html": "<p>物质的式量是化学式中所表示的每个原子的平均原子质量之和，以原子质量单位表示。共价化合物的式量也称为分子<span data-concept=\"mass\">质量</span>。表示极大数目的原子或分子时，一个方便的物质的量单位是<span data-concept=\"mole\">摩尔</span>。实验测量已经确定，1 <span data-concept=\"mole\">摩尔</span>物质所含的基本单元数为 6.022 × 10<sup>23</sup>，这个量称为阿伏加德罗常数。1 <span data-concept=\"mole\">摩尔</span>物质以克计的<span data-concept=\"mass\">质量</span>就是它的<span data-concept=\"molar-mass\">摩尔质量</span>。由于定义原子质量单位和<span data-concept=\"mole\">摩尔</span>时使用的是同一种基准物质，任何物质的式量（amu）和<span data-concept=\"molar-mass\">摩尔质量</span>（g/mol）在数值上都是相等的（例如，一个 H<sub>2</sub>O 分子重约 18 amu，1 <span data-concept=\"mole\">摩尔</span> H<sub>2</sub>O 分子重约 18 g）。</p>",
+ "notes": "学习链接注记（一段关于摩尔大小的视频）已略去。例 3.3 至例 3.8 的解中的六幅方框加箭头示意图，有五幅已略去，因为例题之前的交互图画出了同样的路径；例 3.7 保留了它的示意图，因为它的解中指向这幅图。",
  "ai": {
   "text": [
    {
@@ -21,18 +21,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. The Check Your Learning answers are the book’s own, and the end-of-chapter answers come from the book’s key, which covers the odd-numbered items. The unkeyed numerical exercises 2, 4, 12, 14, 16, 18, 20, 22, 24, 26, 28 and 30 (fs-idp23290000, fs-idp1038448, fs-idp52331008, fs-idp56579584, fs-idp51940080, fs-idp51218400, fs-idp41399808, fs-idp42845584, fs-idp40477040, fs-idp48697456, fs-idp41347136 and fs-idp40440256) are left out. The unkeyed conceptual exercises 8 and 10 (fs-idp25588816 and fs-idp69842848) and the unkeyed exercise 6 (fs-idp50213376), a choice among three drawn molecules, carry a suggested approach marked as OmniStax’s own and are not graded. The structural formulas the book prints in exercises 5 and 6 are kept in their prompts. Numeric answers accept 2% tolerance.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。学习检测的答案是书中自带的，章末习题的答案取自书后答案，其涵盖奇数编号的习题。没有答案的数值习题 2、4、12、14、16、18、20、22、24、26、28 和 30（fs-idp23290000、fs-idp1038448、fs-idp52331008、fs-idp56579584、fs-idp51940080、fs-idp51218400、fs-idp41399808、fs-idp42845584、fs-idp40477040、fs-idp48697456、fs-idp41347136 和 fs-idp40440256）已略去。没有答案的概念性习题 8 和 10（fs-idp25588816 和 fs-idp69842848），以及没有答案的习题 6（fs-idp50213376，即从三个画出的分子中作选择），附有标明为 OmniStax 自己提出的建议思路，不予评分。书中在习题 5 和 6 中印出的结构式保留在它们的题干里。数值答案允许 2% 的容差。",
  "figures": [
   {
    "id": "fig-formula-mass",
@@ -47,8 +55,10 @@
     "/media/ch03/CNX_Chem_03_01_aspirin.jpg",
     "/media/ch03/CNX_Chem_03_01_saltMass.jpg"
    ],
-   "original_caption": "(Figure 3.2) The average mass of a chloroform molecule, CHCl₃, is 119.37 amu, which is the sum of the average atomic masses of each of its constituent atoms. The model shows the molecular structure of chloroform. (Figure 3.3) The average mass of an aspirin molecule is 180.15 amu. The model shows the molecular structure of aspirin, C₉H₈O₄. (Figure 3.4) Table salt, NaCl, contains an array of sodium and chloride ions combined in a 1:1 ratio. Its formula mass is 58.44 amu.",
-   "draws": ["mass"],
+   "original_caption": "（图 3.2）氯仿分子 CHCl₃ 的平均质量为 119.37 amu，是其各组成原子的平均原子质量之和。模型显示氯仿的分子结构。（图 3.3）阿司匹林分子的平均质量为 180.15 amu。模型显示阿司匹林 C₉H₈O₄ 的分子结构。（图 3.4）食盐 NaCl 含有以 1:1 的比例结合的钠离子和氯离子阵列。其式量为 58.44 amu。",
+   "draws": [
+    "mass"
+   ],
    "conventions": [
     "C",
     "H",
@@ -66,6 +76,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "compound dropdown, notes dropped, 3D models scaled clear of headline"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -78,6 +93,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -90,6 +110,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -128,6 +153,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "box names shortened, units moved to the values"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -146,6 +176,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -158,6 +193,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -170,6 +210,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -309,7 +354,7 @@
     "after": "ex-ibuprofen"
    },
    "cite": "formula-mass",
-   "prompt": "Acetaminophen, C<sub>8</sub>H<sub>9</sub>NO<sub>2</sub>, is a covalent compound and the active ingredient in several popular nonprescription pain medications, such as Tylenol. What is the molecular mass (amu) for this compound?",
+   "prompt": "对乙酰氨基酚 C<sub>8</sub>H<sub>9</sub>NO<sub>2</sub> 是一种共价化合物，是 Tylenol 等几种常见非处方止痛药中的有效成分。这种化合物的分子质量（amu）是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -328,7 +373,7 @@
     "after": "ex-alsulfate"
    },
    "cite": "formula-mass",
-   "prompt": "Calcium phosphate, Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>, is an ionic compound and a common anti-caking agent added to food products. What is the formula mass (amu) of calcium phosphate?",
+   "prompt": "磷酸钙 Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> 是一种离子化合物，是添加到食品中的一种常见抗结块剂。磷酸钙的式量（amu）是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -347,7 +392,7 @@
     "after": "ex-potassium"
    },
    "cite": "conversions",
-   "prompt": "Beryllium is a light metal used to fabricate transparent X-ray windows for medical imaging instruments. How many moles of Be are in a thin-foil window weighing 3.24 g?",
+   "prompt": "铍是一种轻金属，用来制造医学成像仪器的透明 X 射线窗口。一块重 3.24 g 的薄箔窗口中含有多少摩尔 Be？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -366,7 +411,7 @@
     "after": "ex-argon"
    },
    "cite": "conversions",
-   "prompt": "What is the mass of 2.561 mol of gold?",
+   "prompt": "2.561 mol 金的质量是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -385,13 +430,13 @@
     "after": "ex-copper"
    },
    "cite": "conversions",
-   "prompt": "A prospector panning for gold in a river collects 15.00 g of pure gold. How many Au atoms are in this quantity of gold?",
+   "prompt": "一位淘金者在河中淘到 15.00 g 纯金。这些金中含有多少个 Au 原子？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 4.585e+22,
     "unit": "Au atoms",
-    "solution": "4.585 × 10<sup>22</sup> Au atoms"
+    "solution": "4.585 × 10<sup>22</sup> 个 Au 原子"
    }
   },
   {
@@ -404,7 +449,7 @@
     "after": "ex-glycine"
    },
    "cite": "conversions",
-   "prompt": "How many moles of sucrose, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>, are in a 25-g sample of sucrose?",
+   "prompt": "25 g 蔗糖样品中含有多少摩尔蔗糖 C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -423,7 +468,7 @@
     "after": "ex-vitaminc"
    },
    "cite": "conversions",
-   "prompt": "What is the mass of 0.443 mol of hydrazine, N<sub>2</sub>H<sub>4</sub>?",
+   "prompt": "0.443 mol 肼 N<sub>2</sub>H<sub>4</sub> 的质量是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -442,7 +487,7 @@
     "after": "ex-saccharin"
    },
    "cite": "conversions",
-   "prompt": "How many C<sub>4</sub>H<sub>10</sub> molecules are contained in 9.213 g of this compound? How many hydrogen atoms?",
+   "prompt": "这种化合物 9.213 g 中含有多少个 C<sub>4</sub>H<sub>10</sub> 分子？含有多少个氢原子？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -458,7 +503,7 @@
       "unit": "H atoms"
      }
     ],
-    "solution": "9.545 × 10<sup>22</sup> molecules C<sub>4</sub>H<sub>10</sub>; 9.545 × 10<sup>23</sup> atoms H"
+    "solution": "9.545 × 10<sup>22</sup> 个 C<sub>4</sub>H<sub>10</sub> 分子；9.545 × 10<sup>23</sup> 个 H 原子"
    }
   },
   {
@@ -471,7 +516,7 @@
     "at": "end"
    },
    "cite": "formula-mass",
-   "prompt": "What is the total mass (amu) of carbon in each of the following molecules?<br>(a) CH<sub>4</sub><br>(b) CHCl<sub>3</sub><br>(c) C<sub>12</sub>H<sub>10</sub>O<sub>6</sub><br>(d) CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub>",
+   "prompt": "下列每个分子中碳的总质量（amu）是多少？<br>（a）CH<sub>4</sub><br>（b）CHCl<sub>3</sub><br>（c）C<sub>12</sub>H<sub>10</sub>O<sub>6</sub><br>（d）CH<sub>3</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub>",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -497,7 +542,7 @@
       "unit": "amu"
      }
     ],
-    "solution": "(a) 12.01 amu; (b) 12.01 amu; (c) 144.12 amu; (d) 60.05 amu"
+    "solution": "（a）12.01 amu；（b）12.01 amu；（c）144.12 amu；（d）60.05 amu"
    }
   },
   {
@@ -510,7 +555,7 @@
     "at": "end"
    },
    "cite": "formula-mass",
-   "prompt": "Calculate the molecular or formula mass of each of the following:<br>(a) P<sub>4</sub><br>(b) H<sub>2</sub>O<br>(c) Ca(NO<sub>3</sub>)<sub>2</sub><br>(d) CH<sub>3</sub>CO<sub>2</sub>H (acetic acid)<br>(e) C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> (sucrose, cane sugar)",
+   "prompt": "计算下列各物质的分子质量或式量：<br>（a）P<sub>4</sub><br>（b）H<sub>2</sub>O<br>（c）Ca(NO<sub>3</sub>)<sub>2</sub><br>（d）CH<sub>3</sub>CO<sub>2</sub>H（乙酸）<br>（e）C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>（蔗糖，甘蔗糖）",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -541,7 +586,7 @@
       "unit": "amu"
      }
     ],
-    "solution": "(a) 123.896 amu; (b) 18.015 amu; (c) 164.086 amu; (d) 60.052 amu; (e) 342.297 amu"
+    "solution": "（a）123.896 amu；（b）18.015 amu；（c）164.086 amu；（d）60.052 amu；（e）342.297 amu"
    }
   },
   {
@@ -554,7 +599,7 @@
     "at": "end"
    },
    "cite": "formula-mass",
-   "prompt": "Determine the molecular mass of the following compounds:<br>(a) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06a_img.jpg\" alt=\"A structure is shown. Two C atoms form double bonds with each other. The C atom on the left forms a single bond with two H atoms each. The C atom on the right forms a single bond with an H atom and with a C H subscript 2 C H subscript 3 group.\"><br>(b) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06b_img.jpg\" alt=\"A structure is shown. There is a C atom which forms single bonds with three H atoms each. This C atom is bonded to another C atom. This second C atom forms a triple bond with another C atom which forms a single bond with a fourth C atom. The fourth C atom forms single bonds with three H atoms each.\"><br>(c) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06c_img.jpg\" alt=\"A structure is shown. An S i atom forms a single bond with a C l atom, a single bond with a C l atom, a single bond with an H atom, and a single bond with another S i atom. The second S i atom forms a single bond with a C l atom, a single bond with a C l atom, and a single bond with an H atom.\"><br>(d) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06d_img.jpg\" alt=\"A structure is shown. A P atom forms a double bond with an O atom. It also forms a single bond with an O atom which forms a single bond with an H atom. It also forms a single bond with another O atom which forms a single bond with an H atom. It also forms a single bond with another O atom which forms a single bond with an H atom.\">",
+   "prompt": "确定下列化合物的分子质量：<br>（a）<img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06a_img.jpg\" alt=\"图中是一个结构。两个 C 原子之间形成双键。左边的 C 原子与两个 H 原子各形成一个单键。右边的 C 原子与一个 H 原子形成单键，并与一个 C H 下标 2 C H 下标 3 基团形成单键。\"><br>（b）<img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06b_img.jpg\" alt=\"图中是一个结构。有一个 C 原子与三个 H 原子各形成一个单键。这个 C 原子与另一个 C 原子相连。第二个 C 原子与另一个 C 原子形成三键，后者与第四个 C 原子形成单键。第四个 C 原子与三个 H 原子各形成一个单键。\"><br>（c）<img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06c_img.jpg\" alt=\"图中是一个结构。一个 S i 原子与一个 C l 原子形成单键，与一个 C l 原子形成单键，与一个 H 原子形成单键，并与另一个 S i 原子形成单键。第二个 S i 原子与一个 C l 原子形成单键，与一个 C l 原子形成单键，并与一个 H 原子形成单键。\"><br>（d）<img src=\"/media/ch03/CNX_Chem_03_01_Ex01_06d_img.jpg\" alt=\"图中是一个结构。一个 P 原子与一个 O 原子形成双键。它还与一个 O 原子形成单键，这个 O 原子与一个 H 原子形成单键。它还与另一个 O 原子形成单键，这个 O 原子与一个 H 原子形成单键。它还与又一个 O 原子形成单键，这个 O 原子与一个 H 原子形成单键。\">",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -580,7 +625,7 @@
       "unit": "amu"
      }
     ],
-    "solution": "(a) 56.107 amu; (b) 54.091 amu; (c) 199.9976 amu; (d) 97.9950 amu"
+    "solution": "（a）56.107 amu；（b）54.091 amu；（c）199.9976 amu；（d）97.9950 amu"
    }
   },
   {
@@ -593,11 +638,11 @@
     "at": "end"
    },
    "cite": "formula-mass",
-   "prompt": "Which molecule has a molecular mass of 28.05 amu?<br>(a) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_07a_img.jpg\" alt=\"A structure is shown. A C atom forms a triple bond with another C atom. Each C atom also forms a single bond with an H atom.\"><br>(b) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_07b_img.jpg\" alt=\"A structure is shown. Two C atoms form a double bond with each other. Each C atom also forms a single bond with two H atoms.\"><br>(c) <img src=\"/media/ch03/CNX_Chem_03_01_Ex01_07c_img.jpg\" alt=\"A structure is shown. A C atom forms a single bond with three H atoms each and with another C atom. The second C atom also forms a single bond with three H atoms each.\">",
+   "prompt": "哪个分子的分子质量为 28.05 amu？<br>（a）<img src=\"/media/ch03/CNX_Chem_03_01_Ex01_07a_img.jpg\" alt=\"图中是一个结构。一个 C 原子与另一个 C 原子形成三键。每个 C 原子还各与一个 H 原子形成单键。\"><br>（b）<img src=\"/media/ch03/CNX_Chem_03_01_Ex01_07b_img.jpg\" alt=\"图中是一个结构。两个 C 原子之间形成双键。每个 C 原子还各与两个 H 原子形成单键。\"><br>（c）<img src=\"/media/ch03/CNX_Chem_03_01_Ex01_07c_img.jpg\" alt=\"图中是一个结构。一个 C 原子与三个 H 原子各形成一个单键，并与另一个 C 原子形成单键。第二个 C 原子也与三个 H 原子各形成一个单键。\">",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Molecule (b), C<sub>2</sub>H<sub>4</sub>, has a molecular mass of 28.05 amu. Each structure contains two carbon atoms, so the three differ only in their hydrogen atoms. Structure (a) is C<sub>2</sub>H<sub>2</sub>: 2(12.01 amu) + 2(1.008 amu) = 26.04 amu. Structure (b) is C<sub>2</sub>H<sub>4</sub>: 2(12.01 amu) + 4(1.008 amu) = 28.05 amu. Structure (c) is C<sub>2</sub>H<sub>6</sub>: 2(12.01 amu) + 6(1.008 amu) = 30.07 amu. Only the sum for (b) matches."
+    "solution": "分子（b）C<sub>2</sub>H<sub>4</sub> 的分子质量为 28.05 amu。每个结构都含有两个碳原子，所以这三者只是氢原子数不同。结构（a）是 C<sub>2</sub>H<sub>2</sub>：2(12.01 amu) + 2(1.008 amu) = 26.04 amu。结构（b）是 C<sub>2</sub>H<sub>4</sub>：2(12.01 amu) + 4(1.008 amu) = 28.05 amu。结构（c）是 C<sub>2</sub>H<sub>6</sub>：2(12.01 amu) + 6(1.008 amu) = 30.07 amu。只有（b）的和与之相符。"
    }
   },
   {
@@ -610,11 +655,11 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "Write a sentence that describes how to determine the number of moles of a compound in a known mass of the compound using its molecular formula.",
+   "prompt": "写一句话，说明如何利用化合物的分子式，确定已知质量的该化合物以摩尔计的物质的量。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Use the molecular formula to find the molar mass; to obtain the number of moles, divide the mass of compound by the molar mass of the compound expressed in grams."
+    "solution": "利用分子式求出摩尔质量；要得到以摩尔计的物质的量，就用化合物的质量除以以克表示的该化合物的摩尔质量。"
    }
   },
   {
@@ -627,11 +672,11 @@
     "at": "end"
    },
    "cite": "mole",
-   "prompt": "Compare 1 mole of H<sub>2</sub>, 1 mole of O<sub>2</sub>, and 1 mole of F<sub>2</sub>.<br>(a) Which has the largest number of molecules? Explain why.<br>(b) Which has the greatest mass? Explain why.",
+   "prompt": "比较 1 摩尔 H<sub>2</sub>、1 摩尔 O<sub>2</sub> 和 1 摩尔 F<sub>2</sub>。<br>（a）哪一种的分子数最多？说明原因。<br>（b）哪一种的质量最大？说明原因。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) All three contain the same number of molecules, 6.022 × 10<sup>23</sup>. A mole is defined as the amount of substance that contains Avogadro’s number of entities, whatever the substance, so 1 mole of H<sub>2</sub>, of O<sub>2</sub>, and of F<sub>2</sub> each contains 6.022 × 10<sup>23</sup> molecules.<br>(b) The F<sub>2</sub> has the greatest mass. The mass of 1 mole of a substance is its molar mass, numerically equal to its molecular mass: H<sub>2</sub> is 2(1.008) = 2.016 g/mol, O<sub>2</sub> is 2(16.00) = 32.00 g/mol, and F<sub>2</sub> is 2(19.00) = 38.00 g/mol. With equal numbers of molecules, the sample whose individual molecules are heaviest has the greatest mass, and an F<sub>2</sub> molecule is the heaviest of the three."
+    "solution": "（a）三者含有的分子数相同，都是 6.022 × 10<sup>23</sup>。摩尔被定义为含有阿伏加德罗常数个基本单元的物质的量，无论是什么物质，所以 1 摩尔 H<sub>2</sub>、1 摩尔 O<sub>2</sub> 和 1 摩尔 F<sub>2</sub> 各含有 6.022 × 10<sup>23</sup> 个分子。<br>（b）F<sub>2</sub> 的质量最大。1 摩尔物质的质量就是它的摩尔质量，在数值上等于它的分子质量：H<sub>2</sub> 为 2(1.008) = 2.016 g/mol，O<sub>2</sub> 为 2(16.00) = 32.00 g/mol，F<sub>2</sub> 为 2(19.00) = 38.00 g/mol。分子数相同时，单个分子最重的那个样品质量最大，而 F<sub>2</sub> 分子是三者中最重的。"
    }
   },
   {
@@ -644,11 +689,11 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "Which contains the greatest mass of oxygen: 0.75 mol of ethanol (C<sub>2</sub>H<sub>5</sub>OH), 0.60 mol of formic acid (HCO<sub>2</sub>H), or 1.0 mol of water (H<sub>2</sub>O)? Explain why.",
+   "prompt": "下列各项中，哪一项含氧的质量最大：0.75 mol 乙醇（C<sub>2</sub>H<sub>5</sub>OH）、0.60 mol 甲酸（HCO<sub>2</sub>H），还是 1.0 mol 水（H<sub>2</sub>O）？说明原因。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Formic acid. Its formula has twice as many oxygen atoms as the other two compounds (one each). Therefore, 0.60 mol of formic acid would be equivalent to 1.20 mol of a compound containing a single oxygen atom."
+    "solution": "甲酸。它的化学式中的氧原子数是另外两种化合物（各一个）的两倍。因此，0.60 mol 甲酸相当于 1.20 mol 只含一个氧原子的化合物。"
    }
   },
   {
@@ -661,11 +706,11 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "Which contains the greatest number of moles of oxygen atoms: 1 mol of ethanol (C<sub>2</sub>H<sub>5</sub>OH), 1 mol of formic acid (HCO<sub>2</sub>H), or 1 mol of water (H<sub>2</sub>O)? Explain why.",
+   "prompt": "下列各项中，哪一项含有的氧原子的物质的量最大：1 mol 乙醇（C<sub>2</sub>H<sub>5</sub>OH）、1 mol 甲酸（HCO<sub>2</sub>H），还是 1 mol 水（H<sub>2</sub>O）？说明原因。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The 1 mol of formic acid contains the most oxygen atoms, 2 mol. One molecule of HCO<sub>2</sub>H contains two oxygen atoms, while one molecule of ethanol, C<sub>2</sub>H<sub>5</sub>OH, and one molecule of water, H<sub>2</sub>O, each contain one. A mole of any compound contains 1 mole of its molecules, so it contains as many moles of oxygen atoms as one molecule contains oxygen atoms: 2 mol for formic acid and 1 mol each for ethanol and water."
+    "solution": "1 mol 甲酸含有最多的氧原子，为 2 mol。一个 HCO<sub>2</sub>H 分子含有两个氧原子，而一个乙醇分子 C<sub>2</sub>H<sub>5</sub>OH 和一个水分子 H<sub>2</sub>O 各含有一个。1 摩尔任何化合物含有 1 摩尔该化合物的分子，所以它所含氧原子的物质的量（以摩尔计），在数值上等于一个分子所含的氧原子数：甲酸为 2 mol，乙醇和水各为 1 mol。"
    }
   },
   {
@@ -678,11 +723,11 @@
     "at": "end"
    },
    "cite": "molar-mass",
-   "prompt": "How are the molecular mass and the molar mass of a compound similar and how are they different?",
+   "prompt": "化合物的分子质量和摩尔质量有何相似之处，又有何不同？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The two masses have the same numerical value, but the units are different: The molecular mass is the mass of 1 molecule while the molar mass is the mass of 6.022 × 10<sup>23</sup> molecules."
+    "solution": "这两种质量的数值相同，但单位不同：分子质量是 1 个分子的质量，而摩尔质量是 6.022 × 10<sup>23</sup> 个分子的质量。"
    }
   },
   {
@@ -695,7 +740,7 @@
     "at": "end"
    },
    "cite": "molar-mass",
-   "prompt": "Calculate the molar mass of each of the following:<br>(a) S<sub>8</sub><br>(b) C<sub>5</sub>H<sub>12</sub><br>(c) Sc<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub><br>(d) CH<sub>3</sub>COCH<sub>3</sub> (acetone)<br>(e) C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> (glucose)",
+   "prompt": "计算下列各物质的摩尔质量：<br>（a）S<sub>8</sub><br>（b）C<sub>5</sub>H<sub>12</sub><br>（c）Sc<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub><br>（d）CH<sub>3</sub>COCH<sub>3</sub>（丙酮）<br>（e）C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>（葡萄糖）",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -726,7 +771,7 @@
       "unit": "g/mol"
      }
     ],
-    "solution": "(a) 256.48 g/mol; (b) 72.150 g mol<sup>−1</sup>; (c) 378.103 g mol<sup>−1</sup>; (d) 58.080 g mol<sup>−1</sup>; (e) 180.158 g mol<sup>−1</sup>"
+    "solution": "（a）256.48 g/mol；（b）72.150 g mol<sup>−1</sup>；（c）378.103 g mol<sup>−1</sup>；（d）58.080 g mol<sup>−1</sup>；（e）180.158 g mol<sup>−1</sup>"
    }
   },
   {
@@ -739,7 +784,7 @@
     "at": "end"
    },
    "cite": "molar-mass",
-   "prompt": "Calculate the molar mass of each of the following:<br>(a) the anesthetic halothane, C<sub>2</sub>HBrClF<sub>3</sub><br>(b) the herbicide paraquat, C<sub>12</sub>H<sub>14</sub>N<sub>2</sub>Cl<sub>2</sub><br>(c) caffeine, C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>(d) urea, CO(NH<sub>2</sub>)<sub>2</sub><br>(e) a typical soap, C<sub>17</sub>H<sub>35</sub>CO<sub>2</sub>Na",
+   "prompt": "计算下列各物质的摩尔质量：<br>（a）麻醉剂氟烷 C<sub>2</sub>HBrClF<sub>3</sub><br>（b）除草剂百草枯 C<sub>12</sub>H<sub>14</sub>N<sub>2</sub>Cl<sub>2</sub><br>（c）咖啡因 C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>（d）尿素 CO(NH<sub>2</sub>)<sub>2</sub><br>（e）一种典型的肥皂 C<sub>17</sub>H<sub>35</sub>CO<sub>2</sub>Na",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -770,7 +815,7 @@
       "unit": "g/mol"
      }
     ],
-    "solution": "(a) 197.382 g mol<sup>−1</sup>; (b) 257.163 g mol<sup>−1</sup>; (c) 194.193 g mol<sup>−1</sup>; (d) 60.056 g mol<sup>−1</sup>; (e) 306.464 g mol<sup>−1</sup>"
+    "solution": "（a）197.382 g mol<sup>−1</sup>；（b）257.163 g mol<sup>−1</sup>；（c）194.193 g mol<sup>−1</sup>；（d）60.056 g mol<sup>−1</sup>；（e）306.464 g mol<sup>−1</sup>"
    }
   },
   {
@@ -783,7 +828,7 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "Determine the mass of each of the following:<br>(a) 0.0146 mol KOH<br>(b) 10.2 mol ethane, C<sub>2</sub>H<sub>6</sub><br>(c) 1.6 × 10<sup>−3</sup> mol Na<sub>2</sub>SO<sub>4</sub><br>(d) 6.854 × 10<sup>3</sup> mol glucose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>(e) 2.86 mol Co(NH<sub>3</sub>)<sub>6</sub>Cl<sub>3</sub>",
+   "prompt": "求下列各项的质量：<br>（a）0.0146 mol KOH<br>（b）10.2 mol 乙烷 C<sub>2</sub>H<sub>6</sub><br>（c）1.6 × 10<sup>−3</sup> mol Na<sub>2</sub>SO<sub>4</sub><br>（d）6.854 × 10<sup>3</sup> mol 葡萄糖 C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>（e）2.86 mol Co(NH<sub>3</sub>)<sub>6</sub>Cl<sub>3</sub>",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -814,7 +859,7 @@
       "unit": "g"
      }
     ],
-    "solution": "(a) 0.819 g; (b) 307 g; (c) 0.23 g; (d) 1.235 × 10<sup>6</sup> g (1235 kg); (e) 765 g"
+    "solution": "（a）0.819 g；（b）307 g；（c）0.23 g；（d）1.235 × 10<sup>6</sup> g（1235 kg）；（e）765 g"
    }
   },
   {
@@ -827,7 +872,7 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "Determine the mass of each of the following:<br>(a) 2.345 mol LiCl<br>(b) 0.0872 mol acetylene, C<sub>2</sub>H<sub>2</sub><br>(c) 3.3 × 10<sup>−2</sup> mol Na<sub>2</sub>CO<sub>3</sub><br>(d) 1.23 × 10<sup>3</sup> mol fructose, C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>(e) 0.5758 mol FeSO<sub>4</sub>(H<sub>2</sub>O)<sub>7</sub>",
+   "prompt": "求下列各项的质量：<br>（a）2.345 mol LiCl<br>（b）0.0872 mol 乙炔 C<sub>2</sub>H<sub>2</sub><br>（c）3.3 × 10<sup>−2</sup> mol Na<sub>2</sub>CO<sub>3</sub><br>（d）1.23 × 10<sup>3</sup> mol 果糖 C<sub>6</sub>H<sub>12</sub>O<sub>6</sub><br>（e）0.5758 mol FeSO<sub>4</sub>(H<sub>2</sub>O)<sub>7</sub>",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -858,7 +903,7 @@
       "unit": "g"
      }
     ],
-    "solution": "(a) 99.41 g; (b) 2.27 g; (c) 3.5 g; (d) 222 kg; (e) 160.1 g"
+    "solution": "（a）99.41 g；（b）2.27 g；（c）3.5 g；（d）222 kg；（e）160.1 g"
    }
   },
   {
@@ -871,7 +916,7 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "Determine the mass in grams of each of the following:<br>(a) 0.600 mol of oxygen atoms<br>(b) 0.600 mol of oxygen molecules, O<sub>2</sub><br>(c) 0.600 mol of ozone molecules, O<sub>3</sub>",
+   "prompt": "求下列各项以克计的质量：<br>（a）0.600 mol 氧原子<br>（b）0.600 mol 氧分子 O<sub>2</sub><br>（c）0.600 mol 臭氧分子 O<sub>3</sub>",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -892,7 +937,7 @@
       "unit": "g"
      }
     ],
-    "solution": "(a) 9.60 g; (b) 19.2 g; (c) 28.8 g"
+    "solution": "（a）9.60 g；（b）19.2 g；（c）28.8 g"
    }
   },
   {
@@ -905,7 +950,7 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "Determine the number of atoms and the mass of zirconium, silicon, and oxygen found in 0.3384 mol of zircon, ZrSiO<sub>4</sub>, a semiprecious stone.",
+   "prompt": "求 0.3384 mol 锆石（ZrSiO<sub>4</sub>，一种半宝石）中所含锆、硅和氧的原子数和质量。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -941,7 +986,7 @@
       "unit": "g"
      }
     ],
-    "solution": "zirconium: 2.038 × 10<sup>23</sup> atoms; 30.87 g; silicon: 2.038 × 10<sup>23</sup> atoms; 9.504 g; oxygen: 8.151 × 10<sup>23</sup> atoms; 21.66 g"
+    "solution": "锆：2.038 × 10<sup>23</sup> 个原子；30.87 g；硅：2.038 × 10<sup>23</sup> 个原子；9.504 g；氧：8.151 × 10<sup>23</sup> 个原子；21.66 g"
    }
   },
   {
@@ -954,17 +999,17 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "Determine which of the following contains the greatest mass of aluminum: 122 g of AlPO<sub>4</sub>, 266 g of Al<sub>2</sub>Cl<sub>6</sub>, or 225 g of Al<sub>2</sub>S<sub>3</sub>.",
+   "prompt": "确定下列各项中哪一项含铝的质量最大：122 g AlPO<sub>4</sub>、266 g Al<sub>2</sub>Cl<sub>6</sub>，还是 225 g Al<sub>2</sub>S<sub>3</sub>。",
    "answer": {
     "type": "choice",
     "generated_by": "source",
     "options": [
-     "122 g of AlPO<sub>4</sub>",
-     "266 g of Al<sub>2</sub>Cl<sub>6</sub>",
-     "225 g of Al<sub>2</sub>S<sub>3</sub>"
+     "122 g AlPO<sub>4</sub>",
+     "266 g Al<sub>2</sub>Cl<sub>6</sub>",
+     "225 g Al<sub>2</sub>S<sub>3</sub>"
     ],
     "correct": 2,
-    "solution": "AlPO<sub>4</sub>: 1.000 mol, or 26.98 g Al; Al<sub>2</sub>Cl<sub>6</sub>: 1.994 mol, or 53.74 g Al; Al<sub>2</sub>S<sub>3</sub>: 3.00 mol, or 80.94 g Al; The Al<sub>2</sub>S<sub>3</sub> sample thus contains the greatest mass of Al."
+    "solution": "AlPO<sub>4</sub>：1.000 mol，即 26.98 g Al；Al<sub>2</sub>Cl<sub>6</sub>：1.994 mol，即 53.74 g Al；Al<sub>2</sub>S<sub>3</sub>：3.00 mol，即 80.94 g Al；因此 Al<sub>2</sub>S<sub>3</sub> 样品含有的 Al 质量最大。"
    }
   },
   {
@@ -977,13 +1022,13 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "The Cullinan diamond was the largest natural diamond ever found (January 25, 1905). It weighed 3104 carats (1 carat = 200 mg). How many carbon atoms were present in the stone?",
+   "prompt": "库里南钻石是有史以来发现的最大的天然钻石（1905 年 1 月 25 日）。它重 3104 克拉（1 克拉 = 200 mg）。这块石头中含有多少个碳原子？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 3.113e+25,
     "unit": "C atoms",
-    "solution": "3.113 × 10<sup>25</sup> C atoms"
+    "solution": "3.113 × 10<sup>25</sup> 个 C 原子"
    }
   },
   {
@@ -996,13 +1041,13 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "A certain nut crunch cereal contains 11.0 grams of sugar (sucrose, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>) per serving size of 60.0 grams. How many servings of this cereal must be eaten to consume 0.0278 moles of sugar?",
+   "prompt": "某种坚果脆麦片每份 60.0 克，含糖（蔗糖，C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>）11.0 克。要摄入 0.0278 摩尔糖，必须吃多少份这种麦片？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.865,
     "unit": "servings",
-    "solution": "0.865 servings, or about 1 serving."
+    "solution": "0.865 份，即约 1 份。"
    }
   },
   {
@@ -1015,19 +1060,19 @@
     "at": "end"
    },
    "cite": "conversions",
-   "prompt": "Which of the following represents the least number of molecules?<br>(a) 20.0 g of H<sub>2</sub>O (18.02 g/mol)<br>(b) 77.0 g of CH<sub>4</sub> (16.06 g/mol)<br>(c) 68.0 g of C<sub>3</sub>H<sub>6</sub> (42.08 g/mol)<br>(d) 100.0 g of N<sub>2</sub>O (44.02 g/mol)<br>(e) 84.0 g of HF (20.01 g/mol)",
+   "prompt": "下列各项中，哪一项所表示的分子数最少？<br>（a）20.0 g H<sub>2</sub>O（18.02 g/mol）<br>（b）77.0 g CH<sub>4</sub>（16.06 g/mol）<br>（c）68.0 g C<sub>3</sub>H<sub>6</sub>（42.08 g/mol）<br>（d）100.0 g N<sub>2</sub>O（44.02 g/mol）<br>（e）84.0 g HF（20.01 g/mol）",
    "answer": {
     "type": "choice",
     "generated_by": "source",
     "options": [
-     "20.0 g of H<sub>2</sub>O (18.02 g/mol)",
-     "77.0 g of CH<sub>4</sub> (16.06 g/mol)",
-     "68.0 g of C<sub>3</sub>H<sub>6</sub> (42.08 g/mol)",
-     "100.0 g of N<sub>2</sub>O (44.02 g/mol)",
-     "84.0 g of HF (20.01 g/mol)"
+     "20.0 g H<sub>2</sub>O（18.02 g/mol）",
+     "77.0 g CH<sub>4</sub>（16.06 g/mol）",
+     "68.0 g C<sub>3</sub>H<sub>6</sub>（42.08 g/mol）",
+     "100.0 g N<sub>2</sub>O（44.02 g/mol）",
+     "84.0 g HF（20.01 g/mol）"
     ],
     "correct": 0,
-    "solution": "20.0 g H<sub>2</sub>O represents the least number of molecules since it has the least number of moles."
+    "solution": "20.0 g H<sub>2</sub>O 所表示的分子数最少，因为它的物质的量最小。"
    }
   }
  ],

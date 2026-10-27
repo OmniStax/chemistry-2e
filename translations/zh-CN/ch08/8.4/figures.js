@@ -73,8 +73,8 @@ function lewis(ctx, cx, cy, atoms, order) {
 ===================================================================== */
 (function () {
   const d = sim('sim-gouy', 560);
-  const sample = F.choice(d.controls, { label: '\\text{sample}', options: [{ value: 'o2', label: 'O₂ (paramagnetic)' }, { value: 'n2', label: 'N₂ (diamagnetic)' }], value: 'o2', aria: 'sample', onInput: () => go() });
-  const field = F.choice(d.controls, { label: '\\text{electromagnets}', options: [{ value: 'off', label: 'off' }, { value: 'on', label: 'on' }], value: 'off', aria: 'electromagnets', onInput: () => go() });
+  const sample = F.choice(d.controls, { label: '\\text{样品}', options: [{ value: 'o2', label: 'O₂（顺磁性）' }, { value: 'n2', label: 'N₂（抗磁性）' }], value: 'o2', aria: '样品', onInput: () => go() });
+  const field = F.choice(d.controls, { label: '\\text{电磁铁}', options: [{ value: 'off', label: '关' }, { value: 'on', label: '开' }], value: 'off', aria: '电磁铁', onInput: () => go() });
   const target = () => (field.value === 'off' ? 0 : sample.value === 'o2' ? 7 : -1.5);
   const tilt = F.tween(d, 0);
   function go() { tilt.to(target(), 900); draw(); }
@@ -95,26 +95,26 @@ function lewis(ctx, cx, cy, atoms, order) {
       text(ctx, p, x + 45, 405, PAL.ink, { size: 26, weight: 600, align: 'center' });
     });
     if (on) for (let i = 0; i < 4; i++) line(ctx, lx - 58, 350 + i * 36, lx + 58, 350 + i * 36, alpha(PAL.ink, 0.4), 2, [6, 8]);
-    text(ctx, 'electromagnets', lx - 105, 510, cMag, { size: 20, align: 'center' });
+    text(ctx, '电磁铁', lx - 105, 510, cMag, { size: 20, align: 'center' });
     /* the sample tube hanging from the left end */
     const ty = ly + 150;
     line(ctx, lx, ly, lx, ty, cBal, 2);
     ctx.save(); ctx.strokeStyle = cSam; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(lx - 16, ty); ctx.lineTo(lx - 16, ty + 160); ctx.arc(lx, ty + 160, 16, Math.PI, 0, true); ctx.lineTo(lx + 16, ty); ctx.stroke(); ctx.restore();
     ctx.save(); ctx.fillStyle = alpha(F.el(sample.value === 'o2' ? 'O' : 'N'), 0.8); ctx.fillRect(lx - 13, ty + 90, 26, 70); ctx.beginPath(); ctx.arc(lx, ty + 160, 13, 0, Math.PI); ctx.fill(); ctx.restore();
-    F.label(ctx, 'sample tube', lx, ty + 20, { side: 'right', color: cSam });
+    F.label(ctx, '样品管', lx, ty + 20, { side: 'right', color: cSam });
     /* the dish and its weights on the right */
     const dy = ry + 200;
     line(ctx, rx, ry, rx - 70, dy, cW, 2); line(ctx, rx, ry, rx + 70, dy, cW, 2);
     line(ctx, rx - 90, dy, rx + 90, dy, cW, 5);
     ctx.save(); ctx.fillStyle = cW; ctx.fillRect(rx - 50, dy - 40, 40, 40); ctx.fillRect(rx + 5, dy - 28, 30, 28); ctx.restore();
-    text(ctx, 'weights', rx + 110, dy - 10, cW, { size: 20 });
-    hits = [{ x: lx, y: ty + 110, r: 40, name: sample.value === 'o2' ? 'liquid oxygen, O₂' : 'liquid nitrogen, N₂' }];
+    text(ctx, '砝码', rx + 110, dy - 10, cW, { size: 20 });
+    hits = [{ x: lx, y: ty + 110, r: 40, name: sample.value === 'o2' ? '液氧，O₂' : '液氮，N₂' }];
     const t = target(), name = sample.value === 'o2' ? 'O₂' : 'N₂';
-    headline(ctx, !on ? 'With the electromagnets off, the sample and the weights balance.'
-      : t > 0 ? 'The field pulls the paramagnetic ' + name + ' into it, so the sample appears heavier.'
-      : 'The field weakly pushes the diamagnetic ' + name + ' out, so the sample appears slightly lighter.');
-    readout(d.readout, sample.value === 'o2' ? '\\text{O}_2:\\ 2\\ \\text{unpaired electrons} \\Rightarrow \\text{paramagnetic}' : '\\text{N}_2:\\ 0\\ \\text{unpaired electrons} \\Rightarrow \\text{diamagnetic}',
-      on ? 'Only in an applied magnetic field does the sample show attraction or repulsion.' : null);
+    headline(ctx, !on ? '电磁铁关闭时，样品与砝码平衡。'
+      : t > 0 ? '磁场把顺磁性的 ' + name + ' 拉入其中，所以样品显得更重。'
+      : '磁场将抗磁性的 ' + name + ' 微弱地推出，所以样品显得稍轻。');
+    readout(d.readout, sample.value === 'o2' ? '\\text{O}_2:\\ 2\\ \\text{个未成对电子} \\Rightarrow \\text{顺磁性}' : '\\text{N}_2:\\ 0\\ \\text{个未成对电子} \\Rightarrow \\text{抗磁性}',
+      on ? '只有在外加磁场中，样品才表现出吸引或排斥。' : null);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -125,8 +125,8 @@ function lewis(ctx, cx, cy, atoms, order) {
 ===================================================================== */
 (function () {
   const d = sim('sim-waves', 620);
-  const P = ctl(d.controls, { label: '\\text{phase difference}', cls: 'angle', min: 0, max: 180, step: 1, value: 0, unit: '°', dec: 0, aria: 'phase difference in degrees',
-    specials: [{ at: 0, label: 'in phase' }, { at: 180, label: 'out of phase' }] });
+  const P = ctl(d.controls, { label: '\\text{相位差}', cls: 'angle', min: 0, max: 180, step: 1, value: 0, unit: '°', dec: 0, aria: '相位差（单位为度）',
+    specials: [{ at: 0, label: '同相' }, { at: 180, label: '反相' }] });
   const X0 = 260, X1 = 1300, A = 55, K = 2 * TAU / (X1 - X0);
   function wave(ctx, y, amp, ph, w, col) {
     ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = w; ctx.beginPath();
@@ -147,10 +147,10 @@ function lewis(ctx, cx, cy, atoms, order) {
     text(ctx, '+  ψ_{B}', 200, 300, cB, { size: 26, align: 'right' });
     text(ctx, '=  ψ_{A} + ψ_{B}', 225, 490, cS, { size: 26, align: 'right' });
     const a = fmt(Math.abs(amp), 2);
-    headline(ctx, P.v === 0 ? 'In phase, peaks line up with peaks: constructive interference doubles the amplitude.'
-      : P.v === 180 ? 'Out of phase, peaks line up with troughs: destructive interference leaves no wave.'
-      : 'At a phase difference of ' + P.v + '°, the sum has ' + a + ' times the amplitude of either wave.');
-    readout(d.readout, `\\text{amplitude of the sum} = 2\\cos\\left(\\frac{\\htmlClass{kv-angle}{${P.v}^\\circ}}{2}\\right) = ${a}`, 'The amplitude of the sum is given in units of the amplitude of either wave.');
+    headline(ctx, P.v === 0 ? '同相时，波峰与波峰对齐：相长干涉使振幅加倍。'
+      : P.v === 180 ? '反相时，波峰与波谷对齐：相消干涉使波完全消失。'
+      : '相位差为 ' + P.v + '° 时，和的振幅是任一波振幅的 ' + a + ' 倍。');
+    readout(d.readout, `\\text{和的振幅} = 2\\cos\\left(\\frac{\\htmlClass{kv-angle}{${P.v}^\\circ}}{2}\\right) = ${a}`, '和的振幅以任一波的振幅为单位给出。');
   }
   still(d, draw);
 })();
@@ -165,18 +165,18 @@ function lewis(ctx, cx, cy, atoms, order) {
   const d = sim('sim-mo-shapes');
   const { sphere, lobe, polyline, box } = F.mesh;
   const v = F.view3d(d.stage, { spin: 'idle', h: 420, dist: 8.4, tilt: 0.25, pitch: [-1.2, 1.2],
-    views: [{ label: 'side on', yaw: 0, pitch: 0 }, { label: 'along the axis', yaw: Math.PI / 2, pitch: 0 }] });
+    views: [{ label: '侧视', yaw: 0, pitch: 0 }, { label: '沿轴向', yaw: Math.PI / 2, pitch: 0 }] });
   const g = v.part(0); g.position.y = -0.3;
-  const pair = F.select(d.controls, { label: '\\text{orbitals}', options: [{ value: 's', label: 'two s' }, { value: 'pe', label: 'two p end to end' }, { value: 'ps', label: 'two p side by side' }], value: 's', aria: 'which atomic orbitals combine', onInput: () => draw() });
-  const comb = F.choice(d.controls, { label: '\\text{combination}', options: [{ value: 'in', label: 'in phase' }, { value: 'out', label: 'out of phase' }], value: 'in', aria: 'in phase or out of phase', onInput: () => draw() });
+  const pair = F.select(d.controls, { label: '\\text{轨道}', options: [{ value: 's', label: '两个 s' }, { value: 'pe', label: '两个 p 头碰头' }, { value: 'ps', label: '两个 p 肩并肩' }], value: 's', aria: '哪些原子轨道组合', onInput: () => draw() });
+  const comb = F.choice(d.controls, { label: '\\text{组合方式}', options: [{ value: 'in', label: '同相' }, { value: 'out', label: '反相' }], value: 'in', aria: '同相或反相', onInput: () => draw() });
   const N = 0.7;
   const INFO = {
-    'sin': { name: 'σ_s', tex: '\\sigma_s', head: 'In phase, two s orbitals give the bonding $\\sigma_s$ orbital, its density concentrated between the nuclei.', nodes: 'no node between the nuclei' },
-    'sout': { name: 'σ*_s', tex: '\\sigma_s^{*}', head: 'Out of phase, two s orbitals give the antibonding $\\sigma_s^{*}$ orbital, with a node between the nuclei.', nodes: 'one node between the nuclei' },
-    'pein': { name: 'σ_p', tex: '\\sigma_p', head: 'In phase, two p orbitals end to end give the bonding $\\sigma_p$ orbital, its density along the internuclear axis.', nodes: 'no node between the nuclei' },
-    'peout': { name: 'σ*_p', tex: '\\sigma_p^{*}', head: 'Out of phase, two p orbitals end to end give the antibonding $\\sigma_p^{*}$ orbital, with a node between the nuclei.', nodes: 'one node between the nuclei' },
-    'psin': { name: 'π_p', tex: '\\pi_p', head: 'In phase, two p orbitals side by side give the bonding $\\pi_p$ orbital, above and below a node that contains the internuclear axis.', nodes: 'one node containing the internuclear axis' },
-    'psout': { name: 'π*_p', tex: '\\pi_p^{*}', head: 'Out of phase, two p orbitals side by side give the antibonding $\\pi_p^{*}$ orbital, with two nodes.', nodes: 'two nodes, one containing the axis and one between the nuclei' },
+    'sin': { name: 'σ_s', tex: '\\sigma_s', head: '同相时，两个 s 轨道给出成键的 $\\sigma_s$ 轨道，其密度集中在两核之间。', nodes: '在两核之间没有节点' },
+    'sout': { name: 'σ*_s', tex: '\\sigma_s^{*}', head: '反相时，两个 s 轨道给出反键的 $\\sigma_s^{*}$ 轨道，在两核之间有一个节点。', nodes: '在两核之间有一个节点' },
+    'pein': { name: 'σ_p', tex: '\\sigma_p', head: '同相时，两个 p 轨道头碰头给出成键的 $\\sigma_p$ 轨道，其密度沿核间轴分布。', nodes: '在两核之间没有节点' },
+    'peout': { name: 'σ*_p', tex: '\\sigma_p^{*}', head: '反相时，两个 p 轨道头碰头给出反键的 $\\sigma_p^{*}$ 轨道，在两核之间有一个节点。', nodes: '在两核之间有一个节点' },
+    'psin': { name: 'π_p', tex: '\\pi_p', head: '同相时，两个 p 轨道肩并肩给出成键的 $\\pi_p$ 轨道，位于包含核间轴的节点的上方和下方。', nodes: '有一个包含核间轴的节点' },
+    'psout': { name: 'π*_p', tex: '\\pi_p^{*}', head: '反相时，两个 p 轨道肩并肩给出反键的 $\\pi_p^{*}$ 轨道，有两个节点。', nodes: '有两个节点，一个包含核间轴，一个位于两核之间' },
   };
   function fade(m, a) { m.material.transparent = true; m.material.opacity *= a; m.material.depthWrite = a > 0.9 && m.material.opacity > 0.6; m.visible = a > 0.01; return m; }
   function blob(p, r, c, a, name) { const m = sphere(g, p, 1, c, { transparent: true, opacity: 0.55 }); m.scale.set(r[0], r[1], r[2]); v.pickable(fade(m, a), name); }
@@ -190,16 +190,16 @@ function lewis(ctx, cx, cy, atoms, order) {
   }
   function build(key, a) {
     if (a <= 0.01) return;
-    const c0 = F.cat(0), c1 = F.cat(1), I = INFO[key], nm = 'the ' + I.name.replace('_', '') + ' molecular orbital';
+    const c0 = F.cat(0), c1 = F.cat(1), I = INFO[key], nm = I.name.replace('_', '') + ' 分子轨道';
     if (key === 'sin') blob([0, 0, 0], [1.45, 0.85, 0.85], c0, a, nm);
-    if (key === 'sout') { blob([-1.0, 0, 0], [0.75, 0.75, 0.75], c0, a, nm + ', one phase'); blob([1.0, 0, 0], [0.75, 0.75, 0.75], c1, a, nm + ', the other phase'); plane('x', a); }
-    if (key === 'pein') { blob([0, 0, 0], [1.05, 0.6, 0.6], c0, a, nm + ', its central lobe'); lb([-N, 0, 0], [-1, 0, 0], 0.7, c1, a, nm + ', an outer lobe'); lb([N, 0, 0], [1, 0, 0], 0.7, c1, a, nm + ', an outer lobe'); }
-    if (key === 'peout') { lb([-N, 0, 0], [-1, 0, 0], 1.5, c0, a, nm + ', one phase'); lb([N, 0, 0], [1, 0, 0], 1.5, c1, a, nm + ', the other phase'); lb([-N, 0, 0], [1, 0, 0], 0.5, c1, a, nm + ', a small inner lobe'); lb([N, 0, 0], [-1, 0, 0], 0.5, c0, a, nm + ', a small inner lobe'); plane('x', a); }
-    if (key === 'psin') { blob([0, 0.72, 0], [1.4, 0.55, 0.5], c0, a, nm + ', above the axis'); blob([0, -0.72, 0], [1.4, 0.55, 0.5], c1, a, nm + ', below the axis'); plane('y', a); }
+    if (key === 'sout') { blob([-1.0, 0, 0], [0.75, 0.75, 0.75], c0, a, nm + '，一种相位'); blob([1.0, 0, 0], [0.75, 0.75, 0.75], c1, a, nm + '，另一种相位'); plane('x', a); }
+    if (key === 'pein') { blob([0, 0, 0], [1.05, 0.6, 0.6], c0, a, nm + '，其中央的瓣'); lb([-N, 0, 0], [-1, 0, 0], 0.7, c1, a, nm + '，一个外侧的瓣'); lb([N, 0, 0], [1, 0, 0], 0.7, c1, a, nm + '，一个外侧的瓣'); }
+    if (key === 'peout') { lb([-N, 0, 0], [-1, 0, 0], 1.5, c0, a, nm + '，一种相位'); lb([N, 0, 0], [1, 0, 0], 1.5, c1, a, nm + '，另一种相位'); lb([-N, 0, 0], [1, 0, 0], 0.5, c1, a, nm + '，一个较小的内侧瓣'); lb([N, 0, 0], [-1, 0, 0], 0.5, c0, a, nm + '，一个较小的内侧瓣'); plane('x', a); }
+    if (key === 'psin') { blob([0, 0.72, 0], [1.4, 0.55, 0.5], c0, a, nm + '，核间轴上方'); blob([0, -0.72, 0], [1.4, 0.55, 0.5], c1, a, nm + '，核间轴下方'); plane('y', a); }
     if (key === 'psout') {
       const t = 0.35;
-      lb([-N, 0, 0], [-t, 1, 0], 1.2, c0, a, nm + ', one phase'); lb([-N, 0, 0], [-t, -1, 0], 1.2, c1, a, nm + ', the other phase');
-      lb([N, 0, 0], [t, 1, 0], 1.2, c1, a, nm + ', the other phase'); lb([N, 0, 0], [t, -1, 0], 1.2, c0, a, nm + ', one phase');
+      lb([-N, 0, 0], [-t, 1, 0], 1.2, c0, a, nm + '，一种相位'); lb([-N, 0, 0], [-t, -1, 0], 1.2, c1, a, nm + '，另一种相位');
+      lb([N, 0, 0], [t, 1, 0], 1.2, c1, a, nm + '，另一种相位'); lb([N, 0, 0], [t, -1, 0], 1.2, c0, a, nm + '，一种相位');
       plane('x', a); plane('y', a);
     }
   }
@@ -213,10 +213,10 @@ function lewis(ctx, cx, cy, atoms, order) {
     build(now, was !== now ? q : 1);
     [-N, N].forEach((x) => F.mesh.sphere(g, [x, 0, 0], 0.07, PAL.ink));
     polyline(g, [[-2.4, 0, 0], [2.4, 0, 0]], alpha(PAL.ink, 0.5));
-    v.label('internuclear axis', [2.4, 0, 0], g, -18);
+    v.label('核间轴', [2.4, 0, 0], g, -18);
     const I = INFO[now];
     v.headline(I.head);
-    readout(d.readout, `\\text{${comb.value === 'in' ? 'in phase' : 'out of phase'}} \\Rightarrow ${I.tex}\\ \\text{(${comb.value === 'in' ? 'bonding' : 'antibonding'})}`, 'The orbital has ' + I.nodes + '.');
+    readout(d.readout, `\\text{${comb.value === 'in' ? '同相' : '反相'}} \\Rightarrow ${I.tex}\\ \\text{（${comb.value === 'in' ? '成键' : '反键'}）}`, '该轨道' + I.nodes + '。');
   }
   still(d, draw);
 })();
@@ -240,7 +240,7 @@ function lewis(ctx, cx, cy, atoms, order) {
     p(ctx, 130, 130, true, [1, 0]); p(ctx, 330, 130, true, [0, 1]);
     p(ctx, 620, 130, true, [1, 0]); p(ctx, 800, 130, false, [1, 0]);
     p(ctx, 1080, 130, false, [0, 1]); p(ctx, 1230, 130, false, [1, 0]);
-    [[230, '3p_{x} and 3p_{x}', '(a)'], [710, '3p_{x} and 3p_{y}', '(b)'], [1155, '3p_{y} and 3p_{y}', '(c)']].forEach(([x, s, t]) => {
+    [[230, '3p_{x} 与 3p_{x}', '（a）'], [710, '3p_{x} 与 3p_{y}', '（b）'], [1155, '3p_{y} 与 3p_{y}', '（c）']].forEach(([x, s, t]) => {
       text(ctx, s, x, 255, PAL.ink, { size: 22, align: 'center' }); text(ctx, t, x, 292, PAL.ink, { size: 22, align: 'center' });
     });
   }
@@ -292,7 +292,7 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
   const SUP = { 0: '', 1: '⁺', 2: '²⁺', '-1': '⁻', '-2': '²⁻' };
   const TSUP = { 0: '', 1: '^{+}', 2: '^{2+}', '-1': '^{-}', '-2': '^{2-}' };
   const nameOf = ([X, q]) => X + '₂' + SUP[q];
-  const pick = F.select(d.controls, { label: '\\text{species}', options: SPECIES.map((s, i) => ({ value: String(i), label: nameOf(s) })), value: '6', aria: 'molecule or ion', onInput: () => { arrive.set(0); arrive.to(1, 1200); draw(); } });
+  const pick = F.select(d.controls, { label: '\\text{物种}', options: SPECIES.map((s, i) => ({ value: String(i), label: nameOf(s) })), value: '6', aria: '分子或离子', onInput: () => { arrive.set(0); arrive.to(1, 1200); draw(); } });
   const arrive = F.tween(d, 1);
   const Y = (E) => 590 - E * 1.12;
   const XL = 260, XM = 700, XR = 1140;
@@ -316,7 +316,7 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       atomEnds[l.id] = [L.r, R.l, Y(l.E)];
       text(ctx, l.id, L.l - 16, Y(l.E), PAL.ink, { size: 22, align: 'right' });
       text(ctx, l.id, R.r + 16, Y(l.E), PAL.ink, { size: 22 });
-      hits.push({ x: XL, y: Y(l.E), r: 40, name: 'the ' + l.id + ' atomic orbital' + (l.deg > 1 ? 's' : '') + ' of one ' + X + ' atom' }, { x: XR, y: Y(l.E), r: 40, name: 'the ' + l.id + ' atomic orbital' + (l.deg > 1 ? 's' : '') + ' of the other ' + X + ' atom' });
+      hits.push({ x: XL, y: Y(l.E), r: 40, name: '一个 ' + X + ' 原子的 ' + l.id + ' 原子轨道' }, { x: XR, y: Y(l.E), r: 40, name: '另一个 ' + X + ' 原子的 ' + l.id + ' 原子轨道' });
     });
     let prev = Infinity; const names = [];
     const ys = D.mo.map((l) => { const y = Math.min(Y(l.E), prev - 44); prev = y; return y; });
@@ -328,22 +328,22 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       line(ctx, box.r + 6, y, bl - 6, ay, alpha(PAL.ink, 0.45), 2, [6, 6]);
       level(ctx, XM, y, l.deg, occ[i], 70, a);
       names.push([l.name, box.r + 14, y - 16]);
-      hits.push({ x: XM, y, r: 45, name: 'the ' + l.name.replace(/[_{}]/g, '') + ' ' + (l.anti ? 'antibonding' : 'bonding') + ' molecular orbital' });
+      hits.push({ x: XM, y, r: 45, name: l.name.replace(/[_{}]/g, '') + ' ' + (l.anti ? '反键' : '成键') + '分子轨道' });
     });
     names.forEach(([s, x, y]) => text(ctx, s, x, y, PAL.ink, { size: 20, bg: PAL.panel }));
-    text(ctx, 'Atomic orbitals', XL, 590, PAL.muted, { size: 20, align: 'center' });
-    text(ctx, 'Molecular orbitals', XM, 590, PAL.muted, { size: 20, align: 'center' });
-    text(ctx, 'Atomic orbitals', XR, 590, PAL.muted, { size: 20, align: 'center' });
+    text(ctx, '原子轨道', XL, 590, PAL.muted, { size: 20, align: 'center' });
+    text(ctx, '分子轨道', XM, 590, PAL.muted, { size: 20, align: 'center' });
+    text(ctx, '原子轨道', XR, 590, PAL.muted, { size: 20, align: 'center' });
     text(ctx, X, XL, 620, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, X + '_{2}' + SUP[q], XM, 620, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, X, XR, 620, PAL.ink, { size: 22, weight: 600, align: 'center' });
     let b = 0, ab = 0, unp = 0;
     D.mo.forEach((l, i) => { if (l.anti) ab += occ[i]; else b += occ[i]; spread(occ[i], l.deg).forEach((o) => { if (o === 1) unp++; }); });
     const conf = D.mo.map((l, i) => (occ[i] ? '(' + l.name + ')' + SUPN[occ[i]] : '')).join('');
-    headline(ctx, nameOf(SPECIES[+pick.value]) + ' has the valence configuration ' + conf + '.');
+    headline(ctx, nameOf(SPECIES[+pick.value]) + ' 的价电子构型为 ' + conf + '。');
     const bo = (b - ab) / 2;
-    readout(d.readout, `\\text{bond order of } \\text{${X}}_2${TSUP[q]} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`,
-      (unp === 0 ? 'All the valence electrons are paired, so ' : unp === 1 ? 'One electron is unpaired, so ' : unp + ' electrons are unpaired, so ') + nameOf(SPECIES[+pick.value]) + (unp ? ' is paramagnetic' : ' is diamagnetic') + (bo <= 0 ? ', and with a bond order of zero it is not stable.' : '.'));
+    readout(d.readout, `\\text{${X}}_2${TSUP[q]}\\text{ 的键级} = \\frac{(${b} - ${ab})}{2} = ${fmt(bo, bo % 1 ? 1 : 0)}`,
+      (unp === 0 ? '所有价电子都已成对，所以 ' : unp === 1 ? '有一个电子未成对，所以 ' : '有 ' + unp + ' 个电子未成对，所以 ') + nameOf(SPECIES[+pick.value]) + (unp ? ' 是顺磁性的' : ' 是抗磁性的') + (bo <= 0 ? '，且键级为零，所以它不稳定。' : '。'));
   }
   still(d, draw);
 })();
@@ -371,12 +371,12 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
         const x = X0 + i * DX, y = Y(E37[k][i]);
         if (deg === 1) line(ctx, x - 26, y, x + 26, y, PAL.ink, 5); else { line(ctx, x - 54, y, x - 6, y, PAL.ink, 5); line(ctx, x + 6, y, x + 54, y, PAL.ink, 5); }
         if (i < 7) line(ctx, x + (deg === 1 ? 26 : 54), y, X0 + (i + 1) * DX - (deg === 1 ? 26 : 54), Y(E37[k][i + 1]), alpha(PAL.ink, 0.45), 2, [6, 6]);
-        hits.push({ x, y, r: 22, name: 'the ' + nm.replace(/[_{}]/g, '') + ' orbital' + (deg > 1 ? 's' : '') + ' of ' + X + '₂' });
+        hits.push({ x, y, r: 22, name: X + '₂ 的 ' + nm.replace(/[_{}]/g, '') + ' 轨道' });
       });
       text(ctx, nm, X0 + 7 * DX + 70, Y(E37[k][7]), PAL.ink, { size: 20 });
     });
     text(ctx, 'σ_{2px}', X0 - 72, Y(E37.s2p[0]), PAL.ink, { size: 20, align: 'right' });
-    readout(d.readout, '\\text{Li}_2\\ \\text{to}\\ \\text{N}_2:\\ \\pi_{2p} < \\sigma_{2px} \\qquad \\text{O}_2\\ \\text{to}\\ \\text{Ne}_2:\\ \\sigma_{2px} < \\pi_{2p}');
+    readout(d.readout, '\\text{Li}_2\\ \\text{至}\\ \\text{N}_2:\\ \\pi_{2p} < \\sigma_{2px} \\qquad \\text{O}_2\\ \\text{至}\\ \\text{Ne}_2:\\ \\sigma_{2px} < \\pi_{2p}');
   }
   still(d, draw);
 })();
@@ -388,8 +388,8 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
 ===================================================================== */
 (function () {
   const d = sim('sim-spmix', 640);
-  const M = ctl(d.controls, { label: '\\text{s-p mixing}', cls: '', min: 0, max: 1, step: 0.01, value: 0, unit: '', dec: 2, aria: 'extent of s-p mixing',
-    specials: [{ at: 0.6, label: 'σp meets πp' }] });
+  const M = ctl(d.controls, { label: '\\text{s-p 混合}', cls: '', min: 0, max: 1, step: 0.01, value: 0, unit: '', dec: 2, aria: 's-p 混合的程度',
+    specials: [{ at: 0.6, label: 'σp 与 πp 相遇' }] });
   const Y = (E) => 600 - E;
   const XL = 300, XM = 700, XR = 1100;
   let hits = []; F.hover(d.stage, () => hits);
@@ -416,15 +416,15 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
       line(ctx, XL + ax, Y(AT[l.from]), x0 - 6, y, alpha(PAL.ink, 0.4), 2, [6, 6]);
       line(ctx, x0 + tot + 6, y, XR - ax, Y(AT[l.from]), alpha(PAL.ink, 0.4), 2, [6, 6]);
       names.push([l.n, x0 + tot + (l.deg > 1 ? 14 : 110), y - 16, l.c]);
-      hits.push({ x: XM, y, r: 45, name: 'the ' + l.n.replace(/[_{}]/g, '') + ' molecular orbital' });
+      hits.push({ x: XM, y, r: 45, name: l.n.replace(/[_{}]/g, '') + ' 分子轨道' });
     });
     names.forEach(([s, x, y, c]) => text(ctx, s, x, y, c, { size: 20, bg: PAL.panel }));
     const above = 250 + 100 * m > 310;
-    headline(ctx, m === 0 ? 'Without mixing, σ_{p} lies below the π_{p} pair, as in O₂, F₂ and Ne₂.'
-      : above ? 'With enough s-p mixing, σ_{p} rises above the π_{p} pair, as in Li₂ through N₂.'
-      : m === 0.6 ? 'Here σ_{p} and the π_{p} pair have the same energy.' : 'Mixing lowers σ_{s} and σ*_{s} and raises σ_{p} and σ*_{p}, but σ_{p} is still below π_{p}.');
+    headline(ctx, m === 0 ? '没有混合时，σ_{p} 位于 π_{p} 这一对之下，如 O₂、F₂ 和 Ne₂。'
+      : above ? '有足够的 s-p 混合时，σ_{p} 升到 π_{p} 这一对之上，如 Li₂ 至 N₂。'
+      : m === 0.6 ? '此时 σ_{p} 与 π_{p} 这一对的能量相同。' : '混合使 σ_{s} 和 σ*_{s} 降低，使 σ_{p} 和 σ*_{p} 升高，但 σ_{p} 仍在 π_{p} 之下。');
     readout(d.readout, above ? '\\sigma_s < \\sigma_s^{*} < \\pi_p < \\sigma_p < \\pi_p^{*} < \\sigma_p^{*}' : '\\sigma_s < \\sigma_s^{*} < \\sigma_p ' + (m === 0.6 ? '=' : '<') + ' \\pi_p < \\pi_p^{*} < \\sigma_p^{*}',
-      's-p mixing creates no new orbitals; it only moves the σ orbitals.');
+      's-p 混合不产生新的轨道，只是使 σ 轨道移动。');
   }
   still(d, draw);
 })();
@@ -436,9 +436,9 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
 ===================================================================== */
 (function () {
   const d = sim('sim-bands', 600);
-  const nPick = F.choice(d.controls, { label: 'N', options: [{ value: '2', label: '2' }, { value: '6', label: '6' }, { value: '20', label: '20' }, { value: 'many', label: 'very many' }], value: 'many', aria: 'number of atoms', onInput: () => draw() });
-  const solid = F.choice(d.controls, { label: '\\text{solid}', options: [{ value: 'ins', label: 'insulator' }, { value: 'semi', label: 'semiconductor' }, { value: 'cond', label: 'conductor' }], value: 'ins', aria: 'kind of solid', onInput: () => draw() });
-  const GAP = { ins: 220, semi: 110, cond: 22 }, NAME = { ins: 'an insulator', semi: 'a semiconductor', cond: 'a conductor' };
+  const nPick = F.choice(d.controls, { label: 'N', options: [{ value: '2', label: '2' }, { value: '6', label: '6' }, { value: '20', label: '20' }, { value: 'many', label: '非常多' }], value: 'many', aria: '原子数', onInput: () => draw() });
+  const solid = F.choice(d.controls, { label: '\\text{固体}', options: [{ value: 'ins', label: '绝缘体' }, { value: 'semi', label: '半导体' }, { value: 'cond', label: '导体' }], value: 'ins', aria: '固体的种类', onInput: () => draw() });
+  const GAP = { ins: 220, semi: 110, cond: 22 }, NAME = { ins: '绝缘体', semi: '半导体', cond: '导体' };
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
     const { ctx } = begin(d.c);
@@ -458,16 +458,16 @@ function fill(levels, n) { let left = n; return levels.map((l) => { const k = Ma
         line(ctx, x0, cb - (cb - ct) * f, x1, cb - (cb - ct) * f, cC, 4);
       }
     }
-    text(ctx, 'conduction band (empty)', x1 + 30, (ct + cb) / 2, cC, { size: 22 });
-    text(ctx, 'valence band (filled)', x1 + 30, (vt + vb) / 2, cV, { size: 22 });
+    text(ctx, '导带（空）', x1 + 30, (ct + cb) / 2, cC, { size: 22 });
+    text(ctx, '价带（填满）', x1 + 30, (vt + vb) / 2, cV, { size: 22 });
     const cE = C('energy');
     line(ctx, x0 - 40, cb, x0 - 40, vt, cE, 3); line(ctx, x0 - 52, cb, x0 - 28, cb, cE, 3); line(ctx, x0 - 52, vt, x0 - 28, vt, cE, 3);
-    text(ctx, 'band gap', x0 - 60, mid, cE, { size: 22, weight: 600, align: 'right' });
-    hits = [{ x: (x0 + x1) / 2, y: (vt + vb) / 2, r: 60, name: 'the bonding orbitals, the valence band' }, { x: (x0 + x1) / 2, y: (ct + cb) / 2, r: 60, name: 'the antibonding orbitals, the conduction band' }];
-    headline(ctx, 'In ' + NAME[solid.value] + ' the band gap is ' + (solid.value === 'ins' ? 'large' : solid.value === 'semi' ? 'moderate' : 'very small') + '.');
+    text(ctx, '带隙', x0 - 60, mid, cE, { size: 22, weight: 600, align: 'right' });
+    hits = [{ x: (x0 + x1) / 2, y: (vt + vb) / 2, r: 60, name: '成键轨道，即价带' }, { x: (x0 + x1) / 2, y: (ct + cb) / 2, r: 60, name: '反键轨道，即导带' }];
+    headline(ctx, '在' + NAME[solid.value] + '中，带隙' + (solid.value === 'ins' ? '大' : solid.value === 'semi' ? '适中' : '很小') + '。');
     const nS = String(nv), hS = String(nv / 2);
-    readout(d.readout, nv === Infinity ? 'N/2\\ \\text{bonding (filled)},\\quad N/2\\ \\text{antibonding (empty)}' : `N = ${nS}:\\quad N/2 = ${hS}\\ \\text{bonding (filled)},\\quad N/2 = ${hS}\\ \\text{antibonding (empty)}`,
-      nv === Infinity ? 'So many levels lie so close together that they form bands.' : 'Each bonding and each antibonding orbital has a slightly different energy.');
+    readout(d.readout, nv === Infinity ? 'N/2\\ \\text{个成键轨道（填满）},\\quad N/2\\ \\text{个反键轨道（空）}' : `N = ${nS}:\\quad N/2 = ${hS}\\ \\text{个成键轨道（填满）},\\quad N/2 = ${hS}\\ \\text{个反键轨道（空）}`,
+      nv === Infinity ? '如此多的能级靠得如此之近，以致形成能带。' : '每个成键轨道和每个反键轨道的能量都略有不同。');
   }
   still(d, draw);
 })();

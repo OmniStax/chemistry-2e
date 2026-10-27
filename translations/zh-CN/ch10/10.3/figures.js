@@ -41,7 +41,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 ===================================================================== */
 (function () {
   const d = sim('sim-vapor');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: '正面', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: 0.7, pitch: 0.45 }], h: 380, dist: 4.8 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: 0.7, pitch: 0.45 }], h: 380, dist: 4.8 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 340);
   /* each molecule by its carbon and oxygen atoms and the hydrogen atoms of its O–H groups, in box units */
   const SHAPES = {
@@ -175,7 +175,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     line(ctx, X(em), box.t + 20, X(em), box.b, PAL.ink, 3, [10, 10]);
     const fl = tail(T0, em), fh = tail(tk, em), r = fh / fl;
     const lines = topline(ctx, tk === T0 ? `在 300 K 时，${pct(fl)} 的分子具有至少 ${fmt(em, 1)} kJ/mol 的动能。`
-      : `在 ${tk} K 时，${pct(fh)} 的分子具有至少 ${fmt(em, 1)} kJ/mol，是 300 K 时该比例的 ${fmt(r, r < 10 ? 2 : 1)} 倍。`);
+      : `在 ${tk} K 时，${pct(fh)} 的分子具有至少 ${fmt(em, 1)} kJ/mol 的动能，其比例是 300 K 时的 ${fmt(r, r < 10 ? 2 : 1)} 倍。`);
     /* the curve names: the colder curve over its peak, the warmer over its tail, past the crossing and clear of the minimum line */
     const lab = F.labeller(ctx, H, { headline: lines });
     lab.place(label(ctx, '逸出所需的最小 KE', X(em), box.t + 20, { side: em > 12 ? 'left' : 'right', size: 18, gap: 14 }));

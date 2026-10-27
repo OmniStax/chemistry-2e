@@ -383,11 +383,11 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "把表中的每种物质分类为金属固体、离子固体、分子固体或共价网状固体：<br><table><thead><tr><th>物质</th><th>外观</th><th>熔点</th><th>导电性</th><th>在水中的溶解性</th></tr></thead><tbody><tr><td>X</td><td>有光泽，有延展性</td><td>1500 °C</td><td>高</td><td>不溶</td></tr><tr><td>Y</td><td>软，黄色</td><td>113 °C</td><td>无</td><td>不溶</td></tr><tr><td>Z</td><td>硬，白色</td><td>800 °C</td><td>仅在熔融/溶解时导电</td><td>可溶</td></tr></tbody></table>",
+   "prompt": "把表中的每种物质分类为金属固体、离子固体、分子固体或共价网状固体：<br><table><thead><tr><th>物质</th><th>外观</th><th>熔点</th><th>导电性</th><th>在水中的溶解性</th></tr></thead><tbody><tr><td>X</td><td>有光泽，有展性</td><td>1500 °C</td><td>高</td><td>不溶</td></tr><tr><td>Y</td><td>软，黄色</td><td>113 °C</td><td>无</td><td>不溶</td></tr><tr><td>Z</td><td>硬，白色</td><td>800 °C</td><td>仅在熔融/溶解时导电</td><td>可溶</td></tr></tbody></table>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "X 是金属型，Y 是分子型，Z 是离子型。X 有光泽、有延展性，导电性好，这是表 10.4 中给出的金属固体的性质，其原子处于离域电子的海洋之中；它 1500 °C 的熔点是典型的过渡金属的熔点，而金属不溶于水。Y 软，不导电，熔点只有 113 °C，所以其粒子是靠弱 IMF 结合的中性分子；这些性质与硫相符。Z 硬，熔点高达 800 °C，溶于水，仅在熔融或溶解时导电，这是离子固体的行为：其离子在晶体中被固定在原位，只有在液体或溶液中才能自由移动。"
+    "solution": "X 是金属型，Y 是分子型，Z 是离子型。X 有光泽、有展性，导电性好，这是表 10.4 中给出的金属固体的性质，其原子处于离域电子的海洋之中；它 1500 °C 的熔点是典型的过渡金属的熔点，而金属不溶于水。Y 软，不导电，熔点只有 113 °C，所以其粒子是靠弱 IMF 结合的中性分子；这些性质与硫相符。Z 硬，熔点高达 800 °C，溶于水，仅在熔融或溶解时导电，这是离子固体的行为：其离子在晶体中被固定在原位，只有在液体或溶液中才能自由移动。"
    }
   },
   {
@@ -399,7 +399,7 @@
     "at": "end"
    },
    "cite": "properties",
-   "prompt": "把表中的每种物质分类为金属固体、离子固体、分子固体或共价网状固体：<br><table><thead><tr><th>物质</th><th>外观</th><th>熔点</th><th>导电性</th><th>在水中的溶解性</th></tr></thead><tbody><tr><td>X</td><td>脆，白色</td><td>800 °C</td><td>仅在熔融/溶解时导电</td><td>可溶</td></tr><tr><td>Y</td><td>闪亮，有延展性</td><td>1100 °C</td><td>高</td><td>不溶</td></tr><tr><td>Z</td><td>硬，无色</td><td>3550 °C</td><td>无</td><td>不溶</td></tr></tbody></table>",
+   "prompt": "把表中的每种物质分类为金属固体、离子固体、分子固体或共价网状固体：<br><table><thead><tr><th>物质</th><th>外观</th><th>熔点</th><th>导电性</th><th>在水中的溶解性</th></tr></thead><tbody><tr><td>X</td><td>脆，白色</td><td>800 °C</td><td>仅在熔融/溶解时导电</td><td>可溶</td></tr><tr><td>Y</td><td>有光泽，有展性</td><td>1100 °C</td><td>高</td><td>不溶</td></tr><tr><td>Z</td><td>硬，无色</td><td>3550 °C</td><td>无</td><td>不溶</td></tr></tbody></table>",
    "answer": {
     "type": "open",
     "generated_by": "source",

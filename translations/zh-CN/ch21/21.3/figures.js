@@ -70,8 +70,8 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
   const d = sim('sim-rays-field', H);
   const SIGN = { off: 0, up: 1, down: -1 };
   const plates = choice(d.controls, {
-    label: '\\text{plates}', aria: 'how the plates are charged', value: 'up',
-    options: [{ value: 'off', label: 'uncharged' }, { value: 'up', label: '+ above' }, { value: 'down', label: '+ below' }],
+    label: '\\text{极板}', aria: '极板的带电方式', value: 'up',
+    options: [{ value: 'off', label: '不带电' }, { value: 'up', label: '正极在上' }, { value: 'down', label: '正极在下' }],
     onInput: () => { hits0.a = hits0.b = hits0.g = 0; },
   });
   const cy = cycle(() => Infinity, 0);
@@ -120,9 +120,9 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const s = plates.mix((v) => SIGN[v]), st = plates.value, CQ = C('charge');
     hits = [];
     const head = {
-      up: 'With the positive plate above, β particles bend up toward it, α particles bend down toward the negative plate, and γ rays pass straight through.',
-      down: 'With the positive plate below, β particles bend down toward it, α particles bend up toward the negative plate, and γ rays pass straight through.',
-      off: 'Between uncharged plates all three kinds of radiation travel straight to the same spot.',
+      up: '正极板在上方时，β 粒子向上弯曲，朝正极板偏转，α 粒子向下弯曲，朝负极板偏转，γ 射线径直穿过。',
+      down: '正极板在下方时，β 粒子向下弯曲，朝正极板偏转，α 粒子向上弯曲，朝负极板偏转，γ 射线径直穿过。',
+      off: '在不带电的极板之间，三种辐射都径直射向同一点。',
     }[st];
     const lab = labeller(ctx, H, { headline: topline(ctx, head) });
 
@@ -131,10 +131,10 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const b0 = P(X0, 0, 0), b1 = P(XB, 0, 0);
     line(ctx, b0[0], b0[1], b1[0], b1[1], alpha(PAL.panel, 0.85), 3, [8, 7]);
     disc(ctx, b0[0], b0[1], 10, F.el('Ra'), PAL.panel, 2);
-    hits.push({ x: b0[0], y: b0[1], r: 16, name: 'radium, the radioactive substance, at the bottom of a bore in the lead block' });
+    hits.push({ x: b0[0], y: b0[1], r: 16, name: '镭，即放射性物质，位于铅块孔道的底部' });
     const bc = P(-530, 95, 0);
-    hits.push({ x: bc[0], y: bc[1] + 60, r: 70, name: 'lead block, which absorbs the radiation that does not leave through the bore' });
-    lab.add('lead block', bc[0], bc[1] - 10, 0, -1, PAL.ink, 22, 30);
+    hits.push({ x: bc[0], y: bc[1] + 60, r: 70, name: '铅块，吸收不从孔道射出的辐射' });
+    lab.add('铅块', bc[0], bc[1] - 10, 0, -1, PAL.ink, 22, 30);
 
     /* the plates: the lower first, the beams between them, the upper over them */
     const plate = (y) => box(ctx, [XP1, y - 5, -85], [XP2, y + 5, 85], PAL.soft, 1.5);
@@ -158,7 +158,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       else { const q2 = P(f.x - 20, yAt('g', f.x - 20, s), f.z), L2 = Math.hypot(q[0] - q2[0], q[1] - q2[1]) || 1; photon(ctx, q[0], q[1], [(q[0] - q2[0]) / L2, (q[1] - q2[1]) / L2], 40, 4, 12); }
       if (!seen[f.k] && f.x > XP2) {
         seen[f.k] = true;
-        hits.push({ x: q[0], y: q[1], r: 14, name: { a: 'an α particle, a helium nucleus: charge 2+, mass 4 u', b: 'a β particle, an electron: charge 1−, mass 0.00055 u', g: 'a γ ray, a photon: no charge and no mass' }[f.k] });
+        hits.push({ x: q[0], y: q[1], r: 14, name: { a: 'α 粒子，即氦核：电荷 2+，质量 4 u', b: 'β 粒子，即电子：电荷 1−，质量 0.00055 u', g: 'γ 射线，即光子：不带电，无质量' }[f.k] });
       }
     });
     plate(75);
@@ -169,10 +169,10 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       text(ctx, bot, stemB[0] + 26, stemB[1] + 46, CQ, { size: 30, weight: 600, align: 'left' });
     }
     const pm = P((XP1 + XP2) / 2, -80, 85);
-    hits.push({ x: pm[0], y: pm[1], r: 60, name: st === 'off' ? 'two uncharged metal plates: no field between them' : 'two charged metal plates, the field between them pointing from + to −' });
-    hits.push({ x: P((XP1 + XP2) / 2, 80, 85)[0], y: P((XP1 + XP2) / 2, 80, 85)[1], r: 60, name: st === 'off' ? 'an uncharged metal plate' : 'the plate charged ' + (st === 'up' ? 'positive' : 'negative') });
+    hits.push({ x: pm[0], y: pm[1], r: 60, name: st === 'off' ? '两块不带电的金属极板：它们之间没有电场' : '两块带电的金属极板，它们之间的电场由 + 指向 −' });
+    hits.push({ x: P((XP1 + XP2) / 2, 80, 85)[0], y: P((XP1 + XP2) / 2, 80, 85)[1], r: 60, name: st === 'off' ? '一块不带电的金属极板' : '极板带' + (st === 'up' ? '正电' : '负电') });
     const pl = P(XP1, -80, 85);
-    lab.add(st === 'off' ? 'uncharged plates' : 'charged plates', pl[0], pl[1], -0.8, 0.6, PAL.ink, 22, 24);
+    lab.add(st === 'off' ? '不带电的极板' : '带电的极板', pl[0], pl[1], -0.8, 0.6, PAL.ink, 22, 24);
 
     /* the photographic plate: a thin sheet the viewer sees from the source's side, darkened where each beam lands */
     const sheet = [PL(-210, -130), PL(210, -130), PL(210, 130), PL(-210, 130)];
@@ -185,10 +185,10 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     ['a', 'b', 'g'].forEach((k) => {
       const q = P(XS, yAt(k, XS, s), 0), e = F.REDUCED ? 1 : Math.min(1, hits0[k] / 12);
       ctx.save(); ctx.globalAlpha = 0.15 + 0.7 * e; ctx.fillStyle = PAL.ink; ctx.beginPath(); ctx.ellipse(q[0], q[1], 9, 13, 0, 0, TAU); ctx.fill(); ctx.restore();
-      hits.push({ x: q[0], y: q[1], r: 16, name: 'the spot the ' + { a: 'α particles', b: 'β particles', g: 'γ rays' }[k] + ' darken on the photographic plate' });
+      hits.push({ x: q[0], y: q[1], r: 16, name: '' + { a: 'α 粒子', b: 'β 粒子', g: 'γ 射线' }[k] + '使照相底片变黑的位置' });
     });
     const sb = PL(-200, 110);
-    lab.add('photographic plate', sb[0], sb[1], -0.7, 0.7, PAL.ink, 22, 20);
+    lab.add('照相底片', sb[0], sb[1], -0.7, 0.7, PAL.ink, 22, 20);
 
     /* the three kinds named once, beside their beams just short of the plate */
     const names = { a: 'α', b: 'β', g: 'γ' }, stack = { a: 30, b: -30, g: 0 };
@@ -201,9 +201,9 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     lab.flush();
 
     const dir = (k) => {
-      if (st === 'off' || k === 'g') return '\\text{straight}';
+      if (st === 'off' || k === 'g') return '\\text{径直}';
       const towardPlus = k === 'b', upward = (st === 'up') === towardPlus;
-      return '\\text{' + (upward ? 'up' : 'down') + ', toward }' + hue(towardPlus ? '+' : '-');
+      return '\\text{' + (upward ? '向上' : '向下') + '，朝 }' + hue(towardPlus ? '+' : '-');
     };
     ro.set('\\mk{a}{{}_{2}^{4}\\alpha}\\;\\mk{ad}{' + dir('a') + '}\\qquad \\mk{b}{{}_{-1}^{\\;0}\\beta}\\;\\mk{bd}{' + dir('b') + '}\\qquad \\mk{g}{{}_{0}^{0}\\gamma}\\;\\mk{gd}{' + dir('g') + '}', undefined, { form: st });
   }
@@ -226,15 +226,15 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
   const H = 540, T = 4.5, T0 = 0.8, CX = 430, CY = 300, NS = 16, SP = 29, VA = 110, VL = 150, VG = 170;
   const unit = (x, y) => { const l = Math.hypot(x, y); return [x / l, y / l]; };
   const MODES = {
-    a: { label: 'alpha decay', P: [238, 92, 'U', 'uranium'], D: [234, 90, 'Th', 'thorium'] },
-    bm: { label: 'beta decay', P: [131, 53, 'I', 'iodine'], D: [131, 54, 'Xe', 'xenon'], u: unit(0.92, -0.4) },
-    g: { label: 'gamma emission', P: [60, 27, 'Co', 'cobalt'], D: [60, 27, 'Co', 'cobalt'], u: unit(0.9, -0.44) },
-    bp: { label: 'positron emission', P: [15, 8, 'O', 'oxygen'], D: [15, 7, 'N', 'nitrogen'], u: unit(0.92, -0.4) },
-    ec: { label: 'electron capture', P: [40, 19, 'K', 'potassium'], D: [40, 18, 'Ar', 'argon'] },
+    a: { label: 'α 衰变', P: [238, 92, 'U', '铀'], D: [234, 90, 'Th', '钍'] },
+    bm: { label: 'β 衰变', P: [131, 53, 'I', '碘'], D: [131, 54, 'Xe', '氙'], u: unit(0.92, -0.4) },
+    g: { label: 'γ 发射', P: [60, 27, 'Co', '钴'], D: [60, 27, 'Co', '钴'], u: unit(0.9, -0.44) },
+    bp: { label: '正电子发射', P: [15, 8, 'O', '氧'], D: [15, 7, 'N', '氮'], u: unit(0.92, -0.4) },
+    ec: { label: '电子俘获', P: [40, 19, 'K', '钾'], D: [40, 18, 'Ar', '氩'] },
   };
   const d = sim('sim-decay-modes', H);
   const mode = select(d.controls, {
-    label: '\\text{decay}', aria: 'the type of radioactive decay',
+    label: '\\text{衰变}', aria: '放射性衰变的类型',
     options: Object.keys(MODES).map((k) => ({ value: k, label: MODES[k].label })), value: 'a', onInput: () => cy.reset(),
   });
   const cy = cycle(() => T, 1.2);
@@ -266,11 +266,11 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const [Ap, Zp, sp] = M.P, [Ad, Zd, sd] = M.D;
     hits = [];
     topline(ctx, {
-      a: 'Uranium-238 emits an α particle, two protons and two neutrons, and becomes thorium-234.',
-      bm: 'A neutron in iodine-131 becomes a proton as the nucleus emits a β particle, and xenon-131 remains.',
-      g: 'Excited cobalt-60 emits a γ ray and settles into its ground state, still cobalt-60.',
-      bp: 'A proton in oxygen-15 becomes a neutron as the nucleus emits a positron, and nitrogen-15 remains.',
-      ec: 'Potassium-40 captures an inner electron, a proton becomes a neutron, and argon-40 remains; an outer electron fills the vacancy and an X-ray leaves.',
+      a: '铀-238 发射一个 α 粒子（两个质子和两个中子），变成钍-234。',
+      bm: '碘-131 中的一个中子在原子核发射 β 粒子时变成质子，剩下氙-131。',
+      g: '激发态的钴-60 发射 γ 射线，回到基态，仍是钴-60。',
+      bp: '氧-15 中的一个质子在原子核发射正电子时变成中子，剩下氮-15。',
+      ec: '钾-40 俘获一个内层电子，一个质子变成中子，剩下氩-40；一个外层电子填补空位，并放出 X 射线。',
     }[m]);
     ctx.save(); ctx.beginPath(); ctx.rect(20, 96, 1010, H - 106); ctx.clip();
     let R;
@@ -282,7 +282,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       alphaParticle(ctx, ax, CY, NS);
       if (!after) ring(ctx, ax, CY, NS * 2.3, PAL.ink, 2.5);
       else head(ctx, ax, CY, [1, 0], 30);
-      hits.push({ x: ax, y: CY, r: 24, name: after ? 'the α particle, a helium-4 nucleus: two protons and two neutrons' : 'the two protons and two neutrons that will leave as an α particle' });
+      hits.push({ x: ax, y: CY, r: 24, name: after ? 'α 粒子，即氦-4 原子核：两个质子和两个中子' : '将作为 α 粒子离开的两个质子和两个中子' });
     } else {
       const Pn = nucleus(Ap, Zp, m === 'g' ? 7 : m === 'bp' ? 2 : 5); R = Pn.R;
       let flip = -1;
@@ -293,7 +293,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
         const f = Pn.pts[flip];
         if (!after) ring(ctx, CX + f.x, CY + f.y, NS + 4, PAL.ink, 2.5);
         else if (dt < 0.6) { ctx.save(); ctx.globalAlpha = 1 - dt / 0.6; ring(ctx, CX + f.x, CY + f.y, NS + 4 + 18 * dt, PAL.ink, 2.5); ctx.restore(); }
-        hits.push({ x: CX + f.x, y: CY + f.y, r: 14, name: (after ? 'the nucleon that changed: now a ' : 'the nucleon that changes: a ') + ((m === 'bm') === after ? 'proton' : 'neutron') });
+        hits.push({ x: CX + f.x, y: CY + f.y, r: 14, name: (after ? '发生了变化的核子：现在是' : '将要变化的核子：') + ((m === 'bm') === after ? '质子' : '中子') });
       }
       if (m === 'g' && !after) ring(ctx, CX, CY, R + 8, PAL.ink, 2.5, [8, 7]);
       if (m === 'bm' || m === 'bp') {
@@ -301,52 +301,52 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
         if (after) {
           disc(ctx, ex, ey, 8, F.el(m === 'bm' ? 'e-' : 'e+'), alpha(PAL.ink, 0.5));
           head(ctx, ex, ey, M.u, 13);
-          hits.push({ x: ex, y: ey, r: 16, name: m === 'bm' ? 'the β particle, an electron made in the nucleus' : 'the positron, made in the nucleus' });
+          hits.push({ x: ex, y: ey, r: 16, name: m === 'bm' ? 'β 粒子，即在原子核内产生的电子' : '正电子，在原子核内产生' });
         }
       }
       if (m === 'g' && after) {
         const s = R + 14 + VG * dt, hx = CX + M.u[0] * s, hy = CY + M.u[1] * s;
         photon(ctx, hx, hy, M.u, Math.min(64, 14 + VG * dt));
-        hits.push({ x: hx, y: hy, r: 18, name: 'the γ ray, a quantum of high-energy electromagnetic radiation' });
+        hits.push({ x: hx, y: hy, r: 18, name: 'γ 射线，高能电磁辐射的一个量子' });
       }
       if (m === 'ec') {
         const R1 = 140, R2 = 220;
         ring(ctx, CX, CY, R1, alpha(PAL.ink, 0.35), 2, [6, 8]);
         ring(ctx, CX, CY, R2, alpha(PAL.ink, 0.35), 2, [6, 8]);
-        hits.push({ x: CX - R1 * 0.71, y: CY + R1 * 0.71, r: 14, name: 'an inner electron shell' });
-        hits.push({ x: CX - R2 * 0.71, y: CY + R2 * 0.71, r: 14, name: 'an outer electron shell' });
+        hits.push({ x: CX - R1 * 0.71, y: CY + R1 * 0.71, r: 14, name: '内层电子层' });
+        hits.push({ x: CX - R2 * 0.71, y: CY + R2 * 0.71, r: 14, name: '外层电子层' });
         const a1 = -2.3, k = Math.min(1, Math.max(0, (t - 0.15) / (T0 - 0.15))), rr = R1 - (R1 - R + 6) * F.ease.smooth(k);
         disc(ctx, CX + R1, CY, 8, F.el('e-'), alpha(PAL.ink, 0.5));
         if (!after) {
           disc(ctx, CX + rr * Math.cos(a1), CY + rr * Math.sin(a1), 8, F.el('e-'), alpha(PAL.ink, 0.5));
-          hits.push({ x: CX + rr * Math.cos(a1), y: CY + rr * Math.sin(a1), r: 14, name: 'the inner electron the nucleus captures' });
+          hits.push({ x: CX + rr * Math.cos(a1), y: CY + rr * Math.sin(a1), r: 14, name: '被原子核俘获的内层电子' });
         }
         /* an outer electron drops into the vacancy, then the X-ray leaves from there */
         const a2 = -2.0, kd = F.ease.smooth(Math.min(1, Math.max(0, (dt - 0.2) / 0.7))), ro2 = R2 - (R2 - R1) * kd;
         const ang = a2 + (a1 - a2) * kd, exx = CX + ro2 * Math.cos(ang), eyy = CY + ro2 * Math.sin(ang);
         disc(ctx, exx, eyy, 8, F.el('e-'), alpha(PAL.ink, 0.5));
-        hits.push({ x: exx, y: eyy, r: 14, name: kd < 1 ? 'an outer electron, which drops into the vacancy' : 'the electron that filled the vacancy' });
+        hits.push({ x: exx, y: eyy, r: 14, name: kd < 1 ? '落入空位的外层电子' : '填补了空位的电子' });
         if (dt > 0.9) {
           const u = unit(-1, -0.22), s = 14 + VG * (dt - 0.9), hx = CX + R1 * Math.cos(a1) + u[0] * s, hy = CY + R1 * Math.sin(a1) + u[1] * s;
           photon(ctx, hx, hy, u, Math.min(56, s), 5, 13);
-          hits.push({ x: hx, y: hy, r: 18, name: 'the X-ray emitted as the outer electron drops into the vacancy' });
+          hits.push({ x: hx, y: hy, r: 18, name: '外层电子落入空位时发射的 X 射线' });
         }
       }
     }
     ctx.restore();
 
     const isParent = !after;
-    const nm = isParent ? (m === 'g' ? 'excited cobalt-60' : 'parent ' + name(M.P)) : (m === 'g' ? 'cobalt-60, ground state' : 'daughter ' + name(M.D));
+    const nm = isParent ? (m === 'g' ? '激发态的钴-60' : '母核' + name(M.P)) : (m === 'g' ? '基态的钴-60' : '子核' + name(M.D));
     text(ctx, nm, CX, Math.min(H - 24, CY + R + 38), PAL.ink, { size: 22, weight: 600, align: 'center', bg: PAL.panel });
-    hits.push({ x: CX, y: CY, r: R, name: (isParent ? name(M.P) : name(M.D)) + ' nucleus: ' + (isParent ? Zp : Zd) + ' protons, ' + ((isParent ? Ap - Zp : Ad - Zd)) + ' neutrons' });
+    hits.push({ x: CX, y: CY, r: R, name: (isParent ? name(M.P) : name(M.D)) + ' 原子核：' + (isParent ? Zp : Zd) + ' 个质子，' + ((isParent ? Ap - Zp : Ad - Zd)) + ' 个中子' });
 
     /* legend: the kinds this mode draws */
-    const LX = 1080, rows = [['p+', 'proton'], ['n0', 'neutron']];
-    if (m === 'a') rows.push(['alpha', 'α particle']);
-    if (m === 'bm') rows.push(['e-', 'β particle (electron)']);
-    if (m === 'bp') rows.push(['e+', 'positron']);
-    if (m === 'g') rows.push(['gamma', 'γ ray']);
-    if (m === 'ec') rows.push(['e-', 'electron'], ['gamma', 'X-ray']);
+    const LX = 1080, rows = [['p+', '质子'], ['n0', '中子']];
+    if (m === 'a') rows.push(['alpha', 'α 粒子']);
+    if (m === 'bm') rows.push(['e-', 'β 粒子（电子）']);
+    if (m === 'bp') rows.push(['e+', '正电子']);
+    if (m === 'g') rows.push(['gamma', 'γ 射线']);
+    if (m === 'ec') rows.push(['e-', '电子'], ['gamma', 'X 射线']);
     rows.forEach(([k, s], i) => {
       const y = 140 + i * 40, gx = LX + 14;
       if (k === 'p+' || k === 'n0') nucleon(ctx, gx, y, k === 'p+', 12);
@@ -364,8 +364,8 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       bp: '\\mk{p}{' + P0 + '}\\longrightarrow\\mk{x}{{}_{+1}^{\\;0}\\text{e}}+\\mk{d}{' + D0 + '}',
       ec: '\\mk{p}{' + P0 + '}+\\mk{x}{{}_{-1}^{\\;0}\\text{e}}\\longrightarrow\\mk{d}{' + D0 + '}',
     }[m];
-    const note = m === 'g' ? 'A and Z do not change, so n:p stays ' + NP(M.P) + '.'
-      : 'n:p ' + ((Ad - Zd) / Zd > (Ap - Zp) / Zp ? 'rises' : 'falls') + ' from ' + NP(M.P) + ' to ' + NP(M.D) + '.';
+    const note = m === 'g' ? 'A 和 Z 不变，所以 n:p 保持为 ' + NP(M.P) + '。'
+      : 'n:p ' + ((Ad - Zd) / Zd > (Ap - Zp) / Zp ? '升高' : '降低') + '，由 ' + NP(M.P) + ' 变为 ' + NP(M.D) + '。';
     ro.set(tex, note, { form: m });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
@@ -381,10 +381,10 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
 (function () {
   const H = 640;
   const NUC = [
-    [92, 146, 'U', 'uranium'], [90, 144, 'Th', 'thorium'], [91, 143, 'Pa', 'protactinium'], [92, 142, 'U', 'uranium'],
-    [90, 140, 'Th', 'thorium'], [88, 138, 'Ra', 'radium'], [86, 136, 'Rn', 'radon'], [84, 134, 'Po', 'polonium'],
-    [82, 132, 'Pb', 'lead'], [83, 131, 'Bi', 'bismuth'], [84, 130, 'Po', 'polonium'], [82, 128, 'Pb', 'lead'],
-    [83, 127, 'Bi', 'bismuth'], [84, 126, 'Po', 'polonium'], [82, 124, 'Pb', 'lead'],
+    [92, 146, 'U', '铀'], [90, 144, 'Th', '钍'], [91, 143, 'Pa', '镤'], [92, 142, 'U', '铀'],
+    [90, 140, 'Th', '钍'], [88, 138, 'Ra', '镭'], [86, 136, 'Rn', '氡'], [84, 134, 'Po', '钋'],
+    [82, 132, 'Pb', '铅'], [83, 131, 'Bi', '铋'], [84, 130, 'Po', '钋'], [82, 128, 'Pb', '铅'],
+    [83, 127, 'Bi', '铋'], [84, 126, 'Po', '钋'], [82, 124, 'Pb', '铅'],
   ];
   const A = (k) => NUC[k][0] + NUC[k][1];
   const short = (k) => sup(A(k)) + NUC[k][2];
@@ -392,7 +392,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
   const isAlpha = (i) => NUC[i + 1][0] === NUC[i][0] - 2;
   const d = sim('sim-decay-series', H);
   const pick = select(d.controls, {
-    label: '\\text{step}', aria: 'the step of the series',
+    label: '\\text{步骤}', aria: '衰变系的步骤',
     options: NUC.slice(0, 14).map((_, i) => ({ value: String(i), label: (i + 1) + ': ' + short(i) + ' → ' + short(i + 1) + (isAlpha(i) ? ' (α)' : ' (β)') })),
     value: '0',
   });
@@ -405,23 +405,23 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const { ctx } = begin(d.c);
     const k = +pick.value || 0, al = isAlpha(k), CA = PAL.ink, CB = F.cat(1);
     hits = [];
-    const lab = labeller(ctx, H, { headline: topline(ctx, 'Step ' + (k + 1) + ': ' + long(k) + ' emits ' + (al ? 'an α particle' : 'a β particle') + ' and becomes ' + long(k + 1) + '.') });
+    const lab = labeller(ctx, H, { headline: topline(ctx, '第 ' + (k + 1) + ' 步：' + long(k) + ' 发射一个 ' + (al ? 'α 粒子' : 'β 粒子') + '，变成 ' + long(k + 1) + '。') });
     const { X, Y } = axes(ctx, BOX, [122, 148], [80, 93], {
       nx: 13, ny: 13, fx: (v) => String(Math.round(v)), fy: (v) => (v === 93 ? '' : String(Math.round(v))),
-      xl: 'number of neutrons (n)', yl: 'atomic number (Z)',
+      xl: '中子数 (n)', yl: '原子序数 (Z)',
     });
     const P = (i) => ({ x: X(NUC[i][1]), y: Y(NUC[i][0]) });
     for (let i = 0; i < 14; i++) {
       const a = P(i), b = P(i + 1), L = Math.hypot(b.x - a.x, b.y - a.y), ux = (b.x - a.x) / L, uy = (b.y - a.y) / L;
       const col = isAlpha(i) ? CA : CB, now = i === k, done = i < k;
       arrow(ctx, a.x + ux * 12, a.y + uy * 12, b.x - ux * 12, b.y - uy * 12, now ? col : alpha(col, done ? 0.75 : 0.35), now ? 5 : 3);
-      hits.push({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2, r: 12, name: 'step ' + (i + 1) + ': ' + (isAlpha(i) ? 'α' : 'β') + ' decay of ' + long(i) + ' to ' + long(i + 1) });
+      hits.push({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2, r: 12, name: '第 ' + (i + 1) + ' 步：' + (isAlpha(i) ? 'α' : 'β') + ' 衰变，' + long(i) + ' 变为 ' + long(i + 1) });
     }
     NUC.forEach((n, i) => {
       const p = P(i), stable = i === 14;
       if (i === k || i === k + 1) dot(ctx, p.x, p.y, PAL.ink, false, 14);
       dot(ctx, p.x, p.y, PAL.ink, stable, 7);
-      hits.push({ x: p.x, y: p.y, r: 12, name: long(i) + ': Z = ' + n[0] + ', n = ' + n[1] + ', A = ' + A(i) + (stable ? ', stable' : ', radioactive') });
+      hits.push({ x: p.x, y: p.y, r: 12, name: long(i) + '：Z = ' + n[0] + '，n = ' + n[1] + '，A = ' + A(i) + (stable ? '，稳定' : '，放射性') });
     });
     const named = [...new Set([k, k + 1, 0, 14])];
     const dirOf = (i) => {
@@ -434,21 +434,21 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
 
     const LX = 1020;
     arrow(ctx, LX, 150, LX + 46, 150 + 46, CA, 5);
-    text(ctx, 'α decay', LX + 70, 174, PAL.ink, { size: 20 });
+    text(ctx, 'α 衰变', LX + 70, 174, PAL.ink, { size: 20 });
     arrow(ctx, LX, 260, LX + 46, 260 - 23, CB, 5);
-    text(ctx, 'β decay', LX + 70, 250, PAL.ink, { size: 20 });
+    text(ctx, 'β 衰变', LX + 70, 250, PAL.ink, { size: 20 });
     dot(ctx, LX + 22, 320, PAL.ink, true, 7);
-    text(ctx, 'stable', LX + 70, 320, PAL.ink, { size: 20 });
+    text(ctx, '稳定', LX + 70, 320, PAL.ink, { size: 20 });
     dot(ctx, LX + 22, 362, PAL.ink, false, 7);
-    text(ctx, 'radioactive', LX + 70, 362, PAL.ink, { size: 20 });
+    text(ctx, '放射性', LX + 70, 362, PAL.ink, { size: 20 });
 
     const [zp, , sp] = NUC[k], [zd, , sd] = NUC[k + 1];
     const tex = '\\mk{p}{' + nucTex(A(k), zp, sp) + '}\\longrightarrow\\mk{d}{' + nucTex(A(k + 1), zd, sd) + '}+'
       + (al ? '\\mk{x}{' + nucTex(4, 2, 'He') + '}' : '\\mk{x}{{}_{-1}^{\\;0}\\text{e}}');
     let na = 0; for (let i = 0; i <= k; i++) if (isAlpha(i)) na++;
     const nb = k + 1 - na, left = 13 - k;
-    ro.set(tex, 'After this step: ' + na + ' α ' + (na === 1 ? 'decay' : 'decays') + ' and ' + nb + ' β ' + (nb === 1 ? 'decay' : 'decays')
-      + (left ? '; ' + left + (left === 1 ? ' step remains' : ' steps remain') + ' to lead-206.' : '; lead-206 is stable.'), { form: al });
+    ro.set(tex, '此步之后：' + na + ' 次 α 衰变和 ' + nb + ' 次 β 衰变'
+      + (left ? '；距铅-206 还剩 ' + left + ' 步。' : '；铅-206 是稳定的。'), { form: al });
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -481,7 +481,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const t = cy.now(), TC = C('time'), MC = C('mass');
     const tt = Math.round(t * 10) / 10, f = sig(Math.exp(-LAM * tt), 3);
     let left = 0; for (let i = 0; i < NN; i++) if (U[i] > t) left++;
-    const lab = labeller(ctx, H, { headline: topline(ctx, 'After $\\kt = ' + fmt(tt, 1) + '$ y, ' + fmt(tt / TH, 2) + ' half-lives, ' + fmt(100 * f, 1) + '% of the cobalt-60 remains.') });
+    const lab = labeller(ctx, H, { headline: topline(ctx, '经过 $\\kt = ' + fmt(tt, 1) + '$ y，即 ' + fmt(tt / TH, 2) + ' 个半衰期，剩余 ' + fmt(100 * f, 1) + '% 的钴-60。') });
     hits = [];
 
     /* the sample */
@@ -497,16 +497,16 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       ctx.strokeStyle = alpha(PAL.ink, 0.8 * (1 - k)); ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x, y, 6 + 14 * k, 0, TAU); ctx.stroke();
     });
     ctx.restore();
-    hits.push({ x: SX, y: SY, r: SR, name: 'the sample: ' + left + ' of its ' + NN + ' cobalt-60 nuclei have not yet decayed' });
+    hits.push({ x: SX, y: SY, r: SR, name: '样品：' + left + ' 个钴-60 原子核尚未衰变（共 ' + NN + ' 个）' });
     const LY = SY + SR + 40;
     dot(ctx, SX - 170, LY, PAL.ink, true, 7);
-    text(ctx, 'cobalt-60', SX - 150, LY, PAL.ink, { size: 19 });
+    text(ctx, '钴-60', SX - 150, LY, PAL.ink, { size: 19 });
     ring(ctx, SX + 30, LY, 7, alpha(PAL.ink, 0.5), 2);
-    text(ctx, 'nickel-60', SX + 50, LY, PAL.ink, { size: 19 });
+    text(ctx, '镍-60', SX + 50, LY, PAL.ink, { size: 19 });
 
     /* the graph */
     const { X, Y } = axes(ctx, GB, [0, TMAX], [0, 100], {
-      nx: 5, ny: 8, xl: 't (y)', xc: TC, yl: 'Co-60 remaining (%)',
+      nx: 5, ny: 8, xl: 't (y)', xc: TC, yl: 'Co-60 剩余量 (%)',
       fx: (v) => fmt(v, 2), fy: (v) => ([0, 12.5, 25, 50, 75, 100].some((w) => Math.abs(w - v) < 0.01) ? fmt(v, v % 1 ? 1 : 0) : ''),
     });
     const MASS = ['10 g', '5 g', '2.5 g', '1.25 g', '0.625 g'];
@@ -515,7 +515,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       if (k) line(ctx, x, y, x, GB.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
       dot(ctx, x, y, PAL.muted, true, 6);
       if (k < 5) lab.add(MASS[k], x, y, k ? 0.8 : 1, k ? -0.6 : 0.2, MC, 19, 16);
-      hits.push({ x, y, r: 12, name: k === 0 ? 'the start: 10 g of cobalt-60' : 'after ' + k + (k === 1 ? ' half-life, ' : ' half-lives, ') + fmt(k * TH, 2) + ' y: ' + fmt(100 * Math.exp(-LAM * k * TH), 1) + '% remains' });
+      hits.push({ x, y, r: 12, name: k === 0 ? '起点：10 g 钴-60' : '经过 ' + k + ' 个半衰期，' + fmt(k * TH, 2) + ' y：剩余 ' + fmt(100 * Math.exp(-LAM * k * TH), 1) + '%' });
     }
     curve(ctx, (s) => 100 * Math.exp(-LAM * s), 0, TMAX, X, Y, PAL.ink, 5, 200);
     ctx.save(); ctx.strokeStyle = alpha(PAL.muted, 0.9); ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.beginPath(); ctx.moveTo(X(0), Y(100));
@@ -523,17 +523,17 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     for (const u of sorted) { if (u > t) break; ctx.lineTo(X(u), Y((100 * n) / NN)); n--; ctx.lineTo(X(u), Y((100 * n) / NN)); }
     ctx.lineTo(X(t), Y((100 * n) / NN)); ctx.stroke(); ctx.restore();
     dot(ctx, X(t), Y(100 * Math.exp(-LAM * t)), PAL.ink, true, 9);
-    hits.push({ x: X(t), y: Y((100 * left) / NN), r: 12, name: 'this sample: ' + left + ' of ' + NN + ' nuclei, ' + fmt((100 * left) / NN, 1) + '%' });
+    hits.push({ x: X(t), y: Y((100 * left) / NN), r: 12, name: '本样品：' + left + ' 个原子核（共 ' + NN + ' 个），' + fmt((100 * left) / NN, 1) + '%' });
     const KX = GB.r - 230, KY = GB.t + 10;
     line(ctx, KX, KY, KX + 40, KY, PAL.ink, 5);
     text(ctx, '$100\\,e^{-\\klamdecay\\kt}$', KX + 54, KY, PAL.ink, { size: 20, tex: true });
     line(ctx, KX, KY + 34, KX + 40, KY + 34, PAL.muted, 2);
-    text(ctx, 'this sample', KX + 54, KY + 34, PAL.ink, { size: 19 });
+    text(ctx, '本样品', KX + 54, KY + 34, PAL.ink, { size: 19 });
     lab.place({ l: KX - 8, r: GB.r, t: KY - 16, b: KY + 50 });
     lab.flush();
 
     ro.set('\\frac{N_{t}}{N_{0}}=e^{-\\klamdecay\\kt}=e^{-(0.132\\;\\text{y}^{-1})(' + fmt(tt, 1) + '\\;\\text{y})}=' + fsig(f, 3),
-      'Of ' + fmt(M0, 1) + ' g of cobalt-60, $\\km = ' + fsig(M0 * f, 3) + '$ g remains.');
+      '在 ' + fmt(M0, 1) + ' g 钴-60 中，剩余 $\\km = ' + fsig(M0 * f, 3) + '$ g。');
   }
   register(d.fig, {
     update: (dt) => { const was = cy.now(); cy.step(dt, () => TMAX / RUN); if (cy.now() < was) { seed++; draws(); } },
@@ -557,8 +557,8 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
   const BX = { l: 300, r: 540, t: 210, b: 450 };
   const d = sim('sim-carbon-dating', H);
   const RT = ctl(d.controls, {
-    label: '\\krate_{t}', cls: 'rate', min: 1, max: 13.6, step: 0.01, value: 10.8, unit: 'dis/min/g', dec: 2,
-    detents: [{ v: 9.07, label: 'King Tut' }], specials: [{ at: R0 / 2, label: 'one half-life' }], aria: 'the decay rate measured in the sample now, in disintegrations per minute per gram of carbon',
+    label: '\\krate_{t}', cls: 'rate', min: 1, max: 13.6, step: 0.01, value: 10.8, unit: '次衰变/min/g', dec: 2,
+    detents: [{ v: 9.07, label: '图坦卡蒙' }], specials: [{ at: R0 / 2, label: '一个半衰期' }], aria: '样品中现在测得的衰变速率，单位为每分钟每克碳的衰变次数',
   });
   const cy = cycle(() => TB - TA, 1.2);
   const ro = readout(d);
@@ -584,7 +584,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     const tau = TA + cy.now(), Rm = RT.v, TC = C('time'), RC = C('rate');
     const age = sig(-Math.log(sig(Rm, 3) / R0) / LAM, 3);
     const live = Math.max(0, Math.min(1, -tau / 600 + 1)), crown = Math.max(0, Math.min(1, 1 - tau / 1500));
-    const lab = labeller(ctx, H, { headline: topline(ctx, 'Carbon giving ' + fsig(Rm, 3) + ' disintegrations per minute per gram, against 13.6 when it was alive, is about ' + grp(age, ',') + ' years old.') });
+    const lab = labeller(ctx, H, { headline: topline(ctx, '每分钟每克发生 ' + fsig(Rm, 3) + ' 次衰变的碳（存活时为 13.6 次），年龄约为 ' + grp(age, ',') + ' 年。') });
     hits = [];
 
     /* the ground and the tree, leafless once dead */
@@ -601,7 +601,7 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       LOBES.forEach(([dx, dy, r]) => disc(ctx, TXc + dx, 280 + dy, r, PAL.soft, null));
       ctx.restore();
     }
-    hits.push({ x: TXc, y: 300, r: 110, name: tau < 0 ? 'a living tree, taking in carbon from the CO₂ of the air' : 'the dead tree, which takes in no more carbon' });
+    hits.push({ x: TXc, y: 300, r: 110, name: tau < 0 ? '一棵活树，从空气中的 CO₂ 吸收碳' : '已死的树，不再吸收碳' });
 
     /* CO₂ drifting from the air into the living tree */
     if (live > 0) {
@@ -612,14 +612,14 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
         co2(ctx, x, y);
       }
       ctx.globalAlpha = live;
-      text(ctx, 'CO₂ from the air', 250, 130, PAL.ink, { size: 19, align: 'left', bg: PAL.panel });
+      text(ctx, '来自空气的 CO₂', 250, 130, PAL.ink, { size: 19, align: 'left', bg: PAL.panel });
       ctx.restore();
     }
 
     /* the sample's carbon-14, magnified */
     ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.6); ctx.lineWidth = 2; ctx.strokeRect(BX.l, BX.t, BX.r - BX.l, BX.b - BX.t); ctx.restore();
     line(ctx, TXc + 14, 430, BX.l, BX.b - 30, alpha(PAL.ink, 0.35), 2, [4, 8]);
-    text(ctx, 'its carbon-14, magnified', (BX.l + BX.r) / 2, BX.t - 20, PAL.ink, { size: 19, align: 'center' });
+    text(ctx, '其中的碳-14，放大后', (BX.l + BX.r) / 2, BX.t - 20, PAL.ink, { size: 19, align: 'center' });
     let left = 0;
     for (let i = 0; i < NA; i++) {
       const [x, y] = CELL(i);
@@ -630,20 +630,20 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
       disc(ctx, x, y, 10, F.el(isN ? 'N' : 'C'), alpha(PAL.ink, 0.45));
       if (at !== null && tau - at < FLASH) ring(ctx, x, y, 10 + 16 * ((tau - at) / FLASH), alpha(PAL.ink, 0.8 * (1 - (tau - at) / FLASH)), 2);
     }
-    hits.push({ x: (BX.l + BX.r) / 2, y: (BX.t + BX.b) / 2, r: 110, name: 'carbon-14 atoms of the sample, drawn alone: ' + left + ' of ' + NA + ' left' });
+    hits.push({ x: (BX.l + BX.r) / 2, y: (BX.t + BX.b) / 2, r: 110, name: '样品中的碳-14 原子，单独画出：剩余 ' + left + ' 个（共 ' + NA + ' 个）' });
     const LY = BX.b + 34;
     disc(ctx, BX.l + 10, LY, 9, F.el('C'), alpha(PAL.ink, 0.45));
-    text(ctx, 'carbon-14', BX.l + 26, LY, PAL.ink, { size: 18 });
+    text(ctx, '碳-14', BX.l + 26, LY, PAL.ink, { size: 18 });
     disc(ctx, BX.l + 140, LY, 9, F.el('N'), alpha(PAL.ink, 0.45));
-    text(ctx, 'nitrogen-14', BX.l + 156, LY, PAL.ink, { size: 18 });
+    text(ctx, '氮-14', BX.l + 156, LY, PAL.ink, { size: 18 });
 
     /* the graph */
     const { X, Y } = axes(ctx, GB, [TA, TB], [0, 15], {
-      nx: 6, ny: 3, xl: 't (y)', xc: TC, yl: 'decay rate (dis/min/g C)', yc: RC, fx: (v) => grp(v, ','), fy: (v) => String(Math.round(v)),
+      nx: 6, ny: 3, xl: 't (y)', xc: TC, yl: '衰变速率 (次衰变/min/g C)', yc: RC, fx: (v) => grp(v, ','), fy: (v) => String(Math.round(v)),
     });
     const x0 = X(0);
     line(ctx, x0, GB.t, x0, GB.b, alpha(PAL.ink, 0.4), 2, [10, 10]);
-    lab.add('organism dies', x0, GB.t + 4, 1, 0.2, PAL.ink, 18, 10);
+    lab.add('生物死亡', x0, GB.t + 4, 1, 0.2, PAL.ink, 18, 10);
     curve(ctx, rateAt, TA, TB, X, Y, PAL.ink, 5, 300);
     const ly = Y(Rm), ax = X(Math.min(TB, age));
     line(ctx, x0, ly, GB.r, ly, alpha(RC, 0.7), 2, [10, 10]);
@@ -651,14 +651,14 @@ function ring(ctx, x, y, r, color, w = 2.5, dash) {
     dot(ctx, ax, ly, PAL.ink, false, 10);
     lab.place({ l: ax - 12, r: ax + 12, t: ly - 12, b: ly + 12 });
     lab.add(grp(age, ',') + ' y', ax, ly, ax > (GB.l + GB.r) / 2 ? -0.6 : 0.6, -0.8, TC, 19, 18);
-    hits.push({ x: ax, y: ly, r: 14, name: 'the measured rate, ' + fsig(Rm, 3) + ' dis/min/g, meets the curve at ' + grp(age, ',') + ' y' });
+    hits.push({ x: ax, y: ly, r: 14, name: '测得的速率 ' + fsig(Rm, 3) + ' 次衰变/min/g 与曲线相交于 ' + grp(age, ',') + ' y' });
     const px = X(tau), py = Y(rateAt(tau));
     dot(ctx, px, py, PAL.ink, true, 9);
-    hits.push({ x: px, y: py, r: 12, name: (tau < 0 ? 'alive: ' : grp(tau, ',') + ' y after death: ') + fsig(rateAt(tau), 3) + ' dis/min/g' });
+    hits.push({ x: px, y: py, r: 12, name: (tau < 0 ? '存活：' : grp(tau, ',') + ' y（死亡后）：') + fsig(rateAt(tau), 3) + ' 次衰变/min/g' });
     lab.flush();
 
     ro.set('\\kt=-\\frac{1}{\\klamdecay}\\ln\\left(\\frac{\\krate_{t}}{\\krate_{0}}\\right)=-\\frac{1}{1.21\\times10^{-4}\\;\\text{y}^{-1}}\\ln\\left(\\frac{' + fsig(Rm, 3) + '}{13.6}\\right)=' + grp(age, '{,}') + '\\;\\text{y}',
-      'The sample drawn has ' + left + ' of its ' + NA + ' carbon-14 atoms left.');
+      '所画样品还剩 ' + left + ' 个碳-14 原子（共 ' + NA + ' 个）。');
   }
   register(d.fig, {
     update: (dt) => { const was = cy.now(); cy.step(dt, () => (TB - TA) / RUN); if (cy.now() < was) { seed++; draws(); } },

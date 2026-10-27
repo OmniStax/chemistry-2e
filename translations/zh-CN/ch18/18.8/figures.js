@@ -25,8 +25,8 @@ const dirOf = (th, az) => [Math.sin(th * RAD) * Math.cos(az * RAD), Math.cos(th 
 /* ---------- atoms in the book's palette, each bond two half sticks in its atoms' colours ---------- */
 const K = 0.62;                                  /* scene units per ångström */
 const RADIUS = { P: 0.36, S: 0.34, O: 0.27, Cl: 0.34 };
-const NAMES = { P: '磷 (P)', S: '硫 (S)', O: '氧 (O)', Cl: '氯 (Cl)' };
-const FREE = { spin: 'idle', views: [{ label: 'side', yaw: 0.35, pitch: 0.22 }, { label: 'down the axis', yaw: 0, pitch: Math.PI / 2 }] };
+const NAMES = { P: '磷（P）', S: '硫（S）', O: '氧（O）', Cl: '氯（Cl）' };
+const FREE = { spin: 'idle', views: [{ label: '侧视', yaw: 0.35, pitch: 0.22 }, { label: '沿轴向下', yaw: 0, pitch: Math.PI / 2 }] };
 const fade = (a) => (a < 0.999 ? { transparent: true, opacity: a } : undefined);
 /* atoms [{sym, from, p, a}] (p in ångströms, a its presence 0..1, from the element it is turning from) and bonds [{i, j, a}] */
 function molecule(v, g, atoms, bonds, k) {

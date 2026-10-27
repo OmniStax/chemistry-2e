@@ -11,7 +11,7 @@
   "进行与 pH 和 pOH 相关的计算"
  ],
  "summary_html": "<p>水介质中水合氢离子和氢氧根离子的<span data-concept=\"concentration\">浓度</span>常分别用对数形式的 <span data-concept=\"ph\">pH</span> 和 <span data-concept=\"poh\">pOH</span> 值表示。在 <span data-type=\"temperature\">25 °C</span> 时，水的质子自递平衡要求任何水溶液的 <span data-concept=\"ph\">pH</span> 与 <span data-concept=\"poh\">pOH</span> 之和等于 <span data-type=\"equilibrium-constant\">14</span>。溶液中水合氢离子和氢氧根离子的相对<span data-concept=\"concentration\">浓度</span>决定了它是酸性（[H<sub>3</sub>O<sup>+</sup>] &gt; [OH<sup>−</sup>]）、碱性（[H<sub>3</sub>O<sup>+</sup>] &lt; [OH<sup>−</sup>]）还是中性（[H<sub>3</sub>O<sup>+</sup>] = [OH<sup>−</sup>]）。在 <span data-type=\"temperature\">25 °C</span> 时，<span data-concept=\"ph\">pH</span> &lt; 7 表示<span data-concept=\"acidic-solution\">酸性溶液</span>，<span data-concept=\"ph\">pH</span> &gt; 7 表示<span data-concept=\"basic-solution\">碱性溶液</span>，<span data-concept=\"ph\">pH</span> = 7 表示<span data-concept=\"neutral-solution\">中性溶液</span>。</p>",
- "notes": "本节没有任何内容被省略。按原样保留的有：图 14.3 说明中的“It also is corrodes statues”，以及最后一道习题的答案，它把题目所求的水合氢离子浓度标为 [OH⁻]。",
+ "notes": "本节没有任何内容被省略。书中图 14.3 说明的英文原文“It also is corrodes statues”有语法错误，中文无法保留，译文按其意思译出。按原样保留的有最后一道习题的答案，它把题目所求的水合氢离子浓度标为 [OH⁻]。",
  "ai": {
   "text": [
    {
@@ -315,7 +315,7 @@
     "at": "end"
    },
    "cite": "neutral-ph",
-   "prompt": "水的离子积常数 (<em>K</em><sub>w</sub>) 在 60 °C 时为 9.311 × 10<sup>−14</sup>。计算 60 °C 纯水的 [H<sub>3</sub>O<sup>+</sup>]、[OH<sup>−</sup>]、pH 和 pOH。",
+   "prompt": "水的离子积常数（<em>K</em><sub>w</sub>）在 60 °C 时为 9.311 × 10<sup>−14</sup>。计算 60 °C 纯水的 [H<sub>3</sub>O<sup>+</sup>]、[OH<sup>−</sup>]、pH 和 pOH。",
    "answer": {
     "type": "multi",
     "generated_by": "source",

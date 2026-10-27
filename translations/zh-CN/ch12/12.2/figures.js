@@ -21,7 +21,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 ===================================================================== */
 (function () {
   const d = F.sim(root, 'sim-collisions');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正面', yaw: 0, pitch: 0.15 }, { label: '斜角', yaw: 0.7, pitch: 0.42 }], h: 360, dist: 5.6, tilt: 0.18 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.15 }, { label: '斜视', yaw: 0.7, pitch: 0.42 }], h: 360, dist: 5.6, tilt: 0.18 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 320);
   const Tc = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 200, max: 600, step: 10, value: 300, unit: 'K', dec: 0, onInput: rerun, aria: '气体的温度，单位为开尔文' });
   const cA = ctl(d.controls, { label: hue('concentration', '[\\text{NO}]_{0}'), cls: 'concentration', key: 'no', min: 0.5, max: 2, step: 0.1, value: 1, unit: 'M', dec: 2, onInput: rerun, aria: '一氧化氮的初始浓度，单位为摩尔每升' });
@@ -123,7 +123,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const { ctx } = begin(cnv);
     topline(ctx, 'NO 与 O_{3} 之间到目前为止共有 ' + hits + ' 次碰撞，其中 ' + reacted + ' 次发生了反应。');
     const box = { l: 150, r: 1300, t: 100, b: 250 };
-    const { X, Y } = axes(ctx, box, [0, TRUN], [0, 2.5], { nx: 5, ny: 5, fy: (q) => fmt(q, 1), xl: '时间 t (s)', xc: C('time'), yl: '[O_{3}] (M)', yc: C('concentration') });
+    const { X, Y } = axes(ctx, box, [0, TRUN], [0, 2.5], { nx: 5, ny: 5, fy: (q) => fmt(q, 1), xl: '时间 t（s）', xc: C('time'), yl: '[O_{3}] (M)', yc: C('concentration') });
     const steps = run.events.filter((e) => e.react && e.t <= t).map((e) => e.t);
     let px = 0, py = c0;
     steps.forEach((s) => { line(ctx, X(px), Y(py), X(s), Y(py), C('concentration'), 5); line(ctx, X(s), Y(py), X(s), Y(py - PER), C('concentration'), 5); px = s; py -= PER; });

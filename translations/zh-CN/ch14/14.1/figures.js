@@ -165,7 +165,7 @@ function equationRow(ctx, y, items, plus, arrowAt, back) {
   let g = null;
   function mount() {
     const v = F.view3d(d.stage, { spin: 'off', h: 410, dist: 17, tilt: 0, pitch: [-1.3, 1.3], yaw: [-1.2, 1.2],
-      views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '上方', yaw: 0, pitch: 1.25 }] });
+      views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '俯视', yaw: 0, pitch: 1.25 }] });
     g = v.part(0);
     return v;
   }

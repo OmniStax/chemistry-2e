@@ -89,7 +89,7 @@ const clamp = (x) => Math.max(0, Math.min(1, x));
   function panel(ctx, r) {
     const cE = C('energy');
     const b = sum(r.broken), f = sum(r.formed), dH = b - f;
-    const yb = stack(ctx, r.broken, XB, cE, '被断开'), yf = stack(ctx, r.formed, XF, cE, '被形成');
+    const yb = stack(ctx, r.broken, XB, cE, '断开'), yf = stack(ctx, r.formed, XF, cE, '形成');
     text(ctx, `${b} kJ`, XB + BW / 2, yb - 18, cE, { size: 22, weight: 600, align: 'center' });
     text(ctx, `${f} kJ`, XF + BW / 2, yf - 18, cE, { size: 22, weight: 600, align: 'center' });
     /* ΔH: the level of the bonds broken carried across, and the gap to the level of the bonds formed */

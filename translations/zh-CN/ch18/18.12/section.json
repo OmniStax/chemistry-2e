@@ -2,19 +2,23 @@
  "id": "18.12",
  "module": "m68840",
  "chapter": "18",
- "title": "Occurrence, Preparation, and Properties of the Noble Gases",
- "short": "Noble gases",
- "lead": "The <span data-concept=\"noble-gas\">noble gases</span> of group 18 were long assumed to be nonreactive because their valence shells are filled. The section follows where they are found, why they boil and melt only at very low temperatures, how they serve as coolants, inert atmospheres and sources of light, and the fluorides and oxides that xenon and a few of its neighbors form.",
+ "title": "稀有气体的存在、制备与性质",
+ "short": "稀有气体",
+ "lead": "第 18 族的<span data-concept=\"noble-gas\">稀有气体</span>，因其价层已经充满，长期以来被认为不发生反应。本节依次讲述它们在哪里找到，为什么只在极低的温度下才沸腾和熔化，它们如何用作冷却剂、惰性气氛和光源，以及氙和它的少数几种相邻元素所形成的氟化物和氧化物。",
  "objectives": [
-  "Describe the properties, preparation, and uses of the noble gases"
+  "描述稀有气体的性质、制备和用途"
  ],
- "summary_html": "<p>The most significant property of the <span data-concept=\"noble-gas\">noble gases</span> (group 18) is their inactivity. They occur in low concentrations in the atmosphere. They find uses as inert atmospheres, neon signs, and as coolants. The three heaviest noble gases react with fluorine to form fluorides. The xenon fluorides are the best characterized as the starting materials for a few other noble gas compounds.</p>",
- "notes": "The section keeps as printed “maximum oxidation sate of 8+”.",
+ "summary_html": "<p><span data-concept=\"noble-gas\">稀有气体</span>（第 18 族）最重要的性质是它们的不活泼性。它们在大气中的含量很低。它们用作惰性气氛、霓虹灯，也用作冷却剂。三种最重的稀有气体能与氟反应，生成氟化物。氙的氟化物是研究得最透彻的，它们是制备其他几种稀有气体化合物的起始原料。</p>",
+ "notes": "书中印为“maximum oxidation sate of 8+”（sate 为 state 之误），中文照正确的意思译为“最高氧化态 8+”，不带这一拼写错误。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
@@ -24,9 +28,9 @@
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idm74693408 (the molecular structures of five xenon compounds), fs-idm133419136 (the oxidation state of the noble gas in five compounds) and fs-idm4544048 (the mass of manganese(II) nitrate hexahydrate that reacts with a perxenate solution) are left out, and no answer is computed for them. Nothing is moved.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案。三道没有答案的习题 fs-idm74693408（五种氙化合物的分子结构）、fs-idm133419136（五种化合物中稀有气体的氧化态）和 fs-idm4544048（与高氙酸盐溶液反应的六水合硝酸锰(II)的质量）被略去，也没有为它们算出答案。没有移动任何内容。",
  "figures": [],
  "referents": [],
  "coverage": [
@@ -117,11 +121,11 @@
     "at": "end"
    },
    "cite": "compounds",
-   "prompt": "Give the hybridization of xenon in each of the following. You may wish to review the chapter on the advanced theories of covalent bonding.<br>(a) XeF<sub>2</sub><br>(b) XeF<sub>4</sub><br>(c) XeO<sub>3</sub><br>(d) XeO<sub>4</sub><br>(e) XeOF<sub>4</sub>",
+   "prompt": "给出下列各分子中氙的杂化方式。你可以回顾一下共价键的高级理论一章。<br>（a）XeF<sub>2</sub><br>（b）XeF<sub>4</sub><br>（c）XeO<sub>3</sub><br>（d）XeO<sub>4</sub><br>（e）XeOF<sub>4</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) <em>sp</em><sup>3</sup><em>d</em> hybridized; (b) <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> hybridized; (c) <em>sp</em><sup>3</sup> hybridized; (d) <em>sp</em><sup>3</sup> hybridized; (e) <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> hybridized;"
+    "solution": "（a）<em>sp</em><sup>3</sup><em>d</em> 杂化；（b）<em>sp</em><sup>3</sup><em>d</em><sup>2</sup> 杂化；（c）<em>sp</em><sup>3</sup> 杂化；（d）<em>sp</em><sup>3</sup> 杂化；（e）<em>sp</em><sup>3</sup><em>d</em><sup>2</sup> 杂化；"
    }
   },
   {
@@ -134,11 +138,11 @@
     "at": "end"
    },
    "cite": "compounds",
-   "prompt": "Indicate whether each of the following molecules is polar or nonpolar. You may wish to review the chapter on chemical bonding and molecular geometry.<br>(a) XeF<sub>2</sub><br>(b) XeF<sub>4</sub><br>(c) XeO<sub>3</sub><br>(d) XeO<sub>4</sub><br>(e) XeOF<sub>4</sub>",
+   "prompt": "指出下列各分子是极性分子还是非极性分子。你可以回顾一下化学键与分子几何构型一章。<br>（a）XeF<sub>2</sub><br>（b）XeF<sub>4</sub><br>（c）XeO<sub>3</sub><br>（d）XeO<sub>4</sub><br>（e）XeOF<sub>4</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) nonpolar; (b) nonpolar; (c) polar; (d) nonpolar; (e) polar"
+    "solution": "（a）非极性；（b）非极性；（c）极性；（d）非极性；（e）极性"
    }
   },
   {
@@ -151,11 +155,11 @@
     "at": "end"
    },
    "cite": "compounds",
-   "prompt": "A mixture of xenon and fluorine was heated. A sample of the white solid that formed reacted with hydrogen to yield 81 mL of xenon (at STP) and hydrogen fluoride, which was collected in water, giving a solution of hydrofluoric acid. The hydrofluoric acid solution was titrated, and 68.43 mL of 0.3172 <em>M</em> sodium hydroxide was required to reach the equivalence point. Determine the empirical formula for the white solid and write balanced chemical equations for the reactions involving xenon.",
+   "prompt": "将氙和氟的混合物加热。所形成的白色固体样品与氢反应，生成 81 mL 氙（在 STP 下）和氟化氢，氟化氢被收集在水中，得到氢氟酸溶液。对该氢氟酸溶液进行滴定，到达化学计量点需要 68.43 mL 0.3172 <em>M</em> 的氢氧化钠。确定该白色固体的实验式，并写出涉及氙的反应的配平化学方程式。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The empirical formula is XeF<sub>6</sub>, and the balanced reactions are: $\\begin{array}{l}\\text{Xe}(g)+{\\text{3F}}_{2}(g)\\;\\overset{\\;\\text{Δ}\\;}{\\to}\\;{\\text{XeF}}_{6}(s) \\\\ {\\text{XeF}}_{6}(s)+{\\text{3H}}_{2}(g)\\;\\longrightarrow \\;\\text{6HF}(g)+\\text{Xe}(g)\\end{array}$"
+    "solution": "实验式为 XeF<sub>6</sub>，配平的反应为： $\\begin{array}{l}\\text{Xe}(g)+{\\text{3F}}_{2}(g)\\;\\overset{\\;\\text{Δ}\\;}{\\to}\\;{\\text{XeF}}_{6}(s) \\\\ {\\text{XeF}}_{6}(s)+{\\text{3H}}_{2}(g)\\;\\longrightarrow \\;\\text{6HF}(g)+\\text{Xe}(g)\\end{array}$"
    }
   }
  ],

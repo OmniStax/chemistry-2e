@@ -17,12 +17,12 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 (function () {
   const H = 470, d = sim('sim-ice-universe', H);
   const DS = 22.1, Q = 6.00e3, TX = Q / DS;
-  const PROC = F.choice(d.controls, { label: '\\text{process}', key: 'process', aria: 'the process, melting of ice or freezing of water',
-    options: [{ value: 'melting', label: 'melting' }, { value: 'freezing', label: 'freezing' }], value: 'melting', onInput: () => draw() });
+  const PROC = F.choice(d.controls, { label: '\\text{过程}', key: 'process', aria: '过程：冰的熔化或水的凝固',
+    options: [{ value: 'melting', label: '熔化' }, { value: 'freezing', label: '凝固' }], value: 'melting', onInput: () => draw() });
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', key: 'T', min: 240, max: 310, step: 0.05, value: 263.15, unit: 'K', dec: 2,
-    aria: 'the temperature in kelvin',
+    aria: '温度，单位为开尔文',
     detents: [{ v: 263.15, label: '−10.00 °C' }, { v: 283.15, label: '10.00 °C' }],
-    specials: [{ at: TX, label: 'equilibrium' }], onInput: () => draw() });
+    specials: [{ at: TX, label: '平衡' }], onInput: () => draw() });
   const ro = F.readout(d);
   const BAR = { zero: 290, k: 5, w: 100 }, COLS = [150, 310, 470];
   const G = { l: 720, r: 1330, t: 130, b: 390 };
@@ -56,8 +56,8 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     text(ctx, `${TX.toFixed(1)} K`, g.X(TX) + 10, G.b - 18, ct, { size: 17, weight: 600, bg: PAL.panel });
     ['melting', 'freezing'].forEach((p) => PROC.only(ctx, p, () => {
       const left = p === 'melting';
-      text(ctx, 'spontaneous', left ? G.l + 14 : G.r - 14, G.t + 18, PAL.muted, { size: 17, align: left ? 'left' : 'right', bg: PAL.panel });
-      text(ctx, 'nonspontaneous', left ? G.r - 14 : G.l + 14, G.b - 18, PAL.muted, { size: 17, align: left ? 'right' : 'left', bg: PAL.panel });
+      text(ctx, '自发', left ? G.l + 14 : G.r - 14, G.t + 18, PAL.muted, { size: 17, align: left ? 'left' : 'right', bg: PAL.panel });
+      text(ctx, '非自发', left ? G.r - 14 : G.l + 14, G.b - 18, PAL.muted, { size: 17, align: left ? 'right' : 'left', bg: PAL.panel });
     }, [0, 0]));
     F.curve(ctx, (x) => s * (DS - Q / x), 240, 310, g.X, g.Y, ce, 5);
     const px = g.X(t), py = g.Y(univ);
@@ -67,13 +67,13 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 
     const p = PROC.value, sg = p === 'melting' ? 1 : -1, u = sg * (DS - Q / t), shown = one(u);
     const c = t - 273.15, cs = `${c >= 0 ? '' : '−'}${Math.abs(c).toFixed(2)}`;
-    const at = `At ${t.toFixed(2)} K (${cs} °C)`;
-    headline(ctx, shown === '0.0' ? `At ${t.toFixed(2)} K the two entropy changes cancel, and ice and water are at equilibrium.`
+    const at = `在 ${t.toFixed(2)} K（${cs} °C）时`;
+    headline(ctx, shown === '0.0' ? `在 ${t.toFixed(2)} K 时，两个熵变相互抵消，冰和水处于平衡。`
       : p === 'melting'
-        ? (u < 0 ? `${at} the surroundings lose more entropy than the ice gains, so melting is nonspontaneous.`
-          : `${at} the ice gains more entropy than the surroundings lose, so melting is spontaneous.`)
-        : (u > 0 ? `${at} the surroundings gain more entropy than the water loses, so freezing is spontaneous.`
-          : `${at} the water loses more entropy than the surroundings gain, so freezing is nonspontaneous.`));
+        ? (u < 0 ? `${at}，环境失去的熵多于冰获得的熵，因此熔化是非自发的。`
+          : `${at}，冰获得的熵多于环境失去的熵，因此熔化是自发的。`)
+        : (u > 0 ? `${at}，环境获得的熵多于水失去的熵，因此凝固是自发的。`
+          : `${at}，水失去的熵多于环境获得的熵，因此凝固是非自发的。`));
     const sv = hue('entropy', `${sg > 0 ? '' : '-'}22.1\\ \\text{J/K}`);
     const qv = hue('energy', `${sg > 0 ? '-' : ''}6.00\\times 10^{3}\\ \\text{J}`);
     const tv = hue('temperature', `${t.toFixed(2)}\\ \\text{K}`);

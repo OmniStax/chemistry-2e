@@ -285,7 +285,7 @@ function frame(r) {
      or a few far apart, inside a faint sphere that stands for the circle of the flat drawing; mounted on the first switch */
   let v = null, grp = null, cnv = null, sig = '';
   function mount() {
-    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正面', yaw: 0, pitch: 0.2 }, { label: '上方', yaw: 0, pitch: 1.2 }], h: 440, dist: 8 });
+    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '俯视', yaw: 0, pitch: 1.2 }], h: 440, dist: 8 });
     grp = v.part(0); cnv = strip(d, 90);
   }
   function build() {

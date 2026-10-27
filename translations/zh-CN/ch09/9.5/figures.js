@@ -250,7 +250,7 @@ const draw3 = (M, T) => { const s = Math.sqrt((R8 * T) / kg(M)); return [gauss()
     line(ctx, X(q), box.t, X(q), box.b, C('velocity'), 2, [10, 10]);
     text(ctx, 'u_{rms}', X(q) + 8, box.t + 18, C('velocity'), { size: 18, weight: 600, bg: PAL.panel });
     const seen = total ? Math.sqrt(sumsq / total) : 0;
-    topline(ctx, '在 ' + T + ' K 时，已统计 ' + total + ' 个' + MOLS[g].word + '气分子的速率；其方均根值为 ' + fmt(seen, 0) + ' m/s，而 √(3RT/ℳ) 给出 ' + fmt(q, 0) + ' m/s。');
+    topline(ctx, '在 ' + T + ' K 时，已统计' + MOLS[g].word + '气的 ' + total + ' 个速率；其方均根值为 ' + fmt(seen, 0) + ' m/s，而 √(3RT/ℳ) 给出 ' + fmt(q, 0) + ' m/s。');
     tex(d.readout, `\\kKEavg = \\frac{3}{2}R\\kT = \\frac{3}{2}(8.314\\ \\text{J/mol K})(${hue('temperature', T + '\\ \\text{K}')}) = ${hue('energy', fmt(1.5 * R8 * T, 0) + '\\ \\text{J/mol}')}`);
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });

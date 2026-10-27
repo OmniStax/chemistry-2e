@@ -58,7 +58,7 @@ const clamp01 = (x) => Math.max(0, Math.min(1, x));
     text(ctx, '$\\kconcOH$ (M)', (COL[1] + COL[2]) / 2, 127, cC, { size: 22, weight: 600, align: 'center', tex: true });
     text(ctx, '$\\kpH$', (COL[2] + COL[3]) / 2, 127, cC, { size: 22, weight: 600, align: 'center', tex: true });
     text(ctx, '$\\kpOH$', (COL[3] + COL[4]) / 2, 127, cC, { size: 22, weight: 600, align: 'center', tex: true });
-    text(ctx, '样品溶液', (COL[4] + R) / 2, 127, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    text(ctx, '示例溶液', (COL[4] + R) / 2, 127, PAL.ink, { size: 22, weight: 600, align: 'center' });
     for (let k = -1; k <= 15; k++) {
       const yy = y(k), a = near(yy);
       if (a <= 0) continue;

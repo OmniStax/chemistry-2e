@@ -26,21 +26,21 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
   const d = sim('sim-ppm', 560);
   /* the solutions the section names, with the book's masses: [name, solute, mass of solute in g, mass of solution in g, referent] */
   const SAMPLES = [
-    ['tap water at the lead action level', 'lead', 4.5e-6, 300, 'lead-water'],
-    ['tap water at the fluoride limit', 'fluoride', 1.2e-3, 300, 'fluoride-water'],
-    ['spinal fluid', 'glucose', 0.00375, 5.0, 'spinal-fluid'],
-    ['liquid bleach', 'NaOCl', 7.4, 100.0, 'bleach'],
-    ['concentrated hydrochloric acid', 'HCl', 221, 595, 'hcl'],
+    ['处于铅行动水平的自来水', '铅', 4.5e-6, 300, 'lead-water'],
+    ['处于氟限值的自来水', '氟化物', 1.2e-3, 300, 'fluoride-water'],
+    ['脑脊液', '葡萄糖', 0.00375, 5.0, 'spinal-fluid'],
+    ['液体漂白剂', 'NaOCl', 7.4, 100.0, 'bleach'],
+    ['浓盐酸', 'HCl', 221, 595, 'hcl'],
   ];
   const OTHER = SAMPLES.length;
-  const SHORT = ['lead in tap water', 'fluoride in tap water', 'glucose in spinal fluid', 'liquid bleach', 'concentrated HCl'];
-  const S = F.select(d.controls, { label: '\\text{solution}', aria: 'solution', value: '0',
-    options: [...SAMPLES.map((s, i) => ({ value: String(i), label: SHORT[i] })), { value: String(OTHER), label: 'another solution' }],
+  const SHORT = ['自来水中的铅', '自来水中的氟化物', '脑脊液中的葡萄糖', '液体漂白剂', '浓 HCl'];
+  const S = F.select(d.controls, { label: '\\text{溶液}', aria: '溶液', value: '0',
+    options: [...SAMPLES.map((s, i) => ({ value: String(i), label: SHORT[i] })), { value: String(OTHER), label: '另一种溶液' }],
     onInput: () => { const i = +S.value; if (i < OTHER) { MS.set(SAMPLES[i][3]); R.set(Math.log10(SAMPLES[i][2] / SAMPLES[i][3])); } } });
   /* the mass of solution sets the scale of the sample, and the second slider sets the solute's share of it on a logarithmic
      track, since the section's concentrations run from parts per billion to tens of percent; its value box shows the solute's mass */
-  const MS = ctl(d.controls, { label: '\\km_{\\text{solution}}', cls: 'mass', min: 1, max: 1000, step: 0.1, value: 300, unit: 'g', dec: 1, aria: 'mass of solution' });
-  const R = ctl(d.controls, { label: '\\km_{\\text{solute}}', cls: 'mass', min: -10, max: -0.3, step: 0.0001, value: Math.log10(4.5e-6 / 300), unit: '', dec: 2, aria: 'mass of solute as a share of the solution, on a logarithmic scale',
+  const MS = ctl(d.controls, { label: '\\km_{\\text{溶液}}', cls: 'mass', min: 1, max: 1000, step: 0.1, value: 300, unit: 'g', dec: 1, aria: '溶液的质量' });
+  const R = ctl(d.controls, { label: '\\km_{\\text{溶质}}', cls: 'mass', min: -10, max: -0.3, step: 0.0001, value: Math.log10(4.5e-6 / 300), unit: '', dec: 2, aria: '溶质质量占溶液的份额，对数标度',
     specials: [{ at: -9, label: '1 ppb' }, { at: -6, label: '1 ppm' }, { at: -2, label: '1%' }] });
   const soluteBox = R.el.querySelector('.ctl-val');
   const which = () => SAMPLES.findIndex((s) => Math.abs(Math.log10(s[2] / s[3]) - R.v) < 0.006 && Math.abs(s[3] - MS.v) < 0.05);
@@ -50,9 +50,9 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
   const X = (lg) => X0 + ((lg - LO) / (HI - LO)) * (X1 - X0);
   /* the three scales: the power of ten each unit multiplies the fraction by, and its name */
   const SCALES = [
-    { y: 240, k: 2, unit: '%', name: 'mass percentage' },
-    { y: 350, k: 6, unit: 'ppm', name: 'parts per million' },
-    { y: 460, k: 9, unit: 'ppb', name: 'parts per billion' },
+    { y: 240, k: 2, unit: '%', name: '质量分数' },
+    { y: 350, k: 6, unit: 'ppm', name: '百万分率' },
+    { y: 460, k: 9, unit: 'ppb', name: '十亿分率' },
   ];
   function tick(k, s) {
     const v = k + s.k;
@@ -73,7 +73,7 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
       line(ctx, X(k), yF - 10, X(k), yF + 10, PAL.ink, 2);
       if (k % 2 === 0) text(ctx, pow10(k), X(k), yF - 30, PAL.muted, { size: 17, align: 'center' });
     }
-    const names = [['mass solute ÷ mass solution', yF + 36, PAL.muted, 400]];
+    const names = [['溶质的质量 ÷ 溶液的质量', yF + 36, PAL.muted, 400]];
     const xm = X(lg);
     line(ctx, xm, yF, xm, SCALES[2].y + 8, cm, 3, [4, 8]);
     /* each unit's scale, with the stretch where it reads between 0.1 and 1000 shaded */
@@ -94,7 +94,7 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
     SAMPLES.forEach((s, j) => {
       const x = X(Math.log10(s[2] / s[3]));
       dot(ctx, x, yF, F.ref(s[4]), j === i, 7);
-      hits.push({ x, y: yF, r: 14, name: s[0] + ', ' + s[1] });
+      hits.push({ x, y: yF, r: 14, name: s[0] + '，' + s[1] });
     });
     const right = xm < 900;
     [pct, ppm, ppb].forEach((v, j) => {
@@ -104,9 +104,9 @@ const massTex = (g) => massStr(g).replace(' µg', '\\ \\mu\\text{g}').replace(/ 
     });
     const nx = xm < 700 ? X1 : X0, na = xm < 700 ? 'right' : 'left';
     names.forEach(([s, y, c, w]) => text(ctx, s, nx, y, c, { size: 18, weight: w, align: na, bg: alpha(PAL.panel, 0.9) }));
-    const who = i < 0 ? 'the solution' : SAMPLES[i][0], what = i < 0 ? 'solute' : SAMPLES[i][1];
-    headline(ctx, 'In ' + sig(ms, 3) + ' g of ' + who + ', ' + massStr(mSolute) + ' of ' + what + ' is ' + sig(pct) + '% of the mass, or ' + sig(ppm) + ' ppm, or ' + sig(ppb) + ' ppb.');
-    tex(d.readout, `\\frac{\\km_{\\text{solute}}}{\\km_{\\text{solution}}} = \\frac{\\htmlClass{kv-mass}{${massTex(mSolute)}}}{\\htmlClass{kv-mass}{${sig(ms, 3)}\\ \\text{g}}} = ${sig(pct)}\\% = ${sig(ppm)}\\ \\text{ppm} = ${sig(ppb)}\\ \\text{ppb}`);
+    const who = i < 0 ? '溶液' : SAMPLES[i][0], what = i < 0 ? '溶质' : SAMPLES[i][1];
+    headline(ctx, '在 ' + sig(ms, 3) + ' g ' + who + '中，' + massStr(mSolute) + ' ' + what + '占质量的 ' + sig(pct) + '%，即 ' + sig(ppm) + ' ppm，即 ' + sig(ppb) + ' ppb。');
+    tex(d.readout, `\\frac{\\km_{\\text{溶质}}}{\\km_{\\text{溶液}}} = \\frac{\\htmlClass{kv-mass}{${massTex(mSolute)}}}{\\htmlClass{kv-mass}{${sig(ms, 3)}\\ \\text{g}}} = ${sig(pct)}\\% = ${sig(ppm)}\\ \\text{ppm} = ${sig(ppb)}\\ \\text{ppb}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

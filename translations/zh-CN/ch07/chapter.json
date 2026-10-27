@@ -173,7 +173,7 @@
     {
       "sym": "r_bond",
       "concept": "bond-length",
-      "meaning": "两部分电荷之间的距离，即成键原子的原子核间距",
+      "meaning": "两个部分电荷之间的距离，即成键原子的原子核间距",
       "unit": "Å (1 Å = 10⁻¹⁰ m, 100 pm = 1 Å)",
       "section": "7.6",
       "anchor": "7.6-bond-dipole"

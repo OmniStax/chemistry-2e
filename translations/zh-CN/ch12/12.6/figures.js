@@ -96,7 +96,7 @@ function views(d, VIEW, mount, draw) {
   let g = null, sig = '';
   function mount() {
     const v = F.view3d(d.stage, { spin: 'off', h: 420, dist: 11, tilt: 0, pitch: [-1.4, 1.4], yaw: [-1.2, 1.2],
-      views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '侧向', yaw: 0, pitch: 1.4 }] });
+      views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '侧向', yaw: 0, pitch: 1.4 }] });
     g = v.part(0);
     return v;
   }
@@ -182,7 +182,7 @@ function views(d, VIEW, mount, draw) {
   let g = null;
   function mount() {
     const v = F.view3d(d.stage, { spin: 'off', h: 420, dist: 8.5, tilt: 0, pitch: [-1.05, 1.05], yaw: [-1.2, 1.2],
-      views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '上方', yaw: 0, pitch: 1.0 }] });
+      views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '俯视', yaw: 0, pitch: 1.0 }] });
     g = v.part(0);
     return v;
   }

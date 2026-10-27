@@ -145,36 +145,36 @@ function views(d, three, mount, draw) {
   const D2 = 1.34;
   const ene = (C) => ({ C, B: C.slice(1).map((_, i) => [i, i + 1, i === 0 ? 2 : 1]) });
   const MOL = {
-    methane: { name: 'methane', kind: 'alkane', n: 1, cond: '\\text{CH}_4', mf: '\\text{CH}_4', g3: { C: [[0, 0, 0]], B: [] }, g2: [[0, 0]],
-      head: 'In methane, CH₄, one carbon atom bonds to four hydrogen atoms, which point to the corners of a tetrahedron.' },
-    ethane: { name: 'ethane', kind: 'alkane', n: 2, cond: '\\text{CH}_3\\text{CH}_3', mf: '\\text{C}_2\\text{H}_6', g3: AL(2), g2: [[0, 0], [1, 0]],
-      head: 'Ethane’s two carbon atoms share a single bond, and each bonds to three hydrogen atoms.' },
-    butane: { name: 'n-butane', kind: 'alkane', n: 4, cond: '\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{CH}_3', mf: '\\text{C}_4\\text{H}_{10}', g3: AL(4), g2: [[0, 0], [1, 0], [2, 0], [3, 0]],
-      head: 'The four carbon atoms of $n$-butane form an unbranched chain: none bonds to more than two others.' },
-    pentane: { name: 'pentane', kind: 'alkane', n: 5, cond: '\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{CH}_2\\text{CH}_3', mf: '\\text{C}_5\\text{H}_{12}', g3: AL(5), g2: [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]],
-      head: 'Bond angles of about 109.5° give pentane’s chain a zigzag shape, though its Lewis structure draws it straight.' },
-    methylpropane: { name: '2-methylpropane', kind: 'alkane', n: 4, cond: '\\text{CH}_3\\text{CH(CH}_3)\\text{CH}_3', mf: '\\text{C}_4\\text{H}_{10}', g3: methylpropane(), g2: [[0, 0], [1, 0], [2, 0], [1, -1]],
-      head: 'The central carbon atom of 2-methylpropane bonds to three other carbon atoms, so its chain is branched.' },
-    ethene: { name: 'ethene', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CH}_2', mf: '\\text{C}_2\\text{H}_4', g3: ene([[0, 0, 0], [D2, 0, 0]]),
-      head: 'Each carbon atom of ethene is trigonal planar, and all six atoms lie in one plane.' },
-    propene: { name: 'propene', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CHCH}_3', mf: '\\text{C}_3\\text{H}_6', g3: (() => { const a = [0, 0, 0], b = add(a, mul(dir(30), D2)); return ene([a, b, add(b, mul(dir(-30), 1.5))]); })(),
-      head: 'Propene’s double bond joins its first two carbon atoms; the third belongs to a methyl group.' },
-    butene1: { name: '1-butene', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CHCH}_2\\text{CH}_3', mf: '\\text{C}_4\\text{H}_8',
+    methane: { name: '甲烷', kind: 'alkane', n: 1, cond: '\\text{CH}_4', mf: '\\text{CH}_4', g3: { C: [[0, 0, 0]], B: [] }, g2: [[0, 0]],
+      head: '甲烷 CH₄ 中，一个碳原子与四个氢原子成键，这四个氢原子指向四面体的顶点。' },
+    ethane: { name: '乙烷', kind: 'alkane', n: 2, cond: '\\text{CH}_3\\text{CH}_3', mf: '\\text{C}_2\\text{H}_6', g3: AL(2), g2: [[0, 0], [1, 0]],
+      head: '乙烷的两个碳原子共用一个单键，每个碳原子各与三个氢原子成键。' },
+    butane: { name: '正丁烷', kind: 'alkane', n: 4, cond: '\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{CH}_3', mf: '\\text{C}_4\\text{H}_{10}', g3: AL(4), g2: [[0, 0], [1, 0], [2, 0], [3, 0]],
+      head: '正丁烷的四个碳原子形成一条无支链的链：没有哪个碳原子与两个以上的其他碳原子成键。' },
+    pentane: { name: '戊烷', kind: 'alkane', n: 5, cond: '\\text{CH}_3\\text{CH}_2\\text{CH}_2\\text{CH}_2\\text{CH}_3', mf: '\\text{C}_5\\text{H}_{12}', g3: AL(5), g2: [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0]],
+      head: '约 109.5° 的键角使戊烷的碳链呈锯齿形，尽管其路易斯结构式把它画成直线。' },
+    methylpropane: { name: '2-甲基丙烷', kind: 'alkane', n: 4, cond: '\\text{CH}_3\\text{CH(CH}_3)\\text{CH}_3', mf: '\\text{C}_4\\text{H}_{10}', g3: methylpropane(), g2: [[0, 0], [1, 0], [2, 0], [1, -1]],
+      head: '2-甲基丙烷的中心碳原子与另外三个碳原子成键，所以它的链有支链。' },
+    ethene: { name: '乙烯', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CH}_2', mf: '\\text{C}_2\\text{H}_4', g3: ene([[0, 0, 0], [D2, 0, 0]]),
+      head: '乙烯的每个碳原子都是平面三角形，六个原子都在同一平面内。' },
+    propene: { name: '丙烯', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CHCH}_3', mf: '\\text{C}_3\\text{H}_6', g3: (() => { const a = [0, 0, 0], b = add(a, mul(dir(30), D2)); return ene([a, b, add(b, mul(dir(-30), 1.5))]); })(),
+      head: '丙烯的双键连接它的头两个碳原子；第三个碳原子属于一个甲基。' },
+    butene1: { name: '1-丁烯', kind: 'alkene', cond: '\\text{CH}_2{=}\\text{CHCH}_2\\text{CH}_3', mf: '\\text{C}_4\\text{H}_8',
       g3: (() => { const a = [0, 0, 0], b = add(a, mul(dir(30), D2)), c = add(b, mul(dir(-30), 1.51)); return ene([a, b, c, add(c, mul(dir(150 - TET / RAD), 1.54))]); })(),
-      head: 'In 1-butene the double bond lies between carbon atoms 1 and 2 of a four-carbon chain.' },
-    cis: { name: 'cis-2-butene', kind: 'alkene', cond: '\\textit{cis}\\text{-CH}_3\\text{CH}{=}\\text{CHCH}_3', mf: '\\text{C}_4\\text{H}_8', cond2: true,
+      head: '在 1-丁烯中，双键位于四碳链的 1 号和 2 号碳原子之间。' },
+    cis: { name: '顺-2-丁烯', kind: 'alkene', cond: '\\text{顺-CH}_3\\text{CH}{=}\\text{CHCH}_3', mf: '\\text{C}_4\\text{H}_8', cond2: true,
       g3: (() => { const b = [-D2 / 2, 0, 0], c = [D2 / 2, 0, 0]; return { C: [add(b, mul(dir(240), 1.5)), b, c, add(c, mul(dir(300), 1.5))], B: [[0, 1, 1], [1, 2, 2], [2, 3, 1]] }; })(),
-      head: 'In $cis$-2-butene both methyl groups lie on the same side of the rigid double bond.' },
-    trans: { name: 'trans-2-butene', kind: 'alkene', cond: '\\textit{trans}\\text{-CH}_3\\text{CH}{=}\\text{CHCH}_3', mf: '\\text{C}_4\\text{H}_8', cond2: true,
+      head: '在顺-2-丁烯中，两个甲基都位于刚性双键的同一侧。' },
+    trans: { name: '反-2-丁烯', kind: 'alkene', cond: '\\text{反-CH}_3\\text{CH}{=}\\text{CHCH}_3', mf: '\\text{C}_4\\text{H}_8', cond2: true,
       g3: (() => { const b = [-D2 / 2, 0, 0], c = [D2 / 2, 0, 0]; return { C: [add(b, mul(dir(240), 1.5)), b, c, add(c, mul(dir(60), 1.5))], B: [[0, 1, 1], [1, 2, 2], [2, 3, 1]] }; })(),
-      head: 'In $trans$-2-butene the methyl groups lie on opposite sides of the rigid double bond.' },
+      head: '在反-2-丁烯中，两个甲基位于刚性双键的相对两侧。' },
   };
   Object.values(MOL).forEach((m) => { m.m3 = hydrogens(m.g3.C, m.g3.B); });
   const KEYS = Object.keys(MOL);
-  const mol = F.select(d.controls, { label: '\\text{molecule}', key: 'molecule', aria: 'the molecule', value: 'pentane',
+  const mol = F.select(d.controls, { label: '\\text{分子}', key: 'molecule', aria: '分子', value: 'pentane',
     options: KEYS.map((k) => ({ value: k, label: MOL[k].name })), onInput: () => V.show() });
-  const model = F.choice(d.controls, { label: '\\text{model}', key: 'model', aria: 'the Lewis structure or a model to turn', value: 'lewis',
-    options: [{ value: 'lewis', label: 'Lewis' }, { value: 'ball', label: 'ball-and-stick' }, { value: 'fill', label: 'space-filling' }], onInput: () => V.show() });
+  const model = F.choice(d.controls, { label: '\\text{模型}', key: 'model', aria: '路易斯结构式，或可转动的模型', value: 'lewis',
+    options: [{ value: 'lewis', label: '路易斯' }, { value: 'ball', label: '球棍' }, { value: 'fill', label: '空间填充' }], onInput: () => V.show() });
   let hits = []; F.hover(d.stage, () => (model.value === 'lewis' ? hits : []));
 
   /* ---------- the Lewis structure ---------- */
@@ -211,13 +211,13 @@ function views(d, three, mount, draw) {
     atoms.forEach((t) => { t.x = CX + (t.x - ox) * S2; t.y = CY + (t.y - oy) * S2; });
     return { atoms, bonds };
   }
-  const NAME = { C: 'carbon atom', H: 'hydrogen atom' };
+  const NAME = { C: '碳原子', H: '氢原子' };
   function draw2d() {
     const { ctx } = begin(d.c); hits = [];
     headline(ctx, MOL[mol.value].head);
     KEYS.forEach((k) => mol.only(ctx, k, () => {
       const L = lewisOf(k); lewis(ctx, L.atoms, L.bonds);
-      if (k === mol.value) L.atoms.forEach((t) => hits.push({ x: t.x, y: t.y, r: 20, name: `${t.s === 'H' ? NAME.H : t.s === 'C' ? NAME.C : 'methyl group, CH₃'} of ${MOL[k].name}` }));
+      if (k === mol.value) L.atoms.forEach((t) => hits.push({ x: t.x, y: t.y, r: 20, name: `${MOL[k].name}的${t.s === 'H' ? NAME.H : t.s === 'C' ? NAME.C : '甲基 CH₃'}` }));
     }, [0, 10]));
   }
 
@@ -226,7 +226,7 @@ function views(d, three, mount, draw) {
   let g = null;
   function mount() {
     const v = F.view3d(d.stage, { h: H, dist: 15, tilt: 0.12, spin: 'idle', pitch: [-1.4, 1.4], yaw: 'free', zoomMin: 0.6, zoomMax: 2.4,
-      views: [{ label: 'front', yaw: 0, pitch: 0 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0.12 }] });
+      views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '端面', yaw: Math.PI / 2, pitch: 0.12 }] });
     g = v.part(0); g.position.y = -0.55; return v;
   }
   function draw3d(v) {
@@ -234,7 +234,7 @@ function views(d, three, mount, draw) {
     v.clear();
     const m = MOL[mol.value].m3, from = model.from === 'lewis' ? model.value : model.from;
     const k = model.k >= 1 || from === model.value ? (model.value === 'fill' ? 1 : 0) : lerp(from === 'fill' ? 1 : 0, model.value === 'fill' ? 1 : 0, model.k);
-    m.atoms.forEach((t, i) => v.pickable(F.mesh.sphere(g, t.p, lerp(RB[t.el], RF[t.el], k), F.el(t.el)), `${NAME[t.el]} of ${MOL[mol.value].name}`));
+    m.atoms.forEach((t, i) => v.pickable(F.mesh.sphere(g, t.p, lerp(RB[t.el], RF[t.el], k), F.el(t.el)), `${MOL[mol.value].name}的${NAME[t.el]}`));
     if (k < 0.92) m.bonds.forEach(([a, b, o]) => F.mesh.bond(g, m.atoms[a].p, m.atoms[b].p, o, 0.09 * (1 - k), PAL.muted));
     v.headline(MOL[mol.value].head);
     v.invalidate();
@@ -270,12 +270,12 @@ function views(d, three, mount, draw) {
   const nH = CS.map((_, i) => G.hs[i].length);
   const LABEL = nH.map((n) => (n === 0 ? 'C' : n === 1 ? 'CH' : `CH_{${n}}`));
   const REP = ['expanded', 'condensed', 'skeletal'];
-  const pick = F.choice(d.controls, { label: '\\text{drawing}', key: 'drawing', aria: 'the way the molecule is drawn', value: 'expanded',
-    options: [{ value: 'expanded', label: 'expanded' }, { value: 'condensed', label: 'condensed' }, { value: 'skeletal', label: 'skeletal' }] });
+  const pick = F.choice(d.controls, { label: '\\text{画法}', key: 'drawing', aria: '分子的画法', value: 'expanded',
+    options: [{ value: 'expanded', label: '展开式' }, { value: 'condensed', label: '结构简式' }, { value: 'skeletal', label: '键线式' }] });
   const HEAD = {
-    expanded: 'The expanded formula draws every atom and every bond: 9 carbon atoms and 20 hydrogen atoms.',
-    condensed: 'The condensed formula writes each carbon atom with the hydrogen atoms bonded to it.',
-    skeletal: 'In the skeletal structure each end or bend of a line is a carbon atom, and its hydrogen atoms are not drawn.',
+    expanded: '展开式画出每个原子和每个键：9 个碳原子和 20 个氢原子。',
+    condensed: '结构简式把每个碳原子与和它相连的氢原子写在一起。',
+    skeletal: '在键线式中，线段的每个端点或折点都是一个碳原子，它的氢原子不画出。',
   };
   let hits = []; F.hover(d.stage, () => hits);
   const CX = 700, CY = 285;
@@ -300,7 +300,7 @@ function views(d, three, mount, draw) {
     CS.forEach((_, i) => {
       const x = s.c[2 * i], y = s.c[2 * i + 1];
       atoms.push({ s: '', x, y, g: 0 });
-      hits.push({ x, y, r: 22, name: `carbon atom ${i < 6 ? `${i + 1} of the main chain` : i === 6 ? 'of the methyl group on carbon 2' : 'of the ethyl group on carbon 3'}` });
+      hits.push({ x, y, r: 22, name: `${i < 6 ? `主链的 ${i + 1} 号碳原子` : i === 6 ? '2 号碳上甲基的碳原子' : '3 号碳上乙基的碳原子'}` });
     });
     G.atoms.slice(nC).forEach((t, j) => atoms.push({ s: 'H', x: s.h[3 * j], y: s.h[3 * j + 1], a: s.h[3 * j + 2] }));
     /* bonds stop short of a label as far as the label shows */
@@ -330,13 +330,13 @@ function views(d, three, mount, draw) {
 (function () {
   const H = 640, d = sim('sim-alkane-trend', H);
   const T = [
-    [1, 'methane', -182.5, -161.5, 'gas'], [2, 'ethane', -183.3, -88.6, 'gas'], [3, 'propane', -187.7, -42.1, 'gas'], [4, 'butane', -138.3, -0.5, 'gas'],
-    [5, 'pentane', -129.7, 36.1, 'liquid'], [6, 'hexane', -95.3, 68.7, 'liquid'], [7, 'heptane', -90.6, 98.4, 'liquid'], [8, 'octane', -56.8, 125.7, 'liquid'],
-    [9, 'nonane', -53.6, 150.8, 'liquid'], [10, 'decane', -29.7, 174.0, 'liquid'], [14, 'tetradecane', 5.9, 253.5, 'solid'], [18, 'octadecane', 28.2, 316.1, 'solid'],
+    [1, '甲烷', -182.5, -161.5, 'gas'], [2, '乙烷', -183.3, -88.6, 'gas'], [3, '丙烷', -187.7, -42.1, 'gas'], [4, '丁烷', -138.3, -0.5, 'gas'],
+    [5, '戊烷', -129.7, 36.1, 'liquid'], [6, '己烷', -95.3, 68.7, 'liquid'], [7, '庚烷', -90.6, 98.4, 'liquid'], [8, '辛烷', -56.8, 125.7, 'liquid'],
+    [9, '壬烷', -53.6, 150.8, 'liquid'], [10, '癸烷', -29.7, 174.0, 'liquid'], [14, '十四烷', 5.9, 253.5, 'solid'], [18, '十八烷', 28.2, 316.1, 'solid'],
   ];
   const NS = T.map((r) => r[0]);
   const near = (x) => NS.reduce((b, n) => (Math.abs(n - x) < Math.abs(b - x) ? n : b), NS[0]);
-  const N = F.ctl(d.controls, { label: '\\text{carbon atoms}', cls: '', key: 'carbons', min: 1, max: 18, step: 1, value: 5, unit: '', dec: 0, aria: 'number of carbon atoms in the chain',
+  const N = F.ctl(d.controls, { label: '\\text{碳原子数}', cls: '', key: 'carbons', min: 1, max: 18, step: 1, value: 5, unit: '', dec: 0, aria: '链中的碳原子数',
     detents: NS, onInput: () => { const n = near(N.v); if (n !== N.v) N.set(n); } });
   const box = { l: 170, r: 1320, t: 270, b: 560 };
   let hits = []; F.hover(d.stage, () => hits);
@@ -344,32 +344,32 @@ function views(d, three, mount, draw) {
   function draw() {
     const { ctx } = begin(d.c); hits = [];
     const n = near(N.v), row = T.find((r) => r[0] === n), [, name, mp, bp, phase] = row, cT = C('temperature');
-    const verb = phase === 'gas' ? `boils at ${deg(bp)}, below 0 °C, so it is a gas at STP`
-      : phase === 'liquid' ? `melts at ${deg(mp)} and boils at ${deg(bp)}, either side of 0 °C, so it is a liquid at STP`
-      : `melts at ${deg(mp)}, above 0 °C, so it is a solid at STP`;
-    const lines = headline(ctx, `${name[0].toUpperCase() + name.slice(1)} ${verb}.`);
+    const verb = phase === 'gas' ? `的沸点为 ${deg(bp)}，低于 0 °C，所以它在 STP 下为气态`
+      : phase === 'liquid' ? `的熔点为 ${deg(mp)}，沸点为 ${deg(bp)}，分居 0 °C 两侧，所以它在 STP 下为液态`
+      : `的熔点为 ${deg(mp)}，高于 0 °C，所以它在 STP 下为固态`;
+    const lines = headline(ctx, `${name}${verb}。`);
     const lab = F.labeller(ctx, H, { headline: lines });
     /* the chain: n carbon atoms zigzagging at 109.5°, its hydrogen atoms left out as a skeletal structure leaves them */
     const step = Math.min(62, 1080 / Math.max(1, n - 1)), amp = step * 0.36, y0 = 180, x0 = 700 - ((n - 1) * step) / 2;
     const P = Array.from({ length: n }, (_, i) => [x0 + i * step, y0 + (i % 2 ? -amp : amp)]);
     P.slice(1).forEach((p, i) => line(ctx, P[i][0], P[i][1], p[0], p[1], PAL.ink, 3));
-    P.forEach(([x, y], i) => { atom(ctx, x, y, 'C', 13); hits.push({ x, y, r: 15, name: `carbon atom ${i + 1} of ${name}` }); });
-    const { X, Y } = F.axes(ctx, box, [0, 19], [-200, 350], { nx: 19, ny: 11, xl: 'number of carbon atoms', yl: 'temperature (°C)', yc: cT, fx: (v) => (v % 2 ? '' : fmt(v, 0)), fy: (v) => minus(fmt(v, 0)) });
+    P.forEach(([x, y], i) => { atom(ctx, x, y, 'C', 13); hits.push({ x, y, r: 15, name: `${name}的第 ${i + 1} 个碳原子` }); });
+    const { X, Y } = F.axes(ctx, box, [0, 19], [-200, 350], { nx: 19, ny: 11, xl: '碳原子数', yl: '温度（°C）', yc: cT, fx: (v) => (v % 2 ? '' : fmt(v, 0)), fy: (v) => minus(fmt(v, 0)) });
     line(ctx, box.l, Y(0), box.r, Y(0), alpha(PAL.ink, 0.45), 2, [10, 10]);
-    lab.add('0 °C, STP', X(16), Y(0), 0, 1, PAL.muted, 18, 12);
+    lab.add('0 °C，STP', X(16), Y(0), 0, 1, PAL.muted, 18, 12);
     const poly = (k, dash) => { ctx.save(); ctx.strokeStyle = cT; ctx.lineWidth = 4; if (dash) ctx.setLineDash(dash); ctx.beginPath(); T.forEach((r, i) => (i ? ctx.lineTo(X(r[0]), Y(r[k])) : ctx.moveTo(X(r[0]), Y(r[k])))); ctx.stroke(); ctx.restore(); };
     poly(3); poly(2, [12, 9]);
     T.forEach((r) => {
       dot(ctx, X(r[0]), Y(r[3]), cT, true, 5); dot(ctx, X(r[0]), Y(r[2]), cT, false, 5);
-      hits.push({ x: X(r[0]), y: Y(r[3]), r: 9, name: `boiling point of ${r[1]}, ${deg(r[3])}` }, { x: X(r[0]), y: Y(r[2]), r: 9, name: `melting point of ${r[1]}, ${deg(r[2])}` });
+      hits.push({ x: X(r[0]), y: Y(r[3]), r: 9, name: `${r[1]}的沸点，${deg(r[3])}` }, { x: X(r[0]), y: Y(r[2]), r: 9, name: `${r[1]}的熔点，${deg(r[2])}` });
     });
     line(ctx, X(n), box.t, X(n), box.b, alpha(PAL.ink, 0.4), 2, [4, 8]);
     dot(ctx, X(n), Y(bp), cT, true, 10); dot(ctx, X(n), Y(mp), cT, false, 10);
-    lab.add('boiling point', X(18), Y(316.1), -1, -1, cT, 22, 22);
-    lab.add('melting point', X(18), Y(28.2), -1, -1, cT, 22, 22);
+    lab.add('沸点', X(18), Y(316.1), -1, -1, cT, 22, 22);
+    lab.add('熔点', X(18), Y(28.2), -1, -1, cT, 22, 22);
     lab.flush();
     const sub = (k) => (k > 1 ? `_{${k}}` : '');
-    tex(d.readout, `\\text{${name}, C}${sub(n)}\\text{H}_{${2 * n + 2}}\\text{:}\\quad \\text{melting point } ${hue('temperature', `${mp.toFixed(1).replace('-', '{-}')}\\ ^\\circ\\text{C}`)},\\quad \\text{boiling point } ${hue('temperature', `${bp.toFixed(1).replace('-', '{-}')}\\ ^\\circ\\text{C}`)}`);
+    tex(d.readout, `\\text{${name}，C}${sub(n)}\\text{H}_{${2 * n + 2}}\\text{：}\\quad \\text{熔点 } ${hue('temperature', `${mp.toFixed(1).replace('-', '{-}')}\\ ^\\circ\\text{C}`)},\\quad \\text{沸点 } ${hue('temperature', `${bp.toFixed(1).replace('-', '{-}')}\\ ^\\circ\\text{C}`)}`);
   }
   still(d, draw);
 })();
@@ -391,13 +391,13 @@ function views(d, three, mount, draw) {
     twice: [[0, -1], [0, 0], [1, 0], [1, 1]],
   };
   const HEAD = {
-    row: 'Drawn in a row, $n$-butane is an unbranched chain of four carbon atoms.',
-    up: 'Bent up at one end, the chain still runs through four carbon atoms, none bonded to more than two others.',
-    down: 'Bent down instead, it is the same chain, with the same atoms bonded to the same atoms.',
-    twice: 'Bent at both ends, it is still $n$-butane: an unbranched chain of four carbon atoms.',
+    row: '画成一行时，正丁烷是一条含四个碳原子的无支链的链。',
+    up: '一端向上弯折，这条链仍然穿过四个碳原子，没有哪个碳原子与两个以上的其他碳原子相连。',
+    down: '改为向下弯折，它仍是同一条链，相同的原子与相同的原子相连。',
+    twice: '两端都弯折，它仍是正丁烷：一条含四个碳原子的无支链的链。',
   };
-  const pick = F.choice(d.controls, { label: '\\text{n-butane drawn}', key: 'drawing', aria: 'how n-butane is drawn', value: 'row',
-    options: [{ value: 'row', label: 'in a row' }, { value: 'up', label: 'bent up' }, { value: 'down', label: 'bent down' }, { value: 'twice', label: 'bent twice' }] });
+  const pick = F.choice(d.controls, { label: '\\text{正丁烷的画法}', key: 'drawing', aria: '正丁烷的画法', value: 'row',
+    options: [{ value: 'row', label: '一字排开' }, { value: 'up', label: '向上弯折' }, { value: 'down', label: '向下弯折' }, { value: 'twice', label: '两端弯折' }] });
   const U = 64, LX = 440, RX = 1060, CY = 250;
   const iso = place(grid([[0, 0], [1, 0], [2, 0], [1, -1]], [[0, 1], [1, 2], [1, 3]]), RX, CY, U);
   const isoB = grid([[0, 0], [1, 0], [2, 0], [1, -1]], [[0, 1], [1, 2], [1, 3]]).bonds;
@@ -412,11 +412,11 @@ function views(d, three, mount, draw) {
     lewis(ctx, atoms, bonds, { size: 26 });
     lewis(ctx, iso, isoB, { size: 26 });
     line(ctx, 750, 110, 750, 400, alpha(PAL.ink, 0.25), 2);
-    text(ctx, 'n-butane', LX, 428, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    text(ctx, '2-methylpropane', RX, 428, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    atoms.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 20, name: t.s === 'C' ? `carbon atom ${i + 1} of n-butane, bonded to ${i === 0 || i === 3 ? 'one other carbon atom' : 'two other carbon atoms'}` : 'hydrogen atom of n-butane' }));
-    iso.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 20, name: t.s === 'C' ? `carbon atom of 2-methylpropane, bonded to ${i === 1 ? 'three other carbon atoms' : 'one other carbon atom'}` : 'hydrogen atom of 2-methylpropane' }));
-    tex(d.readout, '\\text{C–C bonds of each carbon atom:}\\quad n\\text{-butane } 1, 2, 2, 1;\\quad \\text{2-methylpropane } 1, 3, 1, 1');
+    text(ctx, '正丁烷', LX, 428, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    text(ctx, '2-甲基丙烷', RX, 428, PAL.ink, { size: 22, weight: 600, align: 'center' });
+    atoms.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 20, name: t.s === 'C' ? `正丁烷的第 ${i + 1} 个碳原子，与${i === 0 || i === 3 ? '另一个碳原子' : '另外两个碳原子'}相连` : '正丁烷的氢原子' }));
+    iso.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 20, name: t.s === 'C' ? `2-甲基丙烷的碳原子，与${i === 1 ? '另外三个碳原子' : '另一个碳原子'}相连` : '2-甲基丙烷的氢原子' }));
+    tex(d.readout, '\\text{各碳原子的 C–C 键数：}\\quad \\text{正丁烷 } 1, 2, 2, 1;\\quad \\text{2-甲基丙烷 } 1, 3, 1, 1');
   }
   still(d, draw);
 })();
@@ -431,28 +431,28 @@ function views(d, three, mount, draw) {
 (function () {
   const H = 460, d = sim('sim-alkyl-groups', H);
   const PARENT = {
-    methane: { name: 'methane', mf: '\\text{CH}_4', C: [[0, 0]], B: [] },
-    ethane: { name: 'ethane', mf: '\\text{C}_2\\text{H}_6', C: [[0, 0], [1, 0]], B: [[0, 1]] },
-    propane: { name: 'propane', mf: '\\text{C}_3\\text{H}_8', C: [[0, 0], [1, 0], [2, 0]], B: [[0, 1], [1, 2]] },
-    butane: { name: 'butane', mf: '\\text{C}_4\\text{H}_{10}', C: [[0, 0], [1, 0], [2, 0], [3, 0]], B: [[0, 1], [1, 2], [2, 3]] },
-    methylpropane: { name: '2-methylpropane', mf: '\\text{C}_4\\text{H}_{10}', C: [[0, 0], [1, 0], [2, 0], [1, -1]], B: [[0, 1], [1, 2], [1, 3]] },
+    methane: { name: '甲烷', mf: '\\text{CH}_4', C: [[0, 0]], B: [] },
+    ethane: { name: '乙烷', mf: '\\text{C}_2\\text{H}_6', C: [[0, 0], [1, 0]], B: [[0, 1]] },
+    propane: { name: '丙烷', mf: '\\text{C}_3\\text{H}_8', C: [[0, 0], [1, 0], [2, 0]], B: [[0, 1], [1, 2]] },
+    butane: { name: '丁烷', mf: '\\text{C}_4\\text{H}_{10}', C: [[0, 0], [1, 0], [2, 0], [3, 0]], B: [[0, 1], [1, 2], [2, 3]] },
+    methylpropane: { name: '2-甲基丙烷', mf: '\\text{C}_4\\text{H}_{10}', C: [[0, 0], [1, 0], [2, 0], [1, -1]], B: [[0, 1], [1, 2], [1, 3]] },
   };
   /* the group: its alkane, the carbon atom that loses a hydrogen atom and which side, and the carbon atoms whose hydrogen atoms share its environment */
   const GROUP = {
-    methyl: { name: 'methyl', p: 'methane', c: 0, side: [1, 0], eq: [0], mf: '\\text{–CH}_3' },
-    ethyl: { name: 'ethyl', p: 'ethane', c: 1, side: [1, 0], eq: [0, 1], mf: '\\text{–C}_2\\text{H}_5' },
-    npropyl: { name: 'n-propyl', p: 'propane', c: 2, side: [1, 0], eq: [0, 2], mf: '\\text{–C}_3\\text{H}_7' },
-    isopropyl: { name: 'isopropyl', p: 'propane', c: 1, side: [0, -1], eq: [1], mf: '\\text{–C}_3\\text{H}_7' },
-    nbutyl: { name: 'n-butyl', p: 'butane', c: 3, side: [1, 0], eq: [0, 3], mf: '\\text{–C}_4\\text{H}_9' },
-    secbutyl: { name: 'sec-butyl', p: 'butane', c: 2, side: [0, -1], eq: [1, 2], mf: '\\text{–C}_4\\text{H}_9' },
-    isobutyl: { name: 'isobutyl', p: 'methylpropane', c: 2, side: [1, 0], eq: [0, 2, 3], mf: '\\text{–C}_4\\text{H}_9' },
-    tertbutyl: { name: 'tert-butyl', p: 'methylpropane', c: 1, side: [0, 1], eq: [1], mf: '\\text{–C}_4\\text{H}_9' },
+    methyl: { name: '甲基', p: 'methane', c: 0, side: [1, 0], eq: [0], mf: '\\text{–CH}_3' },
+    ethyl: { name: '乙基', p: 'ethane', c: 1, side: [1, 0], eq: [0, 1], mf: '\\text{–C}_2\\text{H}_5' },
+    npropyl: { name: '正丙基', p: 'propane', c: 2, side: [1, 0], eq: [0, 2], mf: '\\text{–C}_3\\text{H}_7' },
+    isopropyl: { name: '异丙基', p: 'propane', c: 1, side: [0, -1], eq: [1], mf: '\\text{–C}_3\\text{H}_7' },
+    nbutyl: { name: '正丁基', p: 'butane', c: 3, side: [1, 0], eq: [0, 3], mf: '\\text{–C}_4\\text{H}_9' },
+    secbutyl: { name: '仲丁基', p: 'butane', c: 2, side: [0, -1], eq: [1, 2], mf: '\\text{–C}_4\\text{H}_9' },
+    isobutyl: { name: '异丁基', p: 'methylpropane', c: 2, side: [1, 0], eq: [0, 2, 3], mf: '\\text{–C}_4\\text{H}_9' },
+    tertbutyl: { name: '叔丁基', p: 'methylpropane', c: 1, side: [0, 1], eq: [1], mf: '\\text{–C}_4\\text{H}_9' },
   };
   const KEYS = Object.keys(GROUP);
-  const pick = F.select(d.controls, { label: '\\text{alkyl group}', key: 'group', aria: 'the alkyl group', value: 'isopropyl',
+  const pick = F.select(d.controls, { label: '\\text{烷基}', key: 'group', aria: '烷基', value: 'isopropyl',
     options: KEYS.map((k) => ({ value: k, label: GROUP[k].name })) });
-  const WORD = ['no other carbon atom', 'one other carbon atom', 'two other carbon atoms', 'three other carbon atoms'];
-  const NUM = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const WORD = ['不与其他碳原子相连', '与另一个碳原子相连', '与另外两个碳原子相连', '与另外三个碳原子相连'];
+  const NUM = ['零', '一', '两', '三', '四', '五', '六', '七', '八', '九'];
   const U = 74, LX = 400, RX = 1060, CY = 255;
   let hits = []; F.hover(d.stage, () => hits);
   function scene(ctx, k, live) {
@@ -471,9 +471,9 @@ function views(d, three, mount, draw) {
     text(ctx, p.name, LX, 430, PAL.ink, { size: 22, weight: 600, align: 'center' });
     text(ctx, gr.name, RX, 430, PAL.ink, { size: 22, weight: 600, align: 'center' });
     if (live) {
-      A.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 20, name: t.s === 'C' ? `carbon atom of ${p.name}` : i === gone ? `the hydrogen atom removed to form the ${gr.name} group` : gr.eq.includes(t.on) ? `a hydrogen atom in the same environment as the removed one` : `a hydrogen atom of ${p.name} in another environment` }));
-      Q.forEach((q) => hits.push({ x: q.x, y: q.y, r: 24, name: `${q.s.replace('_{', '').replace('}', '')} of the ${gr.name} group` }));
-      hits.push({ x: end.x, y: end.y, r: 18, name: 'the open bond, where the group bonds to another atom' });
+      A.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 20, name: t.s === 'C' ? `${p.name}的碳原子` : i === gone ? `为形成${gr.name}而去掉的氢原子` : gr.eq.includes(t.on) ? `与被去掉的氢原子环境相同的氢原子` : `${p.name}中环境不同的氢原子` }));
+      Q.forEach((q) => hits.push({ x: q.x, y: q.y, r: 24, name: `${gr.name}的 ${q.s.replace('_{', '').replace('}', '')}` }));
+      hits.push({ x: end.x, y: end.y, r: 18, name: '开放的键，即该基团与另一个原子成键之处' });
     }
   }
   function draw() {
@@ -481,12 +481,12 @@ function views(d, three, mount, draw) {
     const gr = GROUP[pick.value], p = PARENT[gr.p], G = grid(p.C, p.B);
     const n = G.atoms.filter((t) => t.s === 'H' && gr.eq.includes(t.on)).length;
     const bonded = p.B.filter(([a, b]) => a === gr.c || b === gr.c).length;
-    headline(ctx, n === 1 ? `Removing the one hydrogen atom of ${p.name}’s central carbon atom, bonded to ${WORD[bonded]}, gives the ${gr.name} group.`
-      : `Removing any one of the ${NUM[n]} ringed hydrogen atoms of ${p.name}, each on a carbon atom bonded to ${WORD[bonded]}, gives the ${gr.name} group.`);
+    headline(ctx, n === 1 ? `去掉${p.name}中心碳原子上唯一的氢原子（该碳原子${WORD[bonded]}），得到${gr.name}。`
+      : `去掉${p.name}中${NUM[n]}个被圈出的氢原子中的任意一个（每个氢原子所在的碳原子${WORD[bonded]}），得到${gr.name}。`);
     F.arrow(ctx, 690, CY, 790, CY, PAL.ink, 4);
     text(ctx, '− H', 740, CY - 30, PAL.ink, { size: 22, align: 'center' });
     KEYS.forEach((k) => pick.only(ctx, k, () => scene(ctx, k, k === pick.value), [0, 10]));
-    tex(d.readout, `\\text{${p.name}, }${p.mf}\\;-\\;\\text{H}\\;\\longrightarrow\\;\\text{${gr.name}, }${gr.mf}`);
+    tex(d.readout, `\\text{${p.name}，}${p.mf}\\;-\\;\\text{H}\\;\\longrightarrow\\;\\text{${gr.name}，}${gr.mf}`);
   }
   still(d, draw);
 })();
@@ -505,8 +505,8 @@ function views(d, three, mount, draw) {
   const H = 640, d = sim('sim-fractional-distillation', H);
   const TL = 560, TR = 780, TT = 92, TB = 600, MX = (TL + TR) / 2;
   const FR = [
-    { name: 'refinery gas', y: 134, n: 2 }, { name: 'gasoline', y: 192, n: 5 }, { name: 'naphtha', y: 262, n: 7 }, { name: 'kerosene', y: 332, n: 9 },
-    { name: 'diesel oil', y: 402, n: 11 }, { name: 'fuel oil', y: 472, n: 13 }, { name: 'residue', y: 588, n: 16 },
+    { name: '炼厂气', y: 134, n: 2 }, { name: '汽油', y: 192, n: 5 }, { name: '石脑油', y: 262, n: 7 }, { name: '煤油', y: 332, n: 9 },
+    { name: '柴油', y: 402, n: 11 }, { name: '燃料油', y: 472, n: 13 }, { name: '残渣', y: 588, n: 16 },
   ];
   const TRAYS = [212, 282, 352, 422, 492];
   const INLET = 540, FUR = { l: 250, r: 420, t: 470, b: 600 };
@@ -546,15 +546,15 @@ function views(d, three, mount, draw) {
   function draw() {
     const { ctx } = begin(d.c); hits = [];
     const cT = C('temperature'), t = cy.now() / 6;
-    headline(ctx, 'Small molecules rise high before they condense; large ones condense low or never vaporize.');
+    headline(ctx, '小分子上升得很高才冷凝；大分子在较低处冷凝，或根本不汽化。');
     /* the crude oil pipe, the furnace and the pipe into the tower */
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5;
     ctx.strokeRect(FUR.l, FUR.t, FUR.r - FUR.l, FUR.b - FUR.t);
     [[40, 560, FUR.l, 560], [40, 576, FUR.l, 576], [FUR.r, 532, TL, 532], [FUR.r, 548, TL, 548]].forEach(([a, b, c2, e]) => line(ctx, a, b, c2, e, PAL.ink, 2.5));
     ctx.restore();
-    text(ctx, 'furnace', (FUR.l + FUR.r) / 2, FUR.t - 46, PAL.ink, { size: 20, weight: 600, align: 'center' });
-    text(ctx, 'about 425 °C', (FUR.l + FUR.r) / 2, FUR.t - 20, cT, { size: 20, weight: 600, align: 'center' });
-    text(ctx, 'crude oil', 50, 535, PAL.ink, { size: 20, weight: 600 });
+    text(ctx, '加热炉', (FUR.l + FUR.r) / 2, FUR.t - 46, PAL.ink, { size: 20, weight: 600, align: 'center' });
+    text(ctx, '约 425 °C', (FUR.l + FUR.r) / 2, FUR.t - 20, cT, { size: 20, weight: 600, align: 'center' });
+    text(ctx, '原油', 50, 535, PAL.ink, { size: 20, weight: 600 });
     /* the tower, its trays with bubble caps, and the draw-off pipes */
     ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.moveTo(TL, TB); ctx.lineTo(TL, TT + 30); ctx.quadraticCurveTo(TL, TT, MX, TT); ctx.quadraticCurveTo(TR, TT, TR, TT + 30); ctx.lineTo(TR, TB); ctx.closePath(); ctx.stroke(); ctx.restore();
@@ -565,16 +565,16 @@ function views(d, three, mount, draw) {
     FR.forEach((f) => {
       line(ctx, TR, f.y - 8, PX, f.y - 8, PAL.ink, 2.5); line(ctx, TR, f.y + 8, PX, f.y + 8, PAL.ink, 2.5);
       text(ctx, f.name, PX + 14, f.y, PAL.ink, { size: 20, weight: 600 });
-      hits.push({ x: PX - 30, y: f.y, r: 16, name: `the pipe that draws off the ${f.name}` });
+      hits.push({ x: PX - 30, y: f.y, r: 16, name: `引出${f.name}的管道` });
     });
-    hits.push({ x: (FUR.l + FUR.r) / 2, y: (FUR.t + FUR.b) / 2, r: 60, name: 'the furnace, where crude oil is heated to about 425 °C' });
+    hits.push({ x: (FUR.l + FUR.r) / 2, y: (FUR.t + FUR.b) / 2, r: 60, name: '加热炉，原油在此被加热到约 425 °C' });
     /* the book's double arrow beside the tower, drawn on the temperature hue: strongest where the tower is hottest */
     const BX = 1110, BT = 150, BB = 560;
     const grad = ctx.createLinearGradient(0, BT, 0, BB); grad.addColorStop(0, alpha(cT, 0.12)); grad.addColorStop(1, alpha(cT, 0.85));
     ctx.save(); ctx.fillStyle = grad; ctx.fillRect(BX - 9, BT, 18, BB - BT); ctx.restore();
-    text(ctx, 'cooler', BX, BT - 18, PAL.ink, { size: 18, align: 'center' });
-    text(ctx, 'hotter', BX, BB + 22, PAL.ink, { size: 18, align: 'center' });
-    [['Small molecules:', 'low boiling point,', 'very volatile, flows easily,', 'ignites easily'], ['Large molecules:', 'high boiling point,', 'not very volatile, does not', 'flow easily, does not', 'ignite easily']].forEach((ls, i) => {
+    text(ctx, '较冷', BX, BT - 18, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, '较热', BX, BB + 22, PAL.ink, { size: 18, align: 'center' });
+    [['小分子：', '沸点低，', '挥发性很强，易流动，', '易着火'], ['大分子：', '沸点高，', '挥发性不强，不易', '流动，不易', '着火']].forEach((ls, i) => {
       const y0 = i ? 430 : 170;
       ls.forEach((s, j) => text(ctx, s, BX + 30, y0 + j * 26, PAL.ink, { size: 18, weight: j ? 400 : 600 }));
     });
@@ -584,9 +584,9 @@ function views(d, three, mount, draw) {
       const a = Math.min(1, s / 0.04, (1 - s) / 0.05);
       if (s < P.boil || s > P.cond) { ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.beginPath(); ctx.ellipse(x, y, n * 3.5 + 6, 10, 0, 0, TAU); ctx.fill(); ctx.restore(); }
       chain(ctx, x, y, n, a);
-      hits.push({ x, y, r: n * 3.5 + 6, name: `a molecule of the ${FR[m.c].name}` });
+      hits.push({ x, y, r: n * 3.5 + 6, name: `${FR[m.c].name}的一个分子` });
     });
-    tex(d.readout, '\\text{boiling point:}\\quad \\text{refinery gas} < \\text{gasoline} < \\text{naphtha} < \\text{kerosene} < \\text{diesel oil} < \\text{fuel oil} < \\text{residue}');
+    tex(d.readout, '\\text{沸点：}\\quad \\text{炼厂气} < \\text{汽油} < \\text{石脑油} < \\text{煤油} < \\text{柴油} < \\text{燃料油} < \\text{残渣}');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -601,13 +601,13 @@ function views(d, three, mount, draw) {
 ===================================================================== */
 (function () {
   const H = 500, d = sim('sim-benzene', H);
-  const pick = F.choice(d.controls, { label: '\\text{structure}', key: 'structure', aria: 'the structure of benzene', value: 'form1',
-    options: [{ value: 'form1', label: 'resonance 1' }, { value: 'form2', label: 'resonance 2' }, { value: 'circle', label: 'delocalized' }], onInput: () => V.show() });
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: VIEWS, value: '2d', aria: 'a flat drawing or a scene to turn', ms: 0, onInput: () => V.show() });
+  const pick = F.choice(d.controls, { label: '\\text{结构}', key: 'structure', aria: '苯的结构', value: 'form1',
+    options: [{ value: 'form1', label: '共振式 1' }, { value: 'form2', label: '共振式 2' }, { value: 'circle', label: '离域' }], onInput: () => V.show() });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', options: VIEWS, value: '2d', aria: '平面图或可转动的场景', ms: 0, onInput: () => V.show() });
   const HEAD = {
-    form1: 'In one resonance structure, three double bonds alternate with three single bonds around the ring.',
-    form2: 'In the other, each double bond has moved to the next pair of carbon atoms.',
-    circle: 'The six carbon-carbon bonds are equivalent, each between a single and a double bond, and the circle shows it.',
+    form1: '在一个共振式中，三个双键与三个单键沿环交替排列。',
+    form2: '在另一个共振式中，每个双键都移到了下一对碳原子上。',
+    circle: '六个碳碳键是等价的，每个都介于单键与双键之间，圆圈表示了这一点。',
   };
   /* the state as numbers: the angle of the first double bond's midpoint and how far the three have opened into the circle */
   const ST = { form1: { base: 120, arc: 0 }, form2: { base: 180, arc: 0 }, circle: { base: 150, arc: 1 } };
@@ -632,13 +632,13 @@ function views(d, three, mount, draw) {
       }
       ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 3; ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
     }
-    atoms.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 22, name: i < 6 ? 'carbon atom, sp² hybridized' : 'hydrogen atom' }));
+    atoms.forEach((t, i) => hits.push({ x: t.x, y: t.y, r: 22, name: i < 6 ? '碳原子，sp² 杂化' : '氢原子' }));
   }
   /* ---------- the ring in three dimensions ---------- */
   let g = null;
   function mount() {
     const v = F.view3d(d.stage, { h: H, dist: 15.5, tilt: 0.35, spin: 'idle', pitch: [-1.5, 1.5], yaw: 'free', zoomMin: 0.6, zoomMax: 2.4,
-      views: [{ label: 'face on', yaw: 0, pitch: 0 }, { label: 'edge on', yaw: 0, pitch: 1.5 }] });
+      views: [{ label: '正对环面', yaw: 0, pitch: 0 }, { label: '侧对环缘', yaw: 0, pitch: 1.5 }] });
     g = v.part(0); g.position.y = -0.5; return v;
   }
   function draw3d(v) {
@@ -648,18 +648,18 @@ function views(d, three, mount, draw) {
     for (let k = 0; k < 6; k++) { const a = (90 + 60 * k) * RAD; Cs.push([RC * Math.cos(a), RC * Math.sin(a), 0]); Hs.push([RHH * Math.cos(a), RHH * Math.sin(a), 0]); }
     const st = pick.value;
     Cs.forEach((p, k) => {
-      v.pickable(F.mesh.sphere(g, p, 0.34, F.el('C')), 'carbon atom, sp² hybridized');
-      v.pickable(F.mesh.sphere(g, Hs[k], 0.24, F.el('H')), 'hydrogen atom');
+      v.pickable(F.mesh.sphere(g, p, 0.34, F.el('C')), '碳原子，sp² 杂化');
+      v.pickable(F.mesh.sphere(g, Hs[k], 0.24, F.el('H')), '氢原子');
       F.mesh.bond(g, p, Hs[k], 1, 0.08, PAL.muted);
       const dbl = st === 'form1' ? k % 2 === 0 : st === 'form2' ? k % 2 === 1 : false;
       F.mesh.bond(g, p, Cs[(k + 1) % 6], dbl ? 2 : 1, 0.08, PAL.muted);
-      [[0, 0, 1], [0, 0, -1]].forEach((u) => v.pickable(F.mesh.lobe(g, p, u, 1.0, PAL.ink), 'a lobe of an unhybridized p orbital, perpendicular to the ring'));
+      [[0, 0, 1], [0, 0, -1]].forEach((u) => v.pickable(F.mesh.lobe(g, p, u, 1.0, PAL.ink), '未杂化 p 轨道的一个瓣，垂直于环平面'));
     });
     if (st === 'circle') {
       const T3 = window.THREE;
       [0.85, -0.85].forEach((z) => {
         const m = new T3.Mesh(new T3.TorusGeometry(RC, 0.2, 12, 60), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.32 }));
-        m.position.set(0, 0, z); g.add(m); v.pickable(m, `the delocalized π electrons, ${z > 0 ? 'above' : 'below'} the ring`);
+        m.position.set(0, 0, z); g.add(m); v.pickable(m, `离域的 π 电子，${z > 0 ? '位于环的上方' : '位于环的下方'}`);
       });
     }
     v.headline(HEAD[st]);
@@ -669,8 +669,8 @@ function views(d, three, mount, draw) {
   function draw() {
     if (VIEW.value === '3d' && V.v) draw3d(V.v); else draw2d();
     tex(d.readout, pick.value === 'circle'
-      ? '\\text{C}_6\\text{H}_6\\text{:}\\quad 6\\ \\text{equivalent C–C bonds, each between a single and a double bond}'
-      : '\\text{C}_6\\text{H}_6\\text{:}\\quad 3\\ \\text{C–C single bonds} + 3\\ \\text{C=C double bonds}');
+      ? '\\text{C}_6\\text{H}_6\\text{：}\\quad 6\\ \\text{个等价的 C–C 键，每个都介于单键与双键之间}'
+      : '\\text{C}_6\\text{H}_6\\text{：}\\quad 3\\ \\text{个 C–C 单键} + 3\\ \\text{个 C=C 双键}');
   }
   still(d, draw);
 })();

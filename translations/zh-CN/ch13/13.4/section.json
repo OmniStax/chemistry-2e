@@ -2,32 +2,40 @@
  "id": "13.4",
  "module": "m68801",
  "chapter": "13",
- "title": "Equilibrium Calculations",
- "short": "Equilibrium Calculations",
- "lead": "Equilibrium constants and equilibrium <span data-concept=\"concentration\">concentrations</span> can each be calculated from the other. This section gathers a reaction’s initial <span data-concept=\"concentration\">concentrations</span>, their changes and its equilibrium <span data-concept=\"concentration\">concentrations</span> in an ICE table, and uses it to find an <span data-concept=\"equilibrium-constant\">equilibrium constant</span>, a missing <span data-concept=\"concentration\">concentration</span>, or a whole equilibrium mixture.",
+ "title": "平衡计算",
+ "short": "平衡计算",
+ "lead": "平衡常数与平衡<span data-concept=\"concentration\">浓度</span>可以互相推算。本节把一个反应的初始<span data-concept=\"concentration\">浓度</span>、它们的变化量和平衡<span data-concept=\"concentration\">浓度</span>汇集在一张 ICE 表中，并用它求出<span data-concept=\"equilibrium-constant\">平衡常数</span>、未知的<span data-concept=\"concentration\">浓度</span>，或整个平衡混合物。",
  "objectives": [
-  "Identify the changes in concentration or pressure that occur for chemical species in equilibrium systems",
-  "Calculate equilibrium concentrations or pressures and equilibrium constants, using various algebraic approaches"
+  "确定平衡体系中各化学物种的浓度或压强变化",
+  "用多种代数方法计算平衡浓度或平衡压强以及平衡常数"
  ],
- "summary_html": "<p>Calculating values for <span data-concept=\"equilibrium-constant\">equilibrium constants</span> and/or equilibrium <span data-concept=\"concentration\">concentrations</span> is of practical benefit to many applications. A mathematical strategy that uses initial <span data-concept=\"concentration\">concentrations</span>, changes in <span data-concept=\"concentration\">concentrations</span>, and equilibrium <span data-concept=\"concentration\">concentrations</span> (and goes by the acronym ICE) is useful for several types of equilibrium calculations.</p>",
- "notes": "Nothing of the section is left out; the ICE tables the book prints as images are written as tables, and the “NaSO₄” of Exercise 13.70 and the square brackets on the pressures in the key of Exercise 13.76 are kept as printed.",
+ "summary_html": "<p>计算<span data-concept=\"equilibrium-constant\">平衡常数</span>和/或平衡<span data-concept=\"concentration\">浓度</span>的值，在许多应用中都有实际益处。一种使用初始<span data-concept=\"concentration\">浓度</span>、<span data-concept=\"concentration\">浓度</span>变化量和平衡<span data-concept=\"concentration\">浓度</span>的数学策略（其缩写为 ICE）对几类平衡计算都很有用。</p>",
+ "notes": "本节没有遗漏任何内容；书中以图片形式印出的 ICE 表在这里写成了表格，习题 13.70 中的“NaSO₄”以及习题 13.76 答案中压强外的方括号均按原样保留。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The sixteen unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp235853120, fs-idp220009680, fs-idp99340080, fs-idp95397216, fs-idp165909856, fs-idp120770528, fs-idp193760224, fs-idp277387888, fs-idp97213088, fs-idp145400352, fs-idp124881392, fs-idp307489856, fs-idp186517200, fs-idp301926064, fs-idp157265136, fs-idp303786512. The unkeyed exercises fs-idp155255936, fs-idp76682304, fs-idp359131456 and fs-idp222775760 carry a suggested approach marked as OmniStax’s own. The [H₂] of 0.06 M in the second Check Your Learning of Example 13.9 accepts 10%; other numeric answers accept 2%. No exercise moves between sections.",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书后答案和“学习检测”的答案。十六道没有答案的数值习题被省略，也没有为它们算出答案：fs-idp235853120、fs-idp220009680、fs-idp99340080、fs-idp95397216、fs-idp165909856、fs-idp120770528、fs-idp193760224、fs-idp277387888、fs-idp97213088、fs-idp145400352、fs-idp124881392、fs-idp307489856、fs-idp186517200、fs-idp301926064、fs-idp157265136、fs-idp303786512。没有答案的习题 fs-idp155255936、fs-idp76682304、fs-idp359131456 和 fs-idp222775760 附有一份标明为 OmniStax 自己撰写的建议思路。例 13.9 第二个“学习检测”中 [H₂] 的 0.06 M 允许 10% 的误差；其他数值答案允许 2% 的误差。没有习题在各节之间移动。",
  "figures": [
   {
    "id": "sim-small-x",
@@ -41,6 +49,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -133,11 +146,11 @@
     "after": "ex-changes"
    },
    "cite": "changes",
-   "prompt": "Complete the changes in concentrations for each of the following reactions:<br>(a) $\\begin{array}{llll}2{\\text{SO}}_{2}(g)+ & {\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{SO}}_{3}(g) \\\\ \\_\\_\\_\\_\\_ & x & & \\_\\_\\_\\_\\_\\end{array}$<br>(b) $\\begin{array}{lll}{\\text{C}}_{4}{\\text{H}}_{8}(g) & \\rightleftharpoons & 2{\\text{C}}_{2}{\\text{H}}_{4}(g) \\\\ \\_\\_\\_\\_\\_ & & -2x\\end{array}$<br>(c) $\\begin{array}{lllll}4{\\text{NH}}_{3}(g)+ & 7{\\text{O}}_{2}(g) & \\rightleftharpoons & 4{\\text{NO}}_{2}(g)+ & 6{\\text{H}}_{2}\\text{O}(g) \\\\ \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_ & & \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_\\end{array}$",
+   "prompt": "补全下列每个反应中的浓度变化量：<br>（a）$\\begin{array}{llll}2{\\text{SO}}_{2}(g)+ & {\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{SO}}_{3}(g) \\\\ \\_\\_\\_\\_\\_ & x & & \\_\\_\\_\\_\\_\\end{array}$<br>（b）$\\begin{array}{lll}{\\text{C}}_{4}{\\text{H}}_{8}(g) & \\rightleftharpoons & 2{\\text{C}}_{2}{\\text{H}}_{4}(g) \\\\ \\_\\_\\_\\_\\_ & & -2x\\end{array}$<br>（c）$\\begin{array}{lllll}4{\\text{NH}}_{3}(g)+ & 7{\\text{O}}_{2}(g) & \\rightleftharpoons & 4{\\text{NO}}_{2}(g)+ & 6{\\text{H}}_{2}\\text{O}(g) \\\\ \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_ & & \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_\\end{array}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) 2<em>x</em>, <em>x</em>, −2<em>x;</em> (b) <em>x</em>, −2<em>x;</em> (c) 4<em>x</em>, 7<em>x</em>, −4<em>x</em>, −6<em>x</em> or −4<em>x</em>, −7<em>x</em>, 4<em>x</em>, 6<em>x</em>"
+    "solution": "（a）2<em>x</em>、<em>x</em>、−2<em>x；</em>（b）<em>x</em>、−2<em>x；</em>（c）4<em>x</em>、7<em>x</em>、−4<em>x</em>、−6<em>x</em> 或 −4<em>x</em>、−7<em>x</em>、4<em>x</em>、6<em>x</em>"
    }
   },
   {
@@ -150,12 +163,12 @@
     "after": "ex-calc-k"
    },
    "cite": "calc-k",
-   "prompt": "Ethanol and acetic acid react and form water and ethyl acetate, the solvent responsible for the odor of some nail polish removers.<br>${\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}\\rightleftharpoons{\\text{CH}}_{3}{\\text{CO}}_{2}{\\text{C}}_{2}{\\text{H}}_{5}+{\\text{H}}_{2}\\text{O}$<br>When 1 mol each of C<sub>2</sub>H<sub>5</sub>OH and CH<sub>3</sub>CO<sub>2</sub>H are allowed to react in 1 L of the solvent dioxane, equilibrium is established when $\\frac{1}{3}$ mol of each of the reactants remains. Calculate the equilibrium constant for the reaction. (Note: Water is a solute in this reaction.)",
+   "prompt": "乙醇和乙酸反应，生成水和乙酸乙酯，乙酸乙酯是造成某些洗甲水气味的溶剂。<br>${\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}\\rightleftharpoons{\\text{CH}}_{3}{\\text{CO}}_{2}{\\text{C}}_{2}{\\text{H}}_{5}+{\\text{H}}_{2}\\text{O}$<br>让 C<sub>2</sub>H<sub>5</sub>OH 和 CH<sub>3</sub>CO<sub>2</sub>H 各 1 mol 在 1 L 溶剂 1,4-二氧杂环己烷中反应，当每种反应物各剩下 $\\frac{1}{3}$ mol 时建立平衡。计算该反应的平衡常数。（注：在此反应中水是溶质。）",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 4,
-    "hint": "Each reactant falls by 2/3 mol in the 1 L, so each product rises by the same amount; fill in an ICE table and substitute.",
+    "hint": "在 1 L 中每种反应物减少 2/3 mol，因此每种产物增加同样的量；填写 ICE 表并代入。",
     "solution": "<em>K<sub>c</sub></em> = 4"
    }
   },
@@ -169,13 +182,13 @@
     "after": "ex-missing"
    },
    "cite": "missing",
-   "prompt": "The equilibrium constant <em>K<sub>c</sub></em> for the reaction of nitrogen and hydrogen to produce ammonia at a certain temperature is 6.00 × 10<sup>−2</sup>. Calculate the equilibrium concentration of ammonia if the equilibrium concentrations of nitrogen and hydrogen are 4.26 <em>M</em> and 2.09 <em>M</em>, respectively.",
+   "prompt": "在某一温度下，氮与氢反应生成氨的平衡常数 <em>K<sub>c</sub></em> 为 6.00 × 10<sup>−2</sup>。若氮和氢的平衡浓度分别为 4.26 <em>M</em> 和 2.09 <em>M</em>，计算氨的平衡浓度。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.53,
     "unit": "mol/L",
-    "hint": "For N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>, solve <em>K<sub>c</sub></em> = [NH<sub>3</sub>]<sup>2</sup>/([N<sub>2</sub>][H<sub>2</sub>]<sup>3</sup>) for [NH<sub>3</sub>].",
+    "hint": "对于 N<sub>2</sub> + 3H<sub>2</sub> ⇌ 2NH<sub>3</sub>，由 <em>K<sub>c</sub></em> = [NH<sub>3</sub>]<sup>2</sup>/([N<sub>2</sub>][H<sub>2</sub>]<sup>3</sup>) 解出 [NH<sub>3</sub>]。",
     "solution": "1.53 mol/L"
    }
   },
@@ -189,7 +202,7 @@
     "after": "ex-pcl5"
    },
    "cite": "initial",
-   "prompt": "Acetic acid, CH<sub>3</sub>CO<sub>2</sub>H, reacts with ethanol, C<sub>2</sub>H<sub>5</sub>OH, to form water and ethyl acetate, CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>.<br>${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}+{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}\\rightleftharpoons{\\text{CH}}_{3}{\\text{CO}}_{2}{\\text{C}}_{2}{\\text{H}}_{5}+{\\text{H}}_{2}\\text{O}$<br>The equilibrium constant for this reaction with dioxane as a solvent is 4.0. What are the equilibrium concentrations for a mixture that is initially 0.15 <em>M</em> in CH<sub>3</sub>CO<sub>2</sub>H, 0.15 <em>M</em> in C<sub>2</sub>H<sub>5</sub>OH, 0.40 <em>M</em> in CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>, and 0.40 <em>M</em> in H<sub>2</sub>O?",
+   "prompt": "乙酸 CH<sub>3</sub>CO<sub>2</sub>H 与乙醇 C<sub>2</sub>H<sub>5</sub>OH 反应，生成水和乙酸乙酯 CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>。<br>${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}+{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}\\rightleftharpoons{\\text{CH}}_{3}{\\text{CO}}_{2}{\\text{C}}_{2}{\\text{H}}_{5}+{\\text{H}}_{2}\\text{O}$<br>以 1,4-二氧杂环己烷为溶剂时，该反应的平衡常数为 4.0。对于起始时 CH<sub>3</sub>CO<sub>2</sub>H 为 0.15 <em>M</em>、C<sub>2</sub>H<sub>5</sub>OH 为 0.15 <em>M</em>、CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub> 为 0.40 <em>M</em>、H<sub>2</sub>O 为 0.40 <em>M</em> 的混合物，各平衡浓度是多少？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -228,7 +241,7 @@
     "after": "ex-pcl5-2"
    },
    "cite": "initial",
-   "prompt": "A 1.00-L flask is filled with 1.00 mole of H<sub>2</sub> and 2.00 moles of I<sub>2</sub>. The value of the equilibrium constant for the reaction of hydrogen and iodine reacting to form hydrogen iodide is 50.5 under the given conditions. What are the equilibrium concentrations of H<sub>2</sub>, I<sub>2</sub>, and HI in moles/L?<br>${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\rightleftharpoons 2\\text{HI}(g)$",
+   "prompt": "一个 1.00 L 的烧瓶中装有 1.00 mol H<sub>2</sub> 和 2.00 mol I<sub>2</sub>。在给定条件下，氢与碘反应生成碘化氢的平衡常数值为 50.5。H<sub>2</sub>、I<sub>2</sub> 和 HI 的平衡浓度（以 mol/L 计）各是多少？<br>${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\rightleftharpoons 2\\text{HI}(g)$",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -263,7 +276,7 @@
     "after": "ex-hcn"
    },
    "cite": "initial",
-   "prompt": "What are the equilibrium concentrations in a 0.25 <em>M</em> NH<sub>3</sub> solution?<br>${\\text{NH}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons\\;{\\text{NH}}_{4}{}^{+}(aq)+{\\text{OH}}^{-}(aq)\\hspace{5em}{K}_{\\text{c}}=1.8\\;\\times\\;{10}^{-5}$",
+   "prompt": "0.25 <em>M</em> 的 NH<sub>3</sub> 溶液中各平衡浓度是多少？<br>${\\text{NH}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\rightleftharpoons\\;{\\text{NH}}_{4}{}^{+}(aq)+{\\text{OH}}^{-}(aq)\\hspace{5em}{K}_{\\text{c}}=1.8\\;\\times\\;{10}^{-5}$",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -292,11 +305,11 @@
     "at": "end"
    },
    "cite": "calc-k",
-   "prompt": "A reaction is represented by this equation: $\\text{A}(aq)+2\\text{B}(aq)\\rightleftharpoons 2\\text{C}(aq)\\hspace{5em}{K}_{c}=1\\;\\times \\;{10}^{3}$<br>(a) Write the mathematical expression for the equilibrium constant.<br>(b) Using concentrations ≤1 <em>M</em>, identify two sets of concentrations that describe a mixture of A, B, and C at equilibrium.",
+   "prompt": "一个反应由下面的方程式表示：$\\text{A}(aq)+2\\text{B}(aq)\\rightleftharpoons 2\\text{C}(aq)\\hspace{5em}{K}_{c}=1\\;\\times \\;{10}^{3}$<br>（a）写出平衡常数的数学表达式。<br>（b）使用不大于 1 <em>M</em> 的浓度，找出两组描述处于平衡的 A、B、C 混合物的浓度。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "${K}_{c}=\\;\\frac{{[\\text{C}]}^{2}}{[\\text{A}]{[\\text{B}]}^{2}}.$ [A] = 0.1 <em>M</em>, [B] = 0.1 <em>M</em>, [C] = 1 <em>M</em>; and [A] = 0.01, [B] = 0.250, [C] = 0.791."
+    "solution": "${K}_{c}=\\;\\frac{{[\\text{C}]}^{2}}{[\\text{A}]{[\\text{B}]}^{2}}.$ [A] = 0.1 <em>M</em>，[B] = 0.1 <em>M</em>，[C] = 1 <em>M</em>；以及 [A] = 0.01，[B] = 0.250，[C] = 0.791。"
    }
   },
   {
@@ -309,7 +322,7 @@
     "at": "end"
    },
    "cite": "calc-k",
-   "prompt": "What is the value of the equilibrium constant at 500 °C for the formation of NH<sub>3</sub> according to the following equation?<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>An equilibrium mixture of NH<sub>3</sub>(<em>g</em>), H<sub>2</sub>(<em>g</em>), and N<sub>2</sub>(<em>g</em>) at 500 °C was found to contain 1.35 <em>M</em> H<sub>2</sub>, 1.15 <em>M</em> N<sub>2</sub>, and 4.12 × 10<sup>−1</sup> <em>M</em> NH<sub>3</sub>.",
+   "prompt": "根据下面的方程式，NH<sub>3</sub> 的生成反应在 500 °C 时的平衡常数值是多少？<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>在 500 °C 下，NH<sub>3</sub>(<em>g</em>)、H<sub>2</sub>(<em>g</em>) 和 N<sub>2</sub>(<em>g</em>) 的平衡混合物中测得含 1.35 <em>M</em> H<sub>2</sub>、1.15 <em>M</em> N<sub>2</sub> 和 4.12 × 10<sup>−1</sup> <em>M</em> NH<sub>3</sub>。",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -327,7 +340,7 @@
     "at": "end"
    },
    "cite": "calc-k",
-   "prompt": "A 0.72-mol sample of PCl<sub>5</sub> is put into a 1.00-L vessel and heated. At equilibrium, the vessel contains 0.40 mol of PCl<sub>3</sub>(<em>g</em>) and 0.40 mol of Cl<sub>2</sub>(<em>g</em>). Calculate the value of the equilibrium constant for the decomposition of PCl<sub>5</sub> to PCl<sub>3</sub> and Cl<sub>2</sub> at this temperature.",
+   "prompt": "将 0.72 mol 的 PCl<sub>5</sub> 样品放入 1.00 L 的容器中并加热。平衡时，容器中含有 0.40 mol PCl<sub>3</sub>(<em>g</em>) 和 0.40 mol Cl<sub>2</sub>(<em>g</em>)。计算该温度下 PCl<sub>5</sub> 分解为 PCl<sub>3</sub> 和 Cl<sub>2</sub> 的平衡常数值。",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -345,7 +358,7 @@
     "at": "end"
    },
    "cite": "calc-k",
-   "prompt": "Calculate the value of the equilibrium constant <em>K<sub>P</sub></em> for the reaction $2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)$ from these equilibrium pressures: NO, 0.050 atm; Cl<sub>2</sub>, 0.30 atm; NOCl, 1.2 atm.",
+   "prompt": "根据下列平衡压强，计算反应 $2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)$ 的平衡常数 <em>K<sub>P</sub></em> 的值：NO，0.050 atm；Cl<sub>2</sub>，0.30 atm；NOCl，1.2 atm。",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -363,7 +376,7 @@
     "at": "end"
    },
    "cite": "calc-k",
-   "prompt": "A sample of ammonium chloride was heated in a closed container.<br>${\\text{NH}}_{4}\\text{Cl}(s)\\rightleftharpoons {\\text{NH}}_{3}(g)+\\text{HCl}(g)$<br>At equilibrium, the pressure of NH<sub>3</sub>(<em>g</em>) was found to be 1.75 atm. What is the value of the equilibrium constant <em>K<sub>P</sub></em> for the decomposition at this temperature?",
+   "prompt": "在密闭容器中加热一份氯化铵样品。<br>${\\text{NH}}_{4}\\text{Cl}(s)\\rightleftharpoons {\\text{NH}}_{3}(g)+\\text{HCl}(g)$<br>平衡时，测得 NH<sub>3</sub>(<em>g</em>) 的压强为 1.75 atm。该温度下分解反应的平衡常数 <em>K<sub>P</sub></em> 的值是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -381,11 +394,11 @@
     "at": "end"
    },
    "cite": "changes",
-   "prompt": "Complete the following partial ICE tables.<br>(a)<br>$\\begin{array}{lllll} & 2{\\text{SO}}_{3}(g) & \\rightleftharpoons & 2{\\text{SO}}_{2}(g)+ & {\\text{O}}_{2}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & +x\\end{array}$<br>(b)<br>$\\begin{array}{llllll} & 4{\\text{NH}}_{3}(g) & +\\;3{\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{N}}_{2}(g)+ & 6{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & +x & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>(c)<br>$\\begin{array}{lllll} & 2{\\text{CH}}_{4}(g) & \\rightleftharpoons & {\\text{C}}_{2}{\\text{H}}_{2}(g)+ & 3{\\text{H}}_{2}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>(d)<br>$\\begin{array}{llllll} & {\\text{CH}}_{4}(g)+ & {\\text{H}}_{2}\\text{O}(g) & \\rightleftharpoons & \\text{CO}(g)+ & 3{\\text{H}}_{2}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & +x & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>(e)<br>$\\begin{array}{llll}{\\text{NH}}_{4}\\text{Cl}(s) & \\rightleftharpoons & {\\text{NH}}_{3}(g)+ & \\text{HCl}(g) \\\\ \\text{change} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>(f)<br>$\\begin{array}{llll}\\text{Ni}(s)+ & 4\\text{CO}(g) & \\rightleftharpoons & \\text{Ni}{(\\text{CO})}_{4}(g) \\\\ \\text{change} & +x & & \\text{\\_\\_\\_}\\end{array}$",
+   "prompt": "补全下列不完整的 ICE 表。<br>（a）<br>$\\begin{array}{lllll} & 2{\\text{SO}}_{3}(g) & \\rightleftharpoons & 2{\\text{SO}}_{2}(g)+ & {\\text{O}}_{2}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & +x\\end{array}$<br>（b）<br>$\\begin{array}{llllll} & 4{\\text{NH}}_{3}(g) & +\\;3{\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{N}}_{2}(g)+ & 6{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & +x & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>（c）<br>$\\begin{array}{lllll} & 2{\\text{CH}}_{4}(g) & \\rightleftharpoons & {\\text{C}}_{2}{\\text{H}}_{2}(g)+ & 3{\\text{H}}_{2}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>（d）<br>$\\begin{array}{llllll} & {\\text{CH}}_{4}(g)+ & {\\text{H}}_{2}\\text{O}(g) & \\rightleftharpoons & \\text{CO}(g)+ & 3{\\text{H}}_{2}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & +x & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>（e）<br>$\\begin{array}{llll}{\\text{NH}}_{4}\\text{Cl}(s) & \\rightleftharpoons & {\\text{NH}}_{3}(g)+ & \\text{HCl}(g) \\\\ \\text{变化} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>（f）<br>$\\begin{array}{llll}\\text{Ni}(s)+ & 4\\text{CO}(g) & \\rightleftharpoons & \\text{Ni}{(\\text{CO})}_{4}(g) \\\\ \\text{变化} & +x & & \\text{\\_\\_\\_}\\end{array}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) −2<em>x</em>, +2<em>x</em>; (b) $\\frac{4}{3}x$, $-\\frac{2}{3}x$, −2<em>x</em>; (c) −2<em>x</em>, 3<em>x</em>; (d) <em>x</em>, –<em>x</em>, −3<em>x</em>; (e) +<em>x</em>; (f) $-\\frac{1}{4}x$"
+    "solution": "（a）−2<em>x</em>、+2<em>x</em>；（b）$\\frac{4}{3}x$、$-\\frac{2}{3}x$、−2<em>x</em>；（c）−2<em>x</em>、3<em>x</em>；（d）<em>x</em>、–<em>x</em>、−3<em>x</em>；（e）+<em>x</em>；（f）$-\\frac{1}{4}x$"
    }
   },
   {
@@ -398,11 +411,11 @@
     "at": "end"
    },
    "cite": "changes",
-   "prompt": "Complete the following partial ICE tables.<br>(a)<br>$\\begin{array}{lllll} & 2{\\text{H}}_{2}(g)+ & {\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & \\text{\\_\\_\\_} & & +x\\end{array}$<br>(b)<br>$\\begin{array}{llllll} & {\\text{CS}}_{2}(g)+ & 4{\\text{H}}_{2}(g) & \\rightleftharpoons & {\\text{CH}}_{4}(g)+ & 2{\\text{H}}_{2}\\text{S}(g) \\\\ \\text{change} & +x & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>(c)<br>$\\begin{array}{lllll} & {\\text{H}}_{2}(g)+ & {\\text{Cl}}_{2}(g) & \\rightleftharpoons & 2\\text{HCl}(g) \\\\ \\text{change} & +x & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_}\\end{array}$<br>(d)<br>$\\begin{array}{llllll} & 2{\\text{NH}}_{3}(g) & +\\;2{\\text{O}}_{2}(g) & \\rightleftharpoons & {\\text{N}}_{2}\\text{O}(g)+ & 3{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & +x\\end{array}$<br>(e)<br>$\\begin{array}{llll}{\\text{NH}}_{4}\\text{HS}(s) & \\rightleftharpoons & {\\text{NH}}_{3}(g)+ & {\\text{H}}_{2}\\text{S}(g) \\\\ \\text{change} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>(f)<br>$\\begin{array}{llll}\\text{Fe}(s)+ & 5\\text{CO}(g) & \\rightleftharpoons & \\text{Fe}{(\\text{CO})}_{5}(g) \\\\ \\text{change} & \\text{\\_\\_\\_} & & +x\\end{array}$",
+   "prompt": "补全下列不完整的 ICE 表。<br>（a）<br>$\\begin{array}{lllll} & 2{\\text{H}}_{2}(g)+ & {\\text{O}}_{2}(g) & \\rightleftharpoons & 2{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & \\text{\\_\\_\\_} & & +x\\end{array}$<br>（b）<br>$\\begin{array}{llllll} & {\\text{CS}}_{2}(g)+ & 4{\\text{H}}_{2}(g) & \\rightleftharpoons & {\\text{CH}}_{4}(g)+ & 2{\\text{H}}_{2}\\text{S}(g) \\\\ \\text{变化} & +x & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & \\text{\\_\\_\\_}\\end{array}$<br>（c）<br>$\\begin{array}{lllll} & {\\text{H}}_{2}(g)+ & {\\text{Cl}}_{2}(g) & \\rightleftharpoons & 2\\text{HCl}(g) \\\\ \\text{变化} & +x & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_}\\end{array}$<br>（d）<br>$\\begin{array}{llllll} & 2{\\text{NH}}_{3}(g) & +\\;2{\\text{O}}_{2}(g) & \\rightleftharpoons & {\\text{N}}_{2}\\text{O}(g)+ & 3{\\text{H}}_{2}\\text{O}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & \\text{\\_\\_\\_} & & \\text{\\_\\_\\_} & +x\\end{array}$<br>（e）<br>$\\begin{array}{llll}{\\text{NH}}_{4}\\text{HS}(s) & \\rightleftharpoons & {\\text{NH}}_{3}(g)+ & {\\text{H}}_{2}\\text{S}(g) \\\\ \\text{变化} & & +x & \\text{\\_\\_\\_}\\end{array}$<br>（f）<br>$\\begin{array}{llll}\\text{Fe}(s)+ & 5\\text{CO}(g) & \\rightleftharpoons & \\text{Fe}{(\\text{CO})}_{5}(g) \\\\ \\text{变化} & \\text{\\_\\_\\_} & & +x\\end{array}$",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The change for each species is proportional to its coefficient: species on the same side as the given one change with the same sign, and species on the other side with the opposite sign. (a) H<sub>2</sub>O changes by +<em>x</em> for a coefficient of 2, or +½<em>x</em> per unit of coefficient, so H<sub>2</sub> is −<em>x</em> and O<sub>2</sub> is −½<em>x</em>. (b) H<sub>2</sub> is +4<em>x</em>, CH<sub>4</sub> is −<em>x</em>, and H<sub>2</sub>S is −2<em>x</em>. (c) Cl<sub>2</sub> is +<em>x</em> and HCl is −2<em>x</em>. (d) H<sub>2</sub>O changes by +<em>x</em> for a coefficient of 3, or +⅓<em>x</em> per unit, so NH<sub>3</sub> is −⅔<em>x</em>, O<sub>2</sub> is −⅔<em>x</em>, and N<sub>2</sub>O is +⅓<em>x</em>. (e) H<sub>2</sub>S is +<em>x</em>; the solid NH<sub>4</sub>HS has no change term. (f) CO is −5<em>x</em>; the solid Fe has no change term."
+    "solution": "每种物种的变化量与其系数成正比：与已知物种在方程式同一侧的物种，变化量的符号相同；在另一侧的物种，符号相反。（a）H<sub>2</sub>O 的系数为 2，变化量为 +<em>x</em>，即每单位系数变化 +½<em>x</em>，所以 H<sub>2</sub> 为 −<em>x</em>，O<sub>2</sub> 为 −½<em>x</em>。（b）H<sub>2</sub> 为 +4<em>x</em>，CH<sub>4</sub> 为 −<em>x</em>，H<sub>2</sub>S 为 −2<em>x</em>。（c）Cl<sub>2</sub> 为 +<em>x</em>，HCl 为 −2<em>x</em>。（d）H<sub>2</sub>O 的系数为 3，变化量为 +<em>x</em>，即每单位系数变化 +⅓<em>x</em>，所以 NH<sub>3</sub> 为 −⅔<em>x</em>，O<sub>2</sub> 为 −⅔<em>x</em>，N<sub>2</sub>O 为 +⅓<em>x</em>。（e）H<sub>2</sub>S 为 +<em>x</em>；固体 NH<sub>4</sub>HS 没有变化量一项。（f）CO 为 −5<em>x</em>；固体 Fe 没有变化量一项。"
    }
   },
   {
@@ -415,11 +428,11 @@
     "at": "end"
    },
    "cite": "changes",
-   "prompt": "Why are there no changes specified for Ni in Exercise 13.60, part (f)? What property of Ni does change?",
+   "prompt": "为什么习题 13.60 的（f）小题中没有给出 Ni 的变化量？Ni 的哪种性质确实发生了变化？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Activities of pure crystalline solids equal 1 and are constant; however, the mass of Ni does change."
+    "solution": "纯晶态固体的活度等于 1 且保持不变；然而，Ni 的质量确实发生了变化。"
    }
   },
   {
@@ -432,11 +445,11 @@
     "at": "end"
    },
    "cite": "changes",
-   "prompt": "Why are there no changes specified for NH<sub>4</sub>HS in Exercise 13.61, part (e)? What property of NH<sub>4</sub>HS does change?",
+   "prompt": "为什么习题 13.61 的（e）小题中没有给出 NH<sub>4</sub>HS 的变化量？NH<sub>4</sub>HS 的哪种性质确实发生了变化？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "NH<sub>4</sub>HS is a pure solid. Its concentration (activity) is constant, equal to 1, so it does not appear in <em>K<sub>c</sub></em> = [NH<sub>3</sub>][H<sub>2</sub>S], and an ICE table, which tracks only the concentrations in that expression, gives it no change. What does change is the amount, and so the mass, of NH<sub>4</sub>HS: as NH<sub>3</sub> and H<sub>2</sub>S form, one mole of the solid is used up for each mole of NH<sub>3</sub> produced, so its mass decreases while its concentration stays the same."
+    "solution": "NH<sub>4</sub>HS 是纯固体。它的浓度（活度）是恒定的，等于 1，所以不出现在 <em>K<sub>c</sub></em> = [NH<sub>3</sub>][H<sub>2</sub>S] 中；而 ICE 表只记录该表达式中出现的浓度，因此不给它变化量。确实发生变化的是 NH<sub>4</sub>HS 的量，从而也是它的质量：随着 NH<sub>3</sub> 和 H<sub>2</sub>S 生成，每生成 1 mol NH<sub>3</sub> 就消耗 1 mol 该固体，所以它的质量减少，而它的浓度保持不变。"
    }
   },
   {
@@ -449,7 +462,7 @@
     "at": "end"
    },
    "cite": "missing",
-   "prompt": "Analysis of the gases in a sealed reaction vessel containing NH<sub>3</sub>, N<sub>2</sub>, and H<sub>2</sub> at equilibrium at 400 °C established the concentration of N<sub>2</sub> to be 1.2 <em>M</em> and the concentration of H<sub>2</sub> to be 0.24 <em>M</em>.<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{5em}{K}_{c}=0.50\\;\\text{at}\\;400\\;{}^{\\circ}\\text{C}$<br>Calculate the equilibrium molar concentration of NH<sub>3</sub>.",
+   "prompt": "对含有 NH<sub>3</sub>、N<sub>2</sub> 和 H<sub>2</sub> 且在 400 °C 下处于平衡的密封反应容器中的气体进行分析，测得 N<sub>2</sub> 的浓度为 1.2 <em>M</em>，H<sub>2</sub> 的浓度为 0.24 <em>M</em>。<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{5em}{K}_{c}=0.50\\;\\text{（}400\\;{}^{\\circ}\\text{C}\\;\\text{时）}$<br>计算 NH<sub>3</sub> 的平衡物质的量浓度。",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -468,7 +481,7 @@
     "at": "end"
    },
    "cite": "missing",
-   "prompt": "What is the pressure of BrCl in an equilibrium mixture of Cl<sub>2</sub>, Br<sub>2</sub>, and BrCl if the pressure of Cl<sub>2</sub> in the mixture is 0.115 atm and the pressure of Br<sub>2</sub> in the mixture is 0.450 atm?<br>${\\text{Cl}}_{2}(g)+{\\text{Br}}_{2}(g)\\rightleftharpoons 2\\text{BrCl}(g)\\hspace{5em}{K}_{P}=4.7\\;\\times \\;{10}^{−2}$",
+   "prompt": "在 Cl<sub>2</sub>、Br<sub>2</sub> 和 BrCl 的平衡混合物中，如果混合物中 Cl<sub>2</sub> 的压强为 0.115 atm，Br<sub>2</sub> 的压强为 0.450 atm，那么 BrCl 的压强是多少？<br>${\\text{Cl}}_{2}(g)+{\\text{Br}}_{2}(g)\\rightleftharpoons 2\\text{BrCl}(g)\\hspace{5em}{K}_{P}=4.7\\;\\times \\;{10}^{−2}$",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -487,7 +500,7 @@
     "at": "end"
    },
    "cite": "missing",
-   "prompt": "Cobalt metal can be prepared by reducing cobalt(II) oxide with carbon monoxide.<br>$\\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g)\\hspace{5em}{K}_{c}=4.90\\;\\times \\;{10}^{2}\\text{at}\\;550\\;{}^{\\circ}\\text{C}$<br>What concentration of CO remains in an equilibrium mixture with [CO<sub>2</sub>] = 0.100 <em>M</em>?",
+   "prompt": "金属钴可以通过用一氧化碳还原氧化钴(II)来制备。<br>$\\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g)\\hspace{5em}{K}_{c}=4.90\\;\\times \\;{10}^{2}\\text{（}550\\;{}^{\\circ}\\text{C}\\;\\text{时）}$<br>在 [CO<sub>2</sub>] = 0.100 <em>M</em> 的平衡混合物中，剩余的 CO 浓度是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -506,7 +519,7 @@
     "at": "end"
    },
    "cite": "missing",
-   "prompt": "Sodium sulfate 10−hydrate, Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O, dehydrates according to the equation<br>${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{at}\\;25\\;{}^{\\circ}\\text{C}$<br>What is the pressure of water vapor at equilibrium with a mixture of Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O and NaSO<sub>4</sub><sup class=\"fn\" data-note=\"c-e70-naso4\"></sup>?",
+   "prompt": "十水合硫酸钠 Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O 按下面的方程式脱水：<br>${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{（}25\\;{}^{\\circ}\\text{C}\\;\\text{时）}$<br>与 Na<sub>2</sub>SO<sub>4</sub>·10H<sub>2</sub>O 和 NaSO<sub>4</sub><sup class=\"fn\" data-note=\"c-e70-naso4\"></sup> 的混合物处于平衡时，水蒸气的压强是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -525,11 +538,11 @@
     "at": "end"
    },
    "cite": "initial",
-   "prompt": "A student solved the following problem and found the equilibrium concentrations to be [SO<sub>2</sub>] = 0.590 <em>M</em>, [O<sub>2</sub>] = 0.0450 <em>M</em>, and [SO<sub>3</sub>] = 0.260 <em>M</em>. How could this student check the work without reworking the problem? The problem was: For the following reaction at 600 °C:<br>$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)\\hspace{5em}{K}_{c}=4.32$",
+   "prompt": "一名学生解了下面的题，求得平衡浓度为 [SO<sub>2</sub>] = 0.590 <em>M</em>、[O<sub>2</sub>] = 0.0450 <em>M</em> 和 [SO<sub>3</sub>] = 0.260 <em>M</em>。这名学生如何能不重做该题就检查自己的解答？题目是：对于 600 °C 下的下列反应：<br>$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)\\hspace{5em}{K}_{c}=4.32$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Calculate <em>Q</em> based on the calculated concentrations and see if it is equal to <em>K<sub>c</sub></em>. Because <em>Q</em> does equal 4.32, the system must be at equilibrium."
+    "solution": "根据算得的浓度计算 <em>Q</em>，看它是否等于 <em>K<sub>c</sub></em>。因为 <em>Q</em> 确实等于 4.32，所以体系必定处于平衡。"
    }
   },
   {
@@ -542,11 +555,11 @@
     "at": "end"
    },
    "cite": "initial",
-   "prompt": "A student solved the following problem and found [N<sub>2</sub>O<sub>4</sub>] = 0.16 <em>M</em> at equilibrium. How could this student recognize that the answer was wrong without reworking the problem? The problem was: What is the equilibrium concentration of N<sub>2</sub>O<sub>4</sub> in a mixture formed from a sample of NO<sub>2</sub> with a concentration of 0.10 <em>M</em>?<br>$2{\\text{NO}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{O}}_{4}(g)\\hspace{5em}{K}_{c}=160$",
+   "prompt": "一名学生解了下面的题，求得平衡时 [N<sub>2</sub>O<sub>4</sub>] = 0.16 <em>M</em>。这名学生如何能不重做该题就看出答案是错的？题目是：由浓度为 0.10 <em>M</em> 的 NO<sub>2</sub> 样品形成的混合物中，N<sub>2</sub>O<sub>4</sub> 的平衡浓度是多少？<br>$2{\\text{NO}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{O}}_{4}(g)\\hspace{5em}{K}_{c}=160$",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The answer is larger than the reaction can possibly give. By the stoichiometry 2NO<sub>2</sub> → N<sub>2</sub>O<sub>4</sub>, even if every NO<sub>2</sub> molecule reacted, 0.10 <em>M</em> NO<sub>2</sub> could form at most 0.10 <em>M</em> × ½ = 0.050 <em>M</em> N<sub>2</sub>O<sub>4</sub>. A concentration of 0.16 <em>M</em> would require more nitrogen and oxygen atoms than the sample contains. Because <em>K<sub>c</sub></em> = 160 is large, the correct value lies a little below this limit: setting [N<sub>2</sub>O<sub>4</sub>] = <em>x</em> and [NO<sub>2</sub>] = 0.10 − 2<em>x</em> in $160=\\;\\frac{x}{{(0.10-2x)}^{2}}$ gives [N<sub>2</sub>O<sub>4</sub>] = 0.042 <em>M</em> and [NO<sub>2</sub>] = 0.016 <em>M</em>."
+    "solution": "这个答案比反应可能给出的量还大。根据 2NO<sub>2</sub> → N<sub>2</sub>O<sub>4</sub> 的化学计量关系，即使每个 NO<sub>2</sub> 分子都反应，0.10 <em>M</em> 的 NO<sub>2</sub> 最多也只能生成 0.10 <em>M</em> × ½ = 0.050 <em>M</em> 的 N<sub>2</sub>O<sub>4</sub>。0.16 <em>M</em> 的浓度所需要的氮原子和氧原子比样品所含的还多。因为 <em>K<sub>c</sub></em> = 160 很大，正确值略低于这个上限：在 $160=\\;\\frac{x}{{(0.10-2x)}^{2}}$ 中设 [N<sub>2</sub>O<sub>4</sub>] = <em>x</em>、[NO<sub>2</sub>] = 0.10 − 2<em>x</em>，得到 [N<sub>2</sub>O<sub>4</sub>] = 0.042 <em>M</em>，[NO<sub>2</sub>] = 0.016 <em>M</em>。"
    }
   },
   {
@@ -559,7 +572,7 @@
     "at": "end"
    },
    "cite": "initial",
-   "prompt": "Assume that the change in concentration of N<sub>2</sub>O<sub>4</sub> is small enough to be neglected in the following problem.<br>(a) Calculate the equilibrium concentration of both species in 1.00 L of a solution prepared from 0.129 mol of N<sub>2</sub>O<sub>4</sub> with chloroform as the solvent.<br>${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)\\hspace{5em}{K}_{c}=1.07\\;\\times \\;{10}^{−5}$ in chloroform<br>(b) Confirm that the change is small enough to be neglected.",
+   "prompt": "在下面的题目中，假设 N<sub>2</sub>O<sub>4</sub> 浓度的变化小到可以忽略。<br>（a）以氯仿为溶剂，用 0.129 mol N<sub>2</sub>O<sub>4</sub> 配成 1.00 L 溶液，计算其中两种物种的平衡浓度。<br>${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)\\hspace{5em}{K}_{c}=1.07\\;\\times \\;{10}^{−5}$（在氯仿中）<br>（b）证实该变化小到可以忽略。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -575,7 +588,7 @@
       "unit": "M"
      }
     ],
-    "solution": "(a) [NO<sub>2</sub>] = 1.17 × 10<sup>−3</sup> <em>M</em>; [N<sub>2</sub>O<sub>4</sub>] = 0.128 <em>M</em>; (b) The assumption that <em>x</em> is negligibly small compared to 0.129 is confirmed by comparing the initial concentration of the N<sub>2</sub>O<sub>4</sub> to its concentration at equilibrium (they differ by just 1 in the least significant digit’s place)."
+    "solution": "（a）[NO<sub>2</sub>] = 1.17 × 10<sup>−3</sup> <em>M</em>；[N<sub>2</sub>O<sub>4</sub>] = 0.128 <em>M</em>；（b）将 N<sub>2</sub>O<sub>4</sub> 的初始浓度与其平衡浓度比较，即可证实 <em>x</em> 与 0.129 相比小到可以忽略的假设（二者仅在最低有效位上相差 1）。"
    }
   },
   {
@@ -588,7 +601,7 @@
     "at": "end"
    },
    "cite": "initial",
-   "prompt": "Assume that the change in pressure of H<sub>2</sub>S is small enough to be neglected in the following problem.<br>(a) Calculate the equilibrium pressures of all species in an equilibrium mixture that results from the decomposition of H<sub>2</sub>S with an initial pressure of 0.824 atm.<br>$2{\\text{H}}_{2}\\text{S}(g)\\rightleftharpoons 2{\\text{H}}_{2}(g)+{\\text{S}}_{2}(g)\\hspace{5em}{K}_{P}=2.2\\;\\times \\;{10}^{−6}$<br>(b) Confirm that the change is small enough to be neglected.",
+   "prompt": "在下面的题目中，假设 H<sub>2</sub>S 压强的变化小到可以忽略。<br>（a）计算由初始压强为 0.824 atm 的 H<sub>2</sub>S 分解得到的平衡混合物中所有物种的平衡压强。<br>$2{\\text{H}}_{2}\\text{S}(g)\\rightleftharpoons 2{\\text{H}}_{2}(g)+{\\text{S}}_{2}(g)\\hspace{5em}{K}_{P}=2.2\\;\\times \\;{10}^{−6}$<br>（b）证实该变化小到可以忽略。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -609,7 +622,7 @@
       "unit": "atm"
      }
     ],
-    "solution": "(a) [H<sub>2</sub>S] = 0.810 atm, [H<sub>2</sub>] = 0.014 atm, [S<sub>2</sub>] = 0.0072 atm; (b) The assumption that 2<em>x</em> is negligibly small compared to 0.824 is confirmed by comparing the initial concentration of the H<sub>2</sub>S to its concentration at equilibrium (0.824 atm versus 0.810 atm, a difference of less than 2%)."
+    "solution": "（a）[H<sub>2</sub>S] = 0.810 atm，[H<sub>2</sub>] = 0.014 atm，[S<sub>2</sub>] = 0.0072 atm；（b）将 H<sub>2</sub>S 的初始浓度与其平衡浓度比较（0.824 atm 对 0.810 atm，相差不到 2%），即可证实 2<em>x</em> 与 0.824 相比小到可以忽略的假设。"
    }
   },
   {
@@ -622,7 +635,7 @@
     "at": "end"
    },
    "cite": "initial",
-   "prompt": "What are the concentrations of PCl<sub>5</sub>, PCl<sub>3</sub>, and Cl<sub>2</sub> in an equilibrium mixture produced by the decomposition of a sample of pure PCl<sub>5</sub> with [PCl<sub>5</sub>] = 2.00 <em>M</em>?<br>${\\text{PCl}}_{5}(g)\\rightleftharpoons {\\text{PCl}}_{3}(g)+{\\text{Cl}}_{2}(g)\\hspace{5em}{K}_{c}=0.0211$",
+   "prompt": "在由 [PCl<sub>5</sub>] = 2.00 <em>M</em> 的纯 PCl<sub>5</sub> 样品分解而成的平衡混合物中，PCl<sub>5</sub>、PCl<sub>3</sub> 和 Cl<sub>2</sub> 的浓度各是多少？<br>${\\text{PCl}}_{5}(g)\\rightleftharpoons {\\text{PCl}}_{3}(g)+{\\text{Cl}}_{2}(g)\\hspace{5em}{K}_{c}=0.0211$",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -656,7 +669,7 @@
     "at": "end"
    },
    "cite": "initial",
-   "prompt": "Calculate the number of grams of HI that are at equilibrium with 1.25 mol of H<sub>2</sub> and 63.5 g of iodine at 448 °C.<br>${\\text{H}}_{2}+{\\text{I}}_{2}\\rightleftharpoons 2\\text{HI}\\hspace{5em}{K}_{c}=50.2\\;\\text{at}\\;448\\;{}^{\\circ}\\text{C}$",
+   "prompt": "计算在 448 °C 下与 1.25 mol H<sub>2</sub> 和 63.5 g 碘处于平衡的 HI 的克数。<br>${\\text{H}}_{2}+{\\text{I}}_{2}\\rightleftharpoons 2\\text{HI}\\hspace{5em}{K}_{c}=50.2\\;\\text{（}448\\;{}^{\\circ}\\text{C}\\;\\text{时）}$",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -675,7 +688,7 @@
     "at": "end"
    },
    "cite": "missing",
-   "prompt": "What is the minimum mass of CaCO<sub>3</sub> required to establish equilibrium at a certain temperature in a 6.50-L container if the equilibrium constant (<em>K<sub>c</sub></em>) is 0.50 for the decomposition reaction of CaCO<sub>3</sub> at that temperature?<br>${\\text{CaCO}}_{3}(s)\\rightleftharpoons \\text{CaO}(s)+{\\text{CO}}_{2}(g)$",
+   "prompt": "如果 CaCO<sub>3</sub> 的分解反应在某一温度下的平衡常数（<em>K<sub>c</sub></em>）为 0.50，那么在该温度下的 6.50 L 容器中建立平衡，至少需要多少质量的 CaCO<sub>3</sub>？<br>${\\text{CaCO}}_{3}(s)\\rightleftharpoons \\text{CaO}(s)+{\\text{CO}}_{2}(g)$",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -694,7 +707,7 @@
     "at": "end"
    },
    "cite": "missing",
-   "prompt": "The equilibrium constant (<em>K<sub>c</sub></em>) for this reaction is 5.0 at a given temperature.<br>$\\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)$<br>(a) On analysis, an equilibrium mixture of the substances present at the given temperature was found to contain 0.20 mol of CO, 0.30 mol of water vapor, and 0.90 mol of H<sub>2</sub> in a liter. How many moles of CO<sub>2</sub> were there in the equilibrium mixture?<br>(b) Maintaining the same temperature, additional H<sub>2</sub> was added to the system, and some water vapor was removed by drying. A new equilibrium mixture was thereby established containing 0.40 mol of CO, 0.30 mol of water vapor, and 1.2 mol of H<sub>2</sub> in a liter. How many moles of CO<sub>2</sub> were in the new equilibrium mixture? Compare this with the quantity in part (a), and discuss whether the second value is reasonable. Explain how it is possible for the water vapor concentration to be the same in the two equilibrium solutions even though some vapor was removed before the second equilibrium was established.",
+   "prompt": "在给定温度下，该反应的平衡常数（<em>K<sub>c</sub></em>）为 5.0。<br>$\\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)$<br>（a）经分析，该温度下存在的各物质的平衡混合物中，每升含有 0.20 mol CO、0.30 mol 水蒸气和 0.90 mol H<sub>2</sub>。平衡混合物中有多少 mol CO<sub>2</sub>？<br>（b）保持温度不变，向体系中再加入 H<sub>2</sub>，并通过干燥除去一些水蒸气，由此建立了新的平衡混合物，每升含有 0.40 mol CO、0.30 mol 水蒸气和 1.2 mol H<sub>2</sub>。新的平衡混合物中有多少 mol CO<sub>2</sub>？将它与（a）小题中的量相比较，并讨论第二个值是否合理。解释为什么尽管在建立第二个平衡之前除去了一些水蒸气，两个平衡溶液中的水蒸气浓度仍然可以相同。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -710,7 +723,7 @@
       "unit": "M"
      }
     ],
-    "solution": "(a) 0.33 mol. (b) [CO<sub>2</sub>] = 0.50 <em>M</em>. Added H<sub>2</sub> forms some water as a result of a shift to the left after H<sub>2</sub> is added."
+    "solution": "（a）0.33 mol。（b）[CO<sub>2</sub>] = 0.50 <em>M</em>。加入 H<sub>2</sub> 后平衡向左移动，加入的 H<sub>2</sub> 因此生成了一些水。"
    }
   },
   {
@@ -723,11 +736,11 @@
     "at": "end"
    },
    "cite": "initial",
-   "prompt": "Consider the equilibrium<br>$4{\\text{NO}}_{2}(g)+6{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons 4{\\text{NH}}_{3}(g)+7{\\text{O}}_{2}(g)$<br>(a) What is the expression for the equilibrium constant (<em>K<sub>c</sub></em>) of the reaction?<br>(b) How must the concentration of NH<sub>3</sub> change to reach equilibrium if the reaction quotient is less than the equilibrium constant?<br>(c) If the reaction were at equilibrium, how would an increase in the volume of the reaction vessel affect the pressure of NO<sub>2</sub>?<br>(d) If the change in the pressure of NO<sub>2</sub> is 28 torr as a mixture of the four gases reaches equilibrium, how much will the pressure of O<sub>2</sub> change?",
+   "prompt": "考虑下面的平衡<br>$4{\\text{NO}}_{2}(g)+6{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons 4{\\text{NH}}_{3}(g)+7{\\text{O}}_{2}(g)$<br>（a）该反应的平衡常数（<em>K<sub>c</sub></em>）的表达式是什么？<br>（b）如果反应商小于平衡常数，NH<sub>3</sub> 的浓度必须如何变化才能达到平衡？<br>（c）如果反应处于平衡，增大反应容器的体积会如何影响 NO<sub>2</sub> 的压强？<br>（d）如果四种气体的混合物达到平衡时 NO<sub>2</sub> 的压强变化为 28 torr，那么 O<sub>2</sub> 的压强将变化多少？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${K}_{c}=\\;\\frac{{[{\\text{NH}}_{3}]}^{4}{[{\\text{O}}_{2}]}^{7}}{{[{\\text{NO}}_{2}]}^{4}{[{\\text{H}}_{2}\\text{O}]}^{6}}.$ (b) [NH<sub>3</sub>] must increase for <em>Q<sub>c</sub></em> to reach <em>K<sub>c</sub></em>. (c) The increase in system volume would lower the partial pressures of all reactants (including NO<sub>2</sub>). (d) ${P}_{{\\text{O}}_{\\text{2}}}=49\\;\\text{torr}$"
+    "solution": "（a）${K}_{c}=\\;\\frac{{[{\\text{NH}}_{3}]}^{4}{[{\\text{O}}_{2}]}^{7}}{{[{\\text{NO}}_{2}]}^{4}{[{\\text{H}}_{2}\\text{O}]}^{6}}.$ （b）[NH<sub>3</sub>] 必须增大，<em>Q<sub>c</sub></em> 才能达到 <em>K<sub>c</sub></em>。（c）体系体积的增大会降低所有反应物（包括 NO<sub>2</sub>）的分压。（d）${P}_{{\\text{O}}_{\\text{2}}}=49\\;\\text{torr}$"
    }
   },
   {
@@ -740,11 +753,11 @@
     "at": "end"
    },
    "cite": "initial",
-   "prompt": "The binding of oxygen by hemoglobin (Hb), giving oxyhemoglobin (HbO<sub>2</sub>), is partially regulated by the concentration of H<sub>3</sub>O<sup>+</sup> and dissolved CO<sub>2</sub> in the blood. Although the equilibrium is complicated, it can be summarized as<br>${\\text{HbO}}_{2}(aq)+{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CO}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}\\text{−}\\text{Hb}\\text{−}{\\text{H}}^{\\text{+}}+{\\text{O}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$<br>(a) Write the equilibrium constant expression for this reaction.<br>(b) Explain why the production of lactic acid and CO<sub>2</sub> in a muscle during exertion stimulates release of O<sub>2</sub> from the oxyhemoglobin in the blood passing through the muscle.",
+   "prompt": "血红蛋白（Hb）与氧结合生成氧合血红蛋白（HbO<sub>2</sub>），这一过程部分地受血液中 H<sub>3</sub>O<sup>+</sup> 和溶解的 CO<sub>2</sub> 的浓度调节。虽然这一平衡很复杂，但可以概括为<br>${\\text{HbO}}_{2}(aq)+{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CO}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}\\text{−}\\text{Hb}\\text{−}{\\text{H}}^{\\text{+}}+{\\text{O}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$<br>（a）写出该反应的平衡常数表达式。<br>（b）解释为什么肌肉在用力时产生的乳酸和 CO<sub>2</sub> 会促使流经肌肉的血液中的氧合血红蛋白释放 O<sub>2</sub>。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) ${K}_{c}=\\;\\frac{[{\\text{CO}}_{2}\\text{−}\\text{Hb}\\text{−}{\\text{H}}^{\\text{+}}][{\\text{O}}_{2}]}{[{\\text{HbO}}_{2}][{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{CO}}_{2}]};$ the liquid water is left out. (b) Lactic acid ionizes in the muscle and raises [H<sub>3</sub>O<sup>+</sup>], and exertion produces CO<sub>2</sub>, so both increase the concentrations of reactants of this equilibrium. The denominator of <em>Q<sub>c</sub></em> grows, <em>Q<sub>c</sub></em> falls below <em>K<sub>c</sub></em>, and the equilibrium shifts right, as Le Châtelier’s principle predicts. The shift converts HbO<sub>2</sub> to CO<sub>2</sub>−Hb−H<sup>+</sup> and releases O<sub>2</sub>, so blood passing through a working muscle gives up more oxygen exactly where it is being used."
+    "solution": "（a）${K}_{c}=\\;\\frac{[{\\text{CO}}_{2}\\text{−}\\text{Hb}\\text{−}{\\text{H}}^{\\text{+}}][{\\text{O}}_{2}]}{[{\\text{HbO}}_{2}][{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{CO}}_{2}]};$ 液态水略去。（b）乳酸在肌肉中电离，使 [H<sub>3</sub>O<sup>+</sup>] 升高，而用力会产生 CO<sub>2</sub>，所以两者都增大了这一平衡中反应物的浓度。<em>Q<sub>c</sub></em> 的分母变大，<em>Q<sub>c</sub></em> 降到 <em>K<sub>c</sub></em> 以下，平衡向右移动，正如勒夏特列原理所预测的。这一移动使 HbO<sub>2</sub> 转化为 CO<sub>2</sub>−Hb−H<sup>+</sup> 并释放出 O<sub>2</sub>，所以流经工作肌肉的血液恰好在需要氧的地方放出更多的氧。"
    }
   },
   {
@@ -757,7 +770,7 @@
     "at": "end"
    },
    "cite": "initial",
-   "prompt": "Liquid N<sub>2</sub>O<sub>3</sub> is dark blue at low temperatures, but the color fades and becomes greenish at higher temperatures as the compound decomposes to NO and NO<sub>2</sub>. At 25 °C, a value of <em>K<sub>P</sub></em> = 1.91 has been established for this decomposition. If 0.236 moles of N<sub>2</sub>O<sub>3</sub> are placed in a 1.52-L vessel at 25 °C, calculate the equilibrium partial pressures of N<sub>2</sub>O<sub>3</sub>(<em>g</em>), NO<sub>2</sub>(<em>g</em>), and NO(<em>g</em>).",
+   "prompt": "液态 N<sub>2</sub>O<sub>3</sub> 在低温下呈深蓝色，但随着该化合物分解为 NO 和 NO<sub>2</sub>，颜色在较高温度下褪去并变为偏绿色。在 25 °C 时，该分解反应已测得 <em>K<sub>P</sub></em> = 1.91。如果将 0.236 mol N<sub>2</sub>O<sub>3</sub> 放入 25 °C 的 1.52 L 容器中，计算 N<sub>2</sub>O<sub>3</sub>(<em>g</em>)、NO<sub>2</sub>(<em>g</em>) 和 NO(<em>g</em>) 的平衡分压。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -778,7 +791,7 @@
       "unit": "atm"
      }
     ],
-    "solution": "${P}_{{\\text{N}}_{\\text{2}}}{}_{{\\text{O}}_{\\text{3}}}=1.90\\;\\text{atm and}\\;{P}_{\\text{NO}}={P}_{{\\text{NO}}_{\\text{2}}}=1.90\\;\\text{atm}$"
+    "solution": "${P}_{{\\text{N}}_{\\text{2}}}{}_{{\\text{O}}_{\\text{3}}}=1.90\\;\\text{atm}\\;\\text{和}\\;{P}_{\\text{NO}}={P}_{{\\text{NO}}_{\\text{2}}}=1.90\\;\\text{atm}$"
    }
   }
  ],
@@ -1069,7 +1082,7 @@
   {
    "id": "c-e70-naso4",
    "kind": "correction",
-   "html": "The book writes NaSO<sub>4</sub>; the dehydrated salt of the equation above is Na<sub>2</sub>SO<sub>4</sub>."
+   "html": "书中写的是 NaSO<sub>4</sub>；上面方程式中脱水后的盐是 Na<sub>2</sub>SO<sub>4</sub>。"
   }
  ]
 }

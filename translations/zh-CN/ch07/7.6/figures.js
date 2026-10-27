@@ -266,7 +266,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
      control appears only in that case rather than standing there doing nothing (rule 24.6) */
   const CLF = {
     eq: { label: '两个都在赤道位置', at: [2, 3], struct: 'T 形', why: 'ClF₃ 实际采取的就是这种排布。两对孤电子对都位于赤道位置，那里 120° 的角给了它们最大的空间，三个氟原子构成 T 形。' },
-    one: { label: '一个在轴向位置', at: [0, 2], struct: '以上两种构型都不是', why: '一对孤电子对被移到了轴向位置，那里有三个相邻区域与它成 90° 角，而不是两个，所以这种排布不如 ClF₃ 实际采取的那种稳定。' },
+    one: { label: '一个在轴向位置', at: [0, 2], struct: '两种已命名构型之外的一种构型', why: '一对孤电子对被移到了轴向位置，那里有三个相邻区域与它成 90° 角，而不是两个，所以这种排布不如 ClF₃ 实际采取的那种稳定。' },
     both: { label: '两个都在轴向位置', at: [0, 1], struct: '平面三角形', why: '两对孤电子对都被移到了轴向位置，在那里每一对都被三个与它成 90° 的相邻区域挤着，所以这是三种排布中最不稳定的一种，并不是 ClF₃ 的实际情形。' },
   };
   const PL = F.select(d.controls, { label: '\\text{ClF}_3', options: Object.keys(CLF).map((k) => ({ value: k, label: CLF[k].label })), value: 'eq', aria: 'ClF3 的两对孤电子对所在的位置', onInput: () => shift() });
@@ -369,7 +369,7 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     words(ctx, 620, 205, '理想角度为 ' + IDEAL[from.n] + '。', '理想角度为 ' + IDEAL[to.n] + '。', q, { size: 22, weight: 600 });
     const t = to, example = t.clf && t.place !== 'eq' ? '' : EXAMPLE[t.n][t.lone];
     const lone = t.lone, bonds = t.n - lone, lp = lone === 0 ? '无孤电子对' : lone + ' 对孤电子对';
-    topline(ctx, '有 ' + t.n + ' 个电子密度区域、' + lp + '时，电子对构型为' + GEOM[t.n] + '，分子构型为' + t.struct + (example ? '，例如 ' + example : '') + '。');
+    topline(ctx, '有 ' + t.n + ' 个电子密度区域、' + lp + '时，电子对构型为' + GEOM[t.n] + '，分子构型为' + (/^[A-Za-z]/.test(t.struct) ? ' ' : '') + t.struct + (example ? '，例如 ' + example : '') + '。');
     F.morph(fx, `\\mk{n}{${t.n}\\ \\text{个区域}} = \\mk{b}{${bonds}\\ \\text{个键}}` + (lone ? ` + \\mk{lp}{${lone}\\ \\text{对孤电子对}}` : ''));
     note.textContent = t.clf ? CLF[t.place].why
       : lone === 0 ? '中心原子上没有孤电子对时，分子构型就是电子对构型本身。'
@@ -468,11 +468,11 @@ const strip = (d, H) => F.makeCanvas(d.stage, H);
     const ideal = { 2: 180, 3: 120, 4: 109.5, 5: 90, 6: 90 }[n];
     line(ctx, box.l, Y(ideal), box.r, Y(ideal), alpha(PAL.ink, 0.4), 2, [10, 10]);
     text(ctx, '理想值 ' + ideal + '°', box.r - 6, Y(ideal) - 16, PAL.muted, { size: 17, align: 'right' });
-    const found = lone ? '电子对构型为' + GEOM[n] + '、分子构型为' + STRUCT[n][Math.min(lone, MAX_LONE[n])] : '排成' + GEOM[n];
+    const found = lone ? '电子对构型为' + GEOM[n] + '、分子构型为' + (/^[A-Za-z]/.test(STRUCT[n][Math.min(lone, MAX_LONE[n])]) ? ' ' : '') + STRUCT[n][Math.min(lone, MAX_LONE[n])] : '排成' + GEOM[n];
     topline(ctx, settled ? '这 ' + n + ' 个区域已稳定下来，' + found + '，其中两个区域之间的最小角为 ' + fmt(ang, 0) + '°。'
       : '在 t = ' + fmt(tau, 1) + ' s 时，这些区域仍在相互推开，其中两个区域之间的最小角已增大到 ' + fmt(ang, 0) + '°。');
     readout(d.readout, `\\htmlClass{kv-angle}{\\text{最小角}} = ${fmt(ang, 1)}^\\circ`,
-      n >= 5 ? '仅凭排斥作用无法判定孤电子对占据两种不同位置中的哪一种；这由大小顺序决定，上方的演示台应用的就是这个顺序。' : '');
+      n >= 5 ? '仅凭排斥作用无法判定孤电子对占据两种不同位置中的哪一种；这由大小顺序决定，上方的工作台应用的就是这个顺序。' : '');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -691,7 +691,7 @@ lewisFigure('fig-lewis-glycine', 340, GLY, GLY_BONDS, '\\text{H}_2\\text{NCH}_2\
 (function () {
   const d = sim('sim-bond-moments');
   /* the list holds molecules of every shape, so the two viewpoints worth a button are the plain ones (rule 26.2) */
-  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正面', yaw: 0, pitch: 0.18 }, { label: '上方', yaw: 0, pitch: 1.2 }], h: 440, dist: 6 });
+  const v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正视', yaw: 0, pitch: 0.18 }, { label: '俯视', yaw: 0, pitch: 1.2 }], h: 440, dist: 6 });
   const g = v.part(0), c2 = strip(d, 250);
   /* the electronegativities the book prints in Figure 7.6, which is the table this figure cites (rule 25) */
   const EN = { H: 2.1, B: 2.0, C: 2.5, N: 3.0, O: 3.5, F: 4.0, P: 2.1, S: 2.5, Cl: 3.0 };

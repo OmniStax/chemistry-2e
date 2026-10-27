@@ -216,7 +216,7 @@ const E_CHARGE = 1.602e-19;
       text(ctx, name, x + 18, yy, rd, { size: 17, weight: on ? 600 : 400 });
     });
     const q = 1.6 * k, fate = Math.abs(rel - 1) < 0.004 ? '悬停' : rel < 1 ? '下落' : '上升';
-    topline(ctx, '油滴 ' + drop.value + ' 带电 ' + fmt(q, 1) + ' × 10⁻¹⁹ C，是 1.6 × 10⁻¹⁹ C 的' + ['', '1 倍', '2 倍', '3 倍', '4 倍'][k] + '；在 ' + fmt(E.v, 1) + ' kN/C 时它' + fate + '。');
+    topline(ctx, '油滴 ' + drop.value + ' 带电 ' + fmt(q, 1) + ' × 10⁻¹⁹ C，是 1.6 × 10⁻¹⁹ C 的' + ['', ' 1 倍', ' 2 倍', ' 3 倍', ' 4 倍'][k] + '；在 ' + fmt(E.v, 1) + ' kN/C 时它' + fate + '。');
     ro.set(`\\kQ = ${k}\\,\\ke = ${k} \\times ${hue('1.6\\times10^{-19}\\ \\text{C}')} = ${hue(fmt(q, 1) + '\\times10^{-19}\\ \\text{C}')}`,
       fate === '悬停' ? '' : '油滴 ' + drop.value + ' 在 ' + fmt(eh, 1) + ' kN/C 时悬停。');
   }
@@ -243,7 +243,7 @@ const E_CHARGE = 1.602e-19;
 (function () {
   const d = sim('sim-gold-foil');
   const v = F.view3d(d.stage, { h: 400, dist: 6.2, tilt: 0.5, spin: 'off', pitch: [0.15, 1.35],
-    views: [{ label: '实验台', yaw: 0.5, pitch: 0.5 }, { label: '俯视', yaw: 0, pitch: 1.35 }] });
+    views: [{ label: '工作台', yaw: 0.5, pitch: 0.5 }, { label: '俯视', yaw: 0, pitch: 1.35 }] });
   const has3 = !!v.scene;
   if (!has3) v.wrap.style.display = 'none';
   const PH = 440, cnv = F.makeCanvas(d.stage, PH);
@@ -385,7 +385,7 @@ const E_CHARGE = 1.602e-19;
     label(ctx, pud < 0.5 ? ELS[elc.value][0] + '原子核' : '正电荷球体', 760, 360 + (pud < 0.5 ? 5 : R), { side: 'below', gap: 34 });
     label(ctx, '电子', 560 + EL[0][0].ring[0] * R, 160 + EL[0][0].ring[1] * R, { side: 'left', gap: 60 });
     const ends = shown.map(angleOf), nT = ends.filter((a) => a < 10).length, nB = ends.filter((a) => a > 90).length, nA = ends.length - nT - nB;
-    const words = ['没有', '1 个', '2 个', '3 个', '4 个', '5 个', '6 个', '7 个', '8 个', '9 个'];
+    const words = ['0 个', '1 个', '2 个', '3 个', '4 个', '5 个', '6 个', '7 个', '8 个', '9 个'];
     topline(ctx, '在 9 个 α 粒子中，' + words[nT] + '径直穿过，' + words[nA] + '被偏转到一侧，' + words[nB] + '被弹回。');
   }
   function draw() {

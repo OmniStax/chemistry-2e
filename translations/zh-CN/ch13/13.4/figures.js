@@ -37,15 +37,15 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
 (function () {
   const d = sim('sim-small-x', 720);
   const RX = {
-    pcl5: { K: 0.0211, c0: 1.0, sp: ['PCl_{5}', 'PCl_{3}', 'Cl_{2}'], a: '[\\text{PCl}_{5}]_{i}', aria: 'initial concentration of PCl5' },
-    hcn: { K: 4.9e-10, c0: 0.15, sp: ['HCN', 'H⁺', 'CN⁻'], a: '[\\text{HCN}]_{i}', aria: 'initial concentration of HCN' },
+    pcl5: { K: 0.0211, c0: 1.0, sp: ['PCl_{5}', 'PCl_{3}', 'Cl_{2}'], a: '[\\text{PCl}_{5}]_{i}', aria: 'PCl5 的初始浓度' },
+    hcn: { K: 4.9e-10, c0: 0.15, sp: ['HCN', 'H⁺', 'CN⁻'], a: '[\\text{HCN}]_{i}', aria: 'HCN 的初始浓度' },
   };
   const pick = F.choice(d.controls, {
-    label: '\\text{reaction}', aria: 'the reaction', value: 'hcn', ms: 0,
+    label: '\\text{反应}', aria: '反应', value: 'hcn', ms: 0,
     options: [{ value: 'pcl5', label: 'PCl₅ ⇌ PCl₃ + Cl₂' }, { value: 'hcn', label: 'HCN ⇌ H⁺ + CN⁻' }],
     onInput: () => { const r = RX[pick.value]; K.set(Math.log10(r.K)); c0.set(r.c0); c0.relabel(hue('concentration', r.a), r.aria); },
   });
-  const K = ctl(d.controls, { label: '\\kKc', cls: 'equilibrium-constant', min: -10, max: 1, step: 0.001, value: Math.log10(4.9e-10), unit: '', dec: 2, aria: 'equilibrium constant Kc, on a logarithmic scale' });
+  const K = ctl(d.controls, { label: '\\kKc', cls: 'equilibrium-constant', min: -10, max: 1, step: 0.001, value: Math.log10(4.9e-10), unit: '', dec: 2, aria: '平衡常数 Kc，对数标度' });
   const c0 = ctl(d.controls, { label: hue('concentration', RX.hcn.a), cls: 'concentration', min: 0.01, max: 2, step: 0.01, value: 0.15, unit: 'M', dec: 2, aria: RX.hcn.aria });
   const kBox = K.el.querySelector('.ctl-val');
   const ro = F.readout(d);
@@ -62,7 +62,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     r.sp.forEach((s, i) => text(ctx, s, mid(i + 1), ROWS[0], PAL.ink, { size: 22, weight: 600, align: 'center' }));
     text(ctx, '⇌', COLS[2], ROWS[0], PAL.ink, { size: 24, align: 'center', bg: PAL.panel });
     text(ctx, '+', COLS[3], ROWS[0], PAL.ink, { size: 22, align: 'center', bg: PAL.panel });
-    ['Initial concentration (M)', 'Change (M)', 'Equilibrium concentration (M)'].forEach((s, j) => text(ctx, s, COLS[0] + 16, ROWS[j + 1], PAL.ink, { size: 19, weight: 600 }));
+    ['初始浓度（M）', '变化（M）', '平衡浓度（M）'].forEach((s, j) => text(ctx, s, COLS[0] + 16, ROWS[j + 1], PAL.ink, { size: 19, weight: 600 }));
     const cs = c.toFixed(2), xs = sigText(x);
     const cells = [[cs, '0', '0'], ['−x = −' + xs, '+x = ' + xs, '+x = ' + xs], [`${cs} − x = ${sigText(c - x)}`, 'x = ' + xs, 'x = ' + xs]];
     cells.forEach((row, j) => row.forEach((s, i) => text(ctx, s, mid(i + 1), ROWS[j + 1], cC, { size: 19, align: 'center' })));
@@ -74,7 +74,7 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     const cK = C('equilibrium-constant'), cC = C('concentration');
     if (kBox) kBox.textContent = sigText(k);
     const spA = `[${r.sp[0]}]_{i}`, cs = c.toFixed(2);
-    const lines = topline(ctx, `$x$ is ${pct(x / c)}% of ${spA}, and the approximation $${cs} - x \\approx ${cs}$ puts $x$ ${pct(xa / x - 1)}% too high.`);
+    const lines = topline(ctx, `$x$ 是 ${spA} 的 ${pct(x / c)}%，近似 $${cs} - x \\approx ${cs}$ 使 $x$ 偏高 ${pct(xa / x - 1)}%。`);
     const lab = F.labeller(ctx, H, { headline: lines });
     table(ctx, r, c, x);
     lab.block(COLS[0], ROWS[0] - 20, COLS[4], ROWS[3] + 20);
@@ -109,13 +109,13 @@ const hue = (type, s) => `\\htmlClass{kv-${type}}{${s}}`;
     lab.flush();
 
     hits = [
-      { x: pe.x, y: pe.y, r: 14, name: `x = ${sigText(x)} M, the positive root of the quadratic` },
+      { x: pe.x, y: pe.y, r: 14, name: `x = ${sigText(x)} M，一元二次方程的正根` },
       { x: pa.x, y: pa.y, r: 14, name: `x ≈ √(K_c × ${cs}) = ${sigText(xa)} M` },
-      { x: xc, y: B.t + 20, r: 16, name: `x cannot exceed ${spA.replace(/_\{(\w+)\}/g, '$1')} = ${cs} M` },
+      { x: xc, y: B.t + 20, r: 16, name: `x 不能超过 ${spA.replace(/_\{(\w+)\}/g, '$1')} = ${cs} M` },
     ];
     const xt = sigTex(x), ct = hue('concentration', cs);
     ro.set(`\\kKc = \\frac{(x)(x)}{${ct}\\,-\\,x} = \\frac{(\\mk{x1}{${xt}})(\\mk{x2}{${xt}})}{\\mk{c}{${ct}}\\,-\\,\\mk{x3}{${xt}}} = \\mk{K}{${hue('equilibrium-constant', sigTex(k))}}`,
-      `If $x \\ll ${cs}$, then $x \\approx \\sqrt{\\kKc \\times ${cs}}$ = ${sigText(xa)} M.`);
+      `若 $x \\ll ${cs}$，则 $x \\approx \\sqrt{\\kKc \\times ${cs}}$ = ${sigText(xa)} M。`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

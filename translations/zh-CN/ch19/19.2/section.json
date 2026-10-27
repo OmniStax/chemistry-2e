@@ -2,35 +2,43 @@
  "id": "19.2",
  "module": "m68843",
  "chapter": "19",
- "title": "Coordination Chemistry of Transition Metals",
- "short": "Coordination Chemistry",
- "lead": "In a coordination compound, ligands give electron pairs to a central metal atom or ion through coordinate covalent bonds. Such complexes are named by rules Alfred Werner devised, take shapes set by how many donor atoms surround the metal, can exist as geometric and optical isomers, and do work in living things, in industry and in medicine.",
+ "title": "过渡金属的配位化学",
+ "short": "配位化学",
+ "lead": "在配位化合物中，配体通过配位共价键把电子对给予中心金属原子或离子。这类配合物按阿尔弗雷德·维尔纳设计的规则命名，其形状取决于有多少个配位原子围绕着金属，可以以几何异构体和旋光异构体的形式存在，并在生物体内、工业和医药中发挥作用。",
  "objectives": [
-  "List the defining traits of coordination compounds",
-  "Describe the structures of complexes containing monodentate and polydentate ligands",
-  "Use standard nomenclature rules to name coordination compounds",
-  "Explain and provide examples of geometric and optical isomerism",
-  "Identify several natural and technological occurrences of coordination compounds"
+  "列出配位化合物的基本特征",
+  "描述含有单齿和多齿配体的配合物的结构",
+  "使用标准命名规则为配位化合物命名",
+  "解释几何异构和旋光异构并举例",
+  "指出配位化合物在自然界和技术中的若干存在形式"
  ],
- "summary_html": "<p>The <span data-concept=\"transition-metal\">transition elements</span> and <span data-concept=\"main-group-element\">main group elements</span> can form <span data-concept=\"coordination-compound\">coordination compounds</span>, or complexes, in which a <span data-concept=\"central-metal\">central metal atom or ion</span> is bonded to one or more <span data-concept=\"ligand\">ligands</span> by <span data-concept=\"coordinate-covalent-bond\">coordinate covalent bonds</span>. Ligands with more than one <span data-concept=\"donor-atom\">donor atom</span> are called <span data-concept=\"polydentate-ligand\">polydentate ligands</span> and form <span data-concept=\"chelate\">chelates</span>. The common geometries found in complexes are tetrahedral and square planar (both with a <span data-concept=\"coordination-number\">coordination number</span> of four) and octahedral (with a coordination number of six). <span data-concept=\"cis-trans-configuration\"><em>Cis</em> and <em>trans</em> configurations</span> are possible in some octahedral and square planar complexes. In addition to these <span data-concept=\"geometric-isomer\">geometrical isomers</span>, <span data-concept=\"optical-isomer\">optical isomers</span> (molecules or ions that are mirror images but not superimposable) are possible in certain octahedral complexes. Coordination complexes have a wide variety of uses including oxygen transport in blood, water purification, and pharmaceutical use.</p>",
- "notes": "The Link to Learning to naming quizzes at the University of Sydney is left out, and the section keeps as printed “dicyanoargenate(I)”, “[Cu(Cl)₄]²⁻” in the caption of Figure 19.14, “SCN−”, the ionization isomers [CoCl₆][Br] and [CoCl₅Br][Cl], the caption of Figure 19.22 that sets each ligand “directly across from an adjacent ligand”, the catalytic converters of Figure 19.27 that change “carbon dioxide emissions from power plants”, “In the Figure 19.20”, and the 2− on the answer drawing of Example 19.5’s Check Your Learning.",
+ "summary_html": "<p><span data-concept=\"transition-metal\">过渡元素</span>和<span data-concept=\"main-group-element\">主族元素</span>都可以形成<span data-concept=\"coordination-compound\">配位化合物</span>，即配合物，其中一个<span data-concept=\"central-metal\">中心金属原子或离子</span>通过<span data-concept=\"coordinate-covalent-bond\">配位共价键</span>与一个或多个<span data-concept=\"ligand\">配体</span>键合。具有多个<span data-concept=\"donor-atom\">配位原子</span>的配体称为<span data-concept=\"polydentate-ligand\">多齿配体</span>，并形成<span data-concept=\"chelate\">螯合物</span>。配合物中常见的几何构型是四面体形和平面正方形（<span data-concept=\"coordination-number\">配位数</span>均为四）以及八面体形（配位数为六）。某些八面体形和平面正方形配合物中可能出现<span data-concept=\"cis-trans-configuration\"><em>顺式</em>和<em>反式</em>构型</span>。除这些<span data-concept=\"geometric-isomer\">几何异构体</span>外，某些八面体形配合物中还可能有<span data-concept=\"optical-isomer\">旋光异构体</span>（互为镜像但不能重合的分子或离子）。配合物有多种多样的用途，包括血液中的氧运输、水的净化和药物用途。</p>",
+ "notes": "关于悉尼大学命名测验的“学习链接”已略去；本节保留书中原样印出的“dicyanoargenate(I)”、图 19.14 题注中的“[Cu(Cl)₄]²⁻”、“SCN−”、电离异构体 [CoCl₆][Br] 和 [CoCl₅Br][Cl]、图 19.22 中把每个配体放在“directly across from an adjacent ligand”位置的题注、图 19.27 中转化“carbon dioxide emissions from power plants”的催化转化器、“In the Figure 19.20”，以及例 19.5 学习检测的答案图上的 2−。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and the suggested approach are AI-generated. Answers come from the book’s answer key; the keys of exercises 29 and 35 and the answer to Example 19.5’s Check Your Learning are the book’s drawings. The unkeyed exercises whose answers would have to be worked out are left out, and no answer is computed for them: 26 (fs-idp178303616) and 28 (fs-idp104842000), coordination numbers; 30 (fs-idp55630960), isomer drawings; 32 (fs-idp39687552), names. Exercise 31 names the compounds of exercise 28, so its prompt lists them. The unkeyed choice item 34 (fs-idp128328592) is kept open with its options and a suggested approach marked as OmniStax’s own. Exercise 27 prints “dibromobis(ethylenediamine) cobalt(III)” and the key to exercise 31 “tetraamine”, “diaminedibromo” and “diaminedichloro”, kept as printed. Nothing is moved.",
+ "exercise_notes": "布鲁姆层级、概念标签和建议思路由 AI 生成。答案来自书后答案；习题 29 和 35 的答案以及例 19.5 学习检测的答案是书中的图。没有给出答案、需要自行计算才能得出答案的练习被略去，也没有为它们计算答案：26（fs-idp178303616）和 28（fs-idp104842000），配位数；30（fs-idp55630960），异构体的画图；32（fs-idp39687552），命名。练习 31 要为练习 28 中的化合物命名，所以它的题目列出了这些化合物。没有给出答案的选择题 34（fs-idp128328592）保持开放，附有选项和标明为 OmniStax 自己所作的建议思路。练习 27 印有“dibromobis(ethylenediamine) cobalt(III)”，练习 31 的答案印有“tetraamine”、“diaminedibromo”和“diaminedichloro”，均照原样保留。没有任何内容被移动。",
  "figures": [
   {
    "id": "fig-colors",
@@ -42,6 +50,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -55,6 +68,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -73,7 +91,7 @@
     "/media/ch19/CNX_Chem_19_02_oct.jpg",
     "/media/ch19/CNX_Chem_19_02_4geom.jpg"
    ],
-   "original_caption": "(Figure 19.14) The complexes (a) [Ag(NH₃)₂]⁺, (b) [Cu(Cl)₄]²⁻, and (c) [Co(H₂O)₆]²⁺ have coordination numbers of two, four, and six, respectively. The geometries of these complexes are the same as we have seen with VSEPR theory for main group elements: linear, tetrahedral, and octahedral. (Figure 19.18) These are geometries of some complexes with coordination numbers of seven and eight. (Figure 19.19) Many transition metal complexes adopt octahedral geometries, with six donor atoms forming bond angles of 90° about the central atom with adjacent ligands. Note that only ligands within the coordination sphere affect the geometry around the metal center. (Figure 19.20) Transition metals with a coordination number of four can adopt a tetrahedral geometry (a) as in K₂[Zn(CN)₄] or a square planar geometry (b) as shown in [Pt(NH₃)₂Cl₂].",
+   "original_caption": "（图 19.14）配合物（a）[Ag(NH₃)₂]⁺、（b）[Cu(Cl)₄]²⁻ 和（c）[Co(H₂O)₆]²⁺ 的配位数分别为二、四和六。这些配合物的几何构型与我们在主族元素的价层电子对互斥理论（VSEPR）中所见的相同：直线形、四面体形和八面体形。（图 19.18）这些是配位数为七和八的一些配合物的几何构型。（图 19.19）许多过渡金属配合物采取八面体形几何构型，六个配位原子与相邻配体在中心原子周围形成 90° 的键角。请注意，只有配位层内的配体才影响金属中心周围的几何构型。（图 19.20）配位数为四的过渡金属可以采取四面体形几何构型（a），如 K₂[Zn(CN)₄]，也可以采取平面正方形几何构型（b），如 [Pt(NH₃)₂Cl₂] 所示。",
    "draws": [
     "angle"
    ],
@@ -101,6 +119,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -114,6 +137,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -127,6 +155,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -140,6 +173,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -154,7 +192,7 @@
     "/media/ch19/CNX_Chem_19_02_cistrans.jpg",
     "/media/ch19/CNX_Chem_19_02_transplatin.jpg"
    ],
-   "original_caption": "(Figure 19.21) The cis and trans isomers of [Co(H₂O)₄Cl₂]⁺ contain the same ligands attached to the same metal ion, but the spatial arrangement causes these two compounds to have very different properties. (Figure 19.22) The trans isomer of [Pt(NH₃)₂Cl₂] has each ligand directly across from an adjacent ligand.",
+   "original_caption": "（图 19.21）[Co(H₂O)₄Cl₂]⁺ 的顺式和反式异构体含有连接在同一个金属离子上的相同配体，但空间排布使这两种化合物的性质非常不同。（图 19.22）[Pt(NH₃)₂Cl₂] 的反式异构体中，每个配体都正好与一个相邻的配体相对。",
    "draws": [
     "angle"
    ],
@@ -175,6 +213,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -189,7 +232,7 @@
     "/media/ch19/CNX_Chem_19_02_enant.jpg",
     "/media/ch19/CNX_Chem_19_02_Coen2Cl2.jpg"
    ],
-   "original_caption": "(Figure 19.23) The complex [M(en)₃]ⁿ⁺ (Mⁿ⁺ = a metal ion, en = ethylenediamine) has a nonsuperimposable mirror image. (Figure 19.24) Three isomeric forms of [Co(en)₂Cl₂]⁺ exist. The trans isomer, formed when the chlorines are positioned at a 180° angle, has very different properties from the cis isomers. The mirror images of the cis isomer form a pair of optical isomers, which have identical behavior except when reacting with other enantiomers.",
+   "original_caption": "（图 19.23）配合物 [M(en)₃]ⁿ⁺（Mⁿ⁺ = 金属离子，en = 乙二胺）有不能重合的镜像。（图 19.24）[Co(en)₂Cl₂]⁺ 存在三种异构形式。两个氯处于 180° 角位置时形成的反式异构体，其性质与顺式异构体非常不同。顺式异构体的镜像形成一对旋光异构体，它们的行为完全相同，只有在与其他对映异构体反应时才不同。",
    "draws": [],
    "conventions": [
     "M",
@@ -203,6 +246,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -216,6 +264,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -229,6 +282,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -242,6 +300,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -255,6 +318,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -268,6 +336,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -281,6 +354,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -294,6 +372,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -307,6 +390,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -580,11 +668,11 @@
     "after": "ex-naming"
    },
    "cite": "ex-naming",
-   "prompt": "The complex potassium dicyanoargenate(I) is used to make antiseptic compounds. Give the formula and coordination number.",
+   "prompt": "配合物二氰合银(I)酸钾用于制造消毒化合物。给出其化学式和配位数。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "K[Ag(CN)<sub>2</sub>]; coordination number two"
+    "solution": "K[Ag(CN)<sub>2</sub>]；配位数为二"
    }
   },
   {
@@ -597,11 +685,11 @@
     "after": "ex-geometric-isomers"
    },
    "cite": "ex-geometric-isomers",
-   "prompt": "Draw the ion <em>trans</em>-diaqua-<em>trans</em>-dibromo-<em>trans</em>-dichlorocobalt(II).",
+   "prompt": "画出离子<em>反</em>-二溴·<em>反</em>-二氯·<em>反</em>-二水合钴(II)。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "<img src=\"/media/ch19/CNX_Chem_19_02_H2O2Br2.jpg\" alt=\"The structure in this figure shows a structure inside brackets. A central C o atom is shown with line segments indicating bonds to C l atoms above and below the structure. Above and to the left, a dashed wedge with its vertex at the C o atom widening as it moves out from the atom indicates a bond with the O atom of a H subscript 2 O group. A second dashed wedge indicates a bond with the central C o atom with a B r atom up and to the right. Similarly, a solid wedge below and to the left indicates a bond with a B r atom. A second solid wedge below and to the right indicates a bond with the O atom of an H subscript 2 O group. This structure is enclosed in brackets. Outside the brackets to the right is the superscript 2 negative sign.\">"
+    "solution": "<img src=\"/media/ch19/CNX_Chem_19_02_H2O2Br2.jpg\" alt=\"此图显示方括号内的一个结构。中心的 Co 原子上用线段表示与上方和下方 Cl 原子的键。在左上方，一条以 Co 原子为顶点、向外逐渐变宽的虚楔形线，表示与 H₂O 基团的 O 原子成键。第二条虚楔形线表示中心 Co 原子与右上方的一个 Br 原子成键。同样，左下方的一条实楔形线表示与一个 Br 原子成键。右下方的第二条实楔形线表示与 H₂O 基团的 O 原子成键。此结构被括号括起。括号外右侧是上标 2 负号。\">"
    }
   },
   {
@@ -614,11 +702,11 @@
     "after": "ex-chelation"
    },
    "cite": "ex-chelation",
-   "prompt": "Some alternative medicine practitioners recommend chelation treatments for ailments that are not clearly related to heavy metals, such as cancer and autism, although the practice is discouraged by many scientific organizations.<sup>1</sup> Identify at least two biologically important metals that could be disrupted by chelation therapy.<br><small><sup>1</sup> National Council against Health Fraud, <em>NCAHF Policy Statement on Chelation Therapy</em>, (Peabody, MA, 2002).</small>",
+   "prompt": "一些替代医学从业者推荐用螯合疗法治疗与重金属没有明确关系的疾病，如癌症和自闭症，尽管许多科学组织不提倡这种做法。<sup>1</sup>指出至少两种可能被螯合疗法扰乱的、对生物体重要的金属。<br><small><sup>1</sup> National Council against Health Fraud, <em>NCAHF Policy Statement on Chelation Therapy</em>, (Peabody, MA, 2002).</small>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Ca, Fe, Zn, and Cu"
+    "solution": "Ca、Fe、Zn 和 Cu"
    }
   },
   {
@@ -631,11 +719,11 @@
     "at": "end"
    },
    "cite": "naming",
-   "prompt": "Give the coordination numbers and write the formulas for each of the following, including all isomers where appropriate:<br>(a) tetrahydroxozincate(II) ion (tetrahedral)<br>(b) hexacyanopalladate(IV) ion<br>(c) dichloroaurate(I) ion (note that <em>aurum</em> is Latin for \"gold\")<br>(d) diamminedichloroplatinum(II)<br>(e) potassium diamminetetrachlorochromate(III)<br>(f) hexaamminecobalt(III) hexacyanochromate(III)<br>(g) dibromobis(ethylenediamine) cobalt(III) nitrate",
+   "prompt": "给出下列各物质的配位数并写出化学式，适当时包括所有异构体：<br>（a）四羟合锌(II)酸根离子（四面体形）<br>（b）六氰合钯(IV)酸根离子<br>（c）二氯合金(I)酸根离子（注意，<em>aurum</em> 在拉丁语中是“金”）<br>（d）二氯·二氨合铂(II)<br>（e）四氯·二氨合铬(III)酸钾<br>（f）六氰合铬(III)酸六氨合钴(III)<br>（g）硝酸二溴·双(乙二胺)合钴(III)",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) 4, [Zn(OH)<sub>4</sub>]<sup>2−</sup>; (b) 6, [Pd(CN)<sub>6</sub>]<sup>2−</sup>; (c) 2, [AuCl<sub>2</sub>]<sup>−</sup>; (d) 4, [Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]; (e) 6, K[Cr(NH<sub>3</sub>)<sub>2</sub>Cl<sub>4</sub>]; (f) 6, [Co(NH<sub>3</sub>)<sub>6</sub>][Cr(CN)<sub>6</sub>]; (g) 6, [Co(en)<sub>2</sub>Br<sub>2</sub>]NO<sub>3</sub>"
+    "solution": "（a）4，[Zn(OH)<sub>4</sub>]<sup>2−</sup>；（b）6，[Pd(CN)<sub>6</sub>]<sup>2−</sup>；（c）2，[AuCl<sub>2</sub>]<sup>−</sup>；（d）4，[Pt(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]；（e）6，K[Cr(NH<sub>3</sub>)<sub>2</sub>Cl<sub>4</sub>]；（f）6，[Co(NH<sub>3</sub>)<sub>6</sub>][Cr(CN)<sub>6</sub>]；（g）6，[Co(en)<sub>2</sub>Br<sub>2</sub>]NO<sub>3</sub>"
    }
   },
   {
@@ -648,11 +736,11 @@
     "at": "end"
    },
    "cite": "isomerism",
-   "prompt": "Sketch the structures of the following complexes. Indicate any <em>cis</em>, <em>trans</em>, and optical isomers.<br>(a) [Pt(H<sub>2</sub>O)<sub>2</sub>Br<sub>2</sub>] (square planar)<br>(b) [Pt(NH<sub>3</sub>)(py)(Cl)(Br)] (square planar, py = pyridine, C<sub>5</sub>H<sub>5</sub>N)<br>(c) [Zn(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup> (tetrahedral)<br>(d) [Pt(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup> (square planar)<br>(e) [Ni(H<sub>2</sub>O)<sub>4</sub>Cl<sub>2</sub>]<br>(f) [Co(C<sub>2</sub>O<sub>4</sub>)<sub>2</sub>Cl<sub>2</sub>]<sup>3−</sup> (note that ${\\text{C}}_{2}{\\text{O}}_{4}{}^{2−}$ is the bidentate oxalate ion, $-{\\text{O}}_{2}{\\text{CCO}}_{2}{}^{\\text{−}})$",
+   "prompt": "画出下列配合物的结构。指出其中的任何<em>顺式</em>、<em>反式</em>和旋光异构体。<br>（a）[Pt(H<sub>2</sub>O)<sub>2</sub>Br<sub>2</sub>]（平面正方形）<br>（b）[Pt(NH<sub>3</sub>)(py)(Cl)(Br)]（平面正方形，py = 吡啶，C<sub>5</sub>H<sub>5</sub>N）<br>（c）[Zn(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>（四面体形）<br>（d）[Pt(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>（平面正方形）<br>（e）[Ni(H<sub>2</sub>O)<sub>4</sub>Cl<sub>2</sub>]<br>（f）[Co(C<sub>2</sub>O<sub>4</sub>)<sub>2</sub>Cl<sub>2</sub>]<sup>3−</sup> (注意 ${\\text{C}}_{2}{\\text{O}}_{4}{}^{2−}$ 是双齿草酸根离子，$-{\\text{O}}_{2}{\\text{CCO}}_{2}{}^{\\text{−}})$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) [Pt(H<sub>2</sub>O)<sub>2</sub>Br<sub>2</sub>]:<img src=\"/media/ch19/CNX_Chem_19_02_Answer4a_img.jpg\" alt=\"Two structures are shown. At the center of each is a P t atom. The structure on the left is labeled, “cis.” From this atom, a single bond represented by a dashed wedge extends from a vertex at the P t atom up and to the right to a B r atom. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the right to a second B r atom. Another single bond represented by a dashed wedge extends from a vertex at the P t atom up and to the left to the O atom of an H subscript 2 O group. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the left to a second O atom of an H subscript 2 O group. The structure on the right is labeled, “trans.” From the central P t atom, a single bond represented by a dashed wedge extends from a vertex at the P t atom up and to the right to a B r atom. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the right to the O atom of an H subscript 2 O group. Another single bond represented by a dashed wedge extends from a vertex at the P t atom up and to the left to the O atom of a second H subscript 2 O group. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the left to a second B r atom.\"><br>(b) [Pt(NH<sub>3</sub>)(py)(Cl)(Br)]:<img src=\"/media/ch19/CNX_Chem_19_02_Answer4b_img.jpg\" alt=\"Three structures are shown. At the center of each is a P t atom. From this atom in the first structure on the left, a single bond represented by a dashed wedge extends from a vertex at the P t atom up and to the right to a C l atom. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the right to the N atom of an N H subscript 3 group. Another single bond represented by a dashed wedge extends from a vertex at the P t atom up and to the left to a B r atom. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the left to p y. The middle structure shows a single bond represented by a dashed wedge extending from a vertex at the P t atom up and to the right to a B r atom. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the right to the N atom of an N H subscript 3 group. Another single bond represented by a dashed wedge extends from a vertex at the P t atom up and to the left to p y. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the left to a to a C l atom. The third structure shows a single bond represented by a dashed wedge extending from a vertex at the P t atom up and to the right to p y. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the right to the N atom of an N H subscript 3 group. Another single bond represented by a dashed wedge extends from a vertex at the P t atom up and to the left to a C l atom. Similarly, a single bond represented by a solid wedge extends from a vertex at the P t atom down and to the left to a B r atom.\"><br>(c) [Zn(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>:<img src=\"/media/ch19/CNX_Chem_19_02_Answer4c_img.jpg\" alt=\"Inside of brackets, a central Z n atom is bonded to a C l atom and three N atoms in N H subscript 3 groups in a tetrahedral spatial arrangement. Short line segments are used to represent a bond extending above to the C l atom and down and to the left to the N of the N H subscript 3 group from the Z n atom. A dashed wedge with the vertex at the Z n atom and wide end at the N atom of an N H subscript 3 group is used to represent a bond down and to the right of the Z n atom. The final bond is indicated by a similar solid wedge again directed down and only slightly right of center beneath the Z n atom to the N of an N H subscript 3 group. Outside the brackets a superscript plus sign is shown.\"><br>(d) [Pt(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>:<img src=\"/media/ch19/CNX_Chem_19_02_Answer4d_img.jpg\" alt=\"This structure shows a single bond represented by a dashed wedge extending from a vertex at the P t atom up and to the right to the N atom of an N H subscript 3 group. Similarly, two single bonds represented by solid wedges extend from vertices at the P t atom down and to the right and down and to the left to the N atoms of N H subscript 3 groups. Another single bond represented by a dashed wedge extends from a vertex at the P t atom up and to the left to a C l atom. This structure is enclosed in brackets with superscript plus sign appearing to the right of the brackets.\"><br>(e) [Ni(H<sub>2</sub>O)<sub>4</sub>Cl<sub>2</sub>]:<img src=\"/media/ch19/CNX_Chem_19_02_Answer4e_img.jpg\" alt=\"Two structures are shown. The first is labeled, “trans.” Below this label inside brackets is a central N i atom. From the N i atom, line segments indicate bonds to C l atoms above and below. Above and to both the right and left, dashed wedges with their vertex at the N i atom widening as they move out from the atom indicate bonds with O atoms of H subscript 2 O groups. Similarly, solid wedges below to both the right and left indicate bonds to the O atoms of H subscript 2 O groups. This structure is enclosed in brackets. The second structure is labeled, “cis.” Inside brackets is a central N i atom. From the N i atom, line segments indicate bonds to a C l atom above and the O atom of an H subscript 2 O group below. Above and to both the right and left, dashed wedges indicate bonds with O atoms of H subscript 2 O groups. Similarly, a solid wedge below to the right indicates a bond with a C l atom and a solid wedge to the lower left indicates a bond to the O atoms of an H subscript 2 O group. This structure is also enclosed in brackets.\"><br>(f) [Co(C<sub>2</sub>O<sub>4</sub>)<sub>2</sub>Cl<sub>2</sub>]<sup>3−</sup>:<img src=\"/media/ch19/CNX_Chem_19_02_Answer4f_img.jpg\" alt=\"This figure includes three structures. The first structure includes a central C o atom that has four O atoms and two C l atoms attached with single bonds. These bonds are indicated with line segments extending above and below, dashed wedges extending up and to the left and right, and solid wedges extending below and to the left and right. C l atoms are bonded at the top and at the upper left of the structure. The remaining four bonds extend from the central C o atom to O atoms. The O atoms are each connected to C atoms which are each connected with double bonds to O atoms extending outward from the central C o atom. These C atoms are connected in pairs with bonds indicated by short line segments, forming two rings in the structure. This entire structure is enclosed in brackets. Outside the brackets to the right is a superscript 3 negative sign. The second structure, which appears to the be mirror image of the first structure, includes a central C o atom that has four O atoms and two C l atoms attached with single bonds. These bonds are indicated with line segments extending above and below, dashed wedges extending up and to the left and right, and solid wedges extending below and to the left and right. C l atoms are bonded at the top and at the upper right of the structure. The remaining four bonds extend from the central C o atom to O atoms. The O atoms are each connected to C atoms which are each connected with double bonds to O atoms extending outward from the central C o atom. These C atoms are connected in pairs with bonds indicated by short line segments, forming two rings in the structure. This entire structure is enclosed in brackets. Outside the brackets to the right is the superscript 3 negative sign. The third structure includes a central C o atom that has four O atoms and two C l atoms attached with single bonds. These bonds are indicated with line segments extending above and below, dashed wedges extending up and to the left and right, and solid wedges extending below and to the left and right. C l atoms are bonded at the top and bottom of the structure. The remaining four bonds extend from the central C o atom to the O atoms. The O atoms are each connected to C atoms which are in turn each double bonded to O atoms extending outward from the central C o atom. These C atoms are connected in pairs with bonds indicated by short line segments, forming two rings in the structure. This entire structure is enclosed in brackets. Outside the brackets, to the right, is a superscript 3 negative sign. This final structure has rings of atoms on opposite sides of the structure.\">"
+    "solution": "（a）[Pt(H<sub>2</sub>O)<sub>2</sub>Br<sub>2</sub>]：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4a_img.jpg\" alt=\"此图显示两个结构。每个结构的中心都是一个 Pt 原子。左边的结构标注为“顺式”。从该 Pt 原子出发，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 Br 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到第二个 Br 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到一个 H₂O 基团的 O 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到第二个 H₂O 基团的 O 原子。右边的结构标注为“反式”。从中心的 Pt 原子出发，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 Br 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到一个 H₂O 基团的 O 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到第二个 H₂O 基团的 O 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到第二个 Br 原子。\"><br>（b） [Pt(NH<sub>3</sub>)(py)(Cl)(Br)]：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4b_img.jpg\" alt=\"此图显示三个结构。每个结构的中心都是一个 Pt 原子。左边第一个结构中，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 Cl 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到一个 NH₃ 基团的 N 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到一个 Br 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到 py。中间的结构中，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 Br 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到一个 NH₃ 基团的 N 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到 py。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到一个 Cl 原子。第三个结构中，一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到 py。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向右下方伸出，连到一个 NH₃ 基团的 N 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到一个 Cl 原子。同样，一条用实楔形线表示的单键，以 Pt 原子为顶点向左下方伸出，连到一个 Br 原子。\"><br>（c） [Zn(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4c_img.jpg\" alt=\"方括号内，中心的 Zn 原子与一个 Cl 原子和三个 NH₃ 基团中的 N 原子以四面体的空间排布成键。短线段表示 Zn 原子向上与 Cl 原子的键，以及向左下与 NH₃ 基团的 N 的键。一条以 Zn 原子为顶点、在 NH₃ 基团的 N 原子一端变宽的虚楔形线，表示 Zn 原子右下方的一个键。最后一个键由类似的实楔形线表示，同样指向下方，仅略偏右，位于 Zn 原子下方，连到一个 NH₃ 的 N。括号外是一个上标加号。\"><br>（d） [Pt(NH<sub>3</sub>)<sub>3</sub>Cl]<sup>+</sup>：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4d_img.jpg\" alt=\"此结构显示一条用虚楔形线表示的单键，以 Pt 原子为顶点向右上方伸出，连到一个 NH₃ 基团的 N 原子。同样，两条用实楔形线表示的单键，以 Pt 原子为顶点分别向右下方和左下方伸出，连到 NH₃ 基团的 N 原子。另一条用虚楔形线表示的单键，以 Pt 原子为顶点向左上方伸出，连到一个 Cl 原子。此结构被括号括起，括号右侧有上标加号。\"><br>（e） [Ni(H<sub>2</sub>O)<sub>4</sub>Cl<sub>2</sub>]：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4e_img.jpg\" alt=\"此图显示两个结构。第一个标注为“反式”。该标注下方，方括号内是中心的 Ni 原子。从 Ni 原子出发，线段表示与上方和下方 Cl 原子的键。在右上方和左上方，以 Ni 原子为顶点、向外逐渐变宽的虚楔形线，表示与 H₂O 基团的 O 原子的键。同样，右下方和左下方的实楔形线表示与 H₂O 基团的 O 原子的键。此结构被括号括起。第二个结构标注为“顺式”。方括号内是中心的 Ni 原子。从 Ni 原子出发，线段表示与上方的一个 Cl 原子和下方的一个 H₂O 基团的 O 原子的键。在右上方和左上方，虚楔形线表示与 H₂O 基团的 O 原子的键。同样，右下方的一条实楔形线表示与一个 Cl 原子的键，左下方的一条实楔形线表示与 H₂O 基团的 O 原子的键。此结构也被括号括起。\"><br>（f） [Co(C<sub>2</sub>O<sub>4</sub>)<sub>2</sub>Cl<sub>2</sub>]<sup>3−</sup>：<img src=\"/media/ch19/CNX_Chem_19_02_Answer4f_img.jpg\" alt=\"此图包含三个结构。第一个结构的中心是一个 Co 原子，以单键连有四个 O 原子和两个 Cl 原子。这些键用向上和向下的线段、向左上和右上的虚楔形线、向左下和右下的实楔形线表示。Cl 原子位于结构的顶部和左上方。其余四个键从中心 Co 原子伸向 O 原子。这些 O 原子各与 C 原子相连，C 原子又各以双键与从中心 Co 原子向外伸出的 O 原子相连。这些 C 原子两两以短线段表示的键相连，在结构中形成两个环。整个结构被括号括起。括号外右侧是上标 3 负号。第二个结构看起来是第一个结构的镜像，中心的 Co 原子以单键连有四个 O 原子和两个 Cl 原子。这些键用向上和向下的线段、向左上和右上的虚楔形线、向左下和右下的实楔形线表示。Cl 原子位于结构的顶部和右上方。其余四个键从中心 Co 原子伸向 O 原子。这些 O 原子各与 C 原子相连，C 原子又各以双键与从中心 Co 原子向外伸出的 O 原子相连。这些 C 原子两两以短线段表示的键相连，在结构中形成两个环。整个结构被括号括起。括号外右侧是上标 3 负号。第三个结构的中心是一个 Co 原子，以单键连有四个 O 原子和两个 Cl 原子。这些键用向上和向下的线段、向左上和右上的虚楔形线、向左下和右下的实楔形线表示。Cl 原子位于结构的顶部和底部。其余四个键从中心 Co 原子伸向 O 原子。这些 O 原子各与 C 原子相连，C 原子又各与从中心 Co 原子向外伸出的 O 原子以双键相连。这些 C 原子两两以短线段表示的键相连，在结构中形成两个环。整个结构被括号括起。括号外右侧是上标 3 负号。最后这个结构的原子环位于结构的相对两侧。\">"
    }
   },
   {
@@ -665,11 +753,11 @@
     "at": "end"
    },
    "cite": "naming",
-   "prompt": "Name each of the compounds or ions given in Exercise 28, including the oxidation state of the metal.<br>(a) [Co(CO<sub>3</sub>)<sub>3</sub>]<sup>3−</sup> (note that CO<sub>3</sub><sup>2−</sup> is bidentate in this complex)<br>(b) [Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup><br>(c) [Co(NH<sub>3</sub>)<sub>4</sub>Br<sub>2</sub>]<sub>2</sub>(SO<sub>4</sub>)<br>(d) [Pt(NH<sub>3</sub>)<sub>4</sub>][PtCl<sub>4</sub>]<br>(e) [Cr(en)<sub>3</sub>](NO<sub>3</sub>)<sub>3</sub><br>(f) [Pd(NH<sub>3</sub>)<sub>2</sub>Br<sub>2</sub>] (square planar)<br>(g) K<sub>3</sub>[Cu(Cl)<sub>5</sub>]<br>(h) [Zn(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]",
+   "prompt": "为练习 28 中给出的每种化合物或离子命名，包括金属的氧化态。<br>（a）[Co(CO<sub>3</sub>)<sub>3</sub>]<sup>3−</sup>（注意，在这个配合物中 CO<sub>3</sub><sup>2−</sup> 是双齿的）<br>（b）[Cu(NH<sub>3</sub>)<sub>4</sub>]<sup>2+</sup><br>（c）[Co(NH<sub>3</sub>)<sub>4</sub>Br<sub>2</sub>]<sub>2</sub>(SO<sub>4</sub>)<br>（d）[Pt(NH<sub>3</sub>)<sub>4</sub>][PtCl<sub>4</sub>]<br>（e）[Cr(en)<sub>3</sub>](NO<sub>3</sub>)<sub>3</sub><br>（f）[Pd(NH<sub>3</sub>)<sub>2</sub>Br<sub>2</sub>]（平面正方形）<br>（g）K<sub>3</sub>[Cu(Cl)<sub>5</sub>]<br>（h）[Zn(NH<sub>3</sub>)<sub>2</sub>Cl<sub>2</sub>]",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) tricarbonatocobaltate(III) ion; (b) tetraaminecopper(II) ion; (c) tetraaminedibromocobalt(III) sulfate; (d) tetraamineplatinum(II) tetrachloroplatinate(II); (e) <em>tris-</em>(ethylenediamine)chromium(III) nitrate; (f) diaminedibromopalladium(II); (g) potassium pentachlorocuprate(II); (h) diaminedichlorozinc(II)"
+    "solution": "（a）三碳酸根合钴(III)酸根离子；（b）四氨合铜(II)离子；（c）硫酸二溴·四氨合钴(III)；（d）四氯合铂(II)酸四氨合铂(II)；（e）硝酸<em>三</em>(乙二胺)合铬(III)；（f）二溴·二氨合钯(II)；（g）五氯合铜(II)酸钾；（h）二氯·二氨合锌(II)"
    }
   },
   {
@@ -682,11 +770,11 @@
     "at": "end"
    },
    "cite": "isomerism",
-   "prompt": "Specify whether the following complexes have isomers.<br>(a) tetrahedral [Ni(CO)<sub>2</sub>(Cl)<sub>2</sub>]<br>(b) trigonal bipyramidal [Mn(CO)<sub>4</sub>NO]<br>(c) [Pt(en)<sub>2</sub>Cl<sub>2</sub>]Cl<sub>2</sub>",
+   "prompt": "说明下列配合物是否有异构体。<br>（a）四面体形 [Ni(CO)<sub>2</sub>(Cl)<sub>2</sub>]<br>（b）三角双锥形 [Mn(CO)<sub>4</sub>NO]<br>（c）[Pt(en)<sub>2</sub>Cl<sub>2</sub>]Cl<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) none; (b) none; (c) The two Cl ligands can be <em>cis</em> or <em>trans</em>. When they are <em>cis</em>, there will also be an optical isomer."
+    "solution": "（a）无；（b）无；（c）两个 Cl 配体可以是<em>顺式</em>或<em>反式</em>。当它们是<em>顺式</em>时，还会有一个旋光异构体。"
    }
   },
   {
@@ -699,11 +787,11 @@
     "at": "end"
    },
    "cite": "coordination",
-   "prompt": "Predict whether the carbonate ligand ${\\text{CO}}_{3}{}^{2−}$will coordinate to a metal center as a monodentate, bidentate, or tridentate ligand.",
+   "prompt": "预测碳酸根配体 ${\\text{CO}}_{3}{}^{2−}$ 与金属中心配位时是单齿、双齿还是三齿配体。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Carbonate can coordinate as a monodentate or a bidentate ligand, but not as a tridentate one. Each of its three oxygen atoms carries lone pairs and can act as a donor atom. The ion is trigonal planar, however, with its oxygen atoms 120° apart and pointing away from one another around the central carbon atom, so all three cannot reach one metal center at the same time. Either one oxygen atom bonds to the metal, or two oxygen atoms bond to it together and close a small four-membered ring with the carbon atom, as in [Co(NH<sub>3</sub>)<sub>4</sub>CO<sub>3</sub>]<sup>+</sup>, where carbonate is bidentate."
+    "solution": "碳酸根可以作为单齿或双齿配体配位，但不能作为三齿配体。它的三个氧原子都带有孤电子对，都可以充当配位原子。然而，该离子是平面三角形的，其氧原子彼此相隔 120°，背向中心碳原子向外伸展，所以三个氧原子不可能同时到达同一个金属中心。要么是一个氧原子与金属成键，要么是两个氧原子一起与金属成键，并与碳原子形成一个小的四元环，如 [Co(NH<sub>3</sub>)<sub>4</sub>CO<sub>3</sub>]<sup>+</sup> 中，其中碳酸根是双齿的。"
    }
   },
   {
@@ -716,11 +804,11 @@
     "at": "end"
    },
    "cite": "isomerism",
-   "prompt": "Draw the geometric, linkage, and ionization isomers for [CoCl<sub>5</sub>CN][CN].",
+   "prompt": "画出 [CoCl<sub>5</sub>CN][CN] 的几何异构体、键合异构体和电离异构体。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "<img src=\"/media/ch19/CNX_Chem_19_02_ex10ans_img.jpg\" alt=\"This figure shows eight structures, each inside brackets in three rows. The first row contains three structures, the second row contains three structures, and the third row contains two structures. These structures are described in increasing order moving left to right and top to bottom in the figure. Each includes a central C o atom with line segments indicating bonds above and below the central atom. Above and to both the left and right, dashed wedges with vertices at the C o atom widening as they move out from the atom indicates single bonds. Similarly, solid wedges below and to both the left and right indicate single bonds. Outside each structure in brackets, to the right, an element or group is identified in brackets as a superscript. In the first structure, the C atom of a C N group is bonded to the C o atom. All 5 remaining bonds are with C l atoms. C N appears in brackets as a superscript outside the structure. In the second structure, the N atom of a C N group is bonded to the C o atom. All 5 remaining bonds are with C l atoms. C N appears in brackets as a superscript outside the structure. In the third structure, the C atom of two C N groups are bonded to the C o atom at the top and bottom of the structure. All 4 remaining bonds are with C l atoms. C l appears in brackets as a superscript outside the structure. In the fourth structure, the C atom of a C N groups is bonded to the C o atom at the top and the N atom of a C N group which is bonded at the bottom of the structure. All 4 remaining bonds are with C l atoms. C l appears in brackets as a superscript outside the structure. In the fifth structure, the N atom of two C N groups are bonded to the C o atom at the top and bottom of the structure. All 4 remaining bonds are with C l atoms. C l appears in brackets as a superscript outside the structure. In the sixth structure, the C atom of two C N groups are bonded to the C o atom at the top and upper right of the structure. All 4 remaining bonds are with C l atoms. C l appears in brackets as a superscript outside the structure. In the seventh structure, the C atom of a C N group is bonded to the C o atom at the top of the structure and the N atom of a C N group is bonded at the upper right of the structure. All 4 remaining bonds are with C l atoms. C l appears in brackets as a superscript outside the structure. In the eighth structure, the N atom of two C N groups are bonded to the C o atom at the top and upper right of the structure. All 4 remaining bonds are with C l atoms. C l appears in brackets as a superscript outside the structure.\">"
+    "solution": "<img src=\"/media/ch19/CNX_Chem_19_02_ex10ans_img.jpg\" alt=\"此图显示八个结构，各在方括号内，分三行排列。第一行有三个结构，第二行有三个结构，第三行有两个结构。这些结构按从左到右、从上到下的顺序描述。每个结构都有一个中心 Co 原子，其上方和下方有线段表示的键。在左上方和右上方，以 Co 原子为顶点、向外逐渐变宽的虚楔形线表示单键。同样，左下方和右下方的实楔形线表示单键。每个结构括号外的右侧，以括号中的上标标明一种元素或基团。第一个结构中，一个 CN 基团的 C 原子与 Co 原子相连。其余 5 个键都与 Cl 原子成键。结构外括号中的上标是 CN。第二个结构中，一个 CN 基团的 N 原子与 Co 原子相连。其余 5 个键都与 Cl 原子成键。结构外括号中的上标是 CN。第三个结构中，两个 CN 基团的 C 原子在结构的顶部和底部与 Co 原子相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第四个结构中，一个 CN 基团的 C 原子在结构的顶部与 Co 原子相连，另一个 CN 基团的 N 原子在结构的底部与之相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第五个结构中，两个 CN 基团的 N 原子在结构的顶部和底部与 Co 原子相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第六个结构中，两个 CN 基团的 C 原子在结构的顶部和右上方与 Co 原子相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第七个结构中，一个 CN 基团的 C 原子在结构的顶部与 Co 原子相连，另一个 CN 基团的 N 原子在结构的右上方与之相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。第八个结构中，两个 CN 基团的 N 原子在结构的顶部和右上方与 Co 原子相连。其余 4 个键都与 Cl 原子成键。结构外括号中的上标是 Cl。\">"
    }
   }
  ],
@@ -814,18 +902,18 @@
   {
    "id": "c-ionization-isomers",
    "kind": "correction",
-   "html": "The book’s pair is not neutral: [CoCl<sub>6</sub>]<sup>3−</sup> with one Br<sup>−</sup> carries a charge of 4−. Ionization isomers exchange an anion between the two spheres of one neutral compound, as [Co(NH<sub>3</sub>)<sub>5</sub>Cl]Br and [Co(NH<sub>3</sub>)<sub>5</sub>Br]Cl do."
+   "html": "本书给出的这一对并不呈电中性：带一个 Br<sup>−</sup> 的 [CoCl<sub>6</sub>]<sup>3−</sup> 的电荷为 4−。电离异构体是在同一个电中性化合物的两个层之间互换一个阴离子，如 [Co(NH<sub>3</sub>)<sub>5</sub>Cl]Br 和 [Co(NH<sub>3</sub>)<sub>5</sub>Br]Cl。"
   },
   {
    "id": "c-converter-caption",
    "kind": "correction",
-   "html": "The book’s caption joins two things. The catalysts the text describes convert carbon dioxide captured at power plants; a car’s catalytic converter, the one shown, converts carbon monoxide, nitrogen oxides and unburned hydrocarbons, not carbon dioxide."
+   "html": "本书的题注把两件事合在了一起。正文所描述的催化剂转化的是在发电厂捕获的二氧化碳；而汽车的催化转化器（图中所示的那种）转化的是一氧化碳、氮氧化物和未燃烧的烃，不转化二氧化碳。"
   },
   {
    "id": "c-fig-trans",
    "kind": "correction",
    "figure": "sim-cis-trans",
-   "html": "Figure 19.22’s caption says each ligand is directly across from an adjacent ligand; in the <em>trans</em> isomer each ligand is directly across from the identical ligand, Cl across from Cl and NH<sub>3</sub> across from NH<sub>3</sub>."
+   "html": "图 19.22 的题注说每个配体都正好与一个相邻的配体相对；在<em>反式</em>异构体中，每个配体正好与相同的配体相对，Cl 对 Cl，NH<sub>3</sub> 对 NH<sub>3</sub>。"
   }
  ]
 }

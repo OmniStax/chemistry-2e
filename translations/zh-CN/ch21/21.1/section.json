@@ -2,33 +2,41 @@
  "id": "21.1",
  "module": "m68851",
  "chapter": "21",
- "title": "Nuclear Structure and Stability",
- "short": "Nuclear Stability",
- "lead": "A nucleus packs its protons and neutrons, held by the strong nuclear force, into a space a hundred thousand times smaller than the atom. The section turns the mass a nucleus loses as it forms into its binding energy with <em>E</em> = <em>mc</em><sup>2</sup>, and reads which nuclei are stable from a plot of neutrons against protons and from the binding energy per nucleon.",
+ "title": "核结构与稳定性",
+ "short": "核的稳定性",
+ "lead": "原子核把质子和中子在强核力的束缚下，装进一个比原子小十万倍的空间。本节用 <em>E</em> = <em>mc</em><sup>2</sup> 把原子核形成时损失的质量转化为它的结合能，并从中子数对质子数的图和比结合能判断哪些原子核是稳定的。",
  "objectives": [
-  "Describe nuclear structure in terms of protons, neutrons, and electrons",
-  "Calculate mass defect and binding energy for nuclei",
-  "Explain trends in the relative stability of nuclei"
+  "用质子、中子和电子描述核结构",
+  "计算原子核的质量亏损和结合能",
+  "解释原子核相对稳定性的趋势"
  ],
- "summary_html": "<p>An atomic nucleus consists of protons and neutrons, collectively called <span data-concept=\"nucleon\">nucleons</span>. Although protons repel each other, the nucleus is held tightly together by a short-range, but very strong, force called the <span data-concept=\"strong-nuclear-force\">strong nuclear force</span>. A nucleus has less mass than the total mass of its constituent nucleons. This “missing” mass is the <span data-concept=\"mass-defect\">mass defect</span>, which has been converted into the <span data-concept=\"nuclear-binding-energy\">binding energy</span> that holds the nucleus together according to Einstein’s <span data-concept=\"mass-energy-equivalence\">mass-energy equivalence equation</span>, $\\kE=\\km{\\kc}^{2}$. Of the many <span data-concept=\"nuclide\">nuclides</span> that exist, only a small number are stable. Nuclides with even numbers of protons or neutrons, or those with <span data-concept=\"magic-number\">magic numbers</span> of nucleons, are especially likely to be stable. These stable nuclides occupy a narrow <span data-concept=\"band-of-stability\">band of stability</span> on a graph of number of protons versus number of neutrons. The <span data-concept=\"binding-energy-per-nucleon\">binding energy per nucleon</span> is largest for the elements with mass numbers near 56; these are the most stable nuclei.</p>",
- "notes": "The section’s opening, which the book prints without a header, carries one of OmniStax’s own, and the Link to Learning note on the four fundamental forces is left out. It keeps as printed “divided by the number or nucleons” and Example 21.3’s “the same process as in Example 21.1”, where the process is that of Example 21.2.",
+ "summary_html": "<p>原子核由质子和中子组成，二者统称<span data-concept=\"nucleon\">核子</span>。尽管质子之间相互排斥，原子核仍被一种短程但非常强的力紧紧地维系在一起，这种力称为<span data-concept=\"strong-nuclear-force\">强核力</span>。原子核的质量小于其组成核子的总质量。这部分“缺失”的质量就是<span data-concept=\"mass-defect\">质量亏损</span>，它已按照爱因斯坦的<span data-concept=\"mass-energy-equivalence\">质能方程</span> $\\kE=\\km{\\kc}^{2}$ 转化为把原子核维系在一起的<span data-concept=\"nuclear-binding-energy\">结合能</span>。在现有的众多<span data-concept=\"nuclide\">核素</span>中，只有少数是稳定的。质子数或中子数为偶数的核素，或核子数为<span data-concept=\"magic-number\">幻数</span>的核素，格外可能是稳定的。这些稳定核素在质子数对中子数的图上占据一条狭窄的<span data-concept=\"band-of-stability\">稳定带</span>。<span data-concept=\"binding-energy-per-nucleon\">比结合能</span>在质量数接近 56 的元素中最大；这些是最稳定的原子核。</p>",
+ "notes": "本节开头在书中没有标题，这里加上了 OmniStax 自己的标题；关于四种基本相互作用的“学习链接”框被略去。书中把“核子数”印成了“number or nucleons”（应为 number of nucleons），译文无法保留这一印刷错误；例 21.3 中的“与例 21.1 中的过程相同”按原文保留，而该过程其实是例 21.2 的过程。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and the suggested approach are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idm1122208 (four isotopes in nuclide notation), fs-idm82455680 (the protons, neutrons and electrons of four isotopes), fs-idm91931648 (the density of a magnesium-24 nucleus) and fs-idm82186208 (the binding energy of sodium-23) are left out, and no answer is computed for them. The unkeyed choice item fs-idp43351040 is kept open with its options and a suggested approach. Exercise fs-idp74968928, the binding energy of fluorine-19, is taken from 21.2 and carries source_section 21.2, since it tests only the binding energy of this section; its key gives 148.8 MeV where the Check Your Learning of Example 21.2 gives 148.4 MeV for the same nuclide, and both are carried as printed.",
+ "exercise_notes": "布鲁姆层级、概念标签和建议思路均由 AI 生成。答案取自书后答案。没有答案的习题 fs-idm1122208（四种同位素的核素符号）、fs-idm82455680（四种同位素的质子、中子和电子）、fs-idm91931648（镁-24 原子核的密度）和 fs-idm82186208（钠-23 的结合能）被略去，也没有为它们计算答案。没有答案的选择题 fs-idp43351040 保留为开放题，附有选项和建议思路。习题 fs-idp74968928（氟-19 的结合能）取自 21.2，标注 source_section 21.2，因为它只考查本节的结合能；其答案给出 148.8 MeV，而例 21.2 的“学习检测”对同一核素给出 148.4 MeV，二者均按原样保留。",
  "figures": [
   {
    "id": "sim-band-stability",
@@ -37,13 +45,18 @@
    "originals": [
     "/media/ch21/CNX_Chem_21_01_BandStable.jpg"
    ],
-   "original_caption": "This plot shows the nuclides that are known to exist and those that are stable. The stable nuclides are indicated in blue, and the unstable nuclides are indicated in green. Note that all isotopes of elements with atomic numbers greater than 83 are unstable. The solid line is the line where n = Z.",
+   "original_caption": "此图显示了已知存在的核素以及稳定的核素。稳定的核素用蓝色表示，不稳定的核素用绿色表示。请注意，原子序数大于 83 的元素的所有同位素都是不稳定的。实线是 n = Z 的直线。",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -54,7 +67,7 @@
    "originals": [
     "/media/ch21/CNX_Chem_21_01_BindEnergy.jpg"
    ],
-   "original_caption": "The binding energy per nucleon is largest for nuclides with mass number of approximately 56.",
+   "original_caption": "比结合能在质量数约为 56 的核素中最大。",
    "draws": [
     "energy",
     "mass",
@@ -69,6 +82,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -76,21 +94,21 @@
  "referents": [
   {
    "id": "nitrogen-14",
-   "label": "nitrogen-14",
+   "label": "氮-14",
    "figures": [
     "sim-band-stability"
    ]
   },
   {
    "id": "iron-56",
-   "label": "iron-56",
+   "label": "铁-56",
    "figures": [
     "sim-band-stability"
    ]
   },
   {
    "id": "lead-207",
-   "label": "lead-207",
+   "label": "铅-207",
    "figures": [
     "sim-band-stability"
    ]
@@ -339,11 +357,11 @@
     "after": "ex-neutron-star"
    },
    "cite": "ex-neutron-star",
-   "prompt": "Find the density of a neutron star with a mass of <span data-type=\"mass\">1.97 solar masses</span> and a diameter of <span data-type=\"length\">13 km</span>, and compare it to the density of a hydrogen nucleus, which has a diameter of <span data-type=\"length\">1.75 fm</span> (1 fm = 1 × 10<sup>–15</sup> m).",
+   "prompt": "求质量为 <span data-type=\"mass\">1.97 个太阳质量</span>、直径为 <span data-type=\"length\">13 km</span> 的中子星的密度，并把它与直径为 <span data-type=\"length\">1.75 fm</span>（1 fm = 1 × 10<sup>–15</sup> m）的氢原子核的密度作比较。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The density of the neutron star is 3.4 × 10<sup>18</sup> kg/m<sup>3</sup>. The density of a hydrogen nucleus is 6.0 × 10<sup>17</sup> kg/m<sup>3</sup>. The neutron star is 5.7 times denser than the hydrogen nucleus."
+    "solution": "中子星的密度为 3.4 × 10<sup>18</sup> kg/m<sup>3</sup>。氢原子核的密度为 6.0 × 10<sup>17</sup> kg/m<sup>3</sup>。中子星的密度是氢原子核的 5.7 倍。"
    }
   },
   {
@@ -356,7 +374,7 @@
     "after": "ex-binding-energy"
    },
    "cite": "ex-binding-energy",
-   "prompt": "What is the binding energy for the nuclide ${}_{\\;9}^{19}\\text{F}$ (atomic mass: <span data-type=\"mass\">18.9984 amu</span>) in MeV per nucleus?",
+   "prompt": "核素 ${}_{\\;9}^{19}\\text{F}$（原子质量：<span data-type=\"mass\">18.9984 amu</span>）的结合能是多少，以 MeV 每个原子核表示？",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -376,14 +394,14 @@
     "after": "ex-per-nucleon"
    },
    "cite": "ex-per-nucleon",
-   "prompt": "What is the binding energy per nucleon in ${}_{\\;9}^{19}\\text{F}$ (atomic mass, <span data-type=\"mass\">18.9984 amu</span>)?",
+   "prompt": "${}_{\\;9}^{19}\\text{F}$（原子质量，<span data-type=\"mass\">18.9984 amu</span>）的比结合能是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 7.81,
     "unit": "MeV/nucleon",
     "tol": 0.01,
-    "solution": "7.810 MeV/nucleon"
+    "solution": "7.810 MeV/核子"
    }
   },
   {
@@ -396,11 +414,11 @@
     "at": "end"
    },
    "cite": "nucleus",
-   "prompt": "Write the following isotopes in hyphenated form (e.g., “carbon-14”)<br>(a) ${}_{11}^{24}\\text{Na}$<br>(b) ${}_{13}^{29}\\text{Al}$<br>(c) ${}_{36}^{73}\\text{Kr}$<br>(d) ${}_{\\;77}^{194}\\text{Ir}$",
+   "prompt": "把下列同位素写成带连字符的形式（例如“碳-14”）<br>（a）${}_{11}^{24}\\text{Na}$<br>（b）${}_{13}^{29}\\text{Al}$<br>（c）${}_{36}^{73}\\text{Kr}$<br>（d）${}_{\\;77}^{194}\\text{Ir}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) sodium-24; (b) aluminum-29; (c) krypton-73; (d) iridium-194"
+    "solution": "（a）钠-24；（b）铝-29；（c）氪-73；（d）铱-194"
    }
   },
   {
@@ -413,11 +431,11 @@
     "at": "end"
    },
    "cite": "nucleus",
-   "prompt": "For the following isotopes that have missing information, fill in the missing information to complete the notation<br>(a) ${}_{14}^{34}\\text{X}$<br>(b) ${}_{\\;\\text{X}}^{36}\\text{P}$<br>(c) ${}_{\\;\\text{X}}^{57}\\text{Mn}$<br>(d) ${}_{\\;56}^{121}\\text{X}$",
+   "prompt": "对于下列缺少信息的同位素，请补全缺失的信息以完成符号<br>（a）${}_{14}^{34}\\text{X}$<br>（b）${}_{\\;\\text{X}}^{36}\\text{P}$<br>（c）${}_{\\;\\text{X}}^{57}\\text{Mn}$<br>（d）${}_{\\;56}^{121}\\text{X}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${}_{14}^{34}\\text{Si};$ (b) ${}_{15}^{36}\\text{P};$ (c) ${}_{25}^{57}\\text{Mn};$ (d) ${}_{\\;56}^{121}\\text{Ba}$"
+    "solution": "（a）${}_{14}^{34}\\text{Si};$ （b）${}_{15}^{36}\\text{P};$ （c）${}_{25}^{57}\\text{Mn};$ （d）${}_{\\;56}^{121}\\text{Ba}$"
    }
   },
   {
@@ -430,11 +448,11 @@
     "at": "end"
    },
    "cite": "nucleus",
-   "prompt": "Write the nuclide notation, including charge if applicable, for atoms with the following characteristics:<br>(a) 25 protons, 20 neutrons, 24 electrons<br>(b) 45 protons, 24 neutrons, 43 electrons<br>(c) 53 protons, 89 neutrons, 54 electrons<br>(d) 97 protons, 146 neutrons, 97 electrons",
+   "prompt": "写出具有下列特征的原子的核素符号，如适用则包括电荷：<br>（a）25 个质子，20 个中子，24 个电子<br>（b）45 个质子，24 个中子，43 个电子<br>（c）53 个质子，89 个中子，54 个电子<br>（d）97 个质子，146 个中子，97 个电子",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${}_{25}^{45}{\\text{Mn}}^{+1};$ (b) ${}_{45}^{69}{\\text{Rh}}^{+2};$ (c) ${}_{\\;53}^{142}{\\text{I}}^{−1};$ (d) ${}_{\\;97}^{243}\\text{Bk}$"
+    "solution": "（a）${}_{25}^{45}{\\text{Mn}}^{+1};$ （b）${}_{45}^{69}{\\text{Rh}}^{+2};$ （c）${}_{\\;53}^{142}{\\text{I}}^{−1};$ （d）${}_{\\;97}^{243}\\text{Bk}$"
    }
   },
   {
@@ -447,11 +465,11 @@
     "at": "end"
    },
    "cite": "binding",
-   "prompt": "What are the two principal differences between nuclear reactions and ordinary chemical changes?",
+   "prompt": "核反应与普通化学变化之间的两个主要区别是什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Nuclear reactions usually change one type of nucleus into another; chemical changes rearrange atoms. Nuclear reactions involve much larger energies than chemical reactions and have measureable mass changes."
+    "solution": "核反应通常把一种原子核变成另一种原子核；化学变化则是原子的重新排列。核反应涉及的能量比化学反应大得多，并且有可测量的质量变化。"
    }
   },
   {
@@ -466,13 +484,13 @@
    "cite": "stability",
    "figure": {
     "src": "/media/ch21/CNX_Chem_21_01_BandStable.jpg",
-    "alt": "A plot of the number of neutrons against the number of protons, with the stable nuclides in a narrow band inside a wider band of radioactive nuclides, and the straight line where n equals Z beneath them."
+    "alt": "以中子数对质子数作的图，稳定核素位于较宽的放射性核素带之内的一条狭窄带中，其下方是 n 等于 Z 的直线。"
    },
-   "prompt": "Which of the following nuclei lie within the band of stability shown in Figure 21.2?<br>(a) chlorine-37<br>(b) calcium-40<br>(c) <sup>204</sup>Bi<br>(d) <sup>56</sup>Fe<br>(e) <sup>206</sup>Pb<br>(f) <sup>211</sup>Pb<br>(g) <sup>222</sup>Rn<br>(h) carbon-14",
+   "prompt": "下列哪些原子核位于图 21.2 所示的稳定带之内？<br>（a）氯-37<br>（b）钙-40<br>（c）<sup>204</sup>Bi<br>（d）<sup>56</sup>Fe<br>（e）<sup>206</sup>Pb<br>（f）<sup>211</sup>Pb<br>（g）<sup>222</sup>Rn<br>（h）碳-14",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a), (b), (c), (d), and (e)"
+    "solution": "（a）、（b）、（c）、（d）和（e）"
    }
   },
   {
@@ -487,13 +505,13 @@
    "cite": "stability",
    "figure": {
     "src": "/media/ch21/CNX_Chem_21_01_BandStable.jpg",
-    "alt": "A plot of the number of neutrons against the number of protons, with the stable nuclides in a narrow band inside a wider band of radioactive nuclides, and the straight line where n equals Z beneath them."
+    "alt": "以中子数对质子数作的图，稳定核素位于较宽的放射性核素带之内的一条狭窄带中，其下方是 n 等于 Z 的直线。"
    },
-   "prompt": "Which of the following nuclei lie within the band of stability shown in Figure 21.2?<br>(a) argon-40<br>(b) oxygen-16<br>(c) <sup>122</sup>Ba<br>(d) <sup>58</sup>Ni<br>(e) <sup>205</sup>Tl<br>(f) <sup>210</sup>Tl<br>(g) <sup>226</sup>Ra<br>(h) magnesium-24",
+   "prompt": "下列哪些原子核位于图 21.2 所示的稳定带之内？<br>（a）氩-40<br>（b）氧-16<br>（c）<sup>122</sup>Ba<br>（d）<sup>58</sup>Ni<br>（e）<sup>205</sup>Tl<br>（f）<sup>210</sup>Tl<br>（g）<sup>226</sup>Ra<br>（h）镁-24",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Argon-40, oxygen-16, <sup>58</sup>Ni, <sup>205</sup>Tl, and magnesium-24 lie within the band of stability; <sup>122</sup>Ba, <sup>210</sup>Tl, and <sup>226</sup>Ra do not. The number of neutrons is the mass number less <em>Z</em>. (a) Argon-40 has 18 protons and 22 neutrons, a stable nuclide in the band. (b) Oxygen-16 has 8 protons and 8 neutrons, n:p = 1.00, as light stable nuclei do; it is in the band. (c) <sup>122</sup>Ba has 56 protons and only 66 neutrons, n:p = 1.18, far below the band, where the stable barium nuclides have 74 to 82 neutrons. (d) <sup>58</sup>Ni has 28 protons and 30 neutrons, a stable nuclide in the band. (e) <sup>205</sup>Tl has 81 protons and 124 neutrons, n:p = 1.53, a stable nuclide in the band. (f) <sup>210</sup>Tl has 81 protons and 129 neutrons, n:p = 1.59, too many neutrons, so it lies above the band. (g) <sup>226</sup>Ra has 88 protons; every isotope of an element with an atomic number greater than 83 is unstable, so it lies beyond the end of the band. (h) Magnesium-24 has 12 protons and 12 neutrons, a stable nuclide in the band."
+    "solution": "氩-40、氧-16、<sup>58</sup>Ni、<sup>205</sup>Tl 和镁-24 位于稳定带之内；<sup>122</sup>Ba、<sup>210</sup>Tl 和 <sup>226</sup>Ra 则不在。中子数等于质量数减去 <em>Z</em>。（a）氩-40 有 18 个质子和 22 个中子，是带内的稳定核素。（b）氧-16 有 8 个质子和 8 个中子，n:p = 1.00，与较轻的稳定核一样；它在带内。（c）<sup>122</sup>Ba 有 56 个质子，只有 66 个中子，n:p = 1.18，远低于稳定带，稳定的钡核素有 74 到 82 个中子。（d）<sup>58</sup>Ni 有 28 个质子和 30 个中子，是带内的稳定核素。（e）<sup>205</sup>Tl 有 81 个质子和 124 个中子，n:p = 1.53，是带内的稳定核素。（f）<sup>210</sup>Tl 有 81 个质子和 129 个中子，n:p = 1.59，中子过多，所以位于稳定带之上。（g）<sup>226</sup>Ra 有 88 个质子；原子序数大于 83 的元素的每种同位素都不稳定，所以它位于稳定带末端之外。（h）镁-24 有 12 个质子和 12 个中子，是带内的稳定核素。"
    }
   },
   {
@@ -507,7 +525,7 @@
     "at": "end"
    },
    "cite": "ex-per-nucleon",
-   "prompt": "The mass of the atom ${\\;}_{9}^{19}\\text{F}$ is <span data-type=\"mass\">18.99840 amu</span>.<br>(a) Calculate its binding energy per atom in millions of electron volts.<br>(b) Calculate its binding energy per nucleon.",
+   "prompt": "原子 ${\\;}_{9}^{19}\\text{F}$ 的质量为 <span data-type=\"mass\">18.99840 amu</span>。<br>（a）计算其每个原子的结合能，以兆电子伏表示。<br>（b）计算其比结合能。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -525,7 +543,7 @@
       "tol": 0.01
      }
     ],
-    "solution": "(a) 148.8 MeV per atom; (b) 7.808 MeV/nucleon"
+    "solution": "（a）每个原子 148.8 MeV；（b）7.808 MeV/核子"
    }
   }
  ],
@@ -640,7 +658,7 @@
   {
    "id": "c-example-21-2",
    "kind": "correction",
-   "html": "The book cites Example 21.1, the density of a neutron star. The binding energy this example divides by the nucleon count is computed in Example 21.2."
+   "html": "书中引用的是例 21.1，即中子星的密度。本例中除以核子数的结合能是在例 21.2 中算出的。"
   }
  ]
 }

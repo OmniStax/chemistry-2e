@@ -110,7 +110,7 @@ const knots = (ks) => (x) => {
 (function () {
   const d = sim('sim-hydrogenation');
   const v = F.view3d(d.stage, { h: 470, dist: 6.4, tilt: 0.42, spin: 'off', pitch: [0.05, 1.3], yaw: [-1.2, 1.2],
-    views: [{ label: '正面', yaw: 0, pitch: 0.42 }, { label: '上方', yaw: 0, pitch: 1.25 }] });
+    views: [{ label: '正视', yaw: 0, pitch: 0.42 }, { label: '俯视', yaw: 0, pitch: 1.25 }] });
   const has3 = !!v.scene;
   if (!has3) v.wrap.style.display = 'none';
   const FLAT = has3 ? 0 : 360, cnv = F.makeCanvas(d.stage, 130 + FLAT);

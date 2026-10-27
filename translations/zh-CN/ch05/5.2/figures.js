@@ -15,8 +15,8 @@ const sim = (id, H) => F.sim(root, id, H);
   const d = sim('sim-calorimeter', 580);
   /* specific heats from Table 5.1, J/g °C */
   const METALS = {
-    Fe: { name: 'iron', c: 0.449 }, Cu: { name: 'copper', c: 0.385 }, Pb: { name: 'lead', c: 0.130 },
-    Au: { name: 'gold', c: 0.129 }, Al: { name: 'aluminum', c: 0.897 },
+    Fe: { name: '铁', c: 0.449 }, Cu: { name: '铜', c: 0.385 }, Pb: { name: '铅', c: 0.130 },
+    Au: { name: '金', c: 0.129 }, Al: { name: '铝', c: 0.897 },
   };
   const CW = 4.184;
   /* each state opens on its book example: 5.3 (rebar as iron), 5.5 and 5.6 */
@@ -26,31 +26,31 @@ const sim = (id, H) => F.sim(root, id, H);
     endo: { mw: 53.2, Tw: 24.9, q: 1.02 },
   };
   const PROC = F.choice(d.controls, {
-    label: '\\text{process}', aria: 'the process in the calorimeter', value: 'metal',
-    options: [{ value: 'metal', label: 'hot metal' }, { value: 'exo', label: 'exothermic reaction' }, { value: 'endo', label: 'endothermic reaction' }],
+    label: '\\text{过程}', aria: '量热计中的过程', value: 'metal',
+    options: [{ value: 'metal', label: '热的金属' }, { value: 'exo', label: '放热反应' }, { value: 'endo', label: '吸热反应' }],
     onInput: (v) => switchTo(v),
   });
   const MET = F.select(d.controls, {
-    label: '\\text{metal}', aria: 'the metal', value: 'Fe',
+    label: '\\text{金属}', aria: '金属', value: 'Fe',
     options: Object.keys(METALS).map((k) => ({ value: k, label: METALS[k].name })), onInput: () => cy.reset(),
   });
   const metEl = d.controls.lastElementChild;
-  const MM = F.ctl(d.controls, { label: '\\km_{\\htmlData{ref=metal}{\\text{metal}}}', cls: 'mass', min: 10, max: 500, step: 0.1, value: 360.0, unit: 'g', dec: 1, aria: 'mass of the metal in grams', onInput: () => cy.reset() });
+  const MM = F.ctl(d.controls, { label: '\\km_{\\htmlData{ref=metal}{\\text{金属}}}', cls: 'mass', min: 10, max: 500, step: 0.1, value: 360.0, unit: 'g', dec: 1, aria: '金属的质量，单位为克', onInput: () => cy.reset() });
   const TM = F.ctl(d.controls, {
-    label: '\\kT_{\\text{i,}\\htmlData{ref=metal}{\\text{metal}}}', cls: 'temperature', min: 15, max: 300, step: 1, value: 248, unit: '°C', dec: 0, aria: 'initial temperature of the metal in degrees Celsius',
-    specials: [{ at: () => Math.round(TW.v), label: 'equal temperatures' }], onInput: () => cy.reset(),
+    label: '\\kT_{\\text{i,}\\htmlData{ref=metal}{\\text{金属}}}', cls: 'temperature', min: 15, max: 300, step: 1, value: 248, unit: '°C', dec: 0, aria: '金属的初始温度，单位为摄氏度',
+    specials: [{ at: () => Math.round(TW.v), label: '温度相等' }], onInput: () => cy.reset(),
   });
-  const Q = F.ctl(d.controls, { label: '|\\kq_{\\text{reaction}}|', cls: 'energy', min: 0.1, max: 3, step: 0.01, value: 2.89, unit: 'kJ', dec: 2, aria: 'heat of the reaction in kilojoules', onInput: () => cy.reset() });
-  const MW = F.ctl(d.controls, { label: '\\km_{\\htmlData{ref=water}{\\text{water}}}', cls: 'mass', min: 50, max: 500, step: 0.1, value: 425.0, unit: 'g', dec: 1, aria: 'mass of the water in grams', onInput: () => cy.reset() });
-  const TW = F.ctl(d.controls, { label: '\\kT_{\\text{i,}\\htmlData{ref=water}{\\text{water}}}', cls: 'temperature', min: 15, max: 30, step: 0.1, value: 24.0, unit: '°C', dec: 1, aria: 'initial temperature of the water in degrees Celsius', onInput: () => { TM.refresh(); cy.reset(); } });
+  const Q = F.ctl(d.controls, { label: '|\\kq_{\\text{反应}}|', cls: 'energy', min: 0.1, max: 3, step: 0.01, value: 2.89, unit: 'kJ', dec: 2, aria: '反应的热量，单位为千焦', onInput: () => cy.reset() });
+  const MW = F.ctl(d.controls, { label: '\\km_{\\htmlData{ref=water}{\\text{水}}}', cls: 'mass', min: 50, max: 500, step: 0.1, value: 425.0, unit: 'g', dec: 1, aria: '水的质量，单位为克', onInput: () => cy.reset() });
+  const TW = F.ctl(d.controls, { label: '\\kT_{\\text{i,}\\htmlData{ref=water}{\\text{水}}}', cls: 'temperature', min: 15, max: 30, step: 0.1, value: 24.0, unit: '°C', dec: 1, aria: '水的初始温度，单位为摄氏度', onInput: () => { TM.refresh(); cy.reset(); } });
   const metalParts = [metEl, MM.el, TM.el];
   Q.el.style.display = 'none'; Q.el.dataset.out = '';
   function switchTo(v) {
     const b = BOOK[v], metal = v === 'metal';
     MW.set(b.mw); TW.set(b.Tw); if (!metal) Q.set(b.q);
-    const liquid = metal ? 'water' : 'solution', tag = '\\htmlData{ref=' + liquid + '}{\\text{' + liquid + '}}';
-    MW.relabel('\\km_{' + tag + '}', 'mass of the ' + liquid + ' in grams');
-    TW.relabel('\\kT_{\\text{i,}' + tag + '}', 'initial temperature of the ' + liquid + ' in degrees Celsius');
+    const liquid = metal ? 'water' : 'solution', zh = metal ? '水' : '溶液', tag = '\\htmlData{ref=' + liquid + '}{\\text{' + zh + '}}';
+    MW.relabel('\\km_{' + tag + '}', zh + '的质量，单位为克');
+    TW.relabel('\\kT_{\\text{i,}' + tag + '}', zh + '的初始温度，单位为摄氏度');
     F.regroup(d.controls, metal ? metalParts : [Q.el], metal ? [Q.el] : metalParts);
     TM.refresh(); cy.reset();
   }
@@ -96,13 +96,13 @@ const sim = (id, H) => F.sim(root, id, H);
     /* the cover */
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = rc; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.rect(CX - WT - 30, TOP - 26, 2 * WT + 60, 26); ctx.fill(); ctx.stroke(); ctx.restore();
-    hits.push({ x: CX - WT - 8, y: (TOP + BOT) / 2, r: 18, name: 'two nested polystyrene cups' }, { x: CX - 60, y: TOP - 13, r: 20, name: 'the cover' });
+    hits.push({ x: CX - WT - 8, y: (TOP + BOT) / 2, r: 18, name: '两个嵌套的聚苯乙烯杯' }, { x: CX - 60, y: TOP - 13, r: 20, name: '杯盖' });
   }
   function stirrer(ctx, lift) {
     const x = CX - 70, y = BOT - 40 - lift;
     line(ctx, x, TOP - 90 - lift, x, y, PAL.ink, 4);
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 4; ctx.beginPath(); ctx.ellipse(x, y, 46, 8, 0, 0, 2 * Math.PI); ctx.stroke(); ctx.restore();
-    hits.push({ x, y: TOP - 60 - lift, r: 16, name: 'the stirrer' });
+    hits.push({ x, y: TOP - 60 - lift, r: 16, name: '搅拌器' });
   }
   /* the thermometer, its column in the temperature hue up to the reading on the graph's scale */
   function thermometer(ctx, T, yr) {
@@ -114,7 +114,7 @@ const sim = (id, H) => F.sim(root, id, H);
     line(ctx, x, y1 - 10, x, top, C('temperature'), 7);
     dot(ctx, x, y1 - 6, C('temperature'), true, 12);
     text(ctx, f1(T) + ' °C', x + 24, Math.max(top, y0 + 14), C('temperature'), { size: 22, weight: 600, bg: PAL.panel });
-    hits.push({ x, y: (y0 + y1) / 2, r: 14, name: 'the thermometer' });
+    hits.push({ x, y: (y0 + y1) / 2, r: 14, name: '温度计' });
   }
   /* heat arrows between the system and the solution, moving the way heat flows and fading as the flow stops */
   function heatArrows(ctx, cx, cy0, r0, out, flow, t) {
@@ -159,21 +159,21 @@ const sim = (id, H) => F.sim(root, id, H);
       ctx.beginPath(); ctx.rect(bx, by, bw, bh); ctx.fill(); ctx.stroke(); ctx.restore();
       text(ctx, 'M', CX + 6, ICY, rM, { size: 24, weight: 600, align: 'center', bg: PAL.panel });
       text(ctx, f1(S.Tm(t)) + ' °C', CX + 6, by + bh + 24, C('temperature'), { size: 20, weight: 600, align: 'center', bg: PAL.panel });
-      hits.push({ x: CX + 6, y: ICY, r: 36, name: 'a piece of ' + S.m.name + ', the system' });
+      hits.push({ x: CX + 6, y: ICY, r: 36, name: S.m.name + '块，即体系' });
       heatArrows(ctx, CX + 6, ICY, 62, S.Tm0 > S.Tw0, S.flow, t);
       text(ctx, 'W', CX - 110, LEVEL + 40, rW, { size: 22, weight: 600, align: 'center' });
     } else {
-      text(ctx, 'reaction', CX + 6, ICY - 12, PAL.ink, { size: 20, weight: 600, align: 'center' });
-      text(ctx, '(system)', CX + 6, ICY + 14, PAL.muted, { size: 17, align: 'center' });
-      hits.push({ x: CX + 6, y: ICY, r: 40, name: mode === 'exo' ? 'an exothermic reaction, the system' : 'an endothermic reaction, the system' });
+      text(ctx, '反应', CX + 6, ICY - 12, PAL.ink, { size: 20, weight: 600, align: 'center' });
+      text(ctx, '（体系）', CX + 6, ICY + 14, PAL.muted, { size: 17, align: 'center' });
+      hits.push({ x: CX + 6, y: ICY, r: 40, name: mode === 'exo' ? '放热反应，即体系' : '吸热反应，即体系' });
       heatArrows(ctx, CX + 6, ICY, 58, mode === 'exo', S.flow, t);
     }
-    hits.push({ x: CX - 60, y: LEVEL + 70, r: 60, name: metal ? 'the water, the surroundings' : 'the solution, the surroundings' });
-    text(ctx, metal ? 'water (surroundings)' : 'solution (surroundings)', CX, BOT + 44, rW, { size: 20, align: 'center' });
+    hits.push({ x: CX - 60, y: LEVEL + 70, r: 60, name: metal ? '水，即环境' : '溶液，即环境' });
+    text(ctx, metal ? '水（环境）' : '溶液（环境）', CX, BOT + 44, rW, { size: 20, align: 'center' });
     thermometer(ctx, S.Tw(t), yr);
 
     /* the graph */
-    const { X, Y } = axes(ctx, GB, [0, TT], yr, { nx: 4, ny: 5, fx: () => '', yl: 'T (°C)', yc: C('temperature'), xl: 'time' });
+    const { X, Y } = axes(ctx, GB, [0, TT], yr, { nx: 4, ny: 5, fx: () => '', yl: 'T（°C）', yc: C('temperature'), xl: '时间' });
     const Tf = Math.max(yr[0], Math.min(yr[1], S.Tf));
     line(ctx, GB.l, Y(Tf), GB.r, Y(Tf), alpha(C('temperature'), 0.6), 2, [10, 10]);
     const tcol = C('temperature');
@@ -185,40 +185,40 @@ const sim = (id, H) => F.sim(root, id, H);
     curve(ctx, S.Tw, 0, Math.max(t, 1e-3), X, Y, rW, 5);
     F.pinned(ctx, GB, X, Y, t, S.Tw(t), rW);
     const below = metal || mode === 'exo' ? 1 : -1;
-    text(ctx, metal ? 'water' : 'solution', X(t) + 16, Math.max(GB.t + 10, Math.min(Y(S.Tw(t)) + 22 * below, GB.b - 12)), rW, { size: 18, weight: 600, bg: PAL.panel });
-    text(ctx, 'T_{final} = ' + f1(S.Tf) + ' °C', GB.r, Y(Tf) + (Y(Tf) < GB.t + 40 ? 22 : -18), tcol, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
+    text(ctx, metal ? '水' : '溶液', X(t) + 16, Math.max(GB.t + 10, Math.min(Y(S.Tw(t)) + 22 * below, GB.b - 12)), rW, { size: 18, weight: 600, bg: PAL.panel });
+    text(ctx, 'T_{f} = ' + f1(S.Tf) + ' °C', GB.r, Y(Tf) + (Y(Tf) < GB.t + 40 ? 22 : -18), tcol, { size: 18, weight: 600, align: 'right', bg: PAL.panel });
 
     /* the heat bars: equal and opposite at every moment */
     line(ctx, BX, 418, BX, 548, PAL.muted, 2);
-    bar(ctx, S.qs, qmax, 446, metal ? 'q_{metal}' : 'q_{reaction}', metal ? 'the heat gained by the metal, negative while it loses heat' : 'the heat of the reaction');
-    bar(ctx, S.ql, qmax, 516, metal ? 'q_{water}' : 'q_{solution}', metal ? 'the heat gained by the water' : 'the heat gained by the solution');
+    bar(ctx, S.qs, qmax, 446, metal ? 'q_{金属}' : 'q_{反应}', metal ? '金属所得到的热量，在它失去热量时为负' : '反应的热量');
+    bar(ctx, S.ql, qmax, 516, metal ? 'q_{水}' : 'q_{溶液}', metal ? '水所得到的热量' : '溶液所得到的热量');
 
     /* the headline */
     const done = S.flow < 0.03;
     if (metal) {
       const nm = S.m.name;
-      if (Math.abs(S.Tm0 - S.Tw0) <= 0.05) topline(ctx, 'The ' + nm + ' and the water start at the same temperature, so no heat flows between them.');
-      else if (done) topline(ctx, 'The ' + nm + ' and the water have both reached ' + f1(S.Tf) + ' °C, and no more heat flows.');
-      else topline(ctx, 'Heat flows from the ' + (S.Tm0 > S.Tw0 ? nm + ' at ' + f1(S.Tm(t)) + ' °C to the water at ' + f1(S.Tw(t)) + ' °C.' : 'water at ' + f1(S.Tw(t)) + ' °C to the ' + nm + ' at ' + f1(S.Tm(t)) + ' °C.'));
+      if (Math.abs(S.Tm0 - S.Tw0) <= 0.05) topline(ctx, nm + '和水的起始温度相同，所以二者之间没有热量流动。');
+      else if (done) topline(ctx, nm + '和水都已达到 ' + f1(S.Tf) + ' °C，不再有热量流动。');
+      else topline(ctx, S.Tm0 > S.Tw0 ? '热量从 ' + f1(S.Tm(t)) + ' °C 的' + nm + '流向 ' + f1(S.Tw(t)) + ' °C 的水。' : '热量从 ' + f1(S.Tw(t)) + ' °C 的水流向 ' + f1(S.Tm(t)) + ' °C 的' + nm + '。');
     } else if (mode === 'exo') {
-      topline(ctx, done ? 'The reaction has released ' + f2(Q.v) + ' kJ, and the solution has warmed from ' + f1(S.Tw0) + ' °C to ' + f1(S.Tf) + ' °C.'
-        : 'The reaction releases heat into the solution, which has warmed from ' + f1(S.Tw0) + ' °C to ' + f1(S.Tw(t)) + ' °C.');
+      topline(ctx, done ? '反应已放出 ' + f2(Q.v) + ' kJ，溶液已从 ' + f1(S.Tw0) + ' °C 升温到 ' + f1(S.Tf) + ' °C。'
+        : '反应向溶液放出热量，溶液已从 ' + f1(S.Tw0) + ' °C 升温到 ' + f1(S.Tw(t)) + ' °C。');
     } else {
-      topline(ctx, done ? 'The reaction has absorbed ' + f2(Q.v) + ' kJ, and the solution has cooled from ' + f1(S.Tw0) + ' °C to ' + f1(S.Tf) + ' °C.'
-        : 'The reaction takes heat from the solution, which has cooled from ' + f1(S.Tw0) + ' °C to ' + f1(S.Tw(t)) + ' °C.');
+      topline(ctx, done ? '反应已吸收 ' + f2(Q.v) + ' kJ，溶液已从 ' + f1(S.Tw0) + ' °C 降温到 ' + f1(S.Tf) + ' °C。'
+        : '反应从溶液中吸收热量，溶液已从 ' + f1(S.Tw0) + ' °C 降温到 ' + f1(S.Tw(t)) + ' °C。');
     }
 
     /* the readout: the final state, from the sliders alone */
     const u = '\\;\\text{J/g}\\,^\\circ\\text{C}';
     if (metal) {
       const dT = S.Tf - S.Tm0, q = S.Cm * dT / 1000;
-      const texs = '\\kq_{\\htmlData{ref=metal}{\\text{metal}}}=\\kcspec\\times\\km\\times\\kdT=(' + hu('heat-capacity', fmt(S.m.c, 3) + u) + ')(' + hu('mass', f1(MM.v) + '\\;\\text{g}') + ')(' + hu('temperature', tn(f1(dT)) + '\\;^\\circ\\text{C}') + ')=' + hu('energy', tn(kJ(q)).replace('+', '') + '\\;\\text{kJ}') + '=-\\kq_{\\htmlData{ref=water}{\\text{water}}}';
-      const note = S.Tf >= 100 ? 'The water would reach 100 °C and begin to boil, which this calculation does not include.' : '';
+      const texs = '\\kq_{\\htmlData{ref=metal}{\\text{金属}}}=\\kcspec\\times\\km\\times\\kdT=(' + hu('heat-capacity', fmt(S.m.c, 3) + u) + ')(' + hu('mass', f1(MM.v) + '\\;\\text{g}') + ')(' + hu('temperature', tn(f1(dT)) + '\\;^\\circ\\text{C}') + ')=' + hu('energy', tn(kJ(q)).replace('+', '') + '\\;\\text{kJ}') + '=-\\kq_{\\htmlData{ref=water}{\\text{水}}}';
+      const note = S.Tf >= 100 ? '水将达到 100 °C 并开始沸腾，而本计算不包括这一点。' : '';
       ro.set(texs, note, { form: 'metal' });
     } else {
       const dT = S.Tf - S.Tw0, qsol = CW * MW.v * dT / 1000;
-      const texs = '\\kq_{\\text{reaction}}=-\\kqsolution=-\\kcspec\\times\\km\\times\\kdT=-(' + hu('heat-capacity', '4.184' + u) + ')(' + hu('mass', f1(MW.v) + '\\;\\text{g}') + ')(' + hu('temperature', tn(f2(dT)) + '\\;^\\circ\\text{C}') + ')=' + hu('energy', tn(kJ(-qsol)).replace('+', '') + '\\;\\text{kJ}');
-      ro.set(texs, mode === 'exo' ? 'The negative sign shows that the reaction is exothermic: the solution absorbs the heat it gives off.' : 'The positive sign shows that the reaction is endothermic: it takes its heat from the solution.', { form: 'reaction' });
+      const texs = '\\kq_{\\text{反应}}=-\\kqsolution=-\\kcspec\\times\\km\\times\\kdT=-(' + hu('heat-capacity', '4.184' + u) + ')(' + hu('mass', f1(MW.v) + '\\;\\text{g}') + ')(' + hu('temperature', tn(f2(dT)) + '\\;^\\circ\\text{C}') + ')=' + hu('energy', tn(kJ(-qsol)).replace('+', '') + '\\;\\text{kJ}');
+      ro.set(texs, mode === 'exo' ? '负号表明该反应是放热的：溶液吸收了它放出的热量。' : '正号表明该反应是吸热的：它从溶液中取得热量。', { form: 'reaction' });
     }
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

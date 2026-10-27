@@ -1,0 +1,743 @@
+{
+ "types": [],
+ "symbols": [
+  {
+   "sym": "Δ_oct",
+   "latex": "\\Delta_{\\text{oct}}",
+   "macro": "\\kdoct"
+  },
+  {
+   "sym": "Δ_tet",
+   "latex": "\\Delta_{\\text{tet}}",
+   "macro": "\\kdtet"
+  },
+  {
+   "sym": "P_pair",
+   "latex": "P",
+   "macro": "\\kPpair"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "d-block-element",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "d 区元素",
+   "terms": [
+    "d 区元素"
+   ],
+   "statement": "过渡金属是具有（或容易形成）部分填充 d 轨道的元素。第 3–11 族的 d 区元素是过渡元素；d 轨道在铜族（第 11 族）填满，所以第 12 族元素严格来说不是过渡元素，不过它们表现出一些相同的化学性质，通常也列入过渡金属的讨论之中。"
+  },
+  {
+   "id": "f-block-element",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "f 区元素",
+   "terms": [
+    "f 区元素",
+    "内过渡元素"
+   ],
+   "statement": "f 区元素，也称内过渡金属，是镧系元素和锕系元素，即价电子位于 f 轨道的元素。它们也符合过渡金属的判据，因为在 f 轨道之前，d 轨道已被部分占据；它们常被错开画在元素周期表的下方。"
+  },
+  {
+   "id": "transition-series",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "过渡系",
+   "terms": [
+    "第一过渡系",
+    "第二过渡系",
+    "第三过渡系",
+    "第四过渡系"
+   ],
+   "statement": "d 区元素分为四个过渡系，d 区的每一行对应一个过渡系：第一过渡系（Sc 至 Cu，原子序数 21–29）、第二过渡系（Y 至 Ag，39–47）、第三过渡系（La 以及 Hf 至 Au，57 和 72–79）和第四过渡系（Ac 以及 Rf 至 Rg，89 和 104–111）。由于镧和锕的性质与镧系元素和锕系元素相似，它们被归入这两个系，尽管它们的电子构型使其成为第三和第四过渡系的第一个成员。"
+  },
+  {
+   "id": "rare-earth-element",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "稀土元素",
+   "terms": [
+    "稀土元素"
+   ],
+   "statement": "17 种稀土元素是 15 种镧系元素加上钪和钇。它们常常共生，化学性质相似，因此很难把其中任何一种与其他分离；它们在地壳中的含量相当丰富，之所以被称为稀土，是因为纯净的样品曾经十分稀少。"
+  },
+  {
+   "id": "coordination-compound",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "配位化合物",
+   "terms": [
+    "配位化合物"
+   ],
+   "statement": "配位化合物是一类稳定的化合物，其中的中心金属原子或离子作为路易斯酸，接受来自作为路易斯碱的分子或离子的一对或多对电子。过渡金属能形成种类繁多的配位化合物，不过主族元素也可以形成配位化合物。"
+  },
+  {
+   "id": "transition-metal-reactivity",
+   "kind": "idea",
+   "section": "19.1",
+   "name": "过渡元素的反应性",
+   "statement": "从还原电势可以看出，一些过渡金属是强还原剂，另一些则反应性很低：镧系元素都形成在水溶液中稳定的 3+ 阳离子，而铂和金能抵抗氧化。较轻的 d 区元素的离子形成在水中稳定的有色水合离子，较重的元素则主要形成含氧酸根。d 区和 f 区元素与卤素反应，加热时与氧反应，活动性位于氢之上的元素与酸反应，生成氢气和盐。"
+  },
+  {
+   "id": "platinum-metals",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "铂系元素",
+   "terms": [
+    "铂系元素"
+   ],
+   "statement": "钌、锇、铑、铱、钯和铂是铂系元素，它们往往存在于相同的矿物中，化学性质相似。它们很难形成在水中稳定的简单阳离子，并且不像第二、第三过渡系中靠前的元素那样，不形成稳定的含氧酸根。"
+  },
+  {
+   "id": "transition-metal-oxidation-states",
+   "kind": "idea",
+   "section": "19.1",
+   "name": "过渡金属的氧化态",
+   "statement": "过渡金属形成的化合物氧化态范围很宽。在第一过渡系中，常见氧化态的数目向中部增加到最大，然后减少；从钪到锰，最高氧化态对应于失去全部 s 和 d 价电子，该系的大多数元素形成在水中稳定的 2+ 或 3+ 离子。第二、第三过渡系的元素一般在较高氧化态下更稳定，因为它们体积较大的离子更容易失去电子。"
+  },
+  {
+   "id": "smelting",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "冶炼",
+   "terms": [
+    "冶炼"
+   ],
+   "statement": "冶炼是在熔融状态下从矿石中提取金属，其中包括把金属化合物还原为金属。可以加入一种能形成炉渣的化合物来除去杂质，炉渣是熔点低、容易与熔融金属分离的物质。"
+  },
+  {
+   "id": "isolating-transition-metals",
+   "kind": "idea",
+   "section": "19.1",
+   "name": "过渡金属的提取",
+   "statement": "过渡元素从矿石中回收的难易，取决于它在矿石中的浓度、共存的其他元素，以及其离子被还原的难度。碳可以把大多数 d 区离子还原为单质，而 f 区离子，如同较活泼的主族金属的离子，必须通过电解或用活泼金属还原来提取。提取通常分三步：预处理、冶炼和精炼。"
+  },
+  {
+   "id": "blast-furnace",
+   "kind": "idea",
+   "section": "19.1",
+   "name": "在高炉中提取铁",
+   "statement": "焙烧过的铁矿石、焦炭和石灰石从高炉顶部加入，预热过的空气从靠近底部处鼓入，焦炭在此燃烧成二氧化碳；二氧化碳向上经过白热的焦炭时被还原为一氧化碳，一氧化碳在上部区域还原铁的氧化物。石灰石分解为氧化钙，氧化钙与二氧化硅结合，形成硅酸钙炉渣；熔融的铁和密度较小的炉渣聚集在底部，被放出。"
+  },
+  {
+   "id": "steel",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "钢",
+   "terms": [
+    "钢"
+   ],
+   "statement": "钢是通过除去铁中的杂质并加入锰、铬、镍、钨、钼和钒等物质制成的，这些物质使合金具有适合特定用途的性能。大多数钢含有少量但确定比例的碳，不过铁中所含的大部分碳必须除去，因为碳过多会使铁变脆。"
+  },
+  {
+   "id": "copper-isolation",
+   "kind": "idea",
+   "section": "19.1",
+   "name": "铜的提取",
+   "statement": "把浓缩的硫化铜矿石焙烧，再与作为熔剂的石灰石一起加热，铁和二氧化硅通过路易斯酸碱反应以熔融炉渣的形式除去。向剩余的 Cu₂S 中吹入空气，使一部分转化为 Cu₂O，Cu₂O 被其余的硫化物还原为泡铜；这种不纯的铜被铸成阳极，再经电解精炼。"
+  },
+  {
+   "id": "hydrometallurgy",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "湿法冶金",
+   "terms": [
+    "湿法冶金"
+   ],
+   "statement": "湿法冶金是先把金属转化为可溶性离子，再提取这些离子并把它们还原，使纯金属沉淀出来，从而从混合物中分离出金属。银在空气存在下被碱金属氰化物溶解为二氰合银(I)离子 [Ag(CN)₂]⁻，再用锌或铁(II)从溶液中沉淀出来。"
+  },
+  {
+   "id": "transition-metal-compounds",
+   "kind": "idea",
+   "section": "19.1",
+   "name": "过渡金属化合物",
+   "statement": "简单过渡金属化合物中的键，从低氧化态时的离子键到高氧化态时的共价键不等，因为金属的电负性随氧化态升高而增大。低氧化数的卤化物是离子型的，而钛和钒的四卤化物像共价的 SiCl₄ 一样与水反应。最低氧化态的氧化物呈碱性，中间氧化态的呈两性，最高氧化态的呈酸性；氢氧化物、碳酸盐和其他盐的制备方法与主族金属的大体相同。"
+  },
+  {
+   "id": "superconductor",
+   "kind": "definition",
+   "section": "19.1",
+   "name": "超导体",
+   "terms": [
+    "超导体"
+   ],
+   "statement": "超导体导电时没有电阻，因此输电时不损失能量。NbTi 和 Nb₃Sn 等商用超导体必须用液氦冷却到 23 K 以下，而 YBa₂Cu₃O₇ 等氧化物在接近 90 K 时即成为超导体，可以用液氮冷却。"
+  },
+  {
+   "id": "central-metal",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "中心金属",
+   "terms": [
+    "中心金属"
+   ],
+   "statement": "在配合物中，路易斯酸，常称为中心金属离子或原子，是通过配位共价键与一个或多个配体相连的离子或原子。它常常是过渡金属或内过渡金属。"
+  },
+  {
+   "id": "donor-atom",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "配位原子",
+   "terms": [
+    "配位原子"
+   ],
+   "statement": "配位原子是配体中带有孤电子对、能与中心金属形成配位共价键的原子。"
+  },
+  {
+   "id": "coordination-sphere",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "配位层",
+   "terms": [
+    "配位层"
+   ],
+   "statement": "配位层是中心金属离子或原子加上与它相连的配体。化学式中的方括号括住配位层，括号外的物种不属于配位层，也不与金属键合。"
+  },
+  {
+   "id": "monodentate-ligand",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "单齿配体",
+   "terms": [
+    "单齿"
+   ],
+   "statement": "单齿配体仅通过一个配位共价键与中心金属相连，其名称源自希腊语，意为“一齿的”；对于单齿配体，配体数等于配位数。"
+  },
+  {
+   "id": "bidentate-ligand",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "双齿配体",
+   "terms": [
+    "双齿配体"
+   ],
+   "statement": "双齿配体通过两个不同的配位原子与同一个中心金属配位。乙二胺（en）有两个带孤电子对的氮原子，二者都能配位，所以在 [Co(en)₃]³⁺ 中，三个 en 配体使钴(III)的配位数为六。"
+  },
+  {
+   "id": "polydentate-ligand",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "多齿配体",
+   "terms": [
+    "多齿配体"
+   ],
+   "statement": "多齿配体通过不止一个配位原子与中心金属离子结合；前缀表示配位原子的个数（双齿、三齿、四齿、五齿、六齿）。血红素中的配体是四齿配体。"
+  },
+  {
+   "id": "chelate",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "螯合物",
+   "terms": [
+    "螯合物",
+    "螯合配体",
+    "螯合剂"
+   ],
+   "statement": "螯合物（其名称源自希腊语，意为“爪”）是由一个或多个多齿配体与中心金属相连形成的配合物。通过两个或更多配位原子的键相连的配体是螯合配体，或称螯合剂，它握住金属离子，就像蟹钳夹住一颗弹珠。"
+  },
+  {
+   "id": "naming-coordination-compounds",
+   "kind": "skill",
+   "section": "19.2",
+   "name": "配位化合物的命名",
+   "statement": "配合物按维尔纳规则命名：离子型化合物先命名阳离子，后命名阴离子；配体按字母顺序排在金属之前命名，阴离子配体的名称以 -o 结尾，中性配体中 aqua、ammine、carbonyl 和 nitrosyl 是例外；同一种配体的个数用 di-、tri-、tetra-（或 bis-、tris-、tetrakis-）表示；金属的氧化态由配体电荷和配合物的总电荷确定，以罗马数字写在其后，配合物为阴离子时，在金属名称的词干后加 -ate。"
+  },
+  {
+   "id": "complex-geometry",
+   "kind": "idea",
+   "section": "19.2",
+   "name": "配合物的结构",
+   "statement": "配位数决定中心金属周围的几何构型：两个配位原子给出直线形配合物，四个给出四面体形或平面正方形配合物，六个给出八面体形配合物，相邻配体之间成 90°；更高的配位数则给出五角双锥、四方反棱柱和十二面体等结构。与主族化合物不同，非键合的 d 电子不改变配体的排布。"
+  },
+  {
+   "id": "geometric-isomer",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "几何异构体",
+   "terms": [
+    "几何异构体"
+   ],
+   "statement": "几何异构体具有通过相同类型的键连接的相同原子，只是在空间中的取向不同。它们是性质不同的不同化合物，例如 [Co(NH₃)₄Cl₂]NO₃ 的紫色顺式和绿色反式，二者的偶极矩、溶解度和反应性也不同。"
+  },
+  {
+   "id": "cis-trans-configuration",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "顺式和反式构型",
+   "terms": [
+    "顺式构型",
+    "反式构型"
+   ],
+   "statement": "在顺式构型中，两个相似的基团相邻，位于分子上假想参考线的同一侧，在平面正方形或八面体配合物中成 90°；在反式构型中，它们正好相对，成 180°。[Co(NH₃)₄Cl₂]⁺ 的顺式异构体有极性，而反式异构体的键偶极相互抵消。"
+  },
+  {
+   "id": "optical-isomer",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "旋光异构体",
+   "terms": [
+    "旋光异构体",
+    "对映异构体"
+   ],
+   "statement": "旋光异构体，或称对映异构体，是不能重合的镜像，就像右手和左手一样。除了对偏振光的作用和与其他旋光异构体的反应不同以外，它们的性质完全相同；[M(en)₃]ⁿ⁺ 和顺-[Co(en)₂Cl₂]⁺ 等配合物能形成旋光异构体。"
+  },
+  {
+   "id": "linkage-isomer",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "键合异构体",
+   "terms": [
+    "键合异构体"
+   ],
+   "statement": "当配体能通过两种不同的原子与金属中心结合时，就出现键合异构体：CN⁻ 可通过碳（氰基）或氮（异氰基）结合，SCN⁻ 可通过硫或氮结合。"
+  },
+  {
+   "id": "ionization-isomer",
+   "kind": "definition",
+   "section": "19.2",
+   "name": "电离异构体",
+   "terms": [
+    "电离异构体",
+    "配位异构体"
+   ],
+   "statement": "当内配位层中的一个阴离子配体与外配位层中的反离子互换位置时，就出现电离异构体，或称配位异构体，如 [CoCl₆][Br] 和 [CoCl₅Br][Cl]。"
+  },
+  {
+   "id": "complexes-in-nature-and-technology",
+   "kind": "idea",
+   "section": "19.2",
+   "name": "自然界和技术中的配合物",
+   "statement": "叶绿素是镁的配合物，血红素是铁的配合物，只有当铁为 Fe²⁺ 时，血红蛋白中的血红素才能运载氧。EDTA 等螯合剂可使水软化、保存食品和封存金属，BAL 和肠杆菌素等药物把有毒金属变成水溶性螯合物排出体外。配合物能使电镀镀层更光滑，并用作颜料和催化剂；二氯·二氨合铂(II)的顺式异构体顺铂可用于治疗癌症，反式异构体则不能。"
+  },
+  {
+   "id": "crystal-field-theory",
+   "kind": "definition",
+   "section": "19.3",
+   "name": "晶体场理论",
+   "terms": [
+    "晶体场理论",
+    "CFT"
+   ],
+   "statement": "晶体场理论（CFT）用与配体的静电相互作用来解释过渡金属轨道的能量，其中配体被当作点电荷，而不考虑金属–配体之间的成键。配体给出的电子排斥金属的未杂化 d 轨道中的电子，使 d 轨道的能量不再全都相同；该模型可解释配合物的颜色、磁性和部分结构。"
+  },
+  {
+   "id": "eg-and-t2g-orbitals",
+   "kind": "definition",
+   "section": "19.3",
+   "name": "eg 和 t2g 轨道",
+   "terms": [
+    "eg 轨道",
+    "t2g 轨道"
+   ],
+   "statement": "在八面体配合物中，六个配体位于坐标轴上。波瓣指向配体的两个 d 轨道，即 d<sub>z²</sub> 和 d<sub>x²−y²</sub>，是 e<sub>g</sub> 轨道，能量升高；波瓣指向配体之间的三个 d 轨道，即 d<sub>xy</sub>、d<sub>xz</sub> 和 d<sub>yz</sub>，是 t<sub>2g</sub> 轨道，能量较低。"
+  },
+  {
+   "id": "crystal-field-splitting",
+   "kind": "definition",
+   "section": "19.3",
+   "name": "晶体场分裂",
+   "symbol": "Δ_oct",
+   "terms": [
+    "晶体场分裂"
+   ],
+   "type": "energy",
+   "statement": "晶体场分裂，对八面体配合物记作 Δ<sub>oct</sub>，是 e<sub>g</sub> 与 t<sub>2g</sub> 两组轨道之间的能量差。其大小取决于配体、金属上的电荷，以及金属用的是 3d、4d 还是 5d 轨道。"
+  },
+  {
+   "id": "spectrochemical-series",
+   "kind": "definition",
+   "section": "19.3",
+   "name": "光谱化学序列",
+   "terms": [
+    "光谱化学序列"
+   ],
+   "statement": "光谱化学序列按配体产生的晶体场分裂对配体排序：I⁻ < Br⁻ < Cl⁻ < F⁻ < H₂O < NH₃ < en < NO₂⁻ < CN⁻，场强依次增大。"
+  },
+  {
+   "id": "ligand-field-strength",
+   "kind": "definition",
+   "section": "19.3",
+   "name": "强场配体和弱场配体",
+   "terms": [
+    "强场配体",
+    "弱场配体"
+   ],
+   "statement": "光谱化学序列左侧的配体产生的晶体场分裂小，是弱场配体；右侧的配体产生的分裂大，是强场配体，所以对同一金属，碘离子配体的 Δ<sub>oct</sub> 比氰根配体的小得多。"
+  },
+  {
+   "id": "pairing-energy",
+   "kind": "definition",
+   "section": "19.3",
+   "name": "成对能",
+   "symbol": "P_pair",
+   "terms": [
+    "成对能"
+   ],
+   "type": "energy",
+   "statement": "成对能 P 是把两个自旋相反的电子放入同一个轨道所需的能量，因为二者的同号电荷相互排斥。电子在成对之前，先单独占据一组简并轨道中的每个轨道；P 与 Δ<sub>oct</sub> 的大小相近。"
+  },
+  {
+   "id": "high-and-low-spin-complexes",
+   "kind": "result",
+   "section": "19.3",
+   "name": "高自旋配合物和低自旋配合物",
+   "terms": [
+    "高自旋配合物",
+    "低自旋配合物"
+   ],
+   "statement": "Δ<sub>oct</sub> 与 P 的相对大小决定 d 电子占据哪些轨道。对强场配体，Δ<sub>oct</sub> > P，电子先在 t<sub>2g</sub> 轨道中成对，然后才有电子进入 e<sub>g</sub> 轨道，得到低自旋配合物，如 [Fe(CN)₆]⁴⁻；对弱场配体，Δ<sub>oct</sub> < P，电子先单独占据全部五个轨道，然后才成对，得到高自旋配合物，如 [Fe(H₂O)₆]²⁺。只有 d⁴ 至 d⁷ 离子才有这种选择。"
+  },
+  {
+   "id": "predict-unpaired-electrons",
+   "kind": "skill",
+   "section": "19.3",
+   "name": "预测配合物中的未成对电子数",
+   "statement": "要预测配合物中的未成对电子数，先求出金属的氧化态和 d 电子数，再按配合物的几何构型把它们放入分裂后的 d 轨道；对 d⁴ 至 d⁷ 的八面体离子，还要看其配体使它成为高自旋还是低自旋，然后数出单占的轨道。"
+  },
+  {
+   "id": "crystal-field-other-geometries",
+   "kind": "result",
+   "section": "19.3",
+   "name": "其他几何构型中的晶体场分裂",
+   "symbol": "Δ_tet",
+   "type": "energy",
+   "statement": "在四面体配合物中，四个配体位于坐标轴之间，所以沿坐标轴的 e 组轨道能量降低，t<sub>2</sub> 组轨道能量升高；重叠比八面体的小，分裂 Δ<sub>tet</sub> 约为 Δ<sub>oct</sub> 的九分之四，并且所有四面体配合物都是高自旋。平面正方形配合物可看作去掉 z 轴上两个反式配体的八面体，它使 d 轨道分裂成更复杂的模式。",
+   "forms": [
+    {
+     "id": "eq-delta-tet",
+     "latex": "\\Delta_{\\text{tet}}=\\frac{4}{9}\\Delta_{\\text{oct}}",
+     "ktex": "\\kdtet=\\frac{4}{9}\\kdoct",
+     "anchor": "19.3-ex-other-geometries"
+    }
+   ]
+  },
+  {
+   "id": "magnetic-moment-unpaired-electrons",
+   "kind": "idea",
+   "section": "19.3",
+   "name": "配合物的磁矩",
+   "statement": "含未成对电子体系的磁矩随未成对电子数的增加而增大，所以测得的磁矩可给出这个数目。测量证实了该理论：低自旋 d⁶ 的 [Fe(CN)₆]⁴⁻ 是抗磁性的，而高自旋 d⁶ 的 [Fe(H₂O)₆]²⁺ 有四个未成对电子。"
+  },
+  {
+   "id": "complementary-colors",
+   "kind": "idea",
+   "section": "19.3",
+   "name": "互补色",
+   "statement": "眼睛把日光中所有颜色的混合，或按适当比例混合的两种互补色，看成白色。互补色在色环上彼此相对，当白光缺少某种颜色时，眼睛看到的是它的互补色：吸收红光的物体看起来是绿色，吸收紫光的物体看起来是柠檬黄色。"
+  },
+  {
+   "id": "colors-of-complexes",
+   "kind": "result",
+   "section": "19.3",
+   "name": "过渡金属配合物的颜色",
+   "statement": "配合物吸收的光子，其能量与它的 d 轨道之间的间隔相当，这个间隔常落在可见光范围内，所以配合物呈现互补色：吸收极大对应于 Δ<sub>oct</sub>。强场配合物吸收能量较高的紫光或蓝光，呈黄色、橙色或红色；弱场配合物吸收黄光、橙光或红光，呈蓝绿色、蓝色或靛蓝；Cu⁺ 等 d¹⁰ 离子不吸收可见光，因而无色。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "d-block-element",
+   "prereq": "transition-metal"
+  },
+  {
+   "concept": "d-block-element",
+   "prereq": "periodic-table-blocks"
+  },
+  {
+   "concept": "f-block-element",
+   "prereq": "inner-transition-metal"
+  },
+  {
+   "concept": "f-block-element",
+   "prereq": "periodic-table-blocks"
+  },
+  {
+   "concept": "transition-series",
+   "prereq": "d-block-element"
+  },
+  {
+   "concept": "transition-series",
+   "prereq": "lanthanide"
+  },
+  {
+   "concept": "transition-series",
+   "prereq": "actinide"
+  },
+  {
+   "concept": "rare-earth-element",
+   "prereq": "transition-series"
+  },
+  {
+   "concept": "coordination-compound",
+   "prereq": "complex-ion"
+  },
+  {
+   "concept": "coordination-compound",
+   "prereq": "d-block-element"
+  },
+  {
+   "concept": "transition-metal-reactivity",
+   "prereq": "d-block-element"
+  },
+  {
+   "concept": "transition-metal-reactivity",
+   "prereq": "f-block-element"
+  },
+  {
+   "concept": "transition-metal-reactivity",
+   "prereq": "electrode-potential-and-oxidant-strength"
+  },
+  {
+   "concept": "platinum-metals",
+   "prereq": "transition-metal-reactivity"
+  },
+  {
+   "concept": "transition-metal-oxidation-states",
+   "prereq": "transition-series"
+  },
+  {
+   "concept": "transition-metal-oxidation-states",
+   "prereq": "ion-configurations"
+  },
+  {
+   "concept": "transition-metal-oxidation-states",
+   "prereq": "oxidation-number"
+  },
+  {
+   "concept": "smelting",
+   "prereq": "reducing-agent"
+  },
+  {
+   "concept": "isolating-transition-metals",
+   "prereq": "smelting"
+  },
+  {
+   "concept": "isolating-transition-metals",
+   "prereq": "transition-metal-reactivity"
+  },
+  {
+   "concept": "isolating-transition-metals",
+   "prereq": "electrolysis"
+  },
+  {
+   "concept": "blast-furnace",
+   "prereq": "isolating-transition-metals"
+  },
+  {
+   "concept": "steel",
+   "prereq": "blast-furnace"
+  },
+  {
+   "concept": "steel",
+   "prereq": "alloy"
+  },
+  {
+   "concept": "copper-isolation",
+   "prereq": "isolating-transition-metals"
+  },
+  {
+   "concept": "copper-isolation",
+   "prereq": "lewis-acids-and-bases"
+  },
+  {
+   "concept": "hydrometallurgy",
+   "prereq": "isolating-transition-metals"
+  },
+  {
+   "concept": "hydrometallurgy",
+   "prereq": "complex-ion"
+  },
+  {
+   "concept": "transition-metal-compounds",
+   "prereq": "transition-metal-oxidation-states"
+  },
+  {
+   "concept": "transition-metal-compounds",
+   "prereq": "bond-type-from-electronegativity"
+  },
+  {
+   "concept": "transition-metal-compounds",
+   "prereq": "amphoteric"
+  },
+  {
+   "concept": "superconductor",
+   "prereq": "transition-metal-compounds"
+  },
+  {
+   "concept": "central-metal",
+   "prereq": "coordination-compound"
+  },
+  {
+   "concept": "donor-atom",
+   "prereq": "central-metal"
+  },
+  {
+   "concept": "donor-atom",
+   "prereq": "ligand"
+  },
+  {
+   "concept": "coordination-sphere",
+   "prereq": "donor-atom"
+  },
+  {
+   "concept": "monodentate-ligand",
+   "prereq": "donor-atom"
+  },
+  {
+   "concept": "monodentate-ligand",
+   "prereq": "coordination-number"
+  },
+  {
+   "concept": "bidentate-ligand",
+   "prereq": "monodentate-ligand"
+  },
+  {
+   "concept": "polydentate-ligand",
+   "prereq": "bidentate-ligand"
+  },
+  {
+   "concept": "chelate",
+   "prereq": "polydentate-ligand"
+  },
+  {
+   "concept": "naming-coordination-compounds",
+   "prereq": "coordination-sphere"
+  },
+  {
+   "concept": "naming-coordination-compounds",
+   "prereq": "name-variable-charge-metal-compounds"
+  },
+  {
+   "concept": "naming-coordination-compounds",
+   "prereq": "oxidation-numbers"
+  },
+  {
+   "concept": "complex-geometry",
+   "prereq": "coordination-sphere"
+  },
+  {
+   "concept": "complex-geometry",
+   "prereq": "coordination-number"
+  },
+  {
+   "concept": "complex-geometry",
+   "prereq": "vsepr-theory"
+  },
+  {
+   "concept": "geometric-isomer",
+   "prereq": "spatial-isomer"
+  },
+  {
+   "concept": "geometric-isomer",
+   "prereq": "complex-geometry"
+  },
+  {
+   "concept": "cis-trans-configuration",
+   "prereq": "geometric-isomer"
+  },
+  {
+   "concept": "cis-trans-configuration",
+   "prereq": "polar-molecule"
+  },
+  {
+   "concept": "optical-isomer",
+   "prereq": "spatial-isomer"
+  },
+  {
+   "concept": "optical-isomer",
+   "prereq": "complex-geometry"
+  },
+  {
+   "concept": "linkage-isomer",
+   "prereq": "isomers"
+  },
+  {
+   "concept": "linkage-isomer",
+   "prereq": "donor-atom"
+  },
+  {
+   "concept": "ionization-isomer",
+   "prereq": "isomers"
+  },
+  {
+   "concept": "ionization-isomer",
+   "prereq": "coordination-sphere"
+  },
+  {
+   "concept": "complexes-in-nature-and-technology",
+   "prereq": "chelate"
+  },
+  {
+   "concept": "complexes-in-nature-and-technology",
+   "prereq": "cis-trans-configuration"
+  },
+  {
+   "concept": "crystal-field-theory",
+   "prereq": "complex-geometry"
+  },
+  {
+   "concept": "crystal-field-theory",
+   "prereq": "valence-bond-theory"
+  },
+  {
+   "concept": "eg-and-t2g-orbitals",
+   "prereq": "crystal-field-theory"
+  },
+  {
+   "concept": "crystal-field-splitting",
+   "prereq": "eg-and-t2g-orbitals"
+  },
+  {
+   "concept": "spectrochemical-series",
+   "prereq": "crystal-field-splitting"
+  },
+  {
+   "concept": "ligand-field-strength",
+   "prereq": "spectrochemical-series"
+  },
+  {
+   "concept": "pairing-energy",
+   "prereq": "hunds-rule"
+  },
+  {
+   "concept": "high-and-low-spin-complexes",
+   "prereq": "ligand-field-strength"
+  },
+  {
+   "concept": "high-and-low-spin-complexes",
+   "prereq": "pairing-energy"
+  },
+  {
+   "concept": "predict-unpaired-electrons",
+   "prereq": "high-and-low-spin-complexes"
+  },
+  {
+   "concept": "crystal-field-other-geometries",
+   "prereq": "high-and-low-spin-complexes"
+  },
+  {
+   "concept": "magnetic-moment-unpaired-electrons",
+   "prereq": "high-and-low-spin-complexes"
+  },
+  {
+   "concept": "magnetic-moment-unpaired-electrons",
+   "prereq": "paramagnetism"
+  },
+  {
+   "concept": "magnetic-moment-unpaired-electrons",
+   "prereq": "diamagnetism"
+  },
+  {
+   "concept": "complementary-colors",
+   "prereq": "electromagnetic-spectrum"
+  },
+  {
+   "concept": "colors-of-complexes",
+   "prereq": "complementary-colors"
+  },
+  {
+   "concept": "colors-of-complexes",
+   "prereq": "ligand-field-strength"
+  }
+ ]
+}

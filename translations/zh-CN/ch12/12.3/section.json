@@ -395,7 +395,7 @@
     "at": "end"
    },
    "cite": "initial-rates",
-   "prompt": "超音速飞机在平流层中的定期飞行令人担忧，因为这类飞机在发动机排出的废气中产生一氧化氮 NO 这种副产物。一氧化氮与臭氧反应，有人提出这可能加剧臭氧层的损耗。反应 $\\text{NO}+{\\text{O}}_{3}\\;\\longrightarrow \\;{\\text{NO}}_{2}+{\\text{O}}_{2}$ 对 NO 和 O<sub>3</sub> 均为一级，速率常数为 2.20 × 10<sup>7</sup> L/mol/s。当 [NO] = 3.3 × 10<sup>−6</sup> <em>M</em>、[O<sub>3</sub>] = 5.9 × 10<sup>−7</sup> <em>M</em> 时，NO 消失的瞬时速率是多少？",
+   "prompt": "超声速飞机在平流层中的定期飞行令人担忧，因为这类飞机在发动机排出的废气中产生一氧化氮 NO 这种副产物。一氧化氮与臭氧反应，有人提出这可能加剧臭氧层的损耗。反应 $\\text{NO}+{\\text{O}}_{3}\\;\\longrightarrow \\;{\\text{NO}}_{2}+{\\text{O}}_{2}$ 对 NO 和 O<sub>3</sub> 均为一级，速率常数为 2.20 × 10<sup>7</sup> L/mol/s。当 [NO] = 3.3 × 10<sup>−6</sup> <em>M</em>、[O<sub>3</sub>] = 5.9 × 10<sup>−7</sup> <em>M</em> 时，NO 消失的瞬时速率是多少？",
    "answer": {
     "generated_by": "source",
     "type": "number",

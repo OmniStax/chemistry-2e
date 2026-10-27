@@ -36,27 +36,27 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
   const T3D = window.THREE;
   const BULB_LIGHT = '#ffc94d';
   const d = sim('sim-conductivity');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 380, dist: 7.0, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.16 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 380, dist: 7.0, tilt: 0.2 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 230);
   const XE = 0.55, YB = -1.2;
   /* the space between the electrodes that the particles move through */
   const BOX = { x: 0.4, y0: -1.0, y1: -0.05, z: 0.38 };
   const ATOM = { C: 0.075, O: 0.07, H: 0.045 };
   const MOL = {
-    ethanol: { atoms: [['C', [-0.12, 0, 0]], ['C', [0, 0.07, 0]], ['O', [0.12, 0, 0]]], name: 'an ethanol molecule, C<sub>2</sub>H<sub>5</sub>OH (hydrogen atoms not shown)' },
-    acid: { atoms: [['C', [-0.13, 0, 0]], ['C', [0, 0, 0]], ['O', [0.07, 0.11, 0]], ['O', [0.08, -0.1, 0]]], name: 'an acetic acid molecule, CH<sub>3</sub>CO<sub>2</sub>H (hydrogen atoms not shown)' },
-    acetate: { atoms: [['C', [-0.13, 0, 0]], ['C', [0, 0, 0]], ['O', [0.07, 0.11, 0]], ['O', [0.08, -0.1, 0]]], name: 'an acetate ion, CH<sub>3</sub>CO<sub>2</sub><sup>−</sup> (hydrogen atoms not shown)', charge: -1 },
-    hydronium: { atoms: [['O', [0, 0, 0]], ['H', [0.09, 0.05, 0]], ['H', [-0.09, 0.05, 0]], ['H', [0, -0.06, 0.08]]], name: 'a hydronium ion, H<sub>3</sub>O<sup>+</sup>', charge: 1 },
-    K: { atoms: [['K', [0, 0, 0]]], name: 'a potassium ion, K<sup>+</sup>', charge: 1 },
-    Cl: { atoms: [['Cl', [0, 0, 0]]], name: 'a chloride ion, Cl<sup>−</sup>', charge: -1 },
+    ethanol: { atoms: [['C', [-0.12, 0, 0]], ['C', [0, 0.07, 0]], ['O', [0.12, 0, 0]]], name: '乙醇分子 C<sub>2</sub>H<sub>5</sub>OH（氢原子未画出）' },
+    acid: { atoms: [['C', [-0.13, 0, 0]], ['C', [0, 0, 0]], ['O', [0.07, 0.11, 0]], ['O', [0.08, -0.1, 0]]], name: '乙酸分子 CH<sub>3</sub>CO<sub>2</sub>H（氢原子未画出）' },
+    acetate: { atoms: [['C', [-0.13, 0, 0]], ['C', [0, 0, 0]], ['O', [0.07, 0.11, 0]], ['O', [0.08, -0.1, 0]]], name: '乙酸根离子 CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>（氢原子未画出）', charge: -1 },
+    hydronium: { atoms: [['O', [0, 0, 0]], ['H', [0.09, 0.05, 0]], ['H', [-0.09, 0.05, 0]], ['H', [0, -0.06, 0.08]]], name: '水合氢离子 H<sub>3</sub>O<sup>+</sup>', charge: 1 },
+    K: { atoms: [['K', [0, 0, 0]]], name: '钾离子 K<sup>+</sup>', charge: 1 },
+    Cl: { atoms: [['Cl', [0, 0, 0]]], name: '氯离子 Cl<sup>−</sup>', charge: -1 },
   };
   const RADIUS = { C: 0.075, O: 0.07, H: 0.045, K: 0.1, Cl: 0.12 };
   const SOLUTES = {
-    ethanol: { word: 'ethanol', mix: [['ethanol', 6]], ions: 0, units: 6, bright: 0 },
+    ethanol: { word: '乙醇', mix: [['ethanol', 6]], ions: 0, units: 6, bright: 0 },
     KCl: { word: 'KCl', mix: [['K', 6], ['Cl', 6]], ions: 12, units: 6, bright: 1 },
-    acetic: { word: 'acetic acid', mix: [['acid', 5], ['hydronium', 1], ['acetate', 1]], ions: 2, units: 6, bright: 0.3 },
+    acetic: { word: '乙酸', mix: [['acid', 5], ['hydronium', 1], ['acetate', 1]], ions: 2, units: 6, bright: 0.3 },
   };
-  const sol = F.choice(d.controls, { label: '\\text{solute}', options: [{ value: 'ethanol', label: 'ethanol' }, { value: 'KCl', label: 'KCl' }, { value: 'acetic', label: 'acetic acid' }], value: 'KCl', aria: 'the solute dissolved in the water' });
+  const sol = F.choice(d.controls, { label: '\\text{溶质}', options: [{ value: 'ethanol', label: '乙醇' }, { value: 'KCl', label: 'KCl' }, { value: 'acetic', label: '乙酸' }], value: 'KCl', aria: '溶解在水中的溶质' });
   const rnd = (a, b) => a + Math.random() * (b - a);
   const spot = () => [rnd(-BOX.x, BOX.x), rnd(BOX.y0, BOX.y1), rnd(-BOX.z, BOX.z)];
   /* each particle: kind, position, a random walk velocity, and a fixed orientation */
@@ -94,25 +94,25 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
     if (palSig() === sig) return; sig = palSig();
     v.clear();
     scene = new T3D.Group(); scene.position.set(0.7, -0.25, 0); grp.add(scene);
-    v.pickable(F.mesh.box(scene, [-0.7, YB - 0.05, 0], [5.2, 0.1, 2.0], PAL.muted), 'the bench');
+    v.pickable(F.mesh.box(scene, [-0.7, YB - 0.05, 0], [5.2, 0.1, 2.0], PAL.muted), '工作台');
     const beaker = new T3D.Mesh(new T3D.CylinderGeometry(0.85, 0.85, 1.55, 48, 1, true), F.mesh.mat(PAL.ink, glass)); beaker.position.set(0, YB + 0.775, 0); scene.add(beaker);
-    v.pickable(beaker, 'the beaker');
+    v.pickable(beaker, '烧杯');
     const liquid = new T3D.Mesh(new T3D.CylinderGeometry(0.83, 0.83, 1.25, 48), F.mesh.mat(PAL.muted, { transparent: true, opacity: 0.08, depthWrite: false })); liquid.position.set(0, YB + 0.625, 0); scene.add(liquid);
-    v.pickable(liquid, 'the solution');
+    v.pickable(liquid, '溶液');
     for (const s of [-1, 1]) {
-      v.pickable(F.mesh.box(scene, [s * XE, YB + 1.0, 0], [0.08, 1.7, 0.5], F.ref('electrodes')), s < 0 ? 'the positive electrode' : 'the negative electrode');
+      v.pickable(F.mesh.box(scene, [s * XE, YB + 1.0, 0], [0.08, 1.7, 0.5], F.ref('electrodes')), s < 0 ? '正极' : '负极');
       v.label(s < 0 ? '+' : '−', [s * XE + s * 0.22, YB + 1.72, 0], scene, 0);
     }
     const top = YB + 1.85;
     wire([[-XE, top], [-XE, 1.35], [-0.95, 1.35]].map(([x, y]) => [x, y, 0]));
     wire([[-1.45, 1.35], [-2.2, 1.35], [-2.2, YB + 0.62]].map(([x, y]) => [x, y, 0]));
     wire([[XE, top], [XE, 1.8], [-2.7, 1.8], [-2.7, YB + 0.62]].map(([x, y]) => [x, y, 0]));
-    v.pickable(F.mesh.box(scene, [-2.45, YB + 0.3, 0], [0.9, 0.6, 0.6], F.ref('power-supply')), 'the power supply');
-    v.label('power supply', [-2.45, YB + 0.72, 0], scene, 0).style.color = F.ref('power-supply');
+    v.pickable(F.mesh.box(scene, [-2.45, YB + 0.3, 0], [0.9, 0.6, 0.6], F.ref('power-supply')), '电源');
+    v.label('电源', [-2.45, YB + 0.72, 0], scene, 0).style.color = F.ref('power-supply');
     F.mesh.stick(scene, [-1.2, 1.35, 0], [-0.95, 1.35, 0], 0.09, F.ref('bulb'));
     F.mesh.stick(scene, [-1.2, 1.35, 0], [-1.45, 1.35, 0], 0.09, F.ref('bulb'));
     bulb = F.mesh.sphere(scene, [-1.2, 1.35, 0], 0.24, PAL.soft, { transparent: true, opacity: 0.85 });
-    v.pickable(bulb, 'the light bulb');
+    v.pickable(bulb, '灯泡');
     halo = F.mesh.sphere(scene, [-1.2, 1.35, 0], 0.5, F.fact(BULB_LIGHT), { transparent: true, opacity: 0, depthWrite: false });
     groups = {};
     for (const [key, list] of Object.entries(state)) {
@@ -138,18 +138,18 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
     v.invalidate();
     const s = SOLUTES[sol.value], { ctx } = begin(cnv);
     topline(ctx, sol.value === 'ethanol'
-      ? 'Ethanol dissolves as whole molecules and gives no ions, so no current flows and the bulb stays dark.'
+      ? '乙醇以完整分子的形式溶解，不产生离子，因此没有电流通过，灯泡不亮。'
       : sol.value === 'KCl'
-        ? 'Potassium chloride dissociates completely, so all 12 of its dissolved particles are ions and the bulb glows brightly.'
-        : 'Only 1 of 6 acetic acid molecules has reacted with water to give 2 ions, so the bulb glows dimly.');
+        ? '氯化钾完全解离，因此溶解的 12 个粒子全是离子，灯泡很亮。'
+        : '6 个乙酸分子中只有 1 个与水反应，生成 2 个离子，因此灯泡微亮。');
     const per = 34, x0 = 420;
-    text(ctx, 'ions', x0 - 20, 120, PAL.ink, { size: 18, align: 'right' });
+    text(ctx, '离子', x0 - 20, 120, PAL.ink, { size: 18, align: 'right' });
     bar(ctx, x0, 120, per, s.ions, s.ions || 0.001, PAL.ink);
-    text(ctx, s.ions + ' carry charge', x0 + per * Math.max(s.ions, 0) + 14, 120, PAL.ink, { size: 17 });
-    text(ctx, 'bulb', x0 - 20, 172, F.ref('bulb'), { size: 18, align: 'right' });
+    text(ctx, s.ions + ' 个带电荷', x0 + per * Math.max(s.ions, 0) + 14, 120, PAL.ink, { size: 17 });
+    text(ctx, '灯泡', x0 - 20, 172, F.ref('bulb'), { size: 18, align: 'right' });
     ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5; ctx.strokeRect(x0, 160, per * 12, 24);
     ctx.fillStyle = glow; ctx.fillRect(x0, 160, per * 12 * b, 24); ctx.restore();
-    text(ctx, b >= 0.99 ? 'bright' : b > 0.01 ? 'dim' : 'dark', x0 + per * 12 + 14, 172, PAL.ink, { size: 17 });
+    text(ctx, b >= 0.99 ? '很亮' : b > 0.01 ? '微亮' : '不亮', x0 + per * 12 + 14, 172, PAL.ink, { size: 17 });
     /* legend of the kinds present */
     const kinds = sol.value === 'ethanol' ? [['C', 'C'], ['O', 'O']] : sol.value === 'KCl' ? [['K', 'K⁺'], ['Cl', 'Cl⁻']] : [['C', 'C'], ['O', 'O'], ['H', 'H']];
     kinds.forEach(([sym, name], i) => { const y = 100 + i * 38; ball(ctx, 1080, y, RADIUS[sym] * 110, F.el(sym)); text(ctx, name, 1104, y, PAL.ink, { size: 18 }); });
@@ -175,10 +175,10 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
 ===================================================================== */
 (function () {
   const d = sim('sim-hydration');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-0.52, 1.4], views: [{ label: 'front', yaw: 0.3, pitch: 0.25 }, { label: 'above', yaw: 0, pitch: 1.35 }], h: 380, dist: 8.4, tilt: 0.25, yaw: 'free' });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-0.52, 1.4], views: [{ label: '正视', yaw: 0.3, pitch: 0.25 }, { label: '俯视', yaw: 0, pitch: 1.35 }], h: 380, dist: 8.4, tilt: 0.25, yaw: 'free' });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 220);
   const A = 0.46, Y0 = -0.75, R = { K: 0.2, Cl: 0.24, O: 0.1, H: 0.065 }, OH = 0.13, HALF = 1.824 / 2; /* half of 104.5° in radians */
-  const NAME = { K: 'a potassium ion, K<sup>+</sup>', Cl: 'a chloride ion, Cl<sup>−</sup>' };
+  const NAME = { K: '钾离子 K<sup>+</sup>', Cl: '氯离子 Cl<sup>−</sup>' };
   const ions = [];
   for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) for (let k = -1; k <= 1; k++) {
     ions.push({ f: (i + j + k) % 2 !== 0 ? 'K' : 'Cl', p0: [i * A, Y0 + j * A, k * A], lat: [i, j, k], n: -1 });
@@ -223,7 +223,7 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
     box.position.set(0, 0, 0); grp.add(box);
     for (const q of ions) {
       const m = { ion: v.pickable(F.mesh.sphere(grp, q.p0, R[q.f], F.el(q.f)), NAME[q.f]), shell: [] };
-      if (q.n >= 0) for (const s of q.shell) m.shell.push(s.atoms.map(([sym]) => v.pickable(F.mesh.sphere(grp, [0, 0, 0], R[sym], F.el(sym)), 'a water molecule, H<sub>2</sub>O, turned toward ' + (q.f === 'K' ? 'the potassium ion by its oxygen end' : 'the chloride ion by a hydrogen end'))));
+      if (q.n >= 0) for (const s of q.shell) m.shell.push(s.atoms.map(([sym]) => v.pickable(F.mesh.sphere(grp, [0, 0, 0], R[sym], F.el(sym)), '水分子 H<sub>2</sub>O，' + (q.f === 'K' ? '以氧端朝向钾离子' : '以氢端朝向氯离子'))));
       meshes.push(m);
     }
   }
@@ -244,19 +244,19 @@ function ball(ctx, x, y, r, col) { ctx.save(); ctx.fillStyle = col; ctx.strokeSt
     v.invalidate();
     const { ctx } = begin(cnv);
     topline(ctx, outK + outCl === 0
-      ? 'Water molecules gather at the surface of a crystal of 13 potassium ions and 14 chloride ions.'
-      : 'Water has carried ' + outK + (outK === 1 ? ' potassium ion' : ' potassium ions') + ' and ' + outCl + (outCl === 1 ? ' chloride ion' : ' chloride ions') + ' away from the crystal into the solution.');
+      ? '水分子聚集在由 13 个钾离子和 14 个氯离子组成的晶体表面。'
+      : '水已把 ' + outK + ' 个钾离子和 ' + outCl + ' 个氯离子从晶体带入溶液。');
     const per = 22, x0 = 470;
-    text(ctx, 'in the crystal', x0 + per * 7, 84, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'in solution', x0 + per * 14 + 70, 84, PAL.muted, { size: 17, align: 'left' });
-    [['K', 'potassium ions', inK, outK, 118], ['Cl', 'chloride ions', inCl, outCl, 166]].forEach(([f, word, a, b, y]) => {
+    text(ctx, '在晶体中', x0 + per * 7, 84, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '在溶液中', x0 + per * 14 + 70, 84, PAL.muted, { size: 17, align: 'left' });
+    [['K', '钾离子', inK, outK, 118], ['Cl', '氯离子', inCl, outCl, 166]].forEach(([f, word, a, b, y]) => {
       text(ctx, word, x0 - 20, y, PAL.ink, { size: 18, align: 'right' });
       bar(ctx, x0, y, per, a, a, F.el(f));
       bar(ctx, x0 + per * 14 + 70, y, per, b, 4, F.el(f));
     });
     [['K', 'K⁺'], ['Cl', 'Cl⁻'], ['O', 'O'], ['H', 'H']].forEach(([sym, name], i) => { const y = 94 + i * 30; ball(ctx, 1130, y, R[sym] * 55, F.el(sym)); text(ctx, name, 1156, y, PAL.ink, { size: 18 }); });
     readout(d.readout, `\\text{KCl}(s) \\longrightarrow \\text{K}^{+}(aq) + \\text{Cl}^{-}(aq) \\qquad ${outK}\\ \\text{K}^{+}(aq),\\ ${outCl}\\ \\text{Cl}^{-}(aq)`,
-      'Ion-dipole attractions to the water replace the attractions that held the ions in the crystal.');
+      '与水之间的离子–偶极吸引力，取代了把离子束缚在晶体中的吸引力。');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

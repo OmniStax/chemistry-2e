@@ -8,10 +8,10 @@
  "objectives": [
   "根据电离常数评估酸和碱的相对强度",
   "结合分子结构，对酸碱强度的递变规律作出合理解释",
-  "对弱酸–弱碱体系进行平衡计算"
+  "对弱酸和弱碱体系进行平衡计算"
  ],
  "summary_html": "<p>酸和碱的相对强度反映在其电离常数的大小上；酸或碱越强，其电离常数越大。<span data-concept=\"conjugate-acid-base-pairs\">共轭酸碱对</span>的强度之间存在互为倒数的关系：酸越强，其<span data-concept=\"conjugate-base\">共轭碱</span>越弱。水对溶解的酸或碱起<span data-concept=\"leveling-effect\">拉平效应</span>，与它们完全反应而生成水所特有的水合氢离子和氢氧根离子（能够存在于水中的最强酸和最强碱）。无氧酸的强度沿元素周期表的一个周期从左到右增大（CH<sub>4</sub> &lt; NH<sub>3</sub> &lt; H<sub>2</sub>O &lt; HF），沿一个族向下也增大（HF &lt; HCl &lt; HBr &lt; HI）。含有同一中心元素的<span data-concept=\"oxyacid\">含氧酸</span>的强度随该元素氧化数的增大而增大（H<sub>2</sub>SO<sub>3</sub> &lt; H<sub>2</sub>SO<sub>4</sub>）。<span data-concept=\"oxyacid\">含氧酸</span>的强度也随中心元素的<span data-concept=\"electronegativity\">电负性</span>增大而增大 [H<sub>2</sub>SeO<sub>4</sub> &lt; H<sub>2</sub>SO<sub>4</sub>]。</p>",
- "notes": "指向分子层面强酸和弱酸、强碱和弱碱模拟的“学习链接”被略去，例 14.7 之后的 Sim 取代了它的位置。书中的“wheres”、“much lesser than”、碱强度顺序中写成 CH<sub>2</sub>CO<sub>2</sub><sup>−</sup> 的乙酸根离子、例 14.11 以句号结尾的“学习检测”，以及例 14.12 的 ICE 表中甲酸那一列空着的“变化”一格，都按原样保留。",
+ "notes": "指向分子层面强酸和弱酸、强碱和弱碱模拟的“学习链接”被略去，例 14.7 之后的 Sim 取代了它的位置。书中的“wheres”和“much lesser than”在英文原文中有语法错误，中文无法保留，译文按其意思译出（“而”“远小于”）。按原样保留的有：碱强度顺序中写成 CH<sub>2</sub>CO<sub>2</sub><sup>−</sup> 的乙酸根离子、例 14.11 以句号结尾的“学习检测”，以及例 14.12 的 ICE 表中甲酸那一列空着的“变化”一格。",
  "ai": {
   "text": [
    {
@@ -681,7 +681,7 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "弱碱 CH<sub>3</sub>NH<sub>2</sub> 的 <em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>，它的共轭酸即弱酸 ${\\text{CH}}_{3}{\\text{NH}}_{3}{}^{\\text{+}},$ 在 25 °C 时的电离常数是多少。",
+   "prompt": "弱碱 CH<sub>3</sub>NH<sub>2</sub> 的 <em>K</em><sub>b</sub> = 4.4 × 10<sup>−4</sup>，其共轭酸为弱酸 ${\\text{CH}}_{3}{\\text{NH}}_{3}{}^{\\text{+}},$ 求该弱酸在 25 °C 时的电离常数。",
    "answer": {
     "type": "number",
     "generated_by": "source",
@@ -735,7 +735,7 @@
     "at": "end"
    },
    "cite": "conjugate",
-   "prompt": "(CH<sub>3</sub>)<sub>3</sub>N 和 ${\\text{H}}_{2}{\\text{BO}}_{3}{}^{\\text{-}}?$ 中，哪一个是较强的碱？",
+   "prompt": "哪一个是较强的碱：(CH<sub>3</sub>)<sub>3</sub>N 还是 ${\\text{H}}_{2}{\\text{BO}}_{3}{}^{\\text{-}}?$",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -824,7 +824,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "CN<sup>−</sup> 是较强的碱。附录 H 给出 HF 的 <em>K</em><sub>a</sub> = 6.4 × 10<sup>−4</sup>，HCN 的为 4.9 × 10<sup>−10</sup>，所以 HCN 是弱得多的酸。对于共轭酸碱对，<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>，所以较弱的酸的共轭碱是较强的碱：F<sup>−</sup> 的 <em>K</em><sub>b</sub> 为 (1.0 × 10<sup>−14</sup>)/(6.4 × 10<sup>−4</sup>) = 1.6 × 10<sup>−11</sup>，CN<sup>−</sup> 的 <em>K</em><sub>b</sub> 为 (1.0 × 10<sup>−14</sup>)/(4.9 × 10<sup>−10</sup>) = 2.0 × 10<sup>−5</sup>。氰根离子的 <em>K</em><sub>b</sub> 约比氟离子的大一百万倍。"
+    "solution": "CN<sup>−</sup> 是较强的碱。附录 H 给出 HF 的 <em>K</em><sub>a</sub> = 6.4 × 10<sup>−4</sup>，HCN 的为 4.9 × 10<sup>−10</sup>，所以 HCN 是弱得多的酸。对于共轭酸碱对，<em>K</em><sub>b</sub> = <em>K</em><sub>w</sub>/<em>K</em><sub>a</sub>，所以较弱的酸的共轭碱是较强的碱：F<sup>−</sup> 的 <em>K</em><sub>b</sub> 为 (1.0 × 10<sup>−14</sup>)/(6.4 × 10<sup>−4</sup>) = 1.6 × 10<sup>−11</sup>，CN<sup>−</sup> 的 <em>K</em><sub>b</sub> 为 (1.0 × 10<sup>−14</sup>)/(4.9 × 10<sup>−10</sup>) = 2.0 × 10<sup>−5</sup>。氰根离子的 <em>K</em><sub>b</sub> 约为氟离子的一百万倍。"
    }
   },
   {
@@ -1023,7 +1023,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "确定硫酸氢根离子的 <em>K</em><sub>a</sub>，${\\text{HSO}}_{4}{}^{\\text{-}}.$ 在 0.10 <em>M</em> 溶液中，该酸电离了 29%。",
+   "prompt": "确定下面这种离子的 <em>K</em><sub>a</sub>：硫酸氢根离子 ${\\text{HSO}}_{4}{}^{\\text{-}}.$ 在 0.10 <em>M</em> 溶液中，该酸电离了 29%。",
    "answer": {
     "type": "number",
     "generated_by": "source",

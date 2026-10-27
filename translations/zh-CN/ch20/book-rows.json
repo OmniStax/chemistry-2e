@@ -1,0 +1,752 @@
+{
+ "types": [],
+ "symbols": [],
+ "concepts": [
+  {
+   "id": "organic-compound",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "有机化合物",
+   "terms": [
+    "有机化合物"
+   ],
+   "statement": "有机化合物是含碳的天然或合成化合物。多数人认为，有机分子的一个决定性特征是碳作为主要元素，与氢和其他碳原子成键；一些含碳化合物，如碳酸盐、氰化物以及 CO 和 CO<sub>2</sub> 这类简单氧化物，不归为有机物。"
+  },
+  {
+   "id": "carbon-compound-diversity",
+   "kind": "idea",
+   "section": "20.1",
+   "name": "碳为何能形成如此多的化合物",
+   "statement": "有机分子如此之多，是因为碳原子能与其他碳原子形成多达四个牢固的键，由此形成大小、形状和复杂程度各不相同的链与环。烃分子中碳碳键的类型也可以不同，这又导致几何构型和碳轨道杂化方式的差异。"
+  },
+  {
+   "id": "alkane",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "烷烃",
+   "terms": [
+    "烷烃",
+    "饱和烃"
+   ],
+   "statement": "烷烃，即饱和烃，碳原子之间只含单共价键。烷烃中每个碳原子都有 <i>sp</i><sup>3</sup> 杂化轨道，并与另外四个原子成键，这四个原子不是碳就是氢，所以碳链中的键角接近 109.5°，链呈锯齿形。非环状烷烃的通式均为 C<sub>n</sub>H<sub>2n+2</sub>。",
+   "forms": [
+    {
+     "id": "eq-alkane-formula",
+     "latex": "\\text{C}_{n}\\text{H}_{2n+2}",
+     "anchor": "20.1-alkane-trend"
+    }
+   ]
+  },
+  {
+   "id": "skeletal-structure",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "键线式",
+   "terms": [
+    "键线式",
+    "骨架式"
+   ],
+   "statement": "键线式（也称骨架式）是有机分子的一种简化画法，其中每个碳原子用线的一端或折线的一个拐点表示，与碳相连的氢原子不画出，但默认存在。碳和氢以外的原子用元素符号表示。"
+  },
+  {
+   "id": "write-organic-structures",
+   "kind": "skill",
+   "section": "20.1",
+   "name": "书写结构简式与键线式",
+   "statement": "结构简式的写法是提示分子中的成键情况，就像去掉了大部分或全部键符号的路易斯结构式。画键线式时，把每个碳原子换成线的端点或线的交点，并省去与碳相连的氢原子；读键线式时，则给每个碳原子补足氢原子，使它形成四个键。"
+  },
+  {
+   "id": "alkane-properties-trend",
+   "kind": "idea",
+   "section": "20.1",
+   "name": "烷烃的物理性质",
+   "statement": "烷烃分子中的原子数越多，分子间的引力（色散力）越强，因此熔点、沸点等性质通常随分子中碳原子和氢原子数目的变化而平稳、可预测地变化，在 STP 下由气体经液体变为固体。"
+  },
+  {
+   "id": "alkane-structural-isomers",
+   "kind": "idea",
+   "section": "20.1",
+   "name": "烷烃的构造异构体",
+   "statement": "分子式相同的烃可以有不同的结构：无支链的正丁烷和有支链的 2-甲基丙烷是 C<sub>4</sub>H<sub>10</sub> 的构造异构体。看起来不同的路易斯结构式可能表示同一个分子；原子和键的排列相同的画法，例如四个碳原子的无支链链，并不是异构体。"
+  },
+  {
+   "id": "substituent",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "取代基",
+   "terms": [
+    "取代基"
+   ],
+   "statement": "取代基是取代链上氢原子的支链或官能团。取代基的位置用它所连的链上碳原子的编号表示。"
+  },
+  {
+   "id": "alkyl-group",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "烷基",
+   "terms": [
+    "烷基"
+   ],
+   "statement": "烷基是比相应烷烃少一个氢的取代基；其名称由烷烃名称中的“烷”换成“基”而成。烷基不能作为稳定的独立实体存在。氢原子处于不同环境的烃，如丙烷或 2-甲基丙烷，视去掉哪个氢原子而定，可以形成不止一种烷基。"
+  },
+  {
+   "id": "naming-alkanes",
+   "kind": "skill",
+   "section": "20.1",
+   "name": "烷烃的命名",
+   "statement": "命名烷烃时，先找出最长的碳链并命名（乙烷、丙烷、丁烷、戊烷，直至癸烷），再加上表示取代基位置和名称的前缀；从离取代基最近的一端给链编号，使取代基的编号最小。多个取代基按其英文名称的字母顺序列出，电负性取代基的名称以 -o 结尾（中文用氯、溴等作前缀），“二”“三”“四”表示同类取代基的个数。"
+  },
+  {
+   "id": "alkanes-as-fuels",
+   "kind": "idea",
+   "section": "20.1",
+   "name": "烷烃作燃料",
+   "statement": "烷烃相对稳定，但加热或光照会引发使 C–H 键或 C–C 键断裂的反应。它们在氧气中燃烧，这是高度放热的氧化还原反应，生成二氧化碳和水，所以烷烃是极好的燃料。液态烷烃燃料的主要来源是原油，这是一种复杂的混合物，用分馏法分离，分馏利用的是各组分沸点的差异。"
+  },
+  {
+   "id": "substitution-reaction",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "取代反应",
+   "terms": [
+    "取代反应"
+   ],
+   "statement": "在取代反应中，分子里的一个或多个氢原子被另一种原子或原子团取代，例如乙烷与氯反应生成氯乙烷。反应中没有碳碳键断裂，碳原子的杂化方式也不改变。这是烷烃和芳香族化合物的典型反应。"
+  },
+  {
+   "id": "functional-group",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "官能团",
+   "terms": [
+    "官能团"
+   ],
+   "statement": "官能团是有机分子中赋予其特定化学反应性的部分，例如氯乙烷中的 C–Cl 部分。分子中存在的官能团是其化学性质的主要决定因素，并用来对有机化合物分类。"
+  },
+  {
+   "id": "alkene",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "烯烃",
+   "terms": [
+    "烯烃"
+   ],
+   "statement": "烯烃是含有一个或多个碳碳双键的不饱和烃。双键的两个碳原子由一个 σ 键和一个 π 键连在一起，各为 <i>sp</i><sup>2</sup> 杂化的平面三角形；乙烯 C<sub>2</sub>H<sub>4</sub> 最简单。由于 π 键比 σ 键弱，烯烃比烷烃活泼得多。"
+  },
+  {
+   "id": "alkene-geometric-isomers",
+   "kind": "idea",
+   "section": "20.1",
+   "name": "烯烃的几何异构体",
+   "statement": "碳原子可以绕单键自由旋转，却不能绕双键旋转，双键是刚性的。因此 2-丁烯这类烯烃会形成几何异构体：顺式异构体的两个甲基在双键的同一侧，反式异构体的两个甲基在双键的两侧，不同的几何构型使沸点等物理性质也不同。"
+  },
+  {
+   "id": "addition-reaction",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "加成反应",
+   "terms": [
+    "加成反应"
+   ],
+   "statement": "在加成反应中，碳碳双键的 π 键断裂，随着反应物加到双键上，被两个 σ 键取代，于是双键变成单键，其碳原子的杂化方式由 <i>sp</i><sup>2</sup> 变为 <i>sp</i><sup>3</sup>。卤素加到烯烃的双键上，而不是像在烷烃中那样取代氢。"
+  },
+  {
+   "id": "alkyne",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "炔烃",
+   "terms": [
+    "炔烃"
+   ],
+   "statement": "炔烃是含有一个或多个碳碳三键的烃，三键由一个 σ 键和两个 π 键组成。三键中 <i>sp</i> 杂化碳原子的键角为 180°，使分子呈直线形的棒状；乙炔 C<sub>2</sub>H<sub>2</sub> 最简单。炔烃有两个 π 键，反应比烯烃更容易，在加成反应中消耗的试剂也是烯烃的两倍。"
+  },
+  {
+   "id": "naming-unsaturated-hydrocarbons",
+   "kind": "skill",
+   "section": "20.1",
+   "name": "烯烃和炔烃的命名",
+   "statement": "烯烃的名称由碳原子数相同的烷烃名称演变而来，把“烷”换成“烯”；炔烃则换成“炔”。多重键的位置用参与该键的碳原子编号中较小的一个表示，如 1-丁烯、2-丁烯和 1-丁炔。"
+  },
+  {
+   "id": "carbon-geometry-and-hybridization",
+   "kind": "skill",
+   "section": "20.1",
+   "name": "碳原子的几何构型与杂化",
+   "statement": "每个碳原子的几何构型和杂化方式由它的成键情况决定：形成四个单键的碳是四面体形、<i>sp</i><sup>3</sup> 杂化（109.5°），双键中的碳是平面三角形、<i>sp</i><sup>2</sup> 杂化（120°），三键中的碳是直线形、<i>sp</i> 杂化（180°）。"
+  },
+  {
+   "id": "aromatic-hydrocarbon",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "芳香烃",
+   "terms": [
+    "芳香烃"
+   ],
+   "statement": "芳香烃以苯 C<sub>6</sub>H<sub>6</sub> 为最简单的代表，含有由 <i>sp</i><sup>2</sup> 杂化碳原子组成的环，这些碳原子未杂化的 <i>p</i> 轨道形成离域 π 键，可用共振杂化体来描述。苯的六个碳碳键各介于单键和双键之间，画成内含一个圆圈的环，芳香族化合物发生取代反应比发生加成反应更容易。"
+  },
+  {
+   "id": "polymer",
+   "kind": "definition",
+   "section": "20.1",
+   "name": "聚合物",
+   "statement": "聚合物是由称为单体的重复单元构成的大分子。它们可以是天然的，如淀粉和蛋白质；也可以是合成的，如聚乙烯，它由单体乙烯在过渡金属催化剂作用下聚合成由 –CH<sub>2</sub>– 单元组成的长链。塑料是可以模塑的合成有机固体，通常是分子质量较高的有机聚合物。"
+  },
+  {
+   "id": "hydrocarbon-derivative",
+   "kind": "idea",
+   "section": "20.2",
+   "name": "烃的衍生物",
+   "statement": "许多不是烃的有机化合物可以看作烃的衍生物，由烃的一个或多个氢原子被官能团取代而成，该官能团至少含有一个碳、氢以外元素的原子。它们的性质主要由官能团决定。"
+  },
+  {
+   "id": "alcohol",
+   "kind": "definition",
+   "section": "20.2",
+   "name": "醇",
+   "terms": [
+    "醇"
+   ],
+   "statement": "醇是烃的衍生物，其中一个氢原子被 –OH 基团取代，所以羟基通过共价键与碳原子相连。NaOH 和 KOH 是含 OH<sup>–</sup> 离子的离子化合物，醇则是共价分子，其表现不像碱。含有两个或更多羟基的醇有乙二醇和甘油。"
+  },
+  {
+   "id": "preparing-alcohols",
+   "kind": "idea",
+   "section": "20.2",
+   "name": "醇的制备",
+   "statement": "长期以来，乙醇是由酵母发酵各种糖类制得的；大量的乙醇则是以酸为催化剂，由水与乙烯的加成反应合成的。"
+  },
+  {
+   "id": "naming-alcohols",
+   "kind": "skill",
+   "section": "20.2",
+   "name": "醇的命名",
+   "statement": "醇的名称来自它所衍生的烃：烃名称中的“烷”换成“醇”，并在名称前用数字标明连有 –OH 基团的碳原子，如 2-戊醇。"
+  },
+  {
+   "id": "ether",
+   "kind": "definition",
+   "section": "20.2",
+   "name": "醚",
+   "terms": [
+    "醚"
+   ],
+   "statement": "醚是含有官能团 –O– 的化合物，即一个氧原子与两个碳原子相连，通式为 R–O–R，其中的烃基可以相同也可以不同。用得最广的乙醚是无色、易挥发、高度易燃的液体，用作溶剂。"
+  },
+  {
+   "id": "naming-ethers",
+   "kind": "skill",
+   "section": "20.2",
+   "name": "醚的命名",
+   "statement": "在 IUPAC 体系中，醚的氧原子和较小的碳支链合称烷氧基取代基，分子的其余部分作主链，如甲氧基乙烷。俗名则是分别命名与氧原子相连的两个支链，后面加“醚”，如乙醚。"
+  },
+  {
+   "id": "ethers-from-alcohols",
+   "kind": "idea",
+   "section": "20.2",
+   "name": "由醇制醚",
+   "statement": "醚可以由两分子醇脱去一分子水得到；乙醇用限量的硫酸处理并加热到 140 °C 时，生成乙醚和水。"
+  },
+  {
+   "id": "carbohydrate",
+   "kind": "idea",
+   "section": "20.2",
+   "name": "碳水化合物",
+   "statement": "碳水化合物是由碳、氢、氧组成的大生物分子，通式为 C<sub>m</sub>(H<sub>2</sub>O)<sub>n</sub>。较小的碳水化合物是糖，即糖类，按相连的糖单元数目分为单糖、二糖、寡糖或多糖；糖含有醇羟基，单糖单元通过形成醚连接成二糖。",
+   "forms": [
+    {
+     "id": "eq-carbohydrate-formula",
+     "latex": "\\text{C}_{m}(\\text{H}_{2}\\text{O})_{n}",
+     "anchor": "20.2-carbohydrates"
+    }
+   ]
+  },
+  {
+   "id": "carbonyl-group",
+   "kind": "definition",
+   "section": "20.3",
+   "name": "羰基",
+   "terms": [
+    "羰基"
+   ],
+   "statement": "羰基是以双键与氧原子相连的碳原子。该碳原子为 <i>sp</i><sup>2</sup> 杂化，几何构型为平面三角形，其未杂化的 <i>p</i> 轨道与氧原子上的一个 <i>p</i> 轨道重叠，形成 π 键。C=O 键有极性，醛和酮的许多反应起始于路易斯碱进攻该键正端的碳原子。"
+  },
+  {
+   "id": "aldehyde",
+   "kind": "definition",
+   "section": "20.3",
+   "name": "醛",
+   "terms": [
+    "醛"
+   ],
+   "statement": "醛含有至少与一个氢原子相连的羰基，写作 –CHO；名称以“醛”结尾。甲醛 HCHO 最简单。"
+  },
+  {
+   "id": "ketone",
+   "kind": "definition",
+   "section": "20.3",
+   "name": "酮",
+   "terms": [
+    "酮"
+   ],
+   "statement": "酮含有与两个碳原子相连的羰基，写作 –C(O)– 或 –CO–；名称以“酮”结尾。丙酮 CH<sub>3</sub>COCH<sub>3</sub> 最简单。"
+  },
+  {
+   "id": "organic-oxidation-reduction",
+   "kind": "idea",
+   "section": "20.3",
+   "name": "碳的氧化与还原",
+   "statement": "在有机分子中，当碳氢键被碳氧键取代时，该碳原子被氧化；当碳氧键被碳氢键取代时，该碳原子被还原。与氧相连的碳原子氧化数更正，从甲烷中的 –4，经甲醇、甲醛、甲酸，升至二氧化碳中的 +4。"
+  },
+  {
+   "id": "oxidizing-alcohols",
+   "kind": "result",
+   "section": "20.3",
+   "name": "醇氧化为羰基化合物",
+   "statement": "–OH 基团所连的碳原子不与其他碳原子相连或只与一个其他碳原子相连的醇，氧化成醛，并可进一步氧化成羧酸；–OH 基团所连的碳原子与另外两个碳原子相连的醇，生成酮。如果与连有 –OH 的碳原子相连的碳有三个，就没有可被取代的 C–H 键，这种醇不易被氧化。"
+  },
+  {
+   "id": "carboxylic-acid",
+   "kind": "definition",
+   "section": "20.3",
+   "name": "羧酸",
+   "terms": [
+    "羧酸"
+   ],
+   "statement": "羧酸含有羰基，羰基碳原子上还以单键连有第二个氧原子，该氧原子又与氢原子相连，即 –CO<sub>2</sub>H 基团。羧酸是弱酸，在水中一般仅约 1% 电离，其官能团上的氢与碱反应，生成离子型的盐。"
+  },
+  {
+   "id": "ester",
+   "kind": "definition",
+   "section": "20.3",
+   "name": "酯",
+   "terms": [
+    "酯"
+   ],
+   "statement": "酯含有羰基，羰基碳原子上以单键连有第二个氧原子，该氧原子再与另一个碳原子相连，即 –CO<sub>2</sub>R 基团。酯由酸和醇反应生成，如乙酸乙酯由乙酸和乙醇生成，许多花、香水和成熟水果的气味和风味来自酯。"
+  },
+  {
+   "id": "fats-and-oils",
+   "kind": "idea",
+   "section": "20.3",
+   "name": "油脂和脂肪酸",
+   "statement": "脂肪和油是三羟基醇甘油与大分子羧酸形成的酯。饱和脂肪酸，如棕榈酸和硬脂酸，不含双键或三键；不饱和脂肪酸，如油酸，含有 C=C 双键。"
+  },
+  {
+   "id": "amine",
+   "kind": "definition",
+   "section": "20.4",
+   "name": "胺",
+   "terms": [
+    "胺"
+   ],
+   "statement": "胺是含有碳氮键的分子；胺中的氮原子有一对孤电子对，并与另外三个原子（碳或氢）成键，名称以“胺”结尾。在杂环胺如吡啶中，氮原子取代了芳环中的一个碳原子。"
+  },
+  {
+   "id": "amine-basicity",
+   "kind": "result",
+   "section": "20.4",
+   "name": "胺的碱性",
+   "statement": "和氨一样，胺因氮原子上的孤电子对能接受氢离子而是弱碱。生物碱是植物中所含的胺，与稀酸中的 H<sub>3</sub>O<sup>+</sup> 反应生成铵盐，游离的胺则通过与碱反应得到回收。"
+  },
+  {
+   "id": "amide",
+   "kind": "definition",
+   "section": "20.4",
+   "name": "酰胺",
+   "terms": [
+    "酰胺"
+   ],
+   "statement": "酰胺是氮原子与羰基的碳原子相连的分子；名称以“酰胺”结尾。"
+  },
+  {
+   "id": "amidation",
+   "kind": "result",
+   "section": "20.4",
+   "name": "酰胺的生成",
+   "statement": "羧酸与胺或氨反应，通过酰胺化生成酰胺：脱去一分子水，酰胺由羧酸和胺的其余部分形成，这很像酯由羧酸和醇生成。"
+  },
+  {
+   "id": "proteins-and-peptide-bonds",
+   "kind": "idea",
+   "section": "20.4",
+   "name": "蛋白质与肽键",
+   "statement": "氨基酸含有一个氨基、一个羧基和一个侧链。两个氨基酸以肽键相连，肽键由一个氨基酸的羧基与另一个氨基酸的氨基在缩合反应中反应而成，同时生成水；氨基酸链是多肽，蛋白质含有至少一条折叠成特定三维结构的长多肽链。"
+  },
+  {
+   "id": "dna-structure",
+   "kind": "idea",
+   "section": "20.4",
+   "name": "DNA 的结构",
+   "statement": "DNA 是由四种核苷酸构成的聚合物，每种核苷酸由一个含氮碱基与五碳糖脱氧核糖相连，脱氧核糖再与一个磷酸基团相连。两条链各由糖和磷酸构成骨架，碱基从骨架上伸出，两条链彼此缠绕成双螺旋，靠碱基之间的氢键维系在一起。"
+  },
+  {
+   "id": "kevlar-polyamide",
+   "kind": "idea",
+   "section": "20.4",
+   "name": "凯夫拉：一种聚酰胺",
+   "statement": "凯夫拉是一种合成聚酰胺，由 1,4-苯二胺和对苯二甲酰氯制成。它的强度很大程度上来自一条链的羰基氧原子与相邻链的 N–H 氢原子之间的氢键，还有一部分来自六元环的芳环堆积。"
+  }
+ ],
+ "concept_prereqs": [
+  {
+   "concept": "organic-compound",
+   "prereq": "molecular-compounds"
+  },
+  {
+   "concept": "carbon-compound-diversity",
+   "prereq": "organic-compound"
+  },
+  {
+   "concept": "carbon-compound-diversity",
+   "prereq": "hybridization"
+  },
+  {
+   "concept": "alkane",
+   "prereq": "hydrocarbon"
+  },
+  {
+   "concept": "alkane",
+   "prereq": "sp3-hybrid-orbital"
+  },
+  {
+   "concept": "skeletal-structure",
+   "prereq": "structural-formula"
+  },
+  {
+   "concept": "skeletal-structure",
+   "prereq": "organic-compound"
+  },
+  {
+   "concept": "write-organic-structures",
+   "prereq": "skeletal-structure"
+  },
+  {
+   "concept": "write-organic-structures",
+   "prereq": "alkane"
+  },
+  {
+   "concept": "alkane-properties-trend",
+   "prereq": "alkane"
+  },
+  {
+   "concept": "alkane-properties-trend",
+   "prereq": "dispersion-forces"
+  },
+  {
+   "concept": "alkane-properties-trend",
+   "prereq": "boiling-point"
+  },
+  {
+   "concept": "alkane-structural-isomers",
+   "prereq": "alkane"
+  },
+  {
+   "concept": "alkane-structural-isomers",
+   "prereq": "structural-isomer"
+  },
+  {
+   "concept": "substituent",
+   "prereq": "alkane"
+  },
+  {
+   "concept": "alkyl-group",
+   "prereq": "substituent"
+  },
+  {
+   "concept": "naming-alkanes",
+   "prereq": "alkyl-group"
+  },
+  {
+   "concept": "naming-alkanes",
+   "prereq": "nomenclature"
+  },
+  {
+   "concept": "alkanes-as-fuels",
+   "prereq": "alkane"
+  },
+  {
+   "concept": "alkanes-as-fuels",
+   "prereq": "combustion-reaction"
+  },
+  {
+   "concept": "alkanes-as-fuels",
+   "prereq": "distillation"
+  },
+  {
+   "concept": "substitution-reaction",
+   "prereq": "alkane"
+  },
+  {
+   "concept": "functional-group",
+   "prereq": "organic-compound"
+  },
+  {
+   "concept": "alkene",
+   "prereq": "hydrocarbon"
+  },
+  {
+   "concept": "alkene",
+   "prereq": "pi-bonds-from-unhybridized-orbitals"
+  },
+  {
+   "concept": "alkene-geometric-isomers",
+   "prereq": "alkene"
+  },
+  {
+   "concept": "alkene-geometric-isomers",
+   "prereq": "restricted-rotation-about-pi-bonds"
+  },
+  {
+   "concept": "alkene-geometric-isomers",
+   "prereq": "spatial-isomer"
+  },
+  {
+   "concept": "addition-reaction",
+   "prereq": "alkene"
+  },
+  {
+   "concept": "alkyne",
+   "prereq": "hydrocarbon"
+  },
+  {
+   "concept": "alkyne",
+   "prereq": "pi-bonds-from-unhybridized-orbitals"
+  },
+  {
+   "concept": "naming-unsaturated-hydrocarbons",
+   "prereq": "naming-alkanes"
+  },
+  {
+   "concept": "naming-unsaturated-hydrocarbons",
+   "prereq": "alkene"
+  },
+  {
+   "concept": "naming-unsaturated-hydrocarbons",
+   "prereq": "alkyne"
+  },
+  {
+   "concept": "carbon-geometry-and-hybridization",
+   "prereq": "assign-hybridization"
+  },
+  {
+   "concept": "carbon-geometry-and-hybridization",
+   "prereq": "alkane"
+  },
+  {
+   "concept": "carbon-geometry-and-hybridization",
+   "prereq": "alkene"
+  },
+  {
+   "concept": "carbon-geometry-and-hybridization",
+   "prereq": "alkyne"
+  },
+  {
+   "concept": "aromatic-hydrocarbon",
+   "prereq": "hydrocarbon"
+  },
+  {
+   "concept": "aromatic-hydrocarbon",
+   "prereq": "resonance-and-delocalization"
+  },
+  {
+   "concept": "polymer",
+   "prereq": "alkene"
+  },
+  {
+   "concept": "hydrocarbon-derivative",
+   "prereq": "functional-group"
+  },
+  {
+   "concept": "hydrocarbon-derivative",
+   "prereq": "hydrocarbon"
+  },
+  {
+   "concept": "alcohol",
+   "prereq": "hydrocarbon-derivative"
+  },
+  {
+   "concept": "preparing-alcohols",
+   "prereq": "alcohol"
+  },
+  {
+   "concept": "preparing-alcohols",
+   "prereq": "addition-reaction"
+  },
+  {
+   "concept": "preparing-alcohols",
+   "prereq": "catalyst"
+  },
+  {
+   "concept": "naming-alcohols",
+   "prereq": "alcohol"
+  },
+  {
+   "concept": "naming-alcohols",
+   "prereq": "naming-alkanes"
+  },
+  {
+   "concept": "ether",
+   "prereq": "hydrocarbon-derivative"
+  },
+  {
+   "concept": "naming-ethers",
+   "prereq": "ether"
+  },
+  {
+   "concept": "naming-ethers",
+   "prereq": "naming-alkanes"
+  },
+  {
+   "concept": "ethers-from-alcohols",
+   "prereq": "ether"
+  },
+  {
+   "concept": "ethers-from-alcohols",
+   "prereq": "alcohol"
+  },
+  {
+   "concept": "carbohydrate",
+   "prereq": "alcohol"
+  },
+  {
+   "concept": "carbohydrate",
+   "prereq": "ether"
+  },
+  {
+   "concept": "carbohydrate",
+   "prereq": "polymer"
+  },
+  {
+   "concept": "carbonyl-group",
+   "prereq": "functional-group"
+  },
+  {
+   "concept": "carbonyl-group",
+   "prereq": "pi-bonds-from-unhybridized-orbitals"
+  },
+  {
+   "concept": "carbonyl-group",
+   "prereq": "polar-covalent-bond"
+  },
+  {
+   "concept": "aldehyde",
+   "prereq": "carbonyl-group"
+  },
+  {
+   "concept": "ketone",
+   "prereq": "carbonyl-group"
+  },
+  {
+   "concept": "organic-oxidation-reduction",
+   "prereq": "redox-reaction"
+  },
+  {
+   "concept": "organic-oxidation-reduction",
+   "prereq": "organic-compound"
+  },
+  {
+   "concept": "oxidizing-alcohols",
+   "prereq": "organic-oxidation-reduction"
+  },
+  {
+   "concept": "oxidizing-alcohols",
+   "prereq": "alcohol"
+  },
+  {
+   "concept": "oxidizing-alcohols",
+   "prereq": "aldehyde"
+  },
+  {
+   "concept": "oxidizing-alcohols",
+   "prereq": "ketone"
+  },
+  {
+   "concept": "oxidizing-alcohols",
+   "prereq": "carboxylic-acid"
+  },
+  {
+   "concept": "carboxylic-acid",
+   "prereq": "carbonyl-group"
+  },
+  {
+   "concept": "carboxylic-acid",
+   "prereq": "weak-acid"
+  },
+  {
+   "concept": "ester",
+   "prereq": "carboxylic-acid"
+  },
+  {
+   "concept": "ester",
+   "prereq": "alcohol"
+  },
+  {
+   "concept": "fats-and-oils",
+   "prereq": "ester"
+  },
+  {
+   "concept": "fats-and-oils",
+   "prereq": "alkane"
+  },
+  {
+   "concept": "fats-and-oils",
+   "prereq": "alkene"
+  },
+  {
+   "concept": "amine",
+   "prereq": "hydrocarbon-derivative"
+  },
+  {
+   "concept": "amine-basicity",
+   "prereq": "amine"
+  },
+  {
+   "concept": "amine-basicity",
+   "prereq": "weak-base"
+  },
+  {
+   "concept": "amide",
+   "prereq": "amine"
+  },
+  {
+   "concept": "amide",
+   "prereq": "carbonyl-group"
+  },
+  {
+   "concept": "amidation",
+   "prereq": "amide"
+  },
+  {
+   "concept": "amidation",
+   "prereq": "carboxylic-acid"
+  },
+  {
+   "concept": "proteins-and-peptide-bonds",
+   "prereq": "amidation"
+  },
+  {
+   "concept": "proteins-and-peptide-bonds",
+   "prereq": "polymer"
+  },
+  {
+   "concept": "dna-structure",
+   "prereq": "polymer"
+  },
+  {
+   "concept": "dna-structure",
+   "prereq": "hydrogen-bonding"
+  },
+  {
+   "concept": "kevlar-polyamide",
+   "prereq": "amide"
+  },
+  {
+   "concept": "kevlar-polyamide",
+   "prereq": "polymer"
+  },
+  {
+   "concept": "kevlar-polyamide",
+   "prereq": "hydrogen-bonding"
+  }
+ ]
+}

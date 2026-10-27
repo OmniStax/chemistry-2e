@@ -728,7 +728,7 @@ const OVERPLATE = { spin: 'off', pitch: [0.02, 1.25], views: [{ label: '正视',
     const n = N.v, V = (n * R * TSTP) / PSTP;
     if (VIEW.value === '3d') draw3d(); else draw2d();
     readout(d.readout, `\\kV = \\frac{\\kn R\\kT}{\\kP} = \\frac{(${hue('amount', fmt(n, 2) + '\\ \\text{mol}')})(${RTEX})(${hue('temperature', '273.15\\ \\text{K}')})}{${hue('pressure', '1\\ \\text{atm}')}} = ${hue('volume', fmt(V, 1) + '\\ \\text{L}')}`,
-      '三种气体的相同体积含有相同数目的分子，正如阿伏加德罗所提出的。');
+      '相同体积的三种气体含有相同数目的分子，正如阿伏加德罗所提出的。');
   }
   register(d.fig, { update: () => {}, draw });
 })();

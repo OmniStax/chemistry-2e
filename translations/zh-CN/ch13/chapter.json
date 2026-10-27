@@ -1,7 +1,7 @@
 {
  "id": "13",
  "dir": "ch13",
- "title": "Fundamental Equilibrium Concepts",
+ "title": "平衡的基本概念",
  "intro": {
   "module": "m68796",
   "slug": "13-introduction"
@@ -10,25 +10,25 @@
   {
    "id": "13.1",
    "module": "m68797",
-   "title": "Chemical Equilibria",
+   "title": "化学平衡",
    "slug": "13-1-chemical-equilibria"
   },
   {
    "id": "13.2",
    "module": "m68798",
-   "title": "Equilibrium Constants",
+   "title": "平衡常数",
    "slug": "13-2-equilibrium-constants"
   },
   {
    "id": "13.3",
    "module": "m68799",
-   "title": "Shifting Equilibria: Le Châtelier’s Principle",
+   "title": "平衡的移动：勒夏特列原理",
    "slug": "13-3-shifting-equilibria-le-ch-teliers-principle"
   },
   {
    "id": "13.4",
    "module": "m68801",
-   "title": "Equilibrium Calculations",
+   "title": "平衡计算",
    "slug": "13-4-equilibrium-calculations"
   }
  ],
@@ -36,7 +36,7 @@
   {
    "sym": "rate_f",
    "concept": "reaction-rate",
-   "meaning": "the rate of the forward reaction",
+   "meaning": "正反应的速率",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
    "section": "13.1",
    "anchor": "13.1-dynamic",
@@ -45,7 +45,7 @@
   {
    "sym": "rate_r",
    "concept": "reaction-rate",
-   "meaning": "the rate of the reverse reaction",
+   "meaning": "逆反应的速率",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
    "section": "13.1",
    "anchor": "13.1-dynamic",
@@ -54,7 +54,7 @@
   {
    "sym": "k_f",
    "concept": "rate-constant",
-   "meaning": "the rate constant of the forward reaction",
+   "meaning": "正反应的速率常数",
    "unit": "depends on the order of the forward reaction",
    "section": "13.1",
    "anchor": "13.1-dynamic"
@@ -62,7 +62,7 @@
   {
    "sym": "k_r",
    "concept": "rate-constant",
-   "meaning": "the rate constant of the reverse reaction",
+   "meaning": "逆反应的速率常数",
    "unit": "depends on the order of the reverse reaction",
    "section": "13.1",
    "anchor": "13.1-dynamic"
@@ -70,7 +70,7 @@
   {
    "sym": "Q_c",
    "concept": "reaction-quotient",
-   "meaning": "the reaction quotient, the function of the concentrations or pressures of reactants and products that describes the status of a reaction mixture",
+   "meaning": "反应商，即反应物与产物的浓度或压强的函数，描述反应混合物所处的状态",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -78,7 +78,7 @@
   {
    "sym": "Q_conc",
    "concept": "reaction-quotient",
-   "meaning": "the reaction quotient written with molar concentrations",
+   "meaning": "以物质的量浓度表示的反应商",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -86,7 +86,7 @@
   {
    "sym": "Q_P",
    "concept": "reaction-quotient",
-   "meaning": "the reaction quotient written with partial pressures",
+   "meaning": "以分压表示的反应商",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -94,7 +94,7 @@
   {
    "sym": "K",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant, the value of the reaction quotient for a system at equilibrium",
+   "meaning": "平衡常数，即处于平衡的体系的反应商的值",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-constant"
@@ -102,7 +102,7 @@
   {
    "sym": "K_c",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant written with molar concentrations",
+   "meaning": "以物质的量浓度表示的平衡常数",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-constant"
@@ -110,7 +110,7 @@
   {
    "sym": "K_P",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant written with partial pressures",
+   "meaning": "以分压表示的平衡常数",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-homogeneous"
@@ -118,7 +118,7 @@
   {
    "sym": "[A]",
    "concept": "molarity",
-   "meaning": "the molar concentration of reactant A",
+   "meaning": "反应物 A 的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -126,7 +126,7 @@
   {
    "sym": "[B]",
    "concept": "molarity",
-   "meaning": "the molar concentration of reactant B",
+   "meaning": "反应物 B 的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -134,7 +134,7 @@
   {
    "sym": "[C]",
    "concept": "molarity",
-   "meaning": "the molar concentration of product C",
+   "meaning": "产物 C 的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -142,7 +142,7 @@
   {
    "sym": "[D]",
    "concept": "molarity",
-   "meaning": "the molar concentration of product D",
+   "meaning": "产物 D 的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -150,7 +150,7 @@
   {
    "sym": "P_A",
    "concept": "partial-pressure",
-   "meaning": "the partial pressure of reactant A",
+   "meaning": "反应物 A 的分压",
    "unit": "atm",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -158,7 +158,7 @@
   {
    "sym": "P_B",
    "concept": "partial-pressure",
-   "meaning": "the partial pressure of reactant B",
+   "meaning": "反应物 B 的分压",
    "unit": "atm",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -166,7 +166,7 @@
   {
    "sym": "P_C",
    "concept": "partial-pressure",
-   "meaning": "the partial pressure of product C",
+   "meaning": "产物 C 的分压",
    "unit": "atm",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -174,7 +174,7 @@
   {
    "sym": "P_D",
    "concept": "partial-pressure",
-   "meaning": "the partial pressure of product D",
+   "meaning": "产物 D 的分压",
    "unit": "atm",
    "section": "13.2",
    "anchor": "13.2-quotient"
@@ -182,7 +182,7 @@
   {
    "sym": "P",
    "concept": "partial-pressure",
-   "meaning": "the partial pressure of a gas",
+   "meaning": "气体的分压",
    "unit": "atm",
    "section": "13.2",
    "anchor": "13.2-homogeneous"
@@ -190,7 +190,7 @@
   {
    "sym": "M",
    "concept": "molarity",
-   "meaning": "the molar concentration of a gas",
+   "meaning": "气体的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "13.2",
    "anchor": "13.2-homogeneous"
@@ -198,7 +198,7 @@
   {
    "sym": "R",
    "concept": "ideal-gas-law",
-   "meaning": "the gas constant, 0.0821 L atm mol⁻¹ K⁻¹",
+   "meaning": "理想气体常数，0.0821 L atm mol⁻¹ K⁻¹",
    "unit": "L atm mol⁻¹ K⁻¹",
    "section": "13.2",
    "anchor": "13.2-homogeneous"
@@ -206,7 +206,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "the temperature",
+   "meaning": "温度",
    "unit": "K",
    "section": "13.2",
    "anchor": "13.2-homogeneous"
@@ -214,7 +214,7 @@
   {
    "sym": "Δn_gas",
    "concept": "kp-kc-relation",
-   "meaning": "the difference in the molar amounts of product and reactant gases in the balanced equation",
+   "meaning": "配平的方程式中产物气体与反应物气体的物质的量之差",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-homogeneous"
@@ -222,7 +222,7 @@
   {
    "sym": "K_c_prime",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant of an equation reversed, multiplied by a factor, or formed as a sum of equations",
+   "meaning": "将方程式颠倒、乘以某个因子或由若干方程式相加得到的方程式的平衡常数",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-coupled"
@@ -230,7 +230,7 @@
   {
    "sym": "K_c1",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant of the first of two coupled reactions",
+   "meaning": "两个耦合反应中第一个反应的平衡常数",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-coupled"
@@ -238,7 +238,7 @@
   {
    "sym": "K_c2",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant of the second of two coupled reactions",
+   "meaning": "两个耦合反应中第二个反应的平衡常数",
    "unit": "none",
    "section": "13.2",
    "anchor": "13.2-coupled"
@@ -246,7 +246,7 @@
   {
    "sym": "ΔH",
    "concept": "enthalpy-change-at-constant-pressure",
-   "meaning": "the enthalpy change of the reaction, which decides how the equilibrium shifts with temperature",
+   "meaning": "反应的焓变，它决定平衡随温度如何移动",
    "unit": "kJ",
    "section": "13.3",
    "anchor": "13.3-temperature"
@@ -254,7 +254,7 @@
   {
    "sym": "x_ice",
    "concept": "ice-change-terms",
-   "meaning": "the change in the concentration (or pressure) of a species with coefficient 1, in terms of which the other changes are written",
+   "meaning": "系数为 1 的物种的浓度（或压强）变化量，其他变化量都用它来表示",
    "unit": "mol/L (M) or atm",
    "section": "13.4",
    "anchor": "13.4-changes"
@@ -264,7 +264,7 @@
    "anchor": "13.2-homogeneous",
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of the gas, which is the volume of the vessel that confines it",
+   "meaning": "气体的体积，即容纳该气体的容器的容积",
    "unit": "L"
   },
   {
@@ -272,13 +272,13 @@
    "anchor": "13.2-homogeneous",
    "sym": "n",
    "concept": "mole",
-   "meaning": "the amount of gas in the vessel, counted in moles",
+   "meaning": "容器中气体的物质的量，以摩尔计",
    "unit": "mol"
   },
   {
    "sym": "rate_f",
    "concept": "reaction-rate",
-   "meaning": "the rate of the forward reaction",
+   "meaning": "正反应的速率",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
    "section": "13.3",
    "anchor": "13.3-concentration"
@@ -286,7 +286,7 @@
   {
    "sym": "rate_r",
    "concept": "reaction-rate",
-   "meaning": "the rate of the reverse reaction",
+   "meaning": "逆反应的速率",
    "unit": "mol L⁻¹ s⁻¹ (M/s)",
    "section": "13.3",
    "anchor": "13.3-concentration"
@@ -294,7 +294,7 @@
   {
    "sym": "k_f",
    "concept": "rate-constant",
-   "meaning": "the rate constant of the forward reaction",
+   "meaning": "正反应的速率常数",
    "unit": "depends on the order of the forward reaction",
    "section": "13.3",
    "anchor": "13.3-concentration"
@@ -302,7 +302,7 @@
   {
    "sym": "k_r",
    "concept": "rate-constant",
-   "meaning": "the rate constant of the reverse reaction",
+   "meaning": "逆反应的速率常数",
    "unit": "depends on the order of the reverse reaction",
    "section": "13.3",
    "anchor": "13.3-concentration"
@@ -310,7 +310,7 @@
   {
    "sym": "Q_conc",
    "concept": "reaction-quotient",
-   "meaning": "the reaction quotient written with molar concentrations",
+   "meaning": "以物质的量浓度表示的反应商",
    "unit": "none",
    "section": "13.3",
    "anchor": "13.3-concentration"
@@ -318,7 +318,7 @@
   {
    "sym": "K_c",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant written with molar concentrations",
+   "meaning": "以物质的量浓度表示的平衡常数",
    "unit": "none",
    "section": "13.3",
    "anchor": "13.3-concentration"
@@ -326,7 +326,7 @@
   {
    "sym": "M",
    "concept": "molarity",
-   "meaning": "the molar concentration of a gas",
+   "meaning": "气体的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "13.3",
    "anchor": "13.3-volume"
@@ -334,7 +334,7 @@
   {
    "sym": "P",
    "concept": "partial-pressure",
-   "meaning": "the partial pressure of a gas",
+   "meaning": "气体的分压",
    "unit": "atm",
    "section": "13.3",
    "anchor": "13.3-volume"
@@ -342,7 +342,7 @@
   {
    "sym": "R",
    "concept": "ideal-gas-law",
-   "meaning": "the gas constant, 0.0821 L atm mol⁻¹ K⁻¹",
+   "meaning": "理想气体常数，0.0821 L atm mol⁻¹ K⁻¹",
    "unit": "L atm mol⁻¹ K⁻¹",
    "section": "13.3",
    "anchor": "13.3-volume"
@@ -350,7 +350,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "the temperature",
+   "meaning": "温度",
    "unit": "K",
    "section": "13.3",
    "anchor": "13.3-volume"
@@ -360,7 +360,7 @@
    "anchor": "13.3-volume",
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of the gas, which is the volume of the vessel that confines it",
+   "meaning": "气体的体积，即容纳该气体的容器的容积",
    "unit": "L"
   },
   {
@@ -368,13 +368,13 @@
    "anchor": "13.3-volume",
    "sym": "n",
    "concept": "mole",
-   "meaning": "the amount of gas in the vessel, counted in moles",
+   "meaning": "容器中气体的物质的量，以摩尔计",
    "unit": "mol"
   },
   {
    "sym": "Q_P",
    "concept": "reaction-quotient",
-   "meaning": "the reaction quotient written with partial pressures",
+   "meaning": "以分压表示的反应商",
    "unit": "none",
    "section": "13.3",
    "anchor": "13.3-volume"
@@ -382,7 +382,7 @@
   {
    "sym": "K_P",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant written with partial pressures",
+   "meaning": "以分压表示的平衡常数",
    "unit": "none",
    "section": "13.3",
    "anchor": "13.3-volume"
@@ -390,7 +390,7 @@
   {
    "sym": "K",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant, the value of the reaction quotient for a system at equilibrium",
+   "meaning": "平衡常数，即处于平衡的体系的反应商的值",
    "unit": "none",
    "section": "13.3",
    "anchor": "13.3-temperature"
@@ -398,7 +398,7 @@
   {
    "sym": "[A]",
    "concept": "molarity",
-   "meaning": "the molar concentration of reactant A",
+   "meaning": "反应物 A 的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "13.3",
    "anchor": "13.3-temperature"
@@ -406,7 +406,7 @@
   {
    "sym": "[B]",
    "concept": "molarity",
-   "meaning": "the molar concentration of product B",
+   "meaning": "产物 B 的物质的量浓度",
    "unit": "mol/L (M)",
    "section": "13.3",
    "anchor": "13.3-temperature",
@@ -415,7 +415,7 @@
   {
    "sym": "q",
    "concept": "heat-flow",
-   "meaning": "the heat gained or lost by a substance or a process, positive when it is gained and negative when it is lost",
+   "meaning": "物质或过程得到或失去的热量，得到时为正，失去时为负",
    "unit": "J",
    "section": "13.3",
    "anchor": "13.3-temperature"
@@ -423,7 +423,7 @@
   {
    "sym": "E_a",
    "concept": "activation-energy",
-   "meaning": "the activation energy, the minimum energy needed to form products in a collision",
+   "meaning": "活化能，即碰撞中形成产物所需的最小能量",
    "unit": "J/mol or kJ/mol",
    "section": "13.3",
    "anchor": "13.3-catalyst"
@@ -431,7 +431,7 @@
   {
    "sym": "K_c",
    "concept": "equilibrium-constant",
-   "meaning": "the equilibrium constant written with molar concentrations",
+   "meaning": "以物质的量浓度表示的平衡常数",
    "unit": "none",
    "section": "13.4",
    "anchor": "13.4-calc-k"
@@ -439,7 +439,7 @@
   {
    "sym": "Q_conc",
    "concept": "reaction-quotient",
-   "meaning": "the reaction quotient written with molar concentrations",
+   "meaning": "以物质的量浓度表示的反应商",
    "unit": "none",
    "section": "13.4",
    "anchor": "13.4-initial"
@@ -447,7 +447,7 @@
   {
    "sym": "t",
    "concept": "time",
-   "meaning": "the time elapsed since the reaction began",
+   "meaning": "自反应开始经过的时间",
    "unit": "s",
    "section": "13.1",
    "anchor": "13.1-dynamic"

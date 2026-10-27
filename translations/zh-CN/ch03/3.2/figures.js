@@ -18,26 +18,26 @@ const sig = (x, n = 4) => { const e = Math.floor(Math.log10(Math.abs(x))); retur
   const d = sim('sim-empirical', 540);
   const MM = { Fe: 55.85, O: 16.00, C: 12.01, H: 1.008, Cl: 35.45 };
   const MMS = { Fe: '55.85', O: '16.00', C: '12.01', H: '1.008', Cl: '35.45' };
-  const NAME = { Fe: 'iron', O: 'oxygen', C: 'carbon', H: 'hydrogen', Cl: 'chlorine' };
+  const NAME = { Fe: '铁', O: '氧', C: '碳', H: '氢', Cl: '氯' };
   /* the book's samples; each slider runs from about a fifth to twice the book's mass */
   const SAMPLES = [
-    { label: 'hematite', ref: 'hematite', name: 'the hematite sample', a: 'Fe', x: 'O', ma: 34.97, mx: 15.03, ra: [5, 70, 0.01, 2], rx: [2, 40, 0.01, 2] },
-    { label: 'carbon and hydrogen', ref: 'ch-sample', name: 'the sample of carbon and hydrogen', a: 'C', x: 'H', ma: 1.71, mx: 0.287, ra: [0.2, 4, 0.01, 2], rx: [0.03, 0.6, 0.001, 3] },
-    { label: 'chlorine and oxygen', ref: 'clo-sample', name: 'the sample of chlorine and oxygen', a: 'Cl', x: 'O', ma: 5.31, mx: 8.40, ra: [0.5, 12, 0.01, 2], rx: [1, 20, 0.01, 2] },
-    { label: 'fermentation gas', ref: 'gas', name: 'the fermentation gas', a: 'C', x: 'O', ma: 27.29, mx: 72.71, ra: [5, 60, 0.01, 2], rx: [10, 150, 0.01, 2] },
+    { label: '赤铁矿', ref: 'hematite', name: '赤铁矿样品', a: 'Fe', x: 'O', ma: 34.97, mx: 15.03, ra: [5, 70, 0.01, 2], rx: [2, 40, 0.01, 2] },
+    { label: '碳和氢', ref: 'ch-sample', name: '碳和氢的样品', a: 'C', x: 'H', ma: 1.71, mx: 0.287, ra: [0.2, 4, 0.01, 2], rx: [0.03, 0.6, 0.001, 3] },
+    { label: '氯和氧', ref: 'clo-sample', name: '氯和氧的样品', a: 'Cl', x: 'O', ma: 5.31, mx: 8.40, ra: [0.5, 12, 0.01, 2], rx: [1, 20, 0.01, 2] },
+    { label: '发酵产生的气体', ref: 'gas', name: '发酵产生的气体', a: 'C', x: 'O', ma: 27.29, mx: 72.71, ra: [5, 60, 0.01, 2], rx: [10, 150, 0.01, 2] },
   ];
   let S = SAMPLES[0];
   const mLabel = (sym) => `\\km_{\\text{${sym}}}`;
   const rangeOf = (r, v) => ({ min: r[0], max: r[1], step: r[2], dec: r[3], unit: 'g', value: v });
-  const pick = F.select(d.controls, { label: '\\text{sample}', aria: 'sample analysed',
+  const pick = F.select(d.controls, { label: '\\text{样品}', aria: '所分析的样品',
     options: SAMPLES.map((s, i) => ({ value: String(i), label: s.label })), value: '0',
     onInput: () => {
       S = SAMPLES[+pick.value];
-      mA.relabel(mLabel(S.a), `mass of ${NAME[S.a]}`); mX.relabel(mLabel(S.x), `mass of ${NAME[S.x]}`);
+      mA.relabel(mLabel(S.a), `${NAME[S.a]}的质量`); mX.relabel(mLabel(S.x), `${NAME[S.x]}的质量`);
       mA.range(rangeOf(S.ra, S.ma)); mX.range(rangeOf(S.rx, S.mx));
     } });
-  const mA = ctl(d.controls, { label: mLabel('Fe'), cls: 'mass', min: 5, max: 70, step: 0.01, value: 34.97, unit: 'g', dec: 2, aria: 'mass of iron' });
-  const mX = ctl(d.controls, { label: mLabel('O'), cls: 'mass', min: 2, max: 40, step: 0.01, value: 15.03, unit: 'g', dec: 2, aria: 'mass of oxygen' });
+  const mA = ctl(d.controls, { label: mLabel('Fe'), cls: 'mass', min: 5, max: 70, step: 0.01, value: 34.97, unit: 'g', dec: 2, aria: '铁的质量' });
+  const mX = ctl(d.controls, { label: mLabel('O'), cls: 'mass', min: 2, max: 40, step: 0.01, value: 15.03, unit: 'g', dec: 2, aria: '氧的质量' });
   const hits = [];
   F.hover(d.stage, () => hits);
 
@@ -63,7 +63,7 @@ const sig = (x, n = 4) => { const e = Math.floor(Math.log10(Math.abs(x))); retur
   function atom(ctx, x, y, sym) {
     ctx.save(); ctx.beginPath(); ctx.arc(x, y, 15, 0, Math.PI * 2); ctx.fillStyle = F.el(sym); ctx.fill();
     ctx.lineWidth = 1.5; ctx.strokeStyle = PAL.ink; ctx.stroke(); ctx.restore();
-    hits.push({ x, y, r: 16, name: `${sym}, ${NAME[sym]}` });
+    hits.push({ x, y, r: 16, name: `${sym}，${NAME[sym]}` });
   }
 
   function draw() {
@@ -87,22 +87,22 @@ const sig = (x, n = 4) => { const e = Math.floor(Math.log10(Math.abs(x))); retur
     const pa = (100 * ma) / total;
     text(ctx, `% ${A} = ${pa.toFixed(2)}%`, bx0, by + bh + 24, PAL.ink, { size: 19 });
     text(ctx, `% ${X} = ${(100 - pa).toFixed(2)}%`, bx1, by + bh + 24, PAL.ink, { size: 19, align: 'right' });
-    text(ctx, `mass of sample ${total.toFixed(2)} g`, 700, by + bh + 24, C('mass'), { size: 19, weight: 600, align: 'center' });
+    text(ctx, `样品质量 ${total.toFixed(2)} g`, 700, by + bh + 24, C('mass'), { size: 19, weight: 600, align: 'center' });
 
     /* the chart: mass to moles for each element, joined, divided by the lower, made whole */
     const yA = 262, yX = 402, yM = 332, bw = 200, bhh = 76;
     const xMass = 120, xMol = 480, xJoin = 620, xRatio = 890, xForm = 1240;
     [[A, ma, na, yA, S.ra], [X, mx, nx, yX, S.rx]].forEach(([sym, m, n, y, r]) => {
-      box(ctx, xMass, y, bw, bhh, C('mass'), `mass of ${sym} atoms`, `${fmtM(m, r)} g`);
-      box(ctx, xMol, y, bw, bhh, C('amount'), `moles of ${sym} atoms`, `${sig(n)} mol`);
-      step(ctx, xMass + bw / 2 + 6, xMol - bw / 2 - 6, y, ['divide by', 'molar mass'], `÷ ${MMS[sym]} g/mol`);
+      box(ctx, xMass, y, bw, bhh, C('mass'), `${sym} 原子的质量`, `${fmtM(m, r)} g`);
+      box(ctx, xMol, y, bw, bhh, C('amount'), `${sym} 原子的物质的量`, `${sig(n)} mol`);
+      step(ctx, xMass + bw / 2 + 6, xMol - bw / 2 - 6, y, ['除以', '摩尔质量'], `÷ ${MMS[sym]} g/mol`);
       line(ctx, xMol + bw / 2, y, xJoin, y, PAL.ink, 3);
     });
     line(ctx, xJoin, yA, xJoin, yX, PAL.ink, 3);
-    step(ctx, xJoin, xRatio - bw / 2 - 6, yM, ['divide by lowest', 'number of moles'], `÷ ${sig(low)} mol`);
-    box(ctx, xRatio, yM, bw, bhh, PAL.ink, `${A} to ${X} mole ratio`, `${ra.toFixed(3)} : ${rx.toFixed(3)}`, PAL.ink);
-    step(ctx, xRatio + bw / 2 + 6, xForm - bw / 2 - 6, yM, ['lowest whole', 'numbers'], w ? `× ${w.k}` : '× ?');
-    box(ctx, xForm, yM, bw, bhh, PAL.ink, 'empirical formula', formula ?? 'no small ratio', formula ? PAL.ink : PAL.muted);
+    step(ctx, xJoin, xRatio - bw / 2 - 6, yM, ['除以最小的', '物质的量'], `÷ ${sig(low)} mol`);
+    box(ctx, xRatio, yM, bw, bhh, PAL.ink, `${A} : ${X} 物质的量之比`, `${ra.toFixed(3)} : ${rx.toFixed(3)}`, PAL.ink);
+    step(ctx, xRatio + bw / 2 + 6, xForm - bw / 2 - 6, yM, ['化为最小的', '整数'], w ? `× ${w.k}` : '× ?');
+    box(ctx, xForm, yM, bw, bhh, PAL.ink, '实验式', formula ?? '无简单整数比', formula ? PAL.ink : PAL.muted);
 
     /* the empirical formula unit in the book's atom colours */
     if (w && w.n[0] + w.n[1] <= 14) {
@@ -114,12 +114,12 @@ const sig = (x, n = 4) => { const e = Math.floor(Math.log10(Math.abs(x))); retur
     }
 
     headline(ctx, formula
-      ? `${fmtM(ma, S.ra)} g ${A} and ${fmtM(mx, S.rx)} g ${X} contain ${sig(na)} mol ${A} and ${sig(nx)} mol ${X}, so the empirical formula is ${formula}.`
-      : `${fmtM(ma, S.ra)} g ${A} and ${fmtM(mx, S.rx)} g ${X} contain ${sig(na)} mol ${A} and ${sig(nx)} mol ${X}, a ratio no small whole numbers fit.`);
+      ? `${fmtM(ma, S.ra)} g ${A} 和 ${fmtM(mx, S.rx)} g ${X} 含有 ${sig(na)} mol ${A} 和 ${sig(nx)} mol ${X}，所以实验式为 ${formula}。`
+      : `${fmtM(ma, S.ra)} g ${A} 和 ${fmtM(mx, S.rx)} g ${X} 含有 ${sig(na)} mol ${A} 和 ${sig(nx)} mol ${X}，这个比值找不到合适的小整数。`);
     readout(d.readout,
       `\\kn_{\\text{${A}}} = \\frac{\\km_{\\text{${A}}}}{\\kMM_{\\text{${A}}}} = \\frac{${hue('mass', `${fmtM(ma, S.ra)}\\ \\text{g}`)}}{${hue('mass', `${MMS[A]}\\ \\text{g/mol}`)}} = ${hue('amount', `${sig(na)}\\ \\text{mol}`)}`,
-      w ? `Dividing both amounts by ${sig(low)} mol gives ${ra.toFixed(3)} to ${rx.toFixed(3)}${w.k > 1 ? `, and multiplying by ${w.k} gives whole numbers` : ''}.`
-        : `Dividing both amounts by ${sig(low)} mol gives ${ra.toFixed(3)} to ${rx.toFixed(3)}, and no multiplier up to 6 makes both whole.`);
+      w ? `用 ${sig(low)} mol 去除两个物质的量，得到 ${ra.toFixed(3)} 比 ${rx.toFixed(3)}${w.k > 1 ? `，再乘以 ${w.k} 得到整数` : ''}。`
+        : `用 ${sig(low)} mol 去除两个物质的量，得到 ${ra.toFixed(3)} 比 ${rx.toFixed(3)}，乘以不超过 6 的任何倍数都不能使两者同时为整数。`);
   }
   still(d, draw);
 })();

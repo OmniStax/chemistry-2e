@@ -2,32 +2,40 @@
   "id": "21.2",
   "module": "m68852",
   "chapter": "21",
-  "title": "Nuclear Equations",
-  "short": "Nuclear Equations",
-  "lead": "<span data-concept=\"nuclear-reaction\">Nuclear reactions</span> change nuclei rather than the arrangement of their electrons. The particles that take part in them, from <span data-concept=\"alpha-particle\">alpha</span> and <span data-concept=\"beta-particle\">beta particles</span> to <span data-concept=\"positron\">positrons</span> and <span data-concept=\"gamma-ray\">gamma rays</span>, are named here, and a nuclear equation is written and balanced.",
+  "title": "核反应方程",
+  "short": "核反应方程",
+  "lead": "<span data-concept=\"nuclear-reaction\">核反应</span>改变的是原子核，而不是核外电子的排布。参与这些反应的粒子，从 <span data-concept=\"alpha-particle\">α 粒子</span>和 <span data-concept=\"beta-particle\">β 粒子</span>到<span data-concept=\"positron\">正电子</span>和 <span data-concept=\"gamma-ray\">γ 射线</span>，在这里逐一说明，核反应方程也在这里书写并配平。",
   "objectives": [
-    "Identify common particles and energies involved in nuclear reactions",
-    "Write and balance nuclear equations"
+    "识别核反应中涉及的常见粒子和能量",
+    "书写并配平核反应方程"
   ],
-  "summary_html": "<p>Nuclei can undergo reactions that change their number of protons, number of neutrons, or energy state. Many different particles can be involved in <span data-concept=\"nuclear-reaction\">nuclear reactions</span>. The most common are <span data-concept=\"proton\">protons</span>, <span data-concept=\"neutron\">neutrons</span>, <span data-concept=\"positron\">positrons</span> (which are positively charged <span data-concept=\"electron\">electrons</span>), <span data-concept=\"alpha-particle\">alpha (α) particles</span> (which are high-energy helium nuclei), <span data-concept=\"beta-particle\">beta (β) particles</span> (which are high-energy <span data-concept=\"electron\">electrons</span>), and <span data-concept=\"gamma-ray\">gamma (γ) rays</span> (which compose high-energy <span data-concept=\"electromagnetic-radiation\">electromagnetic radiation</span>). As with chemical reactions, <span data-concept=\"balanced-nuclear-equation\">nuclear reactions are always balanced</span>. When a <span data-concept=\"nuclear-reaction\">nuclear reaction</span> occurs, the total mass (number) and the total charge remain unchanged.</p>",
-  "notes": "Nothing in the section’s text is left out. The section’s opening, which the book prints without a header, carries one of OmniStax’s own, Nuclear Reactions.",
+  "summary_html": "<p>原子核可以发生使其质子数、中子数或能量状态改变的反应。许多不同的粒子都可以参与<span data-concept=\"nuclear-reaction\">核反应</span>。最常见的是<span data-concept=\"proton\">质子</span>、<span data-concept=\"neutron\">中子</span>、<span data-concept=\"positron\">正电子</span>（即带正电的<span data-concept=\"electron\">电子</span>）、<span data-concept=\"alpha-particle\">α 粒子</span>（即高能氦核）、<span data-concept=\"beta-particle\">β 粒子</span>（即高能<span data-concept=\"electron\">电子</span>）和 <span data-concept=\"gamma-ray\">γ 射线</span>（构成高能<span data-concept=\"electromagnetic-radiation\">电磁辐射</span>）。与化学反应一样，<span data-concept=\"balanced-nuclear-equation\">核反应总是配平的</span>。发生<span data-concept=\"nuclear-reaction\">核反应</span>时，总质量（数）和总电荷保持不变。</p>",
+  "notes": "本节正文没有任何删略。书中没有标题的本节开头，加上了 OmniStax 自拟的一个标题：核反应。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The three unkeyed exercises fs-idm5988192 (four nuclear equations to complete), fs-idp59747856 (the equations of the preparation of technetium-99) and fs-idp208355344 (the volume of nitrogen gas from the decay of carbon-14) are left out, and no answer is computed for them. The unkeyed conceptual exercise fs-idp158311008 carries a suggested approach marked as OmniStax’s own. The keyed exercise fs-idp74968928, the binding energy of fluorine-19, tests only the binding energy of 21.1 and is moved there, where it carries source_section 21.2. The key to fs-idp225643904 (b) writes ¹⁴₇C for nitrogen-14, as printed.",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案以及“学习检测”的答案。三道没有答案的习题 fs-idm5988192（补全四个核反应方程）、fs-idp59747856（锝-99 制备的方程）和 fs-idp208355344（碳-14 衰变产生的氮气的体积）被略去，也没有为它们计算答案。没有答案的概念性习题 fs-idp158311008 附有一条标明为 OmniStax 自拟的建议思路。有答案的习题 fs-idp74968928，即氟-19 的结合能，只考查 21.1 中的结合能，已移到那里，在那里它的 source_section 为 21.2。fs-idp225643904（b）的答案按书中所印，把氮-14 写成 ¹⁴₇C。",
   "figures": [
     {
       "id": "sim-particles",
@@ -36,7 +44,7 @@
       "originals": [
         "/media/ch21/CNX_Chem_21_03_RadioDecay-d92b.jpg"
       ],
-      "original_caption": "Although many species are encountered in nuclear reactions, this table summarizes the names, symbols, representations, and descriptions of the most common of these.",
+      "original_caption": "虽然核反应中会遇到许多种粒子，但此表总结了其中最常见者的名称、符号、表示形式和描述。",
       "draws": [],
       "conventions": [
         "p+",
@@ -50,6 +58,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -66,6 +79,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -213,7 +231,7 @@
         "after": "ex-balancing"
       },
       "cite": "ex-balancing",
-      "prompt": "The nuclide ${}_{\\;53}^{125}\\text{I}$ combines with an electron and produces a new nucleus and no other massive particles. What is the equation for this reaction?",
+      "prompt": "核素 ${}_{\\;53}^{125}\\text{I}$ 与一个电子结合，生成一个新的原子核，没有其他有质量的粒子。该反应的方程是什么？",
       "answer": {
         "type": "open",
         "generated_by": "source",
@@ -230,11 +248,11 @@
         "at": "end"
       },
       "cite": "particles",
-      "prompt": "Write a brief description or definition of each of the following:<br>(a) nucleon<br>(b) α particle<br>(c) β particle<br>(d) positron<br>(e) γ ray<br>(f) nuclide<br>(g) mass number<br>(h) atomic number",
+      "prompt": "请对下列各项分别写出简要的描述或定义：<br>（a）核子<br>（b）α 粒子<br>（c）β 粒子<br>（d）正电子<br>（e）γ 射线<br>（f）核素<br>（g）质量数<br>（h）原子序数",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) A nucleon is any particle contained in the nucleus of the atom, so it can refer to protons and neutrons. (b) An α particle is one product of natural radioactivity and is the nucleus of a helium atom. (c) A β particle is a product of natural radioactivity and is a high-speed electron. (d) A positron is a particle with the same mass as an electron but with a positive charge. (e) Gamma rays compose electromagnetic radiation of high energy and short wavelength. (f) Nuclide is a term used when referring to a single type of nucleus. (g) The mass number is the sum of the number of protons and the number of neutrons in an element. (h) The atomic number is the number of protons in the nucleus of an element."
+        "solution": "（a）核子是原子核中所含的任何粒子，因此可以指质子和中子。（b）α 粒子是天然放射性的一种产物，是氦原子的原子核。（c）β 粒子是天然放射性的一种产物，是高速电子。（d）正电子是质量与电子相同但带正电荷的粒子。（e）γ 射线构成高能量、短波长的电磁辐射。（f）核素是指单一类型原子核时使用的术语。（g）质量数是一种元素中质子数与中子数之和。（h）原子序数是一种元素原子核中的质子数。"
       }
     },
     {
@@ -247,11 +265,11 @@
         "at": "end"
       },
       "cite": "particles",
-      "prompt": "Which of the various particles (α particles, β particles, and so on) that may be produced in a nuclear reaction are actually nuclei?",
+      "prompt": "在核反应中可能产生的各种粒子（α 粒子、β 粒子等）中，哪些实际上是原子核？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Alpha particles and protons are nuclei. An α particle, ${}_{2}^{4}\\text{He}$, is a high-energy helium-4 nucleus of two protons and two neutrons, and a proton, ${}_{1}^{1}\\text{p}$ or ${}_{1}^{1}\\text{H}$, is the nucleus of a hydrogen-1 atom; a deuteron, ${}_{1}^{2}\\text{H}$, used to bombard target nuclei, is likewise the nucleus of a hydrogen-2 atom. The other particles of Figure 21.4 are not nuclei. A neutron, ${}_{0}^{1}\\text{n}$, is a single constituent of nuclei with no proton, so it is not the nucleus of any element; β particles are high-energy electrons, positrons are positively charged electrons, and γ rays are photons of electromagnetic radiation, none of which contain protons or neutrons."
+        "solution": "α 粒子和质子是原子核。α 粒子 ${}_{2}^{4}\\text{He}$ 是由两个质子和两个中子组成的高能氦-4 原子核，质子 ${}_{1}^{1}\\text{p}$ 或 ${}_{1}^{1}\\text{H}$ 是氢-1 原子的原子核；用来轰击靶核的氘核 ${}_{1}^{2}\\text{H}$ 同样是氢-2 原子的原子核。图 21.4 中的其他粒子都不是原子核。中子 ${}_{0}^{1}\\text{n}$ 是原子核的单个组成部分，不含质子，所以它不是任何元素的原子核；β 粒子是高能电子，正电子是带正电的电子，γ 射线是电磁辐射的光子，它们都不含质子或中子。"
       }
     },
     {
@@ -264,11 +282,11 @@
         "at": "end"
       },
       "cite": "balancing",
-      "prompt": "Complete each of the following equations by adding the missing species:<br>(a) ${}_{13}^{27}\\text{Al}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;?\\;+{}_{0}^{1}\\text{n}$<br>(b) ${}_{\\;94}^{239}\\text{Pu}+?\\;\\longrightarrow \\;{}_{\\;96}^{242}\\text{Cm}+{}_{0}^{1}\\text{n}$<br>(c) ${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;\\text{?}+{}_{1}^{1}\\text{H}$<br>(d) ${}_{\\;92}^{235}\\text{U}\\;\\longrightarrow \\;\\text{?}+{}_{\\;55}^{135}\\text{Cs}+4{}_{0}^{1}\\text{n}$",
+      "prompt": "补全下列各方程，写出缺失的粒子：<br>（a）${}_{13}^{27}\\text{Al}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;?\\;+{}_{0}^{1}\\text{n}$<br>（b）${}_{\\;94}^{239}\\text{Pu}+?\\;\\longrightarrow \\;{}_{\\;96}^{242}\\text{Cm}+{}_{0}^{1}\\text{n}$<br>（c）${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;\\text{?}+{}_{1}^{1}\\text{H}$<br>（d）${}_{\\;92}^{235}\\text{U}\\;\\longrightarrow \\;\\text{?}+{}_{\\;55}^{135}\\text{Cs}+4{}_{0}^{1}\\text{n}$",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) ${}_{13}^{27}\\text{Al}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{15}^{30}\\text{P}+{}_{0}^{1}\\text{n};$ (b) ${}_{\\;94}^{239}\\text{Pu}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;96}^{242}\\text{Cm}+{}_{0}^{1}\\text{n};$ (c) ${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ (d) ${}_{\\;92}^{235}\\text{U}\\;\\longrightarrow \\;{}_{37}^{96}\\text{Rb}+{}_{\\;55}^{135}\\text{Cs}+4{}_{0}^{1}\\text{n}$"
+        "solution": "（a）${}_{13}^{27}\\text{Al}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{15}^{30}\\text{P}+{}_{0}^{1}\\text{n};$ （b）${}_{\\;94}^{239}\\text{Pu}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;96}^{242}\\text{Cm}+{}_{0}^{1}\\text{n};$ （c）${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ （d）${}_{\\;92}^{235}\\text{U}\\;\\longrightarrow \\;{}_{37}^{96}\\text{Rb}+{}_{\\;55}^{135}\\text{Cs}+4{}_{0}^{1}\\text{n}$"
       }
     },
     {
@@ -281,11 +299,11 @@
         "at": "end"
       },
       "cite": "balancing",
-      "prompt": "Write a balanced equation for each of the following nuclear reactions:<br>(a) the production of <sup>17</sup>O from <sup>14</sup>N by α particle bombardment<br>(b) the production of <sup>14</sup>C from <sup>14</sup>N by neutron bombardment<br>(c) the production of <sup>233</sup>Th from <sup>232</sup>Th by neutron bombardment<br>(d) the production of <sup>239</sup>U from <sup>238</sup>U by ${}_{1}^{2}\\text{H}$ bombardment",
+      "prompt": "请为下列各核反应写出配平的方程：<br>（a）用 α 粒子轰击 <sup>14</sup>N 制得 <sup>17</sup>O<br>（b）用中子轰击 <sup>14</sup>N 制得 <sup>14</sup>C<br>（c）用中子轰击 <sup>232</sup>Th 制得 <sup>233</sup>Th<br>（d）用 ${}_{1}^{2}\\text{H}$ 轰击 <sup>238</sup>U 制得 <sup>239</sup>U",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) ${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ (b) ${}_{\\;7}^{14}\\text{C}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;6}^{14}\\text{C}+{}_{1}^{1}\\text{H};$<sup class=\"fn\" data-note=\"c-e4-n14\"></sup> (c) ${}_{\\;90}^{232}\\text{Th}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;90}^{233}\\text{Th};$ (d) ${}_{92}^{238}\\text{U}+{}_{1}^{2}\\text{H}\\;\\longrightarrow \\;{}_{\\;92}^{239}\\text{U}+{}_{1}^{1}\\text{H}$"
+        "solution": "（a）${}_{\\;7}^{14}\\text{N}+{}_{2}^{4}\\text{He}\\;\\longrightarrow \\;{}_{\\;8}^{17}\\text{O}+{}_{1}^{1}\\text{H};$ （b）${}_{\\;7}^{14}\\text{C}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;6}^{14}\\text{C}+{}_{1}^{1}\\text{H};$<sup class=\"fn\" data-note=\"c-e4-n14\"></sup> （c）${}_{\\;90}^{232}\\text{Th}+{}_{0}^{1}\\text{n}\\;\\longrightarrow \\;{}_{\\;90}^{233}\\text{Th};$ （d）${}_{92}^{238}\\text{U}+{}_{1}^{2}\\text{H}\\;\\longrightarrow \\;{}_{\\;92}^{239}\\text{U}+{}_{1}^{1}\\text{H}$"
       }
     }
   ],
@@ -360,9 +378,11 @@
     }
   ],
   "referents": [],
-  "footnotes": [{
-  "id": "c-e4-n14",
-  "kind": "correction",
-  "html": "The key writes ${}_{\\;7}^{14}\\text{C}$ as the target; the nucleus with atomic number 7 is nitrogen-14, ${}_{\\;7}^{14}\\text{N}$, which a neutron turns into carbon-14 and a proton."
-}]
+  "footnotes": [
+    {
+      "id": "c-e4-n14",
+      "kind": "correction",
+      "html": "答案把 ${}_{\\;7}^{14}\\text{C}$ 写成了靶核；原子序数为 7 的原子核是氮-14，即 ${}_{\\;7}^{14}\\text{N}$，中子使它变成碳-14 和一个质子。"
+    }
+  ]
 }

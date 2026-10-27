@@ -35,7 +35,7 @@
   },
   "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "布鲁姆层级、概念标签和提示均由 AI 生成。答案取自书后答案。没有给出答案的 fs-idm149853488（一个铜铅电池），其标准电池电势和电极反应需要自行算出，故被略去。没有给出答案的 fs-idp39083136 保留，其建议思路标明为 OmniStax 自己所加。没有任何内容被移动。",
+  "exercise_notes": "布鲁姆层级、概念标签和建议思路均由 AI 生成。答案取自书后答案。没有给出答案的 fs-idm149853488（一个铜铅电池），其标准电池电势和电极反应需要自行算出，故被略去。没有给出答案的 fs-idp39083136 保留，其建议思路标明为 OmniStax 自己所加。没有任何内容被移动。",
   "figures": [
     {
       "id": "fig-daniell",
@@ -398,7 +398,7 @@
         "at": "end"
       },
       "cite": "batteries",
-      "prompt": "考虑一个总反应为 $\\text{Cu}(s)+2{\\text{Ag}}^{\\text{+}}(aq)\\;\\longrightarrow \\;\\text{2Ag}(s)+{\\text{Cu}}^{2+}(aq)$ 的电池。<br>（a）阳极和阴极的反应各是什么？<br>（b）电池电势为零时电池即“耗尽”。这个电池耗尽时 <em>Q</em> 的值是多少？<br>（c）如果发现某个耗尽的电池中 [Cu<sup>2+</sup>] = 0.11 <em>M</em>，银离子的浓度原来是多少？",
+      "prompt": "考虑一个总反应为 $\\text{Cu}(s)+2{\\text{Ag}}^{\\text{+}}(aq)\\;\\longrightarrow \\;\\text{2Ag}(s)+{\\text{Cu}}^{2+}(aq)$ 的电池。<br>（a）阳极和阴极的反应各是什么？<br>（b）电池电势为零时电池即“耗尽”。这个电池耗尽时 <em>Q</em> 的值是多少？<br>（c）如果发现某个耗尽的电池中 [Cu<sup>2+</sup>] = 0.11 <em>M</em>，银离子的浓度是多少？",
       "answer": {
         "type": "open",
         "generated_by": "source",

@@ -198,9 +198,9 @@ const sim = (id, H) => F.sim(root, id, H);
     /* the region names and the two points, for the substance shown */
     ['water', 'co2'].forEach((key) => sub.only(ctx, key, () => {
       const q = S[key], sc = scales(q), c = CURVES[key];
-      text(ctx, '固体', sc.X(q.at.solid[0]), sc.Y(q.at.solid[1]), PAL.ink, { size: 22, align: 'center' });
-      text(ctx, '液体', sc.X(q.at.liquid[0]), sc.Y(q.at.liquid[1]), PAL.ink, { size: 22, align: 'center' });
-      text(ctx, '气体', sc.X(q.at.gas[0]), sc.Y(q.at.gas[1]), PAL.ink, { size: 22, align: 'center' });
+      text(ctx, '固态', sc.X(q.at.solid[0]), sc.Y(q.at.solid[1]), PAL.ink, { size: 22, align: 'center' });
+      text(ctx, '液态', sc.X(q.at.liquid[0]), sc.Y(q.at.liquid[1]), PAL.ink, { size: 22, align: 'center' });
+      text(ctx, '气态', sc.X(q.at.gas[0]), sc.Y(q.at.gas[1]), PAL.ink, { size: 22, align: 'center' });
       text(ctx, '超临界流体', (c.cp[0] + B.r) / 2, (c.cp[1] + B.t) / 2, PAL.ink, { size: 17, align: 'center' });
       const tpUp = key === v && Math.abs(Y(L10(P)) - c.tp[1]) < 40;
       text(ctx, '三相点', c.tp[0] + 14, c.tp[1] + (tpUp ? -22 : 24), F.ref('triple-point'), { size: 17, align: 'left', bg: PAL.panel });
@@ -248,7 +248,7 @@ const sim = (id, H) => F.sim(root, id, H);
     ctx.restore();
     ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(W.l, W.t, W.r - W.l, W.b - W.t); ctx.restore();
     text(ctx, '样品中的 ' + s.mol + ' 分子', (W.l + W.r) / 2, W.t - 22, PAL.muted, { size: 17, align: 'center' });
-    const WORD = { solid: '固体', liquid: '液体', gas: '气体', scf: '超临界流体' };
+    const WORD = { solid: '固态', liquid: '液态', gas: '气态', scf: '超临界流体' };
     const bandName = st.key === 'critical' ? '在临界点' : st.bands.map((ph) => WORD[ph]).reverse().join('，其下为');
     text(ctx, bandName, (W.l + W.r) / 2, W.b + 28, PAL.ink, { size: 20, align: 'center' });
 
@@ -267,7 +267,7 @@ const sim = (id, H) => F.sim(root, id, H);
       critical: `在临界点（${fmtT(s.Tc)} °C 和 ${fmtP(s.Pc)} kPa）时，${s.l}与${s.g}之间的分界消失。`,
     };
     headline(ctx, H[st.key]);
-    const PH = { solid: '\\text{固体}', liquid: '\\text{液体}', gas: '\\text{气体}', scf: '\\text{超临界流体}', melt: '\\text{固体} \\rightleftharpoons \\text{液体}', boil: '\\text{液体} \\rightleftharpoons \\text{气体}', sub: '\\text{固体} \\rightleftharpoons \\text{气体}', triple: '\\text{固体、液体、气体}', critical: '\\text{临界点}' };
+    const PH = { solid: '\\text{固态}', liquid: '\\text{液态}', gas: '\\text{气态}', scf: '\\text{超临界流体}', melt: '\\text{固态} \\rightleftharpoons \\text{液态}', boil: '\\text{液态} \\rightleftharpoons \\text{气态}', sub: '\\text{固态} \\rightleftharpoons \\text{气态}', triple: '\\text{固态、液态、气态}', critical: '\\text{临界点}' };
     const all = crossings(s, P), heat = P < s.Pt
       ? `在 ${Pw} 下加热，该压强低于三相点压强，${s.s}在 ${fmtT(all[0].T, 0)} °C 升华，${s.name}始终不形成液体。`
       : P < s.Pc

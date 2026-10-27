@@ -2,34 +2,42 @@
   "id": "21.6",
   "module": "m68858",
   "chapter": "21",
-  "title": "Biological Effects of Radiation",
-  "short": "Biological Effects of Radiation",
-  "lead": "<span data-concept=\"ionizing-radiation\">Ionizing radiation</span> carries enough <span data-concept=\"energy-and-work\">energy</span> to break bonds and knock electrons out of the molecules of living cells. This section separates it from <span data-concept=\"ionizing-radiation\">nonionizing radiation</span>, compares how far each kind of radiation penetrates matter, and names the <span data-concept=\"radiation-detectors\">instruments</span> and the units used to measure <span data-concept=\"radioactive-decay-rate\">activity</span>, <span data-concept=\"absorbed-dose\">absorbed dose</span> and <span data-concept=\"dose-equivalent\">tissue damage</span>.",
+  "title": "辐射的生物效应",
+  "short": "辐射的生物效应",
+  "lead": "<span data-concept=\"ionizing-radiation\">电离辐射</span>携带的<span data-concept=\"energy-and-work\">能量</span>足以断裂化学键，并把电子从活细胞的分子中击出。本节把它与<span data-concept=\"ionizing-radiation\">非电离辐射</span>区分开，比较各种辐射穿透物质的距离，并介绍用来度量<span data-concept=\"radioactive-decay-rate\">活度</span>、<span data-concept=\"absorbed-dose\">吸收剂量</span>和<span data-concept=\"dose-equivalent\">组织损伤</span>的<span data-concept=\"radiation-detectors\">仪器</span>和单位。",
   "objectives": [
-    "Describe the biological impact of ionizing radiation",
-    "Define units for measuring radiation exposure",
-    "Explain the operation of common tools for detecting radioactivity",
-    "List common sources of radiation exposure in the US"
+    "描述电离辐射的生物影响",
+    "定义度量辐射照射的单位",
+    "解释探测放射性的常用工具的工作原理",
+    "列举美国常见的辐射照射来源"
   ],
-  "summary_html": "<p>We are constantly exposed to radiation from a variety of naturally occurring and human-produced sources. This radiation can affect living organisms. <span data-concept=\"ionizing-radiation\">Ionizing radiation</span> is the most harmful because it can <span data-concept=\"ion\">ionize</span> molecules or break chemical bonds, which damages the molecule and causes malfunctions in cell processes. It can also create reactive hydroxyl radicals that <span data-concept=\"radiation-damage\">damage biological molecules and disrupt physiological processes</span>. Radiation can cause somatic or genetic damage, and is most harmful to rapidly reproducing cells. Types of radiation differ in their <span data-concept=\"penetrating-power\">ability to penetrate material</span> and damage tissue, with <span data-concept=\"alpha-particle\">alpha particles</span> the least penetrating but potentially most damaging and <span data-concept=\"gamma-ray\">gamma rays</span> the most penetrating.</p><p>Various devices, including <span data-concept=\"radiation-detectors\">Geiger counters, scintillators, and dosimeters</span>, are used to detect and measure radiation, and monitor radiation exposure. We use several units to measure radiation: becquerels or curies for <span data-concept=\"radioactive-decay-rate\">rates of radioactive decay</span>; gray or rads for <span data-concept=\"absorbed-dose\">energy absorbed</span>; and rems or sieverts for <span data-concept=\"dose-equivalent\">biological effects of radiation</span>. <span data-concept=\"radiation-exposure\">Exposure to radiation</span> can cause a wide range of health effects, from minor to severe, and including death. We can minimize the effects of radiation by shielding with dense materials such as lead, moving away from the source, and limiting time of exposure.</p>",
-  "notes": "Nothing in the section’s text is left out; the hydroxyl-radical reaction the book prints as an image is set as an equation. The section’s opening, which the book prints without a header, carries one of OmniStax’s own, Radiation and Living Cells. It keeps as printed Example 21.8’s 1 Ci = 3.7 × 10¹¹ decay/s, where the text gives 3.7 × 10¹⁰, with its result of 5.7 × 10² Ci; cobalt-60’s half-life of 5.26 y, which 21.3 gives as 5.27 y; “cause phosphorus to glow”; “uranium-238, a radon emitter”; “cosmic rays from the sun”; “Rem = RBE × rad” and “loss of consciousness;” in the tables; “the tissue damage units (rem or Sv) includes”; and “roentgen equivalent for man”, which the glossary gives as “roentgen equivalent man”.",
+  "summary_html": "<p>我们不断受到来自各种天然和人为来源的辐射照射。这种辐射可以影响生物体。<span data-concept=\"ionizing-radiation\">电离辐射</span>危害最大，因为它能使分子<span data-concept=\"ion\">电离</span>或断裂化学键，从而损伤分子并使细胞过程发生故障。它还能产生反应性很强的羟基自由基，这些自由基会<span data-concept=\"radiation-damage\">损伤生物分子并扰乱生理过程</span>。辐射可以造成躯体损伤或遗传损伤，对快速增殖的细胞危害最大。不同类型的辐射在<span data-concept=\"penetrating-power\">穿透物质的能力</span>和损伤组织的能力上各不相同：<span data-concept=\"alpha-particle\">α 粒子</span>的穿透能力最弱，但潜在的损伤可能最大；<span data-concept=\"gamma-ray\">γ 射线</span>的穿透能力最强。</p><p>人们用各种装置来探测和测量辐射并监测辐射照射，包括<span data-concept=\"radiation-detectors\">盖革计数器、闪烁体和剂量计</span>。我们用几种单位来度量辐射：用贝可勒尔或居里表示<span data-concept=\"radioactive-decay-rate\">放射性衰变速率</span>；用戈瑞或拉德表示<span data-concept=\"absorbed-dose\">吸收的能量</span>；用雷姆或希沃特表示<span data-concept=\"dose-equivalent\">辐射的生物效应</span>。<span data-concept=\"radiation-exposure\">辐射照射</span>可以引起范围很广的健康效应，从轻微到严重，直至死亡。我们可以通过用铅等致密材料屏蔽、远离辐射源和限制照射时间来尽量减少辐射的影响。</p>",
+  "notes": "本节正文没有任何内容被略去；书中以图片形式印出的羟基自由基反应，这里作为方程排出。本节开头在书中没有标题，这里加了一个 OmniStax 自己的标题“辐射与活细胞”。下列内容按书中原样保留：例 21.8 中的 1 Ci = 3.7 × 10¹¹ 次衰变/秒（正文给出的是 3.7 × 10¹⁰）及其结果 5.7 × 10² Ci；钴-60 的半衰期 5.26 y（21.3 节给出的是 5.27 y）；“使磷发光”；“铀-238，一种氡发射体”；“来自太阳的宇宙射线”；表中的“Rem = RBE × rad”和“意识丧失；”；“组织损伤单位（rem 或 Sv）包含”；以及“人体伦琴当量（roentgen equivalent for man）”，词汇表中写作“roentgen equivalent man”。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. No exercise is left out. The three unkeyed conceptual exercises fs-idp29076672 (the containment for cobalt-60 and molybdenum-99), fs-idp16044272 (uranium-232 against uranium-233) and fs-idp224139168 (neon-24 against bismuth-211) carry a suggested approach marked as OmniStax’s own, and no answer is given for them. Example 21.8 divides by 3.7 × 10<sup>11</sup> decays per second for the curie where the text gives 3.7 × 10<sup>10</sup>, as printed.",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案和“学习检测”的答案。没有任何习题被略去。三道书后没有答案的概念性习题 fs-idp29076672（钴-60 和钼-99 的防护容器）、fs-idp16044272（铀-232 与铀-233 的比较）和 fs-idp224139168（氖-24 与铋-211 的比较）附有标明为 OmniStax 自己的建议思路，不给出答案。例 21.8 用居里的 3.7 × 10<sup>11</sup> 次衰变/秒去除，而正文给出的是 3.7 × 10<sup>10</sup>，按书中原样保留。",
   "figures": [
     {
       "id": "fig-damage-cells",
@@ -41,6 +49,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -51,7 +64,7 @@
       "originals": [
         "/media/ch21/CNX_Chem_21_06_IonRadSpec.jpg"
       ],
-      "original_caption": "Lower frequency, lower-energy electromagnetic radiation is nonionizing, and higher frequency, higher-energy electromagnetic radiation is ionizing.",
+      "original_caption": "频率较低、能量较低的电磁辐射是非电离的，频率较高、能量较高的电磁辐射是电离的。",
       "draws": [
         "frequency",
         "energy"
@@ -64,6 +77,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -74,7 +92,7 @@
       "originals": [
         "/media/ch21/CNX_Chem_21_06_Damage2.jpg"
       ],
-      "original_caption": "Ionizing radiation can (a) directly damage a biomolecule by ionizing it or breaking its bonds, or (b) create an H<sub>2</sub>O<sup>+</sup> ion, which reacts with H<sub>2</sub>O to form a hydroxyl radical, which in turn reacts with the biomolecule, causing damage indirectly.",
+      "original_caption": "电离辐射可以（a）通过使生物分子电离或断裂其化学键而直接损伤生物分子，或（b）产生 H<sub>2</sub>O<sup>+</sup> 离子，该离子与 H<sub>2</sub>O 反应生成羟基自由基，羟基自由基再与生物分子反应，从而间接造成损伤。",
       "draws": [],
       "conventions": [
         "O",
@@ -87,6 +105,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -97,7 +120,7 @@
       "originals": [
         "/media/ch21/CNX_Chem_21_06_Penetrate.jpg"
       ],
-      "original_caption": "The ability of different types of radiation to pass through material is shown. From least to most penetrating, they are alpha < beta < neutron < gamma.",
+      "original_caption": "图中显示了不同类型的辐射穿过物质的能力。从穿透能力最弱到最强依次为：α < β < 中子 < γ。",
       "draws": [],
       "conventions": [
         "p+",
@@ -110,6 +133,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -123,6 +151,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -136,6 +169,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -149,6 +187,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -163,6 +206,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -173,7 +221,7 @@
       "originals": [
         "/media/ch21/CNX_Chem_21_06_Exposure2.jpg"
       ],
-      "original_caption": "The total annual radiation exposure for a person in the US is about 620 mrem. The various sources and their relative amounts are shown in this bar graph. (source: U.S. Nuclear Regulatory Commission)",
+      "original_caption": "美国人每年受到的辐射照射总量约为 620 mrem。这张条形图显示了各种来源及其相对大小。（来源：U.S. Nuclear Regulatory Commission）",
       "draws": [
         "dose"
       ],
@@ -182,6 +230,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -439,7 +492,7 @@
         "after": "ex-activity"
       },
       "cite": "ex-activity",
-      "prompt": "Tritium is a radioactive isotope of hydrogen (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">12.32 y</span>) that has several uses, including self-powered lighting, in which electrons emitted in tritium radioactive decay cause phosphorus to glow. Its nucleus contains one proton and two neutrons, and the atomic mass of tritium is <span data-type=\"mass\">3.016 amu</span>. What is the activity of a sample containing <span data-type=\"mass\">1.00mg</span> of tritium (a) in Bq and (b) in Ci?",
+      "prompt": "氚是氢的一种放射性同位素（<em>t</em><sub>1/2</sub> = <span data-type=\"time\">12.32 y</span>），有多种用途，包括自供电照明，其中氚放射性衰变所发射的电子使磷发光。它的原子核含有一个质子和两个中子，氚的原子质量为 <span data-type=\"mass\">3.016 amu</span>。含 <span data-type=\"mass\">1.00mg</span> 氚的样品的活度是多少：（a）以 Bq 计，（b）以 Ci 计？",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -455,7 +508,7 @@
             "unit": "Ci"
           }
         ],
-        "solution": "(a) 3.56 × 10<sup>11</sup> Bq; (b) 0.962 Ci"
+        "solution": "（a）3.56 × 10<sup>11</sup> Bq；（b）0.962 Ci"
       }
     },
     {
@@ -468,11 +521,11 @@
         "at": "end"
       },
       "cite": "biological-effects",
-      "prompt": "If a hospital were storing radioisotopes, what is the minimum containment needed to protect against:<br>(a) cobalt-60 (a strong γ emitter used for irradiation)<br>(b) molybdenum-99 (a beta emitter used to produce technetium-99 for imaging)",
+      "prompt": "如果医院要储存放射性同位素，为防护以下同位素，所需的最低限度的防护（屏蔽或容器）是什么：<br>（a）钴-60（一种用于辐照的强 γ 发射体）<br>（b）钼-99（一种 β 发射体，用于制备成像用的锝-99）",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "(a) Cobalt-60 needs thick shielding of a dense, high atomic number element such as lead, or a very thick layer of concrete. γ rays are the most penetrating radiation in Figure 21.33: they pass through a thick layer of most materials, and some pass through a few feet of concrete, but lead attenuates them effectively with a thinner barrier. The isotope must be kept in a lead container or a room walled with lead. (b) Molybdenum-99 needs only a thin layer of metal. β particles pass through a hand or a thin layer of paper or wood but are stopped by a thin layer of metal, so a closed metal container, such as one of aluminum a few millimeters thick, stops its radiation."
+        "solution": "（a）钴-60 需要由致密的高原子序数元素（如铅）构成的厚屏蔽，或很厚的混凝土层。γ 射线是图 21.33 中穿透能力最强的辐射：它们能穿过大多数材料的厚层，有些还能穿过几英尺厚的混凝土，但铅能用较薄的屏障有效地衰减它们。这种同位素必须保存在铅容器中，或用铅做墙的房间里。（b）钼-99 只需要一薄层金属。β 粒子能穿过一只手，或一薄层纸或木头，但会被一薄层金属挡住，所以一个封闭的金属容器，例如几毫米厚的铝容器，就能挡住它的辐射。"
       }
     },
     {
@@ -485,11 +538,11 @@
         "at": "end"
       },
       "cite": "radon",
-      "prompt": "Based on what is known about Radon-222’s primary decay method, why is inhalation so dangerous?",
+      "prompt": "根据对氡-222 主要衰变方式的了解，为什么吸入如此危险？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "Alpha particles can be stopped by very thin shielding but have much stronger ionizing potential than beta particles, X-rays, and γ-rays. When inhaled, there is no protective skin covering the cells of the lungs, making it possible to damage the DNA in those cells and cause cancer."
+        "solution": "α 粒子可以被很薄的屏蔽挡住，但其电离能力比 β 粒子、X 射线和 γ 射线强得多。吸入时，肺部细胞上没有保护性的皮肤覆盖层，因而有可能损伤这些细胞中的 DNA 并引发癌症。"
       }
     },
     {
@@ -502,11 +555,11 @@
         "at": "end"
       },
       "cite": "ex-activity",
-      "prompt": "Given specimens uranium-232 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">68.9 y</span>) and uranium-233 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">159,200 y</span>) of equal mass, which one would have greater activity and why?",
+      "prompt": "有等质量的铀-232（<em>t</em><sub>1/2</sub> = <span data-type=\"time\">68.9 y</span>）和铀-233（<em>t</em><sub>1/2</sub> = <span data-type=\"time\">159,200 y</span>）样品，哪一个的活度更大？为什么？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Uranium-232 has the greater activity, about 2.32 × 10<sup>3</sup> times that of uranium-233. The activity is $\\klamdecay N$, with $\\klamdecay=\\text{ln 2}/\\kthalf$. Equal masses of the two isotopes hold nearly the same number of nuclei, since their molar masses are nearly the same; the ratio of nuclei, uranium-232 to uranium-233, is 233/232 = 1.004. The decay constants are in the inverse ratio of the half-lives, (159,200 y)/(68.9 y) = 2.311 × 10<sup>3</sup>, so a uranium-232 nucleus is about 2300 times as likely to decay in a given second. The ratio of activities is the product, 1.004 × 2.311 × 10<sup>3</sup> = 2.32 × 10<sup>3</sup>. The much shorter half-life makes uranium-232 the more active sample."
+        "solution": "铀-232 的活度更大，约为铀-233 的 2.32 × 10<sup>3</sup> 倍。活度为 $\\klamdecay N$，其中 $\\klamdecay=\\text{ln 2}/\\kthalf$。两种同位素的摩尔质量几乎相同，所以等质量的样品所含的原子核数几乎相同；铀-232 与铀-233 的核数之比为 233/232 = 1.004。衰变常数之比等于半衰期之比的倒数，(159,200 y)/(68.9 y) = 2.311 × 10<sup>3</sup>，因此铀-232 的一个原子核在给定的一秒内衰变的可能性约为铀-233 的 2300 倍。活度之比是二者的乘积，1.004 × 2.311 × 10<sup>3</sup> = 2.32 × 10<sup>3</sup>。半衰期短得多，使铀-232 成为活度更大的样品。"
       }
     },
     {
@@ -519,7 +572,7 @@
         "at": "end"
       },
       "cite": "ex-activity",
-      "prompt": "A scientist is studying a <span data-type=\"mass\">2.234 g</span> sample of thorium-229 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">7340 y</span>) in a laboratory.<br>(a) What is its activity in Bq?<br>(b) What is its activity in Ci?",
+      "prompt": "一位科学家在实验室中研究一份 <span data-type=\"mass\">2.234 g</span> 的钍-229（<em>t</em><sub>1/2</sub> = <span data-type=\"time\">7340 y</span>）样品。<br>（a）它的活度以 Bq 计是多少？<br>（b）它的活度以 Ci 计是多少？",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -535,7 +588,7 @@
             "unit": "Ci"
           }
         ],
-        "solution": "(a) 7.64 × 10<sup>9</sup> Bq; (b) 2.06 × 10<sup>−2</sup> Ci"
+        "solution": "（a）7.64 × 10<sup>9</sup> Bq；（b）2.06 × 10<sup>−2</sup> Ci"
       }
     },
     {
@@ -548,11 +601,11 @@
         "at": "end"
       },
       "cite": "ex-activity",
-      "prompt": "Given specimens neon-24 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">3.38 min</span>) and bismuth-211 (<em>t</em><sub>1/2</sub> = <span data-type=\"time\">2.14 min</span>) of equal mass, which one would have greater activity and why?",
+      "prompt": "有等质量的氖-24（<em>t</em><sub>1/2</sub> = <span data-type=\"time\">3.38 min</span>）和铋-211（<em>t</em><sub>1/2</sub> = <span data-type=\"time\">2.14 min</span>）样品，哪一个的活度更大？为什么？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Neon-24 has the greater activity, about 5.6 times that of bismuth-211. The activity is $\\klamdecay N$, with $\\klamdecay=\\text{ln 2}/\\kthalf$, so both the number of nuclei and the decay constant must be compared. Equal masses hold numbers of nuclei in the inverse ratio of the molar masses, about 24 g/mol and 211 g/mol, so the neon sample holds 211/24 = 8.79 times as many nuclei. Bismuth-211 has the shorter half-life, so its decay constant is larger, by 3.38 min/2.14 min = 1.58. The ratio of activities, neon-24 to bismuth-211, is 8.79/1.58 = 5.57. The far greater number of neon nuclei outweighs the somewhat faster decay of bismuth."
+        "solution": "氖-24 的活度更大，约为铋-211 的 5.6 倍。活度为 $\\klamdecay N$，其中 $\\klamdecay=\\text{ln 2}/\\kthalf$，因此必须同时比较原子核数和衰变常数。等质量样品所含的核数与摩尔质量成反比，摩尔质量约为 24 g/mol 和 211 g/mol，所以氖样品所含的核数是铋样品的 211/24 = 8.79 倍。铋-211 的半衰期较短，所以它的衰变常数较大，为氖的 3.38 min/2.14 min = 1.58 倍。氖-24 与铋-211 的活度之比为 8.79/1.58 = 5.57。氖原子核多得多，足以抵消铋稍快的衰变。"
       }
     }
   ],
@@ -653,7 +706,7 @@
     {
       "id": "c-curie",
       "kind": "correction",
-      "html": "The book writes 1 Ci = 3.7 × 10<sup>11</sup> decay/s, here and in the line below. The curie is 3.7 × 10<sup>10</sup> decay/s, as the section defines it, and the activity is $2.10 \\times 10^{14}$ Bq ÷ $3.7 \\times 10^{10}$ Bq/Ci = 5.7 × 10<sup>3</sup> Ci."
+      "html": "书中在此处及下一行写的是 1 Ci = 3.7 × 10<sup>11</sup> 次衰变/秒。居里应为 3.7 × 10<sup>10</sup> 次衰变/秒，正如本节所定义的那样，因而活度为 $2.10 \\times 10^{14}$ Bq ÷ $3.7 \\times 10^{10}$ Bq/Ci = 5.7 × 10<sup>3</sup> Ci。"
     }
   ]
 }

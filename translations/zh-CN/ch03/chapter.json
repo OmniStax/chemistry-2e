@@ -84,7 +84,7 @@
   {
    "sym": "L",
    "concept": "volume",
-   "meaning": "以升计的溶液体积，本书在 n = ML 中即这样写",
+   "meaning": "以升计的溶液体积，即本书 n = ML 中的写法",
    "unit": "L",
    "section": "3.3",
    "anchor": "3.3-dilution-equation"

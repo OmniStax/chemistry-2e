@@ -8,124 +8,124 @@ function readout(host, main, small) { tex(host, main); if (small) host.appendChi
 /* ---------- the elements: symbol, name, ground-state configuration, block, group, period ----------
    The configurations are those Figure 6.29 prints; elements 113 to 118, which the book leaves
    blank, carry the predicted ones of the elements page. */
-const ELS = [["H","Hydrogen","1s1","s",1,1],
-["He","Helium","1s2","s",18,1],
-["Li","Lithium","[He]2s1","s",1,2],
-["Be","Beryllium","[He]2s2","s",2,2],
-["B","Boron","[He]2s2 2p1","p",13,2],
-["C","Carbon","[He]2s2 2p2","p",14,2],
-["N","Nitrogen","[He]2s2 2p3","p",15,2],
-["O","Oxygen","[He]2s2 2p4","p",16,2],
-["F","Fluorine","[He]2s2 2p5","p",17,2],
-["Ne","Neon","[He]2s2 2p6","p",18,2],
-["Na","Sodium","[Ne]3s1","s",1,3],
-["Mg","Magnesium","[Ne]3s2","s",2,3],
-["Al","Aluminum","[Ne]3s2 3p1","p",13,3],
-["Si","Silicon","[Ne]3s2 3p2","p",14,3],
-["P","Phosphorus","[Ne]3s2 3p3","p",15,3],
-["S","Sulfur","[Ne]3s2 3p4","p",16,3],
-["Cl","Chlorine","[Ne]3s2 3p5","p",17,3],
-["Ar","Argon","[Ne]3s2 3p6","p",18,3],
-["K","Potassium","[Ar]4s1","s",1,4],
-["Ca","Calcium","[Ar]4s2","s",2,4],
-["Sc","Scandium","[Ar]3d1 4s2","d",3,4],
-["Ti","Titanium","[Ar]3d2 4s2","d",4,4],
-["V","Vanadium","[Ar]3d3 4s2","d",5,4],
-["Cr","Chromium","[Ar]3d5 4s1","d",6,4],
-["Mn","Manganese","[Ar]3d5 4s2","d",7,4],
-["Fe","Iron","[Ar]3d6 4s2","d",8,4],
-["Co","Cobalt","[Ar]3d7 4s2","d",9,4],
-["Ni","Nickel","[Ar]3d8 4s2","d",10,4],
-["Cu","Copper","[Ar]3d10 4s1","d",11,4],
-["Zn","Zinc","[Ar]3d10 4s2","d",12,4],
-["Ga","Gallium","[Ar]3d10 4s2 4p1","p",13,4],
-["Ge","Germanium","[Ar]3d10 4s2 4p2","p",14,4],
-["As","Arsenic","[Ar]3d10 4s2 4p3","p",15,4],
-["Se","Selenium","[Ar]3d10 4s2 4p4","p",16,4],
-["Br","Bromine","[Ar]3d10 4s2 4p5","p",17,4],
-["Kr","Krypton","[Ar]3d10 4s2 4p6","p",18,4],
-["Rb","Rubidium","[Kr]5s1","s",1,5],
-["Sr","Strontium","[Kr]5s2","s",2,5],
-["Y","Yttrium","[Kr]4d1 5s2","d",3,5],
-["Zr","Zirconium","[Kr]4d2 5s2","d",4,5],
-["Nb","Niobium","[Kr]4d4 5s1","d",5,5],
-["Mo","Molybdenum","[Kr]4d5 5s1","d",6,5],
-["Tc","Technetium","[Kr]4d5 5s2","d",7,5],
-["Ru","Ruthenium","[Kr]4d7 5s1","d",8,5],
-["Rh","Rhodium","[Kr]4d8 5s1","d",9,5],
-["Pd","Palladium","[Kr]4d10","d",10,5],
-["Ag","Silver","[Kr]4d10 5s1","d",11,5],
-["Cd","Cadmium","[Kr]4d10 5s2","d",12,5],
-["In","Indium","[Kr]4d10 5s2 5p1","p",13,5],
-["Sn","Tin","[Kr]4d10 5s2 5p2","p",14,5],
-["Sb","Antimony","[Kr]4d10 5s2 5p3","p",15,5],
-["Te","Tellurium","[Kr]4d10 5s2 5p4","p",16,5],
-["I","Iodine","[Kr]4d10 5s2 5p5","p",17,5],
-["Xe","Xenon","[Kr]4d10 5s2 5p6","p",18,5],
-["Cs","Cesium","[Xe]6s1","s",1,6],
-["Ba","Barium","[Xe]6s2","s",2,6],
-["La","Lanthanum","[Xe]5d1 6s2","f",3,6],
-["Ce","Cerium","[Xe]4f1 5d1 6s2","f",0,6],
-["Pr","Praseodymium","[Xe]4f3 6s2","f",0,6],
-["Nd","Neodymium","[Xe]4f4 6s2","f",0,6],
-["Pm","Promethium","[Xe]4f5 6s2","f",0,6],
-["Sm","Samarium","[Xe]4f6 6s2","f",0,6],
-["Eu","Europium","[Xe]4f7 6s2","f",0,6],
-["Gd","Gadolinium","[Xe]4f7 5d1 6s2","f",0,6],
-["Tb","Terbium","[Xe]4f9 6s2","f",0,6],
-["Dy","Dysprosium","[Xe]4f10 6s2","f",0,6],
-["Ho","Holmium","[Xe]4f11 6s2","f",0,6],
-["Er","Erbium","[Xe]4f12 6s2","f",0,6],
-["Tm","Thulium","[Xe]4f13 6s2","f",0,6],
-["Yb","Ytterbium","[Xe]4f14 6s2","f",0,6],
-["Lu","Lutetium","[Xe]4f14 5d1 6s2","f",0,6],
-["Hf","Hafnium","[Xe]4f14 5d2 6s2","d",4,6],
-["Ta","Tantalum","[Xe]4f14 5d3 6s2","d",5,6],
-["W","Tungsten","[Xe]4f14 5d4 6s2","d",6,6],
-["Re","Rhenium","[Xe]4f14 5d5 6s2","d",7,6],
-["Os","Osmium","[Xe]4f14 5d6 6s2","d",8,6],
-["Ir","Iridium","[Xe]4f14 5d7 6s2","d",9,6],
-["Pt","Platinum","[Xe]4f14 5d9 6s1","d",10,6],
-["Au","Gold","[Xe]4f14 5d10 6s1","d",11,6],
-["Hg","Mercury","[Xe]4f14 5d10 6s2","d",12,6],
-["Tl","Thallium","[Xe]4f14 5d10 6s2 6p1","p",13,6],
-["Pb","Lead","[Xe]4f14 5d10 6s2 6p2","p",14,6],
-["Bi","Bismuth","[Xe]4f14 5d10 6s2 6p3","p",15,6],
-["Po","Polonium","[Xe]4f14 5d10 6s2 6p4","p",16,6],
-["At","Astatine","[Xe]4f14 5d10 6s2 6p5","p",17,6],
-["Rn","Radon","[Xe]4f14 5d10 6s2 6p6","p",18,6],
-["Fr","Francium","[Rn]7s1","s",1,7],
-["Ra","Radium","[Rn]7s2","s",2,7],
-["Ac","Actinium","[Rn]6d1 7s2","f",3,7],
-["Th","Thorium","[Rn]6d2 7s2","f",0,7],
-["Pa","Protactinium","[Rn]5f2 6d1 7s2","f",0,7],
-["U","Uranium","[Rn]5f3 6d1 7s2","f",0,7],
-["Np","Neptunium","[Rn]5f4 6d1 7s2","f",0,7],
-["Pu","Plutonium","[Rn]5f6 7s2","f",0,7],
-["Am","Americium","[Rn]5f7 7s2","f",0,7],
-["Cm","Curium","[Rn]5f7 6d1 7s2","f",0,7],
-["Bk","Berkelium","[Rn]5f8 6d1 7s2","f",0,7],
-["Cf","Californium","[Rn]5f10 7s2","f",0,7],
-["Es","Einsteinium","[Rn]5f11 7s2","f",0,7],
-["Fm","Fermium","[Rn]5f12 7s2","f",0,7],
-["Md","Mendelevium","[Rn]5f13 7s2","f",0,7],
-["No","Nobelium","[Rn]5f14 7s2","f",0,7],
-["Lr","Lawrencium","[Rn]5f14 6d1 7s2","f",0,7],
-["Rf","Rutherfordium","[Rn]5f14 6d2 7s2","d",4,7],
-["Db","Dubnium","[Rn]5f14 6d3 7s2","d",5,7],
-["Sg","Seaborgium","[Rn]5f14 6d4 7s2","d",6,7],
-["Bh","Bohrium","[Rn]5f14 6d5 7s2","d",7,7],
-["Hs","Hassium","[Rn]5f14 6d6 7s2","d",8,7],
-["Mt","Meitnerium","[Rn]5f14 6d7 7s2","d",9,7],
-["Ds","Darmstadtium","[Rn]5f14 6d8 7s2","d",10,7],
-["Rg","Roentgenium","[Rn]5f14 6d9 7s2","d",11,7],
-["Cn","Copernicium","[Rn]5f14 6d10 7s2","d",12,7],
-["Nh","Nihonium","[Rn]5f14 6d10 7s2 7p1","p",13,7],
-["Fl","Flerovium","[Rn]5f14 6d10 7s2 7p2","p",14,7],
-["Mc","Moscovium","[Rn]5f14 6d10 7s2 7p3","p",15,7],
-["Lv","Livermorium","[Rn]5f14 6d10 7s2 7p4","p",16,7],
-["Ts","Tennessine","[Rn]5f14 6d10 7s2 7p5","p",17,7],
-["Og","Oganesson","[Rn]5f14 6d10 7s2 7p6","p",18,7]];
+const ELS = [["H","氢","1s1","s",1,1],
+["He","氦","1s2","s",18,1],
+["Li","锂","[He]2s1","s",1,2],
+["Be","铍","[He]2s2","s",2,2],
+["B","硼","[He]2s2 2p1","p",13,2],
+["C","碳","[He]2s2 2p2","p",14,2],
+["N","氮","[He]2s2 2p3","p",15,2],
+["O","氧","[He]2s2 2p4","p",16,2],
+["F","氟","[He]2s2 2p5","p",17,2],
+["Ne","氖","[He]2s2 2p6","p",18,2],
+["Na","钠","[Ne]3s1","s",1,3],
+["Mg","镁","[Ne]3s2","s",2,3],
+["Al","铝","[Ne]3s2 3p1","p",13,3],
+["Si","硅","[Ne]3s2 3p2","p",14,3],
+["P","磷","[Ne]3s2 3p3","p",15,3],
+["S","硫","[Ne]3s2 3p4","p",16,3],
+["Cl","氯","[Ne]3s2 3p5","p",17,3],
+["Ar","氩","[Ne]3s2 3p6","p",18,3],
+["K","钾","[Ar]4s1","s",1,4],
+["Ca","钙","[Ar]4s2","s",2,4],
+["Sc","钪","[Ar]3d1 4s2","d",3,4],
+["Ti","钛","[Ar]3d2 4s2","d",4,4],
+["V","钒","[Ar]3d3 4s2","d",5,4],
+["Cr","铬","[Ar]3d5 4s1","d",6,4],
+["Mn","锰","[Ar]3d5 4s2","d",7,4],
+["Fe","铁","[Ar]3d6 4s2","d",8,4],
+["Co","钴","[Ar]3d7 4s2","d",9,4],
+["Ni","镍","[Ar]3d8 4s2","d",10,4],
+["Cu","铜","[Ar]3d10 4s1","d",11,4],
+["Zn","锌","[Ar]3d10 4s2","d",12,4],
+["Ga","镓","[Ar]3d10 4s2 4p1","p",13,4],
+["Ge","锗","[Ar]3d10 4s2 4p2","p",14,4],
+["As","砷","[Ar]3d10 4s2 4p3","p",15,4],
+["Se","硒","[Ar]3d10 4s2 4p4","p",16,4],
+["Br","溴","[Ar]3d10 4s2 4p5","p",17,4],
+["Kr","氪","[Ar]3d10 4s2 4p6","p",18,4],
+["Rb","铷","[Kr]5s1","s",1,5],
+["Sr","锶","[Kr]5s2","s",2,5],
+["Y","钇","[Kr]4d1 5s2","d",3,5],
+["Zr","锆","[Kr]4d2 5s2","d",4,5],
+["Nb","铌","[Kr]4d4 5s1","d",5,5],
+["Mo","钼","[Kr]4d5 5s1","d",6,5],
+["Tc","锝","[Kr]4d5 5s2","d",7,5],
+["Ru","钌","[Kr]4d7 5s1","d",8,5],
+["Rh","铑","[Kr]4d8 5s1","d",9,5],
+["Pd","钯","[Kr]4d10","d",10,5],
+["Ag","银","[Kr]4d10 5s1","d",11,5],
+["Cd","镉","[Kr]4d10 5s2","d",12,5],
+["In","铟","[Kr]4d10 5s2 5p1","p",13,5],
+["Sn","锡","[Kr]4d10 5s2 5p2","p",14,5],
+["Sb","锑","[Kr]4d10 5s2 5p3","p",15,5],
+["Te","碲","[Kr]4d10 5s2 5p4","p",16,5],
+["I","碘","[Kr]4d10 5s2 5p5","p",17,5],
+["Xe","氙","[Kr]4d10 5s2 5p6","p",18,5],
+["Cs","铯","[Xe]6s1","s",1,6],
+["Ba","钡","[Xe]6s2","s",2,6],
+["La","镧","[Xe]5d1 6s2","f",3,6],
+["Ce","铈","[Xe]4f1 5d1 6s2","f",0,6],
+["Pr","镨","[Xe]4f3 6s2","f",0,6],
+["Nd","钕","[Xe]4f4 6s2","f",0,6],
+["Pm","钷","[Xe]4f5 6s2","f",0,6],
+["Sm","钐","[Xe]4f6 6s2","f",0,6],
+["Eu","铕","[Xe]4f7 6s2","f",0,6],
+["Gd","钆","[Xe]4f7 5d1 6s2","f",0,6],
+["Tb","铽","[Xe]4f9 6s2","f",0,6],
+["Dy","镝","[Xe]4f10 6s2","f",0,6],
+["Ho","钬","[Xe]4f11 6s2","f",0,6],
+["Er","铒","[Xe]4f12 6s2","f",0,6],
+["Tm","铥","[Xe]4f13 6s2","f",0,6],
+["Yb","镱","[Xe]4f14 6s2","f",0,6],
+["Lu","镥","[Xe]4f14 5d1 6s2","f",0,6],
+["Hf","铪","[Xe]4f14 5d2 6s2","d",4,6],
+["Ta","钽","[Xe]4f14 5d3 6s2","d",5,6],
+["W","钨","[Xe]4f14 5d4 6s2","d",6,6],
+["Re","铼","[Xe]4f14 5d5 6s2","d",7,6],
+["Os","锇","[Xe]4f14 5d6 6s2","d",8,6],
+["Ir","铱","[Xe]4f14 5d7 6s2","d",9,6],
+["Pt","铂","[Xe]4f14 5d9 6s1","d",10,6],
+["Au","金","[Xe]4f14 5d10 6s1","d",11,6],
+["Hg","汞","[Xe]4f14 5d10 6s2","d",12,6],
+["Tl","铊","[Xe]4f14 5d10 6s2 6p1","p",13,6],
+["Pb","铅","[Xe]4f14 5d10 6s2 6p2","p",14,6],
+["Bi","铋","[Xe]4f14 5d10 6s2 6p3","p",15,6],
+["Po","钋","[Xe]4f14 5d10 6s2 6p4","p",16,6],
+["At","砹","[Xe]4f14 5d10 6s2 6p5","p",17,6],
+["Rn","氡","[Xe]4f14 5d10 6s2 6p6","p",18,6],
+["Fr","钫","[Rn]7s1","s",1,7],
+["Ra","镭","[Rn]7s2","s",2,7],
+["Ac","锕","[Rn]6d1 7s2","f",3,7],
+["Th","钍","[Rn]6d2 7s2","f",0,7],
+["Pa","镤","[Rn]5f2 6d1 7s2","f",0,7],
+["U","铀","[Rn]5f3 6d1 7s2","f",0,7],
+["Np","镎","[Rn]5f4 6d1 7s2","f",0,7],
+["Pu","钚","[Rn]5f6 7s2","f",0,7],
+["Am","镅","[Rn]5f7 7s2","f",0,7],
+["Cm","锔","[Rn]5f7 6d1 7s2","f",0,7],
+["Bk","锫","[Rn]5f8 6d1 7s2","f",0,7],
+["Cf","锎","[Rn]5f10 7s2","f",0,7],
+["Es","锿","[Rn]5f11 7s2","f",0,7],
+["Fm","镄","[Rn]5f12 7s2","f",0,7],
+["Md","钔","[Rn]5f13 7s2","f",0,7],
+["No","锘","[Rn]5f14 7s2","f",0,7],
+["Lr","铹","[Rn]5f14 6d1 7s2","f",0,7],
+["Rf","𬬻","[Rn]5f14 6d2 7s2","d",4,7],
+["Db","𬭊","[Rn]5f14 6d3 7s2","d",5,7],
+["Sg","𬭳","[Rn]5f14 6d4 7s2","d",6,7],
+["Bh","𬭛","[Rn]5f14 6d5 7s2","d",7,7],
+["Hs","𬭶","[Rn]5f14 6d6 7s2","d",8,7],
+["Mt","鿏","[Rn]5f14 6d7 7s2","d",9,7],
+["Ds","𫟼","[Rn]5f14 6d8 7s2","d",10,7],
+["Rg","𬬭","[Rn]5f14 6d9 7s2","d",11,7],
+["Cn","鿔","[Rn]5f14 6d10 7s2","d",12,7],
+["Nh","鿭","[Rn]5f14 6d10 7s2 7p1","p",13,7],
+["Fl","𫓧","[Rn]5f14 6d10 7s2 7p2","p",14,7],
+["Mc","镆","[Rn]5f14 6d10 7s2 7p3","p",15,7],
+["Lv","𫟷","[Rn]5f14 6d10 7s2 7p4","p",16,7],
+["Ts","鿬","[Rn]5f14 6d10 7s2 7p5","p",17,7],
+["Og","鿫","[Rn]5f14 6d10 7s2 7p6","p",18,7]];
 const E = (Z) => { const [sym, name, cfg, block, group, period] = ELS[Z - 1]; return { Z, sym, name, cfg, block, group, period }; };
 
 /* ---------- subshells, in the order the Aufbau principle fills them ---------- */
@@ -206,7 +206,7 @@ function atomTag(ctx, sym, x, y, r, size) {
   const ro = F.readout(d);
   const Zs = ctl(d.controls, {
     label: 'Z', cls: '', min: 1, max: 118, step: 1, value: 15, unit: '', dec: 0, onInput: changed,
-    aria: 'number of electrons, the atomic number',
+    aria: '电子数，即原子序数',
     specials: [{ at: 24, label: 'Cr' }, { at: 29, label: 'Cu' }, { at: 41, label: 'Nb' }],
   });
   const move = F.tween(d, 1);
@@ -227,7 +227,7 @@ function atomTag(ctx, sym, x, y, r, size) {
     /* the energy axis and the capacity of each column */
     arrow(ctx, 90, Y0 + 30, 90, 150, ce, 4);
     text(ctx, 'E', 90, 130, ce, { size: 24, weight: 600, align: 'center' });
-    [['s', 2], ['p', 6], ['d', 10], ['f', 14]].forEach(([l, n]) => text(ctx, l + ' subshells hold ' + n, COL[l] + (BOXES[l] * BW) / 2, 116, PAL.muted, { size: 16, align: 'center' }));
+    [['s', 2], ['p', 6], ['d', 10], ['f', 14]].forEach(([l, n]) => text(ctx, l + ' 亚层容纳 ' + n + ' 个电子', COL[l] + (BOXES[l] * BW) / 2, 116, PAL.muted, { size: 16, align: 'center' }));
     /* the moving electrons: the ones the observed configuration has taken out of a predicted subshell, and where they go */
     const moving = [];
     if (exc) {
@@ -255,29 +255,29 @@ function atomTag(ctx, sym, x, y, r, size) {
     });
     /* the legend: each kind named once */
     const LX = 1010;
-    [[0, 'a filled orbital', 2], [1, 'an unpaired electron', 1], [2, 'an empty orbital', 0]].forEach(([r, name, e]) => {
+    [[0, '充满的轨道', 2], [1, '未成对电子', 1], [2, '空轨道', 0]].forEach(([r, name, e]) => {
       const y = 620 + r * 44;
       ctx.save(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 1.5; ctx.strokeRect(LX, y - BH / 2, BW, BH); ctx.restore();
       if (e >= 1) spin(ctx, LX + 0.36 * BW, y, true, BH - 8, PAL.ink);
       if (e === 2) spin(ctx, LX + 0.64 * BW, y, false, BH - 8, PAL.ink);
       text(ctx, name, LX + BW + 12, y, PAL.muted, { size: 16 });
     });
-    text(ctx, 'not to scale', LX, 620 + 3 * 44, PAL.muted, { size: 16 });
+    text(ctx, '未按比例', LX, 620 + 3 * 44, PAL.muted, { size: 16 });
     /* the headline */
-    const u = unpaired(obs), un = u === 0 ? 'no unpaired electrons' : u === 1 ? 'one unpaired electron' : u + ' unpaired electrons';
+    const u = unpaired(obs), un = u === 0 ? '没有未成对电子' : '有 ' + u + ' 个未成对电子';
     let head;
     if (exc) {
       const src = ORDER.filter((s) => (obs[s] || 0) < (pred[s] || 0)), dst = ORDER.filter((s) => (obs[s] || 0) > (pred[s] || 0));
       const cnt = moving.length;
-      head = el0.name + ', Z = ' + Z + ': the filling order predicts ' + abbr(Z, pred) + ', but ' + (cnt === 1 ? 'one electron goes' : cnt + ' electrons go') + ' into the ' + dst.join(' and ') + ' subshell instead of the ' + src.join(' and ') + ', giving the observed ' + abbr(Z, obs) + '.';
+      head = el0.name + '，Z = ' + Z + '：按填充顺序预测为 ' + abbr(Z, pred) + '，但有 ' + cnt + ' 个电子进入 ' + dst.join(' 和 ') + ' 亚层而不是 ' + src.join(' 和 ') + ' 亚层，得到实测的 ' + abbr(Z, obs) + '。';
     } else {
-      head = el0.name + ', Z = ' + Z + ', puts its last electron in the ' + last + ' subshell and has ' + un + '.';
+      head = el0.name + '，Z = ' + Z + '，其最后一个电子进入 ' + last + ' 亚层，' + un + '。';
     }
     topline(ctx, head);
     const c = coreOf(Z);
     const f = `\\text{${el0.sym}}:\\ ${texTerms(terms(obs))}` + (c ? `=[\\text{${c[1]}}]\\,${texTerms(valenceTerms(Z, obs))}` : '');
     ro.set(f, exc
-      ? 'The observed ground state has ' + un + '.'
+      ? '实测基态' + un + '。'
       : '');
   }
   register(d.fig, { update: () => {}, draw });
@@ -298,15 +298,15 @@ function atomTag(ctx, sym, x, y, r, size) {
     text(ctx, 'H', cx - 70, cy - 70, PAL.ink, { size: 34, weight: 600, align: 'center' });
     dot(ctx, cx + 60, cy + 20, PAL.ink, true, 11);
     text(ctx, '−', cx + 60, cy - 8, PAL.ink, { size: 22, weight: 600, align: 'center' });
-    hits = [{ x: cx, y: cy, r, name: 'a hydrogen atom' }, { x: cx + 60, y: cy + 20, r: 16, name: 'its one electron' }];
+    hits = [{ x: cx, y: cy, r, name: '氢原子' }, { x: cx + 60, y: cy + 20, r: 16, name: '它的一个电子' }];
     /* the symbol */
     const SZ = 120, X = 640, Y = 220;
     const { at } = cfgText(ctx, [['1s', 1]], X, Y, PAL.ink, { size: SZ });
     const sx = (at[1][0] + at[1][1]) / 2, ex = (at[2][0] + at[2][1]) / 2;
     line(ctx, sx, Y + 62, sx, Y + 108, alpha(PAL.ink, 0.5), 2);
-    text(ctx, 'Subshell', sx, Y + 128, PAL.ink, { size: 22, align: 'center' });
+    text(ctx, '亚层', sx, Y + 128, PAL.ink, { size: 22, align: 'center' });
     line(ctx, ex, Y - 58, ex + 70, Y - 118, alpha(PAL.ink, 0.5), 2);
-    text(ctx, 'Number of electrons in subshell', ex + 80, Y - 124, PAL.ink, { size: 22 });
+    text(ctx, '亚层中的电子数', ex + 80, Y - 124, PAL.ink, { size: 22 });
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -355,8 +355,8 @@ function atomTag(ctx, sym, x, y, r, size) {
 (function () {
   const d = sim('sim-periodic', 780);
   const pick = F.select(d.controls, {
-    label: '\\text{element}', aria: 'the element whose configuration is written out', value: '31',
-    options: ELS.map((q, i) => ({ value: String(i + 1), label: (i + 1) + ' ' + q[0] + ' (' + q[1] + ')' })),
+    label: '\\text{元素}', aria: '要写出其电子构型的元素', value: '31',
+    options: ELS.map((q, i) => ({ value: String(i + 1), label: (i + 1) + ' ' + q[0] + '（' + q[1] + '）' })),
     onInput: () => {},
   });
   const X0 = 52, CW = 72.5, CH = 64, PY = 67, TOP = 116, FTOP = 612;
@@ -377,8 +377,8 @@ function atomTag(ctx, sym, x, y, r, size) {
     for (let p = 1; p <= 7; p++) text(ctx, String(p), X0 - 20, TOP + (p - 1) * PY + CH / 2, PAL.muted, { size: 15, align: 'center' });
     const firstRow = [1, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 1];
     firstRow.forEach((p, g) => text(ctx, String(g + 1), X0 + g * CW + CW / 2, TOP + (p - 1) * PY - 12, PAL.muted, { size: 15, align: 'center' }));
-    text(ctx, 'lanthanides', X0 + 3 * CW - 10, FTOP + CH / 2, PAL.muted, { size: 15, align: 'right' });
-    text(ctx, 'actinides', X0 + 3 * CW - 10, FTOP + PY + CH / 2, PAL.muted, { size: 15, align: 'right' });
+    text(ctx, '镧系元素', X0 + 3 * CW - 10, FTOP + CH / 2, PAL.muted, { size: 15, align: 'right' });
+    text(ctx, '锕系元素', X0 + 3 * CW - 10, FTOP + PY + CH / 2, PAL.muted, { size: 15, align: 'right' });
     for (let Z = 1; Z <= 118; Z++) {
       const q = E(Z), { x, y } = cell(Z), c = F.ref(q.block + '-block'), obs = observed(Z), exc = !same(predicted(Z), obs);
       ctx.save(); ctx.fillStyle = alpha(c, 0.16); ctx.fillRect(x + 1, y, CW - 3, CH); ctx.strokeStyle = c; ctx.lineWidth = 1.5; ctx.strokeRect(x + 1, y, CW - 3, CH); ctx.restore();
@@ -387,7 +387,7 @@ function atomTag(ctx, sym, x, y, r, size) {
       text(ctx, String(Z), x + 7, y + 13, PAL.muted, { size: 12 });
       text(ctx, q.sym, x + CW - 8, y + 18, PAL.ink, { size: 19, weight: 600, align: 'right' });
       cfgText(ctx, [lastOf(obs)], x + CW / 2, y + 46, PAL.ink, { size: 16, align: 'center' });
-      hits.push({ x: x + CW / 2, y: y + CH / 2, r: 30, name: q.name + ', Z = ' + Z + ': ' + abbr(Z, obs) });
+      hits.push({ x: x + CW / 2, y: y + CH / 2, r: 30, name: q.name + '，Z = ' + Z + '：' + abbr(Z, obs) });
     }
     /* the chosen element, enlarged, and the key to the colours */
     const bx = X0 + 2 * CW + 16, by = TOP + 4, bw = 150, bh = 150, bc = F.ref(s0.block + '-block'), so = observed(sel);
@@ -397,18 +397,18 @@ function atomTag(ctx, sym, x, y, r, size) {
     text(ctx, s0.name, bx + bw / 2, by + 78, PAL.ink, { size: 18, align: 'center' });
     cfgText(ctx, [lastOf(so)], bx + bw / 2, by + 118, PAL.ink, { size: 30, align: 'center' });
     const KX = bx + bw + 40;
-    [['s', 's block'], ['p', 'p block'], ['d', 'd block'], ['f', 'f block']].forEach(([b, name], i) => {
+    [['s', 's 区'], ['p', 'p 区'], ['d', 'd 区'], ['f', 'f 区']].forEach(([b, name], i) => {
       const y = by + 14 + i * 32, c = F.ref(b + '-block');
       ctx.save(); ctx.fillStyle = alpha(c, 0.16); ctx.fillRect(KX, y - 11, 30, 22); ctx.strokeStyle = c; ctx.lineWidth = 1.5; ctx.strokeRect(KX, y - 11, 30, 22); ctx.restore();
       text(ctx, name, KX + 42, y, PAL.ink, { size: 17 });
     });
     const yx = by + 14 + 4 * 32;
     ctx.save(); ctx.setLineDash([5, 4]); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.strokeRect(KX, yx - 11, 30, 22); ctx.restore();
-    text(ctx, 'observed, not as built up', KX + 42, yx, PAL.ink, { size: 17 });
+    text(ctx, '实测构型，与构造顺序不符', KX + 42, yx, PAL.ink, { size: 17 });
     /* the headline and the readout */
-    const where = s0.group ? 'period ' + s0.period + ', group ' + s0.group : (sel < 90 ? 'the lanthanide series' : 'the actinide series');
-    const kind = s0.block === 's' || s0.block === 'p' ? 'a main group element' : s0.block === 'd' ? 'a transition element' : 'an inner transition element';
-    topline(ctx, s0.name + ' stands in ' + where + ', in the ' + s0.block + ' block, and is ' + kind + '.');
+    const where = s0.group ? '第 ' + s0.period + ' 周期、第 ' + s0.group + ' 族' : (sel < 90 ? '镧系' : '锕系');
+    const kind = s0.block === 's' || s0.block === 'p' ? '主族元素' : s0.block === 'd' ? '过渡元素' : '内过渡元素';
+    topline(ctx, s0.name + '位于' + where + '，属于 ' + s0.block + ' 区，是' + kind + '。');
     /* valence electrons by the book's three rules */
     const vt = valenceTerms(sel, so), nMax = s0.period;
     const isVal = (s) => {
@@ -420,13 +420,13 @@ function atomTag(ctx, sym, x, y, r, size) {
     const nVal = vt.filter(([s]) => isVal(s)).reduce((t, [s]) => t + so[s], 0);
     const c = coreOf(sel);
     const f = `\\text{${s0.sym}}:\\ ` + (c ? `[\\text{${c[1]}}]\\,` : '') + texTerms(c ? vt : terms(so), isVal);
-    const rule = kind === 'a main group element'
-      ? 'The valence electrons of a main group element are those in the shell of highest n, the ' + nVal + ' underlined here' + (vt.some(([s]) => !isVal(s)) ? '; the filled subshells beneath them count as core.' : '.')
-      : kind === 'a transition element'
-        ? 'The valence electrons of a transition element are the ns and (n – 1)d electrons, ' + nVal + ' here, underlined.'
-        : 'The valence shell of an inner transition element holds the (n – 2)f, (n – 1)d and ns subshells, ' + nVal + ' electrons here, underlined.';
-    const pred = predicted(sel), extra = !same(pred, so) ? ' The building-up order predicts ' + abbr(sel, pred) + '.' : '';
-    const src = sel >= 113 ? ' The book prints no configuration for this element; this is the predicted one of the elements page.' : '';
+    const rule = kind === '主族元素'
+      ? '主族元素的价电子是最高 n 电子层中的电子，此处以下划线标出的有 ' + nVal + ' 个' + (vt.some(([s]) => !isVal(s)) ? '；其下已填满的亚层算作内层电子。' : '。')
+      : kind === '过渡元素'
+        ? '过渡元素的价电子是 ns 和 (n – 1)d 电子，此处有 ' + nVal + ' 个，以下划线标出。'
+        : '内过渡元素的价层包含 (n – 2)f、(n – 1)d 和 ns 亚层，此处有 ' + nVal + ' 个电子，以下划线标出。';
+    const pred = predicted(sel), extra = !same(pred, so) ? '按构造顺序预测为 ' + abbr(sel, pred) + '。' : '';
+    const src = sel >= 113 ? '本书未给出该元素的构型；此处为元素页面的预测构型。' : '';
     readout(d.readout, f, rule + extra + src);
   }
   register(d.fig, { update: () => {}, draw });
@@ -444,10 +444,10 @@ function atomTag(ctx, sym, x, y, r, size) {
     atomTag(ctx, 'Na', 90, 140, 24, 40);
     const SZ = 50, X = 230, Y = 140;
     const { at } = cfgText(ctx, [['1s', 2], ['2s', 2], ['2p', 6], ['3s', 1]], X, Y, PAL.ink, { size: SZ });
-    hbracket(ctx, at[0][0], at[8][1], Y + 44, PAL.ink, 'core electrons', { side: 'below' });
-    hbracket(ctx, at[9][0], at[11][1], Y - 52, PAL.ink, 'valence electron');
+    hbracket(ctx, at[0][0], at[8][1], Y + 44, PAL.ink, '内层电子', { side: 'below' });
+    hbracket(ctx, at[9][0], at[11][1], Y - 52, PAL.ink, '价电子');
     const AX = 900;
-    text(ctx, 'Abbreviation', AX, Y - 70, PAL.muted, { size: 22 });
+    text(ctx, '简化构型', AX, Y - 70, PAL.muted, { size: 22 });
     cfgText(ctx, [['3s', 1]], AX, Y, PAL.ink, { size: SZ, pre: '[Ne]' });
   }
   register(d.fig, { update: () => {}, draw });

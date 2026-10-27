@@ -37,8 +37,8 @@ function rowMark(ctx, y0, y1, initial, final) {
 function markKey(ctx, x, y) {
   ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.55); ctx.lineWidth = 2; ctx.setLineDash([6, 5]); ctx.strokeRect(x, y - 9, 34, 18);
   ctx.setLineDash([]); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.fillRect(x + 130, y - 9, 34, 18); ctx.restore();
-  text(ctx, 'initial', x + 42, y, PAL.muted, { size: 17 });
-  text(ctx, 'final', x + 172, y, PAL.muted, { size: 17 });
+  text(ctx, '起始', x + 42, y, PAL.muted, { size: 17 });
+  text(ctx, '最终', x + 172, y, PAL.muted, { size: 17 });
 }
 /* a distribution's letter at the left, and W with its probability bar at the right */
 function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
@@ -60,11 +60,11 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
 ===================================================================== */
 (function () {
   const H = 600, d = sim('sim-microstates', H);
-  const N = F.choice(d.controls, { label: 'N', key: 'N', aria: 'the number of particles', value: '4',
+  const N = F.choice(d.controls, { label: 'N', key: 'N', aria: '粒子数', value: '4',
     options: ['2', '4', '6'].map((v) => ({ value: v, label: v })), onInput: () => fit() });
   const pick = (label, key, aria, value) => F.select(d.controls, { label, key, aria, value, options: [...LET].map((c) => ({ value: c, label: `(${c})` })), onInput: () => draw() });
-  const A = pick('\\text{initial}', 'from', 'the initial distribution', 'a');
-  const B = pick('\\text{final}', 'to', 'the final distribution', 'c');
+  const A = pick('\\text{起始}', 'from', '起始分布', 'a');
+  const B = pick('\\text{最终}', 'to', '最终分布', 'c');
   const ro = F.readout(d);
   function fit(redraw = true) {
     const n = +N.value, offered = [...LET].slice(0, n + 1).map((c) => ({ value: c, label: `(${c})` }));
@@ -72,7 +72,7 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
     if (redraw) draw();
   }
   let hits = []; F.hover(d.stage, () => hits);
-  const word = { 2: 'Both', 4: 'All four', 6: 'All six' };
+  const word = { 2: '两个', 4: '四个', 6: '六个' };
   function draw() {
     const { ctx } = begin(d.c), n = +N.value, total = 2 ** n;
     const rows = Array.from({ length: n + 1 }, () => []);
@@ -83,8 +83,8 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
     let y = top + ((H - top - 14) - nl * lh) / 2;
     const ia = LET.indexOf(A.value), ib = LET.indexOf(B.value);
     hits = [];
-    text(ctx, 'microstates', 120, 100, PAL.muted, { size: 17 });
-    text(ctx, 'probability of the distribution', 1000, 100, PAL.muted, { size: 17 });
+    text(ctx, '微观状态', 120, 100, PAL.muted, { size: 17 });
+    text(ctx, '分布的概率', 1000, 100, PAL.muted, { size: 17 });
     markKey(ctx, 560, 100);
     rows.forEach((row, k) => {
       const y0 = y, y1 = y + lines[k] * lh;
@@ -97,13 +97,13 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
         box.forEach((ps, s) => ps.forEach((i, q) => {
           const cols = big ? 3 : 2, cx = x + s * bw + bw / 2 + ((q % cols) - (cols - 1) / 2) * gap, cy = yt + bh / 2 + (Math.floor(q / cols) - 0.5) * gap * (big ? 1.15 : 1);
           dot(ctx, cx, cy, F.cat(i), true, r);
-          hits.push({ x: cx, y: cy, r: r + 4, name: `particle ${i + 1}, in the ${s ? 'right' : 'left'} box` });
+          hits.push({ x: cx, y: cy, r: r + 4, name: `粒子 ${i + 1}，在${s ? '右' : '左'}边的盒子里` });
         }));
       });
       rowFrame(ctx, k, (y0 + y1) / 2, row.length, total, k === ia, k === ib, 1000);
       y = y1;
     });
-    topline(ctx, `${word[n]} particles sit in one box in 2 of the ${total} microstates, a probability of 1/${total / 2}.`);
+    topline(ctx, `在 ${total} 种微观状态中，有 2 种使${word[n]}粒子全部位于一个盒子里，概率为 1/${total / 2}。`);
     deltaS(ro, rows[ia].length, rows[ib].length);
   }
   fit(false);
@@ -121,8 +121,8 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
 (function () {
   const H = 410, d = sim('sim-energy-microstates', H);
   const opts = ['a', 'b', 'c'].map((c) => ({ value: c, label: `(${c})` }));
-  const A = F.choice(d.controls, { label: '\\text{initial}', key: 'from', aria: 'the initial distribution', value: 'a', options: opts, onInput: () => draw() });
-  const B = F.choice(d.controls, { label: '\\text{final}', key: 'to', aria: 'the final distribution', value: 'b', options: opts, onInput: () => draw() });
+  const A = F.choice(d.controls, { label: '\\text{起始}', key: 'from', aria: '起始分布', value: 'a', options: opts, onInput: () => draw() });
+  const B = F.choice(d.controls, { label: '\\text{最终}', key: 'to', aria: '最终分布', value: 'b', options: opts, onInput: () => draw() });
   const ro = F.readout(d);
   const P = ['A', 'B', 'C', 'D'];
   const ROWS = [[[0, 0], [0, 1], [1, 1]], [[0, 2], [0, 3], [1, 2], [1, 3]], [[2, 2], [2, 3], [3, 3]]];
@@ -131,8 +131,8 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
     const { ctx } = begin(d.c), hot = F.ref('hot-object'), cold = F.ref('cold-object');
     const ia = LET.indexOf(A.value), ib = LET.indexOf(B.value), bw = 78, bh = 64, slot = 196;
     hits = [];
-    text(ctx, 'microstates', 120, 100, PAL.muted, { size: 17 });
-    text(ctx, 'probability of the distribution', 900, 100, PAL.muted, { size: 17 });
+    text(ctx, '微观状态', 120, 100, PAL.muted, { size: 17 });
+    text(ctx, '分布的概率', 900, 100, PAL.muted, { size: 17 });
     markKey(ctx, 520, 100);
     ROWS.forEach((row, k) => {
       const yc = 160 + k * 96;
@@ -146,15 +146,15 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
           const q = units.filter((u) => u === i).length;
           if (q) text(ctx, '*', px, yc - 20, PAL.ink, { size: 24, weight: 600, align: 'center' });
           if (q === 2) text(ctx, '*', px, yc + 30, PAL.ink, { size: 24, weight: 600, align: 'center' });
-          hits.push({ x: px, y: yc, r: 16, name: `particle ${p} of the ${i < 2 ? 'hot' : 'cold'} object, ${['no unit', 'one unit', 'two units'][q]} of energy` });
+          hits.push({ x: px, y: yc, r: 16, name: `${i < 2 ? '较热' : '较冷'}的物体的粒子 ${p}，${['没有', '有一个', '有两个'][q]}能量单位` });
         });
       });
       rowFrame(ctx, k, yc, row.length, 10, k === ia, k === ib, 900);
     });
     const wi = ROWS[ia].length, wf = ROWS[ib].length;
     topline(ctx, ia === ib
-      ? `Distribution (${A.value}) holds ${wi} of the 10 microstates, a probability of ${wi}/10.`
-      : `From (${A.value}) to (${B.value}) the number of microstates ${wf > wi ? 'rises' : wf < wi ? 'falls' : 'stays'} ${wf === wi ? `at ${wi}` : `from ${wi} to ${wf}`}, and the probability ${wf === wi ? `stays at ${wi}/10` : `from ${wi}/10 to ${wf}/10`}.`);
+      ? `分布（${A.value}）包含 10 种微观状态中的 ${wi} 种，概率为 ${wi}/10。`
+      : `由（${A.value}）到（${B.value}），微观状态数${wf === wi ? `保持为 ${wi}` : `由 ${wi} ${wf > wi ? '增加' : '减少'}到 ${wf}`}，概率${wf === wi ? `保持为 ${wi}/10` : `由 ${wi}/10 变为 ${wf}/10`}。`);
     deltaS(ro, wi, wf);
   }
   still(d, draw);
@@ -178,7 +178,7 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
     box.forEach((ps, s) => ps.forEach((i, q) => {
       const cx = x + s * bw + bw / 2 + ((q % 2) - 0.5) * gap, cy = yt + bh / 2 + (Math.floor(q / 2) - 0.5) * gap;
       dot(ctx, cx, cy, F.cat(i), true, r);
-      hits.push({ x: cx, y: cy, r: r + 4, name: `particle ${i + 1}, in the ${s ? 'right' : 'left'} box` });
+      hits.push({ x: cx, y: cy, r: r + 4, name: `粒子 ${i + 1}，在${s ? '右' : '左'}边的盒子里` });
     }));
   }
   function draw() {
@@ -213,7 +213,7 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
 (function () {
   const T3D = window.THREE;
   const d = sim('sim-entropy-phase');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'corner', yaw: 0.7, pitch: 0.45 }], h: 360, dist: 3.1 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.02, 1.2], tilt: 0.3, views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: 0.7, pitch: 0.45 }], h: 360, dist: 3.1 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 430);
   const TM = 273.15, TB = 373.15, HF = 6010, HV = 40700, CL = 75.3, CG = 33.6, M = 0.01802, R = 8.3145;
   const SL0 = 70.0 - CL * Math.log(298.15 / TM), SS0 = SL0 - HF / TM, SLB = SL0 + CL * Math.log(TB / TM), SG0 = SLB + HV / TB;
@@ -222,8 +222,8 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
   const on = (t, x) => Math.abs(t - x) < 1e-6;
   const phaseOf = (t) => (on(t, TM) ? 0.5 : on(t, TB) ? 1.5 : t < TM ? 0 : t < TB ? 1 : 2);
   const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', key: 'T', min: 50, max: 1000, step: 1, value: 298, unit: 'K', dec: 0,
-    aria: 'the temperature of the water in kelvin', detents: [100, 200, 500, 1000],
-    specials: [{ at: TM, label: 'melting' }, { at: TB, label: 'boiling' }],
+    aria: '水的温度，单位为开尔文', detents: [100, 200, 500, 1000],
+    specials: [{ at: TM, label: '熔化' }, { at: TB, label: '沸腾' }],
     onInput: () => { const p = phaseOf(T.v); ph.to(p, 900 * Math.max(0.5, Math.abs(p - ph.v))); } });
   const ph = F.tween(d, phaseOf(T.v));
   const cy = cycle(() => 6, 0);
@@ -260,10 +260,10 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
     glass.position.set(0, (TOP + FLOOR) / 2, 0); grp.add(glass);
     const e = new T3D.LineSegments(new T3D.EdgesGeometry(new T3D.BoxGeometry(2 * W, TOP - FLOOR, 2 * W)), new T3D.LineBasicMaterial({ color: new T3D.Color(PAL.muted) }));
     e.position.copy(glass.position); grp.add(e);
-    v.pickable(glass, 'a closed glass container');
+    v.pickable(glass, '封闭的玻璃容器');
     MOL.forEach(() => {
       const g = new T3D.Group(); grp.add(g);
-      [['O', 0, 0, 0.056], ['H', -0.062, 0.044, 0.036], ['H', 0.062, 0.044, 0.036]].forEach(([s, x, y, r]) => v.pickable(F.mesh.sphere(g, [x, y, 0], r, F.el(s)), 'a water molecule, H₂O'));
+      [['O', 0, 0, 0.056], ['H', -0.062, 0.044, 0.036], ['H', 0.062, 0.044, 0.036]].forEach(([s, x, y, r]) => v.pickable(F.mesh.sphere(g, [x, y, 0], r, F.el(s)), '水分子，H₂O'));
       ms.push(g);
     });
   }
@@ -287,36 +287,36 @@ function rowFrame(ctx, k, yc, W, total, initial, final, xr) {
     const { ctx } = begin(cnv), t = T.v, p = phaseOf(t), ce = C('entropy'), ct = C('temperature');
     const tt = p === 0.5 || p === 1.5 ? t.toFixed(2) : String(Math.round(t));
 
-    const a = F.axes(ctx, GV, [0, 2500], [0, 4.2e-3], { nx: 5, ny: 3, fy: () => '', xl: 'v (m/s)', xc: C('velocity'), yl: 'fraction of molecules' });
+    const a = F.axes(ctx, GV, [0, 2500], [0, 4.2e-3], { nx: 5, ny: 3, fy: () => '', xl: 'v (m/s)', xc: C('velocity'), yl: '分子所占的比例' });
     /* the curves cross near their feet, so they are named in a key in the empty upper right: the live one, then the four faint ones */
     BOOK.forEach((b) => F.curve(ctx, (x) => maxwell(x, b), 0, 2500, a.X, a.Y, alpha(PAL.ink, 0.28), 2, 120));
     F.curve(ctx, (x) => maxwell(x, t), 0, 2500, a.X, a.Y, PAL.ink, 4, 160);
     const kx = a.X(1250), ky = GV.t + 22;
     line(ctx, kx, ky, kx + 40, ky, PAL.ink, 4); text(ctx, `${tt} K`, kx + 52, ky, ct, { size: 17, weight: 600 });
-    line(ctx, kx, ky + 28, kx + 40, ky + 28, alpha(PAL.ink, 0.35), 2); text(ctx, '100, 200, 500 and 1000 K', kx + 52, ky + 28, alpha(ct, 0.85), { size: 16 });
+    line(ctx, kx, ky + 28, kx + 40, ky + 28, alpha(PAL.ink, 0.35), 2); text(ctx, '100、200、500 和 1000 K', kx + 52, ky + 28, alpha(ct, 0.85), { size: 16 });
 
     const g = F.axes(ctx, GS, [0, 1000], [0, 250], { nx: 5, ny: 5, xl: 'T (K)', xc: ct, yl: 'S (J/K)', yc: ce });
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.fillRect(g.X(TM), GS.t, g.X(TB) - g.X(TM), GS.b - GS.t); ctx.restore();
     /* the column names where the curve leaves room: at the top over the solid and the liquid, at the foot under the gas */
-    [['solid', TM / 2, GS.t + 16], ['liquid', (TM + TB) / 2, GS.t + 16], ['gas', (TB + 1000) / 2, GS.b - 16]].forEach(([s, x, y]) => text(ctx, s, g.X(x), y, PAL.muted, { size: 16, align: 'center', bg: PAL.panel }));
+    [['固态', TM / 2, GS.t + 16], ['液态', (TM + TB) / 2, GS.t + 16], ['气态', (TB + 1000) / 2, GS.b - 16]].forEach(([s, x, y]) => text(ctx, s, g.X(x), y, PAL.muted, { size: 16, align: 'center', bg: PAL.panel }));
     F.curve(ctx, Ss, 1, TM, g.X, g.Y, ce, 4, 60);
     F.curve(ctx, Sl, TM, TB, g.X, g.Y, ce, 4, 40);
     F.curve(ctx, Sg, TB, 1000, g.X, g.Y, ce, 4, 80);
     const jump = (x, lo, hi, hot) => line(ctx, g.X(x), g.Y(lo), g.X(x), g.Y(hi), ce, hot ? 6 : 3, hot ? undefined : [6, 6]);
     jump(TM, SS0, SL0, p === 0.5); jump(TB, SLB, SG0, p === 1.5);
-    text(ctx, 'melting', g.X(TM) - 18, g.Y((SS0 + SL0) / 2), PAL.muted, { size: 16, align: 'right' });
-    text(ctx, 'boiling', g.X(TB) + 18, g.Y((SLB + SG0) / 2), PAL.muted, { size: 16 });
+    text(ctx, '熔化', g.X(TM) - 18, g.Y((SS0 + SL0) / 2), PAL.muted, { size: 16, align: 'right' });
+    text(ctx, '沸腾', g.X(TB) + 18, g.Y((SLB + SG0) / 2), PAL.muted, { size: 16 });
     const drop = (sv) => { line(ctx, g.X(t), g.Y(sv), g.X(t), GS.b, alpha(ce, 0.6), 2.5, [4, 8]); line(ctx, GS.l, g.Y(sv), g.X(t), g.Y(sv), alpha(ce, 0.6), 2.5, [4, 8]); };
     if (p === 0.5 || p === 1.5) {
       const [lo, hi] = p === 0.5 ? [SS0, SL0] : [SLB, SG0];
       drop(hi); dot(ctx, g.X(t), g.Y(lo), ce, false, 10); dot(ctx, g.X(t), g.Y(hi), ce, true, 10);
     } else { drop(S(t)); dot(ctx, g.X(t), g.Y(S(t)), ce, true, 10); }
 
-    topline(ctx, p === 0 ? `At ${tt} K the molecules of ice only vibrate about fixed positions.`
-      : p === 0.5 ? 'At 273.15 K ice melts, and its molecules gain the freedom to move over and around one another.'
-        : p === 1 ? `At ${tt} K the molecules of liquid water move over and around one another.`
-          : p === 1.5 ? 'At 373.15 K water boils, and its molecules spread through the whole container.'
-            : `At ${tt} K the molecules of water vapor fly freely through the whole container.`);
+    topline(ctx, p === 0 ? `在 ${tt} K 时，冰的分子只围绕固定位置振动。`
+      : p === 0.5 ? '在 273.15 K 时冰熔化，其分子获得了在彼此之上和周围移动的自由。'
+        : p === 1 ? `在 ${tt} K 时，液态水的分子在彼此之上和周围移动。`
+          : p === 1.5 ? '在 373.15 K 时水沸腾，其分子散布到整个容器中。'
+            : `在 ${tt} K 时，水蒸气的分子在整个容器中自由飞行。`);
     if (p === 0.5 || p === 1.5) {
       const q = p === 0.5 ? HF : HV, tm = p === 0.5 ? TM : TB;
       ro.set(`\\kdS = \\frac{\\kqrev}{\\kT} = \\frac{\\mk{q}{${hue('energy', q === HF ? '6010' : '40\\,700')}}\\ \\mathrm{J}}{\\mk{t}{${hue('temperature', tm.toFixed(2))}}\\ \\mathrm{K}} = \\mk{s}{${hue('entropy', (q / tm).toFixed(1))}}\\ \\mathrm{J/K}`, undefined, { form: 'jump' });

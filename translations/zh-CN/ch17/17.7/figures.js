@@ -51,7 +51,7 @@ function circuit(v, g, corners, src, nE, rc = 0.3) {
   v.pickable(F.mesh.box(g, src, [1.1, 0.46, 0.3], PAL.panel), '电压源');
   F.mesh.box(g, src, [1.14, 0.5, 0.26], PAL.muted);
   const w = along(path), sp = w.L / nE;
-  const es = Array.from({ length: nE }, () => v.pickable(F.mesh.sphere(g, OFF, 0.05, F.el('e-')), '电子 e⁻，被电源推动着通过导线'));
+  const es = Array.from({ length: nE }, () => v.pickable(F.mesh.sphere(g, OFF, 0.05, F.el('e-')), '一个电子 e⁻，被电源推动着通过导线'));
   return (k) => es.forEach((m, i) => {
     const p = w.at((((i + k) * sp) % w.L + w.L) % w.L);
     put(m, Math.abs(p[0] - src[0]) < 0.58 && Math.abs(p[1] - src[1]) < 0.28 ? OFF : p);
@@ -110,7 +110,7 @@ function legend(cnv, items, gap) {
   function build() {
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear();
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.4], PAL.soft), '实验台');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.4], PAL.soft), '工作台');
     v.pickable(F.mesh.box(grp, [0, (YB + YTOP) / 2, 0], [4.4, YTOP - YB, 1.6], PAL.ink, glass()), '容器');
     v.pickable(F.mesh.box(grp, [0, (YB + YL) / 2, 0], [4.34, YL - YB - 0.02, 1.54], PAL.muted, LIQ), '熔融氯化钠，液体中的 Na⁺ 和 Cl⁻ 离子');
     v.pickable(F.mesh.box(grp, [0, (YB + 0.22) / 2, 0], [0.04, 0.22 - YB, 1.56], PAL.ink, { transparent: true, opacity: 0.32, depthWrite: false }), '多孔隔板，使钠和氯保持分开');
@@ -215,7 +215,7 @@ function legend(cnv, items, gap) {
   function build() {
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear(); resAt = -1;
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6, 0.1, 2.2], PAL.soft), '实验台');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6, 0.1, 2.2], PAL.soft), '工作台');
     for (const [x, who] of [[XA, '阳极'], [XC, '阴极']]) {
       v.pickable(cyl(grp, x, A0, A1, RA, RA, PAL.ink, glass(0.05)), `${who}一侧的玻璃管`);
       cyl(grp, x, A1, A1 + 0.2, 0.05, RA, PAL.ink, glass(0.05));
@@ -317,7 +317,7 @@ function legend(cnv, items, gap) {
   function build() {
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear();
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [5.4, 0.1, 2.6], PAL.soft), '实验台');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [5.4, 0.1, 2.6], PAL.soft), '工作台');
     v.pickable(cyl(grp, 0, YB, YT, RB, RB, PAL.ink, glass()), '烧杯');
     const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), F.mesh.mat(PAL.ink, glass())); floor.rotation.x = -Math.PI / 2; floor.position.set(0, YB + 0.005, 0); grp.add(floor);
     v.pickable(cyl(grp, 0, YB, YL, RB - 0.02, RB - 0.02, PAL.muted, LIQ, false), '硝酸银溶液 AgNO₃(aq)');
@@ -332,7 +332,7 @@ function legend(cnv, items, gap) {
     coat = [v.pickable(F.mesh.stick(grp, [XC, HY0 + 0.05, 0], [XC, YL, 0], HR + 0.008, F.el('Ag'), { transparent: true }), coatName), bowl(F.el('Ag'), { transparent: true }, 0.012, coatName)];
     coatR = coat[0].scale.x;
     wire = circuit(v, grp, [[XA, SY1, 0], [XA, YW, 0], [XC, YW, 0], [XC, HY1, 0]], [0, YW, 0], 14);
-    ions = Array.from({ length: 12 }, () => v.pickable(F.mesh.sphere(grp, OFF, 0.078, F.el('Ag'), { transparent: true }), '银离子 Ag⁺，从阳极移向汤匙'));
+    ions = Array.from({ length: 12 }, () => v.pickable(F.mesh.sphere(grp, OFF, 0.078, F.el('Ag'), { transparent: true }), '一个银离子 Ag⁺，从阳极移向汤匙'));
     [['银（阳极，+）', [-RB - 0.75, 0.45, 0]], ['汤匙（阴极，−）', [RB + 0.8, 0.45, 0]], ['AgNO<sub>3</sub>(<em>aq</em>)', [0, YB - 0.28, RB + 0.1]], ['电压源', [1.35, YW, 0]]]
       .forEach(([s, p]) => v.label(s, p, grp, 0));
     v.headline('银以 Ag<sup>+</sup> 的形式离开阳极，并在阴极处镀到汤匙上。');

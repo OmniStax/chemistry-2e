@@ -43,9 +43,9 @@ function bar(ctx, x0, y, per, n, total, col) {
     colloid: { parts: spread(26, 11).map((p) => ({ ...p, r: 11 })), amp: 2 },
     suspension: { parts: spread(10, 22).map((p, i) => ({ ...p, r: 22, fall: rnd(2.6, 5.6), fx: GL.l + 34 + i * 52, fy: GL.bot - 23 })), amp: 1 },
   };
-  const NAMES = { Na: 'a sodium ion, Na<sup>+</sup>', Cl: 'a chloride ion, Cl<sup>−</sup>', colloid: 'a droplet of butterfat', suspension: 'a grain of mud' };
+  const NAMES = { Na: '钠离子 Na<sup>+</sup>', Cl: '氯离子 Cl<sup>−</sup>', colloid: '乳脂液滴', suspension: '泥粒' };
   const cy = cycle(() => 6, 1.5);
-  const M = F.choice(d.controls, { label: '\\text{mixture}', options: [{ value: 'solution', label: 'saltwater' }, { value: 'colloid', label: 'milk' }, { value: 'suspension', label: 'mud' }], value: 'colloid', aria: 'the mixture in the glass', onInput: () => cy.reset() });
+  const M = F.choice(d.controls, { label: '\\text{混合物}', options: [{ value: 'solution', label: '盐水' }, { value: 'colloid', label: '牛奶' }, { value: 'suspension', label: '泥浆' }], value: 'colloid', aria: '玻璃杯中的混合物', onInput: () => cy.reset() });
   const hits = []; F.hover(d.stage, () => hits);
   let clock = 0;
   const fallen = (p, t) => smooth(clamp01(t / p.fall));
@@ -89,22 +89,22 @@ function bar(ctx, x0, y, per, n, total, col) {
     ctx.save(); ctx.strokeStyle = F.ref('glass'); ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(GL.l, GL.top); ctx.lineTo(GL.l, GL.bot); ctx.lineTo(GL.r, GL.bot); ctx.lineTo(GL.r, GL.top); ctx.stroke(); ctx.restore();
     line(ctx, GL.l, GL.surf, GL.r, GL.surf, alpha(PAL.ink, 0.4), 2);
     ctx.save(); ctx.fillStyle = PAL.muted; ctx.fillRect(210, BY - 22, 120, 44); ctx.restore();
-    text(ctx, 'laser', 270, BY + 50, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '激光器', 270, BY + 50, PAL.ink, { size: 20, align: 'center' });
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.fillRect(CARD, BY - 90, 16, 180); ctx.strokeRect(CARD, BY - 90, 16, 180); ctx.restore();
-    text(ctx, 'card', CARD + 8, BY + 118, PAL.ink, { size: 20, align: 'center' });
-    hits.push({ x: 270, y: BY, r: 50, name: 'a green laser' }, { x: CARD + 8, y: BY, r: 30, name: 'a card, where the beam that passes through the glass lands' });
+    text(ctx, '卡片', CARD + 8, BY + 118, PAL.ink, { size: 20, align: 'center' });
+    hits.push({ x: 270, y: BY, r: 50, name: '绿色激光器' }, { x: CARD + 8, y: BY, r: 30, name: '卡片，穿过玻璃杯的光束落在上面' });
     /* legend of the kinds in the glass */
-    const kinds = v === 'solution' ? [[F.el('Na'), 5, 'Na⁺ ion'], [F.el('Cl'), 5, 'Cl⁻ ion']] : v === 'colloid' ? [[F.ref('butterfat'), 11, 'butterfat droplet']] : [[F.ref('mud'), 16, 'grain of mud']];
+    const kinds = v === 'solution' ? [[F.el('Na'), 5, 'Na⁺ 离子'], [F.el('Cl'), 5, 'Cl⁻ 离子']] : v === 'colloid' ? [[F.ref('butterfat'), 11, '乳脂液滴']] : [[F.ref('mud'), 16, '泥粒']];
     kinds.forEach(([c, r, name], i) => { const y = 180 + i * 40; ball(ctx, 1170, y, r, c); text(ctx, name, 1196, y, PAL.ink, { size: 20 }); });
     topline(ctx, v === 'solution'
-      ? 'The ions dissolved in saltwater are too small to scatter light, so the beam crosses the glass unseen.'
+      ? '盐水中溶解的离子太小，无法散射光，所以光束穿过玻璃杯时看不见。'
       : v === 'colloid'
-        ? 'The droplets of butterfat in milk stay dispersed, and they are large enough to scatter the beam.'
+        ? '牛奶中的乳脂液滴保持分散，而且大到足以散射光束。'
         : settled < 0.97
-          ? 'The grains of mud cloud the water and scatter the beam, and they are settling to the bottom.'
-          : 'The mud has settled to the bottom, and the clear water above it no longer shows the beam.');
+          ? '泥粒使水变浑浊并散射光束，它们正在沉向底部。'
+          : '泥已沉到底部，上方的清水不再显现光束。');
     const B = (s, on) => (on ? `\\boxed{\\text{${s}}}` : `\\text{${s}}`);
-    readout(d.readout, `${B('dissolved ions', v === 'solution')} \\;<\\; ${B('colloidal particles', v === 'colloid')} \\;<\\; ${B('suspended particles', v === 'suspension')}`, null, { values: false });
+    readout(d.readout, `${B('溶解的离子', v === 'solution')} \\;<\\; ${B('胶体粒子', v === 'colloid')} \\;<\\; ${B('悬浮粒子', v === 'suspension')}`, null, { values: false });
   }
   register(d.fig, { update: (dt) => { clock += dt; cy.step(dt, () => 1); }, draw });
 })();
@@ -115,7 +115,7 @@ function turn(p, yaw, pitch) {
   return [x, p[1] * Math.cos(pitch) - z1 * Math.sin(pitch), p[1] * Math.sin(pitch) + z1 * Math.cos(pitch)];
 }
 function twoWays(d, opts, onShow) {
-  const VIEW = F.choice(d.controls, { label: '\\text{view}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: 'a flat drawing or a scene to turn', onInput: () => show() });
+  const VIEW = F.choice(d.controls, { label: '\\text{视图}', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d', aria: '平面图或可转动的场景', onInput: () => show() });
   const s = { v: null, g: null, get three() { return VIEW.value === '3d'; } };
   function show() {
     if (s.three && !s.v) { s.v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.2, 1.2], ...opts }); s.g = s.v.part(0); }
@@ -141,7 +141,7 @@ function twoWays(d, opts, onShow) {
 (function () {
   const d = sim('sim-amphiphile', 440);
   const R = { C: 0.38, H: 0.25, O: 0.36, S: 0.5, Na: 0.55 };
-  const WORD = { C: 'a carbon atom, C', H: 'a hydrogen atom, H', O: 'an oxygen atom, O', S: 'a sulfur atom, S', Na: 'a sodium ion, Na<sup>+</sup>' };
+  const WORD = { C: '碳原子 C', H: '氢原子 H', O: '氧原子 O', S: '硫原子 S', Na: '钠离子 Na<sup>+</sup>' };
   const cpos = (k) => [1.26 * k, k % 2 ? 0.44 : -0.44, 0];
   const A0 = Math.atan2(0.88, 1.26), dir = (a) => [Math.cos(a), Math.sin(a), 0];
   function chain(n, atoms, bonds) {
@@ -177,17 +177,17 @@ function twoWays(d, opts, onShow) {
   const MINUS = { soap: 'Ob', det: lowO };
   const NAME = (key, st) => {
     const a = STATES[st].atoms[key]; if (!a) return '';
-    if (key === 'X0' && st === 'soap') return 'the carbon atom of the carboxylate group, CO<sub>2</sub><sup>−</sup>';
-    if (key === 'X0') return 'an oxygen atom of the sulfate group, OSO<sub>3</sub><sup>−</sup>';
-    if (key === 'S') return 'the sulfur atom of the sulfate group';
-    if (key === 'Oa' || key === 'Ob') return 'an oxygen atom of the carboxylate group';
-    if (key.startsWith('Os')) return 'an oxygen atom of the sulfate group';
+    if (key === 'X0' && st === 'soap') return '羧酸根基团 CO<sub>2</sub><sup>−</sup> 的碳原子';
+    if (key === 'X0') return '硫酸酯基 OSO<sub>3</sub><sup>−</sup> 的氧原子';
+    if (key === 'S') return '硫酸酯基的硫原子';
+    if (key === 'Oa' || key === 'Ob') return '羧酸根基团的氧原子';
+    if (key.startsWith('Os')) return '硫酸酯基的氧原子';
     return WORD[a.el];
   };
   const KEYS = [...new Set([...Object.keys(soap.atoms), ...Object.keys(det.atoms)])];
   const BONDS = [...new Map([...soap.bonds, ...det.bonds].map((b) => [b.join('|'), b])).values()];
-  const AM = F.choice(d.controls, { label: '\\text{amphiphile}', options: [{ value: 'soap', label: 'soap' }, { value: 'det', label: 'detergent' }], value: 'soap', aria: 'a soap or a detergent' });
-  const two = twoWays(d, { h: 400, dist: 30, views: [{ label: 'side', yaw: 0, pitch: 0.2 }, { label: 'end on', yaw: Math.PI / 2, pitch: 0.1 }] }, () => draw());
+  const AM = F.choice(d.controls, { label: '\\text{两亲物质}', options: [{ value: 'soap', label: '肥皂' }, { value: 'det', label: '洗涤剂' }], value: 'soap', aria: '肥皂或洗涤剂' });
+  const two = twoWays(d, { h: 400, dist: 30, views: [{ label: '侧视', yaw: 0, pitch: 0.2 }, { label: '端面', yaw: Math.PI / 2, pitch: 0.1 }] }, () => draw());
   const hits = []; F.hover(d.stage, () => hits);
   /* each atom now: where it stands, the element it shows and how present it is */
   function now() {
@@ -201,12 +201,12 @@ function twoWays(d, opts, onShow) {
   }
   const CENTRE = 8.8;
   const HEAD = {
-    soap: 'Sodium stearate, C<sub>17</sub>H<sub>35</sub>CO<sub>2</sub>Na, has a nonpolar hydrocarbon end of 17 carbon atoms and an ionic carboxylate end.',
-    det: 'Sodium lauryl sulfate, C<sub>12</sub>H<sub>25</sub>OSO<sub>3</sub>Na, has a nonpolar hydrocarbon end of 12 carbon atoms and an ionic sulfate end.',
+    soap: '硬脂酸钠 C<sub>17</sub>H<sub>35</sub>CO<sub>2</sub>Na 有一个由 17 个碳原子组成的非极性烃基端和一个离子型羧酸根端。',
+    det: '十二烷基硫酸钠 C<sub>12</sub>H<sub>25</sub>OSO<sub>3</sub>Na 有一个由 12 个碳原子组成的非极性烃基端和一个离子型硫酸酯端。',
   };
   const EQ = {
-    soap: '\\underbrace{\\text{C}_{17}\\text{H}_{35}}_{\\text{nonpolar}}\\text{—}\\underbrace{\\text{CO}_{2}{}^{-}\\ \\text{Na}^{+}}_{\\text{ionic}}',
-    det: '\\underbrace{\\text{C}_{12}\\text{H}_{25}}_{\\text{nonpolar}}\\text{—}\\underbrace{\\text{OSO}_{3}{}^{-}\\ \\text{Na}^{+}}_{\\text{ionic}}',
+    soap: '\\underbrace{\\text{C}_{17}\\text{H}_{35}}_{\\text{非极性}}\\text{—}\\underbrace{\\text{CO}_{2}{}^{-}\\ \\text{Na}^{+}}_{\\text{离子型}}',
+    det: '\\underbrace{\\text{C}_{12}\\text{H}_{25}}_{\\text{非极性}}\\text{—}\\underbrace{\\text{OSO}_{3}{}^{-}\\ \\text{Na}^{+}}_{\\text{离子型}}',
   };
   let sig = '', meshes = null, shownHead = '';
   const palSig = () => [PAL.ink, PAL.muted, F.el('C'), F.el('H'), F.el('O'), F.el('S'), F.el('Na')].join('|');
@@ -259,8 +259,8 @@ function twoWays(d, opts, onShow) {
       const xTailEnd = lerp(P(cpos(nFrom))[0], P(cpos(n))[0], kk) + 14, xTail0 = P(cpos(1))[0] - 10;
       const headXs = at.filter((a) => a.o > 0.5 && (a.key === 'X0' || a.key === 'Na' || /^O/.test(a.key) || a.key === 'S')).map((a) => P(a.p)[0]);
       const xh0 = Math.min(...headXs) - 22, xh1 = Math.max(...headXs) + 10;
-      hbracket(ctx, xTail0, xTailEnd, 150, F.ref('tail'), 'nonpolar hydrocarbon end', { size: 21 });
-      hbracket(ctx, xh0, Math.min(xh1, xTail0 - 24), 150, F.ref('head'), 'ionic end', { size: 21 });
+      hbracket(ctx, xTail0, xTailEnd, 150, F.ref('tail'), '非极性烃基端', { size: 21 });
+      hbracket(ctx, xh0, Math.min(xh1, xTail0 - 24), 150, F.ref('head'), '离子端', { size: 21 });
       const Om = P(pos(MINUS[st])), Na = P(pos('Na'));
       text(ctx, '−', Om[0] + 2, Om[1] + 28, PAL.ink, { size: 26, weight: 600, align: 'center' });
       text(ctx, '+', Na[0] + 30, Na[1] - 18, PAL.ink, { size: 26, weight: 600, align: 'center' });
@@ -323,28 +323,28 @@ function twoWays(d, opts, onShow) {
     ctx.save(); ctx.fillStyle = alpha(F.fact(OIL_AMBER), 0.55); ctx.beginPath(); ctx.arc(CX, CY, RD, 0, TAU); ctx.fill(); ctx.restore();
     const st = anions.map((q) => state(q, t));
     st.forEach((s) => tail(ctx, s.x, s.y, s.a, F.el('C')));
-    st.forEach((s) => { ball(ctx, s.x, s.y, 9, F.el('O')); hits.push({ x: s.x, y: s.y, r: 11, name: 'the ionic end of a soap anion, a carboxylate group, CO<sub>2</sub><sup>−</sup>' }); });
+    st.forEach((s) => { ball(ctx, s.x, s.y, 9, F.el('O')); hits.push({ x: s.x, y: s.y, r: 11, name: '肥皂阴离子的离子端，即羧酸根基团 CO<sub>2</sub><sup>−</sup>' }); });
     for (const ion of IONS) {
       const x = ion.x + 3 * Math.sin(1.1 * clock + ion.ph), y = ion.y + 3 * Math.cos(1.3 * clock + ion.ph);
       ion.w.forEach((a) => water(ctx, x + 22 * Math.cos(a), y + 22 * Math.sin(a), a));
       ball(ctx, x, y, 12, F.el('Na'));
-      hits.push({ x, y, r: 34, name: 'a sodium ion, Na<sup>+</sup>, surrounded by water molecules' });
+      hits.push({ x, y, r: 34, name: '被水分子包围的钠离子 Na<sup>+</sup>' });
     }
-    for (const w of FREE) { const x = w.x + 4 * Math.sin(1.3 * clock + w.ph), y = w.y + 4 * Math.cos(0.9 * clock + w.ph); water(ctx, x, y, w.a + 0.3 * Math.sin(clock + w.ph)); hits.push({ x, y, r: 13, name: 'a water molecule, H<sub>2</sub>O' }); }
-    st.forEach((s) => { for (const f of [0.35, 0.7]) hits.push({ x: s.x + Math.cos(s.a) * TAIL * f, y: s.y + Math.sin(s.a) * TAIL * f, r: 9, name: 'the hydrocarbon tail of a soap anion, C<sub>17</sub>H<sub>35</sub>—' }); });
-    hits.push({ x: CX, y: CY, r: RD, name: 'a drop of oil' });
+    for (const w of FREE) { const x = w.x + 4 * Math.sin(1.3 * clock + w.ph), y = w.y + 4 * Math.cos(0.9 * clock + w.ph); water(ctx, x, y, w.a + 0.3 * Math.sin(clock + w.ph)); hits.push({ x, y, r: 13, name: '水分子 H<sub>2</sub>O' }); }
+    st.forEach((s) => { for (const f of [0.35, 0.7]) hits.push({ x: s.x + Math.cos(s.a) * TAIL * f, y: s.y + Math.sin(s.a) * TAIL * f, r: 9, name: '肥皂阴离子的烃基尾 C<sub>17</sub>H<sub>35</sub>—' }); });
+    hits.push({ x: CX, y: CY, r: RD, name: '油滴' });
     /* the book's four labels, the two on the anion only once it has arrived */
     const L = st[LABEL_SLOT], Tl = st[TAIL_SLOT], ion = IONS[0];
-    label(ctx, 'solvated cation', ion.x - 40, ion.y, { side: 'left', size: 20, leader: true, gap: 60 });
+    label(ctx, '溶剂化阳离子', ion.x - 40, ion.y, { side: 'left', size: 20, leader: true, gap: 60 });
     const settled = st.every((s) => s.w >= 1);
-    if (settled) label(ctx, 'ionic end', L.x - 14, L.y, { side: 'left', size: 20, leader: true, gap: 110 });
-    if (settled) label(ctx, 'hydrocarbon tail', Tl.x + Math.cos(Tl.a) * 36, Tl.y + Math.sin(Tl.a) * 36 + 4, { side: 'left', size: 20, leader: true, gap: 170 });
-    label(ctx, 'drop of oil', CX - 30, CY + RD - 10, { side: 'below', size: 20, leader: true, gap: 34 });
+    if (settled) label(ctx, '离子端', L.x - 14, L.y, { side: 'left', size: 20, leader: true, gap: 110 });
+    if (settled) label(ctx, '烃基尾', Tl.x + Math.cos(Tl.a) * 36, Tl.y + Math.sin(Tl.a) * 36 + 4, { side: 'left', size: 20, leader: true, gap: 170 });
+    label(ctx, '油滴', CX - 30, CY + RD - 10, { side: 'below', size: 20, leader: true, gap: 34 });
     const done = st.filter((s) => s.w >= 1).length;
     topline(ctx, done === N
-      ? 'All 32 soap anions have settled at the surface of the oil drop, and the coated drop stays suspended in the water.'
-      : done + ' of 32 soap anions have settled at the surface of the oil drop, their hydrocarbon tails in the oil and their ionic ends in the water.');
-    readout(d.readout, '\\underbrace{\\text{C}_{17}\\text{H}_{35}}_{\\text{in the oil}}\\text{—}\\underbrace{\\text{CO}_{2}{}^{-}}_{\\text{in the water}}', null, { values: false });
+      ? '全部 32 个肥皂阴离子都已在油滴表面就位，裹上肥皂的油滴悬浮在水中。'
+      : '32 个肥皂阴离子中已有 ' + done + ' 个在油滴表面就位，其烃基尾在油中，离子端在水中。');
+    readout(d.readout, '\\underbrace{\\text{C}_{17}\\text{H}_{35}}_{\\text{在油中}}\\text{—}\\underbrace{\\text{CO}_{2}{}^{-}}_{\\text{在水中}}', null, { values: false });
   }
   register(d.fig, { update: (dt) => { clock += dt; cy.step(dt, () => 1); }, draw });
 })();
@@ -363,12 +363,12 @@ function twoWays(d, opts, onShow) {
 (function () {
   const T3D = window.THREE;
   const d = sim('sim-precipitator');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.1 }, { label: 'oblique', yaw: 0.6, pitch: 0.45 }], h: 440, dist: 7.4, tilt: 0.15 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.1 }, { label: '斜视', yaw: 0.6, pitch: 0.45 }], h: 440, dist: 7.4, tilt: 0.15 });
   v.setView(0, 0.12);
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 200);
   grp.position.y = -0.65;
   const RC = 0.9, Y0 = -0.6, Y1 = 1.8, YIN = 0.1, YOUT = 1.45, YH = -1.2, YP = -1.6, FLOOR = -1.95;
-  const V = F.choice(d.controls, { label: '\\text{high DC voltage}', options: [{ value: 'off', label: 'off' }, { value: 'on', label: 'on' }], value: 'on', aria: 'the voltage on the point electrode', onInput: () => { outcomes.length = 0; gen++; } });
+  const V = F.choice(d.controls, { label: '\\text{高直流电压}', options: [{ value: 'off', label: '关' }, { value: 'on', label: '开' }], value: 'on', aria: '尖端电极上的电压', onInput: () => { outcomes.length = 0; gen++; } });
   let gen = 0;
   const POOL = 70, parts = [], outcomes = [];
   const rnd = (a, b) => a + Math.random() * (b - a);
@@ -419,23 +419,23 @@ function twoWays(d, opts, onShow) {
   function build() {
     if (palSig() === sig) return; sig = palSig();
     v.clear(); meshes = [];
-    v.pickable(F.mesh.box(grp, [0, FLOOR, 0], [4.4, 0.08, 2.6], PAL.soft), 'the floor');
-    v.pickable(tube(RC, RC, Y1 - Y0, (Y0 + Y1) / 2, F.ref('plate-electrode'), 0.16), 'the plate electrode, the grounded wall of the chamber');
-    v.pickable(tube(RC, 0.2, Y0 - YH, (Y0 + YH) / 2, F.ref('hopper'), 0.16), 'the hopper, where the soot collects as dust');
-    v.pickable(tube(0.2, 0.2, YH - YP, (YH + YP) / 2, PAL.muted, 0.22), 'the outlet for the soot removed');
-    v.pickable(tube(0.16, 0.16, 0.9, YIN, PAL.muted, 0.45, Math.PI / 2, -RC - 0.4), 'the inlet for soot-laden smoke');
-    v.pickable(tube(0.16, 0.16, 0.9, YOUT, PAL.muted, 0.45, Math.PI / 2, RC + 0.4), 'the outlet where soot-free gases escape');
+    v.pickable(F.mesh.box(grp, [0, FLOOR, 0], [4.4, 0.08, 2.6], PAL.soft), '地面');
+    v.pickable(tube(RC, RC, Y1 - Y0, (Y0 + Y1) / 2, F.ref('plate-electrode'), 0.16), '板电极，即腔室接地的壁');
+    v.pickable(tube(RC, 0.2, Y0 - YH, (Y0 + YH) / 2, F.ref('hopper'), 0.16), '集尘斗，烟炱在此以粉尘形式聚集');
+    v.pickable(tube(0.2, 0.2, YH - YP, (YH + YP) / 2, PAL.muted, 0.22), '除去的烟炱的出口');
+    v.pickable(tube(0.16, 0.16, 0.9, YIN, PAL.muted, 0.45, Math.PI / 2, -RC - 0.4), '含烟炱的烟气的入口');
+    v.pickable(tube(0.16, 0.16, 0.9, YOUT, PAL.muted, 0.45, Math.PI / 2, RC + 0.4), '不含烟炱的气体逸出的出口');
     const cap = new T3D.Mesh(new T3D.CircleGeometry(RC, 48), F.mesh.mat(PAL.muted, { transparent: true, opacity: 0.3, side: T3D.DoubleSide })); cap.rotation.x = -Math.PI / 2; cap.position.y = Y1; grp.add(cap);
     for (const [x, z] of [[-0.7, -0.5], [0.7, -0.5], [0, 0.8]]) F.mesh.stick(grp, [x, YH + 0.1, z], [x, FLOOR, z], 0.03, PAL.muted);
-    v.pickable(F.mesh.stick(grp, [0, 2.0, 0], [0, -0.35, 0], 0.025, F.ref('point-electrode')), 'the point electrode, at a high DC voltage');
+    v.pickable(F.mesh.stick(grp, [0, 2.0, 0], [0, -0.35, 0], 0.025, F.ref('point-electrode')), '尖端电极，处于高直流电压');
     for (let y = -0.25; y < 1.5; y += 0.22) for (let m = 0; m < 4; m++) { const a = m * Math.PI / 2 + y; F.mesh.stick(grp, [0, y, 0], [0.16 * Math.cos(a), y + 0.04, 0.16 * Math.sin(a)], 0.012, F.ref('point-electrode')); }
-    v.label('point electrode', [0, 2.27, 0], grp, 0).style.color = F.ref('point-electrode');
-    v.label('plate electrode', [RC + 1.15, 0.2, 0], grp, 0).style.color = F.ref('plate-electrode');
+    v.label('尖端电极', [0, 2.27, 0], grp, 0).style.color = F.ref('point-electrode');
+    v.label('板电极', [RC + 1.15, 0.2, 0], grp, 0).style.color = F.ref('plate-electrode');
     for (const y of [Y0, Y1]) F.mesh.polyline(grp, Array.from({ length: 49 }, (_, i) => polar(RC, (i / 48) * TAU, y)), F.ref('plate-electrode'));
-    v.label('soot-laden smoke', [-RC - 1.55, YIN - 0.4, 0], grp, 0);
-    v.label('soot-free gases escape', [RC + 1.6, YOUT - 0.45, 0], grp, 0);
-    v.label('soot removed here', [0, YP - 0.15, 0], grp, 14);
-    meshes = parts.map(() => { const m = F.mesh.sphere(grp, [0, 0, 0], 0.035, F.el('C')); v.pickable(m, 'a soot particle, mostly carbon'); m.visible = false; return m; });
+    v.label('含烟炱的烟气', [-RC - 1.55, YIN - 0.4, 0], grp, 0);
+    v.label('不含烟炱的气体逸出', [RC + 1.6, YOUT - 0.45, 0], grp, 0);
+    v.label('烟炱在此被除去', [0, YP - 0.15, 0], grp, 14);
+    meshes = parts.map(() => { const m = F.mesh.sphere(grp, [0, 0, 0], 0.035, F.el('C')); v.pickable(m, '烟炱粒子，主要是碳'); m.visible = false; return m; });
   }
   const cy = cycle(() => Infinity, 0);
   function draw() {
@@ -445,17 +445,17 @@ function twoWays(d, opts, onShow) {
     const n = outcomes.length, got = outcomes.reduce((s, x) => s + x, 0), on = V.value === 'on';
     const { ctx } = begin(cnv);
     topline(ctx, n === 0
-      ? (on ? 'With the high DC voltage on, soot-laden smoke begins to flow into the chamber.' : 'With the voltage off, soot-laden smoke begins to flow into the chamber.')
-      : on ? 'With the high DC voltage on, ' + got + ' of the last ' + n + ' soot particles have been removed from the smoke.'
-        : 'With the voltage off, ' + (n - got) + ' of the last ' + n + ' soot particles have escaped with the gases.');
+      ? (on ? '高直流电压开启时，含烟炱的烟气开始流入腔室。' : '电压关闭时，含烟炱的烟气开始流入腔室。')
+      : on ? '高直流电压开启时，最近的 ' + n + ' 个烟炱粒子中有 ' + got + ' 个已从烟气中除去。'
+        : '电压关闭时，最近的 ' + n + ' 个烟炱粒子中有 ' + (n - got) + ' 个随气体逸出。');
     const per = 15, x0 = 470;
-    text(ctx, 'collected as dust', x0 - 20, 106, PAL.ink, { size: 18, align: 'right' });
+    text(ctx, '以粉尘形式收集', x0 - 20, 106, PAL.ink, { size: 18, align: 'right' });
     bar(ctx, x0, 106, per, got, 50, F.el('C'));
     text(ctx, String(got), x0 + per * 50 + 16, 106, PAL.ink, { size: 18 });
-    text(ctx, 'escaped with the gases', x0 - 20, 154, PAL.ink, { size: 18, align: 'right' });
+    text(ctx, '随气体逸出', x0 - 20, 154, PAL.ink, { size: 18, align: 'right' });
     bar(ctx, x0, 154, per, n - got, 50, F.el('C'));
     text(ctx, String(n - got), x0 + per * 50 + 16, 154, PAL.ink, { size: 18 });
-    readout(d.readout, n === 0 ? '\\text{removed} = 0' : `\\text{removed} = \\frac{${got}}{${n}}`, null, { values: false });
+    readout(d.readout, n === 0 ? '\\text{除去} = 0' : `\\text{除去} = \\frac{${got}}{${n}}`, null, { values: false });
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
 })();

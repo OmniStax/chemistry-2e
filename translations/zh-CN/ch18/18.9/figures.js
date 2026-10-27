@@ -91,7 +91,7 @@ const { C, PAL, alpha, register, begin, line, text, headline } = F;
   let V = null, g = null;
   function mount() {
     V = F.view3d(d.stage, { spin: 'idle', h: 470, dist: 7.6, tilt: 0.2, pitch: [-Math.PI / 2, Math.PI / 2],
-      views: [{ label: '正面', yaw: 0, pitch: 0.2 }, { label: '侧面', yaw: Math.PI / 2, pitch: 0.2 }] });
+      views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '侧视', yaw: Math.PI / 2, pitch: 0.2 }] });
     d.stage.insertBefore(V.wrap, strip);
     const bar = d.stage.querySelector('.view3d-bar'); if (bar) d.stage.insertBefore(bar, strip);
     g = V.part(0); g.position.y = -0.3;

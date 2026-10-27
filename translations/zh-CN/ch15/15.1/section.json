@@ -1,1783 +1,1824 @@
 {
-  "id": "15.1",
-  "module": "m68811",
-  "chapter": "15",
-  "title": "Precipitation and Dissolution",
-  "short": "Precipitation and Dissolution",
-  "lead": "A sparingly soluble ionic solid in contact with its saturated solution is an equilibrium of its own. This section writes the equilibrium constant for that dissolution, the solubility product, relates it to how much of the solid dissolves, and uses it to predict when a precipitate forms, to separate ions, and to account for the effect of an ion the solution already contains.",
-  "objectives": [
-    "Write chemical equations and equilibrium expressions representing solubility equilibria",
-    "Carry out equilibrium computations involving solubility, equilibrium expressions, and solute concentrations"
+ "id": "15.1",
+ "module": "m68811",
+ "chapter": "15",
+ "title": "沉淀与溶解",
+ "short": "沉淀与溶解",
+ "lead": "微溶的离子固体与其饱和溶液相接触，本身就构成一个平衡。本节写出这一溶解过程的平衡常数，即溶度积，把它与固体溶解的多少联系起来，并用它来预测沉淀何时生成、分离离子，以及说明溶液中已有的某种离子所产生的影响。",
+ "objectives": [
+  "写出表示溶解平衡的化学方程式和平衡表达式",
+  "进行涉及溶解度、平衡表达式和溶质浓度的平衡计算"
+ ],
+ "summary_html": "<p>涉及微溶离子固体沉淀或溶解的平衡，其平衡常数称为该固体的溶度积 $\\kKsp$。对于涉及微溶固体 M<sub><em>p</em></sub>X<sub><em>q</em></sub> 及其离子 M<sup>m+</sup> 和 X<sup>n–</sup> 的多相平衡：</p>$$\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)$$<p>溶度积表达式为：</p>$$\\kKsp={\\kconcMion}^{p}{\\kconcXion}^{q}$$<p>微溶电解质的溶度积可以由其溶解度算出；反之，只要固体溶解时发生的唯一重要反应是生成其离子，其溶解度也可以由 $\\kKsp$ 算出。</p><p>当溶解反应的反应商的数值超过溶度积的数值时，微溶电解质开始沉淀。沉淀一直持续到反应商等于溶度积为止。</p>",
+ "notes": "“学习链接”（关于盐的溶解度）以及两篇注释结尾指向外部网站的提示均已略去；原文的“Le ChÂtelier’s”（拼写有误）在译文中写作“勒夏特列”；按原样保留的有例 15.1 的“(PO₄)3OH”、例 15.10 的“log(3.3 × 10-4)”、硫酸钡注释中的“10.08 × 10⁻¹⁰”和废水注释中的“Ca₅(PO4)₃OH”。",
+ "ai": {
+  "text": [
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
   ],
-  "summary_html": "<p>The equilibrium constant for an equilibrium involving the precipitation or dissolution of a slightly soluble ionic solid is called the solubility product, $\\kKsp$, of the solid. For a heterogeneous equilibrium involving the slightly soluble solid M<sub><em>p</em></sub>X<sub><em>q</em></sub> and its ions M<sup>m+</sup> and X<sup>n–</sup>:</p>$$\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)$$<p>the solubility product expression is:</p>$$\\kKsp={\\kconcMion}^{p}{\\kconcXion}^{q}$$<p>The solubility product of a slightly soluble electrolyte can be calculated from its solubility; conversely, its solubility can be calculated from its $\\kKsp$, provided the only significant reaction that occurs when the solid dissolves is the formation of its ions.</p><p>A slightly soluble electrolyte begins to precipitate when the magnitude of the reaction quotient for the dissolution reaction exceeds the magnitude of the solubility product. Precipitation continues until the reaction quotient equals the solubility product.</p>",
-  "notes": "The Link to Learning on the solubility of salts and the two notes’ closing pointers to outside websites are left out; kept as printed are “Le ChÂtelier’s”, Example 15.1’s “(PO₄)3OH”, Example 15.10’s “log(3.3 × 10-4)”, the barium note’s “10.08 × 10⁻¹⁰” and the wastewater note’s “Ca₅(PO4)₃OH”.",
-  "ai": {
-    "text": [
-      {
-        "model": "claude-opus-5-5",
-        "effort": "high"
-      }
-    ],
-    "figures": [
-      {
-        "model": "claude-opus-5-5",
-        "effort": "high"
-      }
-    ]
-  },
-  "built": "2026-10-05",
-  "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The twenty-two unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp13178304, fs-idp13415712, fs-idp14351088, fs-idp14705520, fs-idp14816032, fs-idp14880288, fs-idp14989248, fs-idp1289872, fs-idp1405168, fs-idp1563760, fs-idp1597744, fs-idp1664496, fs-idp1720944, fs-idp1768416, fs-idp1852800, fs-idp1891472, fs-idp2236432, fs-idp2372080, fs-idp2754176, fs-idp2852912, fs-idp2945408, fs-idp3007504. fs-idp15620912, fs-idp15767216, fs-idp15773008, fs-idp15782160, fs-idp14702288 and fs-idm301808 carry a suggested approach marked as OmniStax’s own, and the unkeyed choice items fs-idp13349584 and fs-idp2172896 are kept as open items with their options. fs-idp2894848, a simulation-exercise on an outside simulation of soluble salts, is held. Taken from sibling sections because they test this section’s ideas: fs-idp46388832 from 15.2, and fs-idm301808 and fs-idp11595856 from 15.3. Kept as printed: the key to fs-idp14499248 writes [Ti⁺] for [Tl⁺] and [C₂)₄²⁻] in part (d); fs-idp14703872 asks about Exercise 15.18, which itself refers to Exercise 15.17; the key to fs-idp2976256 ends “K<sub>sp</sub> value.” a second time; fs-idp15620912 leaves “(b” unclosed. Answers the book gives to one significant figure accept 15%.",
   "figures": [
-    {
-      "id": "sim-agcl",
-      "kind": "sim",
-      "number": "15.2",
-      "originals": [
-        "/media/ch15/CNX_Chem_15_01_AgCl.jpg"
-      ],
-      "original_caption": "Silver chloride is a sparingly soluble ionic solid. When it is added to water, it dissolves slightly and produces a mixture consisting of a very dilute solution of Ag⁺ and Cl⁻ ions in equilibrium with undissolved silver chloride.",
-      "draws": ["equilibrium-constant", "concentration"],
-      "conventions": [
-        "Ag",
-        "Cl",
-        "O",
-        "H"
-      ],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "built"
-        }
-      ]
-    },
-    {
-      "id": "fig-oil-paints",
-      "kind": "photo",
-      "number": "15.3",
-      "draws": [],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "built"
-        }
-      ]
-    },
-    {
-      "id": "fig-barium-xray",
-      "kind": "photo",
-      "number": "15.4",
-      "draws": [],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "built"
-        }
-      ]
-    },
-    {
-      "id": "fig-blood",
-      "kind": "photo",
-      "number": "15.5",
-      "draws": [],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "built"
-        }
-      ]
-    },
-    {
-      "id": "fig-wastewater",
-      "kind": "photo",
-      "number": "15.6",
-      "draws": [],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "built"
-        }
-      ]
-    },
-    {
-      "id": "sim-ksp-plane",
-      "kind": "sim",
-      "draws": [
-        "concentration",
-        "equilibrium-constant"
-      ],
-      "ai": [
-        {
-          "model": "claude-opus-5-5",
-          "effort": "high",
-          "part": "built"
-        }
-      ]
-    }
-  ],
-  "referents": [
-    {
-      "id": "agcl",
-      "label": "AgCl",
-      "figures": [
-        "sim-ksp-plane"
-      ]
-    },
-    {
-      "id": "agbr",
-      "label": "AgBr",
-      "figures": [
-        "sim-ksp-plane"
-      ]
-    }
-  ],
-  "coverage": [
-    {
-      "span": "solubility-product",
-      "concept": "solubility-product",
-      "verb": "introduces"
-    },
-    {
-      "span": "solubility-product",
-      "concept": "write-ksp-expression",
-      "verb": "introduces"
-    },
-    {
-      "span": "solubility-product",
-      "concept": "solubility-and-saturation",
-      "verb": "uses"
-    },
-    {
-      "span": "solubility-product",
-      "concept": "saturated-solution",
-      "verb": "uses"
-    },
-    {
-      "span": "solubility-product",
-      "concept": "chemical-equilibrium",
-      "verb": "uses"
-    },
-    {
-      "span": "solubility-product",
-      "concept": "homogeneous-and-heterogeneous-equilibria",
-      "verb": "uses"
-    },
-    {
-      "span": "solubility-product",
-      "concept": "equilibrium-constant",
-      "verb": "uses"
-    },
-    {
-      "span": "solubility-product",
-      "concept": "dissociation-of-ionic-compounds",
-      "verb": "uses"
-    },
-    {
-      "span": "ksp-solubility",
-      "concept": "molar-solubility",
-      "verb": "introduces"
-    },
-    {
-      "span": "ksp-solubility",
-      "concept": "ksp-from-solubility",
-      "verb": "introduces"
-    },
-    {
-      "span": "ksp-solubility",
-      "concept": "molar-solubility-from-ksp",
-      "verb": "introduces"
-    },
-    {
-      "span": "ksp-solubility",
-      "concept": "ice-change-terms",
-      "verb": "uses"
-    },
-    {
-      "span": "ksp-solubility",
-      "concept": "molarity",
-      "verb": "uses"
-    },
-    {
-      "span": "ksp-solubility",
-      "concept": "mass-mole-conversion",
-      "verb": "uses"
-    },
-    {
-      "span": "ksp-solubility",
-      "concept": "solubility-product",
-      "verb": "reinforces"
-    },
-    {
-      "span": "precipitation",
-      "concept": "qsp-versus-ksp",
-      "verb": "introduces"
-    },
-    {
-      "span": "precipitation",
-      "concept": "precipitation-concentration",
-      "verb": "introduces"
-    },
-    {
-      "span": "precipitation",
-      "concept": "selective-precipitation",
-      "verb": "introduces"
-    },
-    {
-      "span": "precipitation",
-      "concept": "reaction-quotient",
-      "verb": "uses"
-    },
-    {
-      "span": "precipitation",
-      "concept": "predict-direction-q-versus-k",
-      "verb": "uses"
-    },
-    {
-      "span": "precipitation",
-      "concept": "dilution-equation",
-      "verb": "uses"
-    },
-    {
-      "span": "precipitation",
-      "concept": "ph-calculations",
-      "verb": "uses"
-    },
-    {
-      "span": "precipitation",
-      "concept": "supersaturated-solutions",
-      "verb": "uses"
-    },
-    {
-      "span": "common-ion",
-      "concept": "common-ion-effect",
-      "verb": "introduces"
-    },
-    {
-      "span": "common-ion",
-      "concept": "le-chateliers-principle",
-      "verb": "uses"
-    },
-    {
-      "span": "common-ion",
-      "concept": "concentration-stress",
-      "verb": "uses"
-    },
-    {
-      "span": "common-ion",
-      "concept": "small-x-approximation",
-      "verb": "uses"
-    },
-    {
-      "span": "common-ion",
-      "concept": "solubility-product",
-      "verb": "reinforces"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "cyl1",
-      "source_id": "fs-idm38560",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-ksp-expressions"
-      },
-      "cite": "solubility-product",
-      "prompt": "Write the dissolution equation and the solubility product for each of the following slightly soluble compounds:<br>(a) BaSO<sub>4</sub><br>(b) Ag<sub>2</sub>SO<sub>4</sub><br>(c) Al(OH)<sub>3</sub><br>(d) Pb(OH)Cl",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "$\\begin{array}{llrll}(\\text{a})\\;{\\text{BaSO}}_{4}(s)\\rightleftharpoons {\\text{Ba}}^{\\text{2+}}(aq)+{\\text{SO}}_{4}{}^{\\text{2−}}(aq) & & {K}_{\\text{sp}} & = & [{\\text{Ba}}^{\\text{2+}}{][\\text{SO}}_{4}{{}^{2}}^{\\text{−}}]; \\\\ (\\text{b})\\;{\\text{Ag}}_{2}{\\text{SO}}_{4}(s)\\rightleftharpoons {\\text{2Ag}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{\\text{2−}}(aq) & & {K}_{\\text{sp}} & = & {[{\\text{Ag}}^{\\text{+}}]}^{2}[{\\text{SO}}_{4}{}^{\\text{2−}}]; \\\\ (\\text{c})\\;{\\text{Al}(\\text{OH})}_{3}(s)\\rightleftharpoons {\\text{Al}}^{\\text{3+}}(aq)+{\\text{3OH}}^{\\text{−}}(aq) & & {K}_{\\text{sp}} & = & [{\\text{Al}}^{\\text{3+}}]{[\\text{OH}}^{\\text{−}}{]}^{\\text{3}}; \\\\ (\\text{d})\\;\\text{Pb(OH)Cl(}s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)+{\\text{Cl}}^{\\text{−}}(aq) & & {K}_{\\text{sp}} & = & [{\\text{Pb}}^{\\text{2+}}]{[\\text{OH}}^{\\text{−}}][{\\text{Cl}}^{\\text{−}}]\\end{array}$"
-      }
-    },
-    {
-      "id": "cyl2",
-      "source_id": "fs-idp844816",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-ksp-from-concentrations"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "In a saturated solution of Mg(OH)<sub>2</sub>, the concentration of Mg<sup>2+</sup> is 1.31 × 10<sup>–4</sup> <em>M</em>. What is the solubility product for Mg(OH)<sub>2</sub>?<br>${\\text{Mg(OH)}}_{2}(s)\\rightleftharpoons {\\text{Mg}}^{\\text{2+}}(aq)+{\\text{2OH}}^{\\text{−}}(aq)$",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 8.99e-12,
-        "hint": "The dissolution gives two OH<sup>−</sup> for each Mg<sup>2+</sup>, so [OH<sup>−</sup>] is twice [Mg<sup>2+</sup>]; then <em>K</em><sub>sp</sub> = [Mg<sup>2+</sup>][OH<sup>−</sup>]<sup>2</sup>.",
-        "solution": "8.99 × 10<sup>–12</sup>"
-      }
-    },
-    {
-      "id": "cyl3",
-      "source_id": "fs-idp261504",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-cubr"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "The <em>K</em><sub>sp</sub> of AgI is 1.5 × 10<sup>–16</sup>. Calculate the molar solubility of silver iodide.",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 1.2e-08,
-        "unit": "M",
-        "hint": "AgI gives one Ag<sup>+</sup> and one I<sup>−</sup>, so <em>K</em><sub>sp</sub> = <em>x</em><sup>2</sup>.",
-        "solution": "1.2 × 10<sup>–8</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "cyl4",
-      "source_id": "fs-idp647936",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-caoh2"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "The <em>K</em><sub>sp</sub> of PbI<sub>2</sub> is 1.4 × 10<sup>–8</sup>. Calculate the molar solubility of lead(II) iodide.",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 0.0015,
-        "unit": "M",
-        "hint": "PbI<sub>2</sub> gives <em>x</em> of Pb<sup>2+</sup> and 2<em>x</em> of I<sup>−</sup>, so <em>K</em><sub>sp</sub> = 4<em>x</em><sup>3</sup>.",
-        "solution": "1.5 × 10<sup>–3</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "cyl5",
-      "source_id": "fs-idp836192",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-pbcro4"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "The solubility of TlCl [thallium(I) chloride], an intermediate formed when thallium is being isolated from ores, is 3.12 grams per liter at 20 °C. What is its solubility product?",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 0.000169,
-        "hint": "Convert 3.12 g/L to a molar solubility with the molar mass of TlCl; both ion concentrations equal it.",
-        "solution": "1.69 × 10<sup>–4</sup>"
-      }
-    },
-    {
-      "id": "cyl6",
-      "source_id": "fs-idp91888",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-hg2cl2"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Determine the molar solubility of MgF<sub>2</sub> from its solubility product: <em>K</em><sub>sp</sub> = 6.4 × 10<sup>–9</sup>.",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 0.0012,
-        "unit": "M",
-        "hint": "<em>K</em><sub>sp</sub> = [Mg<sup>2+</sup>][F<sup>−</sup>]<sup>2</sup> = (<em>x</em>)(2<em>x</em>)<sup>2</sup> = 4<em>x</em><sup>3</sup>.",
-        "solution": "1.2 × 10<sup>–3</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "cyl7",
-      "source_id": "fs-idp69099520",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-mgoh2"
-      },
-      "cite": "precipitation",
-      "prompt": "Predict whether CaHPO<sub>4</sub> will precipitate from a solution with [Ca<sup>2+</sup>] = 0.0001 <em>M</em> and $[{\\text{HPO}}_{4}{}^{\\text{2−}}]$ = 0.001 <em>M</em>.",
-      "answer": {
-        "type": "choice",
-        "generated_by": "source",
-        "options": [
-          "CaHPO<sub>4</sub> precipitates.",
-          "CaHPO<sub>4</sub> does not precipitate."
-        ],
-        "correct": 1,
-        "hint": "Compare <em>Q</em> = [Ca<sup>2+</sup>][HPO<sub>4</sub><sup>2−</sup>] with the <em>K</em><sub>sp</sub> of CaHPO<sub>4</sub> in Appendix J.",
-        "solution": "No precipitation of CaHPO<sub>4</sub>; <em>Q</em> = 1 × 10<sup>–7</sup>, which is less than <em>K</em><sub>sp</sub> (7 × 10<sup>–7</sup>)"
-      }
-    },
-    {
-      "id": "cyl8",
-      "source_id": "fs-idp11872704",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-agcl"
-      },
-      "cite": "precipitation",
-      "prompt": "Will KClO<sub>4</sub> precipitate when 20 mL of a 0.050-<em>M</em> solution of K<sup>+</sup> is added to 80 mL of a 0.50-<em>M</em> solution of ${\\text{ClO}}_{4}{}^{\\text{−}}?$ (Hint: Use the dilution equation to calculate the concentrations of potassium and perchlorate ions in the mixture.)",
-      "answer": {
-        "type": "choice",
-        "generated_by": "source",
-        "options": [
-          "KClO<sub>4</sub> precipitates.",
-          "KClO<sub>4</sub> does not precipitate."
-        ],
-        "correct": 1,
-        "hint": "Both solutions are diluted to 100 mL; find [K<sup>+</sup>] and [ClO<sub>4</sub><sup>−</sup>] in the mixture, then compare <em>Q</em> with <em>K</em><sub>sp</sub>.",
-        "solution": "No, <em>Q</em> = 4.0 × 10<sup>–3</sup>, which is less than <em>K</em><sub>sp</sub> = 1.05 × 10<sup>–2</sup>"
-      }
-    },
-    {
-      "id": "cyl9",
-      "source_id": "fs-idp488672",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-oxalate"
-      },
-      "cite": "precipitation",
-      "prompt": "If a solution contains 0.0020 mol of ${\\text{CrO}}_{4}{}^{\\text{2−}}$ per liter, what concentration of Ag<sup>+</sup> ion must be reached by adding solid AgNO<sub>3</sub> before Ag<sub>2</sub>CrO<sub>4</sub> begins to precipitate? Neglect any increase in volume upon adding the solid silver nitrate.",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 6.7e-05,
-        "unit": "M",
-        "hint": "Set <em>K</em><sub>sp</sub> = [Ag<sup>+</sup>]<sup>2</sup>[CrO<sub>4</sub><sup>2−</sup>] and solve for [Ag<sup>+</sup>].",
-        "solution": "6.7 × 10<sup>–5</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "cyl10",
-      "source_id": "fs-idp392704",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-mn"
-      },
-      "cite": "precipitation",
-      "prompt": "The first step in the preparation of magnesium metal is the precipitation of Mg(OH)<sub>2</sub> from sea water by the addition of Ca(OH)<sub>2</sub>. The concentration of Mg<sup>2+</sup>(<em>aq</em>) in sea water is 5.37 × 10<sup>–2</sup> <em>M</em>. Calculate the pH at which [Mg<sup>2+</sup>] is decreased to 1.0 × 10<sup>–5</sup> <em>M</em>",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 10.97,
-        "tol": 0.002,
-        "hint": "Find [OH<sup>−</sup>] from <em>K</em><sub>sp</sub> = [Mg<sup>2+</sup>][OH<sup>−</sup>]<sup>2</sup> with [Mg<sup>2+</sup>] = 1.0 × 10<sup>−5</sup> <em>M</em>, then pOH and pH.",
-        "solution": "10.97"
-      }
-    },
-    {
-      "id": "cyl11",
-      "source_id": "fs-idp1242128",
-      "kind": "check-your-learning",
-      "bloom": "Analyze",
-      "place": {
-        "at": "inline",
-        "after": "ex-halides"
-      },
-      "cite": "precipitation",
-      "prompt": "If silver nitrate solution is added to a solution which is 0.050 <em>M</em> in both Cl<sup>–</sup> and Br<sup>–</sup> ions, at what [Ag<sup>+</sup>] would precipitation begin, and what would be the formula of the precipitate?",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 1e-11,
-        "unit": "M",
-        "part": "[Ag<sup>+</sup>] at which precipitation begins",
-        "hint": "With equal halide concentrations, the salt with the smaller <em>K</em><sub>sp</sub> needs the lower [Ag<sup>+</sup>]; divide its <em>K</em><sub>sp</sub> by 0.050 <em>M</em>.",
-        "solution": "[Ag<sup>+</sup>] = 1.0 × 10<sup>–11</sup> <em>M</em>; AgBr precipitates first"
-      }
-    },
-    {
-      "id": "cyl12",
-      "source_id": "fs-idp11083040",
-      "kind": "check-your-learning",
-      "bloom": "Understand",
-      "place": {
-        "at": "inline",
-        "after": "ex-common-ion"
-      },
-      "cite": "common-ion",
-      "prompt": "What is the effect on the amount of solid NiCO<sub>3</sub> and the concentrations of Ni<sup>2+</sup> and ${\\text{CO}}_{3}{}^{\\text{2−}}$ when each of the following are added to a saturated solution of NiCO<sub>3</sub><br>(a) Ni(NO<sub>3</sub>)<sub>2</sub><br>(b) KClO<sub>4</sub><br>(c) NiCO<sub>3</sub><br>(d) K<sub>2</sub>CO<sub>3</sub>",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "(a) mass of NiCO<sub>3</sub>(<em>s</em>) increases, [Ni<sup>2+</sup>] increases, $[{\\text{CO}}_{3}{}^{\\text{2−}}]$ decreases; (b) no appreciable effect; (c) no effect except to increase the amount of solid NiCO<sub>3</sub>; (d) mass of NiCO<sub>3</sub>(<em>s</em>) increases, [Ni<sup>2+</sup>] decreases, $[{\\text{CO}}_{3}{}^{\\text{2−}}]$ increases;"
-      }
-    },
-    {
-      "id": "cyl13",
-      "source_id": "fs-idp15318512",
-      "kind": "check-your-learning",
-      "bloom": "Apply",
-      "place": {
-        "at": "inline",
-        "after": "ex-cds"
-      },
-      "cite": "common-ion",
-      "prompt": "Calculate the molar solubility of aluminum hydroxide, Al(OH)<sub>3</sub>, in a 0.015-<em>M</em> solution of aluminum nitrate, Al(NO<sub>3</sub>)<sub>3</sub>. The <em>K</em><sub>sp</sub> of Al(OH)<sub>3</sub> is 2 × 10<sup>–32</sup>.",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 4e-11,
-        "unit": "M",
-        "tol": 0.15,
-        "hint": "Take [Al<sup>3+</sup>] ≈ 0.015 <em>M</em> and [OH<sup>−</sup>] = 3<em>x</em>, so <em>K</em><sub>sp</sub> = (0.015)(3<em>x</em>)<sup>3</sup>.",
-        "solution": "4 × 10<sup>–11</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "e1",
-      "source_id": "fs-idp13536336",
-      "source_number": "1",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Complete the changes in concentrations for each of the following reactions:<br>(a)<br>$\\begin{array}{lll}\\text{AgI}(s)\\;\\longrightarrow \\; & {\\text{Ag}}^{\\text{+}}\\;(aq) & +\\;{\\text{I}}^{\\text{−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>(b)<br>$\\begin{array}{lll}{\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\; & {\\text{Ca}}^{\\text{2+}}(aq)+ & {\\text{CO}}_{3}{}^{\\text{2−}}(aq) \\\\ \\\\ & \\_\\_\\_\\_ & x\\end{array}$<br>(c)<br>$\\begin{array}{lll}\\text{Mg}{(\\text{OH})}_{2}(s)\\;\\longrightarrow \\; & {\\text{Mg}}^{\\text{2+}}(aq)+ & 2{\\text{OH}}^{\\text{−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>(d)<br>$\\begin{array}{lll}{\\text{Mg}}_{3}({\\text{PO}}_{4}{)}_{2}(s)\\;\\longrightarrow \\; & 3{\\text{Mg}}^{\\text{2+}}(aq)+ & 2{\\text{PO}}_{4}{}^{\\text{3−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>(e)<br>$\\begin{array}{llll}{\\text{Ca}}_{5}({\\text{PO}}_{4}{)}_{3}\\text{OH}(s)\\;\\longrightarrow \\; & 5{\\text{Ca}}^{\\text{2+}}(aq)+ & 3{\\text{PO}}_{4}{}^{\\text{3−}}(aq)+ & {\\text{OH}}^{\\text{−}}(aq) \\\\ \\\\ & \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_ & x\\end{array}$",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "(a)<br>$\\begin{array}{lll}\\text{AgI}(s)\\rightleftharpoons & {\\text{Ag}}^{\\text{+}}(aq)+ & {\\text{I}}^{\\text{−}}(aq) \\\\ \\\\ & x & \\underline{x}\\end{array}$<br>(b)<br>$\\begin{array}{lll}{\\text{CaCO}}_{3}(s)\\rightleftharpoons & {\\text{Ca}}^{\\text{2+}}(aq)+ & {\\text{CO}}_{3}{}^{\\text{2−}}(aq) \\\\ \\\\ & \\underline{x} & x\\end{array}$<br>(c)<br>$\\begin{array}{lll}\\text{Mg}{(\\text{OH})}_{2}(s)\\rightleftharpoons & {\\text{Mg}}^{\\text{2+}}(aq) & +\\;2{\\text{OH}}^{\\text{−}}(aq) \\\\ & x & \\underline{\\text{2}x}\\end{array}$<br>(d)<br>$\\begin{array}{lll}{\\text{Mg}}_{3}{({\\text{PO}}_{4})}_{2}(s)\\rightleftharpoons & {\\text{3Mg}}^{\\text{2+}}(aq)+ & {\\text{2PO}}_{4}{}^{\\text{3−}}(aq) \\\\ \\\\ & \\underline{x} & \\frac{2}{3}x\\end{array}$<br>(e)<br>$\\begin{array}{llll}{\\text{Ca}}_{5}({\\text{PO}}_{4}{)}_{3}\\text{OH}(s)\\rightleftharpoons & {\\text{5Ca}}^{\\text{2+}}(aq)+ & {\\text{3PO}}_{4}{}^{\\text{3−}}(aq)+ & {\\text{OH}}^{\\text{−}}(aq) \\\\ \\\\ & \\underline{5x} & \\underline{3x} & x\\end{array}$"
-      }
-    },
-    {
-      "id": "e2",
-      "source_id": "fs-idp15620912",
-      "source_number": "2",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Complete the changes in concentrations for each of the following reactions:<br>(a)<br>$\\begin{array}{lll}{\\text{BaSO}}_{4}(s)\\;\\longrightarrow \\; & {\\text{Ba}}^{\\text{2+}}(aq)+ & {\\text{SO}}_{4}{}^{\\text{2−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>(b<br>$\\begin{array}{lll}{\\text{Ag}}_{2}{\\text{SO}}_{4}(s)\\;\\longrightarrow \\; & 2{\\text{Ag}}^{\\text{+}}(aq)+ & {\\text{SO}}_{4}{}^{\\text{2−}}(aq) \\\\ \\\\ & \\_\\_\\_\\_\\_ & x\\end{array}$<br>(c)<br>$\\begin{array}{lll}\\text{Al}{(\\text{OH})}_{3}(s)\\;\\longrightarrow \\; & {\\text{Al}}^{\\text{3+}}(aq)+ & 3{\\text{OH}}^{\\text{−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>(d)<br>$\\begin{array}{llll}\\text{Pb}(\\text{OH})\\text{Cl}(s)\\;\\longrightarrow \\; & {\\text{Pb}}^{\\text{2+}}(aq)+ & {\\text{OH}}^{\\text{−}}(aq)+ & {\\text{Cl}}^{\\text{−}}(aq) \\\\ \\\\ & \\_\\_\\_\\_\\_\\; & x & \\_\\_\\_\\_\\_\\end{array}$<br>(e)<br>$\\begin{array}{lll}{\\text{Ca}}_{3}({\\text{AsO}}_{4}{)}_{2}(s)\\;\\longrightarrow \\; & 3{\\text{Ca}}^{\\text{2+}}(aq)+ & 2{\\text{AsO}}_{4}{}^{\\text{3−}}(aq) \\\\ \\\\ & 3x & \\_\\_\\_\\_\\_\\end{array}$",
-      "answer": {
-        "type": "open",
-        "generated_by": "ai",
-        "solution": "(a) $x$ and $x$: one mole of BaSO<sub>4</sub> gives one mole of each ion, so both changes equal the molar solubility $x$.<br>(b) $2x$ and $x$: the change $x$ for ${\\text{SO}}_{4}{}^{\\text{2−}}$ is the molar solubility, and each formula unit releases two Ag<sup>+</sup> ions, so [Ag<sup>+</sup>] rises by $2x$.<br>(c) $x$ and $3x$: the change for Al<sup>3+</sup> is the molar solubility, and three OH<sup>−</sup> ions come with each Al<sup>3+</sup>.<br>(d) $x$, $x$ and $x$: Pb(OH)Cl releases one ion of each kind, so the change $x$ given for OH<sup>−</sup> is also the change for Pb<sup>2+</sup> and for Cl<sup>−</sup>.<br>(e) $3x$ and $2x$: the change $3x$ for Ca<sup>2+</sup> means a molar solubility of $x$, and two ${\\text{AsO}}_{4}{}^{\\text{3−}}$ ions dissolve per formula unit, so their concentration rises by $2x$."
-      }
-    },
-    {
-      "id": "e3",
-      "source_id": "fs-idp15761856",
-      "source_number": "3",
-      "kind": "exercise",
-      "bloom": "Understand",
-      "place": {
-        "at": "end"
-      },
-      "cite": "solubility-product",
-      "prompt": "How do the concentrations of Ag<sup>+</sup> and ${\\text{CrO}}_{4}{}^{\\text{2−}}$ in a saturated solution above 1.0 g of solid Ag<sub>2</sub>CrO<sub>4</sub> change when 100 g of solid Ag<sub>2</sub>CrO<sub>4</sub> is added to the system? Explain.",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "There is no change. A solid has an activity of 1 whether there is a little or a lot."
-      }
-    },
-    {
-      "id": "e4",
-      "source_id": "fs-idp15767216",
-      "source_number": "4",
-      "kind": "exercise",
-      "bloom": "Understand",
-      "place": {
-        "at": "end"
-      },
-      "cite": "common-ion",
-      "prompt": "How do the concentrations of Pb<sup>2+</sup> and S<sup>2–</sup> change when K<sub>2</sub>S is added to a saturated solution of PbS?",
-      "answer": {
-        "type": "open",
-        "generated_by": "ai",
-        "solution": "The concentration of S<sup>2–</sup> increases and the concentration of Pb<sup>2+</sup> decreases. In the saturated solution $\\text{PbS}(s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)$ is at equilibrium, with $\\kKsp=[{\\text{Pb}}^{\\text{2+}}][{\\text{S}}^{\\text{2−}}]=7\\;\\times \\;{10}^{-29}$. K<sub>2</sub>S is a soluble salt that adds S<sup>2–</sup>, the common ion. The reaction quotient then exceeds $\\kKsp$, so by Le Châtelier’s principle the equilibrium shifts to the left: Pb<sup>2+</sup> and S<sup>2–</sup> combine and more solid PbS precipitates. The precipitation removes only a small part of the added sulfide, so [S<sup>2–</sup>] ends higher than before, while [Pb<sup>2+</sup>] falls until the product of the two concentrations is again equal to $\\kKsp$."
-      }
-    },
-    {
-      "id": "e5",
-      "source_id": "fs-idp15771216",
-      "source_number": "5",
-      "kind": "exercise",
-      "bloom": "Understand",
-      "place": {
-        "at": "end"
-      },
-      "cite": "solubility-product",
-      "prompt": "What additional information do we need to answer the following question: How is the equilibrium of solid silver bromide with a saturated solution of its ions affected when the temperature is raised?",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "The solubility of silver bromide at the new temperature must be known. Normally the solubility increases and some of the solid silver bromide will dissolve."
-      }
-    },
-    {
-      "id": "e6",
-      "source_id": "fs-idp15773008",
-      "source_number": "6",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Which of the following slightly soluble compounds has a solubility greater than that calculated from its solubility product because of hydrolysis of the anion present: CoSO<sub>3</sub>, CuI, PbCO<sub>3</sub>, PbCl<sub>2</sub>, Tl<sub>2</sub>S, KClO<sub>4</sub>?",
-      "answer": {
-        "type": "open",
-        "generated_by": "ai",
-        "solution": "CoSO<sub>3</sub>, PbCO<sub>3</sub> and Tl<sub>2</sub>S. Their anions, sulfite, carbonate and sulfide, are conjugate bases of the weak acids ${\\text{HSO}}_{3}{}^{-}$, ${\\text{HCO}}_{3}{}^{-}$ and HS<sup>–</sup>, so each reacts with water, for example ${\\text{CO}}_{3}{}^{\\text{2−}}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{HCO}}_{3}{}^{-}(aq)+{\\text{OH}}^{-}(aq)$. This hydrolysis lowers the concentration of the free anion below the value the dissolution alone would give, the dissolution equilibrium shifts to the right, and more solid dissolves than the $\\kKsp$ predicts. The anions of CuI, PbCl<sub>2</sub> and KClO<sub>4</sub>, iodide, chloride and perchlorate, are conjugate bases of the strong acids HI, HCl and HClO<sub>4</sub>; they do not react with water, and the solubility of these salts is the one calculated from the solubility product."
-      }
-    },
-    {
-      "id": "e7",
-      "source_id": "fs-idp15777680",
-      "source_number": "7",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Which of the following slightly soluble compounds has a solubility greater than that calculated from its solubility product because of hydrolysis of the anion present: AgCl, BaSO<sub>4</sub>, CaF<sub>2</sub>, Hg<sub>2</sub>I<sub>2</sub>, MnCO<sub>3</sub>, and ZnS?",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "CaF<sub>2</sub>, MnCO<sub>3</sub>, and ZnS"
-      }
-    },
-    {
-      "id": "e8",
-      "source_id": "fs-idp15782160",
-      "source_number": "8",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "solubility-product",
-      "prompt": "Write the ionic equation for dissolution and the solubility product (<em>K</em><sub>sp</sub>) expression for each of the following slightly soluble ionic compounds:<br>(a) PbCl<sub>2</sub><br>(b) Ag<sub>2</sub>S<br>(c) Sr<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub><br>(d) SrSO<sub>4</sub>",
-      "answer": {
-        "type": "open",
-        "generated_by": "ai",
-        "solution": "(a) $\\text{PbCl}_{2}(s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)\\hspace{2em}\\kKsp=[{\\text{Pb}}^{\\text{2+}}]{[{\\text{Cl}}^{\\text{−}}]}^{2}$<br>(b) ${\\text{Ag}}_{2}\\text{S}(s)\\rightleftharpoons 2{\\text{Ag}}^{\\text{+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)\\hspace{2em}\\kKsp={[{\\text{Ag}}^{\\text{+}}]}^{2}[{\\text{S}}^{\\text{2−}}]$<br>(c) ${\\text{Sr}}_{3}{({\\text{PO}}_{4})}_{2}(s)\\rightleftharpoons 3{\\text{Sr}}^{\\text{2+}}(aq)+2{\\text{PO}}_{4}{}^{\\text{3−}}(aq)\\hspace{2em}\\kKsp={[{\\text{Sr}}^{\\text{2+}}]}^{3}{[{\\text{PO}}_{4}{}^{\\text{3−}}]}^{2}$<br>(d) ${\\text{SrSO}}_{4}(s)\\rightleftharpoons {\\text{Sr}}^{\\text{2+}}(aq)+{\\text{SO}}_{4}{}^{\\text{2−}}(aq)\\hspace{2em}\\kKsp=[{\\text{Sr}}^{\\text{2+}}][{\\text{SO}}_{4}{}^{\\text{2−}}]$<br>Each coefficient in the dissolution equation becomes the exponent of that ion’s concentration, and the undissolved solid has no term in the expression."
-      }
-    },
-    {
-      "id": "e9",
-      "source_id": "fs-idp13118608",
-      "source_number": "9",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "solubility-product",
-      "prompt": "Write the ionic equation for the dissolution and the <em>K</em><sub>sp</sub> expression for each of the following slightly soluble ionic compounds:<br>(a) LaF<sub>3</sub><br>(b) CaCO<sub>3</sub><br>(c) Ag<sub>2</sub>SO<sub>4</sub><br>(d) Pb(OH)<sub>2</sub>",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "(a) ${\\text{LaF}}_{3}(s)\\rightleftharpoons {\\text{La}}^{\\text{3+}}(aq)+{\\text{3F}}^{\\text{−}}(aq)\\hspace{4em}{K}_{\\text{sp}}=[{\\text{La}}^{\\text{3+}}]{[\\text{F}}^{\\text{−}}{]}^{3};$<br>(b) ${\\text{CaCO}}_{3}(s)\\rightleftharpoons {\\text{Ca}}^{\\text{2+}}(aq)+{\\text{CO}}_{3}{}^{\\text{2−}}(aq)\\hspace{4em}{K}_{\\text{sp}}=[{\\text{Ca}}^{\\text{2+}}][{\\text{CO}}_{3}{}^{\\text{2−}}];$<br>(c) ${\\text{Ag}}_{2}{\\text{SO}}_{4}(s)\\rightleftharpoons {\\text{2Ag}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{\\text{2−}}(aq)\\hspace{4em}{K}_{\\text{sp}}={[{\\text{Ag}}^{\\text{+}}]}^{2}[{\\text{SO}}_{4}{}^{\\text{2−}}];$<br>(d) ${\\text{Pb(OH)}}_{2}(s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+{\\text{2OH}}^{\\text{−}}(aq)\\hspace{4em}{K}_{\\text{sp}}=[{\\text{Pb}}^{\\text{2+}}]{[{\\text{OH}}^{\\text{−}}]}^{2}$"
-      }
-    },
-    {
-      "id": "e11",
-      "source_id": "fs-idp13270928",
-      "source_number": "11",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "The <em>Handbook of Chemistry and Physics</em> gives solubilities of the following compounds in grams per 100 mL of water. Because these compounds are only slightly soluble, assume that the volume does not change on dissolution and calculate the solubility product for each.<br>(a) BaSeO<sub>4</sub>, 0.0118 g/100 mL<br>(b) Ba(BrO<sub>3</sub>)<sub>2</sub>·H<sub>2</sub>O, 0.30 g/100 mL<br>(c) NH<sub>4</sub>MgAsO<sub>4</sub>·6H<sub>2</sub>O, 0.038 g/100 mL<br>(d) La<sub>2</sub>(MoO<sub>4</sub>)<sub>3</sub>, 0.00179 g/100 mL",
-      "answer": {
-        "type": "multi",
-        "generated_by": "source",
-        "parts": [
-          {
-            "part": "(a) <em>K</em><sub>sp</sub> of BaSeO<sub>4</sub>",
-            "value": 1.77e-07,
-            "hint": "Convert grams per 100 mL to moles per liter with each molar mass, then write the ion concentrations from the formula."
-          },
-          {
-            "part": "(b) <em>K</em><sub>sp</sub> of Ba(BrO<sub>3</sub>)<sub>2</sub>·H<sub>2</sub>O",
-            "value": 1.6e-06
-          },
-          {
-            "part": "(c) <em>K</em><sub>sp</sub> of NH<sub>4</sub>MgAsO<sub>4</sub>·6H<sub>2</sub>O",
-            "value": 2.2e-09
-          },
-          {
-            "part": "(d) <em>K</em><sub>sp</sub> of La<sub>2</sub>(MoO<sub>4</sub>)<sub>3</sub>",
-            "value": 7.91e-22
-          }
-        ],
-        "solution": "(a)1.77 × 10<sup>–7</sup>; (b) 1.6 × 10<sup>–6</sup>; (c) 2.2 × 10<sup>–9</sup>; (d) 7.91 × 10<sup>–22</sup>"
-      }
-    },
-    {
-      "id": "e12",
-      "source_id": "fs-idp13349584",
-      "source_number": "12",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Use solubility products and predict which of the following salts is the most soluble, in terms of moles per liter, in pure water: CaF<sub>2</sub>, Hg<sub>2</sub>Cl<sub>2</sub>, PbI<sub>2</sub>, or Sn(OH)<sub>2</sub>.",
-      "answer": {
-        "type": "open",
-        "generated_by": "ai",
-        "solution": "PbI<sub>2</sub> is the most soluble, at about 1.5 × 10<sup>–3</sup> <em>M</em>. Each of the four salts dissolves to one cation and two anions (the mercury(I) ion is ${\\text{Hg}}_{2}{}^{\\text{2+}}$), so for a molar solubility $x$ every one has $\\kKsp=(x){(2x)}^{2}=4{x}^{3}$, and the salt with the largest $\\kKsp$ has the largest molar solubility. From Appendix J: CaF<sub>2</sub>, $4{x}^{3}=4.0\\;\\times \\;{10}^{-11}$, $x=2.2\\;\\times \\;{10}^{-4}\\;M$; Hg<sub>2</sub>Cl<sub>2</sub>, $4{x}^{3}=1.1\\;\\times \\;{10}^{-18}$, $x=6.5\\;\\times \\;{10}^{-7}\\;M$; PbI<sub>2</sub>, $4{x}^{3}=1.4\\;\\times \\;{10}^{-8}$, $x=1.5\\;\\times \\;{10}^{-3}\\;M$; Sn(OH)<sub>2</sub>, $4{x}^{3}=3\\;\\times \\;{10}^{-27}$, $x=9\\;\\times \\;{10}^{-10}\\;M$. PbI<sub>2</sub> has the largest $\\kKsp$ and the greatest molar solubility."
-      }
-    },
-    {
-      "id": "e13",
-      "source_id": "fs-idp13365680",
-      "source_number": "13",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Assuming that no equilibria other than dissolution are involved, calculate the molar solubility of each of the following from its solubility product:<br>(a) KHC<sub>4</sub>H<sub>4</sub>O<sub>6</sub><br>(b) PbI<sub>2</sub><br>(c) Ag<sub>4</sub>[Fe(CN)<sub>6</sub>], a salt containing the ${\\text{Fe(CN)}}_{6}{}^{\\text{4–}}$ ion<br>(d) Hg<sub>2</sub>I<sub>2</sub>",
-      "answer": {
-        "type": "multi",
-        "generated_by": "source",
-        "parts": [
-          {
-            "part": "(a) KHC<sub>4</sub>H<sub>4</sub>O<sub>6</sub>",
-            "value": 0.02,
-            "unit": "M",
-            "tol": 0.15,
-            "hint": "Take each <em>K</em><sub>sp</sub> from Appendix J and write it in terms of <em>x</em> from the dissolution equation."
-          },
-          {
-            "part": "(b) PbI<sub>2</sub>",
-            "value": 0.0015,
-            "unit": "M"
-          },
-          {
-            "part": "(c) Ag<sub>4</sub>[Fe(CN)<sub>6</sub>]",
-            "value": 2.27e-09,
-            "unit": "M"
-          },
-          {
-            "part": "(d) Hg<sub>2</sub>I<sub>2</sub>",
-            "value": 2.2e-10,
-            "unit": "M"
-          }
-        ],
-        "solution": "(a) 2 × 10<sup>–2</sup> <em>M</em>; (b) 1.5 × 10<sup>–3</sup> <em>M</em>; (c) 2.27 × 10<sup>–9</sup> <em>M</em>; (d) 2.2 × 10<sup>–10</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "e15",
-      "source_id": "fs-idp14208112",
-      "source_number": "15",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "common-ion",
-      "prompt": "Assuming that no equilibria other than dissolution are involved, calculate the concentration of all solute species in each of the following solutions of salts in contact with a solution containing a common ion. Show that changes in the initial concentrations of the common ions can be neglected.<br>(a) AgCl(<em>s</em>) in 0.025 <em>M</em> NaCl<br>(b) CaF<sub>2</sub>(<em>s</em>) in 0.00133 <em>M</em> KF<br>(c) Ag<sub>2</sub>SO<sub>4</sub>(<em>s</em>) in 0.500 L of a solution containing 19.50 g of K<sub>2</sub>SO<sub>4</sub><br>(d) Zn(OH)<sub>2</sub>(<em>s</em>) in a solution buffered at a pH of 11.45",
-      "answer": {
-        "type": "multi",
-        "generated_by": "source",
-        "parts": [
-          {
-            "part": "(a) [Ag<sup>+</sup>]",
-            "value": 6.4e-09,
-            "unit": "M",
-            "hint": "Take the common ion’s concentration as its initial value and solve <em>K</em><sub>sp</sub> for the other ion."
-          },
-          {
-            "part": "(b) [Ca<sup>2+</sup>]",
-            "value": 2.2e-05,
-            "unit": "M",
-            "tol": 0.03
-          },
-          {
-            "part": "(c) [Ag<sup>+</sup>]",
-            "value": 0.0074,
-            "unit": "M"
-          },
-          {
-            "part": "(d) [Zn<sup>2+</sup>]",
-            "value": 5.7e-12,
-            "unit": "M"
-          }
-        ],
-        "solution": "(a) 6.4 × 10<sup>−9</sup> <em>M</em> = [Ag<sup>+</sup>], [Cl<sup>−</sup>] = 0.025 <em>M</em>. Check: $\\frac{6.4\\;\\times \\;{10}^{-9}\\;M}{0.025\\;M}\\;\\times \\;\\text{100\\%}=\\text{2.6}\\;\\times \\;{10}^{-5}\\%,$an insignificant change;<br>(b) 2.2 × 10<sup>−5</sup> <em>M</em> = [Ca<sup>2+</sup>], [F<sup>−</sup>] = 0.0013 <em>M</em>. Check: $\\frac{\\text{2.26}\\;\\times \\;{10}^{-5}\\;M}{0.00133\\;M}\\;\\times \\;\\text{100\\%}=\\text{1.70\\%}.$ This value is less than 5% and can be ignored.<br>(c) 0.2238 <em>M</em> = $[{\\text{SO}}_{4}{}^{2\\text{−}}];$ [Ag<sup>+</sup>] = 7.4 × 10<sup>–3</sup> <em>M</em>. Check: $\\frac{3.7\\;\\times \\;{10}^{-3}}{0.2238}\\;\\times \\;100\\%=\\text{1.64}\\;\\times \\;{10}^{-2};$ the condition is satisfied.<br>(d) [OH<sup>–</sup>] = 2.8 × 10<sup>–3</sup> <em>M</em>; 5.7 × 10<sup>−12</sup> <em>M</em> = [Zn<sup>2+</sup>]. Check: $\\frac{5.7\\;\\times \\;{10}^{-12}}{2.8\\;\\times \\;{10}^{-3}}\\;\\times \\;\\text{100\\%}=\\text{2.0}\\;\\times \\;{10}^{-7}\\%;$ <em>x</em> is less than 5% of [OH<sup>–</sup>] and is, therefore, negligible."
-      }
-    },
-    {
-      "id": "e17",
-      "source_id": "fs-idp14499248",
-      "source_number": "17",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "common-ion",
-      "prompt": "Assuming that no equilibria other than dissolution are involved, calculate the concentration of all solute species in each of the following solutions of salts in contact with a solution containing a common ion. State whether or not it is appropriate to neglect the changes in the initial concentrations of the common ions.<br>(a) TlCl(<em>s</em>) in 0.025 <em>M</em> TlNO<sub>3</sub><br>(b) BaF<sub>2</sub>(<em>s</em>) in 0.313 <em>M</em> KF<br>(c) MgC<sub>2</sub>O<sub>4</sub> in 2.250 L of a solution containing 8.156 g of Mg(NO<sub>3</sub>)<sub>2</sub><br>(d) Ca(OH)<sub>2</sub>(<em>s</em>) in an unbuffered solution initially with a pH of 12.700",
-      "answer": {
-        "type": "multi",
-        "generated_by": "source",
-        "parts": [
-          {
-            "part": "(a) [Tl<sup>+</sup>]",
-            "value": 0.031,
-            "unit": "M",
-            "hint": "In (a) the change is not small next to 0.025 <em>M</em>, so solve the quadratic; in the others take the common ion at its initial value."
-          },
-          {
-            "part": "(a) [Cl<sup>−</sup>]",
-            "value": 0.0056,
-            "unit": "M"
-          },
-          {
-            "part": "(b) [Ba<sup>2+</sup>]",
-            "value": 0.00024,
-            "unit": "M"
-          },
-          {
-            "part": "(c) [C<sub>2</sub>O<sub>4</sub><sup>2−</sup>]",
-            "value": 2.9e-05,
-            "unit": "M"
-          },
-          {
-            "part": "(d) [Ca<sup>2+</sup>]",
-            "value": 0.000518,
-            "unit": "M"
-          }
-        ],
-        "solution": "(a) The change in initial concentration of common ion may not be neglected (must solve quadratic equation)<br>[Ti<sup>+</sup>]<sup class=\"fn\" data-note=\"c-e17-tl\"></sup> =0.031  <em>M</em><br>[Cl<sup>–</sup>] = 0.0056 <em>M</em> (b) The change in initial concentration of common ion may be neglected.<br>[Ba<sup>2+</sup>] = 2.4 × 10<sup>–4</sup> <em>M</em><br>[F<sup>–</sup>] = 0.313 <em>M</em>;<br>(c) The change in initial concentration of common ion may be neglected.<br>[Mg<sup>2+</sup>] = 0.0244 <em>M</em><br>$[{\\text{C}}_{2}{\\text{O}}_{4}{}^{\\text{2−}}]=2.9\\;\\times \\;{10}^{\\text{−5}}\\;M$<br>(d) The change in initial concentration of common ion may be neglected.<br>[Ca<sup>2+</sup>] = 5.18 × 10<sup>–4</sup> <em>M</em><br>[C<sub>2</sub>)<sub>4</sub><sup>2–</sup>] = 0.051 <em>M</em><sup class=\"fn\" data-note=\"c-e17-oh\"></sup>"
-      }
-    },
-    {
-      "id": "e18",
-      "source_id": "fs-idp14702288",
-      "source_number": "18",
-      "kind": "exercise",
-      "bloom": "Understand",
-      "place": {
-        "at": "end"
-      },
-      "cite": "common-ion",
-      "prompt": "Explain why the changes in concentrations of the common ions in Exercise 15.17 can be neglected.",
-      "answer": {
-        "type": "open",
-        "generated_by": "ai",
-        "solution": "The changes can be neglected in parts (b), (c) and (d) because each of those salts is so slightly soluble that the common ion it adds is less than 5% of the common ion already present; in part (a) they cannot. In (b), $x={[\\text{Ba}}^{\\text{2+}}]=2.4\\;\\times \\;{10}^{-4}\\;M$, and the fluoride the BaF<sub>2</sub> adds, $2x=4.9\\;\\times \\;{10}^{-4}\\;M$, is 0.16% of 0.313 <em>M</em>. In (c), 8.156 g of Mg(NO<sub>3</sub>)<sub>2</sub> (148.3 g/mol) in 2.250 L is 0.02444 <em>M</em> Mg<sup>2+</sup>, and the MgC<sub>2</sub>O<sub>4</sub> adds only 2.9 × 10<sup>–5</sup> <em>M</em>, 0.12%. In (d), pH 12.700 gives pOH 1.300 and [OH<sup>–</sup>] = 0.0501 <em>M</em>; $x=1.3\\;\\times \\;{10}^{-6}\\text{/}{(0.0501)}^{2}=5.2\\;\\times \\;{10}^{-4}\\;M$, and the hydroxide added, $2x=1.0\\;\\times \\;{10}^{-3}\\;M$, is 2.1%. TlCl in (a) is far more soluble ($\\kKsp=1.7\\;\\times \\;{10}^{-4}$): solving $x(0.025+x)=1.7\\;\\times \\;{10}^{-4}$ gives $x=0.0056\\;M$, 22% of 0.025 <em>M</em>, so the quadratic must be solved and [Tl<sup>+</sup>] = 0.031 <em>M</em>."
-      }
-    },
-    {
-      "id": "e19",
-      "source_id": "fs-idp14703872",
-      "source_number": "19",
-      "kind": "exercise",
-      "bloom": "Understand",
-      "place": {
-        "at": "end"
-      },
-      "cite": "common-ion",
-      "prompt": "Explain why the changes in concentrations of the common ions in Exercise 15.18 cannot be neglected.",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "The changes in concentration are greater than 5% and thus exceed the maximum value for disregarding the change."
-      }
-    },
-    {
-      "id": "e21",
-      "source_id": "fs-idp14726720",
-      "source_number": "21",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Refer to <a href=\"/chemistry-2e/sheets/ksp/\">Appendix J</a> for solubility products for calcium salts. Determine which of the calcium salts listed is most soluble in moles per liter and which is most soluble in grams per liter.",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "CaSO<sub>4</sub>∙2H<sub>2</sub>O is the most soluble Ca salt in mol/L, and it is also the most soluble Ca salt in g/L."
-      }
-    },
-    {
-      "id": "e23",
-      "source_id": "fs-idp14846704",
-      "source_number": "23",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Public Health Service standards for drinking water set a maximum of 250 mg/L (2.60 × 10<sup>–3</sup> <em>M</em>) of ${\\text{SO}}_{4}{}^{\\text{2−}}$ because of its cathartic action (it is a laxative). Does natural water that is saturated with CaSO<sub>4</sub> (“gyp” water) as a result or passing through soil containing gypsum, CaSO<sub>4</sub>·2H<sub>2</sub>O, meet these standards? What is the concentration of ${\\text{SO}}_{4}{}^{\\text{2−}}$ in such water?",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 0.0078,
-        "unit": "M",
-        "part": "[SO<sub>4</sub><sup>2−</sup>]",
-        "hint": "In gyp water [Ca<sup>2+</sup>] = [SO<sub>4</sub><sup>2−</sup>] = <em>x</em>, and <em>K</em><sub>sp</sub> of CaSO<sub>4</sub>·2H<sub>2</sub>O = <em>x</em><sup>2</sup>; compare <em>x</em> with 2.60 × 10<sup>−3</sup> <em>M</em>.",
-        "solution": "7.8 × 10<sup>–3</sup> <em>M</em> = $[{\\text{SO}}_{4}{}^{\\text{2−}}]$ = [Ca<sup>2+</sup>]; Since this concentration is higher than 2.60 × 10<sup>–3</sup> <em>M</em>, “gyp” water does not meet the standards."
-      }
-    },
-    {
-      "id": "e25",
-      "source_id": "fs-idp14922048",
-      "source_number": "25",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "common-ion",
-      "prompt": "The solubility product of CaSO<sub>4</sub>·2H<sub>2</sub>O is 2.4 × 10<sup>–5</sup>. What mass of this salt will dissolve in 1.0 L of 0.010 <em>M</em> ${\\text{SO}}_{4}{}^{\\text{2−}}?$",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 0.72,
-        "unit": "g",
-        "hint": "[Ca<sup>2+</sup>] = <em>x</em> and [SO<sub>4</sub><sup>2−</sup>] = 0.010 + <em>x</em>; solve, then convert <em>x</em> moles to grams of the dihydrate.",
-        "solution": "Mass (CaSO<sub>4</sub>·2H<sub>2</sub>O) = 0.72 g"
-      }
-    },
-    {
-      "id": "e27",
-      "source_id": "fs-idp15085264",
-      "source_number": "27",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Assuming that no equilibria other than dissolution are involved, calculate the concentrations of ions in a saturated solution of each of the following (see <a href=\"/chemistry-2e/sheets/ksp/\">Appendix J</a> for solubility products):<br>(a) AgI<br>(b) Ag<sub>2</sub>SO<sub>4</sub><br>(c) Mn(OH)<sub>2</sub><br>(d) Sr(OH)<sub>2</sub>·8H<sub>2</sub>O<br>(e) the mineral brucite, Mg(OH)<sub>2</sub>",
-      "answer": {
-        "type": "multi",
-        "generated_by": "source",
-        "parts": [
-          {
-            "part": "(a) [Ag<sup>+</sup>] = [I<sup>−</sup>]",
-            "value": 1.3e-05,
-            "unit": "M",
-            "hint": "Write each <em>K</em><sub>sp</sub> from Appendix J in terms of <em>x</em>, solve, and multiply by each ion’s coefficient."
-          },
-          {
-            "part": "(b) [Ag<sup>+</sup>]",
-            "value": 0.0288,
-            "unit": "M"
-          },
-          {
-            "part": "(b) [SO<sub>4</sub><sup>2−</sup>]",
-            "value": 0.0144,
-            "unit": "M"
-          },
-          {
-            "part": "(c) [Mn<sup>2+</sup>]",
-            "value": 3.7e-05,
-            "unit": "M"
-          },
-          {
-            "part": "(c) [OH<sup>−</sup>]",
-            "value": 7.4e-05,
-            "unit": "M"
-          },
-          {
-            "part": "(d) [Sr<sup>2+</sup>]",
-            "value": 0.043,
-            "unit": "M"
-          },
-          {
-            "part": "(d) [OH<sup>−</sup>]",
-            "value": 0.086,
-            "unit": "M"
-          },
-          {
-            "part": "(e) [Mg<sup>2+</sup>]",
-            "value": 0.00013,
-            "unit": "M"
-          },
-          {
-            "part": "(e) [OH<sup>−</sup>]",
-            "value": 0.00026,
-            "unit": "M"
-          }
-        ],
-        "solution": "(a) [Ag<sup>+</sup>] = [I<sup>–</sup>] = 1.3 × 10<sup>–5</sup> <em>M</em>; (b) [Ag<sup>+</sup>] = 2.88 × 10<sup>–2</sup> <em>M</em>, $[{\\text{SO}}_{4}{}^{\\text{2−}}]$= 1.44 × 10<sup>–2</sup> <em>M</em>; (c) [Mn<sup>2+</sup>] = 3.7 × 10<sup>–5</sup> <em>M</em>, [OH<sup>–</sup>] = 7.4 × 10<sup>–5</sup> <em>M</em>; (d) [Sr<sup>2+</sup>] = 4.3 × 10<sup>–2</sup> <em>M</em>, [OH<sup>–</sup>] = 8.6 × 10<sup>–2</sup> <em>M</em>; (e) [Mg<sup>2+</sup>] = 1.3 × 10<sup>–4</sup> <em>M</em>, [OH<sup>–</sup>] = 2.6 × 10<sup>–4</sup> <em>M</em>."
-      }
-    },
-    {
-      "id": "e29",
-      "source_id": "fs-idp1351072",
-      "source_number": "29",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "The following concentrations are found in mixtures of ions in equilibrium with slightly soluble solids. From the concentrations given, calculate <em>K</em><sub>sp</sub> for each of the slightly soluble solids indicated:<br>(a) TlCl: [Tl<sup>+</sup>] = 1.21 × 10<sup>–2</sup> <em>M</em>, [Cl<sup>–</sup>] = 1.2 × 10<sup>–2</sup> <em>M</em><br>(b) Ce(IO<sub>3</sub>)<sub>4</sub>: [Ce<sup>4+</sup>] = 1.8 × 10<sup>–4</sup> <em>M</em>, $[{\\text{IO}}_{3}{}^{\\text{−}}]$ = 2.6 × 10<sup>–13</sup> <em>M</em><br>(c) Gd<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>: [Gd<sup>3+</sup>] = 0.132 <em>M</em>, $[{\\text{SO}}_{\\text{4}}{}^{\\text{2−}}]$ = 0.198 <em>M</em><br>(d) Ag<sub>2</sub>SO<sub>4</sub>: [Ag<sup>+</sup>] = 2.40 × 10<sup>–2</sup> <em>M</em>, $[{\\text{SO}}_{\\text{4}}{}^{\\text{2−}}]$ = 2.05 × 10<sup>–2</sup> <em>M</em><br>(e) BaSO<sub>4</sub>: [Ba<sup>2+</sup>] = 0.500 <em>M</em>, $[{\\text{SO}}_{\\text{4}}{}^{\\text{2−}}]$ = 2.16 × 10<sup>−10</sup> <em>M</em>",
-      "answer": {
-        "type": "multi",
-        "generated_by": "source",
-        "parts": [
-          {
-            "part": "(a) TlCl",
-            "value": 0.000145,
-            "hint": "Raise each concentration to the power of its coefficient in the formula and multiply."
-          },
-          {
-            "part": "(b) Ce(IO<sub>3</sub>)<sub>4</sub>",
-            "value": 8.2e-55
-          },
-          {
-            "part": "(c) Gd<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>",
-            "value": 0.000135
-          },
-          {
-            "part": "(d) Ag<sub>2</sub>SO<sub>4</sub>",
-            "value": 1.18e-05
-          },
-          {
-            "part": "(e) BaSO<sub>4</sub>",
-            "value": 1.08e-10
-          }
-        ],
-        "solution": "(a) 1.45 × 10<sup>–4</sup>; (b) 8.2 × 10<sup>–55</sup>; (c) 1.35 × 10<sup>–4</sup>; (d) 1.18 × 10<sup>–5</sup>; (e) 1.08 × 10<sup>–10</sup>"
-      }
-    },
-    {
-      "id": "e31",
-      "source_id": "fs-idp1466960",
-      "source_number": "31",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "Which of the following compounds precipitates from a solution that has the concentrations indicated? (See <a href=\"/chemistry-2e/sheets/ksp/\">Appendix J</a> for <em>K</em><sub>sp</sub> values.)<br>(a) CaCO<sub>3</sub>: [Ca<sup>2+</sup>] = 0.003 <em>M</em>, $[{\\text{CO}}_{\\text{3}}{}^{\\text{2−}}]$ = 0.003 <em>M</em><br>(b) Co(OH)<sub>2</sub>: [Co<sup>2+</sup>] = 0.01 <em>M</em>, [OH<sup>–</sup>] = 1 × 10<sup>–7</sup> <em>M</em><br>(c) CaHPO<sub>4</sub>: [Ca<sup>2+</sup>] = 0.01 <em>M</em>, $[{\\text{HPO}}_{\\text{4}}{}^{\\text{2−}}]$ = 2 × 10<sup>–6</sup> <em>M</em><br>(d) Pb<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>: [Pb<sup>2+</sup>] = 0.01 <em>M</em>, $[{\\text{PO}}_{\\text{4}}{}^{\\text{3−}}]$= 1 × 10<sup>–13</sup> <em>M</em>",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "(a) CaCO<sub>3</sub> does precipitate. (b) The compound does not precipitate. (c) The compound does not precipitate. (d) The compound precipitates."
-      }
-    },
-    {
-      "id": "e33",
-      "source_id": "fs-idp1572240",
-      "source_number": "33",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "Calculate the concentration of sulfate ion when BaSO<sub>4</sub> just begins to precipitate from a solution that is 0.0758 <em>M</em> in Ba<sup>2+</sup>.",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 1.42e-09,
-        "unit": "M",
-        "hint": "Set <em>Q</em> = <em>K</em><sub>sp</sub> = [Ba<sup>2+</sup>][SO<sub>4</sub><sup>2−</sup>] with [Ba<sup>2+</sup>] = 0.0758 <em>M</em>.",
-        "solution": "1.42 × 10<sup>−9</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "e35",
-      "source_id": "fs-idp1626656",
-      "source_number": "35",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "Calculate the concentration of ${\\text{PO}}_{4}{}^{\\text{3−}}$ when Ag<sub>3</sub>PO<sub>4</sub> starts to precipitate from a solution that is 0.0125 <em>M</em> in Ag<sup>+</sup>.",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 9.2e-13,
-        "unit": "M",
-        "hint": "<em>K</em><sub>sp</sub> = [Ag<sup>+</sup>]<sup>3</sup>[PO<sub>4</sub><sup>3−</sup>]; solve for the phosphate concentration.",
-        "solution": "9.2 × 10<sup>−13</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "e37",
-      "source_id": "fs-idp1683696",
-      "source_number": "37",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "Calculate the concentration of Ag<sup>+</sup> required to begin precipitation of Ag<sub>2</sub>CO<sub>3</sub> in a solution that is 2.50 × 10<sup>–6</sup> <em>M</em> in ${\\text{CO}}_{3}{}^{\\text{2−}}.$",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 0.0018,
-        "unit": "M",
-        "hint": "<em>K</em><sub>sp</sub> = [Ag<sup>+</sup>]<sup>2</sup>[CO<sub>3</sub><sup>2−</sup>]; solve for [Ag<sup>+</sup>].",
-        "solution": "[Ag<sup>+</sup>] = 1.8 × 10<sup>–3</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "e39",
-      "source_id": "fs-idp1744880",
-      "source_number": "39",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "What [F<sup>–</sup>] is required to reduce [Ca<sup>2+</sup>] to 1.0 × 10<sup>–4</sup> <em>M</em> by precipitation of CaF<sub>2</sub>?",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 0.00063,
-        "unit": "M",
-        "hint": "<em>K</em><sub>sp</sub> = [Ca<sup>2+</sup>][F<sup>−</sup>]<sup>2</sup> with [Ca<sup>2+</sup>] = 1.0 × 10<sup>−4</sup> <em>M</em>.",
-        "solution": "6.3 × 10<sup>–4</sup>"
-      }
-    },
-    {
-      "id": "e41",
-      "source_id": "fs-idp1809552",
-      "source_number": "41",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Perform these calculations for nickel(II) carbonate. (a) With what volume of water must a precipitate containing NiCO<sub>3</sub> be washed to dissolve 0.100 g of this compound? Assume that the wash water becomes saturated with NiCO<sub>3</sub> (<em>K</em><sub>sp</sub> = 1.36 × 10<sup>–7</sup>).<br>(b) If the NiCO<sub>3</sub> were a contaminant in a sample of CoCO<sub>3</sub> (<em>K</em><sub>sp</sub> = 1.0 × 10<sup>–12</sup>), what mass of CoCO<sub>3</sub> would have been lost? Keep in mind that both NiCO<sub>3</sub> and CoCO<sub>3</sub> dissolve in the same solution.",
-      "answer": {
-        "type": "multi",
-        "generated_by": "source",
-        "parts": [
-          {
-            "part": "(a) volume of wash water",
-            "value": 2.25,
-            "unit": "L",
-            "hint": "Find the molar solubility of NiCO<sub>3</sub>, then the volume that holds 0.100 g of it."
-          },
-          {
-            "part": "(b) mass of CoCO<sub>3</sub> lost",
-            "value": 7.2e-07,
-            "unit": "g"
-          }
-        ],
-        "solution": "(a) 2.25 L; (b) 7.2 × 10<sup>–7</sup> g"
-      }
-    },
-    {
-      "id": "e43",
-      "source_id": "fs-idp1866352",
-      "source_number": "43",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "A solution is 0.010 <em>M</em> in both Cu<sup>2+</sup> and Cd<sup>2+</sup>. What percentage of Cd<sup>2+</sup> remains in the solution when 99.9% of the Cu<sup>2+</sup> has been precipitated as CuS by adding sulfide?",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 100,
-        "unit": "%",
-        "tol": 0.01,
-        "hint": "Find [S<sup>2−</sup>] when 0.1% of the Cu<sup>2+</sup> remains, then compare [Cd<sup>2+</sup>][S<sup>2−</sup>] with the <em>K</em><sub>sp</sub> of CdS.",
-        "solution": "100% of it is dissolved"
-      }
-    },
-    {
-      "id": "e45",
-      "source_id": "fs-idp1955712",
-      "source_number": "45",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "What reagent might be used to separate the ions in each of the following mixtures, which are 0.1 <em>M</em> with respect to each ion? In some cases it may be necessary to control the pH. (Hint: Consider the <em>K</em><sub>sp</sub> values given in <a href=\"/chemistry-2e/sheets/ksp/\">Appendix J</a>.)<br>(a) ${\\text{Hg}}_{2}{}^{\\text{2+}}$ and Cu<sup>2+</sup><br>(b) ${\\text{SO}}_{4}{}^{\\text{2−}}$ and Cl<sup>–</sup><br>(c) Hg<sup>2+</sup> and Co<sup>2+</sup><br>(d) Zn<sup>2+</sup> and Sr<sup>2+</sup><br>(e) Ba<sup>2+</sup> and Mg<sup>2+</sup><br>(f) ${\\text{CO}}_{3}{}^{\\text{2−}}$ and OH<sup>–</sup>",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "(a) ${\\text{Hg}}_{2}{}^{\\text{2+}}$ and Cu<sup>2+</sup>: Add ${\\text{SO}}_{4}{}^{\\text{2−}}.$ (b) ${\\text{SO}}_{4}{}^{\\text{2−}}$ and Cl<sup>–</sup>: Add Ba<sup>2+</sup>. (c) Hg<sup>2+</sup> and Co<sup>2+</sup>: Add S<sup>2–</sup>. (d) Zn<sup>2+</sup> and Sr<sup>2+</sup>: Add OH<sup>–</sup> until [OH<sup>–</sup>] = 0.050 <em>M</em>. (e) Ba<sup>2+</sup> and Mg<sup>2+</sup>: Add ${\\text{SO}}_{4}{}^{\\text{2−}}.$ (f) ${\\text{CO}}_{3}{}^{\\text{2−}}$ and OH<sup>–</sup>: Add Ba<sup>2+</sup>."
-      }
-    },
-    {
-      "id": "e46",
-      "source_id": "fs-idp2172896",
-      "source_number": "46",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "A solution contains 1.0 × 10<sup>–5</sup> mol of KBr and 0.10 mol of KCl per liter. AgNO<sub>3</sub> is gradually added to this solution. Which forms first, solid AgBr or solid AgCl?",
-      "answer": {
-        "type": "open",
-        "generated_by": "ai",
-        "solution": "Solid AgCl forms first, even though AgBr is the less soluble salt. Each salt begins to precipitate when the reaction quotient reaches its $\\kKsp$, so the [Ag<sup>+</sup>] needed is $\\kKsp$ divided by the halide concentration. For AgBr, $[{\\text{Ag}}^{\\text{+}}]=\\frac{5.0\\;\\times \\;{10}^{-13}}{1.0\\;\\times \\;{10}^{-5}}=5.0\\;\\times \\;{10}^{-8}\\;M$. For AgCl, $[{\\text{Ag}}^{\\text{+}}]=\\frac{1.6\\;\\times \\;{10}^{-10}}{0.10}=1.6\\;\\times \\;{10}^{-9}\\;M$. As AgNO<sub>3</sub> is added, [Ag<sup>+</sup>] reaches 1.6 × 10<sup>–9</sup> <em>M</em> first, so AgCl precipitates first; the chloride ion is 10<sup>4</sup> times more concentrated than the bromide ion, which more than makes up for the larger $\\kKsp$ of AgCl."
-      }
-    },
-    {
-      "id": "e47",
-      "source_id": "fs-idp2204496",
-      "source_number": "47",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "A solution contains 1.0 × 10<sup>–2</sup> mol of KI and 0.10 mol of KCl per liter. AgNO<sub>3</sub> is gradually added to this solution. Which forms first, solid AgI or solid AgCl?",
-      "answer": {
-        "type": "choice",
-        "generated_by": "source",
-        "options": [
-          "Solid AgI",
-          "Solid AgCl"
-        ],
-        "correct": 0,
-        "hint": "Compare the [Ag<sup>+</sup>] at which each salt begins to precipitate: its <em>K</em><sub>sp</sub> divided by its halide concentration.",
-        "solution": "AgI will precipitate first."
-      }
-    },
-    {
-      "id": "e49",
-      "source_id": "fs-idp2313504",
-      "source_number": "49",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "About 50% of urinary calculi (kidney stones) consist of calcium phosphate, Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>. The normal mid range calcium content excreted in the urine is 0.10 g of Ca<sup>2+</sup> per day. The normal mid range amount of urine passed may be taken as 1.4 L per day. What is the maximum concentration of phosphate ion that urine can contain before a calculus begins to form?",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 1.5e-12,
-        "unit": "M",
-        "hint": "Convert 0.10 g of Ca<sup>2+</sup> in 1.4 L to a molarity, then solve <em>K</em><sub>sp</sub> = [Ca<sup>2+</sup>]<sup>3</sup>[PO<sub>4</sub><sup>3−</sup>]<sup>2</sup>.",
-        "solution": "1.5 × 10<sup>−12</sup> <em>M</em>"
-      }
-    },
-    {
-      "id": "e51",
-      "source_id": "fs-idp2651392",
-      "source_number": "51",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "Magnesium metal (a component of alloys used in aircraft and a reducing agent used in the production of uranium, titanium, and other active metals) is isolated from sea water by the following sequence of reactions:<br>${\\text{Mg}}^{\\text{2+}}(aq)+{\\text{Ca(OH)}}_{2}(aq)\\;\\longrightarrow \\;{\\text{Mg(OH)}}_{2}(s)+{\\text{Ca}}^{\\text{2+}}(aq)$<br>${\\text{Mg(OH)}}_{2}(s)+\\text{2HCl(}aq)\\;\\longrightarrow \\;{\\text{MgCl}}_{2}(s)+{\\text{2H}}_{2}\\text{O}(l)$<br>${\\text{MgCl}}_{2}(l)\\overset{\\;\\text{electrolysis}\\;}{\\to}\\text{Mg}(s)+{\\text{Cl}}_{2}(g)$<br>Sea water has a density of 1.026 g/cm<sup>3</sup> and contains 1272 parts per million of magnesium as Mg<sup>2+</sup>(<em>aq</em>) by mass. What mass, in kilograms, of Ca(OH)<sub>2</sub> is required to precipitate 99.9% of the magnesium in 1.00 × 10<sup>3</sup> L of sea water?",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 3.99,
-        "unit": "kg",
-        "hint": "Find the moles of Mg<sup>2+</sup> in 1.00 × 10<sup>3</sup> L of sea water; precipitating 99.9% of it takes one mole of Ca(OH)<sub>2</sub> per mole of Mg<sup>2+</sup>.",
-        "solution": "3.99 kg"
-      }
-    },
-    {
-      "id": "e53",
-      "source_id": "fs-idp2814128",
-      "source_number": "53",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "Perform the following calculations involving concentrations of iodate ions:<br>(a) The iodate ion concentration of a saturated solution of La(IO<sub>3</sub>)<sub>3</sub> was found to be 3.1 × 10<sup>–3</sup> mol/L. Find the <em>K</em><sub>sp</sub>.<br>(b) Find the concentration of iodate ions in a saturated solution of Cu(IO<sub>3</sub>)<sub>2</sub> (<em>K</em><sub>sp</sub> = 7.4 × 10<sup>–8</sup>).",
-      "answer": {
-        "type": "multi",
-        "generated_by": "source",
-        "parts": [
-          {
-            "part": "(a) <em>K</em><sub>sp</sub> of La(IO<sub>3</sub>)<sub>3</sub>",
-            "value": 3.1e-11,
-            "hint": "In (a), [La<sup>3+</sup>] is one third of the iodate concentration."
-          },
-          {
-            "part": "(b) [Cu<sup>2+</sup>]",
-            "value": 0.0026,
-            "unit": "M"
-          },
-          {
-            "part": "(b) [IO<sub>3</sub><sup>−</sup>]",
-            "value": 0.0053,
-            "unit": "M"
-          }
-        ],
-        "solution": "(a) 3.1 × 10<sup>–11</sup>; (b) [Cu<sup>2+</sup>] = 2.6 × 10<sup>–3</sup>; $[{\\text{IO}}_{3}{}^{\\text{−}}]$ = 5.3 × 10<sup>–3</sup>"
-      }
-    },
-    {
-      "id": "e55",
-      "source_id": "fs-idp2865680",
-      "source_number": "55",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "common-ion",
-      "prompt": "How many grams of Pb(OH)<sub>2</sub> will dissolve in 500 mL of a 0.050-<em>M</em> PbCl<sub>2</sub> solution (<em>K</em><sub>sp</sub> = 1.2 × 10<sup>–15</sup>)?",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 9.3e-06,
-        "unit": "g",
-        "hint": "[Pb<sup>2+</sup>] ≈ 0.050 <em>M</em> from the PbCl<sub>2</sub>; solve for [OH<sup>−</sup>] = 2<em>x</em>, then find the grams of Pb(OH)<sub>2</sub> in 500 mL.",
-        "solution": "9.3 × 10<sup>–6</sup> g Pb(OH)<sub>2</sub>"
-      }
-    },
-    {
-      "id": "e57",
-      "source_id": "fs-idp2904912",
-      "source_number": "57",
-      "kind": "exercise",
-      "bloom": "Apply",
-      "place": {
-        "at": "end"
-      },
-      "cite": "ksp-solubility",
-      "prompt": "How many grams of Milk of Magnesia, Mg(OH)<sub>2</sub> (<em>s</em>) (58.3 g/mol), would be soluble in 200 mL of water. <em>K</em><sub>sp</sub> = 7.1 × 10<sup>–12</sup>. Include the ionic reaction and the expression for <em>K</em><sub>sp</sub> in your answer. (<em>K</em><sub>w</sub> = 1 × 10<sup>–14</sup> = [H<sub>3</sub>O<sup>+</sup>][OH<sup>–</sup>])",
-      "answer": {
-        "type": "number",
-        "generated_by": "source",
-        "value": 0.00123,
-        "unit": "g",
-        "hint": "Solve 4<em>x</em><sup>3</sup> = <em>K</em><sub>sp</sub>, then convert the moles in 200 mL to grams.",
-        "solution": "${\\text{Mg(OH)}}_{2}(s)\\rightleftharpoons {\\text{Mg}}^{\\text{2+}}+{\\text{2OH}}^{\\text{−}}\\hspace{4em}{K}_{\\text{sp}}=[{\\text{Mg}}^{\\text{2+}}]{[{\\text{OH}}^{\\text{−}}]}^{2}$<br>1.23 × 10<sup>−3</sup> g Mg(OH)<sub>2</sub>"
-      }
-    },
-    {
-      "id": "e59",
-      "source_id": "fs-idp2976256",
-      "source_number": "59",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "The carbonate ion concentration is gradually increased in a solution containing equal concentrations of the divalent cations of magnesium, calcium, strontium, barium, and manganese. Which of the following carbonates will precipitate first? Which will precipitate last? Explain.<br>(a) ${\\text{MgCO}}_{3}\\bullet 3{\\text{H}}_{2}\\text{O}\\hspace{4em}{K}_{\\text{sp}}=1\\;\\times \\;1{0}^{-5}$<br>(b) ${\\text{CaCO}}_{3}\\hspace{4em}{K}_{\\text{sp}}=8.7\\;\\times \\;1{0}^{-9}$<br>(c) ${\\text{SrCO}}_{3}\\hspace{4em}{K}_{\\text{sp}}=7\\;\\times \\;1{0}^{-10}$<br>(d) ${\\text{BaCO}}_{3}\\hspace{4em}{K}_{\\text{sp}}=1.6\\;\\times \\;1{0}^{-9}$<br>(e) ${\\text{MnCO}}_{3}\\hspace{4em}{K}_{\\text{sp}}=8.8\\;\\times \\;1{0}^{-11}$",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "MnCO<sub>3</sub> will form first since it has the smallest <em>K</em><sub>sp</sub> value among these homologous compounds and is therefore the least soluble. MgCO<sub>3</sub>•3H<sub>2</sub>O will be the last to precipitate since it has the largest K_sp value and is the most soluble. <em>K</em><sub>sp</sub> value."
-      }
-    },
-    {
-      "id": "e62",
-      "source_id": "fs-idp46388832",
-      "source_section": "15.2",
-      "source_number": "62",
-      "kind": "exercise",
-      "bloom": "Understand",
-      "place": {
-        "at": "end"
-      },
-      "cite": "solubility-product",
-      "prompt": "Under what circumstances, if any, does a sample of solid AgCl completely dissolve in pure water?",
-      "answer": {
-        "type": "open",
-        "generated_by": "source",
-        "solution": "when the amount of solid is so small that a saturated solution is not produced"
-      }
-    },
-    {
-      "id": "e85",
-      "source_id": "fs-idm301808",
-      "source_section": "15.3",
-      "source_number": "85",
-      "kind": "exercise",
-      "bloom": "Understand",
-      "place": {
-        "at": "end"
-      },
-      "cite": "solubility-product",
-      "prompt": "A saturated solution of a slightly soluble electrolyte in contact with some of the solid electrolyte is said to be a system in equilibrium. Explain. Why is such a system called a heterogeneous equilibrium?",
-      "answer": {
-        "type": "open",
-        "generated_by": "ai",
-        "solution": "In a saturated solution in contact with excess solid, ions leave the surface of the solid and dissolve at the same rate as dissolved ions return to the solid and precipitate, for example $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$. Both processes continue, but because their rates are equal the concentrations of the dissolved ions and the amount of solid stay constant. Opposing processes at equal rates with unchanging concentrations are the marks of a dynamic equilibrium, which is why the system is called an equilibrium. It is a heterogeneous equilibrium because its components are in different phases: the undissolved electrolyte is a solid and the ions are dissolved in the aqueous solution. For the same reason the solid does not appear in the $\\kKsp$ expression."
-      }
-    },
-    {
-      "id": "e101",
-      "source_id": "fs-idp11595856",
-      "source_section": "15.3",
-      "source_number": "101",
-      "kind": "exercise",
-      "bloom": "Analyze",
-      "place": {
-        "at": "end"
-      },
-      "cite": "precipitation",
-      "prompt": "The following question is taken from a Chemistry Advanced Placement Examination and is used with the permission of the Educational Testing Service.<br>Solve the following problem:<br>${\\text{MgF}}_{2}(s)\\rightleftharpoons {\\text{Mg}}^{\\text{2+}}(aq)+2{\\text{F}}^{\\text{−}}(aq)$<br>In a saturated solution of MgF<sub>2</sub> at 18 °C, the concentration of Mg<sup>2+</sup> is 1.21 × 10<sup>–3</sup> <em>M</em>. The equilibrium is represented by the preceding equation.<br>(a) Write the expression for the solubility-product constant, <em>K</em><sub>sp</sub>, and calculate its value at 18 °C.<br>(b) Calculate the equilibrium concentration of Mg<sup>2+</sup> in 1.000 L of saturated MgF<sub>2</sub> solution at 18 °C to which 0.100 mol of solid KF has been added. The KF dissolves completely. Assume the volume change is negligible.<br>(c) Predict whether a precipitate of MgF<sub>2</sub> will form when 100.0 mL of a 3.00 × 10<sup>–3</sup>-<em>M</em> solution of Mg(NO<sub>3</sub>)<sub>2</sub> is mixed with 200.0 mL of a 2.00 × 10<sup>–3</sup>-<em>M</em> solution of NaF at 18 °C. Show the calculations to support your prediction.<br>(d) At 27 °C the concentration of Mg<sup>2+</sup> in a saturated solution of MgF<sub>2</sub> is 1.17 × 10<sup>–3</sup> <em>M</em>. Is the dissolving of MgF<sub>2</sub> in water an endothermic or an exothermic process? Give an explanation to support your conclusion.",
-      "answer": {
-        "type": "multi",
-        "generated_by": "source",
-        "parts": [
-          {
-            "part": "(a) <em>K</em><sub>sp</sub> at 18 °C",
-            "value": 7.09e-09,
-            "hint": "[F<sup>−</sup>] is twice [Mg<sup>2+</sup>]."
-          },
-          {
-            "part": "(b) [Mg<sup>2+</sup>] with 0.100 mol KF",
-            "value": 7.09e-07,
-            "unit": "M",
-            "hint": "Take [F<sup>−</sup>] as 0.100 <em>M</em>."
-          }
-        ],
-        "solution": "(a) <em>K</em><sub>sp</sub> = [Mg<sup>2+</sup>][F<sup>–</sup>]<sup>2</sup> = (1.21 × 10<sup>–3</sup>)(2 × 1.21 × 10<sup>–3</sup>)<sup>2</sup> = 7.09 × 10<sup>–9</sup><br>(b) 7.09 × 10<sup>–7</sup> <em>M</em><br>(c) Determine the concentration of Mg<sup>2+</sup> and F<sup>–</sup> that will be present in the final volume. Compare the value of the ion product [Mg<sup>2+</sup>][F<sup>–</sup>]<sup>2</sup> with <em>K</em><sub>sp</sub>. If this value is larger than <em>K</em><sub>sp</sub>, precipitation will occur.<br>0.1000 L × 3.00 × 10<sup>–3</sup> <em>M</em> Mg(NO<sub>3</sub>)<sub>2</sub> = 0.3000 L × <em>M</em> Mg(NO<sub>3</sub>)<sub>2</sub><br><em>M</em> Mg(NO<sub>3</sub>)<sub>2</sub> = 1.00 × 10<sup>–3</sup> <em>M</em><br>0.2000 L × 2.00 × 10<sup>–3</sup> <em>M</em> NaF = 0.3000 L × <em>M</em> NaF<br><em>M</em> NaF = 1.33 × 10<sup>–3</sup> <em>M</em><br>ion product = (1.00 × 10<sup>–3</sup>)(1.33 × 10<sup>–3</sup>)<sup>2</sup> = 1.77 × 10<sup>–9</sup> This value is smaller than <em>K</em><sub>sp</sub>, so no precipitation will occur.<br>(d) MgF<sub>2</sub> is less soluble at 27 °C than at 18 °C. Because added heat acts like an added reagent, when it appears on the product side, the Le Châtelier’s principle states that the equilibrium will shift to the reactants’ side to counter the stress. Consequently, less reagent will dissolve. This situation is found in our case. Therefore, the reaction is exothermic."
-      }
-    }
-  ],
-  "exercise_concepts": [
-    {
-      "exercise": "cyl1",
-      "concept": "write-ksp-expression"
-    },
-    {
-      "exercise": "cyl2",
-      "concept": "ksp-from-solubility"
-    },
-    {
-      "exercise": "cyl2",
-      "concept": "write-ksp-expression"
-    },
-    {
-      "exercise": "cyl3",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "cyl4",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "cyl5",
-      "concept": "ksp-from-solubility"
-    },
-    {
-      "exercise": "cyl6",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "cyl7",
-      "concept": "qsp-versus-ksp"
-    },
-    {
-      "exercise": "cyl8",
-      "concept": "qsp-versus-ksp"
-    },
-    {
-      "exercise": "cyl8",
-      "concept": "dilution-equation"
-    },
-    {
-      "exercise": "cyl9",
-      "concept": "precipitation-concentration"
-    },
-    {
-      "exercise": "cyl10",
-      "concept": "precipitation-concentration"
-    },
-    {
-      "exercise": "cyl10",
-      "concept": "ph-calculations"
-    },
-    {
-      "exercise": "cyl11",
-      "concept": "selective-precipitation"
-    },
-    {
-      "exercise": "cyl11",
-      "concept": "precipitation-concentration"
-    },
-    {
-      "exercise": "cyl12",
-      "concept": "common-ion-effect"
-    },
-    {
-      "exercise": "cyl13",
-      "concept": "common-ion-effect"
-    },
-    {
-      "exercise": "cyl13",
-      "concept": "small-x-approximation"
-    },
-    {
-      "exercise": "e1",
-      "concept": "write-ksp-expression"
-    },
-    {
-      "exercise": "e1",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e2",
-      "concept": "write-ksp-expression"
-    },
-    {
-      "exercise": "e2",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e3",
-      "concept": "solubility-product"
-    },
-    {
-      "exercise": "e4",
-      "concept": "common-ion-effect"
-    },
-    {
-      "exercise": "e5",
-      "concept": "solubility-product"
-    },
-    {
-      "exercise": "e6",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e7",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e8",
-      "concept": "write-ksp-expression"
-    },
-    {
-      "exercise": "e9",
-      "concept": "write-ksp-expression"
-    },
-    {
-      "exercise": "e11",
-      "concept": "ksp-from-solubility"
-    },
-    {
-      "exercise": "e12",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e13",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e15",
-      "concept": "common-ion-effect"
-    },
-    {
-      "exercise": "e15",
-      "concept": "small-x-approximation"
-    },
-    {
-      "exercise": "e17",
-      "concept": "common-ion-effect"
-    },
-    {
-      "exercise": "e17",
-      "concept": "small-x-approximation"
-    },
-    {
-      "exercise": "e18",
-      "concept": "common-ion-effect"
-    },
-    {
-      "exercise": "e18",
-      "concept": "small-x-approximation"
-    },
-    {
-      "exercise": "e19",
-      "concept": "small-x-approximation"
-    },
-    {
-      "exercise": "e21",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e23",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e25",
-      "concept": "common-ion-effect"
-    },
-    {
-      "exercise": "e27",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e29",
-      "concept": "ksp-from-solubility"
-    },
-    {
-      "exercise": "e29",
-      "concept": "write-ksp-expression"
-    },
-    {
-      "exercise": "e31",
-      "concept": "qsp-versus-ksp"
-    },
-    {
-      "exercise": "e33",
-      "concept": "precipitation-concentration"
-    },
-    {
-      "exercise": "e35",
-      "concept": "precipitation-concentration"
-    },
-    {
-      "exercise": "e37",
-      "concept": "precipitation-concentration"
-    },
-    {
-      "exercise": "e39",
-      "concept": "precipitation-concentration"
-    },
-    {
-      "exercise": "e41",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e41",
-      "concept": "mass-mole-conversion"
-    },
-    {
-      "exercise": "e43",
-      "concept": "selective-precipitation"
-    },
-    {
-      "exercise": "e45",
-      "concept": "selective-precipitation"
-    },
-    {
-      "exercise": "e46",
-      "concept": "selective-precipitation"
-    },
-    {
-      "exercise": "e47",
-      "concept": "selective-precipitation"
-    },
-    {
-      "exercise": "e49",
-      "concept": "precipitation-concentration"
-    },
-    {
-      "exercise": "e51",
-      "concept": "precipitation-concentration"
-    },
-    {
-      "exercise": "e51",
-      "concept": "mass-mole-conversion"
-    },
-    {
-      "exercise": "e53",
-      "concept": "ksp-from-solubility"
-    },
-    {
-      "exercise": "e53",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e55",
-      "concept": "common-ion-effect"
-    },
-    {
-      "exercise": "e57",
-      "concept": "molar-solubility-from-ksp"
-    },
-    {
-      "exercise": "e57",
-      "concept": "mass-mole-conversion"
-    },
-    {
-      "exercise": "e59",
-      "concept": "selective-precipitation"
-    },
-    {
-      "exercise": "e62",
-      "concept": "solubility-product"
-    },
-    {
-      "exercise": "e62",
-      "concept": "saturated-solution"
-    },
-    {
-      "exercise": "e85",
-      "concept": "solubility-product"
-    },
-    {
-      "exercise": "e85",
-      "concept": "homogeneous-and-heterogeneous-equilibria"
-    },
-    {
-      "exercise": "e101",
-      "concept": "ksp-from-solubility"
-    },
-    {
-      "exercise": "e101",
-      "concept": "common-ion-effect"
-    },
-    {
-      "exercise": "e101",
-      "concept": "qsp-versus-ksp"
-    }
-  ],
-  "footnotes": [
-    {
-      "id": "c-baso4-ksp",
-      "kind": "correction",
-      "html": "The book prints the <em>K</em><sub>sp</sub> of barium sulfate as 10.08 × 10<sup>−10</sup>. It is 1.08 × 10<sup>−10</sup>, the value of Appendix J."
-    },
-    {
-      "id": "c-e17-tl",
-      "kind": "correction",
-      "html": "The key writes [Ti<sup>+</sup>]; the ion is thallium(I), [Tl<sup>+</sup>]."
-    },
-    {
-      "id": "c-e17-oh",
-      "kind": "correction",
-      "html": "The key writes [C<sub>2</sub>)<sub>4</sub><sup>2–</sup>]; the common ion of (d) is hydroxide, [OH<sup>−</sup>] = 0.051 <em>M</em>."
-    }
+   {
+    "model": "claude-opus-5-5",
+    "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
   ]
+ },
+ "built": "2026-10-26",
+ "exercises_lead": "",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路均由 AI 生成。答案取自书后答案以及“学习检测”的答案。二十二道没有答案的数值习题被略去，也没有为它们算出答案：fs-idp13178304、fs-idp13415712、fs-idp14351088、fs-idp14705520、fs-idp14816032、fs-idp14880288、fs-idp14989248、fs-idp1289872、fs-idp1405168、fs-idp1563760、fs-idp1597744、fs-idp1664496、fs-idp1720944、fs-idp1768416、fs-idp1852800、fs-idp1891472、fs-idp2236432、fs-idp2372080、fs-idp2754176、fs-idp2852912、fs-idp2945408、fs-idp3007504。fs-idp15620912、fs-idp15767216、fs-idp15773008、fs-idp15782160、fs-idp14702288 和 fs-idm301808 带有标明为 OmniStax 自拟的建议思路，没有答案的选择题 fs-idp13349584 和 fs-idp2172896 作为开放题连同选项一并保留。fs-idp2894848 是一道关于外部可溶盐模拟的模拟习题，暂不收录。因为考查本节的内容而取自相邻小节的：fs-idp46388832 取自 15.2，fs-idm301808 和 fs-idp11595856 取自 15.3。按原样保留的：fs-idp14499248 的答案把 [Tl⁺] 写成 [Ti⁺]，并在（d）中写作 [C₂)₄²⁻]；fs-idp14703872 询问习题 15.18，而习题 15.18 本身又提到习题 15.17；fs-idp2976256 的答案第二次以“K<sub>sp</sub> value.”结尾；fs-idp15620912 留下一个未闭合的“(b”。书中只给出一位有效数字的答案，接受 15% 的误差。",
+ "figures": [
+  {
+   "id": "sim-agcl",
+   "kind": "sim",
+   "number": "15.2",
+   "originals": [
+    "/media/ch15/CNX_Chem_15_01_AgCl.jpg"
+   ],
+   "original_caption": "氯化银是一种微溶的离子固体。把它加入水中时，它略微溶解，形成一种混合物，其中是 Ag⁺ 和 Cl⁻ 离子的极稀溶液，与未溶解的氯化银处于平衡。",
+   "draws": [
+    "equilibrium-constant",
+    "concentration"
+   ],
+   "conventions": [
+    "Ag",
+    "Cl",
+    "O",
+    "H"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-oil-paints",
+   "kind": "photo",
+   "number": "15.3",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-barium-xray",
+   "kind": "photo",
+   "number": "15.4",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-blood",
+   "kind": "photo",
+   "number": "15.5",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "fig-wastewater",
+   "kind": "photo",
+   "number": "15.6",
+   "draws": [],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  },
+  {
+   "id": "sim-ksp-plane",
+   "kind": "sim",
+   "draws": [
+    "concentration",
+    "equilibrium-constant"
+   ],
+   "ai": [
+    {
+     "model": "claude-opus-5-5",
+     "effort": "high",
+     "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
+    }
+   ]
+  }
+ ],
+ "referents": [
+  {
+   "id": "agcl",
+   "label": "AgCl",
+   "figures": [
+    "sim-ksp-plane"
+   ]
+  },
+  {
+   "id": "agbr",
+   "label": "AgBr",
+   "figures": [
+    "sim-ksp-plane"
+   ]
+  }
+ ],
+ "coverage": [
+  {
+   "span": "solubility-product",
+   "concept": "solubility-product",
+   "verb": "introduces"
+  },
+  {
+   "span": "solubility-product",
+   "concept": "write-ksp-expression",
+   "verb": "introduces"
+  },
+  {
+   "span": "solubility-product",
+   "concept": "solubility-and-saturation",
+   "verb": "uses"
+  },
+  {
+   "span": "solubility-product",
+   "concept": "saturated-solution",
+   "verb": "uses"
+  },
+  {
+   "span": "solubility-product",
+   "concept": "chemical-equilibrium",
+   "verb": "uses"
+  },
+  {
+   "span": "solubility-product",
+   "concept": "homogeneous-and-heterogeneous-equilibria",
+   "verb": "uses"
+  },
+  {
+   "span": "solubility-product",
+   "concept": "equilibrium-constant",
+   "verb": "uses"
+  },
+  {
+   "span": "solubility-product",
+   "concept": "dissociation-of-ionic-compounds",
+   "verb": "uses"
+  },
+  {
+   "span": "ksp-solubility",
+   "concept": "molar-solubility",
+   "verb": "introduces"
+  },
+  {
+   "span": "ksp-solubility",
+   "concept": "ksp-from-solubility",
+   "verb": "introduces"
+  },
+  {
+   "span": "ksp-solubility",
+   "concept": "molar-solubility-from-ksp",
+   "verb": "introduces"
+  },
+  {
+   "span": "ksp-solubility",
+   "concept": "ice-change-terms",
+   "verb": "uses"
+  },
+  {
+   "span": "ksp-solubility",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "ksp-solubility",
+   "concept": "mass-mole-conversion",
+   "verb": "uses"
+  },
+  {
+   "span": "ksp-solubility",
+   "concept": "solubility-product",
+   "verb": "reinforces"
+  },
+  {
+   "span": "precipitation",
+   "concept": "qsp-versus-ksp",
+   "verb": "introduces"
+  },
+  {
+   "span": "precipitation",
+   "concept": "precipitation-concentration",
+   "verb": "introduces"
+  },
+  {
+   "span": "precipitation",
+   "concept": "selective-precipitation",
+   "verb": "introduces"
+  },
+  {
+   "span": "precipitation",
+   "concept": "reaction-quotient",
+   "verb": "uses"
+  },
+  {
+   "span": "precipitation",
+   "concept": "predict-direction-q-versus-k",
+   "verb": "uses"
+  },
+  {
+   "span": "precipitation",
+   "concept": "dilution-equation",
+   "verb": "uses"
+  },
+  {
+   "span": "precipitation",
+   "concept": "ph-calculations",
+   "verb": "uses"
+  },
+  {
+   "span": "precipitation",
+   "concept": "supersaturated-solutions",
+   "verb": "uses"
+  },
+  {
+   "span": "common-ion",
+   "concept": "common-ion-effect",
+   "verb": "introduces"
+  },
+  {
+   "span": "common-ion",
+   "concept": "le-chateliers-principle",
+   "verb": "uses"
+  },
+  {
+   "span": "common-ion",
+   "concept": "concentration-stress",
+   "verb": "uses"
+  },
+  {
+   "span": "common-ion",
+   "concept": "small-x-approximation",
+   "verb": "uses"
+  },
+  {
+   "span": "common-ion",
+   "concept": "solubility-product",
+   "verb": "reinforces"
+  }
+ ],
+ "exercises": [
+  {
+   "id": "cyl1",
+   "source_id": "fs-idm38560",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ksp-expressions"
+   },
+   "cite": "solubility-product",
+   "prompt": "写出下列每种微溶化合物的溶解方程式和溶度积：<br>（a）BaSO<sub>4</sub><br>（b）Ag<sub>2</sub>SO<sub>4</sub><br>（c）Al(OH)<sub>3</sub><br>（d）Pb(OH)Cl",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "$\\begin{array}{llrll}(\\text{a})\\;{\\text{BaSO}}_{4}(s)\\rightleftharpoons {\\text{Ba}}^{\\text{2+}}(aq)+{\\text{SO}}_{4}{}^{\\text{2−}}(aq) & & {K}_{\\text{sp}} & = & [{\\text{Ba}}^{\\text{2+}}{][\\text{SO}}_{4}{{}^{2}}^{\\text{−}}]; \\\\ (\\text{b})\\;{\\text{Ag}}_{2}{\\text{SO}}_{4}(s)\\rightleftharpoons {\\text{2Ag}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{\\text{2−}}(aq) & & {K}_{\\text{sp}} & = & {[{\\text{Ag}}^{\\text{+}}]}^{2}[{\\text{SO}}_{4}{}^{\\text{2−}}]; \\\\ (\\text{c})\\;{\\text{Al}(\\text{OH})}_{3}(s)\\rightleftharpoons {\\text{Al}}^{\\text{3+}}(aq)+{\\text{3OH}}^{\\text{−}}(aq) & & {K}_{\\text{sp}} & = & [{\\text{Al}}^{\\text{3+}}]{[\\text{OH}}^{\\text{−}}{]}^{\\text{3}}; \\\\ (\\text{d})\\;\\text{Pb(OH)Cl(}s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)+{\\text{Cl}}^{\\text{−}}(aq) & & {K}_{\\text{sp}} & = & [{\\text{Pb}}^{\\text{2+}}]{[\\text{OH}}^{\\text{−}}][{\\text{Cl}}^{\\text{−}}]\\end{array}$"
+   }
+  },
+  {
+   "id": "cyl2",
+   "source_id": "fs-idp844816",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-ksp-from-concentrations"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "在 Mg(OH)<sub>2</sub> 的饱和溶液中，Mg<sup>2+</sup> 的浓度为 1.31 × 10<sup>–4</sup> <em>M</em>。Mg(OH)<sub>2</sub> 的溶度积是多少？<br>${\\text{Mg(OH)}}_{2}(s)\\rightleftharpoons {\\text{Mg}}^{\\text{2+}}(aq)+{\\text{2OH}}^{\\text{−}}(aq)$",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 8.99e-12,
+    "hint": "溶解时每生成一个 Mg<sup>2+</sup> 就生成两个 OH<sup>−</sup>，所以 [OH<sup>−</sup>] 是 [Mg<sup>2+</sup>] 的两倍；于是 <em>K</em><sub>sp</sub> = [Mg<sup>2+</sup>][OH<sup>−</sup>]<sup>2</sup>。",
+    "solution": "8.99 × 10<sup>–12</sup>"
+   }
+  },
+  {
+   "id": "cyl3",
+   "source_id": "fs-idp261504",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-cubr"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "AgI 的 <em>K</em><sub>sp</sub> 为 1.5 × 10<sup>–16</sup>。计算碘化银的摩尔溶解度。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.2e-08,
+    "unit": "M",
+    "hint": "AgI 溶解时生成一个 Ag<sup>+</sup> 和一个 I<sup>−</sup>，所以 <em>K</em><sub>sp</sub> = <em>x</em><sup>2</sup>。",
+    "solution": "1.2 × 10<sup>–8</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl4",
+   "source_id": "fs-idp647936",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-caoh2"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "PbI<sub>2</sub> 的 <em>K</em><sub>sp</sub> 为 1.4 × 10<sup>–8</sup>。计算碘化铅(II)的摩尔溶解度。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.0015,
+    "unit": "M",
+    "hint": "PbI<sub>2</sub> 溶解后得到浓度为 <em>x</em> 的 Pb<sup>2+</sup> 和浓度为 2<em>x</em> 的 I<sup>−</sup>，所以 <em>K</em><sub>sp</sub> = 4<em>x</em><sup>3</sup>。",
+    "solution": "1.5 × 10<sup>–3</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl5",
+   "source_id": "fs-idp836192",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-pbcro4"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "从矿石中提取铊时形成的中间产物 TlCl [氯化铊(I)]，在 20 °C 时的溶解度为每升 3.12 克。它的溶度积是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.000169,
+    "hint": "用 TlCl 的摩尔质量把 3.12 g/L 换算成摩尔溶解度；两种离子的浓度都等于它。",
+    "solution": "1.69 × 10<sup>–4</sup>"
+   }
+  },
+  {
+   "id": "cyl6",
+   "source_id": "fs-idp91888",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-hg2cl2"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "由 MgF<sub>2</sub> 的溶度积确定其摩尔溶解度：<em>K</em><sub>sp</sub> = 6.4 × 10<sup>–9</sup>。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.0012,
+    "unit": "M",
+    "hint": "<em>K</em><sub>sp</sub> = [Mg<sup>2+</sup>][F<sup>−</sup>]<sup>2</sup> = (<em>x</em>)(2<em>x</em>)<sup>2</sup> = 4<em>x</em><sup>3</sup>.",
+    "solution": "1.2 × 10<sup>–3</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl7",
+   "source_id": "fs-idp69099520",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-mgoh2"
+   },
+   "cite": "precipitation",
+   "prompt": "预测 CaHPO<sub>4</sub> 能否从 [Ca<sup>2+</sup>] = 0.0001 <em>M</em>、$[{\\text{HPO}}_{4}{}^{\\text{2−}}]$ = 0.001 <em>M</em> 的溶液中沉淀。",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "CaHPO<sub>4</sub> 沉淀。",
+     "CaHPO<sub>4</sub> 不沉淀。"
+    ],
+    "correct": 1,
+    "hint": "把 <em>Q</em> = [Ca<sup>2+</sup>][HPO<sub>4</sub><sup>2−</sup>] 与附录 J 中 CaHPO<sub>4</sub> 的 <em>K</em><sub>sp</sub> 比较。",
+    "solution": "CaHPO<sub>4</sub> 不沉淀；<em>Q</em> = 1 × 10<sup>–7</sup>，小于 <em>K</em><sub>sp</sub>（7 × 10<sup>–7</sup>）"
+   }
+  },
+  {
+   "id": "cyl8",
+   "source_id": "fs-idp11872704",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-agcl"
+   },
+   "cite": "precipitation",
+   "prompt": "把 20 mL 0.050 <em>M</em> 的 K<sup>+</sup> 溶液加入 80 mL 0.50 <em>M</em> 的 ${\\text{ClO}}_{4}{}^{\\text{−}}$ 溶液中时，KClO<sub>4</sub> 会沉淀吗？（提示：用稀释公式计算混合物中钾离子和高氯酸根离子的浓度。）",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "KClO<sub>4</sub> 沉淀。",
+     "KClO<sub>4</sub> 不沉淀。"
+    ],
+    "correct": 1,
+    "hint": "两种溶液都被稀释到 100 mL；求混合物中的 [K<sup>+</sup>] 和 [ClO<sub>4</sub><sup>−</sup>]，再将 <em>Q</em> 与 <em>K</em><sub>sp</sub> 比较。",
+    "solution": "不会，<em>Q</em> = 4.0 × 10<sup>–3</sup>，小于 <em>K</em><sub>sp</sub> = 1.05 × 10<sup>–2</sup>"
+   }
+  },
+  {
+   "id": "cyl9",
+   "source_id": "fs-idp488672",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-oxalate"
+   },
+   "cite": "precipitation",
+   "prompt": "若溶液每升含有 0.0020 mol 的 ${\\text{CrO}}_{4}{}^{\\text{2−}}$，通过加入固体 AgNO<sub>3</sub>，必须使 Ag<sup>+</sup> 离子的浓度达到多少，Ag<sub>2</sub>CrO<sub>4</sub> 才开始沉淀？忽略加入固体硝酸银时体积的任何增加。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 6.7e-05,
+    "unit": "M",
+    "hint": "令 <em>K</em><sub>sp</sub> = [Ag<sup>+</sup>]<sup>2</sup>[CrO<sub>4</sub><sup>2−</sup>]，并解出 [Ag<sup>+</sup>]。",
+    "solution": "6.7 × 10<sup>–5</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "cyl10",
+   "source_id": "fs-idp392704",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-mn"
+   },
+   "cite": "precipitation",
+   "prompt": "制备金属镁的第一步，是向海水中加入 Ca(OH)<sub>2</sub>，使 Mg(OH)<sub>2</sub> 从海水中沉淀出来。海水中 Mg<sup>2+</sup>(<em>aq</em>) 的浓度为 5.37 × 10<sup>–2</sup> <em>M</em>。计算使 [Mg<sup>2+</sup>] 降低到 1.0 × 10<sup>–5</sup> <em>M</em> 时的 pH",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 10.97,
+    "tol": 0.002,
+    "hint": "由 <em>K</em><sub>sp</sub> = [Mg<sup>2+</sup>][OH<sup>−</sup>]<sup>2</sup>，在 [Mg<sup>2+</sup>] = 1.0 × 10<sup>−5</sup> <em>M</em> 时求 [OH<sup>−</sup>]，再求 pOH 和 pH。",
+    "solution": "10.97"
+   }
+  },
+  {
+   "id": "cyl11",
+   "source_id": "fs-idp1242128",
+   "kind": "check-your-learning",
+   "bloom": "Analyze",
+   "place": {
+    "at": "inline",
+    "after": "ex-halides"
+   },
+   "cite": "precipitation",
+   "prompt": "如果把硝酸银溶液加入到 Cl<sup>–</sup> 和 Br<sup>–</sup> 离子浓度均为 0.050 <em>M</em> 的溶液中，[Ag<sup>+</sup>] 为多大时开始沉淀，沉淀的化学式是什么？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1e-11,
+    "unit": "M",
+    "part": "[Ag<sup>+</sup>] at which precipitation begins",
+    "hint": "卤离子浓度相等时，<em>K</em><sub>sp</sub> 较小的盐所需的 [Ag<sup>+</sup>] 较低；用它的 <em>K</em><sub>sp</sub> 除以 0.050 <em>M</em>。",
+    "solution": "[Ag<sup>+</sup>] = 1.0 × 10<sup>–11</sup> <em>M</em>；AgBr 先沉淀"
+   }
+  },
+  {
+   "id": "cyl12",
+   "source_id": "fs-idp11083040",
+   "kind": "check-your-learning",
+   "bloom": "Understand",
+   "place": {
+    "at": "inline",
+    "after": "ex-common-ion"
+   },
+   "cite": "common-ion",
+   "prompt": "向 NiCO<sub>3</sub> 的饱和溶液中分别加入下列物质时，对固体 NiCO<sub>3</sub> 的量以及 Ni<sup>2+</sup> 和 ${\\text{CO}}_{3}{}^{\\text{2−}}$ 的浓度有什么影响<br>（a）Ni(NO<sub>3</sub>)<sub>2</sub><br>（b）KClO<sub>4</sub><br>（c）NiCO<sub>3</sub><br>（d）K<sub>2</sub>CO<sub>3</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）NiCO<sub>3</sub>(<em>s</em>) 的质量增加，[Ni<sup>2+</sup>] 增大，$[{\\text{CO}}_{3}{}^{\\text{2−}}]$ 减小；（b）无明显影响；（c）除使固体 NiCO<sub>3</sub> 的量增加外没有影响；（d）NiCO<sub>3</sub>(<em>s</em>) 的质量增加，[Ni<sup>2+</sup>] 减小，$[{\\text{CO}}_{3}{}^{\\text{2−}}]$ 增大；"
+   }
+  },
+  {
+   "id": "cyl13",
+   "source_id": "fs-idp15318512",
+   "kind": "check-your-learning",
+   "bloom": "Apply",
+   "place": {
+    "at": "inline",
+    "after": "ex-cds"
+   },
+   "cite": "common-ion",
+   "prompt": "计算氢氧化铝 Al(OH)<sub>3</sub> 在 0.015 <em>M</em> 硝酸铝 Al(NO<sub>3</sub>)<sub>3</sub> 溶液中的摩尔溶解度。Al(OH)<sub>3</sub> 的 <em>K</em><sub>sp</sub> 为 2 × 10<sup>–32</sup>。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 4e-11,
+    "unit": "M",
+    "tol": 0.15,
+    "hint": "取 [Al<sup>3+</sup>] ≈ 0.015 <em>M</em> 且 [OH<sup>−</sup>] = 3<em>x</em>，所以 <em>K</em><sub>sp</sub> = (0.015)(3<em>x</em>)<sup>3</sup>。",
+    "solution": "4 × 10<sup>–11</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e1",
+   "source_id": "fs-idp13536336",
+   "source_number": "1",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "完成下列各反应中浓度的变化量：<br>（a）<br>$\\begin{array}{lll}\\text{AgI}(s)\\;\\longrightarrow \\; & {\\text{Ag}}^{\\text{+}}\\;(aq) & +\\;{\\text{I}}^{\\text{−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>（b）<br>$\\begin{array}{lll}{\\text{CaCO}}_{3}(s)\\;\\longrightarrow \\; & {\\text{Ca}}^{\\text{2+}}(aq)+ & {\\text{CO}}_{3}{}^{\\text{2−}}(aq) \\\\ \\\\ & \\_\\_\\_\\_ & x\\end{array}$<br>（c）<br>$\\begin{array}{lll}\\text{Mg}{(\\text{OH})}_{2}(s)\\;\\longrightarrow \\; & {\\text{Mg}}^{\\text{2+}}(aq)+ & 2{\\text{OH}}^{\\text{−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>（d）<br>$\\begin{array}{lll}{\\text{Mg}}_{3}({\\text{PO}}_{4}{)}_{2}(s)\\;\\longrightarrow \\; & 3{\\text{Mg}}^{\\text{2+}}(aq)+ & 2{\\text{PO}}_{4}{}^{\\text{3−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>（e）<br>$\\begin{array}{llll}{\\text{Ca}}_{5}({\\text{PO}}_{4}{)}_{3}\\text{OH}(s)\\;\\longrightarrow \\; & 5{\\text{Ca}}^{\\text{2+}}(aq)+ & 3{\\text{PO}}_{4}{}^{\\text{3−}}(aq)+ & {\\text{OH}}^{\\text{−}}(aq) \\\\ \\\\ & \\_\\_\\_\\_\\_ & \\_\\_\\_\\_\\_ & x\\end{array}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）<br>$\\begin{array}{lll}\\text{AgI}(s)\\rightleftharpoons & {\\text{Ag}}^{\\text{+}}(aq)+ & {\\text{I}}^{\\text{−}}(aq) \\\\ \\\\ & x & \\underline{x}\\end{array}$<br>（b）<br>$\\begin{array}{lll}{\\text{CaCO}}_{3}(s)\\rightleftharpoons & {\\text{Ca}}^{\\text{2+}}(aq)+ & {\\text{CO}}_{3}{}^{\\text{2−}}(aq) \\\\ \\\\ & \\underline{x} & x\\end{array}$<br>（c）<br>$\\begin{array}{lll}\\text{Mg}{(\\text{OH})}_{2}(s)\\rightleftharpoons & {\\text{Mg}}^{\\text{2+}}(aq) & +\\;2{\\text{OH}}^{\\text{−}}(aq) \\\\ & x & \\underline{\\text{2}x}\\end{array}$<br>（d）<br>$\\begin{array}{lll}{\\text{Mg}}_{3}{({\\text{PO}}_{4})}_{2}(s)\\rightleftharpoons & {\\text{3Mg}}^{\\text{2+}}(aq)+ & {\\text{2PO}}_{4}{}^{\\text{3−}}(aq) \\\\ \\\\ & \\underline{x} & \\frac{2}{3}x\\end{array}$<br>（e）<br>$\\begin{array}{llll}{\\text{Ca}}_{5}({\\text{PO}}_{4}{)}_{3}\\text{OH}(s)\\rightleftharpoons & {\\text{5Ca}}^{\\text{2+}}(aq)+ & {\\text{3PO}}_{4}{}^{\\text{3−}}(aq)+ & {\\text{OH}}^{\\text{−}}(aq) \\\\ \\\\ & \\underline{5x} & \\underline{3x} & x\\end{array}$"
+   }
+  },
+  {
+   "id": "e2",
+   "source_id": "fs-idp15620912",
+   "source_number": "2",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "完成下列各反应中浓度的变化量：<br>（a）<br>$\\begin{array}{lll}{\\text{BaSO}}_{4}(s)\\;\\longrightarrow \\; & {\\text{Ba}}^{\\text{2+}}(aq)+ & {\\text{SO}}_{4}{}^{\\text{2−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>（b<br>$\\begin{array}{lll}{\\text{Ag}}_{2}{\\text{SO}}_{4}(s)\\;\\longrightarrow \\; & 2{\\text{Ag}}^{\\text{+}}(aq)+ & {\\text{SO}}_{4}{}^{\\text{2−}}(aq) \\\\ \\\\ & \\_\\_\\_\\_\\_ & x\\end{array}$<br>（c）<br>$\\begin{array}{lll}\\text{Al}{(\\text{OH})}_{3}(s)\\;\\longrightarrow \\; & {\\text{Al}}^{\\text{3+}}(aq)+ & 3{\\text{OH}}^{\\text{−}}(aq) \\\\ \\\\ & x & \\_\\_\\_\\_\\_\\end{array}$<br>（d）<br>$\\begin{array}{llll}\\text{Pb}(\\text{OH})\\text{Cl}(s)\\;\\longrightarrow \\; & {\\text{Pb}}^{\\text{2+}}(aq)+ & {\\text{OH}}^{\\text{−}}(aq)+ & {\\text{Cl}}^{\\text{−}}(aq) \\\\ \\\\ & \\_\\_\\_\\_\\_\\; & x & \\_\\_\\_\\_\\_\\end{array}$<br>（e）<br>$\\begin{array}{lll}{\\text{Ca}}_{3}({\\text{AsO}}_{4}{)}_{2}(s)\\;\\longrightarrow \\; & 3{\\text{Ca}}^{\\text{2+}}(aq)+ & 2{\\text{AsO}}_{4}{}^{\\text{3−}}(aq) \\\\ \\\\ & 3x & \\_\\_\\_\\_\\_\\end{array}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）$x$ 和 $x$：1 mol BaSO<sub>4</sub> 产生每种离子各 1 mol，所以两个变化量都等于摩尔溶解度 $x$。<br>（b）$2x$ 和 $x$：${\\text{SO}}_{4}{}^{\\text{2−}}$ 的变化量 $x$ 就是摩尔溶解度，而每个化学式单元释放两个 Ag<sup>+</sup> 离子，所以 [Ag<sup>+</sup>] 增加 $2x$。<br>（c）$x$ 和 $3x$：Al<sup>3+</sup> 的变化量是摩尔溶解度，每个 Al<sup>3+</sup> 伴随三个 OH<sup>−</sup> 离子。<br>（d）$x$、$x$ 和 $x$：Pb(OH)Cl 每种离子各释放一个，所以给出的 OH<sup>−</sup> 的变化量 $x$ 也是 Pb<sup>2+</sup> 和 Cl<sup>−</sup> 的变化量。<br>（e）$3x$ 和 $2x$：Ca<sup>2+</sup> 的变化量 $3x$ 表明摩尔溶解度为 $x$，每个化学式单元溶解出两个 ${\\text{AsO}}_{4}{}^{\\text{3−}}$ 离子，所以它们的浓度增加 $2x$。"
+   }
+  },
+  {
+   "id": "e3",
+   "source_id": "fs-idp15761856",
+   "source_number": "3",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "solubility-product",
+   "prompt": "当向体系中加入 100 g 固体 Ag<sub>2</sub>CrO<sub>4</sub> 时，位于 1.0 g 固体 Ag<sub>2</sub>CrO<sub>4</sub> 上方的饱和溶液中 Ag<sup>+</sup> 和 ${\\text{CrO}}_{4}{}^{\\text{2−}}$ 的浓度如何变化？请解释。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "没有变化。无论固体是少是多，其活度都是 1。"
+   }
+  },
+  {
+   "id": "e4",
+   "source_id": "fs-idp15767216",
+   "source_number": "4",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "common-ion",
+   "prompt": "向 PbS 的饱和溶液中加入 K<sub>2</sub>S 时，Pb<sup>2+</sup> 和 S<sup>2–</sup> 的浓度如何变化？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "S<sup>2–</sup> 的浓度增大，Pb<sup>2+</sup> 的浓度减小。在饱和溶液中，$\\text{PbS}(s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)$ 处于平衡，其中 $\\kKsp=[{\\text{Pb}}^{\\text{2+}}][{\\text{S}}^{\\text{2−}}]=7\\;\\times \\;{10}^{-29}$。K<sub>2</sub>S 是一种可溶的盐，它加入了同离子 S<sup>2–</sup>。此时反应商超过 $\\kKsp$，因此根据勒夏特列原理，平衡向左移动：Pb<sup>2+</sup> 与 S<sup>2–</sup> 结合，更多固体 PbS 沉淀。沉淀只除去了所加硫离子的一小部分，所以 [S<sup>2–</sup>] 最终比之前更高，而 [Pb<sup>2+</sup>] 下降，直到两种浓度之积再次等于 $\\kKsp$。"
+   }
+  },
+  {
+   "id": "e5",
+   "source_id": "fs-idp15771216",
+   "source_number": "5",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "solubility-product",
+   "prompt": "要回答下面的问题，我们还需要什么额外信息：温度升高时，固体溴化银与其离子饱和溶液之间的平衡会受到怎样的影响？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "必须知道溴化银在新温度下的溶解度。通常溶解度增大，一部分固体溴化银会溶解。"
+   }
+  },
+  {
+   "id": "e6",
+   "source_id": "fs-idp15773008",
+   "source_number": "6",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "下列微溶化合物中，哪些由于所含阴离子的水解，其溶解度大于按溶度积算得的值：CoSO<sub>3</sub>、CuI、PbCO<sub>3</sub>、PbCl<sub>2</sub>、Tl<sub>2</sub>S、KClO<sub>4</sub>？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "CoSO<sub>3</sub>、PbCO<sub>3</sub> 和 Tl<sub>2</sub>S。它们的阴离子，即亚硫酸根、碳酸根和硫离子，分别是弱酸 ${\\text{HSO}}_{3}{}^{-}$、${\\text{HCO}}_{3}{}^{-}$ 和 HS<sup>–</sup> 的共轭碱，所以各自都与水反应，例如 ${\\text{CO}}_{3}{}^{\\text{2−}}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{HCO}}_{3}{}^{-}(aq)+{\\text{OH}}^{-}(aq)$。这种水解使游离阴离子的浓度低于仅由溶解给出的值，溶解平衡向右移动，溶解的固体比 $\\kKsp$ 所预测的更多。CuI、PbCl<sub>2</sub> 和 KClO<sub>4</sub> 的阴离子，即碘离子、氯离子和高氯酸根，分别是强酸 HI、HCl 和 HClO<sub>4</sub> 的共轭碱；它们不与水反应，这些盐的溶解度就是由溶度积算得的值。"
+   }
+  },
+  {
+   "id": "e7",
+   "source_id": "fs-idp15777680",
+   "source_number": "7",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "下列微溶化合物中，哪些由于所含阴离子的水解，其溶解度大于按溶度积算得的值：AgCl、BaSO<sub>4</sub>、CaF<sub>2</sub>、Hg<sub>2</sub>I<sub>2</sub>、MnCO<sub>3</sub> 和 ZnS？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "CaF<sub>2</sub>、MnCO<sub>3</sub> 和 ZnS"
+   }
+  },
+  {
+   "id": "e8",
+   "source_id": "fs-idp15782160",
+   "source_number": "8",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "solubility-product",
+   "prompt": "写出下列每种微溶离子化合物溶解的离子方程式和溶度积（<em>K</em><sub>sp</sub>）表达式：<br>（a）PbCl<sub>2</sub><br>（b）Ag<sub>2</sub>S<br>（c）Sr<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub><br>（d）SrSO<sub>4</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "（a）$\\text{PbCl}_{2}(s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)\\hspace{2em}\\kKsp=[{\\text{Pb}}^{\\text{2+}}]{[{\\text{Cl}}^{\\text{−}}]}^{2}$<br>（b）${\\text{Ag}}_{2}\\text{S}(s)\\rightleftharpoons 2{\\text{Ag}}^{\\text{+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)\\hspace{2em}\\kKsp={[{\\text{Ag}}^{\\text{+}}]}^{2}[{\\text{S}}^{\\text{2−}}]$<br>（c）${\\text{Sr}}_{3}{({\\text{PO}}_{4})}_{2}(s)\\rightleftharpoons 3{\\text{Sr}}^{\\text{2+}}(aq)+2{\\text{PO}}_{4}{}^{\\text{3−}}(aq)\\hspace{2em}\\kKsp={[{\\text{Sr}}^{\\text{2+}}]}^{3}{[{\\text{PO}}_{4}{}^{\\text{3−}}]}^{2}$<br>（d）${\\text{SrSO}}_{4}(s)\\rightleftharpoons {\\text{Sr}}^{\\text{2+}}(aq)+{\\text{SO}}_{4}{}^{\\text{2−}}(aq)\\hspace{2em}\\kKsp=[{\\text{Sr}}^{\\text{2+}}][{\\text{SO}}_{4}{}^{\\text{2−}}]$<br>溶解方程式中的每个系数成为该离子浓度的指数，而未溶解的固体在表达式中没有项。"
+   }
+  },
+  {
+   "id": "e9",
+   "source_id": "fs-idp13118608",
+   "source_number": "9",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "solubility-product",
+   "prompt": "写出下列每种微溶离子化合物溶解的离子方程式和 <em>K</em><sub>sp</sub> 表达式：<br>（a）LaF<sub>3</sub><br>（b）CaCO<sub>3</sub><br>（c）Ag<sub>2</sub>SO<sub>4</sub><br>（d）Pb(OH)<sub>2</sub>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${\\text{LaF}}_{3}(s)\\rightleftharpoons {\\text{La}}^{\\text{3+}}(aq)+{\\text{3F}}^{\\text{−}}(aq)\\hspace{4em}{K}_{\\text{sp}}=[{\\text{La}}^{\\text{3+}}]{[\\text{F}}^{\\text{−}}{]}^{3}$；<br>（b）${\\text{CaCO}}_{3}(s)\\rightleftharpoons {\\text{Ca}}^{\\text{2+}}(aq)+{\\text{CO}}_{3}{}^{\\text{2−}}(aq)\\hspace{4em}{K}_{\\text{sp}}=[{\\text{Ca}}^{\\text{2+}}][{\\text{CO}}_{3}{}^{\\text{2−}}]$；<br>（c）${\\text{Ag}}_{2}{\\text{SO}}_{4}(s)\\rightleftharpoons {\\text{2Ag}}^{\\text{+}}(aq)+{\\text{SO}}_{4}{}^{\\text{2−}}(aq)\\hspace{4em}{K}_{\\text{sp}}={[{\\text{Ag}}^{\\text{+}}]}^{2}[{\\text{SO}}_{4}{}^{\\text{2−}}]$；<br>（d）${\\text{Pb(OH)}}_{2}(s)\\rightleftharpoons {\\text{Pb}}^{\\text{2+}}(aq)+{\\text{2OH}}^{\\text{−}}(aq)\\hspace{4em}{K}_{\\text{sp}}=[{\\text{Pb}}^{\\text{2+}}]{[{\\text{OH}}^{\\text{−}}]}^{2}$"
+   }
+  },
+  {
+   "id": "e11",
+   "source_id": "fs-idp13270928",
+   "source_number": "11",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "<em>化学与物理手册</em>给出了下列化合物每 100 mL 水中溶解的克数。因为这些化合物只是微溶，假设溶解时体积不变，并计算各自的溶度积。<br>（a）BaSeO<sub>4</sub>，0.0118 g/100 mL<br>（b）Ba(BrO<sub>3</sub>)<sub>2</sub>·H<sub>2</sub>O，0.30 g/100 mL<br>（c）NH<sub>4</sub>MgAsO<sub>4</sub>·6H<sub>2</sub>O，0.038 g/100 mL<br>（d）La<sub>2</sub>(MoO<sub>4</sub>)<sub>3</sub>，0.00179 g/100 mL",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) <em>K</em><sub>sp</sub> of BaSeO<sub>4</sub>",
+      "value": 1.77e-07,
+      "hint": "用各自的摩尔质量把每 100 mL 的克数换算成物质的量浓度（mol/L），再由化学式写出各离子的浓度。"
+     },
+     {
+      "part": "(b) <em>K</em><sub>sp</sub> of Ba(BrO<sub>3</sub>)<sub>2</sub>·H<sub>2</sub>O",
+      "value": 1.6e-06
+     },
+     {
+      "part": "(c) <em>K</em><sub>sp</sub> of NH<sub>4</sub>MgAsO<sub>4</sub>·6H<sub>2</sub>O",
+      "value": 2.2e-09
+     },
+     {
+      "part": "(d) <em>K</em><sub>sp</sub> of La<sub>2</sub>(MoO<sub>4</sub>)<sub>3</sub>",
+      "value": 7.91e-22
+     }
+    ],
+    "solution": "（a）1.77 × 10<sup>–7</sup>；（b）1.6 × 10<sup>–6</sup>；（c）2.2 × 10<sup>–9</sup>；（d）7.91 × 10<sup>–22</sup>"
+   }
+  },
+  {
+   "id": "e12",
+   "source_id": "fs-idp13349584",
+   "source_number": "12",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "用溶度积预测，下列盐中哪一种在纯水中以 mol/L 计溶解度最大：CaF<sub>2</sub>、Hg<sub>2</sub>Cl<sub>2</sub>、PbI<sub>2</sub> 或 Sn(OH)<sub>2</sub>？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "PbI<sub>2</sub> 溶解度最大，约为 1.5 × 10<sup>–3</sup> <em>M</em>。四种盐各溶解成一个阳离子和两个阴离子（汞(I)离子是 ${\\text{Hg}}_{2}{}^{\\text{2+}}$），所以对于摩尔溶解度 $x$，每一种都有 $\\kKsp=(x){(2x)}^{2}=4{x}^{3}$，而 $\\kKsp$ 最大的盐摩尔溶解度最大。由附录 J：CaF<sub>2</sub>，$4{x}^{3}=4.0\\;\\times \\;{10}^{-11}$，$x=2.2\\;\\times \\;{10}^{-4}\\;M$；Hg<sub>2</sub>Cl<sub>2</sub>，$4{x}^{3}=1.1\\;\\times \\;{10}^{-18}$，$x=6.5\\;\\times \\;{10}^{-7}\\;M$；PbI<sub>2</sub>，$4{x}^{3}=1.4\\;\\times \\;{10}^{-8}$，$x=1.5\\;\\times \\;{10}^{-3}\\;M$；Sn(OH)<sub>2</sub>，$4{x}^{3}=3\\;\\times \\;{10}^{-27}$，$x=9\\;\\times \\;{10}^{-10}\\;M$。PbI<sub>2</sub> 的 $\\kKsp$ 最大，摩尔溶解度也最大。"
+   }
+  },
+  {
+   "id": "e13",
+   "source_id": "fs-idp13365680",
+   "source_number": "13",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "假设除溶解外不涉及其他平衡，由溶度积计算下列各物质的摩尔溶解度：<br>（a）KHC<sub>4</sub>H<sub>4</sub>O<sub>6</sub><br>（b）PbI<sub>2</sub><br>（c）Ag<sub>4</sub>[Fe(CN)<sub>6</sub>]，一种含有 ${\\text{Fe(CN)}}_{6}{}^{\\text{4–}}$ 离子的盐<br>（d）Hg<sub>2</sub>I<sub>2</sub>",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) KHC<sub>4</sub>H<sub>4</sub>O<sub>6</sub>",
+      "value": 0.02,
+      "unit": "M",
+      "tol": 0.15,
+      "hint": "从附录 J 取各 <em>K</em><sub>sp</sub>，并由溶解方程式用 <em>x</em> 表示它。"
+     },
+     {
+      "part": "(b) PbI<sub>2</sub>",
+      "value": 0.0015,
+      "unit": "M"
+     },
+     {
+      "part": "(c) Ag<sub>4</sub>[Fe(CN)<sub>6</sub>]",
+      "value": 2.27e-09,
+      "unit": "M"
+     },
+     {
+      "part": "(d) Hg<sub>2</sub>I<sub>2</sub>",
+      "value": 2.2e-10,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）2 × 10<sup>–2</sup> <em>M</em>；（b）1.5 × 10<sup>–3</sup> <em>M</em>；（c）2.27 × 10<sup>–9</sup> <em>M</em>；（d）2.2 × 10<sup>–10</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e15",
+   "source_id": "fs-idp14208112",
+   "source_number": "15",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "common-ion",
+   "prompt": "假设除溶解外不涉及其他平衡，计算下列各盐与含同离子的溶液接触时，各溶液中所有溶质物种的浓度。证明同离子初始浓度的变化可以忽略。<br>（a）AgCl(<em>s</em>) 在 0.025 <em>M</em> NaCl 中<br>（b）CaF<sub>2</sub>(<em>s</em>) 在 0.00133 <em>M</em> KF 中<br>（c）Ag<sub>2</sub>SO<sub>4</sub>(<em>s</em>) 在 0.500 L 含 19.50 g K<sub>2</sub>SO<sub>4</sub> 的溶液中<br>（d）Zn(OH)<sub>2</sub>(<em>s</em>) 在 pH 为 11.45 的缓冲溶液中",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) [Ag<sup>+</sup>]",
+      "value": 6.4e-09,
+      "unit": "M",
+      "hint": "取同离子的浓度为其初始值，并由 <em>K</em><sub>sp</sub> 解出另一种离子。"
+     },
+     {
+      "part": "(b) [Ca<sup>2+</sup>]",
+      "value": 2.2e-05,
+      "unit": "M",
+      "tol": 0.03
+     },
+     {
+      "part": "(c) [Ag<sup>+</sup>]",
+      "value": 0.0074,
+      "unit": "M"
+     },
+     {
+      "part": "(d) [Zn<sup>2+</sup>]",
+      "value": 5.7e-12,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）6.4 × 10<sup>−9</sup> <em>M</em> = [Ag<sup>+</sup>]，[Cl<sup>−</sup>] = 0.025 <em>M</em>。检验：$\\frac{6.4\\;\\times \\;{10}^{-9}\\;M}{0.025\\;M}\\;\\times \\;\\text{100\\%}=\\text{2.6}\\;\\times \\;{10}^{-5}\\%$，变化微不足道；<br>（b）2.2 × 10<sup>−5</sup> <em>M</em> = [Ca<sup>2+</sup>]，[F<sup>−</sup>] = 0.0013 <em>M</em>。检验：$\\frac{\\text{2.26}\\;\\times \\;{10}^{-5}\\;M}{0.00133\\;M}\\;\\times \\;\\text{100\\%}=\\text{1.70\\%}$。该值小于 5%，可以忽略。<br>（c）0.2238 <em>M</em> = $[{\\text{SO}}_{4}{}^{2\\text{−}}]$；[Ag<sup>+</sup>] = 7.4 × 10<sup>–3</sup> <em>M</em>。检验：$\\frac{3.7\\;\\times \\;{10}^{-3}}{0.2238}\\;\\times \\;100\\%=\\text{1.64}\\;\\times \\;{10}^{-2}$；条件得到满足。<br>（d）[OH<sup>–</sup>] = 2.8 × 10<sup>–3</sup> <em>M</em>；5.7 × 10<sup>−12</sup> <em>M</em> = [Zn<sup>2+</sup>]。检验：$\\frac{5.7\\;\\times \\;{10}^{-12}}{2.8\\;\\times \\;{10}^{-3}}\\;\\times \\;\\text{100\\%}=\\text{2.0}\\;\\times \\;{10}^{-7}\\%$；<em>x</em> 小于 [OH<sup>–</sup>] 的 5%，因此可以忽略。"
+   }
+  },
+  {
+   "id": "e17",
+   "source_id": "fs-idp14499248",
+   "source_number": "17",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "common-ion",
+   "prompt": "假设除溶解外不涉及其他平衡，计算下列各盐与含同离子的溶液接触时，各溶液中所有溶质物种的浓度。说明忽略同离子初始浓度的变化是否合适。<br>（a）TlCl(<em>s</em>) 在 0.025 <em>M</em> TlNO<sub>3</sub> 中<br>（b）BaF<sub>2</sub>(<em>s</em>) 在 0.313 <em>M</em> KF 中<br>（c）MgC<sub>2</sub>O<sub>4</sub> 在 2.250 L 含 8.156 g Mg(NO<sub>3</sub>)<sub>2</sub> 的溶液中<br>（d）Ca(OH)<sub>2</sub>(<em>s</em>) 在初始 pH 为 12.700 的非缓冲溶液中",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) [Tl<sup>+</sup>]",
+      "value": 0.031,
+      "unit": "M",
+      "hint": "在（a）中，变化与 0.025 <em>M</em> 相比并不小，所以要解二次方程；在其余各题中，取同离子为其初始值。"
+     },
+     {
+      "part": "(a) [Cl<sup>−</sup>]",
+      "value": 0.0056,
+      "unit": "M"
+     },
+     {
+      "part": "(b) [Ba<sup>2+</sup>]",
+      "value": 0.00024,
+      "unit": "M"
+     },
+     {
+      "part": "(c) [C<sub>2</sub>O<sub>4</sub><sup>2−</sup>]",
+      "value": 2.9e-05,
+      "unit": "M"
+     },
+     {
+      "part": "(d) [Ca<sup>2+</sup>]",
+      "value": 0.000518,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）同离子初始浓度的变化不能忽略（必须解二次方程）<br>[Ti<sup>+</sup>]<sup class=\"fn\" data-note=\"c-e17-tl\"></sup> =0.031  <em>M</em><br>[Cl<sup>–</sup>] = 0.0056 <em>M</em>（b）同离子初始浓度的变化可以忽略。<br>[Ba<sup>2+</sup>] = 2.4 × 10<sup>–4</sup> <em>M</em><br>[F<sup>–</sup>] = 0.313 <em>M</em>；<br>（c）同离子初始浓度的变化可以忽略。<br>[Mg<sup>2+</sup>] = 0.0244 <em>M</em><br>$[{\\text{C}}_{2}{\\text{O}}_{4}{}^{\\text{2−}}]=2.9\\;\\times \\;{10}^{\\text{−5}}\\;M$<br>（d）同离子初始浓度的变化可以忽略。<br>[Ca<sup>2+</sup>] = 5.18 × 10<sup>–4</sup> <em>M</em><br>[C<sub>2</sub>)<sub>4</sub><sup>2–</sup>] = 0.051 <em>M</em><sup class=\"fn\" data-note=\"c-e17-oh\"></sup>"
+   }
+  },
+  {
+   "id": "e18",
+   "source_id": "fs-idp14702288",
+   "source_number": "18",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "common-ion",
+   "prompt": "解释为什么习题 15.17 中同离子浓度的变化可以忽略。",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "在（b）、（c）和（d）中，这些变化可以忽略，因为这几种盐都极难溶，它们所加入的同离子不到已有同离子的 5%；在（a）中则不能忽略。在（b）中，$x={[\\text{Ba}}^{\\text{2+}}]=2.4\\;\\times \\;{10}^{-4}\\;M$，BaF<sub>2</sub> 所加入的氟离子 $2x=4.9\\;\\times \\;{10}^{-4}\\;M$ 是 0.313 <em>M</em> 的 0.16%。在（c）中，2.250 L 中的 8.156 g Mg(NO<sub>3</sub>)<sub>2</sub>（148.3 g/mol）相当于 0.02444 <em>M</em> Mg<sup>2+</sup>，而 MgC<sub>2</sub>O<sub>4</sub> 只增加 2.9 × 10<sup>–5</sup> <em>M</em>，即 0.12%。在（d）中，pH 12.700 给出 pOH 1.300 和 [OH<sup>–</sup>] = 0.0501 <em>M</em>；$x=1.3\\;\\times \\;{10}^{-6}\\text{/}{(0.0501)}^{2}=5.2\\;\\times \\;{10}^{-4}\\;M$，所加入的氢氧根 $2x=1.0\\;\\times \\;{10}^{-3}\\;M$ 为 2.1%。（a）中的 TlCl 可溶得多（$\\kKsp=1.7\\;\\times \\;{10}^{-4}$）：解 $x(0.025+x)=1.7\\;\\times \\;{10}^{-4}$ 得 $x=0.0056\\;M$，为 0.025 <em>M</em> 的 22%，所以必须解二次方程，[Tl<sup>+</sup>] = 0.031 <em>M</em>。"
+   }
+  },
+  {
+   "id": "e19",
+   "source_id": "fs-idp14703872",
+   "source_number": "19",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "common-ion",
+   "prompt": "解释为什么习题 15.18 中同离子浓度的变化不能忽略。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "浓度的变化大于 5%，因此超过了可以忽略该变化的最大值。"
+   }
+  },
+  {
+   "id": "e21",
+   "source_id": "fs-idp14726720",
+   "source_number": "21",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "钙盐的溶度积请参阅<a href=\"/chemistry-2e/sheets/ksp/\">附录 J</a>。确定所列钙盐中哪一种以摩尔每升计溶解度最大，哪一种以克每升计溶解度最大。",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "CaSO<sub>4</sub>∙2H<sub>2</sub>O 是以 mol/L 计溶解度最大的钙盐，也是以 g/L 计溶解度最大的钙盐。"
+   }
+  },
+  {
+   "id": "e23",
+   "source_id": "fs-idp14846704",
+   "source_number": "23",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "美国公共卫生署的饮用水标准规定 ${\\text{SO}}_{4}{}^{\\text{2−}}$ 的最大浓度为 250 mg/L（2.60 × 10<sup>–3</sup> <em>M</em>），因为它有泻下作用（它是一种泻药）。因流经含石膏 CaSO<sub>4</sub>·2H<sub>2</sub>O 的土壤而被 CaSO<sub>4</sub> 饱和的天然水（“gyp”水）是否符合这些标准？这种水中 ${\\text{SO}}_{4}{}^{\\text{2−}}$ 的浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.0078,
+    "unit": "M",
+    "part": "[SO<sub>4</sub><sup>2−</sup>]",
+    "hint": "在 gyp 水中 [Ca<sup>2+</sup>] = [SO<sub>4</sub><sup>2−</sup>] = <em>x</em>，CaSO<sub>4</sub>·2H<sub>2</sub>O 的 <em>K</em><sub>sp</sub> = <em>x</em><sup>2</sup>；把 <em>x</em> 与 2.60 × 10<sup>−3</sup> <em>M</em> 比较。",
+    "solution": "7.8 × 10<sup>–3</sup> <em>M</em> = $[{\\text{SO}}_{4}{}^{\\text{2−}}]$ = [Ca<sup>2+</sup>]；由于该浓度高于 2.60 × 10<sup>–3</sup> <em>M</em>，“gyp”水不符合标准。"
+   }
+  },
+  {
+   "id": "e25",
+   "source_id": "fs-idp14922048",
+   "source_number": "25",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "common-ion",
+   "prompt": "CaSO<sub>4</sub>·2H<sub>2</sub>O 的溶度积为 2.4 × 10<sup>–5</sup>。在 1.0 L 0.010 <em>M</em> 的 ${\\text{SO}}_{4}{}^{\\text{2−}}$ 溶液中，这种盐能溶解多少质量？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.72,
+    "unit": "g",
+    "hint": "[Ca<sup>2+</sup>] = <em>x</em> 且 [SO<sub>4</sub><sup>2−</sup>] = 0.010 + <em>x</em>；解出后，再把 <em>x</em> 摩尔换算成二水合物的克数。",
+    "solution": "质量（CaSO<sub>4</sub>·2H<sub>2</sub>O）= 0.72 g"
+   }
+  },
+  {
+   "id": "e27",
+   "source_id": "fs-idp15085264",
+   "source_number": "27",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "假设除溶解外不涉及其他平衡，计算下列各物质饱和溶液中各离子的浓度（溶度积见<a href=\"/chemistry-2e/sheets/ksp/\">附录 J</a>）：<br>（a）AgI<br>（b）Ag<sub>2</sub>SO<sub>4</sub><br>（c）Mn(OH)<sub>2</sub><br>（d）Sr(OH)<sub>2</sub>·8H<sub>2</sub>O<br>（e）水镁石矿物 Mg(OH)<sub>2</sub>",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) [Ag<sup>+</sup>] = [I<sup>−</sup>]",
+      "value": 1.3e-05,
+      "unit": "M",
+      "hint": "从附录 J 取各 <em>K</em><sub>sp</sub>，用 <em>x</em> 表示，解出 <em>x</em>，再乘以各离子的系数。"
+     },
+     {
+      "part": "(b) [Ag<sup>+</sup>]",
+      "value": 0.0288,
+      "unit": "M"
+     },
+     {
+      "part": "(b) [SO<sub>4</sub><sup>2−</sup>]",
+      "value": 0.0144,
+      "unit": "M"
+     },
+     {
+      "part": "(c) [Mn<sup>2+</sup>]",
+      "value": 3.7e-05,
+      "unit": "M"
+     },
+     {
+      "part": "(c) [OH<sup>−</sup>]",
+      "value": 7.4e-05,
+      "unit": "M"
+     },
+     {
+      "part": "(d) [Sr<sup>2+</sup>]",
+      "value": 0.043,
+      "unit": "M"
+     },
+     {
+      "part": "(d) [OH<sup>−</sup>]",
+      "value": 0.086,
+      "unit": "M"
+     },
+     {
+      "part": "(e) [Mg<sup>2+</sup>]",
+      "value": 0.00013,
+      "unit": "M"
+     },
+     {
+      "part": "(e) [OH<sup>−</sup>]",
+      "value": 0.00026,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）[Ag<sup>+</sup>] = [I<sup>–</sup>] = 1.3 × 10<sup>–5</sup> <em>M</em>；（b）[Ag<sup>+</sup>] = 2.88 × 10<sup>–2</sup> <em>M</em>，$[{\\text{SO}}_{4}{}^{\\text{2−}}]$= 1.44 × 10<sup>–2</sup> <em>M</em>；（c）[Mn<sup>2+</sup>] = 3.7 × 10<sup>–5</sup> <em>M</em>，[OH<sup>–</sup>] = 7.4 × 10<sup>–5</sup> <em>M</em>；（d）[Sr<sup>2+</sup>] = 4.3 × 10<sup>–2</sup> <em>M</em>，[OH<sup>–</sup>] = 8.6 × 10<sup>–2</sup> <em>M</em>；（e）[Mg<sup>2+</sup>] = 1.3 × 10<sup>–4</sup> <em>M</em>，[OH<sup>–</sup>] = 2.6 × 10<sup>–4</sup> <em>M</em>。"
+   }
+  },
+  {
+   "id": "e29",
+   "source_id": "fs-idp1351072",
+   "source_number": "29",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "下列浓度是在与微溶固体处于平衡的离子混合物中测得的。由所给的浓度，计算所指各微溶固体的 <em>K</em><sub>sp</sub>：<br>（a）TlCl：[Tl<sup>+</sup>] = 1.21 × 10<sup>–2</sup> <em>M</em>，[Cl<sup>–</sup>] = 1.2 × 10<sup>–2</sup> <em>M</em><br>（b）Ce(IO<sub>3</sub>)<sub>4</sub>：[Ce<sup>4+</sup>] = 1.8 × 10<sup>–4</sup> <em>M</em>，$[{\\text{IO}}_{3}{}^{\\text{−}}]$ = 2.6 × 10<sup>–13</sup> <em>M</em><br>（c）Gd<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>：[Gd<sup>3+</sup>] = 0.132 <em>M</em>，$[{\\text{SO}}_{\\text{4}}{}^{\\text{2−}}]$ = 0.198 <em>M</em><br>（d）Ag<sub>2</sub>SO<sub>4</sub>：[Ag<sup>+</sup>] = 2.40 × 10<sup>–2</sup> <em>M</em>，$[{\\text{SO}}_{\\text{4}}{}^{\\text{2−}}]$ = 2.05 × 10<sup>–2</sup> <em>M</em><br>（e）BaSO<sub>4</sub>：[Ba<sup>2+</sup>] = 0.500 <em>M</em>，$[{\\text{SO}}_{\\text{4}}{}^{\\text{2−}}]$ = 2.16 × 10<sup>−10</sup> <em>M</em>",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) TlCl",
+      "value": 0.000145,
+      "hint": "把每个浓度乘到它在化学式中的系数次幂，再相乘。"
+     },
+     {
+      "part": "(b) Ce(IO<sub>3</sub>)<sub>4</sub>",
+      "value": 8.2e-55
+     },
+     {
+      "part": "(c) Gd<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>",
+      "value": 0.000135
+     },
+     {
+      "part": "(d) Ag<sub>2</sub>SO<sub>4</sub>",
+      "value": 1.18e-05
+     },
+     {
+      "part": "(e) BaSO<sub>4</sub>",
+      "value": 1.08e-10
+     }
+    ],
+    "solution": "（a）1.45 × 10<sup>–4</sup>；（b）8.2 × 10<sup>–55</sup>；（c）1.35 × 10<sup>–4</sup>；（d）1.18 × 10<sup>–5</sup>；（e）1.08 × 10<sup>–10</sup>"
+   }
+  },
+  {
+   "id": "e31",
+   "source_id": "fs-idp1466960",
+   "source_number": "31",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "下列化合物中，哪些会从具有所示浓度的溶液中沉淀？（<em>K</em><sub>sp</sub> 值见<a href=\"/chemistry-2e/sheets/ksp/\">附录 J</a>。）<br>（a）CaCO<sub>3</sub>：[Ca<sup>2+</sup>] = 0.003 <em>M</em>，$[{\\text{CO}}_{\\text{3}}{}^{\\text{2−}}]$ = 0.003 <em>M</em><br>（b）Co(OH)<sub>2</sub>：[Co<sup>2+</sup>] = 0.01 <em>M</em>，[OH<sup>–</sup>] = 1 × 10<sup>–7</sup> <em>M</em><br>（c）CaHPO<sub>4</sub>：[Ca<sup>2+</sup>] = 0.01 <em>M</em>，$[{\\text{HPO}}_{\\text{4}}{}^{\\text{2−}}]$ = 2 × 10<sup>–6</sup> <em>M</em><br>（d）Pb<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>：[Pb<sup>2+</sup>] = 0.01 <em>M</em>，$[{\\text{PO}}_{\\text{4}}{}^{\\text{3−}}]$ = 1 × 10<sup>–13</sup> <em>M</em>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）CaCO<sub>3</sub> 确实沉淀。（b）该化合物不沉淀。（c）该化合物不沉淀。（d）该化合物沉淀。"
+   }
+  },
+  {
+   "id": "e33",
+   "source_id": "fs-idp1572240",
+   "source_number": "33",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "计算 BaSO<sub>4</sub> 刚开始从 Ba<sup>2+</sup> 浓度为 0.0758 <em>M</em> 的溶液中沉淀时，硫酸根离子的浓度。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.42e-09,
+    "unit": "M",
+    "hint": "令 <em>Q</em> = <em>K</em><sub>sp</sub> = [Ba<sup>2+</sup>][SO<sub>4</sub><sup>2−</sup>]，其中 [Ba<sup>2+</sup>] = 0.0758 <em>M</em>。",
+    "solution": "1.42 × 10<sup>−9</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e35",
+   "source_id": "fs-idp1626656",
+   "source_number": "35",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "计算 Ag<sub>3</sub>PO<sub>4</sub> 开始从 Ag<sup>+</sup> 浓度为 0.0125 <em>M</em> 的溶液中沉淀时，${\\text{PO}}_{4}{}^{\\text{3−}}$ 的浓度。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 9.2e-13,
+    "unit": "M",
+    "hint": "<em>K</em><sub>sp</sub> = [Ag<sup>+</sup>]<sup>3</sup>[PO<sub>4</sub><sup>3−</sup>]；解出磷酸根的浓度。",
+    "solution": "9.2 × 10<sup>−13</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e37",
+   "source_id": "fs-idp1683696",
+   "source_number": "37",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "计算在 ${\\text{CO}}_{3}{}^{\\text{2−}}$ 浓度为 2.50 × 10<sup>–6</sup> <em>M</em> 的溶液中，开始沉淀 Ag<sub>2</sub>CO<sub>3</sub> 所需的 Ag<sup>+</sup> 浓度。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.0018,
+    "unit": "M",
+    "hint": "<em>K</em><sub>sp</sub> = [Ag<sup>+</sup>]<sup>2</sup>[CO<sub>3</sub><sup>2−</sup>]；解出 [Ag<sup>+</sup>]。",
+    "solution": "[Ag<sup>+</sup>] = 1.8 × 10<sup>–3</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e39",
+   "source_id": "fs-idp1744880",
+   "source_number": "39",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "通过沉淀 CaF<sub>2</sub> 把 [Ca<sup>2+</sup>] 降低到 1.0 × 10<sup>–4</sup> <em>M</em>，需要多大的 [F<sup>–</sup>]？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00063,
+    "unit": "M",
+    "hint": "<em>K</em><sub>sp</sub> = [Ca<sup>2+</sup>][F<sup>−</sup>]<sup>2</sup>，其中 [Ca<sup>2+</sup>] = 1.0 × 10<sup>−4</sup> <em>M</em>。",
+    "solution": "6.3 × 10<sup>–4</sup>"
+   }
+  },
+  {
+   "id": "e41",
+   "source_id": "fs-idp1809552",
+   "source_number": "41",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "对碳酸镍(II)进行下列计算。（a）必须用多大体积的水洗涤含 NiCO<sub>3</sub> 的沉淀，才能溶解 0.100 g 这种化合物？假设洗涤水被 NiCO<sub>3</sub> 饱和（<em>K</em><sub>sp</sub> = 1.36 × 10<sup>–7</sup>）。<br>（b）如果 NiCO<sub>3</sub> 是 CoCO<sub>3</sub>（<em>K</em><sub>sp</sub> = 1.0 × 10<sup>–12</sup>）样品中的杂质，会损失多少质量的 CoCO<sub>3</sub>？请记住，NiCO<sub>3</sub> 和 CoCO<sub>3</sub> 溶解在同一溶液中。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) volume of wash water",
+      "value": 2.25,
+      "unit": "L",
+      "hint": "求 NiCO<sub>3</sub> 的摩尔溶解度，再求溶解 0.100 g NiCO<sub>3</sub> 所需的水的体积。"
+     },
+     {
+      "part": "(b) mass of CoCO<sub>3</sub> lost",
+      "value": 7.2e-07,
+      "unit": "g"
+     }
+    ],
+    "solution": "（a）2.25 L；（b）7.2 × 10<sup>–7</sup> g"
+   }
+  },
+  {
+   "id": "e43",
+   "source_id": "fs-idp1866352",
+   "source_number": "43",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "溶液中 Cu<sup>2+</sup> 和 Cd<sup>2+</sup> 的浓度均为 0.010 <em>M</em>。加入硫离子使 99.9% 的 Cu<sup>2+</sup> 以 CuS 的形式沉淀后，溶液中还剩下百分之几的 Cd<sup>2+</sup>？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 100,
+    "unit": "%",
+    "tol": 0.01,
+    "hint": "求 0.1% 的 Cu<sup>2+</sup> 剩余时的 [S<sup>2−</sup>]，再将 [Cd<sup>2+</sup>][S<sup>2−</sup>] 与 CdS 的 <em>K</em><sub>sp</sub> 比较。",
+    "solution": "其 100% 仍溶解在溶液中"
+   }
+  },
+  {
+   "id": "e45",
+   "source_id": "fs-idp1955712",
+   "source_number": "45",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "可以用什么试剂来分离下列各混合物中的离子，其中每种离子均为 0.1 <em>M</em>？在某些情形下可能需要控制 pH。（提示：考虑<a href=\"/chemistry-2e/sheets/ksp/\">附录 J</a> 中给出的 <em>K</em><sub>sp</sub> 值。）<br>（a）${\\text{Hg}}_{2}{}^{\\text{2+}}$ 和 Cu<sup>2+</sup><br>（b）${\\text{SO}}_{4}{}^{\\text{2−}}$ 和 Cl<sup>–</sup><br>（c）Hg<sup>2+</sup> 和 Co<sup>2+</sup><br>（d）Zn<sup>2+</sup> 和 Sr<sup>2+</sup><br>（e）Ba<sup>2+</sup> 和 Mg<sup>2+</sup><br>（f）${\\text{CO}}_{3}{}^{\\text{2−}}$ 和 OH<sup>–</sup>",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "（a）${\\text{Hg}}_{2}{}^{\\text{2+}}$ 和 Cu<sup>2+</sup>：加入 ${\\text{SO}}_{4}{}^{\\text{2−}}$。（b）${\\text{SO}}_{4}{}^{\\text{2−}}$ 和 Cl<sup>–</sup>：加入 Ba<sup>2+</sup>。（c）Hg<sup>2+</sup> 和 Co<sup>2+</sup>：加入 S<sup>2–</sup>。（d）Zn<sup>2+</sup> 和 Sr<sup>2+</sup>：加入 OH<sup>–</sup>，直到 [OH<sup>–</sup>] = 0.050 <em>M</em>。（e）Ba<sup>2+</sup> 和 Mg<sup>2+</sup>：加入 ${\\text{SO}}_{4}{}^{\\text{2−}}$。（f）${\\text{CO}}_{3}{}^{\\text{2−}}$ 和 OH<sup>–</sup>：加入 Ba<sup>2+</sup>。"
+   }
+  },
+  {
+   "id": "e46",
+   "source_id": "fs-idp2172896",
+   "source_number": "46",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "溶液每升含有 1.0 × 10<sup>–5</sup> mol 的 KBr 和 0.10 mol 的 KCl。向该溶液中逐渐加入 AgNO<sub>3</sub>。先生成的是固体 AgBr 还是固体 AgCl？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "固体 AgCl 先生成，尽管 AgBr 是溶解度较小的盐。每种盐在反应商达到其 $\\kKsp$ 时开始沉淀，所以所需的 [Ag<sup>+</sup>] 是 $\\kKsp$ 除以卤离子浓度。对于 AgBr，$[{\\text{Ag}}^{\\text{+}}]=\\frac{5.0\\;\\times \\;{10}^{-13}}{1.0\\;\\times \\;{10}^{-5}}=5.0\\;\\times \\;{10}^{-8}\\;M$。对于 AgCl，$[{\\text{Ag}}^{\\text{+}}]=\\frac{1.6\\;\\times \\;{10}^{-10}}{0.10}=1.6\\;\\times \\;{10}^{-9}\\;M$。随着 AgNO<sub>3</sub> 的加入，[Ag<sup>+</sup>] 先达到 1.6 × 10<sup>–9</sup> <em>M</em>，所以 AgCl 先沉淀；氯离子的浓度是溴离子的 10<sup>4</sup> 倍，这足以弥补 AgCl 较大的 $\\kKsp$ 的影响。"
+   }
+  },
+  {
+   "id": "e47",
+   "source_id": "fs-idp2204496",
+   "source_number": "47",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "溶液每升含有 1.0 × 10<sup>–2</sup> mol 的 KI 和 0.10 mol 的 KCl。向该溶液中逐渐加入 AgNO<sub>3</sub>。先生成的是固体 AgI 还是固体 AgCl？",
+   "answer": {
+    "type": "choice",
+    "generated_by": "source",
+    "options": [
+     "固体 AgI",
+     "固体 AgCl"
+    ],
+    "correct": 0,
+    "hint": "比较每种盐开始沉淀时的 [Ag<sup>+</sup>]：它的 <em>K</em><sub>sp</sub> 除以它的卤离子浓度。",
+    "solution": "AgI 将先沉淀。"
+   }
+  },
+  {
+   "id": "e49",
+   "source_id": "fs-idp2313504",
+   "source_number": "49",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "约 50% 的尿路结石（肾结石）由磷酸钙 Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> 构成。尿液中正常范围中值的钙排出量为每天 0.10 g Ca<sup>2+</sup>。正常范围中值的排尿量可取为每天 1.4 L。尿液在开始形成结石之前，所含磷酸根离子的最大浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.5e-12,
+    "unit": "M",
+    "hint": "把 1.4 L 中的 0.10 g Ca<sup>2+</sup> 换算成物质的量浓度，再解 <em>K</em><sub>sp</sub> = [Ca<sup>2+</sup>]<sup>3</sup>[PO<sub>4</sub><sup>3−</sup>]<sup>2</sup>。",
+    "solution": "1.5 × 10<sup>−12</sup> <em>M</em>"
+   }
+  },
+  {
+   "id": "e51",
+   "source_id": "fs-idp2651392",
+   "source_number": "51",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "金属镁（一种用于飞机的合金的组成成分，也是生产铀、钛和其他活泼金属时使用的还原剂）由海水经下列一系列反应分离得到：<br>${\\text{Mg}}^{\\text{2+}}(aq)+{\\text{Ca(OH)}}_{2}(aq)\\;\\longrightarrow \\;{\\text{Mg(OH)}}_{2}(s)+{\\text{Ca}}^{\\text{2+}}(aq)$<br>${\\text{Mg(OH)}}_{2}(s)+\\text{2HCl(}aq)\\;\\longrightarrow \\;{\\text{MgCl}}_{2}(s)+{\\text{2H}}_{2}\\text{O}(l)$<br>${\\text{MgCl}}_{2}(l)\\overset{\\;\\text{电解}\\;}{\\to}\\text{Mg}(s)+{\\text{Cl}}_{2}(g)$<br>海水的密度为 1.026 g/cm<sup>3</sup>，按质量计含镁 1272 ppm（百万分率），以 Mg<sup>2+</sup>(<em>aq</em>) 形式存在。使 1.00 × 10<sup>3</sup> L 海水中 99.9% 的镁沉淀，需要多少质量（以千克计）的 Ca(OH)<sub>2</sub>？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 3.99,
+    "unit": "kg",
+    "hint": "求 1.00 × 10<sup>3</sup> L 海水中 Mg<sup>2+</sup> 的物质的量；使其 99.9% 沉淀，每摩尔 Mg<sup>2+</sup> 需要一摩尔 Ca(OH)<sub>2</sub>。",
+    "solution": "3.99 kg"
+   }
+  },
+  {
+   "id": "e53",
+   "source_id": "fs-idp2814128",
+   "source_number": "53",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "进行下列涉及碘酸根离子浓度的计算：<br>（a）测得 La(IO<sub>3</sub>)<sub>3</sub> 饱和溶液的碘酸根离子浓度为 3.1 × 10<sup>–3</sup> mol/L。求 <em>K</em><sub>sp</sub>。<br>（b）求 Cu(IO<sub>3</sub>)<sub>2</sub> 饱和溶液中碘酸根离子的浓度（<em>K</em><sub>sp</sub> = 7.4 × 10<sup>–8</sup>）。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) <em>K</em><sub>sp</sub> of La(IO<sub>3</sub>)<sub>3</sub>",
+      "value": 3.1e-11,
+      "hint": "在（a）中，[La<sup>3+</sup>] 是碘酸根浓度的三分之一。"
+     },
+     {
+      "part": "(b) [Cu<sup>2+</sup>]",
+      "value": 0.0026,
+      "unit": "M"
+     },
+     {
+      "part": "(b) [IO<sub>3</sub><sup>−</sup>]",
+      "value": 0.0053,
+      "unit": "M"
+     }
+    ],
+    "solution": "（a）3.1 × 10<sup>–11</sup>；（b）[Cu<sup>2+</sup>] = 2.6 × 10<sup>–3</sup>；$[{\\text{IO}}_{3}{}^{\\text{−}}]$ = 5.3 × 10<sup>–3</sup>"
+   }
+  },
+  {
+   "id": "e55",
+   "source_id": "fs-idp2865680",
+   "source_number": "55",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "common-ion",
+   "prompt": "在 500 mL 0.050 <em>M</em> 的 PbCl<sub>2</sub> 溶液中能溶解多少克 Pb(OH)<sub>2</sub>（<em>K</em><sub>sp</sub> = 1.2 × 10<sup>–15</sup>）？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 9.3e-06,
+    "unit": "g",
+    "hint": "来自 PbCl<sub>2</sub> 的 [Pb<sup>2+</sup>] ≈ 0.050 <em>M</em>；解出 [OH<sup>−</sup>] = 2<em>x</em>，再求 500 mL 中 Pb(OH)<sub>2</sub> 的克数。",
+    "solution": "9.3 × 10<sup>–6</sup> g Pb(OH)<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e57",
+   "source_id": "fs-idp2904912",
+   "source_number": "57",
+   "kind": "exercise",
+   "bloom": "Apply",
+   "place": {
+    "at": "end"
+   },
+   "cite": "ksp-solubility",
+   "prompt": "在 200 mL 水中能溶解多少克镁乳 Mg(OH)<sub>2</sub> (<em>s</em>)（58.3 g/mol）。<em>K</em><sub>sp</sub> = 7.1 × 10<sup>–12</sup>。请在答案中写出离子反应和 <em>K</em><sub>sp</sub> 的表达式。（<em>K</em><sub>w</sub> = 1 × 10<sup>–14</sup> = [H<sub>3</sub>O<sup>+</sup>][OH<sup>–</sup>]）",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00123,
+    "unit": "g",
+    "hint": "解 4<em>x</em><sup>3</sup> = <em>K</em><sub>sp</sub>，再把 200 mL 中的物质的量换算成克。",
+    "solution": "${\\text{Mg(OH)}}_{2}(s)\\rightleftharpoons {\\text{Mg}}^{\\text{2+}}+{\\text{2OH}}^{\\text{−}}\\hspace{4em}{K}_{\\text{sp}}=[{\\text{Mg}}^{\\text{2+}}]{[{\\text{OH}}^{\\text{−}}]}^{2}$<br>1.23 × 10<sup>−3</sup> g Mg(OH)<sub>2</sub>"
+   }
+  },
+  {
+   "id": "e59",
+   "source_id": "fs-idp2976256",
+   "source_number": "59",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "在含有镁、钙、锶、钡和锰的二价阳离子且浓度相等的溶液中，逐渐增大碳酸根离子的浓度。下列碳酸盐中哪一种最先沉淀？哪一种最后沉淀？请解释。<br>（a）${\\text{MgCO}}_{3}\\bullet 3{\\text{H}}_{2}\\text{O}\\hspace{4em}{K}_{\\text{sp}}=1\\;\\times \\;1{0}^{-5}$<br>（b）${\\text{CaCO}}_{3}\\hspace{4em}{K}_{\\text{sp}}=8.7\\;\\times \\;1{0}^{-9}$<br>（c）${\\text{SrCO}}_{3}\\hspace{4em}{K}_{\\text{sp}}=7\\;\\times \\;1{0}^{-10}$<br>（d）${\\text{BaCO}}_{3}\\hspace{4em}{K}_{\\text{sp}}=1.6\\;\\times \\;1{0}^{-9}$<br>（e）${\\text{MnCO}}_{3}\\hspace{4em}{K}_{\\text{sp}}=8.8\\;\\times \\;1{0}^{-11}$",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "MnCO<sub>3</sub> 将最先生成，因为在这些同类化合物中它的 <em>K</em><sub>sp</sub> 值最小，因而溶解度最小。MgCO<sub>3</sub>•3H<sub>2</sub>O 将最后沉淀，因为它的 K_sp 值最大，溶解度最大。<em>K</em><sub>sp</sub> 值。"
+   }
+  },
+  {
+   "id": "e62",
+   "source_id": "fs-idp46388832",
+   "source_section": "15.2",
+   "source_number": "62",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "solubility-product",
+   "prompt": "在什么情况下（如果有的话），一份固体 AgCl 样品会完全溶于纯水？",
+   "answer": {
+    "type": "open",
+    "generated_by": "source",
+    "solution": "当固体的量小到不能形成饱和溶液时"
+   }
+  },
+  {
+   "id": "e85",
+   "source_id": "fs-idm301808",
+   "source_section": "15.3",
+   "source_number": "85",
+   "kind": "exercise",
+   "bloom": "Understand",
+   "place": {
+    "at": "end"
+   },
+   "cite": "solubility-product",
+   "prompt": "与部分固体电解质接触的微溶电解质饱和溶液，被称为处于平衡的体系。请解释。为什么这样的体系称为多相平衡？",
+   "answer": {
+    "type": "open",
+    "generated_by": "ai",
+    "solution": "在与过量固体接触的饱和溶液中，离子离开固体表面而溶解的速率，与溶解的离子回到固体上而沉淀的速率相同，例如 $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$。两个过程都在持续进行，但因为二者速率相等，溶解的离子浓度和固体的量保持不变。相反的过程以相等的速率进行且浓度不变，这是动态平衡的标志，这就是该体系被称为平衡的原因。它是多相平衡，因为其组分处于不同的相：未溶解的电解质是固体，而离子溶解在水溶液中。出于同样的原因，固体不出现在 $\\kKsp$ 表达式中。"
+   }
+  },
+  {
+   "id": "e101",
+   "source_id": "fs-idp11595856",
+   "source_section": "15.3",
+   "source_number": "101",
+   "kind": "exercise",
+   "bloom": "Analyze",
+   "place": {
+    "at": "end"
+   },
+   "cite": "precipitation",
+   "prompt": "下面的问题取自化学大学先修课程考试，并经教育考试服务中心许可使用。<br>解下列问题：<br>${\\text{MgF}}_{2}(s)\\rightleftharpoons {\\text{Mg}}^{\\text{2+}}(aq)+2{\\text{F}}^{\\text{−}}(aq)$<br>在 18 °C 下 MgF<sub>2</sub> 的饱和溶液中，Mg<sup>2+</sup> 的浓度为 1.21 × 10<sup>–3</sup> <em>M</em>。平衡由上述方程式表示。<br>（a）写出溶度积常数 <em>K</em><sub>sp</sub> 的表达式，并计算它在 18 °C 时的值。<br>（b）计算在 1.000 L 18 °C 的 MgF<sub>2</sub> 饱和溶液中加入 0.100 mol 固体 KF 后 Mg<sup>2+</sup> 的平衡浓度。KF 完全溶解。假设体积变化可以忽略。<br>（c）预测在 18 °C 下把 100.0 mL 3.00 × 10<sup>–3</sup> <em>M</em> 的 Mg(NO<sub>3</sub>)<sub>2</sub> 溶液与 200.0 mL 2.00 × 10<sup>–3</sup> <em>M</em> 的 NaF 溶液混合时，是否会生成 MgF<sub>2</sub> 沉淀。请给出支持你预测的计算。<br>（d）在 27 °C 下，MgF<sub>2</sub> 饱和溶液中 Mg<sup>2+</sup> 的浓度为 1.17 × 10<sup>–3</sup> <em>M</em>。MgF<sub>2</sub> 在水中的溶解是吸热过程还是放热过程？请给出解释以支持你的结论。",
+   "answer": {
+    "type": "multi",
+    "generated_by": "source",
+    "parts": [
+     {
+      "part": "(a) <em>K</em><sub>sp</sub> at 18 °C",
+      "value": 7.09e-09,
+      "hint": "[F<sup>−</sup>] 是 [Mg<sup>2+</sup>] 的两倍。"
+     },
+     {
+      "part": "(b) [Mg<sup>2+</sup>] with 0.100 mol KF",
+      "value": 7.09e-07,
+      "unit": "M",
+      "hint": "取 [F<sup>−</sup>] 为 0.100 <em>M</em>。"
+     }
+    ],
+    "solution": "（a）<em>K</em><sub>sp</sub> = [Mg<sup>2+</sup>][F<sup>–</sup>]<sup>2</sup> = (1.21 × 10<sup>–3</sup>)(2 × 1.21 × 10<sup>–3</sup>)<sup>2</sup> = 7.09 × 10<sup>–9</sup><br>（b）7.09 × 10<sup>–7</sup> <em>M</em><br>（c）确定最终体积中将存在的 Mg<sup>2+</sup> 和 F<sup>–</sup> 的浓度。把离子积 [Mg<sup>2+</sup>][F<sup>–</sup>]<sup>2</sup> 的值与 <em>K</em><sub>sp</sub> 比较。如果该值大于 <em>K</em><sub>sp</sub>，就会发生沉淀。<br>0.1000 L × 3.00 × 10<sup>–3</sup> <em>M</em> Mg(NO<sub>3</sub>)<sub>2</sub> = 0.3000 L × <em>M</em> Mg(NO<sub>3</sub>)<sub>2</sub><br><em>M</em> Mg(NO<sub>3</sub>)<sub>2</sub> = 1.00 × 10<sup>–3</sup> <em>M</em><br>0.2000 L × 2.00 × 10<sup>–3</sup> <em>M</em> NaF = 0.3000 L × <em>M</em> NaF<br><em>M</em> NaF = 1.33 × 10<sup>–3</sup> <em>M</em><br>离子积 = (1.00 × 10<sup>–3</sup>)(1.33 × 10<sup>–3</sup>)<sup>2</sup> = 1.77 × 10<sup>–9</sup> 该值小于 <em>K</em><sub>sp</sub>，所以不会发生沉淀。<br>（d）MgF<sub>2</sub> 在 27 °C 时比在 18 °C 时溶解度更小。因为加入的热量相当于加入的试剂，当它出现在产物一侧时，勒夏特列原理指出，平衡将向反应物一侧移动以抵消这种扰动。因此溶解的试剂更少。我们的情形正是如此。所以该反应是放热的。"
+   }
+  }
+ ],
+ "exercise_concepts": [
+  {
+   "exercise": "cyl1",
+   "concept": "write-ksp-expression"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "ksp-from-solubility"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "write-ksp-expression"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "cyl5",
+   "concept": "ksp-from-solubility"
+  },
+  {
+   "exercise": "cyl6",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "cyl7",
+   "concept": "qsp-versus-ksp"
+  },
+  {
+   "exercise": "cyl8",
+   "concept": "qsp-versus-ksp"
+  },
+  {
+   "exercise": "cyl8",
+   "concept": "dilution-equation"
+  },
+  {
+   "exercise": "cyl9",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "cyl10",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "cyl10",
+   "concept": "ph-calculations"
+  },
+  {
+   "exercise": "cyl11",
+   "concept": "selective-precipitation"
+  },
+  {
+   "exercise": "cyl11",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "cyl12",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "cyl13",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "cyl13",
+   "concept": "small-x-approximation"
+  },
+  {
+   "exercise": "e1",
+   "concept": "write-ksp-expression"
+  },
+  {
+   "exercise": "e1",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e2",
+   "concept": "write-ksp-expression"
+  },
+  {
+   "exercise": "e2",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e3",
+   "concept": "solubility-product"
+  },
+  {
+   "exercise": "e4",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e5",
+   "concept": "solubility-product"
+  },
+  {
+   "exercise": "e6",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e7",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e8",
+   "concept": "write-ksp-expression"
+  },
+  {
+   "exercise": "e9",
+   "concept": "write-ksp-expression"
+  },
+  {
+   "exercise": "e11",
+   "concept": "ksp-from-solubility"
+  },
+  {
+   "exercise": "e12",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e13",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e15",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e15",
+   "concept": "small-x-approximation"
+  },
+  {
+   "exercise": "e17",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e17",
+   "concept": "small-x-approximation"
+  },
+  {
+   "exercise": "e18",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e18",
+   "concept": "small-x-approximation"
+  },
+  {
+   "exercise": "e19",
+   "concept": "small-x-approximation"
+  },
+  {
+   "exercise": "e21",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e23",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e25",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e27",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e29",
+   "concept": "ksp-from-solubility"
+  },
+  {
+   "exercise": "e29",
+   "concept": "write-ksp-expression"
+  },
+  {
+   "exercise": "e31",
+   "concept": "qsp-versus-ksp"
+  },
+  {
+   "exercise": "e33",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "e35",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "e37",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "e39",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "e41",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e41",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e43",
+   "concept": "selective-precipitation"
+  },
+  {
+   "exercise": "e45",
+   "concept": "selective-precipitation"
+  },
+  {
+   "exercise": "e46",
+   "concept": "selective-precipitation"
+  },
+  {
+   "exercise": "e47",
+   "concept": "selective-precipitation"
+  },
+  {
+   "exercise": "e49",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "e51",
+   "concept": "precipitation-concentration"
+  },
+  {
+   "exercise": "e51",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e53",
+   "concept": "ksp-from-solubility"
+  },
+  {
+   "exercise": "e53",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e55",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e57",
+   "concept": "molar-solubility-from-ksp"
+  },
+  {
+   "exercise": "e57",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e59",
+   "concept": "selective-precipitation"
+  },
+  {
+   "exercise": "e62",
+   "concept": "solubility-product"
+  },
+  {
+   "exercise": "e62",
+   "concept": "saturated-solution"
+  },
+  {
+   "exercise": "e85",
+   "concept": "solubility-product"
+  },
+  {
+   "exercise": "e85",
+   "concept": "homogeneous-and-heterogeneous-equilibria"
+  },
+  {
+   "exercise": "e101",
+   "concept": "ksp-from-solubility"
+  },
+  {
+   "exercise": "e101",
+   "concept": "common-ion-effect"
+  },
+  {
+   "exercise": "e101",
+   "concept": "qsp-versus-ksp"
+  }
+ ],
+ "footnotes": [
+  {
+   "id": "c-baso4-ksp",
+   "kind": "correction",
+   "html": "原书把硫酸钡的 <em>K</em><sub>sp</sub> 印作 10.08 × 10<sup>−10</sup>。它应为 1.08 × 10<sup>−10</sup>，即附录 J 的值。"
+  },
+  {
+   "id": "c-e17-tl",
+   "kind": "correction",
+   "html": "答案写作 [Ti<sup>+</sup>]；该离子是铊(I)离子，应为 [Tl<sup>+</sup>]。"
+  },
+  {
+   "id": "c-e17-oh",
+   "kind": "correction",
+   "html": "答案写作 [C<sub>2</sub>)<sub>4</sub><sup>2–</sup>]；（d）中的同离子是氢氧根，[OH<sup>−</sup>] = 0.051 <em>M</em>。"
+  }
+ ]
 }

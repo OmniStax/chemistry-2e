@@ -102,7 +102,7 @@
   {
    "sym": "k",
    "concept": "rate-constant",
-   "meaning": "速率常数，因反应和温度而异",
+   "meaning": "速率常数，对特定温度下的特定反应具有确定的值",
    "unit": "depends on the overall order, L^(x−1) mol^(1−x) s⁻¹",
    "section": "12.3",
    "anchor": "12.3-rate-laws"

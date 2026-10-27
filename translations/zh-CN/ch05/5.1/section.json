@@ -2,17 +2,17 @@
  "id": "5.1",
  "module": "m68724",
  "chapter": "5",
- "title": "Energy Basics",
- "short": "Energy Basics",
- "lead": "<span data-concept=\"energy-and-work\">Energy</span> is the capacity to supply <span data-concept=\"heat-flow\">heat</span> or do <span data-concept=\"work\">work</span>, and every chemical and physical change converts it from one form into another without creating or destroying any. Thermal energy, <span data-concept=\"temperature\">temperature</span> and <span data-concept=\"heat-flow\">heat</span> are told apart here, and the <span data-concept=\"heat-flow\">heat</span> a substance gains or loses is tied to its <span data-concept=\"specific-heat-capacity\">specific heat</span>, its <span data-concept=\"mass\">mass</span> and its <span data-concept=\"temperature\">temperature</span> change.",
+ "title": "能量基础",
+ "short": "能量基础",
+ "lead": "<span data-concept=\"energy-and-work\">能量</span>是提供<span data-concept=\"heat-flow\">热量</span>或做<span data-concept=\"work\">功</span>的能力，每一次化学变化和物理变化都使它从一种形式转化为另一种形式，而不会创造或消灭任何能量。这里区分了热能、<span data-concept=\"temperature\">温度</span>和<span data-concept=\"heat-flow\">热量</span>，并把物质获得或失去的<span data-concept=\"heat-flow\">热量</span>与它的<span data-concept=\"specific-heat-capacity\">比热容</span>、<span data-concept=\"mass\">质量</span>和<span data-concept=\"temperature\">温度</span>变化联系起来。",
  "objectives": [
-  "Define energy, distinguish types of energy, and describe the nature of energy changes that accompany chemical and physical changes",
-  "Distinguish the related properties of heat, thermal energy, and temperature",
-  "Define and distinguish specific heat and heat capacity, and describe the physical implications of both",
-  "Perform calculations involving heat, specific heat, and temperature change"
+  "定义能量，区分能量的类型，并描述伴随化学变化和物理变化的能量变化的本质",
+  "区分热量、热能和温度这几个相关的性质",
+  "定义并区分比热容和热容，并描述二者的物理意义",
+  "进行涉及热量、比热容和温度变化的计算"
  ],
- "summary_html": "<p><span data-concept=\"energy-and-work\">Energy</span> is the capacity to supply <span data-concept=\"heat-flow\">heat</span> or do <span data-concept=\"work\">work</span> (applying a <span data-concept=\"force\">force</span> to move matter). <span data-concept=\"kinetic-energy\">Kinetic energy</span> (KE) is the <span data-concept=\"energy-and-work\">energy</span> of motion; potential energy is <span data-concept=\"energy-and-work\">energy</span> due to relative position, composition, or condition. When <span data-concept=\"energy-and-work\">energy</span> is converted from one form into another, <span data-concept=\"energy-and-work\">energy</span> is neither created nor destroyed (law of conservation of energy or first law of thermodynamics).</p><p>The thermal energy of matter is due to the <span data-concept=\"kinetic-energy\">kinetic energies</span> of its constituent atoms or molecules. <span data-concept=\"temperature\">Temperature</span> is an intensive property of matter reflecting hotness or coldness that increases as the average <span data-concept=\"kinetic-energy\">kinetic energy</span> increases. <span data-concept=\"heat-flow\">Heat</span> is the transfer of thermal energy between objects at different <span data-concept=\"temperature\">temperatures</span>. Chemical and physical processes can absorb <span data-concept=\"heat-flow\">heat</span> (endothermic) or release <span data-concept=\"heat-flow\">heat</span> (exothermic). The SI unit of <span data-concept=\"energy-and-work\">energy</span>, <span data-concept=\"heat-flow\">heat</span>, and <span data-concept=\"work\">work</span> is the joule (J).</p><p>Specific <span data-concept=\"specific-heat-capacity\">heat</span> and <span data-concept=\"heat-capacity\">heat capacity</span> are measures of the <span data-concept=\"energy-and-work\">energy</span> needed to change the <span data-concept=\"temperature\">temperature</span> of a substance or object. The amount of <span data-concept=\"heat-flow\">heat</span> absorbed or released by a substance depends directly on the type of substance, its <span data-concept=\"mass\">mass</span>, and the <span data-concept=\"temperature\">temperature</span> change it undergoes.</p>",
- "notes": "The three Link to Learning notes are left out: the PhET simulation of the effects of temperature on molecular motion, the demonstration of a coiled bimetallic strip, and the PhET simulation of energy forms and changes; the figure of Figures 5.4 and 5.6 takes the place of the first and the third. Figure 5.2, a collage of a cheeseburger, a highway and a furnace that opens the section, is left out. Table 5.1 lists silicon last, out of its descending order, as the book prints it.",
+ "summary_html": "<p><span data-concept=\"energy-and-work\">能量</span>是提供<span data-concept=\"heat-flow\">热量</span>或做<span data-concept=\"work\">功</span>（施加<span data-concept=\"force\">力</span>使物质移动）的能力。<span data-concept=\"kinetic-energy\">动能</span>（KE）是运动的<span data-concept=\"energy-and-work\">能量</span>；势能是由相对位置、组成或状态而具有的<span data-concept=\"energy-and-work\">能量</span>。当<span data-concept=\"energy-and-work\">能量</span>从一种形式转化为另一种形式时，<span data-concept=\"energy-and-work\">能量</span>既不会被创造，也不会被消灭（能量守恒定律或热力学第一定律）。</p><p>物质的热能来自其组成原子或分子的<span data-concept=\"kinetic-energy\">动能</span>。<span data-concept=\"temperature\">温度</span>是物质的一种强度性质，反映冷热程度，随平均<span data-concept=\"kinetic-energy\">动能</span>的增大而升高。<span data-concept=\"heat-flow\">热量</span>是热能在不同<span data-concept=\"temperature\">温度</span>的物体之间的传递。化学过程和物理过程可以吸收<span data-concept=\"heat-flow\">热量</span>（吸热）或释放<span data-concept=\"heat-flow\">热量</span>（放热）。<span data-concept=\"energy-and-work\">能量</span>、<span data-concept=\"heat-flow\">热量</span>和<span data-concept=\"work\">功</span>的 SI 单位是焦耳（J）。</p><p><span data-concept=\"specific-heat-capacity\">比热容</span>和<span data-concept=\"heat-capacity\">热容</span>是改变一种物质或一个物体的<span data-concept=\"temperature\">温度</span>所需<span data-concept=\"energy-and-work\">能量</span>的量度。一种物质吸收或释放的<span data-concept=\"heat-flow\">热量</span>的多少，直接取决于物质的种类、它的<span data-concept=\"mass\">质量</span>以及它所经历的<span data-concept=\"temperature\">温度</span>变化。</p>",
+ "notes": "三则“学习链接”注释被略去：关于温度对分子运动影响的 PhET 模拟，卷曲双金属片的演示，以及关于能量形式与转化的 PhET 模拟；图 5.4 与图 5.6 合并的那幅图取代了第一则和第三则。图 5.2 是一幅由芝士汉堡、高速公路和加热炉拼成的合成图，位于本节开头，已被略去。表 5.1 把硅列在最后，不在其降序排列之中，书中即是如此印刷。",
  "ai": {
   "text": [
    {
@@ -22,18 +22,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed exercises fs-idm38026992 (the heat capacities of 28.4 g of water and 1.00 oz of lead), fs-idm26658464 (heating a 75.0-g iron block to its melting point), fs-idm42475152 (the temperature rise of 275 g of water given 36.5 kJ), fs-idp43279360 (the 44.7-g unknown substance) and fs-idp36071488 (the aluminum kettle) are left out. The unkeyed exercise fs-idp25217856, on the energy transitions of an automobile, is kept with a suggested approach written by OmniStax. The identity asked for in the second Check Your Learning and in part (b) of fs-idp36064736 is not checked; it is given in the answer. Numeric answers accept 2% tolerance.",
+ "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案来自书后答案以及“学习检测”的答案。没有书中答案的习题 fs-idm38026992（28.4 g 水和 1.00 盎司铅的热容）、fs-idm26658464（把一块 75.0 g 的铁块加热到其熔点）、fs-idm42475152（275 g 水在得到 36.5 kJ 热量后的温度升高）、fs-idp43279360（44.7 g 的未知物质）和 fs-idp36071488（铝水壶）被略去。没有书中答案的习题 fs-idp25217856 关于汽车的能量转换，保留下来，并附有 OmniStax 撰写的建议思路。第二个“学习检测”以及 fs-idp36064736 的（b）部分所要求的身份判断不作核对；它在答案中给出。数值答案接受 2% 的容差。",
  "figures": [
   {
    "id": "fig-waterfall",
@@ -58,7 +66,7 @@
     "/media/ch05/CNX_Chem_05_01_HotCold.jpg",
     "/media/ch05/CNX_Chem_05_01_HeatTrans1.jpg"
    ],
-   "original_caption": "(Figure 5.4) (a) The molecules in a sample of hot water move more rapidly than (b) those in a sample of cold water. (Figure 5.6) (a) Substances H and L are initially at different temperatures, and their atoms have different average kinetic energies. (b) When they contact each other, collisions between the molecules result in the transfer of kinetic (thermal) energy from the hotter to the cooler matter. (c) The two objects reach “thermal equilibrium” when both substances are at the same temperature and their molecules have the same average kinetic energy.",
+   "original_caption": "（图 5.4）（a）一份热水样品中的分子比（b）一份冷水样品中的分子运动得更快。（图 5.6）（a）物质 H 和 L 起初处于不同的温度，它们的原子具有不同的平均动能。（b）当它们相互接触时，分子之间的碰撞使动能（热能）从较热的物质传递到较冷的物质。（c）当两种物质处于相同的温度、其分子具有相同的平均动能时，这两个物体达到“热平衡”。",
    "draws": [
     "temperature",
     "energy"
@@ -77,6 +85,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "heat label beside its arrow; contact tag kept off the traces"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -111,6 +124,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "gas sample kept under the headline; repeating note dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -310,13 +328,13 @@
     "after": "ex-measuring-heat"
    },
    "cite": "heat-equation",
-   "prompt": "How much heat, in joules, must be added to a 502 g iron skillet to increase its temperature from 25 °C to 250 °C? The specific heat of iron is 0.449 J/g °C.",
+   "prompt": "需要向一只 502 g 的铁煎锅加入多少热量（以焦耳计），才能使其温度从 25 °C 升高到 250 °C？铁的比热容为 0.449 J/g °C。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 50700,
     "unit": "J",
-    "hint": "Multiply the specific heat by the mass and by the temperature change, 250 °C − 25 °C.",
+    "hint": "把比热容乘以质量，再乘以温度变化 250 °C − 25 °C。",
     "solution": "5.07 $\\times$ 10<sup>4</sup> J"
    }
   },
@@ -330,7 +348,7 @@
     "after": "ex-other-quantities"
    },
    "cite": "heat-equation",
-   "prompt": "A piece of unknown metal weighs 217 g. When the metal piece absorbs 1.43 kJ of heat, its temperature increases from 24.5 °C to 39.1 °C. Determine the specific heat of this metal, and predict its identity.",
+   "prompt": "一块未知金属重 217 g。当这块金属吸收 1.43 kJ 热量时，其温度从 24.5 °C 升高到 39.1 °C。求这种金属的比热容，并预测它是什么金属。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -339,10 +357,10 @@
       "part": "specific heat",
       "value": 0.451,
       "unit": "J/g °C",
-      "hint": "Divide the heat in joules by the mass times the temperature change."
+      "hint": "用以焦耳计的热量除以质量与温度变化的乘积。"
      }
     ],
-    "solution": "<em>c</em> = 0.451 J/g °C; the metal is likely to be iron"
+    "solution": "<em>c</em> = 0.451 J/g °C；这种金属很可能是铁"
    }
   },
   {
@@ -354,11 +372,11 @@
     "at": "end"
    },
    "cite": "capacity",
-   "prompt": "A burning match and a bonfire may have the same temperature, yet you would not sit around a burning match on a fall evening to stay warm. Why not?",
+   "prompt": "燃烧的火柴和篝火可能温度相同，但在秋天的夜晚，你不会为了取暖而围坐在一根燃烧的火柴旁。为什么不会？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The temperature of 1 gram of burning wood is approximately the same for both a match and a bonfire. This is an intensive property and depends on the material (wood). However, the overall amount of produced heat depends on the amount of material; this is an extensive property. The amount of wood in a bonfire is much greater than that in a match; the total amount of produced heat is also much greater, which is why we can sit around a bonfire to stay warm, but a match would not provide enough heat to keep us from getting cold."
+    "solution": "1 克燃烧木材的温度，对火柴和篝火来说大致相同。这是强度性质，取决于材料（木材）。然而，产生的热量总量取决于材料的量；这是广度性质。篝火中的木材量比火柴中的多得多；产生的热量总量也大得多，这就是为什么我们可以围坐在篝火旁取暖，而一根火柴提供的热量不足以使我们免于受冷。"
    }
   },
   {
@@ -370,11 +388,11 @@
     "at": "end"
    },
    "cite": "conservation",
-   "prompt": "Prepare a table identifying several energy transitions that take place during the typical operation of an automobile.",
+   "prompt": "编制一张表，列出汽车典型运行过程中发生的几种能量转换。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Following the energy from the fuel tank to the road gives these transitions. Gasoline stores chemical energy, a kind of potential energy, in its molecules; burning it releases that energy as heat, and the car uses part of it as mechanical and electrical energy while the rest leaves as heat.<table><thead><tr><th>Process in the automobile</th><th>Energy before</th><th>Energy after</th></tr></thead><tbody><tr><td>Starting: the battery runs the starter motor</td><td>chemical (battery)</td><td>electrical, then kinetic (engine turning over)</td></tr><tr><td>Gasoline burns in the cylinders</td><td>chemical potential (fuel and oxygen)</td><td>thermal (hot, expanding gases)</td></tr><tr><td>Expanding gases push the pistons</td><td>thermal</td><td>kinetic (pistons, crankshaft, wheels)</td></tr><tr><td>Alternator turned by the engine</td><td>kinetic</td><td>electrical</td></tr><tr><td>Battery recharged by the alternator</td><td>electrical</td><td>chemical potential</td></tr><tr><td>Headlights, radio and fan run</td><td>electrical</td><td>light, sound, kinetic and heat</td></tr><tr><td>Car climbs a hill</td><td>kinetic</td><td>gravitational potential</td></tr><tr><td>Brakes stop the car</td><td>kinetic</td><td>thermal (friction in the brakes)</td></tr><tr><td>Exhaust and radiator carry off waste</td><td>thermal (hot gases and engine)</td><td>thermal energy of the surroundings</td></tr></tbody></table>"
+    "solution": "沿着能量从油箱到道路的路径，可以得到这些转换。汽油在其分子中储存化学能，这是一种势能；燃烧时把这些能量以热量的形式释放出来，汽车将其中一部分用作机械能和电能，其余部分以热量的形式散失。<table><thead><tr><th>汽车中的过程</th><th>转换前的能量</th><th>转换后的能量</th></tr></thead><tbody><tr><td>启动：电池带动启动电机</td><td>化学能（电池）</td><td>电能，然后是动能（发动机转动）</td></tr><tr><td>汽油在气缸中燃烧</td><td>化学势能（燃料和氧气）</td><td>热能（炽热膨胀的气体）</td></tr><tr><td>膨胀的气体推动活塞</td><td>热能</td><td>动能（活塞、曲轴、车轮）</td></tr><tr><td>发动机带动交流发电机</td><td>动能</td><td>电能</td></tr><tr><td>交流发电机给电池充电</td><td>电能</td><td>化学势能</td></tr><tr><td>前照灯、收音机和风扇运转</td><td>电能</td><td>光、声、动能和热量</td></tr><tr><td>汽车爬坡</td><td>动能</td><td>重力势能</td></tr><tr><td>刹车使汽车停下</td><td>动能</td><td>热能（刹车中的摩擦）</td></tr><tr><td>排气和散热器带走废热</td><td>热能（热气体和发动机）</td><td>周围环境的热能</td></tr></tbody></table>"
    }
   },
   {
@@ -386,11 +404,11 @@
     "at": "end"
    },
    "cite": "capacity",
-   "prompt": "Explain the difference between heat capacity and specific heat of a substance.",
+   "prompt": "解释一种物质的热容与比热容的区别。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Heat capacity refers to the heat required to raise the temperature of the mass of the substance 1 degree; specific heat refers to the heat required to raise the temperature of 1 gram of the substance 1 degree. Thus, heat capacity is an extensive property, and specific heat is an intensive one."
+    "solution": "热容是指使一定质量的该物质的温度升高 1 度所需的热量；比热容是指使 1 克该物质的温度升高 1 度所需的热量。因此，热容是广度性质，比热容是强度性质。"
    }
   },
   {
@@ -402,7 +420,7 @@
     "at": "end"
    },
    "cite": "capacity",
-   "prompt": "Calculate the heat capacity, in joules and in calories per degree, of the following: (a) 45.8 g of nitrogen gas (b) 1.00 pound of aluminum metal",
+   "prompt": "分别以焦耳每度和卡每度为单位，计算下列物质的热容：（a）45.8 g 氮气；（b）1.00 磅金属铝",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -411,28 +429,28 @@
       "part": "(a) in J/°C",
       "value": 47.6,
       "unit": "J/°C",
-      "hint": "Multiply the specific heat of nitrogen from Table 5.1 by the mass."
+      "hint": "用表 5.1 中氮气的比热容乘以质量。"
      },
      {
       "part": "(a) in cal/°C",
       "value": 11.38,
       "unit": "cal/°C",
-      "hint": "Divide the joules by 4.184 J/cal."
+      "hint": "把焦耳数除以 4.184 J/cal。"
      },
      {
       "part": "(b) in J/°C",
       "value": 407,
       "unit": "J/°C",
-      "hint": "One pound is 453.6 g; multiply by the specific heat of aluminum."
+      "hint": "1 磅为 453.6 g；乘以铝的比热容。"
      },
      {
       "part": "(b) in cal/°C",
       "value": 97.3,
       "unit": "cal/°C",
-      "hint": "Divide the joules by 4.184 J/cal."
+      "hint": "把焦耳数除以 4.184 J/cal。"
      }
     ],
-    "solution": "(a) 47.6 J/°C; 11.38 cal °C<sup>−1</sup>; (b) 407 J/°C; 97.3 cal °C<sup>−1</sup>"
+    "solution": "（a）47.6 J/°C；11.38 cal °C<sup>−1</sup>；（b）407 J/°C；97.3 cal °C<sup>−1</sup>"
    }
   },
   {
@@ -444,7 +462,7 @@
     "at": "end"
    },
    "cite": "heat-equation",
-   "prompt": "How much heat, in joules and in calories, is required to heat a 28.4-g (1-oz) ice cube from −23.0 °C to −1.0 °C?",
+   "prompt": "把一块 28.4 g（1 盎司）的冰块从 −23.0 °C 加热到 −1.0 °C，需要多少热量，分别以焦耳和卡表示？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -453,16 +471,16 @@
       "part": "in joules",
       "value": 1310,
       "unit": "J",
-      "hint": "Use the specific heat of ice from Table 5.1 and a temperature change of 22.0 °C."
+      "hint": "使用表 5.1 中冰的比热容，温度变化为 22.0 °C。"
      },
      {
       "part": "in calories",
       "value": 313,
       "unit": "cal",
-      "hint": "Divide the joules by 4.184 J/cal."
+      "hint": "把焦耳数除以 4.184 J/cal。"
      }
     ],
-    "solution": "1310 J; 313 cal"
+    "solution": "1310 J；313 cal"
    }
   },
   {
@@ -474,13 +492,13 @@
     "at": "end"
    },
    "cite": "heat-equation",
-   "prompt": "If 14.5 kJ of heat were added to 485 g of liquid water, how much would its temperature increase?",
+   "prompt": "如果向 485 g 液态水加入 14.5 kJ 的热量，其温度会升高多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 7.15,
     "unit": "°C",
-    "hint": "Solve q = c × m × ΔT for ΔT, with q in joules and c = 4.184 J/g °C.",
+    "hint": "由 q = c × m × ΔT 解出 ΔT，其中 q 以焦耳计，c = 4.184 J/g °C。",
     "solution": "7.15 °C"
    }
   },
@@ -493,7 +511,7 @@
     "at": "end"
    },
    "cite": "heat-equation",
-   "prompt": "A piece of unknown solid substance weighs 437.2 g, and requires 8460 J to increase its temperature from 19.3 °C to 68.9 °C. (a) What is the specific heat of the substance? (b) If it is one of the substances found in Table 5.1, what is its likely identity?",
+   "prompt": "一块未知固体物质重 437.2 g，需要 8460 J 才能使其温度从 19.3 °C 升高到 68.9 °C。（a）该物质的比热容是多少？（b）如果它是表 5.1 中的物质之一，它最可能是什么？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -502,10 +520,10 @@
       "part": "(a)",
       "value": 0.39,
       "unit": "J/g °C",
-      "hint": "Divide the heat by the mass times the temperature change."
+      "hint": "用热量除以质量与温度变化的乘积。"
      }
     ],
-    "solution": "(a) 0.390 J/g °C; (b) Copper is a likely candidate."
+    "solution": "（a）0.390 J/g °C；（b）很可能是铜。"
    }
   },
   {
@@ -517,7 +535,7 @@
     "at": "end"
    },
    "cite": "heat-equation",
-   "prompt": "Most people find waterbeds uncomfortable unless the water temperature is maintained at about 85 °F. Unless it is heated, a waterbed that contains 892 L of water cools from 85 °F to 72 °F in 24 hours. Estimate the amount of electrical energy required over 24 hours, in kWh, to keep the bed from cooling. Note that 1 kilowatt-hour (kWh) = 3.6 $\\times$ 10<sup>6</sup> J, and assume that the density of water is 1.0 g/mL (independent of temperature). What other assumptions did you make? How did they affect your calculated result (i.e., were they likely to yield “positive” or “negative” errors)?",
+   "prompt": "大多数人觉得水床很不舒服，除非水温保持在约 85 °F。如果不加热，装有 892 L 水的水床在 24 小时内会从 85 °F 冷却到 72 °F。估算 24 小时内为防止水床冷却所需的电能，以 kWh 计。注意 1 千瓦时（kWh）= 3.6 $\\times$ 10<sup>6</sup> J，并假设水的密度为 1.0 g/mL（与温度无关）。你还做了哪些假设？它们如何影响你计算出的结果（即它们可能产生“正”误差还是“负”误差）？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -526,10 +544,10 @@
       "part": "energy",
       "value": 7.47,
       "unit": "kWh",
-      "hint": "Convert the temperature change to degrees Celsius, find the heat with q = c × m × ΔT, and divide by 3.6 × 10<sup>6</sup> J/kWh."
+      "hint": "把温度变化换算成摄氏度，用 q = c × m × ΔT 求出热量，再除以 3.6 × 10<sup>6</sup> J/kWh。"
      }
     ],
-    "solution": "We assume that the density of water is 1.0 g/cm<sup>3</sup>(1 g/mL) and that it takes as much energy to keep the water at 85 °F as to heat it from 72 °F to 85 °F. We also assume that only the water is going to be heated. Energy required = 7.47 kWh"
+    "solution": "我们假设水的密度为 1.0 g/cm<sup>3</sup>（1 g/mL），并假设把水保持在 85 °F 所需的能量与把它从 72 °F 加热到 85 °F 所需的能量一样多。我们还假设只有水被加热。所需能量 = 7.47 kWh"
    }
   }
  ],
@@ -620,28 +638,28 @@
  "referents": [
   {
    "id": "sample-h",
-   "label": "sample H, the hotter water",
+   "label": "样品 H，较热的水",
    "figures": [
     "sim-heat-flow"
    ]
   },
   {
    "id": "sample-l",
-   "label": "sample L, the cooler water",
+   "label": "样品 L，较冷的水",
    "figures": [
     "sim-heat-flow"
    ]
   },
   {
    "id": "small-pan",
-   "label": "the small cast iron frying pan",
+   "label": "小铸铁煎锅",
    "figures": [
     "sim-heating"
    ]
   },
   {
    "id": "large-pan",
-   "label": "the large cast iron frying pan",
+   "label": "大铸铁煎锅",
    "figures": [
     "sim-heating"
    ]

@@ -114,7 +114,7 @@ function flock(v, grp, g, k) {
     F.label(ctx, sel + ': ' + fmt(dd, dd < 1 ? 3 : 2) + ' g/L', q.x, q.y - 26, { side: dd > 11 ? 'right' : 'above', color: cd, gap: 22 });
     topline(ctx, '在 ' + fmt(p, 2) + ' atm、' + t + ' K 下，1 L ' + WORD[sel] + '的质量为 ' + fmt(dd, dd < 1 ? 3 : 2) + ' g，其余每种气体也都落在同一条直线上。');
     readout(d.readout, `${hue('density', 'd')} = \\frac{\\kMM\\kP}{R\\kT} = \\frac{(${hue('mass', fmt(m, 2) + '\\ \\text{g/mol}')})(${hue('pressure', fmt(p, 2) + '\\ \\text{atm}')})}{(${RTEX})(${hue('temperature', t + '\\ \\text{K}')})} = ${hue('density', fmt(dd, dd < 1 ? 3 : 2) + '\\ \\text{g/L}')}`,
-      '这条直线的斜率为 P/RT，即每升中的物质的量（以摩尔计），对每种气体都相同；摩尔质量越大的气体，在这些物质的量中含有的克数越多，因而在直线上的位置越高。');
+      '这条直线的斜率为 P/RT，即每升气体的物质的量，对每种气体都相同；物质的量相同时，摩尔质量越大的气体质量越大，因而在直线上的位置越高。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -153,7 +153,7 @@ function flock(v, grp, g, k) {
   function build() {
     const key = [Ps.map((p) => p.v).join(), palSig(), WHO.map((w) => F.ref(w)).join()].join('|'); if (key === sig) return; sig = key;
     v.clear(); birds.drop();
-    v.pickable(box3(grp, [-0.2, -HC / 2 - 0.08, 0], [8.2, 0.12, 1.8], PAL.soft), '台面');
+    v.pickable(box3(grp, [-0.2, -HC / 2 - 0.08, 0], [8.2, 0.12, 1.8], PAL.soft), '工作台');
     XS.forEach((x, i) => {
       const wall = i < 3 ? F.ref(WHO[i]) : PAL.ink, op = i < 3 ? 0.16 : 0.1;
       const body = new T3D.Mesh(new T3D.CylinderGeometry(RC, RC, HC, 36, 1, true), mat3(wall, glass({ opacity: op }))); body.position.set(x, 0, 0); grp.add(body);
@@ -179,7 +179,7 @@ function flock(v, grp, g, k) {
     text(ctx, '压强（kPa）', x1, rows[3] + 70, cp, { size: 20, weight: 600, align: 'right' });
     const bar = (y, a, b, i) => { ctx.save(); ctx.fillStyle = F.ref(WHO[i]); ctx.fillRect(X(a), y - 12, X(b) - X(a), 24); ctx.restore(); };
     GAS.forEach((f, i) => {
-      text(ctx, WORD[GAS[i]] + '单独，' + NAME[i], x0 - 16, rows[i], F.ref(WHO[i]), { size: 18, align: 'right' });
+      text(ctx, '只有' + WORD[GAS[i]] + '，' + NAME[i], x0 - 16, rows[i], F.ref(WHO[i]), { size: 18, align: 'right' });
       bar(rows[i], 0, p[i], i);
       text(ctx, p[i] + ' kPa', X(p[i]) + 10, rows[i], cp, { size: 17, weight: 600 });
     });
@@ -246,7 +246,7 @@ function flock(v, grp, g, k) {
     text(ctx, '液面相平', 636, LEVEL - 14, PAL.muted, { size: 16 });
     /* the vapor pressure of water against temperature */
     const box = { l: 800, r: 1320, t: 130, b: 500 };
-    const { X, Y } = axes(ctx, box, [0, 100], [0, 800], { xl: 'T (°C)', xc: ct, yl: '水的蒸气压（torr）', yc: cp, nx: 5, ny: 4 });
+    const { X, Y } = axes(ctx, box, [0, 100], [0, 800], { xl: 'T（°C）', xc: ct, yl: '水的蒸气压（torr）', yc: cp, nx: 5, ny: 4 });
     F.curve(ctx, vp, 0, 100, X, Y, cp, 5, 120);
     line(ctx, box.l, Y(PT), box.r, Y(PT), cp, 3, [10, 10]);
     text(ctx, '总压，' + PT + ' torr', box.l + 10, Y(PT) + 22, cp, { size: 16 });

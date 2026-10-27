@@ -76,7 +76,7 @@ const count = (n, noun) => `${['', '一', '两', '三'][n]}个${noun}`;
   const d = sim('sim-nacl-lattice');
   /* free yaw; pitch bounded so the rows of the crystal stay readable (rule 26.3) */
   const v = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 11, tilt: 0.42, pitch: [-0.9, 0.9],
-    views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '顶角', yaw: Math.PI / 4, pitch: 0.6155 }] });
+    views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '斜视', yaw: Math.PI / 4, pitch: 0.6155 }] });
   const g = v.part(0);
   /* ionic radii 102 and 181 pm over an Na–Cl distance of 283 pm, one drawn unit */
   const RNA = 102 / 283, RCL = 181 / 283;

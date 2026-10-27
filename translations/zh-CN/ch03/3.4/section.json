@@ -2,15 +2,15 @@
  "id": "3.4",
  "module": "m68704",
  "chapter": "3",
- "title": "Other Units for Solution Concentrations",
- "short": "Other Concentration Units",
- "lead": "<span data-concept=\"molarity\">Molarity</span> is only one way of stating how much solute a solution holds: mass, volume and mass-volume percentages suit concentrated solutions and consumer products, and parts per million and parts per billion suit trace contaminants in water. A solution’s <span data-concept=\"density\">density</span> converts between its <span data-concept=\"volume\">volume</span> and its <span data-concept=\"mass\">mass</span>, so a <span data-concept=\"concentration\">concentration</span> in one unit can be turned into a <span data-concept=\"mass\">mass</span> or an amount of solute.",
+ "title": "溶液浓度的其他单位",
+ "short": "其他浓度单位",
+ "lead": "<span data-concept=\"molarity\">物质的量浓度</span>只是说明溶液含有多少溶质的一种方式：质量分数、体积分数和质量体积百分数适用于浓溶液和消费品，百万分率和十亿分率适用于水中的痕量污染物。溶液的<span data-concept=\"density\">密度</span>可在其<span data-concept=\"volume\">体积</span>和<span data-concept=\"mass\">质量</span>之间换算，所以用一种单位表示的<span data-concept=\"concentration\">浓度</span>可以换算成溶质的<span data-concept=\"mass\">质量</span>或物质的量。",
  "objectives": [
-  "Define the concentration units of mass percentage, volume percentage, mass-volume percentage, parts-per-million (ppm), and parts-per-billion (ppb)",
-  "Perform computations relating a solution’s concentration and its components’ volumes and/or masses using these units"
+  "给出质量分数、体积分数、质量体积百分数、百万分率（ppm）和十亿分率（ppb）这几种浓度单位的定义",
+  "利用这些单位，进行与溶液浓度及其组分的体积和/或质量有关的计算"
  ],
- "summary_html": "<p>In addition to <span data-concept=\"molarity\">molarity</span>, a number of other solution <span data-concept=\"concentration\">concentration</span> units are used in various applications. Percentage <span data-concept=\"concentration\">concentrations</span> based on the solution components’ <span data-concept=\"mass\">masses</span>, <span data-concept=\"volume\">volumes</span>, or both are useful for expressing relatively high <span data-concept=\"concentration\">concentrations</span>, whereas lower <span data-concept=\"concentration\">concentrations</span> are conveniently expressed using ppm or ppb units. These units are popular in environmental, medical, and other fields where mole-based units such as <span data-concept=\"molarity\">molarity</span> are not as commonly used.</p>",
- "notes": "The module prints no Link to Learning note, and the book’s spelling “alchol” in Example 3.24 is kept as printed. Six end-of-chapter exercises have no answer in the book’s key and are left out.",
+ "summary_html": "<p>除<span data-concept=\"molarity\">物质的量浓度</span>外，在各种应用中还使用许多其他的溶液<span data-concept=\"concentration\">浓度</span>单位。以溶液各组分的<span data-concept=\"mass\">质量</span>、<span data-concept=\"volume\">体积</span>或两者为基础的百分数<span data-concept=\"concentration\">浓度</span>，适合表示相对较高的<span data-concept=\"concentration\">浓度</span>，而较低的<span data-concept=\"concentration\">浓度</span>则宜用 ppm 或 ppb 单位表示。这些单位在环境、医学及其他不太常用<span data-concept=\"molarity\">物质的量浓度</span>等以摩尔为基础的单位的领域中很常用。</p>",
+ "notes": "本页没有“学习链接”注释；例 3.24 中书中的拼写“alchol”在中文中无从保留，已写作“异丙醇”。书后答案中没有答案的六道习题被略去。",
  "ai": {
   "text": [
    {
@@ -20,20 +20,33 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed exercises fs-idp18877920 (the mass of a 4.00% NaOH solution holding 15.0 g of NaOH), fs-idp11082976 (the HCl in 45.0 mL of 37.21% acid), fs-idm1879104 (the molarity of mercury at 0.68 ppb), fs-idm26515200 (the molarity of a 1.40% phenol throat spray), fs-idp22072496 (the molarity of a 5.0% alcohol cough syrup) and fs-idm9484992 (the molarity of 40.0% sulfuric acid) are left out. The first exercise asks for an outline and an answer; the answer is checked and the book’s outline is shown with it.",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的习题 fs-idp18877920（含 15.0 g NaOH、质量分数为 4.00% 的 NaOH 溶液的质量）、fs-idp11082976（45.0 mL 37.21% 盐酸中的 HCl）、fs-idm1879104（0.68 ppb 的汞的物质的量浓度）、fs-idm26515200（质量分数为 1.40% 的苯酚喉喷剂的物质的量浓度）、fs-idp22072496（5.0% 酒精止咳糖浆的物质的量浓度）和 fs-idm9484992（40.0% 硫酸的物质的量浓度）被略去。第一道习题要求概述并作答；答案经过检查，书中的概述与答案一并给出。",
  "figures": [
-  { "id": "fig-bleach", "kind": "photo", "number": "3.17", "draws": [] },
+  {
+   "id": "fig-bleach",
+   "kind": "photo",
+   "number": "3.17",
+   "draws": []
+  },
   {
    "id": "fig-hcl-route",
    "kind": "figure",
@@ -43,14 +56,26 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
-  { "id": "fig-saline", "kind": "photo", "number": "3.18", "draws": [] },
+  {
+   "id": "fig-saline",
+   "kind": "photo",
+   "number": "3.18",
+   "draws": []
+  },
   {
    "id": "sim-ppm",
    "kind": "sim",
-   "draws": ["mass"],
+   "draws": [
+    "mass"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
@@ -61,29 +86,107 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "short dropdown labels, readout symbols, marker under tick labels"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
-  { "id": "fig-faucet", "kind": "photo", "number": "3.19", "draws": [] }
+  {
+   "id": "fig-faucet",
+   "kind": "photo",
+   "number": "3.19",
+   "draws": []
+  }
  ],
  "coverage": [
-  { "span": "other-units", "concept": "molarity", "verb": "uses" },
-  { "span": "mass-percentage", "concept": "mass-percentage", "verb": "introduces" },
-  { "span": "mass-percentage", "concept": "percent-composition", "verb": "uses" },
-  { "span": "mass-percentage", "concept": "solution-components", "verb": "uses" },
-  { "span": "ex-mass-percent", "concept": "mass-percentage", "verb": "reinforces" },
-  { "span": "ex-hcl-mass", "concept": "concentration-unit-conversions", "verb": "introduces" },
-  { "span": "ex-hcl-mass", "concept": "mass-percentage", "verb": "uses" },
-  { "span": "volume-percentage", "concept": "volume-percentage", "verb": "introduces" },
-  { "span": "ex-volume-percent", "concept": "volume-percentage", "verb": "reinforces" },
-  { "span": "ex-volume-percent", "concept": "concentration-unit-conversions", "verb": "reinforces" },
-  { "span": "mass-volume-percent", "concept": "mass-volume-percent", "verb": "introduces" },
-  { "span": "ppm-ppb", "concept": "ppm-and-ppb", "verb": "introduces" },
-  { "span": "ppm-ppb", "concept": "mass-percentage", "verb": "uses" },
-  { "span": "ppm-ppb", "concept": "parts-per-million", "verb": "introduces" },
-  { "span": "ppm-ppb", "concept": "parts-per-billion", "verb": "introduces" },
-  { "span": "ex-ppb", "concept": "ppm-and-ppb", "verb": "reinforces" },
-  { "span": "ex-ppb", "concept": "concentration-unit-conversions", "verb": "reinforces" }
+  {
+   "span": "other-units",
+   "concept": "molarity",
+   "verb": "uses"
+  },
+  {
+   "span": "mass-percentage",
+   "concept": "mass-percentage",
+   "verb": "introduces"
+  },
+  {
+   "span": "mass-percentage",
+   "concept": "percent-composition",
+   "verb": "uses"
+  },
+  {
+   "span": "mass-percentage",
+   "concept": "solution-components",
+   "verb": "uses"
+  },
+  {
+   "span": "ex-mass-percent",
+   "concept": "mass-percentage",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-hcl-mass",
+   "concept": "concentration-unit-conversions",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-hcl-mass",
+   "concept": "mass-percentage",
+   "verb": "uses"
+  },
+  {
+   "span": "volume-percentage",
+   "concept": "volume-percentage",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-volume-percent",
+   "concept": "volume-percentage",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-volume-percent",
+   "concept": "concentration-unit-conversions",
+   "verb": "reinforces"
+  },
+  {
+   "span": "mass-volume-percent",
+   "concept": "mass-volume-percent",
+   "verb": "introduces"
+  },
+  {
+   "span": "ppm-ppb",
+   "concept": "ppm-and-ppb",
+   "verb": "introduces"
+  },
+  {
+   "span": "ppm-ppb",
+   "concept": "mass-percentage",
+   "verb": "uses"
+  },
+  {
+   "span": "ppm-ppb",
+   "concept": "parts-per-million",
+   "verb": "introduces"
+  },
+  {
+   "span": "ppm-ppb",
+   "concept": "parts-per-billion",
+   "verb": "introduces"
+  },
+  {
+   "span": "ex-ppb",
+   "concept": "ppm-and-ppb",
+   "verb": "reinforces"
+  },
+  {
+   "span": "ex-ppb",
+   "concept": "concentration-unit-conversions",
+   "verb": "reinforces"
+  }
  ],
  "exercises": [
   {
@@ -91,45 +194,88 @@
    "source_id": "fs-idm23566960",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-mass-percent" },
+   "place": {
+    "at": "inline",
+    "after": "ex-mass-percent"
+   },
    "cite": "mass-percentage",
-   "prompt": "A bottle of a tile cleanser contains 135 g of HCl and 775 g of water. What is the percent by mass of HCl in this cleanser?",
-   "answer": { "type": "number", "generated_by": "source", "value": 14.8, "unit": "%", "hint": "The mass of the solution is the mass of HCl plus the mass of water.", "solution": "14.8%" }
+   "prompt": "一瓶瓷砖清洁剂含有 135 g HCl 和 775 g 水。这种清洁剂中 HCl 的质量分数是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 14.8,
+    "unit": "%",
+    "hint": "溶液的质量等于 HCl 的质量加上水的质量。",
+    "solution": "14.8%"
+   }
   },
   {
    "id": "cyl2",
    "source_id": "fs-idm27131760",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-hcl-mass" },
+   "place": {
+    "at": "inline",
+    "after": "ex-hcl-mass"
+   },
    "cite": "ex-hcl-mass",
-   "prompt": "What volume of concentrated HCl solution contains 125 g of HCl?",
-   "answer": { "type": "number", "generated_by": "source", "value": 282, "unit": "mL", "hint": "Run the flowchart backward: divide the mass of HCl by the mass percentage as a ratio, then divide the mass of solution by its density.", "solution": "282 mL" }
+   "prompt": "含有 125 g HCl 的浓盐酸溶液的体积是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 282,
+    "unit": "mL",
+    "hint": "把流程图倒过来用：用 HCl 的质量除以以比值表示的质量分数，再用溶液的质量除以其密度。",
+    "solution": "282 mL"
+   }
   },
   {
    "id": "cyl3",
    "source_id": "fs-idm1441136",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-volume-percent" },
+   "place": {
+    "at": "inline",
+    "after": "ex-volume-percent"
+   },
    "cite": "volume-percentage",
-   "prompt": "Wine is approximately 12% ethanol (CH<sub>3</sub>CH<sub>2</sub>OH) by volume. Ethanol has a molar mass of 46.06 g/mol and a density 0.789 g/mL. How many moles of ethanol are present in a 750-mL bottle of wine?",
-   "answer": { "type": "number", "generated_by": "source", "value": 1.5, "unit": "mol", "hint": "Find the volume of ethanol, convert it to a mass with the density, and convert the mass to moles with the molar mass.", "solution": "1.5 mol ethanol" }
+   "prompt": "葡萄酒的乙醇（CH<sub>3</sub>CH<sub>2</sub>OH）含量按体积计约为 12%。乙醇的摩尔质量为 46.06 g/mol，密度为 0.789 g/mL。一瓶 750 mL 的葡萄酒中含有多少摩尔乙醇？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 1.5,
+    "unit": "mol",
+    "hint": "求出乙醇的体积，用密度把它换算成质量，再用摩尔质量把质量换算成物质的量。",
+    "solution": "1.5 mol 乙醇"
+   }
   },
   {
    "id": "cyl4",
    "source_id": "fs-idm22950992",
    "kind": "check-your-learning",
    "bloom": "Apply",
-   "place": { "at": "inline", "after": "ex-ppb" },
+   "place": {
+    "at": "inline",
+    "after": "ex-ppb"
+   },
    "cite": "ppm-ppb",
-   "prompt": "A 50.0-g sample of industrial wastewater was determined to contain 0.48 mg of mercury. Express the mercury concentration of the wastewater in ppm and ppb units.",
+   "prompt": "测得一份 50.0 g 的工业废水样品含有 0.48 mg 汞。请用 ppm 和 ppb 单位表示该废水的汞浓度。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
     "parts": [
-     { "part": "ppm", "value": 9.6, "unit": "ppm", "hint": "Divide the mass of mercury by the mass of the sample in the same unit and multiply by 10<sup>6</sup>." },
-     { "part": "ppb", "value": 9600, "unit": "ppb", "hint": "One ppm is 10<sup>3</sup> ppb." }
+     {
+      "part": "ppm",
+      "value": 9.6,
+      "unit": "ppm",
+      "hint": "用汞的质量除以以相同单位表示的样品质量，再乘以 10<sup>6</sup>。"
+     },
+     {
+      "part": "ppb",
+      "value": 9600,
+      "unit": "ppb",
+      "hint": "1 ppm 等于 10<sup>3</sup> ppb。"
+     }
     ],
     "solution": "9.6 ppm, 9600 ppb"
    }
@@ -139,114 +285,230 @@
    "source_id": "fs-idp14147136",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "mass-percentage",
-   "prompt": "Consider this question: What mass of a concentrated solution of nitric acid (68.0% HNO<sub>3</sub> by mass) is needed to prepare 400.0 g of a 10.0% solution of HNO<sub>3</sub> by mass? (a) Outline the steps necessary to answer the question. (b) Answer the question.",
-   "answer": { "type": "number", "generated_by": "source", "value": 58.8, "unit": "g", "hint": "The mass of HNO<sub>3</sub> is the same before and after the dilution.", "solution": "(a) The dilution equation can be used, appropriately modified to accommodate mass-based concentration units: $\\%{\\text{mass}}_{1}\\;\\times \\;{\\text{mass}}_{1}=\\%{\\text{mass}}_{2}\\;\\times \\;{\\text{mass}}_{2}$. This equation can be rearranged to isolate mass<sub>1</sub> and the given quantities substituted into this equation. (b) 58.8 g" }
+   "prompt": "请思考这个问题：要配制 400.0 g 质量分数为 10.0% 的 HNO<sub>3</sub> 溶液，需要多少质量的浓硝酸溶液（HNO<sub>3</sub> 质量分数为 68.0%）？（a）概述回答这个问题所需的步骤。（b）回答这个问题。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 58.8,
+    "unit": "g",
+    "hint": "稀释前后 HNO<sub>3</sub> 的质量相同。",
+    "solution": "（a）可以使用稀释公式，并作适当修改以适应基于质量的浓度单位：$\\%{\\text{质量}}_{1}\\;\\times \\;{\\text{质量}}_{1}=\\%{\\text{质量}}_{2}\\;\\times \\;{\\text{质量}}_{2}$。可以将此式变形以分离出质量<sub>1</sub>，再把给定的量代入。（b）58.8 g"
+   }
   },
   {
    "id": "e2",
    "source_id": "fs-idm26523680",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "ex-hcl-mass",
-   "prompt": "What mass of solid NaOH (97.0% NaOH by mass) is required to prepare 1.00 L of a 10.0% solution of NaOH by mass? The density of the 10.0% solution is 1.109 g/mL.",
-   "answer": { "type": "number", "generated_by": "source", "value": 114, "unit": "g", "hint": "Find the mass of the solution from its volume and density, then the mass of NaOH it holds, then the mass of the 97.0% solid that supplies it.", "solution": "114 g" }
+   "prompt": "要配制 1.00 L 质量分数为 10.0% 的 NaOH 溶液，需要多少质量的固体 NaOH（NaOH 质量分数为 97.0%）？10.0% 溶液的密度为 1.109 g/mL。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 114,
+    "unit": "g",
+    "hint": "先由体积和密度求出溶液的质量，再求其中所含 NaOH 的质量，最后求提供这些 NaOH 的 97.0% 固体的质量。",
+    "solution": "114 g"
+   }
   },
   {
    "id": "e3",
    "source_id": "fs-idm5149536",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "ppm-ppb",
-   "prompt": "The hardness of water (hardness count) is usually expressed in parts per million (by mass) of CaCO<sub>3</sub>, which is equivalent to milligrams of CaCO<sub>3</sub> per liter of water. What is the molar concentration of Ca<sup>2+</sup> ions in a water sample with a hardness count of 175 mg CaCO<sub>3</sub>/L?",
-   "answer": { "type": "number", "generated_by": "source", "value": 1.75e-3, "unit": "M", "hint": "Convert the milligrams of CaCO<sub>3</sub> in one liter to moles; each mole of CaCO<sub>3</sub> gives one mole of Ca<sup>2+</sup>.", "solution": "1.75 $\\times$ 10<sup>−3</sup> <em>M</em>" }
+   "prompt": "水的硬度（硬度值）通常以 CaCO<sub>3</sub> 的百万分率（按质量）表示，它等价于每升水中所含 CaCO<sub>3</sub> 的毫克数。硬度值为 175 mg CaCO<sub>3</sub>/L 的水样中，Ca<sup>2+</sup> 离子的物质的量浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.00175,
+    "unit": "M",
+    "hint": "把一升水中所含 CaCO<sub>3</sub> 的毫克数换算成物质的量；每摩尔 CaCO<sub>3</sub> 提供一摩尔 Ca<sup>2+</sup>。",
+    "solution": "1.75 $\\times$ 10<sup>−3</sup> <em>M</em>"
+   }
   },
   {
    "id": "e4",
    "source_id": "fs-idm39094144",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "mass-volume-percent",
-   "prompt": "In Canada and the United Kingdom, devices that measure blood glucose levels provide a reading in millimoles per liter. If a measurement of 5.3 m<em>M</em> is observed, what is the concentration of glucose (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>) in mg/dL?",
-   "answer": { "type": "number", "generated_by": "source", "value": 95, "unit": "mg/dL", "hint": "Convert millimoles to milligrams with the molar mass of glucose, and liters to deciliters.", "solution": "95 mg/dL" }
+   "prompt": "在加拿大和英国，测量血糖水平的仪器以毫摩尔每升给出读数。如果观测到的测量值为 5.3 m<em>M</em>，以 mg/dL 表示，葡萄糖（C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>）的浓度是多少？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 95,
+    "unit": "mg/dL",
+    "hint": "用葡萄糖的摩尔质量把毫摩尔换算成毫克，并把升换算成分升。",
+    "solution": "95 mg/dL"
+   }
   },
   {
    "id": "e5",
    "source_id": "fs-idm39075008",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "mass-percentage",
-   "prompt": "Copper(I) iodide (CuI) is often added to table salt as a dietary source of iodine. How many moles of CuI are contained in 1.00 lb (454 g) of table salt containing 0.0100% CuI by mass?",
-   "answer": { "type": "number", "generated_by": "source", "value": 2.38e-4, "unit": "mol", "hint": "Find the mass of CuI from the mass percentage, then convert it to moles with its molar mass.", "solution": "2.38 $\\times$ 10<sup>−4</sup> mol" }
+   "prompt": "碘化铜(I)（CuI）常被添加到食盐中，作为膳食碘的来源。在 1.00 磅（454 g）CuI 质量分数为 0.0100% 的食盐中，含有多少摩尔 CuI？",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.000238,
+    "unit": "mol",
+    "hint": "由质量分数求出 CuI 的质量，再用其摩尔质量把它换算成物质的量。",
+    "solution": "2.38 $\\times$ 10<sup>−4</sup> mol"
+   }
   },
   {
    "id": "e6",
    "source_id": "fs-idp67228256",
    "kind": "exercise",
    "bloom": "Apply",
-   "place": { "at": "end" },
+   "place": {
+    "at": "end"
+   },
    "cite": "ex-hcl-mass",
-   "prompt": "D5W is a solution used as an intravenous fluid. It is a 5.0% by mass solution of dextrose (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>) in water. If the density of D5W is 1.029 g/mL, calculate the molarity of dextrose in the solution.",
-   "answer": { "type": "number", "generated_by": "source", "value": 0.29, "unit": "M", "hint": "Take one liter of solution: its density gives its mass, the mass percentage the mass of dextrose, and the molar mass the moles.", "solution": "0.29 <em>M</em>" }
+   "prompt": "D5W 是一种用作静脉输液的溶液。它是葡萄糖（C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>）在水中的溶液，质量分数为 5.0%。如果 D5W 的密度为 1.029 g/mL，计算该溶液中葡萄糖的物质的量浓度。",
+   "answer": {
+    "type": "number",
+    "generated_by": "source",
+    "value": 0.29,
+    "unit": "M",
+    "hint": "取一升溶液：由密度得到它的质量，由质量分数得到葡萄糖的质量，再由摩尔质量得到物质的量。",
+    "solution": "0.29 <em>M</em>"
+   }
   }
  ],
  "exercise_concepts": [
-  { "exercise": "cyl1", "concept": "mass-percentage" },
-  { "exercise": "cyl2", "concept": "concentration-unit-conversions", "weight": 2, "weights_by": "ai" },
-  { "exercise": "cyl2", "concept": "mass-percentage" },
-  { "exercise": "cyl3", "concept": "volume-percentage" },
-  { "exercise": "cyl3", "concept": "concentration-unit-conversions", "weight": 2, "weights_by": "ai" },
-  { "exercise": "cyl4", "concept": "ppm-and-ppb" },
-  { "exercise": "e1", "concept": "mass-percentage" },
-  { "exercise": "e1", "concept": "dilution" },
-  { "exercise": "e2", "concept": "concentration-unit-conversions", "weight": 2, "weights_by": "ai" },
-  { "exercise": "e2", "concept": "mass-percentage" },
-  { "exercise": "e3", "concept": "ppm-and-ppb" },
-  { "exercise": "e3", "concept": "molarity" },
-  { "exercise": "e4", "concept": "mass-volume-percent" },
-  { "exercise": "e4", "concept": "molarity" },
-  { "exercise": "e5", "concept": "mass-percentage" },
-  { "exercise": "e5", "concept": "mass-mole-conversion" },
-  { "exercise": "e6", "concept": "concentration-unit-conversions", "weight": 2, "weights_by": "ai" },
-  { "exercise": "e6", "concept": "molarity" }
+  {
+   "exercise": "cyl1",
+   "concept": "mass-percentage"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "concentration-unit-conversions",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl2",
+   "concept": "mass-percentage"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "volume-percentage"
+  },
+  {
+   "exercise": "cyl3",
+   "concept": "concentration-unit-conversions",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "cyl4",
+   "concept": "ppm-and-ppb"
+  },
+  {
+   "exercise": "e1",
+   "concept": "mass-percentage"
+  },
+  {
+   "exercise": "e1",
+   "concept": "dilution"
+  },
+  {
+   "exercise": "e2",
+   "concept": "concentration-unit-conversions",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e2",
+   "concept": "mass-percentage"
+  },
+  {
+   "exercise": "e3",
+   "concept": "ppm-and-ppb"
+  },
+  {
+   "exercise": "e3",
+   "concept": "molarity"
+  },
+  {
+   "exercise": "e4",
+   "concept": "mass-volume-percent"
+  },
+  {
+   "exercise": "e4",
+   "concept": "molarity"
+  },
+  {
+   "exercise": "e5",
+   "concept": "mass-percentage"
+  },
+  {
+   "exercise": "e5",
+   "concept": "mass-mole-conversion"
+  },
+  {
+   "exercise": "e6",
+   "concept": "concentration-unit-conversions",
+   "weight": 2,
+   "weights_by": "ai"
+  },
+  {
+   "exercise": "e6",
+   "concept": "molarity"
+  }
  ],
  "referents": [
   {
    "id": "lead-water",
-   "label": "the tap water at the lead action level",
+   "label": "处于铅行动水平的自来水",
    "figures": [
     "sim-ppm"
    ]
   },
   {
    "id": "fluoride-water",
-   "label": "the tap water at the fluoride limit",
+   "label": "处于氟限值的自来水",
    "figures": [
     "sim-ppm"
    ]
   },
   {
    "id": "spinal-fluid",
-   "label": "the spinal fluid sample",
+   "label": "脑脊液样品",
    "figures": [
     "sim-ppm"
    ]
   },
   {
    "id": "bleach",
-   "label": "the liquid bleach",
+   "label": "液体漂白剂",
    "figures": [
     "sim-ppm"
    ]
   },
   {
    "id": "hcl",
-   "label": "the concentrated hydrochloric acid",
+   "label": "浓盐酸",
    "figures": [
     "sim-ppm"
    ]

@@ -7,7 +7,7 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 function readout(host, main, small) { tex(host, main); if (small) host.appendChild(el('small', null, small)); }
 const TAU = 2 * Math.PI;
 const SUP = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹', '¹⁰'];
-const WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+const WORDS = ['零', '一', '两', '三', '四', '五', '六', '七', '八', '九', '十'];
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
 /* =====================================================================
@@ -20,7 +20,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 (function () {
   const d = sim('sim-d-orbitals');
   const V = F.view3d(d.stage, { spin: 'idle', h: 440, dist: 14, tilt: 0.38,
-    views: [{ label: 'perspective', yaw: 0.62, pitch: 0.38 }, { label: 'down z', yaw: 0, pitch: Math.PI / 2 }, { label: 'along x', yaw: 0, pitch: 0 }] });
+    views: [{ label: '透视', yaw: 0.62, pitch: 0.38 }, { label: '沿 z 轴俯视', yaw: 0, pitch: Math.PI / 2 }, { label: '沿 x 轴', yaw: 0, pitch: 0 }] });
   V.setView(0.62, 0.38);
   const g = V.part(0), c2 = F.makeCanvas(d.stage, 360);
   g.position.y = -1.15;
@@ -33,9 +33,9 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   ];
   const byV = {}; ORBS.forEach((o) => { byV[o.v] = o; });
   const EG = { x2y2: 1, z2: 1 };
-  const geo = F.select(d.controls, { label: '\\text{geometry}', aria: 'the geometry of the complex', value: 'oct',
-    options: [{ value: 'oct', label: 'octahedral' }, { value: 'tet', label: 'tetrahedral' }, { value: 'sqp', label: 'square planar' }] });
-  const orb = F.choice(d.controls, { label: '\\text{orbital}', aria: 'the d orbital drawn', value: 'x2y2', ms: 0,
+  const geo = F.select(d.controls, { label: '\\text{几何构型}', aria: '配合物的几何构型', value: 'oct',
+    options: [{ value: 'oct', label: '八面体形' }, { value: 'tet', label: '四面体形' }, { value: 'sqp', label: '平面正方形' }] });
+  const orb = F.choice(d.controls, { label: '\\text{轨道}', aria: '所画的 d 轨道', value: 'x2y2', ms: 0,
     options: ORBS.map((o) => ({ value: o.v, label: o.label })), onInput: () => go() });
   let from = orb.value, to = from;
   const tw = F.tween(d, 1);
@@ -72,18 +72,18 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     pos = new T3.Float32BufferAttribute(new Float32Array(dirs.length * 3), 3); col = new T3.Float32BufferAttribute(new Float32Array(dirs.length * 3), 3);
     gm.setAttribute('position', pos); gm.setAttribute('color', col); gm.setIndex(idx);
     mesh = new T3.Mesh(gm, new T3.MeshPhongMaterial({ vertexColors: true, side: T3.DoubleSide, shininess: 30 }));
-    g.add(mesh); V.pickable(mesh, 'a lobe of the d orbital, shaded by its phase');
+    g.add(mesh); V.pickable(mesh, 'd 轨道的一个瓣，按相位着色');
     const L = 2.3;
     [[[L, 0, 0], 'x'], [[0, L, 0], 'y'], [[0, 0, L], 'z']].forEach(([p, name]) => {
       F.mesh.polyline(g, [S(p.map((q) => -q)), S(p)], PAL.muted);
       V.label('<em>' + name + '</em>', S(p.map((q) => q * 1.08)), g, 0);
     });
     metal = F.mesh.sphere(g, [0, 0, 0], 0.14, F.el('M'));
-    V.pickable(metal, 'the central metal ion, M');
+    V.pickable(metal, '中心金属离子 M');
     AX6.forEach((p) => {
       const s = F.mesh.stick(g, [0, 0, 0], S(p.map((q) => q * RL)), 0.022, PAL.muted, { transparent: true });
       const m = F.mesh.sphere(g, S(p.map((q) => q * RL)), 0.17, F.el('L'), { transparent: true });
-      V.pickable(m, 'a ligand, L, treated as a point charge');
+      V.pickable(m, '配体 L，被当作点电荷');
       ligs.push(m); sticks.push(s);
     });
     tagL = V.label('L', S([0, -RL, 0]), g, -30);
@@ -111,16 +111,16 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   };
   const HEAD = {
     oct: (o) => (EG[o.v]
-      ? (o.v === 'z2' ? 'Six ligands on the axes: $d_{z^2}$ points at the two on the $z$-axis, and its ring at the other four.' : `Six ligands on the axes: the lobes of $${o.tex}$ point straight at four of them.`)
-      : `Six ligands on the axes: the lobes of $${o.tex}$ point between them.`),
+      ? (o.v === 'z2' ? '六个配体位于坐标轴上：$d_{z^2}$ 指向 $z$ 轴上的两个配体，其环面朝向另外四个。' : `六个配体位于坐标轴上：$${o.tex}$ 的瓣直指其中四个配体。`)
+      : `六个配体位于坐标轴上：$${o.tex}$ 的瓣指向配体之间。`),
     tet: (o) => (EG[o.v]
-      ? `Four ligands between the axes: the lobes of $${o.tex}$ lie along the axes, farther from them than the $t_2$ lobes.`
-      : `Four ligands between the axes: the lobes of $${o.tex}$ point nearer to them than the $e$ lobes.`),
+      ? `四个配体位于坐标轴之间：$${o.tex}$ 的瓣沿坐标轴，比 $t_2$ 的瓣离配体更远。`
+      : `四个配体位于坐标轴之间：$${o.tex}$ 的瓣比 $e$ 的瓣更靠近配体。`),
     sqp: (o) => ({
-      x2y2: 'Four ligands on the $x$- and $y$-axes: the lobes of $d_{x^2-y^2}$ point straight at all four.',
-      xy: 'Four ligands on the $x$- and $y$-axes: the lobes of $d_{xy}$ lie in their plane, between them.',
-      z2: 'Four ligands on the $x$- and $y$-axes: $d_{z^2}$ points along $z$, where two were removed, with only its ring in their plane.',
-    }[o.v] ?? `Four ligands on the $x$- and $y$-axes: the lobes of $${o.tex}$ point out of their plane.`),
+      x2y2: '四个配体位于 $x$ 轴和 $y$ 轴上：$d_{x^2-y^2}$ 的瓣直指全部四个配体。',
+      xy: '四个配体位于 $x$ 轴和 $y$ 轴上：$d_{xy}$ 的瓣位于它们所在的平面内、配体之间。',
+      z2: '四个配体位于 $x$ 轴和 $y$ 轴上：$d_{z^2}$ 沿 $z$ 轴指向，那里的两个配体已被去掉，只有它的环面处在它们所在的平面内。',
+    }[o.v] ?? `四个配体位于 $x$ 轴和 $y$ 轴上：$${o.tex}$ 的瓣指向它们所在平面之外。`),
   };
   const RO = {
     oct: 'E_{e_{g}} - E_{t_{2g}} = \\kdoct',
@@ -192,10 +192,10 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 (function () {
   const H = 480;
   const d = sim('sim-high-low-spin', H);
-  const nPick = F.select(d.controls, { label: '\\text{d electrons}', aria: 'the number of d electrons', value: '6',
+  const nPick = F.select(d.controls, { label: '\\text{d 电子数}', aria: 'd 电子的数目', value: '6',
     options: Array.from({ length: 10 }, (_, i) => ({ value: String(i + 1), label: 'd' + SUP[i + 1] })), ms: 0, onInput: () => settle(true) });
   const ratio = F.ctl(d.controls, { label: '\\kdoct/\\kPpair', cls: '', min: 0.5, max: 2, step: 0.01, value: 0.6, unit: '', dec: 2,
-    aria: 'the crystal field splitting as a multiple of the pairing energy', specials: [{ at: 1, label: 'equal' }], onInput: () => settle(false) });
+    aria: '晶体场分裂相当于成对能的多少倍', specials: [{ at: 1, label: '相等' }], onInput: () => settle(false) });
   const PX = 130, YB = 290, BW = 64, BH = 52, CXF = 330, CX = 760, XA = 1010, XP = 1160;
   const HS = [[0, 'u'], [1, 'u'], [2, 'u'], [3, 'u'], [4, 'u'], [0, 'd'], [1, 'd'], [2, 'd'], [3, 'd'], [4, 'd']];
   const LS = [[0, 'u'], [1, 'u'], [2, 'u'], [0, 'd'], [1, 'd'], [2, 'd'], [3, 'u'], [4, 'u'], [3, 'd'], [4, 'd']];
@@ -236,9 +236,9 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const unpaired = (conf) => [0, 1, 2, 3, 4].filter((b) => conf.filter((e) => e[0] === b).length === 1).length;
     const conf = sp === 'ls' ? ls : hs, un = unpaired(conf);
     let head;
-    if (!q) head = `${cap(WORDS[n])} $d$ electron${n > 1 ? 's' : ''}, one arrangement for any $\\kdoct$: ${un ? WORDS[un] : 'no'} unpaired electron${un === 1 ? '' : 's'}.`;
-    else if (sp === 'eq') head = `${cap(WORDS[n])} $d$ electrons, $\\kdoct = \\kPpair$: the high- and low-spin arrangements have the same energy.`;
-    else head = `${cap(WORDS[n])} $d$ electrons, $\\kdoct ${sp === 'hs' ? '<' : '>'} \\kPpair$: ${sp === 'hs' ? 'high' : 'low'} spin, ${un ? WORDS[un] : 'no'} unpaired electron${un === 1 ? '' : 's'}.`;
+    if (!q) head = `${cap(WORDS[n])}个 $d$ 电子，对任何 $\\kdoct$ 都只有一种排布：${un ? '有' + WORDS[un] + '个' : '没有'}未成对电子。`;
+    else if (sp === 'eq') head = `${cap(WORDS[n])}个 $d$ 电子，$\\kdoct = \\kPpair$：高自旋和低自旋排布的能量相同。`;
+    else head = `${cap(WORDS[n])}个 $d$ 电子，$\\kdoct ${sp === 'hs' ? '<' : '>'} \\kPpair$：${sp === 'hs' ? '高' : '低'}自旋，${un ? '有' + WORDS[un] + '个' : '没有'}未成对电子。`;
     topline(ctx, head);
     arrow(ctx, 90, 440, 90, 110, ce, 3);
     text(ctx, 'E', 62, 275, ce, { size: 24, weight: 600, italic: true, align: 'center' });
@@ -273,13 +273,13 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     line(ctx, XA + 14, bT, XP, bT, alpha(PAL.ink, 0.35), 2, [4, 8]);
     F.vbracket(ctx, XP, bT - PX, bT, ce);
     text(ctx, '$\\kPpair$', XP + 18, bT - PX / 2, ce, { size: 28, tex: true });
-    text(ctx, 'free ion, no ligands', CXF, 462, PAL.ink, { size: 22, align: 'center' });
-    text(ctx, 'octahedral complex', CX, 462, PAL.ink, { size: 22, align: 'center' });
+    text(ctx, '自由离子，无配体', CXF, 462, PAL.ink, { size: 22, align: 'center' });
+    text(ctx, '八面体形配合物', CX, 462, PAL.ink, { size: 22, align: 'center' });
     const ct = (conf) => `t_{2g}^{${count(conf, true)}}\\,e_{g}^{${count(conf, false)}}`;
     if (!q) readout(d.readout, `\\kdoct = ${fmt(r, 2)}\\,\\kPpair:\\quad ${ct(hs)}`);
     else {
       const rel = sp === 'eq' ? '=' : sp === 'hs' ? '<' : '>', Q = q > 1 ? String(q) : '';
-      const end = sp === 'eq' ? `${ct(hs)}\\ \\text{or}\\ ${ct(ls)}` : ct(conf);
+      const end = sp === 'eq' ? `${ct(hs)}\\ \\text{或}\\ ${ct(ls)}` : ct(conf);
       readout(d.readout, `${Q}\\kdoct = ${fmt(q * r, 2)}\\,\\kPpair ${rel} ${Q}\\kPpair\\;\\Rightarrow\\; ${end}`);
     }
   }
@@ -296,7 +296,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
 (function () {
   const H = 470, T = 4;
   const d = sim('sim-color-wheel', H);
-  const lam = F.ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: 400, max: 800, step: 1, value: 499, unit: 'nm', dec: 0, aria: 'the wavelength absorbed most strongly' });
+  const lam = F.ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: 400, max: 800, step: 1, value: 499, unit: 'nm', dec: 0, aria: '吸收最强的波长' });
   const cy = cycle(() => T, 1.2);
   /* the colours of light, which are a physical fact: 400 to 700 nm in the usual linear approximation, darkening past 660 nm */
   function lightRGB(nm) {
@@ -337,7 +337,7 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
   const X0 = 600, XG0 = 892, XG1 = 968, X1 = 1250, TX = 930;
   function draw() {
     const { ctx } = begin(d.c), l0 = lam.v;
-    topline(ctx, `The solution absorbs light around ${fmt(l0, 0)} nm; the eye sees the color across the wheel.`);
+    topline(ctx, `溶液吸收 ${fmt(l0, 0)} nm 附近的光；眼睛看到的是色环对面的颜色。`);
     /* the wheel */
     for (let a = -210; a < 150; a += 2) {
       ctx.save(); ctx.fillStyle = lightColor(lamOf(a + 1)); ctx.beginPath(); ctx.moveTo(WX, WY);
@@ -358,8 +358,8 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
     const [ax, ay] = P(aA, R), [bx, by] = P(aA + 180, R);
     line(ctx, ax, ay, bx, by, PAL.ink, 2.5, [8, 6]);
     F.dot(ctx, ax, ay, PAL.ink, true, 7); F.dot(ctx, bx, by, PAL.ink, false, 7);
-    line(ctx, 150, 452, 186, 452, PAL.ink, 7); text(ctx, 'absorbed', 196, 452, PAL.ink, { size: 19 });
-    line(ctx, 300, 452, 336, 452, PAL.ink, 4, [8, 6]); text(ctx, 'seen', 346, 452, PAL.ink, { size: 19 });
+    line(ctx, 150, 452, 186, 452, PAL.ink, 7); text(ctx, '被吸收', 196, 452, PAL.ink, { size: 19 });
+    line(ctx, 300, 452, 336, 452, PAL.ink, 4, [8, 6]); text(ctx, '看到的', 346, 452, PAL.ink, { size: 19 });
     /* the solution in its tube, and white light crossing it */
     const front = X0 + (X1 - X0) * (cy.now() / T);
     ctx.save(); ctx.fillStyle = seen(l0); ctx.fillRect(TX - 30, 190, 60, 220); ctx.restore();
@@ -371,8 +371,8 @@ const cap = (s) => s[0].toUpperCase() + s.slice(1);
       if (front > XG0) F.faded(ctx, 0.5 + 0.5 * t, [0, 0], () => line(ctx, XG0, y, Math.min(front, XG1), y, col, 3));
       if (front > XG1 + 30 && t > 0.15) F.faded(ctx, t, [0, 0], () => arrow(ctx, XG1, y, Math.min(front, X1), y, col, 4));
     });
-    text(ctx, 'white light', (X0 + XG0) / 2, 150, PAL.ink, { size: 20, align: 'center' });
-    text(ctx, 'transmitted light', (XG1 + X1) / 2, 150, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '白光', (X0 + XG0) / 2, 150, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '透射光', (XG1 + X1) / 2, 150, PAL.ink, { size: 20, align: 'center' });
     const E = (6.63e-34 * 3.0e8) / (l0 * 1e-9) / 1e-19;
     readout(d.readout, `\\kE = h\\knu = \\frac{h\\kc}{\\klam} = \\frac{(6.63\\times10^{-34}\\ \\text{J·s})(3.00\\times10^{8}\\ \\text{m/s})}{${fmt(l0, 0)}\\times10^{-9}\\ \\text{m}} = ${fmt(E, 2)}\\times10^{-19}\\ \\text{J} = \\kdoct`);
   }

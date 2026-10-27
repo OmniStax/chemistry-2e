@@ -10,7 +10,7 @@
   "计算加入酸或碱之前和之后缓冲溶液的 pH"
  ],
  "summary_html": "<p>含有相当量弱<span data-concept=\"conjugate-acid-base-pairs\">共轭酸碱对</span>的溶液称为<span data-concept=\"buffer-composition\">缓冲溶液</span>。加入少量酸或碱时，缓冲溶液的 <span data-concept=\"ph\">pH</span> 只会发生很小的变化。加入大量酸或碱可能超出<span data-concept=\"buffer-capacity\">缓冲容量</span>，消耗掉共轭酸碱对中某一种组分的大部分，使缓冲作用无法继续。</p>",
- "notes": "略去了关于天然水缓冲体系的“学习链接”。按印刷原样保留：例 14.20（b）首次陈述时加入的是“1.0 mL of 0.10 NaOH”，没有写 M；图 14.16 的图注写作“has little affect”；关于血液的段落中“buffer pairs pKa”缺少撇号，其中的 pKa 按符号排版。",
+ "notes": "略去了关于天然水缓冲体系的“学习链接”。按印刷原样保留：例 14.20（b）首次陈述时加入的是“1.0 mL of 0.10 NaOH”，没有写 M。书中图 14.16 图注的“has little affect”（应为 effect）无法在中文中保留，译作“几乎没有影响”；血液段落中缺少撇号的“buffer pairs pKa”译作“缓冲对的 pKa”，其中的 pKa 按符号排版。",
  "ai": {
   "text": [
    {
@@ -239,7 +239,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "氢氧根离子把一部分铵根离子转化为氨，所以 NH<sub>4</sub>Cl 与物质的量少于 NH<sub>4</sub>Cl 的 NaOH 的混合物同时含有共轭对 NH<sub>4</sub><sup>+</sup>/NH<sub>3</sub> 的两个成员，这正是缓冲溶液所需要的。反应为 NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⟶ NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。例如，把 0.20 mol NH<sub>4</sub>Cl 与 0.10 mol NaOH 混合，剩下 0.10 mol NH<sub>4</sub><sup>+</sup> 和 0.10 mol NH<sub>3</sub>，这是一种缓冲溶液，其 pH = p<em>K</em><sub>a</sub> = −log(5.6 × 10<sup>−10</sup>) = 9.25。NH<sub>3</sub> 除去加入的酸，NH<sub>4</sub><sup>+</sup> 除去加入的碱。氨和氢氧化钠都是碱，彼此不发生反应，所以它们的混合物不含 NH<sub>4</sub><sup>+</sup>。没有弱酸来消耗加入的氢氧根，而且强碱固定了 [OH<sup>−</sup>]，这种混合物没有共轭酸碱对，不能起缓冲溶液的作用。"
+    "solution": "氢氧根离子把一部分铵根离子转化为氨，所以 NH<sub>4</sub>Cl 与物质的量少于 NH<sub>4</sub>Cl 的 NaOH 的混合物同时含有共轭酸碱对 NH<sub>4</sub><sup>+</sup>/NH<sub>3</sub> 的两个成员，这正是缓冲溶液所需要的。反应为 NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⟶ NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。例如，把 0.20 mol NH<sub>4</sub>Cl 与 0.10 mol NaOH 混合，剩下 0.10 mol NH<sub>4</sub><sup>+</sup> 和 0.10 mol NH<sub>3</sub>，这是一种缓冲溶液，其 pH = p<em>K</em><sub>a</sub> = −log(5.6 × 10<sup>−10</sup>) = 9.25。NH<sub>3</sub> 除去加入的酸，NH<sub>4</sub><sup>+</sup> 除去加入的碱。氨和氢氧化钠都是碱，彼此不发生反应，所以它们的混合物不含 NH<sub>4</sub><sup>+</sup>。没有弱酸来消耗加入的氢氧根，而且强碱固定了 [OH<sup>−</sup>]，这种混合物没有共轭酸碱对，不能起缓冲溶液的作用。"
    }
   },
   {
@@ -273,7 +273,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "pH 几乎保持不变，是因为每次加入的物质都被 NH<sub>3</sub>/NH<sub>4</sub><sup>+</sup> 对的一个成员消耗，并转化为另一个成员。加入的酸被氨除去：NH<sub>3</sub>(<em>aq</em>) + H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) ⟶ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。加入的碱被铵根离子除去：NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⟶ NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。这样，强酸或强碱就被一种弱酸或弱碱取代，pH 只取决于该共轭对的比值，pH = p<em>K</em><sub>a</sub> + log([NH<sub>3</sub>]/[NH<sub>4</sub><sup>+</sup>])。在 1.00 L 中二者各 1.00 mol 时，pH 为 9.25；加入 0.010 mol H<sub>3</sub>O<sup>+</sup> 后得到 0.99 mol NH<sub>3</sub> 和 1.01 mol NH<sub>4</sub><sup>+</sup>，pH = 9.25 + log(0.99/1.01) = 9.24。当两者的量相等而且比加入量大得多时，它们的比值几乎不变，所以 pH 只发生微小的变化。"
+    "solution": "pH 几乎保持不变，是因为每次加入的物质都被 NH<sub>3</sub>/NH<sub>4</sub><sup>+</sup> 对的一个成员消耗，并转化为另一个成员。加入的酸被氨除去：NH<sub>3</sub>(<em>aq</em>) + H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) ⟶ NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。加入的碱被铵根离子除去：NH<sub>4</sub><sup>+</sup>(<em>aq</em>) + OH<sup>−</sup>(<em>aq</em>) ⟶ NH<sub>3</sub>(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>)。这样，强酸或强碱就被一种弱酸或弱碱取代，pH 只取决于该共轭酸碱对的浓度比，pH = p<em>K</em><sub>a</sub> + log([NH<sub>3</sub>]/[NH<sub>4</sub><sup>+</sup>])。在 1.00 L 中二者各 1.00 mol 时，pH 为 9.25；加入 0.010 mol H<sub>3</sub>O<sup>+</sup> 后得到 0.99 mol NH<sub>3</sub> 和 1.01 mol NH<sub>4</sub><sup>+</sup>，pH = 9.25 + log(0.99/1.01) = 9.24。当两者的量相等而且比加入量大得多时，它们的比值几乎不变，所以 pH 只发生微小的变化。"
    }
   },
   {

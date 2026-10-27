@@ -39,12 +39,12 @@ function water(g, p, a, s = 1) {
 (function () {
   const T3D = window.THREE;
   const d = sim('sim-vapor-lowering');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 360, dist: 6.2, tilt: 0.22 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 360, dist: 6.2, tilt: 0.22 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 250);
   const NX = 5, NZ = 3, NY = 5, SITES = NX * NZ * NY, TOP = NX * NZ, SP = 0.26;
   const XB = 1.3, W = NX * SP, D = NZ * SP, Y0 = -1.0, YS = Y0 + NY * SP, YT = YS + 1.2;
   const SPEED = 1.3, VY = 0.75 * SPEED, TF = 2 * (YT - YS - 0.08) / VY, N_PURE = 14, R_EV = N_PURE / (TOP * TF), P_STAR = 23.7;
-  const nU = ctl(d.controls, { label: '\\text{urea molecules}', cls: '', min: 0, max: 30, step: 5, value: 15, unit: 'of 75', dec: 0, aria: 'urea molecules among the 75 sites of the solution', onInput: () => { seedSolute(); sig = ''; } });
+  const nU = ctl(d.controls, { label: '\\text{尿素分子数}', cls: '', min: 0, max: 30, step: 5, value: 15, unit: '个，共 75 个', dec: 0, aria: '溶液 75 个位点中的尿素分子数', onInput: () => { seedSolute(); sig = ''; } });
   const siteAt = (k) => { const l = Math.floor(k / TOP), r = k % TOP, ix = r % NX, iz = Math.floor(r / NX); return [(ix - (NX - 1) / 2) * SP, YS - SP / 2 - l * SP, (iz - (NZ - 1) / 2) * SP]; };
   let urea = new Set();
   function seedSolute() {
@@ -84,26 +84,26 @@ function water(g, p, a, s = 1) {
   function build() {
     if (palSig() === sig) return; sig = palSig();
     v.clear(); pools = [];
-    v.pickable(F.mesh.box(grp, [0, Y0 - 0.1, 0], [5.0, 0.12, 1.8], PAL.soft), 'bench');
+    v.pickable(F.mesh.box(grp, [0, Y0 - 0.1, 0], [5.0, 0.12, 1.8], PAL.soft), '工作台');
     const glass = glassOf(T3D), R = rng(11);
     for (const t of tanks) {
       const tank = new T3D.Group(); tank.position.set(t.x, 0, 0); grp.add(tank);
-      v.pickable(F.mesh.box(tank, [0, (Y0 + YT) / 2, 0], [W + 0.08, YT - Y0 + 0.04, D + 0.08], TANK(t), { ...glass, opacity: 0.16 }), t.solute ? 'a closed tank of an aqueous solution of urea' : 'a closed tank of pure water');
+      v.pickable(F.mesh.box(tank, [0, (Y0 + YT) / 2, 0], [W + 0.08, YT - Y0 + 0.04, D + 0.08], TANK(t), { ...glass, opacity: 0.16 }), t.solute ? '一个盛有尿素水溶液的密闭容器' : '一个盛有纯水的密闭容器');
       F.mesh.box(tank, [0, YS - NY * SP / 2, 0], [W, NY * SP, D], PAL.muted, { transparent: true, opacity: 0.12, depthWrite: false });
       for (let k = 0; k < SITES; k++) {
         const p = siteAt(k);
         if (t.solute && urea.has(k)) {
           const u = new T3D.Group(); u.position.set(p[0], p[1], p[2]); u.rotation.y = R() * TAU; tank.add(u);
-          const nm = 'a urea molecule, CO(NH₂)₂, a nonvolatile solute';
+          const nm = '一个尿素分子 CO(NH₂)₂，一种不挥发性溶质';
           [[[0, 0, 0], 0.07, 'C'], [[0, 0.085, 0], 0.07, 'O'], [[-0.08, -0.05, 0], 0.07, 'N'], [[0.08, -0.05, 0], 0.07, 'N']].forEach(([q, r, e]) => v.pickable(F.mesh.sphere(u, q, r, F.el(e)), nm));
         } else {
-          const w = water(tank, p, R() * TAU, 0.9); w.parts.forEach((m) => v.pickable(m, 'a water molecule in the liquid'));
+          const w = water(tank, p, R() * TAU, 0.9); w.parts.forEach((m) => v.pickable(m, '液体中的一个水分子'));
         }
       }
       const pool = [];
-      for (let j = 0; j < 40; j++) { const w = water(tank, [0, -9, 0], 0, 0.9); w.parts.forEach((m) => v.pickable(m, 'a water molecule in the vapor')); w.g.visible = false; pool.push(w.g); }
+      for (let j = 0; j < 40; j++) { const w = water(tank, [0, -9, 0], 0, 0.9); w.parts.forEach((m) => v.pickable(m, '蒸气中的一个水分子')); w.g.visible = false; pool.push(w.g); }
       pools.push(pool);
-      v.label(t.solute ? 'aqueous solution' : 'pure water', [t.x, Y0 - 0.32, D / 2 + 0.3], grp, 16).style.color = TANK(t);
+      v.label(t.solute ? '水溶液' : '纯水', [t.x, Y0 - 0.32, D / 2 + 0.3], grp, 16).style.color = TANK(t);
     }
   }
   function draw() {
@@ -113,20 +113,20 @@ function water(g, p, a, s = 1) {
     const { ctx } = begin(cnv);
     const n = Math.round(nU.v), X = (SITES - n) / SITES;
     const cnt = tanks.map((t) => Math.round(t.avg ?? t.vap.length)), want = [N_PURE, N_PURE * X];
-    const bx = (k) => 420 + k * 40, rows = [{ y: 120, name: 'vapor above pure water' }, { y: 180, name: 'vapor above the solution' }];
+    const bx = (k) => 420 + k * 40, rows = [{ y: 120, name: '纯水上方的蒸气' }, { y: 180, name: '溶液上方的蒸气' }];
     rows.forEach((r, i) => {
       text(ctx, r.name, 395, r.y, PAL.ink, { size: 18, align: 'right' });
       ctx.save(); ctx.fillStyle = alpha(TANK(tanks[i]), 0.75); ctx.fillRect(bx(0), r.y - 13, bx(Math.min(cnt[i], 22)) - bx(0), 26); ctx.restore();
       line(ctx, bx(want[i]), r.y - 22, bx(want[i]), r.y + 22, PAL.ink, 3, [4, 4]);
-      text(ctx, cnt[i] + ' molecules', bx(Math.max(cnt[i], want[i])) + 18, r.y, PAL.ink, { size: 18 });
+      text(ctx, cnt[i] + ' 个分子', bx(Math.max(cnt[i], want[i])) + 18, r.y, PAL.ink, { size: 18 });
     });
-    text(ctx, 'dashed marks: the average count Raoult’s law predicts', bx(0), 226, PAL.muted, { size: 16 });
+    text(ctx, '虚线标记：拉乌尔定律预测的平均个数', bx(0), 226, PAL.muted, { size: 16 });
     topline(ctx, n === 0
-      ? 'With no urea, both liquids are pure water, and the vapor above each settles near ' + cnt[0] + ' molecules.'
-      : 'Water fills ' + Math.round(X * 100) + '% of the surface sites of the solution, and ' + cnt[1] + ' molecules are in the vapor above it against ' + cnt[0] + ' above pure water.');
+      ? '没有尿素时，两种液体都是纯水，各自上方的蒸气稳定在约 ' + cnt[0] + ' 个分子。'
+      : '水占据溶液表面位点的 ' + Math.round(X * 100) + '%，其上方的蒸气中有 ' + cnt[1] + ' 个分子，而纯水上方有 ' + cnt[0] + ' 个。');
     const Ps = X * P_STAR;
-    readout(d.readout, `\\kPsoln = X_{\\text{solvent}}\\kPsolvstar = ${fmt(X, 3)} \\times ${hue('pressure', '23.7\\ \\text{torr}')} = ${hue('pressure', fmt(Ps, 1) + '\\ \\text{torr}')}`,
-      'Water takes ' + (SITES - n) + ' of the 75 sites, so its mole fraction is ' + fmt(X, 3) + '. The vapor pressure of pure water at 25 °C, 23.7 torr, is the one the Check Your Learning of Example 11.6 uses.');
+    readout(d.readout, `\\kPsoln = X_{\\text{溶剂}}\\kPsolvstar = ${fmt(X, 3)} \\times ${hue('pressure', '23.7\\ \\text{torr}')} = ${hue('pressure', fmt(Ps, 1) + '\\ \\text{torr}')}`,
+      '水占据 75 个位点中的 ' + (SITES - n) + ' 个，所以它的摩尔分数为 ' + fmt(X, 3) + '。纯水在 25 °C 时的蒸气压 23.7 torr，就是例 11.6 的“学习检测”所用的值。');
   }
   const cy = cycle(() => Infinity, 0);
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
@@ -149,9 +149,9 @@ function water(g, p, a, s = 1) {
 ===================================================================== */
 (function () {
   const d = sim('sim-phase-diagram', 620);
-  const I = { sucrose: 1, NaCl: 2, CaCl2: 3 }, NAME = { sucrose: 'sucrose', NaCl: 'sodium chloride', CaCl2: 'calcium chloride' };
-  const mS = ctl(d.controls, { label: '\\kmolal', cls: 'concentration', min: 0, max: 3, step: 0.05, value: 1, unit: 'm', dec: 2, detents: [1], aria: 'molality of the solute, in moles per kilogram of water' });
-  const sol = F.choice(d.controls, { label: '\\text{solute}', options: [{ value: 'sucrose', label: 'sucrose' }, { value: 'NaCl', label: 'NaCl' }, { value: 'CaCl2', label: 'CaCl₂' }], value: 'sucrose', aria: 'the solute dissolved in the water' });
+  const I = { sucrose: 1, NaCl: 2, CaCl2: 3 }, NAME = { sucrose: '蔗糖', NaCl: '氯化钠', CaCl2: '氯化钙' };
+  const mS = ctl(d.controls, { label: '\\kmolal', cls: 'concentration', min: 0, max: 3, step: 0.05, value: 1, unit: 'm', dec: 2, detents: [1], aria: '溶质的质量摩尔浓度，单位为每千克水中溶质的物质的量（mol）' });
+  const sol = F.choice(d.controls, { label: '\\text{溶质}', options: [{ value: 'sucrose', label: '蔗糖' }, { value: 'NaCl', label: 'NaCl' }, { value: 'CaCl2', label: 'CaCl₂' }], value: 'sucrose', aria: '溶于水中的溶质' });
   const RG = 8.314, HV = 40700, HS = 46700, KB = 0.512, KF = 1.86, W_MOL = 55.51;
   const K = (t) => t + 273.15;
   const Pvap = (t) => Math.exp(-HV / RG * (1 / K(t) - 1 / 373.15));
@@ -170,7 +170,7 @@ function water(g, p, a, s = 1) {
     const cSub = F.ref('sub-curve'), cVap = F.ref('vap-curve'), cMelt = F.ref('melt-curve'), guide = alpha(PAL.ink, 0.35);
     const sol_ = (t) => Xs * Pvap(t);
     /* the overview */
-    const o = F.axes(ctx, OB, [0, 160], [0, 4], { nx: 8, ny: 4, fx: (v) => minus(fmt(v - 40, 0)), fy: (v) => String(+(10 ** (v - 3)).toPrecision(1)), xl: 'temperature (°C)', xc: ct, yl: 'pressure (atm)', yc: cp });
+    const o = F.axes(ctx, OB, [0, 160], [0, 4], { nx: 8, ny: 4, fx: (v) => minus(fmt(v - 40, 0)), fy: (v) => String(+(10 ** (v - 3)).toPrecision(1)), xl: '温度（°C）', xc: ct, yl: '压强（atm）', yc: cp });
     const OX = (t) => o.X(t + 40), OY = (p) => o.Y(lg(p));
     clipTo(ctx, OB, () => {
       line(ctx, OB.l, OY(1), OB.r, OY(1), guide, 2, [10, 10]);
@@ -182,13 +182,13 @@ function water(g, p, a, s = 1) {
         line(ctx, OX(tf), OY(Psub(tf)), OX(tf), OB.t, cMelt, 4);
       });
     });
-    text(ctx, 'solid', OX(-30), OY(0.1), PAL.muted, { size: 20, align: 'center' });
-    text(ctx, 'liquid', OX(45), OY(3), PAL.muted, { size: 20, align: 'center' });
-    text(ctx, 'gas', OX(45), OY(0.01), PAL.muted, { size: 20, align: 'center' });
+    text(ctx, '固相', OX(-30), OY(0.1), PAL.muted, { size: 20, align: 'center' });
+    text(ctx, '液相', OX(45), OY(3), PAL.muted, { size: 20, align: 'center' });
+    text(ctx, '气相', OX(45), OY(0.01), PAL.muted, { size: 20, align: 'center' });
     /* the legend, in the overview's empty gas region */
     const lx = OX(78), ly = OY(0.0035);
-    line(ctx, lx, ly, lx + 46, ly, PAL.ink, 4); text(ctx, 'water', lx + 58, ly, PAL.ink, { size: 18 });
-    dashed(ctx, () => line(ctx, lx, ly + 32, lx + 46, ly + 32, PAL.ink, 4)); text(ctx, 'solution', lx + 58, ly + 32, PAL.ink, { size: 18 });
+    line(ctx, lx, ly, lx + 46, ly, PAL.ink, 4); text(ctx, '水', lx + 58, ly, PAL.ink, { size: 18 });
+    dashed(ctx, () => line(ctx, lx, ly + 32, lx + 46, ly + 32, PAL.ink, 4)); text(ctx, '溶液', lx + 58, ly + 32, PAL.ink, { size: 18 });
     lab.block(lx - 8, ly - 16, lx + 150, ly + 48);
     /* the window the inset magnifies */
     const wl = OX(IX[0]), wr = OX(IX[1]), wt = OY(IY[1]), wb = OY(IY[0]);
@@ -202,11 +202,11 @@ function water(g, p, a, s = 1) {
       lab.add('ΔT_{f}', OX(tf) - 10, yb, -1, 0, ct, 20, 12);
     }
     /* the inset */
-    const n = F.axes(ctx, IB, IX, IY, { nx: 4, ny: 5, fy: (v) => fmt(v, 2), xl: 'temperature (°C)', xc: ct, yl: 'pressure (atm)', yc: cp });
+    const n = F.axes(ctx, IB, IX, IY, { nx: 4, ny: 5, fy: (v) => fmt(v, 2), xl: '温度（°C）', xc: ct, yl: '压强（atm）', yc: cp });
     ctx.save(); ctx.strokeStyle = PAL.rule; ctx.lineWidth = 1.5; ctx.strokeRect(IB.l, IB.t, IB.r - IB.l, IB.b - IB.t); ctx.restore();
     lab.block(IB.l - 70, IB.t - 40, IB.r, IB.t - 8); lab.block(IB.l - 70, IB.t, IB.l, IB.b + 70); lab.block(IB.l, IB.b, IB.r + 30, IB.b + 70);
-    text(ctx, 'liquid', IB.l + 14, IB.t + 24, PAL.muted, { size: 20 });
-    text(ctx, 'gas', IB.r - 14, IB.b - 22, PAL.muted, { size: 20, align: 'right' });
+    text(ctx, '液相', IB.l + 14, IB.t + 24, PAL.muted, { size: 20 });
+    text(ctx, '气相', IB.r - 14, IB.b - 22, PAL.muted, { size: 20, align: 'right' });
     lab.block(IB.l, IB.t, IB.l + 80, IB.t + 44); lab.block(IB.r - 60, IB.b - 44, IB.r, IB.b);
     clipTo(ctx, IB, () => {
       line(ctx, IB.l, n.Y(1), IB.r, n.Y(1), guide, 2, [10, 10]);
@@ -236,11 +236,11 @@ function water(g, p, a, s = 1) {
       text(ctx, 'ΔP_{vp}', hx, hy, cp, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
     }
     const fz = minus(fmt(-dTf, 2)), bp = fmt(100 + dTb, 2);
-    topline(ctx, m === 0 ? 'With no solute, the solution’s curves lie on those of water.' : 'A ' + fmt(m, 2) + ' m solution of ' + NAME[sol.value] + ' freezes at ' + fz + ' °C and boils at ' + bp + ' °C.');
+    topline(ctx, m === 0 ? '没有溶质时，溶液的曲线与水的曲线重合。' : fmt(m, 2) + ' m ' + NAME[sol.value] + '溶液在 ' + fz + ' °C 凝固，在 ' + bp + ' °C 沸腾。');
     const mm = hue('concentration', fmt(m, 2) + '\\ m');
     tex(d.readout, `\\kdTf = i\\kKf\\kmolal = ${ip} \\times ${hue('colligative-constant', '1.86\\ {}^{\\circ}\\text{C}/m')} \\times ${mm} = ${hue('temperature', fmt(dTf, 2) + '\\ {}^{\\circ}\\text{C}')}`);
     const sm = d.readout.appendChild(el('small'));
-    tex(sm, `\\text{at } ${hue('temperature', '100\\ {}^{\\circ}\\text{C}')}\\text{: } \\kdPvp = (1 - X_{\\text{solvent}}) \\times ${hue('pressure', '1\\ \\text{atm}')} = ${hue('pressure', fmt(dP, 3) + '\\ \\text{atm}')}`);
+    tex(sm, `\\text{在 } ${hue('temperature', '100\\ {}^{\\circ}\\text{C}')}\\text{ 时：} \\kdPvp = (1 - X_{\\text{溶剂}}) \\times ${hue('pressure', '1\\ \\text{atm}')} = ${hue('pressure', fmt(dP, 3) + '\\ \\text{atm}')}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -259,12 +259,12 @@ function water(g, p, a, s = 1) {
 (function () {
   const T3D = window.THREE;
   const d = sim('sim-osmosis');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 380, dist: 7.6, tilt: 0.14 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 380, dist: 7.6, tilt: 0.14 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 230);
   grp.position.y = -0.2;
   const RT = 0.08206, TK = 310, S = 0.09, TAU_S = 1.5, PER = 6;
-  const Mv = ctl(d.controls, { label: '\\kM', cls: 'concentration', min: 0, max: 0.5, step: 0.01, value: 0.3, unit: 'M', dec: 2, aria: 'molarity of the glucose solution', onInput: () => cy.reset() });
-  const Pa = ctl(d.controls, { label: 'P_{\\text{applied}}', cls: 'pressure', min: 0, max: 15, step: 0.1, value: 0, unit: 'atm', dec: 1, aria: 'pressure applied to the piston over the solution, in atmospheres', specials: [{ at: () => Mv.v * RT * TK, label: 'Π' }], onInput: () => cy.reset() });
+  const Mv = ctl(d.controls, { label: '\\kM', cls: 'concentration', min: 0, max: 0.5, step: 0.01, value: 0.3, unit: 'M', dec: 2, aria: '葡萄糖溶液的物质的量浓度', onInput: () => cy.reset() });
+  const Pa = ctl(d.controls, { label: 'P_{\\text{外加}}', cls: 'pressure', min: 0, max: 15, step: 0.1, value: 0, unit: 'atm', dec: 1, aria: '施加在溶液上方活塞上的压强，单位为标准大气压', specials: [{ at: () => Mv.v * RT * TK, label: 'Π' }], onInput: () => cy.reset() });
   const cy = cycle(() => PER, 1.2);
   const XA = 0.85, RA = 0.26, YB = -1.1, YL = 0.25, YTOP = 1.35;
   const Pi = () => Mv.v * RT * TK;
@@ -291,32 +291,32 @@ function water(g, p, a, s = 1) {
     if (palSig() === sig) return; sig = palSig();
     v.clear(); liq = []; meshes = [];
     const glass = glassOf(T3D), wet = { transparent: true, opacity: 0.22, depthWrite: false };
-    v.pickable(F.mesh.box(grp, [0, YB - 0.42, 0], [3.4, 0.1, 1.4], PAL.soft), 'bench');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.42, 0], [3.4, 0.1, 1.4], PAL.soft), '工作台');
     for (const s of [-1, 1]) {
       const arm = new T3D.Mesh(new T3D.CylinderGeometry(RA + 0.03, RA + 0.03, YTOP - YB, 32, 1, true), F.mesh.mat(ARM(s), { ...glass, opacity: 0.16 })); arm.position.set(s * XA, (YTOP + YB) / 2, 0); grp.add(arm);
-      v.pickable(arm, s < 0 ? 'the arm holding pure water' : 'the arm holding the glucose solution');
+      v.pickable(arm, s < 0 ? '盛纯水的一侧' : '盛葡萄糖溶液的一侧');
       liq.push(column(T3D, grp, s * XA, YB, YL, 0, RA, PAL.muted, wet));
       F.mesh.stick(grp, [s * XA, YB - 0.3, 0.4], [s * XA, YB - 0.37, 0.4], 0.06, PAL.muted);
     }
     const base = new T3D.Mesh(new T3D.CylinderGeometry(RA + 0.03, RA + 0.03, 2 * XA, 32, 1, true), F.mesh.mat(PAL.ink, glass)); base.rotation.z = Math.PI / 2; base.position.set(0, YB, 0); grp.add(base);
     const fill = new T3D.Mesh(new T3D.CylinderGeometry(RA, RA, 2 * XA, 32), F.mesh.mat(PAL.muted, wet)); fill.rotation.z = Math.PI / 2; fill.position.set(0, YB, 0); grp.add(fill);
     const mem = new T3D.Mesh(new T3D.CylinderGeometry(RA + 0.04, RA + 0.04, 0.03, 32), F.mesh.mat(F.ref('membrane'), { transparent: true, opacity: 0.6 })); mem.rotation.z = Math.PI / 2; mem.position.set(0, YB, 0); grp.add(mem);
-    v.pickable(mem, 'the semipermeable membrane, which only water crosses');
+    v.pickable(mem, '半透膜，只有水能透过');
     piston = column(T3D, grp, XA, 0, 0.08, 0, RA - 0.005, F.ref('piston'));
-    v.pickable(piston, 'the piston pressing on the solution');
+    v.pickable(piston, '压在溶液上的活塞');
     rod = F.mesh.stick(grp, [XA, 0, 0], [XA, 0.5, 0], 0.04, F.ref('piston'));
     meshes = mols.map((q) => {
       const g = new T3D.Group(); grp.add(g);
       if (q.glu) {
-        for (let k = 0; k < 6; k++) { const a = k * TAU / 6; v.pickable(F.mesh.sphere(g, [0.07 * Math.cos(a), 0.07 * Math.sin(a), 0], 0.04, F.el(k === 0 ? 'O' : 'C')), 'a glucose molecule, which cannot cross the membrane'); }
+        for (let k = 0; k < 6; k++) { const a = k * TAU / 6; v.pickable(F.mesh.sphere(g, [0.07 * Math.cos(a), 0.07 * Math.sin(a), 0], 0.04, F.el(k === 0 ? 'O' : 'C')), '一个葡萄糖分子，不能透过膜'); }
       } else {
-        const w = water(g, [0, 0, 0], R0() * TAU, 0.8); w.parts.forEach((m) => v.pickable(m, 'a water molecule, which can cross the membrane'));
+        const w = water(g, [0, 0, 0], R0() * TAU, 0.8); w.parts.forEach((m) => v.pickable(m, '一个水分子，能透过膜'));
       }
       return g;
     });
-    v.label('membrane', [0, YB - 0.55, 0.75], grp, 15).style.color = F.ref('membrane');
-    v.label('water', [-XA - 0.6, YL + 0.3, 0], grp, 15).style.color = ARM(-1);
-    v.label('solution', [XA + 0.7, YL + 0.3, 0], grp, 15).style.color = ARM(1);
+    v.label('膜', [0, YB - 0.55, 0.75], grp, 15).style.color = F.ref('membrane');
+    v.label('水', [-XA - 0.6, YL + 0.3, 0], grp, 15).style.color = ARM(-1);
+    v.label('溶液', [XA + 0.7, YL + 0.3, 0], grp, 15).style.color = ARM(1);
   }
   function draw() {
     build();
@@ -335,22 +335,22 @@ function water(g, p, a, s = 1) {
       const x1 = bx(Math.min(0, val)), x2 = bx(Math.max(0, val)); if (filled) ctx.fillRect(x1, y - 12, x2 - x1, 24); ctx.strokeRect(x1, y - 12, x2 - x1, 24); ctx.restore();
       text(ctx, minus(fmt(val, 1)) + ' atm', bx(Math.max(val, 0)) + 14, y, PAL.ink, { size: 18 });
     };
-    bar(110, pi, 'osmotic pressure Π', false);
-    bar(150, Pa.v, 'applied pressure', false);
-    bar(190, h, 'column height difference', true);
+    bar(110, pi, '渗透压 Π', false);
+    bar(150, Pa.v, '外加压强', false);
+    bar(190, h, '液柱高度差', true);
     line(ctx, bx0, 90, bx0, 208, PAL.muted, 2);
     const rising = Math.abs(pi - Pa.v - h) > 0.05;
     topline(ctx, pi < 0.05
-      ? 'With no glucose, the two sides are pure water, and water crosses equally in both directions.'
+      ? '没有葡萄糖时，两侧都是纯水，水向两个方向的透过量相等。'
       : Pa.v <= 0.05
-        ? (rising ? 'Water crosses into the solution, whose column now stands ' + fmt(h, 1) + ' atm higher and is still rising.' : 'Water crosses into the ' + fmt(Mv.v, 2) + ' M glucose solution until its column stands ' + fmt(pi, 1) + ' atm higher.')
+        ? (rising ? '水透过膜进入溶液，溶液一侧的液柱现在高出 ' + fmt(h, 1) + ' atm，并且仍在上升。' : '水透过膜进入 ' + fmt(Mv.v, 2) + ' M 葡萄糖溶液，直到其液柱高出 ' + fmt(pi, 1) + ' atm。')
         : Math.abs(Pa.v - pi) <= 0.05
-          ? 'With ' + fmt(Pa.v, 1) + ' atm applied, exactly the osmotic pressure, no water crosses on balance.'
+          ? '施加 ' + fmt(Pa.v, 1) + ' atm，恰好等于渗透压，总体上没有水透过。'
           : Pa.v < pi
-            ? 'With ' + fmt(Pa.v, 1) + ' atm applied, below the osmotic pressure, the column rises only ' + fmt(pi - Pa.v, 1) + ' atm.'
-            : 'With ' + fmt(Pa.v, 1) + ' atm applied, above the osmotic pressure of ' + fmt(pi, 1) + ' atm, water leaves the solution.');
+            ? '施加 ' + fmt(Pa.v, 1) + ' atm，低于渗透压，液柱只上升 ' + fmt(pi - Pa.v, 1) + ' atm。'
+            : '施加 ' + fmt(Pa.v, 1) + ' atm，高于 ' + fmt(pi, 1) + ' atm 的渗透压，水离开溶液。');
     readout(d.readout, `\\kosm = \\kM R\\kT = ${hue('concentration', fmt(Mv.v, 2) + '\\ \\text{mol/L}')} \\times 0.08206\\ \\text{L atm/mol K} \\times ${hue('temperature', '310\\ \\text{K}')} = ${hue('pressure', fmt(pi, 1) + '\\ \\text{atm}')}`,
-      'A column of water ' + fmt(pi * 10.3, 0) + ' m tall would exert this pressure; the columns are drawn about 1000 times shorter.');
+      '这一压强相当于一根 ' + fmt(pi * 10.3, 0) + ' m 高的水柱所产生的压强；图中液柱的高度约为实际的 1/1000。');
   }
   register(d.fig, { update: (dt) => { cy.step(dt, () => 1); step(Math.min(dt, 0.05)); }, draw });
 })();
@@ -368,7 +368,7 @@ function water(g, p, a, s = 1) {
 (function () {
   const d = sim('sim-red-cells', 600);
   const CELL_RED = '#c0392b', PI_IN = 7.7;
-  const Po = ctl(d.controls, { label: '\\kosm_{\\text{solution}}', cls: 'pressure', min: 0, max: 16, step: 0.1, value: 7.7, unit: 'atm', dec: 1, aria: 'osmotic pressure of the solution around the cell, in atmospheres', specials: [{ at: PI_IN, label: 'isotonic' }] });
+  const Po = ctl(d.controls, { label: '\\kosm_{\\text{溶液}}', cls: 'pressure', min: 0, max: 16, step: 0.1, value: 7.7, unit: 'atm', dec: 1, aria: '细胞周围溶液的渗透压，单位为标准大气压', specials: [{ at: PI_IN, label: '等渗' }] });
   function draw() {
     const { ctx } = begin(d.c);
     const cell = F.fact(CELL_RED), po = Math.max(Po.v, 0.3), vr = 0.4 + 0.6 * PI_IN / po, burst = vr > 1.6;
@@ -389,23 +389,23 @@ function water(g, p, a, s = 1) {
     }
     ctx.restore();
     const state = Math.abs(po - PI_IN) < 0.05 ? 'isotonic' : po < PI_IN ? 'hypotonic' : 'hypertonic';
-    const flow = state === 'isotonic' ? 'water enters and leaves at equal rates' : state === 'hypotonic' ? 'water enters the cell' : 'water leaves the cell';
+    const flow = state === 'isotonic' ? '水进出的速率相等' : state === 'hypotonic' ? '水进入细胞' : '水离开细胞';
     text(ctx, flow, cx + 230, cy, PAL.ink, { size: 20, align: 'left' });
-    text(ctx, burst ? 'ruptured cell (hemolysis)' : state === 'hypertonic' ? 'shriveled cell (crenation)' : state === 'hypotonic' ? 'swollen cell' : 'normal cell', cx - 230, cy, PAL.ink, { size: 20, align: 'right' });
+    text(ctx, burst ? '破裂的细胞（溶血）' : state === 'hypertonic' ? '干瘪的细胞（皱缩）' : state === 'hypotonic' ? '膨胀的细胞' : '正常的细胞', cx - 230, cy, PAL.ink, { size: 20, align: 'right' });
     /* a strip with the two osmotic pressures */
     const cp = C('pressure'), X = (p) => 300 + p * 50, ys = 540;
     line(ctx, X(0), ys, X(16), ys, PAL.muted, 2);
     for (let p = 0; p <= 16; p += 4) { line(ctx, X(p), ys - 7, X(p), ys + 7, PAL.muted, 2); text(ctx, String(p), X(p), ys + 24, PAL.muted, { size: 16, align: 'center' }); }
-    text(ctx, 'osmotic pressure (atm)', X(0) - 20, ys, cp, { size: 18, weight: 600, align: 'right' });
-    F.dot(ctx, X(PI_IN), ys, cp, false, 10); text(ctx, 'inside the cell', X(PI_IN), ys - 26, PAL.ink, { size: 16, align: 'center' });
-    F.dot(ctx, X(Po.v), ys, cp, true, 9); if (Math.abs(Po.v - PI_IN) > 1.6) text(ctx, 'solution', X(Po.v), ys - 26, PAL.ink, { size: 16, align: 'center' });
+    text(ctx, '渗透压（atm）', X(0) - 20, ys, cp, { size: 18, weight: 600, align: 'right' });
+    F.dot(ctx, X(PI_IN), ys, cp, false, 10); text(ctx, '细胞内', X(PI_IN), ys - 26, PAL.ink, { size: 16, align: 'center' });
+    F.dot(ctx, X(Po.v), ys, cp, true, 9); if (Math.abs(Po.v - PI_IN) > 1.6) text(ctx, '溶液', X(Po.v), ys - 26, PAL.ink, { size: 16, align: 'center' });
     topline(ctx, state === 'isotonic'
-      ? 'At 7.7 atm the solution is isotonic with the cell, which keeps its normal volume and shape.'
+      ? '在 7.7 atm 时，溶液与细胞等渗，细胞保持其正常的体积和形状。'
       : state === 'hypotonic'
-        ? (burst ? 'At ' + fmt(Po.v, 1) + ' atm the solution is so hypotonic that the cell swells until it ruptures.' : 'At ' + fmt(Po.v, 1) + ' atm the solution is hypotonic, so the cell takes in water and swells.')
-        : 'At ' + fmt(Po.v, 1) + ' atm the solution is hypertonic, so the cell loses water and shrivels.');
+        ? (burst ? '在 ' + fmt(Po.v, 1) + ' atm 时，溶液的低渗程度很高，细胞膨胀直至破裂。' : '在 ' + fmt(Po.v, 1) + ' atm 时，溶液是低渗的，所以细胞吸水而膨胀。')
+        : '在 ' + fmt(Po.v, 1) + ' atm 时，溶液是高渗的，所以细胞失水而干瘪。');
     const rel = state === 'isotonic' ? '=' : state === 'hypotonic' ? '<' : '>';
-    readout(d.readout, `\\kosm_{\\text{solution}} = ${hue('pressure', fmt(Po.v, 1) + '\\ \\text{atm}')} ${rel} \\kosm_{\\text{cell}} = ${hue('pressure', '7.7\\ \\text{atm}')}`,
+    readout(d.readout, `\\kosm_{\\text{溶液}} = ${hue('pressure', fmt(Po.v, 1) + '\\ \\text{atm}')} ${rel} \\kosm_{\\text{细胞}} = ${hue('pressure', '7.7\\ \\text{atm}')}`,
 );
   }
   register(d.fig, { update: () => {}, draw });
@@ -424,9 +424,9 @@ function water(g, p, a, s = 1) {
 ===================================================================== */
 (function () {
   const d = sim('sim-ion-pairs');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-0.52, 1.4], views: [{ label: 'front', yaw: 0, pitch: 0.25 }, { label: 'above', yaw: 0, pitch: 1.35 }], h: 380, dist: 6.4, tilt: 0.3 });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-0.52, 1.4], views: [{ label: '正视', yaw: 0, pitch: 0.25 }, { label: '俯视', yaw: 0, pitch: 1.35 }], h: 380, dist: 6.4, tilt: 0.3 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 220);
-  const mS = ctl(d.controls, { label: '\\kmolal', cls: 'concentration', min: 0.01, max: 1, step: 0.01, value: 0.05, unit: 'm', dec: 2, detents: [0.05, 0.2, 0.5, 1], aria: 'molality of potassium chloride' });
+  const mS = ctl(d.controls, { label: '\\kmolal', cls: 'concentration', min: 0.01, max: 1, step: 0.01, value: 0.05, unit: 'm', dec: 2, detents: [0.05, 0.2, 0.5, 1], aria: '氯化钾的质量摩尔浓度' });
   const HALF = 1.2, RK = 0.14, RCL = 0.18, RO = 0.075, RH = 0.047, TET = [[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]].map((p) => p.map((c) => c / Math.sqrt(3)));
   const add = (a, b, k = 1) => [a[0] + b[0] * k, a[1] + b[1] * k, a[2] + b[2] * k];
   const dot3 = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
@@ -458,7 +458,7 @@ function water(g, p, a, s = 1) {
     const S = (p) => p.map((c) => c * k);
     let firstK = null, firstCl = null, firstPair = null;
     ions.forEach((ion) => {
-      const r = ion.e === 'K' ? RK : RCL, name = ion.mate ? (ion.e === 'K' ? 'a potassium ion, K⁺, in an ion pair' : 'a chloride ion, Cl⁻, in an ion pair') : (ion.e === 'K' ? 'a hydrated potassium ion, K⁺' : 'a hydrated chloride ion, Cl⁻');
+      const r = ion.e === 'K' ? RK : RCL, name = ion.mate ? (ion.e === 'K' ? '离子对中的一个钾离子 K⁺' : '离子对中的一个氯离子 Cl⁻') : (ion.e === 'K' ? '一个水合钾离子 K⁺' : '一个水合氯离子 Cl⁻');
       v.pickable(F.mesh.sphere(grp, S(ion.p), r * k, F.el(ion.e)), name);
       if (ion.mate && !firstPair) firstPair = ion.p;
       if (!ion.mate && ion.e === 'K' && !firstK) firstK = ion.p;
@@ -469,28 +469,28 @@ function water(g, p, a, s = 1) {
         const hs = ion.e === 'K'
           ? [add(add(o, u, -0.06), w, 0.075), add(add(o, u, -0.06), w, -0.075)]
           : [add(o, u, 0.095), add(add(o, u, -0.03), w, 0.09)];
-        v.pickable(F.mesh.sphere(grp, S(o), RO * k, F.el('O')), 'a water molecule of the hydration shell');
-        hs.forEach((h) => v.pickable(F.mesh.sphere(grp, S(h), RH * k, F.el('H')), 'a water molecule of the hydration shell'));
+        v.pickable(F.mesh.sphere(grp, S(o), RO * k, F.el('O')), '水合壳层中的一个水分子');
+        hs.forEach((h) => v.pickable(F.mesh.sphere(grp, S(h), RH * k, F.el('H')), '水合壳层中的一个水分子'));
       });
     });
     if (firstK) v.label('K⁺', add(S(firstK), [0, (RK + 0.3) * k, 0]), grp, 15);
     if (firstCl) v.label('Cl⁻', add(S(firstCl), [0, (RCL + 0.3) * k, 0]), grp, 15);
-    if (firstPair) v.label('ion pair', add(S(firstPair), [0, 0.45 * k, 0]), grp, 15);
+    if (firstPair) v.label('离子对', add(S(firstPair), [0, 0.45 * k, 0]), grp, 15);
   }
   function draw() {
     build(); v.invalidate();
     const { ctx } = begin(cnv);
     const np = pairsAt(mS.v), parts = 16 - np, X = (n) => 470 + n * 44;
-    const rows = [{ y: 130, n: 8, name: 'formula units dissolved' }, { y: 178, n: parts, name: 'particles in solution' }];
+    const rows = [{ y: 130, n: 8, name: '所溶解的化学式单元' }, { y: 178, n: parts, name: '溶液中的粒子' }];
     rows.forEach((r) => {
       text(ctx, r.name, 440, r.y, PAL.ink, { size: 18, align: 'right' });
       for (let j = 0; j < r.n; j++) { ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.strokeStyle = alpha(PAL.ink, 0.5); ctx.lineWidth = 1.5; ctx.fillRect(X(j), r.y - 12, 36, 24); ctx.strokeRect(X(j), r.y - 12, 36, 24); ctx.restore(); }
       text(ctx, String(r.n), X(r.n) + 12, r.y, PAL.ink, { size: 18, weight: 600 });
     });
     topline(ctx, np === 0
-      ? 'At ' + fmt(mS.v, 3) + ' m the ions lie far apart and none pair, so the solution holds 16 particles for 8 formula units.'
-      : 'At ' + fmt(mS.v, 3) + ' m, ' + (np === 1 ? 'one of the eight formula units is an ion pair' : ['', '', 'two', 'three', 'four'][np] + ' of the eight formula units are ion pairs') + ', so the solution holds ' + parts + ' particles for 8 formula units.');
-    readout(d.readout, `i = \\frac{\\text{moles of particles in solution}}{\\text{moles of formula units dissolved}} = \\frac{${parts}}{8} = ${fmt(parts / 8, 2)}`);
+      ? '在 ' + fmt(mS.v, 3) + ' m 时，离子相距很远，没有成对的，所以溶液中有 16 个粒子，对应 8 个化学式单元。'
+      : '在 ' + fmt(mS.v, 3) + ' m 时，八个化学式单元中有' + ['', '一', '两', '三', '四'][np] + '个形成离子对，所以溶液中有 ' + parts + ' 个粒子，对应 8 个化学式单元。');
+    readout(d.readout, `i = \\frac{\\text{溶液中粒子的物质的量}}{\\text{所溶化学式单元的物质的量}} = \\frac{${parts}}{8} = ${fmt(parts / 8, 2)}`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

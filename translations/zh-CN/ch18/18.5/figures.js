@@ -21,7 +21,7 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
 (function () {
   const T3D = window.THREE;
   const d = F.sim(root, 'sim-electrolysis');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.16 }, { label: 'above', yaw: 0, pitch: 1.1 }], h: 640, dist: 9.6, tilt: 0.16 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.16 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 640, dist: 9.6, tilt: 0.16 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 100);
   if (grp) grp.position.y = -0.55;
   const T = 6, TH = 0.2, RISE = 1.5;
@@ -59,7 +59,7 @@ const rnd = (k, j) => { const s = Math.sin(k * 127.1 + j * 311.7) * 43758.5453; 
   function build() {
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear(); water = {}; pools = {};
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [4.8, 0.1, 2.8], PAL.soft), '实验台');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [4.8, 0.1, 2.8], PAL.soft), '工作台');
     cyl(RB, YB, YT, glassMat(), true);
     const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), glassMat()); floor.rotation.x = -Math.PI / 2; floor.position.y = YB + 0.005; grp.add(floor);
     ring(0, YT, RB, 0.02, PAL.muted);

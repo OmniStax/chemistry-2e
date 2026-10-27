@@ -2,32 +2,40 @@
  "id": "20.4",
  "module": "m68849",
  "chapter": "20",
- "title": "Amines and Amides",
- "short": "Amines and Amides",
- "lead": "Nitrogen added to an organic framework gives two families of compounds: <span data-concept=\"amine\">amines</span>, in which nitrogen bonds to carbon or hydrogen atoms and keeps a lone pair of electrons, and <span data-concept=\"amide\">amides</span>, in which nitrogen bonds to the carbon atom of a <span data-concept=\"carbonyl-group\">carbonyl group</span>. The section follows them into DNA, the alkaloids, proteins, and Kevlar.",
+ "title": "胺和酰胺",
+ "short": "胺和酰胺",
+ "lead": "在有机骨架中加入氮，得到两类化合物：<span data-concept=\"amine\">胺</span>，其中氮与碳原子或氢原子成键并保留一对孤电子对；以及<span data-concept=\"amide\">酰胺</span>，其中氮与<span data-concept=\"carbonyl-group\">羰基</span>的碳原子成键。本节接着讲述它们在 DNA、生物碱、蛋白质和凯夫拉中的角色。",
  "objectives": [
-  "Describe the structure and properties of an amine",
-  "Describe the structure and properties of an amide"
+  "描述胺的结构和性质",
+  "描述酰胺的结构和性质"
  ],
- "summary_html": "<p>The addition of nitrogen into an organic framework leads to two families of molecules. Compounds containing a nitrogen atom bonded in a hydrocarbon framework are classified as <span data-concept=\"amine\">amines</span>. Compounds that have a nitrogen atom bonded to one side of a <span data-concept=\"carbonyl-group\">carbonyl group</span> are classified as <span data-concept=\"amide\">amides</span>. Amines are a basic <span data-concept=\"functional-group\">functional group</span>. Amines and <span data-concept=\"carboxylic-acid\">carboxylic acids</span> can combine in a condensation reaction to form amides.</p>",
- "notes": "The Link to Learning on how DNA is packaged is left out. The section keeps as printed “a phosphate group (−PO₄³⁻) When new DNA” without its full stop, “one of which are proteins”, the glossary’s amine “bonded to one or more alkyl group”, the key to exercise fs-idp39423488 with “+ Cl” for Cl₂ and “CH₃CH(Cl)H(Cl)CH₃”, and “pyridium ion” in the image of the key to exercise fs-idm49015296.",
+ "summary_html": "<p>在有机骨架中加入氮，得到两类分子。含有氮原子与烃骨架相连的化合物归为<span data-concept=\"amine\">胺</span>。氮原子与<span data-concept=\"carbonyl-group\">羰基</span>的一侧相连的化合物归为<span data-concept=\"amide\">酰胺</span>。胺是一种碱性<span data-concept=\"functional-group\">官能团</span>。胺和<span data-concept=\"carboxylic-acid\">羧酸</span>可以通过缩合反应结合，生成酰胺。</p>",
+ "notes": "关于 DNA 如何包装的“学习链接”被略去。本节照原样保留以下内容：“a phosphate group (−PO₄³⁻) When new DNA”一句缺少句号（译文写作“……磷酸基团 (−PO₄³⁻) 相连 新的 DNA 合成时……”），“one of which are proteins”（中文只能写作“其中一种是蛋白质”，语法错误无法保留），术语表中胺的释义“bonded to one or more alkyl group”，习题 fs-idp39423488 的答案把 Cl₂ 写成“+ Cl”并写出“CH₃CH(Cl)H(Cl)CH₃”，以及习题 fs-idm49015296 答案图片中的“pyridium ion”（图片说明中写作吡啶鎓离子）。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The five unkeyed exercises fs-idp72930352 (the Lewis structures of the isomers of C₂H₇N), fs-idp42366896 (the resonance structures of the pyridinium ion), fs-idp98463728 (the isomers of C₃H₇ON with an amide linkage), fs-idp8208496 (equations for ethylammonium chloride and sodium hydroxide) and fs-idp70207696 (the hybridization changes in reactions of the section on alcohols and ethers) are left out, and no answer is computed for them. Exercises fs-idp39423488 and fs-idp10362640 turn on reactions from exercises of the sections on hydrocarbons and on aldehydes, ketones, carboxylic acids, and esters; their prompts state those reactions, and nothing is moved.",
+ "exercise_notes": "布鲁姆层级和概念标签均由 AI 生成。答案取自书后答案。以下五道没有答案的习题被略去，也没有为它们计算答案：fs-idp72930352（C₂H₇N 各异构体的路易斯结构式）、fs-idp42366896（吡啶鎓离子的共振式）、fs-idp98463728（含酰胺键的 C₃H₇ON 的异构体）、fs-idp8208496（氯化乙铵与氢氧化钠的方程式）和 fs-idp70207696（关于醇和醚一节中各反应的杂化变化）。习题 fs-idp39423488 和 fs-idp10362640 取决于关于烃的一节以及关于醛、酮、羧酸和酯的一节的习题中的反应；它们的题干写明了这些反应，没有任何内容被移动。",
  "figures": [
   {
    "id": "fig-amines",
@@ -46,6 +54,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -143,13 +156,18 @@
    "originals": [
     "/media/ch20/CNX_Chem_20_04_peptide.jpg"
    ],
-   "original_caption": "This condensation reaction forms a dipeptide from two amino acids and leads to the formation of water.",
+   "original_caption": "这个缩合反应由两个氨基酸形成一个二肽，并生成水。",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -432,11 +450,11 @@
     "at": "end"
    },
    "cite": "amine-bases",
-   "prompt": "What is the molecular structure about the nitrogen atom in trimethyl amine and in the trimethyl ammonium ion, (CH<sub>3</sub>)<sub>3</sub>NH<sup>+</sup>? What is the hybridization of the nitrogen atom in trimethyl amine and in the trimethyl ammonium ion?",
+   "prompt": "三甲胺和三甲铵离子 (CH<sub>3</sub>)<sub>3</sub>NH<sup>+</sup> 中，氮原子周围的分子构型是什么？三甲胺和三甲铵离子中氮原子的杂化方式是什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Trimethyl amine: trigonal pyramidal, <em>sp</em><sup>3</sup>; trimethyl ammonium ion: tetrahedral, <em>sp</em><sup>3</sup>"
+    "solution": "三甲胺：三角锥形，<em>sp</em><sup>3</sup>；三甲铵离子：四面体形，<em>sp</em><sup>3</sup>"
    }
   },
   {
@@ -449,11 +467,11 @@
     "at": "end"
    },
    "cite": "amines",
-   "prompt": "Draw Lewis structures for pyridine and its conjugate acid, the pyridinium ion, C<sub>5</sub>H<sub>5</sub>NH<sup>+</sup>. What are the hybridizations, electron domain geometries, and molecular geometries about the nitrogen atoms in pyridine and in the pyridinium ion?",
+   "prompt": "画出吡啶及其共轭酸吡啶鎓离子 C<sub>5</sub>H<sub>5</sub>NH<sup>+</sup> 的路易斯结构式。吡啶和吡啶鎓离子中氮原子的杂化方式、电子域几何构型和分子几何构型各是什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "<img src=\"/media/ch20/CNX_Chem_20_04_pyridinium_img.jpg\" alt=\"Two structures are shown, one for pyridine, which is trigonal planar and is labeled s p superscript 2. The second is for the pyridium ion, which is also trigonal planar and is labeled s p superscript 2. Both structures include a hexagonal ring composed of 5 C atoms and 1 N atom which is shown at the top of each structure. In both rings, double bonds alternate and single H atoms extend outward from each C atom. The only structural difference between the two structures involves the unshared electron pair on the N atom in pyridine. This is replaced by a bonded H atom in the pyridium ion which is represented in brackets with a superscript plus symbol outside the brackets.\">"
+    "solution": "<img src=\"/media/ch20/CNX_Chem_20_04_pyridinium_img.jpg\" alt=\"图中显示两个结构，一个是吡啶，为平面三角形，标注为 s p 上标 2。第二个是吡啶鎓离子，同样为平面三角形，标注为 s p 上标 2。两个结构都包含一个由 5 个 C 原子和 1 个 N 原子组成的六边形环，N 原子位于每个结构的顶部。在两个环中，双键交替出现，单个 H 原子从每个 C 原子向外伸出。两个结构唯一的结构差别在于吡啶中 N 原子上的未共用电子对。在吡啶鎓离子中，它被一个成键的 H 原子取代，该离子表示在方括号中，括号外有一个上标加号。\">"
    }
   },
   {
@@ -466,11 +484,11 @@
     "at": "end"
    },
    "cite": "amine-bases",
-   "prompt": "Write two complete balanced equations for the following reaction, one using condensed formulas and one using Lewis structures.<br>Methyl amine is added to a solution of HCl.",
+   "prompt": "针对下列反应，写出两个完整的配平方程式，一个用结构简式，一个用路易斯结构式。<br>把甲胺加入 HCl 溶液中。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "${\\text{CH}}_{3}{\\text{NH}}_{2}+{\\text{H}}_{3}{\\text{O}}^{+}\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{NH}}_{3}{}^{+}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch20/CNX_Chem_20_04_reaction1f_img.jpg\" alt=\"A reaction is shown. The first structure shown on the left shows a C atom with H atoms bonded above, below, and to the left. To the right, an N atom is bonded which has an unshared pair of electrons above it and H atoms bonded to its right and below. This structure is followed by a plus sign. A structure follows in brackets which includes an O atom with H atoms bonded above, to the left, and below. A single unshared electron pair is shown on the O atom. Outside the brackets is a superscript plus sign. This is followed by a plus sign and C l surrounded by 4 pairs of electron dots and a superscript minus sign. Following a reaction arrow is another structure in brackets. This structure shows a C atom with H atoms bonded above, below, and to the left. To the right, an N atom is bonded which has H atoms bonded above, below, and to the right. Outside the brackets is a superscript plus sign. This is followed by C l surrounded by 4 pairs of electron dots and superscript minus. This is followed by another plus sign and an H atom which forms a single bond to an O atom to which a second H atom is bonded above. The O atom has two sets of electron dots.\">"
+    "solution": "${\\text{CH}}_{3}{\\text{NH}}_{2}+{\\text{H}}_{3}{\\text{O}}^{+}\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{NH}}_{3}{}^{+}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch20/CNX_Chem_20_04_reaction1f_img.jpg\" alt=\"图中显示一个反应。左侧的第一个结构显示一个 C 原子，其上方、下方和左侧各连有一个 H 原子。右侧连有一个 N 原子，N 原子上方有一对未共用电子对，右侧和下方连有 H 原子。该结构之后是一个加号。接着是方括号中的一个结构，其中有一个 O 原子，上方、左侧和下方各连有一个 H 原子。O 原子上显示一对未共用电子对。括号外有一个上标加号。其后是一个加号，以及被 4 对电子点对包围的 C l 和一个上标减号。在反应箭头之后是另一个方括号中的结构。该结构显示一个 C 原子，其上方、下方和左侧各连有一个 H 原子。右侧连有一个 N 原子，N 原子上方、下方和右侧连有 H 原子。括号外有一个上标加号。其后是被 4 对电子点对包围的 C l 和上标减号。再其后是另一个加号，以及一个 H 原子，它与一个 O 原子形成单键，O 原子上方连有第二个 H 原子。该 O 原子有两组电子点。\">"
    }
   },
   {
@@ -482,7 +500,7 @@
    "place": {
     "at": "end"
    },
-   "prompt": "Identify any carbon atoms that change hybridization and the change in hybridization during the following reactions:<br>(a) 2-butene reacts with chlorine.<br>(b) benzene burns in air.",
+   "prompt": "指出在下列反应中杂化类型发生改变的碳原子，以及杂化类型的变化：<br>（a）2-丁烯与氯反应。<br>（b）苯在空气中燃烧。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -498,11 +516,11 @@
    "place": {
     "at": "end"
    },
-   "prompt": "Identify any carbon atoms that change hybridization and the change in hybridization during the following reactions:<br>(a) 1-butanol reacts with acetic acid<br>(b) propionic acid is poured onto solid calcium carbonate",
+   "prompt": "指出在下列反应中杂化类型发生改变的碳原子，以及杂化类型的变化：<br>（a）1-丁醇与乙酸反应<br>（b）把丙酸倒在固体碳酸钙上",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The carbon in CO<sub>3</sub><sup>2−</sup>, initially at <em>sp</em><sup>2</sup>, changes hybridization to <em>sp</em> in CO<sub>2</sub>."
+    "solution": "CO<sub>3</sub><sup>2−</sup> 中的碳原子最初为 <em>sp</em><sup>2</sup> 杂化，在 CO<sub>2</sub> 中变为 <em>sp</em> 杂化。"
    }
   }
  ],
@@ -580,7 +598,7 @@
   {
    "id": "c-e61-cl2",
    "kind": "correction",
-   "html": "The key writes + Cl and CH<sub>3</sub>CH(Cl)H(Cl)CH<sub>3</sub>; chlorine adds as Cl<sub>2</sub>, giving CH<sub>3</sub>CH(Cl)CH(Cl)CH<sub>3</sub>."
+   "html": "书后答案写成 + Cl 和 CH<sub>3</sub>CH(Cl)H(Cl)CH<sub>3</sub>；氯以 Cl<sub>2</sub> 的形式加成，得到 CH<sub>3</sub>CH(Cl)CH(Cl)CH<sub>3</sub>。"
   }
  ]
 }

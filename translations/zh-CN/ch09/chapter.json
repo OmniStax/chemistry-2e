@@ -231,7 +231,7 @@
     {
       "sym": "MM",
       "concept": "molar-mass",
-      "meaning": "气体的摩尔质量，即其质量除以以摩尔计的物质的量",
+      "meaning": "气体的摩尔质量，即其质量除以其物质的量（以摩尔计）",
       "unit": "g/mol",
       "section": "9.3",
       "anchor": "9.3-density"

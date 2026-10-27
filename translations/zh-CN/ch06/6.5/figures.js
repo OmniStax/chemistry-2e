@@ -13,21 +13,21 @@ const minus = (s) => String(s).replace('-', '−');
    one the book prints (Table 6.2, Figure 6.31 and the text of 6.5). The other radii and IE₁ values
    are those of the book's elements page. */
 const ELEMENTS = [
-  ['H','Hydrogen',1,1,31,1310,true,-72,0], ['He','Helium',18,1,31,2370,true,'20*',1], ['Li','Lithium',1,2,167,520,true,-60,1], ['Be','Beryllium',2,2,96,900,true,'240*',0], ['B','Boron',13,2,84,800,true,-23,0], ['C','Carbon',14,2,76,1090,true,-123,0],
-  ['N','Nitrogen',15,2,71,1400,true,0,0], ['O','Oxygen',16,2,66,1310,true,-141,0], ['F','Fluorine',17,2,64,1680,true,-322,1], ['Ne','Neon',18,2,38,2080,true,'30*',1], ['Na','Sodium',1,3,190,490,true,-53,1], ['Mg','Magnesium',2,3,141,730,true,'230*',0],
-  ['Al','Aluminum',13,3,118,580,true,-44,1], ['Si','Silicon',14,3,111,780,true,-120,0], ['P','Phosphorus',15,3,107,1060,true,-74,0], ['S','Sulfur',16,3,104,1000,true,-200,1], ['Cl','Chlorine',17,3,99,1250,true,-348,1], ['Ar','Argon',18,3,71,1520,true,'35*',1],
-  ['K','Potassium',1,4,243,420,true,-48,1], ['Ca','Calcium',2,4,176,590,true,'150*',0], ['Sc','Scandium',3,4,170,630,true,null,0], ['Ti','Titanium',4,4,160,660,true,null,0], ['V','Vanadium',5,4,153,650,true,null,0], ['Cr','Chromium',6,4,139,660,true,null,0],
-  ['Mn','Manganese',7,4,139,710,true,null,0], ['Fe','Iron',8,4,132,760,true,null,0], ['Co','Cobalt',9,4,126,760,true,null,0], ['Ni','Nickel',10,4,124,730,true,null,0], ['Cu','Copper',11,4,132,740,true,null,0], ['Zn','Zinc',12,4,122,910,true,null,0],
-  ['Ga','Gallium',13,4,122,580,true,'-40*',0], ['Ge','Germanium',14,4,120,780,true,-115,0], ['As','Arsenic',15,4,119,960,true,-7,0], ['Se','Selenium',16,4,120,950,true,-195,0], ['Br','Bromine',17,4,114,1140,true,-324,1], ['Kr','Krypton',18,4,88,1350,true,'40*',1],
-  ['Rb','Rubidium',1,5,265,400,true,-46,1], ['Sr','Strontium',2,5,195,550,true,'160*',0], ['Y','Yttrium',3,5,190,620,true,null,0], ['Zr','Zirconium',4,5,175,660,true,null,0], ['Nb','Niobium',5,5,164,670,true,null,0], ['Mo','Molybdenum',6,5,154,680,true,null,0],
-  ['Tc','Technetium',7,5,147,700,true,null,0], ['Ru','Ruthenium',8,5,146,710,true,null,0], ['Rh','Rhodium',9,5,142,720,true,null,0], ['Pd','Palladium',10,5,139,800,true,null,0], ['Ag','Silver',11,5,145,730,true,null,0], ['Cd','Cadmium',12,5,144,870,true,null,0],
-  ['In','Indium',13,5,142,560,true,'-40*',0], ['Sn','Tin',14,5,139,700,true,-121,0], ['Sb','Antimony',15,5,139,830,true,-101,0], ['Te','Tellurium',16,5,138,870,true,-190,0], ['I','Iodine',17,5,133,1010,true,-295,1], ['Xe','Xenon',18,5,108,1170,true,'40*',1],
-  ['Cs','Cesium',1,6,298,380,true,-45,1], ['Ba','Barium',2,6,215,500,true,'50*',0], ['La','Lanthanum',3,6,207,540,true,null,0], ['Ce','Cerium',0,6,204,534,false,null,0], ['Pr','Praseodymium',0,6,203,527,false,null,0], ['Nd','Neodymium',0,6,201,533,false,null,0],
-  ['Pm','Promethium',0,6,199,540,false,null,0], ['Sm','Samarium',0,6,198,545,false,null,0], ['Eu','Europium',0,6,198,547,false,null,0], ['Gd','Gadolinium',0,6,196,593,false,null,0], ['Tb','Terbium',0,6,194,566,false,null,0], ['Dy','Dysprosium',0,6,192,573,false,null,0],
-  ['Ho','Holmium',0,6,192,581,false,null,0], ['Er','Erbium',0,6,189,589,false,null,0], ['Tm','Thulium',0,6,190,597,false,null,0], ['Yb','Ytterbium',0,6,187,603,false,null,0], ['Lu','Lutetium',0,6,187,524,false,null,0], ['Hf','Hafnium',4,6,175,700,true,null,0],
-  ['Ta','Tantalum',5,6,170,760,true,null,0], ['W','Tungsten',6,6,162,770,true,null,0], ['Re','Rhenium',7,6,151,760,true,null,0], ['Os','Osmium',8,6,144,840,true,null,0], ['Ir','Iridium',9,6,141,890,true,null,0], ['Pt','Platinum',10,6,136,870,true,null,0],
-  ['Au','Gold',11,6,136,890,true,null,0], ['Hg','Mercury',12,6,132,1000,true,null,0], ['Tl','Thallium',13,6,145,590,true,-50,0], ['Pb','Lead',14,6,146,710,true,-101,0], ['Bi','Bismuth',15,6,148,800,true,-101,0], ['Po','Polonium',16,6,140,810,true,-170,0],
-  ['At','Astatine',17,6,148,890,false,'-270*',1], ['Rn','Radon',18,6,150,1030,true,'40*',0], ['Fr','Francium',1,7,260,380,false,null,0], ['Ra','Radium',2,7,221,510,true,null,0]
+  ['H','氢',1,1,31,1310,true,-72,0], ['He','氦',18,1,31,2370,true,'20*',1], ['Li','锂',1,2,167,520,true,-60,1], ['Be','铍',2,2,96,900,true,'240*',0], ['B','硼',13,2,84,800,true,-23,0], ['C','碳',14,2,76,1090,true,-123,0],
+  ['N','氮',15,2,71,1400,true,0,0], ['O','氧',16,2,66,1310,true,-141,0], ['F','氟',17,2,64,1680,true,-322,1], ['Ne','氖',18,2,38,2080,true,'30*',1], ['Na','钠',1,3,190,490,true,-53,1], ['Mg','镁',2,3,141,730,true,'230*',0],
+  ['Al','铝',13,3,118,580,true,-44,1], ['Si','硅',14,3,111,780,true,-120,0], ['P','磷',15,3,107,1060,true,-74,0], ['S','硫',16,3,104,1000,true,-200,1], ['Cl','氯',17,3,99,1250,true,-348,1], ['Ar','氩',18,3,71,1520,true,'35*',1],
+  ['K','钾',1,4,243,420,true,-48,1], ['Ca','钙',2,4,176,590,true,'150*',0], ['Sc','钪',3,4,170,630,true,null,0], ['Ti','钛',4,4,160,660,true,null,0], ['V','钒',5,4,153,650,true,null,0], ['Cr','铬',6,4,139,660,true,null,0],
+  ['Mn','锰',7,4,139,710,true,null,0], ['Fe','铁',8,4,132,760,true,null,0], ['Co','钴',9,4,126,760,true,null,0], ['Ni','镍',10,4,124,730,true,null,0], ['Cu','铜',11,4,132,740,true,null,0], ['Zn','锌',12,4,122,910,true,null,0],
+  ['Ga','镓',13,4,122,580,true,'-40*',0], ['Ge','锗',14,4,120,780,true,-115,0], ['As','砷',15,4,119,960,true,-7,0], ['Se','硒',16,4,120,950,true,-195,0], ['Br','溴',17,4,114,1140,true,-324,1], ['Kr','氪',18,4,88,1350,true,'40*',1],
+  ['Rb','铷',1,5,265,400,true,-46,1], ['Sr','锶',2,5,195,550,true,'160*',0], ['Y','钇',3,5,190,620,true,null,0], ['Zr','锆',4,5,175,660,true,null,0], ['Nb','铌',5,5,164,670,true,null,0], ['Mo','钼',6,5,154,680,true,null,0],
+  ['Tc','锝',7,5,147,700,true,null,0], ['Ru','钌',8,5,146,710,true,null,0], ['Rh','铑',9,5,142,720,true,null,0], ['Pd','钯',10,5,139,800,true,null,0], ['Ag','银',11,5,145,730,true,null,0], ['Cd','镉',12,5,144,870,true,null,0],
+  ['In','铟',13,5,142,560,true,'-40*',0], ['Sn','锡',14,5,139,700,true,-121,0], ['Sb','锑',15,5,139,830,true,-101,0], ['Te','碲',16,5,138,870,true,-190,0], ['I','碘',17,5,133,1010,true,-295,1], ['Xe','氙',18,5,108,1170,true,'40*',1],
+  ['Cs','铯',1,6,298,380,true,-45,1], ['Ba','钡',2,6,215,500,true,'50*',0], ['La','镧',3,6,207,540,true,null,0], ['Ce','铈',0,6,204,534,false,null,0], ['Pr','镨',0,6,203,527,false,null,0], ['Nd','钕',0,6,201,533,false,null,0],
+  ['Pm','钷',0,6,199,540,false,null,0], ['Sm','钐',0,6,198,545,false,null,0], ['Eu','铕',0,6,198,547,false,null,0], ['Gd','钆',0,6,196,593,false,null,0], ['Tb','铽',0,6,194,566,false,null,0], ['Dy','镝',0,6,192,573,false,null,0],
+  ['Ho','钬',0,6,192,581,false,null,0], ['Er','铒',0,6,189,589,false,null,0], ['Tm','铥',0,6,190,597,false,null,0], ['Yb','镱',0,6,187,603,false,null,0], ['Lu','镥',0,6,187,524,false,null,0], ['Hf','铪',4,6,175,700,true,null,0],
+  ['Ta','钽',5,6,170,760,true,null,0], ['W','钨',6,6,162,770,true,null,0], ['Re','铼',7,6,151,760,true,null,0], ['Os','锇',8,6,144,840,true,null,0], ['Ir','铱',9,6,141,890,true,null,0], ['Pt','铂',10,6,136,870,true,null,0],
+  ['Au','金',11,6,136,890,true,null,0], ['Hg','汞',12,6,132,1000,true,null,0], ['Tl','铊',13,6,145,590,true,-50,0], ['Pb','铅',14,6,146,710,true,-101,0], ['Bi','铋',15,6,148,800,true,-101,0], ['Po','钋',16,6,140,810,true,-170,0],
+  ['At','砹',17,6,148,890,false,'-270*',1], ['Rn','氡',18,6,150,1030,true,'40*',0], ['Fr','钫',1,7,260,380,false,null,0], ['Ra','镭',2,7,221,510,true,null,0]
 ];
 const EL = ELEMENTS.map(([sym, name, group, period, r, ie, ieBook, ea, rBook], i) => ({ sym, name, Z: i + 1, group, period, r, ie, ieBook, ea, rBook }));
 const BY = Object.fromEntries(EL.map((e) => [e.sym, e]));
@@ -57,7 +57,7 @@ function disc(ctx, x, y, r, sym) {
 (function () {
   const d = sim('sim-halogen-radii', 940);
   const HAL = { F: { d: 128, r: 64 }, Cl: { d: 198, r: 99 }, Br: { d: 228, r: 114 }, I: { d: 266, r: 133 } };
-  const pick = F.choice(d.controls, { label: '\\text{halogen}', options: Object.keys(HAL).map((s) => ({ value: s, label: BY[s].name.toLowerCase() })), value: 'Cl', aria: 'which halogen' });
+  const pick = F.choice(d.controls, { label: '\\text{卤素}', options: Object.keys(HAL).map((s) => ({ value: s, label: BY[s].name.toLowerCase() })), value: 'Cl', aria: '选择哪种卤素' });
   const S = 0.9;                                           /* units per picometer in the molecule: iodine's 266 pm spans 240 units */
   const CX = 700, CY = 270;
   /* the table: groups 1 to 17 (the book draws no noble gas), periods 1 to 6, 0.1 unit per picometer */
@@ -68,7 +68,7 @@ function disc(ctx, x, y, r, sym) {
     const { ctx, W } = begin(d.c);
     const s = pick.value, r = pick.mix((v) => HAL[v].r), sym = s;
     const R = r * S, x1 = CX - R, x2 = CX + R;
-    headline(ctx, `The ${s}–${s} distance is ${HAL[s].d} pm, so the covalent radius of ${BY[s].name.toLowerCase()} is ${HAL[s].r} pm.`);
+    headline(ctx, `${s}–${s} 距离为 ${HAL[s].d} pm，所以${BY[s].name.toLowerCase()}的共价半径为 ${HAL[s].r} pm。`);
     /* the molecule: two spheres whose nuclei are the distance d apart, which is twice the radius */
     const colour = pick.mixColor((v) => F.el(v));
     [x1, x2].forEach((x) => {
@@ -88,18 +88,18 @@ function disc(ctx, x, y, r, sym) {
     const h = [];
     for (let g = 1; g <= 17; g++) text(ctx, String(g), cellX(g), TT - 16, PAL.muted, { size: 15, align: 'center' });
     for (let p = 1; p <= 6; p++) text(ctx, String(p), TL - 30, cellY(p), PAL.muted, { size: 15, align: 'center' });
-    text(ctx, 'group', TL, TT - 44, PAL.muted, { size: 15 });
-    text(ctx, 'period', TL - 30, TT - 44 + 0, PAL.muted, { size: 15, align: 'right' });
+    text(ctx, '族', TL, TT - 44, PAL.muted, { size: 15 });
+    text(ctx, '周期', TL - 30, TT - 44 + 0, PAL.muted, { size: 15, align: 'right' });
     EL.forEach((e) => {
       if (!e.group || e.group === 18 || e.period > 6) return;
       const x = cellX(e.group), y = cellY(e.period), rr = e.r * TS;
       disc(ctx, x, y, rr, e.sym);
-      h.push({ x, y, r: Math.max(rr, 14), name: `${e.name}, ${e.r} pm` });
+      h.push({ x, y, r: Math.max(rr, 14), name: `${e.name}，${e.r} pm` });
     });
     const c = BY[s];
     ctx.save(); ctx.setLineDash([6, 6]); ctx.lineWidth = 2.5; ctx.strokeStyle = PAL.ink; ctx.beginPath(); ctx.arc(cellX(c.group), cellY(c.period), c.r * TS + 9, 0, TAU); ctx.stroke(); ctx.restore();
-    text(ctx, 'covalent radii to scale', W - 70, TT - 44, PAL.muted, { size: 15, align: 'right' });
-    hits = [{ x: x1, y: CY, r: R, name: `a ${BY[s].name.toLowerCase()} atom` }, { x: x2, y: CY, r: R, name: `a ${BY[s].name.toLowerCase()} atom` }, ...h];
+    text(ctx, '按比例画出的共价半径', W - 70, TT - 44, PAL.muted, { size: 15, align: 'right' });
+    hits = [{ x: x1, y: CY, r: R, name: `${BY[s].name.toLowerCase()}原子` }, { x: x2, y: CY, r: R, name: `${BY[s].name.toLowerCase()}原子` }, ...h];
     tex(d.readout, `\\kr=\\frac{d}{2}=\\frac{${HAL[s].d}\\ \\text{pm}}{2}=${HAL[s].r}\\ \\text{pm}`);
   });
 })();
@@ -112,12 +112,12 @@ function disc(ctx, x, y, r, sym) {
 ===================================================================== */
 (function () {
   const d = sim('sim-trends-graph', 660);
-  const prop = F.choice(d.controls, { label: '\\text{property}', options: [{ value: 'r', label: 'atomic radius' }, { value: 'ie', label: 'first ionization energy' }], value: 'r', aria: 'which property is plotted' });
-  const per = F.choice(d.controls, { label: '\\text{period}', options: ['2', '3', '4', '5', '6'].map((p) => ({ value: p, label: p })), value: '4', aria: 'which period is picked out' });
+  const prop = F.choice(d.controls, { label: '\\text{性质}', options: [{ value: 'r', label: '原子半径' }, { value: 'ie', label: '第一电离能' }], value: 'r', aria: '绘制哪种性质' });
+  const per = F.choice(d.controls, { label: '\\text{周期}', options: ['2', '3', '4', '5', '6'].map((p) => ({ value: p, label: p })), value: '4', aria: '标出哪个周期' });
   const PER = { 2: [3, 10], 3: [11, 18], 4: [19, 36], 5: [37, 54], 6: [55, 86] };
   const P = {
-    r: { zmax: 60, get: (e) => e.r, yr: [0, 300], ny: 6, yl: 'radius (pm)', unit: 'pm', name: 'the radius' },
-    ie: { zmax: 86, get: (e) => e.ie, yr: [0, 2500], ny: 5, yl: 'first ionization energy (kJ/mol)', unit: 'kJ/mol', name: 'the first ionization energy' },
+    r: { zmax: 60, get: (e) => e.r, yr: [0, 300], ny: 6, yl: '半径（pm）', unit: 'pm', name: '半径' },
+    ie: { zmax: 86, get: (e) => e.ie, yr: [0, 2500], ny: 5, yl: '第一电离能（kJ/mol）', unit: 'kJ/mol', name: '第一电离能' },
   };
   const ALK = ['Li', 'Na', 'K', 'Rb', 'Cs'], NOB = ['He', 'Ne', 'Ar', 'Kr', 'Xe', 'Rn'];
   /* fixed axes: Z from 0 to 90; radius 0 to 300 pm (Cs, 298 pm, the largest), IE₁ 0 to 2500 kJ/mol (He, 2370) */
@@ -127,12 +127,12 @@ function disc(ctx, x, y, r, sym) {
     const { ctx } = begin(d.c);
     const pv = prop.value, q = P[pv], [z0, z1raw] = PER[per.value], z1 = Math.min(z1raw, q.zmax);
     const a = EL[z0 - 1], b = EL[z1 - 1], va = q.get(a), vb = q.get(b);
-    const verb = vb < va ? 'falls' : 'rises';
-    const cut = z1 < z1raw ? `, where the graph of radius stops at Z = ${q.zmax}` : '';
-    headline(ctx, `Across period ${per.value}, from ${a.sym} to ${b.sym}${cut}, ${q.name} ${verb} from ${va} ${q.unit} to ${vb} ${q.unit}.`);
+    const verb = vb < va ? '减小' : '增大';
+    const cut = z1 < z1raw ? `，此处半径曲线止于 Z = ${q.zmax}` : '';
+    headline(ctx, `在第 ${per.value} 周期中，从 ${a.sym} 到 ${b.sym}${cut}，${q.name}由 ${va} ${q.unit} ${verb}到 ${vb} ${q.unit}。`);
     ['r', 'ie'].forEach((k) => prop.only(ctx, k, () => {
       const Q = P[k], col = k === 'ie' ? C('energy') : C('length');
-      const { X, Y } = axes(ctx, box, [0, 90], Q.yr, { nx: 9, ny: Q.ny, xl: 'atomic number, Z', yl: Q.yl, yc: col });
+      const { X, Y } = axes(ctx, box, [0, 90], Q.yr, { nx: 9, ny: Q.ny, xl: '原子序数 Z', yl: Q.yl, yc: col });
       /* the period picked out, as a band behind the curve */
       ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.06); ctx.fillRect(X(z0 - 0.5), box.t, X(Math.min(z1raw, Q.zmax) + 0.5) - X(z0 - 0.5), box.b - box.t); ctx.restore();
       const f = (z) => { const i = Math.min(Math.max(Math.floor(z), 1), Q.zmax - 1); const t = z - i; return Q.get(EL[i - 1]) * (1 - t) + Q.get(EL[i]) * t; };
@@ -146,7 +146,7 @@ function disc(ctx, x, y, r, sym) {
         dot(ctx, x, y, col, ALK.includes(s), 7);
         text(ctx, s, x, y + (up ? -24 : 24), col, { size: 18, weight: 600, align: 'center', bg: PAL.panel });
       });
-      if (k === pv) hits = EL.slice(0, Q.zmax).map((e) => ({ x: X(e.Z), y: Y(Q.get(e)), r: 10, name: `${e.name} (Z = ${e.Z}): ${Q.get(e)} ${Q.unit}` }));
+      if (k === pv) hits = EL.slice(0, Q.zmax).map((e) => ({ x: X(e.Z), y: Y(Q.get(e)), r: 10, name: `${e.name}（Z = ${e.Z}）：${Q.get(e)} ${Q.unit}` }));
     }, [0, 12]));
     tex(d.readout, pv === 'ie'
       ? `\\kIE_{1}(\\text{${a.sym}})=${va}\\ \\text{kJ/mol}\\qquad\\kIE_{1}(\\text{${b.sym}})=${vb}\\ \\text{kJ/mol}`
@@ -161,10 +161,10 @@ function disc(ctx, x, y, r, sym) {
 ===================================================================== */
 (function () {
   const d = sim('sim-ions', 600);
-  const st = F.choice(d.controls, { label: '\\text{state}', options: [{ value: 'atom', label: 'atom' }, { value: 'ion', label: 'ion' }], value: 'atom', aria: 'atom or ion' });
+  const st = F.choice(d.controls, { label: '\\text{状态}', options: [{ value: 'atom', label: '原子' }, { value: 'ion', label: '离子' }], value: 'atom', aria: '原子或离子' });
   const SP = {
-    Al: { x: 400, Zp: 13, atom: { r: 118, e: 13, name: 'Al' }, ion: { r: 68, e: 10, name: 'Al³⁺' }, word: 'aluminum' },
-    S: { x: 1000, Zp: 16, atom: { r: 104, e: 16, name: 'S' }, ion: { r: 170, e: 18, name: 'S²⁻' }, word: 'sulfur' },
+    Al: { x: 400, Zp: 13, atom: { r: 118, e: 13, name: 'Al' }, ion: { r: 68, e: 10, name: 'Al³⁺' }, word: '铝' },
+    S: { x: 1000, Zp: 16, atom: { r: 104, e: 16, name: 'S' }, ion: { r: 170, e: 18, name: 'S²⁻' }, word: '硫' },
   };
   const S = 1.05, CY = 300;                                /* units per picometer: the sulfide ion's 170 pm spans 179 units */
   let hits = []; F.hover(d.stage, () => hits);
@@ -172,8 +172,8 @@ function disc(ctx, x, y, r, sym) {
     const { ctx } = begin(d.c);
     const v = st.value;
     headline(ctx, v === 'atom'
-      ? 'An aluminum atom has a covalent radius of 118 pm and a sulfur atom a covalent radius of 104 pm.'
-      : 'Al³⁺ has lost three electrons and shrunk to 68 pm; S²⁻ has gained two and grown to 170 pm.');
+      ? '铝原子的共价半径为 118 pm，硫原子的共价半径为 104 pm。'
+      : 'Al³⁺ 失去了三个电子，缩小到 68 pm；S²⁻ 得到了两个电子，增大到 170 pm。');
     hits = [];
     Object.entries(SP).forEach(([sym, s]) => {
       const r = st.mix((w) => s[w].r), R = r * S, now = s[v];
@@ -182,8 +182,8 @@ function disc(ctx, x, y, r, sym) {
       line(ctx, s.x, CY, s.x + R, CY, C('length'), 2, [4, 8]);
       dot(ctx, s.x, CY, PAL.ink, true, 4);
       hbracket(ctx, s.x, s.x + R, CY + R + 26, C('length'), `${now.r} pm`, { side: 'below' });
-      text(ctx, `${s.Zp} protons, ${now.e} electrons`, s.x, 560, PAL.muted, { size: 19, align: 'center' });
-      hits.push({ x: s.x, y: CY, r: R, name: `${v === 'atom' ? 'an atom of ' + s.word : 'the ' + (sym === 'Al' ? 'aluminum ion' : 'sulfide ion')}, ${now.r} pm` });
+      text(ctx, `${s.Zp} 个质子，${now.e} 个电子`, s.x, 560, PAL.muted, { size: 19, align: 'center' });
+      hits.push({ x: s.x, y: CY, r: R, name: `${v === 'atom' ? s.word + '原子' : (sym === 'Al' ? '铝离子' : '硫离子')}，${now.r} pm` });
     });
     tex(d.readout, v === 'atom'
       ? '\\kr_{\\text{Al}}=118\\ \\text{pm}\\qquad \\kr_{\\text{S}}=104\\ \\text{pm}'
@@ -199,7 +199,7 @@ function disc(ctx, x, y, r, sym) {
 ===================================================================== */
 (function () {
   const d = sim('sim-ie-table', 680);
-  const prop = F.choice(d.controls, { label: '\\text{property}', options: [{ value: 'ie', label: 'first ionization energy' }, { value: 'ea', label: 'electron affinity' }], value: 'ie', aria: 'which property the table shows' });
+  const prop = F.choice(d.controls, { label: '\\text{性质}', options: [{ value: 'ie', label: '第一电离能' }, { value: 'ea', label: '电子亲和能' }], value: 'ie', aria: '表中显示哪种性质' });
   const L = 96, PITCH = 68, T = 150, ROW = 66, CW = 64, CH = 62;
   const cx = (g) => L + (g - 0.5) * PITCH, cy = (p) => T + (p - 0.5) * ROW;
   /* the cells the book prints: groups 1 and 2 to period 7, 3 to 12 in periods 4 to 6, 13 to 18 from period 2, H and He */
@@ -210,8 +210,8 @@ function disc(ctx, x, y, r, sym) {
     const { ctx } = begin(d.c);
     const v = prop.value, ce = C('energy');
     headline(ctx, v === 'ie'
-      ? 'Helium has the largest first ionization energy, 2370 kJ/mol, and cesium the smallest, 380 kJ/mol.'
-      : 'Chlorine has the most negative electron affinity, −348 kJ/mol, and beryllium the most positive, +240 kJ/mol.');
+      ? '氦的第一电离能最大，为 2370 kJ/mol，铯的最小，为 380 kJ/mol。'
+      : '氯的电子亲和能最负，为 −348 kJ/mol，铍的最正，为 +240 kJ/mol。');
     for (let g = 1; g <= 18; g++) text(ctx, String(g), cx(g), T + ((TOP[g] ?? 4) - 1) * ROW - 16, PAL.muted, { size: 15, align: 'center' });
     for (let p = 1; p <= 7; p++) text(ctx, String(p), L - 34, cy(p), PAL.muted, { size: 15, align: 'center' });
     const fillOf = (w, e) => {
@@ -231,10 +231,10 @@ function disc(ctx, x, y, r, sym) {
       const deepIE = e.ieBook && e.ie > 1100, deepEA = n !== null && n < -170;
       prop.only(ctx, 'ie', () => text(ctx, e.ieBook ? String(e.ie) : '…', x, y + 14, deepIE ? PAL.ink : ce, { size: 17, align: 'center', weight: deepIE ? 600 : 400 }), [0, 0]);
       prop.only(ctx, 'ea', () => text(ctx, eaText(e), x, y + 14, deepEA ? PAL.ink : ce, { size: 17, align: 'center', weight: deepEA ? 600 : 400 }), [0, 0]);
-      const val = v === 'ie' ? (e.ieBook ? `first ionization energy ${e.ie} kJ/mol` : 'no value printed') : (e.ea === null ? 'no value printed' : `electron affinity ${eaText(e)} kJ/mol`);
-      hits.push({ x, y, r: 30, name: `${e.name}, ${val}` });
+      const val = v === 'ie' ? (e.ieBook ? `第一电离能 ${e.ie} kJ/mol` : '书中未印数值') : (e.ea === null ? '书中未印数值' : `电子亲和能 ${eaText(e)} kJ/mol`);
+      hits.push({ x, y, r: 30, name: `${e.name}，${val}` });
     });
-    prop.only(ctx, 'ea', () => text(ctx, '* calculated value', cx(3) - CW / 2, cy(7), PAL.muted, { size: 17 }), [0, 0]);
+    prop.only(ctx, 'ea', () => text(ctx, '* 为计算值', cx(3) - CW / 2, cy(7), PAL.muted, { size: 17 }), [0, 0]);
     tex(d.readout, v === 'ie' ? '\\text{X}(g)\\longrightarrow\\text{X}^{+}(g)+\\text{e}^{-}\\qquad\\kIE_{1}' : '\\text{X}(g)+\\text{e}^{-}\\longrightarrow\\text{X}^{-}(g)\\qquad\\kEA_{1}');
   });
 })();
@@ -253,8 +253,8 @@ function disc(ctx, x, y, r, sym) {
     Ge: [762.2, 1537.5, 3302.1, 4410.6, 9021.4, null, null], As: [944.5, 1793.6, 2735.5, 4836.8, 6042.9, 12311.5, null],
   };
   const VAL = { K: 1, Ca: 2, Sc: 3, Ga: 3, Ge: 4, As: 5 };
-  const WORD = ['', 'one', 'two', 'three', 'four', 'five'], ORD = ['', 'first', 'second', 'third', 'fourth', 'fifth'];
-  const pick = F.choice(d.controls, { label: '\\text{element}', options: Object.keys(IE).map((s) => ({ value: s, label: s })), value: 'K', aria: 'which element' });
+  const WORD = ['', '一', '两', '三', '四', '五'], ORD = ['', '第一', '第二', '第三', '第四', '第五'];
+  const pick = F.choice(d.controls, { label: '\\text{元素}', options: Object.keys(IE).map((s) => ({ value: s, label: s })), value: 'K', aria: '选择哪种元素' });
   /* fixed axes: 0 to 14 000 kJ/mol holds every value of Table 6.3 (Ga's IE₇, 13 594.8, the largest) */
   const box = { l: 190, r: 1300, t: 150, b: 520 };
   const slot = (box.r - box.l) / 7, BW = 96;
@@ -264,26 +264,26 @@ function disc(ctx, x, y, r, sym) {
     const s = pick.value, ce = C('energy'), n = VAL[s], vals = IE[s];
     const hs = pick.mix((w) => IE[w].map((x) => x ?? 0));
     const ratio = vals[n] / vals[n - 1];
-    headline(ctx, `${BY[s].name} has ${WORD[n]} valence electron${n > 1 ? 's' : ''}, so its ionization energies jump after the ${ORD[n]}: $\\kIE_{${n + 1}}$ is ${fmt(ratio, 2)} times $\\kIE_{${n}}$.`);
-    const { Y } = axes(ctx, box, [0, 7], [0, 14000], { nx: 7, ny: 7, yl: 'ionization energy (kJ/mol)', yc: ce, fx: () => '', fy: (y) => fmt(y, 0) });
+    headline(ctx, `${BY[s].name}有${WORD[n]}个价电子，所以它的电离能在${ORD[n]}次电离之后跃升：$\\kIE_{${n + 1}}$ 是 $\\kIE_{${n}}$ 的 ${fmt(ratio, 2)} 倍。`);
+    const { Y } = axes(ctx, box, [0, 7], [0, 14000], { nx: 7, ny: 7, yl: '电离能（kJ/mol）', yc: ce, fx: () => '', fy: (y) => fmt(y, 0) });
     const k = F.arrival(d);
     hits = [];
     hs.forEach((h, i) => {
       const x = box.l + slot * (i + 0.5), grow = F.ease.smooth(F.stagger(k, i, 7));
       text(ctx, `IE_{${i + 1}}`, x, box.b + 28, PAL.ink, { size: 20, weight: 600, align: 'center' });
-      if (vals[i] === null) { text(ctx, 'not available', x, box.b - 20, PAL.muted, { size: 15, align: 'center' }); if (!(h > 1)) return; }
+      if (vals[i] === null) { text(ctx, '无数据', x, box.b - 20, PAL.muted, { size: 15, align: 'center' }); if (!(h > 1)) return; }
       const top = Y(h * grow), core = i >= n;
       ctx.save(); ctx.fillStyle = core ? PAL.panel : alpha(ce, 0.55); ctx.fillRect(x - BW / 2, top, BW, box.b - top);
       ctx.lineWidth = 3; ctx.strokeStyle = ce; ctx.strokeRect(x - BW / 2, top, BW, box.b - top); ctx.restore();
       if (vals[i] !== null) text(ctx, String(vals[i]), x, top - 16, ce, { size: 17, align: 'center', bg: PAL.panel });
-      hits.push({ x, y: (top + box.b) / 2, r: BW / 2, name: `${ORD[i + 1] || (i + 1) + 'th'} ionization energy of ${BY[s].name.toLowerCase()}, ${vals[i] ?? 'not available'}${vals[i] ? ' kJ/mol' : ''}` });
+      hits.push({ x, y: (top + box.b) / 2, r: BW / 2, name: `${BY[s].name}的${ORD[i + 1] || '第 ' + (i + 1) + ' '}电离能，${vals[i] ?? '无数据'}${vals[i] ? ' kJ/mol' : ''}` });
     });
     /* the jump, from the top of the last valence bar to the top of the first core bar */
     const xa = box.l + slot * (n - 0.5), xb = box.l + slot * (n + 0.5);
     arrow(ctx, xa + BW / 2 + 6, Y(vals[n - 1]) - 6, xb - BW / 2 - 6, Y(vals[n]) + 6, PAL.ink, 3);
     text(ctx, `× ${fmt(ratio, 2)}`, (xa + xb) / 2, Y(vals[n]) - 44, PAL.ink, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
-    text(ctx, 'valence', box.l + slot * n / 2, box.b + 60, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'core', box.l + slot * (n + (7 - n) / 2), box.b + 60, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '价电子', box.l + slot * n / 2, box.b + 60, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '内层电子', box.l + slot * (n + (7 - n) / 2), box.b + 60, PAL.muted, { size: 17, align: 'center' });
     line(ctx, box.l + slot * n, box.b + 44, box.l + slot * n, box.b + 76, alpha(PAL.ink, 0.35), 2);
     tex(d.readout, `\\frac{\\kIE_{${n + 1}}}{\\kIE_{${n}}}=\\frac{${vals[n]}\\ \\text{kJ/mol}}{${vals[n - 1]}\\ \\text{kJ/mol}}=${fmt(ratio, 2)}`);
   });

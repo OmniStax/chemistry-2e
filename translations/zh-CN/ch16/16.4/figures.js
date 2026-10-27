@@ -23,15 +23,15 @@ const minus = (s) => String(s).replace('-', '−');
   let dH = null, dS = null, T = null;
   const ready = () => dH && dS && T;
   dH = F.ctl(d.controls, {
-    label: '\\kdH', cls: 'energy', min: -100, max: 100, step: 0.01, value: 44.01, unit: 'kJ', dec: 2, aria: 'enthalpy change, in kilojoules',
+    label: '\\kdH', cls: 'energy', min: -100, max: 100, step: 0.01, value: 44.01, unit: 'kJ', dec: 2, aria: '焓变，单位为千焦',
     specials: [{ at: () => (ready() ? T.v * dS.v / 1000 : null), label: 'ΔG = 0' }],
   });
   dS = F.ctl(d.controls, {
-    label: '\\kdS', cls: 'entropy', min: -250, max: 250, step: 0.1, value: 118.8, unit: 'J/K', dec: 1, aria: 'entropy change, in joules per kelvin',
+    label: '\\kdS', cls: 'entropy', min: -250, max: 250, step: 0.1, value: 118.8, unit: 'J/K', dec: 1, aria: '熵变，单位为焦每开尔文',
     specials: [{ at: () => (ready() ? 1000 * dH.v / T.v : null), label: 'ΔG = 0' }],
   });
   T = F.ctl(d.controls, {
-    label: '\\kT', cls: 'temperature', min: 1, max: 1000, step: 0.1, value: 298, unit: 'K', dec: 1, aria: 'temperature, in kelvins',
+    label: '\\kT', cls: 'temperature', min: 1, max: 1000, step: 0.1, value: 298, unit: 'K', dec: 1, aria: '温度，单位为开尔文',
     specials: [{ at: () => (ready() && dH.v * dS.v > 0 ? 1000 * dH.v / dS.v : null), label: 'ΔG = 0' }],
   });
   [dH, dS].forEach((c) => c.refresh());
@@ -41,10 +41,10 @@ const minus = (s) => String(s).replace('-', '−');
 
   /* the four cases as the book's table sets them: columns ΔH > 0, ΔH < 0; rows ΔS > 0, ΔS < 0 */
   const CASES = [
-    { h: 1, s: 1, a: 0.5, b: -0.35, words: ['spontaneous at', 'high temperature'], name: 'ΔH > 0 and ΔS > 0: spontaneous at high temperature' },
-    { h: -1, s: 1, a: -0.5, b: -0.95, words: ['spontaneous at', 'any temperature'], name: 'ΔH < 0 and ΔS > 0: spontaneous at any temperature' },
-    { h: 1, s: -1, a: 0.5, b: 0.95, words: ['nonspontaneous at', 'any temperature'], name: 'ΔH > 0 and ΔS < 0: nonspontaneous at any temperature' },
-    { h: -1, s: -1, a: -0.5, b: 0.35, words: ['spontaneous at', 'low temperature'], name: 'ΔH < 0 and ΔS < 0: spontaneous at low temperature' },
+    { h: 1, s: 1, a: 0.5, b: -0.35, words: ['在高温下', '是自发的'], name: 'ΔH > 0 且 ΔS > 0：在高温下是自发的' },
+    { h: -1, s: 1, a: -0.5, b: -0.95, words: ['在任何温度下', '都是自发的'], name: 'ΔH < 0 且 ΔS > 0：在任何温度下都是自发的' },
+    { h: 1, s: -1, a: 0.5, b: 0.95, words: ['在任何温度下', '都是非自发的'], name: 'ΔH > 0 且 ΔS < 0：在任何温度下都是非自发的' },
+    { h: -1, s: -1, a: -0.5, b: 0.35, words: ['在低温下', '是自发的'], name: 'ΔH < 0 且 ΔS < 0：在低温下是自发的' },
   ];
   const TB = { l: 990, w: 185, gap: 8, t: 196, h: 176 };
 
@@ -52,8 +52,8 @@ const minus = (s) => String(s).replace('-', '−');
     const cE = C('energy'), cS = C('entropy');
     text(ctx, 'ΔH > 0', TB.l + TB.w / 2, 146, cE, { size: 22, weight: 600, align: 'center' });
     text(ctx, 'ΔH < 0', TB.l + TB.w * 1.5 + TB.gap, 146, cE, { size: 22, weight: 600, align: 'center' });
-    text(ctx, 'endothermic', TB.l + TB.w / 2, 174, PAL.muted, { size: 17, align: 'center' });
-    text(ctx, 'exothermic', TB.l + TB.w * 1.5 + TB.gap, 174, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '吸热', TB.l + TB.w / 2, 174, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '放热', TB.l + TB.w * 1.5 + TB.gap, 174, PAL.muted, { size: 17, align: 'center' });
     text(ctx, 'ΔS > 0', TB.l - 12, TB.t + TB.h / 2, cS, { size: 22, weight: 600, align: 'right' });
     text(ctx, 'ΔS < 0', TB.l - 12, TB.t + TB.h * 1.5 + TB.gap, cS, { size: 22, weight: 600, align: 'right' });
     CASES.forEach((c, i) => {
@@ -84,10 +84,10 @@ const minus = (s) => String(s).replace('-', '−');
     const { X, Y } = ax;
     /* each region's name in the top or bottom corner farther from the line */
     const gap = (lvl, xs) => Math.min(...xs.map((x) => Math.abs(h - x * s - lvl)));
-    const words = [['nonspontaneous', 135], ['spontaneous', -135]];
+    const words = [['非自发', 135], ['自发', -135]];
     const lines = topline(ctx, eq
-      ? `At ${t.toFixed(1)} K, $\\kdG = 0$: the system is at equilibrium.`
-      : `At ${t.toFixed(1)} K, $\\kdG ${g < 0 ? '<' : '>'} 0$: the process is ${g < 0 ? 'spontaneous' : 'nonspontaneous'}.`);
+      ? `在 ${t.toFixed(1)} K 下，$\\kdG = 0$：体系处于平衡。`
+      : `在 ${t.toFixed(1)} K 下，$\\kdG ${g < 0 ? '<' : '>'} 0$：该过程是${g < 0 ? '自发' : '非自发'}的。`);
     const lab = F.labeller(ctx, H, { headline: lines });
     lab.block(G.l - 70, G.t - 40, G.l + 80, G.t - 8);
     for (const [w, lvl] of words) {
@@ -101,7 +101,7 @@ const minus = (s) => String(s).replace('-', '−');
     F.curve(ctx, (x) => h - x * s, 0, 1000, X, Y, cE, 5, 2);
     ctx.restore();
     lab.add('ΔH', G.r - 60, Y(h), 0, h - (1000 * s) / 2 > h ? 1 : -1, cE, 22, 22);
-    hits.push({ x: G.r - 60, y: Y(h), r: 18, name: `ΔH = ${minus(h.toFixed(2))} kJ, the value of ΔG at T = 0` });
+    hits.push({ x: G.r - 60, y: Y(h), r: 18, name: `ΔH = ${minus(h.toFixed(2))} kJ，即 T = 0 时 ΔG 的值` });
 
     /* the ΔG label where the line is still inside the frame, toward the right */
     for (let x = 900; x >= 100; x -= 50) {
@@ -120,12 +120,12 @@ const minus = (s) => String(s).replace('-', '−');
     if (tc !== null && tc > 0 && tc <= 1000) {
       dot(ctx, X(tc), Y(0), PAL.ink, false, 9);
       lab.add(`${tc.toFixed(1)} K`, X(tc), Y(0), 0, h > 0 ? -1 : 1, cT, 20, 26);
-      hits.push({ x: X(tc), y: Y(0), r: 16, name: `ΔG = 0 at T = ΔH/ΔS = ${tc.toFixed(1)} K` });
+      hits.push({ x: X(tc), y: Y(0), r: 16, name: `T = ΔH/ΔS = ${tc.toFixed(1)} K 时 ΔG = 0` });
     }
 
     const p = F.pinned(ctx, G, X, Y, t, g, cE, `${minus(g.toFixed(1))} kJ`);
     if (!p.out) line(ctx, p.x, p.y + 11, p.x, G.b, alpha(cT, 0.7), 2, [4, 8]);
-    hits.push({ x: p.x, y: p.y, r: 16, name: `ΔG = ${minus(g.toFixed(2))} kJ at ${t.toFixed(1)} K` });
+    hits.push({ x: p.x, y: p.y, r: 16, name: `${t.toFixed(1)} K 时 ΔG = ${minus(g.toFixed(2))} kJ` });
     lab.flush();
 
     table(ctx, Math.sign(h), Math.sign(sJ));
@@ -134,13 +134,13 @@ const minus = (s) => String(s).replace('-', '−');
     let tex, note;
     if (eq) {
       tex = `\\mk{T}{\\kT} = \\frac{\\mk{H}{\\kdH}}{\\mk{S}{\\kdS}} = \\frac{\\mk{h}{${H_}}\\ \\text{kJ}}{\\mk{s}{${S_}}\\ \\text{kJ/K}} = \\mk{t}{${hue('temperature', tc.toFixed(1))}}\\ \\text{K}`;
-      note = h > 0 ? 'Above this temperature the process is spontaneous, and below it nonspontaneous.' : 'Below this temperature the process is spontaneous, and above it nonspontaneous.';
+      note = h > 0 ? '高于此温度时该过程是自发的，低于此温度时是非自发的。' : '低于此温度时该过程是自发的，高于此温度时是非自发的。';
     } else {
       tex = `\\mk{G}{\\kdG} = \\mk{H}{\\kdH} - \\mk{T}{\\kT}\\mk{S}{\\kdS} = \\mk{h}{${H_}}\\ \\text{kJ} - (\\mk{t}{${T_}}\\ \\text{K})(\\mk{s}{${S_}}\\ \\text{kJ/K}) = \\mk{g}{${hue('energy', g.toFixed(2))}}\\ \\text{kJ}`;
-      if (sJ === 0) note = 'With $\\kdS = 0$, $\\kdG = \\kdH$ at every temperature.';
-      else if (h === 0) note = `With $\\kdH = 0$, $\\kdG$ is ${sJ > 0 ? 'negative' : 'positive'} at every temperature.`;
-      else if (h * sJ > 0) note = `$\\kdG = 0$ at ${tc.toFixed(1)} K; ${h > 0 ? 'above' : 'below'} it the process is spontaneous.`;
-      else note = `$\\kdH$ and $\\kdS$ have opposite signs, so $\\kdG$ is ${h > 0 ? 'positive' : 'negative'} at every temperature.`;
+      if (sJ === 0) note = '当 $\\kdS = 0$ 时，在每个温度下 $\\kdG = \\kdH$。';
+      else if (h === 0) note = `当 $\\kdH = 0$ 时，在每个温度下 $\\kdG$ 都为${sJ > 0 ? '负' : '正'}。`;
+      else if (h * sJ > 0) note = `在 ${tc.toFixed(1)} K 时 $\\kdG = 0$；${h > 0 ? '高于' : '低于'}该温度时过程是自发的。`;
+      else note = `$\\kdH$ 和 $\\kdS$ 的符号相反，所以在每个温度下 $\\kdG$ 都为${h > 0 ? '正' : '负'}。`;
     }
     ro.set(tex, note, { form: eq });
   }
@@ -167,11 +167,11 @@ const minus = (s) => String(s).replace('-', '−');
   const sig3 = (v) => (v >= 100 ? v.toFixed(1) : v.toPrecision(3));
   const g0c = F.ctl(d.controls, {
     label: '\\kdGo', cls: 'energy', min: -5, max: 5, step: 0.01, value: -2, unit: 'kJ/mol', dec: 2, detents: [-2, 2],
-    aria: 'standard free energy change, in kilojoules per mole', specials: [{ at: 0, label: 'K = 1' }],
+    aria: '标准自由能变，单位为千焦每摩尔', specials: [{ at: 0, label: 'K = 1' }],
   });
   const xc = F.ctl(d.controls, {
-    label: '\\text{progress}', cls: '', min: 0.01, max: 0.99, step: 0.01, value: 0.3, unit: '', dec: 2,
-    aria: 'reaction progress, the fraction of the reactant turned into product', specials: [{ at: () => xeq(+g0c.v.toFixed(2)), label: 'Q = K' }],
+    label: '\\text{进程}', cls: '', min: 0.01, max: 0.99, step: 0.01, value: 0.3, unit: '', dec: 2,
+    aria: '反应进程，即反应物转化为产物的分数', specials: [{ at: () => xeq(+g0c.v.toFixed(2)), label: 'Q = K' }],
   });
   const ro = F.readout(d);
   let hits = [];
@@ -183,24 +183,24 @@ const minus = (s) => String(s).replace('-', '−');
     const cE = C('energy'), cK = C('equilibrium-constant');
     hits = [];
     const { X, Y } = F.axes(ctx, G, [0, 1], [-8, 6], {
-      nx: 4, ny: 7, xl: 'reaction progress', yl: 'Gibbs free energy (G)', yc: cE,
-      fx: (v) => (v === 0 ? 'Reactants' : v === 1 ? 'Products' : ''), fy: () => '',
+      nx: 4, ny: 7, xl: '反应进程', yl: '吉布斯自由能（G）', yc: cE,
+      fx: (v) => (v === 0 ? '反应物' : v === 1 ? '产物' : ''), fy: () => '',
     });
     const q = x / (1 - x), qs = sig3(q), k = Kof(g0), ks = sig3(k);
     const head = at
-      ? '$\\kQrxn = \\kK$: $\\kdG = 0$, the free energy is at its minimum, and the system is at equilibrium.'
-      : `$\\kQrxn ${q < k ? '<' : '>'} \\kK$: $\\kdG ${q < k ? '<' : '>'} 0$, and the reaction proceeds ${q < k ? 'forward' : 'in reverse'}, down to the minimum.`;
+      ? '$\\kQrxn = \\kK$：$\\kdG = 0$，自由能处于最小值，体系处于平衡。'
+      : `$\\kQrxn ${q < k ? '<' : '>'} \\kK$：$\\kdG ${q < k ? '<' : '>'} 0$，反应${q < k ? '正向' : '逆向'}进行，直到最低点。`;
     const lab = F.labeller(ctx, H, { headline: topline(ctx, head) });
 
     /* the two standard free energies and the bracket between them, beside the frame */
     const lev = alpha(PAL.ink, 0.45);
     line(ctx, G.l, Y(0), BX + 10, Y(0), lev, 2, [10, 10]);
     line(ctx, G.l, Y(g0), BX + 10, Y(g0), lev, 2, [10, 10]);
-    text(ctx, 'G°(reactants)', G.l - 12, Y(0), PAL.ink, { size: 20, align: 'right' });
+    text(ctx, 'G°(反应物)', G.l - 12, Y(0), PAL.ink, { size: 20, align: 'right' });
     const py0 = Y(g0) + (g0 > 0 ? -30 : 30);
-    text(ctx, 'G°(products)', BX + 14, py0, PAL.ink, { size: 20, bg: PAL.panel });
+    text(ctx, 'G°(产物)', BX + 14, py0, PAL.ink, { size: 20, bg: PAL.panel });
     F.vbracket(ctx, BX, Y(0), Y(g0), cE, `ΔG° = ${minus(g0.toFixed(2))}`, 1, { H });
-    hits.push({ x: BX, y: (Y(0) + Y(g0)) / 2, r: 24, name: `ΔG° = G°(products) − G°(reactants) = ${minus(g0.toFixed(2))} kJ/mol` });
+    hits.push({ x: BX, y: (Y(0) + Y(g0)) / 2, r: 24, name: `ΔG° = G°(产物) − G°(反应物) = ${minus(g0.toFixed(2))} kJ/mol` });
 
     F.curve(ctx, f, 0, 1, X, Y, cE, 5, 240);
 
@@ -211,7 +211,7 @@ const minus = (s) => String(s).replace('-', '−');
     const room = (px) => (px - G.l < 150 ? 1 : G.r - px < 150 ? -1 : 0);
     const qx = X(x), qSide = room(qx) || (x < xe ? -1 : 1), kSide = room(mx) || -qSide;
     lab.add(at ? `Q = K = ${ks}` : `K = ${ks}`, mx, G.b - 6, 0.55 * kSide, -0.85, cK, 22, 34);
-    hits.push({ x: mx, y: my, r: 16, name: `the minimum of G, where Q = K = ${ks}` });
+    hits.push({ x: mx, y: my, r: 16, name: `G 的最低点，此处 Q = K = ${ks}` });
 
     /* the reader's mixture */
     if (!at) {
@@ -219,7 +219,7 @@ const minus = (s) => String(s).replace('-', '−');
       line(ctx, px, py + 10, px, G.b, alpha(PAL.ink, 0.45), 2, [4, 8]);
       lab.add(`Q = ${qs}`, px, G.b - 6, 0.55 * qSide, -0.85, cK, 22, 34);
       dot(ctx, px, py, cE, true, 9);
-      hits.push({ x: px, y: py, r: 16, name: `the mixture: ${Math.round(x * 100)} % product, Q = ${qs}` });
+      hits.push({ x: px, y: py, r: 16, name: `混合物：${Math.round(x * 100)} % 为产物，Q = ${qs}` });
     } else dot(ctx, mx, my, cE, true, 9);
     lab.flush();
 
@@ -232,8 +232,8 @@ const minus = (s) => String(s).replace('-', '−');
       const dg = g0 + RT * Math.log(+qs);
       tex = `\\mk{G}{\\kdG} = \\mk{G0}{\\kdGo} + \\mk{RT}{R\\kT}\\ln\\mk{Q}{\\kQrxn} = \\mk{g0}{${G0}} + (\\mk{r}{8.314\\times10^{-3}})(\\mk{t}{${TT}})\\ln\\mk{q}{${hue('equilibrium-constant', qs)}} = \\mk{g}{${hue('energy', dg.toFixed(2))}}\\ \\text{kJ/mol}`;
     }
-    const note = g0 === 0 ? '$\\kK = 1$: reactants and products are comparably abundant at equilibrium.'
-      : g0 < 0 ? '$\\kK > 1$: products are more abundant at equilibrium.' : '$\\kK < 1$: reactants are more abundant at equilibrium.';
+    const note = g0 === 0 ? '$\\kK = 1$：平衡时反应物与产物的量相当。'
+      : g0 < 0 ? '$\\kK > 1$：平衡时产物较多。' : '$\\kK < 1$：平衡时反应物较多。';
     ro.set(tex, note, { form: at });
   }
   still(d, draw);

@@ -2,33 +2,41 @@
   "id": "15.2",
   "module": "m68813",
   "chapter": "15",
-  "title": "Lewis Acids and Bases",
-  "short": "Lewis Acids and Bases",
-  "lead": "Lewis widened the idea of an acid and a base to any species that accepts or donates a pair of electrons to form a <span data-concept=\"coordinate-covalent-bond\">coordinate covalent bond</span>. A metal ion that takes up ligands this way forms a <span data-concept=\"complex-ion\">complex ion</span>, whose <span data-concept=\"formation-constant\">formation constant</span> governs how much of a slightly soluble salt can be drawn into solution.",
+  "title": "路易斯酸和碱",
+  "short": "路易斯酸和碱",
+  "lead": "路易斯把酸和碱的概念推广到任何接受或给出一对电子以形成<span data-concept=\"coordinate-covalent-bond\">配位共价键</span>的物种。金属离子以这种方式结合配体时形成<span data-concept=\"complex-ion\">配离子</span>，其<span data-concept=\"formation-constant\">形成常数</span>决定了一种微溶盐能有多少溶解进入溶液。",
   "objectives": [
-    "Explain the Lewis model of acid-base chemistry",
-    "Write equations for the formation of adducts and complex ions",
-    "Perform equilibrium calculations involving formation constants"
+    "解释酸碱化学的路易斯模型",
+    "书写加合物和配离子形成的方程式",
+    "进行涉及形成常数的平衡计算"
   ],
-  "summary_html": "<p>A Lewis acid is a species that can accept an electron pair, whereas a Lewis base has an electron pair available for donation to a Lewis acid. Complex ions are examples of Lewis acid-base adducts and comprise central metal atoms or ions acting as Lewis acids bonded to molecules or ions called ligands that act as Lewis bases. The equilibrium constant for the reaction between a metal ion and ligands produces a complex ion called a formation constant; for the reverse reaction, it is called a dissociation constant.</p>",
-  "notes": "Nothing of the section is left out; its five Lewis equations and the structure of Cu(CN)<sub>2</sub><sup>–</sup> are redrawn from the book’s images, the ICE table of Example 15.14 is written as a table and keeps the example’s [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099 without a unit, and the exercises keep as printed the “0.100 NH<sub>3</sub>” of exercise 64, the “potassium cyanide ion” of exercise 72 and the chargeless BF<sub>4</sub> in the key of exercise 82.",
+  "summary_html": "<p>路易斯酸是能够接受一对电子的物种，而路易斯碱有一对可供给予路易斯酸的电子。配离子是路易斯酸碱加合物的例子，由作为路易斯酸的中心金属原子或离子，与称为配体、作为路易斯碱的分子或离子成键而成。金属离子与配体反应生成配离子的平衡常数称为形成常数；其逆反应的平衡常数称为解离常数。</p>",
+  "notes": "本节没有任何内容被省略；它的五个路易斯方程式和 Cu(CN)<sub>2</sub><sup>–</sup> 的结构是依据书中的图片重新绘制的，例 15.14 的 ICE 表写成表格，并保留该例中不带单位的 [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099，习题则按原样保留习题 64 的“0.100 NH<sub>3</sub>”、习题 72 的“氰化钾离子”以及习题 82 答案中不带电荷的 BF<sub>4</sub>。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer; the keys of exercises 76 and 78 are the book’s Lewis-structure images. The seven unkeyed numerical exercises are left out, and no answer is computed for them: fs-idm212489824, fs-idm50986272, fs-idm19606400, fs-idp18044656, fs-idm65404096, fs-idp26835744, fs-idm23888576. The three unkeyed conceptual exercises 75, 77 and 83 carry a suggested approach marked as OmniStax’s own. Exercise 62 (fs-idp46388832) is set in Section 15.1, where saturation is taught, and exercises 63 and 65 (fs-idm65484352, fs-idm98555648) in Section 15.3, which couples dissolution with other equilibria; exercises 86, 88 and 90 (fs-idm299312, fs-idp457072, fs-idp135248), printed in Section 15.3, are set here, where complex ion concentrations are calculated. Numeric answers accept 2%, the Check Your Learning 5% and the one-figure formation constant of exercise 66 10%.",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案和“学习检测”的答案；习题 76 和 78 的答案是书中的路易斯结构式图片。七道没有答案的数值习题被略去，也没有为它们计算答案：fs-idm212489824、fs-idm50986272、fs-idm19606400、fs-idp18044656、fs-idm65404096、fs-idp26835744、fs-idm23888576。三道没有答案的概念习题 75、77 和 83 附有标明为 OmniStax 自拟的建议思路。习题 62（fs-idp46388832）放在讲授饱和的 15.1 节，习题 63 和 65（fs-idm65484352、fs-idm98555648）放在把溶解与其他平衡耦合的 15.3 节；习题 86、88 和 90（fs-idm299312、fs-idp457072、fs-idp135248）原印在 15.3 节，现放在这里，因为这里计算配离子的浓度。数值答案接受 2% 的误差，“学习检测”接受 5%，习题 66 中只有一位有效数字的形成常数接受 10%。",
   "figures": [
     {
       "id": "fig-hydronium",
@@ -143,7 +151,7 @@
   "referents": [
     {
       "id": "acid",
-      "label": "the Lewis acid",
+      "label": "路易斯酸",
       "figures": [
         "fig-hydronium",
         "fig-bf3",
@@ -155,14 +163,14 @@
     },
     {
       "id": "displacer",
-      "label": "the base or acid that displaces another",
+      "label": "置换另一种物质的碱或酸",
       "figures": [
         "fig-displace"
       ]
     },
     {
       "id": "base",
-      "label": "the Lewis base",
+      "label": "路易斯碱",
       "figures": [
         "fig-hydronium",
         "fig-bf3",
@@ -301,14 +309,14 @@
         "after": "ex-complex"
       },
       "cite": "dissolution",
-      "prompt": "Calculate the silver ion concentration, [Ag<sup>+</sup>], of a solution prepared by dissolving 1.00 g of AgNO<sub>3</sub> and 10.0 g of KCN in sufficient water to make 1.00 L of solution. (Hint: Because <em>K</em><sub>f</sub> is very large, the silver/cyanide complex ion (see Appendix K), assume the reaction goes to completion and then calculate the [Ag<sup>+</sup>] produced by dissociation of the complex.)",
+      "prompt": "计算将 1.00 g AgNO<sub>3</sub> 和 10.0 g KCN 溶于足量水配成 1.00 L 溶液后，该溶液的银离子浓度 [Ag<sup>+</sup>]。（提示：由于 <em>K</em><sub>f</sub> 很大，银/氰配离子（见附录 K），假设反应进行到底，然后计算配离子解离所产生的 [Ag<sup>+</sup>]。）",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 2.9e-22,
         "unit": "M",
         "tol": 0.05,
-        "hint": "Convert both masses to moles; the cyanide is in excess, so nearly all the silver ends up as Ag(CN)<sub>2</sub><sup>−</sup> and the leftover cyanide stays free. Then solve the formation constant expression for [Ag<sup>+</sup>].",
+        "hint": "把两个质量都换算成物质的量；氰根过量，所以几乎所有的银都以 Ag(CN)<sub>2</sub><sup>−</sup> 的形式存在，剩余的氰根保持游离。然后由形成常数表达式解出 [Ag<sup>+</sup>]。",
         "solution": "2.9 × 10<sup>–22</sup> <em>M</em>"
       }
     },
@@ -322,13 +330,13 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "Calculate the cadmium ion concentration, [Cd<sup>2+</sup>], in a solution prepared by mixing 0.100 L of 0.0100 <em>M</em> Cd(NO<sub>3</sub>)<sub>2</sub> with 0.150 L of 0.100 NH<sub>3</sub>(<em>aq</em>)<sup class=\"fn\" data-note=\"c-e64-m\"></sup>.",
+      "prompt": "计算将 0.100 L 0.0100 <em>M</em> Cd(NO<sub>3</sub>)<sub>2</sub> 与 0.150 L 0.100 NH<sub>3</sub>(<em>aq</em>)<sup class=\"fn\" data-note=\"c-e64-m\"></sup> 混合所得溶液中的镉离子浓度 [Cd<sup>2+</sup>]。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 8.2e-05,
         "unit": "M",
-        "hint": "Find each concentration after mixing in 0.250 L, let the Cd<sup>2+</sup> form Cd(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup> completely, and use the formation constant from Appendix K with the ammonia left over.",
+        "hint": "求出混合到 0.250 L 后各自的浓度，让 Cd<sup>2+</sup> 完全生成 Cd(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup>，再用附录 K 中的形成常数和剩余的氨进行计算。",
         "solution": "8.2 × 10<sup>–5</sup> <em>M</em>"
       }
     },
@@ -342,13 +350,13 @@
         "at": "end"
       },
       "cite": "complex-ions",
-      "prompt": "Sometimes equilibria for complex ions are described in terms of dissociation constants, <em>K</em><sub>d</sub>. For the complex ion ${\\text{AlF}}_{6}{}^{3-}$ the dissociation reaction is:<br>${\\text{AlF}}_{6}{}^{3-}\\rightleftharpoons{\\text{Al}}^{3+}+6{\\text{F}}^{-}$ and ${K}_{\\text{d}}=\\frac{[{\\text{Al}}^{3+}]{[{\\text{F}}^{-}]}^{6}}{[{\\text{AlF}}_{6}{}^{3-}]}=2\\times{10}^{-24}$<br>Calculate the value of the formation constant, <em>K</em><sub>f</sub>, for ${\\text{AlF}}_{6}{}^{3-}.$",
+      "prompt": "有时配离子的平衡用解离常数 <em>K</em><sub>d</sub> 来描述。对于配离子 ${\\text{AlF}}_{6}{}^{3-}$，解离反应为：<br>${\\text{AlF}}_{6}{}^{3-}\\rightleftharpoons{\\text{Al}}^{3+}+6{\\text{F}}^{-}$，且 ${K}_{\\text{d}}=\\frac{[{\\text{Al}}^{3+}]{[{\\text{F}}^{-}]}^{6}}{[{\\text{AlF}}_{6}{}^{3-}]}=2\\times{10}^{-24}$<br>计算 ${\\text{AlF}}_{6}{}^{3-}$ 的形成常数 <em>K</em><sub>f</sub> 的值。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 5e+23,
         "tol": 0.1,
-        "hint": "The formation reaction is the reverse of the dissociation.",
+        "hint": "形成反应是解离反应的逆反应。",
         "solution": "5 × 10<sup>23</sup>"
       }
     },
@@ -362,7 +370,7 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "Using the dissociation constant, <em>K</em><sub>d</sub> = 3.3 × 10<sup>–19</sup>, calculate the equilibrium concentrations of Cd<sup>2+</sup> and CN<sup>–</sup> in a 0.250-<em>M</em> solution of $\\text{Cd}{(\\text{CN})}_{4}{}^{2-}.$",
+      "prompt": "利用解离常数 <em>K</em><sub>d</sub> = 3.3 × 10<sup>–19</sup>，计算 0.250 <em>M</em> 的 $\\text{Cd}{(\\text{CN})}_{4}{}^{2-}$ 溶液中 Cd<sup>2+</sup> 和 CN<sup>–</sup> 的平衡浓度。",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -371,7 +379,7 @@
             "part": "[Cd<sup>2+</sup>]",
             "value": 5e-05,
             "unit": "M",
-            "hint": "Let x mol/L of the complex dissociate: [Cd<sup>2+</sup>] = x and [CN<sup>–</sup>] = 4x. With x small beside 0.250, solve x(4x)<sup>4</sup> = K<sub>d</sub>(0.250)."
+            "hint": "设每升有 x mol 的配离子解离：[Cd<sup>2+</sup>] = x，[CN<sup>–</sup>] = 4x。因为 x 比 0.250 小得多，解 x(4x)<sup>4</sup> = K<sub>d</sub>(0.250)。"
           },
           {
             "part": "[CN<sup>–</sup>]",
@@ -379,7 +387,7 @@
             "unit": "M"
           }
         ],
-        "solution": "<img src=\"/media/ch15/CNX_Chem_15_02_ICETable3_img.jpg\" alt=\"An ICE table. Initial concentrations: Cd(CN)4 2− 0.250, CN− 0, Cd2+ 0. Equilibrium concentrations: 0.250 − x, 4x, and x.\"><br>[Cd<sup>2+</sup>] = 5.0 × 10<sup>–5</sup> <em>M</em>; [CN<sup>–</sup>] = 2.0 × 10<sup>–4</sup> <em>M</em>"
+        "solution": "<img src=\"/media/ch15/CNX_Chem_15_02_ICETable3_img.jpg\" alt=\"一张 ICE 表。初始浓度：Cd(CN)4 2− 为 0.250，CN− 为 0，Cd2+ 为 0。平衡浓度：0.250 − x、4x 和 x。\"><br>[Cd<sup>2+</sup>] = 5.0 × 10<sup>–5</sup> <em>M</em>；[CN<sup>–</sup>] = 2.0 × 10<sup>–4</sup> <em>M</em>"
       }
     },
     {
@@ -392,7 +400,7 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "Using the dissociation constant, <em>K</em><sub>d</sub> = 2.2 × 10<sup>–34</sup>, calculate the equilibrium concentrations of Co<sup>3+</sup> and NH<sub>3</sub> in a 0.500-<em>M</em> solution of $\\text{Co}{({\\text{NH}}_{3})}_{6}{}^{3+}.$",
+      "prompt": "利用解离常数 <em>K</em><sub>d</sub> = 2.2 × 10<sup>–34</sup>，计算 0.500 <em>M</em> 的 $\\text{Co}{({\\text{NH}}_{3})}_{6}{}^{3+}$ 溶液中 Co<sup>3+</sup> 和 NH<sub>3</sub> 的平衡浓度。",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -401,7 +409,7 @@
             "part": "[Co<sup>3+</sup>]",
             "value": 3e-06,
             "unit": "M",
-            "hint": "Let x mol/L dissociate: [Co<sup>3+</sup>] = x and [NH<sub>3</sub>] = 6x; with x small beside 0.500, solve x(6x)<sup>6</sup> = K<sub>d</sub>(0.500)."
+            "hint": "设每升有 x mol 解离：[Co<sup>3+</sup>] = x，[NH<sub>3</sub>] = 6x；因为 x 比 0.500 小得多，解 x(6x)<sup>6</sup> = K<sub>d</sub>(0.500)。"
           },
           {
             "part": "[NH<sub>3</sub>]",
@@ -409,7 +417,7 @@
             "unit": "M"
           }
         ],
-        "solution": "[Co<sup>3+</sup>] = 3.0 × 10<sup>–6</sup> <em>M</em>; [NH<sub>3</sub>] = 1.8 × 10<sup>–5</sup> <em>M</em>"
+        "solution": "[Co<sup>3+</sup>] = 3.0 × 10<sup>–6</sup> <em>M</em>；[NH<sub>3</sub>] = 1.8 × 10<sup>–5</sup> <em>M</em>"
       }
     },
     {
@@ -422,13 +430,13 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "Calculate the mass of potassium cyanide ion that must be added to 100 mL of solution to dissolve 2.0 × 10<sup>–2</sup> mol of silver cyanide, AgCN.",
+      "prompt": "计算要使 2.0 × 10<sup>–2</sup> mol 氰化银 AgCN 溶解在 100 mL 溶液中，必须加入的氰化钾离子的质量。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 1.3,
         "unit": "g",
-        "hint": "Each AgCN that dissolves as Ag(CN)<sub>2</sub><sup>−</sup> takes one more cyanide ion; find the moles of cyanide needed and their mass as KCN.",
+        "hint": "每个以 Ag(CN)<sub>2</sub><sup>−</sup> 的形式溶解的 AgCN 还要多结合一个氰根离子；求出所需氰根的物质的量，以及它们以 KCN 计的质量。",
         "solution": "1.3 g"
       }
     },
@@ -442,13 +450,13 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "A roll of 35-mm black and white photographic film contains about 0.27 g of unexposed AgBr before developing. What mass of Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub>·5H<sub>2</sub>O (sodium thiosulfate pentahydrate or hypo) in 1.0 L of fixer is required to dissolve the AgBr as $\\text{Ag}{({\\text{S}}_{2}{\\text{O}}_{3})}_{2}{}^{3-}$ (<em>K</em><sub>f</sub> = 4.7 × 10<sup>13</sup>)?",
+      "prompt": "一卷 35 mm 黑白照相胶片在显影前含有约 0.27 g 未曝光的 AgBr。1.0 L 定影液中需要多少质量的 Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub>·5H<sub>2</sub>O（五水合硫代硫酸钠，或称海波），才能把 AgBr 溶解为 $\\text{Ag}{({\\text{S}}_{2}{\\text{O}}_{3})}_{2}{}^{3-}$（<em>K</em><sub>f</sub> = 4.7 × 10<sup>13</sup>）？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 0.79,
         "unit": "g",
-        "hint": "Each AgBr dissolved takes two thiosulfate ions into the complex; convert the moles of thiosulfate to grams of the pentahydrate.",
+        "hint": "每溶解一个 AgBr，就有两个硫代硫酸根离子进入配离子；把硫代硫酸根的物质的量换算成五水合物的克数。",
         "solution": "0.79 g"
       }
     },
@@ -462,11 +470,11 @@
         "at": "end"
       },
       "cite": "lewis-definition",
-      "prompt": "We have seen an introductory definition of an acid: An acid is a compound that reacts with water and increases the amount of hydronium ion present. In the chapter on acids and bases, we saw two more definitions of acids: a compound that donates a proton (a hydrogen ion, H<sup>+</sup>) to another compound is called a Brønsted-Lowry acid, and a Lewis acid is any species that can accept a pair of electrons. Explain why the introductory definition is a macroscopic definition, while the Brønsted-Lowry definition and the Lewis definition are microscopic definitions.",
+      "prompt": "我们已经看到酸的一个入门定义：酸是与水反应并使水合氢离子增多的化合物。在酸碱一章中，我们又看到了酸的两个定义：把质子（氢离子 H<sup>+</sup>）给予另一种化合物的化合物称为布朗斯特–劳里酸，而路易斯酸是任何能接受一对电子的物种。解释为什么入门定义是宏观定义，而布朗斯特–劳里定义和路易斯定义是微观定义。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The introductory definition is macroscopic because it is stated in terms of something measured in a bulk sample: a rise in the hydronium ion concentration shows up as a lower pH on a pH meter or as a color change of an indicator, with no reference to what any single particle does. The Brønsted-Lowry and Lewis definitions are microscopic because they describe events between individual molecules or ions, the transfer of one proton from one particle to another, or the acceptance of a lone pair of electrons into a new bond. For HCl dissolved in water, the macroscopic observation is that the solution reads pH 1 for 0.1 <em>M</em> HCl; the microscopic description is that each HCl molecule gives its proton to a water molecule, ${\\text{HCl}}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow\\;{\\text{H}}_{3}{\\text{O}}^{+}+{\\text{Cl}}^{-}$, as a lone pair on the water oxygen bonds to the hydrogen ion. Such events cannot be seen in the sample, but they explain the hydronium ion that is measured there."
+        "solution": "入门定义是宏观的，因为它是用对宏观样品所测得的量来表述的：水合氢离子浓度升高，会表现为 pH 计上较低的 pH，或指示剂的颜色变化，而不涉及任何单个粒子所做的事。布朗斯特–劳里定义和路易斯定义是微观的，因为它们描述的是单个分子或离子之间发生的事件，即一个质子从一个粒子转移到另一个粒子，或一对孤电子对被接受而形成新键。以溶于水的 HCl 为例，宏观的观察是 0.1 <em>M</em> HCl 溶液的 pH 读数为 1；微观的描述则是每个 HCl 分子把它的质子给予一个水分子，${\\text{HCl}}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow\\;{\\text{H}}_{3}{\\text{O}}^{+}+{\\text{Cl}}^{-}$，即水的氧上的一对孤电子对与氢离子成键。这样的事件在样品中是看不见的，但它们解释了在样品中测得的水合氢离子。"
       }
     },
     {
@@ -479,11 +487,11 @@
         "at": "end"
       },
       "cite": "other-acids",
-      "prompt": "Write the Lewis structures of the reactants and product of each of the following equations, and identify the Lewis acid and the Lewis base in each:<br>(a) ${\\text{CO}}_{2}+{\\text{OH}}^{-}\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}$<br>(b) $\\text{B}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{B}{(\\text{OH})}_{4}{}^{-}$<br>(c) ${\\text{I}}^{-}+{\\text{I}}_{2}\\;\\longrightarrow\\;{\\text{I}}_{3}{}^{-}$<br>(d) ${\\text{AlCl}}_{3}+{\\text{Cl}}^{-}\\;\\longrightarrow\\;{\\text{AlCl}}_{4}{}^{-}$ (use Al-Cl single bonds)<br>(e) ${\\text{O}}^{2-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SO}}_{4}{}^{2-}$",
+      "prompt": "写出下列各方程式中反应物和产物的路易斯结构式，并指出每个方程式中的路易斯酸和路易斯碱：<br>（a）${\\text{CO}}_{2}+{\\text{OH}}^{-}\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}$<br>（b）$\\text{B}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{B}{(\\text{OH})}_{4}{}^{-}$<br>（c）${\\text{I}}^{-}+{\\text{I}}_{2}\\;\\longrightarrow\\;{\\text{I}}_{3}{}^{-}$<br>（d）${\\text{AlCl}}_{3}+{\\text{Cl}}^{-}\\;\\longrightarrow\\;{\\text{AlCl}}_{4}{}^{-}$（使用 Al-Cl 单键）<br>（e）${\\text{O}}^{2-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SO}}_{4}{}^{2-}$",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18a_img.jpg\" alt=\"Lewis structures: carbon dioxide, a carbon atom double bonded to two oxygen atoms, plus hydroxide ion in brackets with a negative charge, yields the bicarbonate ion, a carbon atom double bonded to one oxygen, single bonded to a second oxygen with three lone pairs, and single bonded to an oxygen that carries the hydrogen, in brackets with a negative charge.\"><br>(b)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18b_img.jpg\" alt=\"Lewis structures: boric acid, a boron atom single bonded to three O–H groups, plus hydroxide ion in brackets with a negative charge, yields B(OH)4−, a boron atom single bonded to four O–H groups, in brackets with a negative charge.\"><br>(c)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18c_img.jpg\" alt=\"Lewis structures: an iodine molecule, two iodine atoms single bonded with three lone pairs each, plus iodide ion with four lone pairs and a negative charge, yields the triiodide ion, three iodine atoms in a line, the central one with two lone pairs, in brackets with a negative charge.\"><br>(d)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18d_img.jpg\" alt=\"Lewis structures: aluminum chloride, an aluminum atom single bonded to three chlorine atoms, labeled Acid, plus chloride ion with four lone pairs and a negative charge, labeled Base, yields AlCl4−, an aluminum atom single bonded to four chlorine atoms, in brackets with a negative charge.\"><br>(e)<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18e_img.jpg\" alt=\"Lewis structures: sulfur trioxide, a sulfur atom single bonded to two oxygen atoms and double bonded to a third, plus oxide ion with four lone pairs and a 2− charge, yields the sulfate ion, a sulfur atom single bonded to four oxygen atoms, in brackets with a 2− charge.\">"
+        "solution": "（a）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18a_img.jpg\" alt=\"路易斯结构式：二氧化碳，即一个碳原子与两个氧原子形成双键，加上方括号内带负电荷的氢氧根离子，生成碳酸氢根离子，即一个碳原子与一个氧原子形成双键、与带三对孤电子对的第二个氧原子形成单键、并与连有氢的氧原子形成单键，置于方括号内并带负电荷。\"><br>（b）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18b_img.jpg\" alt=\"路易斯结构式：硼酸，即一个硼原子与三个 O–H 基团形成单键，加上方括号内带负电荷的氢氧根离子，生成 B(OH)4−，即一个硼原子与四个 O–H 基团形成单键，置于方括号内并带负电荷。\"><br>（c）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18c_img.jpg\" alt=\"路易斯结构式：碘分子，即两个碘原子以单键相连、各带三对孤电子对，加上带四对孤电子对和一个负电荷的碘离子，生成三碘离子，即三个碘原子排成一条直线，中间的一个带两对孤电子对，置于方括号内并带负电荷。\"><br>（d）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18d_img.jpg\" alt=\"路易斯结构式：氯化铝，即一个铝原子与三个氯原子形成单键，标为酸，加上带四对孤电子对和一个负电荷的氯离子，标为碱，生成 AlCl4−，即一个铝原子与四个氯原子形成单键，置于方括号内并带负电荷。\"><br>（e）<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer18e_img.jpg\" alt=\"路易斯结构式：三氧化硫，即一个硫原子与两个氧原子形成单键、与第三个氧原子形成双键，加上带四对孤电子对和 2− 电荷的氧离子，生成硫酸根离子，即一个硫原子与四个氧原子形成单键，置于方括号内并带 2− 电荷。\">"
       }
     },
     {
@@ -496,11 +504,11 @@
         "at": "end"
       },
       "cite": "other-acids",
-      "prompt": "Write the Lewis structures of the reactants and product of each of the following equations, and identify the Lewis acid and the Lewis base in each:<br>(a) ${\\text{CS}}_{2}+{\\text{SH}}^{-}\\;\\longrightarrow\\;{\\text{HCS}}_{3}{}^{-}$<br>(b) ${\\text{BF}}_{3}+{\\text{F}}^{-}\\;\\longrightarrow\\;{\\text{BF}}_{4}{}^{-}$<br>(c) ${\\text{I}}^{-}+{\\text{SnI}}_{2}\\;\\longrightarrow\\;{\\text{SnI}}_{3}{}^{-}$<br>(d) $\\text{Al}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{Al}{(\\text{OH})}_{4}{}^{-}$<br>(e) ${\\text{F}}^{-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SFO}}_{3}{}^{-}$",
+      "prompt": "写出下列各方程式中反应物和产物的路易斯结构式，并指出每个方程式中的路易斯酸和路易斯碱：<br>（a）${\\text{CS}}_{2}+{\\text{SH}}^{-}\\;\\longrightarrow\\;{\\text{HCS}}_{3}{}^{-}$<br>（b）${\\text{BF}}_{3}+{\\text{F}}^{-}\\;\\longrightarrow\\;{\\text{BF}}_{4}{}^{-}$<br>（c）${\\text{I}}^{-}+{\\text{SnI}}_{2}\\;\\longrightarrow\\;{\\text{SnI}}_{3}{}^{-}$<br>（d）$\\text{Al}{(\\text{OH})}_{3}+{\\text{OH}}^{-}\\;\\longrightarrow\\;\\text{Al}{(\\text{OH})}_{4}{}^{-}$<br>（e）${\\text{F}}^{-}+{\\text{SO}}_{3}\\;\\longrightarrow\\;{\\text{SFO}}_{3}{}^{-}$",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "(a) CS<sub>2</sub> is S=C=S, carbon double bonded to two sulfur atoms that each carry two lone pairs. SH<sup>–</sup> is a sulfur atom with three lone pairs bonded to a hydrogen atom, with a negative charge. In ${\\text{HCS}}_{3}{}^{-}$ carbon is double bonded to one sulfur, single bonded to a second sulfur with three lone pairs that carries the negative charge, and single bonded to the sulfur that carries the hydrogen. A lone pair of SH<sup>–</sup> forms the new C–S bond while the electrons of one C=S π bond move onto that sulfur: SH<sup>–</sup> is the Lewis base and CS<sub>2</sub> the Lewis acid.<br>(b) BF<sub>3</sub> is a boron atom single bonded to three fluorine atoms, each with three lone pairs, so boron has only six valence electrons. F<sup>–</sup> has four lone pairs. ${\\text{BF}}_{4}{}^{-}$ is boron single bonded to four fluorine atoms, in brackets with a negative charge. The fluoride ion donates a lone pair that completes the octet on boron: F<sup>–</sup> is the Lewis base and BF<sub>3</sub> the Lewis acid.<br>(c) I<sup>–</sup> has four lone pairs. SnI<sub>2</sub> is a tin atom with one lone pair single bonded to two iodine atoms, each with three lone pairs, so tin has six valence electrons. ${\\text{SnI}}_{3}{}^{-}$ is tin with one lone pair single bonded to three iodine atoms, in brackets with a negative charge. I<sup>–</sup> is the Lewis base and SnI<sub>2</sub>, which accepts the pair to complete the octet on tin, is the Lewis acid.<br>(d) Al(OH)<sub>3</sub> is an aluminum atom single bonded to three O–H groups, each oxygen with two lone pairs, so aluminum has six valence electrons. OH<sup>–</sup> is an oxygen with three lone pairs bonded to hydrogen, with a negative charge. ${\\text{Al(OH)}}_{4}{}^{-}$ is aluminum single bonded to four O–H groups, in brackets with a negative charge. OH<sup>–</sup> is the Lewis base and Al(OH)<sub>3</sub> the Lewis acid.<br>(e) F<sup>–</sup> has four lone pairs. SO<sub>3</sub> is a sulfur atom double bonded to three oxygen atoms, each with two lone pairs. In ${\\text{SFO}}_{3}{}^{-}$ sulfur is single bonded to a fluorine atom with three lone pairs, double bonded to two oxygen atoms and single bonded to a third oxygen with three lone pairs, in brackets with a negative charge. A lone pair of F<sup>–</sup> forms the S–F bond as the electrons of one S=O π bond move onto oxygen: F<sup>–</sup> is the Lewis base and SO<sub>3</sub> the Lewis acid."
+        "solution": "（a）CS<sub>2</sub> 是 S=C=S，碳与两个硫原子形成双键，每个硫原子带两对孤电子对。SH<sup>–</sup> 是一个带三对孤电子对的硫原子与一个氢原子成键，带负电荷。在 ${\\text{HCS}}_{3}{}^{-}$ 中，碳与一个硫形成双键，与带三对孤电子对并带负电荷的第二个硫形成单键，并与连有氢的硫形成单键。SH<sup>–</sup> 的一对孤电子对形成新的 C–S 键，同时一个 C=S π 键的电子移到那个硫上：SH<sup>–</sup> 是路易斯碱，CS<sub>2</sub> 是路易斯酸。<br>（b）BF<sub>3</sub> 是一个硼原子与三个氟原子形成单键，每个氟带三对孤电子对，所以硼只有六个价电子。F<sup>–</sup> 带四对孤电子对。${\\text{BF}}_{4}{}^{-}$ 是硼与四个氟原子形成单键，置于方括号内并带负电荷。氟离子给出一对孤电子对，使硼达到八隅体：F<sup>–</sup> 是路易斯碱，BF<sub>3</sub> 是路易斯酸。<br>（c）I<sup>–</sup> 带四对孤电子对。SnI<sub>2</sub> 是一个带一对孤电子对的锡原子与两个碘原子形成单键，每个碘带三对孤电子对，所以锡有六个价电子。${\\text{SnI}}_{3}{}^{-}$ 是带一对孤电子对的锡与三个碘原子形成单键，置于方括号内并带负电荷。I<sup>–</sup> 是路易斯碱，SnI<sub>2</sub> 接受这对电子而使锡达到八隅体，是路易斯酸。<br>（d）Al(OH)<sub>3</sub> 是一个铝原子与三个 O–H 基团形成单键，每个氧带两对孤电子对，所以铝有六个价电子。OH<sup>–</sup> 是一个带三对孤电子对的氧与氢成键，带负电荷。${\\text{Al(OH)}}_{4}{}^{-}$ 是铝与四个 O–H 基团形成单键，置于方括号内并带负电荷。OH<sup>–</sup> 是路易斯碱，Al(OH)<sub>3</sub> 是路易斯酸。<br>（e）F<sup>–</sup> 带四对孤电子对。SO<sub>3</sub> 是一个硫原子与三个氧原子形成双键，每个氧带两对孤电子对。在 ${\\text{SFO}}_{3}{}^{-}$ 中，硫与带三对孤电子对的一个氟原子形成单键，与两个氧原子形成双键，并与带三对孤电子对的第三个氧形成单键，置于方括号内并带负电荷。F<sup>–</sup> 的一对孤电子对形成 S–F 键，同时一个 S=O π 键的电子移到氧上：F<sup>–</sup> 是路易斯碱，SO<sub>3</sub> 是路易斯酸。"
       }
     },
     {
@@ -513,11 +521,11 @@
         "at": "end"
       },
       "cite": "other-acids",
-      "prompt": "Using Lewis structures, write balanced equations for the following reactions:<br>(a) $\\text{HCl}(g)+{\\text{PH}}_{3}(g)\\;\\longrightarrow$<br>(b) ${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow$<br>(c) $\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow$<br>(d) ${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow$",
+      "prompt": "利用路易斯结构式，写出下列反应的配平方程式：<br>（a）$\\text{HCl}(g)+{\\text{PH}}_{3}(g)\\;\\longrightarrow$<br>（b）${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow$<br>（c）$\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow$<br>（d）${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow$",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) <img src=\"/media/ch15/CNX_Chem_15_02_Answer24a_img.jpg\" alt=\"The equation HCl(g) plus PH3(g) yields PH4+ plus Cl−, then the same in Lewis structures: the phosphorus atom's lone pair of PH3 takes the hydrogen ion from HCl, giving the phosphonium ion, a phosphorus atom bonded to four hydrogen atoms in brackets with a positive charge, and chloride ion with four lone pairs.\"><br>(b) ${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow\\;{\\text{CH}}_{4}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24b_img.jpg\" alt=\"Lewis structures: the hydronium ion in brackets with a positive charge plus the methyl anion, a carbon atom with three hydrogen atoms and a lone pair in brackets with a negative charge, yields methane, a carbon atom bonded to four hydrogen atoms, plus water, an oxygen atom with two hydrogen atoms and two lone pairs.\"><br>(c) $\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow\\;\\text{CaSO}4$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24c_img.jpg\" alt=\"Lewis structures: Ca2+ beside the oxide ion with four lone pairs and a 2− charge, plus sulfur trioxide, yields Ca2+ beside the sulfate ion, a sulfur atom single bonded to four oxygen atoms with three lone pairs each, in brackets with a 2− charge.\"><br>(d) ${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow\\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{NH}}_{3}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24d_img.jpg\" alt=\"Lewis structures: the ammonium ion in brackets with a positive charge plus the ethoxide ion, CH3CH2O− with three lone pairs on oxygen, in brackets with a negative charge, yields ethanol, CH3CH2OH, plus ammonia.\">"
+        "solution": "（a）<img src=\"/media/ch15/CNX_Chem_15_02_Answer24a_img.jpg\" alt=\"方程式 HCl(g) 加 PH3(g) 生成 PH4+ 加 Cl−，随后是同一反应的路易斯结构式：PH3 中磷原子的孤电子对从 HCl 夺取氢离子，生成鏻离子，即一个磷原子与四个氢原子成键，置于方括号内并带正电荷，以及带四对孤电子对的氯离子。\"><br>（b）${\\text{H}}_{3}{\\text{O}}^{+}+{\\text{CH}}_{3}{}^{-}\\;\\longrightarrow\\;{\\text{CH}}_{4}+{\\text{H}}_{2}\\text{O}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24b_img.jpg\" alt=\"路易斯结构式：方括号内带正电荷的水合氢离子，加上甲基负离子，即一个碳原子带三个氢原子和一对孤电子对，置于方括号内并带负电荷，生成甲烷，即一个碳原子与四个氢原子成键，加上水，即一个氧原子带两个氢原子和两对孤电子对。\"><br>（c）$\\text{CaO}+{\\text{SO}}_{3}\\;\\longrightarrow\\;\\text{CaSO}4$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24c_img.jpg\" alt=\"路易斯结构式：Ca2+ 与带四对孤电子对和 2− 电荷的氧离子并列，加上三氧化硫，生成 Ca2+ 与硫酸根离子并列，硫酸根离子是一个硫原子与四个各带三对孤电子对的氧原子形成单键，置于方括号内并带 2− 电荷。\"><br>（d）${\\text{NH}}_{4}{}^{+}+{\\text{C}}_{2}{\\text{H}}_{5}{\\text{O}}^{-}\\;\\longrightarrow\\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}+{\\text{NH}}_{3}$<br><img src=\"/media/ch15/CNX_Chem_15_02_Answer24d_img.jpg\" alt=\"路易斯结构式：方括号内带正电荷的铵根离子，加上乙氧基负离子，即氧上带三对孤电子对的 CH3CH2O−，置于方括号内并带负电荷，生成乙醇 CH3CH2OH，加上氨。\">"
       }
     },
     {
@@ -530,13 +538,13 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "In a titration of cyanide ion, 28.72 mL of 0.0100 <em>M</em> AgNO<sub>3</sub> is added before precipitation begins. [The reaction of Ag<sup>+</sup> with CN<sup>–</sup> goes to completion, producing the $\\text{Ag}{(\\text{CN})}_{2}{}^{-}$ complex.] Precipitation of solid AgCN takes place when excess Ag<sup>+</sup> is added to the solution, above the amount needed to complete the formation of $\\text{Ag}{(\\text{CN})}_{2}{}^{-}.$ How many grams of NaCN were in the original sample?",
+      "prompt": "在氰根离子的滴定中，加入 28.72 mL 0.0100 <em>M</em> AgNO<sub>3</sub> 后才开始沉淀。[Ag<sup>+</sup> 与 CN<sup>–</sup> 的反应进行到底，生成 $\\text{Ag}{(\\text{CN})}_{2}{}^{-}$ 配离子。] 当加入的 Ag<sup>+</sup> 超过完成 $\\text{Ag}{(\\text{CN})}_{2}{}^{-}$ 的生成所需的量时，溶液中就会析出固体 AgCN 沉淀。原始样品中有多少克 NaCN？",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 0.0281,
         "unit": "g",
-        "hint": "Up to the first precipitate, each Ag<sup>+</sup> added has taken two cyanide ions into the complex.",
+        "hint": "到出现第一份沉淀为止，每加入一个 Ag<sup>+</sup>，就有两个氰根离子进入配离子。",
         "solution": "0.0281 g"
       }
     },
@@ -550,7 +558,7 @@
         "at": "end"
       },
       "cite": "other-acids",
-      "prompt": "In dilute aqueous solution HF acts as a weak acid. However, pure liquid HF (boiling point = 19.5 °C) is a strong acid. In liquid HF, HNO<sub>3</sub> acts like a base and accepts protons. The acidity of liquid HF can be increased by adding one of several inorganic fluorides that are Lewis acids and accept F<sup>–</sup> ion (for example, BF<sub>3</sub> or SbF<sub>5</sub>). Write balanced chemical equations for the reaction of pure HNO<sub>3</sub> with pure HF and of pure HF with BF<sub>3</sub>.",
+      "prompt": "在稀水溶液中，HF 是弱酸。然而，纯液态 HF（沸点 = 19.5 °C）是强酸。在液态 HF 中，HNO<sub>3</sub> 的作用像碱，接受质子。加入几种作为路易斯酸、能接受 F<sup>–</sup> 离子的无机氟化物（例如 BF<sub>3</sub> 或 SbF<sub>5</sub>）之一，可以增强液态 HF 的酸性。写出纯 HNO<sub>3</sub> 与纯 HF 反应以及纯 HF 与 BF<sub>3</sub> 反应的配平化学方程式。",
       "answer": {
         "type": "open",
         "generated_by": "source",
@@ -567,11 +575,11 @@
         "at": "end"
       },
       "cite": "lewis-definition",
-      "prompt": "The simplest amino acid is glycine, H<sub>2</sub>NCH<sub>2</sub>CO<sub>2</sub>H. The common feature of amino acids is that they contain the functional groups: an amine group, –NH<sub>2</sub>, and a carboxylic acid group, –CO<sub>2</sub>H. An amino acid can function as either an acid or a base. For glycine, the acid strength of the carboxyl group is about the same as that of acetic acid, CH<sub>3</sub>CO<sub>2</sub>H, and the base strength of the amino group is slightly greater than that of ammonia, NH<sub>3</sub>.<br>(a) Write the Lewis structures of the ions that form when glycine is dissolved in 1 <em>M</em> HCl and in 1 <em>M</em> KOH.<br>(b) Write the Lewis structure of glycine when this amino acid is dissolved in water. (Hint: Consider the relative base strengths of the –NH<sub>2</sub> and $-{\\text{CO}}_{2}{}^{-}$ groups.)",
+      "prompt": "最简单的氨基酸是甘氨酸 H<sub>2</sub>NCH<sub>2</sub>CO<sub>2</sub>H。氨基酸的共同特征是含有这样的官能团：氨基 –NH<sub>2</sub> 和羧基 –CO<sub>2</sub>H。氨基酸既可以作酸，也可以作碱。对于甘氨酸，羧基的酸强度与乙酸 CH<sub>3</sub>CO<sub>2</sub>H 的大致相同，氨基的碱强度比氨 NH<sub>3</sub> 的略大。<br>（a）写出甘氨酸溶于 1 <em>M</em> HCl 和 1 <em>M</em> KOH 时所形成离子的路易斯结构式。<br>（b）写出这种氨基酸溶于水时甘氨酸的路易斯结构式。（提示：考虑 –NH<sub>2</sub> 和 $-{\\text{CO}}_{2}{}^{-}$ 基团的相对碱强度。）",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "(a) In 1 <em>M</em> HCl glycine forms the cation ${\\text{H}}_{3}{\\text{N}}^{+}{\\text{CH}}_{2}{\\text{CO}}_{2}\\text{H}$: the nitrogen uses its lone pair to bond a hydrogen ion and is single bonded to three hydrogen atoms and to the CH<sub>2</sub> carbon, with a positive charge and no lone pair, and the carboxyl carbon is double bonded to an oxygen with two lone pairs and single bonded to an O–H oxygen with two lone pairs. In 1 <em>M</em> KOH it forms the anion ${\\text{H}}_{2}{\\text{NCH}}_{2}{\\text{CO}}_{2}{}^{-}$: the nitrogen keeps one lone pair and two hydrogen atoms, and the carboxyl group has lost its proton, so its carbon is double bonded to one oxygen with two lone pairs and single bonded to an oxygen with three lone pairs that carries the negative charge. The strong acid supplies enough hydronium ion to protonate the amine group, and the strong base removes the acidic carboxyl proton.<br>(b) In water glycine is the zwitterion ${\\text{H}}_{3}{\\text{N}}^{+}{\\text{CH}}_{2}{\\text{CO}}_{2}{}^{-}$, with the protonated amine group of part (a) at one end and the carboxylate group at the other, an ion with no net charge. The amine group is a base slightly stronger than ammonia, $\\kKb\\approx 2\\;\\times \\;{10}^{-5}$, while the carboxylate group is a base as weak as acetate ion, $\\kKb=\\kKw \\text{/}\\kKa =1.0\\;\\times \\;{10}^{-14}\\text{/}1.8\\;\\times \\;{10}^{-5}=5.6\\;\\times \\;{10}^{-10}$, so the proton of the carboxyl group moves to the nitrogen."
+        "solution": "（a）在 1 <em>M</em> HCl 中，甘氨酸形成阳离子 ${\\text{H}}_{3}{\\text{N}}^{+}{\\text{CH}}_{2}{\\text{CO}}_{2}\\text{H}$：氮用它的孤电子对与一个氢离子成键，与三个氢原子和 CH<sub>2</sub> 的碳形成单键，带正电荷而没有孤电子对，羧基的碳与一个带两对孤电子对的氧形成双键，并与一个带两对孤电子对的 O–H 氧形成单键。在 1 <em>M</em> KOH 中，它形成阴离子 ${\\text{H}}_{2}{\\text{NCH}}_{2}{\\text{CO}}_{2}{}^{-}$：氮保留一对孤电子对和两个氢原子，羧基已失去质子，所以它的碳与一个带两对孤电子对的氧形成双键，并与一个带三对孤电子对、带负电荷的氧形成单键。强酸提供了足够的水合氢离子使氨基质子化，强碱则夺走羧基的酸性质子。<br>（b）在水中，甘氨酸是两性离子 ${\\text{H}}_{3}{\\text{N}}^{+}{\\text{CH}}_{2}{\\text{CO}}_{2}{}^{-}$，一端是（a）中质子化的氨基，另一端是羧酸根基团，整体是不带净电荷的离子。氨基是比氨略强的碱，$\\kKb\\approx 2\\;\\times \\;{10}^{-5}$，而羧酸根基团是与乙酸根离子一样弱的碱，$\\kKb=\\kKw \\text{/}\\kKa =1.0\\;\\times \\;{10}^{-14}\\text{/}1.8\\;\\times \\;{10}^{-5}=5.6\\;\\times \\;{10}^{-10}$，所以羧基的质子移到了氮上。"
       }
     },
     {
@@ -584,11 +592,11 @@
         "at": "end"
       },
       "cite": "other-acids",
-      "prompt": "Boric acid, H<sub>3</sub>BO<sub>3</sub>, is not a Brønsted-Lowry acid but a Lewis acid. (Hint: See the equation in exercise 76.)<br>(a) Write an equation for its reaction with water.<br>(b) Predict the shape of the anion thus formed.<br>(c) What is the hybridization on the boron, and is it consistent with the shape you have predicted?",
+      "prompt": "硼酸 H<sub>3</sub>BO<sub>3</sub> 不是布朗斯特–劳里酸，而是路易斯酸。（提示：见习题 76 中的方程式。）<br>（a）写出它与水反应的方程式。<br>（b）预测由此形成的阴离子的形状。<br>（c）硼的杂化方式是什么？它与你预测的形状是否一致？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) ${\\text{H}}_{3}{\\text{BO}}_{3}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow\\;{\\text{H}}_{4}{\\text{BO}}_{4}{}^{-}+{\\text{H}}^{+};$ (b) The electronic and molecular shapes are the same—both tetrahedral. (c) The tetrahedral structure is consistent with <em>sp</em><sup>3</sup> hybridization."
+        "solution": "（a）${\\text{H}}_{3}{\\text{BO}}_{3}+{\\text{H}}_{2}\\text{O}\\;\\longrightarrow\\;{\\text{H}}_{4}{\\text{BO}}_{4}{}^{-}+{\\text{H}}^{+}$；（b）电子对构型和分子构型相同，都是四面体形。（c）四面体结构与 <em>sp</em><sup>3</sup> 杂化一致。"
       }
     },
     {
@@ -602,13 +610,13 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "Calculate the equilibrium concentration of Ni<sup>2+</sup> in a 1.0-<em>M</em> solution [Ni(NH<sub>3</sub>)<sub>6</sub>](NO<sub>3</sub>)<sub>2</sub>.",
+      "prompt": "计算 1.0 <em>M</em> [Ni(NH<sub>3</sub>)<sub>6</sub>](NO<sub>3</sub>)<sub>2</sub> 溶液中 Ni<sup>2+</sup> 的平衡浓度。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 0.014,
         "unit": "M",
-        "hint": "Let x mol/L of Ni(NH<sub>3</sub>)<sub>6</sub><sup>2+</sup> dissociate, giving x of Ni<sup>2+</sup> and 6x of NH<sub>3</sub>, and use its formation constant from Appendix K.",
+        "hint": "设每升有 x mol 的 Ni(NH<sub>3</sub>)<sub>6</sub><sup>2+</sup> 解离，生成浓度为 x 的 Ni<sup>2+</sup> 和浓度为 6x 的 NH<sub>3</sub>，并使用附录 K 中它的形成常数。",
         "solution": "0.014 <em>M</em>"
       }
     },
@@ -623,13 +631,13 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "Calculate the equilibrium concentration of Cu<sup>2+</sup> in a solution initially with 0.050 <em>M</em> Cu<sup>2+</sup> and 1.00 <em>M</em> NH<sub>3</sub>.",
+      "prompt": "计算最初含有 0.050 <em>M</em> Cu<sup>2+</sup> 和 1.00 <em>M</em> NH<sub>3</sub> 的溶液中 Cu<sup>2+</sup> 的平衡浓度。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 7.2e-15,
         "unit": "M",
-        "hint": "Let the Cu<sup>2+</sup> form Cu(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup> completely, find the ammonia left over, then solve the formation constant expression for the small [Cu<sup>2+</sup>] that remains.",
+        "hint": "设 Cu<sup>2+</sup> 完全生成 Cu(NH<sub>3</sub>)<sub>4</sub><sup>2+</sup>，求出剩余的氨，再由形成常数表达式解出所余的很小的 [Cu<sup>2+</sup>]。",
         "solution": "7.2 × 10<sup>–15</sup> <em>M</em>"
       }
     },
@@ -644,13 +652,13 @@
         "at": "end"
       },
       "cite": "dissolution",
-      "prompt": "Calculate the Fe<sup>3+</sup> equilibrium concentration when 0.0888 mole of K<sub>3</sub>[Fe(CN)<sub>6</sub>] is added to a solution with 0.00010 <em>M</em> CN<sup>–</sup>.",
+      "prompt": "计算在含有 0.00010 <em>M</em> CN<sup>–</sup> 的溶液中加入 0.0888 mol K<sub>3</sub>[Fe(CN)<sub>6</sub>] 时 Fe<sup>3+</sup> 的平衡浓度。",
       "answer": {
         "type": "number",
         "generated_by": "source",
         "value": 4.4e-22,
         "unit": "M",
-        "hint": "The cyanide already present suppresses the dissociation, so [CN<sup>–</sup>] stays 0.00010 M; solve the formation constant expression of Fe(CN)<sub>6</sub><sup>3−</sup> for [Fe<sup>3+</sup>].",
+        "hint": "已有的氰根抑制了解离，所以 [CN<sup>–</sup>] 保持 0.00010 M；由 Fe(CN)<sub>6</sub><sup>3−</sup> 的形成常数表达式解出 [Fe<sup>3+</sup>]。",
         "solution": "4.4 × 10<sup>−22</sup> <em>M</em>"
       }
     }
@@ -891,17 +899,17 @@
     {
       "id": "c-complex-unit",
       "kind": "correction",
-      "html": "The book gives [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099 without its unit; it is 0.099 <em>M</em>."
+      "html": "书中给出的 [Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>] = 0.099 没有写单位；应为 0.099 <em>M</em>。"
     },
     {
       "id": "c-e64-m",
       "kind": "correction",
-      "html": "The book gives the ammonia as 0.100 without its unit; it is 0.100 <em>M</em> NH<sub>3</sub>."
+      "html": "书中给出的氨为 0.100，没有写单位；应为 0.100 <em>M</em> NH<sub>3</sub>。"
     },
     {
       "id": "c-e82-bf4",
       "kind": "correction",
-      "html": "The key writes BF<sub>4</sub> without its charge; the ion formed is BF<sub>4</sub><sup>−</sup>."
+      "html": "答案中的 BF<sub>4</sub> 没有写电荷；生成的离子是 BF<sub>4</sub><sup>−</sup>。"
     }
   ]
 }

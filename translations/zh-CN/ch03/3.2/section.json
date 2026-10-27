@@ -2,16 +2,16 @@
  "id": "3.2",
  "module": "m68702",
  "chapter": "3",
- "title": "Determining Empirical and Molecular Formulas",
- "short": "Empirical and Molecular Formulas",
- "lead": "When the formula of a compound is unknown, we first measure the <span data-concept=\"mass\">masses</span> of its elements, and from those <span data-concept=\"mass\">masses</span>, or from a formula, you can compute its percent composition. Converting the <span data-concept=\"mass\">masses</span> of the elements to <span data-concept=\"mole\">moles</span> gives the whole-number ratio of atoms that is the empirical formula, and the <span data-concept=\"molar-mass\">molar mass</span> then leads to the molecular formula.",
+ "title": "实验式和分子式的确定",
+ "short": "实验式与分子式",
+ "lead": "当化合物的化学式未知时，我们首先测量其各元素的<span data-concept=\"mass\">质量</span>，由这些<span data-concept=\"mass\">质量</span>，或由化学式，就可以算出它的百分组成。把各元素的<span data-concept=\"mass\">质量</span>换算成以<span data-concept=\"mole\">摩尔</span>计的物质的量，就得到原子数的整数比，即实验式，再由<span data-concept=\"molar-mass\">摩尔质量</span>得出分子式。",
  "objectives": [
-  "Compute the percent composition of a compound",
-  "Determine the empirical formula of a compound",
-  "Determine the molecular formula of a compound"
+  "计算化合物的百分组成",
+  "确定化合物的实验式",
+  "确定化合物的分子式"
  ],
- "summary_html": "<p>The chemical identity of a substance is defined by the types and relative numbers of atoms composing its fundamental entities (molecules in the case of covalent compounds, ions in the case of ionic compounds). A compound’s percent composition provides the mass percentage of each element in the compound, and it is often experimentally determined and used to derive the compound’s empirical formula. The empirical formula mass of a covalent compound may be compared to the compound’s molecular or <span data-concept=\"molar-mass\">molar mass</span> to derive a molecular formula.</p>",
- "notes": "The Link to Learning note, a video of further worked examples of empirical formulas, is left out. Example 3.13 prints 8.624 in its ratio table where the line above gives 8.641 mol H, and the key gives 82.24% N for ammonia where the text computes 82.27%; both are kept as printed.",
+ "summary_html": "<p>一种物质是哪种物质，由组成其基本单元（共价化合物为分子，离子化合物为离子）的原子的种类和相对数目所决定。化合物的百分组成给出各元素在化合物中的质量分数，它往往由实验测定，并用来推导化合物的实验式。共价化合物的实验式量可以与该化合物的分子质量或<span data-concept=\"molar-mass\">摩尔质量</span>相比较，从而推导出分子式。</p>",
+ "notes": "学习链接注记（一段关于实验式更多例题的视频）已略去。例 3.13 的比值表中印的是 8.624，而它上面一行给出的是 8.641 mol H；书后答案给出氨中 N 为 82.24%，而正文算出的是 82.27%；两处都照印刷原样保留。",
  "ai": {
   "text": [
    {
@@ -22,24 +22,33 @@
     "model": "claude-opus-5-5",
     "effort": "high"
    }
+ ,
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
+   }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; answers that are formulas are compared by the reader. The unkeyed conceptual exercise fs-idm115920688 carries a suggested approach written by the AI. The unkeyed exercises fs-idm99186192 (percent compositions of HN<sub>3</sub>, TNT and the sulfate in Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>), fs-idm78648848 (the percent water in CuSO<sub>4</sub>∙5H<sub>2</sub>O), fs-idm106900080 (two empirical formulas from percent compositions), fs-idm234233056 (dichloroethane) and fs-idp2230736 (the empirical formulas of five polymers) are left out.",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案取自书后答案和学习检测的答案；答案为化学式的，由读者自行比较。没有答案的概念性习题 fs-idm115920688 带有一个由 AI 写出的建议思路。没有答案的习题 fs-idm99186192（HN<sub>3</sub>、TNT 以及 Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> 中硫酸根的百分组成）、fs-idm78648848（CuSO<sub>4</sub>∙5H<sub>2</sub>O 中水的百分数）、fs-idm106900080（由百分组成求两个实验式）、fs-idm234233056（二氯乙烷）和 fs-idp2230736（五种聚合物的实验式）已略去。",
  "figures": [
   {
    "id": "sim-empirical",
    "kind": "sim",
    "number": "3.11",
    "originals": ["/media/ch03/CNX_Chem_03_03_empform.jpg"],
-   "original_caption": "The empirical formula of a compound can be derived from the masses of all elements in the sample.",
+   "original_caption": "化合物的实验式可由样品中所有元素的质量推导出来。",
    "draws": ["mass", "amount"],
    "conventions": [
     "Fe",
@@ -53,6 +62,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -85,7 +99,7 @@
    "bloom": "Apply",
    "place": { "at": "inline", "after": "ex-percent" },
    "cite": "percent",
-   "prompt": "A 24.81-g sample of a gaseous compound containing only carbon, oxygen, and chlorine is determined to contain 3.01 g C, 4.00 g O, and 17.81 g Cl. What is this compound’s percent composition?",
+   "prompt": "一份 24.81 g 的气态化合物样品，仅含碳、氧和氯，经测定含有 3.01 g C、4.00 g O 和 17.81 g Cl。这种化合物的百分组成是多少？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -94,7 +108,7 @@
      { "part": "% O", "value": 16.1, "unit": "%" },
      { "part": "% Cl", "value": 71.79, "unit": "%" }
     ],
-    "solution": "12.1% C, 16.1% O, 71.79% Cl"
+    "solution": "12.1% C，16.1% O，71.79% Cl"
    }
   },
   {
@@ -104,8 +118,8 @@
    "bloom": "Apply",
    "place": { "at": "inline", "after": "ex-aspirin" },
    "cite": "from-formula",
-   "prompt": "To three significant digits, what is the mass percentage of iron in the compound Fe<sub>2</sub>O<sub>3</sub>?",
-   "answer": { "type": "number", "generated_by": "source", "value": 69.9, "unit": "% Fe", "hint": "Divide the mass of two moles of iron by the molar mass of Fe<sub>2</sub>O<sub>3</sub>.", "solution": "69.9% Fe" }
+   "prompt": "保留三位有效数字，化合物 Fe<sub>2</sub>O<sub>3</sub> 中铁的质量分数是多少？",
+   "answer": { "type": "number", "generated_by": "source", "value": 69.9, "unit": "% Fe", "hint": "用两摩尔铁的质量除以 Fe<sub>2</sub>O<sub>3</sub> 的摩尔质量。", "solution": "69.9% Fe" }
   },
   {
    "id": "cyl3",
@@ -114,7 +128,7 @@
    "bloom": "Apply",
    "place": { "at": "inline", "after": "ex-hematite" },
    "cite": "empirical",
-   "prompt": "What is the empirical formula of a compound if a sample contains 0.130 g of nitrogen and 0.370 g of oxygen?",
+   "prompt": "如果一份样品含有 0.130 g 氮和 0.370 g 氧，该化合物的实验式是什么？",
    "answer": { "type": "open", "generated_by": "source", "solution": "N<sub>2</sub>O<sub>5</sub>" }
   },
   {
@@ -124,7 +138,7 @@
    "bloom": "Apply",
    "place": { "at": "inline", "after": "ex-co2" },
    "cite": "from-percent",
-   "prompt": "What is the empirical formula of a compound containing 40.0% C, 6.71% H, and 53.28% O?",
+   "prompt": "含有 40.0% C、6.71% H 和 53.28% O 的化合物，其实验式是什么？",
    "answer": { "type": "open", "generated_by": "source", "solution": "CH<sub>2</sub>O" }
   },
   {
@@ -134,7 +148,7 @@
    "bloom": "Apply",
    "place": { "at": "inline", "after": "ex-nicotine" },
    "cite": "molecular",
-   "prompt": "What is the molecular formula of a compound with a percent composition of 49.47% C, 5.201% H, 28.84% N, and 16.48% O, and a molecular mass of 194.2 amu?",
+   "prompt": "某化合物的百分组成为 49.47% C、5.201% H、28.84% N 和 16.48% O，分子质量为 194.2 amu，它的分子式是什么？",
    "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>" }
   },
   {
@@ -144,8 +158,8 @@
    "bloom": "Understand",
    "place": { "at": "end" },
    "cite": "molecular",
-   "prompt": "What information is needed to determine the molecular formula of a compound from the empirical formula?",
-   "answer": { "type": "open", "generated_by": "ai", "solution": "The molecular mass or the molar mass of the compound is needed. The empirical formula gives only the simplest whole-number ratio of the atoms, so the molecular formula is some whole-number multiple of it. Dividing the molecular (or molar) mass by the empirical formula mass, the sum of the average atomic masses of the atoms in the empirical formula, gives that multiple, <em>n</em>, the number of empirical formula units per molecule. Multiplying each subscript in the empirical formula by <em>n</em> then gives the molecular formula. For example, a compound with empirical formula CH<sub>2</sub>O (empirical formula mass 30.03 amu) and molecular mass 180.16 amu has <em>n</em> = 180.16/30.03 = 6, so its molecular formula is C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>." }
+   "prompt": "要由化合物的实验式确定其分子式，需要什么信息？",
+   "answer": { "type": "open", "generated_by": "ai", "solution": "需要该化合物的分子质量或摩尔质量。实验式只给出原子的最简整数比，所以分子式是它的某个整数倍。用分子质量（或摩尔质量）除以实验式量（即实验式中各原子平均原子质量之和），就得到这个倍数 <em>n</em>，即每个分子中实验式单元的数目。再把实验式中的每个下标乘以 <em>n</em>，就得到分子式。例如，实验式为 CH<sub>2</sub>O（实验式量 30.03 amu）、分子质量为 180.16 amu 的化合物，<em>n</em> = 180.16/30.03 = 6，所以它的分子式为 C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>。" }
   },
   {
    "id": "e2",
@@ -154,7 +168,7 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "from-formula",
-   "prompt": "Calculate the following to four significant figures: (a) the percent composition of ammonia, NH<sub>3</sub> (b) the percent composition of photographic fixer solution (“hypo”), Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> (c) the percent of calcium ion in Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>",
+   "prompt": "计算下列各项，保留四位有效数字：（a）氨 NH<sub>3</sub> 的百分组成 （b）照相定影液（“海波”）Na<sub>2</sub>S<sub>2</sub>O<sub>3</sub> 的百分组成 （c）Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> 中钙离子的百分数",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -166,7 +180,7 @@
      { "part": "(b) % O", "value": 30.36, "unit": "%" },
      { "part": "(c) % Ca²⁺", "value": 38.76, "unit": "%" }
     ],
-    "solution": "(a) % N = 82.24%, % H = 17.76%; (b) % Na = 29.08%, % S = 40.56%, % O = 30.36%; (c) % Ca<sup>2+</sup> = 38.76%"
+    "solution": "（a）% N = 82.24%，% H = 17.76%；（b）% Na = 29.08%，% S = 40.56%，% O = 30.36%；（c）% Ca<sup>2+</sup> = 38.76%"
    }
   },
   {
@@ -176,8 +190,8 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "from-formula",
-   "prompt": "Determine the percent ammonia, NH<sub>3</sub>, in Co(NH<sub>3</sub>)<sub>6</sub>Cl<sub>3</sub>, to three significant figures.",
-   "answer": { "type": "number", "generated_by": "source", "value": 38.2, "unit": "% NH₃", "hint": "Divide the mass of six moles of NH<sub>3</sub> by the molar mass of the whole compound.", "solution": "% NH<sub>3</sub> = 38.2%" }
+   "prompt": "保留三位有效数字，确定 Co(NH<sub>3</sub>)<sub>6</sub>Cl<sub>3</sub> 中氨 NH<sub>3</sub> 的百分数。",
+   "answer": { "type": "number", "generated_by": "source", "value": 38.2, "unit": "% NH₃", "hint": "用六摩尔 NH<sub>3</sub> 的质量除以整个化合物的摩尔质量。", "solution": "% NH<sub>3</sub> = 38.2%" }
   },
   {
    "id": "e4",
@@ -186,8 +200,8 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "from-percent",
-   "prompt": "Determine the empirical formulas for compounds with the following percent compositions: (a) 15.8% carbon and 84.2% sulfur (b) 40.0% carbon, 6.7% hydrogen, and 53.3% oxygen",
-   "answer": { "type": "open", "generated_by": "source", "solution": "(a) CS<sub>2</sub>; (b) CH<sub>2</sub>O" }
+   "prompt": "确定具有下列百分组成的化合物的实验式：（a）15.8% 碳和 84.2% 硫 （b）40.0% 碳、6.7% 氢和 53.3% 氧",
+   "answer": { "type": "open", "generated_by": "source", "solution": "（a）CS<sub>2</sub>；（b）CH<sub>2</sub>O" }
   },
   {
    "id": "e5",
@@ -196,7 +210,7 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "molecular",
-   "prompt": "A compound of carbon and hydrogen contains 92.3% C and has a molar mass of 78.1 g/mol. What is its molecular formula?",
+   "prompt": "一种碳氢化合物含有 92.3% C，摩尔质量为 78.1 g/mol。它的分子式是什么？",
    "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>6</sub>H<sub>6</sub>" }
   },
   {
@@ -206,8 +220,8 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "molecular",
-   "prompt": "Determine the empirical and molecular formula for chrysotile asbestos. Chrysotile has the following percent composition: 28.03% Mg, 21.60% Si, 1.16% H, and 49.21% O. The molar mass for chrysotile is 520.8 g/mol.",
-   "answer": { "type": "open", "generated_by": "source", "solution": "Mg<sub>3</sub>Si<sub>2</sub>H<sub>3</sub>O<sub>8</sub> (empirical formula), Mg<sub>6</sub>Si<sub>4</sub>H<sub>6</sub>O<sub>16</sub> (molecular formula)" }
+   "prompt": "确定温石棉的实验式和分子式。温石棉的百分组成为：28.03% Mg、21.60% Si、1.16% H 和 49.21% O。温石棉的摩尔质量为 520.8 g/mol。",
+   "answer": { "type": "open", "generated_by": "source", "solution": "Mg<sub>3</sub>Si<sub>2</sub>H<sub>3</sub>O<sub>8</sub>（实验式），Mg<sub>6</sub>Si<sub>4</sub>H<sub>6</sub>O<sub>16</sub>（分子式）" }
   },
   {
    "id": "e7",
@@ -216,7 +230,7 @@
    "bloom": "Apply",
    "place": { "at": "end" },
    "cite": "molecular",
-   "prompt": "A major textile dye manufacturer developed a new yellow dye. The dye has a percent composition of 75.95% C, 17.72% N, and 6.33% H by mass with a molar mass of about 240 g/mol. Determine the molecular formula of the dye.",
+   "prompt": "一家大型纺织染料制造商研制出一种新的黄色染料。该染料按质量计的百分组成为 75.95% C、17.72% N 和 6.33% H，摩尔质量约为 240 g/mol。确定该染料的分子式。",
    "answer": { "type": "open", "generated_by": "source", "solution": "C<sub>15</sub>H<sub>15</sub>N<sub>3</sub>" }
   }
  ],
@@ -241,28 +255,28 @@
  "referents": [
   {
    "id": "hematite",
-   "label": "the hematite sample",
+   "label": "赤铁矿样品",
    "figures": [
     "sim-empirical"
    ]
   },
   {
    "id": "ch-sample",
-   "label": "the sample of carbon and hydrogen",
+   "label": "碳和氢的样品",
    "figures": [
     "sim-empirical"
    ]
   },
   {
    "id": "clo-sample",
-   "label": "the sample of chlorine and oxygen",
+   "label": "氯和氧的样品",
    "figures": [
     "sim-empirical"
    ]
   },
   {
    "id": "gas",
-   "label": "the fermentation gas",
+   "label": "发酵产生的气体",
    "figures": [
     "sim-empirical"
    ]
@@ -272,7 +286,7 @@
   {
    "id": "c-h-ratio",
    "kind": "correction",
-   "html": "The book divides 8.624 mol H here. The line above gives 8.641 mol H, and 8.641/1.233 = 7.008; the ratio is still close to 7."
+   "html": "书中这里除的是 8.624 mol H。上一行给出的是 8.641 mol H，而 8.641/1.233 = 7.008；该比值仍然接近 7。"
   }
  ]
 }

@@ -79,7 +79,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-carbon');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 460, dist: 8.4, views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '侧面', yaw: Math.PI / 2, pitch: 0 }] });
+  const v = F.view3d(d.stage, { ...VIEW3, h: 460, dist: 8.4, views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '侧视', yaw: Math.PI / 2, pitch: 0 }] });
   const grp = v.part(0); if (grp) grp.position.y = -0.3;
   const A = 0.3, NC = 8, NR = 6, PER = R3 * A, Wd = NC * PER, RT = Wd / TAU, GAP = 0.71, RA = 0.08, RB = 0.03;
   const flat = [];
@@ -229,10 +229,10 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
   still(d, () => {
     const { ctx } = begin(d.c); hits.length = 0;
     const P = (p) => view.P(p);
-    ring.forEach((p) => { const base = P(p), top = P([p[0], -LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(1)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: '未杂化的 p 轨道，位于平面下方的一个相的瓣' }); });
+    ring.forEach((p) => { const base = P(p), top = P([p[0], -LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(1)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: '未杂化的 p 轨道，位于平面下方、一种相位的波瓣' }); });
     rBonds.forEach(([i, j]) => { const a = P(ring[i]), c = P(ring[j]); line(ctx, a[0], a[1], c[0], c[1], PAL.ink, 3); });
     ring.forEach((p) => { const q = P(p); F.dot(ctx, q[0], q[1], PAL.ink, true, 5); hits.push({ x: q[0], y: q[1], r: 9, name: '碳原子，sp² 杂化，在平面内通过 σ 键与邻居成键' }); });
-    order.forEach((i) => { const p = ring[i], base = P(p), top = P([p[0], LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(0)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: '未杂化的 p 轨道，位于平面上方的另一个相的瓣' }); });
+    order.forEach((i) => { const p = ring[i], base = P(p), top = P([p[0], LOBE, p[2]]); lobe(ctx, base, top, 30, F.cat(0)); hits.push({ x: (base[0] + top[0]) / 2, y: (base[1] + top[1]) / 2, r: 20, name: '未杂化的 p 轨道，位于平面上方、另一种相位的波瓣' }); });
     form(ctx, 790, 214, 0);
     form(ctx, 1236, 214, 1);
     arrow(ctx, 980, 214, 1046, 214, PAL.ink, 3); arrow(ctx, 1046, 214, 980, 214, PAL.ink, 3);
@@ -252,7 +252,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-phosphorus');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 7.2, views: [{ label: '正面', yaw: 0, pitch: 0.15 }, { label: '上方', yaw: 0, pitch: 1.2 }] });
+  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 7.2, views: [{ label: '正视', yaw: 0, pitch: 0.15 }, { label: '俯视', yaw: 0, pitch: 1.2 }] });
   const grp = v.part(0);
   const E = 0.6, H = E * Math.sqrt(2 / 3), OPEN = 1.35, SP = OPEN * E + E, N = 4;
   /* a tetrahedron, base in the xz plane, a and b at the front, apex d up; s spreads a and b to OPEN × E */
@@ -316,7 +316,7 @@ const VIEW3 = { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3 };
 ===================================================================== */
 (function () {
   const d = sim('sim-sulfur');
-  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 6.2, views: [{ label: '正面', yaw: 0, pitch: 0.1 }, { label: '上方', yaw: 0, pitch: 1.2 }] });
+  const v = F.view3d(d.stage, { ...VIEW3, h: 420, dist: 6.2, views: [{ label: '正视', yaw: 0, pitch: 0.1 }, { label: '俯视', yaw: 0, pitch: 1.2 }] });
   const grp = v.part(0), c2 = F.makeCanvas(d.stage, 210); if (grp) grp.position.y = -0.2;
   const Tsl = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 113, max: 260, step: 1, value: 113, unit: '°C', dec: 0, aria: '液态硫的温度，单位为摄氏度', specials: [{ at: 230, label: '不易倒出' }] });
   const BD = 0.42, NA = 32;

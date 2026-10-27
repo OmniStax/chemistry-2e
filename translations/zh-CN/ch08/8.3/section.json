@@ -2,15 +2,15 @@
  "id": "8.3",
  "module": "m68746",
  "chapter": "8",
- "title": "Multiple Bonds",
- "short": "Multiple Bonds",
- "lead": "A double or a triple bond joins the same two atoms by more than one bond. Valence bond theory describes each of those bonds with the hybrid orbitals of the two atoms and the <em>p</em> orbitals left over after hybridization, and follows what that means for turning about a double bond and for molecules with resonance.",
+ "title": "多重键",
+ "short": "多重键",
+ "lead": "双键或三键用不止一个键把同样的两个原子连在一起。价键理论用两个原子的杂化轨道和杂化后剩下的 <em>p</em> 轨道来描述其中的每一个键，并进一步说明这对绕双键的转动以及对具有共振的分子意味着什么。",
  "objectives": [
-  "Describe multiple covalent bonding in terms of atomic orbital overlap",
-  "Relate the concept of resonance to π-bonding and electron delocalization"
+  "用原子轨道重叠描述多重共价键",
+  "把共振的概念与 π 成键和电子离域联系起来"
  ],
- "summary_html": "<p>Multiple bonds consist of a σ bond located along the axis between two atoms and one or two π bonds. The σ bonds are usually formed by the overlap of hybridized atomic orbitals, while the π bonds are formed by the side-by-side overlap of unhybridized orbitals. Resonance occurs when there are multiple unhybridized orbitals with the appropriate alignment to overlap, so the placement of π bonds can vary.</p>",
- "notes": "The section has no Link to Learning note and no glossary entry, and nothing of the book’s is left out.",
+ "summary_html": "<p>多重键由一个位于两个原子之间轴线上的 σ 键和一个或两个 π 键组成。σ 键通常由杂化原子轨道的重叠形成，而 π 键则由未杂化轨道的肩并肩重叠形成。当存在多个取向合适、可以重叠的未杂化轨道时，就会出现共振，因此 π 键的位置可以变化。</p>",
+ "notes": "本节没有“学习链接”注释，也没有术语表条目，书中的内容也没有省略。",
  "ai": {
   "text": [
    {
@@ -20,18 +20,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answer. The unkeyed conceptual items fs-idp200563984, fs-idm1022320, fs-idm16504096 and fs-idp140570640 are kept with a suggested approach marked as OmniStax’s own; the section has no unkeyed numerical item.",
+ "exercise_notes": "布鲁姆层级、概念标签和权重由 AI 生成。答案取自书后答案以及“学习检测”的答案。没有答案的概念性习题 fs-idp200563984、fs-idm1022320、fs-idm16504096 和 fs-idp140570640 附有一个标明为 OmniStax 自拟的建议思路；本节没有无答案的数值型习题。",
  "figures": [
   {
    "id": "fig-lewis-ethene",
@@ -45,6 +53,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -55,7 +68,7 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_03_sp3config.jpg"
    ],
-   "original_caption": "In ethene, each carbon atom is sp² hybridized, and the sp² orbitals and the p orbital are singly occupied. The hybrid orbitals overlap to form σ bonds, while the p orbitals on each carbon atom overlap to form a π bond.",
+   "original_caption": "在乙烯中，每个碳原子都是 sp² 杂化，sp² 轨道和 p 轨道各被一个电子占据。杂化轨道重叠形成 σ 键，而每个碳原子上的 p 轨道重叠形成 π 键。",
    "draws": [
     "energy"
    ],
@@ -69,6 +82,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "electrons stand on their lines, notes repeating caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -85,8 +103,10 @@
     "/media/ch08/CNX_Chem_08_03_spC.jpg",
     "/media/ch08/CNX_Chem_08_03_C2H2.jpg"
    ],
-   "original_caption": "(Figure 8.23) In the ethene molecule, C₂H₄, there are (a) five σ bonds. One C–C σ bond results from overlap of sp² hybrid orbitals on the carbon atom with one sp² hybrid orbital on the other carbon atom. Four C–H bonds result from the overlap between the C atoms' sp² orbitals with s orbitals on the hydrogen atoms. (b) The π bond is formed by the side-by-side overlap of the two unhybridized p orbitals in the two carbon atoms. The two lobes of the π bond are above and below the plane of the σ system. (Figure 8.24) Diagram of the two linear sp hybrid orbitals of a carbon atom, which lie in a straight line, and the two unhybridized p orbitals at perpendicular angles. (Figure 8.25) (a) In the acetylene molecule, C₂H₂, there are two C–H σ bonds and a C≡C triple bond involving one C–C σ bond and two C–C π bonds. The dashed lines, each connecting two lobes, indicate the side-by-side overlap of the four unhybridized p orbitals. (b) This shows the overall outline of the bonds in C₂H₂. The two lobes of each of the π bonds are positioned across from each other around the line of the C–C σ bond.",
-   "draws": ["angle"],
+   "original_caption": "（图 8.23）乙烯分子 C₂H₄ 中有（a）五个 σ 键。其中一个 C–C σ 键由一个碳原子上的 sp² 杂化轨道与另一个碳原子上的一个 sp² 杂化轨道重叠形成。四个 C–H 键由碳原子的 sp² 轨道与氢原子的 s 轨道重叠形成。（b）π 键由两个碳原子上两个未杂化的 p 轨道肩并肩重叠形成。π 键的两瓣位于 σ 体系所在平面的上方和下方。（图 8.24）碳原子的两个直线排列的 sp 杂化轨道，以及与之垂直的两个未杂化 p 轨道的示意图。（图 8.25）（a）乙炔分子 C₂H₂ 中有两个 C–H σ 键和一个 C≡C 三键，该三键包含一个 C–C σ 键和两个 C–C π 键。每条连接两瓣的虚线表示四个未杂化 p 轨道的肩并肩重叠。（b）这是 C₂H₂ 中各键的整体轮廓。每个 π 键的两瓣分别位于 C–C σ 键所在直线的两侧，彼此相对。",
+   "draws": [
+    "angle"
+   ],
    "conventions": [
     "C",
     "H"
@@ -101,6 +121,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "second π label off the C label, repeated notes dropped, caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -111,13 +136,18 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_03_C6H6.jpg"
    ],
-   "original_caption": "Each carbon atom in benzene, C₆H₆, is sp² hybridized, independently of which resonance form is considered. The electrons in the π bonds are not located in one set of p orbitals or the other, but rather delocalized throughout the molecule.",
+   "original_caption": "苯 C₆H₆ 中每个碳原子都是 sp² 杂化，与考虑哪一种共振式无关。π 键中的电子并不位于这一组 p 轨道或那一组 p 轨道中，而是离域分布于整个分子。",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -138,6 +168,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "resonance forms in the book's order, lone pairs as the book"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -215,7 +250,7 @@
     "after": "ex-so2"
    },
    "cite": "resonance-hybridization",
-   "prompt": "Another acid in acid rain is nitric acid, HNO<sub>3</sub>, which is produced by the reaction of nitrogen dioxide, NO<sub>2</sub>, with atmospheric water vapor. What is the hybridization of the nitrogen atom in NO<sub>2</sub>? (Note: the lone electron on nitrogen occupies a hybridized orbital just as a lone pair would.)",
+   "prompt": "酸雨中的另一种酸是硝酸 HNO<sub>3</sub>，它由二氧化氮 NO<sub>2</sub> 与大气中的水蒸气反应生成。NO<sub>2</sub> 中氮原子的杂化类型是什么？（注意：氮上的单电子占据一个杂化轨道，就像孤电子对一样。）",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -231,11 +266,11 @@
     "at": "end"
    },
    "cite": "triple-bonds",
-   "prompt": "The bond energy of a C–C single bond averages 347 kJ mol<sup>−1</sup>; that of a $\\text{C}\\equiv \\text{C}$ triple bond averages 839 kJ mol<sup>−1</sup>. Explain why the triple bond is not three times as strong as a single bond.",
+   "prompt": "C–C 单键的键能平均为 347 kJ mol<sup>−1</sup>；$\\text{C}\\equiv \\text{C}$ 三键的键能平均为 839 kJ mol<sup>−1</sup>。请解释为什么三键的强度不是单键的三倍。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "A triple bond consists of one σ bond and two π bonds. A σ bond is stronger than a π bond due to greater overlap."
+    "solution": "三键由一个 σ 键和两个 π 键组成。由于重叠更大，σ 键比 π 键更强。"
    }
   },
   {
@@ -247,11 +282,11 @@
     "at": "end"
    },
    "cite": "resonance-hybridization",
-   "prompt": "For the carbonate ion, ${\\text{CO}}_{3}{}^{2−},$ draw all of the resonance structures. Identify which orbitals overlap to create each bond.",
+   "prompt": "对于碳酸根离子 ${\\text{CO}}_{3}{}^{2−}$，请画出所有的共振结构。指出每个键由哪些轨道重叠形成。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The carbonate ion has three resonance structures, and in each the carbon is <em>sp</em><sup>2</sup> hybridized with three σ bonds and one π bond. Its 24 valence electrons give a carbon atom bonded to three oxygen atoms, one by a double bond and two by single bonds; the double-bonded oxygen carries two lone pairs and each single-bonded oxygen carries three lone pairs and a 1− formal charge. The double bond can be drawn to any of the three oxygen atoms, which gives three equivalent resonance structures. Resonance does not change the hybridization, so any one structure shows carbon with three regions of electron density and no lone pairs: <em>sp</em><sup>2</sup>, trigonal planar. Each C–O σ bond is the end-to-end overlap of a carbon <em>sp</em><sup>2</sup> hybrid orbital with a 2<em>p</em> orbital on oxygen. The π bond is the side-by-side overlap of the unhybridized 2<em>p</em> orbital on carbon with a parallel 2<em>p</em> orbital on an oxygen atom. Because that π bond can form with any of the three oxygen atoms, its electrons are delocalized over all four atoms, as the π electrons of benzene are delocalized over the ring."
+    "solution": "碳酸根离子有三种共振结构，每种结构中的碳都是 <em>sp</em><sup>2</sup> 杂化，有三个 σ 键和一个 π 键。其 24 个价电子形成这样的结构：一个碳原子与三个氧原子成键，其中一个氧以双键相连，两个氧以单键相连；以双键相连的氧带两对孤电子对，每个以单键相连的氧带三对孤电子对和 1− 形式电荷。双键可以画在三个氧原子中的任何一个上，由此得到三种等价的共振结构。共振不改变杂化类型，所以任取一种结构，碳都有三个电子密度区域且没有孤电子对：<em>sp</em><sup>2</sup>，平面三角形。每个 C–O σ 键是碳的一个 <em>sp</em><sup>2</sup> 杂化轨道与氧上的一个 2<em>p</em> 轨道头碰头重叠形成的。π 键是碳上未杂化的 2<em>p</em> 轨道与某个氧原子上平行的 2<em>p</em> 轨道肩并肩重叠形成的。由于该 π 键可以与三个氧原子中的任何一个形成，它的电子离域在全部四个原子上，正如苯的 π 电子离域在整个环上。"
    }
   },
   {
@@ -263,11 +298,11 @@
     "at": "end"
    },
    "cite": "triple-bonds",
-   "prompt": "A useful solvent that will dissolve salts as well as organic compounds is the compound acetonitrile, H<sub>3</sub>CCN. It is present in paint strippers.<br>(a) Write the Lewis structure for acetonitrile, and indicate the direction of the dipole moment in the molecule.<br>(b) Identify the hybrid orbitals used by the carbon atoms in the molecule to form σ bonds.<br>(c) Describe the atomic orbitals that form the π bonds in the molecule. Note that it is not necessary to hybridize the nitrogen atom.",
+   "prompt": "乙腈 H<sub>3</sub>CCN 是一种既能溶解盐类又能溶解有机化合物的有用溶剂。它存在于脱漆剂中。<br>（a）写出乙腈的路易斯结构式，并指出分子中偶极矩的方向。<br>（b）指出分子中碳原子形成 σ 键所用的杂化轨道。<br>（c）描述形成分子中 π 键的原子轨道。注意，氮原子不必杂化。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) <img src=\"/media/ch08/CNX_Chem_08_03_Acetonitri_img.jpg\" alt=\"A Lewis structure is shown in which a carbon atom is attached by single bonds to three hydrogen atoms. It is also attached by a single bond to a carbon atom that is triple bonded to a nitrogen atom with one lone electron pair. Below the structure is a right facing arrow with its head near the nitrogen and its tail, which looks like a plus sign, located near the carbon atoms. The arrow is labeled, “dipole moment.”\"> (b) The terminal carbon atom uses <em>sp</em><sup>3</sup> hybrid orbitals, while the central carbon atom is <em>sp</em> hybridized. (c) Each of the two π bonds is formed by overlap of a 2<em>p</em> orbital on carbon and a nitrogen 2<em>p</em> orbital."
+    "solution": "（a） <img src=\"/media/ch08/CNX_Chem_08_03_Acetonitri_img.jpg\" alt=\"图中是一个路易斯结构式：一个碳原子以单键与三个氢原子相连，还以单键与另一个碳原子相连，后者与一个带一对孤电子对的氮原子以三键相连。结构下方有一个朝右的箭头，箭头的头部靠近氮，尾部像一个加号，位于碳原子附近。箭头标注为“偶极矩”。\"> （b）端位碳原子使用 <em>sp</em><sup>3</sup> 杂化轨道，而中心碳原子是 <em>sp</em> 杂化。（c）两个 π 键各由碳上的一个 2<em>p</em> 轨道与氮上的一个 2<em>p</em> 轨道重叠形成。"
    }
   },
   {
@@ -279,11 +314,11 @@
     "at": "end"
    },
    "cite": "restricted-rotation",
-   "prompt": "For the molecule allene, ${\\text{H}}_{2}\\text{C}=\\text{C}={\\text{CH}}_{2},$ give the hybridization of each carbon atom. Will the hydrogen atoms be in the same plane or perpendicular planes?",
+   "prompt": "对于丙二烯分子 ${\\text{H}}_{2}\\text{C}=\\text{C}={\\text{CH}}_{2}$，请给出每个碳原子的杂化类型。氢原子在同一平面内，还是在互相垂直的平面内？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The two end carbons are <em>sp</em><sup>2</sup> hybridized and the middle carbon is <em>sp</em> hybridized, and the two CH<sub>2</sub> groups lie in perpendicular planes. Each end carbon has three regions of electron density (two C–H bonds and one C=C bond), like the carbons of ethene, so it is <em>sp</em><sup>2</sup> and keeps one unhybridized <em>p</em> orbital perpendicular to its H–C–H plane. The middle carbon has two regions (two C=C bonds), like the carbons of acetylene, so it is <em>sp</em> and keeps two unhybridized <em>p</em> orbitals that are perpendicular to each other. Each end carbon forms its π bond with a different one of those two orbitals, so the <em>p</em> orbitals of the two end carbons are perpendicular to each other, and so are the planes of their hydrogen atoms."
+    "solution": "两个端位碳是 <em>sp</em><sup>2</sup> 杂化，中间的碳是 <em>sp</em> 杂化，两个 CH<sub>2</sub> 基团位于互相垂直的平面内。每个端位碳有三个电子密度区域（两个 C–H 键和一个 C=C 键），与乙烯的碳相似，所以是 <em>sp</em><sup>2</sup>，并保留一个垂直于其 H–C–H 平面的未杂化 <em>p</em> 轨道。中间的碳有两个区域（两个 C=C 键），与乙炔的碳相似，所以是 <em>sp</em>，并保留两个互相垂直的未杂化 <em>p</em> 轨道。两个端位碳各用这两个轨道中不同的一个形成 π 键，因此两个端位碳的 <em>p</em> 轨道互相垂直，它们各自氢原子所在的平面也互相垂直。"
    }
   },
   {
@@ -295,11 +330,11 @@
     "at": "end"
    },
    "cite": "resonance-hybridization",
-   "prompt": "Identify the hybridization of the central atom in each of the following molecules and ions that contain multiple bonds:<br>(a) ClNO (N is the central atom)<br>(b) CS<sub>2</sub><br>(c) Cl<sub>2</sub>CO (C is the central atom)<br>(d) Cl<sub>2</sub>SO (S is the central atom)<br>(e) SO<sub>2</sub>F<sub>2</sub> (S is the central atom)<br>(f) XeO<sub>2</sub>F<sub>2</sub> (Xe is the central atom)<br>(g) ${\\text{ClOF}}_{2}{}^{\\text{+}}$ (Cl is the central atom)",
+   "prompt": "确定下列含有多重键的分子和离子中中心原子的杂化类型：<br>（a）ClNO（N 为中心原子）<br>（b）CS<sub>2</sub><br>（c）Cl<sub>2</sub>CO（C 为中心原子）<br>（d）Cl<sub>2</sub>SO（S 为中心原子）<br>（e）SO<sub>2</sub>F<sub>2</sub>（S 为中心原子）<br>（f）XeO<sub>2</sub>F<sub>2</sub>（Xe 为中心原子）<br>（g）${\\text{ClOF}}_{2}{}^{\\text{+}}$（Cl 为中心原子）",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) <em>sp</em><sup>2</sup>; (b) <em>sp</em>; (c) <em>sp</em><sup>2</sup>; (d) <em>sp</em><sup>3</sup>; (e) <em>sp</em><sup>3</sup>; (f) <em>sp</em><sup>3</sup><em>d</em>; (g) <em>sp</em><sup>3</sup>"
+    "solution": "（a）<em>sp</em><sup>2</sup>；（b）<em>sp</em>；（c）<em>sp</em><sup>2</sup>；（d）<em>sp</em><sup>3</sup>；（e）<em>sp</em><sup>3</sup>；（f）<em>sp</em><sup>3</sup><em>d</em>；（g）<em>sp</em><sup>3</sup>"
    }
   },
   {
@@ -311,11 +346,11 @@
     "at": "end"
    },
    "cite": "resonance-hybridization",
-   "prompt": "Describe the molecular geometry and hybridization of the N, P, or S atoms in each of the following compounds.<br>(a) H<sub>3</sub>PO<sub>4</sub>, phosphoric acid, used in cola soft drinks<br>(b) NH<sub>4</sub>NO<sub>3</sub>, ammonium nitrate, a fertilizer and explosive<br>(c) S<sub>2</sub>Cl<sub>2</sub>, disulfur dichloride, used in vulcanizing rubber<br>(d) K<sub>4</sub>[O<sub>3</sub>POPO<sub>3</sub>], potassium pyrophosphate, an ingredient in some toothpastes",
+   "prompt": "描述下列各化合物中 N、P 或 S 原子的分子几何构型和杂化类型。<br>（a）H<sub>3</sub>PO<sub>4</sub>，磷酸，用于可乐型软饮料<br>（b）NH<sub>4</sub>NO<sub>3</sub>，硝酸铵，一种肥料和炸药<br>（c）S<sub>2</sub>Cl<sub>2</sub>，二氯化二硫，用于橡胶硫化<br>（d）K<sub>4</sub>[O<sub>3</sub>POPO<sub>3</sub>]，焦磷酸钾，某些牙膏中的一种成分",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) The phosphorus atom of H<sub>3</sub>PO<sub>4</sub> is tetrahedral and <em>sp</em><sup>3</sup>. It is bonded to four oxygen atoms (one terminal oxygen and three OH groups) and has no lone pairs, four regions of electron density.<br>(b) The nitrogen of ${\\text{NH}}_{4}{}^{\\text{+}}$ is tetrahedral and <em>sp</em><sup>3</sup>, with four N–H bonds and no lone pairs. The nitrogen of ${\\text{NO}}_{3}{}^{\\text{−}}$ is trigonal planar and <em>sp</em><sup>2</sup>: in any of its three resonance forms it has one double bond and two single bonds to oxygen and no lone pairs, three regions.<br>(c) Each sulfur atom of S<sub>2</sub>Cl<sub>2</sub> (26 valence electrons, Cl–S–S–Cl) has single bonds to chlorine and to the other sulfur and two lone pairs, four regions. Each sulfur is <em>sp</em><sup>3</sup>, and its molecular geometry is bent.<br>(d) In the pyrophosphate ion, O<sub>3</sub>P–O–PO<sub>3</sub><sup>4−</sup>, each phosphorus is bonded to four oxygen atoms (three terminal and the bridging oxygen) and has no lone pairs, four regions. Each phosphorus is tetrahedral and <em>sp</em><sup>3</sup>."
+    "solution": "（a）H<sub>3</sub>PO<sub>4</sub> 中的磷原子为四面体形，<em>sp</em><sup>3</sup> 杂化。它与四个氧原子（一个端位氧和三个 OH 基团）成键，没有孤电子对，共有四个电子密度区域。<br>（b）${\\text{NH}}_{4}{}^{\\text{+}}$ 中的氮为四面体形，<em>sp</em><sup>3</sup> 杂化，有四个 N–H 键，没有孤电子对。${\\text{NO}}_{3}{}^{\\text{−}}$ 中的氮为平面三角形，<em>sp</em><sup>2</sup> 杂化：在它的三种共振式中的任何一种里，氮都与氧形成一个双键和两个单键，没有孤电子对，共三个区域。<br>（c）S<sub>2</sub>Cl<sub>2</sub>（26 个价电子，Cl–S–S–Cl）中每个硫原子与氯和另一个硫形成单键，并有两对孤电子对，共四个区域。每个硫都是 <em>sp</em><sup>3</sup> 杂化，其分子几何构型为 V 形。<br>（d）在焦磷酸根离子 O<sub>3</sub>P–O–PO<sub>3</sub><sup>4−</sup> 中，每个磷与四个氧原子（三个端位氧和桥氧）成键，没有孤电子对，共四个区域。每个磷都是四面体形，<em>sp</em><sup>3</sup> 杂化。"
    }
   },
   {
@@ -327,11 +362,11 @@
     "at": "end"
    },
    "cite": "resonance-hybridization",
-   "prompt": "For each of the following molecules, indicate the hybridization requested and whether or not the electrons will be delocalized:<br>(a) ozone (O<sub>3</sub>) central O hybridization<br>(b) carbon dioxide (CO<sub>2</sub>) central C hybridization<br>(c) nitrogen dioxide (NO<sub>2</sub>) central N hybridization<br>(d) phosphate ion $({\\text{PO}}_{4}{}^{3−})$ central P hybridization",
+   "prompt": "对下列每种分子，指出所要求的杂化类型，以及电子是否离域：<br>（a）臭氧（O<sub>3</sub>）中心 O 的杂化<br>（b）二氧化碳（CO<sub>2</sub>）中心 C 的杂化<br>（c）二氧化氮（NO<sub>2</sub>）中心 N 的杂化<br>（d）磷酸根离子 $({\\text{PO}}_{4}{}^{3−})$ 中心 P 的杂化",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) <em>sp</em><sup>2</sup>, delocalized; (b) <em>sp</em>, localized; (c) <em>sp</em><sup>2</sup>, delocalized; (d) <em>sp</em><sup>3</sup>, delocalized"
+    "solution": "（a）<em>sp</em><sup>2</sup>，离域的；（b）<em>sp</em>，定域的；（c）<em>sp</em><sup>2</sup>，离域的；（d）<em>sp</em><sup>3</sup>，离域的"
    }
   },
   {
@@ -343,11 +378,11 @@
     "at": "end"
    },
    "cite": "resonance-hybridization",
-   "prompt": "For each of the following structures, determine the hybridization requested and whether the electrons will be delocalized:<br>(a) Hybridization of each carbon<br><img src=\"/media/ch08/CNX_Chem_08_03_HybridCarb_img.jpg\" alt=\"A Lewis structure is shown in which a carbon atom is single bonded to three hydrogen atoms and a second carbon atom. This second carbon atom is, in turn, double bonded to an oxygen atom with two lone pairs of electrons. The second carbon atom is also single bonded to another carbon atom that is single bonded to three hydrogen atoms.\"><br>(b) Hybridization of sulfur<br><img src=\"/media/ch08/CNX_Chem_08_03_HybridSulf_img.jpg\" alt=\"A Lewis structure is shown in which a sulfur atom with two lone pairs of electrons and a positive sign is double bonded to an oxygen with two lone pairs of electrons. The sulfur atom is also single bonded to an oxygen with three lone pairs of electrons with a negative sign. It is drawn in an angular shape.\"><br>(c) All atoms<br><img src=\"/media/ch08/CNX_Chem_08_03_HybridAll_img.jpg\" alt=\"A Lewis structure is shown in which a hexagonal ring structure is made up of five carbon atoms and one nitrogen atom with a lone pair of electrons. There are alternating double and single bonds in between each carbon atom. Each carbon atom is also single bonded to one hydrogen atom.\">",
+   "prompt": "对下列每个结构，确定所要求的杂化类型，以及电子是否离域：<br>（a）每个碳的杂化类型<br><img src=\"/media/ch08/CNX_Chem_08_03_HybridCarb_img.jpg\" alt=\"图中是一个路易斯结构式：一个碳原子以单键与三个氢原子和第二个碳原子相连。这第二个碳原子又与一个带两对孤电子对的氧原子以双键相连。第二个碳原子还以单键与另一个碳原子相连，该碳原子以单键与三个氢原子相连。\"><br>（b）硫的杂化类型<br><img src=\"/media/ch08/CNX_Chem_08_03_HybridSulf_img.jpg\" alt=\"图中是一个路易斯结构式：一个带两对孤电子对和正号的硫原子与一个带两对孤电子对的氧原子以双键相连。硫原子还以单键与一个带三对孤电子对和负号的氧原子相连。结构画成折角形。\"><br>（c）所有原子<br><img src=\"/media/ch08/CNX_Chem_08_03_HybridAll_img.jpg\" alt=\"图中是一个路易斯结构式：一个六边形环由五个碳原子和一个带一对孤电子对的氮原子组成。各碳原子之间的键为双键与单键交替。每个碳原子还以单键与一个氢原子相连。\">",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) The two CH<sub>3</sub> carbons are <em>sp</em><sup>3</sup> (four single bonds) and the central carbon is <em>sp</em><sup>2</sup> (a double bond to oxygen and two single bonds, three regions). The π electrons are not delocalized: no other resonance form moves the C=O double bond, so they stay between carbon and oxygen.<br>(b) Sulfur is <em>sp</em><sup>2</sup>. It has a double bond to one oxygen, a single bond to the other and one lone pair, three regions of electron density, as in Example 8.4. The electrons are delocalized: a second resonance form places the double bond on the other oxygen, so the π electrons spread over both S–O bonds.<br>(c) All five carbon atoms and the nitrogen atom are <em>sp</em><sup>2</sup>, and the hydrogen atoms bond with their unhybridized 1<em>s</em> orbitals. Each carbon has two ring bonds and one C–H bond, three regions; nitrogen has two ring bonds and a lone pair, three regions, and its lone pair sits in an <em>sp</em><sup>2</sup> orbital in the plane of the ring. The π electrons are delocalized: as in benzene, a second resonance form shifts every double bond one position around the ring, so the six π electrons in the unhybridized <em>p</em> orbitals spread over the whole ring."
+    "solution": "（a）两个 CH<sub>3</sub> 碳为 <em>sp</em><sup>3</sup>（四个单键），中心碳为 <em>sp</em><sup>2</sup>（与氧形成一个双键，另有两个单键，共三个区域）。π 电子不是离域的：没有别的共振式会移动 C=O 双键，所以它们仍在碳和氧之间。<br>（b）硫为 <em>sp</em><sup>2</sup>。它与一个氧形成双键，与另一个氧形成单键，并有一对孤电子对，共三个电子密度区域，如例 8.4 所示。电子是离域的：第二种共振式把双键放在另一个氧上，所以 π 电子分布在两个 S–O 键上。<br>（c）五个碳原子和氮原子都是 <em>sp</em><sup>2</sup>，氢原子则以未杂化的 1<em>s</em> 轨道成键。每个碳有两个环上的键和一个 C–H 键，共三个区域；氮有两个环上的键和一对孤电子对，共三个区域，其孤电子对位于环平面内的一个 <em>sp</em><sup>2</sup> 轨道中。π 电子是离域的：与苯一样，第二种共振式使每个双键沿环移动一个位置，所以未杂化 <em>p</em> 轨道中的六个 π 电子分布在整个环上。"
    }
   },
   {
@@ -359,11 +394,11 @@
     "at": "end"
    },
    "cite": "hybrids-and-p",
-   "prompt": "Draw the orbital diagram for carbon in CO<sub>2</sub> showing how many carbon atom electrons are in each orbital.",
+   "prompt": "画出 CO<sub>2</sub> 中碳的轨道表示式，标明碳原子的电子在每个轨道中各有多少个。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "<img src=\"/media/ch08/CNX_Chem_08_02_CO2Diag.jpg\" alt=\"A diagram is shown in two parts, connected by a right facing arrow labeled, “Hybridization.” The left diagram shows an up-facing arrow labeled, “E.” To the lower right of the arrow is a short, horizontal line labeled, “2 s,” that has two vertical half-arrows facing up and down on it. To the upper right of the arrow are a series of three short, horizontal lines labeled, “2 p.” Above both sets of lines is the phrase, “Orbitals in an isolated C atom.” There are two upward facing arrows on two of these lines. The right side of the diagram shows two short, horizontal lines placed halfway up the space and each labeled, “s p.” An upward-facing half arrow is drawn vertically on each line. Above these lines are two other short, horizontal lines, each labeled, “2 p,” and which have two upward facing arrows on them. Above both sets of lines is the phrase, “Orbitals in the s p hybridized C in C O subscript 2.”\"> Each of the four electrons is in a separate orbital and overlaps with an electron on an oxygen atom."
+    "solution": "<img src=\"/media/ch08/CNX_Chem_08_02_CO2Diag.jpg\" alt=\"图分为两部分，由一个标有“杂化”的向右箭头连接。左侧图中有一个朝上的箭头，标为“E”。箭头右下方有一条短水平线，标为“2s”，线上有两个半箭头，一个朝上、一个朝下。箭头右上方有一组三条短水平线，标为“2p”。两组线的上方是“孤立 C 原子中的轨道”字样。这些线中有两条上各有一个朝上的箭头。图的右侧在中间高度处有两条短水平线，各标为“sp”。每条线上竖直画着一个朝上的半箭头。这些线的上方还有另外两条短水平线，各标为“2p”，每条线上有两个朝上的箭头。两组线的上方是“CO₂ 中 sp 杂化 C 原子的轨道”字样。\"> 四个电子各自位于一个单独的轨道中，并与氧原子上的一个电子重叠。"
    }
   }
  ],

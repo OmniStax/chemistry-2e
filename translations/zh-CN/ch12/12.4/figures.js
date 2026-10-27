@@ -181,7 +181,7 @@ function sci(x) {
     let ro;
     if (order.value === 'first') ro = `\\kconcAt = \\kconcAz e^{-\\kk\\kt} = (${A0})\\,e^{-(${K(sci(O.k) + '\\ \\text{s}^{-1}')})(${T})} = ${hue('concentration', conc(cn) + '\\ M')}`;
     else if (order.value === 'second') ro = `\\frac{1}{\\kconcAt} = \\kk\\kt + \\frac{1}{\\kconcAz} = (${K(sci(O.k) + '\\ M^{-1}\\,\\text{s}^{-1}')})(${T}) + \\frac{1}{${A0}} = ${sci(1 / cn)}\\ M^{-1}`;
-    else ro = cn > 0 ? `\\kconcAt = -\\kk\\kt + \\kconcAz = -(${K(sci(O.k) + '\\ M\\,\\text{s}^{-1}')})(${T}) + ${A0} = ${hue('concentration', conc(cn) + '\\ M')}` : `\\kconcAt = ${hue('concentration', '0\\ M')}\\text{，A 在 } \\kt = ${hue('time', sci(2 * TS) + '\\ \\text{s}')}\\text{ 时全部用完}`;
+    else ro = cn > 0 ? `\\kconcAt = -\\kk\\kt + \\kconcAz = -(${K(sci(O.k) + '\\ M\\,\\text{s}^{-1}')})(${T}) + ${A0} = ${hue('concentration', conc(cn) + '\\ M')}` : `\\kconcAt = ${hue('concentration', '0\\ M')}\\text{, A 在 } \\kt = ${hue('time', sci(2 * TS) + '\\ \\text{s}')}\\text{ 时全部用完}`;
     tex(d.readout, ro, false, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 4), draw });

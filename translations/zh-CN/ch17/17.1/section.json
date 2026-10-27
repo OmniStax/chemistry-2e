@@ -6,7 +6,7 @@
  "short": "氧化还原化学回顾",
  "lead": "电化学建立在电子从一种物质转移到另一种物质的反应之上。本节回顾<span data-concept=\"oxidation-number\">氧化数</span>如何记录这些电子（共价化合物与离子化合物都是如此），以及<span data-concept=\"half-reaction-method\">半反应法</span>如何配平酸性或碱性溶液中<span data-concept=\"redox-reaction\">氧化还原反应</span>的方程式。",
  "objectives": [
-  "描述氧化还原化学的决定性特征",
+  "描述氧化还原化学的基本特征",
   "确定氧化还原反应的氧化剂和还原剂",
   "用半反应法配平氧化还原反应的化学方程式"
  ],
@@ -159,7 +159,7 @@
     "after": "ex-basic"
    },
    "cite": "ex-basic",
-   "prompt": "水溶液中的高锰酸根离子也可以被溴离子 Br<sup>−</sup> 的水溶液还原，该反应的产物为固体氧化锰(IV)和溴酸根离子 BrO<sub>3</sub><sup>−</sup> 的水溶液。写出这一反应在碱性介质中进行时的配平的化学方程式。",
+   "prompt": "水溶液中的高锰酸根离子也可以被溴离子 Br<sup>−</sup> 的水溶液还原，该反应的产物为固体氧化锰(IV)和水溶液中的溴酸根离子 BrO<sub>3</sub><sup>−</sup>。写出这一反应在碱性介质中进行时的配平的化学方程式。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -265,7 +265,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "在酸性溶液中，氢离子的浓度远大于氢氧根离子的浓度，二者通过水的离子积联系在一起，25 °C 时 [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>] = 1.0 × 10<sup>−14</sup>；例如 pH 为 1 时，[OH<sup>−</sup>] 只有 1 × 10<sup>−13</sup> <em>M</em>。半反应所产生的任何氢氧根离子都会立刻被过量的氢离子中和，H<sup>+</sup> + OH<sup>−</sup> ⟶ H<sub>2</sub>O，因此 OH<sup>−</sup> 并不是大量实际存在的物种，不能写成反应物或产物。所以，酸性溶液中的半反应用实际存在的物种来配平：用 H<sub>2</sub>O 配平氧，用 H<sup>+</sup> 配平氢。"
+    "solution": "在酸性溶液中，氢离子的浓度远大于氢氧根离子的浓度，二者通过水的离子积常数联系在一起，25 °C 时 [H<sub>3</sub>O<sup>+</sup>][OH<sup>−</sup>] = 1.0 × 10<sup>−14</sup>；例如 pH 为 1 时，[OH<sup>−</sup>] 只有 1 × 10<sup>−13</sup> <em>M</em>。半反应所产生的任何氢氧根离子都会立刻被过量的氢离子中和，H<sup>+</sup> + OH<sup>−</sup> ⟶ H<sub>2</sub>O，因此 OH<sup>−</sup> 并不是大量实际存在的物种，不能写成反应物或产物。所以，酸性溶液中的半反应用实际存在的物种来配平：用 H<sub>2</sub>O 配平氧，用 H<sup>+</sup> 配平氢。"
    }
   },
   {

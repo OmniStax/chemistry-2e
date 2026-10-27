@@ -8,7 +8,7 @@
  "objectives": [
   "用系统方法推导常见类型无机化合物的名称"
  ],
- "summary_html": "<p>化学家用命名法规则为化合物明确命名。离子化合物和分子化合物的命名方法有所不同。二元离子化合物通常由一种金属和一种非金属组成。名称中先写金属的名称，再写非金属的名称，其词尾改为 –<em>ide</em>（“化”）。例如，K<sub>2</sub>O 称为氧化钾。如果金属能形成不同电荷的离子，则在金属名称后加括号中的罗马数字来表明其电荷。因此，FeCl<sub>2</sub> 是氯化铁(II)，FeCl<sub>3</sub> 是氯化铁(III)。有些化合物含有多原子离子；常见多原子离子的名称应当记住。分子化合物中的各元素可以按不同比例形成化合物，因此用词头来表明化合物分子中每种元素的原子数。例子包括 SF<sub>6</sub>，六氟化硫，和 N<sub>2</sub>O<sub>4</sub>，四氧化二氮。酸是一类重要的含氢化合物，有特殊的命名规则。无氧酸的命名是使用词头 <em>hydro-</em>（“氢”），将后缀 –<em>ide</em> 改为 –<em>ic</em>（“酸”），再加上“酸”字；HCl 是盐酸。含氧酸的命名是改变阴离子的词尾（–<em>ate</em> 改为 –<em>ic</em>，–<em>ite</em> 改为 –<em>ous</em>），再加上“酸”字；H<sub>2</sub>CO<sub>3</sub> 是碳酸。</p>",
+ "summary_html": "<p>化学家用命名法规则为化合物明确命名。离子化合物和分子化合物的命名方法有所不同。二元离子化合物通常由一种金属和一种非金属组成。名称中先写金属的名称，再写非金属的名称，其词尾改为 –<em>ide</em>（“化”）。例如，K<sub>2</sub>O 称为氧化钾。如果金属能形成不同电荷的离子，则在金属名称后加括号中的罗马数字来表明其电荷。因此，FeCl<sub>2</sub> 是氯化铁(II)，FeCl<sub>3</sub> 是氯化铁(III)。有些化合物含有多原子离子；常见多原子离子的名称应当记住。分子化合物中的各元素可以按不同比例形成化合物，因此用词头来表明化合物分子中每种元素的原子数。例如 SF<sub>6</sub>（六氟化硫）和 N<sub>2</sub>O<sub>4</sub>（四氧化二氮）。酸是一类重要的含氢化合物，有特殊的命名规则。无氧酸的命名是使用词头 <em>hydro-</em>（“氢”），将后缀 –<em>ide</em> 改为 –<em>ic</em>（“酸”），再加上“酸”字；HCl 是盐酸。含氧酸的命名是改变阴离子的词尾（–<em>ate</em>（“酸根”）改为 –<em>ic</em>（“酸”），–<em>ite</em>（“亚…酸根”）改为 –<em>ous</em>（“亚…酸”）），再加上“酸”字；H<sub>2</sub>CO<sub>3</sub> 是碳酸。</p>",
  "notes": "“学习链接”注记被略去，其中指向一个外部网站，供读者练习化合物的命名。艾琳·布罗克维奇的照片，即图 2.32 的（a）部分，在书中的图里。按原文照录：“the principle element”、病句“Some examples demonstrating this Some other examples are shown in Table 2.11”，以及习题答案中三水合氟化铝的“AIF<sub>3</sub>·3H<sub>2</sub>O”。",
  "ai": {
   "text": [
@@ -306,7 +306,7 @@
     "at": "end"
    },
    "cite": "variable-charge",
-   "prompt": "下列化合物的 IUPAC 名称是什么？<br>（a）二氧化锰<br>（b）氯化亚汞（Hg<sub>2</sub>Cl<sub>2</sub>）<br>（c）硝酸铁 [Fe(NO<sub>3</sub>)<sub>3</sub>]<br>（d）四氯化钛<br>（e）溴化铜（CuBr<sub>2</sub>）",
+   "prompt": "下列化合物的 IUPAC 名称是什么？<br>（a）二氧化锰<br>（b）氯化亚汞（Hg<sub>2</sub>Cl<sub>2</sub>）<br>（c）硝酸铁（Fe(NO<sub>3</sub>)<sub>3</sub>）<br>（d）四氯化钛<br>（e）溴化铜（CuBr<sub>2</sub>）",
    "answer": {
     "type": "open",
     "generated_by": "source",

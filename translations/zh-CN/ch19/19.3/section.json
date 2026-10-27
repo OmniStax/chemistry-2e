@@ -2,34 +2,42 @@
   "id": "19.3",
   "module": "m68844",
   "chapter": "19",
-  "title": "Spectroscopic and Magnetic Properties of Coordination Compounds",
-  "short": "Spectroscopic and Magnetic Properties",
-  "lead": "<span data-concept=\"crystal-field-theory\">Crystal field theory</span> treats the ligands of a complex as point charges that repel the electrons in the metal’s <em>d</em> orbitals. This section follows the splitting of those orbitals in octahedral, tetrahedral and square planar complexes, weighs the <span data-concept=\"crystal-field-splitting\">crystal field splitting</span> against the <span data-concept=\"pairing-energy\">pairing energy</span> to tell high-spin from low-spin complexes, and connects the splitting to the magnetism and the colors of complexes.",
+  "title": "配位化合物的光谱性质与磁性质",
+  "short": "光谱性质与磁性质",
+  "lead": "<span data-concept=\"crystal-field-theory\">晶体场理论</span>把配合物的配体当作排斥金属 <em>d</em> 轨道中电子的点电荷。本节依次讨论这些轨道在八面体形、四面体形和平面正方形配合物中的分裂，将<span data-concept=\"crystal-field-splitting\">晶体场分裂</span>与<span data-concept=\"pairing-energy\">成对能</span>相比较以区分高自旋和低自旋配合物，并把这种分裂与配合物的磁性和颜色联系起来。",
   "objectives": [
-    "Outline the basic premise of crystal field theory (CFT)",
-    "Identify molecular geometries associated with various d-orbital splitting patterns",
-    "Predict electron configurations of split d orbitals for selected transition metal atoms or ions",
-    "Explain spectral and magnetic properties in terms of CFT concepts"
+    "概述晶体场理论（CFT）的基本前提",
+    "识别与各种 d 轨道分裂模式相联系的分子几何构型",
+    "预测选定过渡金属原子或离子的分裂 d 轨道上的电子构型",
+    "用 CFT 的概念解释光谱性质和磁性质"
   ],
-  "summary_html": "<p><span data-concept=\"crystal-field-theory\">Crystal field theory</span> treats interactions between the electrons on the metal and the <span data-concept=\"ligand\">ligands</span> as a simple electrostatic effect. The presence of the <span data-concept=\"ligand\">ligands</span> near the metal ion changes the energies of the metal <em>d</em> orbitals relative to their energies in the free ion. Both the color and the magnetic properties of a complex can be attributed to this <span data-concept=\"crystal-field-splitting\">crystal field splitting</span>. The magnitude of the splitting ($\\kdoct$) depends on the nature of the <span data-concept=\"ligand\">ligands</span> bonded to the metal. <span data-concept=\"ligand-field-strength\">Strong-field ligands</span> produce large splitting and favor <span data-concept=\"high-and-low-spin-complexes\">low-spin complexes</span>, in which the <em>t</em><sub>2<em>g</em></sub> orbitals are completely filled before any electrons occupy the <em>e<sub>g</sub></em> orbitals. <span data-concept=\"ligand-field-strength\">Weak-field ligands</span> favor formation of <span data-concept=\"high-and-low-spin-complexes\">high-spin complexes</span>. The <em>t</em><sub>2<em>g</em></sub> and the <em>e<sub>g</sub></em> orbitals are singly occupied before any are doubly occupied.</p>",
-  "notes": "The Link to Learning on the reduction of vanadium complexes is dropped; the sentence that points to it is kept. The untitled opening carries a header of our own, Explaining transition metal complexes. The t<sub>2g</sub> list’s “<em>d<sub>zy</sub></em>”, the straight apostrophe of “Hund's rule”, Figure 19.35’s “5d orbitals” and “eg”, Example 19.9’s v for the frequency and its “450 (blue)”, and “blue, blue-green violet, or yellow” are kept as printed.",
+  "summary_html": "<p><span data-concept=\"crystal-field-theory\">晶体场理论</span>把金属上的电子与<span data-concept=\"ligand\">配体</span>之间的相互作用当作简单的静电效应。<span data-concept=\"ligand\">配体</span>靠近金属离子，会使金属 <em>d</em> 轨道的能量相对于自由离子中的能量发生改变。配合物的颜色和磁性都可归因于这种<span data-concept=\"crystal-field-splitting\">晶体场分裂</span>。分裂的大小（$\\kdoct$）取决于与金属键合的<span data-concept=\"ligand\">配体</span>的性质。<span data-concept=\"ligand-field-strength\">强场配体</span>产生大的分裂，有利于形成<span data-concept=\"high-and-low-spin-complexes\">低自旋配合物</span>，其中 <em>t</em><sub>2<em>g</em></sub> 轨道先被完全填满，然后才有电子占据 <em>e<sub>g</sub></em> 轨道。<span data-concept=\"ligand-field-strength\">弱场配体</span>有利于形成<span data-concept=\"high-and-low-spin-complexes\">高自旋配合物</span>。<em>t</em><sub>2<em>g</em></sub> 和 <em>e<sub>g</sub></em> 轨道先都被单独占据，然后才有轨道被双占据。</p>",
+  "notes": "略去了关于钒配合物还原的“学习链接”，但保留了指向它的那句话。无标题的开头部分带有我们自拟的标题“解释过渡金属配合物”。t<sub>2g</sub> 列表中的“<em>d<sub>zy</sub></em>”、“Hund's rule”中的直撇号、图 19.35 的“5d 轨道”和“eg”、例 19.9 中表示频率的 v 及其“450（蓝色）”，以及“蓝色、蓝绿紫色或黄色”，均照原样保留。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags, hints and suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the key to exercise 37 (fs-idm69906288) is the book’s pair of crystal field diagrams. Three unkeyed exercises whose answers would have to be worked out are left out, and no answer is computed for them: 36 (fs-idp119097632, the unpaired electrons of [Fe(NO<sub>2</sub>)<sub>6</sub>]<sup>3−</sup> and [FeF<sub>6</sub>]<sup>3−</sup>), 38 (fs-idp62990928, the oxidation state, <em>d</em> electrons and unpaired electrons of [Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>3</sub>) and 44 (fs-idm147246656, the geometry and formula of a nickel compound from its analysis). The unkeyed choice exercises 46 (fs-idp74371168) and 48 (fs-idp70727968) are kept open with their options and a suggested approach, and the unkeyed conceptual exercises 40 (fs-idm98451056) and 42 (fs-idm107475184) carry a suggested approach marked as OmniStax’s own. Nothing is moved.",
+  "exercise_notes": "布鲁姆层级、概念标签、提示和建议的解题思路由 AI 生成。答案取自书后答案和“学习检测”的答案；习题 37（fs-idm69906288）的答案是书中的一对晶体场图。三道没有给出答案、答案需要自行推算的习题未收入，也没有为它们计算答案：36（fs-idp119097632，[Fe(NO<sub>2</sub>)<sub>6</sub>]<sup>3−</sup> 和 [FeF<sub>6</sub>]<sup>3−</sup> 的未成对电子数）、38（fs-idp62990928，[Co(NH<sub>3</sub>)<sub>6</sub>]Cl<sub>3</sub> 的氧化态、<em>d</em> 电子数和未成对电子数）和 44（fs-idm147246656，由分析结果确定一种镍化合物的几何构型和化学式）。没有答案的选择题 46（fs-idp74371168）和 48（fs-idp70727968）保持开放，附有选项和建议的解题思路；没有答案的概念题 40（fs-idm98451056）和 42（fs-idm107475184）带有标明为 OmniStax 自拟的建议解题思路。没有任何习题被移动。",
   "figures": [
     {
       "id": "sim-d-orbitals",
@@ -44,7 +52,7 @@
         "/media/ch19/CNX_Chem_19_03_CFSE.jpg",
         "/media/ch19/CNX_Chem_19_03_TetCube.jpg"
       ],
-      "original_caption": "(Figure 19.33) The directional characteristics of the five d orbitals are shown here. The shaded portions indicate the phase of the orbitals. The ligands (L) coordinate along the axes. For clarity, the ligands have been omitted from the dx²−y² orbital so that the axis labels could be shown. (Figure 19.34) In octahedral complexes, the eg orbitals are destabilized (higher in energy) compared to the t2g orbitals because the ligands interact more strongly with the d orbitals at which they are pointed directly. (Figure 19.36) This diagram shows the orientation of the tetrahedral ligands with respect to the axis system for the orbitals.",
+      "original_caption": "（图 19.33）此处显示了五个 d 轨道的方向特征。阴影部分表示轨道的相位。配体（L）沿坐标轴配位。为清楚起见，dx²−y² 轨道中省略了配体，以便标出坐标轴。（图 19.34）在八面体形配合物中，与 t2g 轨道相比，eg 轨道不稳定（能量较高），因为配体与它们直接指向的 d 轨道相互作用更强。（图 19.36）此图显示了四面体形配体相对于轨道坐标系的取向。",
       "draws": [
         "energy"
       ],
@@ -57,6 +65,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -67,7 +80,7 @@
       "originals": [
         "/media/ch19/CNX_Chem_19_03_Lowhigh.jpg"
       ],
-      "original_caption": "Iron(II) complexes have six electrons in the 5d orbitals. In the absence of a crystal field, the orbitals are degenerate. For coordination complexes with strong-field ligands such as [Fe(CN)6]4−, Δoct is greater than P, and the electrons pair in the lower energy t2g orbitals before occupying the eg orbitals. With weak-field ligands such as H2O, the ligand field splitting is less than the pairing energy, Δoct less than P, so the electrons occupy all d orbitals singly before any pairing occurs.",
+      "original_caption": "铁(II)配合物在 5d 轨道中有六个电子。没有晶体场时，这些轨道是简并的。对于含强场配体的配合物，如 [Fe(CN)6]4−，Δoct 大于 P，电子先在能量较低的 t2g 轨道中成对，然后才占据 eg 轨道。对于含弱场配体的配合物，如 H2O，配体场分裂小于成对能，即 Δoct 小于 P，所以电子先单独占据所有 d 轨道，然后才发生成对。",
       "draws": [
         "energy"
       ],
@@ -76,6 +89,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -88,6 +106,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -100,6 +123,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -110,7 +138,7 @@
       "originals": [
         "/media/ch19/CNX_Chem_19_03_Lightper.jpg"
       ],
-      "original_caption": "(a) An object is black if it absorbs all colors of light. If it reflects all colors of light, it is white. An object has a color if it absorbs all colors except one, such as this yellow strip. The strip also appears yellow if it absorbs the complementary color from white light (in this case, indigo). (b) Complementary colors are located directly across from one another on the color wheel. (c) A solution of [Cu(NH3)4]2+ ions absorbs red and orange light, so the transmitted light appears as the complementary color, blue.",
+      "original_caption": "（a）若物体吸收所有颜色的光，它就是黑色的。若它反射所有颜色的光，它就是白色的。若物体吸收除一种颜色以外的所有颜色，它就有了颜色，如这条黄色条带。如果它从白光中吸收了互补色（这里是靛蓝），这条带也呈黄色。（b）互补色在色环上彼此正相对。（c）[Cu(NH3)4]2+ 离子的溶液吸收红光和橙光，所以透射光呈现其互补色，即蓝色。",
       "draws": [
         "wavelength",
         "frequency",
@@ -125,6 +153,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -138,6 +171,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -151,6 +189,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -164,6 +207,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -412,11 +460,11 @@
         "after": "ex-high-low-spin"
       },
       "cite": "ex-high-low-spin",
-      "prompt": "The size of the crystal field splitting only influences the arrangement of electrons when there is a choice between pairing electrons and filling the higher-energy orbitals. For which <em>d</em>-electron configurations will there be a difference between high- and low-spin configurations in octahedral complexes?",
+      "prompt": "晶体场分裂的大小只有在电子成对与填入能量较高的轨道之间可以选择时，才会影响电子的排布。对于哪些 <em>d</em> 电子构型，八面体形配合物会有高自旋和低自旋构型的区别？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "<em>d</em><sup>4</sup>, <em>d</em><sup>5</sup>, <em>d</em><sup>6</sup>, and <em>d</em><sup>7</sup>"
+        "solution": "<em>d</em><sup>4</sup>、<em>d</em><sup>5</sup>、<em>d</em><sup>6</sup> 和 <em>d</em><sup>7</sup>"
       }
     },
     {
@@ -429,14 +477,14 @@
         "after": "ex-other-geometries"
       },
       "cite": "ex-other-geometries",
-      "prompt": "Explain how many unpaired electrons a tetrahedral <em>d</em><sup>4</sup> ion will have.",
+      "prompt": "说明四面体形 <em>d</em><sup>4</sup> 离子将有多少个未成对电子。",
       "answer": {
         "type": "number",
         "part": "unpaired electrons",
         "value": 4,
-        "hint": "Compare the small tetrahedral splitting with the pairing energy before placing the four electrons in the <em>e</em> and <em>t</em><sub>2</sub> sets.",
+        "hint": "先比较较小的四面体形分裂与成对能，再把四个电子放入 <em>e</em> 组和 <em>t</em><sub>2</sub> 组。",
         "generated_by": "source",
-        "solution": "4; because Δ<sub>tet</sub> is small, all tetrahedral complexes are high spin and the electrons go into the <em>t</em><sub>2</sub> orbitals before pairing"
+        "solution": "4；因为 Δ<sub>tet</sub> 小，所有四面体形配合物都是高自旋的，电子在成对之前先进入 <em>t</em><sub>2</sub> 轨道"
       }
     },
     {
@@ -449,11 +497,11 @@
         "after": "ex-colors"
       },
       "cite": "ex-colors",
-      "prompt": "A complex that appears green, absorbs photons of what wavelengths?",
+      "prompt": "呈绿色的配合物，吸收什么波长的光子？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "red, 620–800 nm"
+        "solution": "红光，620–800 nm"
       }
     },
     {
@@ -466,11 +514,11 @@
         "at": "end"
       },
       "cite": "cft",
-      "prompt": "Draw the crystal field diagrams for [Fe(NO<sub>2</sub>)<sub>6</sub>]<sup>4−</sup> and [FeF<sub>6</sub>]<sup>3−</sup>. State whether each complex is high spin or low spin, paramagnetic or diamagnetic, and compare Δ<sub>oct</sub> to <em>P</em> for each complex.",
+      "prompt": "画出 [Fe(NO<sub>2</sub>)<sub>6</sub>]<sup>4−</sup> 和 [FeF<sub>6</sub>]<sup>3−</sup> 的晶体场图。说明每个配合物是高自旋还是低自旋，是顺磁性还是抗磁性，并比较每个配合物的 Δ<sub>oct</sub> 与 <em>P</em>。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "<img src=\"/media/ch19/CNX_Chem_19_03_FECN6FEH2O_img.jpg\" alt=\"A diagram is shown with two columns and two rows of squares outlined in yellow. The first column is labeled “[ F e ( N O subscript 2 ) subscript 6 ] superscript 4 negative sign.” The second is labeled, “[ F e F subscript 6 ] superscript 3 negative sign.” In the left column, three linked squares outlined in yellow are shown. Each of the squares contains two half arrows, one pointing up and one pointing down. In a row just above, two empty linked squares are shown. The label, “Low spin, diamagnetic, P less than capital delta subscript oct,” is provided below the column. In the right column, three linked squares outlined in yellow are shown. The square on the left contains two half arrows, one pointing up and one pointing down. The other two squares each contain a single upward pointing half arrow. In a row just above, two linked squares are shown which each contain a single upward pointing half arrow. The label, “High spin, paramagnetic, P greater than capital delta subscript oct,” is provided below the column.\">"
+        "solution": "<img src=\"/media/ch19/CNX_Chem_19_03_FECN6FEH2O_img.jpg\" alt=\"图中有两列、两行用黄色勾边的方格。第一列标为“[Fe(NO₂)₆]⁴⁻”。第二列标为“[FeF₆]³⁻”。左列中有三个相连的黄色勾边方格。每个方格里有两个半箭头，一个向上，一个向下。正上方一行有两个相连的空方格。该列下方的标注为“低自旋，抗磁性，P 小于 大写 Δ 下标 oct”。右列中有三个相连的黄色勾边方格。左边的方格里有两个半箭头，一个向上，一个向下。另外两个方格里各有一个向上的半箭头。正上方一行有两个相连的方格，每个方格里有一个向上的半箭头。该列下方的标注为“高自旋，顺磁性，P 大于 大写 Δ 下标 oct”。\">"
       }
     },
     {
@@ -483,14 +531,14 @@
         "at": "end"
       },
       "cite": "ex-high-low-spin",
-      "prompt": "The anhydrous solid CoCl<sub>2</sub> is blue in color. Because it readily absorbs water from the air, it is used as a humidity indicator to monitor if equipment (such as a cell phone) has been exposed to excessive levels of moisture. Predict what product is formed by this reaction, and how many unpaired electrons this complex will have.",
+      "prompt": "无水固体 CoCl<sub>2</sub> 为蓝色。由于它很容易从空气中吸收水，因此被用作湿度指示剂，以监测设备（如手机）是否曾暴露在过量的潮气中。预测这个反应生成什么产物，以及这个配合物将有多少个未成对电子。",
       "answer": {
         "type": "number",
         "part": "unpaired electrons in the product",
         "value": 3,
-        "hint": "Water adds as six ligands; find the <em>d</em> count of Co<sup>2+</sup> and place its electrons for a weak-field ligand.",
+        "hint": "水以六个配体的形式加成；求出 Co<sup>2+</sup> 的 <em>d</em> 电子数，并按弱场配体放置它的电子。",
         "generated_by": "source",
-        "solution": "[Co(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>2</sub> with three unpaired electrons."
+        "solution": "[Co(H<sub>2</sub>O)<sub>6</sub>]Cl<sub>2</sub>，有三个未成对电子。"
       }
     },
     {
@@ -503,11 +551,11 @@
         "at": "end"
       },
       "cite": "cft",
-      "prompt": "Is it possible for a complex of a metal in the transition series to have six unpaired electrons? Explain.",
+      "prompt": "过渡系中某金属的配合物有可能有六个未成对电子吗？请说明。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "No. A transition metal ion has only five <em>d</em> orbitals, and each orbital can hold only one unpaired electron, so at most five <em>d</em> electrons can be unpaired. That maximum belongs to a <em>d</em><sup>5</sup> ion in a high-spin complex, such as [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> or [FeF<sub>6</sub>]<sup>3−</sup>, with one electron in each of the five orbitals. Whatever the size of the crystal field splitting, a sixth <em>d</em> electron has no empty orbital left and must pair with one already present, so a <em>d</em><sup>6</sup> ion has at most four unpaired electrons, as in [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>, and more <em>d</em> electrons leave still fewer unpaired."
+        "solution": "不可能。过渡金属离子只有五个 <em>d</em> 轨道，每个轨道只能容纳一个未成对电子，所以最多只有五个 <em>d</em> 电子可以未成对。这个最大值属于高自旋配合物中的 <em>d</em><sup>5</sup> 离子，如 [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>3+</sup> 或 [FeF<sub>6</sub>]<sup>3−</sup>，五个轨道中各有一个电子。无论晶体场分裂有多大，第六个 <em>d</em> 电子都没有空轨道可进，必须与已有的电子成对，所以 <em>d</em><sup>6</sup> 离子最多有四个未成对电子，如 [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup>，<em>d</em> 电子更多时未成对电子还要更少。"
       }
     },
     {
@@ -520,7 +568,7 @@
         "at": "end"
       },
       "cite": "ex-high-low-spin",
-      "prompt": "How many unpaired electrons are present in each of the following?<br>(a) [CoF<sub>6</sub>]<sup>3−</sup> (high spin)<br>(b) [Mn(CN)<sub>6</sub>]<sup>3−</sup> (low spin)<br>(c) [Mn(CN)<sub>6</sub>]<sup>4−</sup> (low spin)<br>(d) [MnCl<sub>6</sub>]<sup>4−</sup> (high spin)<br>(e) [RhCl<sub>6</sub>]<sup>3−</sup> (low spin)",
+      "prompt": "下列各配合物中有多少个未成对电子？<br>（a）[CoF<sub>6</sub>]<sup>3−</sup>（高自旋）<br>（b）[Mn(CN)<sub>6</sub>]<sup>3−</sup>（低自旋）<br>（c）[Mn(CN)<sub>6</sub>]<sup>4−</sup>（低自旋）<br>（d）[MnCl<sub>6</sub>]<sup>4−</sup>（高自旋）<br>（e）[RhCl<sub>6</sub>]<sup>3−</sup>（低自旋）",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -528,7 +576,7 @@
           {
             "part": "(a) [CoF<sub>6</sub>]<sup>3−</sup>",
             "value": 4,
-            "hint": "Find the metal's oxidation state and its number of <em>d</em> electrons first."
+            "hint": "先求出金属的氧化态及其 <em>d</em> 电子数。"
           },
           {
             "part": "(b) [Mn(CN)<sub>6</sub>]<sup>3−</sup>",
@@ -547,7 +595,7 @@
             "value": 0
           }
         ],
-        "solution": "(a) 4; (b) 2; (c) 1; (d) 5; (e) 0"
+        "solution": "（a）4；（b）2；（c）1；（d）5；（e）0"
       }
     },
     {
@@ -560,11 +608,11 @@
         "at": "end"
       },
       "cite": "cft",
-      "prompt": "Explain how the diphosphate ion, [O<sub>3</sub>P−O−PO<sub>3</sub>]<sup>4−</sup>, can function as a water softener that prevents the precipitation of Fe<sup>2+</sup> as an insoluble iron salt.",
+      "prompt": "说明二磷酸根离子 [O<sub>3</sub>P−O−PO<sub>3</sub>]<sup>4−</sup> 如何能起水软化剂的作用，防止 Fe<sup>2+</sup> 沉淀为不溶的铁盐。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Diphosphate binds Fe<sup>2+</sup> as a polydentate, chelating ligand and holds it in a soluble complex. Each phosphorus atom carries terminal oxygen atoms with lone pairs, and an oxygen atom on each of the two phosphorus atoms can coordinate to the same Fe<sup>2+</sup> ion, closing a ring around it; with a second oxygen atom bonding as well, the ion can be tridentate. The complex formed, such as [Fe(P<sub>2</sub>O<sub>7</sub>)]<sup>2−</sup>, is charged and stays dissolved. Because the iron is tied up in the complex, the concentration of free Fe<sup>2+</sup> stays too low for the ion product of an insoluble salt such as FeCO<sub>3</sub> or Fe(OH)<sub>2</sub> to exceed its solubility product, so no precipitate forms. Like other complexing agents used in water softening, diphosphate sequesters the metal ion rather than removing it."
+        "solution": "二磷酸根作为多齿的螯合配体与 Fe<sup>2+</sup> 结合，使它保持在可溶的配合物中。每个磷原子都带有端基氧原子，这些氧原子带有孤电子对，两个磷原子上各有一个氧原子可以与同一个 Fe<sup>2+</sup> 离子配位，在它周围闭合成环；如果再有一个氧原子也参与键合，该离子可以是三齿的。形成的配合物，如 [Fe(P<sub>2</sub>O<sub>7</sub>)]<sup>2−</sup>，带有电荷，保持溶解。因为铁被束缚在配合物中，游离 Fe<sup>2+</sup> 的浓度保持得很低，使 FeCO<sub>3</sub> 或 Fe(OH)<sub>2</sub> 这类不溶盐的离子积不会超过其溶度积，所以不生成沉淀。与水软化中使用的其他配位剂一样，二磷酸根封存金属离子，而不是把它除去。"
       }
     },
     {
@@ -577,11 +625,11 @@
         "at": "end"
       },
       "cite": "ex-high-low-spin",
-      "prompt": "For complexes of the same metal ion with no change in oxidation number, the stability increases as the number of electrons in the <em>t</em><sub>2<em>g</em></sub> orbitals increases. Which complex in each of the following pairs of complexes is more stable?<br>(a) [Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> or [Fe(CN)<sub>6</sub>]<sup>4−</sup><br>(b) [Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup> or [CoF<sub>6</sub>]<sup>3−</sup><br>(c) [Mn(CN)<sub>6</sub>]<sup>4−</sup> or [MnCl<sub>6</sub>]<sup>4−</sup>",
+      "prompt": "对于氧化数不变的同一金属离子的配合物，稳定性随 <em>t</em><sub>2<em>g</em></sub> 轨道中电子数的增多而增大。下列各对配合物中，哪一个配合物更稳定？<br>（a）[Fe(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 或 [Fe(CN)<sub>6</sub>]<sup>4−</sup><br>（b）[Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup> 或 [CoF<sub>6</sub>]<sup>3−</sup><br>（c）[Mn(CN)<sub>6</sub>]<sup>4−</sup> 或 [MnCl<sub>6</sub>]<sup>4−</sup>",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) [Fe(CN)<sub>6</sub>]<sup>4−</sup>; (b) [Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup>; (c) [Mn(CN)<sub>6</sub>]<sup>4−</sup>"
+        "solution": "（a）[Fe(CN)<sub>6</sub>]<sup>4−</sup>；（b）[Co(NH<sub>3</sub>)<sub>6</sub>]<sup>3+</sup>；（c）[Mn(CN)<sub>6</sub>]<sup>4−</sup>"
       }
     },
     {
@@ -594,11 +642,11 @@
         "at": "end"
       },
       "cite": "magnetic",
-      "prompt": "Would you expect the complex [Co(en)<sub>3</sub>]Cl<sub>3</sub> to have any unpaired electrons? Any isomers?",
+      "prompt": "你认为配合物 [Co(en)<sub>3</sub>]Cl<sub>3</sub> 会有未成对电子吗？会有异构体吗？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "The complex does not have any unpaired electrons. The complex does not have any geometric isomers, but the mirror image is nonsuperimposable, so it has an optical isomer."
+        "solution": "该配合物没有未成对电子。该配合物没有几何异构体，但其镜像不能重合，所以它有一个旋光异构体。"
       }
     },
     {
@@ -611,11 +659,11 @@
         "at": "end"
       },
       "cite": "magnetic",
-      "prompt": "Would you expect the Mg<sub>3</sub>[Cr(CN)<sub>6</sub>]<sub>2</sub> to be diamagnetic or paramagnetic? Explain your reasoning.",
+      "prompt": "你认为 Mg<sub>3</sub>[Cr(CN)<sub>6</sub>]<sub>2</sub> 是抗磁性的还是顺磁性的？请说明理由。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "It is paramagnetic. The three Mg<sup>2+</sup> ions carry a total charge of 6+, so the two complex ions carry 6− and each is [Cr(CN)<sub>6</sub>]<sup>3−</sup>. With six CN<sup>−</sup> ligands, −3 = −6 + <em>x</em>, and chromium is in the 3+ oxidation state. Chromium is [Ar]3<em>d</em><sup>5</sup>4<em>s</em><sup>1</sup>, so Cr<sup>3+</sup> is <em>d</em><sup>3</sup>. In an octahedral complex the three electrons occupy the three <em>t</em><sub>2<em>g</em></sub> orbitals singly. Cyanide is a strong-field ligand and produces a large $\\kdoct$, but that changes nothing here, since three electrons fill three orbitals singly before any pairing is possible. The three unpaired electrons make the compound paramagnetic."
+        "solution": "它是顺磁性的。三个 Mg<sup>2+</sup> 离子共带 6+ 电荷，所以两个配离子共带 6−，每个都是 [Cr(CN)<sub>6</sub>]<sup>3−</sup>。有六个 CN<sup>−</sup> 配体时，−3 = −6 + <em>x</em>，铬处于 3+ 氧化态。铬是 [Ar]3<em>d</em><sup>5</sup>4<em>s</em><sup>1</sup>，所以 Cr<sup>3+</sup> 是 <em>d</em><sup>3</sup>。在八面体形配合物中，这三个电子单独占据三个 <em>t</em><sub>2<em>g</em></sub> 轨道。氰根是强场配体，产生很大的 $\\kdoct$，但这在这里没有影响，因为三个电子单独填入三个轨道，不可能成对。三个未成对电子使该化合物呈顺磁性。"
       }
     },
     {
@@ -628,11 +676,11 @@
         "at": "end"
       },
       "cite": "colors",
-      "prompt": "Would you expect salts of the gold(I) ion, Au<sup>+</sup>, to be colored? Explain.",
+      "prompt": "你认为金(I)离子 Au<sup>+</sup> 的盐是有颜色的吗？请说明。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "No. Au<sup>+</sup> has a complete 5<em>d</em> sublevel."
+        "solution": "不是。Au<sup>+</sup> 的 5<em>d</em> 亚层已充满。"
       }
     },
     {
@@ -645,11 +693,11 @@
         "at": "end"
       },
       "cite": "colors",
-      "prompt": "[CuCl<sub>4</sub>]<sup>2−</sup> is green. [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> is blue. Which absorbs higher-energy photons? Which is predicted to have a larger crystal field splitting?",
+      "prompt": "[CuCl<sub>4</sub>]<sup>2−</sup> 是绿色的。[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 是蓝色的。哪一个吸收能量较高的光子？预测哪一个的晶体场分裂较大？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> absorbs the higher-energy photons and is predicted to have the larger crystal field splitting. A complex shows the color complementary to the one it absorbs. [CuCl<sub>4</sub>]<sup>2−</sup> appears green, so it absorbs red light; [Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> appears blue, so it absorbs orange light. Orange light has a shorter wavelength than red light, and since $E=hc/\\lambda$, orange photons carry more energy. The energy of the absorbed photon matches the splitting between the <em>d</em> orbitals, so the blue hexaaqua complex, with six ligands in an octahedral field and splitting $\\kdoct$, has a larger splitting than the green tetrahedral [CuCl<sub>4</sub>]<sup>2−</sup>, whose four ligands give the smaller splitting $\\kdtet$."
+        "solution": "[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 吸收能量较高的光子，预测它的晶体场分裂较大。配合物呈现的是与其所吸收颜色互补的颜色。[CuCl<sub>4</sub>]<sup>2−</sup> 呈绿色，所以它吸收红光；[Cu(H<sub>2</sub>O)<sub>6</sub>]<sup>2+</sup> 呈蓝色，所以它吸收橙光。橙光的波长比红光短，又因为 $E=hc/\\lambda$，橙色光子的能量更高。所吸收光子的能量与 <em>d</em> 轨道之间的分裂相当，所以蓝色的六水合配合物，六个配体处于八面体形场中，分裂为 $\\kdoct$，其分裂比绿色的四面体形 [CuCl<sub>4</sub>]<sup>2−</sup> 大，后者的四个配体给出较小的分裂 $\\kdtet$。"
       }
     }
   ],
@@ -763,13 +811,13 @@
     {
       "id": "c-dxy",
       "kind": "correction",
-      "html": "The book writes <em>d<sub>zy</sub></em>, which is the <em>d<sub>yz</sub></em> orbital again. The third <em>t</em><sub>2<em>g</em></sub> orbital is <em>d<sub>xy</sub></em>."
+      "html": "书中写的是 <em>d<sub>zy</sub></em>，这又是 <em>d<sub>yz</sub></em> 轨道。第三个 <em>t</em><sub>2<em>g</em></sub> 轨道是 <em>d<sub>xy</sub></em>。"
     },
     {
       "id": "c-fig-5d",
       "kind": "correction",
       "figure": "sim-high-low-spin",
-      "html": "The caption puts the six electrons of iron(II) in the 5<em>d</em> orbitals; they are 3<em>d</em> electrons, as the text says."
+      "html": "图注把铁(II)的六个电子放在 5<em>d</em> 轨道中；它们是 3<em>d</em> 电子，正文即如此说。"
     }
   ]
 }

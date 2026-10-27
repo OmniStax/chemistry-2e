@@ -2,32 +2,40 @@
  "id": "15.3",
  "module": "m68814",
  "chapter": "15",
- "title": "Coupled Equilibria",
- "short": "Coupled Equilibria",
- "lead": "A sparingly soluble salt can share an ion with a second equilibrium, an acid-base reaction or the formation of a <span data-concept=\"complex-ion\">complex ion</span>, so that the two equilibria shift together. Coral reefs, tooth enamel, and aluminum hydroxide in acid and in base show what such coupling does to solubility.",
+ "title": "多重平衡",
+ "short": "多重平衡",
+ "lead": "微溶盐可以与第二个平衡共有一种离子，这个平衡是酸碱反应或<span data-concept=\"complex-ion\">配离子</span>的形成，于是两个平衡一起移动。珊瑚礁、牙釉质，以及氢氧化铝在酸和碱中的溶解，显示了这种相互关联对溶解度的影响。",
  "objectives": [
-  "Describe examples of systems involving two (or more) coupled chemical equilibria",
-  "Calculate reactant and product concentrations for coupled equilibrium systems"
+  "描述涉及两个（或多个）相互关联的化学平衡的体系的实例",
+  "计算相互关联的平衡体系中反应物和产物的浓度"
  ],
- "summary_html": "<p>Systems involving two or more chemical equilibria that share one or more reactant or product are called coupled equilibria. Common examples of coupled equilibria include the increased solubility of some compounds in acidic solutions (coupled dissolution and neutralization equilibria) and in solutions containing ligands (coupled dissolution and complex formation). The equilibrium tools from other chapters may be applied to describe and perform calculations on these systems.</p>",
- "notes": "The Link to Learning on ocean acidification and coral reefs is left out, and the book’s slips are kept as printed: the charge written −2 on carbonate ion in the first equation, “solublities” in Example 15.15, and Ag(S₂O₂)₂³⁻ once in Example 15.16.",
+ "summary_html": "<p>涉及两个或多个化学平衡、且这些平衡共有一种或多种反应物或产物的体系，称为多重平衡。多重平衡的常见例子包括：某些化合物在酸性溶液中溶解度增大（溶解平衡与中和平衡相互关联），以及在含有配体的溶液中溶解度增大（溶解与配合物形成相互关联）。其他各章的平衡工具可用于描述这些体系并对其进行计算。</p>",
+ "notes": "略去了关于海洋酸化与珊瑚礁的“学习链接”，书中的疏误按原样保留：第一个方程式中碳酸根离子的电荷写成 −2，例 15.15 中拼错的“solublities”（译文中无法保留），以及例 15.16 中一处 Ag(S₂O₂)₂³⁻。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, hints and the suggested approaches are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The eight unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp12915808, fs-idm356832, fs-idp103984, fs-idm455072, fs-idp11095024, fs-idp65312, fs-idm397184, fs-idp12821792. Exercises fs-idm65484352 and fs-idm98555648 (exercises 63 and 65) are printed in 15.2 and placed here, where coupled dissolution is taught; exercises fs-idm301808 and fs-idp11595856 (85 and 101) are placed in 15.1, and fs-idm299312, fs-idp457072 and fs-idp135248 (86, 88 and 90) in 15.2. The key to exercise 105 heads its third column [OH⁻] where the question asks for [HPO₄²⁻], and the key to exercise 95 runs its two equations together; both are kept as printed. The one-figure answers of the first Check Your Learning and of exercise 93 accept 30% and 15%, and the pH of exercise 99 accepts 1%; other numeric answers accept 2%.",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路由 AI 生成。答案取自书后答案和“学习检测”的答案。八道没有答案的数值习题未收入，也没有为它们算出答案：fs-idp12915808、fs-idm356832、fs-idp103984、fs-idm455072、fs-idp11095024、fs-idp65312、fs-idm397184、fs-idp12821792。习题 fs-idm65484352 和 fs-idm98555648（习题 63 和 65）印在 15.2 中，放在了讲授与其他平衡相互关联的溶解的这里；习题 fs-idm301808 和 fs-idp11595856（85 和 101）放在 15.1，fs-idm299312、fs-idp457072 和 fs-idp135248（86、88 和 90）放在 15.2。习题 105 的书后答案把第三列标为 [OH⁻]，而题目问的是 [HPO₄²⁻]；习题 95 的书后答案把两个方程式连写在一起；两处均按原样保留。第一个“学习检测”和习题 93 的只有一位有效数字的答案接受 30% 和 15%，习题 99 的 pH 接受 1%；其他数值答案接受 2%。",
  "figures": [
   {
    "id": "fig-coral",
@@ -39,6 +47,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -52,6 +65,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -65,6 +83,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -87,6 +110,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -102,6 +130,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -114,6 +147,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -121,14 +159,14 @@
  "referents": [
   {
    "id": "al-ion",
-   "label": "the aluminum ion, Al³⁺",
+   "label": "铝离子 Al³⁺",
    "figures": [
     "sim-solubility-ph"
    ]
   },
   {
    "id": "aluminate",
-   "label": "the complex ion Al(OH)₄⁻",
+   "label": "配离子 Al(OH)₄⁻",
    "figures": [
     "fig-aloh4",
     "sim-solubility-ph"
@@ -238,14 +276,14 @@
     "after": "ex-acid-buffer"
    },
    "cite": "calculations",
-   "prompt": "What is the solubility of aluminum hydroxide in a buffer comprised of 0.100 <em>M</em> formic acid and 0.100 <em>M</em> sodium formate?",
+   "prompt": "在由 0.100 <em>M</em> 甲酸和 0.100 <em>M</em> 甲酸钠组成的缓冲溶液中，氢氧化铝的溶解度是多少？",
    "answer": {
     "type": "number",
     "value": 0.1,
     "unit": "M",
     "tol": 0.3,
     "generated_by": "source",
-    "hint": "Find the pH of the buffer from the p<em>K</em><sub>a</sub> of formic acid with the Henderson-Hasselbalch equation, then [OH<sup>−</sup>], then [Al<sup>3+</sup>] from <em>K</em><sub>sp</sub>, as in Example 15.15.",
+    "hint": "用亨德森–哈塞尔巴尔赫方程，由甲酸的 p<em>K</em><sub>a</sub> 求出缓冲溶液的 pH，再求 [OH<sup>−</sup>]，然后像例 15.15 那样由 <em>K</em><sub>sp</sub> 求 [Al<sup>3+</sup>]。",
     "solution": "0.1 <em>M</em>"
    }
   },
@@ -259,14 +297,14 @@
     "after": "ex-thiosulfate"
    },
    "cite": "calculations",
-   "prompt": "AgCl(<em>s</em>), silver chloride, has a very low solubility: $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq),$ <em>K</em><sub>sp</sub> = 1.6 × 10<sup>–10</sup>. Adding ammonia significantly increases the solubility of AgCl because a complex ion is formed: ${\\text{Ag}}^{\\text{+}}(aq)+2{\\text{NH}}_{3}(aq)\\rightleftharpoons \\text{Ag}{({\\text{NH}}_{3})}_{2}{}^{+}(aq),$ <em>K</em><sub>f</sub> = 1.7 × 10<sup>7</sup>. What mass of NH<sub>3</sub> is required to prepare 1.00 L of solution that will dissolve 2.00 g of AgCl by formation of $\\text{Ag}{({\\text{NH}}_{3})}_{2}{}^{\\text{+}}?$",
+   "prompt": "AgCl(<em>s</em>)，即氯化银，溶解度很低：$\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$，<em>K</em><sub>sp</sub> = 1.6 × 10<sup>–10</sup>。加入氨会使 AgCl 的溶解度显著增大，因为形成了配离子：${\\text{Ag}}^{\\text{+}}(aq)+2{\\text{NH}}_{3}(aq)\\rightleftharpoons \\text{Ag}{({\\text{NH}}_{3})}_{2}{}^{+}(aq)$，<em>K</em><sub>f</sub> = 1.7 × 10<sup>7</sup>。需要多少质量的 NH<sub>3</sub>，才能配制出 1.00 L 能溶解 2.00 g AgCl 的溶液，溶解过程中形成 $\\text{Ag}{({\\text{NH}}_{3})}_{2}{}^{\\text{+}}$？",
    "answer": {
     "type": "number",
     "value": 5.0,
     "unit": "g",
     "generated_by": "source",
-    "hint": "Combine the two equilibria into one with <em>K</em> = <em>K</em><sub>sp</sub><em>K</em><sub>f</sub>, find the free [NH<sub>3</sub>] it leaves, and add the ammonia bound in the complex, as in Example 15.16.",
-    "solution": "1.00 L of a solution prepared with 5.0 g NH<sub>3</sub> dissolves 2.0 g of AgCl."
+    "hint": "把两个平衡合并为一个，其 <em>K</em> = <em>K</em><sub>sp</sub><em>K</em><sub>f</sub>，求出它剩下的游离 [NH<sub>3</sub>]，再加上配合在配离子中的氨，如例 15.16 所示。",
+    "solution": "用 5.0 g NH<sub>3</sub> 配制的 1.00 L 溶液可溶解 2.0 g AgCl。"
    }
   },
   {
@@ -280,11 +318,11 @@
     "at": "end"
    },
    "cite": "complex",
-   "prompt": "Explain why the addition of NH<sub>3</sub> or HNO<sub>3</sub> to a saturated solution of Ag<sub>2</sub>CO<sub>3</sub> in contact with solid Ag<sub>2</sub>CO<sub>3</sub> increases the solubility of the solid.",
+   "prompt": "解释为什么向与固体 Ag<sub>2</sub>CO<sub>3</sub> 接触的 Ag<sub>2</sub>CO<sub>3</sub> 饱和溶液中加入 NH<sub>3</sub> 或 HNO<sub>3</sub>，会使该固体的溶解度增大。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Each added substance removes one of the ions of the dissolution equilibrium ${\\text{Ag}}_{2}{\\text{CO}}_{3}(s)\\rightleftharpoons 2{\\text{Ag}}^{\\text{+}}(aq)+{\\text{CO}}_{3}{}^{\\text{2−}}(aq)$, $\\kKsp=8.1\\;\\times \\;{10}^{-12}$, so the equilibrium shifts to the right and more solid dissolves. Ammonia removes Ag<sup>+</sup> by forming the complex ion, ${\\text{Ag}}^{\\text{+}}(aq)+2{\\text{NH}}_{3}(aq)\\rightleftharpoons {\\text{Ag(NH}}_{3}{)}_{2}{}^{\\text{+}}(aq)$, $\\kKf=1.7\\;\\times \\;{10}^{7}$. The coupled reaction ${\\text{Ag}}_{2}{\\text{CO}}_{3}(s)+4{\\text{NH}}_{3}(aq)\\rightleftharpoons 2{\\text{Ag(NH}}_{3}{)}_{2}{}^{\\text{+}}(aq)+{\\text{CO}}_{3}{}^{\\text{2−}}(aq)$ has $K=\\kKsp{\\kKf}^{2}=(8.1\\;\\times \\;{10}^{-12}){(1.7\\;\\times \\;{10}^{7})}^{2}=2.3\\;\\times \\;{10}^{3}$, far larger than $\\kKsp$. Nitric acid removes carbonate ion, a base, by protonating it: ${\\text{CO}}_{3}{}^{\\text{2−}}(aq)+{\\text{H}}_{3}{\\text{O}}^{+}(aq)\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}(aq)+{\\text{H}}_{2}\\text{O}(l)$, and with more acid ${\\text{HCO}}_{3}{}^{-}$ goes on to H<sub>2</sub>CO<sub>3</sub>, which gives off CO<sub>2</sub>. The coupled reaction with one proton has $K=\\kKsp\\text{/}\\kKa=8.1\\;\\times \\;{10}^{-12}\\text{/}4.7\\;\\times \\;{10}^{-11}=0.17$, again much larger than $\\kKsp$, as for calcium carbonate in acidic water."
+    "solution": "每种加入的物质都会消耗溶解平衡 ${\\text{Ag}}_{2}{\\text{CO}}_{3}(s)\\rightleftharpoons 2{\\text{Ag}}^{\\text{+}}(aq)+{\\text{CO}}_{3}{}^{\\text{2−}}(aq)$，$\\kKsp=8.1\\;\\times \\;{10}^{-12}$ 中的一种离子，因此平衡向右移动，更多固体溶解。氨通过形成配离子消耗 Ag<sup>+</sup>，${\\text{Ag}}^{\\text{+}}(aq)+2{\\text{NH}}_{3}(aq)\\rightleftharpoons {\\text{Ag(NH}}_{3}{)}_{2}{}^{\\text{+}}(aq)$，$\\kKf=1.7\\;\\times \\;{10}^{7}$。相互关联的反应 ${\\text{Ag}}_{2}{\\text{CO}}_{3}(s)+4{\\text{NH}}_{3}(aq)\\rightleftharpoons 2{\\text{Ag(NH}}_{3}{)}_{2}{}^{\\text{+}}(aq)+{\\text{CO}}_{3}{}^{\\text{2−}}(aq)$ 的 $K=\\kKsp{\\kKf}^{2}=(8.1\\;\\times \\;{10}^{-12}){(1.7\\;\\times \\;{10}^{7})}^{2}=2.3\\;\\times \\;{10}^{3}$，远大于 $\\kKsp$。硝酸通过质子化消耗碳酸根离子（一种碱）：${\\text{CO}}_{3}{}^{\\text{2−}}(aq)+{\\text{H}}_{3}{\\text{O}}^{+}(aq)\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}(aq)+{\\text{H}}_{2}\\text{O}(l)$，酸更多时 ${\\text{HCO}}_{3}{}^{-}$ 继续变为 H<sub>2</sub>CO<sub>3</sub>，后者放出 CO<sub>2</sub>。只含一个质子的相互关联反应的 $K=\\kKsp\\text{/}\\kKa=8.1\\;\\times \\;{10}^{-12}\\text{/}4.7\\;\\times \\;{10}^{-11}=0.17$，同样远大于 $\\kKsp$，就像酸性水中的碳酸钙一样。"
    }
   },
   {
@@ -298,11 +336,11 @@
     "at": "end"
    },
    "cite": "complex",
-   "prompt": "Explain why addition of NH<sub>3</sub> or HNO<sub>3</sub> to a saturated solution of Cu(OH)<sub>2</sub> in contact with solid Cu(OH)<sub>2</sub> increases the solubility of the solid.",
+   "prompt": "解释为什么向与固体 Cu(OH)<sub>2</sub> 接触的 Cu(OH)<sub>2</sub> 饱和溶液中加入 NH<sub>3</sub> 或 HNO<sub>3</sub>，会使该固体的溶解度增大。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Each added substance removes one of the ions of the dissolution equilibrium $\\text{Cu}{(\\text{OH})}_{2}(s)\\rightleftharpoons {\\text{Cu}}^{\\text{2+}}(aq)+2{\\text{OH}}^{\\text{−}}(aq)$, $\\kKsp=2.2\\;\\times \\;{10}^{-20}$, so the equilibrium shifts to the right and more solid dissolves. Ammonia removes Cu<sup>2+</sup> by forming the complex ion, ${\\text{Cu}}^{\\text{2+}}(aq)+4{\\text{NH}}_{3}(aq)\\rightleftharpoons {\\text{Cu(NH}}_{3}{)}_{4}{}^{\\text{2+}}(aq)$, $\\kKf=1.7\\;\\times \\;{10}^{13}$; the coupled reaction ${\\text{Cu(OH)}}_{2}(s)+4{\\text{NH}}_{3}(aq)\\rightleftharpoons {\\text{Cu(NH}}_{3}{)}_{4}{}^{\\text{2+}}(aq)+2{\\text{OH}}^{\\text{−}}(aq)$ has $K=\\kKsp\\kKf=3.7\\;\\times \\;{10}^{-7}$, more than 10<sup>13</sup> times $\\kKsp$, which outweighs the small amount of hydroxide the weak base ammonia adds. Nitric acid removes OH<sup>–</sup> by neutralization, ${\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{OH}}^{-}(aq)\\;\\longrightarrow\\;2{\\text{H}}_{2}\\text{O}(l)$; the coupled reaction ${\\text{Cu(OH)}}_{2}(s)+2{\\text{H}}_{3}{\\text{O}}^{+}(aq)\\rightleftharpoons {\\text{Cu}}^{\\text{2+}}(aq)+4{\\text{H}}_{2}\\text{O}(l)$ has $K=\\kKsp\\text{/}{\\kKw}^{2}=2.2\\;\\times \\;{10}^{-20}\\text{/}{(1.0\\;\\times \\;{10}^{-14})}^{2}=2.2\\;\\times \\;{10}^{8}$, so the hydroxide dissolves readily in acid."
+    "solution": "每种加入的物质都会消耗溶解平衡 $\\text{Cu}{(\\text{OH})}_{2}(s)\\rightleftharpoons {\\text{Cu}}^{\\text{2+}}(aq)+2{\\text{OH}}^{\\text{−}}(aq)$，$\\kKsp=2.2\\;\\times \\;{10}^{-20}$ 中的一种离子，因此平衡向右移动，更多固体溶解。氨通过形成配离子消耗 Cu<sup>2+</sup>，${\\text{Cu}}^{\\text{2+}}(aq)+4{\\text{NH}}_{3}(aq)\\rightleftharpoons {\\text{Cu(NH}}_{3}{)}_{4}{}^{\\text{2+}}(aq)$，$\\kKf=1.7\\;\\times \\;{10}^{13}$；相互关联的反应 ${\\text{Cu(OH)}}_{2}(s)+4{\\text{NH}}_{3}(aq)\\rightleftharpoons {\\text{Cu(NH}}_{3}{)}_{4}{}^{\\text{2+}}(aq)+2{\\text{OH}}^{\\text{−}}(aq)$ 的 $K=\\kKsp\\kKf=3.7\\;\\times \\;{10}^{-7}$，是 $\\kKsp$ 的 10<sup>13</sup> 倍以上，这盖过了弱碱氨所带入的少量氢氧根。硝酸通过中和消耗 OH<sup>–</sup>，${\\text{H}}_{3}{\\text{O}}^{+}(aq)+{\\text{OH}}^{-}(aq)\\;\\longrightarrow\\;2{\\text{H}}_{2}\\text{O}(l)$；相互关联的反应 ${\\text{Cu(OH)}}_{2}(s)+2{\\text{H}}_{3}{\\text{O}}^{+}(aq)\\rightleftharpoons {\\text{Cu}}^{\\text{2+}}(aq)+4{\\text{H}}_{2}\\text{O}(l)$ 的 $K=\\kKsp\\text{/}{\\kKw}^{2}=2.2\\;\\times \\;{10}^{-20}\\text{/}{(1.0\\;\\times \\;{10}^{-14})}^{2}=2.2\\;\\times \\;{10}^{8}$，所以氢氧化物很容易溶于酸。"
    }
   },
   {
@@ -315,7 +353,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "Calculate the molar solubility of Al(OH)<sub>3</sub> in a buffer solution with 0.100 <em>M</em> NH<sub>3</sub> and 0.400 <em>M</em> ${\\text{NH}}_{4}{}^{+}.$",
+   "prompt": "计算 Al(OH)<sub>3</sub> 在缓冲溶液中的摩尔溶解度，该缓冲溶液含有 0.100 <em>M</em> NH<sub>3</sub> 和 0.400 <em>M</em> ${\\text{NH}}_{4}{}^{+}$。",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -324,17 +362,17 @@
       "part": "[OH<sup>−</sup>]",
       "value": 4.5e-06,
       "unit": "M",
-      "hint": "Find the hydroxide ion concentration of the buffer from <em>K</em><sub>b</sub> of ammonia and the ratio of the two concentrations."
+      "hint": "由氨的 <em>K</em><sub>b</sub> 和两种浓度之比，求缓冲溶液的氢氧根离子浓度。"
      },
      {
       "part": "[Al<sup>3+</sup>] (molar solubility)",
       "value": 2e-16,
       "unit": "M",
       "tol": 0.15,
-      "hint": "Divide <em>K</em><sub>sp</sub> by the cube of [OH<sup>−</sup>], as in Example 15.15."
+      "hint": "像例 15.15 那样，用 <em>K</em><sub>sp</sub> 除以 [OH<sup>−</sup>] 的立方。"
      }
     ],
-    "solution": "[OH<sup>−</sup>] = 4.5 × 10<sup>−6</sup>; [Al<sup>3+</sup>] = 2 × 10<sup>–16</sup> (molar solubility)"
+    "solution": "[OH<sup>−</sup>] = 4.5 × 10<sup>−6</sup>；[Al<sup>3+</sup>] = 2 × 10<sup>–16</sup>（摩尔溶解度）"
    }
   },
   {
@@ -347,14 +385,14 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "What is the molar solubility of BaSO<sub>4</sub> in a 0.250-<em>M</em> solution of NaHSO<sub>4</sub>? <em>K</em><sub>a</sub> for ${\\text{HSO}}_{4}{}^{\\text{−}}$ = 1.2 × 10<sup>–2</sup>.",
+   "prompt": "BaSO<sub>4</sub> 在 0.250 <em>M</em> NaHSO<sub>4</sub> 溶液中的摩尔溶解度是多少？${\\text{HSO}}_{4}{}^{\\text{−}}$ 的 <em>K</em><sub>a</sub> = 1.2 × 10<sup>–2</sup>。",
    "answer": {
     "type": "number",
     "value": 2.2e-09,
     "unit": "M",
     "generated_by": "source",
-    "hint": "Find [SO<sub>4</sub><sup>2−</sup>] from the ionization of HSO<sub>4</sub><sup>−</sup> first; it is a common ion for the dissolution of BaSO<sub>4</sub>.",
-    "solution": "${\\text{K}}_{sp}=[{\\text{Ba}}^{2+}][{\\text{SO}}_{4}{}^{\\text{2−}}]=[{\\text{Ba}}^{2+}](0.049)=1.08\\times {10}^{–10}[{\\text{Ba}}^{2+}]=2.2\\times {10}^{–9}$; (molar solubility)"
+    "hint": "先由 HSO<sub>4</sub><sup>−</sup> 的电离求出 [SO<sub>4</sub><sup>2−</sup>]；它是 BaSO<sub>4</sub> 溶解时的同离子。",
+    "solution": "${\\text{K}}_{sp}=[{\\text{Ba}}^{2+}][{\\text{SO}}_{4}{}^{\\text{2−}}]=[{\\text{Ba}}^{2+}](0.049)=1.08\\times {10}^{–10}[{\\text{Ba}}^{2+}]=2.2\\times {10}^{–9}$；（摩尔溶解度）"
    }
   },
   {
@@ -367,7 +405,7 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "What is the molar solubility of Pb(OH)<sub>2</sub> in a 0.138-<em>M</em> solution of CH<sub>3</sub>NH<sub>2</sub>?",
+   "prompt": "Pb(OH)<sub>2</sub> 在 0.138 <em>M</em> CH<sub>3</sub>NH<sub>2</sub> 溶液中的摩尔溶解度是多少？",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -376,16 +414,16 @@
       "part": "[OH<sup>−</sup>]",
       "value": 0.0076,
       "unit": "M",
-      "hint": "Find the hydroxide ion concentration from the base ionization of methylamine first."
+      "hint": "先由甲胺的碱电离求出氢氧根离子浓度。"
      },
      {
       "part": "[Pb<sup>2+</sup>] (molar solubility)",
       "value": 2.1e-11,
       "unit": "M",
-      "hint": "Divide <em>K</em><sub>sp</sub> of Pb(OH)<sub>2</sub> by the square of [OH<sup>−</sup>]."
+      "hint": "用 Pb(OH)<sub>2</sub> 的 <em>K</em><sub>sp</sub> 除以 [OH<sup>−</sup>] 的平方。"
      }
     ],
-    "solution": "[OH<sup>–</sup>] = 7.6 × 10<sup>−3</sup> <em>M</em>; [Pb<sup>2+</sup>] = 2.1 × 10<sup>–11</sup> (molar solubility)"
+    "solution": "[OH<sup>–</sup>] = 7.6 × 10<sup>−3</sup> <em>M</em>；[Pb<sup>2+</sup>] = 2.1 × 10<sup>–11</sup>（摩尔溶解度）"
    }
   },
   {
@@ -398,13 +436,13 @@
     "at": "end"
    },
    "cite": "calculations",
-   "prompt": "A 0.125-<em>M</em> solution of Mn(NO<sub>3</sub>)<sub>2</sub> is saturated with H<sub>2</sub>S ([H<sub>2</sub>S] = 0.10 <em>M</em>). At what pH does MnS begin to precipitate?<br>$\\text{MnS}(s)\\rightleftharpoons {\\text{Mn}}^{\\text{2+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)\\hspace{4em}{K}_{\\text{sp}}=2.3\\;\\times \\;{10}^{\\text{−13}}$<br>${\\text{H}}_{2}\\text{S}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons 2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)\\hspace{4em}K=1.0\\;\\times \\;{10}^{\\text{−26}}$",
+   "prompt": "0.125 <em>M</em> Mn(NO<sub>3</sub>)<sub>2</sub> 溶液被 H<sub>2</sub>S 饱和（[H<sub>2</sub>S] = 0.10 <em>M</em>）。pH 为多少时 MnS 开始沉淀？<br>$\\text{MnS}(s)\\rightleftharpoons {\\text{Mn}}^{\\text{2+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)\\hspace{4em}{K}_{\\text{sp}}=2.3\\;\\times \\;{10}^{\\text{−13}}$<br>${\\text{H}}_{2}\\text{S}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons 2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{S}}^{\\text{2−}}(aq)\\hspace{4em}K=1.0\\;\\times \\;{10}^{\\text{−26}}$",
    "answer": {
     "type": "number",
     "value": 7.66,
     "tol": 0.01,
     "generated_by": "source",
-    "hint": "Find the [S<sup>2−</sup>] at which the ion product of MnS reaches <em>K</em><sub>sp</sub>, then the [H<sub>3</sub>O<sup>+</sup>] that the H<sub>2</sub>S equilibrium allows at that [S<sup>2−</sup>].",
+    "hint": "求出 MnS 的离子积达到 <em>K</em><sub>sp</sub> 时的 [S<sup>2−</sup>]，再求在该 [S<sup>2−</sup>] 下 H<sub>2</sub>S 平衡所允许的 [H<sub>3</sub>O<sup>+</sup>]。",
     "solution": "7.66"
    }
   },
@@ -418,11 +456,11 @@
     "at": "end"
    },
    "cite": "enamel",
-   "prompt": "Which of the following compounds, when dissolved in a 0.01-<em>M</em> solution of HClO<sub>4</sub>, has a solubility greater than in pure water: CuCl, CaCO<sub>3</sub>, MnS, PbBr<sub>2</sub>, CaF<sub>2</sub>? Explain your answer.",
+   "prompt": "下列化合物中，哪些溶于 0.01 <em>M</em> HClO<sub>4</sub> 溶液时的溶解度大于在纯水中的溶解度：CuCl、CaCO<sub>3</sub>、MnS、PbBr<sub>2</sub>、CaF<sub>2</sub>？请解释你的答案。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "CaCO<sub>3</sub>, MnS and CaF<sub>2</sub> are more soluble in 0.01 <em>M</em> HClO<sub>4</sub> than in pure water; CuCl and PbBr<sub>2</sub> are not. Carbonate, sulfide and fluoride are basic anions, the conjugate bases of the weak acids ${\\text{HCO}}_{3}{}^{-}$, HS<sup>–</sup> and HF. The hydronium ion of the strong acid protonates them, for example ${\\text{CO}}_{3}{}^{\\text{2−}}(aq)+{\\text{H}}_{3}{\\text{O}}^{+}(aq)\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}(aq)+{\\text{H}}_{2}\\text{O}(l)$, which lowers the anion concentration and shifts each dissolution equilibrium to the right, as for calcium carbonate in acidic ocean water. Even for the weakest of these bases, fluoride, $\\kKa=6.4\\;\\times \\;{10}^{-4}$ for HF gives $[\\text{HF}]\\text{/}[{\\text{F}}^{-}]=0.01\\text{/}(6.4\\;\\times \\;{10}^{-4})=16$, so most of the dissolved fluoride is removed. Chloride and bromide are conjugate bases of the strong acids HCl and HBr and do not react with hydronium ion, and perchlorate ion is not a common ion of either salt, so the solubilities of CuCl and PbBr<sub>2</sub> are unchanged."
+    "solution": "CaCO<sub>3</sub>、MnS 和 CaF<sub>2</sub> 在 0.01 <em>M</em> HClO<sub>4</sub> 中比在纯水中更易溶；CuCl 和 PbBr<sub>2</sub> 则不然。碳酸根、硫离子和氟离子都是碱性阴离子，分别是弱酸 ${\\text{HCO}}_{3}{}^{-}$、HS<sup>–</sup> 和 HF 的共轭碱。强酸的水合氢离子使它们质子化，例如 ${\\text{CO}}_{3}{}^{\\text{2−}}(aq)+{\\text{H}}_{3}{\\text{O}}^{+}(aq)\\;\\longrightarrow\\;{\\text{HCO}}_{3}{}^{-}(aq)+{\\text{H}}_{2}\\text{O}(l)$，这降低了阴离子的浓度，使各个溶解平衡向右移动，就像酸性海水中的碳酸钙一样。即使对这几种碱中最弱的氟离子来说，HF 的 $\\kKa=6.4\\;\\times \\;{10}^{-4}$ 也给出 $[\\text{HF}]\\text{/}[{\\text{F}}^{-}]=0.01\\text{/}(6.4\\;\\times \\;{10}^{-4})=16$，所以溶解下来的氟离子大部分被消耗掉。氯离子和溴离子是强酸 HCl 和 HBr 的共轭碱，不与水合氢离子反应，而高氯酸根离子不是这两种盐的同离子，所以 CuCl 和 PbBr<sub>2</sub> 的溶解度不变。"
    }
   },
   {
@@ -435,11 +473,11 @@
     "at": "end"
    },
    "cite": "enamel",
-   "prompt": "Which of the following compounds, when dissolved in a 0.01-<em>M</em> solution of HClO<sub>4</sub>, has a solubility greater than in pure water: AgBr, BaF<sub>2</sub>, Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>, ZnS, PbI<sub>2</sub>? Explain your answer.",
+   "prompt": "下列化合物中，哪些溶于 0.01 <em>M</em> HClO<sub>4</sub> 溶液时的溶解度大于在纯水中的溶解度：AgBr、BaF<sub>2</sub>、Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>、ZnS、PbI<sub>2</sub>？请解释你的答案。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "BaF<sub>2</sub>, Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>, ZnS; each is a salt of a weak acid, and the $[{\\text{H}}_{3}{\\text{O}}^{+}]$ from perchloric acid reduces the equilibrium concentration of the anion, thereby increasing the concentration of the cations"
+    "solution": "BaF<sub>2</sub>、Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>、ZnS；它们都是弱酸的盐，高氯酸提供的 $[{\\text{H}}_{3}{\\text{O}}^{+}]$ 降低了阴离子的平衡浓度，从而增大了阳离子的浓度"
    }
   },
   {
@@ -452,11 +490,11 @@
     "at": "end"
    },
    "cite": "complex",
-   "prompt": "What is the effect on the amount of solid Mg(OH)<sub>2</sub> that dissolves and the concentrations of Mg<sup>2+</sup> and OH<sup>–</sup> when each of the following are added to a mixture of solid Mg(OH)<sub>2</sub> and water at equilibrium?<br>(a) MgCl<sub>2</sub><br>(b) KOH<br>(c) HClO<sub>4</sub><br>(d) NaNO<sub>3</sub><br>(e) Mg(OH)<sub>2</sub>",
+   "prompt": "向固体 Mg(OH)<sub>2</sub> 与水处于平衡的混合物中分别加入下列各物质时，对溶解的 Mg(OH)<sub>2</sub> 的量以及 Mg<sup>2+</sup> 和 OH<sup>–</sup> 的浓度有什么影响？<br>（a）MgCl<sub>2</sub><br>（b）KOH<br>（c）HClO<sub>4</sub><br>（d）NaNO<sub>3</sub><br>（e）Mg(OH)<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "For the equilibrium $\\text{Mg}{(\\text{OH})}_{2}(s)\\rightleftharpoons {\\text{Mg}}^{\\text{2+}}(aq)+2{\\text{OH}}^{\\text{−}}(aq)$:<br>(a) MgCl<sub>2</sub> adds the common ion Mg<sup>2+</sup>, so the equilibrium shifts to the left: less Mg(OH)<sub>2</sub> is dissolved (some precipitates), [Mg<sup>2+</sup>] increases and [OH<sup>–</sup>] decreases.<br>(b) KOH adds the common ion OH<sup>–</sup>, so the equilibrium shifts to the left: less solid is dissolved, [OH<sup>–</sup>] increases and [Mg<sup>2+</sup>] decreases.<br>(c) HClO<sub>4</sub> removes OH<sup>–</sup> by neutralization to water, so the equilibrium shifts to the right: more solid dissolves, [Mg<sup>2+</sup>] increases and [OH<sup>–</sup>] decreases.<br>(d) NaNO<sub>3</sub> adds Na<sup>+</sup> and ${\\text{NO}}_{3}{}^{-}$, which neither are common ions nor react with Mg<sup>2+</sup> or OH<sup>–</sup>, so the amount dissolved and both concentrations are unchanged.<br>(e) More Mg(OH)<sub>2</sub> adds only solid, which has no term in $\\kKsp=[{\\text{Mg}}^{\\text{2+}}]{[{\\text{OH}}^{\\text{−}}]}^{2}$; the solution is already saturated, so no more dissolves and [Mg<sup>2+</sup>] and [OH<sup>–</sup>] are unchanged, while the amount of undissolved solid grows by the amount added."
+    "solution": "对于平衡 $\\text{Mg}{(\\text{OH})}_{2}(s)\\rightleftharpoons {\\text{Mg}}^{\\text{2+}}(aq)+2{\\text{OH}}^{\\text{−}}(aq)$：<br>（a）MgCl<sub>2</sub> 加入同离子 Mg<sup>2+</sup>，因此平衡向左移动：溶解的 Mg(OH)<sub>2</sub> 减少（有一部分沉淀出来），[Mg<sup>2+</sup>] 增大，[OH<sup>–</sup>] 减小。<br>（b）KOH 加入同离子 OH<sup>–</sup>，因此平衡向左移动：溶解的固体减少，[OH<sup>–</sup>] 增大，[Mg<sup>2+</sup>] 减小。<br>（c）HClO<sub>4</sub> 通过中和生成水而消耗 OH<sup>–</sup>，因此平衡向右移动：更多固体溶解，[Mg<sup>2+</sup>] 增大，[OH<sup>–</sup>] 减小。<br>（d）NaNO<sub>3</sub> 加入 Na<sup>+</sup> 和 ${\\text{NO}}_{3}{}^{-}$，它们既不是同离子，也不与 Mg<sup>2+</sup> 或 OH<sup>–</sup> 反应，因此溶解的量和两种浓度都不变。<br>（e）再加入 Mg(OH)<sub>2</sub> 只是加入固体，而固体在 $\\kKsp=[{\\text{Mg}}^{\\text{2+}}]{[{\\text{OH}}^{\\text{−}}]}^{2}$ 中没有对应的项；溶液已经饱和，因此不会再有固体溶解，[Mg<sup>2+</sup>] 和 [OH<sup>–</sup>] 不变，而未溶解的固体的量增加了所加入的量。"
    }
   },
   {
@@ -469,11 +507,11 @@
     "at": "end"
    },
    "cite": "enamel",
-   "prompt": "What is the effect on the amount of CaHPO<sub>4</sub> that dissolves and the concentrations of Ca<sup>2+</sup> and ${\\text{HPO}}_{4}{}^{\\text{2−}}$ when each of the following are added to a mixture of solid CaHPO<sub>4</sub> and water at equilibrium?<br>(a) CaCl<sub>2</sub><br>(b) HCl<br>(c) KClO<sub>4</sub><br>(d) NaOH<br>(e) CaHPO<sub>4</sub>",
+   "prompt": "向固体 CaHPO<sub>4</sub> 与水处于平衡的混合物中分别加入下列各物质时，对溶解的 CaHPO<sub>4</sub> 的量以及 Ca<sup>2+</sup> 和 ${\\text{HPO}}_{4}{}^{\\text{2−}}$ 的浓度有什么影响？<br>（a）CaCl<sub>2</sub><br>（b）HCl<br>（c）KClO<sub>4</sub><br>（d）NaOH<br>（e）CaHPO<sub>4</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Effect on amount of solid CaHPO<sub>4</sub>, [Ca<sup>2+</sup>], [OH<sup>–</sup>]:<sup class=\"fn\" data-note=\"c-e105-hpo4\"></sup> (a) increase, increase, decrease; (b) decrease, increase, decrease; (c) no effect, no effect, no effect; (d) decrease, increase, decrease; (e) increase, no effect, no effect"
+    "solution": "对固体 CaHPO<sub>4</sub> 的量、[Ca<sup>2+</sup>]、[OH<sup>–</sup>] 的影响：<sup class=\"fn\" data-note=\"c-e105-hpo4\"></sup>（a）增大，增大，减小；（b）减小，增大，减小；（c）无影响，无影响，无影响；（d）减小，增大，减小；（e）增大，无影响，无影响"
    }
   },
   {
@@ -486,11 +524,11 @@
     "at": "end"
    },
    "cite": "enamel",
-   "prompt": "Identify all chemical species present in an aqueous solution of Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> and list these species in decreasing order of their concentrations. (Hint: Remember that the ${\\text{PO}}_{4}{}^{\\text{3−}}$ ion is a weak base.)",
+   "prompt": "指出 Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> 水溶液中存在的所有化学物种，并按浓度由大到小列出这些物种。（提示：请记住 ${\\text{PO}}_{4}{}^{\\text{3−}}$ 离子是一种弱碱。）",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "In decreasing order of concentration the species are H<sub>2</sub>O > Ca<sup>2+</sup> > OH<sup>–</sup> > ${\\text{HPO}}_{4}{}^{\\text{2−}}$ > ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}$ > ${\\text{PO}}_{4}{}^{\\text{3−}}$ > H<sub>3</sub>O<sup>+</sup> > H<sub>3</sub>PO<sub>4</sub>. The solid dissolves as ${\\text{Ca}}_{3}{({\\text{PO}}_{4})}_{2}(s)\\rightleftharpoons 3{\\text{Ca}}^{\\text{2+}}(aq)+2{\\text{PO}}_{4}{}^{\\text{3−}}(aq)$, $\\kKsp=1.3\\;\\times \\;{10}^{-32}$. Phosphate ion is a fairly strong base, $\\kKb=\\kKw\\text{/}\\kKa=1.0\\;\\times \\;{10}^{-14}\\text{/}4.2\\;\\times \\;{10}^{-13}=0.024$, so at the micromolar concentrations of this solution nearly all of it reacts, ${\\text{PO}}_{4}{}^{\\text{3−}}+{\\text{H}}_{2}\\text{O}\\rightleftharpoons {\\text{HPO}}_{4}{}^{\\text{2−}}+{\\text{OH}}^{-}$, and each ${\\text{HPO}}_{4}{}^{\\text{2−}}$ formed releases one OH<sup>–</sup>. This removal of phosphate raises the solubility about 25-fold, to about 4 × 10<sup>–6</sup> <em>M</em>. Solving the dissolution and the three base steps together gives [Ca<sup>2+</sup>] ≈ 1.2 × 10<sup>–5</sup> <em>M</em>, [OH<sup>–</sup>] ≈ 8.2 × 10<sup>–6</sup> <em>M</em> (pH 8.9), $[{\\text{HPO}}_{4}{}^{\\text{2−}}]$ ≈ 7.9 × 10<sup>–6</sup> <em>M</em>, $[{\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}]$ ≈ 1.6 × 10<sup>–7</sup> <em>M</em>, $[{\\text{PO}}_{4}{}^{\\text{3−}}]$ ≈ 3 × 10<sup>–9</sup> <em>M</em>, [H<sub>3</sub>O<sup>+</sup>] ≈ 1.2 × 10<sup>–9</sup> <em>M</em> and [H<sub>3</sub>PO<sub>4</sub>] ≈ 3 × 10<sup>–14</sup> <em>M</em>, each later base step much less extensive than the one before."
+    "solution": "各物种按浓度由大到小依次为 H<sub>2</sub>O > Ca<sup>2+</sup> > OH<sup>–</sup> > ${\\text{HPO}}_{4}{}^{\\text{2−}}$ > ${\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}$ > ${\\text{PO}}_{4}{}^{\\text{3−}}$ > H<sub>3</sub>O<sup>+</sup> > H<sub>3</sub>PO<sub>4</sub>。该固体按 ${\\text{Ca}}_{3}{({\\text{PO}}_{4})}_{2}(s)\\rightleftharpoons 3{\\text{Ca}}^{\\text{2+}}(aq)+2{\\text{PO}}_{4}{}^{\\text{3−}}(aq)$ 溶解，$\\kKsp=1.3\\;\\times \\;{10}^{-32}$。磷酸根离子是相当强的碱，$\\kKb=\\kKw\\text{/}\\kKa=1.0\\;\\times \\;{10}^{-14}\\text{/}4.2\\;\\times \\;{10}^{-13}=0.024$，因此在这种溶液的微摩尔浓度下，它几乎全部发生反应，${\\text{PO}}_{4}{}^{\\text{3−}}+{\\text{H}}_{2}\\text{O}\\rightleftharpoons {\\text{HPO}}_{4}{}^{\\text{2−}}+{\\text{OH}}^{-}$，每生成一个 ${\\text{HPO}}_{4}{}^{\\text{2−}}$ 就释放一个 OH<sup>–</sup>。磷酸根被这样消耗，使溶解度增大约 25 倍，达到约 4 × 10<sup>–6</sup> <em>M</em>。把溶解平衡与三步碱反应联立求解，得到 [Ca<sup>2+</sup>] ≈ 1.2 × 10<sup>–5</sup> <em>M</em>，[OH<sup>–</sup>] ≈ 8.2 × 10<sup>–6</sup> <em>M</em>（pH 8.9），$[{\\text{HPO}}_{4}{}^{\\text{2−}}]$ ≈ 7.9 × 10<sup>–6</sup> <em>M</em>，$[{\\text{H}}_{2}{\\text{PO}}_{4}{}^{-}]$ ≈ 1.6 × 10<sup>–7</sup> <em>M</em>，$[{\\text{PO}}_{4}{}^{\\text{3−}}]$ ≈ 3 × 10<sup>–9</sup> <em>M</em>，[H<sub>3</sub>O<sup>+</sup>] ≈ 1.2 × 10<sup>–9</sup> <em>M</em>，[H<sub>3</sub>PO<sub>4</sub>] ≈ 3 × 10<sup>–14</sup> <em>M</em>，后面每一步碱反应进行的程度都比前一步小得多。"
    }
   }
  ],
@@ -600,12 +638,12 @@
   {
    "id": "c-thiosulfate-complex",
    "kind": "correction",
-   "html": "The book writes Ag(S<sub>2</sub>O<sub>2</sub>)<sub>2</sub><sup>3−</sup> here. The complex is Ag(S<sub>2</sub>O<sub>3</sub>)<sub>2</sub><sup>3−</sup>, as the calculation below has it."
+   "html": "书中此处写作 Ag(S<sub>2</sub>O<sub>2</sub>)<sub>2</sub><sup>3−</sup>。该配离子应为 Ag(S<sub>2</sub>O<sub>3</sub>)<sub>2</sub><sup>3−</sup>，如下面的计算所示。"
   },
   {
    "id": "c-e105-hpo4",
    "kind": "correction",
-   "html": "The key heads its third column [OH<sup>–</sup>]; the question asks for the concentration of ${\\text{HPO}}_{4}{}^{\\text{2−}}$, which that column gives."
+   "html": "书后答案把第三列标为 [OH<sup>–</sup>]；题目问的是 ${\\text{HPO}}_{4}{}^{\\text{2−}}$ 的浓度，该列给出的正是这个浓度。"
   }
  ]
 }

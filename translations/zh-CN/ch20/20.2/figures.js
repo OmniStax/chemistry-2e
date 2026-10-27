@@ -25,18 +25,18 @@ const RAD = Math.PI / 180;
 ===================================================================== */
 (function () {
   const H = 480, d = sim('sim-oxygen-chain', H);
-  const ALKANE = ['', 'methane', 'ethane', 'propane', 'butane', 'pentane', 'hexane'];
-  const STEM = ['', 'meth', 'eth', 'prop', 'but', 'pent', 'hex'];
-  const ALKYL = ['', 'methyl', 'ethyl', 'propyl', 'butyl', 'pentyl', 'hexyl'];
-  const ORD = ['', '1st', '2nd', '3rd', '4th', '5th', '6th'];
+  const ALKANE = ['', '甲烷', '乙烷', '丙烷', '丁烷', '戊烷', '己烷'];
+  const STEM = ['', '甲', '乙', '丙', '丁', '戊', '己'];
+  const ALKYL = ['', '甲基', '乙基', '丙基', '丁基', '戊基', '己基'];
+  const ORD = ['', '第 1 个', '第 2 个', '第 3 个', '第 4 个', '第 5 个', '第 6 个'];
   const SUBS = { 0: '₀', 1: '₁', 2: '₂', 3: '₃', 4: '₄', 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉' };
   const sub = (n) => String(n).split('').map((c) => SUBS[c]).join('');
   const NS = [2, 3, 4, 5, 6];
 
   /* ---------- the molecule as a graph, and its name ---------- */
   const optionsFor = (n) => [
-    ...Array.from({ length: n }, (_, i) => ({ value: `oh-${i + 1}`, label: `–OH on ${ORD[i + 1]} C` })),
-    ...Array.from({ length: n - 1 }, (_, i) => ({ value: `oe-${i + 1}`, label: `–O– after ${ORD[i + 1]} C` })),
+    ...Array.from({ length: n }, (_, i) => ({ value: `oh-${i + 1}`, label: `–OH 在${ORD[i + 1]} C 上` })),
+    ...Array.from({ length: n - 1 }, (_, i) => ({ value: `oe-${i + 1}`, label: `–O– 在${ORD[i + 1]} C 之后` })),
   ];
   function molecule(n, opt) {
     const [g, ks] = opt.split('-'), k = +ks, alcohol = g === 'oh';
@@ -51,17 +51,17 @@ const RAD = Math.PI / 180;
       const L = Math.min(k, n + 1 - k), fromLeft = k <= n + 1 - k;
       m.L = L; m.number = (i) => (fromLeft ? i : n + 1 - i);
       m.base = new Set(Array.from({ length: n }, (_, i) => i + 1));
-      m.name = n === 2 ? 'ethanol' : `${L}-${STEM[n]}anol`;
-      m.parts = { loc: n === 2 ? '' : String(L), base: `${STEM[n]}an`, suf: 'ol' };
+      m.name = n === 2 ? '乙醇' : `${L}-${STEM[n]}醇`;
+      m.parts = { loc: n === 2 ? '' : String(L), base: STEM[n], suf: '醇' };
     } else {
       const a = k, b = n - k, leftAlkoxy = a <= b, small = Math.min(a, b), large = Math.max(a, b);
       m.small = small; m.large = large;
       m.alkoxy = new Set(leftAlkoxy ? Array.from({ length: a }, (_, i) => i + 1) : Array.from({ length: b }, (_, i) => k + 1 + i));
       m.base = new Set(Array.from({ length: n }, (_, i) => i + 1).filter((i) => !m.alkoxy.has(i)));
       m.number = (i) => (leftAlkoxy ? i - k : k + 1 - i);
-      const alk = `${STEM[small]}oxy`;
+      const alk = `${STEM[small]}氧基`;
       m.name = `${large >= 3 ? '1-' : ''}${alk}${ALKANE[large]}`;
-      m.common = small === large ? `di${ALKYL[small]} ether` : [ALKYL[a], ALKYL[b]].sort().join(' ') + ' ether';
+      m.common = small === large ? (small === 2 ? '乙醚' : `二${STEM[small]}醚`) : `${STEM[small]}${STEM[large]}醚`;
       m.parts = { loc: large >= 3 ? '1' : '', alk, base: ALKANE[large], group: `C${small > 1 ? `_{${small}}` : ''}H_{${2 * small + 1}}O–` };
     }
     return m;
@@ -79,41 +79,41 @@ const RAD = Math.PI / 180;
   };
   const groupName = (m, j) => {
     const v = m.B[j];
-    if (v.el === 'O') return v.oh ? 'hydroxyl group, –OH' : 'oxygen atom of the ether, –O–';
+    if (v.el === 'O') return v.oh ? '羟基，–OH' : '醚的氧原子，–O–';
     const h = hCount(m, j), g = h === 0 ? 'C' : `CH${h > 1 ? sub(h) : ''}`;
-    if (m.alcohol || m.base.has(v.i)) return `${g} group, carbon ${m.number(v.i)} of the ${m.alcohol ? 'chain' : 'base chain'}`;
-    return `${g} group of the ${m.parts.alk} group`;
+    if (m.alcohol || m.base.has(v.i)) return `${g} 基团，${m.alcohol ? '链' : '主链'}的 ${m.number(v.i)} 号碳`;
+    return `${m.parts.alk}中的 ${g} 基团`;
   };
   const nb = (x) => x.replace(/-/g, '\u2011');
   const headlineOf = (m) => nb(m.alcohol
-    ? (m.n === 2 ? 'With the –OH group on ethane, the alcohol is ethanol.' : `With the –OH group on carbon ${m.L} of ${ALKANE[m.n]}, the alcohol is ${m.name}.`)
-    : `The oxygen atom joins ${m.small === 2 ? 'an' : 'a'} ${ALKYL[m.small]} group to the ${ALKANE[m.large]} base chain, so the ether is ${m.name}.`);
+    ? (m.n === 2 ? '–OH 基团连在乙烷上，该醇是乙醇。' : `–OH 基团连在${ALKANE[m.n]}的 ${m.L} 号碳上，该醇是${m.name}。`)
+    : `氧原子把一个${ALKYL[m.small]}与${ALKANE[m.large]}主链连接起来，所以该醚是${m.name}。`);
   function noteOf(m) {
-    if (!m.alcohol) return m.small === m.large ? `Both groups on the oxygen atom are ${ALKYL[m.small]} groups, so the common name is ${m.common}.`
-      : `The common name lists the two groups in alphabetical order: ${m.common}.`;
+    if (!m.alcohol) return m.small === m.large ? `氧原子上的两个基团都是${ALKYL[m.small]}，所以俗名是${m.common}。`
+      : `俗名按先小后大的顺序列出两个基团：${m.common}。`;
     const { n, k, L } = m, other = n + 1 - k;
-    if (n === 2) return 'Either carbon atom of ethane gives the same molecule, so ethanol needs no number.';
-    if (k === other) return `Carbon ${k} is the middle of the chain, so either end gives it the same number.`;
-    if (k === L) return `Numbered from the other end, the –OH group would be on carbon ${other}; the lower number, ${k}, is used.`;
-    return `Counted from the left, the –OH group is on the ${ORD[k]} carbon; numbered from the nearer end, it is on carbon ${L}.`;
+    if (n === 2) return '乙烷的任一个碳原子都给出同一种分子，所以乙醇不需要编号。';
+    if (k === other) return `${k} 号碳是链的中间，所以从任一端编号得到的编号相同。`;
+    if (k === L) return `若从另一端编号，–OH 基团将在 ${other} 号碳上；取较小的编号 ${k}。`;
+    return `从左端数起，–OH 基团在${ORD[k]}碳上；从较近的一端编号，则在 ${L} 号碳上。`;
   }
   function readoutOf(m) {
     const ub = (key, s, under) => `\\mk{${key}}{\\underbrace{\\text{${s}}}_{\\text{${under}}}}`;
     const f = `\\qquad\\mk{f}{\\text{C}_{${m.n}}\\text{H}_{${2 * m.n + 2}}\\text{O}}`;
-    const loc = m.parts.loc ? ub('loc', m.parts.loc + '-', 'carbon') : '';
-    if (m.alcohol) return loc + ub('base', m.parts.base, 'chain') + ub('suf', 'ol', '–OH') + f;
+    const loc = m.parts.loc ? ub('loc', m.parts.loc + '-', '碳') : '';
+    if (m.alcohol) return loc + ub('base', m.parts.base, '链') + ub('suf', m.parts.suf, '–OH') + f;
     const g = m.parts.group.replace(/_\{(\d+)\}/g, '}_{$1}\\text{').replace(/^/, '\\text{') + '}';
-    return loc + `\\mk{alk}{\\underbrace{\\text{${m.parts.alk}}}_{${g}}}` + ub('base', m.parts.base, 'base chain') + f;
+    return loc + `\\mk{alk}{\\underbrace{\\text{${m.parts.alk}}}_{${g}}}` + ub('base', m.parts.base, '主链') + f;
   }
 
   /* ---------- controls ---------- */
-  const view = F.choice(d.controls, { label: '\\text{view}', key: 'view', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d',
-    aria: 'a flat drawing or a model to turn', ms: 0, onInput: () => show() });
+  const view = F.choice(d.controls, { label: '\\text{视图}', key: 'view', options: [{ value: '2d', label: '2D' }, { value: '3d', label: '3D' }], value: '2d',
+    aria: '平面图或可转动的模型', ms: 0, onInput: () => show() });
   let last = null, prev = null;
-  const nPick = F.choice(d.controls, { label: '\\text{carbons}', key: 'carbons', options: NS.map((n) => ({ value: String(n), label: String(n) })), value: '5',
-    aria: 'the number of carbon atoms in the chain', onInput: () => switchN() });
-  const oPick = F.select(d.controls, { label: '\\text{oxygen}', key: 'oxygen', options: optionsFor(5), value: 'oh-2',
-    aria: 'where the oxygen atom goes, counting carbons from the left', onInput: () => { prev = shown; last = oPick; shown = state(); draw(); } });
+  const nPick = F.choice(d.controls, { label: '\\text{碳原子数}', key: 'carbons', options: NS.map((n) => ({ value: String(n), label: String(n) })), value: '5',
+    aria: '链中碳原子的个数', onInput: () => switchN() });
+  const oPick = F.select(d.controls, { label: '\\text{氧}', key: 'oxygen', options: optionsFor(5), value: 'oh-2',
+    aria: '氧原子的位置，碳从左数起', onInput: () => { prev = shown; last = oPick; shown = state(); draw(); } });
   const state = () => molecule(+nPick.value, oPick.value);
   let shown = state();
   function switchN() {
@@ -180,7 +180,7 @@ const RAD = Math.PI / 180;
       }
     });
     const hits = V.map((v) => ({ x: v.x, y: v.y, r: Math.max(24, v.w / 2 + 6), name: groupName(m, v.j) }));
-    if (br) hits.push({ x: br.x, y: br.y, r: 28, name: 'hydroxyl group, –OH' });
+    if (br) hits.push({ x: br.x, y: br.y, r: 28, name: '羟基，–OH' });
     return { out, hits };
   }
   let hits = [];
@@ -216,10 +216,10 @@ const RAD = Math.PI / 180;
     const P = [[0, 0, 0]];
     m.B.forEach((v, j) => { if (j + 1 < m.B.length) P.push(add(P[j], bondDir(j), BOND[v.el + m.B[j + 1].el])); });
     const atoms = [], sticks = [];
-    m.B.forEach((v, j) => atoms.push({ el: v.el, p: P[j], name: v.el === 'O' ? (v.oh ? 'oxygen atom of the –OH group' : 'oxygen atom of the ether')
-      : m.alcohol || m.base.has(v.i) ? `carbon atom ${m.number(v.i)} of the ${m.alcohol ? 'chain' : 'base chain'}` : `carbon atom of the ${m.parts.alk} group` }));
+    m.B.forEach((v, j) => atoms.push({ el: v.el, p: P[j], name: v.el === 'O' ? (v.oh ? '–OH 基团的氧原子' : '醚的氧原子')
+      : m.alcohol || m.base.has(v.i) ? `${m.alcohol ? '链' : '主链'}的 ${m.number(v.i)} 号碳原子` : `${m.parts.alk}的碳原子` }));
     for (let j = 0; j + 1 < m.B.length; j++) sticks.push([P[j], P[j + 1]]);
-    const H = (from, dir, len) => { const q = add(from, dir, len); atoms.push({ el: 'H', p: q, name: 'hydrogen atom' }); sticks.push([from, q]); };
+    const H = (from, dir, len) => { const q = add(from, dir, len); atoms.push({ el: 'H', p: q, name: '氢原子' }); sticks.push([from, q]); };
     m.B.forEach((v, j) => {
       const p = P[j], U = [];
       if (j > 0) U.push(norm(sub3(P[j - 1], p)));
@@ -232,7 +232,7 @@ const RAD = Math.PI / 180;
         const up = add(b.map((x) => x * Math.cos(HALF)), z, Math.sin(HALF)), dn = add(b.map((x) => x * Math.cos(HALF)), z, -Math.sin(HALF));
         if (m.branch === v.i) {
           const o = add(p, up, BOND.CO);
-          atoms.push({ el: 'O', p: o, name: 'oxygen atom of the –OH group' }); sticks.push([p, o]);
+          atoms.push({ el: 'O', p: o, name: '–OH 基团的氧原子' }); sticks.push([p, o]);
           const u = norm(sub3(p, o)), perp = norm(add(b, u, -dot3(b, u)));
           H(o, add(u.map((x) => x * Math.cos(TET)), perp, Math.sin(TET)), BOND.OH);
           H(p, dn, BOND.CH);
@@ -259,7 +259,7 @@ const RAD = Math.PI / 180;
   function show() {
     if (view.value === '3d' && !v3) {
       v3 = F.view3d(d.stage, { h: H, dist: 11, tilt: 0.25, spin: 'idle', yaw: 'free', pitch: [-1.2, 1.2],
-        views: [{ label: 'front', yaw: 0, pitch: 0.2 }, { label: 'along the chain', yaw: Math.PI / 2, pitch: 0.2 }] });
+        views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '沿链方向', yaw: Math.PI / 2, pitch: 0.2 }] });
       g3 = v3.scene ? v3.part(0) : null;
     }
     const on = !!three();

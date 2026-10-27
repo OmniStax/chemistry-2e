@@ -4,7 +4,7 @@ window.OMNISTAX_FIGURES['21.1'] = function (root, F) {
 const { tex, C, PAL, alpha, register, begin, line, arrow, dot, text, topline, axes, curve, labeller } = F;
 const sim = (id, H) => F.sim(root, id, H);
 
-const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen fluorine neon sodium magnesium aluminum silicon phosphorus sulfur chlorine argon potassium calcium scandium titanium vanadium chromium manganese iron cobalt nickel copper zinc gallium germanium arsenic selenium bromine krypton rubidium strontium yttrium zirconium niobium molybdenum technetium ruthenium rhodium palladium silver cadmium indium tin antimony tellurium iodine xenon cesium barium lanthanum cerium praseodymium neodymium promethium samarium europium gadolinium terbium dysprosium holmium erbium thulium ytterbium lutetium hafnium tantalum tungsten rhenium osmium iridium platinum gold mercury thallium lead bismuth polonium astatine radon francium radium actinium thorium protactinium uranium'.split(' ');
+const NAME = '氢 氦 锂 铍 硼 碳 氮 氧 氟 氖 钠 镁 铝 硅 磷 硫 氯 氩 钾 钙 钪 钛 钒 铬 锰 铁 钴 镍 铜 锌 镓 锗 砷 硒 溴 氪 铷 锶 钇 锆 铌 钼 锝 钌 铑 钯 银 镉 铟 锡 锑 碲 碘 氙 铯 钡 镧 铈 镨 钕 钷 钐 铕 钆 铽 镝 钬 铒 铥 镱 镥 铪 钽 钨 铼 锇 铱 铂 金 汞 铊 铅 铋 钋 砹 氡 钫 镭 锕 钍 镤 铀'.split(' ');
 
 /* =====================================================================
    FIGURE 21.2: the band of stability. The book's chart, protons across
@@ -35,7 +35,7 @@ const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen flu
   function draw() {
     const { ctx } = begin(d.c);
     const lab = labeller(ctx, 800);
-    const { X, Y } = axes(ctx, box, [0, 120], [0, 180], { nx: 12, ny: 9, xl: 'number of protons (Z)', yl: 'number of neutrons (n)' });
+    const { X, Y } = axes(ctx, box, [0, 120], [0, 180], { nx: 12, ny: 9, xl: '质子数 (Z)', yl: '中子数 (n)' });
     hits = [];
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.13); ctx.beginPath();
     LO.forEach(([z, n], i) => (i ? ctx.lineTo(X(z), Y(n)) : ctx.moveTo(X(z), Y(n))));
@@ -46,7 +46,7 @@ const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen flu
     STABLE.forEach((as, i) => as.forEach((A) => {
       const Z = i + 1, x = X(Z), y = Y(A - Z);
       dot(ctx, x, y, PAL.ink, true, 4);
-      hits.push({ x, y, r: 6, name: `${NAME[i]}-${A}: ${Z} protons, ${A - Z} neutrons, stable` });
+      hits.push({ x, y, r: 6, name: `${NAME[i]}-${A}：${Z} 个质子，${A - Z} 个中子，稳定` });
     }));
     REFS.forEach(([id, Z, n, ux, uy]) => {
       const x = X(Z), y = Y(n), col = F.ref(id);
@@ -56,9 +56,9 @@ const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen flu
     const LX = X(88), LY = Y(34);
     ctx.save(); ctx.fillStyle = PAL.panel; ctx.fillRect(LX - 22, LY - 26, 250, 92); ctx.restore();
     dot(ctx, LX, LY, PAL.ink, true, 6);
-    text(ctx, 'nonradioactive', LX + 22, LY, PAL.ink, { size: 19 });
+    text(ctx, '非放射性', LX + 22, LY, PAL.ink, { size: 19 });
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.13); ctx.fillRect(LX - 10, LY + 28, 20, 20); ctx.restore();
-    text(ctx, 'radioactive', LX + 22, LY + 38, PAL.ink, { size: 19 });
+    text(ctx, '放射性', LX + 22, LY + 38, PAL.ink, { size: 19 });
     lab.flush();
   }
   register(d.fig, { update: () => {}, draw });
@@ -77,24 +77,24 @@ const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen flu
   const MP = 1.0073, MN = 1.0087, ME = 0.00055, KG = 1.6605e-27, CL = 2.998e8, JMEV = 1.602e-13;
   /* stable nuclides: name, Z, A, atomic mass (amu) */
   const NUC = [
-    ['hydrogen-2', 1, 2, 2.0141], ['helium-4', 2, 4, 4.0026], ['lithium-7', 3, 7, 7.0160], ['beryllium-9', 4, 9, 9.0122],
-    ['carbon-12', 6, 12, 12.0000], ['nitrogen-14', 7, 14, 14.0031], ['oxygen-16', 8, 16, 15.9949], ['neon-20', 10, 20, 19.9924],
-    ['magnesium-24', 12, 24, 23.9850], ['silicon-28', 14, 28, 27.9769], ['sulfur-32', 16, 32, 31.9721], ['argon-40', 18, 40, 39.9624],
-    ['calcium-40', 20, 40, 39.9626], ['titanium-48', 22, 48, 47.9479], ['iron-56', 26, 56, 55.9349], ['nickel-62', 28, 62, 61.9283],
-    ['zinc-64', 30, 64, 63.9291], ['krypton-84', 36, 84, 83.9115], ['zirconium-90', 40, 90, 89.9047], ['molybdenum-98', 42, 98, 97.9054],
-    ['tin-120', 50, 120, 119.9022], ['xenon-132', 54, 132, 131.9042], ['barium-138', 56, 138, 137.9052], ['neodymium-142', 60, 142, 141.9077],
-    ['gadolinium-158', 64, 158, 157.9241], ['erbium-166', 68, 166, 165.9303], ['tungsten-184', 74, 184, 183.9509], ['platinum-195', 78, 195, 194.9648],
-    ['gold-197', 79, 197, 196.9666], ['lead-208', 82, 208, 207.9767], ['bismuth-209', 83, 209, 208.9804], ['uranium-235', 92, 235, 235.0439],
-    ['uranium-238', 92, 238, 238.0508],
+    ['氢-2', 1, 2, 2.0141], ['氦-4', 2, 4, 4.0026], ['锂-7', 3, 7, 7.0160], ['铍-9', 4, 9, 9.0122],
+    ['碳-12', 6, 12, 12.0000], ['氮-14', 7, 14, 14.0031], ['氧-16', 8, 16, 15.9949], ['氖-20', 10, 20, 19.9924],
+    ['镁-24', 12, 24, 23.9850], ['硅-28', 14, 28, 27.9769], ['硫-32', 16, 32, 31.9721], ['氩-40', 18, 40, 39.9624],
+    ['钙-40', 20, 40, 39.9626], ['钛-48', 22, 48, 47.9479], ['铁-56', 26, 56, 55.9349], ['镍-62', 28, 62, 61.9283],
+    ['锌-64', 30, 64, 63.9291], ['氪-84', 36, 84, 83.9115], ['锆-90', 40, 90, 89.9047], ['钼-98', 42, 98, 97.9054],
+    ['锡-120', 50, 120, 119.9022], ['氙-132', 54, 132, 131.9042], ['钡-138', 56, 138, 137.9052], ['钕-142', 60, 142, 141.9077],
+    ['钆-158', 64, 158, 157.9241], ['铒-166', 68, 166, 165.9303], ['钨-184', 74, 184, 183.9509], ['铂-195', 78, 195, 194.9648],
+    ['金-197', 79, 197, 196.9666], ['铅-208', 82, 208, 207.9767], ['铋-209', 83, 209, 208.9804], ['铀-235', 92, 235, 235.0439],
+    ['铀-238', 92, 238, 238.0508],
   ].map(([name, Z, A, M]) => {
     const dm = Math.round((Z * (MP + ME) + (A - Z) * MN - M) * 1e4) / 1e4;
     const kg = dm * KG, J = kg * CL * CL, MeV = Math.round((J / JMEV) * 10) / 10;
     return { name, Z, A, N: A - Z, M, dm, kg, J, MeV, per: MeV / A };
   });
   const BY = Object.fromEntries(NUC.map((q) => [q.name, q]));
-  const CHOICES = ['helium-4', 'lithium-7', 'carbon-12', 'oxygen-16', 'magnesium-24', 'calcium-40', 'iron-56', 'nickel-62', 'krypton-84', 'tin-120', 'barium-138', 'gold-197', 'lead-208', 'uranium-235', 'uranium-238'];
+  const CHOICES = ['氦-4', '锂-7', '碳-12', '氧-16', '镁-24', '钙-40', '铁-56', '镍-62', '氪-84', '锡-120', '钡-138', '金-197', '铅-208', '铀-235', '铀-238'];
   const pick = F.select(d.controls, {
-    label: '\\text{nuclide}', aria: 'the nuclide placed on the curve', value: 'iron-56',
+    label: '\\text{核素}', aria: '放置在曲线上的核素', value: '铁-56',
     options: CHOICES.map((v) => ({ value: v, label: v })),
   });
   /* the semi-empirical fit drawn as the book's smooth curve, Z on the line of stability */
@@ -114,16 +114,16 @@ const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen flu
     const { ctx } = begin(d.c);
     const q = BY[pick.value], ce = C('energy');
     hits = [];
-    const { X, Y } = axes(ctx, box, [0, 260], [0, 10], { nx: 13, ny: 10, xl: 'mass number (A)', yl: 'binding energy per nucleon (MeV)', yc: ce });
+    const { X, Y } = axes(ctx, box, [0, 260], [0, 10], { nx: 13, ny: 10, xl: '质量数 (A)', yl: '比结合能 (MeV)', yc: ce });
     curve(ctx, fit, 1, 260, X, Y, ce, 5, 520);
     NUC.forEach((p) => {
       dot(ctx, X(p.A), Y(p.per), alpha(PAL.ink, 0.55), true, 6);
-      hits.push({ x: X(p.A), y: Y(p.per), r: 9, name: `${p.name}: ${p.per.toFixed(3)} MeV per nucleon` });
+      hits.push({ x: X(p.A), y: Y(p.per), r: 9, name: `${p.name}：${p.per.toFixed(3)} MeV/核子` });
     });
     arrow(ctx, X(20), Y(2.0), X(24), Y(5.3), PAL.ink, 3);
-    text(ctx, 'fusion', X(20), Y(2.0) + 22, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '聚变', X(20), Y(2.0) + 22, PAL.ink, { size: 20, align: 'center' });
     arrow(ctx, X(222), Y(7.05), X(150), Y(7.55), PAL.ink, 3);
-    text(ctx, 'fission', X(226), Y(6.75), PAL.ink, { size: 20, align: 'center' });
+    text(ctx, '裂变', X(226), Y(6.75), PAL.ink, { size: 20, align: 'center' });
     const [px, py] = pick.mix((v) => [X(BY[v].A), Y(BY[v].per)]);
     line(ctx, px, py, px, box.b, alpha(ce, 0.6), 2, [4, 8]);
     line(ctx, box.l, py, px, py, alpha(ce, 0.6), 2, [4, 8]);
@@ -141,13 +141,13 @@ const NAME = 'hydrogen helium lithium beryllium boron carbon nitrogen oxygen flu
       ctx.beginPath(); ctx.arc(CX + r * Math.cos(t), CY + r * Math.sin(t), R, 0, 2 * Math.PI); ctx.fill(); ctx.stroke();
     }
     ctx.restore();
-    hits.push({ x: CX, y: CY, r: S * Math.sqrt(q.A) + 4, name: `${q.name} nucleus: ${q.Z} protons and ${q.N} neutrons` });
+    hits.push({ x: CX, y: CY, r: S * Math.sqrt(q.A) + 4, name: `${q.name} 原子核：${q.Z} 个质子和 ${q.N} 个中子` });
     const ly = 520;
-    dot(ctx, CX - 90, ly, cp, true, 7); text(ctx, 'proton', CX - 76, ly, PAL.ink, { size: 19 });
-    dot(ctx, CX + 20, ly, cn, true, 7); text(ctx, 'neutron', CX + 34, ly, PAL.ink, { size: 19 });
-    topline(ctx, `${q.name[0].toUpperCase() + q.name.slice(1)} is ${q.dm.toFixed(4)} amu lighter than its ${q.Z} protons, ${q.N} neutrons and ${q.Z} electrons.`);
+    dot(ctx, CX - 90, ly, cp, true, 7); text(ctx, '质子', CX - 76, ly, PAL.ink, { size: 19 });
+    dot(ctx, CX + 20, ly, cn, true, 7); text(ctx, '中子', CX + 34, ly, PAL.ink, { size: 19 });
+    topline(ctx, `${q.name} 比其 ${q.Z} 个质子、${q.N} 个中子和 ${q.Z} 个电子轻 ${q.dm.toFixed(4)} amu。`);
     ro.set(`\\kE=\\km\\kc^{2}=(${sci(q.kg)}\\ \\text{kg})(2.998\\times10^{8}\\ \\text{m/s})^{2}=${sci(q.J)}\\ \\text{J}=${q.MeV.toFixed(1)}\\ \\text{MeV}`,
-      `$\\kE$ ÷ ${q.A} nucleons = ${q.per.toFixed(3)} MeV per nucleon, the height of the point on the curve`);
+      `$\\kE$ ÷ ${q.A} 个核子 = ${q.per.toFixed(3)} MeV/核子，即曲线上该点的高度`);
   }
   register(d.fig, { update: () => {}, draw });
 })();

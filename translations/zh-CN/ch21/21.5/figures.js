@@ -58,10 +58,10 @@ function rng(seed) {
   const H = 640, d = sim('sim-gantry', H);
   const O = { x: 470, y: 368 }, HC = { x: 450, y: 380 }, RX = 150, RY = 178, RG = 236, U = 20, TT = 10, FAR = 205;
   const cy = cycle(() => TT, 1.2);
-  const arc = F.ctl(d.controls, { label: '\\text{arc}', cls: 'angle', key: 'arc', min: 0, max: 360, step: 5, value: 120, unit: '°', dec: 0,
-    aria: 'the arc the gantry swings through', onInput: () => cy.reset() });
-  const wid = F.ctl(d.controls, { label: '\\text{beam width}', cls: 'length', key: 'width', min: 1, max: 4, step: 0.1, value: 2, unit: 'cm', dec: 1,
-    aria: 'the width of the beam', onInput: () => cy.reset() });
+  const arc = F.ctl(d.controls, { label: '\\text{弧角}', cls: 'angle', key: 'arc', min: 0, max: 360, step: 5, value: 120, unit: '°', dec: 0,
+    aria: '机架转过的弧', onInput: () => cy.reset() });
+  const wid = F.ctl(d.controls, { label: '\\text{射束宽度}', cls: 'length', key: 'width', min: 1, max: 4, step: 0.1, value: 2, unit: 'cm', dec: 1,
+    aria: '射束的宽度', onInput: () => cy.reset() });
   const inHead = (x, y) => ((x - HC.x) / RX) ** 2 + ((y - HC.y) / RY) ** 2 <= 1;
   const SKIN = { x: O.x, y: HC.y - RY * Math.sqrt(1 - ((O.x - HC.x) / RX) ** 2) };
   const CELL = 8, cells = [], X0 = HC.x - RX - CELL, Y0 = HC.y - RY - CELL;
@@ -92,8 +92,8 @@ function rng(seed) {
     const phi = -th / 2 + th * s, [ux, uy] = dir(phi), G = F.el('gamma'), tc = C('time');
     const fin = share(SKIN.x, SKIN.y, th, 1, w) * TT;
     topline(ctx, arc.v === 0
-      ? `Held still, the beam is on the skin above the target for the whole ${minutes(TT)} min, as long as on the target.`
-      : `Swung through ${arc.v}°, the beam is on the skin above the target for ${minutes(fin)} min of the target’s ${minutes(TT)} min.`);
+      ? `机架静止时，射束照射靶区上方皮肤的时间为整个 ${minutes(TT)} min，与照射靶区的时间一样长。`
+      : `转过 ${arc.v}° 时，在靶区的 ${minutes(TT)} min 中，射束照射靶区上方皮肤的时间为 ${minutes(fin)} min。`);
     hits = [];
     /* the time each part of the head has spent in the beam */
     const g = grid.getContext('2d');
@@ -136,39 +136,39 @@ function rng(seed) {
     ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5;
     ctx.beginPath(); ctx.roundRect(-40, -30, 80, 56, 8); ctx.fill(); ctx.stroke();
     ctx.fillStyle = alpha(G, 0.85); ctx.fillRect(-hw * 0.5 - 4, 18, hw + 8, 8); ctx.restore();
-    hits.push({ x: S.x, y: S.y, r: 40, name: 'the cobalt-60 source on the gantry' });
-    hits.push({ x: O.x, y: O.y, r: 18, name: `the target: ${minutes(now)} min in the beam` });
-    hits.push({ x: SKIN.x, y: SKIN.y, r: 12, name: `the skin above the target: ${minutes(share(SKIN.x, SKIN.y, th, s, w) * TT)} min in the beam` });
-    hits.push({ x: (O.x + E.x) / 2, y: (O.y + E.y) / 2, r: 30, name: 'the beam of γ rays' });
-    F.label(ctx, 'target', O.x, O.y, { side: 'right', gap: 70, size: 21 });
-    F.label(ctx, 'skin', SKIN.x, SKIN.y, { side: 'left', gap: 64, size: 21 });
+    hits.push({ x: S.x, y: S.y, r: 40, name: '机架上的钴-60 放射源' });
+    hits.push({ x: O.x, y: O.y, r: 18, name: `靶区：在射束中 ${minutes(now)} min` });
+    hits.push({ x: SKIN.x, y: SKIN.y, r: 12, name: `靶区上方的皮肤：在射束中 ${minutes(share(SKIN.x, SKIN.y, th, s, w) * TT)} min` });
+    hits.push({ x: (O.x + E.x) / 2, y: (O.y + E.y) / 2, r: 30, name: 'γ 射线射束' });
+    F.label(ctx, '靶区', O.x, O.y, { side: 'right', gap: 70, size: 21 });
+    F.label(ctx, '皮肤', SKIN.x, SKIN.y, { side: 'left', gap: 64, size: 21 });
     /* the legend */
     const LX = 24, LY = 120;
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(LX, LY - 13, 34, 26, 5); ctx.fill(); ctx.stroke(); ctx.restore();
-    text(ctx, 'cobalt-60 source', LX + 46, LY, PAL.ink, { size: 20 });
+    text(ctx, '钴-60 放射源', LX + 46, LY, PAL.ink, { size: 20 });
     wavy(ctx, LX - 4, LY + 40, LX + 40, LY + 40, G, 4, 13, 2.5);
-    text(ctx, 'γ rays', LX + 46, LY + 40, PAL.ink, { size: 20 });
+    text(ctx, 'γ 射线', LX + 46, LY + 40, PAL.ink, { size: 20 });
     ctx.save(); ctx.fillStyle = alpha(tc, 0.5); ctx.fillRect(LX, LY + 68, 34, 24); ctx.restore();
-    text(ctx, 'time in the beam', LX + 46, LY + 80, tc, { size: 20, weight: 600 });
+    text(ctx, '射束中的时间', LX + 46, LY + 80, tc, { size: 20, weight: 600 });
     /* the bars: time in the beam, 0 to 10 min */
     const B = { l: 1010, r: 1320, t: 150, b: 520 }, Y = (m) => B.b - (m / TT) * (B.b - B.t);
-    text(ctx, 'time in the beam (min)', B.l - 30, B.t - 46, tc, { size: 21, weight: 600 });
+    text(ctx, '射束中的时间 (min)', B.l - 30, B.t - 46, tc, { size: 21, weight: 600 });
     for (let m = 0; m <= TT; m += 2) {
       line(ctx, B.l, Y(m), B.r, Y(m), alpha(PAL.ink, m ? 0.12 : 0.6), m ? 1.5 : 2.5);
       text(ctx, String(m), B.l - 12, Y(m), PAL.muted, { size: 17, align: 'right' });
     }
     line(ctx, B.l, B.t - 10, B.l, B.b, PAL.muted, 2.5);
-    const bars = [['target', now, 1100], ['skin', share(SKIN.x, SKIN.y, th, s, w) * TT, 1230]];
+    const bars = [['靶区', now, 1100], ['皮肤', share(SKIN.x, SKIN.y, th, s, w) * TT, 1230]];
     bars.forEach(([name, m, x]) => {
       ctx.save(); ctx.fillStyle = alpha(tc, 0.8); ctx.fillRect(x - 36, Y(m), 72, B.b - Y(m)); ctx.restore();
       text(ctx, `${minutes(m)} min`, x, Y(m) - 18, tc, { size: 19, weight: 600, align: 'center' });
       text(ctx, name, x, B.b + 26, PAL.ink, { size: 21, align: 'center' });
-      hits.push({ x, y: (Y(m) + B.b) / 2, r: 40, name: `${name}: ${minutes(m)} min in the beam` });
+      hits.push({ x, y: (Y(m) + B.b) / 2, r: 40, name: `${name}：在射束中 ${minutes(m)} min` });
     });
     const tT = minutes(now), tS = minutes(bars[1][1]);
     tex(d.readout, +tT === 0
-      ? `\\kt_{\\text{skin}} = \\kt_{\\text{target}} = ${hue('time', '0\\ \\text{min}')}`
-      : `\\frac{\\kt_{\\text{skin}}}{\\kt_{\\text{target}}} = \\frac{${hue('time', `${tS}\\ \\text{min}`)}}{${hue('time', `${tT}\\ \\text{min}`)}} = ${(+tS / +tT).toFixed(2)}`, false, { values: false });
+      ? `\\kt_{\\text{皮肤}} = \\kt_{\\text{靶区}} = ${hue('time', '0\\ \\text{min}')}`
+      : `\\frac{\\kt_{\\text{皮肤}}}{\\kt_{\\text{靶区}}} = \\frac{${hue('time', `${tS}\\ \\text{min}`)}}{${hue('time', `${tT}\\ \\text{min}`)}} = ${(+tS / +tT).toFixed(2)}`, false, { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 2), draw });
 })();
@@ -201,11 +201,11 @@ function rng(seed) {
     line(ctx, CO.l, Y(CO.e), CO.r, Y(CO.e), PAL.ink, 5);
     text(ctx, '${}^{60}_{27}\\text{Co}$', (CO.l + CO.r) / 2, Y(CO.e) - 30, PAL.ink, { size: 28, align: 'center', tex: true });
     text(ctx, '5.272 a', (CO.l + CO.r) / 2, Y(CO.e) + 24, C('time'), { size: 21, weight: 600, align: 'center' });
-    hits.push({ x: (CO.l + CO.r) / 2, y: Y(CO.e), r: 60, name: 'cobalt-60, half-life 5.272 a' });
+    hits.push({ x: (CO.l + CO.r) / 2, y: Y(CO.e), r: 60, name: '钴-60，半衰期 5.272 a' });
     LV.forEach((e) => {
       line(ctx, NI.l, Y(e), NI.r, Y(e), PAL.ink, 5);
       if (e > 0) text(ctx, `${e.toFixed(4)} MeV`, NI.r + 16, Y(e), ec, { size: 19, weight: 600 });
-      hits.push({ x: (NI.l + NI.r) / 2, y: Y(e), r: 40, name: e ? `nickel-60 in an excited state, ${e.toFixed(4)} MeV above its ground state` : 'nickel-60 in its ground state' });
+      hits.push({ x: (NI.l + NI.r) / 2, y: Y(e), r: 40, name: e ? `镍-60 的激发态，高于基态 ${e.toFixed(4)} MeV` : '镍-60 的基态' });
     });
     text(ctx, '${}^{60}_{28}\\text{Ni}$', (NI.l + NI.r) / 2, Y(0) + 32, PAL.ink, { size: 28, align: 'center', tex: true });
     /* the two β branches */
@@ -246,8 +246,8 @@ function rng(seed) {
   const H = 600, d = sim('sim-smoke', H);
   const P = 6, SCALE = 1e8, QE = 1.602e-19, ALARM = 1e-10, IMAX = 3e-10;
   const CL = 110, CR = 900, TOP = 140, BOT = 460, HOLE = 500, VA = 700, VP = 120, VE = 360, RI = 8;
-  const pick = F.choice(d.controls, { label: '\\text{air}', key: 'air', options: [{ value: 'clear', label: 'no smoke' }, { value: 'smoke', label: 'smoke' }], value: 'clear',
-    aria: 'smoke in the chamber' });
+  const pick = F.choice(d.controls, { label: '\\text{空气}', key: 'air', options: [{ value: 'clear', label: '无烟雾' }, { value: 'smoke', label: '烟雾' }], value: 'clear',
+    aria: '电离室中的烟雾' });
   const cy = cycle(() => P, 0);
   const r = rng(2105);
   const SMOKE = Array.from({ length: 26 }, () => ({ x: 170 + r() * 680, y: 230 + r() * 205, r: 15 + r() * 7 }));
@@ -309,7 +309,7 @@ function rng(seed) {
         line(ctx, HOLE + Math.sin(ev.a) * tail, BOT - Math.cos(ev.a) * tail, x, y, alpha(PAL.ink, 0.35), 2);
         alphaP(ctx, x, y);
       });
-      if (fade > 0.5) hits.push({ x, y, r: 14, name: 'an α particle' });
+      if (fade > 0.5) hits.push({ x, y, r: 14, name: 'α 粒子' });
     }
     for (const q of PATHS[key]) for (const shift of [0, -P]) {
       const t = now - (q.t0 + shift);
@@ -318,7 +318,7 @@ function rng(seed) {
       F.faded(ctx, q.caught || !q.pos ? fade : Math.min(1, fade * 2), [0, 0], () => {
         if (q.pos) ion(ctx, q.x, y, q.kind); else disc(ctx, q.x, y, 5, F.el('e-'));
       });
-      if (fade > 0.5) hits.push({ x: q.x, y, r: 14, name: q.pos ? (q.kind === 'N' ? 'a nitrogen ion, N₂⁺' : 'an oxygen ion, O₂⁺') : 'an electron' });
+      if (fade > 0.5) hits.push({ x: q.x, y, r: 14, name: q.pos ? (q.kind === 'N' ? '氮离子 N₂⁺' : '氧离子 O₂⁺') : '电子' });
     }
   }
   function draw() {
@@ -327,8 +327,8 @@ function rng(seed) {
     const I = current(key), Q = +(arrived(key) * SCALE * QE).toPrecision(3), Qs = sci(Q), Is = sci(Q / P);
     const caught = 1 - arrived('smoke') / arrived('clear');
     topline(ctx, key === 'clear'
-      ? `With no smoke, every ion reaches a plate and $${Is}$ A flows.`
-      : `Smoke catches ${Math.round(caught * 100)}% of the ions, and the current falls to $${Is}$ A, below the alarm’s mark.`);
+      ? `无烟雾时，每个离子都到达极板，流过的电流为 $${Is}$ A。`
+      : `烟雾捕获了 ${Math.round(caught * 100)}% 的离子，电流降到 $${Is}$ A，低于报警刻度。`);
     /* the chamber and its plates */
     ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.35); ctx.lineWidth = 2; ctx.strokeRect(CL, TOP - 30, CR - CL, BOT - TOP + 60); ctx.restore();
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.55);
@@ -337,14 +337,14 @@ function rng(seed) {
     ctx.restore();
     text(ctx, '+', CL + 2, TOP - 5, PAL.ink, { size: 28, weight: 600, align: 'center' });
     text(ctx, '−', CL + 2, BOT + 5, PAL.ink, { size: 28, weight: 600, align: 'center' });
-    hits.push({ x: 300, y: TOP - 5, r: 16, name: 'the positive plate' }, { x: 300, y: BOT + 5, r: 16, name: 'the negative plate' });
+    hits.push({ x: 300, y: TOP - 5, r: 16, name: '正极板' }, { x: 300, y: BOT + 5, r: 16, name: '负极板' });
     /* the americium source under the hole */
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.roundRect(HOLE - 44, BOT + 22, 88, 18, 4); ctx.fill(); ctx.stroke(); ctx.restore();
-    F.label(ctx, 'americium-241', HOLE + 44, BOT + 31, { side: 'right', gap: 22, size: 20 });
-    hits.push({ x: HOLE, y: BOT + 31, r: 40, name: 'the americium-241 source, an α emitter' });
+    F.label(ctx, '镅-241', HOLE + 44, BOT + 31, { side: 'right', gap: 22, size: 20 });
+    hits.push({ x: HOLE, y: BOT + 31, r: 40, name: '镅-241 放射源，一种 α 发射体' });
     /* smoke, then the moving particles */
     pick.only(ctx, 'smoke', () => SMOKE.forEach((b) => smokeBlob(ctx, b)), [0, 0]);
-    if (key === 'smoke') SMOKE.forEach((b) => hits.push({ x: b.x, y: b.y, r: b.r, name: 'a smoke particle' }));
+    if (key === 'smoke') SMOKE.forEach((b) => hits.push({ x: b.x, y: b.y, r: b.r, name: '烟雾颗粒' }));
     if (pick.k < 1 && pick.from !== key) pick.only(ctx, pick.from, () => scene(ctx, pick.from, now), [0, 0]);
     pick.only(ctx, key, () => scene(ctx, key, now), [0, 0]);
     /* the circuit: battery on the top wire, meter on the right */
@@ -356,8 +356,8 @@ function rng(seed) {
     line(ctx, WX, BOT + 5, CR - 20, BOT + 5, PAL.ink, 2.5);
     line(ctx, 1062, TOP - 33, 1062, TOP + 23, PAL.ink, 4);
     line(ctx, 1082, TOP - 19, 1082, TOP + 9, PAL.ink, 6);
-    F.label(ctx, 'battery', 1072, TOP - 5, { side: 'above', gap: 50, size: 20 });
-    hits.push({ x: 1072, y: TOP - 5, r: 30, name: 'the battery' });
+    F.label(ctx, '电池', 1072, TOP - 5, { side: 'above', gap: 50, size: 20 });
+    hits.push({ x: 1072, y: TOP - 5, r: 30, name: '电池' });
     /* the meter, 0 to 3 × 10⁻¹⁰ A over a 180° dial */
     const ang = (i) => Math.PI + (Math.min(i, IMAX) / IMAX) * Math.PI;
     ctx.save(); ctx.fillStyle = PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(WX, MY, MR, 0, TAU); ctx.fill(); ctx.stroke(); ctx.restore();
@@ -372,8 +372,8 @@ function rng(seed) {
     line(ctx, WX, MY + 8, WX + Math.cos(na) * (MR - 20), MY + 8 + Math.sin(na) * (MR - 20), cc, 4);
     F.dot(ctx, WX, MY + 8, PAL.ink, true, 6);
     text(ctx, '$\\times 10^{-10}$ A', WX, MY + 38, cc, { size: 16, weight: 600, align: 'center', tex: true });
-    F.label(ctx, 'alarm mark', WX + Math.cos(aa) * MR, MY + 8 + Math.sin(aa) * MR, { side: 'left', gap: 40, size: 18 });
-    hits.push({ x: WX, y: MY, r: MR, name: `the meter: ${sci(shown).replace(' \\times 10^{', ' × 10^').replace('}', '')} A` });
+    F.label(ctx, '报警刻度', WX + Math.cos(aa) * MR, MY + 8 + Math.sin(aa) * MR, { side: 'left', gap: 40, size: 18 });
+    hits.push({ x: WX, y: MY, r: MR, name: `仪表：${sci(shown).replace(' \\times 10^{', ' × 10^').replace('}', '')} A` });
     /* the alarm, sounding below its mark */
     const AY = 540, on = I < ALARM;
     ctx.save(); ctx.fillStyle = on ? PAL.ink : PAL.panel; ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2.5; ctx.beginPath();
@@ -382,19 +382,19 @@ function rng(seed) {
       const ph = (now * 2 + i / 3) % 1;
       ctx.save(); ctx.strokeStyle = alpha(PAL.ink, 0.8 - 0.6 * ph); ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(WX + 4, AY, rr + 6 * ph, -0.6, 0.6); ctx.stroke(); ctx.restore();
     });
-    text(ctx, on ? 'alarm sounding' : 'alarm', WX - 46, AY, PAL.ink, { size: 20, weight: on ? 600 : 400, align: 'right' });
-    hits.push({ x: WX - 10, y: AY, r: 30, name: on ? 'the alarm, sounding' : 'the alarm, silent' });
+    text(ctx, on ? '警报响起' : '警报', WX - 46, AY, PAL.ink, { size: 20, weight: on ? 600 : 400, align: 'right' });
+    hits.push({ x: WX - 10, y: AY, r: 30, name: on ? '警报，正在响' : '警报，未响' });
     /* the legend */
     const ly = H - 26;
     alphaP(ctx, 30, ly);
-    let lx = 48; text(ctx, 'α particle', lx, ly, PAL.ink, { size: 19 }); lx += measure(ctx, 'α particle', { size: 19 }) + 34;
+    let lx = 48; text(ctx, 'α 粒子', lx, ly, PAL.ink, { size: 19 }); lx += measure(ctx, 'α 粒子', { size: 19 }) + 34;
     [['N', '$\\text{N}_{2}^{+}$'], ['O', '$\\text{O}_{2}^{+}$']].forEach(([k, s]) => {
       const c = F.el(k); disc(ctx, lx, ly, 7, c); disc(ctx, lx + 11, ly, 7, c);
       text(ctx, s, lx + 26, ly, PAL.ink, { size: 19, tex: true }); lx += 26 + measure(ctx, s, { size: 19, tex: true }) + 30;
     });
-    disc(ctx, lx, ly, 5, F.el('e-')); text(ctx, 'electron', lx + 14, ly, PAL.ink, { size: 19 }); lx += 14 + measure(ctx, 'electron', { size: 19 }) + 30;
-    smokeBlob(ctx, { x: lx + 4, y: ly, r: 9 }); text(ctx, 'smoke particle', lx + 22, ly, PAL.ink, { size: 19 });
-    ro.set(`\\kI = \\frac{\\kQ}{\\kt} = \\frac{${hue('charge', Qs + '\\ \\text{C}')}}{${hue('time', P.toFixed(2) + '\\ \\text{s}')}} = ${hue('current', Is + '\\ \\text{A}')}`, 'Each ion drawn stands for 10⁸ ions.');
+    disc(ctx, lx, ly, 5, F.el('e-')); text(ctx, '电子', lx + 14, ly, PAL.ink, { size: 19 }); lx += 14 + measure(ctx, '电子', { size: 19 }) + 30;
+    smokeBlob(ctx, { x: lx + 4, y: ly, r: 9 }); text(ctx, '烟雾颗粒', lx + 22, ly, PAL.ink, { size: 19 });
+    ro.set(`\\kI = \\frac{\\kQ}{\\kt} = \\frac{${hue('charge', Qs + '\\ \\text{C}')}}{${hue('time', P.toFixed(2) + '\\ \\text{s}')}} = ${hue('current', Is + '\\ \\text{A}')}`, '每个画出的离子代表 10⁸ 个离子。');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

@@ -26,12 +26,12 @@ function disc(ctx, x, y, r, fill, s) {
   const H = 680, d = sim('sim-particles', H);
   const COLS = [20, 230, 480, 680, 1380], HEAD = 70, ROW = 96, TOP = 20;
   const ROWS = [
-    { name: 'Alpha particle', sym: '${}^{4}_{2}\\text{He}$  or  ${}^{4}_{2}\\alpha$', desc: ['(High-energy) helium nuclei consisting of two', 'protons and two neutrons'], rep: 'alpha' },
-    { name: 'Beta particle', sym: '${}^{\\;0}_{-1}\\text{e}$  or  ${}^{\\;0}_{-1}\\beta$', desc: ['(High-energy) electrons'], rep: 'beta' },
-    { name: 'Positron', sym: '${}^{\\;0}_{+1}\\text{e}$  or  ${}^{\\;0}_{+1}\\beta$', desc: ['Particles with the same mass as an electron', 'but with 1 unit of positive charge'], rep: 'positron' },
-    { name: 'Proton', sym: '${}^{1}_{1}\\text{H}$  or  ${}^{1}_{1}\\text{p}$', desc: ['Nuclei of hydrogen atoms'], rep: 'proton' },
-    { name: 'Neutron', sym: '${}^{1}_{0}\\text{n}$', desc: ['Particles with a mass approximately equal to', 'that of a proton but with no charge'], rep: 'neutron' },
-    { name: 'Gamma ray', sym: '$\\gamma$', desc: ['Very high-energy electromagnetic radiation'], rep: 'gamma' },
+    { name: 'α 粒子', sym: '${}^{4}_{2}\\text{He}$  或  ${}^{4}_{2}\\alpha$', desc: ['（高能）氦核，由两个质子', '和两个中子组成'], rep: 'alpha' },
+    { name: 'β 粒子', sym: '${}^{\\;0}_{-1}\\text{e}$  或  ${}^{\\;0}_{-1}\\beta$', desc: ['（高能）电子'], rep: 'beta' },
+    { name: '正电子', sym: '${}^{\\;0}_{+1}\\text{e}$  或  ${}^{\\;0}_{+1}\\beta$', desc: ['质量与电子相同，', '但带 1 个单位正电荷的粒子'], rep: 'positron' },
+    { name: '质子', sym: '${}^{1}_{1}\\text{H}$  或  ${}^{1}_{1}\\text{p}$', desc: ['氢原子的原子核'], rep: 'proton' },
+    { name: '中子', sym: '${}^{1}_{0}\\text{n}$', desc: ['质量约等于质子的质量，', '但不带电荷的粒子'], rep: 'neutron' },
+    { name: 'γ 射线', sym: '$\\gamma$', desc: ['能量极高的电磁辐射'], rep: 'gamma' },
   ];
   const rowY = (i) => TOP + HEAD + ROW * i + ROW / 2;
   function rep(ctx, kind, x, y) {
@@ -60,7 +60,7 @@ function disc(ctx, x, y, r, fill, s) {
     for (let i = 0; i <= ROWS.length; i++) line(ctx, COLS[0], TOP + HEAD + ROW * i, COLS[4], TOP + HEAD + ROW * i, PAL.rule, 2);
     line(ctx, COLS[0], TOP, COLS[4], TOP, PAL.rule, 2);
     COLS.forEach((x) => line(ctx, x, TOP, x, bottom, PAL.rule, 2));
-    ['Name', 'Symbol(s)', 'Representation', 'Description'].forEach((h, j) =>
+    ['名称', '符号', '表示形式', '描述'].forEach((h, j) =>
       text(ctx, h, (COLS[j] + COLS[j + 1]) / 2, TOP + HEAD / 2, PAL.ink, { size: 26, weight: 600, align: 'center' }));
     ROWS.forEach((r, i) => {
       const y = rowY(i);
@@ -88,23 +88,23 @@ function disc(ctx, x, y, r, fill, s) {
 (function () {
   const H = 620, d = sim('sim-nuclear-balance', H);
   const SYM = ' H He Li Be B C N O F Ne Na Mg Al Si P S Cl Ar K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe Cs Ba La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn Fr Ra Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm'.split(' ');
-  const NAME = ' hydrogen helium lithium beryllium boron carbon nitrogen oxygen fluorine neon sodium magnesium aluminum silicon phosphorus sulfur chlorine argon potassium calcium scandium titanium vanadium chromium manganese iron cobalt nickel copper zinc gallium germanium arsenic selenium bromine krypton rubidium strontium yttrium zirconium niobium molybdenum technetium ruthenium rhodium palladium silver cadmium indium tin antimony tellurium iodine xenon cesium barium lanthanum cerium praseodymium neodymium promethium samarium europium gadolinium terbium dysprosium holmium erbium thulium ytterbium lutetium hafnium tantalum tungsten rhenium osmium iridium platinum gold mercury thallium lead bismuth polonium astatine radon francium radium actinium thorium protactinium uranium neptunium plutonium americium curium berkelium californium einsteinium fermium'.split(' ');
+  const NAME = ' 氢 氦 锂 铍 硼 碳 氮 氧 氟 氖 钠 镁 铝 硅 磷 硫 氯 氩 钾 钙 钪 钛 钒 铬 锰 铁 钴 镍 铜 锌 镓 锗 砷 硒 溴 氪 铷 锶 钇 锆 铌 钼 锝 钌 铑 钯 银 镉 铟 锡 锑 碲 碘 氙 铯 钡 镧 铈 镨 钕 钷 钐 铕 钆 铽 镝 钬 铒 铥 镱 镥 铪 钽 钨 铼 锇 铱 铂 金 汞 铊 铅 铋 钋 砹 氡 钫 镭 锕 钍 镤 铀 镎 钚 镅 锔 锫 锎 锿 镄'.split(' ');
   /* a species is [symbol, A, Z, coefficient]; 'X' is the product the reader sets */
   const n = (k = 1) => ['n', 1, 0, k];
   const RX = {
-    mg: { label: 'Example 21.4', L: [['Mg', 25, 12, 1], ['He', 4, 2, 1]], R: [['H', 1, 1, 1], 'X'], X: [28, 13] },
-    po: { label: 'Curie, 1898', L: [['Po', 212, 84, 1]], R: ['X', ['He', 4, 2, 1]], X: [208, 82] },
-    n14: { label: 'Rutherford, 1919', L: [['N', 14, 7, 1], ['He', 4, 2, 1]], R: ['X', ['H', 1, 1, 1]], X: [17, 8] },
-    be: { label: 'Chadwick, 1932', L: [['Be', 9, 4, 1], ['He', 4, 2, 1]], R: ['X', n()], X: [12, 6] },
-    mo: { label: 'Segre and Perrier, 1937', L: [['H', 2, 1, 1], ['Mo', 97, 42, 1]], R: [n(2), 'X'], X: [97, 43] },
-    u: { label: 'Chicago, 1942', L: [['U', 235, 92, 1], n()], R: [['Br', 87, 35, 1], 'X', n(3)], X: [146, 57] },
+    mg: { label: '例 21.4', L: [['Mg', 25, 12, 1], ['He', 4, 2, 1]], R: [['H', 1, 1, 1], 'X'], X: [28, 13] },
+    po: { label: '居里，1898', L: [['Po', 212, 84, 1]], R: ['X', ['He', 4, 2, 1]], X: [208, 82] },
+    n14: { label: '卢瑟福，1919', L: [['N', 14, 7, 1], ['He', 4, 2, 1]], R: ['X', ['H', 1, 1, 1]], X: [17, 8] },
+    be: { label: '查德威克，1932', L: [['Be', 9, 4, 1], ['He', 4, 2, 1]], R: ['X', n()], X: [12, 6] },
+    mo: { label: '塞格雷和佩里埃，1937', L: [['H', 2, 1, 1], ['Mo', 97, 42, 1]], R: [n(2), 'X'], X: [97, 43] },
+    u: { label: '芝加哥，1942', L: [['U', 235, 92, 1], n()], R: [['Br', 87, 35, 1], 'X', n(3)], X: [146, 57] },
   };
-  const pick = F.select(d.controls, { label: '\\text{reaction}', key: 'reaction', options: Object.entries(RX).map(([value, r]) => ({ value, label: r.label })), value: 'mg',
-    aria: 'the nuclear reaction to balance', onInput: () => { const r = RX[pick.value]; A.set(r.X[0]); Z.set(r.X[1]); A.refresh(); Z.refresh(); } });
-  const A = F.ctl(d.controls, { label: '\\text{A}', cls: '', key: 'A', min: 1, max: 240, step: 1, value: 28, unit: '', dec: 0, aria: 'mass number A of the product X',
-    specials: [{ at: () => RX[pick.value].X[0], label: 'balanced' }] });
-  const Z = F.ctl(d.controls, { label: '\\text{Z}', cls: '', key: 'Z', min: 1, max: 100, step: 1, value: 13, unit: '', dec: 0, aria: 'atomic number Z of the product X',
-    specials: [{ at: () => RX[pick.value].X[1], label: 'balanced' }] });
+  const pick = F.select(d.controls, { label: '\\text{反应}', key: 'reaction', options: Object.entries(RX).map(([value, r]) => ({ value, label: r.label })), value: 'mg',
+    aria: '要配平的核反应', onInput: () => { const r = RX[pick.value]; A.set(r.X[0]); Z.set(r.X[1]); A.refresh(); Z.refresh(); } });
+  const A = F.ctl(d.controls, { label: '\\text{A}', cls: '', key: 'A', min: 1, max: 240, step: 1, value: 28, unit: '', dec: 0, aria: '产物 X 的质量数 A',
+    specials: [{ at: () => RX[pick.value].X[0], label: '已配平' }] });
+  const Z = F.ctl(d.controls, { label: '\\text{Z}', cls: '', key: 'Z', min: 1, max: 100, step: 1, value: 13, unit: '', dec: 0, aria: '产物 X 的原子序数 Z',
+    specials: [{ at: () => RX[pick.value].X[1], label: '已配平' }] });
 
   const sp = (s, key) => (s === 'X' ? ['X', key === pick.value ? A.v : RX[key].X[0], key === pick.value ? Z.v : RX[key].X[1], 1] : s);
   const symOf = (s) => (s[0] === 'X' ? SYM[s[2]] ?? 'X' : s[0]);
@@ -160,7 +160,7 @@ function disc(ctx, x, y, r, fill, s) {
       for (let i = 0; i < k; i++) {
         const cx = it.x - it.w / 2 + it.R + i * (2 * it.R + 8);
         nucleus(ctx, cx, YC, q[1], q[2]);
-        const who = q[1] === 1 && q[2] === 0 ? 'a neutron' : q[1] === 1 ? 'a proton' : `${NAME[q[2]] ?? 'X'}-${q[1]}: ${Math.min(q[2], q[1])} protons, ${Math.max(q[1] - q[2], 0)} neutrons`;
+        const who = q[1] === 1 && q[2] === 0 ? '中子' : q[1] === 1 ? '质子' : `${NAME[q[2]] ?? 'X'}-${q[1]}：${Math.min(q[2], q[1])} 个质子，${Math.max(q[1] - q[2], 0)} 个中子`;
         hits.push({ x: cx, y: YC, r: Math.max(it.R, 14), name: who });
       }
       if (q[0] === 'X') {
@@ -173,7 +173,7 @@ function disc(ctx, x, y, r, fill, s) {
     const arrow = items.find((it) => it.arrow), left = items.filter((it) => it.side === 'L'), right = items.filter((it) => it.side === 'R');
     const mid = (list) => (Math.min(...list.map((it) => it.x - it.w / 2)) + Math.max(...list.map((it) => it.x + it.w / 2))) / 2;
     const lx = Math.min(mid(left), arrow.x - 150), rx = Math.max(mid(right), arrow.x + 150);
-    [['mass numbers', 1, H - 132], ['charges', 2, H - 86]].forEach(([what, j, y]) => {
+    [['质量数', 1, H - 132], ['电荷', 2, H - 86]].forEach(([what, j, y]) => {
       const a = sums(r.L, key, j), b = sums(r.R, key, j), ok = sumOf(a) === sumOf(b);
       text(ctx, `$${sumTex(a)}$`, lx, y, PAL.ink, { size: 26, align: 'center', tex: true });
       text(ctx, `$${sumTex(b)}$`, rx, y, PAL.ink, { size: 26, align: 'center', tex: true });
@@ -188,12 +188,12 @@ function disc(ctx, x, y, r, fill, s) {
   };
   function headlineOf() {
     const key = pick.value, r = RX[key], a = A.v, z = Z.v;
-    if (z > a) return `With A = ${a} and Z = ${z}, X would hold more protons than nucleons.`;
+    if (z > a) return `当 A = ${a}、Z = ${z} 时，X 所含的质子将比核子还多。`;
     const mL = sumOf(sums(r.L, key, 1)), mR = sumOf(sums(r.R, key, 1)), cL = sumOf(sums(r.L, key, 2)), cR = sumOf(sums(r.R, key, 2));
-    if (mL === mR && cL === cR) return `With A = ${a} and Z = ${z}, the mass numbers and the charges both balance: X is ${NAME[z]}-${a}.`;
-    if (mL !== mR && cL !== cR) return `With A = ${a} and Z = ${z}, the mass numbers come to ${mL} and ${mR}, the charges to ${cL} and ${cR}.`;
-    if (mL !== mR) return `With A = ${a}, the mass numbers come to ${mL} on the left and ${mR} on the right.`;
-    return `With Z = ${z}, the charges come to ${cL} on the left and ${cR} on the right.`;
+    if (mL === mR && cL === cR) return `当 A = ${a}、Z = ${z} 时，质量数和电荷都配平了：X 是${NAME[z]}-${a}。`;
+    if (mL !== mR && cL !== cR) return `当 A = ${a}、Z = ${z} 时，质量数之和分别为 ${mL} 和 ${mR}，电荷之和分别为 ${cL} 和 ${cR}。`;
+    if (mL !== mR) return `当 A = ${a} 时，质量数之和在左边为 ${mL}，在右边为 ${mR}。`;
+    return `当 Z = ${z} 时，电荷之和在左边为 ${cL}，在右边为 ${cR}。`;
   }
   let hits = [];
   F.hover(d.stage, () => hits);
@@ -204,9 +204,9 @@ function disc(ctx, x, y, r, fill, s) {
     if (pick.k < 1 && pick.from !== key) pick.only(ctx, pick.from, () => scene(ctx, pick.from));
     pick.only(ctx, key, () => { hits = scene(ctx, key); });
     const P = F.el('p+'), N = F.el('n0'), ly = H - 32;
-    disc(ctx, 36, ly, RN + 2, P); text(ctx, 'proton', 56, ly, PAL.ink, { size: 21 });
-    const nx = 56 + measure(ctx, 'proton', { size: 21 }) + 36;
-    disc(ctx, nx, ly, RN + 2, N); text(ctx, 'neutron', nx + 20, ly, PAL.ink, { size: 21 });
+    disc(ctx, 36, ly, RN + 2, P); text(ctx, '质子', 56, ly, PAL.ink, { size: 21 });
+    const nx = 56 + measure(ctx, '质子', { size: 21 }) + 36;
+    disc(ctx, nx, ly, RN + 2, N); text(ctx, '中子', nx + 20, ly, PAL.ink, { size: 21 });
     const ok = balanced(key);
     const side = (list, p) => list.map((s, i) => `\\mk{${key}${p}${i}}{${term(sp(s, key))}}`).join(' + ');
     ro.set(`${side(r.L, 'l')} \\;\\mk{arr}{${ok ? '\\longrightarrow' : '\\not\\longrightarrow'}}\\; ${side(r.R, 'r')}`, undefined, { form: `${key}${ok}` });

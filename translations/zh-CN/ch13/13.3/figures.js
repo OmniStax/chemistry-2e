@@ -26,33 +26,33 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
 ===================================================================== */
 (function () {
   const d = F.sim(root, 'sim-le-chatelier');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: 'front', yaw: 0, pitch: 0.12 }, { label: 'above', yaw: 0.5, pitch: 1.0 }], h: 380, dist: 6.0, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '俯视', yaw: 0.5, pitch: 1.0 }], h: 380, dist: 6.0, tilt: 0.2 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 340);
   const MOLS = {
-    H2: { name: 'hydrogen, H₂', atoms: [['H', -0.05, 0, 0, 0.05], ['H', 0.05, 0, 0, 0.05]] },
-    I2: { name: 'iodine, I₂', atoms: [['I', -0.11, 0, 0, 0.105], ['I', 0.11, 0, 0, 0.105]] },
-    HI: { name: 'hydrogen iodide, HI', atoms: [['H', -0.1, 0, 0, 0.05], ['I', 0.05, 0, 0, 0.105]] },
-    N2O4: { name: 'dinitrogen tetroxide, N₂O₄', atoms: [['N', -0.085, 0, 0, 0.065], ['N', 0.085, 0, 0, 0.065], ['O', -0.15, 0.1, 0, 0.06], ['O', -0.15, -0.1, 0, 0.06], ['O', 0.15, 0.1, 0, 0.06], ['O', 0.15, -0.1, 0, 0.06]] },
-    NO2: { name: 'nitrogen dioxide, NO₂', atoms: [['N', 0, 0.03, 0, 0.065], ['O', -0.105, -0.03, 0, 0.06], ['O', 0.105, -0.03, 0, 0.06]] },
+    H2: { name: '氢气，H₂', atoms: [['H', -0.05, 0, 0, 0.05], ['H', 0.05, 0, 0, 0.05]] },
+    I2: { name: '碘，I₂', atoms: [['I', -0.11, 0, 0, 0.105], ['I', 0.11, 0, 0, 0.105]] },
+    HI: { name: '碘化氢，HI', atoms: [['H', -0.1, 0, 0, 0.05], ['I', 0.05, 0, 0, 0.105]] },
+    N2O4: { name: '四氧化二氮，N₂O₄', atoms: [['N', -0.085, 0, 0, 0.065], ['N', 0.085, 0, 0, 0.065], ['O', -0.15, 0.1, 0, 0.06], ['O', -0.15, -0.1, 0, 0.06], ['O', 0.15, 0.1, 0, 0.06], ['O', 0.15, -0.1, 0, 0.06]] },
+    NO2: { name: '二氧化氮，NO₂', atoms: [['N', 0, 0.03, 0, 0.065], ['O', -0.105, -0.03, 0, 0.06], ['O', 0.105, -0.03, 0, 0.06]] },
   };
   const RX = {
     hi: { label: 'H_{2} + I_{2} ⇌ 2HI', T: 673.15, K: 50, u: 0.02, sig: 3,
       sp: [{ k: 'H2', nu: -1, n: 2, M: 2.016, f: 'H_{2}', t: '\\text{H}_{2}' }, { k: 'I2', nu: -1, n: 4, M: 253.8, f: 'I_{2}', t: '\\text{I}_{2}' }, { k: 'HI', nu: 2, n: 20, M: 127.9, f: 'HI', t: '\\text{HI}' }],
       stresses: [
-        { value: 'add-H2', label: 'add H₂', add: { H2: 4 } }, { value: 'add-I2', label: 'add I₂', add: { I2: 4 } },
-        { value: 'remove-HI', label: 'remove HI', add: { HI: -10 } }, { value: 'add-HI', label: 'add HI', add: { HI: 10 } },
-        { value: 'compress', label: 'compress to V/3', vol: 1 / 3 }] },
+        { value: 'add-H2', label: '加入 H₂', add: { H2: 4 } }, { value: 'add-I2', label: '加入 I₂', add: { I2: 4 } },
+        { value: 'remove-HI', label: '移出 HI', add: { HI: -10 } }, { value: 'add-HI', label: '加入 HI', add: { HI: 10 } },
+        { value: 'compress', label: '压缩至 V/3', vol: 1 / 3 }] },
     n2o4: { label: 'N_{2}O_{4} ⇌ 2NO_{2}', T: 298.15, K: (0.016 * 0.016) / 0.042, u: 0.002, sig: 2, dH: 57200,
       sp: [{ k: 'N2O4', nu: -1, n: 21, M: 92.01, f: 'N_{2}O_{4}', t: '\\text{N}_{2}\\text{O}_{4}' }, { k: 'NO2', nu: 2, n: 8, M: 46.01, f: 'NO_{2}', t: '\\text{NO}_{2}' }],
       stresses: [
-        { value: 'add-N2O4', label: 'add N₂O₄', add: { N2O4: 10 } }, { value: 'add-NO2', label: 'add NO₂', add: { NO2: 8 } },
-        { value: 'remove-NO2', label: 'remove NO₂', add: { NO2: -4 } }, { value: 'compress', label: 'compress to V/3', vol: 1 / 3 },
-        { value: 'heat', label: 'heat to 50 °C', T: 323.15, deg: 50 }, { value: 'cool', label: 'cool to 0 °C', T: 273.15, deg: 0 }] },
+        { value: 'add-N2O4', label: '加入 N₂O₄', add: { N2O4: 10 } }, { value: 'add-NO2', label: '加入 NO₂', add: { NO2: 8 } },
+        { value: 'remove-NO2', label: '移出 NO₂', add: { NO2: -4 } }, { value: 'compress', label: '压缩至 V/3', vol: 1 / 3 },
+        { value: 'heat', label: '加热至 50 °C', T: 323.15, deg: 50 }, { value: 'cool', label: '冷却至 0 °C', T: 273.15, deg: 0 }] },
   };
-  const rxn = F.choice(d.controls, { label: '\\text{reaction}', options: [{ value: 'hi', label: 'H₂ + I₂ ⇌ 2HI' }, { value: 'n2o4', label: 'N₂O₄ ⇌ 2NO₂' }], value: 'hi', aria: 'the equilibrium in the vessel', onInput: rerun });
+  const rxn = F.choice(d.controls, { label: '\\text{反应}', options: [{ value: 'hi', label: 'H₂ + I₂ ⇌ 2HI' }, { value: 'n2o4', label: 'N₂O₄ ⇌ 2NO₂' }], value: 'hi', aria: '容器中的平衡', onInput: rerun });
   const picks = {};
   for (const key of ['hi', 'n2o4']) {
-    picks[key] = F.select(d.controls, { label: '\\text{stress}', key: 'stress-' + key, options: RX[key].stresses.map(({ value, label }) => ({ value, label })), value: RX[key].stresses[0].value, aria: 'the stress applied at the dashed line', onInput: rerun });
+    picks[key] = F.select(d.controls, { label: '\\text{扰动}', key: 'stress-' + key, options: RX[key].stresses.map(({ value, label }) => ({ value, label })), value: RX[key].stresses[0].value, aria: '在虚线处施加的扰动', onInput: rerun });
     picks[key].el = d.controls.lastElementChild;
   }
   const fx = F.el('div'); d.readout.append(fx);
@@ -150,12 +150,12 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     if (!grp) return;
     v.clear(); grp.position.set(0, -0.42, 0);
     const box = new T.Mesh(new T.BoxGeometry(2 * L, 2 * L, 2 * L), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.05, depthWrite: false, side: T.DoubleSide })); grp.add(box);
-    v.pickable(box, 'the vessel');
+    v.pickable(box, '容器');
     grp.add(new T.LineSegments(new T.EdgesGeometry(new T.BoxGeometry(2 * L, 2 * L, 2 * L)), new T.LineBasicMaterial({ color: new T.Color(PAL.ink) })));
     piston = F.mesh.box(grp, [0, L, 0], [2 * L - 0.02, 0.06, 2 * L - 0.02], PAL.muted, { transparent: true, opacity: 0.85 });
-    v.pickable(piston, 'the piston');
+    v.pickable(piston, '活塞');
     rod = F.mesh.stick(grp, [0, L, 0], [0, L + 0.7, 0], 0.05, PAL.muted);
-    v.pickable(rod, 'the piston');
+    v.pickable(rod, '活塞');
     v.label(run.R.label.replace(/_\{(\d)\}/g, (_, n) => '₀₁₂₃₄₅₆₇₈₉'[n]), [0, L + 0.95, 0], grp, 6);
     meshes = run.slots.map((s) => { const by = {}; for (const [, k] of s.kinds) by[k] ??= molecule3(k); return by; });
     halo3 = run.halos.map(() => { const h = F.mesh.sphere(grp, [0, 0, 0], 0.22, PAL.ink, { transparent: true, opacity: 0, depthWrite: false }); h.visible = false; return h; });
@@ -184,7 +184,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     const { ctx } = begin(cnv);
     const c = series[f], c0 = series[0], cEnd = series[NF], K = t < TS ? run.K1 : run.K2;
     const G = { l: 150, r: 1120, t: 128, b: 268 }, yr = F.nice(0, run.cmax * 1.08, 4);
-    const g = F.axes(ctx, G, [0, TRUN], [0, yr.hi], { nx: 7, ny: yr.n, fx: () => '', fy: (q) => (q ? fmt(q, R.sig === 3 ? 2 : 3) : '0'), xl: 'time', yl: 'concentration (M)', yc: C('concentration') });
+    const g = F.axes(ctx, G, [0, TRUN], [0, yr.hi], { nx: 7, ny: yr.n, fx: () => '', fy: (q) => (q ? fmt(q, R.sig === 3 ? 2 : 3) : '0'), xl: '时间', yl: '浓度（M）', yc: C('concentration') });
     line(ctx, g.X(TS), G.t, g.X(TS), G.b, alpha(PAL.ink, 0.4), 2, [10, 10]);
     R.sp.forEach((s, i) => {
       const col = F.cat(i);
@@ -203,21 +203,21 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     const Q = (cc) => { let num = 1, den = 1; R.sp.forEach((s, i) => { if (s.nu < 0) den *= cc[i] ** -s.nu; else num *= cc[i] ** s.nu; }); return num / den; };
     const q = Q(c), kfmt = (x) => (R.sig === 3 ? x.toFixed(1) : sci(x)), rel = kfmt(q) === kfmt(K) ? '=' : q < K ? '<' : '>';
     const word = (s) => s.f;
-    const phrase = st.add ? Object.entries(st.add).map(([k, n]) => `${word(R.sp.find((p) => p.k === k))} is ${n > 0 ? 'added' : 'removed'}`)[0] : st.vol ? 'the volume is cut to a third' : `the mixture is ${st.T > R.T ? 'heated' : 'cooled'} to ${st.deg} °C`;
+    const phrase = st.add ? Object.entries(st.add).map(([k, n]) => `${n > 0 ? '加入' : '移出'} ${word(R.sp.find((p) => p.k === k))}`)[0] : st.vol ? '体积缩小为原来的三分之一' : `混合物被${st.T > R.T ? '加热' : '冷却'}至 ${st.deg} °C`;
     let head;
-    if (t < TS) head = `At equilibrium, $\\kratef = \\krater$; at the dashed line, ${phrase}.`;
+    if (t < TS) head = `平衡时，$\\kratef = \\krater$；在虚线处，${phrase}。`;
     else if (t < run.settled) {
       const right = run.xe > 0.01, left = run.xe < -0.01;
-      if (st.add) { const [k, n] = Object.entries(st.add)[0]; head = `${n > 0 ? 'Adding' : 'Removing'} ${word(R.sp.find((p) => p.k === k))} makes $\\kratef ${right ? '>' : '<'} \\krater$, and the equilibrium shifts ${right ? 'right' : 'left'}.`; }
-      else if (st.vol) head = right || left ? 'Compressing to a third of the volume makes $\\kQc > \\kKc$, and the equilibrium shifts left, toward fewer moles of gas.' : 'Compressing to a third of the volume triples every concentration, but $\\kQc$ is unchanged, so no shift occurs.';
-      else head = st.T > R.T ? `Heating to ${st.deg} °C raises $\\kKc$ above $\\kQc$, and the equilibrium shifts right.` : `Cooling to ${st.deg} °C lowers $\\kKc$ below $\\kQc$, and the equilibrium shifts left.`;
+      if (st.add) { const [k, n] = Object.entries(st.add)[0]; head = `${n > 0 ? '加入' : '移出'} ${word(R.sp.find((p) => p.k === k))} 使 $\\kratef ${right ? '>' : '<'} \\krater$，平衡向${right ? '右' : '左'}移动。`; }
+      else if (st.vol) head = right || left ? '压缩到三分之一体积使 $\\kQc > \\kKc$，平衡向左移动，即向气体物质的量较少的一侧移动。' : '压缩到三分之一体积使每种浓度增为三倍，但 $\\kQc$ 不变，因此不发生移动。';
+      else head = st.T > R.T ? `加热至 ${st.deg} °C 使 $\\kKc$ 高于 $\\kQc$，平衡向右移动。` : `冷却至 ${st.deg} °C 使 $\\kKc$ 低于 $\\kQc$，平衡向左移动。`;
     } else {
       const more = [], less = [];
       R.sp.forEach((s, i) => { const r = cEnd[i] / c0[i]; if (r > 1.01) more.push(word(s)); else if (r < 0.99) less.push(word(s)); });
-      const list = (a) => (a.length < 3 ? a.join(' and ') : `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`);
-      const comp = [more.length ? `more ${list(more)}` : '', less.length ? `less ${list(less)}` : ''].filter(Boolean).join(' and ');
-      const kk = st.T ? `a ${st.T > R.T ? 'larger' : 'smaller'} $\\kKc$` : `the same $\\kKc$`;
-      head = Math.abs(run.xe) < 0.01 ? `Every concentration has tripled, and the mixture is still at equilibrium with ${kk}.` : `Equilibrium is re-established with ${comp} than before, and ${kk}.`;
+      const list = (a) => (a.length < 3 ? a.join(' 和 ') : `${a.slice(0, -1).join('、')} 和 ${a[a.length - 1]}`);
+      const comp = [more.length ? `${list(more)} 更多` : '', less.length ? `${list(less)} 更少` : ''].filter(Boolean).join('，');
+      const kk = st.T ? `$\\kKc$ ${st.T > R.T ? '变大' : '变小'}` : `$\\kKc$ 不变`;
+      head = Math.abs(run.xe) < 0.01 ? `每种浓度都变为原来的三倍，混合物仍处于平衡，${kk}。` : `平衡重新建立后，与之前相比，${comp}；${kk}。`;
     }
     topline(ctx, head);
 
@@ -244,7 +244,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
 ===================================================================== */
 (function () {
   const d = F.sim(root, 'sim-catalyst-diagram', 560);
-  const Ec = ctl(d.controls, { label: '\\kEa\\ \\text{forward, catalyzed}', cls: 'energy', min: 20, max: 100, step: 1, value: 63, unit: 'kJ', dec: 0, specials: [{ at: 100, label: 'no catalyst' }], aria: 'forward activation energy of the catalyzed path, in kilojoules' });
+  const Ec = ctl(d.controls, { label: '\\kEa\\ \\text{正向，催化的}', cls: 'energy', min: 20, max: 100, step: 1, value: 63, unit: 'kJ', dec: 0, specials: [{ at: 100, label: '无催化剂' }], aria: '催化路径的正向活化能，单位为千焦' });
   const ro = F.readout(d);
   const G = { l: 300, r: 1060, t: 120, b: 500 }, B = 80, ER = 0, EP = -60, EU = 100, X0 = 0.25, XP = 0.52, X1 = 0.8;
   const prof = (pk) => (x) => (x < X0 ? ER : x < XP ? ER + ((pk - ER) * (1 - Math.cos((Math.PI * (x - X0)) / (XP - X0)))) / 2 : x < X1 ? pk + ((EP - pk) * (1 - Math.cos((Math.PI * (x - XP)) / (X1 - XP)))) / 2 : EP);
@@ -256,26 +256,26 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
   }
   function draw() {
     const { ctx } = begin(d.c), pk = Ec.v, drop = EU - pk;
-    const a = F.axes(ctx, G, [0, 1], [0, 200], { nx: 1, ny: 1, fx: () => '', fy: () => '', xl: 'extent of reaction', yl: 'energy', yc: C('energy') });
+    const a = F.axes(ctx, G, [0, 1], [0, 200], { nx: 1, ny: 1, fx: () => '', fy: () => '', xl: '反应进程', yl: '能量', yc: C('energy') });
     const g = { X: a.X, Y: (e) => a.Y(e + B) }, c0 = F.cat(0), c1 = F.cat(1);
     line(ctx, g.X(0.13), g.Y(EU), g.X(0.97), g.Y(EU), alpha(c0, 0.8), 3, [10, 10]);
     if (drop > 0.5) line(ctx, g.X(0.18), g.Y(pk), g.X(0.88), g.Y(pk), alpha(c1, 0.8), 3, [10, 10]);
     F.curve(ctx, prof(EU), 0, 1, g.X, g.Y, c0, 5, 200);
     F.curve(ctx, prof(pk), 0, 1, g.X, g.Y, c1, 5, 200);
-    text(ctx, 'transition state', g.X(XP), g.Y(EU) - 22, PAL.ink, { size: 19, align: 'center', bg: PAL.panel });
-    bracket(ctx, g.X(0.13), g.Y(ER), g.Y(EU), -1, ['E_{a}', 'forward']);
-    bracket(ctx, g.X(0.97), g.Y(EP), g.Y(EU), 1, ['E_{a}', 'reverse']);
+    text(ctx, '过渡态', g.X(XP), g.Y(EU) - 22, PAL.ink, { size: 19, align: 'center', bg: PAL.panel });
+    bracket(ctx, g.X(0.13), g.Y(ER), g.Y(EU), -1, ['E_{a}', '正向']);
+    bracket(ctx, g.X(0.97), g.Y(EP), g.Y(EU), 1, ['E_{a}', '逆向']);
     if (drop > 0.5) {
-      bracket(ctx, g.X(0.18), g.Y(ER), g.Y(pk), 1, ['E_{a}', 'forward'], g.Y(ER) - g.Y(pk) < 64 ? g.Y(ER) + 34 : undefined);
-      bracket(ctx, g.X(0.88), g.Y(EP), g.Y(pk), -1, ['E_{a}', 'reverse']);
+      bracket(ctx, g.X(0.18), g.Y(ER), g.Y(pk), 1, ['E_{a}', '正向'], g.Y(ER) - g.Y(pk) < 64 ? g.Y(ER) + 34 : undefined);
+      bracket(ctx, g.X(0.88), g.Y(EP), g.Y(pk), -1, ['E_{a}', '逆向']);
     }
     const lx = G.r + 70, ly = G.t + 10;
-    line(ctx, lx, ly, lx + 44, ly, c0, 5); text(ctx, 'uncatalyzed', lx + 56, ly, PAL.ink, { size: 18 });
-    line(ctx, lx, ly + 32, lx + 44, ly + 32, c1, 5); text(ctx, 'catalyzed', lx + 56, ly + 32, PAL.ink, { size: 18 });
-    topline(ctx, drop > 0.5 ? `Both activation energies of the catalyzed path are ${fmt(drop, 0)} kJ lower than without the catalyst.` : 'Without a catalyst, the two paths are one.');
+    line(ctx, lx, ly, lx + 44, ly, c0, 5); text(ctx, '未催化的', lx + 56, ly, PAL.ink, { size: 18 });
+    line(ctx, lx, ly + 32, lx + 44, ly + 32, c1, 5); text(ctx, '催化的', lx + 56, ly + 32, PAL.ink, { size: 18 });
+    topline(ctx, drop > 0.5 ? `催化路径的两个活化能都比无催化剂时低 ${fmt(drop, 0)} kJ。` : '无催化剂时，两条路径重合为一。');
     const en = (x) => hue('energy', fmt(x, 0) + '\\ \\text{kJ}');
-    ro.set(`\\kEa(\\text{forward}) - \\kEa(\\text{reverse}) = ${en(pk)} - ${en(pk - EP)} = ${en(EP)}`,
-      `Without the catalyst, $\\kEa(\\text{forward}) - \\kEa(\\text{reverse}) = ${en(EU)} - ${en(EU - EP)} = ${en(EP)}$ as well.`);
+    ro.set(`\\kEa(\\text{正向}) - \\kEa(\\text{逆向}) = ${en(pk)} - ${en(pk - EP)} = ${en(EP)}`,
+      `无催化剂时，$\\kEa(\\text{正向}) - \\kEa(\\text{逆向}) = ${en(EU)} - ${en(EU - EP)} = ${en(EP)}$ 也是如此。`);
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -312,7 +312,7 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
   const at = (k, s) => { const p = PATHS[k], c = cum[k]; let i = 1; while (i < c.length - 1 && c[i] < s) i++; const f = (s - c[i - 1]) / (c[i] - c[i - 1] || 1); return [p[i - 1][0] + f * (p[i][0] - p[i - 1][0]), p[i - 1][1] + f * (p[i][1] - p[i - 1][1])]; };
   const sCat = 795 - CAT;
   const STREAMS = Object.keys(PATHS).map((k) => ({ k, n: Math.max(2, Math.floor(lens[k] / SPACE)), laps: Math.max(1, Math.round((SPEED * LOOP) / lens[k])) }));
-  const NAMES = { N2: 'nitrogen, N₂', H2: 'hydrogen, H₂', NH3: 'ammonia, NH₃', H2O: 'cooling water, H₂O' };
+  const NAMES = { N2: '氮气，N₂', H2: '氢气，H₂', NH3: '氨，NH₃', H2O: '冷却水，H₂O' };
   function glyph(ctx, kind, x, y) {
     const N = F.el('N'), Hh = F.el('H'), O = F.el('O');
     if (kind === 'N2') { disc(ctx, x - 6, y, 7, N); disc(ctx, x + 6, y, 7, N); }
@@ -338,11 +338,11 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
   let hits = [];
   F.hover(d.stage, () => hits);
   const PARTS = [
-    { x: 250, y: 270, r: 30, name: 'compressor for the feed gases' }, { x: 600, y: 790, r: 30, name: 'compressor for the recycled gases' },
-    { x: 420, y: 450, r: 45, name: 'heat exchanger inside the catalyst chamber' }, { x: 420, y: 580, r: 40, name: 'catalyst' },
-    { x: 420, y: 705, r: 50, name: 'heater' }, { x: 320, y: 560, r: 25, name: 'catalyst chamber, 400 to 500 °C' }, { x: 520, y: 560, r: 25, name: 'catalyst chamber, 400 to 500 °C' },
-    { x: 770, y: 195, r: 60, name: 'heat exchanger' }, { x: 1060, y: 700, r: 35, name: 'refrigeration' }, { x: 1090, y: 820, r: 60, name: 'liquid ammonia, NH₃(l), in storage' },
-    { x: 1280, y: 600, r: 22, name: 'cold water in' }, { x: 1280, y: 380, r: 22, name: 'hot water out' },
+    { x: 250, y: 270, r: 30, name: '原料气压缩机' }, { x: 600, y: 790, r: 30, name: '循环气压缩机' },
+    { x: 420, y: 450, r: 45, name: '催化室内的热交换器' }, { x: 420, y: 580, r: 40, name: '催化剂' },
+    { x: 420, y: 705, r: 50, name: '加热器' }, { x: 320, y: 560, r: 25, name: '催化室，400 至 500 °C' }, { x: 520, y: 560, r: 25, name: '催化室，400 至 500 °C' },
+    { x: 770, y: 195, r: 60, name: '热交换器' }, { x: 1060, y: 700, r: 35, name: '制冷' }, { x: 1090, y: 820, r: 60, name: '储存中的液氨，NH₃(l)' },
+    { x: 1280, y: 600, r: 22, name: '冷水进入' }, { x: 1280, y: 380, r: 22, name: '热水流出' },
   ];
   function draw() {
     const { ctx } = begin(d.c), t = cy.now(), a = (t / LOOP) * TAU * 6;
@@ -386,16 +386,16 @@ function disc(ctx, x, y, r, fill) { ctx.save(); ctx.beginPath(); ctx.arc(x, y, r
     hits = [...seen.filter((h) => h.name), ...PARTS];
 
     const lab = (s, x, y, align = 'left') => text(ctx, s, x, y, PAL.ink, { size: 19, align, bg: PAL.panel });
-    lab('N_{2}, H_{2} feed gases', 40, 236);
-    lab('catalyst chamber,', 286, 596, 'right'); lab('400 to 500 °C', 286, 620, 'right');
+    lab('N_{2}、H_{2} 原料气', 40, 236);
+    lab('催化室，', 286, 596, 'right'); lab('400 至 500 °C', 286, 620, 'right');
     line(ctx, 292, 600, 376, 582, alpha(PAL.ink, 0.5), 1.5);
-    lab('heat exchanger', 770, 128, 'center');
-    lab('condenser', 1214, 490);
-    lab('NH_{3}(l) storage', 1232, 812);
-    lab('recycled N_{2}, H_{2}', 775, 460, 'center');
+    lab('热交换器', 770, 128, 'center');
+    lab('冷凝器', 1214, 490);
+    lab('NH_{3}(l) 储存', 1232, 812);
+    lab('N_{2}、H_{2} 循环气', 775, 460, 'center');
     const lx = 1110, ly = 128;
     [['N2', 'N_{2}'], ['H2', 'H_{2}'], ['NH3', 'NH_{3}']].forEach(([k, s], i) => { glyph(ctx, k, lx + i * 96, ly); text(ctx, s, lx + i * 96 + 16, ly, PAL.ink, { size: 18 }); });
-    topline(ctx, 'NH_{3} forms over the catalyst and is condensed out of the stream, while the unreacted N_{2} and H_{2} go round again.');
+    topline(ctx, 'NH_{3} 在催化剂上生成并从气流中冷凝分离，而未反应的 N_{2} 和 H_{2} 再次循环。');
   }
   F.tex(d.readout, '\\text{N}_{2}(g) + 3\\text{H}_{2}(g) \\rightleftharpoons 2\\text{NH}_{3}(g) \\qquad \\kdH = -92.2\\ \\text{kJ}');
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });

@@ -84,7 +84,7 @@ const R_BALL = { Cr: 0.44, O: 0.34 };
   }
   let v = null, grp = null, sig = '';
   function mount() {
-    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '俯视', yaw: 0, pitch: 1.4 }], h: 420, dist: 10, tilt: 0.3 });
+    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正视', yaw: 0, pitch: 0 }, { label: '俯视', yaw: 0, pitch: 1.4 }], h: 420, dist: 10, tilt: 0.3 });
     grp = v.part(0);
   }
   function build() {

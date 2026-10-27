@@ -1,7 +1,7 @@
 {
  "id": "5",
  "dir": "ch05",
- "title": "Thermochemistry",
+ "title": "热化学",
  "intro": {
   "module": "m68723",
   "slug": "5-introduction"
@@ -10,19 +10,19 @@
   {
    "id": "5.1",
    "module": "m68724",
-   "title": "Energy Basics",
+   "title": "能量基础",
    "slug": "5-1-energy-basics"
   },
   {
    "id": "5.2",
    "module": "m68726",
-   "title": "Calorimetry",
+   "title": "量热法",
    "slug": "5-2-calorimetry"
   },
   {
    "id": "5.3",
    "module": "m68727",
-   "title": "Enthalpy",
+   "title": "焓",
    "slug": "5-3-enthalpy"
   }
  ],
@@ -30,7 +30,7 @@
   {
    "sym": "q",
    "concept": "heat-flow",
-   "meaning": "the heat absorbed or released by a substance, positive when the substance gains thermal energy and negative when it loses it",
+   "meaning": "物质吸收或放出的热量，物质获得热能时为正，失去热能时为负",
    "unit": "J",
    "section": "5.1",
    "anchor": "5.1-heat-equation"
@@ -38,7 +38,7 @@
   {
    "sym": "C_heat",
    "concept": "heat-capacity",
-   "meaning": "the heat capacity of a body of matter, the heat it absorbs or releases for a temperature change of 1 °C; it is extensive",
+   "meaning": "物体的热容，即其温度变化 1 °C 时吸收或放出的热量；它是广度性质",
    "unit": "J/°C",
    "section": "5.1",
    "anchor": "5.1-capacity"
@@ -46,7 +46,7 @@
   {
    "sym": "c_spec",
    "concept": "specific-heat-capacity",
-   "meaning": "the specific heat of a substance, the heat needed to raise the temperature of 1 gram of it by 1 °C; it is intensive",
+   "meaning": "物质的比热容，即使 1 g 该物质的温度升高 1 °C 所需的热量；它是强度性质",
    "unit": "J/g °C",
    "section": "5.1",
    "anchor": "5.1-capacity"
@@ -54,7 +54,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of the substance that absorbs or releases the heat",
+   "meaning": "吸收或放出热量的物质的质量",
    "unit": "g",
    "section": "5.1",
    "anchor": "5.1-heat-equation"
@@ -62,7 +62,7 @@
   {
    "sym": "ΔT",
    "concept": "temperature",
-   "meaning": "the temperature change of the substance, its final temperature minus its initial temperature",
+   "meaning": "物质的温度变化，即其最终温度减去初始温度",
    "unit": "°C",
    "section": "5.1",
    "anchor": "5.1-heat-equation"
@@ -70,7 +70,7 @@
   {
    "sym": "T_initial",
    "concept": "temperature",
-   "meaning": "the temperature of the substance before the heat is gained or lost",
+   "meaning": "物质得到或失去热量之前的温度",
    "unit": "°C",
    "section": "5.1",
    "anchor": "5.1-heat-equation"
@@ -78,7 +78,7 @@
   {
    "sym": "T_final",
    "concept": "temperature",
-   "meaning": "the temperature of the substance after the heat is gained or lost",
+   "meaning": "物质得到或失去热量之后的温度",
    "unit": "°C",
    "section": "5.1",
    "anchor": "5.1-heat-equation"
@@ -86,7 +86,7 @@
   {
    "sym": "U",
    "concept": "internal-energy",
-   "meaning": "the internal energy of a system, the total of all possible kinds of energy present in it",
+   "meaning": "体系的内能，即其中存在的所有可能形式的能量的总和",
    "unit": "J",
    "section": "5.3",
    "anchor": "5.3-first-law"
@@ -94,7 +94,7 @@
   {
    "sym": "ΔU",
    "concept": "internal-energy",
-   "meaning": "the change in the internal energy of a system",
+   "meaning": "体系内能的变化",
    "unit": "J",
    "section": "5.3",
    "anchor": "5.3-first-law"
@@ -102,7 +102,7 @@
   {
    "sym": "w",
    "concept": "work",
-   "meaning": "the work done on the system, positive when the surroundings do work on the system and negative when the system does work on the surroundings",
+   "meaning": "对体系所做的功，环境对体系做功时为正，体系对环境做功时为负",
    "unit": "J",
    "section": "5.3",
    "anchor": "5.3-first-law"
@@ -110,7 +110,7 @@
   {
    "sym": "H",
    "concept": "enthalpy",
-   "meaning": "the enthalpy of a system, the sum of its internal energy and the product of its pressure and volume",
+   "meaning": "体系的焓，即其内能与压强和体积之积的和",
    "unit": "J",
    "section": "5.3",
    "anchor": "5.3-enthalpy"
@@ -118,7 +118,7 @@
   {
    "sym": "ΔH",
    "concept": "enthalpy-change",
-   "meaning": "the enthalpy change of a process, equal to the heat flow when the process occurs at constant pressure with only expansion work",
+   "meaning": "过程的焓变，当过程在恒压下进行且只做膨胀功时，等于热量流动",
    "unit": "kJ",
    "section": "5.3",
    "anchor": "5.3-enthalpy"
@@ -126,7 +126,7 @@
   {
    "sym": "P",
    "concept": "gas-pressure",
-   "meaning": "the pressure of the system, constant for the processes the enthalpy change describes",
+   "meaning": "体系的压强，对于焓变所描述的过程，它是恒定的",
    "unit": "atm",
    "section": "5.3",
    "anchor": "5.3-enthalpy"
@@ -134,7 +134,7 @@
   {
    "sym": "V",
    "concept": "volume",
-   "meaning": "the volume of the system",
+   "meaning": "体系的体积",
    "unit": "L",
    "section": "5.3",
    "anchor": "5.3-enthalpy"
@@ -142,7 +142,7 @@
   {
    "sym": "ΔV",
    "concept": "volume",
-   "meaning": "the change in the volume of the system as it expands or contracts",
+   "meaning": "体系膨胀或收缩时体积的变化",
    "unit": "L",
    "section": "5.3",
    "anchor": "5.3-enthalpy"
@@ -150,7 +150,7 @@
   {
    "sym": "q_p",
    "concept": "heat-flow",
-   "meaning": "the heat of a reaction under conditions of constant pressure",
+   "meaning": "反应在恒压条件下的热量",
    "unit": "kJ",
    "section": "5.3",
    "anchor": "5.3-enthalpy"
@@ -158,7 +158,7 @@
   {
    "sym": "ΔH°",
    "concept": "enthalpy-change",
-   "meaning": "the standard enthalpy change, the enthalpy change for a process occurring under standard state conditions",
+   "meaning": "标准焓变，即在标准状态条件下进行的过程的焓变",
    "unit": "kJ",
    "section": "5.3",
    "anchor": "5.3-standard-state"
@@ -166,7 +166,7 @@
   {
    "sym": "ΔH_c°",
    "concept": "standard-enthalpy-of-combustion",
-   "meaning": "the standard enthalpy of combustion, the enthalpy change when 1 mole of a substance burns completely under standard state conditions",
+   "meaning": "标准燃烧焓，即 1 mol 物质在标准状态条件下完全燃烧时的焓变",
    "unit": "kJ/mol",
    "section": "5.3",
    "anchor": "5.3-combustion"
@@ -174,7 +174,7 @@
   {
    "sym": "ΔH_f°",
    "concept": "standard-enthalpy-of-formation",
-   "meaning": "the standard enthalpy of formation, the enthalpy change when exactly 1 mole of a substance forms from its elements in their most stable states under standard state conditions",
+   "meaning": "标准生成焓，即在标准状态条件下，由处于最稳定状态的单质生成恰好 1 mol 物质时的焓变",
    "unit": "kJ/mol",
    "section": "5.3",
    "anchor": "5.3-formation"
@@ -182,7 +182,7 @@
   {
    "sym": "n_coef",
    "concept": "coefficients-as-ratios",
-   "meaning": "the stoichiometric coefficient of a product or a reactant in the balanced equation",
+   "meaning": "配平的方程式中产物或反应物的化学计量系数",
    "section": "5.3",
    "anchor": "5.3-formation-enthalpies"
   },
@@ -190,7 +190,7 @@
    "sym": "C_small_pan",
    "concept": "heat-capacity",
    "ref": "small-pan",
-   "meaning": "the heat capacity of the small cast iron frying pan",
+   "meaning": "小铸铁煎锅的热容",
    "unit": "J/°C",
    "section": "5.1",
    "anchor": "5.1-capacity"
@@ -199,7 +199,7 @@
    "sym": "C_large_pan",
    "concept": "heat-capacity",
    "ref": "large-pan",
-   "meaning": "the heat capacity of the large cast iron frying pan",
+   "meaning": "大铸铁煎锅的热容",
    "unit": "J/°C",
    "section": "5.1",
    "anchor": "5.1-capacity"
@@ -207,7 +207,7 @@
   {
    "sym": "q",
    "concept": "heat-flow",
-   "meaning": "the heat gained or lost by a substance or a process, positive when it is gained and negative when it is lost",
+   "meaning": "物质或过程所得到或失去的热量，得到时为正，失去时为负",
    "unit": "J",
    "section": "5.2",
    "anchor": "5.2-heat-balance"
@@ -216,7 +216,7 @@
    "sym": "q_M",
    "concept": "heat-flow",
    "ref": "metal",
-   "meaning": "the heat gained by substance M, the hot metal; negative, since the metal loses heat",
+   "meaning": "物质 M（热的金属）所得到的热量；因金属失去热量，故为负",
    "unit": "J",
    "section": "5.2",
    "anchor": "5.2-heat-balance"
@@ -225,7 +225,7 @@
    "sym": "q_W",
    "concept": "heat-flow",
    "ref": "water",
-   "meaning": "the heat gained by substance W, the cool water; positive, since the water gains heat",
+   "meaning": "物质 W（冷水）所得到的热量；因水得到热量，故为正",
    "unit": "J",
    "section": "5.2",
    "anchor": "5.2-heat-balance"
@@ -234,7 +234,7 @@
    "sym": "q_solution",
    "concept": "heat-flow",
    "ref": "solution",
-   "meaning": "the heat absorbed or lost by the solution, the surroundings of a reaction in a calorimeter",
+   "meaning": "溶液所吸收或失去的热量，溶液是量热计中反应的环境",
    "unit": "J",
    "section": "5.2",
    "anchor": "5.2-reaction-heat"
@@ -242,7 +242,7 @@
   {
    "sym": "c_spec",
    "concept": "specific-heat-capacity",
-   "meaning": "the specific heat of a substance in the calorimeter",
+   "meaning": "量热计中物质的比热容",
    "unit": "J/g °C",
    "section": "5.2",
    "anchor": "5.2-heat-balance"
@@ -250,7 +250,7 @@
   {
    "sym": "m",
    "concept": "mass",
-   "meaning": "the mass of a substance in the calorimeter",
+   "meaning": "量热计中物质的质量",
    "unit": "g",
    "section": "5.2",
    "anchor": "5.2-heat-balance"
@@ -258,7 +258,7 @@
   {
    "sym": "ΔT",
    "concept": "temperature",
-   "meaning": "the temperature change of a substance in the calorimeter, its final temperature minus its initial temperature",
+   "meaning": "量热计中物质的温度变化，即其最终温度减去初始温度",
    "unit": "°C",
    "section": "5.2",
    "anchor": "5.2-heat-balance"
@@ -266,7 +266,7 @@
   {
    "sym": "T",
    "concept": "temperature",
-   "meaning": "the temperature of a substance in the calorimeter, initial (i) or final (f)",
+   "meaning": "量热计中物质的温度，初态（i）或终态（f）",
    "unit": "°C",
    "section": "5.2",
    "anchor": "5.2-heat-balance"
@@ -274,7 +274,7 @@
   {
    "sym": "q",
    "concept": "heat-flow",
-   "meaning": "the heat that flows into the system, positive when it flows in and negative when it flows out",
+   "meaning": "流入体系的热量，流入时为正，流出时为负",
    "unit": "J",
    "section": "5.3",
    "anchor": "5.3-first-law"
@@ -282,7 +282,7 @@
   {
    "sym": "E",
    "concept": "internal-energy",
-   "meaning": "the internal energy of a system, another symbol for U",
+   "meaning": "体系的内能，是 U 的另一种符号",
    "unit": "J",
    "section": "5.3",
    "anchor": "5.3-first-law"

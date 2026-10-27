@@ -117,7 +117,7 @@ function diatomic3(v, g, p, u, sym, r) {
 ===================================================================== */
 (function () {
   const d = sim('sim-states');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [0.0, 1.25], views: [{ label: '正面', yaw: 0, pitch: 0.16 }, { label: '上方', yaw: 0, pitch: 1.1 }], h: 440, dist: 8, tilt: 0.22 });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [0.0, 1.25], views: [{ label: '正视', yaw: 0, pitch: 0.16 }, { label: '俯视', yaw: 0, pitch: 1.1 }], h: 440, dist: 8, tilt: 0.22 });
   const grp = v.part(0), cnv = strip(d, 200);
   const NAMES = ['固态', '液态', '气态'];
   /* the state is a thing the reader switches between, never slides through (rule 26.1): three buttons, the current one marked */
@@ -377,7 +377,7 @@ function centre(m) {
   /* the scene: the same seven molecules as balls and sticks, each turning about its own centre */
   let v = null, parts = null, cnv = null, sig = '';
   function mount() {
-    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正面', yaw: 0, pitch: 0.2 }, { label: '上方', yaw: 0, pitch: 1.2 }], h: 460, dist: 8 });
+    v = F.view3d(d.stage, { spin: 'idle', views: [{ label: '正视', yaw: 0, pitch: 0.2 }, { label: '俯视', yaw: 0, pitch: 1.2 }], h: 460, dist: 8 });
     parts = MOLECULES.map((m, i) => { const g = v.part(SPOT[i][2]); g.position.set(SPOT[i][2], SPOT[i][3], 0); return g; });
     cnv = strip(d, 200);
   }
@@ -430,7 +430,7 @@ function centre(m) {
 ===================================================================== */
 (function () {
   const d = sim('sim-electrolysis');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.04, 0.95], yaw: [-Math.PI / 2, Math.PI / 2], views: [{ label: '正面', yaw: 0, pitch: 0.12 }, { label: '上方', yaw: 0, pitch: 0.9 }], h: 460, dist: 7.4, tilt: 0.3 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.04, 0.95], yaw: [-Math.PI / 2, Math.PI / 2], views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '俯视', yaw: 0, pitch: 0.9 }], h: 460, dist: 7.4, tilt: 0.3 });
   const grp = v.part(0), cnv = strip(d, 230);
   const N = ctl(d.controls, { label: '\\text{已分解的水分子}', cls: '', min: 0, max: 12, step: 2, value: 6, unit: '', dec: 0, aria: '已分解的水分子数' });
   /* the bench, the beaker on it, the battery on its floor and the two tubes over the terminals */

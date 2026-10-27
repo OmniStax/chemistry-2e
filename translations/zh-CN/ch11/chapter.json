@@ -204,7 +204,7 @@
   {
    "sym": "R",
    "concept": "ideal-gas-constant",
-   "meaning": "气体常数，0.08206 L atm/mol K",
+   "meaning": "理想气体常数，0.08206 L atm/mol K",
    "unit": "L atm/mol K",
    "section": "11.4",
    "anchor": "11.4-osmosis"

@@ -296,7 +296,7 @@
   {
    "sym": "I",
    "concept": "electric-current",
-   "meaning": "通过电池的恒定电流",
+   "meaning": "通过电解池的恒定电流",
    "unit": "A",
    "section": "17.7",
    "anchor": "17.7-quantitative"

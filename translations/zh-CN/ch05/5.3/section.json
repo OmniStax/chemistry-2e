@@ -2,35 +2,43 @@
   "id": "5.3",
   "module": "m68727",
   "chapter": "5",
-  "title": "Enthalpy",
-  "short": "Enthalpy",
-  "lead": "The <span data-concept=\"internal-energy\">internal energy</span> of a system changes through <span data-concept=\"heat-flow\">heat</span> and <span data-concept=\"work\">work</span>, and at constant <span data-concept=\"gas-pressure\">pressure</span> the <span data-concept=\"heat-flow\">heat</span> of a process is its <span data-concept=\"enthalpy-change\">enthalpy change</span>. Thermochemical equations carry that change, tables list it as <span data-concept=\"enthalpy\">enthalpies</span> of combustion and formation, and Hess’s law adds it step by step.",
+  "title": "焓",
+  "short": "焓",
+  "lead": "体系的<span data-concept=\"internal-energy\">内能</span>通过<span data-concept=\"heat-flow\">热量</span>和<span data-concept=\"work\">功</span>而改变，在恒定<span data-concept=\"gas-pressure\">压强</span>下，过程的<span data-concept=\"heat-flow\">热量</span>就是它的<span data-concept=\"enthalpy-change\">焓变</span>。热化学方程式带有这一变化，数据表把它列为燃烧<span data-concept=\"enthalpy\">焓</span>和生成焓，而盖斯定律则逐步把它相加。",
   "objectives": [
-    "State the first law of thermodynamics",
-    "Define enthalpy and explain its classification as a state function",
-    "Write and balance thermochemical equations",
-    "Calculate enthalpy changes for various chemical reactions",
-    "Explain Hess’s law and use it to compute reaction enthalpies"
+    "陈述热力学第一定律",
+    "定义焓，并解释它为什么属于状态函数",
+    "书写并配平热化学方程式",
+    "计算各种化学反应的焓变",
+    "解释盖斯定律，并用它计算反应焓变"
   ],
-  "summary_html": "<p>If a chemical change is carried out at constant <span data-concept=\"gas-pressure\">pressure</span> and the only <span data-concept=\"work\">work</span> done is caused by expansion or contraction, <em>q</em> for the change is called the <span data-concept=\"enthalpy-change\">enthalpy change</span> with the symbol Δ<em>H</em>, or $\\text{Δ}H\\text{°}$ for reactions occurring under standard state conditions at 298 K. The value of Δ<em>H</em> for a reaction in one direction is equal in magnitude, but opposite in sign, to Δ<em>H</em> for the reaction in the opposite direction, and Δ<em>H</em> is directly proportional to the quantity of reactants and products. The <span data-concept=\"standard-enthalpy-of-formation\">standard enthalpy of formation</span>, $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}},$ is the <span data-concept=\"enthalpy-change\">enthalpy change</span> accompanying the formation of 1 <span data-concept=\"mole\">mole</span> of a substance from the elements in their most stable states at 1 bar and 298.15 K. If the <span data-concept=\"standard-enthalpy-of-formation\">enthalpies of formation</span> are available for the reactants and products of a reaction, the <span data-concept=\"enthalpy-change\">enthalpy change</span> can be calculated using Hess’s law: If a process can be written as the sum of several stepwise processes, the <span data-concept=\"enthalpy-change\">enthalpy change</span> of the total process equals the sum of the <span data-concept=\"enthalpy-change\">enthalpy changes</span> of the various steps.</p>",
-  "notes": "The two Link to Learning notes (the internal combustion engine and the algae biofuel page) are left out, the Key Equations table is carried by the chapter’s equations, and the book’s errata are kept as printed: the ethanol combustion equation drops a parenthesis in “(g+”, Table 5.2 lists isooctane as –5465.5 kJ/mol where the text and Example 5.10 use −5460 kJ/mol, Example 5.9 calls KClO₃ perchlorate, Example 5.15 lists HNO₃ as −207.4 kJ/mol but computes with −206.64 kJ/mol and reaches −136.80 kJ by the equation and −138.4 kJ by the steps, one exercise reads “in Table 5.2 the table”, and one key writes “HCL”.",
+  "summary_html": "<p>如果化学变化在恒定<span data-concept=\"gas-pressure\">压强</span>下进行，且所做的唯一的<span data-concept=\"work\">功</span>是由膨胀或收缩引起的，则该变化的 <em>q</em> 称为<span data-concept=\"enthalpy-change\">焓变</span>，符号为 Δ<em>H</em>；对于在 298 K 标准状态条件下发生的反应，则记为 $\\text{Δ}H\\text{°}$。一个反应在一个方向上的 Δ<em>H</em> 与其逆向反应的 Δ<em>H</em> 大小相等、符号相反，且 Δ<em>H</em> 与反应物和产物的量成正比。<span data-concept=\"standard-enthalpy-of-formation\">标准生成焓</span>记作 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}},$ 是由处于最稳定状态的单质，在 1 bar 和 298.15 K 下生成 1 <span data-concept=\"mole\">摩尔</span>物质所伴随的<span data-concept=\"enthalpy-change\">焓变</span>。如果已知反应的反应物和产物的<span data-concept=\"standard-enthalpy-of-formation\">生成焓</span>，就可以用盖斯定律计算<span data-concept=\"enthalpy-change\">焓变</span>：如果一个过程可以写成若干分步过程之和，则总过程的<span data-concept=\"enthalpy-change\">焓变</span>等于各分步的<span data-concept=\"enthalpy-change\">焓变</span>之和。</p>",
+  "notes": "两个“学习链接”注释（内燃机和藻类生物燃料页面）已略去，关键方程式表由本章的方程式承载，书中的错误按原样保留：乙醇燃烧方程式在“(g+”处漏了一个括号，表 5.2 将异辛烷列为 –5465.5 kJ/mol，而正文和例 5.10 用的是 −5460 kJ/mol，例 5.9 把 KClO₃ 称为高氯酸盐，例 5.15 将 HNO₃ 列为 −207.4 kJ/mol，却按 −206.64 kJ/mol 计算，并由方程式得到 −136.80 kJ、由分步得到 −138.4 kJ，一道习题写作“表 5.2 该表中”，还有一份答案写作“HCL”。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "low"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-09-28",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels and concept tags are AI-generated. All eight Check Your Learning items carry the book’s own answers. Answers to the end-of-chapter exercises come from the book’s key, which covers twenty-four of the forty-eight items; the twenty unkeyed numerical items (fs-idp167504688, fs-idp140736768, fs-idp103290416, fs-idp169467440, fs-idp155924624, fs-idp25402064, fs-idp165437584, fs-idp161291648, fs-idp173454656, fs-idp204534224, fs-idp149472576, fs-idp161656784, fs-idp173500624, fs-idp214812192, fs-idp195101120, fs-idp43583200, fs-idp208987456, fs-idp124891680, fs-idp149397888, fs-idp165246448) are left out. The four unkeyed conceptual items (fs-idp103276080 on the oxyacetylene torch, fs-idp104124592 on Table 5.2, fs-idp154782528 on graphite and diamond, fs-idp157714624 on OsO₄) are kept with a suggested approach marked as OmniStax’s own. References to Examples 5.5 and 5.6 and to Exercise 5.25 of the preceding section are plain text; nothing is taken from another section and nothing is held for one. The heat-capacity key’s kJ/ºC is written kJ/°C. Numeric answers accept 2% tolerance.",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。八道学习检测题均附有书中自己的答案。章末习题的答案取自书后答案，其涵盖四十八道题中的二十四道；二十道没有答案的数值题（fs-idp167504688、fs-idp140736768、fs-idp103290416、fs-idp169467440、fs-idp155924624、fs-idp25402064、fs-idp165437584、fs-idp161291648、fs-idp173454656、fs-idp204534224、fs-idp149472576、fs-idp161656784、fs-idp173500624、fs-idp214812192、fs-idp195101120、fs-idp43583200、fs-idp208987456、fs-idp124891680、fs-idp149397888、fs-idp165246448）已略去。四道没有答案的概念题（fs-idp103276080 涉及氧乙炔焊炬；fs-idp104124592 涉及表 5.2；fs-idp154782528 涉及石墨和金刚石；fs-idp157714624 涉及 OsO₄）保留，并附有标明为 OmniStax 自拟的建议思路。对例 5.5 和 5.6 以及对前一节习题 5.25 的引用均为纯文本；没有取自其他小节的内容，也没有为其他小节保留的内容。热容答案中的 kJ/ºC 写作 kJ/°C。数值答案接受 2% 的容差。",
   "figures": [
     {
       "id": "sim-first-law",
@@ -39,7 +47,7 @@
       "originals": [
         "/media/ch05/CNX_Chem_05_03_Systemqw.jpg"
       ],
-      "original_caption": "The internal energy, U, of a system can be changed by heat flow and work. If heat flows into the system, qin, or work is done on the system, won, its internal energy increases, ΔU > 0. If heat flows out of the system, qout, or work is done by the system, wby, its internal energy decreases, ΔU < 0.",
+      "original_caption": "体系的内能 U 可以通过热量流动和功而改变。如果热量流入体系（q入），或者对体系做功（w入），其内能增大，ΔU > 0。如果热量流出体系（q出），或者体系对外做功（w出），其内能减小，ΔU < 0。",
       "draws": [
         "energy"
       ],
@@ -53,6 +61,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "ΔU label under the levels; note that repeated the caption dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -87,7 +100,7 @@
       "originals": [
         "/media/ch05/CNX_Chem_05_03_HessCO2.jpg"
       ],
-      "original_caption": "The formation of CO2(g) from its elements can be thought of as occurring in two steps, which sum to the overall reaction, as described by Hess’s law. The horizontal blue lines represent enthalpies. For an exothermic process, the products are at lower enthalpy than are the reactants.",
+      "original_caption": "CO2(g) 由其元素生成的反应可以看作分两步发生，这两步之和即为总反应，如盖斯定律所述。水平的蓝线表示焓。对于放热过程，产物的焓低于反应物的焓。",
       "draws": [
         "energy"
       ],
@@ -101,6 +114,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "arrow labels placed clear of levels; sum table and repeating note dropped"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -332,7 +350,7 @@
         "at": "inline",
         "after": "ex-hcl-naoh"
       },
-      "prompt": "When 1.34 g Zn(<em>s</em>) reacts with 60.0 mL of 0.750 M HCl(<em>aq</em>), 3.14 kJ of heat are produced. Determine the enthalpy change per mole of zinc reacting for the reaction:<br>$\\text{Zn}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{ZnCl}}_{2}(aq)+{\\text{H}}_{2}(g)$",
+      "prompt": "当 1.34 g Zn(<em>s</em>) 与 60.0 mL 0.750 M HCl(<em>aq</em>) 反应时，产生 3.14 kJ 热量。确定该反应每摩尔锌反应的焓变：<br>$\\text{Zn}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{ZnCl}}_{2}(aq)+{\\text{H}}_{2}(g)$",
       "answer": {
         "type": "number",
         "value": -153,
@@ -350,7 +368,7 @@
         "at": "inline",
         "after": "ex-gummy-bear"
       },
-      "prompt": "When 1.42 g of iron reacts with 1.80 g of chlorine, 3.22 g of FeCl<sub>2</sub>(<em>s</em>) and 8.60 kJ of heat is produced. What is the enthalpy change for the reaction when 1 mole of FeCl<sub>2</sub>(<em>s</em>) is produced?",
+      "prompt": "当 1.42 g 铁与 1.80 g 氯气反应时，生成 3.22 g FeCl<sub>2</sub>(<em>s</em>)，并产生 8.60 kJ 热量。生成 1 摩尔 FeCl<sub>2</sub>(<em>s</em>) 时，该反应的焓变是多少？",
       "answer": {
         "type": "number",
         "value": -338,
@@ -368,7 +386,7 @@
         "at": "inline",
         "after": "ex-isooctane"
       },
-      "prompt": "How much heat is produced by the combustion of 125 g of acetylene?",
+      "prompt": "125 g 乙炔燃烧会产生多少热量？",
       "answer": {
         "type": "number",
         "value": 6250.0,
@@ -386,13 +404,13 @@
         "at": "inline",
         "after": "ex-ozone"
       },
-      "prompt": "Hydrogen gas, H<sub>2</sub>, reacts explosively with gaseous chlorine, Cl<sub>2</sub>, to form hydrogen chloride, HCl(<em>g</em>). What is the enthalpy change for the reaction of 1 mole of H<sub>2</sub>(<em>g</em>) with 1 mole of Cl<sub>2</sub>(<em>g</em>) if both the reactants and products are at standard state conditions? The standard enthalpy of formation of HCl(<em>g</em>) is −92.3 kJ/mol.",
+      "prompt": "氢气 H<sub>2</sub> 与气态氯 Cl<sub>2</sub> 发生爆炸性反应，生成氯化氢 HCl(<em>g</em>)。如果反应物和产物都处于标准状态条件，1 摩尔 H<sub>2</sub>(<em>g</em>) 与 1 摩尔 Cl<sub>2</sub>(<em>g</em>) 反应的焓变是多少？HCl(<em>g</em>) 的标准生成焓为 −92.3 kJ/mol。",
       "answer": {
         "type": "number",
         "value": -184.6,
         "unit": "kJ",
         "generated_by": "source",
-        "solution": "For the reaction ${\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{HCl}(g)\\hspace{3em}\\text{Δ}H\\text{°}=−184.6\\;\\text{kJ}$"
+        "solution": "对于反应 ${\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{HCl}(g)\\hspace{3em}\\text{Δ}H\\text{°}=−184.6\\;\\text{kJ}$"
       }
     },
     {
@@ -404,10 +422,10 @@
         "at": "inline",
         "after": "ex-formation-equations"
       },
-      "prompt": "Write the heat of formation reaction equations for:<br>(a) C<sub>2</sub>H<sub>5</sub>OC<sub>2</sub>H<sub>5</sub>(<em>l</em>)<br>(b) Na<sub>2</sub>CO<sub>3</sub>(<em>s</em>)",
+      "prompt": "写出下列物质的生成热反应方程式：<br>（a）C<sub>2</sub>H<sub>5</sub>OC<sub>2</sub>H<sub>5</sub>(<em>l</em>)<br>（b）Na<sub>2</sub>CO<sub>3</sub>(<em>s</em>)",
       "answer": {
         "type": "open",
-        "solution": "(a) $4\\text{C}(s,\\;\\text{graphite})+5{\\text{H}}_{2}(g)+\\;\\frac{1}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{5}{\\text{OC}}_{2}{\\text{H}}_{5}(l);$ (b) $2\\text{Na}(s)+\\text{C}(s,\\;\\text{graphite})+\\;\\frac{3}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{Na}}_{2}{\\text{CO}}_{3}(s)$",
+        "solution": "（a）$4\\text{C}(s,\\;\\text{石墨})+5{\\text{H}}_{2}(g)+\\;\\frac{1}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{5}{\\text{OC}}_{2}{\\text{H}}_{5}(l);$ （b）$2\\text{Na}(s)+\\text{C}(s,\\;\\text{石墨})+\\;\\frac{3}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{Na}}_{2}{\\text{CO}}_{3}(s)$",
         "generated_by": "source"
       }
     },
@@ -420,7 +438,7 @@
         "at": "inline",
         "after": "ex-fecl3"
       },
-      "prompt": "Calculate Δ<em>H</em> for the process:<br>${\\text{N}}_{2}(g)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)$<br>from the following information:<br>${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2\\text{NO}(g)\\hspace{3em}\\text{Δ}\\text{H}=180.5\\;\\text{kJ}$<br>$\\text{NO}(g)+\\;\\frac{1}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}\\text{H}=−57.06\\;\\text{kJ}$",
+      "prompt": "计算下述过程的 Δ<em>H</em>：<br>${\\text{N}}_{2}(g)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)$<br>根据以下信息：<br>${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2\\text{NO}(g)\\hspace{3em}\\text{Δ}\\text{H}=180.5\\;\\text{kJ}$<br>$\\text{NO}(g)+\\;\\frac{1}{2}{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}\\text{H}=−57.06\\;\\text{kJ}$",
       "answer": {
         "type": "number",
         "value": 66.4,
@@ -437,7 +455,7 @@
         "at": "inline",
         "after": "ex-clf3"
       },
-      "prompt": "Aluminum chloride can be formed from its elements:<br><em>(i)</em> $2\\text{Al}(s)+3{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2{\\text{AlCl}}_{3}(s)\\hspace{3em}\\text{Δ}H\\text{°}=?$<br>Use the reactions here to determine the Δ<em>H</em>° for reaction <em>(i)</em>:<br><em>(ii)</em> $\\text{HCl}(g)\\;\\longrightarrow \\;\\text{HCl}(aq)\\hspace{3em}\\text{Δ}{H}_{(ii)}^{{}^{\\circ}}=−74.8\\;\\text{kJ}$<br><em>(iii)</em> ${\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{HCl}(g)\\hspace{3em}\\text{Δ}{H}_{(iii)}^{{}^{\\circ}}=−185\\;\\text{kJ}$<br><em>(iv)</em> ${\\text{AlCl}}_{3}(aq)\\;\\longrightarrow \\;{\\text{AlCl}}_{3}(s)\\hspace{3em}\\text{Δ}{H}_{(iv)}^{{}^{\\circ}}=+323\\;\\text{kJ/mol}$<br><em>(v)</em> $\\text{2Al}(s)+6\\text{HCl}(aq)\\;\\longrightarrow \\;2{\\text{AlCl}}_{3}(aq)+3{\\text{H}}_{2}(g)\\hspace{3em}\\text{Δ}{H}_{(v)}^{{}^{\\circ}}=−1049\\;\\text{kJ}$",
+      "prompt": "氯化铝可由其元素生成：<br><em>(i)</em> $2\\text{Al}(s)+3{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2{\\text{AlCl}}_{3}(s)\\hspace{3em}\\text{Δ}H\\text{°}=?$<br>利用这里的反应确定反应 <em>(i)</em> 的 Δ<em>H</em>°：<br><em>(ii)</em> $\\text{HCl}(g)\\;\\longrightarrow \\;\\text{HCl}(aq)\\hspace{3em}\\text{Δ}{H}_{(ii)}^{{}^{\\circ}}=−74.8\\;\\text{kJ}$<br><em>(iii)</em> ${\\text{H}}_{2}(g)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;2\\text{HCl}(g)\\hspace{3em}\\text{Δ}{H}_{(iii)}^{{}^{\\circ}}=−185\\;\\text{kJ}$<br><em>(iv)</em> ${\\text{AlCl}}_{3}(aq)\\;\\longrightarrow \\;{\\text{AlCl}}_{3}(s)\\hspace{3em}\\text{Δ}{H}_{(iv)}^{{}^{\\circ}}=+323\\;\\text{kJ/mol}$<br><em>(v)</em> $\\text{2Al}(s)+6\\text{HCl}(aq)\\;\\longrightarrow \\;2{\\text{AlCl}}_{3}(aq)+3{\\text{H}}_{2}(g)\\hspace{3em}\\text{Δ}{H}_{(v)}^{{}^{\\circ}}=−1049\\;\\text{kJ}$",
       "answer": {
         "type": "number",
         "value": -1407,
@@ -454,7 +472,7 @@
         "at": "inline",
         "after": "ex-hno3"
       },
-      "prompt": "Calculate the heat of combustion of 1 mole of ethanol, C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>), when H<sub>2</sub>O(<em>l</em>) and CO<sub>2</sub>(<em>g</em>) are formed. Use the following enthalpies of formation: C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>), −278 kJ/mol; H<sub>2</sub>O(<em>l</em>), −286 kJ/mol; and CO<sub>2</sub>(<em>g</em>), −394 kJ/mol.",
+      "prompt": "计算 1 摩尔乙醇 C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>) 在生成 H<sub>2</sub>O(<em>l</em>) 和 CO<sub>2</sub>(<em>g</em>) 时的燃烧热。使用下列生成焓：C<sub>2</sub>H<sub>5</sub>OH(<em>l</em>)，−278 kJ/mol；H<sub>2</sub>O(<em>l</em>)，−286 kJ/mol；CO<sub>2</sub>(<em>g</em>)，−394 kJ/mol。",
       "answer": {
         "type": "number",
         "value": -1368,
@@ -471,10 +489,10 @@
         "at": "end"
       },
       "cite": "thermochemical-equations",
-      "prompt": "Explain how the heat measured in Example 5.5 differs from the enthalpy change for the exothermic reaction described by the following equation:<br>$\\text{HCl}(aq)+\\text{NaOH}(aq)\\;\\longrightarrow \\;\\text{NaCl}(aq)+{\\text{H}}_{2}\\text{O}(l)$",
+      "prompt": "说明例 5.5 中测得的热量与下面方程式所描述的放热反应的焓变有何不同：<br>$\\text{HCl}(aq)+\\text{NaOH}(aq)\\;\\longrightarrow \\;\\text{NaCl}(aq)+{\\text{H}}_{2}\\text{O}(l)$",
       "answer": {
         "type": "open",
-        "solution": "The enthalpy change of the indicated reaction is for exactly 1 mol HCL and 1 mol NaOH; the heat in the example is produced by 0.0500 mol HCl and 0.0500 mol NaOH.",
+        "solution": "所示反应的焓变针对的是恰好 1 mol HCL 和 1 mol NaOH；例中的热量是由 0.0500 mol HCl 和 0.0500 mol NaOH 产生的。",
         "generated_by": "source"
       }
     },
@@ -487,7 +505,7 @@
         "at": "end"
       },
       "cite": "thermochemical-equations",
-      "prompt": "Calculate the enthalpy of solution (Δ<em>H</em> for the dissolution) per mole of NH<sub>4</sub>NO<sub>3</sub> under the conditions described in Example 5.6.",
+      "prompt": "计算例 5.6 所述条件下，每摩尔 NH<sub>4</sub>NO<sub>3</sub> 的溶解焓（溶解过程的 Δ<em>H</em>）。",
       "answer": {
         "type": "number",
         "value": 25,
@@ -505,7 +523,7 @@
         "at": "end"
       },
       "cite": "thermochemical-equations",
-      "prompt": "Calculate the enthalpy of solution (Δ<em>H</em> for the dissolution) per mole of CaCl<sub>2</sub> (refer to Exercise 5.25).",
+      "prompt": "计算每摩尔 CaCl<sub>2</sub> 的溶解焓（溶解过程的 Δ<em>H</em>）（参见习题 5.25）。",
       "answer": {
         "type": "number",
         "value": 81,
@@ -523,11 +541,11 @@
         "at": "end"
       },
       "cite": "combustion",
-      "prompt": "Although the gas used in an oxyacetylene torch (Figure 5.7) is essentially pure acetylene, the heat produced by combustion of one mole of acetylene in such a torch is likely not equal to the enthalpy of combustion of acetylene listed in Table 5.2. Considering the conditions for which the tabulated data are reported, suggest an explanation.",
+      "prompt": "尽管氧乙炔焊炬（图 5.7）中使用的气体基本上是纯乙炔，但在这种焊炬中燃烧 1 摩尔乙炔所产生的热量，很可能不等于表 5.2 中所列的乙炔燃烧焓。考虑到制表数据所对应的条件，提出一种解释。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The torch releases less heat per mole than the tabulated $\\kdHc=-1301.1\\;\\text{kJ/mol}$ because its conditions are not the standard conditions of Table 5.2. The table value is for complete combustion with reactants and products at 25 °C and 1 atm, with the water formed as liquid. In the torch the products leave the flame at a very high temperature, so much of the energy stays in the hot gases rather than being released as heat at 25 °C. The water forms as steam rather than liquid, and the heat that would be released by condensing it, about 44 kJ per mole of water, is never given off. Combustion is also often incomplete, giving some carbon monoxide or soot instead of carbon dioxide, which releases less energy than burning fully to $\\text{CO}_{2}$."
+        "solution": "焊炬每摩尔放出的热量少于表中所列的 $\\kdHc=-1301.1\\;\\text{kJ/mol}$，因为它的条件不是表 5.2 的标准条件。表中的数值对应于完全燃烧，反应物和产物都在 25 °C 和 1 atm，生成的水为液态。在焊炬中，产物以很高的温度离开火焰，所以大部分能量留在热的气体中，而不是以 25 °C 的热量形式放出。水是以水蒸气而不是液体的形式生成的，水冷凝时本应放出的热量（每摩尔水约 44 kJ）始终没有放出。燃烧往往也不完全，生成一些一氧化碳或烟炱而不是二氧化碳，其放出的能量少于完全燃烧为 $\\text{CO}_{2}$ 时放出的能量。"
       }
     },
     {
@@ -539,7 +557,7 @@
         "at": "end"
       },
       "cite": "combustion",
-      "prompt": "How much heat is produced by burning 4.00 moles of acetylene under standard state conditions?",
+      "prompt": "在标准状态条件下燃烧 4.00 摩尔乙炔会产生多少热量？",
       "answer": {
         "type": "number",
         "value": 5204.4,
@@ -556,7 +574,7 @@
         "at": "end"
       },
       "cite": "combustion",
-      "prompt": "How many moles of isooctane must be burned to produce 100 kJ of heat under standard state conditions?",
+      "prompt": "在标准状态条件下，要产生 100 kJ 热量，必须燃烧多少摩尔异辛烷？",
       "answer": {
         "type": "number",
         "value": 0.0183,
@@ -574,7 +592,7 @@
         "at": "end"
       },
       "cite": "combustion",
-      "prompt": "When 2.50 g of methane burns in oxygen, 125 kJ of heat is produced. What is the enthalpy of combustion per mole of methane under these conditions?",
+      "prompt": "2.50 g 甲烷在氧气中燃烧时，产生 125 kJ 热量。在这些条件下，每摩尔甲烷的燃烧焓是多少？",
       "answer": {
         "type": "number",
         "value": -802,
@@ -592,7 +610,7 @@
         "at": "end"
       },
       "cite": "combustion",
-      "prompt": "A sample of 0.562 g of carbon is burned in oxygen in a bomb calorimeter, producing carbon dioxide. Assume both the reactants and products are under standard state conditions, and that the heat released is directly proportional to the enthalpy of combustion of graphite. The temperature of the calorimeter increases from 26.74 °C to 27.93 °C. What is the heat capacity of the calorimeter and its contents?",
+      "prompt": "将 0.562 g 碳在弹式量热计中于氧气里燃烧，生成二氧化碳。假设反应物和产物都处于标准状态条件，并且放出的热量与石墨的燃烧焓成正比。量热计的温度从 26.74 °C 升高到 27.93 °C。量热计及其内容物的热容是多少？",
       "answer": {
         "type": "number",
         "value": 15.5,
@@ -610,7 +628,7 @@
         "at": "end"
       },
       "cite": "thermochemical-equations",
-      "prompt": "Homes may be heated by pumping hot water through radiators. What mass of water will provide the same amount of heat when cooled from 95.0 to 35.0 °C, as the heat provided when 100 g of steam is cooled from 110 °C to 100 °C?",
+      "prompt": "家庭可以通过让热水流过散热器来供暖。多大质量的水从 95.0 °C 冷却到 35.0 °C 时，所提供的热量与 100 g 水蒸气从 110 °C 冷却到 100 °C 时所提供的热量相同？",
       "answer": {
         "type": "number",
         "value": 7.43,
@@ -627,11 +645,11 @@
         "at": "end"
       },
       "cite": "formation",
-      "prompt": "Which of the enthalpies of combustion in Table 5.2 the table are also standard enthalpies of formation?",
+      "prompt": "表 5.2 该表中的哪些燃烧焓同时也是标准生成焓？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The enthalpies of combustion of carbon, hydrogen, magnesium and sulfur are also standard enthalpies of formation, of $\\text{CO}_{2}(g)$, $\\text{H}_{2}\\text{O}(l)$, $\\text{MgO}(s)$ and $\\text{SO}_{2}(g)$ respectively. A standard enthalpy of formation, $\\kdHf$, is the enthalpy change for forming 1 mole of a single compound from its elements in their standard states. Each of these four combustions has only elements in their standard states as reactants, the solid element and $\\text{O}_{2}(g)$, and forms exactly 1 mole of one compound; for example, $\\text{C}(s)+\\text{O}_{2}(g)\\;\\longrightarrow\\;\\text{CO}_{2}(g)$ gives $\\kdHf=\\kdHc=-393.5\\;\\text{kJ/mol}$. The combustion of carbon monoxide starts from a compound, and the combustions of methane, acetylene, ethanol, methanol and isooctane start from compounds and form two products, so those values are not enthalpies of formation."
+        "solution": "碳、氢、镁和硫的燃烧焓同时也是标准生成焓，分别是 $\\text{CO}_{2}(g)$、$\\text{H}_{2}\\text{O}(l)$、$\\text{MgO}(s)$ 和 $\\text{SO}_{2}(g)$ 的标准生成焓。标准生成焓 $\\kdHf$ 是由处于标准状态的单质生成 1 摩尔单一化合物的焓变。这四个燃烧反应的反应物都只是处于标准状态的单质，包括固态单质和 $\\text{O}_{2}(g)$，并且恰好生成 1 摩尔一种化合物；例如，$\\text{C}(s)+\\text{O}_{2}(g)\\;\\longrightarrow\\;\\text{CO}_{2}(g)$ 给出 $\\kdHf=\\kdHc=-393.5\\;\\text{kJ/mol}$。一氧化碳的燃烧从化合物出发，而甲烷、乙炔、乙醇、甲醇和异辛烷的燃烧从化合物出发并生成两种产物，所以这些数值不是生成焓。"
       }
     },
     {
@@ -643,10 +661,10 @@
         "at": "end"
       },
       "cite": "formation",
-      "prompt": "Does the standard enthalpy of formation of H<sub>2</sub>O(<em>g</em>) differ from Δ<em>H</em>° for the reaction ${\\text{2H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(g)?$",
+      "prompt": "H<sub>2</sub>O(<em>g</em>) 的标准生成焓与反应 ${\\text{2H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(g)$ 的 Δ<em>H</em>° 是否不同？",
       "answer": {
         "type": "open",
-        "solution": "Yes.",
+        "solution": "是的。",
         "generated_by": "source"
       }
     },
@@ -659,7 +677,7 @@
         "at": "end"
       },
       "cite": "formation",
-      "prompt": "How many kilojoules of heat will be released when exactly 1 mole of manganese, Mn, is burned to form Mn<sub>3</sub>O<sub>4</sub>(<em>s</em>) at standard state conditions?",
+      "prompt": "在标准状态条件下，恰好 1 摩尔锰 Mn 燃烧生成 Mn<sub>3</sub>O<sub>4</sub>(<em>s</em>) 时，将释放多少千焦热量？",
       "answer": {
         "type": "number",
         "value": 459.6,
@@ -676,7 +694,7 @@
         "at": "end"
       },
       "cite": "hess-law",
-      "prompt": "The following sequence of reactions occurs in the commercial production of aqueous nitric acid:<br>$4{\\text{NH}}_{3}(g)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;4\\text{NO}(g)+6{\\text{H}}_{2}\\text{O}(l)\\hspace{3em}\\text{Δ}\\text{H}=−907\\;\\text{kJ}$<br>$2\\text{NO}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}\\text{H}=−113\\;\\text{kJ}$<br>$3{\\text{NO}}_{2}+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{HNO}}_{3}(aq)+\\text{NO}(g)\\hspace{3em}\\text{Δ}\\text{H}=−139\\;\\text{kJ}$<br>Determine the total enthalpy change for the production of one mole of aqueous nitric acid by this process. Coproducts of the net reaction include water and nitrogen monoxide.",
+      "prompt": "硝酸水溶液的工业生产中依次发生下列一系列反应：<br>$4{\\text{NH}}_{3}(g)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;4\\text{NO}(g)+6{\\text{H}}_{2}\\text{O}(l)\\hspace{3em}\\text{Δ}\\text{H}=−907\\;\\text{kJ}$<br>$2\\text{NO}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}\\text{H}=−113\\;\\text{kJ}$<br>$3{\\text{NO}}_{2}+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{HNO}}_{3}(aq)+\\text{NO}(g)\\hspace{3em}\\text{Δ}\\text{H}=−139\\;\\text{kJ}$<br>确定用这一方法生产 1 摩尔硝酸水溶液的总焓变。净反应的联产物包括水和一氧化氮。",
       "answer": {
         "type": "number",
         "value": -494,
@@ -693,11 +711,11 @@
         "at": "end"
       },
       "cite": "hess-law",
-      "prompt": "Both graphite and diamond burn.<br>$\\text{C}(s,\\;\\text{diamond})+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)$<br>For the conversion of graphite to diamond:<br>$\\text{C}(s,\\;\\text{graphite})\\;\\longrightarrow \\;\\text{C}(s,\\;\\text{diamond})\\hspace{3em}\\text{Δ}H\\text{°}=1.90\\;\\text{kJ}$<br>Which produces more heat, the combustion of graphite or the combustion of diamond?",
+      "prompt": "石墨和金刚石都能燃烧。<br>$\\text{C}(s,\\;\\text{金刚石})+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CO}}_{2}(g)$<br>石墨转化为金刚石：<br>$\\text{C}(s,\\;\\text{石墨})\\;\\longrightarrow \\;\\text{C}(s,\\;\\text{金刚石})\\hspace{3em}\\text{Δ}H\\text{°}=1.90\\;\\text{kJ}$<br>石墨的燃烧和金刚石的燃烧，哪一个产生的热量更多？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The combustion of diamond produces more heat, 1.90 kJ more per mole. Diamond lies 1.90 kJ higher in enthalpy than graphite, and both burn to the same product, $\\text{CO}_{2}(g)$. By Hess’s law, burning diamond is the same as converting it to graphite and then burning the graphite: $\\text{C}(s,\\;\\text{diamond})\\;\\longrightarrow\\;\\text{C}(s,\\;\\text{graphite})$ has $\\kdHo=-1.90\\;\\text{kJ}$, and $\\text{C}(s,\\;\\text{graphite})+\\text{O}_{2}(g)\\;\\longrightarrow\\;\\text{CO}_{2}(g)$ has $\\kdHo=-393.5\\;\\text{kJ}$. Adding them gives $\\kdHo=-395.4\\;\\text{kJ}$ for the combustion of diamond, compared with $-393.5\\;\\text{kJ}$ for graphite."
+        "solution": "金刚石的燃烧产生的热量更多，每摩尔多 1.90 kJ。金刚石的焓比石墨高 1.90 kJ，而两者燃烧后得到同样的产物 $\\text{CO}_{2}(g)$。根据盖斯定律，金刚石燃烧相当于先把它转化为石墨，再燃烧石墨：$\\text{C}(s,\\;\\text{金刚石})\\;\\longrightarrow\\;\\text{C}(s,\\;\\text{石墨})$ 的 $\\kdHo=-1.90\\;\\text{kJ}$，而 $\\text{C}(s,\\;\\text{石墨})+\\text{O}_{2}(g)\\;\\longrightarrow\\;\\text{CO}_{2}(g)$ 的 $\\kdHo=-393.5\\;\\text{kJ}$。二者相加，得金刚石燃烧的 $\\kdHo=-395.4\\;\\text{kJ}$，而石墨燃烧的为 $-393.5\\;\\text{kJ}$。"
       }
     },
     {
@@ -709,7 +727,7 @@
         "at": "end"
       },
       "cite": "formation-enthalpies",
-      "prompt": "From the molar heats of formation in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, determine how much heat is required to evaporate one mole of water: ${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{O}(g)$",
+      "prompt": "根据<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中的摩尔生成热，确定蒸发 1 摩尔水需要多少热量：${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{2}\\text{O}(g)$",
       "answer": {
         "type": "number",
         "value": 44.01,
@@ -726,11 +744,11 @@
         "at": "end"
       },
       "cite": "hess-law",
-      "prompt": "Which produces more heat?<br>$\\text{Os}(s)\\;+\\;2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(s)$<br>or<br>$\\text{Os}(s)\\;+\\;2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(g)$<br>for the phase change ${\\text{OsO}}_{4}(s)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(g)\\hspace{3em}\\text{Δ}\\text{H}=56.4\\;\\text{kJ}$",
+      "prompt": "哪一个产生的热量更多？<br>$\\text{Os}(s)\\;+\\;2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(s)$<br>还是<br>$\\text{Os}(s)\\;+\\;2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(g)$<br>对于相变 ${\\text{OsO}}_{4}(s)\\;\\longrightarrow \\;{\\text{OsO}}_{4}(g)\\hspace{3em}\\text{Δ}\\text{H}=56.4\\;\\text{kJ}$",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The reaction that forms solid $\\text{OsO}_{4}(s)$ produces more heat, 56.4 kJ more per mole. Both reactions start from the same reactants, $\\text{Os}(s)$ and $2\\text{O}_{2}(g)$. By Hess’s law, forming the gas is the same as forming the solid and then converting it to gas, so $\\kdH$ for forming $\\text{OsO}_{4}(g)$ equals $\\kdH$ for forming $\\text{OsO}_{4}(s)$ plus 56.4 kJ. The sublimation absorbs 56.4 kJ, so the gaseous product lies 56.4 kJ higher in enthalpy than the solid, and the formation of the gas is 56.4 kJ less exothermic than the formation of the solid."
+        "solution": "生成固态 $\\text{OsO}_{4}(s)$ 的反应产生的热量更多，每摩尔多 56.4 kJ。两个反应的起始反应物相同，都是 $\\text{Os}(s)$ 和 $2\\text{O}_{2}(g)$。根据盖斯定律，生成气体相当于先生成固体再把它转化为气体，所以生成 $\\text{OsO}_{4}(g)$ 的 $\\kdH$ 等于生成 $\\text{OsO}_{4}(s)$ 的 $\\kdH$ 加上 56.4 kJ。升华吸收 56.4 kJ，所以气态产物的焓比固态高 56.4 kJ，生成气体的放热比生成固体少 56.4 kJ。"
       }
     },
     {
@@ -742,7 +760,7 @@
         "at": "end"
       },
       "cite": "hess-law",
-      "prompt": "Calculate $\\text{Δ}H\\text{°}$ for the process<br>$\\text{Sb}(s)+\\;\\frac{5}{2}{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{5}(s)$<br>from the following information:<br>$\\begin{array}{l}\\text{Sb}(s)+\\;\\frac{3}{2}{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{3}(s)\\hspace{3em}\\text{Δ}H\\text{°}=−314\\;\\text{kJ} \\\\ {\\text{SbCl}}_{3}(s)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{5}(s)\\hspace{3em}\\text{Δ}H\\text{°}=−80\\;\\text{kJ}\\end{array}$",
+      "prompt": "计算下述过程的 $\\text{Δ}H\\text{°}$<br>$\\text{Sb}(s)+\\;\\frac{5}{2}{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{5}(s)$<br>根据以下信息：<br>$\\begin{array}{l}\\text{Sb}(s)+\\;\\frac{3}{2}{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{3}(s)\\hspace{3em}\\text{Δ}H\\text{°}=−314\\;\\text{kJ} \\\\ {\\text{SbCl}}_{3}(s)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{SbCl}}_{5}(s)\\hspace{3em}\\text{Δ}H\\text{°}=−80\\;\\text{kJ}\\end{array}$",
       "answer": {
         "type": "number",
         "value": -394,
@@ -759,7 +777,7 @@
         "at": "end"
       },
       "cite": "hess-law",
-      "prompt": "Calculate Δ<em>H</em> for the process ${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\;\\longrightarrow \\;2\\text{Hg}(l)+{\\text{Cl}}_{2}(g)$<br>from the following information:<br>$\\begin{array}{l}\\text{Hg}(l)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{HgCl}}_{2}(s)\\hspace{3em}\\text{Δ}H=−224\\;\\text{kJ} \\\\ \\text{Hg}(l)+{\\text{HgCl}}_{2}(s)\\;\\longrightarrow \\;{\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\hspace{3em}\\text{Δ}H=−41.2\\;\\text{kJ}\\end{array}$",
+      "prompt": "计算过程 ${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\;\\longrightarrow \\;2\\text{Hg}(l)+{\\text{Cl}}_{2}(g)$ 的 Δ<em>H</em><br>根据以下信息：<br>$\\begin{array}{l}\\text{Hg}(l)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{HgCl}}_{2}(s)\\hspace{3em}\\text{Δ}H=−224\\;\\text{kJ} \\\\ \\text{Hg}(l)+{\\text{HgCl}}_{2}(s)\\;\\longrightarrow \\;{\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\hspace{3em}\\text{Δ}H=−41.2\\;\\text{kJ}\\end{array}$",
       "answer": {
         "type": "number",
         "value": 265,
@@ -776,7 +794,7 @@
         "at": "end"
       },
       "cite": "hess-law",
-      "prompt": "Calculate the standard molar enthalpy of formation of NO(<em>g</em>) from the following data:<br>$\\begin{array}{l}{\\text{N}}_{2}(g)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}H\\text{°}=66.4\\;\\text{kJ} \\\\ \\text{2NO}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}H\\text{°}=−114.1\\;\\text{kJ}\\end{array}$",
+      "prompt": "根据下列数据计算 NO(<em>g</em>) 的标准摩尔生成焓：<br>$\\begin{array}{l}{\\text{N}}_{2}(g)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}H\\text{°}=66.4\\;\\text{kJ} \\\\ \\text{2NO}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NO}}_{2}(g)\\hspace{3em}\\text{Δ}H\\text{°}=−114.1\\;\\text{kJ}\\end{array}$",
       "answer": {
         "type": "number",
         "value": 90.3,
@@ -793,7 +811,7 @@
         "at": "end"
       },
       "cite": "formation-enthalpies",
-      "prompt": "Using the data in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, calculate the standard enthalpy change for each of the following reactions:<br>(a) $\\text{Si}(s)+2{\\text{F}}_{2}(g)\\;\\longrightarrow \\;{\\text{SiF}}_{4}(g)$<br>(b) $2\\text{C}(s)+2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(l)$<br>(c) ${\\text{CH}}_{4}(g)+{\\text{N}}_{2}(g)\\;\\longrightarrow \\;\\text{HCN}(g)+{\\text{NH}}_{3}(g)\\text{;}$<br>(d) ${\\text{CS}}_{2}(g)+3{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{CCl}}_{4}(g)+{\\text{S}}_{2}{\\text{Cl}}_{2}(g)$",
+      "prompt": "利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中的数据，计算下列各反应的标准焓变：<br>（a）$\\text{Si}(s)+2{\\text{F}}_{2}(g)\\;\\longrightarrow \\;{\\text{SiF}}_{4}(g)$<br>（b）$2\\text{C}(s)+2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(l)$<br>（c）${\\text{CH}}_{4}(g)+{\\text{N}}_{2}(g)\\;\\longrightarrow \\;\\text{HCN}(g)+{\\text{NH}}_{3}(g)\\text{;}$<br>（d）${\\text{CS}}_{2}(g)+3{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{CCl}}_{4}(g)+{\\text{S}}_{2}{\\text{Cl}}_{2}(g)$",
       "answer": {
         "type": "multi",
         "parts": [
@@ -818,7 +836,7 @@
             "unit": "kJ"
           }
         ],
-        "solution": "(a) −1615.0 kJ mol<sup>−1</sup>; (b) −484.3 kJ mol<sup>−1</sup>; (c) 164.2 kJ; (d) −232.1 kJ",
+        "solution": "（a）−1615.0 kJ mol<sup>−1</sup>；（b）−484.3 kJ mol<sup>−1</sup>；（c）164.2 kJ；（d）−232.1 kJ",
         "generated_by": "source"
       }
     },
@@ -831,7 +849,7 @@
         "at": "end"
       },
       "cite": "formation-enthalpies",
-      "prompt": "The decomposition of hydrogen peroxide, H<sub>2</sub>O<sub>2</sub>, has been used to provide thrust in the control jets of various space vehicles. Using the data in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, determine how much heat is produced by the decomposition of exactly 1 mole of H<sub>2</sub>O<sub>2</sub> under standard conditions.<br>$2{\\text{H}}_{2}{\\text{O}}_{2}(l)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(g)+{\\text{O}}_{2}(g)$",
+      "prompt": "过氧化氢 H<sub>2</sub>O<sub>2</sub> 的分解曾被用来为各种航天器的控制喷管提供推力。利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中的数据，确定在标准条件下恰好 1 摩尔 H<sub>2</sub>O<sub>2</sub> 分解会产生多少热量。<br>$2{\\text{H}}_{2}{\\text{O}}_{2}(l)\\;\\longrightarrow \\;2{\\text{H}}_{2}\\text{O}(g)+{\\text{O}}_{2}(g)$",
       "answer": {
         "type": "number",
         "value": -54.04,
@@ -849,7 +867,7 @@
         "at": "end"
       },
       "cite": "formation-enthalpies",
-      "prompt": "Calculate the enthalpy of combustion of butane, C<sub>4</sub>H<sub>10</sub>(<em>g</em>) for the formation of H<sub>2</sub>O(<em>g</em>) and CO<sub>2</sub>(<em>g</em>). The enthalpy of formation of butane is −126 kJ/mol.",
+      "prompt": "计算丁烷 C<sub>4</sub>H<sub>10</sub>(<em>g</em>) 燃烧生成 H<sub>2</sub>O(<em>g</em>) 和 CO<sub>2</sub>(<em>g</em>) 时的燃烧焓。丁烷的生成焓为 −126 kJ/mol。",
       "answer": {
         "type": "number",
         "value": -2660,
@@ -867,7 +885,7 @@
         "at": "end"
       },
       "cite": "formation-enthalpies",
-      "prompt": "The white pigment TiO<sub>2</sub> is prepared by the reaction of titanium tetrachloride, TiCl<sub>4</sub>, with water vapor in the gas phase: ${\\text{TiCl}}_{4}(g)+2{\\text{H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{TiO}}_{2}(s)+4\\text{HCl}(g).$<br>How much heat is evolved in the production of exactly 1 mole of TiO<sub>2</sub>(<em>s</em>) under standard state conditions?",
+      "prompt": "白色颜料 TiO<sub>2</sub> 是由四氯化钛 TiCl<sub>4</sub> 与气相中的水蒸气反应制得的：${\\text{TiCl}}_{4}(g)+2{\\text{H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{TiO}}_{2}(s)+4\\text{HCl}(g).$<br>在标准状态条件下，生成恰好 1 摩尔 TiO<sub>2</sub>(<em>s</em>) 会放出多少热量？",
       "answer": {
         "type": "number",
         "value": -66.4,
@@ -885,7 +903,7 @@
         "at": "end"
       },
       "cite": "formation-enthalpies",
-      "prompt": "In the early days of automobiles, illumination at night was provided by burning acetylene, C<sub>2</sub>H<sub>2</sub>. Though no longer used as auto headlamps, acetylene is still used as a source of light by some cave explorers. The acetylene is (was) prepared in the lamp by the reaction of water with calcium carbide, CaC<sub>2</sub>:<br>${\\text{CaC}}_{2}(s)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Ca}{(\\text{OH})}_{2}(s)+{\\text{C}}_{2}{\\text{H}}_{2}(g).$<br>Calculate the standard enthalpy of the reaction. The $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of CaC<sub>2</sub> is −15.14 kcal/mol.",
+      "prompt": "在汽车发展的早期，夜间照明是靠燃烧乙炔 C<sub>2</sub>H<sub>2</sub> 提供的。尽管乙炔已不再用作汽车前灯，但一些洞穴探险者仍用它作为光源。乙炔（过去）是在灯中由水与碳化钙 CaC<sub>2</sub> 反应制备的：<br>${\\text{CaC}}_{2}(s)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Ca}{(\\text{OH})}_{2}(s)+{\\text{C}}_{2}{\\text{H}}_{2}(g).$<br>计算该反应的标准焓变。CaC<sub>2</sub> 的 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ 为 −15.14 kcal/mol。",
       "answer": {
         "type": "number",
         "value": -122.8,
@@ -902,7 +920,7 @@
         "at": "end"
       },
       "cite": "combustion",
-      "prompt": "The enthalpy of combustion of hard coal averages −35 kJ/g, that of gasoline, 1.28 $\\times$ 10<sup>5</sup> kJ/gal. How many kilograms of hard coal provide the same amount of heat as is available from 1.0 gallon of gasoline? Assume that the density of gasoline is 0.692 g/mL (the same as the density of isooctane).",
+      "prompt": "硬煤的燃烧焓平均为 −35 kJ/g，汽油的为 1.28 $\\times$ 10<sup>5</sup> kJ/gal。多少千克硬煤提供的热量，与 1.0 加仑汽油所能提供的热量相同？假设汽油的密度为 0.692 g/mL（与异辛烷的密度相同）。",
       "answer": {
         "type": "number",
         "value": 3.7,
@@ -919,10 +937,10 @@
         "at": "end"
       },
       "cite": "formation-enthalpies",
-      "prompt": "Among the substances that react with oxygen and that have been considered as potential rocket fuels are diborane [B<sub>2</sub>H<sub>6</sub>, produces B<sub>2</sub>O<sub>3</sub>(<em>s</em>) and H<sub>2</sub>O(<em>g</em>)], methane [CH<sub>4</sub>, produces CO<sub>2</sub>(<em>g</em>) and H<sub>2</sub>O(<em>g</em>)], and hydrazine [N<sub>2</sub>H<sub>4</sub>, produces N<sub>2</sub>(<em>g</em>) and H<sub>2</sub>O(<em>g</em>)]. On the basis of the heat released by 1.00 g of each substance in its reaction with oxygen, which of these compounds offers the best possibility as a rocket fuel? The $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of B<sub>2</sub>H<sub>6</sub>(<em>g</em>), CH<sub>4</sub>(<em>g</em>), and N<sub>2</sub>H<sub>4</sub>(<em>l</em>) may be found in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>.",
+      "prompt": "在与氧反应、并曾被考虑用作潜在火箭燃料的物质中，有乙硼烷 [B<sub>2</sub>H<sub>6</sub>，生成 B<sub>2</sub>O<sub>3</sub>(<em>s</em>) 和 H<sub>2</sub>O(<em>g</em>)]、甲烷 [CH<sub>4</sub>，生成 CO<sub>2</sub>(<em>g</em>) 和 H<sub>2</sub>O(<em>g</em>)] 和肼 [N<sub>2</sub>H<sub>4</sub>，生成 N<sub>2</sub>(<em>g</em>) 和 H<sub>2</sub>O(<em>g</em>)]。根据每 1.00 g 各物质与氧反应所放出的热量，这些化合物中哪一种最有可能用作火箭燃料？B<sub>2</sub>H<sub>6</sub>(<em>g</em>)、CH<sub>4</sub>(<em>g</em>) 和 N<sub>2</sub>H<sub>4</sub>(<em>l</em>) 的 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ 可在<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 中找到。",
       "answer": {
         "type": "open",
-        "solution": "On the assumption that the best rocket fuel is the one that gives off the most heat, B<sub>2</sub>H<sub>6</sub> is the prime candidate.",
+        "solution": "假设最好的火箭燃料是放热最多的那一种，则 B<sub>2</sub>H<sub>6</sub> 是首选。",
         "generated_by": "source"
       }
     },
@@ -935,7 +953,7 @@
         "at": "end"
       },
       "cite": "formation-enthalpies",
-      "prompt": "Ethylene, C<sub>2</sub>H<sub>4</sub>, a byproduct from the fractional distillation of petroleum, is fourth among the 50 chemical compounds produced commercially in the largest quantities. About 80% of synthetic ethanol is manufactured from ethylene by its reaction with water in the presence of a suitable catalyst. ${\\text{C}}_{2}{\\text{H}}_{4}(g)+{\\text{H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}(l)$<br>Using the data in the table in <a href=\"/chemistry-2e/sheets/thermo/\">Appendix G</a>, calculate Δ<em>H</em>° for the reaction.",
+      "prompt": "乙烯 C<sub>2</sub>H<sub>4</sub> 是石油分馏的副产物，在商业上产量最大的 50 种化合物中居第四位。约 80% 的合成乙醇是由乙烯在合适催化剂存在下与水反应制得的。${\\text{C}}_{2}{\\text{H}}_{4}(g)+{\\text{H}}_{2}\\text{O}(g)\\;\\longrightarrow \\;{\\text{C}}_{2}{\\text{H}}_{5}\\text{OH}(l)$<br>利用<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a> 表中的数据，计算该反应的 Δ<em>H</em>°。",
       "answer": {
         "type": "number",
         "value": -88.2,
@@ -952,10 +970,10 @@
         "at": "end"
       },
       "cite": "formation-enthalpies",
-      "prompt": "Propane, C<sub>3</sub>H<sub>8</sub>, is a hydrocarbon that is commonly used as a fuel.<br>(a) Write a balanced equation for the complete combustion of propane gas.<br>(b) Calculate the volume of air at 25 °C and 1.00 atmosphere that is needed to completely combust 25.0 grams of propane. Assume that air is 21.0 percent O<sub>2</sub> by volume. (Hint: We will see how to do this calculation in a later chapter on gases—for now use the information that 1.00 L of air at 25 °C and 1.00 atm contains 0.275 g of O<sub>2</sub>.)<br>(c) The heat of combustion of propane is −2,219.2 kJ/mol. Calculate the heat of formation, $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of propane given that $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of H<sub>2</sub>O(<em>l</em>) = −285.8 kJ/mol and $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ of CO<sub>2</sub>(<em>g</em>) = −393.5 kJ/mol.<br>(d) Assuming that all of the heat released in burning 25.0 grams of propane is transferred to 4.00 kilograms of water, calculate the increase in temperature of the water.",
+      "prompt": "丙烷 C<sub>3</sub>H<sub>8</sub> 是一种常用作燃料的烃。<br>（a）写出丙烷气体完全燃烧的配平的化学方程式。<br>（b）计算在 25 °C 和 1.00 个标准大气压下完全燃烧 25.0 克丙烷所需的空气体积。假设空气中 O<sub>2</sub> 的体积分数为 21.0%。（提示：我们将在后面关于气体的一章中学习如何进行这一计算——现在请使用这一信息：25 °C 和 1.00 atm 下 1.00 L 空气含有 0.275 g O<sub>2</sub>。）<br>（c）丙烷的燃烧热为 −2,219.2 kJ/mol。已知 H<sub>2</sub>O(<em>l</em>) 的 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ = −285.8 kJ/mol，CO<sub>2</sub>(<em>g</em>) 的 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$ = −393.5 kJ/mol，计算丙烷的生成热 $\\text{Δ}{H}_{\\text{f}}^{{}^{\\circ}}$。<br>（d）假设燃烧 25.0 克丙烷所放出的热量全部传给 4.00 千克水，计算水的温度升高多少。",
       "answer": {
         "type": "open",
-        "solution": "(a) ${\\text{C}}_{3}{\\text{H}}_{8}(g)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;3{\\text{CO}}_{2}(g)+4{\\text{H}}_{2}\\text{O}(l);$ (b) 330 L air; (c) −104.5 kJ mol<sup>−1</sup>; (d) 75.4 °C",
+        "solution": "（a）${\\text{C}}_{3}{\\text{H}}_{8}(g)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;3{\\text{CO}}_{2}(g)+4{\\text{H}}_{2}\\text{O}(l);$ （b）330 L 空气；（c）−104.5 kJ mol<sup>−1</sup>；（d）75.4 °C",
         "generated_by": "source"
       }
     }
@@ -1271,29 +1289,29 @@
     {
       "id": "c-chlorate",
       "kind": "correction",
-      "html": "The book says perchlorate. KClO<sub>3</sub> is potassium chlorate; perchlorate is ClO<sub>4</sub><sup>−</sup>."
+      "html": "书中写的是高氯酸盐。KClO<sub>3</sub> 是氯酸钾；高氯酸盐是 ClO<sub>4</sub><sup>−</sup>。"
     },
     {
       "id": "c-isooctane",
       "kind": "correction",
-      "html": "The book says Table 5.2 gives −5460 kJ. Table 5.2 prints −5465.5 kJ/mol for isooctane; −5460 kJ is that value rounded."
+      "html": "书中说表 5.2 给出的是 −5460 kJ。表 5.2 中异辛烷印的是 −5465.5 kJ/mol；−5460 kJ 是该值修约后的结果。"
     },
     {
       "id": "c-hno3",
       "kind": "correction",
-      "html": "The first line takes Δ<em>H</em><sub>f</sub>° of HNO<sub>3</sub>(<em>aq</em>) as −207.4 kJ/mol, the second computes with −206.64 kJ/mol. With −207.4 kJ/mol the sum is −138.3 kJ, in agreement with the −138.4 kJ found below."
+      "html": "第一行取 HNO<sub>3</sub>(<em>aq</em>) 的 Δ<em>H</em><sub>f</sub>° 为 −207.4 kJ/mol，第二行则用 −206.64 kJ/mol 计算。若用 −207.4 kJ/mol，总和为 −138.3 kJ，与下面求得的 −138.4 kJ 一致。"
     }
   ],
   "derivations": [
     {
       "id": "enthalpy-change-heat",
-      "what": "the enthalpy change at constant pressure",
-      "source": "Chemistry 2e, 5.3 Enthalpy",
+      "what": "恒压下的焓变",
+      "source": "化学（第2版），5.3 焓",
       "nodes": [
         {
           "assumes": [
             {
-              "text": "The process takes place at constant pressure.",
+              "text": "该过程在恒定压强下进行。",
               "src": "5.3"
             },
             {
@@ -1316,7 +1334,7 @@
               0,
               1
             ],
-            "why": "The change in $\\kH = \\kU + \\kP\\kV$ is the change in $\\kU$ plus the change in $\\kP\\kV$, and at constant pressure the change in $\\kP\\kV$ is $\\kP\\kdV$."
+            "why": "$\\kH = \\kU + \\kP\\kV$ 的变化等于 $\\kU$ 的变化加上 $\\kP\\kV$ 的变化，而在恒压下 $\\kP\\kV$ 的变化是 $\\kP\\kdV$。"
           },
           "steps": [
             {
@@ -1331,7 +1349,7 @@
                 3,
                 0
               ],
-              "cap": "At constant pressure the heat $\\kq$ of the process is the heat $\\kqp$."
+              "cap": "在恒压下，该过程的热量 $\\kq$ 就是热量 $\\kqp$。"
             },
             {
               "tex": "\\mk{H}{\\kdH} = \\mk{U}{\\kqp}",
@@ -1344,34 +1362,34 @@
     },
     {
       "id": "reaction-enthalpy-from-formation",
-      "what": "the enthalpy of a reaction from enthalpies of formation",
-      "source": "Chemistry 2e, 5.3 Enthalpy",
+      "what": "由生成焓求反应焓变",
+      "source": "化学（第2版），5.3 焓",
       "nodes": [
         {
           "assumes": [
             {
-              "text": "If a process can be written as the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the various steps.",
-              "src": "5.3, Hess’s law"
+              "text": "如果一个过程可以写成若干分步过程之和，则总过程的焓变等于各分步的焓变之和。",
+              "src": "5.3，盖斯定律"
             },
             {
-              "text": "Any reaction can be written as (i) decompositions of the reactants into their component elements, followed by (ii) re-combinations of the elements to give the products.",
+              "text": "任何反应都可以写成：（i）把反应物分解为其组成单质，接着（ii）把这些单质重新化合得到产物。",
               "src": "5.3"
             },
             {
-              "text": "A standard enthalpy of formation $\\kdHf$ is the enthalpy change for forming exactly 1 mole of a pure substance from free elements in their most stable states.",
+              "text": "标准生成焓 $\\kdHf$ 是由处于最稳定状态的单质恰好生成 1 摩尔纯净物的焓变。",
               "src": "5.3"
             },
             {
-              "text": "If the direction of a chemical equation is reversed, the arithmetic sign of its $\\kdH$ is changed.",
+              "text": "如果化学方程式的方向反过来，其 $\\kdH$ 的正负号随之改变。",
               "src": "5.3"
             },
             {
-              "text": "If the coefficients of a chemical equation are multiplied by some factor, the enthalpy change must be multiplied by that same factor.",
+              "text": "如果化学方程式的系数乘以某个因子，则焓变必须乘以同一个因子。",
               "src": "5.3"
             }
           ],
           "then": {
-            "tex": "\\mk{rx}{{\\kdH}_{\\text{reaction}}^{{}^{\\circ}}} = \\mk{i}{\\sum \\kdHo_{\\text{decompositions}}} + \\mk{ii}{\\sum \\kdHo_{\\text{formations}}}",
+            "tex": "\\mk{rx}{{\\kdH}_{\\text{反应}}^{{}^{\\circ}}} = \\mk{i}{\\sum \\kdHo_{\\text{分解}}} + \\mk{ii}{\\sum \\kdHo_{\\text{生成}}}",
             "src": "5.3",
             "uses": [
               1,
@@ -1380,24 +1398,24 @@
           },
           "steps": [
             {
-              "tex": "\\mk{rx}{{\\kdH}_{\\text{reaction}}^{{}^{\\circ}}} = \\mk{i}{\\sum n\\;\\times\\;\\left(-\\kdHf(\\text{reactants})\\right)} + \\mk{ii}{\\sum \\kdHo_{\\text{formations}}}",
+              "tex": "\\mk{rx}{{\\kdH}_{\\text{反应}}^{{}^{\\circ}}} = \\mk{i}{\\sum n\\;\\times\\;\\left(-\\kdHf(\\text{反应物})\\right)} + \\mk{ii}{\\sum \\kdHo_{\\text{生成}}}",
               "uses": [
                 2,
                 3,
                 4
               ],
-              "cap": "Decomposing $n$ moles of a reactant into its elements is its formation reaction reversed and multiplied by $n$."
+              "cap": "把 $n$ 摩尔反应物分解为其单质，就是其生成反应反转后再乘以 $n$。"
             },
             {
-              "tex": "\\mk{rx}{{\\kdH}_{\\text{reaction}}^{{}^{\\circ}}} = \\mk{i}{\\sum n\\;\\times\\;\\left(-\\kdHf(\\text{reactants})\\right)} + \\mk{ii}{\\sum n\\;\\times\\;\\kdHf(\\text{products})}",
+              "tex": "\\mk{rx}{{\\kdH}_{\\text{反应}}^{{}^{\\circ}}} = \\mk{i}{\\sum n\\;\\times\\;\\left(-\\kdHf(\\text{反应物})\\right)} + \\mk{ii}{\\sum n\\;\\times\\;\\kdHf(\\text{产物})}",
               "uses": [
                 2,
                 4
               ],
-              "cap": "Forming $n$ moles of a product from its elements is its formation reaction multiplied by $n$."
+              "cap": "由单质生成 $n$ 摩尔产物，就是其生成反应乘以 $n$。"
             },
             {
-              "tex": "\\mk{rx}{{\\kdH}_{\\text{reaction}}^{{}^{\\circ}}} = \\mk{ii}{\\sum n\\;\\times\\;\\kdHf(\\text{products})} - \\mk{i}{\\sum n\\;\\times\\;\\kdHf(\\text{reactants})}",
+              "tex": "\\mk{rx}{{\\kdH}_{\\text{反应}}^{{}^{\\circ}}} = \\mk{ii}{\\sum n\\;\\times\\;\\kdHf(\\text{产物})} - \\mk{i}{\\sum n\\;\\times\\;\\kdHf(\\text{反应物})}",
               "uses": []
             }
           ],

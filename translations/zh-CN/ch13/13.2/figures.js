@@ -53,8 +53,8 @@ const conc = (s) => hue('concentration', s);
     { id: 'so3', name: '[SO_{3}]', tex: '\\text{SO}_{3}' },
   ];
   const cy = cycle(() => 5, 1.2);
-  const start = F.choice(d.controls, { label: '\\text{start}', aria: 'the starting mixture', value: 'r',
-    options: [{ value: 'r', label: 'reactants only' }, { value: 'p', label: 'product only' }], onInput: () => cy.reset() });
+  const start = F.choice(d.controls, { label: '\\text{起点}', aria: '起始混合物', value: 'r',
+    options: [{ value: 'r', label: '只含反应物' }, { value: 'p', label: '只含产物' }], onInput: () => cy.reset() });
   const G1 = { l: 150, r: 1170, t: 120, b: 350 }, G2 = { l: 150, r: 1170, t: 450, b: 680 };
   const QMAX = 14;
   function draw() {
@@ -63,13 +63,13 @@ const conc = (s) => hue('concentration', s);
     const tau = cy.now(), t = Number.isFinite(tau) ? tau / 5 * TMAX : TMAX;
     const cK = C('equilibrium-constant'), ct = C('time'), cc = C('concentration'), guide = alpha(PAL.ink, 0.4);
     const blank = () => '';
-    const g1 = F.axes(ctx, G1, [0, TMAX], [0, 1], { nx: 4, ny: 4, fx: blank, fy: (v) => fmt(v, 2), yl: 'concentration (M)', yc: cc });
-    const g2 = F.axes(ctx, G2, [0, TMAX], [0, QMAX], { nx: 4, ny: 7, fx: blank, fy: (v) => fmt(v, 0), xl: 'time', xc: ct, yl: 'reaction quotient, Q_{c}', yc: cK });
+    const g1 = F.axes(ctx, G1, [0, TMAX], [0, 1], { nx: 4, ny: 4, fx: blank, fy: (v) => fmt(v, 2), yl: '浓度（M）', yc: cc });
+    const g2 = F.axes(ctx, G2, [0, TMAX], [0, QMAX], { nx: 4, ny: 7, fx: blank, fy: (v) => fmt(v, 0), xl: '时间', xc: ct, yl: '反应商 Q_{c}', yc: cK });
     const reached = t >= TEQ[key];
     if (reached) {
       const x = g1.X(TEQ[key]);
       line(ctx, x, G1.t, x, G1.b, guide, 2, [10, 10]); line(ctx, x, G2.t, x, G2.b, guide, 2, [10, 10]);
-      text(ctx, 'equilibrium is reached', x, G1.t - 22, PAL.ink, { size: 18, align: 'center', bg: PAL.panel });
+      text(ctx, '已达到平衡', x, G1.t - 22, PAL.ink, { size: 18, align: 'center', bg: PAL.panel });
     }
     clipTo(ctx, G2, () => {
       line(ctx, G2.l, g2.Y(K), G2.r, g2.Y(K), cK, 3, [10, 10]);
@@ -86,9 +86,9 @@ const conc = (s) => hue('concentration', s);
     if (q <= QMAX) dot(ctx, g2.X(t), g2.Y(q), cK, false, 9);
     else F.pinned(ctx, G2, g2.X, g2.Y, t, q, cK);
     SP.forEach((s, j) => { const y = G1.t + 24 + 34 * j; line(ctx, G1.r + 24, y, G1.r + 64, y, F.ref(s.id), 5); text(ctx, s.name, G1.r + 76, y, F.ref(s.id), { size: 20, weight: 600 }); });
-    topline(ctx, reached ? '$\\kQc$ has reached $\\kKc$, and the concentrations no longer change.'
-      : key === 'r' ? 'Starting from reactants only, $\\kQc$ climbs from 0 toward $\\kKc$.'
-      : 'Starting from product only, $\\kQc$ falls from an immeasurably large value toward $\\kKc$.');
+    topline(ctx, reached ? '$\\kQc$ 已达到 $\\kKc$，浓度不再变化。'
+      : key === 'r' ? '只从反应物开始时，$\\kQc$ 从 0 向 $\\kKc$ 上升。'
+      : '只从产物开始时，$\\kQc$ 从大到无法测量的值向 $\\kKc$ 下降。');
     const r3 = now.map((v) => +v.toFixed(3)), shown = r3.map((v) => conc(v.toFixed(3)));
     const expr = '\\frac{[\\text{SO}_{3}]^{2}}{[\\text{SO}_{2}]^{2}[\\text{O}_{2}]}';
     const nums = `\\frac{(${shown[2]})^{2}}{(${shown[0]})^{2}(${shown[1]})}`;
@@ -117,10 +117,10 @@ const conc = (s) => hue('concentration', s);
     2: { a: [0, 0, 0.0468, 0.0468], b: [0.0260, 0.0260, 0.0208, 0.0208] },
     3: { a: [0.0330, 0.0190, 0.00175, 0.00160], b: [0.0231, 0.00909, 0.0115, 0.0117] },
   };
-  const pick = F.choice(d.controls, { label: '\\text{mixture}', aria: 'the starting mixture', value: '1',
-    options: [{ value: '1', label: 'Mixture 1' }, { value: '2', label: 'Mixture 2' }, { value: '3', label: 'Mixture 3' }] });
-  const pr = ctl(d.controls, { label: '\\text{progress}', cls: '', key: 'progress', min: 0, max: 100, step: 1, value: 0, unit: '%', dec: 0,
-    aria: 'how far the mixture has gone toward equilibrium, in percent', specials: [{ at: 100, label: 'equilibrium' }] });
+  const pick = F.choice(d.controls, { label: '\\text{混合物}', aria: '起始混合物', value: '1',
+    options: [{ value: '1', label: '混合物 1' }, { value: '2', label: '混合物 2' }, { value: '3', label: '混合物 3' }] });
+  const pr = ctl(d.controls, { label: '\\text{进程}', cls: '', key: 'progress', min: 0, max: 100, step: 1, value: 0, unit: '%', dec: 0,
+    aria: '混合物向平衡进行了多少，以百分数表示', specials: [{ at: 100, label: '平衡' }] });
   const G = { l: 150, r: 600, t: 120, b: 470 };
   const S = { l: 800, r: 1330, y: 300 }, LMIN = -3, LMAX = 3;
   const SX = (lq) => S.l + (lq - LMIN) / (LMAX - LMIN) * (S.r - S.l);
@@ -140,13 +140,13 @@ const conc = (s) => hue('concentration', s);
   function draw() {
     const { ctx } = begin(d.c);
     const p = pr.v / 100, m = pick.value, cK = C('equilibrium-constant'), cc = C('concentration');
-    const g = F.axes(ctx, G, [0, 1], [0, 0.10], { nx: 1, ny: 5, fx: () => '', fy: (v) => fmt(v, 2), yl: 'concentration (M)', yc: cc });
+    const g = F.axes(ctx, G, [0, 1], [0, 0.10], { nx: 1, ny: 5, fx: () => '', fy: (v) => fmt(v, 2), yl: '浓度（M）', yc: cc });
     const [a, now] = pick.mix((v) => [...MIX[v].a, ...stateOf(v, p)]).reduce((acc, v, i) => { acc[i < 4 ? 0 : 1].push(v); return acc; }, [[], []]);
     const XA = 260, XB = 470, W = 130;
     stack(ctx, g.Y, XA, W, a, true);
     stack(ctx, g.Y, XB, W, now, false);
-    text(ctx, 'before reaction', XA, G.b + 28, PAL.ink, { size: 18, align: 'center' });
-    text(ctx, p >= 1 ? 'at equilibrium' : `${fmt(pr.v, 0)}% of the way`, XB, G.b + 28, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, '反应前', XA, G.b + 28, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, p >= 1 ? '平衡时' : `已完成 ${fmt(pr.v, 0)}%`, XB, G.b + 28, PAL.ink, { size: 18, align: 'center' });
     let y0 = 0, last = Infinity;
     const want = now.map((v) => { const m = g.Y(y0 + v / 2); y0 += v; return m; });
     now.forEach((v, j) => {
@@ -159,20 +159,20 @@ const conc = (s) => hue('concentration', s);
     /* the Q scale */
     line(ctx, S.l, S.y, S.r, S.y, PAL.muted, 2);
     for (let e = LMIN; e <= LMAX; e++) { line(ctx, SX(e), S.y - 8, SX(e), S.y + 8, PAL.muted, 2); text(ctx, SUP[e], SX(e), S.y + 30, PAL.muted, { size: 17, align: 'center' }); }
-    text(ctx, 'reaction quotient, Q_{c} (log scale)', (S.l + S.r) / 2, S.y - 150, cK, { size: 20, weight: 600, align: 'center' });
+    text(ctx, '反应商 Q_{c}（对数标度）', (S.l + S.r) / 2, S.y - 150, cK, { size: 20, weight: 600, align: 'center' });
     const xk = SX(Math.log10(KC));
     line(ctx, xk, S.y - 70, xk, S.y + 50, cK, 3, [10, 10]);
     text(ctx, 'K_{c} = 0.640', xk, S.y - 88, cK, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
-    text(ctx, 'Q_{c} < K_{c}: forward', (S.l + xk) / 2, S.y + 74, PAL.ink, { size: 18, align: 'center' });
-    text(ctx, 'Q_{c} > K_{c}: reverse', (xk + S.r) / 2, S.y + 74, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, 'Q_{c} < K_{c}：正向', (S.l + xk) / 2, S.y + 74, PAL.ink, { size: 18, align: 'center' });
+    text(ctx, 'Q_{c} > K_{c}：逆向', (xk + S.r) / 2, S.y + 74, PAL.ink, { size: 18, align: 'center' });
     const qa = Qof(MIX[m].a);
     const xa = pick.mix((v) => xOfQ(Qof(MIX[v].a))), xn = pick.mix((v) => xOfQ(Qof(stateOf(v, p))));
     dot(ctx, xa, S.y, cK, false, 10);
     dot(ctx, xn, S.y, cK, true, 9);
     const end = (x) => x <= S.l + 1 ? '0' : x >= S.r - 1 ? '∞' : null;
     if (end(xa)) text(ctx, `Q_{c} = ${end(xa)}`, xa, S.y - 34, cK, { size: 17, weight: 600, align: 'center', bg: PAL.panel });
-    const dir = qa < KC ? 'below' : 'above', way = qa < KC ? 'forward' : 'reverse';
-    topline(ctx, p >= 1 ? `Mixture ${m} has reached equilibrium, where $\\kQc$ equals $\\kKc$.` : `Mixture ${m} starts with $\\kQc$ ${dir} $\\kKc$, so it reacts in the ${way} direction.`);
+    const dir = qa < KC ? '小于' : '大于', way = qa < KC ? '正向' : '逆向';
+    topline(ctx, p >= 1 ? `混合物 ${m} 已达到平衡，此时 $\\kQc$ 等于 $\\kKc$。` : `混合物 ${m} 起初的 $\\kQc$ ${dir} $\\kKc$，所以它沿${way}反应。`);
     const r = stateOf(m, p).map((v) => +sig(v)), sh = r.map((v) => conc(sig(v)));
     const expr = '\\frac{[\\text{CO}_{2}][\\text{H}_{2}]}{[\\text{CO}][\\text{H}_{2}\\text{O}]}';
     const nums = `\\frac{(${sh[2]})(${sh[3]})}{(${sh[0]})(${sh[1]})}`;
@@ -200,13 +200,13 @@ const conc = (s) => hue('concentration', s);
   const d = sim('sim-magnitude-k', 500);
   const C0 = 0.10;
   const s = ctl(d.controls, { label: '\\log \\kKc', cls: 'equilibrium-constant', key: 'logK', min: -2, max: 4, step: 0.01, value: 2.21, unit: '', dec: 2,
-    detents: [-2, -1, 0, 1, 2, 3, 4], aria: 'the base-ten logarithm of the equilibrium constant' });
+    detents: [-2, -1, 0, 1, 2, 3, 4], aria: '平衡常数的以十为底的对数' });
   const G = { l: 420, r: 980, t: 120, b: 410 };
   const eq = (K) => { const c = (-1 + Math.sqrt(1 + 8 * K * C0)) / (4 * K); return [c, (C0 - c) / 2]; };
   function draw() {
     const { ctx } = begin(d.c);
     const K = 10 ** s.v, [c, n] = eq(K), cc = C('concentration');
-    const g = F.axes(ctx, G, [0, 1], [0, 0.12], { nx: 1, ny: 6, fx: () => '', fy: (v) => fmt(v, 2), yl: 'concentration at equilibrium (M)', yc: cc });
+    const g = F.axes(ctx, G, [0, 1], [0, 0.12], { nx: 1, ny: 6, fx: () => '', fy: (v) => fmt(v, 2), yl: '平衡时的浓度（M）', yc: cc });
     const W = 140, X1 = 560, X2 = 840;
     const cN = F.ref('no2'), cD = F.ref('n2o4');
     rect(ctx, X1 - W / 2, g.Y(C0), X1 + W / 2, G.b, null, cN, [6, 5]);
@@ -216,9 +216,9 @@ const conc = (s) => hue('concentration', s);
     text(ctx, `${concTxt(n)} M`, X2, g.Y(n) - 20, cD, { size: 20, weight: 600, align: 'center', bg: PAL.panel });
     text(ctx, '[NO_{2}]', X1, G.b + 30, cN, { size: 22, weight: 600, align: 'center' });
     text(ctx, '[N_{2}O_{4}]', X2, G.b + 30, cD, { size: 22, weight: 600, align: 'center' });
-    text(ctx, 'starting [NO_{2}]', X1 + W / 2 + 12, g.Y(C0), PAL.muted, { size: 17 });
+    text(ctx, '起始 [NO_{2}]', X1 + W / 2 + 12, g.Y(C0), PAL.muted, { size: 17 });
     const f = (C0 - c) / C0 * 100, pct = f < 9.95 ? fmt(f, 1) : fmt(f, 0);
-    topline(ctx, `At $\\kKc = ${sciTex(K)}$, ${pct}% of the NO_{2} has become N_{2}O_{4}.`);
+    topline(ctx, `$\\kKc = ${sciTex(K)}$ 时，${pct}% 的 NO_{2} 已变成 N_{2}O_{4}。`);
     const nc = +concTex(c).replace(' \\times 10^{', 'e').replace('}', ''), nn = +concTex(n).replace(' \\times 10^{', 'e').replace('}', '');
     F.tex(d.readout, `\\kKc = \\frac{[\\text{N}_{2}\\text{O}_{4}]}{[\\text{NO}_{2}]^{2}} = \\frac{${conc(concTex(nn))}}{(${conc(concTex(nc))})^{2}} = ${hue('equilibrium-constant', sciTex(K))}`);
   }

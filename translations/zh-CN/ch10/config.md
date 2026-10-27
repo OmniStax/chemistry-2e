@@ -55,6 +55,11 @@ entries.
 | ch10/10.1/text.html | credit of Figure 10.8 ("credit photo: …") | written （来源：改编自“JC*+A!”/Flickr 的作品） | the other credits of the book are （来源：…）; the word "photo" is not repeated (the credit already sits under a photo) |
 | ch10/10.1/text.html | `data-concept="weight"`: "the gecko's weight" | written 壁虎自身<span>重量</span> (the glossary's 重量, not 体重) | 体重 is the book's rendering for a person's body weight; the span is on the concept word 重量 |
 | ch10/10.1/text.html | "the chapter on chemical bonding and molecular geometry" ×2 and "a later module of this chapter", "this module" | 化学键与分子几何构型一章; 本章后面的一节; 本节 | the source speaks of OpenStax modules; the translation names the chapter and calls the module a section |
+| ch10/10.1/text.html | `acid` span in 脱氧核糖核酸 (deoxyribonucleic acid) | the span wraps 酸 only, the rest of the name stays outside | Chinese names deoxyribonucleic acid in one word; the span stays in its block |
+| ch10/10.1/text.html, ch10/10.1/section.json | `group-of-the-periodic-table` spans (8) and `period-of-the-periodic-table` (1) | the span wraps 族 and 周期 and the number stays outside: 第 15 族 | Chinese puts the number before 族 and 周期 |
+| ch10/10.1/figures.js | sim-hydrides readout `\text{boiling point of H}_2\text{O}` | written `\text{H}_2\text{O 的沸点}` | Chinese word order inside `\text{}` |
+| ch10/10.1/figures.js | sim-intra-inter readout `(\text{about 25 times more})` | written `(\text{约为 25 倍})` | Chinese phrasing for "about 25 times more" |
+| ch10/10.1/figures.js | 3D view labels `side`, `end on`, `down a bond` (besides `front`, `corner`) | 侧视, 端视, 沿键方向 | interface words for camera views, as for 正面 and 斜视 |
 
 ### ch10/10.2
 
@@ -72,6 +77,9 @@ entries.
 | ch10/10.2/text.html | sim-head "one of diameter d and one twice as wide" | 一根的直径为 d，另一根的宽度为其两倍; narrow and wide tube 细管 and 粗管 | Chinese counts tubes by thickness; the spans stay on the same referents |
 | ch10/10.2/text.html | credits of Figures 10.15, 10.16, 10.18, 10.19, 10.21, exercise e2 | （来源 a：改编自 Scott Bauer 的作品；b：…）, （来源：改编自 … 的作品）, （来源：Mark Ott）, （来源：Cory Zanker）; "credit photo" written 来源 without 'photo'; organisation names (Centers for Disease Control and Prevention) kept in English | the book's one credit formula (ch01 records) |
 | ch10/10.2/text.html | table headers "Substance", "Formula" and the cells "variable" | 物质, 化学式, 不定 | the cells say the viscosity varies with the sample; 不定 is the plain form |
+| ch10/10.2/figures.js | `LIQ[].name` ('water', 'ethanol', 'ethylene glycol', 'mercury') | written 水, 乙醇, 乙二醇, 汞; the keys stay code | display names only |
+| ch10/10.2/text.html | `\khcap` and the other macro equations | LaTeX untouched, no `\text{}` words to translate | kept byte for byte (translate.md 5) |
+| ch10/10.2/section.json | exercise e7 solution `1.7 $\times$ 10<sup>−4</sup> m` | kept | pure math and a unit, nothing to translate |
 
 ### ch10/10.3
 
@@ -115,6 +123,11 @@ entries.
 | ch10/10.3/figures.js | sim-heat readout `\text{total}` subscript | `\text{总}` | a subscript wants the shortest form (4.7) |
 | ch10/10.3/text.html | display math of Example 10.10 and the phase-change equations: `{\kq}_{\text{total}}`, `_{\text{ice}}`, `_{\text{water}}`, `_{\text{steam}}`, `\kdH_{\text{con}}`, `_{\text{frz}}`, `_{\text{dep}}` | the words inside `\text{}` written `_{\text{总}}`, `_{\text{冰}}`, `_{\text{水}}`, `_{\text{水蒸气}}`, `_{\text{凝结}}`, `_{\text{凝固}}`, `_{\text{凝华}}`; `\text{mol}`, `\text{g}`, `\text{ln}` and the macros stay | the subscripts are English words a reader sees (4.7), as the figure readout writes `\text{总}` |
 | ch10/10.1/figures.js, ch10/10.3/figures.js, ch10/10.5/figures.js, ch10/10.6/figures.js | 3D view buttons `front`, `corner` | one label per English word: 正面, 斜视 | the Chinese for a view from a corner; no standard word; the pages had 斜角 / 斜视 and 正视 / 正面 |
+| ch10/10.3/text.html | `ref` spans on pronouns and demonstratives (它, 它的, 这种分子, 其, 这四种物质, 每种液体 …) | the span wraps the Chinese words that carry the same reference, which differ in length from the English ("this molecule", "each of the four") | Chinese word order and article-free grammar |
+| ch10/10.3/text.html, ch10/10.3/section.json | `force`, `type`, `energy`, `temperature` and `pressure` spans around phrases | the span wraps the translated phrase that carries the same meaning, in Chinese order | translate.md 3.3 |
+| ch10/10.3/figures.js | sim-sublimation labels `solid`, `liquid`, `gas` | written 固态, 液态, 气态 | the energy levels name the state of the sample, as in ch01 sim-states |
+| ch10/10.3/section.json | derivation enthalpy-of-sublimation, `tex` `\text{solid}`, `\text{liquid}`, `\text{gas}` | written `\text{固态}`, `\text{液态}`, `\text{气态}` | words inside `\text{}` are translated (5); the subscript names the state |
+| ch10/10.3/section.json | exercise cyl4 solution `30.1 kPa` | kept | pure math and a unit, nothing to translate |
 
 ### ch10/10.4
 
@@ -145,6 +158,7 @@ entries.
 | ch10/10.4/section.json | e1 solution, "(a) liquid; (b) solid; …" | 液体, 固体, 气体 in prose; "(a)" labels full-width | the words name states in the answer |
 | ch10/10.4/section.json | cyl1, cyl2 and e4 solutions: "s ⟶ g", "l ⟶ g", "torr" | kept | state symbols and the unit symbol torr are kept as printed (glossary note torr) |
 | ch10/10.4/section.json | `notes` and `exercise_notes`: "Link to Learning", "Bloom levels", "Check Your Learning" | 学习链接, 布鲁姆层级, 学习检测 | the apparatus wording of translation-notes (布鲁姆层级, 书后答案, 建议思路, OmniStax 自拟, 容差) |
+| ch10/10.4/figures.js | region labels, the `WORD` map and the `PH` readout (solid, liquid, gas) | 固态 / 液态 / 气态, the same as 10.1 and 10.3; the headline predicates stay 是固体 / 液体 / 气体 | chapter-1 decision: a state takes 态 as a label; the predicates are nouns |
 
 ### ch10/10.5
 
@@ -155,12 +169,13 @@ entries.
 | ch10/10.5/text.html | span `oxide` on 氧化镍 (nickel oxide) | the span wraps 氧化镍 | Chinese names the compound in one word; the source wraps "oxide" |
 | ch10/10.5/text.html | span `molecular-compounds` on 共价化合物 (covalent compounds) | the span wraps the whole compound 共价化合物 | the source wraps "covalent compounds"; kept as the book's span |
 | ch10/10.5/text.html | span `dissolved` on 溶解 (conduct when molten or dissolved) | the span wraps 溶解 | the glossary target 溶解的 (adjective) does not fit the Chinese phrase 熔融或溶解时 |
-| ch10/10.5/text.html | spans `heat-flow` on 热量 (conducts heat and electricity; conductor of electricity and heat) | 热量 used, with 传导热量 / 电和热量 | glossary binds heat quantity to 热量; the chapter-1 decision |
+| ch10/10.5/text.html | spans `heat-flow` on 热 (conducts heat and electricity; conductor of electricity and heat) | 热 used (导热、导电性能好; 电和热的良导体; 能导热、导电) so the span sits on 热, not on 热量, which is the heat quantity | the glossary binds a heat quantity to 热量 (chapter-1 decision), and the book speaks of conduction, not of a quantity; 传导热量 is unidiomatic |
 | ch10/10.5/text.html | figure 10.43 photo credit | `（来源：左图：改编自 … 的作品；中图：改编自 … 的作品）`, names kept | lettered credit formula of chapter 1 adapted to the book's "left photo / middle photo" |
 | ch10/10.5/text.html, ch10/10.5/section.json | "(much)", "Covalent Network Solid"/"Molecular Solid" singular headers | no change to sentence; notes translated as the source's | none |
 | ch10/10.5/figures.js | `a`/`an` articles in hover names and select labels (`a sodium ion, Na⁺` and 7 more) | collapsed to one form 名称，符号 (钠离子，Na⁺, 氧原子，O ...), the format of 10.1 and 10.6 | English article grammar (translate.md 4.1) |
 | ch10/10.5/figures.js | plural/`of N links broken` readouts; `... away` in the graphene readout | `n of N links broken` became "N 个键中断开 n 个"; ` away` dropped into 相距约 X | Chinese word order (4.1) |
 | ch10/10.5/figures.js | `ro` strings with `melts at`, `melts above` | the unit part kept in math, the words moved around it: `在 X 熔化` | Chinese word order (4.1) |
+| ch10/10.5/figures.js | graphene 3D view labels `face on`, `edge on` | 面视, 侧视 | one English word per label (正面 stays for `front`, 侧视 for `side`/`edge on`) |
 
 ### ch10/10.6
 
@@ -195,3 +210,6 @@ entries.
 | ch10/10.6/figures.js | sim-holes headline: `The ${cat} sits in ${a/an} ${hole} hole, among ${n} ${an}s at the corners of ${a/an} ${shape}.` | `${cat}位于${hole}空隙中，处在${shape}顶角上的 ${n} 个${an}之间。` | article and plural grammar built by rule, Chinese word order (4.1) |
 | ch10/10.6/figures.js | sim-ionic: `${ION[ion][1]}, ${share(f)}` and the four `say` sentences | the separator is the Chinese comma; each `say` sentence in Chinese order | Chinese punctuation and word order (4.1) |
 | ch10/10.6/figures.js | sim-bragg topline: `The lower ray travels X wavelengths farther, ${verdict}.` | `下方射线多走 X 个波长，${verdict}。` with each verdict a full clause (这是整数个波长，所以…) | the English appositive phrase cannot be kept as a phrase (4.1) |
+| ch10/10.6/text.html | sentence-final `.` and `,` inside the math of Examples 10.14 to 10.18 (`=\text{168 pm}.$`, `\text{O}.$`, `\times \;2,$ 即`) and the `\text{… 为 Ca 的半径}` tails | the `.` / `,` taken out of the math and 。 / ， put after the closing `$` (the display equation of Example 10.18 ends without a stop); `\text{197.6 pm，即 Ca 的半径}`, `{\text{，即 Cl}}^{−}\;\text{的半径}`; the same in the e16 and e18 answers of section.json | the ASCII stop inside the math would end a Chinese sentence (translate.md 3.5); 为 after an equals sign reads as a second predicate |
+| ch10/10.6/text.html | Bragg paragraph, "shows diffraction and a different angle that does not satisfy the Bragg condition" (the book's "and" is a slip for "at") | written 下图则表示以不满足布拉格条件的另一角度发生的衍射 | the slip is rendered by its meaning, as the "be" of e14 is; the `diffraction` and `angle` spans are kept |
+| ch10/10.6/text.html | Examples 10.14 and 10.15, "Therefore, the density of Po = …" | kept as 因此，密度 $\text{Po}=…$ | moving Po out of the math would edit math outside `\text{}` (translate.md 3.5); the reviewer's 因此，Po 的密度 = … is left for the owner |

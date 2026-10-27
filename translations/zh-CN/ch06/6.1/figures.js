@@ -56,7 +56,7 @@ const rgbOf = ([r, g, b]) => { const ch = (v) => Math.round(255 * Math.pow(Math.
 const lightColor = (nm) => rgbOf(lightRGB(nm));
 const visible = (nm) => nm >= 400 && nm <= 700;
 const lightOr = (nm) => (visible(nm) ? lightColor(nm) : C('wavelength'));
-const colorName = (nm) => (nm < 450 ? 'violet' : nm < 495 ? 'blue' : nm < 570 ? 'green' : nm < 590 ? 'yellow' : nm < 620 ? 'orange' : 'red');
+const colorName = (nm) => (nm < 450 ? '紫色' : nm < 495 ? '蓝色' : nm < 570 ? '绿色' : nm < 590 ? '黄色' : nm < 620 ? '橙色' : '红色');
 /* paint the visible band between x-positions of 400 and 700 nm, from y0 to the height f(nm) gives */
 function paintVisible(ctx, X, y0, top) {
   const N = 90;
@@ -89,8 +89,8 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
   const V = 12;                                   /* m/s, the speed of the wave on the rope */
   const X0 = 170, X1 = 1250, PX = (X1 - X0) / V;  /* the frame: 12 m across 1080 units, 90 units per metre */
   const Y = 290;                                  /* the rope at rest */
-  const NU = ctl(d.controls, { label: '\\knu', cls: 'frequency', min: 1, max: 12, step: 0.1, value: 3, unit: 'Hz', dec: 1, aria: 'frequency of the wave', detents: [3, 6, 12], snap: true, onInput: () => cy.reset() });
-  const A = ctl(d.controls, { label: 'a', cls: '', min: 0.2, max: 1.2, step: 0.01, value: 0.8, unit: 'm', dec: 2, aria: 'amplitude of the wave' });
+  const NU = ctl(d.controls, { label: '\\knu', cls: 'frequency', min: 1, max: 12, step: 0.1, value: 3, unit: 'Hz', dec: 1, aria: '波的频率', detents: [3, 6, 12], snap: true, onInput: () => cy.reset() });
+  const A = ctl(d.controls, { label: 'a', cls: '', min: 0.2, max: 1.2, step: 0.01, value: 0.8, unit: 'm', dec: 2, aria: '波的振幅' });
   const LOOP = 1;                                 /* model seconds: one crest crosses the frame */
   const cy = cycle(() => LOOP, 1.2);
   let hits = []; F.hover(d.stage, () => hits);
@@ -102,7 +102,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     line(ctx, X0, 110, X0, 420, alpha(PAL.ink, 0.4), 2, [10, 10]);
     line(ctx, X1, 110, X1, 420, alpha(PAL.ink, 0.4), 2, [10, 10]);
     arrow(ctx, X0 + 4, 112, X1 - 4, 112, PAL.muted, 3);
-    text(ctx, 'distance traveled in 1 second, 12 m', X0 + 12, 132, PAL.muted, { size: 17, align: 'left', bg: PAL.panel });
+    text(ctx, '1 秒内传播的距离，12 m', X0 + 12, 132, PAL.muted, { size: 17, align: 'left', bg: PAL.panel });
     /* the rope, crest at x = X0 + V t, drawn from its held end past the second line */
     const xc = X0 + V * t * PX;
     ctx.save(); ctx.strokeStyle = F.ref('rope'); ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath();
@@ -114,16 +114,16 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     line(ctx, 40, Y, 1370, Y, alpha(PAL.ink, 0.3), 2, [4, 8]);
     /* the crest that is followed, filled while it crosses and hollow once it has arrived */
     dot(ctx, xc, Y - a * PX, F.ref('crest'), t < LOOP, 10);
-    hits.push({ x: xc, y: Y - a * PX, r: 14, name: 'the crest followed across the frame' });
+    hits.push({ x: xc, y: Y - a * PX, r: 14, name: '穿过画面时被跟踪的波峰' });
     /* the wavelength as a measure fixed above the frame, and the amplitude beside the held end */
     const lw = lam * PX, bx = X0 + Math.max(0, (X1 - X0 - lw) / 2);
     hbracket(ctx, bx, bx + lw, Y - 1.2 * PX - 12, cw, 'λ = ' + fmt(lam, 2) + ' m');
     vbracket(ctx, 90, Y - a * PX, Y, PAL.ink, 'a', -1);
     /* the crests that have passed the second line */
     const passed = Math.max(0, Math.floor(nu * t + 1e-6));
-    text(ctx, 'crests past the right-hand line: ' + passed, X1, 450, cf, { size: 18, weight: 600, align: 'right' });
+    text(ctx, '越过右侧虚线的波峰数：' + passed, X1, 450, cf, { size: 18, weight: 600, align: 'right' });
     text(ctx, 't = ' + fmt(t, 2) + ' s', X0, 450, PAL.muted, { size: 18, align: 'left' });
-    topline(ctx, 'At ' + fmt(nu, 1) + ' Hz the wavelength is ' + fmt(lam, 2) + ' m, and ' + fmt(nu, 1) + ' wavelengths fit in the 12 m the wave travels in one second.');
+    topline(ctx, '在 ' + fmt(nu, 1) + ' Hz 时，波长为 ' + fmt(lam, 2) + ' m，波在 1 秒内传播的 12 m 中容得下 ' + fmt(nu, 1) + ' 个波长。');
     readout(d.readout,
       `\\klam\\knu=(${fmt(lam, 2)}\\ \\text{m})(${fmt(nu, 1)}\\ \\text{Hz})=12\\ \\text{m/s}`);
   }
@@ -141,12 +141,12 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
   const LO = -12, HI = 3, L = 110, R = 1290;
   const X = (lg) => L + ((lg - LO) / (HI - LO)) * (R - L);
   const REGIONS = [
-    { name: 'gamma rays', a: -12, b: -11 }, { name: 'X-rays', a: -11, b: -8 }, { name: 'ultraviolet', a: -8, b: Math.log10(4e-7) },
-    { name: 'visible', a: Math.log10(4e-7), b: Math.log10(7e-7) }, { name: 'infrared', a: Math.log10(7e-7), b: -4 },
-    { name: 'terahertz', a: -4, b: -3 }, { name: 'microwave', a: -3, b: -1 }, { name: 'radio', a: -1, b: 3 },
+    { name: 'γ 射线', a: -12, b: -11 }, { name: 'X 射线', a: -11, b: -8 }, { name: '紫外线', a: -8, b: Math.log10(4e-7) },
+    { name: '可见光', a: Math.log10(4e-7), b: Math.log10(7e-7) }, { name: '红外线', a: Math.log10(7e-7), b: -4 },
+    { name: '太赫兹波', a: -4, b: -3 }, { name: '微波', a: -3, b: -1 }, { name: '无线电波', a: -1, b: 3 },
   ];
   const regionOf = (lg) => REGIONS.find((r) => lg >= r.a && lg <= r.b) ?? REGIONS[REGIONS.length - 1];
-  const LG = ctl(d.controls, { label: '\\log_{10}(\\klam/\\text{m})', cls: 'wavelength', min: LO, max: HI, step: 0.01, value: Math.log10(589e-9), unit: '', dec: 2, aria: 'wavelength, as a power of ten in meters',
+  const LG = ctl(d.controls, { label: '\\log_{10}(\\klam/\\text{m})', cls: 'wavelength', min: LO, max: HI, step: 0.01, value: Math.log10(589e-9), unit: '', dec: 2, aria: '波长，以米为单位的十的幂',
     detents: [{ v: Math.log10(589e-9), label: '589 nm' }, { v: Math.log10(CL / 850e6), label: '850 MHz' }] });
   const SY = 250, SH = 56;                        /* the wavelength strip */
   const NY = 390, EY = 470;                        /* the frequency and energy scales */
@@ -164,16 +164,16 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     paintVisible(ctx, (n) => X(Math.log10(n * 1e-9)), SY + SH / 2, () => SY - SH / 2);
     REGIONS.forEach((r, i) => {
       if (i) line(ctx, X(r.a), SY - SH / 2, X(r.a), SY + SH / 2, alpha(PAL.ink, 0.35), 1.5);
-      if (r.name === 'visible') return;
+      if (r.name === '可见光') return;
       text(ctx, r.name, (X(r.a) + X(r.b)) / 2, SY, PAL.ink, { size: r.b - r.a < 1.2 ? 14 : 17, align: 'center', bg: PAL.soft });
     });
     const vx = (X(REGIONS[3].a) + X(REGIONS[3].b)) / 2;
     line(ctx, vx, SY - SH / 2 - 4, vx, SY - SH / 2 - 16, PAL.muted, 1.5);
-    text(ctx, 'visible', vx, SY - SH / 2 - 76, PAL.muted, { size: 15, align: 'center', bg: PAL.panel });
+    text(ctx, '可见光', vx, SY - SH / 2 - 76, PAL.muted, { size: 15, align: 'center', bg: PAL.panel });
     /* the wavelength scale */
     line(ctx, L, SY + SH / 2, R, SY + SH / 2, cw, 2);
     for (let p = LO; p <= HI; p += 1) { line(ctx, X(p), SY + SH / 2, X(p), SY + SH / 2 + 9, cw, 2); if ((p - LO) % 3 === 0) text(ctx, '10' + sup(p), X(p), SY + SH / 2 + 28, cw, { size: 17, align: 'center' }); }
-    text(ctx, 'wavelength λ (m)', R, SY + SH / 2 + 56, cw, { size: 19, weight: 600, align: 'right' });
+    text(ctx, '波长 λ（m）', R, SY + SH / 2 + 56, cw, { size: 19, weight: 600, align: 'right' });
     /* the frequency scale runs the other way: ν = c/λ */
     line(ctx, L, NY, R, NY, cf, 2);
     for (let q = 6; q <= 20; q += 1) { const x = X(Math.log10(CL) - q); if (x < L - 1 || x > R + 1) continue; line(ctx, x, NY - 9, x, NY, cf, 2); if (q % 3 === 0) text(ctx, '10' + sup(q), x, NY + 22, cf, { size: 17, align: 'center' }); }
@@ -181,11 +181,11 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     /* an axis title moves to the left end where the marked value would sit on it */
     const title = (s, y, col, val) => { const w = F.measure(ctx, s, { size: 19, weight: 600 }), vw = F.measure(ctx, val, { size: 18, weight: 600 }), v0 = side === 'right' ? x + dx - vw : x + dx, left = v0 + vw > R - w - 12;
       text(ctx, s, left ? L : R, y, col, { size: 19, weight: 600, align: left ? 'left' : 'right' }); };
-    title('frequency ν (Hz), increasing to the left', NY - 26, cf, lenU(lam));
+    title('频率 ν（Hz），向左增大', NY - 26, cf, lenU(lam));
     /* the energy of one photon, E = hν */
     line(ctx, L, EY, R, EY, ce, 2);
     for (let q = -28; q <= -13; q += 1) { const x = X(Math.log10(HP * CL) - q); if (x < L - 1 || x > R + 1) continue; line(ctx, x, EY - 9, x, EY, ce, 2); if (q % 3 === 0) text(ctx, '10' + sup(q), x, EY + 22, ce, { size: 17, align: 'center' }); }
-    title('energy of one photon E (J), increasing to the left', EY - 26, ce, freqU(nu));
+    title('单个光子的能量 E（J），向左增大', EY - 26, ce, freqU(nu));
     /* the chosen wavelength through all three scales */
     line(ctx, x, SY - SH / 2 - 10, x, EY + 6, alpha(PAL.ink, 0.5), 2, [4, 8]);
     line(ctx, x, SY - SH / 2, x, SY + SH / 2, visible(nm) ? PAL.ink : cw, 4);
@@ -195,7 +195,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     text(ctx, freqU(nu), x + dx, NY + 48, cf, { size: 18, weight: 600, align: side, bg: PAL.panel });
     text(ctx, sciU(E) + ' J', x + dx, EY + 48, ce, { size: 18, weight: 600, align: side, bg: PAL.panel });
     const reg = regionOf(lg);
-    topline(ctx, 'Radiation of wavelength ' + lenU(lam) + ' is ' + (reg.name === 'visible' ? colorName(nm) + ' visible light' : reg.name === 'radio' ? 'a radio wave' : reg.name) + ', with a frequency of ' + freqU(nu) + ' and ' + sciU(E) + ' J in each photon.');
+    topline(ctx, '波长为 ' + lenU(lam) + ' 的辐射是' + (reg.name === '可见光' ? colorName(nm) + '的可见光' : reg.name) + '，频率为 ' + freqU(nu) + '，每个光子的能量为 ' + sciU(E) + ' J。');
     readout(d.readout,
       `\\knu=\\frac{\\kc}{\\klam}=\\frac{2.998\\times10^{8}\\ \\text{m s}^{-1}}{${sciT(lam)}\\ \\text{m}}=${sciT(nu)}\\ \\text{s}^{-1},\\quad \\kE=h\\knu=${sciT(E)}\\ \\text{J}`);
   }
@@ -209,7 +209,7 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
 ===================================================================== */
 (function () {
   const d = sim('sim-amfm', 440);
-  const MODE = F.choice(d.controls, { label: '\\text{modulation}', options: [{ value: 'am', label: 'AM' }, { value: 'fm', label: 'FM' }], value: 'am', aria: 'amplitude or frequency modulation' });
+  const MODE = F.choice(d.controls, { label: '\\text{调制方式}', options: [{ value: 'am', label: 'AM' }, { value: 'fm', label: 'FM' }], value: 'am', aria: '调幅或调频' });
   const L = 150, R = 1250, SY = 158, CYc = 320;
   const sig = (s) => Math.sin(2 * Math.PI * (1.5 * s - 0.25));              /* the signal over s = 0..1: two crests and a trough, as the book draws it */
   const K0 = 16;                                                            /* carrier cycles across the width */
@@ -223,21 +223,21 @@ function waveBetween(ctx, x1, y1, x2, y2, w, a, ph, color, lw = 3) {
     line(ctx, L, SY, R, SY, alpha(PAL.ink, 0.25), 1.5, [4, 8]);
     line(ctx, L, CYc, R, CYc, alpha(PAL.ink, 0.25), 1.5, [4, 8]);
     F.curve(ctx, sig, 0, 1, Xs, Ys, cs, 4, 200);
-    text(ctx, 'signal', R + 20, SY, cs, { size: 20, weight: 600 });
+    text(ctx, '信号', R + 20, SY, cs, { size: 20, weight: 600 });
     MODE.curve(ctx, carrier, 0, 1, Xs, Yc, cc, 3.5, 900);
     MODE.only(ctx, 'am', () => text(ctx, 'AM', R + 20, CYc, cc, { size: 22, weight: 600 }));
     MODE.only(ctx, 'fm', () => text(ctx, 'FM', R + 20, CYc, cc, { size: 22, weight: 600 }));
     /* guide lines from the signal's crests and trough down to the carrier */
-    [1 / 3, 2 / 3, 0.985].forEach((s, i) => { line(ctx, Xs(s), Ys(sig(s)) + 12, Xs(s), CYc - 110, alpha(PAL.ink, 0.3), 1.5, [4, 8]); text(ctx, i === 1 ? 'trough' : 'crest', Xs(s), CYc + 112, PAL.muted, { size: 16, align: 'center' }); });
+    [1 / 3, 2 / 3, 0.985].forEach((s, i) => { line(ctx, Xs(s), Ys(sig(s)) + 12, Xs(s), CYc - 110, alpha(PAL.ink, 0.3), 1.5, [4, 8]); text(ctx, i === 1 ? '波谷' : '波峰', Xs(s), CYc + 112, PAL.muted, { size: 16, align: 'center' }); });
     topline(ctx, m === 'am'
-      ? 'In AM the carrier keeps one frequency, and its amplitude is greatest under the crests of the signal and least under its trough.'
-      : 'In FM the carrier keeps one amplitude, and its waves crowd together under the crests of the signal and spread apart under its trough.');
+      ? '在 AM 中，载波的频率保持不变，其振幅在信号的波峰下最大，在信号的波谷下最小。'
+      : '在 FM 中，载波的振幅保持不变，其波在信号的波峰下挤在一起，在信号的波谷下分开。');
     readout(d.readout, m === 'am'
-      ? `\\knu_{\\text{carrier}}=1000\\ \\text{kHz, fixed}`
-      : `\\knu_{\\text{carrier}}=100.0\\ \\text{MHz}\\pm0.075\\ \\text{MHz}`,
+      ? `\\knu_{\\text{载波}}=1000\\ \\text{kHz，固定}`
+      : `\\knu_{\\text{载波}}=100.0\\ \\text{MHz}\\pm0.075\\ \\text{MHz}`,
       m === 'am'
-        ? 'An AM station broadcasts in the band of 540 to 2830 kHz.'
-        : 'An FM station in its band of 87.5 to 108.0 MHz swings its carrier by only 75 kHz; the drawing exaggerates the swing so that it can be seen.');
+        ? 'AM 电台的广播频段为 540 至 2830 kHz。'
+        : 'FM 电台在 87.5 至 108.0 MHz 的频段内，其载波的摆动仅为 75 kHz；图中夸大了这一摆动，以便能够看见。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -259,10 +259,10 @@ const DARK = '#000000';
   const X0 = 300, X1 = 1370, XC = (X0 + X1) / 2, TOP = 28, BH = 64, GAP = 22;
   const PX_PER_NM = 0.032, ENV = 5;   /* fringe spacing 20.8 units at 650 nm; slit spacing five slit widths */
   const BANDS = [
-    { name: 'white light', nm: null },
-    { name: 'red light', nm: 650 },
-    { name: 'green light', nm: 532 },
-    { name: 'blue light', nm: 450 },
+    { name: '白光', nm: null },
+    { name: '红光', nm: 650 },
+    { name: '绿光', nm: 532 },
+    { name: '蓝光', nm: 450 },
   ];
   const sinc2 = (u) => (Math.abs(u) < 1e-6 ? 1 : (Math.sin(u) / u) ** 2);
   const I = (y, nm) => { const p = PX_PER_NM * nm; return Math.cos((Math.PI * y) / p) ** 2 * sinc2((Math.PI * y) / (ENV * p)); };
@@ -300,7 +300,7 @@ const DARK = '#000000';
 ===================================================================== */
 (function () {
   const d = sim('sim-string', 440);
-  const N = F.choice(d.controls, { label: 'n', options: [1, 2, 3, 4, 5, 6].map((k) => ({ value: String(k), label: String(k) })), value: '3', aria: 'number of half-wavelengths on the string' });
+  const N = F.choice(d.controls, { label: 'n', options: [1, 2, 3, 4, 5, 6].map((k) => ({ value: String(k), label: String(k) })), value: '3', aria: '弦上的半波长个数' });
   const L = 200, R = 1200, Y = 250, AMP = 110;
   const LOOP = 4, cy = cycle(() => LOOP, 0);     /* model seconds; the string makes n cycles in each loop, so the loop closes on itself */
   let hits = []; F.hover(d.stage, () => hits);
@@ -320,18 +320,18 @@ const DARK = '#000000';
     ctx.stroke(); ctx.restore();
     /* the two fixed ends */
     [L, R].forEach((x) => { ctx.save(); ctx.fillStyle = PAL.muted; ctx.fillRect(x - (x === L ? 22 : 0), Y - 60, 22, 120); ctx.restore(); });
-    text(ctx, 'fixed end', L - 11, Y + 84, PAL.muted, { size: 16, align: 'center' });
-    text(ctx, 'fixed end', R + 11, Y + 84, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '固定端', L - 11, Y + 84, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '固定端', R + 11, Y + 84, PAL.muted, { size: 16, align: 'center' });
     /* the nodes between the ends, one labelled */
-    for (let k = 1; k < n; k++) { const x = Xs(k / n); dot(ctx, x, Y, PAL.ink, false, 10); hits.push({ x, y: Y, r: 14, name: 'a node, which does not move' }); }
-    if (n > 1) text(ctx, 'node', Xs(1 / n), Y + 38, PAL.ink, { size: 18, weight: 600, align: 'center', bg: PAL.panel });
+    for (let k = 1; k < n; k++) { const x = Xs(k / n); dot(ctx, x, Y, PAL.ink, false, 10); hits.push({ x, y: Y, r: 14, name: '节点，不运动' }); }
+    if (n > 1) text(ctx, '节点', Xs(1 / n), Y + 38, PAL.ink, { size: 18, weight: 600, align: 'center', bg: PAL.panel });
     /* one half-wavelength measured below the string */
     hbracket(ctx, Xs(0), Xs(1 / n), Y + AMP + 40, cw, 'λ/2 = ' + fmt(1 / n, 3) + ' m', { side: 'below' });
     const lam = 2 / n;
-    topline(ctx, 'With n = ' + n + (n === 1 ? ' half-wavelength' : ' half-wavelengths') + ' between the ends the string has ' + (n - 1) + (n - 1 === 1 ? ' node' : ' nodes') + ' and a wavelength of ' + fmt(lam, 3) + ' m.');
+    topline(ctx, '两端之间有 n = ' + n + ' 个半波长时，弦上有 ' + (n - 1) + ' 个节点，波长为 ' + fmt(lam, 3) + ' m。');
     readout(d.readout,
       `\\klam=\\frac{2L}{n}=\\frac{2(1.00\\ \\text{m})}{${n}}=${fmt(lam, 3)}\\ \\text{m}`,
-      'Only a whole number of half-wavelengths fits between two fixed ends, so the wavelength is quantized.');
+      '两个固定端之间只能容纳整数个半波长，因此波长是量子化的。');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -351,19 +351,19 @@ const DARK = '#000000';
   const S = 9.5 / raw(2898 / 6000, 6000);          /* arbitrary units: the 6000 K maximum stands at 9.5, as the book draws it */
   const planck = (T) => (lam) => (lam <= 0.02 ? 0 : S * raw(lam, T));
   const classical = (T) => (lam) => (lam <= 0.02 ? 1e6 : (S * T) / (C2 * Math.pow(lam, 4)));
-  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 2000, max: 6000, step: 10, value: 5000, unit: 'K', dec: 0, aria: 'temperature of the blackbody',
-    detents: [3000, 4000, 5000, 6000], specials: [{ at: 5523, label: '5250 °C, the sun' }] });
-  const TH = F.choice(d.controls, { label: '\\text{theory}', options: [{ value: 'planck', label: 'observed (Planck)' }, { value: 'classical', label: 'classical' }], value: 'planck', aria: 'observed curve or the classical prediction' });
+  const T = ctl(d.controls, { label: '\\kT', cls: 'temperature', min: 2000, max: 6000, step: 10, value: 5000, unit: 'K', dec: 0, aria: '黑体的温度',
+    detents: [3000, 4000, 5000, 6000], specials: [{ at: 5523, label: '5250 °C，太阳' }] });
+  const TH = F.choice(d.controls, { label: '\\text{理论}', options: [{ value: 'planck', label: '观测值（普朗克）' }, { value: 'classical', label: '经典理论' }], value: 'planck', aria: '观测曲线或经典理论的预测' });
   function draw() {
     const { ctx } = begin(d.c);
     const Tv = T.v, cw = C('wavelength'), ct = C('temperature'), lm = 2898 / Tv, clas = TH.value === 'classical';
-    const { X, Y } = axes(ctx, B, [0, 3], [0, 10], { nx: 6, ny: 5, fx: (v) => fmt(v, 1), xl: 'wavelength λ (μm)', xc: cw, yl: 'intensity (arbitrary units)' });
+    const { X, Y } = axes(ctx, B, [0, 3], [0, 10], { nx: 6, ny: 5, fx: (v) => fmt(v, 1), xl: '波长 λ（μm）', xc: cw, yl: '强度（任意单位）' });
     const clip = (f) => { ctx.save(); ctx.beginPath(); ctx.rect(B.l, B.t - 2, B.r - B.l, B.b - B.t + 4); ctx.clip(); f(); ctx.restore(); };
     /* the regions */
     [0.4, 0.7].forEach((v) => line(ctx, X(v), B.t, X(v), B.b, alpha(PAL.ink, 0.35), 2, [10, 10]));
-    text(ctx, 'UV', X(0.2), B.t + 18, PAL.muted, { size: 16, align: 'center' });
-    text(ctx, 'visible', X(0.6), B.t + 18, PAL.muted, { size: 16, align: 'center' });
-    text(ctx, 'infrared', X(1.6), B.t + 18, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '紫外线', X(0.2), B.t + 18, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '可见光', X(0.6), B.t + 18, PAL.muted, { size: 16, align: 'center' });
+    text(ctx, '红外线', X(1.6), B.t + 18, PAL.muted, { size: 16, align: 'center' });
     /* the visible band under the observed curve, in the colours of that light */
     clip(() => paintVisible(ctx, (nm) => X(nm / 1000), B.b, (nm) => Math.max(B.t, Y(planck(Tv)(nm / 1000)))));
     /* the chosen curve's two labels first, so a faint name that would sit on them is left to the caption */
@@ -396,17 +396,17 @@ const DARK = '#000000';
     TH.only(ctx, 'classical', () => {
       const xa = X(Math.pow((S * Tv) / (C2 * 10), 0.25));
       arrow(ctx, xa + 90, B.t + 70, xa + 12, B.t + 12, PAL.ink, 3);
-      text(ctx, 'the ultraviolet catastrophe', xa + 96, B.t + 78, PAL.ink, { size: 18, weight: 600, bg: PAL.panel });
+      text(ctx, '紫外灾难', xa + 96, B.t + 78, PAL.ink, { size: 18, weight: 600, bg: PAL.panel });
     });
     text(ctx, Tv + ' K', tx, ty, ct, { size: 20, weight: 600, align: 'left', bg: PAL.panel });
     topline(ctx, clas
-      ? 'At ' + Tv + ' K the classical curve climbs without limit as the wavelength shrinks.'
-      : 'At ' + Tv + ' K (' + fmt(Tv - 273, 0) + ' °C) the curve reaches its maximum at ' + fmt(lm * 1000, 0) + ' nm, ' + (lm * 1000 < 400 ? 'in the ultraviolet' : lm * 1000 <= 700 ? 'in the visible' : 'in the infrared') + '.');
+      ? '在 ' + Tv + ' K 时，经典曲线随波长缩短而无限上升。'
+      : '在 ' + Tv + ' K（' + fmt(Tv - 273, 0) + ' °C）时，曲线的极大值出现在 ' + fmt(lm * 1000, 0) + ' nm 处，' + (lm * 1000 < 400 ? '位于紫外区' : lm * 1000 <= 700 ? '位于可见光区' : '位于红外区') + '。');
     readout(d.readout,
-      `\\klammax=${fmt(lm * 1000, 0)}\\ \\text{nm at}\\ \\kT=${Tv}\\ \\text{K}`,
+      `\\klammax=${fmt(lm * 1000, 0)}\\ \\text{nm，}\\kT=${Tv}\\ \\text{K}`,
       clas
-        ? 'With vibrating atoms allowed any energy, the intensity grows without limit at short wavelengths; restricting each frequency to the energies $\\kE=nh\\knu$ makes the curve turn down, as observed.'
-        : 'Planck’s quantized energies, $\\kE=nh\\knu$, give the observed curve.');
+        ? '允许振动的原子具有任意能量时，强度在短波长处无限增大；把每个频率限制在能量 $\\kE=nh\\knu$ 上，曲线就会下降，与观测结果一致。'
+        : '普朗克的量子化能量 $\\kE=nh\\knu$ 给出了观测到的曲线。');
   }
   register(d.fig, { update: () => {}, draw });
 })();
@@ -422,9 +422,9 @@ const DARK = '#000000';
   const d = sim('sim-photoelectric', 560);
   const W0 = 3.21e-19;                              /* J, the threshold energy */
   const L0 = (HP * CL / W0) * 1e9;                  /* nm, the threshold wavelength, 619 nm */
-  const LAM = ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: 200, max: 800, step: 1, value: 550, unit: 'nm', dec: 0, aria: 'wavelength of the light',
-    detents: [700, 550, 400], specials: [{ at: Math.round(L0), label: 'threshold' }] });
-  const BR = ctl(d.controls, { label: '\\text{brightness}', cls: '', min: 1, max: 8, step: 1, value: 3, unit: 'photons/s', dec: 0, aria: 'brightness, the number of photons arriving each second' });
+  const LAM = ctl(d.controls, { label: '\\klam', cls: 'wavelength', min: 200, max: 800, step: 1, value: 550, unit: 'nm', dec: 0, aria: '光的波长',
+    detents: [700, 550, 400], specials: [{ at: Math.round(L0), label: '阈值' }] });
+  const BR = ctl(d.controls, { label: '\\text{亮度}', cls: '', min: 1, max: 8, step: 1, value: 3, unit: '光子/s', dec: 0, aria: '亮度，即每秒到达的光子数' });
   const LOOP = 8, cy = cycle(() => LOOP, 0);
   const MT = { l: 420, r: 1180, y: 430 };           /* the metal's surface */
   const SRC = [340, 110], TRAVEL = 1.1;              /* where the light comes from, and the seconds a photon takes to reach the surface */
@@ -439,8 +439,8 @@ const DARK = '#000000';
     /* the metal */
     ctx.save(); ctx.fillStyle = alpha(cm, 0.18); ctx.strokeStyle = cm; ctx.lineWidth = 3;
     ctx.fillRect(MT.l, MT.y, MT.r - MT.l, 70); ctx.strokeRect(MT.l, MT.y, MT.r - MT.l, 70); ctx.restore();
-    text(ctx, 'metal', (MT.l + MT.r) / 2, MT.y + 36, cm, { size: 20, weight: 600, align: 'center' });
-    hits.push({ x: (MT.l + MT.r) / 2, y: MT.y + 35, r: 60, name: 'the metal, whose electrons are held by 3.21 × 10⁻¹⁹ J' });
+    text(ctx, '金属', (MT.l + MT.r) / 2, MT.y + 36, cm, { size: 20, weight: 600, align: 'center' });
+    hits.push({ x: (MT.l + MT.r) / 2, y: MT.y + 35, r: 60, name: '金属，其电子被 3.21 × 10⁻¹⁹ J 的能量束缚' });
     /* photons: short packets of their own wavelength travelling from the source to the surface */
     const n = BR.v * LOOP, pw = 10 + nm / 22;
     for (let i = 0; i < n; i++) {
@@ -450,13 +450,13 @@ const DARK = '#000000';
         const k = age / TRAVEL, px = SRC[0] + (hx - SRC[0]) * k, py = SRC[1] + (hy - SRC[1]) * k;
         const ux = (hx - SRC[0]), uy = (hy - SRC[1]), ul = Math.hypot(ux, uy), bl = 2.2 * pw;
         waveBetween(ctx, px - (ux / ul) * bl, py - (uy / ul) * bl, px, py, pw, 9, -age * 40, pc, 3.5);
-        hits.push({ x: px, y: py, r: 16, name: 'a photon of ' + nm + ' nm' });
+        hits.push({ x: px, y: py, r: 16, name: nm + ' nm 的光子' });
       } else if (out) {
         const s = (age - TRAVEL) * (260 * v / 6.2e5), ex = hx + s * 0.62, ey = hy - s * 0.78;
         if (ey > 130 && ex < 1380) {
           line(ctx, hx, hy, ex, ey, alpha(PAL.ink, 0.18), 2);
           dot(ctx, ex, ey, cel, true, 8);
-          hits.push({ x: ex, y: ey, r: 13, name: 'an ejected electron' });
+          hits.push({ x: ex, y: ey, r: 13, name: '逸出的电子' });
         }
       } else if (age < TRAVEL + 0.25) {
         F.faded(ctx, 1 - (age - TRAVEL) / 0.25, [0, 0], () => dot(ctx, hx, hy, pc, false, 12 * (1 + (age - TRAVEL) * 3)));
@@ -466,16 +466,16 @@ const DARK = '#000000';
     text(ctx, 'λ = ' + nm + ' nm', 60, 190, cw, { size: 20, weight: 600 });
     text(ctx, 'ν = ' + sciU(nu) + ' Hz', 60, 222, cf, { size: 20, weight: 600 });
     text(ctx, 'E = hν = ' + sciU(E) + ' J', 60, 254, ce, { size: 20, weight: 600 });
-    text(ctx, out ? 'v_{max} = ' + sciU(v) + ' m/s' : 'no electrons ejected', 1360, 330, out ? cv : PAL.muted, { size: 20, weight: 600, align: 'right' });
+    text(ctx, out ? 'v_{max} = ' + sciU(v) + ' m/s' : '没有电子逸出', 1360, 330, out ? cv : PAL.muted, { size: 20, weight: 600, align: 'right' });
     topline(ctx, out
-      ? 'Each photon of ' + nm + ' nm carries more than the threshold energy, so every one frees an electron, which leaves at up to ' + sciU(v) + ' m/s.'
-      : 'Each photon of ' + nm + ' nm carries less than the threshold energy, so no electron leaves the metal however bright the light.');
+      ? '每个 ' + nm + ' nm 的光子所带的能量都超过阈值能量，所以每个光子都能使一个电子逸出，电子离开时的速率最高可达 ' + sciU(v) + ' m/s。'
+      : '每个 ' + nm + ' nm 的光子所带的能量都小于阈值能量，所以无论光多亮，都没有电子离开金属。');
     readout(d.readout, out
-      ? `\\kKE=\\kE-\\kE_{\\text{threshold}}=${sciT(E)}\\ \\text{J}-${sciT(W0)}\\ \\text{J}=${sciT(KE)}\\ \\text{J}`
-      : `\\kE=\\frac{h\\kc}{\\klam}=${sciT(E)}\\ \\text{J}<\\kE_{\\text{threshold}}=${sciT(W0)}\\ \\text{J}`,
+      ? `\\kKE=\\kE-\\kE_{\\text{阈}}=${sciT(E)}\\ \\text{J}-${sciT(W0)}\\ \\text{J}=${sciT(KE)}\\ \\text{J}`
+      : `\\kE=\\frac{h\\kc}{\\klam}=${sciT(E)}\\ \\text{J}<\\kE_{\\text{阈}}=${sciT(W0)}\\ \\text{J}`,
       out
         ? undefined
-        : 'Light of wavelength longer than ' + fmt(L0, 0) + ' nm, a frequency below ' + sciU(CL / (L0 * 1e-9)) + ' Hz, ejects nothing.');
+        : '波长长于 ' + fmt(L0, 0) + ' nm、频率低于 ' + sciU(CL / (L0 * 1e-9)) + ' Hz 的光不会使任何电子逸出。');
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();

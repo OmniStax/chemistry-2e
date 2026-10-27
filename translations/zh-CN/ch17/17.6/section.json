@@ -4,12 +4,12 @@
  "chapter": "17",
  "title": "腐蚀",
  "short": "腐蚀",
- "lead": "金属暴露于空气和水中会通过电化学过程发生降解：铜变绿，铁生锈。铁的生锈在金属自身表面以原电池的方式进行，而油漆、合金、镀锌层和牺牲阳极则是保护铁免受腐蚀的方法。",
+ "lead": "金属暴露于空气和水中会通过电化学过程发生劣化：铜变绿，铁生锈。铁的生锈在金属自身表面以原电池的方式进行，而油漆、合金、镀锌层和牺牲阳极则是保护铁免受腐蚀的方法。",
  "objectives": [
   "定义腐蚀",
   "列举一些用于防止或减缓腐蚀的方法"
  ],
- "summary_html": "<p>金属通过自然电化学过程发生的自发氧化称为<span data-concept=\"corrosion\">腐蚀</span>，常见的例子包括铁的生锈和银的失去光泽。<span data-concept=\"corrosion\">腐蚀</span>过程涉及<span data-concept=\"galvanic-cell\">原电池</span>的形成，金属物体上的不同部位分别起<span data-concept=\"anode\">阳极</span>和<span data-concept=\"cathode\">阴极</span>的作用，<span data-concept=\"corrosion\">腐蚀</span>发生在阳极部位。防止金属<span data-concept=\"corrosion\">腐蚀</span>的方法包括使用锌保护层（<span data-concept=\"galvanization\">镀锌</span>）和使用与金属物体相连的<span data-concept=\"sacrificial-anode\">牺牲阳极</span>（<span data-concept=\"cathodic-protection\">阴极保护</span>）。</p>",
+ "summary_html": "<p>金属通过自然电化学过程发生的自发氧化称为<span data-concept=\"corrosion\">腐蚀</span>，常见的例子包括铁生锈和银失去光泽。<span data-concept=\"corrosion\">腐蚀</span>过程涉及<span data-concept=\"galvanic-cell\">原电池</span>的形成，金属物体上的不同部位分别起<span data-concept=\"anode\">阳极</span>和<span data-concept=\"cathode\">阴极</span>的作用，<span data-concept=\"corrosion\">腐蚀</span>发生在阳极部位。防止金属<span data-concept=\"corrosion\">腐蚀</span>的方法包括使用锌保护层（<span data-concept=\"galvanization\">镀锌</span>）和使用与金属物体相连的<span data-concept=\"sacrificial-anode\">牺牲阳极</span>（<span data-concept=\"cathodic-protection\">阴极保护</span>）。</p>",
  "notes": "本节没有任何内容被略去。书中为图 17.16 的铁锈电池写下的“as illustrated in Figure 17.15”、“a passivating an oxide layer”、“because as they get used up”、阴极的下标 O₂/O²、摘要中的“Corrosion process involve”，以及习题 fs-idm80636048 缺失的问号，都按原样保留。",
  "ai": {
   "text": [
@@ -35,7 +35,7 @@
  },
  "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "布鲁姆层级、概念标签和提示均由 AI 生成。答案取自书后答案。没有给出答案的选择题 fs-idp66944528 保留其选项和建议思路，不予评分；没有给出答案的概念题 fs-idm127027504 和 fs-idp44419248 保留建议思路，并标明为 OmniStax 自己所加；fs-idm127027504 中的 −2.07 V 和 −0.477 V 按原样保留。没有任何内容被略去或移动。",
+ "exercise_notes": "布鲁姆层级、概念标签和建议思路均由 AI 生成。答案取自书后答案。没有给出答案的选择题 fs-idp66944528 保留其选项和建议思路，不予评分；没有给出答案的概念题 fs-idm127027504 和 fs-idp44419248 保留建议思路，并标明为 OmniStax 自己所加；fs-idm127027504 中的 −2.07 V 和 −0.477 V 按原样保留。没有任何内容被略去或移动。",
  "figures": [
   {
    "id": "fig-statue",
@@ -262,7 +262,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "铝上形成的氧化物保护了它，而铁上形成的铁锈则不能。铝的还原电势很负，意味着它很容易与氧反应，但产物是一层薄而坚硬的氧化铝 Al<sub>2</sub>O<sub>3</sub>，它紧紧附着在表面上，使下方的金属不再与氧和水接触。这层钝化层一旦形成，进一步的腐蚀就极其缓慢，这与铜上的铜绿和不锈钢上的氧化铬层保护其下金属的方式相同。铁锈，即水合氧化铁(III) Fe<sub>2</sub>O<sub>3</sub>·<em>x</em>H<sub>2</sub>O，是多孔的并会剥落，使新鲜的铁暴露于大气中，所以铁会不断腐蚀。标准电势只描述被氧化的倾向，而不描述表面层形成后氧化持续的快慢。"
+    "solution": "铝上形成的氧化物保护了它，而铁上形成的铁锈则不能。铝的还原电势很负，意味着它很容易与氧反应，但产物是一层薄而坚硬的氧化铝 Al<sub>2</sub>O<sub>3</sub>，它紧紧附着在表面上，使下方的金属不再与氧和水接触。这层钝化层一旦形成，进一步的腐蚀就极其缓慢，这与铜上的铜绿和不锈钢上的氧化铬层保护其下金属的方式相同。铁锈，即氧化铁(III)水合物 Fe<sub>2</sub>O<sub>3</sub>·<em>x</em>H<sub>2</sub>O，是多孔的并会剥落，使新鲜的铁暴露于大气中，所以铁会不断腐蚀。标准电势只描述被氧化的倾向，而不描述表面层形成后氧化持续的快慢。"
    }
   },
   {

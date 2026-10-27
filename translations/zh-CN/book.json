@@ -2395,7 +2395,7 @@
         "定组成定律",
         "定比定律"
       ],
-      "statement": "纯化合物的所有样品都含有相同的元素，且这些元素的质量比相同。如果化合物中各种原子的数目之比始终相同，这正是道尔顿第四条假设所预言的结果。注意其逆命题并不成立：质量比相同的两个样品不一定是同一种物质。"
+      "statement": "纯化合物的所有样品都含有相同的元素，且这些元素的质量比相同；道尔顿的第四条假设认为化合物中各种原子的数目之比始终相同，由此预言的正是这一点。注意其逆命题并不成立：质量比相同的两个样品不一定是同一种物质。"
     },
     {
       "id": "law-of-multiple-proportions",
@@ -3145,7 +3145,7 @@
       "kind": "definition",
       "section": "10.1",
       "name": "分子间作用力与分子内作用力",
-      "statement": "分子内作用力是把分子内部各原子维系在一起的化学键；分子间作用力是分子之间的吸引作用，它们决定着物质的许多物理性质。小分子之间的分子间作用力通常比分子内的化学键弱得多。"
+      "statement": "分子内作用力是把分子内部各原子维系在一起的化学键；分子间作用力是分子之间的吸引作用，它们决定着物质的许多物理性质。小分子之间的分子间作用力通常比分子内的化学键弱。"
     },
     {
       "id": "phase-from-imf-and-kinetic-energy",
@@ -3502,7 +3502,7 @@
       "terms": [
         "动态平衡"
       ],
-      "statement": "动态平衡是体系中相反的过程以相同速率进行的状态，两个过程都在持续，但整体上没有任何变化。"
+      "statement": "动态平衡是体系中互逆的过程以相同速率进行的状态，两个过程都在持续，但整体上没有任何变化。"
     },
     {
       "id": "vapor-pressure",
@@ -3610,7 +3610,7 @@
       "kind": "idea",
       "section": "10.5",
       "name": "晶态固体的类型",
-      "statement": "晶态固体按粒子之间的作用力分类，这些作用力也解释了它们的性质：离子固体硬而脆，只有熔融时才导电；金属固体是有延展性的导体；共价网状固体非常硬，熔点极高；分子固体较软，熔点较低。"
+      "statement": "晶态固体按粒子之间的作用力分类，这些作用力也解释了它们的性质：离子固体硬而脆，只有熔融时才导电；金属固体是有展性的导体；共价网状固体非常硬，熔点极高；分子固体较软，熔点较低。"
     },
     {
       "id": "classify-crystalline-solid",
@@ -3685,7 +3685,7 @@
       "terms": [
         "分子固体"
       ],
-      "statement": "分子固体是由中性分子通过分子间吸引作用力结合而成的晶态固体。"
+      "statement": "分子固体是由中性分子通过分子间吸引力结合而成的晶态固体。"
     },
     {
       "id": "vacancy",
@@ -3916,7 +3916,7 @@
       "terms": [
         "八面体空隙"
       ],
-      "statement": "八面体空隙是晶体中位于八面体顶点的六个粒子中心的开放空间。"
+      "statement": "八面体空隙是晶体中由位于八面体顶点的六个粒子所包围、处于其中心的空间。"
     },
     {
       "id": "diffraction",
@@ -4562,80 +4562,80 @@
       "id": "energy-and-work",
       "kind": "definition",
       "section": "5.1",
-      "name": "Energy",
+      "name": "能量",
       "symbol": "E",
       "terms": [
-        "energy"
+        "能量"
       ],
       "type": "energy",
-      "statement": "Energy is the capacity to supply heat or do work. Work is one of the two things energy does: moving matter against an opposing force, as a pump does when it pushes air into a tire."
+      "statement": "能量是供给热量或做功的能力。做功是能量所做的两类事情之一：使物质逆着相反的作用力运动，例如打气筒把空气压进轮胎时所做的功。"
     },
     {
       "id": "potential-and-kinetic-energy",
       "kind": "idea",
       "section": "5.1",
-      "name": "Potential energy and kinetic energy",
-      "statement": "Energy can be sorted into two kinds: potential energy, which an object has because of its position, composition, or condition, and kinetic energy, which it has because of its motion. The chemical energy stored in gasoline is potential energy, and thermal energy is kinetic energy."
+      "name": "势能与动能",
+      "statement": "能量可以分为两类：势能，是物体因其位置、组成或状态而具有的能量；动能，是物体因其运动而具有的能量。汽油中储存的化学能是势能，热能则是动能。"
     },
     {
       "id": "conservation-of-energy",
       "kind": "axiom",
       "section": "5.1",
-      "name": "Law of conservation of energy",
-      "statement": "During a chemical or physical change, energy can be neither created nor destroyed, although it can be changed in form. The heat a reaction gives off must therefore turn up somewhere else."
+      "name": "能量守恒定律",
+      "statement": "在化学变化或物理变化中，能量既不能被创造，也不能被消灭，但可以改变形式。因此，反应放出的热量必定出现在别的地方。"
     },
     {
       "id": "thermal-energy-and-temperature",
       "kind": "idea",
       "section": "5.1",
-      "name": "Thermal energy and temperature",
-      "statement": "Thermal energy is the kinetic energy of the random motion of atoms and molecules, and temperature is a measure of how hot or cold a sample is, which rises as the average kinetic energy of its particles rises. The two are not the same thing: a bonfire and a match may share a temperature and hold very different amounts of thermal energy."
+      "name": "热能与温度",
+      "statement": "热能是原子和分子无规则运动的动能，温度则是衡量样品冷热程度的量，随粒子平均动能的增大而升高。二者并不相同：一堆篝火和一根火柴可以温度相同，所含的热能却相差悬殊。"
     },
     {
       "id": "heat-flow",
       "kind": "definition",
       "section": "5.1",
-      "name": "Heat",
+      "name": "热量",
       "symbol": "q",
       "terms": [
-        "heat"
+        "热量"
       ],
       "type": "energy",
-      "statement": "Heat is the transfer of thermal energy between two bodies at different temperatures. It flows spontaneously from the hotter body to the cooler one, lowering the average kinetic energy of the first and raising that of the second, until the two reach thermal equilibrium at one temperature."
+      "statement": "热量是处于不同温度的两个物体之间热能的传递。它自发地从较热的物体流向较冷的物体，使前者的平均动能降低、后者的平均动能升高，直到二者达到热平衡、温度相同为止。"
     },
     {
       "id": "exothermic-and-endothermic",
       "kind": "definition",
       "section": "5.1",
-      "name": "Exothermic and endothermic processes",
-      "statement": "A chemical reaction or physical change that releases heat is exothermic, and one that absorbs heat is endothermic. An exothermic process warms its surroundings, and an endothermic process cools them."
+      "name": "放热过程与吸热过程",
+      "statement": "放出热量的化学反应或物理变化是放热的，吸收热量的则是吸热的。放热过程使环境变热，吸热过程使环境变冷。"
     },
     {
       "id": "energy-units",
       "kind": "skill",
       "section": "5.1",
-      "name": "Converting energy units",
-      "statement": "The SI unit of energy is the joule, but chemists still frequently use the calorie, and food labels give energy in Calories, each of which is a kilocalorie. One calorie is exactly 4.184 joules. Move between these units with ease to read a food label or to compare results given in either."
+      "name": "能量单位的换算",
+      "statement": "能量的 SI 单位是焦耳，但化学家仍常使用卡，食品标签则以大卡为单位给出能量，每 1 大卡是 1 千卡。1 卡恰好等于 4.184 焦耳。能熟练地在这些单位之间换算，才能读懂食品标签，或比较以任一单位给出的结果。"
     },
     {
       "id": "heat-capacity-and-specific-heat",
       "kind": "definition",
       "section": "5.1",
-      "name": "Heat capacity and specific heat",
-      "statement": "The heat capacity of a body is the heat it absorbs or releases for a temperature change of 1 °C, and it grows with the amount of material, so it is extensive. The specific heat is the heat needed to raise 1 gram of a substance by 1 °C, and it depends only on the kind of substance, so it is intensive."
+      "name": "热容与比热容",
+      "statement": "物体的热容是它的温度变化 1 °C 时所吸收或放出的热量，它随物质的多少而增大，因此是广度性质。比热容是使 1 g 某种物质的温度升高 1 °C 所需的热量，它只取决于物质的种类，因此是强度性质。"
     },
     {
       "id": "heat-specific-heat-relation",
       "kind": "result",
       "section": "5.1",
-      "name": "Heat and specific heat",
-      "statement": "The heat entering or leaving a substance is the product of its specific heat, its mass, and its temperature change, taken as the final temperature minus the initial one. The sign of q follows from that difference, positive when the substance warms and negative when it cools, and any one of the four quantities can be found when the other three are known.",
+      "name": "热量与比热容",
+      "statement": "物质吸收或放出的热量，等于它的比热容、质量与温度变化三者的乘积，温度变化取终态温度减去初态温度。q 的符号由这个差值决定：物质升温时为正，降温时为负；只要已知其中三个量，就能求出第四个。",
       "forms": [
         {
           "id": "eq-heat",
           "latex": "q=c\\times m\\times\\Delta T=c\\times m\\times(T_{\\text{final}}-T_{\\text{initial}})",
           "ktex": "\\kq=c\\times\\km\\times\\kdT=c\\times\\km\\times(\\kTfin-\\kTinit)",
-          "condition": "no chemical reaction or phase change occurs, and the specific heat is treated as constant over the temperature range",
+          "condition": "不发生化学反应或相变，且在该温度范围内把比热容视为常数",
           "anchor": "5.1-heat-equation"
         }
       ]
@@ -4644,51 +4644,51 @@
       "id": "thermochemistry",
       "kind": "definition",
       "section": "5.1",
-      "name": "Thermochemistry",
+      "name": "热化学",
       "terms": [
-        "thermochemistry"
+        "热化学"
       ],
-      "statement": "Thermochemistry is the study of measuring the amount of heat absorbed or released during a chemical reaction or a physical change."
+      "statement": "热化学是测量化学反应或物理变化中所吸收或放出的热量的科学。"
     },
     {
       "id": "work",
       "kind": "definition",
       "section": "5.1",
-      "name": "Work",
+      "name": "功",
       "symbol": "w",
       "terms": [
-        "work"
+        "功"
       ],
       "type": "energy",
-      "statement": "Work is the transfer of energy that moves matter against an opposing force, or that changes external, macroscopic variables such as pressure and volume."
+      "statement": "功是使物质逆着相反的作用力运动，或改变压强、体积等外部宏观变量的能量传递。"
     },
     {
       "id": "potential-energy",
       "kind": "definition",
       "section": "5.1",
-      "name": "Potential energy",
+      "name": "势能",
       "terms": [
-        "potential energy"
+        "势能"
       ],
-      "statement": "Potential energy is the energy a particle or a system of particles has because of its relative position, composition, or condition."
+      "statement": "势能是粒子或粒子体系因其相对位置、组成或状态而具有的能量。"
     },
     {
       "id": "kinetic-energy",
       "kind": "definition",
       "section": "5.1",
-      "name": "Kinetic energy",
+      "name": "动能",
       "symbol": "KE",
       "terms": [
-        "kinetic energy"
+        "动能"
       ],
       "type": "energy",
-      "statement": "Kinetic energy is the energy an object has because of its motion, equal to one-half the product of its mass and the square of its velocity.",
+      "statement": "动能是物体因其运动而具有的能量，等于其质量与速度平方之积的二分之一。",
       "forms": [
         {
           "id": "eq-kinetic-energy",
           "latex": "\\text{KE}=\\frac{1}{2}mu^2",
           "ktex": "\\kKE=\\frac{1}{2}\\km u^2",
-          "condition": "a particle of mass m moving at speed u",
+          "condition": "质量为 m、以速率 u 运动的粒子",
           "section": "9.5",
           "anchor": "9.5-speeds"
         },
@@ -4702,41 +4702,41 @@
       "id": "thermal-energy",
       "kind": "definition",
       "section": "5.1",
-      "name": "Thermal energy",
+      "name": "热能",
       "terms": [
-        "thermal energy"
+        "热能"
       ],
-      "statement": "Thermal energy is the kinetic energy associated with the random motion of atoms and molecules."
+      "statement": "热能是与原子和分子的无规则运动相联系的动能。"
     },
     {
       "id": "exothermic-process",
       "kind": "definition",
       "section": "5.1",
-      "name": "Exothermic process",
+      "name": "放热过程",
       "terms": [
-        "exothermic process"
+        "放热过程"
       ],
-      "statement": "An exothermic process is a chemical reaction or physical change that releases heat."
+      "statement": "放热过程是放出热量的化学反应或物理变化。"
     },
     {
       "id": "endothermic-process",
       "kind": "definition",
       "section": "5.1",
-      "name": "Endothermic process",
+      "name": "吸热过程",
       "terms": [
-        "endothermic process"
+        "吸热过程"
       ],
-      "statement": "An endothermic process is a chemical reaction or physical change that absorbs heat."
+      "statement": "吸热过程是吸收热量的化学反应或物理变化。"
     },
     {
       "id": "joule",
       "kind": "definition",
       "section": "5.1",
-      "name": "Joule",
+      "name": "焦耳",
       "terms": [
-        "joule (J)"
+        "焦耳（J）"
       ],
-      "statement": "The joule is the SI unit of energy, the energy used when a force of 1 newton moves an object 1 meter.",
+      "statement": "焦耳是能量的 SI 单位，等于 1 N 的力使物体移动 1 m 所用的能量。",
       "forms": [
         {
           "id": "eq-joule",
@@ -4748,11 +4748,11 @@
       "id": "calorie",
       "kind": "definition",
       "section": "5.1",
-      "name": "Calorie",
+      "name": "卡",
       "terms": [
-        "calorie (cal)"
+        "卡（cal）"
       ],
-      "statement": "The calorie is a unit of heat or other energy, the amount of energy required to raise 1 gram of water by 1 degree Celsius. One calorie is exactly 4.184 joules.",
+      "statement": "卡是热量或其他能量的单位，是使 1 g 水升高 1 °C 所需的能量。1 卡恰好等于 4.184 焦耳。",
       "forms": [
         {
           "id": "eq-calorie",
@@ -4764,19 +4764,19 @@
       "id": "heat-capacity",
       "kind": "definition",
       "section": "5.1",
-      "name": "Heat capacity",
+      "name": "热容",
       "symbol": "C_heat",
       "terms": [
-        "heat capacity"
+        "热容"
       ],
       "type": "heat-capacity",
-      "statement": "The heat capacity of a body of matter is the quantity of heat required to raise its temperature by 1 degree Celsius. It is an extensive property, growing with the amount of matter in the body.",
+      "statement": "一个物体的热容是使其温度升高 1 °C 所需的热量。它是广度性质，随物体中物质的多少而增大。",
       "forms": [
         {
           "id": "eq-heat-capacity",
           "latex": "C=\\frac{q}{\\Delta T}",
           "ktex": "C=\\frac{\\kq}{\\kdT}",
-          "condition": "a body of matter that absorbs or releases heat q with no chemical reaction or phase change",
+          "condition": "物体吸收或放出热量 q，且不发生化学反应或相变",
           "anchor": "5.1-capacity"
         }
       ]
@@ -4785,20 +4785,19 @@
       "id": "specific-heat-capacity",
       "kind": "definition",
       "section": "5.1",
-      "name": "Specific heat capacity",
+      "name": "比热容",
       "symbol": "c_spec",
       "terms": [
-        "specific heat capacity",
-        "specific heat"
+        "比热容"
       ],
       "type": "heat-capacity",
-      "statement": "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 gram of it by 1 degree Celsius. It is an intensive property, set by the kind of substance alone.",
+      "statement": "物质的比热容是使 1 g 该物质的温度升高 1 °C 所需的热量。它是强度性质，仅取决于物质的种类。",
       "forms": [
         {
           "id": "eq-specific-heat",
           "latex": "c=\\frac{q}{m\\,\\Delta T}",
           "ktex": "c=\\frac{\\kq}{\\km\\,\\kdT}",
-          "condition": "a sample of one substance with no chemical reaction or phase change",
+          "condition": "同一种物质的样品，不发生化学反应或相变",
           "anchor": "5.1-capacity"
         }
       ]
@@ -4807,21 +4806,21 @@
       "id": "system-and-surroundings",
       "kind": "definition",
       "section": "5.2",
-      "name": "System and surroundings",
-      "statement": "The system is the portion of matter undergoing the chemical or physical change being studied, and the surroundings are everything else that gives heat to the system or takes it away. The sign of a heat is taken from the system's point of view."
+      "name": "体系与环境",
+      "statement": "体系是正在研究的化学变化或物理变化所涉及的那部分物质，环境则是其余的一切，它们向体系供给热量，或从体系带走热量。热量的符号是站在体系的立场上取定的。"
     },
     {
       "id": "calorimetry-heat-balance",
       "kind": "result",
       "section": "5.2",
-      "name": "Calorimeter heat balance",
-      "statement": "When a hot metal is placed in cool water in an ideal calorimeter, all the heat lost by one is gained by the other, so the two heats add up to zero and one is the negative of the other. The negative sign records the opposite direction of flow and does not by itself give either value its sign.",
+      "name": "量热计中的热量平衡",
+      "statement": "把热的金属放入理想量热计中的冷水时，一方失去的热量全部被另一方得到，所以两个热量之和为零，一个是另一个的负值。负号记录的是热量流动方向相反，并不能由它直接确定任何一个热量的符号。",
       "forms": [
         {
           "id": "eq-heat-balance",
           "latex": "q_{\\text{substance M}}+q_{\\text{substance W}}=0",
           "ktex": "\\kq_{\\text{substance M}}+\\kq_{\\text{substance W}}=0",
-          "condition": "an ideal calorimeter, in which all the heat transfer occurs between the two substances",
+          "condition": "理想量热计，其中全部热传递都发生在这两种物质之间",
           "anchor": "5.2-heat-balance"
         }
       ]
@@ -4830,14 +4829,14 @@
       "id": "heat-of-reaction-by-calorimetry",
       "kind": "result",
       "section": "5.2",
-      "name": "Heat of reaction by calorimetry",
-      "statement": "Because energy is neither created nor destroyed, the heat produced or consumed by a reaction in a calorimeter equals the heat absorbed or lost by the solution around it, with the opposite sign. This is the concept that lies at the heart of all calorimetry problems: the temperature change of the solution is measured, and the heat of the reaction is read from it.",
+      "name": "用量热法求反应热",
+      "statement": "因为能量既不被创造也不被消灭，量热计中的反应所产生或消耗的热量，等于周围溶液所吸收或失去的热量，二者符号相反。这是所有量热问题的核心概念：测出溶液的温度变化，就能由此求出反应的热量。",
       "forms": [
         {
           "id": "eq-heat-reaction",
           "latex": "q_{\\text{reaction}}=-q_{\\text{solution}}",
           "ktex": "\\kq_{\\text{reaction}}=-\\kq_{\\text{solution}}",
-          "condition": "the calorimeter absorbs no heat and exchanges none with the outside environment",
+          "condition": "量热计本身不吸收热量，也不与外界环境交换热量",
           "anchor": "5.2-reaction-heat"
         }
       ]
@@ -4846,21 +4845,21 @@
       "id": "coffee-cup-calorimetry",
       "kind": "skill",
       "section": "5.2",
-      "name": "Coffee cup calorimetry",
-      "statement": "A coffee cup calorimeter measures a temperature change, and turning it into a heat takes reasonable assumptions, stated openly. No heat passes to the outside or into the cup, and a dilute solution has the specific heat and density of water. Carry those assumptions through to a heat with the right sign."
+      "name": "咖啡杯量热法",
+      "statement": "咖啡杯量热计测得的是温度变化，要把它化为热量，需要作出合理的假设，并明确说明。假设没有热量传到外界或杯子中，并且稀溶液的比热容和密度与水相同。把这些假设贯彻到底，求出符号正确的热量。"
     },
     {
       "id": "bomb-calorimetry",
       "kind": "skill",
       "section": "5.2",
-      "name": "Bomb calorimetry",
-      "statement": "A bomb calorimeter works at constant volume and is used for reactions, such as combustions, that give off much heat and gaseous products. The heat of the reaction is shared between the water and the steel bomb, so the calculation adds the heat taken in by the water to the heat capacity of the bomb times the temperature rise.",
+      "name": "弹式量热法",
+      "statement": "弹式量热计在恒容条件下工作，用于燃烧这类放出大量热量并生成气体产物的反应。反应的热量由水和钢制弹体分担，所以计算时要把水吸收的热量，加上弹体的热容与温升之积。",
       "forms": [
         {
           "id": "eq-bomb",
           "latex": "q_{\\text{rxn}}=-(q_{\\text{water}}+q_{\\text{bomb}})",
           "ktex": "\\kq_{\\text{rxn}}=-(\\kq_{\\text{water}}+\\kq_{\\text{bomb}})",
-          "condition": "a bomb calorimeter, with the heat absorbed by the products and the excess oxygen neglected",
+          "condition": "弹式量热计，忽略产物和过量氧气所吸收的热量",
           "anchor": "5.2-ex-bomb"
         }
       ]
@@ -4869,68 +4868,68 @@
       "id": "food-calories",
       "kind": "skill",
       "section": "5.2",
-      "name": "Counting the Calories in a food",
-      "statement": "Food labels give energy in Calories. The Atwater system computes them from the grams of protein, carbohydrate, and fat in a serving and their average Calories per gram, values that came from bomb calorimetry. With this sum you can check a label and compare foods."
+      "name": "计算食物中的大卡数",
+      "statement": "食品标签以大卡为单位给出能量。阿特沃特系统根据一份食物中蛋白质、碳水化合物和脂肪的克数，以及它们每克的平均大卡数来计算，这些数值来自弹式量热法。用这个求和，就可以核对标签，并比较不同的食物。"
     },
     {
       "id": "system",
       "kind": "definition",
       "section": "5.2",
-      "name": "System",
+      "name": "体系",
       "terms": [
-        "system"
+        "体系"
       ],
-      "statement": "The system is the portion of matter undergoing the chemical or physical change being studied."
+      "statement": "体系是正在研究的化学变化或物理变化所涉及的那部分物质。"
     },
     {
       "id": "surroundings",
       "kind": "definition",
       "section": "5.2",
-      "name": "Surroundings",
+      "name": "环境",
       "terms": [
-        "surroundings"
+        "环境"
       ],
-      "statement": "The surroundings are all the matter other than the system being studied."
+      "statement": "环境是除所研究的体系之外的全部物质。"
     },
     {
       "id": "calorimetry",
       "kind": "definition",
       "section": "5.2",
-      "name": "Calorimetry",
+      "name": "量热法",
       "terms": [
-        "calorimetry"
+        "量热法"
       ],
-      "statement": "Calorimetry is the process of measuring the amount of heat involved in a chemical or physical process."
+      "statement": "量热法是对化学过程或物理过程所涉及的热量进行测量的过程。"
     },
     {
       "id": "calorimeter",
       "kind": "definition",
       "section": "5.2",
-      "name": "Calorimeter",
+      "name": "量热计",
       "terms": [
-        "calorimeter"
+        "量热计"
       ],
-      "statement": "A calorimeter is a device used to measure the amount of heat absorbed or released in a chemical or physical process."
+      "statement": "量热计是用来测量化学过程或物理过程中吸收或放出热量的装置。"
     },
     {
       "id": "bomb-calorimeter",
       "kind": "definition",
       "section": "5.2",
-      "name": "Bomb calorimeter",
+      "name": "弹式量热计",
       "terms": [
-        "bomb calorimeter"
+        "弹式量热计"
       ],
-      "statement": "A bomb calorimeter is a device designed to measure the energy change of a process at constant volume. It is commonly used for reactions, such as combustions, that release large amounts of heat and gaseous products."
+      "statement": "弹式量热计是设计用来测量恒容过程能量变化的装置，常用于燃烧这类放出大量热量并生成气体产物的反应。"
     },
     {
       "id": "nutritional-calorie",
       "kind": "definition",
       "section": "5.2",
-      "name": "Nutritional Calorie",
+      "name": "大卡",
       "terms": [
-        "nutritional calorie (Calorie)"
+        "大卡（Cal）"
       ],
-      "statement": "The nutritional Calorie is the unit used for the energy provided by digestion of foods, defined as 1000 calories, or 1 kilocalorie.",
+      "statement": "大卡是营养学中表示食物消化所提供能量的单位，定义为 1000 卡，即 1 千卡。",
       "forms": [
         {
           "id": "eq-nutritional-calorie",
@@ -4942,11 +4941,11 @@
       "id": "first-law-of-thermodynamics",
       "kind": "axiom",
       "section": "5.3",
-      "name": "First law of thermodynamics",
+      "name": "热力学第一定律",
       "terms": [
-        "first law of thermodynamics"
+        "热力学第一定律"
       ],
-      "statement": "The internal energy of a system changes only through heat flowing into or out of it and work done on or by it. The signs take the system's side: q is positive for heat flowing in and w is positive for work done on the system. A system that loses heat and does work therefore loses internal energy on both counts, as the gases in an engine cylinder do.",
+      "statement": "体系的内能只因热量流入或流出体系，以及对体系做功或体系做功而改变。符号取体系一侧：热量流入时 q 为正，对体系做功时 w 为正。因此，既放出热量又做功的体系，内能在两方面都减少，发动机气缸中的气体就是这样。",
       "forms": [
         {
           "id": "eq-first-law",
@@ -4960,25 +4959,25 @@
       "id": "state-function",
       "kind": "definition",
       "section": "5.3",
-      "name": "State functions",
+      "name": "状态函数",
       "terms": [
-        "state function"
+        "状态函数"
       ],
-      "statement": "The value of a state function depends only on the state a system is in, and not on how that state was reached. Internal energy and enthalpy are state functions, while heat and work are not, just as the altitude of a summit does not depend on the route climbed but the distance walked does. Hess's law rests on this property."
+      "statement": "状态函数的值只取决于体系所处的状态，而与该状态是如何达到的无关。内能和焓是状态函数，热量和功则不是，就像山顶的海拔与攀登的路线无关，而走过的路程却与路线有关。盖斯定律就建立在这一性质上。"
     },
     {
       "id": "enthalpy-change-at-constant-pressure",
       "kind": "result",
       "section": "5.3",
-      "name": "Enthalpy change at constant pressure",
+      "name": "恒压下的焓变",
       "type": "energy",
-      "statement": "Enthalpy is the sum of a system's internal energy and the product of its pressure and volume. For a process at constant pressure whose only work is expansion work, the enthalpy change equals the heat flow, which is why chemists, who usually work at the constant pressure of the atmosphere, use enthalpy to describe the heat of a reaction. The heat measured in a bomb calorimeter, at constant volume, is not ΔH.",
+      "statement": "焓是体系的内能与其压强和体积之积的和。对于恒压且只做膨胀功的过程，焓变等于热量流动，所以通常在大气的恒定压强下工作的化学家用焓来描述反应的热量。在恒容的弹式量热计中测得的热量不是 ΔH。",
       "forms": [
         {
           "id": "eq-dh-qp",
           "latex": "\\Delta H=q_{\\text{p}}",
           "ktex": "\\kdH=\\kqp",
-          "condition": "a process at constant pressure whose only work is caused by expansion or contraction",
+          "condition": "恒压过程，且所做的功仅由膨胀或收缩引起",
           "anchor": "5.3-enthalpy"
         }
       ]
@@ -4987,50 +4986,50 @@
       "id": "thermochemical-equations",
       "kind": "skill",
       "section": "5.3",
-      "name": "Writing and scaling thermochemical equations",
-      "statement": "A thermochemical equation gives ΔH after a balanced equation, for the amounts in moles that the equation shows. Since ΔH is extensive, it scales with the coefficients. It changes sign when you reverse the equation, and it depends on the physical states written. Apply all three rules, and account for the limiting reactant when you turn a measured heat into ΔH."
+      "name": "热化学方程式的书写与换算",
+      "statement": "热化学方程式在配平的方程式之后给出 ΔH，对应于方程式所示的以摩尔计的物质的量。由于 ΔH 是广度性质，它随系数按比例变化；把方程式反过来写，它的符号改变；它还取决于所写的物态。要把这三条规则都用上，并且在把测得的热量化为 ΔH 时考虑限量反应物。"
     },
     {
       "id": "enthalpy-of-combustion",
       "kind": "skill",
       "section": "5.3",
-      "name": "Using a standard enthalpy of combustion",
-      "statement": "The standard enthalpy of combustion is the enthalpy change when 1 mole of a substance burns completely under standard state conditions. With it, and with the conversions of earlier chapters, you can find the heat given by any amount of a fuel, as the value for isooctane gives the heat of 1.00 L of gasoline."
+      "name": "使用标准燃烧焓",
+      "statement": "标准燃烧焓是 1 mol 物质在标准状态条件下完全燃烧时的焓变。有了它，再借助前几章的换算，就能求出任意量的燃料放出的热量，例如由异辛烷的值可以得出 1.00 L 汽油放出的热量。"
     },
     {
       "id": "standard-enthalpy-of-formation",
       "kind": "definition",
       "section": "5.3",
-      "name": "Standard enthalpy of formation",
+      "name": "标准生成焓",
       "symbol": "ΔH_f°",
       "terms": [
-        "standard enthalpy of formation"
+        "标准生成焓"
       ],
       "type": "energy",
-      "statement": "A standard state is an agreed set of reference conditions, 1 bar and 1 M, with 298.15 K assumed, and ΔH° marks an enthalpy change under them. The standard enthalpy of formation is ΔH° for forming exactly 1 mole of a substance from its elements in their most stable states, so an element in its most stable form has a value of zero and the formation equation often carries fractional coefficients."
+      "statement": "标准状态是一组约定的参考条件，即 1 bar 和 1 M，并默认温度为 298.15 K，ΔH° 表示这些条件下的焓变。标准生成焓是由处于最稳定状态的元素生成恰好 1 mol 某物质的 ΔH°，所以处于最稳定形式的元素，其值为零，而生成反应的方程式常带有分数系数。"
     },
     {
       "id": "hess-law",
       "kind": "result",
       "section": "5.3",
-      "name": "Hess’s law",
+      "name": "盖斯定律",
       "terms": [
-        "Hess’s law"
+        "盖斯定律"
       ],
-      "statement": "If a process is the sum of several stepwise processes, the enthalpy change of the total process equals the sum of the enthalpy changes of the steps. You can then find the enthalpy change of a reaction that is hard or dangerous to carry out by adding reactions of known enthalpy change, reversed and scaled as needed."
+      "statement": "如果一个过程是几个分步过程之和，则总过程的焓变等于各步焓变之和。这样，对于难以进行或有危险的反应，就可以把已知焓变的反应按需要反过来写或按比例换算后相加，求出其焓变。"
     },
     {
       "id": "enthalpy-from-formation-enthalpies",
       "kind": "skill",
       "section": "5.3",
-      "name": "Finding a reaction enthalpy from formation enthalpies",
-      "statement": "Apply Hess's law by decomposing the reactants into their elements and re-forming the products. The standard enthalpy change of any reaction is then the sum of n times the enthalpies of formation of the products minus the same sum for the reactants. With the table of Appendix G you can compute ΔH° for reactions that no one has measured directly.",
+      "name": "由生成焓求反应焓变",
+      "statement": "应用盖斯定律：把反应物分解为各自的元素，再重新生成产物。任一反应的标准焓变就等于各产物的生成焓乘以 n 之和，减去反应物的同样之和。借助附录 G 的表，可以计算没有人直接测量过的反应的 ΔH°。",
       "forms": [
         {
           "id": "eq-hess-formation",
           "latex": "\\Delta H_{\\text{reaction}}^{\\circ}=\\sum n\\times\\Delta H_{\\text{f}}^{\\circ}(\\text{products})-\\sum n\\times\\Delta H_{\\text{f}}^{\\circ}(\\text{reactants})",
           "ktex": "\\kdHo_{\\text{reaction}}=\\sum n\\times\\kdHf(\\text{products})-\\sum n\\times\\kdHf(\\text{reactants})",
-          "condition": "standard state conditions, with n the stoichiometric coefficients of the balanced equation",
+          "condition": "标准状态条件，n 为配平的方程式中的化学计量系数",
           "anchor": "5.3-formation-enthalpies"
         }
       ]
@@ -5039,39 +5038,39 @@
       "id": "chemical-thermodynamics",
       "kind": "definition",
       "section": "5.3",
-      "name": "Chemical thermodynamics",
+      "name": "化学热力学",
       "terms": [
-        "chemical thermodynamics"
+        "化学热力学"
       ],
-      "statement": "Chemical thermodynamics is the area of science that deals with the relationships between heat, work, and all forms of energy associated with chemical and physical processes."
+      "statement": "化学热力学是研究与化学过程和物理过程相关的热量、功及各种形式能量之间关系的科学领域。"
     },
     {
       "id": "internal-energy",
       "kind": "definition",
       "section": "5.3",
-      "name": "Internal energy",
+      "name": "内能",
       "symbol": "U",
       "terms": [
-        "internal energy"
+        "内能"
       ],
       "type": "energy",
-      "statement": "The internal energy of a system is the total of all possible kinds of energy present in the substances it contains."
+      "statement": "体系的内能是其所含物质中存在的所有可能形式的能量的总和。"
     },
     {
       "id": "expansion-work",
       "kind": "definition",
       "section": "5.3",
-      "name": "Expansion work",
+      "name": "膨胀功",
       "terms": [
-        "expansion work (pressure-volume work)"
+        "膨胀功（压强–体积功）"
       ],
-      "statement": "Expansion work, or pressure-volume work, is the work done as a system expands or contracts against an external pressure.",
+      "statement": "膨胀功，或称压强–体积功，是体系抵抗外压膨胀或收缩时所做的功。",
       "forms": [
         {
           "id": "eq-expansion-work",
           "latex": "P\\Delta V=-w",
           "ktex": "\\kP\\kdV=-\\kwork",
-          "condition": "expansion or pressure-volume work",
+          "condition": "膨胀功或压强–体积功",
           "anchor": "5.3-enthalpy"
         }
       ]
@@ -5080,13 +5079,13 @@
       "id": "enthalpy",
       "kind": "definition",
       "section": "5.3",
-      "name": "Enthalpy",
+      "name": "焓",
       "symbol": "H",
       "terms": [
-        "enthalpy"
+        "焓"
       ],
       "type": "energy",
-      "statement": "The enthalpy of a system is the sum of its internal energy and the product of its pressure and volume.",
+      "statement": "体系的焓是其内能与压强和体积之积的和。",
       "forms": [
         {
           "id": "eq-enthalpy",
@@ -5100,19 +5099,19 @@
       "id": "enthalpy-change",
       "kind": "definition",
       "section": "5.3",
-      "name": "Enthalpy change",
+      "name": "焓变",
       "symbol": "ΔH",
       "terms": [
-        "enthalpy change"
+        "焓变"
       ],
       "type": "energy",
-      "statement": "The enthalpy change of a process is the change in the enthalpy of the system, equal to the heat it releases or absorbs when the process takes place at constant pressure.",
+      "statement": "一个过程的焓变是体系焓的变化，当过程在恒压下进行时，它等于体系放出或吸收的热量。",
       "forms": [
         {
           "id": "eq-enthalpy-change",
           "latex": "\\Delta H=\\Delta U+P\\Delta V",
           "ktex": "\\kdH=\\kdU+\\kP\\kdV",
-          "condition": "a process at constant pressure",
+          "condition": "恒压过程",
           "anchor": "5.3-enthalpy"
         }
       ]
@@ -5121,33 +5120,33 @@
       "id": "standard-state",
       "kind": "definition",
       "section": "5.3",
-      "name": "Standard state",
+      "name": "标准状态",
       "terms": [
-        "standard state"
+        "标准状态"
       ],
-      "statement": "A standard state is a set of physical conditions accepted as common reference conditions for reporting thermodynamic properties: 1 bar of pressure and 1 M concentration, with a temperature of 298.15 K assumed. A degree sign on an enthalpy change marks a process under these conditions."
+      "statement": "标准状态是被公认为报告热力学性质的共同参考条件的一组物理条件：压强 1 bar、浓度 1 M，并默认温度为 298.15 K。焓变符号上的度符号（°）表示该过程在这些条件下进行。"
     },
     {
       "id": "hydrocarbon",
       "kind": "definition",
       "section": "5.3",
-      "name": "Hydrocarbon",
+      "name": "烃",
       "terms": [
-        "hydrocarbon"
+        "烃"
       ],
-      "statement": "A hydrocarbon is a compound composed only of hydrogen and carbon, the major component of fossil fuels."
+      "statement": "烃是只由氢和碳组成的化合物，是化石燃料的主要成分。"
     },
     {
       "id": "standard-enthalpy-of-combustion",
       "kind": "definition",
       "section": "5.3",
-      "name": "Standard enthalpy of combustion",
+      "name": "标准燃烧焓",
       "symbol": "ΔH_c°",
       "terms": [
-        "standard enthalpy of combustion"
+        "标准燃烧焓"
       ],
       "type": "energy",
-      "statement": "The standard enthalpy of combustion of a substance is the enthalpy change when 1 mole of it undergoes complete combustion under standard state conditions."
+      "statement": "物质的标准燃烧焓是 1 mol 该物质在标准状态条件下完全燃烧时的焓变。"
     },
     {
       "id": "formula-mass",
@@ -6154,250 +6153,250 @@
       "id": "valence-bond-theory",
       "kind": "idea",
       "section": "8.1",
-      "name": "Valence bond theory",
+      "name": "价键理论",
       "terms": [
-        "valence bond theory"
+        "价键理论"
       ],
-      "statement": "Valence bond theory describes a covalent bond as the overlap of two half-filled atomic orbitals on different atoms, so that the single electrons in each orbital combine to form a pair shared between the two nuclei. The mutual attraction between this electron pair and the two positively charged nuclei is what holds the atoms together, and the strength of the bond depends on how much the orbitals overlap."
+      "statement": "价键理论把共价键描述为不同原子上两个半充满原子轨道的重叠，使各轨道中的单电子结合成由两个原子核共享的电子对。这对电子与两个带正电的原子核之间的相互吸引把原子维系在一起，键的强度取决于轨道重叠的程度。"
     },
     {
       "id": "bond-distance-and-bond-energy",
       "kind": "result",
       "section": "8.1",
-      "name": "Bond distance and bond energy",
-      "statement": "As two atoms approach, the energy of the system first falls, because each electron feels the attraction of the other nucleus, and then rises steeply, because the repulsions between the nuclei and between the electrons grow stronger than the attractions. The bond distance is the distance at which the energy is lowest, and the bond energy is the difference between that minimum and the energy of the separated atoms, which is the energy released when the bond forms and needed to break it."
+      "name": "键长与键能",
+      "statement": "两个原子靠近时，体系的能量先下降，因为每个电子都受到另一个原子核的吸引；随后能量陡然上升，因为原子核之间以及电子之间的排斥作用变得比吸引作用更强。键长是能量最低时的核间距离，键能是这一能量最低值与分离原子能量之差，也就是成键时释放的能量，以及断键时所需的能量。"
     },
     {
       "id": "sigma-and-pi-bonds",
       "kind": "definition",
       "section": "8.1",
-      "name": "Sigma and pi bonds",
-      "statement": "A σ bond forms when orbitals overlap end to end along the internuclear axis, as two s orbitals, an s and a p orbital, or two p orbitals pointed at each other do. Its electron density is concentrated on the line between the nuclei. A π bond forms from the side-by-side overlap of two p orbitals. Its electron density lies on opposite sides of the internuclear axis, with a node along the axis itself. End-to-end overlap can be greater, so a π bond is generally weaker than a σ bond between the same two atoms."
+      "name": "σ 键与 π 键",
+      "statement": "当轨道沿核间轴头碰头重叠时形成 σ 键，例如两个 s 轨道、一个 s 轨道与一个 p 轨道，或两个相向的 p 轨道的重叠。σ 键的电子密度集中在两个原子核的连线上。π 键由两个 p 轨道肩并肩重叠形成，其电子密度位于核间轴的两侧，沿轴本身有一个节面。头碰头的重叠可以更大，所以在同样两个原子之间，π 键通常比 σ 键弱。"
     },
     {
       "id": "multiple-bond-composition",
       "kind": "result",
       "section": "8.1",
-      "name": "Makeup of multiple bonds",
-      "statement": "Between any two atoms the first bond formed is always a σ bond, and there can be only one σ bond in any one location. A single bond is therefore one σ bond, a double bond is one σ bond and one π bond, and a triple bond is one σ bond and two π bonds, which is why a carbon-carbon double bond is stronger than a single bond but not twice as strong."
+      "name": "多重键的组成",
+      "statement": "在任意两个原子之间，最先形成的键总是 σ 键，而且同一位置上只能有一个 σ 键。因此单键是一个 σ 键，双键是一个 σ 键和一个 π 键，三键是一个 σ 键和两个 π 键，这就是碳碳双键比单键强、但不是单键两倍的原因。"
     },
     {
       "id": "count-sigma-and-pi-bonds",
       "kind": "skill",
       "section": "8.1",
-      "name": "Counting sigma and pi bonds",
-      "statement": "Count the σ and π bonds of a molecule from its Lewis structure: every bond line contributes one σ bond, each double bond adds one π bond, and each triple bond adds two."
+      "name": "统计 σ 键和 π 键的数目",
+      "statement": "根据路易斯结构式统计分子中 σ 键和 π 键的数目：每条键线贡献一个 σ 键，每个双键再增加一个 π 键，每个三键再增加两个 π 键。"
     },
     {
       "id": "orbital-overlap",
       "kind": "definition",
       "section": "8.1",
-      "name": "Overlap",
+      "name": "重叠",
       "terms": [
-        "overlap"
+        "重叠"
       ],
-      "statement": "Overlap is the coexistence of orbitals from two different atoms in the same region of space, which leads to the formation of a covalent bond."
+      "statement": "重叠是指来自两个不同原子的轨道共存于空间的同一区域，从而形成共价键。"
     },
     {
       "id": "sigma-bond",
       "kind": "definition",
       "section": "8.1",
-      "name": "Sigma bond",
+      "name": "σ 键",
       "terms": [
-        "sigma bond (σ bond)"
+        "σ 键"
       ],
-      "statement": "A sigma bond is a covalent bond formed by the overlap of atomic orbitals along the internuclear axis."
+      "statement": "σ 键是由原子轨道沿核间轴重叠形成的共价键。"
     },
     {
       "id": "pi-bond",
       "kind": "definition",
       "section": "8.1",
-      "name": "Pi bond",
+      "name": "π 键",
       "terms": [
-        "pi bond (π bond)"
+        "π 键"
       ],
-      "statement": "A pi bond is a covalent bond formed by the side-by-side overlap of atomic orbitals, with its electron density on opposite sides of the internuclear axis and a node along the axis itself."
+      "statement": "π 键是由原子轨道肩并肩重叠形成的共价键，其电子密度位于核间轴的两侧，沿轴本身有一个节面。"
     },
     {
       "id": "hybridization",
       "kind": "idea",
       "section": "8.2",
-      "name": "Hybridization of atomic orbitals",
+      "name": "原子轨道的杂化",
       "terms": [
-        "hybridization"
+        "杂化"
       ],
-      "statement": "Hybridization is a model of the changes in the atomic orbitals of an atom when it forms a covalent compound. It combines the wave functions of the atom's valence orbitals into a new set of hybrid orbitals whose directions match the observed geometry, as the 104.5° angle of water requires and unmodified 2p orbitals at 90° do not."
+      "statement": "杂化是描述原子形成共价化合物时原子轨道发生变化的一种模型。它把原子价轨道的波函数组合成一组新的杂化轨道，这组杂化轨道的方向与观测到的几何构型相符，正如水的 104.5° 键角所要求的那样，而未经改变的、彼此成 90° 的 2p 轨道则不符合。"
     },
     {
       "id": "hybrid-orbital-properties",
       "kind": "idea",
       "section": "8.2",
-      "name": "Properties of hybrid orbitals",
-      "statement": "Hybrid orbitals exist only in covalently bonded atoms, they have shapes and orientations very different from those of the atomic orbitals they come from, and a set contains as many hybrid orbitals as atomic orbitals were combined to make it. All the orbitals of a set are equivalent in shape and energy, the kind of set depends on the atom's electron-pair geometry, and hybrid orbitals form σ bonds while unhybridized orbitals form π bonds."
+      "name": "杂化轨道的性质",
+      "statement": "杂化轨道只存在于成键的原子中，其形状和取向与它们所源自的原子轨道大不相同，一组杂化轨道的数目等于参与组合的原子轨道的数目。同一组中的所有轨道，形状和能量都相同，这组轨道的类型取决于原子的电子对构型，杂化轨道形成 σ 键，而未杂化的轨道形成 π 键。"
     },
     {
       "id": "sp-sp2-sp3-hybrid-orbitals",
       "kind": "idea",
       "section": "8.2",
-      "name": "sp, sp², and sp³ hybrid orbitals",
-      "statement": "Mixing the valence s orbital with one p orbital gives two sp hybrids pointing 180° apart; with two p orbitals, three sp² hybrids at 120° in a plane, leaving one unhybridized p orbital perpendicular to it; with all three p orbitals, four sp³ hybrids pointing to the corners of a tetrahedron at 109.5°. Each hybrid holds a bonding pair or a lone pair, so the linear BeCl2, the trigonal planar BH3 and the tetrahedral CH4, NH3 and H2O are all described this way."
+      "name": "sp、sp² 和 sp³ 杂化轨道",
+      "statement": "价层 s 轨道与一个 p 轨道混合，得到两个相距 180° 的 sp 杂化轨道；与两个 p 轨道混合，得到位于同一平面内、彼此成 120° 的三个 sp² 杂化轨道，并留下一个垂直于该平面的未杂化 p 轨道；与全部三个 p 轨道混合，得到指向四面体顶点、彼此成 109.5° 的四个 sp³ 杂化轨道。每个杂化轨道容纳一个成键电子对或一个孤电子对，因此直线形的 BeCl2、平面三角形的 BH3，以及四面体形的 CH4、NH3 和 H2O，都可以这样来描述。"
     },
     {
       "id": "sp3d-and-sp3d2-hybrid-orbitals",
       "kind": "idea",
       "section": "8.2",
-      "name": "sp³d and sp³d² hybrid orbitals",
-      "statement": "Five hybrid orbitals directed to the corners of a trigonal bipyramid need one d orbital as well as the s and three p orbitals, and six directed to the corners of an octahedron need two d orbitals. These hybridizations are possible only for atoms with d orbitals in their valence subshells, which rules out every atom of the first and second periods."
+      "name": "sp³d 和 sp³d² 杂化轨道",
+      "statement": "指向三角双锥顶点的五个杂化轨道，除 s 轨道和三个 p 轨道外还需要一个 d 轨道；指向八面体顶点的六个杂化轨道则需要两个 d 轨道。只有价层亚层中含有 d 轨道的原子才可能发生这类杂化，因此第一周期和第二周期的原子都不可能。"
     },
     {
       "id": "hybrid-orbital-energy-diagram",
       "kind": "skill",
       "section": "8.2",
-      "name": "Drawing hybridization on an energy diagram",
-      "statement": "Draw an orbital energy-level diagram with each orbital as a horizontal line at its energy and each electron as an arrow, setting the isolated atom beside the bonded one to show the valence electrons redistributed into the hybrid set. The diagram shows which hybrids are half filled and ready to pair with an electron from another atom, and which orbitals stay unhybridized."
+      "name": "在能级图上表示杂化",
+      "statement": "画出轨道能级图，每个轨道用一条处于相应能量的水平线表示，每个电子用一个箭头表示，把孤立原子与成键后的原子并排放置，以显示价电子在杂化轨道组中的重新分布。这样的图表明哪些杂化轨道是半充满的、可以与另一原子的电子配对，以及哪些轨道仍未杂化。"
     },
     {
       "id": "assign-hybridization",
       "kind": "skill",
       "section": "8.2",
-      "name": "Assigning hybridization",
-      "statement": "The hybridization of an atom follows from the number of regions of electron density around it. Write the Lewis structure and count the regions, with single bonds, multiple bonds, radicals and lone pairs each counting as one. Then read the matching set from the table: two regions give sp, three sp², four sp³, five sp³d and six sp³d². VSEPR theory predicts the shape, and the hybrid orbitals explain how that shape forms."
+      "name": "确定杂化类型",
+      "statement": "原子的杂化类型由其周围电子密度区域的数目决定。先写出路易斯结构式，再数出区域的数目，其中单键、多重键、自由基和孤电子对各算一个区域。然后从表中读出对应的杂化轨道组：两个区域为 sp，三个为 sp²，四个为 sp³，五个为 sp³d，六个为 sp³d²。VSEPR 理论预测形状，而杂化轨道则解释这一形状是怎样形成的。"
     },
     {
       "id": "limits-of-hybridization",
       "kind": "idea",
       "section": "8.2",
-      "name": "Limits of hybridization",
-      "statement": "Hybridization was devised to rationalize observed geometries, and it works well for small central atoms whose valence pairs are close together. For larger central atoms the pairs are farther from the nucleus and repel less, and the observed angles approach those of unhybridized p orbitals, so we invoke hybridization only where it is needed to explain the structure."
+      "name": "杂化的局限性",
+      "statement": "杂化是为了解释观测到的几何构型而提出的，对价电子对靠得很近的较小的中心原子效果很好。对于较大的中心原子，价电子对离原子核较远，相互排斥较弱，观测到的键角接近未杂化 p 轨道之间的键角，所以只有在需要用杂化来解释结构时，我们才使用它。"
     },
     {
       "id": "hybrid-orbital",
       "kind": "definition",
       "section": "8.2",
-      "name": "Hybrid orbital",
+      "name": "杂化轨道",
       "terms": [
-        "hybrid orbital"
+        "杂化轨道"
       ],
-      "statement": "A hybrid orbital is an orbital created by combining atomic orbitals on a central atom."
+      "statement": "杂化轨道是由中心原子上的原子轨道组合而成的轨道。"
     },
     {
       "id": "sp-hybrid-orbital",
       "kind": "definition",
       "section": "8.2",
-      "name": "sp hybrid orbital",
+      "name": "sp 杂化轨道",
       "terms": [
-        "sp hybrid orbital"
+        "sp 杂化轨道"
       ],
-      "statement": "An sp hybrid orbital is one of a set of two orbitals with a linear arrangement that results from combining one s and one p orbital."
+      "statement": "sp 杂化轨道是由一个 s 轨道和一个 p 轨道组合而成的、呈直线形排布的两个轨道中的一个。"
     },
     {
       "id": "sp2-hybrid-orbital",
       "kind": "definition",
       "section": "8.2",
-      "name": "sp² hybrid orbital",
+      "name": "sp² 杂化轨道",
       "terms": [
-        "sp² hybrid orbital"
+        "sp² 杂化轨道"
       ],
-      "statement": "An sp² hybrid orbital is one of a set of three orbitals with a trigonal planar arrangement that results from combining one s and two p orbitals."
+      "statement": "sp² 杂化轨道是由一个 s 轨道和两个 p 轨道组合而成的、呈平面三角形排布的三个轨道中的一个。"
     },
     {
       "id": "sp3-hybrid-orbital",
       "kind": "definition",
       "section": "8.2",
-      "name": "sp³ hybrid orbital",
+      "name": "sp³ 杂化轨道",
       "terms": [
-        "sp³ hybrid orbital"
+        "sp³ 杂化轨道"
       ],
-      "statement": "An sp³ hybrid orbital is one of a set of four orbitals with a tetrahedral arrangement that results from combining one s and three p orbitals."
+      "statement": "sp³ 杂化轨道是由一个 s 轨道和三个 p 轨道组合而成的、呈四面体形排布的四个轨道中的一个。"
     },
     {
       "id": "sp3d-hybrid-orbital",
       "kind": "definition",
       "section": "8.2",
-      "name": "sp³d hybrid orbital",
+      "name": "sp³d 杂化轨道",
       "terms": [
-        "sp³d hybrid orbital"
+        "sp³d 杂化轨道"
       ],
-      "statement": "An sp³d hybrid orbital is one of a set of five orbitals with a trigonal bipyramidal arrangement that results from combining one s, three p, and one d orbital."
+      "statement": "sp³d 杂化轨道是由一个 s 轨道、三个 p 轨道和一个 d 轨道组合而成的、呈三角双锥形排布的五个轨道中的一个。"
     },
     {
       "id": "sp3d2-hybrid-orbital",
       "kind": "definition",
       "section": "8.2",
-      "name": "sp³d² hybrid orbital",
+      "name": "sp³d² 杂化轨道",
       "terms": [
-        "sp³d² hybrid orbital"
+        "sp³d² 杂化轨道"
       ],
-      "statement": "An sp³d² hybrid orbital is one of a set of six orbitals with an octahedral arrangement that results from combining one s, three p, and two d orbitals."
+      "statement": "sp³d² 杂化轨道是由一个 s 轨道、三个 p 轨道和两个 d 轨道组合而成的、呈八面体形排布的六个轨道中的一个。"
     },
     {
       "id": "pi-bonds-from-unhybridized-orbitals",
       "kind": "idea",
       "section": "8.3",
-      "name": "Multiple bonds from unhybridized orbitals",
-      "statement": "In a molecule with a double or a triple bond, the hybrid orbitals of each atom form the σ framework and the unhybridized p orbitals left over overlap side by side to form the π bonds. Each carbon of ethene uses three sp² hybrids for its σ bonds and one p orbital, perpendicular to the plane, for its π bond; each carbon of acetylene uses two sp hybrids for σ bonds and two perpendicular p orbitals for two π bonds."
+      "name": "由未杂化轨道形成的多重键",
+      "statement": "在含有双键或三键的分子中，每个原子的杂化轨道形成 σ 骨架，剩下的未杂化 p 轨道则肩并肩重叠形成 π 键。乙烯的每个碳原子用三个 sp² 杂化轨道形成 σ 键，用一个垂直于分子平面的 p 轨道形成 π 键；乙炔的每个碳原子用两个 sp 杂化轨道形成 σ 键，用两个相互垂直的 p 轨道形成两个 π 键。"
     },
     {
       "id": "restricted-rotation-about-pi-bonds",
       "kind": "result",
       "section": "8.3",
-      "name": "Restricted rotation about a double bond",
-      "statement": "Rotation about a single bond occurs easily, because the end-to-end overlap of a σ bond is symmetric about the internuclear axis and does not change as the atoms turn. Rotation about a double bond would twist the two p orbitals out of line and destroy their side-by-side overlap, essentially breaking the π bond, which is why all six atoms of ethene lie in one plane."
+      "name": "绕双键旋转受限",
+      "statement": "绕单键的旋转很容易发生，因为 σ 键的头碰头重叠关于核间轴对称，原子转动时不会改变。绕双键旋转则会使两个 p 轨道扭得不在一条直线上，破坏它们肩并肩的重叠，实质上等于断开 π 键，这就是乙烯的六个原子处于同一平面的原因。"
     },
     {
       "id": "resonance-and-delocalization",
       "kind": "result",
       "section": "8.3",
-      "name": "Resonance and hybridization",
-      "statement": "Hybridization involves only σ bonds, lone pairs and single unpaired electrons, and resonance forms differ only in the arrangement of π bonds, which uses the unhybridized orbitals. Resonance therefore does not change the hybridization we assign, and either resonance form gives the same answer. The π electrons themselves are not located in one form or the other but are delocalized over the molecule, which valence bond theory does not easily describe."
+      "name": "共振与杂化",
+      "statement": "杂化只涉及 σ 键、孤电子对和单个未成对电子，而共振式只是 π 键的排布不同，π 键用的是未杂化的轨道。因此共振不会改变我们所指定的杂化类型，用任何一个共振式得到的结果都相同。π 电子本身并不定域在某一个共振式中，而是离域于整个分子，价键理论不容易描述这一点。"
     },
     {
       "id": "paramagnetism-and-diamagnetism",
       "kind": "definition",
       "section": "8.4",
-      "name": "Paramagnetism and diamagnetism",
-      "statement": "A substance whose molecules have unpaired electrons is paramagnetic and is attracted into a magnetic field, while one whose electrons are all paired is diamagnetic and is weakly repelled; neither is a permanent magnet. Liquid oxygen collects between the poles of a magnet, which shows that the O2 molecule has two unpaired electrons although its Lewis structure pairs every electron."
+      "name": "顺磁性与抗磁性",
+      "statement": "分子中含有未成对电子的物质是顺磁性的，会被吸入磁场；电子全部成对的物质是抗磁性的，受到微弱的排斥；两者都不是永久磁体。液氧会聚集在磁铁的两极之间，表明 O2 分子有两个未成对电子，尽管它的路易斯结构式使每个电子都成了对。"
     },
     {
       "id": "molecular-orbital-theory",
       "kind": "idea",
       "section": "8.4",
-      "name": "Molecular orbital theory",
+      "name": "分子轨道理论",
       "terms": [
-        "molecular orbital theory"
+        "分子轨道理论"
       ],
-      "statement": "Molecular orbital theory describes the electrons of a molecule by molecular orbitals, formed by the linear combination of atomic orbitals, that extend over the whole molecule rather than belonging to one atom. Like an atomic orbital, a molecular orbital has a quantized energy and holds at most two electrons of opposite spin. The theory accounts for things valence bond theory cannot, among them the paramagnetism of oxygen and bonding described by several resonance forms."
+      "statement": "分子轨道理论用分子轨道来描述分子中的电子，分子轨道由原子轨道线性组合而成，扩展到整个分子，而不是属于某一个原子。与原子轨道一样，分子轨道的能量是量子化的，最多容纳两个自旋相反的电子。该理论能解释价键理论无法解释的现象，其中包括氧的顺磁性，以及用多个共振式描述的成键情况。"
     },
     {
       "id": "bonding-and-antibonding-orbitals",
       "kind": "idea",
       "section": "8.4",
-      "name": "Bonding and antibonding molecular orbitals",
-      "statement": "Combining two atomic wave functions in phase is constructive interference and gives a bonding orbital, lower in energy than the atomic orbitals, with its electron density between the nuclei. Combining them out of phase is destructive interference and gives an antibonding orbital, higher in energy, with a node between the nuclei. Two atomic orbitals always give two molecular orbitals, one of each kind, and an asterisk marks the antibonding one."
+      "name": "成键分子轨道与反键分子轨道",
+      "statement": "两个原子的波函数同相组合是相长干涉，得到成键轨道，其能量低于原子轨道，电子密度位于两个原子核之间。两者反相组合是相消干涉，得到反键轨道，其能量较高，两个原子核之间有一个节点。两个原子轨道总是得到两个分子轨道，每种各一个，反键轨道用星号标记。"
     },
     {
       "id": "sigma-and-pi-molecular-orbitals",
       "kind": "idea",
       "section": "8.4",
-      "name": "σ and π molecular orbitals",
-      "statement": "Molecular orbitals along the internuclear axis are σ orbitals, formed from s orbitals or from p orbitals overlapping end to end; those formed from p orbitals side by side, with electron density on opposite sides of the axis, are π orbitals. With the atoms on the x-axis, the six p orbitals of two atoms give σpx and σpx*, and two degenerate pairs of π and π* orbitals from the py and pz orbitals."
+      "name": "σ 分子轨道与 π 分子轨道",
+      "statement": "沿核间轴的分子轨道是 σ 轨道，由 s 轨道或头碰头重叠的 p 轨道形成；由肩并肩的 p 轨道形成、电子密度位于轴两侧的是 π 轨道。设原子位于 x 轴上，两个原子的六个 p 轨道给出 σpx 和 σpx*，以及由 py 和 pz 轨道形成的两对简并的 π 和 π* 轨道。"
     },
     {
       "id": "molecular-orbital-diagram",
       "kind": "skill",
       "section": "8.4",
-      "name": "Filling a molecular orbital diagram",
-      "statement": "A molecular orbital diagram sets the atomic orbitals of the two atoms at the sides and the molecular orbitals they form in the center, each as a line at its energy. Electrons fill it as they fill an atom: lower-energy orbitals first by the Aufbau principle, singly across degenerate orbitals before pairing by Hund's rule, two to an orbital with opposite spins. The filled diagram gives the molecular electron configuration, written with superscripts and with degenerate orbitals in parentheses."
+      "name": "填充分子轨道图",
+      "statement": "分子轨道图把两个原子的原子轨道放在两侧，把它们形成的分子轨道放在中间，每个轨道都用一条处于相应能量的线表示。电子的填充方式与在原子中相同：按构造原理先填能量较低的轨道，按洪特规则先分占简并轨道、再配对，每个轨道容纳两个自旋相反的电子。填好的图给出分子的电子构型，写法是带上标，并把简并轨道放在圆括号内。"
     },
     {
       "id": "bond-order",
       "kind": "definition",
       "section": "8.4",
-      "name": "Bond order",
+      "name": "键级",
       "terms": [
-        "bond order"
+        "键级"
       ],
-      "statement": "In molecular orbital theory the bond order is the number of bonding electrons minus the number of antibonding electrons, divided by two, since a bond consists of two electrons. It usually agrees with the count of bonds in a Lewis structure, it is a guide to the strength of a bond between two given atoms, and a bond order of zero means that no stable bond forms.",
+      "statement": "在分子轨道理论中，键级等于成键电子数减去反键电子数，再除以二，因为一个键由两个电子构成。它通常与路易斯结构式中键的数目一致，是判断两个给定原子之间键的强度的一个依据，键级为零表示不会形成稳定的键。",
       "forms": [
         {
           "id": "eq-bond-order",
@@ -6425,145 +6424,145 @@
       "id": "s-p-mixing",
       "kind": "idea",
       "section": "8.4",
-      "name": "s-p mixing",
+      "name": "s-p 混合",
       "terms": [
-        "s-p mixing"
+        "s-p 混合"
       ],
-      "statement": "When the 2s and 2p orbitals of an atom are close in energy, the σs and σp wave functions combine, lowering the σs orbital and raising the σp orbital above the πp pair. The energy gap is small from lithium to nitrogen, so their diatomic molecules have the σp orbital above the π orbitals, and large for oxygen, fluorine and neon, whose diagrams keep the expected order. s-p mixing creates no new orbitals; it only shifts the energies of the existing ones."
+      "statement": "当原子的 2s 和 2p 轨道能量接近时，σs 和 σp 的波函数发生组合，使 σs 轨道降低，使 σp 轨道升高到 πp 对之上。从锂到氮，这一能隙很小，所以它们的双原子分子的 σp 轨道高于 π 轨道；对氧、氟和氖，能隙较大，它们的轨道图保持预期的顺序。s-p 混合不产生新的轨道，只是改变现有轨道的能量。"
     },
     {
       "id": "diatomic-molecule-configurations",
       "kind": "skill",
       "section": "8.4",
-      "name": "Predicting diatomic configurations",
-      "statement": "For a homonuclear diatomic molecule or ion of the first or second period, choose the diagram with or without s-p mixing, add or remove electrons for the charge, and fill it. Read off the configuration, the bond order and the number of unpaired electrons. The result predicts whether the species is stable and whether it is paramagnetic, and it explains the two unpaired electrons of O2 that the Lewis structure missed."
+      "name": "预测双原子分子的电子构型",
+      "statement": "对于第一周期或第二周期元素形成的同核双原子分子或离子，选择有 s-p 混合或没有 s-p 混合的轨道图，按电荷增减电子，再进行填充。由此读出电子构型、键级和未成对电子的数目。结果可以预测该物种是否稳定、是否具有顺磁性，也解释了 O2 中路易斯结构式所遗漏的两个未成对电子。"
     },
     {
       "id": "paramagnetism",
       "kind": "definition",
       "section": "8.4",
-      "name": "Paramagnetism",
+      "name": "顺磁性",
       "terms": [
-        "paramagnetism"
+        "顺磁性"
       ],
-      "statement": "Paramagnetism is the phenomenon in which a material that is not magnetic itself is attracted to a magnetic field. It occurs when the material contains unpaired electrons."
+      "statement": "顺磁性是指本身没有磁性的材料被磁场吸引的现象。当材料中含有未成对电子时，就会出现这种现象。"
     },
     {
       "id": "diamagnetism",
       "kind": "definition",
       "section": "8.4",
-      "name": "Diamagnetism",
+      "name": "抗磁性",
       "terms": [
-        "diamagnetism"
+        "抗磁性"
       ],
-      "statement": "Diamagnetism is the phenomenon in which a material that is not magnetic itself is repelled by a magnetic field. It occurs when all the electrons of the material are paired."
+      "statement": "抗磁性是指本身没有磁性的材料被磁场排斥的现象。当材料中的所有电子都成对时，就会出现这种现象。"
     },
     {
       "id": "molecular-orbital",
       "kind": "definition",
       "section": "8.4",
-      "name": "Molecular orbital",
+      "name": "分子轨道",
       "terms": [
-        "molecular orbital"
+        "分子轨道"
       ],
-      "statement": "A molecular orbital is a region of space in a molecule in which an electron has a high probability of being found. It extends over the whole molecule and holds at most two electrons of opposite spin."
+      "statement": "分子轨道是分子中电子出现概率较高的一个空间区域。它扩展到整个分子，最多容纳两个自旋相反的电子。"
     },
     {
       "id": "linear-combination-of-atomic-orbitals",
       "kind": "definition",
       "section": "8.4",
-      "name": "Linear combination of atomic orbitals",
+      "name": "原子轨道线性组合",
       "terms": [
-        "linear combination of atomic orbitals"
+        "原子轨道线性组合"
       ],
-      "statement": "The linear combination of atomic orbitals is the technique of combining the wave functions of atomic orbitals, by adding or subtracting them, to create molecular orbitals."
+      "statement": "原子轨道线性组合是把原子轨道的波函数相加或相减，以此产生分子轨道的方法。"
     },
     {
       "id": "homonuclear-diatomic-molecule",
       "kind": "definition",
       "section": "8.4",
-      "name": "Homonuclear diatomic molecule",
+      "name": "同核双原子分子",
       "terms": [
-        "homonuclear diatomic molecule"
+        "同核双原子分子"
       ],
-      "statement": "A homonuclear diatomic molecule is a molecule consisting of two identical atoms."
+      "statement": "同核双原子分子是由两个相同的原子构成的分子。"
     },
     {
       "id": "bonding-orbital",
       "kind": "definition",
       "section": "8.4",
-      "name": "Bonding orbital",
+      "name": "成键轨道",
       "terms": [
-        "bonding orbital"
+        "成键轨道"
       ],
-      "statement": "A bonding orbital is a molecular orbital located between two nuclei. Electrons in a bonding orbital stabilize a molecule."
+      "statement": "成键轨道是位于两个原子核之间的分子轨道。成键轨道中的电子使分子稳定。"
     },
     {
       "id": "antibonding-orbital",
       "kind": "definition",
       "section": "8.4",
-      "name": "Antibonding orbital",
+      "name": "反键轨道",
       "terms": [
-        "antibonding orbital"
+        "反键轨道"
       ],
-      "statement": "An antibonding orbital is a molecular orbital located outside the region between two nuclei, with a node between them. Electrons in an antibonding orbital destabilize a molecule."
+      "statement": "反键轨道是位于两个原子核之间区域以外的分子轨道，两个原子核之间有一个节点。反键轨道中的电子使分子不稳定。"
     },
     {
       "id": "sigma-bonding-orbital",
       "kind": "definition",
       "section": "8.4",
-      "name": "σ bonding orbital",
+      "name": "σ 成键轨道",
       "terms": [
-        "σ bonding orbital"
+        "σ 成键轨道"
       ],
-      "statement": "A σ bonding orbital is a molecular orbital in which the electron density is found along the axis of the bond."
+      "statement": "σ 成键轨道是电子密度位于键轴上的分子轨道。"
     },
     {
       "id": "sigma-antibonding-orbital",
       "kind": "definition",
       "section": "8.4",
-      "name": "σ* antibonding orbital",
+      "name": "σ* 反键轨道",
       "terms": [
-        "σ* bonding orbital"
+        "σ* 反键轨道"
       ],
-      "statement": "A σ* orbital is an antibonding molecular orbital formed by the out-of-phase overlap of atomic orbitals along the axis of the bond, which creates a node between the nuclei."
+      "statement": "σ* 轨道是由原子轨道沿键轴反相重叠形成的反键分子轨道，两个原子核之间有一个节点。"
     },
     {
       "id": "pi-bonding-orbital",
       "kind": "definition",
       "section": "8.4",
-      "name": "π bonding orbital",
+      "name": "π 成键轨道",
       "terms": [
-        "π bonding orbital"
+        "π 成键轨道"
       ],
-      "statement": "A π bonding orbital is a molecular orbital formed by the side-by-side overlap of atomic orbitals, in which the electron density is found on opposite sides of the internuclear axis."
+      "statement": "π 成键轨道是由原子轨道肩并肩重叠形成的分子轨道，其电子密度位于核间轴的两侧。"
     },
     {
       "id": "pi-antibonding-orbital",
       "kind": "definition",
       "section": "8.4",
-      "name": "π* antibonding orbital",
+      "name": "π* 反键轨道",
       "terms": [
-        "π* bonding orbital"
+        "π* 反键轨道"
       ],
-      "statement": "A π* orbital is an antibonding molecular orbital formed by the out-of-phase side-by-side overlap of atomic orbitals, in which the electron density is found on opposite sides of the internuclear axis and there is a node between the nuclei."
+      "statement": "π* 轨道是由原子轨道肩并肩反相重叠形成的反键分子轨道，其电子密度位于核间轴的两侧，两个原子核之间有一个节点。"
     },
     {
       "id": "molecular-orbital-energy-diagram",
       "kind": "definition",
       "section": "8.4",
-      "name": "Molecular orbital diagram",
+      "name": "分子轨道图",
       "terms": [
-        "molecular orbital diagram"
+        "分子轨道图"
       ],
-      "statement": "A molecular orbital diagram is a visual representation of the relative energy levels of the molecular orbitals of a molecule, set between the atomic orbitals they are formed from."
+      "statement": "分子轨道图是分子轨道相对能级的图示，画在形成它们的原子轨道之间。"
     },
     {
       "id": "photon-energy",
       "kind": "axiom",
       "section": "6.1",
       "name": "光子能量",
-      "statement": "光以称为光子的离散能量包的形式被吸收和发射，一个光子的能量由辐射的频率决定，E = hν，或等价地由其波长决定，E = hc/λ。",
+      "statement": "光以称为光子的分立能量包的形式被吸收和发射，一个光子的能量由辐射的频率决定，E = hν，或等价地由其波长决定，E = hc/λ。",
       "forms": [
         {
           "id": "eq-photon-energy",
@@ -6622,14 +6621,14 @@
       "kind": "idea",
       "section": "6.1",
       "name": "驻波与量子化",
-      "statement": "驻波被限制在空间的某个区域内。两端固定的弦只能形成两端之间含有整数个半波长的波。这是量子化的一个例子，量子化是指只观察到某一性质的离散取值。两端之间不动的点是节点，节点的数目随波的能量增大而增多。"
+      "statement": "驻波被限制在空间的某个区域内。两端固定的弦只能形成两端之间含有整数个半波长的波。这是量子化的一个例子，量子化是指只观察到某一性质的分立取值。两端之间不动的点是节点，节点的数目随波的能量增大而增多。"
     },
     {
       "id": "blackbody-radiation",
       "kind": "idea",
       "section": "6.1",
       "name": "黑体辐射与普朗克的量子化能量",
-      "statement": "受热物体发出连续光谱，其分布只取决于温度，温度升高时，曲线的峰向较短的波长移动。经典理论预言强度在短波长处会无限增大，这就是紫外灾难；普朗克把振动能量限制为离散值 E = nhν，拟合了观测到的曲线，这是能量量子化的首次出现。",
+      "statement": "受热物体发出连续光谱，其分布只取决于温度，温度升高时，曲线的峰向较短的波长移动。经典理论预言强度在短波长处会无限增大，这就是紫外灾难；普朗克把振动能量限制为分立值 E = nhν，拟合了观测到的曲线，这是能量量子化的首次出现。",
       "forms": [
         {
           "id": "eq-planck-quantization",
@@ -6755,7 +6754,7 @@
       "terms": [
         "驻波"
       ],
-      "statement": "驻波（又称定波）是局限在空间某一区域内的波，其波长是离散的，由该区域的边界决定。"
+      "statement": "驻波（又称定波）是局限在空间某一区域内的波，其波长是分立的，由该区域的边界决定。"
     },
     {
       "id": "node",
@@ -6776,7 +6775,7 @@
       "terms": [
         "量子化"
       ],
-      "statement": "量子化是指某一性质被限制在特定的离散值上，而不是连续的范围。"
+      "statement": "量子化是指某一性质被限制在特定的分立值上，而不是连续的范围。"
     },
     {
       "id": "blackbody",
@@ -6843,7 +6842,7 @@
       "kind": "axiom",
       "section": "6.2",
       "name": "玻尔的定态",
-      "statement": "处在原子某一允许轨道上的电子完全不辐射；只有当它从一个允许轨道跃迁到另一个允许轨道时，才发射或吸收辐射。这些轨道的能量是量子化的：电子只能具有某些离散的能量，而不能取它们之间的任何值。"
+      "statement": "处在原子某一允许轨道上的电子完全不辐射；只有当它从一个允许轨道跃迁到另一个允许轨道时，才发射或吸收辐射。这些轨道的能量是量子化的：电子只能具有某些分立的能量，而不能取它们之间的任何值。"
     },
     {
       "id": "bohr-energy-levels",
@@ -7843,7 +7842,7 @@
         "沸点升高"
       ],
       "type": "temperature",
-      "statement": "不挥发的溶质使蒸气压下降，所以溶液必须比纯溶剂更热，其蒸气压才能达到大气压强，沸点升高值与所有溶质物种的质量摩尔浓度成正比，$\\Delta T_{\\text{b}} = K_{\\text{b}}m$。",
+      "statement": "不挥发的溶质使蒸气压下降，所以溶液必须比纯溶剂更热，其蒸气压才能达到大气压强，沸点升高值与所有溶质粒子的质量摩尔浓度成正比，$\\Delta T_{\\text{b}} = K_{\\text{b}}m$。",
       "forms": [
         {
           "id": "eq-boiling-point-elevation",
@@ -7864,7 +7863,7 @@
         "凝固点降低"
       ],
       "type": "temperature",
-      "statement": "溶液的凝固点低于其纯溶剂，降低值与所有溶质物种的质量摩尔浓度成正比，$\\Delta T_{\\text{f}} = K_{\\text{f}}m$，因为只有溶剂凝固析出；撒盐除冰和防冻液都利用了这一点。",
+      "statement": "溶液的凝固点低于其纯溶剂，降低值与所有溶质粒子的质量摩尔浓度成正比，$\\Delta T_{\\text{f}} = K_{\\text{f}}m$，因为只有溶剂凝固析出；撒盐除冰和防冻液都利用了这一点。",
       "forms": [
         {
           "id": "eq-freezing-point-depression",
@@ -8772,21 +8771,21 @@
       "id": "reversible-reaction",
       "kind": "definition",
       "section": "13.1",
-      "name": "Reversible reactions",
+      "name": "可逆反应",
       "terms": [
-        "reversible reaction"
+        "可逆反应"
       ],
-      "statement": "A reversible reaction may proceed in both the forward (left to right) and reverse (right to left) directions, and a special double arrow is used in its equation to emphasize this."
+      "statement": "可逆反应既可以沿正向（从左到右）进行，也可以沿逆向（从右到左）进行，其方程式中用一种特殊的双箭头来强调这一点。"
     },
     {
       "id": "chemical-equilibrium",
       "kind": "definition",
       "section": "13.1",
-      "name": "Chemical equilibrium",
+      "name": "化学平衡",
       "terms": [
-        "equilibrium"
+        "平衡"
       ],
-      "statement": "As a reversible reaction proceeds, the falling reactant concentration slows the forward reaction and the rising product concentration speeds the reverse reaction. When the two rates become equal, the concentrations of reactants and products remain constant and the system is at equilibrium.",
+      "statement": "随着可逆反应的进行，反应物浓度的下降使正反应变慢，产物浓度的升高使逆反应加快。当两个速率相等时，反应物和产物的浓度保持不变，体系处于平衡。",
       "forms": [
         {
           "id": "eq-equal-rates",
@@ -8801,20 +8800,20 @@
       "id": "equilibrium-is-dynamic",
       "kind": "idea",
       "section": "13.1",
-      "name": "Equilibria are dynamic",
-      "statement": "A reaction at equilibrium has not stopped; it is proceeding in the forward and reverse directions at the same rate. Physical changes such as phase transitions establish such equilibria too, and the concentrations at equilibrium need not be equal, only constant."
+      "name": "平衡是动态的",
+      "statement": "处于平衡的反应并没有停止；它正以相同的速率同时沿正、逆两个方向进行。相变等物理变化同样可以建立这样的平衡，平衡时各浓度不必相等，只需保持恒定。"
     },
     {
       "id": "reaction-quotient",
       "kind": "definition",
       "section": "13.2",
-      "name": "Reaction quotient",
+      "name": "反应商",
       "symbol": "Q_c",
       "terms": [
-        "reaction quotient"
+        "反应商"
       ],
       "type": "equilibrium-constant",
-      "statement": "The reaction quotient, $Q$, is the product of the product concentrations, each raised to the power of its coefficient in the balanced equation, divided by the product of the reactant concentrations raised to theirs. Its value changes as the reaction proceeds, so it serves as an indicator of the reaction’s status.",
+      "statement": "反应商 $Q$ 是各产物浓度（各自取其在配平方程式中的系数为幂）的乘积，除以各反应物浓度（同样取其系数为幂）的乘积。它的值随反应的进行而变化，因此可作为反应所处状态的指示量。",
       "forms": [
         {
           "id": "eq-reaction-quotient",
@@ -8836,20 +8835,20 @@
       "id": "write-reaction-quotient",
       "kind": "skill",
       "section": "13.2",
-      "name": "Writing reaction quotient expressions",
-      "statement": "From a balanced equation we can write $Q_{c}$ using molar concentrations or, for gases, $Q_{P}$ using partial pressures, including terms only for gaseous and solute species."
+      "name": "反应商表达式的书写",
+      "statement": "由配平的方程式可以写出以物质的量浓度表示的 $Q_{c}$，对于气体还可写出以分压表示的 $Q_{P}$，表达式中只包含气态物种和溶质物种所对应的项。"
     },
     {
       "id": "equilibrium-constant",
       "kind": "definition",
       "section": "13.2",
-      "name": "Equilibrium constant",
+      "name": "平衡常数",
       "symbol": "K",
       "terms": [
-        "equilibrium constant"
+        "平衡常数"
       ],
       "type": "equilibrium-constant",
-      "statement": "The equilibrium constant, $K$, is the constant value of the reaction quotient exhibited by a system at equilibrium; $K_{c}$ is written with molar concentrations and $K_{P}$ with partial pressures.",
+      "statement": "平衡常数 $K$ 是体系处于平衡时反应商所表现出的恒定值；$K_{c}$ 用物质的量浓度写出，$K_{P}$ 用分压写出。",
       "forms": [
         {
           "id": "eq-k-equals-q",
@@ -8864,22 +8863,22 @@
       "id": "magnitude-of-k",
       "kind": "idea",
       "section": "13.2",
-      "name": "Magnitude of the equilibrium constant",
-      "statement": "A reaction with a large $K$ reaches equilibrium when most of the reactant has become product, whereas a small $K$ means very little reactant has reacted. The magnitude of $K$ says nothing about how rapidly the reaction reaches equilibrium."
+      "name": "平衡常数的大小",
+      "statement": "$K$ 很大的反应，在大部分反应物已变成产物时达到平衡；而 $K$ 很小则表示只有极少的反应物发生了反应。$K$ 的大小并不说明反应达到平衡的快慢。"
     },
     {
       "id": "predict-direction-q-versus-k",
       "kind": "skill",
       "section": "13.2",
-      "name": "Predicting the direction of reaction",
-      "statement": "A reaction proceeds in whatever direction is necessary to achieve equilibrium: forward when $Q < K$, in reverse when $Q > K$, and not at all when $Q = K$."
+      "name": "预测反应的方向",
+      "statement": "反应总是沿着达到平衡所需的方向进行：$Q < K$ 时沿正向，$Q > K$ 时沿逆向，$Q = K$ 时则不发生净反应。"
     },
     {
       "id": "kp-kc-relation",
       "kind": "result",
       "section": "13.2",
-      "name": "Relating Kp and Kc",
-      "statement": "Since the partial pressure of an ideal gas is $P = MRT$, each pressure in $K_{P}$ is a concentration times $RT$, and the factors collect into $(RT)^{\\Delta n}$, where $\\Delta n$ is the difference in the molar amounts of product and reactant gases.",
+      "name": "Kp 与 Kc 的关系",
+      "statement": "理想气体的分压为 $P = MRT$，因此 $K_{P}$ 中的每个压强都是浓度乘以 $RT$，这些因子合并为 $(RT)^{\\Delta n}$，其中 $\\Delta n$ 是产物气体与反应物气体的物质的量之差。",
       "forms": [
         {
           "id": "eq-kp-kc",
@@ -8900,15 +8899,15 @@
       "id": "homogeneous-and-heterogeneous-equilibria",
       "kind": "idea",
       "section": "13.2",
-      "name": "Homogeneous and heterogeneous equilibria",
-      "statement": "In a homogeneous equilibrium all reactants and products are in the same phase; in a heterogeneous equilibrium they occupy two or more phases. Because the relative concentrations of pure liquids and solids equal 1, they do not appear in $Q$ or $K$."
+      "name": "均相平衡与多相平衡",
+      "statement": "在均相平衡中，所有反应物和产物处于同一相；在多相平衡中，它们占据两个或多个相。由于纯液体和纯固体的相对浓度等于 1，它们不出现在 $Q$ 或 $K$ 中。"
     },
     {
       "id": "coupled-equilibria",
       "kind": "skill",
       "section": "13.2",
-      "name": "Equilibrium constants of coupled equilibria",
-      "statement": "Reversing an equation inverts its $K$, multiplying its coefficients by $x$ raises $K$ to the power $x$, and adding equations multiplies their $K$ values, so the $K$ of a net reaction follows from the $K$ values of the reactions that sum to it.",
+      "name": "多重平衡的平衡常数",
+      "statement": "将方程式颠倒，其 $K$ 取倒数；将其系数乘以 $x$，则 $K$ 变为 $x$ 次幂；将方程式相加，则它们的 $K$ 值相乘。因此，净反应的 $K$ 可由相加得到该反应的各反应的 $K$ 值求出。",
       "forms": [
         {
           "id": "eq-reversed-k",
@@ -8937,72 +8936,72 @@
       "id": "law-of-mass-action",
       "kind": "axiom",
       "section": "13.2",
-      "name": "Law of mass action",
+      "name": "质量作用定律",
       "terms": [
-        "law of mass action"
+        "质量作用定律"
       ],
-      "statement": "At a given temperature, the reaction quotient for a system at equilibrium is constant, whatever the initial concentrations from which equilibrium was approached."
+      "statement": "在给定温度下，无论从何种初始浓度出发达到平衡，处于平衡的体系的反应商都是恒定的。"
     },
     {
       "id": "homogeneous-equilibrium",
       "kind": "definition",
       "section": "13.2",
-      "name": "Homogeneous equilibrium",
+      "name": "均相平衡",
       "terms": [
-        "homogeneous equilibria"
+        "均相平衡"
       ],
-      "statement": "A homogeneous equilibrium is one in which all reactants and products, and any catalysts, are present in the same phase."
+      "statement": "均相平衡是指所有反应物和产物（以及任何催化剂）都存在于同一相中的平衡。"
     },
     {
       "id": "heterogeneous-equilibrium",
       "kind": "definition",
       "section": "13.2",
-      "name": "Heterogeneous equilibrium",
+      "name": "多相平衡",
       "terms": [
-        "heterogeneous equilibria"
+        "多相平衡"
       ],
-      "statement": "A heterogeneous equilibrium involves reactants and products in two or more different phases."
+      "statement": "多相平衡涉及处于两个或多个不同相中的反应物和产物。"
     },
     {
       "id": "coupled-equilibrium",
       "kind": "definition",
       "section": "13.2",
-      "name": "Coupled equilibria",
+      "name": "多重平衡",
       "terms": [
-        "coupled equilibria"
+        "多重平衡"
       ],
-      "statement": "Coupled equilibria are two or more equilibrium reactions that have in common one or more reactant or product species."
+      "statement": "多重平衡是指两个或多个平衡反应，它们有一种或多种共同的反应物或产物物种。"
     },
     {
       "id": "le-chateliers-principle",
       "kind": "axiom",
       "section": "13.3",
-      "name": "Le Châtelier’s principle",
+      "name": "勒夏特列原理",
       "terms": [
-        "Le Châtelier’s principle"
+        "勒夏特列原理"
       ],
-      "statement": "A change in conditions that affects the forward and reverse rates differently (a stress) leaves the rates unequal, and the system experiences a net reaction in the direction of greater rate (a shift) that re-establishes equilibrium."
+      "statement": "对正反应和逆反应速率的影响不同的条件改变（扰动）会使两个速率不再相等，体系随后沿速率较大的方向发生净反应（移动），从而重新建立平衡。"
     },
     {
       "id": "concentration-stress",
       "kind": "result",
       "section": "13.3",
-      "name": "Concentration changes and equilibrium",
-      "statement": "Adding reactant or removing product makes $Q_{c} < K_{c}$ and the equilibrium shifts right; removing reactant or adding product makes $Q_{c} > K_{c}$ and it shifts left. The new composition differs, but the value of the equilibrium constant is the same after the stress as before."
+      "name": "浓度变化与平衡",
+      "statement": "加入反应物或移出产物使 $Q_{c} < K_{c}$，平衡向右移动；移出反应物或加入产物使 $Q_{c} > K_{c}$，平衡向左移动。新的组成有所不同，但扰动之后平衡常数的值与之前相同。"
     },
     {
       "id": "volume-stress",
       "kind": "result",
       "section": "13.3",
-      "name": "Volume changes and equilibrium",
-      "statement": "Changing the volume changes every partial pressure by the same factor. If the reactant and product gases have equal total molar amounts, $Q_{P}$ is unchanged and there is no shift; otherwise decreasing the volume shifts the equilibrium toward the side with fewer moles of gas."
+      "name": "体积变化与平衡",
+      "statement": "改变体积会使每个分压变化相同的倍数。若反应物气体与产物气体的物质的量总和相等，则 $Q_{P}$ 不变，平衡不移动；否则，减小体积会使平衡向气体物质的量较少的一侧移动。"
     },
     {
       "id": "temperature-changes-k",
       "kind": "result",
       "section": "13.3",
-      "name": "Temperature changes and equilibrium",
-      "statement": "For an elementary reaction $K_{c}=k_{f}/k_{r}$, and the rate constants vary with temperature, so $K$ varies too. Treating heat as a reactant of an endothermic reaction and a product of an exothermic one predicts the shift: heating shifts an endothermic equilibrium right and an exothermic one left.",
+      "name": "温度变化与平衡",
+      "statement": "对于基元反应，$K_{c}=k_{f}/k_{r}$，而速率常数随温度变化，所以 $K$ 也随之变化。把热量看作吸热反应的反应物、放热反应的产物，就可以预测移动的方向：加热使吸热反应的平衡向右移动，使放热反应的平衡向左移动。",
       "forms": [
         {
           "id": "eq-k-from-rate-constants",
@@ -9017,50 +9016,50 @@
       "id": "catalyst-and-equilibrium",
       "kind": "result",
       "section": "13.3",
-      "name": "Catalysts and equilibrium",
-      "statement": "A catalyst lowers the activation energies of both the forward and the reverse reactions, so both are accelerated and equilibrium is reached more quickly, but without a change in the equilibrium constant."
+      "name": "催化剂与平衡",
+      "statement": "催化剂同时降低正反应和逆反应的活化能，因此两者都被加速，平衡更快地达到，但平衡常数不变。"
     },
     {
       "id": "predict-equilibrium-shift",
       "kind": "skill",
       "section": "13.3",
-      "name": "Predicting an equilibrium shift",
-      "statement": "Given a stress (a species added or removed, a change in volume or temperature, a catalyst), Le Châtelier’s principle predicts the direction of the shift and how each concentration changes as equilibrium is re-established."
+      "name": "预测平衡的移动",
+      "statement": "给定一种扰动（加入或移出某个物种、体积或温度的改变、催化剂），勒夏特列原理可以预测移动的方向，以及重新建立平衡时各浓度如何变化。"
     },
     {
       "id": "ice-change-terms",
       "kind": "skill",
       "section": "13.4",
-      "name": "Relating concentration changes",
-      "statement": "Whatever the initial composition, the changes in the concentrations of the species in an equilibrium are related by the reaction stoichiometry, so all of them can be written as multiples of one unknown, $x$."
+      "name": "浓度变化量之间的关系",
+      "statement": "无论初始组成如何，平衡体系中各物种浓度的变化量都由反应的化学计量关系相联系，因此它们都可以写成同一个未知量 $x$ 的倍数。"
     },
     {
       "id": "k-from-ice-table",
       "kind": "skill",
       "section": "13.4",
-      "name": "Calculating K with an ICE table",
-      "statement": "Collecting the initial concentrations, their changes and the equilibrium concentrations in an ICE table derives every equilibrium concentration from the data given, and substituting them into the $K$ expression gives the equilibrium constant."
+      "name": "用 ICE 表计算 K",
+      "statement": "把初始浓度、浓度变化量和平衡浓度汇集在 ICE 表中，就能由所给数据导出每个平衡浓度，将它们代入 $K$ 表达式便得到平衡常数。"
     },
     {
       "id": "missing-equilibrium-concentration",
       "kind": "skill",
       "section": "13.4",
-      "name": "Calculating a missing equilibrium concentration",
-      "statement": "When the equilibrium constant and all but one equilibrium concentration are known, the $K$ expression can be rearranged and solved for the missing concentration."
+      "name": "计算未知的平衡浓度",
+      "statement": "当平衡常数和除一个以外的所有平衡浓度已知时，可将 $K$ 表达式变形，解出未知的那个浓度。"
     },
     {
       "id": "equilibrium-from-initial-concentrations",
       "kind": "skill",
       "section": "13.4",
-      "name": "Calculating equilibrium concentrations from initial concentrations",
-      "statement": "Four steps find the equilibrium composition from initial concentrations and $K$: identify the direction of reaction, develop an ICE table, solve for the change (by the quadratic formula where needed, keeping the physically meaningful root), and confirm the result by recalculating $K$."
+      "name": "由初始浓度计算平衡浓度",
+      "statement": "由初始浓度和 $K$ 求平衡组成需要四步：确定反应方向，列出 ICE 表，求出变化量（必要时用求根公式，并保留有物理意义的根），最后重新计算 $K$ 以验证结果。"
     },
     {
       "id": "small-x-approximation",
       "kind": "skill",
       "section": "13.4",
-      "name": "Small-change approximation",
-      "statement": "When $K$ is small, the change in concentration may be much less than the initial concentration, so the initial concentration minus $x$ can be approximated by the initial concentration. The result must be checked, and the calculation repeated without the approximation if $x$ is not negligible."
+      "name": "x 很小时的近似",
+      "statement": "当 $K$ 很小时，浓度的变化量可能远小于初始浓度，因此初始浓度减去 $x$ 可以近似为初始浓度。必须检验结果，如果 $x$ 不可忽略，则不用近似重新计算。"
     },
     {
       "id": "bronsted-lowry-acids-bases",
@@ -9580,7 +9579,7 @@
       "kind": "idea",
       "section": "14.6",
       "name": "缓冲溶液的作用原理",
-      "statement": "共轭对中的弱酸中和加入的氢氧根离子，将其转化为共轭碱；共轭碱中和加入的水合氢离子，将其转化为弱酸。二者的比值只有很小的变化，pH 的变化也很小。"
+      "statement": "共轭酸碱对中的弱酸中和加入的氢氧根离子，将其转化为共轭碱；共轭碱中和加入的水合氢离子，将其转化为弱酸。二者的比值只有很小的变化，pH 的变化也很小。"
     },
     {
       "id": "buffer-ph-calculations",
@@ -9673,20 +9672,20 @@
       "id": "solubility-product",
       "kind": "definition",
       "section": "15.1",
-      "name": "Solubility product constant",
+      "name": "溶度积常数",
       "symbol": "K_sp",
       "terms": [
-        "solubility product constant",
-        "solubility product"
+        "溶度积常数",
+        "溶度积"
       ],
       "type": "equilibrium-constant",
-      "statement": "A saturated solution of a sparingly soluble ionic solid is an equilibrium in which the solid dissolves and its ions precipitate at equal rates. Its equilibrium constant is the solubility product, which, because only gases and solutes appear in an equilibrium constant expression, includes no term for the undissolved solid.",
+      "statement": "难溶离子型固体的饱和溶液是一种平衡：固体溶解的速率与其离子沉淀的速率相等。它的平衡常数就是溶度积；由于平衡常数表达式中只出现气体和溶质，所以其中不含未溶解固体的项。",
       "forms": [
         {
           "id": "eq-ksp",
           "latex": "\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)\\qquad K_{\\text{sp}}=[\\text{M}^{m+}]^{p}[\\text{X}^{n-}]^{q}",
           "ktex": "\\text{M}_{p}\\text{X}_{q}(s)\\rightleftharpoons p\\text{M}^{m+}(aq)+q\\text{X}^{n-}(aq)\\qquad K_{\\text{sp}}=\\kconcMion^{p}\\kconcXion^{q}",
-          "condition": "a slightly soluble ionic solid whose dissolution involves only dissociation and solvation",
+          "condition": "溶解过程只涉及解离和溶剂化的微溶离子固体",
           "anchor": "15.1-ksp-solubility"
         }
       ]
@@ -9695,111 +9694,111 @@
       "id": "write-ksp-expression",
       "kind": "skill",
       "section": "15.1",
-      "name": "Writing solubility product expressions",
-      "statement": "The dissolution equation shows the ions a compound yields and their coefficients, and each coefficient becomes the exponent of that ion's concentration in the solubility product expression."
+      "name": "书写溶度积表达式",
+      "statement": "溶解方程式给出化合物生成的离子及其系数，每个系数都成为该离子浓度在溶度积表达式中的指数。"
     },
     {
       "id": "ksp-from-solubility",
       "kind": "skill",
       "section": "15.1",
-      "name": "Calculating Ksp from solubility",
-      "statement": "When dissolution involves only dissociation and solvation, a measured solubility, converted to molar solubility where it is given in grams per liter, fixes every ion concentration through the dissolution stoichiometry, and the solubility product follows."
+      "name": "由溶解度计算 Ksp",
+      "statement": "当溶解只涉及解离和溶剂化时，实测的溶解度（若以克每升给出，则先换算成摩尔溶解度）通过溶解的化学计量关系确定各离子的浓度，溶度积随之得出。"
     },
     {
       "id": "molar-solubility-from-ksp",
       "kind": "skill",
       "section": "15.1",
-      "name": "Calculating molar solubility",
-      "statement": "Writing the equilibrium concentrations of an ICE table in terms of the molar solubility <i>x</i> and substituting them into the solubility product expression gives an equation in <i>x</i> alone, whose root is the molar solubility."
+      "name": "计算摩尔溶解度",
+      "statement": "用摩尔溶解度 <i>x</i> 表示 ICE 表中的各平衡浓度，再代入溶度积表达式，得到一个只含 <i>x</i> 的方程，其根就是摩尔溶解度。"
     },
     {
       "id": "qsp-versus-ksp",
       "kind": "result",
       "section": "15.1",
-      "name": "Predicting precipitation",
-      "statement": "The dissolution equilibrium is established in any solution containing the ions, whatever their source. If the ion concentrations give a reaction quotient greater than the solubility product, the solution is supersaturated and precipitation occurs until the quotient equals the solubility product; if the quotient is smaller, no precipitate forms."
+      "name": "预测沉淀的生成",
+      "statement": "只要溶液中含有这些离子，不论其来源如何，溶解平衡就会建立。若离子浓度给出的反应商大于溶度积，则溶液是过饱和的，沉淀会生成，直到反应商等于溶度积；若反应商较小，则没有沉淀生成。"
     },
     {
       "id": "precipitation-concentration",
       "kind": "skill",
       "section": "15.1",
-      "name": "Finding where precipitation begins",
-      "statement": "Setting the reaction quotient equal to the solubility product and substituting the known ion concentration gives the concentration of the counter ion at which a precipitate first forms, or the concentration needed to lower a dissolved ion to a chosen level."
+      "name": "确定沉淀开始生成的条件",
+      "statement": "令反应商等于溶度积并代入已知的离子浓度，就得到沉淀刚开始生成时反离子的浓度，或把某一溶解离子降低到选定水平所需的浓度。"
     },
     {
       "id": "selective-precipitation",
       "kind": "idea",
       "section": "15.1",
-      "name": "Selective precipitation",
+      "name": "选择性沉淀",
       "terms": [
-        "selective precipitation"
+        "选择性沉淀"
       ],
-      "statement": "When two ions form insoluble compounds with the same counter ion, raising the counter ion concentration slowly precipitates first the ion whose compound reaches its solubility product at the lower counter ion concentration, which depends on both the solubility products and the ion concentrations."
+      "statement": "当两种离子与同一种反离子生成不溶化合物时，缓慢提高反离子的浓度，会使化合物在较低反离子浓度下就达到溶度积的那种离子先沉淀出来，这取决于溶度积和离子浓度两个因素。"
     },
     {
       "id": "common-ion-effect",
       "kind": "result",
       "section": "15.1",
-      "name": "Common ion effect",
+      "name": "同离子效应",
       "terms": [
-        "common ion effect"
+        "同离子效应"
       ],
-      "statement": "Because the product of the ion concentrations is constant at equilibrium regardless of the source of the ions, adding one of the ions shifts the dissolution equilibrium to the left, and an ionic compound is less soluble in a solution that already contains a common ion than in pure water."
+      "statement": "由于无论离子来自何处，平衡时离子浓度的乘积都是常数，所以加入其中一种离子会使溶解平衡向左移动，离子型化合物在已含有同离子的溶液中比在纯水中更难溶解。"
     },
     {
       "id": "molar-solubility",
       "kind": "definition",
       "section": "15.1",
-      "name": "Molar solubility",
+      "name": "摩尔溶解度",
       "terms": [
-        "molar solubility"
+        "摩尔溶解度"
       ],
-      "statement": "The molar solubility of a compound is its solubility expressed in moles of solute per liter of saturated solution.",
+      "statement": "化合物的摩尔溶解度是以每升饱和溶液中所含溶质的物质的量表示的溶解度。",
       "type": "concentration"
     },
     {
       "id": "coordinate-covalent-bond",
       "kind": "definition",
       "section": "15.2",
-      "name": "Coordinate covalent bonds",
+      "name": "配位共价键",
       "terms": [
-        "coordinate covalent bond"
+        "配位共价键"
       ],
-      "statement": "A coordinate covalent bond, or dative bond, occurs when one of the atoms in the bond provides both bonding electrons."
+      "statement": "当键中的一个原子提供两个成键电子时，就形成配位共价键，或称配位键。"
     },
     {
       "id": "lewis-acids-and-bases",
       "kind": "definition",
       "section": "15.2",
-      "name": "Lewis acids and bases",
+      "name": "路易斯酸和碱",
       "terms": [
-        "Lewis acid-base chemistry"
+        "路易斯酸碱化学"
       ],
-      "statement": "In Lewis's definition, a base donates an electron pair and an acid accepts one, forming a coordinate covalent bond in a product called an adduct. Brønsted-Lowry acid-base reactions are the subcategory in which the acid is H<sup>+</sup>."
+      "statement": "按路易斯的定义，碱给出一对电子，酸接受一对电子，二者形成配位共价键，生成称为加合物的产物。布朗斯特–劳里酸碱反应是其中酸为 H<sup>+</sup> 的子类。"
     },
     {
       "id": "complex-ions-and-ligands",
       "kind": "definition",
       "section": "15.2",
-      "name": "Complex ions and ligands",
-      "statement": "A complex ion comprises a central atom, typically a transition metal cation acting as a Lewis acid, surrounded by ligands, molecules or ions that each donate an electron pair as Lewis bases."
+      "name": "配离子和配体",
+      "statement": "配离子由一个中心原子（通常是作为路易斯酸的过渡金属阳离子）和围绕它的配体组成，配体是分子或离子，各自作为路易斯碱给出一对电子。"
     },
     {
       "id": "formation-constant",
       "kind": "definition",
       "section": "15.2",
-      "name": "Formation constant",
+      "name": "形成常数",
       "symbol": "K_f_form",
       "terms": [
-        "formation constant"
+        "形成常数"
       ],
       "type": "equilibrium-constant",
-      "statement": "The equilibrium constant for the reaction of a metal ion with ligands to form a complex ion is its formation constant, and the constant for the reverse reaction is the dissociation constant, its reciprocal. A large formation constant lowers the free metal ion concentration enough to dissolve a sparingly soluble salt of the metal.",
+      "statement": "金属离子与配体反应生成配离子的平衡常数是它的形成常数，其逆反应的常数是解离常数，二者互为倒数。形成常数很大时，游离金属离子的浓度会降低到足以使该金属的一种微溶盐溶解。",
       "forms": [
         {
           "id": "eq-kf",
           "latex": "K_{\\text{f}}=\\frac{[\\text{Cu(CN)}_{2}{}^{-}]}{[\\text{Cu}^{+}][\\text{CN}^{-}]^{2}}",
-          "condition": "the formation of Cu(CN)<sub>2</sub><sup>–</sup> from Cu<sup>+</sup> and CN<sup>–</sup>",
+          "condition": "由 Cu<sup>+</sup> 和 CN<sup>–</sup> 生成 Cu(CN)<sub>2</sub><sup>–</sup>",
           "anchor": "15.2-complex-ions"
         }
       ]
@@ -9808,45 +9807,45 @@
       "id": "complex-ion-calculations",
       "kind": "skill",
       "section": "15.2",
-      "name": "Calculating complex ion equilibria",
-      "statement": "An ICE table for the dissociation of a complex ion, with the small-<i>x</i> assumption that a very large formation constant justifies, gives the concentrations of the free metal ion and ligand."
+      "name": "计算配离子平衡",
+      "statement": "对配离子的解离列出 ICE 表，并采用很大的形成常数所支持的 <i>x</i> 很小的假设，即可得到游离金属离子和配体的浓度。"
     },
     {
       "id": "complex-ion",
       "kind": "definition",
       "section": "15.2",
-      "name": "Complex ion",
+      "name": "配离子",
       "terms": [
-        "complex ion"
+        "配离子"
       ],
-      "statement": "A complex ion is an ion consisting of a central atom, typically a transition metal cation, surrounded by molecules or ions called ligands."
+      "statement": "配离子是由一个中心原子（通常是过渡金属阳离子）和围绕它的称为配体的分子或离子所组成的离子。"
     },
     {
       "id": "ligand",
       "kind": "definition",
       "section": "15.2",
-      "name": "Ligand",
+      "name": "配体",
       "terms": [
-        "ligand"
+        "配体"
       ],
-      "statement": "A ligand is a molecule or ion that surrounds the central atom of a complex ion, bonding to it by donating an electron pair as a Lewis base."
+      "statement": "配体是围绕在配离子中心原子周围的分子或离子，它作为路易斯碱给出一对电子而与中心原子成键。"
     },
     {
       "id": "dissociation-constant",
       "kind": "definition",
       "section": "15.2",
-      "name": "Dissociation constant",
+      "name": "解离常数",
       "symbol": "K_d",
       "terms": [
-        "dissociation constant"
+        "解离常数"
       ],
       "type": "equilibrium-constant",
-      "statement": "The dissociation constant, $K_{\\text{d}}$, is the equilibrium constant for the decomposition of a complex ion into its components in solution; it is the reciprocal of the formation constant.",
+      "statement": "解离常数 $K_{\\text{d}}$ 是配离子在溶液中分解为其组分的平衡常数；它是形成常数的倒数。",
       "forms": [
         {
           "id": "eq-kd",
           "latex": "K_{\\text{d}}=K_{\\text{f}}^{-1}",
-          "condition": "a complex ion and the reverse of its formation reaction",
+          "condition": "配离子及其形成反应的逆反应",
           "anchor": "15.2-complex-ions"
         }
       ]
@@ -9855,43 +9854,43 @@
       "id": "lewis-acid",
       "kind": "definition",
       "section": "15.2",
-      "name": "Lewis acid",
+      "name": "路易斯酸",
       "terms": [
-        "Lewis acid"
+        "路易斯酸"
       ],
-      "statement": "A Lewis acid is any species that can accept a pair of electrons and form a coordinate covalent bond."
+      "statement": "路易斯酸是任何能接受一对电子并形成配位共价键的物种。"
     },
     {
       "id": "lewis-base",
       "kind": "definition",
       "section": "15.2",
-      "name": "Lewis base",
+      "name": "路易斯碱",
       "terms": [
-        "Lewis base"
+        "路易斯碱"
       ],
-      "statement": "A Lewis base is any species that can donate a pair of electrons and form a coordinate covalent bond."
+      "statement": "路易斯碱是任何能给出一对电子并形成配位共价键的物种。"
     },
     {
       "id": "lewis-acid-base-adduct",
       "kind": "definition",
       "section": "15.2",
-      "name": "Lewis acid-base adduct",
+      "name": "路易斯酸碱加合物",
       "terms": [
-        "Lewis acid-base adduct"
+        "路易斯酸碱加合物"
       ],
-      "statement": "A Lewis acid-base adduct is the compound or ion that contains the coordinate covalent bond formed between a Lewis acid and a Lewis base."
+      "statement": "路易斯酸碱加合物是含有路易斯酸与路易斯碱之间所形成的配位共价键的化合物或离子。"
     },
     {
       "id": "solubility-in-acid",
       "kind": "result",
       "section": "15.3",
-      "name": "Solubility in acid",
-      "statement": "When a salt's anion is a base, its dissolution is coupled with the anion's reaction with hydronium ion, which removes the anion and shifts the dissolution equilibrium to the right. The net reaction's constant is the solubility product divided by the conjugate acid's ionization constant.",
+      "name": "在酸中的溶解度",
+      "statement": "当盐的阴离子是碱时，盐的溶解与该阴离子同水合氢离子的反应相互关联，此反应使阴离子被消耗，溶解平衡因而向右移动。总反应的常数等于溶度积除以共轭酸的电离常数。",
       "forms": [
         {
           "id": "eq-k-acid-coupled",
           "latex": "\\text{CaCO}_{3}(s)+\\text{H}_{3}\\text{O}^{+}(aq)\\rightleftharpoons\\text{Ca}^{2+}(aq)+\\text{HCO}_{3}{}^{-}(aq)+\\text{H}_{2}\\text{O}(l)\\qquad K=K_{\\text{sp}}/K_{\\text{a2}}=180",
-          "condition": "calcium carbonate dissolution coupled with the reverse of bicarbonate's acid ionization",
+          "condition": "碳酸钙的溶解与碳酸氢根酸电离的逆反应相互关联",
           "anchor": "15.3-reefs"
         }
       ]
@@ -9900,13 +9899,13 @@
       "id": "dissolution-by-complex-formation",
       "kind": "result",
       "section": "15.3",
-      "name": "Complex formation increases solubility",
-      "statement": "When dissolution is coupled with the formation of a complex ion of the dissolved metal, the constant for the net reaction is the product of the solubility product and the formation constant, and it can be large even when the solubility product is tiny.",
+      "name": "配合物形成使溶解度增大",
+      "statement": "当溶解与所溶金属的配离子的形成相互关联时，总反应的常数等于溶度积与形成常数之积，即使溶度积很小，这一常数也可以很大。",
       "forms": [
         {
           "id": "eq-k-complex-coupled",
           "latex": "\\text{Al(OH)}_{3}(s)+\\text{OH}^{-}(aq)\\rightleftharpoons\\text{Al(OH)}_{4}{}^{-}(aq)\\qquad K=K_{\\text{sp}}K_{\\text{f}}=22",
-          "condition": "aluminum hydroxide dissolution coupled with the formation of Al(OH)<sub>4</sub><sup>–</sup>",
+          "condition": "氢氧化铝的溶解与 Al(OH)<sub>4</sub><sup>–</sup> 的形成相互关联",
           "anchor": "15.3-complex"
         }
       ]
@@ -9915,8 +9914,8 @@
       "id": "coupled-equilibrium-calculations",
       "kind": "skill",
       "section": "15.3",
-      "name": "Calculating solubilities in coupled equilibria",
-      "statement": "The concentrations in a coupled system follow from one equilibrium at a time, such as the hydroxide ion concentration of a buffer and then the solubility product, or from the constant of the combined net reaction."
+      "name": "计算多重平衡中的溶解度",
+      "statement": "多重平衡体系中的浓度可以一次依据一个平衡求出，例如先求缓冲溶液的氢氧根离子浓度，再用溶度积；也可以由合并后的总反应的常数求出。"
     },
     {
       "id": "gas-pressure",
@@ -10613,47 +10612,47 @@
       "id": "nonspontaneous-process",
       "kind": "definition",
       "section": "16.1",
-      "name": "Nonspontaneous process",
+      "name": "非自发过程",
       "terms": [
-        "nonspontaneous process"
+        "非自发过程"
       ],
-      "statement": "A nonspontaneous process will not take place unless it is driven by the continual input of energy from an external source. A process that is spontaneous in one direction under a particular set of conditions is nonspontaneous in the reverse direction."
+      "statement": "非自发过程除非由外界持续输入能量来“驱动”，否则不会发生。在一组特定条件下沿某一方向自发的过程，沿其逆方向则是非自发的。"
     },
     {
       "id": "spontaneity-and-rate",
       "kind": "idea",
       "section": "16.1",
-      "name": "Spontaneity and rate",
-      "statement": "The spontaneity of a process is not correlated to its speed: a spontaneous change may be essentially instantaneous or too slow to observe. Diamond converts to graphite spontaneously at ambient pressure, but so slowly that diamonds are thermodynamically unstable yet kinetically stable."
+      "name": "自发性与速率",
+      "statement": "过程是否自发与其快慢无关：自发变化可能快到几乎瞬间完成，也可能慢到无法观察。金刚石在环境压强下自发地转变为石墨，但速率极慢，所以金刚石在热力学上不稳定，在动力学上却是稳定的。"
     },
     {
       "id": "dispersal-of-matter-and-energy",
       "kind": "idea",
       "section": "16.1",
-      "name": "Dispersal of matter and energy",
-      "statement": "Spontaneous processes are accompanied by a more uniform dispersal of matter or energy. An ideal gas expanding into a vacuum does no work and exchanges no heat, so its internal energy is unchanged, yet it spreads evenly between the flasks; heat flowing from a hotter object to a colder one redistributes thermal energy without any net gain or loss."
+      "name": "物质与能量的分散",
+      "statement": "自发过程总伴随着物质或能量更均匀的分散。理想气体向真空膨胀时不做功，也不与外界交换热量，其内能不变，却会均匀地充满两个烧瓶；热量从较热的物体流向较冷的物体，使热能重新分布，而总量既无增加也无损失。"
     },
     {
       "id": "reversible-process",
       "kind": "definition",
       "section": "16.2",
-      "name": "Reversible process",
+      "name": "可逆过程",
       "terms": [
-        "reversible process"
+        "可逆过程"
       ],
-      "statement": "A reversible process takes place so slowly that it is always at equilibrium, and its direction can be changed by an infinitesimally small change in some condition. It is a formalism that real processes, which are all irreversible, can only approximate."
+      "statement": "可逆过程进行得极其缓慢，始终处于平衡，只要某个条件发生无限小的改变，其方向就能随之改变。它是一种形式化的理想模型，实际过程都是不可逆的，只能近似于它。"
     },
     {
       "id": "entropy",
       "kind": "definition",
       "section": "16.2",
-      "name": "Entropy",
+      "name": "熵",
       "symbol": "S",
       "terms": [
-        "entropy"
+        "熵"
       ],
       "type": "entropy",
-      "statement": "Entropy is a state function, a measure of the dispersal of matter and energy in a system that is determined by the number of its microstates and is often described as its disorder. Clausius defined its change as the reversible heat divided by the kelvin temperature; an irreversible process between the same states has the same entropy change.",
+      "statement": "熵是一个状态函数，是体系中物质和能量分散程度的度量，由体系的微观状态数决定，常被描述为体系的混乱度。克劳修斯将其变化定义为可逆热除以开尔文温度；在相同的始末态之间，不可逆过程的熵变与之相同。",
       "forms": [
         {
           "id": "eq-entropy-change-reversible-heat",
@@ -10667,18 +10666,18 @@
       "id": "microstate",
       "kind": "definition",
       "section": "16.2",
-      "name": "Microstate",
+      "name": "微观状态",
       "terms": [
-        "microstate"
+        "微观状态"
       ],
-      "statement": "A microstate is a specific configuration of all the locations and energies of the atoms or molecules that make up a system."
+      "statement": "微观状态是构成体系的所有原子或分子的位置与能量的一种具体组态。"
     },
     {
       "id": "boltzmann-entropy-equation",
       "kind": "result",
       "section": "16.2",
-      "name": "Boltzmann equation for entropy",
-      "statement": "Boltzmann related the entropy of a system to the number of microstates possible for it through the Boltzmann constant, so a process that increases the number of microstates increases the entropy, and one that reduces it decreases the entropy.",
+      "name": "熵的玻尔兹曼公式",
+      "statement": "玻尔兹曼通过玻尔兹曼常量把体系的熵与其可能的微观状态数联系起来，所以使微观状态数增多的过程使熵增大，使微观状态数减少的过程使熵减小。",
       "forms": [
         {
           "id": "eq-boltzmann-entropy",
@@ -10698,8 +10697,8 @@
       "id": "most-probable-distribution",
       "kind": "result",
       "section": "16.2",
-      "name": "Most probable distribution",
-      "statement": "Microstates with the same numbers of particles in each box form a distribution, and the probability of a distribution is proportional to the number of microstates in it. Since entropy grows with the number of microstates, the most probable distribution, with roughly equal numbers in each box, is the one of greatest entropy, and this only becomes more certain as the number of particles grows.",
+      "name": "最概然分布",
+      "statement": "每个盒子中粒子数相同的微观状态构成一种分布，某种分布的概率与其所含微观状态数成正比。由于熵随微观状态数增大，最概然分布，即各盒子中粒子数大致相等的分布，就是熵最大的分布，而且粒子数越多，这一点就越确定。",
       "forms": [
         {
           "id": "eq-number-of-microstates",
@@ -10713,8 +10712,8 @@
       "id": "entropy-and-phase",
       "kind": "result",
       "section": "16.2",
-      "name": "Entropy and physical state",
-      "statement": "For any substance the entropy of the gas is greater than that of the liquid, which is greater than that of the solid, since freer motion and greater volume allow more microstates. Melting, vaporization and sublimation increase entropy, and freezing, condensation and deposition decrease it.",
+      "name": "熵与物态",
+      "statement": "对任何物质，气体的熵大于液体，液体的熵大于固体，因为更自由的运动和更大的体积带来更多的微观状态。熔化、汽化和升华使熵增大，凝固、凝结和凝华使熵减小。",
       "forms": [
         {
           "id": "eq-entropy-phase-order",
@@ -10728,31 +10727,31 @@
       "id": "entropy-and-temperature",
       "kind": "result",
       "section": "16.2",
-      "name": "Entropy and temperature",
-      "statement": "The entropy of any substance increases with temperature, since the particles move more extensively and their kinetic energies are spread more broadly, and it changes significantly at each phase transition."
+      "name": "熵与温度",
+      "statement": "任何物质的熵都随温度升高而增大，因为粒子的运动更为剧烈，动能的分布也更宽；在每一次相变处，熵都发生显著变化。"
     },
     {
       "id": "entropy-and-molecular-structure",
       "kind": "result",
       "section": "16.2",
-      "name": "Entropy, molecular structure and mixing",
-      "statement": "At a given temperature, heavier atoms possess greater entropy than lighter ones, and molecules with more atoms have more ways to vibrate and so more microstates. A mixture has greater entropy than a pure substance, so dissolution increases entropy."
+      "name": "熵、分子结构与混合",
+      "statement": "在给定温度下，较重的原子比较轻的原子熵更大；原子数较多的分子有更多的振动方式，因而有更多的微观状态。混合物的熵大于纯物质的熵，所以溶解使熵增大。"
     },
     {
       "id": "predict-sign-of-entropy-change",
       "kind": "skill",
       "section": "16.2",
-      "name": "Predicting the sign of an entropy change",
-      "statement": "Weighing the changes in physical state, temperature, amount of gas, number of particles in solution and complexity of the species lets us predict whether the entropy of a system increases or decreases in a chemical or physical process."
+      "name": "预测熵变的符号",
+      "statement": "综合考虑物态变化、温度变化、气体的物质的量、溶液中粒子的数目以及物种的复杂程度，就能预测化学过程或物理过程中体系的熵是增大还是减小。"
     },
     {
       "id": "entropy-change-of-universe",
       "kind": "definition",
       "section": "16.3",
-      "name": "Entropy change of the universe",
+      "name": "宇宙的熵变",
       "symbol": "ΔS_univ",
       "type": "entropy",
-      "statement": "The system and its surroundings comprise the universe, so the entropy change of the universe is the sum of the entropy changes of the system and of the surroundings.",
+      "statement": "体系与环境合起来构成宇宙，所以宇宙的熵变等于体系的熵变与环境的熵变之和。",
       "forms": [
         {
           "id": "eq-entropy-change-universe",
@@ -10766,11 +10765,11 @@
       "id": "second-law-of-thermodynamics",
       "kind": "axiom",
       "section": "16.3",
-      "name": "Second law of thermodynamics",
+      "name": "热力学第二定律",
       "terms": [
-        "second law of thermodynamics"
+        "热力学第二定律"
       ],
-      "statement": "All spontaneous changes cause an increase in the entropy of the universe. A process for which the entropy of the universe would decrease is nonspontaneous (spontaneous in the opposite direction), and one for which it is unchanged is at equilibrium.",
+      "statement": "一切自发变化都使宇宙的熵增大。使宇宙的熵减小的过程是非自发的（沿相反方向是自发的），宇宙的熵不变的过程则处于平衡。",
       "forms": [
         {
           "id": "eq-second-law",
@@ -10785,10 +10784,10 @@
       "id": "entropy-change-of-surroundings",
       "kind": "result",
       "section": "16.3",
-      "name": "Entropy change of the surroundings",
+      "name": "环境的熵变",
       "symbol": "ΔS_surr",
       "type": "entropy",
-      "statement": "When the surroundings are vast compared to the system, the heat they gain or lose is a nearly infinitesimal fraction of their thermal energy, so the heat of the surroundings approximates the reversible heat and their entropy change is that heat divided by the temperature.",
+      "statement": "当环境相对于体系极其庞大时，环境得到或失去的热量只占其热能的一个近乎无穷小的分数，所以环境的热量可近似为可逆热，环境的熵变就是该热量除以温度。",
       "forms": [
         {
           "id": "eq-second-law-surroundings",
@@ -10803,18 +10802,18 @@
       "id": "predict-spontaneity-from-entropy",
       "kind": "skill",
       "section": "16.3",
-      "name": "Predicting spontaneity from the entropy of the universe",
-      "statement": "Adding the entropy change of the system to the heat of the surroundings divided by the kelvin temperature gives the entropy change of the universe, whose sign tells whether a process is spontaneous at that temperature."
+      "name": "由宇宙的熵变预测自发性",
+      "statement": "把体系的熵变与环境的热量除以开尔文温度相加，即得宇宙的熵变，其符号表明过程在该温度下是否自发。"
     },
     {
       "id": "third-law-of-thermodynamics",
       "kind": "axiom",
       "section": "16.3",
-      "name": "Third law of thermodynamics",
+      "name": "热力学第三定律",
       "terms": [
-        "third law of thermodynamics"
+        "热力学第三定律"
       ],
-      "statement": "The entropy of a pure, perfect crystalline substance at 0 K is zero, since such a crystal can be described by a single microstate.",
+      "statement": "在 0 K 时，纯净的完美晶态物质的熵为零，因为这样的晶体可以用唯一的微观状态来描述。",
       "forms": [
         {
           "id": "eq-third-law",
@@ -10829,25 +10828,25 @@
       "id": "standard-entropy",
       "kind": "definition",
       "section": "16.3",
-      "name": "Standard entropy",
+      "name": "标准熵",
       "symbol": "S°",
       "terms": [
-        "standard entropy"
+        "标准熵"
       ],
       "type": "entropy",
-      "statement": "A standard entropy is the entropy of one mole of a substance under standard conditions, a pressure of 1 bar and, for tabulated values, usually a temperature of 298.15 K, determined from careful calorimetric measurements."
+      "statement": "标准熵是 1 mol 物质在标准条件下的熵，标准条件即压强为 1 bar，列表值通常取温度为 298.15 K；它由精确的量热测量得出。"
     },
     {
       "id": "standard-entropy-change",
       "kind": "definition",
       "section": "16.3",
-      "name": "Standard entropy change",
+      "name": "标准熵变",
       "symbol": "ΔS°",
       "terms": [
-        "standard entropy change"
+        "标准熵变"
       ],
       "type": "entropy",
-      "statement": "The standard entropy change for a reaction is computed from the standard entropies of its products and reactants, each multiplied by its stoichiometric coefficient in the balanced equation.",
+      "statement": "反应的标准熵变由产物和反应物的标准熵算出，每个标准熵都乘以它在配平方程式中的化学计量系数。",
       "forms": [
         {
           "id": "eq-standard-entropy-change",
@@ -10861,22 +10860,22 @@
       "id": "calculate-standard-entropy-change",
       "kind": "skill",
       "section": "16.3",
-      "name": "Calculating a standard entropy change",
-      "statement": "Multiplying the standard entropy of each product and reactant by its coefficient in the balanced equation and subtracting the reactants' sum from the products' gives the standard entropy change of a physical or chemical process."
+      "name": "计算标准熵变",
+      "statement": "把每个产物和反应物的标准熵乘以它在配平方程式中的系数，再用产物之和减去反应物之和，就得到物理过程或化学过程的标准熵变。"
     },
     {
       "id": "gibbs-free-energy",
       "kind": "definition",
       "section": "16.4",
-      "name": "Gibbs free energy",
+      "name": "吉布斯自由能",
       "symbol": "G",
       "terms": [
-        "Gibbs free energy",
-        "free energy change",
-        "free energy"
+        "吉布斯自由能",
+        "自由能变",
+        "自由能"
       ],
       "type": "energy",
-      "statement": "The Gibbs free energy is a state function defined in terms of a system's enthalpy and entropy, so it can be found from system quantities alone; at constant temperature and pressure its change is the enthalpy change minus the product of the temperature and the entropy change.",
+      "statement": "吉布斯自由能是用体系的焓和熵定义的状态函数，所以只需体系自身的量就能求得；在恒温恒压下，其变化等于焓变减去温度与熵变的乘积。",
       "forms": [
         {
           "id": "eq-gibbs-free-energy",
@@ -10897,8 +10896,8 @@
       "id": "free-energy-and-spontaneity",
       "kind": "result",
       "section": "16.4",
-      "name": "Free energy and spontaneity",
-      "statement": "Since the heat of the surroundings is the negative of the enthalpy change at constant pressure, the free energy change equals the negative of the temperature times the entropy change of the universe. A negative free energy change indicates a spontaneous process, a positive one a nonspontaneous process, and zero a system at equilibrium.",
+      "name": "自由能与自发性",
+      "statement": "由于环境的热量等于恒压下焓变的相反数，自由能变就等于温度乘以宇宙的熵变再取负。自由能变为负表示过程自发，为正表示过程非自发，为零表示体系处于平衡。",
       "forms": [
         {
           "id": "eq-free-energy-entropy-universe",
@@ -10912,8 +10911,8 @@
       "id": "free-energy-and-maximum-work",
       "kind": "result",
       "section": "16.4",
-      "name": "Free energy and maximum work",
-      "statement": "The free energy change is the energy available, or free, to do useful work other than expansion work: the most work a spontaneous process could do if it took place reversibly, and the least work that must be done on the system to carry out a nonspontaneous one.",
+      "name": "自由能与最大功",
+      "statement": "自由能变是可用于（即“自由”地用于）做膨胀功以外的有用功的能量：它是自发过程在可逆进行时所能做的最大功，也是使非自发过程得以进行而必须对体系做的最小功。",
       "forms": [
         {
           "id": "eq-free-energy-max-work",
@@ -10928,13 +10927,13 @@
       "id": "standard-free-energy-change",
       "kind": "definition",
       "section": "16.4",
-      "name": "Standard free energy change",
+      "name": "标准自由能变",
       "symbol": "ΔG°",
       "terms": [
-        "standard free energy change"
+        "标准自由能变"
       ],
       "type": "energy",
-      "statement": "The standard free energy change is the change in free energy for a process occurring under standard conditions, 1 bar pressure for gases and 1 M concentration for solutions, and may be computed from standard enthalpy and entropy changes.",
+      "statement": "标准自由能变是过程在标准条件下的自由能变，标准条件即气体压强为 1 bar，溶液浓度为 1 M；它可由标准焓变和标准熵变算出。",
       "forms": [
         {
           "id": "eq-standard-free-energy-change",
@@ -10948,13 +10947,13 @@
       "id": "standard-free-energy-of-formation",
       "kind": "definition",
       "section": "16.4",
-      "name": "Standard free energy of formation",
+      "name": "标准生成自由能",
       "symbol": "ΔG_f°",
       "terms": [
-        "standard free energy of formation"
+        "标准生成自由能"
       ],
       "type": "energy",
-      "statement": "The standard free energy of formation is the free energy change accompanying the formation of one mole of a substance from its elements in their standard states; it is zero for an element in its standard state, and a reaction's standard free energy change follows from the values for its products and reactants.",
+      "statement": "标准生成自由能是由处于标准状态的各元素生成 1 mol 物质时的自由能变；处于标准状态的元素，其标准生成自由能为零，反应的标准自由能变可由产物和反应物的这一数值求得。",
       "forms": [
         {
           "id": "eq-free-energy-from-formation",
@@ -10968,15 +10967,15 @@
       "id": "free-energy-of-coupled-reactions",
       "kind": "result",
       "section": "16.4",
-      "name": "Free energy of coupled reactions",
-      "statement": "Because free energy is a state function, the free energy change of a reaction that is the sum of others is the sum of their free energy changes, so a nonspontaneous reaction, such as the decomposition of zinc sulfide, can be made spontaneous by coupling it to a spontaneous one."
+      "name": "耦合反应的自由能",
+      "statement": "由于自由能是状态函数，由若干反应相加得到的反应，其自由能变等于各反应自由能变之和，所以非自发反应，例如硫化锌的分解，可以通过与自发反应耦合而成为自发的。"
     },
     {
       "id": "temperature-dependence-of-spontaneity",
       "kind": "result",
       "section": "16.4",
-      "name": "Temperature dependence of spontaneity",
-      "statement": "The signs of the enthalpy and entropy changes decide how spontaneity depends on temperature: with both positive a process is spontaneous at high temperatures, with both negative at low temperatures, with a positive enthalpy and a negative entropy change at no temperature, and with a negative enthalpy and a positive entropy change at all temperatures. A process whose two changes share a sign changes spontaneity where the free energy change is zero.",
+      "name": "自发性对温度的依赖",
+      "statement": "焓变与熵变的符号决定自发性如何依赖温度：二者皆为正时，过程在高温下自发；二者皆为负时，过程在低温下自发；焓变为正而熵变为负时，过程在任何温度下都不自发；焓变为负而熵变为正时，过程在任何温度下都自发。焓变与熵变同号的过程，在自由能变为零的温度处改变自发性。",
       "forms": [
         {
           "id": "eq-crossover-temperature",
@@ -10991,8 +10990,8 @@
       "id": "free-energy-and-reaction-quotient",
       "kind": "result",
       "section": "16.4",
-      "name": "Free energy under nonstandard conditions",
-      "statement": "The free energy change for a process with reactants and products under nonstandard conditions is related to its standard free energy change through the reaction quotient, the pressure-based one for gases and the concentration-based one for condensed phases.",
+      "name": "非标准条件下的自由能",
+      "statement": "反应物和产物处于非标准条件下的过程，其自由能变通过反应商与标准自由能变相联系：气体用以压强表示的反应商，凝聚相用以浓度表示的反应商。",
       "forms": [
         {
           "id": "eq-free-energy-nonstandard",
@@ -11006,8 +11005,8 @@
       "id": "free-energy-and-equilibrium-constant",
       "kind": "result",
       "section": "16.4",
-      "name": "Standard free energy change and the equilibrium constant",
-      "statement": "At equilibrium the reaction quotient equals the equilibrium constant and the free energy change is zero, which links the standard free energy change to the equilibrium constant: a negative standard free energy change means K is greater than 1 and products are more abundant. Equilibrium is established where the system's free energy is minimized.",
+      "name": "标准自由能变与平衡常数",
+      "statement": "平衡时反应商等于平衡常数，自由能变为零，由此把标准自由能变与平衡常数联系起来：标准自由能变为负意味着 K 大于 1，产物较多。体系的自由能最小时，平衡得以建立。",
       "forms": [
         {
           "id": "eq-standard-free-energy-k",
@@ -11225,14 +11224,14 @@
       "kind": "result",
       "section": "17.3",
       "name": "电极电势与氧化剂的强弱",
-      "statement": "标准电极电势越大者是越强的氧化剂：E° 增大，对应于该物种被还原的驱动力增大。因此，按数值顺序排列的标准电极电势表，就是按各半反应中反应物的氧化能力排序的，从 E° 最正处的最强氧化剂到 E° 最负处的最弱氧化剂；负值只表示该反应物是比水溶液中的氢离子更弱的氧化剂。"
+      "statement": "标准电极电势越大者是越强的氧化剂：E° 增大，对应于该物种被还原的推动力增大。因此，按数值顺序排列的标准电极电势表，就是按各半反应中反应物的氧化能力排序的，从 E° 最正处的最强氧化剂到 E° 最负处的最弱氧化剂；负值只表示该反应物是比水溶液中的氢离子更弱的氧化剂。"
     },
     {
       "id": "cell-potential-and-spontaneity",
       "kind": "result",
       "section": "17.3",
       "name": "电池电势与自发性",
-      "statement": "电池电势的算术符号表明电池反应的自发性：自发过程的电池电势为正，非自发过程的电池电势为负。把氧化还原反应反过来，其阴极和阳极半反应互换，因此电池电势的符号也随之改变。"
+      "statement": "电池电势的正负号表明电池反应的自发性：自发过程的电池电势为正，非自发过程的电池电势为负。把氧化还原反应反过来，其阴极和阳极半反应互换，因此电池电势的符号也随之改变。"
     },
     {
       "id": "predict-redox-spontaneity",
@@ -11307,7 +11306,7 @@
       "kind": "idea",
       "section": "17.4",
       "name": "E°、ΔG° 与 K 之间的关系",
-      "statement": "标准电池电势、标准自由能变和平衡常数是同一个反应驱动力的三种相互关联的度量。K > 1、ΔG° < 0 且 E°cell > 0 时，反应在标准条件下自发，平衡时产物更多；K < 1、ΔG° > 0 且 E°cell < 0 时，反应非自发，平衡时反应物更多；K = 1、ΔG° = 0 且 E°cell = 0 时，反应在标准条件下处于平衡。"
+      "statement": "标准电池电势、标准自由能变和平衡常数是同一个反应推动力的三种相互关联的度量。K > 1、ΔG° < 0 且 E°cell > 0 时，反应在标准条件下自发，平衡时产物更多；K < 1、ΔG° > 0 且 E°cell < 0 时，反应非自发，平衡时反应物更多；K = 1、ΔG° = 0 且 E°cell = 0 时，反应在标准条件下处于平衡。"
     },
     {
       "id": "nernst-equation",
@@ -11456,7 +11455,7 @@
       "kind": "idea",
       "section": "17.6",
       "name": "铁的生锈",
-      "statement": "铁暴露在氧和水中时，通过其表面的原电池而生锈：铁在阳极部位被氧化为 Fe2+，氧在阴极部位被还原，铁(II)在潮湿空气中进一步反应，生成称为铁锈的水合氧化铁(III)。与铜上的铜绿不同，铁锈不形成保护层，所以铁锈剥落、露出新的铁之后，腐蚀仍继续进行。"
+      "statement": "铁暴露在氧和水中时，通过其表面的原电池而生锈：铁在阳极部位被氧化为 Fe2+，氧在阴极部位被还原，铁(II)在潮湿空气中进一步反应，生成称为铁锈的氧化铁(III)水合物。与铜上的铜绿不同，铁锈不形成保护层，所以铁锈剥落、露出新的铁之后，腐蚀仍继续进行。"
     },
     {
       "id": "passivation",
@@ -11634,7 +11633,7 @@
       "terms": [
         "同素异形体"
       ],
-      "statement": "同素异形体是同一元素处于相同物态、化学性质和物理性质各不相同的两种或多种形态，其差别在于原子的排列方式。白锡在 13.2 °C 以上稳定，像其他金属一样有延展性；灰锡在低温下稳定，质脆，会碎裂成粉末，因此锡制品在漫长的寒冷天气中会崩解（锡疫）。"
+      "statement": "同素异形体是同一元素处于相同物态、化学性质和物理性质各不相同的两种或多种形态，其差别在于原子的排列方式。白锡在 13.2 °C 以上稳定，像其他金属一样有展性；灰锡在低温下稳定，质脆，会碎裂成粉末，因此锡制品在漫长的寒冷天气中会崩解（锡疫）。"
     },
     {
       "id": "tin-and-lead",
@@ -11825,14 +11824,14 @@
       "kind": "idea",
       "section": "18.4",
       "name": "非金属的结构",
-      "statement": "非金属的结构含有定域的共价键，许多非金属由单个分子组成：稀有气体是单原子的，氢、氮、氧和卤素是双原子的，随着伦敦力因分子质量增大而增强，卤素沿族向下由气体变为液体再变为固体。这些元素通常达到八隅体：15 族形成三个键，16 族形成两个键，卤素形成一个键。"
+      "statement": "非金属的结构含有定域的共价键，许多非金属由单个分子组成：稀有气体是单原子的，氢、氮、氧和卤素是双原子的，随着伦敦色散力因分子质量增大而增强，卤素沿族向下由气体变为液体再变为固体。这些元素通常达到八隅体：15 族形成三个键，16 族形成两个键，卤素形成一个键。"
     },
     {
       "id": "carbon-allotropes",
       "kind": "idea",
       "section": "18.4",
       "name": "碳的同素异形体",
-      "statement": "金刚石中每个碳原子与位于四面体顶点的原子形成四个单键（sp³），构成坚硬、高熔点的三维网络。石墨是由 sp² 杂化的碳原子通过 σ 键和离域 π 键结合而成的层，所以能导电，而层间微弱的伦敦力使它柔软而滑。C₆₀ 等富勒烯是封闭的笼，石墨烯是单层石墨，纳米管是卷成管状的这样一层。"
+      "statement": "金刚石中每个碳原子与位于四面体顶点的原子形成四个单键（sp³），构成坚硬、高熔点的三维网络。石墨是由 sp² 杂化的碳原子通过 σ 键和离域 π 键结合而成的层，所以能导电，而层间微弱的伦敦色散力使它柔软而滑。C₆₀ 等富勒烯是封闭的笼，石墨烯是单层石墨，纳米管是卷成管状的这样一层。"
     },
     {
       "id": "phosphorus-allotropes",
@@ -11891,7 +11890,7 @@
       "kind": "idea",
       "section": "18.5",
       "name": "氨的化学性质",
-      "statement": "氨可以作布朗斯特碱，也可以作很弱的酸，在高温下与金属反应生成氨基化物、亚氨基化物或氮化物。它的氮处于可能的最低氧化态 3−，所以只能被氧化而不能被还原，取代其氢原子可得到氯胺 NH₂Cl 和肼 N₂H₄ 等衍生物。"
+      "statement": "氨可以作布朗斯特–劳里碱，也可以作很弱的酸，在高温下与金属反应生成氨基化物、亚氨基化物或氮化物。它的氮处于可能的最低氧化态 3−，所以只能被氧化而不能被还原，取代其氢原子可得到氯胺 NH₂Cl 和肼 N₂H₄ 等衍生物。"
     },
     {
       "id": "hydrogenation",
@@ -12226,388 +12225,387 @@
       "id": "d-block-element",
       "kind": "definition",
       "section": "19.1",
-      "name": "d-block element",
+      "name": "d 区元素",
       "terms": [
-        "d-block element"
+        "d 区元素"
       ],
-      "statement": "Transition metals are the elements that have, or readily form, partially filled d orbitals. The d-block elements in groups 3–11 are transition elements; the d orbitals fill with the copper family (group 11), so the group 12 elements are technically not transition elements, though they display some of the same chemical properties and are commonly included in discussions of transition metals."
+      "statement": "过渡金属是具有（或容易形成）部分填充 d 轨道的元素。第 3–11 族的 d 区元素是过渡元素；d 轨道在铜族（第 11 族）填满，所以第 12 族元素严格来说不是过渡元素，不过它们表现出一些相同的化学性质，通常也列入过渡金属的讨论之中。"
     },
     {
       "id": "f-block-element",
       "kind": "definition",
       "section": "19.1",
-      "name": "f-block element",
+      "name": "f 区元素",
       "terms": [
-        "f-block element",
-        "inner transition element"
+        "f 区元素",
+        "内过渡元素"
       ],
-      "statement": "The f-block elements, also called inner transition metals, are the lanthanides and actinides, the elements with valence electrons in f orbitals. They also meet the criterion for transition metals, because the d orbital is partially occupied before the f orbitals, and they are frequently shown offset below the periodic table."
+      "statement": "f 区元素，也称内过渡金属，是镧系元素和锕系元素，即价电子位于 f 轨道的元素。它们也符合过渡金属的判据，因为在 f 轨道之前，d 轨道已被部分占据；它们常被错开画在元素周期表的下方。"
     },
     {
       "id": "transition-series",
       "kind": "definition",
       "section": "19.1",
-      "name": "Transition series",
+      "name": "过渡系",
       "terms": [
-        "first transition series",
-        "second transition series",
-        "third transition series",
-        "fourth transition series"
+        "第一过渡系",
+        "第二过渡系",
+        "第三过渡系",
+        "第四过渡系"
       ],
-      "statement": "The d-block elements are divided into four transition series, one per row of the d-block: the first transition series (Sc through Cu, atomic numbers 21–29), the second (Y through Ag, 39–47), the third (La and Hf through Au, 57 and 72–79) and the fourth (Ac and Rf through Rg, 89 and 104–111). Because lanthanum and actinium behave like the lanthanides and actinides, they are counted with those series, though their electron configurations make them the first members of the third and fourth transition series."
+      "statement": "d 区元素分为四个过渡系，d 区的每一行对应一个过渡系：第一过渡系（Sc 至 Cu，原子序数 21–29）、第二过渡系（Y 至 Ag，39–47）、第三过渡系（La 以及 Hf 至 Au，57 和 72–79）和第四过渡系（Ac 以及 Rf 至 Rg，89 和 104–111）。由于镧和锕的性质与镧系元素和锕系元素相似，它们被归入这两个系，尽管它们的电子构型使其成为第三和第四过渡系的第一个成员。"
     },
     {
       "id": "rare-earth-element",
       "kind": "definition",
       "section": "19.1",
-      "name": "Rare earth element",
+      "name": "稀土元素",
       "terms": [
-        "rare earth element"
+        "稀土元素"
       ],
-      "statement": "The 17 rare earth elements are the 15 lanthanoids plus scandium and yttrium. They often occur together and have similar chemical properties, which makes any one of them difficult to separate from the others; they are fairly abundant in the earth’s crust and were called rare because a pure sample was once rare."
+      "statement": "17 种稀土元素是 15 种镧系元素加上钪和钇。它们常常共生，化学性质相似，因此很难把其中任何一种与其他分离；它们在地壳中的含量相当丰富，之所以被称为稀土，是因为纯净的样品曾经十分稀少。"
     },
     {
       "id": "coordination-compound",
       "kind": "definition",
       "section": "19.1",
-      "name": "Coordination compound",
+      "name": "配位化合物",
       "terms": [
-        "coordination compound"
+        "配位化合物"
       ],
-      "statement": "A coordination compound is a stable compound in which the central metal atom or ion acts as a Lewis acid and accepts one or more pairs of electrons from molecules or ions that act as Lewis bases. Transition metals form a wide variety of them, although main group elements can also form coordination compounds."
+      "statement": "配位化合物是一类稳定的化合物，其中的中心金属原子或离子作为路易斯酸，接受来自作为路易斯碱的分子或离子的一对或多对电子。过渡金属能形成种类繁多的配位化合物，不过主族元素也可以形成配位化合物。"
     },
     {
       "id": "transition-metal-reactivity",
       "kind": "idea",
       "section": "19.1",
-      "name": "Reactivity of the transition elements",
-      "statement": "As their reduction potentials show, some transition metals are strong reducing agents while others have very low reactivity: the lanthanides all form stable 3+ aqueous cations, while platinum and gold resist oxidation. Ions of the lighter d-block elements form colorful hydrated ions stable in water, while the heavier elements form mostly oxyanions. The d- and f-block elements react with halogens and, on heating, with oxygen, and those above hydrogen react with acids to give hydrogen gas and salts."
+      "name": "过渡元素的反应性",
+      "statement": "从还原电势可以看出，一些过渡金属是强还原剂，另一些则反应性很低：镧系元素都形成在水溶液中稳定的 3+ 阳离子，而铂和金能抵抗氧化。较轻的 d 区元素的离子形成在水中稳定的有色水合离子，较重的元素则主要形成含氧酸根。d 区和 f 区元素与卤素反应，加热时与氧反应，活动性位于氢之上的元素与酸反应，生成氢气和盐。"
     },
     {
       "id": "platinum-metals",
       "kind": "definition",
       "section": "19.1",
-      "name": "Platinum metals",
+      "name": "铂系元素",
       "terms": [
-        "platinum metals"
+        "铂系元素"
       ],
-      "statement": "Ruthenium, osmium, rhodium, iridium, palladium and platinum are the platinum metals, which tend to occur in the same minerals and have similar chemical properties. With difficulty they form simple cations that are stable in water, and unlike the earlier elements of the second and third transition series they form no stable oxyanions."
+      "statement": "钌、锇、铑、铱、钯和铂是铂系元素，它们往往存在于相同的矿物中，化学性质相似。它们很难形成在水中稳定的简单阳离子，并且不像第二、第三过渡系中靠前的元素那样，不形成稳定的含氧酸根。"
     },
     {
       "id": "transition-metal-oxidation-states",
       "kind": "idea",
       "section": "19.1",
-      "name": "Oxidation states of the transition metals",
-      "statement": "Transition metals form compounds in a wide range of oxidation states. Across the first transition series the number of common oxidation states rises to a maximum toward the middle, then falls; from scandium through manganese the highest state is the loss of all the s and d valence electrons, and most of the series forms 2+ or 3+ ions stable in water. The second and third series are generally more stable in higher oxidation states, since their larger ions lose electrons more easily."
+      "name": "过渡金属的氧化态",
+      "statement": "过渡金属形成的化合物氧化态范围很宽。在第一过渡系中，常见氧化态的数目向中部增加到最大，然后减少；从钪到锰，最高氧化态对应于失去全部 s 和 d 价电子，该系的大多数元素形成在水中稳定的 2+ 或 3+ 离子。第二、第三过渡系的元素一般在较高氧化态下更稳定，因为它们体积较大的离子更容易失去电子。"
     },
     {
       "id": "smelting",
       "kind": "definition",
       "section": "19.1",
-      "name": "Smelting",
+      "name": "冶炼",
       "terms": [
-        "smelting"
+        "冶炼"
       ],
-      "statement": "Smelting is the extraction of a metal from its ore in the molten state, which includes reduction of the metallic compound to the metal. Impurities may be removed by adding a compound that forms a slag, a substance with a low melting point that is easily separated from the molten metal."
+      "statement": "冶炼是在熔融状态下从矿石中提取金属，其中包括把金属化合物还原为金属。可以加入一种能形成炉渣的化合物来除去杂质，炉渣是熔点低、容易与熔融金属分离的物质。"
     },
     {
       "id": "isolating-transition-metals",
       "kind": "idea",
       "section": "19.1",
-      "name": "Isolating the transition metals",
-      "statement": "How easily a transition element is recovered from its ore depends on its concentration in the ore, the other elements present and how hard its ions are to reduce. Carbon reduces most d-block ions to the free element, while f-block ions, like those of the more active main group metals, must be isolated by electrolysis or by reduction with an active metal. Isolation usually runs in three steps: preliminary treatment, smelting and refining."
+      "name": "过渡金属的提取",
+      "statement": "过渡元素从矿石中回收的难易，取决于它在矿石中的浓度、共存的其他元素，以及其离子被还原的难度。碳可以把大多数 d 区离子还原为单质，而 f 区离子，如同较活泼的主族金属的离子，必须通过电解或用活泼金属还原来提取。提取通常分三步：预处理、冶炼和精炼。"
     },
     {
       "id": "blast-furnace",
       "kind": "idea",
       "section": "19.1",
-      "name": "Isolating iron in a blast furnace",
-      "statement": "Roasted iron ore, coke and limestone go in at the top of a blast furnace and preheated air is blown in near the bottom, where coke burns to carbon dioxide; passing up through white-hot coke, the CO₂ is reduced to carbon monoxide, which reduces the iron oxides in the upper regions. Limestone decomposes to calcium oxide, which combines with silica to form a slag of calcium silicate; molten iron and the less dense slag collect at the bottom and are drawn off."
+      "name": "在高炉中提取铁",
+      "statement": "焙烧过的铁矿石、焦炭和石灰石从高炉顶部加入，预热过的空气从靠近底部处鼓入，焦炭在此燃烧成二氧化碳；二氧化碳向上经过白热的焦炭时被还原为一氧化碳，一氧化碳在上部区域还原铁的氧化物。石灰石分解为氧化钙，氧化钙与二氧化硅结合，形成硅酸钙炉渣；熔融的铁和密度较小的炉渣聚集在底部，被放出。"
     },
     {
       "id": "steel",
       "kind": "definition",
       "section": "19.1",
-      "name": "Steel",
+      "name": "钢",
       "terms": [
-        "steel"
+        "钢"
       ],
-      "statement": "Steel is made from iron by removing impurities and adding substances such as manganese, chromium, nickel, tungsten, molybdenum and vanadium to produce alloys suited to specific uses. Most steels contain small but definite percentages of carbon, though much of the carbon in iron must be removed, since an excess makes the iron brittle."
+      "statement": "钢是通过除去铁中的杂质并加入锰、铬、镍、钨、钼和钒等物质制成的，这些物质使合金具有适合特定用途的性能。大多数钢含有少量但确定比例的碳，不过铁中所含的大部分碳必须除去，因为碳过多会使铁变脆。"
     },
     {
       "id": "copper-isolation",
       "kind": "idea",
       "section": "19.1",
-      "name": "Isolating copper",
-      "statement": "Concentrated copper sulfide ore is roasted, then heated with limestone as a flux, so that iron and silica leave as a molten slag in Lewis acid-base reactions. Blowing air through the remaining Cu₂S converts part of it to Cu₂O, which the rest of the sulfide reduces to blister copper; the impure copper is cast into anodes and refined electrolytically."
+      "name": "铜的提取",
+      "statement": "把浓缩的硫化铜矿石焙烧，再与作为熔剂的石灰石一起加热，铁和二氧化硅通过路易斯酸碱反应以熔融炉渣的形式除去。向剩余的 Cu₂S 中吹入空气，使一部分转化为 Cu₂O，Cu₂O 被其余的硫化物还原为泡铜；这种不纯的铜被铸成阳极，再经电解精炼。"
     },
     {
       "id": "hydrometallurgy",
       "kind": "definition",
       "section": "19.1",
-      "name": "Hydrometallurgy",
+      "name": "湿法冶金",
       "terms": [
-        "hydrometallurgy"
+        "湿法冶金"
       ],
-      "statement": "Hydrometallurgy separates a metal from a mixture by first converting it into soluble ions, extracting the ions and then reducing them to precipitate the pure metal. Silver is dissolved by alkali metal cyanides in the presence of air as the dicyanoargentate(I) ion, [Ag(CN)₂]⁻, and precipitated from the solution by zinc or iron(II)."
+      "statement": "湿法冶金是先把金属转化为可溶性离子，再提取这些离子并把它们还原，使纯金属沉淀出来，从而从混合物中分离出金属。银在空气存在下被碱金属氰化物溶解为二氰合银(I)离子 [Ag(CN)₂]⁻，再用锌或铁(II)从溶液中沉淀出来。"
     },
     {
       "id": "transition-metal-compounds",
       "kind": "idea",
       "section": "19.1",
-      "name": "Transition metal compounds",
-      "statement": "The bonding in simple transition metal compounds ranges from ionic in lower oxidation states to covalent in higher ones, since a metal’s electronegativity rises with its oxidation state. Halides with low oxidation numbers are ionic, while the tetrahalides of titanium and vanadium react with water like covalent SiCl₄. Oxides in the lowest oxidation states are basic, those in intermediate states amphoteric and those in the highest acidic; hydroxides, carbonates and other salts are prepared much as those of the main group metals are."
+      "name": "过渡金属化合物",
+      "statement": "简单过渡金属化合物中的键，从低氧化态时的离子键到高氧化态时的共价键不等，因为金属的电负性随氧化态升高而增大。低氧化数的卤化物是离子型的，而钛和钒的四卤化物像共价的 SiCl₄ 一样与水反应。最低氧化态的氧化物呈碱性，中间氧化态的呈两性，最高氧化态的呈酸性；氢氧化物、碳酸盐和其他盐的制备方法与主族金属的大体相同。"
     },
     {
       "id": "superconductor",
       "kind": "definition",
       "section": "19.1",
-      "name": "Superconductor",
+      "name": "超导体",
       "terms": [
-        "superconductor"
+        "超导体"
       ],
-      "statement": "A superconductor conducts electricity with no resistance, so no energy is lost in transmission. Commercial superconductors such as NbTi and Nb₃Sn must be cooled below 23 K with liquid helium, while oxides such as YBa₂Cu₃O₇ become superconducting near 90 K and can be cooled with liquid nitrogen."
+      "statement": "超导体导电时没有电阻，因此输电时不损失能量。NbTi 和 Nb₃Sn 等商用超导体必须用液氦冷却到 23 K 以下，而 YBa₂Cu₃O₇ 等氧化物在接近 90 K 时即成为超导体，可以用液氮冷却。"
     },
     {
       "id": "central-metal",
       "kind": "definition",
       "section": "19.2",
-      "name": "Central metal",
+      "name": "中心金属",
       "terms": [
-        "central metal"
+        "中心金属"
       ],
-      "statement": "In a coordination complex the Lewis acid, often called the central metal ion or atom, is the ion or atom to which one or more ligands are attached through coordinate covalent bonds. It is often a transition metal or an inner transition metal."
+      "statement": "在配合物中，路易斯酸，常称为中心金属离子或原子，是通过配位共价键与一个或多个配体相连的离子或原子。它常常是过渡金属或内过渡金属。"
     },
     {
       "id": "donor-atom",
       "kind": "definition",
       "section": "19.2",
-      "name": "Donor atom",
+      "name": "配位原子",
       "terms": [
-        "donor atom"
+        "配位原子"
       ],
-      "statement": "A donor atom is the atom in a ligand with a lone pair of electrons that forms a coordinate covalent bond to the central metal."
+      "statement": "配位原子是配体中带有孤电子对、能与中心金属形成配位共价键的原子。"
     },
     {
       "id": "coordination-sphere",
       "kind": "definition",
       "section": "19.2",
-      "name": "Coordination sphere",
+      "name": "配位层",
       "terms": [
-        "coordination sphere"
+        "配位层"
       ],
-      "statement": "The coordination sphere is the central metal ion or atom plus its attached ligands. Brackets in a formula enclose the coordination sphere, and species outside the brackets are not part of it and are not bonded to the metal."
+      "statement": "配位层是中心金属离子或原子加上与它相连的配体。化学式中的方括号括住配位层，括号外的物种不属于配位层，也不与金属键合。"
     },
     {
       "id": "monodentate-ligand",
       "kind": "definition",
       "section": "19.2",
-      "name": "Monodentate ligand",
+      "name": "单齿配体",
       "terms": [
-        "monodentate"
+        "单齿"
       ],
-      "statement": "A monodentate ligand, from the Greek for “one toothed,” attaches to the central metal through just one coordinate covalent bond; for monodentate ligands the number of ligands equals the coordination number."
+      "statement": "单齿配体仅通过一个配位共价键与中心金属相连，其名称源自希腊语，意为“一齿的”；对于单齿配体，配体数等于配位数。"
     },
     {
       "id": "bidentate-ligand",
       "kind": "definition",
       "section": "19.2",
-      "name": "Bidentate ligand",
+      "name": "双齿配体",
       "terms": [
-        "bidentate ligand"
+        "双齿配体"
       ],
-      "statement": "A bidentate ligand coordinates to one central metal through two different donor atoms. Ethylenediamine (en) has two nitrogen atoms with lone pairs that both coordinate, so in [Co(en)₃]³⁺ three en ligands give cobalt(III) a coordination number of six."
+      "statement": "双齿配体通过两个不同的配位原子与同一个中心金属配位。乙二胺（en）有两个带孤电子对的氮原子，二者都能配位，所以在 [Co(en)₃]³⁺ 中，三个 en 配体使钴(III)的配位数为六。"
     },
     {
       "id": "polydentate-ligand",
       "kind": "definition",
       "section": "19.2",
-      "name": "Polydentate ligand",
+      "name": "多齿配体",
       "terms": [
-        "polydentate ligand"
+        "多齿配体"
       ],
-      "statement": "A polydentate ligand bonds to a central metal ion through more than one donor atom; prefixes give the number of donors (bidentate, tridentate, tetradentate, pentadentate, hexadentate). The ligand in heme is tetradentate."
+      "statement": "多齿配体通过不止一个配位原子与中心金属离子结合；前缀表示配位原子的个数（双齿、三齿、四齿、五齿、六齿）。血红素中的配体是四齿配体。"
     },
     {
       "id": "chelate",
       "kind": "definition",
       "section": "19.2",
-      "name": "Chelate",
+      "name": "螯合物",
       "terms": [
-        "chelate",
-        "chelating ligand",
-        "chelating agent"
+        "螯合物",
+        "螯合配体",
+        "螯合剂"
       ],
-      "statement": "A chelate, from the Greek for “claw,” is a complex formed from one or more polydentate ligands attached to a central metal. A ligand that attaches by bonds from two or more donor atoms is a chelating ligand, or chelating agent, and holds the metal ion rather as a crab’s claw holds a marble."
+      "statement": "螯合物（其名称源自希腊语，意为“爪”）是由一个或多个多齿配体与中心金属相连形成的配合物。通过两个或更多配位原子的键相连的配体是螯合配体，或称螯合剂，它握住金属离子，就像蟹钳夹住一颗弹珠。"
     },
     {
       "id": "naming-coordination-compounds",
       "kind": "skill",
       "section": "19.2",
-      "name": "Naming coordination compounds",
-      "statement": "A complex is named by Werner’s rules: an ionic compound names the cation first and the anion second; the ligands are named alphabetically before the metal, anions with an -o ending and the neutral aqua, ammine, carbonyl and nitrosyl as exceptions; di-, tri-, tetra- (or bis-, tris-, tetrakis-) count them; the metal’s oxidation state, found from the ligand charges and the overall charge, follows as a Roman numeral, with -ate added to the metal’s stem when the complex is an anion."
+      "name": "配位化合物的命名",
+      "statement": "配合物按维尔纳规则命名：离子型化合物先命名阳离子，后命名阴离子；配体按字母顺序排在金属之前命名，阴离子配体的名称以 -o 结尾，中性配体中 aqua、ammine、carbonyl 和 nitrosyl 是例外；同一种配体的个数用 di-、tri-、tetra-（或 bis-、tris-、tetrakis-）表示；金属的氧化态由配体电荷和配合物的总电荷确定，以罗马数字写在其后，配合物为阴离子时，在金属名称的词干后加 -ate。"
     },
     {
       "id": "complex-geometry",
       "kind": "idea",
       "section": "19.2",
-      "name": "Structures of complexes",
-      "statement": "The coordination number determines the geometry around the central metal: two donor atoms give a linear complex, four a tetrahedral or square planar one and six an octahedral one, with 90° between adjacent ligands; higher coordination numbers give structures such as the pentagonal bipyramid, square antiprism and dodecahedron. Unlike in main group compounds, the nonbonding d electrons do not change the arrangement of the ligands."
+      "name": "配合物的结构",
+      "statement": "配位数决定中心金属周围的几何构型：两个配位原子给出直线形配合物，四个给出四面体形或平面正方形配合物，六个给出八面体形配合物，相邻配体之间成 90°；更高的配位数则给出五角双锥、四方反棱柱和十二面体等结构。与主族化合物不同，非键合的 d 电子不改变配体的排布。"
     },
     {
       "id": "geometric-isomer",
       "kind": "definition",
       "section": "19.2",
-      "name": "Geometric isomer",
+      "name": "几何异构体",
       "terms": [
-        "geometric isomers",
-        "geometric isomer"
+        "几何异构体"
       ],
-      "statement": "Geometric isomers have the same atoms connected through the same types of bonds but oriented differently in space. They are different compounds with different properties, such as the violet cis and green trans forms of [Co(NH₃)₄Cl₂]NO₃, which also differ in dipole moment, solubility and reactivity."
+      "statement": "几何异构体具有通过相同类型的键连接的相同原子，只是在空间中的取向不同。它们是性质不同的不同化合物，例如 [Co(NH₃)₄Cl₂]NO₃ 的紫色顺式和绿色反式，二者的偶极矩、溶解度和反应性也不同。"
     },
     {
       "id": "cis-trans-configuration",
       "kind": "definition",
       "section": "19.2",
-      "name": "Cis and trans configurations",
+      "name": "顺式和反式构型",
       "terms": [
-        "cis configuration",
-        "trans configuration"
+        "顺式构型",
+        "反式构型"
       ],
-      "statement": "In the cis configuration two similar groups are adjacent, on the same side of an imaginary reference line on the molecule, at 90° in a square planar or octahedral complex; in the trans configuration they are directly across from one another, at 180°. The cis isomer of [Co(NH₃)₄Cl₂]⁺ is polar, while the bond dipoles of the trans isomer cancel."
+      "statement": "在顺式构型中，两个相似的基团相邻，位于分子上假想参考线的同一侧，在平面正方形或八面体配合物中成 90°；在反式构型中，它们正好相对，成 180°。[Co(NH₃)₄Cl₂]⁺ 的顺式异构体有极性，而反式异构体的键偶极相互抵消。"
     },
     {
       "id": "optical-isomer",
       "kind": "definition",
       "section": "19.2",
-      "name": "Optical isomer",
+      "name": "旋光异构体",
       "terms": [
-        "optical isomer",
-        "enantiomer"
+        "旋光异构体",
+        "对映异构体"
       ],
-      "statement": "Optical isomers, or enantiomers, are nonsuperimposable mirror images, as a right and a left hand are. They have identical properties except in how they affect polarized light and react with other optical isomers; complexes such as [M(en)₃]ⁿ⁺ and cis-[Co(en)₂Cl₂]⁺ form them."
+      "statement": "旋光异构体，或称对映异构体，是不能重合的镜像，就像右手和左手一样。除了对偏振光的作用和与其他旋光异构体的反应不同以外，它们的性质完全相同；[M(en)₃]ⁿ⁺ 和顺-[Co(en)₂Cl₂]⁺ 等配合物能形成旋光异构体。"
     },
     {
       "id": "linkage-isomer",
       "kind": "definition",
       "section": "19.2",
-      "name": "Linkage isomer",
+      "name": "键合异构体",
       "terms": [
-        "linkage isomer"
+        "键合异构体"
       ],
-      "statement": "Linkage isomers occur when a ligand can bind to the metal center through two different atoms: CN⁻ through carbon (cyano) or nitrogen (isocyano), SCN⁻ through sulfur or nitrogen."
+      "statement": "当配体能通过两种不同的原子与金属中心结合时，就出现键合异构体：CN⁻ 可通过碳（氰基）或氮（异氰基）结合，SCN⁻ 可通过硫或氮结合。"
     },
     {
       "id": "ionization-isomer",
       "kind": "definition",
       "section": "19.2",
-      "name": "Ionization isomer",
+      "name": "电离异构体",
       "terms": [
-        "ionization isomer",
-        "coordination isomer"
+        "电离异构体",
+        "配位异构体"
       ],
-      "statement": "Ionization isomers, or coordination isomers, occur when an anionic ligand in the inner coordination sphere is exchanged for the counter ion from the outer coordination sphere, as in [CoCl₆][Br] and [CoCl₅Br][Cl]."
+      "statement": "当内配位层中的一个阴离子配体与外配位层中的反离子互换位置时，就出现电离异构体，或称配位异构体，如 [CoCl₆][Br] 和 [CoCl₅Br][Cl]。"
     },
     {
       "id": "complexes-in-nature-and-technology",
       "kind": "idea",
       "section": "19.2",
-      "name": "Coordination complexes in nature and technology",
-      "statement": "Chlorophyll is a magnesium complex and heme an iron complex that carries oxygen in hemoglobin only while its iron is Fe²⁺. Chelating agents such as EDTA soften water, preserve food and sequester metals, and drugs such as BAL and enterobactin remove toxic metals as water-soluble chelates. Complexes give smoother electroplated coatings and serve as pigments and catalysts, and the cis isomer of diamminedichloroplatinum(II), cisplatin, treats cancer where the trans isomer does not."
+      "name": "自然界和技术中的配合物",
+      "statement": "叶绿素是镁的配合物，血红素是铁的配合物，只有当铁为 Fe²⁺ 时，血红蛋白中的血红素才能运载氧。EDTA 等螯合剂可使水软化、保存食品和封存金属，BAL 和肠杆菌素等药物把有毒金属变成水溶性螯合物排出体外。配合物能使电镀镀层更光滑，并用作颜料和催化剂；二氯·二氨合铂(II)的顺式异构体顺铂可用于治疗癌症，反式异构体则不能。"
     },
     {
       "id": "crystal-field-theory",
       "kind": "definition",
       "section": "19.3",
-      "name": "Crystal field theory",
+      "name": "晶体场理论",
       "terms": [
-        "crystal field theory",
+        "晶体场理论",
         "CFT"
       ],
-      "statement": "Crystal field theory (CFT) explains the energies of a transition metal’s orbitals in terms of electrostatic interactions with the ligands, treated as point charges, and leaves out metal-ligand bonding. Electrons donated by the ligands repel the electrons in the metal’s unhybridized d orbitals, so the d orbitals no longer all have the same energy; the model accounts for the colors, magnetic behavior and some structures of complexes."
+      "statement": "晶体场理论（CFT）用与配体的静电相互作用来解释过渡金属轨道的能量，其中配体被当作点电荷，而不考虑金属–配体之间的成键。配体给出的电子排斥金属的未杂化 d 轨道中的电子，使 d 轨道的能量不再全都相同；该模型可解释配合物的颜色、磁性和部分结构。"
     },
     {
       "id": "eg-and-t2g-orbitals",
       "kind": "definition",
       "section": "19.3",
-      "name": "The eg and t2g orbitals",
+      "name": "eg 和 t2g 轨道",
       "terms": [
-        "eg orbitals",
-        "t2g orbitals"
+        "eg 轨道",
+        "t2g 轨道"
       ],
-      "statement": "In an octahedral complex the six ligands lie along the axes. The two d orbitals whose lobes point at them, the d<sub>z²</sub> and d<sub>x²−y²</sub>, are the e<sub>g</sub> orbitals and are raised in energy; the three whose lobes point between them, the d<sub>xy</sub>, d<sub>xz</sub> and d<sub>yz</sub>, are the t<sub>2g</sub> orbitals and lie lower."
+      "statement": "在八面体配合物中，六个配体位于坐标轴上。波瓣指向配体的两个 d 轨道，即 d<sub>z²</sub> 和 d<sub>x²−y²</sub>，是 e<sub>g</sub> 轨道，能量升高；波瓣指向配体之间的三个 d 轨道，即 d<sub>xy</sub>、d<sub>xz</sub> 和 d<sub>yz</sub>，是 t<sub>2g</sub> 轨道，能量较低。"
     },
     {
       "id": "crystal-field-splitting",
       "kind": "definition",
       "section": "19.3",
-      "name": "Crystal field splitting",
+      "name": "晶体场分裂",
       "symbol": "Δ_oct",
       "terms": [
-        "crystal field splitting"
+        "晶体场分裂"
       ],
       "type": "energy",
-      "statement": "The crystal field splitting, Δ<sub>oct</sub> for an octahedral complex, is the difference in energy between the e<sub>g</sub> and t<sub>2g</sub> sets of orbitals. Its size depends on the ligands, the charge on the metal and whether the metal uses 3d, 4d or 5d orbitals."
+      "statement": "晶体场分裂，对八面体配合物记作 Δ<sub>oct</sub>，是 e<sub>g</sub> 与 t<sub>2g</sub> 两组轨道之间的能量差。其大小取决于配体、金属上的电荷，以及金属用的是 3d、4d 还是 5d 轨道。"
     },
     {
       "id": "spectrochemical-series",
       "kind": "definition",
       "section": "19.3",
-      "name": "Spectrochemical series",
+      "name": "光谱化学序列",
       "terms": [
-        "spectrochemical series"
+        "光谱化学序列"
       ],
-      "statement": "The spectrochemical series ranks ligands by the crystal field splitting they produce: I⁻ < Br⁻ < Cl⁻ < F⁻ < H₂O < NH₃ < en < NO₂⁻ < CN⁻, in order of increasing field strength."
+      "statement": "光谱化学序列按配体产生的晶体场分裂对配体排序：I⁻ < Br⁻ < Cl⁻ < F⁻ < H₂O < NH₃ < en < NO₂⁻ < CN⁻，场强依次增大。"
     },
     {
       "id": "ligand-field-strength",
       "kind": "definition",
       "section": "19.3",
-      "name": "Strong-field and weak-field ligands",
+      "name": "强场配体和弱场配体",
       "terms": [
-        "strong-field ligand",
-        "weak-field ligand"
+        "强场配体",
+        "弱场配体"
       ],
-      "statement": "Ligands at the left of the spectrochemical series cause small crystal field splittings and are weak-field ligands; those at the right cause large splittings and are strong-field ligands, so Δ<sub>oct</sub> for iodide ligands is much smaller than for cyanide ligands on the same metal."
+      "statement": "光谱化学序列左侧的配体产生的晶体场分裂小，是弱场配体；右侧的配体产生的分裂大，是强场配体，所以对同一金属，碘离子配体的 Δ<sub>oct</sub> 比氰根配体的小得多。"
     },
     {
       "id": "pairing-energy",
       "kind": "definition",
       "section": "19.3",
-      "name": "Pairing energy",
+      "name": "成对能",
       "symbol": "P_pair",
       "terms": [
-        "pairing energy"
+        "成对能"
       ],
       "type": "energy",
-      "statement": "The pairing energy, P, is the energy required to place two electrons with opposite spins into a single orbital, where their like charges repel. Electrons singly occupy each orbital of a degenerate set before pairing, and P is similar in magnitude to Δ<sub>oct</sub>."
+      "statement": "成对能 P 是把两个自旋相反的电子放入同一个轨道所需的能量，因为二者的同号电荷相互排斥。电子在成对之前，先单独占据一组简并轨道中的每个轨道；P 与 Δ<sub>oct</sub> 的大小相近。"
     },
     {
       "id": "high-and-low-spin-complexes",
       "kind": "result",
       "section": "19.3",
-      "name": "High-spin and low-spin complexes",
+      "name": "高自旋配合物和低自旋配合物",
       "terms": [
-        "high-spin complex",
-        "low-spin complex"
+        "高自旋配合物",
+        "低自旋配合物"
       ],
-      "statement": "The relative sizes of Δ<sub>oct</sub> and P decide which orbitals the d electrons occupy. With strong-field ligands Δ<sub>oct</sub> > P, and the electrons pair in the t<sub>2g</sub> orbitals before any occupy the e<sub>g</sub> orbitals, giving a low-spin complex such as [Fe(CN)₆]⁴⁻; with weak-field ligands Δ<sub>oct</sub> < P, and the electrons singly occupy all five orbitals before pairing, giving a high-spin complex such as [Fe(H₂O)₆]²⁺. Only d⁴ to d⁷ ions have a choice."
+      "statement": "Δ<sub>oct</sub> 与 P 的相对大小决定 d 电子占据哪些轨道。对强场配体，Δ<sub>oct</sub> > P，电子先在 t<sub>2g</sub> 轨道中成对，然后才有电子进入 e<sub>g</sub> 轨道，得到低自旋配合物，如 [Fe(CN)₆]⁴⁻；对弱场配体，Δ<sub>oct</sub> < P，电子先单独占据全部五个轨道，然后才成对，得到高自旋配合物，如 [Fe(H₂O)₆]²⁺。只有 d⁴ 至 d⁷ 离子才有这种选择。"
     },
     {
       "id": "predict-unpaired-electrons",
       "kind": "skill",
       "section": "19.3",
-      "name": "Predicting unpaired electrons in a complex",
-      "statement": "To predict the number of unpaired electrons in a complex, find the metal’s oxidation state and its number of d electrons, place them in the split d orbitals by the complex’s geometry and, for d⁴ to d⁷ octahedral ions, by whether its ligands make it high spin or low spin, then count the singly occupied orbitals."
+      "name": "预测配合物中的未成对电子数",
+      "statement": "要预测配合物中的未成对电子数，先求出金属的氧化态和 d 电子数，再按配合物的几何构型把它们放入分裂后的 d 轨道；对 d⁴ 至 d⁷ 的八面体离子，还要看其配体使它成为高自旋还是低自旋，然后数出单占的轨道。"
     },
     {
       "id": "crystal-field-other-geometries",
       "kind": "result",
       "section": "19.3",
-      "name": "Crystal field splitting in other geometries",
+      "name": "其他几何构型中的晶体场分裂",
       "symbol": "Δ_tet",
       "type": "energy",
-      "statement": "In a tetrahedral complex the four ligands lie between the axes, so the e set along the axes is lowered and the t<sub>2</sub> set raised; the overlap is less than in an octahedron, the splitting Δ<sub>tet</sub> is about four ninths of Δ<sub>oct</sub>, and all tetrahedral complexes are high spin. A square planar complex, an octahedron with its two trans ligands on the z axis removed, splits the d orbitals into a more complicated pattern.",
+      "statement": "在四面体配合物中，四个配体位于坐标轴之间，所以沿坐标轴的 e 组轨道能量降低，t<sub>2</sub> 组轨道能量升高；重叠比八面体的小，分裂 Δ<sub>tet</sub> 约为 Δ<sub>oct</sub> 的九分之四，并且所有四面体配合物都是高自旋。平面正方形配合物可看作去掉 z 轴上两个反式配体的八面体，它使 d 轨道分裂成更复杂的模式。",
       "forms": [
         {
           "id": "eq-delta-tet",
@@ -12621,50 +12619,50 @@
       "id": "magnetic-moment-unpaired-electrons",
       "kind": "idea",
       "section": "19.3",
-      "name": "Magnetic moments of complexes",
-      "statement": "The magnetic moment of a system with unpaired electrons grows with the number of unpaired electrons, so a measured magnetic moment gives that number. Measurements confirm the theory: low-spin d⁶ [Fe(CN)₆]⁴⁻ is diamagnetic, while high-spin d⁶ [Fe(H₂O)₆]²⁺ has four unpaired electrons."
+      "name": "配合物的磁矩",
+      "statement": "含未成对电子体系的磁矩随未成对电子数的增加而增大，所以测得的磁矩可给出这个数目。测量证实了该理论：低自旋 d⁶ 的 [Fe(CN)₆]⁴⁻ 是抗磁性的，而高自旋 d⁶ 的 [Fe(H₂O)₆]²⁺ 有四个未成对电子。"
     },
     {
       "id": "complementary-colors",
       "kind": "idea",
       "section": "19.3",
-      "name": "Complementary colors",
-      "statement": "The eye sees a mixture of all colors in sunlight, or of two complementary colors in the proper proportions, as white. Complementary colors lie across from each other on a color wheel, and when a color is missing from white light the eye sees its complement: an object that absorbs red light looks green, and one that absorbs violet looks lemon yellow."
+      "name": "互补色",
+      "statement": "眼睛把日光中所有颜色的混合，或按适当比例混合的两种互补色，看成白色。互补色在色环上彼此相对，当白光缺少某种颜色时，眼睛看到的是它的互补色：吸收红光的物体看起来是绿色，吸收紫光的物体看起来是柠檬黄色。"
     },
     {
       "id": "colors-of-complexes",
       "kind": "result",
       "section": "19.3",
-      "name": "Colors of transition metal complexes",
-      "statement": "A complex absorbs photons whose energy matches the gap between its d orbitals, which often lies in the visible range, and appears in the complementary color: the absorption maximum corresponds to Δ<sub>oct</sub>. Strong-field complexes absorb higher-energy violet or blue light and look yellow, orange or red, weak-field complexes absorb yellow, orange or red light and look blue-green, blue or indigo, and d¹⁰ ions such as Cu⁺ absorb no visible light and are colorless."
+      "name": "过渡金属配合物的颜色",
+      "statement": "配合物吸收的光子，其能量与它的 d 轨道之间的间隔相当，这个间隔常落在可见光范围内，所以配合物呈现互补色：吸收极大对应于 Δ<sub>oct</sub>。强场配合物吸收能量较高的紫光或蓝光，呈黄色、橙色或红色；弱场配合物吸收黄光、橙光或红光，呈蓝绿色、蓝色或靛色；Cu⁺ 等 d¹⁰ 离子不吸收可见光，因而无色。"
     },
     {
       "id": "organic-compound",
       "kind": "definition",
       "section": "20.1",
-      "name": "Organic compound",
+      "name": "有机化合物",
       "terms": [
-        "organic compound"
+        "有机化合物"
       ],
-      "statement": "An organic compound is a natural or synthetic compound that contains carbon. Most agree that a defining trait of organic molecules is the presence of carbon as the principal element, bonded to hydrogen and other carbon atoms; some carbon-containing compounds, such as carbonates, cyanides and simple oxides like CO and CO<sub>2</sub>, are not classified as organic."
+      "statement": "有机化合物是含碳的天然或合成化合物。多数人认为，有机分子的一个决定性特征是碳作为主要元素，与氢和其他碳原子成键；一些含碳化合物，如碳酸盐、氰化物以及 CO 和 CO<sub>2</sub> 这类简单氧化物，不归为有机物。"
     },
     {
       "id": "carbon-compound-diversity",
       "kind": "idea",
       "section": "20.1",
-      "name": "Why carbon forms so many compounds",
-      "statement": "The existence of so many organic molecules is a consequence of the ability of carbon atoms to form up to four strong bonds to other carbon atoms, resulting in chains and rings of many different sizes, shapes, and complexities. Hydrocarbons may also differ in the types of carbon-carbon bonds in their molecules, which leads to differences in geometries and in the hybridization of the carbon orbitals."
+      "name": "碳为何能形成如此多的化合物",
+      "statement": "有机分子如此之多，是因为碳原子能与其他碳原子形成多达四个牢固的键，由此形成大小、形状和复杂程度各不相同的链与环。烃分子中碳碳键的类型也可以不同，这又导致几何构型和碳轨道杂化方式的差异。"
     },
     {
       "id": "alkane",
       "kind": "definition",
       "section": "20.1",
-      "name": "Alkane",
+      "name": "烷烃",
       "terms": [
-        "alkane",
-        "saturated hydrocarbon"
+        "烷烃",
+        "饱和烃"
       ],
-      "statement": "Alkanes, or saturated hydrocarbons, contain only single covalent bonds between carbon atoms. Each carbon atom in an alkane has <i>sp</i><sup>3</sup> hybrid orbitals and is bonded to four other atoms, each either carbon or hydrogen, so the bond angles in carbon chains are close to 109.5° and the chains have a zigzag shape. Noncyclic alkanes all have a formula of C<sub>n</sub>H<sub>2n+2</sub>.",
+      "statement": "烷烃，即饱和烃，碳原子之间只含单共价键。烷烃中每个碳原子都有 <i>sp</i><sup>3</sup> 杂化轨道，并与另外四个原子成键，这四个原子不是碳就是氢，所以碳链中的键角接近 109.5°，链呈锯齿形。非环状烷烃的通式均为 C<sub>n</sub>H<sub>2n+2</sub>。",
       "forms": [
         {
           "id": "eq-alkane-formula",
@@ -12677,216 +12675,217 @@
       "id": "skeletal-structure",
       "kind": "definition",
       "section": "20.1",
-      "name": "Skeletal structure",
+      "name": "键线式",
       "terms": [
-        "skeletal structure"
+        "键线式",
+        "骨架式"
       ],
-      "statement": "A skeletal structure, or line-angle structure, is a shorthand drawing of an organic molecule in which carbon atoms are represented by each end of a line or bend in a line, and hydrogen atoms attached to carbon are not drawn but are understood to be present. Atoms other than carbon and hydrogen are represented by their element symbols."
+      "statement": "键线式（也称骨架式）是有机分子的一种简化画法，其中每个碳原子用线的一端或折线的一个拐点表示，与碳相连的氢原子不画出，但默认存在。碳和氢以外的原子用元素符号表示。"
     },
     {
       "id": "write-organic-structures",
       "kind": "skill",
       "section": "20.1",
-      "name": "Writing condensed and skeletal structures",
-      "statement": "A condensed structural formula is written to suggest the bonding in a molecule, like a Lewis structure from which most or all of the bond symbols have been removed. To draw a skeletal structure, each carbon atom is converted into the end of a line or the place where lines intersect, and the hydrogen atoms attached to carbon are left out; to read one, each carbon is given the number of hydrogen atoms it needs to make four bonds."
+      "name": "书写结构简式与键线式",
+      "statement": "结构简式的写法是提示分子中的成键情况，就像去掉了大部分或全部键符号的路易斯结构式。画键线式时，把每个碳原子换成线的端点或线的交点，并省去与碳相连的氢原子；读键线式时，则给每个碳原子补足氢原子，使它形成四个键。"
     },
     {
       "id": "alkane-properties-trend",
       "kind": "idea",
       "section": "20.1",
-      "name": "Physical properties of the alkanes",
-      "statement": "Greater numbers of atoms in alkane molecules lead to stronger intermolecular attractions (dispersion forces), so properties such as melting point and boiling point usually change smoothly and predictably as the number of carbon and hydrogen atoms in the molecules changes, from gases through liquids to solids at STP."
+      "name": "烷烃的物理性质",
+      "statement": "烷烃分子中的原子数越多，分子间的引力（色散力）越强，因此熔点、沸点等性质通常随分子中碳原子和氢原子数目的变化而平稳、可预测地变化，在 STP 下由气体经液体变为固体。"
     },
     {
       "id": "alkane-structural-isomers",
       "kind": "idea",
       "section": "20.1",
-      "name": "Structural isomers of alkanes",
-      "statement": "Hydrocarbons with the same formula can have different structures: <i>n</i>-butane, with an unbranched chain, and 2-methylpropane, with a branched chain, are structural (constitutional) isomers of C<sub>4</sub>H<sub>10</sub>. Lewis structures that look different may represent the same molecule; drawings that contain the same arrangement of atoms and bonds, such as an unbranched chain of four carbon atoms, are not isomers."
+      "name": "烷烃的构造异构体",
+      "statement": "分子式相同的烃可以有不同的结构：无支链的正丁烷和有支链的 2-甲基丙烷是 C<sub>4</sub>H<sub>10</sub> 的构造异构体。看起来不同的路易斯结构式可能表示同一个分子；原子和键的排列相同的画法，例如四个碳原子的无支链链，并不是异构体。"
     },
     {
       "id": "substituent",
       "kind": "definition",
       "section": "20.1",
-      "name": "Substituent",
+      "name": "取代基",
       "terms": [
-        "substituent"
+        "取代基"
       ],
-      "statement": "Substituents are branches or functional groups that replace hydrogen atoms on a chain. The position of a substituent is identified by the number of the carbon atom it is bonded to in the chain."
+      "statement": "取代基是取代链上氢原子的支链或官能团。取代基的位置用它所连的链上碳原子的编号表示。"
     },
     {
       "id": "alkyl-group",
       "kind": "definition",
       "section": "20.1",
-      "name": "Alkyl group",
+      "name": "烷基",
       "terms": [
-        "alkyl group"
+        "烷基"
       ],
-      "statement": "An alkyl group is a substituent that contains one less hydrogen than the corresponding alkane; its name drops the suffix <i>-ane</i> of the alkane and adds <i>-yl</i>. Alkyl groups do not exist as stable independent entities. A hydrocarbon whose hydrogen atoms lie in different environments, such as propane or 2-methylpropane, can form more than one alkyl group, depending on which hydrogen atom is removed."
+      "statement": "烷基是比相应烷烃少一个氢的取代基；其名称由烷烃名称中的“烷”换成“基”而成。烷基不能作为稳定的独立实体存在。氢原子处于不同环境的烃，如丙烷或 2-甲基丙烷，视去掉哪个氢原子而定，可以形成不止一种烷基。"
     },
     {
       "id": "naming-alkanes",
       "kind": "skill",
       "section": "20.1",
-      "name": "Naming alkanes",
-      "statement": "To name an alkane, first identify the longest chain of carbon atoms and name it (ethane, propane, butane, pentane up to decane), then add prefixes giving the positions and names of the substituents, numbering the chain from the end nearest the substituents so they get the lowest numbers. Several substituents are listed in alphabetical order, an electronegative substituent takes the ending <i>-o</i>, and <i>di-</i>, <i>tri-</i> and <i>tetra-</i> count substituents of the same type."
+      "name": "烷烃的命名",
+      "statement": "命名烷烃时，先找出最长的碳链并命名（乙烷、丙烷、丁烷、戊烷，直至癸烷），再加上表示取代基位置和名称的前缀；从离取代基最近的一端给链编号，使取代基的编号最小。多个取代基按其英文名称的字母顺序列出，电负性取代基的名称以 -o 结尾（中文用氯、溴等作前缀），“二”“三”“四”表示同类取代基的个数。"
     },
     {
       "id": "alkanes-as-fuels",
       "kind": "idea",
       "section": "20.1",
-      "name": "Alkanes as fuels",
-      "statement": "Alkanes are relatively stable, but heat or light activates reactions that break their C–H or C–C bonds. They burn in oxygen in a highly exothermic oxidation-reduction reaction that produces carbon dioxide and water, which makes them excellent fuels. The main source of liquid alkane fuels is crude oil, a complex mixture separated by fractional distillation, which takes advantage of the different boiling points of its components."
+      "name": "烷烃作燃料",
+      "statement": "烷烃相对稳定，但加热或光照会引发使 C–H 键或 C–C 键断裂的反应。它们在氧气中燃烧，这是高度放热的氧化还原反应，生成二氧化碳和水，所以烷烃是极好的燃料。液态烷烃燃料的主要来源是原油，这是一种复杂的混合物，用分馏法分离，分馏利用的是各组分沸点的差异。"
     },
     {
       "id": "substitution-reaction",
       "kind": "definition",
       "section": "20.1",
-      "name": "Substitution reaction",
+      "name": "取代反应",
       "terms": [
-        "substitution reaction"
+        "取代反应"
       ],
-      "statement": "In a substitution reaction, one or more of a molecule’s hydrogen atoms is replaced with a different atom or group of atoms, as when ethane reacts with chlorine to give chloroethane. No carbon-carbon bonds are broken and the hybridization of the carbon atoms does not change. It is a typical reaction of alkanes and of aromatic compounds."
+      "statement": "在取代反应中，分子里的一个或多个氢原子被另一种原子或原子团取代，例如乙烷与氯反应生成氯乙烷。反应中没有碳碳键断裂，碳原子的杂化方式也不改变。这是烷烃和芳香族化合物的典型反应。"
     },
     {
       "id": "functional-group",
       "kind": "definition",
       "section": "20.1",
-      "name": "Functional group",
+      "name": "官能团",
       "terms": [
-        "functional group"
+        "官能团"
       ],
-      "statement": "A functional group is the part or moiety of an organic molecule that imparts a specific chemical reactivity, such as the C–Cl portion of chloroethane. The functional groups present in a molecule are major determinants of its chemical properties and are used to classify organic compounds."
+      "statement": "官能团是有机分子中赋予其特定化学反应性的部分，例如氯乙烷中的 C–Cl 部分。分子中存在的官能团是其化学性质的主要决定因素，并用来对有机化合物分类。"
     },
     {
       "id": "alkene",
       "kind": "definition",
       "section": "20.1",
-      "name": "Alkene",
+      "name": "烯烃",
       "terms": [
-        "alkene"
+        "烯烃"
       ],
-      "statement": "Alkenes are unsaturated hydrocarbons that contain one or more carbon-carbon double bonds. The two carbon atoms of a double bond are joined by one σ bond and one π bond, and each is trigonal planar with <i>sp</i><sup>2</sup> hybridization; ethene, C<sub>2</sub>H<sub>4</sub>, is the simplest. Because the π bond is weaker than a σ bond, alkenes are much more reactive than alkanes."
+      "statement": "烯烃是含有一个或多个碳碳双键的不饱和烃。双键的两个碳原子由一个 σ 键和一个 π 键连在一起，各为 <i>sp</i><sup>2</sup> 杂化的平面三角形；乙烯 C<sub>2</sub>H<sub>4</sub> 最简单。由于 π 键比 σ 键弱，烯烃比烷烃活泼得多。"
     },
     {
       "id": "alkene-geometric-isomers",
       "kind": "idea",
       "section": "20.1",
-      "name": "Geometric isomers of alkenes",
-      "statement": "Carbon atoms rotate freely around a single bond but not around a double bond, which is rigid. Alkenes such as 2-butene therefore form geometric isomers: the <i>cis</i>-isomer has both methyl groups on the same side of the double bond and the <i>trans</i>-isomer has them on opposite sides, and the different geometries give different physical properties, such as boiling point."
+      "name": "烯烃的几何异构体",
+      "statement": "碳原子可以绕单键自由旋转，却不能绕双键旋转，双键是刚性的。因此 2-丁烯这类烯烃会形成几何异构体：顺式异构体的两个甲基在双键的同一侧，反式异构体的两个甲基在双键的两侧，不同的几何构型使沸点等物理性质也不同。"
     },
     {
       "id": "addition-reaction",
       "kind": "definition",
       "section": "20.1",
-      "name": "Addition reaction",
+      "name": "加成反应",
       "terms": [
-        "addition reaction"
+        "加成反应"
       ],
-      "statement": "In an addition reaction, the π bond of a carbon-carbon double bond is broken and replaced by two σ bonds as a reactant adds across it, so the double bond becomes a single bond and the hybridization of its carbon atoms changes from <i>sp</i><sup>2</sup> to <i>sp</i><sup>3</sup>. Halogens add to the double bond of an alkene instead of replacing hydrogen, as they do in an alkane."
+      "statement": "在加成反应中，碳碳双键的 π 键断裂，随着反应物加到双键上，被两个 σ 键取代，于是双键变成单键，其碳原子的杂化方式由 <i>sp</i><sup>2</sup> 变为 <i>sp</i><sup>3</sup>。卤素加到烯烃的双键上，而不是像在烷烃中那样取代氢。"
     },
     {
       "id": "alkyne",
       "kind": "definition",
       "section": "20.1",
-      "name": "Alkyne",
+      "name": "炔烃",
       "terms": [
-        "alkyne"
+        "炔烃"
       ],
-      "statement": "Alkynes are hydrocarbons with one or more carbon-carbon triple bonds, one σ bond and two π bonds. The <i>sp</i>-hybridized carbons of the triple bond have bond angles of 180°, giving a linear, rod-like shape; ethyne, C<sub>2</sub>H<sub>2</sub> (acetylene), is the simplest. With two π bonds, alkynes react even more readily than alkenes and take up twice as much reagent in addition reactions."
+      "statement": "炔烃是含有一个或多个碳碳三键的烃，三键由一个 σ 键和两个 π 键组成。三键中 <i>sp</i> 杂化碳原子的键角为 180°，使分子呈直线形的棒状；乙炔 C<sub>2</sub>H<sub>2</sub> 最简单。炔烃有两个 π 键，反应比烯烃更容易，在加成反应中消耗的试剂也是烯烃的两倍。"
     },
     {
       "id": "naming-unsaturated-hydrocarbons",
       "kind": "skill",
       "section": "20.1",
-      "name": "Naming alkenes and alkynes",
-      "statement": "The name of an alkene is derived from the name of the alkane with the same number of carbon atoms by replacing the suffix <i>-ane</i> with <i>-ene</i>; an alkyne takes the suffix <i>-yne</i>. The location of the multiple bond is identified by the smaller of the numbers of the carbon atoms that take part in it, as in 1-butene, 2-butene and 1-butyne."
+      "name": "烯烃和炔烃的命名",
+      "statement": "烯烃的名称由碳原子数相同的烷烃名称演变而来，把“烷”换成“烯”；炔烃则换成“炔”。多重键的位置用参与该键的碳原子编号中较小的一个表示，如 1-丁烯、2-丁烯和 1-丁炔。"
     },
     {
       "id": "carbon-geometry-and-hybridization",
       "kind": "skill",
       "section": "20.1",
-      "name": "Geometry and hybridization of carbon atoms",
-      "statement": "The geometry and hybridization of each carbon atom follow from its bonds: a carbon with four single bonds is tetrahedral and <i>sp</i><sup>3</sup> (109.5°), a carbon in a double bond is trigonal planar and <i>sp</i><sup>2</sup> (120°), and a carbon in a triple bond is linear and <i>sp</i> (180°)."
+      "name": "碳原子的几何构型与杂化",
+      "statement": "每个碳原子的几何构型和杂化方式由它的成键情况决定：形成四个单键的碳是四面体形、<i>sp</i><sup>3</sup> 杂化（109.5°），双键中的碳是平面三角形、<i>sp</i><sup>2</sup> 杂化（120°），三键中的碳是直线形、<i>sp</i> 杂化（180°）。"
     },
     {
       "id": "aromatic-hydrocarbon",
       "kind": "definition",
       "section": "20.1",
-      "name": "Aromatic hydrocarbon",
+      "name": "芳香烃",
       "terms": [
-        "aromatic hydrocarbon"
+        "芳香烃"
       ],
-      "statement": "Aromatic hydrocarbons, of which benzene, C<sub>6</sub>H<sub>6</sub>, is the simplest, contain rings of <i>sp</i><sup>2</sup>-hybridized carbon atoms whose unhybridized <i>p</i> orbitals form delocalized π bonds, described as a resonance hybrid. Each of benzene’s six carbon-carbon bonds is intermediate between a single and a double bond, drawn as a ring with a circle inside, and aromatic compounds undergo substitution reactions more readily than addition reactions."
+      "statement": "芳香烃以苯 C<sub>6</sub>H<sub>6</sub> 为最简单的代表，含有由 <i>sp</i><sup>2</sup> 杂化碳原子组成的环，这些碳原子未杂化的 <i>p</i> 轨道形成离域 π 键，可用共振杂化体来描述。苯的六个碳碳键各介于单键和双键之间，画成内含一个圆圈的环，芳香族化合物发生取代反应比发生加成反应更容易。"
     },
     {
       "id": "polymer",
       "kind": "definition",
       "section": "20.1",
-      "name": "Polymer",
-      "statement": "Polymers are large molecules made up of repeating units called monomers. They can be natural, like starch and proteins, or synthetic, like polyethylene, which forms when the monomer ethylene is polymerized with a transition metal catalyst into long chains of –CH<sub>2</sub>– units. Plastics are synthetic organic solids that can be molded, typically organic polymers with high molecular masses."
+      "name": "聚合物",
+      "statement": "聚合物是由称为单体的重复单元构成的大分子。它们可以是天然的，如淀粉和蛋白质；也可以是合成的，如聚乙烯，它由单体乙烯在过渡金属催化剂作用下聚合成由 –CH<sub>2</sub>– 单元组成的长链。塑料是可以模塑的合成有机固体，通常是分子质量较高的有机聚合物。"
     },
     {
       "id": "hydrocarbon-derivative",
       "kind": "idea",
       "section": "20.2",
-      "name": "Hydrocarbon derivatives",
-      "statement": "Many organic compounds that are not hydrocarbons can be thought of as derivatives of hydrocarbons, formed by replacing one or more hydrogen atoms of a hydrocarbon by a functional group that contains at least one atom of an element other than carbon or hydrogen. Their properties are determined largely by the functional group."
+      "name": "烃的衍生物",
+      "statement": "许多不是烃的有机化合物可以看作烃的衍生物，由烃的一个或多个氢原子被官能团取代而成，该官能团至少含有一个碳、氢以外元素的原子。它们的性质主要由官能团决定。"
     },
     {
       "id": "alcohol",
       "kind": "definition",
       "section": "20.2",
-      "name": "Alcohol",
+      "name": "醇",
       "terms": [
-        "alcohol"
+        "醇"
       ],
-      "statement": "Alcohols are derivatives of hydrocarbons in which an –OH group has replaced a hydrogen atom, so the hydroxyl group is bonded to a carbon atom by a covalent bond. Unlike NaOH and KOH, which are ionic compounds containing OH<sup>–</sup> ions, alcohols are covalent molecules and do not behave like bases. Alcohols with two or more hydroxyl groups include ethylene glycol and glycerine."
+      "statement": "醇是烃的衍生物，其中一个氢原子被 –OH 基团取代，所以羟基通过共价键与碳原子相连。NaOH 和 KOH 是含 OH<sup>–</sup> 离子的离子化合物，醇则是共价分子，其表现不像碱。含有两个或更多羟基的醇有乙二醇和甘油。"
     },
     {
       "id": "preparing-alcohols",
       "kind": "idea",
       "section": "20.2",
-      "name": "Preparing alcohols",
-      "statement": "Ethanol has long been prepared by yeasts fermenting sugars, and large quantities are synthesized by the addition reaction of water with ethylene using an acid as a catalyst."
+      "name": "醇的制备",
+      "statement": "长期以来，乙醇是由酵母发酵各种糖类制得的；大量的乙醇则是以酸为催化剂，由水与乙烯的加成反应合成的。"
     },
     {
       "id": "naming-alcohols",
       "kind": "skill",
       "section": "20.2",
-      "name": "Naming alcohols",
-      "statement": "The name of an alcohol comes from the hydrocarbon from which it was derived: the final <i>-e</i> of the hydrocarbon’s name is replaced by <i>-ol</i>, and the number of the carbon atom to which the –OH group is bonded is placed before the name, as in 2-pentanol."
+      "name": "醇的命名",
+      "statement": "醇的名称来自它所衍生的烃：烃名称中的“烷”换成“醇”，并在名称前用数字标明连有 –OH 基团的碳原子，如 2-戊醇。"
     },
     {
       "id": "ether",
       "kind": "definition",
       "section": "20.2",
-      "name": "Ether",
+      "name": "醚",
       "terms": [
-        "ether"
+        "醚"
       ],
-      "statement": "Ethers are compounds that contain the functional group –O–, an oxygen atom bonded to two carbon atoms, with the general formula R–O–R, where the hydrocarbon groups may be the same or different. Diethyl ether, the most widely used, is a colorless, volatile, highly flammable liquid used as a solvent."
+      "statement": "醚是含有官能团 –O– 的化合物，即一个氧原子与两个碳原子相连，通式为 R–O–R，其中的烃基可以相同也可以不同。用得最广的乙醚是无色、易挥发、高度易燃的液体，用作溶剂。"
     },
     {
       "id": "naming-ethers",
       "kind": "skill",
       "section": "20.2",
-      "name": "Naming ethers",
-      "statement": "In the IUPAC system, the oxygen atom and the smaller carbon branch of an ether are named as an alkoxy substituent and the rest of the molecule as the base chain, as in methoxyethane. In a common name, the two branches connected to the oxygen atom are named separately and followed by “ether,” as in diethyl ether."
+      "name": "醚的命名",
+      "statement": "在 IUPAC 体系中，醚的氧原子和较小的碳支链合称烷氧基取代基，分子的其余部分作主链，如甲氧基乙烷。俗名则是分别命名与氧原子相连的两个支链，后面加“醚”，如乙醚。"
     },
     {
       "id": "ethers-from-alcohols",
       "kind": "idea",
       "section": "20.2",
-      "name": "Ethers from alcohols",
-      "statement": "Ethers can be obtained from alcohols by the elimination of a molecule of water from two molecules of the alcohol; when ethanol is treated with a limited amount of sulfuric acid and heated to 140 °C, diethyl ether and water are formed."
+      "name": "由醇制醚",
+      "statement": "醚可以由两分子醇脱去一分子水得到；乙醇用限量的硫酸处理并加热到 140 °C 时，生成乙醚和水。"
     },
     {
       "id": "carbohydrate",
       "kind": "idea",
       "section": "20.2",
-      "name": "Carbohydrates",
-      "statement": "Carbohydrates are large biomolecules of carbon, hydrogen and oxygen with the general formula C<sub>m</sub>(H<sub>2</sub>O)<sub>n</sub>. The smaller ones are sugars, or saccharides, classified by the number of sugar units joined together as monosaccharides, disaccharides, oligosaccharides or polysaccharides; sugars contain alcohol groups, and monosaccharide units are linked into a disaccharide by the formation of an ether.",
+      "name": "碳水化合物",
+      "statement": "碳水化合物是由碳、氢、氧组成的大生物分子，通式为 C<sub>m</sub>(H<sub>2</sub>O)<sub>n</sub>。较小的碳水化合物是糖，即糖类，按相连的糖单元数目分为单糖、二糖、寡糖或多糖；糖含有醇羟基，单糖单元通过形成醚连接成二糖。",
       "forms": [
         {
           "id": "eq-carbohydrate-formula",
@@ -12899,127 +12898,127 @@
       "id": "carbonyl-group",
       "kind": "definition",
       "section": "20.3",
-      "name": "Carbonyl group",
+      "name": "羰基",
       "terms": [
-        "carbonyl group"
+        "羰基"
       ],
-      "statement": "A carbonyl group is a carbon atom double bonded to an oxygen atom. The carbon is <i>sp</i><sup>2</sup> hybridized with trigonal planar geometry, its unhybridized <i>p</i> orbital overlapping one on oxygen to form the π bond. The C=O bond is polar, and many reactions of aldehydes and ketones start with a Lewis base attacking the carbon atom at its positive end."
+      "statement": "羰基是以双键与氧原子相连的碳原子。该碳原子为 <i>sp</i><sup>2</sup> 杂化，几何构型为平面三角形，其未杂化的 <i>p</i> 轨道与氧原子上的一个 <i>p</i> 轨道重叠，形成 π 键。C=O 键有极性，醛和酮的许多反应起始于路易斯碱进攻该键正端的碳原子。"
     },
     {
       "id": "aldehyde",
       "kind": "definition",
       "section": "20.3",
-      "name": "Aldehyde",
+      "name": "醛",
       "terms": [
-        "aldehyde"
+        "醛"
       ],
-      "statement": "An aldehyde contains a carbonyl group bonded to at least one hydrogen atom, written –CHO; its name takes the suffix <i>-al</i>. Formaldehyde, HCHO, is the simplest."
+      "statement": "醛含有至少与一个氢原子相连的羰基，写作 –CHO；名称以“醛”结尾。甲醛 HCHO 最简单。"
     },
     {
       "id": "ketone",
       "kind": "definition",
       "section": "20.3",
-      "name": "Ketone",
+      "name": "酮",
       "terms": [
-        "ketone"
+        "酮"
       ],
-      "statement": "A ketone contains a carbonyl group bonded to two carbon atoms, written –C(O)– or –CO–; its name takes the suffix <i>-one</i>. Acetone, CH<sub>3</sub>COCH<sub>3</sub>, is the simplest."
+      "statement": "酮含有与两个碳原子相连的羰基，写作 –C(O)– 或 –CO–；名称以“酮”结尾。丙酮 CH<sub>3</sub>COCH<sub>3</sub> 最简单。"
     },
     {
       "id": "organic-oxidation-reduction",
       "kind": "idea",
       "section": "20.3",
-      "name": "Oxidation and reduction of carbon",
-      "statement": "In organic molecules, a carbon atom is said to be oxidized when a carbon-hydrogen bond is replaced by a carbon-oxygen bond, and reduced when a carbon-oxygen bond is replaced by a carbon-hydrogen bond. A carbon atom attached to oxygen has a more positive oxidation number, rising from –4 in methane through methanol, formaldehyde and formic acid to +4 in carbon dioxide."
+      "name": "碳的氧化与还原",
+      "statement": "在有机分子中，当碳氢键被碳氧键取代时，该碳原子被氧化；当碳氧键被碳氢键取代时，该碳原子被还原。与氧相连的碳原子氧化数更正，从甲烷中的 –4，经甲醇、甲醛、甲酸，升至二氧化碳中的 +4。"
     },
     {
       "id": "oxidizing-alcohols",
       "kind": "result",
       "section": "20.3",
-      "name": "Oxidizing alcohols to carbonyl compounds",
-      "statement": "An alcohol whose –OH group is bonded to a carbon atom bonded to no or one other carbon atom is oxidized to an aldehyde, and further to a carboxylic acid; an alcohol whose –OH carbon is attached to two other carbon atoms forms a ketone. If three carbons are attached to the carbon bonded to the –OH, there is no C–H bond to replace, and the alcohol is not susceptible to oxidation."
+      "name": "醇氧化为羰基化合物",
+      "statement": "–OH 基团所连的碳原子不与其他碳原子相连或只与一个其他碳原子相连的醇，氧化成醛，并可进一步氧化成羧酸；–OH 基团所连的碳原子与另外两个碳原子相连的醇，生成酮。如果与连有 –OH 的碳原子相连的碳有三个，就没有可被取代的 C–H 键，这种醇不易被氧化。"
     },
     {
       "id": "carboxylic-acid",
       "kind": "definition",
       "section": "20.3",
-      "name": "Carboxylic acid",
+      "name": "羧酸",
       "terms": [
-        "carboxylic acid"
+        "羧酸"
       ],
-      "statement": "A carboxylic acid contains a carbonyl group with a second oxygen atom bonded to the carbonyl carbon by a single bond and to a hydrogen atom, the –CO<sub>2</sub>H group. Carboxylic acids are weak acids, generally only about 1% ionized in water, and the hydrogen of the functional group reacts with a base to form an ionic salt."
+      "statement": "羧酸含有羰基，羰基碳原子上还以单键连有第二个氧原子，该氧原子又与氢原子相连，即 –CO<sub>2</sub>H 基团。羧酸是弱酸，在水中一般仅约 1% 电离，其官能团上的氢与碱反应，生成离子型的盐。"
     },
     {
       "id": "ester",
       "kind": "definition",
       "section": "20.3",
-      "name": "Ester",
+      "name": "酯",
       "terms": [
-        "ester"
+        "酯"
       ],
-      "statement": "An ester contains a carbonyl group with a second oxygen atom bonded to the carbonyl carbon and to another carbon atom, the –CO<sub>2</sub>R group. Esters are produced by the reaction of acids with alcohols, as ethyl acetate forms from acetic acid and ethanol, and they give the odors and flavors of many flowers, perfumes and ripe fruits."
+      "statement": "酯含有羰基，羰基碳原子上以单键连有第二个氧原子，该氧原子再与另一个碳原子相连，即 –CO<sub>2</sub>R 基团。酯由酸和醇反应生成，如乙酸乙酯由乙酸和乙醇生成，许多花、香水和成熟水果的气味和风味来自酯。"
     },
     {
       "id": "fats-and-oils",
       "kind": "idea",
       "section": "20.3",
-      "name": "Fats, oils, and fatty acids",
-      "statement": "Fats and oils are esters of the trihydroxyl alcohol glycerine with large carboxylic acids. Saturated fatty acids, such as palmitic and stearic acids, contain no double or triple bonds; unsaturated ones, such as oleic acid, contain a C=C double bond."
+      "name": "油脂和脂肪酸",
+      "statement": "脂肪和油是三羟基醇甘油与大分子羧酸形成的酯。饱和脂肪酸，如棕榈酸和硬脂酸，不含双键或三键；不饱和脂肪酸，如油酸，含有 C=C 双键。"
     },
     {
       "id": "amine",
       "kind": "definition",
       "section": "20.4",
-      "name": "Amine",
+      "name": "胺",
       "terms": [
-        "amine"
+        "胺"
       ],
-      "statement": "Amines are molecules that contain carbon-nitrogen bonds; the nitrogen atom has a lone pair of electrons and three bonds to other atoms, either carbon or hydrogen, and the names take the suffix <i>-ine</i>. In a heterocyclic amine such as pyridine, the nitrogen atom replaces a carbon atom in an aromatic ring."
+      "statement": "胺是含有碳氮键的分子；胺中的氮原子有一对孤电子对，并与另外三个原子（碳或氢）成键，名称以“胺”结尾。在杂环胺如吡啶中，氮原子取代了芳环中的一个碳原子。"
     },
     {
       "id": "amine-basicity",
       "kind": "result",
       "section": "20.4",
-      "name": "Amines as bases",
-      "statement": "Like ammonia, amines are weak bases because of the lone pair of electrons on their nitrogen atoms, which accepts a hydrogen ion. Alkaloids, amines found in plants, react with H<sub>3</sub>O<sup>+</sup> in dilute acid to form an ammonium salt, and the free amine is recovered by reaction with a base."
+      "name": "胺的碱性",
+      "statement": "和氨一样，胺因氮原子上的孤电子对能接受氢离子而是弱碱。生物碱是植物中所含的胺，与稀酸中的 H<sub>3</sub>O<sup>+</sup> 反应生成铵盐，游离的胺则通过与碱反应得到回收。"
     },
     {
       "id": "amide",
       "kind": "definition",
       "section": "20.4",
-      "name": "Amide",
+      "name": "酰胺",
       "terms": [
-        "amide"
+        "酰胺"
       ],
-      "statement": "Amides are molecules that contain a nitrogen atom connected to the carbon atom of a carbonyl group; their names take the suffix <i>-amide</i>."
+      "statement": "酰胺是氮原子与羰基的碳原子相连的分子；名称以“酰胺”结尾。"
     },
     {
       "id": "amidation",
       "kind": "result",
       "section": "20.4",
-      "name": "Forming amides",
-      "statement": "Amides are produced when carboxylic acids react with amines or ammonia in amidation: a water molecule is eliminated, and the amide forms from the remaining pieces of the acid and the amine, much as an ester forms from a carboxylic acid and an alcohol."
+      "name": "酰胺的生成",
+      "statement": "羧酸与胺或氨反应，通过酰胺化生成酰胺：脱去一分子水，酰胺由羧酸和胺的其余部分形成，这很像酯由羧酸和醇生成。"
     },
     {
       "id": "proteins-and-peptide-bonds",
       "kind": "idea",
       "section": "20.4",
-      "name": "Proteins and peptide bonds",
-      "statement": "Amino acids contain an amine group, a carboxylic acid group and a side chain. Two amino acids connect by a peptide bond, formed when the carboxylic acid group of one reacts with the amine group of the other in a condensation reaction that produces water; a chain of amino acids is a polypeptide, and proteins contain at least one long polypeptide chain folded into a specific three-dimensional structure."
+      "name": "蛋白质与肽键",
+      "statement": "氨基酸含有一个氨基、一个羧基和一个侧链。两个氨基酸以肽键相连，肽键由一个氨基酸的羧基与另一个氨基酸的氨基在缩合反应中反应而成，同时生成水；氨基酸链是多肽，蛋白质含有至少一条折叠成特定三维结构的长多肽链。"
     },
     {
       "id": "dna-structure",
       "kind": "idea",
       "section": "20.4",
-      "name": "The structure of DNA",
-      "statement": "DNA is a polymer of four nucleotides, each a nitrogenous base bonded to the five-carbon sugar deoxyribose, which is bonded to a phosphate group. Two strands, each a backbone of sugars and phosphates with the bases sticking out, coil around each other in a double helix held together by hydrogen bonds between the bases."
+      "name": "DNA 的结构",
+      "statement": "DNA 是由四种核苷酸构成的聚合物，每种核苷酸由一个含氮碱基与五碳糖脱氧核糖相连，脱氧核糖再与一个磷酸基团相连。两条链各由糖和磷酸构成骨架，碱基从骨架上伸出，两条链彼此缠绕成双螺旋，靠碱基之间的氢键维系在一起。"
     },
     {
       "id": "kevlar-polyamide",
       "kind": "idea",
       "section": "20.4",
-      "name": "Kevlar, a polyamide",
-      "statement": "Kevlar is a synthetic polyamide made from 1,4-phenylene-diamine and terephthaloyl chloride. It owes much of its strength to hydrogen bonds between the carbonyl oxygen atom of one chain and the N–H hydrogen atom of an adjacent chain, with more from aromatic stacking of the six-membered rings."
+      "name": "凯夫拉：一种聚酰胺",
+      "statement": "凯夫拉是一种合成聚酰胺，由 1,4-苯二胺和对苯二甲酰氯制成。它的强度很大程度上来自一条链的羰基氧原子与相邻链的 N–H 氢原子之间的氢键，还有一部分来自六元环的芳环堆积。"
     },
     {
       "id": "nuclear-chemistry",
@@ -13705,11 +13704,11 @@
       "name": "剂量当量",
       "terms": [
         "希沃特",
-        "伦琴当量人",
+        "人体伦琴当量",
         "相对生物效应"
       ],
       "type": "dose",
-      "statement": "组织损伤以希沃特或雷姆（伦琴当量人，100 rem = 1 Sv）度量，等于吸收剂量乘以该辐射的相对生物效应（RBE），α 约为 10，质子和中子为 2，β 和 γ 为 1。",
+      "statement": "组织损伤以希沃特或雷姆（人体伦琴当量，100 rem = 1 Sv）度量，等于吸收剂量乘以该辐射的相对生物效应（RBE），α 约为 10，质子和中子为 2，β 和 γ 为 1。",
       "forms": [
         {
           "id": "eq-dose-equivalent-rem",
@@ -13728,7 +13727,7 @@
       "kind": "skill",
       "section": "21.6",
       "name": "计算样品的活度",
-      "statement": "样品的活度由 $\\text{活度} = \\lambda N$ 求得，其中 $\\lambda = \\ln 2/t_{1/2}$；先用摩尔质量和阿伏伽德罗常数把发生衰变的量换算成原子数，再换算成每秒衰变数，最后换算成贝可勒尔或居里。"
+      "statement": "样品的活度由 $\\text{活度} = \\lambda N$ 求得，其中 $\\lambda = \\ln 2/t_{1/2}$；先用摩尔质量和阿伏加德罗常数把发生衰变的量换算成原子数，再换算成每秒衰变数，最后换算成贝可勒尔或居里。"
     },
     {
       "id": "radiation-exposure",

@@ -96,10 +96,10 @@ const still = (d, draw) => register(d.fig, { update: () => {}, draw });
 ===================================================================== */
 (function () {
   const d = sim('fig-hydrated-al');
-  const side = F.choice(d.controls, { label: '\\text{一侧}', key: 'side', options: [{ value: 'before', label: 'Al(H₂O)₆³⁺ + H₂O' }, { value: 'after', label: 'Al(H₂O)₅(OH)²⁺ + H₃O⁺' }], value: 'before', aria: '所示平衡的一侧' });
-  const FRONT = { label: '正面', yaw: 0.7, pitch: 0.25 };
+  const side = F.choice(d.controls, { label: '\\text{平衡一侧}', key: 'side', options: [{ value: 'before', label: 'Al(H₂O)₆³⁺ + H₂O' }, { value: 'after', label: 'Al(H₂O)₅(OH)²⁺ + H₃O⁺' }], value: 'before', aria: '所示平衡的一侧' });
+  const FRONT = { label: '正视', yaw: 0.7, pitch: 0.25 };
   const v = F.view3d(d.stage, { h: 500, dist: 14.5, tilt: FRONT.pitch, spin: 'off', pitch: [-1.2, 1.2], yaw: [-1.4, 1.4],
-    views: [FRONT, { label: '上方', yaw: 0.7, pitch: 1.2 }] });
+    views: [FRONT, { label: '俯视', yaw: 0.7, pitch: 1.2 }] });
   v.setView(FRONT.yaw, FRONT.pitch);
   const has3 = !!v.scene;
   if (!has3) d.stage.querySelectorAll('.three-wrap').forEach((w) => { w.style.display = 'none'; });

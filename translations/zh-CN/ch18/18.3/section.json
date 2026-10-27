@@ -9,8 +9,8 @@
   "描述半金属的一般制备方法、性质和用途",
   "描述硼和硅的制备、性质和化合物"
  ],
- "summary_html": "<p>硼、硅、锗、砷、锑和碲这些元素在元素周期表中把金属与<span data-concept=\"nonmetal\">非金属</span>隔开。这些元素称为<span data-concept=\"metalloid\">半金属</span>，有时也称准金属，兼有金属和非金属的特征性质。这些元素的结构在许多方面与非金属相似，但它们是电的半导体。</p>",
- "notes": "关于立方金刚石结构的“Link to Learning”被略去；图 18.12 已给出硅和锗的金刚石结构。本节按原样保留印刷了两次的锑段落（第二次没有“Sb₂S₅”），以及二氧化硅还原反应数组开头的两个空行。“passivation of silicon occurs due the formation”“colorless gasses”“The volatility of dry ice reflect”等英文拼写和语法错误无法在中文中保留，已按其本意翻译；“silicon is”与“sp³d²”之间缺少空格的排印问题同理，中文按中英文之间留空格的规则排版。",
+ "summary_html": "<p>硼、硅、锗、砷、锑和碲这些元素在元素周期表中把金属与<span data-concept=\"nonmetal\">非金属</span>隔开。这些元素称为<span data-concept=\"metalloid\">半金属</span>，兼有金属和非金属的特征性质。这些元素的结构在许多方面与非金属相似，但它们是半导体。</p>",
+ "notes": "关于立方金刚石结构的“学习链接”被略去；图 18.12 已给出硅和锗的金刚石结构。本节按原样保留印刷了两次的锑段落（第二次没有“Sb₂S₅”），以及二氧化硅还原反应数组开头的两个空行。“passivation of silicon occurs due the formation”“colorless gasses”“The volatility of dry ice reflect”等英文拼写和语法错误无法在中文中保留，已按其本意翻译；“silicon is”与“sp³d²”之间缺少空格的排印问题同理，中文按中英文之间留空格的规则排版。",
  "ai": {
   "text": [
    {
@@ -35,7 +35,7 @@
  },
  "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "布鲁姆层级、概念标签、提示和建议解法由 AI 生成。答案来自本书的答案册。七道没有答案的习题——fs-idp16930624 和 fs-idp53586384（杂化与分子几何构型）、fs-idp20024944（路易斯结构式）、fs-idm40238272（配平方程式）、fs-idm26980560（化学式）、fs-idp26638608（硫化硅的实验式）和 fs-idp421376（硅氢化物的分子式）——被略去，也没有为它们计算答案。没有答案的概念性习题 fs-idp46618224 附有标明为 OmniStax 自己所写的建议解法。没有任何内容被移动。",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路由 AI 生成。答案来自书后答案。七道没有答案的习题——fs-idp16930624 和 fs-idp53586384（杂化与分子几何构型）、fs-idp20024944（路易斯结构式）、fs-idm40238272（配平方程式）、fs-idm26980560（化学式）、fs-idp26638608（硫化硅的实验式）和 fs-idp421376（硅氢化物的分子式）——被略去，也没有为它们计算答案。没有答案的概念性习题 fs-idp46618224 附有标明为 OmniStax 自己所写的建议思路。没有任何内容被移动。",
  "figures": [
   {
    "id": "sim-structures",
@@ -435,11 +435,11 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "为下列每个分子或离子写出路易斯结构式。不妨复习化学键一章。<br>(a) H<sub>3</sub>BPH<sub>3</sub><br>(b) $\\text{BF}_{4}{}^{-}$<br>(c) BBr<sub>3</sub><br>(d) B(CH<sub>3</sub>)<sub>3</sub><br>(e) B(OH)<sub>3</sub>",
+   "prompt": "为下列每个分子或离子写出路易斯结构式。不妨复习化学键一章。<br>（a）H<sub>3</sub>BPH<sub>3</sub><br>（b）$\\text{BF}_{4}{}^{-}$<br>（c）BBr<sub>3</sub><br>（d）B(CH<sub>3</sub>)<sub>3</sub><br>（e）B(OH)<sub>3</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) H<sub>3</sub>BPH<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2a_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与一个磷原子以单键相连组成。这两个原子各自与三个氢原子以单键相连。\"><br>(b) $\\text{BF}_{4}{}^{\\text{−}}$:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2b_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与四个氟原子以单键相连组成，每个氟原子都有三对孤电子对。结构被方括号包围，方括号外的右上角有一个负号。\"><br>(c) BBr<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2c_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个溴原子以单键相连组成，每个溴原子都有三对孤电子对。\"><br>(d) B(CH<sub>3</sub>)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2d_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个碳原子以单键相连组成，每个碳原子又与三个氢原子以单键相连。\"><br>(e) B(OH)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2e_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个氧原子以单键相连组成，每个氧原子都有两对孤电子对。每个氧原子与一个氢原子以单键相连。\">"
+    "solution": "（a）H<sub>3</sub>BPH<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2a_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与一个磷原子以单键相连组成。这两个原子各自与三个氢原子以单键相连。\"><br>（b）$\\text{BF}_{4}{}^{\\text{−}}$:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2b_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与四个氟原子以单键相连组成，每个氟原子都有三对孤电子对。结构被方括号包围，方括号外的右上角有一个负号。\"><br>（c）BBr<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2c_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个溴原子以单键相连组成，每个溴原子都有三对孤电子对。\"><br>（d）B(CH<sub>3</sub>)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2d_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个碳原子以单键相连组成，每个碳原子又与三个氢原子以单键相连。\"><br>（e）B(OH)<sub>3</sub>:<br><img src=\"/media/ch18/CNX_Chem_18_03_Exercise2e_img.jpg\" alt=\"这个路易斯结构式由一个硼原子与三个氧原子以单键相连组成，每个氧原子都有两对孤电子对。每个氧原子与一个氢原子以单键相连。\">"
    }
   },
   {
@@ -469,11 +469,11 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "描述硅的杂化方式，以及下列分子和离子的分子构型：<br>(a) (CH<sub>3</sub>)<sub>3</sub>SiH<br>(b) $\\text{SiO}_{4}{}^{4−}$<br>(c) Si<sub>2</sub>H<sub>6</sub><br>(d) Si(OH)<sub>4</sub><br>(e) $\\text{SiF}_{6}{}^{2−}$",
+   "prompt": "描述硅的杂化方式，以及下列分子和离子的分子构型：<br>（a）(CH<sub>3</sub>)<sub>3</sub>SiH<br>（b）$\\text{SiO}_{4}{}^{4−}$<br>（c）Si<sub>2</sub>H<sub>6</sub><br>（d）Si(OH)<sub>4</sub><br>（e）$\\text{SiF}_{6}{}^{2−}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) (CH<sub>3</sub>)<sub>3</sub>SiH：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；(b) $\\text{SiO}_{4}{}^{\\text{4−}}$：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；(c) Si<sub>2</sub>H<sub>6</sub>：每个 Si 周围为 <em>sp</em><sup>3</sup> 成键；结构沿 Si-Si 键为直线形；(d) Si(OH)<sub>4</sub>：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；(e) $\\text{SiF}_{6}{}^{\\text{2−}}$：Si 周围为 <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> 成键；结构为八面体形"
+    "solution": "（a）(CH<sub>3</sub>)<sub>3</sub>SiH：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；（b）$\\text{SiO}_{4}{}^{\\text{4−}}$：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；（c）Si<sub>2</sub>H<sub>6</sub>：每个 Si 周围为 <em>sp</em><sup>3</sup> 成键；结构沿 Si-Si 键为直线形；（d）Si(OH)<sub>4</sub>：Si 周围为 <em>sp</em><sup>3</sup> 成键；结构为四面体形；（e）$\\text{SiF}_{6}{}^{\\text{2−}}$：Si 周围为 <em>sp</em><sup>3</sup><em>d</em><sup>2</sup> 成键；结构为八面体形"
    }
   },
   {
@@ -503,11 +503,11 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "把下列每个分子分类为极性分子或非极性分子。不妨复习化学键一章。<br>(a) SiH<sub>4</sub><br>(b) Si<sub>2</sub>H<sub>6</sub><br>(c) SiCl<sub>3</sub>H<br>(d) SiF<sub>4</sub><br>(e) SiCl<sub>2</sub>F<sub>2</sub>",
+   "prompt": "把下列每个分子分类为极性分子或非极性分子。不妨复习化学键一章。<br>（a）SiH<sub>4</sub><br>（b）Si<sub>2</sub>H<sub>6</sub><br>（c）SiCl<sub>3</sub>H<br>（d）SiF<sub>4</sub><br>（e）SiCl<sub>2</sub>F<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) 非极性；(b) 非极性；(c) 极性；(d) 非极性；(e) 极性"
+    "solution": "（a）非极性；（b）非极性；（c）极性；（d）非极性；（e）极性"
    }
   },
   {
@@ -520,11 +520,11 @@
     "at": "end"
    },
    "cite": "metalloids",
-   "prompt": "写出下列每个化合物的名称：<br>(a) TeO<sub>2</sub><br>(b) Sb<sub>2</sub>S<sub>3</sub><br>(c) GeF<sub>4</sub><br>(d) SiH<sub>4</sub><br>(e) GeH<sub>4</sub>",
+   "prompt": "写出下列每个化合物的名称：<br>（a）TeO<sub>2</sub><br>（b）Sb<sub>2</sub>S<sub>3</sub><br>（c）GeF<sub>4</sub><br>（d）SiH<sub>4</sub><br>（e）GeH<sub>4</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) 二氧化碲或氧化碲(IV)；(b) 硫化锑(III)；(c) 氟化锗(IV)；(d) 硅烷或氢化硅(IV)；(e) 氢化锗(IV)"
+    "solution": "（a）二氧化碲或氧化碲(IV)；（b）硫化锑(III)；（c）氟化锗(IV)；（d）硅烷或氢化硅(IV)；（e）氢化锗(IV)"
    }
   },
   {
@@ -554,7 +554,7 @@
     "at": "end"
    },
    "cite": "boron-silicon",
-   "prompt": "根据<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a>中给出的数据，确定下列每个反应的标准焓变和标准自由能变：<br>(a) ${\\text{BF}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HF}(g)$<br>(b) ${\\text{BCl}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HCl}(g)$<br>(c) ${\\text{B}}_{2}{\\text{H}}_{6}(g)+{\\text{6H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2B}{(\\text{OH})}_{3}(s)+{\\text{6H}}_{2}(g)$",
+   "prompt": "根据<a href=\"/chemistry-2e/sheets/thermo/\">附录 G</a>中给出的数据，确定下列每个反应的标准焓变和标准自由能变：<br>（a）${\\text{BF}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HF}(g)$<br>（b）${\\text{BCl}}_{3}(g)+{\\text{3H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{B}{(\\text{OH})}_{3}(s)+\\text{3HCl}(g)$<br>（c）${\\text{B}}_{2}{\\text{H}}_{6}(g)+{\\text{6H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{2B}{(\\text{OH})}_{3}(s)+{\\text{6H}}_{2}(g)$",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -591,7 +591,7 @@
       "unit": "kJ"
      }
     ],
-    "solution": "(a) Δ<em>H</em>° = 87 kJ; Δ<em>G</em>° = 44 kJ; (b) Δ<em>H</em>° = −109.9 kJ; Δ<em>G</em>° = −154.7 kJ; (c) Δ<em>H</em>° = −510 kJ; Δ<em>G</em>° = −601.5 kJ"
+    "solution": "（a）Δ<em>H</em>° = 87 kJ; Δ<em>G</em>° = 44 kJ；（b）Δ<em>H</em>° = −109.9 kJ; Δ<em>G</em>° = −154.7 kJ；（c）Δ<em>H</em>° = −510 kJ; Δ<em>G</em>° = −601.5 kJ"
    }
   },
   {

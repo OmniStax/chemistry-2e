@@ -2,15 +2,15 @@
  "id": "5.2",
  "module": "m68726",
  "chapter": "5",
- "title": "Calorimetry",
- "short": "Calorimetry",
- "lead": "A calorimeter measures a <span data-concept=\"heat-flow\">heat</span> by letting it change the <span data-concept=\"temperature\">temperature</span> of something of known <span data-concept=\"specific-heat-capacity\">specific heat</span> and <span data-concept=\"mass\">mass</span>, which divides the world into a system and its surroundings. A coffee cup calorimeter serves for a reaction in solution, and a bomb calorimeter for a combustion at constant <span data-concept=\"volume\">volume</span>, such as one that finds the <span data-concept=\"energy-and-work\">energy</span> content of a food.",
+ "title": "量热法",
+ "short": "量热法",
+ "lead": "量热计通过让一份<span data-concept=\"heat-flow\">热量</span>改变某个<span data-concept=\"specific-heat-capacity\">比热容</span>和<span data-concept=\"mass\">质量</span>已知的物体的<span data-concept=\"temperature\">温度</span>来测量这份热量，这就把世界划分成了体系及其环境。咖啡杯量热计适用于溶液中的反应，弹式量热计适用于恒定<span data-concept=\"volume\">体积</span>下的燃烧，例如测定食物<span data-concept=\"energy-and-work\">能量</span>含量的燃烧。",
  "objectives": [
-  "Explain the technique of calorimetry",
-  "Calculate and interpret heat and related properties using typical calorimetry data"
+  "解释量热法这一技术",
+  "利用典型的量热数据计算并解释热量及相关性质"
  ],
- "summary_html": "<p>Calorimetry is used to measure the amount of thermal energy transferred in a chemical or physical process. This requires careful measurement of the <span data-concept=\"temperature\">temperature</span> change that occurs during the process and the <span data-concept=\"mass\">masses</span> of the system and surroundings. These measured quantities are then used to compute the amount of <span data-concept=\"heat-flow\">heat</span> produced or consumed in the process using known mathematical relations.</p><p>Calorimeters are designed to minimize <span data-concept=\"energy-and-work\">energy</span> exchange between their contents and the external environment. They range from simple coffee cup calorimeters used by introductory chemistry students to sophisticated bomb calorimeters used to determine the <span data-concept=\"energy-and-work\">energy</span> content of food.</p>",
- "notes": "The four Link to Learning notes (the hand warmer video, the bomb calorimeter video, the calorimetric calculations site and the USDA nutrient database) are left out; Example 5.4 substitutes 4.18 J/g °C and solves with 4.184 J/g °C, the answer to Example 5.5’s Check Your Learning reads “1.34 × 10³ kJ, or 1.34 kJ”, and Example 5.7 computes −48.8 kJ and then states 48.7 kJ, all kept as printed.",
+ "summary_html": "<p>量热法用于测量化学过程或物理过程中转移的热能的量。这需要仔细测量过程中发生的<span data-concept=\"temperature\">温度</span>变化，以及体系和环境的<span data-concept=\"mass\">质量</span>。然后利用这些测得的量，通过已知的数学关系，算出过程中产生或消耗的<span data-concept=\"heat-flow\">热量</span>。</p><p>量热计的设计目的是使其内容物与外部环境之间的<span data-concept=\"energy-and-work\">能量</span>交换降到最低。它们种类繁多，从入门化学课上学生使用的简单咖啡杯量热计，到用来测定食物<span data-concept=\"energy-and-work\">能量</span>含量的精密弹式量热计。</p>",
+ "notes": "四个“学习链接”注释（暖手袋视频、弹式量热计视频、量热计算网站和 USDA 营养素数据库）已略去；例 5.4 代入 4.18 J/g °C 而按 4.184 J/g °C 求解，例 5.5 学习检测的答案写作“1.34 × 10³ kJ，即 1.34 kJ”，例 5.7 算出 −48.8 kJ 后又写作 48.7 kJ，均照原书保留。",
  "ai": {
   "text": [
    {
@@ -20,18 +20,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags, weights and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The unkeyed numerical exercises fs-idm75457248 (coffee diluted with water), fs-idm57057808 (the 70.0-g metal), fs-idm66134336 (KCl in 50.0 g of water), fs-idm54145200 (NaCl and AgNO<sub>3</sub>), fs-idp17899648 (fructose), fs-idp26469408 (a ton of coal), fs-idp47280960 (a teaspoon of sucrose), fs-idm30519744 (a pint of ice cream) and fs-idp47244464 (cereal against isooctane) are left out, and so is part (a) of fs-idm5511248; its part (b) and the unkeyed conceptual exercises fs-idm40469024 and fs-idm15197120 and fs-idp3696624 are kept with a suggested approach marked as OmniStax’s own. The two questions on greater, lesser, or the same are set as choices over the book’s three words. Numeric answers accept 2% tolerance.",
+ "exercise_notes": "布鲁姆层级、概念标签、权重和提示均由 AI 生成。答案来自书后答案以及各“学习检测”的答案。无答案的数值型习题 fs-idm75457248（用水稀释的咖啡）、fs-idm57057808（70.0 g 的金属）、fs-idm66134336（50.0 g 水中的 KCl）、fs-idm54145200（NaCl 与 AgNO<sub>3</sub>）、fs-idp17899648（果糖）、fs-idp26469408（一短吨煤）、fs-idp47280960（一茶匙蔗糖）、fs-idm30519744（一品脱冰激凌）和 fs-idp47244464（麦片与异辛烷的比较）已略去，fs-idm5511248 的（a）小题也已略去；其（b）小题以及无答案的概念型习题 fs-idm40469024、fs-idm15197120 和 fs-idp3696624 予以保留，所附的建议思路标明为 OmniStax 自己的。两道关于“更大、更小或相同”的题设为对书中这三个词的选择题。数值型答案接受 2% 的容差。",
  "figures": [
   {
    "id": "fig-calorim2",
@@ -52,7 +60,7 @@
     "/media/ch05/CNX_Chem_05_02_Calorim.jpg",
     "/media/ch05/CNX_Chem_05_02_HeatTrans2.jpg"
    ],
-   "original_caption": "In a calorimetric determination, either (a) an exothermic process occurs and heat, q, is negative, indicating that thermal energy is transferred from the system to its surroundings, or (b) an endothermic process occurs and heat, q, is positive, indicating that thermal energy is transferred from the surroundings to the system. A simple calorimeter can be constructed from two polystyrene cups. A thermometer and stirrer extend through the cover into the reaction mixture. In a simple calorimetry process, (a) heat, q, is transferred from the hot metal, M, to the cool water, W, until (b) both are at the same temperature.",
+   "original_caption": "在量热测定中，要么（a）发生放热过程，热量 q 为负，表明热能由体系传给环境；要么（b）发生吸热过程，热量 q 为正，表明热能由环境传给体系。简单的量热计可以用两个聚苯乙烯杯制成。温度计和搅拌器穿过杯盖伸入反应混合物中。在一个简单的量热过程中，（a）热量 q 从热的金属 M 传给冷水 W，直到（b）二者的温度相同。",
    "draws": [
     "energy",
     "temperature",
@@ -76,6 +84,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "loop lands on the final state; bar labels, q label, readout hues, note"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -287,14 +300,14 @@
     "after": "ex-rebar"
    },
    "cite": "heat-balance",
-   "prompt": "A 248-g piece of copper is dropped into 390 mL of water at 22.6 °C. The final temperature of the water was measured as 39.9 °C. Calculate the initial temperature of the piece of copper. Assume that all heat transfer occurs between the copper and the water.",
+   "prompt": "将一块 248 g 的铜块投入 390 mL 温度为 22.6 °C 的水中。测得水的最终温度为 39.9 °C。计算铜块的初始温度。假设所有热传递都发生在铜和水之间。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 335.6,
     "unit": "°C",
-    "hint": "Set the heat lost by the copper equal to the negative of the heat gained by the water, and use the specific heat of copper from Table 5.1.",
-    "solution": "The initial temperature of the copper was 335.6 °C."
+    "hint": "令铜失去的热量等于水所得热量的负值，并使用表 5.1 中铜的比热容。",
+    "solution": "铜块的初始温度为 335.6 °C。"
    }
   },
   {
@@ -307,14 +320,14 @@
     "after": "ex-rebar-2"
    },
    "cite": "heat-balance",
-   "prompt": "A 248-g piece of copper initially at 314 °C is dropped into 390 mL of water initially at 22.6 °C. Assuming that all heat transfer occurs between the copper and the water, calculate the final temperature.",
+   "prompt": "将一块初始温度为 314 °C 的 248 g 铜块投入 390 mL 初始温度为 22.6 °C 的水中。假设所有热传递都发生在铜和水之间，计算最终温度。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 38.7,
     "unit": "°C",
-    "hint": "The copper and the water end at the same temperature, so write both temperature changes with one unknown final temperature.",
-    "solution": "The final temperature (reached by both copper and water) is 38.7 °C."
+    "hint": "铜和水最终处于同一温度，所以用同一个未知的最终温度写出两个温度变化。",
+    "solution": "最终温度（铜和水共同达到的温度）为 38.7 °C。"
    }
   },
   {
@@ -327,14 +340,14 @@
     "after": "ex-metal"
    },
    "cite": "heat-balance",
-   "prompt": "A 92.9-g piece of a silver/gray metal is heated to 178.0 °C, and then quickly transferred into 75.0 mL of water initially at 24.0 °C. After 5 minutes, both the metal and the water have reached the same temperature: 29.7 °C. Determine the specific heat and the identity of the metal. (Note: You should find that the specific heat is close to that of two different metals. Explain how you can confidently determine the identity of the metal).",
+   "prompt": "将一块 92.9 g 的银灰色金属加热到 178.0 °C，然后迅速转移到 75.0 mL 初始温度为 24.0 °C 的水中。5 分钟后，金属和水达到同一温度：29.7 °C。确定该金属的比热容和身份。（注：你应当发现，该比热容与两种不同金属的比热容相近。说明你如何能够有把握地确定这种金属的身份。）",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.13,
     "unit": "J/g °C",
-    "hint": "Solve the heat balance for the specific heat of the metal, then compare it with Table 5.1.",
-    "solution": "<em>c</em><sub>metal</sub>= 0.13 J/g °C. This specific heat is close to that of either gold or lead. It would be difficult to determine which metal this was based solely on the numerical values. However, the observation that the metal is silver/gray in addition to the value for the specific heat indicates that the metal is lead."
+    "hint": "由热量平衡解出金属的比热容，再与表 5.1 比较。",
+    "solution": "<em>c</em><sub>金属</sub>= 0.13 J/g °C。这一比热容与金或铅的比热容相近。仅凭数值很难确定它是哪种金属。不过，除比热容的数值外，再结合这种金属为银灰色这一观察，可知该金属是铅。"
    }
   },
   {
@@ -347,14 +360,14 @@
     "after": "ex-exothermic"
    },
    "cite": "reaction-heat",
-   "prompt": "When 100 mL of 0.200 M NaCl(<em>aq</em>) and 100 mL of 0.200 M AgNO<sub>3</sub>(<em>aq</em>), both at 21.9 °C, are mixed in a coffee cup calorimeter, the temperature increases to 23.5 °C as solid AgCl forms. How much heat is produced by this precipitation reaction? What assumptions did you make to determine your value?",
+   "prompt": "当 100 mL 0.200 M 的 NaCl(<em>aq</em>) 和 100 mL 0.200 M 的 AgNO<sub>3</sub>(<em>aq</em>)（均为 21.9 °C）在咖啡杯量热计中混合，生成固体 AgCl 时，温度升高到 23.5 °C。这个沉淀反应产生了多少热量？你为确定该值作了哪些假设？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.34,
     "unit": "kJ",
-    "hint": "Treat the 200 mL of solution as 200 g of water and find the heat it absorbs.",
-    "solution": "1.34 × 10<sup>3</sup> kJ<sup class=\"fn\" data-note=\"c-cyl4-kj\"></sup>, or 1.34 kJ; assume no heat is absorbed by the calorimeter, no heat is exchanged between the calorimeter and its surroundings, and that the specific heat and density of the solution are the same as those for water"
+    "hint": "把 200 mL 溶液当作 200 g 水，求它吸收的热量。",
+    "solution": "1.34 × 10<sup>3</sup> kJ<sup class=\"fn\" data-note=\"c-cyl4-kj\"></sup>，即 1.34 kJ；假设量热计不吸收热量，量热计与其环境之间没有热量交换，并且溶液的比热容和密度与水相同"
    }
   },
   {
@@ -367,14 +380,14 @@
     "after": "ex-ice-pack"
    },
    "cite": "reaction-heat",
-   "prompt": "When a 3.00-g sample of KCl was added to 3.00 × 10<sup>2</sup> g of water in a coffee cup calorimeter, the temperature decreased by 1.05 °C. How much heat is involved in the dissolution of the KCl? What assumptions did you make?",
+   "prompt": "将 3.00 g KCl 样品加入咖啡杯量热计中 3.00 × 10<sup>2</sup> g 的水里，温度下降了 1.05 °C。KCl 的溶解涉及多少热量？你作了哪些假设？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.33,
     "unit": "kJ",
-    "hint": "The solution holds 303 g, and the heat it loses is the heat the dissolution absorbs.",
-    "solution": "1.33 kJ; assume that the calorimeter prevents heat transfer between the solution and its external environment (including the calorimeter itself) and that the specific heat of the solution is the same as that for water"
+    "hint": "溶液共 303 g，它失去的热量就是溶解所吸收的热量。",
+    "solution": "1.33 kJ；假设量热计阻止了溶液与其外部环境（包括量热计本身）之间的热传递，并且溶液的比热容与水相同"
    }
   },
   {
@@ -387,14 +400,14 @@
     "after": "ex-bomb"
    },
    "cite": "bomb",
-   "prompt": "When 0.963 g of benzene, C<sub>6</sub>H<sub>6</sub>, is burned in a bomb calorimeter, the temperature of the calorimeter increases by 8.39 °C. The bomb has a heat capacity of 784 J/°C and is submerged in 925 mL of water. How much heat was produced by the combustion of the benzene sample?",
+   "prompt": "将 0.963 g 苯 C<sub>6</sub>H<sub>6</sub> 在弹式量热计中燃烧，量热计的温度升高了 8.39 °C。弹的热容为 784 J/°C，浸没在 925 mL 水中。苯样品燃烧产生了多少热量？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": -39.0,
     "unit": "kJ",
-    "hint": "Add the heat absorbed by the water to the heat absorbed by the bomb, and give the reaction the opposite sign.",
-    "solution": "q<sub>rx</sub> = –39.0 kJ (the reaction produced 39.0 kJ of heat)"
+    "hint": "把水吸收的热量与弹吸收的热量相加，反应取相反的符号。",
+    "solution": "q<sub>rx</sub> = –39.0 kJ（该反应产生了 39.0 kJ 的热量）"
    }
   },
   {
@@ -406,11 +419,11 @@
     "at": "end"
    },
    "cite": "heat-balance",
-   "prompt": "A 500-mL bottle of water at room temperature and a 2-L bottle of water at the same temperature were placed in a refrigerator. After 30 minutes, the 500-mL bottle of water had cooled to the temperature of the refrigerator. An hour later, the 2-L of water had cooled to the same temperature. When asked which sample of water lost the most heat, one student replied that both bottles lost the same amount of heat because they started at the same temperature and finished at the same temperature. A second student thought that the 2-L bottle of water lost more heat because there was more water. A third student believed that the 500-mL bottle of water lost more heat because it cooled more quickly. A fourth student thought that it was not possible to tell because we do not know the initial temperature and the final temperature of the water. Indicate which of these answers is correct and describe the error in each of the other answers.",
+   "prompt": "把一瓶 500 mL 的室温水和一瓶 2 L 的同温水放进冰箱。30 分钟后，500 mL 的那瓶水冷却到了冰箱的温度。一小时后，2 L 的水也冷却到了同样的温度。当被问到哪一瓶水失去的热量最多时，第一位学生回答说，两瓶失去的热量相同，因为它们起始温度相同，最终温度也相同。第二位学生认为 2 L 的那瓶水失去的热量更多，因为水更多。第三位学生认为 500 mL 的那瓶水失去的热量更多，因为它冷却得更快。第四位学生认为无法判断，因为我们不知道水的初始温度和最终温度。指出这些答案中哪一个正确，并说明其余各个答案的错误之处。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Write the heat each bottle loses as <em>q</em> = <em>c</em> × <em>m</em> × Δ<em>T</em>. Both bottles hold water, so <em>c</em> is the same, and both cool from the same starting temperature to the same final temperature, so Δ<em>T</em> is the same; the 2-L bottle holds four times the mass, so it loses four times the heat, and the second student is correct. The first student forgets that the heat depends on the mass as well as the temperature change. The third student confuses how fast the heat leaves with how much heat leaves, and the time taken does not appear in the equation. The fourth student is right that the temperatures are unknown, but the comparison needs only that Δ<em>T</em> is the same for both, so the answer can be found without them."
+    "solution": "每瓶水失去的热量写作 <em>q</em> = <em>c</em> × <em>m</em> × Δ<em>T</em>。两瓶装的都是水，所以 <em>c</em> 相同；两瓶都从同一起始温度冷却到同一最终温度，所以 Δ<em>T</em> 相同；2 L 的那瓶质量是四倍，所以它失去的热量是四倍，因此第二位学生是正确的。第一位学生忘了热量既取决于质量，也取决于温度变化。第三位学生把热量离开的快慢与离开的多少混为一谈，而时间并不出现在公式中。第四位学生说得对，温度确实未知，但比较只需要两瓶的 Δ<em>T</em> 相同，所以不必知道它们也能得出答案。"
    }
   },
   {
@@ -422,17 +435,17 @@
     "at": "end"
    },
    "cite": "ex-exothermic",
-   "prompt": "Would the amount of heat measured for the reaction in Example 5.5 be greater, lesser, or remain the same if we used a calorimeter that was a poorer insulator than a coffee cup calorimeter? Explain your answer.",
+   "prompt": "如果使用的量热计隔热性能比咖啡杯量热计差，例 5.5 中反应所测得的热量会更大、更小还是保持不变？解释你的答案。",
    "answer": {
     "type": "choice",
     "generated_by": "source",
     "options": [
-     "greater",
-     "lesser",
-     "remain the same"
+     "更大",
+     "更小",
+     "保持不变"
     ],
     "correct": 1,
-    "solution": "lesser; more heat would be lost to the coffee cup and the environment and so Δ<em>T</em> for the water would be lesser and the calculated <em>q</em> would be lesser"
+    "solution": "更小；会有更多热量散失到杯子和环境中，因此水的 Δ<em>T</em> 会更小，计算出的 <em>q</em> 也会更小"
    }
   },
   {
@@ -444,11 +457,11 @@
     "at": "end"
    },
    "cite": "ex-ice-pack",
-   "prompt": "Would the amount of heat absorbed by the dissolution in Example 5.6 appear greater, lesser, or remain the same if the experimenter used a calorimeter that was a poorer insulator than a coffee cup calorimeter? Explain your answer.",
+   "prompt": "如果实验者使用的量热计隔热性能比咖啡杯量热计差，例 5.6 中溶解所吸收的热量看起来会更大、更小还是保持不变？解释你的答案。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "It would appear lesser. The dissolution of ammonium nitrate is endothermic, so it cools the solution below the temperature of the room. In a poorly insulated calorimeter, heat flows from the warmer surroundings into the colder solution while the dissolution runs, and that heat partly replaces the heat the dissolution takes from the solution. The temperature therefore falls by less than in a coffee cup calorimeter. The heat absorbed is calculated as $\\kq=\\kcspec\\times\\km\\times\\kdT$ from the measured temperature change, so a smaller $\\kdT$ gives a smaller apparent heat absorbed by the dissolution."
+    "solution": "它看起来会更小。硝酸铵的溶解是吸热的，所以它使溶液冷却到低于室温。在隔热不良的量热计中，溶解进行的同时，热量会从较暖的环境流入较冷的溶液，这部分热量在一定程度上取代了溶解从溶液中取走的热量。因此温度下降的幅度比在咖啡杯量热计中小。吸收的热量是由测得的温度变化按 $\\kq=\\kcspec\\times\\km\\times\\kdT$ 计算的，所以较小的 $\\kdT$ 会使溶解所吸收的热量显得较小。"
    }
   },
   {
@@ -460,17 +473,17 @@
     "at": "end"
    },
    "cite": "bomb",
-   "prompt": "Would the amount of heat absorbed by the dissolution in Example 5.6 appear greater, lesser, or remain the same if the heat capacity of the calorimeter were taken into account? Explain your answer.",
+   "prompt": "如果把量热计的热容考虑在内，例 5.6 中溶解所吸收的热量看起来会更大、更小还是保持不变？解释你的答案。",
    "answer": {
     "type": "choice",
     "generated_by": "source",
     "options": [
-     "greater",
-     "lesser",
-     "remain the same"
+     "更大",
+     "更小",
+     "保持不变"
     ],
     "correct": 0,
-    "solution": "greater, since taking the calorimeter’s heat capacity into account will compensate for the thermal energy transferred to the solution from the calorimeter; this approach includes the calorimeter itself, along with the solution, as “surroundings”: <em>q</em><sub>rxn</sub> = −(<em>q</em><sub>solution</sub> + <em>q</em><sub>calorimeter</sub>); since both <em>q</em><sub>solution</sub> and <em>q</em><sub>calorimeter</sub> are negative, including the latter term (<em>q</em><sub>rxn</sub>) will yield a greater value for the heat of the dissolution"
+    "solution": "更大，因为把量热计的热容考虑在内，会补偿从量热计传给溶液的热能；这种做法把量热计本身与溶液一起作为“环境”：<em>q</em><sub>反应</sub> = −(<em>q</em><sub>溶液</sub> + <em>q</em><sub>量热计</sub>)；由于 <em>q</em><sub>溶液</sub> 和 <em>q</em><sub>量热计</sub> 都是负的，计入后一项（<em>q</em><sub>量热计</sub>）会使 <em>q</em><sub>反应</sub> 得出更大的溶解热"
    }
   },
   {
@@ -482,14 +495,14 @@
     "at": "end"
    },
    "cite": "heat-balance",
-   "prompt": "How much will the temperature of a cup (180 g) of coffee at 95 °C be reduced when a 45 g silver spoon (specific heat 0.24 J/g °C) at 25 °C is placed in the coffee and the two are allowed to reach the same temperature? Assume that the coffee has the same density and specific heat as water.",
+   "prompt": "把一把 45 g 的银汤匙（比热容 0.24 J/g °C）放入温度为 95 °C 的一杯（180 g）咖啡中，汤匙的初始温度为 25 °C，待二者达到同一温度，咖啡的温度会降低多少？假设咖啡的密度和比热容与水相同。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1,
     "unit": "°C",
-    "hint": "The heat gained by the spoon equals the heat lost by the coffee, and both end at one temperature.",
-    "solution": "The temperature of the coffee will drop 1 degree."
+    "hint": "汤匙得到的热量等于咖啡失去的热量，并且二者最终处于同一温度。",
+    "solution": "咖啡的温度会下降 1 度。"
    }
   },
   {
@@ -501,11 +514,11 @@
     "at": "end"
    },
    "cite": "heat-balance",
-   "prompt": "A 45-g aluminum spoon (specific heat 0.88 J/g °C) at 24 °C is placed in 180 mL (180 g) of coffee at 85 °C and the temperature of the two become equal. The first time a student solved this problem she got an answer of 88 °C. Explain why this is clearly an incorrect answer.",
+   "prompt": "把一把 45 g 的铝汤匙（比热容 0.88 J/g °C）在 24 °C 时放入 180 mL（180 g）85 °C 的咖啡中，二者的温度变为相等。一位学生第一次解这道题时得到的答案是 88 °C。解释为什么这显然是错误的答案。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "An answer of 88 °C is impossible because the final temperature must lie between the two starting temperatures, 24 °C and 85 °C. Heat flows spontaneously from the hotter coffee to the cooler spoon until both are at the same temperature, so the coffee can only lose heat and cool, and the spoon can only gain heat and warm; the heat lost by one equals the heat gained by the other. A final temperature of 88 °C would mean both the coffee and the spoon had warmed, gaining heat with nothing giving it up, which violates the conservation of energy. Solving $(0.88\\;\\text{J/g}\\;^\\circ\\text{C})(45\\;\\text{g})(\\kT_{\\text{f}}-24\\;^\\circ\\text{C})=-(4.184\\;\\text{J/g}\\;^\\circ\\text{C})(180\\;\\text{g})(\\kT_{\\text{f}}-85\\;^\\circ\\text{C})$ gives $\\kT_{\\text{f}}=82\\;^\\circ\\text{C}$, a little below the coffee’s starting temperature, because the spoon’s heat capacity is small."
+    "solution": "88 °C 这一答案是不可能的，因为最终温度必须介于两个起始温度 24 °C 和 85 °C 之间。热量自发地从较热的咖啡流向较冷的汤匙，直到二者处于同一温度，所以咖啡只能失去热量而变冷，汤匙只能得到热量而变热；一方失去的热量等于另一方得到的热量。最终温度为 88 °C 就意味着咖啡和汤匙都变热了，得到了热量却没有任何东西放出热量，这违背了能量守恒。解 $(0.88\\;\\text{J/g}\\;^\\circ\\text{C})(45\\;\\text{g})(\\kT_{\\text{f}}-24\\;^\\circ\\text{C})=-(4.184\\;\\text{J/g}\\;^\\circ\\text{C})(180\\;\\text{g})(\\kT_{\\text{f}}-85\\;^\\circ\\text{C})$ 得 $\\kT_{\\text{f}}=82\\;^\\circ\\text{C}$，略低于咖啡的起始温度，这是因为汤匙的热容很小。"
    }
   },
   {
@@ -517,13 +530,13 @@
     "at": "end"
    },
    "cite": "heat-balance",
-   "prompt": "The temperature of the cooling water as it leaves the hot engine of an automobile is 240 °F. After it passes through the radiator it has a temperature of 175 °F. Calculate the amount of heat transferred from the engine to the surroundings by one gallon of water with a specific heat of 4.184 J/g °C.",
+   "prompt": "汽车灼热的发动机流出的冷却水，温度为 240 °F。它流过散热器后，温度为 175 °F。计算一加仑比热容为 4.184 J/g °C 的水从发动机传给环境的热量。",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 570,
     "unit": "kJ",
-    "hint": "Convert the gallon to grams and the temperature change from degrees Fahrenheit to degrees Celsius first.",
+    "hint": "先把加仑换算成克，并把温度变化从华氏度换算成摄氏度。",
     "solution": "5.7 × 10<sup>2</sup> kJ"
    }
   },
@@ -536,13 +549,13 @@
     "at": "end"
    },
    "cite": "reaction-heat",
-   "prompt": "If a reaction produces 1.506 kJ of heat, which is trapped in 30.0 g of water initially at 26.5 °C in a calorimeter like that in Figure 5.12, what is the resulting temperature of the water?",
+   "prompt": "如果某个反应放出 1.506 kJ 的热量，这些热量全部被像图 5.12 那样的量热计中 30.0 g 初始温度为 26.5 °C 的水吸收，那么水的最终温度是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 38.5,
     "unit": "°C",
-    "hint": "Divide the heat by the specific heat and the mass of the water to find the temperature change.",
+    "hint": "用热量除以水的比热容和质量，求出温度变化。",
     "solution": "38.5 °C"
    }
   },
@@ -555,14 +568,14 @@
     "at": "end"
    },
    "cite": "ex-exothermic",
-   "prompt": "Dissolving 3.0 g of CaCl<sub>2</sub>(<em>s</em>) in 150.0 g of water in a calorimeter (Figure 5.12) at 22.4 °C causes the temperature to rise to 25.8 °C. What is the approximate amount of heat involved in the dissolution, assuming the specific heat of the resulting solution is 4.18 J/g °C? Is the reaction exothermic or endothermic?",
+   "prompt": "在 22.4 °C 的量热计（图 5.12）中，将 3.0 g CaCl<sub>2</sub>(<em>s</em>) 溶于 150.0 g 水，使温度升高到 25.8 °C。假设所得溶液的比热容为 4.18 J/g °C，溶解所涉及的热量大约是多少？该反应是放热的还是吸热的？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": -2.2,
     "unit": "kJ",
-    "hint": "Use the mass of the whole solution, and give the dissolution the opposite sign to the heat the solution gains.",
-    "solution": "−2.2 kJ; The heat produced shows that the reaction is exothermic."
+    "hint": "使用整份溶液的质量，并使溶解取与溶液所得热量相反的符号。",
+    "solution": "−2.2 kJ；所产生的热量表明该反应是放热的。"
    }
   },
   {
@@ -574,13 +587,13 @@
     "at": "end"
    },
    "cite": "reaction-heat",
-   "prompt": "The addition of 3.15 g of Ba(OH)<sub>2</sub>·8H<sub>2</sub>O to a solution of 1.52 g of NH<sub>4</sub>SCN in 100 g of water in a calorimeter caused the temperature to fall by 3.1 °C. Assuming the specific heat of the solution and products is 4.20 J/g °C, calculate the approximate amount of heat absorbed by the reaction, which can be represented by the following equation: Ba(OH)<sub>2</sub>·8H<sub>2</sub>O(<em>s</em>) + 2NH<sub>4</sub>SCN(<em>aq</em>) ⟶ Ba(SCN)<sub>2</sub>(<em>aq</em>) + 2NH<sub>3</sub>(<em>aq</em>) + 10H<sub>2</sub>O(<em>l</em>)",
+   "prompt": "将 3.15 g Ba(OH)<sub>2</sub>·8H<sub>2</sub>O 加到量热计中 1.52 g NH<sub>4</sub>SCN 溶于 100 g 水所成的溶液里，温度下降了 3.1 °C。假设溶液和产物的比热容为 4.20 J/g °C，计算该反应吸收热量的近似值，该反应可用下面的方程式表示：Ba(OH)<sub>2</sub>·8H<sub>2</sub>O(<em>s</em>) + 2NH<sub>4</sub>SCN(<em>aq</em>) ⟶ Ba(SCN)<sub>2</sub>(<em>aq</em>) + 2NH<sub>3</sub>(<em>aq</em>) + 10H<sub>2</sub>O(<em>l</em>)",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 1.4,
     "unit": "kJ",
-    "hint": "The mass of the solution includes the two solids as well as the water.",
+    "hint": "溶液的质量包括两种固体以及水。",
     "solution": "1.4 kJ"
    }
   },
@@ -593,11 +606,11 @@
     "at": "end"
    },
    "cite": "ex-exothermic",
-   "prompt": "The reaction of 50 mL of acid and 50 mL of base described in Example 5.5 increased the temperature of the solution by 6.9 °C. How much would the temperature have increased if 100 mL of acid and 100 mL of base had been used in the same calorimeter starting at the same temperature of 22.0 °C? Explain your answer.",
+   "prompt": "例 5.5 中所描述的 50 mL 酸与 50 mL 碱的反应使溶液的温度升高了 6.9 °C。如果在同一个量热计中、从同样的 22.0 °C 开始，使用 100 mL 酸和 100 mL 碱，温度会升高多少？解释你的答案。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The temperature would increase by the same 6.9 °C, from 22.0 °C to 28.9 °C. Doubling both volumes doubles the amounts of HCl and NaOH that react, so the reaction gives off twice as much heat, $2\\kq$. It also doubles the mass of solution that absorbs that heat, from about 100 g to about 200 g, while the specific heat is unchanged. Since $\\kdT=\\frac{\\kq}{\\kcspec\\times\\km}$, doubling both $\\kq$ and $\\km$ leaves $\\kdT$ unchanged."
+    "solution": "温度会升高同样的 6.9 °C，从 22.0 °C 升到 28.9 °C。两种体积都加倍，使发生反应的 HCl 和 NaOH 的量加倍，所以反应放出的热量加倍，为 $2\\kq$。同时，吸收这些热量的溶液质量也加倍，从约 100 g 变为约 200 g，而比热容不变。由于 $\\kdT=\\frac{\\kq}{\\kcspec\\times\\km}$，$\\kq$ 和 $\\km$ 都加倍，$\\kdT$ 保持不变。"
    }
   },
   {
@@ -609,11 +622,11 @@
     "at": "end"
    },
    "cite": "ex-ice-pack",
-   "prompt": "If the 3.21 g of NH<sub>4</sub>NO<sub>3</sub> in Example 5.6 were dissolved in 100.0 g of water under the same conditions, how much would the temperature change? Explain your answer.",
+   "prompt": "如果在相同条件下，把例 5.6 中的 3.21 g NH<sub>4</sub>NO<sub>3</sub> 溶于 100.0 g 水，温度会变化多少？解释你的答案。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "22.6. Since the mass and the heat capacity of the solution is approximately equal to that of the water, the two-fold increase in the amount of water leads to a two-fold decrease of the temperature change."
+    "solution": "22.6。由于溶液的质量和热容近似等于水的质量和热容，水量加倍使温度变化减小为原来的一半。"
    }
   },
   {
@@ -625,13 +638,13 @@
     "at": "end"
    },
    "cite": "ex-bomb",
-   "prompt": "When a 0.740-g sample of trinitrotoluene (TNT), C<sub>7</sub>H<sub>5</sub>N<sub>2</sub>O<sub>6</sub>, is burned in a bomb calorimeter, the temperature increases from 23.4 °C to 26.9 °C. The heat capacity of the calorimeter is 534 J/°C, and it contains 675 mL of water. How much heat was produced by the combustion of the TNT sample?",
+   "prompt": "将 0.740 g 三硝基甲苯（TNT）C<sub>7</sub>H<sub>5</sub>N<sub>2</sub>O<sub>6</sub> 样品在弹式量热计中燃烧，温度从 23.4 °C 升高到 26.9 °C。量热计的热容为 534 J/°C，其中装有 675 mL 水。TNT 样品燃烧产生了多少热量？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 11.7,
     "unit": "kJ",
-    "hint": "Add the heat absorbed by the water to the heat absorbed by the calorimeter.",
+    "hint": "把水吸收的热量与量热计吸收的热量相加。",
     "solution": "11.7 kJ"
    }
   },
@@ -644,13 +657,13 @@
     "at": "end"
    },
    "cite": "calories-note",
-   "prompt": "The amount of fat recommended for someone with a daily diet of 2000 Calories is 65 g. What percent of the calories in this diet would be supplied by this amount of fat if the average number of Calories for fat is 9.1 Calories/g?",
+   "prompt": "每天摄入 2000 大卡的人，推荐的脂肪量是 65 g。如果脂肪的平均大卡数为 9.1 大卡/g，这个量的脂肪提供这份饮食中多少百分比的大卡？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 30,
     "unit": "%",
-    "hint": "Multiply the grams of fat by the Calories per gram, then compare with 2000 Calories.",
+    "hint": "把脂肪的克数乘以每克的大卡数，再与 2000 大卡比较。",
     "solution": "30%"
    }
   },
@@ -663,13 +676,13 @@
     "at": "end"
    },
    "cite": "calories-note",
-   "prompt": "What is the maximum mass of carbohydrate in a 6-oz serving of diet soda that contains less than 1 Calorie per can if the average number of Calories for carbohydrates is 4.1 Calories/g?",
+   "prompt": "如果碳水化合物的平均大卡数为 4.1 大卡/g，那么一份 6 盎司的无糖汽水（每罐含不到 1 大卡）中，碳水化合物的最大质量是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 0.24,
     "unit": "g",
-    "hint": "Divide the Calories by the Calories per gram.",
+    "hint": "用大卡数除以每克的大卡数。",
     "solution": "0.24 g"
    }
   },
@@ -682,14 +695,14 @@
     "at": "end"
    },
    "cite": "calories-note",
-   "prompt": "A serving of a breakfast cereal contains 3 g of protein, 18 g of carbohydrates, and 6 g of fat. What is the Calorie content of a serving of this cereal if the average number of Calories for fat is 9.1 Calories/g, for carbohydrates is 4.1 Calories/g, and for protein is 4.1 Calories/g?",
+   "prompt": "一份早餐麦片含有 3 g 蛋白质、18 g 碳水化合物和 6 g 脂肪。如果脂肪的平均大卡数为 9.1 大卡/g，碳水化合物为 4.1 大卡/g，蛋白质为 4.1 大卡/g，那么这种麦片一份的大卡含量是多少？",
    "answer": {
     "type": "number",
     "generated_by": "source",
     "value": 140,
     "unit": "Calories",
-    "hint": "Multiply each mass by its Calories per gram and add the three products.",
-    "solution": "1.4 × 10<sup>2</sup> Calories"
+    "hint": "把每种质量乘以其每克的大卡数，再把三个乘积相加。",
+    "solution": "1.4 × 10<sup>2</sup> 大卡"
    }
   }
  ],
@@ -892,28 +905,28 @@
  "referents": [
   {
    "id": "metal",
-   "label": "the hot metal, M",
+   "label": "热的金属 M",
    "figures": [
     "sim-calorimeter"
    ]
   },
   {
    "id": "water",
-   "label": "the cool water, W",
+   "label": "冷水 W",
    "figures": [
     "sim-calorimeter"
    ]
   },
   {
    "id": "solution",
-   "label": "the solution in the calorimeter",
+   "label": "量热计中的溶液",
    "figures": [
     "sim-calorimeter"
    ]
   },
   {
    "id": "calorimeter",
-   "label": "the coffee cup calorimeter",
+   "label": "咖啡杯量热计",
    "figures": [
     "sim-calorimeter"
    ]
@@ -923,12 +936,12 @@
   {
    "id": "c-glucose-heat",
    "kind": "correction",
-   "html": "The book prints 48.7 kJ. The calculation above gives <em>q</em><sub>reaction</sub> = −48.8 kJ, so the reaction released 48.8 kJ of heat."
+   "html": "书中印的是 48.7 kJ。上面的计算给出 <em>q</em><sub>反应</sub> = −48.8 kJ，所以该反应放出了 48.8 kJ 的热量。"
   },
   {
    "id": "c-cyl4-kj",
    "kind": "correction",
-   "html": "The book’s key writes 1.34 × 10<sup>3</sup> kJ; the heat is 1.34 × 10<sup>3</sup> J, which is the 1.34 kJ it gives next."
+   "html": "书中的答案写作 1.34 × 10<sup>3</sup> kJ；该热量是 1.34 × 10<sup>3</sup> J，也就是它接着给出的 1.34 kJ。"
   }
  ]
 }

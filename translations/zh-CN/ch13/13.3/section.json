@@ -2,32 +2,40 @@
  "id": "13.3",
  "module": "m68799",
  "chapter": "13",
- "title": "Shifting Equilibria: Le Châtelier’s Principle",
- "short": "Shifting Equilibria",
- "lead": "An equilibrium can be disturbed by adding or removing a reactant or product, by changing the <span data-concept=\"volume\">volume</span> of a gaseous system, by changing the <span data-concept=\"temperature\">temperature</span>, or by adding a <span data-concept=\"catalyst\">catalyst</span>. <span data-concept=\"le-chateliers-principle\">Le Châtelier’s principle</span> predicts how the system responds to each of these stresses, and the industrial synthesis of ammonia puts them to work.",
+ "title": "平衡的移动：勒夏特列原理",
+ "short": "平衡的移动",
+ "lead": "平衡可以因加入或移出反应物或产物、改变气态体系的<span data-concept=\"volume\">体积</span>、改变<span data-concept=\"temperature\">温度</span>或加入<span data-concept=\"catalyst\">催化剂</span>而受到扰动。<span data-concept=\"le-chateliers-principle\">勒夏特列原理</span>预测体系对这些扰动中每一种的响应，而氨的工业合成则把这些扰动都运用了起来。",
  "objectives": [
-  "Describe the ways in which an equilibrium system can be stressed",
-  "Predict the response of a stressed equilibrium using Le Châtelier’s principle"
+  "描述可以对平衡体系施加扰动的各种方式",
+  "利用勒夏特列原理预测受扰动平衡的响应"
  ],
- "summary_html": "<p>Systems at equilibrium can be disturbed by changes to <span data-concept=\"temperature\">temperature</span>, <span data-concept=\"concentration\">concentration</span>, and, in some cases, <span data-concept=\"volume\">volume</span> and <span data-concept=\"partial-pressure\">pressure</span>. The system’s response to these disturbances is described by <span data-concept=\"le-chateliers-principle\">Le Châtelier’s principle</span>: An equilibrium system subjected to a disturbance will shift in a way that counters the disturbance and re-establishes equilibrium. A <span data-concept=\"catalyst\">catalyst</span> will increase the <span data-concept=\"reaction-rate\">rate</span> of both the forward and reverse reactions of a reversible process, increasing the <span data-concept=\"reaction-rate\">rate</span> at which equilibrium is reached but not altering the equilibrium mixture’s composition ($\\kK$ does not change).</p>",
- "notes": "The Link to Learning video of an equilibrium changing with pressure is left out; the Sim of a stressed equilibrium in a vessel closed by a piston answers it. The book’s “Le Chatelier’s principle,” written once without its accent, and the acetate ion written as (<em>l</em>) in exercise 45 are kept as printed.",
+ "summary_html": "<p>处于平衡的体系可能因<span data-concept=\"temperature\">温度</span>、<span data-concept=\"concentration\">浓度</span>以及在某些情况下<span data-concept=\"volume\">体积</span>和<span data-concept=\"partial-pressure\">压强</span>的变化而受到扰动。体系对这些扰动的响应由<span data-concept=\"le-chateliers-principle\">勒夏特列原理</span>描述：受到扰动的平衡体系将以抵消该扰动的方式发生移动，并重新建立平衡。<span data-concept=\"catalyst\">催化剂</span>会使可逆过程的正反应和逆反应的<span data-concept=\"reaction-rate\">速率</span>都增大，从而加快达到平衡的<span data-concept=\"reaction-rate\">速率</span>，但不改变平衡混合物的组成（$\\kK$ 不变）。</p>",
+ "notes": "“学习链接”中关于平衡随压强变化的视频已省略；由活塞封闭的容器中受扰动平衡的模拟可以回答同样的问题。书中有一处把“Le Chatelier’s principle”写成了不带重音符号的形式，习题 45 中把乙酸根离子写成 (<em>l</em>)，均按原样保留。",
  "ai": {
   "text": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-10-05",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed exercises fs-idp22318672, fs-idp55085984, fs-idp20860880, fs-idp212372192, fs-idp384696688, fs-idp31242816, fs-idp261498704 and fs-idm33369776 carry a suggested approach marked as OmniStax’s own, and fs-idp219741088, an unkeyed choice item, is kept as an open item with its four options and a suggested approach. Exercise 48 (fs-idp92538384), on radioactive silver ions in a saturated solution of silver sulfate, tests the dynamic nature of equilibrium and is set in 13.1.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自书后答案。习题 fs-idp22318672、fs-idp55085984、fs-idp20860880、fs-idp212372192、fs-idp384696688、fs-idp31242816、fs-idp261498704 和 fs-idm33369776 没有书中给出的答案，附有一份标明为 OmniStax 自己撰写的建议思路；fs-idp219741088 是一道没有答案的选择题，作为开放题保留，附有它的四个选项和一份建议思路。习题 48（fs-idp92538384）涉及饱和硫酸银溶液中的放射性银离子，考查平衡的动态性质，编排在 13.1 中。",
  "figures": [
   {
    "id": "sim-le-chatelier",
@@ -48,6 +56,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -61,6 +74,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -71,7 +89,7 @@
    "originals": [
     "/media/ch13/CNX_Chem_13_03_catalyst.jpg"
    ],
-   "original_caption": "Reaction diagrams for an elementary process in the absence (red) and presence (blue) of a catalyst. The presence of catalyst lowers the activation energies of both the forward and reverse reactions but does not affect the value of the equilibrium constant.",
+   "original_caption": "无催化剂（红色）和有催化剂（蓝色）时一个基元过程的反应图。催化剂的存在降低了正反应和逆反应的活化能，但不影响平衡常数的值。",
    "draws": [
     "energy"
    ],
@@ -80,6 +98,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -90,7 +113,7 @@
    "originals": [
     "/media/ch13/CNX_Chem_13_03_factory.jpg"
    ],
-   "original_caption": "The figure shows a typical industrial setup for the commercial production of ammonia by the Haber-Bosch process. The process operates under conditions that stress the chemical equilibrium to favor product formation.",
+   "original_caption": "该图显示了用哈伯–博施法商业化生产氨的典型工业装置。该过程在对化学平衡施加扰动、使之有利于产物生成的条件下运行。",
    "draws": [
     "energy"
    ],
@@ -104,6 +127,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -342,11 +370,11 @@
     "at": "end"
    },
    "cite": "volume",
-   "prompt": "The following equation represents a reversible decomposition:$${\\text{CaCO}}_{3}(s)\\rightleftharpoons \\text{CaO}(s)+{\\text{CO}}_{2}(g)$$Under what conditions will decomposition in a closed container proceed to completion so that no CaCO<sub>3</sub> remains?",
+   "prompt": "下面的方程式表示一个可逆分解反应：$${\\text{CaCO}}_{3}(s)\\rightleftharpoons \\text{CaO}(s)+{\\text{CO}}_{2}(g)$$在什么条件下，密闭容器中的分解会进行到底，使得不再剩下 CaCO<sub>3</sub>？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The amount of CaCO<sub>3</sub> must be so small that $P_{{\\text{CO}}_{2}}$ is less than <em>K</em><sub>P</sub> when the CaCO<sub>3</sub> has completely decomposed. In other words, the starting amount of CaCO<sub>3</sub> cannot completely generate the full $P_{{\\text{CO}}_{2}}$ required for equilibrium."
+    "solution": "CaCO<sub>3</sub> 的量必须小到这样的程度：当 CaCO<sub>3</sub> 完全分解时，$P_{{\\text{CO}}_{2}}$ 仍小于 <em>K</em><sub>P</sub>。换句话说，起始的 CaCO<sub>3</sub> 的量不足以产生平衡所需的全部 $P_{{\\text{CO}}_{2}}$。"
    }
   },
   {
@@ -359,11 +387,11 @@
     "at": "end"
    },
    "cite": "volume",
-   "prompt": "Explain how to recognize the conditions under which changes in volume will affect gas-phase systems at equilibrium.",
+   "prompt": "说明如何识别体积变化会影响气相平衡体系的条件。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "A change in volume shifts a gas-phase equilibrium only when the balanced equation has different total moles of gas on its two sides. Decreasing the volume by a factor of 3 multiplies every partial pressure by 3. For H<sub>2</sub>(<em>g</em>) + I<sub>2</sub>(<em>g</em>) ⇌ 2HI(<em>g</em>), with 2 mol of gas on each side, the factors cancel: ${Q}_{P}{}^{'}=\\;\\frac{{(3{P}_{\\text{HI}})}^{2}}{3{P}_{{\\text{H}}_{2}}\\;3{P}_{{\\text{I}}_{2}}}={Q}_{P}={K}_{P},$ so there is no shift. For 2NO<sub>2</sub>(<em>g</em>) ⇌ 2NO(<em>g</em>) + O<sub>2</sub>(<em>g</em>), with 2 mol of gas on the left and 3 on the right, the same change gives <em>Q<sub>P</sub></em>′ = 3<sup>3</sup>/3<sup>2</sup> × <em>Q<sub>P</sub></em> = 3<em>K<sub>P</sub></em>, so <em>Q</em> &gt; <em>K</em> and the equilibrium shifts left. The test is therefore to count the moles of gas on each side, leaving out solids and liquids: if they differ, a decrease in volume shifts the equilibrium toward the side with fewer moles of gas and an increase toward the side with more; if they are equal, volume has no effect."
+    "solution": "只有当配平的方程式两侧气体的总物质的量不同时，体积的变化才会使气相平衡移动。把体积减小为原来的三分之一，会使每种分压都增大为原来的 3 倍。对于 H<sub>2</sub>(<em>g</em>) + I<sub>2</sub>(<em>g</em>) ⇌ 2HI(<em>g</em>)，两侧气体都是 2 mol，各因子相互抵消：${Q}_{P}{}^{'}=\\;\\frac{{(3{P}_{\\text{HI}})}^{2}}{3{P}_{{\\text{H}}_{2}}\\;3{P}_{{\\text{I}}_{2}}}={Q}_{P}={K}_{P},$ 因此没有移动。对于 2NO<sub>2</sub>(<em>g</em>) ⇌ 2NO(<em>g</em>) + O<sub>2</sub>(<em>g</em>)，左侧气体为 2 mol，右侧为 3 mol，同样的变化给出 <em>Q<sub>P</sub></em>′ = 3<sup>3</sup>/3<sup>2</sup> × <em>Q<sub>P</sub></em> = 3<em>K<sub>P</sub></em>，所以 <em>Q</em> &gt; <em>K</em>，平衡向左移动。因此，判断的方法是数出两侧气体的物质的量（不计固体和液体）：如果不同，体积减小会使平衡向气体物质的量较少的一侧移动，体积增大则向较多的一侧移动；如果相等，体积没有影响。"
    }
   },
   {
@@ -376,11 +404,11 @@
     "at": "end"
    },
    "cite": "temperature",
-   "prompt": "What property of a reaction can we use to predict the effect of a change in temperature on the value of an equilibrium constant?",
+   "prompt": "我们可以用反应的哪种性质来预测温度变化对平衡常数的值的影响？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The change in enthalpy may be used. If the reaction is exothermic, the heat produced can be thought of as a product. If the reaction is endothermic the heat added can be thought of as a reactant. Additional heat would shift an exothermic reaction back to the reactants but would shift an endothermic reaction to the products. Cooling an exothermic reaction causes the reaction to shift toward the product side; cooling an endothermic reaction would cause it to shift to the reactants’ side."
+    "solution": "可以用焓变。如果反应是放热的，产生的热量可以看作产物。如果反应是吸热的，加入的热量可以看作反应物。额外的热量会使放热反应向反应物方向移动，却会使吸热反应向产物方向移动。冷却放热反应会使反应向产物一侧移动；冷却吸热反应则会使其向反应物一侧移动。"
    }
   },
   {
@@ -393,11 +421,11 @@
     "at": "end"
    },
    "cite": "principle",
-   "prompt": "The following reaction occurs when a burner on a gas stove is lit:$${\\text{CH}}_{4}(g)+2{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(g)$$Is an equilibrium among CH<sub>4</sub>, O<sub>2</sub>, CO<sub>2</sub>, and H<sub>2</sub>O established under these conditions? Explain your answer.",
+   "prompt": "点燃燃气灶上的燃烧器时发生下列反应：$${\\text{CH}}_{4}(g)+2{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(g)$$在这些条件下，CH<sub>4</sub>、O<sub>2</sub>、CO<sub>2</sub> 和 H<sub>2</sub>O 之间是否建立了平衡？请解释你的回答。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "No, it is not at equilibrium. Because the system is not confined, products continuously escape from the region of the flame; reactants are also added continuously from the burner and surrounding atmosphere."
+    "solution": "不，它没有处于平衡。由于体系不是封闭的，产物不断地从火焰区域逸出；反应物也不断地从燃烧器和周围的大气中补充进来。"
    }
   },
   {
@@ -410,11 +438,11 @@
     "at": "end"
    },
    "cite": "temperature",
-   "prompt": "A necessary step in the manufacture of sulfuric acid is the formation of sulfur trioxide, SO<sub>3</sub>, from sulfur dioxide, SO<sub>2</sub>, and oxygen, O<sub>2</sub>, shown here. At high temperatures, the rate of formation of SO<sub>3</sub> is higher, but the equilibrium amount (concentration or partial pressure) of SO<sub>3</sub> is lower than it would be at lower temperatures.$$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\rightleftharpoons \\;2{\\text{SO}}_{3}(g)$$(a) Does the equilibrium constant for the reaction increase, decrease, or remain about the same as the temperature increases?<br>(b) Is the reaction endothermic or exothermic?",
+   "prompt": "硫酸制造过程中必不可少的一步是由二氧化硫 SO<sub>2</sub> 和氧气 O<sub>2</sub> 生成三氧化硫 SO<sub>3</sub>，如下所示。在高温下，SO<sub>3</sub> 的生成速率较高，但 SO<sub>3</sub> 的平衡量（浓度或分压）比在较低温度下低。$$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\;\\rightleftharpoons \\;2{\\text{SO}}_{3}(g)$$（a）随着温度升高，该反应的平衡常数是增大、减小，还是基本不变？<br>（b）该反应是吸热的还是放热的？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) The equilibrium constant decreases as the temperature increases. In ${K}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]},$ a smaller equilibrium amount of SO<sub>3</sub> at higher temperature means a smaller numerator and a larger denominator, so <em>K<sub>c</sub></em> is smaller. The faster rate of formation is a kinetic effect; it changes how quickly equilibrium is reached, not where it lies. (b) The reaction is exothermic. Heat is then a product, 2SO<sub>2</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>) ⇌ 2SO<sub>3</sub>(<em>g</em>) + heat, and adding heat shifts the equilibrium to the left, lowering the amount of SO<sub>3</sub> as observed. Only temperature changes the value of <em>K</em>, and a <em>K</em> that falls on heating marks an exothermic reaction."
+    "solution": "（a）平衡常数随温度升高而减小。在 ${K}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]},$ 中，较高温度下 SO<sub>3</sub> 的平衡量较小，意味着分子较小而分母较大，所以 <em>K<sub>c</sub></em> 较小。生成速率较快是动力学效应；它改变的是达到平衡的快慢，而不是平衡的位置。（b）该反应是放热的。此时热量是产物，2SO<sub>2</sub>(<em>g</em>) + O<sub>2</sub>(<em>g</em>) ⇌ 2SO<sub>3</sub>(<em>g</em>) + 热量，加入热量会使平衡向左移动，如观察到的那样使 SO<sub>3</sub> 的量减少。只有温度才会改变 <em>K</em> 的值，而加热时 <em>K</em> 下降标志着反应是放热的。"
    }
   },
   {
@@ -427,11 +455,11 @@
     "at": "end"
    },
    "cite": "haber",
-   "prompt": "Suggest four ways in which the concentration of hydrazine, N<sub>2</sub>H<sub>4</sub>, could be increased in an equilibrium described by the following equation:$${\\text{N}}_{2}(g)+2{\\text{H}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{H}}_{4}(g)\\hspace{5em}\\text{Δ}H=95\\;\\text{kJ}$$",
+   "prompt": "提出四种可以使下列方程式所描述的平衡中肼 N<sub>2</sub>H<sub>4</sub> 的浓度增大的方法：$${\\text{N}}_{2}(g)+2{\\text{H}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{H}}_{4}(g)\\hspace{5em}\\text{Δ}H=95\\;\\text{kJ}$$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Add N<sub>2</sub>; add H<sub>2</sub>; decrease the container volume; heat the mixture."
+    "solution": "加入 N<sub>2</sub>；加入 H<sub>2</sub>；减小容器的体积；加热混合物。"
    }
   },
   {
@@ -444,11 +472,11 @@
     "at": "end"
    },
    "cite": "haber",
-   "prompt": "Suggest four ways in which the concentration of PH<sub>3</sub> could be increased in an equilibrium described by the following equation:$${\\text{P}}_{4}(g)+6{\\text{H}}_{2}(g)\\rightleftharpoons 4{\\text{PH}}_{3}(g)\\hspace{5em}\\text{Δ}H=110.5\\;\\text{kJ}$$",
+   "prompt": "提出四种可以使下列方程式所描述的平衡中 PH<sub>3</sub> 的浓度增大的方法：$${\\text{P}}_{4}(g)+6{\\text{H}}_{2}(g)\\rightleftharpoons 4{\\text{PH}}_{3}(g)\\hspace{5em}\\text{Δ}H=110.5\\;\\text{kJ}$$",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Add P<sub>4</sub>; add H<sub>2</sub>; decrease the volume of the container; heat the mixture. Adding either reactant makes <em>Q<sub>c</sub></em> smaller than <em>K<sub>c</sub></em>, so the equilibrium shifts right and forms more PH<sub>3</sub>. The left side has 1 + 6 = 7 mol of gas and the right side 4 mol, so decreasing the volume shifts the equilibrium toward PH<sub>3</sub>, the side with less gas. The reaction is endothermic (Δ<em>H</em> = 110.5 kJ), so heat acts as a reactant; raising the temperature shifts the equilibrium right and increases <em>K<sub>c</sub></em>."
+    "solution": "加入 P<sub>4</sub>；加入 H<sub>2</sub>；减小容器的体积；加热混合物。加入任一反应物都会使 <em>Q<sub>c</sub></em> 小于 <em>K<sub>c</sub></em>，所以平衡向右移动，生成更多的 PH<sub>3</sub>。左侧有 1 + 6 = 7 mol 气体，右侧有 4 mol，所以减小体积会使平衡向 PH<sub>3</sub> 一侧（气体较少的一侧）移动。该反应是吸热的（Δ<em>H</em> = 110.5 kJ），所以热量相当于反应物；升高温度会使平衡向右移动，并使 <em>K<sub>c</sub></em> 增大。"
    }
   },
   {
@@ -461,11 +489,11 @@
     "at": "end"
    },
    "cite": "haber",
-   "prompt": "How will an increase in temperature affect each of the following equilibria? How will a decrease in the volume of the reaction vessel affect each?<br>(a) $2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{5em}\\text{Δ}H=92\\;\\text{kJ}$<br>(b) ${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{5em}\\text{Δ}H=181\\;\\text{kJ}$<br>(c) $2{\\text{O}}_{3}(g)\\rightleftharpoons 3{\\text{O}}_{2}(g)\\hspace{5em}\\text{Δ}H=−285\\;\\text{kJ}$<br>(d) $\\text{CaO}(s)+{\\text{CO}}_{2}(g)\\rightleftharpoons {\\text{CaCO}}_{3}(s)\\hspace{5em}\\text{Δ}H=−176\\;\\text{kJ}$",
+   "prompt": "温度升高会对下列每个平衡产生怎样的影响？反应容器的体积减小又会对每个平衡产生怎样的影响？<br>（a）$2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{5em}\\text{Δ}H=92\\;\\text{kJ}$<br>（b）${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{5em}\\text{Δ}H=181\\;\\text{kJ}$<br>（c）$2{\\text{O}}_{3}(g)\\rightleftharpoons 3{\\text{O}}_{2}(g)\\hspace{5em}\\text{Δ}H=−285\\;\\text{kJ}$<br>（d）$\\text{CaO}(s)+{\\text{CO}}_{2}(g)\\rightleftharpoons {\\text{CaCO}}_{3}(s)\\hspace{5em}\\text{Δ}H=−176\\;\\text{kJ}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) <em>T</em> increase = shift right, <em>V</em> decrease = shift left; (b) <em>T</em> increase = shift right, <em>V</em> = no effect; (c) <em>T</em> increase = shift left, <em>V</em> decrease = shift left; (d) <em>T</em> increase = shift left, <em>V</em> decrease = shift right."
+    "solution": "（a）<em>T</em> 升高 = 右移，<em>V</em> 减小 = 左移；（b）<em>T</em> 升高 = 右移，<em>V</em> = 无影响；（c）<em>T</em> 升高 = 左移，<em>V</em> 减小 = 左移；（d）<em>T</em> 升高 = 左移，<em>V</em> 减小 = 右移。"
    }
   },
   {
@@ -478,11 +506,11 @@
     "at": "end"
    },
    "cite": "haber",
-   "prompt": "How will an increase in temperature affect each of the following equilibria? How will a decrease in the volume of the reaction vessel affect each?<br>(a) $2{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons 2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{5em}\\text{Δ}H=484\\;\\text{kJ}$<br>(b) ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{5em}\\text{Δ}H=−92.2\\;\\text{kJ}$<br>(c) $2\\text{Br}(g)\\rightleftharpoons {\\text{Br}}_{2}(g)\\hspace{5em}\\text{Δ}H=−224\\;\\text{kJ}$<br>(d) ${\\text{H}}_{2}(g)+{\\text{I}}_{2}(s)\\rightleftharpoons 2\\text{HI}(g)\\hspace{5em}\\text{Δ}H=53\\;\\text{kJ}$",
+   "prompt": "温度升高会对下列每个平衡产生怎样的影响？反应容器的体积减小又会对每个平衡产生怎样的影响？<br>（a）$2{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons 2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{5em}\\text{Δ}H=484\\;\\text{kJ}$<br>（b）${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{5em}\\text{Δ}H=−92.2\\;\\text{kJ}$<br>（c）$2\\text{Br}(g)\\rightleftharpoons {\\text{Br}}_{2}(g)\\hspace{5em}\\text{Δ}H=−224\\;\\text{kJ}$<br>（d）${\\text{H}}_{2}(g)+{\\text{I}}_{2}(s)\\rightleftharpoons 2\\text{HI}(g)\\hspace{5em}\\text{Δ}H=53\\;\\text{kJ}$",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "A positive Δ<em>H</em> means heat is a reactant, so heating shifts the equilibrium right; a negative Δ<em>H</em> means heat is a product, so heating shifts it left. A smaller volume shifts the equilibrium toward the side with fewer moles of gas. (a) Endothermic, so a temperature increase shifts it right; 2 mol of gas against 3, so a volume decrease shifts it left. (b) Exothermic, so a temperature increase shifts it left; 4 mol of gas against 2, so a volume decrease shifts it right. (c) Exothermic, so a temperature increase shifts it left; 2 mol of gas against 1, so a volume decrease shifts it right. (d) Endothermic, so a temperature increase shifts it right; solid I<sub>2</sub> is not counted, leaving 1 mol of gas against 2, so a volume decrease shifts it left."
+    "solution": "Δ<em>H</em> 为正表示热量是反应物，所以加热使平衡向右移动；Δ<em>H</em> 为负表示热量是产物，所以加热使平衡向左移动。体积减小会使平衡向气体物质的量较少的一侧移动。（a）吸热，所以温度升高使平衡向右移动；气体为 2 mol 对 3 mol，所以体积减小使平衡向左移动。（b）放热，所以温度升高使平衡向左移动；气体为 4 mol 对 2 mol，所以体积减小使平衡向右移动。（c）放热，所以温度升高使平衡向左移动；气体为 2 mol 对 1 mol，所以体积减小使平衡向右移动。（d）吸热，所以温度升高使平衡向右移动；固体 I<sub>2</sub> 不计入，剩下气体为 1 mol 对 2 mol，所以体积减小使平衡向左移动。"
    }
   },
   {
@@ -495,11 +523,11 @@
     "at": "end"
    },
    "cite": "concentration",
-   "prompt": "Methanol can be prepared from carbon monoxide and hydrogen at high temperature and pressure in the presence of a suitable catalyst.<br>(a) Write the expression for the equilibrium constant (<em>K</em><sub>c</sub>) for the reversible reaction$$2{\\text{H}}_{2}(g)+\\text{CO}(g)\\rightleftharpoons {\\text{CH}}_{3}\\text{OH}(g)\\hspace{5em}\\text{Δ}H=−90.2\\;\\text{kJ}$$(b) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if more H<sub>2</sub> is added?<br>(c) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if CO is removed?<br>(d) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if CH<sub>3</sub>OH is added?<br>(e) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if the temperature of the system is increased?<br>(f) What will happen to the concentrations of H<sub>2</sub>, CO, and CH<sub>3</sub>OH at equilibrium if more catalyst is added?",
+   "prompt": "甲醇可以在高温高压下、在合适的催化剂存在时由一氧化碳和氢气制得。<br>（a）写出下列可逆反应的平衡常数（<em>K</em><sub>c</sub>）表达式：$$2{\\text{H}}_{2}(g)+\\text{CO}(g)\\rightleftharpoons {\\text{CH}}_{3}\\text{OH}(g)\\hspace{5em}\\text{Δ}H=−90.2\\;\\text{kJ}$$（b）如果加入更多的 H<sub>2</sub>，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？<br>（c）如果移出 CO，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？<br>（d）如果加入 CH<sub>3</sub>OH，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？<br>（e）如果体系的温度升高，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？<br>（f）如果加入更多的催化剂，平衡时 H<sub>2</sub>、CO 和 CH<sub>3</sub>OH 的浓度将发生什么变化？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${K}_{c}=\\;\\frac{[{\\text{CH}}_{3}\\text{OH}]}{{[{\\text{H}}_{2}]}^{2}[\\text{CO}]};$ (b) [H<sub>2</sub>] increases, [CO] decreases, [CH<sub>3</sub>OH] increases; (c), [H<sub>2</sub>] increases, [CO] decreases, [CH<sub>3</sub>OH] decreases; (d), [H<sub>2</sub>] increases, [CO] increases, [CH<sub>3</sub>OH] increases; (e), [H<sub>2</sub>] increases, [CO] increases, [CH<sub>3</sub>OH] decreases; (f), no changes."
+    "solution": "（a）${K}_{c}=\\;\\frac{[{\\text{CH}}_{3}\\text{OH}]}{{[{\\text{H}}_{2}]}^{2}[\\text{CO}]};$（b）[H<sub>2</sub>] 增大，[CO] 减小，[CH<sub>3</sub>OH] 增大；（c），[H<sub>2</sub>] 增大，[CO] 减小，[CH<sub>3</sub>OH] 减小；（d），[H<sub>2</sub>] 增大，[CO] 增大，[CH<sub>3</sub>OH] 增大；（e），[H<sub>2</sub>] 增大，[CO] 增大，[CH<sub>3</sub>OH] 减小；（f），没有变化。"
    }
   },
   {
@@ -512,11 +540,11 @@
     "at": "end"
    },
    "cite": "concentration",
-   "prompt": "Nitrogen and oxygen react at high temperatures.<br>(a) Write the expression for the equilibrium constant (<em>K</em><sub>c</sub>) for the reversible reaction$${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{5em}\\text{Δ}H=181\\;\\text{kJ}$$(b) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if more O<sub>2</sub> is added?<br>(c) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if N<sub>2</sub> is removed?<br>(d) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if NO is added?<br>(e) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if the volume of the reaction vessel is decreased?<br>(f) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if the temperature of the system is increased?<br>(g) What will happen to the concentrations of N<sub>2</sub>, O<sub>2</sub>, and NO at equilibrium if a catalyst is added?",
+   "prompt": "氮气和氧气在高温下发生反应。<br>（a）写出下列可逆反应的平衡常数（<em>K</em><sub>c</sub>）表达式：$${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{5em}\\text{Δ}H=181\\;\\text{kJ}$$（b）如果加入更多的 O<sub>2</sub>，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（c）如果移出 N<sub>2</sub>，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（d）如果加入 NO，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（e）如果反应容器的体积减小，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（f）如果体系的温度升高，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？<br>（g）如果加入催化剂，平衡时 N<sub>2</sub>、O<sub>2</sub> 和 NO 的浓度将发生什么变化？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) ${K}_{c}=\\;\\frac{{[\\text{NO}]}^{2}}{[{\\text{N}}_{2}][{\\text{O}}_{2}]};$ (b) the equilibrium shifts right: [N<sub>2</sub>] decreases, [O<sub>2</sub>] increases (the shift uses up only part of the O<sub>2</sub> added), and [NO] increases; (c) the equilibrium shifts left to replace some of the N<sub>2</sub>: [N<sub>2</sub>] decreases, [O<sub>2</sub>] increases, and [NO] decreases; (d) the equilibrium shifts left: [N<sub>2</sub>] increases, [O<sub>2</sub>] increases, and [NO] increases; (e) there are 2 mol of gas on each side, so there is no shift, but the smaller volume raises [N<sub>2</sub>], [O<sub>2</sub>], and [NO] all by the same factor; (f) the reaction is endothermic (Δ<em>H</em> = 181 kJ), so heating increases <em>K<sub>c</sub></em> and shifts the equilibrium right: [N<sub>2</sub>] decreases, [O<sub>2</sub>] decreases, and [NO] increases; (g) a catalyst speeds the forward and reverse reactions equally and leaves <em>K<sub>c</sub></em> unchanged, so no concentration changes; equilibrium is only reached sooner."
+    "solution": "（a）${K}_{c}=\\;\\frac{{[\\text{NO}]}^{2}}{[{\\text{N}}_{2}][{\\text{O}}_{2}]};$（b）平衡向右移动：[N<sub>2</sub>] 减小，[O<sub>2</sub>] 增大（移动只消耗了所加 O<sub>2</sub> 的一部分），[NO] 增大；（c）平衡向左移动以补充一部分 N<sub>2</sub>：[N<sub>2</sub>] 减小，[O<sub>2</sub>] 增大，[NO] 减小；（d）平衡向左移动：[N<sub>2</sub>] 增大，[O<sub>2</sub>] 增大，[NO] 增大；（e）两侧气体都是 2 mol，所以没有移动，但体积变小使 [N<sub>2</sub>]、[O<sub>2</sub>] 和 [NO] 都按同一因子增大；（f）该反应是吸热的（Δ<em>H</em> = 181 kJ），所以加热使 <em>K<sub>c</sub></em> 增大，平衡向右移动：[N<sub>2</sub>] 减小，[O<sub>2</sub>] 减小，[NO] 增大；（g）催化剂同等地加快正反应和逆反应，<em>K<sub>c</sub></em> 不变，所以没有任何浓度发生变化；只是更早地达到平衡。"
    }
   },
   {
@@ -529,11 +557,11 @@
     "at": "end"
    },
    "cite": "concentration",
-   "prompt": "Water gas, a mixture of H<sub>2</sub> and CO, is an important industrial fuel produced by the reaction of steam with red hot coke, essentially pure carbon.<br>(a) Write the expression for the equilibrium constant for the reversible reaction$$\\text{C}(s)+{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}(g)\\hspace{5em}\\text{Δ}H=131.30\\;\\text{kJ}$$(b) What will happen to the concentration of each reactant and product at equilibrium if more C is added?<br>(c) What will happen to the concentration of each reactant and product at equilibrium if H<sub>2</sub>O is removed?<br>(d) What will happen to the concentration of each reactant and product at equilibrium if CO is added?<br>(e) What will happen to the concentration of each reactant and product at equilibrium if the temperature of the system is increased?",
+   "prompt": "水煤气是 H<sub>2</sub> 和 CO 的混合物，是一种重要的工业燃料，由水蒸气与红热的焦炭（基本上是纯碳）反应制得。<br>（a）写出下列可逆反应的平衡常数表达式：$$\\text{C}(s)+{\\text{H}}_{2}\\text{O}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}(g)\\hspace{5em}\\text{Δ}H=131.30\\;\\text{kJ}$$（b）如果加入更多的 C，平衡时每种反应物和产物的浓度将发生什么变化？<br>（c）如果移出 H<sub>2</sub>O，平衡时每种反应物和产物的浓度将发生什么变化？<br>（d）如果加入 CO，平衡时每种反应物和产物的浓度将发生什么变化？<br>（e）如果体系的温度升高，平衡时每种反应物和产物的浓度将发生什么变化？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${K}_{c}=\\;\\frac{[\\text{CO}][{\\text{H}}_{2}]}{[{\\text{H}}_{2}\\text{O}]};$ (b) [H<sub>2</sub>O] no change, [CO] no change, [H<sub>2</sub>] no change; (c) [H<sub>2</sub>O] decreases, [CO] decreases, [H<sub>2</sub>] decreases; (d) [H<sub>2</sub>O] increases, [CO] increases, [H<sub>2</sub>] decreases; (e) [H<sub>2</sub>O] decreases, [CO] increases, [H<sub>2</sub>] increases. In (b), (c), (d), and (e), the mass of carbon will change, but its concentration (activity) will not change."
+    "solution": "（a）${K}_{c}=\\;\\frac{[\\text{CO}][{\\text{H}}_{2}]}{[{\\text{H}}_{2}\\text{O}]};$（b）[H<sub>2</sub>O] 不变，[CO] 不变，[H<sub>2</sub>] 不变；（c）[H<sub>2</sub>O] 减小，[CO] 减小，[H<sub>2</sub>] 减小；（d）[H<sub>2</sub>O] 增大，[CO] 增大，[H<sub>2</sub>] 减小；（e）[H<sub>2</sub>O] 减小，[CO] 增大，[H<sub>2</sub>] 增大。在（b）、（c）、（d）和（e）中，碳的质量会发生变化，但它的浓度（活度）不会变。"
    }
   },
   {
@@ -546,11 +574,11 @@
     "at": "end"
    },
    "cite": "concentration",
-   "prompt": "Pure iron metal can be produced by the reduction of iron(III) oxide with hydrogen gas.<br>(a) Write the expression for the equilibrium constant (<em>K</em><sub>c</sub>) for the reversible reaction$${\\text{Fe}}_{2}{\\text{O}}_{3}(s)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2\\text{Fe}(s)+3{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}H=98.7\\;\\text{kJ}$$(b) What will happen to the concentration of each reactant and product at equilibrium if more Fe is added?<br>(c) What will happen to the concentration of each reactant and product at equilibrium if H<sub>2</sub>O is removed?<br>(d) What will happen to the concentration of each reactant and product at equilibrium if H<sub>2</sub> is added?<br>(e) What will happen to the concentration of each reactant and product at equilibrium if the volume of the reaction vessel is decreased?<br>(f) What will happen to the concentration of each reactant and product at equilibrium if the temperature of the system is increased?",
+   "prompt": "纯铁可以由氧化铁(III)被氢气还原制得。<br>（a）写出下列可逆反应的平衡常数（<em>K</em><sub>c</sub>）表达式：$${\\text{Fe}}_{2}{\\text{O}}_{3}(s)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2\\text{Fe}(s)+3{\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}H=98.7\\;\\text{kJ}$$（b）如果加入更多的 Fe，平衡时每种反应物和产物的浓度将发生什么变化？<br>（c）如果移出 H<sub>2</sub>O，平衡时每种反应物和产物的浓度将发生什么变化？<br>（d）如果加入 H<sub>2</sub>，平衡时每种反应物和产物的浓度将发生什么变化？<br>（e）如果反应容器的体积减小，平衡时每种反应物和产物的浓度将发生什么变化？<br>（f）如果体系的温度升高，平衡时每种反应物和产物的浓度将发生什么变化？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) ${K}_{c}=\\;\\frac{{[{\\text{H}}_{2}\\text{O}]}^{3}}{{[{\\text{H}}_{2}]}^{3}};$ the solids Fe<sub>2</sub>O<sub>3</sub> and Fe do not appear. (b) No change in any concentration. Adding Fe raises its mass, but the concentration (activity) of a pure solid is constant, so <em>Q<sub>c</sub></em> still equals <em>K<sub>c</sub></em>. (c) The equilibrium shifts right to replace some of the H<sub>2</sub>O: [H<sub>2</sub>] decreases and [H<sub>2</sub>O] decreases, ending lower than before because only part of the removed water is replaced. (d) The equilibrium shifts right: [H<sub>2</sub>] increases and [H<sub>2</sub>O] increases. (e) There are 3 mol of gas on each side, so there is no shift; the smaller volume raises [H<sub>2</sub>] and [H<sub>2</sub>O] by the same factor and leaves their ratio unchanged. (f) The reaction is endothermic (Δ<em>H</em> = 98.7 kJ), so heating increases <em>K<sub>c</sub></em> and shifts the equilibrium right: [H<sub>2</sub>] decreases and [H<sub>2</sub>O] increases. In every part the concentrations of Fe<sub>2</sub>O<sub>3</sub> and Fe stay the same; in (c), (d), and (f) the mass of Fe increases and the mass of Fe<sub>2</sub>O<sub>3</sub> decreases."
+    "solution": "（a）${K}_{c}=\\;\\frac{{[{\\text{H}}_{2}\\text{O}]}^{3}}{{[{\\text{H}}_{2}]}^{3}};$ 固体 Fe<sub>2</sub>O<sub>3</sub> 和 Fe 不出现在表达式中。（b）所有浓度都不变。加入 Fe 会增大它的质量，但纯固体的浓度（活度）是常数，所以 <em>Q<sub>c</sub></em> 仍等于 <em>K<sub>c</sub></em>。（c）平衡向右移动以补充一部分 H<sub>2</sub>O：[H<sub>2</sub>] 减小，[H<sub>2</sub>O] 减小，最终比之前更低，因为被移出的水只有一部分得到补充。（d）平衡向右移动：[H<sub>2</sub>] 增大，[H<sub>2</sub>O] 增大。（e）两侧气体都是 3 mol，所以没有移动；体积变小使 [H<sub>2</sub>] 和 [H<sub>2</sub>O] 按同一因子增大，它们的比值不变。（f）该反应是吸热的（Δ<em>H</em> = 98.7 kJ），所以加热使 <em>K<sub>c</sub></em> 增大，平衡向右移动：[H<sub>2</sub>] 减小，[H<sub>2</sub>O] 增大。在每一部分中，Fe<sub>2</sub>O<sub>3</sub> 和 Fe 的浓度都保持不变；在（c）、（d）和（f）中，Fe 的质量增加，Fe<sub>2</sub>O<sub>3</sub> 的质量减少。"
    }
   },
   {
@@ -563,18 +591,18 @@
     "at": "end"
    },
    "cite": "concentration",
-   "prompt": "Ammonia is a weak base that reacts with water according to this equation:$${\\text{NH}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{NH}}_{4}{}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)$$Will any of the following increase the percent of ammonia that is converted to the ammonium ion in water?",
+   "prompt": "氨是一种弱碱，按下列方程式与水反应：$${\\text{NH}}_{3}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{NH}}_{4}{}^{\\text{+}}(aq)+{\\text{OH}}^{\\text{−}}(aq)$$下列各项中，有没有能增大水中氨转化为铵根离子的百分数的？",
    "answer": {
     "type": "choice",
     "generated_by": "source",
     "options": [
-     "Addition of NaOH",
-     "Addition of HCl",
-     "Addition of NH<sub>4</sub>Cl"
+     "加入 NaOH",
+     "加入 HCl",
+     "加入 NH<sub>4</sub>Cl"
     ],
     "correct": 1,
-    "hint": "Ask which addition removes a product of the reaction rather than adding one.",
-    "solution": "Only (b)"
+    "hint": "想一想哪一种加入方式是在移出该反应的产物，而不是加入产物。",
+    "solution": "只有（b）"
    }
   },
   {
@@ -587,11 +615,11 @@
     "at": "end"
    },
    "cite": "concentration",
-   "prompt": "Acetic acid is a weak acid that reacts with water according to this equation:$${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}(l)$$<sup class=\"fn\" data-note=\"c-e15-aq\"></sup>Will any of the following increase the percent of acetic acid that reacts and produces ${\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}$ ion?<br>(a) Addition of HCl<br>(b) Addition of NaOH<br>(c) Addition of NaCH<sub>3</sub>CO<sub>2</sub>",
+   "prompt": "乙酸是一种弱酸，按下列方程式与水反应：$${\\text{CH}}_{3}{\\text{CO}}_{2}\\text{H}(aq)+{\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}(l)$$<sup class=\"fn\" data-note=\"c-e15-aq\"></sup>下列各项中有没有能使发生反应并生成 ${\\text{CH}}_{3}{\\text{CO}}_{2}{}^{\\text{−}}$ 离子的乙酸的百分数增大的？<br>（a）加入 HCl<br>（b）加入 NaOH<br>（c）加入 NaCH<sub>3</sub>CO<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Only (b). (a) HCl supplies H<sub>3</sub>O<sup>+</sup>, a product, so the equilibrium shifts left and a smaller percent of the acetic acid reacts. (b) The hydroxide ion from NaOH reacts with H<sub>3</sub>O<sup>+</sup> to form water, removing a product; the equilibrium shifts right and a larger percent of the acetic acid is converted to CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>. (c) NaCH<sub>3</sub>CO<sub>2</sub> supplies CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>, a product, so the equilibrium shifts left and a smaller percent reacts."
+    "solution": "只有（b）。（a）HCl 提供 H<sub>3</sub>O<sup>+</sup>，它是产物，所以平衡向左移动，发生反应的乙酸的百分数变小。（b）NaOH 中的氢氧根离子与 H<sub>3</sub>O<sup>+</sup> 反应生成水，移出了一种产物；平衡向右移动，转化为 CH<sub>3</sub>CO<sub>2</sub><sup>−</sup> 的乙酸的百分数变大。（c）NaCH<sub>3</sub>CO<sub>2</sub> 提供 CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>，它是产物，所以平衡向左移动，发生反应的百分数变小。"
    }
   },
   {
@@ -604,11 +632,11 @@
     "at": "end"
    },
    "cite": "concentration",
-   "prompt": "Suggest two ways in which the equilibrium concentration of Ag<sup>+</sup> can be reduced in a solution of Na<sup>+</sup>, Cl<sup>−</sup>, Ag<sup>+</sup>, and ${\\text{NO}}_{3}{}^{\\text{−}},$ in contact with solid AgCl.$${\\text{Na}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)+{\\text{Ag}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\rightleftharpoons \\text{AgCl}(s)+{\\text{Na}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)$$$$\\text{Δ}H=−65.9\\;\\text{kJ}$$",
+   "prompt": "提出两种方法，使与固体 AgCl 接触的、含有 Na<sup>+</sup>、Cl<sup>−</sup>、Ag<sup>+</sup> 和 ${\\text{NO}}_{3}{}^{\\text{−}},$ 的溶液中 Ag<sup>+</sup> 的平衡浓度降低。$${\\text{Na}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)+{\\text{Ag}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\rightleftharpoons \\text{AgCl}(s)+{\\text{Na}}^{\\text{+}}(aq)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)$$$$\\text{Δ}H=−65.9\\;\\text{kJ}$$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Add NaCl or some other salt that produces Cl<sup>−</sup> to the solution. Cooling the solution forces the equilibrium to the right, precipitating more AgCl(<em>s</em>)."
+    "solution": "向溶液中加入 NaCl 或其他能产生 Cl<sup>−</sup> 的盐。冷却溶液会迫使平衡向右移动，沉淀出更多的 AgCl(<em>s</em>)。"
    }
   },
   {
@@ -621,11 +649,11 @@
     "at": "end"
    },
    "cite": "temperature",
-   "prompt": "How can the pressure of water vapor be increased in the following equilibrium?$${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}H=41\\;\\text{kJ}$$",
+   "prompt": "如何才能使下列平衡中水蒸气的压强增大？$${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)\\hspace{5em}\\text{Δ}H=41\\;\\text{kJ}$$",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Raise the temperature. The liquid does not appear in the equilibrium constant expression, so <em>K<sub>P</sub></em> = ${P}_{{\\text{H}}_{2}\\text{O}}$, the pressure of the water vapor itself. As long as some liquid remains, adding liquid water or changing the volume cannot change that pressure once equilibrium is re-established: more liquid evaporates or more vapor condenses until the pressure returns to <em>K<sub>P</sub></em>. Only a change in the value of <em>K<sub>P</sub></em> changes the equilibrium pressure, and only temperature changes <em>K</em>. The change is endothermic (Δ<em>H</em> = 41 kJ), so heat acts as a reactant; heating shifts the equilibrium toward the vapor and increases <em>K<sub>P</sub></em>. The vapor pressure of water rises from 0.042 atm at 30 °C to 1 atm at 100 °C."
+    "solution": "升高温度。液体不出现在平衡常数表达式中，所以 <em>K<sub>P</sub></em> = ${P}_{{\\text{H}}_{2}\\text{O}}$，即水蒸气本身的压强。只要还剩有一些液体，加入液态水或改变体积就都不能改变重新建立平衡后的这一压强：更多的液体蒸发，或更多的蒸气凝结，直到压强回到 <em>K<sub>P</sub></em>。只有 <em>K<sub>P</sub></em> 的值发生变化，平衡压强才会改变，而只有温度才会改变 <em>K</em>。这一变化是吸热的（Δ<em>H</em> = 41 kJ），所以热量相当于反应物；加热使平衡向蒸气一侧移动，并使 <em>K<sub>P</sub></em> 增大。水的蒸气压从 30 °C 时的 0.042 atm 上升到 100 °C 时的 1 atm。"
    }
   },
   {
@@ -638,11 +666,11 @@
     "at": "end"
    },
    "cite": "temperature",
-   "prompt": "When equal molar amounts of HCl and HOCl are dissolved separately in equal amounts of water, the solution of HCl freezes at a lower temperature. Which compound has the larger equilibrium constant for acid ionization?<br>(a) HCl<br>(b) H<sup>+</sup> + Cl<sup>–</sup><br>(c) HOCl<br>(d) H<sup>+</sup> + OCl<sup>–</sup>",
+   "prompt": "把等物质的量的 HCl 和 HOCl 分别溶于等量的水中，HCl 溶液的凝固温度更低。哪种化合物的酸电离平衡常数更大？<br>（a）HCl<br>（b）H<sup>+</sup> + Cl<sup>–</sup><br>（c）HOCl<br>（d）H<sup>+</sup> + OCl<sup>–</sup>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) HCl. The lowering of the freezing point depends on the number of dissolved particles, so the HCl solution, which freezes at a lower temperature, holds more particles than the HOCl solution made from the same molar amount of acid. HCl must therefore be ionized, HCl ⇌ H<sup>+</sup> + Cl<sup>−</sup>, to a greater extent than HOCl ⇌ H<sup>+</sup> + OCl<sup>−</sup>. A greater extent of reaction at equilibrium means larger product concentrations and a smaller reactant concentration in ${K}_{c}=\\;\\frac{[{\\text{H}}^{\\text{+}}][{\\text{Cl}}^{\\text{−}}]}{[\\text{HCl}]},$ so HCl has the larger acid ionization constant. Options (b) and (d) are the ions formed by ionization, not the compounds being compared."
+    "solution": "（a）HCl。凝固点的降低取决于溶解的粒子数，所以凝固温度更低的 HCl 溶液所含的粒子比由同样物质的量的酸配成的 HOCl 溶液更多。因此 HCl 必定比 HOCl 电离得更充分：HCl ⇌ H<sup>+</sup> + Cl<sup>−</sup> 对比 HOCl ⇌ H<sup>+</sup> + OCl<sup>−</sup>。平衡时反应进行得更充分，意味着在 ${K}_{c}=\\;\\frac{[{\\text{H}}^{\\text{+}}][{\\text{Cl}}^{\\text{−}}]}{[\\text{HCl}]},$ 中产物浓度更大而反应物浓度更小，所以 HCl 的酸电离常数更大。选项（b）和（d）是电离生成的离子，不是被比较的化合物。"
    }
   }
  ],
@@ -848,19 +876,19 @@
   {
    "id": "c-e15-aq",
    "kind": "correction",
-   "html": "The book writes the acetate ion as a liquid, CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>l</em>); it is dissolved, CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>aq</em>)."
+   "html": "书中把乙酸根离子写成液态，CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>l</em>)；它其实是溶解的，应为 CH<sub>3</sub>CO<sub>2</sub><sup>−</sup>(<em>aq</em>)。"
   }
  ],
  "derivations": [
   {
    "id": "kc-rate-constants",
-   "what": "the equilibrium constant as a ratio of rate constants",
-   "source": "Chemistry 2e, 13.3 Shifting Equilibria: Le Châtelier’s Principle",
+   "what": "作为速率常数之比的平衡常数",
+   "source": "化学（第2版），13.3 平衡的移动：勒夏特列原理",
    "nodes": [
     {
      "assumes": [
       {
-       "text": "At equilibrium the forward and reverse reactions proceed at equal rates.",
+       "text": "处于平衡时，正反应和逆反应以相等的速率进行。",
        "src": "13.1"
       },
       {

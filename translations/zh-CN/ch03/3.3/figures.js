@@ -46,17 +46,17 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
   const d = sim('sim-molarity', 540);
   /* the solutes of Examples 3.14 to 3.18 and their Check Your Learning, each with the example's mass and volume */
   const SOLUTES = [
-    { name: 'sucrose', f: 'C₁₂H₂₂O₁₁', mm: 342.30, pair: ['C', 'O'], m: 45.5, V: 0.355 },
-    { name: 'acetic acid', f: 'CH₃CO₂H', mm: 60.052, pair: ['C', 'O'], m: 25.2, V: 0.500 },
-    { name: 'sodium chloride', f: 'NaCl', mm: 58.44, pair: ['Na', 'Cl'], m: 77.4, V: 0.250 },
-    { name: 'cobalt chloride', f: 'CoCl₂', mm: 128.9, pair: ['Co', 'Cl'], m: 6.52, V: 0.075 },
-    { name: 'calcium chloride', f: 'CaCl₂', mm: 110.98, pair: ['Ca', 'Cl'], m: 5.55, V: 0.250 },
-    { name: 'potassium bromide', f: 'KBr', mm: 119.00, pair: ['K', 'Br'], m: 66.0, V: 0.370 },
+    { name: '蔗糖', f: 'C₁₂H₂₂O₁₁', mm: 342.30, pair: ['C', 'O'], m: 45.5, V: 0.355 },
+    { name: '乙酸', f: 'CH₃CO₂H', mm: 60.052, pair: ['C', 'O'], m: 25.2, V: 0.500 },
+    { name: '氯化钠', f: 'NaCl', mm: 58.44, pair: ['Na', 'Cl'], m: 77.4, V: 0.250 },
+    { name: '氯化钴', f: 'CoCl₂', mm: 128.9, pair: ['Co', 'Cl'], m: 6.52, V: 0.075 },
+    { name: '氯化钙', f: 'CaCl₂', mm: 110.98, pair: ['Ca', 'Cl'], m: 5.55, V: 0.250 },
+    { name: '溴化钾', f: 'KBr', mm: 119.00, pair: ['K', 'Br'], m: 66.0, V: 0.370 },
   ];
-  const S = F.select(d.controls, { label: '\\text{solute}', aria: 'the solute', value: '1', options: SOLUTES.map((s, i) => ({ value: String(i), label: s.name })),
+  const S = F.select(d.controls, { label: '\\text{溶质}', aria: '溶质', value: '1', options: SOLUTES.map((s, i) => ({ value: String(i), label: s.name })),
     onInput: () => { const s = SOLUTES[+S.value]; m.set(s.m); V.set(s.V); } });
-  const m = ctl(d.controls, { label: '\\km', cls: 'mass', min: 0.5, max: 100, step: 0.01, value: 25.2, unit: 'g', dec: 2, aria: 'mass of solute' });
-  const V = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 0.05, max: 1, step: 0.005, value: 0.5, unit: 'L', dec: 3, aria: 'volume of solution',
+  const m = ctl(d.controls, { label: '\\km', cls: 'mass', min: 0.5, max: 100, step: 0.01, value: 25.2, unit: 'g', dec: 2, aria: '溶质的质量' });
+  const V = ctl(d.controls, { label: '\\kV', cls: 'volume', min: 0.05, max: 1, step: 0.005, value: 0.5, unit: 'L', dec: 3, aria: '溶液的体积',
     specials: [{ at: 1, label: '1 L' }] });
   const PER = 0.04;
   /* the beaker holds 1.000 L at its top mark, 300 units above its floor */
@@ -65,7 +65,7 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
   function draw() {
     const { ctx } = begin(d.c); hits = [];
     const s = SOLUTES[+S.value], mass = m.v, vol = V.v, n = mass / s.mm, M = n / vol;
-    topline(ctx, `${sig3(mass)} g of ${s.name} is ${sig3(n)} mol, and dissolved to make ${sig3(vol)} L of solution it is ${sig3(M)} M.`);
+    topline(ctx, `${sig3(mass)} g ${s.name}的物质的量为 ${sig3(n)} mol，溶解后配成 ${sig3(vol)} L 溶液，其物质的量浓度为 ${sig3(M)} M。`);
     /* the balance and the solute weighed on it */
     const bx = 250, by = 380;
     ctx.save(); ctx.fillStyle = PAL.soft; ctx.strokeStyle = F.ref('balance'); ctx.lineWidth = 3;
@@ -75,14 +75,14 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
     ctx.beginPath(); ctx.moveTo(bx - wid, by); ctx.quadraticCurveTo(bx, by - hgt * 2, bx + wid, by); ctx.closePath();
     ctx.fillStyle = alpha(PAL.ink, 0.12); ctx.fill(); ctx.strokeStyle = PAL.ink; ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
     text(ctx, `${mass.toFixed(2)} g`, bx, by + 46, C('mass'), { size: 26, weight: 600, align: 'center' });
-    text(ctx, `${s.name}, ${s.f}`, bx, by - hgt - 26, PAL.ink, { size: 20, align: 'center' });
-    hits.push({ x: bx, y: by - hgt / 2, r: wid * 0.6, name: `${sig3(mass)} g of ${s.name}, ${s.f}, on the balance` });
-    hits.push({ x: bx, y: by + 45, r: 60, name: 'a balance reading the mass of solute' });
+    text(ctx, `${s.name}，${s.f}`, bx, by - hgt - 26, PAL.ink, { size: 20, align: 'center' });
+    hits.push({ x: bx, y: by - hgt / 2, r: wid * 0.6, name: `天平上的 ${sig3(mass)} g ${s.name}，${s.f}` });
+    hits.push({ x: bx, y: by + 45, r: 60, name: '读出溶质质量的天平' });
     /* the step from grams to moles */
     arrow(ctx, 430, 300, 790, 300, PAL.ink, 4);
     text(ctx, `÷ ${s.mm} g/mol`, 610, 272, C('mass'), { size: 22, weight: 600, align: 'center' });
     text(ctx, `${sig3(n)} mol`, 610, 330, C('amount'), { size: 24, weight: 600, align: 'center' });
-    text(ctx, 'dissolved in water', 610, 362, PAL.muted, { size: 17, align: 'center' });
+    text(ctx, '溶于水', 610, 362, PAL.muted, { size: 17, align: 'center' });
     /* the beaker, its marks every 0.1 L and the solution in it */
     const top = BOT - PERL * vol;
     liquid(ctx, BX1, BX2, top, BOT, F.fact(WATER), 0.35);
@@ -92,13 +92,13 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
     }
     text(ctx, 'L', BX1 - 14, BOT - PERL - 30, PAL.muted, { size: 17, align: 'right' });
     const count = Math.round(n / PER);
-    scatter(count, BX1, BX2, top, BOT, 14).forEach(([x, y]) => { glyph(ctx, x, y, s.pair); hits.push({ x, y, r: 12, name: `${s.name}, ${s.f}, one particle for each 0.04 mol` }); });
+    scatter(count, BX1, BX2, top, BOT, 14).forEach(([x, y]) => { glyph(ctx, x, y, s.pair); hits.push({ x, y, r: 12, name: `${s.name}，${s.f}，每个粒子代表 0.04 mol` }); });
     vessel(ctx, BX1, BX2, BOT - PERL - 20, BOT, F.ref('beaker'));
     text(ctx, `${sig3(vol)} L`, BX2 + 20, top, C('volume'), { size: 22, weight: 600, bg: PAL.panel });
-    hits.push({ x: (BX1 + BX2) / 2, y: BOT - 20, r: 30, name: `${sig3(vol)} L of solution` });
+    hits.push({ x: (BX1 + BX2) / 2, y: BOT - 20, r: 30, name: `${sig3(vol)} L 溶液` });
     /* the legend: what one particle stands for */
     glyph(ctx, 90, 505, s.pair);
-    text(ctx, `one particle in the beaker stands for 0.04 mol of ${s.name}`, 110, 505, PAL.muted, { size: 17 });
+    text(ctx, `烧杯中每个粒子代表 0.04 mol ${s.name}`, 110, 505, PAL.muted, { size: 17 });
     const vT = hue('volume', `${sig3(vol)}\\ \\text{L}`);
     tex(d.readout, `\\kM=\\frac{\\km/\\kMM}{\\kV}=\\frac{${hue('mass', `${mass.toFixed(2)}\\ \\text{g}`)}\\,/\\,${hue('mass', `${s.mm}\\ \\text{g/mol}`)}}{${vT}}=\\frac{${hue('amount', `${sig3(n)}\\ \\text{mol}`)}}{${vT}}=${hue('concentration', `${sig3(M)}\\ \\text{M}`)}`);
   }
@@ -115,10 +115,10 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
 ===================================================================== */
 (function () {
   const d = sim('sim-dilution', 560);
-  const C1 = ctl(d.controls, { label: '\\kCone', cls: 'concentration', min: 0.1, max: 6, step: 0.01, value: 5, unit: 'M', dec: 2, aria: 'concentration of the stock solution' });
-  const V1 = ctl(d.controls, { label: '\\kVone', cls: 'volume', min: 0.1, max: 2, step: 0.005, value: 0.85, unit: 'L', dec: 3, aria: 'volume of the stock solution' });
-  const V2 = ctl(d.controls, { label: '\\kVtwo', cls: 'volume', min: 0.25, max: 4, step: 0.01, value: 1.8, unit: 'L', dec: 2, aria: 'volume after dilution',
-    specials: [{ at: () => V1.v, label: 'no change' }] });
+  const C1 = ctl(d.controls, { label: '\\kCone', cls: 'concentration', min: 0.1, max: 6, step: 0.01, value: 5, unit: 'M', dec: 2, aria: '储备液的浓度' });
+  const V1 = ctl(d.controls, { label: '\\kVone', cls: 'volume', min: 0.1, max: 2, step: 0.005, value: 0.85, unit: 'L', dec: 3, aria: '储备液的体积' });
+  const V2 = ctl(d.controls, { label: '\\kVtwo', cls: 'volume', min: 0.25, max: 4, step: 0.01, value: 1.8, unit: 'L', dec: 2, aria: '稀释后的体积',
+    specials: [{ at: () => V1.v, label: '不变' }] });
   const PER = 0.25;
   /* both cylinders hold 4.00 L at their top mark, 340 units above the floor */
   const BOT = 480, PERL = 85, W = 140, XS = [380, 980];
@@ -131,25 +131,25 @@ function scatter(n, x1, x2, top, bot, pad = 10) {
       if (k % 2 === 0) text(ctx, `${k / 2}`, x1 - 14, y, PAL.muted, { size: 17, align: 'right' });
     }
     text(ctx, 'L', x1 - 14, BOT - PERL * 4 - 30, PAL.muted, { size: 17, align: 'right' });
-    scatter(Math.round(n / PER), x1, x2, top, BOT, 12).forEach(([x, y]) => { disc(ctx, x, y, 7, 'Cu'); hits.push({ x, y, r: 10, name: 'copper nitrate, Cu(NO₃)₂, one particle for each 0.25 mol' }); });
+    scatter(Math.round(n / PER), x1, x2, top, BOT, 12).forEach(([x, y]) => { disc(ctx, x, y, 7, 'Cu'); hits.push({ x, y, r: 10, name: '硝酸铜，Cu(NO₃)₂，每个粒子代表 0.25 mol' }); });
     vessel(ctx, x1, x2, BOT - PERL * 4 - 16, BOT, rc);
     ctx.save(); ctx.strokeStyle = rc; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x1 - 30, BOT + 12); ctx.lineTo(x2 + 30, BOT + 12); ctx.stroke(); ctx.restore();
     text(ctx, `V${sub} = ${sig3(vol)} L`, x2 + 18, top, C('volume'), { size: 22, weight: 600, bg: PAL.panel });
     text(ctx, `C${sub} = ${sig3(conc)} M`, cx, BOT + 38, C('concentration'), { size: 22, weight: 600, align: 'center' });
     text(ctx, `n${sub} = ${sig3(n)} mol`, cx, BOT + 66, C('amount'), { size: 20, weight: 600, align: 'center' });
     text(ctx, name, cx + 20, BOT - PERL * 4 - 50, rc, { size: 20, align: 'center' });
-    hits.push({ x: cx, y: BOT - 16, r: 30, name: `${sig3(vol)} L of ${sig3(conc)} M copper nitrate` });
+    hits.push({ x: cx, y: BOT - 16, r: 30, name: `${sig3(vol)} L ${sig3(conc)} M 硝酸铜` });
   }
   function draw() {
     const { ctx } = begin(d.c); hits = [];
     const c1 = C1.v, v1 = V1.v, v2 = V2.v, n = c1 * v1, c2 = n / v2;
     const same = Math.abs(v2 - v1) < 1e-9, evap = v2 < v1 && !same;
-    topline(ctx, same ? `The volume is unchanged, so the ${sig3(n)} mol of copper nitrate is still ${sig3(c1)} M.`
-      : `${sig3(v1)} L of ${sig3(c1)} M copper nitrate ${evap ? 'evaporated' : 'diluted'} to ${sig3(v2)} L is ${sig3(c2)} M; the ${sig3(n)} mol of solute is unchanged.`);
-    cylinder(ctx, XS[0], v1, c1, n, '₁', 'the stock solution', 'stock');
-    cylinder(ctx, XS[1], v2, c2, n, '₂', evap ? 'after evaporation' : 'after dilution', 'diluted');
+    topline(ctx, same ? `体积不变，所以 ${sig3(n)} mol 硝酸铜的浓度仍为 ${sig3(c1)} M。`
+      : `${sig3(v1)} L ${sig3(c1)} M 的硝酸铜溶液${evap ? '蒸发' : '稀释'}至 ${sig3(v2)} L 后为 ${sig3(c2)} M；${sig3(n)} mol 溶质不变。`);
+    cylinder(ctx, XS[0], v1, c1, n, '₁', '储备液', 'stock');
+    cylinder(ctx, XS[1], v2, c2, n, '₂', evap ? '蒸发后' : '稀释后', 'diluted');
     arrow(ctx, 580, 250, 780, 250, PAL.ink, 4);
-    text(ctx, same ? 'no change' : evap ? 'water evaporated' : 'water added', 680, 222, PAL.ink, { size: 20, align: 'center' });
+    text(ctx, same ? '不变' : evap ? '水蒸发' : '加入水', 680, 222, PAL.ink, { size: 20, align: 'center' });
     const cT = (c) => hue('concentration', `${sig3(c)}\\ \\text{M}`), vT = (v) => hue('volume', `${sig3(v)}\\ \\text{L}`);
     tex(d.readout, `\\kCone\\kVone=(${cT(c1)})(${vT(v1)})=${hue('amount', `${sig3(n)}\\ \\text{mol}`)}=(${cT(c2)})(${vT(v2)})=\\kCtwo\\kVtwo`);
   }

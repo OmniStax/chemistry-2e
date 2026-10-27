@@ -2,31 +2,39 @@
   "id": "21.5",
   "module": "m68857",
   "chapter": "21",
-  "title": "Uses of Radioisotopes",
-  "short": "Uses of Radioisotopes",
-  "lead": "Radioisotopes behave chemically like the stable isotopes of their elements, but their radiation gives them away. This section surveys how they are put to work as <span data-concept=\"radioactive-tracer\">radioactive tracers</span>, in finding and treating disease through <span data-concept=\"radiation-therapy\">radiation therapy</span>, and in agriculture, industry and the home.",
+  "title": "放射性同位素的用途",
+  "short": "放射性同位素的用途",
+  "lead": "放射性同位素在化学上的表现与其元素的稳定同位素相同，但它们的辐射会暴露其行踪。本节概述它们如何被用作<span data-concept=\"radioactive-tracer\">放射性示踪物</span>，如何通过<span data-concept=\"radiation-therapy\">放射治疗</span>发现和治疗疾病，以及在农业、工业和家庭中的应用。",
   "objectives": [
-    "List common applications of radioactive isotopes"
+    "列举放射性同位素的常见应用"
   ],
-  "summary_html": "<p>Compounds known as <span data-concept=\"radioactive-tracer\">radioactive tracers</span> can be used to follow reactions, track the distribution of a substance, diagnose and treat medical conditions, and much more. Other radioactive substances are helpful for controlling pests, visualizing structures, providing fire warnings, and for many other applications. Hundreds of millions of nuclear medicine tests and procedures, using a wide variety of radioisotopes with relatively short <span data-concept=\"radioactive-half-life\">half-lives</span>, are performed every year in the US. Most of these radioisotopes have relatively short <span data-concept=\"radioactive-half-life\">half-lives</span>; some are short enough that the radioisotope must be made on-site at medical facilities. <span data-concept=\"radiation-therapy\">Radiation therapy</span> uses high-energy radiation to kill cancer cells by damaging their DNA. The radiation used for this treatment may be delivered externally or internally.</p>",
-  "notes": "Nothing in the section’s text is left out. The book prints no header in this section; Radioactive Tracers, Radiation Therapy and Other Uses of Radioisotopes are OmniStax’s own. The text is kept as printed, with “Radioimmunossays”, “Grave’s disease” and Tc-99m’s half-life of 6.01 hours, which Table 21.2 gives as 8.01 hours.",
+  "summary_html": "<p>被称为<span data-concept=\"radioactive-tracer\">放射性示踪物</span>的化合物可用于追踪反应、跟踪物质的分布、诊断和治疗疾病，等等。其他放射性物质有助于控制害虫、使结构可视化、提供火灾预警，并用于许多其他方面。美国每年进行数亿次核医学检查和诊疗操作，使用各种<span data-concept=\"radioactive-half-life\">半衰期</span>相对较短的放射性同位素。这些放射性同位素大多<span data-concept=\"radioactive-half-life\">半衰期</span>相对较短；有些短到必须在医疗机构现场制备。<span data-concept=\"radiation-therapy\">放射治疗</span>用高能辐射损伤癌细胞的 DNA 来杀死癌细胞。用于这种治疗的辐射可以由体外给予，也可以由体内给予。</p>",
+  "notes": "本节正文没有任何删减。书中本节没有印出小标题；“放射性示踪物”“放射治疗”和“放射性同位素的其他用途”是 OmniStax 自己加的。正文保持书中印出的内容，书中把 Radioimmunoassays 和 Graves’ disease 拼错为“Radioimmunossays”和“Grave’s disease”，拼写错误不带入中文，另有 Tc-99m 的半衰期 6.01 小时，表 21.2 给出的是 8.01 小时。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key. The unkeyed numerical exercise fs-idp183594912 (when a patient injected with technetium-99m may leave the hospital) is left out, and no answer is computed for it. The exercise fs-idp88874912 names iodine-131 and then I-133, and its key writes the decay of ¹³³I; both are kept as printed.",
+  "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自书中的答案表。没有答案的数值习题 fs-idp183594912（注射锝-99m 的患者何时可以出院）未收入，也未给出计算的答案。习题 fs-idp88874912 先写碘-131，随后写 I-133，答案表写的是 ¹³³I 的衰变；二者均按书中印出的样子保留。",
   "figures": [
     {
       "id": "fig-thallium",
@@ -38,6 +46,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -51,6 +64,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -61,7 +79,7 @@
       "originals": [
         "/media/ch21/CNX_Chem_21_05_RadTherapy.jpg"
       ],
-      "original_caption": "The cartoon in (a) shows a cobalt-60 machine used in the treatment of cancer. The diagram in (b) shows how the gantry of the Co-60 machine swings through an arc, focusing radiation on the targeted region (tumor) and minimizing the amount of radiation that passes through nearby regions.",
+      "original_caption": "（a）中的示意图表示用于治疗癌症的钴-60 机器。（b）中的示意图表示 Co-60 机器的机架如何沿弧形转动，把辐射聚焦在目标区域（肿瘤）上，并尽量减少穿过邻近区域的辐射量。",
       "draws": [
         "time",
         "angle",
@@ -75,6 +93,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -85,7 +108,7 @@
       "originals": [
         "/media/ch21/CNX_Chem_21_05_Co60Decay.jpg"
       ],
-      "original_caption": "Co-60 undergoes a series of radioactive decays. The γ emissions are used for radiation therapy.",
+      "original_caption": "Co-60 经历一系列放射性衰变。其 γ 发射用于放射治疗。",
       "draws": [
         "energy",
         "time"
@@ -99,6 +122,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -112,6 +140,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -122,7 +155,7 @@
       "originals": [
         "/media/ch21/CNX_Chem_21_05_SmokeAlarm.jpg"
       ],
-      "original_caption": "Inside a smoke detector, Am-241 emits α particles that ionize the air, creating a small electric current. During a fire, smoke particles impede the flow of ions, reducing the current and triggering an alarm. (credit a: modification of work by “Muffet”/Wikimedia Commons)",
+      "original_caption": "在烟雾探测器内部，Am-241 发射的 α 粒子使空气电离，产生微弱的电流。发生火灾时，烟雾颗粒阻碍离子的流动，使电流减小并触发警报。（来源 a：改编自 “Muffet”/Wikimedia Commons 的作品）",
       "draws": [
         "current",
         "charge",
@@ -140,6 +173,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -287,11 +325,11 @@
         "at": "end"
       },
       "cite": "tracers",
-      "prompt": "How can a radioactive nuclide be used to show that the equilibrium:<br>$\\text{AgCl}(s)\\;\\rightleftharpoons \\;{\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$<br>is a dynamic equilibrium?",
+      "prompt": "如何用放射性核素说明平衡：<br>$\\text{AgCl}(s)\\;\\rightleftharpoons \\;{\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$<br>是动态平衡？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "Introduction of either radioactive Ag<sup>+</sup> or radioactive Cl<sup>–</sup> into the solution containing the stated reaction, with subsequent time given for equilibration, will produce a radioactive precipitate that was originally devoid of radiation."
+        "solution": "向含有上述反应的溶液中加入放射性 Ag<sup>+</sup> 或放射性 Cl<sup>–</sup>，并留出时间使其达到平衡，就会得到一种放射性沉淀，而这种沉淀原本是不含放射性的。"
       }
     },
     {
@@ -304,11 +342,11 @@
         "at": "end"
       },
       "cite": "tracers",
-      "prompt": "Iodine that enters the body is stored in the thyroid gland from which it is released to control growth and metabolism. The thyroid can be imaged if iodine-131 is injected into the body. In larger doses, I-133 is also used as a means of treating cancer of the thyroid. I-131 has a half-life of 8.70 days<sup class=\"fn\" data-note=\"c-e2-i131\"></sup> and decays by β<sup>−</sup> emission.<br>(a) Write an equation for the decay.<br>(b) How long will it take for 95.0% of a dose of I-131 to decay?",
+      "prompt": "进入体内的碘储存在甲状腺中，再由甲状腺释放出来，以控制生长和代谢。如果向体内注射碘-131，就可以对甲状腺成像。在较大剂量下，I-133 也用作治疗甲状腺癌的手段。I-131 的半衰期为 8.70 天<sup class=\"fn\" data-note=\"c-e2-i131\"></sup>，通过 β<sup>−</sup> 发射而衰变。<br>（a）写出该衰变的方程。<br>（b）一剂 I-131 的 95.0% 衰变需要多长时间？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) ${}_{\\;53}^{133}\\text{I}\\;\\longrightarrow \\;{}_{\\;54}^{133}\\text{Xe}+{}_{−1}^{\\;0}\\text{e};$<sup class=\"fn\" data-note=\"c-e2-eq\"></sup> (b) 37.6 days"
+        "solution": "（a）${}_{\\;53}^{133}\\text{I}\\;\\longrightarrow \\;{}_{\\;54}^{133}\\text{Xe}+{}_{−1}^{\\;0}\\text{e};$<sup class=\"fn\" data-note=\"c-e2-eq\"></sup> （b）37.6 天"
       }
     }
   ],
@@ -343,12 +381,12 @@
     {
       "id": "c-e2-i131",
       "kind": "correction",
-      "html": "Table 21.2 gives I-131 a half-life of 8.02 days, against the 8.70 days here; with 8.02 days, 95.0% of the dose decays in 34.7 days. It is I-131, not I-133, that treats thyroid cancer."
+      "html": "表 21.2 给出 I-131 的半衰期为 8.02 天，而此处为 8.70 天；按 8.02 天计算，一剂的 95.0% 衰变需要 34.7 天。治疗甲状腺癌的是 I-131，而不是 I-133。"
     },
     {
       "id": "c-e2-eq",
       "kind": "correction",
-      "html": "The key writes the decay of I-133; for I-131 it is ${}_{\\;53}^{131}\\text{I}\\;\\longrightarrow\\;{}_{\\;54}^{131}\\text{Xe}+{}_{-1}^{\\;0}\\text{e}$."
+      "html": "答案写的是 I-133 的衰变；I-131 的衰变应为 ${}_{\\;53}^{131}\\text{I}\\;\\longrightarrow\\;{}_{\\;54}^{131}\\text{Xe}+{}_{-1}^{\\;0}\\text{e}$。"
     }
   ]
 }

@@ -2,18 +2,18 @@
  "id": "8.4",
  "module": "m68747",
  "chapter": "8",
- "title": "Molecular Orbital Theory",
- "short": "Molecular Orbital Theory",
- "lead": "The Lewis structure of O<sub>2</sub> pairs every electron, yet liquid oxygen is held between the poles of a magnet. Molecular orbital theory combines the atomic orbitals of the atoms into molecular orbitals spread over the whole molecule, and fills them with electrons to find bond orders, magnetic behavior and the order in <span data-concept=\"energy-and-work\">energy</span> of the orbitals across the second period.",
+ "title": "分子轨道理论",
+ "short": "分子轨道理论",
+ "lead": "O<sub>2</sub> 的路易斯结构式使每个电子都成对，然而液氧却被吸引并停留在磁铁的两极之间。分子轨道理论把各原子的原子轨道组合成遍布整个分子的分子轨道，再用电子填充这些轨道，从而求出键级、磁性行为，以及整个第二周期各轨道的<span data-concept=\"energy-and-work\">能量</span>顺序。",
  "objectives": [
-  "Outline the basic quantum-mechanical approach to deriving molecular orbitals from atomic orbitals",
-  "Describe traits of bonding and antibonding molecular orbitals",
-  "Calculate bond orders based on molecular electron configurations",
-  "Write molecular electron configurations for first- and second-row diatomic molecules",
-  "Relate these electron configurations to the molecules’ stabilities and magnetic properties"
+  "概述由原子轨道推导分子轨道的基本量子力学方法",
+  "描述成键分子轨道和反键分子轨道的特征",
+  "根据分子电子构型计算键级",
+  "写出第一周期和第二周期双原子分子的分子电子构型",
+  "把这些电子构型与分子的稳定性和磁性联系起来"
  ],
- "summary_html": "<p>Molecular orbital (MO) theory describes the behavior of electrons in a molecule in terms of combinations of the atomic wave functions. The resulting molecular orbitals may extend over all the atoms in the molecule. Bonding molecular orbitals are formed by in-phase combinations of atomic wave functions, and electrons in these orbitals stabilize a molecule. Antibonding molecular orbitals result from out-of-phase combinations of atomic wave functions and electrons in these orbitals make a molecule less stable. Molecular orbitals located along an internuclear axis are called σ MOs. They can be formed from <em>s</em> orbitals or from <em>p</em> orbitals oriented in an end-to-end fashion. Molecular orbitals formed from <em>p</em> orbitals oriented in a side-by-side fashion have electron density on opposite sides of the internuclear axis and are called π orbitals.</p><p>We can describe the electronic structure of diatomic molecules by applying molecular orbital theory to the valence electrons of the atoms. Electrons fill molecular orbitals following the same rules that apply to filling atomic orbitals; Hund’s rule and the Aufbau principle tell us that lower-energy orbitals will fill first, electrons will spread out before they pair up, and each orbital can hold a maximum of two electrons with opposite spins. Materials with unpaired electrons are paramagnetic and attracted to a magnetic field, while those with all-paired electrons are diamagnetic and repelled by a magnetic field. Correctly predicting the magnetic properties of molecules is in advantage of molecular orbital theory over Lewis structures and valence bond theory.</p>",
- "notes": "The three Link to Learning notes (a video of paramagnetic and diamagnetic behavior, the Orbitron animations of molecular orbitals, and drawings of the molecular orbitals of benzene) are left out.",
+ "summary_html": "<p>分子轨道（MO）理论用原子波函数的组合来描述分子中电子的行为。所得到的分子轨道可以延伸到分子中的所有原子上。成键分子轨道由原子波函数的同相组合形成，这些轨道中的电子使分子稳定。反键分子轨道由原子波函数的反相组合产生，这些轨道中的电子使分子的稳定性降低。沿核间轴分布的分子轨道称为 σ MO。它们可以由 <em>s</em> 轨道或头碰头取向的 <em>p</em> 轨道形成。由肩并肩取向的 <em>p</em> 轨道形成的分子轨道，其电子密度位于核间轴的两侧，称为 π 轨道。</p><p>把分子轨道理论应用于原子的价电子，我们就可以描述双原子分子的电子结构。电子填充分子轨道所遵循的规则与填充原子轨道的规则相同；洪特规则和构造原理告诉我们，能量较低的轨道先被填充，电子先分散占据再配对，每个轨道最多可容纳两个自旋相反的电子。含有未成对电子的物质是顺磁性的，会被磁场吸引，而电子全部成对的物质是抗磁性的，会被磁场排斥。能够正确预测分子的磁性，是分子轨道理论相对于路易斯结构式和价键理论的一个优势。</p>",
+ "notes": "三个“学习链接”注释（一段关于顺磁性和抗磁性行为的视频、分子轨道的 Orbitron 动画，以及苯分子轨道的图示）均被略去。",
  "ai": {
   "text": [
    {
@@ -23,18 +23,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the unkeyed numerical exercises fs-idm138595920 (the number of molecular orbitals from ten atomic orbitals), fs-idm131971232 (the bond order of a given configuration) and fs-idm79754896 (the bond orders of four pairs) are left out. The unkeyed conceptual exercises fs-idp105434592, fs-idm41078784, fs-idm179535904, fs-idm63366704, fs-idp45731680 and fs-idm76713856, and the true-or-false item fs-idm16460880, kept open with its two options, carry a suggested approach marked as OmniStax’s own. The Check Your Learning image of Example 8.5 is on its card and the book’s labeled image is in its answer.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案来自本书的答案表和“学习检测”的答案；没有答案的数值型习题 fs-idm138595920（由十个原子轨道得到的分子轨道数）、fs-idm131971232（给定构型的键级）和 fs-idm79754896（四组物种的键级）未收录。没有答案的概念性习题 fs-idp105434592、fs-idm41078784、fs-idm179535904、fs-idm63366704、fs-idp45731680 和 fs-idm76713856，以及判断题 fs-idm16460880（保持开放，附有它的两个选项），都附有一个标明为 OmniStax 自拟的建议思路。例 8.5 的“学习检测”图像在其卡片上，书中带标注的图像在其答案中。",
  "figures": [
   {
    "id": "fig-o2-lewis",
@@ -53,6 +61,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "lone pairs as the book draws them"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -63,7 +76,7 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_04_Gouy.jpg"
    ],
-   "original_caption": "A Gouy balance compares the mass of a sample in the presence of a magnetic field with the mass with the electromagnet turned off to determine the number of unpaired electrons in a sample.",
+   "original_caption": "古依天平比较样品在有磁场存在时的质量与关闭电磁铁时的质量，以确定样品中未成对电子的数目。",
    "draws": [],
    "conventions": [
     "O",
@@ -79,6 +92,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "instruction note repeating the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -89,13 +107,20 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_04_waveadd.jpg"
    ],
-   "original_caption": "(a) When in-phase waves combine, constructive interference produces a wave with greater amplitude. (b) When out-of-phase waves combine, destructive interference produces a wave with less (or no) amplitude.",
-   "draws": ["angle"],
+   "original_caption": "（a）同相的波组合时，相长干涉产生振幅更大的波。（b）反相的波组合时，相消干涉产生振幅更小（或为零）的波。",
+   "draws": [
+    "angle"
+   ],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -112,7 +137,7 @@
     "/media/ch08/CNX_Chem_08_04_pMOsigma.jpg",
     "/media/ch08/CNX_Chem_08_04_pMOpi.jpg"
    ],
-   "original_caption": "(Figure 8.29) Sigma (σ) and sigma-star (σ*) molecular orbitals are formed by the combination of two <em>s</em> atomic orbitals. The dots (·) indicate the locations of nuclei. (Figure 8.30) Combining wave functions of two <em>p</em> atomic orbitals along the internuclear axis creates two molecular orbitals, σ<sub><em>p</em></sub> and σ*<sub><em>p</em></sub>. (Figure 8.31) Side-by-side overlap of each two <em>p</em> orbitals results in the formation of two π molecular orbitals. Combining the out-of-phase orbitals results in an antibonding molecular orbital with two nodes. One contains the internuclear axis, and one is perpendicular to the axis. Combining the in-phase orbitals results in a bonding orbital. There is a node (blue) containing the internuclear axis with the two lobes of the orbital located above and below this node.",
+   "original_caption": "（图 8.29）西格玛（σ）分子轨道和西格玛星（σ*）分子轨道由两个 <em>s</em> 原子轨道组合形成。圆点（·）表示原子核的位置。（图 8.30）沿核间轴组合两个 <em>p</em> 原子轨道的波函数，产生两个分子轨道 σ<sub><em>p</em></sub> 和 σ*<sub><em>p</em></sub>。（图 8.31）每两个 <em>p</em> 轨道肩并肩重叠，形成两个 π 分子轨道。把反相的轨道组合起来，得到一个有两个节点的反键分子轨道。其中一个包含核间轴，另一个垂直于该轴。把同相的轨道组合起来，得到一个成键轨道。有一个包含核间轴的节点（蓝色），该轨道的两个瓣位于这个节点的上方和下方。",
    "draws": [],
    "ai": [
     {
@@ -124,6 +149,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "framing, headline symbols typeset, controls on one row, caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -144,6 +174,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "readout repeating the drawn labels dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -174,7 +209,7 @@
     "/media/ch08/CNX_Chem_08_04_He2MO-cf1f.jpg",
     "/media/ch08/CNX_Chem_08_04_O2MO-912b.jpg"
    ],
-   "original_caption": "(Figure 8.34) This is the molecular orbital diagram for the homonuclear diatomic Be₂⁺, showing the molecular orbitals of the valence shell only. The molecular orbitals are filled in the same manner as atomic orbitals, using the Aufbau principle and Hund’s rule. (Figure 8.35) The molecular orbital energy diagram predicts that H₂ will be a stable molecule with lower energy than the separated atoms. (Figure 8.36) The molecular orbital energy diagram predicts that He₂ will not be a stable molecule, since it has equal numbers of bonding and antibonding electrons. (Figure 8.40) The molecular orbital energy diagram for O₂ predicts two unpaired electrons.",
+   "original_caption": "（图 8.34）这是同核双原子 Be₂⁺ 的分子轨道图，只显示价层的分子轨道。分子轨道的填充方式与原子轨道相同，遵循构造原理和洪特规则。（图 8.35）分子轨道能级图预测 H₂ 是一个稳定的分子，其能量低于分离的原子。（图 8.36）分子轨道能级图预测 He₂ 不是稳定的分子，因为它的成键电子数和反键电子数相等。（图 8.40）O₂ 的分子轨道能级图预测有两个未成对电子。",
    "draws": [
     "energy"
    ],
@@ -188,6 +223,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "headline a sentence, electrons on lines, names above connectors"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -198,7 +238,7 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_04_X2MOs-bb74.jpg"
    ],
-   "original_caption": "This shows the MO diagrams for each homonuclear diatomic molecule in the second period. The orbital energies decrease across the period as the effective nuclear charge increases and atomic radius decreases. Between N₂ and O₂, the order of the orbitals changes.",
+   "original_caption": "这里显示第二周期每个同核双原子分子的 MO 图。随着有效核电荷增大、原子半径减小，轨道能量沿周期降低。在 N₂ 与 O₂ 之间，轨道的顺序发生变化。",
    "draws": [
     "energy"
    ],
@@ -212,6 +252,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "note repeating the caption dropped"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -222,7 +267,7 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_04_spmix-78e6.jpg"
    ],
-   "original_caption": "Without mixing, the MO pattern occurs as expected, with the σ<sub><em>p</em></sub> orbital lower in energy than the π<sub><em>p</em></sub> orbitals. When s-p mixing occurs, the orbitals shift as shown, with the σ<sub><em>p</em></sub> orbital higher in energy than the π<sub><em>p</em></sub> orbitals.",
+   "original_caption": "没有混合时，MO 的模式如预期，σ<sub><em>p</em></sub> 轨道的能量低于 π<sub><em>p</em></sub> 轨道。发生 s-p 混合时，轨道如图所示发生移动，σ<sub><em>p</em></sub> 轨道的能量高于 π<sub><em>p</em></sub> 轨道。",
    "draws": [
     "energy"
    ],
@@ -236,6 +281,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "names drawn above the connectors"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -246,7 +296,7 @@
    "originals": [
     "/media/ch08/CNX_Chem_08_04_Band.jpg"
    ],
-   "original_caption": "Molecular orbitals in solids are so closely spaced that they are described as bands. The valence band is lower in energy and the conduction band is higher in energy. The type of solid is determined by the size of the “band gap” between the valence and conduction bands. Only a very small amount of energy is required to move electrons from the valence band to the conduction band in a conductor, and so they conduct electricity well. In an insulator, the band gap is large, so that very few electrons move, and they are poor conductors of electricity. Semiconductors are in between: they conduct electricity better than insulators, but not as well as conductors.",
+   "original_caption": "固体中的分子轨道靠得如此之近，以致被描述为能带。价带的能量较低，导带的能量较高。固体的类型由价带与导带之间“带隙”的大小决定。在导体中，只需很少的能量就能把电子从价带移到导带，所以它们导电性好。在绝缘体中，带隙很大，所以很少有电子移动，它们是电的不良导体。半导体介于两者之间：它们的导电性比绝缘体好，但不如导体。",
    "draws": [
     "energy"
    ],
@@ -255,6 +305,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -424,13 +479,13 @@
    "cite": "sigma-pi-mo",
    "figure": {
     "src": "/media/ch08/CNX_Chem_08_04_siganti_img.jpg",
-    "alt": "Two orbitals are shown lying end-to-end. Each has one enlarged and one small side. The small sides are facing one another"
+    "alt": "图中是两个头碰头排列的轨道。每个轨道一侧大、一侧小。两个小的一侧彼此相对"
    },
-   "prompt": "Label the molecular orbital shown as <em>σ</em> or π, bonding or antibonding and indicate where the node occurs.",
+   "prompt": "把图中所示的分子轨道标注为 <em>σ</em> 或 π、成键或反键，并指出节点出现在何处。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The orbital is located along the internuclear axis, so it is a σ orbital. There is a node bisecting the internuclear axis, so it is an antibonding orbital. <img src=\"/media/ch08/CNX_Chem_08_04_salabel_img.jpg\" alt=\"Two orbitals are shown lying end-to-end. Each has one enlarged and one small side. The small sides are facing one another and are separated by a vertical dotted line.\">"
+    "solution": "该轨道沿核间轴分布，所以它是 σ 轨道。有一个节点将核间轴平分，所以它是反键轨道。<img src=\"/media/ch08/CNX_Chem_08_04_salabel_img.jpg\" alt=\"图中是两个头碰头排列的轨道。每个轨道一侧大、一侧小。两个小的一侧彼此相对，并被一条竖直的点线隔开。\">"
    }
   },
   {
@@ -443,11 +498,11 @@
     "after": "ex-o2"
    },
    "cite": "second-period",
-   "prompt": "The main component of air is N<sub>2</sub>. From the molecular orbital diagram of N<sub>2</sub>, predict its bond order and whether it is diamagnetic or paramagnetic.",
+   "prompt": "空气的主要成分是 N<sub>2</sub>。根据 N<sub>2</sub> 的分子轨道图，预测它的键级，以及它是抗磁性的还是顺磁性的。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "N<sub>2</sub> has a bond order of 3 and is diamagnetic."
+    "solution": "N<sub>2</sub> 的键级为 3，是抗磁性的。"
    }
   },
   {
@@ -460,11 +515,11 @@
     "after": "ex-c2"
    },
    "cite": "second-period",
-   "prompt": "How many unpaired electrons would be present on a Be<sub>2</sub><sup>2−</sup> ion? Would it be paramagnetic or diamagnetic?",
+   "prompt": "Be<sub>2</sub><sup>2−</sup> 离子上会有多少个未成对电子？它是顺磁性的还是抗磁性的？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "two, paramagnetic"
+    "solution": "两个，顺磁性的"
    }
   },
   {
@@ -476,11 +531,11 @@
     "at": "end"
    },
    "cite": "sigma-pi-mo",
-   "prompt": "Sketch the distribution of electron density in the bonding and antibonding molecular orbitals formed from two <em>s</em> orbitals and from two <em>p</em> orbitals.",
+   "prompt": "画出由两个 <em>s</em> 轨道和由两个 <em>p</em> 轨道形成的成键分子轨道和反键分子轨道中的电子密度分布草图。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "In a bonding orbital the in-phase combination piles electron density between the nuclei; in an antibonding orbital the out-of-phase combination leaves a node between them. From two <em>s</em> orbitals, the bonding σ<sub><em>s</em></sub> orbital is one egg-shaped region enclosing both nuclei, densest between them, and the antibonding σ*<sub><em>s</em></sub> orbital is two separate regions, one around each nucleus, with a nodal plane perpendicular to the internuclear axis halfway between the nuclei. From two <em>p</em> orbitals overlapping end to end, the σ<sub><em>p</em></sub> orbital has a large lobe of density on the axis between the nuclei and a small lobe beyond each nucleus, while the σ*<sub><em>p</em></sub> orbital has a node between the nuclei, with its density pushed to the outer sides. From two <em>p</em> orbitals overlapping side by side, the π<sub><em>p</em></sub> orbital is two sausage-shaped regions, one above and one below the internuclear axis, each stretched over both nuclei, with a nodal plane containing the axis; the π*<sub><em>p</em></sub> orbital has that same nodal plane plus a second one between the nuclei, which leaves four separate lobes."
+    "solution": "在成键轨道中，同相组合使电子密度堆积在两核之间；在反键轨道中，反相组合在两核之间留下一个节点。由两个 <em>s</em> 轨道得到的成键 σ<sub><em>s</em></sub> 轨道是一个包围两个核的蛋形区域，在两核之间最密，而反键 σ*<sub><em>s</em></sub> 轨道是两个分开的区域，每个核周围一个，在两核正中间有一个垂直于核间轴的节面。由两个 <em>p</em> 轨道头碰头重叠得到的 σ<sub><em>p</em></sub> 轨道，在两核之间的轴上有一个大的密度瓣，在每个核的外侧各有一个小瓣，而 σ*<sub><em>p</em></sub> 轨道在两核之间有一个节点，其密度被推向外侧。由两个 <em>p</em> 轨道肩并肩重叠得到的 π<sub><em>p</em></sub> 轨道是两个香肠形的区域，一个在核间轴上方，一个在下方，各自伸展在两个核之上，有一个包含该轴的节面；π*<sub><em>p</em></sub> 轨道有同样的节面，另外在两核之间还有第二个节面，从而留下四个分开的瓣。"
    }
   },
   {
@@ -492,11 +547,11 @@
     "at": "end"
    },
    "cite": "mo-theory",
-   "prompt": "How are the following similar, and how do they differ?\n(a) σ molecular orbitals and π molecular orbitals\n(b) <em>ψ</em> for an atomic orbital and <em>ψ</em> for a molecular orbital\n(c) bonding orbitals and antibonding orbitals",
+   "prompt": "下列各项有何相似之处，又有何不同？\n（a）σ 分子轨道和 π 分子轨道\n（b）原子轨道的 <em>ψ</em> 和分子轨道的 <em>ψ</em>\n（c）成键轨道和反键轨道",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) Similarities: Both are bonding orbitals that can contain a maximum of two electrons. Differences: σ orbitals are end-to-end combinations of atomic orbitals, whereas π orbitals are formed by side-by-side overlap of orbitals. (b) Similarities: Both are quantum-mechanical constructs that represent the probability of finding the electron about the atom or the molecule. Differences: <em>ψ</em> for an atomic orbital describes the behavior of only one electron at a time based on the atom. For a molecule, <em>ψ</em> represents a mathematical combination of atomic orbitals. (c) Similarities: Both are orbitals that can contain two electrons. Differences: Bonding orbitals result in holding two or more atoms together. Antibonding orbitals have the effect of destabilizing any bonding that has occurred."
+    "solution": "（a）相似之处：二者都是成键轨道，最多可容纳两个电子。不同之处：σ 轨道是原子轨道头碰头的组合，而 π 轨道由轨道肩并肩重叠形成。（b）相似之处：二者都是量子力学的构造，表示在原子或分子周围找到电子的概率。不同之处：原子轨道的 <em>ψ</em> 描述的是基于该原子的、一次仅一个电子的行为。对于分子，<em>ψ</em> 表示原子轨道的数学组合。（c）相似之处：二者都是可以容纳两个电子的轨道。不同之处：成键轨道的结果是把两个或更多原子结合在一起。反键轨道的作用是使已经形成的任何键变得不稳定。"
    }
   },
   {
@@ -508,11 +563,11 @@
     "at": "end"
    },
    "cite": "paramagnetism",
-   "prompt": "Can a molecule with an odd number of electrons ever be diamagnetic? Explain why or why not.",
+   "prompt": "电子数为奇数的分子有可能是抗磁性的吗？请解释为什么可能，或为什么不可能。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "An odd number of electrons can never be paired, regardless of the arrangement of the molecular orbitals. It will always be paramagnetic."
+    "solution": "无论分子轨道如何排布，奇数个电子都不可能全部成对。它总是顺磁性的。"
    }
   },
   {
@@ -524,11 +579,11 @@
     "at": "end"
    },
    "cite": "paramagnetism",
-   "prompt": "Can a molecule with an even number of electrons ever be paramagnetic? Explain why or why not.",
+   "prompt": "电子数为偶数的分子有可能是顺磁性的吗？请解释为什么可能，或为什么不可能。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Yes. An even number of electrons can leave two electrons unpaired when the last two enter a set of two degenerate molecular orbitals, because Hund’s rule places one electron in each with parallel spins before any pairing. O<sub>2</sub>, with 12 valence electrons, is the example: its configuration ends in ${({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$, the two electrons occupy separate π* orbitals, and the molecule is paramagnetic, as liquid oxygen held between the poles of a magnet shows. B<sub>2</sub>, with six valence electrons and the configuration ending in ${({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$, is paramagnetic for the same reason."
+    "solution": "可以。当最后两个电子进入一组两个简并的分子轨道时，偶数个电子可以留下两个未成对电子，因为洪特规则在任何配对发生之前，先在每个轨道中各放一个自旋平行的电子。O<sub>2</sub> 有 12 个价电子，就是一个例子：其构型以 ${({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$ 结尾，两个电子占据不同的 π* 轨道，该分子是顺磁性的，被吸引并停留在磁铁两极之间的液氧就表明了这一点。B<sub>2</sub> 有六个价电子，其构型以 ${({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$ 结尾，出于同样的原因也是顺磁性的。"
    }
   },
   {
@@ -540,11 +595,11 @@
     "at": "end"
    },
    "cite": "bonding-antibonding",
-   "prompt": "Why are bonding molecular orbitals lower in energy than the parent atomic orbitals?",
+   "prompt": "为什么成键分子轨道的能量比其母体原子轨道低？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Bonding orbitals have electron density in close proximity to more than one nucleus. The interaction between the bonding positively charged nuclei and negatively charged electrons stabilizes the system."
+    "solution": "成键轨道的电子密度紧邻不止一个原子核。成键的带正电原子核与带负电电子之间的相互作用使体系稳定。"
    }
   },
   {
@@ -556,11 +611,11 @@
     "at": "end"
    },
    "cite": "diatomic",
-   "prompt": "Explain why an electron in the bonding molecular orbital in the H<sub>2</sub> molecule has a lower energy than an electron in the 1<em>s</em> atomic orbital of either of the separated hydrogen atoms.",
+   "prompt": "解释为什么 H<sub>2</sub> 分子成键分子轨道中的电子，其能量比分离开的任一氢原子 1<em>s</em> 原子轨道中的电子低。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The pairing of the two bonding electrons lowers the energy of the system relative to the energy of the nonbonded electrons."
+    "solution": "两个成键电子的配对使体系的能量相对于未成键电子的能量降低。"
    }
   },
   {
@@ -572,11 +627,11 @@
     "at": "end"
    },
    "cite": "second-period",
-   "prompt": "Predict the valence electron molecular orbital configurations for the following, and state whether they will be stable or unstable ions.\n(a) Na<sub>2</sub><sup>2+</sup>\n(b) Mg<sub>2</sub><sup>2+</sup>\n(c) Al<sub>2</sub><sup>2+</sup>\n(d) Si<sub>2</sub><sup>2+</sup>\n(e) P<sub>2</sub><sup>2+</sup>\n(f) S<sub>2</sub><sup>2+</sup>\n(g) F<sub>2</sub><sup>2+</sup>\n(h) Ar<sub>2</sub><sup>2+</sup>",
+   "prompt": "预测下列离子的价电子分子轨道构型，并说明它们是稳定的还是不稳定的离子。\n（a）Na<sub>2</sub><sup>2+</sup>\n（b）Mg<sub>2</sub><sup>2+</sup>\n（c）Al<sub>2</sub><sup>2+</sup>\n（d）Si<sub>2</sub><sup>2+</sup>\n（e）P<sub>2</sub><sup>2+</sup>\n（f）S<sub>2</sub><sup>2+</sup>\n（g）F<sub>2</sub><sup>2+</sup>\n（h）Ar<sub>2</sub><sup>2+</sup>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) Na<sub>2</sub><sup>2+</sup>: no valence electrons (2 − 2 = 0); bond order 0, unstable.<br>(b) Mg<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}$; bond order 1, stable.<br>(c) Al<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}$; bond order 0, unstable.<br>(d) Si<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{2}$; bond order 1, stable.<br>(e) P<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}$; bond order 2, stable.<br>(f) S<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\sigma}_{3px})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}$; bond order 3, stable.<br>(g) F<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\sigma}_{2px})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{4}{({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$; bond order 2, stable.<br>(h) Ar<sub>2</sub><sup>2+</sup>: ${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\sigma}_{3px})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}{({\\pi}_{3py}^{*},\\;{\\pi}_{3pz}^{*})}^{4}$; bond order 1, stable.<br>Each ion has twice the valence electrons of one atom less two for the 2+ charge: 0, 2, 4, 6, 8, 10, 12 and 14. The orbitals fill in order of energy, with the π<sub><em>p</em></sub> pair below σ<sub><em>p</em></sub> for the elements before sulfur, as for Li through N, and σ<sub><em>p</em></sub> below the π<sub><em>p</em></sub> pair for S, F and Ar, as for O through Ne. The bond order is (bonding electrons − antibonding electrons)/2; for Si<sub>2</sub><sup>2+</sup>, (4 − 2)/2 = 1. An ion with a bond order greater than zero is predicted to be stable, and one with a bond order of zero, like Be<sub>2</sub>, is not."
+    "solution": "（a）Na<sub>2</sub><sup>2+</sup>：没有价电子（2 − 2 = 0）；键级为 0，不稳定。<br>（b）Mg<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}$；键级为 1，稳定。<br>（c）Al<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}$；键级为 0，不稳定。<br>（d）Si<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{2}$；键级为 1，稳定。<br>（e）P<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}$；键级为 2，稳定。<br>（f）S<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\sigma}_{3px})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}$；键级为 3，稳定。<br>（g）F<sub>2</sub><sup>2+</sup>：${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\sigma}_{2px})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{4}{({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$；键级为 2，稳定。<br>（h）Ar<sub>2</sub><sup>2+</sup>：${({\\sigma}_{3s})}^{2}{({\\sigma}_{3s}^{*})}^{2}{({\\sigma}_{3px})}^{2}{({\\pi}_{3py},\\;{\\pi}_{3pz})}^{4}{({\\pi}_{3py}^{*},\\;{\\pi}_{3pz}^{*})}^{4}$；键级为 1，稳定。<br>每个离子的价电子数是一个原子价电子数的两倍，再减去 2+ 电荷所对应的两个电子：0、2、4、6、8、10、12 和 14。轨道按能量顺序填充，对于硫之前的元素，π<sub><em>p</em></sub> 这一对在 σ<sub><em>p</em></sub> 之下，如同 Li 到 N，而对于 S、F 和 Ar，σ<sub><em>p</em></sub> 在 π<sub><em>p</em></sub> 这一对之下，如同 O 到 Ne。键级为(成键电子数 − 反键电子数)/2；对于 Si<sub>2</sub><sup>2+</sup>，(4 − 2)/2 = 1。键级大于零的离子预计是稳定的，键级为零的离子（如 Be<sub>2</sub>）则不稳定。"
    }
   },
   {
@@ -588,11 +643,11 @@
     "at": "end"
    },
    "cite": "bond-order",
-   "prompt": "Determine the bond order of each member of the following groups, and determine which member of each group is predicted by the molecular orbital model to have the strongest bond.\n(a) H<sub>2</sub>, H<sub>2</sub><sup>+</sup>, H<sub>2</sub><sup>−</sup>\n(b) O<sub>2</sub>, O<sub>2</sub><sup>2+</sup>, O<sub>2</sub><sup>2−</sup>\n(c) Li<sub>2</sub>, Be<sub>2</sub><sup>+</sup>, Be<sub>2</sub>\n(d) F<sub>2</sub>, F<sub>2</sub><sup>+</sup>, F<sub>2</sub><sup>−</sup>\n(e) N<sub>2</sub>, N<sub>2</sub><sup>+</sup>, N<sub>2</sub><sup>−</sup>",
+   "prompt": "确定下列各组中每个成员的键级，并确定分子轨道模型预测每组中哪个成员的键最强。\n（a）H<sub>2</sub>、H<sub>2</sub><sup>+</sup>、H<sub>2</sub><sup>−</sup>\n（b）O<sub>2</sub>、O<sub>2</sub><sup>2+</sup>、O<sub>2</sub><sup>2−</sup>\n（c）Li<sub>2</sub>、Be<sub>2</sub><sup>+</sup>、Be<sub>2</sub>\n（d）F<sub>2</sub>、F<sub>2</sub><sup>+</sup>、F<sub>2</sub><sup>−</sup>\n（e）N<sub>2</sub>、N<sub>2</sub><sup>+</sup>、N<sub>2</sub><sup>−</sup>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) H<sub>2</sub> bond order = 1, H<sub>2</sub><sup>+</sup> bond order = 0.5, H<sub>2</sub><sup>−</sup> bond order = 0.5, strongest bond is H<sub>2</sub>; (b) O<sub>2</sub> bond order = 2, O<sub>2</sub><sup>2+</sup> bond order = 3; O<sub>2</sub><sup>2−</sup> bond order = 1, strongest bond is O<sub>2</sub><sup>2+</sup>; (c) Li<sub>2</sub> bond order = 1, Be<sub>2</sub><sup>+</sup> bond order = 0.5, Be<sub>2</sub> bond order = 0, strongest bond is Li<sub>2</sub>;(d) F<sub>2</sub> bond order = 1, F<sub>2</sub><sup>+</sup> bond order = 1.5, F<sub>2</sub><sup>−</sup> bond order = 0.5, strongest bond is F<sub>2</sub><sup>+</sup>; (e) N<sub>2</sub> bond order = 3, N<sub>2</sub><sup>+</sup> bond order = 2.5, N<sub>2</sub><sup>−</sup> bond order = 2.5, strongest bond is N<sub>2</sub>"
+    "solution": "（a）H<sub>2</sub> 键级 = 1，H<sub>2</sub><sup>+</sup> 键级 = 0.5，H<sub>2</sub><sup>−</sup> 键级 = 0.5，键最强的是 H<sub>2</sub>；（b）O<sub>2</sub> 键级 = 2，O<sub>2</sub><sup>2+</sup> 键级 = 3；O<sub>2</sub><sup>2−</sup> 键级 = 1，键最强的是 O<sub>2</sub><sup>2+</sup>；（c）Li<sub>2</sub> 键级 = 1，Be<sub>2</sub><sup>+</sup> 键级 = 0.5，Be<sub>2</sub> 键级 = 0，键最强的是 Li<sub>2</sub>；（d）F<sub>2</sub> 键级 = 1，F<sub>2</sub><sup>+</sup> 键级 = 1.5，F<sub>2</sub><sup>−</sup> 键级 = 0.5，键最强的是 F<sub>2</sub><sup>+</sup>；（e）N<sub>2</sub> 键级 = 3，N<sub>2</sub><sup>+</sup> 键级 = 2.5，N<sub>2</sub><sup>−</sup> 键级 = 2.5，键最强的是 N<sub>2</sub>"
    }
   },
   {
@@ -604,11 +659,11 @@
     "at": "end"
    },
    "cite": "second-period",
-   "prompt": "For the first ionization energy for an N<sub>2</sub> molecule, what molecular orbital is the electron removed from?",
+   "prompt": "对于 N<sub>2</sub> 分子的第一电离能，电子是从哪个分子轨道中移走的？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The electron is removed from the σ<sub>2<em>px</em></sub> bonding orbital. The valence configuration of N<sub>2</sub> is ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{4}{({\\sigma}_{2px})}^{2}.$ Because nitrogen shows s-p mixing, the σ<sub>2<em>px</em></sub> orbital is raised above the π<sub>2<em>py</em></sub> and π<sub>2<em>pz</em></sub> pair, so it is the highest occupied molecular orbital, and the first ionization energy removes one of its two electrons, leaving ${\\text{N}}_{2}{}^{\\text{+}}$ with ${({\\sigma}_{2px})}^{1}.$"
+    "solution": "电子是从 σ<sub>2<em>px</em></sub> 成键轨道中移走的。N<sub>2</sub> 的价层构型为 ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{4}{({\\sigma}_{2px})}^{2}$。因为氮表现出 s-p 混合，σ<sub>2<em>px</em></sub> 轨道被抬升到 π<sub>2<em>py</em></sub> 和 π<sub>2<em>pz</em></sub> 这一对之上，所以它是最高占据分子轨道，第一电离能移走其两个电子中的一个，留下 ${\\text{N}}_{2}{}^{\\text{+}}$，其构型为 ${({\\sigma}_{2px})}^{1}$。"
    }
   },
   {
@@ -620,11 +675,11 @@
     "at": "end"
    },
    "cite": "second-period",
-   "prompt": "Compare the atomic and molecular orbital diagrams to identify the member of each of the following pairs that has the highest first ionization energy (the most tightly bound electron) in the gas phase:\n(a) H and H<sub>2</sub>\n(b) N and N<sub>2</sub>\n(c) O and O<sub>2</sub>\n(d) C and C<sub>2</sub>\n(e) B and B<sub>2</sub>",
+   "prompt": "比较原子轨道图和分子轨道图，确定下列每一对中气相第一电离能最高（电子束缚得最紧）的成员：\n（a）H 和 H<sub>2</sub>\n（b）N 和 N<sub>2</sub>\n（c）O 和 O<sub>2</sub>\n（d）C 和 C<sub>2</sub>\n（e）B 和 B<sub>2</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) H<sub>2</sub>; (b) N<sub>2</sub>; (c) O; (d) C<sub>2</sub>; (e) B<sub>2</sub>"
+    "solution": "（a）H<sub>2</sub>；（b）N<sub>2</sub>；（c）O；（d）C<sub>2</sub>；（e）B<sub>2</sub>"
    }
   },
   {
@@ -636,11 +691,11 @@
     "at": "end"
    },
    "cite": "second-period",
-   "prompt": "Which of the period 2 homonuclear diatomic molecules are predicted to be paramagnetic?",
+   "prompt": "第 2 周期的同核双原子分子中，哪些预测是顺磁性的？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "B<sub>2</sub> and O<sub>2</sub> are predicted to be paramagnetic. B<sub>2</sub> has six valence electrons, and its configuration ends in ${({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$: by Hund’s rule the two electrons occupy the two degenerate π orbitals singly with parallel spins. O<sub>2</sub> has 12 valence electrons, and its configuration ends in ${({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$, which leaves one unpaired electron in each π* orbital. In Li<sub>2</sub>, C<sub>2</sub>, N<sub>2</sub> and F<sub>2</sub> every occupied orbital holds a pair, so they are diamagnetic, and Be<sub>2</sub> and Ne<sub>2</sub>, also fully paired, have bond order 0 and do not form."
+    "solution": "预测 B<sub>2</sub> 和 O<sub>2</sub> 是顺磁性的。B<sub>2</sub> 有六个价电子，其构型以 ${({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$ 结尾：按洪特规则，这两个电子以平行自旋单独占据两个简并的 π 轨道。O<sub>2</sub> 有 12 个价电子，其构型以 ${({\\pi}_{2py}^{*},\\;{\\pi}_{2pz}^{*})}^{2}$ 结尾，在每个 π* 轨道中留下一个未成对电子。在 Li<sub>2</sub>、C<sub>2</sub>、N<sub>2</sub> 和 F<sub>2</sub> 中，每个被占据的轨道都容纳一对电子，所以它们是抗磁性的；Be<sub>2</sub> 和 Ne<sub>2</sub> 也是完全成对的，键级为 0，不能形成。"
    }
   },
   {
@@ -652,11 +707,11 @@
     "at": "end"
    },
    "cite": "second-period",
-   "prompt": "A friend tells you that the 2<em>s</em> orbital for fluorine starts off at a much lower energy than the 2<em>s</em> orbital for lithium, so the resulting σ<sub>2<em>s</em></sub> molecular orbital in F<sub>2</sub> is more stable than in Li<sub>2</sub>. Do you agree?",
+   "prompt": "一位朋友告诉你，氟的 2<em>s</em> 轨道起始能量比锂的 2<em>s</em> 轨道低得多，所以 F<sub>2</sub> 中所形成的 σ<sub>2<em>s</em></sub> 分子轨道比 Li<sub>2</sub> 中的更稳定。你同意吗？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Yes, fluorine is a smaller atom than Li, so atoms in the 2<em>s</em> orbital are closer to the nucleus and more stable."
+    "solution": "同意，氟原子比 Li 原子小，所以 2<em>s</em> 轨道中的原子更靠近原子核，也更稳定。"
    }
   },
   {
@@ -668,11 +723,11 @@
     "at": "end"
    },
    "cite": "sigma-pi-mo",
-   "prompt": "True or false: Boron contains 2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup> valence electrons, so only one <em>p</em> orbital is needed to form molecular orbitals.\n(a) true\n(b) false",
+   "prompt": "判断对错：硼含有 2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup> 价电子，所以形成分子轨道只需要一个 <em>p</em> 轨道。\n（a）对\n（b）错",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(b) false. A molecular orbital diagram combines all the valence atomic orbitals of the two atoms, whether or not they hold electrons, so the 2<em>s</em> and all three 2<em>p</em> orbitals of each boron atom form the eight molecular orbitals σ<sub>2<em>s</em></sub>, σ*<sub>2<em>s</em></sub>, the π<sub>2<em>py</em></sub>, π<sub>2<em>pz</em></sub> pair, σ<sub>2<em>px</em></sub>, the two π* orbitals and σ*<sub>2<em>px</em></sub>. In B<sub>2</sub>, with six valence electrons, the configuration is ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}.$ The last two electrons occupy two different π orbitals, built from the 2<em>py</em> and the 2<em>pz</em> orbitals, so more than one <em>p</em> orbital is needed even for the electrons that are present."
+    "solution": "（b）错。分子轨道图把两个原子的所有价层原子轨道都组合起来，不论它们是否容纳电子，所以每个硼原子的 2<em>s</em> 和全部三个 2<em>p</em> 轨道形成八个分子轨道：σ<sub>2<em>s</em></sub>、σ*<sub>2<em>s</em></sub>、π<sub>2<em>py</em></sub> 与 π<sub>2<em>pz</em></sub> 这一对、σ<sub>2<em>px</em></sub>、两个 π* 轨道和 σ*<sub>2<em>px</em></sub>。在 B<sub>2</sub> 中有六个价电子，其构型为 ${({\\sigma}_{2s})}^{2}{({\\sigma}_{2s}^{*})}^{2}{({\\pi}_{2py},\\;{\\pi}_{2pz})}^{2}$。最后两个电子占据两个不同的 π 轨道，它们由 2<em>py</em> 和 2<em>pz</em> 轨道构成，所以即使对于已有的电子，也需要不止一个 <em>p</em> 轨道。"
    }
   },
   {
@@ -684,7 +739,7 @@
     "at": "end"
    },
    "cite": "bond-order",
-   "prompt": "What charge would be needed on F<sub>2</sub> to generate an ion with a bond order of 2?",
+   "prompt": "F<sub>2</sub> 上需要带多少电荷，才能生成键级为 2 的离子？",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -700,11 +755,11 @@
     "at": "end"
    },
    "cite": "second-period",
-   "prompt": "Predict whether the MO diagram for S<sub>2</sub> would show s-p mixing or not.",
+   "prompt": "预测 S<sub>2</sub> 的 MO 图是否会显示 s-p 混合。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The MO diagram for S<sub>2</sub> would show no significant s-p mixing; it would follow the pattern of O<sub>2</sub>, with σ<sub>3<em>px</em></sub> below the π<sub>3<em>py</em></sub>, π<sub>3<em>pz</em></sub> pair. s-p mixing occurs only when the <em>s</em> and <em>p</em> orbitals have similar energies, and the gap between them widens across a period: in period 2 it is large enough in O, F and Ne that their mixing is negligible. Sulfur is in the same group as oxygen and in the same position in its period, so its 3<em>s</em> and 3<em>p</em> orbitals are, like the 2<em>s</em> and 2<em>p</em> of oxygen, too far apart in energy for mixing to change the order of the orbitals."
+    "solution": "S<sub>2</sub> 的 MO 图不会显示明显的 s-p 混合；它将遵循 O<sub>2</sub> 的模式，σ<sub>3<em>px</em></sub> 在 π<sub>3<em>py</em></sub>、π<sub>3<em>pz</em></sub> 这一对之下。只有当 <em>s</em> 轨道和 <em>p</em> 轨道的能量相近时才会发生 s-p 混合，而二者之间的间隙沿周期变宽：在第 2 周期中，O、F 和 Ne 的间隙已大到它们的混合可以忽略。硫与氧同族，在其周期中的位置也相同，所以它的 3<em>s</em> 和 3<em>p</em> 轨道与氧的 2<em>s</em> 和 2<em>p</em> 轨道一样，能量相差太远，混合不足以改变轨道的顺序。"
    }
   },
   {
@@ -716,11 +771,11 @@
     "at": "end"
    },
    "cite": "second-period",
-   "prompt": "Explain why N<sub>2</sub><sup>2+</sup> is diamagnetic, while O<sub>2</sub><sup>4+</sup>, which has the same number of valence electrons, is paramagnetic.",
+   "prompt": "解释为什么 N<sub>2</sub><sup>2+</sup> 是抗磁性的，而价电子数相同的 O<sub>2</sub><sup>4+</sup> 却是顺磁性的。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "N<sub>2</sub> has s-p mixing, so the π orbitals are the last filled in N<sub>2</sub><sup>2+</sup>. O<sub>2</sub> does not have s-p mixing, so the σ<sub><em>p</em></sub> orbital fills before the π orbitals."
+    "solution": "N<sub>2</sub> 有 s-p 混合，所以在 N<sub>2</sub><sup>2+</sup> 中 π 轨道是最后被填充的。O<sub>2</sub> 没有 s-p 混合，所以 σ<sub><em>p</em></sub> 轨道先于 π 轨道被填充。"
    }
   }
  ],
@@ -861,63 +916,63 @@
  "referents": [
   {
    "id": "balance",
-   "label": "the Gouy balance",
+   "label": "古依天平",
    "figures": [
     "sim-gouy"
    ]
   },
   {
    "id": "sample",
-   "label": "the sample in its tube",
+   "label": "管中的样品",
    "figures": [
     "sim-gouy"
    ]
   },
   {
    "id": "electromagnets",
-   "label": "the electromagnets",
+   "label": "电磁铁",
    "figures": [
     "sim-gouy"
    ]
   },
   {
    "id": "weights",
-   "label": "the weights on the dish",
+   "label": "盘上的砝码",
    "figures": [
     "sim-gouy"
    ]
   },
   {
    "id": "wave-a",
-   "label": "the first wave",
+   "label": "第一个波",
    "figures": [
     "sim-waves"
    ]
   },
   {
    "id": "wave-b",
-   "label": "the second wave",
+   "label": "第二个波",
    "figures": [
     "sim-waves"
    ]
   },
   {
    "id": "wave-sum",
-   "label": "the sum of the two waves",
+   "label": "两个波的和",
    "figures": [
     "sim-waves"
    ]
   },
   {
    "id": "valence-band",
-   "label": "the valence band",
+   "label": "价带",
    "figures": [
     "sim-bands"
    ]
   },
   {
    "id": "conduction-band",
-   "label": "the conduction band",
+   "label": "导带",
    "figures": [
     "sim-bands"
    ]

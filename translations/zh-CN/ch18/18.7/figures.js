@@ -21,7 +21,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
 ===================================================================== */
 (function () {
   const d = F.sim(root, 'sim-no2-dimer');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '前视', yaw: 0, pitch: 0.12 }, { label: '俯视', yaw: 0.5, pitch: 1.0 }], h: 600, dist: 6.4, tilt: 0.2 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [0.035, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '俯视', yaw: 0.5, pitch: 1.0 }], h: 600, dist: 6.4, tilt: 0.2 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 300);
   const R = 0.082057, R8 = 8.314, DH = 57200, K0 = 6.86, T0 = 298, VMAX = 2, NS = 16;
   const x0 = (-1 + Math.sqrt(1 + 4 * K0)) / (2 * K0), A0 = (1 - x0 / 2) / (R * T0);
@@ -117,7 +117,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     line(ctx, l, ay, r, ay, PAL.muted, 2);
     for (let q = 0; q <= 4; q++) { line(ctx, X(q), ay, X(q), ay + 8, PAL.muted, 2); text(ctx, String(q), X(q), ay + 24, PAL.muted, { size: 17, align: 'center' }); }
     for (let q = 1; q <= 4; q++) line(ctx, X(q), 92, X(q), ay, alpha(PAL.ink, 0.12), 2);
-    text(ctx, '分压 (atm)', (l + r) / 2, ay + 52, C('pressure'), { size: 20, align: 'center' });
+    text(ctx, '分压（atm）', (l + r) / 2, ay + 52, C('pressure'), { size: 20, align: 'center' });
 
     const f4 = (q) => q.toPrecision(4);
     tex(d.readout, `\\kKP = \\dfrac{\\kP_{\\text{N}_2\\text{O}_4}}{\\kP_{\\text{NO}_2}^{2}} = \\dfrac{${hue('pressure', f4(s.n2o4))}}{(${hue('pressure', f4(s.no2))})^{2}} = ${hue('equilibrium-constant', s.k.toPrecision(3))}`);

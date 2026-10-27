@@ -179,7 +179,7 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
   };
   const INFO = {
     NaCl: { f: 'NaCl', head: '氯化钠是一种离子固体：Na⁺ 和 Cl⁻ 离子靠静电吸引结合在一起。', ro: '\\text{离子} \\;\\to\\; \\text{离子键} \\;\\to\\; \\text{硬而脆，熔点高}' },
-    Cu: { f: 'Cu', head: '铜是一种金属固体：铜原子靠金属键结合在一起。', ro: '\\text{金属原子} \\;\\to\\; \\text{金属键} \\;\\to\\; \\text{有延展性，能传导热量和电}' },
+    Cu: { f: 'Cu', head: '铜是一种金属固体：铜原子靠金属键结合在一起。', ro: '\\text{金属原子} \\;\\to\\; \\text{金属键} \\;\\to\\; \\text{有展性，能导热、导电}' },
     diamond: { f: 'C（金刚石）', head: '金刚石是一种共价网状固体：每个碳原子与另外四个碳原子成键。', ro: `\\text{C 原子} \\;\\to\\; \\text{共价键} \\;\\to\\; \\text{非常硬，在 } ${degC(3500)}\\text{ 以上才熔化}` },
     SiO2: { f: 'SiO₂', head: '二氧化硅是一种共价网状固体：每个硅原子与四个氧原子成键。', ro: '\\text{Si 和 O 原子} \\;\\to\\; \\text{共价键} \\;\\to\\; \\text{非常硬，熔点很高}' },
     SiC: { f: 'SiC', head: '碳化硅是一种共价网状固体：每个硅原子与四个碳原子成键。', ro: '\\text{Si 和 C 原子} \\;\\to\\; \\text{共价键} \\;\\to\\; \\text{非常硬，熔点很高}' },
@@ -213,7 +213,7 @@ function ball(ctx, x, y, r, fill, stroke = alpha(PAL.ink, 0.5), w = 1.4) {
 ===================================================================== */
 (function () {
   const d = sim('sim-graphene');
-  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3, h: 460, dist: 9.5, views: [{ label: '正面', yaw: 0, pitch: 0 }, { label: '侧面', yaw: Math.PI / 2, pitch: 0 }] });
+  const v = F.view3d(d.stage, { spin: 'idle', pitch: [-1.3, 1.3], tilt: 0.3, h: 460, dist: 9.5, views: [{ label: '面视', yaw: 0, pitch: 0 }, { label: '侧视', yaw: Math.PI / 2, pitch: 0 }] });
   const grp = v.part(0);
   const A = 0.2, NC = 10, NR = 9, PER = R3 * A, W = NC * PER, RT = W / TAU, GAP = 0.47;
   const flat = [];

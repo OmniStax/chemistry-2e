@@ -8,8 +8,8 @@
  "objectives": [
   "描述磷的性质、制备方法和用途"
  ],
- "summary_html": "<p>磷（15 族）与活泼金属化合时通常表现出 3− 的<span data-concept=\"oxidation-number\">氧化态</span>，与电负性更大的非金属化合时表现出 3+ 和 5+ 的氧化态。<span data-concept=\"halogen\">卤素</span>和氧能够氧化磷。其氧化物是氧化磷(V) P<sub>4</sub>O<sub>10</sub> 和氧化磷(III) P<sub>4</sub>O<sub>6</sub>。制备正磷酸 H<sub>3</sub>PO<sub>4</sub> 的两种常用方法，一是磷酸盐与硫酸反应，二是水与氧化磷(V) 反应。正磷酸是<span data-concept=\"triprotic-acid\">三元酸</span>，能形成三类盐。</p>",
- "notes": "本节在习题 71 中按原文保留“2.00 g of PCl₃ is an excess of water”这一印刷错误，并保留一份小结，其中列出正磷酸的制备方法和盐类，这些内容在第 18.9 节中讲述。",
+ "summary_html": "<p>磷（第 15 族）与活泼金属化合时通常表现出 3− 的<span data-concept=\"oxidation-number\">氧化态</span>，与电负性更大的非金属化合时表现出 3+ 和 5+ 的氧化态。<span data-concept=\"halogen\">卤素</span>和氧能够氧化磷。其氧化物是氧化磷(V) P<sub>4</sub>O<sub>10</sub> 和氧化磷(III) P<sub>4</sub>O<sub>6</sub>。制备正磷酸 H<sub>3</sub>PO<sub>4</sub> 的两种常用方法，一是磷酸盐与硫酸反应，二是水与氧化磷(V)反应。正磷酸是<span data-concept=\"triprotic-acid\">三元酸</span>，能形成三类盐。</p>",
+ "notes": "本节习题 71 的印刷错误（原文“2.00 g of PCl₃ is an excess of water”）按其含义译出（溶于过量水中），并保留一份小结，其中列出正磷酸的制备方法和盐类，这些内容在第 18.9 节中讲述。",
  "ai": {
   "text": [
    {
@@ -34,7 +34,7 @@
  },
  "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "布鲁姆层级、概念标签、提示和建议的解题思路均由 AI 生成。答案取自本书的答案库；习题 67 和 75 的答案是本书的路易斯结构式图像。答案需要计算而书中未给出的无答案习题被略去，也没有为它们计算答案：68（fs-idp101864208，分子结构）、70（fs-idm43491296，杂化）、72（fs-idm123772752，数值）、74（fs-idp208490096，方程式）和 78（fs-idp126473504，数值）。无答案的概念性习题 76（fs-idm55936272）附有一条建议的解题思路，标明为 OmniStax 自己所写。没有移动任何内容。",
+ "exercise_notes": "布鲁姆层级、概念标签、提示和建议思路均由 AI 生成。答案取自书后答案；习题 67 和 75 的答案是本书的路易斯结构式图像。答案需要计算而书中未给出的无答案习题被略去，也没有为它们计算答案：68（fs-idp101864208，分子结构）、70（fs-idm43491296，杂化）、72（fs-idm123772752，数值）、74（fs-idp208490096，方程式）和 78（fs-idp126473504，数值）。无答案的概念性习题 76（fs-idm55936272）附有一条建议思路，标明为 OmniStax 自己所写。没有移动任何内容。",
  "figures": [
   {
    "id": "sim-phosphorus-cage",
@@ -198,11 +198,11 @@
     "at": "end"
    },
    "cite": "preparation",
-   "prompt": "写出下列各物质的路易斯结构式。你可能需要复习化学键与分子几何构型一章。<br>(a) PH<sub>3</sub><br>(b) ${\\text{PH}}_{4}{}^{+}$<br>(c) P<sub>2</sub>H<sub>4</sub><br>(d) ${\\text{PO}}_{4}{}^{3−}$<br>(e) PF<sub>5</sub>",
+   "prompt": "写出下列各物质的路易斯结构式。你可能需要复习化学键与分子几何构型一章。<br>（a）PH<sub>3</sub><br>（b）${\\text{PH}}_{4}{}^{+}$<br>（c）P<sub>2</sub>H<sub>4</sub><br>（d）${\\text{PO}}_{4}{}^{3−}$<br>（e）PF<sub>5</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1a_img.jpg\" alt=\"此路易斯结构式显示一个带一对孤电子对的磷原子，与三个氢原子以单键相连。\"><br>(b)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1b_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氢原子以单键相连。结构外有方括号，括号外右上角为正号。\"><br>(c)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1c_img.jpg\" alt=\"此路易斯结构式显示两个磷原子，各带一对孤电子对，彼此以单键相连。每个磷原子还与两个氢原子以单键相连。\"><br>(d)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1d_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氧原子以单键相连，每个氧原子各带三对孤电子对。结构外有方括号，括号外右上角为 3 和负号。\"><br>(e)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1e_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。\">"
+    "solution": "（a）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1a_img.jpg\" alt=\"此路易斯结构式显示一个带一对孤电子对的磷原子，与三个氢原子以单键相连。\"><br>（b）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1b_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氢原子以单键相连。结构外有方括号，括号外右上角为正号。\"><br>（c）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1c_img.jpg\" alt=\"此路易斯结构式显示两个磷原子，各带一对孤电子对，彼此以单键相连。每个磷原子还与两个氢原子以单键相连。\"><br>（d）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1d_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氧原子以单键相连，每个氧原子各带三对孤电子对。结构外有方括号，括号外右上角为 3 和负号。\"><br>（e）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise1e_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。\">"
    }
   },
   {
@@ -215,11 +215,11 @@
     "at": "end"
    },
    "cite": "halides",
-   "prompt": "完成并配平下列各化学方程式。（有些情况下，正确答案可能不止一个。）<br>(a) ${\\text{P}}_{4}+\\text{Al}\\;\\longrightarrow$<br>(b) ${\\text{P}}_{4}+\\text{Na}\\;\\longrightarrow$<br>(c) ${\\text{P}}_{4}+{\\text{F}}_{2}\\;\\longrightarrow$<br>(d) ${\\text{P}}_{4}+{\\text{Cl}}_{2}\\;\\longrightarrow$<br>(e) ${\\text{P}}_{4}+{\\text{O}}_{2}\\;\\longrightarrow$<br>(f) ${\\text{P}}_{4}{\\text{O}}_{6}+{\\text{O}}_{2}\\;\\longrightarrow$",
+   "prompt": "完成并配平下列各化学方程式。（有些情况下，正确答案可能不止一个。）<br>（a）${\\text{P}}_{4}+\\text{Al}\\;\\longrightarrow$<br>（b）${\\text{P}}_{4}+\\text{Na}\\;\\longrightarrow$<br>（c）${\\text{P}}_{4}+{\\text{F}}_{2}\\;\\longrightarrow$<br>（d）${\\text{P}}_{4}+{\\text{Cl}}_{2}\\;\\longrightarrow$<br>（e）${\\text{P}}_{4}+{\\text{O}}_{2}\\;\\longrightarrow$<br>（f）${\\text{P}}_{4}{\\text{O}}_{6}+{\\text{O}}_{2}\\;\\longrightarrow$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${\\text{P}}_{4}(s)+\\text{4Al}(s)\\;\\longrightarrow \\;\\text{4AlP}(s);$ (b) ${\\text{P}}_{4}(s)+\\text{12Na}(s)\\;\\longrightarrow \\;{\\text{4Na}}_{3}\\text{P}(s);$ (c) ${\\text{P}}_{4}(s)+{\\text{10F}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PF}}_{5}(l);$ (d) ${\\text{P}}_{4}(s)+{\\text{6Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{3}(l)$ 或 ${\\text{P}}_{4}(s)+{\\text{10Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{5}(l);$ (e) ${\\text{P}}_{4}(s)+{\\text{3O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{6}(s)$ 或 ${\\text{P}}_{4}(s)+{\\text{5O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s);$ (f) ${\\text{P}}_{4}{\\text{O}}_{6}(s)+{\\text{2O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s)$"
+    "solution": "（a）${\\text{P}}_{4}(s)+\\text{4Al}(s)\\;\\longrightarrow \\;\\text{4AlP}(s);$ （b）${\\text{P}}_{4}(s)+\\text{12Na}(s)\\;\\longrightarrow \\;{\\text{4Na}}_{3}\\text{P}(s);$ （c）${\\text{P}}_{4}(s)+{\\text{10F}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PF}}_{5}(l);$ （d）${\\text{P}}_{4}(s)+{\\text{6Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{3}(l)$ 或 ${\\text{P}}_{4}(s)+{\\text{10Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{4PCl}}_{5}(l);$ （e）${\\text{P}}_{4}(s)+{\\text{3O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{6}(s)$ 或 ${\\text{P}}_{4}(s)+{\\text{5O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s);$ （f）${\\text{P}}_{4}{\\text{O}}_{6}(s)+{\\text{2O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s)$"
    }
   },
   {
@@ -276,11 +276,11 @@
     "at": "end"
    },
    "cite": "halides",
-   "prompt": "画出下列各物质的路易斯结构式，并描述其几何构型：<br>(a) ${\\text{PF}}_{4}{}^{+}$<br>(b) PF<sub>5</sub><br>(c) ${\\text{PF}}_{6}{}^{-}$<br>(d) POF<sub>3</sub>",
+   "prompt": "画出下列各物质的路易斯结构式，并描述其几何构型：<br>（a）${\\text{PF}}_{4}{}^{+}$<br>（b）PF<sub>5</sub><br>（c）${\\text{PF}}_{6}{}^{-}$<br>（d）POF<sub>3</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8a_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为正号。结构下方标有“四面体形”。\"><br>(b)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8b_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。结构下方标有“三角双锥形”。\"><br>(c)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8c_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与六个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为负号。结构下方标有“八面体形”。\"><br>(d)<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8d_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与三个氟原子以单键相连，每个氟原子各带三对孤电子对。该磷原子还与一个带两对孤电子对的氧原子以双键相连。结构下方标有“四面体形”。\">"
+    "solution": "（a）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8a_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与四个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为正号。结构下方标有“四面体形”。\"><br>（b）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8b_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与五个氟原子以单键相连，每个氟原子各带三对孤电子对。结构下方标有“三角双锥形”。\"><br>（c）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8c_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与六个氟原子以单键相连，每个氟原子各带三对孤电子对。结构外有方括号，括号外右上角为负号。结构下方标有“八面体形”。\"><br>（d）<img src=\"/media/ch18/CNX_Chem_18_08_Exercise8d_img.jpg\" alt=\"此路易斯结构式显示一个磷原子与三个氟原子以单键相连，每个氟原子各带三对孤电子对。该磷原子还与一个带两对孤电子对的氧原子以双键相连。结构下方标有“四面体形”。\">"
    }
   },
   {
@@ -310,11 +310,11 @@
     "at": "end"
    },
    "cite": "preparation",
-   "prompt": "指出下列各物质中磷的氧化态：<br>(a) NaH<sub>2</sub>PO<sub>3</sub><br>(b) PF<sub>5</sub><br>(c) P<sub>4</sub>O<sub>6</sub><br>(d) K<sub>3</sub>PO<sub>4</sub><br>(e) Na<sub>3</sub>P<br>(f) Na<sub>4</sub>P<sub>2</sub>O<sub>7</sub>",
+   "prompt": "指出下列各物质中磷的氧化态：<br>（a）NaH<sub>2</sub>PO<sub>3</sub><br>（b）PF<sub>5</sub><br>（c）P<sub>4</sub>O<sub>6</sub><br>（d）K<sub>3</sub>PO<sub>4</sub><br>（e）Na<sub>3</sub>P<br>（f）Na<sub>4</sub>P<sub>2</sub>O<sub>7</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) P = 3+; (b) P = 5+; (c) P = 3+; (d) P = 5+; (e) P = 3−; (f) P = 5+"
+    "solution": "（a）P = 3+；（b）P = 5+；（c）P = 3+；（d）P = 5+；（e）P = 3−；（f）P = 5+"
    }
   }
  ],

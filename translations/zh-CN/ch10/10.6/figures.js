@@ -339,7 +339,7 @@ cubicFigure('sim-cubic', ['sc', 'bcc', 'fcc'], 'bcc');
     if (ls.some((b) => b.y > foot)) { ls.forEach((b) => { b.y = Math.min(b.y, foot); }); stack(-1); }
     ls.forEach((b) => { b.e.style.top = b.y + 'px'; });
   };
-  const v = F.view3d(d.stage, { h: 440, dist: 4.6, tilt: 0.35, spin: 'idle', pitch: [-1.4, 1.4], views: [{ label: '正面', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: -0.6, pitch: 0.45 }], onRender: unstack });
+  const v = F.view3d(d.stage, { h: 440, dist: 4.6, tilt: 0.35, spin: 'idle', pitch: [-1.4, 1.4], views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: -0.6, pitch: 0.45 }], onRender: unstack });
   const grp = v.part(0); if (grp) grp.position.y = -0.15;
   const R90 = 90;
   const SYS = {

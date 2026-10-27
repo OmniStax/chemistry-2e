@@ -2,18 +2,18 @@
  "id": "4.2",
  "module": "m68710",
  "chapter": "4",
- "title": "Classifying Chemical Reactions",
- "short": "Classifying Reactions",
- "lead": "Many chemical reactions fall into one of three common classes: precipitation, in which dissolved ions combine to form an insoluble solid; acid-base, in which a hydrogen ion passes from one species to another; and oxidation-reduction, in which one or more elements change in oxidation number. The <span data-concept=\"solubility\">solubility</span> guidelines tell which mixtures of ions give a precipitate, and the half-reaction method balances a redox equation.",
+ "title": "化学反应的分类",
+ "short": "反应的分类",
+ "lead": "许多化学反应属于三大常见类别之一：沉淀反应，即溶解的离子结合生成不溶的固体；酸碱反应，即氢离子从一种物种转移到另一种物种；以及氧化还原反应，即一种或多种元素的氧化数发生变化。<span data-concept=\"solubility\">溶解性</span>规则指出哪些离子混合物会产生沉淀，半反应法则用于配平氧化还原方程式。",
  "objectives": [
-  "Define three common types of chemical reactions (precipitation, acid-base, and oxidation-reduction)",
-  "Classify chemical reactions as one of these three types given appropriate descriptions or chemical equations",
-  "Identify common acids and bases",
-  "Predict the solubility of common inorganic compounds by using solubility rules",
-  "Compute the oxidation states for elements in compounds"
+  "定义三种常见的化学反应类型（沉淀反应、酸碱反应和氧化还原反应）",
+  "根据适当的描述或化学方程式，将化学反应归入这三种类型之一",
+  "识别常见的酸和碱",
+  "利用溶解性规则预测常见无机化合物的溶解性",
+  "计算化合物中各元素的氧化态"
  ],
- "summary_html": "<p>Chemical reactions are classified according to similar patterns of behavior. A large number of important reactions are included in three categories: precipitation, acid-base, and oxidation-reduction (redox). Precipitation reactions involve the formation of one or more insoluble products. Acid-base reactions involve the transfer of hydrogen ions between reactants. Redox reactions involve a change in oxidation number for one or more reactant elements. Writing balanced equations for some redox reactions that occur in aqueous solutions is simplified by using a systematic approach called the half-reaction method.</p>",
- "notes": "The two Link to Learning notes are left out: the microscopic view of strong and weak acids and bases, whose place the choice of gas in Figure 4.5 takes, and a video of a hybrid rocket engine firing; the text of Example 4.7 keeps its printed “(2 × 3+) = 6 +”, and exercises 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38 and 40 of the chapter have no answer in the book’s key and are left out.",
+ "summary_html": "<p>化学反应按相似的行为模式分类。大量重要的反应归入三个类别：沉淀反应、酸碱反应和氧化还原（redox）反应。沉淀反应涉及一种或多种不溶产物的生成。酸碱反应涉及反应物之间氢离子的转移。氧化还原反应涉及一种或多种反应物元素的氧化数变化。对于水溶液中发生的某些氧化还原反应，采用一种称为半反应法的系统方法，可以简化其配平方程式的书写。</p>",
+ "notes": "两个“学习链接”栏目未收入：强酸、弱酸和强碱、弱碱的微观图景（其位置由图 4.5 中对气体的选择取代），以及混合火箭发动机点火的视频；例 4.7 的正文保留其印刷的“(2 × 3+) = 6 +”；本章习题 12、14、16、18、20、22、24、26、28、30、32、34、36、38 和 40 在书后答案中没有给出答案，故未收入。",
  "ai": {
   "text": [
    {
@@ -23,18 +23,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels and concept tags are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the stray “**” after “Sn(s)” in the key of Example 4.6 is dropped. The fifteen unkeyed exercises are classifications, oxidation states or equations to complete and balance, answers that would have to be computed, so they are left out: fs-idp29496096, fs-idp45308224, fs-idm120814704, fs-idp9450288, fs-idp16823936, fs-idp4908480, fs-idp9275200, fs-idm58208656, fs-idm48911936, fs-idm49879312, fs-idp45994720, fs-idp68926672, fs-idp89842528, fs-idp30749376, fs-idp27470448. The exercise on dissolving silver in nitric acid is set as a choice between the two classes it names, and the Check Your Learning of Example 4.5 is checked part by part as four oxidation numbers.",
+ "exercise_notes": "布鲁姆层级和概念标签由 AI 生成。答案取自书后答案和“学习检测”的答案；例 4.6 的书后答案中 “Sn(s)” 后多余的“**”已删去。十五道没有答案的习题是分类、氧化态或需要完成并配平的方程式，答案需要计算得出，故未收入：fs-idp29496096、fs-idp45308224、fs-idm120814704、fs-idp9450288、fs-idp16823936、fs-idp4908480、fs-idp9275200、fs-idm58208656、fs-idm48911936、fs-idm49879312、fs-idp45994720、fs-idp68926672、fs-idp89842528、fs-idp30749376、fs-idp27470448。银溶于硝酸的习题被设为在其所指的两个类别之间选择，而例 4.5 的“学习检测”按四个氧化数逐项核对。",
  "figures": [
   {
    "id": "fig-lead-iodide",
@@ -62,6 +70,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "guideline lines rewrapped inside the stage; notes trimmed to the spectator ions"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -72,7 +85,7 @@
    "originals": [
     "/media/ch04/CNX_Chem_04_02_HClsoln.jpg"
    ],
-   "original_caption": "When hydrogen chloride gas dissolves in water, (a) it reacts as an acid, transferring protons to water molecules to yield (b) hydronium ions (and solvated chloride ions).",
+   "original_caption": "氯化氢气体溶于水时，（a）它作为酸发生反应，把质子转移给水分子，生成（b）水合氢离子（以及溶剂化的氯离子）。",
    "draws": [],
    "conventions": [
     "H",
@@ -90,6 +103,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "HCl note dropped, it repeated the caption"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -346,11 +364,11 @@
     "after": "ex-precipitation"
    },
    "cite": "predict-precipitation",
-   "prompt": "Which solution could be used to precipitate the barium ion, Ba<sup>2+</sup>, in a water sample: sodium chloride, sodium hydroxide, or sodium sulfate? What is the formula for the expected precipitate?",
+   "prompt": "下列哪种溶液可用来沉淀水样中的钡离子 Ba<sup>2+</sup>：氯化钠、氢氧化钠还是硫酸钠？预期生成的沉淀的化学式是什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "sodium sulfate, BaSO<sub>4</sub>"
+    "solution": "硫酸钠，BaSO<sub>4</sub>"
    }
   },
   {
@@ -363,7 +381,7 @@
     "after": "ex-acid-base"
    },
    "cite": "neutralization",
-   "prompt": "Write the net ionic equation representing the neutralization of any strong acid with an ionic hydroxide. (Hint: Consider the ions produced when a strong acid is dissolved in water.)",
+   "prompt": "写出表示任何强酸与离子型氢氧化物发生中和反应的净离子方程式。（提示：考虑强酸溶于水时产生的离子。）",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -380,7 +398,7 @@
     "after": "ex-oxidation-numbers"
    },
    "cite": "oxidation-numbers",
-   "prompt": "Assign oxidation states to the elements whose atoms are underlined in each of the following compounds or ions:\n(a) K<u>N</u>O<sub>3</sub>\n(b) <u>Al</u>H<sub>3</sub>\n(c) $\\underline{\\text{N}}{\\text{H}}_{4}{}^{+}$\n(d) ${\\text{H}}_{2}\\underline{\\text{P}}{\\text{O}}_{4}{}^{-}$",
+   "prompt": "确定下列各化合物或离子中原子带下划线的元素的氧化态：\n（a）K<u>N</u>O<sub>3</sub>\n（b）<u>Al</u>H<sub>3</sub>\n（c）$\\underline{\\text{N}}{\\text{H}}_{4}{}^{+}$\n（d）${\\text{H}}_{2}\\underline{\\text{P}}{\\text{O}}_{4}{}^{-}$",
    "answer": {
     "type": "multi",
     "generated_by": "source",
@@ -388,25 +406,25 @@
      {
       "part": "(a)",
       "value": 5,
-      "hint": "Potassium is +1 and each oxygen is −2, and the sum for the neutral compound is zero."
+      "hint": "钾为 +1，每个氧为 −2，中性化合物的总和为零。"
      },
      {
       "part": "(b)",
       "value": 3,
-      "hint": "Hydrogen combined with a metal is −1."
+      "hint": "与金属结合的氢为 −1。"
      },
      {
       "part": "(c)",
       "value": -3,
-      "hint": "Hydrogen is +1, and the sum equals the charge of the ion, 1+."
+      "hint": "氢为 +1，总和等于该离子的电荷 1+。"
      },
      {
       "part": "(d)",
       "value": 5,
-      "hint": "Hydrogen is +1, oxygen is −2, and the sum equals the charge of the ion, 1−."
+      "hint": "氢为 +1，氧为 −2，总和等于该离子的电荷 1−。"
      }
     ],
-    "solution": "(a) N, +5; (b) Al, +3; (c) N, −3; (d) P, +5"
+    "solution": "（a）N，+5；（b）Al，+3；（c）N，−3；（d）P，+5"
    }
   },
   {
@@ -419,11 +437,11 @@
     "after": "ex-redox"
    },
    "cite": "redox-kinds",
-   "prompt": "This equation describes the production of tin(II) chloride:\n$\\text{Sn}(s)+2\\text{HCl}(g)\\;\\longrightarrow \\;{\\text{SnCl}}_{2}(s)+{\\text{H}}_{2}(g)$\nIs this a redox reaction? If so, provide a more specific name for the reaction if appropriate, and identify the oxidant and reductant.",
+   "prompt": "该方程式描述氯化锡(II)的生成：\n$\\text{Sn}(s)+2\\text{HCl}(g)\\;\\longrightarrow \\;{\\text{SnCl}}_{2}(s)+{\\text{H}}_{2}(g)$\n这是氧化还原反应吗？如果是，请在适当时给出该反应更具体的名称，并指出氧化剂和还原剂。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Yes, a single-replacement reaction. Sn(<em>s</em>) is the reductant, HCl(<em>g</em>) is the oxidant."
+    "solution": "是，属于置换反应。Sn(<em>s</em>) 是还原剂，HCl(<em>g</em>) 是氧化剂。"
    }
   },
   {
@@ -436,7 +454,7 @@
     "after": "ex-half-reaction"
    },
    "cite": "half-reaction",
-   "prompt": "In basic solution, molecular chlorine, Cl<sub>2</sub>, reacts with hydroxide ions, OH<sup>−</sup>, to yield chloride ions, Cl<sup>−</sup>. and chlorate ions, ClO<sub>3</sub><sup>−</sup>.  HINT: This is a <em>disproportionation reaction</em> in which the element chlorine is both oxidized and reduced. Write a balanced equation for this reaction.",
+   "prompt": "在碱性溶液中，分子氯 Cl<sub>2</sub> 与氢氧根离子 OH<sup>−</sup> 反应，生成氯离子 Cl<sup>−</sup>。和氯酸根离子 ClO<sub>3</sub><sup>−</sup>。提示：这是一个<em>歧化反应</em>，其中氯元素既被氧化又被还原。写出该反应配平的方程式。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -452,11 +470,11 @@
     "at": "end"
    },
    "cite": "redox-kinds",
-   "prompt": "Indicate what type, or types, of reaction each of the following represents:\n(a) $\\text{Ca}(s)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;{\\text{CaBr}}_{2}(s)$\n(b) $\\text{Ca}\\;{\\text{(OH)}}_{2}(aq)+2\\text{HBr}(aq)\\;\\longrightarrow \\;{\\text{CaBr}}_{2}(aq)+2{\\text{H}}_{2}\\text{O}(l)$\n(c) ${\\text{C}}_{6}{\\text{H}}_{12}(l)+9{\\text{O}}_{2}(g)\\;\\longrightarrow \\;6{\\text{CO}}_{2}(g)+6{\\text{H}}_{2}\\text{O}(g)$",
+   "prompt": "指出下列各反应分别属于哪种（或哪几种）反应类型：\n（a）$\\text{Ca}(s)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;{\\text{CaBr}}_{2}(s)$\n（b）$\\text{Ca}\\;{\\text{(OH)}}_{2}(aq)+2\\text{HBr}(aq)\\;\\longrightarrow \\;{\\text{CaBr}}_{2}(aq)+2{\\text{H}}_{2}\\text{O}(l)$\n（c）${\\text{C}}_{6}{\\text{H}}_{12}(l)+9{\\text{O}}_{2}(g)\\;\\longrightarrow \\;6{\\text{CO}}_{2}(g)+6{\\text{H}}_{2}\\text{O}(g)$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) oxidation-reduction (addition); (b) acid-base (neutralization); (c) oxidation-reduction (combustion)"
+    "solution": "（a）氧化还原（化合）；（b）酸碱（中和）；（c）氧化还原（燃烧）"
    }
   },
   {
@@ -468,16 +486,16 @@
     "at": "end"
    },
    "cite": "redox-definition",
-   "prompt": "Silver can be separated from gold because silver dissolves in nitric acid while gold does not. Is the dissolution of silver in nitric acid an acid-base reaction or an oxidation-reduction reaction? Explain your answer.",
+   "prompt": "银可以与金分离，因为银溶于硝酸而金不溶。银在硝酸中的溶解是酸碱反应还是氧化还原反应？请解释你的回答。",
    "answer": {
     "type": "choice",
     "generated_by": "source",
     "options": [
-     "an acid-base reaction",
-     "an oxidation-reduction reaction"
+     "酸碱反应",
+     "氧化还原反应"
     ],
     "correct": 1,
-    "solution": "It is an oxidation-reduction reaction because the oxidation state of the silver changes during the reaction."
+    "solution": "这是氧化还原反应，因为反应过程中银的氧化态发生了变化。"
    }
   },
   {
@@ -489,11 +507,11 @@
     "at": "end"
    },
    "cite": "oxidation-numbers",
-   "prompt": "Determine the oxidation states of the elements in the compounds listed. None of the oxygen-containing compounds are peroxides or superoxides.\n(a) H<sub>3</sub>PO<sub>4</sub>\n(b) Al(OH)<sub>3</sub>\n(c) SeO<sub>2</sub>\n(d) KNO<sub>2</sub>\n(e) In<sub>2</sub>S<sub>3</sub>\n(f) P<sub>4</sub>O<sub>6</sub>",
+   "prompt": "确定所列化合物中各元素的氧化态。含氧的化合物都不是过氧化物或超氧化物。\n（a）H<sub>3</sub>PO<sub>4</sub>\n（b）Al(OH)<sub>3</sub>\n（c）SeO<sub>2</sub>\n（d）KNO<sub>2</sub>\n（e）In<sub>2</sub>S<sub>3</sub>\n（f）P<sub>4</sub>O<sub>6</sub>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) H +1, P +5, O −2; (b) Al +3, H +1, O −2; (c) Se +4, O −2; (d) K +1, N +3, O −2; (e) In +3, S −2; (f) P +3, O −2"
+    "solution": "（a）H +1，P +5，O −2；（b）Al +3，H +1，O −2；（c）Se +4，O −2；（d）K +1，N +3，O −2；（e）In +3，S −2；（f）P +3，O −2"
    }
   },
   {
@@ -505,11 +523,11 @@
     "at": "end"
    },
    "cite": "redox-definition",
-   "prompt": "Classify the following as acid-base reactions or oxidation-reduction reactions:\n(a) ${\\text{Na}}_{2}\\text{S}(aq)+2\\text{HCl}(aq)\\;\\longrightarrow \\;2\\text{NaCl}(aq)+{\\text{H}}_{2}\\text{S}(g)$\n(b) $2\\text{Na}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;2\\text{NaCl}(aq)+{\\text{H}}_{2}(g)$\n(c) $\\text{Mg}(s)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{MgCl}}_{2}(s)$\n(d) $\\text{MgO}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{MgCl}}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)$\n(e) ${\\text{K}}_{3}\\text{P}(s)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{K}}_{3}{\\text{PO}}_{4}(s)$\n(f) $3\\text{KOH}(aq)+{\\text{H}}_{3}{\\text{PO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{K}}_{3}{\\text{PO}}_{4}(aq)+3{\\text{H}}_{2}\\text{O}(l)$",
+   "prompt": "将下列反应分类为酸碱反应或氧化还原反应：\n（a）${\\text{Na}}_{2}\\text{S}(aq)+2\\text{HCl}(aq)\\;\\longrightarrow \\;2\\text{NaCl}(aq)+{\\text{H}}_{2}\\text{S}(g)$\n（b）$2\\text{Na}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;2\\text{NaCl}(aq)+{\\text{H}}_{2}(g)$\n（c）$\\text{Mg}(s)+{\\text{Cl}}_{2}(g)\\;\\longrightarrow \\;{\\text{MgCl}}_{2}(s)$\n（d）$\\text{MgO}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{MgCl}}_{2}(aq)+{\\text{H}}_{2}\\text{O}(l)$\n（e）${\\text{K}}_{3}\\text{P}(s)+2{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{K}}_{3}{\\text{PO}}_{4}(s)$\n（f）$3\\text{KOH}(aq)+{\\text{H}}_{3}{\\text{PO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{K}}_{3}{\\text{PO}}_{4}(aq)+3{\\text{H}}_{2}\\text{O}(l)$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) acid-base; (b) oxidation-reduction: Na is oxidized, H<sup>+</sup> is reduced; (c) oxidation-reduction: Mg is oxidized, Cl<sub>2</sub> is reduced; (d) acid-base; (e) oxidation-reduction: P<sup>3−</sup> is oxidized, O<sub>2</sub> is reduced; (f) acid-base"
+    "solution": "（a）酸碱；（b）氧化还原：Na 被氧化，H<sup>+</sup> 被还原；（c）氧化还原：Mg 被氧化，Cl<sub>2</sub> 被还原；（d）酸碱；（e）氧化还原：P<sup>3−</sup> 被氧化，O<sub>2</sub> 被还原；（f）酸碱"
    }
   },
   {
@@ -521,11 +539,11 @@
     "at": "end"
    },
    "cite": "neutralization",
-   "prompt": "Complete and balance the following acid-base equations:\n(a) HCl gas reacts with solid Ca(OH)<sub>2</sub>(<em>s</em>).\n(b) A solution of Sr(OH)<sub>2</sub> is added to a solution of HNO<sub>3</sub>.",
+   "prompt": "完成并配平下列酸碱方程式：\n（a）HCl 气体与固体 Ca(OH)<sub>2</sub>(<em>s</em>) 反应。\n（b）将 Sr(OH)<sub>2</sub> 溶液加入 HNO<sub>3</sub> 溶液中。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $2\\text{HCl}(g)+\\text{Ca}{\\text{(OH)}}_{2}(s)\\;\\longrightarrow \\;{\\text{CaCl}}_{2}(s)+2{\\text{H}}_{2}\\text{O}(l);$ (b) $\\text{Sr}{\\text{(OH)}}_{2}(aq)+2{\\text{HNO}}_{3}(aq)\\;\\longrightarrow \\;\\text{Sr}{({\\text{NO}}_{3})}_{2}(aq)+2{\\text{H}}_{2}\\text{O}(l)$"
+    "solution": "（a）$2\\text{HCl}(g)+\\text{Ca}{\\text{(OH)}}_{2}(s)\\;\\longrightarrow \\;{\\text{CaCl}}_{2}(s)+2{\\text{H}}_{2}\\text{O}(l);$（b）$\\text{Sr}{\\text{(OH)}}_{2}(aq)+2{\\text{HNO}}_{3}(aq)\\;\\longrightarrow \\;\\text{Sr}{({\\text{NO}}_{3})}_{2}(aq)+2{\\text{H}}_{2}\\text{O}(l)$"
    }
   },
   {
@@ -537,11 +555,11 @@
     "at": "end"
    },
    "cite": "redox-kinds",
-   "prompt": "Complete and balance the following oxidation-reduction reactions, which give the highest possible oxidation state for the oxidized atoms.\n(a) $\\text{Al}(s)+{\\text{F}}_{2}(g)\\;\\longrightarrow \\;$\n(b) $\\text{Al}(s)+{\\text{CuBr}}_{2}(aq)\\;\\longrightarrow \\;$ (single displacement)\n(c) ${\\text{P}}_{4}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;$\n(d) $\\text{Ca}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;$ (products are a strong base and a diatomic gas)",
+   "prompt": "完成并配平下列氧化还原反应，这些反应使被氧化的原子达到可能的最高氧化态。\n（a）$\\text{Al}(s)+{\\text{F}}_{2}(g)\\;\\longrightarrow \\;$\n（b）$\\text{Al}(s)+{\\text{CuBr}}_{2}(aq)\\;\\longrightarrow \\;$（置换反应）\n（c）${\\text{P}}_{4}(s)+{\\text{O}}_{2}(g)\\;\\longrightarrow \\;$\n（d）$\\text{Ca}(s)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;$（产物为一种强碱和一种双原子气体）",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $2\\text{Al}(s)+3{\\text{F}}_{2}(g)\\;\\longrightarrow \\;2{\\text{AlF}}_{3}(s);$ (b) $2\\text{Al}(s)+3{\\text{CuBr}}_{2}(aq)\\;\\longrightarrow \\;3\\text{Cu}(s)+2{\\text{AlBr}}_{3}(aq);$ (c) ${\\text{P}}_{4}(s)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s);$ (d) $\\text{Ca}(s)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Ca}{\\text{(OH)}}_{2}(aq)+{\\text{H}}_{2}(g)$"
+    "solution": "（a）$2\\text{Al}(s)+3{\\text{F}}_{2}(g)\\;\\longrightarrow \\;2{\\text{AlF}}_{3}(s);$（b）$2\\text{Al}(s)+3{\\text{CuBr}}_{2}(aq)\\;\\longrightarrow \\;3\\text{Cu}(s)+2{\\text{AlBr}}_{3}(aq);$（c）${\\text{P}}_{4}(s)+5{\\text{O}}_{2}(g)\\;\\longrightarrow \\;{\\text{P}}_{4}{\\text{O}}_{10}(s);$（d）$\\text{Ca}(s)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\text{Ca}{\\text{(OH)}}_{2}(aq)+{\\text{H}}_{2}(g)$"
    }
   },
   {
@@ -553,11 +571,11 @@
     "at": "end"
    },
    "cite": "neutralization",
-   "prompt": "Complete and balance the equations for the following acid-base neutralization reactions. If water is used as a solvent, write the reactants and products as aqueous ions. In some cases, there may be more than one correct answer, depending on the amounts of reactants used.\n(a) $\\text{Mg}{\\text{(OH)}}_{2}(s)+{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;$\n(b) ${\\text{SO}}_{3}(g)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\;\\text{(assume an excess of water and that the product dissolves)}$\n(c) $\\text{SrO}(s)+{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;$",
+   "prompt": "完成并配平下列酸碱中和反应的方程式。如果以水作溶剂，请将反应物和产物写成水溶液中的离子。在某些情况下，根据所用反应物的量，可能有不止一个正确答案。\n（a）$\\text{Mg}{\\text{(OH)}}_{2}(s)+{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;$\n（b）${\\text{SO}}_{3}(g)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;\\;\\text{(假设水过量且产物溶解)}$\n（c）$\\text{SrO}(s)+{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $\\text{Mg}{\\text{(OH)}}_{2}(s)+2{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{Mg}}^{\\text{2+}}(aq)+2{\\text{ClO}}_{4}{}^{\\text{−}}(aq)+2{\\text{H}}_{2}\\text{O}(l);$ (b) ${\\text{SO}}_{3}(g)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{HSO}}_{4}{}^{\\text{−}}(aq),$ (a solution of H<sub>2</sub>SO<sub>4</sub>); (c) $\\text{SrO}(s)+{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;{\\text{SrSO}}_{4}(s)+{\\text{H}}_{2}\\text{O}$"
+    "solution": "（a）$\\text{Mg}{\\text{(OH)}}_{2}(s)+2{\\text{HClO}}_{4}(aq)\\;\\longrightarrow \\;{\\text{Mg}}^{\\text{2+}}(aq)+2{\\text{ClO}}_{4}{}^{\\text{−}}(aq)+2{\\text{H}}_{2}\\text{O}(l);$（b）${\\text{SO}}_{3}(g)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+{\\text{HSO}}_{4}{}^{\\text{−}}(aq),$（H<sub>2</sub>SO<sub>4</sub> 溶液）；（c）$\\text{SrO}(s)+{\\text{H}}_{2}{\\text{SO}}_{4}(l)\\;\\longrightarrow \\;{\\text{SrSO}}_{4}(s)+{\\text{H}}_{2}\\text{O}$"
    }
   },
   {
@@ -569,7 +587,7 @@
     "at": "end"
    },
    "cite": "redox-kinds",
-   "prompt": "The military has experimented with lasers that produce very intense light when fluorine combines explosively with hydrogen. What is the balanced equation for this reaction?",
+   "prompt": "军方曾试验过一种激光器，当氟与氢爆炸性化合时，它会产生非常强的光。这一反应的配平方程式是什么？",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -585,7 +603,7 @@
     "at": "end"
    },
    "cite": "redox-kinds",
-   "prompt": "Great Lakes Chemical Company produces bromine, Br<sub>2</sub>, from bromide salts such as NaBr, in Arkansas brine by treating the brine with chlorine gas. Write a balanced equation for the reaction of NaBr with Cl<sub>2</sub>.",
+   "prompt": "Great Lakes Chemical 公司通过用氯气处理阿肯色州盐水，从 NaBr 等溴化物盐中制取溴 Br<sub>2</sub>。写出 NaBr 与 Cl<sub>2</sub> 反应的配平方程式。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -601,7 +619,7 @@
     "at": "end"
    },
    "cite": "neutralization",
-   "prompt": "Lithium hydroxide may be used to absorb carbon dioxide in enclosed environments, such as manned spacecraft and submarines. Write an equation for the reaction that involves 2 mol of LiOH per 1 mol of CO<sub>2</sub>. (Hint: Water is one of the products.)",
+   "prompt": "氢氧化锂可用于在密闭环境（如载人航天器和潜艇）中吸收二氧化碳。写出每 1 mol CO<sub>2</sub> 对应 2 mol LiOH 的反应的方程式。（提示：水是产物之一。）",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -617,11 +635,11 @@
     "at": "end"
    },
    "cite": "neutralization",
-   "prompt": "Complete and balance the equations of the following reactions, each of which could be used to remove hydrogen sulfide from natural gas:\n(a) $\\text{Ca}{(\\text{OH})}_{2}(s)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;$\n(b) ${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;$",
+   "prompt": "完成并配平下列反应的方程式，其中每个反应都可用于从天然气中除去硫化氢：\n（a）$\\text{Ca}{(\\text{OH})}_{2}(s)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;$\n（b）${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $\\text{Ca}{\\text{(OH)}}_{2}(s)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;\\text{CaS}(s)+2{\\text{H}}_{2}\\text{O}(l);$ (b) ${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;{\\text{Na}}_{2}\\text{S}(aq)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$"
+    "solution": "（a）$\\text{Ca}{\\text{(OH)}}_{2}(s)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;\\text{CaS}(s)+2{\\text{H}}_{2}\\text{O}(l);$（b）${\\text{Na}}_{2}{\\text{CO}}_{3}(aq)+{\\text{H}}_{2}\\text{S}(g)\\;\\longrightarrow \\;{\\text{Na}}_{2}\\text{S}(aq)+{\\text{CO}}_{2}(g)+{\\text{H}}_{2}\\text{O}(l)$"
    }
   },
   {
@@ -633,11 +651,11 @@
     "at": "end"
    },
    "cite": "redox-kinds",
-   "prompt": "Write balanced chemical equations for the reactions used to prepare each of the following compounds from the given starting material(s). In some cases, additional reactants may be required.\n(a) solid ammonium nitrate from gaseous molecular nitrogen via a two-step process (first reduce the nitrogen to ammonia, then neutralize the ammonia with an appropriate acid)\n(b) gaseous hydrogen bromide from liquid molecular bromine via a one-step redox reaction\n(c) gaseous H<sub>2</sub>S from solid Zn and S via a two-step process (first a redox reaction between the starting materials, then reaction of the product with a strong acid)",
+   "prompt": "写出由所给起始原料制备下列各化合物所用反应的配平化学方程式。在某些情况下，可能还需要其他反应物。\n（a）由气态分子氮经两步过程制得固体硝酸铵（先把氮还原为氨，再用适当的酸中和氨）\n（b）由液态分子溴经一步氧化还原反应制得气态溴化氢\n（c）由固体 Zn 和 S 经两步过程制得气态 H<sub>2</sub>S（先使起始原料发生氧化还原反应，再使产物与强酸反应）",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) step 1: ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NH}}_{3}(g\\text{),}$ step 2: ${\\text{NH}}_{3}(g)+{\\text{HNO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{NH}}_{4}{\\text{NO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{NH}}_{4}{\\text{NO}}_{3}(s)\\;\\text{(after drying);}$ (b) ${\\text{H}}_{2}(g)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;2\\text{HBr}(g\\text{);}$ (c) $\\text{Zn}(s)+\\text{S}(s)\\;\\longrightarrow \\;\\text{ZnS}(s)$ and $\\text{ZnS}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{ZnCl}}_{2}(aq)+{\\text{H}}_{2}\\text{S}(g)$"
+    "solution": "（a）第 1 步：${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\;\\longrightarrow \\;2{\\text{NH}}_{3}(g\\text{),}$ 第 2 步：${\\text{NH}}_{3}(g)+{\\text{HNO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{NH}}_{4}{\\text{NO}}_{3}(aq)\\;\\longrightarrow \\;{\\text{NH}}_{4}{\\text{NO}}_{3}(s)\\;\\text{(干燥后);}$ （b）${\\text{H}}_{2}(g)+{\\text{Br}}_{2}(l)\\;\\longrightarrow \\;2\\text{HBr}(g\\text{);}$ （c）$\\text{Zn}(s)+\\text{S}(s)\\;\\longrightarrow \\;\\text{ZnS}(s)$ 和 $\\text{ZnS}(s)+2\\text{HCl}(aq)\\;\\longrightarrow \\;{\\text{ZnCl}}_{2}(aq)+{\\text{H}}_{2}\\text{S}(g)$"
    }
   },
   {
@@ -649,11 +667,11 @@
     "at": "end"
    },
    "cite": "half-reaction",
-   "prompt": "Complete and balance each of the following half-reactions (steps 2–5 in half-reaction method):\n(a) ${\\text{Sn}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Sn}}^{2+}(aq)$\n(b) ${[\\text{Ag}{({\\text{NH}}_{3})}_{2}]}^{\\text{+}}(aq)\\;\\longrightarrow \\;\\text{Ag}(s)+{\\text{NH}}_{3}(aq)$\n(c) ${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\;\\longrightarrow \\;\\text{Hg}(l)+{\\text{Cl}}^{\\text{−}}(aq)$\n(d) ${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{O}}_{2}(g)\\;$ (in acidic solution)\n(e) ${\\text{IO}}_{3}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{I}}_{2}(s)$ (in basic solution)\n(f) ${\\text{SO}}_{3}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{SO}}_{4}{}^{2−}(aq)\\;$ (in acidic solution)\n(g) ${\\text{MnO}}_{4}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)\\;$ (in acidic solution)\n(h) ${\\text{Cl}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{ClO}}_{3}{}^{\\text{−}}(aq)\\;$ (in basic solution)",
+   "prompt": "完成并配平下列各半反应（半反应法中的第 2–5 步）：\n（a）${\\text{Sn}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Sn}}^{2+}(aq)$\n（b）${[\\text{Ag}{({\\text{NH}}_{3})}_{2}]}^{\\text{+}}(aq)\\;\\longrightarrow \\;\\text{Ag}(s)+{\\text{NH}}_{3}(aq)$\n（c）${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)\\;\\longrightarrow \\;\\text{Hg}(l)+{\\text{Cl}}^{\\text{−}}(aq)$\n（d）${\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{O}}_{2}(g)\\;$（在酸性溶液中）\n（e）${\\text{IO}}_{3}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{I}}_{2}(s)$（在碱性溶液中）\n（f）${\\text{SO}}_{3}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{SO}}_{4}{}^{2−}(aq)\\;$（在酸性溶液中）\n（g）${\\text{MnO}}_{4}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)\\;$（在酸性溶液中）\n（h）${\\text{Cl}}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{ClO}}_{3}{}^{\\text{−}}(aq)\\;$（在碱性溶液中）",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${\\text{Sn}}^{4+}(aq)+{\\text{2e}}^{-}\\;\\longrightarrow \\;{\\text{Sn}}^{2+}(aq),$ (b) ${[\\text{Ag}{({\\text{NH}}_{3})}_{2}]}^{\\text{+}}(aq)+{\\text{e}}^{-}\\;\\longrightarrow \\;\\text{Ag}(s)+2{\\text{NH}}_{3}(aq);$ (c) ${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)+2{\\text{e}}^{-}\\;\\longrightarrow \\;2\\text{Hg}(l)+2{\\text{Cl}}^{\\text{−}}(aq);$ (d) $2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{O}}_{2}(g)+4{\\text{H}}^{\\text{+}}(aq)+4{\\text{e}}^{-};$ (e) $6{\\text{H}}_{2}\\text{O}(l)+2{\\text{IO}}_{3}{}^{\\text{−}}(aq)+10{\\text{e}}^{-}\\;\\longrightarrow \\;{\\text{I}}_{2}(s)+12{\\text{OH}}^{\\text{−}}(aq);$ (f) ${\\text{H}}_{2}\\text{O}(l)+{\\text{SO}}_{3}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{SO}}_{4}{}^{2−}(aq)+2{\\text{H}}^{\\text{+}}(aq)+2{\\text{e}}^{-};$ (g) $8{\\text{H}}^{\\text{+}}(aq)+{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+5{\\text{e}}^{-}\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)+4{\\text{H}}_{2}\\text{O}(l);$ (h) ${\\text{Cl}}^{\\text{−}}(aq)+6{\\text{OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\;\\text{Cl}{\\text{O}}_{3}{}^{\\text{−}}(aq)+3{\\text{H}}_{2}\\text{O}(l)+6{\\text{e}}^{-}$"
+    "solution": "（a）${\\text{Sn}}^{4+}(aq)+{\\text{2e}}^{-}\\;\\longrightarrow \\;{\\text{Sn}}^{2+}(aq),$（b）${[\\text{Ag}{({\\text{NH}}_{3})}_{2}]}^{\\text{+}}(aq)+{\\text{e}}^{-}\\;\\longrightarrow \\;\\text{Ag}(s)+2{\\text{NH}}_{3}(aq);$（c）${\\text{Hg}}_{2}{\\text{Cl}}_{2}(s)+2{\\text{e}}^{-}\\;\\longrightarrow \\;2\\text{Hg}(l)+2{\\text{Cl}}^{\\text{−}}(aq);$（d）$2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;{\\text{O}}_{2}(g)+4{\\text{H}}^{\\text{+}}(aq)+4{\\text{e}}^{-};$（e）$6{\\text{H}}_{2}\\text{O}(l)+2{\\text{IO}}_{3}{}^{\\text{−}}(aq)+10{\\text{e}}^{-}\\;\\longrightarrow \\;{\\text{I}}_{2}(s)+12{\\text{OH}}^{\\text{−}}(aq);$（f）${\\text{H}}_{2}\\text{O}(l)+{\\text{SO}}_{3}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{SO}}_{4}{}^{2−}(aq)+2{\\text{H}}^{\\text{+}}(aq)+2{\\text{e}}^{-};$（g）$8{\\text{H}}^{\\text{+}}(aq)+{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+5{\\text{e}}^{-}\\;\\longrightarrow \\;{\\text{Mn}}^{2+}(aq)+4{\\text{H}}_{2}\\text{O}(l);$（h）${\\text{Cl}}^{\\text{−}}(aq)+6{\\text{OH}}^{\\text{−}}(aq)\\;\\longrightarrow \\;\\text{Cl}{\\text{O}}_{3}{}^{\\text{−}}(aq)+3{\\text{H}}_{2}\\text{O}(l)+6{\\text{e}}^{-}$"
    }
   },
   {
@@ -665,11 +683,11 @@
     "at": "end"
    },
    "cite": "half-reaction",
-   "prompt": "Balance each of the following equations according to the half-reaction method:\n(a) ${\\text{Sn}}^{2+}(aq)+{\\text{Cu}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Sn}}^{4+}(aq)+{\\text{Cu}}^{\\text{+}}(aq)$\n(b) ${\\text{H}}_{2}\\text{S}(g)+{\\text{Hg}}_{2}{}^{2+}(aq)\\;\\longrightarrow \\;\\text{H}g(l)+\\text{S}(s)\\;\\text{(in acid)}$\n(c) ${\\text{CN}}^{\\text{−}}(aq)+{\\text{ClO}}_{2}(aq)\\;\\longrightarrow \\;{\\text{CNO}}^{\\text{−}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)\\;\\text{(in acid)}$\n(d) ${\\text{Fe}}^{2+}(aq)+{\\text{Ce}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{3+}(aq)+{\\text{Ce}}^{3+}(aq)$\n(e) $\\text{HBrO}(aq)\\;\\longrightarrow \\;{\\text{Br}}^{\\text{−}}(aq)+{\\text{O}}_{2}(g)\\;\\text{(in acid)}$",
+   "prompt": "按半反应法配平下列各方程式：\n（a）${\\text{Sn}}^{2+}(aq)+{\\text{Cu}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Sn}}^{4+}(aq)+{\\text{Cu}}^{\\text{+}}(aq)$\n（b）${\\text{H}}_{2}\\text{S}(g)+{\\text{Hg}}_{2}{}^{2+}(aq)\\;\\longrightarrow \\;\\text{H}g(l)+\\text{S}(s)\\;\\text{(在酸性介质中)}$\n（c）${\\text{CN}}^{\\text{−}}(aq)+{\\text{ClO}}_{2}(aq)\\;\\longrightarrow \\;{\\text{CNO}}^{\\text{−}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)\\;\\text{(在酸性介质中)}$\n（d）${\\text{Fe}}^{2+}(aq)+{\\text{Ce}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{3+}(aq)+{\\text{Ce}}^{3+}(aq)$\n（e）$\\text{HBrO}(aq)\\;\\longrightarrow \\;{\\text{Br}}^{\\text{−}}(aq)+{\\text{O}}_{2}(g)\\;\\text{(在酸性介质中)}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) ${\\text{Sn}}^{2+}(aq)+2{\\text{Cu}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Sn}}^{4+}(aq)+2{\\text{Cu}}^{\\text{+}}(aq);$ (b) ${\\text{H}}_{2}\\text{S}(g)+{\\text{Hg}}_{2}{}^{2+}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2\\text{Hg}(l)+\\text{S}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq);$ (c) $5{\\text{CN}}^{\\text{−}}(aq)+2{\\text{ClO}}_{2}(aq)+3{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;5{\\text{CNO}}^{\\text{−}}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq);$ (d) ${\\text{Fe}}^{2+}(aq)+{\\text{Ce}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{3+}(aq)+{\\text{Ce}}^{3+}(aq);$ (e) $2\\text{HBrO}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+2{\\text{Br}}^{\\text{−}}(aq)+{\\text{O}}_{2}(g)$"
+    "solution": "（a）${\\text{Sn}}^{2+}(aq)+2{\\text{Cu}}^{2+}(aq)\\;\\longrightarrow \\;{\\text{Sn}}^{4+}(aq)+2{\\text{Cu}}^{\\text{+}}(aq);$（b）${\\text{H}}_{2}\\text{S}(g)+{\\text{Hg}}_{2}{}^{2+}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2\\text{Hg}(l)+\\text{S}(s)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq);$（c）$5{\\text{CN}}^{\\text{−}}(aq)+2{\\text{ClO}}_{2}(aq)+3{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;5{\\text{CNO}}^{\\text{−}}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)+2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq);$（d）${\\text{Fe}}^{2+}(aq)+{\\text{Ce}}^{4+}(aq)\\;\\longrightarrow \\;{\\text{Fe}}^{3+}(aq)+{\\text{Ce}}^{3+}(aq);$（e）$2\\text{HBrO}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{H}}_{3}{\\text{O}}^{\\text{+}}(aq)+2{\\text{Br}}^{\\text{−}}(aq)+{\\text{O}}_{2}(g)$"
    }
   },
   {
@@ -681,11 +699,11 @@
     "at": "end"
    },
    "cite": "half-reaction",
-   "prompt": "Balance each of the following equations according to the half-reaction method:\n(a) ${\\text{MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{NO}}_{2}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{MnO}}_{2}(s)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\;\\text{(in base)}$\n(b) ${\\text{MnO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\text{(in base)}$\n(c) ${\\text{Br}}_{2}(l)+{\\text{SO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Br}}^{\\text{−}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\text{(in acid)}$",
+   "prompt": "按半反应法配平下列各方程式：\n（a）${\\text{MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{NO}}_{2}{}^{\\text{−}}(aq)\\;\\longrightarrow \\;{\\text{MnO}}_{2}(s)+{\\text{NO}}_{3}{}^{\\text{−}}(aq)\\;\\text{(在碱性介质中)}$\n（b）${\\text{MnO}}_{4}{}^{2−}(aq)\\;\\longrightarrow \\;{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\text{(在碱性介质中)}$\n（c）${\\text{Br}}_{2}(l)+{\\text{SO}}_{2}(g)\\;\\longrightarrow \\;{\\text{Br}}^{\\text{−}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)\\;\\text{(在酸性介质中)}$",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) $2{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{3NO}}_{2}{}^{\\text{−}}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{MnO}}_{2}(s)+3{\\text{NO}}_{3}{}^{\\text{−}}(aq)+2{\\text{OH}}^{\\text{−}}(aq);$ (b) $3{\\text{MnO}}_{4}{}^{2−}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+4{\\text{OH}}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\text{(in base)};$ (c) ${\\text{Br}}_{2}(l)+{\\text{SO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;4{\\text{H}}^{\\text{+}}(aq)+2{\\text{Br}}^{\\text{−}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)$"
+    "solution": "（a）$2{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+{\\text{3NO}}_{2}{}^{\\text{−}}(aq)+{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{MnO}}_{2}(s)+3{\\text{NO}}_{3}{}^{\\text{−}}(aq)+2{\\text{OH}}^{\\text{−}}(aq);$（b）$3{\\text{MnO}}_{4}{}^{2−}(aq)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;2{\\text{MnO}}_{4}{}^{\\text{−}}(aq)+4{\\text{OH}}^{\\text{−}}(aq)+{\\text{MnO}}_{2}(s)\\;\\text{(在碱性介质中)};$（c）${\\text{Br}}_{2}(l)+{\\text{SO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)\\;\\longrightarrow \\;4{\\text{H}}^{\\text{+}}(aq)+2{\\text{Br}}^{\\text{−}}(aq)+{\\text{SO}}_{4}{}^{2−}(aq)$"
    }
   }
  ],
@@ -830,21 +848,21 @@
  "referents": [
   {
    "id": "first-solution",
-   "label": "the first solution",
+   "label": "第一种溶液",
    "figures": [
     "sim-precipitation"
    ]
   },
   {
    "id": "second-solution",
-   "label": "the second solution",
+   "label": "第二种溶液",
    "figures": [
     "sim-precipitation"
    ]
   },
   {
    "id": "flask",
-   "label": "the stoppered flask",
+   "label": "带塞烧瓶",
    "figures": [
     "sim-hcl"
    ]

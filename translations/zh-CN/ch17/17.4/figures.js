@@ -269,7 +269,7 @@ const N_OPTS = ['1', '2', '3', '4', '6'].map((v) => ({ value: v, label: v }));
     if (!v.scene || palSig() === sig) return; sig = palSig();
     v.clear(); parts = {};
     const glass = { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide };
-    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.2], PAL.soft), '实验台');
+    v.pickable(F.mesh.box(grp, [0, YB - 0.06, 0], [6.4, 0.1, 2.2], PAL.soft), '工作台');
     for (const [x, who] of [[XA, 'anode'], [XC, 'cathode']]) {
       const b = new T3D.Mesh(new T3D.CylinderGeometry(RB, RB, YT - YB, 40, 1, true), F.mesh.mat(PAL.ink, glass)); b.position.set(x, (YT + YB) / 2, 0); grp.add(b);
       const floor = new T3D.Mesh(new T3D.CircleGeometry(RB, 40), F.mesh.mat(PAL.ink, glass)); floor.rotation.x = -Math.PI / 2; floor.position.set(x, YB + 0.005, 0); grp.add(floor);

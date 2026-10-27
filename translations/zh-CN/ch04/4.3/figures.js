@@ -71,13 +71,13 @@ function route(id, steps) {
   }
   still(d, draw);
 }
-route('fig-route-al', [{ kind: 'n', name: 'moles of Al' }, { kind: 'n', name: 'moles of I_{2}', via: 'stoichiometric factor' }]);
-route('fig-route-propane', [{ kind: 'n', name: 'moles of C_{3}H_{8}' }, { kind: 'n', name: 'moles of CO_{2}', via: 'stoichiometric factor' },
-  { kind: 'N', name: 'molecules of CO_{2}', via: 'Avogadro’s number' }]);
-route('fig-route-naoh', [{ kind: 'm', name: 'mass of Mg(OH)_{2}' }, { kind: 'n', name: 'moles of Mg(OH)_{2}', via: 'molar mass' },
-  { kind: 'n', name: 'moles of NaOH', via: 'stoichiometric factor' }, { kind: 'm', name: 'mass of NaOH', via: 'molar mass' }]);
-route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: 'n', name: 'moles of C_{8}H_{18}', via: 'molar mass' },
-  { kind: 'n', name: 'moles of O_{2}', via: 'stoichiometric factor' }, { kind: 'm', name: 'mass of O_{2}', via: 'molar mass' }]);
+route('fig-route-al', [{ kind: 'n', name: 'Al 的物质的量' }, { kind: 'n', name: 'I_{2} 的物质的量', via: '化学计量因子' }]);
+route('fig-route-propane', [{ kind: 'n', name: 'C_{3}H_{8} 的物质的量' }, { kind: 'n', name: 'CO_{2} 的物质的量', via: '化学计量因子' },
+  { kind: 'N', name: 'CO_{2} 的分子数', via: '阿伏加德罗常数' }]);
+route('fig-route-naoh', [{ kind: 'm', name: 'Mg(OH)_{2} 的质量' }, { kind: 'n', name: 'Mg(OH)_{2} 的物质的量', via: '摩尔质量' },
+  { kind: 'n', name: 'NaOH 的物质的量', via: '化学计量因子' }, { kind: 'm', name: 'NaOH 的质量', via: '摩尔质量' }]);
+route('fig-route-octane', [{ kind: 'm', name: 'C_{8}H_{18} 的质量' }, { kind: 'n', name: 'C_{8}H_{18} 的物质的量', via: '摩尔质量' },
+  { kind: 'n', name: 'O_{2} 的物质的量', via: '化学计量因子' }, { kind: 'm', name: 'O_{2} 的质量', via: '摩尔质量' }]);
 
 /* =====================================================================
    SIM: N2 + 3 H2 -> 2 NH3 counted in molecules, dozens or moles. The
@@ -86,9 +86,9 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
 ===================================================================== */
 (function () {
   const d = sim('sim-ammonia', 440);
-  const H2 = ctl(d.controls, { label: '\\text{H}_2\\ \\text{taken}', cls: '', min: 3, max: 18, step: 3, value: 9, unit: '', dec: 0, aria: 'number of hydrogen molecules that react', detents: [3, 6, 9, 12, 15, 18] });
-  const U = F.choice(d.controls, { label: '\\text{unit}', aria: 'unit of amount', value: 'molecules',
-    options: [{ value: 'molecules', label: 'molecules' }, { value: 'doz', label: 'dozen' }, { value: 'mol', label: 'mol' }] });
+  const H2 = ctl(d.controls, { label: '\\text{H}_2\\ \\text{取用量}', cls: '', min: 3, max: 18, step: 3, value: 9, unit: '', dec: 0, aria: '参与反应的氢分子数', detents: [3, 6, 9, 12, 15, 18] });
+  const U = F.choice(d.controls, { label: '\\text{单位}', aria: '量的单位', value: 'molecules',
+    options: [{ value: 'molecules', label: '分子' }, { value: 'doz', label: '打' }, { value: 'mol', label: 'mol' }] });
   const R = 14, hits = [];
   F.hover(d.stage, () => hits);
   function atom(ctx, x, y, sym, r = R) {
@@ -98,17 +98,17 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
   const pair = (ctx, x, y, sym, name) => { atom(ctx, x - R * 0.8, y, sym); atom(ctx, x + R * 0.8, y, sym); hits.push({ x, y, r: 2 * R, name }); };
   function ammonia(ctx, x, y) {
     [[-1, 0.7], [1, 0.7], [0, -1.1]].forEach(([dx, dy]) => atom(ctx, x + dx * 17, y + dy * 17, 'H', 10));
-    atom(ctx, x, y, 'N', 15); hits.push({ x, y, r: 30, name: 'NH₃, ammonia' });
+    atom(ctx, x, y, 'N', 15); hits.push({ x, y, r: 30, name: 'NH₃，氨' });
   }
   const grid = (n, x0, y0, cols, dx, dy, f) => { for (let i = 0; i < n; i++) f(x0 + (i % cols) * dx, y0 + Math.floor(i / cols) * dy); };
   function draw() {
     const { ctx } = begin(d.c); hits.length = 0;
     const h = H2.v, n2 = h / 3, nh3 = (2 * h) / 3, u = U.value;
-    const word = (k, f) => (u === 'molecules' ? `${k} ${f} molecule${k === 1 ? '' : 's'}` : u === 'doz' ? `${k} doz ${f}` : `${k} mol ${f}`);
+    const word = (k, f) => (u === 'molecules' ? `${k} 个 ${f} 分子` : u === 'doz' ? `${k} 打 ${f}` : `${k} mol ${f}`);
     /* reactants: nitrogen in a column at the left, hydrogen in rows of six beside it */
     const top = 130, row = 56;
-    grid(n2, 80, top, 2, 64, row, (x, y) => pair(ctx, x, y, 'N', 'N₂, nitrogen'));
-    grid(h, 250, top, 6, 70, row, (x, y) => pair(ctx, x, y, 'H', 'H₂, hydrogen'));
+    grid(n2, 80, top, 2, 64, row, (x, y) => pair(ctx, x, y, 'N', 'N₂，氮'));
+    grid(h, 250, top, 6, 70, row, (x, y) => pair(ctx, x, y, 'H', 'H₂，氢'));
     const yLab = top + 3 * row + 44;
     text(ctx, word(n2, 'N_{2}'), 112, yLab, PAL.ink, { size: 20, weight: 600, align: 'center' });
     text(ctx, word(h, 'H_{2}'), 425, yLab, PAL.ink, { size: 20, weight: 600, align: 'center' });
@@ -117,10 +117,11 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
     /* product: ammonia in rows of six */
     grid(nh3, 940, top, 6, 72, row + 14, (x, y) => ammonia(ctx, x, y));
     text(ctx, word(nh3, 'NH_{3}'), 1120, yLab, PAL.ink, { size: 20, weight: 600, align: 'center' });
-    if (u !== 'molecules') text(ctx, u === 'doz' ? 'Each molecule drawn stands for one dozen molecules.' : 'Each molecule drawn stands for one mole of molecules.', 700, 404, PAL.muted, { size: 17, align: 'center' });
-    headline(ctx, `${word(h, 'H_{2}')} react with ${word(n2, 'N_{2}')} to give ${word(nh3, 'NH_{3}')}.`.replace(/^./, (c) => c.toUpperCase()));
-    const unitTex = u === 'molecules' ? '' : u === 'doz' ? '\\text{doz}\\ ' : '\\text{mol}\\ ';
-    const lhs = u === 'mol' ? '\\kn_{\\text{NH}_3}' : u === 'doz' ? '\\text{dozens of NH}_{3}' : '\\text{NH}_3\\ \\text{molecules}';
+    if (u !== 'molecules') text(ctx, u === 'doz' ? '图中每个分子代表一打分子。' : '图中每个分子代表一摩尔分子。', 700, 404, PAL.muted, { size: 17, align: 'center' });
+    const sp = u === 'molecules' ? '' : ' ';
+    headline(ctx, `${word(h, 'H_{2}')}${sp}与 ${word(n2, 'N_{2}')}${sp}反应，生成 ${word(nh3, 'NH_{3}')}。`.replace(/^./, (c) => c.toUpperCase()));
+    const unitTex = u === 'molecules' ? '' : u === 'doz' ? '\\text{打}\\ ' : '\\text{mol}\\ ';
+    const lhs = u === 'mol' ? '\\kn_{\\text{NH}_3}' : u === 'doz' ? '\\text{NH}_{3}\\ \\text{的打数}' : '\\text{NH}_3\\ \\text{分子}';
     const q = (k) => (u === 'mol' ? hue('amount', `${k}\\ \\text{mol}`) : `${k}\\ ${unitTex}`);
     readout(d.readout, `${lhs} = ${q(h)}\\ \\text{H}_{2} \\times \\frac{2\\ ${unitTex}\\text{NH}_3}{3\\ ${unitTex}\\text{H}_2} = ${q(nh3)}\\ \\text{NH}_{3}`);
   }
@@ -139,30 +140,30 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
   const d = sim('sim-flowchart', 560);
   /* molar masses in g/mol as the book's examples use them */
   const SP = {
-    Al: { tex: '\\text{Al}', txt: 'Al', MM: 26.98, unit: 'atoms' },
-    I2: { tex: '\\text{I}_{2}', txt: 'I_{2}', MM: 253.8, unit: 'molecules' },
-    C3H8: { tex: '\\text{C}_3\\text{H}_{8}', txt: 'C_{3}H_{8}', MM: 44.10, unit: 'molecules' },
-    CO2: { tex: '\\text{CO}_{2}', txt: 'CO_{2}', MM: 44.01, unit: 'molecules' },
-    MgOH2: { tex: '\\text{Mg(OH)}_{2}', txt: 'Mg(OH)_{2}', MM: 58.3, unit: 'formula units' },
-    NaOH: { tex: '\\text{NaOH}', txt: 'NaOH', MM: 40.0, unit: 'formula units' },
-    C8H18: { tex: '\\text{C}_8\\text{H}_{18}', txt: 'C_{8}H_{18}', MM: 114.23, unit: 'molecules' },
-    O2: { tex: '\\text{O}_{2}', txt: 'O_{2}', MM: 32.00, unit: 'molecules' },
+    Al: { tex: '\\text{Al}', txt: 'Al', MM: 26.98, unit: '原子' },
+    I2: { tex: '\\text{I}_{2}', txt: 'I_{2}', MM: 253.8, unit: '分子' },
+    C3H8: { tex: '\\text{C}_3\\text{H}_{8}', txt: 'C_{3}H_{8}', MM: 44.10, unit: '分子' },
+    CO2: { tex: '\\text{CO}_{2}', txt: 'CO_{2}', MM: 44.01, unit: '分子' },
+    MgOH2: { tex: '\\text{Mg(OH)}_{2}', txt: 'Mg(OH)_{2}', MM: 58.3, unit: '化学式单元' },
+    NaOH: { tex: '\\text{NaOH}', txt: 'NaOH', MM: 40.0, unit: '化学式单元' },
+    C8H18: { tex: '\\text{C}_8\\text{H}_{18}', txt: 'C_{8}H_{18}', MM: 114.23, unit: '分子' },
+    O2: { tex: '\\text{O}_{2}', txt: 'O_{2}', MM: 32.00, unit: '分子' },
   };
   const EX = {
-    '4.8': { A: 'Al', B: 'I2', cA: 2, cB: 3, give: 'n', want: 'n', value: 0.429, verb: 'reacts with' },
-    '4.9': { A: 'C3H8', B: 'CO2', cA: 1, cB: 3, give: 'n', want: 'N', value: 0.75, verb: 'produces' },
-    '4.10': { A: 'MgOH2', B: 'NaOH', cA: 1, cB: 2, give: 'm', want: 'm', value: 16, verb: 'is produced from' },
-    '4.11': { A: 'C8H18', B: 'O2', cA: 2, cB: 25, give: 'm', want: 'm', value: 702, verb: 'consumes' },
+    '4.8': { A: 'Al', B: 'I2', cA: 2, cB: 3, give: 'n', want: 'n', value: 0.429, say: (G, W) => `${G} 与 ${W} 反应。` },
+    '4.9': { A: 'C3H8', B: 'CO2', cA: 1, cB: 3, give: 'n', want: 'N', value: 0.75, say: (G, W) => `${G} 生成 ${W}。` },
+    '4.10': { A: 'MgOH2', B: 'NaOH', cA: 1, cB: 2, give: 'm', want: 'm', value: 16, say: (G, W) => `${G} 由 ${W} 制得。` },
+    '4.11': { A: 'C8H18', B: 'O2', cA: 2, cB: 25, give: 'm', want: 'm', value: 702, say: (G, W) => `${G} 消耗 ${W}。` },
   };
-  const KINDS = [{ value: 'm', label: 'mass' }, { value: 'n', label: 'moles' }, { value: 'N', label: 'particles' }];
-  const ex = F.select(d.controls, { label: '\\text{example}', aria: 'worked example', value: '4.8',
-    options: Object.keys(EX).map((k) => ({ value: k, label: 'Example ' + k })), onInput: () => load() });
-  const give = F.select(d.controls, { label: '\\text{given (A)}', aria: 'quantity given', value: 'n', options: KINDS, onInput: () => swapGiven() });
-  const want = F.select(d.controls, { label: '\\text{sought (B)}', aria: 'quantity sought', value: 'n', options: KINDS, onInput: () => relight() });
+  const KINDS = [{ value: 'm', label: '质量' }, { value: 'n', label: '物质的量' }, { value: 'N', label: '粒子数' }];
+  const ex = F.select(d.controls, { label: '\\text{例题}', aria: '例题', value: '4.8',
+    options: Object.keys(EX).map((k) => ({ value: k, label: '例 ' + k })), onInput: () => load() });
+  const give = F.select(d.controls, { label: '\\text{已知（A）}', aria: '已知量', value: 'n', options: KINDS, onInput: () => swapGiven() });
+  const want = F.select(d.controls, { label: '\\text{所求（B）}', aria: '所求量', value: 'n', options: KINDS, onInput: () => relight() });
   const S = {
-    m: ctl(d.controls, { label: '\\km_A', cls: 'mass', min: 1, max: 1000, step: 0.5, value: 16, unit: 'g', dec: 1, aria: 'mass of A in grams' }),
-    n: ctl(d.controls, { label: '\\kn_A', cls: 'amount', min: 0.01, max: 10, step: 0.001, value: 0.429, unit: 'mol', dec: 3, aria: 'moles of A' }),
-    N: ctl(d.controls, { label: '\\text{particles of A}', cls: '', min: 0.1, max: 100, step: 0.1, value: 4.5, unit: '× 10²³', dec: 1, aria: 'particles of A in units of ten to the twenty-third' }),
+    m: ctl(d.controls, { label: '\\km_A', cls: 'mass', min: 1, max: 1000, step: 0.5, value: 16, unit: 'g', dec: 1, aria: 'A 的质量，单位为克' }),
+    n: ctl(d.controls, { label: '\\kn_A', cls: 'amount', min: 0.01, max: 10, step: 0.001, value: 0.429, unit: 'mol', dec: 3, aria: 'A 的物质的量' }),
+    N: ctl(d.controls, { label: '\\text{A 的粒子数}', cls: '', min: 0.1, max: 100, step: 0.1, value: 4.5, unit: '× 10²³', dec: 1, aria: 'A 的粒子数，单位为 10 的 23 次方' }),
   };
   const reveal = F.tween(d, 1);
   let shownKind = 'n';
@@ -206,23 +207,23 @@ route('fig-route-octane', [{ kind: 'm', name: 'mass of C_{8}H_{18}' }, { kind: '
       if (hor) text(ctx, lab, mx, my + (side || 22), lit ? PAL.ink : PAL.muted, { size: 15, align: 'center' });
       else text(ctx, lab, mx + 12, my, lit ? PAL.ink : PAL.muted, { size: 15 });
     };
-    edge('vpA', 'mA', 'density'); edge('vsA', 'nA', 'molarity'); edge('mA', 'nA', 'molar mass'); edge('nA', 'NA', 'Avogadro’s number');
-    edge('mB', 'vpB', 'density'); edge('nB', 'vsB', 'molarity'); edge('mB', 'nB', 'molar mass'); edge('nB', 'NB', 'Avogadro’s number');
-    edge('nA', 'nB', 'stoichiometric factor', -24);
-    text(ctx, `${e.cB} mol ${b.txt} per`, 700, 326, PAL.ink, { size: 17, weight: 600, align: 'center' });
-    text(ctx, `${e.cA} mol ${a.txt}`, 700, 348, PAL.ink, { size: 17, weight: 600, align: 'center' });
-    const nm = { vpA: `volume of pure ${a.txt}`, vsA: `volume of ${a.txt} solution`, mA: `mass of ${a.txt}`, nA: `moles of ${a.txt}`, NA: `${a.unit} of ${a.txt}`,
-      vpB: `volume of pure ${b.txt}`, vsB: `volume of ${b.txt} solution`, mB: `mass of ${b.txt}`, nB: `moles of ${b.txt}`, NB: `${b.unit} of ${b.txt}` };
+    edge('vpA', 'mA', '密度'); edge('vsA', 'nA', '物质的量浓度'); edge('mA', 'nA', '摩尔质量'); edge('nA', 'NA', '阿伏加德罗常数');
+    edge('mB', 'vpB', '密度'); edge('nB', 'vsB', '物质的量浓度'); edge('mB', 'nB', '摩尔质量'); edge('nB', 'NB', '阿伏加德罗常数');
+    edge('nA', 'nB', '化学计量因子', -24);
+    text(ctx, `${e.cB} mol ${b.txt}`, 700, 326, PAL.ink, { size: 17, weight: 600, align: 'center' });
+    text(ctx, `每 ${e.cA} mol ${a.txt}`, 700, 348, PAL.ink, { size: 17, weight: 600, align: 'center' });
+    const nm = { vpA: `纯 ${a.txt} 的体积`, vsA: `${a.txt} 溶液的体积`, mA: `${a.txt} 的质量`, nA: `${a.txt} 的物质的量`, NA: `${a.txt} 的${a.unit}数`,
+      vpB: `纯 ${b.txt} 的体积`, vsB: `${b.txt} 溶液的体积`, mB: `${b.txt} 的质量`, nB: `${b.txt} 的物质的量`, NB: `${b.txt} 的${b.unit}数` };
     Object.keys(P).forEach((key) => {
       const kind = key.startsWith('v') ? 'v' : key[0], lit = on.has(key);
       const at = path.indexOf(key), shown = lit && k * steps >= at - 0.02;
       box(ctx, P[key][0], P[key][1], W, HB, kind, nm[key], shown ? txt[kind](val[key]) : '', lit ? 1 : 0);
     });
-    text(ctx, 'substance A: ' + a.txt, 280, 526, F.ref('substance-a'), { size: 20, weight: 600, align: 'center' });
-    text(ctx, 'substance B: ' + b.txt, 1120, 526, F.ref('substance-b'), { size: 20, weight: 600, align: 'center' });
-    const giveTxt = txt[g](val[g + 'A']) + (g === 'N' ? ` ${a.unit} of ` : ' of ') + a.txt;
-    const wantTxt = txt[w](val[w + 'B']) + (w === 'N' ? ` ${b.unit} of ` : ' of ') + b.txt;
-    headline(ctx, e.verb === 'is produced from' ? `${giveTxt} is produced from ${wantTxt}.` : `${giveTxt} ${e.verb} ${wantTxt}.`);
+    text(ctx, '物质 A：' + a.txt, 280, 526, F.ref('substance-a'), { size: 20, weight: 600, align: 'center' });
+    text(ctx, '物质 B：' + b.txt, 1120, 526, F.ref('substance-b'), { size: 20, weight: 600, align: 'center' });
+    const giveTxt = txt[g](val[g + 'A']) + (g === 'N' ? ` 个 ${a.txt} ${a.unit}` : ' ' + a.txt);
+    const wantTxt = txt[w](val[w + 'B']) + (w === 'N' ? ` 个 ${b.txt} ${b.unit}` : ' ' + b.txt);
+    headline(ctx, e.say(giveTxt, wantTxt));
     /* the chain of factors, written with the live numbers */
     const unitsA = { m: `\\text{g}\\ ${a.tex}`, n: `\\text{mol}\\ ${a.tex}`, N: `${a.tex}` };
     const startTex = g === 'N' ? `${sciTex(val.NA)}\\ ${a.tex}` : hue(g === 'm' ? 'mass' : 'amount', `${sciTex(val[g + 'A'])}\\ ${g === 'm' ? '\\text{g}' : '\\text{mol}'}`) + `\\ ${a.tex}`;

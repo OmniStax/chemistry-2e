@@ -32,12 +32,12 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
 (function () {
   const d = sim('sim-heat-flow');
   const v = F.view3d(d.stage, { h: 340, dist: 4.3, tilt: 0.3, spin: 'off', pitch: [-0.3, 1.2], yaw: [-0.9, 0.9],
-    views: [{ label: 'front', yaw: 0, pitch: 0.3 }, { label: 'above', yaw: 0, pitch: 1.2 }] });
+    views: [{ label: '正视', yaw: 0, pitch: 0.3 }, { label: '俯视', yaw: 0, pitch: 1.2 }] });
   const has3 = !!v.scene;
   if (!has3) v.wrap.style.display = 'none';
   const FLAT = has3 ? 0 : 300, cnv = F.makeCanvas(d.stage, 380 + FLAT);
-  const TH = ctl(d.controls, { label: '\\kT_{\\htmlData{ref=sample-h}{\\text{H}}}', cls: 'temperature', min: 0, max: 100, step: 1, value: 80, unit: '°C', dec: 0, aria: 'starting temperature of sample H', onInput: () => cy.reset() });
-  const TL = ctl(d.controls, { label: '\\kT_{\\htmlData{ref=sample-l}{\\text{L}}}', cls: 'temperature', min: 0, max: 100, step: 1, value: 10, unit: '°C', dec: 0, aria: 'starting temperature of sample L', onInput: () => cy.reset() });
+  const TH = ctl(d.controls, { label: '\\kT_{\\htmlData{ref=sample-h}{\\text{H}}}', cls: 'temperature', min: 0, max: 100, step: 1, value: 80, unit: '°C', dec: 0, aria: '样品 H 的初始温度', onInput: () => cy.reset() });
+  const TL = ctl(d.controls, { label: '\\kT_{\\htmlData{ref=sample-l}{\\text{L}}}', cls: 'temperature', min: 0, max: 100, step: 1, value: 10, unit: '°C', dec: 0, aria: '样品 L 的初始温度', onInput: () => cy.reset() });
   const LOOP = 7, TC = 1, SLIDE = 0.6, TAU = 1.1, N = 14, S = 1.3, GAP = 0.7;
   const cy = cycle(() => LOOP, 1.2);
   const mean = () => (TH.v + TL.v) / 2;
@@ -71,9 +71,9 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
   const SAMPLE = ['sample-h', 'sample-l'];
   const palSig = () => [PAL.ink, PAL.panel, PAL.soft, F.el('O'), F.el('H'), C('energy'), ...SAMPLE.map((r) => F.ref(r))].join('|');
   function water(g, who) {
-    const m = new window.THREE.Group(), of = 'a water molecule of sample ' + who, h = 0.912, b = 0.16;
-    v.pickable(F.mesh.sphere(m, [0, 0, 0], 0.085, F.el('O')), 'oxygen atom of ' + of);
-    [-h, h].forEach((q) => { const p = [b * Math.sin(q), b * Math.cos(q), 0]; F.mesh.stick(m, [0, 0, 0], p, 0.022, PAL.ink); v.pickable(F.mesh.sphere(m, p, 0.055, F.el('H')), 'hydrogen atom of ' + of); });
+    const m = new window.THREE.Group(), of = '样品 ' + who + ' 中水分子', h = 0.912, b = 0.16;
+    v.pickable(F.mesh.sphere(m, [0, 0, 0], 0.085, F.el('O')), of + '的氧原子');
+    [-h, h].forEach((q) => { const p = [b * Math.sin(q), b * Math.cos(q), 0]; F.mesh.stick(m, [0, 0, 0], p, 0.022, PAL.ink); v.pickable(F.mesh.sphere(m, p, 0.055, F.el('H')), of + '的氢原子'); });
     g.add(m); return m;
   }
   function build() {
@@ -83,7 +83,7 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     ['H', 'L'].forEach((who, bi) => {
       const g = new window.THREE.Group(); grp.add(g); boxes.push(g);
       const glass = F.mesh.box(g, [0, 0, 0], [S, S, S], PAL.ink, { transparent: true, opacity: 0.07, depthWrite: false, side: window.THREE.DoubleSide });
-      glass.renderOrder = 2; v.pickable(glass, 'sample ' + who + ', a box of water');
+      glass.renderOrder = 2; v.pickable(glass, '样品 ' + who + '，盛水的盒子');
       const rc = F.ref(SAMPLE[bi]);
       g.add(new window.THREE.LineSegments(new window.THREE.EdgesGeometry(new window.THREE.BoxGeometry(S, S, S)), new window.THREE.LineBasicMaterial({ color: new window.THREE.Color(rc) })));
       mols.push(SITES.map(() => water(g, who)));
@@ -92,7 +92,7 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     heat = new window.THREE.Group(); grp.add(heat);
     F.mesh.arrow(heat, [-0.5, 0, 0], [0.5, 0, 0], 0.05, C('energy'));
     heat.position.set(0, S / 2 + 0.18, 0);
-    heatLab = v.label('heat, q', [-0.9, S / 2 + 0.18, 0], grp, -12);
+    heatLab = v.label('热量，q', [-0.9, S / 2 + 0.18, 0], grp, -12);
   }
   function place(t) {
     if (!has3) return;
@@ -125,11 +125,11 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     if (!has3) flat(ctx, t);
     /* the graph: 0 to 7 s by 1, 0 to 100 °C by 20, fixed from the loop and the slider range */
     const box = { l: 160, r: 1300, t: FLAT + 130, b: FLAT + 300 }, ct = C('temperature');
-    const g = axes(ctx, box, [0, LOOP], [0, 100], { xl: 'time (s)', yl: 'temperature (°C)', yc: ct, nx: 7, ny: 5 });
+    const g = axes(ctx, box, [0, LOOP], [0, 100], { xl: '时间（s）', yl: '温度（°C）', yc: ct, nx: 7, ny: 5 });
     line(ctx, g.X(TC), box.t, g.X(TC), box.b, alpha(PAL.ink, 0.35), 2, [4, 8]);
     /* the contact tag in the widest clear band between the two flat traces and the frame */
     const lv = [0, TL.v, TH.v, 100].sort((a, b) => a - b), gi = lv.slice(1).reduce((bi, x, i) => (x - lv[i] > lv[bi + 1] - lv[bi] ? i : bi), 0);
-    text(ctx, 'contact', g.X(TC) + 8, g.Y((lv[gi] + lv[gi + 1]) / 2) + 5, PAL.muted, { size: 16 });
+    text(ctx, '接触', g.X(TC) + 8, g.Y((lv[gi] + lv[gi + 1]) / 2) + 5, PAL.muted, { size: 16 });
     const rH = F.ref('sample-h'), rL = F.ref('sample-l');
     const trace = (T0, col) => { const n = 80, pts = []; for (let i = 0; i <= n; i++) { const s = (t * i) / n; pts.push([g.X(s), g.Y(temp(T0, s))]); } ctx.save(); ctx.strokeStyle = col; ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.beginPath(); pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore(); };
     trace(TH.v, rH); trace(TL.v, rL);
@@ -139,16 +139,16 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     text(ctx, 'L', g.X(t) + 16, g.Y(l) + (apart ? 0 : (h >= l ? 12 : -12)), rL, { size: 20, weight: 600, bg: PAL.panel });
     if (t > TC && Math.abs(dT) < 2) {
       line(ctx, g.X(TC), g.Y(mean()), box.r, g.Y(mean()), alpha(PAL.ink, 0.35), 2, [10, 10]);
-      text(ctx, 'thermal equilibrium', box.r, g.Y(mean()) + (mean() > 80 ? 22 : -18), PAL.muted, { size: 16, align: 'right' });
+      text(ctx, '热平衡', box.r, g.Y(mean()) + (mean() > 80 ? 22 : -18), PAL.muted, { size: 16, align: 'right' });
     }
     const flowing = t >= TC && Math.abs(dT) >= 0.5;
     const hot = dT >= 0 ? 'H' : 'L', cold = dT >= 0 ? 'L' : 'H';
-    const H = t < TC ? `H is at ${fmt(h, 0)} °C and L at ${fmt(l, 0)} °C, and the two are not yet in contact.`
-      : flowing ? `Heat flows from ${hot} to ${cold}: ${hot} has cooled to ${fmt(Math.max(h, l), 0)} °C and ${cold} has warmed to ${fmt(Math.min(h, l), 0)} °C.`
-      : `Both samples are at ${fmt(mean(), 0)} °C, so they are in thermal equilibrium and heat no longer flows.`;
+    const H = t < TC ? `H 为 ${fmt(h, 0)} °C，L 为 ${fmt(l, 0)} °C，两者尚未接触。`
+      : flowing ? `热量从 ${hot} 流向 ${cold}：${hot} 已冷却到 ${fmt(Math.max(h, l), 0)} °C，${cold} 已升温到 ${fmt(Math.min(h, l), 0)} °C。`
+      : `两份样品都处于 ${fmt(mean(), 0)} °C，所以它们处于热平衡，热量不再流动。`;
     topline(ctx, H);
     readout(d.readout, `\\kT_{\\htmlData{ref=sample-h}{\\text{H}}} = ${hue('temperature', fmt(h, 0) + '\\ {}^{\\circ}\\text{C}')} \\qquad \\kT_{\\htmlData{ref=sample-l}{\\text{L}}} = ${hue('temperature', fmt(l, 0) + '\\ {}^{\\circ}\\text{C}')}`,
-      'The molecules are drawn speeding up with temperature far more than they truly do, so that the difference can be seen; their average kinetic energy grows in proportion to the kelvin temperature.', { values: false });
+      '图中分子随温度加快的程度远大于实际情况，以便看出差异；它们的平均动能与开尔文温度成正比。', { values: false });
   }
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
@@ -165,12 +165,12 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
 (function () {
   const d = sim('sim-heating', 520);
   /* Table 5.1: name, formula as figure text, state, specific heat in J/g °C */
-  const SUBS = [['helium', 'He', 'g', 5.193], ['water', 'H_{2}O', 'l', 4.184], ['ethanol', 'C_{2}H_{6}O', 'l', 2.376], ['ice', 'H_{2}O', 's', 2.093], ['water vapor', 'H_{2}O', 'g', 1.864],
-    ['nitrogen', 'N_{2}', 'g', 1.040], ['air', '', 'g', 1.007], ['oxygen', 'O_{2}', 'g', 0.918], ['aluminum', 'Al', 's', 0.897], ['carbon dioxide', 'CO_{2}', 'g', 0.853], ['argon', 'Ar', 'g', 0.522],
-    ['iron', 'Fe', 's', 0.449], ['copper', 'Cu', 's', 0.385], ['lead', 'Pb', 's', 0.130], ['gold', 'Au', 's', 0.129], ['silicon', 'Si', 's', 0.712]];
-  const sub = F.select(d.controls, { label: '\\text{substance}', aria: 'substance heated', value: '11', options: SUBS.map((s, i) => ({ value: String(i), label: s[0] })) });
-  const M = ctl(d.controls, { label: '\\km', cls: 'mass', min: 100, max: 5000, step: 1, value: 808, unit: 'g', dec: 0, aria: 'mass of the sample', detents: [{ v: 808, label: 'small pan' }, { v: 4040, label: 'large pan' }] });
-  const DT = ctl(d.controls, { label: '\\kdT', cls: 'temperature', min: 0, max: 100, step: 0.5, value: 50, unit: '°C', dec: 1, aria: 'temperature change' });
+  const SUBS = [['氦气', 'He', 'g', 5.193], ['水', 'H_{2}O', 'l', 4.184], ['乙醇', 'C_{2}H_{6}O', 'l', 2.376], ['冰', 'H_{2}O', 's', 2.093], ['水蒸气', 'H_{2}O', 'g', 1.864],
+    ['氮气', 'N_{2}', 'g', 1.040], ['空气', '', 'g', 1.007], ['氧气', 'O_{2}', 'g', 0.918], ['铝', 'Al', 's', 0.897], ['二氧化碳', 'CO_{2}', 'g', 0.853], ['氩气', 'Ar', 'g', 0.522],
+    ['铁', 'Fe', 's', 0.449], ['铜', 'Cu', 's', 0.385], ['铅', 'Pb', 's', 0.130], ['金', 'Au', 's', 0.129], ['硅', 'Si', 's', 0.712]];
+  const sub = F.select(d.controls, { label: '\\text{物质}', aria: '被加热的物质', value: '11', options: SUBS.map((s, i) => ({ value: String(i), label: s[0] })) });
+  const M = ctl(d.controls, { label: '\\km', cls: 'mass', min: 100, max: 5000, step: 1, value: 808, unit: 'g', dec: 0, aria: '样品的质量', detents: [{ v: 808, label: '小锅' }, { v: 4040, label: '大锅' }] });
+  const DT = ctl(d.controls, { label: '\\kdT', cls: 'temperature', min: 0, max: 100, step: 0.5, value: 50, unit: '°C', dec: 1, aria: '温度变化' });
   const PANS = [808, 4040], PANREF = ['small-pan', 'large-pan'];
   let hits = []; F.hover(d.stage, () => hits);
   function draw() {
@@ -190,8 +190,8 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     }
     ctx.restore();
     const top = state === 'g' ? base - w * 0.84 - 22 : state === 'l' ? base - hgt - 40 : base - hgt;
-    hits.push({ x: sx, y: (top + base) / 2, r: w / 2, name: fmt(m, 0) + ' g of ' + name + (state === 'g' ? ', a gas in a sealed vessel' : state === 'l' ? ', a liquid in a beaker' : '') });
-    text(ctx, fmt(m, 0) + ' g of ' + name, sx, top - 26, cm, { size: 22, weight: 600, align: 'center' });
+    hits.push({ x: sx, y: (top + base) / 2, r: w / 2, name: fmt(m, 0) + ' g ' + name + (state === 'g' ? '，密封容器中的气体' : state === 'l' ? '，烧杯中的液体' : '') });
+    text(ctx, fmt(m, 0) + ' g ' + name, sx, top - 26, cm, { size: 22, weight: 600, align: 'center' });
     /* the heat arrow: 0 to 100 kJ over 20 to 120 units, past that held at full length */
     const L = 20 + 100 * Math.min(1, q / 100000);
     if (q > 0) arrow(ctx, sx, base + 30 + L, sx, base + 8, ce, 5);
@@ -203,15 +203,15 @@ const sig3 = (x) => { const r = Number(Math.abs(x).toPrecision(3)); return (x < 
     PANS.forEach((pm, pi) => {
       const x1 = ray(c * pm, F.ref(PANREF[pi]), 3, [10, 10]);
       const px = g.X(x1 * 0.8), py = g.Y((c * pm * x1 * 0.8) / 1000);
-      hits.push({ x: px, y: py, r: 14, name: (pm === 808 ? 'the small pan' : 'the large pan') + ', ' + pm + ' g of ' + name + ', C = ' + sig3(c * pm) + ' J/°C' });
+      hits.push({ x: px, y: py, r: 14, name: (pm === 808 ? '小锅' : '大锅') + '，' + pm + ' g ' + name + '，C = ' + sig3(c * pm) + ' J/°C' });
     });
     const xe = ray(Cap, ce, 5);
     line(ctx, g.X(Math.min(dt, 100)), box.b, g.X(Math.min(dt, 100)), g.Y(Math.min(100, q / 1000)), alpha(ct, 0.7), 2, [4, 8]);
     const p = pinned(ctx, box, g.X, g.Y, dt, q / 1000, ce, sig3(q / 1000) + ' kJ');
     const sx2 = g.X(xe * 0.5), sy2 = g.Y((Cap * xe * 0.5) / 1000);
-    label(ctx, 'slope C = ' + sig3(Cap) + ' J/°C', sx2, sy2, { side: xe < 60 ? 'right' : 'above', gap: 26, color: cc, size: 18 });
-    if (!p.out) hits.push({ x: p.x, y: p.y, r: 12, name: 'q = ' + sig3(q) + ' J at ΔT = ' + fmt(dt, 1) + ' °C' });
-    topline(ctx, 'Heating ' + fmt(m, 0) + ' g of ' + name + ' by ' + fmt(dt, 1) + ' °C takes ' + sig3(q / 1000) + ' kJ; its heat capacity is ' + sig3(Cap) + ' J/°C.');
+    label(ctx, '斜率 C = ' + sig3(Cap) + ' J/°C', sx2, sy2, { side: xe < 60 ? 'right' : 'above', gap: 26, color: cc, size: 18 });
+    if (!p.out) hits.push({ x: p.x, y: p.y, r: 12, name: 'q = ' + sig3(q) + ' J（ΔT = ' + fmt(dt, 1) + ' °C 时）' });
+    topline(ctx, '将 ' + fmt(m, 0) + ' g ' + name + '加热 ' + fmt(dt, 1) + ' °C 需要 ' + sig3(q / 1000) + ' kJ；其热容为 ' + sig3(Cap) + ' J/°C。');
     readout(d.readout, `\\kq = \\kcspec \\times \\km \\times \\kdT = ${hue('heat-capacity', fmt(c, 3) + '\\ \\text{J/g}\\,{}^{\\circ}\\text{C}')} \\times ${hue('mass', fmt(m, 0) + '\\ \\text{g}')} \\times ${hue('temperature', fmt(dt, 1) + '\\ {}^{\\circ}\\text{C}')} = ${hue('energy', sig3(q).replace(/,/g, '{,}') + '\\ \\text{J}')}`);
   }
   register(d.fig, { update: () => {}, draw });

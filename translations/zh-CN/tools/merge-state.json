@@ -234,6 +234,8 @@
   },
   "ch13": {
     "symbols": [
+      "K",
+      "Q_c",
       "rate_f",
       "rate_r",
       "[C]",
@@ -249,9 +251,7 @@
       "K_c1",
       "K_c2",
       "\u0394n_gas",
-      "x_ice",
-      "Q_c",
-      "K"
+      "x_ice"
     ],
     "types": [
       "equilibrium-constant"

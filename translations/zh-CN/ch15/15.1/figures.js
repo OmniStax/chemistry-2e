@@ -37,11 +37,11 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   const T3D = window.THREE;
   const d = sim('sim-agcl');
   const v = F.view3d(d.stage, { spin: 'off', h: 520, dist: 7.4, tilt: 0.3, pitch: [0.05, 1.2],
-    views: [{ label: 'front', yaw: 0, pitch: 0.3 }, { label: 'above', yaw: 0, pitch: 1.15 }] });
+    views: [{ label: '正视', yaw: 0, pitch: 0.3 }, { label: '俯视', yaw: 0, pitch: 1.15 }] });
   const grp = v.part(0), strip = F.makeCanvas(d.stage, 250);
   const T = 6, TR = 0.8, RD = 2.5, NEQ = 4, G = Math.sqrt(RD * RD / (NEQ * NEQ));
   const S = 0.2775, Y0 = -0.78, RAD = { Ag: 0.104, Cl: 0.163 };
-  const NAME = { Ag: 'a silver ion, Ag⁺', Cl: 'a chloride ion, Cl⁻' };
+  const NAME = { Ag: '银离子 Ag⁺', Cl: '氯离子 Cl⁻' };
   const R = 1.35, FLOOR = -0.95, SURF = 0.55, TOP = 0.95;
 
   /* the lattice: 4 × 4 × 3 sites, alternating Ag+ and Cl- */
@@ -130,18 +130,18 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   function build() {
     if (palSig() === sig) return; sig = palSig();
     v.clear();
-    v.pickable(F.mesh.box(grp, [0, FLOOR - 0.08, 0], [3.6, 0.06, 3.0], PAL.soft), 'the bench');
+    v.pickable(F.mesh.box(grp, [0, FLOOR - 0.08, 0], [3.6, 0.06, 3.0], PAL.soft), '工作台');
     const glass = new T3D.Mesh(new T3D.CylinderGeometry(R, R, TOP - FLOOR, 48, 1, true), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.1, depthWrite: false, side: T3D.DoubleSide }));
-    glass.position.set(0, (TOP + FLOOR) / 2, 0); grp.add(glass); v.pickable(glass, 'the beaker');
+    glass.position.set(0, (TOP + FLOOR) / 2, 0); grp.add(glass); v.pickable(glass, '烧杯');
     const water = new T3D.Mesh(new T3D.CylinderGeometry(R - 0.01, R - 0.01, SURF - FLOOR, 48), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.05, depthWrite: false }));
     water.position.set(0, (SURF + FLOOR) / 2, 0); grp.add(water);
     const base = new T3D.Mesh(new T3D.CylinderGeometry(R, R, 0.03, 48), F.mesh.mat(PAL.ink, { transparent: true, opacity: 0.18 }));
     base.position.set(0, FLOOR - 0.015, 0); grp.add(base);
     ionMesh = ions.map((ion) => v.pickable(F.mesh.sphere(grp, sites[ion.home].p, RAD[ion.kind], F.el(ion.kind)), NAME[ion.kind]));
     waterMesh = waters.map(() => {
-      const o = v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.12, F.el('O')), 'a water molecule, H₂O');
-      const h1 = v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.075, F.el('H')), 'a water molecule, H₂O');
-      const h2 = v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.075, F.el('H')), 'a water molecule, H₂O');
+      const o = v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.12, F.el('O')), '水分子 H₂O');
+      const h1 = v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.075, F.el('H')), '水分子 H₂O');
+      const h2 = v.pickable(F.mesh.sphere(grp, [0, 0, 0], 0.075, F.el('H')), '水分子 H₂O');
       return [o, h1, h2];
     });
   }
@@ -150,7 +150,7 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   const B = { l: 190, r: 980, t: 78, b: 222 };
   function drawStrip(t) {
     const { ctx } = begin(strip);
-    const legend = [['Ag', 'Ag⁺ ion', RAD.Ag], ['Cl', 'Cl⁻ ion', RAD.Cl], ['O', 'water molecule', 0.12]];
+    const legend = [['Ag', 'Ag⁺ 离子', RAD.Ag], ['Cl', 'Cl⁻ 离子', RAD.Cl], ['O', '水分子', 0.12]];
     legend.forEach(([s, name, r], i) => {
       const x = 230 + i * 260, y = 30, rr = 70 * r;
       ctx.save(); ctx.beginPath(); ctx.arc(x, y, rr, 0, TAU); ctx.fillStyle = F.el(s); ctx.fill(); ctx.lineWidth = 1.5; ctx.strokeStyle = alpha(PAL.ink, 0.45); ctx.stroke();
@@ -161,8 +161,8 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     const X = (s) => B.l + (s / T) * (B.r - B.l), Y = (n) => B.b - (n / 16) * (B.b - B.t);
     line(ctx, B.l, B.b, B.r, B.b, PAL.muted, 2); line(ctx, B.l, B.t, B.l, B.b, PAL.muted, 2);
     [0, 4, 8, 12, 16].forEach((n) => { line(ctx, B.l - 6, Y(n), B.l, Y(n), PAL.muted, 2); text(ctx, String(n), B.l - 12, Y(n), PAL.muted, { size: 16, align: 'right' }); });
-    text(ctx, 'ion pairs', B.l - 52, B.t - 22, PAL.ink, { size: 17, weight: 600, align: 'center' });
-    text(ctx, 'time →', B.r, B.b + 18, PAL.muted, { size: 16, align: 'right' });
+    text(ctx, '离子对', B.l - 52, B.t - 22, PAL.ink, { size: 17, weight: 600, align: 'center' });
+    text(ctx, '时间 →', B.r, B.b + 18, PAL.muted, { size: 16, align: 'right' });
     const steps = (times, upto, dash) => {
       ctx.save(); ctx.strokeStyle = dash ? PAL.muted : PAL.ink; ctx.lineWidth = 4; if (dash) ctx.setLineDash([10, 8]);
       ctx.beginPath(); ctx.moveTo(X(0), Y(0)); let n = 0;
@@ -174,23 +174,23 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     line(ctx, X(t), B.t, X(t), B.b, alpha(PAL.ink, 0.25), 2, [4, 8]);
     if (D - P > 0) F.vbracket(ctx, X(t) + 10, Y(D), Y(P), PAL.ink, '', 1);
     const L = 1030;
-    line(ctx, L, 104, L + 44, 104, PAL.ink, 4); text(ctx, `dissolved, ${D}`, L + 58, 104, PAL.ink, { size: 18 });
-    line(ctx, L, 146, L + 44, 146, PAL.muted, 4, [10, 8]); text(ctx, `returned, ${P}`, L + 58, 146, PAL.ink, { size: 18 });
-    F.vbracket(ctx, L + 22, 172, 204, PAL.ink, '', 1); text(ctx, `in solution, ${D - P}`, L + 58, 188, PAL.ink, { size: 18 });
+    line(ctx, L, 104, L + 44, 104, PAL.ink, 4); text(ctx, `已溶解，${D}`, L + 58, 104, PAL.ink, { size: 18 });
+    line(ctx, L, 146, L + 44, 146, PAL.muted, 4, [10, 8]); text(ctx, `已返回，${P}`, L + 58, 146, PAL.ink, { size: 18 });
+    F.vbracket(ctx, L + 22, 172, 204, PAL.ink, '', 1); text(ctx, `在溶液中，${D - P}`, L + 58, 188, PAL.ink, { size: 18 });
   }
   function draw() {
     build();
     const t = cy.now();
     ions.forEach((ion, i) => { const p = where(ion, t); ionMesh[i].position.set(p[0], p[1], p[2]); });
     waters.forEach((m, i) => wpos(m, t).forEach((p, j) => waterMesh[i][j].position.set(p[0], p[1], p[2])));
-    v.headline(nSmooth(t) < 0.95 * NEQ ? 'Ag⁺ and Cl⁻ ions leave the solid faster than they return.' : 'Ions now leave the solid and return to it at the same rate: the solution is saturated.');
+    v.headline(nSmooth(t) < 0.95 * NEQ ? 'Ag⁺ 和 Cl⁻ 离子离开固体的速度快于返回的速度。' : '现在离子离开固体与返回固体的速率相同：溶液已饱和。');
     v.invalidate();
     drawStrip(t);
     ro.set(SAT, NOTE, { values: false });
   }
   const ro = F.readout(d);
   const SAT = `\\kKsp = [\\text{Ag}^{+}][\\text{Cl}^{-}] = (${hue('concentration', '1.26 \\times 10^{-5}')})(${hue('concentration', '1.26 \\times 10^{-5}')}) = ${hue('equilibrium-constant', '1.6 \\times 10^{-10}')}`;
-  const NOTE = 'A saturated solution holds one Ag⁺ ion for every 4.4 million water molecules; the beaker draws one for every five.';
+  const NOTE = '饱和溶液中每 440 万个水分子含有一个 Ag⁺ 离子；烧杯中的图示是每五个水分子画一个。';
   register(d.fig, { update: (dt) => cy.step(dt, () => 1), draw });
 })();
 
@@ -212,17 +212,17 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
   const KS = { cl: 1.6e-10, br: 5.0e-13 }, LK = { cl: Math.log10(1.6e-10), br: Math.log10(5.0e-13) };
   const START = { one: { a: -4, c: -4, r: -4 }, two: { a: -9, c: -1, r: -4 } };
   const pick = F.choice(d.controls, {
-    label: '\\text{mixture}', key: 'mixture', aria: 'the mixture of ions', value: 'one',
-    options: [{ value: 'one', label: 'AgCl' }, { value: 'two', label: 'AgCl and AgBr' }],
+    label: '\\text{混合物}', key: 'mixture', aria: '离子的混合物', value: 'one',
+    options: [{ value: 'one', label: 'AgCl' }, { value: 'two', label: 'AgCl 和 AgBr' }],
     onInput: (m) => { const s = START[m]; ag.set(s.a); cl.set(s.c); br.set(s.r); br.show(m === 'two'); [ag, cl, br].forEach((h) => h.refresh()); draw(); },
   });
   const ag = ctl(d.controls, { label: '[\\text{Ag}^{+}]', cls: 'concentration', key: 'ag', min: -12, max: -2, step: 0.01, value: -4, unit: 'M', dec: 2,
-    aria: 'the silver ion concentration, on a logarithmic scale',
+    aria: '银离子浓度，对数标度',
     specials: [{ at: () => LK.cl - cl.v, label: 'AgCl' }, { at: () => (pick.value === 'two' ? LK.br - br.v : null), label: 'AgBr' }], onInput: () => draw() });
   const cl = ctl(d.controls, { label: '[\\text{Cl}^{-}]', cls: 'concentration', key: 'cl', min: -10, max: 0, step: 0.01, value: -4, unit: 'M', dec: 2,
-    aria: 'the chloride ion concentration, on a logarithmic scale', specials: [{ at: () => LK.cl - ag.v, label: 'saturated' }], onInput: () => draw() });
+    aria: '氯离子浓度，对数标度', specials: [{ at: () => LK.cl - ag.v, label: '饱和' }], onInput: () => draw() });
   const br = ctl(d.controls, { label: '[\\text{Br}^{-}]', cls: 'concentration', key: 'br', min: -10, max: 0, step: 0.01, value: -4, unit: 'M', dec: 2,
-    aria: 'the bromide ion concentration, on a logarithmic scale', specials: [{ at: () => LK.br - ag.v, label: 'saturated' }], onInput: () => draw() });
+    aria: '溴离子浓度，对数标度', specials: [{ at: () => LK.br - ag.v, label: '饱和' }], onInput: () => draw() });
   br.show(false, { ms: 0 });
   const box = (h) => h.el.querySelector('.ctl-val');
   const ro = F.readout(d);
@@ -246,16 +246,16 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
       if (how === '>') {
         const u = ((a + c) - Math.sqrt((a - c) ** 2 + 4 * KS.cl)) / 2, fa = sciText(a - u), fc = sciText(c - u);
         const ratio = q / KS.cl;
-        head = `$\\kQsp$ is ${ratio >= 100 ? sciText(ratio) : Math.round(ratio)} times $\\kKsp$, so AgCl precipitates until ` + (fa === fc ? `[Ag⁺] and [Cl⁻] fall to ${fa} M.` : `[Ag⁺] falls to ${fa} M and [Cl⁻] to ${fc} M.`);
-      } else if (how === '=') head = '$\\kQsp = \\kKsp$: the solution is saturated, and nothing precipitates.';
-      else head = `$\\kQsp$ is ${q / KS.cl >= 0.01 ? String(+(100 * q / KS.cl).toPrecision(2)) + '%' : 'less than 1%'} of $\\kKsp$, so no precipitate forms.`;
+        head = `$\\kQsp$ 是 $\\kKsp$ 的 ${ratio >= 100 ? sciText(ratio) : Math.round(ratio)} 倍，所以 AgCl 沉淀，直到 ` + (fa === fc ? `[Ag⁺] 和 [Cl⁻] 降到 ${fa} M。` : `[Ag⁺] 降到 ${fa} M，[Cl⁻] 降到 ${fc} M。`);
+      } else if (how === '=') head = '$\\kQsp = \\kKsp$：溶液饱和，没有沉淀生成。';
+      else head = `$\\kQsp$ 为 $\\kKsp$ 的 ${q / KS.cl >= 0.01 ? String(+(100 * q / KS.cl).toPrecision(2)) + '%' : '不到 1%'}，所以不生成沉淀。`;
     } else {
       const tc = LK.cl - cl.v, tb = LK.br - br.v, first = tc <= tb ? 'cl' : 'br';
       const name = { cl: 'AgCl', br: 'AgBr' }, th = { cl: sciText(10 ** tc), br: sciText(10 ** tb) }, other = first === 'cl' ? 'br' : 'cl';
       const tf = first === 'cl' ? tc : tb, to = first === 'cl' ? tb : tc;
-      head = ag.v < tf - 0.005 ? `Neither salt precipitates yet: ${name[first]} begins at [Ag⁺] = ${th[first]} M, ${name[other]} at ${th[other]} M.`
-        : ag.v < to - 0.005 ? `${name[first]} precipitates; ${name[other]} waits until [Ag⁺] reaches ${th[other]} M.`
-          : `Both salts precipitate; ${name[first]} began first, at [Ag⁺] = ${th[first]} M.`;
+      head = ag.v < tf - 0.005 ? `两种盐都还没有沉淀：${name[first]} 在 [Ag⁺] = ${th[first]} M 时开始沉淀，${name[other]} 在 ${th[other]} M 时开始沉淀。`
+        : ag.v < to - 0.005 ? `${name[first]} 沉淀；${name[other]} 要等到 [Ag⁺] 达到 ${th[other]} M。`
+          : `两种盐都沉淀；${name[first]} 先开始，此时 [Ag⁺] = ${th[first]} M。`;
     }
     const lines = topline(ctx, head);
     const lab = F.labeller(ctx, H, { headline: lines });
@@ -278,8 +278,8 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
     const [c0, c1] = seg(LK.cl);
     line(ctx, X(c0), Y(LK.cl - c0), X(c1), Y(LK.cl - c1), colCl, 5);
     if (aBr > 0) F.faded(ctx, aBr, [0, 0], () => { const [b0, b1] = seg(LK.br); line(ctx, X(b0), Y(LK.br - b0), X(b1), Y(LK.br - b1), colBr, 5); });
-    text(ctx, 'precipitate', X(-3.2), Y(-1.2), PAL.muted, { size: 18, align: 'center' });
-    text(ctx, 'no precipitate', X(-10.6), Y(-10.8), PAL.muted, { size: 18, align: 'center' });
+    text(ctx, '生成沉淀', X(-3.2), Y(-1.2), PAL.muted, { size: 18, align: 'center' });
+    text(ctx, '不生成沉淀', X(-10.6), Y(-10.8), PAL.muted, { size: 18, align: 'center' });
     lab.block(X(-3.2) - 60, Y(-1.2) - 14, X(-3.2) + 60, Y(-1.2) + 14);
     lab.block(X(-10.6) - 80, Y(-10.8) - 14, X(-10.6) + 80, Y(-10.8) + 14);
 
@@ -294,10 +294,10 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
         pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y))); ctx.stroke(); ctx.restore();
         const [ex, ey] = pts[pts.length - 1];
         dot(ctx, ex, ey, PAL.ink, true, 9);
-        hits.push({ x: ex, y: ey, r: 14, name: `after precipitation: [Ag⁺] = ${sciText(a - uMax)} M, [Cl⁻] = ${sciText(c - uMax)} M` });
+        hits.push({ x: ex, y: ey, r: 14, name: `沉淀之后：[Ag⁺] = ${sciText(a - uMax)} M，[Cl⁻] = ${sciText(c - uMax)} M` });
       }
       dot(ctx, X(xa), Y(cl.v), PAL.ink, !above, 10);
-      hits.push({ x: X(xa), y: Y(cl.v), r: 14, name: `the mixture: [Ag⁺] = ${sciText(a)} M, [Cl⁻] = ${sciText(c)} M` });
+      hits.push({ x: X(xa), y: Y(cl.v), r: 14, name: `混合物：[Ag⁺] = ${sciText(a)} M，[Cl⁻] = ${sciText(c)} M` });
     } else {
       line(ctx, X(xa), G.t, X(xa), G.b, alpha(C('concentration'), 0.45), 2.5, [4, 8]);
       [['cl', cl.v, colCl, 'AgCl', 'Cl⁻'], ['br', br.v, colBr, 'AgBr', 'Br⁻']].forEach(([k, ly, col, salt, ion]) => {
@@ -305,11 +305,11 @@ function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>>
         if (xt >= XR[0] && xt <= XR[1]) {
           line(ctx, X(xt), Y(ly), X(xt), G.b, alpha(col, 0.7), 2.5, [10, 8]);
           dot(ctx, X(xt), G.b, col, true, 6);
-          hits.push({ x: X(xt), y: G.b, r: 12, name: `${salt} begins to precipitate at [Ag⁺] = ${sciText(10 ** xt)} M` });
+          hits.push({ x: X(xt), y: G.b, r: 12, name: `${salt} 在 [Ag⁺] = ${sciText(10 ** xt)} M 时开始沉淀` });
         }
         const on = xa >= xt - 0.005;
         dot(ctx, X(xa), Y(ly), col, on, 10);
-        hits.push({ x: X(xa), y: Y(ly), r: 14, name: `${ion} at ${sciText(10 ** ly)} M: ${salt} ${on ? 'precipitates' : 'does not precipitate'}` });
+        hits.push({ x: X(xa), y: Y(ly), r: 14, name: `${ion} 为 ${sciText(10 ** ly)} M：${salt} ${on ? '沉淀' : '不沉淀'}` });
       });
     }
     hits.forEach((h) => lab.block(h.x - 14, h.y - 14, h.x + 14, h.y + 14));

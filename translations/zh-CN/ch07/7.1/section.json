@@ -292,7 +292,7 @@
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "（a）[Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>；（b）[Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>6</sup>；（c）1<em>s</em><sup>2</sup>；（d）[Kr]4<em>d</em><sup>10</sup>；（e）[He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（f）[Ar]3<em>d</em><sup>10</sup>；（g）1<em>s</em><sup>2</sup>；（h）[He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（i）[Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>；（j）[Ar]3<em>d</em><sup>7</sup>；（k）[Ar]3<em>d</em><sup>6</sup>，（l）[Ar]3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>"
+    "solution": "（a）[Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>；（b）[Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>6</sup>；（c）1<em>s</em><sup>2</sup>；（d）[Kr]4<em>d</em><sup>10</sup>；（e）[He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（f）[Ar]3<em>d</em><sup>10</sup>；（g）1<em>s</em><sup>2</sup>；（h）[He]2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（i）[Kr]4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>；（j）[Ar]3<em>d</em><sup>7</sup>；（k）[Ar]3<em>d</em><sup>6</sup>；（l）[Ar]3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>"
    }
   },
   {
@@ -324,7 +324,7 @@
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "商品标签上常见的六种离子化合物是氯化钠 NaCl（食盐）、氟化钠 NaF（牙膏）、碘化钾 KI（加碘盐）、碳酸钙 CaCO<sub>3</sub>（抗酸药片）、碳酸氢钠 NaHCO<sub>3</sub>（小苏打）和氢氧化镁 Mg(OH)<sub>2</sub>（镁乳）。每一种都是由金属阳离子与非金属阴离子或多原子阴离子结合而成，每个化学式都是使电荷相互抵消的离子的最简比。Na<sup>+</sup> 与 Cl<sup>−</sup>、Na<sup>+</sup> 与 F<sup>−</sup>、K<sup>+</sup> 与 I<sup>−</sup> 都是一比一平衡。Ca<sup>2+</sup> 与 ${\\text{CO}}_{3}{}^{\\text{2−}}$ 也是一比一平衡，Na<sup>+</sup> 与 ${\\text{HCO}}_{3}{}^{\\text{−}}$ 同样如此。Mg<sup>2+</sup> 需要两个 OH<sup>−</sup> 离子，2+ + 2(1−) = 0，所以氢氧化物写在括号里，下标为 2。"
+    "solution": "商品标签上常见的六种离子化合物是氯化钠 NaCl（食盐）、氟化钠 NaF（牙膏）、碘化钾 KI（加碘盐）、碳酸钙 CaCO<sub>3</sub>（抗酸药片）、碳酸氢钠 NaHCO<sub>3</sub>（小苏打）和氢氧化镁 Mg(OH)<sub>2</sub>（镁乳）。每一种都是由金属阳离子与非金属阴离子或多原子阴离子结合而成，每个化学式都是使电荷相互抵消的离子的最简比。Na<sup>+</sup> 与 Cl<sup>−</sup>、Na<sup>+</sup> 与 F<sup>−</sup>、K<sup>+</sup> 与 I<sup>−</sup> 都是一比一平衡。Ca<sup>2+</sup> 与 ${\\text{CO}}_{3}{}^{\\text{2−}}$ 也是一比一平衡，Na<sup>+</sup> 与 ${\\text{HCO}}_{3}{}^{\\text{−}}$ 同样如此。Mg<sup>2+</sup> 需要两个 OH<sup>−</sup> 离子，2+ + 2(1−) = 0，所以氢氧根写在括号里，下标为 2。"
    }
   },
   {

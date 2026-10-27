@@ -206,7 +206,7 @@ const WORDS = ['零', '一', '两', '三', '四', '五', '六'];
     const w = (n) => WORDS[n], ionW = (n) => (n === 1 ? '' : '');
     headline(ctx, `${w(np)}个 ${P.f}${chargeSup(P.q)} 离子${ionW(np)}和${w(nn)}个 ${N.f}${chargeSup(N.q)} 离子${ionW(nn)}带有${w(tot)}个正电荷和${w(tot)}个负电荷，所以化学式是 ${formula}。`);
     const t = `${np} \\times (\\htmlClass{kv-charge}{+${qp}}) + ${nn} \\times (\\htmlClass{kv-charge}{-${qn}}) = \\htmlClass{kv-charge}{+${tot}} \\htmlClass{kv-charge}{-${tot}} = \\htmlClass{kv-charge}{0}`;
-    const small = `该化合物由${P.name}和${N.name}构成${N.poly && nn > 1 ? '，它需要多于一个，所以放在括号中' : ''}。`;
+    const small = `该化合物由${P.name}和${N.name}构成${N.poly && nn > 1 ? '；后者需要不止一个，所以放在括号中' : ''}。`;
     if (t + small !== last) { last = t + small; readout(d.readout, t, small); }
   }
   register(d.fig, { update: () => {}, draw });

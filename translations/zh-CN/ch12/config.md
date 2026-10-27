@@ -50,7 +50,7 @@ became one row each under "Every page".
 | ch12/12.1/text.html | "approximately 30 seconds" (spans `time` > `second`) | 大约 30 秒, the `second` span on 秒 inside the `time` span | nested spans kept |
 | ch12/12.1/section.json | e5 `answer.parts[].part` (English labels such as "(a) average rate, 0 to 10 s") and cyl2 parts | kept English byte for byte | translate.md 5 keeps `part`; the same open question as ch01/1.4 and 1.6 (owner to decide) |
 | ch12/12.1/section.json | e5 prompt "a graph of time versus [A]" | 由时间对 [A] 的图, as printed (time on the horizontal axis) | the book's own wording, not improved |
-| ch12/12.1/section.json | e2 solution: "the minus sign makes its term a positive rate", "oxygen appears 3/2 times as fast" | translated with 速度 for "as fast" (所以氧出现的速度是臭氧消失速度的 3/2 倍) | ordinary adverb of speed, not the quantity rate |
+| ch12/12.1/section.json | e2 solution: "the minus sign makes its term a positive rate", "oxygen appears 3/2 times as fast" | translated with 速度 for "as fast" (所以氧气出现的速度是臭氧消失速度的 3/2 倍) | ordinary adverb of speed, not the quantity rate |
 | ch12/12.1/figures.js | table head `'rate'` | 速率 | the word in a column head; the unit string stays |
 | ch12/12.1/figures.js | legend and topline sentences with `$\\kt_{2}$`, `$\\kt_{1}$` | the sentences are rewritten in Chinese word order with the same slots and TeX | English sentence frame (4.1) |
 | ch12/12.1/section.json | e3 solution `\text{rate}` | written `\text{速率}` | word in \text{} is translated; the rest of the TeX (incl. the key's CIF₃) kept as printed |
@@ -141,13 +141,13 @@ became one row each under "Every page".
 | ch12/12.5/text.html | `data-type="energy"` span "the activation energy for the reaction" (Example 12.13) | span wraps 该反应的活化能, with the inner `activation-energy` span on 活化能; the question word follows outside (是多少) | Chinese word order of "What is X?" |
 | ch12/12.5/text.html | "postulates 2 and 3" | 假设 2 和假设 3; heading "Postulates of collision theory" 碰撞理论的基本假设 | Chinese renders postulate as 假设; no glossary row (chapter shard) |
 | ch12/12.5/text.html | `data-original-caption`, "Figure 12.13 ... 12.14", prose citations "Figure 12.13/12.14/12.15(a)/(b)/12.16" | （图 12.13）…; 图 12.13 etc. plain text; 图 12.15（<em>a</em>）and （<em>b</em>）; eyebrows `Figure 12.13 + 12.14`, `Figure 12.15`, `Figure 12.16` kept | recorded once per book (translate.md 4.6); part labels written full-width in prose |
-| ch12/12.5/text.html | display equation `\text{reaction rate}`, `\text{collisions}`, `\text{time}`; `\text{Slope}`, `\text{or}`, `\text{slope}` | 反应速率, 碰撞次数, 时间; 斜率, 或 | words in \text{} are translated (translate.md 5); `\text{ln}` kept as a function name |
+| ch12/12.5/text.html | display equation `\text{reaction rate}`, `\text{collisions}`, `\text{time}`; `\text{Slope}`, `\text{or}`, `\text{slope}` | 反应速率, `\#\;\text{次碰撞}` (reads "n collisions"; `\#` stays outside `\text{}`), 时间; 斜率, 或 | words in \text{} are translated (translate.md 5); `\text{ln}` kept as a function name |
 | ch12/12.5/text.html | "Alternative approach" | `<em>另一种方法</em>` | label word translated, the em kept |
 | ch12/12.5/text.html | "(see chapter on thermochemistry)", "(see chapter on gases)" | （见热化学一章）, （见气体一章）; the spans on 热化学 and 气体 | the book's cross-reference to a chapter, spans kept |
 | ch12/12.5/text.html | "activation barriers" | 活化能垒 | no glossary row; the usual textbook rendering (chapter shard row) |
 | ch12/12.5/text.html | "muzzle flash", "gunpowder" | 枪口火焰, 火药 | everyday terms, no glossary row (chapter shard) |
 | ch12/12.5/section.json | e7 prompt, solution and answer.parts[].unit "times" | prompt "How much faster … at 45 °C than at 25 °C?" written 速率是 25 °C 时的多少倍？; solution "(a) 4-times faster (b) 128-times faster" written （a）是 25 °C 时的 4 倍 （b）是 25 °C 时的 128 倍; the `unit` value "times" kept as printed | 快 4 倍 reads in Chinese as 5 times the rate, so the key (2² = 4, 2⁷ = 128) is written as a ratio; `answer.parts[].unit` is not translated (translate.md 5) (review pass) |
-| ch12/12.5/section.json | e9 prompt, "p-nitrophenyl phosphate (PNPP)", "p-nitrophenoxide ion (PNP)" | 磷酸对硝基苯酯（PNPP）, 对硝基苯酚根离子（PNP）; "ALP–catalyzed" ALP 催化的 | the abbreviations are kept; the Chinese names are the systematic ones (chapter shard rows) |
+| ch12/12.5/section.json | e9 prompt, "p-nitrophenyl phosphate (PNPP)", "p-nitrophenoxide ion (PNP)" | 磷酸对硝基苯酯（PNPP）, 对硝基苯氧负离子（PNP）; "ALP–catalyzed" ALP 催化的 | the abbreviations are kept; the Chinese names are the systematic ones (chapter shard rows) |
 | ch12/12.5/section.json | exercise_notes, "PhET" and the fs- ids | PhET and the ids kept | proper name and ids |
 | ch12/12.5/section.json | derivation `src` "Example 12.13", "Appendix B", `source` | 例 12.13, 附录 B, 化学（第2版），12.5 碰撞理论，例 12.13 | src words are translated (translate.md 5) |
 | ch12/12.5/figures.js | `NAMES` hover names ("an oxygen atom from the carbon monoxide molecule" ...) | 一氧化碳分子中的氧原子, 一氧化碳分子中的碳原子, 氧分子中的氧原子 | English article and "from" frame collapse to one Chinese form (4.1) |
@@ -163,7 +163,7 @@ became one row each under "Every page".
 |---|---|---|---|
 | ch12/12.6/text.html | `data-concept="oxide"` spans, "nitric oxide" (termolecular, 2 places) | the span wraps the whole compound name 一氧化氮 | Chinese names the compound in one word; the span cannot wrap only "oxide" (as ch01/1.2) |
 | ch12/12.6/text.html | `data-concept="termolecular-reaction"` span, "An elementary **termolecular reaction** involves …" | written 基元的<strong><span>三分子反应</span></strong>涉及…, the span on the whole concept name | the source's span wraps both words of the concept; the word order of "elementary termolecular reaction" becomes 基元的三分子反应 |
-| ch12/12.6/text.html | `data-concept="temperature"` span, "at high temperatures" | 在高<span>温度</span>下, the span on 温度 | Chinese says 高温度 only as 高温; the span keeps the glossary word and its place |
+| ch12/12.6/text.html | `data-concept="temperature"` span, "at high temperatures" | 在较高<span>温度</span>下, the span on 温度 | Chinese says 高温度 only as 高温; the span keeps the glossary word and its place; the 12.5 sentence "at high temperature and pressure" is written 温度和压强都很高的条件下 for the same reason |
 | ch12/12.6/text.html | `data-concept="reaction-rate"` spans, "limit the rate", "the rates of the forward and reverse processes" | the span wraps 速率 (glossary row rate); the summary's "rate of a reaction" wraps 反应速率 | the source spans one word "rate" |
 | ch12/12.6/text.html | `data-concept="rate-determining-step"` spans, "rate-limiting step (or rate-determining step)" | the two spans wrap 限速步骤 and 速率控制步骤 (the two glossary rows) | both rows exist; the book uses the two words as aliases |
 | ch12/12.6/text.html | `data-concept="reaction-intermediate"` span with "intermediate species" | 中间体 in the span, "species" not written (the noun 中间体 already names the species); "an intermediate species concentration" written 中间体的浓度 | Chinese has no word for "intermediate species" apart from 中间体; articles collapse (4.1) |
@@ -213,3 +213,5 @@ became one row each under "Every page".
 | ch12/12.7/section.json | e3 prompt math `\text{sunlight}` | 日光 | words in `\text{}` are translated; as ch12/12.6 |
 | ch12/12.7/section.json | e8 prompt "Exercise 12.81", e9 prompt "Exercise 12.82" | 习题 12.81, 习题 12.82 | the numbers are kept; "Exercise" is a label of the book's apparatus, written 习题 as the exercise kind |
 | ch12/12.7/section.json | footnote c-nitric-oxide | translated with the equation kept; "nitric oxide" 一氧化氮 | correction note of the preparation, translated whole |
+| ch12/12.7/text.html | alt of Figure 12.22, "N A P D H" | 标注为“N A P D H” | the source spells NADPH with spaces in the alt; kept as printed, not corrected |
+| ch12/12.7/section.json | exercises[5] prompt alt (5a), "about 2J" | 约 2 J | the book's own slip in the alt (the unit is spaced differently from the rest of the alt); kept as printed |

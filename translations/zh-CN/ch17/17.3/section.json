@@ -10,7 +10,7 @@
     "根据氧化剂和还原剂的相对强弱解读电极电势",
     "利用标准电极电势计算电池电势，并预测氧化还原反应的自发性"
   ],
-  "summary_html": "<p><span data-concept=\"electrical-potential\">电势</span>这一性质，$\\kEpot$，是与电荷的分离/转移相伴的能量。在电化学中，电池和半电池的电势是热力学量，反映其氧化还原过程的推动力或自发性。电化学池的<span data-concept=\"cell-potential\">电池电势</span>是其阴极与阳极之间的差。为便于共享半电池的电势数据，规定<span data-concept=\"standard-hydrogen-electrode\">标准氢电极（SHE）</span>的电势恰为 <span data-type=\"potential\">0 V</span>，并用它为任一给定的半电池定义单一的电极电势。半电池的<span data-concept=\"electrode-potential\">电极电势</span> $\\kEX$ 是该半电池作阴极、与作阳极的 SHE 相连时的电池电势。当半电池在标准状态条件下运行时，其电势就是<span data-concept=\"standard-electrode-potential\">标准电极电势</span> $\\kEoX$。标准电极电势反映半反应的反应物的相对氧化能力，氧化剂越强，$\\kEoX$ 值越大（越正）。标准电极电势表可用来计算许多氧化还原反应的<span data-concept=\"standard-cell-potential\">标准电池电势</span> $\\kEocell$。电池电势的算术符号表明电池反应的自发性，自发反应为正值，非自发反应为负值（逆向自发）。</p>",
+  "summary_html": "<p><span data-concept=\"electrical-potential\">电势</span>这一性质，$\\kEpot$，是与电荷的分离/转移相伴的能量。在电化学中，电池和半电池的电势是热力学量，反映其氧化还原过程的推动力或自发性。电化学池的<span data-concept=\"cell-potential\">电池电势</span>是其阴极与阳极之间的差。为便于共享半电池的电势数据，规定<span data-concept=\"standard-hydrogen-electrode\">标准氢电极（SHE）</span>的电势恰为 <span data-type=\"potential\">0 V</span>，并用它为任一给定的半电池定义单一的电极电势。半电池的<span data-concept=\"electrode-potential\">电极电势</span> $\\kEX$ 是该半电池作阴极、与作阳极的 SHE 相连时的电池电势。当半电池在标准状态条件下运行时，其电势就是<span data-concept=\"standard-electrode-potential\">标准电极电势</span> $\\kEoX$。标准电极电势反映半反应的反应物的相对氧化能力，氧化剂越强，$\\kEoX$ 值越大（越正）。标准电极电势表可用来计算许多氧化还原反应的<span data-concept=\"standard-cell-potential\">标准电池电势</span> $\\kEocell$。电池电势的正负号表明电池反应的自发性，自发反应为正值，非自发反应为负值（逆向自发）。</p>",
   "notes": "书中的疏漏按原样保留：学习检测答案中的“−0. 47 V”和“Br₂(s)”，表 17.1 中铜的 +0.34 V 与正文中的 +0.337 V 并存，其 Mn²⁺ 和 Zn(OH)₂ 两行排在 Zn²⁺ 之上，“Mg²(aq)”缺了正号，以及正文中把 prediction（预测）误写成“predication”。",
   "ai": {
     "text": [

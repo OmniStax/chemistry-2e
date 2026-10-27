@@ -2,33 +2,41 @@
   "id": "13.2",
   "module": "m68798",
   "chapter": "13",
-  "title": "Equilibrium Constants",
-  "short": "Equilibrium Constants",
-  "lead": "The <span data-concept=\"reaction-quotient\">reaction quotient</span>, <em>Q</em>, describes the composition of a reaction mixture, and its value at equilibrium is the <span data-concept=\"equilibrium-constant\">equilibrium constant</span>, <em>K</em>. This section shows how to write both from a balanced equation in <span data-concept=\"concentration\">concentrations</span> or <span data-concept=\"partial-pressure\">partial pressures</span>, how comparing them tells which way a mixture will react, and how the constants of equilibria in one phase, in several phases, and of coupled reactions are found.",
+  "title": "平衡常数",
+  "short": "平衡常数",
+  "lead": "<span data-concept=\"reaction-quotient\">反应商</span> <em>Q</em> 描述反应混合物的组成，它在平衡时的值就是<span data-concept=\"equilibrium-constant\">平衡常数</span> <em>K</em>。本节说明如何由配平的方程式，用<span data-concept=\"concentration\">浓度</span>或<span data-concept=\"partial-pressure\">分压</span>写出这两者，比较它们如何说明混合物将朝哪个方向反应，以及如何求得单相平衡、多相平衡和多重平衡的常数。",
   "objectives": [
-    "Derive reaction quotients from chemical equations representing homogeneous and heterogeneous reactions",
-    "Calculate values of reaction quotients and equilibrium constants, using concentrations and pressures",
-    "Relate the magnitude of an equilibrium constant to properties of the chemical system"
+    "由表示均相反应和多相反应的化学方程式导出反应商",
+    "用浓度和压强计算反应商和平衡常数的值",
+    "把平衡常数的大小与化学体系的性质联系起来"
   ],
-  "summary_html": "<p>The composition of a reaction mixture may be represented by a mathematical function known as the <span data-concept=\"reaction-quotient\">reaction quotient</span>, $\\kQrxn$. For a reaction at equilibrium, the composition is constant, and $\\kQrxn$ is called the <span data-concept=\"equilibrium-constant\">equilibrium constant</span>, $\\kK$.</p><p>A <span data-concept=\"homogeneous-equilibrium\">homogeneous equilibrium</span> is an equilibrium in which all components are in the same phase. A <span data-concept=\"heterogeneous-equilibrium\">heterogeneous equilibrium</span> is an equilibrium in which components are in two or more phases.</p>",
-  "notes": "Nothing of the section is left out; the key to exercise 17 labels its (e) and (f) quotients Q_P and Q_c the other way round from the constants the item gives, Example 13.5’s Check Your Learning labels both of its constants K_c1, and Example 13.3’s table is followed where its description gives 0.0203 M, all as printed.",
+  "summary_html": "<p>反应混合物的组成可以用一个称为<span data-concept=\"reaction-quotient\">反应商</span> $\\kQrxn$ 的数学函数来表示。对于处于平衡的反应，其组成是恒定的，此时 $\\kQrxn$ 称为<span data-concept=\"equilibrium-constant\">平衡常数</span> $\\kK$。</p><p><span data-concept=\"homogeneous-equilibrium\">均相平衡</span>是所有组分都处于同一相的平衡。<span data-concept=\"heterogeneous-equilibrium\">多相平衡</span>是组分处于两个或多个相中的平衡。</p>",
+  "notes": "本节没有任何内容被略去；习题 17 的答案把（e）和（f）的反应商标作 Q_P 和 Q_c，与题目所给的常数正好相反，例 13.5 的学习检测把它的两个常数都标作 K_c1，例 13.3 的描述给出 0.0203 M 之处则以其表格为准，均照原样保留。",
   "ai": {
     "text": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ],
     "figures": [
       {
         "model": "claude-opus-5-5",
         "effort": "high"
+      },
+      {
+        "model": "claude-sonnet-5-5",
+        "effort": "medium"
       }
     ]
   },
-  "built": "2026-10-05",
+  "built": "2026-10-26",
   "exercises_lead": "",
-  "exercise_notes": "Bloom levels, concept tags and hints are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers. The four unkeyed numerical exercises are left out, and no answer is computed for them: fs-idp100224800, fs-idp163618080, fs-idp94819040 and fs-idp72435440. The nine unkeyed conceptual and expression-writing exercises are kept with a suggested approach marked as AI-generated: fs-idp109971312, fs-idp176984288, fs-idp114043728, fs-idp237441536, fs-idp68591104, fs-idp52174160, fs-idp132912112, fs-idp93479024 and fs-idp282222272. Exercise fs-idp194491952, on the bromine that needs a closed vessel, is set in 13.1, whose dynamic equilibria it tests. The key to fs-idp110211104 labels its (e) and (f) quotients Q_P and Q_c the other way round from the constants the item gives, and Example 13.5’s Check Your Learning labels both constants K_c1; both are kept as printed. The exercises that pointed to an earlier exercise name it by its reactions.",
+  "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案来自书后答案和“学习检测”的答案。四道没有答案的数值题被略去，也没有为它们算出答案：fs-idp100224800、fs-idp163618080、fs-idp94819040 和 fs-idp72435440。九道没有答案的概念题和写表达式的题予以保留，并附有标明为 AI 生成的建议思路：fs-idp109971312、fs-idp176984288、fs-idp114043728、fs-idp237441536、fs-idp68591104、fs-idp52174160、fs-idp132912112、fs-idp93479024 和 fs-idp282222272。习题 fs-idp194491952 涉及必须使用密闭容器的溴，它考查 13.1 的动态平衡，因此放在 13.1。fs-idp110211104 的答案把（e）和（f）的反应商标作 Q_P 和 Q_c，与题目所给的常数正好相反，例 13.5 的学习检测把两个常数都标作 K_c1；两者均照原样保留。原来指向前一道习题的习题，改为用它的反应来指明那道习题。",
   "figures": [
     {
       "id": "sim-quotient",
@@ -37,7 +45,7 @@
       "originals": [
         "/media/ch13/CNX_Chem_13_02_quotient.jpg"
       ],
-      "original_caption": "Changes in concentrations and Qc for a chemical equilibrium achieved beginning with (a) a mixture of reactants only and (b) products only.",
+      "original_caption": "从（a）只含反应物的混合物和（b）只含产物开始达到化学平衡时，浓度和 Qc 的变化。",
       "draws": [
         "concentration",
         "equilibrium-constant",
@@ -48,6 +56,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -63,6 +76,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     },
@@ -73,7 +91,7 @@
       "originals": [
         "/media/ch13/CNX_Chem_13_02_mixtures.jpg"
       ],
-      "original_caption": "Compositions of three mixtures before (Qc ≠ Kc) and after (Qc = Kc) equilibrium is established for the reaction CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g).",
+      "original_caption": "反应 CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g) 建立平衡之前（Qc ≠ Kc）和之后（Qc = Kc）三种混合物的组成。",
       "draws": [
         "concentration",
         "equilibrium-constant"
@@ -83,6 +101,11 @@
           "model": "claude-opus-5-5",
           "effort": "high",
           "part": "built"
+        },
+        {
+          "model": "claude-sonnet-5-5",
+          "effort": "medium",
+          "part": "翻译"
         }
       ]
     }
@@ -90,63 +113,63 @@
   "referents": [
     {
       "id": "so2",
-      "label": "sulfur dioxide",
+      "label": "二氧化硫",
       "figures": [
         "sim-quotient"
       ]
     },
     {
       "id": "o2",
-      "label": "oxygen",
+      "label": "氧气",
       "figures": [
         "sim-quotient"
       ]
     },
     {
       "id": "so3",
-      "label": "sulfur trioxide",
+      "label": "三氧化硫",
       "figures": [
         "sim-quotient"
       ]
     },
     {
       "id": "no2",
-      "label": "nitrogen dioxide",
+      "label": "二氧化氮",
       "figures": [
         "sim-magnitude-k"
       ]
     },
     {
       "id": "n2o4",
-      "label": "dinitrogen tetroxide",
+      "label": "四氧化二氮",
       "figures": [
         "sim-magnitude-k"
       ]
     },
     {
       "id": "co",
-      "label": "carbon monoxide",
+      "label": "一氧化碳",
       "figures": [
         "sim-mixtures"
       ]
     },
     {
       "id": "h2o",
-      "label": "water",
+      "label": "水",
       "figures": [
         "sim-mixtures"
       ]
     },
     {
       "id": "co2",
-      "label": "carbon dioxide",
+      "label": "二氧化碳",
       "figures": [
         "sim-mixtures"
       ]
     },
     {
       "id": "h2",
-      "label": "hydrogen",
+      "label": "氢气",
       "figures": [
         "sim-mixtures"
       ]
@@ -300,11 +323,11 @@
         "after": "ex-quotient-expressions"
       },
       "cite": "quotient",
-      "prompt": "Write the concentration-based reaction quotient expression for each of the following reactions:<br>(a) $2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>(b) ${\\text{C}}_{4}{\\text{H}}_{8}(g)\\rightleftharpoons 2{\\text{C}}_{2}{\\text{H}}_{4}(g)$<br>(c) $2{\\text{C}}_{4}{\\text{H}}_{10}(g)+13{\\text{O}}_{2}(g)\\rightleftharpoons 8{\\text{CO}}_{2}(g)+10{\\text{H}}_{2}\\text{O}(g)$",
+      "prompt": "写出下列各反应以浓度表示的反应商表达式：<br>（a）$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>（b）${\\text{C}}_{4}{\\text{H}}_{8}(g)\\rightleftharpoons 2{\\text{C}}_{2}{\\text{H}}_{4}(g)$<br>（c）$2{\\text{C}}_{4}{\\text{H}}_{10}(g)+13{\\text{O}}_{2}(g)\\rightleftharpoons 8{\\text{CO}}_{2}(g)+10{\\text{H}}_{2}\\text{O}(g)$",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) ${Q}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]};$ (b) ${Q}_{c}=\\;\\frac{{[{\\text{C}}_{2}{\\text{H}}_{4}]}^{2}}{[{\\text{C}}_{4}{\\text{H}}_{8}]};$ (c) ${Q}_{c}=\\;\\frac{{[{\\text{CO}}_{2}]}^{8}[{\\text{H}}_{2}\\text{O}{]}^{10}}{{[{\\text{C}}_{4}{\\text{H}}_{10}]}^{2}[{\\text{O}}_{2}{]}^{13}}$"
+        "solution": "（a）${Q}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]};$ （b）${Q}_{c}=\\;\\frac{{[{\\text{C}}_{2}{\\text{H}}_{4}]}^{2}}{[{\\text{C}}_{4}{\\text{H}}_{8}]};$ （c）${Q}_{c}=\\;\\frac{{[{\\text{CO}}_{2}]}^{8}[{\\text{H}}_{2}\\text{O}{]}^{10}}{{[{\\text{C}}_{4}{\\text{H}}_{10}]}^{2}[{\\text{O}}_{2}{]}^{13}}$"
       }
     },
     {
@@ -317,12 +340,12 @@
         "after": "ex-evaluate-q"
       },
       "cite": "constant",
-      "prompt": "For the reaction ${\\text{2SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{2SO}}_{3}(g),$ the concentrations at equilibrium are [SO<sub>2</sub>] = 0.90 <em>M</em>, [O<sub>2</sub>] = 0.35 <em>M</em>, and [SO<sub>3</sub>] = 1.1 <em>M</em>. What is the value of the equilibrium constant, <em>K<sub>c</sub></em>?",
+      "prompt": "对于反应 ${\\text{2SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{2SO}}_{3}(g),$ 平衡时的浓度为 [SO<sub>2</sub>] = 0.90 <em>M</em>、[O<sub>2</sub>] = 0.35 <em>M</em> 和 [SO<sub>3</sub>] = 1.1 <em>M</em>。平衡常数 <em>K<sub>c</sub></em> 的值是多少？",
       "answer": {
         "type": "number",
         "value": 4.3,
         "generated_by": "source",
-        "hint": "Write $K_c$ from the balanced equation, each concentration raised to its coefficient, and substitute the equilibrium concentrations.",
+        "hint": "根据配平的方程式写出 $K_c$，每个浓度取其系数次幂，再代入平衡浓度。",
         "solution": "<em>K<sub>c</sub></em> = 4.3"
       }
     },
@@ -336,7 +359,7 @@
         "after": "ex-direction"
       },
       "cite": "direction",
-      "prompt": "Calculate the reaction quotient and determine the direction in which each of the following reactions will proceed to reach equilibrium.<br>(a) A 1.00-L flask containing 0.0500 mol of NO(<em>g</em>), 0.0155 mol of Cl<sub>2</sub>(<em>g</em>), and 0.500 mol of NOCl: $2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)\\hspace{2em}{K}_{c}=4.6\\;\\times \\;{10}^{4}$<br>(b) A 5.0-L flask containing 17 g of NH<sub>3</sub>, 14 g of N<sub>2</sub>, and 12 g of H<sub>2</sub>: ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{2em}{K}_{c}=0.060$<br>(c) A 2.00-L flask containing 230 g of SO<sub>3</sub>(<em>g</em>): $2{\\text{SO}}_{3}(g)\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{c}=0.230$",
+      "prompt": "计算反应商，并确定下列各反应为达到平衡将沿哪个方向进行。<br>（a）1.00 L 的烧瓶中含有 0.0500 mol NO(<em>g</em>)、0.0155 mol Cl<sub>2</sub>(<em>g</em>) 和 0.500 mol NOCl：$2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)\\hspace{2em}{K}_{c}=4.6\\;\\times \\;{10}^{4}$<br>（b）5.0 L 的烧瓶中含有 17 g NH<sub>3</sub>、14 g N<sub>2</sub> 和 12 g H<sub>2</sub>：${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{2em}{K}_{c}=0.060$<br>（c）2.00 L 的烧瓶中含有 230 g SO<sub>3</sub>(<em>g</em>)：$2{\\text{SO}}_{3}(g)\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{c}=0.230$",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -344,20 +367,20 @@
           {
             "part": "(a) <em>Q<sub>c</sub></em>",
             "value": 6450,
-            "hint": "Divide each amount by the volume to get the concentrations before evaluating <em>Q<sub>c</sub></em>."
+            "hint": "先把各物质的量除以体积得到浓度，再计算 <em>Q<sub>c</sub></em>。"
           },
           {
             "part": "(b) <em>Q<sub>c</sub></em>",
             "value": 0.23,
-            "hint": "Convert each mass to moles with its molar mass, then to a concentration in the 5.0-L flask."
+            "hint": "用摩尔质量把各质量换算成物质的量，再换算成 5.0 L 烧瓶中的浓度。"
           },
           {
             "part": "(c) <em>Q<sub>c</sub></em>",
             "value": 0,
-            "hint": "Only SO<sub>3</sub> is present at the start."
+            "hint": "起初只有 SO<sub>3</sub>。"
           }
         ],
-        "solution": "(a) <em>Q<sub>c</sub></em> = 6.45 × 10<sup>3</sup>, forward. (b) <em>Q<sub>c</sub></em> = 0.23, reverse. (c) <em>Q<sub>c</sub></em> = 0, forward."
+        "solution": "（a）<em>Q<sub>c</sub></em> = 6.45 × 10<sup>3</sup>，正向。（b）<em>Q<sub>c</sub></em> = 0.23，逆向。（c）<em>Q<sub>c</sub></em> = 0，正向。"
       }
     },
     {
@@ -370,14 +393,14 @@
         "after": "ex-kp"
       },
       "cite": "homogeneous",
-      "prompt": "Write the equations relating <em>K<sub>c</sub></em> to <em>K<sub>P</sub></em> for each of the following reactions:<br>(a) $2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>(b) ${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)$<br>(c) ${\\text{C}}_{3}{\\text{H}}_{8}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons 3{\\text{CO}}_{2}(g)+4{\\text{H}}_{2}\\text{O}(g)$<br>(d) At 227 °C, the following reaction has <em>K<sub>c</sub></em> = 0.0952: ${\\text{CH}}_{3}\\text{OH}(g)\\rightleftharpoons \\text{CO}(g)+2{\\text{H}}_{2}(g)$ What would be the value of <em>K<sub>P</sub></em> at this temperature?",
+      "prompt": "写出下列各反应中 <em>K<sub>c</sub></em> 与 <em>K<sub>P</sub></em> 之间关系的方程式：<br>（a）$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>（b）${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)$<br>（c）${\\text{C}}_{3}{\\text{H}}_{8}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons 3{\\text{CO}}_{2}(g)+4{\\text{H}}_{2}\\text{O}(g)$<br>（d）在 227 °C 时，下列反应的 <em>K<sub>c</sub></em> = 0.0952：${\\text{CH}}_{3}\\text{OH}(g)\\rightleftharpoons \\text{CO}(g)+2{\\text{H}}_{2}(g)$ 在这一温度下 <em>K<sub>P</sub></em> 的值是多少？",
       "answer": {
         "type": "number",
         "value": 160,
         "part": "(d) <em>K<sub>P</sub></em>",
         "generated_by": "source",
-        "hint": "Find Δ<em>n</em> from the gaseous species, convert 227 °C to kelvin, and use <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em>(<em>RT</em>)<sup>Δ<em>n</em></sup>.",
-        "solution": "(a) <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>)<sup>−1</sup>; (b) <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>); (c) <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>); (d) 160 or 1.6 × 10<sup>2</sup>"
+        "hint": "由气态物种求出 Δ<em>n</em>，把 227 °C 换算成开尔文，再用 <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em>(<em>RT</em>)<sup>Δ<em>n</em></sup>。",
+        "solution": "（a）<em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>)<sup>−1</sup>；（b）<em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>)；（c）<em>K<sub>P</sub></em> = <em>K<sub>c</sub></em> (<em>RT</em>)；（d）160 或 1.6 × 10<sup>2</sup>"
       }
     },
     {
@@ -390,12 +413,12 @@
         "after": "ex-coupled"
       },
       "cite": "coupled",
-      "prompt": "Use the provided information to calculate Kc for the following reaction at 550 °C:<br>$\\begin{array}{llll}{\\text{H}}_{2}(g)+{\\text{CO}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g) & & & {\\text{K}}_{\\text{c}}=? \\\\ \\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g) & & & {\\text{K}}_{\\text{c}1}=490 \\\\ \\text{CoO}(s)+{\\text{H}}_{\\text{2}}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{H}}_{2}O(g) & & & {\\text{K}}_{\\text{c}1}=67\\end{array}$<sup class=\"fn\" data-note=\"c-cyl5-kc2\"></sup>",
+      "prompt": "利用所给信息计算下列反应在 550 °C 时的 Kc：<br>$\\begin{array}{llll}{\\text{H}}_{2}(g)+{\\text{CO}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g) & & & {\\text{K}}_{\\text{c}}=? \\\\ \\text{CoO}(s)+\\text{CO}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{CO}}_{2}(g) & & & {\\text{K}}_{\\text{c}1}=490 \\\\ \\text{CoO}(s)+{\\text{H}}_{\\text{2}}(g)\\rightleftharpoons \\text{Co}(s)+{\\text{H}}_{2}O(g) & & & {\\text{K}}_{\\text{c}1}=67\\end{array}$<sup class=\"fn\" data-note=\"c-cyl5-kc2\"></sup>",
       "answer": {
         "type": "number",
         "value": 0.14,
         "generated_by": "source",
-        "hint": "Reverse the first reaction and add it to the second; the reversed constant is the reciprocal of the first.",
+        "hint": "把第一个反应颠倒后与第二个反应相加；颠倒后的常数是第一个常数的倒数。",
         "solution": "K<sub>c</sub> = 0.14"
       }
     },
@@ -409,11 +432,11 @@
         "at": "end"
       },
       "cite": "constant",
-      "prompt": "Explain why there may be an infinite number of values for the reaction quotient of a reaction at a given temperature but there can be only one value for the equilibrium constant at that temperature.",
+      "prompt": "解释为什么在一定温度下，一个反应的反应商可以有无穷多个值，而该温度下的平衡常数却只能有一个值。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "The reaction quotient is evaluated for whatever mixture of reactants and products is present, and since the concentrations can be chosen freely, there are infinitely many mixtures and so infinitely many values of <em>Q</em>, from zero for reactants only to an immeasurably large value for products only. The equilibrium constant is the one value <em>Q</em> takes when the system is at equilibrium. The law of mass action states that at a given temperature the reaction quotient for a system at equilibrium is constant: every mixture reacts, forward or in reverse, until its <em>Q</em> reaches that same value. In Figure 13.5, the oxidation of SO<sub>2</sub> started from reactants only and from product only passes through different values of <em>Q<sub>c</sub></em> but levels off at the same <em>K<sub>c</sub></em>. Only a change in temperature changes <em>K</em>."
+        "solution": "反应商是针对存在的任一种反应物与产物的混合物计算的，由于浓度可以任意选取，所以混合物有无穷多种，<em>Q</em> 的值也有无穷多个，从只含反应物时的零到只含产物时的大到无法测量的值。平衡常数则是体系处于平衡时 <em>Q</em> 所取的那一个值。质量作用定律指出，在一定温度下，处于平衡的体系的反应商是恒定的：每一种混合物都要正向或逆向反应，直到它的 <em>Q</em> 达到这同一个值。在图 13.5 中，SO<sub>2</sub> 的氧化反应分别从只含反应物和只含产物开始，经过的 <em>Q<sub>c</sub></em> 值不同，但最终稳定在同一个 <em>K<sub>c</sub></em>。只有温度的改变才会改变 <em>K</em>。"
       }
     },
     {
@@ -426,11 +449,11 @@
         "at": "end"
       },
       "cite": "constant",
-      "prompt": "If you observe the following reaction at equilibrium, is it possible to tell whether the reaction started with pure NO<sub>2</sub> or with pure N<sub>2</sub>O<sub>4</sub>?<br>$2{\\text{NO}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{O}}_{4}(g)$",
+      "prompt": "如果观察到下列反应处于平衡，能否判断该反应是从纯 NO<sub>2</sub> 开始的还是从纯 N<sub>2</sub>O<sub>4</sub> 开始的？<br>$2{\\text{NO}}_{2}(g)\\rightleftharpoons {\\text{N}}_{2}{\\text{O}}_{4}(g)$",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "No. At equilibrium the mixture has <em>Q<sub>c</sub></em> = <em>K<sub>c</sub></em> = $\\frac{[{\\text{N}}_{2}{\\text{O}}_{4}]}{{[{\\text{NO}}_{2}]}^{2}}$, the one value of the equilibrium constant at that temperature, and the forward and reverse reactions go on at equal rates; nothing in the composition records how it got there. A sample of pure NO<sub>2</sub> reaches equilibrium by net forward reaction and a sample of pure N<sub>2</sub>O<sub>4</sub> by net reverse reaction, just as the oxidation of SO<sub>2</sub> in Figure 13.5 reaches the same <em>K<sub>c</sub></em> from reactants only or from product only. If the two samples hold the same atoms in the same volume, 0.20 <em>M</em> NO<sub>2</sub> or 0.10 <em>M</em> N<sub>2</sub>O<sub>4</sub>, they end with identical concentrations. Only watching the mixture before equilibrium, while its brown color is changing, would show the starting point."
+        "solution": "不能。平衡时混合物的 <em>Q<sub>c</sub></em> = <em>K<sub>c</sub></em> = $\\frac{[{\\text{N}}_{2}{\\text{O}}_{4}]}{{[{\\text{NO}}_{2}]}^{2}}$，这是该温度下平衡常数唯一的值，并且正反应和逆反应以相等的速率进行；组成中没有任何东西记录它是如何到达这里的。纯 NO<sub>2</sub> 的样品通过正向净反应达到平衡，纯 N<sub>2</sub>O<sub>4</sub> 的样品则通过逆向净反应达到平衡，正如图 13.5 中 SO<sub>2</sub> 的氧化反应无论从只含反应物还是只含产物开始，都得到同一个 <em>K<sub>c</sub></em>。如果两个样品在相同体积中含有相同的原子，即 0.20 <em>M</em> NO<sub>2</sub> 或 0.10 <em>M</em> N<sub>2</sub>O<sub>4</sub>，它们最终的浓度完全相同。只有观察平衡之前的混合物，在其棕色还在变化的时候，才能看出起点。"
       }
     },
     {
@@ -443,11 +466,11 @@
         "at": "end"
       },
       "cite": "heterogeneous",
-      "prompt": "Among the solubility rules previously discussed is the statement: All chlorides are soluble except Hg<sub>2</sub>Cl<sub>2</sub>, AgCl, PbCl<sub>2</sub>, and CuCl.<br>(a) Write the expression for the equilibrium constant for the reaction represented by the equation $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq).$ Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1? Explain your answer.<br>(b) Write the expression for the equilibrium constant for the reaction represented by the equation ${\\text{Pb}}^{2+}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)\\rightleftharpoons {\\text{PbCl}}_{2}(s).$ Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1? Explain your answer.",
+      "prompt": "前面讨论过的溶解性规则中有这样一条：除 Hg<sub>2</sub>Cl<sub>2</sub>、AgCl、PbCl<sub>2</sub> 和 CuCl 外，所有氯化物都可溶。<br>（a）写出以方程式 $\\text{AgCl}(s)\\rightleftharpoons {\\text{Ag}}^{\\text{+}}(aq)+{\\text{Cl}}^{\\text{−}}(aq)$ 表示的反应的平衡常数表达式。<em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？请解释你的答案。<br>（b）写出以方程式 ${\\text{Pb}}^{2+}(aq)+2{\\text{Cl}}^{\\text{−}}(aq)\\rightleftharpoons {\\text{PbCl}}_{2}(s)$ 表示的反应的平衡常数表达式。<em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？请解释你的答案。",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) <em>K<sub>c</sub></em> = [Ag<sup>+</sup>][Cl<sup>−</sup>] &lt; 1. AgCl is insoluble; thus, the concentrations of ions are much less than 1 <em>M</em>; (b) ${K}_{c}=\\;\\frac{1}{[{\\text{Pb}}^{2+}]{[{\\text{Cl}}^{\\text{−}}]}^{2}}$ &gt; 1 because PbCl<sub>2</sub> is insoluble and formation of the solid will reduce the concentration of ions to a low level (&lt;1 <em>M</em>)."
+        "solution": "（a）<em>K<sub>c</sub></em> = [Ag<sup>+</sup>][Cl<sup>−</sup>] &lt; 1。AgCl 不溶；因此离子的浓度远小于 1 <em>M</em>；（b）${K}_{c}=\\;\\frac{1}{[{\\text{Pb}}^{2+}]{[{\\text{Cl}}^{\\text{−}}]}^{2}}$ &gt; 1，因为 PbCl<sub>2</sub> 不溶，固体的生成会使离子的浓度降到很低的水平（&lt;1 <em>M</em>）。"
       }
     },
     {
@@ -460,11 +483,11 @@
         "at": "end"
       },
       "cite": "heterogeneous",
-      "prompt": "Among the solubility rules previously discussed is the statement: Carbonates, phosphates, borates, and arsenates—except those of the ammonium ion and the alkali metals—are insoluble.<br>(a) Write the expression for the equilibrium constant for the reaction represented by the equation ${\\text{CaCO}}_{3}(s)\\rightleftharpoons {\\text{Ca}}^{2+}(aq)+{\\text{CO}}_{3}{}^{2−}(\\text{aq}).$ Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1? Explain your answer.<br>(b) Write the expression for the equilibrium constant for the reaction represented by the equation $3{\\text{Ba}}^{2+}(aq)+2{\\text{PO}}_{4}{}^{3−}(aq)\\rightleftharpoons {\\text{Ba}}_{3}{({\\text{PO}}_{4})}_{2}(s).$ Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1? Explain your answer.",
+      "prompt": "前面讨论过的溶解性规则中有这样一条：碳酸盐、磷酸盐、硼酸盐和砷酸盐——铵根离子和碱金属的盐除外——都不溶。<br>（a）写出以方程式 ${\\text{CaCO}}_{3}(s)\\rightleftharpoons {\\text{Ca}}^{2+}(aq)+{\\text{CO}}_{3}{}^{2−}(\\text{aq})$ 表示的反应的平衡常数表达式。<em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？请解释你的答案。<br>（b）写出以方程式 $3{\\text{Ba}}^{2+}(aq)+2{\\text{PO}}_{4}{}^{3−}(aq)\\rightleftharpoons {\\text{Ba}}_{3}{({\\text{PO}}_{4})}_{2}(s)$ 表示的反应的平衡常数表达式。<em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？请解释你的答案。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "(a) <em>K<sub>c</sub></em> = [Ca<sup>2+</sup>][CO<sub>3</sub><sup>2−</sup>] &lt; 1. Solid CaCO<sub>3</sub> does not appear in the expression. Calcium is neither an alkali metal nor ammonium, so CaCO<sub>3</sub> is insoluble and only a little of it dissolves; the ion concentrations at equilibrium are much less than 1 <em>M</em>, and their product is less than 1. (b) ${K}_{c}=\\;\\frac{1}{{[{\\text{Ba}}^{2+}]}^{3}{[{\\text{PO}}_{4}{}^{3−}]}^{2}}$ &gt; 1. Solid Ba<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> does not appear in the expression. Barium phosphate is insoluble, so forming the solid removes the ions until their concentrations are very small (much less than 1 <em>M</em>); the denominator is then very small and <em>K<sub>c</sub></em> is much greater than 1."
+        "solution": "（a）<em>K<sub>c</sub></em> = [Ca<sup>2+</sup>][CO<sub>3</sub><sup>2−</sup>] &lt; 1。固体 CaCO<sub>3</sub> 不出现在表达式中。钙既不是碱金属也不是铵，所以 CaCO<sub>3</sub> 不溶，只有少量溶解；平衡时离子的浓度远小于 1 <em>M</em>，它们的乘积小于 1。（b）${K}_{c}=\\;\\frac{1}{{[{\\text{Ba}}^{2+}]}^{3}{[{\\text{PO}}_{4}{}^{3−}]}^{2}}$ &gt; 1。固体 Ba<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> 不出现在表达式中。磷酸钡不溶，所以固体的生成会不断去除离子，直到它们的浓度非常小（远小于 1 <em>M</em>）；此时分母非常小，<em>K<sub>c</sub></em> 远大于 1。"
       }
     },
     {
@@ -477,7 +500,7 @@
         "at": "end"
       },
       "cite": "constant",
-      "prompt": "Benzene is one of the compounds used as octane enhancers in unleaded gasoline. It is manufactured by the catalytic conversion of acetylene to benzene: $3{\\text{C}}_{2}{\\text{H}}_{2}(g)\\;\\rightleftharpoons \\;{\\text{C}}_{6}{\\text{H}}_{6}(g).$ Which value of <em>K<sub>c</sub></em> would make this reaction most useful commercially? <em>K<sub>c</sub></em> ≈ 0.01, <em>K<sub>c</sub></em> ≈ 1, or <em>K<sub>c</sub></em> ≈ 10. Explain your answer.",
+      "prompt": "苯是无铅汽油中用作辛烷值助剂的化合物之一。它由乙炔催化转化为苯而制得：$3{\\text{C}}_{2}{\\text{H}}_{2}(g)\\;\\rightleftharpoons \\;{\\text{C}}_{6}{\\text{H}}_{6}(g).$ <em>K<sub>c</sub></em> 取哪个值会使这个反应在商业上最有用？<em>K<sub>c</sub></em> ≈ 0.01、<em>K<sub>c</sub></em> ≈ 1 还是 <em>K<sub>c</sub></em> ≈ 10？请解释你的答案。",
       "answer": {
         "type": "choice",
         "options": [
@@ -487,7 +510,7 @@
         ],
         "correct": 2,
         "generated_by": "source",
-        "solution": "Since ${K}_{c}=\\;\\frac{[{\\text{C}}_{6}{\\text{H}}_{6}]}{{[{\\text{C}}_{2}{\\text{H}}_{2}]}^{3}},$ a value of <em>K<sub>c</sub></em> ≈ 10 means that C<sub>6</sub>H<sub>6</sub> predominates over C<sub>2</sub>H<sub>2</sub>. In such a case, the reaction would be commercially feasible if the rate to equilibrium is suitable."
+        "solution": "由于 ${K}_{c}=\\;\\frac{[{\\text{C}}_{6}{\\text{H}}_{6}]}{{[{\\text{C}}_{2}{\\text{H}}_{2}]}^{3}},$ <em>K<sub>c</sub></em> ≈ 10 意味着 C<sub>6</sub>H<sub>6</sub> 比 C<sub>2</sub>H<sub>2</sub> 占优势。在这种情况下，如果达到平衡的速率合适，该反应在商业上是可行的。"
       }
     },
     {
@@ -500,11 +523,11 @@
         "at": "end"
       },
       "cite": "quotient",
-      "prompt": "Show that the complete chemical equation, the total ionic equation, and the net ionic equation for the reaction represented by the equation $\\text{KI}(aq)+{\\text{I}}_{2}(aq)\\rightleftharpoons {\\text{KI}}_{3}(aq)$ give the same expression for the reaction quotient. KI<sub>3</sub> is composed of the ions K<sup>+</sup> and ${\\text{I}}_{3}{}^{\\text{−}}.$",
+      "prompt": "证明对于方程式 $\\text{KI}(aq)+{\\text{I}}_{2}(aq)\\rightleftharpoons {\\text{KI}}_{3}(aq)$ 所表示的反应，完整的化学方程式、完全离子方程式和净离子方程式给出相同的反应商表达式。KI<sub>3</sub> 由离子 K<sup>+</sup> 和 ${\\text{I}}_{3}{}^{\\text{−}}$ 组成。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "All three give ${Q}_{c}=\\;\\frac{[{\\text{I}}_{3}{}^{\\text{−}}]}{[{\\text{I}}^{\\text{−}}][{\\text{I}}_{2}]}.$ For the complete equation, KI(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ KI<sub>3</sub>(<em>aq</em>), ${Q}_{c}=\\;\\frac{[{\\text{KI}}_{3}]}{[\\text{KI}][{\\text{I}}_{2}]};$ both salts are completely dissociated, and each formula unit gives one I<sup>−</sup> or one I<sub>3</sub><sup>−</sup>, so [KI] = [I<sup>−</sup>] and [KI<sub>3</sub>] = [I<sub>3</sub><sup>−</sup>]. For the total ionic equation, K<sup>+</sup>(<em>aq</em>) + I<sup>−</sup>(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ K<sup>+</sup>(<em>aq</em>) + I<sub>3</sub><sup>−</sup>(<em>aq</em>), ${Q}_{c}=\\;\\frac{[{\\text{K}}^{\\text{+}}][{\\text{I}}_{3}{}^{\\text{−}}]}{[{\\text{K}}^{\\text{+}}][{\\text{I}}^{\\text{−}}][{\\text{I}}_{2}]},$ and the spectator [K<sup>+</sup>] cancels. The net ionic equation, I<sup>−</sup>(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ I<sub>3</sub><sup>−</sup>(<em>aq</em>), gives the expression directly."
+        "solution": "三者都给出 ${Q}_{c}=\\;\\frac{[{\\text{I}}_{3}{}^{\\text{−}}]}{[{\\text{I}}^{\\text{−}}][{\\text{I}}_{2}]}.$ 对于完整方程式 KI(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ KI<sub>3</sub>(<em>aq</em>)，${Q}_{c}=\\;\\frac{[{\\text{KI}}_{3}]}{[\\text{KI}][{\\text{I}}_{2}]};$ 两种盐都完全解离，每个化学式单元给出一个 I<sup>−</sup> 或一个 I<sub>3</sub><sup>−</sup>，所以 [KI] = [I<sup>−</sup>]，[KI<sub>3</sub>] = [I<sub>3</sub><sup>−</sup>]。对于完全离子方程式 K<sup>+</sup>(<em>aq</em>) + I<sup>−</sup>(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ K<sup>+</sup>(<em>aq</em>) + I<sub>3</sub><sup>−</sup>(<em>aq</em>)，${Q}_{c}=\\;\\frac{[{\\text{K}}^{\\text{+}}][{\\text{I}}_{3}{}^{\\text{−}}]}{[{\\text{K}}^{\\text{+}}][{\\text{I}}^{\\text{−}}][{\\text{I}}_{2}]},$ 旁观离子的 [K<sup>+</sup>] 约去。净离子方程式 I<sup>−</sup>(<em>aq</em>) + I<sub>2</sub>(<em>aq</em>) ⇌ I<sub>3</sub><sup>−</sup>(<em>aq</em>) 则直接给出这一表达式。"
       }
     },
     {
@@ -517,7 +540,7 @@
         "at": "end"
       },
       "cite": "constant",
-      "prompt": "For a titration to be effective, the reaction must be rapid and the yield of the reaction must essentially be 100%. Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1 for a titration reaction?",
+      "prompt": "滴定要有效，反应必须迅速，并且反应的产率基本上必须是 100%。滴定反应的 <em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？",
       "answer": {
         "type": "choice",
         "options": [
@@ -540,11 +563,11 @@
         "at": "end"
       },
       "cite": "constant",
-      "prompt": "For a precipitation reaction to be useful in a gravimetric analysis, the product of the reaction must be insoluble. Is <em>K<sub>c</sub></em> &gt; 1, &lt; 1, or ≈ 1 for a useful precipitation reaction?",
+      "prompt": "沉淀反应要在重量分析中有用，反应的产物必须不溶。一个有用的沉淀反应的 <em>K<sub>c</sub></em> 是 &gt; 1、&lt; 1 还是 ≈ 1？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "<em>K<sub>c</sub></em> &gt; 1, and much greater than 1. A precipitation reaction has the ions combining into the solid, for example Ag<sup>+</sup>(<em>aq</em>) + Cl<sup>−</sup>(<em>aq</em>) ⇌ AgCl(<em>s</em>), for which ${K}_{c}=\\;\\frac{1}{[{\\text{Ag}}^{\\text{+}}][{\\text{Cl}}^{\\text{−}}]}.$ The solid does not appear in the expression, so the ion concentrations sit in the denominator. A useful precipitation leaves almost none of the ion being measured in solution, so at equilibrium those concentrations are very small, the denominator is very small, and <em>K<sub>c</sub></em> is large."
+        "solution": "<em>K<sub>c</sub></em> &gt; 1，而且远大于 1。沉淀反应是离子结合成固体，例如 Ag<sup>+</sup>(<em>aq</em>) + Cl<sup>−</sup>(<em>aq</em>) ⇌ AgCl(<em>s</em>)，其 ${K}_{c}=\\;\\frac{1}{[{\\text{Ag}}^{\\text{+}}][{\\text{Cl}}^{\\text{−}}]}.$ 固体不出现在表达式中，所以离子的浓度处在分母上。有用的沉淀反应使被测离子几乎不剩在溶液中，所以平衡时这些浓度非常小，分母非常小，<em>K<sub>c</sub></em> 就很大。"
       }
     },
     {
@@ -557,11 +580,11 @@
         "at": "end"
       },
       "cite": "quotient",
-      "prompt": "Write the mathematical expression for the reaction quotient, <em>Q<sub>c</sub></em>, for each of the following reactions:<br>(a) ${\\text{CH}}_{4}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons {\\text{CH}}_{3}\\text{Cl}(g)+\\text{HCl}(g)$<br>(b) ${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)$<br>(c) $2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>(d) ${\\text{BaSO}}_{3}(s)\\rightleftharpoons \\text{BaO}(s)+{\\text{SO}}_{2}(g)$<br>(e) ${\\text{P}}_{4}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{P}}_{4}{\\text{O}}_{10}(s)$<br>(f) ${\\text{Br}}_{2}(g)\\rightleftharpoons 2\\text{Br}(g)$<br>(g) ${\\text{CH}}_{4}(g)+2{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$<br>(h) ${\\text{CuSO}}_{4}\\text{·}5{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{CuSO}}_{4}(s)+5{\\text{H}}_{2}\\text{O}(g)$",
+      "prompt": "写出下列各反应的反应商 <em>Q<sub>c</sub></em> 的数学表达式：<br>（a）${\\text{CH}}_{4}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons {\\text{CH}}_{3}\\text{Cl}(g)+\\text{HCl}(g)$<br>（b）${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)$<br>（c）$2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{SO}}_{3}(g)$<br>（d）${\\text{BaSO}}_{3}(s)\\rightleftharpoons \\text{BaO}(s)+{\\text{SO}}_{2}(g)$<br>（e）${\\text{P}}_{4}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{P}}_{4}{\\text{O}}_{10}(s)$<br>（f）${\\text{Br}}_{2}(g)\\rightleftharpoons 2\\text{Br}(g)$<br>（g）${\\text{CH}}_{4}(g)+2{\\text{O}}_{2}(g)\\rightleftharpoons {\\text{CO}}_{2}(g)+2{\\text{H}}_{2}\\text{O}(l)$<br>（h）${\\text{CuSO}}_{4}\\text{·}5{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{CuSO}}_{4}(s)+5{\\text{H}}_{2}\\text{O}(g)$",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) ${Q}_{c}=\\;\\frac{[{\\text{CH}}_{3}\\text{Cl}][\\text{HCl}]}{[{\\text{CH}}_{4}][{\\text{Cl}}_{2}]};$ (b) ${Q}_{c}=\\;\\frac{{[\\text{NO}]}^{2}}{[{\\text{N}}_{2}]\\;[{\\text{O}}_{2}]};$ (c) ${Q}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]};$ (d) <em>Q<sub>c</sub></em> = [SO<sub>2</sub>]; (e) ${Q}_{c}=\\;\\frac{1}{[{\\text{P}}_{4}]{[{\\text{O}}_{2}]}^{5}};$ (f) ${Q}_{c}=\\;\\frac{{[\\text{Br}]}^{2}}{[{\\text{Br}}_{2}]};$ (g) ${Q}_{c}=\\;\\frac{[{\\text{CO}}_{2}]}{[{\\text{CH}}_{4}]{[{\\text{O}}_{2}]}^{2}};$ (h) <em>Q<sub>c</sub></em> = [H<sub>2</sub>O]<sup>5</sup>"
+        "solution": "（a）${Q}_{c}=\\;\\frac{[{\\text{CH}}_{3}\\text{Cl}][\\text{HCl}]}{[{\\text{CH}}_{4}][{\\text{Cl}}_{2}]};$ （b）${Q}_{c}=\\;\\frac{{[\\text{NO}]}^{2}}{[{\\text{N}}_{2}]\\;[{\\text{O}}_{2}]};$ （c）${Q}_{c}=\\;\\frac{{[{\\text{SO}}_{3}]}^{2}}{{[{\\text{SO}}_{2}]}^{2}[{\\text{O}}_{2}]};$ （d）<em>Q<sub>c</sub></em> = [SO<sub>2</sub>]；（e）${Q}_{c}=\\;\\frac{1}{[{\\text{P}}_{4}]{[{\\text{O}}_{2}]}^{5}};$ （f）${Q}_{c}=\\;\\frac{{[\\text{Br}]}^{2}}{[{\\text{Br}}_{2}]};$ （g）${Q}_{c}=\\;\\frac{[{\\text{CO}}_{2}]}{[{\\text{CH}}_{4}]{[{\\text{O}}_{2}]}^{2}};$ （h）<em>Q<sub>c</sub></em> = [H<sub>2</sub>O]<sup>5</sup>"
       }
     },
     {
@@ -574,11 +597,11 @@
         "at": "end"
       },
       "cite": "quotient",
-      "prompt": "Write the mathematical expression for the reaction quotient, <em>Q<sub>c</sub></em>, for each of the following reactions:<br>(a) ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>(b) $4{\\text{NH}}_{3}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons 4\\text{NO}(g)+6{\\text{H}}_{2}\\text{O}(g)$<br>(c) ${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)$<br>(d) ${\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)$<br>(e) ${\\text{NH}}_{4}\\text{Cl}(s)\\rightleftharpoons {\\text{NH}}_{3}(g)+\\text{HCl}(g)$<br>(f) $2\\text{Pb}{({\\text{NO}}_{3})}_{2}(s)\\rightleftharpoons 2\\text{PbO}(s)+4{\\text{NO}}_{2}(g)+{\\text{O}}_{2}(g)$<br>(g) $2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{H}}_{2}\\text{O}(l)$<br>(h) ${\\text{S}}_{8}(g)\\rightleftharpoons 8\\text{S}(g)$",
+      "prompt": "写出下列各反应的反应商 <em>Q<sub>c</sub></em> 的数学表达式：<br>（a）${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>（b）$4{\\text{NH}}_{3}(g)+5{\\text{O}}_{2}(g)\\rightleftharpoons 4\\text{NO}(g)+6{\\text{H}}_{2}\\text{O}(g)$<br>（c）${\\text{N}}_{2}{\\text{O}}_{4}(g)\\rightleftharpoons 2{\\text{NO}}_{2}(g)$<br>（d）${\\text{CO}}_{2}(g)+{\\text{H}}_{2}(g)\\rightleftharpoons \\text{CO}(g)+{\\text{H}}_{2}\\text{O}(g)$<br>（e）${\\text{NH}}_{4}\\text{Cl}(s)\\rightleftharpoons {\\text{NH}}_{3}(g)+\\text{HCl}(g)$<br>（f）$2\\text{Pb}{({\\text{NO}}_{3})}_{2}(s)\\rightleftharpoons 2\\text{PbO}(s)+4{\\text{NO}}_{2}(g)+{\\text{O}}_{2}(g)$<br>（g）$2{\\text{H}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2{\\text{H}}_{2}\\text{O}(l)$<br>（h）${\\text{S}}_{8}(g)\\rightleftharpoons 8\\text{S}(g)$",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Each <em>Q<sub>c</sub></em> is the product concentrations, each raised to its coefficient, over the reactant concentrations raised to theirs; the pure solids in (e) and (f) and the liquid water in (g) are left out. (a) ${Q}_{c}=\\;\\frac{{[{\\text{NH}}_{3}]}^{2}}{[{\\text{N}}_{2}]{[{\\text{H}}_{2}]}^{3}};$ (b) ${Q}_{c}=\\;\\frac{{[\\text{NO}]}^{4}{[{\\text{H}}_{2}\\text{O}]}^{6}}{{[{\\text{NH}}_{3}]}^{4}{[{\\text{O}}_{2}]}^{5}};$ (c) ${Q}_{c}=\\;\\frac{{[{\\text{NO}}_{2}]}^{2}}{[{\\text{N}}_{2}{\\text{O}}_{4}]};$ (d) ${Q}_{c}=\\;\\frac{[\\text{CO}][{\\text{H}}_{2}\\text{O}]}{[{\\text{CO}}_{2}][{\\text{H}}_{2}]};$ (e) <em>Q<sub>c</sub></em> = [NH<sub>3</sub>][HCl]; (f) <em>Q<sub>c</sub></em> = [NO<sub>2</sub>]<sup>4</sup>[O<sub>2</sub>]; (g) ${Q}_{c}=\\;\\frac{1}{{[{\\text{H}}_{2}]}^{2}[{\\text{O}}_{2}]};$ (h) ${Q}_{c}=\\;\\frac{{[\\text{S}]}^{8}}{[{\\text{S}}_{8}]}$"
+        "solution": "每个 <em>Q<sub>c</sub></em> 都是各产物浓度（每个浓度取其系数次幂）的乘积除以各反应物浓度（同样取其系数次幂）的乘积；（e）和（f）中的纯固体以及（g）中的液态水都不写入。（a）${Q}_{c}=\\;\\frac{{[{\\text{NH}}_{3}]}^{2}}{[{\\text{N}}_{2}]{[{\\text{H}}_{2}]}^{3}};$ （b）${Q}_{c}=\\;\\frac{{[\\text{NO}]}^{4}{[{\\text{H}}_{2}\\text{O}]}^{6}}{{[{\\text{NH}}_{3}]}^{4}{[{\\text{O}}_{2}]}^{5}};$ （c）${Q}_{c}=\\;\\frac{{[{\\text{NO}}_{2}]}^{2}}{[{\\text{N}}_{2}{\\text{O}}_{4}]};$ （d）${Q}_{c}=\\;\\frac{[\\text{CO}][{\\text{H}}_{2}\\text{O}]}{[{\\text{CO}}_{2}][{\\text{H}}_{2}]};$ （e）<em>Q<sub>c</sub></em> = [NH<sub>3</sub>][HCl]；（f）<em>Q<sub>c</sub></em> = [NO<sub>2</sub>]<sup>4</sup>[O<sub>2</sub>]；（g）${Q}_{c}=\\;\\frac{1}{{[{\\text{H}}_{2}]}^{2}[{\\text{O}}_{2}]};$ （h）${Q}_{c}=\\;\\frac{{[\\text{S}]}^{8}}{[{\\text{S}}_{8}]}$"
       }
     },
     {
@@ -591,11 +614,11 @@
         "at": "end"
       },
       "cite": "direction",
-      "prompt": "The initial concentrations or pressures of reactants and products are given for each of the following systems. Calculate the reaction quotient and determine the direction in which each system will proceed to reach equilibrium.<br>(a) $2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{2em}{K}_{c}=17;$ [NH<sub>3</sub>] = 0.20 <em>M</em>, [N<sub>2</sub>] = 1.00 <em>M</em>, [H<sub>2</sub>] = 1.00 <em>M</em><br>(b) $2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{2em}{K}_{P}=6.8\\;\\times \\;{10}^{4};$ NH<sub>3</sub> = 3.0 atm, N<sub>2</sub> = 2.0 atm, H<sub>2</sub> = 1.0 atm<br>(c) $2{\\text{SO}}_{3}(g)\\;\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{c}=0.230;$ [SO<sub>3</sub>] = 0.00 <em>M</em>, [SO<sub>2</sub>] = 1.00 <em>M</em>, [O<sub>2</sub>] = 1.00 <em>M</em><br>(d) $2{\\text{SO}}_{3}(g)\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{P}=16.5;$ SO<sub>3</sub> = 1.00 atm, SO<sub>2</sub> = 1.00 atm, O<sub>2</sub> = 1.00 atm<br>(e) $2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)\\hspace{2em}{K}_{c}=4.6\\;\\times \\;{10}^{4};$ [NO] = 1.00 <em>M</em>, [Cl<sub>2</sub>] = 1.00 <em>M</em>, [NOCl] = 0 <em>M</em><br>(f) ${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{2em}{K}_{P}=0.050;$ NO = 10.0 atm, N<sub>2</sub> = O<sub>2</sub> = 5 atm",
+      "prompt": "下面给出了每个体系中反应物和产物的初始浓度或压强。计算反应商，并确定每个体系为达到平衡将沿哪个方向进行。<br>（a）$2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{2em}{K}_{c}=17;$ [NH<sub>3</sub>] = 0.20 <em>M</em>，[N<sub>2</sub>] = 1.00 <em>M</em>，[H<sub>2</sub>] = 1.00 <em>M</em><br>（b）$2{\\text{NH}}_{3}(g)\\rightleftharpoons {\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\hspace{2em}{K}_{P}=6.8\\;\\times \\;{10}^{4};$ NH<sub>3</sub> = 3.0 atm，N<sub>2</sub> = 2.0 atm，H<sub>2</sub> = 1.0 atm<br>（c）$2{\\text{SO}}_{3}(g)\\;\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{c}=0.230;$ [SO<sub>3</sub>] = 0.00 <em>M</em>，[SO<sub>2</sub>] = 1.00 <em>M</em>，[O<sub>2</sub>] = 1.00 <em>M</em><br>（d）$2{\\text{SO}}_{3}(g)\\rightleftharpoons 2{\\text{SO}}_{2}(g)+{\\text{O}}_{2}(g)\\hspace{2em}{K}_{P}=16.5;$ SO<sub>3</sub> = 1.00 atm，SO<sub>2</sub> = 1.00 atm，O<sub>2</sub> = 1.00 atm<br>（e）$2\\text{NO}(g)+{\\text{Cl}}_{2}(g)\\rightleftharpoons 2\\text{NOCl}(g)\\hspace{2em}{K}_{c}=4.6\\;\\times \\;{10}^{4};$ [NO] = 1.00 <em>M</em>，[Cl<sub>2</sub>] = 1.00 <em>M</em>，[NOCl] = 0 <em>M</em><br>（f）${\\text{N}}_{2}(g)+{\\text{O}}_{2}(g)\\rightleftharpoons 2\\text{NO}(g)\\hspace{2em}{K}_{P}=0.050;$ NO = 10.0 atm，N<sub>2</sub> = O<sub>2</sub> = 5 atm",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) <em>Q</em><sub>c</sub> 25 proceeds left; (b) <em>Q<sub>P</sub></em> 0.22 proceeds right; (c) <em>Q<sub>c</sub></em> undefined proceeds left; (d) <em>Q<sub>P</sub></em> 1.00 proceeds right; (e) <em>Q<sub>P</sub></em> 0 proceeds right; (f) <em>Q<sub>c</sub></em><sup class=\"fn\" data-note=\"c-e17-labels\"></sup> 4 proceeds left"
+        "solution": "（a）<em>Q</em><sub>c</sub> = 25，向左进行；（b）<em>Q<sub>P</sub></em> = 0.22，向右进行；（c）<em>Q<sub>c</sub></em> 无定义，向左进行；（d）<em>Q<sub>P</sub></em> = 1.00，向右进行；（e）<em>Q<sub>P</sub></em> = 0，向右进行；（f）<em>Q<sub>c</sub></em><sup class=\"fn\" data-note=\"c-e17-labels\"></sup> = 4，向左进行"
       }
     },
     {
@@ -608,11 +631,11 @@
         "at": "end"
       },
       "cite": "direction",
-      "prompt": "The following reaction has <em>K<sub>P</sub></em> = 4.50 × 10<sup>−5</sup> at 720 K.<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>If a reaction vessel is filled with each gas to the partial pressures listed, in which direction will it shift to reach equilibrium? <em>P</em>(NH<sub>3</sub>) = 93 atm, <em>P</em>(N<sub>2</sub>) = 48 atm, and <em>P</em>(H<sub>2</sub>) = 52 atm",
+      "prompt": "下列反应在 720 K 时 <em>K<sub>P</sub></em> = 4.50 × 10<sup>−5</sup>。<br>${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)$<br>如果在反应容器中充入各种气体，使其分压为所列数值，那么为达到平衡，反应将向哪个方向移动？<em>P</em>(NH<sub>3</sub>) = 93 atm，<em>P</em>(N<sub>2</sub>) = 48 atm，<em>P</em>(H<sub>2</sub>) = 52 atm",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "The system will shift toward the reactants to reach equilibrium."
+        "solution": "体系将向反应物方向移动以达到平衡。"
       }
     },
     {
@@ -625,11 +648,11 @@
         "at": "end"
       },
       "cite": "heterogeneous",
-      "prompt": "Which of the systems described in the exercise that asks for <em>Q<sub>c</sub></em> of reactions (a) CH<sub>4</sub> + Cl<sub>2</sub> through (h) CuSO<sub>4</sub>·5H<sub>2</sub>O are homogeneous equilibria? Which are heterogeneous equilibria?",
+      "prompt": "在要求写出反应（a）CH<sub>4</sub> + Cl<sub>2</sub> 至（h）CuSO<sub>4</sub>·5H<sub>2</sub>O 的 <em>Q<sub>c</sub></em> 的那道习题所描述的体系中，哪些是均相平衡？哪些是多相平衡？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "(a) homogenous; (b) homogenous; (c) homogenous; (d) heterogeneous; (e) heterogeneous; (f) homogenous; (g) heterogeneous; (h) heterogeneous"
+        "solution": "（a）均相；（b）均相；（c）均相；（d）多相；（e）多相；（f）均相；（g）多相；（h）多相"
       }
     },
     {
@@ -642,11 +665,11 @@
         "at": "end"
       },
       "cite": "heterogeneous",
-      "prompt": "Which of the systems described in the exercise that asks for <em>Q<sub>c</sub></em> of reactions (a) N<sub>2</sub> + 3H<sub>2</sub> through (h) S<sub>8</sub> are homogeneous equilibria? Which are heterogeneous equilibria?",
+      "prompt": "在要求写出反应（a）N<sub>2</sub> + 3H<sub>2</sub> 至（h）S<sub>8</sub> 的 <em>Q<sub>c</sub></em> 的那道习题所描述的体系中，哪些是均相平衡？哪些是多相平衡？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Homogeneous: (a), (b), (c), (d), and (h), in which every reactant and product is a gas, so all are in one phase. Heterogeneous: (e), where solid NH<sub>4</sub>Cl forms two gases; (f), where solid Pb(NO<sub>3</sub>)<sub>2</sub> forms solid PbO and two gases; and (g), where two gases form liquid water. Each of these has species in two phases."
+        "solution": "均相：（a）、（b）、（c）、（d）和（h），其中所有反应物和产物都是气体，所以都在同一相中。多相：（e），固体 NH<sub>4</sub>Cl 生成两种气体；（f），固体 Pb(NO<sub>3</sub>)<sub>2</sub> 生成固体 PbO 和两种气体；以及（g），两种气体生成液态水。这几个反应中的物种都处于两个相中。"
       }
     },
     {
@@ -659,11 +682,11 @@
         "at": "end"
       },
       "cite": "homogeneous",
-      "prompt": "For which of the reactions in the exercise that asks for <em>Q<sub>c</sub></em> of reactions (a) CH<sub>4</sub> + Cl<sub>2</sub> through (h) CuSO<sub>4</sub>·5H<sub>2</sub>O does <em>K<sub>c</sub></em> (calculated using concentrations) equal <em>K<sub>P</sub></em> (calculated using pressures)?",
+      "prompt": "在要求写出反应（a）CH<sub>4</sub> + Cl<sub>2</sub> 至（h）CuSO<sub>4</sub>·5H<sub>2</sub>O 的 <em>Q<sub>c</sub></em> 的那道习题的反应中，哪些反应的 <em>K<sub>c</sub></em>（用浓度计算）等于 <em>K<sub>P</sub></em>（用压强计算）？",
       "answer": {
         "type": "open",
         "generated_by": "source",
-        "solution": "This situation occurs in (a) and (b)."
+        "solution": "这种情况出现在（a）和（b）中。"
       }
     },
     {
@@ -676,11 +699,11 @@
         "at": "end"
       },
       "cite": "homogeneous",
-      "prompt": "For which of the reactions in the exercise that asks for <em>Q<sub>c</sub></em> of reactions (a) N<sub>2</sub> + 3H<sub>2</sub> through (h) S<sub>8</sub> does <em>K<sub>c</sub></em> (calculated using concentrations) equal <em>K<sub>P</sub></em> (calculated using pressures)?",
+      "prompt": "在要求写出反应（a）N<sub>2</sub> + 3H<sub>2</sub> 至（h）S<sub>8</sub> 的 <em>Q<sub>c</sub></em> 的那道习题的反应中，哪些反应的 <em>K<sub>c</sub></em>（用浓度计算）等于 <em>K<sub>P</sub></em>（用压强计算）？",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "Only (d). Since <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em>(<em>RT</em>)<sup>Δ<em>n</em></sup>, the two are equal when Δ<em>n</em>, the moles of gaseous products less the moles of gaseous reactants, is zero. Counting gases only: (a) Δ<em>n</em> = 2 − 4 = −2; (b) 10 − 9 = 1; (c) 2 − 1 = 1; (d) (1 + 1) − (1 + 1) = 0; (e) 2 − 0 = 2; (f) 5 − 0 = 5; (g) 0 − 3 = −3, because the water is liquid; (h) 8 − 1 = 7."
+        "solution": "只有（d）。由于 <em>K<sub>P</sub></em> = <em>K<sub>c</sub></em>(<em>RT</em>)<sup>Δ<em>n</em></sup>，当 Δ<em>n</em>（气态产物的物质的量减去气态反应物的物质的量）为零时，两者相等。只数气体：（a）Δ<em>n</em> = 2 − 4 = −2；（b）10 − 9 = 1；（c）2 − 1 = 1；（d）(1 + 1) − (1 + 1) = 0；（e）2 − 0 = 2；（f）5 − 0 = 5；（g）0 − 3 = −3，因为水是液态；（h）8 − 1 = 7。"
       }
     },
     {
@@ -693,7 +716,7 @@
         "at": "end"
       },
       "cite": "homogeneous",
-      "prompt": "Convert the values of <em>K<sub>c</sub></em> to values of <em>K<sub>P</sub></em> or the values of <em>K<sub>P</sub></em> to values of <em>K<sub>c</sub></em>.<br>(a) ${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{2em}{K}_{c}=0.50\\;\\text{at}\\;400\\;\\text{°C}$<br>(b) ${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\rightleftharpoons 2\\text{HI}(g)\\hspace{2em}{K}_{c}=50.2\\;\\text{at}\\;448\\;\\text{°C}$<br>(c) ${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{2em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{at}\\;25\\;\\text{°C}$<br>(d) ${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)\\hspace{2em}{K}_{P}=0.122\\;\\text{at}\\;50\\;\\text{°C}$",
+      "prompt": "把 <em>K<sub>c</sub></em> 的值换算成 <em>K<sub>P</sub></em> 的值，或把 <em>K<sub>P</sub></em> 的值换算成 <em>K<sub>c</sub></em> 的值。<br>（a）${\\text{N}}_{2}(g)+3{\\text{H}}_{2}(g)\\rightleftharpoons 2{\\text{NH}}_{3}(g)\\hspace{2em}{K}_{c}=0.50\\;\\text{（}400\\;\\text{°C}\\;\\text{时）}$<br>（b）${\\text{H}}_{2}(g)+{\\text{I}}_{2}(g)\\rightleftharpoons 2\\text{HI}(g)\\hspace{2em}{K}_{c}=50.2\\;\\text{（}448\\;\\text{°C}\\;\\text{时）}$<br>（c）${\\text{Na}}_{2}{\\text{SO}}_{4}\\text{·}10{\\text{H}}_{2}\\text{O}(s)\\rightleftharpoons {\\text{Na}}_{2}{\\text{SO}}_{4}(s)+10{\\text{H}}_{2}\\text{O}(g)\\hspace{2em}{K}_{P}=4.08\\;\\times \\;{10}^{−25}\\;\\text{（}25\\;\\text{°C}\\;\\text{时）}$<br>（d）${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)\\hspace{2em}{K}_{P}=0.122\\;\\text{（}50\\;\\text{°C}\\;\\text{时）}$",
       "answer": {
         "type": "multi",
         "generated_by": "source",
@@ -701,24 +724,24 @@
           {
             "part": "(a) <em>K<sub>P</sub></em>",
             "value": 0.00016,
-            "hint": "Δ<em>n</em> = 2 − 4; use the temperature in kelvin and <em>R</em> = 0.0821 L atm mol<sup>−1</sup> K<sup>−1</sup>."
+            "hint": "Δ<em>n</em> = 2 − 4；使用开尔文温度和 <em>R</em> = 0.0821 L atm mol<sup>−1</sup> K<sup>−1</sup>。"
           },
           {
             "part": "(b) <em>K<sub>P</sub></em>",
             "value": 50.2,
-            "hint": "Count the moles of gas on each side before computing anything."
+            "hint": "在计算任何东西之前，先数出两边气体的物质的量。"
           },
           {
             "part": "(c) <em>K<sub>c</sub></em>",
             "value": 5.31e-39,
-            "hint": "Only the water vapor is a gas, so Δ<em>n</em> = 10."
+            "hint": "只有水蒸气是气体，所以 Δ<em>n</em> = 10。"
           },
           {
             "part": "(d) <em>K<sub>c</sub></em>",
             "value": 0.0046
           }
         ],
-        "solution": "(a) <em>K<sub>P</sub></em> = 1.6 × 10<sup>−4</sup>; (b) <em>K<sub>P</sub></em> = 50.2; (c) <em>K<sub>c</sub></em> = 5.31 × 10<sup>−39</sup>; (d) <em>K<sub>c</sub></em> = 4.60 × 10<sup>−3</sup>"
+        "solution": "（a）<em>K<sub>P</sub></em> = 1.6 × 10<sup>−4</sup>；（b）<em>K<sub>P</sub></em> = 50.2；（c）<em>K<sub>c</sub></em> = 5.31 × 10<sup>−39</sup>；（d）<em>K<sub>c</sub></em> = 4.60 × 10<sup>−3</sup>"
       }
     },
     {
@@ -731,12 +754,12 @@
         "at": "end"
       },
       "cite": "heterogeneous",
-      "prompt": "What is the value of the equilibrium constant expression for the change ${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)$ at 30 °C? (See <a href=\\\"/chemistry-2e/sheets/water/\\\">Appendix E</a>.)",
+      "prompt": "30 °C 时，变化 ${\\text{H}}_{2}\\text{O}(l)\\rightleftharpoons {\\text{H}}_{2}\\text{O}(g)$ 的平衡常数表达式的值是多少？（见<a href=\\\"/chemistry-2e/sheets/water/\\\">附录 E</a>。）",
       "answer": {
         "type": "number",
         "value": 0.042,
         "generated_by": "source",
-        "hint": "The liquid is left out of the expression, so <em>K<sub>P</sub></em> is the vapor pressure of water at 30 °C, in atmospheres.",
+        "hint": "液体不写入表达式，所以 <em>K<sub>P</sub></em> 就是 30 °C 时水的蒸气压，以标准大气压（atm）为单位。",
         "solution": "${K}_{P}={P}_{{\\text{H}}_{2}\\text{O}}=0.042.$"
       }
     },
@@ -750,11 +773,11 @@
         "at": "end"
       },
       "cite": "homogeneous",
-      "prompt": "Write the expression of the reaction quotient for the ionization of HOCN in water.",
+      "prompt": "写出 HOCN 在水中电离的反应商表达式。",
       "answer": {
         "type": "open",
         "generated_by": "ai",
-        "solution": "HOCN ionizes by giving a proton to water: HOCN(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + OCN<sup>−</sup>(<em>aq</em>), so ${Q}_{c}=\\;\\frac{[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{OCN}}^{\\text{−}}]}{[\\text{HOCN}]}.$ Water is the solvent as well as a reactant and, as a liquid, is left out of the expression, just as it is for HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>)."
+        "solution": "HOCN 把一个质子给予水而电离：HOCN(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + OCN<sup>−</sup>(<em>aq</em>)，所以 ${Q}_{c}=\\;\\frac{[{\\text{H}}_{3}{\\text{O}}^{\\text{+}}][{\\text{OCN}}^{\\text{−}}]}{[\\text{HOCN}]}.$ 水既是溶剂又是反应物，作为液体不写入表达式，正如 HF(<em>aq</em>) + H<sub>2</sub>O(<em>l</em>) ⇌ H<sub>3</sub>O<sup>+</sup>(<em>aq</em>) + F<sup>−</sup>(<em>aq</em>) 那样。"
       }
     },
     {
@@ -767,7 +790,7 @@
         "at": "end"
       },
       "cite": "homogeneous",
-      "prompt": "Write the reaction quotient expression for the ionization of NH<sub>3</sub> in water.",
+      "prompt": "写出 NH<sub>3</sub> 在水中电离的反应商表达式。",
       "answer": {
         "type": "open",
         "generated_by": "source",
@@ -945,19 +968,19 @@
     {
       "id": "c-e17-labels",
       "kind": "correction",
-      "html": "The key labels the quotients the other way round from the constants given: in (e), with <em>K<sub>c</sub></em> given, the quotient is <em>Q<sub>c</sub></em> = 0; in (f), with <em>K<sub>P</sub></em> given, it is <em>Q<sub>P</sub></em> = 4."
+      "html": "答案把这两个反应商的标注与题目所给的常数标反了：在（e）中，所给的是 <em>K<sub>c</sub></em>，反应商为 <em>Q<sub>c</sub></em> = 0；在（f）中，所给的是 <em>K<sub>P</sub></em>，反应商为 <em>Q<sub>P</sub></em> = 4。"
     },
     {
       "id": "c-cyl5-kc2",
       "kind": "correction",
-      "html": "The book labels both given constants <em>K</em><sub>c1</sub>; the second, 67 for CoO(<em>s</em>) + H<sub>2</sub>(<em>g</em>), is <em>K</em><sub>c2</sub>."
+      "html": "书中把所给的两个常数都标作 <em>K</em><sub>c1</sub>；第二个，即 CoO(<em>s</em>) + H<sub>2</sub>(<em>g</em>) 的 67，应为 <em>K</em><sub>c2</sub>。"
     }
   ],
   "derivations": [
     {
       "id": "kp-kc",
-      "what": "the relation between $\\kKP$ and $\\kKc$",
-      "source": "Chemistry 2e, 13.2 Equilibrium Constants",
+      "what": "$\\kKP$ 与 $\\kKc$ 之间的关系",
+      "source": "化学（第2版），13.2 平衡常数",
       "nodes": [
         {
           "assumes": [
@@ -1004,7 +1027,7 @@
           "then": {
             "tex": "\\mk{K}{\\kKP} = \\frac{\\mk{C}{{(\\kPC)}^{c}}\\mk{D}{{(\\kPD)}^{d}}}{\\mk{A}{{(\\kPA)}^{a}}\\mk{B}{{(\\kPB)}^{b}}}",
             "src": "13.2",
-            "why": "$K_P$ for the gas-phase reaction $a\\text{A}+b\\text{B}\\rightleftharpoons c\\text{C}+d\\text{D}$, written with partial pressures."
+            "why": "气相反应 $a\\text{A}+b\\text{B}\\rightleftharpoons c\\text{C}+d\\text{D}$ 的 $K_P$，用分压写出。"
           },
           "steps": [
             {
@@ -1012,12 +1035,12 @@
               "uses": [
                 0
               ],
-              "cap": "Each gas obeys $P = MRT$ with its own molar concentration, so $P_C = [\\text{C}]RT$, and likewise for the others."
+              "cap": "每种气体都以其各自的物质的量浓度遵循 $P = MRT$，所以 $P_C = [\\text{C}]RT$，其余气体同理。"
             },
             {
               "tex": "\\mk{K}{\\kKP} = \\frac{\\mk{C}{{\\kconcC}^{c}}\\mk{D}{{\\kconcD}^{d}}}{\\mk{A}{{\\kconcA}^{a}}\\mk{B}{{\\kconcB}^{b}}}\\times\\frac{\\mk{rn}{{(R\\kT)}^{c+d}}}{\\mk{rd}{{(R\\kT)}^{a+b}}}",
               "uses": [],
-              "cap": "A power of a product is the product of the powers, $(xy)^n = x^n y^n$.",
+              "cap": "积的幂等于各因子幂的积，$(xy)^n = x^n y^n$。",
               "map": {
                 "C": [
                   "C",
@@ -1052,7 +1075,7 @@
             {
               "tex": "\\mk{K}{\\kKP} = \\mk{Kc}{\\kKc}\\mk{r}{{(R\\kT)}^{(c+d)-(a+b)}}",
               "uses": [],
-              "cap": "Powers of the same base divide by subtracting their exponents, $x^m/x^n = x^{m-n}$.",
+              "cap": "同底数幂相除，指数相减，$x^m/x^n = x^{m-n}$。",
               "map": {
                 "rn": "r",
                 "rd": "r"
@@ -1071,8 +1094,8 @@
     },
     {
       "id": "coupled-equilibria",
-      "what": "the equilibrium constants of reversed, scaled and added equations",
-      "source": "Chemistry 2e, 13.2 Equilibrium Constants",
+      "what": "颠倒、乘系数和相加后的方程式的平衡常数",
+      "source": "化学（第2版），13.2 平衡常数",
       "nodes": [
         {
           "assumes": [
@@ -1084,7 +1107,7 @@
           "then": {
             "tex": "\\mk{K}{\\kKcprime} = \\mk{q}{\\frac{\\kconcA}{\\kconcB}}",
             "src": "13.2",
-            "why": "The law of mass action for the reversed equation, $\\text{B}\\rightleftharpoons\\text{A}$."
+            "why": "颠倒后的方程式 $\\text{B}\\rightleftharpoons\\text{A}$ 的质量作用定律。"
           },
           "steps": [
             {
@@ -1110,7 +1133,7 @@
           "then": {
             "tex": "\\mk{K}{\\kKcprime} = \\frac{\\mk{b}{{\\kconcB}^{\\text{x}}}}{\\mk{a}{{\\kconcA}^{\\text{x}}}}",
             "src": "13.2",
-            "why": "The law of mass action for the equation multiplied by x, $\\text{xA}\\rightleftharpoons\\text{xB}$."
+            "why": "乘以 x 之后的方程式 $\\text{xA}\\rightleftharpoons\\text{xB}$ 的质量作用定律。"
           },
           "steps": [
             {
@@ -1120,7 +1143,7 @@
                 "b": "q",
                 "a": "q"
               },
-              "cap": "A quotient of two powers with the same exponent is the power of the quotient, $\\frac{x^n}{y^n} = \\left(\\frac{x}{y}\\right)^n$."
+              "cap": "两个指数相同的幂之商，等于商的幂，$\\frac{x^n}{y^n} = \\left(\\frac{x}{y}\\right)^n$。"
             },
             {
               "tex": "\\mk{K}{\\kKcprime} = \\mk{q}{{\\kKc}^{\\text{x}}}",

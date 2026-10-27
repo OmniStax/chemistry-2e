@@ -47,7 +47,7 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
   function draw() {
     const { ctx } = begin(d.c);
     const P = Pc.v, T = Tc.v, Pe = Math.max(P, 0.5), gi = +gas.value, g = ZG[gi];
-    const { X, Y } = axes(ctx, box, [0, 1000], [0, 2.5], { xl: 'P (atm)', xc: C('pressure'), yl: 'Z', yc: PAL.ink, nx: 5, ny: 5, fy: (v) => fmt(v, 1) });
+    const { X, Y } = axes(ctx, box, [0, 1000], [0, 2.5], { xl: 'P（atm）', xc: C('pressure'), yl: 'Z', yc: PAL.ink, nx: 5, ny: 5, fy: (v) => fmt(v, 1) });
     ctx.save(); ctx.fillStyle = alpha(PAL.ink, 0.05); ctx.fillRect(box.l, Y(1), box.r - box.l, box.b - Y(1)); ctx.restore();
     line(ctx, box.l, Y(1), box.r, Y(1), PAL.ink, 3, [10, 10]);
     text(ctx, '理想气体', box.r - 8, Y(1) - 12, PAL.ink, { size: 18, align: 'right', bg: PAL.panel });
@@ -168,7 +168,7 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
   function build(s) {
     const key = [held.value, gas.value, boxes[0].P.length, fmt(s.Vr, 2), palSig()].join('|'); if (key === sig) return; sig = key;
     v.clear(); ms = [[], []];
-    const q = s.q, name = '一个' + q.word + (q.atoms.length === 1 ? '原子' : '分子') + '，' + q.f;
+    const q = s.q, name = q.word + (q.atoms.length === 1 ? '原子' : '分子') + '，' + q.f;
     boxes.forEach((b, bi) => {
       const hw = halfW(b, s);
       const who = F.ref(b.id === 'ideal' ? 'ideal-gas' : 'real-gas');
@@ -208,7 +208,7 @@ const zOf = (g, P, T) => (P * molarVolume(g.a, g.b, P, T)) / (R * T);
       text(ctx, 'nRT/(V − nb) = ' + sig3(s.rep) + ' atm，减去 n²a/V² = ' + sig3(s.att) + ' atm', X(0), 151, cp, { size: 18, weight: 600 });
       line(ctx, X(0), 222, X(140), 222, PAL.muted, 2);
       scale(ctx, X, 0, 140, 20, 222, '', 1);
-      text(ctx, 'P (atm)', X(140), 276, cp, { size: 18, weight: 600, align: 'right' });
+      text(ctx, 'P（atm）', X(140), 276, cp, { size: 18, weight: 600, align: 'right' });
     } else {
       const diff = +fmt(s.Vr, 2) - V0, nb = s.n * q.b;
       topline(ctx, '在 ' + sig3(s.Pi) + ' atm 和 ' + fmt(s.T, 0) + ' K 时，' + fmt(s.n, 2) + ' mol ' + q.f + ' 占据 ' + fmt(s.Vr, 2) + ' L，比理想气体所占的 4.25 L ' + (diff < 0 ? '小' : '大') + ' ' + fmt(Math.abs(diff), 2) + ' L。');

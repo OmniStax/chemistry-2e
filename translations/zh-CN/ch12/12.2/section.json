@@ -9,7 +9,7 @@
   "描述化学性质、物理状态、温度、浓度和催化作用对反应速率的影响"
  ],
  "summary_html": "<p><span data-concept=\"reaction-rate\">化学反应的速率</span>受多个参数影响。涉及两相的反应，在接触的<span data-concept=\"area\">表面积</span>更大时进行得更快。如果<span data-concept=\"temperature\">温度</span>或反应物<span data-concept=\"concentration\">浓度</span>升高，<span data-concept=\"reaction-rate\">给定反应的速率</span>通常也会增大。<span data-concept=\"catalyst\">催化剂</span>可以通过提供<span data-concept=\"activation-energy\">活化能</span>更低的另一条途径来提高<span data-concept=\"reaction-rate\">反应速率</span>。</p>",
- "notes": "三则“学习链接”注释被略去：铯与水反应的视频、磷在氧气中燃烧的视频，以及 PhET 反应与速率（Reactions &amp; Rates）交互模拟，后者由一氧化氮与臭氧的模拟取代。图 12.6 保留了书中印出的铁与盐酸反应的未配平方程式。",
+ "notes": "三则“学习链接”注释被略去：铯与水反应的视频、磷在氧气中燃烧的视频，以及 PhET 反应与速率（Reactions &amp; Rates）交互模拟，与之对应的是一氧化氮与臭氧的模拟。图 12.6 保留了书中印出的铁与盐酸反应的未配平方程式。",
  "ai": {
   "text": [
    {

@@ -2,16 +2,16 @@
  "id": "6.4",
  "module": "m68734",
  "chapter": "6",
- "title": "Electronic Structure of Atoms (Electron Configurations)",
- "short": "Electron Configurations",
- "lead": "The electrons of an atom fill its orbitals in order of increasing <span data-concept=\"energy-and-work\">energy</span>, under the Aufbau principle, the Pauli exclusion principle and Hund’s rule. The electron configurations and orbital diagrams that result separate core from valence electrons and tie each element to its place in the periodic table, and they extend to ions.",
+ "title": "原子的电子结构（电子构型）",
+ "short": "电子构型",
+ "lead": "原子的电子按<span data-concept=\"energy-and-work\">能量</span>递增的顺序填入各轨道，遵循构造原理、泡利不相容原理和洪特规则。由此得到的电子构型和轨道表示式把内层电子与价电子区分开来，把每种元素与其在元素周期表中的位置联系起来，并可推广到离子。",
  "objectives": [
-  "Derive the predicted ground-state electron configurations of atoms",
-  "Identify and explain exceptions to predicted electron configurations for atoms and ions",
-  "Relate electron configurations to element classifications in the periodic table"
+  "推导原子预测的基态电子构型",
+  "识别并解释原子和离子预测电子构型的例外",
+  "将电子构型与元素周期表中的元素分类联系起来"
  ],
- "summary_html": "<p>The relative <span data-concept=\"energy-and-work\">energy</span> of the subshells determine the order in which atomic orbitals are filled (1<em>s</em>, 2<em>s</em>, 2<em>p</em>, 3<em>s</em>, 3<em>p</em>, 4<em>s</em>, 3<em>d</em>, 4<em>p</em>, and so on). Electron configurations and orbital diagrams can be determined by applying the Pauli exclusion principle (no two electrons can have the same set of four quantum numbers) and Hund’s rule (whenever possible, electrons retain unpaired spins in degenerate orbitals).</p><p>Electrons in the outermost orbitals, called valence electrons, are responsible for most of the chemical behavior of elements. In the periodic table, elements with analogous valence electron configurations usually occur within the same group. There are some exceptions to the predicted filling order, particularly when half-filled or completely filled orbitals can be formed. The periodic table can be divided into three categories based on the orbital in which the last electron to be added is placed: main group elements (<em>s</em> and <em>p</em> orbitals), transition elements (<em>d</em> orbitals), and inner transition elements (<em>f</em> orbitals).</p>",
- "notes": "Nothing of the book’s text is left out; the section prints no Link to Learning note and no boxed feature.",
+ "summary_html": "<p>各亚层的相对<span data-concept=\"energy-and-work\">能量</span>决定了原子轨道的填充顺序（1<em>s</em>、2<em>s</em>、2<em>p</em>、3<em>s</em>、3<em>p</em>、4<em>s</em>、3<em>d</em>、4<em>p</em>，依此类推）。应用泡利不相容原理（没有两个电子可以具有相同的四个量子数）和洪特规则（只要可能，电子在简并轨道中就保持自旋未成对），可以确定电子构型和轨道表示式。</p><p>最外层轨道中的电子称为价电子，决定了元素的大部分化学行为。在元素周期表中，具有类似价电子构型的元素通常位于同一族。填充顺序的预测存在一些例外，尤其是在能够形成半充满或全充满轨道的时候。根据最后加入的电子所处的轨道，元素周期表可分为三类：主族元素（<em>s</em> 和 <em>p</em> 轨道）、过渡元素（<em>d</em> 轨道）和内过渡元素（<em>f</em> 轨道）。</p>",
+ "notes": "书中的文字没有任何删减；本节没有印出“学习链接”提示，也没有框出的专题栏目。",
  "ai": {
   "text": [
    {
@@ -21,18 +21,26 @@
    {
     "model": "claude-opus-5-5",
     "effort": "high"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ],
   "figures": [
    {
     "model": "claude-opus-5-5",
     "effort": "low"
+   },
+   {
+    "model": "claude-sonnet-5-5",
+    "effort": "medium"
    }
   ]
  },
- "built": "2026-09-28",
+ "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "Bloom levels, concept tags and weights are AI-generated. Answers come from the book’s answer key and from the Check Your Learning answers; the images the book prints in its answer to fs-idp45725024 are kept in that answer. The eleven unkeyed items fs-idp203800544, fs-idp28734432, fs-idp44567104, fs-idm11516304, fs-idp22673408, fs-idp20553216, fs-idp42173648, fs-idm7500224, fs-idp50820528, fs-idm62612928 and fs-idm9054704 are kept with a suggested approach marked as OmniStax’s own; fs-idp42173648, which asks the reader to pick from Li, B, N, F and Ne, is kept as an open item with its options and is not graded. The question on two unpaired electrons, fs-idp162194832, is set as a choice over the book’s five options. Three items printed with section 6.5 are set here, since they relate electron configurations to the groups of the periodic table: fs-idm150214960 with the book’s answer, and fs-idm121823200 and fs-idp177066416 with a suggested approach.",
+ "exercise_notes": "布鲁姆层级、概念标签和权重均由 AI 生成。答案来自书后答案和“学习检测”的答案；书中在 fs-idp45725024 的答案里印出的图像保留在该答案中。十一道没有答案的题，即 fs-idp203800544、fs-idp28734432、fs-idp44567104、fs-idm11516304、fs-idp22673408、fs-idp20553216、fs-idp42173648、fs-idm7500224、fs-idp50820528、fs-idm62612928 和 fs-idm9054704，均保留，并附有标明为 OmniStax 自拟的建议思路；fs-idp42173648 要求读者从 Li、B、N、F 和 Ne 中选择，作为开放题连同选项保留，不评分。关于两个未成对电子的题 fs-idp162194832，设为在书中五个选项上的选择题。书中印在 6.5 节的三道题放在这里，因为它们把电子构型与元素周期表的族联系起来：fs-idm150214960 附有书中的答案，fs-idm121823200 和 fs-idp177066416 附有建议思路。",
  "figures": [
   {
    "id": "sim-aufbau",
@@ -41,7 +49,7 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_eLeveldiag.jpg"
    ],
-   "original_caption": "Generalized energy-level diagram for atomic orbitals in an atom with two or more electrons (not to scale).",
+   "original_caption": "含有两个或更多电子的原子中原子轨道的一般能级图（未按比例）。",
    "draws": [
     "energy"
    ],
@@ -55,6 +63,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "notes repeating the headline and readout cut"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -65,7 +78,7 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_Econfig.jpg"
    ],
-   "original_caption": "The diagram of an electron configuration specifies the subshell (n and l value, with letter symbol) and superscript number of electrons.",
+   "original_caption": "电子构型图示给出了亚层（n 值和 l 值，以字母符号表示）以及电子数的上标数字。",
    "draws": [],
    "conventions": [
     "H"
@@ -75,6 +88,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -85,13 +103,18 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_Efillorder.jpg"
    ],
-   "original_caption": "This diagram depicts the energy order for atomic orbitals and is useful for deriving ground-state electron configurations.",
+   "original_caption": "此图描绘了原子轨道的能量顺序，可用于推导基态电子构型。",
    "draws": [],
    "ai": [
     {
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -106,7 +129,7 @@
     "/media/ch06/CNX_Chem_06_04_Econtable.jpg",
     "/media/ch06/CNX_Chem_06_04_Ptableconf.jpg"
    ],
-   "original_caption": "(Figure 6.27) This partial periodic table shows electron configurations for the valence subshells of atoms. By “building up” from hydrogen, this table can be used to determine the electron configuration for atoms of most elements in the periodic table. (Electron configurations of the lanthanides and actinides are not accurately predicted by this simple approach. See Figure 6.29.) (Figure 6.29) This version of the periodic table shows the outer-shell electron configuration of each element. Note that down each group, the configuration is often similar.",
+   "original_caption": "（图 6.27）此局部元素周期表给出了原子价层各亚层的电子构型。通过从氢开始“逐步构建”，该表可用于确定元素周期表中大多数元素的原子的电子构型。（镧系元素和锕系元素的电子构型无法用这种简单方法准确预测。见图 6.29。）（图 6.29）此版本的元素周期表给出了每种元素的外层电子构型。注意，沿每一族向下，其构型往往相似。",
    "draws": [],
    "ai": [
     {
@@ -118,6 +141,11 @@
      "model": "claude-opus-5-5",
      "effort": "high",
      "part": "valence note no longer reads the count as n"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -128,7 +156,7 @@
    "originals": [
     "/media/ch06/CNX_Chem_06_04_Valence.jpg"
    ],
-   "original_caption": "A core-abbreviated electron configuration (right) replaces the core electrons with the noble gas symbol whose configuration matches the core electron configuration of the other element.",
+   "original_caption": "内层电子简化的电子构型（右）用稀有气体的符号代替内层电子，该稀有气体的构型与另一种元素的内层电子构型一致。",
    "draws": [],
    "conventions": [
     "Na"
@@ -138,6 +166,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -156,6 +189,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -174,6 +212,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -192,6 +235,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -210,6 +258,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -228,6 +281,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -246,6 +304,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -267,6 +330,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   },
@@ -285,6 +353,11 @@
      "model": "claude-opus-5-5",
      "effort": "low",
      "part": "built"
+    },
+    {
+     "model": "claude-sonnet-5-5",
+     "effort": "medium",
+     "part": "翻译"
     }
    ]
   }
@@ -467,11 +540,11 @@
     "after": "ex-phosphorus"
    },
    "cite": "after-argon",
-   "prompt": "Identify the atoms from the electron configurations given: (a) [Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>5</sup> (b) [Kr]5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>",
+   "prompt": "根据所给的电子构型，识别出相应的原子：（a）[Ar]4<em>s</em><sup>2</sup>3<em>d</em><sup>5</sup>（b）[Kr]5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) Mn (b) Xe"
+    "solution": "（a）Mn（b）Xe"
    }
   },
   {
@@ -484,11 +557,11 @@
     "after": "ex-ions"
    },
    "cite": "ions",
-   "prompt": "Which ion with a +2 charge has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>4<em>d</em><sup>5</sup>? Which ion with a +3 charge has this configuration?",
+   "prompt": "哪种带 +2 电荷的离子具有电子构型 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>4<em>d</em><sup>5</sup>？哪种带 +3 电荷的离子具有该构型？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Tc<sup>2+</sup>, Ru<sup>3+</sup>"
+    "solution": "Tc<sup>2+</sup>、Ru<sup>3+</sup>"
    }
   },
   {
@@ -500,11 +573,11 @@
     "at": "end"
    },
    "cite": "ions",
-   "prompt": "Read the labels of several commercial products and identify monatomic ions of at least four transition elements contained in the products. Write the complete electron configurations of these cations.",
+   "prompt": "阅读几种商品的标签，找出其中含有的至少四种过渡元素的单原子离子。写出这些阳离子的完整电子构型。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "A multivitamin and mineral tablet is one such product. Its label lists ferrous fumarate, zinc oxide, cupric sulfate and manganese sulfate, which contain the transition metal cations Fe<sup>2+</sup>, Zn<sup>2+</sup>, Cu<sup>2+</sup> and Mn<sup>2+</sup>. Each configuration starts from the neutral atom, and because these are transition metals the 4<em>s</em> electrons are lost before any 3<em>d</em> electrons, as Example 6.11 shows for iron. Fe, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>6</sup>, gives Fe<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>6</sup>. Zn, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>, gives Zn<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>. Copper is one of the exceptions of Figure 6.29, with the configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>1</sup>3<em>d</em><sup>10</sup>; it loses its 4<em>s</em> electron and one 3<em>d</em> electron, so Cu<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>9</sup>. Mn, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>5</sup>, gives Mn<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>5</sup>. Each ion has as many electrons as the atomic number minus the charge: 24, 28, 27 and 23."
+    "solution": "复合维生素矿物质片就是这样一种产品。其标签上列有富马酸亚铁、氧化锌、硫酸铜和硫酸锰，它们含有过渡金属阳离子 Fe<sup>2+</sup>、Zn<sup>2+</sup>、Cu<sup>2+</sup> 和 Mn<sup>2+</sup>。每种构型都从中性原子出发，由于它们是过渡金属，4<em>s</em> 电子先于任何 3<em>d</em> 电子失去，如例 6.11 中铁的情形。Fe，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>6</sup>，得到 Fe<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>6</sup>。Zn，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>，得到 Zn<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>。铜是图 6.29 中的例外之一，其构型为 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>1</sup>3<em>d</em><sup>10</sup>；它失去其 4<em>s</em> 电子和一个 3<em>d</em> 电子，所以 Cu<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>9</sup>。Mn，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>5</sup>，得到 Mn<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>5</sup>。每个离子所含的电子数等于原子序数减去电荷数：24、28、27 和 23。"
    }
   },
   {
@@ -516,11 +589,11 @@
     "at": "end"
    },
    "cite": "ions",
-   "prompt": "Read the labels of several commercial products and identify monatomic ions of at least six main group elements contained in the products. Write the complete electron configurations of these cations and anions.",
+   "prompt": "阅读几种商品的标签，找出其中含有的至少六种主族元素的单原子离子。写出这些阳离子和阴离子的完整电子构型。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "For example, Na<sup>+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; Ca<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>; Sn<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>; F<sup>–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; O<sup>2–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; Cl<sup>–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>."
+    "solution": "例如，Na<sup>+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；Ca<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>；Sn<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>；F<sup>–</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；O<sup>2–</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；Cl<sup>–</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>。"
    }
   },
   {
@@ -532,11 +605,11 @@
     "at": "end"
    },
    "cite": "aufbau",
-   "prompt": "Using complete subshell notation (not abbreviations, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>, and so forth), predict the electron configuration of each of the following atoms: (a) C (b) P (c) V (d) Sb (e) Sm",
+   "prompt": "使用完整的亚层记号（不用简写，如 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>，依此类推），预测下列各原子的电子构型：（a）C（b）P（c）V（d）Sb（e）Sm",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) C: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>2</sup>; (b) P: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>3</sup>; (c) V: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>3</sup>; (d) Sb: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>3</sup>; (e) Sm: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>6</sup>. The number of electrons in each atom is its atomic number: 6, 15, 23, 51 and 62. The electrons fill the subshells in the order of Figure 6.26, 1<em>s</em>, 2<em>s</em>, 2<em>p</em>, 3<em>s</em>, 3<em>p</em>, 4<em>s</em>, 3<em>d</em>, 4<em>p</em>, 5<em>s</em>, 4<em>d</em>, 5<em>p</em>, 6<em>s</em>, 4<em>f</em>, each subshell taking its capacity (2 for <em>s</em>, 6 for <em>p</em>, 10 for <em>d</em>, 14 for <em>f</em>) before the next begins. Carbon ends with two electrons in 2<em>p</em>, phosphorus with three in 3<em>p</em>, vanadium with three in 3<em>d</em> after 4<em>s</em> is full, antimony with three in 5<em>p</em>, and samarium with six in 4<em>f</em> after 6<em>s</em> is full; in each case the superscripts add up to the atomic number."
+    "solution": "（a）C：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>2</sup>；（b）P：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>3</sup>；（c）V：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>3</sup>；（d）Sb：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>3</sup>；（e）Sm：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>6</sup>。每个原子的电子数就是其原子序数：6、15、23、51 和 62。电子按图 6.26 的顺序填充各亚层，即 1<em>s</em>、2<em>s</em>、2<em>p</em>、3<em>s</em>、3<em>p</em>、4<em>s</em>、3<em>d</em>、4<em>p</em>、5<em>s</em>、4<em>d</em>、5<em>p</em>、6<em>s</em>、4<em>f</em>，每个亚层先填满其容量（<em>s</em> 为 2，<em>p</em> 为 6，<em>d</em> 为 10，<em>f</em> 为 14），再开始下一个。碳以 2<em>p</em> 中的两个电子结束，磷以 3<em>p</em> 中的三个电子结束，钒在 4<em>s</em> 填满之后以 3<em>d</em> 中的三个电子结束，锑以 5<em>p</em> 中的三个电子结束，钐在 6<em>s</em> 填满之后以 4<em>f</em> 中的六个电子结束；每种情况下，上标之和都等于原子序数。"
    }
   },
   {
@@ -548,11 +621,11 @@
     "at": "end"
    },
    "cite": "aufbau",
-   "prompt": "Using complete subshell notation (1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>, and so forth), predict the electron configuration of each of the following atoms: (a) N (b) Si (c) Fe (d) Te (e) Tb",
+   "prompt": "使用完整的亚层记号（如 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>，依此类推），预测下列各原子的电子构型：（a）N（b）Si（c）Fe（d）Te（e）Tb",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>3</sup>; (b) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>; (c) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>6</sup>; (d) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>4</sup>; (e) 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>9</sup>"
+    "solution": "（a）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>3</sup>；（b）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>；（c）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>6</sup>；（d）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>4</sup>；（e）1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>9</sup>"
    }
   },
   {
@@ -564,11 +637,11 @@
     "at": "end"
    },
    "cite": "notation",
-   "prompt": "Is 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup> the symbol for a macroscopic property or a microscopic property of an element? Explain your answer.",
+   "prompt": "1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup> 是元素的宏观性质还是微观性质的符号？请解释你的答案。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "It is the symbol for a microscopic property. The configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup> describes how the ten electrons of a single neon atom are arranged in its orbitals: two in the 1<em>s</em> orbital, two in the 2<em>s</em> orbital and six in the three 2<em>p</em> orbitals. A macroscopic property, such as density or boiling point, is observed or measured in a sample large enough to see and handle. The electron configuration belongs to each atom, which is far too small to see, so it belongs to the microscopic domain, even though it is inferred from macroscopic observations such as spectra and it accounts for macroscopic behavior such as the lack of reactivity of neon."
+    "solution": "它是微观性质的符号。构型 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup> 描述了单个氖原子的十个电子在其轨道中的排布方式：1<em>s</em> 轨道中两个，2<em>s</em> 轨道中两个，三个 2<em>p</em> 轨道中共六个。宏观性质，例如密度或沸点，是在大到可以看见和操作的样品中观察或测量到的。电子构型属于每一个原子，而原子小到根本看不见，所以它属于微观领域，尽管它是由光谱等宏观观测推断出来的，并且能够解释氖不发生反应等宏观行为。"
    }
   },
   {
@@ -580,11 +653,11 @@
     "at": "end"
    },
    "cite": "ions",
-   "prompt": "What additional information do we need to answer the question “Which ion has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>”?",
+   "prompt": "要回答“哪种离子具有电子构型 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>？”这个问题，我们还需要哪些额外信息？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "The charge on the ion."
+    "solution": "离子的电荷。"
    }
   },
   {
@@ -596,11 +669,11 @@
     "at": "end"
    },
    "cite": "hunds-rule",
-   "prompt": "Draw the orbital diagram for the valence shell of each of the following atoms: (a) C (b) P (c) V (d) Sb (e) Ru",
+   "prompt": "画出下列各原子价层的轨道表示式：（a）C（b）P（c）V（d）Sb（e）Ru",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) C, valence shell 2<em>s</em><sup>2</sup>2<em>p</em><sup>2</sup>: the 2<em>s</em> box holds a pair of arrows, one up and one down, and of the three 2<em>p</em> boxes two hold a single upward arrow and one is empty. (b) P, valence shell 3<em>s</em><sup>2</sup>3<em>p</em><sup>3</sup>: the 3<em>s</em> box holds a pair of arrows, and each of the three 3<em>p</em> boxes holds a single upward arrow. (c) V, valence electrons 4<em>s</em><sup>2</sup>3<em>d</em><sup>3</sup>: the 4<em>s</em> box holds a pair of arrows, and of the five 3<em>d</em> boxes three hold a single upward arrow and two are empty. (d) Sb, valence shell 5<em>s</em><sup>2</sup>5<em>p</em><sup>3</sup>: the 5<em>s</em> box holds a pair of arrows, and each of the three 5<em>p</em> boxes holds a single upward arrow. (e) Ru, valence electrons 5<em>s</em><sup>1</sup>4<em>d</em><sup>7</sup>, one of the exceptions of Figure 6.29: the 5<em>s</em> box holds a single upward arrow, and of the five 4<em>d</em> boxes two hold a pair of arrows and three hold a single upward arrow. In every diagram Hund’s rule places one electron in each orbital of a subshell, with parallel spins, before any orbital takes a second electron of opposite spin."
+    "solution": "（a）C，价层 2<em>s</em><sup>2</sup>2<em>p</em><sup>2</sup>：2<em>s</em> 方框中有一对箭头，一个向上、一个向下；三个 2<em>p</em> 方框中，两个各有一个向上的箭头，一个为空。（b）P，价层 3<em>s</em><sup>2</sup>3<em>p</em><sup>3</sup>：3<em>s</em> 方框中有一对箭头，三个 3<em>p</em> 方框各有一个向上的箭头。（c）V，价电子 4<em>s</em><sup>2</sup>3<em>d</em><sup>3</sup>：4<em>s</em> 方框中有一对箭头，五个 3<em>d</em> 方框中，三个各有一个向上的箭头，两个为空。（d）Sb，价层 5<em>s</em><sup>2</sup>5<em>p</em><sup>3</sup>：5<em>s</em> 方框中有一对箭头，三个 5<em>p</em> 方框各有一个向上的箭头。（e）Ru，价电子 5<em>s</em><sup>1</sup>4<em>d</em><sup>7</sup>，是图 6.29 中的例外之一：5<em>s</em> 方框中有一个向上的箭头，五个 4<em>d</em> 方框中，两个各有一对箭头，三个各有一个向上的箭头。在每一个图中，洪特规则都先在亚层的每个轨道中放入一个自旋平行的电子，然后才让任何一个轨道接受第二个自旋相反的电子。"
    }
   },
   {
@@ -612,11 +685,11 @@
     "at": "end"
    },
    "cite": "hunds-rule",
-   "prompt": "Use an orbital diagram to describe the electron configuration of the valence shell of each of the following atoms: (a) N (b) Si (c) Fe (d) Te (e) Mo",
+   "prompt": "用轨道表示式描述下列各原子价层的电子构型：（a）N（b）Si（c）Fe（d）Te（e）Mo",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "(a)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2a_img.jpg\" alt=\"A 2s box with a pair of arrows, one up and one down, followed by three connected 2p boxes each with a single upward arrow.\"><br>(b)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2b_img.jpg\" alt=\"An s box with a pair of arrows, followed by three connected p boxes, the first two with a single upward arrow and the third empty.\"><br>(c)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2c_img.jpg\" alt=\"A 4s box with a pair of arrows, followed by five connected 3d boxes, the first with a pair of arrows and the other four with a single upward arrow.\"><br>(d)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2d_img.jpg\" alt=\"A 5s box with a pair of arrows, followed by three connected 5p boxes, the first with a pair of arrows and the other two with a single upward arrow.\"><br>(e)<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2e_img.jpg\" alt=\"A 5s box followed by five connected 4d boxes, each of the six boxes with a single upward arrow.\">"
+    "solution": "（a）<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2a_img.jpg\" alt=\"一个 2s 方框中有一对箭头，一个向上、一个向下，其后是三个相连的 2p 方框，每个方框中各有一个向上的箭头。\"><br>（b）<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2b_img.jpg\" alt=\"一个 s 方框中有一对箭头，其后是三个相连的 p 方框，前两个各有一个向上的箭头，第三个为空。\"><br>（c）<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2c_img.jpg\" alt=\"一个 4s 方框中有一对箭头，其后是五个相连的 3d 方框，第一个有一对箭头，其余四个各有一个向上的箭头。\"><br>（d）<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2d_img.jpg\" alt=\"一个 5s 方框中有一对箭头，其后是三个相连的 5p 方框，第一个有一对箭头，其余两个各有一个向上的箭头。\"><br>（e）<br><img src=\"/media/ch06/CNX_Chem_06_04_OrbDiaSh2e_img.jpg\" alt=\"一个 5s 方框，其后是五个相连的 4d 方框，这六个方框各有一个向上的箭头。\">"
    }
   },
   {
@@ -628,11 +701,11 @@
     "at": "end"
    },
    "cite": "ions",
-   "prompt": "Using complete subshell notation (1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>, and so forth), predict the electron configurations of the following ions. (a) N<sup>3–</sup> (b) Ca<sup>2+</sup> (c) S<sup>–</sup> (d) Cs<sup>2+</sup> (e) Cr<sup>2+</sup> (f) Gd<sup>3+</sup>",
+   "prompt": "使用完整的亚层记号（如 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>，依此类推），预测下列离子的电子构型。（a）N<sup>3–</sup>（b）Ca<sup>2+</sup>（c）S<sup>–</sup>（d）Cs<sup>2+</sup>（e）Cr<sup>2+</sup>（f）Gd<sup>3+</sup>",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) N<sup>3–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>; (b) Ca<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>; (c) S<sup>–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup>; (d) Cs<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>5</sup>; (e) Cr<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>4</sup>; (f) Gd<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>4<em>f</em><sup>7</sup>. An anion gains electrons in the Aufbau order: N, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>3</sup>, takes three more 2<em>p</em> electrons, and S, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>4</sup>, takes one more 3<em>p</em> electron. A main group cation loses the electrons added last: Ca loses its two 4<em>s</em> electrons, and Cs loses its single 6<em>s</em> electron and then one 5<em>p</em> electron, leaving 53. A transition or inner transition metal loses its highest <em>s</em> electrons first. Chromium is observed as 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>1</sup>3<em>d</em><sup>5</sup> (Figure 6.29), so Cr<sup>2+</sup> loses the 4<em>s</em> electron and one 3<em>d</em> electron, leaving 22. Gadolinium is observed as 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>7</sup>5<em>d</em><sup>1</sup>; Gd<sup>3+</sup> loses the two 6<em>s</em> electrons and the 5<em>d</em> electron, leaving the half-filled 4<em>f</em><sup>7</sup> subshell and 61 electrons."
+    "solution": "（a）N<sup>3–</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>；（b）Ca<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>；（c）S<sup>–</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup>；（d）Cs<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>5</sup>；（e）Cr<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>4</sup>；（f）Gd<sup>3+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>4<em>f</em><sup>7</sup>。阴离子按构造顺序得到电子：N，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>3</sup>，再得到三个 2<em>p</em> 电子，S，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>4</sup>，再得到一个 3<em>p</em> 电子。主族阳离子失去最后加入的电子：Ca 失去其两个 4<em>s</em> 电子，Cs 失去其唯一的 6<em>s</em> 电子，然后再失去一个 5<em>p</em> 电子，剩下 53 个电子。过渡金属或内过渡金属先失去其最高的 <em>s</em> 电子。观测到铬为 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>1</sup>3<em>d</em><sup>5</sup>（图 6.29），所以 Cr<sup>2+</sup> 失去 4<em>s</em> 电子和一个 3<em>d</em> 电子，剩下 22 个电子。观测到钆为 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>7</sup>5<em>d</em><sup>1</sup>；Gd<sup>3+</sup> 失去两个 6<em>s</em> 电子和 5<em>d</em> 电子，剩下半充满的 4<em>f</em><sup>7</sup> 亚层和 61 个电子。"
    }
   },
   {
@@ -644,7 +717,7 @@
     "at": "end"
    },
    "cite": "aufbau",
-   "prompt": "Which atom has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>2</sup>?",
+   "prompt": "哪种原子具有电子构型 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>2</sup>？",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -660,11 +733,11 @@
     "at": "end"
    },
    "cite": "aufbau",
-   "prompt": "Which atom has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>7</sup>4<em>s</em><sup>2</sup>?",
+   "prompt": "哪种原子具有电子构型 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>7</sup>4<em>s</em><sup>2</sup>？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "It is cobalt, Co. The superscripts add up to 2 + 2 + 6 + 2 + 6 + 7 + 2 = 27, and a neutral atom has as many electrons as its atomic number, so the atomic number is 27. The configuration also places the element: after the argon core, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>, the 4<em>s</em> subshell is full and the 3<em>d</em> subshell holds seven electrons, which is the seventh element of the first transition series, in period 4 and group 9."
+    "solution": "它是钴，Co。上标之和为 2 + 2 + 6 + 2 + 6 + 7 + 2 = 27，而中性原子的电子数等于其原子序数，所以原子序数为 27。该构型还能确定这种元素的位置：在氩的内层 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup> 之后，4<em>s</em> 亚层已满，3<em>d</em> 亚层含有七个电子，因此它是第一过渡系的第七种元素，位于第 4 周期、第 9 族。"
    }
   },
   {
@@ -676,11 +749,11 @@
     "at": "end"
    },
    "cite": "ions",
-   "prompt": "Which ion with a +1 charge has the electron configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>? Which ion with a –2 charge has this configuration?",
+   "prompt": "哪种带 +1 电荷的离子具有电子构型 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>？哪种带 –2 电荷的离子具有该构型？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Rb<sup>+</sup>, Se<sup>2−</sup>"
+    "solution": "Rb<sup>+</sup>、Se<sup>2−</sup>"
    }
   },
   {
@@ -692,11 +765,11 @@
     "at": "end"
    },
    "cite": "valence-core",
-   "prompt": "Which of the following atoms contains only three valence electrons: Li, B, N, F, Ne?",
+   "prompt": "下列哪种原子只含有三个价电子：Li、B、N、F、Ne？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Boron contains only three valence electrons. The valence electrons of these main group atoms are the electrons in the shell of highest <em>n</em>. Li, 1<em>s</em><sup>2</sup>2<em>s</em><sup>1</sup>, has one; B, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup>, has three, the two 2<em>s</em> electrons and the one 2<em>p</em> electron; N, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>3</sup>, has five; F, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup>, has seven; and Ne, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>, has eight. The periodic table agrees, since boron is in group 13, whose atoms all have the valence configuration <em>ns</em><sup>2</sup><em>np</em><sup>1</sup>."
+    "solution": "硼只含有三个价电子。这些主族原子的价电子是最高 <em>n</em> 电子层中的电子。Li，1<em>s</em><sup>2</sup>2<em>s</em><sup>1</sup>，有一个；B，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup>，有三个，即两个 2<em>s</em> 电子和一个 2<em>p</em> 电子；N，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>3</sup>，有五个；F，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup>，有七个；Ne，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>，有八个。元素周期表与此一致，因为硼位于第 13 族，该族原子的价层构型都是 <em>ns</em><sup>2</sup><em>np</em><sup>1</sup>。"
    }
   },
   {
@@ -708,7 +781,7 @@
     "at": "end"
    },
    "cite": "hunds-rule",
-   "prompt": "Which of the following has two unpaired electrons?",
+   "prompt": "下列哪一种具有两个未成对电子？",
    "answer": {
     "type": "choice",
     "generated_by": "source",
@@ -716,12 +789,12 @@
      "Mg",
      "Si",
      "S",
-     "Both Mg and S",
-     "Both Si and S."
+     "Mg 和 S 都是",
+     "Si 和 S 都是。"
     ],
     "correct": 4,
-    "hint": "Draw the orbital diagram of the valence shell of each atom and count the boxes that hold a single arrow.",
-    "solution": "Although both (b) and (c) are correct, (e) encompasses both and is the best answer."
+    "hint": "画出每种原子价层的轨道表示式，数一数只有一个箭头的方框。",
+    "solution": "虽然（b）和（c）都正确，但（e）同时包含了两者，是最佳答案。"
    }
   },
   {
@@ -733,11 +806,11 @@
     "at": "end"
    },
    "cite": "periodic-table",
-   "prompt": "Which atom would be expected to have a half-filled 6<em>p</em> subshell?",
+   "prompt": "预期哪种原子具有半充满的 6<em>p</em> 亚层？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Bismuth, Bi, atomic number 83, has a half-filled 6<em>p</em> subshell. A <em>p</em> subshell holds six electrons in its three orbitals, so it is half-filled with three, one in each orbital by Hund’s rule. In the filling order, 6<em>p</em> follows 6<em>s</em>, 4<em>f</em> and 5<em>d</em>, so the element must have the xenon core plus 6<em>s</em><sup>2</sup>4<em>f</em><sup>14</sup>5<em>d</em><sup>10</sup>6<em>p</em><sup>3</sup>, a total of 54 + 2 + 14 + 10 + 3 = 83 electrons. Its configuration is 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>14</sup>5<em>d</em><sup>10</sup>6<em>p</em><sup>3</sup>, and it is the period 6 member of group 15, whose atoms all end in <em>np</em><sup>3</sup>."
+    "solution": "铋，Bi，原子序数 83，具有半充满的 6<em>p</em> 亚层。<em>p</em> 亚层的三个轨道共容纳六个电子，所以充入三个电子时为半充满，按洪特规则每个轨道一个。在填充顺序中，6<em>p</em> 排在 6<em>s</em>、4<em>f</em> 和 5<em>d</em> 之后，所以该元素必定有氙的内层再加上 6<em>s</em><sup>2</sup>4<em>f</em><sup>14</sup>5<em>d</em><sup>10</sup>6<em>p</em><sup>3</sup>，共 54 + 2 + 14 + 10 + 3 = 83 个电子。其构型为 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>10</sup>4<em>p</em><sup>6</sup>5<em>s</em><sup>2</sup>4<em>d</em><sup>10</sup>5<em>p</em><sup>6</sup>6<em>s</em><sup>2</sup>4<em>f</em><sup>14</sup>5<em>d</em><sup>10</sup>6<em>p</em><sup>3</sup>，它是第 15 族中第 6 周期的成员，该族原子的构型都以 <em>np</em><sup>3</sup> 结尾。"
    }
   },
   {
@@ -749,7 +822,7 @@
     "at": "end"
    },
    "cite": "periodic-table",
-   "prompt": "Which atom would be expected to have a half-filled 4<em>s</em> subshell?",
+   "prompt": "预期哪种原子具有半充满的 4<em>s</em> 亚层？",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -765,11 +838,11 @@
     "at": "end"
    },
    "cite": "ions",
-   "prompt": "In one area of Australia, the cattle did not thrive despite the presence of suitable forage. An investigation showed the cause to be the absence of sufficient cobalt in the soil. Cobalt forms cations in two oxidation states, Co<sup>2+</sup> and Co<sup>3+</sup>. Write the electron structure of the two cations.",
+   "prompt": "在澳大利亚的某一地区，尽管有合适的饲草，牛群却长不好。调查表明，原因是土壤中缺乏足够的钴。钴能形成两种氧化态的阳离子，Co<sup>2+</sup> 和 Co<sup>3+</sup>。写出这两种阳离子的电子结构。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Co<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>7</sup>; Co<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>6</sup>. The cobalt atom has 27 electrons, with the configuration 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>7</sup>. Cobalt is a transition metal, so its cations lose the 4<em>s</em> electrons before any 3<em>d</em> electrons, as Example 6.11 shows for Fe<sup>2+</sup>. Co<sup>2+</sup> loses both 4<em>s</em> electrons and keeps 25 electrons, seven of them in 3<em>d</em>. Co<sup>3+</sup> loses both 4<em>s</em> electrons and one 3<em>d</em> electron, keeping 24 electrons, six of them in 3<em>d</em>."
+    "solution": "Co<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>7</sup>；Co<sup>3+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>6</sup>。钴原子有 27 个电子，其构型为 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>7</sup>。钴是过渡金属，所以其阳离子先失去 4<em>s</em> 电子，然后才失去 3<em>d</em> 电子，如例 6.11 中 Fe<sup>2+</sup> 的情形。Co<sup>2+</sup> 失去两个 4<em>s</em> 电子，保留 25 个电子，其中七个在 3<em>d</em> 中。Co<sup>3+</sup> 失去两个 4<em>s</em> 电子和一个 3<em>d</em> 电子，保留 24 个电子，其中六个在 3<em>d</em> 中。"
    }
   },
   {
@@ -781,7 +854,7 @@
     "at": "end"
    },
    "cite": "ions",
-   "prompt": "Thallium was used as a poison in the Agatha Christie mystery story “The Pale Horse.” Thallium has two possible cationic forms, +1 and +3. The +1 compounds are the more stable. Write the electron structure of the +1 cation of thallium.",
+   "prompt": "铊在阿加莎·克里斯蒂的推理小说《灰马酒店》中被用作毒药。铊有两种可能的阳离子形式，+1 和 +3。+1 的化合物更稳定。写出铊的 +1 阳离子的电子结构。",
    "answer": {
     "type": "open",
     "generated_by": "source",
@@ -797,11 +870,11 @@
     "at": "end"
    },
    "cite": "ions",
-   "prompt": "Write the electron configurations for the following atoms or ions: (a) B<sup>3+</sup> (b) O<sup>–</sup> (c) Cl<sup>3+</sup> (d) Ca<sup>2+</sup> (e) Ti",
+   "prompt": "写出下列原子或离子的电子构型：（a）B<sup>3+</sup>（b）O<sup>–</sup>（c）Cl<sup>3+</sup>（d）Ca<sup>2+</sup>（e）Ti",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "(a) B<sup>3+</sup>: 1<em>s</em><sup>2</sup>; (b) O<sup>–</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup>; (c) Cl<sup>3+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>; (d) Ca<sup>2+</sup>: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>; (e) Ti: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>2</sup>. An ion has the atomic number minus the charge in electrons. B, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup>, loses its 2<em>p</em> and both 2<em>s</em> electrons, leaving 2. O, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>4</sup>, gains one 2<em>p</em> electron, giving 9. Cl, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup>, loses three of its 3<em>p</em> electrons, the last ones added, leaving 14. Ca, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>, loses its two 4<em>s</em> electrons, leaving 18. Titanium is a neutral atom with 22 electrons; after the 4<em>s</em> subshell is full, the last two enter 3<em>d</em>."
+    "solution": "（a）B<sup>3+</sup>：1<em>s</em><sup>2</sup>；（b）O<sup>–</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>5</sup>；（c）Cl<sup>3+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>2</sup>；（d）Ca<sup>2+</sup>：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>；（e）Ti：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>2</sup>。离子的电子数等于原子序数减去电荷数。B，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup>，失去其 2<em>p</em> 电子和两个 2<em>s</em> 电子，剩下 2 个。O，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>4</sup>，得到一个 2<em>p</em> 电子，共 9 个。Cl，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>5</sup>，失去其三个 3<em>p</em> 电子（最后加入的那些），剩下 14 个。Ca，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>，失去其两个 4<em>s</em> 电子，剩下 18 个。钛是含有 22 个电子的中性原子；4<em>s</em> 亚层填满之后，最后两个电子进入 3<em>d</em>。"
    }
   },
   {
@@ -813,11 +886,11 @@
     "at": "end"
    },
    "cite": "aufbau",
-   "prompt": "Cobalt–60 and iodine–131 are radioactive isotopes commonly used in nuclear medicine. How many protons, neutrons, and electrons are in atoms of these isotopes? Write the complete electron configuration for each isotope.",
+   "prompt": "钴–60 和碘–131 是核医学中常用的放射性同位素。这些同位素的原子中各有多少个质子、中子和电子？写出每种同位素的完整电子构型。",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "Co has 27 protons, 27 electrons, and 33 neutrons: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>7</sup>. I has 53 protons, 53 electrons, and 78 neutrons: 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>5</sup>."
+    "solution": "Co 有 27 个质子、27 个电子和 33 个中子：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>7</sup>。I 有 53 个质子、53 个电子和 78 个中子：1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>3<em>d</em><sup>10</sup>4<em>s</em><sup>2</sup>4<em>p</em><sup>6</sup>4<em>d</em><sup>10</sup>5<em>s</em><sup>2</sup>5<em>p</em><sup>5</sup>。"
    }
   },
   {
@@ -829,11 +902,11 @@
     "at": "end"
    },
    "cite": "ex-phosphorus",
-   "prompt": "Write a set of quantum numbers for each of the electrons with an <em>n</em> of 3 in a Sc atom.",
+   "prompt": "写出 Sc 原子中每个 <em>n</em> 为 3 的电子的一组量子数。",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Scandium, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>1</sup>, has nine electrons with <em>n</em> = 3: two in 3<em>s</em>, six in 3<em>p</em> and one in 3<em>d</em>. Each set is written (<em>n</em>, <em>l</em>, <em>m<sub>l</sub></em>, <em>m<sub>s</sub></em>). The 3<em>s</em> electrons have <em>l</em> = 0 and <em>m<sub>l</sub></em> = 0 and differ in spin: (3, 0, 0, $+\\frac{1}{2}$) and (3, 0, 0, $-\\frac{1}{2}$). The 3<em>p</em> electrons have <em>l</em> = 1, and each of the three <em>m<sub>l</sub></em> values holds a pair of opposite spins: (3, 1, –1, $+\\frac{1}{2}$), (3, 1, –1, $-\\frac{1}{2}$), (3, 1, 0, $+\\frac{1}{2}$), (3, 1, 0, $-\\frac{1}{2}$), (3, 1, +1, $+\\frac{1}{2}$), (3, 1, +1, $-\\frac{1}{2}$). The single 3<em>d</em> electron has <em>l</em> = 2 and may take any <em>m<sub>l</sub></em> from –2 to +2, since the five 3<em>d</em> orbitals are degenerate, and as an unpaired electron it takes <em>m<sub>s</sub></em> = $+\\frac{1}{2}$, for example (3, 2, –2, $+\\frac{1}{2}$). No two of the nine sets are the same, as the Pauli exclusion principle requires."
+    "solution": "钪，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>1</sup>，有九个 <em>n</em> = 3 的电子：3<em>s</em> 中两个，3<em>p</em> 中六个，3<em>d</em> 中一个。每组量子数写成 (<em>n</em>, <em>l</em>, <em>m<sub>l</sub></em>, <em>m<sub>s</sub></em>)。3<em>s</em> 电子的 <em>l</em> = 0，<em>m<sub>l</sub></em> = 0，自旋不同：(3, 0, 0, $+\\frac{1}{2}$) 和 (3, 0, 0, $-\\frac{1}{2}$)。3<em>p</em> 电子的 <em>l</em> = 1，三个 <em>m<sub>l</sub></em> 值中的每一个都容纳一对自旋相反的电子：(3, 1, –1, $+\\frac{1}{2}$), (3, 1, –1, $-\\frac{1}{2}$), (3, 1, 0, $+\\frac{1}{2}$), (3, 1, 0, $-\\frac{1}{2}$), (3, 1, +1, $+\\frac{1}{2}$), (3, 1, +1, $-\\frac{1}{2}$)。单个 3<em>d</em> 电子的 <em>l</em> = 2，由于五个 3<em>d</em> 轨道是简并的，它的 <em>m<sub>l</sub></em> 可取从 –2 到 +2 的任何值，而作为未成对电子，它的 <em>m<sub>s</sub></em> = $+\\frac{1}{2}$，例如 (3, 2, –2, $+\\frac{1}{2}$)。九组量子数中没有任何两组相同，这正是泡利不相容原理所要求的。"
    }
   },
   {
@@ -846,11 +919,11 @@
     "at": "end"
    },
    "cite": "periodic-table",
-   "prompt": "Atoms of which group in the periodic table have a valence shell electron configuration of <em>ns</em><sup>2</sup><em>np</em><sup>3</sup>?",
+   "prompt": "元素周期表中哪一族的原子具有 <em>ns</em><sup>2</sup><em>np</em><sup>3</sup> 的价层电子构型？",
    "answer": {
     "type": "open",
     "generated_by": "source",
-    "solution": "15 (5A)"
+    "solution": "15（5A）"
    }
   },
   {
@@ -863,11 +936,11 @@
     "at": "end"
    },
    "cite": "periodic-table",
-   "prompt": "Atoms of which group in the periodic table have a valence shell electron configuration of <em>ns</em><sup>2</sup>?",
+   "prompt": "元素周期表中哪一族的原子具有 <em>ns</em><sup>2</sup> 的价层电子构型？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "The atoms of group 2, the alkaline earth metals beryllium, magnesium, calcium, strontium, barium and radium, have the valence shell configuration <em>ns</em><sup>2</sup>. Elements in one group have the same number of valence electrons in the same kind of subshell. In group 2 the <em>s</em> subshell of the outer shell is filled with two electrons and nothing follows it: Be is [He]2<em>s</em><sup>2</sup>, Mg [Ne]3<em>s</em><sup>2</sup> and Ca [Ar]4<em>s</em><sup>2</sup>, and so on down the group. Helium, 1<em>s</em><sup>2</sup>, has the same form with <em>n</em> = 1, but it is placed in group 18 because its filled shell makes it a noble gas like the other members of that group."
+    "solution": "第 2 族的原子，即碱土金属铍、镁、钙、锶、钡和镭，具有 <em>ns</em><sup>2</sup> 的价层构型。同一族的元素在同一类亚层中具有相同数目的价电子。在第 2 族中，外层的 <em>s</em> 亚层填有两个电子，其后没有别的电子：Be 是 [He]2<em>s</em><sup>2</sup>，Mg 是 [Ne]3<em>s</em><sup>2</sup>，Ca 是 [Ar]4<em>s</em><sup>2</sup>，沿该族向下依此类推。氦，1<em>s</em><sup>2</sup>，在 <em>n</em> = 1 时具有相同的形式，但它被放在第 18 族，因为它的电子层已填满，使它像该族其他成员一样是稀有气体。"
    }
   },
   {
@@ -880,11 +953,11 @@
     "at": "end"
    },
    "cite": "periodic-table",
-   "prompt": "Explain why Al is a member of group 13 rather than group 3?",
+   "prompt": "解释为什么 Al 属于第 13 族而不是第 3 族？",
    "answer": {
     "type": "open",
     "generated_by": "ai",
-    "solution": "Aluminum belongs to group 13 because its last electron enters a <em>p</em> subshell, not a <em>d</em> subshell. Its configuration is 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>, so its three valence electrons are 3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>, the same form, <em>ns</em><sup>2</sup><em>np</em><sup>1</sup>, as boron above it, 2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup>. The elements of group 3, such as scandium, 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>1</sup>, also have three valence electrons, but theirs are <em>ns</em><sup>2</sup>(<em>n</em> – 1)<em>d</em><sup>1</sup>, with the last electron in a <em>d</em> subshell. The periodic table groups elements by the subshell being filled and the number of electrons in it, and the first <em>d</em> subshell, 3<em>d</em>, is not filled until after 4<em>s</em>, so aluminum in period 3 has no <em>d</em> electrons and sits in the <em>p</em> block with boron, whose chemistry it resembles."
+    "solution": "铝属于第 13 族，因为它的最后一个电子进入 <em>p</em> 亚层，而不是 <em>d</em> 亚层。它的构型为 1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>，所以它的三个价电子是 3<em>s</em><sup>2</sup>3<em>p</em><sup>1</sup>，与其上方的硼 2<em>s</em><sup>2</sup>2<em>p</em><sup>1</sup> 形式相同，即 <em>ns</em><sup>2</sup><em>np</em><sup>1</sup>。第 3 族的元素，例如钪，1<em>s</em><sup>2</sup>2<em>s</em><sup>2</sup>2<em>p</em><sup>6</sup>3<em>s</em><sup>2</sup>3<em>p</em><sup>6</sup>4<em>s</em><sup>2</sup>3<em>d</em><sup>1</sup>，也有三个价电子，但它们的是 <em>ns</em><sup>2</sup>(<em>n</em> – 1)<em>d</em><sup>1</sup>，最后一个电子在 <em>d</em> 亚层中。元素周期表按正在填充的亚层及其中的电子数对元素分族，而第一个 <em>d</em> 亚层，即 3<em>d</em>，要到 4<em>s</em> 之后才填充，所以第 3 周期的铝没有 <em>d</em> 电子，与化学性质与之相似的硼同处于 <em>p</em> 区。"
    }
   }
  ],
@@ -1117,28 +1190,28 @@
  "referents": [
   {
    "id": "s-block",
-   "label": "the s block, the elements whose last electron enters a s subshell",
+   "label": "s 区，最后一个电子进入 s 亚层的元素",
    "figures": [
     "sim-periodic"
    ]
   },
   {
    "id": "p-block",
-   "label": "the p block, the elements whose last electron enters a p subshell",
+   "label": "p 区，最后一个电子进入 p 亚层的元素",
    "figures": [
     "sim-periodic"
    ]
   },
   {
    "id": "d-block",
-   "label": "the d block, the elements whose last electron enters a d subshell",
+   "label": "d 区，最后一个电子进入 d 亚层的元素",
    "figures": [
     "sim-periodic"
    ]
   },
   {
    "id": "f-block",
-   "label": "the f block, the elements whose last electron enters a f subshell",
+   "label": "f 区，最后一个电子进入 f 亚层的元素",
    "figures": [
     "sim-periodic"
    ]

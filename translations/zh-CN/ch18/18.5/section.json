@@ -8,7 +8,7 @@
  "objectives": [
   "描述氢的性质、制备和化合物"
  ],
- "summary_html": "<p>氢是宇宙中含量最丰富的元素，其化学性质十分独特。虽然它的某些化学反应性与<span data-concept=\"alkali-metal\">碱金属</span>相似，但氢具有许多与<span data-concept=\"nonmetal\">非金属</span>相同的化学性质，且<span data-concept=\"electronegativity\">电负性</span>相对较低。它与活泼金属形成离子型氢化物，与电负性较小的元素形成氧化态为 1− 的共价化合物，与电负性较大的非金属形成氧化态为 1+ 的共价化合物。它与氧、氟和氯发生爆炸性反应，与溴的反应不那么剧烈，与碘、硫和氮的反应则缓慢得多。氢可以还原那些<span data-concept=\"standard-electrode-potential\">还原电势</span>比铬低的金属的氧化物，生成金属和水。<span data-concept=\"hydrogen-halide\">卤化氢</span>溶于水后都呈酸性。</p>",
+ "summary_html": "<p>氢是宇宙中含量最丰富的元素，其化学性质十分独特。虽然它的某些化学反应性与<span data-concept=\"alkali-metal\">碱金属</span>相似，但氢具有许多与<span data-concept=\"electronegativity\">电负性</span>相对较低的<span data-concept=\"nonmetal\">非金属</span>相同的化学性质。它与活泼金属形成离子型氢化物，与电负性较小的元素形成氧化态为 1− 的共价化合物，与电负性较大的非金属形成氧化态为 1+ 的共价化合物。它与氧、氟和氯发生爆炸性反应，与溴的反应不那么剧烈，与碘、硫和氮的反应则缓慢得多。氢可以还原那些<span data-concept=\"standard-electrode-potential\">还原电势</span>比铬低的金属的氧化物，生成金属和水。<span data-concept=\"hydrogen-halide\">卤化氢</span>溶于水后都呈酸性。</p>",
  "notes": "本节照原文行文处理“Water gas is as an industrial fuel”（水煤气是作为工业燃料）、“Inorganic derivations include”（无机衍生物包括）、“In which case, the sulfide may oxidize”（在这种情况下，硫化物可能氧化为）以及表 18.1 的第一行 MH 或 MH₂ ⟶ MOH 或 M(OH)₂ + H₂，该行没有写出水。",
  "ai": {
   "text": [
@@ -34,7 +34,7 @@
  },
  "built": "2026-10-26",
  "exercises_lead": "",
- "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自本书的答案册。两道没有答案的习题 fs-idp75856256（氢化钙与水反应中的路易斯酸和碱、氧化剂和还原剂以及氧化数的变化）和 fs-idp249418928（给气球充氢所需 CaH₂ 的质量）未收入，也没有为它们计算答案。没有任何内容被移动。",
+ "exercise_notes": "布鲁姆层级、概念标签和提示由 AI 生成。答案取自书后答案。两道没有答案的习题 fs-idp75856256（氢化钙与水反应中的路易斯酸和碱、氧化剂和还原剂以及氧化数的变化）和 fs-idp249418928（给气球充氢所需 CaH₂ 的质量）未收入，也没有为它们计算答案。没有任何内容被移动。",
  "figures": [
   {
    "id": "sim-electrolysis",

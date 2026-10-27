@@ -27,7 +27,7 @@ const sup = (t) => t.replace(/[0-9−+-]/g, (ch) => '⁰¹²³⁴⁵⁶⁷⁸⁹
 ===================================================================== */
 (function () {
   const d = F.sim(root, 'sim-acid-water');
-  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正面', yaw: 0, pitch: 0.12 }, { label: '斜角', yaw: 0.65, pitch: 0.45 }], h: 400, dist: 6.6, tilt: 0.3 });
+  const v = F.view3d(d.stage, { spin: 'off', pitch: [-1.22, 1.22], views: [{ label: '正视', yaw: 0, pitch: 0.12 }, { label: '斜视', yaw: 0.65, pitch: 0.45 }], h: 400, dist: 6.6, tilt: 0.3 });
   const grp = v.part(0), cnv = F.makeCanvas(d.stage, 290);
   const ACIDS = {
     HCl: { name: '盐酸', unit: '分子', K: Infinity, a: 'HCl', b: 'Cl⁻', an: '氯化氢分子，HCl', bn: '氯离子，Cl⁻',
